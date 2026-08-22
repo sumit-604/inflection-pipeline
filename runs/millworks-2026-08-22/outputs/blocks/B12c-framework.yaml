@@ -1,0 +1,35 @@
+stage: B12c
+company: "MILLWORKS"
+run_date: "2026-08-22"
+model: claude-opus-4-8
+status: complete
+phase: 1
+gate0:
+  rules_checked: 45
+  adherence_pct: 98
+  concurs: "Gate 0 AVOID re-derived and CONCURS with maker"
+  fails:
+    - {severity: "MINOR", location: "B01 Block F, M4 Customer Stickiness", description: "Scored 1/5 under an ambiguous rubric tier; a literal 0-decline-year reading could support 3/5. Conservative, immaterial — moats present stay 2 (M1+M3), MODERATE band unchanged, classification unaffected."}
+emoat:
+  rules_checked: 45
+  adherence_pct: 96
+  concurs: "Emerging Moat NONE / combined AVOID re-derived and CONCURS; C1 Quick Pay suppression is COMPLIANT (follows operator instruction + anti-double-count law, alternative disclosed)"
+  fails:
+    - {severity: "MINOR", location: "B07 Section 5, E2 China+1", description: "Scorecard applies 1.0 documented multiplier while narrative calls the defining claim inference; 0.5 would be consistent, lowering total 10.6 -> 10.1. No band/decision impact (stays NONE)."}
+    - {severity: "MINOR", location: "B07 evidence_mix vs completionist_recount", description: "documented=14 vs recount 8 count different scopes; unreconciled, presentational only, no score impact."}
+valuation:
+  rules_checked: 0
+  adherence_pct: null
+  status: pending-phase-3
+  fails: []
+recomputed_destination_pe: ""
+recomputed_decision: ""
+framework_adherence: 97
+findings:
+  - {severity: "MINOR", location: "B01 Block F M4", description: "Ambiguous customer-stickiness tier scored conservatively 1/5; immaterial to moat count and classification."}
+  - {severity: "MINOR", location: "B07 Section 5 E2", description: "1.0 documented multiplier applied where narrative calls the defining claim inference; 0.5 would be consistent. No band/decision impact."}
+  - {severity: "MINOR", location: "B07 evidence_mix / completionist_recount", description: "Unreconciled documented-item counts (14 vs 8) across scopes; presentational only."}
+critical_count: 0
+major_count: 0
+minor_count: 3
+acceptance_rate: 97

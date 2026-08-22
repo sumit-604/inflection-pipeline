@@ -1,0 +1,33 @@
+stage: B01-gate0
+company: "MILLWORKS"
+run_date: "2026-08-22"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "RHP restated financial statements cover only FY24-FY26 (Annexure I/II/III, RHP p.55-57); company incorporated 2021, no FY22 or FY23 audited restated data exists in this filing"
+  - "screener-Data_Sheet.csv column alignment required manual correction: 5 date headers (FY22-FY26) but only 4 data values per row, right-aligned to FY23-FY26; verified against RHP restated Revenue (FY24/25/26 match exactly); FY22 has no Data_Sheet values at all"
+  - "Data_Sheet FY23 figures (Sales 1.77cr, Net Profit 0.33cr) are NOT corroborated by any RHP restated statement and were excluded from scoring as unverified/secondary"
+  - "screener P&L/Balance_Sheet/Cash_Flow/Quarters CSVs are empty; only Data_Sheet populated, used only as secondary cross-check"
+  - "No shareholding-pattern history available (RHP gives one pre-issue snapshot dated 2026-07-07 only) — E2 scored 0, N/A"
+  - "Peer EBITDA margin, peer gross margin, and full listed-peer-count not available beyond the 2-company RHP set (Unimech Aerospace, Azad Engineering) — M2, M5, M7, M9 scored 0, PEER DATA NEEDED"
+  - "R&D spend as % of revenue not quantified anywhere in RHP — M6 scored 0, N/A"
+  - "Post-issue promoter shareholding % shown as placeholder in RHP; E1 used pre-issue 65.08% (Promoter 59.22% + Promoter Group 5.86%, RHP p.79)"
+flags:
+  - {type: FLAG-GATE0, reason: "Classification AVOID (<=AVERAGE) driven by cumulative CFO/PAT of -0.29x across FY24-FY26 (RHP p.57); caps at max AVERAGE per deal-breaker #4, then downgraded one tier to AVOID for LIMITED (3yr) history"}
+  - {type: FLAG-CASH, reason: "Deteriorating cash conversion every year despite triple-digit revenue/PAT growth: CFO +0.65cr (FY24) -> -2.92cr (FY25) -> -10.76cr (FY26), RHP p.57; FY26 trade receivables (138.69cr) = 93% of FY26 revenue with disclosed third-party (Quik Pay Pvt Ltd) collection contingency pending customer testing, RHP p.93; growth entirely financed externally"}
+  - {type: FLAG-SECTOR, reason: "Manifest sector_cap_row (Pharma / CDMO) is mislabeled; RHP identifies business as precision-machined components for Defence, Railways, Aerospace, Semiconductors (peer set: Unimech Aerospace, Azad Engineering, RHP p.94-95; AS9100D/ISO9001:2015, RHP p.158)"}
+data_years: 3
+fy_range: "FY24 to FY26"
+blocks: {A: 20, B: 0, C: 20, D: 15, E: 15}
+core_score: 70
+moat_score: 11
+grand_total: 81
+moats_confirmed: 2
+moat_class: "MODERATE"
+classification: "AVOID"
+deal_breakers:
+  - "Block B (cash generation) = 0/20 (<8) -> caps at max GOOD, FY24-FY26 (all 3 restated years)"
+  - "Cumulative CFO/PAT = -0.29x (<0.50) -> caps at max AVERAGE, driven by FY25 (-2.92cr) and FY26 (-10.76cr) CFO against rising PAT"
+history_downgrade: true
+block_b_trend: "deteriorating — CFO swung from +0.65cr (FY24) to -10.76cr (FY26) even as PAT grew to 37.06cr (RHP p.57, p.56); FY26 receivables reached 93% of FY26 revenue"
+analyst_note: "Growth (Block C 20/20) and RHP-source ROCE/ROE (Block A 20/20) are real and anchored, but Block A is sensitive to the capital-employed definition; a standard-formula recompute shows a declining ROCE trend. The load-bearing number is Block B: three straight years of negative, worsening operating cash flow with FY26 receivables at 93% of revenue and a disclosed Quik Pay collection dependency pending customer testing. That is a working-capital pattern, not a rounding issue, and the sole reason CFO/PAT is negative and the class is capped then downgraded to AVOID. Only 3 audited years exist (incorporated 2021); recently-listed SME IPO, no downturn track record. Manifest sector tag is wrong; use Unimech Aerospace and Azad Engineering as the comparison set."

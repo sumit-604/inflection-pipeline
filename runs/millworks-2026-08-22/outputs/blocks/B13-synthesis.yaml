@@ -1,0 +1,22 @@
+stage: B13-synthesis
+company: "MILLWORKS"
+run_date: "2026-08-22"
+model: claude-opus-4-8
+status: complete
+phase: 1-lite
+verdict: "PROCEED WITH FLAGS"
+verdict_rule_applied: 3
+flags_active: ["FLAG-PROMOTER", "FLAG-CASH", "FLAG-GATE0", "FLAG-SECTOR"]
+confidence_delta: {numerical: 98, redflag: 65, framework: 97, peer: 100, overall: 65}
+cash_determination: "STRUCTURAL"
+valuation_decision: ""
+entry_range: {low: 0, high: 0}
+headline: "Real growth built on one customer"
+falsification_metric: "Q1 FY27 operating cash flow negative again with trade receivables above 90% of revenue and Quick Pay share above 40%"
+monitorables_count: 8
+publish_candidate: false
+notion_save:
+  page_title: "MILLWORKS — Phase 1 evidence gate (2026-08-22)"
+  summary: "Real growth built on one customer. PROCEED WITH FLAGS (rule 3). FLAG-PROMOTER CONCERN, FLAG-CASH STRUCTURAL. Overall confidence 65. Valuation deferred to phase 3."
+  drive_link: "NOT FOUND"
+  mode: append-never-overwrite-status

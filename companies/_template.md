@@ -17,6 +17,12 @@ The current one-line thesis from the latest run.
 ## DECISION STATUS AND ENTRY ZONE
 Decision Status and entry zone as of the latest run, with the run date.
 
+## HALT 1 GATE
+The Understanding Gate rulings, each with its date. Set at Halt 1, before
+any deliberation or valuation runs.
+- Mental Model signed: YYYY-MM-DD (or NOT SIGNED) — [one line]
+- Halt 1 decision (KILL/SHALLOW/PROCEED): YYYY-MM-DD [decision] — [reasoning]
+
 ## OPERATOR RULINGS
 Every operator ruling with its date, appended and never deleted.
 - YYYY-MM-DD: [ruling] — [operator's reasoning]

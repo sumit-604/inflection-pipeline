@@ -57,6 +57,13 @@ language, no price talk inside this section - understanding only. If a question 
 answered from the blocks, write "the run did not establish this" rather than filling the gap.
 <!-- END BUSINESS-UNDERSTANDING-NARRATIVE-SPEC v1 -->
 
+SHARED SPEC: this BUSINESS UNDERSTANDING NARRATIVE section is defined once
+and shared. Stage 09b (prompts/09b-halt1-dossier.md, Section 3) drafts the
+same five questions at Halt 1 by reference, "as specified in
+prompts/13-synthesis-pipeline.md, BUSINESS UNDERSTANDING NARRATIVE
+section", so the two can never diverge. Stage 13's copy here is the final
+version, updated by later stages.
+
 ## DELIVERABLE 1: business-narrative.md
 
 The BUSINESS UNDERSTANDING NARRATIVE above is the first section of this file, before the

@@ -1,0 +1,30 @@
+stage: B12b
+company: "MILLWORKS"
+run_date: "2026-08-22"
+model: claude-opus-4-8
+status: complete
+no_concall_mode: true
+independent_flags_found: 13
+caught: 8
+partially_caught: 1
+missed:
+  - {severity: MAJOR, item: "V3 Technologies related-party transactions omitted from B05 (Rs490.00L advances, Rs707.74L PP&E purchase, rent, materials, Registered Office + Unit-1 lease from promoter-partner firm)", anchor: "RHP p.32 (RF13); p.59 (RP summary)", note_orchestrator: "caught elsewhere by B02/B03/B08 — a B05-specific omission, not a pipeline miss"}
+  - {severity: MAJOR, item: "Big Bang Boom Solutions execution dependency + Bill-to-Ship-to arrangement missed by B05 in a 69%-defence book", anchor: "RHP p.25 (RF4); ~p.137", note_orchestrator: "surfaced in B03/B05 triggers and B09 downstream candidates"}
+  - {severity: MAJOR, item: "Supplier concentration missed by B05: Supplier-1 = 44.05% of FY26 purchases, top-10 = 84.31%, no long-term contracts", anchor: "RHP p.30-31 (RF11)", note_orchestrator: "caught by B04 (flags top supplier 44.05%)"}
+  - {severity: MINOR, item: "DRHP-to-RHP working-capital / holding-days restatement (prior calc error) not noted, though B05 relied on that WC table", anchor: "RHP p.31 (RF12)"}
+pipeline_flags_not_supported: []
+promise_delivery_spot_checks: {checked: 4, confirmed: 4, wrong: 0}
+credibility_grade_concur: "concur — grade C holds; added related-party and supplier opacity reinforces C, argues against B, none alleges fraud so not below C"
+findings:
+  - {severity: MAJOR, location: "B05 Section 2D / red_flags — related-party scan", description: "V3 Technologies related-party transactions omitted from B05 (in scope for the NO-CONCALL scan); caught by B02/B03/B08 elsewhere", anchor: "RHP p.32 & 59"}
+  - {severity: MAJOR, location: "B05 red_flags / B06 cross-read", description: "BBB dependency + Bill-to-Ship-to structure missed by B05; revenue-quality relevant", anchor: "RHP p.25 (RF4)"}
+  - {severity: MAJOR, location: "B05 red_flags — concentration scan", description: "Supplier concentration (44.05% single, 84.31% top-10) missed by B05; caught by B04", anchor: "RHP p.30-31 (RF11)"}
+  - {severity: MINOR, location: "B05 red_flag #6 — compliance", description: "Section 185 related-party director loans lumped into generic non-compliance bucket", anchor: "RHP p.27"}
+  - {severity: MINOR, location: "B05 Section 1B / guidance", description: "FY27 implied-revenue built on a restated CA-certified WC table; restatement not flagged", anchor: "RHP p.31 (RF12)"}
+  - {severity: MINOR, location: "B05 Sources note / anchoring", description: "Business-chapter RHP citations point ~7 pages behind extracted markers; exact-anchor existence handed to Verifier A", anchor: "printed vs extracted numbering"}
+critical_count: 0
+major_count: 3
+minor_count: 3
+redflag_coverage: 65
+acceptance_rate: 62
+orchestrator_note: "The 3 MAJOR misses are all B05-scope omissions (communication analysis), not pipeline-wide misses: V3 Technologies is extensively covered in B02/B03/B08, Big Bang Boom in B03/B05 triggers and B09, and 44% supplier concentration in B04. Synthesis should present them as B05-stage gaps that other stages closed, not as evidence the pipeline missed the related-party/supplier cluster."

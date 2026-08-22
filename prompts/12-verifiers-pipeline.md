@@ -211,6 +211,20 @@ RULES:
    section. Missing section, any missing question, a bullet-formatted
    section, or valuation/price/verdict language inside it = REWORK for
    stage 13.
+10. Halt 1 dossier (B09b): outputs/reports/09b-understanding-dossier.md
+   exists and contains all five sections in order; Section 1 ends with
+   exactly one verdict line (CORPUS CURRENT or CORPUS GAPPED); Section 2 is
+   marked DRAFT - PENDING OPERATOR SIGN-OFF; Section 4c fragility fields
+   present in the B09b YAML; Section 5 has 14-15 numbered points and zero
+   valuation/price/verdict vocabulary. Missing or malformed = REWORK for
+   stage 09b.
+   <!-- MERGE REVIEW NEEDED: 09b runs LAST in phase 1 (after the verifiers,
+   per prompts/09b-halt1-dossier.md and run-pipeline step 6b), so the
+   phase-1 Verifier C invocation cannot see B09b in the current sequence.
+   This rule fires only if 09b is added to Verifier C's inputs, or if 09b
+   is moved ahead of the verifiers, or via a dedicated post-09b check. The
+   orchestrator still validates the B09b YAML block on return (run-pipeline
+   step 3). Operator to decide the wiring. -->
 
 OUTPUT: per-framework compliance tables with rule-by-rule PASS/FAIL and
 the recomputed value beside any FAIL; then:

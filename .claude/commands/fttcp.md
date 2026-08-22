@@ -45,6 +45,28 @@ If the resolved run folder, its manifest.yaml, or its outputs/blocks/ is
 missing or empty, say so plainly and stop. That is a mechanical failure and
 the only kind that halts you.
 
+## PRECONDITIONS (check both before writing a word; STOP if either fails)
+
+Two gates guard the entry to deliberation. Check both after name
+resolution and before LOAD ORDER. If either fails, print exactly which
+part is missing and stop; do not draft.
+
+1. PRECONDITION — ROLE 5.5 TRACKER GATE: companies/<TICKER>.md or the
+   run's notion-payload must record downstream tracker rows written with
+   row-URL proof for this ticker. If no tracker rows with row-URL proof
+   are recorded, STOP and print what is missing. Tracker writes happen at
+   Role 5.5 in claude.ai; this gate confirms they happened, it does not
+   perform them.
+
+2. PRECONDITION — UNDERSTANDING GATE: companies/<TICKER>.md must record a
+   signed Mental Model Declaration and a Halt 1 decision of PROCEED, and
+   outputs/reports/09b-understanding-dossier.md must exist for this run. If
+   any is missing, STOP and print which. FTTCP Step 2 catalysts must be
+   consistent with the signed model's dominant variables; a catalyst
+   outside the declared variables requires an explicit note explaining why
+   the model did not anticipate it (which may itself trigger model
+   re-declaration).
+
 ## LOAD ORDER (read all of this before writing a word)
 
 Read, in this order:

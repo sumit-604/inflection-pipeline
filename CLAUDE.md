@@ -33,6 +33,8 @@ target, 3-5 year holds.
   BUSINESS UNDERSTANDING NARRATIVE (five questions, prose, before the
   verdict card). A verdict without understanding is a shallow summary;
   the operator reads the narrative first.
+- Never run /fttcp or any valuation on an unsigned Mental Model
+  Declaration or a Halt 1 decision other than PROCEED.
 
 ## DISPATCH (model per subagent, already set in .claude/agents frontmatter)
 - opus: stage 11 valuation, stage 13 synthesis, verifiers B and C
@@ -113,6 +115,43 @@ weigh, never anchored evidence.
                  forensic notes -> A4 analyst -> A5 adversary; enumeration
                  before interpretation; writes runs/<ticker>-<quarter>/work/;
                  needs the two Quarterly_*_Protocol files in frameworks/
+
+## PIPELINE SEQUENCE (operator-gated)
+/run-pipeline (evidence, stages 0-9 + verifiers + 09b dossier) -> HALT 1:
+operator reads the dossier, resolves corpus gaps, signs the Mental Model in
+claude.ai, decides KILL / SHALLOW / PROCEED -> claude.ai: live
+verification, verticals to depth, Role 5.5 tracker writes -> /fttcp
+(deliberation) -> Role 1 valuation -> /finalize. Understanding precedes
+deliberation. Deliberation precedes valuation. Nothing after Halt 1 runs on
+an unsigned model.
+
+## TEAM WORKFLOW — Claude Code and Claude web
+Claude Code reads the heavy corpus once (PDFs, ARs, transcripts) and holds
+the repo. It has NO live web access. Claude web (claude.ai) does live
+verification, cross-checks, tracker and Notion writes. It must NOT re-read
+corpus documents. It asks Claude Code via operator-ferried extraction
+prompts (quote-then-comment, NOT DISCLOSED allowed, filename+date
+verification mandatory). Filed documents beat inference. Every claim
+carries its evidence tier. The pipeline produces payloads. claude.ai
+executes writes. Each document is paid for once.
+
+## ARCHETYPE LIBRARY (mental model declarations draw from this; extend via operator ruling only)
+- Build-to-spec component maker: customer capex cycle, design-win pipeline,
+  content per unit, input-cost pass-through.
+- Commodity converter (Section 1B v3.7 Amendment 17 binds): spread (output
+  minus input price), utilisation, cycle position, cost-curve rank.
+- Brand/franchise consumer: volume growth, pricing power, distribution
+  reach, gross margin, advertising efficiency.
+- Order-book business (EPC/defence/capital goods): order inflow,
+  book-to-bill, execution pace, working capital, margin on backlog.
+- Outsourcing partner (CDMO/EMS/IT services): client concentration, wallet
+  share, capacity fill, contract stickiness, price per unit.
+- Licence/scarcity business: licence or quota validity, renewal risk,
+  regulated price, capacity cap, entry-barrier durability.
+- Lender (framework variant exists): AUM growth, NIM, asset quality
+  (GNPA and credit cost), RoA and RoE.
+- Platform/network: active users, take rate, unit economics per
+  transaction, network density, retention.
 
 ## OPERATOR VOICE (STE — all conversation, not only outputs)
 Every reply to the operator uses Simplified Technical English (ASD-STE100,

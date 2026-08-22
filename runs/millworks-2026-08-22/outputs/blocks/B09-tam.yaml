@@ -1,0 +1,41 @@
+stage: B09-tam
+company: "MILLWORKS"
+run_date: "2026-08-22"
+model: claude-sonnet-5
+status: partial
+input_gaps:
+  - "No disclosed India-specific market size for 'precision-machined components/subassemblies for defence, railways, semiconductor-equipment, aerospace' as a standalone category"
+  - "No current (<2yr) sourced outsourcing/component-value ratio for Defence, Railways, or Semiconductor-equipment; only a stale 2015-16 Defence-specific 37.4% ratio available, applied as cross-sector proxy"
+  - "No sourced capability/process-scope fit ratio for SAM narrowing; 50% used as explicit analyst judgment, not sourced"
+  - "Peer revenue aggregation incomplete: only 2 direct listed peers (Unimech Aerospace, Azad Engineering) quantified"
+  - "India aerospace-only (ex-defence) market size not separately disclosed; Aerospace stream (0.99%) excluded from TAM pools as immaterial"
+  - "SAM expansion levers (export growth, spring/adjacent diversification) not quantified"
+  - "imarcgroup.com blocked by egress proxy; precision-engineering market detail pages inaccessible via WebFetch"
+flags:
+  - "TAM conservative estimate relies on a STALE (2015-16) Defence-specific outsourcing ratio (37.4%) applied uniformly; treat Rs86,000cr as order-of-magnitude only"
+  - "Management's FY27 working-capital table implies revenue ~Rs346cr, exceeding even the 5-year capacity-bound SOM (Rs319cr); the Rs61.03cr IPO capex (+75.3% capacity) cannot physically support this in one year, and no POs for the capex machinery were placed as of the RHP date"
+  - "Cash conversion risk compounds the capacity gap: FY26 receivables at 178 days (93% of revenue); funding a Rs346cr run-rate needs far more working capital than the Rs81.5cr the IPO earmarks"
+  - "Single-customer concentration (Quick Pay 47.02%) means the 289x revenue-headroom figure is not diversified addressable demand"
+  - "Semiconductor-equipment market-size estimates diverge ~12x across sources; conservative (lowest) used"
+market_definition: "India outsourced precision-machined components, sheet-metal parts and sub-assemblies (BTP/BTS contract manufacturing) for Defence, Railways, Semiconductor-equipment and Aerospace OEMs"
+tam_cr: {conservative: 86000, realistic: 229900}
+sam_cr: 43000
+sam_pct_of_tam: 50.0
+som_3yr_cr: 261
+som_5yr_cr: 319
+som_implied_revenue_cagr: {yr3: 20.6, yr5: 16.5}
+current_sam_share_pct: 0.35
+revenue_headroom_x: 289.1
+tam_growth_pct: 12.3
+runway_class: "MASSIVE"
+mgmt_claim_cr: 346
+mgmt_claim_ratio: 1.33
+mgmt_claim_read: "inflated"
+capacity_check: "gap of Rs85cr vs 3yr SOM ceiling (mgmt FY27 implied Rs346cr vs capacity-bound SOM Rs261cr); mgmt plan exceeds even the 5yr SOM (Rs319cr)"
+methods_used: ["top-down (segment procurement/equipment-market pools)", "peer revenue aggregation (cross-check only)", "import substitution / government target (Defence)", "bottom-up capacity x realisation-rate (SOM only)"]
+stale_data_flags:
+  - {datapoint: "Defence outsourcing ratio 37.4% used as cross-sector TAM discount", source: "India Briefing / defence-MSME commentary citing 2015-16 DPP data", year: "2015-16"}
+searches_skipped:
+  - "WebFetch of imarcgroup.com India precision engineering / machine components market pages — blocked by egress proxy (EGRESS_BLOCKED), used WebSearch snippet only"
+demand_externally_verifiable: true
+analyst_note: "No explicit management TAM claim exists in the RHP, so mgmt_claim_cr substitutes the FY27 working-capital-implied revenue (~Rs346cr) per run instructions, cross-validated two ways (receivables and inventory holding-period math both give ~Rs346cr). mgmt_claim_ratio (1.33x vs 3yr SOM) reads 'reasonable' on the standard scale but is labelled inflated because it compares a 1-YEAR figure to a 3-YEAR SOM ceiling and still exceeds the 5yr SOM outright. Current SAM share (~0.35%) too low for the pp-gain convention, so SOM built bottom-up from disclosed machine-hours and realisation rate. Runway is genuinely large, but it is not the binding constraint; cash conversion and single-customer concentration are."

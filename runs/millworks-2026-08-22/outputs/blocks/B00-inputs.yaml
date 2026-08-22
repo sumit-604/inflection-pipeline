@@ -1,0 +1,46 @@
+stage: B00-inputs
+company: MILLWORKS
+run_date: 2026-08-22
+model: orchestrator
+status: complete
+run_type: full
+concalls_available: false
+no_concall_mode: true
+recently_listed: true
+listed_via: SME IPO RHP dated 2026-07-07
+sector_cap_row_manifest: "Pharma / CDMO"
+sector_cap_row_status: UNRESOLVED_WRONG_flag_phase3
+business_actual: "High-precision / critical components — Defence, Railways, Semiconductors, Aerospace"
+primary_filing: "inputs/_extracted/annual-report__RHP_Millworks-07.07.2026 (1).txt (RHP, 365pp, substitutes for AR)"
+peers:
+  - {code: "523606", name: "Sika Interplant Systems Ltd", concall: false, screener: true}
+  - {code: "544516", name: "Airfloa Rail Technology Ltd", concall: true, screener: true}
+  - {code: "APSISAERO", name: "Apsis Aero", concall: true, screener: true}
+  - {code: "UNIMECH", name: "Unimech Aerospace", concall: true, screener: true}
+inventory:
+  prospectus: {count: 0, note: "RHP misfiled in annual-report; treated present"}
+  annual_report: {count: 1, note: "file is the RHP, not a standalone AR"}
+  results: {count: 0}
+  rating: {count: 0}
+  concalls: {count: 0, declared_absent: true}
+  peer_concalls: {count: 7}
+  announcements: {count: 0}
+  shareholding: {count: 0}
+  research: {count: 0}
+  screening: {count: 30, note: "main P&L/BS/CF/Quarters empty; only Data_Sheet populated"}
+  presentation: {count: 1}
+  other: {count: 0}
+input_gaps:
+  - prospectus-misfiled-in-annual-report-RHP
+  - no-standalone-annual-report
+  - no-results-pdf
+  - no-rating
+  - no-announcements
+  - no-shareholding-pattern
+  - no-research
+  - main-screener-csv-empty-except-datasheet
+  - sector_cap_row-wrong-PharmaCDMO-UNRESOLVED
+  - no-concall-mode
+flags: []
+operator_ruling: "2026-08-22 operator answered Proceed now to empty-folder confirmation"
+analyst_note: "RHP is the foundational filing and substitutes for the AR everywhere; stages 2/3 build from it, not skipped. Just-listed SME micro-cap, revenue 1.77cr FY22 -> 148.77cr FY26 (screener Data_Sheet), net profit 0.33 -> 37.06cr. Sector row must be corrected before phase-3 valuation; Pharma/CDMO cap would be wrong for precision defence/aero components."

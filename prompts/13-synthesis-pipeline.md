@@ -26,7 +26,41 @@ deliverables in the operator's voice.
   evidence is genuinely that lopsided, and then say so.
 - Plain verbs. Short sentences where the content allows.
 
+<!-- BEGIN BUSINESS-UNDERSTANDING-NARRATIVE-SPEC v1 (identical copy in prompts/13-synthesis-pipeline.md and .claude/commands/finalize.md; keep the two in sync) -->
+## BUSINESS UNDERSTANDING NARRATIVE (mandatory; appears FIRST, before the verdict card)
+
+The final synthesis and the Notion payload MUST open with this section, placed before the
+verdict card in both. It is the understanding narrative (what is this business, why does it
+exist), distinct from the verdict narrative (what is it worth, should I buy).
+
+Write 12-18 sentences of flowing prose per NARRATIVE WRITING STYLE v1 (short sentences,
+active voice, no em-dashes, no AI-tell vocabulary, no bullets in this section). Source
+strictly from B03/B04/B06/B07/B09 (including the B09 SECTION 6 downstream candidates) - no new
+claims. The narrative MUST answer, in order:
+
+1. WHAT THE PRODUCTS ARE AND WHY THEY MATTER - what each material product or service
+   physically is and does, and why the customer cannot easily do without it. Per revenue
+   stream above ~10% of sales.
+2. WHO THE CUSTOMERS ARE - named classes or named companies, their buying behaviour
+   (qualification cycles, switching costs, concentration).
+3. WHY THERE IS DEMAND - the present demand driver, tied to the downstream candidates from
+   B09 SECTION 6 by name.
+4. WHY DEMAND SHOULD GROW - the forward drivers, each tied to an externally verifiable signal
+   where one exists.
+5. WHERE THE COMPETITIVE ADVANTAGE SITS - per business line, stating WHICH line has a moat and
+   which does not, referencing the B07 scan results (including Categories 21/22 where scored).
+   A line with no moat is said plainly.
+
+Rules: every claim traces to a stage block; downstream candidates are referenced by name so
+the narrative and the tracker rows share vocabulary; no valuation numbers, no verdict
+language, no price talk inside this section - understanding only. If a question cannot be
+answered from the blocks, write "the run did not establish this" rather than filling the gap.
+<!-- END BUSINESS-UNDERSTANDING-NARRATIVE-SPEC v1 -->
+
 ## DELIVERABLE 1: business-narrative.md
+
+The BUSINESS UNDERSTANDING NARRATIVE above is the first section of this file, before the
+headline. Then:
 
 Line 1: the ultra-short headline, 6 to 7 words, no punctuation tricks.
 Then 6 to 8 short paragraphs, one idea per sentence, one theme per
@@ -240,11 +274,13 @@ worklist the deliberation session uses to close its own gaps.
 ## NOTION SAVE PAYLOAD
 
 After the three files, emit a notion_save block the orchestrator uses
-per Notion_Save_Instructions: page title, the run summary (headline +
-verdict line + decision + entry range), the Drive folder link, and the
-explicit instruction set: fetch the live company page first if it
-exists; NEVER overwrite Decision Status from a pipeline run; append,
-do not replace.
+per Notion_Save_Instructions: page title, THEN the BUSINESS UNDERSTANDING
+NARRATIVE (the same section defined above, positioned before the verdict
+card in the saved page so the operator reads the understanding first), then
+the run summary (headline + verdict line + decision + entry range), the
+Drive folder link, and the explicit instruction set: fetch the live company
+page first if it exists; NEVER overwrite Decision Status from a pipeline
+run; append, do not replace.
 
 ## DOWNSTREAM SIGNAL TRACKER PAYLOAD (candidates for Role 5.5 verification)
 Target database: DOWNSTREAM SIGNAL TRACKER, data_source_id
@@ -264,10 +300,11 @@ after verification.
 
 ## OUTPUT ORDER
 
-business-narrative.md content, then fttcp-recommendation.md content,
-then verifier-summary.md content, then fttcp-handoff.md content, each
-preceded by a `=== FILE: <name> ===` divider line, then exactly this
-fenced YAML block:
+business-narrative.md content (which OPENS with the BUSINESS UNDERSTANDING
+NARRATIVE section, before its headline and before any verdict-card content),
+then fttcp-recommendation.md content, then verifier-summary.md content, then
+fttcp-handoff.md content, each preceded by a `=== FILE: <name> ===` divider
+line, then exactly this fenced YAML block:
 
 ```yaml
 stage: B13-synthesis

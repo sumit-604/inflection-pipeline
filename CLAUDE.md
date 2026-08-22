@@ -5,12 +5,15 @@ analysis. Operator: Keerti Kaushik. Strategy: transition alpha, 25% CAGR
 target, 3-5 year holds.
 
 ## NEVER
-- Never use any exit PE from outside Section 1B (v3.3 base + v3.5.1 + v3.6
-  amendment layers in frameworks/; v3.6 governs overlaps). It is
+- Never use any exit PE from outside Section 1B (v3.3 base + v3.5.1 +
+  v3.6 + v3.7 amendment layers in frameworks/; later layers govern
+  overlaps). It is
   the sole exit multiple authority. No round-number defaults, ever.
 - Never produce a Role 1 valuation without the Section 1A Method
   Suitability Matrix and method triangulation; the Section 1B destination
   PE governs the exit multiple, it does not replace method selection.
+- Never feed spot-year ROCE or rupee-denominated WC trends into Section
+  1B or FTTCP for a CONVERTER-classified name (v3.7 Amendment 17).
 - Never halt a run on company quality. Flags propagate; only mechanical
   failures halt. There is no STOP verdict; the verdict set is PROCEED /
   PROCEED WITH CAVEATS / PROCEED WITH FLAGS / REWORK / INSUFFICIENT
@@ -26,6 +29,10 @@ target, 3-5 year holds.
 - Never write X posts here. Publish candidates are flagged only.
 - Never let a maker verify its own work. Verifiers get fresh contexts
   and artifact paths only.
+- Never emit a final synthesis or Notion payload without the
+  BUSINESS UNDERSTANDING NARRATIVE (five questions, prose, before the
+  verdict card). A verdict without understanding is a shallow summary;
+  the operator reads the narrative first.
 
 ## DISPATCH (model per subagent, already set in .claude/agents frontmatter)
 - opus: stage 11 valuation, stage 13 synthesis, verifiers B and C
@@ -75,7 +82,7 @@ weigh, never anchored evidence.
 
 ## STRUCTURE
 - prompts/       stage instructions, single source of truth
-- frameworks/    Master v3.6, Section 1B layer set (v3.3/v3.5.1/v3.6),
+- frameworks/    Master v3.6, Section 1B layer set (v3.3/v3.5.1/v3.6/v3.7),
                  FTTCP v2.1, Quarterly v1.4, AR v1.3 (Keerti
                  maintains; stage 11 reads at run time; amendments here
                  propagate with zero pipeline edits), plus

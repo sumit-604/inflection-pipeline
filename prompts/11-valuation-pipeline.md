@@ -4,8 +4,9 @@
 # from project knowledge at run time: Master Project Prompt v3.6 (Role 1
 # sections), Section 1B v3.3 Amendments, Section 1B v3.5.1 Reconciliation
 # (Pillar 1 normalization authority, supersedes standalone Amendment 4.5),
-# Section 1B v3.6 Amendments (Damodaran integration; governs the items it
-# names where the layers overlap), FTTCP v2.1 Consolidated. The
+# Section 1B v3.6 Amendments (Damodaran integration), Section 1B v3.7
+# Amendments (commodity converter cycle integration; later layers govern
+# the items they name where the layers overlap), FTTCP v2.1 Consolidated. The
 # framework is deliberately NOT copied into this file, so that Keerti's
 # amendments propagate to the pipeline the moment the project files
 # change, with no pipeline edit. If the injected framework and anything
@@ -50,6 +51,8 @@ mode:
    no second method fits this business, stated in the matrix. The exit
    multiple is the framework's default PRIMARY, not the framework's only
    method.
+7. Converter classification (v3.7 Amendment 17.0) is stated before any
+   pillar math; 17.1-17.3 bind when CONVERTER.
 
 ## FRAMEWORK ELEMENTS THE WRAPPER ENFORCES (per the injected layers, non-negotiable)
 
@@ -129,7 +132,7 @@ status: complete
 input_gaps: []
 flags: []                      # FLAG-CASH carried forward with the
                                # multiplier actually applied
-framework_versions: "Master v3.6 / Section 1B v3.3+v3.5.1+v3.6 / FTTCP v2.1"
+framework_versions: "Master v3.6 / Section 1B v3.3+v3.5.1+v3.6+v3.7 / FTTCP v2.1"
 pe_basis: ""                   # forward | trailing (operator-approved at the FTTCP gate)
 exit_pe_base_approved: ""      # the operator-approved destination PE base carried from the deliberation
 destination_pe:
@@ -172,11 +175,13 @@ FRAMEWORK (verbatim from project knowledge):
 {{SECTION_1B_V33_AMENDMENTS}}
 {{SECTION_1B_V351_RECONCILIATION}}
 {{SECTION_1B_V36_AMENDMENTS}}
+{{SECTION_1B_V37_AMENDMENTS}}
 {{FTTCP_V21_CONSOLIDATED}}
 
-PRECEDENCE: where the Section 1B layers overlap, v3.6 governs the items it
-names (Damodaran integration, operator directive 13-Aug-2026), then v3.5.1
-(Pillar 1 normalization), then v3.3. FTTCP v2.1 ROCE forward verdict is sole
+PRECEDENCE: where the Section 1B layers overlap, v3.7 governs the items it
+names (commodity converter integration, operator directive 20-Aug-2026),
+then v3.6 (Damodaran integration, operator directive 13-Aug-2026), then
+v3.5.1 (Pillar 1 normalization), then v3.3. FTTCP v2.1 ROCE forward verdict is sole
 Pillar 1 authority. Within the v3.5.1 layer: its consolidated Amendment 9
 supersedes the standalone Amendment 4.5 (v3.5) that appears in the
 amendments file above; Amendment 4.5 is RETIRED as a number and survives

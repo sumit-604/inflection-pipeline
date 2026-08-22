@@ -1,5 +1,7 @@
 # SECTION 1B v3.6 AMENDMENTS — DAMODARAN INTEGRATION
 
+> **ACTIVE — not a superseded draft.** This file is the Damodaran amendment layer of Section 1B, the sole exit-multiple authority. It lives in frameworks/ as a runtime input to stage 11 (Amendments 11-16). The version number tags this amendment layer, not a competing copy of the Master Prompt; the "v3.6" here is independent of the Master Prompt v3.6. Do not archive or delete it. Read it on top of the v3.3 Amendments and the v3.5.1 Reconciliation; where they overlap, this layer governs the items it names. NOTE: stage 11 does not yet inject this file (see the pipeline-sync audit); wiring is a pending operator decision.
+
 *Version 3.6 | 13 August 2026 | Damodaran integration, operator directive 13-Aug-2026. This document layers on top of Section 1B v3.3 (Four-Pillar Framework), the v3.3 Amendments (1-8, 4.1-4.5), and the v3.5.1 Reconciliation (consolidated Amendment 9, Routes A and B). It does not modify any prior file in place. Where it supersedes an earlier amendment, it says so and the earlier text stays in its file for history, banner-marked. Stage 11 reads this alongside the earlier Section 1B files; where they overlap, v3.6 governs the items named here.*
 
 *Five of these amendments implement operator decision-gate outcomes confirmed on 13-Aug-2026 (Gates A, B, C, D, and the Module B2 default that lives in FTTCP v2.0). The rest implement the Damodaran exit-multiple integration directed for Role 1. Every change carries its tag inline.*

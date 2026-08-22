@@ -1,0 +1,36 @@
+stage: B03-ardeep
+company: "MILLWORKS"
+run_date: "2026-08-22"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "No standalone Annual Report exists; RHP substitutes, restating only 3 years (FY24-FY26), IGAAP basis (RECENTLY-LISTED degradation)"
+  - "No Key Audit Matters, CARO 2020 annexure, Section 143 fraud reporting, or IFC opinion exists in this filing type"
+  - "Non-audit auditor fee not separately disclosed; audit-vs-non-audit fee ratio cannot be computed"
+  - "Quick Pay-specific trade receivable balance not separately disclosed; link to FY26 receivables blowout inferred, not confirmed"
+  - "Board/committee meeting attendance % not disclosed (Board constituted Nov 2025, no prior-year data)"
+  - "CEO-to-median-employee compensation multiple not disclosed"
+flags:
+  - {type: FLAG-CASH, reason: "CFO negative in 2 of 3 restated years (-Rs1,076.29L FY26, -Rs291.89L FY25) against strongly positive PBT; CFO/PAT below 0.7x every year; receivables 93% of FY26 revenue with zero doubtful-debt provisioning, financed via payables stretching (Annexure III, RHP extracted p.199)"}
+  - {type: FLAG-PROMOTER-PRELIM, reason: "No pledge, no promoter selling (fresh issue only); but preferential-allotment pricing pattern and a non-promoter individual receiving the single largest bonus-share allotment (22,57,800 shares) warrants full verification (RHP p.72-76)"}
+  - {type: FLAG-GOVERNANCE, reason: "Entire Board, both Independent Directors and all 4 statutory committees constituted on a single date (Nov 22, 2025) ~7 months pre-RHP; MD sits on the Audit Committee; 4 of 6 directors are 2 married promoter couples (RHP p.169-176)"}
+  - {type: FLAG-RPT, reason: "Quick Pay (47.02% customer concentration, loan-converted equity investee, common shareholders, operationally captive) excluded from AS-18 scope (RHP p.24-25, 32-34); revolving loan account between Company and its own executive directors found this pass (RHP p.56-57)"}
+phase_verdicts: {p1: "Red Flag", p2: "Red Flag", p3: "Red Flag", p4: "Watch", p5: "Red Flag", p6: "Watch", p7_best_fit: "GARP / Capex-Led Growth - WATCHLIST, quality gate not yet cleared"}
+overall_quality: 3.3
+quality_components: {governance: 3, accounting: 3, balance_sheet: 4, earnings: 3}
+kill_switch_notes:
+  - "Phase 1: no KAM/CARO/fraud-reporting layer exists in this filing type; prioritize first post-listing statutory audit once available. Does not halt."
+  - "Phase 2: Quick Pay AS-18 scoping is the single most consequential judgment call, untested by any independent audit narrative in this document type. Does not halt."
+  - "Phase 3: FY26's 606% PAT growth is not a cash-generative signal; CFO negative same year. Does not halt."
+  - "Phase 5: governance apparatus unproven, not disqualifying; wants a full quarter of the Nov-2025 Board/Audit Committee operating. Does not halt."
+triple_pass_verification: {verified: 13, discrepancies: []}
+monitorables:
+  - {metric: "CFO/PAT ratio", threshold: "Flag if still <0.7x or CFO negative", where: "Q1 FY27 / first post-listing filing", why: "Direct test of whether cash-conversion eases post-IPO"}
+  - {metric: "Quick Pay concentration % and AS-18 treatment", threshold: "Flag any reclassification, or concentration staying >40%", where: "RPT note, first post-listing AR", why: "Tests whether the central structural risk resolves, persists, or is reclassified"}
+  - {metric: "Trade receivables >6-month ageing bucket", threshold: "Flag if exceeds 20.4% (FY26 level)", where: "Receivables ageing note", why: "Collection-reality test vs MD&A's DSO framing"}
+  - {metric: "MSME Sec 43B(h) disallowance and MSME interest", threshold: "Flag if growth continues at FY26 pace", where: "Tax computation / finance cost note", why: "Tests whether compliance-driven cash-tax cost is remediated"}
+  - {metric: "Bank drawing-power vs book stock/debtor discrepancy", threshold: "Flag any recurrence", where: "Bank facility correspondence / next filing", why: "Tests whether the 3-year clerical-error pattern is fixed"}
+  - {metric: "Machinery capex order placement and Unit-4 spring-line start", threshold: "Flag continued delay beyond FY27", where: "Objects of the Issue monitoring report", why: "Tests whether diversification strategy converts into revenue"}
+best_fit_strategy: "GARP - WATCHLIST (quality gate not yet cleared; Issue Price unset)"
+one_line_verdict: "Explosive, real revenue growth built on a single quasi-related customer and financed by payables, not cash."
+analyst_note: "The Quiet Abandonment finding is the new structural insight beyond confirming B02: the RHP's own Competitive Strengths section claims sector diversification as a moat in the same document whose sector tables show Defence/one-customer concentration rising sharply in FY26, unreconciled. With the DuPont finding that FY26 ROE is substantially payables-funded, the thesis-level read is a single-customer growth story wearing a diversified-manufacturer narrative. Quality/governance scores reflect control/disclosure-structure and freshness concerns documented in the filing itself, not fraud; no qualification exists anywhere in this document."

@@ -4,3 +4,6 @@ framework_git_commit: 33c18564dd6e6f56af22fd5fcd67d5e58694013c
 framework_tag: 33c1856
 framework_versions: "Master v3.5 / Section 1B v3.6 (Damodaran, Amendments 11-16) via v3.5.1 route rule / FTTCP v1.2"
 framework_versions_note: "This run was priced on the v3.6 Damodaran basis per operator directive during /fttcp review (13-Aug-2026 amendment set). The standalone-pipeline default is Master v3.3 / Section 1B v3.5.1 / FTTCP v1.2; the v3.6 exit-PE mechanics (Pillar 1 30x ceiling, RRM r-table single-credit fixes, complexity charge, growth fade horizon, Pillar 3 ROCE-crossover eligibility gate) governed the valuation. Recorded here as the exact rulebook state the exit multiple was priced under."
+post_hoc_addenda:
+  - "2026-08-21: Downstream Signal Candidates (stage 9 SECTION 6) + tracker payload added after sync to origin/main. Valuation verdict NOT re-run."
+  - "2026-08-22: BUSINESS UNDERSTANDING NARRATIVE addendum added (outputs/reports/13-business-narrative-addendum.md; appended to notion-payload.md before the verdict card) per the mandatory-section directive; sourced from committed B03/B04/B06/B07/B09 + the 21-Aug SECTION 6 addendum; understanding only, no new claims. Valuation verdict NOT re-run."

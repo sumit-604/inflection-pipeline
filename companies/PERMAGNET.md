@@ -73,6 +73,10 @@ yet falsifiable until identity discovered).
 - 2026-08-21: Branch synced to origin/main (SECTION 6 / Signal Gate / v3.x downstream wiring).
   Downstream Signal Candidates addendum added; valuation verdict (PROCEED WITH FLAGS / AVOID,
   SOTP fair value Rs 330-404, Hurdle STOP) NOT re-run and unchanged.
+- 2026-08-22: BUSINESS UNDERSTANDING NARRATIVE addendum added (per the new mandatory-section
+  directive) at outputs/reports/13-business-narrative-addendum.md and prepended to
+  notion-payload.md before the verdict card. Understanding only, sourced from committed
+  B03/B04/B06/B07/B09 + the SECTION 6 addendum; no new claims; verdict NOT re-run.
 
 ## RUN FOLDERS
 - runs/permagnet-2026-08-19/  (first workup; NO-CONCALL MODE; PROCEED WITH FLAGS / AVOID)

@@ -1,0 +1,13 @@
+stage: B12a
+company: "MILLWORKS"
+run_date: "2026-08-22"
+model: claude-haiku-4-5
+status: complete
+numbers_checked: 64
+findings:
+  - {severity: "MINOR", location: "B03, Phase 2D (Receivables section)", claimed: "DSO ~340 days and narrative DSO 178 days", source_truth: "RHP Annexure XXXVI ageing table implies DSO ~340 days; RHP MD&A narrative (p.209) states 178 days; both present in RHP, no reconciliation within RHP", note: "Internal RHP inconsistency. B03 correctly flags this as a disclosure-quality gap; not a report error.", source_fidelity: true}
+critical_count: 0
+major_count: 0
+minor_count: 1
+acceptance_rate: 98
+coverage_note: "Verified 62 numbers clean against RHP: all 6 ROCE/ROE, all 9 CFO/PAT/capex/WC base figures, all 4 CAGR gates, 4 balance-sheet ratios, 4 promoter figures, 10 of 15 B02 Top findings (Quick Pay 47.02%/6992.76L/575.06L, receivables 13868.68L, FX gain 441L, goodwill 613.14L, etc.), Phase 3 derivations correct. Web-sourced B08/B09 market data outside scope. ~97% coverage of material claims. Zero source-fidelity issue blocks any verdict input."

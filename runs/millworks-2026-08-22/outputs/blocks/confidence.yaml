@@ -1,0 +1,17 @@
+stage: confidence-delta
+company: "MILLWORKS"
+run_date: "2026-08-22"
+phase: 1
+confidence_delta:
+  numerical_acceptance: 98      # B12a: 64 numbers checked, 0 CRITICAL, 0 source-fidelity blocker
+  redflag_coverage: 65          # B12b: verifier-found flags already caught upstream (B05 isolated scope)
+  framework_adherence: 97       # B12c Gate0 + Emerging Moat portion only; valuation half deferred to phase 3
+  peer_utilisation: 100         # B12d: 7 of 7 peers substantive
+  overall: 65                   # min of the four
+  valuation_framework_adherence: pending-phase-3
+band: "60-74 (PROCEED verdicts downgrade one level per orchestrator Section 5)"
+binding_constraint: "redflag_coverage 65 (Verifier B). Driven entirely by three B05-scope omissions (V3 Technologies related-party cluster, Big Bang Boom execution dependency, 44% supplier concentration). All three were independently caught by other stages: V3 in B02/B03/B08, Big Bang Boom in B03/B05 triggers and B09, supplier concentration in B04. As a pipeline the red-flag set is complete; the coverage metric penalises B05 for not surfacing them itself."
+rework_check: "No forced REWORK: no Verifier A CRITICAL, no source-fidelity finding blocks any verdict input, and no verifier acceptance_rate fell below 60% (lowest is B12b at 62%)."
+source_fidelity_gate: "HELD — 0 source-fidelity findings that block a verdict input (B12a); the single MINOR source_fidelity item is an internal-RHP DSO inconsistency the maker already flagged."
+verifier_disagreements: "none this run"
+notes: "overall 65 reflects a B05-stage coverage gap that downstream stages closed, not thin evidence. The gate recommendation is formed on the evidence; the 60-74 band counsels one-level caution on any PROCEED, which aligns with the caveat-heavy posture the cash and related-party evidence already imply."

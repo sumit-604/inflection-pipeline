@@ -1,0 +1,26 @@
+stage: B12d
+company: "MILLWORKS"
+run_date: "2026-08-22"
+model: claude-sonnet-5
+status: complete
+peers_audited: 7
+substantive_confirmed: 7
+substantive_unsupported: []
+peer_utilisation: 100
+claims_all_addressed: true
+verdict_discipline_fails: []
+unused_but_relevant:
+  - {peer: "AIRFLOA (544516) Jun 2026", missed_item: "Rs1000cr revenue-milestone timeline slippage flagged by management (own guidance walkback, not mapped to any injected Millworks claim)", anchor: "Airfloa 544516 Jun 2026, internal p.3-4"}
+findings:
+  - {severity: "MAJOR", location: "B06 Part 2B / Q2, citation 'Airfloa Jun 2026 p.12-13'", description: "The aluminium +80% / steel +60-65% / 'because of the war' quote is genuine but is on internal doc page 9 (extraction p.10), not the cited p.12-13. Anchor-offset only; quote exists and supports the point."}
+  - {severity: "MINOR", location: "B06 Q3/Q4, 'Unimech Feb 2026 p.11 / p.10-11'", description: "Unimech domestic-defence 'not present, continuing to explore' and MTAR/competitor exchange are on internal p.10, not p.11."}
+  - {severity: "MINOR", location: "B06 Q3, 'Unimech Jun 2026 p.7' WC days ~120-125", description: "The 120-125 days figure is on internal p.6, one earlier; adjacent ~50% utilization on p.7 is correct."}
+  - {severity: "MINOR", location: "B06 Q2/2E, 'Apsis Jun 2026 p.4'", description: "45-day collection / 18.38%->13.14% receivables and 52%->35% concentration are on internal p.5, not p.4."}
+  - {severity: "MINOR", location: "B06 Q1, 'Apsis Jun 2026 p.5' Atmanirbhar quote", description: "Quote is on internal p.3, two earlier than cited."}
+  - {severity: "MINOR", location: "B06 Part 2E, 'Airfloa Jun 2026 p.20 / p.11'", description: "China machinery-delay on internal p.19 not 20; 8.25% rate on p.10 not 11; paired Rs120cr debt figure on p.8 correct."}
+  - {severity: "MINOR", location: "B06 Q4, 'Airfloa Nov 2025 p.4-5' drone/laser", description: "Big Bang Boom JV + Rs65cr order on p.3-4 correct; the specific drone/anti-drone/laser characterization is on internal p.8."}
+critical_count: 0
+major_count: 1
+minor_count: 6
+acceptance_rate: 100
+orchestrator_note: "All 7 peers correctly classified SUBSTANTIVE with genuine verifiable evidence; no fabrication, no misclassification, no verdict-discipline failure. The MAJOR and MINOR findings are peer-transcript anchor-page offsets (quotes real, cited pages off by a few); source-fidelity on numbers is Verifier A's authority (98%, clean). Peer utilisation 100%."

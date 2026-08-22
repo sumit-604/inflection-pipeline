@@ -1,0 +1,58 @@
+stage: B02-notes
+company: "MILLWORKS"
+run_date: "2026-08-22"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Standalone AR not available; RHP restates only 3 years (FY24-FY26), IGAAP not Ind AS"
+  - "Quick Pay Private Limited ownership % not disclosed in notes"
+  - "Interest rate/tenor of pre-conversion unsecured loans (Quick Pay Rs575.06L; Mudbidri/Bhandari Rs293.5L) not disclosed"
+  - "Nature/customer of new Rs2,300.00L FY2026 services revenue line not detailed"
+  - "Quick Pay-specific trade receivable balance not separately disclosed"
+  - "PPE/intangible capitalisation threshold and component-level useful-life table not disclosed"
+  - "Impairment growth/discount-rate assumptions not disclosed (not required under IGAAP)"
+  - "Counterparty name for Rs131.69L/Rs40.07L inter-corporate deposits not disclosed"
+flags:
+  - {type: FLAG-CASH, reason: "Trade receivables grew 20x in FY2026 to 93% of revenue (DSO ~340 days), zero doubtful-debt provision, CFO -Rs10.76cr vs PBT +Rs50.23cr (Annexure XX/III, p.212/p.199)"}
+  - {type: FLAG-RPT, reason: "Quick Pay Private Limited (47.02% customer concentration, equity investee funded by loan conversion, common shareholders) excluded from AS-18 related-party scope (Risk Factors p.25/p.32-34; Annexure XV p.211)"}
+  - {type: FLAG-RESTATEMENT, reason: "13 P&L line items restated; net worth cut -21.4% FY24 / -3.3% FY25, incl. rent/salary wrongly capitalised to CWIP (Annexure IV Notes 3-4, p.206-207)"}
+  - {type: FLAG-COMPLIANCE, reason: "Recurring delays across five domains (GST, EPF, ESIC, MSME payments, bank drawing-power reporting), worsening not improving into RHP filing window (Risk Factor #14 p.32-36; Annexure XLIX(vii) p.233)"}
+accounting_quality: 3
+pass_2_empty: false
+pass_3_empty: false
+top_findings:
+  - {rank: 1, finding: "Quick Pay Pvt Ltd 47.02% customer concentration, Rs575.06L equity from converted loan, common shareholders, captive drone-component supply, excluded from AS-18 related-party scope", note_ref: "Risk Factors p.25/p.32-34; Annexure XV p.211/F20", rating: "RED"}
+  - {rank: 2, finding: "Trade receivables 20x growth to Rs13,868.68L (93% of FY26 revenue), DSO ~340 days, zero doubtful-debt provision, CFO -Rs1,076.29L vs PBT +Rs5,022.97L", note_ref: "Annexure XX/XXXVI p.212/224; Annexure III p.199", rating: "RED"}
+  - {rank: 3, finding: "Restatement cuts net worth -21.4% FY24 / -3.3% FY25 across 13 P&L line items incl. rent/salary wrongly capitalised to CWIP", note_ref: "Annexure IV Notes 3-4, p.206-207/F14-F16", rating: "RED"}
+  - {rank: 4, finding: "Recurring multi-year multi-lender bank drawing-power stock/book-debt discrepancies, up to Rs558.60L variance, attributed to generic clerical error", note_ref: "Annexure XLIX(vii), p.233/F42", rating: "RED"}
+  - {rank: 5, finding: "Statutory filing delays across GST, EPF, ESIC recur nearly the company's full history, worsening into the RHP filing window", note_ref: "Risk Factor #14, RHP p.32-36", rating: "RED"}
+  - {rank: 6, finding: "V3 Technologies circularity: Rs490-556L advances outstanding (5.9% of net worth); Rs707.74L PPE purchase settled via non-cash equity issuance to the four promoters, not flagged as equity-settlement in AS-18 note", note_ref: "Annexure XXXVIII p.226-227; RHP p.72-73", rating: "RED"}
+  - {rank: 7, finding: "MSME payment delays worsening: interest up ~9x YoY to Rs68.94L; Rs1,009.68L Sec 43B(h) disallowance FY26 (10x FY25)", note_ref: "Annexure XXX/XLI/XLIX, p.218/229-230/232", rating: "RED"}
+  - {rank: 8, finding: "Section 185 Companies Act violation: loans to related parties FY24/FY25, repaid, compounding application pending", note_ref: "Annexure XXXVIII footnote p.227; Auditor Examination Report para 8(iv) p.193", rating: "RED"}
+  - {rank: 9, finding: "45.8% of FY26 finance cost (Rs155.61L of Rs340.06L) is self-inflicted late-payment interest on own tax and MSME dues, not cost of capital", note_ref: "Annexure XXX, p.218/F27", rating: "RED"}
+  - {rank: 10, finding: "Rs441.00L unrealised FX translation gain = 95.3% of Other Income, self-labelled not related to business activity; no formal hedging policy despite 27.5% export revenue", note_ref: "Annexure XXV/XXXVII p.216/225; RHP p.39", rating: "RED"}
+  - {rank: 11, finding: "Goodwill-heavy slump-sale acquisition: 68% of Rs900.00L price is goodwill (Rs613.14L), 77% of consideration (Rs693.95L) still unpaid at FY26-end", note_ref: "Capitalisation Statement p.235/F44; Annexure XIV p.214/F23", rating: "WATCH"}
+  - {rank: 12, finding: "Structural tax-rate step-up: loss of Sec 115BAB concessional rate (~17.16%) to Sec 115BAA (~25.17%) due to used-machinery purchase", note_ref: "Annexure XLI, p.230/F39", rating: "WATCH"}
+  - {rank: 13, finding: "Sundry Balances Written Off jumped ~10.5x YoY to Rs69.60L FY26, no breakdown disclosed", note_ref: "Annexure XXXII, p.218-219/F27", rating: "WATCH"}
+  - {rank: 14, finding: "Second loan-to-equity conversion (1,544 shares, Rs293.5L) to two non-promoter individuals, one a top-10 pre-IPO shareholder", note_ref: "Capital Structure ch., RHP p.73/p.75", rating: "WATCH"}
+  - {rank: 15, finding: "Boilerplate no-loan-conversion statement narrowly scoped, does not surface the two equity conversions without cross-referencing", note_ref: "RHP p.161/F168", rating: "WATCH"}
+red_flags:
+  - "Quick Pay Pvt Ltd (47.02% customer, Rs575.06L equity investee, common shareholders, operationally captive) excluded from AS-18 related-party scope"
+  - "Trade receivables 20x growth to 93% of FY26 revenue, DSO ~340 days, zero doubtful-debt provision throughout"
+  - "13-line-item restatement cutting net worth -21.4% FY24 / -3.3% FY25, incl. rent/salary wrongly capitalised to CWIP"
+  - "Recurring multi-year multi-lender bank drawing-power discrepancies attributed to generic clerical error"
+  - "V3 Technologies PPE purchase settled via non-cash dilutive equity issuance to promoters, not flagged as such in the RPT note"
+  - "Section 185 Companies Act violation confirmed by statutory auditor"
+  - "Recurring compliance delays across five domains (GST, EPF, ESIC, MSME, bank DP reporting), worsening not improving"
+  - "45.8% of FY26 finance cost is self-inflicted late-payment interest on own tax and MSME dues"
+  - "Rs441.00L unrealised FX translation gain = 95.3% of Other Income, no formal hedging policy"
+  - "MSME Sec 43B(h) disallowance Rs1,009.68L FY26, a 10x jump, company admits incomplete MSME creditor classification"
+questions_for_mgmt:
+  - "Why is Quick Pay Private Limited not treated as an AS-18 related party given common shareholders, a loan-converted equity investment, 47.02% revenue concentration, and company personnel working at Quick Pay's facility?"
+  - "What is the commercial rationale, interest rate and repayment schedule for the Rs490.00L advance outstanding to V3 Technologies at FY2026-end, and does it relate to the promoter-owned Peenya land purchase?"
+  - "What remediation has reduced the recurring bank drawing-power discrepancies and worsening EPF/ESIC filing delays, given the pattern persists into the months before the RHP?"
+  - "What is the nature, customer and collectability status of the new Rs2,300.00L FY2026 domestic services revenue line, and how much of the Rs13,868.68L FY2026 receivables relates to Quick Pay specifically?"
+  - "What were the interest rate, tenor and origination date of the unsecured loans converted to equity for Quick Pay (Rs575.06L) and for Mudbidri/Bhandari (Rs293.5L) before conversion?"
+receivables_trend: "deteriorating - total receivables Rs188.22L (FY24) to Rs680.65L (FY25) to Rs13,868.68L (FY26); >6-month bucket 0.5% (FY24) to 6.3% (FY25) to 20.4% (FY26) of total; DSO ~73 days (FY24) to ~112 days (FY25) to ~340 days (FY26); zero doubtful-debt provision all three years"
+going_concern_language: "NONE - no going-concern qualification or material-uncertainty language found in the auditor Examination Report or restated statements"
+analyst_note: "The single most consequential finding across all three passes is Quick Pay: a 47% customer, funded partly by the company's own converted loan, operationally captive (company staff work at Quick Pay's site, materials ship supplier-to-customer directly), yet outside AS-18 scope. This almost certainly explains most of the FY26 receivables and cash-flow anomalies, but the notes never state the Quick Pay-specific receivable balance, so that link is inferred, not confirmed. Treat accounting_quality 3/10 as reflecting control and disclosure-structure weaknesses documented in the notes themselves, not an assertion of fraud; no auditor qualification exists on any of these items."

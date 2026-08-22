@@ -23,6 +23,10 @@ target, 3-5 year holds.
 - Never write X posts here. Publish candidates are flagged only.
 - Never let a maker verify its own work. Verifiers get fresh contexts
   and artifact paths only.
+- Never emit a final synthesis or Notion payload without the
+  BUSINESS UNDERSTANDING NARRATIVE (five questions, prose, before the
+  verdict card). A verdict without understanding is a shallow summary;
+  the operator reads the narrative first.
 
 ## DISPATCH (model per subagent, already set in .claude/agents frontmatter)
 - opus: stage 11 valuation, stage 13 synthesis, verifiers B and C

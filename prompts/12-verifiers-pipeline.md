@@ -190,6 +190,18 @@ RULES:
    relies on company-reported numbers only."). Stage 11 catalysts each
    cite a candidate or carry the MODERATE cap. Missing block = REWORK
    for stage 9.
+7. Business Understanding Narrative: the final synthesis (stage 13)
+   contains a BUSINESS UNDERSTANDING NARRATIVE before the verdict card,
+   answering all five mandated questions (products and why they matter;
+   customers; why there is demand; why demand should grow; where the
+   competitive advantage sits per line), in prose (no bullets or tables
+   inside the section), with at least three B09 SECTION 6 downstream
+   candidates referenced by name (or, if B09 found demand not externally
+   verifiable, the exact "DEMAND IS NOT EXTERNALLY VERIFIABLE" sentence
+   quoted), and zero valuation/price/verdict vocabulary inside the
+   section. Missing section, any missing question, a bullet-formatted
+   section, or valuation/price/verdict language inside it = REWORK for
+   stage 13.
 
 OUTPUT: per-framework compliance tables with rule-by-rule PASS/FAIL and
 the recomputed value beside any FAIL; then:
@@ -203,6 +215,7 @@ status: complete
 gate0: {rules_checked: 0, fails: []}
 emoat: {rules_checked: 0, fails: []}
 valuation: {rules_checked: 0, fails: []}
+business_understanding_narrative: {present: false, five_questions_answered: false, prose_only: false, section6_candidates_named: 0, valuation_vocab_leak: false, fails: []}  # rule 7; any fail = REWORK stage 13
 recomputed_destination_pe: ""  # blank if concur; else both values
 recomputed_decision: ""        # blank if concur
 findings: []

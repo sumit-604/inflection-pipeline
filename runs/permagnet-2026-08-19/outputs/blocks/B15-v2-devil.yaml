@@ -1,0 +1,41 @@
+# B15 v2 DEVIL'S ADVOCATE — versioned re-run on the Reading-2 stack.
+# Does NOT touch outputs/blocks/B15-devil.yaml (the 19-Aug record).
+stage: B15-devil
+version: v2
+company: "PERMAGNET"
+run_date: "2026-08-23"
+model: claude-opus-4-8
+status: complete
+dimensions:
+  growth_triggers: "weakened"
+  moat_durability: "weakened"
+  management_trust: "weakened"
+  valuation_safety: "survives"
+overall: "SURVIVES"
+top_counters:
+  - "Full-plan slice is ~40% of RRM fair value (Rs 283/sh) on a 12%-prob, pre-revenue, 13-18x-revenue-plan bet whose modal value is zero; zero it and fair value is Rs 421 RRM / Rs 508 additive (vs CMP 882 = 43-48% overvalued on the modal path)."
+  - "Dilution: netting Rs 650 Cr while holding share count constant double-counts; an equity raise near mcap doubles shares (+86% at CMP, +151% at Rs 500), cutting the existing-holder full-plan slice from Rs 283 to Rs 130-176; the upside and its funding are the same event."
+  - "One-year slip is the BASE CASE (3 timeline misses); slipping all option slices one year drops fair value ~Rs 47/sh (additive 791->743, RRM 704->657) and the 3-yr target with it - and slippage should cut probability too (relay 45%->35% -> slice Rs 40->27/sh), not just PV."
+  - "Static option probabilities against a 3-miss management is the largest unpriced downside; the valuation slips only the clock, never the odds."
+  - "Core 16.5% ROCE / 45.9% GM is a favourable-input, one-time-in-housing snapshot with NO pass-through clause; at mid-cycle inputs the 'clears CoC on both ends' floor drifts toward the CoC (Rs 421 core floor is soft)."
+  - "Converter margin: NdFeB 10% is a pre-revenue assumption for a China-92%-share commodity with 5-6 competitors and no cost-curve edge; NdPr 5-yr spread NOT FOUND; at 5% both slices halve and RRM base FV -> ~Rs 540."
+  - "'Free options' are 51% of RRM base fair value (Rs 357/sh) priced at generous probabilities and margins - internally inconsistent with calling the base an earning-core floor."
+  - "Moat circles a shrinking pond (Itron -9% cc, book-to-bill 0.81; Landis+Gyr exits EMEA) with rising concentration (top-5 44%); the qualification lock-in is a decaying asset."
+  - "Insider/auditor signals all point more cautious than price: going-concern EoM, undisclosed same-sector MD entity, irreconcilable MD pay in one AR, management refusing to buy relay equipment until orders exist."
+verdict_note: "The AVOID SURVIVES and hardens under attack. What is weakened is the residual optimism inside it: honest RRM fair value is ~Rs 421-597 (not 704-791), the options are worth less than carried and dilutive to capture, and the entry zone Rs 252-361 should be recomputed to the ex-full-plan ~Rs 216 / MoS ~Rs 151 as the PRIMARY zone. No finding rescues a buy; all deepen the AVOID and lower the entry."
+one_year_slip:
+  method: "each option slice x 1/1.15 = 0.8696 per year of slip at approved r=15%"
+  relay_additive: {base_sh: 40.47, slip_sh: 35.19, drop_sh: 5.28}
+  relay_rrm: {base_sh: 33.24, slip_sh: 28.91, drop_sh: 4.33}
+  ndfeb_modest_both: {base_sh: 41.30, slip_sh: 35.91, drop_sh: 5.39}
+  ndfeb_full_both: {base_sh: 282.77, slip_sh: 245.92, drop_sh: 36.85}
+  all_slip_fair_value: {additive: {base: 791, slipped: 743}, rrm: {base: 704, slipped: 657}}
+  all_slip_3yr_target: {additive: {base: 890, slipped: 842}, rrm: {base: 785, slipped: 738}}
+full_plan_zeroed: {rrm: 421, additive: 508}
+dilution_overlay:
+  full_plan_slice_model_sh: 283
+  raise_at_cmp_882: {new_shares_cr: 0.737, total_cr: 1.597, existing_pct: 53.8, full_plan_sh: 176, rrm_fv: 597, additive_fv: 684}
+  raise_at_500: {new_shares_cr: 1.30, total_cr: 2.16, existing_pct: 39.8, full_plan_sh: 130, rrm_fv: 551, additive_fv: 638}
+converter_note: "NdFeB 10% margin is a pre-revenue assumption, not observed; 5-yr median input-price spread NOT FOUND (no NdPr series in corpus); at 5% margin both slices halve, RRM base FV ~Rs 540."
+conviction_test: "NO to 3x - no position at CMP; DA finding is that entry zone Rs 252-361 is itself inflated by the Rs 283/sh full-plan slice and should be recomputed to ex-full-plan ~Rs 216 / MoS ~Rs 151 before any Small entry."
+framework_versions: "Master v3.6 Role 3 / Section 1B v3.3+v3.5.1+v3.6+v3.7 / FTTCP v2.1"

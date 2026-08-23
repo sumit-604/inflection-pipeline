@@ -1,0 +1,34 @@
+# CONFIDENCE DELTA v2 — Reading-2 re-run four-component record.
+# Does NOT touch outputs/blocks/confidence.yaml (the 19-Aug record).
+stage: confidence-delta
+version: v2
+company: "PERMAGNET"
+run_date: "2026-08-19"
+recompute_date: "2026-08-23"
+supersedes: "outputs/blocks/confidence.yaml on the framework_adherence component only (v2 valuation adherence, B12c-v2)"
+confidence_delta:
+  numerical_acceptance: 100     # B12a: 101 figures checked, 0 findings, source-fidelity gate PASS (unchanged from 19-Aug)
+  redflag_coverage: 57          # B12b: 4 of 7 verifier-found flags caught by B05 (unchanged; coverage metric, not accuracy)
+  framework_adherence: 96       # v2: B12c-v2 valuation adherence 24 rules, 0 CRITICAL / 0 MAJOR / 1 MINOR (96%), combined with phase-1 gate0+EM 97%
+  peer_utilisation: 100         # B12d: 12 of 12 provided peers used substantively (unchanged from 19-Aug)
+  overall: 57                   # min of the four (redflag-coverage-bound)
+phase3_v2_valuation_adherence:
+  block: "B12c-v2-valuation.yaml"
+  rules_checked: 24             # 18 valuation + 6 role2
+  critical: 0
+  major: 0
+  minor: 1                      # R4 upside/downside uses additive BULL not base; more generous than spec, no decision impact
+  acceptance_rate: 96
+  destination_pe_applied_faithfully: true   # additive 19.6x / RRM 16.1x / NdFeB converter 13.5x concur
+  silent_rederivation_detected: false
+  outside_exit_pe_introduced: false
+  decision_concur: "AVOID (on-valuation)"
+rework_gate_adjudication:
+  triggered_by: "redflag_coverage 57% (<60) AND overall 57% (<60)"
+  verifier_a_critical: false
+  status: "ADJUDICATED (phase 1) and NOT escalated; nothing in the v2 re-run changes it"
+  context_for_synthesis:
+    - "The 57% is a COVERAGE metric, not accuracy. Verifier B found ZERO unsupported/fabricated B05 flags and 5/5 promise-delivery spot-checks confirmed."
+    - "The single MAJOR miss driving 57% (2015 Bombay HC winding-up order) is fully present in B02, B03, B08; verifier independence means B12b saw only B05."
+    - "Numerical 100% (source-fidelity PASS), framework 96% (v2 valuation 96%, 0 CRITICAL/MAJOR), peer_utilisation 100%."
+  orchestrator_read: "Mechanically overall = 57 (redflag-coverage-bound). Substantively trustworthy: numbers 100% clean, v2 valuation adherence clean, peers 100%, the driving omission fully in the evidence base. Gate stays PROCEED WITH FLAGS on evidence; AVOID is the separate v2 valuation decision on the Reading-2 base."

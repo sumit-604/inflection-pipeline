@@ -66,6 +66,8 @@ Do not upgrade a stage's model without editing its agent file.
 - Any session that commits a framework or prompt amendment must end by
   opening a PR to main the same day. Run outputs and framework amendments
   go in SEPARATE commits so recovery stays surgical.
+- Framework/prompt amendments and run outputs travel on SEPARATE branches
+  and PRs; an amendment never rides a run PR.
 
 ## MEMORY
 /run-pipeline, /fttcp, /finalize, and /compost sessions read the ACTIVE

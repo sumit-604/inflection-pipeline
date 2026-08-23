@@ -67,6 +67,14 @@ part is missing and stop; do not draft.
    the model did not anticipate it (which may itself trigger model
    re-declaration).
 
+HANDOVER INPUT: if inputs/research/web-handover-dossier.md exists in the
+run folder, read it in full before Step 0. It carries the claude.ai live-
+verification layer: signed mental model, vertical findings with evidence
+tiers, corrections superseding corpus-derived views (honor explicit
+supersessions, e.g. a corrected cash-conversion series), the promise
+ledger, and tracker row proof. Its absence for a run that PASSED the
+Understanding Gate = STOP and ask the operator.
+
 ## LOAD ORDER (read all of this before writing a word)
 
 Read, in this order:

@@ -22,6 +22,8 @@ Rs 230-314 (devil-corrected). MoS Rs 118. Zone MARKET-UNLIKELY (entry top 72.7% 
 
 
 
+&#x20;   2026-08-23: Role 5.5 tracker writes CONFIRMED executed 22-Aug-2026 in claude.ai: 12 signal rows (superset of the run's 6 candidates, expanded by the six-vertical deep dive) live in DOWNSTREAM SIGNAL TRACKER data_source 926b65ce-ddd2-4d8b-8eae-05e66b6f6c9f, all linked to the PERMAGNET page. Proof anchors: tracker https://app.notion.com/p/ea5f02670d114b2abd7b74f88bb33061 ; company page (rows visible via relation) https://app.notion.com/p/3c4bb2b9d3ab81adbb48f6a71f0c4561 . Row inventory with tiers/cadences/falsifiers: Section 5 of the handover dossier at inputs/research/web-handover-dossier.md.
+
 &#x20;   2026-08-23: Halt 1 decision: PROCEED (retroactive: pilot run predates the gate; dossier artifacts exist post-hoc). Understanding Gate cleared for /fttcp.
 
 &#x20;   2026-08-22: Mental Model signed (operator). Split archetype: build-to-spec component maker (mature lines) + lottery-ticket optionality (relay, NdFeB). Dossier: runs/permagnet-2026-08-19/inputs/research/web-handover-dossier.md.

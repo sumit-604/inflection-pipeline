@@ -166,17 +166,48 @@ handoff schemas, flag rules, and error handling. Then:
        and the Gate 0 + EM portion of C), sorted by severity, each finding
        with a location anchor, headed by the phase-1 confidence delta.
 
+6b. HALT 1 DOSSIER (stage 09b). RUNS LAST, after the verifiers and the
+   synthesis-lite, before the halt. Invoke stage-09b-dossier per
+   prompts/09b-halt1-dossier.md. Pass it ONLY the committed blocks (B00
+   through B09 plus the verifier blocks B12a, B12b, B12c-partial, B12d) and
+   the stage reports for quote retrieval, and the output path
+   outputs/reports/09b-understanding-dossier.md. It assembles from
+   committed evidence only: no new research, no web claims, no valuation
+   numbers. It writes the five-section understanding dossier (corpus audit,
+   mental model declaration draft, business narrative, downstream dossier
+   with fragility read, 14-15 point plain-language summary) and emits the
+   B09b YAML block. Collect B09b into outputs/blocks/. Nothing in this
+   stage or here may mark the Mental Model Declaration signed.
+
+   MECHANICAL DOSSIER CHECK (before the HALT 1 message prints): grep
+   outputs/reports/09b-understanding-dossier.md for the five section
+   headers (SECTION 1 through SECTION 5, in order), exactly one corpus
+   verdict line (CORPUS CURRENT or CORPUS GAPPED), and the
+   "DRAFT - PENDING OPERATOR SIGN-OFF" marker in Section 2. On any miss,
+   re-run stage 09b once. If it is still malformed after the re-run, STOP
+   and report which check failed. The HALT 1 message never prints over a
+   malformed dossier.
+
 7. COMMIT all outputs with message "phase 1 (evidence): <ticker> <date>"
-   and report to the user: the gate recommendation verdict line, flags
-   active, phase-1 confidence delta overall, and the three final file
-   paths.
+   and report to the user: the corpus verdict and fragility verdict from
+   the dossier, the gate recommendation verdict line, flags active,
+   phase-1 confidence delta overall, and the final file paths including
+   outputs/reports/09b-understanding-dossier.md.
 
    PRINT FINALS IN CHAT: after writing the final files and committing,
    always print the primary human-readable documents in full in the chat,
-   in this order: business-narrative.md, then gate-recommendation.md. Then
-   tell the operator exactly:
+   in this order: 09b-understanding-dossier.md, then business-narrative.md,
+   then gate-recommendation.md. Then tell the operator exactly:
 
-   "Phase 1 complete. Next: /fttcp runs/<folder> for deliberation."
+   "HALT 1 — UNDERSTANDING GATE. The dossier is at
+   outputs/reports/09b-understanding-dossier.md. Operator decisions
+   required before anything further runs: (1) resolve corpus gaps or
+   accept CORPUS CURRENT; (2) take the Mental Model Declaration to
+   claude.ai for live stress-testing and sign-off; (3) decide KILL /
+   SHALLOW WATCH / PROCEED. On PROCEED: live verification + Role 5.5
+   tracker writes happen in claude.ai; /fttcp runs only after the tracker
+   gate is satisfied and the model is signed. Record the decision in
+   companies/<TICKER>.md."
 
    and end with exactly:
 

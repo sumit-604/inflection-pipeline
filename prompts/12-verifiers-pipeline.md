@@ -149,8 +149,8 @@ named in the task message:
   21-category rubric live in these two files, not in Master/Section 1B.
 - VALUATION SCOPE ONLY (phase 3, when B10/B11 are among your inputs): the
   valuation framework docs — Master Prompt v3.6 Role 1, the Section 1B
-  layer set (v3.3 Amendments + v3.5.1 + v3.6; v3.6 governs overlaps),
-  FTTCP v2.1 — for the B11 audit. In phase-1 scope (Gate 0 + Emerging
+  layer set (v3.3 Amendments + v3.5.1 + v3.6 + v3.7; later layers govern
+  overlaps), FTTCP v2.1 — for the B11 audit. In phase-1 scope (Gate 0 + Emerging
   Moat only, no B11) these are NOT loaded: they are consumed solely
   by the deferred valuation audit, so carrying them in phase 1 is dead
   context.
@@ -164,7 +164,7 @@ RULES:
    using the stated thresholds; check the classification matrix,
    confidence adjustment, and deal-breaker application; check the CAGR
    edge rules were honoured.
-3. Emerging Moat (B07): all 21 categories addressed or explicitly NO
+3. Emerging Moat (B07): all 23 categories addressed or explicitly NO
    EVIDENCE; evidence multipliers applied correctly; the completionist
    recount performed; scores consistent with the stated evidence tiers
    (a 🎙️-only category scoring as if 📄 is a finding).
@@ -193,6 +193,33 @@ RULES:
 7. Method plurality (B11): B11 contains the Section 1A matrix + >=2
    methods + triangulation weights, OR the justified single-method
    exception. Missing = REWORK for stage 11.
+8. Stage 7 categories 21 and 22 present in B07 output. Category 21
+   (TALENT ASYMMETRY, I1) scored above 0 only if both legs (talent +
+   competitor-economics) are evidenced with the (b) leg carrying >=1
+   documented (📄) source. Category 22 (CANNIBALIZATION BARRIER, I2)
+   scored above 0 only if the named sacrifice is specific. Missing
+   categories = REWORK for stage 7.
+9. Business Understanding Narrative: the final synthesis (stage 13)
+   contains a BUSINESS UNDERSTANDING NARRATIVE before the verdict card,
+   answering all five mandated questions (products and why they matter;
+   customers; why there is demand; why demand should grow; where the
+   competitive advantage sits per line), in prose (no bullets or tables
+   inside the section), with at least three B09 SECTION 6 downstream
+   candidates referenced by name (or, if B09 found demand not externally
+   verifiable, the exact "DEMAND IS NOT EXTERNALLY VERIFIABLE" sentence
+   quoted), and zero valuation/price/verdict vocabulary inside the
+   section. Missing section, any missing question, a bullet-formatted
+   section, or valuation/price/verdict language inside it = REWORK for
+   stage 13.
+10. Halt 1 dossier (B09b). This rule fires at the /finalize verifier pass,
+   where the dossier must exist for the run; the phase-1 structural check
+   is mechanical, inside run-pipeline step 6b. Check:
+   outputs/reports/09b-understanding-dossier.md exists and contains all
+   five sections in order; Section 1 ends with exactly one verdict line
+   (CORPUS CURRENT or CORPUS GAPPED); Section 2 is marked DRAFT - PENDING
+   OPERATOR SIGN-OFF; Section 4c fragility fields present in the B09b YAML;
+   Section 5 has 14-15 numbered points and zero valuation/price/verdict
+   vocabulary. Absent or malformed at finalize = hard REWORK for stage 09b.
 
 OUTPUT: per-framework compliance tables with rule-by-rule PASS/FAIL and
 the recomputed value beside any FAIL; then:
@@ -206,6 +233,7 @@ status: complete
 gate0: {rules_checked: 0, fails: []}
 emoat: {rules_checked: 0, fails: []}
 valuation: {rules_checked: 0, fails: []}
+business_understanding_narrative: {present: false, five_questions_answered: false, prose_only: false, section6_candidates_named: 0, valuation_vocab_leak: false, fails: []}  # rule 7; any fail = REWORK stage 13
 recomputed_destination_pe: ""  # blank if concur; else both values
 recomputed_decision: ""        # blank if concur
 findings: []
@@ -216,7 +244,7 @@ acceptance_rate: 0             # rules passed ÷ rules checked, %
 ```
 
 INPUTS (phase-1 scope): prompts/01-gate-0-pipeline.md + prompts/07-emerging-moat-pipeline.md + {{B01_REPORT}} + {{B07_REPORT}}
-INPUTS (phase-3 valuation scope): the phase-1 sources above, PLUS the valuation framework docs (Master_Project_Prompt_v3_6.md Role 1 + Section_1B_v3.3_Amendments.md + Section_1B_v3_5_1_Reconciliation.md + Section_1B_v3_6_Amendments.md + FTTCP_v2_1_Consolidated.md) + {{B10_REPORT}} + {{B11_REPORT}}
+INPUTS (phase-3 valuation scope): the phase-1 sources above, PLUS the valuation framework docs (Master_Project_Prompt_v3_6.md Role 1 + Section_1B_v3.3_Amendments.md + Section_1B_v3_5_1_Reconciliation.md + Section_1B_v3_6_Amendments.md + Section_1B_v3_7_Amendments.md + FTTCP_v2_1_Consolidated.md) + {{B10_REPORT}} + {{B11_REPORT}}
 
 ═══════════════════════════════════════════════════════════════════
 ## VERIFIER D: PEER COVERAGE

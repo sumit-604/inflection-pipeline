@@ -84,7 +84,7 @@ phase 3), then:
    the deliberation record. Collect B10 into outputs/blocks/.
 
 2. STAGE 11 — VALUATION. Invoke stage-11-valuation exactly per the
-   existing wrapper: pass the FIVE framework file paths from frameworks/
+   existing wrapper: pass the SIX framework file paths from frameworks/
    as its stable prefix plus B10, in this order —
    Master_Project_Prompt_v3_6.md (resolves
    {{MASTER_PROJECT_PROMPT_V36_ROLE1_SECTIONS}}),
@@ -92,10 +92,12 @@ phase 3), then:
    Section_1B_v3_5_1_Reconciliation.md ({{SECTION_1B_V351_RECONCILIATION}},
    the Pillar 1 normalization authority, which supersedes the standalone
    Amendment 4.5), Section_1B_v3_6_Amendments.md
-   ({{SECTION_1B_V36_AMENDMENTS}}, Damodaran integration; governs the items
-   it names where the layers overlap), and FTTCP_v2_1_Consolidated.md
+   ({{SECTION_1B_V36_AMENDMENTS}}, Damodaran integration),
+   Section_1B_v3_7_Amendments.md ({{SECTION_1B_V37_AMENDMENTS}}, commodity
+   converter integration; later layers govern the items they name where
+   the layers overlap), and FTTCP_v2_1_Consolidated.md
    ({{FTTCP_V21_CONSOLIDATED}}). If frameworks/ is missing
-   any of the five files, STOP and tell the user which to add. The FTTCP ROCE
+   any of the six files, STOP and tell the user which to add. The FTTCP ROCE
    forward verdict and structural/growth determination it consumes are
    the deliberation-confirmed ones carried on B10. Collect B11.
 
@@ -128,10 +130,47 @@ phase 3), then:
    B01..B15, both halves of B12c, the full confidence delta, the
    deliberation record, and the stage reports), instructing it in the
    task message to run in PHASE 3 FINALIZE mode and produce all four
-   deliverables, each written to outputs/final/ at its FILE dividers:
-     - business-narrative.md: the final narrative, now including the
-       valuation conclusion (both destination PE tracks, entry zone,
-       decision) and the thesis/devil's-advocate outcome.
+   deliverables, each written to outputs/final/ at its FILE dividers.
+
+   The synthesis output and the Notion payload MUST both open with the
+   BUSINESS UNDERSTANDING NARRATIVE section below, before the verdict card
+   (identical spec, kept in sync with prompts/13-synthesis-pipeline.md):
+
+<!-- BEGIN BUSINESS-UNDERSTANDING-NARRATIVE-SPEC v1 (identical copy in prompts/13-synthesis-pipeline.md and .claude/commands/finalize.md; keep the two in sync) -->
+## BUSINESS UNDERSTANDING NARRATIVE (mandatory; appears FIRST, before the verdict card)
+
+The final synthesis and the Notion payload MUST open with this section, placed before the
+verdict card in both. It is the understanding narrative (what is this business, why does it
+exist), distinct from the verdict narrative (what is it worth, should I buy).
+
+Write 12-18 sentences of flowing prose per NARRATIVE WRITING STYLE v1 (short sentences,
+active voice, no em-dashes, no AI-tell vocabulary, no bullets in this section). Source
+strictly from B03/B04/B06/B07/B09 (including the B09 SECTION 6 downstream candidates) - no new
+claims. The narrative MUST answer, in order:
+
+1. WHAT THE PRODUCTS ARE AND WHY THEY MATTER - what each material product or service
+   physically is and does, and why the customer cannot easily do without it. Per revenue
+   stream above ~10% of sales.
+2. WHO THE CUSTOMERS ARE - named classes or named companies, their buying behaviour
+   (qualification cycles, switching costs, concentration).
+3. WHY THERE IS DEMAND - the present demand driver, tied to the downstream candidates from
+   B09 SECTION 6 by name.
+4. WHY DEMAND SHOULD GROW - the forward drivers, each tied to an externally verifiable signal
+   where one exists.
+5. WHERE THE COMPETITIVE ADVANTAGE SITS - per business line, stating WHICH line has a moat and
+   which does not, referencing the B07 scan results (including Categories 21/22 where scored).
+   A line with no moat is said plainly.
+
+Rules: every claim traces to a stage block; downstream candidates are referenced by name so
+the narrative and the tracker rows share vocabulary; no valuation numbers, no verdict
+language, no price talk inside this section - understanding only. If a question cannot be
+answered from the blocks, write "the run did not establish this" rather than filling the gap.
+<!-- END BUSINESS-UNDERSTANDING-NARRATIVE-SPEC v1 -->
+
+     - business-narrative.md: OPENS with the BUSINESS UNDERSTANDING NARRATIVE
+       section above (before the headline), then the final narrative, now
+       including the valuation conclusion (both destination PE tracks, entry
+       zone, decision) and the thesis/devil's-advocate outcome.
      - fttcp-recommendation.md: the full investment recommendation per the
        synthesis prompt's Deliverable 2 rules — the five-verdict gate line,
        the valuation decision (BUY / WATCHLIST / AVOID, entry range, MoS
@@ -152,9 +191,11 @@ phase 3), then:
 
 7. NOTION PAYLOAD. Write outputs/final/notion-payload.md containing the
    full save content structured per Notion_Save_Instructions conventions:
-   page title, run summary, verdict, entry zones, thesis-broken triggers,
-   monitoring checklist, and links (Drive folder, run folder). Mark the
-   file explicitly at the top:
+   page title, THEN the BUSINESS UNDERSTANDING NARRATIVE (the same section
+   defined in step 6, positioned before the verdict card so the operator
+   reads the understanding first), then run summary, verdict, entry zones,
+   thesis-broken triggers, monitoring checklist, and links (Drive folder,
+   run folder). Mark the file explicitly at the top:
 
    "Execute via the claude.ai project; never overwrite Decision Status."
 
@@ -201,7 +242,7 @@ phase 3), then:
      produced_at: <run date>
      framework_git_commit: <output of `git rev-parse HEAD`>
      framework_tag: <output of `git describe --tags --always`>
-     framework_versions: "Master v3.6 / Section 1B v3.3+v3.5.1+v3.6 / FTTCP v2.1"
+     framework_versions: "Master v3.6 / Section 1B v3.3+v3.5.1+v3.6+v3.7 / FTTCP v2.1"
    This is a plain record, not a decision. It gets committed with the rest.
 
 9. COMMIT all outputs and the updated companies/<TICKER>.md with message
@@ -232,7 +273,7 @@ Rules for you, the orchestrator session:
 - Deliberation conclusions supersede earlier pipeline determinations
   wherever they conflict; this is the phase-3 authority rule.
 - Never let any exit PE enter from outside the Section 1B layer set (v3.3
-  Amendments + v3.5.1 + v3.6; v3.6 governs overlaps).
+  Amendments + v3.5.1 + v3.6 + v3.7; later layers govern the items they name).
 - Never paste full PDFs into subagent task messages; pass file PATHS.
 - Verifier independence is absolute.
 - Nothing halts on company quality; only mechanical failures halt.

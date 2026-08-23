@@ -5,12 +5,15 @@ analysis. Operator: Keerti Kaushik. Strategy: transition alpha, 25% CAGR
 target, 3-5 year holds.
 
 ## NEVER
-- Never use any exit PE from outside Section 1B (v3.3 base + v3.5.1 + v3.6
-  amendment layers in frameworks/; v3.6 governs overlaps). It is
+- Never use any exit PE from outside Section 1B (v3.3 base + v3.5.1 +
+  v3.6 + v3.7 amendment layers in frameworks/; later layers govern
+  overlaps). It is
   the sole exit multiple authority. No round-number defaults, ever.
 - Never produce a Role 1 valuation without the Section 1A Method
   Suitability Matrix and method triangulation; the Section 1B destination
   PE governs the exit multiple, it does not replace method selection.
+- Never feed spot-year ROCE or rupee-denominated WC trends into Section
+  1B or FTTCP for a CONVERTER-classified name (v3.7 Amendment 17).
 - Never halt a run on company quality. Flags propagate; only mechanical
   failures halt. There is no STOP verdict; the verdict set is PROCEED /
   PROCEED WITH CAVEATS / PROCEED WITH FLAGS / REWORK / INSUFFICIENT
@@ -26,6 +29,12 @@ target, 3-5 year holds.
 - Never write X posts here. Publish candidates are flagged only.
 - Never let a maker verify its own work. Verifiers get fresh contexts
   and artifact paths only.
+- Never emit a final synthesis or Notion payload without the
+  BUSINESS UNDERSTANDING NARRATIVE (five questions, prose, before the
+  verdict card). A verdict without understanding is a shallow summary;
+  the operator reads the narrative first.
+- Never run /fttcp or any valuation on an unsigned Mental Model
+  Declaration or a Halt 1 decision other than PROCEED.
 
 ## DISPATCH (model per subagent, already set in .claude/agents frontmatter)
 - opus: stage 11 valuation, stage 13 synthesis, verifiers B and C
@@ -51,6 +60,9 @@ Do not upgrade a stage's model without editing its agent file.
   apt-get install -y -qq; redirect verbose PDF-extraction output. The
   collect_to_repo.py collector runs on the operator's machine, out of
   session; in-session it appears only as collect_to_repo.py --push-again.
+- Any session that commits a framework or prompt amendment must end by
+  opening a PR to main the same day. Run outputs and framework amendments
+  go in SEPARATE commits so recovery stays surgical.
 
 ## MEMORY
 /run-pipeline, /fttcp, /finalize, and /compost sessions read the ACTIVE
@@ -75,7 +87,7 @@ weigh, never anchored evidence.
 
 ## STRUCTURE
 - prompts/       stage instructions, single source of truth
-- frameworks/    Master v3.6, Section 1B layer set (v3.3/v3.5.1/v3.6),
+- frameworks/    Master v3.6, Section 1B layer set (v3.3/v3.5.1/v3.6/v3.7),
                  FTTCP v2.1, Quarterly v1.4, AR v1.3 (Keerti
                  maintains; stage 11 reads at run time; amendments here
                  propagate with zero pipeline edits), plus
@@ -103,6 +115,43 @@ weigh, never anchored evidence.
                  forensic notes -> A4 analyst -> A5 adversary; enumeration
                  before interpretation; writes runs/<ticker>-<quarter>/work/;
                  needs the two Quarterly_*_Protocol files in frameworks/
+
+## PIPELINE SEQUENCE (operator-gated)
+/run-pipeline (evidence, stages 0-9 + verifiers + 09b dossier) -> HALT 1:
+operator reads the dossier, resolves corpus gaps, signs the Mental Model in
+claude.ai, decides KILL / SHALLOW / PROCEED -> claude.ai: live
+verification, verticals to depth, Role 5.5 tracker writes -> /fttcp
+(deliberation) -> Role 1 valuation -> /finalize. Understanding precedes
+deliberation. Deliberation precedes valuation. Nothing after Halt 1 runs on
+an unsigned model.
+
+## TEAM WORKFLOW — Claude Code and Claude web
+Claude Code reads the heavy corpus once (PDFs, ARs, transcripts) and holds
+the repo. It has NO live web access. Claude web (claude.ai) does live
+verification, cross-checks, tracker and Notion writes. It must NOT re-read
+corpus documents. It asks Claude Code via operator-ferried extraction
+prompts (quote-then-comment, NOT DISCLOSED allowed, filename+date
+verification mandatory). Filed documents beat inference. Every claim
+carries its evidence tier. The pipeline produces payloads. claude.ai
+executes writes. Each document is paid for once.
+
+## ARCHETYPE LIBRARY (mental model declarations draw from this; extend via operator ruling only)
+- Build-to-spec component maker: customer capex cycle, design-win pipeline,
+  content per unit, input-cost pass-through.
+- Commodity converter (Section 1B v3.7 Amendment 17 binds): spread (output
+  minus input price), utilisation, cycle position, cost-curve rank.
+- Brand/franchise consumer: volume growth, pricing power, distribution
+  reach, gross margin, advertising efficiency.
+- Order-book business (EPC/defence/capital goods): order inflow,
+  book-to-bill, execution pace, working capital, margin on backlog.
+- Outsourcing partner (CDMO/EMS/IT services): client concentration, wallet
+  share, capacity fill, contract stickiness, price per unit.
+- Licence/scarcity business: licence or quota validity, renewal risk,
+  regulated price, capacity cap, entry-barrier durability.
+- Lender (framework variant exists): AUM growth, NIM, asset quality
+  (GNPA and credit cost), RoA and RoE.
+- Platform/network: active users, take rate, unit economics per
+  transaction, network density, retention.
 
 ## OPERATOR VOICE (STE — all conversation, not only outputs)
 Every reply to the operator uses Simplified Technical English (ASD-STE100,

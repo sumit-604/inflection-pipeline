@@ -45,6 +45,28 @@ If the resolved run folder, its manifest.yaml, or its outputs/blocks/ is
 missing or empty, say so plainly and stop. That is a mechanical failure and
 the only kind that halts you.
 
+## PRECONDITIONS (check both before writing a word; STOP if either fails)
+
+Two gates guard the entry to deliberation. Check both after name
+resolution and before LOAD ORDER. If either fails, print exactly which
+part is missing and stop; do not draft.
+
+1. PRECONDITION — ROLE 5.5 TRACKER GATE: companies/<TICKER>.md or the
+   run's notion-payload must record downstream tracker rows written with
+   row-URL proof for this ticker. If no tracker rows with row-URL proof
+   are recorded, STOP and print what is missing. Tracker writes happen at
+   Role 5.5 in claude.ai; this gate confirms they happened, it does not
+   perform them.
+
+2. PRECONDITION — UNDERSTANDING GATE: companies/<TICKER>.md must record a
+   signed Mental Model Declaration and a Halt 1 decision of PROCEED, and
+   outputs/reports/09b-understanding-dossier.md must exist for this run. If
+   any is missing, STOP and print which. FTTCP Step 2 catalysts must be
+   consistent with the signed model's dominant variables; a catalyst
+   outside the declared variables requires an explicit note explaining why
+   the model did not anticipate it (which may itself trigger model
+   re-declaration).
+
 ## LOAD ORDER (read all of this before writing a word)
 
 Read, in this order:
@@ -54,11 +76,13 @@ Read, in this order:
    verdict, Step 5 monitoring triggers, Pillar 1 integration).
 2. frameworks/Section_1B_v3.3_Amendments.md, then
    frameworks/Section_1B_v3_5_1_Reconciliation.md, then
-   frameworks/Section_1B_v3_6_Amendments.md — read ALL THREE layers in this
+   frameworks/Section_1B_v3_6_Amendments.md, then
+   frameworks/Section_1B_v3_7_Amendments.md — read ALL FOUR layers in this
    order; together they are the sole exit-multiple and Pillar authority the
    FTTCP verdict hands off to, and the source of truth for the sector cap
-   table. Where they overlap, v3.6 governs the items it names, then v3.5.1,
-   then v3.3.
+   table. Where they overlap, v3.7 governs the items it names, then v3.6,
+   then v3.5.1, then v3.3. For CONVERTER-classified names, the Cash
+   transition verdict uses volume-denominated WC per v3.7 17.2.
 3. CLAUDE.md — the operating rules (NEVER list, dispatch, words, STYLE).
 4. LESSONS.md — the lean ACTIVE operational memory read at every session
    start (full run history is LESSONS_ARCHIVE.md).
@@ -168,7 +192,7 @@ Make every judgment call and state your view on it:
 Anchoring is mandatory: every number is followed by its (source, page/note).
 A number is anchored or it is NOT FOUND — never estimate a missing one. Exit
 PE and Pillar treatment come only from the Section 1B layer set (v3.3
-Amendments + v3.5.1 + v3.6; v3.6 governs overlaps). Never credit one ROCE
+Amendments + v3.5.1 + v3.6 + v3.7; later layers govern the items they name). Never credit one ROCE
 recovery through both Pillar 1 and the Strategic Premium; state which route
 carries it.
 
@@ -345,7 +369,7 @@ LESSONS.md, which is budget-capped): what broke or dragged this session, or
 - Never leave a judgment call open or phrase one as a question.
 - Never estimate a missing number; NOT FOUND is the only fill.
 - Never use an exit PE from outside the Section 1B layer set (v3.3
-  Amendments + v3.5.1 + v3.6; v3.6 governs overlaps); the sector cap table
+  Amendments + v3.5.1 + v3.6 + v3.7; later layers govern the items they name); the sector cap table
   is the only ceiling.
 - Never let INDETERMINATE cash conversion resolve to a clean pass.
 - Never fabricate a catalyst to fill a table; NONE FOUND is a valid finding.

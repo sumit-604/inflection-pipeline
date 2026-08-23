@@ -1,6 +1,6 @@
 ---
 name: stage-07-emoat
-description: Emerging moat 20-category scan
+description: Emerging moat 22-category scan
 tools: Read, Write, Grep
 model: sonnet
 ---

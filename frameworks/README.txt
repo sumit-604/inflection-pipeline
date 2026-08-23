@@ -1,18 +1,19 @@
-COPY THESE SIX FILES HERE FROM YOUR CLAUDE.AI PROJECT BEFORE THE
+COPY THESE SEVEN FILES HERE FROM YOUR CLAUDE.AI PROJECT BEFORE THE
 FIRST RUN (stage 11 halts without them):
   Master_Project_Prompt_v3_6.md
   Section_1B_v3.3_Amendments.md
   Section_1B_v3_5_1_Reconciliation.md
   Section_1B_v3_6_Amendments.md
   Section_1B_v3_7_Amendments.md
+  Section_1B_v3_8_Amendments.md
   FTTCP_v2_1_Consolidated.md
 Section_1B_v3_5_1_Reconciliation.md is the Pillar 1 normalization
 authority for capital-cycle names. Its consolidated Amendment 9
 SUPERSEDES the standalone Amendment 4.5 that still appears in
 Section_1B_v3.3_Amendments.md (kept for history, banner-marked as
-retired). Stage 11 injects all four Section 1B layers; where they
-overlap, v3.7 governs the items it names, then v3.6, then v3.5.1,
-then v3.3.
+retired). Stage 11 injects all five Section 1B layers; where they
+overlap, v3.8 governs the items it names, then v3.7, then v3.6,
+then v3.5.1, then v3.3.
 When you amend a framework, update the copy here. Stage 11 reads these
 at run time, so amendments propagate with no pipeline edits.
 

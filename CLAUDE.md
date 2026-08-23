@@ -6,9 +6,12 @@ target, 3-5 year holds.
 
 ## NEVER
 - Never use any exit PE from outside Section 1B (v3.3 base + v3.5.1 +
-  v3.6 + v3.7 amendment layers in frameworks/; later layers govern
+  v3.6 + v3.7 + v3.8 amendment layers in frameworks/; later layers govern
   overlaps). It is
   the sole exit multiple authority. No round-number defaults, ever.
+- Never construct a Year-N exit price on a different earnings basis than
+  the entry, and never carry a within-hold option slice into the exit as
+  an unresolved probability (v3.8 Amendment 18).
 - Never produce a Role 1 valuation without the Section 1A Method
   Suitability Matrix and method triangulation; the Section 1B destination
   PE governs the exit multiple, it does not replace method selection.
@@ -87,7 +90,7 @@ weigh, never anchored evidence.
 
 ## STRUCTURE
 - prompts/       stage instructions, single source of truth
-- frameworks/    Master v3.6, Section 1B layer set (v3.3/v3.5.1/v3.6/v3.7),
+- frameworks/    Master v3.6, Section 1B layer set (v3.3/v3.5.1/v3.6/v3.7/v3.8),
                  FTTCP v2.1, Quarterly v1.4, AR v1.3 (Keerti
                  maintains; stage 11 reads at run time; amendments here
                  propagate with zero pipeline edits), plus

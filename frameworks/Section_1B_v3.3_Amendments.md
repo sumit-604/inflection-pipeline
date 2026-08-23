@@ -1,6 +1,6 @@
 # SECTION 1B AMENDMENTS — FOUR-PILLAR EXIT MULTIPLE FRAMEWORK v3.3
 
-> **ACTIVE — not a superseded draft.** This file is the base amendment layer of Section 1B, the sole exit-multiple authority. It lives in frameworks/ as a runtime input to stage 11. The version number tags this amendment layer, not a competing copy of the Master Prompt. Do not archive or delete it. Read it together with the other Section_1B_* files (v3.5.1 Reconciliation, v3.6 Amendments, v3.7 Amendments); where they overlap, the later layer governs.
+> **ACTIVE — not a superseded draft.** This file is the base amendment layer of Section 1B, the sole exit-multiple authority. It lives in frameworks/ as a runtime input to stage 11. The version number tags this amendment layer, not a competing copy of the Master Prompt. Do not archive or delete it. Read it together with the other Section_1B_* files (v3.5.1 Reconciliation, v3.6 Amendments, v3.7 Amendments, v3.8 Amendments); where they overlap, the later layer governs.
 
 *Framework review conducted 02-Jul-2026 (Fable 5). Amendments adopted by Keerti; Amendment on premium scaling (original point 4) REJECTED with rationale recorded in Appendix A. Companion change: FTTCP v1.2 single-credit rule (Section 6 below).*
 

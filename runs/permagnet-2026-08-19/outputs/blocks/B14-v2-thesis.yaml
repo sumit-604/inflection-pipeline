@@ -1,0 +1,19 @@
+stage: B14-thesis
+company: "PERMAGNET"
+run_date: "2026-08-23"
+model: claude-opus-4-8
+status: complete
+verdict: "AVOID"
+entry_range: {low: 252, high: 361}
+position_size: "Small"
+position_size_override: "DEEP WATCH - no position at CMP (AVOID on valuation); operator-recorded posture. Small is the hard ceiling if price ever enters the re-underwritten zone with no thesis-broken trigger fired; Gate 0 AVERAGE bars Medium/Large, Promoter CAUTION caps independently, dispersion (~49-53%) caps at Medium, tightest cap wins -> Small. Conviction Outlier barred (EM STRENGTHENING not EXPANSION)."
+thesis_broken_if: "Core cash engine breaks: standalone core EBITDA margin < 12% OR standalone CFO/PAT < 0.5 with receivable days > 100, either for two consecutive quarters (the earning core is the entire base-case value; the options are free). Also voids on a going-concern qualification from the current EoM, or an NdFeB equity raise diluting > 30% at a pre-success price."
+monitoring_checklist:
+  - "Standalone CFO/PAT >= 1.0 AND receivable days <= 80 (red: CFO/PAT < 0.5 or days > 100 for two consecutive quarters)"
+  - "Standalone core EBITDA margin >= 15% (red: < 12% for two consecutive quarters)"
+  - "Relay first purchase order printed by H2FY27 (red: zero orders past the Nov-2026 tracker falsifier)"
+  - "Quantum Magnetics Phase 2 first revenue Rs 10-15 Cr ~Q4FY27 (red: another slip, QMPL revenue ~0)"
+  - "NdFeB funding decision: deferred/debt-led/<=30% dilution (red: equity raise diluting > 30% at a pre-success price)"
+  - "Itron Device Solutions book-to-bill recovering > 1.0 (red: < 0.85 with shrinking backlog)"
+  - "NdPr rare-earth oxide spot vs 5-yr range - converter slice review trigger (red: TOP QUINTILE -> re-underwrite slice on 5-yr median spread per v3.7 17.3/17.4)"
+  - "Entry-conjunction gate before any buy: price in Rs 252-361 AND no red above AND entry not caused by an NdFeB kill-trigger (else recompute to ex-full-plan entry ~Rs 216 / MoS ~Rs 151)"

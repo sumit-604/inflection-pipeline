@@ -1,0 +1,20 @@
+stage: B12c-valuation
+company: "PERMAGNET"
+run_date: "2026-08-19"
+model: claude-opus-4-8
+status: complete
+valuation:
+  rules_checked: 18
+  fails: []
+role2:
+  rules_checked: 6
+  fails:
+    - {severity: MINOR, rule: "R4 Upside/Downside ratio (Master v3.6 line 829)", note: "Ratio uses additive BULL upside (Rs 965) not base, cross-track vs RRM bear; 0.17. Deviation from literal 'Upside (base)'; more generous than spec, still << 2x, no decision/verdict impact."}
+criticals: []
+recomputed_destination_pe: ""   # concur: additive 19.6x / RRM 16.1x / NdFeB converter 13.5x
+recomputed_decision: ""         # concur: AVOID (on valuation)
+confidence_component_delta: 0.14   # framework-adherence component; clean, 1 MINOR, 0 MAJOR/CRITICAL
+acceptance_rate: 96             # 23 clean / 24 checked
+critical_count: 0
+major_count: 0
+minor_count: 1

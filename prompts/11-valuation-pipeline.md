@@ -5,7 +5,8 @@
 # sections), Section 1B v3.3 Amendments, Section 1B v3.5.1 Reconciliation
 # (Pillar 1 normalization authority, supersedes standalone Amendment 4.5),
 # Section 1B v3.6 Amendments (Damodaran integration), Section 1B v3.7
-# Amendments (commodity converter cycle integration; later layers govern
+# Amendments (commodity converter cycle integration), Section 1B v3.8
+# Amendments (exit-basis symmetry and option resolution; later layers govern
 # the items they name where the layers overlap), FTTCP v2.1 Consolidated. The
 # framework is deliberately NOT copied into this file, so that Keerti's
 # amendments propagate to the pipeline the moment the project files
@@ -53,10 +54,16 @@ mode:
    method.
 7. Converter classification (v3.7 Amendment 17.0) is stated before any
    pillar math; 17.1-17.3 bind when CONVERTER.
+8. Projection horizon: Year 4 minimum in every case (v3.8 18.0); exit basis
+   symmetric with entry basis (18.1) — state the basis once, apply at both ends.
+9. SOTP option slices: Option Resolution Calendar mandatory (18.2); within-hold
+   options exit as resolved states (18.3), beyond-hold re-dated and conditioned
+   (18.4); bear carries within-hold options at failure; transition dual-display
+   per 18.6.
 
 ## FRAMEWORK ELEMENTS THE WRAPPER ENFORCES (per the injected layers, non-negotiable)
 
-- The Section 1B layer set (v3.3 Amendments + v3.5.1 + v3.6 + v3.7; later
+- The Section 1B layer set (v3.3 Amendments + v3.5.1 + v3.6 + v3.7 + v3.8; later
   layers govern the items they name) is the SOLE exit multiple authority.
   No exit PE from any other source, no round-number defaults.
 - OPERATOR-APPROVED BASE (from the deliberation record via B10, authoritative):
@@ -132,7 +139,7 @@ status: complete
 input_gaps: []
 flags: []                      # FLAG-CASH carried forward with the
                                # multiplier actually applied
-framework_versions: "Master v3.6 / Section 1B v3.3+v3.5.1+v3.6+v3.7 / FTTCP v2.1"
+framework_versions: "Master v3.6 / Section 1B v3.3+v3.5.1+v3.6+v3.7+v3.8 / FTTCP v2.1"
 pe_basis: ""                   # forward | trailing (operator-approved at the FTTCP gate)
 exit_pe_base_approved: ""      # the operator-approved destination PE base carried from the deliberation
 destination_pe:
@@ -176,11 +183,13 @@ FRAMEWORK (verbatim from project knowledge):
 {{SECTION_1B_V351_RECONCILIATION}}
 {{SECTION_1B_V36_AMENDMENTS}}
 {{SECTION_1B_V37_AMENDMENTS}}
+{{SECTION_1B_V38_AMENDMENTS}}
 {{FTTCP_V21_CONSOLIDATED}}
 
-PRECEDENCE: where the Section 1B layers overlap, v3.7 governs the items it
-names (commodity converter integration, operator directive 20-Aug-2026),
-then v3.6 (Damodaran integration, operator directive 13-Aug-2026), then
+PRECEDENCE: where the Section 1B layers overlap, v3.8 governs the items it
+names (exit-basis symmetry and option resolution, operator directive
+23-Aug-2026), then v3.7 (commodity converter integration, operator directive
+20-Aug-2026), then v3.6 (Damodaran integration, operator directive 13-Aug-2026), then
 v3.5.1 (Pillar 1 normalization), then v3.3. FTTCP v2.1 ROCE forward verdict is sole
 Pillar 1 authority. Within the v3.5.1 layer: its consolidated Amendment 9
 supersedes the standalone Amendment 4.5 (v3.5) that appears in the

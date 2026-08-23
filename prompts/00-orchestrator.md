@@ -3,7 +3,7 @@
 
 Replaces the Gemini (Jaimini) upstream pipeline. One model family end to end.
 Valuation authority: Master Project Prompt v3.6, Section 1B layer set (v3.3
-Amendments + v3.5.1 + v3.6 + v3.7; later layers govern the items they name) (Four-Pillar
+Amendments + v3.5.1 + v3.6 + v3.7 + v3.8; later layers govern the items they name) (Four-Pillar
 Framework, RRM dual-track, Hurdle Ratio), FTTCP v2.1. No other exit PE source
 is permitted anywhere in the pipeline.
 
@@ -508,7 +508,7 @@ roughly ₹700-1,000. Web search adds ~$0.30-0.60 on stages 8-9.
 - Never lets any stage assume a number from conversation memory: stage 10
   is the only assembler of valuation inputs, and it must anchor every value.
 - Never lets any exit PE enter from outside the Section 1B layer set (v3.3
-  Amendments + v3.5.1 + v3.6 + v3.7; later layers govern the items they name).
+  Amendments + v3.5.1 + v3.6 + v3.7 + v3.8; later layers govern the items they name).
 - Never conflates the Emerging Moat scan (stage 7) with FTTCP: FTTCP runs
   inside stage 11's framework inputs as final synthesis, per project
   taxonomy.

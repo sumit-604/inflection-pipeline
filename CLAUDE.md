@@ -12,6 +12,9 @@ target, 3-5 year holds.
 - Never construct a Year-N exit price on a different earnings basis than
   the entry, and never carry a within-hold option slice into the exit as
   an unresolved probability (v3.8 Amendment 18).
+- Never present an entry zone without the Amendment 19 FV CAGR and
+  return-source classification; an entry discount is only interpretable
+  against how fast fair value itself grows.
 - Never produce a Role 1 valuation without the Section 1A Method
   Suitability Matrix and method triangulation; the Section 1B destination
   PE governs the exit multiple, it does not replace method selection.

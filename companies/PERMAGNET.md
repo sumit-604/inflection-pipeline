@@ -31,6 +31,8 @@ Rs 230-314 (devil-corrected). MoS Rs 118. Zone MARKET-UNLIKELY (entry top 72.7% 
 
 
 
+&#x20;   2026-08-23: Amendment 19 (FV path/FV CAGR) codified from this name's walkthrough. Illustrative classification on the committed numbers: FV path 704 -> ~745 -> ~785 -> ~826 (RRM base, end-Yr3 on extrapolated FY30 EPS), FV CAGR ~5.5% -> DISCOUNT-CLOSER; ~51% of FV is static option value; no re-rating lever (destination = current multiple is the de-rating direction). Formal application from the next refresh (v3.8 machinery).
+
 &#x20;   2026-08-23 (P/E gate, FTTCP v2): Reading 2 ADOPTED. Anchored core operating ROCE ex-QMPL 16.5% (band 15.6-16.5%, ex the Rs 1.74 Cr one-off), both ends clear 13.5% CoC. Pillar 1 base 15.7x (band 15.3-15.7x). The 19-Aug approved 13.8x base / 17.3x additive / 14.1x RRM is SUPERSEDED by this anchored recompute (fttcp-v2-core-roce-recompute.md, all AR-FY26). Record: supersession noted; 19-Aug B11 stays committed for audit.
 
 &#x20;   2026-08-23 (P/E gate): Pillar 3 HELD at +0x despite the Amendment 16 gate opening at 16.5% ROCE. Single-credit: the transformation is priced in the option slices; the alloys catalyst is SHARED and already credited in the forward ROCE read. Revisit on audited FY27 core revenue growth durably above mid-teens.

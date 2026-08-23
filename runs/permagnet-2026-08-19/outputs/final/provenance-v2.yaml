@@ -1,0 +1,8 @@
+run: permagnet-2026-08-19
+produced_at: 2026-08-23
+finalize_variant: v2 (Reading-2 stack)
+framework_git_commit: 1f99c28706ceecc3d41a9dbf51a57b2370153765
+framework_tag: 1f99c287
+framework_versions: "Master v3.6 / Section 1B v3.3+v3.5.1+v3.6+v3.7 / FTTCP v2.1"
+priced_under: "Pre-v3.8 by design (no-retrofit, Amendment 18 Part 6). This run branch carries the v3.3-v3.7 Section 1B stack; the exit uses trailing-Year-3 EPS and static probability-weighted option slices. Section 1B v3.8 (exit-basis symmetry + option resolution) is on main via PR #89 and governs the NEXT PERMAGNET refresh, not this record."
+supersedes: "The 19-Aug provenance.yaml stays committed. This v2 stamp records the Reading-2 re-run: core ROCE 16.5%, destination PE 19.6x additive / 16.1x RRM, decision AVOID."

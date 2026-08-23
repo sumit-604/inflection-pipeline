@@ -12,6 +12,15 @@ small, pre-revenue, execution-uncertain option slices; SOTP fair value Rs 330-40
 
 ## DECISION STATUS AND ENTRY ZONE
 
+* 2026-08-23 (v2 finalize, Reading-2 stack): **AVOID (on-valuation)** at CMP Rs 882. Evidence gate
+PROCEED WITH FLAGS. Reading-2 core ROCE 16.5%, destination PE 19.6x additive / 16.1x RRM, Pillar 3
++0x. Fair value base RRM Rs 704 / additive Rs 791 (bear 365/440, bull 736/830). Entry zone Rs 252-361
+(approved base), MoS Rs 252. Zone MARKET-UNLIKELY (top 41.7% below the 52-week low Rs 619) → DEEP
+WATCH. Prob-weighted 3yr CAGR -5.8% additive / -10.2% RRM. Hurdle STOP (HR 0.59 RRM / 0.72 additive).
+Devil SURVIVES (AVOID hardens). Confidence 57 (coverage-bound, adjudicated; valuation adherence clean
+0 critical/0 major/1 minor). Supersedes the 19-Aug base (13.8x/17.3x, entry 118-169/230-314).
+Re-underwrite line: entry embeds the NdFeB full-plan slice ~Rs 283/sh at 12%; if entry is driven by
+an NdFeB kill-trigger, recompute (ex-full-plan entry ~Rs 216 / MoS ~Rs 151).
 * 2026-08-19: **AVOID (on-valuation)** at CMP Rs 882. Evidence gate PROCEED WITH FLAGS. FTTCP
 composite +1 (DEEP WATCH leaning AVOID). Entry zone Rs 118-169 (approved base) /
 Rs 230-314 (devil-corrected). MoS Rs 118. Zone MARKET-UNLIKELY (entry top 72.7% below the
@@ -100,5 +109,7 @@ SOTP fair value Rs 330-404, Hurdle STOP) NOT re-run and unchanged.
 
 ## RUN FOLDERS
 
-* runs/permagnet-2026-08-19/  (first workup; NO-CONCALL MODE; PROCEED WITH FLAGS / AVOID)
+* runs/permagnet-2026-08-19/  (first workup; NO-CONCALL MODE; PROCEED WITH FLAGS / AVOID; v2 finalize
+  2026-08-23 on the Reading-2 stack — see outputs/final/*-v2.md and outputs/reports/{11-valuation-v3,
+  14-thesis-v2,15-devil-v2}.md; 19-Aug records preserved)
 

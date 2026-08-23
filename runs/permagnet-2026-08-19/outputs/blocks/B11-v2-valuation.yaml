@@ -1,0 +1,73 @@
+# SUPERSESSION NOTICE: This block is the Role 1 v2 SURGICAL RECOMPUTE. It supersedes the committed
+# 19-Aug B11-valuation.yaml on (1) the operator-approved Reading-2 exit-PE base (additive 19.6x / RRM
+# 16.1x, fttcp-v2-deliberation Section 5) and (2) the operator option-slice inputs (web-handover-dossier
+# Section 6). The 19-Aug B11 record stays committed and untouched for audit.
+stage: B11-valuation
+version: v2
+supersedes: "outputs/blocks/B11-valuation.yaml (19-Aug) on the Reading-2 exit-PE base and operator option inputs"
+company: "PERMAGNET"
+run_date: "2026-08-19"
+recompute_date: "2026-08-23"
+model: claude-opus-4-8
+status: complete
+input_gaps:
+  - "Market PE denominator for relative-PE expression NOT FOUND (no macro-sheet.md in inputs)"
+  - "Segment-level core-vs-relay operating cost split NOT SEPARATELY DISCLOSED (single IND AS 108 segment)"
+  - "FY27 forward revenue/margin guidance NOT QUANTIFIED (NO-CONCALL mode)"
+  - "NdFeB through-cycle ROCE NOT FOUND (pre-revenue); 12% stated generous assumption -> converter PE 13.5x, flagged"
+  - "Restricted-cash split of Rs 23.20 Cr consol bank balances NOT DISCLOSED; net-debt bear overlay ~Rs 42 Cr"
+  - "NdFeB full-plan funding mix unresolved (debt/equity 'yet to finalize'); dilution bear overlay if Rs 550-750 Cr raised"
+flags:
+  - "FLAG-CASH (MAJOR): receivables +39.4% vs revenue +13.0%; consol CFO -55% vs PAT -6%; cash multiplier 1.00x APPLIED"
+  - "FLAG-SUBSIDIARY (MAJOR): QMPL revenue -85.5%, full Rs 47.81 Cr ECB DRAWN (consol NC borrowings 66.84), negative net worth, going-concern EoM"
+  - "FLAG-EXECUTION (MAJOR): relay slipped 3 checkpoints, zero orders in 4yr; NdFeB pre-revenue Phase 2 Q3FY27"
+  - "FLAG-BRIDGE: anchored consol net debt Rs 19.0 Cr supersedes B11 Rs 7.72 Cr (full ECB draw confirmed); Rs ~13/share, immaterial"
+  - "FLAG-CONVERTER: NdFeB valued at 13.5x converter PE per v3.7 Amdt 17, NOT the core destination PE; at core PE additive base FV ~Rs 959 > CMP"
+  - "SHARED-CATALYST: MOOT (Pillar 3 +0x, no double-count)"
+framework_versions: "Master v3.6 / Section 1B v3.3+v3.5.1+v3.6+v3.7 / FTTCP v2.1"
+pe_basis: "forward"
+exit_pe_base_approved: "Reading-2 core additive 19.6x (19.1-19.6x) / RRM 16.1x (15.7-16.1x); Pillar 1 15.7x on core ROCE 16.5% (band 15.6-16.5%); Pillar 3 +0x held; UA x1.25 folded; operator-approved 2026-08-23 (fttcp-v2-deliberation Section 5). SUPERSEDES 19-Aug base 17.3x/14.1x."
+destination_pe:
+  track1_rrm: {low: 15.7, mid: 16.1, high: 16.1, r_used: 15.0, rrm: 0.82}
+  track2_additive: {low: 19.1, mid: 19.6, high: 19.6}
+  divergence_pct: 12.4
+  governing_track: "RRM 16.1x - more conservative, sets entry zone. Additive 19.6x is the primary destination per deliberation."
+pillar_detail:
+  roce_used: 16.5
+  roce_base: 15.7
+  roce_recovery_route: "not-credited"
+  pillar1_normalization_route: "none"
+  cash_multiplier: 1.00
+  structural_or_growth: "growth-induced (operator-confirmed; repaired series dossier S1)"
+  growth_offset: 0
+  growth_premium: 0
+  strategic_premium: 0
+  shared_catalyst_flag: false
+  ua_applied: true
+  sector_cap_used: 25
+hurdle_ratio: {base: 0.59, bull_used: true, verdict: "STOP"}
+fair_values:
+  track1: {bear: 365, base: 704, bull: 736}
+  track2: {bear: 440, base: 791, bull: 830}
+expected_cagr_prob_weighted: -5.8
+entry_range: {low: 252, high: 361}
+mos_price: 252
+upside_downside_ratio: 0.17
+decision: "AVOID (on-valuation)"
+sotp_detail:
+  shares_cr: 0.8598
+  net_debt_cr: 19.0
+  slice1_core_additive_cr: {bear: 327.32, base: 386.12, bull: 419.44}
+  slice1_core_rrm_cr: {bear: 268.87, base: 317.17, bull: 344.54}
+  slice2_relay_cr: {additive: 34.80, rrm: 28.58, constant_across_cases: true, inputs: "Rs 75 Cr rev x 8% x 45% x PV 0.6575; core PE"}
+  slice3a_ndfeb_modest_cr: {value: 35.51, both_tracks: true, inputs: "Rs 100 Cr rev x 10% x 40% x 13.5x converter PE x PV 0.6575"}
+  slice3b_ndfeb_full_cr: {bear: 0, base: 243.13, bull: 243.13, inputs: "Rs 3,500 Cr rev x 10% = 350 PAT x 13.5x = 4725; net Rs 650 Cr capital = 4075; x 12% x PV 0.4972 (FY30-31)"}
+unresolved_inputs_used:
+  - "Relay: Rs 75 Cr rev (operator S6) / 8% margin / 45% prob / PV 0.6575 / core PE; NO extra execution discount (45% carries it)"
+  - "NdFeB modest: Rs 100 Cr (50-150 midpoint) / 10% / 40% / PV 0.6575 / 13.5x converter"
+  - "NdFeB full: Rs 3,500 Cr (3,000-4,000 midpoint) / 10% / 350 PAT / 13.5x / net Rs 650 Cr / 12% / PV 0.4972; bear = 0"
+  - "NdFeB converter PE 13.5x = 0.5x12+7.5 on assumed 12% through-cycle ROCE (generous), 1.00x, +0x, no UA; v3.7 Amdt 17"
+  - "Net debt anchored Rs 19.0 Cr (borrowings 70.31 - cash 28.11 - bank 23.20); supersedes B11 Rs 7.72 Cr"
+  - "Current forward PE: 882 / 22.9 = 38.5x (forward-core basis for HR)"
+som_cagr_crosscheck: "consistent (base core revenue growth 12% below SOM-implied 3yr 20.1%)"
+one_line_thesis: "AVOID PERMAGNET at Rs 882: Reading-2 lifts the core to 19.6x/16.1x on ~Rs 22.9 FY27 forward core EPS and prices relay (Rs 75 Cr, 45%) and NdFeB (12% full / 40% modest, held to a 13.5x converter multiple per v3.7 Amdt 17) at operator inputs, yet base SOTP fair value Rs 704-791 stays below price, Hurdle STOPs on the 38.5x-to-16x de-rating, expected CAGR negative; future paid for, in the safe box not the entry."

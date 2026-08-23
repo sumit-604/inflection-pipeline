@@ -56,9 +56,9 @@ mode:
 
 ## FRAMEWORK ELEMENTS THE WRAPPER ENFORCES (per the injected layers, non-negotiable)
 
-- The Section 1B layer set (v3.3 Amendments + v3.5.1 + v3.6; v3.6 governs
-  overlaps) is the SOLE exit multiple authority. No exit PE from
-  any other source, no round-number defaults.
+- The Section 1B layer set (v3.3 Amendments + v3.5.1 + v3.6 + v3.7; later
+  layers govern the items they name) is the SOLE exit multiple authority.
+  No exit PE from any other source, no round-number defaults.
 - OPERATOR-APPROVED BASE (from the deliberation record via B10, authoritative):
   the destination (exit) PE base and the earnings basis (FORWARD or TRAILING)
   were approved by the operator at the FTTCP pillar-approval gate. Use that

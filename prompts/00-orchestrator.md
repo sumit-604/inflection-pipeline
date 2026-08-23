@@ -3,7 +3,7 @@
 
 Replaces the Gemini (Jaimini) upstream pipeline. One model family end to end.
 Valuation authority: Master Project Prompt v3.6, Section 1B layer set (v3.3
-Amendments + v3.5.1 + v3.6; v3.6 governs overlaps) (Four-Pillar
+Amendments + v3.5.1 + v3.6 + v3.7; later layers govern the items they name) (Four-Pillar
 Framework, RRM dual-track, Hurdle Ratio), FTTCP v2.1. No other exit PE source
 is permitted anywhere in the pipeline.
 
@@ -22,7 +22,8 @@ C (its valuation-adherence checks are deferred to phase 3, since B10/B11
 do not yet exist). Then a synthesis-lite writes three files to
 outputs/final/: `business-narrative.md`, `gate-recommendation.md` (the
 FTTCP go/no-go per the verdict-selection rules, minus every
-valuation-dependent element), and `verifier-summary.md`. Stages 10, 11,
+valuation-dependent element), and `verifier-summary.md`, + 09b
+understanding dossier (halt gate). Stages 10, 11,
 verifier C's valuation half, and the full synthesis do NOT run in phase 1.
 Phase 1 ends by handing off: "Phase 1 complete. Next: /fttcp
 runs/<folder> for deliberation."
@@ -507,7 +508,7 @@ roughly ₹700-1,000. Web search adds ~$0.30-0.60 on stages 8-9.
 - Never lets any stage assume a number from conversation memory: stage 10
   is the only assembler of valuation inputs, and it must anchor every value.
 - Never lets any exit PE enter from outside the Section 1B layer set (v3.3
-  Amendments + v3.5.1 + v3.6; v3.6 governs overlaps).
+  Amendments + v3.5.1 + v3.6 + v3.7; later layers govern the items they name).
 - Never conflates the Emerging Moat scan (stage 7) with FTTCP: FTTCP runs
   inside stage 11's framework inputs as final synthesis, per project
   taxonomy.

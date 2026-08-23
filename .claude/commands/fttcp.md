@@ -192,7 +192,7 @@ Make every judgment call and state your view on it:
 Anchoring is mandatory: every number is followed by its (source, page/note).
 A number is anchored or it is NOT FOUND — never estimate a missing one. Exit
 PE and Pillar treatment come only from the Section 1B layer set (v3.3
-Amendments + v3.5.1 + v3.6; v3.6 governs overlaps). Never credit one ROCE
+Amendments + v3.5.1 + v3.6 + v3.7; later layers govern the items they name). Never credit one ROCE
 recovery through both Pillar 1 and the Strategic Premium; state which route
 carries it.
 
@@ -369,7 +369,7 @@ LESSONS.md, which is budget-capped): what broke or dragged this session, or
 - Never leave a judgment call open or phrase one as a question.
 - Never estimate a missing number; NOT FOUND is the only fill.
 - Never use an exit PE from outside the Section 1B layer set (v3.3
-  Amendments + v3.5.1 + v3.6; v3.6 governs overlaps); the sector cap table
+  Amendments + v3.5.1 + v3.6 + v3.7; later layers govern the items they name); the sector cap table
   is the only ceiling.
 - Never let INDETERMINATE cash conversion resolve to a clean pass.
 - Never fabricate a catalyst to fill a table; NONE FOUND is a valid finding.

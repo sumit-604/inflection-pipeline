@@ -179,6 +179,15 @@ handoff schemas, flag rules, and error handling. Then:
    B09b YAML block. Collect B09b into outputs/blocks/. Nothing in this
    stage or here may mark the Mental Model Declaration signed.
 
+   MECHANICAL DOSSIER CHECK (before the HALT 1 message prints): grep
+   outputs/reports/09b-understanding-dossier.md for the five section
+   headers (SECTION 1 through SECTION 5, in order), exactly one corpus
+   verdict line (CORPUS CURRENT or CORPUS GAPPED), and the
+   "DRAFT - PENDING OPERATOR SIGN-OFF" marker in Section 2. On any miss,
+   re-run stage 09b once. If it is still malformed after the re-run, STOP
+   and report which check failed. The HALT 1 message never prints over a
+   malformed dossier.
+
 7. COMMIT all outputs with message "phase 1 (evidence): <ticker> <date>"
    and report to the user: the corpus verdict and fragility verdict from
    the dossier, the gate recommendation verdict line, flags active,

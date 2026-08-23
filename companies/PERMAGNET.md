@@ -22,6 +22,14 @@ Rs 230-314 (devil-corrected). MoS Rs 118. Zone MARKET-UNLIKELY (entry top 72.7% 
 
 
 
+&#x20;   2026-08-23 (P/E gate, FTTCP v2): Reading 2 ADOPTED. Anchored core operating ROCE ex-QMPL 16.5% (band 15.6-16.5%, ex the Rs 1.74 Cr one-off), both ends clear 13.5% CoC. Pillar 1 base 15.7x (band 15.3-15.7x). The 19-Aug approved 13.8x base / 17.3x additive / 14.1x RRM is SUPERSEDED by this anchored recompute (fttcp-v2-core-roce-recompute.md, all AR-FY26). Record: supersession noted; 19-Aug B11 stays committed for audit.
+
+&#x20;   2026-08-23 (P/E gate): Pillar 3 HELD at +0x despite the Amendment 16 gate opening at 16.5% ROCE. Single-credit: the transformation is priced in the option slices; the alloys catalyst is SHARED and already credited in the forward ROCE read. Revisit on audited FY27 core revenue growth durably above mid-teens.
+
+&#x20;   2026-08-23 (P/E gate): Earnings basis ONE-YEAR-FORWARD confirmed, FY27 core operating EPS ~Rs 22.9 (grade-C build).
+
+&#x20;   2026-08-23 (P/E gate): Pillar 2 1.00x accepted (growth-induced). Upgrade trigger added: a third consecutive strong conversion year in FY27 audited numbers lifts it to 1.15x at the next refresh. Approved destination PE: additive 19.6x (band 19.1-19.6x) / RRM 16.1x (band 15.7-16.1x). Sign-off: outputs/final/fttcp-v2-deliberation.md.
+
 &#x20;   2026-08-23: Role 5.5 tracker writes CONFIRMED executed 22-Aug-2026 in claude.ai: 12 signal rows (superset of the run's 6 candidates, expanded by the six-vertical deep dive) live in DOWNSTREAM SIGNAL TRACKER data_source 926b65ce-ddd2-4d8b-8eae-05e66b6f6c9f, all linked to the PERMAGNET page. Proof anchors: tracker https://app.notion.com/p/ea5f02670d114b2abd7b74f88bb33061 ; company page (rows visible via relation) https://app.notion.com/p/3c4bb2b9d3ab81adbb48f6a71f0c4561 . Row inventory with tiers/cadences/falsifiers: Section 5 of the handover dossier at inputs/research/web-handover-dossier.md.
 
 &#x20;   2026-08-23: Halt 1 decision: PROCEED (retroactive: pilot run predates the gate; dossier artifacts exist post-hoc). Understanding Gate cleared for /fttcp.

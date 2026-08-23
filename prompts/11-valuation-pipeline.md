@@ -60,6 +60,11 @@ mode:
    options exit as resolved states (18.3), beyond-hold re-dated and conditioned
    (18.4); bear carries within-hold options at failure; transition dual-display
    per 18.6.
+10. FV path table + FV CAGR + return-source classification (v3.8 Amendment 19)
+   mandatory in Section 4: path on the governing track base case, the one-number
+   FV CAGR, the COMPOUNDER/HYBRID/DISCOUNT-CLOSER label with its decomposition
+   line, and FV-step lines for within-hold resolution events; label and FV CAGR
+   surface on the verdict card.
 
 ## FRAMEWORK ELEMENTS THE WRAPPER ENFORCES (per the injected layers, non-negotiable)
 

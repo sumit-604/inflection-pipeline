@@ -37,6 +37,10 @@ message as file paths to read, or inline content.
   5-year range); top-quintile input → ceiling verdict WATCHLIST per
   v3.7 17.4, with the cycle position as the named resolving condition
   and a review trigger when the input exits the top quintile.
+- Carry the Amendment 19 FV CAGR and return-source label into Role 2
+  Section 5 and the one-line thesis; a DISCOUNT-CLOSER thesis states
+  explicitly that the return is the discount closing, not business
+  compounding.
 
 Write your full report to the output path given in your task message,
 then end your output with exactly this fenced YAML block and return ONLY

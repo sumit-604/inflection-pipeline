@@ -227,6 +227,11 @@ RULES:
    as resolved states at exit with bear = failure; beyond-hold slices
    re-dated and conditionally-probabilized; transition dual-display present
    (first five runs). Any miss = REWORK for stage 11.
+12. Role 1 Section 4 contains the Amendment 19 FV path table (today through
+   end-Year-3, governing track), the FV CAGR line, the return-source label
+   with decomposition, and — where a resolution calendar has within-hold
+   events — the FV-step lines. Label present on the verdict card. Missing any
+   element = REWORK for stage 11.
 
 OUTPUT: per-framework compliance tables with rule-by-rule PASS/FAIL and
 the recomputed value beside any FAIL; then:

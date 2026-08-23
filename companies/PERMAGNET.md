@@ -64,15 +64,6 @@ STRUCTURAL.
 * Full Rs 47.81 Cr ECB drawn / going-concern EoM persists / net debt above \~Rs 27 Cr.
 * 2015 Bombay HC winding-up EoM removed and Rs 22.01 Cr excise interest dispute closed → overhang clears.
 
-## FRAMEWORK-ERA NOTE (v3.8, no retrofit)
-
-The committed v3 valuation (11-valuation-v3.md, B11-v2-valuation.yaml) ran under Section 1B
-v3.3+v3.5.1+v3.6+v3.7: trailing-Year-3 exit EPS and static probability-weighted option slices. Section 1B
-v3.8 (Amendment 18, 23-Aug-2026) changed exit mechanics: exit EPS basis matches entry (here one-year-forward,
-so exit on FY30), and within-hold options exit as resolved states (bear = failure). The v3 record STANDS as
-its era's stamp; it is NOT recomputed. The next PERMAGNET refresh (November results or a fired trigger) runs
-under v3.8 automatically and will carry the Year-4 projection row and the Option Resolution Calendar.
-
 ## OPEN METHODOLOGY ITEM (for next refresh)
 
 Devil's advocate (B15) flagged that the core multiple was set off CONSOLIDATED ROCE 12.54%

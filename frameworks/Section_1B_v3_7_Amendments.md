@@ -1,6 +1,6 @@
 # SECTION 1B v3.7 AMENDMENTS — COMMODITY CONVERTER CYCLE INTEGRATION
 
-*Version 3.7 | 20 August 2026 | Commodity converter cycle integration, operator directive 20-Aug-2026. Layers on top of Section 1B v3.3 + v3.3 Amendments + v3.5.1 + v3.6. It does not modify any prior file in place. Where they overlap on items named here, v3.7 governs. Stage 11 reads this alongside the earlier Section 1B files and the later v3.8 Amendments (which govern the items they name where the layers overlap). Amendments number continuing from v3.6 (whose last amendment is 16).*
+*Version 3.7 | 20 August 2026 | Commodity converter cycle integration, operator directive 20-Aug-2026. Layers on top of Section 1B v3.3 + v3.3 Amendments + v3.5.1 + v3.6. It does not modify any prior file in place. Where they overlap on items named here, v3.7 governs. Stage 11 reads this alongside the earlier Section 1B files. Amendments number continuing from v3.6 (whose last amendment is 16).*
 
 ---
 

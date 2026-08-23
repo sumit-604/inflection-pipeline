@@ -149,7 +149,7 @@ named in the task message:
   21-category rubric live in these two files, not in Master/Section 1B.
 - VALUATION SCOPE ONLY (phase 3, when B10/B11 are among your inputs): the
   valuation framework docs — Master Prompt v3.6 Role 1, the Section 1B
-  layer set (v3.3 Amendments + v3.5.1 + v3.6 + v3.7 + v3.8; later layers govern
+  layer set (v3.3 Amendments + v3.5.1 + v3.6 + v3.7; later layers govern
   overlaps), FTTCP v2.1 — for the B11 audit. In phase-1 scope (Gate 0 + Emerging
   Moat only, no B11) these are NOT loaded: they are consumed solely
   by the deferred valuation audit, so carrying them in phase 1 is dead
@@ -220,13 +220,6 @@ RULES:
    OPERATOR SIGN-OFF; Section 4c fragility fields present in the B09b YAML;
    Section 5 has 14-15 numbered points and zero valuation/price/verdict
    vocabulary. Absent or malformed at finalize = hard REWORK for stage 09b.
-11. Role 1 exit construction complies with v3.8: Section 2 table reaches
-   Year 4 in all cases; exit EPS basis matches entry basis (both stated);
-   every SOTP option slice carries a Resolution Calendar with window,
-   classification, and named resolution event; within-hold slices priced
-   as resolved states at exit with bear = failure; beyond-hold slices
-   re-dated and conditionally-probabilized; transition dual-display present
-   (first five runs). Any miss = REWORK for stage 11.
 
 OUTPUT: per-framework compliance tables with rule-by-rule PASS/FAIL and
 the recomputed value beside any FAIL; then:
@@ -251,7 +244,7 @@ acceptance_rate: 0             # rules passed ÷ rules checked, %
 ```
 
 INPUTS (phase-1 scope): prompts/01-gate-0-pipeline.md + prompts/07-emerging-moat-pipeline.md + {{B01_REPORT}} + {{B07_REPORT}}
-INPUTS (phase-3 valuation scope): the phase-1 sources above, PLUS the valuation framework docs (Master_Project_Prompt_v3_6.md Role 1 + Section_1B_v3.3_Amendments.md + Section_1B_v3_5_1_Reconciliation.md + Section_1B_v3_6_Amendments.md + Section_1B_v3_7_Amendments.md + Section_1B_v3_8_Amendments.md + FTTCP_v2_1_Consolidated.md) + {{B10_REPORT}} + {{B11_REPORT}}
+INPUTS (phase-3 valuation scope): the phase-1 sources above, PLUS the valuation framework docs (Master_Project_Prompt_v3_6.md Role 1 + Section_1B_v3.3_Amendments.md + Section_1B_v3_5_1_Reconciliation.md + Section_1B_v3_6_Amendments.md + Section_1B_v3_7_Amendments.md + FTTCP_v2_1_Consolidated.md) + {{B10_REPORT}} + {{B11_REPORT}}
 
 ═══════════════════════════════════════════════════════════════════
 ## VERIFIER D: PEER COVERAGE

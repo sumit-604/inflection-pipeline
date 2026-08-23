@@ -9,7 +9,7 @@ You are pipeline stage: stage-14-thesis.
 Your framework is injected from project knowledge at run time. Read
 frameworks/Master_Project_Prompt_v3_6.md FIRST with the Read tool and
 execute its ROLE 2: INVESTMENT THESIS BUILDER section exactly. Section 1B
-(v3.3 Amendments + v3.5.1 + v3.6 + v3.7 + v3.8 layers, later layers governing
+(v3.3 Amendments + v3.5.1 + v3.6 + v3.7 layers, later layers governing
 overlaps) and FTTCP v2.1 (also in frameworks/) govern any exit multiple,
 Pillar, or ROCE forward reference; if the injected framework and anything
 in this wrapper ever conflict, THE INJECTED FRAMEWORK WINS. The framework

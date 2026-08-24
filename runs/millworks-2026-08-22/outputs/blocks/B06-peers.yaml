@@ -1,0 +1,43 @@
+stage: B06-peers
+company: "MILLWORKS"
+run_date: "2026-08-22"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - "Millworks FY26 receivables (178 days / 48.9% of revenue) far exceed any peer disclosed cycle (peer range 45-160 days); no peer cites geopolitics-vs-counterparty testing delays as a driver"
+  - "No peer discloses an investee-as-top-customer structure at Millworks' scale (47.02%); closest analog (Unimech-Dheya) is pre-commercial and undisclosed by revenue %"
+  - "Neither Unimech nor Apsis discloses formal FX hedging or RM pass-through; Unimech booked an unhedged FX loss, suggesting sector-wide (not Millworks-specific) exposure"
+peers_provided: 7
+verified:
+  - {claim: "Peers commit further capex only at high (80-100%) utilisation and secure funding (equity or debt) at or before machinery orders, never after", peers: [Unimech, Apsis, Airfloa], anchor_count: 6}
+partially_verified:
+  - {claim: "Millworks order-to-revenue conversion pace (9.7% executed at snapshot) consistent with sector norms", peers: [Unimech, Apsis, Airfloa]}
+  - {claim: "A related-party/investee top-customer structure exists elsewhere in the peer set", peers: [Unimech]}
+  - {claim: "Airfloa corroborates the Railways capex cycle converting to order inflow, and the lag", peers: [Airfloa]}
+  - {claim: "Absence of formal FX hedging/RM pass-through is consistent with peer practice", peers: [Unimech, Apsis]}
+  - {claim: "Demand reflects sector-wide capacity crunch rather than pure company-specific share gain", peers: [Unimech, Apsis, Airfloa]}
+contradicted: []
+unverifiable:
+  - {claim: "Millworks elongated receivables reflect geopolitics-vs-specific-counterparty customer-testing delays", peers_checked: [Unimech, Apsis, Airfloa]}
+peer_coverage_map:
+  - {peer: "UNIMECH", quarter: "Q3 FY26 (Feb 2026)", usage: "SUBSTANTIVE"}
+  - {peer: "UNIMECH", quarter: "Acquisition update (May 2026)", usage: "SUBSTANTIVE"}
+  - {peer: "UNIMECH", quarter: "Q4 FY26 (May 2026)", usage: "SUBSTANTIVE"}
+  - {peer: "UNIMECH", quarter: "Q1 FY27 (Aug 2026)", usage: "SUBSTANTIVE"}
+  - {peer: "APSISAERO", quarter: "H2 & FY26 (Jun 2026)", usage: "SUBSTANTIVE"}
+  - {peer: "544516 (AIRFLOA)", quarter: "H1 FY26 (Nov 2025)", usage: "SUBSTANTIVE"}
+  - {peer: "544516 (AIRFLOA)", quarter: "H2 FY26 & FY26 (Jun 2026)", usage: "SUBSTANTIVE"}
+industry_cross_read:
+  demand: "FY26 bifurcated: export-heavy aero tooling (Unimech) hit by US tariffs, recovering Q4 FY26/Q1 FY27; domestic defence (Apsis +49.56% YoY) and rail (Airfloa +66% YoY) stayed robust"
+  pricing_inputs: "Airfloa and Apsis flag aluminium/steel RM inflation (80% and 60-65% YoY) and FX volatility, only ~50-60% offset by price-variation clauses; Unimech shows an unhedged FX loss"
+  capex_cycle: "Industry-wide capacity race: all three peers expanding simultaneously off recent IPO/QIP capital"
+risks_peers_raise:
+  - "Unhedged FX/tariff exposure causing a booked currency loss (Unimech, Rs.9.6cr one quarter)"
+  - "RM inflation (aluminium, steel) only partially covered by price-variation clauses, tied to global conflict (Airfloa, Apsis)"
+  - "China export-control/end-user-certificate delays disrupting precision-machinery procurement (Airfloa)"
+  - "Long qualification cycles (AS9100, NADCAP) gating higher-value aerospace work (Unimech, Apsis)"
+  - "Defence tender bidding unpredictability (L1/L2) despite large bid volumes (Unimech)"
+  - "Structural working-capital stretch as project/turnkey mix grows (Unimech, forward risk)"
+net_narrative_effect: "complicates"
+analyst_note: "Peer evidence strongly supports capex discipline (VERIFIED) and the Railways capex-to-order-inflow thesis, but sharpens rather than resolves two open items: Millworks' receivables cycle is roughly 1.5-4x any peer's with no peer citing a comparable driver, and the investee-top-customer structure has only a partial, much smaller-scale analog (Unimech-Dheya, pre-revenue). Both carry into synthesis as named gaps, not assumed sector-normal."

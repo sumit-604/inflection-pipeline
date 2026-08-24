@@ -1,0 +1,14 @@
+stage: B12a
+company: "MILLWORKS"
+run_date: "2026-08-22"
+model: claude-haiku-4-5
+status: complete
+numbers_checked: 38
+findings: []
+critical_count: 0
+major_count: 0
+minor_count: 0
+acceptance_rate: 100
+numerical_acceptance: 100
+source_fidelity_holds: 0
+coverage_note: "Verified all materiality-prioritized figures: Gate 0 blocks A-F (verdict scores, scorecard inputs), financial metrics FY24-FY26 (revenue, PAT, CFO, EBITDA, ROCE, ROE, WC days), business segments 4/4, customer concentration top-10 (92.06%) and top-5 (81.07%), Quik Pay 47.02% and 575.06L investment, order book pre/post-IPO (Rs 67.14cr RHP p.130 / Rs 121.88cr Reg30 20.08.2026), TAM conservative (Rs 3,200cr) and realistic (Rs 10,300cr). All anchored to RHP pages or Reg30 announcement. Zero source-fidelity holds. The cash-conversion gap and Quik Pay triple-link are company-disclosed risks per RHP Risk Factors, not misstatements."

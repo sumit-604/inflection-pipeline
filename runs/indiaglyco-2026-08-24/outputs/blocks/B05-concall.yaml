@@ -1,0 +1,47 @@
+stage: B05-concall
+company: "INDIAGLYCO"
+run_date: "2026-08-24"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["FY27 near-term segment EBITDA targets for Chemicals (>Rs200cr) and Ennature (>Rs50cr) not found verbatim in the 3 transcripts; only 4-5yr aspirational figures and NSU FY27 figure (Rs150cr+) spoken on-call - likely from Q1 FY27 deck not read here", "FY26 absolute IMFL revenue figure requested by an analyst in Q1 FY27 call not available live"]
+flags: ["FX/currency hedging never mentioned in any of 3 calls despite material export/import/rupee exposure", "EBP ethanol allocation decline (~-22% YoY per prior-stage flag) never mentioned; Bio-Fuels narrative uniformly positive", "Bio-glycols realisation decline (-29.9% per prior-stage flag) not addressed by name", "NSU/Performance Chemicals doubling promise missed twice running (FY26 actual 40%, Q1 FY27 still ~40% YoY)", "Segment debt breakup requested twice, deflected both times", "NCLT demerger order slipped ~6 weeks past guided date, not proactively flagged", "Two inconsistent historical EBITDA-margin figure sets cited across calls for FY22-FY26"]
+quarters_analysed: ["Q3 FY26", "Q4 FY26", "Q1 FY27"]
+promise_delivery_score: "2 delivered / 4 partial / 3 missed (of 9 tracked); ~0.44 on (delivered+0.5*partial)/total"
+triggers:
+  - {priority: 1, name: "IGL Spirits FY27 EBITDA >Rs500cr", type: "price-mix/volume", timeframe: "near-term", conviction: "M-H", confirm_signal: "Quarterly EBITDA run-rate tracking to Rs500cr (Q1 FY27 already at Rs120cr)", kill_signal: "IMFL volume growth stalls below double digits or Deluxe Whisky/Semi-Premium Vodka launches slip"}
+  - {priority: 2, name: "Demerger completion into 3 listed entities", type: "regulatory-policy/inorganic", timeframe: "near-term", conviction: "H", confirm_signal: "Official effective-date notification and separate listings", kill_signal: "Further NCLT/regulatory delay beyond the already-slipped schedule"}
+  - {priority: 3, name: "Performance chemicals/NSU scale-up", type: "volume/price-mix", timeframe: "medium-term", conviction: "L-M", confirm_signal: "NSU revenue crosses Rs150cr in FY27 as newly guided", kill_signal: "Growth stays capped near 40% for a third consecutive period"}
+  - {priority: 4, name: "Chemicals business debt-free via 24% JV stake sale", type: "cost", timeframe: "long-term (FY28-29)", conviction: "M", confirm_signal: "Stake sale executed on schedule", kill_signal: "Sale deferred, renegotiated, or JV performance deteriorates"}
+  - {priority: 5, name: "CSD/paramilitary/Amrut premiumization channel", type: "price-mix", timeframe: "near-term", conviction: "H", confirm_signal: "IMFL % of Potable Spirits revenue continues past 31%", kill_signal: "CSD final board approvals stall or Amrut volumes plateau"}
+  - {priority: 6, name: "Ethanol blending beyond 20% (E22/25, flexi-fuel)", type: "regulatory-policy/sectoral", timeframe: "medium-term", conviction: "L", confirm_signal: "NITI Aayog committee announces a higher blending mandate", kill_signal: "No policy movement through FY27"}
+guidance:
+  - {item: "Term loan closing balance", number: "~Rs1,100 crore", timeframe: "31 Mar 2026", stated_in: "Q3 FY26 call, CFO"}
+  - {item: "Normal term-loan repayment liability", number: "Rs268 crore (Rs168cr liquor + Rs100cr chemicals)", timeframe: "FY27", stated_in: "Q4 FY26 call, CFO"}
+  - {item: "Chemicals business debt-free via 24% JV stake sale", number: "n/a", timeframe: "FY28-29", stated_in: "Q4 FY26 call, CFO"}
+  - {item: "IGL Spirits segment EBITDA", number: ">Rs500 crore", timeframe: "FY27", stated_in: "Q1 FY27 call, COO"}
+  - {item: "IGL Spirits segment EBITDA (aspiration)", number: ">Rs1,000 crore", timeframe: "4-5 years", stated_in: "Q1 FY27 call, aspiration not projection"}
+  - {item: "IGL Spirits volume growth", number: "doubling vs FY26", timeframe: "FY27", stated_in: "Q1 FY27 call"}
+  - {item: "Chemicals (residual India Glycols) EBITDA/revenue (aspiration)", number: "~Rs400cr EBITDA on ~Rs2,500cr revenue", timeframe: "4-5 years", stated_in: "Q1 FY27 call, aspiration"}
+  - {item: "NSU/Performance Chemicals EBITDA-type aspiration", number: "Rs150cr+", timeframe: "FY27, aspiration", stated_in: "Q1 FY27 call"}
+  - {item: "Ennature Bio Pharma EBITDA (aspiration)", number: "Rs130-150cr", timeframe: "4-5 years", stated_in: "Q1 FY27 call, aspiration"}
+  - {item: "Performance chemicals doubling (superseded, missed)", number: "2x contribution", timeframe: "FY26", stated_in: "Q2 FY26 background call; actual 40% growth per Q4 FY26"}
+promise_delivery: {delivered: 2, partial: 4, missed: 3}
+excuse_pattern: "balanced"
+repeated_evasions:
+  - {question: "What is the segment-wise debt breakup, and the specific prepayment plan/number for next year?", quarters_asked: ["Q3 FY26", "Q4 FY26"], classification: "deflected every time"}
+credibility_grade: "B"
+credibility_basis: "Delivered core financial guidance (margin trajectory FY22-FY26, debt reduction, IGL Spirits FY27 pace) and separates aspiration from guidance, but missed NSU doubling twice, stayed silent on FX hedging despite material currency exposure, and deflected a twice-repeated segment debt-breakup request."
+peer_questions:
+  - {question: "Was India's 20% ethanol blending target genuinely 'originally scheduled for 2030' and achieved materially ahead of schedule, as IGL's Q4 FY26 call frames it?", check_peers: ["Balrampur Chini", "Triveni"]}
+  - {question: "Do peer commentaries confirm the national ethanol feedstock mix shift from ~9% grain (FY20) to ~70-73% grain (FY26), maize near-zero to ~46%?", check_peers: ["Balrampur Chini", "Triveni", "Globus Spirits"]}
+  - {question: "Do peers confirm rising DDGS realisations/acceptability as a margin support?", check_peers: ["Globus Spirits", "Triveni"]}
+  - {question: "Is there industry-wide excess ethanol capacity relative to blending demand, as IGL states in all 3 calls?", check_peers: ["Balrampur Chini", "Triveni", "Globus Spirits"]}
+  - {question: "Does OMC ethanol allocation data for FY26/FY27 show a material YoY decline (~-22%), and do peers report the same pressure?", check_peers: ["Balrampur Chini", "Triveni", "Globus Spirits"]}
+  - {question: "Do peers report UP/Uttarakhand IMFL industry growth of only 4-5% over two years, against IGL's claimed 26% YoY IMFL growth and double-digit share gains?", check_peers: ["Globus Spirits", "Piccadily"]}
+  - {question: "Do peers corroborate the cited UP market volume growth from ~15 lakh to 23-25 lakh cases/month?", check_peers: ["Piccadily", "Globus Spirits"]}
+  - {question: "Do peers report bio-glycols/MEG realisation trends consistent with a sharp decline (-29.9%), given IGL's glycols narrative is uniformly positive?", check_peers: ["Balrampur Chini", "Triveni"]}
+  - {question: "Do Balrampur Chini/Triveni report a similar UP molasses-reservation policy shift (B-heavy vs C-heavy) affecting feedstock costs?", check_peers: ["Balrampur Chini", "Triveni"]}
+red_flags: ["Zero FX/currency hedging disclosure across all 3 calls despite material export/import/rupee exposure (medium-high)", "EBP ethanol allocation decline (~-22% YoY) never mentioned; Bio-Fuels narrative uniformly positive (medium-high)", "Bio-glycols realisation decline (-29.9%) not addressed by name (medium)", "NSU doubling promise missed twice running, rolled forward without acknowledgment (medium)", "Segment debt breakup requested twice, deflected on-call both times (low-medium)", "NCLT demerger order slipped ~6 weeks past guided date (low-medium)", "LanzaTech collaboration dropped from narrative after a disappointing Q3 FY26 update (low-medium)", "Two inconsistent historical EBITDA-margin figure sets cited (low)"]
+dropped_triggers: ["LanzaTech carbon-smart products partnership: flagged underperforming Q3 FY26, absent from Q4 FY26 and Q1 FY27"]
+timeline_slippages: ["NCLT demerger order: guided 'first 10 days of June 2026' vs actual sanction 17 July 2026, ~6-week slip", "NSU doubling: promised FY26, delivered 40%, rolled to FY27, still ~40% YoY one quarter in"]
+analyst_note: "Two silences matter most: zero FX-hedging disclosure despite currency-sensitive exports/imports discussed at length, and zero mention of the flagged EBP allocation decline against a uniformly upbeat Bio-Fuels narrative. Neither resolved here; stage 6/11 should chase primary allocation data and the AR's FX/hedge note directly. Task-context FY27 near-term targets for Chemicals (>Rs200cr) and Ennature (>Rs50cr) not found verbatim in transcripts read; likely from the Q1 FY27 deck."

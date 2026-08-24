@@ -1,0 +1,24 @@
+stage: B13-synthesis
+company: "MANINDS"
+run_date: "2026-08-21"
+model: claude-opus-4-8
+phase: 1-lite
+status: complete
+verdict: "PROCEED WITH CAVEATS"
+verdict_rule_applied: 3
+verdict_cap_reason: "FLAG-PROMOTER (CONCERN) + FLAG-CASH active route to PROCEED WITH FLAGS, but cash determination is INDETERMINATE (full CRISIL Jun-01-2026 rating rationale not in corpus); INDETERMINATE cash caps at PROCEED WITH CAVEATS with the missing evidence named. Matches CLAUDE.md NEVER + orchestrator FLAG-CASH rule."
+flags_active: ["FLAG-PROMOTER", "FLAG-CASH", "FLAG-GATE0"]
+confidence_delta: {numerical: 96.6, redflag: 80, framework: 98, peer: 83.3, overall: 80}
+valuation_decision: ""
+entry_range: {low: 0, high: 0}
+headline: "Line pipe converter buys Saudi capacity"
+falsification_metric: "FY26 AR DSCR below 1.0x at both entity levels for a third consecutive year alongside trade receivables turnover falling below 3.17x"
+monitorables_count: 8
+publish_candidate: false
+notion_save:
+  mode: append-never-overwrite-status
+  note: "not written in phase-1 lite mode"
+files_written:
+  - runs/maninds-2026-08-21/outputs/final/business-narrative.md
+  - runs/maninds-2026-08-21/outputs/final/gate-recommendation.md
+  - runs/maninds-2026-08-21/outputs/final/verifier-summary.md

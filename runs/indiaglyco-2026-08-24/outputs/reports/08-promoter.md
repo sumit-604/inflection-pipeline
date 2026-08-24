@@ -1,5 +1,5 @@
 # Stage 8 — Promoter Background Check: India Glycols Ltd (INDIAGLYCO)
-Run date: 2026-08-24 | Model: claude-sonnet-5 | Status: complete
+Run date: 2026-08-24 | Model: claude-sonnet-5 | Status: partial (see Search Log)
 
 Primary source: FY2025-26 Annual Report (Board's Report, Corporate Governance
 Report, related-party notes) at runs/indiaglyco-2026-08-24/inputs_text/annual-report/Annual_Report_2023.txt
@@ -590,34 +590,51 @@ TRANSITION EVIDENCE: institutional capital entry (360 ONE, QRG
 3. India Glycols demerger Ennature Bio Pharma IGL Spirits September 2026
 4. U.S. Bhartia India Glycols SEBI order
 5. India Glycols NSEL default IGL Finance
-6. WebFetch: India Glycols preferential allotment disclosure PDF (blocked — egress proxy)
-7. WebFetch: Whalesbook "Legal Storms" article (blocked — egress proxy)
-8. "India Glycols" preferential allotment 51,03,765 shares non-promoter investors names
-9. India Glycols "legal storms" demerger controversy litigation
-10. "Uma Shankar Bhartia" India Glycols Bhartia family relation
-11. India Glycols Manoj Kumar Rai IGL Spirits ED COO Allied Blenders Pernod Ricard
-12. India Glycols IiAS proxy advisory recommendation
-13. India Glycols Glassdoor AmbitionBox employee reviews
-14. "India Glycols" OR "U S Bhartia" SEBI insider trading adjudication order
-15. "India Glycols" criminal case CBI ED PMLA fraud promoter
-16. India Glycols NSEL Kashipur Holdings court case oppression NCLT minority shareholders
-17. Kashipur Holdings Limited India Glycols promoter entity RoC status
-18. India Glycols preferential issue non-promoter allottees QIB FPI investor names 915
-19. India Glycols institutional investor stake FII entry 2025 2026
-20. India Glycols credit rating upgrade CARE Ind-Ra 2025 2026
-21. "India Glycols" "QRG Investments" OR "360 ONE" preferential allotment
-22. WebFetch: prysm.fi allotment article (blocked — egress proxy)
-23. U.S. Bhartia India Glycols chairman biography education background founder history
-24. India Glycols promoter pledge trend trendlyne screener 2023 2024 2025
+6. "India Glycols" preferential allotment 51,03,765 shares non-promoter investors names
+7. India Glycols "legal storms" demerger controversy litigation
+8. "Uma Shankar Bhartia" India Glycols Bhartia family relation
+9. India Glycols Manoj Kumar Rai IGL Spirits ED COO Allied Blenders Pernod Ricard
+10. India Glycols IiAS proxy advisory recommendation
+11. India Glycols Glassdoor AmbitionBox employee reviews
+12. "India Glycols" OR "U S Bhartia" SEBI insider trading adjudication order
+13. "India Glycols" criminal case CBI ED PMLA fraud promoter
+14. India Glycols NSEL Kashipur Holdings court case oppression NCLT minority shareholders
+15. Kashipur Holdings Limited India Glycols promoter entity RoC status
+16. India Glycols preferential issue non-promoter allottees QIB FPI investor names 915
+17. India Glycols institutional investor stake FII entry 2025 2026
+18. India Glycols credit rating upgrade CARE Ind-Ra 2025 2026
+19. "India Glycols" "QRG Investments" OR "360 ONE" preferential allotment
+20. U.S. Bhartia India Glycols chairman biography education background founder history
+21. India Glycols promoter pledge trend trendlyne screener 2023 2024 2025
 
-**Searches skipped**: none by choice; three WebFetch calls to primary
-company/exchange PDFs (indiaglycols.com x2, prysm.fi) were blocked by
-the network egress proxy and could not be retried through an alternate
-route within this run. This lowers three findings (allottee names,
-detailed preferential-allotment disclosure text, one demerger article)
-from potential ✅ VERIFIED to 📰 MEDIA REPORTED tier, as noted inline.
-Status recorded as **complete** (not partial) because every planned
-search topic was covered via alternative sources; the egress blocks
-affected evidence tier, not coverage.
+**Searches skipped / tool errors (status: partial per pipeline rule)**:
+- WebFetch: India Glycols preferential allotment Regulation 30 disclosure
+  PDF (indiaglycols.com) — blocked by network egress proxy
+  (EGRESS_BLOCKED). Would have upgraded allottee-name evidence from 📰
+  MEDIA REPORTED to ✅ VERIFIED.
+- WebFetch: Whalesbook "India Glycols Plans Demerger Amidst Legal Storms"
+  article — blocked by network egress proxy (EGRESS_BLOCKED). Substance
+  recovered instead via WebSearch snippets (2C, 4A).
+- WebFetch: prysm.fi preferential-allotment article — blocked by network
+  egress proxy (EGRESS_BLOCKED). Substance recovered instead via
+  WebSearch snippets (3B, 6D).
+
+All three blocked items were substantively covered through alternative
+WebSearch queries and cross-corroborated where possible; no topic area
+was left completely unresearched. The blocks lowered three findings
+from potential ✅ VERIFIED to 📰 MEDIA REPORTED evidence tier (noted
+inline at each finding) rather than leaving a gap. Per the pipeline rule
+that tool errors forcing skips set status to partial, this report is
+marked **partial**, with the caveat that coverage is complete and only
+evidence tier was affected.
+
+Not independently verified in this run (NOT FOUND, listed for
+completeness): per-entity MCA/RoC status of the 12+ promoter-linked RPT
+vehicles (1B); IiAS/SES/InGovern-specific recommendation history for
+India Glycols (3D); a formal 3-year quarterly pledge series (3C, only a
+current 0% snapshot obtained); political/government-connection history
+(4D); industry-peer reputation benchmarking (4E); reconciliation of the
+internally inconsistent NSEL-related ICD closing balance in the FY26 AR
+(3A).
 
 ---

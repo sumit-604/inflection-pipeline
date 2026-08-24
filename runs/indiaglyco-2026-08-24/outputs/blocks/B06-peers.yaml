@@ -1,0 +1,51 @@
+stage: B06-peers
+company: "INDIAGLYCO"
+run_date: "2026-08-24"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - "Claim 7 (UP market volume range) is CONTRADICTED by Globus's ~95 lakh-1 crore cases/month figure vs the 15-25 lakh range implied; likely a segment-scope mismatch requiring operator clarification before use in synthesis or valuation."
+  - "Claim 8 (bio-glycols/MEG realisation) structurally unverifiable: no peer in this set manufactures glycols/MEG; cross-check needs chemicals-sector peers not provided."
+  - "Claim 5 (OMC allocation decline) direction corroborated by two peers (Globus, Triveni) but the ~-22% magnitude unconfirmed by any peer; check against a primary OMC allocation source before treating as fact."
+peers_provided: 13
+verified:
+  - {claim: "Industry-wide EXCESS ethanol capacity vs blending demand", peers: ["BALRAMCHIN", "TRIVENI", "GLOBUSSPR"], anchor_count: 5}
+  - {claim: "National ethanol feedstock mix shifted to grain-majority (~56-75% grain, current); FY20 baseline unverifiable", peers: ["TRIVENI", "GLOBUSSPR", "BALRAMCHIN"], anchor_count: 4}
+partially_verified:
+  - {claim: "India's 20% ethanol blending achieved ahead of an originally 2030-scheduled target", peers: ["TRIVENI"]}
+  - {claim: "Rising DDGS realisations providing margin support in grain-based ethanol", peers: ["TRIVENI"]}
+  - {claim: "OMC ethanol allocation declining materially in FY26/FY27 (direction only; ~-22% magnitude unconfirmed)", peers: ["GLOBUSSPR", "TRIVENI"]}
+  - {claim: "UP molasses-reservation policy shift (B-heavy vs C-heavy) affecting feedstock costs", peers: ["TRIVENI"]}
+contradicted:
+  - {claim: "UP market volume growth ~15 lakh to 23-25 lakh cases/month", contradicting_peer: "GLOBUSSPR", quote_anchor: "GLOBUSSPR-Concall_Nov_2025 (17-Nov-2025): 'UP is the largest market of almost a crore cases a month'; reaffirmed GLOBUSSPR-Concall_Jul_2026 (20-Jul-2026): 'almost 95-odd lakh cases a month'"}
+unverifiable:
+  - {claim: "UP/Uttarakhand IMFL industry growth only 4-5% over two years vs IGL's claimed 26% YoY", peers_checked: ["GLOBUSSPR", "PICCADIL"]}
+  - {claim: "Bio-glycols/MEG realisation sharp decline (-29.9%)", peers_checked: ["BALRAMCHIN", "TRIVENI"]}
+peer_coverage_map:
+  - {peer: "BALRAMCHIN", quarter: "Q3 & 9M FY26 (11-Feb-2026)", usage: "SUBSTANTIVE"}
+  - {peer: "BALRAMCHIN", quarter: "Q4 & FY26 (18-May-2026)", usage: "SUBSTANTIVE"}
+  - {peer: "BALRAMCHIN", quarter: "Q1 FY27 (12-Aug-2026)", usage: "SUBSTANTIVE"}
+  - {peer: "TRIVENI", quarter: "Q2 & H1 FY26 (7-Nov-2025)", usage: "SUBSTANTIVE"}
+  - {peer: "TRIVENI", quarter: "Q3 & 9M FY26 (2-Feb-2026)", usage: "SUBSTANTIVE"}
+  - {peer: "TRIVENI", quarter: "Q4 FY26 (4-Jun-2026)", usage: "SUBSTANTIVE"}
+  - {peer: "TRIVENI", quarter: "Q1 FY27 (30-Jul-2026)", usage: "SUBSTANTIVE"}
+  - {peer: "GLOBUSSPR", quarter: "Q2 & H1 FY26 (17-Nov-2025)", usage: "SUBSTANTIVE"}
+  - {peer: "GLOBUSSPR", quarter: "Q3 & 9M FY26 (13-Jan-2026)", usage: "SUBSTANTIVE"}
+  - {peer: "GLOBUSSPR", quarter: "Q4 & FY26 (8-May-2026)", usage: "SUBSTANTIVE"}
+  - {peer: "GLOBUSSPR", quarter: "Q1 FY27 (20-Jul-2026)", usage: "SUBSTANTIVE"}
+  - {peer: "PICCADIL", quarter: "FY26 annual (29-Apr-2026)", usage: "SUBSTANTIVE"}
+  - {peer: "PICCADIL", quarter: "Q1 FY27 (12-Aug-2026)", usage: "SUBSTANTIVE"}
+industry_cross_read:
+  demand: "Sugar tightest inventory in years, prices ~Rs41->Rs45-49/kg; ethanol demand policy/OMC-capped not end-demand-capped; IMFL premium (P&A/luxury) growing far faster than mass-market across both spirits peers."
+  pricing_inputs: "B-heavy/juice ethanol prices frozen 3 years despite rising cane cost (both sugar peers' top grievance); maize prices fell H2 FY26 then firmed into FY27; DDGS realisation rising (Triveni); glass/PET packaging inflation 10-17% from Iran crisis (both spirits peers)."
+  capex_cycle: "No industry-wide ethanol/ENA capacity race - every peer with a capex view explicitly rules out further ethanol/ENA capacity. Capital rotating into differentiated non-ethanol verticals (Balrampur PLA bioplastics, Triveni defence/gearboxes, Globus/Piccadily premium IMFL). Sector-wide reallocation, not a lone-expander situation."
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "Standalone-distillery PSU interest-moratorium expiry in FY27 threatens sector-wide supply rationalization (Triveni, Q1 FY27)"
+  - "Supreme Court stay on OMC ethanol tender framework froze allocation cycles mid-year (Triveni, Q4 FY26/Q1 FY27)"
+  - "MoPNG mandate requiring min 40% FCI-rice share in grain ethanol tenders compresses maize-route margins (Triveni, Q2 FY26)"
+  - "Iran-crisis-driven glass/PET packaging inflation (10-17%), live cross-sector cost risk for IMFL names (Globus, Piccadily)"
+  - "El Nino/monsoon risk to FY27 cane crop, largest swing factor for next season's sugar/cane economics (Balrampur, Triveni, Aug 2026)"
+net_narrative_effect: "complicates"
+analyst_note: "Two items need operator resolution before synthesis treats them settled: (1) Claim 7's ~4x gap between Globus's stated UP market size and IGL's implied range is most likely a segment-scope mismatch (total R&O/country-liquor vs a narrower IMFL slice), not a factual contradiction, but needs the B05 source checked. (2) Claim 5's -22% OMC decline is directionally real per two peers but numerically unconfirmed anywhere; treat the number, not the direction, as unverified. Peer utilisation strong: 13 of 13 substantive."

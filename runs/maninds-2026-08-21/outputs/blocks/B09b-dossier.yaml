@@ -1,0 +1,48 @@
+stage: B09b-dossier
+company: "MANINDS"
+run_date: "2026-08-21"
+model: claude-sonnet-5
+status: complete
+corpus_verdict: "CORPUS GAPPED"
+corpus_gaps:
+  - document: "Full CRISIL rating rationale (June-01-2026)"
+    expected_source: "rating agency site"
+    kind: "findable-missing"
+  - document: "Reg-30 / exchange announcement PDFs (guarantee, NPC acquisition, order wins)"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "SEBI 29-Sep-2025 order full text and SAT stay order"
+    expected_source: "rating agency site"
+    kind: "findable-missing"
+  - document: "Q1FY27 concall transcript (12-Aug-2026)"
+    expected_source: "company IR page"
+    kind: "findable-missing"
+  - document: "FY2025-26 Annual Report (year ended Mar-2026)"
+    expected_source: "company IR page"
+    kind: "findable-missing"
+  - document: "Prior-year Annual Report (FY23-24 or earlier)"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "BSE shareholding pattern filing (SAST) with pledge percentage"
+    expected_source: "BSE"
+    kind: "findable-missing"
+archetypes:
+  - line: "Steel line pipe (LSAW/HSAW/ERW) manufacturing & trading (89.5% FY25 revenue)"
+    archetype: "Order-book business blended with commodity converter (Section 1B v3.7 Amendment 17 may bind)"
+  - line: "Real estate monetisation (Merino Shelters JDA, 10.5% FY25 revenue)"
+    archetype: "fits no known archetype"
+dominant_variables:
+  - "Order-book / bid-pipeline conversion - order book fell 3 consecutive quarters (Rs4,750cr to Rs3,000cr), company-specific per peer contrast (B05, B06)"
+  - "Capacity/execution ramp on committed capex (NPC, Jammu, Dammam) - Jammu slipped Apr-2026 to Mar-2027, Dammam plan already scrapped and replaced once (B05, B07)"
+  - "Working capital / cash conversion - WC days 116.2 to 260.7 (FY24-FY26), DSCR sub-1.0x both entity levels, CFO/PAT below 0.7x both entities (B01, B02, B03)"
+  - "Steel input-price spread / margin pass-through - raw material 74.7% of standalone revenue, no disclosed escalation clause (B04, B05)"
+model_falsifier: "If the Merino Shelters real estate line becomes a recurring, non-trivial revenue contributor beyond the current one-off JDA, or if the NPC/Aramco relationship converts into a long-term fixed-offtake structure decoupled from spot order-book cycles, the archetype declaration must be re-drawn (B04, B07)."
+mental_model_status: "DRAFT - PENDING OPERATOR SIGN-OFF"
+fragility:
+  variable_count: 5
+  verifiability_ratio: "4 of 5 externally observable"
+  single_point_failure: "Working capital / cash conversion (DSCR sub-1.0x both entity levels, CFO/PAT below 0.7x both entities)"
+  fragility_verdict: "FRAGILE"
+candidate_count: 8
+research_brief_items: 12
+plain_summary_points: 15

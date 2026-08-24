@@ -1,0 +1,48 @@
+stage: B04-bizmodel
+company: "INDIAGLYCO"
+run_date: "2026-08-24"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["MD&A lacks a dedicated Risks and Concerns section; risk factors inferred from segment narrative only", "No named-competitor peer set found for BSPC/Bio-Fuel/Ennature beyond generic 'Middle East/China' and 'Butyl/Propyl ether' references"]
+flags: ["Company demerging into 3 listed entities effective 1-Sep-2026 (IGL residual, IGL Spirits, Ennature Bio Pharma); a single blended multiple misprices the whole (AR p.13, Inv. Pres. slide 6-7)", "Gross revenue is excise-inflated (~57% of FY26 gross revenue is State Excise Duty on Sales); all margin/mix analysis must use net revenue", "Second Motion Petition was pending further NCLT hearing as of AR date; timeline to 1-Sep-2026 effectiveness not fully locked (AR p.13)"]
+business_type: "hybrid"
+revenue_streams:
+  - {name: "Bio-based Specialities & Performance Chemicals (BSPC: glycols, glycol ethers, specialty chemicals, industrial gases)", type: "B2B commodity/specialty chemical manufacturing", pct_of_revenue: 29, predictability: "M-L"}
+  - {name: "Potable Spirits (IMFL, Country Liquor, ENA)", type: "Licensed branded consumer + B2B ENA", pct_of_revenue: 32, predictability: "H"}
+  - {name: "Bio-Fuel (fuel-grade ethanol under EBP)", type: "Government-quota supply contract", pct_of_revenue: 35, predictability: "M"}
+  - {name: "Ennature Biopharma (plant APIs, nutraceuticals, nicotine)", type: "Specialty B2B pharma-ingredient manufacturing", pct_of_revenue: 5, predictability: "L"}
+asset_intensity: "heavy"
+wc_intensity: "medium"
+pricing_power: "moderate"
+cyclicality: "cyclical"
+moats_present:
+  - "State excise license + regional brand leadership (Spirits, UP/Uttarakhand) - moderate-high durability, renewal/political risk"
+  - "Global leadership + CEP/patents in Thiocolchicoside API (Ennature) - moderate durability, single-product concentration"
+  - "Sole Indian producer of ethylene-based glycol ethers via Sulzer Chemtech tech (BSPC) - moderate but eroding durability vs Chinese imports"
+  - "Backward-integrated '3x3' captive alcohol/EO model (BSPC/Spirits) - moderate durability"
+  - "Long-standing partnerships: Bacardi (15 yrs), Clariant JV, Amrut distribution - moderate durability"
+valuation_methods:
+  primary: {method: "Sum-of-the-Parts (SOTP), segment/entity-wise", why: "4 structurally distinct business models demerging into 3 separately listed entities effective 1-Sep-2026 (AR p.13; Inv. Pres. slide 6-7); a single blended multiple misprices the whole"}
+  secondary: {method: "Segment/entity EV/EBITDA cross-check on net-revenue basis", why: "Cross-checks SOTP; must use net-revenue EBIT/EBITDA since gross revenue is excise-inflated for Spirits, which carries 52% of consolidated EBIT on 32% of net revenue (Inv. Pres. slide 45)"}
+  tertiary: {method: "Cycle-normalized P/E or EV/EBITDA for the RESIDUAL entity (BSPC chemicals + industrial gases + Clariant JV), per Section 1B v3.7 Amendment 17 commodity-converter framework", why: "This is what a continuing INDIAGLYCO holder retains post 1-Sep-2026; BSPC pricing benchmarked to global petro-MEG/glycol-ether spreads, swung ~40% on per-MT realization in one year (AR p.35)"}
+  not_applicable: ["Standalone whole-company DCF - pre-demerger cash flow stream not what a post-1-Sep-2026 holder receives; segment FCF not disclosed to needed granularity", "Dividend discount model - FY26 recommended dividend Nil, recent stock split and preferential issue disrupt per-share dividend history"]
+irrelevant_ratios:
+  - "Blended EBITDA/PAT margin on GROSS revenue - ~57% of gross revenue is pass-through State Excise Duty concentrated in Spirits"
+  - "Single blended company-wide P/E or EV/EBITDA - blends 4 structurally different businesses about to become 3 separately listed stocks"
+  - "Consolidated Debtor/Inventory/Payable days as one number - masks divergence between low-WC Spirits and higher-WC BSPC/Bio-Fuel"
+  - "Net capital turnover ratio as reported standalone (-18.94x FY26) - driven by short-term borrowings in current liabilities, not genuine negative trade WC"
+  - "Company-wide gross margin - BSPC and Ennature sit at opposite margin extremes"
+  - "ROCE on FY26 year-end capital employed - includes Rs467cr preferential-issue proceeds not yet fully deployed for a full year"
+must_track_metrics:
+  - {metric: "Segment net revenue and EBIT mix (BSPC/Spirits/Bio-Fuel/Ennature)", healthy: "diversified mix, no single segment collapsing", red_flag: "Spirits EBIT share concentration rising unchecked or Bio-Fuel allocation shrinking further"}
+  - {metric: "EBP ethanol allocation volume (crore litres) and OMC price", healthy: "stable-to-growing allocation", red_flag: "further YoY cuts (already -22% this ESY, AR p.14)"}
+  - {metric: "Consolidated Cash Conversion Cycle (days)", healthy: "<=50 days, trending down", red_flag: ">60 days (was 64 in FY25)"}
+  - {metric: "BSPC segment EBIT margin, net-revenue basis", healthy: ">10%", red_flag: "<8% (petro-MEG spread compression)"}
+  - {metric: "NCLT/demerger implementation milestones and ISL/EBL listing timeline", healthy: "on schedule for 1-Sep-2026 effectiveness", red_flag: "further adjournment beyond disclosed 'pending further hearing' status"}
+unit_economics:
+  unit: "1 metric tonne (MT) of Bio-based Glycols (MEG/DEG/TEG/Heavy Glycols) sold"
+  revenue_per_unit: "FY26 ~Rs1.93 lakh/MT (Rs620cr / 32,170 MT), down from FY25 ~Rs3.19 lakh/MT (Rs885cr / 27,736 MT), AR p.35"
+  margin_per_unit: "NOT FOUND - segment PBIT covers full BSPC segment, not isolated glycols product margin"
+  key_lever: "Spread between bio-MEG realization and petro-MEG benchmark price, plus plant utilisation (FY26 production fell to 37,522 MT from 47,146 MT, AR p.14)"
+one_line_verdict: "Four-business conglomerate splitting into three listed entities Sep-2026; SOTP required, not one multiple."
+analyst_note: "Decoded the PRE-demerger combined entity because that is what today's evidence covers. The Section 1B v3.7 Amendment 17 commodity-converter binding applies specifically to BSPC (glycols/glycol ethers), the segment STAYING in the residual entity a continuing shareholder holds after 1-Sep-2026; Bio-Fuel and Spirits are demerging OUT into IGL Spirits. Downstream (FTTCP, Role 1) should treat this as three separate mental models and three valuations aggregated via SOTP, not one company-wide model."

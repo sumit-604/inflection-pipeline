@@ -1,0 +1,30 @@
+stage: B09b-dossier
+company: "INDIAGLYCO"
+run_date: "2026-08-24"
+model: claude-sonnet-5
+status: complete
+corpus_verdict: "CORPUS GAPPED"
+corpus_gaps:
+  - {document: "Announcement / Regulation 30 filings (demerger scheme, preferential-issue allotment, board changes, order wins)", expected_source: "BSE", kind: "findable-missing"}
+  - {document: "Shareholding pattern filing (SHP-I/II/III) with promoter pledge detail", expected_source: "BSE", kind: "findable-missing"}
+  - {document: "Section 1B sector_cap_row re-pick for the residual entity's chemicals+gases mix (currently auto-picked against the consolidated group)", expected_source: "internal Section 1B framework re-derivation, phase 3", kind: "findable-missing"}
+archetypes:
+  - {line: "BSPC (bio-based glycols, glycol ethers, industrial gases; residual India Glycols)", archetype: "Commodity converter (Section 1B v3.7 Amendment 17 binds)"}
+  - {line: "Potable Spirits (IMFL, country liquor, ENA; IGL Spirits)", archetype: "Licence/scarcity business, with brand/franchise consumer characteristics on the IMFL premium mix"}
+  - {line: "Bio-Fuel (fuel-grade ethanol under EBP; IGL Spirits)", archetype: "Licence/scarcity business (government-quota supply contract)"}
+  - {line: "Ennature Bio Pharma (plant APIs, nutraceuticals, nicotine)", archetype: "Outsourcing partner (specialty B2B pharma-ingredient manufacturing), with licence/scarcity streak from single-product API/CEP position"}
+dominant_variables:
+  - "BSPC bio-MEG/glycol-ether price spread and Chinese competitive pressure"
+  - "EBP ethanol allocation volume (government quota, currently declining)"
+  - "Spirits premiumization and institutional (CSD/paramilitary) channel execution"
+  - "Demerger execution and standalone economics of the three post-demerger entities"
+model_falsifier: "Demerger completing on materially different terms than sanctioned (further slip, renegotiated split, or a different residual asset mix), or BSPC's revenue decline proving a structural share loss rather than a cyclical price trough; either forces re-declaration of the model (B00, B04, B09)."
+mental_model_status: "DRAFT - PENDING OPERATOR SIGN-OFF"
+fragility:
+  variable_count: 4
+  verifiability_ratio: "3 of 4 externally observable (BSPC spread via crude/China price indices, EBP allocation via PPAC/MoPNG, demerger execution via NCLT/exchange filings); spirits premiumization mix is company-narrated only"
+  single_point_failure: "Demerger completion as scheme-sanctioned; a slip or restructuring invalidates the SOTP mental model across all three lines at once (B00, B04)"
+  fragility_verdict: "FRAGILE"
+candidate_count: 7
+research_brief_items: 14
+plain_summary_points: 15

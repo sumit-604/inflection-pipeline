@@ -1,0 +1,40 @@
+stage: B07-emoat
+company: "MANINDS"
+run_date: "2026-08-21"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["shareholding-partial", "announcements softened", "rating-partial", "AR is FY25 not FY26"]
+flags:
+  - "G2 working capital actively deteriorating (116.2->260.7 days, FY24-FY26), not merely absent"
+  - "F2 execution moat Weak: FY26 revenue guidance missed by ~half (guided ~20%, delivered 10.8% standalone); Jammu commissioning slipped >12 months (Q3/Q4 FY26 -> Mar 2027)"
+  - "I1/I2 both score 0; the em_score threshold crossing into MOAT STRENGTHENING is achieved without any I1/I2 points"
+em_score: 32
+em_classification: "STRENGTHENING"
+active_categories:
+  - {id: "B2", name: "Qualification lock-in", strength: "Strong", evidence_type: "documented", time_to_materialise: "0-12m"}
+  - {id: "H1", name: "Industry consolidation beneficiary", strength: "Strong", evidence_type: "documented", time_to_materialise: "0-12m"}
+  - {id: "A1", name: "Rare manufacturing capability", strength: "Moderate", evidence_type: "claim/documented mixed", time_to_materialise: "0-12m"}
+  - {id: "C1", name: "Customer ecosystem/embedded relationships", strength: "Moderate", evidence_type: "claim/documented mixed", time_to_materialise: "12-24m"}
+  - {id: "E1", name: "Geographic first-mover", strength: "Moderate", evidence_type: "documented", time_to_materialise: "0-12m"}
+  - {id: "E2", name: "China+1/local-manufacturing beneficiary", strength: "Moderate", evidence_type: "claim/documented mixed", time_to_materialise: "12-24m"}
+  - {id: "G1", name: "War chest", strength: "Moderate", evidence_type: "documented", time_to_materialise: "0-12m"}
+  - {id: "H2", name: "Strategic partnerships", strength: "Moderate", evidence_type: "claim/documented mixed", time_to_materialise: "12-24m"}
+  - {id: "R1", name: "Regulatory/policy tailwind", strength: "Moderate", evidence_type: "documented", time_to_materialise: "0-12m"}
+evidence_mix: {documented: 9, claim: 6, inference: 2}
+completionist_recount: "documented recount performed: 9 categories carry primarily or partly documented evidence (A1, B2, C1, E1, E2, G1, H1, H2, R1); 5 of these are mixed voice/filing and were scored at the 0.7x multiplier out of skepticism. Total active (Strong/Moderate) categories = 9, above the 3-6 base rate but below the 12-category automatic-recheck trigger; several claim-heavy candidates (A4, C2, F1, H3) were deliberately downgraded to Weak rather than credited at face value."
+catalysts_12m:
+  - {catalyst: "NPC full-quarter consolidation begins", window: "Q2 FY27 (from Aug 2026)", evidence_type: "documented", anchor: "Jun FY26 concall p.3; Q1 FY27 pres. p.10"}
+  - {catalyst: "Merino Shelters real estate launch", window: "mid-Sept 2026", evidence_type: "documented", anchor: "Q1 FY27 pres. p.16"}
+  - {catalyst: "Jammu + Dammam coating commissioning", window: "March 2027 (already slipped once)", evidence_type: "documented", anchor: "Q1 FY27 pres. p.15; Jun FY26 concall p.6"}
+  - {catalyst: "Order-book recovery from two-quarter decline (Rs.4,750cr Sep25 -> Rs.3,000cr Mar26)", window: "6-12 months", evidence_type: "claim", anchor: "Jun FY26 concall p.5"}
+capex_embedded_growth_pct: 46
+optionality_register:
+  - {optionality: "Dammam coating margin lever (25-35% EBITDA guided)", converting_evidence: "First coating-segment revenue disclosed in quarterly results; signed offtake tied to coating capacity", first_appears: "Quarterly results/investor presentation post-commissioning", window: "FY28"}
+  - {optionality: "Jammu SS seamless import-substitution premium (17-22% EBITDA guided)", converting_evidence: "First Jammu revenue line in quarterly disclosure; named anchor customer in defence/nuclear/marine", first_appears: "Quarterly results, AR FY27", window: "FY28 ramp"}
+  - {optionality: "Aramco off-take/JV for new products beyond current book", converting_evidence: "Signed off-take agreement or JV announcement filed under Reg 30", first_appears: "Exchange filing/press release", window: "2-4 years"}
+  - {optionality: "Saudi platform scaling to Rs.4,500-5,000cr peak revenue", converting_evidence: "Committed capacity expansion or signed multi-year order book at that scale", first_appears: "Concall/exchange filing", window: "3-5 years"}
+  - {optionality: "I1 talent asymmetry (currently absent)", converting_evidence: "Named technical hires in AR remuneration annexure paid above sector norm, or documented ex-major-company hires", first_appears: "AR remuneration annexure, professional-network cross-check", window: "not currently tracked"}
+combined_assessment: "HIGH POTENTIAL"
+combined_reasoning: "AVERAGE core (49, 3 confirmed moats) meets MOAT STRENGTHENING (32) built on a completed, documented acquisition rather than narrative; falls short of EXPANSION UNDERWAY because F2 execution scores Weak (FY26 revenue guidance missed ~half, Jammu commissioning slipped >12 months) and G2 WC is actively deteriorating."
+top_moat_risks: ["Execution track record: two headline FY26 promises missed (revenue growth, Jammu date) in the same window the acquisition closed", "Working capital deteriorating 144 days over two years alongside the net-cash 'war chest' narrative", "Saudi first-mover position is not exclusive: Welspun and Jindal building comparable in-Kingdom capacity concurrently (I2 scores 0, confirming no configuration barrier)", "NPC integration risk: key management changed, FX MTM losses already surfacing on capex payables"]
+analyst_note: "em_score of 32 is unusually high for this scan's typical base rate because the run window captured a just-closed, exchange-filed acquisition (NPC) with a real inherited qualification barrier (Aramco since 2005) -- not inflation from crediting management claims as documented. Five of nine active categories were still capped at the 0.7x claim multiplier out of skepticism. The single most important number for a downstream reader to hold onto is the F2 finding: guided ~20% FY26 revenue growth, delivered 10.8%; guided Q3/Q4 FY26 Jammu start, now March 2027. Every forward figure in this report (FY27 guidance, Saudi peak revenue, Jammu margins) is a projection from the same management on that record."

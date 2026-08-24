@@ -1,0 +1,20 @@
+stage: B12a
+company: "INDIAGLYCO"
+run_date: "2026-08-24"
+model: claude-haiku-4-5
+status: complete
+reinvoked: true
+reinvoke_reason: "First pass raised 1 false CRITICAL (screener-vs-AR PBT basis difference) and 1 false MAJOR-unanchored (allocation figures that ARE in AR p.22); orchestrator verified both at source and re-invoked once with severity-semantics + coverage addendum per LESSONS.md codified fix."
+numbers_checked: 47
+findings:
+  - {severity: "MINOR", location: "01-gate0.md Block A ROCE (line 42-43)", claimed: "PBT FY26 = 377.21 Cr (screener); ROCE = 12.08%", source_truth: "screener-Data_Sheet.csv Profit-before-tax FY26 col = 377.21 exactly; AR consolidated PBT = 330.79 Cr; AR standalone = 366.70 Cr", note: "377.21 exists at its cited source (screener). Gate0 uses screener PBT with AR consolidated BS - a basis/consolidation difference, permitted source, disclosed in data_notes. Not a fabrication or misread. Reclassified CRITICAL->MINOR per orchestrator source verification.", source_fidelity: false}
+  - {severity: "MAJOR", location: "02-notes.md rank 1; 03-ardeep.md phase 2 rank 1", claimed: "FX hedge notional USD 52.86m (FY25) -> USD 3.73m (FY26), -92.2%", source_truth: "AR Note 51/45(i)(a) consol: Forward Contracts/Options USD 3.73 and 52.86; (52.86-3.73)/52.86=92.9%~92.2%", note: "Figures verified exactly. MAJOR retained as a RISK flag (unhedged FX exposure during rising export receivables/payables), NOT a numerical error.", source_fidelity: false}
+  - {severity: "MAJOR", location: "03-ardeep.md phase 2 rank 10", claimed: "Current Tax 5.7% of PBT (2,107.02 / 36,669.99 Lakh)", source_truth: "AR P&L standalone: Current Tax 2,107.02 Lakh / PBT 36,669.99 Lakh = 5.74% ~ 5.7%", note: "Calculation verified exactly. MAJOR retained as a flagged concern (cash-tax vs reported rate), numerically clean.", source_fidelity: false}
+  - {severity: "MINOR", location: "01-gate0.md Block A (line 44-46)", claimed: "Interest FY26 = 167.18 Cr (screener)", source_truth: "screener-Data_Sheet.csv Interest FY26 = 167.18; AR consol Finance Costs = 168.33 Cr", note: "Correctly transcribed from screener; AR Finance Costs 1.15 Cr higher (broader line). Immaterial basis difference.", source_fidelity: false}
+  - {severity: "MINOR", location: "03-ardeep.md phase 2 rank 5", claimed: "CISCPL JV 100%-basis profit ~Rs9,472.81 Lakh (from 49%-share Rs4,641.68 Lakh)", source_truth: "Board's Report p.25 states CISCPL profit Rs9,462.60 lakh (100%-basis); diff Rs10.21 Lakh (0.11%)", note: "Precision gap only; both 100%-basis; immaterial rounding/minority treatment.", source_fidelity: false}
+critical_count: 0
+major_count: 2
+minor_count: 5
+source_fidelity_findings: 0
+acceptance_rate: 89
+coverage_note: "47 material numerical claims audited across all 9 reports. No CRITICAL after reclassification. No source-fidelity findings. 42 figures verified exactly clean (ROCE inputs, capex, debt ratios, all segment revenues, ethanol allocation 19.82->15.43, gratuity contribution, tax rates, FCF, demerger timeline, contingent liabilities). Peer-comparison moat scores NOT FOUND as expected (external-data barrier)."

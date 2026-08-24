@@ -1,0 +1,30 @@
+stage: B12c
+company: "INDIAGLYCO"
+run_date: "2026-08-24"
+model: claude-opus-4-8
+status: complete
+scope: "PHASE 1 - Gate 0 (B01) + Emerging Moat (B07) only; valuation audit deferred to phase 3"
+gate0:
+  rules_checked: 24
+  fails:
+    - {id: "G-1", severity: "MAJOR", rule: "01-gate-0-pipeline.md line 56 (A1 band 10-14.9% = 1)", location: "01-gate0.md line 55; B01-gate0.yaml", detail: "A1 median ROCE 11.96% scored 3; correct 10-14.9% band = 1. Block A 9->7, core 42->40, grand 46->44. Still AVERAGE, no flip."}
+    - {id: "G-2", severity: "MAJOR", rule: "01-gate-0-pipeline.md lines 154-160 (deal-breaker 1: Block A <8 -> max GOOD)", location: "01-gate0.md line 95; B01-gate0.yaml line 20", detail: "Corrected Block A = 7 (<8) triggers DB1; deal_breakers list empty. No outcome change (AVERAGE below GOOD cap) but DB1 should be recorded."}
+emoat:
+  rules_checked: 26
+  fails: []
+  minor_observations:
+    - {id: "E-1", severity: "MINOR", rule: "07-emerging-moat 2C / yaml field", location: "B07-emoat.yaml", detail: "capex_embedded_growth_pct=1 vs text ~1.2%; integer truncation, immaterial."}
+    - {id: "E-2", severity: "MINOR", rule: "07-emerging-moat lines 202-207 (6D transition setups keyed to EXPANSION forward)", location: "B07-emoat.yaml", detail: "Combined = HIGH POTENTIAL on a STRENGTHENING (33) not EXPANSION (>=40) forward score; matrix has no hard cells, full reasoning given, permissible judgment. Flagged."}
+valuation:
+  rules_checked: 0
+  status: "pending-phase-3: B10/B11 not run; valuation framework docs withheld this phase"
+findings:
+  - {severity: "MAJOR", location: "01-gate0.md line 55 / B01-gate0.yaml", rule: "Gate 0 A1 band 10-14.9%=1", note: "A1 scored 3, correct 1; Block A 9->7, core 42->40, grand 46->44; AVERAGE holds"}
+  - {severity: "MAJOR", location: "01-gate0.md line 95 / B01-gate0.yaml line 20", rule: "Gate 0 deal-breaker 1", note: "DB1 fires at corrected Block A=7; not recorded; no outcome change"}
+  - {severity: "MINOR", location: "B07-emoat.yaml", rule: "EM 2C capex-embedded growth", note: "1 vs 1.2% truncation"}
+  - {severity: "MINOR", location: "B07-emoat.yaml", rule: "EM 6D combined classification", note: "HIGH POTENTIAL on sub-EXPANSION forward score; permissible, flagged"}
+critical_count: 0
+major_count: 2
+minor_count: 2
+acceptance_rate: 96
+framework_adherence_pct: 96

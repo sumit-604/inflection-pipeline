@@ -8,7 +8,7 @@ concalls_available: true
 
 inventory:
   prospectus: 0            # absent, NOT a gap: Man Industries long-listed (P&L since FY17+, listed 1980s)
-  annual-report: 1         # Annual_Report.pdf, 254p, extracts clean
+  annual-report: 1         # Annual_Report.pdf, 254p = FY2024-25 (FY25) report, NOT FY26 (collect mislabel). Standalone Notes 1-47 pp128-181, Consolidated Notes 1-52 pp196-249. FY26 financials only in results filing + screener.
   results: 2               # Q4FY26 audited (4da9bef6, 45p, scanned->OCR) + Q1FY27 (11aa7444, 11p)
   rating: 1                # ratings.pdf, 6p scanned->OCR: CRISIL Jul-20-2026 Credit Bulletin (PARTIAL, see gaps)
   concalls: 4              # Aug2025 Q1FY26, Nov2025 Q2FY26, Feb2026 Q3FY26, Jun2026 Q4FY26

@@ -1,0 +1,48 @@
+stage: B03-ardeep
+company: "MILLWORKS"
+run_date: "2026-08-22"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["no_results_pdf", "no_rating", "no_standalone_annual_report", "no_shareholding_pattern", "no_dedicated_prospectus_folder_rhp_routed", "no_contingent_liability_table_located", "no_kam_section_not_applicable_report_type", "audit_committee_composition_not_reanchored", "kmp_compensation_table_not_reanchored"]
+flags:
+  - {type: FLAG-CASH, reason: "FY26 CFO negative Rs 10.76Cr against PAT Rs 37.06Cr for the second straight year (FY25 CFO also negative); a portion of FY26 receivables (Rs 138.69Cr) explicitly linked by management to Quick Pay Private Limited, a related Rs 5.75Cr investee whose ability to pay depends on receipt of funds elsewhere and on incomplete customer testing (Objects of the Issue p.90)"}
+  - {type: FLAG-PROMOTER-PRELIM, reason: "No share pledge and no OFS (clean); but personal guarantees from all four promoter-directors and a V3 Technologies corporate guarantee secure nearly every borrowing facility, cross-collateralised against promoter residential/industrial property (p.179, p.192-197); board is two married promoter couples with committee structure under one year old"}
+phase_verdicts: {p1: "red_flag", p2: "red_flag", p3: "red_flag", p4: "watch", p5: "red_flag", p6: "watch", p7_best_fit: "turnaround_watchlist"}
+overall_quality: 3
+quality_components: {governance: 3, accounting: 3, balance_sheet: 4, earnings: 2}
+triple_pass_verification: {verified: 15, discrepancies: []}
+missing_risks:
+  - {claim: "Quick Pay receivables dependency not named as a risk factor", evidence: "Objects of the Issue p.90"}
+  - {claim: "Unhedged FX translation gain (9.2% of FY26 PBT) not named as risk", evidence: "MD&A p.207, no hedging programme"}
+  - {claim: "Subsidiary-existence contradiction not flagged", evidence: "p.161 (no subsidiary) vs Annexure XLIX(xi) F-43 (has subsidiary investment)"}
+  - {claim: "Promoter personal-guarantee/cross-collateral concentration not named as Company risk", evidence: "p.179, p.192-197"}
+guidance_table:
+  - {claim: "Trade receivables normalisation", number: "Rs 140.15Cr projected", timeframe: "FY27", credibility: "low"}
+  - {claim: "Trade payables moderation", number: "103 days (from 153 FY26)", timeframe: "FY27", credibility: "low-medium"}
+  - {claim: "Working capital funding via IPO", number: "Rs 81.50Cr of Net Proceeds", timeframe: "FY26-27", credibility: "medium"}
+  - {claim: "Capex machinery order placement", number: "Rs 61.03Cr planned, not yet ordered", timeframe: "post-IPO", credibility: "low"}
+monitorables:
+  - {metric: "FY27 CFO/PAT ratio", threshold: ">0.7x and positive", where: "Cash Flow Statement, next filing", why: "Tests whether FY26 cash-conversion breakdown was one-year or structural"}
+  - {metric: "Trade receivable days", threshold: "materially below 147-day FY27 projection, toward 50-72 day FY24-25", where: "MD&A/Restated, next filing", why: "Tests recovery narrative"}
+  - {metric: "Quick Pay receivables quantum/status", threshold: "any disclosed rupee figure or resolution of customer testing", where: "RPT/MD&A, next filing", why: "Largest unquantified quality-of-earnings gap"}
+  - {metric: "Doubtful-debt provision", threshold: "any non-zero provision", where: "Notes, next filing", why: "Policy-vs-practice gap"}
+  - {metric: "Subsidiary-status clarification", threshold: "single consistent statement", where: "next filing", why: "Resolves p.161 vs Annexure XLIX(xi)"}
+  - {metric: "Personal guarantee/cross-collateral % of borrowings", threshold: "trend to arm's-length financing", where: "Indebtedness/RPT notes", why: "Direction of promoter-personal-risk financing"}
+  - {metric: "Top customer/defence concentration", threshold: "moderation from 69.41% defence and 92.06% top-10", where: "Segment note/MD&A", why: "Platform vs concentration event"}
+ar_new_downstream_entities:
+  - {name: "Quick Pay Private Limited", where_in_ar: "Non-Current Investments (Annexure XV F-20); Objects of Issue p.90", entity_type: "unquoted investee, >10% receivables/collections linkage"}
+  - {name: "Alined Technologies", where_in_ar: "Promoter Group p.177, p.181", entity_type: "promoter-group partnership firm, RPT status unconfirmed"}
+  - {name: "Grynn Advanced Private Limited", where_in_ar: "Promoter Group p.177", entity_type: "promoter-controlled company, RPT status unconfirmed"}
+  - {name: "Aparna Samir Thakker", where_in_ar: "Annexure V F-17", entity_type: "new >5% (17.77%) shareholder FY26"}
+strengths_top3:
+  - "Genuine operational scale-up: 2 to 4 facilities, capex 2.6x depreciation, employee count near-doubled, into a real growing defence/rail order book"
+  - "Unusually candid Risk Factors for an SME IPO; restatement cluster and stock-statement discrepancies self-disclosed"
+  - "Clean regulatory standing: no SEBI/RBI action, no default, no promoter pledge, unqualified audit all three years"
+red_flags_top3:
+  - "Two consecutive years negative operating cash flow against rapidly growing PAT, unquantified portion of FY26 receivables tied to related investee Quick Pay"
+  - "Auditor-named Section 185 breach inside the Examination Report, two-married-couple board under one year old, related-party PP&E purchase 32% of that year's revenue"
+  - "Internally contradictory disclosure on subsidiary existence (p.161 vs Annexure XLIX) and on RoE/RoNW (69.94% vs 44.83% same FY26) within one document"
+best_fit_strategy: "turnaround_watchlist"
+kill_switch_notes: ["informational only; never halts"]
+one_line_verdict: "Millworks fits Turnaround-Watchlist, not GARP, on unresolved cash-conversion and governance-concentration risk."
+analyst_note: "The single fact that most changes the read from B02 is Objects-of-the-Issue p.90: FY26 receivables partly linked to Quick Pay Private Limited, a related investee, with collections contingent on funds Quick Pay itself must first receive and on incomplete customer testing. This connects the receivables/cash gap to the subsidiary contradiction and the Quick Pay investment into one thread B02 could not see, since the linkage is disclosed only in the MD&A working-capital narrative, not any RPT note. The p.161 explicit no-subsidiary statement hardens B02's ambiguous Watch into a first-person contradiction. Both are named questions for management before any valuation."

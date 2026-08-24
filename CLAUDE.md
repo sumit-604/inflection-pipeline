@@ -142,6 +142,9 @@ prompts (quote-then-comment, NOT DISCLOSED allowed, filename+date
 verification mandatory). Filed documents beat inference. Every claim
 carries its evidence tier. The pipeline produces payloads. claude.ai
 executes writes. Each document is paid for once.
+The claude.ai project carries a parallel operating manual at
+project-instruction level (team_workflow_project_instructions);
+web-side rules bind Claude web the same way this file binds Code.
 
 ## ARCHETYPE LIBRARY (mental model declarations draw from this; extend via operator ruling only)
 - Build-to-spec component maker: customer capex cycle, design-win pipeline,

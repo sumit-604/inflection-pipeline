@@ -1,0 +1,23 @@
+stage: B12b
+company: "MANINDS"
+run_date: "2026-08-21"
+model: claude-opus-4-8
+status: complete
+independent_flags_found: 20
+caught: 16
+partially_caught: 2
+missed:
+  - {severity: "MINOR", item: "Q1 other-income add-back (incentives, forex) inflates the 'highest ever EBITDA margin' narrative; operating margin ex-other-income fell 10%->7% QoQ, analyst noted, management deflected", anchor: "Q1 FY26 concall p.11"}
+  - {severity: "MINOR", item: "Consolidated revenue essentially flat YoY, not the '+13%' B05 states; FY25 consol base excludes ~INR369cr one-off Merino real-estate revenue, so the FY26 miss vs 20% guidance is larger than a pipe-only comparison implies", anchor: "Q4 FY26 concall p.5; Q2 FY26 p.14"}
+pipeline_flags_not_supported: []
+promise_delivery_spot_checks: {checked: 5, confirmed: 5, wrong: 0}
+credibility_grade_concur: "concur — grade C is fair; peer-contradicted company-specific order-book erosion, repeated FY27 cuts, ~2yr Jammu slip and flat consol revenue support a low-C"
+findings:
+  - {severity: "MINOR", location: "Q4 FY26 concall p.16 vs p.3/p.7", description: "NPC margin step-down (acquisition press release 20-25% EBITDA vs guided sustainable 15-18%) noted numerically by B05 but not flagged as a red flag; a real downshift in the metric the deal was sold on"}
+  - {severity: "MINOR", location: "Q4 FY26 concall p.16/p.18 vs JINDALSAW Jul-2026 p.4", description: "Hormuz disruption under-disclosed vs peers: MANINDS claims only 20-25% shipments affected, 'no decline', 'Q1 strong', while Jindal SAW reports all outward MENA shipments suspended since March 2026; B06 2E surfaced the peer fact but did not confront MANINDS's no-decline claim as a contradiction"}
+  - {severity: "MINOR", location: "Q1 FY26 concall p.11", description: "Other-income add-back margin-quality issue not addressed; B05 scoped Q1 as baseline-only and did not carry this into the margin-quality assessment"}
+  - {severity: "MINOR", location: "05-concall.md 2A / analyst note", description: "B05 frames FY26 consolidated growth as +13% off a pipe-only FY25 base (~3,178cr); including the ~369cr FY25 Merino one-off makes consol growth roughly flat, understating the revenue miss"}
+critical_count: 0
+major_count: 0
+minor_count: 4
+acceptance_rate: 80

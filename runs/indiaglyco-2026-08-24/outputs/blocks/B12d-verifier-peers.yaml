@@ -1,0 +1,21 @@
+stage: B12d
+company: "INDIAGLYCO"
+run_date: "2026-08-24"
+model: claude-sonnet-5
+status: complete
+peers_audited: 13
+substantive_confirmed: 13
+substantive_unsupported: []
+unused_but_relevant: []
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "MAJOR", location: "06-peers.md Claim 7 peer evidence row", description: "'120 million case market' quote cited as 'May 2026'; verbatim quote is in GLOBUSSPR-Concall_Jan_2026 line 686, not May 2026. CONTRADICTED verdict still stands on 3 other correctly-anchored Globus quotes (Nov 2025, May 2026 own line, Jul 2026)."}
+  - {severity: "MAJOR", location: "06-peers.md Claim 5 peer evidence row", description: "'OMCs reducing volume offtake... not impacted' presented as 'same call' as the May 2026 Bihar/Jharkhand shift; the 'not impacted' line is in GLOBUSSPR-Concall_Jan_2026 lines 628-629, ~4 months earlier. PARTIALLY VERIFIED verdict survives on independently correct May-2026 and Triveni Q1 FY27 anchors."}
+  - {severity: "MINOR", location: "06-peers.md Part 2E / risks_peers_raise", description: "Supreme Court/BPCL ethanol-tender stay attributed to both 'Jun 2026 and Jul 2026' Triveni calls; passage exists only in TRIVENI-Concall_Aug_2026 (30-Jul call). Item real, correctly anchored in that call alone."}
+  - {severity: "MINOR", location: "06-peers.md Part 2C capex_cycle", description: "Balrampur PLA capex (INR 3,080 cr) attributed to 'Aug 2026 call'; figure is in BALRAMCHIN-Concall_Jun_2026 line 114. Two facts from two calls fused under one citation."}
+critical_count: 0
+major_count: 2
+minor_count: 2
+acceptance_rate: 90
+peer_utilisation: 100

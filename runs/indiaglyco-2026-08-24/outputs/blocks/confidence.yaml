@@ -1,0 +1,22 @@
+stage: confidence-delta
+company: "INDIAGLYCO"
+run_date: "2026-08-24"
+phase: 1
+confidence_delta:
+  numerical_acceptance: 89     # B12a, post re-invoke; 0 CRITICAL, 0 source-fidelity findings
+  redflag_coverage: 62         # B12b: share of verifier-found concall red flags already caught by B05/B06
+  framework_adherence: 96      # B12c: Gate0 + Emerging Moat portion only (valuation adherence pending phase 3)
+  peer_utilisation: 100        # B12d: 13/13 peers used substantively
+  overall: 62                  # min of the four; valuation-adherence component PENDING PHASE 3
+band: "60-74 (normal-low): PROCEED-family verdicts downgrade one level; NOT below 60, so no forced REWORK"
+rework_triggers_present: false
+rework_check:
+  any_verifier_critical: false
+  any_source_fidelity_finding: false
+  any_acceptance_below_60: false     # 89 / 62 / 96 / 90 all >= 60; redflag_coverage 62 is the binding floor but >= 60
+binding_constraint: "redflag_coverage 62% - Verifier B found 5 concall red flags B05 missed (1 MAJOR: the Rs804cr-prepaid-vs-Rs220cr-net-debt deleveraging gap; 4 MINOR communication/consistency items). Management-communication caveat, not a numerical or framework failure."
+valuation_adherence_component: "PENDING PHASE 3 (B11 valuation-adherence half of Verifier C deferred)"
+notes:
+  - "No CRITICAL findings across any verifier after the single permitted Verifier A re-invoke."
+  - "One verifier disagreement logged: Verifier A first pass flagged a CRITICAL source-fidelity issue on Gate 0 ROCE PBT; orchestrator source re-check CLEARED it (377.21 exists in screener Data_Sheet, its cited source; screener-vs-AR basis difference). Disposition: FLAG CLEARED - source re-check found the number at a correct anchor (re-checked by orchestrator + Verifier A re-invoke)."
+  - "Gate 0 framework correction from B12c (A1 mis-band): core 42->40, grand 46->44, Block A 9->7, deal-breaker 1 should be recorded; classification AVERAGE unchanged. Carry into phase 3."

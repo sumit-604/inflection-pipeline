@@ -1,0 +1,93 @@
+stage: B00-inputs
+company: MANINDS
+run_date: 2026-08-21
+model: orchestrator
+status: complete
+run_type: full
+concalls_available: true
+
+inventory:
+  prospectus: 0            # absent, NOT a gap: Man Industries long-listed (P&L since FY17+, listed 1980s)
+  annual-report: 1         # Annual_Report.pdf, 254p, extracts clean
+  results: 2               # Q4FY26 audited (4da9bef6, 45p, scanned->OCR) + Q1FY27 (11aa7444, 11p)
+  rating: 1                # ratings.pdf, 6p scanned->OCR: CRISIL Jul-20-2026 Credit Bulletin (PARTIAL, see gaps)
+  concalls: 4              # Aug2025 Q1FY26, Nov2025 Q2FY26, Feb2026 Q3FY26, Jun2026 Q4FY26
+  peer-concalls: 12        # JINDALSAW x4, RATNAMANI x4, WELCORP x4
+  announcements: 0         # no Reg 30 PDFs; SOFTENED by operator operational summary (research tier)
+  shareholding: 1          # screener-shareholding-pattern.md (operator-ferried screener screenshot 2026-08-24)
+  research: 3              # 2 Ventura notes + operator operational summary; all non-anchored leads
+  screening: 24            # screener-Data_Sheet.csv populated FY17-FY26 + qtrly to Jun2026; peer Data_Sheets present
+  presentation: 1          # Investor_Presentation_1.pdf (26p)
+  other: 0
+
+input_gaps:
+  - type: shareholding-partial
+    severity: MEDIUM
+    effect: >
+      Quarterly shareholding now available via operator-ferried screener screenshot
+      (inputs/shareholding/screener-shareholding-pattern.md, Sep2023-Jun2026). Closes Gate 0
+      Block E1/E2 (promoter 43.21% Jun2026; -6.4pp over 3y) and stage 10 FII+DII (4.30%).
+      PLEDGE % still NOT covered (not in screenshot): E3 and stage 8 pledge trend unresolved.
+      UA qualifier can now be assessed at stage 11 (FII+DII 4.30% is low institutional).
+      Tier: screener screenshot, not the BSE filing.
+  - type: announcements
+    severity: LOW-MEDIUM
+    effect: >
+      No Reg 30 / exchange announcement PDFs. SOFTENED by operator operational summary
+      (inputs/research/operator-operational-summary-2026-08-24.md): the material events
+      (22Apr USD70m guarantee, 21May NPC acquisition ~USD102m, 18Jun ~Rs1000cr orders) are
+      described at LEADS tier only. Filed corpus (Q4FY26+Q1FY27 results, 4 concalls) anchors
+      most of the same operational content independently. FTTCP Step 0C: leads present,
+      filings absent; confidence noted.
+  - type: rating-rationale-partial
+    severity: MEDIUM
+    effect: >
+      rating/ratings.pdf is the CRISIL Jul-20-2026 Credit Bulletin (bank-facility update +
+      current ratings CRISIL A+/Stable long-term, A1 short-term). The FULL rating rationale
+      (June-01-2026) is referenced but NOT in corpus. rating_wc_quote (WC/cash narrative) will
+      be partially unresolved; FLAG-CASH determination loses the rationale-detail evidence tier.
+  - type: prospectus
+    severity: NONE
+    effect: Absent but company is long-listed; not a gap (RECENTLY-LISTED PRIORITY does not apply).
+
+collect_to_repo_defects:
+  - sector_cap_row_wrong: >
+      manifest sector_cap_row = "Pharma / CDMO" is WRONG. Man Industries makes line pipe
+      (LSAW/HSAW steel pipe for oil & gas / water). No dedicated Section 1B cap row exists for
+      line-pipe / steel-pipe converter. FLAG for phase-3 operator ruling on the exit-multiple row.
+      Nearest archetype: Commodity converter (Section 1B v3.7 Amendment 17 may bind) OR
+      order-book/EPC-style. Operator to rule at /fttcp or /finalize.
+  - split_csvs_empty: >
+      screener-Profit_Loss/Balance_Sheet/Cash_Flow/Quarters.csv near-empty. Only
+      screener-Data_Sheet.csv carries data. Same for peers. Gate 0 and stage 10 use Data_Sheet.
+  - broker_notes_misfiled: >
+      Two Ventura Securities notes arrived in presentation/. Reclassified to inputs/research/
+      (Ventura_initiation_02Sep2025.pdf, Ventura_update_note_19Feb2025.pdf). Non-anchored leads.
+
+leads_for_stages:
+  - stage_8_governance_sebi: >
+      Ventura update note (19-Feb-2025) headline: "SEBI Imposes 2-Year Trading Restrictions on
+      Executives". Governance LEAD for stage 8. Stage 8 must web-search and anchor the SEBI order
+      itself (research note is a lead, not anchored evidence).
+  - stage_8_promoter_reduction: >
+      Promoter holding fell 49.61% (Sep2023) to 43.21% (Jun2026), incl. a ~5pp single-quarter
+      drop Jun2025 (48.21%) to Sep2025 (43.21%). Stage 8 to explain and anchor: sale vs
+      reclassification. Feeds FLAG-PROMOTER consideration.
+  - concall_coverage: >
+      Corpus concalls cover Q1FY26 (Aug2025) to Q4FY26 (Jun2026). Q1FY27 concall (12-Aug-2026)
+      is NOT in corpus; its content is available only as an operator lead. Q1FY27 RESULTS pdf
+      IS in corpus. Stage 5 maps quarters from transcript content.
+
+extraction_note: >
+  All 22 input PDFs pre-extracted to work/extracted/*.txt with ===== PAGE N ===== markers
+  (page numbers match source PDF pages, so anchors map directly). Two scanned image-only PDFs
+  (rating/ratings.pdf, results/4da9bef6 Q4FY26) OCR'd with tesseract (200dpi). cffi reinstalled;
+  pypdf + poppler + tesseract all working. Stages read the .txt; source PDF paths supplied for
+  visual fallback on image pages.
+
+flags: []
+analyst_note: >
+  Long-listed line-pipe maker, mkt cap Rs 5355 cr, CMP 714. Sector row mislabeled Pharma/CDMO
+  (real: LSAW/HSAW steel line pipe). Shareholding and announcements absent; rating is bulletin-only
+  (full RR not in corpus). Screener Data_Sheet is the live financial source (FY17-FY26). SEBI
+  2-yr executive trading restriction is a live governance lead for stage 8.

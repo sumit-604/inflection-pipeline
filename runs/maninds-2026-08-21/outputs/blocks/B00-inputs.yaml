@@ -11,7 +11,7 @@ inventory:
   annual-report: 1         # Annual_Report.pdf, 254p = FY2024-25 (FY25) report, NOT FY26 (collect mislabel). Standalone Notes 1-47 pp128-181, Consolidated Notes 1-52 pp196-249. FY26 financials only in results filing + screener.
   results: 2               # Q4FY26 audited (4da9bef6, 45p, scanned->OCR) + Q1FY27 (11aa7444, 11p)
   rating: 1                # ratings.pdf, 6p scanned->OCR: CRISIL Jul-20-2026 Credit Bulletin (PARTIAL, see gaps)
-  concalls: 4              # Aug2025 Q1FY26, Nov2025 Q2FY26, Feb2026 Q3FY26, Jun2026 Q4FY26
+  concalls: 5              # Aug2025 Q1FY26, Nov2025 Q2FY26, Feb2026 Q3FY26, Jun2026 Q4FY26, Aug2026 Q1FY27 (Q1FY27 concall now in corpus, operator-supplied 2026-08-25; gap closed)
   peer-concalls: 12        # JINDALSAW x4, RATNAMANI x4, WELCORP x4
   announcements: 0         # no Reg 30 PDFs; SOFTENED by operator operational summary (research tier)
   shareholding: 1          # screener-shareholding-pattern.md (operator-ferried screener screenshot 2026-08-24)

@@ -142,6 +142,48 @@ other case the run proceeds: each absent document type is recorded in
 `B00.input_gaps` and carried on every downstream handoff block under
 `input_gaps`. No document count ever halts the run.
 
+### FRESHNESS PAIR CHECK (stage 0 corpus audit, hard rule; per MANINDS 2026-08-21)
+
+A document count is not the whole corpus audit. A filing can be present
+while its companion filing, released alongside it, is absent. The count
+passes and the run reaches Halt 1 blind to the gap. Stage 0 runs a
+Freshness Pair Check as part of the B00 corpus audit, after the folder
+inventory, to catch this.
+
+Each pair is a trigger document and its mandatory mate. When the NEWEST
+trigger of a pair is present but its mate is absent from the corpus, the
+pair FAILS. The four pairs:
+
+1. RESULTS to CONCALL. For the newest results filing in `inputs/results/`,
+   a concall transcript for the SAME quarter must exist in
+   `inputs/concalls/`. Skipped when `manifest.concalls_available` is false:
+   the company holds no calls, so the absence is declared, not a gap.
+2. RATING BULLETIN to RATIONALE. A rating bulletin in `inputs/rating/` must
+   carry its full rating rationale, not the headline bulletin alone.
+3. SEBI ORDER to ORDER TEXT. Any SEBI order referenced in any filing must
+   have the order text present in the corpus.
+4. AR to LATEST AUDITED ANNUAL RESULTS. The annual report held must not be
+   older than the latest audited annual (full-year) results filing. A newer
+   audited annual result with no matching-year AR fails the pair.
+
+On any pair failure:
+
+- The B00 corpus audit verdict is **CORPUS GAPPED-FRESHNESS**. B00 carries
+  the `freshness_pairs[]` and `freshness_verdict` fields (Section 3). This
+  verdict propagates to the 09b dossier Section 1 verdict line and takes
+  precedence over a plain CORPUS GAPPED there; any other gaps still list.
+- The gate recommendation is **capped at PROCEED WITH CAVEATS regardless of
+  flag count**. Capped means no better than PROCEED WITH CAVEATS: a more
+  severe verdict (REWORK, INSUFFICIENT EVIDENCE) still stands on its own
+  grounds.
+- The missing document is named as the **first line** of
+  `outputs/final/gate-recommendation.md`, before any flag block.
+
+This is a corpus-completeness gate, not a company-quality flag: it caps the
+gate on missing evidence, never on the business. It does not halt the run
+(no mechanical failure); the run proceeds degraded per the DEGRADATION MAP,
+and the named document goes on the operator's upload list at Halt 1.
+
 ### NO-CONCALL MODE
 
 Some companies hold no earnings calls. When `manifest.yaml` sets
@@ -299,6 +341,9 @@ analyst_note: ""          # optional, <=200 words (strict cap, excess
 
 Stage-specific payload fields (the fields downstream stages actually read):
 
+- `B00-inputs`: input_gaps[] (absent document types), freshness_pairs[]
+  (each: pair, trigger_doc, mate_expected, status PASS/FAIL, missing_doc),
+  freshness_verdict (FRESHNESS PAIRS OK | CORPUS GAPPED-FRESHNESS)
 - `B01-gate0`: core_score /100, moat_score /60, grand /160, blocks A..E,
   moats_confirmed /12, classification, deal_breakers[], data_years,
   history_downgrade (bool)

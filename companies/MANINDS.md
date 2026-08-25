@@ -8,7 +8,7 @@ PROCEED past the understanding gate at Halt 1: a line-pipe order-book converter 
 ## DECISION STATUS AND ENTRY ZONE
 - Decision Status (Halt 1, 2026-08-25): PROCEED. Operator signed "sign as recommended", Keerti Kaushik, 2026-08-25. Evidence gate PROCEED WITH FLAGS. Position capped at Small while any governance item is open (operator override ruling).
 - Entry zone: NOT YET SET. No valuation ran in Phase 1 (stages 10/11 deferred to Phase 3). No BUY/WATCHLIST/AVOID, no destination PE, no MoS yet.
-- Both downstream gates OPEN: /fttcp (Phase 2 deliberation) and Role 5.5 tracker gate not yet satisfied; model signed but tracker proof PENDING. /fttcp NOT run.
+- Role 5.5 tracker gate SATISFIED (12 tracker rows written 2026-08-25, see TRACKER PROOF). Handover dossier gate remains OPEN. /fttcp NOT run until the handover dossier exists.
 - Corpus verdict: CORPUS GAPPED (6 findable gaps remain; the CRISIL 01-Jun-2026 rationale gap is CLOSED). Confidence delta overall 80 (normal).
 
 ## SIGNED MENTAL MODEL DECLARATION
@@ -53,7 +53,7 @@ FLAG-PROMOTER CONCERN acknowledged. Override for coverage only (not a quality up
 - Seller price signal: Nippon Steel / Sumitomo exited NPC at ~2x CY25 PAT with USD 83m liquid assets included in the price. Treat CY25 (NPC revenue Rs2,000cr, OPBDIT 25%) as a POSSIBLE PEAK year, not a normalised base. A sophisticated strategic seller exiting a "cheap" asset is a signal to test the mature-revenue and margin assumptions against cycle position, not to take the 1.5x EV/EBITDA framing at face value.
 
 ## ACTIVE TRIPWIRES
-- Standalone India order book below ~Rs2,500cr = kill on variable 1. Last held Rs3,000cr (Q4FY26 call, 26-May-2026); consolidated Rs3,600cr (Q1FY27 results filing, 11-Aug-2026).
+- Standalone India order book below ~Rs2,500cr = kill on variable 1. Q1FY27 concall (12-Aug-2026, now in corpus) discloses the split: consolidated Rs3,600cr = India ~Rs2,200-2,300cr + NPC remainder. THE INDIA STANDALONE BOOK IS ALREADY BELOW THE ~Rs2,500cr KILL LINE (Q4FY26 call held Rs3,000cr; the split was not disclosed then). This is a LIVE kill-line breach for /fttcp Role 3 to weigh; India utilisation 50-60%, FY27 guided ~Rs5,000cr incl ~Rs1,500cr Saudi (India standalone ~Rs3,500cr).
 - WC normalisation first test: Q2FY27 balance sheet (~Nov-2026). Debtor days must fall toward 100 (FY26 ~128) and GCA toward 200 (FY26 stretch); the 6m-1yr receivables bucket must not grow. Failure flips FLAG-CASH back to STRUCTURAL.
 - Limitless Contracting (Note 36) FY26 movement: balance (Rs97.68cr FY25) and accrued interest must fall in the FY26 AR. If not, thesis-breaker per the promoter override.
 - SAT final order on the 29-Sep-2025 SEBI matter: outcome resolves the within-hold governance option (quash 15% / narrowed 45% / upheld 40%). MCA Section 206(5) compounding outcome and the Mansukhani Supreme Court dispute also monitored.
@@ -70,10 +70,25 @@ FLAG-PROMOTER CONCERN acknowledged. Override for coverage only (not a quality up
 - Saudi/KSA platform scaling to the guided Rs3,500-4,000cr peak revenue at 80-85% utilisation — converts on committed capacity / multi-year order book at that scale, window 3-5 years.
 
 ## TRACKER PROOF
-- PENDING (Role 5.5 tracker writes in claude.ai). /fttcp runs only after the tracker gate is satisfied.
+- WRITTEN 2026-08-25 (Role 5.5, claude.ai). COMPANIES MASTER parent page
+  3c7bb2b9-d3ab-815e-8577-ec0fc5ad9316. Twelve DOWNSTREAM SIGNAL TRACKER
+  rows, all related to parent: 3c7bb2b9-d3ab-8194-bf4a-d100aff8ddb8
+  (debtor days), 3c7bb2b9-d3ab-8121-acf6-dd8872b95842 (standalone order
+  book), 3c7bb2b9-d3ab-8195-b3d9-efc0e6443571 (SAT/206(5)),
+  3c7bb2b9-d3ab-81cb-9d2e-e8817ecb7a1f (Limitless), 3c7bb2b9-d3ab-8195-
+  bae1-deb9ac3ccd2a (NPC), 3c7bb2b9-d3ab-8106-985d-ce8eb396c364 (margin),
+  3c7bb2b9-d3ab-81f9-a21b-fd74759c1f5e (Jammu/Dammam), 3c7bb2b9-d3ab-81b4-
+  b149-f93fd07d9347 (pledge), 3c7bb2b9-d3ab-817e-89af-fabf35c540f4
+  (Merino), 3c7bb2b9-d3ab-81a1-a2a4-caa6bf28fd09 (steel plate),
+  3c7bb2b9-d3ab-81d7-a49b-c91c910e8e7f (Aramco), 3c7bb2b9-d3ab-8186-8a1a-
+  eac96ed73ffe (JJM/PNGRB). Tiers 5/5/2. Earliest check 2026-09-05.
+  Tracker gate SATISFIED.
 
 ## HANDOVER DOSSIER
-- PENDING: inputs/research/web-handover-dossier.md (to be produced in claude.ai).
+- COMMITTED 2026-08-25: inputs/research/web-handover-dossier.md.
+  Six vertical verdicts, six supersessions (S1-S6), promise-vs-delivery
+  ledger with credibility split, Role 5.5 proof, operator inputs, eight
+  Role 3 seeds. Handover input gate SATISFIED.
 
 ## RUN FOLDERS
 - runs/maninds-2026-08-21/

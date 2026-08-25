@@ -3,85 +3,69 @@ company: "MANINDS"
 run_date: "2026-08-21"
 model: claude-sonnet-5
 status: complete
-input_gaps:
-  - "NPC (National Pipe Company) audited CY25 financials/volume not disclosed in any concall; only $ topline and depreciation ($8mn) given"
-  - "SEBI order underlying cause and penalty amount not disclosed in Q2/Q3/Q4 FY26 calls, only that a stay was obtained"
-  - "Product-wise volume (LSAW/HSAW/ERW tonnage) not disclosed in any of the three primary calls, per stated company policy"
-flags:
-  - "FY26 revenue growth guidance (20%) missed; actual standalone +11%, consolidated +13%"
-  - "Order book declined three consecutive quarters (Rs.4,750cr to Rs.4,000cr to Rs.3,000cr) without proactive management acknowledgment"
-  - "Saudi greenfield SAW plant reaffirmed 'on track' in Q3 FY26 call then scrapped in Q4 FY26 call for the NPC acquisition"
-  - "SEBI stay order disclosed once (Q2 FY26 call) and never revisited"
-quarters_analysed: ["Q2 FY26", "Q3 FY26", "Q4 FY26"]
+rerun: "five-transcript re-run 2026-08-25 (Q1FY26 through Q1FY27); supersedes the three-transcript (Q2-Q4 FY26) version"
+input_gaps: []
+flags: ["india_standalone_order_book_below_2500cr_threshold", "sebi_stay_order_silent_4_quarters", "gross_margin_qoq_unexplained_q1fy27", "npc_fy27_revenue_intra_call_inconsistency"]
+quarters_analysed: ["Q1 FY26", "Q2 FY26", "Q3 FY26", "Q4 FY26", "Q1 FY27"]
 triggers:
-  - {priority: 1, name: "NPC Saudi acquisition ramp-up", type: "INORGANIC/VOLUME", timeframe: "near-medium (FY27-29)", conviction: "H", confirm_signal: "NPC quarterly revenue tracks toward Rs.1,500-2,000cr FY27 guide and utilisation rises toward 80-85%", kill_signal: "NPC utilisation stalls, Aramco order book fails to convert, or key-management turnover disrupts execution"}
-  - {priority: 2, name: "FY27 consolidated revenue guidance (Rs.5,000-5,500cr)", type: "VOLUME", timeframe: "near (FY27)", conviction: "M", confirm_signal: "quarterly revenue tracks to ~Rs.1,250-1,375cr/quarter without further cuts", kill_signal: "a fourth downward revision, or order book falls below ~Rs.2,500cr"}
-  - {priority: 3, name: "Order book / bid-pipeline conversion", type: "VOLUME", timeframe: "near (6-12 months execution)", conviction: "M", confirm_signal: "order book inflects upward off Rs.3,000cr trough with stated 20-30% bid-win ratio applied to Rs.15,000-16,000cr bid pipeline", kill_signal: "order book continues to shrink despite large bid pipeline"}
-  - {priority: 4, name: "Jammu SS seamless plant commissioning", type: "VOLUME/PRICE-MIX", timeframe: "medium (FY27-28)", conviction: "M", confirm_signal: "commissioning actually occurs and first shipments follow", kill_signal: "further delay beyond FY27 or GST-subsidy scheme eligibility issues emerge"}
-  - {priority: 5, name: "EBITDA margin sustain 13-15%", type: "PRICE-MIX/COST", timeframe: "near-medium", conviction: "H", confirm_signal: "margin holds >=13% through FY27 on enlarged consolidated base", kill_signal: "margin compresses below ~11% on commodity or competitive pressure"}
-  - {priority: 6, name: "Dammam coating facility", type: "PRICE-MIX", timeframe: "medium (mid/Q4 FY27)", conviction: "M-L", confirm_signal: "commissioning on stated schedule", kill_signal: "delay or scrapping, as happened to original Saudi greenfield plan"}
-  - {priority: 7, name: "Domestic water infra / Jal Jeevan Mission revival", type: "SECTORAL/REGULATORY-POLICY", timeframe: "medium (FY27)", conviction: "L", confirm_signal: "actual order wins from named state tenders (Gujarat, AP, MP, Odisha)", kill_signal: "continued execution delay at state level despite central allocation"}
-  - {priority: 8, name: "Merino Shelters real-estate monetisation", type: "INORGANIC", timeframe: "medium (FY27 onward)", conviction: "L", confirm_signal: "cash receipt begins in Q2 FY27 as most recently guided", kill_signal: "further delay or absence of receipts"}
-  - {priority: 9, name: "Aramco strategic relationship / off-take", type: "REGULATORY-POLICY", timeframe: "long", conviction: "L", confirm_signal: "formal off-take agreement or incremental Aramco order announced beyond inherited NPC book", kill_signal: "relationship fails to convert into orders beyond existing book"}
+  - {priority: 1, name: "NPC Saudi acquisition ramp-up", type: "INORGANIC/VOLUME", timeframe: "near-medium (FY27-29)", conviction: "H", confirm_signal: "NPC quarterly run rate tracks Rs.300-500cr/quarter from Q2 FY27, margin holds near 15-18% consolidated target", kill_signal: "NPC utilisation stalls, Aramco book fails to convert, or FY27 NPC revenue guide (already inconsistent Rs.1,500cr vs Rs.1,200cr within Q1 FY27 call) is cut further"}
+  - {priority: 2, name: "FY27 consolidated revenue guidance (~Rs.5,000cr)", type: "VOLUME", timeframe: "near (FY27)", conviction: "M", confirm_signal: "quarterly revenue tracks ~Rs.1,250cr/quarter without further cuts, India/NPC split stabilises", kill_signal: "further downward revision, or India standalone order book falls below Rs.2,000cr"}
+  - {priority: 3, name: "India standalone order book / bid-pipeline conversion", type: "VOLUME", timeframe: "near", conviction: "M-L", confirm_signal: "India standalone book (currently Rs.2,200-2,300cr) inflects upward, not just the consolidated figure", kill_signal: "further India-standalone decline despite large bid pipeline"}
+  - {priority: 4, name: "Jammu SS plant commissioning", type: "VOLUME/PRICE-MIX", timeframe: "medium (March '27)", conviction: "M", confirm_signal: "commissioning occurs on the reaffirmed March '27 date and first shipments follow", kill_signal: "any further slip past March '27"}
+  - {priority: 5, name: "EBITDA margin sustain at 14-16%", type: "PRICE-MIX/COST", timeframe: "near-medium", conviction: "H", confirm_signal: "margin holds >=14% through FY27-28 on enlarged consolidated base", kill_signal: "margin compresses below ~12%; watch the unexplained Q1 FY27 gross-margin QoQ drop as an early tell"}
+  - {priority: 6, name: "Dammam coating & double-jointing facility", type: "PRICE-MIX", timeframe: "medium (March '27)", conviction: "M", confirm_signal: "commissioning on schedule, conversion of existing Aramco/water orders into coating orders", kill_signal: "delay, as happened to the original Saudi greenfield plan, or coating-order conversion fails"}
+  - {priority: 7, name: "Domestic water infra / Jal Jeevan Mission revival", type: "SECTORAL/REGULATORY-POLICY", timeframe: "medium (FY27)", conviction: "L", confirm_signal: "actual order wins from named state tenders", kill_signal: "continued execution delay at state level despite central allocation"}
+  - {priority: 8, name: "Merino Shelters real-estate monetisation", type: "INORGANIC, non-core", timeframe: "near (launch mid-Sep 2026)", conviction: "L-M", confirm_signal: "cash receipt begins post-launch at a figure reconcilable with either quoted range", kill_signal: "further delay or receipt materially below both quoted ranges"}
+  - {priority: 9, name: "Aramco strategic relationship / off-take", type: "REGULATORY-POLICY/customer", timeframe: "long", conviction: "M", confirm_signal: "incremental Aramco order flow or coating-order conversion", kill_signal: "relationship fails to convert into orders beyond the existing inherited book"}
+  - {priority: 10, name: "Far East / Asia-Pacific supply diversification (Hormuz-driven)", type: "SECTORAL", timeframe: "long", conviction: "L", confirm_signal: "a named order or bid from a Far East buyer citing supply diversification", kill_signal: "narrative fails to produce incremental order flow within 2-3 quarters"}
 guidance:
-  - {item: "FY26 revenue growth", number: "~20% (also stated 15-20%)", timeframe: "FY26", stated_in: "Q1 FY26 call, reiterated Q2 FY26 call"}
-  - {item: "FY26 EBITDA margin", number: "11%-12%, upgraded to 13%-14%", timeframe: "FY26", stated_in: "Q2 FY26 call; upgraded Q3 FY26 call"}
-  - {item: "FY26 revenue (rupee figure)", number: "Rs.3,600-3,700cr", timeframe: "FY26", stated_in: "Q3 FY26 call"}
-  - {item: "FY27 consolidated revenue", number: "~Rs.7,000cr", timeframe: "FY27", stated_in: "Q2 FY26 call"}
-  - {item: "FY27 consolidated revenue (revised)", number: "Rs.5,000-5,500cr", timeframe: "FY27", stated_in: "Q4 FY26 call"}
-  - {item: "FY27 PAT margin", number: "5%-5.5%", timeframe: "FY27", stated_in: "Q2 FY26 call"}
-  - {item: "Jammu commissioning target", number: "1-Apr-2026", timeframe: "FY26/FY27", stated_in: "Q2 FY26 call"}
-  - {item: "Saudi Dammam commissioning target", number: "Quarter 4 2026 then Q1 FY27", timeframe: "CY2026/FY27", stated_in: "Q2 FY26 call; revised Q3 FY26 call"}
-  - {item: "NPC acquisition", number: "$102mn ($70mn debt + $32mn equity), 1.5x EV/EBITDA", timeframe: "announced 21-May-2026", stated_in: "Q4 FY26 call"}
-  - {item: "Dammam coating facility capex", number: "$40mn, 25%-35% EBITDA margin", timeframe: "mid/Q4 FY27", stated_in: "Q4 FY26 call"}
-  - {item: "FY26 actual standalone revenue", number: "Rs.3,508cr, +11% YoY", timeframe: "FY26 delivered", stated_in: "Q4 FY26 call"}
-  - {item: "FY26 actual EBITDA margin", number: "14% standalone / 13% consolidated", timeframe: "FY26 delivered", stated_in: "Q4 FY26 call"}
-  - {item: "Order book", number: "Rs.4,750cr to Rs.4,000cr to Rs.3,000cr", timeframe: "trailing quarters", stated_in: "Q2/Q3/Q4 FY26 calls"}
-  - {item: "Bid pipeline", number: "Rs.15,000cr to Rs.11,500cr to Rs.15,000-16,000cr", timeframe: "trailing quarters", stated_in: "Q2/Q3/Q4 FY26 calls"}
-  - {item: "Merino Shelters quantum", number: "Rs.700-800cr(Q1)/Rs.700cr(Q2)/Rs.600-700cr=30% share(Q3)/Rs.800-900cr(Q4)", timeframe: "rolling", stated_in: "Q1/Q2/Q3/Q4 FY26 calls"}
+  - {item: "FY26 revenue growth", number: "~20% (also 15-20%)", timeframe: "FY26", stated_in: "Q1 FY26 call"}
+  - {item: "FY26 EBITDA margin", number: "11-12%, upgraded to 13-14%", timeframe: "FY26", stated_in: "Q2 FY26 / Q3 FY26 calls"}
+  - {item: "FY26 actual delivered", number: "standalone Rs.3,508cr rev, 14% margin; consol Rs.3,592.5cr rev, 13% margin", timeframe: "FY26", stated_in: "Q4 FY26 call"}
+  - {item: "FY27 consolidated revenue", number: "~Rs.7,000cr (Q2 FY26) cut to Rs.5,000-5,500cr (Q4 FY26), reaffirmed ~Rs.5,000cr but India ~Rs.3,800cr + NPC ~Rs.1,200-1,500cr (inconsistent)", timeframe: "FY27", stated_in: "Q2/Q4 FY26, Q1 FY27 calls"}
+  - {item: "NPC acquisition terms", number: "$102mn cash deal, 1.5x EV/EBITDA, closed 21-May-2026", timeframe: "FY26", stated_in: "Q4 FY26 call"}
+  - {item: "NPC Q1 FY27 partial-quarter revenue", number: "~Rs.43cr (20-day consolidation)", timeframe: "Q1 FY27", stated_in: "Q1 FY27 call"}
+  - {item: "NPC standalone EBITDA margin (actual)", number: "~21%", timeframe: "Q1 FY27", stated_in: "Q1 FY27 call"}
+  - {item: "NPC consolidated margin target", number: "15-18%, up to 20-plus% with Aramco-weighted mix", timeframe: "FY27+", stated_in: "Q4 FY26 / Q1 FY27 calls"}
+  - {item: "Order book (consolidated / India split)", number: "Rs.3,600cr consol = India Rs.2,200-2,300cr + NPC remainder", timeframe: "Q1 FY27", stated_in: "Q1 FY27 call"}
+  - {item: "Bid pipeline (combined)", number: "Rs.24,000cr, ~70% MENA, ~35-40% water", timeframe: "Q1 FY27", stated_in: "Q1 FY27 call"}
+  - {item: "Jammu commissioning", number: "1-Apr-2026 (original) slipped to March '27 (reaffirmed, consistent)", timeframe: "FY27", stated_in: "Q2 FY26 / Q1 FY27 calls"}
+  - {item: "Dammam coating facility", number: "$40-50mn capex, 4 LAKH sqm/yr capacity, +3-4pp margin uplift, March '27 target", timeframe: "FY27", stated_in: "Q4 FY26 / Q1 FY27 calls"}
+  - {item: "FY28 growth guidance", number: "25-30% (minimum)", timeframe: "FY28", stated_in: "Q4 FY26 / Q1 FY27 calls"}
+  - {item: "Long-run EBITDA margin target", number: "14-16% for next 3-5 years", timeframe: "FY27-31", stated_in: "Q1 FY27 call"}
+  - {item: "FY27 finance cost / peak debt", number: "~Rs.190cr finance cost; peak debt Rs.1,600cr, ~Rs.1,400cr by FY28", timeframe: "FY27-28", stated_in: "Q1 FY27 call"}
+  - {item: "Merino Shelters quantum/timing", number: "five different framings across five calls, most recent: Rs.35-50cr (CFO) vs Rs.80-100cr (MD) FY27, launch mid-Sep 2026", timeframe: "FY27", stated_in: "Q1-Q1 FY27 calls"}
+  - {item: "Q1 FY27 actuals", number: "standalone rev Rs.1,028cr (+37.5% YoY), EBITDA margin 15.3%, PAT Rs.78cr; consol EBITDA Rs.155cr (+92.6% YoY), consol margin 14.6%", timeframe: "Q1 FY27", stated_in: "Q1 FY27 call"}
 promise_delivery:
-  delivered: 2
-  partial: 2
-  missed: 5
-  rows:
-    - {promised_in: "Q1 FY26 call", promise: "FY26 revenue growth ~20%", outcome: "missed", explanation: "no direct acknowledgment; reframed as margin upgrade in Q3 FY26 call"}
-    - {promised_in: "Q2 FY26 call", promise: "H2 FY26 revenue Rs.2,200-2,400cr", outcome: "missed", explanation: "not reconciled in any later call; actual H2 consol ~Rs.2,016.5cr"}
-    - {promised_in: "Q3 FY26 call", promise: "'Original' FY26 revenue guidance Rs.3,600-3,700cr", outcome: "missed", explanation: "actual Rs.3,508cr standalone, below even this floor; no explanation given"}
-    - {promised_in: "Q2 FY26 call", promise: "FY26 EBITDA margin 11%-12%", outcome: "delivered", explanation: "upgraded to 13%-14% in Q3 FY26 call, delivered 13% consol/14% standalone"}
-    - {promised_in: "Q2/Q3 FY26 calls", promise: "Saudi Dammam greenfield SAW plant on track, Q4 2026 then Q1 FY27 commissioning", outcome: "missed", explanation: "scrapped in Q4 FY26 call, replaced by NPC acquisition; reframed as an opportunistic upgrade"}
-    - {promised_in: "Q2 FY26 call", promise: "Jammu commissioning 1-Apr-2026", outcome: "missed", explanation: "war and flooding cited (Q3 FY26 call); FY28 first-year utilisation only 35-40% per Q4 FY26 call"}
-    - {promised_in: "Q2 FY26 call", promise: "FY27 consolidated revenue ~Rs.7,000cr", outcome: "partial", explanation: "commodity-price sensitivity cited; cut to Rs.5,000-5,500cr by Q4 FY26 call after internally inconsistent Q3 FY26 framing"}
-    - {promised_in: "Q2 FY26 call", promise: "Order book bid-win ratio quantified", outcome: "delivered", explanation: "evaded in Q2 FY26 call ('no ratio, cannot be defined'), quantified 20%-30% in Q3 FY26 call"}
-    - {promised_in: "Q1/Q2 FY26 calls", promise: "Merino Shelters launch imminent, FY26 revenue contribution implied", outcome: "partial", explanation: "RERA approval process cited; launch confirmed March 2026 (Q3 FY26 call) but revenue start pushed to Q2 FY27 (Q4 FY26 call)"}
+  delivered: 3
+  partial: 4
+  missed: 6
+  rows: []  # full chronological table in report Section 2A (13 tracked items across five calls)
 excuse_pattern: "external-blame-heavy"
 repeated_evasions:
-  - {question: "What is the FY27 revenue guidance?", quarters_asked: ["Q2 FY26", "Q3 FY26", "Q4 FY26"], classification: "answer changed between quarters"}
-  - {question: "Can you break down growth between pricing and volume, or provide tonnage/volume data?", quarters_asked: ["Q1 FY26 (baseline)", "Q3 FY26", "Q4 FY26"], classification: "deflected every time"}
-  - {question: "What is the exact quantum and timing of Merino Shelters revenue to Man Industries?", quarters_asked: ["Q1 FY26 (baseline)", "Q2 FY26", "Q3 FY26", "Q4 FY26"], classification: "answer changed between quarters"}
+  - {question: "What is the FY27 (and now FY28) revenue guidance?", quarters_asked: ["Q2 FY26", "Q3 FY26", "Q4 FY26", "Q1 FY27"], classification: "answer changed between quarters, and within calls (Q3 FY26 and Q1 FY27)"}
+  - {question: "Can you break down growth/volume between pricing and volume, or provide tonnage/EBITDA-per-ton data?", quarters_asked: ["Q1 FY26", "Q3 FY26", "Q4 FY26", "Q1 FY27"], classification: "deflected every time"}
+  - {question: "What is the exact quantum and timing of Merino Shelters real-estate revenue to Man Industries?", quarters_asked: ["Q1 FY26", "Q2 FY26", "Q3 FY26", "Q4 FY26", "Q1 FY27"], classification: "answer changed between quarters, and within the same call twice (Q1 FY27)"}
 credibility_grade: "C"
-credibility_basis: "FY26 revenue growth guidance (20%) missed, delivered standalone +11%/consolidated +13%; FY27 guidance cut from ~Rs.7,000cr to Rs.5,000-5,500cr with internally inconsistent figures inside the Q3 FY26 call itself; Saudi greenfield plant reaffirmed 'on track' in Q3 FY26 call then scrapped one quarter later; order book fell three consecutive quarters without proactive acknowledgment. Offsetting positives: EBITDA margin guidance delivered and exceeded, NPC acquisition economics well disclosed, and management conceded an analyst's forex/EBITDA disclosure critique in the Q4 FY26 call."
+credibility_basis: "Five-call record adds real positives (4 straight quarters of margin over-delivery, concrete NPC integration evidence, Dammam date now internally consistent, Merino launch not further delayed) but also deepens core gaps (NPC FY27 revenue stated two ways within the Q1 FY27 call, India standalone order book breached ~Rs.2,500cr while consolidated headline masked it, gross margin QoQ swing unexplained, SEBI stay order silent for 4 consecutive quarters); grade holds at C, not yet B."
 peer_questions:
-  - {question: "Is MANINDS's claimed Saudi LSAW/HSAW demand-supply gap (~2mn tons LSAW demand vs ~0.8-0.9mn tons domestic supply, ~6-8% CAGR) consistent with what peers describe for the same Saudi/GCC market?", why: "this gap is the entire rationale for the NPC acquisition and Dammam coating investment", check_peers: ["Jindal SAW", "Welspun Corp", "Ratnamani Metals"]}
-  - {question: "Do Welspun Corp (via East Pipes, ~350,000tpa LSAW) and Jindal SAW (~300,000-400,000tpa spiral) confirm the same Saudi capacity-addition timeline/tonnage MANINDS cited?", why: "tests whether MANINDS's competitive intelligence is current and whether oversupply risk is understated", check_peers: ["Welspun Corp", "Jindal SAW"]}
-  - {question: "Do peer concalls also cite the Jal Jeevan Mission revival and Rs.67,000cr Union Budget allocation as a FY27 domestic demand driver, with the same 'gradual recovery/green shoots' framing?", why: "distinguishes a genuine sector-wide tailwind from company-specific optimism", check_peers: ["Jindal SAW", "Welspun Corp", "Ratnamani Metals"]}
-  - {question: "Do peers report raw-material hedging practices consistent with MANINDS's claim that all input costs are fully hedged at order-booking stage?", why: "this hedging claim is central to MANINDS's margin-stability narrative across all three calls", check_peers: ["Jindal SAW", "Ratnamani Metals", "Welspun Corp"]}
-  - {question: "Has any peer disclosed comparable Saudi/GCC acquisition or capacity valuations (EV/EBITDA) benchmarking MANINDS's stated 1.5x EV/EBITDA for NPC versus a claimed 7x-10x peer multiple?", why: "the NPC deal is the largest capital-allocation event across the three calls and its cheapness is central to the bull case", check_peers: ["Jindal SAW", "Welspun Corp", "Ratnamani Metals"]}
-  - {question: "Do peers report similar order-book softness over FY26 Q2-Q4, or is MANINDS's order-book contraction (Rs.4,750cr to Rs.4,000cr to Rs.3,000cr) company-specific?", why: "distinguishes an industry-wide demand slowdown from company-specific execution/bidding issues", check_peers: ["Jindal SAW", "Welspun Corp", "Ratnamani Metals"]}
+  - {question: "Is MANINDS's claimed Saudi LSAW/HSAW demand-supply gap consistent with Jindal SAW, Ratnamani Metals, and Welspun Corp given simultaneous capacity adds by Welspun/East Pipes, Jindal, Arabian Pipes, and NPC?", why: "underwrites both the NPC acquisition and Dammam coating investment; a narrowing gap raises pricing-pressure risk MANINDS now concedes exists", check_peers: ["Jindal SAW", "Welspun Corp", "Ratnamani Metals"]}
+  - {question: "Do peer concalls corroborate the new Hormuz-driven Asian buyer diversification demand narrative (Japan, Korea, Vietnam, Bangladesh, Philippines)?", why: "brand-new, unsubstantiated trigger introduced only in the Q1 FY27 call", check_peers: ["Jindal SAW", "Welspun Corp", "Ratnamani Metals"]}
+  - {question: "Do peers confirm no domestic Saudi plate supply and no IKTVA localization restriction on steel sourcing?", why: "tests whether MANINDS's input-sourcing flexibility claim, central to its margin narrative, is industry-wide or company-specific", check_peers: ["Jindal SAW", "Ratnamani Metals", "Welspun Corp"]}
+  - {question: "Has any peer disclosed comparable Saudi/GCC acquisition EV/EBITDA multiples to benchmark the NPC deal's claimed 1.5x vs 7-10x peer multiple?", why: "the NPC deal is the largest capital-allocation event across all five calls and its cheapness is central to the bull case", check_peers: ["Jindal SAW", "Welspun Corp", "Ratnamani Metals"]}
+  - {question: "Do peers report similar standalone/India order-book softness over Q2 FY26-Q1 FY27, or is MANINDS's decline (Rs.4,750cr to Rs.2,200-2,300cr) company-specific?", why: "distinguishes industry-wide slowdown from company-specific issues, now more urgent given the sub-Rs.2,500cr breach", check_peers: ["Jindal SAW", "Welspun Corp", "Ratnamani Metals"]}
+  - {question: "Do any peers disclose leverage/interest-cost trajectories comparable to MANINDS's post-NPC guide (peak debt Rs.1,600cr, FY27 finance cost ~Rs.190cr, up from a pre-NPC Rs.120-125cr guide)?", why: "benchmarks whether the NPC-driven leverage increase is proportionate to sector norms", check_peers: ["Jindal SAW", "Ratnamani Metals", "Welspun Corp"]}
 red_flags:
-  - "HIGH: FY26 revenue growth guidance (20%) missed; actual ~11-13%, never directly acknowledged"
-  - "HIGH: Order book declined three consecutive quarters despite 'best ever' framing each call"
-  - "MEDIUM: Saudi greenfield SAW plant reaffirmed on track then scrapped one quarter later for NPC acquisition"
-  - "MEDIUM: Jammu SS plant delayed 1+ year past original April 2026 target"
-  - "MEDIUM: SEBI stay order disclosed once (Q2 FY26 call) and never revisited"
-  - "MEDIUM: Unhedged forex MTM loss (~Rs.25cr) on Jammu subsidiary capex payables; subsidiary-level hedging not permitted, structural gap could recur"
-  - "LOW-MEDIUM: NPC key management mostly changed post-acquisition, integration/key-person risk on Aramco relationship"
-  - "LOW: Volume/tonnage and pricing-vs-volume breakdowns repeatedly deflected to email"
-dropped_triggers:
-  - "Original Saudi greenfield SAW plant (300,000tpa, Rs.630cr capex) - active through Q1-Q3 FY26 calls, scrapped in Q4 FY26 call, replaced by NPC acquisition"
-  - "US market expansion - raised once by an analyst in Q2 FY26 call, management said 'no plans currently,' never raised again"
-timeline_slippages:
-  - "Saudi Dammam plant commissioning: Q3/Q4 FY26 (Q1 call) -> Quarter 4 2026 calendar (Q2 call) -> Q1 FY27 (Q3 call) -> project scrapped, replaced by NPC acquisition (Q4 call)"
-  - "Jammu SS plant commissioning: 1-Apr-2026 (Q2 call) -> 'slightly delayed' war/floods (Q3 call) -> FY28 first-year utilisation 35-40% implies commissioning now in FY27 (Q4 call)"
-  - "Merino Shelters launch: Sept/Oct 2025 (Q1 call) -> RERA-pending 'very soon' (Q2 call) -> March 1st week 2026 (Q3 call) -> commencement certificate received, revenue starting Q2 FY27 (Q4 call)"
-  - "Dammam coating facility: 'mid of 2027' in opening remarks vs 'Q4 FY26-27' (~Mar-2027) in Q&A, both stated within the same Q4 FY26 call"
-analyst_note: "FY26 revenue guidance was missed even against the Q3 FY26 call's more conservative 'Rs.3,600-3,700cr' framing (actual Rs.3,508cr). Prior moat-scan finding of guidance 'missed by roughly half' is directionally confirmed but numerically overstated: delivered growth (~11-13%) was ~55-65% of the guided 20% rate, not literally half."
+  - "HIGH: FY26 revenue growth guidance (20%) missed, actual ~11-13%, never acknowledged across five quarters"
+  - "HIGH: India standalone order book fell four consecutive quarters (Rs.4,750cr to Rs.2,200-2,300cr), breaching ~Rs.2,500cr, masked by a rising consolidated headline via NPC addition"
+  - "MEDIUM-HIGH: SEBI stay order disclosed once (Q2 FY26) and silent for four consecutive subsequent calls including Q1 FY27"
+  - "MEDIUM: gross margin fell 53% to 35% QoQ in Q1 FY27, unexplained live on the call"
+  - "MEDIUM: FY27 NPC revenue guidance stated two ways (Rs.1,500cr vs ~Rs.1,200cr) within the same Q1 FY27 call, unreconciled"
+  - "MEDIUM: Saudi capacity strategy reversed entirely, greenfield plant scrapped one quarter after being called on-track"
+  - "MEDIUM: consolidated finance-cost guidance risen materially post-NPC (~Rs.190cr FY27 vs pre-NPC Rs.120-125cr guide), peak debt now Rs.1,600cr"
+  - "LOW-MEDIUM: NPC key management mostly changed post-acquisition, partially offset by Q1 FY27 evidence of operational fixes"
+  - "LOW: volume/tonnage and EBITDA-per-ton data deflected across five consecutive quarters"
+  - "LOW: Merino Shelters cash quantum given two different values within the same Q1 FY27 call"
+dropped_triggers: ["US market expansion (raised once Q2 FY26, never revisited)", "Saudi Dammam greenfield SAW plant (scrapped Q4 FY26, replaced by NPC acquisition)"]
+timeline_slippages: ["Jammu SS plant: 1-Apr-2026 original target slipped to March '27 (reaffirmed consistently in Q1 FY27, ~11 months late, still not delivered)", "Saudi Dammam greenfield plant: Q4 2026 target slipped to Q1 FY27 then scrapped entirely (Q4 FY26 call)", "Merino Shelters launch: 'very soon' (Q1/Q2 FY26) slipped through March 2026 and Q2 FY27 framings to a confirmed mid-September 2026 launch (Q1 FY27 call), first quarter without further slippage", "Dammam coating facility: internally conflicting dates within the Q4 FY26 call (mid-2027 vs Q4 FY26-27) resolved to a single consistent March '27 date in Q1 FY27 call"]
+analyst_note: "Five-transcript re-run supersedes the three-transcript (Q2-Q4 FY26) version; Q1 FY26 promoted from baseline cross-check to full primary quarter, Q1 FY27 added as newest quarter. Biggest delta: consolidated order book reads as a recovery (Rs.3,000cr to Rs.3,600cr) but this is purely a NPC-addition effect; India standalone order book (Rs.2,200-2,300cr) kept falling and is now below the operator's ~Rs.2,500cr threshold, not proactively flagged by management. Correction to the prior report: the Dammam coating capacity figure was mis-stated there as '4 mn sqm/yr'; this transcript explicitly says '4 lakh square meters per annum' (p11), i.e. 0.4 mn sqm/yr, corrected in the 1B table. Margin delivery is now a four-quarter-consistent strength. Grade holds at C given the balance of margin strength and NPC integration evidence against widening disclosure gaps (order-book masking, unexplained gross-margin swing, four quarters of SEBI silence, intra-call NPC revenue inconsistency)."

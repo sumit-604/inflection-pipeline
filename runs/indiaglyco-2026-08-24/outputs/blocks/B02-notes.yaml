@@ -1,0 +1,60 @@
+stage: B02-notes
+company: "INDIAGLYCO"
+run_date: "2026-08-24"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Capitalisation threshold for PP&E spend: NOT FOUND IN DOCUMENT"
+  - "Incremental borrowing rate used to discount lease liabilities (Ind AS 116): NOT FOUND IN DOCUMENT"
+  - "ECL rate matrix by ageing bucket for trade receivables: NOT FOUND IN DOCUMENT (only resulting allowance disclosed)"
+  - "Quantum of fair-value uplift on transition-date election to fair-value certain subsidiary investments (Note 6 footnote): NOT FOUND IN DOCUMENT"
+  - "Interest capitalisation rate (Ind AS 23) for general borrowings capitalised into CWIP: NOT FOUND IN DOCUMENT"
+  - "Fixed vs floating rate split for term loans: NOT FOUND IN DOCUMENT"
+  - "Consolidated 5-year borrowings repayment table: NOT FOUND IN DOCUMENT"
+  - "Corporate guarantees given for subsidiaries: NOT FOUND IN DOCUMENT"
+  - "Allottee identity and use of proceeds for the Rs 467 cr preferential equity issue: NOT FOUND IN NOTES"
+  - "Narrative for Right-of-Use asset depreciation growing 290.7% against 45.9% gross block growth: NOT FOUND IN DOCUMENT"
+  - "Status/outcome of the Gujarat High Court writ petition on the DEA customs matter beyond the 17.10.2024 stay: NOT FOUND IN DOCUMENT"
+  - "Quantum of show-cause notices excluded from the Note 38 contingent liability table: NOT FOUND IN DOCUMENT"
+flags:
+  - {type: FLAG-CASH, reason: "Current ratio below 1.0 and deteriorating (0.85 FY26 vs 0.90 FY25); Net Capital Turnover structurally negative (-18.94x vs -20.22x); working-capital flow metrics improved but stock-metric liquidity tightened (Note 61 standalone / Note 56 consol)"}
+accounting_quality: 7
+pass_2_empty: false
+pass_3_empty: false
+top_findings:
+  - {rank: 1, finding: "Hedge notional collapsed 92.2% (USD 52.86mn to USD 3.73mn) while unhedged FX exposure roughly doubled; FX PBT sensitivity nearly doubled; zero management narrative", note_ref: "Note 51/45(i)(a) standalone, Note 46/42(i)(a) consol", rating: "Red Flag"}
+  - {rank: 2, finding: "Composite Scheme of Arrangement (three-way demerger) not yet NCLT-sanctioned as of FY26 balance sheet date; appointed date 1 Apr 2026; FY26 accounts last full pre-split picture, no held-for-demerger presentation", note_ref: "Note 42 standalone, Note 40 consol", rating: "Watch"}
+  - {rank: 3, finding: "Rs 467 cr preferential equity diluted Kashipur Holdings below 50% (50.35% to 49.77%), reclassified Holding Company to related party; allottee undisclosed; promoter GROUP holding remains 59.62% (was 61.02%)", note_ref: "Note 63/18 standalone, Note 58/17 consol", rating: "Watch"}
+  - {rank: 4, finding: "Customs/DRI DEA-import dispute: original Rs 31,468.88 Lakh exposure reduced to residual Rs 3,343.00 Lakh confirmed duty demand after Order-in-Appeal; parallel Gujarat HC writ unresolved; note date sequencing internally inconsistent", note_ref: "Note 41 standalone, Note 39 consol", rating: "Watch"}
+  - {rank: 5, finding: "Ind AS 112 JV summary table mixes 100%-basis and 49%-share figures; CISCPL true FY26 100%-basis profit approx Rs 9,472.81 Lakh, not Rs 4,641.68 Lakh (net margin 14.80% vs naive 7.25%)", note_ref: "Note 58(a)/51(a); cross-checked AOC-1 Part B", rating: "Watch"}
+  - {rank: 6, finding: "Standalone Other Income inflated by one-off Rs 3,858 Lakh tax-exempt JV/subsidiary dividend, eliminated on consolidation; standalone PBT +51.7% not representative (consol PBT +34.5%)", note_ref: "Note 30, Note 59(C) standalone", rating: "Watch"}
+  - {rank: 7, finding: "BSPC segment revenue fell -10.4% YoY; the segment expected to anchor the surviving post-demerger listed entity", note_ref: "Note 57 standalone, Note 52 consol", rating: "Watch"}
+  - {rank: 8, finding: "Current ratio below 1.0 and worsening (0.85 vs 0.90); Net Capital Turnover structurally negative", note_ref: "Note 61 standalone, Note 56 consol", rating: "Watch"}
+  - {rank: 9, finding: "ROU asset depreciation grew +290.7% against ROU gross block growth of 45.9% and lease liability growth 28.5%; no narrative", note_ref: "Note 5, Note 20/26 standalone", rating: "Watch"}
+  - {rank: 10, finding: "Cash tax rate 5.7% vs 23.01% reported effective rate; 75% of tax expense non-cash deferred, driven by PP&E-timing DTL build", note_ref: "Note 59(A)/(D) standalone, Note 53 consol", rating: "Watch"}
+  - {rank: 11, finding: "Funded gratuity plan NIL employer contribution FY26 (vs Rs 325 Lakh FY25), swung to Rs 489 Lakh deficit; FY27 payouts 48.6% of plan assets", note_ref: "Note 44(b)/(g) standalone, Note 43(b) consol", rating: "Watch"}
+  - {rank: 12, finding: "Related-party ICDs from Kashipur Holdings (Rs 1,400 Lakh) and Hindustan Wires (Rs 3,000 Lakh) taken and repaid in-year; Hindustan Wires loan repayable only post consortium-bank confirmation (subordinated)", note_ref: "Note 19 fn 40, Note 55 standalone", rating: "Watch"}
+  - {rank: 13, finding: "Legacy NSEL/IGL Finance ICD Rs 2,041.93 Lakh still carried good and recoverable, no interest since Sep 2013 default, unresolved over a decade", note_ref: "Note 43 standalone, Note 41 consol; Note 14", rating: "Watch"}
+  - {rank: 14, finding: "No Key Audit Matters reported despite demerger, customs litigation, multi-segment/JV complexity", note_ref: "Independent Auditor's Report, Section 3", rating: "Watch"}
+  - {rank: 15, finding: "Interest capitalised into CWIP Rs 2,216.01 Lakh (FY26); Ind AS 23 rate not disclosed; total pre-operative capitalised grew +40.3%", note_ref: "Note 53(a) standalone", rating: "Watch"}
+red_flags:
+  - "FX hedge notional collapsed 92.2% while unhedged exposure roughly doubled, zero narrative (Note 51/45(i)(a))"
+  - "Ind AS 112 JV table mixes 100%-basis and 49%-share figures, understating CISCPL profitability on literal read (Note 58(a)/51(a))"
+  - "Current ratio persistently below 1.0 and deteriorating, structurally negative working capital (Note 61/56)"
+  - "Cash tax rate 5.7% vs 23.01% reported; 75% of tax non-cash DTL build (Note 59(A)/(D))"
+  - "Interest capitalisation rate (Ind AS 23) and ECL rate matrix both undisclosed (Note 53(a); Note 45(ii)/42(ii))"
+  - "No Key Audit Matters reported in a structurally complex year (Auditor's Report)"
+  - "Unquantified show-cause-notice carve-out from contingent liability table (Note 38(A)(i))"
+  - "DRI/Gujarat HC customs note narrates events out of sequence with its own dates (Note 41/39)"
+questions_for_mgmt:
+  - "Why was the FX hedge book run down 92% in the same year underlying unhedged exposure roughly doubled, and what is current hedging policy? (Note 51/45(i)(a))"
+  - "What capitalisation rate was used for the Rs 2,216.01 Lakh interest capitalised into CWIP, and what drove ROU depreciation to grow 290.7% against 45.9% gross block? (Note 53(a); Note 5)"
+  - "Why NIL gratuity employer contribution in FY26 despite a Rs 489 Lakh deficit ahead of an FY27 payout wave of 48.6% of plan assets? (Note 44(b)/(g))"
+  - "Who were the allottees of the Rs 467 cr preferential issue, use of proceeds, and did Kashipur Holdings participate given its stake fell just below 50%? (Note 63/18)"
+  - "Standalone growth outlook for BSPC (down 10.4% YoY), independent of the higher-growth segments being demerged out? (Note 57/52)"
+receivables_trend: "stable - >6 months 4.93% (FY26) vs 4.94% (FY25) flat; turnover 9.97x -> 11.72x; no single-customer concentration; disputed/credit-impaired Rs 528.79 Lakh static and fully provided both years (Note 11/45(ii))"
+restatements_found:
+  - "EPS and weighted-average share count restated for 1:2 stock split (FV Rs 10 to Rs 5), record date 12 Aug 2025 (Note 54, Note 18(g))"
+  - "Standard Schedule III regrouping boilerplate (Note 65/60) with no separately quantified item beyond the stock split"
+going_concern_language: "NONE - source-checked. Standard SA 700 boilerplate; Board's Report confirms no going-concern-impacting orders; Note 38(B) cites Going Concern only as routine basis for not providing Rs 554.75 Lakh contingent Advance Licence duty."
+analyst_note: "FY26 accounts are a last full pre-split consolidated picture; segment data (esp -10.4% Specialities decline) is directional, not a clean post-demerger pro forma. The FX hedge-book collapse (Red Flag) happened in the same year as the equity raise, KHL dilution, and demerger reaching NCLT - a year of unusual corporate-action density during which treasury risk management visibly loosened with no stated reason. Whether coincidence or management bandwidth diverted during the demerger is a judgment this stage cannot resolve from the notes alone."

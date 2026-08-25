@@ -1,0 +1,31 @@
+stage: B12b
+company: "INDIAGLYCO"
+run_date: "2026-08-24"
+model: claude-opus-4-8
+status: complete
+independent_flags_found: 13
+caught: 8
+partially_caught: 0
+missed:
+  - {severity: "MAJOR", item: "Rs804cr in-quarter prepayment nets to only ~Rs220cr net-debt reduction (rest was cash-credit limit cut); softens the deleveraging thesis, never flagged", anchor: "Concall_Jun_2026 (Q4 FY26), Varun Mehta / Anand Singhal, p18"}
+  - {severity: "MINOR", item: "Ennature Q1 FY27 'best-ever' numbers internally inconsistent in one call: revenue 90cr (+53% YoY) vs 83cr (+65%), EBITDA +188% vs ~+100%", anchor: "Concall_Aug_2026 (Q1 FY27), Rupark p3/p8 vs Anand p4"}
+  - {severity: "MINOR", item: "Spirits volume grew faster than revenue, reverse of the premiumization thesis; management concedes revenue growth 'in due course'", anchor: "Concall_Aug_2026 (Q1 FY27), Pragyam / Manoj Rai, p14-15"}
+  - {severity: "MINOR", item: "Two-part collaboration question half-dodged: LanzaTech answered, Lululemon never addressed", anchor: "Concall_Feb_2026 (Q3 FY26), Rohit Nagraj / Rupark, p11"}
+  - {severity: "MINOR", item: "Sequential-EBITDA-growth question (10.26% / -5.16% / 1.69%) deflected to email under repeated insistence", anchor: "Concall_Aug_2026 (Q1 FY27), Aman / Anand Singhal, p15"}
+pipeline_flags_not_supported: []
+promise_delivery_spot_checks: {checked: 5, confirmed: 2, wrong: 2}
+credibility_grade_concur: "concur - low end of B; FX/OMC silences plus the downward-restated FY22-24 margin base and the 804-vs-220cr gap keep it below A but not at C"
+findings:
+  - {severity: "MAJOR", location: "B05 red_flags / guidance (Q4 debt track)", description: "MISSED: Rs804cr prepaid vs only Rs220cr net-debt reduction gap not surfaced (Concall_Jun_2026 p18)"}
+  - {severity: "MINOR", location: "B05 red_flags (Q1 FY27)", description: "MISSED: Ennature intra-call revenue/EBITDA inconsistency (90 vs 83cr; +188% vs ~+100%) (Concall_Aug_2026 p3-8)"}
+  - {severity: "MINOR", location: "B05 red_flags (Q1 FY27)", description: "MISSED: spirits volume outgrew revenue, contradicting premiumization thesis (Concall_Aug_2026 p14-15)"}
+  - {severity: "MINOR", location: "B05 red_flags (Q3 FY26)", description: "MISSED: Lululemon collaboration question left unanswered while LanzaTech addressed (Concall_Feb_2026 p11)"}
+  - {severity: "MINOR", location: "B05 red_flags (Q1 FY27)", description: "MISSED: sequential-EBITDA question deflected to email under analyst insistence (Concall_Aug_2026 p15)"}
+  - {severity: "MINOR", location: "B05 repeated_evasions", description: "OVERSTATED: segment-debt deflection framed as Q3+Q4 'every time'; clear on-call deflection is Q4 only, and Nov 2025 (unread by B05) actually answered it with a 600/800 split"}
+  - {severity: "MINOR", location: "B06 contradicted[]", description: "OVERSTATED: UP-market 'contradicted' by Globus is reconcilable - IGL's 23-25 lakh is IMFL-only and its own ~90 lakh IMIL figure (Nov 2025 p14) sums to ~1.1cr, matching Globus's ~1cr; B06 did flag for operator resolution"}
+  - {severity: "MINOR", location: "B05 (Q4 FY26)", description: "OBSERVATION: 98cr silver sale (cost 51cr) kept off the P&L; disclosed and explained, neutral, but a 47cr gross gap worth naming (Concall_Jun_2026 p15)"}
+critical_count: 0
+major_count: 1
+minor_count: 7
+acceptance_rate: 62
+redflag_coverage: 62

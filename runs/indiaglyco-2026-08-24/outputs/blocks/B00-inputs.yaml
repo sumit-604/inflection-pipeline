@@ -1,0 +1,70 @@
+stage: B00-inputs
+company: INDIAGLYCO
+run_date: 2026-08-24
+model: orchestrator
+status: complete
+run_type: full
+no_concall_mode: false
+resolved_folder: runs/indiaglyco-2026-08-24
+company_name: India Glycols Ltd
+cmp: 1191.0
+market_cap_cr: 7998.0
+sector_cap_row_manifest: "Specialty chemicals"
+inventory:
+  prospectus:
+    count: 0
+    status: "ABSENT — EXPECTED. India Glycols is long-listed (Scrip 500201, 42nd AGM FY2025-26). Prospectus not expected; NOT a gap."
+  annual-report:
+    count: 1
+    files: [Annual_Report_2023.pdf]
+    note: "FILENAME MISLABELED. Content is the Annual Report for FY 2025-26 (42nd AGM; cover letter IGL/SE/2026-27/28 dated 24 Jul 2026; 'Year ended 31 March 2026'). 199 pages, 191 text-bearing. Corpus is CURRENT, not stale. collect_to_repo v3 year-mislabel defect."
+  results:
+    count: 2
+    files: [80ea0994-...pdf, 1e6ae935-...pdf]
+    note: "80ea0994 = FY26 / Q4 FY26 (year ended 31 Mar 2026). 1e6ae935 = Q1 FY27 (quarter ended 30 Jun 2026). Both text-clean."
+  rating:
+    count: 1
+    files: [202603120354_India_Glycols_Limited.pdf]
+    note: "CARE, report 6 Mar 2026. Carries the FLAG-CASH rating-rationale source. 8 pages, text-clean."
+  concalls:
+    count: 4
+    files: [Concall_Nov_2025 (Q2/H1 FY26), Concall_Feb_2026 (Q3/9M FY26), Concall_Jun_2026 (Q4/FY26), Concall_Aug_2026 (Q1 FY27)]
+    note: "Chronology confirmed from transcript first pages. Stage 5 uses the 3 most recent oldest-first: Feb 2026 (Q3 FY26) -> Jun 2026 (Q4 FY26) -> Aug 2026 (Q1 FY27). Nov 2025 (Q2 FY26) present, not among the 3 stage-5 primaries; remains available to Verifier B (all transcripts)."
+  peer-concalls:
+    count: 13
+    peers: [BALRAMCHIN (Aug/Feb/Jun 2026), GLOBUSSPR (Jan/Jul/May 2026, Nov 2025), PICCADIL (Aug/May 2026), TRIVENI (Aug/Feb/Jun/Nov 2025-26)]
+    note: "Within 0-12 contract cap conceptually; 13 files across 4 peers. Peers span sugar/ethanol/distillery (Balrampur, Triveni) and spirits (Globus, Piccadily). Multi-segment peer set mirrors the demerging business."
+  announcements:
+    count: 0
+    status: "NO FILING PDFs. Operator-provided prose summary saved at inputs/announcements/announcements-summary-operator-provided.md as LEADS/CONTEXT tier (non-anchored, research/COMPANY-MEMORY status). Not the documented-ACTION record."
+  shareholding:
+    count: 0
+    status: "NO FILING PDF. Operator-provided screener.in screenshot transcribed to inputs/shareholding/shareholding-pattern-operator-provided.txt (SCREENING tier). Carries promoter/FII/DII trend Sep2023-Jun2026. NO pledge data."
+  research:
+    count: 0
+    status: "ABSENT. No anchored effect (research is never anchored)."
+  screening:
+    count: 30
+    igl_files: [screener-Data_Sheet/Profit_Loss/Balance_Sheet/Cash_Flow/Quarters/Customization.csv]
+    peer_sets: [BALRAMCHIN, GLOBUSSPR, PICCADIL, TRIVENI (6 CSVs each)]
+    note: "Verify IGL P&L/BS/CF/Quarters populated (collect_to_repo empty-template defect); Gate 0 to fall back to results PDFs + AR financials if empty."
+  presentation:
+    count: 1
+    files: [Investor_Presentation_1.pdf]
+    note: "60 pages, 50 text-bearing."
+  other:
+    count: 0
+input_gaps:
+  - "announcements/ has NO Reg 30 filing PDFs. The documented-ACTION record (acquisitions, capital raises, order wins, board changes, the demerger filings) is NOT filing-anchored this run. Operator prose summary supplied as leads/context only. Intent-and-action cross-check (stages 5/7/8) runs on concall/AR/rating/presentation evidence; FTTCP Step 0C confidence lowered and flagged. Demerger facts must be corroborated from the Aug/Jun/Feb 2026 concalls and CARE PDF (all in corpus)."
+  - "shareholding/ has NO filing PDF; operator screener screenshot used (screening tier). UA institutional qualifier CAN be assessed (FII+DII 7.45% Jun 2026, DII entry Dec 2025). Promoter PLEDGE trend NOT closed — no pledge data in the screenshot; falls back to AR disclosure with staleness noted."
+  - "prospectus/ absent — EXPECTED (long-listed). Not a gap."
+  - "research/ absent — no anchored effect."
+  - "MANIFEST FLAG (phase-3 confirm): sector_cap_row 'Specialty chemicals' is auto-picked. India Glycols is a MULTI-SEGMENT group (bio-based specialty chemicals + potable spirits + bio-fuel/ethanol + bio-pharma) DEMERGING into three entities. The Section 1B sector cap must be re-picked in phase 3 against the RESIDUAL entity's true mix (chemicals + gases), not the consolidated group."
+  - "STRUCTURAL — DEMERGER (load-bearing). Scheme sanctioned by NCLT Allahabad 17 Jul 2026; Effective Date 1 Sep 2026, Record Date 2 Sep 2026, Appointed Date 1 Apr 2026 — 8 days after run_date. Split: residual India Glycols (BSPC chemicals + gases); IGL Spirits Ltd (spirits + bio-fuel, swap 1:1); Ennature Bio Pharma Ltd (bio-pharma, swap 1 per 3). CMP Rs 1,191 and mcap Rs 7,998cr are the PRE-DEMERGER CONSOLIDATED entity. Every valuation in phase 3 must reckon with the sum-of-parts split; stages must capture segment economics separately."
+  - "AR filename mislabel (2023) corrected to FY2025-26 content. No staleness gap."
+tooling:
+  - "pypdf cffi backend broken at session start (known LESSONS.md failure); force-reinstalled cffi, verified. All 22 input PDFs pre-extracted to inputs_text/ with [[page N]] markers. Text-reading stages/verifiers routed to inputs_text/; PDF Read-pages kept as visual fallback."
+  - "AskUserQuestion empty-folder pause DELIVERED this session (operator answered 'push docs first', then supplied shareholding screenshot + announcements summary in chat and said proceed). Single permitted question spent; no further pauses this run."
+flags:
+  - type: FLAG-STRUCTURAL
+    note: "Demerger effective/record date within 8 days of run_date; consolidated CMP splits into three listed lines. Surfaced in synthesis and dossier."

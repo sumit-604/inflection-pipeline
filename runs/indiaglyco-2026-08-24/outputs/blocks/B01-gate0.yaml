@@ -1,0 +1,24 @@
+stage: B01-gate0
+company: "INDIAGLYCO"
+run_date: "2026-08-24"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["no shareholding filing - promoter holding/pledge NOT FOUND (E1-E3 scored 0)", "balance sheet current-liabilities/trade-payables breakdown available only for FY25 and FY26; FY17-FY24 splits NOT in provided data - A1/A2/A4/Block D/B2-B4 computed on 2-year window", "R&D spend not in provided data (M6 scored 0)", "peer/segment comparable data absent for M2/M5/M7/M9 (PEER DATA NEEDED)", "announcements filings absent (operator prose summary only, non-anchored)", "prospectus absent (long-listed, expected)", "research absent"]
+flags:
+  - {type: FLAG-GATE0, reason: "Core 42/100 = AVERAGE; driven by sub-1x current ratio, capex-driven negative FCF both years with capex data (FY25/FY26), below-top-band growth (C1=1,C3=1) despite base-effect-inflated PAT CAGR (C2=5), and E1-E3 zeroed by missing promoter/pledge filing rather than confirmed misalignment. Group is mid-3-way-demerger, effective 1 Sep 2026; this grade describes trailing consolidated history only."}
+  - {type: DATA-GAP, reason: "ROCE/current-ratio/WC-days trend metrics rest on a 2-year window (FY25-FY26) because current-liability and trade-payables splits for FY17-FY24 were not in provided sources."}
+  - {type: DATA-GAP, reason: "Promoter shareholding and pledge data entirely absent; E1-E3 scored 0 on data absence, not a confirmed low-alignment signal."}
+data_years: 10
+fy_range: "FY17 to FY26"
+blocks: {A: 9, B: 10, C: 12, D: 6, E: 5}
+core_score: 42
+moat_score: 4
+grand_total: 46
+moats_confirmed: 0
+moat_class: "NONE"
+classification: "AVERAGE"
+deal_breakers: []
+history_downgrade: false
+data_notes: ["FY22 Other Income Rs260.28cr vs Rs15-60cr typical other years - outlier inflating FY22 PBT/PAT/ROE (screener-data Data_Sheet.csv)", "FY17 PBT Rs44.99cr is a depressed base vs FY18 Rs147.15cr, inflating 9-year PAT CAGR read in Block C", "Revenue basis used throughout = screener Sales (net of excise duty), verified against consolidated results: FY26 Rs9,826.63cr revenue from operations minus Rs5,615.22cr excise = Rs4,211.41cr", "AR's own consolidated ROCE (Note 56, different formula) = 10% FY26 / 9% FY25, and consolidated Current Ratio (Note 56) = 0.86x FY26 vs framework-formula 0.74x - both cross-checked, same directional read, framework formula used for scoring", "M12 scored on latest year only (FY26=39.36 days, band 15-45); FY25=53.92 days fell in the >45 band - only 2 years of WC-days data available", "AR Note 39 discloses an active customs duty dispute, Order-in-Appeal 27 Feb 2026 upheld ~Rs33.4cr demand, company appealing to CESTAT - does not change E4 score (still <5% of net worth) but is unresolved"]
+block_b_trend: "improving - FCF moved from -Rs398.36cr (FY25) to -Rs54.32cr (FY26) while CFO/PAT held above 2x; negative FCF is capex-driven (Gross Fixed Assets Rs4,377cr to Rs5,206cr FY26), not a collection/margin problem"
+analyst_note: "India Glycols scores AVERAGE on a consolidated group mid-dissolution. Two things drive the grade more than business quality: a 2-year-only balance-sheet window (source gap) capping A1/A2/A4/D-block precision, and total absence of promoter/pledge data zeroing three of four Block E tests by default. Underlying signal once gaps are stripped out: low-teens ROCE (11.85-12.08%) improving marginally, strong 10-year cash conversion (CFO/PAT 2.06x) but two years of heavy capex-driven negative FCF tied to a Bio-MEG/EO buildout, and a sub-1x current ratio worth watching independent of the demerger. Revenue growth is unremarkable (5.97% CAGR, 3 of 9 years down); PAT growth (26.6%) is flattered by a depressed FY17 base and a FY22 other-income outlier. Zero moats scored >=3, mostly for lack of peer data, not demonstrated absence. Controlling fact for every later stage: this history ends 1 Sep 2026, and three separately listed entities inherit pieces of it on different earnings bases."

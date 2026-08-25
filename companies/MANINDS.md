@@ -7,6 +7,7 @@ PROCEED past the understanding gate at Halt 1: a line-pipe order-book converter 
 
 ## DECISION STATUS AND ENTRY ZONE
 - Decision Status (Halt 1, 2026-08-25): PROCEED. Operator signed "sign as recommended", Keerti Kaushik, 2026-08-25. Evidence gate PROCEED WITH FLAGS. Position capped at Small while any governance item is open (operator override ruling).
+- KILL-LINE OVERRIDE (Halt 1, operator 2026-08-25): PROCEED WITH FLAGS, kill-line override. The India standalone order book kill line (~Rs2,500cr) is breached at Rs2,200-2,300cr (12-Aug-2026 transcript, p.12). Operator override verbatim: "I override for the purpose of completing FTTCP, valuation, thesis and devil's advocate, on the grounds that the consolidated book is the revenue engine post-NPC and research commits no capital. Vertical 1 is THREATENS. Any BUY verdict is conditional on India standalone at or above Rs2,500cr on a filed print. The override lapses if the Q2FY27 print (~14-Nov-2026) shows India below Rs2,300cr, at which point the name moves to WATCHLIST/AVOID." Vertical 1 (India standalone order book) = THREATENS.
 - Entry zone: NOT YET SET. No valuation ran in Phase 1 (stages 10/11 deferred to Phase 3). No BUY/WATCHLIST/AVOID, no destination PE, no MoS yet.
 - Role 5.5 tracker gate SATISFIED (12 tracker rows written 2026-08-25, see TRACKER PROOF). Handover dossier gate remains OPEN. /fttcp NOT run until the handover dossier exists.
 - Corpus verdict: CORPUS GAPPED (6 findable gaps remain; the CRISIL 01-Jun-2026 rationale gap is CLOSED). Confidence delta overall 80 (normal).
@@ -89,6 +90,14 @@ FLAG-PROMOTER CONCERN acknowledged. Override for coverage only (not a quality up
   Six vertical verdicts, six supersessions (S1-S6), promise-vs-delivery
   ledger with credibility split, Role 5.5 proof, operator inputs, eight
   Role 3 seeds. Handover input gate SATISFIED.
+- S2 DOWNGRADED (2026-08-25): the Q1FY27 transcript (p.12) discloses that
+  80-plus percent of the India standalone book is exports. The India
+  order book is weaker than the dossier S2 read: not a domestic-demand
+  base, an export book that shrank four straight quarters. S2 is
+  downgraded accordingly.
+
+## CORRECTIONS
+- Correction 4 (2026-08-25): the consolidated order book of Rs4,100cr (18-Jun-2026 Reg-30) PREDATES the Q1FY27 call. The current figure is Rs3,600cr (12-Aug-2026 transcript, p.12): India Rs2,200-2,300cr + NPC Rs1,300-1,400cr. The Rs4,100cr split (India ~2,500 + NPC ~1,600) is the June reference, not the live number; the trend is down. Corrections 1-3 (NPC consolidation ~20 days not ~40; Dammam coating capacity 4 lakh sqm/yr not 4 mn; the Q1FY27 corpus close) are logged in the B05 re-run and the fttcp-draft reconciliation.
 
 ## RUN FOLDERS
 - runs/maninds-2026-08-21/

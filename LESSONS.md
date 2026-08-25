@@ -83,6 +83,11 @@ _Written into a prompt/framework file so it cannot recur._
   line of gate-recommendation.md. Caught on MANINDS: Q1FY27 results in corpus,
   Q1FY27 concall (filed to BSE three days before the run) absent; 09b listed it
   as a gap but the gate did not block, operator found it several Phase 2 turns in.
+  MANINDS coda (2026-08-25): the kill line was already breached when the model
+  was signed — the Q1FY27 concall disclosed India standalone at Rs2,200-2,300cr
+  (below the ~Rs2,500cr kill) only after Halt 1 sign-off; the freshness check
+  exists for this. A late primary filing can move a signed decision variable,
+  not just fill a gap.
 
 ## OPEN ACTIONS
 _Pending framework edits Keerti maintains._

@@ -1,0 +1,22 @@
+stage: B12d
+company: "MILLWORKS"
+run_date: "2026-08-22"
+model: claude-sonnet-5
+status: complete
+peers_audited: 7
+substantive_confirmed: 7
+substantive_unsupported: []
+unused_but_relevant: []
+claims_all_addressed: true
+verdict_discipline_fails: []
+peer_utilisation: 100
+citation_accuracy_rate: 71
+findings:
+  - {severity: "MAJOR", location: "B06 Part 1 Claim 3 (investee top-customer), citation 'UNIMECH Q4 FY26 p.13'", description: "Quote misattributed: the passage (Jun_2026 file, true Q4 FY26 call, p.12-13) is management confirming no revenue yet from the Kanoo-Unimech Saudi JV, not Dheya Technologies. The broader claim that Dheya revenue % is undisclosed is independently true, but this specific citation does not support it."}
+  - {severity: "MAJOR", location: "B06 Part 1 Claim 1, citations 'UNIMECH May 2026 Q&A p.14' and 'UNIMECH Q4 FY26 call p.14'", description: "Same single quote (Hobel '12-month visibility', Garvit Goyal Q&A, p.14 of Jun_2026 file = true Q4 FY26 call) cited twice under two call labels, presenting one source as two anchors. Root cause: B06 mislabels the Jun_2026 file as 'May 2026 call'; the true May_2026 file is the separate April 28 Acquisition Update call."}
+  - {severity: "MINOR", location: "B06 Part 1 Claim 7, APSISAERO Jun 2026 quote", description: "Quote genuine and correctly attributed but on document page 11, cited as p.12-13; one-page offset, cosmetic."}
+critical_count: 0
+major_count: 2
+minor_count: 1
+acceptance_rate: 71
+note: "peer_utilisation (peers used substantively / peers provided) = 7/7 = 100. The 71 acceptance_rate reflects citation-anchor accuracy, not utilisation; the two MAJOR items are quote/file-label misattributions whose underlying peer conclusions still hold. Fix the Jun_2026 vs May_2026 call labels and the Dheya citation in any archived B06."

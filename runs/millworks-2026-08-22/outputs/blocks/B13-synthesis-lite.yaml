@@ -1,0 +1,24 @@
+stage: B13-synthesis
+company: "MILLWORKS"
+run_date: "2026-08-22"
+model: claude-opus-4-8
+phase: 1
+mode: LITE
+status: complete
+verdict: "PROCEED WITH CAVEATS"
+verdict_rule_applied: 3
+verdict_basis: "INDETERMINATE cash-conversion determination caps at PROCEED WITH CAVEATS; confidence band 60-74 (overall 67) reinforces the one-level downgrade from PROCEED"
+flags_active: ["FLAG-CASH", "FLAG-GATE0"]
+promoter_flag: "not triggered (B08 CAUTION, below CONCERN/AVOID); caution items surfaced"
+confidence_delta: {numerical: 100, redflag: 67, framework: 96, peer: 100, overall: 67}
+valuation_decision: ""    # excluded in LITE mode; formed in phase 3
+entry_range: {low: 0, high: 0}
+headline: "Precision components maker gated by one customer"
+falsification_metric: "Q1 FY27 operating cash flow negative a third straight period with receivable days above 150 and the Quik Pay balance unreduced"
+monitorables_count: 8
+publish_candidate: false
+files_written:
+  - outputs/final/business-narrative.md
+  - outputs/final/gate-recommendation.md
+  - outputs/final/verifier-summary.md
+notion_save_deferred: "phase 3 (LITE mode emits no Notion payload)"

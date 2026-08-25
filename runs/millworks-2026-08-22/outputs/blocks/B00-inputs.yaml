@@ -1,0 +1,49 @@
+stage: B00-inputs
+company: MILLWORKS
+run_date: 2026-08-22
+model: orchestrator
+status: complete
+run_type: full
+concalls_available: false
+recently_listed: true
+listed_evidence: "RHP dated 2026-07-07; BSE SME listing ~July 2026"
+inventory:
+  prospectus: 0
+  annual_report: 1
+  results: 0
+  rating: 0
+  concalls: 0
+  peer_concalls: 7
+  announcements: 0
+  shareholding: 0
+  research: 0
+  screening: 30
+  presentation: 1
+  other: 0
+routing:
+  rhp_path: "inputs/annual-report/RHP_Millworks-07.07.2026 (1).pdf"
+  rhp_roles: [prospectus, annual_report_substitute]
+  reg30_order_letter_path: "inputs/presentation/786241e4-c123-4c8a-a102-7c8c944e9c49.pdf"
+  reg30_roles: [documented_action_record, stage5, stage7_f2, stage8]
+  main_company_screening_prefix: "screener-"
+  peers:
+    - {name: "Unimech Aerospace", ticker: UNIMECH, concalls: 4, screening: true}
+    - {name: "Apsis Aero", ticker: APSISAERO, concalls: 1, screening: true}
+    - {name: "Airfloa Rail Technology", code: "544516", concalls: 2, screening: true}
+    - {name: "peer 523606 (screening only)", code: "523606", concalls: 0, screening: true}
+input_gaps:
+  - no_results_pdf
+  - no_rating
+  - no_standalone_annual_report
+  - no_shareholding_pattern
+  - no_dedicated_prospectus_folder_rhp_routed
+  - no_investor_presentation_reg30_only
+  - no_research_notes
+  - announcements_folder_empty_reg30_is_sole_action_record
+  - sector_mismatch_manifest_pharma_cdmo_actual_aero_defence_precision
+flags:
+  - type: SECTOR-MISMATCH
+    detail: "manifest sector_cap_row 'Pharma / CDMO' is wrong; actual archetype Build-to-Print/Build-to-Spec precision component maker (aero/defence/rail/semi). Operator must set correct sector_cap_row before Phase 3."
+    halts: false
+no_concall_mode: true
+analyst_note: "First run. RHP carries both prospectus and AR roles. Sole documented-action record is one Reg 30 order letter (order book Rs 121.88cr FY27). Sector tag wrong; peers are aerospace/defence/rail. Gate 0 runs from screening CSVs (no results PDF)."

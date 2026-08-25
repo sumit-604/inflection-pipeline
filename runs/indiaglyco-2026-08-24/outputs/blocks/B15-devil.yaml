@@ -1,0 +1,19 @@
+stage: B15-devil
+company: "INDIAGLYCO"
+run_date: "2026-08-24"
+model: claude-opus-4-8
+status: complete
+dimensions:
+  growth_triggers: "weakened"
+  moat_durability: "weakened"
+  management_trust: "weakened"
+  valuation_safety: "survives"
+overall: "WEAKENED BUT ALIVE"
+top_counters:
+  - "SHARED CATALYST self-destructs: the Clariant 24% stake sale that deleverages Entity A also removes ~half the JV dividend that is Entity A's main asset (56% of its EPS); deleveraging benefit and full 49% JV earnings are mutually exclusive but Role 1 carries both (11-valuation)"
+  - "Converter margin is the cycle, not the company: 13% through-cycle ROCE / Rs 133 Cr base PBIT ride an EO-price crude tailwind management credits to the war (B07); spread never shown at 5-year median input prices (Amendment 17); Q1 FY27 BSPC 8.78% vs FY26 11.49% (B10)"
+  - "74% of SOTP value (Rs 549.8 of Rs 742.2) sits on a government-set spirits margin with no pricing power (11-valuation); Entity B blended 24% ROCE hides an ethanol book at 7.5% ROCE on 85% of the entity's capital, with EBP allocation down 22% YoY (B05/B07)"
+  - "Entry construct is internally contradictory: the Rs 380 return comes from 'the discount closing to Rs 742', but that requires the market to re-rate the separated parts UP toward the framework's multiples; efficient discovery trades the parts at Rs 742 with no Rs 380 to buy"
+  - "Load-bearing SOTP input withheld: segment debt allocation A~813/B~1050/C~50 [ESTIMATE, X1] deflected twice on-call (B05); aggregate Rs 1,913 Cr exceeds consolidated net debt Rs 1,641.59 Cr (B10); residual Entity A likely inherits the contingent tail (customs Rs 33.4 Cr, NSEL Rs 20.4 Cr, gratuity, guarantees NOT FOUND) not in the estimate"
+  - "Management disclosure pattern: 92.2% FX-hedge collapse with unhedged exposure doubling and zero narrative across 3 concalls (B02 rank 1), plus EBP-cut silence and NSU missed twice; the trust the SOTP needs is exactly the trust management withholds"
+  - "Entry zone Rs 380-429 unreachable except in trigger-fired states that withdraw it (CMP Rs 1,191, needs 64-68% fall); WATCHLIST label masks what Role 1 calls AVOID; actionable expected value near zero"

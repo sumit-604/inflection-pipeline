@@ -99,7 +99,11 @@ handoff schemas, flag rules, and error handling. Then:
    still comes from this run's own inputs, verified against the source PDFs.
 
    Create outputs/blocks, outputs/reports, outputs/final inside the run
-   folder.
+   folder. Also plant inputs/research/.gitkeep alongside the other input
+   directories if it is absent: git does not track empty directories, so a
+   fresh checkout can drop inputs/research/ and the claude.ai
+   web-handover-dossier.md then lands nowhere. The .gitkeep keeps the folder
+   present for the handover input gate downstream.
 
 2. EXECUTE stages 0 through 9 by invoking the matching subagent for each,
    in dependency order (1 and 2 can interleave; 4, 5, 8, 9 after 3; 6

@@ -14,6 +14,8 @@ Required (run halts if the folder is empty or the count is wrong):
 
 Optional (recorded as input_gaps if absent):
   peer-concalls/    0-12 PDFs
+  research/         0-N broker notes (NON-ANCHORED, leads only); also the
+                    landing folder for the claude.ai web-handover-dossier.md
   screening/        csv / txt / pdf / xlsx
   presentation/     1 PDF
 

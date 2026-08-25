@@ -1,0 +1,36 @@
+stage: B01-gate0
+company: "MANINDS"
+run_date: "2026-08-21"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "pledge % unresolved (not in shareholding screenshot or AR); AR Note 15(a), p.153, gives only a specific loan-security pledge of 65,00,000 shares (SBI FX term loan, as at Mar 2025), not the standard disclosed pledge %, insufficient to score without estimation"
+  - "sector_cap_row mislabeled Pharma/CDMO, real=line-pipe steel"
+  - "Trade Payables not split out in screener Data_Sheet (only aggregate 'Other Liabilities') — WC Days (B4/B4-trend) computed as Receivable Days + Inventory Days only, payables excluded"
+  - "FY26 Selling and admin expense not disclosed in screener Data_Sheet (blank cell) — M11 latest-window trend incomplete, scored conservatively"
+  - "Borrowings figure mismatch: screener-data FY26 = Rs627.98cr vs FY26 standalone results filing (p.24) = Rs433.38-534.93cr depending on lease treatment — unreconciled, does not change current scoring since screener is primary source"
+flags:
+  - type: FLAG-GATE0
+    reason: "Classification AVERAGE (core 49/100) with identified depressors: Block A full-cycle median ROCE 13.95% / median ROE 8.96% below top bands, min single-year ROCE 7.71% (FY17); Block B4 WC days rose 116.2 (FY24) to 260.7 (FY26) days, +144.4 in two years; Block E promoter holding down 6.40pp in <3yr with unresolved pledge signal (~20% unscored estimate); moat MODERATE only, peer-relative weakness on cost (M2), scale (M5), gross margin (M9) vs Jindal SAW/Ratnamani/Welspun Corp."
+data_years: 10
+fy_range: "FY17 to FY26"
+blocks: {A: 6, B: 8, C: 15, D: 12, E: 8}
+core_score: 49
+moat_score: 11
+grand_total: 60
+moats_confirmed: 3
+moat_class: "MODERATE"
+classification: "AVERAGE"
+deal_breakers:
+  - "Block A<8 (actual 6) -> caps at max GOOD; driven by FY17 single-year ROCE minimum (7.71%) and sub-12% full-cycle median ROE (8.96%), a structural cycle-wide pattern not a single bad year. Non-binding here since core score of 49 already places classification at AVERAGE, below the GOOD cap."
+history_downgrade: false
+data_notes:
+  - "FCF proxy = CFO + CFI; screener Data_Sheet has no separate capex/PP&E-purchase line, so full net investing cash flow used as proxy (may include non-capex items)."
+  - "ROCE computed as EBIT/(Net Worth+Borrowings) = Total Assets - 'Other Liabilities' bucket; screener-data lacks a current/non-current liability split for a cleaner Capital Employed figure."
+  - "D4 Current Ratio sourced from FY26 standalone audited BS (results filing p.24), not screener-data, since screener lacks the current asset/liability split."
+  - "E4 Contingent liabilities from FY2024-25 AR (Note 33a, p.162) - latest AR in corpus; FY26 AR notes not supplied. Net Worth used is FY25 (period-matched). Arbitration/legal cases (Note 33b, Rs10,936.07L) excluded - company expects to recover these, not a liability."
+  - "M9 Brand test uses GM proxy = (Revenue - Raw Material Cost)/Revenue for MANINDS and all three peers, stated as proxy per formula rules."
+  - "M6 R&D/Revenue: N/A (not in provided data), scored 0."
+  - "M5 Scale test limited to 3 supplied peers (Jindal SAW, Ratnamani, Welspun Corp); full listed-segment universe not supplied - PEER DATA NEEDED for a complete ranking beyond these three."
+block_b_trend: "deteriorating: WC days (receivable+inventory, ex-payables, screener-data computed) rose from 116.2 days (FY24) to 260.7 days (FY26), +144.4 days in two years"
+analyst_note: "AVERAGE is driven by two independent weaknesses, not one: Block A (30%) is a full-cycle capital-return problem (median ROCE 13.95%, median ROE 8.96%, both below top bands across all 10 years, not just FY17), and the moat is MODERATE with peer-relative weakness on cost (M2), scale (M5) and gross margin (M9) against Jindal SAW/Ratnamani/Welspun Corp - MANINDS is smallest by mcap and thinnest by margin of the four. Growth (Block C, 75%) and balance sheet (Block D, 60%, net cash on screener basis but interest coverage only 2.56x) are the offsetting strengths. The FY25-26 WC balloon (+144 days) and the unresolved pledge signal (AR shows a specific 65-lakh-share pledge, ~20% of promoter holding on an unscored back-of-envelope) are the two items most likely to matter for stage 3 corpus reading."

@@ -1,0 +1,24 @@
+stage: B12d
+company: "MANINDS"
+run_date: "2026-08-21"
+model: claude-sonnet-5
+status: complete
+peers_audited: 12
+substantive_confirmed: 10
+substantive_unsupported: []
+peer_utilisation: 83.3
+unused_but_relevant:
+  - {peer: "RATNAMANI Q4 FY25 (May 2025)", missed_item: "Saudi JV disclosed as 75% Ratnamani / 25% local partner — directly relevant to and complicates Part 5's cross-peer 'minority/joint local-partner' ownership hypothesis, which cites only Nov 2025 and omits the ownership split", anchor: "RATNAMANI May 2025, PDF p.4"}
+  - {peer: "RATNAMANI H2 FY25 (Nov 2024)", missed_item: "protectionist local-content rationale for Middle East plant siting ('countries being protective and the local content required') — an independent second-peer anchor for the protectionism theme Part 5/2E build mainly on Jindal SAW alone", anchor: "RATNAMANI Nov 2024, PDF p.7"}
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "MAJOR", location: "B06 Part 1, Q4 verdict ('All input costs fully hedged'), Jindal SAW quote", description: "Quote 'we don't accumulate or hold steel in anticipation of getting the order...' is attributed to JINDALSAW Oct 2025 (Q2 FY26 call), p.16. It does not appear there. It appears in JINDALSAW May 2026 (Q4 FY26 call), PDF p.8, spoken by the same person (Vinay Kumar Gupta). Speaker correct, call/quarter/page wrong. Underlying Q4 corroboration still stands (statement is real and is Jindal SAW's), but the citation as written is not locatable at the stated anchor."}
+  - {severity: "MAJOR", location: "B06 Part 5, Cross-Peer Hypothesis (Saudi ownership structures)", description: "Part 5 groups Ratnamani with Jindal SAW (51% JV) and Welspun (associate structure) under a 'minority or joint local-partner arrangement' framing, citing only RATNAMANI Nov 2025 p.6-7. The CITED-ONLY RATNAMANI May 2025 transcript (p.4) discloses the Saudi JV is 75% Ratnamani-owned / 25% local partner — majority control, not a minority stake. This was available but unused, and its omission makes the hypothesis's ownership-structure grouping more confident than the full evidence supports."}
+  - {severity: "MINOR", location: "B06 Part 1, Q4 verdict, 'Peers silent' paragraph", description: "Citation 'RATNAMANI May 2025, p.9' for the raw-material/margin-variance commentary is off by one page; the relevant exchange (Dhiraj Dave on raw material price decline vs. margin) is on PDF p.10. Content and characterization are accurate; only the page anchor is imprecise."}
+  - {severity: "MINOR", location: "RATNAMANI H2 FY25 (Nov 2024) transcript, graded UNUSED", description: "UNUSED grading is reasonable overall (pre-dates the FY26 order-book window, no LSAW/HSAW exposure), but one on-theme line ('countries being protective and the local content required,' PDF p.7) directly supports the protectionism thread Part 5/2E build mostly on a single Jindal SAW anchor, and was left unused."}
+critical_count: 0
+major_count: 2
+minor_count: 2
+acceptance_rate: 75
+orchestrator_note: "The two MAJORs are B06 citation/coverage imperfections (a mis-anchored but real Jindal SAW hedging quote; an unused Ratnamani ownership nuance). Neither touches the load-bearing peer finding — that MANINDS's order-book decline is company-specific — which is independently anchored to Welspun Jul2026 p.16 and Jindal Jul2026 p.6. No stage-6 re-run required; noted for the operator in the verifier summary and to be tightened at live verification."

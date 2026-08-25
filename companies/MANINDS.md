@@ -3,19 +3,19 @@
 Large-diameter steel line pipe (LSAW/HSAW/ERW) for oil & gas, water and infrastructure; Anjar (Gujarat) + Pithampur (MP), India ~1.2 Mn MTPA, plus the acquired NPC (National Pipe Company) Saudi platform ~430,000 MTPA (Aramco-approved). Mansukhani family promoter (R.C. Mansukhani Chairman, Nikhil Mansukhani MD). BSE 513269 / NSE MANINDS. Mkt cap ~Rs5,355cr, CMP Rs714 (run date). Memory to weigh, not a source.
 
 ## THESIS (one line)
-PROCEED past the understanding gate at Halt 1: a line-pipe order-book converter buying Saudi capacity (NPC, Aramco-qualified) with a rating-agency-corroborated GROWTH-INDUCED working-capital normalisation case (CRISIL A+/Stable upgrade), held back by a live governance overhang (SEBI misstatement order stayed not vacated, an undisclosed-terms Rs97.68cr promoter loan, a Mansukhani Supreme Court dispute) that caps the position at Small until it clears. Gate PROCEED WITH FLAGS, cash GROWTH-INDUCED, Gate 0 AVERAGE. (run 2026-08-21)
+PROCEED past the understanding gate at Halt 1: a line-pipe order-book converter buying Saudi capacity (NPC, Aramco-approved but not exclusively so) with a rating-agency-corroborated GROWTH-INDUCED working-capital normalisation case (CRISIL A+/Stable upgrade), held back by a live governance overhang (SEBI misstatement order stayed not vacated, an undisclosed-terms Rs97.68cr promoter loan, a Mansukhani Supreme Court dispute) that caps the position at Small until it clears. Gate PROCEED WITH FLAGS, cash GROWTH-INDUCED, Gate 0 AVERAGE. (run 2026-08-21)
 
 ## DECISION STATUS AND ENTRY ZONE
-- Decision Status (Halt 1, 2026-08-25): PROCEED (signed Keerti Kaushik, 2026-08-25). Evidence gate PROCEED WITH FLAGS. Position capped at Small while any governance item is open (operator override ruling).
+- Decision Status (Halt 1, 2026-08-25): PROCEED. Operator signed "sign as recommended", Keerti Kaushik, 2026-08-25. Evidence gate PROCEED WITH FLAGS. Position capped at Small while any governance item is open (operator override ruling).
 - Entry zone: NOT YET SET. No valuation ran in Phase 1 (stages 10/11 deferred to Phase 3). No BUY/WATCHLIST/AVOID, no destination PE, no MoS yet.
 - Both downstream gates OPEN: /fttcp (Phase 2 deliberation) and Role 5.5 tracker gate not yet satisfied; model signed but tracker proof PENDING. /fttcp NOT run.
 - Corpus verdict: CORPUS GAPPED (6 findable gaps remain; the CRISIL 01-Jun-2026 rationale gap is CLOSED). Confidence delta overall 80 (normal).
 
 ## SIGNED MENTAL MODEL DECLARATION
-Signed as amended by Claude web 2026-08-25 (operator sign-off). Three lines:
-1. India line pipe, order-book on converter economics — CONVERTER.
-2. NPC Saudi, order-book with Aramco vendor-qualification scarcity — CONVERTER, tracked separately.
-3. Merino Shelters — within-hold option slice, resolution Sep-2026 launch through FY31.
+Signed as amended by Claude web 2026-08-25 (operator sign-off "sign as recommended"). Three lines:
+1. India line pipe: order-book business on converter economics — CONVERTER.
+2. NPC Saudi: order-book business, Aramco-approved, LSAW-plus-HSAW in kingdom — CONVERTER, tracked separately. Scarcity claim STRUCK: Aramco approval is held by peer-linked Saudi plants too (Welspun/Jindal in-kingdom), so it is not an exclusive barrier.
+3. Merino Shelters: within-hold option slice, Sep-2026 launch to FY31.
 
 Five dominant variables:
 1. Standalone India order book (kill < ~Rs2,500cr).
@@ -26,15 +26,15 @@ Five dominant variables:
 
 Model rejects: gross margin; single-quarter YoY; blended trailing P/E; dividend pattern; unadjusted ROE/ROA; consolidated growth including Merino.
 
-Model falsifiers (re-declare the model if): Merino becomes recurring; NPC converts to fixed offtake; governance fully clears.
+Model falsifiers (re-declare the model if): Merino becomes recurring; NPC converts to fixed offtake; governance fully clears (model simplifies).
 
 Fragility: FRAGILE.
 
 ## OPERATOR RULINGS
-- 2026-08-25: Gate decision PROCEED at Halt 1 (signed Keerti Kaushik). Mental Model signed as amended by Claude web (three lines, five variables, rejects, falsifiers above).
+- 2026-08-25: Gate decision PROCEED at Halt 1. Operator signed "sign as recommended" (Keerti Kaushik). Mental Model signed as amended by Claude web (three lines, five variables, rejects, falsifiers above); the NPC scarcity claim was struck on operator ruling.
 - 2026-08-25: FLAG-CASH ruled GROWTH-INDUCED — carried from Phase 1 synthesis on the full CRISIL 01-Jun-2026 rationale (A+/Stable upgrade, Liquidity Strong, WC stretch tied to two named resolving events, FY27 normalisation expected; audited sub-1.0x DSCR reconciled as SEBI-format ratio). Falsifier: debtor days fail to fall toward 100 by Q4FY27, or the 6m-1yr receivables bucket grows in any FY27 quarter.
 - 2026-08-25: Amendment 17 ruling — CONVERTER for BOTH pipe lines (India + NPC). Steel is the quoted input (74.7% of standalone revenue), fixed-price-tender/spread pricing, no formulation IP; CRISIL confirms input-cost rises post-tender cannot be passed on.
-- 2026-08-25: Sector cap ruled 20x (SHYAMMETL precedent; no dedicated Steel/Line-pipe row exists in the Section 1B cap table). Logged under open action "add Steel row". Manifest sector_cap_row "Pharma / CDMO" is a collect_to_repo v3 mis-pick, overridden.
+- 2026-08-25: Sector cap ruled 20x (SHYAMMETL precedent; no dedicated Steel/Line-pipe row exists in the Section 1B cap table). Second ad hoc steel ruling; logged under open action "add Steel row". Manifest sector_cap_row "Pharma / CDMO" is a collect_to_repo v3 mis-pick, overridden.
 
 ## PROMOTER OVERRIDE RULING
 FLAG-PROMOTER CONCERN acknowledged. Override for coverage only (not a quality upgrade).
@@ -49,13 +49,17 @@ FLAG-PROMOTER CONCERN acknowledged. Override for coverage only (not a quality up
 - Sector cap: 20x (SHYAMMETL precedent).
 - SAT-appeal probabilities: quash 15% / narrowed 45% / upheld 40%; SC tail beyond hold.
 
+## ROLE 3 NAMED ITEMS (devil's-advocate seeds for Phase 3)
+- Seller price signal: Nippon Steel / Sumitomo exited NPC at ~2x CY25 PAT with USD 83m liquid assets included in the price. Treat CY25 (NPC revenue Rs2,000cr, OPBDIT 25%) as a POSSIBLE PEAK year, not a normalised base. A sophisticated strategic seller exiting a "cheap" asset is a signal to test the mature-revenue and margin assumptions against cycle position, not to take the 1.5x EV/EBITDA framing at face value.
+
 ## ACTIVE TRIPWIRES
 - Standalone India order book below ~Rs2,500cr = kill on variable 1. Last held Rs3,000cr (Q4FY26 call, 26-May-2026); consolidated Rs3,600cr (Q1FY27 results filing, 11-Aug-2026).
 - WC normalisation first test: Q2FY27 balance sheet (~Nov-2026). Debtor days must fall toward 100 (FY26 ~128) and GCA toward 200 (FY26 stretch); the 6m-1yr receivables bucket must not grow. Failure flips FLAG-CASH back to STRUCTURAL.
 - Limitless Contracting (Note 36) FY26 movement: balance (Rs97.68cr FY25) and accrued interest must fall in the FY26 AR. If not, thesis-breaker per the promoter override.
-- SAT final order on the 29-Sep-2025 SEBI matter: outcome resolves the within-hold governance option (quash/narrowed/upheld). MCA Section 206(5) compounding outcome and the Mansukhani Supreme Court dispute also monitored.
+- SAT final order on the 29-Sep-2025 SEBI matter: outcome resolves the within-hold governance option (quash 15% / narrowed 45% / upheld 40%). MCA Section 206(5) compounding outcome and the Mansukhani Supreme Court dispute also monitored.
 - Capex ramp: Jammu/Dammam commissioning against Mar-2027 (company) vs Sep-2027 (CRISIL); a further slip is a red on variable 2.
 - Steel spread: consolidated EBITDA margin sustaining >= 13% (FY26 delivered 13% consol / 14% standalone).
+- NPC mature-revenue / margin: watch against the peak-year caveat (Role 3); a CY25-as-peak read pressures the base Rs2,800cr FY29 assumption.
 - Position stays Small while any governance item is open.
 
 ## OPTIONALITY REGISTER (summary)

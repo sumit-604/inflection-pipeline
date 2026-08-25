@@ -1,0 +1,54 @@
+stage: B05-concall
+company: "MILLWORKS"
+run_date: "2026-08-22"
+model: claude-sonnet-5
+status: complete
+no_concall_mode: true
+input_gaps:
+  - "No earnings-call transcripts exist for Millworks; structural no-concall mode"
+  - "No post-listing quarterly results to test FY27 guidance vs actuals (listed 21-Jul-2026, run 24-Aug-2026)"
+  - "New-order counterparty names in Reg30 20.08.2026 letter withheld under NDA"
+  - "RHP Basis for Issue Price leaves Millworks own P/E and issue price fields blank; no valuation-ask-vs-peer comparison"
+flags:
+  - "Top customer (47.02% FY26 revenue) is Quick Pay, an investee Millworks holds equity in; same entity drives FY26 receivables spike"
+  - "FY26 OCF -Rs 10.76cr vs PAT +Rs 37.06cr; management explanation leans external-blame (geopolitics) rather than related-party concentration"
+  - "Machinery for Rs 61.03cr IPO-funded capex not yet ordered as of RHP filing (07-Jul-2026)"
+quarters_analysed: []
+triggers:
+  - {priority: 1, name: "FY27 order book (Rs 121.88 cr) converts to booked revenue", type: "VOLUME", timeframe: "near-term FY27", conviction: "M", confirm_signal: "Q1/Q2 FY27 revenue tracks execution pace", kill_signal: "Pending-amount ratio stays near ~90% as at 05-Jun-2026"}
+  - {priority: 2, name: "Capex machinery ordered and installed per Rs 61.03cr budget", type: "COST/VOLUME", timeframe: "FY26-27", conviction: "L", confirm_signal: "Orders placed per RHP vendor quotations; Monitoring Agency confirms utilisation", kill_signal: "Machinery orders keep slipping past FY27"}
+  - {priority: 3, name: "Receivables normalize toward Rs 14,015 lakh RHP projection", type: "cash-conversion", timeframe: "by Mar-2027", conviction: "L", confirm_signal: "Trade receivables/revenue falls materially below FY26 178-day level", kill_signal: "Receivable days stay elevated or Quick Pay delays recur"}
+  - {priority: 4, name: "Quick Pay AASHVAST relationship converts to recurring defence revenue", type: "REGULATORY-POLICY", timeframe: "medium-term", conviction: "L", confirm_signal: "Quick Pay wins follow-on Army contracts with disclosed numbers", kill_signal: "Relationship stays a single delivered pilot"}
+  - {priority: 5, name: "Customer concentration decreases as new orders diversify base", type: "VOLUME", timeframe: "medium-term", conviction: "L", confirm_signal: "Top-5/Top-10 ratios decline in FY27", kill_signal: "Concentration keeps rising as FY25->FY26"}
+guidance:
+  - {item: "Capex plant & machinery", number: "Rs 6,103.25 lakh (upto)", timeframe: "FY26-27", stated_in: "RHP Objects of the Issue p.83-86"}
+  - {item: "Working capital funding from IPO", number: "Rs 8,150.00 lakh (upto)", timeframe: "FY26-27", stated_in: "RHP p.87"}
+  - {item: "Proposed installed capacity", number: "6,71,499 machine-hours (from 3,83,019 FY26)", timeframe: "FY26-27", stated_in: "RHP p.85"}
+  - {item: "Trade receivables projection", number: "Rs 14,015.00 lakh", timeframe: "by March 2027", stated_in: "RHP p.90"}
+  - {item: "Inventory holding days projection", number: "35 days (from 23 FY26)", timeframe: "FY27", stated_in: "RHP p.88"}
+  - {item: "Trade payable days projection", number: "103 days (from 153 FY26)", timeframe: "FY27", stated_in: "RHP p.88"}
+  - {item: "FY27 confirmed order book", number: "Rs 121.88 cr (up from Rs 67.14 cr at 05-Jun-2026)", timeframe: "FY27", stated_in: "Reg30 20.08.2026; RHP p.129"}
+  - {item: "New PO intake window", number: "Rs 53.74 cr", timeframe: "21-Jul to 19-Aug 2026", stated_in: "Reg30 20.08.2026"}
+promise_delivery_score: "too-early (no post-listing quarter): delivered 0, partial 2, missed 0"
+promise_delivery:
+  delivered: 0
+  partial: 2
+  missed: 0
+  rows:
+    - {promised_in: "DRHP", promise: "Provisional FY26 WC estimate and FY24/FY25 holding-day figures", outcome: "Partial", explanation: "RHP admits DRHP FY25/FY24 holding-day figures had an inadvertent calculation error, restated (p.31)"}
+    - {promised_in: "RHP order book 05-Jun-2026", promise: "Order book Rs 67.14 cr, only Rs 6.52 cr (9.7%) executed", outcome: "Partial/too early", explanation: "Reg30 20-Aug shows book grew to Rs 121.88 cr but no execution update on original tranche"}
+excuse_pattern: "mixed, tilted to external-blame on the item that matters most (FY26 receivables/cash-flow attributed to geopolitics rather than related-party concentration in Quick Pay)"
+repeated_evasions: []
+credibility_grade: "C"
+credibility_basis: "No-concall default; two testable points (DRHP self-correction, honest; FY26 receivables explanation, external-blame on the most material item); five weeks post-listing gives no delivery track record"
+peer_questions:
+  - {question: "What order-to-revenue conversion pace do peers describe for aero/defence/rail precision components?", why: "Millworks order book only ~9.7% executed at 05-Jun-2026", check_peers: ["Unimech Aerospace", "Apsis Aero", "Airfloa Rail Technology"]}
+  - {question: "Do peers describe elongated receivables (100+ days) or customer-testing delays in FY26, attributed to geopolitics or specific counterparties?", why: "Millworks FY26 receivables 178 days/48.90% of revenue with geopolitical framing, but concentration sits with related-party Quick Pay", check_peers: ["Unimech Aerospace", "Apsis Aero", "Airfloa Rail Technology"]}
+  - {question: "Does any peer have a related-party/investee top-customer structure, and how is it disclosed?", why: "Quick Pay is both top customer (47.02%) and equity investee (Rs 5.75cr)", check_peers: ["Unimech Aerospace", "Apsis Aero", "Airfloa Rail Technology"]}
+  - {question: "At what utilisation do peers commit further capex, and do they order machinery before or after raising equity?", why: "Millworks 72-77% FY26 utilisation, machine orders not placed as of RHP filing", check_peers: ["Unimech Aerospace", "Apsis Aero", "Airfloa Rail Technology"]}
+  - {question: "Does Airfloa corroborate the Railways capex cycle converting to order inflow, and at what lag?", why: "Millworks cites generic IBEF data, not a company-specific pipeline", check_peers: ["Airfloa Rail Technology"]}
+  - {question: "Do peers discuss raw-material pass-through or FX hedging?", why: "Millworks has no formal FX hedging policy (Risk Factor 21)", check_peers: ["Unimech Aerospace", "Apsis Aero"]}
+  - {question: "Do peers describe demand as sector-wide capacity crunch or company-specific share gain?", why: "Millworks MD claims 'validation of execution track record' five weeks post-listing", check_peers: ["Unimech Aerospace", "Apsis Aero", "Airfloa Rail Technology"]}
+timeline_slippages:
+  - "Machinery for Objects-of-Issue capex identified via vendor quotations (Feb-May 2026) but unordered as of RHP filing (07-Jul-2026), Risk Factor 15"
+analyst_note: "Five weeks post-listing is too short to grade credibility on delivery; grade C reflects the no-concall default. The one substantive signal, geopolitical framing of a receivables problem structurally tied to related-party investee Quick Pay (also top customer), is the item stages 6 and 11 should weight most until a post-listing quarter is available."

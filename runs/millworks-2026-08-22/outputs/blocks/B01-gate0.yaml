@@ -1,0 +1,34 @@
+stage: B01-gate0
+company: "MILLWORKS"
+run_date: "2026-08-22"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["no results PDF", "no rating", "no standalone AR (RHP is the source)", "no shareholding pattern"]
+flags:
+  - type: FLAG-GATE0
+    reason: "Classification AVOID. DB4 (cumulative CFO/PAT = -0.29x, <0.50) caps at AVERAGE; 3-year LIMITED history downgrades one tier to AVOID. Block A and C both 20/20 (ROCE, ROE, revenue/PAT CAGR) but Block B is 0/20 -- all 3 restated years FCF-negative, FY2026 CFO -1,076.29L against PAT +3,706.39L. Driver: trade receivables 48.90% of FY2026 revenue (RHP p.90), tied partly to a Quik Pay Private Limited arrangement; Millworks also holds a 575.06L equity investment in Quik Pay (RHP Annexure XV) -- related counterparty-concentration flag for downstream verification."
+data_years: 3
+fy_range: "FY2024 to FY2026"
+blocks: {A: 20, B: 0, C: 20, D: 15, E: 15}
+core_score: 70
+moat_score: 13
+grand_total: 83
+moats_confirmed: 3
+moat_class: "MODERATE"
+classification: "AVOID"
+deal_breakers:
+  - "DB2: Block B score 0 (<8) -> caps at max GOOD"
+  - "DB4: Cumulative CFO/PAT = -0.29x (<0.50) -> caps at max AVERAGE (binding constraint)"
+history_downgrade: true
+block_b_trend: "deteriorating -- cumulative CFO/PAT = -0.29x FY24-FY26; CFO went from +65.28L (FY24) to -1,076.29L (FY26) despite PAT growing to 3,706.39L; WC days rose from 136 to 191 over the same window (RHP p.S3/Annexure III, p.F8)."
+data_notes:
+  - "No loss-to-profit swing; all 3 restated years (FY24-FY26) PAT-positive."
+  - "ROCE/ROE used RHP-reported figures (p.96) per source-figure rule; independent strict-formula cross-check ~58.9% FY26 ROCE, directionally consistent."
+  - "WC Days computed on Revenue basis (COGS not fully disclosed)."
+  - "E2 measured over ~2 years; promoter decline 75.3% -> 65.08% is pre-IPO preferential allotment + 200:1 bonus dilution, not open-market selling."
+  - "screener-Data_Sheet.csv NOT empty but FY labels misaligned vs RHP restated; other screener CSVs genuinely blank. Anchored to RHP restated per instruction."
+  - "Annexure IV Note 3 (p.F15-F16) discloses extensive self-identified restatement adjustments across all 3 years."
+  - "Related-party transactions with V3 Technologies (partnership firm, 5.86% shareholder, promoter-family controlled): rent 155.76L FY26 / 91.85L FY25, PP&E purchase 707.74L FY25, material purchases, advances (RHP p.56-57)."
+  - "Company incorporated Nov 01, 2021; restated window opens at near-nil FY2024 base (Rev 938.60L); Block C CAGRs reflect extreme base-effect expansion."
+  - "M5-M9, M11 scored 0 as PEER DATA NEEDED / not disclosed (no R&D%, no full segment mcap universe, no distribution/gross-margin peer data, selling expense bundled)."
+analyst_note: "Millworks screens as a paradox: near-perfect Return on Capital and Growth blocks (20/20 each) beside a zero-score Cash Generation block. Revenue and PAT CAGRs ~300-335% measure expansion off a near-nil FY2024 base (incorporated Nov 2021), not steady-state economics. All three restated years show negative CFO after FY2024; FY2026 alone burned Rs 10.76 Cr operating cash while reporting Rs 37.06 Cr PAT, driven by trade receivables jumping to 48.9% of revenue. RHP ties part of this to a Quik Pay Private Limited arrangement where collections wait on Quik Pay's own cash receipt; Millworks also holds a Rs 5.75 Cr equity stake in Quik Pay. DB4 caps at AVERAGE; 3-year LIMITED window downgrades to AVOID. Moat 13/60 MODERATE (5 of 12 tests lack peer/R&D/distribution data). Highest-priority downstream verification: the Quik Pay receivables/investment link."

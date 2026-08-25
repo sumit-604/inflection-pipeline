@@ -1,0 +1,57 @@
+stage: B08-promoter
+company: "MILLWORKS"
+run_date: "2026-08-22"
+model: claude-sonnet-5
+status: partial
+partial_reason: "Web-search stage: three corporate-DB sites and one blog blocked by egress proxy; none load-bearing for the verdict. Some sub-dimensions NOT FOUND due to one month of listed history."
+input_gaps:
+  - no_results_pdf
+  - no_rating
+  - no_standalone_annual_report
+  - no_shareholding_pattern
+  - no_dedicated_prospectus_folder_rhp_routed
+  - no_investor_presentation_reg30_only
+  - no_research_notes
+  - announcements_folder_empty_reg30_is_sole_action_record
+  - sector_mismatch_manifest_pharma_cdmo_actual_aero_defence_precision
+flags: []
+verdict: "CAUTION"
+scorecard: {clean: 7, caution: 3, red: 0}
+deal_breakers: []
+adverse_findings:
+  - {finding: "Years-long recurring EPF/ESIC statutory filing delays, worsening through the July 2026 listing window (up to 74 days late)", evidence_tier: "VERIFIED", source: "RHP p.34-36 (self-disclosed)", date: "2023-2026"}
+  - {finding: "Companies Act Section 185 violation: loans to director-promoters Rashmi Sridhar Acharya (Rs 10 lakh) and Sowmya Madhu (Rs 1.14 lakh + Rs 2 lakh), compounding application filed", evidence_tier: "VERIFIED", source: "RHP risk factors p.36-40", date: "FY23-FY25"}
+  - {finding: "Section 10A subscription-money misrouting at incorporation (routed via partnership-firm and personal accounts), compounding disposed via adjudication", evidence_tier: "VERIFIED", source: "RHP risk factors p.36-40", date: "2021 incorporation"}
+  - {finding: "Pending FCGPR (FEMA) reporting regularisation for a foreign allotment, unresolved as of RHP date", evidence_tier: "VERIFIED", source: "RHP risk factors p.36-40", date: "as of RHP 07.07.2026"}
+  - {finding: "Promoter partnership firm V3 Technologies is simultaneously landlord, material RPT supplier, and self-acknowledged same-line-of-business competitor (Risk Factor 23); non-compete signed but conflict unresolved", evidence_tier: "VERIFIED", source: "RHP p.39-40, p.59-60, p.167, p.179", date: "as of RHP 07.07.2026"}
+  - {finding: "H K Madhu resigned as Director of Yaana Aero Precision Private Limited six weeks before RHP finalisation; entity relationship not independently established", evidence_tier: "UNVERIFIED", source: "RHP p.180; web corroboration only", date: "2025-12-17"}
+  - {finding: "Head of Business Development (Ram Hebbale H) resigned one month before IPO opened, reason undisclosed", evidence_tier: "VERIFIED", source: "RHP p.174-175", date: "2026-06-15"}
+  - {finding: "Entire board and CFO/CS appointed within seven months of RHP filing; zero pre-listing independent-oversight track record", evidence_tier: "VERIFIED", source: "RHP p.168-174", date: "2025-10-01 to 2025-11-22"}
+transition_evidence:
+  - "Board and KMP professionalisation 22 Nov 2025 (RHP p.168-171): two independent directors (retired Major General; 16-year practising CS), promoted CFO, first CS appointment, formal Audit/SR/NRC/CSR committees."
+  - "H K Madhu disassociation from Yaana Aero Precision Private Limited, 17 Dec 2025 (RHP p.180)."
+  - "Fresh-issue-only IPO: promoters sold zero shares at listing, 0% pledge at all times (RHP p.68-79, p.161)."
+  - "Anchor book drew nine institutional/AIF-type investors; no domestic mutual fund/insurer/pension fund applied (web, not re-verified)."
+pledge_pct_latest: 0
+pledge_trend: "stable - 0% pledge at all points per RHP capital structure; no pledge ever created"
+searches_performed:
+  - "Sridhar Acharya Millworks Technologies Managing Director"
+  - "Yaana Aero Precision Madhu director"
+  - "V3 Technologies Bangalore partnership aerospace defence railway"
+  - "Madhu Hulisandra Krishnamurthy director companies"
+  - "Millworks Technologies SME IPO listing GMP review"
+  - "Millworks Technologies BSE 544826 SEBI order investigation"
+  - "Millworks Technologies AmbitionBox Glassdoor employee reviews"
+  - "Quick Pay Private Limited Millworks Technologies common shareholders drones"
+  - "Sridhar Acharya OR H K Madhu Bangalore court case fraud cheating precision engineering"
+  - "Millworks Technologies IPO review red flag risk analyst"
+  - "Millworks Technologies Limited independent director S Ganesan board"
+  - "Millworks Technologies IPO anchor investors list allocation mutual fund"
+searches_skipped:
+  - "SEBI SCORES complaint database direct check - no tool access"
+  - "MCA/RoC master-data lookup for Alined Technologies - sites blocked by egress proxy"
+  - "Independent verification of Rs 5.75cr Quick Pay equity-conversion figure - time-boxed out"
+  - "AmbitionBox dedicated company page - not located"
+  - "Independent industry-peer reputation benchmarking"
+verdict_basis: "Clean SEBI/criminal/tax/pledge/share-sale record and credible independent directors, offset by a self-disclosed years-long worsening pattern of statutory filing delays, two Companies Act compounding matters (incl. Sec 185 loans to directors), and an unresolved same-line-of-business conflict with promoter firm V3 Technologies."
+analyst_note: "One month into listed life; several sub-dimensions (minority treatment, employee reputation, peer reputation, auditor track record) are NOT FOUND rather than clean, simply because too little history exists. Egress-proxy blocks on three corporate-DB sites and one blog prevented independent corroboration beyond the RHP and primary web search; no blocked source was load-bearing. The V3 Technologies conflict and the EPF/ESIC filing pattern are the two items to carry into synthesis and FTTCP as live monitoring points."

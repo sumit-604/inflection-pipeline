@@ -1,0 +1,40 @@
+stage: B08-promoter
+company: "INDIAGLYCO"
+run_date: "2026-08-24"
+model: claude-sonnet-5
+status: partial
+input_gaps:
+  - "Preferential-allotment Regulation 30 disclosure PDF (indiaglycols.com) blocked by network egress proxy; allottee names via WebSearch snippet only (news-tier not filing-tier)"
+  - "Whalesbook 'Legal Storms' article blocked by egress proxy; substance recovered via WebSearch"
+  - "prysm.fi allotment article blocked by egress proxy; substance recovered via WebSearch"
+  - "Per-entity MCA/RoC active/struck-off status of 12+ promoter-linked RPT vehicles not verified"
+  - "IiAS/SES/InGovern India-Glycols-specific proxy advisory history NOT FOUND"
+  - "3-year quarterly promoter pledge series NOT FOUND (only current 0% snapshot obtained)"
+  - "AR FY26 Note 55 shows internally inconsistent FY26 closing balance for the NSEL-related IGL Finance ICD (Rs 2,041.93 Lakh vs Nil in two different places); not reconciled"
+flags: []
+verdict: "TRUSTWORTHY"
+scorecard: {clean: 5, caution: 5, red: 0}
+deal_breakers: []
+adverse_findings:
+  - {finding: "Rent Rs 24.00 Lakh/yr paid to Chairman U.S. Bhartia personally, plus Rs 500.00 Lakh security deposit receivable from him, outstanding both FY25 and FY26", evidence_tier: "VERIFIED", source: "AR FY26 L10977, L11028", date: "FY2025-26"}
+  - {finding: "NSEL-related legacy ICD: company advanced Rs 14,649.64 Lakh to WOS IGL Finance Ltd, invested in NSEL contracts that defaulted Sep 2013; Rs 11,719.71 Lakh written off, residual Rs 2,041.93 Lakh still carried 'good' 13 years later with no interest accrued since 2013; AR discloses internally inconsistent FY26 closing figures", evidence_tier: "VERIFIED", source: "AR FY26 L10309-10321, L10884, L11021-11023", date: "FY2025-26, events from Sep 2013"}
+  - {finding: "12+ small private promoter-linked RPT vehicles (Ajay Commercial, J.B. Commercial, Facit Commosales, J. Boseck & Co, Lund & Blockley, Sukhvarsha Distributors, Polylink Polymers, IGL Infra, KHL Finance, Supreet Vyapaar merged into KHL); entity count disproportionate to business size; RoC status not verified", evidence_tier: "VERIFIED (names) / UNVERIFIED (RoC status)", source: "AR FY26 Note 55(i) L10828-10842", date: "FY2025-26"}
+  - {finding: "Statutory auditor K.N. Gutgutia & Co is a regional (non-Big4) firm in its second and final permitted 5-year term (2022-2027)", evidence_tier: "VERIFIED", source: "AR FY26 L2200-2212", date: "FY2025-26"}
+  - {finding: "Company-level customs duty dispute on denatured ethyl alcohol imports (2017-2021): original Rs 33.43cr duty + Rs 82cr penalty + Rs 191.76cr redemption fine (agg Rs 307.19cr); on appeal (27 Feb 2026) penalty cut to Rs 41cr and redemption fine set aside, duty upheld, further appeal at CESTAT", evidence_tier: "VERIFIED", source: "AR FY26 L6956-6972", date: "order 22 Mar 2024, appeal 27 Feb 2026"}
+  - {finding: "Promoter NED Jayshree Bhartia attended only 3 of 7 FY26 board meetings and did not attend the last AGM", evidence_tier: "VERIFIED", source: "AR FY26 L4543-4544", date: "FY2025-26"}
+transition_evidence:
+  - {finding: "Preferential issue (24 Nov 2025, Rs 466.99cr) included non-promoter institutional allottees 360 One Pipe Fund, 360 One Special Opportunities Fund-Series 12, and QRG Investments and Holdings Limited (Havells promoter family vehicle) among 16 total allottees", evidence_tier: "MEDIA REPORTED", source: "WebSearch summary of exchange disclosure; primary PDF blocked by egress proxy", date: "24 Nov 2025"}
+  - {finding: "Manoj Kumar Rai (ex-CRO Allied Blenders, 17+ yrs Pernod Ricard India, IIM Lucknow/IIT Delhi) appointed ED & COO of IGL Spirits Ltd, effective 4 Aug 2026 - outside professional hire, not family", evidence_tier: "MEDIA REPORTED, two corroborating sources", source: "Scanx.trade, Spiritz.in", date: "4 Aug 2026"}
+  - {finding: "Coordinated four-out/four-in independent director refresh (1 Oct 2024) with cross-listed credentials; FY26 CG Report states no independent director resigned during the year", evidence_tier: "VERIFIED", source: "AR FY26 L10808-10815, L4686-4687", date: "FY2025-26"}
+  - {finding: "Preferential-issue proceeds fully and transparently deployed to debt reduction, confirmed by independent CARE Ratings Monitoring Agency Report; total debt fell Rs 1,863cr (Dec 2025) to Rs 1,793cr (Jan 2026)", evidence_tier: "VERIFIED / RATING-AGENCY REPORTED", source: "AR FY26 L1409-1415; CARE press release 6 Mar 2026", date: "FY2025-26"}
+  - {finding: "Promoter holding company Kashipur Holdings Ltd itself being amalgamated into the listed entity under the NCLT-sanctioned scheme, collapsing a promoter-group layer rather than adding one", evidence_tier: "VERIFIED", source: "AR FY26 L10287, L12897", date: "FY2025-26, NCLT sanction 17 Jul 2026"}
+  - {finding: "0.00% of promoter holding pledged, current snapshot", evidence_tier: "MEDIA REPORTED", source: "Trendlyne", date: "~Aug 2026"}
+pledge_pct_latest: 0
+pledge_trend: "stable at 0% for the period searched; formal quarterly series not reconstructed - NOT FOUND for exact 3-year trend"
+searches_performed: ["preferential allotment Nov 2025 allottees", "shareholding/pledge 2026", "demerger Sep 2026", "U.S. Bhartia SEBI order", "NSEL IGL Finance default", "51,03,765 shares allottees", "legal storms/litigation", "Bhartia family relation", "Manoj Kumar Rai IGL Spirits", "IiAS proxy advisory", "Glassdoor/AmbitionBox reviews", "SEBI insider trading order", "CBI/ED/PMLA", "NSEL/Kashipur oppression NCLT", "Kashipur Holdings RoC", "non-promoter QIB/FPI allottees", "FII entry 2025-26", "CARE/Ind-Ra rating", "QRG/360 ONE allotment", "Bhartia biography", "pledge trend"]
+searches_skipped:
+  - "WebFetch indiaglycols.com Regulation 30 allotment disclosure PDF - EGRESS_BLOCKED"
+  - "WebFetch Whalesbook 'Legal Storms' article - EGRESS_BLOCKED"
+  - "WebFetch prysm.fi allotment article - EGRESS_BLOCKED"
+verdict_basis: "Clean promoter-personal legal/regulatory record (SEBI, criminal, ED/PMLA, NCLT-oppression all clean) plus 0% pledge, disciplined and audited use of a large fresh capital raise for debt reduction, an explicit current-year 'no independent director resigned' statement, and real multi-pronged transition evidence (institutional allottees incl. QRG Investments, outside-professional COO hire, coordinated ID refresh, promoter holding company folded into listed entity) outweigh five named but non-severe cautions (RPT entity sprawl, promoter-as-landlord rent, an unresolved and inconsistently-disclosed 13-year NSEL legacy receivable, a near-max-tenure non-Big4 auditor, one promoter NED's weak attendance)."
+analyst_note: "The NSEL/IGL Finance exposure and the internal AR inconsistency on its FY26 closing balance is the single item most worth a follow-up ask to management or the FY26 auditor: Rs 20.4cr carried as 'good' 13 years after a well-documented exchange default is an optimistic judgement call, and the AR's own notes do not agree on whether that balance is still open at 31 Mar 2026. It does not implicate promoter integrity directly (runs through a WOS) but is a capital-allocation and disclosure-quality signal to carry forward. Status partial: three primary-source WebFetches egress-blocked; substance recovered via WebSearch (news-tier, not filing-tier)."

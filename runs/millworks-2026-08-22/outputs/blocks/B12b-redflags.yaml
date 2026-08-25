@@ -1,0 +1,26 @@
+stage: B12b
+company: "MILLWORKS"
+run_date: "2026-08-22"
+model: claude-opus-4-8
+status: complete
+independent_flags_found: 15
+caught: 10
+partially_caught: 2
+missed:
+  - {severity: "MAJOR", item: "Reg30 Annexure-A related-party denial (Q7 No, Q8 NA) vs same-release Quick Pay investee promotion and 'significant portion from one customer' wording; ongoing-disclosure consistency red flag", anchor: "Reg30 20.08.2026 Annexure-A + press release"}
+  - {severity: "MINOR", item: "Export country count inconsistency: 'twelve countries' (press release) vs '9 countries' (RHP p.131)", anchor: "Reg30 20.08.2026 press release; RHP p.131"}
+  - {severity: "MINOR", item: "Trade-receivables projection Rs 14,015 lakh framed as 'normalization' though it exceeds FY26 close Rs 13,868.68 lakh; absolute receivables do not fall", anchor: "RHP p.90; RHP p.24"}
+pipeline_flags_not_supported: []
+promise_delivery_spot_checks: {checked: 3, confirmed: 3, wrong: 0}
+credibility_grade_concur: "concur | RHP-substitute evidence (93.22% closing receivables, 47% investee top customer, negative OCF, Section 185, delays into listing window) makes C a floor, not a soft default"
+findings:
+  - {severity: "MAJOR", location: "B05 Section 3D/4D", description: "MISSED Reg30 Annexure-A related-party denial (Q7 No / Q8 NA) against same-release investee Quick Pay promotion and single-customer 'significant portion' wording; disclosure-consistency red flag on the thesis-central related-party issue"}
+  - {severity: "MAJOR", location: "B05 Sections 1B/2B/4D (receivables)", description: "Receivables framed as 178 days / 48.90% (average basis); RHP closing ratio 93.22% of FY26 revenue (RHP p.24) never surfaced; central risk understated ~2x"}
+  - {severity: "MINOR", location: "B05 4D (restatement)", description: "RF#16 second FY25/FY24 restatement disclosure (RHP p.36) not surfaced alongside RF#12"}
+  - {severity: "MINOR", location: "B05 trigger #3", description: "Rs 14,015 lakh receivables projection framed as normalization though it exceeds FY26 close 13,868.68 lakh (RHP p.90/p.24)"}
+  - {severity: "MINOR", location: "B05 1A / general", description: "Unreconciled export country count 12 (press release) vs 9 (RHP p.131)"}
+critical_count: 0
+major_count: 2
+minor_count: 3
+acceptance_rate: 67
+redflag_coverage: 67

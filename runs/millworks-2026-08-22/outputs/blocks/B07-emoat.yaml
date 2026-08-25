@@ -1,0 +1,50 @@
+stage: B07-emoat
+company: "MILLWORKS"
+run_date: "2026-08-22"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "net fixed-asset base by year NOT FOUND; Section 2C used capacity-hours proxy instead of fixed-asset-turnover"
+  - "concalls_available=false; F2 used RHP capex-completion/capacity-build proxy, not concall promise-delivery"
+  - "B05 promise-delivery record NOT AVAILABLE"
+  - "investor presentation NOT PROVIDED; only Reg 30 order-book intimation + press release used"
+  - "Hindustan Spring / Universal Automobile acquisition consideration and dates NOT FOUND"
+  - "R&D headcount trend, PhD/specialist count, ESOP-to-technical-staff NOT FOUND"
+  - "RDSO approval status/timeline NOT FOUND beyond SWOT Threat mention"
+flags:
+  - "FLAG-QUICKPAY-DUAL-ROLE: Quick Pay is top FY26 customer (47.02%), related-party equity investee (Rs 5.75cr), and source of the receivables/CFO deterioration driving Gate 0 AVOID. Two highest EM rows (C1, H2) rest on this same fact; not independent positive evidence."
+  - "FLAG-CAPEX-UNORDERED: Rs 6,103.25 lakh machinery capex has vendor quotations only (no POs), valid ~6 months from Apr-Jun 2026; risk of lapse/cost escalation."
+  - "FLAG-SUPPLIER-CONCENTRATION: single supplier is 44.05% of FY26 purchases."
+em_score: 21
+em_classification: "MODEST"
+active_categories:
+  - {id: "A4", name: "Product platform / modular architecture", strength: "Moderate-Strong", evidence_type: "documented", time_to_materialise: "12-24m"}
+  - {id: "B2", name: "Qualification lock-in", strength: "Moderate", evidence_type: "documented/inference", time_to_materialise: "active"}
+  - {id: "C1", name: "Customer ecosystem / embedded relationships", strength: "Moderate (flagged - related party)", evidence_type: "documented", time_to_materialise: "active"}
+  - {id: "F2", name: "Execution moat (no-concall proxy: capex-completion/capacity-build)", strength: "Moderate", evidence_type: "documented", time_to_materialise: "active/12m"}
+  - {id: "H1", name: "Industry consolidation beneficiary (bolt-on acquisitions)", strength: "Weak-Moderate", evidence_type: "documented", time_to_materialise: "active"}
+  - {id: "H2", name: "Strategic partnerships (Quick Pay equity + BBB)", strength: "Moderate-Strong (flagged - related party)", evidence_type: "documented", time_to_materialise: "active/12m"}
+  - {id: "R1", name: "Regulatory & policy tailwinds (railway budget, Make in India)", strength: "Weak-Moderate", evidence_type: "documented", time_to_materialise: "active"}
+evidence_mix: {documented: 19, claim: 6, inference: 7}
+catalysts_12m:
+  - {catalyst: "Machinery capex PO placement before ~6-month vendor quotation validity lapses", window: "0-6m", evidence_type: "documented", anchor: "RHP p.85-86"}
+  - {catalyst: "Unit 4 Springs conversion from trial production to commercial launch", window: "6-12m", evidence_type: "documented", anchor: "RHP p.132"}
+  - {catalyst: "FY27 confirmed order book (Rs 121.88cr per Reg 30, vs Rs 67.14cr RHP 5-Jun-2026) converting to collected revenue", window: "0-12m", evidence_type: "documented", anchor: "Reg 30 filing; RHP p.129"}
+  - {catalyst: "Quick Pay receivables realisation vs FY27 projection of Rs 14,015 lakhs", window: "0-12m", evidence_type: "documented", anchor: "RHP p.90"}
+  - {catalyst: "AASHVAST/Quick Pay drone ecosystem commercialisation progress", window: "0-12m", evidence_type: "documented (mgmt claim)", anchor: "Reg 30 filing"}
+capex_embedded_growth_pct: 75
+capex_machinery_lakh: 6103.25
+optionality_register:
+  - {optionality: "Quick Pay/drone ecosystem scale-up beyond current component supply", converting_evidence: "signed multi-year offtake/exclusivity with disclosed volume/price, independent of related-party equity", window: "12-24m"}
+  - {optionality: "RDSO rail-sector approval (named SWOT Threat, no status disclosed)", converting_evidence: "RDSO approval certificate with product/line scope", window: "12-24m"}
+  - {optionality: "In-house autopilot-board/BMS electronics as standalone IP", converting_evidence: "filed patent application or disclosed licensing/royalty", window: "24-36m"}
+  - {optionality: "China+1/defence-export reshoring (inferred only)", converting_evidence: "filing language tying a specific new international win to supply-chain shift", window: "12-24m"}
+combined_assessment: "AVOID"
+combined_reasoning: "Gate 0 AVOID (B01) reflects severe cash-conversion deterioration and Quick Pay-linked receivables risk; EM 21 is MODEST, below EM>=25 UA qualifier, and its two largest rows (C1, H2) anchor to the same Quick Pay related-party fact pattern driving the Gate 0 flag, so it does not offset or diversify the backward-quality concern."
+top_moat_risks:
+  - "Quick Pay dual role (top customer 47.02% + equity investee + receivables collection risk) underpins the two highest EM rows and the largest Gate 0 flag simultaneously"
+  - "Rs 6,103.25 lakh machinery capex not yet ordered; vendor quotations expire ~Oct-Dec 2026"
+  - "Unit 4 Springs still in erection/trial-run, no commercial launch date"
+  - "Single supplier at 44.05% of FY26 purchases"
+  - "Unit 1 lease (V3 Technologies, related party) expires 31-Dec-2026, inside one year of RHP date"
+analyst_note: "The strongest documented rows (C1, H2) and the strongest Gate 0 red flag are the same fact: Quick Pay Private Limited. Read em_score 21 as concentration risk viewed from the optionality side, not independent diversification. The 75% capacity-hours growth (2C) substitutes for fixed-asset-turnover because net fixed-asset base by year was not available; treat as capacity proxy only."

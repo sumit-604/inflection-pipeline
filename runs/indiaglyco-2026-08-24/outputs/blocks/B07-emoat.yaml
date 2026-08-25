@@ -1,0 +1,56 @@
+stage: B07-emoat
+company: "INDIAGLYCO"
+run_date: "2026-08-24"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "B05 promise-delivery record not available (stage 5 runs after stage 7); F2 execution-moat read built directly from the 4 injected concall transcripts"
+  - "Malt plant (Potable Spirits backward integration): capex amount and commissioning timeline not disclosed"
+  - "NSU pilot facility: capex amount and timeline not disclosed"
+  - "R&D headcount / PhD count / technical-staff ESOP data not disclosed anywhere in the corpus"
+  - "Segment-level top-5/top-10 customer concentration data not disclosed"
+flags:
+  - "Renewable energy share of total energy consumption fell YoY (22.9%->18.3%, AR BRSR p.93-94) despite the ESG-moat narrative used for Bio-MEG/green-chemical positioning"
+  - "EBP ethanol allocation volume down ~22% YoY (19.82cr litres -> 15.43cr litres, AR p.22) even as national blending held at 20% -- policy tailwind not guaranteed to scale with company allocation"
+  - "'Only manufacturer in the world/India' scarcity claims (bio-glycols, glycol ethers, EO+CO2 mix) are self-reported in AR/Inv. Pres. with no independent peer verification, consistent with B01 Gate 0's own flag on absent peer data"
+  - "Three of the nine Strong/Moderate categories (B1, B2 via captive ENA, G1) rest on combined-entity economics not yet tested standalone across the three post-demerger listed companies"
+  - "Ennature Q4 FY26 turnaround was explicitly promised by management and only partially delivered (revenue +23.2% but EBIT margin stayed under pressure until Q1 FY27)"
+em_score: 33
+em_classification: "STRENGTHENING"
+active_categories:
+  - {id: "B2", name: "Qualification lock-in (Bacardi/Amrut/CSD exclusivity)", strength: "Strong", evidence_type: "documented", time_to_materialise: "already active, scaling"}
+  - {id: "A3", name: "Process innovation / structural margin improvement", strength: "Moderate", evidence_type: "documented", time_to_materialise: "already visible, 6-yr trend"}
+  - {id: "A4", name: "NSU product platform (bio-amines, specialty molecules)", strength: "Moderate", evidence_type: "documented + claim", time_to_materialise: "12-36m"}
+  - {id: "B1", name: "Backward integration (captive ENA / grain distillery)", strength: "Moderate", evidence_type: "documented", time_to_materialise: "0-12m"}
+  - {id: "E1", name: "Geographic/institutional first-mover (Kerala, CSD/paramilitary)", strength: "Moderate", evidence_type: "documented", time_to_materialise: "12-24m"}
+  - {id: "F2", name: "Execution moat (margin and debt delivery track record)", strength: "Moderate", evidence_type: "documented, mixed record", time_to_materialise: "already visible"}
+  - {id: "G1", name: "War chest / deleveraging", strength: "Moderate", evidence_type: "documented", time_to_materialise: "0-12m"}
+  - {id: "H2", name: "Strategic partnerships (Clariant JV, Algatechnologies, Amrut)", strength: "Moderate", evidence_type: "documented + claim", time_to_materialise: "24-60m (JV stake-sale FY28-29)"}
+  - {id: "R1", name: "Regulatory/policy tailwind (demerger clearance, EBP, US tariff cut)", strength: "Moderate", evidence_type: "documented", time_to_materialise: "0-12m"}
+evidence_mix: {documented: 33, claim: 10, inference: 1}
+completionist_recount: "9 of 23 rows scored Strong/Moderate; ~17 distinct documented items support those 9 categories, plus documented items in Weak/None rows (33 documented total). Below the 12-category red-flag threshold; no I1/I2 threshold crossing."
+catalysts_12m:
+  - {catalyst: "Demerger effectiveness -- separate listing of IGL Spirits Ltd and Ennature Bio Pharma Ltd", window: "H2 FY27 (post ~1 Sep 2026 target)", evidence_type: "documented", anchor: "Inv. Pres. p.6-7; AR Board's Report p.20-21"}
+  - {catalyst: "Credit rating review off 'Watch -- Developing Implications' post-demerger", window: "FY27, contingent on demerger effectiveness", evidence_type: "documented", anchor: "Q3 FY26 call (Feb 2026); AR Corporate Governance"}
+  - {catalyst: "CSD/paramilitary 4th-5th institutional brand approval", window: "FY27", evidence_type: "claim", anchor: "Q1 FY27 call (Aug 2026); Inv. Pres. p.10"}
+  - {catalyst: "NSU/bio-amine customer qualification conversions (BASF, Unilever, Mibelle pipeline)", window: "12-24m", evidence_type: "claim", anchor: "Q1 FY27 call (Aug 2026)"}
+  - {catalyst: "ESY 2026-27 EBP ethanol allocation figure (watch for further volume erosion)", window: "~Nov 2026", evidence_type: "documented", anchor: "AR p.22 (prior-year allocation history)"}
+capex_embedded_growth_pct: 1
+optionality_register:
+  - {optionality: "Clariant JV -- planned sale of an additional 24% equity stake", converting_evidence: "Signed share-purchase/put-call execution announcement", first_appears: "Exchange filing / AR notes", window: "FY28-29"}
+  - {optionality: "NSU/bio-amine '10x over next few years' aspiration", converting_evidence: "Disclosed volume/revenue tied to named customer contracts", first_appears: "Concall / AR segment note", window: "2-4 years"}
+  - {optionality: "Performance Chemicals ~Rs.2,500cr revenue / Rs.400cr EBITDA aspiration", converting_evidence: "Multi-year segment revenue hitting stated interim milestones", first_appears: "Quarterly investor presentation", window: "4-5 years"}
+  - {optionality: "E25/E100 flex-fuel blending expansion beyond 20%", converting_evidence: "Government notification of a higher mandatory blending target", first_appears: "MoPNG/NITI Aayog gazette notification", window: "2-4 years, uncertain"}
+  - {optionality: "Credit rating upgrade off Watch-Developing status", converting_evidence: "Formal rating action from CARE (or successor) post-demerger", first_appears: "Exchange filing", window: "FY27 H1, contingent"}
+  - {optionality: "SAF / synthetic-biology green chemistry via carbon capture", converting_evidence: "Committed capex or JV/technology-licensing announcement", first_appears: "Exchange filing / AR", window: "undefined -- 'wait and watch'"}
+  - {optionality: "LanzaTech carbon-smart alcohol collaboration reaching scale", converting_evidence: "Disclosed volume/revenue from this partnership", first_appears: "Concall", window: "undefined -- currently underdelivering"}
+  - {optionality: "Malt plant (Potable Spirits backward integration)", converting_evidence: "Committed capex figure and commissioning timeline disclosed", first_appears: "AR capex table / exchange filing", window: "NOT FOUND"}
+combined_assessment: "HIGH POTENTIAL"
+combined_reasoning: "AVERAGE backward score (46, moats_confirmed 0, mostly unverified scarcity claims) paired with STRENGTHENING emerging score (33, driven by real contractual exclusivities and a 6-year margin trend) is the transition setup this operation hunts, but the forward signal is second-tier (not EXPANSION-grade) with two company-relevant tailwinds (EBP allocation, renewable-energy mix) moving the wrong way."
+top_moat_risks:
+  - "Demerger execution risk: B1/B2/G1 currently rest on combined-entity economics (captive ENA shared across future Chemicals and Spirits entities; debt split unproven standalone) untested across three separately listed companies"
+  - "EBP ethanol allocation volume down ~22% YoY despite national blending holding at 20% -- the largest single policy tailwind is already eroding"
+  - "Margin trend (A3/F2) partly rides an EO-price tailwind from elevated crude; management itself attributes recent competitiveness to the war-driven crude spike, which could reverse"
+  - "'Only manufacturer' scarcity claims underlying several categories are self-reported and unverified against peer data"
+  - "Renewable energy share of total energy consumption declined YoY, undercutting the ESG-premium positioning used to justify Bio-MEG pricing"
+analyst_note: "Family I (I1/I2) contributed 0 to em_score -- no threshold crossing, consistent with the operator's 20-Aug-2026 ruling. The single most decision-relevant fact is structural, not scored: three of the nine Strong/Moderate categories are combined-entity moats about to be split across three separately capitalised, separately rated companies effective ~1 Sep 2026, with zero standalone quarters reported yet. Read every Strong/Moderate row as 'true for FY26 as one company,' not yet proven post-split."

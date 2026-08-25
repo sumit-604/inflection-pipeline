@@ -1,0 +1,56 @@
+stage: B09-tam
+company: "INDIAGLYCO"
+run_date: "2026-08-24"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "India-specific bio-polymer (guar-derivative) market size not found"
+  - "Sourced bio-vs-conventional % split for MEG / glycol ethers not found; capability/customer SAM filters use analyst estimates, flagged in report"
+  - "India regional (UP/Uttarakhand/Delhi) liquor market values not found; IGL Spirits Potable Spirits SAM/SOM not independently built"
+  - "Plant-API / nicotine-derivative market size (any geography) not found; Ennature SAM/SOM not built"
+  - "Firm E25/E100 national ethanol blending target date not found"
+  - "NSU and malt-plant capex amounts not disclosed (carried from B07)"
+flags:
+  - "BSPC segment revenue fell ~26% cumulative FY24-FY26 (Rs1,626cr->Rs1,202cr, AR p.35) while sourced India TAM for its categories grew ~6.7%/yr -- company losing share in a growing market"
+  - "EBP ethanol allocation down 22.1% YoY (19.82cr->15.43cr litres, AR p.22) even as national blending held at E20 -- EBP growth phase largely behind the industry; LIMITED-to-MODERATE runway for the Bio-Fuel sub-market specifically"
+  - "Management's only stated market-size figure (Indian chemical industry USD 300bn by 2028, AR p.42) is a definitional mismatch vs BSPC's niche, not a BSPC-specific TAM claim; ratio ~84.7x reflects that mismatch, not necessarily overreach"
+  - "SOM 5yr (Rs1,870cr) exceeds the revenue B07's 1% capex-embedded growth can support (~Rs1,312cr) by ~Rs558cr -- SOM is the optimistic side absent undisclosed capacity"
+  - "Management's Rs2,500cr/4-5yr revenue aspiration implies ~16.7% CAGR, roughly double the SOM-implied 5yr CAGR of 8.4%"
+market_definition: "Residual India Glycols Ltd post-demerger: bio-based glycols, ethylene-based glycol ethers, green/specialty chemicals, bio-polymers, industrial gases, India + export (Chemicals+Gases only; Spirits/Bio-Fuel/Ennature sized separately in report body, excluded from this entity)"
+tam_cr: {conservative: 33910, realistic: 63252}
+sam_cr: 20753
+sam_pct_of_tam: 61.2
+som_3yr_cr: 1559
+som_5yr_cr: 1870
+som_implied_revenue_cagr: {yr3: 7.7, yr5: 8.4}
+current_sam_share_pct: 6.0
+revenue_headroom_x: 16.6
+tam_growth_pct: 6.7
+runway_class: "MODERATE"
+mgmt_claim_cr: 2872500
+mgmt_claim_ratio: 84.7
+mgmt_claim_read: "inflated"
+capacity_check: "gap of approx Rs558 Cr by year 5 vs B07's 1% capex-embedded growth trajectory; SOM is the optimistic side absent undisclosed capacity"
+methods_used: ["top-down sum of India sub-markets", "bottom-up volume cross-check (glycol ethers)", "growth-differential benchmark", "import-substitution (qualitative)"]
+stale_data_flags:
+  - {datapoint: "Global MEG market base figure (used only to derive extrapolation, not headline)", source: "AR MD&A p.43", year: 2022}
+searches_performed:
+  - "India specialty chemicals / glycol ethers / bio-based glycols market size"
+  - "India Bio-MEG market size CAGR"
+  - "India industrial gases market size"
+  - "India IMFL market / UP liquor market size"
+  - "India EBP ethanol procurement value OMC"
+  - "India nutraceuticals / plant-based API / nicotine market"
+  - "global bio-based specialty chemicals / green solvents"
+  - "USD INR August 2026"
+searches_skipped: []
+downstream_candidates:
+  - {signal: "OMC ethanol tender/allocation results by ESY", entity_type: "regulatory", demand_link: "sets Bio-Fuel volume/price each supply year; FY26 allocation down 22% YoY", likely_source: "PPAC / MoPNG", cadence: "event-driven", shared: false}
+  - {signal: "UP / Uttarakhand excise department revenue bulletins", entity_type: "regulatory", demand_link: "proxy for demand in IGL Spirits' core states", likely_source: "State Excise bulletins", cadence: "monthly", shared: false}
+  - {signal: "Brent crude oil price", entity_type: "macro", demand_link: "AR ties EO/bio-MEG/green-solvent competitiveness to crude levels", likely_source: "ICE Brent", cadence: "monthly", shared: false}
+  - {signal: "China glycol-ether/MEG feedstock and export price index", entity_type: "counterparty", demand_link: "AR attributes glycol-ether export margin pressure to Chinese feedstock declines", likely_source: "ICIS / ChemAnalyst", cadence: "monthly", shared: false}
+  - {signal: "Clariant IGL Specialty Chemicals JV disclosures", entity_type: "counterparty", demand_link: "JV dividend part of Chemicals FY27 EBITDA outlook", likely_source: "Clariant segment / IGL RPT notes", cadence: "quarterly", shared: false}
+  - {signal: "EU/US brand-owner sustainability procurement commitments", entity_type: "end-customer", demand_link: "Bio-MEG premium-priced to sustainability-mandated buyers", likely_source: "Brand ESG disclosures; EU CBAM", cadence: "event-driven", shared: false}
+  - {signal: "India E20->E25/E100 blending policy notification", entity_type: "regulatory", demand_link: "sets ceiling on EBP tailwind and carbon-smart ethanol-to-MEG pathway", likely_source: "MoPNG / PIB", cadence: "event-driven", shared: true}
+demand_externally_verifiable: true
+analyst_note: "Block fields are for the RESIDUAL India Glycols entity (Chemicals+Gases) only, per operator instruction; a single company-wide TAM would blend three distinct post-demerger businesses. IGL Spirits and Ennature sized separately in the report body at lower depth, SAM/SOM not built given sourcing gaps. Most decision-relevant single fact: BSPC revenue fell ~26% cumulative over three years while its own TAM grew ~6.7%/yr, contradicting the 'normal' 1-2pp share-gain assumption this SOM applies; runway MODERATE reflects that tension, not the 16.6x headroom alone."

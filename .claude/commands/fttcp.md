@@ -67,13 +67,22 @@ part is missing and stop; do not draft.
    the model did not anticipate it (which may itself trigger model
    re-declaration).
 
-HANDOVER INPUT: if inputs/research/web-handover-dossier.md exists in the
-run folder, read it in full before Step 0. It carries the claude.ai live-
-verification layer: signed mental model, vertical findings with evidence
-tiers, corrections superseding corpus-derived views (honor explicit
-supersessions, e.g. a corrected cash-conversion series), the promise
-ledger, and tracker row proof. Its absence for a run that PASSED the
-Understanding Gate = STOP and ask the operator.
+HANDOVER INPUT: first check the inputs/research/ directory itself, then the
+dossier inside it. These are two distinct failures; do not confuse them.
+- If inputs/research/ is missing as a directory (git does not track empty
+  folders, so a fresh checkout can drop it), STOP and report
+  "inputs/research/ missing": the scaffold did not plant the .gitkeep, so
+  the handover file had nowhere to land. Re-run the stage-0 scaffold to
+  recreate it, then reconfirm the dossier below.
+- If inputs/research/ exists but web-handover-dossier.md is not in it, STOP
+  and report "dossier missing" for a run that PASSED the Understanding Gate,
+  and ask the operator.
+If inputs/research/web-handover-dossier.md exists in the run folder, read it
+in full before Step 0. It carries the claude.ai live-verification layer:
+signed mental model, vertical findings with evidence tiers, corrections
+superseding corpus-derived views (honor explicit supersessions, e.g. a
+corrected cash-conversion series), the promise ledger, and tracker row
+proof.
 
 ## LOAD ORDER (read all of this before writing a word)
 

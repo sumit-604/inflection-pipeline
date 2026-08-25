@@ -1,0 +1,48 @@
+stage: B02-notes
+company: "MILLWORKS"
+run_date: "2026-08-22"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["no_results_pdf", "no_rating", "no_standalone_annual_report", "no_shareholding_pattern", "no_dedicated_prospectus_folder_rhp_routed"]
+flags:
+  - {type: FLAG-CASH, reason: "FY26 trade receivables grew 20x (Rs 6.81Cr to Rs 138.69Cr) against 6.7x revenue growth; receivables/revenue jumped from 30.8% to 93.2%; operating cash flow went to negative Rs 10.76Cr despite PAT of Rs 37.06Cr; zero doubtful-debt provisioning in any year (Annexure XX/III, F-21/F-8)"}
+accounting_quality: 3
+pass_2_empty: false
+pass_3_empty: true
+top_findings:
+  - {rank: 1, finding: "FY26 trade receivables grew 20x while revenue grew 6.7x; operating cash flow negative (-Rs 10.76Cr) despite PAT Rs 37.06Cr; zero doubtful-debt provisioning throughout", note_ref: "Annexure XX/III/XXV, F-21/F-8/F-25", rating: "red_flag"}
+  - {rank: 2, finding: "14-category restatement cluster; management admits sales recognised in wrong (early) period in BOTH FY24 and FY25", note_ref: "Annexure IV para3 note(g), F-15", rating: "red_flag"}
+  - {rank: 3, finding: "Auditor-named Section 185 breach: loans to related-party directors FY24/FY25, cured by repayment before FY26 year-end", note_ref: "Examination Report para8(iv), F-3; Annexure XXXVIII, F-35", rating: "red_flag"}
+  - {rank: 4, finding: "Stock-statement-vs-books discrepancies (up to Rs 5.59Cr in one quarter) recur in every one of the three restated years", note_ref: "Annexure XLIX(vii), F-42", rating: "red_flag"}
+  - {rank: 5, finding: "MSME payables grew 10x to Rs 13.14Cr in FY26 with Rs 0.69Cr unpaid accruing MSMED-Act interest; no vendor-classification system", note_ref: "Annexure XLVII/XI, F-41/F-20", rating: "red_flag"}
+  - {rank: 6, finding: "Trade payable days spiked to ~347 days in FY26 from ~150 in FY25, mirror of the receivables blowout", note_ref: "Annexure XI/XXVI, F-20/F-25", rating: "red_flag"}
+  - {rank: 7, finding: "Interest on late payment of income tax jumped 10x to Rs 0.94Cr in FY26, sixth compliance-timing gap same year", note_ref: "Annexure XXX/XLI, F-27/F-39", rating: "red_flag"}
+  - {rank: 8, finding: "Own mandatory ratio disclosure shows FY25 DSCR only 0.33x, jumping to 5.52x FY26 on accrual basis while FY26 OCF negative", note_ref: "Annexure XLIX(xii), F-43", rating: "red_flag"}
+  - {rank: 9, finding: "V3 Technologies (promoter firm) simultaneously landlord, supplier, PP&E seller (Rs 7.08Cr FY25), lender/borrower, >5% shareholder, no arm's-length pricing evidence", note_ref: "Annexure XXXVIII, F-35; p.178", rating: "red_flag"}
+  - {rank: 10, finding: "Contradiction: Annexure XLIX asserts a subsidiary exists; Non-Current Investments shows only one unquoted stake (Quik Pay) and no subsidiary named/consolidated", note_ref: "Annexure XLIX(xi) F-43 vs Annexure XV F-20", rating: "watch"}
+  - {rank: 11, finding: "New >5% shareholder Aparna Samir Thakker (17.77%) enters FY26 as ~20% holder Shelia Bhaskar Mudbidri fully exits, unexplained", note_ref: "Annexure V, F-17", rating: "watch"}
+  - {rank: 12, finding: "Rs 6.13Cr goodwill from FY26 slump-sale of two oddly-paired partnership firms; Rs 6.94Cr of Rs 9.00Cr consideration unpaid at year-end; no promoter-relationship or valuation basis", note_ref: "F-44", rating: "watch"}
+  - {rank: 13, finding: "~Rs 33.2Cr raised FY26 (equity+debt) almost entirely consumed by receivables, capex, acquisition; only Rs 0.14Cr net cash addition", note_ref: "Annexure III, F-8", rating: "watch"}
+  - {rank: 14, finding: "Tax regime downgrade: lost concessional 115BAB (17.16% FY24) to standard 115BAA, self-triggered by second-hand machinery purchase FY25", note_ref: "Annexure XLI, F-39", rating: "watch"}
+  - {rank: 15, finding: "'Sundry balance written off' jumped 10x to Rs 0.70Cr FY26, unexplained, while write-backs shrank", note_ref: "Annexure XXXII/XXV, F-27/F-25", rating: "watch"}
+red_flags:
+  - "Zero doubtful-debt provisioning against receivables that grew 73x in two years, alongside FY26 OCF -Rs 10.76Cr vs PAT Rs 37.06Cr (Annexure XX/III, F-21/F-8)"
+  - "Premature revenue recognition in both FY24 and FY25, self-disclosed only in IPO restatement (Annexure IV para3 note g, F-15)"
+  - "Auditor-named Section 185 breach: loans to related-party directors FY24/FY25 (Examination Report para8(iv), F-3)"
+  - "Multi-year (FY24-FY26) stock-statement-vs-books discrepancies up to Rs 5.59Cr/quarter (Annexure XLIX(vii), F-42)"
+  - "MSME payment discipline gap: payables 10x FY26, growing unpaid statutory interest, no vendor-classification system (Annexure XLVII/XI, F-41/F-20)"
+  - "Sixth compliance-timing gap: interest on late income tax grew 10x FY26 (Annexure XXX/XLI, F-27/F-39)"
+  - "Unreconciled subsidiary-existence contradiction (Annexure XLIX(xi) vs Annexure XV, F-20)"
+questions_for_mgmt:
+  - "What drove the FY26 receivables blowout, and why is doubtful-debt provisioning nil against a book that grew 73x in two years (Annexure XX, F-21)?"
+  - "What controls were added after twice-repeated premature revenue recognition FY24/FY25 (Annexure IV para3 note g, F-15), and recognition method for the new FY26 Domestic Services line?"
+  - "Who is Aparna Samir Thakker, what FY26 issue price for her 17.77% stake, and why did ~20% holder Shelia Bhaskar Mudbidri exit fully same year (Annexure V, F-17)?"
+  - "Relationship between company/promoters and sellers of Hindustan Springs Manufacturing Co and Universal Automobile and Dairy Products, and valuation basis for Rs 6.13Cr goodwill (F-44)?"
+  - "Does a subsidiary exist as Annexure XLIX(xi) asserts, and what does the new Rs 22.98Cr FY26 capital commitment relate to (F-43 vs F-20/F-40)?"
+receivables_trend: "deteriorating: >6-month ageing share rose 0.5% (FY24) -> 6.3% (FY25) -> 20.4% (FY26); total receivables/revenue 20.1% -> 30.8% -> 93.2%; zero doubtful-debt provision any year (Annexure XX/XXXVI, F-21/F-33)"
+restatements_found:
+  - "14-category cluster affecting FY24/FY25 originally-filed statements (insurance, electricity, ICD interest, MSME interest, rent/lease equalisation, salary, sales premature recognition, inventory, gratuity actuarial, FX gain, D&A useful-life/scrap, prior period, income tax prior years, deferred tax) (Annexure IV para3-4, F-15/F-16)"
+  - "Net profit restatement impact: +Rs 68.81L (FY26 opening), +Rs 13.36L (FY25), -Rs 63.96L (FY24) (Annexure IV para4, F-16)"
+  - "FY26 prior-period item Rs 95.39L booked and restated within the year (Annexure IV para3 note l, F-15)"
+going_concern_language: "NONE"
+analyst_note: "The single most decision-relevant fact is the divergence between PAT (Rs 37.06Cr) and operating cash flow (-Rs 10.76Cr) in the listing year, driven by a receivables book that grew 20x against 6.7x revenue with zero incremental provisioning. Corroborated by the company's own ratio-variance disclosure (trade receivables turnover fell 59.7%, Annexure XLIX(xii)) and a documented history of premature revenue recognition now restated. FY26 reported profit should not be treated as fully cash-backed without customer-level and contract-level verification outside this document. The six compliance-timing gaps individually look like SME growing pains, but their number and simultaneity in the listing year argue for treating them as one pattern of financial-controls immaturity."

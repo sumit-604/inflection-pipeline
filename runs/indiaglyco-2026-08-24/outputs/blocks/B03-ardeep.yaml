@@ -1,0 +1,40 @@
+stage: B03-ardeep
+company: "INDIAGLYCO"
+run_date: "2026-08-24"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Segment-level PBIT margins (only revenue disaggregated to sub-segment in MD&A): NOT FOUND IN DOCUMENT"
+  - "Post-demerger pro forma P&L for the residual (chemicals + gases) entity: NOT FOUND IN DOCUMENT"
+  - "Allottee identity for the Rs 467cr preferential issue, and whether Kashipur Holdings participated: NOT FOUND IN DOCUMENT"
+  - "Promoter pledge/encumbrance status: NOT FOUND IN AR TEXT (no category-wise shareholding-pattern table in this AR)"
+  - "Reconciliation between CARO clause (vii) disputed customs table (~Rs 8,436.5 Lakh across 5 matters) and Note 41/39 DRI dispute (residual Rs 3,343.00 Lakh): NOT FOUND IN DOCUMENT"
+  - "Independent Directors' (other than Shukla Wassan) original appointment dates / cumulative tenure: NOT FOUND IN DOCUMENT"
+  - "Itemisation of the Rs 35.06 Lakh non-audit fee paid to the statutory auditor: NOT FOUND IN DOCUMENT"
+  - "Prior-year Annual Report for tone/priority-drift comparison (Phase 6D): out of scope"
+flags:
+  - {type: FLAG-CASH, reason: "CFO/PAT of 2.72x this year is substantially a one-time inventory drawdown (Rs 28,081.05 Lakh, 24% of FY25 closing inventory), unlikely to repeat; FCF negative both years despite strong CFO because capex (5.3x depreciation) still exceeds it; current ratio below 1.0 by any methodology and worsening"}
+  - {type: FLAG-PROMOTER-PRELIM, reason: "Promoter group holding intact at 59.62% (down modestly from 61.02%) via capital infusion, not a sale (directionally reassuring), but preferential-issue allottee identity and promoter pledge status both undisclosed in this AR, and one promoter director (Jayshree Bhartia) attended only 3 of 7 board meetings (43%); full verdict deferred to B08"}
+phase_verdicts: {p1: "red", p2: "yellow", p3: "yellow", p4: "red", p5: "yellow", p6: "red", p7_best_fit: "GARP (pass, structural demerger caveat) / Turnaround (watchlist)"}
+overall_quality: 6
+quality_components: {governance: 6, accounting: 7, balance_sheet: 6, earnings: 5}
+triple_pass_verification: {verified: 15, discrepancies: []}
+missing_risks:
+  - {risk: "FX hedge-book collapse / unhedged exposure doubling", evidence_anchor: "Note 45(i)(a) standalone / Note 42(i)(a) consol; contradicted by Corporate Governance Report (o), [[page 65]]"}
+  - {risk: "Demerger execution risk (NCLT timeline, near-dormant shell entities EBPL/ISL about to be independently listed)", evidence_anchor: "Board's Report Scheme section, [[page 21]]; EBPL/ISL FY26 losses Rs 0.15/Rs 0.22 Lakh, [[page 25]]"}
+  - {risk: "BSPC segment realisation/pricing risk for the anchor business of the surviving entity", evidence_anchor: "MD&A segment table, [[page 43]]-[[page 44]]: Bio-based Glycols value -29.9% on volume +16.0%"}
+  - {risk: "Single-counterparty JV (CISCPL) sale concentration, 4.15% of revenue, no arm's-length benchmarking disclosed", evidence_anchor: "Note 55 standalone; MD&A JV narrative, [[page 50]]"}
+  - {risk: "Credit Rating Watch with Developing Implications, disclosed once and never revisited", evidence_anchor: "Board's Report Credit Ratings section, [[page 21]]"}
+monitorables:
+  - {metric: "FX hedge notional / open FX position", threshold: "any disclosed re-hedging above USD 3.73mn notional, or continued silence", where: "next quarterly FX sensitivity note or investor call", why: "tests whether the 92% collapse is being reversed or is an ongoing lapse"}
+  - {metric: "NCLT Second Motion hearing outcome", threshold: "sanction order vs further adjournment", where: "NCLT Allahabad filings / exchange disclosures", why: "governs actual demerger completion and opening balance sheets of the three entities"}
+  - {metric: "BSPC / Bio-based Glycols realisation (Rs/MT)", threshold: "sequential improvement vs FY26 run-rate ~Rs 19,280/MT", where: "next quarterly segment disclosure", why: "tests whether the late-FY26 Middle East-driven price hike sustains, i.e. whether the BSPC turnaround is real"}
+  - {metric: "Current ratio (face-value CA/CL)", threshold: "continued deterioration below FY26 0.74", where: "next Balance Sheet", why: "tests whether FY26 inventory-drawdown-driven CFO reverses into renewed WC stress"}
+  - {metric: "Ethanol Supply Year realised delivery", threshold: "full delivery at disclosed 15.43cr litre / Rs 1,070cr estimate, or further downward revision", where: "quarterly results / OMC tender disclosures", why: "tests whether the known 22% allocation cut is the full extent of the Bio-Fuel headwind"}
+ar_new_downstream_entities:
+  - {name: "IGL Spirits Limited", where_in_ar: "Board's Report Subsidiary section [[page 25]]; Scheme [[page 21]]", entity_type: "wholly-owned subsidiary, demerger vehicle for Potable Spirits + Bio-Fuel, to be separately listed"}
+  - {name: "Ennature Bio Pharma Limited", where_in_ar: "Board's Report Subsidiary section [[page 25]]; Scheme [[page 21]]", entity_type: "wholly-owned subsidiary, demerger vehicle for Bio Pharma, to be separately listed"}
+  - {name: "Amrut Distilleries Private Limited", where_in_ar: "Board's Report Potable Spirits narrative [[page 22]]-[[page 23]]", entity_type: "distribution/manufacturing partner, arrangement expanded this year (new brands/states)"}
+best_fit_strategy: "GARP (PASS, hard structural caveat: revalue off the post-demerger residual entity's earnings base, not consolidated FY26); Turnaround (WATCHLIST) on the BSPC realisation cycle"
+one_line_verdict: "Clean numbers, silent risk disclosure, and an earnings base about to change under a GARP thesis on watchlist pending demerger clarity."
+analyst_note: "Phases 1, 4, 6 converge: the auditor's KAM determination, management's MD&A, and the Corporate Governance Report all independently under-disclose or misstate FX risk, in a document that otherwise reconciles exactly everywhere checked. With B02's Red Flag, this argues the FX gap is a document-wide blind spot, not an isolated notes lapse. Separately, every backward growth/quality metric describes a consolidated entity that stops existing on 1 Sep 2026; valuation must rebuild the earnings base from BSPC alone, not extrapolate consolidated trends."

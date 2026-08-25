@@ -1,0 +1,33 @@
+stage: B09b-dossier
+company: "MILLWORKS"
+run_date: "2026-08-22"
+model: claude-sonnet-5
+status: complete
+corpus_verdict: "CORPUS GAPPED"
+corpus_gaps:
+  - {document: "Post-listing quarterly results filing (Q1 FY27)", expected_source: "BSE", kind: "findable-missing"}
+  - {document: "Shareholding pattern filing (post-listing)", expected_source: "BSE", kind: "findable-missing"}
+  - {document: "IPO Monitoring Agency report on proceeds utilisation", expected_source: "BSE", kind: "findable-missing"}
+  - {document: "Credit rating rationale", expected_source: "rating agency site", kind: "plausibly-nonexistent"}
+  - {document: "Standalone Annual Report (first post-listing AR, FY2027)", expected_source: "company IR page", kind: "plausibly-nonexistent"}
+  - {document: "Dedicated investor presentation", expected_source: "company IR page", kind: "plausibly-nonexistent"}
+  - {document: "Earnings-call transcript", expected_source: "company IR page", kind: "plausibly-nonexistent"}
+  - {document: "Broker/research note", expected_source: "rating agency site", kind: "plausibly-nonexistent"}
+archetypes:
+  - {line: "All revenue lines (Defence, Railways, Semiconductor, Aerospace)", archetype: "Build-to-spec component maker"}
+dominant_variables:
+  - "Quick Pay / top-customer concentration (47.02% of FY26 revenue + receivables counterparty + related equity investee)"
+  - "Cash conversion (cumulative CFO/PAT -0.29x FY24-26; FY26 receivables 93.22% of revenue)"
+  - "Order book conversion pace (~5.4 months of FY26 revenue run-rate; 9.7% executed at snapshot)"
+  - "Capex execution (Rs 6,103.25 Lakh machinery capex, vendor quotations only, no POs as of RHP)"
+model_falsifier: "Confirmed common ownership/control between Quick Pay and Millworks promoters beyond the disclosed minority stake, OR two consecutive post-listing quarters of recovered operating cash flow against PAT with falling receivable days"
+mental_model_status: "DRAFT - PENDING OPERATOR SIGN-OFF"
+fragility:
+  variable_count: 4
+  verifiability_ratio: "2 of 4 externally observable via future mandated filings; 2 of 4 company-narrated only pending verification"
+  single_point_failure: "Quick Pay Private Limited (top customer 47.02% + receivables counterparty + related equity investee)"
+  fragility_verdict: "FRAGILE"
+candidate_count: 7
+research_brief_items: 12
+plain_summary_points: 15
+mechanical_check: "PASS (5 section headers in order; exactly one corpus verdict line CORPUS GAPPED; DRAFT - PENDING OPERATOR SIGN-OFF marker in Section 2)"

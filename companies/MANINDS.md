@@ -6,7 +6,7 @@ Large-diameter steel line pipe (LSAW/HSAW/ERW) for oil & gas, water and infrastr
 PROCEED past the understanding gate at Halt 1: a line-pipe order-book converter buying Saudi capacity (NPC, Aramco-approved but not exclusively so) with a rating-agency-corroborated GROWTH-INDUCED working-capital normalisation case (CRISIL A+/Stable upgrade), held back by a live governance overhang (SEBI misstatement order stayed not vacated, an undisclosed-terms Rs97.68cr promoter loan, a Mansukhani Supreme Court dispute) that caps the position at Small until it clears. Gate PROCEED WITH FLAGS, cash GROWTH-INDUCED, Gate 0 AVERAGE. (run 2026-08-21)
 
 ## DECISION STATUS AND ENTRY ZONE
-- Decision Status (Halt 1, 2026-08-25): PROCEED. Operator signed "sign as recommended", Keerti Kaushik, 2026-08-25. Evidence gate PROCEED WITH FLAGS. Position capped at Small while any governance item is open (operator override ruling).
+- Decision Status (Halt 1, 2026-08-25): PROCEED WITH FLAGS, kill-line override. Operator signed "sign as recommended", Keerti Kaushik, 2026-08-25. Position capped at Small (2-3%) while any governance item is open (operator override ruling).
 - KILL-LINE OVERRIDE (Halt 1, operator 2026-08-25): PROCEED WITH FLAGS, kill-line override. The India standalone order book kill line (~Rs2,500cr) is breached at Rs2,200-2,300cr (12-Aug-2026 transcript, p.12). Operator override verbatim: "I override for the purpose of completing FTTCP, valuation, thesis and devil's advocate, on the grounds that the consolidated book is the revenue engine post-NPC and research commits no capital. Vertical 1 is THREATENS. Any BUY verdict is conditional on India standalone at or above Rs2,500cr on a filed print. The override lapses if the Q2FY27 print (~14-Nov-2026) shows India below Rs2,300cr, at which point the name moves to WATCHLIST/AVOID." Vertical 1 (India standalone order book) = THREATENS.
 - Entry zone: NOT YET SET. No valuation ran in Phase 1 (stages 10/11 deferred to Phase 3). No BUY/WATCHLIST/AVOID, no destination PE, no MoS yet.
 - Role 5.5 tracker gate SATISFIED (12 tracker rows written 2026-08-25, see TRACKER PROOF). Handover dossier gate remains OPEN. /fttcp NOT run until the handover dossier exists.
@@ -86,18 +86,36 @@ FLAG-PROMOTER CONCERN acknowledged. Override for coverage only (not a quality up
   Tracker gate SATISFIED.
 
 ## HANDOVER DOSSIER
-- COMMITTED 2026-08-25: inputs/research/web-handover-dossier.md.
-  Six vertical verdicts, six supersessions (S1-S6), promise-vs-delivery
-  ledger with credibility split, Role 5.5 proof, operator inputs, eight
-  Role 3 seeds. Handover input gate SATISFIED.
-- S2 DOWNGRADED (2026-08-25): the Q1FY27 transcript (p.12) discloses that
-  80-plus percent of the India standalone book is exports. The India
-  order book is weaker than the dossier S2 read: not a domestic-demand
-  base, an export book that shrank four straight quarters. S2 is
-  downgraded accordingly.
+- v2 COMMITTED 2026-08-25 (supersedes v1 same day): inputs/research/web-handover-dossier.md.
+  Six vertical verdicts, six supersessions (S1-S6, S2 and S3 rewritten in v2),
+  promise-vs-delivery ledger with credibility split, Role 5.5 proof, operator
+  inputs, ten Role 3 seeds. HANDOVER GATE SATISFIED.
+- S2 DOWNGRADED (v2): the Q1FY27 transcript (p.12) discloses that 80-plus
+  percent of the India standalone book is exports. The India order book is
+  weaker than the v1 S2 read: not a domestic-demand base, an export book that
+  shrank four straight quarters; JJM policy explains at most a fifth.
+- S3 REWRITTEN (v2, per C5): NPC scarcity STRUCK. In-kingdom Aramco-approved
+  LSAW already exists (Arabian Pipes, TenarisGPC, Welspun greenfield). The
+  incremental-business thesis rests on the whole local LSAW pool being fully
+  employed through FY28, not on NPC uniqueness.
 
-## CORRECTIONS
-- Correction 4 (2026-08-25): the consolidated order book of Rs4,100cr (18-Jun-2026 Reg-30) PREDATES the Q1FY27 call. The current figure is Rs3,600cr (12-Aug-2026 transcript, p.12): India Rs2,200-2,300cr + NPC Rs1,300-1,400cr. The Rs4,100cr split (India ~2,500 + NPC ~1,600) is the June reference, not the live number; the trend is down. Corrections 1-3 (NPC consolidation ~20 days not ~40; Dammam coating capacity 4 lakh sqm/yr not 4 mn; the Q1FY27 corpus close) are logged in the B05 re-run and the fttcp-draft reconciliation.
+## P/E BASE CARD RULINGS (operator, 2026-08-25; verbatim from dossier Section 6)
+- Pillar 1: 14.5x (through-cycle ROCE 13.95%, Am17.1; spot never).
+- Pillar 2: 0.80x, table row "growth-phase drag, no offset" per S1. 0.65x rejected (CFO positive, liquidity Strong); 0.85x rejected (not a table value).
+- Pillar 3: +0x (ROCE below r; Am16 gate closed at entry, assessable in stage 11 only on a projected consolidated ROCE crossing r).
+- Strategic +0, UA none, cap 20x.
+- Additive destination: 14.5 x 0.80 = 11.6x, range +/-7.5% rounded.
+- RRM track: r = 14.0 base + 1.5 governance (full CONCERN loading per override) + 0.75 cyclical + 0.5 concentration - 0.5 durability (Moderate) - 0.25 moat (moderate) = 16.0%; RRM 0.70x floor; applied to the FULL Fundamental Base: 14.5 x 0.80 x 0.70 = 8.1x. Show both tracks; do not blend.
+- Earnings basis: one-year-forward FY27E consolidated operating earnings ex-Merino; NPC enters FY27 at Rs1,500cr (top of run-rate range, treated as ceiling not base per the credibility split) reaching Rs2,800cr by FY29; finance cost Rs190cr FY27; exit per Am18.1 on FY30E forward EPS at Year 3; basis stated once.
+- Am16 gate condition: if projected consolidated ROCE crosses r (16%) in the FY28 base case, HALT stage 11 and bring the Pillar 1 midpoint and Pillar 3 crediting question to the operator with the projected numbers; do not credit the crossing in the destination PE without an operator ruling.
+- Any BUY carries: India standalone >=Rs2,500cr on a filed print (named resolving condition); position cap Small; probability-weighted expected return using the operator-set probability for the ROCE crossing (analyst reference 65-70%, operator to set).
+
+## CORRECTIONS (dossier v2 log, 2026-08-25)
+- C1: cash read STRUCTURAL -> GROWTH-INDUCED stretch on a structural baseline (CRISIL full text).
+- C2: Amendment 17 is a ROCE-input rule, not a separate converter multiple.
+- C3: "not confirmed" on the Q1FY27 transcript was a stale pull, withdrawn on re-fetch; the transcript is in corpus (12-Aug-2026, verified against origin/main).
+- C4: the Rs4,100cr order book PREDATES the Q1 call (18-Jun-2026 Reg-30: India ~2,500 + NPC ~1,600). The live figure is Rs3,600cr (12-Aug-2026 transcript p.12: India Rs2,200-2,300cr + NPC Rs1,300-1,400cr). Trend down.
+- C5: in-kingdom LSAW is NOT scarce. Arabian Pipes (300kt LSAW, Jubail), TenarisGPC (LSAW, Jubail, doubling), and Welspun's greenfield LSAW (350kt, Dammam, mid-2026) all supply Aramco. Handover supersession S3 rewritten: NPC's differentiator is narrower (20-year Aramco approval, LSAW+HSAW on one site, ~100 acres freehold, debt-free, and the price paid), not scarcity.
 
 ## RUN FOLDERS
 - runs/maninds-2026-08-21/

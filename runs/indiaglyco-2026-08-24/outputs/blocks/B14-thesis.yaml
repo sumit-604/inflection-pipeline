@@ -1,0 +1,19 @@
+stage: B14-thesis
+company: "INDIAGLYCO"
+run_date: "2026-08-24"
+model: claude-opus-4-8
+status: complete
+verdict: "WATCHLIST"
+entry_range: {low: 380, high: 429}
+position_size: "Small"
+position_size_override: ""
+thesis_broken_if: "Filed standalone opening balance sheets show entity leverage materially worse than the [ESTIMATE, X1] allocation (Entity B debt > ~Rs 1,050 Cr), OR bio-glycol realisation per tonne falls again while the Asia MEG index is flat or rising (Section 1B v3.7 17.4 cap engages) - either drops SOTP base fair value below the ~Rs 742 governing anchor and moves the verdict to AVOID."
+monitoring_checklist:
+  - "Bio-glycol/Asia MEG realisation per tonne (next BSPC segment print, Q2 FY27): green if it rises with or ahead of the Asia MEG index; red if it falls again while MEG is flat/rising (17.4 cap engages)"
+  - "Filed standalone opening balance sheets (Oct-Nov 2026): Entity B net debt at or below ~Rs 1,050 Cr and Entity A ~Rs 813 Cr [ESTIMATE, X1]; red if Entity B debt is materially higher"
+  - "Clariant JV quarterly share of profit at or above ~Rs 46 Cr FY26 run-rate, plus any filed 24% stake-sale agreement; red if JV profit falls toward the ~Rs 30 Cr mean-revert floor or the dividend is interrupted"
+  - "Ennature (Entity C) guar-free quarter print + Prompt H (Q2 FY27): green resolves the INSUFFICIENT CONVICTION base; red/no-decision if the guar-gum transfer is still inside the segment"
+  - "IGL Spirits FY27 EBITDA vs the >Rs 500 Cr guide and EBP ethanol allocation: green if spirits EBITDA on track; red if the EBP allocation cut deepens beyond -22% YoY"
+  - "CARE rating post-demerger (currently A- RWD): green if A-/stable or better with net debt/PBILDT below 3.5x on Entity A and B; red if downgraded or net debt/PBILDT above 4.5x"
+  - "CMP vs entry zone Rs 380-429 (ENTRY CONJUNCTION): buy only if price is inside the zone AND no thesis-broken trigger has fired; price entering the zone because a trigger fired is a withdrawn zone"
+one_line_thesis: "WATCHLIST/DEEP WATCH at Rs 1,191: the three-way demerger's earned SOTP fair value is Rs 742-838/share (30-38% below CMP), every part fails the 25% hurdle at CMP (STOP), fair value compounds only 11.5% (HYBRID) with no re-rating lever left, so the entry zone Rs 380-429 is where the return works and it is mostly the discount closing, not business compounding; Entity C Ennature is INSUFFICIENT CONVICTION pending a guar-free quarter, and all outputs are [ESTIMATE, X1] pending filed standalone balance sheets."

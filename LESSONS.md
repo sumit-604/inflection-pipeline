@@ -73,6 +73,16 @@ _Written into a prompt/framework file so it cannot recur._
   directories; fix is a .gitkeep planted by the scaffold. The /fttcp handover
   input gate now reports "inputs/research/ missing" as distinct from
   "dossier missing".
+- [2026-08-25] corpus completeness (MANINDS) — Freshness Pair Check into
+  00-orchestrator.md + 09b + run-pipeline.md. A present filing can hide an
+  absent companion filing; the count passes and Halt 1 runs blind. Rule: the
+  newest results filing needs its same-quarter concall; a rating bulletin its
+  full rationale; a referenced SEBI order its text; the AR must not trail the
+  latest audited annual results. A missing mate sets CORPUS GAPPED-FRESHNESS
+  and caps the gate at PROCEED WITH CAVEATS, missing document named the first
+  line of gate-recommendation.md. Caught on MANINDS: Q1FY27 results in corpus,
+  Q1FY27 concall (filed to BSE three days before the run) absent; 09b listed it
+  as a gap but the gate did not block, operator found it several Phase 2 turns in.
 
 ## OPEN ACTIONS
 _Pending framework edits Keerti maintains._

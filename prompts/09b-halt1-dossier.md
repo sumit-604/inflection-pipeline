@@ -58,13 +58,28 @@ date, or ABSENT. This section is inventory only; no analysis.
    held, with dates.
 6. CORPORATE ACTIONS: announcement filings held (orders, JVs, capex,
    raises), with the date range.
-7. VERDICT LINE, exactly one of:
+7. FRESHNESS PAIR CHECK: read B00's `freshness_verdict` and
+   `freshness_pairs[]`. Restate any FAILED pair here by name (the trigger
+   document held, the mate absent). A failed pair sets the verdict line to
+   CORPUS GAPPED-FRESHNESS below and names the missing mate. The four pairs
+   are defined in prompts/00-orchestrator.md FRESHNESS PAIR CHECK: newest
+   results to same-quarter concall; rating bulletin to full rationale;
+   referenced SEBI order to order text; AR not older than the latest
+   audited annual results.
+8. VERDICT LINE, exactly one of:
    - CORPUS CURRENT: nothing material plausibly missing.
    - CORPUS GAPPED: [each missing document by name + expected source: BSE
      / company IR page / rating agency site]. Distinguish findable-but-
      missing (the operator upload list) from plausibly-nonexistent (the
      company publishes no such document, itself a data point: opacity
      feeds the kill decision).
+   - CORPUS GAPPED-FRESHNESS: a Freshness Pair Check pair failed (B00
+     `freshness_verdict`). Name the missing mate document first. This
+     verdict takes precedence over a plain CORPUS GAPPED; any other gaps
+     still list under it. It carries a downstream consequence the other
+     two do not: the phase-1 gate recommendation caps at PROCEED WITH
+     CAVEATS (per the orchestrator), so this verdict is never softened to
+     CORPUS GAPPED when a pair has failed.
 
 ## SECTION 2: MENTAL MODEL DECLARATION (draft, for operator sign-off)
 
@@ -157,11 +172,11 @@ company: "{{TICKER}}"
 run_date: "{{RUN_DATE}}"
 model: claude-sonnet-5
 status: complete
-corpus_verdict: ""              # CORPUS CURRENT | CORPUS GAPPED
+corpus_verdict: ""              # CORPUS CURRENT | CORPUS GAPPED | CORPUS GAPPED-FRESHNESS
 corpus_gaps:                    # list, or [] if CORPUS CURRENT
   - document: ""
     expected_source: ""        # BSE | company IR page | rating agency site
-    kind: ""                   # findable-missing | plausibly-nonexistent
+    kind: ""                   # findable-missing | plausibly-nonexistent | freshness-pair
 archetypes:                     # one per business line; two allowed
   - line: ""
     archetype: ""              # from CLAUDE.md ARCHETYPE LIBRARY, or "fits no known archetype"

@@ -1,6 +1,8 @@
-# PROCEED WITH CAVEATS
+# PROCEED WITH FLAGS
 
-Verdict: PROCEED WITH CAVEATS. Three flags are active and surface inline below: FLAG-PROMOTER (CONCERN), FLAG-CASH (INDETERMINATE), and FLAG-GATE0 (AVERAGE). A flag active run would read PROCEED WITH FLAGS, but the cash conversion determination is INDETERMINATE because the evidence that would settle it, the full CRISIL June 01 2026 rating rationale with its working capital and receivables detail, is not in the corpus. INDETERMINATE cash caps the verdict at PROCEED WITH CAVEATS. This is a gate decision on evidence alone. No valuation ran; there is no BUY, WATCHLIST or AVOID, no entry zone, no destination PE.
+Verdict: PROCEED WITH FLAGS (updated 2026-08-25 after the operator supplied the full CRISIL 01-Jun-2026 rationale). Three flags are active and surface inline below: FLAG-PROMOTER (CONCERN), FLAG-CASH (now GROWTH-INDUCED), and FLAG-GATE0 (AVERAGE). This is a gate decision on evidence alone. No valuation ran; there is no BUY, WATCHLIST or AVOID, no entry zone, no destination PE.
+
+VERDICT HISTORY: this file originally read PROCEED WITH CAVEATS because the cash-conversion determination was INDETERMINATE (the full CRISIL rationale was absent, leaving the receivables/WC narrative unresolved). On 2026-08-25 the operator supplied the full CRISIL Rating Rationale dated 01-Jun-2026 (now inputs/rating/rating-rationale-01Jun2026.md). It resolves the determination to GROWTH-INDUCED (see FLAG-CASH below), which lifts the INDETERMINATE cap. FLAG-PROMOTER (unresolved SEBI order) keeps the verdict at PROCEED WITH FLAGS, not clean PROCEED.
 
 This mode is PHASE 1 LITE. Stages 10 and 11 did not run. The Mental Model Declaration is not signed by this file.
 
@@ -18,23 +20,23 @@ Pattern context: 5 to 6 SEBI actions between 2014 and 2025, escalating in severi
 
 Transition evidence: named institutional entry through a Rs 255 Cr preferential issue in July 2025 (Ashish Kacholia 1.20% to 3.04%, Carnelian Asset Management, Ovata Capital); a professional external CFO, Sandeep Kumar, ex Welspun and ex Raymond, hired within 10 days of the predecessor's exit; management claim that Merino Shelters has been consolidated since FY23-24, remediating the core disclosure failure. Pledge is not a deal breaker: 65,00,000 shares pledged to SBI, about 8.7% of shares outstanding, unchanged in absolute count since the FY25 AR, the falling percentage a denominator effect not a release.
 
-## FLAG-CASH: INDETERMINATE
+## FLAG-CASH: GROWTH-INDUCED (updated 2026-08-25)
 
-Determination: INDETERMINATE. The corpus cannot separate growth induced working capital from structural distress, because the deciding document is missing.
+Determination: GROWTH-INDUCED / external-and-temporary, rating-agency corroborated. Updated from INDETERMINATE after the operator supplied the full CRISIL Rating Rationale dated 01-Jun-2026 (inputs/rating/rating-rationale-01Jun2026.md), which is the document the earlier INDETERMINATE call named as missing.
 
-Evidence pulling toward GROWTH-INDUCED or external and temporary:
-- The corpus rating (CRISIL July 20 2026 credit bulletin, current ratings CRISIL A+/Stable and A1) notes a Middle East conflict working capital spike, with one shipment rerouted via Fujairah instead of Abu Dhabi as mitigation (B00 rating-rationale-partial; Fujairah rerouting corroborated at Q4 FY26 concall p.16-17, p.20).
-- Real evidenced capex into NPC, Jammu and Dammam, so part of the cash use is capacity build (B03 strengths_top3).
+Evidence resolving the determination to GROWTH-INDUCED (CRISIL RR 01-Jun-2026, verbatim):
+- Cause is named and non-structural: "In Fiscal 2025, working capital was impacted due to several factors, including a delay in the execution of a Taiwan order, which led to inventory buildup. The execution of this order was completed in Q1 of Fiscal 2026. In Fiscal 2026, inventory and debtor days increased to approximately 180 and 128 days, respectively, due to the Middle East conflict, which hindered the delivery of ships to the United Arab Emirates. However, working capital levels are expected to normalize in the current fiscal year, as MIIL has received approval to deliver the shipment to the eastern port of UAE - Fujairah port."
+- Liquidity assessed STRONG: "MIIL is expected to earn NCA of Rs 450 crores to Rs 580 crores against repayments of Rs 230-250 crores each year in the next 3 fiscals... Cash and cash equivalents were around Rs 657 crores (unencumbered of ~Rs 300 crores) as on March 31, 2026." Fund-based limit utilised ~77% over the 11 months to Apr-2026.
+- Long-term rating UPGRADED to Crisil A+/Stable (from A/Stable) on 01-Jun-2026; historical GCA ~200 days "driven by debtors of over 100 days" is the normalised baseline the stretch is expected to retrace toward.
 
-Evidence pulling toward STRUCTURAL:
-- Debt service coverage below 1.0 times at both standalone (0.59x FY25, 0.63x FY24) and consolidated (0.52x FY25, 0.61x FY24) levels, in both years, so earnings did not cover contractual debt service before the FY26 growth story (B02 Note 40 standalone p.176-177; Note 41 consolidated p.244).
-- Standalone CFO/PAT 0.693x and consolidated 0.444x FY25, both below 0.7x; consolidated FCF negative Rs 86.34 Cr; net debt swing Rs 252.6 Cr standalone and Rs 293.2 Cr consolidated from net cash to net debt (B03 Note 15(c) p.155-156).
-- Receivables ageing slippage: the 6 month to 1 year bucket grew 11.5 times, from Rs 796.96 lakh to Rs 9,182.28 lakh, and non current disputed receivables above 3 years sit static at Rs 95.58 Cr with about 13.6% ECL coverage, an auditor Key Audit Matter (B02 Note 7 standalone p.145-147; Auditor KAM p.180).
-- Rs 97.68 Cr promoter entity bridge financing from Limitless Contracting at undisclosed terms, matching a subsidiary's disclosed short term for long term funding gap (B02 Note 36 consolidated p.232-233; Annexure A CARO p.185-186).
+Reconciliation of the audited sub-1.0x DSCR (which drove the earlier STRUCTURAL pull): the AR Note 40/41 DSCR (standalone 0.59x FY25 / consolidated 0.52x FY25) is the SEBI-format regulatory ratio whose denominator includes short-term/working-capital debt rolled during the year; it reads below 1.0x for any WC-heavy roller even with comfortable term cover. CRISIL's NCA-vs-term-repayment (>Rs450cr vs Rs230-250cr, ~1.9x) measures scheduled term obligations only. The two are not contradictory. This dissolves the ambiguity that forced INDETERMINATE.
 
-Named missing evidence (the gate that keeps this INDETERMINATE): the full CRISIL June 01 2026 rating rationale with its working capital and receivables commentary. The corpus holds only the July 20 2026 bulletin, not the rationale (B00 rating-rationale-partial). Obtain it from CRISIL's rating rationale archive or the exchange rating disclosure. Without it, the receivables slippage and the below 1.0x DSCR in both years cannot be cleared as pure growth.
+Residual STRUCTURAL caveats retained (symmetric, not waved through):
+- CRISIL keeps receivables concentration a "key monitorable": "As of March 31, 2026, out of the total debtors of Rs 1,250 crores, Rs 109 crores remained under arbitration."
+- The audited receivables slippage remains real: the 6 month to 1 year bucket grew 11.5 times (Rs 796.96 lakh to Rs 9,182.28 lakh); non-current disputed receivables above 3 years static at Rs 95.58 Cr, ~13.6% ECL, an auditor Key Audit Matter (B02 Note 7 p.145-147; KAM p.180).
+- Rs 97.68 Cr Limitless Contracting promoter-entity bridge loan at undisclosed terms persists (B02 Note 36 p.232-233).
 
-Falsification metric (stated conditionally, because the determination is not GROWTH-INDUCED): if the determination later resolves to growth induced, the single quarterly kill signal is standalone trade receivables turnover. It fell from 7.02x to 3.17x. A further fall for a second consecutive quarter, or DSCR staying below 1.0x in the FY26 accounts, confirms structural rather than growth cash stress. Watch it in the quarterly results receivables note and the FY26 AR Note 40 and 41.
+Falsification metric (GROWTH-INDUCED, so a metric IS required): in the H1FY27 prints, if debtor days do NOT retrace from ~128 toward the historical ~100 (equivalently standalone trade-receivables turnover stays below ~3.2x), OR GCA days do not move back toward ~200, OR the Rs 109 Cr arbitration receivable is written down, OR fund-based limit utilisation rises above ~85%, the determination reverts to STRUCTURAL. Watch the quarterly results receivables note and the FY26/FY27 AR Note 40-41.
 
 ## FLAG-GATE0: AVERAGE
 

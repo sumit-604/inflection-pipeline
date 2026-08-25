@@ -40,7 +40,13 @@ input_gaps:
       most of the same operational content independently. FTTCP Step 0C: leads present,
       filings absent; confidence noted.
   - type: rating-rationale-partial
-    severity: MEDIUM
+    severity: CLOSED-2026-08-25
+    resolution: >
+      CLOSED: operator supplied the full CRISIL Rating Rationale dated 01-Jun-2026 on
+      2026-08-25 (inputs/rating/rating-rationale-01Jun2026.md). FLAG-CASH resolved
+      INDETERMINATE -> GROWTH-INDUCED; gate verdict PROCEED WITH CAVEATS -> PROCEED WITH FLAGS.
+      The ratings.pdf in corpus is still the Jul-20 Credit Bulletin; the rationale text is the
+      operator-ferried full version, cross-checked against audited FY26 numbers (reconciles).
     effect: >
       rating/ratings.pdf is the CRISIL Jul-20-2026 Credit Bulletin (bank-facility update +
       current ratings CRISIL A+/Stable long-term, A1 short-term). The FULL rating rationale

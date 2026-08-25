@@ -69,6 +69,14 @@ themselves are absent.
 
 **CORPUS GAPPED**
 
+> POST-HALT ADDENDUM (2026-08-25): the operator supplied the full CRISIL Rating
+> Rationale dated 01-Jun-2026 (now inputs/rating/rating-rationale-01Jun2026.md).
+> Gap #1 below (CRISIL full rationale) is CLOSED. This resolved FLAG-CASH from
+> INDETERMINATE to GROWTH-INDUCED and moved the gate verdict from PROCEED WITH
+> CAVEATS to PROCEED WITH FLAGS (see outputs/final/gate-recommendation.md). Six
+> gaps remain, so the corpus verdict stays CORPUS GAPPED, but the load-bearing
+> FLAG-CASH gap is now closed.
+
 Named gaps, each with expected source:
 - Full CRISIL rating rationale (June-01-2026) — expected source: rating
   agency site (CRISIL Ratings). Findable-but-missing.

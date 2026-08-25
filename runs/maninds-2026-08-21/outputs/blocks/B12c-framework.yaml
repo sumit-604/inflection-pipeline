@@ -1,0 +1,25 @@
+stage: B12c
+company: "MANINDS"
+run_date: "2026-08-21"
+model: claude-opus-4-8
+status: complete
+phase: 1
+gate0:
+  rules_checked: 40
+  findings:
+    - {severity: MINOR, location: "B01 Block A ROCE basis", issue: "ROCE denominator substituted EBIT/(NetWorth+Borrowings) for framework EBIT/(Total Assets - Current Liabilities); data-forced (no current-liability split in screener), anchored, no score-band change", recomputed: "no change"}
+    - {severity: MINOR, location: "B01 Block B FCF (B2/B3)", issue: "FCF proxied as CFO+CFI for framework CFO-Capex(PPE+intangibles, ex-acquisitions); data-forced (no capex line), stated as proxy, no score-band change", recomputed: "no change"}
+    - {severity: MINOR, location: "B01 Block B4 / block_b_trend WC days", issue: "WC days computed ex-payables (Receivable+Inventory only) as payables not separately disclosed; framework formula subtracts Payable Days; stated basis, no score-band change", recomputed: "no change"}
+  adherence_pct: 97
+emoat:
+  rules_checked: 51
+  findings: []
+  adherence_pct: 100
+valuation: pending-phase-3
+recomputed_gate0_classification: "AVERAGE (core 49) - concur"
+recomputed_emoat_classification: "MOAT STRENGTHENING (em 32) - concur"
+critical_count: 0
+major_count: 0
+minor_count: 3
+framework_adherence: 98
+acceptance_rate: 98

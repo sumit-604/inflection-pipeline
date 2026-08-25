@@ -1,0 +1,26 @@
+stage: B13-synthesis
+company: "MANINDS"
+run_date: "2026-08-21"
+model: claude-opus-4-8
+phase: 1-lite
+status: complete
+regenerated: "2026-08-25 — re-derived by stage-13 subagent after the full CRISIL 01-Jun-2026 rationale entered the corpus; supersedes the first-pass block and the orchestrator hand-edit"
+verdict: "PROCEED WITH FLAGS"
+verdict_rule_applied: 3
+flags_active: ["FLAG-PROMOTER", "FLAG-CASH", "FLAG-GATE0"]
+confidence_delta: {numerical: 96.6, redflag: 80, framework: 98, peer: 83.3, overall: 80}
+flag_cash_determination: "GROWTH-INDUCED"
+flag_cash_basis: "CRISIL RR 01-Jun-2026: A+/Stable upgrade, Liquidity Strong (NCA >Rs450cr vs term repayment Rs230-250cr, cash Rs657cr), WC stretch tied to named one-off causes (FY25 Taiwan-order delay completed Q1FY26; FY26 Middle-East UAE shipping blockade) expected to normalise FY27 on Fujairah approval. Audited sub-1.0x DSCR reconciled as SEBI-format ratio (rolls WC debt into denominator) vs CRISIL term-debt basis ~1.8-2.0x. Structural residuals held open."
+valuation_decision: ""
+entry_range: {low: 0, high: 0}
+headline: "Man Industries pivots to Saudi line pipe"
+falsification_metric: "Standalone debtor days fail to fall toward 100 from ~128 by Q4 FY27, or the 6-month-to-1-year receivables bucket grows again in any FY27 quarter"
+monitorables_count: 8
+publish_candidate: false
+notion_save:
+  mode: append-never-overwrite-status
+  note: "not written in phase-1 lite mode"
+files_written:
+  - runs/maninds-2026-08-21/outputs/final/business-narrative.md
+  - runs/maninds-2026-08-21/outputs/final/gate-recommendation.md
+  - runs/maninds-2026-08-21/outputs/final/verifier-summary.md

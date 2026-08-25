@@ -1,0 +1,24 @@
+stage: confidence-delta
+company: MANINDS
+run_date: "2026-08-21"
+phase: 1
+confidence_delta:
+  numerical_acceptance: 96.6      # B12a (Verifier A); the single source_fidelity flag CLEARED at source
+  redflag_coverage: 80            # B12b (Verifier B): 16 of 20 verifier-found flags already caught upstream
+  framework_adherence: 98         # B12c (Verifier C) phase-1 scope only: Gate 0 97 + Emerging Moat 100
+  peer_utilisation: 83.3          # B12d (Verifier D): 10 of 12 peers used substantively
+  overall: 80                     # min of the four
+band: "normal (75-89): note specifics"
+valuation_framework_adherence: pending-phase-3
+rework_triggered: false
+rework_basis: "0 CRITICAL (the one Verifier A source_fidelity MAJOR CLEARED on source re-check); all four verifier acceptance_rates >= 60 (96.6 / 80 / 98 / 75). No REWORK."
+specifics_to_note:
+  - "Verifier A mis-sourced one standalone CFO figure from the screener consolidated line; B03's 0.693x standalone CFO/PAT verified correct at the AR standalone cash-flow anchor. Logged as FLAG CLEARED."
+  - "Verifier B surfaced 2 MINOR misses: Q1 other-income margin add-back, and that FY26 consolidated revenue was roughly flat once the ~Rs369cr Merino one-off is stripped (the revenue miss is larger than +13% implies)."
+  - "Verifier D found 2 MAJOR B06 citation/coverage imperfections (a mis-anchored but real Jindal hedging quote; an unused Ratnamani 75%-owned Saudi-JV ownership nuance). Neither flips the company-specific order-book finding."
+disagreement_log:
+  - number_or_claim: "B03 standalone CFO/PAT 0.693x FY25"
+    verifier_a_verdict: "MAJOR, source_fidelity true, 'does not recalculate' (used screener consolidated CFO Rs67.99cr)"
+    downstream_position: "B03 sourced it from AR standalone cash-flow statement"
+    disposition: "FLAG CLEARED — source re-check found the number at a correct anchor (AR standalone CF: CFO Rs95.06cr / PAT Rs137.12cr = 0.693x). Re-checked by orchestrator 2026-08-21."
+    note: "FLAG-CASH direction unaffected; both standalone 0.693x and consolidated 0.444x are below the 0.7x threshold."

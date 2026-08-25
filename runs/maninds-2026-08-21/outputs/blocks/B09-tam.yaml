@@ -1,0 +1,62 @@
+stage: B09-tam
+company: "MANINDS"
+run_date: "2026-08-21"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Precise regional (India/Saudi-GCC/MENA/Africa) % split of global large-diameter pipe demand — NOT FOUND in a single authoritative source; SAM geography filter (22%) is an analyst estimate built from oil&gas and water capex regional shares."
+  - "PSL Ltd and other smaller/unorganised India large-diameter pipe player revenue — NOT FOUND; unorganised-sector adjustment (20%) is a framework-guided estimate, not sourced."
+  - "The '~2mn tons Saudi LSAW demand vs ~0.8-0.9mn tons supply' management claim referenced in the task brief — NOT FOUND in FY25 AR, Q1 FY27 investor presentation, or web search of concall/press coverage."
+  - "MANINDS's own tons-sold / blended ASP figure — NOT FOUND in extracted disclosures; web-sourced industry ASP range used as a proxy for capacity cross-check and bottom-up TAM."
+  - "Forward consolidated PAT-margin target — NOT FOUND (not disclosed by management); the 6-8% figure used in Section 5E is an analyst construction blending NPC's disclosed margin band with the core business's FY26 margin."
+flags:
+  - "Management's 'Regional Opportunity' slide sums stock and flow metrics across inconsistent time horizons under one addressable-market heading; literal sum implies mgmt_claim_ratio 2.63x vs conservative TAM (inflated read)."
+  - "SOM_5yr (Rs13,740 Cr) exceeds committed capacity ceiling (NPC+Dammam+Jammu, ~Rs10,216-11,493 Cr at 80-90% utilisation) by ~Rs2,900 Cr — SOM is the optimistic side of that pairing, not the capex plan."
+  - "Runway class MASSIVE is headroom-driven; capacity and execution, not market size, are the binding constraint on this thesis over the 3-5yr hold."
+market_definition: "Large-diameter (LSAW/HSAW/ERW) coated steel line pipe for oil & gas transmission, water transmission/desalination and linked infrastructure, ex-piling/structural segments"
+tam_cr: {conservative: 1085700, realistic: 1106900}
+sam_cr: 203000
+sam_pct_of_tam: 18.7
+som_3yr_cr: 9680
+som_5yr_cr: 13740
+som_implied_revenue_cagr: {yr3: 39.2, yr5: 30.8}
+current_sam_share_pct: 1.77
+revenue_headroom_x: 56.5
+tam_growth_pct: 2.7
+runway_class: "MASSIVE"
+mgmt_claim_cr: 2855000
+mgmt_claim_ratio: 2.63
+mgmt_claim_read: "inflated"
+capacity_check: "gap of ~Rs2,900 Cr by yr5; SOM is the optimistic side vs currently committed capacity (NPC+Dammam+Jammu only)"
+methods_used: ["top-down (global large-diameter pipe market)", "bottom-up (volume x ASP consistency check)", "peer revenue aggregation (India-listed peers, screener-sourced)", "import substitution (assessed, not applicable)", "global benchmark (directional only)"]
+stale_data_flags:
+  - {datapoint: "Global large-diameter steel pipes market base figure ($12.3B)", source: "Global Industry Analysts / PRNewswire", year: "2022 (base year for a 2026 projection series)"}
+  - {datapoint: "Saudi Arabia steel pipes market ($2.45B 2024 -> $3.41B 2030, 5.7% CAGR)", source: "P&S Intelligence / psmarketresearch.com", year: "publish year unclear, cited via 2025 press syndication"}
+  - {datapoint: "MANINDS order book (~Rs25bn) and bid pipeline (~Rs150bn)", source: "FY25 Annual Report, Chairman's Statement", year: "FY25 (report ~mid-2025), superseded in part by NPC's own $120M day-one order book disclosed May 2026"}
+searches_performed:
+  - "global large diameter line pipe market size 2026 LSAW HSAW ERW billion CAGR"
+  - "India line pipe market size steel pipe market CRISIL ICRA 2026"
+  - "Saudi Arabia LSAW pipe demand supply gap million tons Aramco local manufacturing"
+  - "Jal Jeevan Mission 2.0 outlay lakh crore approved 2026"
+  - "Man Industries Saudi Arabia line pipe demand 2 million tons supply gap NPC acquisition"
+  - "Welspun Corp Jindal SAW PSL Ratnamani Metal Tubes revenue FY26 line pipe segment"
+  - "global oil and gas pipeline capex 2026 2031 $680 billion $831 billion Mordor Intelligence"
+  - "Man Industries NPC Saudi Arabia 2 million tons LSAW demand local capacity concall"
+  - "Man Industries NPC acquisition earnings call transcript Saudi market size local content demand"
+  - "USD INR exchange rate August 2026"
+  - "large diameter LSAW HSAW line pipe price per ton 2026 API steel pipe"
+  - "Jindal SAW FY26 annual revenue crore consolidated"
+  - "India large diameter line pipe market SAW pipe oil gas water transmission market size crore"
+  - "Saudi Arabia steel pipes market $3.41 billion 2030 report source"
+searches_skipped: []
+downstream_candidates:
+  - {signal: "JJM 2.0 fund release / progress tracking", entity_type: "regulatory", demand_link: "Direct driver of India water-transmission pipe tender pipeline", likely_source: "Ministry of Jal Shakti / PIB", cadence: "quarterly", shared: false}
+  - {signal: "Saudi Aramco capex guidance & Master Gas System tender awards", entity_type: "counterparty", demand_link: "Direct driver of NPC/Saudi order book; largest single Saudi counterparty", likely_source: "Aramco investor relations / Argaam", cadence: "quarterly", shared: false}
+  - {signal: "India National Gas Grid / PNGRB pipeline project approvals", entity_type: "regulatory", demand_link: "Tracks India gas-pipeline tender pipeline underpinning ERW/LSAW order book", likely_source: "PNGRB", cadence: "quarterly", shared: false}
+  - {signal: "ADNOC / QatarEnergy capex & tender announcements", entity_type: "counterparty", demand_link: "MANINDS holds QatarEnergy vendor-list status; direct MENA order-pipeline driver", likely_source: "ADNOC / QatarEnergy releases", cadence: "event-driven", shared: false}
+  - {signal: "Saudi Vision 2030 giga-project milestones (NEOM, Red Sea)", entity_type: "macro", demand_link: "Indirect demand signal for utility/water-pipe segment of Saudi order pipeline", likely_source: "Saudi PIF / NEOM press releases", cadence: "event-driven", shared: false}
+  - {signal: "Brent crude price / global oil & gas capex index", entity_type: "macro", demand_link: "Leading indicator for NOC capex cycles across India and Saudi/MENA at once", likely_source: "EIA / OPEC / S&P Global", cadence: "monthly", shared: true}
+  - {signal: "GCC desalination project awards", entity_type: "counterparty", demand_link: "Direct signal for water/desalination segment of Saudi/GCC demand", likely_source: "Saudi Water Authority / ACWA Power", cadence: "event-driven", shared: false}
+  - {signal: "Steel HRC/plate input-price index", entity_type: "macro", demand_link: "Margin driver via pass-through dynamics, material to earnings-CAGR read", likely_source: "SteelMint / major steel producer price releases", cadence: "monthly", shared: false}
+demand_externally_verifiable: true
+analyst_note: "The illustrative '2mn tons Saudi LSAW demand vs 0.8-0.9mn tons supply' claim in the task brief was not found in any source read or searched; treated as NOT FOUND rather than assumed. mgmt_claim_cr instead built from literal conversion of the presentation's four 'Regional Opportunity' figures, which mix stock and flow metrics — the resulting 2.63x ratio reflects that structural mixing as much as genuine over-optimism. SAM's 22% geography filter and the 20% unorganised-peer add-on are both analyst estimates, not single-sourced; treat SAM/SOM as directionally sound, not precision figures. Capacity, not TAM, is the binding constraint at the 5yr horizon."

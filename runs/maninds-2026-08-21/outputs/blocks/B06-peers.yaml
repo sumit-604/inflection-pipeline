@@ -1,0 +1,51 @@
+stage: B06-peers
+company: "MANINDS"
+run_date: "2026-08-21"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "NPC (National Pipe Company) audited CY25 financials/volume not disclosed in any concall; only $ topline and depreciation ($8mn) given"
+  - "SEBI order underlying cause and penalty amount not disclosed in Q2/Q3/Q4 FY26 calls, only that a stay was obtained"
+  - "Product-wise volume (LSAW/HSAW/ERW tonnage) not disclosed in any of the three primary calls, per stated company policy"
+flags:
+  - "Welspun Corp (Jul 2026 call) confirms it evaluated and passed on a Saudi acquisition target very likely NPC, citing quality/reputation concerns rather than valuation, complicating the '1.5x cheap vs 7-10x peer multiple' bull case framing"
+  - "Peer order books (Jindal SAW, Welspun, Ratnamani) all stable-to-record through FY26 while MANINDS's order book fell 37% (Rs.4,750cr to Rs.3,000cr), indicating company-specific bidding/execution weakness rather than sector-wide demand contraction"
+  - "Saudi LSAW/HSAW capacity race is industry-wide and larger than MANINDS's own disclosure suggests: Jindal SAW alone committed to a 300,000+300,000 MTPA Saudi JV plus Welspun's parallel Saudi LSAW plant, both targeting FY27-29 stream, raising oversupply risk beyond what MANINDS's NPC/Dammam rationale acknowledges"
+  - "Peers describe JJM Rs.67,000-70,000cr allocation optimism as of Jan/Feb 2026 but report continued execution delay through Jul 2026, a lag MANINDS's own 'green shoots' framing should be checked against"
+peers_provided: 12
+verified:
+  - {claim: "Jal Jeevan Mission revival and ~Rs.67,000cr allocation cited as FY27 domestic demand driver with 'green shoots' framing", peers: ["Jindal SAW", "Welspun Corp"], anchor_count: 2}
+partially_verified:
+  - {claim: "Saudi LSAW/HSAW demand-supply gap (~2mn tons demand vs ~0.8-0.9mn tons domestic supply, ~6-8% CAGR) consistent with peers", peers: ["Jindal SAW", "Welspun Corp"]}
+  - {claim: "Welspun and Jindal SAW confirm Saudi capacity-addition timeline/tonnage MANINDS cited", peers: ["Jindal SAW", "Welspun Corp"]}
+  - {claim: "All input costs fully hedged at order-booking stage", peers: ["Welspun Corp", "Jindal SAW"]}
+contradicted:
+  - {claim: "MANINDS's order-book contraction (Rs.4,750cr to Rs.4,000cr to Rs.3,000cr) is industry-wide rather than company-specific", contradicting_peer: "Jindal SAW, Welspun Corp, Ratnamani Metals (all three)", quote_anchor: "Welspun Corp Jul 2026 p.16 'new record level of global order book'; Jindal SAW Jul 2026 p.6 'order book is quite consistent'; Ratnamani May 2026 p.3 order book Rs.2,160cr vs Rs.2,000cr prior year"}
+unverifiable:
+  - {claim: "NPC 1.5x EV/EBITDA vs claimed 7-10x peer multiple for Saudi/GCC acquisitions/capacity", peers_checked: ["Jindal SAW", "Welspun Corp", "Ratnamani Metals"]}
+peer_coverage_map:
+  - {peer: "Jindal SAW", quarter: "Q2 FY26 (Oct 2025)", usage: "SUBSTANTIVE", contribution: "Saudi DI capacity scarcity, anti-dumping filing, order book 19.25 lakh tons"}
+  - {peer: "Jindal SAW", quarter: "Q3 FY26 (Jan 2026)", usage: "SUBSTANTIVE", contribution: "Rs.67,000cr JJM allocation figure matches MANINDS exactly"}
+  - {peer: "Jindal SAW", quarter: "Q4 FY26 (May 2026)", usage: "SUBSTANTIVE", contribution: "Steel order-linked hedging with pass-through caveats; DI sector overcapacity risk; continued JJM delay"}
+  - {peer: "Jindal SAW", quarter: "Q1 FY27 (Jul 2026)", usage: "SUBSTANTIVE", contribution: "Saudi JV 300k+300k MTPA LSAW/HSAW tonnage; order book stable 1.78mn tons; Strait of Hormuz shipping halt"}
+  - {peer: "Welspun Corp", quarter: "Q2 FY26 (Nov 2025)", usage: "SUBSTANTIVE", contribution: "Record order book Rs.23,500cr; Saudi Vision 2030/Aramco capex; DI two-thirds import-dependent"}
+  - {peer: "Welspun Corp", quarter: "Q3 FY26 (Feb 2026)", usage: "SUBSTANTIVE", contribution: "Rs.70,000cr JJM allocation confirmation; Saudi LSAW/DI projects on track"}
+  - {peer: "Welspun Corp", quarter: "Q4 FY26 (May 2026)", usage: "SUBSTANTIVE", contribution: "Saudi LSAW/DI projects FY2027 stream confirmed; record order book growth continues"}
+  - {peer: "Welspun Corp", quarter: "Q1 FY27 (Jul 2026)", usage: "SUBSTANTIVE", contribution: "'Steel completely hedged'; NPC/Saudi-asset pass-on disclosure; JJM still slow; record order book Rs.25,750cr"}
+  - {peer: "Ratnamani Metals", quarter: "H2 FY25 (Nov 2024)", usage: "UNUSED", contribution: "Content covered capex/product-mix updates only; no touch on Saudi demand, hedging, JJM, or order-book questions"}
+  - {peer: "Ratnamani Metals", quarter: "Q4 FY25 (May 2025)", usage: "CITED-ONLY", contribution: "Minor supporting colour on raw-material price sensitivity to margins; not decisive"}
+  - {peer: "Ratnamani Metals", quarter: "Q2 FY26 (Nov 2025)", usage: "SUBSTANTIVE", contribution: "Order book ~Rs.2,000-2,050cr baseline; Aramco/SABIC Saudi export demand"}
+  - {peer: "Ratnamani Metals", quarter: "Q4 FY26 (May 2026)", usage: "SUBSTANTIVE", contribution: "Order book Rs.2,160cr, flat despite acknowledged Middle East geopolitical/demand headwinds"}
+industry_cross_read:
+  demand: "Peers uniformly cite FY26 execution headwinds (EPC payment delays, JJM fund-release lag, Middle East shipping blockade from Mar-2026) but simultaneously report stable-to-record order books driven by Saudi/US export demand, diverging sharply from MANINDS's own order-book contraction."
+  pricing_inputs: "Peers manage raw-material risk via order-linked steel procurement (functionally similar to MANINDS's claim) but explicitly disclose gaps: freight/fuel pass-through not guaranteed, DI escalation clauses capped at 30-35%, contradicting a blanket 'all costs fully hedged' framing."
+  capex_cycle: "Industry-wide capacity race into Saudi/GCC, not a lone expander: Jindal SAW (600,000 MTPA Saudi LSAW/HSAW JV), Welspun (Saudi LSAW + DI plants, FY27 stream), and Ratnamani (Saudi stainless cold-finishing) are all building Saudi capacity on the same FY27-29 timeline as MANINDS's NPC/Dammam plan, raising oversupply risk."
+peer_mentions_of_company:
+  - "Welspun Corp Jul 2026 p.12-13 (analyst Dhananjai): 'in Saudi Arabia... there was an asset available... The one which another Indian company had also acquired' — near-certain reference to NPC given timing (2 months post-announcement); Welspun CEO confirms it scouted and passed, citing quality/reputation standards rather than valuation: 'we are not driving through that it is attractive valuations... that's not the way we look at the companies.'"
+risks_peers_raise:
+  - "Saudi anti-dumping investigation into Indian DI pipe imports (Jindal SAW, Oct 2025, p.16) — protectionist tilt against India-sourced product not addressed in MANINDS's own calls"
+  - "Domestic Indian DI pipe sector overcapacity built in anticipation of unmet JJM demand (Jindal SAW, May 2026, p.10-11) — sector capacity-discipline caution"
+  - "Middle East shipping blockade (Strait of Hormuz closed from Mar-2026) halting all MENA exports for months (Jindal SAW, Jul 2026, p.4) — live execution risk for Saudi/GCC exposure, more severe than disclosed in MANINDS's own transcripts per B05"
+  - "API license suspension risk for seamless/oil-and-gas certified product (Jindal SAW, Jul 2026, p.4) — certification risk class relevant to MANINDS's Jammu SS plant, not discussed by MANINDS"
+net_narrative_effect: "complicates"
+analyst_note: "Q6 (order book) is the strongest, cleanest peer-set finding: all three peers show stable-to-record order books through FY26 despite the same acknowledged headwinds, making MANINDS's 37% three-quarter order-book erosion look company-specific. Q5's Welspun NPC pass-on disclosure does not verify or contradict the 1.5x multiple numerically, but is high-value context for synthesis given the timing match and explicit quality rationale. Q2's Jindal SAW 600,000 MTPA Saudi JV tonnage is a precise, load-bearing anchor confirming the capacity race is real and larger than MANINDS's own framing suggests."

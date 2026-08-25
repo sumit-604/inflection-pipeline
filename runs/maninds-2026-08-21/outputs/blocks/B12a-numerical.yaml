@@ -1,0 +1,30 @@
+stage: B12a
+company: MANINDS
+run_date: "2026-08-21"
+model: claude-haiku-4-5
+status: complete
+numbers_checked: 87
+findings:
+  - severity: MAJOR
+    location: "03-ardeep.md Phase 3A, standalone CFO/PAT ratio 0.693x"
+    claimed: "Standalone CFO/PAT = 0.693x FY25"
+    source_truth: "AR FY25 STANDALONE cash flow statement: Net cash from operating activities = Rs9,505.74 lakh = Rs95.06 cr; standalone Profit for the year = Rs13,712.31 lakh = Rs137.12 cr; 95.06/137.12 = 0.693x EXACT. Verifier A used the screener Data_Sheet CFO (Rs67.99 cr), which is the CONSOLIDATED CFO, not standalone; 67.99/153.17 = 0.444x reproduces B03's separately-stated CONSOLIDATED figure."
+    source_fidelity: true
+    orchestrator_disposition: "FLAG CLEARED - source re-check found the number at a correct anchor. B03's 0.693x standalone and 0.444x consolidated both verify against the AR standalone and consolidated cash-flow statements respectively. Verifier A (haiku) mis-sourced the standalone CFO from the screener Data_Sheet's consolidated line. Re-checked by orchestrator against annual-report extract (standalone CF stmt) 2026-08-21. FLAG-CASH direction unaffected (both figures well below 0.7x)."
+  - severity: MINOR
+    location: "04-bizmodel.md revenue base-year basis label"
+    claimed: "FY25 consolidated revenue Rs3,505.35 Cr (89.5% steel Rs3,136.75 Cr + 10.5% RE Rs368.60 Cr)"
+    source_truth: "AR Note 44A p.247 consolidated: Steel Rs3,136.75 Cr + Real Estate Rs368.60 Cr = Rs3,505.35 Cr. Numbers exact; minor clarity gap on stating 'consolidated' basis upfront."
+    source_fidelity: false
+  - severity: MINOR
+    location: "07-emoat.md FY27 guidance anchor form (line-number vs page-number)"
+    claimed: "FY27 consolidated revenue guidance Rs5,000-5,500cr, includes NPC, excludes Merino Shelters"
+    source_truth: "Jun 2026 concall: 'INR5,000 crores - INR5,500 crores ... includes the NPC'; Merino exclusion is management commentary. Both claims verified; anchor uses transcript position not a printed page number."
+    source_fidelity: false
+critical_count: 0
+major_count: 1
+major_count_after_orchestrator_review: 0
+minor_count: 2
+acceptance_rate: 96.6
+source_fidelity_gate: "PASS - the single source_fidelity finding CLEARED on orchestrator source re-check (B03 figure correct at AR standalone cash-flow anchor); 0 CRITICAL; acceptance 96.6% >> 60% floor; no REWORK trigger."
+coverage_note: "87 material figures checked across all 9 stage reports. Priorities: Gate 0 verdict-card scores A-F and classification 100%; Section 1B-relevant ROCE/EBITDA/net-debt/growth/leverage inputs 100%; material BS/P&L cells 95%; concall/presentation claims 80% spot-checked. Remaining 5% are analyst inferences and unrealised forward guidance."

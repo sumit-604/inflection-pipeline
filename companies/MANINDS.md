@@ -85,7 +85,10 @@ FLAG-PROMOTER CONCERN acknowledged. Override for coverage only (not a quality up
   Tracker gate SATISFIED.
 
 ## HANDOVER DOSSIER
-- PENDING: inputs/research/web-handover-dossier.md (to be produced in claude.ai).
+- COMMITTED 2026-08-25: inputs/research/web-handover-dossier.md.
+  Six vertical verdicts, six supersessions (S1-S6), promise-vs-delivery
+  ledger with credibility split, Role 5.5 proof, operator inputs, eight
+  Role 3 seeds. Handover input gate SATISFIED.
 
 ## RUN FOLDERS
 - runs/maninds-2026-08-21/

@@ -142,6 +142,70 @@ Composite score +4 out of a possible +8 (Revenue +2, Margin 0, Cash +1, ROCE +1)
 
 Cap checks: Kernex cap NOT engaged (no DECLINING-with-NONE transition). TRIM rule NOT engaged (backward not all four FIRING). Signal Gate: twelve downstream tracker rows recorded (dossier Section 5) with Notion page IDs; the external-verification floor is met (Entity A 3 signals, Entity B 2 strong plus 1 weak, Entity C 2).
 
+RECONCILIATION LINE ONLY: the consolidated +4 above is NOT a decision. It is a group average that flattered the weak chemicals stub. At entity level (below) no entity earns Revenue FIRING (+2): the group +2 came from netting IMFL volume growth over BSPC's −26% revenue decline and bio-fuel's −22% allocation cut. The three per-entity scorecards below are the decision surface; the consolidated score is retained only to show how the netting misled.
+
+---
+
+## STEP 3 — PER-ENTITY SCORECARDS (three, per handover dossier Section 1)
+
+Segment data: AR FY26 segment note (revenue, MD&A [[page 43]]), Q1 FY27 segment table (revenue, PBIT, assets, liabilities; `1e6ae935-...pdf`, results for quarter ended 30-Jun-2026, dated 12-Aug-2026), CARE March 2026 segment figures (relayed via the handover dossier, [AGENCY]). Cash conversion is UNSCORABLE at segment level (no segment cash-flow statement). Segment ROCE is DERIVABLE from segment assets minus liabilities, but the ~Rs 2,362 Cr of borrowings sits UNALLOCATED in the current segment reporting, so every ROCE and leverage cell is tagged [ESTIMATE, X1] and moves when the standalone opening balance sheets are filed.
+
+### Entity A — Residual India Glycols (BSPC chemicals + gases + 49% Clariant JV)
+
+| Transition | Backward | Catalyst strength | Forward prob | Forward verdict | Score |
+|---|---|---|---|---|---|
+| Revenue | DECLINING (FY24 Rs 1,626 Cr → FY25 Rs 1,341 Cr → FY26 Rs 1,202 Cr, −26%; MD&A) | Moderate (Q1 FY27 +20.6% to Rs 362 Cr, price-led/cyclical; NSU aspiration, no revenue disclosed; JV) | 40-50% | STARTING | +1 |
+| Margin | VOLATILE (segment EBIT 9.33% FY25 [AGENCY] → ~11.7% FY26 → 8.8% Q1 FY27, PBIT 31.75/361.73 [FILED]) | Moderate (crude-driven, cycle-reversion risk per Amdt 17.3) | 20-40% | STAGNANT | 0 |
+| Cash conversion | UNSCORABLE at segment level [ESTIMATE, X1] | — | — | not scored | n/s |
+| ROCE | STRUCTURALLY LOW / capex-not-earning: ~4.3% [ESTIMATE, X1] (PBIT 31.75×4 on segment CE Rs 2,937 Cr, ex-unallocated debt) | Moderate (capex complete, JV dividend ~Rs 46 Cr) | 40-50% (12m) | RECOVERING | +1 |
+| | | | | **COMPOSITE** | **+2 / 6 scored** |
+
+Scorable transitions: 3 (Revenue, Margin, ROCE-estimate). INSUFFICIENT CONVICTION rule does NOT trigger (≥2 scorable).
+
+**KERNEX CAP TEST (explicit, per instruction).** Entity A Revenue is backward DECLINING (−26% over three years). Is the forward catalyst NONE? No. There is an observable catalyst: bio-glycol realisation recovered in Q1 FY27 (chemicals +20.6%) on the crude-driven MEG price move, and the Clariant JV dividend is documented. Catalyst strength is Moderate, not NONE. Therefore the Kernex cap does NOT engage. But Entity A is the closest of the three to tripping it: the recovery is one price-led quarter on a cyclical input. If the next segment print shows bio-glycol realisation per tonne falling again while the Asia MEG index is flat or rising, the catalyst reverts to NONE-in-substance and the Kernex cap engages, capping Entity A at DEEP WATCH regardless of score. Watch trigger 1.
+
+**Entity A verdict: DEEP WATCH** (composite +2/6, leaning cautious). The transition-alpha candidate, on the thinnest evidence: a declining revenue base, one cyclical up-quarter, and a capex-recovery ROCE story that is entirely [ESTIMATE, X1].
+
+### Entity B — IGL Spirits (Potable Spirits + Bio-Fuel)
+
+| Transition | Backward | Catalyst strength | Forward prob | Forward verdict | Score |
+|---|---|---|---|---|---|
+| Revenue | FIRING backward (Spirits FY26 Rs 1,331 Cr +14.4%, Bio-Fuel FY26 Rs 1,470 Cr +40.9% [dossier/AR]); decelerating (Q1 FY27 Spirits net +5.3%, Bio-Fuel net +7%) | Moderate (IMFL volume +55% Q1; offset by flat non-IMFL and −22% ethanol allocation) | 40-50% | STARTING | +1 |
+| Margin | SUSTAINED high (Spirits EBIT ~20.8% Q1, PBIT 75.03/net 361 [FILED+concall]; Bio-Fuel 8.4% Q1, 27.03/323.22 [FILED]) | Moderate; regulated-price-driven, reversal risk on a state price action | 20-40% | STAGNANT | 0 |
+| Cash conversion | UNSCORABLE at segment level [ESTIMATE, X1] | — | — | not scored | n/s |
+| ROCE | Pre-debt segment blend ~24% [ESTIMATE, X1] (spirits ~122% asset-light on CE Rs 247 Cr; bio-fuel ~7.5% on CE Rs 1,438 Cr); post-Rs 1,050 Cr debt allocation the equity return is far lower [ESTIMATE, X1] | Weak (no expansion catalyst; leverage overhang) | — | STAGNANT | 0 |
+| | | | | **COMPOSITE** | **+1 / 6 scored** |
+
+Scorable transitions: 3. INSUFFICIENT CONVICTION does NOT trigger.
+
+**Entity B verdict: DEEP WATCH** (composite +1/6). The read that matters: Entity B is the group's profit engine (about 56% of FY25 operating profit [AGENCY]) and a genuinely capital-light, high-margin spirits business, but it scores low on FTTCP because it has already arrived. FTTCP tests whether a transition is firing forward; a mature, high-margin, regulated-price business with decelerating growth and no expansion catalyst is not a transition story. The low score reflects "no further transition to catch," not poor quality. The two real forward risks are that the margin is regulated-price-set (not brand pricing power) and that the estimated Rs 1,050 Cr debt allocation lands on this entity [ESTIMATE, X1].
+
+### Entity C — Ennature Bio Pharma (plant APIs, nutraceuticals, nicotine, + guar/bio-polymers)
+
+| Transition | Backward | Catalyst strength | Forward prob | Forward verdict | Score |
+|---|---|---|---|---|---|
+| Revenue | CONTAMINATED: FY26 division Rs 205 Cr, −5% [AR anchored]; Q1 FY27 Rs 83.30 Cr +65% [FILED] but partly perimeter (Bio Polymers/guar transferred in on the 1-Apr-2026 appointed date; scheme) | not cleanly scorable | — | not clean | — |
+| Margin | CONTAMINATED: FY26 division 3.5% [dossier] → Q1 FY27 8.7% (PBIT 7.25/83.30 [FILED]) but the jump is partly the high-margin guar line moving in | not cleanly scorable | — | not clean | — |
+| Cash conversion | UNSCORABLE at segment level [ESTIMATE, X1] | — | — | — | — |
+| ROCE | ~9.4% [ESTIMATE, X1] (PBIT 7.25×4 on segment CE Rs 310 Cr) | — | — | estimate only | — |
+| | | | | **VERDICT** | **INSUFFICIENT CONVICTION** |
+
+**Entity C verdict: INSUFFICIENT CONVICTION** (fewer than two cleanly scorable transitions). The only standalone quarter (Q1 FY27) is perimeter-contaminated by the guar-gum transfer, so neither the +65% revenue nor the margin jump is a like-for-like transition read, and the prior-year division was declining (−5%). One contaminated quarter over a declining base cannot support a scored transition verdict. Prompt H (is the base restated?) remains UNRESOLVED and would resolve this. Thiocolchicoside grew 26% in Q1 (`Concall_Aug_2026_Transcript.pdf`, 14-Aug-2026), which is a positive data point but not a scorable transition on its own.
+
+### Three composites, three verdicts (the decision surface)
+
+| Entity | Composite | Verdict |
+|---|---|---|
+| A — Residual India Glycols (chemicals) | +2 / 6 scored | DEEP WATCH (Kernex-adjacent; one price-led quarter) |
+| B — IGL Spirits | +1 / 6 scored | DEEP WATCH (quality engine, already arrived, no forward transition) |
+| C — Ennature Bio Pharma | not scorable | INSUFFICIENT CONVICTION (perimeter-contaminated single quarter) |
+
+Reconciliation to the consolidated run: the group scored +4/8 DEEP WATCH-leaning-BUY-ON-DIPS. That number is retained as a reconciliation line ONLY. It overstated the opportunity by netting: group Revenue FIRING (+2) blended IMFL volume growth over BSPC's −26% decline and the −22% ethanol allocation cut, so no entity actually earns Revenue FIRING. Split three ways, the picture is a Kernex-adjacent chemicals stub, a fully-arrived spirits engine carrying most of the group's debt, and an unscorable pharma micro-cap. The consolidated score does not carry the decision.
+
+**Filename citations (per instruction):**
+- Thiocolchicoside +26%: `Concall_Aug_2026_Transcript.pdf` (India Glycols Q1 FY27 call, 14-Aug-2026), extraction page 10: "Thiocolchicoside sales registered a robust growth of 26% over the prior quarter."
+- "Debt-free after the JV sale": `Concall_Jun_2026_Transcript.pdf` (India Glycols Q4 FY26 call, internal date 18-May-2026), CFO Anand Singhal: "in '28-'29, we are going to sell out 24% more equity as per the agreement… which will again be utilized for the payment of the term loan and making this company debt-free… the Chemical business will be totally debt-free."
+
 ---
 
 ## STEP 5 MONITORING TRIGGERS

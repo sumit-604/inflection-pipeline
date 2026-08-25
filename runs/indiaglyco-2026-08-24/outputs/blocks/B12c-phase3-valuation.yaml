@@ -1,0 +1,23 @@
+stage: B12c-phase3
+company: "INDIAGLYCO"
+run_date: "2026-08-24"
+model: claude-opus-4-8
+status: complete
+scope: "phase-3 valuation-adherence (B11/B10) extended to Role 2 (B14). Phase-1 gate0/emoat in B12c-verifier-framework.yaml (framework 96%)."
+valuation_adherence_pct: 78
+critical_count: 1
+major_count: 6
+minor_count: 3
+rework_recommended_stage11: true
+findings:
+  - {severity: "CRITICAL", location: "11-valuation.md Section 4 Amdt 19; B11 sotp.fv_cagr_pct/return_source_class", rule: "Amdt 19.1/19.2 FV-path over-roll", note: "End-Year-3 FV rolled 4 steps not 3; corrected SOTP end-Y3 ~948.7, FV CAGR ~8.5% -> DISCOUNT-CLOSER, not 11.5% HYBRID. AVOID/no-buy decision and entry zone survive (fails hurdle either way)."}
+  - {severity: "MAJOR", location: "11-valuation.md Entity B Track 1", rule: "Amdt 4.4 RRM + conservative-track-governs", note: "16.6x carried vs 16.0x at stated r=15.0%. STOP/AVOID unchanged."}
+  - {severity: "MAJOR", location: "11-valuation.md Section 4D/4E", rule: "Amdt 4.3 Tier A basis", note: "Tier A justified as FII+DII<3% contradicts B10 ua_qualifiers (>=3%). Tier A correct only via HIGH POTENTIAL limb (B07); divisor/zone unaffected; basis wording wrong."}
+  - {severity: "MAJOR", location: "11-valuation.md Entity A Pillar 3", rule: "Amdt 16 growth-premium eligibility gate", note: "3b +0.5x awarded without citing FTTCP B2 YES/NO flag while Entity A ROCE 13% < required return 15.25%. If B2=NO, 3b zeros, additive raw 14.5x->14.0x (within 1x)."}
+  - {severity: "MAJOR", location: "11-valuation.md Entity A Pillar 1", rule: "Amdt 17.1 converter through-cycle ROCE", note: "13% exceeds 2-year evidenced range (~9-12%); not reconciled to 17.1 method; midpoint current/trough ~8%. Destination operator-approved 14.5x limits decision impact."}
+  - {severity: "MAJOR", location: "14-thesis.md Section 7", rule: "Master Role 2 AVOID vs WATCHLIST", note: "Both AVOID triggers fire (Gate 0 AVERAGE; Hurdle STOP). Mechanical verdict AVOID; report emits WATCHLIST on operator DEEP WATCH disposition. No-buy action identical; label does not follow written rule. Surface for human ruling."}
+  - {severity: "MAJOR", location: "11-valuation.md Section 2 + FV path", rule: "Amdt 18.0/14 Year-4 rows + fade", note: "Single forward column per entity, not Year-1-4 committed rows; FV path rolls flat CAGR with no fade step-down."}
+  - {severity: "MINOR", location: "11-valuation.md Section 4B", rule: "Hurdle destination-PE basis", note: "Entity B HR uses additive 19.5x vs governing RRM 16.6x; verdict STOP unchanged."}
+  - {severity: "MINOR", location: "11-valuation.md Entity A Track 1", rule: "Amdt 4.4 RRM arithmetic", note: "11.5x vs 11.06x at r=15.25%; non-governing."}
+  - {severity: "MINOR", location: "11-valuation.md Entity A divergence", rule: "observational override note", note: "Entity A governing track additive 14.5x over RRM 11.5x via operator override; legitimate, flagged."}
+recomputed_decision: "AVOID/no-buy at CMP unchanged (fails 25% hurdle either way). SOTP FV CAGR ~8.5% DISCOUNT-CLOSER (was 11.5% HYBRID). Role 2 mechanical verdict AVOID (report WATCHLIST, operator DEEP WATCH disposition)."

@@ -68,6 +68,11 @@ _Written into a prompt/framework file so it cannot recur._
   shareholding, research) plus manifest listed_date, so recently-listed
   names are worked from primary filings, not third-party reconstructions.
   Caught on AIMTRON.
+- [2026-08-25] run-pipeline.md stage-0 scaffold + runs/_template: inputs/research/
+  absent on PERMAGNET and INDIAGLYCO runs; cause is git not tracking empty
+  directories; fix is a .gitkeep planted by the scaffold. The /fttcp handover
+  input gate now reports "inputs/research/ missing" as distinct from
+  "dossier missing".
 
 ## OPEN ACTIONS
 _Pending framework edits Keerti maintains._

@@ -1,0 +1,52 @@
+stage: B04-bizmodel
+company: "MILLWORKS"
+run_date: "2026-08-22"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - no_results_pdf
+  - no_rating
+  - no_standalone_annual_report
+  - no_shareholding_pattern
+  - no_dedicated_prospectus_folder_rhp_routed
+  - no_investor_presentation_reg30_only
+  - no_research_notes
+  - announcements_folder_empty_reg30_is_sole_action_record
+  - sector_mismatch_manifest_pharma_cdmo_actual_aero_defence_precision
+flags:
+  - type: FLAG-CUSTOMER-CONCENTRATION
+    detail: "Quick Pay Private Limited is simultaneously: top customer at 47.02% of FY26 revenue under the Defence line (RHP p.28, Risk Factor 3, 'Customer 1'); the receivables counterparty whose own delayed cash receipt is blamed for part of the FY26 receivables blow-up (RHP p.90); and a strategic equity investee (5,332 shares, Rs 575.06 Lakh, ownership % undisclosed, RHP Annexure XV/F20). Second dependency Big Bang Boom Solutions Pvt Ltd sits in the same drone-component chain (RHP p.130). Threads through revenue, cash conversion, related-party risk simultaneously. Top-10 customers = 92.06% of revenue."
+business_type: "manufacturing"
+revenue_streams:
+  - {name: "Defence (dominated by Quick Pay Pvt Ltd, 47.02% of total FY26 revenue)", type: "BTP/BTS precision components + new design/engineering services", pct_of_revenue: 69.43, predictability: "low"}
+  - {name: "Railways", type: "BTP/BTS precision components (brake, door, coupler, pantograph)", pct_of_revenue: 23.65, predictability: "medium"}
+  - {name: "Semiconductor", type: "BTP/BTS precision fixtures and frames", pct_of_revenue: 5.94, predictability: "low"}
+  - {name: "Aerospace", type: "BTP/BTS aero-engine components", pct_of_revenue: 0.99, predictability: "low"}
+asset_intensity: "medium"
+wc_intensity: "high"
+pricing_power: "weak"
+cyclicality: "cyclical"
+valuation_methods:
+  primary: {method: "EV/EBITDA vs named peers (Unimech Aerospace, Azad Engineering)", why: "Strips 115BAB->115BAA tax distortion, goodwill amort, non-operating FX gain in PBT; peer EBITDA margins 42.47%/41.78% (RHP p.96-98) a real anchor for a capex-cycle manufacturer"}
+  secondary: {method: "P/E vs peer group", why: "SME convention, used in RHP Basis for Issue Price (peer P/E 87.87x-96.45x, RHP p.93-94); read only alongside EV/EBITDA given earnings-quality caveats"}
+  tertiary: {method: "Order-book coverage / revenue-visibility check", why: "Order book Rs 67.14 Cr (RHP p.129) covers only ~5.4 months of FY26 revenue run-rate; sanity check, not stand-alone method"}
+  not_applicable:
+    - "DCF - only 3 restated years, all FCF-negative (Gate0 Block B 0/20)"
+    - "Asset-based/NAV - all 4 units leased, not owned (RHP p.150-151)"
+    - "Dividend discount - no dividend history/policy"
+    - "Sum-of-parts - single reporting segment (AS-17)"
+irrelevant_ratios:
+  - "Same-period revenue growth in isolation (573% FY26 is near-nil-base + single-customer step-change)"
+  - "PAT/EPS trend as standalone quality signal (restatement cluster + Rs 441L non-operating FX gain, 8.8% of PBT)"
+  - "Debt/Equity 0.21 in isolation (understates leverage: promoter guarantees grew 2.5x FY26; promoter real estate cross-collateralised)"
+  - "Standard DSO benchmark (FY26 spike is substantially one counterparty Quick Pay)"
+  - "COGS-to-revenue single-year (FY26 has new zero-COGS Sale of Services line, 15.5% of revenue)"
+must_track_metrics:
+  - {metric: "Quick Pay / top-customer revenue % of quarterly sales", healthy: "<30%", red_flag: "47.02% now, or rising"}
+  - {metric: "Order book coverage vs trailing revenue", healthy: "9-12 months", red_flag: "<6 months (~5.4 now)"}
+  - {metric: "Operating cash flow / PAT", healthy: ">=0.8x", red_flag: "<0.5x or negative (-0.29x cumulative)"}
+  - {metric: "EBITDA margin vs peer median", healthy: ">=~42%", red_flag: "sustained gap below (36.71% now)"}
+  - {metric: "MSME payable balance and unpaid MSMED-Act interest", healthy: "stable, interest current", red_flag: "both growing (10x and 9x FY26)"}
+capex_new_objects_cr: 61.03
+one_line_verdict: "A fast-growing, sub-scale precision-engineering job shop whose headline growth and margin expansion sit on top of one customer relationship that is simultaneously its biggest revenue source, its worst receivables problem, and a related equity investment."
+analyst_note: "Quick Pay Private Limited is not just a receivables/investment overlap (B01 flag) but the largest customer outright at 47.02% of FY26 revenue, RHP Risk Factor 3 'Customer 1' (p.28). With Big Bang Boom Solutions execution dependency (p.130), the entire Defence line (69.43%) is substantially one counterparty dressed as a four-sector business. Moat scoring, pricing power, valuation method selection all assume this concentration persists; FTTCP/Role 1 must treat Quick Pay diversification (or absence) as the single highest-priority verification item, ahead of the cash-conversion failure."

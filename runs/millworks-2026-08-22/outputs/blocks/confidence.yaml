@@ -1,0 +1,21 @@
+stage: confidence-delta
+company: "MILLWORKS"
+run_date: "2026-08-22"
+phase: 1
+confidence_delta:
+  numerical_acceptance: 100     # B12a: 38/38 numbers clean, 0 source-fidelity holds
+  redflag_coverage: 67          # B12b: 10 of 15 verifier-found flags caught upstream (2 MAJOR misses, 0 CRITICAL)
+  framework_adherence: 96       # B12c Gate0+EM portion only; 0 CRITICAL/0 MAJOR/3 MINOR; decision concurs AVOID
+  peer_utilisation: 100         # B12d: 7/7 peers substantive; citation-accuracy 71 noted separately
+  valuation_framework_adherence: pending_phase_3
+  overall: 67                   # min of the four available components
+band: "60-74 normal-low: PROCEED-class verdicts downgrade one level"
+rework_check:
+  verifier_a_critical: 0
+  any_acceptance_below_60: false   # lowest is B12b 67
+  forced_rework: false
+notes:
+  - "Overall pinned by redflag_coverage 67 (B12b). Two MAJOR B05 misses drive it: (1) receivables reported on 178-day/48.9% average basis while RHP FY26 CLOSING receivables = 93.22% of revenue, understating the central risk ~2x; (2) Reg30 Annexure-A related-party denial vs same-release Quik Pay investee promotion (disclosure-consistency). Both feed the FLAG-CASH determination and the dossier."
+  - "Numerical fidelity is perfect (100). The gate is about analysis trustworthiness; the source numbers are sound. The B12b/B12d misses are interpretation/citation completeness, not fabricated figures."
+  - "B12d citation-accuracy 71 (two quote/file-label misattributions in B06) does not lower peer_utilisation (7/7 substantive) but is logged for archival correction."
+  - "valuation_framework_adherence intentionally pending: B10/B11 run in phase 3, so verifier C's valuation half was not run here."

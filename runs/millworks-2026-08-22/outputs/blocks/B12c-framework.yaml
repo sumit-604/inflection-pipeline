@@ -1,0 +1,27 @@
+stage: B12c
+company: "MILLWORKS"
+run_date: "2026-08-22"
+model: claude-opus-4-8
+status: complete
+phase: 1
+scope: "Gate 0 (B01) + Emerging Moat (B07) only; valuation-adherence (B10/B11) deferred to phase 3"
+gate0:
+  rules_checked: 37
+  fails:
+    - {rule: "M4 customer stickiness (Block F)", severity: "MINOR", recompute: "scored 3; strict reading 0-1. moat_score 13->10, moats_confirmed 3->2 if 0; moat_class MODERATE unchanged; no decision impact"}
+emoat:
+  rules_checked: 30
+  fails:
+    - {rule: "Section 2C capex-embedded growth", severity: "MINOR", recompute: "declared INPUT GAP citing B01 lacking FAT, but B01 M3 carries FY26 Net Block 2,508.48 and FAT 5.93x; method was attemptable. No em_score impact"}
+    - {rule: "Section 5 multiplier B2/F2", severity: "MINOR", recompute: "0.7x on documented-mixed rows vs taxonomy 1.0x/0.5x; corrected total ~21.7-22.2, still MODEST, still <25. Conservative, no band/qualifier impact"}
+valuation: {rules_checked: 0, fails: [], note: "PHASE 3, not run"}
+recomputed_decision: "AVOID (concurs, both stages)"
+findings:
+  - {severity: "MINOR", location: "B01 Block F, M4 customer stickiness", description: "Scored 3 in a rubric gap; strict reading 0-1. moat_class MODERATE and AVOID (DB4+LIMITED) both hold regardless."}
+  - {severity: "MINOR", location: "B07 Section 2C capex-embedded growth", description: "Prescribed capex x FAT method declared INPUT GAP; B01 M3 carries FY26 Net Block 2,508.48 and FAT 5.93x so method was attemptable. Proxy transparently flagged; no em_score/decision impact."}
+  - {severity: "MINOR", location: "B07 Section 5 scorecard B2/F2 multipliers", description: "0.7x applied where taxonomy offers 1.0x/0.5x. Conservative; corrected total stays MODEST and below EM>=25."}
+critical_count: 0
+major_count: 0
+minor_count: 3
+acceptance_rate: 96
+framework_adherence: 96

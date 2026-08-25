@@ -1,0 +1,94 @@
+stage: B08-promoter
+company: "MANINDS"
+run_date: "2026-08-21"
+model: claude-sonnet-5
+status: partial
+input_gaps:
+  - "sebi.gov.in order page (11B order, 29 Sep 2025) blocked by network egress; relied on order title + 4 independent media summaries, not full order text"
+  - "business-standard.com articles (SAT stay, others) blocked by egress; used search-snippet summaries only"
+  - "trendlyne.com quarterly shareholding-pattern trend page blocked by egress"
+  - "scanx.trade FY26 no-encumbrance declaration article blocked by egress"
+  - "2012 SAT order re Nikhil Mansukhani (indiacp.blogspot.com) could not be confirmed; excluded from findings"
+  - "firstprinciplesinvesting.substack.com governance deep-dive blocked; not incorporated beyond search snippets"
+  - "Final SAT/appellate outcome on the 29 Sep 2025 SEBI order not yet known as of run date"
+  - "Limitless Contracting loan interest rate/tenor not disclosed in AR Note 36"
+  - "Feb 2026 EGM independent-director appointee name/credentials not found"
+  - "R.C./Nikhil Mansukhani education and biography not found"
+  - "Employee reputation (Glassdoor/AmbitionBox) yielded no company-specific data"
+  - "Proxy advisory (IiAS/SES/InGovern) coverage of MANINDS not found"
+  - "Exact quantified restatement % from the SEBI misstatement finding not found"
+flags:
+  - type: FLAG-PROMOTER
+    verdict: "CONCERN"
+    top_findings:
+      - "SEBI order 29 Sep 2025: deliberate misstatement of FY15-21 financials, non-consolidation of Merino Shelters, unapproved RPTs, fund diversion; 2-yr trading ban on Chairman, MD, and a former ED/CFO (stayed by SAT 10 Oct 2025, pending 50% penalty deposit)"
+      - "NFRA banned the FY16-17 audit engagement partner (Rohira Mehta & Associates) for 5 years, Nov 2023, for the same non-consolidation matter"
+      - "Rs97.68cr loan from promoter-controlled Limitless Contracting Pvt Ltd, no interest rate/tenor disclosed"
+      - "Pattern of 5-6 SEBI actions 2014-2025, escalating in severity"
+      - "Live Supreme Court dispute between two Mansukhani promoter branches over share title/dividend entitlement"
+      - "Transition evidence: named institutional entry (Kacholia, Carnelian, Ovata Capital) via Rs255cr growth-capex raise; professional external CFO hire; management claim MSPL consolidated since FY23-24"
+verdict: "CONCERN"
+scorecard: {clean: 0, caution: 7, red: 3}
+deal_breakers:
+  - "SEBI market ban: TRIGGERED (2-yr bar on company + 3 executives, 29 Sep 2025 order, currently stayed on appeal)"
+  - "Economic offence conviction: not triggered (civil/regulatory adjudication, not criminal conviction)"
+  - "Live SFIO: not triggered (none found)"
+  - "PMLA with attached assets: not triggered (none found)"
+  - "Auditor resignation within 3 years: not triggered (current auditor mid-term, no resignation; prior firm's engagement partner NFRA-banned, a distinct fact)"
+  - "Pledge >40%: not triggered (~20.05% of promoter holding, ~8.7% of total shares outstanding)"
+  - "Multiple mid-term independent director exits within 3 years: not triggered (none found)"
+  - "Restatement cutting past profits >10%: not quantified in sources reviewed (qualitative misstatement finding only)"
+adverse_findings:
+  - {finding: "SEBI 11B order 29 Sep 2025: deliberate misstatement FY15-21, non-consolidation of Merino Shelters, unapproved RPTs, fund diversion; 2-yr trading ban + ~Rs1cr aggregate penalty on company/Chairman/MD/former ED-CFO", evidence_tier: "MEDIA REPORTED (cross-verified 4+ outlets plus sebi.gov.in title)", source: "Angel One, Outlook Business, The Week, Elite Wealth, sebi.gov.in order listing", date: "2025-09-29"}
+  - {finding: "SAT granted stay on the entire Sep 2025 SEBI order, conditional on 50% penalty deposit", evidence_tier: "MEDIA REPORTED", source: "Business Standard / Angel One", date: "2025-10-10"}
+  - {finding: "NFRA banned CA Nilesh Chheda (engagement partner, Rohira Mehta & Associates, FY16-17 audit) for 5 years + Rs5L fine for professional misconduct on MSPL non-consolidation opinion", evidence_tier: "VERIFIED (NFRA.gov.in order listing, cross-corroborated Business Standard/Moneylife/TaxGuru)", source: "nfra.gov.in", date: "2023-11-24"}
+  - {finding: "Rs97.68cr loan payable to promoter-controlled Limitless Contracting Pvt Ltd, FY25 year-end, rate/tenor not disclosed", evidence_tier: "VERIFIED", source: "AR FY2024-25 Note 36C/D (consolidated), p.232-233", date: "2025-03-31"}
+  - {finding: "MCA Section 206(5) notice to MIIL and directors, still pending settlement", evidence_tier: "VERIFIED", source: "AR FY2024-25 Secretarial Audit Report p.74, Notes 43/47", date: "2025-05-12"}
+  - {finding: "65,00,000 promoter shares pledged to SBI for FX term loan, flat in absolute terms since FY25 through Jun 2026 (~8.7% of current O/S)", evidence_tier: "VERIFIED (AR) + MEDIA REPORTED (2026 cross-check)", source: "AR FY2024-25 borrowings note p.150-151; shareholding pattern aggregator Jun 2026", date: "2025-03-31 / 2026-06"}
+  - {finding: "Live Supreme Court dispute between two Mansukhani promoter branches over share title and Rs466.75L dividend entitlement, FY14-15 to FY23-24", evidence_tier: "VERIFIED", source: "AR FY2024-25 Note 34(d) standalone / 35(d) consolidated, p.160", date: "2025-05-12"}
+  - {finding: "CFO Sanjay Kumar Agrawal resigned after under a year in role, 'personal reasons', 8 Jan 2025", evidence_tier: "MEDIA REPORTED", source: "Business Standard / Capital Market News", date: "2025-01-08"}
+transition_evidence:
+  - "Ashish Kacholia stake 1.20% to 3.04% via Jul 2025 Rs255cr preferential issue (MEDIA REPORTED, ScanX/NBM&CW, 2025-07-28)"
+  - "Carnelian Asset Management and Ovata Capital (Hong Kong) subscribed in same Rs255cr preferential round (MEDIA REPORTED, 2025-07-28)"
+  - "Professional external CFO Sandeep Kumar (ex-Welspun, ex-Raymond, 34 yrs experience) appointed within 10 days of predecessor's exit (MEDIA REPORTED, 2025-01-18)"
+  - "Management claim: Merino Shelters consolidated since FY23-24, remediating the core SEBI/NFRA disclosure failure (MEDIA REPORTED management assertion, AR treatment consistent but not independently re-verified)"
+  - "Further independent director appointment approved at EGM, name/credentials not found (MEDIA REPORTED, 2026-02-11)"
+pledge_pct_latest: 8.7
+pledge_trend: "stable — 65,00,000 shares pledged, unchanged in absolute count from FY25 AR (Mar 2025) through Jun 2026; % of total O/S fell from ~10% to ~8.7% purely because the share base grew via warrant conversion and a non-promoter preferential issue, not because pledged shares were released"
+searches_performed:
+  - "SEBI order Man Industries India Limited 2025 adjudication forensic audit"
+  - "Man Industries India promoter shareholding pattern 2025 2026 pledge"
+  - "Limitless Contracting Mansukhani Man Industries"
+  - "Man Industries promoter shareholding 49.61% to 43.21% decline reason"
+  - "Man Industries QIP fund raise 2025"
+  - "Man Industries promoter block deal sale September 2025"
+  - "Man Industries warrant lapse 25,00,000 promoter 2025"
+  - "Man Industries preferential issue non-promoter Rs 300 crore 2025"
+  - "Man Industries preferential allotment Ashish Kacholia"
+  - "Man Industries pledge shares released SBI FX loan repaid"
+  - "Man Industries Mansukhani family dispute two promoter groups litigation"
+  - "Man Industries CFO change Sandeep Kumar Sanjay Agrawal resignation 2025"
+  - "Man Industries independent director resignation IiAS proxy advisory"
+  - "Man Industries short seller report activist investor concerns"
+  - "Man Industries SFIO ED PMLA investigation"
+  - "Man Industries board independent directors 2025 2026"
+  - "Man Industries Glassdoor AmbitionBox employee reviews"
+  - "Man Industries CSR philanthropy Mansukhani Foundation"
+  - "Man Industries SEBI order September 2025 misrepresentation details (multi-outlet)"
+  - "Man Industries MCA compounding Section 206(5) 2026 outcome"
+  - "Man Industries Bombay High Court SEBI settlement application 2026"
+  - "NFRA order Man Industries August 2023 auditor quality"
+  - "Man Industries Mansukhani brothers feud NFRA auditor"
+  - "Man Industries statutory auditor 2016-17 Nilesh Chheda firm name"
+  - "Man Industries auditor change history"
+  - "Man Industries shareholding pattern June 2026 pledged shares"
+  - "Man Industries total shares outstanding 2026"
+searches_skipped:
+  - "WebFetch sebi.gov.in/enforcement/orders/sep-2025/11b-order... (EGRESS_BLOCKED)"
+  - "WebFetch business-standard.com SAT stay article (EGRESS_BLOCKED)"
+  - "WebFetch trendlyne.com shareholding pattern page (EGRESS_BLOCKED)"
+  - "WebFetch scanx.trade no-encumbrance FY26 article (EGRESS_BLOCKED)"
+  - "WebFetch indiacp.blogspot.com 2012 SAT order re Nikhil Mansukhani (EGRESS_BLOCKED)"
+  - "WebFetch firstprinciplesinvesting.substack.com governance deep-dive (EGRESS_BLOCKED)"
+verdict_basis: "SEBI's 29 Sep 2025 order found deliberate financial misstatement, unapproved RPTs and fund diversion FY15-21, with a 2-year trading ban on Chairman and MD (currently stayed on appeal); NFRA independently banned the period's audit engagement partner for 5 years on the same non-consolidation matter, and a Rs97.68cr promoter-entity loan carries no disclosed terms — a repeated, escalating regulatory pattern since 2014, offset by named institutional capital entry and a professional CFO hire."
+analyst_note: "The ~5pp promoter-holding drop into Sep 2025 flagged in the leads is NOT a sale or pledge invocation: it is dilution from a Rs255cr preferential issue to credible non-promoter investors (Kacholia, Carnelian, Ovata Capital) funding Jammu/Saudi capex. Pledge share count (65,00,000) is unchanged since FY25; its falling percentage is a denominator effect, not a release. Two separate AR facts happen to share the figure Rs97.68cr (Limitless Contracting loan payable vs a subsidiary's CARO short-term-fund-use qualification) — verified as distinct, not conflated. Primary-source SEBI/Business Standard/Trendlyne pages were blocked by network egress; all adverse findings were still corroborated across 2+ independent secondary sources before being recorded."

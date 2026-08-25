@@ -80,9 +80,11 @@ leads_for_stages:
       drop Jun2025 (48.21%) to Sep2025 (43.21%). Stage 8 to explain and anchor: sale vs
       reclassification. Feeds FLAG-PROMOTER consideration.
   - concall_coverage: >
-      Corpus concalls cover Q1FY26 (Aug2025) to Q4FY26 (Jun2026). Q1FY27 concall (12-Aug-2026)
-      is NOT in corpus; its content is available only as an operator lead. Q1FY27 RESULTS pdf
-      IS in corpus. Stage 5 maps quarters from transcript content.
+      CLOSED-2026-08-25: corpus concalls now cover Q1FY26 (Aug2025) to Q1FY27 (Aug2026, filed to
+      BSE 18-Aug-2026), five transcripts. The Q1FY27 concall gap is CLOSED. Corpus verdict stays
+      CORPUS GAPPED on the remaining FIVE gaps (Reg-30 announcement PDFs; SEBI 29-Sep-2025 order +
+      SAT stay text; FY26 Annual Report; a prior-year AR; BSE SAST pledge filing). Stage 5
+      re-run on the full five-transcript set 2026-08-25.
 
 extraction_note: >
   All 22 input PDFs pre-extracted to work/extracted/*.txt with ===== PAGE N ===== markers

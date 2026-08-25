@@ -3,7 +3,7 @@
 
 **Provenance.** Produced 25-Aug-2026 in the claude.ai project (Dhruva Research) from the Phase 2 understanding stress-test of the Halt 1 dossier for run `runs/indiaglyco-2026-08-24`. This file carries knowledge the ingested corpus does NOT hold: live-web verification (NCLT effective-date filing, preferential-issue disclosure, CARE March 2026 rationale in full, Supreme Court ethanol record, UP excise series, MEG price indices), the signed three-entity mental model, supersessions of corpus-derived views, and Role 5.5 tracker proof. **Precedence rule: where this dossier conflicts with a corpus document, the corpus document wins UNLESS the dossier explicitly marks a supersession with its evidence.** Evidence tiers: [FILED] primary/filed document, [AGENCY] rating agency or regulator or court record, [MGMT] management verbal (concall or presentation), [SECONDARY] credible research/forum/index vendor, [INFERENCE] analyst arithmetic or deduction, labeled as such.
 
-**Status of this file. v3.2, 25-Aug-2026.** X1 ruled ESTIMATE by operator; Cash Conversion pillar and Role 1 may run on the labelled assumption (Section 2 V6 operator ruling); the filed standalone opening balance sheets supersede the estimate on arrival. v3 added live-web and operator-uploaded filings read in claude.ai, corrections 2-3 toward the corpus, and the NCLT order's allocation clauses; v3.1 added the Prompt H return.
+**Status of this file. v3.3, 25-Aug-2026.** X1 ruled ESTIMATE by operator; Cash Conversion pillar and Role 1 may run on the labelled assumption (Section 2 V6 operator ruling); the filed standalone opening balance sheets supersede the estimate on arrival. v3 added live-web and operator-uploaded filings read in claude.ai, corrections 2-3 toward the corpus, and the NCLT order's allocation clauses; v3.1 added the Prompt H return; v3.3 completed tracker rows A4/B4/C3 and aligned S4 and Section 7 to the X1 ESTIMATE ruling. Valuation gate: OPEN on the X1 ESTIMATE per operator ruling 25-Aug-2026; see S4 for the re-run obligation.
 
 ---
 
@@ -61,7 +61,7 @@ India Glycols is not one archetype. It is three businesses inside one pre-demerg
 
 **S3 — Spirits profit engine.** Corpus frames the spirits story as premiumisation and IMFL lock-in. SUPERSEDED BY CARE's attribution of the FY25 margin gain to government country-liquor price hikes [AGENCY] and by management's own Q1 FY27 numbers (volume +55% vs revenue +26%) [MGMT]. The engine is regulated country-liquor pricing plus distributed volume. Vertical 3's "one-quarter or reversal?" question is answered: it is the current mix.
 
-**S4 — Fragility single-point failure.** Corpus: demerger completion. SUPERSEDED BY the 20-Aug-2026 effective-date filing [FILED]: the SPOF is now debt allocation across three balance sheets. This is the valuation gate.
+**S4 — Fragility single-point failure.** Corpus: demerger completion. SUPERSEDED BY the 20-Aug-2026 effective-date filing [FILED]: the SPOF is debt allocation across three balance sheets. OPERATOR RULING 25-Aug-2026: the allocation is carried as a three-method ESTIMATE (Section 2, V6) so that FTTCP's Cash Conversion pillar and Role 1 may run on a labelled assumption. Every leverage-dependent output must carry the tag [ESTIMATE, X1] until the filed opening balance sheets replace it, at which point the affected steps are re-run.
 
 **S5 — Profit concentration.** Corpus revenue shares (29/32/35/5) understate concentration. SUPERSEDED BY CARE's FY25 operating-profit mix: PS 56% / BSPC 27% / BF 12% / EB 12% [AGENCY]. IGL Spirits inherits ~68% of operating profit; the residual ~27% plus the JV dividend.
 
@@ -110,13 +110,14 @@ Nine signal rows written 25-Aug-2026 to the DOWNSTREAM SIGNAL TRACKER (data_sour
 | C1 | C | Product mix: Thiocolchicoside, guar gum, nicotine | 1 | Neutral | 14-Nov-2026 | 3c7bb2b9-d3ab-81be-8b75-ee88ec9807bb |
 | C2 | C | Importer-country nicotine / vaping regulation | 3 | Neutral | 05-Dec-2026 | 3c7bb2b9-d3ab-8147-b9a3-ca7f78f446f0 |
 | X1 | All | Standalone opening balance sheets and debt allocation | 1 | Neutral | 05-Sep-2026 | 3c7bb2b9-d3ab-81d7-88a5-c88cbfb5881e |
-| A4 | A | [signal text not supplied in v3.2 instruction] | [n/s] | — | — | [page ID not supplied in v3.2 instruction] |
-| B4 | B | [signal text not supplied in v3.2 instruction] | 3 | — | — | [page ID not supplied in v3.2 instruction] |
-| C3 | C | [signal text not supplied in v3.2 instruction] | [n/s] | — | — | [page ID not supplied in v3.2 instruction] |
+| A4 | A | DGCI&S imports of glycol ethers and MEG from China (HS 2909.43, 2909.44, 2905.31) | 2 | Neutral | 12-Sep-2026 | 3c7bb2b9-d3ab-8100-be43-e893051cb5ab |
+| B4 | B | CSD canteen listings and price points for IGL brands | 3 | Neutral | 14-Nov-2026 | 3c7bb2b9-d3ab-8184-80ea-d759ac7c10e3 |
+| C3 | C | DGCI&S exports of vegetable alkaloids and nicotine, HS 2939 | 2 | Neutral | 12-Sep-2026 | 3c7bb2b9-d3ab-81de-82c1-fb479411483d |
 
-External signal count: Entity A 3, Entity B 2 strong + 1 weak (B4 Tier 3), Entity C 2.
-
-Note [Claude Code, v3.2]: rows A4, B4, C3 were requested but their Notion page IDs and signal definitions were not present in the v3.2 instruction ("the page IDs above" resolved to nothing in that message); the cells are marked not-supplied rather than fabricated, and the "Nine signal rows written" count above still refers to the nine actually written on 25-Aug. Supply the three page IDs and signal texts for a v3.3 fill.
+A4 falsifier: China-origin glycol-ether imports up more than 20% YoY for two consecutive quarters while BSPC volume falls. Source: tradestat.commerce.gov.in, Commodity-wise all Countries, Imports (fetched live 25-Aug-2026). Baseline NOT PULLED, portal is form-driven; operator to query FY26 and FY25.
+B4 falsifier: IGL brands drop off the CSD monthly bulletin or canteen price boards, or a canteen price cut on the mass whisky segment (Rs 444 to 521 a bottle, Surya Army Canteen Lucknow, 19-Jul-2026 [SECONDARY]). Source: csdindia.gov.in monthly bulletins; item prices sit behind customer login. WEAK SIGNAL, does not count toward the external floor alone.
+C3 falsifier: two consecutive quarters of falling India export value under the HS 2939 nicotine line while Ennature reports nicotine growth, or the alkaloid line down more than 20% YoY. Source: tradestat.commerce.gov.in, Commodity-wise all Countries, Exports (fetched live 25-Aug-2026). Baseline NOT PULLED; operator to query FY26 and FY25 and fix the eight-digit nicotine line.
+External signal count: Entity A 3, Entity B 2 strong plus 1 weak, Entity C 2. Tracker holds 12 rows for INDIAGLYCO.
 
 Deliberately NOT entered: Gloriosa superba seed price (no live primary source; sits in C1 Notes as source discovery pending); Uttarakhand excise series (same). Weekend run cadence live.
 
@@ -137,7 +138,8 @@ Until filled, every option is carried at ZERO in the base case.
 
 ## 7. OPEN ITEMS AND GATES
 
-**Blocking (valuation cannot run):** X1 standalone opening balance sheets for all three entities, expected in the information memoranda two to six weeks after the 2-Sep-2026 record date; scheme definitions and borrowing schedule (operator fetch from NSE application 48932, read in claude.ai).
+**Blocking (valuation cannot run):** none. X1 ruled ESTIMATE by operator on 25-Aug-2026.
+**Superseding inputs (re-run affected steps on arrival):** standalone opening balance sheets from the information memoranda; scheme definitions and borrowing schedule (NSE application 48932); the Q1 FY27 segment comparative that resolves Prompt H.
 
 **Monitoring, not blockers:**
 - Prompts B, D, E, G: RETURNED and filled inline (Sections 2 and 4). Residual NOT-DISCLOSED items within them (absolute IMFL revenue, Thiocolchicoside/nicotine shares, nicotine end-market, NSU revenue, any Q4 ethanol top-up) stay open as tracker rows, not blockers.

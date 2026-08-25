@@ -1,7 +1,12 @@
-# HALT 1 UNDERSTANDING DOSSIER
+# HALT 1 UNDERSTANDING DOSSIER (REGENERATED)
 
 Company: Man Industries (India) Ltd (MANINDS)
 Run date: 2026-08-21
+Regeneration note: this dossier replaces the 2026-08-21 version. The corpus
+gap that previously left the cash-conversion narrative partially resolved
+is now closed: the operator supplied the full CRISIL Rating Rationale
+dated 01-Jun-2026 on 2026-08-25 (inputs/rating/rating-rationale-01Jun2026.md).
+This reassembly reflects that document as committed corpus throughout.
 
 This dossier assembles what the pipeline already found. It does not value
 the company. It does not recommend an action. The decision to kill, watch
@@ -43,17 +48,20 @@ One presentation held: Investor_Presentation_1.pdf, 26 pages. B04
 identifies its content as Q1 FY27 (Aug-2026) vintage, the latest held.
 
 ### 5. Research / rating
-One rating document held: rating/ratings.pdf, the CRISIL Jul-20-2026
-Credit Bulletin (a bank-facility update carrying the current ratings,
-CRISIL A+/Stable long-term, A1 short-term), scanned and OCR'd (B00). The
-full CRISIL rating rationale, dated June-01-2026 and referenced inside
-the bulletin, is NOT in corpus (B00 input_gaps: rating-rationale-partial).
-This is the named FLAG-CASH evidence gap: the working-capital/cash
-narrative that a full rationale would carry is only partially resolved
-(B00). Research held: two Ventura Securities notes (initiation
-02-Sep-2025, update 19-Feb-2025) plus an operator operational summary
-dated 2026-08-24 (B00) — all recorded as non-anchored leads, not filed
-evidence.
+Two rating documents now held. The first, rating/ratings.pdf, is the
+CRISIL Jul-20-2026 Credit Bulletin (a bank-facility update carrying the
+current ratings, CRISIL A+/Stable long-term, A1 short-term), scanned and
+OCR'd (B00). The second, newly committed on 2026-08-25, is the full CRISIL
+Rating Rationale dated 01-Jun-2026 (inputs/rating/rating-rationale-01Jun2026.md),
+operator-ferried verbatim from CRISIL's published rationale. The rationale
+text is cross-checked against audited FY26 numbers and reconciles: revenue
+Rs3,564cr, PAT Rs170cr, debtor days approximately 128, all match the
+provisional FY26 figures the rationale itself carries (rating-rationale
+document header). This closes the gap the run previously carried as
+"rating-rationale-partial" (B00 input_gaps, now marked CLOSED-2026-08-25).
+Research held: two Ventura Securities notes (initiation 02-Sep-2025,
+update 19-Feb-2025) plus an operator operational summary dated
+2026-08-24 (B00) — all recorded as non-anchored leads, not filed evidence.
 
 ### 6. Corporate actions
 Zero Reg-30 / exchange announcement PDFs held (B00). This gap is softened,
@@ -69,17 +77,8 @@ themselves are absent.
 
 **CORPUS GAPPED**
 
-> POST-HALT ADDENDUM (2026-08-25): the operator supplied the full CRISIL Rating
-> Rationale dated 01-Jun-2026 (now inputs/rating/rating-rationale-01Jun2026.md).
-> Gap #1 below (CRISIL full rationale) is CLOSED. This resolved FLAG-CASH from
-> INDETERMINATE to GROWTH-INDUCED and moved the gate verdict from PROCEED WITH
-> CAVEATS to PROCEED WITH FLAGS (see outputs/final/gate-recommendation.md). Six
-> gaps remain, so the corpus verdict stays CORPUS GAPPED, but the load-bearing
-> FLAG-CASH gap is now closed.
+The full CRISIL rating rationale gap is now CLOSED. Six gaps remain:
 
-Named gaps, each with expected source:
-- Full CRISIL rating rationale (June-01-2026) — expected source: rating
-  agency site (CRISIL Ratings). Findable-but-missing.
 - Reg-30 / exchange announcement PDFs (guarantee, NPC acquisition, order
   wins) — expected source: BSE. Findable-but-missing.
 - SEBI 29-Sep-2025 order full text and the SAT stay order — expected
@@ -101,6 +100,11 @@ Named gaps, each with expected source:
   line — expected source: BSE. Findable-but-missing; the corpus instead
   holds an operator-ferried screener screenshot (B00), which closes the
   promoter-holding trend question but not the pledge-percentage question.
+
+With six gaps still open, the verdict stays CORPUS GAPPED. The one gap
+that was load-bearing for the cash-conversion determination — the full
+CRISIL rationale — is now closed, and its content is used throughout this
+regenerated dossier (Sections 2 and 4).
 
 ---
 
@@ -136,23 +140,54 @@ Two business lines, declared separately.
   Mar-2026) (B05), a decline peers (Jindal SAW, Welspun Corp, Ratnamani)
   did not share over the same window — their order books were
   stable-to-record (B06), which reads the MANINDS decline as
-  company-specific.
+  company-specific. The CRISIL rationale independently states the order
+  book at approximately Rs3,000cr, covering 6-8 months of execution
+  (rating-rationale, Key Rating Driver 2), corroborating the trough level
+  from a source outside the concall/peer set.
 - Capacity / execution ramp on committed capex (NPC, Jammu, Dammam):
   capex-embedded growth is 46% (B07); Jammu commissioning slipped from an
-  April-2026 date to March 2027 (B05, B07); the original Saudi greenfield
-  SAW plant was reaffirmed on schedule in the Q3FY26 call, then scrapped
-  the next quarter in favour of the NPC acquisition (B05).
+  April-2026 date to March 2027 in company disclosure (B05, B07), while
+  the CRISIL rationale separately gives an expected completion of
+  Sep-2027 for the Jammu stainless plant with commissioning/ramp-up
+  flagged as a monitorable (rating-rationale, Key Rating Driver 2) — a
+  later date again than either prior company statement; the original
+  Saudi greenfield SAW plant was reaffirmed on schedule in the Q3FY26
+  call, then scrapped the next quarter in favour of the NPC acquisition
+  (B05).
 - Working capital / cash conversion: working-capital days rose from 116.2
   to 260.7 across FY24-FY26 (B01); DSCR sits below 1.0x at both
   standalone (0.59x FY25) and consolidated (0.52x FY25) levels (B02);
   CFO/PAT is 0.693x standalone and 0.444x consolidated, both below the
-  0.7x threshold (B03, verified at source by B12a).
+  0.7x threshold (B03, verified at source by B12a). Against this audited
+  picture, the now-committed CRISIL rationale names the working-capital
+  stretch as caused by two identified, non-recurring events — a delayed
+  Taiwan order that caused inventory buildup (resolved Q1FY26) and a
+  Middle East conflict that blocked ship deliveries to the UAE (resolved
+  by a rerouting approval to Fujairah port) — and states working capital
+  "is expected to normalize in the current fiscal year" (rating-rationale
+  verbatim, Weaknesses / Detailed Rationale). CRISIL assesses liquidity
+  as Strong (net cash accruals Rs450-580cr against Rs230-250cr repayment
+  obligations, unencumbered cash ~Rs300cr as of 31-Mar-2026) and upgraded
+  the long-term rating to A+/Stable from A/Stable on 01-Jun-2026 on this
+  basis. The two readings are not necessarily in conflict: the audited
+  DSCR is a regulatory-format ratio whose denominator includes rolled
+  short-term working-capital debt, which will read low for any
+  WC-intensive borrower even with comfortable term-debt cover, while
+  CRISIL's net-cash-accrual measure looks only at scheduled term
+  obligations. This variable is dominant precisely because it now carries
+  two evidenced but differently-scoped readings that the operator must
+  weigh against each other, not because either alone resolves it.
 - Steel input-price spread / margin pass-through: raw material is 74.7%
   of standalone FY25 revenue with no disclosed escalation clause (B04);
   the delivered FY26 EBITDA margin is 14% standalone / 13% consolidated,
-  above initial 11-12% guidance (B05), but the margin sits on an
-  unexamined pass-through mechanism relative to what peers disclose
-  (B06).
+  above initial 11-12% guidance (B05), and the CRISIL rationale
+  independently states OPBDIT margin improved to 12.3% FY26 from 8-10%
+  historically (rating-rationale, Detailed Rationale); but the same
+  rationale flags fixed-price tenders with a 2-4 month award lead time as
+  a structural weakness, since input-cost increases after tender
+  application cannot be passed on (rating-rationale, Weaknesses), which
+  sits alongside what peers disclose as explicit escalation caps rather
+  than a blanket hedge (B06).
 
 ### 3. The simple analogy
 Picture a workshop that cuts, coats and certifies long steel pipes to a
@@ -164,7 +199,11 @@ orders sit in the book, how fast it turns steel into pipe without idle
 machines, and how quickly it is paid once the pipe ships. The workshop
 has recently taken much longer to get paid, and its order book has
 thinned, even as it opens a second workshop overseas and bets that new
-workshop fills the gap the first one is leaving.
+workshop fills the gap the first one is leaving. The workshop's own
+banker has now looked at the books and said the slow payment is tied to
+two specific shipments that are clearing, not a permanent change in how
+fast the workshop gets paid; the tailor's own ledger still shows the
+slower pace has not yet reversed.
 
 ### 4. What the model rejects
 - Headline gross margin in isolation: it swings with the steel price, not
@@ -206,33 +245,38 @@ land transaction rather than a repeatable product (B04). The customers
 behind the pipe business are national and state oil companies and
 utilities, and, internationally, counterparties reached through the
 recently acquired NPC platform in Saudi Arabia, which carries an inherited
-Aramco relationship dating to 2005, and through a newly disclosed
-approved-vendor listing with QatarEnergy LNG (B03, B04, B07). Buying
-behaviour in this customer set is qualification-cycle driven: becoming an
-approved vendor to a national oil company is a multi-year process that,
-once won, locks the relationship in, but it also concentrates the buyer
-base among a small number of state-linked or major-project counterparties
-(B04, B07). Demand exists today because of two identifiable drivers: the
-domestic Jal Jeevan Mission water-infrastructure allocation, cited at
-roughly Rs67,000cr and independently corroborated by two peer concalls
-(B06), and Saudi/GCC oil, gas and water capex tied to Vision 2030,
-including Aramco's Master Gas System programme, which the NPC acquisition
-gives the company direct exposure to (B03, B05, B09). Demand should grow,
-on the corpus's own terms, if Jal Jeevan Mission 2.0 fund releases
-continue, if Saudi giga-project milestones such as NEOM and the Red Sea
-projects proceed, if GCC desalination project awards continue, and if
-India's National Gas Grid and PNGRB pipeline approvals keep flowing — all
-named downstream candidates the corpus flags as externally trackable
-(B09). Set against this, the same Saudi opportunity is drawing an
-industry-wide capacity race, not a MANINDS-only build: Jindal SAW has
-committed to a 600,000 MTPA Saudi joint venture and Welspun Corp is
-building a parallel Saudi LSAW plant on a similar FY27-29 timeline, which
-raises the risk that a growing market is met by growing supply from
-several directions at once (B06). On competitive advantage, the picture
-differs by line. The steel-pipe line carries a moderate moat: qualification
-lock-in with national oil companies is scored Strong, and Man Industries
-holds meaningful scale at 1.2 million-plus MTPA of combined India
-capacity, but it is also the smallest by market capitalisation and the
+Aramco relationship dating back more than two decades — the CRISIL
+rationale states NPC has held Saudi Aramco approved-vendor status for
+"more than 2 decades," alongside SWA, SWPC, WTTCO, KOC and Qatar
+Petroleum (rating-rationale, Key Rating Driver 1) — and through a newly
+disclosed approved-vendor listing with QatarEnergy LNG (B03, B04, B07).
+Buying behaviour in this customer set is qualification-cycle driven:
+becoming an approved vendor to a national oil company is a multi-year
+process that, once won, locks the relationship in, but it also
+concentrates the buyer base among a small number of state-linked or
+major-project counterparties (B04, B07). Demand exists today because of
+two identifiable drivers: the domestic Jal Jeevan Mission
+water-infrastructure allocation, cited at roughly Rs67,000cr and
+independently corroborated by two peer concalls (B06), and Saudi/GCC oil,
+gas and water capex tied to Vision 2030, including Aramco's Master Gas
+System programme, which the NPC acquisition gives the company direct
+exposure to (B03, B05, B09). Demand should grow, on the corpus's own
+terms, if Jal Jeevan Mission 2.0 fund releases continue, if Saudi
+giga-project milestones such as NEOM and the Red Sea projects proceed, if
+GCC desalination project awards continue, and if India's National Gas
+Grid and PNGRB pipeline approvals keep flowing — all named downstream
+candidates the corpus flags as externally trackable (B09). Set against
+this, the same Saudi opportunity is drawing an industry-wide capacity
+race, not a MANINDS-only build: Jindal SAW has committed to a 600,000
+MTPA Saudi joint venture and Welspun Corp is building a parallel Saudi
+LSAW plant on a similar FY27-29 timeline, which raises the risk that a
+growing market is met by growing supply from several directions at once
+(B06). On competitive advantage, the picture differs by line. The
+steel-pipe line carries a moderate moat: qualification lock-in with
+national oil companies is scored Strong, and Man Industries holds
+meaningful scale — the CRISIL rationale gives combined group capacity of
+approximately 1,600,000 MTPA post-NPC (rating-rationale, Key Rating
+Driver 1) — but it is also the smallest by market capitalisation and the
 thinnest by margin of the four listed India peers assessed (Jindal SAW,
 Ratnamani, Welspun Corp), showing peer-relative weakness on cost, scale
 and gross margin (B01, B04, B07). The real estate line carries no
@@ -251,30 +295,42 @@ consecutive quarters, Rs4,750cr (Sep-2025) to Rs4,000cr (Dec-2025) to
 Rs3,000cr (Mar-2026) (B05); all three audited peers (Jindal SAW, Welspun
 Corp, Ratnamani) reported stable-to-record order books across the same
 window, which reads the MANINDS decline as company-specific rather than
-sector-wide (B06). What it cannot establish: whether NPC's inherited
-opening order book (~USD120mn per management, unaudited) represents real
-incremental order flow or a one-time balance that depletes without
-replacement (B04 mgmt_questions); the actual historical win rate behind
-the stated 20-30% bid-to-order conversion ratio, quantified only in the
-Q3FY26 call after being evaded in Q2FY26 (B05). Questions that decide it:
-does the order book stabilise or inflect upward in the Q1/Q2 FY27
-results; is the NPC opening book additive or a depleting inherited
-balance; does the stated win ratio hold against the current Rs15,000-
-16,000cr bid pipeline over the next two quarters.
+sector-wide (B06). The CRISIL rationale independently states an order
+book of approximately Rs3,000cr covering 6-8 months of execution
+(rating-rationale, Key Rating Driver 2), corroborating the trough level
+from a rating-agency source rather than management commentary alone.
+What it cannot establish: whether NPC's inherited opening order book
+(~USD120mn per management, unaudited) represents real incremental order
+flow or a one-time balance that depletes without replacement (B04
+mgmt_questions); the actual historical win rate behind the stated 20-30%
+bid-to-order conversion ratio, quantified only in the Q3FY26 call after
+being evaded in Q2FY26 (B05). Questions that decide it: does the order
+book stabilise or inflect upward in the Q1/Q2 FY27 results; is the NPC
+opening book additive or a depleting inherited balance; does the stated
+win ratio hold against the current Rs15,000-16,000cr bid pipeline over
+the next two quarters.
 
 **Vertical 2 — Capacity / execution ramp**
 What the corpus establishes: capex-embedded growth is 46% of the
 optionality register (B07); Jammu commissioning slipped from an
-April-2026 date to March 2027, blamed on war and flooding (B05, B07); the
+April-2026 date to March 2027 in company disclosure, blamed on war and
+flooding (B05, B07); the CRISIL rationale separately gives an expected
+completion date of Sep-2027 for the Jammu plant, with commissioning and
+ramp-up flagged as a rating monitorable (rating-rationale, Key Rating
+Driver 2) — a later date than the company's own most recent guidance; the
 original Saudi greenfield SAW plant was called "on track" in the Q3FY26
 call and scrapped the following quarter for the NPC acquisition (B05).
 What it cannot establish: current capacity utilisation at the existing
 Anjar and Pithampur plants, or NPC's own utilisation trajectory — neither
 is disclosed anywhere in the corpus, including NPC's audited CY25
-financials (B04, B05). Questions that decide it: does Jammu commission on
-the restated March-2027 date; does NPC utilisation trend toward the
+financials (B04, B05); the CRISIL rationale gives NPC's CY25 revenue
+(Rs2,000cr / USD211m) and OPBDIT margin (25%) but not a utilisation
+figure (rating-rationale, Key Rating Driver 1). Questions that decide it:
+does Jammu commission on the CRISIL-implied September-2027 date or the
+company's own March-2027 date; does NPC utilisation trend toward the
 guided 80-85%; does the Dammam coating facility commission on its stated
-schedule, given one earlier Saudi plan was already scrapped and replaced.
+schedule (rating-rationale gives Mar-2027 for the coating plant), given
+one earlier Saudi plan was already scrapped and replaced.
 
 **Vertical 3 — Working capital / cash conversion**
 What the corpus establishes: working-capital days rose from 116.2 (FY24)
@@ -284,29 +340,62 @@ below 1.0x at both standalone (0.59x FY25) and consolidated (0.52x FY25)
 levels (B02); CFO/PAT is 0.693x standalone and 0.444x consolidated,
 verified at the audited standalone cash-flow anchor (B03, B12a); net debt
 swung Rs252.6cr standalone / Rs293.2cr consolidated from net cash to net
-debt (B02, B03). What it cannot establish: whether this trend has
-reversed in FY26/FY27, since only the FY25 Annual Report notes are held
-and the FY26 Annual Report is absent (B00, B03). Questions that decide
-it: does DSCR return toward 1.0x in subsequent filings; does the
-6-month-to-1-year receivables ageing bucket stabilise; is the Rs97.68cr
-Limitless Contracting promoter-entity loan repaid, or does it persist or
-grow (B02, B03).
+debt (B02, B03). The now-committed CRISIL rationale (01-Jun-2026) frames
+this stretch as caused by two named, non-structural events — a delayed
+Taiwan order (inventory buildup, resolved Q1FY26) and a Middle East
+conflict blocking UAE ship deliveries (resolved via a Fujairah-port
+rerouting approval) — and states working capital "is expected to
+normalize in the current fiscal year" (rating-rationale verbatim). CRISIL
+assesses liquidity as Strong, gives net cash accruals of Rs450-580cr
+against Rs230-250cr annual repayment obligations, and upgraded the
+long-term rating to A+/Stable from A/Stable on this basis. The rationale
+also names FY26 debtor days at approximately 128 and gross-current-asset
+days historically around 200, framing the current level as elevated but
+retraceable, not a new steady state. Against this, the corpus's own
+audited signals remain unresolved in the rationale's favour: the 6-month-
+to-1-year receivables ageing bucket grew 11.5 times (Rs796.96 lakh to
+Rs9,182.28 lakh); non-current disputed receivables over 3 years are
+static at Rs95.58cr with thin ~13.6% ECL coverage, an auditor Key Audit
+Matter (B02); the CRISIL rationale itself keeps receivables concentration
+a named monitorable, noting Rs109cr of the Rs1,250cr total debtor book
+remained under arbitration as of 31-Mar-2026; and the Rs97.68cr Limitless
+Contracting promoter-entity loan, at undisclosed rate, tenure or
+security, persists (B02, B03). What it cannot establish: whether the
+normalisation CRISIL expects has actually begun, since the corpus holds
+no FY26 Annual Report and no Q1FY27 concall — only the CRISIL rationale's
+forward statement and the Q1FY27 results filing exist past FY25 AR level
+detail (B00, B03). Questions that decide it: do H1FY27 prints show debtor
+days retracing from ~128 toward the historical ~100 (or standalone
+receivables turnover recovering above ~3.2x); does gross-current-asset
+days move back toward ~200; does the Rs109cr arbitration receivable hold
+its value or get written down; does fund-based limit utilisation, cited
+around 77% over the 11 months to Apr-2026, stay controlled or climb
+further; is the Limitless Contracting loan repaid, or does it persist or
+grow (B02, B03, rating-rationale).
 
 **Vertical 4 — Steel input-price spread / margin pass-through**
 What the corpus establishes: raw material is 74.7% of standalone FY25
 revenue with no disclosed price pass-through or escalation clause (B04);
 the delivered FY26 EBITDA margin was 14% standalone / 13% consolidated,
-above the initial 11-12% guidance (B05); peers describe order-linked
-steel procurement but disclose explicit gaps — freight/fuel pass-through
-not guaranteed, DI escalation clauses capped at 30-35% — that contradict
-a blanket "fully hedged" framing (B06). What it cannot establish:
-MANINDS's own hedging mechanics in comparable detail to peers, since the
-claim is only partially verified against peer disclosure (B06); volume,
-tonnage or per-tonne realisation figures, which are absent from the
-entire corpus (B04). Questions that decide it: does EBITDA margin sustain
-13% or higher through FY27 as guided; does a steel-price move reveal an
-actual pass-through gap; do future disclosures ever break out tonnage or
-average selling price to allow an independent spread check.
+above the initial 11-12% guidance (B05); the CRISIL rationale
+independently states OPBDIT margin improved to 12.3% FY26 from a
+historical 8-10% band, attributed to better export/value-added mix
+(rating-rationale, Detailed Rationale), while separately naming
+fixed-price tenders with a 2-4 month award-to-execution lead time as a
+structural weakness, since input-cost increases after tender submission
+cannot be passed on (rating-rationale, Weaknesses); peers describe
+order-linked steel procurement but disclose explicit gaps — freight/fuel
+pass-through not guaranteed, DI escalation clauses capped at 30-35% —
+that contradict a blanket "fully hedged" framing (B06). What it cannot
+establish: MANINDS's own hedging mechanics in comparable detail to peers,
+since the claim is only partially verified against peer disclosure (B06);
+volume, tonnage or per-tonne realisation figures, which are absent from
+the entire corpus (B04). Questions that decide it: does EBITDA margin
+sustain the 13-14% band the CRISIL upward-sensitivity threshold names
+through FY27; does a steel-price move reveal an actual pass-through gap
+given the 2-4 month fixed-price tender window CRISIL flags; do future
+disclosures ever break out tonnage or average selling price to allow an
+independent spread check.
 
 ### 4b. Candidate signal table
 
@@ -333,59 +422,90 @@ writes happen at Role 5.5 in claude.ai.
   overhang (SEBI order, MCA Section 206(5) notice, undisclosed-terms
   promoter-entity financing).
 - **verifiability_ratio:** 4 of 5 externally observable. Order-book
-  conversion is cross-checkable against peer concalls (B06); working
+  conversion is cross-checkable against peer concalls and now the CRISIL
+  rationale's own Rs3,000cr figure (B06, rating-rationale); working
   capital and cash conversion are drawn from audited financial statements
-  (B01, B02, B03); the steel spread is cross-referenceable against
-  published input-price indices; the governance overhang is
-  cross-checkable against SEBI, NFRA and MCA public filings (B08). Only
-  capacity/execution ramp is company-narrated alone: no tonnage,
-  utilisation or per-unit figure appears anywhere in the corpus (B04).
-- **single_point_failure:** Working capital / cash conversion. DSCR is
-  already below 1.0x at both standalone and consolidated levels for two
-  consecutive years, and CFO/PAT sits below the 0.7x threshold at both
-  entity levels (B02, B03). If this does not improve and short-term
-  funding, including the undisclosed-terms promoter-entity bridge loan,
-  is not sustained or replaced, this variable alone can break the thesis
-  independent of order-book or demand outcomes.
+  and now corroborated, on the normalisation direction, by an independent
+  rating-agency rationale carrying its own named falsification metric
+  (B01, B02, B03, rating-rationale); the steel spread is
+  cross-referenceable against published input-price indices; the
+  governance overhang is cross-checkable against SEBI, NFRA and MCA
+  public filings (B08). Only capacity/execution ramp is company-narrated
+  alone: no tonnage, utilisation or per-unit figure appears anywhere in
+  the corpus, and even the CRISIL rationale supplies revenue and margin
+  for NPC but not utilisation (B04).
+- **single_point_failure:** the working-capital/cash-conversion variable
+  is no longer a clean, unresolved kill-switch on its own. It now carries
+  two evidenced but differently-scoped readings that must be weighed
+  against each other rather than one determination that stands alone:
+  the audited DSCR (sub-1.0x standalone and consolidated, both FY24 and
+  FY25) and the CRISIL rationale's expectation of FY27 normalisation,
+  Strong liquidity assessment, and the 01-Jun-2026 upgrade to A+/Stable.
+  CRISIL's own rationale supplies a falsification metric for its
+  GROWTH-INDUCED framing: if H1FY27 debtor days do not retrace from ~128
+  toward the historical ~100, if gross-current-asset days do not move
+  back toward ~200, if the Rs109cr arbitration receivable is written
+  down, or if fund-based limit utilisation rises materially above the
+  current ~77%, the normalisation read fails and the audited structural
+  reading regains the stronger claim. Given this, the governance and
+  regulatory overhang — the SEBI order's 2-year trading ban (currently
+  stayed on appeal but not vacated), the undisclosed-terms Rs97.68cr
+  Limitless Contracting promoter loan, and the live Mansukhani family
+  Supreme Court dispute (B08) — is now the variable most capable of
+  breaking the thesis independent of an operating or cash-flow outcome,
+  since it turns on a legal and regulatory resolution the company does
+  not control and the corpus has not yet closed (SEBI order full text and
+  SAT stay order both remain absent, Section 1).
 - **fragility_verdict:** FRAGILE. Five variables must move together, one
-  of them is company-narrated only, and one variable (cash conversion)
-  can plausibly fail the thesis on its own.
+  is company-narrated only, and the resolution of at least one
+  (governance/regulatory) sits outside the company's control and outside
+  what the corpus can currently verify. The cash-conversion variable's
+  reclassification from an unresolved determination to one with an
+  external, rating-agency-corroborated normalisation expectation reduces
+  but does not remove its own capacity to break the thesis on its own,
+  since the falsification metric that would revert it to structural has
+  not yet been tested against a single quarter of post-rationale data.
 
 ### 4d. Research brief (claude.ai work order)
 
-1. Verify the full CRISIL rating rationale (June-01-2026) directly from
-   CRISIL Ratings' site; confirm the working-capital/cash narrative
-   language beyond the Jul-20 bulletin already in corpus (B00).
-2. Retrieve and verify Reg-30 exchange filings directly from BSE/NSE for
+1. Retrieve and verify Reg-30 exchange filings directly from BSE/NSE for
    the 22-Apr-2026 USD70m guarantee, the 21-May-2026 NPC acquisition
    (~USD102m), and the 18-Jun-2026 ~Rs1,000cr order wins (B00).
-3. Retrieve the full text of the SEBI 29-Sep-2025 order (11B order) from
+2. Retrieve the full text of the SEBI 29-Sep-2025 order (11B order) from
    sebi.gov.in; B08's finding relied on media summaries because the
    primary-source page was egress-blocked (B08).
-4. Retrieve the SAT stay order and any subsequent appellate development
+3. Retrieve the SAT stay order and any subsequent appellate development
    on the SEBI order beyond the run date (B08).
-5. Confirm the BSE SAST shareholding pattern filing directly, replacing
+4. Confirm the BSE SAST shareholding pattern filing directly, replacing
    the operator-ferried screener screenshot, and locate the
    pledge-percentage disclosure absent from that screenshot (B00, B01).
-6. Retrieve the Q1FY27 concall transcript (12-Aug-2026) from company IR
+5. Retrieve the Q1FY27 concall transcript (12-Aug-2026) from company IR
    or a transcript aggregator (B00).
-7. Cross-check NPC's (National Pipe Company) audited CY25 financials and
+6. Cross-check NPC's (National Pipe Company) audited CY25 financials and
    volume from a Saudi-side filing or press source, since these are not
-   disclosed in any MANINDS concall (B05, B06).
-8. Verify Welspun Corp's characterisation of having evaluated and passed
+   disclosed in any MANINDS concall and the CRISIL rationale gives only
+   topline revenue and OPBDIT margin, not audited statements (B05, B06,
+   rating-rationale).
+7. Verify Welspun Corp's characterisation of having evaluated and passed
    on the NPC asset against a primary Welspun source, beyond the B06
    peer-concall inference (B06).
-9. Search independent investor forums (screener.in comments, ValuePickr
+8. Search independent investor forums (screener.in comments, ValuePickr
    threads) for chatter on the Rs97.68cr Limitless Contracting loan and
    the Mansukhani family Supreme Court dispute (B02, B08).
-10. Confirm the current status of Jal Jeevan Mission 2.0 fund releases and
-    PNGRB pipeline approvals as live, ongoing trackers (B09).
-11. Locate independent proxy-advisory (IiAS/SES/InGovern) coverage of
+9. Confirm the current status of Jal Jeevan Mission 2.0 fund releases and
+   PNGRB pipeline approvals as live, ongoing trackers (B09).
+10. Locate independent proxy-advisory (IiAS/SES/InGovern) coverage of
     MANINDS governance; none was found in corpus searches (B08).
-12. Confirm the FY2025-26 Annual Report's publication status and date; if
+11. Confirm the FY2025-26 Annual Report's publication status and date; if
     published, retrieve it for the prior-year AR trend comparison and the
     pledge-percentage disclosure the FY25 AR did not carry in standard
     form (B03).
+12. Track H1FY27 quarterly prints against the CRISIL rationale's own
+    falsification metric — debtor days retracing toward ~100, gross-
+    current-asset days toward ~200, the Rs109cr arbitration receivable's
+    status, and fund-based limit utilisation staying near or below the
+    ~77% level cited — to confirm or break the GROWTH-INDUCED cash
+    determination (rating-rationale; B02, B03).
 
 ---
 
@@ -402,14 +522,16 @@ writes happen at Role 5.5 in claude.ai.
 5. Buyers must approve, or qualify, a pipe maker before placing large
    orders. This takes years and locks the relationship in once won.
 6. The company recently bought a Saudi company, NPC, which already
-   supplies Saudi Aramco.
+   supplies Saudi Aramco and has held that status more than 20 years.
 7. Demand for pipes should grow if India's water programme, the Jal
    Jeevan Mission, and Saudi Arabia's infrastructure plans keep spending.
 8. Other large Indian pipe makers, Jindal SAW, Welspun Corp and
    Ratnamani, are also building Saudi capacity on a similar timeline,
    which could crowd the same market.
 9. Man Industries' own order book fell for three straight quarters while
-   its peers' order books stayed flat or grew over the same period.
+   its peers' order books stayed flat or grew over the same period; the
+   company's credit-rating agency independently confirms the same
+   roughly Rs3,000 crore order-book level.
 10. The company's competitive edge, or moat, is only moderate. It is the
     smallest and thinnest-margin of the four listed peers compared.
 11. The real estate income from Merino Shelters is a one-off. It carries
@@ -417,15 +539,23 @@ writes happen at Role 5.5 in claude.ai.
 12. The core pipe business is best understood as an order-book maker that
     buys steel and sells finished pipe against signed orders. It does not
     set the price of the steel it buys.
-13. Judged for fragility, several outside factors must go right together.
-    Cash conversion is the one factor most likely to break the story on
-    its own if it does not improve.
-14. The document set used here does not include the fiscal-2026 annual
-    report, the full CRISIL rating report, or the exchange filings for
-    recent announcements.
-15. The two biggest open questions are whether the order book turns up
-    again, and whether the company starts collecting cash from sales as
-    fast as it books revenue.
+13. The company's cash collection slowed sharply over two years. Its
+    credit-rating agency now says this was caused by two specific,
+    resolving shipment problems and expects collection to normalise this
+    year; that expectation has not yet been tested against a full
+    quarter of new data.
+14. A separate, unresolved regulatory matter sits alongside the cash
+    question. A securities regulator found past financial misstatement
+    and barred two top executives from trading for two years, a ban
+    currently paused on appeal but not cleared. This regulatory matter,
+    not cash collection alone, is now the single factor most likely to
+    break the story on its own, since it depends on a legal outcome the
+    company does not control.
+15. The document set used here still lacks the fiscal-2026 annual report,
+    the exchange filings for recent announcements, and the full text of
+    the securities-regulator order. The two biggest open questions are
+    whether the order book turns up again, and whether cash collection
+    actually recovers the way the credit-rating agency expects.
 
 ---
 
@@ -437,9 +567,6 @@ model: claude-sonnet-5
 status: complete
 corpus_verdict: "CORPUS GAPPED"
 corpus_gaps:
-  - document: "Full CRISIL rating rationale (June-01-2026)"
-    expected_source: "rating agency site"
-    kind: "findable-missing"
   - document: "Reg-30 / exchange announcement PDFs (guarantee, NPC acquisition, order wins)"
     expected_source: "BSE"
     kind: "findable-missing"
@@ -464,16 +591,16 @@ archetypes:
   - line: "Real estate monetisation (Merino Shelters JDA, 10.5% FY25 revenue)"
     archetype: "fits no known archetype"
 dominant_variables:
-  - "Order-book / bid-pipeline conversion - order book fell 3 consecutive quarters (Rs4,750cr to Rs3,000cr), company-specific per peer contrast (B05, B06)"
-  - "Capacity/execution ramp on committed capex (NPC, Jammu, Dammam) - Jammu slipped Apr-2026 to Mar-2027, Dammam plan already scrapped and replaced once (B05, B07)"
-  - "Working capital / cash conversion - WC days 116.2 to 260.7 (FY24-FY26), DSCR sub-1.0x both entity levels, CFO/PAT below 0.7x both entities (B01, B02, B03)"
-  - "Steel input-price spread / margin pass-through - raw material 74.7% of standalone revenue, no disclosed escalation clause (B04, B05)"
+  - "Order-book / bid-pipeline conversion - order book fell 3 consecutive quarters (Rs4,750cr to Rs3,000cr), company-specific per peer contrast, CRISIL RR corroborates the Rs3,000cr trough (B05, B06, rating-rationale)"
+  - "Capacity/execution ramp on committed capex (NPC, Jammu, Dammam) - company guidance slipped Apr-2026 to Mar-2027; CRISIL RR separately implies Sep-2027 for Jammu; Dammam plan already scrapped and replaced once (B05, B07, rating-rationale)"
+  - "Working capital / cash conversion - WC days 116.2 to 260.7 (FY24-FY26), DSCR sub-1.0x both entity levels, CFO/PAT below 0.7x both entities; CRISIL RR (01-Jun-2026) frames the stretch as external/temporary, expects FY27 normalisation, and upgraded the rating to A+/Stable, with a named falsification metric (B01, B02, B03, rating-rationale)"
+  - "Steel input-price spread / margin pass-through - raw material 74.7% of standalone revenue; CRISIL RR confirms OPBDIT margin improved to 12.3% FY26 but flags fixed-price tenders with a 2-4 month lead time as a pass-through weakness (B04, B05, rating-rationale)"
 model_falsifier: "If the Merino Shelters real estate line becomes a recurring, non-trivial revenue contributor beyond the current one-off JDA, or if the NPC/Aramco relationship converts into a long-term fixed-offtake structure decoupled from spot order-book cycles, the archetype declaration must be re-drawn (B04, B07)."
 mental_model_status: "DRAFT - PENDING OPERATOR SIGN-OFF"
 fragility:
   variable_count: 5
   verifiability_ratio: "4 of 5 externally observable"
-  single_point_failure: "Working capital / cash conversion (DSCR sub-1.0x both entity levels, CFO/PAT below 0.7x both entities)"
+  single_point_failure: "Governance and regulatory overhang (SEBI 2-year trading ban, stayed but not vacated; undisclosed-terms Rs97.68cr Limitless Contracting promoter loan; live Mansukhani Supreme Court dispute) - now the strongest single-point candidate, since cash conversion carries a rating-agency-corroborated normalisation expectation (CRISIL RR 01-Jun-2026) with its own named falsification metric not yet tested against post-rationale data"
   fragility_verdict: "FRAGILE"
 candidate_count: 8
 research_brief_items: 12

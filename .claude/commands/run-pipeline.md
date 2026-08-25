@@ -76,6 +76,18 @@ handoff schemas, flag rules, and error handling. Then:
    input_gaps naming each absent document type; degraded stages run per
    the orchestrator's DEGRADATION MAP. There is no count-based halting.
 
+   FRESHNESS PAIR CHECK: after the inventory, run the four-pair freshness
+   check per the orchestrator's FRESHNESS PAIR CHECK section and write
+   freshness_pairs[] and freshness_verdict into B00. The pairs: newest
+   results filing to same-quarter concall (skipped when concalls_available
+   is false); rating bulletin to full rationale; any referenced SEBI order
+   to its order text; AR not older than the latest audited annual results.
+   On any FAIL, B00.freshness_verdict is CORPUS GAPPED-FRESHNESS. This does
+   not halt: it caps the phase-1 gate recommendation at PROCEED WITH CAVEATS
+   (step 6) and names the missing mate as the first line of
+   gate-recommendation.md. Carry the failed pair into the empty-folder
+   confirmation message below so the operator can push the missing document.
+
    EMPTY-FOLDER CONFIRMATION: after the inventory above, if ANY input
    folder is empty or absent (prospectus, annual-report, results, rating,
    concalls, peer-concalls, announcements, shareholding, research,
@@ -162,6 +174,11 @@ handoff schemas, flag rules, and error handling. Then:
        FLAG-CASH with its STRUCTURAL / GROWTH-INDUCED / INDETERMINATE
        determination and falsification metric), the phase-1 confidence
        delta table, and the contradicted-claims and monitorables lists.
+       FRESHNESS CAP: if B00.freshness_verdict is CORPUS GAPPED-FRESHNESS,
+       the verdict caps at PROCEED WITH CAVEATS regardless of flag count
+       (no better; a more severe REWORK / INSUFFICIENT EVIDENCE still
+       stands), and the missing mate document is the FIRST line of the
+       file, before any flag block, naming it and its expected source.
        EXCLUDE every valuation-dependent element: no BUY/WATCHLIST/AVOID,
        no entry range, no MoS price, no destination PE tracks, no Hurdle
        verdict. This is the gate decision on evidence alone; the
@@ -186,8 +203,10 @@ handoff schemas, flag rules, and error handling. Then:
    MECHANICAL DOSSIER CHECK (before the HALT 1 message prints): grep
    outputs/reports/09b-understanding-dossier.md for the five section
    headers (SECTION 1 through SECTION 5, in order), exactly one corpus
-   verdict line (CORPUS CURRENT or CORPUS GAPPED), and the
-   "DRAFT - PENDING OPERATOR SIGN-OFF" marker in Section 2. On any miss,
+   verdict line (CORPUS CURRENT, CORPUS GAPPED, or CORPUS GAPPED-FRESHNESS),
+   and the "DRAFT - PENDING OPERATOR SIGN-OFF" marker in Section 2. When the
+   verdict is CORPUS GAPPED-FRESHNESS, also confirm the missing mate is the
+   first line of outputs/final/gate-recommendation.md. On any miss,
    re-run stage 09b once. If it is still malformed after the re-run, STOP
    and report which check failed. The HALT 1 message never prints over a
    malformed dossier.

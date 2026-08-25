@@ -59,11 +59,36 @@ relevant to the SEBI non-consolidation matter.
    rest water/irrigation. Fixed-price tenders with 2-4 month award lead time mean
    input-cost increases after tender application cannot be passed on. Forex losses
    incurred in FY23 and FY26; hedged, which mitigates.
-2. Working-capital-intensive operations (VERBATIM below in the extraction).
+2. Working-capital-intensive operations (VERBATIM): "Gross current assets have
+   been around 200 days in the past, driven by debtors of over 100 days. However,
+   in the past two years, inventory and debtor days have remained stretched. In
+   Fiscal 2025, working capital was impacted due to several factors, including a
+   delay in the execution of a Taiwan order, which led to inventory buildup. The
+   execution of this order was completed in Q1 of Fiscal 2026. In Fiscal 2026,
+   inventory and debtor days increased to approximately 180 and 128 days,
+   respectively, due to the Middle East conflict, which hindered the delivery of
+   ships to the United Arab Emirates. However, working capital levels are expected
+   to normalize in the current fiscal year, as MIIL has received approval to
+   deliver the shipment to the eastern port of UAE - Fujairah port. Also,
+   concentration in receivables renders MIIL susceptible to steady increase in the
+   working capital requirement, and hence, remains a key monitorable. As of March
+   31, 2026, out of the total debtors of Rs 1,250 crores, Rs 109 crores remained
+   under arbitration. According to the company, this amount has a high chance of
+   recoverability"
 3. Integration risks associated with the large NPC acquisition; realisation of
    synergies a key monitorable.
 
-## Liquidity: Strong (VERBATIM below in the extraction)
+## Liquidity: Strong (VERBATIM)
+"Liquidity is aided by moderate fund-based working capital lines utilization and
+internal cash accruals; the company also avails need-based project-specific limits.
+MIIL is expected to earn NCA of Rs 450 crores to Rs 580 crores against repayments
+of Rs 230-250 crores each year in the next 3 fiscals. The working capital limit of
+over Rs 2180 crore (fund based Rs 310 and non-fund-based limits of Rs 1870 crores)
+were utilized ~77% on average over the 11 months through April 2026. Cash and cash
+equivalents were around Rs 657 crores (unencumbered of ~Rs 300 crores) as on March
+31, 2026. Crisil Ratings expects internal accrual, cash & cash equivalents, and
+unutilized bank lines to be sufficient to meet repayment obligations as well as
+incremental capex requirements."
 
 ## Outlook: Stable
 

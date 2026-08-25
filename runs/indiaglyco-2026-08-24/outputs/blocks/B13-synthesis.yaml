@@ -1,0 +1,18 @@
+stage: B13-synthesis
+company: "INDIAGLYCO"
+run_date: "2026-08-24"
+model: claude-opus-4-8
+status: complete
+phase: 3-finalize
+verdict: "PROCEED WITH FLAGS"
+verdict_rule_applied: 3
+flags_active: [FLAG-CASH, FLAG-STRUCTURAL-DEMERGER, FLAG-FX-HEDGE, FLAG-RATING-WATCH, FLAG-ENNATURE-PERIMETER, FLAG-GATE0]
+confidence_delta: {numerical: 89, redflag: 62, framework: 78, peer: 100, overall: 62}
+valuation_decision: "AVOID"
+entry_range: {low: 370, high: 429}
+mos_price: 222
+headline: "Three way demerger with every part expensive"
+falsification_metric: "FY27 FCF stays negative and current ratio below 0.85 after the Bio-MEG/EO capex commissions"
+monitorables_count: 8
+publish_candidate: false
+cross_family_grade: "did not run (no provider key); FTTCP confidence one notch lower"

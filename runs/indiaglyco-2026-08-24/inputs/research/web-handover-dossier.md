@@ -86,7 +86,7 @@ Nine-promise ledger [CORPUS — Prompt G, `outputs/reports/05-concall.md` sectio
 
 **Tally: delivered 2 / partial 4 / missed 3.** Three further items (IGL Spirits FY27 EBITDA >Rs 500 Cr; the FY28-29 24% JV stake-sale-to-debt-free; bio-based amines ramp) are too early or unquantified to grade in this three-quarter window and are marked "in progress," not tallied.
 
-**THE CREDIBILITY SPLIT (binding rule for this deliberation, provisional until Prompt G):** this management delivers on FINANCIAL-STRUCTURE promises (margin path, debt reduction, equity raise executed at Rs 915 with promoter participation) and under-delivers or stays silent on SEGMENT-LEVEL adverse facts (hedge book, ethanol allocation, segment debt, realisation-per-case). Therefore: trust balance-sheet guidance at stated probability; haircut every segment growth claim that management has not backed with a disclosed unit metric. Grade by category, not blended.
+**THE CREDIBILITY SPLIT (binding rule for this deliberation, confirmed by the Prompt G ledger above):** this management delivers on FINANCIAL-STRUCTURE promises (margin path, debt reduction, equity raise executed at Rs 915 with promoter participation) and under-delivers or stays silent on SEGMENT-LEVEL adverse facts (hedge book, ethanol allocation, segment debt, realisation-per-case). Therefore: trust balance-sheet guidance at stated probability; haircut every segment growth claim that management has not backed with a disclosed unit metric. Grade by category, not blended.
 
 ## 5. ROLE 5.5 TRACKER PROOF (gate satisfaction)
 

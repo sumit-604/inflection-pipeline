@@ -77,6 +77,7 @@ _Written into a prompt/framework file so it cannot recur._
 ## OPEN ACTIONS
 _Pending framework edits Keerti maintains._
 - Add a Steel / Integrated Metals row to the Section 1B cap table
-  (SHYAMMETL was ruled 20x ad hoc; no dedicated steel row exists).
+  (SHYAMMETL ruled 20x ad hoc; MANINDS line pipe ruled 20x ad hoc on the
+  SHYAMMETL precedent 2026-08-25; no dedicated steel/line-pipe row exists).
 - Add a Sugar / Agri-commodity cyclical row to the Section 1B cap table
   (KCPSUGIND was ruled Agri-processing 20x ad hoc; no dedicated row exists).

@@ -1,0 +1,79 @@
+stage: B10-valinputs
+company: "INDIAGLYCO"
+run_date: "2026-08-24"
+model: claude-haiku-4-5-20251001
+status: complete
+note: "Full anchored input table in outputs/reports/10-assembly.md. Three-entity SOTP; deliberation authoritative; every ROCE/cash/leverage value [ESTIMATE, X1] pending filed standalone opening balance sheets."
+earnings_basis_all_entities: "ONE-YEAR-FORWARD EPS"
+cash_conversion: "GROWTH-INDUCED (Entity A INPUT-PRICE-DRIVEN neutral, Amdt 17.2)"
+roce_forward_verdict_entity_a: "RECOVERING"
+consolidated:
+  cmp: 1191
+  shares_cr: 6.702
+  mcap_cr: 7998
+  net_debt_cr: 1641.59
+  eps_fy26_standalone: 44.31
+  revenue_net_cr_fy26: 4211.41
+  ebitda_cr_fy26: 654.18
+  pat_consol_cr_fy26: 292.76
+  jv_share_profit_cr_fy26: 46.42
+  roce_framework_fy26: 11.85
+  current_ratio_standalone_fy26: 0.74
+  current_ratio_consol_fy26: 0.85
+segments_fy26:
+  bspc: {revenue_cr: 1202.07, pbit_cr: 138.27, margin_pct: 11.49}
+  spirits: {revenue_gross_cr: 6946.43, pbit_cr: 284.93}
+  biofuel: {revenue_cr: 1469.93, pbit_cr: 115.23}
+  ennature: {revenue_cr: 207.77, pbit_cr: 7.23}
+segments_q1fy27:
+  bspc: {revenue_cr: 361.73, pbit_cr: 31.75}
+  spirits: {revenue_gross_cr: 2218.67, pbit_cr: 75.03}
+  biofuel: {revenue_cr: 323.22, pbit_cr: 27.03}
+  ennature: {revenue_cr: 83.30, pbit_cr: 7.25}
+  finance_cost_cr: 25.18
+entity_a:
+  name: "Residual India Glycols (BSPC + gases + 49% Clariant JV)"
+  classification: "CONVERTER (Amendment 17)"
+  roce_through_cycle_pct: 13   # [ESTIMATE, X1]
+  pillar1_base_pe: 14.0
+  pillar2_cf_multiplier: 1.00   # INPUT-PRICE-DRIVEN neutral (Amdt 17.2)
+  pillar3_moat_growth: 0.5
+  strategic_premium: 0
+  ua_applied: false
+  sector_cap_x: 30              # Fluorochemicals/industrial gases
+  destination_pe_approved_additive: 14.5
+  destination_pe_rrm: 11.5
+  jv_dividend_bridge_line: "FY26 Rs 46.42 Cr, Q1 FY27 Rs 20.60 Cr; carried separately in equity bridge (operator: JV stake is the main asset)"
+entity_b:
+  name: "IGL Spirits (Potable Spirits + Bio-Fuel)"
+  classification: "NON-CONVERTER"
+  roce_blended_pct: 24         # [ESTIMATE, X1]
+  pillar1_base_pe: 19.5
+  pillar2_cf_multiplier: 1.10  # [ESTIMATE, X1]
+  sector_cap_x: 40             # Consumer franchise (operator override)
+  destination_pe_base: 19.5
+  debt_allocation_cr: 1050     # [ESTIMATE, X1]
+  operator_note: "A good business I would own at the right price, but nothing is changing in it, the government sets its margin, and most of the group debt lands here."
+entity_c:
+  name: "Ennature Bio Pharma"
+  classification: "NON-CONVERTER"
+  verdict: "INSUFFICIENT CONVICTION"
+  roce_pct: 9.4                # [ESTIMATE, X1]; guar-gum perimeter-contaminated
+  pillar1_base_pe: 12.2
+  sector_cap_x: 25             # haircut pharma (operator override)
+  treatment: "PROVISIONAL PLACEHOLDER ~12x; no decision until a guar-free quarter + Prompt H"
+  operator_note: "INSUFFICIENT CONVICTION. No decision until a quarter without the guar gum transfer inside it."
+ua_qualifiers: {listed_12m: true, gate0_or_em: true, fii_dii_lt3: false, all_met: false}
+credibility_grade: "B"
+rating: {agency: "CARE", long_term: "CARE A- (RWD)", date: "2026-03-06"}
+promoter: {verdict: "TRUSTWORTHY", holding_pct: 59.62, pledge_pct: 0, deal_breakers: 0}
+flags:
+  - "FLAG-CASH: current ratio <1.0 both bases; FCF negative both years (capex-driven); FY26 CFO flattered by ~Rs 280 Cr inventory drawdown; GROWTH-INDUCED"
+  - "FLAG-FX-HEDGE: hedge notional collapsed 92% (USD 52.86mn->3.73mn), zero management narrative across 3 concalls (B02 Red Flag)"
+  - "FLAG-STRUCTURAL-DEMERGER: 3-entity split effective 1 Sep 2026; all per-entity ROCE/debt/EBITDA [ESTIMATE, X1] pending filed opening balance sheets"
+  - "FLAG-RATING-WATCH: CARE RWD, likely updated post-demerger into 3 rated entities"
+  - "FLAG-ENNATURE-PERIMETER: Q1 FY27 PBIT inflated by guar-gum; INSUFFICIENT CONVICTION"
+input_gaps:
+  - "Standalone opening balance sheets (all 3 entities) NOT FILED; prerequisite for per-entity net debt, ROCE, gearing"
+  - "Per-entity capex allocation NOT FOUND in segment data"
+  - "One-year-forward EPS by entity estimated from Q1 FY27 annualized; pending Q2-Q4 FY27"

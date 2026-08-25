@@ -1,0 +1,85 @@
+stage: B11-valuation
+company: "INDIAGLYCO"
+run_date: "2026-08-24"
+model: claude-opus-4-8
+status: complete
+framework_versions: "Master v3.6 / Section 1B v3.3+v3.5.1+v3.6+v3.7+v3.8 / FTTCP v2.1"
+pe_basis: "forward"
+current_pe_basis: 25.5
+converter_classification: {entity_a: "CONVERTER (17.0)", entity_b: "NON-CONVERTER", entity_c: "NON-CONVERTER"}
+flags:
+  - "FLAG-CASH: GROWTH-INDUCED; Entity A INPUT-PRICE-DRIVEN neutral 1.00x (Amdt 17.2)"
+  - "FLAG-STRUCTURAL-DEMERGER: all per-entity outputs [ESTIMATE, X1] pending filed opening balance sheets"
+  - "FLAG-FX-HEDGE: hedge notional -92%, zero management narrative (priced in r as opacity)"
+  - "FLAG-RATING-WATCH: CARE A- (RWD), likely re-rated post-demerger"
+  - "FLAG-ENNATURE-PERIMETER: Entity C base guar-contaminated; INSUFFICIENT CONVICTION"
+  - "SHARED CATALYST: capex-completion + deleveraging drives both Entity A forward ROCE and cash"
+entities:
+  entity_a:
+    name: "Residual India Glycols (BSPC + gases + 49% Clariant JV)"
+    destination_pe_track1_rrm: {low: 10.5, mid: 11.5, high: 12.5, r_used: 15.25, rrm: 0.79}
+    destination_pe_track2_additive: {low: 13.5, mid: 14.5, high: 15.5}
+    governing_track: "additive (operator override sets 14.5x for the entry zone)"
+    pillar_detail: {roce_used: 13, roce_base: 14.0, cash_multiplier: 1.00, structural_or_growth: "GROWTH-INDUCED (INPUT-PRICE-DRIVEN neutral, Amdt 17.2)", growth_premium: 0.5, strategic_premium: 0, shared_catalyst_flag: true, ua_applied: false, sector_cap_used: 30}
+    converter_entry_gate_17_4: "input at LOW end of 5-yr range, not top quintile; gate does NOT engage"
+    fair_values: {track1_rrm: {bear: 69.5, base: 141.6, bull: 245.9}, track2_additive: {bear: 87.6, base: 178.5, bull: 310.0}}
+    hurdle_ratio: {base: 0.757, bull: 0.865, verdict: "STOP"}
+    entry_range: {low: 91, high: 91}
+    mos_price: 55
+    decision: "AVOID-on-valuation (STOP at CMP)"
+    one_line_thesis: "Residual converter near cycle trough with the Clariant JV as the main asset; worth ~Rs 179/parent-share on an earned 14.5x, priced far above at CMP."
+  entity_b:
+    name: "IGL Spirits (Potable Spirits + Bio-Fuel)"
+    destination_pe_track1_rrm: {low: 15.5, mid: 16.6, high: 17.5, r_used: 15.0, rrm: 0.82}
+    destination_pe_track2_additive: {low: 18.0, mid: 19.5, high: 21.0}
+    governing_track: "RRM (more conservative; no operator override for B's entry track)"
+    pillar_detail: {roce_used: 24, roce_base: 19.5, cash_multiplier: 1.00, structural_or_growth: "GROWTH-INDUCED (1.10x deferred to filed cash flow; 1.00x applied)", growth_premium: 0, strategic_premium: 0, shared_catalyst_flag: false, ua_applied: false, sector_cap_used: 40}
+    fair_values: {track1_rrm: {bear: 444.1, base: 549.8, bull: 655.4}, track2_additive: {bear: 521.6, base: 645.8, bull: 769.9}}
+    hurdle_ratio: {base: 0.964, bull: 1.104, verdict: "STOP"}
+    entry_range: {low: 282, high: 282}
+    mos_price: 197
+    decision: "AVOID-on-valuation (STOP at CMP)"
+    one_line_thesis: "Good asset-light spirits franchise, but government sets the margin, most group debt lands here, and at CMP it is fully priced on an earned 19.5x."
+  entity_c:
+    name: "Ennature Bio Pharma"
+    provisional: true
+    destination_pe_track1_rrm: {low: 9.0, mid: 10.0, high: 11.0, r_used: 15.0, rrm: 0.82}
+    destination_pe_track2_additive: {low: 11.0, mid: 12.0, high: 13.0}
+    fair_values: {track1_rrm: {bear: 6.9, base: 34.7, bull: 83.4}, track2_additive: {bear: 8.3, base: 41.6, bull: 100.1}}
+    hurdle_ratio: {base: 0.627, verdict: "PROVISIONAL — no decision"}
+    entry_range: {low: 21, high: 21}
+    mos_price: 0
+    decision: "INSUFFICIENT CONVICTION (PROVISIONAL PLACEHOLDER, no BUY/entry)"
+    one_line_thesis: "Perimeter-contaminated pharma base; no decision until a guar-free quarter and Prompt H resolve the numbers."
+sotp:
+  basis: "per original INDIAGLYCO share; residual A + 1x B + 1/3 C; entity total equity / 6.702 Cr shares"
+  governing_track: "A additive 14.5x, B RRM 16.6x, C provisional 12x"
+  fair_values_governing: {bear: 534.5, base: 742.2, bull: 998.8}
+  fair_values_all_additive: {bear: 611.9, base: 838.2, bull: 1113.3}
+  fv_path_governing_base: {today: 742.2, end_y1: 805.5, end_y2: 874.1, end_y3: 1029.7}
+  fv_cagr_pct: 11.5
+  return_source_class: "HYBRID"
+  entry_range: {low: 380, high: 429}
+  mos_price: 228
+  expected_cagr_prob_weighted: -4.9
+  upside_downside_ratio_at_entry: 4.1
+  decision: "AVOID-on-valuation at CMP Rs 1,191 (SOTP base fair value Rs 742-838, 30-38% below CMP)"
+# top-level rollups
+destination_pe_track1_rrm: {entity_a: 11.5, entity_b: 16.6, entity_c: 10.0}
+destination_pe_track2_additive: {entity_a: 14.5, entity_b: 19.5, entity_c: 12.0}
+hurdle_ratio: {base: 0.757, verdict: "STOP"}
+hurdle_verdict: "STOP (all entities fail the 25% hurdle at CMP; SOTP AVOID-on-valuation)"
+fair_values: {bear: 534.5, base: 742.2, bull: 998.8}
+entry_range: {low: 380, high: 429}
+mos_price: 228
+decision: "AVOID-on-valuation at CMP; Entity C INSUFFICIENT CONVICTION (provisional)"
+cash_multiplier_used: 1.00
+structural_or_growth: "GROWTH-INDUCED (Entity A INPUT-PRICE-DRIVEN neutral 1.00x per Amdt 17.2)"
+ua_applied: false
+sector_cap_used: 30
+one_line_thesis: "India Glycols demerges into three lines whose earned SOTP fair value (Rs 742-838/share) sits 30-38% below CMP Rs 1,191; every part fails the 25% hurdle at CMP and the FV compounds only 11.5% (HYBRID) with no re-rating lever, so AVOID-on-valuation, Ennature INSUFFICIENT CONVICTION, all outputs [ESTIMATE, X1] pending filed standalone balance sheets."
+input_gaps:
+  - "Standalone opening balance sheets (all 3 entities) NOT FILED - every per-entity ROCE/debt/EBITDA [ESTIMATE, X1]; stage 11 re-run required on arrival"
+  - "Per-entity capex allocation NOT FOUND"
+  - "One-year-forward EPS by entity estimated; pending Q2-Q4 FY27"
+  - "NCLT swap ratio NOT FOUND in corpus; 1x B, 1/3 C applied per task directive"

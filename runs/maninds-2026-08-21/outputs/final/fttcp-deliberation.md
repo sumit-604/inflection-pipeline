@@ -23,7 +23,9 @@ The whole call turns on one print: the Q2FY27 half-year balance sheet (~14-Nov-2
 
 Vertical 1 (India standalone order book) = THREATENS. India book Rs2,200-2,300cr, 80-plus percent exports (transcript p.12). Trend down: 18-Jun Rs4,100cr (India ~2,500, NPC ~1,600) to 12-Aug Rs3,600cr (India ~2,200-2,300, NPC ~1,300-1,400).
 
-## THE P/E BASE CARD (RULED, operator 2026-08-25)
+## THE P/E BASE CARD — OPERATOR-APPROVED VALUATION PILLARS (RULED, operator 2026-08-25)
+
+Earnings basis: one-year-forward (below). Destination PE approved on BOTH tracks. The flat figures below are the BEAR / primary anchor; the base and bull carry the ROCE gradient ruled 2026-08-25 (see the ledger and B11-valuation.yaml). Am16 crossing gate DROPPED. Bargain-purchase gain corrected into CE.
 
 - **Pillar 1:** 14.5x. ROCE 13.95% (converter through-cycle, Am17.1; spot never). 0.5 x 13.95 + 7.5.
 - **Pillar 2:** 0.80x, table row "growth-phase drag, no offset" per S1. 0.65x rejected (CFO positive, liquidity Strong); 0.85x rejected (not a table value).
@@ -60,6 +62,14 @@ A BUY verdict downstream is valid only while the India standalone order book is 
 - Sector cap 20x (SHYAMMETL precedent).
 - SAT probabilities: quash 15% / narrowed 45% / upheld 40%; SC tail beyond hold.
 - NPC mature revenue: base Rs2,800cr FY29 @16%; bear Rs2,000cr @15%; bull Rs3,500cr @17%.
-- Am16 crossing: credit only on operator ruling.
+- Am16 crossing: SUPERSEDED. See the three rulings below.
 
-*Finalized deliberation. Stage 11 inherits the ruled card and halts at the Am16 gate if the FY28 base ROCE crosses r.*
+## OPERATOR RULINGS — VALUATION REFINEMENT (2026-08-25, later; supersede the Am16 gate above)
+
+- **Am16 crossing gate DROPPED.** Do not gate on 16%. Price the ROCE improvement as a gradient, not a binary crossing. No crossing question, no contingent case, no Am18 option-resolved state.
+- **ROCE-gradient destination PE.** Pillar 1 ROCE anchor varies by scenario; Pillar 2 0.80x and Pillar 3 +0 unchanged; cap 20x not binding. BEAR / primary: through-cycle 13.95% → 14.5x → additive 11.6x / RRM 8.1x. BULL: corrected base-projection FY29 ROCE 16.5% → 15.75x → additive 12.6x / RRM 8.8x. BASE: midpoint 15.2% → 15.1x → additive 12.1x / RRM 8.5x. Each destination PE applies to its own scenario FY30E forward EPS.
+- **Bargain-purchase gain CE correction.** Add ~Rs470cr (USD56.63m = USD158.63m net worth − USD102m paid, at Rs83/USD) to consolidated equity/CE from FY27 onward. Forward operating EPS is unchanged (the one-off gain is excluded from operating EPS and stays excluded). No further CE re-run beyond this correction.
+- Corrected base ROCE walk (FY26-FY30): 13.8 / 13.3 / 15.3 / 16.5 / 16.2. Fair values additive 487 / 870 / 1,271; RRM (governs) 340 / 611 / 888. Entry zone Rs219-313 (RRM), MoS Rs219, hurdle STOP, AVOID-on-valuation at CMP Rs714. All in B11-valuation.yaml.
+- Any BUY carries India standalone >=Rs2,500cr on a filed print; position cap Small. Role 3 must take seeds 1, 9, 10 (seller price, market already paying ~83%, WC scaling).
+
+*Finalized deliberation. Stage 11 is complete (corrected pass, committed); the approved pillars above govern stages 14/15/finalize.*

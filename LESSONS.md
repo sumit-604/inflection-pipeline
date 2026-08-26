@@ -100,6 +100,21 @@ _Written into a prompt/framework file so it cannot recur._
   (below the ~Rs2,500cr kill) only after Halt 1 sign-off; the freshness check
   exists for this. A late primary filing can move a signed decision variable,
   not just fill a gap.
+- [2026-08-26] Relative Valuation Cross-Check (MANINDS) — Section 1B v3.8
+  Amendment 20 (Step 1C). MANINDS pillar output 8.1-12.6x vs a live peer
+  quality cluster ~30x (Welspun ROCE 23% net cash, Ratnamani); the pillar was
+  correct on its own terms yet priced the converter far below where the market
+  prices the peer set, and no step forced that gap to be seen before the
+  verdict card. Rule: after the pillar build and before the verdict card, a
+  live dated peer table (4-6 peers) with quality/value clusters on normalised
+  earnings; place the subject with named adjustments; rule bear/base/bull exit
+  multiples; where the pillar destination sits more than 30% below the adjusted
+  peer base, the relative multiple governs and the pillar is shown as a
+  cross-check (both on the card). Sector cap and single-credit still bind; the
+  decision rules are unchanged. Correction 6: stale multiples in Claude web's
+  memory (a peer multiple recalled, not live-fetched) is a recording error, not
+  a peer input; Step 1C now bars it. Sector caps reviewed annually vs live peer
+  medians.
 
 ## OPEN ACTIONS
 _Pending framework edits Keerti maintains._

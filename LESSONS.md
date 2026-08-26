@@ -56,6 +56,18 @@ LESSONS_ARCHIVE.md for 2+ occurrences and promotes qualifying patterns here._
 
 ## PROMOTED TO LAW
 _Written into a prompt/framework file so it cannot recur._
+- [2026-08-26] frameworks/Section_1B_v3_9_Amendments.md — Amendment 20, new
+  step 1C Relative Valuation Cross-Check. After the pillar build, before the
+  verdict card: Claude web supplies a live peer table (4-6 peers; trailing P/E,
+  clean/forward P/E, ROCE, growth, net debt, governance), clusters on normalised
+  earnings, places the subject with stated adjustments, rules bear/base/bull
+  exit multiples. Pillar destination >30% below the adjusted peer base = the
+  relative multiple governs (bounded by the sector cap), pillar shown as a
+  cross-check. Sector caps reviewed annually against live peer medians. Peer
+  multiples must be live and dated; memory-pulled multiples are barred. Caught
+  on MANINDS: pillar output 8.1-12.6x vs peer quality cluster ~30x; stale
+  multiples in Claude web's memory caused Correction 6. Web-side ferry:
+  docs/team_workflow_amendments_maninds_2026-08-26.md.
 - [2026-07-12] frameworks/Section_1B_v3.3_Amendments.md — Amendment 4.5,
   Normalized-ROCE anchor for TEMPORARILY DEPRESSED + RECOVERING verdicts: a
   document-gated third ROCE anchor (median pre-depression cycle ROCE, capped

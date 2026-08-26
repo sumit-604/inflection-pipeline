@@ -6,7 +6,8 @@
 # (Pillar 1 normalization authority, supersedes standalone Amendment 4.5),
 # Section 1B v3.6 Amendments (Damodaran integration), Section 1B v3.7
 # Amendments (commodity converter cycle integration), Section 1B v3.8
-# Amendments (exit-basis symmetry and option resolution; later layers govern
+# Amendments (exit-basis symmetry and option resolution), Section 1B v3.9
+# Amendments (relative valuation cross-check, step 1C; later layers govern
 # the items they name where the layers overlap), FTTCP v2.1 Consolidated. The
 # framework is deliberately NOT copied into this file, so that Keerti's
 # amendments propagate to the pipeline the moment the project files
@@ -65,11 +66,23 @@ mode:
    FV CAGR, the COMPOUNDER/HYBRID/DISCOUNT-CLOSER label with its decomposition
    line, and FV-step lines for within-hold resolution events; label and FV CAGR
    surface on the verdict card.
+11. Relative valuation cross-check (v3.9 Amendment 20, step 1C) runs after the
+   pillar build and before the verdict card. It needs a LIVE peer table, which
+   Claude web supplies; the pipeline (no live web access) CANNOT populate or
+   govern it. In pipeline mode, mark the step 1C slot PENDING LIVE PEER TABLE
+   and let the pillar destination govern; never fabricate peer multiples or pull
+   them from memory (the Correction 6 guard). Where a live peer table IS injected
+   in B10, apply 20.2-20.8: cluster on normalised earnings, place the subject
+   with stated adjustments, rule bear/base/bull relative exit multiples on the
+   entry-consistent basis, and where the pillar destination sits >30% below the
+   adjusted peer base the relative multiple governs (bounded by the sector cap,
+   20.6) with the pillar shown as a cross-check and all Amendment 19 lines
+   recomputed on the governing multiple.
 
 ## FRAMEWORK ELEMENTS THE WRAPPER ENFORCES (per the injected layers, non-negotiable)
 
-- The Section 1B layer set (v3.3 Amendments + v3.5.1 + v3.6 + v3.7 + v3.8; later
-  layers govern the items they name) is the SOLE exit multiple authority.
+- The Section 1B layer set (v3.3 Amendments + v3.5.1 + v3.6 + v3.7 + v3.8 + v3.9;
+  later layers govern the items they name) is the SOLE exit multiple authority.
   No exit PE from any other source, no round-number defaults.
 - OPERATOR-APPROVED BASE (from the deliberation record via B10, authoritative):
   the destination (exit) PE base and the earnings basis (FORWARD or TRAILING)
@@ -144,7 +157,7 @@ status: complete
 input_gaps: []
 flags: []                      # FLAG-CASH carried forward with the
                                # multiplier actually applied
-framework_versions: "Master v3.6 / Section 1B v3.3+v3.5.1+v3.6+v3.7+v3.8 / FTTCP v2.1"
+framework_versions: "Master v3.6 / Section 1B v3.3+v3.5.1+v3.6+v3.7+v3.8+v3.9 / FTTCP v2.1"
 pe_basis: ""                   # forward | trailing (operator-approved at the FTTCP gate)
 exit_pe_base_approved: ""      # the operator-approved destination PE base carried from the deliberation
 destination_pe:
@@ -189,10 +202,12 @@ FRAMEWORK (verbatim from project knowledge):
 {{SECTION_1B_V36_AMENDMENTS}}
 {{SECTION_1B_V37_AMENDMENTS}}
 {{SECTION_1B_V38_AMENDMENTS}}
+{{SECTION_1B_V39_AMENDMENTS}}
 {{FTTCP_V21_CONSOLIDATED}}
 
-PRECEDENCE: where the Section 1B layers overlap, v3.8 governs the items it
-names (exit-basis symmetry and option resolution, operator directive
+PRECEDENCE: where the Section 1B layers overlap, v3.9 governs the items it
+names (relative valuation cross-check, step 1C, operator directive 26-Aug-2026),
+then v3.8 (exit-basis symmetry and option resolution, operator directive
 23-Aug-2026), then v3.7 (commodity converter integration, operator directive
 20-Aug-2026), then v3.6 (Damodaran integration, operator directive 13-Aug-2026), then
 v3.5.1 (Pillar 1 normalization), then v3.3. FTTCP v2.1 ROCE forward verdict is sole

@@ -1,0 +1,37 @@
+company: Jaykay Enterprises Limited
+ticker: JAYKAY
+bse: "500306"
+nse: JAYKAY
+cin: L55101UP1961PLC001187
+cmp: 0.00                 # NOT DISCLOSED in corpus
+market_cap_cr: 0          # NOT DISCLOSED in corpus
+run_date: 2026-08-26
+run_type: refresh         # monitoring-grade re-open of an AVOID name; NOT a valuation
+concalls_available: false # company hosts no earnings calls
+sector_cap_row: ""
+prior_verdict: AVOID
+notes: >
+  Corpus-extraction + Halt-1 draft only. NO valuation produced.
+  IMPORTANT corpus gap: the FY26 Annual Report was NOT attached. All four
+  attached PDFs are Q1 FY27 (quarter ended 30 Jun 2026) exchange filings.
+  FY26 figures below are the comparative columns inside the Q1 FY27 results;
+  the FY26 PAT-bridge note (exceptional item nature) is NOT in the corpus.
+corpus:
+  - id: e02e6630
+    title: Q1 FY27 Unaudited Standalone+Consolidated Results + Limited Review Reports
+    filed: 2026-08-14
+    quarter_ended: 2026-06-30
+    pages: 18
+  - id: b268c37d
+    title: Investor Release Q1 FY27
+    filed: 2026-08-14
+  - id: 1676c9b4
+    title: Rights Issue Committee outcome + Record Date
+    filed: 2026-08-20
+  - id: 2f30ea73
+    title: BrahMos order to Allen Reinforced Plastics (Rs 60.01 Cr incl GST)
+    filed: 2026-08-25
+not_provided:
+  - FY26 Annual Report (year ended 31 Mar 2026)
+  - Investor presentation deck
+  - Earnings-call transcript (company hosts none)

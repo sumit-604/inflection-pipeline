@@ -3,38 +3,53 @@ company: "MANINDS"
 run_date: "2026-08-21"
 model: claude-opus-4-8
 status: complete
-framework_versions: "Master v3.6 / Section 1B v3.3+v3.5.1+v3.6+v3.7+v3.8 / FTTCP v2.1"
-one_line_thesis: "Steel-pipe CONVERTER whose fair value compounds ~21% on the NPC ramp (operating EPS Rs40 FY27 to Rs72 FY30, ROCE 13.8% to 16.5%), but at Rs714 it trades 17.7x forward against an earned converter destination of 8.1-12.1x; the return AT CMP is negative (business compounding, not re-rating); AVOID-on-valuation, Small BUY only at Rs219-313 (RRM) with India standalone >= Rs2,500cr on a filed print."
-verdict: "AVOID"
-verdict_basis: "AVOID-on-valuation at CMP Rs714 (Hurdle STOP; U/D 0.69x <2x; Promoter CONCERN cap; CMP 2.3-3.3x the governing entry zone). Consistent with Role 1 decision and FTTCP deliberation. A Small BUY is valid only inside the entry zone with the named condition met."
-entry_range: {low: 219, high: 313, track: "RRM governing", additive_reference: "313-445"}
-mos_price: 219
-target_year3: {rrm_base: 611, additive_base: 870, rrm_bull: 888, additive_bull: 1271, rrm_bear: 340, additive_bear: 487}
+framework_versions: "Master v3.6 / Section 1B v3.3+v3.5.1+v3.6+v3.7+v3.8 + STEP 1C relative cross-check (operator amendment 2026-08-26) / FTTCP v2.1"
+governing_track: "relative (operator step 1C, 2026-08-26); pillar RRM/additive retained as cross-check only"
+recut_note: "RE-CUT 2026-08-26 on the updated B11 relative valuation; verdict moves AVOID -> WATCHLIST; governing entry Rs412-589; pillar output retained as a transparency cross-check line."
+one_line_thesis: "Steel-pipe CONVERTER priced at half the ~30x quality-peer multiple (16x base) for ~14% ROCE, net debt and governance CONCERN; on the operator step-1C relative multiples fair value is Rs504/1,150/2,018 and compounds ~21%, but at Rs714 (17.7x forward, ~11% above today FV Rs646) the base hurdle fails while bull passes, so WATCHLIST with a Small BUY only at Rs412-589 and India book >= Rs2,500cr filed; return source is business compounding, not re-rating."
+verdict: "WATCHLIST"
+verdict_basis: "WATCHLIST at CMP Rs714 (operator step-1C relative re-cut GOVERNS; Hurdle CONDITIONAL, base 1.61 fails / bull 2.09 passes; U/D 2.08x passes >=2x; CMP above governing entry high Rs589). Verdict moves AVOID -> WATCHLIST. Promoter CONCERN + AVERAGE Gate 0 cap size and block BUY NOW but no longer force AVOID. A Small BUY is valid only inside the entry zone with the named condition met."
+entry_range: {low: 412, high: 589, track: "relative governing"}
+mos_price: 412
+target_year3: {relative_base: 1150, relative_bull: 2018, relative_bear: 504, exit_pe: {bear: 12, base: 16, bull: 20}}
+pillar_crosscheck:
+  status: "RETAINED, NOT GOVERNING (Section 1B step 1C transparency)"
+  destination_pe: "8.1-12.6x (RRM 8.1/8.5/8.8; additive 11.6/12.1/12.6)"
+  entry_zone: "Rs219-313 (RRM), MoS Rs219"
+  fair_value: {rrm: {bear: 340, base: 611, bull: 888}, additive: {bear: 487, base: 870, bull: 1271}}
+  hurdle: "STOP (pillar); relative multiple governs per step 1C"
+  note: "pillar-earned destination 8.1-12.6x, entry Rs219-313; shown on the verdict card for transparency; the relative multiple governs per step 1C"
 fv_cagr_pct: 21.2
-return_source_label: "COMPOUNDER (FV CAGR >=20%); business compounding plus discount capture, NOT re-rating; return AT CMP negative because price sits ~2.1x the today fair value Rs343"
-hurdle_tier: "STOP"
-upside_downside_ratio: 0.69
+fv_path_relative_base: {today: 646, yr1: 877, yr2: 1061, yr3: 1150}
+return_source_label: "COMPOUNDER (FV CAGR >=20%); return source is BUSINESS COMPOUNDING (fair value compounds ~21% on the NPC ramp, multiple held at peer-anchored 16x, no re-rating lever); NOT a discount-closer at CMP (price ~11% above today FV Rs646); discount capture adds only inside the entry zone Rs412-589"
+hurdle_tier: "CONDITIONAL"
+hurdle_detail: {base_relative: 1.61, bull_relative: 2.09, threshold: 1.953}
+upside_downside_ratio: 2.08
+prob_weighted_cagr_at_cmp: 12.2
 current_forward_pe: 17.7
 destination_pe:
-  governing_track: "RRM"
-  rrm: {bear: 8.1, base: 8.5, bull: 8.8}
-  additive: {bear: 11.6, base: 12.1, bull: 12.6}
+  governing_track: "relative (operator step 1C)"
+  relative: {bear: 12, base: 16, bull: 20}
+  pillar_crosscheck_rrm: {bear: 8.1, base: 8.5, bull: 8.8}
+  pillar_crosscheck_additive: {bear: 11.6, base: 12.1, bull: 12.6}
   sector_cap: 20
-  note: "sector cap 20x not binding; ROCE-gradient per B11; no exit PE from outside Section 1B"
+  note: "bull 20x = sector cap, binds; base 16x ~half the ~30x quality peer; no exit PE from outside Section 1B"
 position_size: "Small"
-position_size_override: "Operator governance cap: Small (2-3%) while ANY governance item is open (SEBI/SAT, Limitless Note 36, MCA Section 206(5), Supreme Court); binds independently of the dispersion cap (width 90% -> Small anyway) and does not lift when dispersion narrows; lifts only when the governance items close."
+position_size_override: "Operator governance cap: Small (2-3%) while ANY governance item is open (SEBI/SAT, Limitless Note 36, MCA Section 206(5), Supreme Court); binds independently of the dispersion cap (width 132% -> Small anyway) and does not lift when dispersion narrows; lifts only when the governance items close."
 buy_named_condition: "India standalone order book >= Rs2,500cr on a filed print (currently Rs2,200-2,300cr, BELOW). Any BUY is invalid until met. Override lapses to WATCHLIST/AVOID if the Q2FY27 filed print (~14-Nov-2026) shows India standalone < Rs2,300cr."
-entry_conjunction: "A Small BUY executes only when price is inside Rs219-313 AND India book >= Rs2,500cr filed AND no thesis-broken trigger has fired."
+entry_conjunction: "A Small BUY executes only when price is inside Rs412-589 AND India book >= Rs2,500cr filed AND no thesis-broken trigger has fired."
+devil_wc_caveat: "LIVE, unresolved. NPC WC ~50-62% of revenue (transcript p.15). A heavier WC ramp lowers the honest operating-EPS/ROCE base and would pull the relative fair values (Rs504/1,150/2,018) down too, not just the pillar output. Tracked via debtor days / receivables ageing."
+merino_slice: "within-hold SOTP option; +Rs25/sh base, +Rs40/sh bull, zero bear; <5% of FV, non-compounding"
 thesis_broken_conditions:
   - "India standalone order book below Rs2,300cr on the Q2FY27 filed print (~14-Nov-2026) — lapses to WATCHLIST/AVOID (primary tripwire)"
-  - "Standalone debtor days fail to retrace toward 100 from ~128 by Q4FY27, or the 6mo-1yr receivables bucket grows in any FY27 quarter (WC not normalising)"
+  - "Standalone debtor days fail to retrace toward 100 from ~128 by Q4FY27, or the 6mo-1yr receivables bucket grows in any FY27 quarter (WC not normalising; devil's WC-ramp caveat firing)"
   - "Limitless Contracting loan (Note 36, Rs97.68cr) balance not falling, or terms still undisclosed"
   - "SAT vacates the stay or upholds the SEBI 2-year ban (governance adverse)"
   - "Consolidated EBITDA margin below 13% on a filed print"
   - "Jammu SS / Dammam coating commissioning slips past March 2027"
 monitoring_checklist:
   - "India standalone order book >= Rs2,500cr (green) / < Rs2,300cr (red) — Q2FY27 print ~14-Nov-2026"
-  - "Standalone debtor days falling toward 100 from ~128 by Q4FY27; 6mo-1yr receivables bucket not growing"
+  - "Standalone debtor days falling toward 100 from ~128 by Q4FY27; 6mo-1yr receivables bucket not growing (devil's WC-ramp tell)"
   - "Limitless Contracting Note 36 balance falling and terms disclosed"
   - "SEBI/SAT status: stay held or order quashed/narrowed (green) / stay vacated or ban upheld (red)"
   - "Consolidated EBITDA margin >= 13% sustained (14-16% guided)"
@@ -52,6 +67,7 @@ snapshot:
   mgmt_grade: "C"
   promoter_verdict: "CONCERN"
   tam_runway: "MASSIVE (capacity/execution binding, not market size)"
-flags: ["FLAG-PROMOTER governance CONCERN (SEBI stayed)", "FLAG-CASH growth-induced 0.80x on structural WC baseline", "FLAG-GATE0 AVERAGE", "Hurdle STOP at CMP", "India standalone below Rs2,500cr kill line (operator override active)"]
-input_gaps: ["NPC CY25 D&A NOT DISCLOSED", "NPC Saudi tax/zakat NOT FOUND", "warrant count NOT FOUND", "INR/USD acquisition-date rate inferred (Rs83.0/USD)", "peer median PE/EV-EBITDA precise values NOT extracted this stage", "portfolio holdings NOT SHARED (Section 9 NOT FOUND)"]
+flags: ["FLAG-PROMOTER governance CONCERN priced into the relative base 16x (half of ~30x quality cluster)", "FLAG-CASH growth-induced 0.80x on structural WC baseline (pillar cross-check); devil's WC-ramp caveat LIVE", "FLAG-GATE0 AVERAGE", "Hurdle CONDITIONAL at CMP (base fails, bull passes) - growth-dependent with de-rating headwind", "CMP above governing entry high Rs589 -> WATCHLIST", "India standalone below Rs2,500cr kill line (operator override active)", "Peer figures are operator live-peer SECONDARY (Claude web 2026-08-26)"]
+input_gaps: ["NPC CY25 D&A NOT DISCLOSED", "NPC Saudi tax/zakat NOT FOUND", "warrant count NOT FOUND", "INR/USD acquisition-date rate inferred (Rs83.0/USD)", "peer ROCE/net-debt for Ratnamani/Jindal/MSL NOT FOUND (only PE supplied)", "portfolio holdings NOT SHARED (Section 9 NOT FOUND)"]
 publish_candidate: false
+</content>

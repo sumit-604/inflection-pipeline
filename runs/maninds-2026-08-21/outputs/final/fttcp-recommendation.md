@@ -10,18 +10,20 @@ No REWORK (rule 1): 0 CRITICAL across all four verifiers; acceptance rates 96.6 
 
 No INSUFFICIENT EVIDENCE (rule 2): no core stage skipped, the FY25 annual report and Gate 0 both ran, the FLAG-CASH gap resolved on the full CRISIL rationale. Cash is GROWTH-INDUCED, not INDETERMINATE.
 
-Rule 3: FLAG-PROMOTER and FLAG-CASH are both active, which sets PROCEED WITH FLAGS. Overall confidence 80 sits in the normal band, so no one level downgrade under rule 4.
+Rule 3: FLAG-PROMOTER and FLAG-CASH are both active, which sets PROCEED WITH FLAGS. Overall confidence 80 sits in the normal band, so no one level downgrade under rule 4. The gate is unchanged by the 2026-08-26 relative re-cut; that ruling moves the valuation decision, not the analysis quality.
 
 ## Verdict card
 
 ```
 Tier: A | Hurdle: 25% (threshold 1.953)
 CMP Rs714 | Market cap Rs5,355 Cr | Diluted 7.50 Cr sh | Promoter 43.21%
-Decision: AVOID-on-valuation at Rs714 | Small BUY only in zone with the named condition
-Destination PE (converter, earned): RRM 8.1 / 8.5 / 8.8x governs; additive 11.6 / 12.1 / 12.6x
-Base fair value: RRM Rs611 | additive Rs870 | current forward PE 17.7x
-Hurdle STOP | U/D 0.69x (< 2x gate) | FV CAGR 21.2% COMPOUNDER (return AT CMP negative)
-Entry zone Rs219-313 (RRM governs) | MoS Rs219 | position cap Small (governance)
+Decision: WATCHLIST at Rs714 | Small BUY only in zone with the named condition
+Exit PE (GOVERNING, operator relative step 1C): bear 12x / base 16x / bull 20x (20x = sector cap, binds)
+Governing fair value (Year 3): bear Rs504 | base Rs1,150 | bull Rs2,018 | current forward PE 17.7x
+Hurdle CONDITIONAL (base 1.61 fails / bull 2.09 passes) | U/D 2.08x (>= 2x gate, passes) | prob-weighted 3yr CAGR at CMP +12.2%
+FV CAGR 21.2% COMPOUNDER (return source is business compounding, no re-rating lever)
+Entry zone Rs412-589 | MoS Rs412 | position cap Small (governance)
+Pillar cross-check (retained, not governing): destination RRM 8.1/8.5/8.8x, additive 11.6/12.1/12.6x; entry Rs219-313, MoS Rs219; base FV RRM Rs611 / additive Rs870
 ```
 
 Merino within hold slice, dual display (Am18.6):
@@ -30,13 +32,31 @@ Merino within hold slice, dual display (Am18.6):
 
 ## Valuation decision
 
-AVOID-on-valuation at CMP Rs714. Stated as computed by Role 1, not re-derived.
+WATCHLIST at CMP Rs714. Stated as computed by Role 1 on the operator relative re-cut, not re-derived. The prior AVOID moves to WATCHLIST because the peer anchored base 16x lifts the Hurdle from STOP to CONDITIONAL and the upside to downside ratio passes.
 
-A Small BUY is valid only inside the governing RRM entry zone Rs219 to 313, with margin of safety price Rs219, and only when the India standalone order book prints at or above Rs2,500 Cr on a filed disclosure. The additive track reference zone is Rs313 to 445. The stock trades at 17.7x forward against an earned converter destination of 8.1 to 12.6x, so the Hurdle returns STOP. Upside to downside is 0.69x, below the 2x gate. Fair value compounds 21.2% a year on the NPC ramp, so the return source is COMPOUNDER, but at Rs714 the price sits about 2.1x the Rs343 fair value today and the return earned at spot is negative.
+A Small BUY is valid only inside the governing entry zone Rs412 to 589, with margin of safety price Rs412, and only when the India standalone order book prints at or above Rs2,500 Cr on a filed disclosure. The stock trades at 17.7x forward against a peer anchored base of 16x, so the Hurdle returns CONDITIONAL: the base ratio 1.61 fails the 1.953 threshold and the bull ratio 2.09 clears it. Upside to downside is 2.08x, above the 2x gate. Fair value compounds 21.2% a year on the NPC ramp, so the return source is COMPOUNDER, business compounding rather than a re-rating. At Rs714 the price sits about 11% above the Rs646 fair value today, inside the hold path but above the entry that a 25% return needs; the probability weighted three year CAGR at spot is +12.2%, positive but below the 25% bar.
+
+## RELATIVE VALUATION CROSS-CHECK (Section 1B step 1C, operator amendment 2026-08-26)
+
+Peer inputs are live figures supplied by the operator via Claude web on 2026-08-26, tier SECONDARY. Man's ROCE ~14% through cycle is the Am17.1 corpus anchor; net debt and governance CONCERN are corpus anchored.
+
+| Peer | Forward PE | ROCE | Net debt | Governance | Cluster |
+|---|---|---|---|---|---|
+| Welspun Corp | ~30x | 23% | Net cash | Clean | QUALITY |
+| Ratnamani Metals | ~30x | NOT FOUND | NOT FOUND | Clean | QUALITY |
+| Jindal SAW | ~11x normalised | NOT FOUND | NOT FOUND | NOT FOUND | VALUE |
+| Maharashtra Seamless | ~10x | NOT FOUND | NOT FOUND | NOT FOUND | VALUE |
+| Man Industries | 16x base (12/16/20) | ~14 through cycle | Net debt | CONCERN | placed below QUALITY |
+
+Clusters and placement: the quality cluster trades near 30x (Welspun 23% ROCE net cash, Ratnamani ~30x). The value cluster trades near 10 to 11x (Jindal ~11x, MSL ~10x as the bear anchor). Man is placed below the quality cluster. Base 16x is about half of ~30x, cut for lower ROCE (14 vs 23), net debt against net cash, and governance CONCERN across the open SEBI/SAT, Limitless, MCA 206(5) and Supreme Court items. Bear 12x sits just above the value cluster. Bull 20x is the sector cap and binds.
+
+Over 30% governance note (step 1C rule): the pillar destination sits more than 30% below the adjusted peer base 16x. RRM base 8.5x is 47% below 16x; additive base 12.1x is 24% below. Per the step 1C >30% rule the relative multiple GOVERNS and the pillar output is retained only as a cross-check. That 30% gap is itself the governance, ROCE and net debt discount already priced into the 16x base, half of the ~30x quality cluster.
+
+Pillar cross-check (retained, not governing): earned converter destination RRM 8.1/8.5/8.8x, additive 11.6/12.1/12.6x. Pillar base fair value RRM Rs611, additive Rs870. Pillar entry zone Rs219 to 313 (RRM governing within the pillar), MoS Rs219; additive reference Rs313 to 445.
 
 ### Zone reachability
 
-Price history is unavailable in the block record; no 52 week low or lowest tested price since listing was extracted into the synthesis inputs. On the record that exists, the entry zone top Rs313 sits 56% below CMP Rs714. The devil's advocate finds the only routes into the Rs219 to 313 zone are an India order book collapse or an adverse SAT order, and both void the entry conjunction that would license a BUY. Classify DEEP WATCH, not actionable WATCHLIST. On the WC reloaded honest base the zone falls to Rs122 to 174, further below spot; a Tier B hurdle does not bring the zone within 15% of spot, so no Tier B alternative is printed.
+Price history is unavailable in the block record; no 52 week low or lowest tested price since listing was extracted into the synthesis inputs, so the tested price test cannot run. On the record that exists, the governing entry zone top Rs589 sits 17.5% below CMP Rs714, reachable through a normal correction or a thesis relevant shock. Classify actionable WATCHLIST, per the operator ruling that lifts the name from DEEP WATCH. The pillar cross-check zone top Rs313 sits 56% below spot, and the devil's WC reloaded zone Rs122 to 174 is deeper still; both stay in deep watch territory and neither is the governing entry.
 
 ## Confidence delta
 
@@ -58,7 +78,7 @@ Top two findings:
 - SEBI order 29 Sep 2025 found deliberate misstatement of FY15 to FY21 financials, non consolidation of Merino Shelters, unapproved related party transactions and fund diversion, with a two year trading ban on the Chairman, MD and a former ED/CFO. SAT stayed the order 10 Oct 2025 conditional on a 50% penalty deposit (B08 adverse_findings; media reported, cross verified 4+ outlets plus sebi.gov.in order listing).
 - NFRA banned the FY16 to FY17 audit engagement partner for five years in Nov 2023 for professional misconduct on the same non consolidation matter (B08; nfra.gov.in, cross corroborated). A Rs97.68 Cr loan from promoter controlled Limitless Contracting carries no disclosed rate or tenure, with about 77% of the year's interest accrued unpaid (B08; AR FY25 Note 36, dossier V5).
 
-Transition evidence: Ashish Kacholia, Carnelian Asset Management and Ovata Capital entered via a Rs255 Cr preferential issue (Jul 2025). Professional external CFO Sandeep Kumar, ex Welspun, hired within ten days of the prior CFO's exit. Merino Shelters consolidated since FY23-24 and CRISIL consolidates it in full (B08 transition_evidence; CRISIL RR 01-Jun-2026).
+Transition evidence: Ashish Kacholia, Carnelian Asset Management and Ovata Capital entered via a Rs255 Cr preferential issue (Jul 2025). Professional external CFO Sandeep Kumar, ex Welspun, hired within ten days of the prior CFO's exit. Merino Shelters consolidated since FY23-24 and CRISIL consolidates it in full (B08 transition_evidence; CRISIL RR 01-Jun-2026). The governance CONCERN is priced into the relative base 16x, half of the ~30x quality cluster.
 
 ## FLAG-CASH — GROWTH-INDUCED (Pillar 2 multiplier 0.80x)
 
@@ -85,15 +105,15 @@ Depressors:
 
 ## Amendment 16 gate — DROPPED
 
-The Am16 ROCE crossing gate was DROPPED by operator ruling (2026-08-25). The ROCE improvement from 13.8% to 16.5% is priced as a gradient, not a binary crossing at 16%. No crossing question, no contingent case, no Am18 option resolved state on the ROCE path. Pillar 1 ROCE anchor varies by scenario (bear 13.95% through cycle, base 15.2% midpoint, bull 16.5% corrected walk FY29); Pillars 2 and 3 unchanged; sector cap 20x not binding (B11 destination_pe_by_scenario; fttcp-deliberation.md ledger).
+The Am16 ROCE crossing gate was DROPPED by operator ruling (2026-08-25). The ROCE improvement from 13.8% to 16.5% is priced as a gradient, not a binary crossing at 16%. No crossing question, no contingent case, no Am18 option resolved state on the ROCE path. Pillar 1 ROCE anchor varies by scenario (bear 13.95% through cycle, base 15.2% midpoint, bull 16.5% corrected walk FY29); Pillars 2 and 3 unchanged. The pillar output is now a cross-check; the governing exit multiple is the operator relative set (B11 relative_exit_pe; fttcp-deliberation.md ledger).
 
 ## Devil's advocate — WC ramp load bearing caveat
 
-Overall devil verdict SURVIVES; the AVOID hardens; the constructive Small BUY tail is DESTROYED on the working capital reload.
+Overall devil verdict SURVIVES; the caveat is LIVE and unresolved.
 
-The corrected capital walk loaded only the Rs470 Cr bargain purchase gain into capital employed from FY27. It did not load NPC's forward working capital ramp. NPC working capital runs about 50 to 62% of revenue, or Rs500 to 625 Cr per Rs1,000 Cr of NPC revenue (B11 anchor npc_wc_per_revenue, transcript p.15). The FY27 to FY29 NPC ramp adds about Rs650 to 800 Cr of working capital the walk does not carry. Reload it and FY29 base ROCE falls from 16.5% toward 14.8%, base fair value falls from Rs611 toward Rs450 to 500, and the entry zone falls from Rs219 to 313 toward Rs122 to 174 (B15 top_counters; unreconciled_contradiction). The operator ruled no capital walk re-run beyond the bargain gain, so the primary entry zone stays Rs219 to 313 and this reload is carried as a caveat for the operator to revisit, not folded into the primary.
+The corrected capital walk loaded only the Rs470 Cr bargain purchase gain into capital employed from FY27. It did not load NPC's forward working capital ramp. NPC working capital runs about 50 to 62% of revenue, or Rs500 to 625 Cr per Rs1,000 Cr of NPC revenue (B11 anchor npc_wc_per_revenue, transcript p.15). The FY27 to FY29 NPC ramp adds about Rs650 to 800 Cr of working capital the walk does not carry. Reload it and FY29 base ROCE falls from 16.5% toward 14.8% and the honest operating EPS base falls with it. That drag pulls even the governing relative fair values of Rs504 / Rs1,150 / Rs2,018 down, not only the pillar output, because the 16x peer anchored multiple prices governance and ROCE, not a WC surprise (B15 top_counters; unreconciled_contradiction). On the pillar cross-check the same reload takes base fair value from Rs611 toward Rs450 to 500 and the pillar entry from Rs219 to 313 toward Rs122 to 174. The operator ruled no capital walk re-run beyond the bargain gain, so the caveat is carried live for the operator to revisit, not folded into the governing numbers.
 
-Seed 1 (seller price and converter cycle): the vendor exited NPC at about 2x CY25 earnings with USD83m liquid included, and guides the mature margin 700 to 1,000 basis points below the 25% CY25 delivered level; the current 15.3% standalone margin came from tenders bid on multi year low HRC now executing into a 15 to 20% steel squeeze. The honest NPC base is the bear, Rs340, not the base Rs611 (B15 Seed 1).
+Seed 1 (seller price and converter cycle): the vendor exited NPC at about 2x CY25 earnings with USD83m liquid included, and guides the mature margin 700 to 1,000 basis points below the 25% CY25 delivered level; the current 15.3% standalone margin came from tenders bid on multi year low HRC now executing into a 15 to 20% steel squeeze. The honest NPC margin base is the bear (B15 Seed 1).
 
 ## Contradicted claims (priority monitoring)
 
@@ -117,9 +137,8 @@ India standalone order book below Rs2,300 Cr on the Q2 FY27 filed print, about 1
 
 ## Named BUY condition
 
-A Small BUY executes only when price is inside Rs219 to 313 AND the India standalone order book is at or above Rs2,500 Cr on a filed print AND no thesis broken trigger has fired. The book is Rs2,200 to 2,300 Cr now, below the line, so no BUY is live. Position cap Small while any governance item is open.
+A Small BUY executes only when price is inside Rs412 to 589 AND the India standalone order book is at or above Rs2,500 Cr on a filed print AND no thesis broken trigger has fired. The book is Rs2,200 to 2,300 Cr now, below the line, so no BUY is live. Position cap Small while any governance item is open.
 
 ## Publish check
 
 No publish candidate this analysis.
-</content>

@@ -24,18 +24,21 @@ The competitive advantage sits in the steel pipe line, not the real estate line.
 
 Headline: Man Industries pivots to Saudi line pipe.
 Verdict line: PROCEED WITH FLAGS (rule 3).
-Decision: AVOID-on-valuation at CMP Rs714. Small BUY only in the entry zone with the named India book condition.
-Entry range: Rs219 to 313 (RRM governing). MoS Rs219.
+Decision: WATCHLIST at CMP Rs714. Small BUY only in the entry zone with the named India book condition. Moved AVOID to WATCHLIST on the operator relative re-cut (2026-08-26).
+Entry range: Rs412 to 589 (governing relative). MoS Rs412.
 Overall confidence 80 (normal band). Flags: FLAG-CASH growth-induced, FLAG-PROMOTER CONCERN, FLAG-GATE0 AVERAGE.
 
 ## Verdict
 
-AVOID at Rs714. Converter destination PE, earned not peer: RRM 8.1 / 8.5 / 8.8x governs; additive 11.6 / 12.1 / 12.6x. Base fair value RRM Rs611, additive Rs870. Current forward PE 17.7x. Hurdle STOP (Tier A, 25%, threshold 1.953). Upside to downside 0.69x. FV CAGR 21.2%, COMPOUNDER; return at CMP negative because the price sits about 2.1x the Rs343 fair value today. Position cap Small while any governance item is open.
+WATCHLIST at Rs714. Governing exit PE is the operator relative set (Section 1B step 1C, 2026-08-26): bear 12x / base 16x / bull 20x, 20x the sector cap. Governing Year 3 fair value bear Rs504 / base Rs1,150 / bull Rs2,018. Current forward PE 17.7x. Hurdle CONDITIONAL (Tier A, 25%, threshold 1.953): base ratio 1.61 fails, bull ratio 2.09 passes. Upside to downside 2.08x, above the 2x gate. Probability weighted three year CAGR at CMP +12.2%. FV CAGR 21.2%, COMPOUNDER; return source is business compounding, not re-rating, and at Rs714 the price sits about 11% above the Rs646 fair value today. Position cap Small while any governance item is open.
+
+Pillar cross-check (retained, not governing): converter destination RRM 8.1/8.5/8.8x, additive 11.6/12.1/12.6x; base fair value RRM Rs611, additive Rs870; pillar entry Rs219-313, MoS Rs219. The relative multiple governs because the pillar reads more than 30% below the peer base 16x (RRM 47% below, additive 24% below); that gap is the governance, ROCE and net debt discount the peer read already prices.
 
 ## Entry zones
 
-- Primary (operator ruled): Rs219 to 313 (RRM governing), MoS Rs219; additive reference Rs313 to 445. Zone top Rs313 is 56% below CMP Rs714; classify DEEP WATCH, reachable only via an India book collapse or an adverse SAT order, both of which void the entry conjunction.
-- Devil WC ramp caveat zone (NOT the primary, carried for operator revisit): Rs122 to 174. If NPC's forward working capital ramp (Rs650 to 800 Cr FY27-FY29 at ~Rs500-625 Cr per Rs1,000 Cr NPC revenue) is loaded into the capital walk, FY29 base ROCE falls from 16.5% toward 14.8% and base fair value from Rs611 toward Rs450 to 500. The operator ruled no CE re-run beyond the Rs470 Cr bargain gain, so the primary stands.
+- Governing (operator relative step 1C): Rs412 to 589, MoS Rs412. Zone top Rs589 is 17.5% below CMP Rs714, reachable via a normal correction; classify actionable WATCHLIST.
+- Pillar cross-check (retained, not governing): Rs219 to 313 (RRM), MoS Rs219; additive reference Rs313 to 445. Zone top Rs313 is 56% below spot; deep watch, shown for transparency.
+- Devil WC ramp caveat zone (NOT governing, carried for operator revisit): Rs122 to 174. If NPC's forward working capital ramp (Rs650 to 800 Cr FY27-FY29 at ~Rs500-625 Cr per Rs1,000 Cr NPC revenue) is loaded into the capital walk, FY29 base ROCE falls from 16.5% toward 14.8%, the honest earnings base falls, and even the governing relative fair values Rs504/1,150/2,018 come down. The operator ruled no CE re-run beyond the Rs470 Cr bargain gain, so the governing zone stands.
 
 ## Thesis broken triggers
 
@@ -70,12 +73,12 @@ AVOID at Rs714. Converter destination PE, earned not peer: RRM 8.1 / 8.5 / 8.8x 
 ## COMPANIES MASTER PAYLOAD
 
 - Company: Man Industries (India) Ltd (MANINDS). BSE 513269 / NSE MANINDS.
-- One line thesis: Steel pipe converter buying Saudi capacity (NPC, Aramco approved but not exclusively so); fair value compounds ~21% on the NPC ramp but at Rs714 the price sits above the earned converter destination, so the return at spot is negative; AVOID-on-valuation, Small BUY only Rs219-313 with India book >= Rs2,500 Cr filed.
-- Decision Status: DO NOT OVERWRITE. Pipeline computed AVOID-on-valuation; operator owns the live status.
-- Gate: PROCEED WITH FLAGS, kill-line override active (Vertical 1 THREATENS).
-- Entry zone (pipeline computed): Rs219-313 (RRM), MoS Rs219; devil WC caveat zone Rs122-174.
+- One line thesis: Steel pipe converter priced at half the ~30x quality peer multiple (16x base) for ~14% ROCE, net debt and governance CONCERN; on the operator step 1C relative multiples fair value is Rs504/1,150/2,018 and compounds ~21%, but at Rs714 (17.7x forward) the base hurdle fails while bull passes, so WATCHLIST with a Small BUY only Rs412-589 and India book >= Rs2,500 Cr filed.
+- Decision Status: DO NOT OVERWRITE. Pipeline computed WATCHLIST at Rs714; operator owns the live status.
+- Gate: PROCEED WITH FLAGS, kill-line override active (India book < Rs2,500 Cr).
+- Entry zone (pipeline computed): Rs412-589 (governing relative), MoS Rs412; pillar cross-check Rs219-313; devil WC caveat zone Rs122-174.
 - Snapshot: CMP Rs714; market cap Rs5,355 Cr; diluted 7.50 Cr sh; promoter 43.21%; Gate 0 60/160 AVERAGE (core 49, moat 11, 3 moats); Emerging Moat 32 STRENGTHENING; FTTCP +3/8 DEEP WATCH; mgmt grade C; promoter CONCERN; TAM runway MASSIVE (capacity binding).
-- Active flags: FLAG-CASH growth-induced (0.80x); FLAG-PROMOTER CONCERN; FLAG-GATE0 AVERAGE; Hurdle STOP.
+- Active flags: FLAG-CASH growth-induced (0.80x, pillar cross-check); FLAG-PROMOTER CONCERN (priced into the relative base 16x); FLAG-GATE0 AVERAGE; Hurdle CONDITIONAL; devil WC ramp caveat LIVE.
 - Active tripwires: India standalone book < Rs2,500 Cr kill line (currently below); WC normalisation Q2 FY27; Limitless Note 36 movement; SAT/206(5) outcome; capex ramp Mar-2027; EBITDA margin >= 13%.
 - Optionality register summary: Merino Shelters within hold slice (Sep-2026 launch, +Rs25/sh base on success, zero in bear); Dammam coating margin lever (FY28); Jammu stainless premium (FY28); NPC Aramco off take (2-4 yr, also a model falsifier); Saudi platform scaling to guided peak (3-5 yr).
 - Confidence delta: numerical 96.6 / redflag 80 / framework 97 / peer 83.3 / overall 80.
@@ -104,4 +107,3 @@ Target database: DOWNSTREAM SIGNAL TRACKER, data_source_id 926b65ce-ddd2-4d8b-8e
 |---|---|---|
 | Limitless Contracting Private Limited | promoter controlled related party financing counterparty (Rs97.68 Cr loan, first material appearance FY25) | Note 36 consolidated p.232-233; Board's Report auditor observations p.30-31 |
 | QatarEnergy LNG (approved vendor list) | new named customer / vendor qualification platform | Chairman's Statement p.9 |
-</content>

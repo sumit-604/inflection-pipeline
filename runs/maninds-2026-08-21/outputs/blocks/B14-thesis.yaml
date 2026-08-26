@@ -1,0 +1,57 @@
+stage: B14-thesis
+company: "MANINDS"
+run_date: "2026-08-21"
+model: claude-opus-4-8
+status: complete
+framework_versions: "Master v3.6 / Section 1B v3.3+v3.5.1+v3.6+v3.7+v3.8 / FTTCP v2.1"
+one_line_thesis: "Steel-pipe CONVERTER whose fair value compounds ~21% on the NPC ramp (operating EPS Rs40 FY27 to Rs72 FY30, ROCE 13.8% to 16.5%), but at Rs714 it trades 17.7x forward against an earned converter destination of 8.1-12.1x; the return AT CMP is negative (business compounding, not re-rating); AVOID-on-valuation, Small BUY only at Rs219-313 (RRM) with India standalone >= Rs2,500cr on a filed print."
+verdict: "AVOID"
+verdict_basis: "AVOID-on-valuation at CMP Rs714 (Hurdle STOP; U/D 0.69x <2x; Promoter CONCERN cap; CMP 2.3-3.3x the governing entry zone). Consistent with Role 1 decision and FTTCP deliberation. A Small BUY is valid only inside the entry zone with the named condition met."
+entry_range: {low: 219, high: 313, track: "RRM governing", additive_reference: "313-445"}
+mos_price: 219
+target_year3: {rrm_base: 611, additive_base: 870, rrm_bull: 888, additive_bull: 1271, rrm_bear: 340, additive_bear: 487}
+fv_cagr_pct: 21.2
+return_source_label: "COMPOUNDER (FV CAGR >=20%); business compounding plus discount capture, NOT re-rating; return AT CMP negative because price sits ~2.1x the today fair value Rs343"
+hurdle_tier: "STOP"
+upside_downside_ratio: 0.69
+current_forward_pe: 17.7
+destination_pe:
+  governing_track: "RRM"
+  rrm: {bear: 8.1, base: 8.5, bull: 8.8}
+  additive: {bear: 11.6, base: 12.1, bull: 12.6}
+  sector_cap: 20
+  note: "sector cap 20x not binding; ROCE-gradient per B11; no exit PE from outside Section 1B"
+position_size: "Small"
+position_size_override: "Operator governance cap: Small (2-3%) while ANY governance item is open (SEBI/SAT, Limitless Note 36, MCA Section 206(5), Supreme Court); binds independently of the dispersion cap (width 90% -> Small anyway) and does not lift when dispersion narrows; lifts only when the governance items close."
+buy_named_condition: "India standalone order book >= Rs2,500cr on a filed print (currently Rs2,200-2,300cr, BELOW). Any BUY is invalid until met. Override lapses to WATCHLIST/AVOID if the Q2FY27 filed print (~14-Nov-2026) shows India standalone < Rs2,300cr."
+entry_conjunction: "A Small BUY executes only when price is inside Rs219-313 AND India book >= Rs2,500cr filed AND no thesis-broken trigger has fired."
+thesis_broken_conditions:
+  - "India standalone order book below Rs2,300cr on the Q2FY27 filed print (~14-Nov-2026) — lapses to WATCHLIST/AVOID (primary tripwire)"
+  - "Standalone debtor days fail to retrace toward 100 from ~128 by Q4FY27, or the 6mo-1yr receivables bucket grows in any FY27 quarter (WC not normalising)"
+  - "Limitless Contracting loan (Note 36, Rs97.68cr) balance not falling, or terms still undisclosed"
+  - "SAT vacates the stay or upholds the SEBI 2-year ban (governance adverse)"
+  - "Consolidated EBITDA margin below 13% on a filed print"
+  - "Jammu SS / Dammam coating commissioning slips past March 2027"
+monitoring_checklist:
+  - "India standalone order book >= Rs2,500cr (green) / < Rs2,300cr (red) — Q2FY27 print ~14-Nov-2026"
+  - "Standalone debtor days falling toward 100 from ~128 by Q4FY27; 6mo-1yr receivables bucket not growing"
+  - "Limitless Contracting Note 36 balance falling and terms disclosed"
+  - "SEBI/SAT status: stay held or order quashed/narrowed (green) / stay vacated or ban upheld (red)"
+  - "Consolidated EBITDA margin >= 13% sustained (14-16% guided)"
+  - "Jammu SS + Dammam coating commissioned on/before March 2027 with first shipments"
+  - "NPC quarterly run-rate Rs300-500cr from Q2FY27 at 15-18% margin"
+  - "Promoter holding stable, pledge count (65,00,000 shares) falling, MCA 206(5) settled"
+snapshot:
+  cmp: 714
+  market_cap_cr: 5355
+  diluted_shares_cr: 7.50
+  promoter_holding_pct: 43.21
+  gate0: "60/160 AVERAGE (core 49/100, moat 11/60, 3 moats)"
+  emoat: "32 STRENGTHENING (9/20 active); combined HIGH POTENTIAL"
+  fttcp: "+3/8 DEEP WATCH"
+  mgmt_grade: "C"
+  promoter_verdict: "CONCERN"
+  tam_runway: "MASSIVE (capacity/execution binding, not market size)"
+flags: ["FLAG-PROMOTER governance CONCERN (SEBI stayed)", "FLAG-CASH growth-induced 0.80x on structural WC baseline", "FLAG-GATE0 AVERAGE", "Hurdle STOP at CMP", "India standalone below Rs2,500cr kill line (operator override active)"]
+input_gaps: ["NPC CY25 D&A NOT DISCLOSED", "NPC Saudi tax/zakat NOT FOUND", "warrant count NOT FOUND", "INR/USD acquisition-date rate inferred (Rs83.0/USD)", "peer median PE/EV-EBITDA precise values NOT extracted this stage", "portfolio holdings NOT SHARED (Section 9 NOT FOUND)"]
+publish_candidate: false

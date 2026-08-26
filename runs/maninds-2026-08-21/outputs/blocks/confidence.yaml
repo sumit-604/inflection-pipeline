@@ -1,24 +1,34 @@
 stage: confidence-delta
 company: MANINDS
 run_date: "2026-08-21"
-phase: 1
+phase: 3
 confidence_delta:
   numerical_acceptance: 96.6      # B12a (Verifier A); the single source_fidelity flag CLEARED at source
   redflag_coverage: 80            # B12b (Verifier B): 16 of 20 verifier-found flags already caught upstream
-  framework_adherence: 98         # B12c (Verifier C) phase-1 scope only: Gate 0 97 + Emerging Moat 100
+  framework_adherence: 97         # B12c (Verifier C) phase 1 + phase 3 folded: Gate0 97 + Emoat 100 + valuation 91 + decision-rules 100, mean 97
   peer_utilisation: 83.3          # B12d (Verifier D): 10 of 12 peers used substantively
-  overall: 80                     # min of the four
-band: "normal (75-89): note specifics"
-valuation_framework_adherence: pending-phase-3
+  overall: 80                     # min of the four (redflag 80 binds)
+  band: "normal (75-89): note specifics"
+framework_adherence_components:
+  gate0: 97                       # B12c phase 1
+  emerging_moat: 100              # B12c phase 1
+  valuation_adherence: 91         # B12c phase 3: 21 of 23 valuation rules passed
+  decision_rules: 100             # B12c phase 3: Role 2 decision-rule audit all PASS
+  destination_pe_applied_faithfully: true
 rework_triggered: false
-rework_basis: "0 CRITICAL (the one Verifier A source_fidelity MAJOR CLEARED on source re-check); all four verifier acceptance_rates >= 60 (96.6 / 80 / 98 / 75). No REWORK."
+rework_basis: "0 CRITICAL across all four verifiers (the one Verifier A source_fidelity MAJOR CLEARED on source re-check); all four acceptance_rates >= 60 (96.6 / 80 / 91 / 75); overall 80. Verifier C phase 3 destination_pe_applied_faithfully true; the 2 phase-3 fails are presentational MINORs, fixed in synthesis. No REWORK."
 specifics_to_note:
   - "Verifier A mis-sourced one standalone CFO figure from the screener consolidated line; B03's 0.693x standalone CFO/PAT verified correct at the AR standalone cash-flow anchor. Logged as FLAG CLEARED."
-  - "Verifier B surfaced 2 MINOR misses: Q1 other-income margin add-back, and that FY26 consolidated revenue was roughly flat once the ~Rs369cr Merino one-off is stripped (the revenue miss is larger than +13% implies)."
-  - "Verifier D found 2 MAJOR B06 citation/coverage imperfections (a mis-anchored but real Jindal hedging quote; an unused Ratnamani 75%-owned Saudi-JV ownership nuance). Neither flips the company-specific order-book finding."
+  - "Verifier B surfaced 2 MINOR misses: Q1 other-income margin add-back, and that FY26 consolidated revenue was roughly flat once the ~Rs369cr Merino one-off is stripped."
+  - "Verifier D found 2 MAJOR B06 citation/coverage imperfections; neither flips the company-specific order-book finding."
+  - "Verifier C phase 3: 0 critical, 0 major, 2 minor (Am4.3 Tier line not printed on the verdict card; Am18.6 Merino dual display not shown); both presentational, FIXED in the synthesis verdict card. Valuation adherence 91%, decision rules 100%, destination PE applied faithfully."
 disagreement_log:
   - number_or_claim: "B03 standalone CFO/PAT 0.693x FY25"
     verifier_a_verdict: "MAJOR, source_fidelity true, 'does not recalculate' (used screener consolidated CFO Rs67.99cr)"
     downstream_position: "B03 sourced it from AR standalone cash-flow statement"
     disposition: "FLAG CLEARED — source re-check found the number at a correct anchor (AR standalone CF: CFO Rs95.06cr / PAT Rs137.12cr = 0.693x). Re-checked by orchestrator 2026-08-21."
     note: "FLAG-CASH direction unaffected; both standalone 0.693x and consolidated 0.444x are below the 0.7x threshold."
+devil_finding_not_source_fidelity:
+  - claim: "B11 corrected CE walk states +Rs470cr bargain gain is 'the ONLY change'; devil B15 records NPC WC ramp ~Rs650-800cr FY27-FY29 not carried"
+    disposition: "Carried as the load-bearing devil caveat; operator ruled no CE re-run beyond the bargain gain, so the primary entry zone Rs219-313 stands. Modeling flag, not a Verifier A source-fidelity item."
+</content>

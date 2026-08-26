@@ -1,0 +1,12 @@
+run: maninds-2026-08-21
+produced_at: "2026-08-26"
+framework_git_commit: b39b8c68eea9908dcaee9217136c27cea590ad6c
+framework_tag: b39b8c68
+framework_versions: "Master v3.6 / Section 1B v3.3+v3.5.1+v3.6+v3.7+v3.8 / FTTCP v2.1"
+notes: >
+  Phase 3 finalize. Valuation priced on the operator-ruled ROCE-gradient
+  destination PE (additive 11.6/12.1/12.6x, RRM 8.1/8.5/8.8x), Am16 crossing
+  gate dropped per operator 2026-08-25, bargain-purchase gain (~Rs470cr) into
+  CE only. Devil WC-ramp finding carried as load-bearing caveat, not folded.
+  Cross-family FTTCP grader SKIPPED (no provider key); FTTCP confidence one
+  notch lower.

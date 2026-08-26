@@ -1,0 +1,136 @@
+# VERIFIER C — FRAMEWORK ADHERENCE, PHASE 3 VALUATION HALF
+# MANINDS | runs/maninds-2026-08-21 | audit of B11, B14 against operator-approved
+# pillars (fttcp-deliberation.md 2026-08-25) and the Section 1B layer set.
+# Scope: framework adherence only. Numbers-existence is Verifier A's gate.
+
+stage: B12c
+company: "MANINDS"
+run_date: "2026-08-21"
+model: claude-opus-4-8
+status: complete
+
+# ─────────────────────────────────────────────────────────────
+# PILLAR-BY-PILLAR RE-DERIVATION (PASS/FAIL beside each)
+# ─────────────────────────────────────────────────────────────
+audit:
+  pillar1:
+    formula: "0.5 x ROCE% + 7.5 (Am5, floor 9x; ceiling 30x per Am11 supersedes Am5 24x)"
+    bear:  {roce: 13.95, recomputed_pe: 14.475, stated: 14.5, verdict: PASS}
+    base:  {roce: 15.2,  recomputed_pe: 15.10,  stated: 15.1, verdict: PASS}
+    bull:  {roce: 16.5,  recomputed_pe: 15.75,  stated: 15.75, verdict: PASS}
+    floor_9x_respected: true
+    ceiling_30x_respected: true      # max Pillar1 15.75x, well below 30x
+    spot_roce_avoided_am17_1: true   # FY26 spot 13.8% shown, not used; bear uses through-cycle 13.95%
+    roce_anchors_match_operator_ruling: true  # 13.95 bear / 16.5 bull (corr base FY29) / 15.2 midpoint base
+    note: "base/bull anchors use projected corrected-walk ROCE as a gradient; this is the operator ruling of 2026-08-25 (Am16 gate DROPPED, ROCE priced as gradient), not a strict Am17.1 through-cycle read. Operator-authorized, faithfully applied."
+  pillar2:
+    multiplier: 0.80
+    determination: "growth-induced (growth-phase drag, no offset, S1)"
+    no_growth_offset: true
+    verdict: PASS
+  pillar3:
+    value: 0
+    verdict: PASS
+  rrm_r_build:
+    stated: "14.0 + 1.5 gov + 0.75 cyclical + 0.5 concentration - 0.5 durability - 0.25 moat"
+    recomputed_r: 16.0
+    verdict: PASS
+    cyclical_surcharge_am12b_cap: "+0.75 at the cap; durability moderate; compliant (and durability enters as a credit here, so no double-dock)"
+  rrm_multiplier:
+    formula: "1 + (13.5 - r) x 0.12"
+    recomputed: 0.70   # 1 + (-2.5)(0.12) = 0.70, exactly the x0.70 floor
+    stated: 0.70
+    verdict: PASS
+    applied_to_full_fundamental_base: true  # Pillar1 x 0.80 x 0.70 in every scenario
+  destination_pe:
+    additive: {bear: 11.6, base: 12.1, bull: 12.6, recompute: "14.5/15.1/15.75 x 0.80", verdict: PASS}
+    rrm:      {bear: 8.1,  base: 8.5,  bull: 8.8,  recompute: "additive x 0.70", verdict: PASS}
+    sector_cap_20x_breached: false          # max additive 12.6x
+    exit_pe_from_outside_1B: false          # derived from pillars, no round-number default
+    verdict: PASS
+  fair_values:
+    additive: {bear: 487, base: 870, bull: 1271, verdict: PASS}
+    rrm:      {bear: 340, base: 611, bull: 888, verdict: PASS}
+    per_scenario_eps_used: "each destination PE applied to its own FY30E op-EPS (42.0/71.9/100.9)"
+  exit_basis_symmetry_am18_1:
+    entry_basis: "one-year-forward FY27E"
+    exit_basis: "one-year-forward FY30E at Year-3 (forward both ends)"
+    verdict: PASS
+    bargain_gain_excluded_from_operating_eps: true   # Rs470cr hits CE only, never operating EPS
+  horizon_am18_0:
+    reaches_year4: true      # FY27-FY30 table in every case
+    verdict: PASS
+  fv_path_am19:
+    path_table_present: true
+    fv_cagr: 21.2
+    return_source_label: "COMPOUNDER (>=20%)"
+    label_on_verdict_card: true
+    verdict: PASS
+  hurdle_ratio:
+    current_forward_pe: 17.7
+    base_additive: 1.21
+    bull_additive: 1.32
+    threshold: 1.953
+    tier: A
+    tier_rationale: "Tier B fails (promoter CONCERN, not TRUSTWORTHY); Tier A 25% / 1.953 correct"
+    bull_credibility_gate: "grade C -> bull CAGR capped base+5% = 26.1%; bull 22.8% used as is, compliant"
+    verdict_recomputed: STOP
+    verdict: PASS
+  divergence_governing_track:
+    divergence_pct: 30
+    rule: ">15% -> conservative RRM governs entry"
+    governing_track: RRM
+    verdict: PASS
+  entry_zone:
+    rrm_base_fv_yr3: 611
+    entry_high: 313    # 611 / 1.953 = 312.9
+    mos_price: 219     # 313 x 0.70 (30% mixed)
+    verdict: PASS
+
+# ─────────────────────────────────────────────────────────────
+# ROLE 2 (B14) DECISION-RULE AUDIT
+# ─────────────────────────────────────────────────────────────
+role2_audit:
+  verdict: "AVOID"
+  consistent_with_hurdle_stop: true
+  consistent_with_entry_zone: true
+  small_governance_cap_documented: true   # Small (2-3%) while any governance item open, binds independent of dispersion
+  thesis_broken_conditions_present: true  # 6 conditions incl. India-book primary tripwire
+  named_buy_condition_carried: true       # India standalone >= Rs2,500cr filed
+  entry_conjunction_present: true
+  return_source_label_surfaced_am19_5: true
+
+# ─────────────────────────────────────────────────────────────
+# FINDINGS
+# ─────────────────────────────────────────────────────────────
+gate0: {rules_checked: 0, fails: []}   # not in phase-3 scope for this invocation
+emoat: {rules_checked: 0, fails: []}   # not in phase-3 scope for this invocation
+valuation:
+  rules_checked: 23
+  fails:
+    - "Am4.3 verdict-card Tier line not printed (MINOR)"
+    - "Am18.6 transition dual-display not shown for Merino within-hold slice (MINOR)"
+
+findings:
+  - severity: MINOR
+    rule: "Section 1B v3.4 Amendment 4.3 (verdict card must state 'Tier: [A/B] | Hurdle: [25%/20%]' on first line)"
+    location: "11-valuation.md VERDICT CARD first line; B14-thesis.yaml"
+    observed: "First card line is 'CMP Rs714 | Market cap...'; no explicit Tier/Hurdle line. Tier A / 1.953 threshold is used correctly in the Hurdle math."
+    should_be: "Verdict card first line prints 'Tier: A | Hurdle: 25%'. Decision unchanged (threshold applied correctly)."
+  - severity: MINOR
+    rule: "Section 1B v3.8 Amendment 18.6 (first five v3.8 runs display BOTH static-carry and resolution-based exit with per-share delta)"
+    location: "11-valuation.md Section 3 Merino within-hold SOTP slice"
+    observed: "Merino slice priced resolution-based (success +Rs25/sh base, bear zero) per 18.2/18.3, but the dual static-carry-vs-resolution display with per-share delta is not shown."
+    should_be: "If among the first five v3.8 Role 1 runs, show both constructions and the delta. Immaterial to decision (slice <5% of FV, bear zero, resolution-based governs)."
+
+recomputed_destination_pe: ""   # concur: additive 11.6/12.1/12.6, RRM 8.1/8.5/8.8 all reproduce exactly
+recomputed_decision: ""         # concur: AVOID-on-valuation, Hurdle STOP
+
+critical_count: 0
+major_count: 0
+minor_count: 2
+acceptance_rate: 91             # 21 of 23 valuation rules passed
+
+valuation_adherence_pct: 91
+decision_rules_adherence_pct: 100
+destination_pe_applied_faithfully: true

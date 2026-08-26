@@ -9,13 +9,15 @@ priced it today.
 
 Bookmarks are named by date: `fw-YYYY-MM-DD` (for example `fw-2026-07-18`).
 
-## The rules right now (20 August 2026)
+## The rules right now (26 August 2026)
 
 - Master Project Prompt: **v3.6**
-- Section 1B (exit multiple): the **four-layer set** — v3.3 Amendments +
+- Section 1B (exit multiple): the **six-layer set** — v3.3 Amendments +
   v3.5.1 Reconciliation + v3.6 Amendments + v3.7 Amendments (commodity
-  converters, 20-Aug). Where they overlap, v3.7 governs the items it
-  names, then v3.6, then v3.5.1, then v3.3.
+  converters, 20-Aug) + v3.8 Amendments (exit-basis symmetry and option
+  resolution, 23-Aug) + v3.9 Amendments (relative valuation cross-check,
+  step 1C, 26-Aug). Where they overlap, v3.9 governs the items it names,
+  then v3.8, then v3.7, then v3.6, then v3.5.1, then v3.3.
 - FTTCP: **v2.1** Consolidated
 - Quarterly Results Review Protocol: **v1.4** (Concall protocol: v1.1)
 - Annual Report Analysis Protocol: **v1.3**

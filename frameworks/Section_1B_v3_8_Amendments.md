@@ -1,6 +1,6 @@
-# SECTION 1B v3.8 AMENDMENTS — EXIT-BASIS SYMMETRY AND OPTION RESOLUTION
+# SECTION 1B v3.8 AMENDMENTS — EXIT-BASIS SYMMETRY, OPTION RESOLUTION, RELATIVE VALUATION CROSS-CHECK
 
-*Version 3.8 | 23 August 2026 | Exit-basis symmetry and option resolution, operator directive 23-Aug-2026. Layers on top of Section 1B v3.3 + v3.3 Amendments + v3.5.1 + v3.6 + v3.7. It does not modify any prior file in place. Where they overlap on items named here, v3.8 governs. Stage 11 reads this alongside the earlier Section 1B files. Amendments number continuing from v3.7 (whose last amendment is 17).*
+*Version 3.8 | 23 August 2026 (Amendments 18-19); addendum 26 August 2026 (Amendment 20, Relative Valuation Cross-Check / Step 1C, operator directive 26-Aug-2026). Layers on top of Section 1B v3.3 + v3.3 Amendments + v3.5.1 + v3.6 + v3.7. It does not modify any prior file in place. Where they overlap on items named here, v3.8 governs. Stage 11 reads this alongside the earlier Section 1B files. Amendments number continuing from v3.7 (whose last amendment is 17).*
 
 ---
 
@@ -62,6 +62,28 @@ The label is a diagnosis of WHERE the return comes from, not a quality grade —
 
 ---
 
+## AMENDMENT 20 — RELATIVE VALUATION CROSS-CHECK (STEP 1C)
+
+`[v3.8 addendum, operator directive 26-Aug-2026, arising from the MANINDS run: the pillar destination PE printed 8.1-12.6x while live listed peers priced the same converter earnings at a ~30x quality cluster. The pillar math was correct on its own terms and sat far below where the market prices the peer set; the framework had no step that forced that gap to be seen and ruled on before the verdict card. Step 1C is that step.]`
+
+**20.0 Placement.** Step 1C runs AFTER the pillar build (the Four-Pillar destination PE and the RRM track) and BEFORE the verdict card. It is a cross-check that can supersede the pillar destination as the governing exit multiple; it does not alter the pillar math, the entry-zone formula, MoS, or the today-value machinery.
+
+**20.1 Live peer table (mandatory).** Claude web supplies a table of 4-6 listed peers, each row carrying: trailing P/E, clean/forward P/E, ROCE, revenue growth, net debt or net cash, and a governance flag. Multiples are LIVE and dated the run. A multiple carried from model memory without a live re-fetch is barred; a stale-memory multiple is a recording error, not a peer input (see LESSONS Correction 6). Each row cites its source and date.
+
+**20.2 Cluster identification on normalised earnings.** Group the peers into a QUALITY cluster and a VALUE cluster on normalised, through-cycle, one-off-stripped earnings, never spot. State which peers sit in each and why (ROCE, balance sheet, governance).
+
+**20.3 Placement of the subject with stated adjustments.** Place the subject against each cluster with EXPLICIT named adjustments: lower or higher ROCE, net debt vs net cash, governance flag, growth. Each adjustment is a named haircut or premium, not a vibe. Rule bear / base / bull exit multiples from this placement. The bull multiple may not exceed the sector cap.
+
+**20.4 Governance rule (the 30% test).** Where the pillar destination PE (governing track) sits MORE THAN 30% below the adjusted peer base multiple, the RELATIVE multiple governs the exit and the pillar output is retained on the verdict card as a labelled cross-check line. Within 30%, the pillar governs and the relative table is shown as corroboration. Either way both appear on the card; neither is deleted. The card and the valuation block record which track governed and the test result.
+
+**20.5 No new premium; the cap and single-credit still bind.** The relative multiple is a Section 1B exit multiple like any other: bounded by the sector cap, earning no separate premium, and subject to single-credit (a quality already priced into the pillar is not re-credited through the peer multiple). Amendment 18.1 exit-basis symmetry is unchanged: the relative multiple applies to the same Year-N+1 EPS the pillar would have used, on the entry basis stated once.
+
+**20.6 Sector-cap annual review.** The Section 1B sector caps are reviewed annually against live peer medians. A cap more than one step below the live peer median for two consecutive reviews is flagged to the operator for a re-rule; it does not auto-change.
+
+**20.7 What Step 1C does not do.** It does not manufacture a BUY: a relative multiple that lifts the fair value still passes through the FTTCP Hurdle, the upside/downside gate, the entry-conjunction, and every active flag. It changes the exit multiple, not the decision rules.
+
+---
+
 ## INTERACTION WITH THE REST OF THE FRAMEWORK
 
 - **18.3 preserves Amendment 17's converter-multiple bar at resolution.** A converter slice resolving successfully still exits on its converter PE; no slice inherits the core multiple by resolving. This is load-bearing: it is what stops a converter option (e.g. an NdFeB line) from inheriting the core quality multiple the moment it prints revenue.
@@ -72,6 +94,7 @@ The label is a diagnosis of WHERE the return comes from, not a quality grade —
 - **19.0 consumes 18.0's Year-4 projection and 18.1's basis symmetry.** A run failing 18.0 (no Year-4 row) cannot produce 19.0; that is a SINGLE REWORK against 18.0, not two.
 - **19.4 reads 18.2's Resolution Calendar** and introduces no new resolution machinery or probability inputs; it only quantifies the per-share FV step of an already-parameterized slice.
 - **19.2's COMPOUNDER label does not override the transition-alpha mandate or any FTTCP verdict.** It is display and diagnosis. Nothing in Amendment 19 alters pillar math, destination PE, the entry-zone formula, MoS, or today-value machinery.
+- **Amendment 20 can supersede the pillar destination but nothing downstream of it.** When the 30% test hands the exit multiple to the relative track, the entry-zone formula (destination PE ÷ 1.953 style), MoS, the Hurdle Ratio, the upside/downside gate, the FV path (19.0), and every flag run on the relative destination exactly as they would on a pillar destination. The sector cap still binds the relative multiple. Single-credit still holds: a quality already inside the pillar is not re-credited through the peer multiple. 18.1 basis symmetry is unchanged; the relative multiple multiplies the same Year-N+1 EPS.
 
 ## VERSION HISTORY
 
@@ -81,3 +104,4 @@ The label is a diagnosis of WHERE the return comes from, not a quality grade —
 | 3.7 | 20-Aug-2026 | (prior) Amendment 17, commodity converter cycle integration. See `Section_1B_v3_7_Amendments.md`. |
 | 3.8 | 23-Aug-2026 | Amendment 18, exit-basis symmetry and option resolution, operator directive 23-Aug-2026, arising from the PERMAGNET v3 valuation walkthrough. 18.0 projection horizon = hold + 1 (Year 4 minimum in every case, Year-4 gap is REWORK). 18.1 exit-basis symmetry (exit EPS basis matches entry basis; mixing barred; stated once, governs both ends). 18.2 Option Resolution Calendar mandatory per slice (window, RESOLVES-WITHIN-HOLD vs BEYOND-HOLD, named resolution event; no event = narrative = zero). 18.3 within-hold options exit as resolved states (SUCCESS = mature PAT × the slice's own multiple, no probability/PV haircut; FAILURE = zero; bear carries all within-hold options at failure; converter-multiple bar preserved). 18.4 beyond-hold options re-dated from Year N and conditionally-probabilized. 18.5 today-value machinery unchanged (exit-only amendment). 18.6 transition dual-display for the first five names, resolution-based exit governs. 18.7 Role 3 standing one-year-slip question for within-hold options. |
 | 3.8 | 23-Aug-2026 | Amendment 19, fair-value path and FV-CAGR classification, operator directive 23-Aug-2026, arising from the PERMAGNET entry-zone interrogation. 19.0 mandatory FV path table in Section 4 (governing track, base case; today through end-Year-3, consuming 18.0's Year-4 EPS and 18.1's basis). 19.1 the one-number FV CAGR line = (end-Year-3 ÷ today)^(1/3) − 1. 19.2 mechanical return-source label COMPOUNDER (≥20%) / HYBRID (10-20%) / DISCOUNT-CLOSER (<10%), fixed thresholds; a diagnosis of where the return comes from, not a quality grade. 19.3 mandatory decomposition line (growing core vs static option share, fade drag, re-rating lever; SOTP names state the static-slice share of FV). 19.4 per-event FV-step lines for within-hold resolution events (bridge from tracker to valuation; no new probability inputs). 19.5 FV CAGR + label surface on the verdict card and in Role 2 Section 5; a DISCOUNT-CLOSER one-line thesis states the return is the discount closing, not compounding. Display and diagnosis only; alters no pillar math, destination PE, entry-zone formula, MoS, or today-value machinery. |
+| 3.8 (addendum) | 26-Aug-2026 | Amendment 20, Relative Valuation Cross-Check (Step 1C), operator directive 26-Aug-2026, arising from the MANINDS run (pillar 8.1-12.6x vs a peer quality cluster ~30x). 20.0 runs after the pillar build and before the verdict card. 20.1 mandatory live dated peer table (4-6 peers: trailing PE, clean/forward PE, ROCE, growth, net debt, governance; stale-memory multiples barred). 20.2 quality vs value clusters on normalised earnings. 20.3 subject placed against each with named adjustments; bear/base/bull exit multiples ruled; bull capped at the sector cap. 20.4 the 30% test: pillar destination more than 30% below the adjusted peer base -> relative multiple governs, pillar shown as a labelled cross-check; both always on the card. 20.5 no new premium, sector cap and single-credit bind, 18.1 basis symmetry unchanged. 20.6 sector caps reviewed annually against live peer medians. 20.7 Step 1C changes the exit multiple, not the decision rules (Hurdle, U/D, entry-conjunction, flags all still run). |

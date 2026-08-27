@@ -72,6 +72,23 @@ Do not upgrade a stage's model without editing its agent file.
 - Framework/prompt amendments and run outputs travel on SEPARATE branches
   and PRs; an amendment never rides a run PR.
 
+## FERRY AND COMMIT HYGIENE (both sides; team workflow v2)
+- Hash by default. Every report a command produces that involves a commit
+  ends with the commit hash and `git log -1 --stat`. Claude web verifies
+  against the repo; the operator never has to ask. A commit reported without
+  its hash is incomplete.
+- Dependency alignment. When an edit changes a status, ruling, or gate in one
+  section, align every dependent section (header status, supersessions,
+  blocking list, open items) in the SAME commit, and list what you aligned.
+  "Keep everything not named" never produces a file that contradicts itself.
+- Self-contained ferry blocks. Any text the operator carries between Claude
+  Code and Claude web contains everything needed to act on it: page IDs, file
+  paths, hashes, exact replacement text. A reference to "the IDs above" or "my
+  earlier message" is a defect.
+- Each document is paid for once. Corpus documents are read by Claude Code;
+  documents uploaded to claude.ai are read there. Neither ferries a document
+  to the other.
+
 ## MEMORY
 /run-pipeline, /fttcp, /finalize, and /compost sessions read the ACTIVE
 LESSONS.md at start (the lean working memory, hard budget under 1,500 tokens:
@@ -144,7 +161,11 @@ carries its evidence tier. The pipeline produces payloads. claude.ai
 executes writes. Each document is paid for once.
 The claude.ai project carries a parallel operating manual at
 project-instruction level (team_workflow_project_instructions);
-web-side rules bind Claude web the same way this file binds Code.
+web-side rules bind Claude web the same way this file binds Code. The repo
+keeps the current text of that manual at team_workflow_project_instructions.md
+(v2, five hand-offs: standing extraction annex at Halt 1, per-entity FTTCP and
+Role 1, gate pre-rulings, hash-and-ferry hygiene). The repo copy and the
+claude.ai project copy are kept in sync by the operator.
 
 ## ARCHETYPE LIBRARY (mental model declarations draw from this; extend via operator ruling only)
 - Build-to-spec component maker: customer capex cycle, design-win pipeline,

@@ -19,10 +19,18 @@ not recommend an action. You assemble what the pipeline already found.
 
 ## OPERATING RULES
 
-1. One response, no stops. Assemble all five sections in order.
+1. One response, no stops. Assemble all six sections in order (the five
+   understanding sections, then the Section 6 Standing Extraction Annex).
 2. Source strictly from the injected blocks (B01-B09) and verifier blocks.
    No web search, no new numbers, no re-reading of source PDFs for fresh
    claims. If a block did not establish something, say so; never fill it.
+   ANNEX EXCEPTION (Section 6 only): the ten standing-extraction questions
+   are answered from the corpus itself in quote-then-comment form, so for
+   the annex you MAY open the named source PDFs in inputs/ to retrieve the
+   exact printed quote and its page anchor. This exception is limited to
+   Section 6; sections 1-5 stay assembly-only. Where a stage report already
+   carries the anchored quote, reuse it rather than re-reading. The annex
+   carries no valuation, price, or verdict language either (rule 4 holds).
 3. Every number carries its block cite, e.g. (B04) or (B09.som_5yr_cr).
    A figure with no block trace is not written.
 4. NO VALUATION, PRICE, OR VERDICT VOCABULARY, anywhere in the output.
@@ -38,7 +46,8 @@ not recommend an action. You assemble what the pipeline already found.
    block. Prose sections follow NARRATIVE WRITING STYLE v1 (short
    sentences, active voice, no em-dashes, no AI-tell vocabulary).
 
-The dossier has FIVE sections, in this exact order.
+The dossier has SIX sections, in this exact order: the five understanding
+sections, then the Section 6 Standing Extraction Annex.
 
 ## SECTION 1: CORPUS COMPLETENESS AUDIT (always first)
 
@@ -161,9 +170,58 @@ vocabulary). Cover:
 
 No valuation, no price, no verdict language.
 
+## SECTION 6: STANDING EXTRACTION ANNEX (always last; Halt 1 is INCOMPLETE without it)
+
+Ten standing questions, answered from corpus for EVERY company, so Claude
+web never has to ferry them back as ad-hoc extraction prompts (team workflow
+v2, Hand-off 1). Answer each in quote-then-comment form: quote the printed
+figure or clause exactly as printed, filename and page anchor on every
+number, then one line of comment. Write NOT DISCLOSED, with the reason,
+where the corpus does not carry it. The ten are the same for every company
+and are numbered 1 through 10 in this order:
+
+1. UNITS. For every per-unit figure the pipeline uses or derives
+   (realisation per tonne, revenue per case, price per litre, ARPU), quote
+   the printed figure with its unit exactly as printed, state whether it
+   covers one product or a basket, and if no per-unit figure is printed say
+   so and give the volume and revenue lines from which one can be derived.
+2. SEGMENT CAPITAL AND DEBT. Segment assets, segment liabilities, capital
+   employed and any borrowings allocated by segment, latest two periods. If
+   borrowings are unallocated, say so and quote the total.
+3. GUIDANCE VERSUS ASPIRATION. Every forward number management has stated,
+   classified as (a) guidance with a period, (b) aspiration without a
+   period, (c) capacity or capability only. Quote each.
+4. CONCENTRATION. Product, customer and geography concentration as
+   disclosed; top product share and top customer share; NOT DISCLOSED if
+   absent.
+5. PROMISE LEDGER. Every tracked promise with date made, delivery status
+   and evidence anchor, in a table.
+6. RESTATED BASES. Whether prior-period comparatives are restated for any
+   reorganisation, transfer or reclassification; quote the note; quote the
+   comparative as printed in the latest filing.
+7. CORPORATE-ACTION CLAUSES. For any scheme, demerger, merger, preferential
+   issue or buyback in the corpus: the definitions of any undertaking, the
+   liability allocation clauses, the ratios, the appointed and effective
+   dates. If the scheme is not in the corpus, say so and name the filing to
+   fetch.
+8. RELATED-PARTY PERIMETER. Every promoter-group entity named in the AR's
+   RPT note with the nature and amount of transactions, latest year.
+9. PLEDGE AND SHAREHOLDING. Promoter pledge and holding for the last twelve
+   quarters as filed; institutional holding latest.
+10. VERIFICATION. The filename and date of every document quoted in the
+    annex, and the corpus commit hash. The corpus commit hash is supplied
+    to you in the task message ({{CORPUS_COMMIT_HASH}}); record it verbatim
+    as the last line of the annex. If it was not supplied, write
+    "CORPUS COMMIT HASH: NOT SUPPLIED" so the orchestrator's mechanical
+    check catches it.
+
+The annex ends with the corpus commit hash line from question 10. It is not
+optional: a Halt 1 dossier without a completed Section 6 is INCOMPLETE and
+the orchestrator will re-run this stage.
+
 ## OUTPUT
 
-Write the full five-section dossier to the output path, then end with
+Write the full six-section dossier to the output path, then end with
 exactly this fenced YAML block:
 
 ```yaml
@@ -191,6 +249,10 @@ fragility:
 candidate_count: 0             # B09 candidates carried into Section 4b
 research_brief_items: 0        # count of live-web work items for claude.ai
 plain_summary_points: 0        # must be 14 or 15
+annex:
+  present: false               # true only when all ten questions are answered
+  questions_answered: 0        # must be 10 (NOT DISCLOSED counts as answered)
+  corpus_commit_hash: ""       # verbatim from {{CORPUS_COMMIT_HASH}}, question 10
 ```
 
 ---
@@ -198,6 +260,7 @@ plain_summary_points: 0        # must be 14 or 15
 
 Company: {{COMPANY}} ({{TICKER}})
 Run date: {{RUN_DATE}}
+Corpus commit hash (for Section 6 annex question 10): {{CORPUS_COMMIT_HASH}}
 
 ALL COMMITTED BLOCKS (B00 through B09 + verifier blocks B12a/B12b/B12c-
 partial/B12d), inline:
@@ -205,3 +268,7 @@ partial/B12d), inline:
 
 STAGE REPORTS (for quote and cite retrieval only, never re-analysis):
 {{ALL_REPORTS}}
+
+CORPUS PDF PATHS (Section 6 annex only, for anchored quote retrieval where a
+stage report does not already carry the quote):
+{{CORPUS_PDF_PATHS}}

@@ -78,6 +78,20 @@ mode:
    adjusted peer base the relative multiple governs (bounded by the sector cap,
    20.6) with the pillar shown as a cross-check and all Amendment 19 lines
    recomputed on the governing multiple.
+12. ENTITY-COUNT GATE (team workflow v2). Read the entity count declared in
+   the handover dossier Section 1, carried onto B10 as B10.entity_count (with
+   the per-entity operator-approved bases from the deliberation record). If it
+   is greater than one, VALUE PER ENTITY: run the full Section 1B worksheet,
+   both tracks, projections, triangulation, entry prices, and the verdict card
+   ONCE PER ENTITY on that entity's operator-approved base, and REFUSE a single
+   consolidated valuation. State the refusal in one line, naming the entities.
+   Carry any consolidated figure only as a labelled reconciliation line, never
+   as a scored fair value or verdict. Where B10 tags an allocation
+   [ESTIMATE, X1] because standalone statements do not yet exist, carry the tag
+   onto every leverage-, cash-, or ROCE-dependent cell it touches and note that
+   the cell re-runs when the filed number arrives. Emit one B11 YAML block per
+   entity (entity name in the block). INDIAGLYCO discarded a run for valuing one
+   consolidated entity against a three-entity dossier; this gate prevents it.
 
 ## FRAMEWORK ELEMENTS THE WRAPPER ENFORCES (per the injected layers, non-negotiable)
 
@@ -146,7 +160,10 @@ The complete Role 1 output per the framework (method selection, Section
 checks including the FTTCP-consistency row, every selected method
 applied, triangulation, entry prices, risk-reward, three-pillar
 validation, the full verdict card with both tracks), then exactly this
-fenced YAML block:
+fenced YAML block. When B10.entity_count is greater than one, produce the
+full Role 1 output and one YAML block PER ENTITY (entity-count gate,
+override 12), plus a consolidated reconciliation line; never one
+consolidated valuation:
 
 ```yaml
 stage: B11-valuation
@@ -154,6 +171,8 @@ company: "{{TICKER}}"
 run_date: "{{RUN_DATE}}"
 model: claude-opus-4-8
 status: complete
+entity: ""                     # entity name; "" or "consolidated single-entity" when entity_count is 1
+entity_count: 1                # from B10.entity_count (dossier Section 1); emit one block per entity when >1
 input_gaps: []
 flags: []                      # FLAG-CASH carried forward with the
                                # multiplier actually applied

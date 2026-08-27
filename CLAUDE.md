@@ -185,6 +185,31 @@ claude.ai project copy are kept in sync by the operator.
 - Platform/network: active users, take rate, unit economics per
   transaction, network density, retention.
 
+## QUALITY LADDER (mental model Part B1 names two endpoints on this; DRAFT — PENDING OPERATOR RULING; adjust via operator ruling only)
+The transition thesis is a climb up this ladder. Part B1 of the Mental Model
+Declaration names the tier the business LEAVES (FROM) and the tier it CLAIMS
+to reach (TO), per line where lines transition differently. Rungs run low to
+high. Each rung is defined by pricing power and by ROCE durability, not by
+size. A business can sit between rungs; "fits no rung" is a finding, not a
+gap to paper over. Per-archetype the rung labels specialise (a lender's ladder
+runs on asset quality and RoA, not product spec); declare the specialised rung
+where the archetype needs it.
+1. Commodity price-taker: output is a spec, price set by the market or the
+   spread, no pricing power. ROCE tracks the cycle.
+2. Cost-advantaged converter: same commodity output, but a durable cost-curve
+   rank (scale, integration, location) holds a spread peers cannot. Quality
+   sits in the cost position, not the product.
+3. Value-added or spec'd supplier: products carry design-in, qualification, or
+   customisation; some switching cost; margin above the commodity floor but
+   customer-concentrated.
+4. Franchise supplier or share-of-wallet leader: qualified, sticky, gaining
+   share inside a growing customer; pricing holds through the cycle; ROCE
+   durable above cost of capital.
+5. Brand, franchise, or scarcity owner: end-demand pull, pricing power, a
+   distribution or licence moat; ROCE high and self-funding.
+The alpha the strategy hunts is a real climb of one or more rungs that the
+market has not yet repriced (the recognition gap, Part B4).
+
 ## OPERATOR VOICE (STE — all conversation, not only outputs)
 Every reply to the operator uses Simplified Technical English (ASD-STE100,
 codename STE) plus Zinsser. This governs ordinary chat, diagnosis, and

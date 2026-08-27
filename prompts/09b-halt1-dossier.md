@@ -8,6 +8,10 @@
 # re-analysis. Every claim traces to a block.
 # NO VALUATION: no price, no exit PE, no fair value, no BUY/WATCHLIST/AVOID,
 # no verdict-set language (PROCEED / REWORK / etc.) anywhere in this file.
+# ONE SCOPED EXCEPTION: Section 2 Part B4 (the recognition gap) poses, as an
+# explicit OPEN QUESTION, whether the TO state looks already reflected in
+# market pricing, and names the PE gap as the thing Stage 11 resolves. It
+# states no number, no conclusion, no verdict. Nowhere else touches pricing.
 # The kill/proceed decision is the operator's, made after reading this.
 # Cache boundary: everything above INJECTED INPUTS is stable.
 
@@ -38,6 +42,11 @@ not recommend an action. You assemble what the pipeline already found.
    CAVEATS, FLAGS, INSUFFICIENT, fair value, exit PE, destination PE,
    entry zone, MoS, target, upside, cheap, expensive, overvalued,
    undervalued. This is an understanding document, not a decision.
+   ONE SCOPED EXCEPTION: Section 2 Part B4 (the recognition gap) may pose,
+   as an explicit open question, whether the TO state looks already
+   reflected in market pricing, and may name the PE gap as the thing Stage
+   11 will resolve. It states no number, no fair value, no conclusion, no
+   verdict. No other part of the file touches pricing.
 5. The Mental Model Declaration is a DRAFT for operator sign-off. Nothing
    in this file may mark it signed. Signing happens only in claude.ai
    after live-web stress-testing.
@@ -92,25 +101,54 @@ date, or ABSENT. This section is inventory only; no analysis.
 
 ## SECTION 2: MENTAL MODEL DECLARATION (draft, for operator sign-off)
 
-Draft the five-part declaration from B04 (business model decoder) and
-B01-B03. Mark the whole section DRAFT - PENDING OPERATOR SIGN-OFF at its
-head.
+The declaration is a transition thesis, not a business description. The
+archetype is the FROM anchor. The transition is the model. The static
+parts are subordinate to the vector. Three parts, in this order. Mark the
+whole section DRAFT - PENDING OPERATOR SIGN-OFF at its head.
 
-1. ARCHETYPE: declare per business line where the lines differ. A company
-   can be two archetypes; declare the split, never force one label. Draw
-   from the ARCHETYPE LIBRARY in CLAUDE.md. If no archetype fits, say so
-   plainly. "Fits no known archetype" is a finding that feeds the kill
-   decision, not a gap to paper over.
-2. DOMINANT VARIABLES: the 3-4 variables that decide this business's
-   outcome, one line each on the current state from the blocks. Everything
-   else is declared noise.
-3. THE SIMPLE ANALOGY: one paragraph a non-investor could follow (the
-   tailor's-shop standard). If no honest analogy can be written, state
-   that; it is itself the finding.
-4. WHAT THE MODEL REJECTS: the questions this model declares noise (the
-   token- and hour-saving section).
-5. FALSIFIER OF THE MODEL ITSELF: what evidence would force a
-   re-declaration of the model.
+PART A - THE FROM STATE (the anchor, not the model)
+A1. ARCHETYPE. Per business line where lines differ, from the ARCHETYPE
+    LIBRARY in CLAUDE.md. Where the business starts, not what it becomes.
+A2. THE SIMPLE ANALOGY. One paragraph a non-investor could follow,
+    describing the business as it is today. Tight. It fixes where the
+    arrow begins. Stopping at Part A is the error this section forbids.
+
+PART B - THE TRANSITION (the model)
+B1. FROM to TO. The quality-tier migration, two explicit endpoints on the
+    QUALITY LADDER (CLAUDE.md), per line where lines transition
+    differently. Name the tier it leaves and the tier it claims to reach.
+B2. THE ENGINE. The one or two things that physically change to move it
+    from FROM to TO. The improving engine the ugly optic hides. State the
+    mechanism, not the narrative.
+B3. THE PROOF GATE. The hard binary observation, quarter by quarter, that
+    proves the shift is real. State the exact metric and threshold. This
+    is the observation Stage 11 FTTCP tests. Until it fires, the
+    transition is narrative and the name is research, not a trade.
+B4. THE RECOGNITION GAP (to be resolved at Stage 11). State, as an open
+    question, whether the TO state appears already reflected in market
+    pricing. Do not conclude here. Stage 11 confirms or denies it via the
+    PE gap. If TO is already priced, the re-rating engine is gone and only
+    earnings growth remains.
+B5. THE UGLINESS TEST. Classify today's ugly optic as ARTIFACT-OF-CLIMB
+    (a temporary feature of the ascent) or STRUCTURAL-FEATURE (a permanent
+    feature of a decaying or mispriced business), with the evidence. This
+    is the classification the value-trap test at Stage 13 and Role 3
+    carry. No trade verdict here.
+B6. THE TRANSITION FALSIFIER. The evidence that kills the transition
+    thesis, kept separate from what kills the business (Part C).
+
+PART C - WHAT THE MODEL WATCHES (derived from the transition)
+C1. DOMINANT VARIABLES. The 3-4 variables that decide the TRANSITION,
+    derived from THE ENGINE (B2) and THE PROOF GATE (B3), not from the
+    static snapshot. One line each on current state from the blocks. These
+    become the Role 5.5 tracker signals. Everything else is noise.
+C2. WHAT THE MODEL REJECTS. The questions this model declares noise,
+    especially sizing questions where the binding constraint is execution,
+    not market size.
+C3. THE BUSINESS FALSIFIER. The evidence that would force a re-declaration
+    of the FROM business itself, distinct from the transition falsifier
+    (B6). Two falsifiers, kept separate. One kills the arrow. One kills
+    the starting business.
 
 ## SECTION 3: BUSINESS UNDERSTANDING NARRATIVE
 
@@ -235,11 +273,20 @@ corpus_gaps:                    # list, or [] if CORPUS CURRENT
   - document: ""
     expected_source: ""        # BSE | company IR page | rating agency site
     kind: ""                   # findable-missing | plausibly-nonexistent | freshness-pair
-archetypes:                     # one per business line; two allowed
+archetypes:                     # PART A1: FROM anchor, one per business line; two allowed
   - line: ""
     archetype: ""              # from CLAUDE.md ARCHETYPE LIBRARY, or "fits no known archetype"
-dominant_variables: []         # 3-4 strings
-model_falsifier: ""            # what forces a re-declaration
+transition:                     # PART B: the model itself, one entry per line that transitions
+  - line: ""
+    from_tier: ""              # B1: tier it leaves, from CLAUDE.md QUALITY LADDER
+    to_tier: ""                # B1: tier it claims to reach, from CLAUDE.md QUALITY LADDER
+    engine: ""                 # B2: the 1-2 things that physically change
+    proof_gate: ""             # B3: exact metric + threshold Stage 11 FTTCP tests
+    recognition_gap: ""        # B4: open question, resolved at Stage 11 via the PE gap
+    ugliness: ""               # B5: ARTIFACT-OF-CLIMB | STRUCTURAL-FEATURE
+    transition_falsifier: ""   # B6: evidence that kills the transition thesis
+dominant_variables: []         # PART C1: 3-4 strings, derived from engine + proof gate
+business_falsifier: ""         # PART C3: evidence that forces re-declaring the FROM business
 mental_model_status: "DRAFT - PENDING OPERATOR SIGN-OFF"   # never anything else here
 fragility:
   variable_count: 0

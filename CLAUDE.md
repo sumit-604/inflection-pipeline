@@ -221,7 +221,7 @@ Two rules bind the ladder:
 The alpha the strategy hunts is a real climb of one or more rungs that the
 market has not yet repriced (the recognition gap, Part B4).
 
-## TRANSITION DECISION MATRIX (Stage 13 / gate recommendation applies this; DRAFT — PENDING OPERATOR RULING; adjust via operator ruling only)
+## TRANSITION DECISION MATRIX (Stage 13 / gate recommendation applies this; adjust via operator ruling only)
 Maps the signed model's three state variables to a transition POSTURE. The
 posture informs the gate recommendation and the value-trap test; it never
 replaces the five-verdict set and never sets a price. The variables:
@@ -236,6 +236,11 @@ closed = TO already priced, Part B4, resolved at Stage 11).
   Actionable only if growth clears the Hurdle without help from re-rating.
 - Proof NOT FIRED + ARTIFACT + gap OPEN -> RESEARCH / WATCH. Narrative until
   the proof gate fires (Part B3). Not a trade; watch the gate.
+- Proof NOT FIRED + ARTIFACT + gap CLOSED -> PRICED NARRATIVE (TRAP). Clean
+  optics, transition narrated but unproven, TO state already priced. The most
+  seductive cell: no ugliness warns you off, and the downside is double (the
+  transition fails AND the multiple compresses). AVOID or hard WATCH with no
+  position until the proof gate fires AND the price re-opens the gap.
 - Proof NOT FIRED + STRUCTURAL -> VALUE-TRAP RISK. The ugly optic looks
   permanent; classify DEEP WATCH or AVOID unless the classification is
   disproven.
@@ -243,6 +248,9 @@ closed = TO already priced, Part B4, resolved at Stage 11).
   ugliness says decaying; a flag to resolve, not a posture. Re-examine the
   classification before any verdict.
 - gap CLOSED + STRUCTURAL -> AVOID. Priced and not really climbing.
+State space exhaustive: 2x2x2 = 8 states, all mapped. The two STRUCTURAL rows
+each cover both gap states, with gap CLOSED + STRUCTURAL -> AVOID as the
+dominating overlay.
 
 ## OPERATOR VOICE (STE — all conversation, not only outputs)
 Every reply to the operator uses Simplified Technical English (ASD-STE100,

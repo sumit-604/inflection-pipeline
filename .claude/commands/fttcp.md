@@ -84,6 +84,30 @@ superseding corpus-derived views (honor explicit supersessions, e.g. a
 corrected cash-conversion series), the promise ledger, and tracker row
 proof.
 
+## ENTITY-COUNT GATE (team workflow v2 — decide before any scorecard)
+
+Read the entity count declared in the handover dossier Section 1. State the
+count in one line before Step 0. Then:
+
+- ONE entity: run the protocol once, as a single pass, exactly as below.
+- MORE THAN ONE entity (or the corpus shows a demerger, spin-off, or listing
+  of a subsidiary inside the projection window): run PER ENTITY from the
+  first pass. Produce one Step 3 scorecard, one composite, one verdict, and
+  one P/E BASE CARD per entity. REFUSE a single consolidated pass and say so
+  in one line, naming the entities. A consolidated pass is never the decision
+  surface. Carry any consolidated figure only as a reconciliation line
+  beneath the per-entity results, never as a scored verdict. Where standalone
+  balance sheets do not yet exist, the operator may rule that allocation is
+  carried as an ESTIMATE; tag every leverage-, cash-, or ROCE-dependent cell
+  [ESTIMATE, X1] and note that the affected sections re-run when the filed
+  number arrives. INDIAGLYCO discarded a whole run for scoring one
+  consolidated entity when the dossier declared three; this gate exists to
+  stop that.
+
+Each per-entity P/E BASE CARD shows Claude Code's draft ruling BESIDE the
+dossier's Section 6 Gate Pre-Ruling for that entity, with BOTH reasonings, so
+the operator rules once on the card (see THE P/E BASE CARD below).
+
 ## LOAD ORDER (read all of this before writing a word)
 
 Read, in this order:
@@ -226,6 +250,12 @@ does not know the framework. Open the file with the company, ticker, cmp, run
 date, and one line saying first-workup or refresh and whether it ran in
 NO-CONCALL MODE.
 
+When the entity-count gate declared more than one entity, parts 2, 3, 4 and
+5 and the Step 3 scorecard REPEAT per entity, each block headed by the entity
+name; any consolidated figure appears only as a labelled reconciliation line
+beneath the per-entity blocks, never as a scored verdict. MY RULINGS stays
+one section and states the entity split and the per-entity calls.
+
 The file has these parts, in this order:
 
 1. **MY RULINGS.** Open with this. List every judgment call you made as a
@@ -266,7 +296,21 @@ CATALYST flag for the devil's advocate).
 5. **THE P/E BASE CARD (for operator approval).** A plain preview of the exit
    multiple the valuation will use, computed from Section 1B off the inputs known
    now (this is a preview for the operator to approve, NOT the final valuation —
-   Role 1 still runs the full dual-track exercise in Phase 3). Show:
+   Role 1 still runs the full dual-track exercise in Phase 3). When the
+   entity-count gate declared more than one entity, produce ONE card PER
+   ENTITY; never one blended card. Each card shows, side by side, TWO drafts
+   the operator rules on at once:
+   - CLAUDE CODE DRAFT: your ruling on each pillar input below, with your
+     one-line reasoning.
+   - DOSSIER SECTION 6 PRE-RULING: the claude.ai pre-ruling for this entity
+     from the handover dossier's Section 6 Gate Pre-Rulings (P/E base per
+     pillar, cash multiplier band with structural/growth-induced call, growth
+     premium and whether Amendment 16 opens, earnings basis, sector cap row,
+     option inputs with reference frames, any Amendment 17/18/19 treatment),
+     with its reasoning. If the dossier carries no pre-ruling for an input,
+     write "no dossier pre-ruling" rather than leaving it blank.
+   Where the two drafts disagree, say so plainly on the card so the operator
+   sees the split before ruling. Show:
    - Pillar 1: the ROCE used and the v3.5.1 normalization route (none / A / B) →
      the base PE the continuous formula produces.
    - Pillar 2: the cash multiplier (structural / growth-induced / INDETERMINATE).
@@ -329,7 +373,12 @@ guess or fabricate an anchor.
 
 Record every override the moment it happens: what the draft said, what the
 operator ruled, and the operator's stated reasoning in the operator's words.
-Keep answering and recording until the operator signs off.
+Where the operator's ruling overrides BOTH drafts (Claude Code's and the
+dossier Section 6 pre-ruling), record the override with the operator's stated
+reasoning AND the default-track sensitivity: the number the valuation would
+have carried on the default track (the more conservative of the two drafts),
+so the cost of the override is visible. Keep answering and recording until the
+operator signs off.
 
 ## VALUATION PILLAR APPROVAL (mandatory operator gate — do not skip)
 
@@ -391,6 +440,9 @@ LESSONS.md, which is budget-capped): what broke or dragged this session, or
   is the only ceiling.
 - Never let INDETERMINATE cash conversion resolve to a clean pass.
 - Never fabricate a catalyst to fill a table; NONE FOUND is a valid finding.
+- Never run a single consolidated FTTCP pass when the dossier Section 1
+  declares more than one entity; score and value per entity, consolidated
+  figures as a reconciliation line only (entity-count gate).
 - Never sign off without the operator's explicit approval of the destination PE
   base and the earnings basis (forward or trailing) at the VALUATION PILLAR
   APPROVAL gate. Never pick the earnings basis yourself.

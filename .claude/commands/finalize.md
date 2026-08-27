@@ -77,8 +77,17 @@ phase 3), then:
        destination (exit) PE base on both tracks and the chosen earnings
        basis (forward or trailing). These are authoritative; carry them
        onto B10 so stage 11 uses the approved base and applies the
-       multiple on the approved basis.
-     - every recorded operator override.
+       multiple on the approved basis. When the run is multi-entity, the
+       deliberation carries one approved base per entity; carry each onto
+       B10 against its entity.
+     - the entity count declared in the handover dossier
+       (inputs/research/web-handover-dossier.md) Section 1, carried onto
+       B10 as entity_count, with any allocation the operator ruled to be
+       carried as an ESTIMATE tagged [ESTIMATE, X1]. This drives stage 11's
+       entity-count gate: more than one entity means value per entity, no
+       consolidated pass.
+     - every recorded operator override, including any recorded with the
+       default-track sensitivity from the FTTCP gate cards.
    Where any of these conflict with a value the pipeline assembled
    earlier, the deliberation value wins and the assembly must anchor it to
    the deliberation record. Collect B10 into outputs/blocks/.
@@ -101,7 +110,12 @@ phase 3), then:
    ({{FTTCP_V21_CONSOLIDATED}}). If frameworks/ is missing
    any of the seven files, STOP and tell the user which to add. The FTTCP ROCE
    forward verdict and structural/growth determination it consumes are
-   the deliberation-confirmed ones carried on B10. Collect B11.
+   the deliberation-confirmed ones carried on B10. ENTITY-COUNT GATE: when
+   B10.entity_count is greater than one, stage 11 values PER ENTITY on each
+   entity's operator-approved base and REFUSES a single consolidated pass;
+   collect one B11 block per entity (B11-<entity>) plus the consolidated
+   reconciliation line, and carry all of them into the downstream stages.
+   Otherwise collect B11.
 
 3. STAGE 14 — ROLE 2 INVESTMENT THESIS. Invoke stage-14-thesis (model
    opus, thin wrapper reading its Role 2 section from
@@ -254,6 +268,15 @@ answered from the blocks, write "the run did not establish this" rather than fil
    verdict, and the paths to the four final deliverables plus
    outputs/final/notion-payload.md.
 
+   FINALIZE GATE (team workflow v2 — hash by default). End the report with
+   the commit hash and the output of `git log -1 --stat`, so Claude web
+   verifies against the repo and the operator never has to ask. A finalize
+   report that omits the hash or the `--stat` is INCOMPLETE. If this run made
+   more than one commit (per-stage commits under EXECUTION DISCIPLINE), report
+   the hash of each, newest last, with the final `git log -1 --stat`. Any
+   ferry block in the report is self-contained: file paths, hashes, and exact
+   text inline, never "the paths above".
+
    PRINT FINALS IN CHAT: after writing the final files and committing,
    always print the primary human-readable documents in full in the chat,
    in this order: the thesis verdict card (from B14), then the devil's
@@ -279,3 +302,9 @@ Rules for you, the orchestrator session:
 - Never paste full PDFs into subagent task messages; pass file PATHS.
 - Verifier independence is absolute.
 - Nothing halts on company quality; only mechanical failures halt.
+- Hash by default: end any report that involves a commit with the hash and
+  `git log -1 --stat`; a report without them is incomplete.
+- Dependency alignment: when an edit changes a status, ruling, or gate,
+  align every dependent section in the SAME commit and list what you aligned.
+- Self-contained ferry: any block the operator carries to Claude web holds
+  every path, hash, and exact text it needs; no reference to earlier messages.

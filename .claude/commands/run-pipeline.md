@@ -189,27 +189,40 @@ handoff schemas, flag rules, and error handling. Then:
 
 6b. HALT 1 DOSSIER (stage 09b). RUNS LAST, after the verifiers and the
    synthesis-lite, before the halt. Invoke stage-09b-dossier per
-   prompts/09b-halt1-dossier.md. Pass it ONLY the committed blocks (B00
+   prompts/09b-halt1-dossier.md. Pass it the committed blocks (B00
    through B09 plus the verifier blocks B12a, B12b, B12c-partial, B12d) and
-   the stage reports for quote retrieval, and the output path
-   outputs/reports/09b-understanding-dossier.md. It assembles from
-   committed evidence only: no new research, no web claims, no valuation
-   numbers. It writes the five-section understanding dossier (corpus audit,
-   mental model declaration draft, business narrative, downstream dossier
-   with fragility read, 14-15 point plain-language summary) and emits the
-   B09b YAML block. Collect B09b into outputs/blocks/. Nothing in this
-   stage or here may mark the Mental Model Declaration signed.
+   the stage reports for quote retrieval, the output path
+   outputs/reports/09b-understanding-dossier.md, AND two inputs the Section 6
+   Standing Extraction Annex needs: (a) the corpus commit hash, from
+   `git rev-parse HEAD` run in the run folder before the invocation, passed
+   at the prompt's {{CORPUS_COMMIT_HASH}} marker; (b) the inputs/ PDF paths
+   (annual-report/, results/, concalls/, announcements/, shareholding/,
+   prospectus/), passed at {{CORPUS_PDF_PATHS}} so the annex can retrieve an
+   anchored quote where a stage report does not already carry it. Sections
+   1-5 assemble from committed evidence only: no new research, no web claims,
+   no valuation numbers. Section 6 is the ANNEX EXCEPTION: it answers the ten
+   standing-extraction questions from corpus in quote-then-comment form, and
+   may open the named PDFs for anchored quotes. It writes the six-section
+   dossier (corpus audit, mental model declaration draft, business narrative,
+   downstream dossier with fragility read, 14-15 point plain-language summary,
+   then the Section 6 Standing Extraction Annex) and emits the B09b YAML
+   block. Collect B09b into outputs/blocks/. Nothing in this stage or here may
+   mark the Mental Model Declaration signed.
 
    MECHANICAL DOSSIER CHECK (before the HALT 1 message prints): grep
-   outputs/reports/09b-understanding-dossier.md for the five section
-   headers (SECTION 1 through SECTION 5, in order), exactly one corpus
+   outputs/reports/09b-understanding-dossier.md for the six section
+   headers (SECTION 1 through SECTION 6, in order), exactly one corpus
    verdict line (CORPUS CURRENT, CORPUS GAPPED, or CORPUS GAPPED-FRESHNESS),
-   and the "DRAFT - PENDING OPERATOR SIGN-OFF" marker in Section 2. When the
-   verdict is CORPUS GAPPED-FRESHNESS, also confirm the missing mate is the
-   first line of outputs/final/gate-recommendation.md. On any miss,
-   re-run stage 09b once. If it is still malformed after the re-run, STOP
-   and report which check failed. The HALT 1 message never prints over a
-   malformed dossier.
+   and the "DRAFT - PENDING OPERATOR SIGN-OFF" marker in Section 2. ANNEX
+   CHECK (team workflow v2, Hand-off 1): confirm Section 6 answers all ten
+   numbered questions (1 through 10, in order) and ends with the corpus
+   commit hash line; a Section 6 that is absent, short of ten questions, or
+   missing the hash makes Halt 1 INCOMPLETE. When the verdict is CORPUS
+   GAPPED-FRESHNESS, also confirm the missing mate is the first line of
+   outputs/final/gate-recommendation.md. On any miss, re-run stage 09b once.
+   If it is still malformed after the re-run, STOP and report which check
+   failed. The HALT 1 message never prints over a malformed or annex-
+   incomplete dossier.
 
 7. COMMIT all outputs with message "phase 1 (evidence): <ticker> <date>"
    and report to the user: the corpus verdict and fragility verdict from

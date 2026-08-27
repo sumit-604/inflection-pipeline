@@ -92,6 +92,16 @@ mode:
    the cell re-runs when the filed number arrives. Emit one B11 YAML block per
    entity (entity name in the block). INDIAGLYCO discarded a run for valuing one
    consolidated entity against a three-entity dossier; this gate prevents it.
+13. RECOGNITION GAP RESOLUTION. The signed mental model's RECOGNITION GAP
+   (09b Section 2 Part B4) is an OPEN QUESTION that resolves HERE, and it
+   equals the PE-gap check: does the current PE already sit at the TO rung's
+   neighbourhood (CLAUDE.md QUALITY LADDER)? The FROM->TO rung migration is
+   exactly the re-rating the destination PE captures; the destination-PE delta
+   over the current PE IS the re-rating engine. If the current PE already sits
+   at the TO neighbourhood, the re-rating engine is spent and the return rides
+   EPS CAGR alone (state this on the verdict card, and it feeds the Hurdle
+   read). Resolve the gap plainly as part of the destination-PE / market-
+   implied work; do not restructure the valuation math around it.
 
 ## FRAMEWORK ELEMENTS THE WRAPPER ENFORCES (per the injected layers, non-negotiable)
 

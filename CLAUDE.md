@@ -185,7 +185,7 @@ claude.ai project copy are kept in sync by the operator.
 - Platform/network: active users, take rate, unit economics per
   transaction, network density, retention.
 
-## QUALITY LADDER (mental model Part B1 names two endpoints on this; DRAFT — PENDING OPERATOR RULING; adjust via operator ruling only)
+## QUALITY LADDER (mental model Part B1 names two endpoints on this; adjust via operator ruling only)
 The transition thesis is a climb up this ladder. Part B1 of the Mental Model
 Declaration names the tier the business LEAVES (FROM) and the tier it CLAIMS
 to reach (TO), per line where lines transition differently. Rungs run low to
@@ -193,22 +193,56 @@ high. Each rung is defined by pricing power and by ROCE durability, not by
 size. A business can sit between rungs; "fits no rung" is a finding, not a
 gap to paper over. Per-archetype the rung labels specialise (a lender's ladder
 runs on asset quality and RoA, not product spec); declare the specialised rung
-where the archetype needs it.
-1. Commodity price-taker: output is a spec, price set by the market or the
-   spread, no pricing power. ROCE tracks the cycle.
-2. Cost-advantaged converter: same commodity output, but a durable cost-curve
-   rank (scale, integration, location) holds a spread peers cannot. Quality
-   sits in the cost position, not the product.
-3. Value-added or spec'd supplier: products carry design-in, qualification, or
-   customisation; some switching cost; margin above the commodity floor but
-   customer-concentrated.
-4. Franchise supplier or share-of-wallet leader: qualified, sticky, gaining
-   share inside a growing customer; pricing holds through the cycle; ROCE
-   durable above cost of capital.
-5. Brand, franchise, or scarcity owner: end-demand pull, pricing power, a
-   distribution or licence moat; ROCE high and self-funding.
+where the archetype needs it. The Section 1B footprint on each rung is a
+NEIGHBOURHOOD, not a computed number: Stage 11 derives the actual destination
+PE from the framework; the rung only says where on the ladder that number
+should land.
+- R0 NON-OPERATING / ACCOUNTING-DRIVEN. Earnings not from an operating
+  business (revaluations, one-offs, holding relics). No operating destination
+  PE; SOTP/NAV or floor treatment. A transition FROM here must first prove an
+  operating engine exists.
+- R1 COMMODITY PRICE-TAKER. No pricing power; ROCE cyclical around cost of
+  capital; cash volatile. ~12x neighbourhood.
+- R2 COST-ADVANTAGED CONVERTER. Margin from cost position, not price; durable
+  mid-teens ROCE; Amendment 17 converter multiple caps converter slices.
+  ~15-17x neighbourhood.
+- R3 VALUE-ADDED / SPEC'D SUPPLIER. Spec-in and switching costs give partial
+  pricing power; ROCE 20-25% with stickiness. ~19x neighbourhood.
+- R4 FRANCHISE / SHARE-OF-WALLET LEADER. Customer capture and repeat
+  economics; ROCE 25-30% durable, strong cash. ~21x neighbourhood.
+- R5 BRAND / SCARCITY OWNER. Pricing power from brand or structural scarcity;
+  ROCE >30%; strategic-premium eligible. ~24x + strategic premium.
+Two rules bind the ladder:
+- Re-rating engine = the Stage 11 destination-PE delta implied by the rung
+  migration; recognition gap = whether current PE already sits at the TO
+  rung's neighbourhood. Stage 11 computes; the ladder names.
+- Rung-jump base rate: one rung per 2-3 years. A claimed multi-rung leap
+  requires extraordinary proof and is itself a red flag.
 The alpha the strategy hunts is a real climb of one or more rungs that the
 market has not yet repriced (the recognition gap, Part B4).
+
+## TRANSITION DECISION MATRIX (Stage 13 / gate recommendation applies this; DRAFT — PENDING OPERATOR RULING; adjust via operator ruling only)
+Maps the signed model's three state variables to a transition POSTURE. The
+posture informs the gate recommendation and the value-trap test; it never
+replaces the five-verdict set and never sets a price. The variables:
+PROOF GATE (fired / not fired, Part B3), UGLINESS (ARTIFACT-OF-CLIMB /
+STRUCTURAL-FEATURE, Part B5), RECOGNITION GAP (open = TO not yet priced /
+closed = TO already priced, Part B4, resolved at Stage 11).
+- Proof FIRED + ARTIFACT + gap OPEN -> RE-RATING LIVE. The prime setup: the
+  climb is proven, the ugly optic is temporary, the market has not repriced.
+  Constructive; the BUY still gates on Role 1 valuation and the Hurdle.
+- Proof FIRED + ARTIFACT + gap CLOSED -> EARNINGS-ONLY. Climb real but
+  already priced; the re-rating engine is spent, returns ride EPS CAGR alone.
+  Actionable only if growth clears the Hurdle without help from re-rating.
+- Proof NOT FIRED + ARTIFACT + gap OPEN -> RESEARCH / WATCH. Narrative until
+  the proof gate fires (Part B3). Not a trade; watch the gate.
+- Proof NOT FIRED + STRUCTURAL -> VALUE-TRAP RISK. The ugly optic looks
+  permanent; classify DEEP WATCH or AVOID unless the classification is
+  disproven.
+- Proof FIRED + STRUCTURAL -> CONTRADICTION. The gate says climbing, the
+  ugliness says decaying; a flag to resolve, not a posture. Re-examine the
+  classification before any verdict.
+- gap CLOSED + STRUCTURAL -> AVOID. Priced and not really climbing.
 
 ## OPERATOR VOICE (STE — all conversation, not only outputs)
 Every reply to the operator uses Simplified Technical English (ASD-STE100,

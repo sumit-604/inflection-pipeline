@@ -93,6 +93,18 @@ as the narrative. They may appear in exactly two places: inside the
 confidence delta table, and inside the flag blocks' evidence citations.
 Nowhere else.
 
+### Transition posture (applied before the verdict, from the signed model)
+Classify the transition POSTURE by the CLAUDE.md TRANSITION DECISION MATRIX,
+reading the signed model's three state variables: PROOF GATE fired or not
+(from the FTTCP transition read), UGLINESS (ARTIFACT-OF-CLIMB or
+STRUCTURAL-FEATURE, from the signed model / 09b Part B5), and the RECOGNITION
+GAP open or closed (resolved at Stage 11, the PE-gap read). State the posture
+in one line (RE-RATING LIVE / EARNINGS-ONLY / RESEARCH-WATCH / VALUE-TRAP RISK
+/ CONTRADICTION / AVOID). It informs the value-trap read and the WATCH
+classification below; it never replaces the five-verdict set and never sets a
+price. A VALUE-TRAP RISK or CONTRADICTION posture is surfaced in the
+recommendation body, not buried.
+
 ### Verdict line (first line of the file)
 One of: PROCEED | PROCEED WITH CAVEATS | PROCEED WITH FLAGS | REWORK |
 INSUFFICIENT EVIDENCE. No other verdicts exist. There is no STOP.

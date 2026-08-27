@@ -65,7 +65,12 @@ part is missing and stop; do not draft.
    consistent with the signed model's dominant variables; a catalyst
    outside the declared variables requires an explicit note explaining why
    the model did not anticipate it (which may itself trigger model
-   re-declaration).
+   re-declaration). PROOF GATE: FTTCP consumes the signed model's proof_gate
+   (09b Section 2 Part B3, the exact metric and threshold) as its binary
+   transition gate. Its job is to test whether that gate has FIRED on the
+   evidence, not to invent a new one. State the proof gate verbatim and rule
+   FIRED / NOT FIRED against it; until it fires, the transition is narrative
+   and the name is research, not a trade.
 
 HANDOVER INPUT: first check the inputs/research/ directory itself, then the
 dossier inside it. These are two distinct failures; do not confuse them.

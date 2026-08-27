@@ -35,6 +35,13 @@ your task message as file paths to read, or inline content.
   determinations wherever they conflict.
 - Stress-test any SHARED CATALYST flagged in Section 1B as the single
   point of failure.
+- Value-trap test: carry the signed model's UGLINESS verdict
+  (ARTIFACT-OF-CLIMB | STRUCTURAL-FEATURE, from B09b Section 2 Part B5 /
+  companies memory) INTO the value-trap test rather than re-deriving it.
+  Attacking that verdict is in scope: argue the ugly optic is a permanent
+  STRUCTURAL-FEATURE where the model called it a temporary ARTIFACT-OF-CLIMB,
+  with evidence. Silently replacing the verdict is not; name it and contest
+  it in the open.
 - Converter names (v3.7 Amendment 17): ask "Is the current margin the
   company or the cycle? Show the spread at 5-year median input prices."
 - SOTP names with within-hold options (v3.8 Amendment 18.7), mandatory:

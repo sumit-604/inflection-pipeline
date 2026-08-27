@@ -20,7 +20,13 @@ Decision Status and entry zone as of the latest run, with the run date.
 ## HALT 1 GATE
 The Understanding Gate rulings, each with its date. Set at Halt 1, before
 any deliberation or valuation runs.
-- Mental Model signed: YYYY-MM-DD (or NOT SIGNED) — [one line]
+- Mental Model signed: YYYY-MM-DD (or NOT SIGNED). Signed-model block:
+  - FROM rung -> TO rung: [R_ label -> R_ label, per line where lines differ]
+  - Engine: [the one or two things that physically change, one line]
+  - Proof gate: [exact metric + threshold FTTCP tests, quarter by quarter]
+  - Ugliness verdict: [ARTIFACT-OF-CLIMB | STRUCTURAL-FEATURE] — [one line]
+  - Transition falsifier: [evidence that kills the transition thesis]
+  - Business falsifier: [evidence that kills the FROM business itself]
 - Halt 1 decision (KILL/SHALLOW/PROCEED): YYYY-MM-DD [decision] — [reasoning]
 
 ## OPERATOR RULINGS

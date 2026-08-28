@@ -142,6 +142,31 @@ other case the run proceeds: each absent document type is recorded in
 `B00.input_gaps` and carried on every downstream handoff block under
 `input_gaps`. No document count ever halts the run.
 
+### SPEAR GATE (run start, hard rule; operator ruling 28-Aug-2026)
+
+Before stage 0 inventories anything, the orchestrator checks the SPEAR GATE
+(CLAUDE.md). /run-pipeline and /fttcp on a new name require a line in
+`companies/<TICKER>.md` reading either
+
+```
+Spear: HIT YYYY-MM-DD - entry <= Rs X - load-bearing facts: [2-4 items]
+```
+
+or
+
+```
+Spear: OVERRIDE YYYY-MM-DD (operator)
+```
+
+If neither line exists, STOP the run at once and direct the operator to run
+the spear pass with Claude web first. This is not a mechanical halt and not a
+degradation; the run does not start. The spear runs on live web, which this
+container cannot reach, so Claude Code never performs it.
+
+On a HIT, the load-bearing facts named in the Spear line become the run's
+first verification priority: stage 0 records them in `B00` and every later
+stage checks them before its own work.
+
 ### FRESHNESS PAIR CHECK (stage 0 corpus audit, hard rule; per MANINDS 2026-08-21)
 
 A document count is not the whole corpus audit. A filing can be present

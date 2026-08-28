@@ -9,6 +9,17 @@ Why v2 exists (the four leaks it plugs)
 3. FTTCP scored one consolidated entity when the dossier declared three, and the run was discarded.
 4. Small hygiene failures cost whole trips: missing commit hashes, page IDs referenced but not carried in the ferry text, edits scoped so narrowly that two sections of one file contradicted each other, and separate Notion approvals for routine note updates.
 
+Phase 0 — Spear Pass (Claude web only)
+
+Before any pipeline run on a new name, Claude web runs a spear pass on live web. The spear comes before the shield: guess first, verify second. Claude Code has no live-web access and never runs this phase. The four steps:
+
+1. Pond. Live-web opportunity size in numbers. How large is the market the business fishes in.
+2. Catch. A 3-year careful/fair/dream revenue and profit guess, anchored to observed conversion evidence, never to hope.
+3. Price. Per-share scenario values, probability weighting, and the entry price that clears the 25% CAGR target.
+4. Verdict. HIT, WATCH or MISS against CMP.
+
+Three verdicts, three costs. A MISS costs one reply and stops there. A WATCH costs only tracker alarms: no pipeline run, no dossier. A HIT earns the pipeline. Claude web writes the line `Spear: HIT YYYY-MM-DD - entry <= Rs X - load-bearing facts: [2-4 items]` into `companies/<TICKER>.md`, above the Mental Model block, and the load-bearing facts become the run's first verification priority. Without that line, or an operator `Spear: OVERRIDE YYYY-MM-DD (operator)`, `/run-pipeline` and `/fttcp` STOP.
+
 The five hand-offs (v2 sequence)
 
 Hand-off 1 — Halt 1 with the Standing Extraction Annex (Claude Code → operator → Claude web). `/run-pipeline` delivers everything v1 delivered at Halt 1 PLUS the annex in Section 6 (below), already answered from corpus. The annex is not optional. A Halt 1 without a completed annex is INCOMPLETE and Claude web returns it.

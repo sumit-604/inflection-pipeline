@@ -1,0 +1,25 @@
+stage: B12b
+company: "SYSTANGO"
+run_date: "2026-08-29"
+model: claude-opus-4-8
+status: complete
+independent_flags_found: 17
+caught: 12
+partially_caught: 3
+missed:
+  - {severity: "MAJOR", item: "Crypto-derivative platform 'three months away from the launch' (Jul-2023 p.4) never confirmed launched and absent from B05 promise-delivery tracker; Nov-2023 flagship silently pivots to intelligent-document-processing platform", anchor: "Jul-2023 Vinita p.4 vs Nov-2023 pp.9-10"}
+  - {severity: "MINOR", item: "Headcount flat ~305 (Jul) to 301 (Nov) against 500-people FY26 target; growth-narrative counter-signal not noted", anchor: "Jul-2023 pp.3,6 vs Nov-2023 pp.5,6"}
+pipeline_flags_not_supported: []
+promise_delivery_spot_checks: {checked: 5, confirmed: 5, wrong: 0}
+credibility_grade_concur: "concur"
+findings:
+  - {severity: "MAJOR", location: "B05 2A/4D promise-delivery tracker", item: "Dated crypto-derivative platform launch promise (Jul p.4) omitted from tracker and never confirmed; flagship silently replaced in Nov", anchor: "Jul p.4; Nov pp.9-10"}
+  - {severity: "MINOR", location: "B05 2C/2D", item: "Headcount stagnation ~305->301 vs 500 FY26 target not flagged", anchor: "Jul pp.3,6; Nov pp.5,6"}
+  - {severity: "MINOR", location: "B05 2C Consistency", item: "Analyst margin-direction dispute 33->29% vs management 25->34% left unreconciled", anchor: "Nov p.3"}
+  - {severity: "MINOR", location: "B05 3B", item: "'Massive improvement' demand claim asserted while halving FY24 guidance; tension not drawn", anchor: "Nov pp.5,12"}
+  - {severity: "MINOR", location: "B05 3C", item: "Equity-for-services + subsidized rates on high-mortality early-stage clients under-weighted as revenue-quality risk", anchor: "Jul p.7; Nov p.8"}
+critical_count: 0
+major_count: 1
+minor_count: 4
+acceptance_rate: 71
+redflag_coverage: 71

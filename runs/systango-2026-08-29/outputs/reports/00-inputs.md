@@ -16,7 +16,7 @@ Spear: HIT 2026-08-29 (entry <= Rs 210). Gate cleared. Load-bearing facts carrie
 | Folder | Count | Files / note |
 |---|---|---|
 | prospectus/ | 0 | ABSENT — HIGH gap (listed ~Jul-2023, within ~3y) |
-| annual-report/ | 1 | Annual_Report_2023.pdf (FY2023, 121pp) — STALE, FY24/FY25/FY26 absent |
+| annual-report/ | 1 | Annual_Report_2023.pdf is MISLABELED — actually the FY2024-25 AR (21st AR, year ended 31-Mar-2025, auditor 26-May-2025), 121pp. Carries CARO, related-party, contingent-liab, promoter shareholding (31-Mar-2025). FY26 AR absent. [corrected from stage 1 read] |
 | results/ | 2 | Nov-2025 (H1FY26 board outcome, 13pp); May-2026 (FY26 audited full-year + H2, Rs 7 interim div) |
 | rating/ | 0 | ABSENT |
 | concalls/ | 3 | 2 unique calls (see chronology); newest Nov-2023 |
@@ -39,9 +39,10 @@ Spear: HIT 2026-08-29 (entry <= Rs 210). Gate cleared. Load-bearing facts carrie
 | 1 | Results -> Concall | FY26 audited results (14-May-2026) | Q4FY26/FY26 concall | FAIL | FY26 concall transcript |
 | 2 | Rating bulletin -> Rationale | none present | n/a | PASS (no trigger) | - |
 | 3 | SEBI order -> Order text | none referenced | n/a | PASS (no trigger) | - |
-| 4 | AR -> Latest audited annual | FY26 audited annual results | matching-year AR | FAIL | FY26 Annual Report (also FY24/FY25) |
+| 4 | AR -> Latest audited annual | FY26 audited annual results | matching-year AR | FAIL | FY26 Annual Report (held AR is FY25, one year behind the FY26 audited results) |
 
 freshness_verdict: CORPUS GAPPED-FRESHNESS (pairs 1 and 4 FAIL).
+AR-YEAR CORRECTION (stage 1): the sole AR is the FY2024-25 report, not FY2023. Backward baseline is 4 audited years with full notes, not post-listing-only. FY26 financial DEPTH (CARO loans movement, related-party, consolidated CFO, DBX Holdings, client concentration) is still unresolvable until the FY26 AR is pushed; FY26 HEADLINE numbers are anchored in the May-2026 audited results + June-2026 deck.
 Effect: gate recommendation capped at PROCEED WITH CAVEATS; missing mates (FY26 concall, FY26 AR) named as first line of gate-recommendation.md and first upload priority at Halt 1.
 
 ## OPERATOR-SUPPLIED LEADS (NON-ANCHORED, weigh never anchor)
@@ -49,7 +50,7 @@ Effect: gate recommendation capped at PROCEED WITH CAVEATS; missing mates (FY26 
 - ValuePickr thread (https://forum.valuepickr.com/t/systango-technologies-ltd/150052): routed to stage 8 as a lead to chase DBX Holdings, loans-to-Others recipients, promoter record; flagged for Halt-1 live verification. Never anchored.
 
 ## DEGRADATION (per DEGRADATION MAP)
-- No FY26 AR: stages 2/3 build notes and backward history from FY2023 AR only (post-listing years, thin); FTTCP backward baseline runs post-listing only and says so. FY26 financial depth comes from May-2026 audited results + June-2026 deck.
+- No FY26 AR: stages 2/3 build notes and backward history from the FY25 AR (4 audited years, full notes incl. CARO/related-party); FTTCP backward baseline runs FY23-FY26 post-listing and says so. FY26 notes-level depth comes from May-2026 audited results + June-2026 deck until the FY26 AR is pushed.
 - No prospectus (recently listed): stage 8 sources promoter/group background from web + AR governance, flags group-map as web-derived not filing-anchored.
 - No rating: stage 10 marks rating_wc_quote unresolved; Pillar 2 defaults conservative.
 - No announcements folder: intent-and-action cross-check runs on concall/AR/deck evidence; stage 8 relies on web for material events.

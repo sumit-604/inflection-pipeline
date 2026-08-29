@@ -8,15 +8,14 @@ sector_cap_x: 45
 spear: "HIT 2026-08-29 entry<=210"
 spear_facts_priority: 4
 input_gaps:
-  - prospectus (HIGH; listed ~Jul-2023)
-  - annual-report-FY24
-  - annual-report-FY25
-  - annual-report-FY26 (HIGH; freshness pair 4)
+  - prospectus (MEDIUM; SME listed ~Mar-2023, ~3.4y ago; FY25 AR now covers promoter/related-party/CARO so prospectus less critical)
+  - annual-report-FY26 (HIGH; freshness pair 4; the AR held is FY25 not FY23 per stage 1)
   - concall-FY26 (HIGH; freshness pair 1)
   - rating
   - announcements-folder
-  - shareholding-filing
+  - shareholding-filing (latest on file 31-Mar-2025, 17m stale)
   - research
+ar_year_correction: "The sole AR file Annual_Report_2023.pdf is actually the FY2024-25 AR (year ended 31-Mar-2025), confirmed by stage 1. Backward baseline is 4 audited years FY23-FY26, not post-listing-thin. FY24/FY25 no longer gaps (FY25 AR carries FY24 comparatives)."
 freshness_pairs:
   - {pair: results-to-concall, trigger_doc: "FY26 audited results 2026-05-14", mate_expected: "FY26/Q4 concall", status: FAIL, missing_doc: "FY26 concall transcript"}
   - {pair: rating-bulletin-to-rationale, trigger_doc: none, mate_expected: n/a, status: PASS, missing_doc: null}

@@ -3,3 +3,4 @@
 | # | stage | model | effort | in_tok | out_tok | total_tok | wall | run# |
 |---|-------|-------|--------|--------|---------|-----------|------|------|
 | 0 | input-validation | orchestrator-inline | - | - | - | - | - | 1 |
+| 1 | gate-0-scorecard | claude-sonnet-5 | default | - | - | 203649 | 16.2m | 1 |

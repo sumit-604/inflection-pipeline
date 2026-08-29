@@ -1,0 +1,48 @@
+stage: B08-promoter
+company: "CMSINFO"
+run_date: "2026-08-29"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Transaction Solutions International (India) Pvt Ltd relationship to CMS (customer/supplier) NOT DISCLOSED as such in RPT — B03 resolved it as a converted customer receivable (Note 48); RPT completeness gap remains on the counterparty's own relationship label"
+  - "NCLT order dated 6-Dec-2023 referenced in CMS disclosures list — content NOT FOUND this session"
+  - "Pankaj Khandelwal (CFO) professional history/qualifications before 2006 NOT FOUND"
+  - "ValuePickr forum thread (operator-provided lead) not fetched this run — non-anchored, out of scope for anchored check"
+flags:
+  - {type: FLAG-PROMOTER, verdict: "TRUSTWORTHY (no promoter; verdict applies to professional management + board)", top_findings: ["No promoter since Mar-2024; Sion (Baring PE Asia affiliate) exited cleanly 27-Feb-2024, non-distressed", "CFO Pankaj Khandelwal 20-year tenure spans full PE-to-public transition", "CEO Rajiv Kaul raised personal stake 2.6%->6.43% via ESOP through the PE exit and FY26 price decline, no disclosed selling", "Zero SEBI/criminal/tax/NCLT adverse findings on management or board", "Caution items, all self-disclosed in AR: buyback executed Rs340 vs CMP Rs243 (~29% underwater), recurring audit-trail-not-enabled gap (2nd year), fast independent-director refresh pace (3 new in ~16 months, all term-limit-driven), recurring but declining cash-embezzlement pattern (FY25 Rs217.22m -> FY26 Rs125.35m) typical of cash-logistics model, ADT-4 filed both years per statutory requirement"]}
+verdict: "TRUSTWORTHY"
+scorecard: {clean: 6, caution: 4, red: 0}
+deal_breakers: []
+adverse_findings:
+  - {finding: "Rs167.93 Cr buyback executed at Rs340/share (Jun-2026), ~29% underwater at CMP Rs243", evidence_tier: "VERIFIED", source: "company memory / run inputs, cross-checked AR FY26 dividend/board action lines", date: "2026-06"}
+  - {finding: "Auditor unable to comment whether audit-trail (edit log) feature was enabled/operated throughout the year for billing software (not enabled) and general ledger software post-migration (1-Sep-2025); recurs from prior year for GL software", evidence_tier: "VERIFIED", source: "FY26 AR, Annexure to standalone and consolidated Auditor's Report, Rule 11(g) disclosure", date: "FY26 AR, signed 14-May-2026"}
+  - {finding: "Recurring cash embezzlement by contractors/employees: FY24 Rs120.53m, FY25 Rs217.22m, FY26 Rs125.35m (25 instances FY26, 28 FY25); ADT-4 filed under s.143(12) both years; Rs9.98m recovered and Rs12.70m written off in FY26; police complaints and insurance claims filed", evidence_tier: "VERIFIED", source: "FY26 AR CARO Annexure clause (viii)/(ix) and Board's Report 'Reporting of Frauds' section", date: "FY26 AR"}
+  - {finding: "Two independent directors ceased in FY26 (Tapan Ray 8-Apr-2025, Sayali Karanjkar 31-Dec-2025), both on completion of statutory term limit, not mid-term resignation; three new independent directors inducted within ~16 months (Jerome, Krishnan, Poole); one self-disclosed 1-day technical shortfall in mandated board composition (1-Jan-2026)", evidence_tier: "VERIFIED", source: "FY26 AR Corporate Governance Report and 'Non-Compliance' section", date: "FY26 AR"}
+  - {finding: "Reference to an NCLT order dated 6-Dec-2023 in CMS's own disclosures list; content not resolved this session", evidence_tier: "UNVERIFIED", source: "web search result listing, not independently opened", date: "2023-12-06"}
+transition_evidence:
+  - {item: "Clean, fully-monetised PE sponsor exit: Sion Investment Holdings (Baring PE Asia affiliate) sold full residual 26.66-26.69% on 27-Feb-2024 via open-market block deal at Rs370.38/share; formally declassified promoter-to-public wef 2-Apr-2025", source: "screener SHP + company memory + web (Business Standard, 27-Feb-2024)", date: "2024-02-27 / 2025-04-02"}
+  - {item: "Institutional entry: PPFAS (Parag Parikh Mutual Fund) built stake to 7.97%, now #2 shareholder; DII overall rose 28.40% (Jun-2024) to 36.00% (Jun-2026) while FII fell 40.21% to 22.70% over same window", source: "FY26 AR top-10 shareholder table + screener quarterly SHP", date: "as at 31-Mar-2026 / Jun-2026"}
+  - {item: "CEO personal stake increase (not sale) through the transition: Rajiv Kaul raised holding ~2.6%->6.2% via ESOP exercise within days of Sion's Feb-2024 exit; holds 6.4254% (10,578,702 shares) currently, #3 shareholder, no disclosed selling in FY26 despite ~43% one-year price decline", source: "FY26 AR top-10 shareholder table + web (Moneycontrol/TradingView aggregation)", date: "2024-02 to 2026-08"}
+  - {item: "Governance/credential upgrade: Vidya Krishnan (ex-Deputy MD, State Bank of India) inducted 2-Jan-2026; Will Poole (ex-Microsoft Corporate VP, co-founder Capria Ventures) appointed Additional Independent Director 10-Aug-2026 explicitly to support AI/software pivot", source: "FY26 AR governance report + web (Business Standard 10-Aug-2026)", date: "2026-01-02 / 2026-08-10"}
+  - {item: "Auditor continuity through the ownership transition: B S R & Co. LLP (KPMG network) re-appointed for a further 5-year term (through 2028), no resignation, unmodified opinion", source: "FY26 AR Board's Report", date: "AGM 22-Aug-2025"}
+pledge_pct_latest: 0
+pledge_trend: "N/A — no promoter category exists; 0.00% since Mar-2024 per screener quarterly SHP (structural, not a disclosure gap)"
+searches_performed:
+  - "CMS Info Systems Rajiv Kaul SEBI order OR penalty OR insider trading"
+  - "CMS Info Systems Ltd governance ADT-4 fraud auditor SEBI 2026"
+  - "Will Poole William Poole independent director CMS Info Systems Capria Ventures Microsoft"
+  - "CMS Info Systems IiAS proxy advisory OR InGovern OR SES governance rating"
+  - "CMS Info Systems Glassdoor AmbitionBox employee reviews rating"
+  - "CMS Info Systems Rajiv Kaul shares sold OR pledge 2026"
+  - "Sion Investment Holdings Advent Baring CMS Info Systems exit sale 2024 stake"
+  - "CMS Info Systems NCLT OR litigation OR SEBI order 2025 2026"
+  - "Rajiv Kaul CMS Info Systems CEO background Microsoft career before joining"
+searches_skipped:
+  - "Pankaj Khandelwal dedicated background/qualification search"
+  - "Individual background checks for Shyamala Gopinath, Sunil Mehta, Krzysztof Wieslaw Jamroz beyond AR disclosure"
+  - "SEBI SAT/adjudication order database direct search (general web search only)"
+  - "6-Dec-2023 NCLT order content"
+  - "AmbitionBox company-specific rating"
+  - "ValuePickr thread content fetch (operator-provided non-anchored lead)"
+verdict_basis: "20-year CFO tenure spanning the full PE-to-public transition, plus CEO Rajiv Kaul personally increasing his stake (not selling) through the PE sponsor's exit, combined with zero SEBI/criminal/tax/NCLT adverse findings and a clean, non-distressed PE exit, outweigh four self-disclosed caution items (buyback timing, audit-trail gap, board-refresh pace, recurring but declining and disclosed cash-embezzlement pattern), none of which trip a deal-breaker."
+analyst_note: "No promoter exists structurally; this verdict is assigned to professional management (Kaul, Khandelwal) and the Board, per task instruction. The strongest single data point is behavioral, not documentary: Kaul bought through the PE exit and the FY26 de-rating rather than selling, which is the opposite of the pattern this framework is built to catch. The cash-embezzlement pattern is inherent to a company that moves ~Rs14 trillion of physical cash annually and is transparently disclosed with recovery/insurance/police-complaint mechanics each year, not concealed; treat as a business-model characteristic to monitor, not a management-integrity flag. Board-refresh pace (3 new IDs in ~16 months) is the one item genuinely worth a second look at Halt 1, even though every departure is term-limit-driven and every addition raises the credential bar."

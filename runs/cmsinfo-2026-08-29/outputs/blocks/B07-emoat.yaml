@@ -1,0 +1,52 @@
+stage: B07-emoat
+company: "CMSINFO"
+run_date: "2026-08-29"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "screener split-financial CSVs empty (only Data_Sheet populated); blocked 2C capex-embedded-growth arithmetic"
+  - "no filed Reg-30 announcement PDFs; documented-action record reconstructed from concalls/results/presentation"
+  - "investor presentation image-heavy, thin text extraction; read as PDF pages directly"
+  - "HAWKAI/ALGO/card revenue and margin not disclosed on standalone basis; management declined every quarter asked (B05 repeated_evasions)"
+  - "Securens acquisition consideration stated inconsistently within AR itself (Rs75cr letter vs ~Rs80cr infographic), not reconciled"
+  - "AGS Transact CIRP date/filing detail corroborated via company memory only, not a primary filing in this stage's corpus"
+flags:
+  - "H1 (AGS industry-consolidation benefit) is explicitly two-sided per management's own words ('AGS impact was both positive and negative', Aug-2026 call); not yet proven durable"
+  - "F2 execution moat scores 0: promise-delivery record shows 2 silently dropped promises (ATM count target, DSO normalisation) against B05"
+  - "A2 patent/IP pipeline is NO EVIDENCE FOUND despite pervasive 'proprietary technology' language in the AR"
+  - "HAWKAI/ALGO standalone revenue/margin disclosure repeatedly declined by management (B05 repeated_evasions), limiting how precisely the emerging-moat contribution can be measured"
+em_score: 23
+em_classification: "MODEST"
+active_categories:
+  - {id: "A3", name: "Process innovation", strength: "Strong", evidence_type: "documented", time_to_materialise: "realised (FY26)"}
+  - {id: "B1", name: "Backward integration / full-stack hardware", strength: "Moderate", evidence_type: "documented", time_to_materialise: "built"}
+  - {id: "C1", name: "Customer ecosystem / embedded relationships", strength: "Strong", evidence_type: "documented", time_to_materialise: "live / full FY27 contribution"}
+  - {id: "C2", name: "Customer concentration improving", strength: "Moderate", evidence_type: "documented", time_to_materialise: "realised, ongoing"}
+  - {id: "D1", name: "Proprietary data asset", strength: "Strong", evidence_type: "documented", time_to_materialise: "in production"}
+  - {id: "D2", name: "Digital platform (ALGO/HAWKAI)", strength: "Strong", evidence_type: "documented", time_to_materialise: "live and scaling"}
+  - {id: "H1", name: "Industry consolidation beneficiary (AGS exit)", strength: "Moderate", evidence_type: "documented, two-sided/unresolved", time_to_materialise: "unresolved, monitor FY27"}
+evidence_mix: {documented: 19, claim: 6, inference: 3}
+completionist_recount: "recount performed: 19 documented items across 7 Strong/Moderate categories (A3, B1, C1, C2, D1, D2, H1); F1/A4/R1 evidenced but sub-threshold (Weak); 12 of 22 categories plus R1 score zero (8 genuine absence, G1/G2 held to zero to avoid double-counting existing Gate-0 quality or because trend is net-negative, I1/I2 by design)"
+catalysts_12m:
+  - {catalyst: "SBI/HDFC/ICICI contract ramp-through to full-year contribution", window: "FY27", evidence_type: "documented", anchor: "AR p.53; Inv. Pres. slide 6"}
+  - {catalyst: "Currency-supply fulfilment normalisation and CMS revenue response in lockstep", window: "near, Q2 FY27", evidence_type: "management claim, testable", anchor: "Concall_Aug_2026; company memory falsification line"}
+  - {catalyst: "Tech & Payments crossing 20% of services revenue", window: "end Q4 FY27", evidence_type: "management claim", anchor: "Concall_Aug_2026; AR p.19"}
+  - {catalyst: "PSU/IBA statutory-cost repricing framework delivered", window: "end Q2 FY27", evidence_type: "management claim, pending", anchor: "Inv. Pres. slide 5"}
+  - {catalyst: "FSS integration synergy realisation", window: "H2 FY27", evidence_type: "management claim", anchor: "Concall_Aug_2026"}
+capex_embedded_growth_pct: 0
+optionality_register:
+  - {optionality: "Patent/IP protection on HAWKAI/ALGO (A2)", converting_evidence: "filed patent traceable on Espacenet/ipindia.gov.in", first_appears: "AR IP note / exchange filing", window: "NOT FOUND currently"}
+  - {optionality: "Modular platform cross-sell engine (A4)", converting_evidence: "disclosed cross-sell revenue metric or attach rate", first_appears: "AR / investor day deck", window: "FY27-28"}
+  - {optionality: "International market entry (2D)", converting_evidence: "signed international contract or JV filing", first_appears: "AR / Reg-30 filing", window: "NOT FOUND currently"}
+  - {optionality: "Talent asymmetry (I1)", converting_evidence: "AR remuneration annexure showing technical hires paid above sector norm, or named ex-major-tech-co concentration", first_appears: "AR remuneration annexure", window: "NOT FOUND currently"}
+  - {optionality: "Cannibalization barrier (I2)", converting_evidence: "named competitor's own disclosed pricing/org rigidity making CMS's model implausible to copy", first_appears: "competitor filings", window: "NOT FOUND currently"}
+  - {optionality: "AGS-vacated market-share capture, quantified", converting_evidence: "explicit disclosed % share-capture number", first_appears: "concall or AR", window: "FY27, if disclosed"}
+  - {optionality: "HAWKAI/ALGO revenue disclosed standalone", converting_evidence: "segment note breaking out HAWKAI/ALGO/cards revenue and margin", first_appears: "AR segment note / results filing", window: "NOT FOUND currently, repeatedly declined"}
+combined_assessment: "GOOD+"
+combined_reasoning: "GOOD backward (Gate 0, 76/88) paired with MODEST forward (em_score 23, below the 25 STRENGTHENING threshold) is real but not yet the prime HIGH POTENTIAL setup; seven categories carry genuine documented evidence but two load-bearing rows (H1, C2) remain explicitly unresolved."
+top_moat_risks:
+  - "D1: 'no competitor can replicate in 5-10 years' is management claim, untested against undisclosed unlisted peers (Hitachi, FSS pre-acquisition, Writer)"
+  - "C1: concentration in 3 long-tenor bank contracts carries renegotiation risk; SBI scope already quietly halved from original framing per B05"
+  - "H1: AGS benefit explicitly two-sided per CEO; durability unproven, could be one-off share grab rather than structural widening"
+  - "A3: realised route-optimisation gain (10%+ cut) may show diminishing returns going forward"
+analyst_note: "The emerging moat is real, not purely narrated: 16 years of transactional data across 150,000+ touchpoints feeds a live forecasting engine, three major banks signed integrated multi-year contracts in 18 months, and Tech & Payments revenue mix has more than doubled since FY22 with numbers to show it. But it is not yet dominant enough to earn STRENGTHENING: management's own words concede the AGS benefit cuts both ways, customer-concentration improvement is defensive not offensive, working capital is deteriorating, and the promise-delivery record (B05) shows real slippage on capacity commitments even as margin guidance was beaten. Score 23 sits just below the 25 threshold; a more generous read of H1/C2 alone would cross it, but the evidence for durability on both rows is explicitly still open, not resolved in CMS's favour."

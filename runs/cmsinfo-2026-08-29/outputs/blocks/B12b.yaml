@@ -1,0 +1,24 @@
+stage: B12b
+company: "CMSINFO"
+run_date: "2026-08-29"
+model: claude-opus-4-8
+status: complete
+independent_flags_found: 14
+caught: 9
+partially_caught: 3
+missed:
+  - {severity: "MINOR", item: "MS&Tech segment revenue base does not reconcile Nov->Feb: Q2 FY26 stated Rs271 Cr (Nov-2025 p.4/20) vs Rs216 Cr base implied by the Feb Q3 QoQ bridge (Feb-2026 p.3/19); Rs55 Cr gap, no reconciliation; likely resegmentation but unstated; Tech line is the re-rating engine", anchor: "Nov-2025 p.4/20; Feb-2026 p.3/19"}
+  - {severity: "MINOR", item: "Three different Q3 FY26 EBITDA-margin figures inside one call: 25.5%, 24.5%, 22.8%, no stated basis for each", anchor: "Feb-2026 p.4-5/19"}
+pipeline_flags_not_supported: []
+promise_delivery_spot_checks: {checked: 5, confirmed: 5, wrong: 0}
+credibility_grade_concur: "concur — low B; DSO contradiction (B06) and EBITDA-over-EBIT framing cap it, self-admissions keep it above C"
+findings:
+  - {severity: "MAJOR", location: "B05 LBF-3 / Section 4A vs Aug-2026 p.4/17", description: "Cut-revenue/raise-margin narrative graded 'strong' on EBITDA (27.2%, +170bps) while EBIT margin compressed to 10.3% from 14.1% YoY on depreciation; the raised metric excludes the cost hitting the bottom line. Under-weighted selective-metric framing on the load-bearing claim."}
+  - {severity: "MINOR", location: "B05 Section 1B guidance log / Feb-2026 p.3/19 vs Nov-2025 p.4/20", description: "MS&Tech segment revenue base unreconciled across calls (Rs271 Cr vs Rs216 Cr for Q2 FY26); pipeline logged the figures but did not flag the discontinuity on the Tech growth line."}
+  - {severity: "MINOR", location: "Feb-2026 p.4-5/19", description: "Three conflicting Q3 FY26 EBITDA-margin figures (25.5% / 24.5% / 22.8%) in one commentary with no stated basis; not surfaced by B05. Source-fidelity gate is Verifier A's."}
+  - {severity: "MINOR", location: "B05 Section 1B guidance log / Nov-2025 p.4/20 -> May/Aug-2026 p.4/17", description: "FY26 capex crept from '~Rs300 Cr' initial guide to Rs350 Cr actual (~17%) with no acknowledged overrun, while services-revenue guidance was cut; logged but not flagged as a walk."}
+  - {severity: "MINOR", location: "B05 Section 1B guidance log / Nov-2025 p.8/20 -> Feb-2026 p.9/19", description: "Provisioning/ECL guidance walked up 4% -> 4.25-4.5% of revenue within one quarter (above FY25 3.7%), a receivables-stress proxy; logged but not flagged as an upward re-guide."}
+critical_count: 0
+major_count: 1
+minor_count: 4
+acceptance_rate: 64

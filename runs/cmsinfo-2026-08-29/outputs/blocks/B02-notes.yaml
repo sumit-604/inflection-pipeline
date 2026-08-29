@@ -1,0 +1,51 @@
+stage: B02-notes
+company: "CMSINFO"
+run_date: "2026-08-29"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "prospectus absent (long-listed since Dec-2021, expected, not a gap for notes analysis)"
+  - "announcements: no filed Reg-30 PDFs in run inputs; notes analysis relies on AR FY26 audited text only"
+  - "screener split-CSVs (Profit_Loss/Balance_Sheet/Cash_Flow/Quarters) confirmed empty; not used for this stage, which is AR-notes sourced"
+  - "shareholding pattern is screener-tier, not a filed SHP PDF; Note 14(ii) >5% holder table used as the anchored source instead"
+flags:
+  - {type: FLAG-CASH, reason: "1-2yr overdue trade receivables grew 8.5x CON / 16.2x SA YoY while SA loss allowance fell 14.1% (net release) in the same year; core Cash Management segment revenue -4.5% SA / -6.6% CON and segment profit -25% CON; the >1.2x LBF-1 cash conversion headline is not corroborated by receivables quality or provisioning trend (Note 12/17/19/37/38)"}
+accounting_quality: 4
+pass_2_empty: false
+pass_3_empty: false
+top_findings:
+  - {rank: 1, finding: "SA loss allowance fell 14.1% (Rs533.94m to Rs458.80m) while the SA 1-2yr overdue bucket grew 16.2x (Rs92.14m to Rs1,490.59m)", note_ref: "Note 12/37, SA p.99/147", rating: "RED FLAG", why: "Provisioning-adequacy question at the entity where receivables deterioration concentrates; caps the LBF-1 cash-conversion thesis as clean evidence"}
+  - {rank: 2, finding: "Trade receivables 1-2yr overdue bucket exploded 8.5x CON / 16.2x SA YoY while not-due receivables fell 29-33%", note_ref: "Note 12, CON p.131/147, SA p.99/147", rating: "RED FLAG", why: "Direct quantified evidence of DSO deterioration; the core counterweight to the cash-conversion headline"}
+  - {rank: 3, finding: "Cash Management services revenue fell -4.5% SA / -6.6% CON, masked at headline by Managed Services growth and M&A", note_ref: "Note 19, SA p.91/147, CON p.124/147", rating: "RED FLAG", why: "Reframes flat-revenue narrative as genuine contraction in the highest-margin legacy segment"}
+  - {rank: 4, finding: "Cash Management segment result fell 25.0% (Rs4,013.79m to Rs3,012.14m), ~66% of Group segment result", note_ref: "Note 38, CON p.133/147", rating: "RED FLAG", why: "Confirms volume AND margin pressure together in the core segment"}
+  - {rank: 5, finding: "Recurring cash embezzlement, 25 instances Rs125.35m FY26, third consecutive year, ADT-4 filed under s.143(12)", note_ref: "Board's Report p.34/147; CARO Annexure B, SA p.75/147", rating: "RED FLAG", why: "Operational-control failure recurring, not one-off"}
+  - {rank: 6, finding: "Audit trail not enabled for one billing software; GL post-migration has no change log or independent controls report", note_ref: "Auditor's Report, SA p.72-73/147, CON p.106-107/147", rating: "RED FLAG", why: "Internal-controls qualification in the same year as receivables deterioration and a live GL migration"}
+  - {rank: 7, finding: "Overdue customer receivable converted into a 3-year secured term loan, Transaction Solutions International (India) Pvt Ltd, Rs580.12m", note_ref: "Note 7/48, SA p.88/147, p.103/147", rating: "RED FLAG", why: "A distressed-customer workout directly linked to the receivables-quality deterioration"}
+  - {rank: 8, finding: "Rs550m FSS acquisition balance-payment obligation absent from the capital-commitments note, which shows Rs0", note_ref: "Note 10/31(b), SA p.89/96/147, CON p.121/128/147", rating: "WATCH", why: "Disclosure-completeness gap on a material forward obligation; second acquisition in progress after Securens"}
+  - {rank: 9, finding: "Cash and cash equivalents nearly halved despite strong CFO: SA -58.3%, CON -51.4%", note_ref: "Note 13/Cash Flow Statement", rating: "WATCH", why: "FY27 liquidity headroom thinner than the CFO headline suggests, ahead of the FSS balance and buyback"}
+  - {rank: 10, finding: "Dividend paid +39.2% against PAT -18.6%; buyback approved at Rs340/share same day as results, now underwater vs CMP ~Rs243", note_ref: "Note 46; Board's Report p.31/147", rating: "WATCH", why: "Capital returned upward while cash and receivable quality moved the other way"}
+  - {rank: 11, finding: "ATM useful life extended 7 to 10 years wef 1-Jan-2026, Rs47.65m favourable depreciation impact, in the weakest-earnings year on record", note_ref: "Note 4, SA p.87/147, CON p.119/147", rating: "WATCH", why: "Favourable estimate change timed into a weak year, one of several tailwinds cushioning the reported PAT decline"}
+  - {rank: 12, finding: "ESOP compensation cost fell 87.3% CON, driven by the CEO's option exercise; Scheme 2023 forfeiture rate 12.8% same year", note_ref: "Note 30/38-39", rating: "WATCH", why: "Large non-cash swing flatters YoY PAT comparison; forfeiture rate raises a retention question"}
+  - {rank: 13, finding: "Two further subsidiaries show financial stress: Quality Logistics negative net worth (Rs-52.09m), CMS Securitas net loss (Rs-6.31m); Securens carries a CARO cash-loss qualification", note_ref: "Note 40 Schedule III, CON p.134/147; CARO Annexure A, CON p.107/147", rating: "WATCH", why: "Group growth via M&A sits atop organic subsidiaries with standing stress signals"}
+  - {rank: 14, finding: "ATM cash-shortage provision reclassified out of loss-allowance treatment, Rs577.49m in FY25 comparatives", note_ref: "Note 12 footnote/Note 17, CON p.131-132/147", rating: "WATCH", why: "Obscures like-for-like YoY comparability of loss allowance and receivables ageing"}
+  - {rank: 15, finding: "Group as lessor: contracted ATM/RMS equipment lease receivables more than doubled to Rs8,126.31m, +117.6%", note_ref: "Note 29, SA p.95/147, CON p.127/147", rating: "WATCH", why: "Forward-revenue-visibility signal missed at headline level, in tension with the in-year Cash Management revenue decline"}
+red_flags:
+  - "SA loss allowance fell 14.1% while the 1-2yr overdue bucket it should track grew 16.2x (Note 12/37, SA p.99/147)"
+  - "Trade receivables 1-2yr overdue bucket up 8.5x CON / 16.2x SA; net receivables grew 9.5% CON against 2.6% revenue growth (Note 12, p.131/147 CON)"
+  - "Cash Management revenue and segment profit both fell materially (-4.5%/-6.6% revenue, -25% profit) while Group headline figures showed growth (Note 19/38)"
+  - "Recurring cash embezzlement, third consecutive year, Rs125.35m FY26, with an audit trail limitation the same year (Board's Report p.34/147; Auditor's Report SA p.72-73/147)"
+  - "Distressed-receivable workout: customer overdue receivable converted into a 3-year secured term loan, Rs580.12m (Note 7/48)"
+  - "Rs550m FSS forward obligation absent from the capital-commitments note (Note 10/31(b))"
+  - "Loss-allowance/provision reclassification (Rs577.49m, FY25) breaks like-for-like YoY provisioning comparability (Note 12 footnote/Note 17)"
+questions_for_mgmt:
+  - "What changed in the SA-level ECL/impairment model to justify a net Rs75.14m loss-allowance release in FY26, the same year the 1-2yr overdue bucket grew 16.2x? Does the ATM cash-shortage provision reclassification explain it, or is the book under-reserved?"
+  - "What specifically drove the Cash Management services revenue decline and the 25% segment-profit decline: customer attrition, pricing pressure, or volume loss? Transitory or structural?"
+  - "Why does the FY26 capital-commitments note show Rs0 when a signed FSS agreement exists with Rs600m paid and Rs550m outstanding? Completion date and funding source for the balance?"
+  - "Given cash fell roughly by half and receivables quality deteriorated, what is the rationale for a 39.2% dividend increase and a Rs340/share buyback now underwater vs CMP ~Rs243? Is FY27 liquidity headroom adequate?"
+  - "What is the remediation plan for Quality Logistics Services (negative net worth), CMS Securitas (net loss), and Securens' CARO cash-loss qualification?"
+receivables_trend: "deteriorating: CON 1-2yr overdue bucket Rs177.94m (FY25) -> Rs1,516.32m (FY26), +752%/8.5x; SA 1-2yr overdue Rs92.14m -> Rs1,490.59m, +16.2x; not-due receivables fell 29-33%; net receivables +9.5% CON vs revenue +2.6% CON (Note 12, p.131/147 CON, p.99/147 SA)"
+restatements_found:
+  - "ATM cash shortage and claims provision separated from loss-allowance treatment: Rs577.49m reclassified in FY25 comparatives (Note 12 footnote/Note 17, CON p.131-132/147; SA p.99/147)"
+  - "Authorised share capital reclassified 173,000,000 -> 188,000,000 equity shares (+Rs150.00m), offsetting cancellation of 1,500,000 OCCRPS (Rs150.00m) at FY25 close (Note 14, SA p.90/147); mechanical, not an earnings item"
+going_concern_language: "NONE - explicitly checked, no substantive hits beyond standard audit-opinion assessment paragraphs (Note 52, SA p.104/147, CON p.136/147)"
+analyst_note: "The dominant pattern across all three passes is one story, not four: core Cash Management revenue and profit are contracting, its receivables are aging into the 1-2yr overdue bucket at 8-16x prior levels, and the SA loss allowance closest to that deterioration was released, not built. The Group-level LBF-1 cash-conversion headline (CFO > PAT) is arithmetically clean but should not be read as an earnings-quality signal on its own; it coexists with, not despite, the provisioning and receivables pattern. A second, lower-priority pattern is capital-allocation sequencing: dividend up 39.2%, a buyback now underwater, and two acquisitions (Securens closed, FSS in progress) funded while cash roughly halved and one forward obligation (FSS Rs550m) is absent from the commitments note. Neither pattern implicates revenue-recognition or related-party mechanics, which read clean throughout."

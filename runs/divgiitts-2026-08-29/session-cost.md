@@ -52,3 +52,4 @@ under "Operator snapshot". The orchestrator cannot read those interactive comman
 | 10 | input-assembly | claude-haiku-4-5 | default | - | - | 96340 | 3.8m | 1 |
 | 11 | valuation-role1 | claude-opus-4-8 | default | - | - | 133413 | 9.3m | 1 |
 | 14 | thesis-role2 | claude-opus-4-8 | default | - | - | 106161 | 3.4m | 1 |
+| 15 | devil-role3 | claude-opus-4-8 | default | - | - | 115152 | 4.7m | 1 |

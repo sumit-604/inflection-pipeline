@@ -1,0 +1,18 @@
+stage: B15-devil
+company: "DIVGIITTS"
+run_date: "2026-08-29"
+model: claude-opus-4-8
+status: complete
+dimensions:
+  growth_triggers: "weakened"
+  moat_durability: "weakened"
+  management_trust: "weakened"
+  valuation_safety: "destroyed"
+overall: "WEAKENED BUT ALIVE"
+top_counters:
+  - "Entry zone Rs 570-650 offers ZERO margin of safety against the framework-floor fair value Rs 525-575; the discount exists only against the 30x-override Rs 815. Strip the three stacked overrides (24% margin above the 20-22% guide, 20% ROCE / 19x vs formula 16-17.5x, 30x cap vs framework 17.9-20x) and the entry zone IS fair value, not a discount. (11-valuation floor table; deliberation Overrides 1-3)"
+  - "SHARED CATALYST single point of failure: Shirwal cash-to-fixed-asset deployment carries BOTH the Pillar 1 ROCE recovery (denominator normalizes to ~Rs 575 Cr CE) and the near-term revenue capacity; if it fills at the guided 20-22% margin or Indonesia expires unreplaced, the same event turns the B09b ARTIFACT-OF-CLIMB into a STRUCTURAL-FEATURE (ROCE < 16%). The B10/B11 shared_catalyst_flag=false is a labelling artifact. (deliberation 6.1; 11-valuation 2C)"
+  - "The quality transition (R2->R3), the entire re-rating premise, is NOT STARTED and actively threatened: EV SOP slipped 3 quarters on an excuse peers contradict (SONACOMS 'fastest growing EV market in the world'), no signed AT contract, and both named OEM customers are building the capability in-house (Mahindra 3-wheeler EV in-sourcing; Tata the 'sole EV-drivetrain localizer'). (B05; B06; B07 line 56)"
+  - "FY28 revenue cliff: netting the expiring ~Rs 75-95 Cr Indonesia dated batch (no contracted follow-on), the base-case +16% FY28 growth to Rs 632 Cr silently requires ~35% organic/export growth on the ~Rs 450 Cr non-Indonesia base just to stand still. The 'revenue STARTING' verdict rests on a follow-on order that does not exist. (deliberation 6.2; B05 export mix 18%->16%)"
+  - "Governance is a compilation-control cluster reaching a sitting Executive Director (US-subsidiary narrative tense, Tejal RPT omission, 3-way KMP pay, Section 197 AGM incentives); the framework defaults it to AVOID, and the Amendment 13 complexity r-UP held at 0 would drop the framework floor toward Rs 490-520 if applied. (B08 findings 1-6; 11-valuation RRM conservative flag)"
+  - "On trailing operating (treasury-stripped) earnings Divgi is 118.9x, the dearest in an already cycle-elevated peer set; 45x forward ex-cash; Hurdle STOP even on bull (need ~43% EPS CAGR); both Amendment 20 relative-valuation gates fail; the relative cross-check gives no re-rating support. (task brief; deliberation cross-cutting; 11-valuation Hurdle)"

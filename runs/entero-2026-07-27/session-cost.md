@@ -10,3 +10,4 @@
 | 3 | ar-deep-dive | claude-sonnet-5 | - | - | - | 203991 | 16m17s | 1 |
 | 5 | concall-analysis | claude-sonnet-5 | - | - | - | 122533 | 6m38s | 1 |
 | 8 | promoter-check | claude-sonnet-5 | - | - | - | 173602 | 11m13s | 1 |
+| 4 | business-model | claude-sonnet-5 | - | - | - | 173064 | 14m05s | 1 |

@@ -1,6 +1,6 @@
-CLAUDE WEB × CLAUDE CODE — TEAM WORKFLOW v2 FOR COMPANY ANALYSIS
+CLAUDE WEB × CLAUDE CODE — TEAM WORKFLOW v2.1 FOR COMPANY ANALYSIS
 
-Version 2, 26-Aug-2026. Supersedes v1. Written after the INDIAGLYCO cycle, which took seventeen operator hand-offs and five versions of one file to reach a verdict. The target for v2 is five hand-offs per company. Everything in v1 that is not changed below still applies.
+Version 2.1, 29-Aug-2026. Supersedes v2 (26-Aug-2026), which superseded v1. Written after the INDIAGLYCO cycle, which took seventeen operator hand-offs and five versions of one file to reach a verdict. The target is five hand-offs per company. v2.1 adds the Session close-out block. Everything in v1 and v2 that is not changed below still applies.
 
 Why v2 exists (the four leaks it plugs)
 
@@ -77,6 +77,16 @@ Calendar and repo memory
 * Claude web adds record dates, listing dates, results dates and tracker check dates to the operator's Google Calendar when they become known, with the entry tests in the description.
 * `companies/<TICKER>.md` carries one line per ruling, one proof line per Notion write, and the dossier commit hash. Claude web supplies these lines inside the same message as the work, never as a separate follow-up.
 
+Session close-out
+
+Every run ends by writing `runs/<ticker>-<date>/session-cost.md` with three blocks (see the run-pipeline close-out step). It is a run output: it travels with the run outputs on the run branch and its PR, never on a framework branch.
+
+* Tasks. The `/tasks` output, one line per stage with model and effort. Any mechanical stage (the ones DISPATCH routes to haiku: stage 0 validation, stage 10 assembly, verifier A) that ran on Opus is flagged `DOWNSHIFT FAILURE: <stage>`.
+* Cost. The `/cost` output: cache hit ratio, misses, tokens re-cached. If the hit ratio is below the previous run's, name the stage where it broke.
+* Usage (loop block, only if a loop ran). Run count and tokens per run from `/usage`.
+
+A DOWNSHIFT FAILURE or a cache break also earns a one-line entry in LESSONS.md naming the stage.
+
 Gates the pipeline enforces (unchanged from v1, with two additions)
 
 * Halt 1 gate: stage 09b dossier + Section 6 annex complete + operator signed mental model + PROCEED recorded.
@@ -94,4 +104,4 @@ What we never do (v1 list, plus)
 * Report a commit without its hash.
 * Ask the operator to approve a routine Notion note.
 
-End of v2. Replace the project-knowledge copy of team_workflow_project_instructions.md with this file and ferry the implementation prompt to Claude Code.
+End of v2.1. Replace the project-knowledge copy of team_workflow_project_instructions.md with this file and ferry the implementation prompt to Claude Code.

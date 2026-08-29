@@ -17,6 +17,14 @@ The current one-line thesis from the latest run.
 ## DECISION STATUS AND ENTRY ZONE
 Decision Status and entry zone as of the latest run, with the run date.
 
+## SPEAR
+The spear pass result, set by Claude web before any pipeline run on this name.
+One line, above the Mental Model block, in one of these two forms:
+- Spear: HIT YYYY-MM-DD - entry <= Rs X - load-bearing facts: [2-4 items]
+- Spear: OVERRIDE YYYY-MM-DD (operator)
+The load-bearing facts are the run's first verification priority. Absent this
+line, /run-pipeline and /fttcp STOP.
+
 ## HALT 1 GATE
 The Understanding Gate rulings, each with its date. Set at Halt 1, before
 any deliberation or valuation runs.

@@ -141,6 +141,34 @@ weigh, never anchored evidence.
                  before interpretation; writes runs/<ticker>-<quarter>/work/;
                  needs the two Quarterly_*_Protocol files in frameworks/
 
+## SPEAR GATE (spear before shield; operator ruling 28-Aug-2026)
+The framework grew shield-first: verify everything, then value. Inverted by
+operator ruling. A SPEAR PASS runs FIRST, on live web, by Claude web, before
+any pipeline machinery. Heavy pipeline runs only on a SPEAR HIT or an explicit
+operator override. The spear hands the pipeline its priority verification
+targets, the load-bearing facts. Claude Code never runs a spear pass: this
+container has no live web access.
+
+The four steps:
+- POND. Live-web opportunity size in numbers. How large is the market the
+  business fishes in.
+- CATCH. A 3-year careful/fair/dream revenue and profit guess, anchored to
+  observed conversion evidence, never to hope.
+- PRICE. Per-share scenario values, probability weighting, and the entry price
+  that clears the 25% CAGR target.
+- VERDICT. HIT / WATCH / MISS against CMP.
+
+Gate rule. /run-pipeline and /fttcp on a new name require a line in
+companies/<TICKER>.md, above the Mental Model block, in one of two forms:
+- Spear: HIT YYYY-MM-DD - entry <= Rs X - load-bearing facts: [2-4 items]
+- Spear: OVERRIDE YYYY-MM-DD (operator)
+If neither line exists, STOP. Direct the operator to run the spear pass with
+Claude web first. The pipeline never runs a new name shield-first.
+
+The load-bearing facts named in the Spear line are the run's FIRST
+verification priority. Stage 0 carries them; every later stage checks them
+before its own work.
+
 ## PIPELINE SEQUENCE (operator-gated)
 /run-pipeline (evidence, stages 0-9 + verifiers + 09b dossier) -> HALT 1:
 operator reads the dossier, resolves corpus gaps, signs the Mental Model in

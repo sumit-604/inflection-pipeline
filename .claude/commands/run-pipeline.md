@@ -26,8 +26,20 @@ that blocks until the subagent returns. Never use background task
 launching with passive waiting. Achieve parallelism only by invoking
 multiple foreground subagents in a single message where the dependency
 table allows. After each stage returns, validate its YAML block and commit
-before proceeding. A stage exceeding 45 minutes is noted in the run log,
-not killed.
+before proceeding. At that same moment, before moving to the next stage,
+append one line to the per-stage token ledger in
+runs/<ticker>-<date>/session-cost.md, taken from the subagent result
+metadata: stage number, stage name, model, effort, input tokens, output
+tokens, total tokens, and wall time. Create the ledger with its header row
+when the first stage writes to it. Write one line per subagent run: if a
+stage runs as a loop or is retried, each run gets its own line with a run
+counter (run# 1, 2, ...) so the loop or retry total stays visible. Never
+defer these lines to the end of the run; each is written and committed with
+its own stage. The ledger row shape:
+
+    | # | stage | model | effort | in_tok | out_tok | total_tok | wall | run# |
+
+A stage exceeding 45 minutes is noted in the run log, not killed.
 
 The pipeline is three phases (see prompts/00-orchestrator.md PHASES
 section):
@@ -224,22 +236,32 @@ handoff schemas, flag rules, and error handling. Then:
    failed. The HALT 1 message never prints over a malformed or annex-
    incomplete dossier.
 
-6c. SESSION CLOSE-OUT (write the cost record). RUNS AFTER THE LAST STAGE,
-   before the run outputs are committed and their PR opens. Write
-   runs/<ticker>-<date>/session-cost.md with three blocks:
-   (a) TASKS. The /tasks output, one line per stage, each line naming the
-       stage, its model, and its effort. Flag any MECHANICAL stage that ran
-       on Opus as "DOWNSHIFT FAILURE: <stage>". The mechanical stages are
-       the ones DISPATCH routes to haiku (stage 0 validation, stage 10
-       assembly, verifier A); a mechanical stage on Opus means the model
-       downshift did not take and the run overpaid.
-   (b) COST. The /cost output: cache hit ratio, misses, and tokens
-       re-cached. If the hit ratio is below the previous run's (the most
-       recent prior runs/<ticker>-<date>/session-cost.md), name the stage
-       where it broke.
-   (c) USAGE (loop block, only if a loop ran). From /usage: run count and
-       tokens per run.
-   If any DOWNSHIFT FAILURE or cache break is found, add a one-line entry to
+6c. SESSION CLOSE-OUT (summary block). RUNS AFTER THE LAST STAGE, before
+   the run outputs are committed and their PR opens. By now
+   runs/<ticker>-<date>/session-cost.md already holds the per-stage token
+   ledger built during the run (EXECUTION DISCIPLINE). Append a summary
+   block to the same file with four parts:
+   (a) TOP FIVE BY TOKENS. The stages ranked by total tokens, the top five,
+       each with its share of the run total (its total_tok over the sum of
+       every ledger row). Sum a stage's loop or retry runs into one stage
+       total for the ranking.
+   (b) DOWNSHIFT FAILURES. Any MECHANICAL stage that ran on Opus, flagged
+       "DOWNSHIFT FAILURE: <stage>". The mechanical stages are the ones
+       DISPATCH routes to haiku (stage 0 validation, stage 10 assembly,
+       verifier A); a mechanical stage on Opus means the downshift did not
+       take and the run overpaid. Write "none" if every mechanical stage
+       ran on haiku.
+   (c) COST SPIKES. Any stage whose total tokens exceed 1.5x the same
+       stage in the previous run for this ticker (the most recent prior
+       runs/<ticker>-<date>/session-cost.md ledger), flagged
+       "COST SPIKE: <stage> (<this_total> vs <prior_total>)". Write "none"
+       if no prior run exists or nothing crossed 1.5x.
+   (d) OPERATOR SNAPSHOT. A reminder line: the operator runs /cost and
+       /usage now and pastes the cache hit ratio and the loop totals into
+       this file under an "Operator snapshot" heading. The orchestrator
+       cannot read those interactive commands, so the operator fills the
+       snapshot.
+   If any DOWNSHIFT FAILURE or COST SPIKE is found, add a one-line entry to
    LESSONS.md naming the stage. session-cost.md is a run output: it travels
    with the run outputs on the run branch and its PR, never on a framework
    branch.

@@ -10,3 +10,4 @@ Per-stage token ledger. One line per subagent run (loops/retries get their own l
 | 2 | notes-triple-pass (pass2 what-missed) | claude-sonnet-5 | default | - | - | 117075 | 6m33s | 2 |
 | 2 | notes-triple-pass (pass3 consolidate B02) | claude-sonnet-5 | default | - | - | 62131 | 3m22s | 3 |
 | 3 | ar-deep-dive (8 phases) | claude-sonnet-5 | default | - | - | 263567 | 14m25s | 1 |
+| 4 | business-model-decoder | claude-sonnet-5 | default | - | - | 143169 | 8m59s | 1 |

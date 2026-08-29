@@ -1,0 +1,41 @@
+stage: B09b-dossier
+company: "ENTERO"
+run_date: "2026-07-27"
+model: claude-sonnet-5
+status: complete
+corpus_verdict: "CORPUS GAPPED"
+corpus_gaps:
+  - {document: "prospectus (Feb-2024 RHP/DRHP)", expected_source: "BSE / SEBI SCORES / exchange archive", kind: "findable-missing"}
+  - {document: "corporate announcements (Reg 30 filings)", expected_source: "BSE / NSE", kind: "findable-missing"}
+  - {document: "filed quarterly shareholding pattern (Reg 31(4)), incl. pledge %", expected_source: "BSE / NSE", kind: "findable-missing"}
+  - {document: "research / broker coverage", expected_source: "rating agency site / broker desks", kind: "findable-missing"}
+archetypes:
+  - {line: "Pharma + MedTech distribution (whole company, single Ind AS 108 segment)", archetype: "fits no known archetype - closest is Outsourcing-Partner adapted for distribution, blended with roll-up/consolidator economics; flagged for operator ruling (B04)"}
+transition:
+  - line: "Pharma + MedTech distribution (whole company)"
+    from_tier: "R1 COMMODITY PRICE-TAKER (pricing power scored price-taker; ROCE 9.7-11.6% FY25-26, near cost of capital; cash-flow negative 6 of 7 years FY20-FY25)"
+    to_tier: "R3 VALUE-ADDED / SPEC'D SUPPLIER (claimed, via MedTech mix + commercial-role contracts; management's separate 25-30% ROCE claim would land closer to R4, an unresolved multi-rung-leap caution)"
+    engine: "(1) MedTech revenue mix rising from ~15% toward ~20% over 2-3 years; (2) contract mix shifting from pure fulfilment to commercial-role/demand-generation, both with negligible new capex (B04, B05)"
+    proof_gate: "Consolidated EBITDA margin >=5.0% sustained for 2+ consecutive quarters AND OCF-to-EBITDA conversion >=50% in the same window (B05)"
+    recognition_gap: "OPEN QUESTION, resolved at Stage 11: whether the claimed MedTech-mix/commercial-role transition is already reflected in Entero's current multiple; no number or conclusion stated here"
+    ugliness: "ARTIFACT-OF-CLIMB"
+    transition_falsifier: "MedTech/commercial-role margin mix fails to appear in blended gross margin over 2-3 quarters, or EBITDA margin regresses toward 4%, or the guided 25-30% ROCE requires an unexplained multi-rung leap (B04, B05)"
+dominant_variables:
+  - "MedTech revenue mix % and margin accretion (unaudited, single-segment guidance)"
+  - "Consolidated EBITDA margin trajectory toward and past 5%"
+  - "Network-reach reconciliation (retail pharmacies/hospitals/SKUs/districts, down 28-36% Q4FY26->Q1FY27, unreconciled)"
+  - "CARO-qualified, cash-loss subsidiary count (40 of ~65 group entities, FY26)"
+business_falsifier: "A material manufacturer principal withdraws or renegotiates distribution authorisation, since 99.22% of revenue is manufacturer-authorised trading with no disclosed single-manufacturer concentration bound; first signal is organic LFL growth falling to <=1.0x IPM (B04)"
+mental_model_status: "DRAFT - PENDING OPERATOR SIGN-OFF"
+fragility:
+  variable_count: 4
+  verifiability_ratio: "1 of 4 externally auditable outright (CARO-qualified count); 3 of 4 primarily company-narrated with partial external-corroboration paths"
+  single_point_failure: "Network-reach reconciliation - if real attrition rather than deliberate pruning, it breaks both the stated core network moat and the MedTech distribution channel at once"
+  fragility_verdict: "FRAGILE"
+candidate_count: 6
+research_brief_items: 10
+plain_summary_points: 15
+annex:
+  present: true
+  questions_answered: 10
+  corpus_commit_hash: "7043fdb9360cc115f1bf6125e5cd77301e26a467"

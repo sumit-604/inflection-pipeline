@@ -1,0 +1,30 @@
+stage: B12c
+company: "CMSINFO"
+run_date: "2026-08-29"
+model: claude-opus-4-8
+status: complete
+scope: phase-1
+gate0:
+  rules_checked: 13
+  fails:
+    - {severity: "MAJOR", item: "E2 promoter-holding-change", rule: "Block E / operating-rule-2 (no qualitative judgments)", location: "01-gate0.md Block E, E2", scored: 3, framework_correct: 0, impact: "+3 core inflation (76->73, grand total 88->85); classification GOOD unchanged"}
+emoat:
+  rules_checked: 12
+  fails: []
+valuation:
+  status: pending-phase-3
+  rules_checked: 0
+  fails: []
+  note: "B10/B11 not present this run; valuation framework docs not loaded in phase-1 scope"
+business_understanding_narrative: {present: false, note: "NOT IN PHASE-1 SCOPE (stage 13 artifact not audited)"}
+recomputed_decision: "GATE 0: GOOD (unchanged); corrected core 73 vs scored 76, corrected grand total 85 vs scored 88 — band and classification do not move"
+findings:
+  - {severity: "MAJOR", location: "01-gate0.md / Block E / E2", description: "E2 scored 3 (neutral) after the report states the literal formula yields 0 (26.69% -> 0.00%, decreased >3% = 0). No E2 alt-path exists in the rules (only E1 has one); operating rule 2 forbids qualitative judgments. Framework-correct E2 = 0. Core 76->73, grand total 88->85, classification GOOD unchanged."}
+  - {severity: "MINOR", location: "01-gate0.md / end-of-file", description: "Required closing fenced YAML block not present in the provided report artifact; capture artifact — the B01 block exists in outputs/blocks/B01-gate0.yaml (fields cited verbatim in 07-emoat 6C). Narrative arithmetic verified instead and is internally consistent."}
+  - {severity: "MINOR", location: "07-emoat.md / end-of-file", description: "Required closing fenced YAML block not present in the provided report artifact; capture artifact — B07 block exists in outputs/blocks/B07-emoat.yaml. Narrative scorecard (23 rows, adjusted total 23.1) verified instead."}
+  - {severity: "MINOR", location: "07-emoat.md / F1 vs I1", description: "The '70% AI/ML' figure is tagged (D) at F1 but (C) at I1. Immaterial: a C re-tag moves F1 1.0->0.7, total ~22.8, still MODEST (12-24). Does not approach the 25-point STRENGTHENING threshold."}
+critical_count: 0
+major_count: 1
+minor_count: 3
+acceptance_rate: 96
+framework_adherence_phase1_pct: 96

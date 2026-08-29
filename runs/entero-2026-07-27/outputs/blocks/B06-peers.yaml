@@ -1,0 +1,53 @@
+stage: B06-peers
+company: "ENTERO"
+run_date: "2026-07-27"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - {item: "prospectus", severity: "HIGH"}
+  - {item: "announcements", severity: "MEDIUM"}
+  - {item: "shareholding", severity: "MEDIUM"}
+  - {item: "research", severity: "LOW"}
+flags:
+  - "All three peers (MEDPLUS, REDINGTON, RPTECH) sit in adjacent, not identical, industries to Entero's B2B pharma wholesale distribution; 6 of 8 B05 peer-questions land UNVERIFIABLE primarily due to industry mismatch, not peer silence by omission"
+  - "Neither MEDPLUS's SSSG nor RPTECH's branch/customer/town network shows any contraction over the exact Q4 FY26 -> Q1 FY27 window Entero's own reach metrics fell 28-36%; both peers grew steadily, undermining an industry-wide explanation for Entero's drop"
+  - "REDINGTON's disclosed SSG gross margin (5.5-6%, 'highest across all four business verticals') is the strongest peer-analogue support for Entero's commercial-role margin-mix narrative direction, but confirms direction only, not Entero's claimed 70-90bps GM / 50-75bps EBITDA magnitude, and comes from a different industry"
+  - "MEDPLUS explicitly told analysts it does not track GLP-1 share at the granularity Entero reports, and had not launched a GLP-1 private label as of Jul-2026 call; cannot reconcile Entero's internally inconsistent 10% vs 5% GLP-1 figures"
+peers_provided: 12
+verified: []
+partially_verified:
+  - {claim: "Materially higher gross margin on 'commercial role' vs fulfillment-only distribution contracts", peers: ["REDINGTON", "RPTECH"]}
+  - {claim: "Network reach contraction (28-36%, Q4 FY26 -> Q1 FY27) is an industry-wide phenomenon rather than Entero-specific", peers: ["MEDPLUS", "RPTECH"]}
+contradicted: []
+unverifiable:
+  - {claim: "IPM growth genuinely accelerated to 10-12% from 7-9%", peers_checked: ["MEDPLUS", "RPTECH"]}
+  - {claim: "GLP-1 distribution share reconciliation (Entero's 10% vs 5%)", peers_checked: ["MEDPLUS"]}
+  - {claim: "Wallet-share gains (not new customers) as primary organic growth lever", peers_checked: ["MEDPLUS", "RPTECH"]}
+  - {claim: "EV/EBITDA multiples peers pay for distributor/MedTech bolt-ons vs Entero's stated 5-7x", peers_checked: ["REDINGTON", "RPTECH"]}
+  - {claim: "Organised-retail chain store counts used to argue against disintermediation risk", peers_checked: ["MEDPLUS"]}
+  - {claim: "Listed peer discontinued an Amazon distribution partnership benefiting Entero", peers_checked: ["MEDPLUS", "RPTECH"]}
+peer_coverage_map:
+  - {peer: "MEDPLUS", quarter: "Q2 FY26 (Nov-2025 call)", usage: "SUBSTANTIVE", contribution: "SSSG baseline 2.2%; confirms silence on IPM/GLP-1/wallet-share/Amazon"}
+  - {peer: "MEDPLUS", quarter: "Q3 FY26 (Feb-2026 call)", usage: "SUBSTANTIVE", contribution: "SSSG 10.5% attributed to incentive-structure change, not wallet share or IPM"}
+  - {peer: "MEDPLUS", quarter: "Q4 FY26 (May-2026 call)", usage: "SUBSTANTIVE", contribution: "Direct GLP-1 Q&A: 'did not track at that level' - load-bearing for Q2"}
+  - {peer: "MEDPLUS", quarter: "Q1 FY27 (Jul-2026 call)", usage: "SUBSTANTIVE", contribution: "GLP-1 private label still not launched; SSSG 15%, 4th straight quarter positive"}
+  - {peer: "REDINGTON", quarter: "Q2 FY26 (Nov-2025 call)", usage: "SUBSTANTIVE", contribution: "First 'wallet share' disclosure; SSG margin above company average"}
+  - {peer: "REDINGTON", quarter: "Q3 FY26 (Feb-2026 call)", usage: "SUBSTANTIVE", contribution: "Explicit SSG gross margin ~6% vs group PAT 1.4%/SISA 4.33%"}
+  - {peer: "REDINGTON", quarter: "Q4 FY26 (May-2026 call)", usage: "SUBSTANTIVE", contribution: "SSG margin tracking 5.5%; West Asia revenue exposure quantified 30-35%"}
+  - {peer: "REDINGTON", quarter: "Investor day (Jun-2026)", usage: "SUBSTANTIVE", contribution: "Most granular SSG margin mechanics: 'highest across all four business verticals'"}
+  - {peer: "RPTECH", quarter: "Q1 FY26 (Aug-2025 call)", usage: "SUBSTANTIVE", contribution: "PC market growth trajectory baseline (2-3% -> 8-10%); peer-to-peer Redington reference"}
+  - {peer: "RPTECH", quarter: "Q2 FY26 (Nov-2025 call)", usage: "CITED-ONLY", contribution: "Dell commercial ramp, receivables/factoring detail; no decisive new Part 1 evidence"}
+  - {peer: "RPTECH", quarter: "Q3 FY26 (Feb-2026 call)", usage: "SUBSTANTIVE", contribution: "Record PC quarter; Micron brand-concentration risk quantified; 55 branches/700+ towns steady"}
+  - {peer: "RPTECH", quarter: "Q4 FY26 (May-2026 call)", usage: "SUBSTANTIVE", contribution: "Record CY2025 shipments; LIT margin premium; 'solution-driven economics' framing"}
+industry_cross_read:
+  demand: "MEDPLUS demand is internally generated (incentive tweaks, new-customer ads), not a claimed IPM acceleration; REDINGTON/RPTECH report a genuine, quantified, industry-wide IT hardware supercycle (Windows 10 EOL + AI PC), unrelated to pharma"
+  pricing_inputs: "REDINGTON/RPTECH report structural component-cost inflation passed to customers via ASP, margin protected by mix shift to solutions rather than pricing power on commodity base; no MEDPLUS analogue; structurally consistent with but not proof of Entero's mix-driven margin story"
+  capex_cycle: "Industry-wide capability race, not a lone expander: both REDINGTON (SSG/CloudQuarks/professional services) and RPTECH (semiconductor subsidiary, embedded/AI) are simultaneously investing in higher-margin adjacent categories for the same stated reason"
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "Quantified geopolitical/macro revenue-exposure disclosure (REDINGTON: 30-35% of business in West Asia, May-2026 call) - Entero offers no comparable quantified concentration/macro risk disclosure"
+  - "Proactive large-customer receivables-delay disclosure and quantification (RPTECH: Yotta and Tamil Nadu government deals) - contrasts with Entero's refusal to disclose receivables aging (B05 flag)"
+  - "Single-vendor/brand concentration risk explicitly quantified (RPTECH: Micron end-of-life, Feb-2026 call) - no equivalent single-principal concentration disclosure in Entero materials"
+  - "Quick-commerce disintermediation risk discussed openly (MEDPLUS) - contrasts with Entero's reliance on a single unnamed-peer Amazon-exit anecdote without its own quantified channel-risk framework"
+net_narrative_effect: "complicates"
+analyst_note: "Peer set structurally cannot verify Entero's pharma-specific claims (IPM, GLP-1, Amazon exit, organised-retail counts) because none of the three peers operates in B2B pharma wholesale distribution; treat those 5 UNVERIFIABLE verdicts as a corpus-selection limitation, not evidence against Entero. Where peers CAN speak (distribution economics), the read is genuinely mixed: margin-mix direction gets real support, but the reach-metric contraction looks less like an industry pattern and more like something Entero specifically needs to explain. Recommend Halt 1 prioritise a pharma-specific peer (e.g., another IPM distributor or hospital-network-facing player) for future runs."

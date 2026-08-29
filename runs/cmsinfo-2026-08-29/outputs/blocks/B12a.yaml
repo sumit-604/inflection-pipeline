@@ -1,0 +1,14 @@
+stage: B12a
+company: "CMSINFO"
+run_date: "2026-08-29"
+model: claude-haiku-4-5
+status: complete
+numbers_checked: 60
+findings:
+  - {severity: "MAJOR", location: "B02-notes Rank 1 & 2; B03-ardeep Phase 2 triple-pass verification", claimed: "SA 1-2yr overdue receivables 16.2x increase (Rs92.14m->Rs1,490.59m); CON 8.5x (Rs177.94m->Rs1,516.32m); SA loss allowance 14.1% release (Rs533.94m->Rs458.80m)", source_truth: "Note 12/37 ageing table cited as AR p.99/147 SA, p.131-133/147 CON but table structure not extracted in ASCII text; figures cited with correct page anchors but not independently re-verified in available text sources", note: "Numbers are cited correctly with explicit AR note/page references; extraction limitation, not fabrication. Material amounts (1-2yr overdue >Rs1,400m) are fundamental to Stage 2 red-flag narrative. Recommend direct PDF verification before Halt 1.", source_fidelity: true, orchestrator_resolution: "CLEARED 2026-08-29: orchestrator grep of AR page-marked text confirms SA 1-2yr overdue Rs1,490.59m (line 9179, ~p.99 SA), CON Rs1,516.32m (line 12284, ~p.131 CON), SA prior Rs92.14m (line 9218), CON loss allowance Rs825.71m (line 11485). Figures exist at cited anchors; verifier limitation was ASCII table collapse, not a source mismatch. Logged as disagreement (GATE HELD - figures confirmed at source)."}
+  - {severity: "MINOR", location: "B01-gate0 Block B4; B03-ardeep Phase 2 2D receivables", claimed: "FY26 Receivable Days 130.93 days (Data_Sheet receivables/sales x 365)", source_truth: "MD&A Key Ratios table (AR p.52) reports DSO 126 days FY26; discrepancy 4.93 days", note: "Both internally consistent within their basis (Data_Sheet line items vs consolidated audited balance sheet). Method difference, not contradiction; directional trend (rising) same either way.", source_fidelity: false}
+critical_count: 0
+major_count: 1
+minor_count: 1
+acceptance_rate: 96.7
+coverage_note: "60+ numbers checked across all 9 stage reports. Verdict-card and Section 1B pillar inputs (ROCE, CFO/PAT, revenue CAGR, balance-sheet ratios): 100% coverage, all CLEAN. Receivables ageing-bucket detail: ~50% coverage due to table extraction gap (orchestrator-cleared post hoc, see finding 1); absolute receivables and payables figures CLEAN. Segment and quarterly actuals: 90% coverage, all CLEAN. Capital allocation (buyback, dividend, commitments): 100% coverage, all CLEAN. Basis consistency (SA vs CON, Rs m vs Rs Cr, FY vs TTM) verified throughout."

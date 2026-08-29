@@ -1,0 +1,93 @@
+stage: B09-tam
+company: "CMSINFO"
+run_date: "2026-08-29"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "B07 (Emerging Moat) not yet available at stage-9 runtime; 3C capacity cross-check used directly-injected capex figures (FY26 ~Rs352-409 Cr, FY27 guided Rs100-125 Cr), not a full B07 block."
+  - "ALGO ATM software TAM and payment cards TAM not separately stated by management or found in AR; excluded from Technology & Payment Solutions platform TAM, understating it by an unquantified amount."
+  - "Peer revenue aggregation incomplete across all platforms: Hitachi Payment Services, Writer Business Services, FSS pre-acquisition revenue unlisted/NOT FOUND; AGS Transact FY26 revenue NOT FOUND (CIRP-affected)."
+  - "Research and Markets 'India ATM Managed Services & Cash Logistics Market' (~Rs30,500 Cr) has no confirmed publication date or precise scope in the available search snippet; used directionally only."
+  - "Organised-vs-unorganised split for retail cash logistics: NOT FOUND as a precise percentage."
+flags:
+  - "Bottom-up BFSI Vision AI TAM (~Rs15,000 Cr, from 375,000 banking touchpoints x CMS's own ~Rs40,000/site rate) diverges materially above management's stated Rs3,000 Cr BFSI Vision AI TAM; conservative bias retains the lower AR-anchored figure, divergence unresolved, flag for Halt 1."
+  - "Total India ATM count internally disputed: spear's 208,063 vs this AR's own chart 258,000 (IMF FAS, undated) vs RBI/press ~251,000-253,000 (web search, FY24-25). This report uses ~251,000-258,000 as more authoritative than spear's 208,063; flag for Halt 1 reconciliation."
+  - "CMS's outsourced-ATM-market share is internally inconsistent: spear computed ~47% (73,000/~155,000); this AR's own MD&A implies ~58-61% (70,000-73,000 managed / ~120,000 outsourced base per AR FY26 MD&A p.94). Both point same direction (dominant incumbent) but differ by ~11-14pp; AR's own filed figure used as primary, making the already-dominant read for ATM Management stronger, not weaker."
+  - "Share-gain trajectories rely on the >5pp/aggressive-exit tier for two of three platforms simultaneously (ATM Mgmt via AGS/FSS, Technology via Securens); real and evidenced in each case, but stacking should be sanity-checked against execution bandwidth given three simultaneous integration/ramp efforts inside the same 12-18 month window."
+market_definition: "Three non-overlapping India-only platforms per CMS's own FY26 segment reporting: ATM Management Solutions (outsourced cash logistics/BLA), Retail Solutions & Currency Logistics (retail cash mgmt/CIT/bullion), Technology & Payment Solutions (HAWKAI Vision AI/ALGO/cards); product/hardware trading revenue excluded as pass-through."
+tam_cr: {conservative: 17850, realistic: 27000}
+sam_cr: 21100
+sam_pct_of_tam: 78.1
+som_3yr_cr: 3261
+som_5yr_cr: 4024
+som_implied_revenue_cagr: {yr3: 12.15, yr5: 11.72}
+current_sam_share_pct: 11.0
+revenue_headroom_x: 9.1
+tam_growth_pct: 10.8
+runway_class: "STRONG"
+mgmt_claim_cr: 3850
+mgmt_claim_ratio: 1.06
+mgmt_claim_read: "reasonable"
+capacity_check: "sufficient for 3yr SOM -- FY26 contract-driven build-out (~21,000 ATM units for SBI/ICICI/HDFC/IPPB) covers ~89% of the ~23,600 incremental ATM units the 3yr SOM implies; residual ~Rs45-50 Cr capex-equivalent fits inside FY27's guided Rs100-125 Cr envelope. 5yr SOM depends on unguided FY28-29 capex re-acceleration -- SOM is the achievable side, capex plan lags past year 3."
+methods_used:
+  - "top-down (management-stated segment TAM claims, AR FY26)"
+  - "bottom-up (unit economics: ATMs, organized retail touchpoints, banking/enterprise sites, CMS own revenue-per-unit)"
+  - "third-party industry report cross-check (Grand View Research, Research and Markets)"
+  - "peer aggregation (partial, most peers unlisted/NOT FOUND)"
+stale_data_flags:
+  - {datapoint: "India cash logistics market size base year", source: "Grand View Research (web search)", year: "2022"}
+  - {datapoint: "Total India ATM count / ATM density chart", source: "AR FY26 p.15, IMF Financial Access Survey", year: "NOT FOUND (undated within chart)"}
+  - {datapoint: "India ATM Managed Services & Cash Logistics Market size (Rs30,500 Cr)", source: "Research and Markets (web search)", year: "NOT FOUND"}
+searches_performed:
+  - "India ATM managed services market size CRISIL 2026 outsourcing cash logistics"
+  - "India cash management logistics industry market size report CAGR"
+  - "India total ATM count RBI 2026 outsourced ATMs number"
+  - "India video surveillance market size banking BFSI 2026"
+  - "CATMi India ATM count outsourced White Label Brown Label 2026"
+  - "currency in circulation India RBI 2026 lakh crore latest"
+searches_skipped: []
+downstream_candidates:
+  - signal: "RBI currency-in-circulation (CIC)"
+    entity_type: "macro"
+    demand_link: "Drives ATM cash-replenishment and retail cash-handling volume across two platforms"
+    likely_source: "RBI Weekly Statistical Supplement / RBI DBIE"
+    cadence: "monthly"
+    shared: true
+  - signal: "Total India ATM count and outsourced-vs-self-managed split"
+    entity_type: "regulatory"
+    demand_link: "Defines physical unit base and conversion headroom for ATM Management Solutions TAM"
+    likely_source: "RBI DBIE / CATMi"
+    cadence: "quarterly"
+    shared: false
+  - signal: "AGS Transact Technologies CIRP resolution proceedings"
+    entity_type: "counterparty"
+    demand_link: "Resolution outcome determines how much of AGS's ~90,000-ATM book CMS can absorb"
+    likely_source: "NCLT Mumbai / IBBI / AGS exchange filings"
+    cadence: "event-driven"
+    shared: true
+  - signal: "SBI/ICICI/HDFC/IPPB contract ramp status"
+    entity_type: "end-customer"
+    demand_link: "Determines if the ~21,000-ATM signed pipeline funding the 3yr SOM materialises on schedule"
+    likely_source: "Company Reg-30 filings, quarterly investor calls"
+    cadence: "quarterly"
+    shared: false
+  - signal: "National cash fulfilment rate (indented vs received)"
+    entity_type: "macro"
+    demand_link: "Proxy for whether FY26/Q1 FY27 revenue drag is transitory external shock or structural"
+    likely_source: "CATMi press releases / IBA data"
+    cadence: "monthly"
+    shared: true
+  - signal: "UPI transaction volume and value growth"
+    entity_type: "macro"
+    demand_link: "Digital-substitution risk monitor, structural threat to cash-dependent platforms"
+    likely_source: "NPCI monthly statistics"
+    cadence: "monthly"
+    shared: true
+  - signal: "Non-BFSI Vision AI RFP/tender wins"
+    entity_type: "end-customer"
+    demand_link: "Tracks realised penetration of the Rs5,000 Cr non-BFSI Vision AI TAM slice, most open runway"
+    likely_source: "Company Reg-30 filings / trade press"
+    cadence: "event-driven"
+    shared: false
+demand_externally_verifiable: true
+analyst_note: "Spear's ~2x-share small-pond read applies most to ATM Management Solutions (already 58-61% of the AR's own 120,000-unit outsourced base per MD&A p.94, stronger than spear's 47%). It materially understates Retail/Currency Logistics and especially Technology & Payment Solutions, where management's own TAM claims (Rs9,000 Cr and Rs8,000 Cr) are 3-8x spear's back-solved figures because spear's method excludes the conversion opportunity (self-managed ATMs, passive-CCTV sites) that is the actual growth thesis. SOM-implied CAGR (11.7-12.2%) sits close to but below management's FY30 guidance (13-14%), i.e. reasonable, not inflated."

@@ -1,0 +1,41 @@
+stage: B07-emoat
+company: "ENTERO"
+run_date: "2026-07-27"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["prospectus (HIGH)", "announcements (MEDIUM)", "shareholding (MEDIUM)", "research (LOW)"]
+flags:
+  - {type: FLAG-EMOAT-NETWORK, reason: "Network-reach metrics (retail pharmacies -32%, hospitals -36%, SKUs -14%, districts -9%) fell Q4FY26->Q1FY27 while warehouse count kept RISING (136->138) in the same quarter -- internally inconsistent with a simple low-margin-account-pruning explanation. This is Entero's own stated core moat (B3); unreconciled, it undermines rather than supports an EXPANSION classification."}
+  - {type: FLAG-EMOAT-METRICS, reason: "Three/four digital platforms launched or emphasised in FY26 (Entero Direct app, Teqtic BI tool, HealthEdge, Enteropreneur Programme) are documented as existing but disclose zero adoption metrics (no MAU, GMV, partner count, or % of orders digital). Existence is confirmed; competitive lock-in is not."}
+em_score: 19
+em_classification: "MODEST"
+active_categories:
+  - {id: "B3", name: "Supply chain network effect", strength: "Moderate", evidence_type: "documented", time_to_materialise: "12m (reconciliation needed)"}
+  - {id: "F2", name: "Execution moat (guidance delivery)", strength: "Moderate", evidence_type: "documented", time_to_materialise: "Ongoing/FY27 test"}
+  - {id: "G2", name: "Working capital improvement trajectory", strength: "Moderate", evidence_type: "documented", time_to_materialise: "Ongoing/FY27 test"}
+  - {id: "H1", name: "Industry consolidation beneficiary", strength: "Strong (sector-wide)", evidence_type: "documented", time_to_materialise: "2-3yr (FY28E)"}
+evidence_mix: {documented: 15, claim: 10, inference: 5}
+completionist_recount: "15 documented items identified across 8 of 23 rows (B1, B3, D1, D2, F2, G2, H1, H2); only 4 rows (B3, F2, G2, H1) clear the Moderate/Strong bar once evidence quality and current-quarter trend are weighed -- within the realistic 3-6 genuinely-active-category base rate, no force-fitting."
+catalysts_12m:
+  - {catalyst: "MedTech FY27 organic revenue confirmation toward Rs.1,000cr+", window: "FY27", evidence_type: "documented guide, partially delivered", anchor: "Q4 FY26 call; Inv. Pres. FY26 deck slide 12/14"}
+  - {catalyst: "FY27 EBITDA margin sustaining >=5%", window: "near", evidence_type: "documented guide, already hit once", anchor: "Inv. Pres. Q1FY27 deck slide 6-7"}
+  - {catalyst: "OCF-to-EBITDA conversion reaching >=50% FY27", window: "near", evidence_type: "documented guide", anchor: "Q4 FY26 call; B05 guidance"}
+  - {catalyst: "Reconciliation of network-reach metric contraction", window: "next quarter (H1 FY27)", evidence_type: "unresolved, management silent", anchor: "AR p.27 vs Inv. Pres. Q1FY27 deck slide 11"}
+  - {catalyst: "First disclosed adoption metric for Entero Direct/HealthEdge/Enteropreneur", window: "12-24m", evidence_type: "currently absent", anchor: "AR p.14-17, p.30"}
+capex_embedded_growth_pct: 0
+optionality_register:
+  - {optionality: "Entero Direct app driving measurable order/revenue share", converting_evidence: "Disclosed % of orders via app, MAU, or GMV", first_appears: "Investor presentation or concall", window: "12-24m"}
+  - {optionality: "HealthEdge chemist-club platform scaling", converting_evidence: "Disclosed chemist-onboarding count, GMV, or revenue contribution", first_appears: "AR or investor day", window: "12-24m"}
+  - {optionality: "Enteropreneur Programme partner network scaling", converting_evidence: "Disclosed partner count or revenue contribution", first_appears: "Next AR or investor presentation", window: "12-24m"}
+  - {optionality: "Teqtic BI tool driving quantifiable efficiency gains", converting_evidence: "Disclosed fill-rate/stockout/cost-per-order metric tied to Teqtic", first_appears: "MD&A or investor presentation", window: "12-24m"}
+  - {optionality: "MedTech exclusive distribution partnerships proven contractually durable", converting_evidence: "Named manufacturer with disclosed contract duration/exclusivity term", first_appears: "Next AR, exchange filing, or Q&A", window: "12m"}
+  - {optionality: "Applied Genomics division (Anand Chemiceutics) generating disclosed revenue", converting_evidence: "Segment or subsidiary revenue figure", first_appears: "Next AR", window: "24-36m"}
+  - {optionality: "Network-reach metrics recovering or explained", converting_evidence: "Management reconciliation of Q4FY26->Q1FY27 drop with disclosed cause", first_appears: "Next concall (H1 FY27)", window: "Next quarter"}
+combined_assessment: "AVOID"
+combined_reasoning: "Backward Gate 0 is already AVOID and forward EM score (19) sits below the EM>=25 UA qualifier; no GOOD/AVERAGE-backward-plus-EXPANSION-forward transition setup emerges from this scan."
+top_moat_risks:
+  - "Network-reach contraction (retail/hospital counts down 28-36% Q4FY26->Q1FY27) unreconciled, while warehouse count rose in the same quarter -- if structural rather than deliberate pruning, the core B3 network moat is eroding, not strengthening."
+  - "Digital platforms (Entero Direct, Teqtic, HealthEdge, Enteropreneur) disclose zero adoption metrics; moat claim rests on existence, not proven switching-cost or lock-in evidence."
+  - "No structural barrier stops a well-capitalised competitor from replicating the roll-up model; India's top-3 pharma-distribution share is still only 8-10%, so I2 cannibalization barrier correctly scores 0."
+  - "40 CARO-qualified cash-loss subsidiaries (B02/B03) show acquisition-integration execution is uneven; the F2 guidance-delivery credibility coexists with unresolved integration quality at the subsidiary level."
+analyst_note: "Emerging Moat and Gate 0 independently converge near the same zone (EM 19 vs Gate0 moat_score 18) despite fully separate methodologies. The scan's single most important finding is internal to Entero's own disclosure: the metric management itself calls its core moat (network reach) is the one that contracted sharply and unreconciled in the latest quarter, in the same quarter warehouse count rose and margins hit records. That combination (reach down, capacity up, margins up) is not explained by the cited low-margin-exit rationale alone and is the top Halt 1 verification item this stage can hand off."

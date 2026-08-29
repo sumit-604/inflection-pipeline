@@ -19,3 +19,30 @@
 | 12b | verifier-b-redflags | claude-opus-4-8 | default | - | - | 111343 | 5.3m | 1 |
 | 12d | verifier-d-peers | claude-sonnet-5 | default | - | - | 235798 | 8.5m | 1 |
 | 13 | synthesis-lite | claude-opus-4-8 | default | - | - | 86254 | 3.5m | 1 |
+| 9b | halt1-dossier | claude-sonnet-5 | default | - | - | 213765 | 8.2m | 1 |
+
+## SESSION CLOSE-OUT SUMMARY (phase 1)
+
+Run token total (sum of all ledger rows): ~2,791,941 tokens.
+
+### (a) TOP FIVE BY TOKENS
+| rank | stage | total_tok | share of run |
+|------|-------|-----------|--------------|
+| 1 | 2 notes-triple-pass (3 runs summed) | 535,055 | 19.2% |
+| 2 | 12d verifier-d-peers | 235,798 | 8.4% |
+| 3 | 3 ar-deep-dive | 228,784 | 8.2% |
+| 4 | 9b halt1-dossier | 213,765 | 7.7% |
+| 5 | 1 gate-0-scorecard | 203,649 | 7.3% |
+
+### (b) DOWNSHIFT FAILURES
+none. The only mechanical stage that ran as a subagent in phase 1 is verifier A, which ran on claude-haiku-4-5 as routed (stage 0 validation was orchestrator-inline; stage 10 assembly and verifier-A's sibling mechanical stages do not run in phase 1). No mechanical stage ran on Opus.
+
+### (c) COST SPIKES
+none. No prior runs/systango-<date>/session-cost.md ledger exists (this is the first SYSTANGO run), so no 1.5x prior-run comparison applies.
+
+### (d) OPERATOR SNAPSHOT
+Operator: run /cost and /usage now and paste the cache hit ratio and the loop totals below. The orchestrator cannot read those interactive commands.
+
+#### Operator snapshot
+- Cache hit ratio: [paste]
+- Loop totals: [paste]

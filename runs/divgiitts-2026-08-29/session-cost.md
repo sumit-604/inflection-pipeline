@@ -49,3 +49,4 @@ under "Operator snapshot". The orchestrator cannot read those interactive comman
 
 #### Operator snapshot
 (paste /cost + /usage output here)
+| 10 | input-assembly | claude-haiku-4-5 | default | - | - | 96340 | 3.8m | 1 |

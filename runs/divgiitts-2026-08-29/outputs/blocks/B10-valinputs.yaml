@@ -1,0 +1,95 @@
+stage: B10-valinputs
+company: DIVGIITTS
+run_date: '2026-08-29'
+model: claude-haiku-4-5
+status: complete
+entity_count: 1
+orchestrator_unit_correction: >
+  UNIT MISLABEL (haiku basis-confusion, known pattern): the absolute figures the assembler
+  labeled "_cr" that come from the audited AR/results (revenue 3528.88, PAT 469.26, CFO 410.83,
+  capex 443.16, D&A 292.37, net_cash 2943.82, book_value 6354.56, EBITDA ~920) are in Rs MILLION,
+  not Rs Cr. Divide by 10 for Cr: revenue Rs 352.89 Cr, PAT Rs 46.93 Cr, CFO Rs 41.08 Cr, capex
+  Rs 44.32 Cr, net cash Rs 294.38 Cr, book value Rs 635.46 Cr, EBITDA (incl OI) ~Rs 92 Cr.
+  Consequently enterprise_value_cr 649.8 is WRONG (it subtracted a Rs-Mn value from a Rs-Cr mcap);
+  correct EV = mcap 3594 - net cash ~294 = ~Rs 3,300 Cr. The PER-SHARE figures are CORRECT
+  (operating EPS Rs 24 FY27, net cash Rs 95-96/share, diluted EPS Rs 15.34, book value Rs 207.72),
+  and the valuation runs on the operator-approved per-share base, so fair value (Rs 815) is unaffected.
+operator_approved_pillars:
+  pillar1_roce_pct: 20            # treasury-stripped both sides; sole authority; fair-case (rests on 24% FY29 op margin)
+  pillar1_base_pe: 19            # v3.5.1 Route B cash-strip; ROCE recovery credited via Pillar 1 (single-credit)
+  pillar2_cash_multiplier: 1.0   # INDETERMINATE, no growth offset (no rating rationale)
+  pillar3_growth_premium: 1      # +1x
+  strategic_premium: 0
+  ua_applied: false              # FII+DII 28% >> 3% qualifier
+  sector_cap_x: 30               # OPERATOR OVERRIDE from 25x (industrial products), DIVGIITTS this run only
+  required_return_r_pct: 14
+  destination_exit_pe: 30        # forward, peer-anchored at overridden cap; additive pillar ~20x is floor
+  earnings_basis: "FY27 forward operating EPS, treasury stripped, PRIMARY; FY28 secondary; FY30 dropped"
+  valuation_method: "operating EPS x exit multiple PLUS net cash at face Rs 95/share FY27 (tapering); never multiply reported EPS"
+  fy27_operating_eps_rs: 24
+  fy27_reported_eps_rs: 28
+  net_cash_per_share_rs: 95
+  fair_value_fy27_rs: 815
+  entry_zone_rs: "570-650"
+  relative_valuation: "cross-check only; peer downside line 27x forward; Amendment 20 gates both fail; does not set the multiple"
+fy27_base:
+  revenue_cr: 545
+  op_ebitda_margin_pct: 24.0
+  da_cr: 33
+  other_income_cr: 17
+  tax_pct: 25.2
+  shares_cr: 3.0582
+  reported_pat_cr: 86
+  operating_pat_cr: 73
+  treasury_pat_cr: 12.7
+key_figures_corrected_to_cr:
+  cmp_rs: 1175
+  market_cap_cr: 3594
+  shares_diluted_cr: 3.0582
+  revenue_fy26_cr: 352.89
+  pat_fy26_cr: 46.93
+  operating_ebitda_ex_oi_fy26_cr: 70.0
+  cfo_fy26_cr: 41.08
+  capex_fy26_cr: 44.32
+  fcf_fy26_cr: -3.24
+  cfo_pat_fy26: 0.876
+  net_cash_cr: 294.38
+  net_cash_per_share_rs: 96
+  enterprise_value_cr: 3300
+  book_value_per_share_rs: 207.72
+  diluted_eps_fy26_rs: 15.34
+  pe_on_reported_fy26_eps: 76.6
+  pe_on_fy27_operating_eps_forward: 48.9   # ex-cash: (1175-95)/24 = 45x
+  roce_blended_fy26_pct: 9.9
+  roce_operating_ex_treasury_fy26_pct: 12.0
+  receivables_days_fy26: 82
+  total_debt_cr: 0.18            # Rs 1.77 Mn = Rs 0.18 Cr (functionally debt-free)
+flags:
+  - {type: FLAG-CASH, reason: "Pillar 2 INDETERMINATE (no rating); Spear ~Rs 275 Cr net-cash-decline contradicted, cash rose ~Rs 9.7 Cr (B01/B03)"}
+  - {type: FLAG-PROMOTER, reason: "B08 CONCERN: US-subsidiary narrative, Tejal RPT omission (sitting ED), 3-way KMP pay figures, AGM Section 197 incentives"}
+  - {type: FLAG-RPT-COMPLETENESS, reason: "Tejal Transmission omitted from Note 34 (B02/B03/B08)"}
+  - {type: FLAG-SUBSIDIARY-CONTRADICTION, reason: "US subsidiary narrative vs Board's Report Item 13; incorporated 4-Jun-2026 post year-end (B03/B08)"}
+  - {type: GOVERNANCE-PATTERN, reason: "cross-document contradiction cluster; compilation/review control gap (B02/B03)"}
+input_gaps:
+  - "rating: no credit rating exists (finding, not gap) -> Pillar 2 INDETERMINATE"
+  - "customer revenue concentration: NOT DISCLOSED"
+  - "promoter pledge %: NOT FOUND"
+  - "Indonesia per-unit ASP: NOT FOUND (bounded estimate Rs 105-140 Cr total program, deliberation 6.2)"
+  - "prospectus/announcements/shareholding: absent (phase-1 gaps)"
+ua_qualifiers: {listed_12m: true, gate0_or_em: true, fii_dii_lt3: false, all_met: false}
+credibility_grade: B
+em_classification: STRENGTHENING
+conflicts_resolved:
+  - "Promoter holding: AR audited 56.47% used over web 60.56%"
+  - "Net cash trend: audited Note 10 rise ~Rs 9.7 Cr used; Spear ~Rs 275 Cr decline contradicted"
+  - "R&D: Rs 11.79 Cr (million, 2-page corroborated) used over BRSR Rs 117.94 crore (unit typo)"
+  - "US subsidiary: Board's Report (no subsidiary in FY26) governs; letters' operating-tense narrative misleading"
+downstream_candidates_carried: true   # 7 rows carried from B09 for the tracker payload
+ar_new_downstream_entities_carried: true   # 5 AR first-disclosure rows carried from B03
+analyst_note: >
+  Load-bearing for stage 11: (1) never multiply reported EPS (Rs 15.34); use operating EPS Rs 24 FY27
+  (treasury stripped) x 30x + net cash Rs 95/share = FV Rs 815. (2) Pillar 1 ROCE 20% is fair-case,
+  rests on a 24% FY29 op margin above the 20-22% guide; at guide ROCE 16-19%. (3) sector cap 30x is an
+  operator override from 25x (adds ~Rs 120/share vs default). (4) proof gate NOT fired; EV leg zero.
+  (5) governance CONCERN -> WATCHLIST defaulting to AVOID until the 18-Sep-2026 AGM and FY27 AR clear it.
+  (6) all absolute Rs figures from audited statements are Rs Mn; use key_figures_corrected_to_cr for Cr.

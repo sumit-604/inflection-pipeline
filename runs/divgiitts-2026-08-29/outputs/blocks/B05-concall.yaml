@@ -1,0 +1,67 @@
+stage: B05-concall
+company: "DIVGIITTS"
+run_date: "2026-08-29"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["FY25 results resubmission (Jun-2026 call) not mentioned in any of the three transcripts", "no cash-balance/net-cash figures in any call, so the ~Rs 275 cr net cash decline claim cannot be reconciled against concall evidence", "no transcript states an explicit Q2 FY27 SOP date for the Sigma EV transmission"]
+flags: ["management could not/did not disaggregate Indonesia-driven vs organic transfer case revenue when asked directly in Q1 FY27 call", "EV transmission SOP slipped 3 consecutive quarters on an identical externally-attributed excuse", "automatic transmission 'conclude contract by July 2026' milestone quietly never revisited", "export contribution declining (18% FY26 to 16% Q1 FY27) against reiterated 20-25% target, unaddressed", "Project Mayflower first-phase investment scope rose ~14x (Rs 3cr to ~$5mn) within 2.5 months, self-caveated as directional"]
+quarters_analysed: ["Q3 FY26", "Q4 FY26", "Q1 FY27"]
+triggers:
+  - {priority: 1, name: "Indonesia 70,000-unit transfer case execution (Tata + Mahindra)", type: "volume", timeframe: "near (FY27)", conviction: "H", confirm_signal: "continued transfer-case revenue growth beyond Q1 FY27's Rs 76cr; completion confirmed in FY27 results", kill_signal: "OEM/government delay confirmed independently; revenue plateaus post-batch without confirmed follow-on"}
+  - {priority: 2, name: "Automatic transmission localization program", type: "both", timeframe: "long (SOP H2 CY28 per Q1 FY27 call)", conviction: "M", confirm_signal: "signed technology-transfer contract disclosed with named/describable OEM and dated SOP", kill_signal: "advanced-discussions language persists into FY28 with no signed contract"}
+  - {priority: 3, name: "EV transmission (Sigma) commercialization", type: "volume", timeframe: "near-medium, already slipped 3 quarters", conviction: "L-M", confirm_signal: "confirmed SOP with specific date and a quarter of run-rate at/above Rs 10-12cr/quarter guide", kill_signal: "fourth consecutive quarter of testing delay with no SOP"}
+  - {priority: 4, name: "Export mix reaching 20-25% of revenue", type: "price-mix", timeframe: "medium", conviction: "M", confirm_signal: "export % resumes rising toward 20%+ in FY27/FY28 results", kill_signal: "export % continues declining below Q1 FY27's 16%"}
+  - {priority: 5, name: "Project Mayflower (US manufacturing)", type: "both", timeframe: "long (commissioning H2 CY28)", conviction: "M", confirm_signal: "confirmed RFQ-to-award conversions; capex stays near ~$5mn first-phase figure", kill_signal: "investment scope escalates further without matching revenue confirmation, or timeline slips again"}
+  - {priority: 6, name: "Manual transmission LCV beachhead + 100,000/yr follow-on", type: "volume", timeframe: "near (FY28)", conviction: "M", confirm_signal: "revenue recognized from beachhead contract in FY28 results", kill_signal: "negotiation lapses/loses to incumbent"}
+  - {priority: 7, name: "Japanese OEM (SE Asia pickup) transfer case", type: "volume", timeframe: "long (FY28-29)", conviction: "L-M", confirm_signal: "SOP date re-confirmed or tightened in a future call", kill_signal: "continued silence/further widening of SOP window"}
+guidance:
+  - {item: "Indonesia order volume", number: "70,000 units (35,000 each Tata/Mahindra)", timeframe: "FY27 execution", stated_in: "Q3 FY26 call"}
+  - {item: "EV transmission SOP (120kW/220Nm)", number: "SOP April 2026", timeframe: "Q4 FY26 (as targeted)", stated_in: "Q3 FY26 call"}
+  - {item: "US manufacturing feasibility conclusion", number: "preliminary conclusion", timeframe: "end Q1 FY27", stated_in: "Q3 FY26 call"}
+  - {item: "Automatic transmission contract conclusion", number: "contract target (caveated, not concluded)", timeframe: "by July 2026", stated_in: "Q3 FY26 call"}
+  - {item: "FY26 full year revenue", number: "Rs 375 cr (+56% YoY)", timeframe: "FY26 actual", stated_in: "Q4 FY26 call"}
+  - {item: "FY26 EBITDA / PAT", number: "Rs 92 cr (24.6%) / Rs 46.9 cr (+92% YoY)", timeframe: "FY26 actual", stated_in: "Q4 FY26 call"}
+  - {item: "Export contribution FY26", number: "18% of revenue (medium-term target 20-25%)", timeframe: "FY26 actual / medium-term target", stated_in: "Q4 FY26 call"}
+  - {item: "Q1 FY27 revenue/EBITDA/PAT", number: "Rs 141.8cr / Rs 41.6cr (29.4%) / Rs 25.2cr (17.8%)", timeframe: "Q1 FY27 actual", stated_in: "Q1 FY27 call"}
+  - {item: "Indonesia contract execution to date", number: "~30% of 70,000 units", timeframe: "as of Q1 FY27 close", stated_in: "Q1 FY27 call"}
+  - {item: "Project Mayflower first-phase investment", number: "~$5 million (directional, caveated)", timeframe: "first phase, commissioning H2 CY28", stated_in: "Q1 FY27 call"}
+  - {item: "Automatic transmission revenue potential", number: "Rs 300-400 cr minimum (40,000-50,000 units)", timeframe: "post-SOP H2 CY28", stated_in: "Q1 FY27 call"}
+  - {item: "Rs 1,000 cr roadmap composition", number: "4-5 chunks of Rs 150-400 cr each", timeframe: "multi-year", stated_in: "Q1 FY27 call"}
+promise_delivery:
+  delivered: 3
+  partial: 4
+  missed: 4
+  rows:
+    - {promised_in: "Q3 FY26", promise: "Indonesia ramp Feb-Jun 2026, full execution by Dec 2026/FY27-end", outcome: "Partial/on-track", explanation: "~30% executed by Q1 FY27; minor spillover risk attributed to OEM vehicle-production bottlenecks"}
+    - {promised_in: "Q3 FY26", promise: "EV SOP April 2026 (120kW/220Nm, 4 models)", outcome: "Missed", explanation: "OEM (Tata) vehicle testing delays, repeated identically in Q4 FY26 and Q1 FY27 calls"}
+    - {promised_in: "Q3 FY26", promise: "EV capacity utilization to 40-60% within ~3 months via Project Sigma", outcome: "Missed", explanation: "same OEM-testing-delay explanation; miss not explicitly acknowledged in Q4 FY26 call"}
+    - {promised_in: "Q3 FY26", promise: "US manufacturing feasibility preliminary conclusion by end Q1 FY27", outcome: "Delivered", explanation: "Board approved US subsidiary incorporation announced 27-May-2026, within window"}
+    - {promised_in: "Q3 FY26", promise: "Automatic transmission: conclude a contract by July 2026 (caveated)", outcome: "Partial/unclear", explanation: "not revisited by Q1 FY27 call; language reverted to advanced discussions/due diligence"}
+    - {promised_in: "Q3 FY26", promise: "Japanese OEM (SE Asia) transfer case SOP H1 FY28", outcome: "Partial", explanation: "widened to FY28-29 in Q4 FY26 call, no explanation given"}
+    - {promised_in: "Q4 FY26", promise: "Transfer Case volume momentum to sustain", outcome: "Delivered", explanation: "Q1 FY27 Transfer Case revenue +93% YoY"}
+    - {promised_in: "Q4 FY26", promise: "EV proof-of-concept/production target next month or by July", outcome: "Missed", explanation: "third consecutive quarter of the same OEM-testing-delay explanation"}
+    - {promised_in: "Q4 FY26", promise: "Export contribution to sustain toward 20-25% target", outcome: "Missed", explanation: "fell to 16% in Q1 FY27; declining trend unaddressed by management"}
+    - {promised_in: "Q4 FY26", promise: "Healthy net cash position maintained despite growth capex", outcome: "Unverifiable", explanation: "no cash figures quantified in Q1 FY27 call or any call"}
+excuse_pattern: "external-blame-heavy"
+repeated_evasions: []
+credibility_grade: "B"
+credibility_basis: "Financial guidance and the flagship Indonesia program were delivered on schedule across all three calls, but the EV vertical slipped on an identical excuse for three straight quarters, an automatic-transmission contract milestone was quietly dropped, cash/order-book figures were never quantified, and management could not answer the direct Q1 FY27 question on Indonesia-vs-organic growth."
+peer_questions:
+  - {question: "Is China facing an approximate 60% US import duty on precision auto components, materially higher than duties facing Indian exporters?", why: "Underpins Divgi's entire Components-export growth thesis and Project Mayflower rationale.", check_peers: ["other Indian auto-component exporters to the US", "auto components industry body commentary"]}
+  - {question: "Is it accurate that no Indian OEM has a local Tier-1 for automatic transmissions, and Tata Motors is the only OEM with meaningful EV-drivetrain localization?", why: "Central to the automatic-transmission and EV opportunity-sizing claims repeated across all three calls.", check_peers: ["transmission/EV-drivetrain component peers", "Tata Motors and Mahindra concall commentary"]}
+  - {question: "Does the global transfer case market size match Divgi's cited ~14-15 million units/year?", why: "Anchors Divgi's addressable-market framing for its core segment.", check_peers: ["global 4WD/AWD systems suppliers, industry trackers"]}
+  - {question: "Did the Indonesian government's tender produce ~$500 million in savings by choosing Indian OEMs over Japanese/Chinese bidders?", why: "Colors the credibility of management's rebuttal to reports the order was on hold (Q4 FY26 call).", check_peers: ["Tata Motors/Mahindra Indonesia disclosures", "Indonesian trade press"]}
+  - {question: "Is India's EV market genuinely flat as characterized across all three calls, consistent with independent EV industry data?", why: "Affects whether EV transmission slippage is OEM-specific execution or a market-wide headwind.", check_peers: ["2W/PV EV OEMs and EV-driveline component peers"]}
+  - {question: "Do US OEMs/Tier-1s corroborate a genuine China-to-India de-sourcing trend in precision components, with Divgi named as a beneficiary?", why: "Tests whether Components-export growth (117-124% YoY in FY26) is company execution or an industry tailwind.", check_peers: ["other Indian precision-component/forging exporters with US Tier-1 exposure"]}
+  - {question: "Does a USMCA-style minimum local-content rule actually apply to Divgi's target US product categories?", why: "A specific regulatory claim underpinning the Project Mayflower capex decision.", check_peers: ["US trade/regulatory trackers", "other Indian auto-component companies setting up US manufacturing"]}
+red_flags:
+  - "Management could not/did not disaggregate Indonesia-driven vs organic transfer case growth when asked directly (Q1 FY27 call) - the core SPEAR question on run-rate durability"
+  - "EV transmission SOP slipped 3 consecutive quarters (April 2026 to by-July-2026 to still-not-launched Aug-2026) on an identical externally-attributed excuse"
+  - "Automatic transmission 'conclude contract by July 2026' milestone never revisited after the deadline passed"
+  - "No cash-balance/net-cash figures disclosed in any of three calls; cannot reconcile against the ~Rs 275 cr net cash decline claim in the run brief"
+  - "Export contribution declining (18% FY26 to 16% Q1 FY27) against reiterated 20-25% target, unaddressed; also inconsistent with the 'crossed 20% in Q2 FY26' claim made in the Q4 FY26 call"
+  - "Project Mayflower first-phase investment scope rose from ~Rs 3cr to ~$5mn (~14x) within 2.5 months, self-caveated as directional"
+  - "No mention of any FY25 results resubmission in the Jun-2026 (Q4 FY26) call"
+dropped_triggers: ["Automatic transmission 'conclude contract by July 2026' milestone - not revisited after the deadline", "Total order book quantification (Rs cr) - asked once in Q3 FY26, deflected, never revisited", "Specific '3 different types of transfer case technology prototypes' framing from Q3 FY26 call - superseded/not named again"]
+timeline_slippages: ["EV transmission SOP: April 2026 -> by July 2026 -> not launched as of 12-Aug-2026 call (Sigma 'progressing towards commercialization')", "EV capacity utilization: '40-60% within 3 months' (Q3 FY26) -> still 25-30% (Q4 FY26) -> still soft, forward guide only (Q1 FY27)", "Japanese OEM (SE Asia pickup) transfer case SOP: 'H1 FY28' (Q3 FY26) widened to 'FY28-29' (Q4 FY26)", "Project Mayflower plant commissioning: implied near-term by 'preliminary conclusion by Q1 FY27' framing (Q3 FY26) -> actual commissioning now H2 CY28 (Q1 FY27 call)"]
+analyst_note: "No transcript across the three calls states an explicit 'Q2 FY27' SOP date for the Sigma EV transmission; the run brief's framing of that date is not corroborated in these transcripts and should be checked against a source outside this 3-call set at Halt 1. Similarly, nothing in the concall record supports or contradicts the ~Rs 275 cr net cash decline claim - management only asserts a healthy net cash position without ever quantifying it, across all three calls."

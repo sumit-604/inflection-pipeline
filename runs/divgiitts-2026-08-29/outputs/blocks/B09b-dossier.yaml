@@ -1,0 +1,42 @@
+stage: B09b-dossier
+company: "DIVGIITTS"
+run_date: "2026-08-29"
+model: claude-sonnet-5
+status: complete
+corpus_verdict: "CORPUS GAPPED"
+corpus_gaps:
+  - {document: "Prospectus (DRHP/RHP)", expected_source: "BSE", kind: "findable-missing"}
+  - {document: "Credit rating rationale", expected_source: "rating agency site", kind: "findable-missing"}
+  - {document: "Announcements corpus (Reg 30 filings)", expected_source: "BSE", kind: "findable-missing"}
+  - {document: "Shareholding pattern (Reg 31)", expected_source: "BSE", kind: "findable-missing"}
+  - {document: "Research/broker notes", expected_source: "company IR page", kind: "findable-missing"}
+archetypes:
+  - {line: "all product lines (single reportable segment, Note 39)", archetype: "Build-to-spec component maker"}
+transition:
+  - line: "all product lines (single reportable segment, Note 39)"
+    from_tier: "R2 COST-ADVANTAGED CONVERTER neighbourhood"
+    to_tier: "R3 VALUE-ADDED / SPEC'D SUPPLIER neighbourhood"
+    engine: "(1) mix shift from mechanical-only Transfer Case/ALH/Synchronizer supply toward IP-owned EV transmission and possible automatic-transmission content; (2) customer/geography diversification away from two domestic OEMs toward exports, Tier-1s, and a US presence"
+    proof_gate: "E-Gear Drive (Sigma) reaches confirmed SOP and sustains quarterly revenue at/above the guided Rs 10-12 Cr/quarter run-rate for two consecutive quarters"
+    recognition_gap: "OPEN - whether the 4-May-2026 Buy-to-Hold sell-side move already reflects the claimed R3 migration or only the FY26 cyclical earnings recovery; resolved at Stage 11 via the destination-PE gap"
+    ugliness: "ARTIFACT-OF-CLIMB"
+    transition_falsifier: "A fourth consecutive Sigma SOP slip with no signed automatic-transmission contract, plus the Indonesia program plateauing post-batch with no confirmed follow-on and no narrowing of the organic-vs-program disaggregation gap"
+dominant_variables:
+  - "E-Gear Drive (Sigma) SOP and quarterly run-rate"
+  - "Indonesia 70,000-unit program execution and organic-vs-program disaggregation"
+  - "Export mix trajectory toward the 20-25% target"
+  - "Automatic-transmission technology-transfer contract status"
+business_falsifier: "Sustained (2+ quarter) EBITDA margin fall below ~20% without a named one-off, or a second key-OEM in-sourcing event mirroring the Mahindra 3-wheeler EV precedent, or unremedied recurrence of the disclosure-integrity cluster (Tejal RPT omission, US-subsidiary narrative, KMP-pay mismatches) into the FY27 Annual Report"
+mental_model_status: "DRAFT - PENDING OPERATOR SIGN-OFF"
+fragility:
+  variable_count: 6
+  verifiability_ratio: "3 of 6 externally observable"
+  single_point_failure: "none - failure requires conjunction"
+  fragility_verdict: "MODERATE"
+candidate_count: 7
+research_brief_items: 11
+plain_summary_points: 15
+annex:
+  present: true
+  questions_answered: 10
+  corpus_commit_hash: "e4d8054e74965b55bba98a17e22c0e9299f614d5"

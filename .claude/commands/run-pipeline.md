@@ -224,11 +224,31 @@ handoff schemas, flag rules, and error handling. Then:
    failed. The HALT 1 message never prints over a malformed or annex-
    incomplete dossier.
 
-7. COMMIT all outputs with message "phase 1 (evidence): <ticker> <date>"
+6c. SESSION CLOSE-OUT (write the cost record). RUNS AFTER THE LAST STAGE,
+   before the run outputs are committed and their PR opens. Write
+   runs/<ticker>-<date>/session-cost.md with three blocks:
+   (a) TASKS. The /tasks output, one line per stage, each line naming the
+       stage, its model, and its effort. Flag any MECHANICAL stage that ran
+       on Opus as "DOWNSHIFT FAILURE: <stage>". The mechanical stages are
+       the ones DISPATCH routes to haiku (stage 0 validation, stage 10
+       assembly, verifier A); a mechanical stage on Opus means the model
+       downshift did not take and the run overpaid.
+   (b) COST. The /cost output: cache hit ratio, misses, and tokens
+       re-cached. If the hit ratio is below the previous run's (the most
+       recent prior runs/<ticker>-<date>/session-cost.md), name the stage
+       where it broke.
+   (c) USAGE (loop block, only if a loop ran). From /usage: run count and
+       tokens per run.
+   If any DOWNSHIFT FAILURE or cache break is found, add a one-line entry to
+   LESSONS.md naming the stage. session-cost.md is a run output: it travels
+   with the run outputs on the run branch and its PR, never on a framework
+   branch.
+
+7. COMMIT all outputs (including session-cost.md) with message "phase 1 (evidence): <ticker> <date>"
    and report to the user: the corpus verdict and fragility verdict from
    the dossier, the gate recommendation verdict line, flags active,
    phase-1 confidence delta overall, and the final file paths including
-   outputs/reports/09b-understanding-dossier.md.
+   outputs/reports/09b-understanding-dossier.md and session-cost.md.
 
    PRINT FINALS IN CHAT: after writing the final files and committing,
    always print the primary human-readable documents in full in the chat,

@@ -88,6 +88,8 @@ Do not upgrade a stage's model without editing its agent file.
 - Each document is paid for once. Corpus documents are read by Claude Code;
   documents uploaded to claude.ai are read there. Neither ferries a document
   to the other.
+- Every run ends with session-cost.md (see run-pipeline close-out). It travels
+  with run outputs, never on the framework branch.
 
 ## MEMORY
 /run-pipeline, /fttcp, /finalize, and /compost sessions read the ACTIVE

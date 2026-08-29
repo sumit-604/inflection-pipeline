@@ -8,3 +8,4 @@
 | 2 | notes-pass-2 | claude-sonnet-5 | - | - | - | 155125 | 6m35s | 2 |
 | 2 | notes-pass-3 | claude-sonnet-5 | - | - | - | 85653 | 4m24s | 3 |
 | 3 | ar-deep-dive | claude-sonnet-5 | - | - | - | 203991 | 16m17s | 1 |
+| 5 | concall-analysis | claude-sonnet-5 | - | - | - | 122533 | 6m38s | 1 |

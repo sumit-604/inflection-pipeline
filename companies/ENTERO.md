@@ -44,9 +44,15 @@ Price is approx 45% above the top of the entry zone.
     price capping transmitted upstream, 35% probability. (4) Manufacturer
     de-authorisation, with GLP-1 inferred at ~10% of revenue across two
     foreign manufacturers.
-- Halt 1 decision: SHALLOW WATCH
+- Halt 1 decision: PROCEED (operator override 2026-08-29 of the claude.ai
+  SHALLOW WATCH recommendation; model signed; full pipeline authorised)
 
 ## OPERATOR RULINGS
+- 2026-08-29: Halt 1 decision OVERRIDDEN to PROCEED. The claude.ai Halt 1
+  package recommended SHALLOW WATCH (re-rating priced in, price ~45% above
+  the entry zone). Operator elects to run the full pipeline (Phase 2 /fttcp
+  -> Phase 3 /finalize) on the signed model regardless. The SHALLOW WATCH
+  reasoning stands on record; the run proceeds by operator authority.
 - 2026-08-29: Halt 1 decision SHALLOW WATCH. Mental model signed with
   eight corrections to the 09b draft. Archetype set as
   working-capital-financed distribution roll-up at self-funding scale,

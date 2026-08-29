@@ -17,3 +17,4 @@
 | 12a | verifier-a-numerical | claude-haiku-4-5 | default | - | - | 107447 | 2.9m | 1 |
 | 12c | verifier-c-framework | claude-opus-4-8 | default | - | - | 84755 | 4.6m | 1 |
 | 12b | verifier-b-redflags | claude-opus-4-8 | default | - | - | 111343 | 5.3m | 1 |
+| 12d | verifier-d-peers | claude-sonnet-5 | default | - | - | 235798 | 8.5m | 1 |

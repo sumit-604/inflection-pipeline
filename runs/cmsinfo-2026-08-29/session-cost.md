@@ -6,3 +6,6 @@ Per-stage token ledger. One line per subagent run (loops/retries get their own l
 |---|-------|-------|--------|--------|---------|-----------|------|------|
 | 0 | input-validation (orchestrator inline) | - | - | - | - | - | - | 1 |
 | 1 | gate-0-scorecard | claude-sonnet-5 | default | - | - | 118039 | 9m35s | 1 |
+| 2 | notes-triple-pass (pass1 full extraction) | claude-sonnet-5 | default | - | - | 148582 | 8m10s | 1 |
+| 2 | notes-triple-pass (pass2 what-missed) | claude-sonnet-5 | default | - | - | 117075 | 6m33s | 2 |
+| 2 | notes-triple-pass (pass3 consolidate B02) | claude-sonnet-5 | default | - | - | 62131 | 3m22s | 3 |

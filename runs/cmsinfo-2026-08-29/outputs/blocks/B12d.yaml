@@ -1,0 +1,25 @@
+stage: B12d
+company: "CMSINFO"
+run_date: "2026-08-29"
+model: claude-sonnet-5
+status: complete
+peers_audited: 6
+peer_utilisation: 83   # 5 of 6 peers used substantively in B06 (RADIANTCMS, SIS, AGSTRA, QUESS, UDS); AURIONPRO software-benchmark only
+substantive_confirmed: 3   # RADIANTCMS, SIS, UDS -- all SUBSTANTIVE citations checked clean; AGSTRA and QUESS each carry one flawed citation
+substantive_unsupported:
+  - "QUESS (Q4 FY26 / May-2026 row: 'Rs176cr one-time Labour Code revenue/cost pass-through' -- no such figure found in either the Feb-2026 or May-2026 transcript; likely misread of an unrelated segment-revenue figure or conflation with UDS's unrelated 'INR176 crore' EBITDA figure)"
+unused_but_relevant:
+  - {peer: "AURIONPRO", missed_item: "Nov-2025 call contains a DSO/receivables exchange (H1 receivables 'a bit high,' DSO seasonality) that B06 states does not exist ('no relevant terms matched'); low materiality, different industry, does not change any verdict", anchor: "AURIONPRO-Concall_Nov_2025_Transcript.txt, lines ~811-861, Vaibhav Choudhury / Ashish Rai"}
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "CRITICAL", location: "06-peers.md Part 2B and Part 3 coverage map (QUESS Q4 FY26/May-2026 row)", description: "'Rs176cr one-time Labour Code revenue/cost pass-through' attributed to QUESS is not found in the Feb-2026 or May-2026 transcripts; only real QUESS Labour Code figure is Rs7cr (Feb-2026). Load-bearing for the Part 2B peer cost-scale comparison only, NOT for any verdict; core DSO-contradiction anchors (RADIANTCMS/SIS) unaffected."}
+  - {severity: "MAJOR", location: "06-peers.md Part 1, claim 7 and intro paragraph", description: "'high receivable days' quote cited to AGSTRA-Concall_Jul_2024 does not exist there; the real exchange is in AGSTRA-Concall_Feb_2024. Cited in support of the DSO-contradiction finding, though that verdict's core RADIANTCMS/SIS anchors are independently confirmed clean, so the finding survives."}
+  - {severity: "MINOR", location: "06-peers.md Part 1, claim 5", description: "AGSTRA ATM-decline quote (consolidation by PSBs, 26,000 new ATMs) correctly quoted but misattributed to 'Ravi Goyal'; actual speaker Stanley Johnson."}
+  - {severity: "MINOR", location: "06-peers.md Part 1, claims 4a and 7 (SIS citations)", description: "SIS page anchors follow the transcript's printed footer numbering rather than the [[PAGE N/11]] bracket convention; apparent off-by-one; all underlying quotes verbatim-confirmed."}
+  - {severity: "MINOR", location: "06-peers.md Part 3 coverage map, AURIONPRO Q2 FY26 row", description: "Marked UNUSED 'no relevant terms matched'; transcript in fact contains a DSO/receivables exchange (different industry, low materiality, no verdict change)."}
+critical_count: 1
+major_count: 1
+minor_count: 3
+acceptance_rate: 67
+core_finding_status: "DSO-contradiction verdict STANDS on independently-confirmed RADIANTCMS (70->65d) and SIS (63-67d) verbatim anchors; the CRITICAL/MAJOR are supporting-citation errors in B06's cross-read, to be corrected at synthesis, not verdict-invalidating."

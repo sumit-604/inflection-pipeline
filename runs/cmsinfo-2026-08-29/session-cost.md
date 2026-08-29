@@ -18,3 +18,4 @@ Per-stage token ledger. One line per subagent run (loops/retries get their own l
 | 9 | tam-sam-som (web) | claude-sonnet-5 | default | - | - | 125559 | 11m16s | 1 |
 | 12a | verifier-a-numerical | claude-haiku-4-5 | default | - | - | 95128 | 2m29s | 1 |
 | 12b | verifier-b-redflags | claude-opus-4-8 | default | - | - | 163223 | 5m10s | 1 |
+| 12c | verifier-c-framework (phase-1 scope) | claude-opus-4-8 | default | - | - | 80019 | 4m51s | 1 |

@@ -16,3 +16,5 @@ Per-stage token ledger. One line per subagent run.
 | 6 | peer-verification | claude-sonnet-5 | default | - | - | 23402 | 8.5m | 1 |
 | 7 | emerging-moat | claude-sonnet-5 | default | - | - | 25319 | 13.7m | 1 |
 | 9 | tam-sam-som | claude-sonnet-5 | default | - | - | 62989 | 15.4m | 1 |
+| 12a | verifier-a-numerical | claude-haiku-4-5 | default | - | - | 125630 | 2.3m | 1 |
+| 12c | verifier-c-framework-p1 | claude-opus-4-8 | default | - | - | 78437 | 3.3m | 1 |

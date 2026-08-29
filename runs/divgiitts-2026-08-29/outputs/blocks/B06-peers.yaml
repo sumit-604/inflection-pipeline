@@ -1,0 +1,53 @@
+stage: B06-peers
+company: "DIVGIITTS"
+run_date: "2026-08-29"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - "Claim 5 (India EV market flat) CONTRADICTED by 3/4 peers with SIAM/Vahan-sourced growth data; undermines management's excuse framing for Sigma EV transmission slippage"
+  - "Claim 2 (auto-transmission Tier-1 exclusivity) and Claim 3 (transfer case TAM ~14-15mn units) and Claim 4 (Indonesia tender $500mn) UNVERIFIABLE - no peer discusses these specific niches"
+  - "Claim 6 compound: China-to-India desourcing trend well corroborated (3/4 peers), but no peer names Divgi Torqtransfer specifically as a beneficiary"
+peers_provided: 16
+verified:
+  - {claim: "USMCA-style local-content (RVC) rule is being introduced/tightened for Project Mayflower-type localization", peers: [SANSERA, SONACOMS], anchor_count: 4}
+partially_verified:
+  - {claim: "China faces ~60% effective US import duty on precision auto components vs Indian exporters", peers: [HAPPYFORGE, SONACOMS]}
+  - {claim: "China-to-India de-sourcing is underway as global OEMs pursue China Plus One", peers: [ENDURANCE, SONACOMS, SANSERA]}
+contradicted:
+  - {claim: "India EV market is flat/subdued this period", contradicting_peer: "SONACOMS", quote_anchor: "SONACOMS Apr-2026 concall: 'electric cars and two-wheelers grew 65% and 45%...year on year, in March'; reiterated SONACOMS Jul-2026: 'India is actually the fastest growing EV market in the world'"}
+unverifiable:
+  - {claim: "No Indian Tier-1 currently supplies automatic transmissions; Tata Motors is the sole EV-drivetrain localizer", peers_checked: [ENDURANCE, HAPPYFORGE, SANSERA, SONACOMS]}
+  - {claim: "Global transfer case market is ~14-15mn units/year", peers_checked: [ENDURANCE, HAPPYFORGE, SANSERA, SONACOMS]}
+  - {claim: "Indonesia tender carries ~$500mn savings potential", peers_checked: [ENDURANCE, HAPPYFORGE, SANSERA, SONACOMS]}
+  - {claim: "Divgi Torqtransfer is a named/specific beneficiary of China-to-India desourcing", peers_checked: [ENDURANCE, HAPPYFORGE, SANSERA, SONACOMS]}
+peer_coverage_map:
+  - {peer: "ENDURANCE", quarter: "Q2 FY26 (Nov-2025)", usage: "SUBSTANTIVE", contribution: "Commodity input cost and capex-cycle commentary"}
+  - {peer: "ENDURANCE", quarter: "Q3 FY26 (Feb-2026)", usage: "CITED-ONLY", contribution: "General demand commentary, nothing decisive on claims"}
+  - {peer: "ENDURANCE", quarter: "Q4 FY26 (May-2026)", usage: "SUBSTANTIVE", contribution: "Demand environment and EV commentary"}
+  - {peer: "ENDURANCE", quarter: "Q1 FY27 (Aug-2026)", usage: "SUBSTANTIVE", contribution: "Explicit China Plus One statement: 'they want to buy from India'"}
+  - {peer: "HAPPYFORGE", quarter: "Q2 FY26 (Nov-2025)", usage: "SUBSTANTIVE", contribution: "Tariff bracket commentary, capex cycle"}
+  - {peer: "HAPPYFORGE", quarter: "Q3 FY26 (Feb-2026)", usage: "SUBSTANTIVE", contribution: "'Brazil today is at 50% and so is China' tariff quote"}
+  - {peer: "HAPPYFORGE", quarter: "Q4 FY26 (May-2026)", usage: "CITED-ONLY", contribution: "Repeats prior quarter themes, no new decisive evidence"}
+  - {peer: "HAPPYFORGE", quarter: "Q1 FY27 (Aug-2026)", usage: "CITED-ONLY", contribution: "General order book update, limited new anchors"}
+  - {peer: "SANSERA", quarter: "Q2 FY26 (Nov-2025)", usage: "SUBSTANTIVE", contribution: "RVC 65% to 70-75% localization norm shift"}
+  - {peer: "SANSERA", quarter: "Q3 FY26 (Feb-2026)", usage: "SUBSTANTIVE", contribution: "RVC norm reiteration, capex commentary"}
+  - {peer: "SANSERA", quarter: "Q4 FY26 (May-2026)", usage: "CITED-ONLY", contribution: "Demand update, no new decisive claim evidence"}
+  - {peer: "SANSERA", quarter: "Q1 FY27 (Aug-2026)", usage: "SUBSTANTIVE", contribution: "'sourcing more from Sansera, India, without waiting for US ops' - desourcing beneficiary evidence"}
+  - {peer: "SONACOMS", quarter: "Q2 FY26 (Oct-2025)", usage: "SUBSTANTIVE", contribution: "Section 232 tariff framing, demand commentary"}
+  - {peer: "SONACOMS", quarter: "Q3 FY26 (Jan-2026)", usage: "SUBSTANTIVE", contribution: "USMCA content extension to medium/heavy vehicles for 5 years; 'that choice will not be China...becomes India'"}
+  - {peer: "SONACOMS", quarter: "Q4 FY26 (May-2026)", usage: "SUBSTANTIVE", contribution: "'25% for everybody' Section 232 statement; EV growth data (65%/45% YoY)"}
+  - {peer: "SONACOMS", quarter: "Q1 FY27 (Jul-2026)", usage: "SUBSTANTIVE", contribution: "'India is actually the fastest growing EV market in the world' - direct contradiction of Divgi's flat-EV framing"}
+industry_cross_read:
+  demand: "Peers broadly describe a resilient-to-strong demand environment (EV segment growth 45-65% YoY per SONACOMS; general PV/CV recovery cited across peers), which sits in tension with Divgi's flatter, more cautious industry framing."
+  pricing_inputs: "Commodity inflation (aluminum, steel, copper) with pass-through lag is a shared theme across all four peers; none report the kind of demand softness Divgi cites as an excuse for margin pressure."
+  capex_cycle: "Industry-wide capacity expansion, not a lone expander: all four peers describe ongoing or planned capex into new verticals (EV components, forgings capacity, precision machining) funded largely from internal accruals rather than debt, suggesting a sector-wide self-funded capex race rather than Divgi being an outlier."
+peer_mentions_of_company: []
+risks_peers_raise:
+  - {risk: "New Labour Code one-time cost impact effective 21-Nov-2025", anchor: "Multiple peers, Nov-2025/Feb-2026 quarters"}
+  - {risk: "Rare-earth magnet supply disruption from China's heavy rare-earth export restrictions (effective 8-Apr-2025)", anchor: "SONACOMS, Apr-2026 and Jul-2026 calls"}
+  - {risk: "Country-specific reciprocal/Section 232 tariff layering creating US customer uncertainty on pass-through timing", anchor: "HAPPYFORGE Feb-2026; SONACOMS Oct-2025/Apr-2026"}
+  - {risk: "RVC/local-content threshold escalation (65% to 70-75%, and USMCA extension) as a compliance and re-tooling cost, not just a tariff-arbitrage opportunity", anchor: "SANSERA Nov-2025/Feb-2026; SONACOMS Jan-2026"}
+industry_cross_read_note: ""
+net_narrative_effect: "complicates"
+analyst_note: "The peer set does not support an industry-wide demand slump; EV growth data from SONACOMS directly contradicts Divgi's flat-EV framing, the most consequential finding here since it undercuts management's stated reason for the Sigma EV transmission delay. Tariff and desourcing claims are directionally corroborated but Divgi-specific magnitudes (60% duty, 14-15mn unit TAM, $500mn Indonesia tender, sole Tier-1 status) remain unverifiable because no peer operates in the transfer-case/auto-transmission niche closely enough to confirm them. Cross-peer hypothesis: all four peers are running self-funded, non-levered, multi-year bets on new verticals adjacent to their core, each framing it as unique insight though it recurs identically across all four - suggesting a sector-wide risk-tolerance shift rather than Divgi-specific ambition. Testable: track capex-to-accrual ratios and new-vertical revenue share across these four peers over the next 4 quarters."

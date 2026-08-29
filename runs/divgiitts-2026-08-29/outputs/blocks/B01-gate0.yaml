@@ -1,0 +1,45 @@
+stage: B01-gate0
+company: "DIVGIITTS"
+run_date: "2026-08-29"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "prospectus (ABSENT, carried from B00)"
+  - "credit rating (ABSENT, carried from B00)"
+  - "announcements corpus (ABSENT, carried from B00)"
+  - "shareholding pattern (ABSENT, carried from B00) - drives Block E to 0"
+  - "research reports (ABSENT, carried from B00)"
+  - "screener export lacks current/non-current liability split for FY2018-FY2024 - limits ROCE to FY25-FY26 only"
+  - "screener export lacks Trade Payables line for FY2018-FY2024 - limits WC Days trend to FY25-FY26 only"
+  - "screener export lacks capex breakout for FY2018-FY2024 - limits FCF calc to FY25-FY26 only (PDF-sourced)"
+  - "R&D expenditure not disclosed as a separate line in any provided source"
+  - "no peer/segment benchmarking data provided - affects M2, M5, M7, M9"
+  - "contingent liabilities not disclosed in provided results filings (no notes section)"
+  - "FY25 Interest/Finance Cost discrepancy: screener 0.60 Cr vs FY26 filing's audited FY25 comparative 0.382 Cr - unresolved, used PDF audited figure"
+flags:
+  - type: FLAG-GATE0
+    reason: "Classification AVERAGE. Median ROCE 7.68% (FY25-26, only computable years) driven by outsized post-IPO cash pile (~Rs 283-295 Cr) inflating capital employed relative to operating EBIT; EBITDA margin compressed ~7.9pp FY18-FY26 despite 10.4% revenue CAGR; 3 of last 8 years show revenue decline."
+data_years: 9
+fy_range: "FY2018 to FY2026"
+blocks: {A: 7, B: 11, C: 8, D: 20, E: 0}
+core_score: 46
+moat_score: 1
+grand_total: 47
+moats_confirmed: 0
+moat_class: "NONE"
+classification: "AVERAGE"
+deal_breakers:
+  - "rule 1: Block A total 7 < 8 -> caps at max GOOD"
+  - "rule 3: median ROCE 7.68% < 10% -> caps at max AVERAGE (binding cap)"
+history_downgrade: false
+data_notes:
+  - "ROCE computable only for FY25 and FY26 (screener export lacks current/non-current liability split for FY18-FY24); Capital Employed sourced from audited results-filing balance sheets."
+  - "FCF computable only for FY25 and FY26 (capex breakout only in results filings; screener gives combined investing cash flow only for FY18-FY24)."
+  - "WC Days computable only for FY25 and FY26 (Trade Payables absent from screener export for FY18-FY24)."
+  - "WC Days computed on revenue basis; COGS not explicitly isolated in provided data."
+  - "PEER DATA NEEDED: M2, M5, M7(partial), M9 - no peer/segment data provided; scored 0."
+  - "No loss-to-profit swing in the 9-year window; PAT positive all years FY2018-FY2026."
+  - "SPEAR load-bearing fact 'approximately Rs 275 Cr net cash decline in FY26' NOT corroborated: computed net cash rose from Rs 283.76 Cr (FY25) to Rs 292.75 Cr (FY26), an increase of ~Rs 9 Cr. Flagged for downstream verification of the original source."
+  - "SPEAR load-bearing fact 'June 2026 FY25 results resubmission' not verifiable from provided data; only FY25 comparative available (dated 25-May-2026) predates the stated resubmission date."
+block_b_trend: "deteriorating - FCF swung from +Rs 8.71 Cr (FY25) to -Rs 3.24 Cr (FY26) as FY26 capex (Rs 44.32 Cr) outpaced CFO (Rs 41.08 Cr), despite WC days improving by 14.4 days and 96.9% cumulative CFO/PAT conversion (FY20-26)."
+analyst_note: "AVERAGE is driven by real numbers, not gaps. Cash-heavy post-IPO balance sheet (Rs 292.75 Cr net cash) mechanically depresses ROCE to single digits even though ROE and absolute profit hold up better. Margin compressed 7.9pp over 8 years despite growth, and growth itself is lumpy (3 of 8 years down). Moat score of 1/60 is misleading in isolation: 4 of 12 tests are blocked purely by missing peer data, not evidence of no moat, so downstream stages should not read NONE as a settled verdict on competitive position. Highest-priority open item: the SPEAR fact of a ~Rs 275 Cr FY26 net cash decline could not be reproduced from any provided document; the computed direction is an increase. This needs resolution before it is used as a load-bearing fact in later stages."

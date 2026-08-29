@@ -1,0 +1,20 @@
+stage: B12c
+company: "DIVGIITTS"
+run_date: "2026-08-29"
+model: claude-opus-4-8
+status: complete
+phase_1_scope: true
+gate0: {rules_checked: 44, fails: []}
+emoat: {rules_checked: 30, fails: []}
+valuation: {rules_checked: 0, fails: []}   # PENDING PHASE 3 - B10/B11 not yet produced; valuation framework docs not loaded in phase-1 scope
+business_understanding_narrative: {present: false, five_questions_answered: false, prose_only: false, section6_candidates_named: 0, valuation_vocab_leak: false, fails: []}  # OUT OF PHASE-1 SCOPE (stage 13 not produced); not audited, not a REWORK trigger here
+recomputed_destination_pe: ""   # concur / n/a phase 1
+recomputed_decision: ""         # concur
+findings:
+  - {severity: "MINOR", location: "B01 Block A (A1/A2/A4)", note: "ROCE computable only FY25-FY26 due to screener data gap; A4 trend scores 5 on a 2-year window. Data-constrained, transparently disclosed, not a threshold misapplication; classification already capped AVERAGE by deal-breaker #3, so no score or decision impact."}
+  - {severity: "MINOR", location: "B07 scorecard C1", note: "C1 labelled documented/claim mixed but multiplied at 1.0. Load-bearing evidence is a filed investor presentation (documented), so 1.0 is defensible; a strict 0.7 read moves total 29.8 -> 28.9, still within the 25-39 STRENGTHENING band. No classification change."}
+  - {severity: "MINOR", location: "B07 completionist recount", note: "Recount narrative bundles E1 into 'documented-item' categories though E1 is claim-evidenced and correctly scored at 0.7. Cosmetic labelling only; active-category count (9) and the 12-alarm threshold applied correctly."}
+critical_count: 0
+major_count: 0
+minor_count: 3
+acceptance_rate: 100            # 74 rule-applications passed / 74 checked (gate0 44 + emoat 30); valuation deferred to phase 3

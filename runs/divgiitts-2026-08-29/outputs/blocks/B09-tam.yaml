@@ -1,0 +1,70 @@
+stage: B09-tam
+company: "DIVGIITTS"
+run_date: "2026-08-29"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "India-specific transfer case / driveline component market size (Rs Cr) - no dedicated market research report found; Method 1 uses an apportionment proxy, not a directly sourced India figure"
+  - "4WD/AWD penetration % of Indian SUV/UV sales - NOT FOUND, blocks clean bottom-up (Method 2) build"
+  - "Transfer case / transmission-component OEM ASP (Rs per unit) - NOT FOUND, confirmed also in B04 unit_economics"
+  - "Capacity utilisation % at Divgi's 4 plants - NOT FOUND, makes the Section 3C Rs43 Cr Yr3 gap provisional"
+  - "Current market price / P/E - not injected into this stage; Section 5E valuation-implication line cannot be completed, handoff to stage 11"
+flags:
+  - "Indonesia 4x4 export unit count correction: injected context (from B05 concall) cited ~70,000 units total; web-verified figure (Mahindra Scorpio Pik Up Indonesia CY2026 order, multiple sources) is 35,000 units, roughly half the context figure. Use 35,000 as the SOM/capacity ceiling; the additional Tata 35,000 is unconfirmed externally."
+  - "AT '40 million installed base' claim (AR MD letter) is scoped to ONE unnamed North American OEM's legacy platform under non-contracted technology-transfer evaluation, NOT Divgi's total addressable AT market. Excluded from core TAM/SAM/SOM."
+  - "Management's dateless long-term claim (Rs2,000+cr, Investor Presentation slide 20) is Divgi's own revenue aspiration, not a market TAM, and carries no target year. The dated FY29-30 target (Rs1,000cr, AR MD letter) is used instead as the primary comparison anchor."
+  - "Global transfer case market estimates diverge materially across vendors ($14.0bn-$18.82bn; 14-15mn units/yr shipments vs 38mn+ cited installed base - likely different metrics, not independently confirmed as reconciled)."
+  - "No India-specific transfer case market value (Rs Cr) located in any sourced report despite extensive search; Method 1 India figure is an apportionment estimate, confidence L."
+market_definition: "OEM-only supply of transfer cases, transmission components, synchronizers, and EV transmission gear systems to Indian and named-export (Indonesia, NA-evaluation) 4WD/AWD light-vehicle platforms; excludes non-contracted automatic-transmission optionality and aftermarket."
+tam_cr: {conservative: 4000, realistic: 6800}
+sam_cr: 2160
+sam_pct_of_tam: 54
+som_3yr_cr: 552
+som_5yr_cr: 708
+som_implied_revenue_cagr: {yr3: 16.1, yr5: 15.0}
+current_sam_share_pct: 16.3
+revenue_headroom_x: 6.12
+tam_growth_pct: 8
+runway_class: "STRONG"
+mgmt_claim_cr: 1000
+mgmt_claim_ratio: 1.41
+mgmt_claim_read: "reasonable"
+capacity_check: "gap of ~Rs43 Cr by Yr3 (SOM Rs552cr vs capex-embedded-13%-growth path Rs509cr); SOM is the more optimistic side, pending capacity utilisation disclosure (NOT FOUND) that could close the gap"
+methods_used:
+  - "top-down industry subtraction (partial, India-apportionment proxy, L confidence)"
+  - "peer/oligopoly structure cross-check (partial, weak evidence, L confidence)"
+  - "global benchmark (directional only, not standalone)"
+stale_data_flags:
+  - {datapoint: "Global transfer case market size ($14.0bn)", source: "Market research vendor aggregate (web search)", year: 2024}
+  - {datapoint: "APAC share of global TC market (25-39% range, divergent across vendors)", source: "Multiple market research vendors (web search)", year: "2024-2025 mixed"}
+  - {datapoint: "ACMA/trade-body India auto component turnover figures (divergent citations)", source: "Web search, multiple trade-body citations", year: "2024-2025 mixed"}
+searches_performed:
+  - "global transfer case market size 2025 - returned divergent vendor estimates $14.0bn-$18.82bn"
+  - "India transfer case market size India specific report value crore - no India-specific figure found"
+  - "transfer case market Asia Pacific share percentage India China 2025 - divergent APAC share figures (25-39%)"
+  - "Mahindra Indonesia Scorpio Pik Up export order units 2026 - confirmed 35,000 units, largest-ever single Mahindra export order"
+  - "Divgi TorqTransfer Indonesia 4x4 export contract volume - corroborated 35,000-unit figure, no unit count in company's own IP"
+  - "global automatic transmission market installed base million units - found ~40mn figure context, tied to specific OEM platform per AR"
+  - "ACMA India auto components industry turnover 2025 - divergent figures across sources (Rs7.6 lakh cr vs Rs6.73 lakh cr)"
+  - "India SUV UV sales FY25 4WD AWD penetration - 4WD/AWD penetration % NOT FOUND"
+  - "global auto components market size 2025 2034 CAGR - corroborated AR MD&A figure ($2,302.2bn to $2,818.9bn, 2.21% CAGR)"
+  - "India EV passenger vehicle sales FY25 FY26 growth - corroborated AR MD&A (>199,000 units, +80% YoY)"
+  - "BorgWarner Magna JTEKT transfer case India competitors - qualitative confirmation of oligopoly structure, no segment revenue disclosed"
+  - "GKN Driveline American Axle India transfer case supplier - no India-specific segment revenue found"
+  - "India automotive components import substitution transmission gearbox - no category-specific import bill found"
+  - "Sona BLW Comstar e-axle differential market India - adjacent, not directly comparable product line"
+  - "global transfer case market installed base units 2024 - single source cited 38mn+ units, likely cumulative fleet not annual shipments"
+  - "India Automotive Mission Plan 2047 EV target - corroborated 30% EV PV share by 2030"
+  - "Divgi TorqTransfer market share India transfer case OEM - no independently disclosed share % found"
+  - "aftermarket automatic transmission replacement cost OEM price - only aftermarket repair cost data found ($200-$2,200), not usable as OEM ASP proxy"
+searches_skipped: []
+downstream_candidates:
+  - {signal: "Mahindra Scorpio/Thar-class SUV monthly wholesale/retail volumes", entity_type: "end-customer", demand_link: "Transfer case demand tracks M&M 4x4 SUV volumes directly", likely_source: "SIAM monthly wholesale data; M&M investor releases", cadence: "monthly", shared: false}
+  - {signal: "Indonesia Scorpio Pik Up CY2026 export shipment volumes (35,000-unit program)", entity_type: "counterparty", demand_link: "Bounds Divgi's single largest confirmed export transfer-case program", likely_source: "Mahindra export/investor disclosures; Indonesia import trade data", cadence: "quarterly", shared: false}
+  - {signal: "Tata Motors and Force Motors 4x4/UV model volumes", entity_type: "end-customer", demand_link: "Diversification beyond Mahindra for transfer case and component demand", likely_source: "SIAM data; company wholesale disclosures", cadence: "monthly", shared: true}
+  - {signal: "India EV passenger vehicle sales and PLI-Auto policy updates", entity_type: "macro", demand_link: "Drives E-Gear Drive (EV transmission) segment demand", likely_source: "SIAM EV sales data; Ministry of Heavy Industries PLI-Auto updates", cadence: "quarterly", shared: false}
+  - {signal: "BorgWarner technology-licensing/partnership scope updates", entity_type: "counterparty", demand_link: "Royalty expense and AWD/NexTrac technology access depend on this relationship's terms", likely_source: "BorgWarner investor disclosures; Divgi related-party notes", cadence: "event-driven", shared: true}
+  - {signal: "Named North American OEM automatic-transmission platform decision", entity_type: "counterparty", demand_link: "Binary catalyst for the ~Rs1,000cr AT opportunity; currently non-contracted", likely_source: "Divgi exchange filings/investor calls; OEM capital-allocation disclosures", cadence: "event-driven", shared: false}
+  - {signal: "Project Mayflower (US subsidiary) capex and hiring milestones", entity_type: "counterparty", demand_link: "Signals North American OEM relationship progress and localisation ambitions", likely_source: "Divgi exchange filings; US subsidiary state incorporation/regulatory filings", cadence: "quarterly", shared: false}
+demand_externally_verifiable: true
+analyst_note: "Neither management claim is a true market TAM: both are Divgi's own revenue targets. The dated FY29-30 target (Rs1,000cr) is used for mgmt_claim_ratio because it is comparable like-for-like to this stage's own SOM (Divgi's captured revenue), not to TAM. The dateless Rs2,050cr slide claim reads 2.90x against the same SOM base and is flagged separately as likely inflated, driven mainly by the non-contracted Rs1,000cr AT segment. Method 2 (bottom-up) and Method 4 (import substitution) could not produce headline figures - two of three inputs each are NOT FOUND, not estimated. TAM/SAM/SOM figures exclude the AT optionality entirely, consistent with not carrying an unresolved probability into core numbers. The Indonesia unit-count correction (35,000 vs context's 70,000) materially affects any capacity-linked reasoning downstream and should be re-verified live in claude.ai."

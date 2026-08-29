@@ -1,0 +1,9 @@
+company: CMS Info Systems Ltd
+ticker: CMSINFO
+cmp: 243.0
+market_cap_cr: 4002.0
+run_date: 2026-08-29
+run_type: full
+concalls_available: true
+sector_cap_row: "Platform / SaaS / IT services"
+notes: "Collected from screener.in by collect_to_repo.py v3. Sector row auto-picked; verify."

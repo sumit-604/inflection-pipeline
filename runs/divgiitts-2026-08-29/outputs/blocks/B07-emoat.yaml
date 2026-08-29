@@ -1,0 +1,61 @@
+stage: B07-emoat
+company: "DIVGIITTS"
+run_date: "2026-08-29"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "peer/segment benchmarking data (ABSENT, carried from B01) - limits comparative moat-strength calibration for B2, E2, H2"
+  - "credit rating (ABSENT, carried from B00/B01)"
+  - "announcements corpus (ABSENT, carried from B00/B01) - F2 execution-moat evidence drawn from B05 concall tracker instead"
+  - "shareholding pattern (ABSENT, carried from B00/B01)"
+  - "research reports (ABSENT, carried from B00/B01)"
+  - "R&D expenditure figure internally inconsistent in Annual Report: Rs117.94 million (two pages) vs 'Rs117.94 crores' (Annexure D, ~100x gap) - used two-source-corroborated million figure, flagged not resolved"
+  - "BRSR Principle-6 table reports 0 GJ renewable energy for FY25 and FY26 against narrative claim of an operating 400kW rooftop solar plant at Shirwal - unresolved contradiction"
+  - "HR dashboard 'Retention rate 13.07%' appears to conflict with turnover table (37/278 exits, ~13.3%) which reads as an attrition rate - ambiguous label, not used for F1 scoring"
+flags:
+  - type: FLAG-EMOAT
+    reason: "R&D spend figure in Annual Report is internally inconsistent by ~100x (Rs11.79 crore per two pages vs Rs117.94 crore in Annexure D Technology Absorption). Used the corroborated smaller figure; company clarification needed before this number is used in any valuation stage."
+  - type: FLAG-EMOAT
+    reason: "BRSR quantitative table (0 GJ renewable energy, FY25 and FY26) contradicts narrative text describing an operating 400kW rooftop solar installation at Shirwal. Unresolved; do not credit ESG/cost-advantage optionality on this basis until the next filing clarifies."
+  - type: FLAG-EMOAT
+    reason: "F2 execution-moat evidence (from B05) shows the EV SOP (Sigma EV) slipping three consecutive quarters across three concalls with the same stated cause. This is the highest-conviction new product line in Section 1 and its delivery track record is weak, directly weighing against the active_categories strength read for anything EV-linked."
+  - type: FLAG-EMOAT
+    reason: "B01 SPEAR discrepancies (net cash direction; FY25 resubmission claim) carried forward unresolved. Not load-bearing to this stage's scoring but should be resolved before Stage 11/FTTCP."
+em_score: 30
+em_classification: "STRENGTHENING"
+active_categories:
+  - {id: "B2", name: "OEM qualification / PPAP switching-cost lock-in", strength: "STRONG", evidence_type: "documented", time_to_materialise: "already active"}
+  - {id: "E2", name: "China+1 sourcing-shift beneficiary", strength: "STRONG", evidence_type: "documented", time_to_materialise: "already active"}
+  - {id: "G1", name: "Balance-sheet war chest (post-IPO cash)", strength: "STRONG", evidence_type: "documented", time_to_materialise: "already active"}
+  - {id: "G2", name: "Working-capital-days improvement", strength: "STRONG", evidence_type: "documented", time_to_materialise: "12m, single-year durability unproven"}
+  - {id: "A3", name: "Manufacturing process innovation", strength: "MODERATE", evidence_type: "documented", time_to_materialise: "already active"}
+  - {id: "C1", name: "Customer ecosystem depth (Mahindra/Tata multi-year relationships)", strength: "MODERATE", evidence_type: "documented", time_to_materialise: "already active"}
+  - {id: "E1", name: "Geographic first-mover (Indonesia programme)", strength: "MODERATE", evidence_type: "claim + documented mix", time_to_materialise: "12-24m"}
+  - {id: "F1", name: "Engineering talent density", strength: "MODERATE", evidence_type: "claim", time_to_materialise: "already active, no I1 threshold met"}
+  - {id: "H2", name: "Strategic partnerships (BorgWarner)", strength: "MODERATE", evidence_type: "documented", time_to_materialise: "12-24m, pending renewal outcome"}
+evidence_mix: {documented: 38, claim: 18, inference: 6}
+completionist_recount: "Recount performed: 21 documented items across the 9 categories scored Strong or Moderate (B2, C1, E1, E2, F1, G1, G2, H2, A3). Output stays below the 12-category alarm threshold; no inflation found. I1 and I2 both score 0 on the strict two-part tests and are not counted among active categories."
+catalysts_12m:
+  - {catalyst: "Sigma EV (EV transmission) SOP go-live, slipped three quarters across three concalls", window: "0-6m", evidence_type: "management claim, tracked failure to date", anchor: "05-concall.md promise_delivery tracker"}
+  - {catalyst: "BorgWarner partnership renegotiation/renewal outcome", window: "6-12m", evidence_type: "documented narrative in AR, outcome pending", anchor: "Annual Report FY2025-26, BorgWarner renegotiation section"}
+  - {catalyst: "Indonesia programme follow-on order / ASEAN export confirmation", window: "6-12m", evidence_type: "management claim, unconfirmed split from organic revenue per B05 SPEAR gap", anchor: "05-concall.md SPEAR load-bearing facts; Investor_Presentation_1.pdf segment slides"}
+  - {catalyst: "Automatic Transmission technology-transfer program milestone", window: "12m", evidence_type: "management claim", anchor: "Investor_Presentation_1.pdf long-term growth outlook table"}
+capex_embedded_growth_pct: 13
+optionality_register:
+  - {optionality: "Indonesia follow-on / ASEAN export expansion", converting_evidence: "Organic-vs-Indonesia revenue split unanswered on all three concalls (B05 SPEAR gap); presentation shows segment growth but not export attribution", first_appears: "Q3FY26 concall", window: "12-24m"}
+  - {optionality: "Automatic-transmission technology transfer", converting_evidence: "Named in long-term growth-outlook table (AR/presentation) as a future product line; no delivery evidence yet", first_appears: "Investor_Presentation_1.pdf", window: "24-36m"}
+  - {optionality: "US Project Mayflower", converting_evidence: "Disclosed as a failed/lapsed acquisition attempt in AR; scope-escalation pattern noted; optionality is on a future, different structure", first_appears: "Annual Report FY2025-26", window: "unclear, no active timeline disclosed"}
+  - {optionality: "Manual-transmission beachhead (new customer/geography)", converting_evidence: "Referenced in product pipeline table; no signed order or qualification evidence found", first_appears: "Investor_Presentation_1.pdf pipeline table", window: "24-36m"}
+  - {optionality: "Japanese OEM transfer case", converting_evidence: "Named but not evidenced with a signed contract, capacity commitment, or capex line; scored 0 in F2/moat scan, watched only", first_appears: "context brief for this run (not independently corroborated in AR/presentation/concalls)", window: "not determinable, NOT FOUND"}
+  - {optionality: "BorgWarner broader-scope renewal beyond current renegotiation", converting_evidence: "AR narrative describes renegotiation in progress; broader-scope expansion is management framing, not yet contracted", first_appears: "Annual Report FY2025-26", window: "12-24m"}
+  - {optionality: "CREATE MoU / talent pipeline (I1 candidate, currently 0)", converting_evidence: "MoU with academic institution named in AR CSR section; no named individual of unusual capability or documented pay-structure barrier yet, so I1 test fails", first_appears: "Annual Report FY2025-26 CSR section", window: "unclear, would need named-hire disclosure to convert"}
+  - {optionality: "Resolution of BRSR renewable-energy / solar-plant contradiction", converting_evidence: "0 GJ renewable energy in BRSR quantitative table vs narrative claim of 400kW operating solar plant; unresolved", first_appears: "Annual Report FY2025-26 BRSR section", window: "next annual filing"}
+combined_assessment: "TURNAROUND"
+combined_reasoning: "Gate 0 backward read is AVERAGE with moat_score 1/60 (caveated: 4 of 12 tests blocked by missing peer data, not a settled no-moat verdict). Forward read is STRENGTHENING (30/92), not full EXPANSION, built on real but moderate-strength categories, and its highest-conviction new line (Sigma EV) shows repeated execution slippage. This combination is an unremarkable core with a genuine but incomplete forward climb, not the GOOD/AVERAGE-plus-EXPANSION pairing that defines HIGH POTENTIAL; TURNAROUND better names a business still proving its transition rather than one already climbing cleanly."
+top_moat_risks:
+  - "Mahindra 3-wheeler EV in-sourcing precedent (disclosed loss of business) shows a key customer can pull work in-house, a direct threat to B2 qualification-lock-in durability"
+  - "R1/E2 US tariff tailwind is shared across all Indian competitors and already described by the Chairman as easing, so it is not a durable, company-specific advantage"
+  - "Project Mayflower's scope-escalation-then-lapse pattern signals integration/execution risk on any future inorganic optionality"
+  - "G2 working-capital improvement is single-year (FY26 only); FY24 to FY25 showed prior deterioration, so durability is unproven"
+  - "EV SOP (Sigma EV) has slipped three quarters across three consecutive concalls with the same stated cause, weakening confidence in the F2 execution moat on the largest new product line"
+analyst_note: "Two items in the Annual Report do not resolve from the data alone and should not be treated as settled. First, the BorgWarner relationship is being renegotiated; AR narrative frames this as broadening scope, but no signed terms are disclosed, so H2 strength stays MODERATE pending outcome. Second, Project Mayflower reads as a scope-escalation-then-lapse sequence (disclosed failed acquisition), a caution flag on execution discipline for any future inorganic move. Third, the AR carries two internal contradictions this stage could not resolve: an R&D spend figure off by roughly 100x between two sections, and a BRSR renewable-energy table showing 0 GJ against a narrative claim of an operating 400kW solar plant. Neither was used to inflate scoring; both are flagged for company clarification. None affect em_score directly, but they bear on confidence in the underlying document set feeding Stage 11."

@@ -1,0 +1,19 @@
+stage: B12d
+company: "DIVGIITTS"
+run_date: "2026-08-29"
+model: claude-sonnet-5
+status: complete
+peers_audited: 16
+substantive_confirmed: 12
+substantive_unsupported: []
+unused_but_relevant: []
+claims_all_addressed: true
+verdict_discipline_fails: []
+peer_utilisation_pct: 75
+findings:
+  - {severity: "MAJOR", location: "B06 Claim 5, peer evidence item (3)", claimed: "Quote 'growing concern in the government... 20% to cover... across not just automotive' anchored to SONACOMS Q3 FY26 call (Jan-2026)", source_truth: "Quote is verbatim in SONACOMS Q4 FY26 call (30-Apr-2026, filed as SONACOMS-Concall_May_2026_Transcript.pdf), p.15 - not present in the Jan-2026 transcript", note: "Genuine peer quote, wrong quarter attribution; Claim 5 CONTRADICTED verdict unaffected since 2 other independent correctly-anchored peer quotes (SONACOMS + ENDURANCE) already satisfy the >=2-anchor rule", source_fidelity: false}
+  - {severity: "MINOR", location: "Coverage map rows HAPPYFORGE Q4 FY26 (May-2026) and SANSERA Q4 FY26 (May-2026)", claimed: "Both graded CITED-ONLY with low incremental evidentiary content", source_truth: "Not independently re-read line-by-line by this verifier (budget prioritized to 12 SUBSTANTIVE rows + 2 of 4 CITED-ONLY rows, both confirmed accurate)", note: "Audit-coverage gap on this verifier's side, not a confirmed B06 defect; residual risk low", source_fidelity: false}
+critical_count: 0
+major_count: 1
+minor_count: 1
+acceptance_rate: 94

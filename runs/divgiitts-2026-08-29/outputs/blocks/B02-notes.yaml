@@ -1,0 +1,43 @@
+stage: B02-notes
+company: "DIVGIITTS"
+run_date: "2026-08-29"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags: []
+accounting_quality: 5
+pass_2_empty: false
+pass_3_empty: true
+top_findings:
+  - {rank: 1, finding: "Spear's ~Rs 275 Cr net cash decline claim not corroborated; cash and bank balances (Note 10) rose from ~Rs 284.8 Cr to ~Rs 294.5 Cr in FY26", note_ref: "Note 10, p.226", rating: "RED FLAG", why: "Downstream valuation and verification work inherits this error if unreconciled before Halt 1"}
+  - {rank: 2, finding: "Tejal Transmission Pvt Ltd (Note 5 equity holding, two DTTS directors on its board) omitted from the Note 34 related-party list", note_ref: "Note 5 p.224 / Note 34(a) p.237 / AGM p.194", rating: "RED FLAG", why: "Ind AS 24 completeness underlies trust in the whole RPT disclosure package"}
+  - {rank: 3, finding: "Three different FY26 MD remuneration figures and two different YoY growth rates across Note 34, Annexure C, and the Corporate Governance Report", note_ref: "Note 34 p.237 / Annexure C p.88-89 / Corp Gov p.163", rating: "RED FLAG", why: "True KMP pay increase could be as high as 92%, not the 15-42% the statutory ratio disclosure states"}
+  - {rank: 4, finding: "MSME trade payables up 517.7%; payments beyond the appointed day more than doubled (Rs 97.28 Mn to Rs 196.09 Mn)", note_ref: "Note 20(a), p.231", rating: "RED FLAG", why: "Contradicts the company's own 'disciplined working capital management' framing"}
+  - {rank: 5, finding: "AOC-2 states rent income of Rs 24 Lakhs/year from Divgi Transmission Systems & Technologies; Note 34 books actual rent income of Rs 4.68 Mn/year, a ~19.5x gap", note_ref: "AOC-2 p.84 / Note 34(b)(iv) p.237", rating: "WATCH", why: "Undermines the Section 188 arm's-length verification for this related party"}
+  - {rank: 6, finding: "Note 42 attributes the current ratio fall to 'reduction in current assets' but Total Current Assets rose 13.9%; the fall is from current liabilities up 58%", note_ref: "Note 42, p.244", rating: "RED FLAG", why: "A mandatory disclosure note contradicts the company's own Balance Sheet"}
+  - {rank: 7, finding: "Note 37 shows GST contingent liability as Nil; the same-date CARO Annexure B lists an unresolved Rs 1.63 Mn GST dispute as still outstanding", note_ref: "Note 37 p.239 / CARO p.203", rating: "WATCH", why: "Two disclosures from the same audit, same date, disagree on whether the dispute is live"}
+  - {rank: 8, finding: "KMP remuneration up 76.5% YoY vs 61.2% revenue growth; AGM proposes special incentives to MD/ED that the resolutions say may breach Section 197/Schedule V", note_ref: "Note 34 p.237 / AGM Items 6-7 pp.179-180,192-193", rating: "WATCH", why: "Promoter-executive pay outpacing revenue plus statutorily-flagged excess incentives is a governance signal"}
+  - {rank: 9, finding: "New Rs 7.65 Mn gratuity past service cost and 8x jump in actuarial loss drove gratuity expense up 256% YoY, unexplained", note_ref: "Note 33, p.235-236", rating: "WATCH", why: "Unexplained one-off jump in employee benefit obligations warrants direct management query"}
+  - {rank: 10, finding: "Rs 727.43 Mn (42.9%) of net IPO proceeds unutilised more than three years post-IPO, mostly the capex tranche", note_ref: "Note 47, p.247", rating: "WATCH", why: "Multi-year capital-efficiency and execution-pace signal; idle cash cushions Other Income via interest"}
+  - {rank: 11, finding: "R&D expenditure stated as '117.94 million' on the Business Driver page vs '117.94 crore' in the BRSR, a 100x unit inconsistency; if million is correct, R&D fell ~13.6% YoY", note_ref: "BRSR p.105 / Business Driver p.42", rating: "WATCH", why: "The two readings give opposite conclusions on R&D intensity in the year the AR is most emphatic about R&D"}
+  - {rank: 12, finding: "Net USD payable exposure up 15.5x, all unhedged; first-time CNY payable and first-time USD bank balance also unhedged", note_ref: "Note 41, pp.241-243", rating: "WATCH", why: "Rising, diversifying, entirely unhedged FX book with no disclosed treasury policy"}
+  - {rank: 13, finding: "Entire non-moving inventory provision sits against raw materials (Note 8 vs Note 27); raw-material-specific obsolescence coverage fell from 16.4% to 12.0%", note_ref: "Note 8 p.224 / Note 27 p.232", rating: "WATCH", why: "Obsolescence coverage is declining faster than a blended total-inventory view suggests"}
+  - {rank: 14, finding: "Salaries and benefits payable up 112.5% vs 65.4% employee expense growth and 7.3% headcount growth; payable now ~3.7 months of annual employee cost", note_ref: "Note 21 p.231 / Note 29 p.233", rating: "WATCH", why: "Accrued-but-unpaid compensation growing 1.5x faster than the expense itself is a working-capital and earnings-quality point"}
+  - {rank: 15, finding: "New Leave & License Agreement with Divgi Holdings Pvt Ltd (Oct 2025, Rs 1.21 Lakh/month) explains the FY26 rent-expense rise but is not named as a new arrangement in Note 34", note_ref: "AOC-2 p.84 / Note 34 p.237", rating: "WATCH", why: "New promoter-related payment stream visible only via cross-reference, not called out in the audited note"}
+red_flags:
+  - "Spear cash-decline claim not corroborated by Note 10 (verification risk, not an accounting-quality defect)"
+  - "Tejal Transmission Pvt Ltd omitted from the Note 34 related-party list despite common directorship"
+  - "Three inconsistent FY26 KMP remuneration figures and growth rates across Note 34, Annexure C, and the Corporate Governance Report"
+  - "MSME payment discipline deterioration: payables up 517.7%, beyond-appointed-day payments more than doubled"
+  - "Note 42 ratio-analysis explanation contradicts the Balance Sheet's own current-asset movement"
+  - "GST contingent liability (Note 37) contradicts the same-date CARO Annexure B disclosure"
+questions_for_mgmt:
+  - "Reconcile the ~Rs 275 Cr net cash decline claim against Note 10, which shows cash and bank balances rising ~Rs 284.8 Cr to ~Rs 294.5 Cr in FY26."
+  - "Why is Tejal Transmission Pvt Ltd excluded from the Note 34 related-party list given common non-executive directors, and will the disclosure be restated?"
+  - "Which FY26 MD remuneration figure and which YoY growth rate is correct: Note 34's Rs 21.49 Mn/73.6% or Annexure C/Corp Gov's Rs 17.75 Mn/15%?"
+  - "What drove the Rs 7.65 Mn gratuity past service cost, and why did MSME beyond-appointed-day payments more than double in a year framed as disciplined working capital management?"
+  - "Is the BRSR's R&D figure of Rs 117.94 crore a unit error for Rs 117.94 million, and did R&D spend as a percentage of revenue rise or fall in FY26?"
+receivables_trend: "stable to improving - trade receivables +43.0% YoY (Rs 554.63 Mn to Rs 792.87 Mn), slower than revenue growth +61.2% (Note 9, pp.224-225; Board's Report p.83); 100% of the considered-good balance falls in the <6-month ageing bucket at both 31 Mar 2026 and 31 Mar 2025, no aged unprovided receivables; credit-impaired receivables static at Rs 5.11 Mn in the >3-year bucket, fully provided (allowance = credit-impaired balance exactly), no incremental risk (Note 9, p.225)"
+restatements_found: []
+going_concern_language: "NONE - Auditor's Report gives an unmodified opinion explicitly on a going-concern basis (p.198); no going-concern doubt, qualification, or emphasis-of-matter language found anywhere in the Notes"
+analyst_note: "The single dominant pattern across all three passes is not any one accounting-quality defect but a cluster of internal contradictions recurring wherever a Note is checked against another statutory document in the same annual report: cash (Note 10 vs Spear/MD&A framing), related-party completeness (Note 5/34 vs AGM director list), KMP remuneration (Note 34 vs Annexure C vs Corp Gov), rent income (Note 34 vs AOC-2), tax disputes (Note 37 vs CARO), ratio explanation (Note 42 vs Balance Sheet), and R&D units (BRSR vs Business Driver page). No single instance is individually disqualifying, and core mechanics (revenue recognition, tax reconciliation, debt-free balance sheet, receivables ageing) are clean. But the frequency and spread of these mismatches across independent disclosure documents is itself the finding: it suggests a compilation/review control gap in how the annual report is assembled, which downstream stages should weigh when assessing management credibility on any single unverified number this report carries forward."

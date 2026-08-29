@@ -1,0 +1,26 @@
+stage: B12b
+company: "DIVGIITTS"
+run_date: "2026-08-29"
+model: claude-opus-4-8
+status: complete
+independent_flags_found: 17
+caught: 13
+partially_caught: 2
+redflag_coverage_pct: 82
+missed:
+  - {severity: "MAJOR", item: "Q1 FY27 29.4% EBITDA margin flagged BY MANAGEMENT as a one-off, with guidance back to 20-22%; B05 did not surface this volunteered negative, which bears on durability of the record quarter", anchor: "Q1 FY27 call, Jitendra Divgi to Rushit Shukla and Darshil Jhaveri; margin print by Sudhir Mirjankar"}
+  - {severity: "MINOR", item: "Management fumbled its own component-parts volume (1mn/3.3mn/7 lakhs/13 lakhs) in the Q4 call; B05 did not note the confusion", anchor: "Q4 FY26 call, Karan Gupta / Jitendra Divgi / Sudhir Mirjankar exchange"}
+pipeline_flags_not_supported: []
+promise_delivery_spot_checks: {checked: 5, confirmed: 5, wrong: 0}
+credibility_grade_concur: "concur - B; delivery strong but EV slip, thin disclosure, and a management-flagged one-off margin peak on the record quarter hold the grade at B"
+findings:
+  - {severity: "MAJOR", location: "B05 4C / 2C (margin treatment)", note: "MISSED management-volunteered negative: Q1 FY27 29.4% EBITDA margin is a one-off; guidance is 20-22%+. Anchor: Q1 FY27, Jitendra Divgi"}
+  - {severity: "MAJOR", location: "B05 SPEAR fact 1 / 3C", note: "PARTIALLY CAUGHT: Indonesia order reframed Q3 'specific/time-bound one-off, concludes by FY27-end' -> Q1 '>50% recurring'; contradiction across quarters not surfaced. Anchors: Q3 FY26 Jitendra-to-Karthi; Q1 FY27 Jitendra opening"}
+  - {severity: "MINOR", location: "B05 1C (FY28 bridge)", note: "PARTIALLY CAUGHT: execution-bandwidth constraint and 'opportunities pushed out temporarily because of Indonesia load' admission not surfaced. Anchor: Q1 FY27 Jitendra opening"}
+  - {severity: "MINOR", location: "B05 1B (component volume)", note: "MISSED: management inconsistent on its own component volume. Anchor: Q4 FY26 Karan Gupta / Jitendra / Sudhir"}
+  - {severity: "MINOR", location: "B05 3C row 2", note: "Anchor imprecision: strip-Indonesia question attributed to Karan Gupta; actual asker Sumit Ambekar (Parami). Substance stands"}
+  - {severity: "MINOR", location: "B05 2A promise-delivery table", note: "Wording imprecision: 'EV proof-of-concept demo by July' -> transcript says 'going into production'; direction correct"}
+critical_count: 0
+major_count: 2
+minor_count: 4
+acceptance_rate: 76

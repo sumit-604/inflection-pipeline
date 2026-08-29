@@ -3,18 +3,28 @@ company: "DIVGIITTS"
 run_date: "2026-08-29"
 model: claude-opus-4-8
 status: complete
-phase_1_scope: true
+# PHASE 1 (gate0 + emerging moat) + PHASE 3 (valuation adherence) merged
 gate0: {rules_checked: 44, fails: []}
 emoat: {rules_checked: 30, fails: []}
-valuation: {rules_checked: 0, fails: []}   # PENDING PHASE 3 - B10/B11 not yet produced; valuation framework docs not loaded in phase-1 scope
-business_understanding_narrative: {present: false, five_questions_answered: false, prose_only: false, section6_candidates_named: 0, valuation_vocab_leak: false, fails: []}  # OUT OF PHASE-1 SCOPE (stage 13 not produced); not audited, not a REWORK trigger here
-recomputed_destination_pe: ""   # concur / n/a phase 1
-recomputed_decision: ""         # concur
+valuation:
+  rules_checked: 26
+  acceptance_rate: 88
+  fails:
+    - "Amend 18.0: bear/bull cases lack explicit Year-4 (FY31) projection rows (base case only fully projected) - MINOR, zero decision impact on an AVOID/STOP"
+    - "Amend 4.3: verdict card omits the mandated first-line 'Tier: A | Hurdle: 25%' declaration (Tier A / 1.953 hurdle correctly applied throughout) - MINOR presentational"
+    - "Master Role 2 AVOID rule: four AVOID triggers fire (Gate0 AVERAGE, Promoter CONCERN, U/D -0.56, Hurdle STOP) so mechanical verdict is AVOID, but B14 emits WATCHLIST-defaulting-to-AVOID - MINOR, disclosed operator posture, functional action (no position) matches AVOID"
 findings:
-  - {severity: "MINOR", location: "B01 Block A (A1/A2/A4)", note: "ROCE computable only FY25-FY26 due to screener data gap; A4 trend scores 5 on a 2-year window. Data-constrained, transparently disclosed, not a threshold misapplication; classification already capped AVERAGE by deal-breaker #3, so no score or decision impact."}
-  - {severity: "MINOR", location: "B07 scorecard C1", note: "C1 labelled documented/claim mixed but multiplied at 1.0. Load-bearing evidence is a filed investor presentation (documented), so 1.0 is defensible; a strict 0.7 read moves total 29.8 -> 28.9, still within the 25-39 STRENGTHENING band. No classification change."}
-  - {severity: "MINOR", location: "B07 completionist recount", note: "Recount narrative bundles E1 into 'documented-item' categories though E1 is claim-evidenced and correctly scored at 0.7. Cosmetic labelling only; active-category count (9) and the 12-alarm threshold applied correctly."}
+  - {severity: "MINOR", location: "B01 Block A (A1/A2/A4)", note: "phase-1: ROCE computable FY25-26 only (data gap); no score/decision impact"}
+  - {severity: "MINOR", location: "B07 scorecard C1", note: "phase-1: 1.0 multiplier defensible on filed presentation; STRENGTHENING band unchanged"}
+  - {severity: "MINOR", location: "B07 completionist recount", note: "phase-1: cosmetic labelling; 12-alarm threshold applied correctly"}
+  - {severity: "MINOR", location: "B11 Section 2 (2A/2B/2C)", note: "phase-3: Amend 18.0 bear/bull not projected to Year-4 explicit rows; base fully to FY31. No decision impact (AVOID all cases)."}
+  - {severity: "MINOR", location: "B11 verdict card", note: "phase-3: Amend 4.3 first-line 'Tier: A | Hurdle: 25%' declaration absent; correct Tier A and 1.953 threshold applied everywhere. Cosmetic."}
+  - {severity: "MINOR", location: "B14 verdict card / Section 7", note: "phase-3: mechanical AVOID vs emitted WATCHLIST; disclosed operator posture defaulting to AVOID, action today 'No position' = functional AVOID; position Small and entry Rs 570-650 consistent."}
+recomputed_destination_pe: "concur (additive 20x / RRM 17.9x / operator 30x override, all math clean)"
+recomputed_decision: "concur (AVOID/STOP on valuation; WATCHLIST label is disclosed operator framing, functional AVOID)"
 critical_count: 0
 major_count: 0
-minor_count: 3
-acceptance_rate: 100            # 74 rule-applications passed / 74 checked (gate0 44 + emoat 30); valuation deferred to phase 3
+minor_count: 6
+acceptance_rate_gate0_emoat: 100
+acceptance_rate_valuation: 88
+acceptance_rate_full: 97          # (44+30 pass + 23 of 26 valuation) / 100 rules

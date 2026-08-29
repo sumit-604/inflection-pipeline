@@ -53,3 +53,4 @@ under "Operator snapshot". The orchestrator cannot read those interactive comman
 | 11 | valuation-role1 | claude-opus-4-8 | default | - | - | 133413 | 9.3m | 1 |
 | 14 | thesis-role2 | claude-opus-4-8 | default | - | - | 106161 | 3.4m | 1 |
 | 15 | devil-role3 | claude-opus-4-8 | default | - | - | 115152 | 4.7m | 1 |
+| 12c | verifier-c-valuation-p3 | claude-opus-4-8 | default | - | - | 120216 | 5.9m | 2 |

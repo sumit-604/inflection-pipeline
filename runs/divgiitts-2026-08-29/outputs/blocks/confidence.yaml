@@ -1,16 +1,14 @@
 confidence_delta:
-  numerical_acceptance: 68.4     # B12a acceptance_rate
-  redflag_coverage: 82           # B12b: (13 full + 2 partial@0.5) / 17 verifier-found flags caught upstream
-  framework_adherence: 100       # B12c PHASE-1 SCOPE ONLY (Gate 0 + Emerging Moat); valuation half pending phase 3
-  peer_utilisation: 75           # B12d: 12 substantive / 16 peer-quarters provided (all 4 peer entities used substantively)
+  numerical_acceptance: 68.4     # B12a
+  redflag_coverage: 82           # B12b
+  framework_adherence: 97        # B12c FULL (gate0 100 + emoat 100 + valuation 88, rule-weighted)
+  peer_utilisation: 75           # B12d
   overall: 68.4                  # min of the four
-  band: "60-74 -> PROCEED verdicts downgrade one level; above 60 REWORK floor (no forced REWORK from confidence)"
-  valuation_adherence: pending_phase_3
+  band: "60-74 -> PROCEED verdicts downgrade one level; above 60 REWORK floor. Decision is AVOID/WATCHLIST (not a PROCEED to downgrade)."
+  phase: 3
+  valuation_adherence: 88        # B12c phase-3 half now resolved (was pending)
   rework_gate_note: >
-    Verifier A returned 3 CRITICAL source-fidelity findings, but each is a case where the PIPELINE
-    CORRECTLY surfaced or corrected a Spear-brief / source-document error (net-cash-decline contradicted;
-    US-subsidiary post-year-close timing flagged by B03; Indonesia 70k corrected to 35k by B09), not a
-    pipeline fabrication or misread. Each flagged figure is corrected at source (disposition GATE HELD -
-    figure corrected at source) and none enters a phase-1 verdict card or Section 1B pillar as valid.
-    The forced-REWORK-on-MISMATCH clause (MISMATCH on a verdict-card / pillar input used as valid) is
-    therefore not triggered in phase 1. Stage 13 applies the five-verdict logic against this framing.
+    Verifier A (phase 1) returned 3 CRITICAL source-fidelity findings, all pipeline-correct catches of
+    Spear/source errors (GATE HELD - corrected at source), none used as valid on a verdict card or Section
+    1B pillar; no forced REWORK. Verifier C phase-3 valuation adherence 0 critical / 0 major (3 minor,
+    all cosmetic/disclosed-override). No forced REWORK from framework adherence.

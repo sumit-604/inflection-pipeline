@@ -1,0 +1,82 @@
+stage: B05-concall
+company: "ENTERO"
+run_date: "2026-07-27"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - {item: "prospectus", severity: "HIGH"}
+  - {item: "announcements", severity: "MEDIUM"}
+  - {item: "shareholding", severity: "MEDIUM"}
+  - {item: "research", severity: "LOW"}
+flags:
+  - "Network reach metrics (retail pharmacies, hospitals, SKUs, districts) fell 28-36% Q4 FY26 -> Q1 FY27 with no management or analyst reconciliation of scale"
+  - "Management refused to disclose debtor/receivables aging when asked directly (Q3 FY26 call), against downstream flag of receivables +50.6% vs revenue +29.4%"
+  - "Organic outperformance vs IPM compressed from ~1.9x historical average to ~1.4x for three consecutive quarters; initially dismissed as noise"
+quarters_analysed: ["Q3 FY26", "Q4 FY26", "Q1 FY27"]
+triggers:
+  - {priority: 1, name: "MedTech scaling to ~20% of revenue with structurally higher margins", type: "revenue+margin", timeframe: "medium (2-3yrs)", conviction: "H", confirm_signal: "MedTech segment revenue/margin tracking to/beyond Rs1,000cr", kill_signal: "MedTech growth flattens or margin uplift fails to show in consolidated GM/EBITDA"}
+  - {priority: 2, name: "EBITDA margin trajectory toward 5%+ sustained through FY27 (already hit in Q1 FY27)", type: "margin", timeframe: "near", conviction: "H", confirm_signal: "Quarterly EBITDA margin holds at/above 5% through FY27", kill_signal: "Margin regresses toward 4% on integration costs or pricing pressure"}
+  - {priority: 3, name: "Organic growth sustaining >15-20% despite extended M&A pause", type: "volume", timeframe: "medium (3-4yrs)", conviction: "M", confirm_signal: "Organic growth stays materially above IPM", kill_signal: "Organic growth converges to IPM, outperformance multiple disappears"}
+  - {priority: 4, name: "OCF-to-EBITDA conversion reaching guided >=50% for FY27", type: "cash", timeframe: "near", conviction: "M", confirm_signal: "H2 FY27 audited OCF confirms conversion ratio", kill_signal: "OCF conversion stays materially below 50%"}
+  - {priority: 5, name: "Minority interest and working capital days continuing to normalise", type: "margin/cash", timeframe: "near", conviction: "H", confirm_signal: "Minority interest holds ~25-27% of PBT-minority; NWC days stay <=61", kill_signal: "Minority interest re-spikes or NWC days drift back toward 66+"}
+  - {priority: 6, name: "Resumption of large M&A once integration judged complete (FY28 marker)", type: "inorganic", timeframe: "long (FY28+)", conviction: "L", confirm_signal: "Management re-opens M&A guidance with specific target profile", kill_signal: "Pause extends past FY28 without explanation"}
+guidance:
+  - {item: "Revenue growth (like-for-like)", number: "30%", timeframe: "FY26", stated_in: "Q3 FY26 call"}
+  - {item: "EBITDA margin", number: "4%", timeframe: "FY26", stated_in: "Q3 FY26 call"}
+  - {item: "Operating cash flow", number: "~Rs100cr", timeframe: "FY26", stated_in: "Q3 FY26 call"}
+  - {item: "MedTech annualised revenue", number: ">Rs1,000cr", timeframe: "post-integration FY26/27", stated_in: "Q3 FY26 call"}
+  - {item: "MedTech share of revenue", number: "~15% rising to ~20%", timeframe: "2-3 years", stated_in: "Q4 FY26 call"}
+  - {item: "Acquisition valuation multiple", number: "5-7x EV/EBITDA", timeframe: "standing policy", stated_in: "Q4 FY26 call"}
+  - {item: "Revenue growth ex new M&A", number: "23% YoY", timeframe: "FY27", stated_in: "Q4 FY26 call"}
+  - {item: "EBITDA margin", number: "5%", timeframe: "FY27", stated_in: "Q4 FY26 call"}
+  - {item: "EBITDA-to-OCF conversion", number: ">=50%", timeframe: "FY27", stated_in: "Q4 FY26 call"}
+  - {item: "Tax rate", number: "22-23%", timeframe: "FY27", stated_in: "Q4 FY26 call"}
+  - {item: "Minority interest as % of PBT-minority", number: "~25-27%", timeframe: "FY27", stated_in: "Q4 FY26 call"}
+  - {item: "Organic growth ex acquisitions", number: ">20%", timeframe: "3-4 years", stated_in: "Q1 FY27 call"}
+  - {item: "ROCE", number: "25-30%", timeframe: "3-4 years, ex further acquisitions", stated_in: "Q1 FY27 call"}
+guidance_note: "MedTech pro forma margin uplift (Q3 FY26 call): +70-90bps gross margin, +50-75bps EBITDA margin"
+promise_delivery:
+  delivered: 8
+  partial: 4
+  missed: 0
+  rows:
+    - {promised_in: "Q3 FY26 call", promise: "FY26 revenue growth 30% like-for-like", outcome: "delivered", explanation: "FY26 LFL growth 31.5% (Q4 FY26 call)"}
+    - {promised_in: "Q3 FY26 call", promise: "FY26 EBITDA margin 4%", outcome: "delivered", explanation: "Landed at 4.0%, +67bps YoY"}
+    - {promised_in: "Q3 FY26 call", promise: "FY26 OCF ~Rs100cr", outcome: "partial", explanation: "Actual Rs96.2cr, ~96% of guide"}
+    - {promised_in: "Q3 FY26 call", promise: "MedTech annualised revenue >Rs1,000cr", outcome: "delivered", explanation: "Confirmed in Q4 FY26 call, reaffirmed Q1 FY27"}
+    - {promised_in: "Q3 FY26 call", promise: "FY27 guidance to be given in Q4 call", outcome: "delivered", explanation: "FY27 guidance given as promised"}
+    - {promised_in: "Q3 FY26 call", promise: "M&A pause for next 2-3 quarters", outcome: "partial", explanation: "Pause extended through all of FY27, longer than originally stated window"}
+    - {promised_in: "Q3 FY26 call", promise: "NWC days moving toward 60", outcome: "delivered", explanation: "59 days in Q4 FY26"}
+    - {promised_in: "Q3 FY26 call", promise: "Tax losses fully utilised ~next year, ~18% FY26 rate", outcome: "delivered", explanation: "FY27 rate guided 22-23%, consistent glide path"}
+    - {promised_in: "Q4 FY26 call", promise: "FY27 guidance: 23% revenue ex-M&A, 5% EBITDA margin, >=50% OCF conversion", outcome: "partial", explanation: "EBITDA margin already 5.0% in Q1 FY27; full-year revenue/OCF conversion not yet assessable"}
+    - {promised_in: "Q4 FY26 call", promise: "Minority interest normalise to ~25-27% of PBT-minority", outcome: "delivered", explanation: "Q1 FY27 actual ~27%"}
+    - {promised_in: "Q4 FY26 call", promise: "Depreciation stays at Q4 FY26 level absent new capex", outcome: "delivered", explanation: "Confirmed broadly same level in Q1 FY27"}
+    - {promised_in: "Q4 FY26 call", promise: "Interest cost stable near-term then decline", outcome: "partial", explanation: "Q1 FY27: stability confirmed, decline not yet visible"}
+excuse_pattern: "balanced"
+repeated_evasions:
+  - {question: "Why has organic outperformance vs IPM compressed to ~1.4x from ~1.9x historical average?", quarters_asked: ["Q3 FY26", "Q4 FY26"], classification: "answer changed between quarters"}
+credibility_grade: "B"
+credibility_basis: "FY26 triple guidance (30% growth/4% margin/~Rs100cr OCF) essentially met; MedTech Rs1,000cr target hit on schedule; FY27 minority-interest and margin guidance already tracking or beaten one quarter in. Held to B, not A, by a refusal to disclose receivables aging and an unaddressed contraction in network-reach metrics."
+peer_questions:
+  - {question: "Has IPM growth genuinely accelerated to 10-12% (from 7-9%) and can the driver be isolated?", why: "Entero attributes its compressed outperformance multiple to this shift; needs independent confirmation.", check_peers: ["MEDPLUS", "RPTECH"]}
+  - {question: "What GLP-1 distribution share do peers claim, and does it reconcile with Entero's inconsistent 10% vs 5% figures across calls?", why: "Entero's own GLP-1 numbers are internally inconsistent between Q3 FY26 and Q1 FY27 calls.", check_peers: ["MEDPLUS"]}
+  - {question: "Do peers cite wallet-share gains (not new customers) as their primary organic growth lever, and at what magnitude?", why: "This is Entero's central market-share-gain claim across all three calls.", check_peers: ["MEDPLUS", "RPTECH"]}
+  - {question: "What EV/EBITDA multiples are peers paying for distributor/MedTech bolt-ons, versus Entero's stated 5-7x?", why: "Tests whether Entero's acquisition discipline claim is market-standard.", check_peers: ["REDINGTON", "RPTECH"]}
+  - {question: "Does any peer report materially higher gross margin on 'commercial role' contracts versus fulfillment-only distribution, at the scale Entero claims?", why: "Entero leans heavily on this margin-mix story to justify sustained GM expansion.", check_peers: ["REDINGTON"]}
+  - {question: "Can peers confirm Entero's claimed organised-retail chain store counts used to argue against disintermediation risk?", why: "Directly checkable factual claim.", check_peers: ["MEDPLUS"]}
+  - {question: "Which listed peer discontinued an Amazon distribution partnership, and does that peer's disclosure support Entero's claimed benefit?", why: "Entero confirmed a competitive benefit without naming the peer or mechanism.", check_peers: ["MEDPLUS", "RPTECH"]}
+  - {question: "Do peers disclose retail-customer/hospital/SKU/warehouse counts that calibrate whether Entero's Q4 FY26 -> Q1 FY27 reach-metric contraction is industry-wide or Entero-specific?", why: "Entero's core moat pitch rests on network reach, which fell sharply in one quarter unexplained.", check_peers: ["MEDPLUS", "RPTECH"]}
+red_flags:
+  - {flag: "Network reach metrics fell 28-36% Q4 FY26 -> Q1 FY27 with no reconciliation of scale", severity: "HIGH"}
+  - {flag: "Management refused to disclose debtor/receivables aging when directly asked, against flagged receivables growth +50.6% vs revenue +29.4%", severity: "MEDIUM-HIGH"}
+  - {flag: "Organic outperformance vs IPM compressed from ~1.9x to ~1.4x for three consecutive quarters, first dismissed as noise", severity: "MEDIUM"}
+  - {flag: "GS Pharma subsidiary reports accounting losses despite revenue growth, attributed to intercompany interest from parent; relevant to 40 CARO-qualified cash-loss subsidiaries", severity: "MEDIUM"}
+  - {flag: "M&A pause window quietly extended from 'next 2-3 quarters' to covering all of FY27 without being framed as a change", severity: "LOW"}
+  - {flag: "Small Sai Pharma BTA disclosed only under direct questioning despite opening remarks stating 'no new acquisitions' that quarter", severity: "LOW"}
+  - {flag: "FY26 net worth flattish despite strong profit growth, driven by first-time put-option-liability recognition under IndAS; relevant to ~44% goodwill-to-net-worth", severity: "LOW-MEDIUM"}
+dropped_triggers:
+  - "Private label push (home healthcare products) mentioned once in Q3 FY26 call as small but to be pushed 'over a period of time'; never mentioned again"
+  - "Network reach expansion narrative stopped being reconciled quarter to quarter after Q4 FY26; Q1 FY27 disclosed sharply lower counts with no explanation"
+timeline_slippages:
+  - "M&A pause guided as 'next 2-3 quarters' in Q3 FY26 call (would end ~Q3 FY27); extended to cover all of FY27 by Q4 FY26 and Q1 FY27 calls, roughly doubling the window"
+analyst_note: "Most decision-relevant finding: Entero's core moat pitch is network reach (customers, hospitals, SKUs, warehouses), repeated near-verbatim every call. Between Q4 FY26 and Q1 FY27 every reach metric fell sharply (28-36%) in the same quarter management reported record margins and ROCE. No analyst caught it; management's only related comment (a ~2.5% revenue drag from low-margin exits) does not obviously scale to match. Could be disciplined pruning consistent with the margin story, or a reporting-basis change / real attrition offset by wallet-share gains. Directly bears on whether the network moat is intact or eroding; first-order Halt 1 verification item."

@@ -1,0 +1,60 @@
+stage: B11-valuation
+company: "DIVGIITTS"
+run_date: "2026-08-29"
+model: claude-opus-4-8
+status: complete
+entity: "consolidated single-entity"
+entity_count: 1
+input_gaps:
+  - "Live peer table (Amendment 20 / step 1C): PENDING LIVE PEER TABLE, re-runs at Role 5.5"
+  - "Customer/OEM revenue concentration: NOT DISCLOSED"
+  - "Promoter pledge %: NOT FOUND"
+  - "Indonesia per-unit ASP: NOT FOUND (bounded Rs 105-140 Cr total program)"
+  - "3-year historical revenue/PAT CAGR: NOT FOUND"
+  - "Live market PE for relative-PE denominator (Amendment 15): NOT FOUND"
+flags:
+  - "FLAG-CASH: Pillar 2 INDETERMINATE (no rating); cash multiplier 1.00x applied, no growth offset"
+  - "FLAG-PROMOTER: US-subsidiary narrative, Tejal RPT omission, KMP pay, Section 197 (B08)"
+  - "FLAG-RPT-COMPLETENESS: Tejal Transmission omitted from Note 34"
+  - "FLAG-SUBSIDIARY-CONTRADICTION: US subsidiary narrative vs Board's Report Item 13"
+  - "GOVERNANCE-PATTERN: cross-document contradiction cluster; WATCHLIST defaults to AVOID until 18-Sep-2026 AGM/FY27 AR"
+  - "FLAG-ROCE-OPTIMISM: operator ROCE 20% -> base PE 19x vs continuous-formula 17.5x; base-case op ROCE ~16-17%"
+  - "FLAG-SECTOR-CAP-OVERRIDE: 30x operator override from 25x framework default (this run only)"
+  - "FLAG-MULTIPLE-OVERRIDE: governing 30x ~50% above framework additive 20x / RRM 17.9x"
+framework_versions: "Master v3.6 / Section 1B v3.3+v3.5.1+v3.6+v3.7+v3.8+v3.9 / FTTCP v2.1"
+pe_basis: "forward"
+exit_pe_base_approved: 30
+destination_pe:
+  track1_rrm: {low: 16.5, mid: 17.9, high: 19.5, r_used: 14, rrm: 0.94}
+  track2_additive: {low: 18.5, mid: 20.0, high: 21.5}
+  divergence_pct: 11.7
+  governing_track: "OPERATOR-APPROVED 30x forward (overridden sector cap, peer-anchored) governs and sets the entry zone; both framework tracks (RRM 17.9x, additive 20x) sit ~50% below and are retained as floor/cross-check per Amendment 20.9"
+pillar_detail:
+  roce_used: 20
+  roce_base: 19
+  roce_recovery_route: "pillar1-midpoint"
+  pillar1_normalization_route: "A-operational (cash-strip both sides; B10 labeled Route B, corrected: post-IPO cash-pile is denominator bloat = Route A; 20% ROCE / 19x unchanged)"
+  cash_multiplier: 1.0
+  structural_or_growth: "INDETERMINATE (no credit rating exists; conservative neutral multiplier)"
+  growth_offset: 0
+  growth_premium: 1
+  strategic_premium: 0
+  shared_catalyst_flag: false
+  ua_applied: false
+  sector_cap_used: 30
+hurdle_ratio: {base: 0.95, bull_used: true, verdict: "STOP"}
+fair_values:
+  track1: {bear: 533, base: 815, bull: 974}
+  track2: {bear: 387, base: 575, bull: 681}
+expected_cagr_prob_weighted: -4.4
+entry_range: {low: 570, high: 650}
+mos_price: 570
+upside_downside_ratio: -0.56
+decision: "AVOID (on-valuation). CMP Rs 1,175 is 44% above base fair value Rs 815; Hurdle STOPs even on bull EPS CAGR; prob-weighted expected CAGR from CMP -4.4%; return-source HYBRID (FV CAGR 10.8%) with no re-rating lever left. Governance CONCERN independently defaults to AVOID until the 18-Sep-2026 AGM and FY27 AR."
+unresolved_inputs_used:
+  - "Year-4/FY31 industry-growth fade anchor 12%: NAMED ASSUMPTION per v3.8 18.0 (corpus holds no transfer-case industry growth rate; B09 TAM confidence Low)"
+  - "Cash taper 95->90->85->80 over the hold: assumption, no committed schedule; modest deploy into Shirwal/Mayflower capex"
+  - "Bear/bull exit multiple held at governing 30x (earnings flexed only); bear thus generous (peak multiple on trough earnings) - flagged"
+  - "Governing exit multiple 30x, ROCE 20%/19x base, r=14%, +1x growth: operator-approved at FTTCP gate, used as-is; framework floor (17.9-20x, base FV Rs 525-575) reported as divergence"
+som_cagr_crosscheck: "consistent"
+one_line_thesis: "A build-to-spec driveline maker priced at 45x ex-cash forward earnings against a Rs 815 fair value: the transition is narrated but unproven (EV-SOP slipped 3 quarters), the TO-rung re-rating is already over-priced, and even the operator's generous 30x override cannot clear the 25% hurdle. AVOID on valuation."

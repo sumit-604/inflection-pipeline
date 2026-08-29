@@ -15,3 +15,4 @@
 | 7 | emerging-moat | claude-sonnet-5 | default | - | - | 202826 | 20.4m | 1 |
 | 9 | tam-sam-som | claude-sonnet-5 | default | - | - | 199246 | 16.1m | 1 |
 | 12a | verifier-a-numerical | claude-haiku-4-5 | default | - | - | 107447 | 2.9m | 1 |
+| 12c | verifier-c-framework | claude-opus-4-8 | default | - | - | 84755 | 4.6m | 1 |

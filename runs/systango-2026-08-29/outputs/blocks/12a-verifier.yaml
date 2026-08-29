@@ -1,0 +1,16 @@
+stage: B12a
+company: "SYSTANGO"
+run_date: "2026-08-29"
+model: claude-haiku-4-5
+status: complete
+numbers_checked: 34
+findings:
+  - {severity: "MAJOR", location: "Stage 7 (07-emoat.md), Section 1B, lines 62-71", claimed: "DBX Holdings and GreenLeaf NOT FOUND in AR Note 8", source_truth: "Consolidated Note 8, p.112, Section B: both unquoted equity instruments listed with Rs166.11L (DBX) and Rs35.88L (GreenLeaf)", note: "Stage 3 correct; Stage 7 missed data in source document. Non-overridable source-fidelity gate.", source_fidelity: true}
+  - {severity: "MAJOR", location: "Stage 7 (07-emoat.md), Section 1B, line 69", claimed: "GreenLeaf NOT FOUND anywhere in the AR", source_truth: "Consolidated Note 8, p.112, Section B: GreenLeaf TDG Ltd 320 shares @ GBP1 each, Rs35.88L", note: "Direct contradiction with source PDF.", source_fidelity: true}
+  - {severity: "MINOR", location: "Stage 1 (01-gate0.md), Block E, line 217", claimed: "Promoter 72.07% (31-Mar-2025)", source_truth: "AR Note 1D p.76: verified exact", note: "Clean; data is 17 months stale (gap already flagged).", source_fidelity: false}
+critical_count: 0
+major_count: 2
+minor_count: 1
+acceptance_rate: 97.1
+coverage_note: "34 material numbers checked. All verdict-card figures, FY26 headline financials (revenue Rs90.4cr, EBITDA 37.6%), and client concentration (top-3 42%, top-10 72%) verified clean. One MAJOR source-fidelity gate (two findings): Stage 7's claim that DBX Holdings and GreenLeaf are NOT in Note 8 is contradicted by Consolidated Note 8, p.112, Section B, which lists both unquoted equity investments. Non-overridable: only the source PDF can clear it, and it confirms Stage 3's reading."
+disagreement_note: "Verifier A overturned Stage 7's NOT-FOUND on DBX/GreenLeaf. Disposition: GATE HELD -- figure corrected at source (Stage 3's Rs166.11L DBX / Rs35.88L GreenLeaf stand; Stage 7's NOT FOUND removed). Carry to verifier-disagreement-log at phase 3."

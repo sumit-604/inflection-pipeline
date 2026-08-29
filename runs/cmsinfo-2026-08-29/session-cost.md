@@ -21,3 +21,36 @@ Per-stage token ledger. One line per subagent run (loops/retries get their own l
 | 12c | verifier-c-framework (phase-1 scope) | claude-opus-4-8 | default | - | - | 80019 | 4m51s | 1 |
 | 12d | verifier-d-peers | claude-sonnet-5 | default | - | - | 127988 | 6m14s | 1 |
 | 13 | synthesis-lite (phase-1, 3 files) | claude-opus-4-8 | default | - | - | 109455 | 6m34s | 1 |
+| 09b | halt1-dossier | claude-sonnet-5 | default | - | - | 176200 | 8m33s | 1 |
+
+---
+## SESSION CLOSE-OUT (phase 1)
+
+Run total (subagent tokens, all rows): ~2,369,220 tokens across 17 subagent runs
+(stage 2 = 3 runs). Orchestrator stage-0 validation ran inline (no subagent).
+
+### (a) TOP FIVE BY TOKENS
+| rank | stage | total_tok | share of run |
+|------|-------|-----------|--------------|
+| 1 | stage 2 notes-triple-pass (3 runs summed) | 327,788 | 13.8% |
+| 2 | stage 3 AR deep dive | 263,567 | 11.1% |
+| 3 | stage 6 peer-concall verification | 225,250 | 9.5% |
+| 4 | stage 09b halt-1 dossier | 176,200 | 7.4% |
+| 5 | verifier B redflags (opus) | 163,223 | 6.9% |
+
+### (b) DOWNSHIFT FAILURES
+none. The mechanical stages that DISPATCH routes to haiku ran on haiku: verifier A
+on claude-haiku-4-5. Stage 0 validation and stage 10 assembly are the other
+mechanical stages; stage 0 ran orchestrator-inline (no subagent, no model spend),
+stage 10 is phase-3, not run here. No mechanical stage ran on Opus.
+
+### (c) COST SPIKES
+none. This is the first CMSINFO run; no prior runs/cmsinfo-*/session-cost.md ledger
+exists to compare against the 1.5x threshold.
+
+### (d) OPERATOR SNAPSHOT
+Operator: run /cost and /usage now and paste the cache hit ratio and the loop
+totals below. The orchestrator cannot read those interactive commands.
+
+#### Operator snapshot
+(cache hit ratio + loop totals — operator fills)

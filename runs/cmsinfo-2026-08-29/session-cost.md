@@ -12,3 +12,4 @@ Per-stage token ledger. One line per subagent run (loops/retries get their own l
 | 3 | ar-deep-dive (8 phases) | claude-sonnet-5 | default | - | - | 263567 | 14m25s | 1 |
 | 4 | business-model-decoder | claude-sonnet-5 | default | - | - | 143169 | 8m59s | 1 |
 | 5 | concall-analysis (4 transcripts) | claude-sonnet-5 | default | - | - | 152721 | 7m08s | 1 |
+| 8 | promoter-check (web) | claude-sonnet-5 | default | - | - | 102618 | 5m31s | 1 |

@@ -1,0 +1,11 @@
+confidence_delta:
+  numerical_acceptance: 89      # B12a acceptance_rate; 0 CRITICAL, no verdict-card/pillar mismatch
+  redflag_coverage: 85          # B12b: 11 of 13 verifier-found flags fully caught upstream (+1 partial); 1 MAJOR missed (Q1 FY27 debt/OCF disclosure refusal)
+  framework_adherence: 98       # B12c phase-1 (Gate0 + EM only); Gate0 0 fails, EM 1 MINOR conservative deviation. Valuation-adherence component PENDING PHASE 3.
+  peer_utilisation: 92          # B12d: 11 of 12 peers used substantively (B06 CITED-ONLY the 12th, which D shows was actually used)
+  overall: 85                   # min of the four available components
+  band: "normal (75-89) - note specifics; no PROCEED downgrade (that is 60-74), no forced REWORK (that is <60)"
+  valuation_adherence_status: "PENDING PHASE 3 (B10/B11 not yet built; verifier C valuation audit deferred)"
+  notes:
+    - "Zero CRITICAL across verifiers A/B/C/D; no acceptance_rate below 60. REWORK not triggered."
+    - "B12a carries 4 MAJOR source_fidelity flags (net-debt/equity 'adjusted' basis, CEO remuneration breakdown, net-worth denominator aggregation, prior-CFO name). None on a verdict-card or Section 1B pillar input; each is a source-confirm item for Halt 1, not a fabrication. Per the hard gate they may not enter a downstream computation as valid until re-anchored."

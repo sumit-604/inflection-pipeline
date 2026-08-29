@@ -14,3 +14,4 @@
 | 7 | emerging-moat | claude-sonnet-5 | - | - | - | 262248 | 9m38s | 1 |
 | 6 | peer-concalls | claude-sonnet-5 | - | - | - | 191671 | 10m41s | 1 |
 | 9 | tam-sam-som | claude-sonnet-5 | - | - | - | 174824 | 11m53s | 1 |
+| 12a | verifier-a-numerical | claude-haiku-4-5 | - | - | - | 126604 | 3m29s | 1 |

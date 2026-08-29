@@ -16,3 +16,5 @@ Per-stage token ledger. One line per subagent run (loops/retries get their own l
 | 6 | peer-concall-verification | claude-sonnet-5 | default | - | - | 225250 | 7m26s | 1 |
 | 7 | emerging-moat-scan | claude-sonnet-5 | default | - | - | 158496 | 8m43s | 1 |
 | 9 | tam-sam-som (web) | claude-sonnet-5 | default | - | - | 125559 | 11m16s | 1 |
+| 12a | verifier-a-numerical | claude-haiku-4-5 | default | - | - | 95128 | 2m29s | 1 |
+| 12b | verifier-b-redflags | claude-opus-4-8 | default | - | - | 163223 | 5m10s | 1 |

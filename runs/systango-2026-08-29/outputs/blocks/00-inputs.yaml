@@ -1,0 +1,34 @@
+stage: B00-inputs
+company: SYSTANGO
+run_date: 2026-08-29
+model: orchestrator-inline
+status: complete
+sector_cap_row: "Platform / SaaS / IT services"
+sector_cap_x: 45
+spear: "HIT 2026-08-29 entry<=210"
+spear_facts_priority: 4
+input_gaps:
+  - prospectus (MEDIUM; SME listed ~Mar-2023, ~3.4y ago; FY25 AR now covers promoter/related-party/CARO so prospectus less critical)
+  - annual-report-FY26 (HIGH; freshness pair 4; the AR held is FY25 not FY23 per stage 1)
+  - concall-FY26 (HIGH; freshness pair 1)
+  - rating
+  - announcements-folder
+  - shareholding-filing (latest on file 31-Mar-2025, 17m stale)
+  - research
+ar_year_correction: "The sole AR file Annual_Report_2023.pdf is actually the FY2024-25 AR (year ended 31-Mar-2025), confirmed by stage 1. Backward baseline is 4 audited years FY23-FY26, not post-listing-thin. FY24/FY25 no longer gaps (FY25 AR carries FY24 comparatives)."
+freshness_pairs:
+  - {pair: results-to-concall, trigger_doc: "FY26 audited results 2026-05-14", mate_expected: "FY26/Q4 concall", status: FAIL, missing_doc: "FY26 concall transcript"}
+  - {pair: rating-bulletin-to-rationale, trigger_doc: none, mate_expected: n/a, status: PASS, missing_doc: null}
+  - {pair: sebi-order-to-text, trigger_doc: none, mate_expected: n/a, status: PASS, missing_doc: null}
+  - {pair: ar-to-latest-audited-annual, trigger_doc: "FY26 audited annual results", mate_expected: "FY26 AR", status: FAIL, missing_doc: "FY26 Annual Report"}
+freshness_verdict: CORPUS GAPPED-FRESHNESS
+concall_map:
+  - {order: 1, file: Concall_Jul_2023_Transcript.pdf, period: FY23-annual, held: 2023-07-07}
+  - {order: 2, file: Concall_Nov_2023_Transcript_2.pdf, period: H1FY24, held: 2023-11-17}
+  - {duplicate: Concall_Nov_2023_Transcript.pdf, of: Concall_Nov_2023_Transcript_2.pdf}
+concalls_available: true
+non_anchored_leads:
+  - {type: shareholding-screener, source: operator-paste, mar2026: "Promoter 72.17 / FII 0.47 / DII 1.69 / Public 25.67", holders: 2637}
+  - {type: valuepickr-thread, url: "forum.valuepickr.com/t/systango-technologies-ltd/150052", routed_to: stage-08, halt1_verify: true}
+flags: []
+analyst_note: "Corpus jumps from Nov-2023 to FY26 results; the 2.5-year concall gap and absent FY26 AR are the binding limits. FY26 headline financials are anchored in the June-2026 deck and May-2026 audited results, so Gate 0 and the evidence stages run for real; only the notes-level FY26 depth (CARO loans, related-party, consolidated CFO, DBX Holdings) is unresolvable until the FY26 AR is pushed."

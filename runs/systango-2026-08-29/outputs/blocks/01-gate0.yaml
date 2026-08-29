@@ -1,0 +1,39 @@
+stage: B01-gate0
+company: "SYSTANGO"
+run_date: "2026-08-29"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Promoter pledge %: NOT FOUND in any provided document (E3 scored 0 on data-availability grounds)"
+  - "Promoter shareholding: most recent available is 31-Mar-2025 (AR FY24-25), 17 months stale vs run date; no later shareholding pattern in corpus"
+  - "FY2020-FY2022 balance-sheet granularity (trade payables, current-liability split, capex breakout) not available; those years excluded from Blocks A/B(FCF)/D/E scoring"
+  - "Peer comparison data (EBITDA margin, market cap/segment ranking, gross margin) not provided: affects M2, M5, M9 (all scored 0, PEER DATA NEEDED)"
+  - "R&D as % of revenue not separately disclosed: M6 scored 0"
+  - "Selling-expense % trend FY23-FY26 not separately disclosed (screener row blank from FY23): affects M11 second-tier test"
+flags:
+  - {type: FLAG-CASH, reason: "Unsecured, no-security, on-demand loans to unnamed non-related 'Others' grew to Rs 5.30cr outstanding at FY25 close (Rs 2.18cr freshly advanced during FY25 alone) from Rs 4.55cr at FY24 close (CARO Annexure-A AR FY24-25 p.65-66; Note 14/14.1 p.83); operating cash is being extended to undisclosed counterparties."}
+  - {type: FLAG-ACCOUNTING, reason: "Gratuity and leave encashment recognised on cash/payment basis, not accrued (AR FY24-25 Note 21B.7, p.86); reported profit not directly comparable to accrual-basis peers, unrecognised liability quantum undisclosed."}
+  - {type: FLAG-DATA-GAP, reason: "Promoter pledge status and current shareholding both unconfirmed/stale (see input_gaps); E3 scored 0 is a data gap, not a known pledge breach."}
+  - {type: FLAG-GUIDANCE, reason: "Prior revenue guidance of ~Rs 250cr ($25M) by FY26 vs FY26 actual Rs 90.38cr (screener-data; SYSTANGO_14052026200758_Intimation.pdf), roughly a 64% miss, while EBITDA-margin guidance (>25%) was exceeded (37.6% actual, deck p.30). Outside Gate 0's numeric formula; load-bearing for downstream credibility work per SPEAR priority."}
+data_years: 4
+fy_range: "FY2023 to FY2026"
+blocks: {A: 20, B: 15, C: 20, D: 20, E: 13}
+core_score: 88
+moat_score: 19
+grand_total: 107
+moats_confirmed: 4
+moat_class: "STRONG"
+classification: "GOOD+"
+deal_breakers: []
+history_downgrade: true
+data_notes:
+  - "No loss-to-profit PAT swing: PAT positive every year FY2020-FY2026 (screener-Data_Sheet.csv)"
+  - "M9 gross-margin proxy used: (Revenue - Employee Cost) / Revenue, employee cost as input-cost proxy for IT services (no material cost line applicable)"
+  - "PEER DATA NEEDED: M2, M5, M9 all scored 0 for lack of peer comparison data in corpus"
+  - "Block B1 computed on two windows: 7yr (FY20-26) cumulative CFO/PAT = 0.732, score 2 (primary, maximal anchored data); 4yr post-listing (FY23-26) alternate = 0.693, would score 1 -- both reported, primary used"
+  - "Block C1/C2 CAGR computed on two windows: primary 3yr FY23-26 (~20% revenue / ~32% PAT, matches deck's own stated figures) used for scoring; supplementary 7yr FY20-26 (36.0% revenue) not used, distorted by tiny pre-listing FY20 base"
+  - "Input file 'Annual_Report_2023.pdf' is actually the 21st Annual Report FY2024-25 (year ended 31-Mar-2025); all AR anchors above cite it as AR FY24-25"
+  - "WC days: net change latest-vs-earliest (-0.36 days) masks a large intra-period swing (45 to 84 to 48 days, FY23-FY26); plausibly tied to client concentration (SPEAR priority item, ~46-48% top-3 concentration reported H1FY26)"
+  - "Parent-only (standalone) trade payables are NIL for both FY24 and FY25 (AR FY24-25 Note 4, p.78); the small non-zero consolidated payables used in WC-days calc come from subsidiary-level balances"
+block_b_trend: "improving -- CFO/PAT ratio rose from 0.37x (FY23) to 1.06x (FY26), first year CFO exceeded PAT"
+analyst_note: "Classification is GOOD+, one tier below what the raw score (Core 88 + STRONG moat) would otherwise support, solely on the LIMITED history band (4-year audited window, SME listing Mar-2023). The financial picture itself is clean: zero debt, ROCE 27-33%, ~20%/32% revenue/PAT CAGR, no down-year ever. Four qualitative items are more decision-relevant than the numeric score suggests and should carry forward: (1) growing unsecured loans to undisclosed non-related parties (Rs 5.30cr, CARO-confirmed) -- a capital-allocation and disclosure-quality question independent of Section 1B mechanics; (2) cash-basis gratuity/leave accounting -- profit is not accrual-clean, quantum unknown; (3) a large revenue-guidance miss (~64%) alongside an EBITDA-margin guidance beat, which is a mixed signal on management credibility worth resolving before FTTCP; (4) promoter data is 17 months stale with pledge unconfirmed. None of these are deal-breakers under the Gate 0 formula, but all four should be named explicitly in the Halt-1 dossier."

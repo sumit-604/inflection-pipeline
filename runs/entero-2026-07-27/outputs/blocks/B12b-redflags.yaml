@@ -1,0 +1,22 @@
+stage: B12b
+company: "ENTERO"
+run_date: "2026-07-27"
+model: claude-opus-4-8
+status: complete
+independent_flags_found: 13
+caught: 11
+partially_caught: 1
+missed:
+  - {severity: "MAJOR", item: "Q1 FY27 refusal to disclose quarterly gross debt, net debt, and OCF; extends a balance-sheet-opacity pattern B05 caught only for receivables aging", anchor: "Q1 FY27 call (10-Aug-2026), Binoy Jariwala exchange, p.14"}
+pipeline_flags_not_supported: []
+promise_delivery_spot_checks: {checked: 5, confirmed: 5, wrong: 0}
+credibility_grade_concur: "concur | B (Good) fits the strong guidance-delivery record; the balance-sheet-opacity pattern is broader than B05 credited but sits at the low edge of B, not below it"
+findings:
+  - {severity: "MAJOR", location: "B05 2D/2E/red-flag table", note: "MISSED Q1 FY27 quarterly debt/OCF disclosure refusal (Q1 p.14); part of a three-quarter granularity-opacity pattern, two instances missed"}
+  - {severity: "MAJOR", location: "B05 red flag 7 (net worth/put-option)", note: "PARTIALLY CAUGHT: minority-buyout call options are a committed forward cash claim on thin OCF (Q1 p.3,6-7,11); accounting caught, cash-claim implication under-weighted"}
+  - {severity: "MINOR", location: "B05 red flag 1 / 2D", note: "reach-metric label shifted 'retail pharmacies' -> 'retail customers' Q4->Q1; relabel deepens rather than explains the contraction"}
+  - {severity: "MINOR", location: "B05 1B item 7 / 4A#6", note: "rising leverage framed only as an upside trigger, not as a risk; ~Rs 200 Cr fresh acquisition debt, IPO funds exhausted (Q1 p.7)"}
+critical_count: 0
+major_count: 2
+minor_count: 2
+acceptance_rate: 85

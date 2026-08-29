@@ -1,0 +1,11 @@
+confidence_delta:
+  numerical_acceptance: 97.1    # B12a; 34 numbers checked, 0 CRITICAL, 1 MAJOR source-fidelity gate (stage 7 DBX/GreenLeaf NOT-FOUND overturned; stage 3 correct)
+  redflag_coverage: 71          # B12b; 17 independent flags, 12 caught + 3 partial, 2 missed (MAJOR: crypto-platform vaporware promise absent from B05 tracker)
+  framework_adherence: 89       # B12c GATE 0 + EMERGING MOAT portion only; frameworks re-derived clean, 3 MINOR decision-neutral. VALUATION component PENDING PHASE 3 (B10/B11 not yet produced)
+  peer_utilisation: 75          # B12d; 9 substantive / 12 peers (corrected from B06's stated 10/12); 4 MAJOR characterization-accuracy fixes, 0 CRITICAL, no fabrication
+  overall: 71                   # min of the four
+band: "60-74"
+band_effect: "PROCEED-family verdicts downgrade one level; not a forced REWORK (no CRITICAL from Verifier A, no verifier acceptance_rate below 60)"
+valuation_adherence_status: "PENDING PHASE 3 (verifier C valuation-scope audit runs in /finalize)"
+rework_triggered: false
+rework_basis: "No Verifier A CRITICAL (0 critical, acceptance 97.1); no verifier acceptance_rate below 60 (min 71, redflag). Source-fidelity gate on DBX/GreenLeaf resolved in stage 3's favour, not a fabrication in a verdict input."

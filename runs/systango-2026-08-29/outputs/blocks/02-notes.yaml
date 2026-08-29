@@ -1,0 +1,51 @@
+stage: B02-notes
+company: "SYSTANGO"
+run_date: "2026-08-29"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Corpus file labelled FY2023 Annual Report is actually the FY2024-25 (21st) Annual Report; no FY2023 AR exists in corpus (CORPUS-MISLABELLED)"
+  - "Standalone Notes 6, 7, 8, 10 not independently confirmed as standalone-specific images in Pass 1; resolved for Notes 6-7 in Pass 2, Note 8 corrected in Pass 2 (standalone 4.07x vs consolidated 11.4x)"
+  - "No customer-level concentration disclosure found (NOT FOUND)"
+  - "No AS-17 segment note found (NOT FOUND)"
+  - "No consolidated EPS working located (cross-referenced Note 22 does not contain it)"
+flags:
+  - {type: FLAG-CASH, reason: "Standalone trade receivables +76.3% YoY vs revenue +16.4%; turnover ratio -37.3%; standalone operating cash flow fell (Rs807.49L vs Rs822.35L) despite PAT +42.9%; new 1-2yr ageing bucket appearing from zero (Note 12/12.1, 22(f), Cash Flow Statement p.74)"}
+accounting_quality: 4
+pass_2_empty: false
+pass_3_empty: false
+top_findings:
+  - {rank: 1, finding: "Gratuity and leave encashment expensed only on actual payment; no actuarial provision, no balance-sheet liability, no actuarial assumptions disclosed", note_ref: "Note 21B.7, p.86", rating: "RED", why: "Statutory defined-benefit obligation not provided per AS-15; profit systematically overstated vs accrual basis; SPEAR-confirmed"}
+  - {rank: 2, finding: "Rs529.55L unsecured, open-ended, interest-bearing loans to undisclosed Others, with Rs217.78L freshly disbursed in FY25 (active, ongoing)", note_ref: "Note 14/14.1 p.83; CARO(iii) p.65-66", rating: "RED", why: "Opaque, continuing capital allocation to unnamed counterparties by a debt-free company; SPEAR-confirmed"}
+  - {rank: 3, finding: "Standalone receivables +76.3% vs revenue +16.4%; turnover ratio -37.3%; standalone operating cash flow fell despite PAT +42.9%", note_ref: "Note 12/12.1, 22(f), Cash Flow p.74", rating: "RED", why: "Cash-conversion deterioration; profit growth not converting to standalone cash; drives FLAG-CASH"}
+  - {rank: 4, finding: "Standalone trade payables NIL at both FY25 and FY24 year-ends despite ~Rs61Cr revenue", note_ref: "Note 4, p.78", rating: "RED", why: "Unexplained anomaly; near-100% advance vendor payment or payables mislabelled under Note 5"}
+  - {rank: 5, finding: "Consolidated Note 22 (cross-referenced by consolidated P&L) omits contingent liabilities, RPT table, gratuity policy, EPS working", note_ref: "p.104-105 vs 117-118", rating: "RED", why: "Reader of consolidated financials alone cannot verify Group contingent liabilities or EPS"}
+  - {rank: 6, finding: "Subsidiary-level accounting software lacked mandatory audit-trail feature for FY25; standalone parent audit trail separately certified compliant", note_ref: "Consolidated Auditor Report Annexure p.~102-103; Standalone Auditor Report p.63", rating: "RED", why: "Statutory IT-controls non-compliance at Group level, confined to subsidiaries not parent"}
+  - {rank: 7, finding: "Rs255.14L For Employee Benefits provision inconsistent with stated cash-basis gratuity/leave policy; composition undisclosed", note_ref: "Note 6 consolidated p.111 vs Note 21B.7", rating: "RED", why: "Unresolved inconsistency between stated policy and balance sheet"}
+  - {rank: 8, finding: "RPT sales to wholly-owned subsidiaries 32.2% (FY25)/42.1% (FY24) of standalone revenue with sharp billing-entity reshuffle; 38.7% of receivables from related parties; DBX Holdings relationship undisclosed in nature", note_ref: "Note 21C.8, p.89-91", rating: "WATCH", why: "High RPT concentration with opaque routing and unexplained related-party classification"}
+  - {rank: 9, finding: "Non-current investment/treasury portfolio build (standalone 4.07x, consolidated 11.4x); ~Rs60.3Cr total standalone investments vs ~Rs61.3Cr revenue; only 44.7% of net IPO proceeds deployed 2+ years post-listing", note_ref: "Note 8/11 p.79-80/112-113; Note 21C.1 p.87", rating: "WATCH", why: "Capital-allocation and opportunity-cost question; cash idle in treasury rather than core business or shareholder returns"}
+  - {rank: 10, finding: "Consolidated operating cash flow grew in line with profit while standalone (parent) OCF fell; cash-conversion problem concentrated at parent level", note_ref: "Cash Flow Statements p.74 and p.106", rating: "WATCH", why: "Localizes the cash-quality concern to the parent; new intercompany billing (Systango INC USA) worth probing"}
+  - {rank: 11, finding: "Related-party payables collapsed 99% the same year Creditors for Expenses fell 88%, unreconciled across notes", note_ref: "Note 5 p.78; Note 21C.8.B.viii(c) p.91", rating: "WATCH", why: "New cross-note reconciliation gap reinforcing the NIL trade-payables anomaly"}
+  - {rank: 12, finding: "Subsidiary-level Legal & Professional Charges now 3.5x the parent's own, gap more than doubled YoY, unexplained", note_ref: "Note 20 p.84-85 vs Note 21 p.116", rating: "WATCH", why: "Plausible additional angle on DBX Holdings/US-entity-restructuring questions"}
+  - {rank: 13, finding: "Consolidated-only Commission Expenses line exactly matches the CSR spend figure", note_ref: "Note 21 consolidated, p.116", rating: "WATCH", why: "Immaterial to profit but worth a direct duplication check"}
+  - {rank: 14, finding: "Corpus file labelled FY2023 Annual Report is actually the FY2024-25 (21st) Annual Report; no FY2023 AR exists in corpus", note_ref: "whole document", rating: "RED", why: "Pipeline data-integrity flag; downstream stages must treat this as FY25/FY24 data"}
+  - {rank: 15, finding: "Only two years of note-level data (FY24/FY25) available from this single AR", note_ref: "whole document", rating: "WATCH", why: "Constrains downstream multi-year trend analysis; flag for corpus-gap resolution at Halt 1"}
+red_flags:
+  - "Gratuity/leave encashment on cash-payment basis, no actuarial provision, no balance-sheet liability (Note 21B.7, p.86)"
+  - "Rs529.55L unsecured, open-ended, interest-bearing loans to undisclosed Others counterparties, with Rs217.78L freshly disbursed in FY25 (Note 14/14.1 p.83; CARO iii p.65-66)"
+  - "Standalone receivables +76.3% vs revenue +16.4%; turnover -37.3%; standalone operating cash flow declined despite PAT +42.9% (Note 12, 22(f) p.82-83/93; Cash Flow Statement p.74)"
+  - "Standalone trade payables NIL in both FY24 and FY25 (Note 4, p.78)"
+  - "Consolidated financial statements' cross-referenced Note 22 omits contingent liabilities, RPT, gratuity policy, and EPS working (p.117-118)"
+  - "Subsidiary-level accounting software lacked the mandatory audit-trail feature for FY25; standalone parent-level audit trail separately certified compliant (Consolidated Auditor Report Annexure p.~102-103; Standalone Auditor Report p.63)"
+  - "Rs255.14L For Employee Benefits provision inconsistent with the stated cash-basis policy, composition undisclosed (Note 6 vs Note 21B.7)"
+questions_for_mgmt:
+  - "Who are the Others counterparties receiving the Rs529.55L unsecured, interest-bearing, on-demand loans (Note 14), and why were Rs217.78L in fresh disbursements made in FY25 to entities the company will not name?"
+  - "Why does the company expense gratuity and leave encashment only on actual payment rather than provide on an actuarial basis (Note 21B.7), and what would the FY25 accrued obligation be under AS-15/Ind AS 19?"
+  - "What accounts for standalone trade payables of NIL in both FY24 and FY25 despite ~Rs61Cr of standalone revenue -- is vendor spend settled entirely through Creditors for Expenses (Note 5) or another route?"
+  - "What is the exact composition of the Rs255.14L For Employee Benefits provision (Note 6 consolidated), and why did standalone receivables grow 76% against 16% revenue growth while standalone operating cash flow fell?"
+  - "What is DBX Holdings Ltd's precise relationship to the company, why is it classified as related party rather than associate/JV despite an equity stake and trading relationship, and what is the plan to deploy the ~55% of net IPO proceeds still unutilized more than two years after listing?"
+receivables_trend: "deteriorating - standalone net receivables +76.3% YoY (Rs906.69L to Rs1,598.47L) vs revenue +16.4%; turnover ratio -37.3% (7.81x to 4.90x); DSO ~47 to ~75 days; new 1-2yr ageing bucket of Rs108.99L appeared from zero (0 in FY24); standalone operating cash flow fell (Rs822.35L to Rs807.49L) despite PAT +42.9% (Note 12/12.1, 22(f) p.82-83/93; Cash Flow Statement p.74)"
+restatements_found:
+  - "Generic regrouping/rearrangement statement (Note 21C.2, standalone, p.~87-88): 'Figures for the previous year has been regrouped and/or rearranged wherever considered necessary' -- no specific line items or amounts quantified; minor, boilerplate, not a substantive restatement"
+going_concern_language: "NONE - only the standard going-concern basis-of-preparation statement (Note 21B.1.2); no substantive going-concern doubt language found in either note set or either auditor's report"
+analyst_note: "The single most severe finding is the unprovided gratuity/leave-encashment liability (Note 21B.7): this is not a conservative-vs-aggressive judgment call but an AS-15 compliance gap for a company with a headcount well above the Payment of Gratuity Act threshold, and it mechanically inflates reported profit every year the unprovided obligation grows. Read together with the Rs529.55L undisclosed-counterparty loan book (now confirmed as an actively growing, not legacy, balance per CARO's Rs217.78L FY25 disbursement) and the standalone-only cash-conversion deterioration, the pattern is a company whose reported profit quality is weaker than its P&L suggests, concentrated at the parent/standalone entity rather than the Group. The clean audit opinion and zero-debt balance sheet are real positives but do not offset the provisioning and disclosure gaps for accounting-quality purposes."

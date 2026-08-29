@@ -1,0 +1,44 @@
+stage: B09b-dossier
+company: "SYSTANGO"
+run_date: "2026-08-29"
+model: claude-sonnet-5
+status: complete
+corpus_verdict: "CORPUS GAPPED-FRESHNESS"
+corpus_gaps:
+  - {document: "FY26 concall transcript", expected_source: "company IR page", kind: "plausibly-nonexistent"}
+  - {document: "FY26 Annual Report", expected_source: "BSE", kind: "freshness-pair"}
+  - {document: "Prospectus", expected_source: "BSE", kind: "findable-missing"}
+  - {document: "Rating / rating rationale", expected_source: "rating agency site", kind: "plausibly-nonexistent"}
+  - {document: "Dedicated corporate-action announcement filings", expected_source: "BSE", kind: "findable-missing"}
+  - {document: "Shareholding pattern filing, post-31-Mar-2025", expected_source: "BSE", kind: "findable-missing"}
+  - {document: "Research / broker notes", expected_source: "rating agency site", kind: "plausibly-nonexistent"}
+archetypes:
+  - {line: "Digital-engineering / IT services (single reportable segment)", archetype: "Outsourcing partner (CDMO/EMS/IT services)"}
+transition:
+  - line: "Digital-engineering / IT services (single reportable segment)"
+    from_tier: "R2 COST-ADVANTAGED CONVERTER (qualitative fit; ROCE 27-33% sits above R2's stated mid-teens band, an unresolved tension flagged not resolved)"
+    to_tier: "R3 VALUE-ADDED / SPEC'D SUPPLIER (claimed, via AI/GenAI mix-shift and embedded-team/licensing stickiness)"
+    engine: "Technology-line revenue mix shifts toward AI/ML/Data/Cloud work at higher realisation per employee, plus delivery moving from pure staff augmentation toward embedded product-team pods and owned, licensable IP"
+    proof_gate: "Revenue per employee keeps rising from its ~Rs29.4L FY26 base AND AI/ML/Data/Cloud technology-line share holds at/above its 46% FY26 level for 2+ consecutive disclosed periods, with revenue growth outpacing headcount growth"
+    recognition_gap: "OPEN QUESTION, resolved at Stage 11 via the Section 1B destination-PE gap"
+    ugliness: "STRUCTURAL-FEATURE"
+    transition_falsifier: "AI/ML/Data/Cloud technology-line share falls back toward or below its pre-FY26 level, and/or revenue per employee flattens or reverses over 2+ consecutive disclosed periods"
+dominant_variables:
+  - "Revenue per employee (mix-shift proxy): rose ~Rs16.8L (FY23) to ~Rs29.4L (FY26)"
+  - "AI/ML/Data/Cloud share of technology-service-line revenue: 46% FY26, no prior-year trend disclosed"
+  - "Top-3/top-10 client concentration: top-3 38-42%, top-10 65-72% FY23-FY26, with an unreconciled H1FY26 46-48% figure"
+  - "Standalone cash-conversion (CFO/PAT, receivable turnover): CFO/PAT 0.348x-0.522x across all 4 cells, all below 0.7x; receivable turnover fell 7.81x to 4.90x"
+business_falsifier: "Confirmation that DBX Holdings Ltd is controlled or co-directed by promoter Nilesh Rathi would re-characterise the FROM business's capital allocation as a pattern of related-party extraction (unnamed 'Others' loans plus a customer-to-equity-investee conversion the same year) rather than an isolated disclosure gap, undermining the organic, non-leverage-driven ROE read the Gate 0 score currently rests on"
+mental_model_status: "DRAFT - PENDING OPERATOR SIGN-OFF"
+fragility:
+  variable_count: 8
+  verifiability_ratio: "4 of 8 externally observable"
+  single_point_failure: "Loss of any one top-3 client (38-42% of consolidated revenue) with no named replacement pipeline disclosed"
+  fragility_verdict: "FRAGILE"
+candidate_count: 7
+research_brief_items: 12
+plain_summary_points: 15
+annex:
+  present: true
+  questions_answered: 10
+  corpus_commit_hash: "bd1fb48acf73463c37f111f712db0658dc44cd3e"

@@ -1,0 +1,65 @@
+stage: B04-bizmodel
+company: "SYSTANGO"
+run_date: "2026-08-29"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - "Client concentration high and disclosed in Inv. Pres. (top-3 38-42%, top-10 65-72% of consolidated revenue every year FY23-FY26), contrary to upstream note of no disclosure; the H1FY26 46-48% top-3 figure from the spear brief (Nov-2025 deck, not in this corpus) is higher than this June-2026 deck's full-year FY26 top-3 figure of 42%, suggesting concentration eased in H2FY26 or the two decks measure different periods"
+  - "Related-party sales were 42.1% of standalone revenue in FY24, not just 32.2% in FY25 (AR Note 21.8B, p.90); the ratio is falling but was higher than the upstream note flagged"
+  - "Standalone trade receivable turnover fell from 7.81x to 4.90x FY24 to FY25 (DSO ~47 to ~74 days), with a large single related-party receivable (Systango Inc, USA, Rs.353.46 lakh) at FY25-end"
+  - "~55% of net IPO proceeds (Rs.1,704.75 lakh of Rs.3,083.53 lakh) remained unutilised through FY25-end, two years post-listing, generating treasury income that inflates reported PBT"
+  - "Revenue-by-vertical percentages (Inv. Pres. 'Revenue by Verticals' chart) were read off a stacked bar chart, not a data table; treat as directional, not exact"
+business_type: "services"
+revenue_streams:
+  - {name: "Staff augmentation / T&M project billing", type: "services, linear (person-hours)", pct_of_revenue: 0, predictability: "M"}
+  - {name: "Managed & maintenance contracts", type: "services, recurring", pct_of_revenue: 0, predictability: "M"}
+  - {name: "Solution licensing (Swotter, Shootih, Mi-VerifyQR)", type: "IP licensing", pct_of_revenue: 0, predictability: "L"}
+  - {name: "BaaS (Blockchain-as-a-Service)", type: "platform-as-a-service", pct_of_revenue: 0, predictability: "L"}
+asset_intensity: "light"
+wc_intensity: "medium"
+pricing_power: "moderate"
+cyclicality: "secular-growth"
+moats_present:
+  - {moat: "Cost advantage (India-delivery billed in GBP/USD)", durability: "moderate"}
+  - {moat: "Switching costs (embedded client-team model)", durability: "low-moderate"}
+  - {moat: "Brand/intangible (Clutch 'Top' rankings, niche reputation)", durability: "low-moderate"}
+  - {moat: "Regulatory (SEZ tax holiday, RBI Account Aggregator licence)", durability: "low, tapering"}
+valuation_methods:
+  primary: {method: "P/E on normalised (ex-other-income) EPS, cross-checked to Section 1B destination PE", why: "profitable, asset-light, single reportable segment; other income is ~15-24% of PBT and must be stripped first"}
+  secondary: {method: "EV/EBITDA, net of cash and investments", why: "Rs.4,602.37 lakh (AR) to ~Rs.830mn (Inv. Pres. FY26) sits on the balance sheet; EV, not market cap, is the right denominator"}
+  tertiary: {method: "Net-cash-adjusted floor check", why: "~55% of IPO proceeds still unutilised two years post-listing; worth checking a cash-adjusted floor against market cap"}
+  not_applicable: ["Dividend Discount Model (too short a dividend history, growth-stage)", "Replacement cost / asset-based ex-cash (no material hard-asset base)", "Segment-level SOTP (single reportable operating segment disclosed)"]
+irrelevant_ratios:
+  - {ratio: "Net profit margin as reported", why: "inflated by treasury/other income, ~24% of standalone PBT FY25"}
+  - {ratio: "Debt-Equity ratio", why: "company is debt-free; always reads as a non-signal"}
+  - {ratio: "Inventory turnover / days inventory", why: "no inventory line; services business"}
+  - {ratio: "Fixed-asset turnover", why: "balance sheet dominated by financial investments, not productive fixed assets"}
+  - {ratio: "Standalone-only revenue growth", why: "understates the group; ~32-42% of standalone revenue is intercompany billing to UK/US subsidiaries"}
+must_track_metrics:
+  - {metric: "Consolidated revenue growth YoY", healthy: "sustained above ~20%", red_flag: "deceleration below ~10%"}
+  - {metric: "EBITDA margin, ex-other income", healthy: "expanding on the operating line (30.2% to 37.6%, FY23-FY26)", red_flag: "compression >300bp YoY"}
+  - {metric: "Top-3 / top-10 client concentration", healthy: "stable or falling from 42%/72% (FY26)", red_flag: "rising further"}
+  - {metric: "Standalone trade receivable turnover / DSO", healthy: "recovering toward 6-7x", red_flag: "further fall below 4.5x / DSO beyond 90 days"}
+  - {metric: "Revenue per employee", healthy: "continued rise (Rs.16.8L to Rs.29.4L, FY23-FY26)", red_flag: "flat or falling while headcount grows"}
+unit_economics:
+  unit: "one employee (billed person-time; per-hour rate not disclosed)"
+  revenue_per_unit: "~Rs.29.4 lakh/employee/year consolidated FY26, up from ~Rs.16.8 lakh FY23 (Inv. Pres.)"
+  margin_per_unit: "fully loaded standalone employee cost ~Rs.12.4 lakh/head FY25 (AR Note 18) vs. consolidated revenue/head ~Rs.24.3 lakh FY25 -- implies wide cost-arbitrage spread"
+  key_lever: "mix shift toward higher-value AI/ML/GenAI work drives revenue-per-head growth faster than headcount growth (operating leverage), not volume/headcount addition"
+first_deterioration_signals:
+  - {risk: "Revenue model: client concentration", first_signal: "QoQ revenue deceleration with no offsetting new-client growth, or a named top-3 client change"}
+  - {risk: "Margin: FX/wage-arbitrage dependence", first_signal: "Employee Benefits Expense growth outpacing revenue growth (currently favourable, 8.7% vs 16.4% FY24-FY25)"}
+  - {risk: "Balance sheet: receivable ageing, related-party concentration", first_signal: "further fall in trade receivable turnover ratio, or rise in doubtful-debt/bad-debt provisions"}
+  - {risk: "Execution: small team scaling cutting-edge AI/blockchain delivery", first_signal: "jump in provision for doubtful debts or bad debts written off (Rs.18.50 lakh FY25 vs nil FY24)"}
+  - {risk: "Structural: SEZ tax holiday step-down", first_signal: "effective tax rate rising above the stable ~18-20% band"}
+mgmt_questions:
+  - "What is the rupee split between staff augmentation, managed contracts, and solution licensing/BaaS revenue, and what share is genuinely recurring?"
+  - "Why does standalone-to-related-party sales run 32-42% of standalone revenue through the UK/US subsidiaries, and is the transfer-pricing structure stable and audited?"
+  - "Who are the identified top-3/top-10 clients, and what is their contract renewal status entering FY27?"
+  - "What is utilisation, given headcount grew ~13.5% while consolidated revenue grew 34.7% (FY25 to FY26)?"
+  - "What is the deployment plan for the ~Rs.1,704.75 lakh of still-unutilised net IPO proceeds, and the rationale for the large treasury balance?"
+  - "What is the SEZ tax-holiday timeline and expected normalised effective tax rate after step-down?"
+  - "Is the swing in the 'IT' client-vertical share (~50-55% to ~25%, FY24-25 to FY26) genuine diversification or a single client roll-off?"
+one_line_verdict: "Cost-arbitrage AI/Web3 boutique with real operating leverage, undercut by heavy client concentration and treasury-inflated margins."
+analyst_note: "Two findings the upstream note did not have: (1) the June-2026 Inv. Pres. DOES disclose full client-concentration history (top-1/3/5/10, FY23-FY26) -- this resolves the 'no external disclosure' gap, though it shows FY26 full-year top-3 at 42%, below the 46-48% H1FY26 figure cited from the Nov-2025 deck, an inconsistency worth reconciling downstream. (2) Related-party sales were actually higher in FY24 (42.1% of standalone revenue) than FY25 (32.2%), a bigger swing than the single 32.2% figure implies. Revenue-per-employee is the standout unit-economics finding: it nearly doubled FY23-FY26 while headcount was flat, the cleanest evidence of genuine mix-driven quality growth in the file. Treat this as an SME-platform (NSE Emerge) micro-cap: thin disclosure depth, promoter-controlled (Rathi family), small related-party rent payments to promoter entities (arm's length, immaterial in size)."

@@ -1,0 +1,72 @@
+stage: B04-bizmodel
+company: "CMSINFO"
+run_date: "2026-08-29"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Investor presentation is image-heavy; pre-extracted text was thin but sufficient for text/table content read directly from the deck. No chart-only data was estimated."
+  - "BLA/transaction-linked revenue as % of total revenue NOT FOUND in AR or Investor Presentation; company memory's ~12% figure is an unanchored spear-pass estimate."
+  - "Prospectus absent from corpus (carried forward from B00)."
+  - "No explicit RBI/state cash-in-transit licensing or regulatory-barrier text found in this AR."
+flags:
+  - "HAWKAI revenue stated as Rs200 million (AR p.32, Directors' Report) vs Rs200 Cr (AR pp.4-5/52, Chairman's Letter and MD&A; Inv. Pres. slide 20) -- a 100x internal AR discrepancy. Rs200 Cr used as reconciled figure (2 of 3 sources agree); Directors' Report line unresolved."
+  - "Contract tenure inconsistent within corpus: SBI cited as both nine years (MD&A p.51) and 10-year (Directors' Report); HDFC cited as both three years (MD&A p.51) and 5 years (Inv. Pres. slide 7, post-AR)."
+  - "Three non-comparable segment-reporting bases coexist in the same AR (statutory Ind AS 108, BRSR business-activity, MD&A alternative view); AR explicitly states they are not directly comparable."
+  - "Post-tax ROCE fell from 25.2% (FY25) to 16.6% (FY26), standalone (MD&A p.52) -- material deterioration not emphasised in company memory's spear pass."
+  - "DSO rose 116 -> 116 -> 126 days FY24-FY26 (standalone) alongside OCF/EBITDA conversion falling 76.2% -> 65.9%; corroborates Stage 2's receivables-ageing concern (G-1)."
+business_type: "hybrid"
+revenue_streams:
+  - {name: "ATM Management Solutions (cash logistics, BLA, banking automation)", type: "outsourced managed service, mixed fixed-fee/volume-linked", pct_of_revenue: 54, predictability: "M"}
+  - {name: "Retail Solutions & Currency Logistics", type: "outsourced logistics service, mostly fixed-fee", pct_of_revenue: 24, predictability: "M"}
+  - {name: "Technology & Payment Solutions (HAWKAI, ALGO, Payment Cards)", type: "recurring/SaaS-like plus product", pct_of_revenue: 15, predictability: "H"}
+  - {name: "Product / hardware sales (ATMs, recyclers, kiosks resold)", type: "trading", pct_of_revenue: 7, predictability: "L"}
+asset_intensity: "medium"
+wc_intensity: "high"
+pricing_power: "moderate"
+cyclicality: "cyclical"
+moats_present:
+  - {moat: "Proprietary route/transaction/incident dataset (16 years, 150,000+ touchpoints)", durability: "high"}
+  - {moat: "National CIT network density, 97% geographic coverage", durability: "high while scale lead holds"}
+  - {moat: "Multi-year integrated bank contracts (switching costs)", durability: "moderate-high, resets per contract cycle"}
+  - {moat: "Full-stack owned technology (HAWKAI hardware+software+AI)", durability: "high, self-reinforcing"}
+valuation_methods:
+  primary: {method: "Sum-of-the-parts (three platforms valued separately)", why: "Platforms have genuinely different growth (Tech +42% YoY vs Retail -7.8% YoY FY26), margin and predictability profiles; MD&A itself separates and quantifies them"}
+  secondary: {method: "Normalised / through-cycle P-E, peer-referenced", why: "Cross-check against listed/global peers; corrects for FY26's cash-supply-shock distortion on trailing earnings"}
+  tertiary: {method: "DCF", why: "Long-dated contracts (SBI 10yr) and historically strong cash conversion support it, but FY26 conversion dip and rising DSO argue for cross-check status only, not primary anchor"}
+  not_applicable:
+    - "EV/Sales or ARR-style SaaS multiples (only ~15% of business has SaaS-like economics)"
+    - "Blended single-multiple EV/EBITDA as a standalone primary (masks the three-platform mix shift the thesis depends on)"
+    - "Asset-based / replacement cost (value sits in contracts, data and relationships, not depreciated fleet/hardware)"
+irrelevant_ratios:
+  - {ratio: "Gross margin (SaaS-style)", why: "No clean SaaS gross-margin structure exists here; misapplies the manifest's auto-picked sector row to a business that is ~85% non-SaaS by revenue"}
+  - {ratio: "EV/Sales, ARR multiples", why: "Only the Technology & Payment Solutions slice (~15%) has SaaS-like economics; blending mischaracterises the dominant cash-logistics core"}
+  - {ratio: "Revenue per employee", why: "27,000-strong frontline workforce is being converted to variable-cost gig labour by design; the ratio dilutes mechanically and is not comparable across periods"}
+  - {ratio: "ROE in isolation", why: "Distorted by large cash balances and periodic buybacks; company's own preferred metric (ROCE) is cleaner"}
+  - {ratio: "Trailing single-quarter P/E unadjusted for the cash-supply shock", why: "FY26/Q1 FY27 earnings are depressed by a management-attributed external event; unadjusted multiple misstates valuation until the shock's persistence is confirmed"}
+must_track_metrics:
+  - {metric: "Services revenue growth vs FY27 guidance (Rs2,650-2,750 Cr)", healthy: "double-digit YoY, on or above guidance", red_flag: "sub-10% for two consecutive quarters"}
+  - {metric: "Technology & Payment Solutions % of services revenue", healthy: "rising toward FY30 target 20-22% from 16% FY26", red_flag: "flat or declining share for two consecutive quarters"}
+  - {metric: "EBITDA margin", healthy: "25-27%, on/above FY27 guidance of ~27%", red_flag: "sustained sub-24% for 2+ quarters"}
+  - {metric: "DSO / cash conversion (CFO vs PAT)", healthy: "DSO stabilising 116-120 days, CFO/PAT above 1.2x", red_flag: "DSO past 126 days rising further, or CFO/PAT below 1.0x"}
+  - {metric: "Post-tax ROCE", healthy: "re-approaching 20%+", red_flag: "sustained sub-18% beyond FY27"}
+unit_economics:
+  unit: "one ATM under a management/cash-logistics contract"
+  revenue_per_unit: "Industry reference bands cited in AR (not CMS-specific actuals): currency-outsourced bank-owned ~Rs2.2 lakh/ATM/pa; BLA ~Rs4.5 lakh/ATM/pa; WLA ~Rs5 lakh/ATM/pa (AR p.22-23)"
+  margin_per_unit: "NOT FOUND"
+  key_lever: "Layering recurring technology revenue (HAWKAI, ALGO) onto the already-built physical network without proportional new fixed cost"
+first_deterioration_signals:
+  - {risk: "BLA/transaction-linked revenue exposed to bank currency-supply shortfalls", first_signal: "ATM Management Solutions segment revenue growth decoupling from overall services revenue growth"}
+  - {risk: "Fixed-cost network creates operating deleverage on volume dips", first_signal: "Consolidated EBITDA margin, quarterly"}
+  - {risk: "Receivables-heavy working capital structure deteriorating", first_signal: "Trade receivables days / OCF-to-PAT conversion ratio"}
+  - {risk: "Large-contract ramp delays (SBI precedent, FSS integration risk)", first_signal: "Gap between contracted order book/TCV and realised services revenue over the following 1-2 quarters"}
+  - {risk: "Structural cash-to-digital substitution / net ATM count decline outpacing volume growth", first_signal: "Total ATMs managed/serviced (unit count), tracked independent of rupee revenue"}
+mgmt_questions:
+  - "What is BLA/transaction-linked revenue as an exact % of total revenue, and what is the sensitivity to the cash-fulfilment low persisting through FY27?"
+  - "HAWKAI revenue is stated as both Rs200 million and Rs200 Cr within the same AR -- which is correct, and does it reconcile against the Rs373.5 Cr Tech & Payment Solutions segment total?"
+  - "Post-tax ROCE fell from 25.2% to 16.6% in one year -- how much is cyclical versus structural, and what is the expected recovery path?"
+  - "SBI contract tenure is cited as both nine years and 10-year, HDFC as both three years and 5 years -- which figures are correct?"
+  - "Why did DSO rise from 116 to 126 days, and which customer segment drives the 1-2 year overdue receivables bucket?"
+  - "What closes the remaining ~30% of FY27 revenue not yet contracted (down from 85% in May to ~70% in August)?"
+  - "Can management reconcile the statutory Ind AS 108 segments with the MD&A's alternative-view platforms used for the transition narrative?"
+one_line_verdict: "Real cash-to-tech mix shift, but earnings and two internal AR data conflicts need independent confirmation."
+analyst_note: "Two unresolved internal AR inconsistencies matter for downstream stages: (1) HAWKAI revenue Rs200mn vs Rs200 Cr, a 100x gap between the Directors' Report and every other mention including the investor presentation -- treat Rs200 Cr as reconciled but flag the source conflict when this number is cited; (2) SBI/HDFC contract tenure figures differ between MD&A and Directors' Report/investor presentation. Neither changes the qualitative thesis (mix shift toward fixed-fee and technology revenue is real and multiply-corroborated) but both should be pinned before Role 1 valuation cites exact figures. Separately, post-tax ROCE's fall from 25.2% to 16.6% (standalone, FY26) is a materially larger deterioration than company memory's narrative emphasises and should be weighed alongside the DSO/cash-conversion softening as a single working-capital-and-returns thread, not three separate flags."

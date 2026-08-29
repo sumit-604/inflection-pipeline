@@ -1,0 +1,64 @@
+stage: B03-ardeep
+company: "SYSTANGO"
+run_date: "2026-08-29"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Corpus file labelled FY2023 Annual Report is actually the FY2024-25 (21st) Annual Report; no FY2023 AR exists in corpus (CORPUS-MISLABELLED, carried from Stage 2)"
+  - "No customer/client concentration disclosure anywhere in the AR (no segment note, no named-client note) -- confirmed by direct full read, top-3 client concentration ~46-48% H1FY26 from SPEAR brief cannot be verified against this document"
+  - "Rs250cr / $25M FY26 revenue guidance figure (SPEAR brief) NOT FOUND anywhere in this AR -- must originate from an external source outside this corpus"
+  - "Exact auditor appointment start date/rotation-year anchor not independently re-verified beyond the 5-year-term-to-24th-AGM reference"
+  - "No pledge-status confirmation located for promoter shareholding (SME-exchange lighter disclosure regime); treated as NOT FOUND, not confirmed-zero"
+  - "DBX Holdings Ltd ownership percentage and control basis not disclosed despite a newly-confirmed FY25 equity stake (Rs166.11L, held at subsidiary level)"
+  - "Prior-year (FY23-24) Chairman's letter not available in corpus -- Phase 6D tone/priority-drift comparison not possible"
+flags:
+  - {type: FLAG-CASH, reason: "CFO/PAT below 0.7x threshold in ALL FOUR standalone/consolidated x FY24/FY25 cells (0.348x/0.506x standalone, 0.522x/0.513x consolidated); standalone receivables +76.3% vs revenue +16.4%, turnover -37.3%; new 1-2yr ageing bucket appeared from zero (Cash Flow Statements p.74/106; Note 12/22(f))"}
+  - {type: FLAG-PROMOTER-PRELIM, reason: "No selling detected -- promoter holding stable-to-mildly-increasing (72.00% to 72.07% FY24-FY25), no pledge found (though not independently confirmed as zero given SME-exchange disclosure regime); this is a preliminary positive read, full promoter verdict comes from B08"}
+phase_verdicts: {p1: "WATCH tilting RED (unaudited consolidated subsidiary; no KAM identified)", p2: "RED (gratuity non-provisioning, undisclosed loan book, consolidated Note 22 gaps, IPO acquisition bucket 0% utilised)", p3: "RED (CFO/PAT below 0.7x all four cells; other income 23.8% of standalone PBT; EBITDA margin overstates core operating profitability)", p4: "RED (near-total absence of company-specific risk disclosure; acquisition guidance unsupported by capital deployment)", p5: "WATCH tilting RED (Chairperson 25% board attendance; 60% family board representation; subsidiary audit/compliance scope gap)", p6: "RED (Tech Alchemy acquisition claim silently dropped from all operational sections -- Phase 6E)", p7_best_fit: "Guidance Divergence (flag for Halt 1 follow-up); GARP-WATCHLIST if guidance concerns resolve"}
+overall_quality: 4.5
+quality_components: {governance: 5, accounting: 3, balance_sheet: 6, earnings: 4}
+kill_switch_notes:
+  - "Phase 1: a human reviewer would pause -- one consolidated subsidiary is entirely unaudited (2.2% of consol PAT), none of four foreign subsidiaries audited by the principal Indian auditor. Flags forward, does not halt."
+  - "Phase 2: a human reviewer would pause -- multiple independent RED findings (gratuity non-provisioning, undisclosed lending, unaudited subsidiary, unexplained RPT-to-equity conversion) outweigh the clean audit opinion and zero-debt balance sheet. Flags forward, does not halt."
+  - "Phase 3: a human reviewer would flag the cash-conversion/receivables/treasury-allocation pattern as moving unfavourably in concert despite strong reported PAT growth. Flags forward, does not halt."
+  - "Phase 4: a human reviewer would pause specifically on the forward-guidance credibility gap (acquisitions confidence vs zero capital deployment). Flags forward, does not halt."
+  - "Phase 5: a human reviewer would flag Chairperson's 25% board attendance and the compounding subsidiary-oversight gap (unaudited + un-reviewed secretarial compliance) as worth a direct management question. Flags forward, does not halt."
+triple_pass_verification:
+  verified: 15
+  discrepancies: []
+missing_risks:
+  - {risk: "Client/related-party revenue concentration risk", evidence: "RPT sales 32.2%/42.1% of standalone revenue across 5 counterparties (Note 21C.8, p.89-91); no external client-concentration disclosure exists anywhere in the AR"}
+  - {risk: "SEZ tax-holiday (Sec 10AA) sunset risk", evidence: "Effective tax rate 18.06%/19.88% vs deferred-tax rate 29.12% (Note 5.3, Note 7); 5+5 year holiday schedule implies future effective-rate rise"}
+  - {risk: "Related-party-adjacent lending recoverability risk", evidence: "Rs529.55L unsecured, on-demand, undisclosed-counterparty loans, Rs217.78L fresh disbursement FY25 (Note 14/14.1 p.83; CARO iii p.65-66)"}
+  - {risk: "Actuarial/gratuity catch-up exposure", evidence: "Cash-basis gratuity/leave policy, no provision or actuarial assumptions disclosed (Note 21B.7, p.86)"}
+  - {risk: "Cybersecurity/data-security risk", evidence: "Company markets AI agents, Intelligent Document Processing, client data handling (front matter p.4, p.8) with no mirrored risk disclosure anywhere in the AR"}
+  - {risk: "Audit-scope/capacity risk (single small local firm covering a 4-country group)", evidence: "3 of 4 subsidiaries audited by other auditors, 1 unaudited (Consolidated Auditor's Report Other Matter, p.~97-98)"}
+guidance_table:
+  - {claim: "Rs250cr / $25M FY26 revenue target (per SPEAR brief)", number: "Rs250cr / $25M", timeframe: "FY26", credibility: "NOT FOUND in this AR -- unverifiable from this document, external source"}
+  - {claim: "Confident we will hit the further-acquisitions objective this year (explicit IPO object)", number: "Qualitative", timeframe: "FY26", credibility: "LOW -- Rs800L acquisitions IPO bucket at 0% utilisation 2+ years post-listing; Tech Alchemy UK deal has zero corroboration elsewhere in the AR (Phase 6E)"}
+  - {claim: "EBITDA margin 44% (consolidated)", number: "Rs29.68Cr, 44%", timeframe: "FY25 delivered", credibility: "Accurate as computed on its own definition, but embeds other income/treasury returns; core operating EBITDA margin excl. other income is ~34-36%"}
+  - {claim: "UK marketing team build-out; strengthened US business development", number: "Qualitative", timeframe: "FY26", credibility: "Cannot verify -- no budget, headcount, or milestone disclosed anywhere in the AR"}
+  - {claim: "Freshers-hiring / young-talent investment narrative", number: "Qualitative", timeframe: "FY25 claimed as executed", credibility: "Partially checkable -- standalone employee cost grew only +8.7% YoY vs 16.4% revenue growth; no headcount figure disclosed to confirm directly"}
+monitorables:
+  - {metric: "Standalone CFO/PAT ratio", threshold: "Rise toward >=0.7x; further decline below 0.348x is a hard stop-and-question signal", where: "Quarterly cash flow statement", why: "Direct test of whether receivables-driven cash-conversion problem is resolving or worsening"}
+  - {metric: "Standalone trade receivables DSO", threshold: "Stabilise/fall from ~75 days; further rise toward 90+ days is a red flag", where: "Quarterly results / receivables note", why: "Tests whether FY25 deterioration is a one-year event or a trend"}
+  - {metric: "IPO Strategic Investment & Acquisitions bucket utilisation", threshold: "Any deployment above 0% (Rs800L allocated)", where: "Next AR Board's Report IPO-utilisation table; interim stock-exchange filings", why: "Direct test of the Phase 6E finding and the SPEAR-flagged guidance-vs-delivery gap"}
+  - {metric: "Tech Alchemy Limited (UK) transaction status", threshold: "Signed/closed/abandoned, with disclosed consideration and funding source", where: "Stock exchange filings, next AR", why: "Resolves whether the founders' letter claim was accurate-but-early or overstated"}
+  - {metric: "Subsidiary audit status (all 4 entities)", threshold: "All entities move to audited status", where: "Next consolidated Auditor's Report Other Matter paragraph", why: "Direct test of whether the Phase 1C control-scope gap is remediated"}
+  - {metric: "DBX Holdings Ltd ownership percentage and control basis", threshold: "A stated ownership %, control basis, and business rationale disclosed", where: "Next AR consolidated notes / RPT disclosure", why: "Resolves the Phase 2B open finding on the customer-to-investee conversion"}
+  - {metric: "Effective tax rate trend", threshold: "Drift toward statutory rate (25-29%) over multiple years confirms SEZ sunset risk materialising", where: "Quarterly/annual tax note", why: "Tests the Phase 2A monitorable directly, a mechanical future drag on PAT growth"}
+ar_new_downstream_entities:
+  - {name: "DBX Holding Ltd", where_in_ar: "Consolidated Note 8 (Non-Current Investments, p.112), Standalone Note 21C.8 RPT list", entity_type: "Newly-acquired unquoted equity investee (19,500 shares GBP 0.001 each, Rs166.11L, Previous Year Nil), held at subsidiary level, formerly a customer via RPT sales (Rs156.98L FY24, NIL FY25)"}
+  - {name: "GreenLeaf TDG Ltd", where_in_ar: "Consolidated Note 8 (Non-Current Investments, p.112)", entity_type: "Newly-acquired unquoted equity investment (320 shares GBP 1 each, Rs35.88L, Previous Year Nil), held at subsidiary level, no other AR disclosure"}
+  - {name: "Tech Alchemy Limited (UK)", where_in_ar: "Founders' Note / Letter to Shareholders (p.13) only", entity_type: "Named target of an 'in the process of signing a binding acquisition agreement' -- appears nowhere else in the AR (Phase 6E Quiet Abandonment finding); flagged for Role 5.5 tracker verification"}
+strengths_top3:
+  - "Zero bank debt, NIL contingent liabilities both years, unqualified audit opinions standalone and consolidated, organic (non-leverage-driven) ROE ~26%"
+  - "Every hard financial figure quoted in the founders' letter reconciles exactly to the audited notes -- accurate on the numbers it discloses"
+  - "Clean promoter shareholding trend (72.00% to 72.07%, no selling, no pledge found), independent-majority fully-attended Audit Committee, 0% non-audit auditor fees"
+red_flags_top3:
+  - "CFO/PAT persistently below 0.7x across all four standalone/consolidated x FY24/FY25 cells (as low as 0.348x); ~55% of standalone assets sitting in treasury/investments against a 0%-utilised Rs800L acquisitions IPO object"
+  - "No actuarial gratuity/leave provision; Rs529.55L unsecured, actively-growing loans to undisclosed counterparties; consolidated Note 22 omits contingent liabilities/RPT/EPS; one subsidiary entirely unaudited in consolidation"
+  - "Founders' letter's Tech Alchemy (UK) 'binding acquisition agreement' claim has zero corroboration anywhere else in the same AR (Phase 6E Quiet Abandonment), directly paralleling the SPEAR-flagged guidance-vs-delivery pattern"
+best_fit_strategy: "Guidance Divergence (flag for Halt 1 verification); GARP-WATCHLIST contingent on resolving the acquisition-guidance and cash-conversion gaps"
+one_line_verdict: "Debt-free and numerically honest, but cash-starved growth and an unfunded acquisition promise keep this a watchlist name."
+analyst_note: "The AR's own documents, read end to end, independently corroborate the SPEAR brief's guidance-vs-delivery concern without needing the external Rs250cr/$25M figure at all: the founders' letter names a specific binding UK acquisition and promises further acquisitions with confidence, while the same document's own IPO-utilisation table shows the acquisitions bucket at 0% deployment two-plus years post-listing, and the named target (Tech Alchemy) appears nowhere else in the filing. This is a stronger, AR-native version of the guidance-divergence flag than the SPEAR brief itself supplies, and should be the lead verification item at Halt 1, alongside the unaudited-subsidiary finding, which the notes-only Stage 2 pass could not surface because it lives in the auditor's Other Matter paragraph rather than in any note."

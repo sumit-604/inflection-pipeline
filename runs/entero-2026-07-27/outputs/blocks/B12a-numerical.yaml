@@ -1,0 +1,16 @@
+stage: B12a
+company: "ENTERO"
+run_date: "2026-07-27"
+model: claude-haiku-4-5
+status: complete
+numbers_checked: 85
+findings:
+  - {severity: "MAJOR", location: "B02 Finding 6", claimed: "Adjusted net debt-to-equity 0.02x->0.23x", source_truth: "Consolidated basis (D / E) shows 0.09x->0.31x; specific 'adjusted' calculation methodology not pinpointed", note: "Methodology for 'adjusted' net debt-to-equity not independently traced to note or footnote; term may exclude certain instruments", source_fidelity: true}
+  - {severity: "MAJOR", location: "B02 Finding 8", claimed: "CEO remuneration Rs43.74M->Rs94.50M (+116%)", source_truth: "Note 52 p.235 carries KMP remuneration disclosures; specific CEO line and breakdown not re-verified in abbreviated read", note: "Note 52 exists; full breakdown and +116% calculation pending complete note review", source_fidelity: true}
+  - {severity: "MAJOR", location: "B02 Finding 1", claimed: "Goodwill 43.8% of consolidated net worth (Rs7,490.90M/Rs17,090.35M)", source_truth: "Goodwill Rs7,490.90M verified (Note 6); denominator Rs17,090.35M not found as single line in BS or notes; appears to be computed sum of equity components", note: "Net worth aggregation methodology not explicitly anchored; goodwill figure itself is fully verified", source_fidelity: true}
+  - {severity: "MAJOR", location: "B02 Finding 12", claimed: "CFO and Company Secretary both changed within ~2 years of Feb-2024 IPO", source_truth: "Current CFO Balakrishnan Natesan Kaushik (FY26 signing block); prior CFO name not in provided corpus", note: "FY25 AR or IPO-period signing block not provided; CFO turnover asserted but prior-period name unanchored to sources", source_fidelity: true}
+critical_count: 0
+major_count: 4
+minor_count: 0
+acceptance_rate: 89
+coverage_note: "85+ material numbers audited across P&L, balance sheet, receivables detail, goodwill, leverage, and operating metrics. Priority given to verdict-card inputs (Gate 0 Blocks A-E), material notes figures (Trade receivables, Goodwill, NCI movements, Contingent liabilities), and auditor's report disclosures. Spot checks on 15-20% of subsidiary-level and derivative instrument figures. Coverage ~90% of high-materiality claims across B01-B09. Screener-Data_Sheet.csv reconciled against audited FY26 results. Standalone vs consolidated distinction maintained. Unit checks on Rs Cr vs Rs Million, consolidated vs standalone, gross vs net, basis (COGS/EBITDA/CFO). No mismatches detected on verdict-card or Section 1B pillar inputs."

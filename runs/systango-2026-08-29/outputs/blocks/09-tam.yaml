@@ -1,0 +1,64 @@
+stage: B09-tam
+company: "SYSTANGO"
+run_date: "2026-08-29"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "No sourced SME/mid-market vs Tier-1-enterprise split of the UK+US geography-filtered SAM pool (customer/capability filter applied qualitatively only, SAM read as outer bound)"
+  - "Management did not disclose a company-specific numeric TAM/market-opportunity figure in the Investor Presentation or FY24-25 AR MD&A reviewed; only macro industry backdrop (global IT spend $5.5tn, India IT $282.6bn) was cited"
+  - "No sourced top-3/competitor-concentration figure for Systango's specific 4-segment niche"
+  - "Revenue contribution of the pending Tech Alchemy Ltd (UK) acquisition and the FY26 Alibaba Cloud alliance not disclosed, so SAM-expansion-lever headroom (5D) could not be quantified"
+flags:
+  - "TAM/SAM computed via global segment-sum and geography-weighted methodologies; company's true addressable pool is likely narrower still given the un-sourced SME/enterprise capability filter"
+  - "Runway classification MASSIVE reflects market-ceiling headroom only (SAM ~5,454x current revenue); SOM (execution-bounded, 10% conservative CAGR) is the governing figure per operator instruction and sits BELOW the market's own 17% blended growth rate -- do not read MASSIVE as a growth forecast"
+  - "No explicit company-specific TAM claim found in either document; the mgmt_claim_cr/ratio fields below use the broadest macro figure management cited (global IT spending $5.5tn) as the only available framing benchmark, not a literal scoped TAM claim"
+  - "SOM conservative case (10% CAGR) applies an explicit, disclosed halving of the historical realized 3yr CAGR (20%, deck-sourced) to reflect the documented D-rated forward-guidance credibility and ~64% FY26 revenue-target miss carried from an earlier pipeline stage -- this halving is an analyst methodology choice, not a sourced market data point"
+  - "Blockchain/Web3 segment (16% of FY26 revenue) carries materially higher demand cyclicality than the other two segments; the blended 17% TAM growth rate may overstate durability of this slice specifically"
+market_definition: "Offshore AI/ML+cloud, app-development and blockchain/Web3 digital-engineering services sold mainly to UK+US startups/scale-ups/enterprises (93.7% of FY26 revenue)"
+tam_cr: {conservative: 893500, realistic: 1456000}
+sam_cr: 493000
+sam_pct_of_tam: 55.2
+som_3yr_cr: 120.3
+som_5yr_cr: 145.6
+som_implied_revenue_cagr: {yr3: 10, yr5: 10}
+current_sam_share_pct: 0.018
+revenue_headroom_x: 5454
+tam_growth_pct: 17
+runway_class: "MASSIVE"
+mgmt_claim_cr: 5247000
+mgmt_claim_ratio: 58.7
+mgmt_claim_read: "inflated"
+capacity_check: "sufficient (no capex constraint, asset-light per B07); SOM 3yr (Rs120.3cr) implies ~409 technical staff at current Rs29.4L revenue/employee vs 285 in FY26, a ~44% headcount increase over 3 years -- binding constraint is hiring pace/talent competition, not capital"
+methods_used:
+  - "top_down_segment_sum"
+  - "bottom_up_geography_weighted_outsourcing"
+  - "peer_aggregation_flagged_low_confidence"
+  - "geography_export_share_benchmark"
+stale_data_flags: []
+searches_performed:
+  - "global IT services market size 2025 2026 forecast CAGR billion"
+  - "global generative AI services market size 2025 billion CAGR forecast"
+  - "global cloud professional services managed services market size 2025 billion"
+  - "global blockchain as a service market size 2025 billion CAGR"
+  - "custom software application development services market size 2025 billion global"
+  - "digital engineering services market size 2025 billion CAGR"
+  - "India IT services export revenue NASSCOM FY26 FY2025-26 billion"
+  - "UK IT outsourcing offshore software development market size billion 2025"
+  - "US IT outsourcing market size 2025 billion"
+  - "Indian boutique digital engineering IT services companies revenue peers"
+  - "InfoBeans Technologies revenue FY25 FY26 crore annual report"
+  - "Cigniti Technologies revenue FY25 crore annual"
+  - "USD INR exchange rate today August 2026"
+  - "Systango Technologies share price P/E ratio NSE SME August 2026"
+  - "Global Market Insights / Mordor / MarketDataForecast segment market-size source attributions"
+searches_skipped: []
+downstream_candidates:
+  - {signal: "AWS Partner Network tier status (Select Tier Services Partner)", entity_type: "counterparty", demand_link: "Hyperscaler referral channel feeds Cloud & AI/ML segment deal flow", likely_source: "AWS Partner Network directory", cadence: "quarterly", shared: true}
+  - {signal: "Google Cloud Partner status & GenAI specialisation", entity_type: "counterparty", demand_link: "Referral and credibility channel feeding AI/ML segment", likely_source: "Google Cloud Partner directory", cadence: "quarterly", shared: true}
+  - {signal: "Alibaba Cloud strategic alliance (entered FY26)", entity_type: "counterparty", demand_link: "New AI-driven cloud-migration deal-flow channel, new geography reach", likely_source: "Alibaba Cloud partner announcements / company RNS filings", cadence: "event-driven", shared: false}
+  - {signal: "UK ICT/digital-services outsourcing spend", entity_type: "macro", demand_link: "65.65% of FY26 revenue originates in UK, largest single geography", likely_source: "ONS ICT services statistics / techUK", cadence: "quarterly", shared: false}
+  - {signal: "US enterprise digital-transformation/IT spend", entity_type: "macro", demand_link: "28.04% of FY26 revenue, second-largest geography", likely_source: "Gartner IT spending forecast", cadence: "quarterly", shared: false}
+  - {signal: "Top-10 client revenue concentration (72% of FY26 revenue)", entity_type: "end-customer", demand_link: "Cuts across all three service lines; any top-10 client move is material", likely_source: "Company investor presentation / RPT disclosures", cadence: "quarterly", shared: true}
+  - {signal: "Tech Alchemy Ltd (UK) pending acquisition", entity_type: "counterparty", demand_link: "Would add UK client base, talent and London presence if completed", likely_source: "Company RNS/exchange filings (NSE) / UK Companies House", cadence: "event-driven", shared: false}
+demand_externally_verifiable: true
+analyst_note: "Two judgment calls not reconstructable from the fields alone: (1) SOM's 10% conservative CAGR is the historical realized 20% CAGR halved as an explicit, disclosed analyst haircut for the D-rated forward-guidance credibility carried from an earlier stage -- not a sourced market number; the 20%/upside case is shown as sensitivity only. (2) No company-specific TAM claim exists in the source documents, so mgmt_claim_cr uses management's broadest cited macro figure (global IT spend $5.5tn) purely as a framing benchmark -- read the 58.7x ratio and 'inflated' tag as 'macro framing is far broader than a scoped opportunity,' not as management overstating its own addressable market, since it never stated one."

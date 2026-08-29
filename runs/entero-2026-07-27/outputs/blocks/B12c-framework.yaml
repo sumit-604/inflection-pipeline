@@ -1,0 +1,25 @@
+stage: B12c
+company: "ENTERO"
+run_date: "2026-07-27"
+model: claude-opus-4-8
+status: complete
+gate0:
+  rules_checked: 38
+  fails: []
+emoat:
+  rules_checked: 25
+  fails:
+    - {rule: "evidence-quality multiplier keyed to evidence TYPE (documented 1.0x)", severity: MINOR, detail: "Rows B3, D2, D1 labelled documented (or documented-lead) but multiplied 0.7 not 1.0. Conservative (lowers score); strict application raises total 18.8->~20.7, still MODEST (12-24), still below EM>=25 UA qualifier. No classification or decision impact."}
+valuation:
+  rules_checked: 0
+  fails: []
+  status: pending_phase_3
+business_understanding_narrative: {present: false, five_questions_answered: false, prose_only: false, section6_candidates_named: 0, valuation_vocab_leak: false, fails: ["out of phase-1 scope; stage 13 not audited here"]}
+recomputed_destination_pe: ""
+recomputed_decision: ""
+findings:
+  - {severity: MINOR, location: "B07 Section 5 scoring table, rows B3/D2/D1", issue: "documented-labelled rows multiplied by 0.7 rather than the fixed 1.0 for the documented tier; conservative deviation, no classification or UA-qualifier impact (total 18.8 vs strict <=20.7, both MODEST)."}
+critical_count: 0
+major_count: 0
+minor_count: 1
+acceptance_rate: 98

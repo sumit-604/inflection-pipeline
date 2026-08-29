@@ -1,0 +1,46 @@
+stage: B06-peers
+company: "SYSTANGO"
+run_date: "2026-08-29"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - "Q6 (IPO-vintage revenue-target benchmark) is structurally unverifiable against this peer set: none of INFOBEAN, KSOLVES, or ONWARDTEC is an FY22-23 IPO vintage."
+  - "Q3 (margin comparison) has no FY23/H1FY24 peer data at all; only current-era (FY25-27) comparators exist, confounded by archetype mismatch (ONWARDTEC is mechanical/auto-heavy engineering services, not close to Systango's digital-engineering/blockchain mix)."
+peers_provided: 12
+verified: []
+partially_verified:
+  - {claim: "H1FY24 revenue growth industry-wide slowdown (tests Systango's 60%->30% guidance cut)", peers: ["INFOBEAN"]}
+  - {claim: "Peer EBITDA margins vs Systango's >25%/34%/37.6% claims", peers: ["KSOLVES", "INFOBEAN", "ONWARDTEC"]}
+  - {claim: "Blockchain/Web3 demand softness cited as FY23/H1FY24 headwind", peers: ["INFOBEAN"]}
+contradicted:
+  - {claim: "Client payment cycles lengthened to 30-60 days as industry-wide stress in FY23/H1FY24", contradicting_peer: "KSOLVES", quote_anchor: "KSOLVES Q1FY26 (Jul-2025 call, Q&A): debtors 'less than 60 days from the last two years,' framed as a discipline achievement, not stress, over the window that includes H1FY24"}
+  - {claim: "Peer managements deflect to global large-caps only / are uniformly evasive on competitor questions", contradicting_peer: "ONWARDTEC", quote_anchor: "ONWARDTEC Q4FY26 (May-2026 call, Jigar Mehta): names L&T Technology Services, KPIT, Cyient, and Tata Technologies as direct India-listed comparators when asked"}
+unverifiable:
+  - {claim: "FY22-23 IPO-vintage peer multi-year revenue target vs FY25/FY26 delivery (benchmarks Systango's ~64% FY26 miss)", peers_checked: ["INFOBEAN", "KSOLVES", "ONWARDTEC"]}
+peer_coverage_map:
+  - {peer: "INFOBEAN", quarter: "Q1FY26 (Jul-2025)", usage: "SUBSTANTIVE", contribution: "Blockchain-exit quote; 24% margin target established; FY21-23 doubling / FY24-25 stagnation narrative"}
+  - {peer: "INFOBEAN", quarter: "Q2FY26 (Nov-2025)", usage: "CITED-ONLY", contribution: "Confirms demand-strength/margin-target trend already established; no new decisive fact"}
+  - {peer: "INFOBEAN", quarter: "Q3FY26 (Feb-2026)", usage: "SUBSTANTIVE", contribution: "Direct competitor-deflection quote on TCS comparison"}
+  - {peer: "INFOBEAN", quarter: "Q4FY26/FY26 (May-2026)", usage: "SUBSTANTIVE", contribution: "Receivables/90-day Fortune-500 payment-cycle quote; FY26 stagnation-and-breakout narrative; FY26 margin data"}
+  - {peer: "KSOLVES", quarter: "Q1FY26 (Jul-2025)", usage: "SUBSTANTIVE", contribution: "'Debtors <60 days for last two years' quote; margin 26.4%/~37% adjusted; IPO-vintage ~2020 established"}
+  - {peer: "KSOLVES", quarter: "Q2FY26 (Oct-2025)", usage: "CITED-ONLY", contribution: "Confirms 25-30% margin guidance trajectory; no decisive new fact"}
+  - {peer: "KSOLVES", quarter: "Q3FY26 (Jan-2026)", usage: "SUBSTANTIVE", contribution: "9M margin decline 37.8%->29.9%; explicit no-pricing-pressure statement"}
+  - {peer: "KSOLVES", quarter: "Q4FY26/FY26 (May-2026)", usage: "SUBSTANTIVE", contribution: "FY26 margin 29.7% vs FY25 34.8%; DFM product retreat and P&L cost admission; war-related UAE order-delay disclosure"}
+  - {peer: "ONWARDTEC", quarter: "Q2FY26 (Oct-2025)", usage: "SUBSTANTIVE", contribution: "DSO ~73 days trending to 65; EBITDA margin 14.3% vs prior-year 'low single digit'; auto-vertical de-growth and tough-industry-year framing"}
+  - {peer: "ONWARDTEC", quarter: "Q3FY26 (Jan-2026)", usage: "CITED-ONLY", contribution: "Continues DSO/margin trend already established; no major new decisive fact"}
+  - {peer: "ONWARDTEC", quarter: "Q4FY26/FY26 (May-2026)", usage: "SUBSTANTIVE", contribution: "Direct India-listed competitor naming (L&T Tech, KPIT, Cyient, Tata Technologies); FY26 margin 13.2% vs FY25 'low single-digit'; transportation de-growth detail"}
+  - {peer: "ONWARDTEC", quarter: "Q1FY27 (Jul-2026)", usage: "SUBSTANTIVE", contribution: "'AI affects IT companies, not engineering companies' claim; European auto-OEM project cancellations named explicitly"}
+industry_cross_read:
+  demand: "Split by sub-segment: InfoBeans/Ksolves (ERP/AI/cloud) report healthy-to-strong FY26 demand; OnwardTec (auto-heavy engineering) reports a tougher industry year with automotive OEM slowdown and project cancellations. Neither pattern covers FY23/H1FY24 directly."
+  pricing_inputs: "No peer reports pricing erosion; Ksolves explicitly denies pricing pressure from AI, OnwardTec attributes margin gains to offshore mix and value-chain movement, not price cuts."
+  capex_cycle: "Mixed, not a uniform capacity race: INFOBEAN expanding (headcount, IT park), KSOLVES retreating from a failed product diversification (DFM) back to core services, ONWARDTEC both expanding delivery centres and completing a share buyback. Lone-retreater (Ksolves) is the most relevant analog to Systango's own diversification arc."
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "InfoBeans: repeated start/stop hedging policy, abandoned entirely from Jan-2026 as 'not really making sense' (FX risk-management flip-flop, undisclosed by Systango)"
+  - "Ksolves: war-related delays to UAE customer PO releases directly cut Q4FY26 sequential growth to 1.7%"
+  - "OnwardTec: European automotive OEM project cancellations and shutdowns named as an active, ongoing headwind"
+  - "Ksolves: candid admission that its DFM product investment 'could not generate revenue,' with funds explicitly diverted from services to the failed bet"
+  - "OnwardTec: AI-driven client budget disintermediation -- clients removing AI-addressable scope from outsourcing budget before even issuing an RFQ"
+net_narrative_effect: "complicates"
+analyst_note: "Peer set gives partial, topic-specific support to Systango's framing (blockchain softness, broad FY23-24 slowdown timing) but actively contradicts the receivables-stress framing (Ksolves) and the implied uniform-competitor-evasiveness framing (OnwardTec names peers directly). Q3 margin and Q6 IPO-vintage questions are structurally unanswerable from this peer set (wrong period, wrong listing vintage) rather than answered negatively -- treat as gaps, not as silent contradictions."

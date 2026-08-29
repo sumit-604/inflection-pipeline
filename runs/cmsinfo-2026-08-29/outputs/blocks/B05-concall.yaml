@@ -1,0 +1,75 @@
+stage: B05-concall
+company: "CMSINFO"
+run_date: "2026-08-29"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["G-1 DSO/WC contradiction (external AR data, not resolved by concalls)", "G-3 FSS revenue contribution beyond ~Rs20cr Q1 FY27 accrual not disclosed", "G-7 Q1 FY27 transcript now confirmed present and read (closes this gap)"]
+flags: ["DSO/receivables promise (normalise by end-March 2026) never revisited in 2 subsequent calls despite external evidence of deterioration", "ATM count target 74,000-75,000 silently dropped, never delivered", "segment reporting retired coincident with weakest segment (cash management)", "2-year self-admitted forecasting miss streak (FY25, FY26)", "buyback executed at Rs340, ~40% underwater at CMP", "currency-supply causality claim not independently verifiable from transcript alone"]
+quarters_analysed: ["Q2 FY26", "Q3 FY26", "Q4 FY26", "Q1 FY27"]
+triggers:
+  - {priority: 1, name: "Currency-supply normalisation to pre-shock fulfilment levels", type: "sectoral/volume", timeframe: "near (Q2 FY27)", conviction: "M", confirm_signal: "National fulfilment data recovers AND CMS services revenue responds in lockstep next quarter", kill_signal: "Fulfilment recovers but CMS revenue does not respond, falsifying the external-shock framing"}
+  - {priority: 2, name: "SBI/ICICI/HDFC contract ramp-through", type: "volume", timeframe: "near-medium", conviction: "H", confirm_signal: "Sequential services revenue growth continues at guided 11-14% ATM/retail pace", kill_signal: "Any of the three contracts shows unexplained execution slippage"}
+  - {priority: 3, name: "Margin guidance raise to ~27% holding for a full year", type: "cost/quality", timeframe: "medium (FY27)", conviction: "M-H", confirm_signal: "Q2-Q4 FY27 margins print at or above 26.5-27%", kill_signal: "Margin reverts toward 24-25% once Q1 FY27 one-off drivers roll off"}
+  - {priority: 4, name: "Tech & Payments crossing 20% of services revenue", type: "volume/price-mix", timeframe: "medium (Q4 FY27)", conviction: "M-H", confirm_signal: "HAWKAI/ALGO MVS win rate holds at 35-40% platform growth guided", kill_signal: "Pipeline conversion stalls or new entrant undercuts on price"}
+  - {priority: 5, name: "PSU/IBA repricing for statutory cost pass-through", type: "regulatory-policy", timeframe: "near (end Q2 FY27)", conviction: "M", confirm_signal: "IBA committee delivers repricing framework by end Q2 FY27 as promised", kill_signal: "Committee timeline slips past Q2 FY27 with no interim relief"}
+  - {priority: 6, name: "DSO/receivables normalisation", type: "balance sheet quality", timeframe: "overdue", conviction: "L", confirm_signal: "Next filing shows DSO/WC days genuinely improving", kill_signal: "DSO/WC days continue widening, threatening the LBF-1 cash-conversion thesis"}
+  - {priority: 7, name: "Further AGS-share capture / industry consolidation", type: "inorganic/sectoral", timeframe: "medium-long", conviction: "M", confirm_signal: "CMS discloses a specific, quantified AGS-share-capture number", kill_signal: "A well-capitalised new entrant contests the vacated share"}
+guidance:
+  - {item: "FY26 services revenue growth", number: "8% (H2 Rs1,225cr vs H1 Rs1,125cr)", timeframe: "FY26", stated_in: "Q2 FY26 call, Nov-2025"}
+  - {item: "FY27 services revenue", number: "Rs2,700-2,800cr (15-19% growth)", timeframe: "FY27", stated_in: "Q2 FY26 call, Nov-2025"}
+  - {item: "ATM count in cash business", number: "74,000-75,000", timeframe: "March 2026", stated_in: "Q2 FY26 call, Nov-2025; reaffirmed Q3 FY26 call, Feb-2026 (deadline slipped to March/April)"}
+  - {item: "FY27 services revenue / total revenue", number: "Rs2,700-2,800cr / Rs2,800-2,900cr", timeframe: "FY27", stated_in: "Q3 FY26 call, Feb-2026; reaffirmed Q4 FY26 call, May-2026"}
+  - {item: "FY27 EBITDA margin", number: "25-26%", timeframe: "FY27", stated_in: "Q3 FY26 call, Feb-2026; reaffirmed Q4 FY26 call, May-2026 (closing remarks)"}
+  - {item: "DSO normalisation", number: "back to normal levels", timeframe: "end-March 2026", stated_in: "Q3 FY26 call, Feb-2026 (never revisited after)"}
+  - {item: "FSS acquisition close", number: "Rs100-125cr deal value", timeframe: "March-end 2026 (slipped to end Q1 FY27)", stated_in: "Q3 FY26 call, Feb-2026; slippage disclosed Q4 FY26 call, May-2026"}
+  - {item: "FY27-FY30 services revenue CAGR", number: "13-14%", timeframe: "FY27-FY30", stated_in: "Q4 FY26 call, May-2026"}
+  - {item: "Buyback", number: "Rs168cr at Rs340/share, ~3% of equity", timeframe: "executed 19-Jun-2026", stated_in: "Q4 FY26 call, May-2026"}
+  - {item: "FY27 services revenue / total revenue", number: "Rs2,650-2,750cr / Rs2,750-2,850cr (CUT)", timeframe: "FY27", stated_in: "Q1 FY27 call, Aug-2026"}
+  - {item: "FY27 EBITDA margin", number: "~27% (RAISED from 25-26%)", timeframe: "FY27", stated_in: "Q1 FY27 call, Aug-2026"}
+  - {item: "FY27 capex", number: "Rs100-125cr (down from FY26's Rs350cr)", timeframe: "FY27", stated_in: "Q1 FY27 call, Aug-2026"}
+  - {item: "Currency-supply fulfilment normalisation", number: "from 70% (Q1) to 80-85% (current), target normal", timeframe: "end Q2 FY27", stated_in: "Q1 FY27 call, Aug-2026"}
+  - {item: "Tech & Payments contribution to services revenue", number: ">20%", timeframe: "end Q4 FY27", stated_in: "Q1 FY27 call, Aug-2026"}
+promise_delivery:
+  delivered: 1
+  partial: 5
+  missed: 3
+  rows:
+    - {promised_in: "Q2 FY26 (Nov-2025)", promise: "FY26 services revenue growth 8%", outcome: "Actual 6% (Q4 FY26 call)", explanation: "External drag Rs150cr quantified (weather, SBI delay, offsite ATM contraction), missed"}
+    - {promised_in: "Q2 FY26 (Nov-2025), reaffirmed Q3/Q4", promise: "FY27 services revenue Rs2,700-2,800cr", outcome: "Cut to Rs2,650-2,750cr (Q1 FY27 call)", explanation: "Explicit, quantified Rs25cr currency-supply shock, expected normalise end Q2 FY27"}
+    - {promised_in: "Q2 FY26 (Nov-2025), reaffirmed Q3 FY26", promise: "ATM count 74,000-75,000 by March/April 2026", outcome: "Still ~70,000 as of Q1 FY27 call", explanation: "None given, dropped without comment"}
+    - {promised_in: "Q3 FY26 (Feb-2026)", promise: "Q3 is margin bottom; Q4 +150-170bps; FY27 25-26%", outcome: "Q4 +280bps delivered; Q1 FY27 further +170bps to 27.2%, guidance raised to ~27%", explanation: "Route automation, pricing discipline, Tech & Payments mix; corroborated by printed quarter"}
+    - {promised_in: "Q3 FY26 (Feb-2026)", promise: "DSOs back to normal levels by end of March", outcome: "Never mentioned again; external AR evidence suggests deterioration, not improvement", explanation: "None; topic dropped by both management and analysts"}
+    - {promised_in: "Q2 FY26 (Nov-2025)", promise: "SBI RFP concluded, Rs500cr incremental over 10 years", outcome: "Contracted Dec-2025; scope revealed as ~5,000 ATMs (L1 of a re-bid), not original 10,000-ATM sole-bidder award; headline Rs500cr held", explanation: "Scope-halving disclosed only when asked directly, not proactively"}
+    - {promised_in: "Q2 FY26 (Nov-2025)", promise: "Margins trend back to FY25 level (~26.1%) by fiscal year end", outcome: "FY26 full-year margin ~24.0-24.1%, still below FY25; Q4 alone reached 25.6%", explanation: "Quarterly trajectory recovered; full-year average target missed"}
+    - {promised_in: "Q2 FY26 (Nov-2025)", promise: "October retail recovery (+20% MoM) to sustain and drive H2 sequential improvement", outcome: "Q3 FY26 growth only 4% QoQ (below implied run-rate); Q4 FY26 delivered 6% QoQ helped by GST 2.0", explanation: "Q3 softness attributed to deliberate DSO-driven pruning, not demand failure"}
+    - {promised_in: "Q3 FY26 (Feb-2026)", promise: "FSS deal (Rs100-125cr) close by March-end 2026", outcome: "Slipped to end of Q1 FY27 (~June 2026); confirmed closed with ~Rs20cr Q1 revenue accrual", explanation: "No explanation offered for the ~1-quarter slip"}
+excuse_pattern: "balanced"
+repeated_evasions:
+  - {question: "Can you give segment/business-line level profitability (cash vs managed services vs tech)?", quarters_asked: ["Q2 FY26", "Q3 FY26", "Q4 FY26", "Q1 FY27 (structurally foreclosed)"], classification: "deflected every time"}
+credibility_grade: "B"
+credibility_basis: "Guidance held 3 quarters then cut with unusually well-quantified, verifiable reasoning (LBF-3, corroborated by an already-printed 27.2% margin quarter); margin promise beaten and raised; two explicit, named self-admissions of poor calls (SBI capacity over-investment, 2-year forecasting miss streak). Capped from A by two silently dropped promises (ATM count, DSO normalisation) with zero acknowledgment, and by a segment-reporting change that reduced visibility exactly where a segment was underperforming."
+peer_questions:
+  - {question: "Did other cash-logistics/ATM MSPs report a currency-supply shortfall of comparable magnitude (~30% shortfall vs indent, recovering from ~70% to ~80-85% fulfilment) in Q1 FY27/Apr-Jun 2026, or is CMS an outlier?", why: "Tests whether LBF-2 is a genuine sector-wide external shock or a CMS-specific issue dressed as external", check_peers: ["RADIANTCMS", "SIS", "AGSTRA"]}
+  - {question: "What ATM cash-fulfilment percentage do peers cite for the same Mar-Aug 2026 window, and does it match CATMi's ~57% April 2026 national low?", why: "Independently verifies severity/timing of the shock underlying LBF-2 and LBF-3", check_peers: ["RADIANTCMS", "SIS"]}
+  - {question: "Do peers corroborate that the ATM transaction-fee pricing model is 'dead' and a recent RFP cleared near Rs25/transaction against Rs19 interchange?", why: "Falsifiable claim underpinning the fixed-price margin-quality narrative", check_peers: ["RADIANTCMS", "SIS", "AURIONPRO"]}
+  - {question: "Do peers report minimum-wage increases of 6-60% and fuel cost increases of ~8% in the same period, and have any secured repricing ahead of CMS?", why: "Tests whether the promised PSU repricing is sector-wide and timeboxed or CMS-specific optimism", check_peers: ["RADIANTCMS", "SIS"]}
+  - {question: "What ATM count trend (growth/decline, on-site vs off-site mix) do peers report over the same four quarters?", why: "Cross-checks the shrinking-units claim and CMS's own stalled 74-75,000 target", check_peers: ["RADIANTCMS", "SIS", "AGSTRA"]}
+  - {question: "How much of the AGS-vacated ~12% market share do peers claim to have captured, and does the sum plausibly stay under 100%?", why: "CMS never quantifies its own AGS-share capture; peer sum is the only sanity check", check_peers: ["RADIANTCMS", "SIS", "UDS"]}
+  - {question: "Do peers show DSO/receivables deterioration in the same window as CMS (116->126 days per company memory)?", why: "Tests the unaddressed Section 2D silence on DSO; industry-wide vs CMS-specific", check_peers: ["RADIANTCMS", "SIS", "AGSTRA"]}
+  - {question: "Has any peer disclosed a comparable NCR-Brinks global consolidation threat or a competitor entering via payment-aggregator license?", why: "Tests whether competitive-intensity risks raised on CMS calls are sector-wide or CMS-specific framing", check_peers: ["RADIANTCMS", "SIS", "AURIONPRO"]}
+red_flags:
+  - "DSO/receivables promise (normalise by end-March 2026) never revisited in 2 subsequent calls despite external evidence of deterioration, directly threatening the LBF-1 cash-conversion thesis"
+  - "ATM count target 74,000-75,000 silently dropped, never delivered, never acknowledged as missed"
+  - "Segment reporting retired coincident with weakest segment (cash management), reducing future visibility"
+  - "Two-year self-admitted forecasting miss streak (FY25, FY26) with no specific process fix named"
+  - "Buyback executed at Rs340, ~40% underwater at CMP, surfaced without concrete forward capital-return commitment"
+  - "Currency-supply causality claim (bullwhip effect, not demand-driven) not independently verifiable from transcript alone"
+dropped_triggers:
+  - "ATM count 74,000-75,000 target (set Q2 FY26, reaffirmed Q3 FY26, never mentioned again)"
+  - "DSO normalisation by end-March 2026 (set Q3 FY26, never mentioned again)"
+timeline_slippages:
+  - "SBI RFP closure delayed from February to April to December 2025 (recapped in Q4 FY26 shareholder letter/call)"
+  - "ATM count 74,000-75,000 deadline slipped from 'March' (Q2 FY26 call) to 'end of March or April' (Q3 FY26 call), then never delivered"
+  - "FSS deal close slipped from 'March-end 2026' (Q3 FY26 call) to 'end of Q1 FY27' i.e. ~June 2026 (Q4 FY26 call)"
+analyst_note: "The strongest evidence is LBF-3 (revenue cut, margin raised, same breath, backed by a printed 27.2% quarter). Weigh it against two quiet facts: a DSO promise made once and never revisited, and an ATM-count target that vanished without comment. Management is highly disciplined and transparent about numbers it chooses to defend, and comfortably silent on ones that would complicate the story. That asymmetry, not any single quarter's miss, should travel into stage 6 and stage 11."
+no_concall_mode: false

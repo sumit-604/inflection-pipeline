@@ -1,0 +1,111 @@
+stage: B00-inputs
+company: CMSINFO
+run_date: 2026-08-29
+model: orchestrator-inline
+status: complete
+spear_gate: HIT            # companies/CMSINFO.md carries "Spear: HIT" (2026-08-29)
+run_type: full
+listed_context: "IPO 31-Dec-2021; ~4.7y before run_date -> long-listed, prospectus NOT expected (not a gap)."
+
+inventory:
+  prospectus: 0            # absent; long-listed, expected absence, NOT a gap
+  annual-report: 1         # Annual_Report_2023.pdf == FY2025-26 report (147pp). Filename mislabeled by collector.
+  results: 2               # 05f75e67 = 14-May-2026 audited FY26 + Q4 (24pp); e21eec72 = 10-Aug-2026 Q1 FY27 (12pp)
+  rating: 1                # 142128.pdf = ICRA full rationale 31-Mar-2026, [ICRA]AA+ (Stable)/A1+ (7pp)
+  concalls: 4              # Nov-2025, Feb-2026, May-2026, Aug-2026
+  peer-concalls: 24        # AGSTRA(4) AURIONPRO(4) QUESS(4) RADIANTCMS(4) SIS(4) UDS(4)
+  announcements: 0         # no primary Reg-30 PDFs; reconstructed from concalls/results/presentation + operator digest
+  shareholding: 1          # operator-ferried screener quarterly table (Sep2023->Jun2026)
+  research: 2              # operator announcements digest (non-anchored) + operator web-leads; plus misfiled broker note
+  screening: 42            # screener + 6 peers; SEE collect_defects: only Data_Sheet populated
+  presentation: 2          # Investor_Presentation_1 (Q1FY27 deck, 24pp, image-heavy) + 91190 (broker note, misfiled)
+  other: 0
+
+input_gaps:
+  - "prospectus: absent. Long-listed (IPO Dec-2021, >3y); expected, NOT a gap. Backward baseline built from AR FY26 + screener Data_Sheet FY18-FY26."
+  - "announcements: no primary Reg-30 PDFs. Documented-ACTION record reconstructed from concalls + results + presentation PDFs (anchored) with operator digest as non-anchored cross-check. Stages 5/7/8 grade actions off concall/results, not filed Reg-30 text."
+  - "shareholding: no filed SHP PDF; operator-ferried screener quarterly table stands in (aggregator tier). Sufficient to close FII/DII trend and confirm NO-PROMOTER; UA institutional-absence qualifier fails (institutions HIGH), so UA withheld."
+  - "screening split-CSVs (screener + all 6 peers) P&L/Balance_Sheet/Cash_Flow/Quarters are EMPTY (labels only). Only Data_Sheet.csv populated. collect_to_repo v3 defect. Gate 0 sources financials from Data_Sheet + FY26 results filing + AR FY26."
+  - "presentation Investor_Presentation_1.pdf is an image-heavy slide deck; text extraction thin (~2,619 words/24 slides). Stages needing slide chart values fall back to Read on the PDF page."
+
+collect_defects:   # LESSONS: collect_to_repo v3 recurring defects, recorded not silently fixed
+  - "AR filename Annual_Report_2023.pdf is actually the FY2025-26 annual report (confirmed p.2 'Annual Report 2025-26'). Mislabeled year. Treated as FY26 AR."
+  - "Broker 'Weekly Wealth' BUY/HOLD/SELL note misfiled in presentation/ (91190-...pdf). NON-ANCHORED research; not a company investor presentation."
+  - "sector_cap_row auto-picked 'Platform / SaaS / IT services'. Likely WRONG: CMS is a business-services / cash-logistics / outsourcing platform (archetype: Outsourcing partner). FLAG for operator ruling at phase 3 / stage 11. Not overridden here."
+  - "screener split financial CSVs empty (only Data_Sheet populated)."
+
+freshness_pairs:
+  - pair: "RESULTS -> CONCALL (same quarter)"
+    trigger_doc: "results/e21eec72 (10-Aug-2026, Q1 FY27)"
+    mate_expected: "Q1 FY27 concall"
+    status: PASS
+    missing_doc: ""
+  - pair: "RESULTS -> CONCALL (same quarter)"
+    trigger_doc: "results/05f75e67 (14-May-2026, Q4/FY26)"
+    mate_expected: "Q4/FY26 concall"
+    status: PASS
+    missing_doc: ""
+  - pair: "RATING BULLETIN -> RATIONALE"
+    trigger_doc: "rating/142128.pdf (ICRA 31-Mar-2026)"
+    mate_expected: "full rating rationale"
+    status: PASS
+    missing_doc: ""
+  - pair: "SEBI ORDER -> ORDER TEXT"
+    trigger_doc: "none referenced at stage 0"
+    mate_expected: "n/a"
+    status: PASS
+    missing_doc: ""
+  - pair: "AR -> LATEST AUDITED ANNUAL RESULTS"
+    trigger_doc: "results/05f75e67 audited FY26 annual (year ended 31-Mar-2026)"
+    mate_expected: "FY26 annual report"
+    status: PASS
+    missing_doc: ""
+freshness_verdict: FRESHNESS PAIRS OK
+
+concalls_available: true
+no_concall_mode: false
+
+load_bearing_facts:   # from Spear line; every later stage checks these FIRST, anchored to corpus
+  - id: LBF-1
+    claim: "Cash conversion above 1.2x, three years running (FY24-FY26)."
+    stage0_corroboration: "Screener Data_Sheet FY26 CFO 389.59 / PAT 303.39 = 1.28x; FY25 482.53/372.46 = 1.30x; FY24 439.89/347.14 = 1.27x. Matches spear FY26 AR figures (CFO 3,895.94m / PAT 3,033.92m)."
+    verify_against: "results/05f75e67 audited FY26 consolidated cash flow + AR FY26 consolidated cash flow p.214; NOT presentations."
+  - id: LBF-2
+    claim: "Q1 FY27 revenue hit external and quantified: banks supplied ~70% of indented currency, ~Rs25 Cr revenue cost."
+    verify_against: "Concall_Aug_2026 primary transcript (11-Aug-2026). Confirm ~Rs18 Cr own BLA + ~Rs7 Cr other-MSP logistics."
+  - id: LBF-3
+    claim: "Guidance CUT on revenue and RAISED on margin in same call: services to Rs2,650-2,750 Cr (from 2,700-2,800); EBITDA margin to ~27% (from 25-26%)."
+    verify_against: "Concall_May_2026 vs Concall_Aug_2026 + Investor_Presentation_1 side by side. Strongest single transition-evidence item."
+  - id: LBF-4
+    claim: "Cash embezzlement is a recurring CARO line, not a one-off. FY26 25 instances Rs125.35m; FY25 28/Rs217.22m; FY24 10-11/Rs120.53m. FY26 audit-trail limitation on billing + GL software."
+    verify_against: "AR FY26 CARO annexure + audit-trail comment directly."
+
+gaps_to_close:   # from companies/CMSINFO.md Section 3, carried for Halt 1
+  - "G-1 DSO 116->126d vs screener WC days 75.9->117; reconcile against CFO story (AR MD&A ratios p.99, Note 11 receivables)."
+  - "G-2 Q1 FY27 EBITDA margin 26.6% vs 27.2% (total-rev vs services-rev basis) — pin it (Q1 deck slides 3-4)."
+  - "G-3 FSS Rs115 Cr acquisition revenue contribution not disclosed in corpus (Q1 concall Q&A / H1 results)."
+  - "G-4 H1/H2 splits FY24-FY26 and full quarterly P&L FY24/FY25 not disclosed beyond services rev + margin."
+  - "G-5 Geographic / metro-SURU split not disclosed (opacity is a data point)."
+  - "G-6 Full CRISIL/ICRA/CARE rationale — ICRA rationale IS in corpus (rating/142128). CRISIL/CARE if any: gap."
+  - "G-7 Q1 FY27 concall transcript present (Concall_Aug_2026) and newer than Q1 results filing: CONFIRMED in corpus."
+
+structural_notes:   # carried from companies/CMSINFO.md Section 4 for stages 8/10
+  - "NO PROMOTER. Sion (Advent/Baring) exited Feb-2024, declassified wef 2-Apr-2025. Promoter tests NOT DISCLOSED because none exists."
+  - "UA multiplier does NOT apply: institutional ownership HIGH (FII+DII 58.70% Jun-2026)."
+  - "FY26 exceptional Rs92.44m consol (Labour Codes). ATM useful life 7->10y wef 1-Jan-2026 lowered FY26 depreciation Rs47.65m (earnings-quality flag)."
+  - "Corporate guarantees Rs800m for Securitrans; loan Rs580.12m to Transaction Solutions International (India) (relationship NOT DISCLOSED - flag for extraction)."
+
+operator_context:
+  empty_folder_gate: "Answered by operator 2026-08-29: proceeded; operator ferried shareholding (screener) + announcements digest inline. Single permitted question spent."
+  web_leads: "ValuePickr thread supplied (non-anchored). Passed to stages 8/9 only; container web may be unavailable -> record skip if so."
+
+flags: []
+analyst_note: >
+  Corpus is fresh (all four freshness pairs pass) and rich for a services name: current FY26 AR,
+  audited FY26 + Q1 FY27 results, 4 own concalls spanning the inflection, 24 peer concalls, ICRA full
+  rationale, populated screener Data_Sheet FY18-FY26. Two collector defects matter downstream: the AR
+  year mislabel (resolved) and the auto-picked sector_cap_row 'Platform/SaaS/IT services' which must be
+  re-ruled at phase 3 (CMS is a business-services/outsourcing platform, not pure SaaS - it sets the
+  Section 1B cap). Announcements folder empty but its content is anchorable in the concall/results/deck
+  PDFs. LBF-1 already corroborates at stage 0 (1.27-1.30x, three years). No promoter, high institutions:
+  UA withheld, promoter tests N/A by structure not by disclosure failure.

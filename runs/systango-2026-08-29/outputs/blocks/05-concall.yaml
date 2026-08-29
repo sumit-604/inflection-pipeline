@@ -1,0 +1,75 @@
+stage: B05-concall
+company: "SYSTANGO"
+run_date: "2026-08-29"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "No concall in corpus after 17-Nov-2023 (H1FY24); FY24-FY26 guidance walk-back, if any, not observable from management's own voice (CORPUS GAPPED-FRESHNESS)"
+  - "Blue-chip customer win outcome (FY24 goal, Q_FY23 call) not disclosed in any available transcript"
+  - "Client-count target outcome (25-30 -> 40 clients, Q_FY23 call) not disclosed in H1FY24 call"
+  - "H1FY24 revenue figure internally inconsistent within the H1FY24 transcript itself: opening remarks state ~Rs29cr/34% growth, Q&A gives Rs26.92cr vs Rs22.39cr (~20.2% growth)"
+  - "UK JV/acquisition final outcome not disclosed (still unclosed, timeline slipping, as of last available call)"
+flags:
+  - "Guidance credibility failure: FY24 growth guidance cut 60%->30% within 4 months, then actual FY24 growth ~8% (HIGH)"
+  - "FY26 Rs250cr/$25M target reaffirmed twice, never reconciled against post-cut arithmetic, delivered at Rs90.4cr (~64% miss) (HIGH)"
+  - "Internal H1FY24 revenue/growth-rate inconsistency within same transcript (MEDIUM)"
+  - "Blue-chip customer FY24 goal silently dropped after Q_FY23 call (MEDIUM)"
+  - "CORPUS GAPPED-FRESHNESS: no concall after Nov 2023 despite continued operations through FY26 (MEDIUM)"
+quarters_analysed: ["FY23 Annual (Jul 2023)", "H1 FY24 (Nov 2023)"]
+triggers:
+  - {priority: 1, name: "Revenue reacceleration toward FY26 Rs250cr/$25M target", type: "VOLUME/PRICE-MIX", timeframe: "long", conviction: "L", confirm_signal: "Quarterly revenue prints returning to 25%+ YoY growth", kill_signal: "Consecutive quarters of single-digit growth (already the observed outcome per delivery evidence: ~8% FY24 growth, Rs90.4cr FY26 actual)"}
+  - {priority: 2, name: "Higher-value mix shift via hyperscaler partnerships and Rust/AI-ML specialisation", type: "PRICE-MIX", timeframe: "near-medium", conviction: "M", confirm_signal: "Disclosed blended realized-rate increase; EBITDA margin holds above 25%", kill_signal: "Rate cards unchanged, margin compresses below 25%"}
+  - {priority: 3, name: "UK consultancy JV/acquisition", type: "INORGANIC", timeframe: "medium (6-12 months from Nov 2023)", conviction: "L", confirm_signal: "Signed deal with disclosed economics and integration plan", kill_signal: "No deal within stated window; cash stays parked in FDs/liquid funds"}
+  - {priority: 4, name: "EBITDA margin durability above 25%", type: "COST", timeframe: "near", conviction: "H", confirm_signal: "Margin sustained in the 30s% (consistent with delivered 37.6% FY26)", kill_signal: "Margin reverts toward high-teens"}
+  - {priority: 5, name: "Solution/product-oriented licensing model (IP platforms)", type: "PRICE-MIX", timeframe: "medium", conviction: "L", confirm_signal: "A separately disclosed product/license revenue line", kill_signal: "No such disclosure ever appears; remains anecdotal pilot activity"}
+  - {priority: 6, name: "Blue-chip enterprise customer win", type: "VOLUME", timeframe: "near (was FY24 goal)", conviction: "L", confirm_signal: "A named/quantified large enterprise logo disclosed", kill_signal: "Goal never mentioned again post-Jul 2023 (already the observed pattern)"}
+guidance:
+  - {item: "Revenue growth (implicit, maintain FY23 rate)", number: "~60% YoY", timeframe: "FY24", stated_in: "Q_FY23 call, Jul 2023"}
+  - {item: "FY26 revenue target", number: "Rs 250 crore+ / $25M", timeframe: "3 years from Jul 2023 (FY26)", stated_in: "Q_FY23 call, Jul 2023; reaffirmed H1FY24 call, Nov 2023"}
+  - {item: "EBITDA margin target", number: ">25%, if not better", timeframe: "Ongoing", stated_in: "Q_FY23 call, Jul 2023; reaffirmed 'Plus' H1FY24 call, Nov 2023"}
+  - {item: "Client count target", number: "~40 clients (from 25-30)", timeframe: "1 year from Jul 2023", stated_in: "Q_FY23 call, Jul 2023"}
+  - {item: "Blue-chip enterprise customer", number: "At least 1", timeframe: "FY24", stated_in: "Q_FY23 call, Jul 2023"}
+  - {item: "Average ticket size", number: "$75,000-$100,000", timeframe: "Ongoing", stated_in: "Q_FY23 call, Jul 2023"}
+  - {item: "Acquisition/JV close", number: "6-9 months", timeframe: "From Jul 2023", stated_in: "Q_FY23 call, Jul 2023"}
+  - {item: "Revenue growth (revised)", number: "30% YoY", timeframe: "FY24, closing Mar-2024", stated_in: "H1FY24 call, Nov 2023"}
+  - {item: "Implied FY24 full-year revenue", number: "'cross 65 plus' (Rs 65cr+)", timeframe: "FY24", stated_in: "H1FY24 call, Nov 2023"}
+  - {item: "Headcount target", number: "~500 people", timeframe: "Tied to $25M FY26 revenue goal", stated_in: "H1FY24 call, Nov 2023"}
+  - {item: "Acquisition/JV close (revised)", number: "6-12 months", timeframe: "From Nov 2023", stated_in: "H1FY24 call, Nov 2023"}
+  - {item: "New office", number: "Dubai", timeframe: "Within 6 months of Nov 2023", stated_in: "H1FY24 call, Nov 2023"}
+promise_delivery:
+  delivered: 1
+  partial: 1
+  missed: 2
+  rows:
+    - {promised_in: "Q_FY23 call (Jul 2023), reaffirmed H1FY24 call (Nov 2023)", promise: "FY26 revenue target Rs 250cr+ / $25M", outcome: "MISSED - delivered Rs 90.4cr FY26 (~64% shortfall), per injected delivery evidence (outside concall corpus)", explanation: "No post-Nov-2023 call exists to source management's own explanation; delivery evidence only"}
+    - {promised_in: "H1FY24 call (Nov 2023)", promise: "FY24 revenue growth ~30% (already cut from implicit ~60% FY23 pace)", outcome: "MISSED - actual FY24 revenue growth ~8%, per injected delivery evidence", explanation: "Management attributed H1FY24 softness to sector-wide IT demand slowdown and customer conservatism (external-blame)"}
+    - {promised_in: "Q_FY23 call (Jul 2023), reaffirmed H1FY24 call (Nov 2023)", promise: "EBITDA margin >25%", outcome: "DELIVERED / EXCEEDED - FY26 EBITDA margin 37.6% full-year, per injected delivery evidence; H1FY24 print already 34%", explanation: "Only promise kept"}
+    - {promised_in: "Q_FY23 call (Jul 2023)", promise: "Close UK JV/acquisition within 6-9 months", outcome: "PARTIAL / slipping as of last available call - still unclosed, timeline extended to 6-12 months at Nov 2023", explanation: "No later call to confirm final outcome"}
+    - {promised_in: "Q_FY23 call (Jul 2023)", promise: "Land at least one blue-chip enterprise customer in FY24", outcome: "NOT FOUND - never referenced again in H1FY24 call; no later concall in corpus", explanation: "Possible dropped trigger; cannot confirm delivered or missed"}
+    - {promised_in: "Q_FY23 call (Jul 2023)", promise: "Grow client count from ~25-30 to ~40 within one year", outcome: "NOT FOUND - no client-count figure given in H1FY24 call", explanation: "Cannot verify against stated year-1 target"}
+excuse_pattern: "external-blame-heavy"
+repeated_evasions: []
+credibility_grade: "D"
+credibility_basis: "Central revenue promises missed badly (FY24 growth guidance cut 60%->30% within 4 months, then actual FY24 growth ~8%; FY26 Rs250cr/$25M target delivered at only Rs90.4cr, a ~64% miss); only the >25% EBITDA margin promise was kept (delivered 37.6%)."
+peer_questions:
+  - {question: "What revenue growth did peer small-cap Indian IT/digital-engineering services companies report for H1FY24 (Apr-Sep 2023)?", why: "Tests whether Systango's growth-guidance cut (60%->30%) reflects an industry-wide slowdown, as management claimed, or company-specific execution weakness", check_peers: ["INFOBEAN", "KSOLVES", "ONWARDTEC"]}
+  - {question: "Did peers report client payment cycles lengthening from 2-3 days to 30-60 days terms in FY23/H1FY24?", why: "Verifies Systango's claimed industry-wide receivables stress vs a company-specific customer-quality issue", check_peers: ["INFOBEAN", "KSOLVES", "ONWARDTEC"]}
+  - {question: "What EBITDA margins did peers report in FY23 and H1FY24, and how does Systango's >25% target (34% H1FY24, 37.6% FY26 delivered) compare?", why: "Benchmarks whether Systango's one kept promise (margin) reflects a real structural advantage or an outlier needing scrutiny of mix/cost-capitalization", check_peers: ["INFOBEAN", "KSOLVES", "ONWARDTEC"]}
+  - {question: "Did any peer cite blockchain/Web3/crypto-linked demand softness (FTX collapse, Binance/Coinbase regulatory action) as a revenue headwind in FY23/H1FY24?", why: "Tests credibility of Systango's claim that its blockchain vertical is largely insulated from crypto-trading volatility", check_peers: ["INFOBEAN", "KSOLVES", "ONWARDTEC"]}
+  - {question: "Do peer managements name specific India-listed competitor peers when asked about competition, or also deflect to large-cap global firms only?", why: "Tests whether Systango's evasive, no-peer-naming answer on competitive positioning is sector-normal or a specific transparency gap", check_peers: ["INFOBEAN", "KSOLVES", "ONWARDTEC"]}
+  - {question: "Did any peer that IPO'd around FY22-23 give a multi-year revenue target at listing, and what was the actual delivery track record against it by FY25/FY26?", why: "Benchmarks whether Systango's ~64% miss on its Rs250cr/$25M FY26 target is unusually poor or typical of small-cap IPO-vintage guidance inflation", check_peers: ["INFOBEAN", "KSOLVES", "ONWARDTEC"]}
+red_flags:
+  - "Guidance credibility failure: FY24 growth guidance cut 60%->30% within 4 months; actual delivered FY24 growth ~8% (HIGH)"
+  - "FY26 Rs250cr/$25M target reaffirmed twice without reconciling post-cut arithmetic; delivered at Rs90.4cr, ~64% shortfall (HIGH)"
+  - "Internal numerical inconsistency within the H1FY24 call itself: ~Rs29cr/34% growth (opening remarks) vs Rs26.92cr/~20.2% growth (Q&A) (MEDIUM)"
+  - "Blue-chip enterprise customer win, an explicit FY24 goal in Jul 2023, silently dropped by the Nov 2023 call (MEDIUM)"
+  - "CORPUS GAPPED-FRESHNESS: no concall after Nov 2023 despite continued operations through FY26 (MEDIUM)"
+  - "Repeated 'don't have that number handy' responses on basic operating metrics across both calls (LOW-MEDIUM)"
+  - "Trade receivables/payment-cycle lengthening (2-3 days to 30-60 days) flagged Jul 2023, not re-confirmed Nov 2023 (LOW)"
+dropped_triggers:
+  - "Blue-chip enterprise customer win (FY24 goal, stated Jul 2023 call, never mentioned again in Nov 2023 call)"
+  - "Client count target (25-30 -> 40 clients, stated Jul 2023 call, no client-count update given in Nov 2023 call)"
+timeline_slippages:
+  - "Inorganic acquisition/JV: '6 to 9 months' to finalize (Jul 2023 call) -> still evaluating target's balance sheet, '6 to 12 months away' (Nov 2023 call), not yet closed"
+  - "FY24 revenue growth guidance: implicit ~60% (maintain FY23 rate, Jul 2023 call) -> explicit 30% (Nov 2023 call), roughly halved within 4 months"
+analyst_note: "SPEAR fact [1] grading: management's ~30% FY24 growth guidance and Rs250cr/$25M FY26 target both FAILED against delivery evidence (~8% FY24 growth; Rs90.4cr FY26, ~64% miss). Only the EBITDA margin promise (>25%, delivered 37.6%) held, which is a cost-side, not growth-side, result and should not be read as validating the revenue thesis. The H1FY24 call contains an unresolved internal numeric inconsistency (29cr/34% vs 26.92cr/~20%) that analysts partially caught in real time but management never reconciled. No concall exists after Nov 2023, so all delivery findings here rest on injected non-concall evidence, not on management's own later voice."

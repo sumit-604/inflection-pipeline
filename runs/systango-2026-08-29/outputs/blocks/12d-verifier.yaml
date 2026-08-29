@@ -1,0 +1,23 @@
+stage: B12d
+company: "SYSTANGO"
+run_date: "2026-08-29"
+model: claude-sonnet-5
+status: complete
+peers_audited: 12
+substantive_confirmed: 9
+substantive_unsupported: []
+unused_but_relevant:
+  - {peer: "KSOLVES", missed_item: "Q2FY26 (Oct-2025) call's '21st result...after launching the IPO, out of 21st, 20 quarters' quote is the decisive Q6 IPO-vintage evidence Part 1 relies on and correctly sources to Oct-2025, but the coverage map rates this quarter CITED-ONLY and credits the contribution to Jul-2025 instead.", anchor: "KSOLVES-Concall_Oct_2025_Transcript.pdf p.7, Ratan Srivastava"}
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "MAJOR", location: "B06 Part 1 Q4 / Part 4", claimed: "Blockchain-exit quote (INFOBEAN Jul-2025) characterized as unprompted, volunteered in prepared remarks", source_truth: "Quote is Avinash Sethi's direct answer to analyst Mohit's explicit blockchain question", note: "Inflates credibility of the report's strongest single corroborating data point"}
+  - {severity: "MAJOR", location: "B06 Part 1 Q1", claimed: "'InfoBeans confirms elsewhere (Nov-2025 call)' the doubling-every-3-years/paused-1-2-years framing", source_truth: "This phrase is analyst Rupesh's own framing inside his question; management's answer does not restate or confirm it", note: "Misattributes analyst framing as management confirmation"}
+  - {severity: "MAJOR", location: "B06 Part 3 coverage map / 06-peers.yaml", claimed: "KSOLVES Q2FY26 (Oct-2025) = CITED-ONLY, no decisive new fact; Q6 IPO-vintage contribution credited to Jul-2025", source_truth: "The '21st result...after launching the IPO' quote (the actual Q6 evidence Part 1 uses) is in the Oct-2025 transcript, p.7", note: "Peer-quarter miscredited; Oct-2025 should be SUBSTANTIVE for Q6"}
+  - {severity: "MAJOR", location: "B06 Part 3 closing paragraph", claimed: "10 of 12 peer transcripts rated SUBSTANTIVE; 2 CITED-ONLY", source_truth: "Same paragraph's own correction and the coverage-map table both show 3 CITED-ONLY (INFOBEAN Nov-2025, KSOLVES Oct-2025, ONWARDTEC Jan-2026), i.e. 9 SUBSTANTIVE", note: "Headline coverage statistic is arithmetically wrong in the prose"}
+  - {severity: "MINOR", location: "B06 Part 1 Q2", claimed: "KSOLVES debtors <60 days quote located in Q&A", source_truth: "Quote is in prepared remarks/presentation, p.8 of 25, before Q&A opens", note: "Cosmetic location error only"}
+critical_count: 0
+major_count: 4
+minor_count: 1
+acceptance_rate: 75    # 9 of 12 peer-quarters handled without a MAJOR/CRITICAL finding
+peer_utilisation: 0.75  # corrected: 9 substantive-confirmed / 12 peers provided (B06's own stated "10/12" is the arithmetic error found above)

@@ -1,0 +1,22 @@
+stage: B13-synthesis
+company: "CMSINFO"
+run_date: "2026-08-29"
+model: claude-opus-4-8
+status: complete
+phase: phase-1-lite
+verdict: "PROCEED WITH CAVEATS"
+verdict_rule_applied: 3   # FLAG-CASH INDETERMINATE cap; rule 4 (confidence 60-74 downgrade) concurs
+flags_active: ["FLAG-CASH", "FLAG-PROMOTER"]
+flag_cash_determination: "INDETERMINATE"
+flag_promoter_verdict: "TRUSTWORTHY (no promoter; management/board; no deal-breakers)"
+confidence_delta: {numerical: 96.7, redflag: 64, framework: 96, peer: 83, overall: 64}
+valuation_decision: ""   # deferred to phase 3
+entry_range: {low: 0, high: 0}
+headline: "Cash logistics leader building a technology layer"
+falsification_metric: "Next receivables ageing shows the 1-2yr overdue bucket widening again while core Cash Management revenue prints a further YoY decline"
+monitorables_count: 8
+publish_candidate: false
+files_written:
+  - outputs/final/business-narrative.md
+  - outputs/final/gate-recommendation.md
+  - outputs/final/verifier-summary.md

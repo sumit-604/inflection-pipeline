@@ -1,0 +1,35 @@
+stage: B01-gate0
+company: "CMSINFO"
+run_date: "2026-08-29"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "prospectus absent (long-listed since Dec-2021, expected)"
+  - "announcements: no filed Reg-30 PDFs in run inputs"
+  - "screener split-CSVs (Profit_Loss/Balance_Sheet/Cash_Flow/Quarters) confirmed empty; Data_Sheet is sole screener source"
+  - "shareholding pattern is screener-tier, not a filed SHP PDF"
+  - "peer/competitor data absent, blocks M2/M5/M7/M9 moat tests (0 = PEER DATA NEEDED)"
+  - "capex and trade-payables breakdown available only FY25-FY26; limits B2/B3/B4/M10/M12 to a 2-year window, FY18-24 NOT FOUND for these sub-metrics"
+  - "R&D/Revenue disclosure not found (M6 = 0, absent disclosure, not a peer gap)"
+  - "ROCE anchored to only 3 years (FY24-26) via AR Key Ratios table; screener Data_Sheet carries no ROCE row"
+flags: []
+data_years: 9
+fy_range: "FY2018 to FY2026"
+blocks: {A: 14, B: 11, C: 15, D: 20, E: 16}
+core_score: 76
+moat_score: 12
+grand_total: 88
+moats_confirmed: 3
+moat_class: "MODERATE"
+classification: "GOOD"
+deal_breakers: []
+history_downgrade: false
+data_notes:
+  - "ROCE: AR p.52 Key Ratios table (FY24-26 only); AR p.21-22 chart shows 2 further FY22-23 values but year-order unconfirmed, excluded from scoring"
+  - "EBITDA margin computed as PBT+Dep+Interest-OtherIncome from Data_Sheet, cross-checked within ~1pp of AR FY24-26; Ind AS 116 (FY20) breaks pre/post comparability"
+  - "FCF and full WC-days computable only FY25-26 (capex and trade payables sourced from audited results p.11/p.13, no earlier-year split in corpus)"
+  - "loss-to-profit swing: none, PAT positive every year FY18-26"
+  - "contingent liabilities (E4) use consolidated AR Note 31a (Rs 554.60m FY26, AR p.128) to match consolidated net worth; standalone figure (Rs 959.82m, AR p.96) not used"
+  - "no promoter since Mar-2024 (Sion/Advent-Baring exited, declassified wef 2-Apr-2025); E1 scored via professionally-managed alt-path (FII+DII 58.70%), E3=5 (0% pledge, trivial), E2 scored neutral 3 rather than formula-literal 0 because the decline is a disclosed orderly PE exit, not insider distress selling"
+block_b_trend: "deteriorating - FY26 FCF -Rs19.7 Cr vs FY25 +Rs328.2 Cr as capex nearly tripled YoY (Rs409.3 Cr vs Rs154.3 Cr); WC days +13.4 (81.9->95.3 days); cash conversion (B1, LBF-1) itself stayed above 1.2x"
+analyst_note: "FY26 shows a real step-down, not noise: ROCE 25.2%->16.6%, EBITDA margin 26.1%->24.1%, FCF flipped negative, and receivable/WC days extended. This same soft-tissue signal (customers taking longer to pay, weaker relative leverage) surfaces independently in four places: B4, M4, M10, M12. The GOOD classification rests on a strong 9-year base and a pristine balance sheet (Block D 20/20, net cash), which the FY26 dip does not touch. Moat score (12/60, MODERATE) is peer-data-starved: 4 of 12 tests (M2, M5, M7, M9) scored 0 solely for missing peer mcap/margin/listed-player data, not because the underlying moat is absent; true moat quality is likely understated pending peer data. No-promoter structure (PE sponsor fully exited, declassified Apr-2025) means E1-E3 use alt-path scoring; the alignment signal worth tracking going forward is the institutional mix shift (DII rising 28.4%->36.0%, FII falling 40.2%->22.7% over two years), not promoter behavior, since none exists."

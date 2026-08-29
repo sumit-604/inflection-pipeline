@@ -1,0 +1,39 @@
+stage: B09b-dossier
+company: "CMSINFO"
+run_date: "2026-08-29"
+model: claude-sonnet-5
+status: complete
+corpus_verdict: "CORPUS GAPPED"
+corpus_gaps:
+  - {document: "Prospectus", expected_source: "N/A (long-listed, IPO Dec-2021)", kind: "plausibly-nonexistent"}
+  - {document: "Filed Reg-30 announcement PDFs", expected_source: "BSE", kind: "findable-missing"}
+  - {document: "Filed shareholding pattern (SHP) PDF", expected_source: "BSE / company IR page", kind: "findable-missing"}
+  - {document: "Screener split financial CSVs (P&L/BS/CF/Quarters, own + 6 peers)", expected_source: "screener.in (re-export)", kind: "findable-missing"}
+  - {document: "Prior-year Annual Reports (FY23, FY24, FY25)", expected_source: "company IR page / BSE filings archive", kind: "findable-missing"}
+  - {document: "CRISIL/CARE rating rationale (if any exists)", expected_source: "rating agency site", kind: "findable-missing"}
+archetypes:
+  - {line: "Cash logistics core (ATM Management + Retail & Currency Logistics, ~78% of revenue)", archetype: "Outsourcing partner"}
+  - {line: "Technology & Payment Solutions (HAWKAI/ALGO/cards, ~15-16%)", archetype: "Outsourcing partner / Platform-network hybrid (manifest auto-picked 'Platform/SaaS/IT services' is likely WRONG; flag for operator correction)"}
+  - {line: "Product/hardware trading (~7%)", archetype: "fits no known archetype (pass-through trading, no moat)"}
+transition:
+  - {line: "Cash logistics core", from_tier: "R2 Cost-Advantaged Converter", to_tier: "R3 Value-Added / Spec'd Supplier", engine: "Contract mix shift transaction-fee -> fixed-price multi-year bank contracts (SBI/ICICI/HDFC)", proof_gate: "EBITDA margin holding at/above ~26.5-27% for a full year (only Q1 FY27 printed 27.2% so far)", recognition_gap: "OPEN: does CMP price the fixed-price/switching-cost shift or still anchor to legacy R2 economics? Resolved at Stage 11", ugliness: "UNRESOLVED - supports both ARTIFACT-OF-CLIMB (capex build, ICRA transitory read) and STRUCTURAL-FEATURE (peer-contradicted DSO, SA loss-allowance release vs 16.2x ageing, contracting core); matches B13 FLAG-CASH INDETERMINATE", transition_falsifier: "EBITDA margin reverts toward 24-25% once Q1 FY27 one-offs roll off, or core Cash Management fails to recover post-shock"}
+  - {line: "Technology & Payment Solutions", from_tier: "R2/R3 (nascent, embedded)", to_tier: "R4 Franchise / Share-of-Wallet Leader", engine: "Layering recurring HAWKAI/ALGO revenue onto the built CIT/ATM network without proportional fixed cost", proof_gate: "Tech & Payments crossing >20% of services revenue by end Q4 FY27, from 16% FY26", recognition_gap: "OPEN: same PE-gap question, resolved at Stage 11", ugliness: "UNRESOLVED - same FY26 optic; this line is growing, ugliness sits in the core line and Group ROCE/receivables", transition_falsifier: "Tech & Payments share stalls/declines two consecutive quarters"}
+dominant_variables:
+  - "Technology & Payment Solutions % of services revenue (16% FY26, target >20% Q4 FY27)"
+  - "EBITDA margin sustaining ~27% for a full year (currently one printed quarter)"
+  - "Core Cash Management segment revenue and result trajectory (recovery vs further decline)"
+  - "Receivables ageing / DSO / loss-allowance coverage (moderation vs continued widening)"
+business_falsifier: "A structural multi-year decline in national cash usage (CIC reversal or UPI substitution outpacing cash-ATM growth for several years) combined with the core Cash Management contraction proving permanent even after the currency-supply shock passes"
+mental_model_status: "DRAFT - PENDING OPERATOR SIGN-OFF"
+fragility:
+  variable_count: 6
+  verifiability_ratio: "3 of 6 externally observable"
+  single_point_failure: "none - failure requires conjunction, though receivables/DSO deterioration (AGSTRA sector precedent) is closest to a single-point failure"
+  fragility_verdict: "MODERATE"
+candidate_count: 7
+research_brief_items: 10
+plain_summary_points: 15
+annex:
+  present: true
+  questions_answered: 10
+  corpus_commit_hash: "09d50d8888e3ce9ec7b51b9396405450c8bfb90b"

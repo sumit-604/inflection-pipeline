@@ -9,3 +9,4 @@
 | 2 | notes-triple-pass | claude-sonnet-5 | default | - | - | 87566 | 3.7m | 3 |
 | 3 | ar-deep-dive | claude-sonnet-5 | default | - | - | 228784 | 24.9m | 1 |
 | 5 | concall-analysis | claude-sonnet-5 | default | - | - | 90706 | 5.3m | 1 |
+| 8 | promoter-check | claude-sonnet-5 | default | - | - | 129735 | 9.0m | 1 |

@@ -1,0 +1,65 @@
+stage: B08-promoter
+company: "SYSTANGO"
+run_date: "2026-08-29"
+model: claude-sonnet-5
+status: partial
+input_gaps:
+  - "DBX Holdings Ltd (UK, co. 15645030) officers/PSC record not independently fetched from Companies House primary source (egress proxy blocked); same-registered-address/'mutual person'-with-Nilesh-Rathi claim from a WebSearch AI summary is UNVERIFIED, not confirmed or ruled out"
+  - "GreenLeaf TDG Ltd (UK, co. 11489069) officers/PSC record not independently fetched; ownership % and rationale for the FY25 equity stake remain NOT FOUND"
+  - "ValuePickr forum thread (forum.valuepickr.com/t/systango-technologies-ltd/150052) could not be directly fetched (egress-blocked); only title/generic snippet available, no promoter/DBX-specific claims extracted or corroborated"
+  - "NSE archive intimation dated 3-Oct-2025 and board-meeting outcome dated 7-Nov-2025 (nsearchives.nseindia.com) not directly fetched; could not fully rule in/out a Systango-specific CFO/Company Secretary resignation-and-withdrawal event (a matching headline found was SGX-hosted and assessed as unrelated noise, but not conclusively ruled out against the primary NSE filings)"
+  - "Nilesh Rathi's pre-Systango education and employment history NOT FOUND in available search results"
+  - "Exact founding-year sequence (2004 CIN incorporation vs 2006 share-purchase/ownership-consolidation vs 2012 brand launch) not resolved to a single authoritative source"
+flags:
+  - {type: FLAG-PROMOTER, verdict: "CAUTION", top_findings: ["DBX Holdings Ltd customer-to-equity-investee conversion (Rs166.11L FY25) with undisclosed ownership/control and an UNVERIFIED possible Nilesh Rathi link -- highest-priority Halt 1 item", "60% family board representation; Chairperson (promoter's mother) 25% Board attendance FY25; both MD and CFO roles held within the promoter family", "GreenLeaf TDG Ltd (Rs35.88L FY25) undisclosed-rationale equity stake; unresolved funding source for the GBP1.5M Tech Alchemy asset acquisition against a 0%-utilised dedicated IPO acquisitions bucket"]}
+verdict: "CAUTION"
+scorecard: {clean: 5, caution: 4, red: 1}
+deal_breakers: []
+adverse_findings:
+  - {finding: "DBX Holdings Ltd -- FY25 equity stake (Rs166.11L, 19,500 shares GBP0.001 each) acquired the same year it stopped being an RPT customer (Rs156.98L FY24 sales to NIL); ownership % and control basis undisclosed in the AR; WebSearch summary (unverified against primary Companies House record) suggests a shared registered address with Systango's own UK subsidiary and 'Nilesh Rathi as a mutual person'", evidence_tier: "UNVERIFIED", source: "WebSearch AI-summary of Companies House-indexed content (co. 15645030); AR Consolidated Note 8, p.112 for the equity-stake fact itself (VERIFIED)", date: "2026-08-29"}
+  - {finding: "GreenLeaf TDG Ltd -- FY25 equity stake (Rs35.88L, 320 shares GBP1 each) in an unrelated UK environmental-consulting/emissions-tracking firm; no rationale or ownership % disclosed anywhere in the AR", evidence_tier: "VERIFIED (stake fact) / UNVERIFIED (no promoter connection found, no rationale)", source: "AR Consolidated Note 8, p.112; WebSearch, Companies House-indexed summary", date: "2026-08-29"}
+  - {finding: "Chairperson (Sarita Devi Khandelwal, mother of MD Vinita Rathi) attended only 1 of 4 (25%) main Board meetings FY25; 60% of board seats (3 of 5) held by the promoter family", evidence_tier: "VERIFIED", source: "Annual Report FY24-25, Annexure I board-attendance table, p.~26 (carried from Stage 3 Phase 5A)", date: "AR signed 4-Sep-2025"}
+  - {finding: "Tech Alchemy Limited (UK) asset/team acquisition by subsidiary iSystango Ltd, GBP1.5M, Memorandum of Terms signed 19-Jun-2025 -- a real, third-party-counterparty deal (majority owner St Topco Limited, no Rathi-family link found), but not mentioned anywhere in the AR's Board's Report, AOC-1, or subsequent-events sections despite being publicly announced ~2 months before the AR's 4-Sep-2025 signing date; funding source unreconciled against the 0%-utilised Rs800L IPO acquisitions bucket", evidence_tier: "MEDIA (deal fact) / VERIFIED (AR silence, carried from Stage 3 Phase 6E)", source: "Company press release + stockinsights.ai announcement dated ~20-Jun-2025; AR FY24-25 Board's Report/AOC-1 (silence)", date: "2026-08-29 search; deal dated 19-Jun-2025"}
+  - {finding: "Small local audit firm (M/s. Anil Kamal Garg & Company) audits a 4-country group in which one subsidiary's financials enter consolidation entirely unaudited; Secretarial Auditor's scope explicitly excludes subsidiary compliance review", evidence_tier: "VERIFIED", source: "Consolidated Auditor's Report Other Matter, p.~97-98; Secretarial Auditor's letter, Annexure-A, p.49 (carried from Stage 3 Phase 1C/5E)", date: "AR FY24-25"}
+transition_evidence:
+  - "First-ever interim dividend, Rs7 per share, declared for FY2025-26, record date 21-May-2026 -- genuine shift from treasury-hoarding pattern (MEDIA, scanx.trade)"
+  - "SEBI PIT (insider trading) compliance confirmed for FY26 by company self-disclosure (MEDIA, scanx.trade) -- baseline-compliance signal, low weight"
+  - "Promoter pledge status resolved to an explicit 0% (zero encumbrance) declaration for FY26, up from an unconfirmed/NOT FOUND status in the FY25 AR (MEDIA, scanx.trade citing NSE disclosure)"
+pledge_pct_latest: 0
+pledge_trend: "stable at 0% -- FY25 AR showed no pledge disclosure found (treated as NOT FOUND, not confirmed-zero, per Stage 3); FY26 promoter/promoter-group declaration explicitly confirms zero direct or indirect encumbrance (source: scanx.trade citing NSE disclosure, FY26)"
+searches_performed:
+  - "Systango Technologies Vinita Rathi Nilesh Rathi promoter background"
+  - "DBX Holdings Systango UK company"
+  - "Tech Alchemy Limited UK acquisition Systango"
+  - "Systango Technologies SEBI order NSE Emerge"
+  - "GreenLeaf TDG Ltd company UK"
+  - "Systango Technologies pledge encumbrance trend 2024 2025"
+  - "Systango Technologies CFO resignation company secretary auditor change"
+  - "Systango Technologies Glassdoor AmbitionBox employee reviews"
+  - "Systango Technologies IiAS SES proxy advisory news controversy"
+  - "valuepickr Systango Technologies forum discussion"
+  - "Systango CFO change board meeting outcome November 2025"
+  - "Systango Technologies quarterly results Q2 FY26 board meeting"
+  - "Systango OR Vinita Rathi OR Nilesh Rathi SFIO OR ED OR income tax raid OR fraud OR court case"
+  - "DBX Holdings Ltd 15645030 persons significant control shareholders"
+  - "Tech Alchemy Limited 10443169 directors officers persons with significant control"
+  - "Systango Technologies NSE intimation 18 June 2026"
+  - "DBX Holdings director Rathi Companies House"
+  - "Systango Tech Alchemy acquisition completed integration status update"
+  - "DBX Holdings Ltd London officers appointed"
+  - "Vinita RATHI Companies House appointments Systango DBX list of companies"
+  - "Vinita Rathi director DBX Holdings"
+  - "Systango Technologies withdrawal of resignation CFO 2026"
+  - "Systango Technologies DRHP promoter group entities Rathi HUF partnership firm"
+  - "RATHI HOLDINGS 16754887 Companies House Systango"
+  - "Systango Technologies institutional investors FII DII stake entry 2025 2026"
+  - "WebFetch attempts: forum.valuepickr.com, find-and-update.company-information.service.gov.uk (x2), systango.com, stockinsights.ai, nsearchives.nseindia.com -- all EGRESS_BLOCKED"
+searches_skipped:
+  - "Direct Companies House fetch of DBX Holdings Ltd (co. 15645030) officers and persons-with-significant-control pages -- blocked by egress proxy"
+  - "Direct Companies House fetch of GreenLeaf TDG Ltd (co. 11489069) officers page -- blocked by egress proxy"
+  - "Direct Companies House fetch of Systango Ltd UK (co. 07912276) officers page for cross-check against DBX Holdings -- blocked by egress proxy"
+  - "Direct ValuePickr forum thread fetch -- blocked by egress proxy, only search-snippet-level content available"
+  - "Direct NSE archive PDF fetches -- blocked by egress proxy"
+  - "Direct systango.com press-release fetch for Tech Alchemy deal detail -- blocked by egress proxy"
+verdict_basis: "Legal/regulatory/tax record clean and promoter share-transaction/pledge conduct clean across all periods searched, with a genuine FY26 dividend-initiation transition signal; held to CAUTION rather than TRUSTWORTHY by high family board/executive concentration (60% board seats, 25%-attendance family Chairperson, MD+CFO both promoter family) and by the unresolved DBX Holdings ownership/control opacity, which could not be confirmed or ruled out against a primary source in this run and is the swing factor toward CONCERN if a promoter link is confirmed at Halt 1."
+analyst_note: "Two upstream-flagged items resolve with new information this stage: (1) promoter pledge, ambiguous in the FY25 AR, is now explicitly declared zero for FY26 -- a genuine clean read. (2) The Tech Alchemy 'quiet abandonment' Stage 3 flagged is NOT abandonment: the deal is real, signed with an unrelated UK counterparty (St Topco-controlled) for GBP1.5M, publicly announced ~20-Jun-2025, months before the AR's 4-Sep-2025 signing -- the AR's failure to mention it is a disclosure-consistency lapse within the same document, not a broken promise, and this should be corrected in synthesis rather than carried forward as a guidance-vs-delivery red flag. The one item this stage could NOT resolve, and flags as the highest-priority Halt-1 action, is whether DBX Holdings Ltd -- the entity that flipped from RPT customer to undisclosed equity investee in FY25 -- is controlled or co-directed by promoter Nilesh Rathi; a WebSearch summary suggested this but the primary Companies House source was unreachable in this environment. This single fact materially changes the verdict: CONCERN if confirmed, likely TRUSTWORTHY-leaning if ruled out."

@@ -1,0 +1,17 @@
+stage: B14-thesis
+company: "DIVGIITTS"
+run_date: "2026-08-29"
+model: claude-opus-4-8
+status: complete
+verdict: "WATCHLIST"
+entry_range: {low: 570, high: 650}
+position_size: "Small"
+position_size_override: ""
+thesis_broken_if: "Q2 FY27 Transfer Case revenue < Rs 70 Cr OR operating EBITDA < 24%, AND no dated Sigma EV SOP by the Q3 FY27 call (~Feb 2027); OR FY28 transfer-case revenue plateaus with the ~Rs 75-95 Cr Indonesia batch gap unfilled; OR governance escalates (AGM Items 6-7 pass over proxy objection or the FY27 AR leaves the Tejal RPT omission uncorrected)"
+monitoring_checklist:
+  - "Proof gate Part 1: Q2 FY27 Transfer Case revenue >= Rs 70 Cr AND operating EBITDA >= 24%"
+  - "Proof gate Part 2: Sigma EV transmission dated SOP announced + Rs 10-12 Cr/qtr for two quarters (red: 4th consecutive slip / no SOP by Q3 FY27 call)"
+  - "Governance: 18-Sep-2026 AGM Items 6-7 resolved acceptably; FY27 AR adds Tejal Transmission to Note 34 RPT and reconciles KMP pay figures"
+  - "FY28 Indonesia replacement: organic + export revenue fills the ~Rs 75-95 Cr batch gap; ASEAN/Indonesia follow-on order confirmed (red: transfer-case revenue plateaus post-batch)"
+  - "Export mix resumes toward 20-25% of revenue (red: continues below 16%, was 18% FY26 to 16% Q1 FY27)"
+  - "Operating EBITDA margin holds >= 22% through-cycle (base case rests on 24% fair-case above the 20-22% guide)"

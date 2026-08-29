@@ -86,3 +86,37 @@ unnamed North American OEM's legacy fleet already on the road, NOT an
 addressable market - it must not enter any TAM or revenue derivation. The
 Rs 2,000+ Cr slide is a company aspiration, softened to "addressable potential"
 on the Q1 FY27 call.
+
+## THESIS (one line)
+Build-to-spec driveline maker priced at 45x ex-cash forward earnings against a Rs 815 fair value; the earnings transition (Indonesia batch + exports) runs but the quality transition (EV, automatic transmission) has not started and the TO-rung re-rating is already over-priced. Transition matrix: PRICED NARRATIVE (TRAP).
+
+## DECISION STATUS AND ENTRY ZONE (as of 2026-08-29)
+Decision Status: WATCHLIST (with a number), defaulting to AVOID until governance clears. Not a buy at CMP Rs 1,175.
+- Valuation decision (Role 1): AVOID on-valuation. Base fair value Rs 815 (operator-approved 30x forward operating EPS Rs 24 + net cash Rs 95/share); framework floor Rs 525-575 (RRM 17.9x / additive 20x). CMP is 44% above base FV, ~2x the floor. Hurdle STOP. Prob-weighted expected CAGR from CMP -4.4%.
+- Entry zone Rs 570-650; MoS Rs 570; position Small.
+- Zone reachability (year-end closes since March 2023 listing; no daily 52w low in corpus): lowest tested close Rs 445.25 (31-Mar-2025); FY26 close Rs 615.8 (within 52 weeks). Entry top Rs 650 is ABOVE both, so the zone is reachable (stock traded inside it as recently as Mar 2026). NOT market-unlikely.
+- Devil's advocate: WEAKENED BUT ALIVE; valuation-safety DESTROYED (entry zone has zero MoS vs the framework floor).
+- Confidence overall 68.4. Cross-family FTTCP grader skipped (no key); confidence one notch lower.
+
+## OPERATOR RULINGS
+- 2026-08-29 Halt 1: PROCEED. Mental Model signed (see HALT 1 GATE block above).
+- 2026-08-29 P/E gate (Keerti): Pillar 1 ROCE 20% treasury-stripped both sides -> base PE 19x; Pillar 2 cash 1.0x INDETERMINATE (no rating); Pillar 3 +1x; strategic 0; UA none (FII+DII 28%). SECTOR CAP OVERRIDDEN 25x -> 30x (auto-component peers clear 40-50x forward; DIVGIITTS this run only, not a framework change). r 14%. EXIT MULTIPLE 30x forward. Earnings basis FY27 forward operating EPS, treasury stripped (FY28 secondary; FY30 dropped). Method: operating EPS x multiple PLUS net cash at face Rs 95/share, never reported EPS multiplied. FV Rs 815; entry Rs 570-650.
+- 2026-08-29 posture: WATCHLIST with a number; defaults to AVOID until the 18-Sep-2026 AGM (Items 6-7 vote, proxy-advisory stance, auditor independence) and the FY27 AR (Tejal RPT correction, KMP pay reconciliation) clear the promoter CONCERN.
+
+## ACTIVE TRIPWIRES (thesis-broken / falsification)
+- Q2 FY27 (closes 30-Sep-2026): Transfer Case revenue < Rs 70 Cr OR operating EBITDA < 24% = proof-gate Part 1 fails (downgrade).
+- No dated Sigma EV SOP by the Q3 FY27 call (~Feb 2027) = EV leg dead for valuation (zero weight).
+- FY28 transfer-case revenue plateaus with the ~Rs 75-95 Cr Indonesia batch gap unfilled and no contracted follow-on = revenue STARTING falsified.
+- EBITDA margin < ~20% for two quarters without a named one-off = business falsifier.
+- Governance escalation: AGM Items 6-7 pass over proxy objection, OR FY27 AR leaves the Tejal Transmission RPT omission uncorrected, OR a second key-OEM in-sources transfer-case work = promoter classification beyond CONCERN.
+- SHARED CATALYST single point of failure (devil): the Shirwal cash-to-fixed-asset deployment carries both the Pillar 1 ROCE recovery and near-term revenue; if it fills at the guided 20-22% margin or Indonesia expires unreplaced, ARTIFACT-OF-CLIMB turns STRUCTURAL-FEATURE (ROCE < 16%).
+
+## OPTIONALITY REGISTER (watched, scored zero)
+- Indonesia follow-on / ASEAN export expansion (no contracted follow-on; converting evidence = a named order).
+- Automatic-transmission technology transfer (no contract, no named customer; Aisin funding a competing local plant; SOP earliest H2 CY28).
+- US Project Mayflower (Delaware incorporated 04-Jun-2026; ~$5m phase-1 call commentary; no US state markers; converting signal = South Carolina state announcement).
+- Manual-transmission LCV beachhead; Japanese OEM (SE Asia) transfer case (FY28-29); BorgWarner broader-scope renewal.
+- Unresolved: BRSR renewable-energy / 400kW solar contradiction; R&D 100x unit inconsistency (used Rs 11.79 Cr).
+
+## RUN FOLDERS
+- runs/divgiitts-2026-08-29 (first workup; phase 1 evidence + FTTCP + finalize). PR #110.

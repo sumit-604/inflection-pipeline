@@ -1,58 +1,63 @@
-# Verifier summary: Divgi Torqtransfer Systems (DIVGIITTS)
+# VERIFIER SUMMARY — Divgi TorqTransfer Systems Ltd (DIVGIITTS)
 
-Phase 1 verifier findings. Sorted CRITICAL, then MAJOR, then MINOR. Scope: Verifier A (numerical), Verifier B (red flags), Verifier D (peers), and the Gate 0 plus Emerging Moat portion of Verifier C. The valuation half of Verifier C is out of phase 1 scope (0 rules checked, deferred to phase 3).
+Run: runs/divgiitts-2026-08-29. Covers Verifier A numerical (B12a), Verifier B red flags (B12b), Verifier C framework and valuation adherence (B12c, phase 1 gate0 plus emoat and phase 3 valuation), Verifier D peer utilisation (B12d).
 
-## Phase 1 confidence delta
+## Confidence delta and acceptance rates
 
-| Component | Score |
-|---|---|
-| Numerical acceptance (B12a) | 68.4 |
-| Red flag coverage (B12b) | 82 |
-| Framework adherence (B12c, Gate 0 + Emerging Moat only) | 100 |
-| Peer utilisation (B12d) | 75 |
-| **Overall** | **68.4** (band 60 to 74) |
-
-Acceptance rates: Verifier A 68.4, Verifier B 76, Verifier C 100, Verifier D 94. All above the 60 REWORK floor.
-
-Counts: CRITICAL 3 (all Verifier A), MAJOR 13 (A 9, B 2, D 1... see note), MINOR 11.
-
-## CRITICAL
-
-| Verifier | Location | Note |
+| Component | Score | Acceptance rate |
 |---|---|---|
-| A | B01 Gate 0 (SPEAR load-bearing fact) | "~Rs 275 Cr net cash decline in FY26" claimed. Source truth: net cash rose from Rs 283.76 Cr (FY25) to Rs 292.75 Cr (FY26), up ~Rs 9 Cr. Contradicted by Note 10(a)+(b) and CFO letter p.39. Pipeline (B01/B02/B03) correctly contradicted the Spear brief; wrong figure originates in the brief, not a pipeline report. Disposition GATE HELD, corrected at source. source_fidelity true. |
-| A | B03 AR Deep Dive, Section 6D | US subsidiary described as an established FY26 operating fact. Source truth: board approved 25-May-2026, incorporated Delaware 4-Jun-2026, both after FY26 close (31-Mar-2026). B03 flagged the AR internal contradiction; Board's Report Item 13 correctly states no subsidiary existed in the year. Disposition GATE HELD. source_fidelity true. |
-| A | B09 TAM / B05 concall context | "Indonesia 70,000-unit transfer case program" claimed. Source truth: B09 web verification confirms 35,000 units (Mahindra Scorpio Pik Up CY2026). B05 accurately transcribed management's 70,000 concall claim (35k Tata + 35k Mahindra); B09 corrected to 35,000 verified. Material downward correction for capex and capacity downstream. Disposition GATE HELD. source_fidelity true. |
+| Numerical acceptance (B12a) | 68.4 | 68.4% (57 checked, 39 clean) |
+| Red flag coverage (B12b) | 82 | 76% |
+| Framework adherence (B12c) | 97 | gate0 100%, emoat 100%, valuation 88%, full 97% |
+| Peer utilisation (B12d) | 75 | 94% |
+| Overall | 68.4 | min of the four; band 60 to 74 |
 
-## MAJOR
+REWORK gate: not triggered. Verifier A returned 3 CRITICAL source fidelity findings, all pipeline correct catches of Spear brief or source level errors, each corrected at source (GATE HELD) and none used as valid on a verdict card or a Section 1B pillar. Verifier C phase 3 valuation adherence: 0 critical, 0 major, 3 minor (all cosmetic or disclosed override). Overall 68.4 is above the 60 REWORK floor. Cross family FTTCP grader SKIPPED (no key); FTTCP confidence held one notch lower.
 
-| Verifier | Location | Note |
+## CRITICAL (3)
+
+| Verifier | Location | Finding | Disposition |
+|---|---|---|---|
+| A (B12a) | B01 Gate 0, Spear load-bearing fact | Claimed roughly Rs 275 Cr net cash decline in FY26; source truth: net cash rose Rs 283.76 Cr to Rs 292.75 Cr, up about Rs 9 Cr (Note 10(a)+(b), CFO letter p.39). source_fidelity true. | GATE HELD. Spear brief error the pipeline (B01/B02/B03) contradicted; never used as valid downstream. |
+| A (B12a) | B03 AR Deep Dive, Section 6D | Claimed US subsidiary described as an established FY26 operating fact; source truth: board approved 25 May 2026, Delaware incorporation 4 June 2026, both after 31 Mar 2026 close. source_fidelity true. | GATE HELD. AR internal contradiction B03 flagged; B03 did not assert the subsidiary existed. |
+| A (B12a) | B09 TAM / B05 Concall context | Claimed Indonesia 70,000 unit transfer case program; source truth: B09 web verification confirms 35,000 units (Mahindra Scorpio Pik Up Indonesia CY2026). source_fidelity true. | GATE HELD. B05 accurately transcribed the concall claim of 70k; B09 self corrected to 35k and flagged the gap. |
+
+## MAJOR (13)
+
+| Verifier | Location | Finding |
 |---|---|---|
-| A | B02/B03 Notes | AOC-2 to Note 34 rent income gap claimed ~19.5x. Source truth: AOC-2 Rs 24 Lakh (Rs 2.4 Mn) vs Note 34 Rs 4.68 Mn = 1.95x. B02 Lakh to Million conversion error; B03 already corrected to 1.95x. Underlying disclosure gap stands at the corrected ratio. |
-| A | B02/B03 Notes | Three conflicting FY26 MD remuneration figures in one AR. Note 34 Rs 21.49 Mn vs Corp Gov and Annexure C Rs 17.75 Mn. Implied pay increase is 15% or 73.6% depending on which figure is authoritative; no reconciliation. |
-| A | B02/B03 Notes | Note 42 current ratio explanation cites "reduction in current assets". Source truth: current assets rose 13.9%; current liabilities rose 58%. Explanation contradicts the company's own balance sheet. |
-| A | B02/B03 Notes | GST contingent liability: Note 37 Nil vs CARO Annexure B Rs 1.63 Mn pending dispute. Same audit, same date, opposite disclosures on whether the dispute is live. |
-| A | B02/B03 Related-party | Note 34(a) RPT list claimed complete. Source truth: Tejal Transmission (Note 5 equity holding; Hirendra Divgi on board) absent. Ind AS 24 completeness failure; omission means the entity never entered Audit Committee approval. |
-| A | B02/B03 R&D | BRSR states R&D Rs 117.94 crore vs Business Driver page Rs 117.94 million. Source truth: Integrated Value-Creation Report confirms the million reading; BRSR and Annexure D carry a 100x unit error; R&D actually fell 13.6% YoY. |
-| A | B01 Gate 0 data | Screener FY25 Interest Rs 0.60 Cr vs AR audited FY25 Finance Cost Rs 0.382 Cr, a 58% discrepancy, cause unresolved. B01 used the PDF audited figure as authoritative. |
-| A | B05 concall context | "June 2026 FY25 results resubmission" claimed. Source truth: B08 web verification confirms 11-Jul-2025, a technical XBRL and PDF correction with an unmodified audit. Run brief date does not match the verified date. |
-| A | B05 concall context / B01 | "Sigma EV SOP in Q2 FY27" claimed. Source truth: no Q2 FY27 date in the three provided concalls; documented slippage April to July to 12-Aug status still "progressing". If sourced outside the transcripts, unverifiable from the pipeline corpus. |
-| B | B05 section 4C / 2C (margin treatment) | MISSED management volunteered negative: Q1 FY27 29.4% EBITDA margin is a one off, guidance back to 20 to 22%+. Anchor: Q1 FY27 call, Jitendra Divgi; margin print by Sudhir Mirjankar. |
-| B | B05 SPEAR fact 1 / 3C | PARTIALLY CAUGHT: Indonesia order reframed from Q3 "specific, time bound one off, concludes by FY27 end" to Q1 ">50% recurring"; the cross quarter contradiction was not surfaced. Anchors: Q3 FY26 Jitendra to Karthi; Q1 FY27 Jitendra opening. |
-| D | B06 Claim 5, peer evidence item (3) | Quote "growing concern in the government... 20% to cover... across not just automotive" anchored to SONACOMS Q3 FY26 (Jan-2026). Source truth: quote is verbatim in SONACOMS Q4 FY26 (30-Apr-2026), p.15, not in the Jan-2026 transcript. Wrong quarter attribution; Claim 5 CONTRADICTED verdict unaffected (two other correctly anchored peer quotes already satisfy the 2 anchor rule). source_fidelity false. |
+| A (B12a) | B02, confirmed B03 | AOC-2 to Note 34 rent income gap claimed 19.5x; corrected to 1.95x (Lakh to Million conversion error). Disclosure gap remains at the corrected ratio. source_fidelity true. |
+| A (B12a) | B02/B03 Notes | Three conflicting FY26 MD remuneration figures in the same AR: Note 34 Rs 21.49 Mn vs Corp Gov/Annexure C Rs 17.75 Mn; increase unclear 15% or 73.6%. source_fidelity true. |
+| A (B12a) | B02/B03 Notes | Note 42 current ratio explanation cites reduction in current assets; balance sheet shows current assets rose 13.9%, liabilities rose 58%. Explanation contradicts own balance sheet. source_fidelity true. |
+| A (B12a) | B02/B03 Notes | GST contingent liability: Note 37 Nil vs CARO Rs 1.63 Mn pending dispute; same audit, same date, opposite disclosures. source_fidelity true. |
+| A (B12a) | B02/B03 Related party | Note 34(a) RPT list incomplete: Tejal Transmission (Note 5 equity holding, Hirendra Divgi on board) absent. Ind AS 24 completeness failure; entity never entered Audit Committee approval. source_fidelity true. |
+| A (B12a) | B02/B03 R&D | BRSR R&D Rs 117.94 crore vs Business Driver Rs 117.94 million; 100x unit error. Million reading confirmed; R&D actually fell 13.6% YoY. source_fidelity true. |
+| A (B12a) | B01 Gate 0 data | Screener FY25 interest Rs 0.60 Cr vs AR audited FY25 finance cost Rs 0.382 Cr; 58% discrepancy. B01 used the PDF audited figure. source_fidelity true. |
+| A (B12a) | B05 Concall context | June 2026 FY25 results resubmission claim; source truth: verified 11 July 2025, a technical XBRL/PDF correction with unmodified audit. Date in run brief does not match. source_fidelity true. |
+| A (B12a) | B05 Concall context / B01 | Sigma EV SOP claimed in Q2 FY27; no Q2 FY27 date in the three provided concalls; documented slippage April to July to 12 Aug still progressing. Unverifiable from the pipeline corpus. source_fidelity true. |
+| B (B12b) | B05 4C / 2C margin treatment | MISSED management volunteered negative: Q1 FY27 29.4% EBITDA margin is a one off, guidance 20% to 22%. Bears on durability of the record quarter. Anchor: Q1 FY27, Jitendra Divgi. |
+| B (B12b) | B05 SPEAR fact 1 / 3C | PARTIALLY CAUGHT: Indonesia order reframed Q3 (specific, time bound one off, concludes by FY27 end) to Q1 (over 50% recurring); cross quarter contradiction not surfaced. Anchors: Q3 FY26 Jitendra to Karthi; Q1 FY27 Jitendra opening. |
+| D (B12d) | B06 Claim 5, peer evidence item 3 | Sona Comstar quote anchored to Q3 FY26 (Jan 2026); source truth: verbatim in Q4 FY26 call (30 Apr 2026), p.15. Wrong quarter attribution. Claim 5 CONTRADICTED verdict unaffected; two other correctly anchored peer quotes satisfy the two anchor rule. source_fidelity false. |
 
-Note on MAJOR count: Verifier A logged major_count 10 in its block; 9 individually itemised findings appear in its findings array (the tenth is captured in the aggregate count). B logged 2 MAJOR, D logged 1 MAJOR.
+## MINOR (9)
 
-## MINOR
-
-| Verifier | Location | Note |
+| Verifier | Location | Finding |
 |---|---|---|
-| A | B12a aggregate | minor_count 3 recorded in the block; not individually itemised in the B12a findings array. |
-| B | B05 section 1C (FY28 bridge) | PARTIALLY CAUGHT: execution bandwidth constraint and the "opportunities pushed out temporarily because of Indonesia load" admission not surfaced. Anchor: Q1 FY27 Jitendra opening. |
-| B | B05 section 1B (component volume) | MISSED: management inconsistent on its own component volume (1mn / 3.3mn / 7 lakhs / 13 lakhs) in the Q4 call. Anchor: Q4 FY26 Karan Gupta / Jitendra / Sudhir. |
-| B | B05 section 3C row 2 | Anchor imprecision: strip-Indonesia question attributed to Karan Gupta; actual asker Sumit Ambekar (Parami). Substance stands. |
-| B | B05 section 2A promise-delivery table | Wording imprecision: "EV proof of concept demo by July" vs transcript "going into production". Direction correct. |
-| C | B01 Block A (A1/A2/A4) | ROCE computable only FY25-FY26 due to a screener data gap; A4 trend scores on a 2 year window. Data constrained, transparently disclosed, not a threshold misapplication; classification already capped AVERAGE by deal breaker 3, so no score or decision impact. |
-| C | B07 scorecard C1 | C1 labelled documented and claim mixed but multiplied at 1.0. Load bearing evidence is a filed investor presentation (documented), so 1.0 is defensible; a strict 0.7 read moves total 29.8 to 28.9, still within the 25 to 39 STRENGTHENING band. No classification change. |
-| C | B07 completionist recount | Recount narrative bundles E1 into documented item categories though E1 is claim evidenced and correctly scored at 0.7. Cosmetic labelling only; active category count (9) and the 12 alarm threshold applied correctly. |
-| D | Coverage map, HAPPYFORGE and SANSERA Q4 FY26 (May-2026) | Both graded CITED-ONLY. Not independently re-read line by line by the verifier (budget prioritised to 12 SUBSTANTIVE rows plus 2 of 4 CITED-ONLY rows, both confirmed accurate). Audit coverage gap on the verifier side, not a confirmed B06 defect; residual risk low. |
+| A (B12a) | (3 minor within 57 checked) | Three minor numerical items inside the 57 number check; all non source fidelity, no decision impact. |
+| B (B12b) | B05 1C (FY28 bridge) | PARTIALLY CAUGHT: execution bandwidth constraint and opportunities pushed out because of Indonesia load not surfaced. Anchor: Q1 FY27 Jitendra opening. |
+| B (B12b) | B05 1B (component volume) | MISSED: management inconsistent on its own component volume (1mn/3.3mn/7 lakh/13 lakh). Anchor: Q4 FY26 Karan Gupta / Jitendra / Sudhir. |
+| B (B12b) | B05 3C row 2 | Anchor imprecision: strip Indonesia question attributed to Karan Gupta; actual asker Sumit Ambekar (Parami). Substance stands. |
+| B (B12b) | B05 2A promise delivery table | Wording imprecision: EV proof of concept demo by July; transcript says going into production. Direction correct. |
+| C (B12c) | B01 Block A (A1/A2/A4) | Phase 1: ROCE computable FY25-26 only (data gap); no score or decision impact. |
+| C (B12c) | B07 scorecard C1 | Phase 1: 1.0 multiplier defensible on filed presentation; STRENGTHENING band unchanged. |
+| C (B12c) | B07 completionist recount | Phase 1: cosmetic labelling; 12 alarm threshold applied correctly. |
+| C (B12c) | B11 Section 2 (2A/2B/2C) | Phase 3: Amendment 18.0 bear/bull not projected to Year 4 explicit rows; base fully to FY31. No decision impact (AVOID all cases). |
+| C (B12c) | B11 verdict card | Phase 3: Amendment 4.3 first line Tier A / Hurdle 25% declaration absent; correct Tier A and 1.953 threshold applied everywhere. Cosmetic. |
+| C (B12c) | B14 verdict card / Section 7 | Phase 3: mechanical AVOID vs emitted WATCHLIST; disclosed operator posture defaulting to AVOID, action today no position equals functional AVOID. |
+| D (B12d) | Coverage map HAPPYFORGE and SANSERA Q4 FY26 | Two CITED-ONLY rows not independently re read line by line; audit coverage gap on the verifier side, not a confirmed B06 defect. Residual risk low. source_fidelity false. |
+
+## Verifier concurrence notes
+
+- Verifier B concurs with the credibility grade B: delivery strong, but EV slip, thin disclosure, and a management flagged one off margin peak hold the grade at B. Promise delivery spot checks: 5 of 5 confirmed.
+- Verifier C recomputed destination PE: concur (additive 20x, RRM 17.9x, operator 30x override, all math clean). Recomputed decision: concur (AVOID/STOP on valuation; WATCHLIST label is disclosed operator framing, functional AVOID).
+- Verifier D: 12 of 12 substantive peer claims confirmed, all claims addressed, no verdict discipline fails.

@@ -20,3 +20,4 @@ Per-stage token ledger. One line per subagent run (loops/retries get their own l
 | 12b | verifier-b-redflags | claude-opus-4-8 | default | - | - | 163223 | 5m10s | 1 |
 | 12c | verifier-c-framework (phase-1 scope) | claude-opus-4-8 | default | - | - | 80019 | 4m51s | 1 |
 | 12d | verifier-d-peers | claude-sonnet-5 | default | - | - | 127988 | 6m14s | 1 |
+| 13 | synthesis-lite (phase-1, 3 files) | claude-opus-4-8 | default | - | - | 109455 | 6m34s | 1 |

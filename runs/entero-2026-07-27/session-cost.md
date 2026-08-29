@@ -13,3 +13,4 @@
 | 4 | business-model | claude-sonnet-5 | - | - | - | 173064 | 14m05s | 1 |
 | 7 | emerging-moat | claude-sonnet-5 | - | - | - | 262248 | 9m38s | 1 |
 | 6 | peer-concalls | claude-sonnet-5 | - | - | - | 191671 | 10m41s | 1 |
+| 9 | tam-sam-som | claude-sonnet-5 | - | - | - | 174824 | 11m53s | 1 |

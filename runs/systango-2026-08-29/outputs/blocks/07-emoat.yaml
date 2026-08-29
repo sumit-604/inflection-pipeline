@@ -1,0 +1,43 @@
+stage: B07-emoat
+company: "SYSTANGO"
+run_date: "2026-08-29"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "GreenLeaf equity stake (named in task brief as a known optionality item) not located anywhere in the AR, the two concall transcripts, or the June 2026 investor presentation reviewed for this stage; carried in the optionality register as unverified. NOTE (orchestrator): stage 3 reported GreenLeaf TDG Rs35.88L and DBX Rs166.11L equity stakes in Consolidated Note 8 p.112 -- cross-stage discrepancy, verifier A to adjudicate against the source PDF."
+  - "DBX Holdings Ltd. equity-stake valuation not disclosed in the AR investment note (Note 8 lists only quoted mutual-fund/equity treasury holdings); only the related-party sales/receivable relationship is documented. NOTE (orchestrator): conflicts with stage 3 read of Note 8; verifier A to resolve."
+  - "Prior-year (FY23-FY25) technology-service-line revenue mix (AI/ML+Data+Cloud vs App Dev vs Blockchain&Web3) not disclosed anywhere reviewed; only the FY26 snapshot pie chart exists."
+flags:
+  - "F2 execution moat is a documented NEGATIVE finding, not an evidence gap: FY26 revenue guidance (Rs250cr/$25M target) missed by ~64%; FY24 growth guidance (~30%) missed (~8% actual); UK acquisition (Tech Alchemy) unclosed 3+ years after first commitment with the IPO's Rs800 lakh acquisition budget at zero utilisation as of FY25; guided Dubai office and 500-headcount target not evidenced as delivered."
+  - "C2 (customer concentration) and G2 (working capital) both show documented DETERIORATION over FY23-FY26, not improvement -- scored 0, recorded explicitly as negative findings."
+em_score: 10
+em_classification: "NONE"
+active_categories:
+  - {id: "A4", name: "Product platform / modular architecture", strength: "Moderate", evidence_type: "documented+claim", time_to_materialise: "12-24m"}
+  - {id: "D2", name: "Digital platform", strength: "Moderate", evidence_type: "documented+claim", time_to_materialise: "12-24m"}
+  - {id: "G1", name: "War chest", strength: "Strong (impact capped)", evidence_type: "documented", time_to_materialise: "ongoing"}
+  - {id: "H2", name: "Strategic partnerships", strength: "Moderate", evidence_type: "claim", time_to_materialise: "12-18m"}
+evidence_mix: {documented: 13, claim: 17, inference: 4}
+completionist_recount: "documented recount performed: 13 documented items across 7 categories (A2, A4, B2, C2, F1, F2, G1, G2) -- within the realistic base rate once negative-finding rows (C2, F1, F2, G2) are separated from positively-scored rows."
+catalysts_12m:
+  - {catalyst: "Alibaba Cloud alliance revenue attribution or named client win", window: "12-18m", evidence_type: "claim", anchor: "Inv. Pres. Jun-2026, 'Journey' and 'H2-FY26/FY26 Operational Highlights' slides"}
+  - {catalyst: "Tech Alchemy / UK acquisition close or lapse", window: "6-12m", evidence_type: "documented", anchor: "AR FY24-25 Letter to Shareholders (Sept-2025) + Board's Report IPO fund-utilisation table (Rs800 lakh, zero utilised)"}
+  - {catalyst: "FY26 AR disclosure of licensing revenue separate from services revenue", window: "12m", evidence_type: "claim", anchor: "Inv. Pres. 'Multi Channel Revenue Streams' slide"}
+  - {catalyst: "Reversal of top-10 client concentration and headcount deterioration trends", window: "12-24m", evidence_type: "documented", anchor: "Inv. Pres. 'Key Performance Metrics' and 'Employee Bifurcation' slides"}
+capex_embedded_growth_pct: 0
+optionality_register:
+  - {optionality: "Equity-for-services stakes in client companies incl. DBX Holdings Ltd.", converting_evidence: "Disclosed fair-value gain or materially growing RPT revenue from the investee", first_appears: "Next AR investment/related-party note; exchange filing", window: "24-36m"}
+  - {optionality: "GreenLeaf equity stake (named upstream, not located in this stage's corpus; stage 3 located it in Consolidated Note 8)", converting_evidence: "A primary-source AR, filing, or concall reference naming GreenLeaf", first_appears: "AR investment note / exchange filing", window: "verifier A to confirm"}
+  - {optionality: "Alibaba Cloud strategic alliance (AI-driven cloud migration/managed AI)", converting_evidence: "First disclosed contract, named client win, or attributable revenue line", first_appears: "Next AR MD&A, exchange filing, or order-win announcement", window: "12-18m"}
+  - {optionality: "AI-first repositioning / GenAI Studio methodology", converting_evidence: "Segment-level AI/ML revenue disclosure showing growth and margin uplift", first_appears: "AR revenue-mix note or a genuine segment breakout", window: "12-24m"}
+  - {optionality: "Solution licensing across named platforms (IDP, Skill Up, Shootih, Generative BI, crypto/BaaS)", converting_evidence: "Disclosed licensing-revenue line item separate from services revenue", first_appears: "AR segment note or MD&A", window: "12-24m"}
+  - {optionality: "Strategic Advisory Board (4 named advisors, formed 2026)", converting_evidence: "A named engagement outcome credited to an advisor", first_appears: "Concall Q&A or AR narrative", window: "12m"}
+  - {optionality: "UK front office / acquisition (Tech Alchemy or successor target)", converting_evidence: "Signed, closed acquisition agreement filed as a material event", first_appears: "Exchange filing / stock-exchange announcement", window: "3+ years overdue; 6-12m or lapse"}
+  - {optionality: "Hyperscaler partner status (Google Cloud, AWS, Microsoft)", converting_evidence: "Shown partner-tier certificate/badge plus attributable co-sell revenue", first_appears: "AR, exchange filing, or partner directory listing", window: "12m"}
+combined_assessment: "GOOD+"
+combined_reasoning: "Backward quality (core 88/100, 4 confirmed historical moats, STRONG class) is real and unaffected by this scan; forward scan finds no confirmed emerging moat (em_score 10, below the 12 floor) to layer on top of it, so this is a quality-without-new-catalyst case, not a transition setup and not HIGH POTENTIAL."
+top_moat_risks:
+  - "Documented promise-delivery deficit (F2): FY26 revenue ~64% below guidance, FY24 growth guidance missed, UK acquisition unclosed 3+ years with its IPO budget line at zero utilisation."
+  - "Customer concentration and working-capital trends both documented as deteriorating (C2, G2), not improving, over FY23-FY26."
+  - "The one prior flagship product claim (institutional-grade crypto derivatives analytics platform, pitched Jul-2023 as '3 months from launch') is untraceable in the FY25 AR or the Jun-2026 investor deck, suggesting the same fate could await today's named claims (Alibaba, Skill Up, Shootih, Custom AI Agents) absent independent verification."
+analyst_note: "Every CLAIM-tier item in this scan (Alibaba Cloud, hyperscaler partnerships, platform licensing revenue) sits behind a management team with a documented, repeated pattern of guided-but-undelivered plans (revenue targets, headcount, UK acquisition, Dubai office). The em_score of 10 is a direct, mechanical output of applying the scan's own evidence-quality discounting to that pattern, not an unusually harsh read. FTTCP and Role 1 should treat every AI/GenAI/Alibaba narrative element as unconfirmed until a revenue line or signed contract appears, consistent with the task brief's own framing."

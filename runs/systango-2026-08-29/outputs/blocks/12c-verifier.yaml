@@ -1,0 +1,30 @@
+stage: B12c
+company: "SYSTANGO"
+run_date: "2026-08-29"
+model: claude-opus-4-8
+status: complete
+gate0:
+  rules_checked: 20
+  fails:
+    - {rule: "C1 revenue CAGR band", severity: "MINOR", detail: "19.97% scored 5 (>=20 band) via rounding to deck 20%; strict read = 15-19.9 band = 4. Defensible at one-decimal precision but internally inconsistent with M11 (treats 19.97% as <20%). Strict recompute: Block C 19, core 87, classification GOOD+ unchanged.", decision_impact: "none"}
+    - {rule: "M12 negative-WC band basis", severity: "MINOR", detail: "Scored 1 on latest-year WC days (43.59, band 15-45); 2 of 4 years >45, a consistency/majority read gives 0. Rule does not fix the basis; latest-year defensible. Moat score 19 vs 18, moat_class STRONG unaffected, classification unchanged.", decision_impact: "none"}
+emoat:
+  rules_checked: 8
+  fails:
+    - {rule: "completionist recount tally", severity: "MINOR", detail: "Recount performed (rule satisfied) but states '13 documented items across 7 categories' while enumerating 8 categories (A2,A4,B2,C2,F1,F2,G1,G2) and ~10 sub-items. Cosmetic internal miscount; guard purpose met, score not over-credited.", decision_impact: "none"}
+valuation:
+  rules_checked: 0
+  fails: []
+  status: "pending-phase-3"
+  note: "B10/B11 not produced in phase 1; valuation framework docs deliberately not loaded (dead context). Deferred to phase-3 valuation-scope pass."
+business_understanding_narrative: {present: false, five_questions_answered: false, prose_only: false, section6_candidates_named: 0, valuation_vocab_leak: false, fails: [], note: "N/A phase-1 scope: stage-13 synthesis not an input this pass; not a REWORK trigger."}
+recomputed_destination_pe: ""
+recomputed_decision: ""
+findings:
+  - {severity: "MINOR", location: "B01 Block C / C1", note: "19.97% CAGR at the >=20% band edge; scored 5 by rounding, decision-neutral, inconsistent with M11 treatment of same number."}
+  - {severity: "MINOR", location: "B01 Block F / M12", note: "Latest-year basis for negative-WC band; majority read gives 0; decision-neutral."}
+  - {severity: "MINOR", location: "B07 Section 3 recount", note: "Stated recount tally (7 categories / 13 items) inconsistent with 8 categories enumerated; cosmetic, score not over-credited."}
+critical_count: 0
+major_count: 0
+minor_count: 3
+acceptance_rate: 89

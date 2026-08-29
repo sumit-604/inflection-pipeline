@@ -1,0 +1,67 @@
+stage: B08-promoter
+company: "ENTERO"
+run_date: "2026-07-27"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - {type: "shareholding-pattern-pdf", severity: "HIGH", note: "filed BSE/NSE shareholding pattern absent from corpus; pledge inferred from Reg 31(4) no-encumbrance declarations, not from filing itself"}
+  - {type: "prospectus", severity: "HIGH", note: "no DRHP in corpus; promoter-group entity map is web+AR-derived, not filing-anchored"}
+  - {type: "announcements", severity: "MEDIUM", note: "CFO/CS/director-change and AGM-voting announcements sourced via live web, not held corpus"}
+  - {type: "research", severity: "LOW", note: "Curever Pharma business rationale rests on a single unverified third-party blog"}
+flags:
+  - type: FLAG-PROMOTER
+    verdict: "CONCERN (with strong transition evidence)"
+    top_findings:
+      - "CEO remuneration disclosed at two irreconcilable figures within the same audited FY26 AR: Rs47.27M (CG Report p.63) vs Rs94.50M (Ind AS 24 KMP note, Consolidated FS p.235-236), unreconciled anywhere in the document"
+      - "CEO and COO cash pay each rose +116% YoY vs ~21.3% consolidated PAT growth; ~1/3 of institutional votes opposed both remuneration resolutions at the 19-Aug-2026 AGM, passed only on promoter votes"
+      - "Rs364.69M loan + Rs95.82M interest (~Rs460.5M) to wholly-owned subsidiary Curever Pharma fully impaired (Standalone Note 39B(III)); exceeds one year's standalone PAT; AR gives no business rationale, only a single unverified third-party source explains it as a failed private-label generics venture"
+      - "CFO, Company Secretary, a senior President (Institutional Business), a nominee director, and one independent director's non-renewal all clustered within ~12 months of the Feb-2024 IPO"
+verdict: "CONCERN"
+scorecard: {clean: 5, caution: 3, red: 2}
+deal_breakers: []
+adverse_findings:
+  - {finding: "CEO FY26 total compensation disclosed as Rs47.27M in CG Report vs Rs94.50M in Ind AS 24 KMP note, ~2x unreconciled within same AR", evidence_tier: "VERIFIED", source: "AR FY25-26 CG Report p.63 (PDF p.67); Consolidated FS RPT note p.235-236 (PDF p.239-240)", date: "2026-07-27"}
+  - {finding: "CEO and COO remuneration each +116% YoY vs consolidated PAT +~21.3%; ~1/3 of non-promoter AGM votes opposed both remuneration resolutions", evidence_tier: "VERIFIED", source: "AR Consolidated FS RPT note p.235-236; scanx.trade AGM voting results, 19-Aug-2026", date: "2026-08-19"}
+  - {finding: "Rs364.69M loan + Rs95.82M interest to wholly-owned subsidiary Curever Pharma fully impaired, exceeding FY26 standalone PAT; no business rationale disclosed in AR", evidence_tier: "VERIFIED (amount/fact); UNVERIFIED (rationale, single blog source)", source: "Standalone FS Note 39B(III) p.140 (PDF p.144); Note 55A p.164-165 (PDF p.168-169); congruenceadvisers.com blog", date: "2026-07-27"}
+  - {finding: "CFO changed ~14 months post-IPO (CV Ram out 10-Apr-2025, Balakrishnan Natesan Kaushik in 11-Apr-2025); Company Secretary changed ~11 months post-IPO (Jayant Prakash out, Sanu Kapoor in 16-Jan-2025)", evidence_tier: "VERIFIED", source: "Business Standard 21-Mar-2025; AR RMC footnote p.65 (PDF p.69); web company announcements", date: "2025-04-11"}
+  - {finding: "Senior management/board churn cluster: Sambit Mohanty (President-Institutional Business) resigned eff. 31-Mar-2026; Kevin Rohitbhai Daftary (nominee director, Prasid Uno) resigned eff. 12-Jun-2026; independent director Rajesh Dalal declined second-term re-election despite being slated 25-May-2026, term ended 24-Aug-2026", evidence_tier: "VERIFIED", source: "marketscreener.com, scanx.trade exchange announcements", date: "2026-08-24"}
+transition_evidence:
+  - "New professional CFO from outside: Balakrishnan Natesan Kaushik eff. 11-Apr-2025, replacing CV Ram"
+  - "New professional Company Secretary: Sanu Vishal Kapoor eff. 16-Jan-2025, replacing Jayant Prakash"
+  - "Institutional investor entry: 3P Investment Managers (Prashant Jain) bought 2.5% stake for ~Rs150 crore, 25-Aug-2026; stock +~7% same day"
+  - "DII broadening not FII flight: ICICI Prudential MF picked up 5.01% on 29-Dec-2025 same-day/same-price as SMALLCAP World Fund's full orderly 5.24% exit; DII share rose 2.28%->16.62%"
+  - "Zero promoter pledge formally declared for FY26 under Reg 31(4) (Prabhat Agrawal, Prem Sethi, OrbiMed Asia III Mauritius)"
+  - "Promoter shareholding stable ~52.4% throughout, no creeping sell-down"
+  - "Two of three independent directors reappointed for second 5-year term with 93%+ AGM support on most resolutions; EY LLP reappointed internal auditor FY27"
+pledge_pct_latest: 0
+pledge_trend: "stable - nil pledge declared for FY26 under SEBI Reg 31(4); filed shareholding-pattern PDF absent from corpus so this is declaration-based, not filing-anchored"
+searches_performed:
+  - "Prabhat Agrawal Entero Healthcare Solutions MD CEO background career history"
+  - "Entero Healthcare Solutions promoter Prabhat Agrawal Prem Sethi SEBI"
+  - "Entero Healthcare Solutions promoters declare no encumbrance pledge shares FY26"
+  - "Entero Healthcare Solutions director resignation CFO company secretary"
+  - "Entero Healthcare Solutions SEBI adjudication order penalty"
+  - "Entero Healthcare Solutions IiAS SES proxy advisory AGM voting recommendation"
+  - "Entero Healthcare AGM 2026 institutional investors oppose remuneration votes against"
+  - "Entero Healthcare Solutions Rajesh Dalal steps down director"
+  - "Prasid Uno Family Trust Entero Healthcare"
+  - "Sambit Mohanty Entero Healthcare resigns President Institutional Business"
+  - "Entero Healthcare Solutions Glassdoor AmbitionBox employee reviews"
+  - "Entero Healthcare Solutions short seller report allegations fraud"
+  - "OrbiMed Asia III Mauritius Entero Healthcare stake sale exit"
+  - "Entero Healthcare Solutions NCLT court case litigation promoter"
+  - "Entero Healthcare Solutions shareholding pattern OrbiMed Asia III Mauritius percentage June 2026"
+  - "Entero Healthcare Solutions Invesco Smallcap World Fund exit stake sale"
+  - "Entero Healthcare Solutions company secretary Jayent Prakash resignation Sanu Kapoor appointed"
+  - "Curever Pharma Entero Healthcare subsidiary"
+  - "MSKA & Associates KPMG network India audit firm"
+  - "Entero Healthcare Solutions ED PMLA income tax raid GST"
+  - "Prabhat Agrawal Alkem Laboratories CEO 2014 2018 controversy exit"
+searches_skipped:
+  - "Dedicated CCI/NGT/consumer-forum/FEMA/benami/DRI name-specific queries (covered only by broader NCLT/litigation and ED-PMLA-GST queries)"
+  - "Direct SEBI SCORES complaint-database lookup (relied on AR's own SRC complaint table)"
+  - "Named IiAS/SES/InGovern report lookup specific to Entero"
+  - "Distributor-peer reputation benchmarking (Section 4E)"
+  - "Exact reconciliation of Prasid Uno Family Trust stake-sale percentage against operator lead's ~34.5% figure"
+verdict_basis: "No legal/regulatory red flags and zero pledge, but the audited AR itself carries an unreconciled ~2x CEO pay figure, CEO/COO pay rose ~116% against ~21.3% profit growth (opposed by ~1/3 of institutional AGM votes), a ~Rs460.5M subsidiary loan write-off has no disclosed rationale, and CFO/CS/senior-exec/board turnover clustered within a year of listing -- offset by credible new institutional entry and professional replacement hires."
+analyst_note: "OrbiMed Asia III Mauritius is formally disclosed as 'Promoter' in the AR RPT note, not merely 'Equity Investor' -- Prasid Uno Family Trust carries the investor label instead. Treat Prabhat Agrawal and Prem Sethi as the operating promoters for conduct purposes; OrbiMed's board seats are institutional oversight, not founder conduct, and should not be scored against the founders. The Rs47.27M vs Rs94.50M CEO-pay discrepancy and the Curever rationale gap are both answerable questions for management that the AR does not resolve; recommend the operator raise both directly rather than treating either as resolved by this search pass."

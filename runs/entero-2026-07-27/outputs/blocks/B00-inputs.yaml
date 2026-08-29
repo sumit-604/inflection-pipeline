@@ -1,0 +1,46 @@
+stage: B00-inputs
+company: ENTERO
+run_date: 2026-07-27
+model: orchestrator
+status: complete
+spear_gate: "OVERRIDE 2026-08-29 (operator)"
+listed_date_inferred: "2024-02 (IPO); within ~3y of run_date -> prospectus is a HIGH gap"
+inputs_present:
+  annual-report: 1        # FY26 AR, 276pg, filed 2026-07-27
+  results: 3              # Q3 FY26 (2026-02-12), FY26 full-year audited, Q1 FY27 (2026-08-07)
+  concalls: 5             # Q1FY26 Aug-25, Q2FY26 Nov-25, Q3FY26 Feb-26, Q4FY26 Jun-26, Q1FY27 Aug-26
+  peer-concalls: 12       # RPTECH x4, MEDPLUS x4, REDINGTON x4
+  presentation: 4         # Q1FY27 deck, FY26 deck, + 2 broker notes (misfiled research)
+  rating: 1               # India Ratings IND A-/Stable, 2025-12-03 (image PDF; renders via poppler)
+  screening: 30           # ENTERO + 4 peers CSV sets
+concalls_selected_for_stage5:
+  - {file: "inputs/concalls/Concall_Feb_2026_Transcript.pdf", quarter: "Q3 FY26"}
+  - {file: "inputs/concalls/Concall_Jun_2026_Transcript.pdf", quarter: "Q4 FY26"}
+  - {file: "inputs/concalls/808d85fd-f6c7-4f4a-98d3-f57a32a6e78f.pdf", quarter: "Q1 FY27"}
+input_gaps:
+  - {type: prospectus, severity: HIGH, effect: "listed ~Feb 2024 (<3y); no DRHP. Stages 2/3 build backward baseline from FY26 AR only (post-listing years); stage 8 sources promoter/group map from AR governance + web, flagged web-derived not filing-anchored."}
+  - {type: announcements, severity: MEDIUM, effect: "no Reg 30 record. Intent-and-action cross-check for stages 5/7/8 runs on concall/AR evidence only; stage 8 relies on web for material events."}
+  - {type: shareholding, severity: MEDIUM, effect: "no quarterly pattern. Stage 10 marks FII+DII unresolved; stage 11 withholds UA multiplier (all-three-qualifier rule); promoter pledge/holding trend falls back to AR with staleness noted."}
+  - {type: research, severity: LOW, effect: "research/ folder empty; 2 broker notes (MNCL Q4FY26 update, a fundamental-analysis stock report) sit misfiled in presentation/ and are treated as NON-ANCHORED leads only."}
+misfiled_docs:
+  - {file: "inputs/presentation/entero-healthcare-4qfy26-company-update-by-mncl-institutional-equity-research-desk.pdf", actual: "broker note (research, non-anchored)"}
+  - {file: "inputs/presentation/Entero-Healthcare-limited-fundamental-analysis-stock-report.pdf", actual: "third-party stock report (research, non-anchored)"}
+pdf_readability:
+  - {file: "inputs/rating/ratings.pdf", note: "image-only, 0 text via pypdf; renders via poppler/Read tool; subagents must read visually"}
+freshness_pairs:
+  - {pair: "RESULTS->CONCALL", trigger_doc: "Q1 FY27 results (2026-08-07)", mate_expected: "Q1 FY27 concall", status: PASS, missing_doc: ""}
+  - {pair: "RATING BULLETIN->RATIONALE", trigger_doc: "India Ratings 2025-12-03", mate_expected: "full detailed rationale", status: PASS, missing_doc: "", note: "ratings.pdf carries the Detailed Rationale + Key Rating Drivers, not a bulletin alone"}
+  - {pair: "SEBI ORDER->ORDER TEXT", trigger_doc: "none referenced in corpus", mate_expected: "n/a", status: PASS, missing_doc: "", note: "no SEBI order referenced; pair not triggered"}
+  - {pair: "AR->LATEST AUDITED ANNUAL RESULTS", trigger_doc: "FY26 audited annual results", mate_expected: "FY26 AR", status: PASS, missing_doc: "", note: "FY26 AR present (filed 2026-07-27), matches latest audited year"}
+freshness_verdict: "FRESHNESS PAIRS OK"
+flags: []
+analyst_note: >
+  Corpus is Q1 FY27-current (results, concall, and investor deck all Aug 2026).
+  All four freshness pairs pass, so no freshness cap. The binding gap is the
+  absent prospectus for a company listed ~2.4y ago: the backward baseline and
+  promoter/group map lean on the FY26 AR and web instead of restated pre-IPO
+  filings. Rating rationale is image-only but readable via poppler; it already
+  states negative FCF since inception with management guiding FCF positive from
+  end-FY26 (feeds FLAG-CASH). Sector row in manifest is Pharma/CDMO; operator's
+  prior (non-binding) ruling flagged no clean pharma-distribution row in
+  Section 1B. That is a stage-11 decision, not a phase-1 gate.

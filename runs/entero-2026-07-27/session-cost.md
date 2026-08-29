@@ -16,3 +16,4 @@
 | 9 | tam-sam-som | claude-sonnet-5 | - | - | - | 174824 | 11m53s | 1 |
 | 12a | verifier-a-numerical | claude-haiku-4-5 | - | - | - | 126604 | 3m29s | 1 |
 | 12b | verifier-b-redflags | claude-opus-4-8 | - | - | - | 138118 | 5m38s | 1 |
+| 12c | verifier-c-framework | claude-opus-4-8 | - | - | - | 84989 | 4m01s | 1 |

@@ -10,3 +10,4 @@
 | 3 | ar-deep-dive | claude-sonnet-5 | default | - | - | 228784 | 24.9m | 1 |
 | 5 | concall-analysis | claude-sonnet-5 | default | - | - | 90706 | 5.3m | 1 |
 | 8 | promoter-check | claude-sonnet-5 | default | - | - | 129735 | 9.0m | 1 |
+| 4 | business-model | claude-sonnet-5 | default | - | - | 180923 | 15.0m | 1 |

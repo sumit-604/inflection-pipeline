@@ -1,6 +1,6 @@
-CLAUDE WEB × CLAUDE CODE — TEAM WORKFLOW v2.1 FOR COMPANY ANALYSIS
+CLAUDE WEB × CLAUDE CODE — TEAM WORKFLOW v2.2 FOR COMPANY ANALYSIS
 
-Version 2.1, 29-Aug-2026. Supersedes v2 (26-Aug-2026), which superseded v1. Written after the INDIAGLYCO cycle, which took seventeen operator hand-offs and five versions of one file to reach a verdict. The target is five hand-offs per company. v2.1 adds the Session close-out block. Everything in v1 and v2 that is not changed below still applies.
+Version 2.2, 29-Aug-2026. Supersedes v2.1 (same day), which superseded v2 (26-Aug-2026) and v1. Written after the INDIAGLYCO cycle, which took seventeen operator hand-offs and five versions of one file to reach a verdict. The target is five hand-offs per company. v2.1 added the Session close-out block; v2.2 reshapes it into a per-stage token ledger plus an end-of-run summary. Everything in v1, v2 and v2.1 that is not changed below still applies.
 
 Why v2 exists (the four leaks it plugs)
 
@@ -79,13 +79,13 @@ Calendar and repo memory
 
 Session close-out
 
-Every run ends by writing `runs/<ticker>-<date>/session-cost.md` with three blocks (see the run-pipeline close-out step). It is a run output: it travels with the run outputs on the run branch and its PR, never on a framework branch.
+Every run leaves a cost record in `runs/<ticker>-<date>/session-cost.md` (see the run-pipeline close-out step). It is a run output: it travels with the run outputs on the run branch and its PR, never on a framework branch.
 
-* Tasks. The `/tasks` output, one line per stage with model and effort. Any mechanical stage (the ones DISPATCH routes to haiku: stage 0 validation, stage 10 assembly, verifier A) that ran on Opus is flagged `DOWNSHIFT FAILURE: <stage>`.
-* Cost. The `/cost` output: cache hit ratio, misses, tokens re-cached. If the hit ratio is below the previous run's, name the stage where it broke.
-* Usage (loop block, only if a loop ran). Run count and tokens per run from `/usage`.
+* Per-stage ledger. After each stage returns, at the moment its YAML block is validated and committed, Claude Code appends one ledger line from the subagent result metadata: stage number, stage name, model, effort, input tokens, output tokens, total tokens, wall time. One line per subagent run, each with a run counter, so a loop or retry keeps its total visible. Written with each stage, never deferred to the end. Row shape: `| # | stage | model | effort | in_tok | out_tok | total_tok | wall | run# |`.
+* End-of-run summary. Before the run PR opens, Claude Code appends a summary block: (a) the top five stages by total tokens, each with its share of the run total; (b) any mechanical stage (the ones DISPATCH routes to haiku: stage 0 validation, stage 10 assembly, verifier A) that ran on Opus, flagged `DOWNSHIFT FAILURE: <stage>`; (c) any stage whose total tokens exceed 1.5x the same stage in the previous run for this ticker, flagged `COST SPIKE: <stage>`; (d) an Operator snapshot reminder.
+* Operator snapshot. The orchestrator cannot read the interactive `/cost` and `/usage` commands. The operator runs both and pastes the cache hit ratio and the loop totals into session-cost.md under an "Operator snapshot" heading.
 
-A DOWNSHIFT FAILURE or a cache break also earns a one-line entry in LESSONS.md naming the stage.
+A DOWNSHIFT FAILURE or a COST SPIKE also earns a one-line entry in LESSONS.md naming the stage.
 
 Gates the pipeline enforces (unchanged from v1, with two additions)
 
@@ -104,4 +104,4 @@ What we never do (v1 list, plus)
 * Report a commit without its hash.
 * Ask the operator to approve a routine Notion note.
 
-End of v2.1. Replace the project-knowledge copy of team_workflow_project_instructions.md with this file and ferry the implementation prompt to Claude Code.
+End of v2.2. Replace the project-knowledge copy of team_workflow_project_instructions.md with this file and ferry the implementation prompt to Claude Code.

@@ -1,0 +1,34 @@
+stage: B01-gate0
+company: "ENTERO"
+run_date: "2026-07-27"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["prospectus (HIGH)", "announcements (MEDIUM)", "shareholding (MEDIUM)", "research (LOW)"]
+flags:
+  - {type: FLAG-GATE0, reason: "Classification AVOID, Core 35/100 <40. Mixed genuine (cumulative CFO/PAT -1.05, ROCE 9.7-11.6% FY25-26) and data-absence depressors (Block E 0/20 no shareholding data, 4/12 moat tests PEER DATA NEEDED, ROCE/WC-Days limited to 2-year window). Treat as provisional pending Halt 1 corpus-gap resolution."}
+  - {type: FLAG-CASH, reason: "Cumulative CFO/PAT = -1.05 across FY20-FY26; six of seven years CFO-negative; FY26 first positive CFO year (Rs 96.2cr). FCF itself not computable, no per-year consolidated capex data in any provided source. Cash conversion is INDETERMINATE for FCF specifically; caps downstream verdict at PROCEED WITH CAVEATS per CLAUDE.md until capex/consolidated CF statement evidence is supplied."}
+data_years: 7
+fy_range: "FY20 to FY26"
+blocks: {A: 7, B: 5, C: 10, D: 13, E: 0}
+core_score: 35
+moat_score: 18
+grand_total: 53
+moats_confirmed: 4
+moat_class: "STRONG"
+classification: "AVOID"
+deal_breakers:
+  - "1: Block A (7) <8 -> max GOOD"
+  - "2: Block B (5) <8 -> max GOOD"
+  - "4: cumulative CFO/PAT (-1.05) <0.50 -> max AVERAGE"
+history_downgrade: false
+data_notes:
+  - "loss-to-profit swing, FY21 to FY24 (losses FY21-FY23, return to profit FY24); no synthetic PAT CAGR attempted (C2, C4 = N/M, scored 0)"
+  - "ROE FY24 uses average net worth spanning a mid-year IPO equity infusion (opening -68.59cr to closing 1638.06cr); mechanically computed per formula but flagged as distorted"
+  - "Inventory Days and Payable Days computed on COGS basis (Raw Material Cost used as COGS proxy for a distributor); Receivable Days on Revenue basis per formula"
+  - "PEER DATA NEEDED: M2 (cost advantage), M5 (scale & dominance), M7 (regulatory/license player count), M9 (brand) - no peer figures in provided sources"
+  - "ROCE and full Working Capital Days computable only for FY25-FY26; current liabilities and trade payables not disclosed for FY20-FY24 in any provided source (screener CSV lacks the breakdown; only the FY26 annual audited results PDF shows both years' current-liability/payables detail)"
+  - "FCF (B2, B3) not computable: screener Cash_Flow.csv gives only net CFO/CFI/CFF with no capex line; PDFs disclose only STANDALONE capex (FY25-FY26), a different consolidation basis than the consolidated CFO figures used, so not substituted"
+  - "FY26 P&L sub-lines Power and Fuel, Other Mfr Exp, and Selling and admin are blank in screener-data; algebraic cross-check against PBT+Interest+Depreciation confirms they are folded into the FY26 Other Expenses line (168.92cr); limits M11 selling-expense-ratio trend to FY23-FY25"
+  - "B4 WC-Days change (-5.26 days) sits right at the 5-day scoring threshold on a 2-year window only; low confidence, small revision to OCR-read payables figures could shift the band"
+block_b_trend: "improving - FY26 CFO turned positive at Rs 96.2cr, first positive year after six consecutive negative-CFO years (FY20 -36.5cr through FY25 -76.9cr); cumulative CFO still -203.07cr vs cumulative PAT +192.89cr over FY20-FY26"
+analyst_note: "AVOID is roughly half data-gap, half genuine weakness. Genuine: cumulative CFO negative across FY20-26 (-203cr) despite positive cumulative PAT (+193cr); ROCE 9.7-11.6% (FY25-26 only, sub-15%). Growth is real: 30% revenue CAGR, 100% positive YoY years, margin +2.3pp since FY20. Data-gap driven: Block E is 0/20 purely from no shareholding data anywhere in provided files; 4 of 12 moat tests need unsupplied peer data; ROCE/WC-Days trend rests on 2 usable years since current-liability/payables detail exists only in the FY26 annual filing. Treat AVOID as provisional. Priority for Halt 1: shareholding pattern, consolidated cash flow statement with capex detail, FY20-24 balance-sheet current-liability breakdown."

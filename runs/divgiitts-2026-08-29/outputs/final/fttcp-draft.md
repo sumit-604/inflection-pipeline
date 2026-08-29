@@ -113,7 +113,7 @@ Positive backward verdicts (FIRING, SUSTAINED, IMPROVING): one of four (cash). B
 
 ## 3. THE CATALYST STORY IN PLAIN WORDS
 
-The pattern to hold in mind: the growth that is visible is the old mechanical business having an excellent year; the growth the market is paying about 57x trailing for is the new business, which has not started. Across three separate claims (a flat EV market, no local automatic-transmission rival, a tariff reason for the US plant), external events overtook the management narrative and the narrative did not adjust. That is a credibility signal, graded into the catalyst discounts below.
+The pattern to hold in mind: the growth that is visible is the old mechanical business having an excellent year; the growth the market is paying for (about 76x on FY26 reported earnings, and about 119x once treasury income is stripped out, versus a TTM optic of about 59x that the Q1 FY27 batch peak flatters) is the new business, which has not started. Across three separate claims (a flat EV market, no local automatic-transmission rival, a tariff reason for the US plant), external events overtook the management narrative and the narrative did not adjust. That is a credibility signal, graded into the catalyst discounts below.
 
 **Revenue — what could keep it firing.** The Indonesia order is documented at 70,000 pickups across Tata and Mahindra, confirmed from both carmakers' own releases (handover S1, upgraded from the phase-1 figure of 35,000). About 30% was executed by Q1 FY27. This is a strong near-term catalyst and it is real. What kills it: it is a single government fleet purchase with no contracted follow-on (S2), so once the batch ships, revenue must be replaced by organic transfer-case demand and the export book. The export book is scaling fast in rupees (Rs 10.8 Cr to Rs 66.9 Cr in a year) but its share of revenue is falling, not rising (18% to 16%), against a 20-25% target management has not addressed. Confirms it firing: transfer-case revenue holding above the Q1 FY27 run rate into H2 FY27 with a named follow-on order. Kills it: a post-batch plateau.
 
@@ -182,7 +182,7 @@ B4 Operating EPS: ~Rs 9.5-10 (FY26, treasury income of ~Rs 22.28 Cr pre-tax stri
 B5 Incentives: none material identified (no PLI/SEZ/holiday dependence found). No post-expiry restatement needed.
 B6 Restated efficiency: not applicable — R&D ~Rs 11.79 Cr expensed, immaterial to the capital base; Section 1B route (cash-strip) governs the ROCE normalization, not B6.
 B7 Deleveraging: not applicable — functionally debt-free (borrowings Rs 1.77 Cr). Year 3 net debt for the EV bridge: net CASH ~Rs 294 Cr (a positive add-back, not a subtraction).
-B8 Re-rating potential: MODERATE at best. At ~57x trailing vs a peer set ~30-68x the name is NOT cheap on trailing; the pillar destination (~13-15x) sits far BELOW trailing, so the risk is de-rating, not re-rating. Amendment 20 live peer table PENDING (claude.ai to supply); pillar governs until then.
+B8 Re-rating potential: NONE (see Section 5b). Companion-variable test FAILS (Divgi is more expensive than peers on operating earnings, not cheaper) and sector-dislocation test FAILS (peer set 43-87x is cycle-elevated). Relative cross-check run on the dated corpus peer set (Section 5b); pillar governs, relative is a downside check.
 ```
 
 ---
@@ -205,8 +205,39 @@ A preview of the exit multiple Role 1 will use, computed from Section 1B off wha
 
 - **Additive track:** base 13.5x + Pillar 3 +1x + strategic 0 + cash-multiplier neutral (INDETERMINATE) = **~14.5x**, floored at zero, under the 25x cap.
 - **RRM track:** base 13.5x × RRM. RRM = 1 + (13.5% − r) × 0.12 with r = 13.5% default + 0.5 opacity charge (governance/disclosure-cluster opacity, v3.6) = 14.0% → RRM 0.94 → **~12.7x**.
-- **Destination PE preview: about 12.7x (RRM) to 14.5x (additive).** Provisional on the Pillar 1 ROCE ruling and the Pillar 3 survival ruling, the two places the dossier defers to you.
+- **Relative track (Amendment 20 / Step 1C, Section 5b):** re-rating potential NONE; companion-variable and sector-dislocation tests both fail; the pillar governs and the peer table is the downside cross-check. It does NOT lift the exit multiple.
+- **Destination PE preview: about 12.7x (RRM) to 14.5x (additive), pillar-governed.** Provisional on the Pillar 1 ROCE ruling and the Pillar 3 survival ruling, the two places the dossier defers to you. The relative cross-check confirms the pillar rather than overriding it.
 
 **THE EARNINGS-BASIS QUESTION (operator decides at the gate, I do not pick it):** one-year-forward P/E (multiple on forward EPS) versus trailing P/E (multiple on trailing EPS). For this business the two diverge sharply right now. Trailing EPS is inflated by the Indonesia batch peak and by treasury income; forward EPS assumes the batch repeats, which the handover says it will not (S2). A trailing multiple on a batch-peak EPS overstates normalized earning power; a forward multiple requires a batch that has no follow-on. The clean approach is a multiple on normalized OPERATING EPS (treasury stripped, batch treated as a dated slice), but the forward-versus-trailing choice on that base is yours.
 
+**How the multiple becomes a price (the bridge, so the operator sees the stakes):** the exit multiple applies to OPERATING EPS only (treasury stripped, Module B4), and the ~Rs 293 Cr of cash and investments is added back separately in the equity bridge, never inside the multiple. Operating EPS is about Rs 9.5 to 10 (FY26). So, illustratively: at the pillar 14x, operating equity value is about 14 x Rs 30 Cr = Rs 420 Cr, plus Rs 293 Cr net cash = Rs 713 Cr, about Rs 233 per share. At the 25x sector cap, about Rs 750 Cr + Rs 293 Cr = Rs 1,043 Cr, about Rs 341 per share. Against CMP Rs 1,175 both are a fraction of the price. This is a preview, not the Role 1 fair value, and the BUY/AVOID call is Role 1 and Role 2's, not FTTCP's; but it shows the exit multiple is not the swing factor here, the current price is.
+
 Card status: provisional on Pillar 1 ROCE and Pillar 3, which are exactly the two rulings the handover flags for you.
+
+---
+
+## 5b. RELATIVE VALUATION CROSS-CHECK (Amendment 20 / Step 1C)
+
+Run now, not deferred. Peer multiples are computed from the DATED corpus peer screener exports (as of the 29-Aug-2026 run), sourced and current, not pulled from memory (the Correction-6 guard is respected). Live forward estimates would still need claude.ai; trailing and clean-operating multiples are computable here and are enough to run the test.
+
+**Peer table (auto driveline / precision component peers):**
+
+| Name | P/E reported | P/E clean (other income stripped, ~25% tax) | Other income as % PAT | Sales YoY | Net debt / (cash) Rs Cr |
+|---|---|---|---|---|---|
+| DIVGIITTS | 76.6x | 118.9x | 36% | +61% (batch) | (293) net cash |
+| Endurance | 43.3x | 47.1x | 8% | +26% | 452 |
+| Happy Forgings | 72.2x | 78.2x | 8% | +10% | 277 |
+| Sansera | 74.3x | 82.6x | 10% | +16% | 194 |
+| Sona BLW (SONACOMS) | 79.4x | 86.7x | 8% | +26% | 94 |
+
+Peer clean-operating P/E cluster: about 47x to 87x, median about 80x. This is a cycle-elevated set.
+
+**20.3 Placement of the subject with named adjustments.** Against this cluster Divgi carries: much LOWER operating ROCE (~12% vs peers high-teens to ~25%) — a large haircut; net CASH vs peer net debt — a premium; governance CONCERN (US-subsidiary narrative, Tejal RPT omission, three-way pay figures) — a haircut; cyclical, customer-concentrated, batch-dependent growth — a haircut; smaller and less liquid — a haircut. Net of these, an adjusted peer base for Divgi sits well BELOW the peer median, roughly 25 to 40x on operating earnings even before normalising the peers for their own cycle peak.
+
+**20.5 The 30% test and its resolution.** On REPORTED earnings Divgi (76.6x) sits inside the peer cluster, so a naive reading would trigger "pillar (14x) more than 30% below the adjusted peer base, relative governs." It does NOT govern here, for two reasons the amendment itself requires me to test:
+- **Companion-variable test FAILS (B8b).** A discount is only a re-rating candidate if it is UNEXPLAINED by worse growth, worse ROCE, or higher risk. Divgi is not cheaper than peers on operating earnings; it is the MOST expensive (118.9x clean vs 47 to 87x), precisely because 36% of its reported profit is treasury income the market should not multiply and peers carry only 8 to 10%. There is no unexplained discount to converge; there is a premium that strip-out removes.
+- **Sector-dislocation test FAILS (B8c).** The whole peer set trades at 43 to 87x, cycle-elevated. Cheapest name in an expensive sector is a flag, not a thesis; here Divgi is not even the cheapest.
+
+**Verdict: re-rating potential NONE. The PILLAR governs (~13 to 15x); the relative table is the DOWNSIDE cross-check.** The peer comparison does not lift the exit multiple. Read the other way, it hardens the caution: once treasury income is stripped, Divgi is the dearest name in a dear peer set, on a lower-quality, more concentrated, weaker-governance profile. The sector cap (25x) is not breached by any relative figure, and the excess of the raw peer median over the cap is logged as a cap-review flag (20.6/20.7), not priced in. Amendment 20 changed the exit-multiple SELECTION here toward the pillar, and it changed nothing in the decision rules.
+
+**Note on the ROCE strip (your second point, stated precisely).** The Pillar 1 ROCE is taken after stripping treasury income, and the strip is done on BOTH sides together: the treasury income comes OUT of EBIT and the surplus cash that generates it comes OUT of capital employed, in one consistent operation. Stripping only the income (leaving the ~Rs 293 Cr cash in the denominator) would understate operating ROCE to about 6%; stripping only the cash would overstate it. Done together, FY26 operating ROCE is about 12% (FY25 about 4.2%), and that ~12% is what feeds the continuous formula (0.5 x 12 + 7.5 = 13.5x). The same treasury strip governs the EPS the multiple applies to (Module B4 operating EPS ~Rs 9.5 to 10), so ROCE and earnings are stripped consistently, never one without the other.

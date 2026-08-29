@@ -13,3 +13,4 @@
 | 4 | business-model | claude-sonnet-5 | default | - | - | 180923 | 15.0m | 1 |
 | 6 | peer-concall | claude-sonnet-5 | default | - | - | 181655 | 11.2m | 1 |
 | 7 | emerging-moat | claude-sonnet-5 | default | - | - | 202826 | 20.4m | 1 |
+| 9 | tam-sam-som | claude-sonnet-5 | default | - | - | 199246 | 16.1m | 1 |

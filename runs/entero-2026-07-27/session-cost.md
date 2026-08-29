@@ -12,3 +12,4 @@
 | 8 | promoter-check | claude-sonnet-5 | - | - | - | 173602 | 11m13s | 1 |
 | 4 | business-model | claude-sonnet-5 | - | - | - | 173064 | 14m05s | 1 |
 | 7 | emerging-moat | claude-sonnet-5 | - | - | - | 262248 | 9m38s | 1 |
+| 6 | peer-concalls | claude-sonnet-5 | - | - | - | 191671 | 10m41s | 1 |

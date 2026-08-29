@@ -13,3 +13,4 @@ Per-stage token ledger. One line per subagent run.
 | 4 | business-model | claude-sonnet-5 | default | - | - | 774274 | 7.6m | 1 |
 | 5 | concall-analysis | claude-sonnet-5 | default | - | - | 220502 | 7.2m | 1 |
 | 8 | promoter-check | claude-sonnet-5 | default | - | - | 30307 | 14.5m | 1 |
+| 6 | peer-verification | claude-sonnet-5 | default | - | - | 23402 | 8.5m | 1 |

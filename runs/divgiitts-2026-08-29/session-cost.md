@@ -10,3 +10,5 @@ Per-stage token ledger. One line per subagent run.
 | 2 | notes-pass2 | claude-sonnet-5 | default | - | - | 720012 | 9.1m | 2 |
 | 2 | notes-pass3-consol | claude-sonnet-5 | default | - | - | 57277 | 3.0m | 3 |
 | 3 | ar-deep-dive | claude-sonnet-5 | default | - | - | 739001 | 24.7m | 1 |
+| 4 | business-model | claude-sonnet-5 | default | - | - | 774274 | 7.6m | 1 |
+| 5 | concall-analysis | claude-sonnet-5 | default | - | - | 220502 | 7.2m | 1 |

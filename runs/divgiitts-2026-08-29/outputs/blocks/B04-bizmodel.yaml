@@ -1,0 +1,65 @@
+stage: B04-bizmodel
+company: "DIVGIITTS"
+run_date: "2026-08-29"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - "Manifest sector_cap_row 'Agri processing' is incorrect for this business - real business is auto driveline components (NIC 2930); corrected in this stage."
+  - "Royalty/technology-license expense more than doubled YoY (Rs7.58cr FY26 vs Rs2.68cr FY25, Note 32A) - margin driver to monitor."
+  - "E-Gear Drive (EV Transmission) segment revenue declined -20% YoY in Q1FY27 on Sigma platform SOP delay - execution risk."
+  - "Customer/program revenue concentration not quantified by company (no top-customer % disclosed) - NOT FOUND; monitor qualitatively only."
+  - "AR Annexure D lists R&D spend as '117.94 crores' which is an evident unit typo; correct figure is Rs11.79 Cr (117.94 million), corroborated by AR Value-Creation Report and Business Driver R&D page."
+business_type: "manufacturing"
+revenue_streams:
+  - {name: "Transfer Case (4WD/AWD)", type: "B2B manufacturing, build-to-spec", pct_of_revenue: 50, predictability: "M"}
+  - {name: "Transmission Components (incl. precision-machined & export)", type: "B2B manufacturing", pct_of_revenue: 28, predictability: "M"}
+  - {name: "E-Gear Drive (EV transmission)", type: "B2B manufacturing, program-linked", pct_of_revenue: 8, predictability: "L"}
+  - {name: "Synchronizer Systems", type: "B2B manufacturing", pct_of_revenue: 6, predictability: "M"}
+  - {name: "Automatic Locking Hub (ALH)", type: "B2B manufacturing, legacy", pct_of_revenue: 2, predictability: "L"}
+  - {name: "Other Income (treasury interest, non-operating)", type: "financial/treasury", pct_of_revenue: 6, predictability: "H"}
+asset_intensity: "heavy"
+wc_intensity: "medium"
+pricing_power: "weak"
+cyclicality: "cyclical"
+moats_present:
+  - {moat: "Switching costs (OEM qualification/tooling, multi-year platform life)", durability: "medium (resets each new platform)"}
+  - {moat: "IP/know-how (in-house EV transmission design, unique claim in India)", durability: "narrow-to-medium"}
+  - {moat: "Cost advantage (India manufacturing base vs global average)", durability: "narrow"}
+valuation_methods:
+  primary: {method: "Relative valuation (EV/EBITDA, P/E vs Indian auto-ancillary/driveline peers)", why: "Profitable, EBITDA-generative business in cyclical recovery from FY24-25 trough; peer comps capture sector-appropriate multiple"}
+  secondary: {method: "DCF / scenario-based residual earnings", why: "Captures platform-ramp optionality (Indonesia TC program, EV Sigma SOP, export scale-up) not visible in trailing multiples"}
+  tertiary: {method: "Asset/replacement-cost cross-check", why: "Sanity-check floor given high fixed-asset base (~Rs422cr gross block) and ongoing capex cycle"}
+  not_applicable: ["Sum-of-the-parts (single reportable segment, Note 39)", "Dividend discount model (low, reinvestment-focused payout)", "NAV/asset-holding valuation (not a holding company)"]
+irrelevant_ratios:
+  - {ratio: "Same-quarter YoY revenue growth, unadjusted", why: "Single large program ramps (e.g. Indonesia 4x4) can double YoY growth without signalling broad-based demand"}
+  - {ratio: "Gross margin trend in isolation", why: "Stayed flat 62-64% across the cycle while EBITDA margin swung 24%-31%; real driver is fixed-cost absorption, not raw-material spread"}
+  - {ratio: "RoE/RoCE inclusive of Other Income", why: "Other Income is treasury interest on IPO cash (~6% of Total Income), not operating; inflates return ratios vs operating RoCE ex-Other-Income"}
+  - {ratio: "Receivable days vs consumer-company benchmarks", why: "70-day receivables is normal for OEM Tier-1 supply terms, not a red flag by consumer-retail standards"}
+must_track_metrics:
+  - {metric: "EBITDA margin", healthy: "24-30%", red_flag: "sustained below ~20% for 2+ quarters without a named one-off"}
+  - {metric: "RoCE ex-Other Income (operating RoCE)", healthy: ">12%", red_flag: "falling back toward mid-single digits (FY25 trough was 4.2%)"}
+  - {metric: "Net working capital days", healthy: "<80 days", red_flag: ">100 days (FY25 was 96)"}
+  - {metric: "Export revenue % of total", healthy: "rising toward ~30-50% (management aspiration)", red_flag: "mix stalling or reversing below ~15%"}
+  - {metric: "Transfer Case / single-program revenue concentration", healthy: "declining concentration, diversified platform base", red_flag: "single program (e.g. Indonesia 4x4) driving majority of incremental growth with no confirmed multi-year extension"}
+unit_economics:
+  unit: "1 Transfer Case unit (or equivalent one vehicle-set of driveline/transmission components supplied to an OEM)"
+  revenue_per_unit: "NOT FOUND"
+  margin_per_unit: "NOT FOUND"
+  key_lever: "Operating leverage from a largely fixed manufacturing/employee cost base: FY26 revenue +61.2% YoY drove PAT +92.2% YoY (AR CFO overview p.153); Q1FY27 revenue +85% YoY drove EBITDA +118% and PAT +183% (Inv. Pres. slide 11)"
+first_deterioration_signals:
+  - {risk: "Revenue/customer concentration", first_signal: "Transfer Case % of Total Income or single-program (Indonesia) revenue plateauing/declining"}
+  - {risk: "Margin/raw material cost", first_signal: "Gross margin (Note 27) falling below ~60%"}
+  - {risk: "Balance sheet/working capital", first_signal: "Net working capital days rising back above ~90-100"}
+  - {risk: "Execution (EV Transmission)", first_signal: "E-Gear Drive segment revenue declining QoQ/YoY (already -20% YoY in Q1FY27)"}
+  - {risk: "Structural (ICE-to-EV substitution of mechanical transfer case)", first_signal: "New OEM RFQ mix shifting toward integrated e-axle solutions away from mechanical transfer case"}
+mgmt_questions:
+  - "What is customer-wise revenue concentration (top 1/top 3 as % of revenue), and how will management reduce it?"
+  - "What caused the E-Gear Drive revenue decline in Q1FY27, and what milestones now de-risk the Sigma SOP timeline?"
+  - "What is current capacity utilisation at each of the 4 plants, and how much incremental capex is needed for the FY27 Rs500 Cr revenue target?"
+  - "How is the royalty/licensing expense (more than doubled YoY) structured under the renegotiated BorgWarner scope - is it capped as % of revenue?"
+  - "What is the committed capital/opex burn for the US subsidiary (Project Mayflower) over the next 2-3 years, and what milestones justify continued investment?"
+  - "Given single-program dependence on the Indonesia 4x4 contract, what is the contract tenure, and are follow-on volumes confirmed beyond FY27?"
+  - "What is the realistic timeline and probability-weighted revenue contribution of the Automatic Transmission technology-transfer opportunity (40mn+ installed base cited)?"
+one_line_verdict: "Niche driveline component maker riding an OEM-platform and export upcycle, structurally exposed to customer concentration and EV-substitution risk."
+analyst_note: "Archetype: build-to-spec component maker (primary) with Tier-1 outsourcing-partner traits (secondary) - not a commodity converter, so Amendment 17 converter restrictions on Section 1B/FTTCP do not bind this name. Other Income (~6% of Total Income) is treasury interest on IPO cash, not operating income; downstream valuation must use operating RoCE ex-Other-Income (12.7% FY26) rather than blended RoCE (9.9%), or profitability will be overstated. No per-unit ASP/volume or customer-concentration % is disclosed anywhere in the AR or investor presentation; both are named data gaps for Halt-1 corpus-gap resolution, not estimated here."

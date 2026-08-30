@@ -12,3 +12,4 @@ Per-stage token ledger, one line per subagent run.
 | 3 | ar-deep-dive | claude-sonnet | - | - | - | 215215 | 788s | 1 |
 | 4 | business-model | claude-sonnet | - | - | - | 88265 | 334s | 1 |
 | 5 | concall-no-concall | claude-sonnet | - | - | - | 99764 | 418s | 1 |
+| 8 | promoter-check | claude-sonnet | - | - | - | 130656 | 570s | 1 |

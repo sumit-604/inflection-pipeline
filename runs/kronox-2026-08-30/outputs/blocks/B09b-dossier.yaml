@@ -1,0 +1,45 @@
+stage: B09b-dossier
+company: "KRONOX"
+run_date: "2026-08-30"
+model: claude-sonnet-5
+status: complete
+corpus_verdict: "CORPUS GAPPED"
+corpus_gaps:
+  - {document: "Prospectus / DRHP (RHP, Jun-2024 IPO)", expected_source: "BSE", kind: "findable-missing"}
+  - {document: "Annual Report FY24", expected_source: "BSE", kind: "findable-missing"}
+  - {document: "Annual Report FY25", expected_source: "BSE", kind: "findable-missing"}
+  - {document: "Quarterly shareholding pattern (12 quarters)", expected_source: "BSE", kind: "findable-missing"}
+  - {document: "KRONOX screener CSVs", expected_source: "company IR page", kind: "findable-missing"}
+  - {document: "Investor presentation", expected_source: "company IR page", kind: "plausibly-nonexistent"}
+  - {document: "Credit rating rationale", expected_source: "rating agency site", kind: "plausibly-nonexistent"}
+archetypes:
+  - {line: "High purity specialty fine chemicals (single segment)", archetype: "Commodity converter (Section 1B v3.7 Amendment 17 binds)"}
+transition:
+  - line: "High purity specialty fine chemicals (single segment)"
+    from_tier: "R2 COST-ADVANTAGED CONVERTER"
+    to_tier: "R3 VALUE-ADDED / SPEC'D SUPPLIER"
+    engine: "Dahej Unit IV capacity coming online off the approved-but-unbuilt land; rising export mix (24.75%->32.39% FY24-26) converting into named, certified, sticky export relationships"
+    proof_gate: "CWIP tied to Dahej stepping up materially from the Rs 87.6 lakh FY26 base, with a capital-commitment disclosure or Reg-30 filing naming Dahej spend (B03, B05)"
+    recognition_gap: "Open question for Stage 11: does current pricing already assume the Dahej-driven capacity/export-mix TO state, or is the TO state still unpriced (PE gap unresolved at phase 1)"
+    ugliness: "ARTIFACT-OF-CLIMB"
+    transition_falsifier: "A further Dahej deadline reset in the FY27/FY28 AR with capital commitments still NIL and CWIP still near the Rs 87.6 lakh base (B03; B05 trigger #1 kill signal)"
+dominant_variables:
+  - "Dahej Unit IV CWIP / capital-commitment trail (B03, B05)"
+  - "Reconstructed CFO/PBT cash-conversion ratio (B02, B03)"
+  - "Export mix as % of revenue (B05, AR p.11, B09)"
+  - "Indo Borax / Zenrock ownership transition effect on capital allocation (B08)"
+business_falsifier: "ROCE continuing to decline toward cost-of-capital levels, EBITDA margin contracting >300bp without a raw-material explanation, or the cash-conversion cycle moving sustainably past 90 days, rather than reflecting a one-year working-capital swing (B04 must_track_metrics)"
+mental_model_status: "DRAFT - PENDING OPERATOR SIGN-OFF"
+fragility:
+  variable_count: 4
+  verifiability_ratio: "2 of 4 externally observable"
+  single_point_failure: "Dahej Unit IV CWIP / capex trail"
+  fragility_verdict: "FRAGILE"
+candidate_count: 6
+research_brief_items: 14
+plain_summary_points: 15
+annex:
+  present: true
+  questions_answered: 10
+  corpus_commit_hash: "964205a4f074f94bb48e6caab0542261793ca3ba"
+orchestrator_note: "Dossier tags the line 'Commodity converter (Amendment 17 binds)'. This is a phase-3 flag: under v3.7 Amendment 17 a CONVERTER-classified name must NOT feed spot-year ROCE or rupee-denominated WC trends into Section 1B/FTTCP. B04 read pricing power as 'moderate' and the ladder as R2->R3; whether Kronox is truly a commodity converter or a spec'd specialty supplier is an operator call at Halt 1 and governs the Section 1B method in phase 3."

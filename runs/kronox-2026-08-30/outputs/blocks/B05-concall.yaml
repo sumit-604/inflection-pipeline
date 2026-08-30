@@ -1,0 +1,58 @@
+stage: B05-concall
+company: "KRONOX"
+run_date: "2026-08-30"
+model: claude-sonnet-5
+status: complete
+no_concall_mode: true
+input_gaps:
+  - "No concall transcripts exist (concalls_available: false); Section 2E and 3A/3C have no source and are marked NOT APPLICABLE"
+  - "AR FY24 and AR FY25 absent; Section 1C trigger-evolution cannot be built from primary cross-year AR comparison, only from single-AR internal chronology plus COMPANY MEMORY dates"
+flags:
+  - "Dahej Unit IV 'finalized' 2y/3y deadlines carry zero corroborating capex/CWIP/capital-commitment trail in the same AR (HIGH)"
+  - "17-point ROCE decline FY23-FY26 never discussed in MD&A or Board's Report (MEDIUM)"
+quarters_analysed: []
+triggers:
+  - {priority: 1, name: "Dahej Unit IV restart, finalized 2y/3y deadlines", type: "VOLUME", timeframe: "long (2-3y)", conviction: "L",
+     confirm_signal: "CWIP step-up tied to Dahej in FY27/FY28 AR notes, a capital-commitment disclosure, or a Reg-30 capex filing naming Dahej spend",
+     kill_signal: "FY27 AR repeats 'unforeseen circumstances' with a further deadline reset, or capital commitments remain NIL through FY28"}
+  - {priority: 2, name: "Q1 FY27 revenue/PAT re-acceleration", type: "VOLUME", timeframe: "near (1 quarter)", conviction: "M",
+     confirm_signal: "Q2/Q3 FY27 results sustain double-digit revenue and PAT growth",
+     kill_signal: "growth reverts to FY26's ~1% pattern in Q2 FY27"}
+  - {priority: 3, name: "Rising export mix (24.75% to 32.39% over FY24-FY26)", type: "PRICE-MIX", timeframe: "near-medium", conviction: "M",
+     confirm_signal: "export % of revenue stays above 30% in FY27",
+     kill_signal: "reverts below the FY25 level of ~27%"}
+guidance:
+  - {item: "Dahej Unit IV production start", number: "NOT FOUND (no capex/capacity figure given)", timeframe: "~2 years from AR FY26 date (~FY28)", stated_in: "AR FY26 Chairman's Letter, p.18-19"}
+  - {item: "Dahej Unit IV full functionality", number: "NOT FOUND", timeframe: "~3 years from AR FY26 date (~FY29)", stated_in: "AR FY26 Chairman's Letter, p.18-19"}
+  - {item: "Final dividend FY26", number: "Rs 0.50/share (5% of Rs 10 face value); Rs 185.40 lakh total", timeframe: "payable on AGM approval 16-Sep-2026", stated_in: "AR FY26 Board's Report, p.36-37"}
+  - {item: "Implicit revenue expectation", number: "qualitative only: 'maintained' revenue vs prior year", timeframe: "FY26", stated_in: "AR FY26 Chairman's Letter, p.18"}
+promise_delivery:
+  delivered: 2
+  partial: 1
+  missed: 1
+  rows:
+    - {promised_in: "Regulatory record (GPCB 13-Nov-2024, Consent to Establish 10-Nov-2025), implicit", promise: "Dahej Unit IV construction to follow completed approvals", outcome: "Missed", explanation: "AR FY26 (signed 12-Aug-2026): 'the work at Unit IV, Dahej could not be started' due to unnamed 'unforeseen circumstances' (AR p.18)"}
+    - {promised_in: "AR FY26 Chairman's Letter, p.18-19", promise: "'New deadlines have been finalized': production start ~2 years, full unit functional ~3 years", outcome: "Partial / unresolved", explanation: "Zero corroborating capex, CWIP, or capital-commitment trail in the same AR: CWIP Rs 87.6 lakh company-wide (Note 3, p.100), capital commitments stated NIL (p.109)"}
+    - {promised_in: "AR FY26 Chairman's Letter, p.18", promise: "Implicit: revenue maintained vs prior year despite a difficult macro year", outcome: "Delivered", explanation: "Revenue from operations +1.03% (Rs 10,122.00 lakh vs Rs 10,019.39 lakh FY25); total income +3.6% (Board's Report p.36-37)"}
+    - {promised_in: "AR FY26 Board's Report, p.36-37", promise: "Dividend consistent with stated policy", outcome: "Delivered", explanation: "Rs 0.50/share (5%) recommended for FY26, matching the Rs 0.50/share actually paid during FY26 for FY25 (AR p.105); payout unchanged at Rs 185.40 lakh"}
+promise_delivery_score: "2 delivered / 1 partial / 1 missed (of 4)"
+excuse_pattern: "external-blame-heavy"
+repeated_evasions: []
+credibility_grade: "C"
+credibility_basis: "Two low-bar promises (flat revenue framing, unchanged dividend) delivered; the single load-bearing promise (Dahej Unit IV) shows a documented miss (clearances-to-construction gap) and its restated 2y/3y deadline carries zero capex/CWIP/capital-commitment corroboration in the same AR, so the grade stays at the NO-CONCALL-MODE default and does not rise to B"
+peer_questions:
+  - {question: "What growth rate does the specialty/high-purity fine chemicals sector cite for FY26-27, and does it corroborate or contradict Kronox's own near-flat FY26 revenue growth (+1.03%)?", why: "Kronox's own MD&A gives zero sector-specific data; peer commentary is the only way to test underperformance vs a sector-wide stall", check_peers: ["DMCC", "NEOGEN", "TANFACIND"]}
+  - {question: "Do peer managements disclose capex timelines with rupee figures, capacity numbers, and commissioning quarters, or is undated/uncosted capex guidance a sector norm?", why: "benchmarks whether Kronox's zero-specificity Dahej promise is a sector norm or a company-specific red flag", check_peers: ["DMCC", "NEOGEN", "TANFACIND", "INDOBORAX"]}
+  - {question: "Do peer concalls discuss the tariff-war/geopolitical impact Kronox's Chairman cites as making FY26 difficult?", why: "tests whether the implicit external-blame framing is a real sector-wide headwind or a company-specific narrative", check_peers: ["DMCC", "NEOGEN", "TANFACIND"]}
+  - {question: "Do any peer concalls name Kronox (market share, competitive dynamics, customer overlap)?", why: "Kronox discloses zero competitor names or market-share claims of its own", check_peers: ["DMCC", "NEOGEN", "TANFACIND", "INDOBORAX"]}
+  - {question: "Does Indo Borax's own public commentary (new controlling shareholder, Aug-2026) say anything about the Dahej Unit IV plan or capital-allocation priorities that differs from Kronox's own AR framing?", why: "Indo Borax now controls Kronox; its commentary may be the closest available proxy for real forward guidance", check_peers: ["INDOBORAX"]}
+red_flags:
+  - {flag: "Dahej Unit IV 'finalized' new deadlines carry zero corroborating capex/CWIP/capital-commitment trail in the same AR", severity: "HIGH"}
+  - {flag: "Multi-year gap between Unit IV land purchase (2022) and construction start (still not begun as of 12-Aug-2026), delay cause never specified beyond 'unforeseen circumstances'", severity: "MEDIUM"}
+  - {flag: "ROCE decline from 49.46% (FY23) to 32.22% (FY26) never discussed in MD&A or Board's Report, alongside a growing fixed-deposit balance", severity: "MEDIUM"}
+  - {flag: "MD&A contains no sector-specific content, only generic global/India macro-economic filler", severity: "LOW"}
+  - {flag: "R&D and technology-absorption disclosures are single-sentence boilerplate with no rupee figure or project description", severity: "LOW"}
+dropped_triggers: []
+timeline_slippages:
+  - "Dahej Unit IV: land acquired 2022 (AR milestones, p.4-5); GPCB approval 13-Nov-2024; Consent to Establish 10-Nov-2025 (both COMPANY MEMORY / B00 load-bearing facts, not dated inside the AR text); construction still not started as of the AR FY26 signing date (12-Aug-2026, AR p.77); deadlines reset in the same AR to '2 years to production, 3 years to full functionality,' cause of the prior slip named only as 'unforeseen circumstances' (AR p.18)"
+analyst_note: "The single testable retrospective promise (clearances should lead to construction) was missed; the only forward promise (new 2y/3y deadlines) is untestable today and carries no balance-sheet backing on the day it was made. Grade C reflects a company that meets low-bar commitments (dividend, flat revenue) but has never put a number behind its one growth catalyst. Q1 FY27 (+13.4% revenue, +38.5% PAT YoY, results 03380acb p.3) is a genuine post-FY26 acceleration but arrives with zero management commentary explaining the driver, since no MD&A accompanies interim filings. The Indo Borax control acquisition (Aug-2026, per COMPANY MEMORY) postdates both results filings in this stage's scope and is not sourced here; stage 6/8 should carry it forward."

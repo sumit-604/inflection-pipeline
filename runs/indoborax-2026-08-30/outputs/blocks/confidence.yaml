@@ -1,0 +1,17 @@
+confidence_delta:
+  numerical_acceptance: 94        # B12a
+  redflag_coverage: 64            # B12b (single-call-driven)
+  framework_adherence: 94         # B12c, Gate-0 + Emerging-Moat portion only
+  peer_utilisation: 75            # 3 of 4 peer companies gave substantive corroboration (Neogen: no boron overlap)
+  overall: 64                     # min of the four
+  band: "60-74 -> PROCEED verdicts downgrade one level"
+  valuation_framework_adherence: pending-phase-3
+  forced_rework: false            # no CRITICAL numerical finding; no dimension below 60
+  notes: >
+    redflag_coverage 64% is single-call-driven (only one concall in corpus); verifier B
+    concurs the decision survives and credibility stays C. peer_utilisation reflects that
+    Neogen (lithium/bromine) has zero boron overlap; DMCC, Tanfac, Tata Chemicals gave
+    substantive corroboration. Verifier A found 1 MAJOR source-fidelity flag (Gate 0 B4
+    WC-days unreconciled) but 0 CRITICAL, acceptance 94%. Overall 64% sits in the
+    one-level-downgrade band; the freshness cap (CORPUS GAPPED-FRESHNESS) independently
+    holds the gate at no better than PROCEED WITH CAVEATS.

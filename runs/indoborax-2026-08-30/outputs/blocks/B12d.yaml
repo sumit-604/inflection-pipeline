@@ -1,0 +1,23 @@
+stage: B12d
+company: "INDOBORAX"
+run_date: "2026-08-30"
+model: claude-sonnet-5
+status: complete
+peers_audited: 14
+substantive_confirmed: 7
+substantive_unsupported: []
+unused_but_relevant:
+  - {peer: "DMCC (Nov-2024 call, Q2 FY25, excluded from Stage 6's 12-transcript cap)", missed_item: "Boron business already at ~Rs 100-125 cr annualised run-rate with active growth ('most of the increase has been due to increased volumes and improvement in the Boron business'); capex caution already explicit ('we don't foresee the need for any significant investment at this time') a full year before the Nov-2025 Turkey ore disruption Part 5 treats as the causal driver of DMCC's caution", anchor: "DMCC Nov-2024 call (Bimal Goculdas), footer Page 2-4 of 14"}
+  - {peer: "DMCC (May-2025 call, Q4 & FY25, excluded from Stage 6's 12-transcript cap)", missed_item: "Analyst-confirmed 4-5 consecutive quarters of positive boron-business commentary; 'INR 100 crores in sales for the boron business in the past year... No substantial CAPEX needed' — reinforces that DMCC's capex conservatism predates and is broader than the Turkey-specific supply shock", anchor: "DMCC May-2025 call (Bimal Goculdas), footer Page 3 and Page 6 of 15"}
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "MAJOR", location: "B06 Part 5 (Cross-Peer Hypothesis); Part 3 coverage map", description: "Two excluded-but-available DMCC transcripts (Nov-2024, May-2025) contain directly claim-relevant material left unused: DMCC's boron business was already large and growing for 4-5 consecutive quarters, and its capex caution predates the Nov-2025 Turkish ore disruption by a full year, qualifying Part 5's causal framing."}
+  - {severity: "MAJOR", location: "B06 Part 2C, Part 5 (Tanfac Rs 495 cr R-32 project figure)", description: "B06 attributes the full Rs 495 cr figure to 'the R-32 project'; the source (Tanfac May-2026 call) states this is a combined plan of INR405cr (HFC-32) plus ~INR90cr (other products); the Aug-2026 call separately states the R-32 project cost alone as INR395cr/INR390cr. Overstates the R-32-specific commitment by ~20-25%."}
+  - {severity: "MINOR", location: "B06 Part 1 Claim 3, Part 2E (DMCC page citations)", description: "Page-citation convention inconsistent across the two DMCC calls cited in the same report: Nov-2025 quote cited by PDF-page-order, May-2026 quotes cited by the transcript's own printed footer number. Quote content itself verified accurate in both cases."}
+  - {severity: "MINOR", location: "B06 Part 1 Claim 4 (Tanfac prior-year EBITDA margin)", description: "'16.3% prior year' is not stated verbatim in the transcript; computed from the transcript's own disclosed figures the ratio is ~16.48%, not 16.3%."}
+  - {severity: "MINOR", location: "B06 Part 1 Claim 4 (Tanfac pass-through lag anchor)", description: "The '30-45 day' pass-through lag detail is spoken on transcript footer Page 6 of 21, not p.4 as cited alongside the margin-compression quote."}
+critical_count: 0
+major_count: 2
+minor_count: 3
+acceptance_rate: 86

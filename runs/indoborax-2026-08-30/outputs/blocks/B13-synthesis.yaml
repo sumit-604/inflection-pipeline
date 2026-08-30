@@ -1,0 +1,19 @@
+stage: B13-synthesis
+company: "INDOBORAX"
+run_date: "2026-08-30"
+model: claude-opus-4-8
+status: complete
+phase: 1-lite
+verdict: "PROCEED WITH CAVEATS"
+verdict_rule_applied: "would land PROCEED WITH FLAGS; freshness cap (CORPUS GAPPED-FRESHNESS) + 60-74 confidence band downgrade to PROCEED WITH CAVEATS"
+flags_active: [FLAG-PROMOTER, FLAG-CASH, FLAG-GATE0]
+confidence_delta: {numerical: 94, redflag: 64, framework: 94, peer: 75, overall: 64}
+headline: "Boron chemicals maker under new control"
+falsification_metric: "Q1 FY27 pre-exceptional PBT still falling YoY with still zero boron oxide CWIP"
+monitorables_count: 8
+publish_candidate: false
+notion_save: none-phase-1
+files:
+  - outputs/final/business-narrative.md
+  - outputs/final/gate-recommendation.md
+  - outputs/final/verifier-summary.md

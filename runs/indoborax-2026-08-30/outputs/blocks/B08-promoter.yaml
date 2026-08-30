@@ -1,0 +1,29 @@
+stage: B08-promoter
+company: "INDOBORAX"
+run_date: "2026-08-30"
+model: claude-sonnet-5
+status: complete
+input_gaps: [postal_ballot_notices, shareholding_reg31_filing, FY25_annual_report_for_RPT_crosscheck]
+flags:
+  - {type: FLAG-PROMOTER, verdict: "CONCERN", top_findings: ["Rs 62.02 cr non-arm's-length asset sale/leaseback to departing Jain family, sequenced via special resolution (26-Aug-2025) ahead of the SPA (15-Dec-2025)", "100% pledge of entire incoming Zenrock promoter block to secure acquisition debt, FY31 bullet repayment (India Ratings, 23-Jul-2026)", "Rs 3.30 cr commission still payable to departed MD Sajal Jain at FY26 year-end"]}
+verdict: "CONCERN"
+scorecard: {clean: 5, caution: 3, red: 2}
+deal_breakers: ["pledge >40% TRIGGERED: 100% of Zenrock's entire Indo Borax holding pledged to Catalyst Trusteeship (acquisition-financing structure, NCD principal already reduced ~35% in year one)"]
+adverse_findings:
+  - {finding: "Rs 62.02 cr non-arm's-length sale of residential property, office premises, and vehicles by the company to the departing Jain family, plus an office sale-leaseback creating a 3-year escalating rent annuity to the family, all approved 26-Aug-2025 (before the 15-Dec-2025 SPA)", evidence_tier: "VERIFIED", source: "AR FY26 AOC-2 Annexure-III p.42, Note 40 p.108, Note 34 p.106", date: "FY26 AR, filed 21-May-2026"}
+  - {finding: "100% of Zenrock's promoter shareholding pledged to Catalyst Trusteeship to secure acquisition NCDs (Rs 255 cr outstanding) and CCPS (Rs 75 cr); bullet repayment FY31", evidence_tier: "VERIFIED", source: "India Ratings rating action report", date: "2026-07-23"}
+  - {finding: "Rs 3.30 cr commission still payable to departed MD Sajal Jain at FY26 close", evidence_tier: "VERIFIED", source: "AR FY26 Note 40(c) p.109", date: "FY26 AR"}
+  - {finding: "Rs 5.09 cr unprovided ICD to Radius Estates Projects Pvt Ltd (formerly Vishwaroop Realtors), counterparty under IBC insolvency; no connection found to either promoter group", evidence_tier: "VERIFIED", source: "AR FY26 Note 47 p.113 and Secretarial Audit Report p.67", date: "FY26 AR"}
+  - {finding: "No SEBI, criminal, tax, or SFIO findings for any named individual in either the exiting or incoming promoter group", evidence_tier: "VERIFIED", source: "AR FY26 Board's Report p.54 and Annexure-IV-B p.61; corroborating web search", date: "FY26 AR, filed 21-May-2026"}
+transition_evidence:
+  - "New professional CEO from outside the family: Suresh Kalra, 28-year chemicals career (WR Grace, hubergroup, SI Group, Aquapharm CEO) — AR FY26 p.28,45; trade press 2026-05-14"
+  - "Institutional investor entry: EAAA India Alternatives/Edelweiss via three AIFs, ~20% combined stake as Persons Acting in Concert — Open Offer Post Advertisement, 2026-05-04"
+  - "Full exit of the departing family: Sajal Jain and entire Jain family ceased to be promoter-group members on SPA completion — AR FY26 Board's Report p.32"
+  - "Governance overhaul with one strongly credentialed independent director: Prasad Parameswaranpillai Naga, retired SBI Deputy MD, sitting Axis Bank/ARCIL/Jyoti CNC director — Bloomberg Markets, ARCIL board page"
+  - "NOT a transition signal (recorded for balance): pledge is RISING (0% to 100%), not falling; auditor unchanged (no Big-4 upgrade)"
+pledge_pct_latest: 100
+pledge_trend: "rising - 0% under 40-year Jain family tenure to 100% of Zenrock's entire block within weeks of the 2026-01-23 change of control; structural to acquisition financing (affiliate lender/sponsor), not distress; NCD principal already cut ~35% (Rs 390cr to Rs 255cr) in year one per India Ratings 2026-07-23"
+searches_performed: ["Sunil Malhotra She Capital SEBI", "Zenrock Chemicals Indo Borax acquisition Sunil Malhotra", "Suresh Kalra Aquapharm WR Grace career", "Sajal Jain Indo Borax managing director", "She Capital LLP Sunil Malhotra", "EAAA India Alternatives Edelweiss ISAF III", "Kronox Lab Sciences founders", "Radius Estates Vishwaroop Realtors insolvency NCLT", "Harsh Malhotra Amazon Indo Borax profile", "Indo Borax RPT postal ballot minority shareholders", "Zenrock Sunil Malhotra other ventures iBankers Securities", "Indo Borax dividend Rs40 promoter debt repayment", "Indo Borax Glassdoor AmbitionBox reviews", "Sajal Jain family dispute litigation SEBI", "Sunil Malhotra SEBI order adjudication fraud", "IiAS InGovern Indo Borax open offer governance", "iBankers Securities SEC FINRA enforcement", "Prasad Parameswaranpillai Naga independent director profile", "Rakesh Kumar Shrivastava independent director profile", "Prajnaparamita Sarkar independent director profile", "Indo Borax postal ballot Section 186 votes against"]
+searches_skipped: []
+verdict_basis: "Clean legal/regulatory record for every named individual in both groups, offset by a documented Rs 62.02 cr non-arm's-length extraction pattern from the departing family sequenced ahead of the control sale, and a 100% pledge of the entire incoming promoter block for acquisition debt with an FY31 bullet — both disclosed and procedurally compliant but structurally real, alongside substantial transition evidence (professional CEO, institutional co-investor, full family exit, one strongly credentialed independent director)"
+analyst_note: "The office-premises sale/leaseback is the sharpest single item: company sold at ~3x book value then leased the same asset back at an escalating rent for 3 years to the same sellers, timed 4 months before the family sold control. Priced fairly or not cannot be confirmed without an independent valuation, which is not disclosed. Treat as an open question, not resolved adverse or clean, but do not let the affiliate-funded dividend explanation (which is well-evidenced and credible) launder this separate item by association."

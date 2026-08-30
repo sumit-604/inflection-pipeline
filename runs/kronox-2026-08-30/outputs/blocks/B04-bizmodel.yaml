@@ -1,0 +1,41 @@
+stage: B04-bizmodel
+company: "KRONOX"
+run_date: "2026-08-30"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["Investor presentation not provided; report built from AR FY26 alone", "AR company-overview/clientele/manufacturing-capacity pages are graphics-only with no extractable text: no product-wise revenue split, no capacity/utilisation data, no customer names or concentration", "MD&A is macro-only with no chemicals-sector or company-specific industry discussion"]
+flags: ["Sector row in manifest ('Pharma / CDMO') is mislabelled; classified here as specialty fine-chemicals manufacturer, not CDMO", "Unit IV Dahej capacity expansion delayed multiple years despite clearances obtained; CWIP only Rs 87.6 lakh against Rs 1,056.6 lakh leasehold land held non-productive", "ROCE declining (49.46% FY23 to 32.22% FY26) and Fixed Asset Turnover declining (6.01x to 3.52x) even as EBITDA margin expands", "Director remuneration more than doubled (Rs 180.0 lakh to Rs 396.0 lakh) in FY26 vs ~8.6% PAT growth per Board's Report", "No customer concentration, capacity, or volume disclosure anywhere in AR"]
+business_type: "manufacturing"
+revenue_streams:
+  - {name: "Sale of Products (High Purity Specialty Fine Chemicals)", type: "direct product sale, B2B manufacturing", pct_of_revenue: 100, predictability: "M"}
+asset_intensity: "medium"
+wc_intensity: "medium"
+pricing_power: "moderate"
+cyclicality: "secular-growth"
+moats_present: []
+valuation_methods:
+  primary: {method: "Earnings-multiple on current run-rate (P/E or EV/EBITDA on standalone earnings)", why: "Four years of clean, single-segment, debt-light earnings (FY23-FY26) with disclosed margin trend; Section 1B destination multiple to be applied downstream at Stage 11"}
+  secondary: {method: "DCF", why: "Positive, growing operating cash flow and a real capex optionality (Unit IV, Dahej) that a scenario-based DCF can capture once cost/capacity data is verified"}
+  tertiary: {method: "NOT FOUND", why: "No peer set or industry multiple identifiable from this AR; relative valuation deferred to live-verification stage"}
+  not_applicable: ["Sum-of-the-parts (single segment, no subsidiaries/JVs/associates)", "Asset-based/replacement cost (PP&E small relative to revenue, includes non-operating Unit IV leasehold land)", "Dividend discount (fixed nominal payout, no disclosed payout policy)"]
+irrelevant_ratios: ["Same-store-sales/like-for-like growth: not a retail/franchise model", "Segment-wise margin trend: single reportable segment only, no segment table exists", "Customer-cohort retention: no subscription/platform relationship and no customer data disclosed", "Book/asset-based valuation as standalone anchor: PP&E includes Rs 1,056.6 lakh non-productive Unit IV leasehold land"]
+must_track_metrics:
+  - {metric: "EBITDA margin", healthy: "holding or expanding above ~33-34%", red_flag: "contraction >300bp YoY without raw-material-price explanation"}
+  - {metric: "ROCE %", healthy: "stabilising, not continuing multi-year decline", red_flag: "continued decline toward cost-of-capital levels"}
+  - {metric: "Cost of Materials Consumed as % of revenue", healthy: "stable near ~46-47% of revenue", red_flag: "rising faster than revenue for 2+ quarters"}
+  - {metric: "Cash Conversion Cycle (days)", healthy: "75-85 day range", red_flag: "sustained move past 90+ days"}
+  - {metric: "Capital Work-in-Progress (Unit IV, Dahej)", healthy: "visible quarter-on-quarter capitalisation progress", red_flag: "balance stuck near Rs 87.6 lakh for another year"}
+unit_economics:
+  unit: "NOT FOUND (no per-kg/per-MT/per-product disclosure in AR)"
+  revenue_per_unit: "NOT FOUND"
+  margin_per_unit: "NOT FOUND (whole-company gross-material-margin ~53.4% of revenue in FY26, per Note 24 vs Note 22)"
+  key_lever: "Raw material cost control (~46.6% of revenue, no disclosed hedge/long-term contract) and Unit IV capacity commissioning, both undisclosed at unit level"
+first_deterioration_signals:
+  - {risk: "Undisclosed customer concentration", first_signal: "Sudden quarterly revenue drop against a flat/rising order-book narrative (Revenue from Operations, Note 22)"}
+  - {risk: "Raw-material cost spike, no hedge", first_signal: "Cost of Materials Consumed as % of revenue rising (Note 24)"}
+  - {risk: "Rising unhedged forex exposure", first_signal: "Net Gain/(Loss) on Foreign Currency Transactions turning negative (Other Income note)"}
+  - {risk: "Unit IV, Dahej capital stranded", first_signal: "Capital Work-in-Progress (Note 3) staying near Rs 87.6 lakh with no material addition"}
+  - {risk: "Execution slippage on stated capacity timeline", first_signal: "Fixed Asset Turnover continuing to decline (Note 2 vs Note 22)"}
+mgmt_questions: ["What is installed capacity at Ekalbara (Units I-III) and current utilisation?", "What specifically delayed Unit IV, Dahej, given clearances were already obtained, and what is the firm revised date?", "Who are the top 5-10 customers by revenue and what is customer concentration?", "What is the revenue mix across pharma/nutraceutical/food/reagent end-markets within the ~185-product portfolio?", "Is there a hedging policy for the growing export/forex exposure?", "Why did director remuneration more than double in FY26 against ~8.6% PAT growth?", "What is the raw-material supplier structure and is there single-supplier dependency?"]
+one_line_verdict: "Profitable single-segment fine-chemicals maker with expanding margins but a stalled capacity expansion and a data-thin annual report."
+analyst_note: "AR is unusually thin: capacity, utilisation, customer concentration, and product-mix are all NOT FOUND, not merely under-anchored, because the relevant AR pages carry no extractable text. Unit IV, Dahej is the load-bearing structural fact: land leased and clearances obtained years ago, but CWIP is only Rs 87.6 lakh and the Chairman's Letter admits construction 'could not be started' for unstated reasons. ROCE and Fixed Asset Turnover are both declining even as EBITDA margin expands, meaning capital base growth is outpacing capital efficiency gains, a tension worth separating in downstream stages. Director remuneration more than doubled against ~8.6% PAT growth, a governance flag for verification, not resolved here."

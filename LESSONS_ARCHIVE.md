@@ -256,19 +256,9 @@ distribution sector-cap row exists; ruled 18-20x ad hoc (add a row — recurring
 gap alongside steel and sugar). collect_to_repo sector_cap_row defect recurred
 (Pharma/CDMO).
 
-## 2026-08-30 — ENTERO /finalize (runs/entero-2026-07-27)
-Phase 3 finalize. Decision AVOID (on valuation), evidence gate PROCEED WITH
-CAVEATS, confidence 85, 0 CRITICAL. Hurdle 0.54 STOP; forward PE 55.6x vs
-destination 19x; CMP 2.9x today's FV ~Rs 617. Devil overall SURVIVES, moat
-destroyed. Drag: (1) stage 10 could not match the hashed results-PDF filenames
-and fell back to screener CSVs (figures reconciled; stage 11 settled PAT/EPS
-from the filed results). (2) B11 shipped a labelling tension (fair_values held
-Year-3 target Rs 929 while the decision cited today's FV Rs 617); verifier C
-caught it MINOR and reconciled (FV CAGR 14.6%). (3) No pharma/MedTech
-distribution sector-cap row — ruled 18-20x ad hoc; operator proposed permanent
-distribution rows (OPEN ACTIONS). (4) Pillar 1 circularity on record: the 19x
-forward-capital ROCE and the 20% growth cannot both be assumed (M&A-pause
-dependency); reversion trigger >Rs 200 Cr M&A -> 12x. Operator revised the
-entry zone up 47% (Rs 451-501 -> Rs 665-735) on three upheld input challenges;
-decision unchanged. Amendment 20 relative cross-check PENDING (live peer table
-in claude.ai). collect_to_repo sector_cap_row defect recurred.
+## 2026-08-30 — SYSTANGO (runs/systango-2026-08-29), /fttcp
+FTTCP first workup + operator review + sign-off. Composite 1/8, DEEP WATCH leaning AVOID; earnings basis FORWARD, destination 16.8x (Track 1 RRM governing).
+- What dragged: the FY26 cash-conversion answer was in the corpus all along (audited CFO/PAT 1.06x consolidated, results p.18), but the Phase 1 synthesis-lite buried it behind the FY24/FY25 four-cell read and left the gate at INDETERMINATE, and the claude.ai web handover then WRONGLY superseded it as "not established". Provenance failed on the web side, not the corpus side. Lesson: when a stage marks cash INDETERMINATE for "missing FY26 cash flow", check whether the audited FY26 results filing already carries the cash flow statement before deferring to a later web layer.
+- STALE CONCALL MODE: newest transcript 33 months old (company stopped calls after Nov-2023). Forward catalysts came from filed results only; deck narrative refused as catalyst evidence. Confidence declared low.
+- Cross-family FTTCP grader SKIPPED (no GEMINI/GOOGLE key); confidence treated one notch lower.
+- Tracker gate passed on a master-row ID + verified two-way relation, not 13 individual row URLs; v2.1 wants row URLs. Recorded as a format gap, not a stop.

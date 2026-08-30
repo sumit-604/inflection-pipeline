@@ -1,0 +1,50 @@
+stage: B06-peers
+company: "INDOBORAX"
+run_date: "2026-08-30"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "No true boric-acid peer exists in the 12-transcript set; DMCC (boron chemicals, borax pentahydrate/decahydrate/specialty borates) is the closest comparator but does not confirm product-line overlap with refined boric acid"
+  - "Two older DMCC calls (Nov-2024, May-2025) excluded to hold the 12-transcript cap; available but unused, may sharpen the ore-disruption timeline if read later"
+  - "No peer discusses DOT/agri-micronutrient boron products, boron oxide, or names Procter & Gamble; six of eight claims remain fully unverifiable by construction, not by weak searching"
+flags:
+  - "DMCC's H1 FY26 boron-ore supply disruption (Turkey, industry-wide per DMCC's own framing) has no counterpart disclosure in Indo Borax's own overlapping-period concall — checkable gap for stage 9b/verification"
+  - "DMCC, the peer with the closest raw-material overlap to Indo Borax, is explicitly capex-cautious citing ore-supply uncertainty, while Indo Borax is committing to boron oxide capex in the same environment"
+  - "Indo Borax's own call shows thinner FX/hedging disclosure on its dollar-denominated ore book than two peers (Tata Chemicals, Tanfac) show on comparable exposures"
+peers_provided: 12
+verified: []
+partially_verified:
+  - {claim: "Boron ore supply concentrated to Turkey (industry-wide risk, not company-specific)", peers: ["DMCC"]}
+  - {claim: "Margin compression driven by geopolitical/raw-material inflation is sector-wide, not company-specific execution", peers: ["DMCC", "TANFACIND", "TATACHEM"]}
+contradicted: []
+unverifiable:
+  - {claim: "Indian boric acid TAM ~40,000 TPA, 8% CAGR to ~53,000 TPA by 2030", peers_checked: ["TATACHEM", "NEOGEN", "TANFACIND", "DMCC"]}
+  - {claim: "Indo Borax holds ~50% share of Indian boric acid market", peers_checked: ["TATACHEM", "NEOGEN", "TANFACIND", "DMCC"]}
+  - {claim: "Boron oxide priced 2.5-3x boric acid with genuine unmet domestic demand", peers_checked: ["TATACHEM", "NEOGEN", "TANFACIND", "DMCC"]}
+  - {claim: "India DOT market ~8,500 tons; 980-to-1,500 ton FY27 ramp plausible", peers_checked: ["NEOGEN", "TATACHEM", "TANFACIND"]}
+  - {claim: "Real, named fertiliser-company DOT tie-up exists", peers_checked: ["NEOGEN", "TATACHEM"]}
+  - {claim: "Procter & Gamble boric-acid-IP relationship is real, scalable, credible cross-sell base", peers_checked: ["TANFACIND", "NEOGEN"]}
+peer_coverage_map:
+  - {peer: "TATACHEM", quarter: "Q2/H1 FY26 (Nov-2025)", usage: "SUBSTANTIVE", contribution: "No boron content; Middle East cost-inflation narrative feeds Part 2B cross-read"}
+  - {peer: "TATACHEM", quarter: "Q3/9M FY26 (Feb-2026)", usage: "CITED-ONLY", contribution: "Confirms scope, no new finding"}
+  - {peer: "TATACHEM", quarter: "Q4/FY26 (May-2026)", usage: "SUBSTANTIVE", contribution: "Explicit Middle East conflict cost-inflation across geographies, key evidence for Claim 4"}
+  - {peer: "TATACHEM", quarter: "Q1 FY27 (Aug-2026)", usage: "SUBSTANTIVE", contribution: "Continuing cost pressure plus aggressive capex/expansion posture, feeds Part 2C"}
+  - {peer: "NEOGEN", quarter: "Q2/H1 FY26 (Nov-2025)", usage: "UNUSED", contribution: "Lithium-ion battery chemicals; zero boron/boric-acid overlap"}
+  - {peer: "NEOGEN", quarter: "Q3/9M FY26 (Feb-2026)", usage: "UNUSED", contribution: "Same, full read confirms no overlap"}
+  - {peer: "NEOGEN", quarter: "Q4/FY26 (May-2026)", usage: "UNUSED", contribution: "Sampled, same scope, no boron content"}
+  - {peer: "NEOGEN", quarter: "Q1 FY27 (Aug-2026)", usage: "UNUSED", contribution: "Sampled, same scope, no boron content"}
+  - {peer: "TANFACIND", quarter: "Q4/FY26 (May-2026)", usage: "SUBSTANTIVE", contribution: "Sulphur inflation from West Asian crisis, cost pass-through lag, key evidence for Claim 4"}
+  - {peer: "TANFACIND", quarter: "Q1 FY27 (Aug-2026)", usage: "SUBSTANTIVE", contribution: "Continuing margin compression from same driver, confirms magnitude and persistence"}
+  - {peer: "DMCC", quarter: "Q2/H1 FY26 (Nov-2025)", usage: "SUBSTANTIVE", contribution: "Direct unprompted corroboration of Turkey ore-concentration and industry-wide supply disruption; single most load-bearing finding in this stage"}
+  - {peer: "DMCC", quarter: "Q4/FY26 (May-2026)", usage: "SUBSTANTIVE", contribution: "Confirms disruption affected 'supply to India in general', discloses working-capital mechanics, explicit capex caution"}
+industry_cross_read:
+  demand: "Mixed and segment-dependent: legacy commodity lines (soda ash, European specialty chemicals) soft to shrinking; technology-linked lines (solar-grade DHF, R-32 refrigerant) strong. No peer discusses boric acid demand directly; DMCC's framing suggests boric-acid-linked demand is comparatively more stable than adjacent borate/glass demand, but this is indirect."
+  pricing_inputs: "Strongest cross-read finding: three peers on three different commodities (sulfur x2, limestone/HFO) all report Middle-East-geopolitical cost inflation compressing margins in the same FY26-FY27 window with a stated pass-through lag, materially corroborating Indo Borax's own external-blame framing for its margin compression."
+  capex_cycle: "Split, not uniform. Tata Chemicals and Tanfac are aggressive expanders funding forward integration via external capital raises. DMCC, the peer closest to Indo Borax on raw-material overlap, is the sole cautious outlier, explicitly holding back large capex citing the same ore-supply uncertainty Indo Borax is capitalising through in its own boron oxide project."
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "DMCC's H1 FY26 Turkey boron-ore supply disruption, framed by DMCC as industry-wide, has no counterpart in Indo Borax's own overlapping-period concall"
+  - "Working-capital mechanics of shifting from India-stock credit terms to pay-advance/90-120-day import terms (DMCC), a mechanism Indo Borax's own call never discusses despite similar likely import structure"
+  - "Explicit, quantified FX/hedging discipline on dollar-denominated inputs shown by Tata Chemicals and Tanfac, a disclosure standard Indo Borax's own call does not meet on its 55%-imported-ore book"
+net_narrative_effect: "complicates"
+analyst_note: "No true boric-acid peer exists in this transcript set, capping six of eight claims as structurally unverifiable rather than weakly evidenced. The two claims that DID get peer traction (ore concentration, margin-compression causation) both trace to DMCC, whose own Turkish-ore disruption is the single most load-bearing finding in this stage: it independently confirms Indo Borax's dominant risk variable is real and industry-wide, while simultaneously exposing that Indo Borax's own call never discloses a comparable event in the same window. Recommend the operator add one line to the FIRST VERIFICATION PRIORITY list: confirm whether Indo Borax's own H1 FY26/CY2025 ore deliveries were affected by the same Turkish-distributor disruption DMCC reports, and if not, why its supply chain proved more resilient than a same-country-sourcing peer's."

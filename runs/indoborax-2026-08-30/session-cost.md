@@ -12,3 +12,4 @@
 | 4 | business-model | claude-sonnet-5 | - | - | - | 199692 | 441s | 1 |
 | 5 | concall | claude-sonnet-5 | - | - | - | 102398 | 495s | 1 |
 | 8 | promoter | claude-sonnet-5 | - | - | - | 196527 | 504s | 1 |
+| 6 | peers | claude-sonnet-5 | - | - | - | 202522 | 534s | 1 |

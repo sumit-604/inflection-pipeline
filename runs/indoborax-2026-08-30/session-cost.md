@@ -9,3 +9,4 @@
 | 1 | gate-0 | claude-sonnet-5 | - | - | - | 179149 | 921s | 2 (rerun with AR readable) |
 | 2 | notes-pass3 | claude-sonnet-5 | - | - | - | 66731 | 203s | 1 |
 | 3 | ar-deep-dive | claude-sonnet-5 | - | - | - | 220451 | 1110s | 1 |
+| 4 | business-model | claude-sonnet-5 | - | - | - | 199692 | 441s | 1 |

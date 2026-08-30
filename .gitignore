@@ -5,3 +5,4 @@ canary/state.json
 canary/DRIFT.flag
 canary/canary.log
 runs/*/work/raster/
+runs/*/work/*.txt

@@ -10,3 +10,5 @@
 | 2 | notes-pass3 | claude-sonnet-5 | - | - | - | 66731 | 203s | 1 |
 | 3 | ar-deep-dive | claude-sonnet-5 | - | - | - | 220451 | 1110s | 1 |
 | 4 | business-model | claude-sonnet-5 | - | - | - | 199692 | 441s | 1 |
+| 5 | concall | claude-sonnet-5 | - | - | - | 102398 | 495s | 1 |
+| 8 | promoter | claude-sonnet-5 | - | - | - | 196527 | 504s | 1 |

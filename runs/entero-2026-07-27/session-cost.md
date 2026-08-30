@@ -48,3 +48,4 @@ Operator: run /cost and /usage now and paste the cache hit ratio and the loop to
 | 10 | input-assembly | claude-haiku-4-5 | - | - | - | 66061 | 5m00s | 1 |
 | 11 | valuation-role1 | claude-opus-4-8 | - | - | - | 140280 | 8m05s | 1 |
 | 14 | thesis-role2 | claude-opus-4-8 | - | - | - | 102055 | 3m12s | 1 |
+| 12c | verifier-c-valuation | claude-opus-4-8 | - | - | - | 94852 | 4m08s | 2 |

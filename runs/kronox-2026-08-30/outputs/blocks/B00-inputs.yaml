@@ -1,0 +1,81 @@
+stage: B00-inputs
+company: KRONOX
+run_date: 2026-08-30
+model: orchestrator-inline
+status: complete
+run_type: full
+concalls_available: false          # NO-CONCALL MODE
+
+spear_gate:
+  status: OPEN
+  line: "Spear: OVERRIDE 2026-08-30 (operator) - required as entity 2 of the INDOBORAX block"
+  also_present: "Spear: WATCH 2026-08-30 (Claude web)"
+  source: operator-provided company memory (companies/KRONOX.md NOT committed to repo; supplied in session context)
+  load_bearing_facts:                 # run's FIRST verification priority, carried to every stage
+    - "IPO Jun-2024 was 100% OFFER FOR SALE: 95,70,000 sh @ Rs 136 (~Rs 130 cr) to 3 promoters; NIL to company"
+    - "Promoter remuneration 40.08/30.09/30.69% of PAT FY21/22/23 (RHP), then 17.45/7.07/14.32% FY24/25/26"
+    - "Dahej Unit IV: GPCB 13-Nov-2024, Consent to Establish 10-Nov-2025, construction NOT STARTED per FY26 AR (chairman: work 'could not be started')"
+    - "Revenue Rs 89.86/100.19/101.22 cr FY24/25/26 (FY26 growth 1.03%); ROCE 36-44%, net margin ~26% four years, debt free, Rs 64.5 cr FDs"
+
+company_memory:
+  present: true
+  committed: false                    # companies/KRONOX.md absent from repo; operator supplied content in session
+  note: "Carry as COMPANY MEMORY into every stage; weigh, never anchor. Written to repo at /finalize."
+
+manifest_flags:
+  cmp: 0.0                            # manifest CMP missing; not needed in phase 1, blocks phase-3 valuation until set
+  market_cap_cr: 0.0                  # same
+  sector_cap_row: "Pharma / CDMO"     # collect_to_repo v3 auto-pick, FLAGGED WRONG
+  sector_cap_correct: "Kronox makes high-purity inorganic/specialty fine chemicals (salts), NOT pharma/CDMO. Confirm sector cap row in phase 3."
+
+inventory:
+  prospectus:      {count: 0, status: ABSENT}
+  annual-report:   {count: 1, status: present, held: "AR FY26 (year ended 31-Mar-2026), 120p"}
+  results:         {count: 2, status: present, held: ["FY26 audited Q4+FY (21-May-2026), 8p", "Q1 FY27 (12-Aug-2026), 7p"]}
+  rating:          {count: 0, status: NONE_EXPECTED}
+  concalls:        {count: 0, status: DECLARED_NA}     # concalls_available:false, not a gap
+  peer-concalls:   {count: 11, status: present, peers: {DMCC: 4, NEOGEN: 4, TANFACIND: 2, INDOBORAX: 1}}
+  announcements:   {count: 7, status: present, note: "RECLASSIFIED from rating/ this run; all 7 are acquisition/open-offer Reg 30 filings"}
+  shareholding:    {count: 0, status: ABSENT}
+  research:        {count: 0, status: ABSENT}
+  screening:       {count: 18, status: PEERS_ONLY, note: "DMCC/INDOBORAX/NEOGEN CSVs only; NO KRONOX screening data"}
+  presentation:    {count: 0, status: ABSENT}
+  other:           {count: 0, status: ABSENT}
+
+reclassification:
+  action: "git mv rating/*.pdf -> announcements/ (7 files)"
+  reason: "collect_to_repo v3 misfiled the SPA-side Reg 30 filings and the IIFL open-offer docs under rating/. Company has NO credit rating (AR FY26: 'has not obtained any Credit Ratings'). The 7 docs are the documented-ACTION record for stages 5/7/8 and the SPA/open-offer verification priorities."
+  files:
+    - "01fa39ae (15p): Reg 30 disclosure 20-Aug-2026 (acquisition/SPA)"
+    - "2f9e2ff7 (3p): Press Release 20-Aug-2026"
+    - "4e09f742 (7p): Reg 30A intimation 20-Aug-2026 (open-offer trigger)"
+    - "67402e1d (9p): Reg 30 & 30A disclosure 20-Aug-2026"
+    - "71D856CE (13p): IIFL open-offer DPS 28-Aug-2026 [LOW-TEXT extraction, ~3kb, likely image scan]"
+    - "D46A57C7 (12p): IIFL open-offer doc [richest open-offer text, 30kb]"
+    - "edb17852 (13p): Publication of Detailed... 28-Aug-2026 [LOW-TEXT extraction, ~3kb, likely image scan]"
+
+input_gaps:
+  - {type: prospectus, severity: HIGH, reason: "Listed 10-Jun-2024 (<3y). RHP carries promoter/group history + restated pre-IPO financials. Backward baseline built on post-listing years only (FY24-FY26); stages 2/3/8 degraded per DEGRADATION MAP."}
+  - {type: annual-report, severity: MEDIUM, reason: "Only AR FY26 held; AR FY24 & FY25 absent. Notes triple-pass and AR deep dive run on one AR; trend/backward depth thinned."}
+  - {type: shareholding, severity: MEDIUM, reason: "No quarterly shareholding pattern. FII+DII UA qualifier cannot be affirmed (stage 11 withholds UA); promoter/pledge trend falls back to AR figures."}
+  - {type: screening-KRONOX, severity: LOW, reason: "No KRONOX screener CSVs. Gate 0 (stage 1) runs from results PDFs + AR financials per DEGRADATION MAP."}
+  - {type: research, severity: LOW, reason: "No broker notes. Non-anchored source only; no effect on anchored evidence."}
+  - {type: presentation, severity: LOW, reason: "No investor presentation. Stage 4 runs from AR + results commentary."}
+  - {type: announcements-lowyield, severity: LOW, reason: "2 of 7 open-offer docs (71D856CE, edb17852) extracted to ~3kb (image scans). Open-offer terms recoverable from D46A57C7 + 01fa39ae."}
+  - {type: concalls, severity: NA, reason: "concalls_available:false. NO-CONCALL MODE. Stage 5 degraded (reads AR MD&A/chairman letter/results commentary), credibility caps at B. Stage 6 runs on peer-concalls only. Verifier B audits vs AR+results."}
+
+freshness_pairs:
+  - {pair: "results->concall", trigger_doc: "FY26/Q1FY27 results", mate_expected: "same-quarter concall", status: SKIPPED, note: "concalls_available:false"}
+  - {pair: "rating->rationale", trigger_doc: "none", mate_expected: "n/a", status: NA, note: "company has no credit rating (AR FY26)"}
+  - {pair: "SEBI order->order text", trigger_doc: "none in held AR FY26", mate_expected: "n/a", status: NA, note: "Jul-2024 LODR fines (Rs 11,800) were in AR FY25 (not held); AR FY26 references no unresolved SEBI order"}
+  - {pair: "AR->latest audited annual results", trigger_doc: "FY26 audited results (21-May-2026)", mate_expected: "AR FY26", status: PASS, note: "both FY26"}
+freshness_verdict: FRESHNESS PAIRS OK
+
+corpus_verdict: CORPUS GAPPED
+corpus_verdict_reason: "Prospectus HIGH gap + AR FY24/FY25 + shareholding absent. Not GAPPED-FRESHNESS (all freshness pairs OK/NA). No freshness cap on the gate."
+
+text_cache:
+  note: "All input PDFs pre-extracted to page-marked .txt in runs/kronox-2026-08-30/work/ (gitignored) per LESSONS reliable default, to avoid the PDF render wall (poppler unavailable; pypdf works). Stages receive BOTH the .pdf path and the .txt path."
+
+flags: []
+analyst_note: "Entity 2 of the INDOBORAX block; value the entity standalone, never on consolidated PAT (FTTCP structural note). The stall thesis has an OWNER cause not an economic one: 36-44% ROCE, 26% margin held 4y, debt free, but an approved Dahej plant unbuilt 2y and promoters who took Rs 130 cr via 100% OFS. Indo Borax acquired control at Rs 103.22 vs Rs 157.27 open-offer price. Dahej Unit IV construction start is the single binary."

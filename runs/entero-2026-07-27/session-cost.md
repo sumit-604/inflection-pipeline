@@ -45,3 +45,4 @@ Operator: run /cost and /usage now and paste the cache hit ratio and the loop to
 
 #### Operator snapshot
 (_to be filled by operator_)
+| 10 | input-assembly | claude-haiku-4-5 | - | - | - | 66061 | 5m00s | 1 |

@@ -241,3 +241,17 @@ What dragged this run:
 - Verifier D found 1 CRITICAL + 1 MAJOR: both B06 supporting-citation errors (QUESS Rs176cr unsupported; AGSTRA "high receivable days" misattributed to Jul-2024 call, real exchange is Feb-2024). Core DSO-contradiction finding survived on independently-clean RADIANTCMS/SIS anchors. Not verdict-invalidating; synthesis instructed to drop the two bad citations.
 - Substantive finding worth remembering: the spear called CMSINFO a "small pond, 2x share, not a multi-bagger TAM"; stage 9 revised runway to STRONG (9.1x headroom) because the spear excluded the self-managed-ATM / passive-CCTV conversion opportunity. Meanwhile stages 2/3/6 found FY26 cash quality WORSE than the spear acknowledged (receivables 1-2yr overdue +8.5x/+16.2x, SA loss-allowance released into it, DSO peer-contradicted, ROCE 25->16.6%). Runway larger, cash quality worse: the transition is real but unproven on the cash line -> INDETERMINATE.
 - Operator ferried shareholding (screener) + announcements digest + a ValuePickr lead mid-run; saved at correct provenance tiers (screener-tier / non-anchored). Container web search WORKS (stages 8 and 9 both ran web).
+
+## 2026-08-30 — ENTERO /fttcp (runs/entero-2026-07-27)
+Phase 2 deliberation. Not a clean run. Drag: both FTTCP preconditions failed
+at entry — web-handover-dossier.md was never saved into inputs/research/ (the
+claude.ai Halt 1 package was pasted to chat only), and the Role 5.5 tracker
+gate had no row-URL proof; both cleared after the operator wrote 15 tracker
+rows and Claude Code saved the pasted package as the handover dossier. Operator
+overrode the claude.ai SHALLOW WATCH to PROCEED. Pillar 1 ROCE ruled 19x on a
+forward-capital basis (dissent 12x standard, goodwill-inclusive, recorded;
+reverts on M&A > ~Rs 200 Cr). Destination PE 18-20x, forward earnings basis.
+Cross-family grader SKIPPED (no key). Composite +4/8. No pharma/MedTech
+distribution sector-cap row exists; ruled 18-20x ad hoc (add a row — recurring
+gap alongside steel and sugar). collect_to_repo sector_cap_row defect recurred
+(Pharma/CDMO).

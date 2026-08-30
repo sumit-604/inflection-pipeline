@@ -12,8 +12,9 @@ Spear-CMP: 243
 Understanding-Gate: PROCEED
 Mental-Model-Signed: 2026-08-30
 Mental-Model-Version: 2.1
-Tracker-Proof: PENDING
-Handover-Dossier: PENDING
+Tracker-Proof: WRITTEN 2026-08-30 (5 rows, all Case B)
+Companies-Master-Row: https://app.notion.com/p/3ccbb2b9d3ab81eea904dd45d21f8825
+Handover-Dossier: runs/cmsinfo-2026-08-29/inputs/research/web-handover-dossier.md
 ```
 ---
 # MENTAL MODEL DECLARATION — SIGNED
@@ -424,8 +425,8 @@ Global anchors for the exit-multiple work at Role 1 (not on screener): Brink's, 
 |---|---|---|
 | Spear | `Spear: HIT` line present | ✅ SET 29-Aug-2026 |
 | Halt 1 | Stage 09b dossier + signed mental model + PROCEED | ✅ SIGNED 30-Aug-2026 (Mental Model v2.1, PROCEED) |
-| Role 5.5 tracker | Tracker row proof-of-write logged here | ⬜ Pending |
-| Handover | `runs/cmsinfo-<date>/inputs/research/web-handover-dossier.md` exists | ⬜ Pending |
+| Role 5.5 tracker | Tracker row proof-of-write logged here | ✅ WRITTEN 30-Aug-2026 (5 rows, all Case B; COMPANIES MASTER row created) |
+| Handover | `runs/cmsinfo-<date>/inputs/research/web-handover-dossier.md` exists | ✅ FILED 30-Aug-2026 (`runs/cmsinfo-2026-08-29/inputs/research/web-handover-dossier.md`) |
 | P/E gate | Operator rulings on Pillar 1 base, cash multiplier, growth premium, earnings basis | ⬜ Pending |
 | Amendment 16 | ROCE vs cost of capital crossing during projection | ⬜ Not yet assessed |
 | Amendment 17 | Converter classification per slice | ⬜ Not yet assessed |

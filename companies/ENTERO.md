@@ -25,10 +25,23 @@ ZONE REACHABILITY: MARKET-UNLIKELY ZONE. Lowest tested since listing Rs 987
 (FY-end closes 987/1,137/1,248); entry top ~49% below. Classify DEEP WATCH,
 not actionable WATCHLIST. Devil's advocate defensible floor ~Rs 285-320 on
 the 12x goodwill-inclusive read.
-Note: the claude.ai handover recommended Rs 1,000-1,240 on a more generous
-20-25x exit and FY30 (5-year-forward) EPS; the strict pillar (19x, nearer
-forward EPS, Tier A 25% hurdle) gives Rs 451-501. Both recorded; the pillar
-is the framework answer.
+RECORDED ENTRY ZONE (operator-revised 2026-08-30): Rs 665-735. MoS Rs 455
+(binding trigger). FV today Rs 618-683. The operator challenged three
+pipeline inputs and each was upheld, lifting FY30 owners' EPS Rs 48.9 ->
+Rs 68.4 and entry Rs 476 -> Rs 700: (1) revenue revised off the Amendment 14
+auto-fade-to-10% to ~20% held with ~3% pa dilution (self-funds only to
+15-16%), since organised-share 9%->22% arithmetically needs ~25-30% player
+growth and the run's own SOM-implied figure was 26.4%; (2) margin revised from
+flat 5.0% to 5.0% rising to 6.5% by FY30 on value-over-volume (IPM value +8.6%
+vs units +0.6% MAT) and MedTech mix ~22% GM vs ~9.5% core; (3) destination PE
+revised 18-20x -> 19-21x on an archetype mix-blend (0.65x18.5 commodity +
+0.35x26 value-added), derived not substituted, converging on the pillar.
+CMP Rs 1,806 remains ~2.5x the entry top; decision unchanged AVOID.
+Pipeline strict-pillar zone Rs 451-501 (18-20x, conservative inputs) recorded
+beneath as the framework-default read.
+Notion COMPANIES MASTER (row 3abbb2b9-d3ab-81ee-bf38-ef32aab39417) updated by
+claude.ai 2026-08-30: Decision Status WATCHLIST/AVOID, Entry Price Max 735,
+MoS 455, CMP 1806; Key Notes + FINAL VERDICT CARD appended.
 
 ## HALT 1 GATE
 - Mental Model signed: SIGNED 2026-08-29 (operator)
@@ -57,6 +70,19 @@ is the framework answer.
   SHALLOW WATCH recommendation; model signed; full pipeline authorised)
 
 ## OPERATOR RULINGS
+- 2026-08-30: FINALIZE. Decision AVOID (on valuation), unchanged from July on
+  wholly rebuilt evidence. Hurdle 0.54 base / 0.67 bull vs 1.953; forward PE
+  55.6x vs destination 19x; zero of nine matrix cells positive; U/D 0 at CMP.
+  Notion COMPANIES MASTER updated by claude.ai (Decision Status WATCHLIST/AVOID,
+  Entry Max 735, MoS 455). 15 Role 5.5 tracker rows linked.
+- 2026-08-30: ENTRY-ZONE REVISION. Three pipeline inputs challenged and upheld
+  (revenue fade off Amendment 14, flat-margin assumption, destination PE
+  mix-blend). Recorded entry Rs 665-735, MoS Rs 455; FV today Rs 618-683.
+  Pipeline strict figure Rs 451-501 kept as framework-default.
+- 2026-08-30: PILLAR 1 CIRCULARITY on the record. The 19x forward-capital ROCE
+  holds only while the M&A pause holds, but resuming M&A is the roll-up's
+  growth strategy; the 19x and the 20% growth cannot both be assumed. Reversion
+  trigger stands: new M&A > ~Rs 200 Cr rolling 12m -> Pillar 1 to 12x.
 - 2026-08-30: PILLAR 1 ROCE base set at 20-25%, ROCE Base Multiple 19x.
   Anchor (filed): Prabhat Agrawal, Q4 FY24 concall. Reading: cash outflow
   to buy Rs 100 of revenue at 6x is the full Rs 24 (Rs 15-16 working capital

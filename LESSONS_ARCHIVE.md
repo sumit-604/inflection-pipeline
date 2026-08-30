@@ -255,3 +255,20 @@ Cross-family grader SKIPPED (no key). Composite +4/8. No pharma/MedTech
 distribution sector-cap row exists; ruled 18-20x ad hoc (add a row — recurring
 gap alongside steel and sugar). collect_to_repo sector_cap_row defect recurred
 (Pharma/CDMO).
+
+## 2026-08-30 — ENTERO /finalize (runs/entero-2026-07-27)
+Phase 3 finalize. Decision AVOID (on valuation), evidence gate PROCEED WITH
+CAVEATS, confidence 85, 0 CRITICAL. Hurdle 0.54 STOP; forward PE 55.6x vs
+destination 19x; CMP 2.9x today's FV ~Rs 617. Devil overall SURVIVES, moat
+destroyed. Drag: (1) stage 10 could not match the hashed results-PDF filenames
+and fell back to screener CSVs (figures reconciled; stage 11 settled PAT/EPS
+from the filed results). (2) B11 shipped a labelling tension (fair_values held
+Year-3 target Rs 929 while the decision cited today's FV Rs 617); verifier C
+caught it MINOR and reconciled (FV CAGR 14.6%). (3) No pharma/MedTech
+distribution sector-cap row — ruled 18-20x ad hoc; operator proposed permanent
+distribution rows (OPEN ACTIONS). (4) Pillar 1 circularity on record: the 19x
+forward-capital ROCE and the 20% growth cannot both be assumed (M&A-pause
+dependency); reversion trigger >Rs 200 Cr M&A -> 12x. Operator revised the
+entry zone up 47% (Rs 451-501 -> Rs 665-735) on three upheld input challenges;
+decision unchanged. Amendment 20 relative cross-check PENDING (live peer table
+in claude.ai). collect_to_repo sector_cap_row defect recurred.

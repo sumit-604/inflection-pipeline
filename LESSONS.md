@@ -123,3 +123,14 @@ _Pending framework edits Keerti maintains._
   SHYAMMETL precedent 2026-08-25; no dedicated steel/line-pipe row exists).
 - Add a Sugar / Agri-commodity cyclical row to the Section 1B cap table
   (KCPSUGIND was ruled Agri-processing 20x ad hoc; no dedicated row exists).
+- Add Distribution rows to the Section 1B cap table (ENTERO 2026-08-30, ruled
+  18-20x ad hoc; no pharma/MedTech distribution row exists). Operator proposal,
+  derived: Distribution-commodity (pure fulfilment) 18-19x; Distribution-
+  value-added (agency/commercial) 25-26x; blended by revenue-share of each
+  mode. Applies to any distributor.
+- Amendment 14 fade guard (ENTERO 2026-08-30): the automatic revenue fade-to-10%
+  on MODEST EM can contradict a consolidation thesis the same run relies on.
+  Where the TAM stage's SOM-implied growth is materially above the faded
+  projection (Entero: fade 10% vs SOM-implied 26.4%), flag the fade for operator
+  ruling rather than applying it silently. For /compost to promote into a
+  prompt/framework fix.

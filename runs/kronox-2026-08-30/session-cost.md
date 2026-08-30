@@ -5,3 +5,5 @@ Per-stage token ledger, one line per subagent run.
 | # | stage | model | effort | in_tok | out_tok | total_tok | wall | run# |
 |---|-------|-------|--------|--------|---------|-----------|------|------|
 | 0 | input-validation | orchestrator-inline | - | - | - | - | - | 1 |
+| 1 | gate0-scorecard | claude-sonnet | - | - | - | 107959 | 579s | 1 |
+| 2 | notes-pass1 | claude-sonnet | - | - | - | 84726 | 336s | 1 |

@@ -8,3 +8,4 @@
 | 2 | notes-pass2 | claude-sonnet-5 | - | - | - | 173158 | 618s | 1 |
 | 1 | gate-0 | claude-sonnet-5 | - | - | - | 179149 | 921s | 2 (rerun with AR readable) |
 | 2 | notes-pass3 | claude-sonnet-5 | - | - | - | 66731 | 203s | 1 |
+| 3 | ar-deep-dive | claude-sonnet-5 | - | - | - | 220451 | 1110s | 1 |

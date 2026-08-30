@@ -1,10 +1,14 @@
 # SYSTANGO — Systango Technologies Ltd
 
 ## THESIS (one line)
-Debt-free NSE Emerge offshore IT-services boutique claiming an R2 to R3 climb (cost-arbitrage to spec'd supplier via AI/GenAI mix-shift); proof gate NOT PROVING and promoter governance CONCERN confirmed. Pre-valuation.
+Watching at Rs 234, NOT buying: a debt-free 33% ROCE offshore IT-services boutique worth ~Rs 443/share today (16.8x forward operating EPS + Rs 80.8/share cash) so the screen is cheap, but the transition proof gate has not fired (FTTCP 1/8) and the promoter-controlled DBX cash link that threatens the cash cushion is unresolved; the return is the discount closing, not the business compounding.
 
 ## DECISION STATUS AND ENTRY ZONE
-No investment decision yet. PROCEED past Halt 1 under an explicit operator promoter-override (2026-08-29); FTTCP and Role 1 valuation not yet run. Spear math (non-anchored): 25% CAGR entry ~Rs 210, MoS zone Rs 155-160; CMP Rs 234 sits above the entry line. Claude web's standalone recommendation on the promoter finding was AVOID with a September re-open trigger; the operator overrode to continue, finding unresolved.
+As of 2026-08-29: WATCHLIST, capped at DEEP WATCH, leaning AVOID. Posture VALUE-TRAP RISK (proof gate not fired + signed STRUCTURAL-FEATURE ugliness). NOT actionable; NO POSITION now. This is a pipeline run output; NEVER overwrite the operator's Notion Decision Status from it.
+- Entry zone Rs 220 to Rs 315 (WITHDRAWN - proof gate not fired; do not act on price alone). MoS price Rs 220. CMP Rs 234 sits in-zone near the low; 52-week low / lowest-since-listing: price history unavailable.
+- Fair value today ~Rs 443/share; exit base Rs 614. Track 1 (RRM) 16.8x GOVERNING, Track 2 (Additive) 24.0x cross-check. Hurdle PASS 3.48. FV CAGR 11.5% (HYBRID). Forward earnings basis on operating EPS Rs 18.43 (FY26).
+- FTTCP gate: PROCEED WITH CAVEATS (CORPUS GAPPED-FRESHNESS). Confidence overall 71. Devil's advocate WEAKENED BUT ALIVE (growth-triggers + management-trust DESTROYED).
+- Position ceiling if it ever converts (proof fires AND governance resolves): SMALL (2-3%). Two dated resolution points: FY26 AR (Sep-2026), H1 FY27 (Nov-2026).
 
 ## SPEAR
 Spear: HIT 2026-08-29 - entry <= Rs 210 - load-bearing facts: [1] Guidance-vs-delivery: mgmt guided 30% growth for FY24 (H1FY24 concall, 17-Nov-2023) and Rs 250 cr / $25M revenue by FY26 (FY23 concall, 7-Jul-2023); delivered 8% and Rs 90.4 cr. Only margin promise (EBITDA >25%) was kept. Track record POOR on revenue. [2] Rs 5.3 cr loans to unnamed "Others", unsecured, repayable on demand, 100% without repayment schedule per CARO (AR FY25); plus new Rs 2.4 cr long-term loans & advances in FY26 BS. Recipients unidentified. [3] Gratuity and leave encashment NOT provided, booked on payment basis only (AR FY23 accounting policies, carried forward) - profits overstated vs accrual basis, quantum unknown. [4] Top-3 client concentration jumped to ~46-48% in H1FY26 (Nov-2025 investor deck) in the same half margins spiked to 42%; H2FY26 EBITDA margin fell back to 33.1%. FY26 AR must confirm exact concentration, consolidated CFO, other-income breakup, and identity of DBX Holdings.
@@ -31,20 +35,25 @@ Halt 1 decision (KILL/SHALLOW/PROCEED): 2026-08-29 PROCEED under explicit operat
 - 2026-08-29: Mental Model SIGNED (see HALT 1 GATE), with the proof-gate mix-share amendment (filed-document-only).
 - 2026-08-29: PROMOTER OVERRIDE. Promoter verdict is CONCERN (DBX-Rathi link confirmed [FILED]). Standing rule makes CONCERN -> AVOID; Claude web recommended AVOID with a September re-open. Operator overrides to continue the run to FTTCP and valuation. Recorded as an override, NOT a resolution; the finding stands. Governance flows into the RRM (discount rate), never an additive PE deduction. No BUY/WATCHLIST verdict card may be produced without this override ruling appearing alongside it. Role 3 must treat governance as the primary destruction vector; FTTCP Transition 4 must carry it explicitly.
 
-### PENDING OPERATOR RULINGS (required before /fttcp can close; from web handover Section 6)
-- UA (Undiscovered Alpha 1.25x) multiplier: PARKED. Premise falsified (informed investor Kacholia bought, sold, stayed out ~10 quarters through the surge). Do NOT apply 1.25x without a ruling; web recommends neutral, not a penalty.
-- Cash multiplier (Section 1B Pillar 2): INDETERMINATE. Do not resolve upward. If a value is forced to complete the run, use 0.80x growth-induced band with NO growth offset, flagged provisional pending FY26 AR.
-- Earnings basis: normalise tax (effective ~19% vs 25-29% statutory, SEZ 10AA sunset undisclosed); flag the unprovided gratuity/leave liability as an unquantified book-value deduction.
-- Option probabilities / mature revenue estimates: required from operator; FTTCP Amendment 18 Option Resolution Calendar. Dated resolution points: FY26 AR (Sep-2026), H1FY27 result (Nov-2026).
-- Amendment 17 (CONVERTER) check: assess the staff-augmentation slice; ambiguous defaults to CONVERTER (0.5 x ROCE + 7.5), not core PE.
+### FTTCP RULINGS SETTLED (30-Aug-2026; deliberation record outputs/final/fttcp-deliberation.md)
+- Composite 1/8, DEEP WATCH leaning AVOID, accepted in substance. Cash conversion +1 CONDITIONAL on FY26 AR.
+- Cash multiplier: 1.00x GROWTH INDUCED and unwound (Phase 1 INDETERMINATE resolved; web 0.80x provisional withdrawn). Reverts to 0.80x (governing destination 16.8x -> 13.4x) if the FY26 AR shows write-off/factoring rather than collection.
+- UA: NOT APPLIED (1.00x), neutral not penalty (Kacholia exit falsifies the institutional-absence premise).
+- Amendment 17: NON CONVERTER (labour is not a traded/quoted commodity; dossier "default to CONVERTER if ambiguous" withdrawn).
+- Governance into r (+1.5), not additive PE. Governing track Track 1 (RRM) destination 16.8x, range 15.5-18.0x; Track 2 additive 24.0x cross-check.
+- Revenue dual path BASE 17% / DOWNSIDE 10% CAGR carried to Role 1; margin H2-exit 33.05% held.
+- Earnings basis: FORWARD (one-year-forward operating EPS), operator 30-Aug-2026. Multiple meets operating EPS Rs 18.43 FY26 (reported 21.73), applied one year forward per Amendment 18.1.
+- STILL PENDING for Phase 3 (do not block the approved base): O2 option probabilities; O3 Step 1C live peer table (KSOLVES/INFOBEAN/ONWARDTEC/YUDIZ, claude.ai owes); O4 SEZ 10AA expiry date (post-expiry operating EPS Rs 16.95, 8% haircut).
 
-## ACTIVE TRIPWIRES
-- Promoter perimeter UNBOUNDED: Nilesh Rathi's full UK directorship register not yet retrieved (fetch blocked 29-Aug); DBX is the only confirmed appointment. Highest-value outstanding check.
-- Proof gate NOT PROVING: revenue/employee stalled within FY26; H2FY26 revenue below H1; treat FY26 surge as one-off until H1FY27.
-- Standalone CFO/PAT below 0.7x all four FY24/FY25 cells; receivables +76% vs revenue +16%, DSO ~47->75 days.
+## ACTIVE TRIPWIRES (thesis-broken triggers and falsification metrics)
+- THESIS-BROKEN if: H1 FY27 revenue < Rs 45 cr (breaks the 10% downside path) OR the FY26 AR shows the FY26 receivable release came from write-offs/factoring (A3 fires, destination 16.8x->13.4x) OR the FY26 AR confirms DBX is promoter-controlled with the customer-to-equity cash link.
+- Falsification metric (single next print): standalone CFO/PAT below 0.70x, OR H1 FY27 revenue below Rs 45 cr.
+- Promoter perimeter UNBOUNDED: Nilesh Rathi's full UK directorship register not yet retrieved; DBX (co. 15645030, Rathi sole director) is the only confirmed appointment. Highest-value outstanding check.
+- Proof gate NOT PROVING: revenue/employee stalled within FY26; H2FY26 revenue below H1, margin -916 bps; treat the FY26 surge as one-off until H1FY27.
+- Cash CONDITIONAL: FY26 consolidated CFO/PAT 1.06x resolved the drag to GROWTH INDUCED, but it rests on one audited year after four cells below 0.7x; A3 reverts to 0.80x on a write-off/factoring finding.
 - Rs 5.30 cr unnamed "Others" loan book, unsecured, no repayment schedule, growing (CARO); + Rs 2.40 cr new FY26 long-term advances.
 - Top-3 client concentration 42-48%, top-10 69-78%; single-client loss is the named single-point failure.
-- Guidance credibility D: revenue-side 0 of 5 delivered (now 0 of 5 with the recovered Rs65cr->Rs57cr FY24 miss); only EBITDA margin promise kept. Investor calls silent 33 months.
+- Guidance credibility D: revenue-side 0 of 5 delivered; only EBITDA margin promise kept. Investor calls silent 33 months.
 - SEZ Section 10AA tax-holiday sunset (undisclosed expiry); effective rate ~19% vs statutory 25-29%.
 
 ## SUPERSESSIONS (live layer over corpus)

@@ -15,8 +15,19 @@ emoat:
 valuation:
   rules_checked: 0
   fails: []
-  status: "pending-phase-3"
-  note: "B10/B11 not produced in phase 1; valuation framework docs deliberately not loaded (dead context). Deferred to phase-3 valuation-scope pass."
+  status: "complete-phase-3"
+  rules_checked: 38
+  concur_destination_pe: true
+  concur_decision: true
+  acceptance_rate: 92
+  valuation_verdict: "ACCEPTED — no rework; destination PE (Track 1 16.8x governing, Track 2 24.0x) and decision (WATCHLIST leaning AVOID, no position) concur; 3 MINOR, none altering PE/Hurdle/decision"
+  fails: []
+  findings:
+    - {severity: "MINOR", location: "11-valuation UA F2 + B10 ua_qualifiers.gate0_or_em", note: "Gate0-OR-EM qualifier stated FAIL on EM 10<25; actually MET because Gate 0 88>=60 satisfies the OR leg. UA NOT APPLIED still correct on other grounds (stale FII+DII leg + operator R2 Kacholia falsification). No PE impact."}
+    - {severity: "MINOR", location: "11-valuation RRM + deliberation r-build", note: "'one unaudited subsidiary' cited under both governance +1.5 and complexity +0.5; each stands on independent sufficient triggers, no material double-charge; r=16.0% holds. Home the fact to one adjustment for a clean single-credit trail."}
+    - {severity: "MINOR", location: "14-thesis Section 7 verdict box", note: "Amdt 4.3 first-line 'Tier: A | Hurdle: 25%' not printed verbatim (tier derived and used correctly). Presentational; synthesis verdict card should print it verbatim."}
+  role2_decision_rules: {promoter_override_print: PASS, buy_gate_respected: PASS, avoid_map_overridden_to_proceed: PASS, position_size: "Small ceiling / no position now - PASS", promoter_cap_binds_size: PASS, tier_line_verbatim: "MINOR", decision_matrix_cell_note: "verifier read RESEARCH/WATCH on (proof,gap); the signed STRUCTURAL-FEATURE ugliness (09b B5) makes the correct cell VALUE-TRAP RISK per the devil (B15) - synthesis must carry the more bearish read"}
+  note: "Phase-3 valuation-adherence pass. Gate0 + EM recorded in phase 1 (above). 3 MINOR outcome-neutral; valuation and decision concur."
 business_understanding_narrative: {present: false, five_questions_answered: false, prose_only: false, section6_candidates_named: 0, valuation_vocab_leak: false, fails: [], note: "N/A phase-1 scope: stage-13 synthesis not an input this pass; not a REWORK trigger."}
 recomputed_destination_pe: ""
 recomputed_decision: ""

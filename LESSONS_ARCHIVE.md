@@ -255,3 +255,10 @@ Cross-family grader SKIPPED (no key). Composite +4/8. No pharma/MedTech
 distribution sector-cap row exists; ruled 18-20x ad hoc (add a row — recurring
 gap alongside steel and sugar). collect_to_repo sector_cap_row defect recurred
 (Pharma/CDMO).
+
+## 2026-08-30 — SYSTANGO (runs/systango-2026-08-29), /fttcp
+FTTCP first workup + operator review + sign-off. Composite 1/8, DEEP WATCH leaning AVOID; earnings basis FORWARD, destination 16.8x (Track 1 RRM governing).
+- What dragged: the FY26 cash-conversion answer was in the corpus all along (audited CFO/PAT 1.06x consolidated, results p.18), but the Phase 1 synthesis-lite buried it behind the FY24/FY25 four-cell read and left the gate at INDETERMINATE, and the claude.ai web handover then WRONGLY superseded it as "not established". Provenance failed on the web side, not the corpus side. Lesson: when a stage marks cash INDETERMINATE for "missing FY26 cash flow", check whether the audited FY26 results filing already carries the cash flow statement before deferring to a later web layer.
+- STALE CONCALL MODE: newest transcript 33 months old (company stopped calls after Nov-2023). Forward catalysts came from filed results only; deck narrative refused as catalyst evidence. Confidence declared low.
+- Cross-family FTTCP grader SKIPPED (no GEMINI/GOOGLE key); confidence treated one notch lower.
+- Tracker gate passed on a master-row ID + verified two-way relation, not 13 individual row URLs; v2.1 wants row URLs. Recorded as a format gap, not a stop.

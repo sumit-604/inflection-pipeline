@@ -1,0 +1,64 @@
+stage: B11-valuation
+company: "SYSTANGO"
+run_date: "2026-08-29"
+model: claude-opus-4-8
+status: complete
+entity: "consolidated single-entity"
+entity_count: 1
+input_gaps:
+  - "SEZ 10AA expiry year NOT FOUND (FY26 AR Note 5.3, Sep-2026); named assumption: post-expiry basis from FY29/Year 3"
+  - "Market PE denominator for Amendment 15 relative expression NOT FOUND in container"
+flags:
+  - "FLAG-CASH: cash multiplier 1.00x applied (GROWTH INDUCED, INDETERMINATE-resolved-to-GROWTH-INDUCED per operator R1); A3 CONDITIONAL revert to 0.80x -> Track 1 destination 13.4x if FY26 AR shows write-off/factoring"
+  - "Promoter override STANDING: verdict CONCERN (DBX promoter-controlled, unresolved); PROCEED under explicit operator override 29-Aug-2026, not a resolution; printed on the card"
+  - "FTTCP composite 1/8 DEEP WATCH leaning AVOID; proof gate NOT fired; entry conjunction fails"
+  - "No modeled downside (bear floor Rs 465 above CMP); true downside is model-external (governance/cash impairment/sub-10% growth)"
+  - "Step 1C PENDING LIVE PEER TABLE (KSOLVES/INFOBEAN/ONWARDTEC/YUDIZ); pillar destination governs interim"
+  - "Grade D credibility: FY26 Rs 250 cr target vs Rs 90.38 cr delivered (~64% shortfall); 17% base path is below the missed promise"
+framework_versions: "Master v3.6 / Section 1B v3.3+v3.5.1+v3.6+v3.7+v3.8+v3.9 / FTTCP v2.1"
+pe_basis: "forward"
+exit_pe_base_approved: "24.0x base PE; Track 1 RRM destination 16.8x governing, Track 2 additive 24.0x cross-check (operator-approved FTTCP gate 30-Aug-2026)"
+destination_pe:
+  track1_rrm: {low: 15.5, mid: 16.8, high: 18.0, r_used: 16.0, rrm: 0.70}
+  track2_additive: {low: 22.2, mid: 24.0, high: 25.8}
+  divergence_pct: 30
+  governing_track: "Track 1 (RRM) — more conservative; prices governance/durability through r, the open question on this name"
+destination_pe_track1_rrm: 16.8
+destination_pe_track2_additive: 24.0
+pillar_detail:
+  roce_used: 33.0
+  roce_base: 24.0
+  roce_recovery_route: "not-credited"
+  pillar1_normalization_route: "none"
+  cash_multiplier: 1.00
+  structural_or_growth: "GROWTH INDUCED (and unwound)"
+  growth_offset: 0
+  growth_premium: 0
+  strategic_premium: 0
+  shared_catalyst_flag: false
+  ua_applied: false
+  sector_cap_used: 45
+hurdle_ratio: {base: 3.48, bull_used: false, verdict: "PASS"}
+hurdle_verdict: "PASS"
+fair_values:
+  track1: {bear: 465, base: 614, bull: 653}
+  track2: {bear: 632, base: 843, bull: 900}
+  track1_base_path_17pct: {bear: 573, base: 614, bull: 653}
+  track1_downside_path_10pct: {bear: 465, base: 498, bull: 528}
+  track2_base_path_17pct: {bear: 786, base: 843, bull: 900}
+  track2_downside_path_10pct: {bear: 632, base: 676, bull: 721}
+expected_cagr_prob_weighted: 32.9
+entry_range: {low: 220, high: 315}
+mos_price: 220
+upside_downside_ratio: 0   # no modeled downside: bear floor Rs 465 is +99% vs CMP; real downside is model-external
+decision: "WATCHLIST (leaning AVOID) — no BUY without proof firing (H1 FY27) AND governance resolving (FY26 AR); promoter override CONCERN printed alongside"
+cash_multiplier_used: 1.00
+structural_or_growth: "GROWTH INDUCED (and unwound)"
+ua_applied: false
+sector_cap_used: 45
+fv_cagr: 11.5
+return_source_label: "HYBRID"
+unresolved_inputs_used:
+  - "SEZ 10AA expiry year NOT FOUND -> conservative assumption: post-expiry Rs 16.95 op-EPS base from FY29/Year 3 onward (named, re-runs on AR)"
+som_cagr_crosscheck: "consistent (17% base path is below management's missed guidance; justified for a UK/US ICT-outsourcing micro-cap)"
+one_line_thesis: "Cheap on numbers (16.8x forward operating EPS plus Rs 80.8/share cash gives Rs 443 today vs Rs 234, all scenarios clear 25%), but the transition proof gate has not fired (FTTCP 1/8) and the promoter-controlled DBX cash link is unresolved; watch H1 FY27 and the FY26 AR before any position."

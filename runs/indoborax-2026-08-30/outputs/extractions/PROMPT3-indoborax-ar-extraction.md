@@ -1,3 +1,5 @@
+> SUPERSEDED 2026-08-30 by PROMPT3-indoborax-ar-fy24-fy25.md once AR FY24/FY25 were uploaded. This file was the corpus-limited answer written when only the FY26 AR was held. Kept for the record.
+
 # FERRY-BACK — PROMPT 3 (Indo Borax AR FY24 / AR FY25) + standing ROCE item
 
 Answered by Claude Code, 2026-08-30, against the INDOBORAX run corpus.

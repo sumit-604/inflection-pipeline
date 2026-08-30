@@ -18,3 +18,5 @@ Per-stage token ledger, one line per subagent run.
 | 9 | tam-sam-som | claude-sonnet | - | - | - | 91398 | 592s | 1 |
 | 12a | verifier-numerical | claude-haiku | - | - | - | 84249 | 164s | 1 |
 | 12d | verifier-peers | claude-sonnet | - | - | - | 53374 | 140s | 1 |
+| 12b | verifier-redflags | claude-opus | - | - | - | 89413 | 290s | 1 |
+| 12c | verifier-framework | claude-opus | - | - | - | 78861 | 282s | 1 |

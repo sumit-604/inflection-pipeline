@@ -1,0 +1,16 @@
+stage: confidence-delta
+company: "KRONOX"
+run_date: "2026-08-30"
+phase: 1
+confidence_delta:
+  numerical_acceptance: 97.14      # B12a (35 numbers, 0 CRITICAL, 1 MAJOR anchor miss)
+  redflag_coverage: 78             # B12b (6 caught + 1 partial of 9 independent flags; NO-CONCALL)
+  framework_adherence: 97          # B12c phase-1 (Gate 0 + Emerging Moat only; valuation pending phase 3)
+  peer_utilisation: 100            # B12d (4/4 peers substantive, all 5 peer questions addressed)
+  overall: 78                      # min of the four
+  valuation_framework_adherence: pending-phase-3
+band: "normal (75-89): note specifics; no PROCEED downgrade (that is the 60-74 band)"
+rework_check: "No REWORK trigger. Zero CRITICAL numerical/source-fidelity findings; every verifier acceptance_rate is >= 67% (all above the 60% floor)."
+notes:
+  - "overall is pulled to 78 by redflag_coverage: Verifier B (NO-CONCALL) found the earnings-quality point B05 missed (FY26 growth non-operating; Q1 FY27 PAT tax-flattered). Carried into the gate recommendation and dossier."
+  - "One source-fidelity MAJOR (B03 DSCR 17.30x unanchored vs interest coverage 328x in source) logged for correction in phase 3; does not enter any phase-1 verdict computation."

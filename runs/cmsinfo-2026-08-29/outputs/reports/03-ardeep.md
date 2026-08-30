@@ -1,6 +1,22 @@
 # CMS Info Systems Ltd (CMSINFO) — Stage 3: Annual Report Deep Dive, Backward Read
 Run: cmsinfo-2026-08-29 | Source: FY2025-26 Annual Report (PDF/txt file misnamed Annual_Report_2023, confirmed FY26 AR at p.2/147: "Annual Report 2025-26"). Page anchors use the extraction marker `p.N/147`. SA = Standalone, CON = Consolidated. ₹ figures in millions unless stated. Builds on Stage 2 (B02-notes); does not re-derive the notes triple-pass, extends and cross-references it.
 
+> **CORRECTION 2026-08-30 (operator, per web-handover-dossier S2):**
+> This report assigned the -7.8% FY26 decline to ATM Management Solutions.
+> That is WRONG. Verified by 220-DPI rasterized read of FY26 AR p.52 and by
+> the Board's Report (p.31/147) naming each figure to each platform:
+> ```
+>   ATM Management Solutions              12,840 -> 13,515  = +5.3%
+>   Retail Solutions & Currency Logistics  6,368 ->  5,872  = -7.8%
+>   Technology & Payment Solutions         2,633 ->  3,735  = +42%
+> ```
+> The tables on p.52 are correctly placed under their headings; an earlier
+> transposition hypothesis was tested and withdrawn. The error originated in
+> column-collapse in the extracted text. `04-bizmodel.yaml` and
+> `business-narrative.md` carried the correct reading. VERIFIER GAP: two blocks
+> in the same run contradicted each other on this point and no verifier caught it.
+> Any statement below that assigns the -7.8% to ATM Management is superseded by this block.
+
 Rating key: 🟢 Clean | 🟡 Watch | 🔴 Red Flag
 
 ---

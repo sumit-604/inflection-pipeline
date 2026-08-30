@@ -5,5 +5,5 @@ market_cap_cr: 4002.0
 run_date: 2026-08-29
 run_type: full
 concalls_available: true
-sector_cap_row: "Platform / SaaS / IT services"
-notes: "Collected from screener.in by collect_to_repo.py v3. Sector row auto-picked; verify."
+sector_cap_row: "Cables / Industrial products"
+notes: "Sector row corrected by operator ruling 2026-08-30 (Keerti): 'Cables / Industrial products' (25x cap), the generic capital-employing industrial bucket, accommodates CMS's normalised 20-24x historical band. Signed archetype = contracted infrastructure operator (asset-owning). Rejected: 'Logistics (asset-light)' 25x (contradicts the signed model in the audit trail), 'Logistics (WC-heavy / project cargo)' 20x (over-punitive; counterparties are AA-rated banks, FY26 receivable spike is an MSP-distress event not a structural feature), 'Data centers / cloud infrastructure' 30x (closest match but label-gaming for a higher cap). Original auto-pick 'Platform / SaaS / IT services' (45x) was wrong: CMS is ~85% non-SaaS. Indicative pillars land raw destination PE 16.0-18.4x, below every candidate cap, so the fix is correctness/audit-trail, not answer-changing."

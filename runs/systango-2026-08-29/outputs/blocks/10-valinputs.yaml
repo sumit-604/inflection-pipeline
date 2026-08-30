@@ -1,0 +1,89 @@
+stage: B10-valinputs
+company: SYSTANGO
+run_date: "2026-08-29"
+model: claude-haiku-4-5
+status: complete
+reassembly_note: "Re-invoked once (orchestrator retry). First run misread the consolidated FY26 revenue as Rs 44.89 cr (the H2 half-year column) and switched the base to standalone; corrected to consolidated FY26 Rs 90.38 cr (results p.17 year column), operating EPS Rs 18.43, per the authoritative deliberation record."
+input_gaps: []
+flags:
+  - "Cash conversion A3 conditional (Pillar 2 reverts 1.00x -> 0.80x if FY26 AR shows write-offs/factoring; destination PE swing 16.8x -> 13.4x)"
+  - "DBX Holdings control link unresolved; Halt 1 priority (Nilesh Rathi possible connection unverified; customer-to-equity conversion same year RPT billing ended)"
+  - "Consolidated basis governs valuation (entity_count=1); standalone figures for reference only"
+  - "ROCE 33% high-band but classified STAGNANT forward (peer-ceiling exhaustion, not operational strength)"
+  - "Tech Alchemy integration status unresolved (signed Jun-2025, AR silent; affects forward revenue attribution)"
+entity_count: 1
+table:
+  company_identity:
+    basis: "CONSOLIDATED (group entity, single reportable segment per results note 3)"
+    revenue_fy26: "Rs 90.38 cr (audited, results p.17, Year ended 31-Mar-2026 column, 9037.86 lakh)"
+    ebit_fy26: "Rs 39.24 cr (FTTCP Pillar 1 base; PBT 39.18 + finance cost 0.06)"
+    pat_fy26: "Rs 31.88 cr after minority (results p.17)"
+    operating_eps_fy26: "Rs 18.43 (stripped treasury, FTTCP Module B4)"
+    reported_eps_fy26: "Rs 21.73 diluted (results p.17)"
+    cfo_fy26: "Rs 33.77 cr consolidated (results p.18); CFO/PAT 1.06x"
+    roce_fy26: "33.0% (EBIT Rs 39.24 cr / avg CE Rs 118.93 cr)"
+    net_cash: "Rs 118.52 cr (treasury+cash; exits equity bridge per Amendment 18.1, not multiplied)"
+    cash_per_share: "Rs 80.8/share"
+    mcap: "Rs 343.0 cr (CMP 234 x 1.4669 cr shares)"
+    ev: "Rs 224.5 cr (mcap 343.0 - net cash 118.5; company is net cash, borrowings Rs 0.06 cr)"
+    standalone_reconciliation_only: "Standalone (parent-only) FY26 revenue Rs 75.89 cr, reported EPS Rs 20.37 - NOT the valuation base; group consolidates UK/US WOS subsidiaries"
+  fttcp_approved_base:
+    track_1_governing_pe: "16.8x (Track 1 RRM, range 15.5-18.0x)"
+    track_2_cross_check_pe: "24.0x (Additive, for sensitivity)"
+    earnings_basis: "FORWARD (one-year-forward operating EPS, FY27)"
+    pillar_1_roce: "33.0% (route NONE, recovery NOT CREDITED); base PE 24.0x"
+    pillar_2_cash: "1.00x (GROWTH INDUCED, CONDITIONAL revert to 0.80x per A3 -> destination 13.4x)"
+    pillar_3_growth: "+0x"
+    strategic_premium: "+0x"
+    ua_multiplier: "1.00x (NOT APPLIED; EM score 10 < 25 gate failed; Kacholia-exit falsifies premise)"
+    r_discount_rate: "16.0% (base 14 + governance +1.5 + complexity +0.5; RRM 0.70)"
+    sector_cap: "45x (absolute ceiling, not binding on either track)"
+  revenue_projection_inputs:
+    base_path_cagr: "17% CAGR off FY26 Rs 90.38 cr: FY29 144.8 cr, FY31 198.2 cr"
+    downside_path_cagr: "10% CAGR: FY29 120.3 cr, FY31 145.6 cr"
+    margin_held: "33.05% (H2-exit margin, governing until A2 other-expenses gap clears)"
+    sez_post_expiry_eps: "Rs 16.95 (8.0% haircut from Rs 18.43; applies Year 3 onward; expiry date NOT FOUND)"
+  credibility_and_management:
+    grade: "D (Poor)"
+    revenue_promise_fy26: "Rs 250 cr target -> delivered Rs 90.38 cr (~64% shortfall)"
+    growth_promise_fy24: "30% guidance -> actual ~8% (missed)"
+    ebitda_margin_promise: "greater than 25% (kept; delivered 37.66% FY26 EBITDA margin ex-other-income)"
+    last_concall: "17-Nov-2023 (H1FY24); 33-month silence"
+  governance:
+    promoter_stake: "72.07% (stable, no pledge found; SME Emerge lighter regime)"
+    family_board: "60% (3/5 seats)"
+    operator_override: "29-Aug-2026: promoter verdict CONCERN overridden to PROCEED; governance in r, not additive PE; default-track sensitivity: 0.80x would carry 13.4x, override cost +3.4x destination, reversible by A3"
+    dbx_holdings_flag: "Halt 1 priority: undisclosed ownership %, Nilesh Rathi control link (confirmed sole director per web handover Companies House 15645030), customer-to-equity conversion rationale NOT FOUND"
+conflicts: []
+unresolved:
+  - {field: "FY26 Annual Report", why: "Not yet published as of 29-Aug-2026", where: "Expected Sep-2026 (BSE/NSE); critical for A3 cash condition gate"}
+  - {field: "FY26 Concall Transcript", why: "Last concall Nov-2023; no later call in corpus", where: "NSE Emerge / company IR; CORPUS GAPPED-FRESHNESS"}
+  - {field: "Rating PDF", why: "No rating agency coverage found in corpus", where: "Likely unrated Emerge micro-cap; not blocking"}
+  - {field: "SEZ Section 10AA Expiry Date", why: "Tax note gives 5+5 schedule but not exact effective year", where: "FY26 AR Note 5.3 (Sep-2026)"}
+  - {field: "Latest Shareholding Pattern", why: "Most recent filing 31-Mar-2025 (17m stale)", where: "NSE/BSE (latest should be Jun-2026)"}
+  - {field: "DBX Holdings Control Basis", why: "Ownership % undisclosed; Rathi sole-director link per web handover, primary re-verify pending", where: "UK Companies House co. 15645030; HALT 1 PRIORITY"}
+  - {field: "GreenLeaf TDG Ltd Rationale", why: "Rs 0.36 cr stake documented, business purpose not disclosed; web handover CLEARED it as genuine third party", where: "FY26 AR (Sep-2026)"}
+  - {field: "Tech Alchemy Post-Acquisition Status", why: "MOU signed Jun-2025 GBP 1.5M; integration/revenue contribution not disclosed", where: "FY26 AR subsequent events; NSE/RNS"}
+  - {field: "Forward EPS (FY27 Operating)", why: "Not computed by FTTCP; Phase 3 projection", where: "Stage 11 from dual-path revenue and held margin"}
+rating_wc_quote: "NOT FOUND (unrated micro-cap; no rating agency coverage in corpus)"
+ua_qualifiers:
+  listed_12m: "YES (Mar-2023 listing; ~3.5 years)"
+  gate0_or_em: "PARTIAL (Gate 0 88 >=60 PASS; EM score 10 < 25 FAIL)"
+  fii_dii_lt3: "STALE (Mar-2025: FII 0.47 + DII 1.69 = 2.16% < 3%, qualifies but 17m stale; screener-sourced, not filed)"
+  all_met: false
+  applied: "NOT APPLIED (1.00x) per operator ruling R2 30-Aug-2026"
+credibility_grade: "D (Poor)"
+demand_externally_verifiable: true
+downstream_candidates:
+  - {signal: "AWS Partner Network tier (Select Services Partner)", entity_type: Counterparty, demand_link: "Hyperscaler referral channel; Cloud & AI/ML deal flow", likely_source: "AWS Partner Network directory", cadence: Quarterly, shared: true}
+  - {signal: "Google Cloud Partner status & GenAI specialisation", entity_type: Counterparty, demand_link: "Partner referral feeding AI/ML segment", likely_source: "Google Cloud Partner directory", cadence: Quarterly, shared: true}
+  - {signal: "Alibaba Cloud strategic alliance (entered FY26)", entity_type: Counterparty, demand_link: "New AI-driven cloud-migration deal-flow channel", likely_source: "Alibaba Cloud partner announcements / RNS", cadence: Event-driven, shared: false}
+  - {signal: "UK ICT/digital-services outsourcing spend", entity_type: Macro, demand_link: "65.65% of FY26 consolidated revenue from UK", likely_source: "ONS ICT statistics / techUK", cadence: Quarterly, shared: false}
+  - {signal: "US enterprise digital-transformation IT spend", entity_type: Macro, demand_link: "28.04% of FY26 consolidated revenue from US", likely_source: "Gartner IT spending forecast", cadence: Quarterly, shared: false}
+  - {signal: "Top-10 client revenue concentration (72% of FY26 revenue)", entity_type: End-customer, demand_link: "Any top-10 client move is material", likely_source: "Investor Presentation Jun-2026 / RPT note", cadence: Quarterly, shared: true}
+  - {signal: "Tech Alchemy Ltd (UK) pending acquisition", entity_type: Counterparty, demand_link: "MOU signed Jun-2025 GBP 1.5M asset/team", likely_source: "NSE/RNS; UK Companies House; FY26 AR", cadence: Event-driven, shared: false}
+ar_new_downstream_entities:
+  - {name: "DBX Holdings Ltd (UK, co. 15645030)", where_in_ar: "Consolidated Note 8; Standalone Note 21C.8 RPT table", entity_type: "Unquoted equity investee (19,500 shares GBP 0.001 each, Rs 1.66 cr FY25, Nil FY24)", note: "Former RPT customer (Rs 1.57 cr FY24, Nil FY25) converted to equity same year. Nilesh Rathi sole director per web handover Companies House. Ownership %/rationale NOT FOUND. HALT 1 PRIORITY."}
+  - {name: "GreenLeaf TDG Ltd (UK, co. 11489069)", where_in_ar: "Consolidated Note 8", entity_type: "Unquoted equity investment (320 shares GBP 1 each, Rs 0.36 cr FY25, Nil FY24)", note: "Web handover CLEARED as genuine third-party Leeds environmental firm, no Rathi link; rationale still unstated in AR."}
+  - {name: "Tech Alchemy Limited (UK, co. 10443169)", where_in_ar: "Founders' Letter p.13 only; NOT in Board's Report, Auditor's Report, or AOC-1", entity_type: "Acquisition target (MOU Jun-2025, GBP 1.5M, counterparty St Topco, real deal per Stage 8)", note: "Disclosure lapse; funding unreconciled against 0%-utilised Rs 8 cr IPO acquisitions bucket."}
+analyst_note: "CONSOLIDATED BASIS CORRECTED (reassembly). FY26 consolidated revenue Rs 90.38 cr (audited results p.17) is the valuation base, not standalone Rs 75.89 cr and not the half-year Rs 44.89 cr. False revenue conflict deleted (audited consolidated equals deck Rs 904 mn). Operating EPS Rs 18.43 is the FORWARD-basis multiple base per Amendment 18.1; Rs 118.52 cr net cash exits the equity bridge, not multiplied. Track 1 RRM 16.8x governs Track 2 24.0x (30% divergence). All FTTCP verdicts and operator rulings carried with anchors: entity_count 1, ROCE STAGNANT route NONE, Pillar 2 1.00x CONDITIONAL A3, NON CONVERTER, UA NOT APPLIED, r 16.0%, promoter override standing. Dual revenue path 17%/10% off consolidated base; margin 33.05% held; SEZ post-expiry Rs 16.95 Year 3. No estimates used."

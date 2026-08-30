@@ -1,0 +1,89 @@
+stage: B00-inputs
+company: INDOBORAX
+run_date: 2026-08-30
+model: orchestrator
+status: complete
+spear_gate: OPEN            # operator OVERRIDE 2026-08-30, companies/INDOBORAX.md
+run_type: full
+concalls_available_manifest: false   # WRONG auto-default; a Q4 FY26 concall IS present
+concalls_treated_as: available       # orchestrator ruling: transcript present, stage 5 full mode
+
+inventory:
+  prospectus: 0            # long-listed 1980; not expected, NOT a gap
+  annual_report: 1         # AR FY2025-26 (file mislabeled Annual_Report_2023.pdf; p1 confirms FY25-26)
+  results: 2               # Q1 FY27 (30-Jun-2026, newest) + Q4/FY26 audited (31-Mar-2026)
+  rating: 1                # India Ratings 23-Jul-2026, 6p (full rationale)
+  concalls: 1              # Q4 FY26 call, 02-Jun-2026
+  peer_concalls: 14        # DMCC x4, NEOGEN x4, TANFACIND x2, TATACHEM x4 (cap 12 at stage 6)
+  announcements: 3         # Kronox SPA press release + board outcome (20-Aug-2026), Zenrock open offer IIFL (May-2026)
+  shareholding: 1          # screener trend (SECONDARY); Reg 31 filing absent
+  research: 0
+  screening: 24            # screener + 3 peers, 6 CSVs each
+  presentation: 1          # Q4 FY26 investor presentation
+
+input_gaps:
+  - type: annual_report_fy24_fy25
+    severity: MEDIUM
+    effect: backward baseline runs on FY26 AR comparatives only; FTTCP backward years thin
+  - type: postal_ballot_notices
+    severity: MEDIUM
+    detail: Sec 186 Rs 700 cr limit (08-Apr/12-May-2026), ESOP 2026 16,88,950 options, Kronox funding structure
+    effect: priority claims 3, 4, 5 not filing-anchored this run; carry to Halt 1 for claude.ai
+  - type: shareholding_reg31_filing
+    severity: LOW
+    detail: exact promoter sub-classification (Zenrock 38.42% vs 3 declassified AIFs 20.00%) and pledge % need the Reg 31 filing; only screener aggregate present
+  - type: prospectus
+    severity: NONE
+    detail: company listed 1980, prospectus not expected; absence is not a gap
+  - type: research
+    severity: NONE
+    detail: no anchored-evidence effect
+
+freshness_pairs:
+  - pair: RESULTS_to_CONCALL
+    trigger_doc: Q1 FY27 results (quarter ended 30-Jun-2026)
+    mate_expected: Q1 FY27 concall transcript
+    status: FAIL
+    missing_doc: "Q1 FY27 concall transcript (if held; company may hold only the post-annual call)"
+  - pair: RATING_BULLETIN_to_RATIONALE
+    trigger_doc: India Ratings report 23-Jul-2026
+    mate_expected: full rating rationale
+    status: PASS
+  - pair: SEBI_ORDER_to_ORDER_TEXT
+    trigger_doc: none referenced
+    mate_expected: n/a
+    status: PASS
+  - pair: AR_to_LATEST_AUDITED_ANNUAL
+    trigger_doc: FY26 audited annual results (31-Mar-2026)
+    mate_expected: FY26 annual report
+    status: PASS
+    note: AR FY2025-26 present (file mislabeled 2023)
+
+freshness_verdict: CORPUS GAPPED-FRESHNESS   # pair 1 FAIL -> gate caps at PROCEED WITH CAVEATS
+
+spear_load_bearing_facts:   # first verification priority, every stage checks before own work
+  - imported ore Rs 96.26 cr vs revenue Rs 175.26 cr FY25 (55%); exports NIL FY24/FY25
+  - receivable days 18 (FY26) / 33 (FY25) / 26 (FY24)
+  - clean operating EBITDA margin 21.6/26.1/20.5% FY24/25/26 (ex other income + exceptionals)
+  - sponsor EAAA India Alternatives (Edelweiss); acquisition debt is affiliate debt (Rs 390cr NCD + Rs 75cr CCPS in Zenrock)
+
+priority_claims_status:   # memory FIRST VERIFICATION PRIORITY table, provenance this run
+  claim_1_kronox_spa: filing_present (announcements/2026-08-20_Board_Outcome_Kronox_SPA.pdf)
+  claim_2_open_offer_kronox: filing_present (same + press release)
+  claim_3_funding_246_397cr: GAPPED (postal ballot / Q2 FY27 BS not in corpus)
+  claim_4_sec186_700cr: GAPPED (postal ballot 08-Apr/12-May not in corpus)
+  claim_5_esop_1688950: GAPPED (postal ballot not in corpus)
+  claim_6_zenrock_openoffer_may2026: filing_present (announcements/2026-05-04_Zenrock_OpenOffer_IIFL.pdf)
+  claim_7_pledge_100pct: partial (rating report + open offer doc; Reg 31 confirms exact count)
+  claim_8_promoter_classification: partial (screener aggregate; Reg 31 filing absent)
+  claim_9_q4fy26_exceptional_split: filing_present (results Q4/FY26 PDF)
+  claim_10_fy26_cash_post_dividend: filing_present (Q1 FY27 balance sheet in results)
+
+flags: []
+analyst_note: >
+  Manifest concalls_available:false contradicted by a present Q4 FY26 transcript;
+  treated as available, stage 5 runs full mode on the single call. AR is FY2025-26
+  despite the 2023 filename. announcements/ and shareholding/ were operator-uploaded
+  after the empty-folder pause (not via collector). Postal-ballot filings remain
+  gapped, so priority claims 3-5 stay [SECONDARY] this run and go to claude.ai at
+  Halt 1. Freshness pair 1 FAIL caps the gate at PROCEED WITH CAVEATS.

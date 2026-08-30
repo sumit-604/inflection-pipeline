@@ -1,0 +1,29 @@
+stage: B01-gate0
+company: "INDOBORAX"
+run_date: "2026-08-30"
+model: claude-sonnet-5
+status: complete
+input_gaps: [annual_report_fy24_fy25, postal_ballot_notices, shareholding_reg31_filing]
+flags:
+  - {type: FLAG-GATE0, reason: "Classification capped at AVERAGE by deal-breaker 5 (promoter pledge 100%, rating.pdf p.1/p.3-4); the matrix-computed classification before override was GOOD (Core 61/100 + THIN moat). Pledge secures Zenrock's acquisition-level NCD/CCPS debt, not Indo Borax operating distress."}
+  - {type: FLAG-CASH, reason: "Cumulative CFO/PAT 0.61x (10yr, screener/AR-consolidated basis) driven almost entirely by FY25 CFO of -Rs104.47cr, a treasury/investment-portfolio cash-flow classification effect (AR/Q4FY26 CF statement), not core operating distress. FCF-based B2/B3 rest on only 2 years of disclosed capex (FY25-FY26); pre-FY25 capex not in corpus."}
+data_years: 10
+fy_range: "FY17 to FY26"
+blocks: {A: 13, B: 8, C: 14, D: 20, E: 6}
+core_score: 61
+moat_score: 4
+grand_total: 65
+moats_confirmed: 1
+moat_class: "THIN"
+classification: "AVERAGE"
+deal_breakers: ["5: pledge>15% (100% of promoter Zenrock shareholding pledged, rating.pdf 23-Jul-2026) -> capped matrix result GOOD down to max AVERAGE"]
+history_downgrade: false
+data_notes:
+  - "Screener CFO/PAT for FY25-FY26 are consolidated (verified exact match to AR consolidated P&L/CF); FY17-FY24 predate the subsidiary and are effectively standalone=consolidated."
+  - "FY26 reported PAT (Rs50.27cr consol / Rs49.74cr standalone) includes a Rs10.15cr exceptional (AOC-2 sale of residential property Rs42.50cr + office Rs14.00cr + 3 vehicles Rs5.52cr to the exiting Sajal Jain promoter family, AR p.24 and p.42). Core FY26 PAT computed as ~Rs42.1cr (PBT before exceptional Rs55.66cr standalone x (1-24.42% effective tax rate)). PAT CAGR score (C2) unaffected: raw 22.67% and core-adjusted 20.27% both fall in the >=20% band."
+  - "ROCE for FY25/FY26 anchored to the company's own filed disclosure (AR p.113 Note 45); ROCE for FY17-FY24 computed via screener capital-employed convention (Net Worth + Borrowings) since the current/non-current liability split is not in screener-data for those years."
+  - "AR p.113 Note 45's own 'Return on Equity Ratio' (15.50% FY26 / 13.05% FY25) is numerically identical to the AR's own EPS figures -- an apparent drafting error in the filed ratio note. Not used as the A3 anchor; independently computed ROE used instead (13.93% FY26 / 13.52% FY25)."
+  - "WC Days (B4) computable only for FY25 vs FY26 (Trade Payables not in screener-data pre-FY25); the -53.34 day swing is a genuine 1-year change, not a multi-year trend."
+  - "ORCHESTRATOR RECONCILIATION (supersedes the subagent's memory-correction note): company-memory priority claims #1-#2 are the Indo Borax -> KRONOX LAB SCIENCES acquisition (SPA 20-Aug-2026, 2,38,44,000 sh 64.26% @ Rs103.22; open offer 95,70,000 sh @ Rs157.27, Zenrock PAC), a separate listed target. AR Note 49 discloses the OTHER deal: Zenrock's acquisition of Indo Borax itself (SPA 15-Dec-2025, 1,63,00,230 sh 50.80% @ Rs256.30; open offer 83,43,400 offered / 24,44,534 taken up = memory claim #6). Two distinct real transactions; the share-count mismatch is expected. Company memory is NOT in error; no edit made."
+block_b_trend: "improving - CFO swung from -Rs104.47cr (FY25, consolidated) to +Rs87.15cr (FY26, consolidated), a +Rs191.62cr change, driven by reversal of investment-portfolio/treasury cash-flow timing effects rather than core operating improvement"
+analyst_note: "Classification computed as GOOD (Core 61/100, THIN moat) but capped to AVERAGE by deal-breaker 5: promoter shareholding is 100% pledged (rating.pdf, 23-Jul-2026), securing Zenrock's acquisition-level NCD/CCPS debt, not operating distress. E1/E2 promoter-holding decline reflects the Dec-2025 SPA and 2026 open offer control transaction, not entrenched-promoter selling, a different risk signature worth weighing qualitatively downstream. Block D is a clean 20/20, matching the company's own filed Note 45 ratios almost exactly. Block B's weak 8/20 stems mostly from one distorted year: FY25 CFO of -Rs104.47cr is a treasury/investment-portfolio classification effect, not core cash-conversion failure; FCF is only computable for FY25-26. FY26 PAT includes a disclosed Rs10.15cr exceptional (property/vehicle sale to exiting promoters); core PAT is ~Rs42cr, but this does not change any score band. Moat is THIN (4/60): only capital efficiency scores, inflated by the same asset sale that shrank net block. Four moat tests are PEER DATA NEEDED, including the licence test (M7), likely under-scored given the FDA/BIS disclosure but not scorable without a counted peer figure."

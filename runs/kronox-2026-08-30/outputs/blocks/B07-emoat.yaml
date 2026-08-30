@@ -1,0 +1,38 @@
+stage: B07-emoat
+company: "KRONOX"
+run_date: "2026-08-30"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "No concall transcripts and no investor presentation exist (NO-CONCALL MODE); F2 substituted with AR capex/CWIP timeline + B05 promise-delivery record per orchestrator instruction"
+  - "Customer concentration (C2), capacity utilisation (2B), and product-pipeline status (1A) are graphics-only/absent in the AR, not merely thin - genuine data gaps, not evidence of absence"
+  - "No peer data held in this run for A1 rarity, B1 RM% vs peers, or R1 competitor-approval comparison"
+flags:
+  - {type: FLAG-F2-EXECUTION-MISS, reason: "F2 (execution moat, NO-CONCALL substitution) returns a documented negative finding: the single load-bearing promise (Dahej clearances -> construction) was missed (AR p.18), and the restated 2y/3y deadline carries zero corroborating CWIP/capital-commitment trail in the same AR (CWIP Rs 87.6 lakh, AR p.100; capital commitments NIL per B01/B05)."}
+  - {type: FLAG-G2-NEGATIVE, reason: "G2 (WC improvement) is a negative finding, not absence: WC days rose 77->83 and CFO/PAT fell 1.21x->0.86x FY25->FY26 (AR p.11) even as the FD balance grew, tempering the G1 war-chest story."}
+em_score: 10.2
+em_classification: "NONE"
+active_categories:
+  - {id: "G1", name: "War chest", strength: "Strong", evidence_type: "DOCUMENTED", time_to_materialise: "already active/ongoing"}
+  - {id: "B2", name: "Qualification lock-in", strength: "Moderate", evidence_type: "DOCUMENTED", time_to_materialise: "certs already active; lock-in economics untested, 1-3y to test via retention/pricing data"}
+evidence_mix: {documented: 9, claim: 4, inference: 3}
+completionist_recount: "documented recount performed: 9 documented items across 8 categories (B2 certificate stack; G1 debt-equity/DSCR/FD-growth; R1 approvals-obtained and export incentives; E2 export-% trend; F2 Dahej capex/CWIP miss [negative]; G2 WC-days deterioration [negative]; A2/F1 no-technology-absorption/no-ESOP statements [negative]; H1 no-JV/subsidiary statement [negative]); only B2 and G1 clear the Moderate/Strong bar, well inside the 3-6 category realistic base rate."
+catalysts_12m:
+  - {catalyst: "Dahej Unit IV construction start (or further deadline reset)", window: "12m (kill signal if 'unforeseen circumstances' repeats)", evidence_type: "MANAGEMENT CLAIM pending DOCUMENTED confirmation", anchor: "AR p.18-19; B05 trigger #1"}
+  - {catalyst: "Q2/Q3 FY27 results sustaining Q1 FY27 re-acceleration (+13.4% rev, +38.5% PAT)", window: "1-2 quarters", evidence_type: "DOCUMENTED (Q1 filing); forward unresolved", anchor: "B05 trigger #2, results filing 03380acb p.3"}
+  - {catalyst: "Export mix (32.39% FY26) holding above 30% through FY27", window: "12m", evidence_type: "DOCUMENTED trend, causal link inferred", anchor: "AR p.11; B05 trigger #3"}
+capex_embedded_growth_pct: 3.05
+optionality_register:
+  - {optionality: "Dahej Unit IV production start/full functionality (restated 2y/3y deadlines, zero capex trail today)", converting_evidence: "CWIP step-up tied to Dahej in FY27/FY28 AR notes, a capital-commitment disclosure, or a Reg-30 capex filing naming Dahej spend", first_appears: "AR FY27/FY28 notes or exchange (Reg-30) filing", window: "2-3 years"}
+  - {optionality: "Backward/forward integration claim converting into disclosed RM security", converting_evidence: "Named long-term (5yr+) supply agreement, captive RM source, or disclosed RM% trend", first_appears: "Future AR MD&A or notes", window: "NOT FOUND"}
+  - {optionality: "Rising export mix reframed as genuine China+1 win", converting_evidence: "Explicit management commentary naming supply-chain-shift customer, export-market-specific certification, or export-targeted capex", first_appears: "Future AR MD&A, exchange filing, or order announcement", window: "1-2 years if >30% export mix holds through FY27"}
+  - {optionality: "Margin expansion (22.72%->33.86% EBITDA margin) reframed as documented process innovation", converting_evidence: "Disclosed yield %, unit-cost trend, or automation/waste-to-value project description", first_appears: "Future AR MD&A (currently boilerplate, AR p.37)", window: "NOT FOUND"}
+  - {optionality: "Customer concentration / clientele data", converting_evidence: "Top-5/top-10 customer % disclosure or extractable clientele page", first_appears: "Future AR business-overview section or DRHP-style filing", window: "NOT FOUND"}
+  - {optionality: "Talent asymmetry (Category 21)", converting_evidence: "Named inventor on a patent filing, disclosed ex-major-employer technical hire, or AR remuneration annexure showing technical (non-KMP) pay above sector norm", first_appears: "Future patent filing or expanded AR remuneration annexure", window: "NOT FOUND"}
+combined_assessment: "AVERAGE"
+combined_reasoning: "AVERAGE backward (Gate 0 grand 86/160, core GOOD 75 downgraded on LIMITED history) plus NO MEANINGFUL EMERGING MOAT forward (10.2/92); the one candidate catalyst, Dahej Unit IV, is a documented execution miss with zero corroborating capex trail, so nothing forward-looking lifts the base classification."
+top_moat_risks:
+  - "Dahej Unit IV: approvals complete since ~2024-2025, construction still not started as of AR signing (12-Aug-2026), restated 2y/3y deadline carries zero CWIP/capital-commitment corroboration (AR p.18, p.100)"
+  - "Working capital deteriorating (WC days 77->83, CFO/PAT 1.21x->0.86x) even as the cash pile grows, tempering the G1 war-chest signal (AR p.11)"
+  - "Zero disclosure depth on customer concentration, capacity utilisation, and R&D/technology absorption ('no information to offer,' AR p.37) leaves several categories genuinely untestable rather than genuinely absent"
+analyst_note: "Every candidate moat in this scan fails the I2 cannibalization test: a resourced competitor can replicate the certificate stack (time/money, no sacrifice), match the war chest (raise its own cash), or capture export share (no barrier) without destroying anything in its own P&L or org. That makes this an execution-lead profile, not a configuration-locked moat, consistent with the AVERAGE combined call."

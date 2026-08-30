@@ -1,0 +1,21 @@
+stage: B13-synthesis
+company: "ENTERO"
+run_date: "2026-07-27"
+model: claude-opus-4-8
+status: complete
+verdict: "PROCEED WITH CAVEATS"
+verdict_rule_applied: 3
+flags_active: ["FLAG-PROMOTER", "FLAG-CASH", "FLAG-GATE0", "FLAG-EMOAT-NETWORK", "FLAG-GOODWILL-CONCENTRATION", "FLAG-SUBSIDIARY-DISTRESS", "FLAG-LEVERAGE-DIRECTION"]
+confidence_delta: {numerical: 89, redflag: 85, framework: 94, peer: 92, overall: 85}
+valuation_decision: "AVOID"
+entry_range: {low: 451, high: 501}
+headline: "Priced for a climb not yet proven"
+falsification_metric: "Q2 FY27 (H1 FY27, ~Nov 2026) audited cash flow: trade receivables again growing ~1.7x revenue with OCF-to-EBITDA below 50% -> confirms structurally negative FCF, resolves cash flag to STRUCTURAL"
+monitorables_count: 8
+publish_candidate: true
+publish_candidate_summary: "IPM value-vs-volume: Entero's organic outperformance over IPM fell from ~1.9x to ~1.4x across three quarters, attributed to IPM accelerating rather than share loss; MedPlus does not track at that granularity, claim unchecked"
+zone_reachability: "MARKET-UNLIKELY ZONE; lowest tested since listing Rs 987; entry top Rs 501 ~49% below; DEEP WATCH not actionable WATCHLIST"
+notion_save:
+  page_title: "Entero Healthcare Solutions (ENTERO) - Synthesis 2026-07-27: AVOID on valuation, PROCEED WITH CAVEATS on evidence"
+  mode: append-never-overwrite-status
+  drive_link: "NOT FOUND"

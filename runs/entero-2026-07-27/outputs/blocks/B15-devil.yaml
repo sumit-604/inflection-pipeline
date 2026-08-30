@@ -1,0 +1,17 @@
+stage: B15-devil
+company: "ENTERO"
+run_date: "2026-07-27"
+model: claude-opus-4-8
+status: complete
+dimensions:
+  growth_triggers: "weakened"
+  moat_durability: "destroyed"
+  management_trust: "weakened"
+  valuation_safety: "survives"
+overall: "SURVIVES"
+top_counters:
+  - "SHARED CATALYST is a single point of failure that fails both ways: the 19x needs the M&A pause to hold forever, but the pause kills the roll-up's own growth engine, and resuming M&A reverts ROCE to 12x and cuts every FV ~1/3. The base 19x-with-growth model is internally contradictory."
+  - "UGLINESS is contestable: the negative cash and ~10% goodwill-inclusive ROCE read as STRUCTURAL-FEATURE, not ARTIFACT-OF-CLIMB. Cash turns positive only when growth is paused; organic outperformance is decaying 1.9x->1.4x IPM. Value-trap risk, not a mid-climb artifact."
+  - "The entry zone is generous, not conservative: the defensible range floor is the 12x goodwill-inclusive dissent at ~Rs 285-320, below the pillar Rs 451-501. A going-concern buyer inherits the 44%-of-net-worth goodwill and cannot claim forward-capital ROCE."
+  - "Core moat is destroyed by its own data: network-reach metrics fell 28-36% Q4FY26->Q1FY27 while warehouses rose; no replication barrier at 8-10% organised share; digital platforms disclose zero adoption."
+  - "AVOID may be too harsh on the multiple only: 19x has no pharma-distribution row behind it and may understate a decade-long consolidation the market prices (3P/ICICI buying). But even 28-30x on FY30 EPS is ~45% below CMP, so AVOID-at-CMP survives whoever is right on the decade."

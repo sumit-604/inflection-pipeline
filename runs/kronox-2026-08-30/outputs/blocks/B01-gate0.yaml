@@ -1,0 +1,41 @@
+stage: B01-gate0
+company: "KRONOX"
+run_date: "2026-08-30"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "No prospectus/DRHP held (HIGH; listed 10-Jun-2024) - spear fact 1 (100% OFS IPO) and pre-IPO promoter % not verifiable"
+  - "Only AR FY26 held; AR FY24/FY25 absent - FY23/FY24 PAT and FY23 Revenue are derived (EPS x shares; chart elimination), not exact filed figures"
+  - "No shareholding pattern filings held - E2 (3yr promoter change) and E3 (pledge) not fully computable"
+  - "No KRONOX screener CSV in this run"
+  - "No credit rating - company states it has not obtained any Credit Ratings (AR p.9201/9326 text)"
+  - "NO-CONCALL MODE (concalls_available:false)"
+  - "FY23/FY24 capex not held - B2/B3 scored on FY25-FY26 window only"
+  - "Rs 52.70 lakh lien-marked FD sub-detail (company memory) not located anywhere in AR FY26 extraction"
+flags:
+  - {type: FLAG-GATE0, reason: "Classification is AVERAGE only because of the 4-year LIMITED-history downgrade from an underlying GOOD (core 75/100); underlying fundamentals (Block D=20/20, Block A=15/20) are stronger than the label suggests. Depressors: A4=0 (ROCE declined every year, 49.46%->32.22%), C1=0 (revenue CAGR ~1.9%), B4=1 (WC days up 9), and 4 of 12 moat tests capped at 0 for PEER DATA NEEDED rather than genuine absence."}
+data_years: 4
+fy_range: "FY23 to FY26"
+blocks: {A: 15, B: 16, C: 11, D: 20, E: 13}
+core_score: 75
+moat_score: 11
+grand_total: 86
+moats_confirmed: 3
+moat_class: "MODERATE"
+classification: "AVERAGE"
+deal_breakers: []
+history_downgrade: true
+data_notes:
+  - "PAT margin in AR Financial Snapshot (p.11) is on Total Income, not Revenue from Operations; confirmed by cross-check against FY25/FY26 audited PAT."
+  - "FY23/FY24 PAT computed as reported EPS (AR p.11) x 371.04 lakh shares (AR p.104 Note 12); moderate confidence, no FY23/FY24 audited P&L held."
+  - "FY23 Revenue (Rs 9,557.7 lakh) inferred by elimination from a PDF-scrambled bar chart (AR p.10); FY24/FY25/FY26 chart values cross-confirmed against exact filed figures and company memory."
+  - "FCF computable only for FY25/FY26 (capex data absent for FY23/FY24); B2/B3 scored on that 2-year window, stated explicitly."
+  - "ROE computed per framework formula (PAT / average Net Worth); differs from AR's own ROE% column, which reconciles to PAT / closing-net-worth-only. Both bases give A3=5."
+  - "E2 (3yr promoter holding change) scored on the only available window, FY25->FY26 (unchanged, 74.18%); true 3-year window spans the Jun-2024 IPO OFS event, not visible in this corpus."
+  - "E3 (pledge) NOT FOUND in AR FY26; scored 0 as data gap, not evidence of actual pledge."
+  - "Spear fact 2 (promoter remuneration % of PAT) CONFIRMED exactly for FY25 (7.07%) and FY26 (14.32%) via AR p.112 Note 34; FY21-FY24 portion unverifiable here."
+  - "Spear fact 1 (100% OFS IPO) NOT VERIFIABLE in this corpus (no FY25 AR/prospectus)."
+  - "Spear fact 3 (Dahej Unit IV stalled) CONFIRMED, AR p.18 Chairman's Letter."
+  - "Q1 FY27 PAT growth per filing is +38.5% (results 03380acb p.3), not memory's +16.24%; flagged for reconciliation, not used in annual scoring."
+block_b_trend: "deteriorating - FY26 CFO/PAT ratio 0.86x (2,389.22/2,766.0) vs FY25's 1.21x (3,069.67/2,545.7); WC days rose 77->83 over the same year (AR p.11)"
+analyst_note: "KRONOX scores GOOD on fundamentals (core 75/100) but drops to AVERAGE on the 4-year LIMITED-history downgrade (only AR FY26 held, no prospectus). ROCE is still elite (32-49%) but fell every year (A4=0); revenue CAGR is near zero (~1.9%, C1=0) despite EBITDA margin nearly doubling (22.72%->33.86%), driving strong PAT CAGR (~20%, C2=5): margin-led not volume-led, matching the thesis of an owner-caused growth stall. Moat score is thin (11/60) mainly because 4 of 12 tests need peer data unavailable in this run, not genuine weakness. Balance sheet is a fortress: net cash, ~Rs64.5cr FDs, zero contingent liabilities. Spear fact 2 (promoter remuneration %) CONFIRMED exactly for FY25/FY26 via Note 34; FY21-24 portion unverifiable here. Spear fact 1 (100% OFS IPO) unverifiable in this corpus. Spear fact 3 (Unit IV Dahej stalled) CONFIRMED. Q1 FY27 PAT growth per filing is +38.5%, not memory's +16.24% - flag for reconciliation."

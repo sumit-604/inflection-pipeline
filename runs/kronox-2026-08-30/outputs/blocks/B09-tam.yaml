@@ -1,0 +1,65 @@
+stage: B09-tam
+company: "KRONOX"
+run_date: "2026-08-30"
+model: claude-sonnet-5
+status: partial
+input_gaps: ["Company-specific product-mix / end-market revenue split NOT FOUND (AR pages graphics-only, per B04)", "Customer count (~350) and export-country count (20+) sourced only from an uncorroborated third-party analyst blog, not the corpus or company disclosure", "No sourced inorganic/organic split for the laboratory-chemicals category; excluded from SAM as unquantifiable, held as an upside lever only", "India-specific share of the global inorganic-salts market NOT FOUND; used as unconverted ceiling context only", "Capacity/utilisation data for Units I-III NOT FOUND anywhere in AR"]
+flags: ["No management numeric TAM claim exists in AR FY26 (qualitative language only) - mgmt_claim_ratio not computable", "Method 3 peer set is market-cap-matched, not product-matched (none of the identified 'competitors' make Kronox's specific inorganic-salt chemistry as core line); downgraded to cross-check only", "SOM-implied revenue CAGR (13.6%/14.3%) exceeds Kronox's ~4.0% 3-year historical revenue CAGR (FY26 itself near-flat +1.03%) but falls well short of the 25% CAGR strategy hurdle", "Capacity gap: SOM path implies ~46% cumulative 3yr revenue growth against only 3.05% capex-embedded growth (B07) and a STALLED Unit IV Dahej (CWIP Rs87.6 lakh, nil commitments); SOM is the optimistic side, not the capex plan", "Two conflicting sourced splits for organic vs inorganic share of pharma-excipients market (24.66% vs 51.6% inorganic); lower figure used per conservative-bias rule"]
+market_definition: "High-purity inorganic-salt specialty fine chemicals (phosphates, sulphates, chlorides, nitrates) for pharma-excipient, reagent/lab-grade, nutraceutical and food-grade B2B end-markets, primarily India with growing exports."
+tam_cr: {conservative: 4871, realistic: 6506}
+sam_cr: 1201
+sam_pct_of_tam: 24.7
+som_3yr_cr: 148
+som_5yr_cr: 197
+som_implied_revenue_cagr: {yr3: 13.6, yr5: 14.3}
+current_sam_share_pct: 8.4
+revenue_headroom_x: 11.9
+tam_growth_pct: 7.5
+runway_class: GOOD
+mgmt_claim_cr: 0
+mgmt_claim_ratio: 0
+mgmt_claim_read: "NOT FOUND - AR carries no numeric TAM claim"
+capacity_check: "gap - SOM 3yr implies ~46% cumulative revenue growth vs 3.05% capex-embedded growth and stalled Unit IV Dahej; capacity/utilisation data NOT FOUND; SOM side is the optimistic one"
+methods_used: ["top-down (broad ceiling only, not headline)", "bottom-up (India pharma-excipients + lab-chemicals category sum)", "peer revenue aggregation (weak product fit, cross-check only)", "import substitution (trade data, context)", "global benchmark (India-vs-global pharma-excipients cross-check)"]
+stale_data_flags: [{datapoint: "Global inorganic salts market $229.25B", source: "Fortune Business Insights", year: 2024}, {datapoint: "India inorganic chemicals market $44.6B", source: "Custom Market Insights", year: 2024}, {datapoint: "India specialty chemicals market $64.5B", source: "IBEF-sourced aggregator", year: 2024}, {datapoint: "India laboratory chemicals market $171.16M", source: "Market Research Future", year: 2024}]
+searches_performed: ["India specialty fine chemicals market size 2026 CRISIL ICRA report", "India pharmaceutical excipients market size Crore 2026", "high purity inorganic salts market size global India", "laboratory chemicals reagents market size India crore", "Kronox Lab Sciences competitors peers high purity specialty fine chemicals India", "Vikram Thermo India revenue crore fine chemicals", "Sadhana Nitro Chem annual revenue crore FY26", "Chemfab Alkalis annual revenue crore FY26", "Vikram Thermo FY26 annual revenue crore full year results", "India specialty inorganic chemicals market size IBEF report crore", "India food grade chemicals additives market size 2026", "global specialty inorganic chemicals market size billion 2026", "Fortune Business Insights inorganic salts market end-use segment share", "custommarketinsights India inorganic chemicals market size 2024", "global laboratory chemicals reagent grade market size 2026", "global pharmaceutical excipients market size billion 2026", "pharmaceutical excipients market share by type inorganic organic percentage", "USD INR exchange rate August 2026"]
+searches_skipped: ["WebFetch mordorintelligence.com/industry-reports/inorganic-salts-market - EGRESS_BLOCKED, compensated via WebSearch aggregator snippets", "WebFetch margin0fsafety.substack.com Kronox analyst note - EGRESS_BLOCKED, compensated via WebSearch snippet but data flagged unverified/LOW confidence", "China/SE-Asia per-capita benchmark for high-purity inorganic salts/reagents - not located"]
+downstream_candidates:
+  - signal: "Indian pharmaceutical formulation/API output (IIP Pharma sub-index)"
+    entity_type: "end-customer"
+    demand_link: "Pharma formulators are Kronox's largest named end-market for excipients/ingredients"
+    likely_source: "IIP Pharmaceuticals sub-index (MOSPI) / Pharmexcil export data"
+    cadence: "monthly"
+    shared: false
+  - signal: "India inorganic-chemicals export/import trade data"
+    entity_type: "macro"
+    demand_link: "Direct read on import-substitution tailwind and export demand for the product category"
+    likely_source: "DGCIS trade statistics"
+    cadence: "monthly"
+    shared: false
+  - signal: "USD/INR exchange rate"
+    entity_type: "macro"
+    demand_link: "32.39% of FY26 revenue exported; currency moves affect realised export revenue and margin"
+    likely_source: "RBI reference rate"
+    cadence: "monthly"
+    shared: false
+  - signal: "Key raw-material input prices (phosphoric acid, sulphuric acid, base mineral feedstocks)"
+    entity_type: "counterparty"
+    demand_link: "Cost of Materials ~46.6% of revenue, no disclosed hedge; primary margin swing factor"
+    likely_source: "Ministry of Chemicals & Fertilizers price bulletin / ICIS pricing"
+    cadence: "monthly"
+    shared: true
+  - signal: "FSSAI / Gujarat FDCA food-grade and GMP-WHO certification status"
+    entity_type: "regulatory"
+    demand_link: "Certification gates entry into food-grade and regulated pharma customer segments"
+    likely_source: "FSSAI / Gujarat FDCA public registers"
+    cadence: "event-driven"
+    shared: false
+  - signal: "Unit IV, Dahej construction/regulatory milestones"
+    entity_type: "regulatory"
+    demand_link: "Only named capacity-expansion lever; bounds the SOM/capacity gap flagged in 3C"
+    likely_source: "GIDC/GPCB public filings and company disclosures"
+    cadence: "event-driven"
+    shared: false
+demand_externally_verifiable: true
+analyst_note: "TAM/SAM built almost entirely from category-level (not company-level) sourced data because the AR's own product-mix pages are graphics-only. SAM applies an external organic/inorganic excipient split (conservative 24.66%, lower of two conflicting sourced figures) to the India pharma-excipients segment only; lab-chemicals and food/nutraceutical slices are named upside, excluded from the base case for lack of a sourced split. The single most important handoff to Stage 11: SOM-implied CAGR (13.6%/14.3%) beats Kronox's own flat 3yr history but sits far below the 25% hurdle, and even that modest path is not visibly supported by the 3.05% capex-embedded growth rate or the stalled Dahej unit - treat the SOM as aspirational until capacity/utilisation data is verified live."

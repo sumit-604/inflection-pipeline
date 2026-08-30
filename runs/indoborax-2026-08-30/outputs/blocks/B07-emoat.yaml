@@ -1,0 +1,40 @@
+stage: B07-emoat
+company: "INDOBORAX"
+run_date: "2026-08-30"
+model: claude-sonnet-5
+status: complete
+input_gaps: [annual_report_fy24_fy25, postal_ballot_notices, shareholding_reg31_filing]
+flags:
+  - {type: FLAG-CONTRADICTION, reason: "AR Board's Report states Boron Oxide 'successfully introduced... in July 2025' (AR p.25) while CEO on the 02-Jun-2026 call states it 'is still a project which is going on' (transcript p.8). Direct internal contradiction, no resolution found in corpus."}
+  - {type: FLAG-CONTRADICTION, reason: "MD&CEO letter states intent to 'increase our investment in research and development' (AR p.2) while the same AR's mandatory Technology Absorption disclosure states 'The Company has no specific Research & Development Department' (AR p.33)."}
+  - {type: FLAG-CAPEX, reason: "Claimed Rs 20 cr / 4,000 MTPA Boron Oxide facility has zero matching CWIP or PP&E movement in FY26 accounts (AR p.93, Note 1/Note 2); CWIP is entirely a stale residential-flat purchase advance unrelated to any plant."}
+  - {type: FLAG-DATA, reason: "The ~Rs 90 cr FY27-28 total capex claim named in this run's brief could not be traced to any anchor in the AR, investor presentation, or Q4 FY26 concall transcript; carried forward as NOT FOUND."}
+em_score: 5.1
+em_classification: "NONE"
+active_categories:
+  - {id: "G1", name: "War chest", strength: "Moderate", evidence_type: "documented", time_to_materialise: "present; deployment unproven"}
+  - {id: "B1", name: "Backward integration and RM security", strength: "Weak-Moderate", evidence_type: "claim", time_to_materialise: "12-24 months"}
+  - {id: "C1", name: "Customer ecosystem / embedded relationships", strength: "Weak-Moderate", evidence_type: "claim", time_to_materialise: "12+ months"}
+evidence_mix: {documented: 4, claim: 11, inference: 0}
+completionist_recount: "documented recount performed: 4 documented items across 2 categories (zero-debt balance sheet + ~Rs 130 cr investment increase under G1; no-R&D-department disclosure + zero-matching-capex finding under F2, both negative findings)"
+catalysts_12m:
+  - {catalyst: "Board-approved capex resolution with a named rupee figure", window: "next 2 quarters", evidence_type: "claim", anchor: "Kalra, transcript p.2-3"}
+  - {catalyst: "Boron Oxide CWIP appearing in a quarterly balance sheet", window: "9-18 months from 02-Jun-2026", evidence_type: "claim", anchor: "Kalra, transcript p.8; AR Note 2 p.93"}
+  - {catalyst: "First non-zero export revenue line", window: "12-24 months", evidence_type: "claim", anchor: "AR p.33 Foreign Exchange table (Inflow NIL both years)"}
+  - {catalyst: "DOT volume ramp to 1,500 tons", window: "FY27", evidence_type: "claim", anchor: "Kalra, transcript p.5, p.19"}
+capex_embedded_growth_pct: 0
+optionality_register:
+  - {optionality: "Boron Oxide facility (Rs 20 cr, 4,000 MTPA) actually commissioned", converting_evidence: "New CWIP line >Rs 100 lakh tagged to project AND first dispatch disclosure", first_appears: "FY27 AR Note 2 or interim capex disclosure", window: "9-18 months"}
+  - {optionality: "Ore-sourcing diversification away from Turkey concentration", converting_evidence: "Disclosed supplier-country split or import-value breakdown", first_appears: "Quarterly commentary or future AR raw-material note", window: "12-24 months"}
+  - {optionality: "P&G cross-sell into new Boric Acid I.P. applications", converting_evidence: "Signed contract or disclosed new-application revenue line", first_appears: "Concall commentary or quarterly segment note", window: "12+ months"}
+  - {optionality: "DOT captive-boric-acid cost advantage quantified", converting_evidence: "Disclosed cost-per-tonne or gross-margin-by-product figure", first_appears: "AR segment note or future call", window: "unclear"}
+  - {optionality: "War chest converted into deployed, value-creating capex", converting_evidence: "Board-approved capex resolution followed by actual CWIP movement", first_appears: "Postal ballot notice, exchange filing, or FY27 AR Note 2", window: "6-18 months"}
+  - {optionality: "R&D department formalisation", converting_evidence: "Named R&D head, capitalised/expensed R&D line, or filed patent", first_appears: "AR Technology Absorption section or exchange filing", window: "unclear"}
+combined_assessment: "AVERAGE"
+combined_reasoning: "Gate 0 AVERAGE (deal-breaker-capped from matrix GOOD) plus Emerging Moat NONE (em_score 5.1, <12 band) combine to AVERAGE; forward narrative is net-negative on evidence quality, not merely absent, due to two same-document contradictions."
+top_moat_risks:
+  - "Internal disclosure inconsistency: AR says Boron Oxide already launched, CEO says still a project going on"
+  - "R&D investment priority stated in MD&CEO letter directly contradicted by the same AR's Technology Absorption disclosure"
+  - "War chest (zero debt, growing investments) remains undeployed; prior precedent is distribution (special dividend) rather than capex"
+  - "Ore concentration in three global geographies (Turkey/South America/North America) is structural and unaddressed despite diversification rhetoric"
+analyst_note: "No category reached Strong evidence. The three Weak-Moderate items (G1, B1, C1) total 5.1 of 92 possible points, and two of the four families with any evidence (F1, F2) scored zero via affirmative negative findings rather than absence. Recommend downstream stages treat every FY26 AR/concall forward claim as unproven pending FY27 CWIP, export, or capex-resolution evidence."

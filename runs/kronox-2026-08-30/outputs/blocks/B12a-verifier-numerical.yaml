@@ -1,0 +1,14 @@
+stage: B12a
+company: "KRONOX"
+run_date: "2026-08-30"
+model: claude-haiku-4-5-20251001
+status: complete
+numbers_checked: 35
+findings:
+  - {severity: "MAJOR", location: "B03 ARDEEP (p.256 of report, Interest coverage / DSCR line)", claimed: "Interest coverage / DSCR: 17.30x FY26 (Note 36, p.114)", source_truth: "AR p.114 Note 36 Ratio Table lists 'Interest Coverage' = 328x (= 3,741.7 / 11.4). Figure 17.30x does not appear anywhere in AR p.1-120 search.", note: "The denominator calculation in the same report (3,741.7 / 11.4 = 328x) is correct and cites the exact source. The secondary citation of 17.30x is unanchored. Labeling/secondary-reference error in the B03 report, not a calculation error in Gate 0 (which uses the correct 328x). Balance-sheet direction (fortress, debt-free) is unaffected. Correct the anchor or drop 17.30x before phase 3.", source_fidelity: true}
+critical_count: 0
+major_count: 1
+minor_count: 0
+acceptance_rate: 97.14
+coverage_note: "35 figures checked across verdict-card metrics (Block A-E scorecard), balance sheet line items, P&L, cash flow statement, and detailed note-by-note assertions. Coverage includes all material inputs to the Gate 0 decision, all B01-B09 key claims, and entry-zone financial foundations. Sources: AR FY26 p.1-120, audited P&L/CFS/Balance Sheet (p.92-95), Notes 1-39 (p.97-119), Financial Snapshot (p.11). Stages 06 (peer transcripts) and 09 (external TAM sources) excluded per scope rules - peer/web-sourced figures not anchored to the main-company source set are noted OUT-OF-SCOPE in reports. All document gaps (Note 1 absence, FD lien, FX sensitivity, customer concentration) correctly identified in reports as NOT FOUND without contradiction to stated figures. One MAJOR finding: Interest Coverage 17.30x cited without source anchor (328x exists in source but not 17.30x)."
+orchestrator_sanity_check: "Reviewed per LESSONS Verifier-A false-CRITICAL guard. 0 CRITICALs asserted; the single MAJOR is a genuine source-fidelity anchor miss (17.30x not in source), not an invented CRITICAL. acceptance 97.14% >> 60% REWORK floor and no CRITICAL, so no REWORK trigger. The MAJOR is a citation fix for B03/phase-3, direction of the fortress-balance-sheet claim unchanged (interest coverage 328x is even stronger). Logged to verifier-disagreement handling: GATE HELD - figure to be corrected at source (correct anchor 328x shown) in phase 3."

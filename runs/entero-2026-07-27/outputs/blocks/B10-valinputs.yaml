@@ -1,0 +1,117 @@
+stage: B10-valinputs
+company: "ENTERO"
+run_date: "2026-07-27"
+model: claude-haiku-4-5
+status: complete
+input_gaps: ["Results PDFs read via screener fallback (hashed filenames not matched by stage; figures reconciled to screener FY26)", "Consolidated capex line (for FCF computation)", "Q1 FY27 complete financials", "Filed shareholding-pattern PDF (Reg 31(4)) including pledge %"]
+cmp_note: "manifest CMP Rs 1,273 is the run-date figure and is STALE; the operator-approved current price for the Hurdle/entry-gap is Rs 1,806 (28-Aug-2026, per fttcp-deliberation and handover). Stage 11 must use Rs 1,806 for the Hurdle Ratio."
+flags:
+  - {type: "FLAG-CASH", severity: "MAJOR", reason: "CFO/PAT cumulative -1.05 across FY20-FY26; FCF INDETERMINATE (no consolidated capex); Pillar 2 caps disposition at PROCEED WITH CAVEATS (B01, fttcp-deliberation)", value_used: "FY26 CFO +96.2cr (first positive), cumulative CFO -203.07cr vs cumulative PAT +192.89cr"}
+  - {type: "FLAG-EMOAT-NETWORK", severity: "HIGH", reason: "Network-reach metrics (retail -32%, hospitals -36%, SKUs -14%, districts -9% Q4FY26->Q1FY27) fell while warehouse count ROSE (136->138) and margins/ROCE hit records - unreconciled (B07)", value_used: "TOP HALT 1 VERIFICATION ITEM per B05"}
+  - {type: "FLAG-SUBSIDIARY-DISTRESS", severity: "HIGH", reason: "40 of ~65 group subsidiaries adverse/qualified CARO clause (mostly cash losses), vs 15 in Note 54 (B02 Finding 2)", value_used: "roll-up integration quality uneven"}
+  - {type: "FLAG-GOODWILL-CONCENTRATION", severity: "MAJOR", reason: "Goodwill 43.8% of consolidated net worth (Rs7,490.9cr/Rs17,090.35cr), KAM in Auditor's Report (B02 Finding 1)", value_used: "downward impairment revision has outsized balance-sheet effect"}
+  - {type: "FLAG-LEVERAGE-DIRECTION", severity: "MEDIUM", reason: "Gross D/E doubled 0.17x->0.32x FY26; net debt swung from net cash to +Rs327.36cr (B04, B02 Finding 6)", value_used: "leverage accelerating post-IPO acquisition wave"}
+table:
+  company_identity:
+    company: "Entero Healthcare Solutions Ltd"
+    ticker: "ENTERO"
+    sector: "Pharma & MedTech Distribution (B04)"
+    business_model_type: "Trading/Roll-up consolidator (B04)"
+    cmp_rs: "1806 (28-Aug-2026, operator-approved; manifest 1273 is stale run-date)"
+    market_cap_cr: "5537.0 at run-date CMP (manifest); ~7,856 at Rs 1,806"
+    shares_outstanding_diluted_cr: "4.35 (screener-Data_Sheet.csv)"
+    net_debt_cr: "+327.36 (Borrowings 677.15 - Cash 161.79, screener FY26)"
+    sector_cap_row_manifest: "Pharma / CDMO (auto-picked, INCORRECT)"
+    sector_cap_operator_approved: "18-20x (fttcp-deliberation 2026-08-30, OVERRIDES manifest)"
+  latest_financials_fy26:
+    revenue_cr: "6591.21 (screener-Data_Sheet.csv, FY26)"
+    ebitda_margin_pct: "4.0 (B05: 4.03% achieved)"
+    pat_cr: "115.04 (screener FY26 Net profit); note B03/handover cite PAT 145.8 incl. different basis - reconcile at stage 11"
+    cfo_cr: "96.2 (screener FY26; B01 first positive after six negative years)"
+    fcf_cr: "NOT FOUND - INDETERMINATE (Pillar 2)"
+    net_debt_cr: "327.36"
+    trade_receivables_gross_cr: "1212.44 (screener FY26; +50.6% YoY vs revenue +29.4%, B02 Finding 3)"
+    capex_standalone_cr: "159.39 (AR Note 5A per B09, 2.4% of revenue; consolidated capex not itemized)"
+    dps_rs: "0 (no dividend FY26, B04)"
+    roce_latest_pct: "20-25% operator forward-capital ruling (Pillar 1); 9.7% conservative dissent (B01)"
+    roce_2yr_trend: "TEMPORARILY DEPRESSED -> RECOVERING (fttcp-deliberation)"
+    revenue_3yr_cagr_pct: "~29.7% (screener)"
+    pat_3yr_cagr_pct: "NOT COMPUTABLE (loss-to-profit swing FY21-FY23, B01)"
+    cfo_pat_cumulative_fy20_26: "-1.05 (B01)"
+  q1_fy27_tracking:
+    ebitda_margin_pct: "5.0 (B05)"
+    minority_interest_pct_pbt_minority: "~27% (B05)"
+    revenue_growth_ex_ma_pct: "23% FY27 guidance (B05)"
+    ocf_ebitda_conversion_pct: ">=50% FY27 guided; H1 not yet audited"
+  management_guidance_delivery:
+    credibility_grade: "B (Good)"
+    delivered_count: 8
+    partial_count: 4
+    missed_count: 0
+  emerging_moat:
+    em_score: 19
+    em_classification: "MODEST (B07)"
+    active_categories: "B3, F2, G2, H1 (B07)"
+    moat_erosion_key_flag: "reach -28 to -36% Q4FY26->Q1FY27 while warehouse +2, unreconciled (B07 FLAG-EMOAT-NETWORK; TOP HALT 1 ITEM)"
+  ua_qualifiers_detailed:
+    listed_12m_check: "PASS (IPO Feb 2024)"
+    gate0_or_em_check: "FAIL (Gate 0 53 < 60; EM 19 < 25)"
+    fii_dii_lt3_check: "FAIL (FII+DII ~19.8% Jun-26 > 3%)"
+    all_three_met: "NO"
+    ua_outcome: "DOES NOT APPLY"
+  som_implied_cagr:
+    som_3yr_revenue_cr: "13300 (B09)"
+    som_implied_revenue_cagr_3yr_pct: "26.4 (B09)"
+    current_sam_share_pct: "2.5 (B09)"
+    revenue_headroom_x: "39.9x (B09)"
+    runway_class: "STRONG (B09)"
+    capacity_constraint: "~Rs1000-1100cr incremental WC funding gap by yr3; financing-constrained not market-constrained (B09)"
+  rating_extraction:
+    agency: "India Ratings and Research (Ind-Ra)"
+    rating: "IND A-/Stable"
+    date: "2025-12-03"
+    rating_action: "Affirmed"
+operator_approved_pillars:
+  pillar1_roce_base_pct: "20-25%"
+  pillar1_roce_base_multiple: "19x (continuous formula; dissent 12x recorded; reverts to 12x on new M&A > ~Rs 200 Cr / rolling 12m)"
+  pillar2_cash_multiplier: "INDETERMINATE (<=1.0x, never a clean pass; caps disposition at PROCEED WITH CAVEATS)"
+  pillar3_premium: "MODEST (EM 19); capped away by sector cap"
+  strategic_premium: "BARRED (single-credit; recovery via Pillar 1)"
+  undiscovered_alpha: "DOES NOT APPLY (FII+DII ~19.8% > 3%)"
+  sector_cap: "18-20x (operator-approved; overrides manifest; absolute ceiling)"
+  destination_pe_both_tracks: "18-20x"
+  earnings_basis: "ONE-YEAR-FORWARD P/E"
+  shared_catalyst_flag: "M&A pause drives both Pillar 1 ROCE recovery and Pillar 3 growth story; Role 3 must stress-test"
+entity_count: 1
+conflicts:
+  - {field: "ROCE FY26", value_a: "9.7% standard (goodwill-inclusive)", value_b: "20-25% operator forward-capital", used: "20-25% per FTTCP (operator-approved); dissent 12x is default-track sensitivity (~1/3 lower FV), reverts on M&A >Rs200cr"}
+  - {field: "Net Debt-to-Equity", value_a: "0.02x->0.23x adjusted (methodology not pinpointed, MAJOR source_fidelity B12a)", value_b: "0.09x->0.31x consolidated unadjusted", used: "0.31x gross D/E (conservative; adjusted term lacks transparent methodology)"}
+  - {field: "PAT basis", value_a: "115.04 screener FY26", value_b: "145.8 handover/B03", used: "reconcile at stage 11 from results PDFs; screener basis may exclude/differ on exceptional + NCI"}
+rating_wc_quote: "Entero group's cash flow from operations has been negative since the first full year of its operations in FY19 due to the intense working capital requirement and modest yield nature of its business. The net cash flow from operations remained negative at INR769 million in FY25 (FY24: negative INR366 million) due to the increase in working capital requirement with growth in the scale of operations. The management expects the cash flow from operations to be positive by the end of FY26. The group's net working capital cycle on sales basis marginally elongated to 78 days in FY25 (FY24: 75 days) but remained in line with the peers in the pharmaceutical distribution segment. The cash flow from operations and free cash flow are likely to remain negative, in the agency's view, in the near term. However, the reduction in the goods and services tax rates to 5% in September 2025 from 12%, and management's cost-efficient strategies may turn the operating cashflows positive by end-FY26. (India Ratings, ratings.pdf page 3, Liquidity section, 2025-12-03)"
+ua_qualifiers: {listed_12m: true, gate0_or_em: false, fii_dii_lt3: false, all_met: false}
+credibility_grade: "B"
+demand_externally_verifiable: true
+downstream_candidates:
+  - {signal: "IQVIA/AIOCD Indian Pharmaceutical Market (IPM) MAT growth", entity_type: "macro", demand_link: "pharma consumption growth Entero throughput tracks", likely_source: "IQVIA reports", cadence: "monthly", shared: false}
+  - {signal: "NPPA/DPCO price notifications on NLEM SKUs", entity_type: "regulatory", demand_link: "price-controlled SKUs compress distributor margin", likely_source: "NPPA", cadence: "event-driven", shared: false}
+  - {signal: "Apollo HealthCo / Keimed disclosures", entity_type: "counterparty", demand_link: "largest peer scale/growth = consolidation pace", likely_source: "Apollo IR", cadence: "quarterly", shared: false}
+  - {signal: "Hospital chain bed-count/capex expansion", entity_type: "end-customer", demand_link: "hospital MedTech demand scales with capacity", likely_source: "Apollo/Max/Fortis IR", cadence: "quarterly", shared: false}
+  - {signal: "Domestic-formulation growth from large manufacturers", entity_type: "counterparty", demand_link: "corroborates IPM growth", likely_source: "Sun/Cipla/Alkem calls", cadence: "quarterly", shared: true}
+  - {signal: "GST e-way bill pharma HSN trade-volume", entity_type: "macro", demand_link: "formalization proxy", likely_source: "GSTN", cadence: "monthly", shared: false}
+ar_new_downstream_entities:
+  - {name: "Bioaide Technologies Private Limited", where_in_ar: "Board's Report p.36; Corporate Overview p.9-10", entity_type: "new subsidiary/acquisition (80%)"}
+  - {name: "Anand Medilink Private Limited", where_in_ar: "Board's Report p.36; Corporate Overview p.11", entity_type: "new subsidiary/acquisition (80%)"}
+  - {name: "Sai RK Pharma Private Limited", where_in_ar: "Board's Report p.36; Corporate Overview p.11", entity_type: "new subsidiary/acquisition (70%)"}
+  - {name: "Well Wisher Pharma Private Limited", where_in_ar: "Board's Report p.36; Corporate Overview p.11", entity_type: "new subsidiary/acquisition (70%)"}
+  - {name: "Ramson Medical Distributors Private Limited", where_in_ar: "Board's Report p.36; Corporate Overview p.11", entity_type: "new subsidiary/acquisition (70%)"}
+  - {name: "Ace Cardiopathy Solutions Private Limited", where_in_ar: "Board's Report p.36; Corporate Overview p.9-10", entity_type: "new subsidiary/acquisition (60%)"}
+  - {name: "Anand Chemiceutics Private Limited", where_in_ar: "Board's Report p.36; Corporate Overview p.12", entity_type: "new subsidiary/acquisition (51.51%)"}
+  - {name: "HealthEdge", where_in_ar: "Corporate Overview p.15", entity_type: "new named digital platform"}
+  - {name: "Enteropreneur Programme", where_in_ar: "Corporate Overview p.14", entity_type: "new partner-led distribution initiative"}
+unresolved:
+  - {field: "Diluted EPS FY26", why: "screener lacks EPS; AR Note 33 not read", where: "FY26 consolidated FS Note 33"}
+  - {field: "FCF FY26", why: "consolidated capex line unavailable", where: "FY26 AR consolidated cash flow"}
+  - {field: "Book value per share", why: "net worth distorted by IPO equity + put-option through equity", where: "next AR"}
+  - {field: "Pledged shares %", why: "filed shareholding-pattern PDF absent", where: "BSE/NSE Reg 31(4)"}
+  - {field: "Peer financial medians (P/E, EV/EBITDA, ROCE, growth)", why: "Amendment 20 live peer table needs claude.ai", where: "Phase 3 Step 1C, PENDING LIVE PEER TABLE"}
+analyst_note: "One-pass assembly. Results PDFs not matched by hashed path; figures from screener FY26 (audited) + blocks + AR notes; reconcile PAT basis (115.04 screener vs 145.8 handover) at stage 11 from the results PDFs at inputs/results/. FCF INDETERMINATE. All FTTCP rulings carried verbatim from fttcp-deliberation.md (2026-08-30) and supersede earlier determinations: Pillar 1 19x (dissent 12x; M&A reversion >Rs200cr), Pillar 2 INDETERMINATE, Pillar 3 MODEST, sector cap 18-20x, exit basis one-year-forward P/E. CMP for Hurdle is Rs 1,806, not the stale manifest 1273. UA DOES NOT APPLY. entity_count 1."

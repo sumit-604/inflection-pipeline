@@ -1,0 +1,58 @@
+stage: B11-valuation
+company: "ENTERO"
+run_date: "2026-07-27"
+model: claude-opus-4-8
+status: complete
+entity: "consolidated single-entity"
+entity_count: 1
+input_gaps:
+  - "Consolidated FCF (no consolidated capex line) -> Pillar 2 INDETERMINATE"
+  - "Live peer table (Amendment 20 Step 1C) PENDING LIVE PEER TABLE (claude.ai)"
+  - "Pledged shares %; filed shareholding-pattern PDF"
+flags:
+  - "FLAG-CASH MAJOR: Pillar 2 INDETERMINATE, FCF uncomputable, CFO -ve 6 of 7 yrs; multiplier applied = none (disposition cap); caps verdict at WATCHLIST/PROCEED WITH CAVEATS, no BUY NOW"
+  - "FLAG-EMOAT-NETWORK HIGH: reach -28 to -36% vs warehouse +2, unreconciled (top Halt-1 item)"
+  - "FLAG-GOODWILL-CONCENTRATION MAJOR: goodwill 43.8% of net worth"
+  - "FLAG-SUBSIDIARY-DISTRESS HIGH: 40 of ~65 subsidiaries adverse/qualified CARO"
+  - "FLAG-LEVERAGE-DIRECTION MEDIUM: gross D/E 0.17->0.32x; net cash to net debt Rs 327 Cr"
+  - "SHARED CATALYST: M&A pause drives both Pillar 1 ROCE recovery and Pillar 3 growth; Role 3 stress-test the single lever"
+  - "ROCE dissent 12x recorded; reverts to 12x on new M&A > ~Rs 200 Cr / rolling 12m (every FV falls ~1/3)"
+  - "RRM divergence reported: independent RRM at r 15.5% = 14.4x, ~24% below operator 19x; valued on approved base"
+  - "PAT-basis conflict RESOLVED from filed consolidated results: owners' PAT Rs 115.04 Cr (after NCI), total incl. NCI Rs 145.84 Cr; diluted EPS Rs 26.40; NCI put/call ran through equity not P&L"
+  - "INTERNAL TENSION for Verifier C: decision cites fair value ~Rs 617 while fair_values base is Rs 929 (forward-EPS basis); reconcile which is the intrinsic-today vs 3-yr-target figure"
+framework_versions: "Master v3.6 / Section 1B v3.3+v3.5.1+v3.6+v3.7+v3.8+v3.9 / FTTCP v2.1"
+pe_basis: "forward"
+exit_pe_base_approved: "18-20x (operator-approved, both tracks; sector cap 18-20x absolute; Pillar 1 19x)"
+destination_pe:
+  track1_rrm: {low: 18.0, mid: 19.0, high: 20.0, r_used: 13.5, rrm: 1.00}
+  track2_additive: {low: 18.0, mid: 19.0, high: 20.0}
+  divergence_pct: 0
+  governing_track: "both operator-approved tracks identical at 18-20x; mid 19x governs entry zone; conservative sensitivities 14.4x (RRM r15.5%) and 12x (ROCE dissent) shown, not overwriting operator"
+pillar_detail:
+  roce_used: 22.5
+  roce_base: 19.0
+  roce_recovery_route: "pillar1-midpoint"
+  pillar1_normalization_route: "none"
+  cash_multiplier: 1.0
+  structural_or_growth: "INDETERMINATE (leans structural per Ind-Ra: CFO/FCF likely to remain negative near-term; FCF uncomputable); applied as disposition cap, not numeric PE reduction"
+  growth_offset: 0
+  growth_premium: 0
+  strategic_premium: 0
+  shared_catalyst_flag: true
+  ua_applied: false
+  sector_cap_used: 20.0
+hurdle_ratio: {base: 0.54, bull_used: true, verdict: "STOP"}
+fair_values:
+  track1: {bear: 694, base: 929, bull: 1157}
+  track2: {bear: 694, base: 929, bull: 1157}
+expected_cagr_prob_weighted: -20.4
+entry_range: {low: 451, high: 501}
+mos_price: 432
+upside_downside_ratio: 0
+decision: "AVOID (on valuation) - HR STOP at CMP Rs 1,806; fair value ~Rs 617 (2.9x below CMP); actionable only near Rs 432-501 and only after INDETERMINATE cash resolves (then capped WATCHLIST/PROCEED WITH CAVEATS, no BUY NOW)"
+unresolved_inputs_used:
+  - "FY26 consolidated FCF NOT FOUND -> Pillar 2 INDETERMINATE; conservative treatment (no cash uplift, no offset), disposition cap only"
+  - "Live peer table absent -> Amendment 20 Step 1C PENDING LIVE PEER TABLE; pillar 19x governs (no fabricated multiples)"
+  - "Operating-EPS strip: exceptional Rs 81.78m (Note 8) added back net-of-tax owners' share (+Rs 1.1/sh); operating owners' EPS Rs 27.5 vs reported Rs 26.40"
+som_cagr_crosscheck: "consistent (base revenue CAGR 16% below SOM-implied 26.4%)"
+one_line_thesis: "A 4-5% margin pharma distributor priced at ~55x forward (2.9x its Rs 617 fair value) must de-rate to ~19x; even bull earnings return -12%/yr from CMP, so AVOID-on-valuation, actionable only near Rs 432-501 and only after the INDETERMINATE cash resolves."

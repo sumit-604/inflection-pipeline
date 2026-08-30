@@ -9,17 +9,20 @@ gate0:
 emoat:
   rules_checked: 25
   fails:
-    - {rule: "evidence-quality multiplier keyed to evidence TYPE (documented 1.0x)", severity: MINOR, detail: "Rows B3, D2, D1 labelled documented (or documented-lead) but multiplied 0.7 not 1.0. Conservative (lowers score); strict application raises total 18.8->~20.7, still MODEST (12-24), still below EM>=25 UA qualifier. No classification or decision impact."}
+    - {rule: "evidence-quality multiplier keyed to evidence TYPE (documented 1.0x)", severity: MINOR, detail: "Rows B3/D2/D1 documented but multiplied 0.7 not 1.0; conservative, no classification/UA impact (18.8 vs <=20.7, both MODEST)."}
 valuation:
-  rules_checked: 0
-  fails: []
-  status: pending_phase_3
-business_understanding_narrative: {present: false, five_questions_answered: false, prose_only: false, section6_candidates_named: 0, valuation_vocab_leak: false, fails: ["out of phase-1 scope; stage 13 not audited here"]}
-recomputed_destination_pe: ""
-recomputed_decision: ""
+  rules_checked: 35
+  status: complete_phase_3
+  recomputed_destination_pe: "concur 19x both tracks (18-20x)"
+  recomputed_decision: "concur AVOID (on valuation); HR STOP at CMP 1806"
+  fails:
+    - {id: "F1", severity: "MINOR", rule: "Amdt 19 / YAML labelling", detail: "fair_values holds end-Year-3 exit prices (base 929) unqualified while decision cites today's FV Rs 617; both correct at their FV-path point (FV today 617 -> Y3 target 929, FV CAGR 14.6%; entry 929/1.953=476; CMP 1806/617=2.9x). Presentational; rename fair_values_exit_y3 / add fair_value_today: 617."}
+    - {id: "F2", severity: "MINOR", rule: "Hurdle Ratio (Amdt 2) basis consistency", detail: "Y0->Y3 EPS CAGR used with a Year-1 forward Current PE; strict-forward g is Y1->Y4 CAGR (14.6%); overstates HR ~0.03; verdict-invariant, STOP holds."}
 findings:
-  - {severity: MINOR, location: "B07 Section 5 scoring table, rows B3/D2/D1", issue: "documented-labelled rows multiplied by 0.7 rather than the fixed 1.0 for the documented tier; conservative deviation, no classification or UA-qualifier impact (total 18.8 vs strict <=20.7, both MODEST)."}
+  - {severity: MINOR, location: "B07 Section 5 scoring (phase 1)", issue: "documented rows multiplied 0.7 not 1.0; conservative, no impact."}
+  - {severity: MINOR, location: "B11 fair_values labelling", issue: "Year-3 exit prices unqualified vs today's FV Rs 617; framework-math correct at every use; presentational only."}
+  - {severity: MINOR, location: "B11 Hurdle Ratio basis", issue: "Y0->Y3 EPS CAGR with Year-1 forward Current PE; HR overstated ~0.03; STOP unchanged."}
 critical_count: 0
 major_count: 0
-minor_count: 1
-acceptance_rate: 98
+minor_count: 3
+acceptance_rate: 94

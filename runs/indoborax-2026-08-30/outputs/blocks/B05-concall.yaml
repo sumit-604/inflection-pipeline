@@ -1,0 +1,64 @@
+stage: B05-concall
+company: "INDOBORAX"
+run_date: "2026-08-30"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Only one concall transcript in corpus (Q4 & FY26 call, 02-Jun-2026); no prior-quarter calls exist to build a true promise-vs-delivery tracker or repeated-question tracker"
+  - "Q1_FY27_concall not available (freshness gap, ~3 months old at run date, flagged in company memory)"
+flags:
+  - "Single-call analysis: credibility_grade capped, cannot rise above C without a second call"
+  - "Boron Oxide commercialisation timeline stated on call (3-4 quarters from 02-Jun-2026) conflicts with FY29 commercialisation figure carried elsewhere in the run's corpus"
+  - "No capex/CWIP evidence in FY26 AR (per B03) for the boron oxide project despite a confident verbal production timeline"
+quarters_analysed: ["Q4 & FY26 (single call, 02-Jun-2026) — SINGLE CALL ONLY, no cross-quarter comparison possible"]
+triggers:
+  - {priority: 1, name: "Boron Oxide (4,000 MTPA) commercialisation", type: "volume/capacity", timeframe: "~9-12 months from 02-Jun-2026 per management (vs FY29 elsewhere in corpus)", conviction: "L", confirm_signal: "Boron oxide CWIP appears in a subsequent quarterly balance sheet AND first dispatch reported", kill_signal: "FY28 AR still shows no boron oxide CWIP and no first dispatch"}
+  - {priority: 2, name: "FY27 revenue growth 20-35%", type: "volume+price-mix", timeframe: "FY27", conviction: "M", confirm_signal: "Quarterly revenue tracks toward Rs 255-275 cr for FY27", kill_signal: "H1 FY27 revenue growth below ~15%"}
+  - {priority: 3, name: "EBITDA margin held at 20-22%", type: "cost/price", timeframe: "FY27", conviction: "M", confirm_signal: "Quarterly margins hold at or above 20% on a consistent revenue base", kill_signal: "Any quarter below 18-19% without a one-off explanation"}
+  - {priority: 4, name: "Boric Acid debottlenecking (+1,000-1,500 t toward 20,000 t nameplate)", type: "volume", timeframe: "FY27", conviction: "M", confirm_signal: "Reported production volume rises toward 17,000-18,000 t", kill_signal: "Production stays at 15,000-16,000 t"}
+  - {priority: 5, name: "DOT ramp to 1,500 tons", type: "volume", timeframe: "FY27", conviction: "M-L", confirm_signal: "FY27 AR shows DOT volume >= 1,400 t", kill_signal: "FY27 DOT volume flat or below 1,000 t again"}
+  - {priority: 6, name: "Export market entry (Boric Acid, DOT)", type: "volume/price", timeframe: "medium/long, no date given", conviction: "L", confirm_signal: "First disclosed export revenue line in an FY27/28 filing", kill_signal: "FY28 AR still shows nil export revenue"}
+  - {priority: 7, name: "R&D-led new chemistries / forward integration", type: "cost/capability", timeframe: "medium/long, no date given", conviction: "L", confirm_signal: "A named new product with disclosed revenue", kill_signal: "FY27 AR still shows no R&D department or spend line"}
+guidance:
+  - {item: "FY27 revenue growth", number: "20%-35% (Rs 40-60 cr added to Rs 215 cr FY26 base, ~Rs 255-275 cr)", timeframe: "FY27", stated_in: "Q4&FY26 call, Kalra p.6, p.24"}
+  - {item: "FY27 EBITDA margin", number: "maintain/surpass 20%-22%", timeframe: "FY27", stated_in: "Q4&FY26 call, Kalra p.7, p.24"}
+  - {item: "Boric Acid EBITDA per kg", number: "Rs 28-29/kg, 20%-21% margin", timeframe: "current run-rate", stated_in: "Q4&FY26 call, Kalra p.7"}
+  - {item: "DOT volume target", number: "1,500 tons (from 980 t FY26)", timeframe: "FY27", stated_in: "Q4&FY26 call, Kalra p.5, p.19"}
+  - {item: "Boron Oxide first commercial output", number: "3-4 quarters from 02-Jun-2026 call date", timeframe: "~Q4 FY27-Q1 FY28", stated_in: "Q4&FY26 call, Kalra p.8"}
+  - {item: "Boron Oxide realisation vs Boric Acid", number: "2.5x-3x", timeframe: "current", stated_in: "Q4&FY26 call, Kalra p.8-9"}
+  - {item: "Boric Acid capacity increase via debottlenecking", number: "+1,000-1,500 tons (from 15,000-16,000 t actual toward 20,000 t nameplate)", timeframe: "near-term", stated_in: "Q4&FY26 call, Kalra p.26"}
+  - {item: "Q4 FY26 realisation", number: "Rs 127-128/kg (vs Rs 114-115/kg Q4 FY25)", timeframe: "Q4 FY26", stated_in: "Q4&FY26 call, Bharuka p.17"}
+  - {item: "DOT realisation", number: "~Rs 150/kg", timeframe: "current", stated_in: "Q4&FY26 call, Kalra p.19"}
+  - {item: "FY26 dividend", number: "Rs 40/share total (Rs 30 special + Rs 10 final, FV Re 1)", timeframe: "FY26", stated_in: "Q4&FY26 call, Kalra p.3, Bharuka p.4"}
+  - {item: "Boron oxide/debottlenecking capex rupee amount", number: "NOT FOUND on this call", timeframe: "n/a", stated_in: "deferred to post board approval, Kalra p.2-3"}
+  - {item: "Ore inventory months", number: "NOT FOUND on this call", timeframe: "n/a", stated_in: "not discussed in transcript"}
+promise_delivery:
+  delivered: 0
+  partial: 0
+  missed: 0
+  rows: []
+excuse_pattern: "balanced-with-one-deflection"
+repeated_evasions: []
+credibility_grade: "C"
+credibility_basis: "Single call only; no cross-quarter delivery record exists. Grade reflects the structural single-data-point cap plus specific same-call findings: attribution overreach on FY26 results (new leadership credited for a year it ran one quarter of), unresolved debt/pledge contradiction (deferred to IR email), an unreconciled CEO/CFO margin-figure mismatch, and a confident boron-oxide production timeline unmatched by any disclosed capex/CWIP evidence (per B03)."
+peer_questions:
+  - {question: "Is the Indian boric acid market genuinely ~40,000 TPA today, growing at an 8% CAGR to ~53,000 TPA by 2030?", why: "Core TAM claim underlying all growth math; management sourced it only to unnamed 'reports'", check_peers: ["Tata Chemicals", "DMCC/borax market data", "Tanfac", "Neogen"]}
+  - {question: "Does Indo Borax genuinely hold ~50% share of the Indian boric acid market, and who holds the remainder?", why: "Headline market-position claim, asserted with zero named competitors on the call", check_peers: ["Tata Chemicals", "Neogen", "Tanfac"]}
+  - {question: "Is boron ore supply genuinely concentrated in only three geographies (Turkey/Eti Maden, South America, North America), creating an industry-wide (not just Indo Borax-specific) geopolitical/FX risk?", why: "Tests the raw-material dependency and de-risking urgency narrative", check_peers: ["Tata Chemicals", "DMCC/borax importers", "Tanfac"]}
+  - {question: "Do peers report a similar sector-wide margin compression (from a historical 25-30% band to 20-22%) driven by raw-material inflation, or is this specific to Indo Borax's execution?", why: "Tests whether management's external-blame explanation for margin compression is sector-wide or company-specific", check_peers: ["Tata Chemicals", "Tanfac"]}
+  - {question: "Is Boron Oxide realistically priced at 2.5x-3x Boric Acid, and is there genuine unmet domestic demand to support a new 4,000 MTPA capacity addition?", why: "Underpins the entire boron oxide growth thesis, which currently has a confident verbal timeline but no matching capex/CWIP disclosure", check_peers: ["Tata Chemicals", "DMCC/borax", "Tanfac"]}
+  - {question: "Is the Indian DOT (micronutrient fertiliser) market genuinely only ~8,500 tons, and is a jump from 980 to 1,500 tons in FY27 plausible given a multi-year pattern of slow ramp (600 to 980 to 1,500 tons)?", why: "This growth line has been promised and under-delivered for years off a 6,000-ton idle capacity base", check_peers: ["Neogen", "Tata Chemicals", "Tanfac"]}
+  - {question: "Is there a real, named fertiliser-company tie-up for DOT supply, as vaguely referenced on the call ('discussion with the agreement...to supply fertiliser or nutrient to the fertiliser company')?", why: "Unnamed counterparty, unquantified deal size; could be a real demand pull or aspirational", check_peers: ["Neogen", "Tata Chemicals agri-inputs"]}
+  - {question: "Is the named Procter & Gamble relationship for Boric Acid IP grade real, scalable, and a credible base for cross-selling new product lines, as management claims?", why: "Named customer used to support a forward-integration/cross-sell growth trigger; verify independently where possible", check_peers: ["Tanfac", "Neogen"]}
+red_flags:
+  - "Boron Oxide '3-4 quarters to first lot' claim has no matching capex/CWIP in the FY26 AR (per B03) — moderate-high severity"
+  - "Headline '18% net profit growth' does not disclose the Rs 10.15 cr exceptional gain; core PBT fell 3.75% per B03 — moderate severity"
+  - "Attribution of full FY26 performance to a leadership team that, per its own account, took charge only in Q4 FY26 — moderate severity"
+  - "Debt/pledge question left unresolved on the call, deferred to IR email, despite a documented affiliate-debt/pledge structure in company memory — moderate severity"
+  - "CEO's opening EBITDA/PAT margin figures (21.8%/20.5%) do not reconcile with the CFO's own subsequently-stated revenue/EBITDA/PAT figures on the same call — low-moderate severity"
+  - "Disclosure-policy inconsistency: 'insider trading policy' cited to decline numbers to one investor immediately after giving specific ranges to three other questioners — low severity"
+  - "Zero named competitors despite a repeated ~50% market-share claim sourced only to 'reports' — low severity"
+  - "Unreconciled FY26 PAT figure: Rs 50.27 cr (this call) vs Rs 49.74 cr (company memory/B03) — low severity"
+dropped_triggers: []
+timeline_slippages: []
+analyst_note: "Single-call limitation governs this entire report: no prior transcript exists, so Sections 1C, 2A (in its standard cross-quarter form) and 2E are not assessable and are explicitly marked as such rather than filled with inferred content. The most load-bearing finding available from this one call is internal, not cross-quarter: management's own opening-remarks margin figures (EBITDA 21.8%, PAT 20.5%) do not reconcile with the CFO's own later stated revenue/EBITDA/PAT figures (which compute to 20.5% and 23.3% respectively), most likely because the two use different revenue bases (operating vs total income including other income) without saying so. This reproduces, rather than resolves, the AR 'EBITDA' ambiguity already flagged in company memory. Also load-bearing: the verbal boron-oxide timeline (3-4 quarters to first lot) is a full production date given with no matching capex/CWIP evidence per B03, and conflicts with an FY29 commercialisation figure found elsewhere in this run's corpus — this gap should be resolved before it is treated as a near-term trigger in Role 1 valuation."

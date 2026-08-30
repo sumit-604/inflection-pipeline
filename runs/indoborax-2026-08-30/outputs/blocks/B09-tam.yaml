@@ -1,0 +1,56 @@
+stage: B09-tam
+company: "INDOBORAX"
+run_date: "2026-08-30"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["annual_report_fy24_fy25", "postal_ballot_notices", "shareholding_reg31_filing"]
+flags:
+  - "India boric acid market claim (38-40kt -> 50-53kt, 7-8% CAGR) is single-sourced to unnamed 'reports' in the Investor Presentation; not independently traceable to a named CRISIL/ICRA/Mordor study"
+  - "DOT market growth rate is NOT FOUND; DOT TAM held flat at 8,500t across the SOM horizon, a conservative assumption"
+  - "SOM-implied revenue CAGR (~7%) is far below management's stated FY27 revenue growth guide of 20-35%; management itself attributes the guide to realisation/price and new products, not market-share capture -- roughly three-quarters of the guide sits outside this anchored addressable-market analysis"
+  - "Kronox Lab Sciences SPA (Rs246.12cr, 64.26% stake, signed 20-Aug-2026) not yet closed at run date; Kronox FY26 revenue Rs101.22cr is named as the largest disclosed adjacency but excluded from tam/sam/som because it is a separate product chemistry and an unclosed deal"
+  - "Global boron oxide market-size figures found in search are internally inconsistent (USD1.1bn-4.1bn across sources, likely conflating boron oxide with broader boron compounds) and >2 years stale; excluded from headline TAM"
+  - "Concall contains an internal math inconsistency: MD states DOT volume of ~1,000t is '7-8% of the total market' against a stated 8,500t market, which computes to ~11.8%; flagged, not silently corrected"
+  - "Method 1 (tonnage-implied) and Method 3 (share-implied) boric acid market estimates diverge (Rs437-480cr vs Rs377cr), indicating management's ~50% share claim and its ~38-40kt market claim are not fully mutually consistent"
+  - "Standard Indian-market unorganised-sector assumption (30-60%) does not appear to apply; the non-Indo Borax portion of the market looks like small formal manufacturers plus imports (~9-10% of market), not an informal tail"
+market_definition: "India-domestic B2B market for boric acid (Technical + I.P. grade) and DOT sold to steel/refractory, ceramics, pharma, personal care and agri end-users"
+tam_cr: {conservative: 565, realistic: 608}
+sam_cr: 565
+sam_pct_of_tam: 100
+som_3yr_cr: 265
+som_5yr_cr: 300
+som_implied_revenue_cagr: {yr3: 7.2, yr5: 6.9}
+current_sam_share_pct: 38
+revenue_headroom_x: 2.62
+tam_growth_pct: 7.5
+runway_class: "MODERATE"
+mgmt_claim_cr: 638
+mgmt_claim_ratio: 1.13
+mgmt_claim_read: "reasonable"
+capacity_check: "sufficient -- anchored SOM_3yr and SOM_5yr fit within existing nameplate capacity (20,000 MTPA boric acid + 6,000 MTPA DOT) via disclosed debottlenecking; does not require the unproven Boron Oxide capex or the unanchored Rs90cr FY27-28 capex figure"
+methods_used: ["top-down volume x price", "bottom-up unit economics", "peer/share-implied aggregation", "import substitution", "global benchmark"]
+stale_data_flags:
+  - {datapoint: "India boric acid finished-product import volumes (HS 281000)", source: "UN Comtrade via World Bank WITS", year: 2023}
+  - {datapoint: "India boric acid import shipment-count trend", source: "Volza trade data", year: "2023-24"}
+  - {datapoint: "Global boron oxide market size (multiple conflicting figures)", source: "marksparksolutions.com / verifiedmarketreports.com / researchandmarkets.com", year: "2023-2024 base years"}
+searches_performed:
+  - "India boric acid market size 2025 2026 tonnes CRISIL OR Mordor OR IMARC"
+  - "global boric acid market size 2025 2030 CAGR"
+  - "Indo Borax competitors India boric acid manufacturers Aditya Birla Borax Morarjee"
+  - "Kronox Lab Sciences Zenrock Chemicals acquisition SPA August 2026"
+  - "Kronox Lab Sciences products revenue FY25 FY26 export high purity fine chemicals"
+  - "disodium octaborate tetrahydrate DOT India market size agriculture fire retardant"
+  - "boron oxide market size global India applications fiberglass"
+  - "Kronox Lab Sciences export revenue percentage FY26 customers Europe US high purity chemicals annual report"
+  - "boric acid India import export data DGCIS Turkey Eti Maden tonnes"
+  - "boric acid manufacturer plant India Gujarat GACL Tata Chemicals Sudarshan capacity MTPA"
+searches_skipped: []
+downstream_candidates:
+  - {signal: "India steel & refractory production/capex", entity_type: "macro", demand_link: "55-60% of boric acid demand runs through this single end-use", likely_source: "Ministry of Steel / Joint Plant Committee (JPC) production statistics", cadence: "monthly", shared: false}
+  - {signal: "Eti Maden (Turkey) ore supply and pricing", entity_type: "counterparty", demand_link: "Primary imported-ore source and a downstream finished-boric-acid competitor globally", likely_source: "Eti Maden corporate disclosures / Turkish Ministry of Trade export data", cadence: "quarterly", shared: true}
+  - {signal: "DGCIS India boric acid & DOT import-export volumes", entity_type: "macro", demand_link: "Directly measures import-substitution progress and cross-checks the market-size claim", likely_source: "DGCIS (Ministry of Commerce) trade data portal", cadence: "monthly", shared: false}
+  - {signal: "Kronox Lab Sciences Ltd standalone filings", entity_type: "counterparty", demand_link: "Deal-completion and consolidated-revenue signal for the largest disclosed adjacency", likely_source: "BSE/NSE corporate filings, Kronox quarterly results", cadence: "quarterly", shared: false}
+  - {signal: "SEBI/BSE Reg 30 and SAST filings -- Indo Borax/Zenrock/Kronox", entity_type: "regulatory", demand_link: "Tracks deal completion, funding structure and resulting ownership/consolidation", likely_source: "BSE/NSE Reg 30 & SAST filings", cadence: "event-driven", shared: true}
+  - {signal: "Unnamed fertiliser-company DOT distribution tie-up", entity_type: "counterparty", demand_link: "Would validate the DOT agri-distribution growth lever referenced in the Investor Presentation", likely_source: "Indo Borax's own Reg 30 disclosures (no independent named source found)", cadence: "event-driven", shared: false}
+demand_externally_verifiable: true
+analyst_note: "SOM built bottom-up from disclosed FY26 tonnage per segment (boric acid 15,900t, DOT 980t), held prices flat at FY26 realisation (Rs127.5/kg, Rs150/kg) to isolate volume/share growth from the ore-cost pass-through cycle, and capped boric acid volume at management's own stated debottlenecking range (+1,000-1,500t) since the segment is described as at peak utilisation with no anchored new capex. Boron Oxide and Kronox are named as upside levers but excluded from tam/sam/som fields because the former is unproven (zero CWIP) and the latter is an unclosed acquisition in a different product chemistry. DOT's 3-5yr share path (31%-49% of a flat 8,500t market) is the aggressive edge of the share-gain rules, justified only by explicit management guidance and a genuine low base; treat as the higher-variance leg of the SOM."

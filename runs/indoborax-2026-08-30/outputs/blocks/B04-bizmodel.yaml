@@ -1,0 +1,59 @@
+stage: B04-bizmodel
+company: "INDOBORAX"
+run_date: "2026-08-30"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["annual_report_fy24_fy25 (only FY25-26 AR provided this run)", "tonnes sold / capacity utilisation % / rupee-per-kg realisation not disclosed in AR or Inv. Pres.", "product-level revenue split (boric acid vs DOT vs boron oxide) not disclosed", "named competitors / competitor market share not disclosed"]
+flags: ["FY26 PAT includes Rs 10.15 cr one-off exceptional gain from sale of property/vehicles to exiting promoters (AR P&L p.85) -- normalise before using P/E", "~46% of total assets sit in current mutual fund investments alone, treasury book must be separated from operating valuation (AR Balance Sheet p.84, Note 9 p.98)", "legacy Inter-Corporate Deposit of Rs 509.04 lakh under IBC, no interest accrued FY26, unresolved recovery (AR Note 47 ref, Auditor Emphasis of Matter p.72)", "zero export revenue FY25 and FY26 despite stated export ambition in MD letter (AR p.33; MD letter p.2)"]
+business_type: "manufacturing"
+revenue_streams:
+  - {name: "Manufactured goods - Boron products (Boric Acid Technical, Boric Acid IP, DOT, Boron Oxide)", type: "direct product sale, B2B industrial", pct_of_revenue: 98.57, predictability: "M"}
+  - {name: "Traded goods (Sulphuric Acid FY25 / Chemicals & others FY26)", type: "pass-through trading", pct_of_revenue: 1.43, predictability: "L"}
+asset_intensity: "light"
+wc_intensity: "high"
+pricing_power: "moderate"
+cyclicality: "cyclical"
+moats_present:
+  - {moat: "Regulatory/licensing (FDA pharma-grade, BIS certification)", durability: "high"}
+  - {moat: "Intangible/brand (sole IP-grade manufacturer, 45-year incumbency)", durability: "high"}
+  - {moat: "Switching costs (decades-long customer/distributor relationships)", durability: "medium-high"}
+  - {moat: "Efficient scale (capacity vs a small domestic market)", durability: "medium"}
+valuation_methods:
+  primary: {method: "EV/EBITDA on normalised, clean operating EBITDA (ex Other Income, ex exceptionals)", why: "strips out treasury income (22.4% of PBT, FY26) and one-off gains to get a comparable operating-earnings base for a margin that already swings with ore-cost cycle"}
+  secondary: {method: "Sum-of-the-parts: core operations valued separately from treasury/investment property/subsidiary", why: "roughly 46-58% of total assets are non-operating (mutual funds, investment property, subsidiary investment); a single blended multiple misprices either component"}
+  tertiary: {method: "P/E on normalised (ex-exceptional) earnings", why: "cross-check once the Rs 10.15 cr exceptional gain is removed"}
+  not_applicable: ["DCF (weak multi-year visibility amid active ownership transition and unresolved capital allocation)", "Dividend Discount Model (FY26 payout includes a one-off asset-monetisation special dividend, not a stable base)", "Replacement cost / asset-based as primary (understates licence and relationship intangibles)", "Platform/user-metric methods (not a platform business)"]
+irrelevant_ratios:
+  - {ratio: "Revenue growth YoY alone", why: "no filed volume/price split; growth may be entirely ore-cost pass-through"}
+  - {ratio: "Filed 'EBITDA margin' (Board's Report PBTD line)", why: "includes Other Income, which is 6.4% of total income and mostly treasury/rental, not operating"}
+  - {ratio: "Standard inventory turnover benchmarks", why: "99-210 day inventory reflects structural import lead time, not generic inefficiency"}
+  - {ratio: "Unadjusted ROE", why: "~46% of assets sit in mutual funds earning market, not operating, returns"}
+  - {ratio: "P/E on FY26 reported PAT", why: "includes Rs 10.15 cr one-off exceptional gain"}
+  - {ratio: "Debt/equity or interest coverage", why: "company is debt-free; no discriminating information"}
+must_track_metrics:
+  - {metric: "Imported raw material as % of revenue", healthy: "~42-44% (FY25-26 filed range)", red_flag: "rising faster than realisation without margin offset"}
+  - {metric: "Clean operating EBITDA margin (ex Other Income, ex exceptionals)", healthy: "20.5%-26.2% (FY26-FY25 filed range)", red_flag: "below 20.5% for two consecutive quarters"}
+  - {metric: "Inventory days", healthy: "~99 days (FY26 level)", red_flag: "above 150 days or below 60 days"}
+  - {metric: "Trade receivable days", healthy: "18-33 days (FY26-FY25 filed range)", red_flag: "above 45 days"}
+  - {metric: "Non-core investment book as % of total assets", healthy: "declining or stable with a stated capital-allocation plan", red_flag: "rising with no disclosed plan"}
+unit_economics:
+  unit: "1 kg / 1 tonne boric acid (dominant manufactured product)"
+  revenue_per_unit: "NOT FOUND (tonnes sold not disclosed in AR or Inv. Pres.)"
+  margin_per_unit: "NOT FOUND (same reason)"
+  key_lever: "Lag between imported boron ore cost/currency movement and the Company's own price pass-through to domestic buyers"
+first_deterioration_signals:
+  - {risk: "Single-plant, single-segment concentration", first_signal: "quarterly revenue from operations decline or a disclosed shutdown"}
+  - {risk: "Imported ore price/currency exposure (82.51% of raw material imported)", first_signal: "raw material cost as % of revenue rising quarter over quarter"}
+  - {risk: "Legacy Rs 509.04 lakh Inter-Corporate Deposit under IBC", first_signal: "further provisioning or write-off in future notes"}
+  - {risk: "Boron Oxide expansion and new-management execution", first_signal: "capital work-in-progress slippage or commissioning-date delay"}
+  - {risk: "Zero export diversification, single import channel dependency", first_signal: "foreign exchange inflow remaining nil for further filing periods"}
+mgmt_questions:
+  - "What is current capacity utilisation for Boric Acid (20,000 MTPA) and DOT (6,000 MTPA), and how much of FY26 revenue growth was volume versus price/ore-cost pass-through?"
+  - "Given 82.5% of raw material is imported, what multi-sourcing or hedging strategy exists beyond 'developing alternative sourcing channels'?"
+  - "What is the recovery plan and timeline for the Rs 509.04 lakh Inter-Corporate Deposit under IBC?"
+  - "Why was a Rs 30/share special dividend funded from non-core asset monetisation rather than retained for the disclosed Boron Oxide expansion?"
+  - "What concrete export markets and customer commitments exist behind the stated South America/South-East Asia ambition?"
+  - "Does the Boron Oxide capacity addition change the net raw-material import mix or exposure?"
+  - "With a fully reconstituted board as of 23-Jan-2026, what specific dated transition milestones is the board tracking for FY27?"
+one_line_verdict: "Domestic near-monopoly ore-pass-through business now mid ownership transition."
+analyst_note: "Classified pricing power as moderate, not price-taker and not strong, because fast domestic collection (18-33 days) and near-50% share argue against pure commodity status, but clean EBITDA margin still swung 26.2% to 20.5% YoY on the ore-cost cycle. WC intensity called high on inventory days alone (99-210), since receivables are fast; net cash-conversion cycle is inventory-driven, not receivable-driven. Tertiary SOTP flagged because roughly half the balance sheet is treasury/investment property, unusual for an operating multiple. Unit economics (rupee/kg) could not be anchored: neither filed document discloses tonnes sold. Company memory carries an unanchored rupee/kg figure; it is excluded from anchored fields per pipeline rule."

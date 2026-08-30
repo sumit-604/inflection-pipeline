@@ -9,3 +9,4 @@ Per-stage token ledger, one line per subagent run.
 | 2 | notes-pass1 | claude-sonnet | - | - | - | 84726 | 336s | 1 |
 | 2 | notes-pass2 | claude-sonnet | - | - | - | 99310 | 300s | 2 |
 | 2 | notes-pass3 | claude-sonnet | - | - | - | 57552 | 167s | 3 |
+| 3 | ar-deep-dive | claude-sonnet | - | - | - | 215215 | 788s | 1 |

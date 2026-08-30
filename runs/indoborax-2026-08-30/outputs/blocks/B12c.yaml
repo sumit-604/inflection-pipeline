@@ -1,0 +1,28 @@
+stage: B12c
+company: "INDOBORAX"
+run_date: "2026-08-30"
+model: claude-opus-4-8
+status: complete
+gate0:
+  rules_checked: 39
+  fails:
+    - {severity: MINOR, rule: "Block A ROCE source-figure rule (prompts/01 lines 29-31)", note: "FY17-FY24 ROCE computed via Net Worth+Borrowings rather than screener's own ROCE; transparently justified by missing CE split; band-invariant; source existence is Verifier A domain"}
+    - {severity: MINOR, rule: "M7 regulatory/licence (prompts/01 lines 118-120)", note: "scored 0 PEER DATA NEEDED though 'sole India manufacturer' documented; conservative per 'never guess'; classification-invariant (deal-breaker 5 caps to AVERAGE regardless)"}
+emoat:
+  rules_checked: 33
+  fails:
+    - {severity: MINOR, rule: "Evidence-tier discipline G1 (prompts/07 lines 170-174, rubric 3)", note: "G1 uses 1.0x documented multiplier; the emerging/forward-moat leg (capex deployment) is management-claim only; documented leg is static cash; low materiality, no band change"}
+    - {severity: MINOR, rule: "active_categories composition (prompts/07 line 227)", note: "G1 labelled 'Moderate' in YAML vs Section 3 band table 'Moderate=0 / Weak-Moderate=3'; presentational inconsistency; rule expects Strong/Moderate rows only"}
+valuation: pending-phase-3
+business_understanding_narrative: {present: false, five_questions_answered: false, prose_only: false, section6_candidates_named: 0, valuation_vocab_leak: false, fails: []}  # not in phase-1 scope; stage 13 not audited this phase
+recomputed_destination_pe: ""   # not in scope this phase (no valuation)
+recomputed_decision: ""         # concur: Gate 0 AVERAGE, Emerging Moat NONE
+findings:
+  - {severity: MINOR, location: "B01 Block A (01-gate0.md lines 30-73)", description: "FY17-FY24 ROCE computed via Net Worth+Borrowings convention rather than a screener-supplied ROCE figure; formula note says screener provides ROCE. Transparently justified; band-invariant; source existence is Verifier A's domain."}
+  - {severity: MINOR, location: "B01 M7 (01-gate0.md lines 282-287)", description: "Regulatory/licence test scored 0 PEER DATA NEEDED though the sole-India-manufacturer FDA/BIS position is documented. Conservative and rule-defensible; self-flagged as likely under-scored; classification unchanged (deal-breaker 5 caps to AVERAGE)."}
+  - {severity: MINOR, location: "B07 G1 scorecard (07-emoat.md lines 287, 423)", description: "War chest scored with 1.0x documented multiplier; documented leg is static balance-sheet cash, while the emerging-moat value (deployment into value-creating capex) rests on management claim. Defensible; does not cross any band."}
+  - {severity: MINOR, location: "B07 active_categories (B07-emoat.yaml lines 14-17)", description: "G1 labelled strength 'Moderate' in YAML while the Section 3 summary band table records Moderate=0 and places B1/C1/G1 in Weak-Moderate=3. Framework expects Strong/Moderate rows only. Presentational inconsistency."}
+critical_count: 0
+major_count: 0
+minor_count: 4
+acceptance_rate: 94    # (72 checked - 4 minor soft-fails) / 72 across gate0+emoat

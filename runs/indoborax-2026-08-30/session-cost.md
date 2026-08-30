@@ -16,3 +16,5 @@
 | 7 | emerging-moat | claude-sonnet-5 | - | - | - | 196789 | 953s | 1 |
 | 9 | tam-sam-som | claude-sonnet-5 | - | - | - | 143260 | 581s | 1 |
 | 12a | verifier-a-numerical | claude-haiku-4-5 | - | - | - | 111959 | 141s | 1 |
+| 12b | verifier-b-redflags | claude-opus-4-8 | - | - | - | 86204 | 300s | 1 |
+| 12c | verifier-c-framework | claude-opus-4-8 | - | - | - | 90029 | 283s | 1 |

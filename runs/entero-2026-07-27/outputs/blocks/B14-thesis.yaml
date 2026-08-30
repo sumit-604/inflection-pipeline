@@ -1,0 +1,18 @@
+stage: B14-thesis
+company: "ENTERO"
+run_date: "2026-07-27"
+model: claude-opus-4-8
+status: complete
+verdict: "AVOID"
+entry_range: {low: 451, high: 501}
+position_size: "Small"
+position_size_override: ""
+thesis_broken_if: "New M&A > ~Rs 200 Cr consideration announced in any rolling 12-month window (reverts ROCE base 19x->12x, every fair value falls ~one third); or FY27 EBITDA margin regresses below 4.5%; or H1 FY27 audited cash flow confirms structurally negative FCF."
+monitoring_checklist:
+  - "Quarterly EBITDA margin: green >=5.0% held; red below 4.5% (quarterly results/deck)"
+  - "New M&A consideration rolling 12m: green zero deals > ~Rs 200 Cr; red any deal > ~Rs 200 Cr (exchange announcements)"
+  - "OCF-to-EBITDA and FCF at H1 FY27 (~Nov 2026): green OCF/EBITDA >=50% and FCF turning positive; red FCF still negative or conversion below 50%"
+  - "Network-reach reconciliation next concall: green Q4FY26->Q1FY27 28-36% drop explained with numbers as deliberate pruning; red no reconciliation or further fall"
+  - "High-credit-risk receivables bucket % of gross: green stable/declining from ~6.8%; red rising faster than revenue"
+  - "Goodwill impairment and current ratio: green no impairment and current ratio >=1.3x; red any impairment charge or current ratio below 1.3x"
+  - "Price vs buy trigger: green price falls into Rs 432-501 with no red trigger fired; red price stays above entry zone (WATCHLIST holds)"

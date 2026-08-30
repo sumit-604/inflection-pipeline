@@ -1,0 +1,46 @@
+stage: B02-notes
+company: "KRONOX"
+run_date: "2026-08-30"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Note 1 Significant Accounting Policies: full text not found anywhere in the extracted document (revenue recognition, depreciation useful lives, ECL matrix methodology, impairment assumptions, Ind AS 116 discount rate all unverifiable); confirmed by targeted keyword sweep across all three passes"
+  - "FD lien disclosure: no lien found in FY26 notes (Note 5/9/10 searched) vs company memory citing a ~Rs 52.70 lakh lien-marked FD; unreconciled"
+  - "Single-customer revenue concentration and product/geography disaggregation: not disclosed (single reportable segment, Note 32)"
+  - "Quantified FX and interest-rate sensitivity: not disclosed in Note 38(c) despite Rs 6.492cr unhedged USD receivables and Rs 64.535cr FD book"
+  - "Gratuity actuarial base assumption rates (discount rate, salary escalation): only sensitivity deltas disclosed, not the base rates (Note 33)"
+flags:
+  - {type: FLAG-CASH, reason: "CFO/PBT conversion fell from 115.5% (FY25) to 90.1% (FY26); Net Cash from Operating Activities down 22.2% YoY (Rs 30.697cr to Rs 23.892cr) despite PAT +8.6%; receivable days up 72.4 to 76.4, inventory +31.4% against flat 1.0% revenue growth, payable days down 56.2 to 51.0 (Cash Flow Statement p.95; Notes 7/8/17)"}
+accounting_quality: 6
+pass_2_empty: false
+pass_3_empty: true
+top_findings:
+  - {rank: 1, finding: "True CFO/PBT conversion fell from 115.5% (FY25) to 90.1% (FY26); Net Cash from Operating Activities fell -22.2% YoY despite PAT +8.6%", note_ref: "Cash Flow Statement p.95, cross-ref Notes 7/8/17", rating: "Watch", why: "Sharpest quality-of-earnings divergence in the AR: profit growing while cash backing it shrinks"}
+  - {rank: 2, finding: "Note 1 Significant Accounting Policies completely absent from the document; no revenue recognition, depreciation, impairment, or ECL-matrix policy text found anywhere", note_ref: "Note 1, p.93 (ref only)", rating: "Red Flag (document gap)", why: "Blocks verification of revenue-recognition and depreciation conservatism, the two most basic accounting-quality tests"}
+  - {rank: 3, finding: "Note 38(a) claims a matrix-based ECL methodology then reports a management override to nil provision on Rs 21.19cr receivables in the same breath", note_ref: "Note 38, p.115-116", rating: "Watch", why: "Internal policy-vs-practice contradiction, undisclosed loss-rate methodology"}
+  - {rank: 4, finding: "Director remuneration to three promoter-directors doubled: Rs 3.96cr FY26 vs Rs 1.80cr FY25 (+120%), 14.3% of PAT, 81.5% of the total employee-cost increase; shareholder-approved and Section 197/Schedule V compliant", note_ref: "Note 26/34, p.108/112", rating: "Watch", why: "Legally clean but concentrates profit growth into promoter pay faster than it flows to minority shareholders"}
+  - {rank: 5, finding: "Receivable days rose two years running (72.4 to 76.4) while payable days fell (56.2 to 51.0)", note_ref: "Note 8/17, p.102/106", rating: "Watch", why: "Cash-conversion cycle stretching from both ends, precursor to the CFO decline"}
+  - {rank: 6, finding: "Inventory grew +31.4% YoY against flat +1.0% revenue growth, concentrated in raw material (+48.9%) and WIP (+186.3%), no write-down disclosure", note_ref: "Note 7/25, p.101/108", rating: "Watch", why: "Unexplained working-capital buildup, could be forward stocking or a genuine drag"}
+  - {rank: 7, finding: "No FD lien disclosure found anywhere in the FY26 notes versus company memory citing a ~Rs 52.70 lakh lien-marked FD", note_ref: "Note 5/10, p.100/103", rating: "Watch", why: "Unresolved discrepancy against prior company memory, needs reconciliation"}
+  - {rank: 8, finding: "Other Income rose to 13.9% of PBT (FY26) from 7.4% (FY25), driven by FD interest and FX gains", note_ref: "Note 23, p.107", rating: "Watch", why: "Rising share of pre-tax profit from non-operating treasury income, not the core chemicals business"}
+  - {rank: 9, finding: "Unhedged USD trade receivables up +40.1% YoY, materially faster than total receivables growth, zero hedging instruments disclosed", note_ref: "Note 38, p.118", rating: "Watch", why: "Rising unhedged FX exposure with no forward cover"}
+  - {rank: 10, finding: "No quantified FX or interest-rate sensitivity table disclosed in Note 38(c) Market Risk despite material unhedged receivables and FD book", note_ref: "Note 38(c), p.117-119", rating: "Watch", why: "Standard Ind AS 107 disclosure absent at this exposure scale"}
+  - {rank: 11, finding: "First-ever company borrowing (vehicle loans) coincided with a 3.2x expansion of the net vehicle-fleet block, the same year director remuneration doubled", note_ref: "Note 2/14/16/27", rating: "Watch (texture)", why: "Neither fact alone adverse but the co-occurrence is a pattern to monitor into FY27"}
+  - {rank: 12, finding: "Contingent liabilities, capital commitments, and litigation provisions all NIL both years, in a single blanket sentence with no itemised support", note_ref: "Note 31, p.109", rating: "Clean (thin)", why: "Genuinely clean outcome but unusually lean disclosure format"}
+  - {rank: 13, finding: "RPTs confined to director remuneration and sitting fees; no rent, royalty, ICD, or loan to any promoter entity; all RPT balances NIL both years", note_ref: "Note 34, p.112", rating: "Clean", why: "Rules out the more common promoter-extraction channels"}
+  - {rank: 14, finding: "No single-customer revenue concentration or product/geography disaggregation disclosed anywhere, justified by single-segment status", note_ref: "Note 22/32, p.107/110", rating: "Watch (disclosure gap)", why: "Customer-concentration risk unquantifiable from the notes"}
+  - {rank: 15, finding: "First-time internal audit function instituted in FY26, corroborated by CARO and the Secretarial Auditor's Report", note_ref: "Note 20, p.107", rating: "Clean, positive", why: "Constructive governance-maturation step in the first full post-IPO year"}
+red_flags:
+  - "Note 1 Significant Accounting Policies missing from the document, blocking verification of revenue recognition and depreciation conservatism"
+  - "Note 38 ECL matrix claimed but nil provision applied via management override on Rs 21.19cr receivables"
+  - "CFO/PBT conversion fell from 115.5% to 90.1% with Net Cash from Operating Activities down 22.2% YoY despite PAT growth"
+questions_for_mgmt:
+  - "Why is Note 1 (Significant Accounting Policies) absent from the filed FY26 annual report, and can the company provide the complete policy text (revenue recognition, depreciation, ECL matrix, impairment assumptions)?"
+  - "Note 38 states the company uses an ECL provision matrix yet applies a nil provision via management override on Rs 21.19cr receivables. What does the matrix compute and why is the output overridden to nil?"
+  - "What explains receivable days lengthening (72.4 to 76.4) while payable days shorten (56.2 to 51.0), and does management expect the FY26 cash-conversion decline to reverse in FY27?"
+  - "Inventory grew 31.4% against 1.0% revenue growth, concentrated in raw material and WIP. Is this forward stocking or a working-capital buildup, and what is the expected FY27 inventory-day trajectory?"
+  - "Can management reconcile the absence of any FD lien disclosure in the FY26 notes against the ~Rs 52.70 lakh lien-marked FD referenced in prior company records?"
+receivables_trend: "deteriorating - receivable days 72.4 (FY25) to 76.4 (FY26), second consecutive year of increase (Note 8, p.102); payable days concurrently fell 56.2 to 51.0 (Note 17, p.106); reconstructed true CFO/PBT conversion fell 115.5% to 90.1% and Net Cash from Operating Activities down 22.2% YoY despite PAT +8.6% (Cash Flow Statement p.95)"
+restatements_found: []
+going_concern_language: "NONE - no adverse going concern qualification or material uncertainty found; only standard SA 570 audit-procedure boilerplate in the Independent Auditor's Report (p.89-90) and standard capital-management boilerplate ('maintain adequate supply of funds... as a going concern', Note 38, p.119); confirmed by full-document keyword sweep in Pass 3"
+analyst_note: "The single most decision-relevant fact from this stage is the reconstructed cash-flow finding: the Cash Flow Statement's printed 'Cash Generated from Operations' row is a labelling defect (it prints the working-capital-adjustment subtotal, not the true pre-tax operating cash figure). Once corrected, CFO/PBT conversion fell from 115.5% to 90.1% and NCFO fell 22.2% YoY despite PAT growth. This is materially different from, and more concrete than, the qualitative receivable/inventory/payable-days observations alone, and should be the anchor number for any downstream cash-quality assessment. Flag for the orchestrator: verify the raw CFS row against the source PDF before any stage uses the printed (240.0)/543.6 lacs figure directly."

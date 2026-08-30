@@ -14,3 +14,4 @@
 | 8 | promoter | claude-sonnet-5 | - | - | - | 196527 | 504s | 1 |
 | 6 | peers | claude-sonnet-5 | - | - | - | 202522 | 534s | 1 |
 | 7 | emerging-moat | claude-sonnet-5 | - | - | - | 196789 | 953s | 1 |
+| 9 | tam-sam-som | claude-sonnet-5 | - | - | - | 143260 | 581s | 1 |

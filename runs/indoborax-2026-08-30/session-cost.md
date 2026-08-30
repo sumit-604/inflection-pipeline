@@ -13,3 +13,4 @@
 | 5 | concall | claude-sonnet-5 | - | - | - | 102398 | 495s | 1 |
 | 8 | promoter | claude-sonnet-5 | - | - | - | 196527 | 504s | 1 |
 | 6 | peers | claude-sonnet-5 | - | - | - | 202522 | 534s | 1 |
+| 7 | emerging-moat | claude-sonnet-5 | - | - | - | 196789 | 953s | 1 |

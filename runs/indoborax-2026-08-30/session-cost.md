@@ -18,3 +18,4 @@
 | 12a | verifier-a-numerical | claude-haiku-4-5 | - | - | - | 111959 | 141s | 1 |
 | 12b | verifier-b-redflags | claude-opus-4-8 | - | - | - | 86204 | 300s | 1 |
 | 12c | verifier-c-framework | claude-opus-4-8 | - | - | - | 90029 | 283s | 1 |
+| 12d | verifier-d-peers | claude-sonnet-5 | - | - | - | 183794 | 366s | 1 |

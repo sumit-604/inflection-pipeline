@@ -22,3 +22,28 @@ Per-stage token ledger, one line per subagent run.
 | 12c | verifier-framework | claude-opus | - | - | - | 78861 | 282s | 1 |
 | 13 | synthesis-lite | claude-opus | - | - | - | 88891 | 305s | 1 |
 | 09b | halt1-dossier | claude-sonnet | - | - | - | 145118 | 489s | 1 |
+
+## SESSION CLOSE-OUT (Phase 1)
+
+Run total (sum of ledger rows): ~1,870,799 tokens across 16 subagent runs (stage 0 was orchestrator-inline, no subagent tokens).
+
+### (a) TOP FIVE BY TOKENS
+| rank | stage | total_tok | share of run |
+|------|-------|-----------|--------------|
+| 1 | 6 peer-verification | 262,617 | 14.0% |
+| 2 | 2 notes-triple-pass (3 runs: 84,726+99,310+57,552) | 241,588 | 12.9% |
+| 3 | 3 ar-deep-dive | 215,215 | 11.5% |
+| 4 | 09b halt1-dossier | 145,118 | 7.8% |
+| 5 | 8 promoter-check | 130,656 | 7.0% |
+
+### (b) DOWNSHIFT FAILURES
+none. The phase-1 mechanical stages ran on the correct cheap models: stage 0 validation was orchestrator-inline (no subagent), verifier A ran on claude-haiku-4-5. No mechanical stage ran on Opus.
+
+### (c) COST SPIKES
+none. No prior KRONOX run exists (first run for this ticker), so there is no baseline ledger to compare against the 1.5x threshold.
+
+### (d) OPERATOR SNAPSHOT
+Operator: run /cost and /usage now and paste the cache hit ratio and the loop totals below.
+
+#### Operator snapshot
+(to be filled by operator)

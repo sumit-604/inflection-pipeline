@@ -1,0 +1,49 @@
+stage: B02-notes
+company: "INDOBORAX"
+run_date: "2026-08-30"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - annual_report_fy24_fy25
+  - postal_ballot_notices
+  - shareholding_reg31_filing
+flags:
+  - {type: FLAG-CREDIT-RISK, reason: "Rs 509.04 lakh ICD to insolvent Radius Estates (IBC CIRP) carries no principal ECL provision and is absent from Note 43(A) credit-concentration narrative; auditor Emphasis of Matter"}
+  - {type: FLAG-RPT, reason: "Rs 3,397.39 lakh FY26 + Rs 2,805 lakh FY25 asset sales to exiting promoter family; Office Premises sold at 3.01x book value with no independent valuation disclosed; FY25 disposal unreconciled to any asset-movement note; ~66% of FY26 investment property monetisation to an unnamed counterparty"}
+  - {type: FLAG-DISCLOSURE, reason: "Note 41 fair value hierarchy misclassifies Mercedes Benz unquoted preference shares as Level 1 and mislabels the cost-carried subsidiary investment as Level 3; Note 45(d)/46(d) Return on Equity Ratio equals Basic EPS, not a computed ROE%, in both standalone and consolidated statements"}
+accounting_quality: 5        # /10
+pass_2_empty: false
+pass_3_empty: true
+top_findings:
+  - {rank: 1, finding: "Rs 509.04 lakh ICD to Radius Estates Projects Pvt Ltd (insolvent, IBC CIRP) carries no principal ECL provision; Note 43(A) credit-risk narrative never mentions this exposure; auditor Emphasis of Matter", note_ref: "Note 6, Note 43(A), Note 47/48 (AR p.97, 111, 113)", rating: "Red Flag"}
+  - {rank: 2, finding: "Office Premises sold to Pranika Jain and Sreelekha Jain for Rs 1,400 lakh vs Rs 465.28 lakh net book value (3.01x book, Rs 934.72 lakh profit, 92% of the exceptional item); no independent valuation of this specific asset disclosed", note_ref: "Note 1, Note 34, Note 40 (AR p.93, 106, 108)", rating: "Red Flag"}
+  - {rank: 3, finding: "~Rs 2,805 lakh (about 66%) of FY26 investment property monetisation (Rs 4,250 lakh total) went to a counterparty not named as related in Note 40", note_ref: "Note 4, Note 40 (AR p.95, 108)", rating: "Red Flag"}
+  - {rank: 4, finding: "FY25 Rs 2,805 lakh related-party flat sale (Sreelekha Jain, Saumya Jain) has no matching disposal entry in Note 1 (PPE) or Note 4 (Investment Property) for FY25", note_ref: "Note 1, Note 4, Note 40 (AR p.93, 95, 108)", rating: "Red Flag"}
+  - {rank: 5, finding: "Note 41 fair value hierarchy misclassifies unquoted Mercedes Benz preference shares (Rs 1,041.30 lakh) as Level 1 and mislabels the cost-carried subsidiary investment (Rs 1,040.93 lakh) as the unitemised Level 3 line", note_ref: "Note 5, Note 5(a), Note 41 (AR p.96, 109; consol p.134, 147)", rating: "Red Flag"}
+  - {rank: 6, finding: "Return on Equity Ratio (Note 45(d)/46(d)) equals Basic/Diluted EPS, not a computed ROE%, in both standalone and consolidated statements, both years", note_ref: "Note 45(d), Note 46(d) (AR p.113, 151)", rating: "Red Flag"}
+  - {rank: 7, finding: "Two-year, ~Rs 60 cr pattern of company assets sold to the exiting Jain promoter family: FY25 Rs 2,805 lakh + FY26 Rs 3,397.39 lakh, spanning the change of control", note_ref: "Note 40 (AR p.108-109)", rating: "Red Flag"}
+  - {rank: 8, finding: "Kotak Mahindra Bank stock-statement discrepancies: Q1 FY26 Rs 95.81 lakh gap, Q2 FY26 Rs 52.01 lakh gap between books and bank filings; facility surrendered Dec-2025", note_ref: "Note 42(i) (AR p.110, 148)", rating: "Watch"}
+  - {rank: 9, finding: "Legacy doubtful receivable (Rs 118.22 lakh, disclosed but unprovided in FY25) fully provided in FY26 (Rs 126.84 lakh); provisioning lag unexplained", note_ref: "Note 10, Note 19, Note 33 (AR p.99, 102, 106)", rating: "Watch"}
+  - {rank: 10, finding: "Finished goods inventory rose from Rs 0.26 lakh to Rs 405.75 lakh (~1,560x), contributing Rs 355.58 lakh of profit-boosting inventory build against 22.9% revenue growth", note_ref: "Note 8, Note 29 (AR p.97, 104)", rating: "Watch"}
+  - {rank: 11, finding: "Current investments (mutual funds) rose 4.1x, Rs 4,521.01 lakh to Rs 18,535.82-19,770.45 lakh, funded by property-sale proceeds and corporate-FD rollover, ahead of a Rs 128.36 cr proposed dividend", note_ref: "Note 9, Note 7 (AR p.97-98)", rating: "Watch"}
+  - {rank: 12, finding: "Imported raw materials consumed (Rs 9,433.09 lakh, Note 27(b)) vs CIF-basis imports (Rs 6,598.00 lakh, Note 37) diverge by ~Rs 2,835 lakh in FY26, unreconciled in the notes", note_ref: "Note 27(b), Note 37 (AR p.104, 107)", rating: "Watch"}
+  - {rank: 13, finding: "No related-party transaction with Zenrock Chemicals (incoming controlling shareholder) disclosed anywhere in Note 40", note_ref: "Note 40 (AR p.108-109)", rating: "Watch"}
+  - {rank: 14, finding: "Leave Encashment actuarial: FY26 current service cost (Rs 110.18 lakh) exactly equals benefits paid (Rs 110.18 lakh); the Rs (35.06) lakh actuarial gain does not appear to flow into stated Total Expenses Recognised", note_ref: "Note 30 (AR p.105, 143)", rating: "Watch"}
+  - {rank: 15, finding: "Note 43(B) Liquidity Risk gives no maturity-bucketed table, only a cross-reference to Note 21, thinner than the adjacent Credit Risk and Market Risk sections", note_ref: "Note 43(B) (AR p.112, 150)", rating: "Watch"}
+red_flags:
+  - "Rs 509.04 lakh ICD to insolvent Radius Estates carried with no principal ECL provision and omitted from Note 43(A) credit-concentration narrative, despite auditor Emphasis of Matter"
+  - "Rs 3,397.39 lakh FY26 + Rs 2,805 lakh FY25 asset sales to exiting promoter family; Office Premises sold at 3.01x book value with no independent valuation disclosed for the specific asset"
+  - "FY25 Rs 2,805 lakh related-party flat sale has no matching disposal entry in either FY25 asset-movement note in this document"
+  - "~66% of FY26 investment property monetisation (Rs 2,805 lakh) went to a counterparty not named as related in Note 40"
+  - "Note 41 fair value hierarchy misclassifies the unquoted Mercedes Benz preference shares as Level 1 and mislabels the cost-carried subsidiary investment as the Level 3 line"
+  - "Note 45(d)/46(d) Return on Equity Ratio equals Basic EPS, not a computed ROE%, in both standalone and consolidated statements and both years"
+questions_for_mgmt:
+  - "What independent valuation supports the Rs 1,400 lakh Office Premises sale to Pranika Jain and Sreelekha Jain, priced at 3.01x net book value (Note 1/34/40)?"
+  - "Who is the counterparty for the ~Rs 2,805 lakh (66%) of FY26 investment property disposal not identified as a related party in Note 40 (Note 4)?"
+  - "What account records the FY25 Rs 2,805 lakh related-party flat sale to Sreelekha Jain and Saumya Jain, given no matching entry exists in the FY25 columns of Note 1 or Note 4?"
+  - "Why does Note 43(A) Credit Risk state no significant single-counterparty exposure exists, when the Company carries a Rs 509.04 lakh ICD to an insolvent counterparty with no principal provision?"
+  - "What is the correct standalone and consolidated Return on Equity percentage for FY26 and FY25, given Note 45(d)/46(d) currently report figures identical to Basic EPS?"
+receivables_trend: "improving - Note 10/43(A) ageing shows the >90-days-past-due book fell from Rs 95.50 lakh (FY25) to Rs 0 (FY26); Not-due receivables fell from Rs 1,348.34 lakh to Rs 1,034.86 lakh alongside total receivables falling from Rs 1,578.73 lakh (net) to Rs 1,037.92 lakh (net); the sole legacy doubtful item (Rs 118.22 lakh FY25) is now fully provided (Rs 126.84 lakh, Note 33); Trade Receivables Turnover rose 38.10% (11.92x to 16.47x, Note 45(f)/46(f))"
+restatements_found: []
+going_concern_language: "NONE - only the routine 'prepared on accrual and going concern basis' statement in accounting policy (a), AR p.88/126; no risk-specific going-concern language, qualification, or material uncertainty paragraph found in any note across all three passes"
+analyst_note: "The two most consequential Pass 3 reconciliations both narrow rather than widen Pass 1's framing, but the narrowed version is still a red flag, not a clearance. The Office Premises RPT sale is a large profit over book (3.01x), which argues against a cheap insider sale, but no independent valuation of that specific property is disclosed. The Note 41 fair-value-hierarchy error and the ROE-ratio-equals-EPS error are two independent real disclosure defects reflecting preparer quality, scored into accounting_quality on their own terms. The Radius Estates ICD remains the single highest-severity item: an unprovided exposure to an insolvent counterparty, invisible in the note purpose-built to disclose exactly that risk."

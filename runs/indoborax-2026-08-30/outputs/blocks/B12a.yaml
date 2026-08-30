@@ -1,0 +1,13 @@
+stage: B12a
+company: "INDOBORAX"
+run_date: "2026-08-30"
+model: claude-haiku-4-5
+status: complete
+numbers_checked: 18
+findings:
+  - {severity: "MAJOR", location: "01-gate0.md Block B, line B4 (B4 Working Capital Days)", claimed: "FY26 inventory days 53.94, payable days 5.25 (WC Days total 66.27)", source_truth: "AR Note 27 COGS basis gives FY26 inventory days 101.68, payable days 9.89. Report does not disclose denominator basis, calculation does not reconcile to disclosed figures.", note: "Receivable days calculation is correct (17.58). The inventory-days and payable-days figures do not match standard COGS-denominator formula applied to AR-disclosed line items. The denominator basis is not stated in the report. This affects Block B4 score and the WC Days swing narrative, both verdict-card inputs.", source_fidelity: true}
+critical_count: 0
+major_count: 1
+minor_count: 0
+acceptance_rate: 94
+coverage_note: "Audit covered 18 material figures across all scorecard blocks (A through E) and operational metrics. Prioritized verdict-card inputs and Section 1B input figures. Revenue, PAT, EPS, balance-sheet balances, ratios, and shareholding all verified against AR disclosed figures. Working Capital Days figures flagged as unreconciled. Current Ratio and Net Cash calculations within acceptable rounding variance. All other figures verified clean or matching to stated anchors."

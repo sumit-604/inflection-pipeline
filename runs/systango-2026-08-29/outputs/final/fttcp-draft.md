@@ -7,6 +7,33 @@ Deliberation: converged at iteration 5 of the 8 iteration cap. No call left open
 
 ---
 
+## 0. OPERATOR AMENDMENT LOG — 30 AUGUST 2026 (authoritative; governs where it touches the sections below)
+
+The operator accepted the deliberation in substance on 30 August 2026. The composite of **1 of 8** and the **DEEP WATCH leaning AVOID** band STAND. The four backward verdicts stand. The signed mental model is not re-opened. This log records the settled rulings and the four amendments; where it touches a section below, this log governs.
+
+### Settled operator rulings (P/E base card splits closed)
+- **R1 Cash multiplier 1.00x, GROWTH INDUCED and unwound: APPROVED as drafted.** The web handover's 0.80x provisional recommendation is WITHDRAWN. The Phase 1 INDETERMINATE is resolved to GROWTH INDUCED. **Amendment-log note (provenance):** the web layer's supersession claiming the FY26 cash figure was "not established" was WRONG; the corpus held the audited answer at results p.18 (consolidated CFO/PAT 1.06x, standalone 0.90x). Provenance discipline failed on the web side, not the corpus side.
+- **R2 Undiscovered Alpha NOT APPLIED (1.00x), neutral not a penalty: APPROVED.** The Kacholia-exit falsification is a filed-source fact and is not converted into a negative adjustment anywhere else in the build.
+- **R3 Amendment 17 NON CONVERTER: APPROVED.** Condition (a) fails cleanly (labour is not a traded/quoted commodity); the dossier's "default to CONVERTER if ambiguous" is WITHDRAWN because the case is not ambiguous.
+- **R4 Governance into r, not additive PE: APPROVED.** The +1.5 governance component in the r build is accepted. Confirmed NOT double-charged: Track 2 (Additive) carries no governance deduction, and no pillar is docked for governance; it lives only in r on Track 1 (checked against the P/E base card build).
+- **R5 Governing track Track 1 (RRM), destination 16.8x, range 15.5x-18.0x: APPROVED.** Track 2 (Additive, 24.0x) retained as the labelled cross-check.
+
+### Amendments applied (detail in the amended sections; consolidated here)
+- **A1 Revenue: TWO paths carried to Role 1.** BASE 17% CAGR (the Amendment 14 industry rate where EM is NONE) and DOWNSIDE 10% CAGR (the B09 execution-bounded credibility-haircut case). Score UNCHANGED: STAGNANT, 0, on both paths (the score is set by catalyst strength Weak and forward probability ~35%, neither a function of the projected growth rate). Rationale the operator flagged: the D-grade record is already charged at Pillar 3a (+0x) and in r; halving the growth rate a third time risks stacking, so the framework's own industry rate (17%) is the BASE and the 10% haircut is the DOWNSIDE. See section 2.1.
+- **A2 Margin: the H2 other-expenses jump is now a NAMED CORPUS GAP** (peer of the SEZ-expiry and Step 1C gaps) and a Step 5 trigger. SUSTAINED (not FIRING) is recorded as PEER-CEILING EXHAUSTION, not weak expansion. Holding 33.05% across projected years is the operator-endorsed conservative choice. Score UNCHANGED: 0. See section 2.2.
+- **A3 Cash: score restated +1 CONDITIONAL**, condition in the scorecard row itself — reverts to 0 (and Pillar 2 to 0.80x, governing destination 16.8x → 13.4x) if the FY26 AR shows the release came from write-offs or factoring rather than collection. Resolves September, before the November revenue print. See section 2.3 and the scorecard.
+- **A4 ROCE: reported vs operating return split out** with arithmetic, and the FY26 capital-allocation split recorded. The projected 33% → ~26% fade is a capital-allocation outcome (treasury accumulation), not operational decay. Score UNCHANGED: 0; Pillar 1 handoff 33.0%, route NONE, no recovery credited, APPROVED. See section 2.4.
+
+### Still open — NOT closed (halt at O1)
+- **O1 Earnings basis (forward FY27 EPS vs trailing FY26 EPS): OPERATOR RULING PENDING.** Not ruled. The VALUATION PILLAR APPROVAL gate stays open; `fttcp-deliberation.md` is NOT written until this is ruled. Settled sub-part: the multiple meets OPERATING EPS Rs 18.43 (FY26), not reported Rs 21.73 (Module B4).
+- **O2 Option probabilities and mature-revenue estimates: OPERATOR INPUT PENDING** (Amendment 18 Option Resolution Calendar). Dated resolution points: FY26 AR (Sep-2026), H1 FY27 (Nov-2026).
+- **O3 Step 1C live peer table: CLAUDE WEB OWES THIS** (KSOLVES, INFOBEAN, ONWARDTEC, YUDIZ; P/E, EV/EBITDA, P/B, revenue growth, ROCE). Left PENDING LIVE PEER TABLE; pillar destination governs in the interim (Amendment 20.1 bars memory multiples).
+- **O4 SEZ Section 10AA expiry date: NOT FOUND, carried.** Post-expiry operating EPS Rs 16.95 (8.0% haircut) recorded; Year 3 uses post-expiry economics once the date is established from the FY26 AR tax note.
+
+Promoter override (29 August 2026) stands and must be printed alongside any BUY/WATCHLIST card in Phase 3. No fair value, entry zone, or MoS price is produced here.
+
+---
+
 ## 1. MY RULINGS
 
 Every call below is made. Nothing here is a question.
@@ -71,24 +98,32 @@ FY22 to FY26 are ACTUAL and anchored. FY27 to FY31 are EXPECTED and ILLUSTRATIVE
 
 **Named assumptions behind every EXPECTED column** (required by Amendment 18.0 where the corpus holds no anchor): the Emerging Moat classification is NONE, so Amendment 14 fades growth to industry rate immediately from Year 1. The industry anchor used is the B09 execution bounded SOM CAGR of 10%, not the 17% blended market growth, because B09 halved the historical rate explicitly for the D grade delivery record. Margin is held at the H2 FY26 exit rate of 33%, not the full year 37.66%, because the exit rate is the live rate. Tax is held at the FY26 effective 18.64%; the SEZ expiry date is NOT FOUND in the corpus, and the post expiry sensitivity is shown separately.
 
-### 2.1 Revenue growth
+### 2.1 Revenue growth  [AMENDED A1 — dual path]
 
-| Year | Revenue Rs cr | Growth | Basis |
+TWO expected paths now carry to Role 1 (amendment A1). The BASE is the 17% industry rate that Amendment 14 specifies where the Emerging Moat classification is NONE. The DOWNSIDE is the B09 execution-bounded 10%, which is the historical realised 20% CAGR halved as an explicit credibility haircut for the D grade delivery record. The 10% was the sole path in the first draft; the operator ruled that the D grade record is already charged at Pillar 3a (+0x) and again in r, so halving the growth rate a third time risks stacking the same fact. Both paths are shown; Role 1 values on both.
+
+| Year | ACTUAL / BASE 17% | DOWNSIDE 10% | Basis |
 |---|---|---|---|
-| FY22 | 32.69 | — | ACTUAL (screener Data_Sheet) |
-| FY23 | 52.34 | +60.1% | ACTUAL (screener; deck Rs 523 mn) |
-| FY24 | 56.57 | +8.1% | ACTUAL |
-| FY25 | 67.14 | +18.7% | ACTUAL (results p.17) |
-| FY26 | 90.38 | +34.6% | ACTUAL (results p.17) |
-| FY27 | 99.4 | +10% | EXPECTED, illustrative |
-| FY28 | 109.4 | +10% | EXPECTED, illustrative |
-| FY29 | 120.3 | +10% | EXPECTED, illustrative |
-| FY30 | 132.3 | +10% | EXPECTED, illustrative |
-| FY31 | 145.6 | +10% | EXPECTED, illustrative |
+| FY22 | 32.69 | 32.69 | ACTUAL (screener Data_Sheet) |
+| FY23 | 52.34 (+60.1%) | 52.34 | ACTUAL (screener; deck Rs 523 mn) |
+| FY24 | 56.57 (+8.1%) | 56.57 | ACTUAL |
+| FY25 | 67.14 (+18.7%) | 67.14 | ACTUAL (results p.17) |
+| FY26 | 90.38 (+34.6%) | 90.38 | ACTUAL (results p.17) |
+| FY27 | 105.7 | 99.4 | EXPECTED, illustrative |
+| FY28 | 123.7 | 109.4 | EXPECTED, illustrative |
+| FY29 | 144.8 | 120.3 | EXPECTED, illustrative |
+| FY30 | 169.4 | 132.3 | EXPECTED, illustrative |
+| FY31 | 198.2 | 145.6 | EXPECTED, illustrative |
 
-Half by half, FY26 went 45.49 then 44.89. The second half was smaller than the first. Growth against the prior year half fell from 58.1% to 17.0%. The three year CAGR of 19.97% is real and was earned, but it was earned in one twelve month burst that has already ended. The FY29 and FY31 illustrative figures land on Rs 120.3 cr and Rs 145.6 cr, which are exactly the B09 three year and five year SOM figures, so the fade path and the market sizing agree.
+The DOWNSIDE FY29 and FY31 land on Rs 120.3 cr and Rs 145.6 cr, exactly the B09 three year and five year SOM figures, so that path and the market sizing agree. The BASE path lands on Rs 144.8 cr FY29 and Rs 198.2 cr FY31.
 
-**Backward verdict: FIRING. Forward verdict: STAGNANT. Score 0.**
+Half by half, FY26 went 45.49 then 44.89. The second half was smaller than the first; growth against the prior year half fell from 58.1% to 17.0%. Two run-rate facts the operator asked to be recorded plainly, both true and pointing opposite ways:
+- Annualising H2 FY26 (Rs 44.89 cr) gives about Rs 89.8 cr, effectively flat against the FY26 actual of Rs 90.38 cr. The most recently observed run rate is ZERO growth. Against that observed half, even the 10% path is GENEROUS: the 10% base needs H1 FY27 of roughly Rs 49 to 50 cr, a re-acceleration from a standing stop, and it sits above the Rs 45 cr that Step 5 trigger 2 marks as DECLINING.
+- Against history and the market, the 10% is HARSH: it halves a realised 20% CAGR and sits below the 17% industry rate. That is why 17% is the BASE and 10% the DOWNSIDE, not the reverse.
+
+The three year CAGR of 19.97% is real and was earned, but it was earned in one twelve month burst that has already ended.
+
+**Backward verdict: FIRING. Forward verdict: STAGNANT. Score 0. The score does not move with the growth path (it is set by catalyst strength Weak and forward probability ~35%); A1 is a valuation input, not a verdict change.**
 
 ### 2.2 Margin expansion
 
@@ -103,7 +138,11 @@ Half by half, FY26 went 45.49 then 44.89. The second half was smaller than the f
 | FY26 H2 | 33.05% | ACTUAL |
 | FY27 to FY31 | 33.0% held | EXPECTED, illustrative |
 
-The full year number rose. The exit rate fell. Both are true and the second one matters more. Other expenses more than doubled between the halves, Rs 4.69 cr to Rs 9.55 cr, and nothing in the corpus says why. Employee cost grew 12.5% against revenue up 34.6%, which is genuine operating leverage and is the reason the full year looks strong. At 37.66% Systango is above every peer in the corpus, so there is no headroom argument left.
+The full year number rose. The exit rate fell. Both are true and the second one matters more. Employee cost grew 12.5% against revenue up 34.6%, which is genuine operating leverage and is the reason the full year looks strong.
+
+**Why SUSTAINED and not FIRING: peer-ceiling exhaustion, not weak expansion (amendment A2).** The two-year expansion of 674 basis points alone reads FIRING. It rounds down to SUSTAINED because the FIRING band also needs the current margin below the peer ceiling with room to grow, and at 37.66% Systango sits ABOVE every peer in the corpus: Ksolves 29.7% FY26 (guiding 25-30%), InfoBeans about 26% FY26 (24% target), Onward 13.2% FY26. The reason for the round-down is that there is no headroom left, not that expansion is weak. The distinction matters to the read: this is a margin at its ceiling, not a margin failing to climb. Holding the H2 exit rate of 33.05% across every projected year, rather than the full year 37.66%, is the operator-endorsed conservative choice, supported by the peer mean-reversion pattern: Ksolves walked its margin down from 34.8% to 29.7% and disclosed the cause as a failed strategic bet.
+
+**NAMED CORPUS GAP (A2), equal in status to the SEZ expiry date and Step 1C.** Other expenses more than doubled between the halves, Rs 4.69 cr in H1 to Rs 9.55 cr in H2 FY26, while revenue was flat, and this drove the 916 basis point margin give-back. It is the single largest unexplained item in the FY26 accounts. It is unexplained in every filing, and no investor call has been held since 17 November 2023 to explain it. Until the FY26 AR notes disclose the composition of that H2 increase, the item is UNRESOLVED and the 33% held margin is the governing assumption rather than a conservative one. Added to Step 5 as trigger 13.
 
 **Backward verdict: SUSTAINED. Forward verdict: STAGNANT. Score 0.**
 
@@ -118,9 +157,11 @@ The full year number rose. The exit rate fell. Both are true and the second one 
 | FY26 | 31.88 | 33.77 | 1.059x | ACTUAL (results p.18) |
 | FY27 to FY31 | — | — | 0.85x held | EXPECTED, illustrative |
 
-Standalone tells the same story: 0.348x in FY25 became 0.899x in FY26. Receivables released Rs 3.70 cr of cash at group level in FY26 after eating Rs 4.72 cr in FY25. Revenue grew 34.6% in the same year. A working capital drag that unwinds while growth accelerates is growth induced, not structural. This is the transition the Phase 1 gate called INDETERMINATE, and the evidence it said was missing was already sitting in the 14 May 2026 filing.
+Standalone tells the same story: 0.348x in FY25 became 0.899x in FY26. Receivables released Rs 3.70 cr of cash at group level in FY26 after eating Rs 4.72 cr in FY25. Revenue grew 34.6% in the same year. A working capital drag that unwinds while growth accelerates is growth induced, not structural. This is the transition the Phase 1 gate called INDETERMINATE, and the evidence it said was missing was already sitting in the 14 May 2026 filing. The operator has resolved the Phase 1 INDETERMINATE to GROWTH INDUCED and approved the 1.00x cash multiplier (ruling R1).
 
-**Backward verdict: IMPROVING. Forward verdict: STARTING. Score +1.**
+**The +1 is CONDITIONAL on the FY26 AR (amendment A3).** It rests on a single audited year. Two mechanisms could make the FY26 release cosmetic rather than earned, and neither is testable from the results filing: receivable write-offs, and factoring or discounting of receivables. Both are visible in the FY26 AR ageing schedule and accounting policies. **If the FY26 AR shows the release came from write-offs or factoring rather than collection, this score reverts to 0 and the Pillar 2 cash multiplier reverts to 0.80x, which takes the governing destination PE from 16.8x to 13.4x.** This is the largest single sensitivity in the build and it resolves in September 2026, before the November revenue print.
+
+**Backward verdict: IMPROVING. Forward verdict: STARTING. Score +1 CONDITIONAL (reverts to 0 on an FY26 AR write-off/factoring finding).**
 
 ### 2.4 ROCE and capital efficiency
 
@@ -133,9 +174,20 @@ Standalone tells the same story: 0.348x in FY25 became 0.899x in FY26. Receivabl
 | FY26 | 33.0% | 135.53 | computed, ACTUAL |
 | FY27 to FY31 | 26% fading | rising | EXPECTED, illustrative |
 
-The 33.0% is verified, not taken on trust. EBIT of Rs 39.24 cr (PBT Rs 39.18 cr plus finance cost Rs 0.06 cr) over average capital employed of Rs 118.93 cr gives 32.99%, which reconciles exactly to the deck's stated 33%. On closing capital employed it is 28.95%. The operating business underneath is far more efficient than either figure: strip the Rs 118.5 cr of treasury and cash and the operating capital is about Rs 17 cr carrying Rs 33.3 cr of operating EBIT. The published ROCE is therefore the conservative reading, and it is falling toward the treasury as retained profit piles into investments rather than into the business.
+The 33.0% is verified, not taken on trust. EBIT of Rs 39.24 cr (PBT Rs 39.18 cr plus finance cost Rs 0.06 cr) over average capital employed of Rs 118.93 cr gives 32.99%, which reconciles exactly to the deck's stated 33%. On closing capital employed it is 28.95%.
 
-**Backward verdict: SUSTAINED. Forward verdict: STAGNANT. Score 0.**
+**Reported vs operating return, side by side (amendment A4).**
+
+| Basis | EBIT Rs cr | Capital Rs cr | ROCE |
+|---|---|---|---|
+| REPORTED (blended, treasury in denominator) | 39.24 | 118.93 (avg CE) | 33.0% |
+| OPERATING (treasury and its income stripped) | ~33.3 | ~17 | ~190%+ |
+
+Reported ROCE of 33.0% includes Rs 118.5 cr of treasury and cash sitting in the denominator earning Rs 5.94 cr of other income in the numerator. Strip both, consistently, and the operating business runs about Rs 33.3 cr of operating EBIT on roughly Rs 17 cr of operating capital. The operating engine is not the constraint. **The consequence, stated plainly: the projected fade from 33% to about 26% is driven by treasury accumulation, not by operational decay. It is a capital allocation outcome within management's control, not a deterioration in business quality.**
+
+**FY26 capital allocation split (A4, recorded for the operator).** Of the cash the business threw off and the balances it moved in FY26: Rs 43 cr absorbed into investments; Rs 10.3 cr returned as the first-ever dividend (Rs 7/share); Rs 5.30 cr in unnamed "Others" loans; Rs 1.66 cr into DBX Holdings equity; Rs 2.40 cr in new long-term advances; against PPE additions of Rs 0.45 cr and intangibles of Rs 0.09 cr. Almost none of the retained profit went into the operating business; most went into treasury and related-party-adjacent lines. That is the ROCE story and the capital-allocation flag in one.
+
+**Backward verdict: SUSTAINED. Forward verdict: STAGNANT. Score 0. Pillar 1 handoff 33.0%, route NONE, no recovery credited — APPROVED by the operator.**
 
 ---
 
@@ -163,9 +215,11 @@ The composite is **1 out of 8**, which is the **DEEP WATCH leaning AVOID** band,
 |---|---|---|---|---|---|
 | Revenue growth | FIRING | Weak | ~35% (6m) | STAGNANT | 0 |
 | Margin expansion | SUSTAINED | Moderate (cost side only) | ~25% (6m) | STAGNANT | 0 |
-| Cash conversion | IMPROVING | Moderate to Strong (documented, delivered) | ~55-60% (6m) | STARTING | +1 |
+| Cash conversion | IMPROVING | Moderate to Strong (documented, delivered) | ~55-60% (6m) | STARTING — CONDITIONAL on FY26 AR | +1* |
 | ROCE / capital efficiency | SUSTAINED | Weak | ~30% (12m) | STAGNANT | 0 |
 | | | | | **COMPOSITE** | **1 / 8** |
+
+*The cash +1 is CONDITIONAL (amendment A3): if the FY26 AR ageing schedule or accounting policies show the FY26 receivable release came from write-offs or factoring rather than collection, this score reverts to 0 (composite would be 0 of 8, deeper into AVOID) and the Pillar 2 cash multiplier reverts to 0.80x, moving the governing destination PE from 16.8x to 13.4x. Resolves September 2026.
 
 Kernex cap: NOT ENGAGED (no transition DECLINING; revenue catalyst Weak, not NONE).
 TRIM rule: NOT ENGAGED (backward was not four FIRING).
@@ -188,22 +242,37 @@ Backward composite: 4 positive of 4, BACKWARD PASS. Forward is where this name f
 | 10 | Investor call | Any call held for any period after Nov 2023 | 12 months | Lifts STALE CONCALL MODE; restores forward catalyst evidence |
 | 11 | Catalyst absence test | No mention of AI mix revenue in a FILED document | 12 months | Confirms catalyst absence; verdict unchanged |
 | 12 | Treasury | Deployed or returned, falling below Rs 90 cr | 12 months | ROCE STAGNANT to RECOVERING |
+| 13 | FY26 AR other-expenses note (A2) | Composition of the H2 FY26 doubling (Rs 4.69 cr to Rs 9.55 cr) disclosed | Sep 2026 | Until disclosed, the H2-exit 33% held margin is the governing assumption, not a conservative one |
 
 Re-engagement rule: if 3 or more of these fire favourably and revenue shows directional improvement, re-run FTTCP in full.
 
-### Handoff to valuation
+### Handoff to valuation  [AMENDED 30-Aug-2026 — status column added]
 
-| Field | Value |
-|---|---|
-| ROCE forward verdict | STAGNANT |
-| Pillar 1 ROCE implied | Current ROCE, 33.0% (per the FTTCP Pillar 1 table, STAGNANT row) |
-| ROCE recovery credited via | NOT CREDITED (no recovery claimed) |
-| Pillar 1 normalization route | NONE (Route A fails the 20% trigger at 12.6%; Route B fails, ROCE not depressed) |
-| Converter classification | NON CONVERTER (Amendment 17.0 condition (a) fails) |
-| Cash multiplier | 1.00x, GROWTH INDUCED and unwound |
-| Sector cap row Phase 3 must use | Platform / SaaS / IT services, 45x |
-| SHARED CATALYST flag | NONE (no catalyst drives both Pillar 1 and Pillar 3; Pillar 3 pays +0x) |
-| Step 1C relative cross-check | **PENDING LIVE PEER TABLE.** Claude Code holds no live market data; memory pulled multiples are barred (Amendment 20.1). Pillar destination governs by default until claude.ai supplies the live dated peer table. |
+| Field | Value | Status |
+|---|---|---|
+| ROCE forward verdict | STAGNANT | APPROVED |
+| Pillar 1 ROCE implied | Current ROCE, 33.0% (STAGNANT row) | APPROVED |
+| ROCE recovery credited via | NOT CREDITED (no recovery claimed) | APPROVED |
+| Pillar 1 normalization route | NONE (Route A fails 20% trigger at 12.6%; Route B fails, ROCE not depressed) | APPROVED |
+| Converter classification | NON CONVERTER (Amendment 17.0 condition (a) fails cleanly) | APPROVED (R3) |
+| Pillar 1 base PE | 24.0x (0.5 x 33.0 + 7.5) | APPROVED |
+| Cash multiplier (Pillar 2) | 1.00x, GROWTH INDUCED and unwound | APPROVED (R1) |
+| Cash multiplier — conditional swing | Reverts to 0.80x if FY26 AR shows write-off/factoring, not collection; destination 16.8x → 13.4x | CONDITIONAL (A3), resolves Sep-2026 |
+| Pillar 3 growth premium | +0x (3a 0 grade D; 3b 0 EM 10; 3c 0) | APPROVED |
+| Strategic premium | +0x; ROCE option barred | APPROVED |
+| Undiscovered Alpha | NOT APPLIED (1.00x), neutral not penalty | APPROVED (R2) |
+| r build (RRM track) | 16.0% (base 14.0 + governance 1.5 + complexity 0.5); governance NOT double-charged | APPROVED (R4) |
+| Governing track / destination PE | Track 1 (RRM) 16.8x, range 15.5x-18.0x; Track 2 (Additive) 24.0x as cross-check | APPROVED (R5) |
+| Revenue projection paths | BASE 17% CAGR (FY29 144.8, FY31 198.2) and DOWNSIDE 10% CAGR (FY29 120.3, FY31 145.6); value on both | AMENDED (A1) |
+| Margin projection | H2 exit 33.05% held; governing, not conservative, until the A2 other-expenses gap clears | AMENDED (A2) |
+| Sector cap row Phase 3 must use | Platform / SaaS / IT services, 45x | APPROVED |
+| SHARED CATALYST flag | NONE (Pillar 3 pays +0x) | APPROVED |
+| Operating EPS (Module B4) | Rs 18.43 FY26 (reported Rs 21.73); treasury Rs 118.5 cr / Rs 80.8 per share enters the equity bridge | APPROVED |
+| Earnings basis (forward vs trailing) | UNRULED | **PENDING (O1) — halt gate** |
+| Option Resolution Calendar (Amdt 18) | probabilities and mature revenue not supplied | PENDING (O2) |
+| Step 1C relative cross-check | PENDING LIVE PEER TABLE (Amdt 20.1 bars memory multiples; pillar governs in interim) | PENDING (O3), claude.ai owes |
+| SEZ 10AA expiry / post-expiry basis | expiry NOT FOUND; post-expiry operating EPS Rs 16.95 (8.0% haircut); Year 3 uses it once dated | PENDING (O4) |
+| Promoter override (29-Aug-2026) | CONCERN, operator-overridden to proceed; must be printed alongside any BUY/WATCHLIST card | STANDS |
 
 ### FTTCP PART B — normalization output sheet
 
@@ -249,12 +318,12 @@ One entity, one card. This is a preview of the exit multiple base, not the valua
 |---|---|---|---|---|
 | Pillar 1 ROCE | **33.0%**, route NONE | EBIT Rs 39.24 cr over average CE Rs 118.93 cr = 32.99%, reconciles exactly to the deck's 33%. Closing CE basis gives 28.95%. Treasury sits in both numerator and denominator, so this is the conservative consistent read. | no dossier pre-ruling on the ROCE figure | no |
 | Pillar 1 base PE | **24.0x** | 0.5 x 33.0 + 7.5 = 24.0 (Amendment 5, ceiling 30x per Amendment 11) | no dossier pre-ruling | no |
-| Pillar 2 cash multiplier | **1.00x**, GROWTH INDUCED, unwound | FY26 CFO/PAT 1.06x consolidated and 0.90x standalone, audited. Series 0.51/0.52/1.06 is volatile, which is the 1.00x band. Not 0.80x (that band is "below 30%"); not 1.30x (needs sustained). | **0.80x** growth induced, no offset, provisional pending FY26 AR | **YES** |
+| Pillar 2 cash multiplier | **1.00x**, GROWTH INDUCED, unwound | FY26 CFO/PAT 1.06x consolidated and 0.90x standalone, audited. Series 0.51/0.52/1.06 is volatile, which is the 1.00x band. Not 0.80x (that band is "below 30%"); not 1.30x (needs sustained). CONDITIONAL swing to 0.80x if FY26 AR shows write-off/factoring (A3). | dossier 0.80x provisional **WITHDRAWN** by R1 | SETTLED — Claude Code reading approved (R1) |
 | Pillar 3 growth premium | **+0x** (3a 0, 3b 0, 3c 0) | Delivery grade D pays +0x on 3a outright; EM score 10 is below the 25 floor for 3b; no documented 2.5 year revenue visibility for 3c. Amendment 16 gate passes but the evidence gates do not. | no dossier pre-ruling; dossier asks whether Amendment 16 opens (it does, and pays nothing) | no |
 | Strategic premium | **+0x** | No licence monopoly, no documented pricing power, no institutional backing. ROCE option barred: no recovery claimed. | no dossier pre-ruling | no |
 | Undiscovered Alpha | **NOT APPLIED (1.00x)** | Premise falsified by the Kacholia exit; third qualifier not evidenced from a filed source. | **PARKED**, do not apply, neutral not negative | no (agree) |
 | Sector cap | **45x** Platform / SaaS / IT services | Matches B04 and the filed single segment description. Not binding on either track. | 45x, verify manifest carries it (it does) | no |
-| Amendment 17 | **NON CONVERTER** | Condition (a) fails: labour is not a traded or quoted commodity. Dossier also mis-states the mechanics (see R17). | asks for a CONVERTER assessment, defaults to CONVERTER if ambiguous | **YES** |
+| Amendment 17 | **NON CONVERTER** | Condition (a) fails cleanly: labour is not a traded or quoted commodity. Dossier also mis-states the mechanics (see R17). | dossier "default to CONVERTER if ambiguous" **WITHDRAWN** by R3 | SETTLED — NON CONVERTER approved (R3) |
 | r build (RRM track) | **16.0%** | base 14.0 micro cap; durability 0 (Unproven band, owns short record per 12C); governance **+1.5** (DBX promoter controlled and undisclosed, Rs 5.30 cr unnamed growing loan book, 33 month call silence, one unaudited subsidiary); cyclical 0; complexity **+0.5** per Amendment 13 (4 subsidiaries in 3 countries, one unaudited; RPT 32 to 42% of standalone revenue); cash conversion r-UP none per 12A; short record r-UP none per 12C. Bounded [9,18]. | directs governance into RRM, does not set a number | no (dossier silent on the number) |
 | RRM | **0.70** | 1 + (13.5 − 16.0) x 0.12 = 0.70, exactly at the lower bound | no dossier pre-ruling | no |
 
@@ -269,17 +338,17 @@ Divergence is 30%, above the 15% threshold, so a governing track must be named. 
 
 **Destination PE range (Amendment 6, plus or minus 7.5%): 15.5x to 18.0x.**
 
-Sensitivity the operator should see before ruling, since Pillar 2 is the one genuine split on this card:
+Pillar 2 is now SETTLED at 1.00x (ruling R1). The sensitivity is retained because the +1 cash score is CONDITIONAL (A3): a write-off/factoring finding in the FY26 AR reverts Pillar 2 to 0.80x, which is the first row below. The 1.15x row is not live; it is shown only as the upper bound.
 
-| Pillar 2 | Track 1 (RRM, governing) | Track 2 (Additive) |
-|---|---|---|
-| 0.80x (dossier) | 13.4x | 19.2x |
-| **1.00x (Claude Code)** | **16.8x** | **24.0x** |
-| 1.15x (upper reading) | 19.3x | 27.6x |
+| Pillar 2 | Track 1 (RRM, governing) | Track 2 (Additive) | Status |
+|---|---|---|---|
+| 0.80x | 13.4x | 19.2x | A3 conditional-revert case (FY26 AR write-off/factoring) |
+| **1.00x** | **16.8x** | **24.0x** | **APPROVED base (R1)** |
+| 1.15x | 19.3x | 27.6x | upper bound, not live |
 
-### THE EARNINGS BASIS QUESTION (operator decides; I do not pick)
+### THE EARNINGS BASIS QUESTION (operator decides; I do not pick) — STILL PENDING (O1), HALT GATE
 
-Choose one, and it governs both ends of the trade per Amendment 18.1:
+As of 30-Aug-2026 this is NOT ruled. The VALUATION PILLAR APPROVAL gate stays open and `fttcp-deliberation.md` is not written until it is ruled. Choose one, and it governs both ends of the trade per Amendment 18.1:
 
 - **One year forward P/E:** the destination multiple applies to FY27 EPS.
 - **Trailing P/E:** the destination multiple applies to FY26 EPS.

@@ -50,3 +50,4 @@ Operator: run /cost and /usage now and paste the cache hit ratio and the loop to
 | 14 | thesis-role2 | claude-opus-4-8 | - | - | - | 102055 | 3m12s | 1 |
 | 12c | verifier-c-valuation | claude-opus-4-8 | - | - | - | 94852 | 4m08s | 2 |
 | 15 | devil-role3 | claude-opus-4-8 | - | - | - | 122272 | 5m39s | 1 |
+| 13 | synthesis-finalize | claude-opus-4-8 | - | - | - | 135519 | 10m18s | 2 |

@@ -9,17 +9,26 @@ in runs/entero-2026-07-27/outputs/reports/09b-understanding-dossier.md.
 Spear: OVERRIDE 2026-08-29 (operator)
 
 ## THESIS (one line)
-Buying Entero at Rs 1,000-1,240 because EPS grows from Rs 49 to Rs 97 over
-three years, driven by 15% organic growth at 1.4-1.5x IPM plus margin
-expansion from MedTech mix and value-over-volume operating leverage, at a
-destination PE of 20-25x for a business whose sector cap row is unset,
-giving a Rs 1,940-2,425 target. Key risk: three-channel NPPA regulatory
-exposure. Cash quality: INDETERMINATE, FCF uncomputable.
+A 4-5% margin pharma/MedTech distribution roll-up priced at ~55x forward
+(2.9x its ~Rs 617 fair value today) must de-rate to ~19x; even bull earnings
+return ~-12%/yr from CMP, so AVOID on valuation, actionable only near
+Rs 451-501 and only after the INDETERMINATE cash resolves (~Nov 2026).
 
 ## DECISION STATUS AND ENTRY ZONE
-Decision Status: WATCHLIST (SHALLOW WATCH at Halt 1)
-Entry zone Rs 1,000-1,240. MoS Rs 995. CMP 2026-08-28 approx Rs 1,806.
-Price is approx 45% above the top of the entry zone.
+Decision Status: AVOID (on valuation), finalized 2026-08-30. Evidence gate
+PROCEED WITH CAVEATS (confidence 85, 0 CRITICAL); investment decision AVOID
+at CMP Rs 1,806.
+Pipeline entry zone Rs 451-501 (destination PE 18-20x mid 19x; one-year-
+forward EPS Rs 26.40 owners'). MoS Rs 432. Hurdle Ratio 0.54 STOP.
+Fair value today ~Rs 617; three-year target ~Rs 929; FV CAGR 14.6%.
+ZONE REACHABILITY: MARKET-UNLIKELY ZONE. Lowest tested since listing Rs 987
+(FY-end closes 987/1,137/1,248); entry top ~49% below. Classify DEEP WATCH,
+not actionable WATCHLIST. Devil's advocate defensible floor ~Rs 285-320 on
+the 12x goodwill-inclusive read.
+Note: the claude.ai handover recommended Rs 1,000-1,240 on a more generous
+20-25x exit and FY30 (5-year-forward) EPS; the strict pillar (19x, nearer
+forward EPS, Tier A 25% hurdle) gives Rs 451-501. Both recorded; the pillar
+is the framework answer.
 
 ## HALT 1 GATE
 - Mental Model signed: SIGNED 2026-08-29 (operator)
@@ -96,7 +105,16 @@ Price is approx 45% above the top of the entry zone.
 - Governance: any independent director resignation within 12 months of the
   19-Aug-2026 AGM; any special resolution drawing >20% institutional
   against.
-- Price: entry becomes live below Rs 1,240.
+- Price: entry becomes live below Rs 1,240 (operator/handover zone). Pipeline
+  strict-pillar buy trigger is Rs 432-501 (MARKET-UNLIKELY on tested history;
+  DEEP WATCH).
+
+Finalized 2026-08-30 (from B14/B11):
+- New M&A > ~Rs 200 Cr consideration in any rolling 12m -> ROCE base 19x
+  reverts to 12x; every fair value falls ~1/3.
+- FY27 EBITDA margin regresses below 4.5%.
+- H1 FY27 audited cash flow (~Nov 2026) confirms structurally negative FCF
+  (receivables ~1.7x revenue, OCF/EBITDA <50%) -> cash flag STRUCTURAL.
 
 ## OPTIONALITY REGISTER (summary)
 Carried from B07.optionality_register (converts on disclosed adoption

@@ -1,0 +1,60 @@
+stage: B03-ardeep
+company: "KRONOX"
+run_date: "2026-08-30"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Note 1 Significant Accounting Policies: confirmed absent from filed document on independent second pass (Balance Sheet note references begin at Note 2, p.92); blocks revenue-recognition/depreciation-life/impairment/ECL-methodology verification"
+  - "CARO clause vii(b) (disputed statutory dues): text truncated mid-sentence in the extraction, no disputed-dues table present (Annexure A, p.87)"
+  - "Nomination & Remuneration Committee composition/attendance table: referenced four times (CG Report, p.65-67) but member names and attendance never printed"
+  - "Annexure D (Rule 5(1) ratio-of-remuneration-to-median-employee, % increase in remuneration): referenced at Board's Report item 40 (p.38) but content absent from the 120-page extraction; CEO-to-median multiple NOT FOUND"
+  - "Promoter shareholding pledge %: not disclosed anywhere in the document (only CARO ix(f), on subsidiary-security pledge, uses the word 'pledge'); NOT FOUND, not assumed nil"
+  - "YoY promoter shareholding % change and FII/DII trend: only the 31-Mar-2026 point-in-time shareholding pattern is given; no FY25 comparative table in this single-AR corpus"
+  - "FD lien disclosure vs company memory (~Rs 52.70 lakh lien-marked FD): re-searched, still not found in Notes 5/9/10/11; unreconciled"
+  - "Post-balance-sheet Indo Borax transaction (per company memory, control acquired Aug-2026): zero reference anywhere in this AR; cannot determine from this document whether it pre- or post-dates the Board's Report item 24 'date of signing' representation"
+flags:
+  - {type: FLAG-CASH, reason: "Mechanically reconstructed and confirmed exact: true Cash Generated from Operations/PBT fell from 115.5% (FY25) to 90.1% (FY26); Net Cash from Operating Activities down 22.2% YoY (Rs 30.697cr to Rs 23.892cr) despite PAT +8.6%; FCF down 25.4% YoY; Rs 64.535cr FD pile growing in parallel with Rs 87.6 lakh total company-wide CWIP (Cash Flow Statement p.95, Note 3 p.100, P&L p.94)"}
+  - {type: FLAG-PROMOTER-PRELIM, reason: "Director remuneration to 3 promoter-directors doubled to Rs 3.96cr (14.3-14.6% of PAT) via Special Resolution the same AGM (18-Aug-2025) that granted all three fresh 3-year re-appointment terms; promoter+group holding 74.21% against near-zero institutional check (AIF+FPI combined 2.13%); pledge % NOT FOUND (document gap, not confirmed nil); no promoter selling evidenced. Full promoter verdict deferred to B08 per protocol."}
+  - {type: FLAG-DISCLOSURE-GAP, reason: "MD&A contains no segment, capacity-utilisation, customer-concentration, FX-sensitivity, SWOT, or Human Resources section; Chairman's Letter 'finalized' Dahej Unit IV restart claim has zero corroborating capex/CWIP/capital-commitment trail anywhere in the same AR (Phase 6E silent drop, materiality: changes the thesis)"}
+phase_verdicts: {p1: "Watch", p2: "Watch", p3: "Watch", p4: "Red Flag", p5: "Watch", p6: "Red Flag", p7_best_fit: "GARP - WATCHLIST"}
+overall_quality: 6
+quality_components: {governance: 6, accounting: 6, balance_sheet: 7, earnings: 5}
+kill_switch_notes:
+  - "Phase 1: no (clean unmodified opinion, clean CARO on every substantive clause; gaps are disclosure/extraction gaps, not audit findings)"
+  - "Phase 2: no alone, but a human reviewer would want the Note 1 gap resolved from the filed exchange copy before Halt 1"
+  - "Phase 3: no (strong balance sheet; cash-conversion decline is a quality-of-growth flag, not a manipulation finding)"
+  - "Phase 4: likely pause to seek MD&A substance from other sources before relying on this AR alone for forward-looking judgment; would not itself halt the run"
+  - "Phase 5: no alone, but attendance shortfall and missing Annexure D should be addressed before treating governance as clean"
+  - "Phase 6: most plausible pause point - Dahej 'finalized deadlines' claim has zero corroborating capex trail in the same document; load-bearing for the transition thesis per company memory"
+triple_pass_verification:
+  verified: 15
+  discrepancies: []
+missing_risks:
+  - {risk: "Customer concentration risk", evidence: "No single-customer or product/geography disaggregation disclosed anywhere; single-segment classification (Note 32) used as the justification (Note 22/32, p.107/110)"}
+  - {risk: "Unhedged FX exposure risk", evidence: "Rs 649.2 lakh unhedged USD trade receivables (+40.1% YoY), zero hedging instruments, no sensitivity table (Note 38, p.117-119); never named as a risk in MD&A"}
+  - {risk: "Capital-allocation / idle-cash risk", evidence: "Rs 64.535cr FD pile (Notes 5/10, p.100/103) growing in parallel with Rs 87.6 lakh total CWIP (Note 3, p.100) and zero Dahej-specific capex; not framed as a risk anywhere in the MD&A or Board's Report"}
+  - {risk: "Independent-director attendance/governance risk", evidence: "Satish Kumar 3/7 (42.9%) and Krutika Negandhi 5/7 (71.4%) FY26 board attendance (CG Report, p.65-66); disclosed as data but never named as a governance concern"}
+guidance_table:
+  - {claim: "Dahej Unit IV production start", number: "production to start within the stated window", timeframe: "coming two years (from FY26 AR, Chairman's Letter, p.18)", credibility: "Low - zero corroborating capex, CWIP addition, or capital commitment disclosed anywhere in this AR despite 'new deadlines have been finalized' language"}
+  - {claim: "Dahej Unit IV full functionality", number: "whole Unit functional", timeframe: "coming three years (from FY26 AR, Chairman's Letter, p.18)", credibility: "Low - same basis as above; no prior-year AR held in this corpus to check delivery history against"}
+monitorables:
+  - {metric: "Capital Work-in-Progress (Dahej-attributable)", threshold: "any material step-up from Rs 87.6 lakh FY26 base", where: "Note 3, CWIP schedule, next AR", why: "Only concrete test of whether the Chairman's 'finalized deadlines' claim is being executed"}
+  - {metric: "Cash Generated from Operations / PBT (reconstructed)", threshold: "reversal above 90.1% or further decline below it", where: "Cash Flow Statement, reconstruct per Phase 2 method (do not use the mislabelled 'Cash Generated from Operations' row directly)", why: "The core quality-of-earnings signal this stage found; FY26 was the second consecutive year of decline in the underlying working-capital drag"}
+  - {metric: "Fixed Deposit balance vs PPE/CWIP additions", threshold: "any narrowing of the gap (FD growth slowing while CWIP/PPE growth accelerates)", where: "Notes 2/3/5/10", why: "Direct test of whether capital allocation is shifting from treasury parking toward the announced growth capex"}
+  - {metric: "Independent director board attendance", threshold: "sustained below 75% for Satish Kumar and/or Krutika Negandhi", where: "next CG Report attendance table", why: "Governance-quality signal; currently disclosed but unacknowledged"}
+  - {metric: "Note 1 and Annexure D availability", threshold: "obtain from filed exchange copy", where: "BSE/NSE filing of the full FY26 AR PDF", why: "Blocks revenue-recognition/depreciation-policy verification and CEO-to-median remuneration ratio; needed before Halt 1"}
+  - {metric: "Indo Borax transaction disclosure", threshold: "any reference in FY27 AR or exchange filings", where: "FY27 AR post-balance-sheet events note, BSE/NSE announcements", why: "Per company memory this occurred Aug-2026 but is entirely absent from this FY26 AR; needs cross-check against exchange filings"}
+ar_new_downstream_entities:
+  - {name: "Jaimin & Associates, Chartered Accountants (FRN 127346W)", where_in_ar: "Board's Report item 16 (p.35); Secretarial Audit Report (p.51); CARO xiv(b) (p.87)", entity_type: "first-ever Internal Auditor, appointed FY2026-27, function live and used by statutory auditor in FY26 itself"}
+  - {name: "Devesh Pathak & Associates, Practising Company Secretaries (FRN S2018GJ621500)", where_in_ar: "Board's Report item 17 (p.35); Secretarial Audit Report signature (p.51); 16th AGM Special Resolution (18-Aug-2025)", entity_type: "first mandatory 5-year Secretarial Auditor appointment (FY2025-26 to FY2029-30) under amended Regulation 24A LODR"}
+strengths_top3:
+  - "Debt-free balance sheet ex trivial vehicle loans (Rs 1.607cr), Rs 64.535cr in FDs, DSCR 17.3x, current ratio 7.6x, clean CARO/fraud/whistleblower record across every clause tested"
+  - "Four-year margin expansion despite flat FY26 revenue: PAT margin 16.82% (FY23) to 25.99% (FY26), independently confirmed via the AR's own Growing Numbers snapshot (p.11)"
+  - "First full post-listing year of governance maturation: live first-year internal audit function used by the statutory auditor, first mandatory 5-year secretarial auditor, zero contingent liabilities, zero MSME payment delays"
+red_flags_top3:
+  - "Dahej Unit IV silent drop: Chairman's 'finalized deadlines' restart claim has zero corroborating capex, CWIP, or capital-commitment trail anywhere in the same AR (total company-wide CWIP Rs 87.6 lakh, capital commitments NIL)"
+  - "Mechanically confirmed cash-conversion deterioration: true Cash Generated from Operations/PBT fell 115.5% to 90.1%, NCFO down 22.2% YoY despite PAT +8.6%, FCF down 25.4% YoY, while Rs 64.5cr accumulates in FDs instead of growth capex"
+  - "MD&A/disclosure substance gap: no segment, capacity, customer-concentration, or FX-sensitivity disclosure; N&R Committee composition and CEO-to-median remuneration ratio missing from the filed text; two independent directors below 75% board attendance (42.9% and 71.4%) unacknowledged"
+best_fit_strategy: "GARP"
+one_line_verdict: "Debt-free, margin-expanding chemicals maker; sole growth catalyst shows zero capex evidence."
+analyst_note: "The stage's highest-value output is the full mechanical reconstruction of the Cash Flow Statement labelling defect B02 flagged: true Cash Generated from Operations (Operating Profit before WC changes plus net WC movement) is 3361.2/3958.0 lakh FY26/FY25, giving CFO/PBT of exactly 90.1%/115.5% - independently cross-corroborated by the AR's own front-matter Growing Numbers table using the correct NCFO figures. Equally load-bearing: total company-wide CWIP is Rs 87.6 lakh, which combined with NIL capital commitments means the Chairman's 'finalized deadlines' Dahej claim has no balance-sheet counterpart anywhere in this AR - flag this specifically for the spear/Halt-1 verification queue, since company memory names Dahej as the single thesis binary. Both findings should carry forward as anchors to Section 1B/FTTCP without re-derivation."

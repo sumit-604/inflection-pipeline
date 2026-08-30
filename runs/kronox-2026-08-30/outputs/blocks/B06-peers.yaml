@@ -1,0 +1,38 @@
+stage: B06-peers
+company: "KRONOX"
+run_date: "2026-08-30"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Indo Borax transcript held (Jun-2026) predates the Kronox acquisition (Reg 30, 20-Aug-2026) by ~2.5 months; cannot address Q5 (Kronox/Dahej commentary) by timing, not by omission"
+flags:
+  - "Kronox's implicit 'difficult macro/tariff-war year' framing for FY26's +1.03% revenue is CONTRADICTED by all three checked peers (+6% to +35% growth same window) despite facing the same or worse documented geopolitical input-cost shock (HIGH, feeds synthesis)"
+  - "Dahej Unit IV zero-specificity capex disclosure benchmarks below the two growth peers (Neogen, TANFACIND) who both anchor comparable expansions to rupee/tonnage/quarter figures plus majority pre-contracted offtake before commissioning (MEDIUM)"
+peers_provided: 11
+verified: []
+partially_verified:
+  - {claim: "Undated/uncosted Dahej capex guidance vs sector norm", peers: ["DMCC", "NEOGEN", "TANFACIND", "INDOBORAX"]}
+  - {claim: "Tariff-war/geopolitical impact cited by Kronox Chairman for FY26", peers: ["DMCC", "NEOGEN", "TANFACIND"]}
+contradicted:
+  - {claim: "Kronox's near-flat FY26 revenue (+1.03%) reflects a sector-wide stall", contradicting_peer: "DMCC (+35% FY26), NEOGEN (+11% FY26, +34% Q1FY27), TANFACIND (+27% FY26)", quote_anchor: "DMCC May-2026 p.3-4/12; NEOGEN May-2026 p.4/21 and Aug-2026 p.4-5/23; TANFACIND May-2026 p.5-6/19"}
+unverifiable:
+  - {claim: "Any peer names Kronox (market share, competitive dynamics)", peers_checked: ["DMCC", "NEOGEN", "TANFACIND", "INDOBORAX"]}
+  - {claim: "Indo Borax commentary on Kronox acquisition/Dahej capital-allocation priorities", peers_checked: ["INDOBORAX"]}
+peer_coverage_map:
+  - {peer: "DMCC", quarter: "Q2FY25/Q4FY25/Q2FY26/Q4FY26 (4 calls)", usage: "SUBSTANTIVE", contribution: "Non-disclosure-style peer counter-model; quantified Middle East sulfur shock; deliberate capex conservatism"}
+  - {peer: "NEOGEN", quarter: "Q2FY26/Q3FY26/Q4FY26/Q1FY27 (4 calls)", usage: "SUBSTANTIVE", contribution: "Gold-standard capex disclosure (rupee/ton/quarter) benchmarking Kronox's Dahej vagueness"}
+  - {peer: "TANFACIND", quarter: "Q4FY26/Q1FY27 (2 calls)", usage: "SUBSTANTIVE", contribution: "Second gold-standard capex discloser; contracted-offtake-before-capex model; regulatory/FX risk disclosure Kronox lacks"}
+  - {peer: "INDOBORAX", quarter: "Q4FY26 (Jun-2026, 1 call)", usage: "SUBSTANTIVE", contribution: "Only window into Kronox's new controlling shareholder; predates Aug-2026 acquisition so cannot address it directly; establishes Zenrock's professional-management/asset-monetisation playbook"}
+industry_cross_read:
+  demand: "Peer consensus is resilient-to-strong domestic demand (DMCC boron/domestic specialty recovery, Neogen pharma/F&F resilience, TANFACIND solar-DHF boom); Europe is the one structurally weak peer segment (DMCC-specific), not a general stall matching Kronox's framing"
+  pricing_inputs: "Universal, independently-corroborated Middle East/Strait-of-Hormuz sulfur and freight cost shock in the same period; all three peers pass it through with a 30-90 day lag, preserving absolute margins"
+  capex_cycle: "Bifurcated, not an industry-wide capacity race: Neogen and TANFACIND aggressively expand via external capital raises (QIP/preferential) anchored to majority pre-contracted offtake; DMCC and Indo Borax stay capex-conservative or undecided with vague guidance resembling Kronox's own Dahej non-disclosure"
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "Single-region raw-material dependency and active de-risking (Indo Borax, boron ore sourcing Turkey/S.America/N.America)"
+  - "Regulatory quota-allocation risk under Montreal Protocol/Kigali Amendment with contract penalty-clause mechanics (TANFACIND HFC-32)"
+  - "FX mark-to-market loss quantified (TANFACIND, Rs 2.5-3 cr M2M loss on rupee depreciation)"
+  - "Detailed quarter-by-quarter insurance/business-continuity claim reconciliation as a disclosure norm (Neogen, Dahej fire)"
+  - "Promoter share-pledge/loan-to-value scrutiny by analysts (Indo Borax call), a governance-risk type Kronox's 100% OFS/promoter-remuneration pattern could invite"
+net_narrative_effect: "complicates"
+analyst_note: "The peer set does two things at once: it lends real credibility to the existence of a 2026 geopolitical input-cost shock (Middle East/Hormuz), but it strips that shock of its explanatory power for Kronox's flat revenue, since every peer facing the same shock still grew double digits. It also nuances rather than resolves the Dahej capex red flag: Kronox's vagueness matches the two peers (DMCC, Indo Borax) who are not currently raising external capital for expansion, and falls well short of the two peers (Neogen, TANFACIND) who are. The cross-peer hypothesis (Part 5) suggests disclosure discipline may be market-imposed via capital raises rather than a pure governance choice, giving stage 8/11 a concrete confirm/kill signal: watch whether any future Kronox capex announcement is paired with a QIP/preferential raise, and whether disclosure specificity jumps accordingly."

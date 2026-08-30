@@ -1,0 +1,24 @@
+stage: B12b
+company: "KRONOX"
+run_date: "2026-08-30"
+model: claude-opus-4-8
+status: complete
+no_concall_mode: true
+independent_flags_found: 9
+caught: 6
+partially_caught: 1
+missed:
+  - {severity: "MAJOR", item: "Earnings quality not flagged: FY26 profit growth (+8.6%) is almost entirely non-operating (other income roughly doubled, Rs 519.40 vs 252.60 lakh; operating PBT +1.2%; revenue from ops +1.03%). Q1 FY27 PAT +38.5% is flattered by a tax-rate fall to 25.6% from 37.5%; operating growth is revenue +13.4% / PBT +16.2%. B05 called the Q1 figure a genuine acceleration without the caveat", anchor: "Board's Report p.36 (l.2992-3011); FY26 results p.2; Q1FY27 results p.3 (l.39-56)"}
+  - {severity: "MINOR", item: "Company took on borrowings in FY26 (proceeds Rs 160.7 lakh, finance cost Rs 11.4 lakh, previously debt-free) while holding a large, growing fixed-deposit balance; unexplained capital-allocation quirk, immaterial amount", anchor: "cash flow l.10859; ratio note debt-equity l.11670-11683; Q1FY27 finance cost l.47"}
+pipeline_flags_not_supported: []
+promise_delivery_spot_checks: {checked: 4, confirmed: 4, wrong: 0}
+credibility_grade_concur: "concur - C holds; low-bar promises delivered, load-bearing Dahej promise missed with no capital backing, and the added earnings-quality finding points down not up"
+redflag_coverage: 78
+findings:
+  - {severity: "MAJOR", location: "B05 Section 2A/2D + analyst_note (earnings quality)", note: "Missed that FY26 profit growth is non-operating (other income doubled; operating PBT +1.2%) and Q1FY27 PAT +38.5% is tax-flattered (eff. tax 25.6% vs 37.5%); thesis-relevant to trigger #2 and forward earnings basis"}
+  - {severity: "MINOR", location: "B05 red_flags (capital allocation)", note: "Missed FY26 shift from debt-free to small borrowings while holding growing fixed deposits; immaterial size"}
+  - {severity: "MINOR", location: "B05 red_flag #4 (MD&A)", note: "Under-weighted: MD&A lacks all company-specific financial-performance and outlook discussion, not only sector data; graded LOW, I read LOW-MEDIUM. Substance caught"}
+critical_count: 0
+major_count: 1
+minor_count: 2
+acceptance_rate: 67

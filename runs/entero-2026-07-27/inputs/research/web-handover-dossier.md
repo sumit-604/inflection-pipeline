@@ -11,6 +11,16 @@ Provenance: claude.ai live-verification layer, operator-ferried into the run
 folder on 2026-08-29 as the FTTCP web-handover-dossier. Entity count: ONE
 (Entero Healthcare Solutions Ltd, consolidated single Ind AS 108 segment).
 
+SUPERSEDING CORRECTION (operator ruling 2026-08-30, governs this file):
+Where PART 0 item 4, PART 2 B2, and PART 2 B5 below state the NET CASH OUTFLOW
+per Rs 100 of acquired revenue is ~Rs 8, that is WRONG. Rs 8 is the GOODWILL
+component only. The net cash outflow is the full Rs 24 (Rs 15-16 working
+capital acquired + Rs 8 goodwill); the two-year payback applies to the Rs 8
+premium, not the Rs 24. Pillar 1 ROCE ruled at 20-25% -> 19x on the
+forward-capital basis (dissent 12x on standard EBIT/avg capital incl.
+goodwill). Use the corrected reading; see companies/ENTERO.md operator ruling
+2026-08-30.
+
 ---
 ## PART 0 — CORRECTIONS REGISTER
 Eight corrections were made during this cycle. Recording them openly, per

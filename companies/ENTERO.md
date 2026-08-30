@@ -48,6 +48,25 @@ Price is approx 45% above the top of the entry zone.
   SHALLOW WATCH recommendation; model signed; full pipeline authorised)
 
 ## OPERATOR RULINGS
+- 2026-08-30: PILLAR 1 ROCE base set at 20-25%, ROCE Base Multiple 19x.
+  Anchor (filed): Prabhat Agrawal, Q4 FY24 concall. Reading: cash outflow
+  to buy Rs 100 of revenue at 6x is the full Rs 24 (Rs 15-16 working capital
+  acquired + Rs 8 goodwill); the two-year payback applies to the Rs 8
+  premium, not the Rs 24. Post-acquisition the business earns Rs 4 on ~Rs
+  16-20 operating capital = 20-25% ROCE at 19x. Basis: Pillar 1 prices
+  FORWARD capital deployment; base case is 15% organic, no new M&A, so
+  incremental capital is working capital not goodwill; accumulated goodwill
+  from ~50 deals is sunk. DISSENT on record: standard EBIT/avg capital
+  employed incl. goodwill = ~9.9% FY26 / ~14% annualised Q1 FY27 -> 12x.
+  Operator ruled 19x on the management basis; both recorded. CONDITION: new
+  acquisitions above ~Rs 200 Cr consideration in any rolling 12m window
+  revert incremental capital to the blended rate and Pillar 1 to 12x; review
+  each quarterly tracker run. CORRECTION LOGGED: an earlier claude.ai
+  reading stated NET CASH OUTFLOW as Rs 8; that is wrong, Rs 8 is the
+  goodwill component and net outflow is the full Rs 24. Any downstream stage
+  that consumed the Rs 8 net-outflow figure must re-derive.
+- 2026-08-30: Role 5.5 tracker gate CLEARED. 15 rows written to the Notion
+  DOWNSTREAM SIGNAL TRACKER by claude.ai (see ROLE 5.5 TRACKER PROOF below).
 - 2026-08-29: Halt 1 decision OVERRIDDEN to PROCEED. The claude.ai Halt 1
   package recommended SHALLOW WATCH (re-rating priced in, price ~45% above
   the entry zone). Operator elects to run the full pipeline (Phase 2 /fttcp
@@ -87,12 +106,18 @@ distribution contract durability; Anand Chemiceutics Applied Genomics
 revenue; network-reach reconciliation.
 
 ## OPEN ITEMS FOR THIS RUN
-- ROCE denominator. Company reports 21.1% Q1 FY27; balance-sheet-derived
-  approx 10.5%; third-party trace shows 10.7% FY25 and approx 10% FY26.
-  Weight of evidence favours the lower figure. Pillar 1 cannot run until
-  settled.
-- Section 1B has no pharma/MedTech distribution sector-cap row. Recommend
-  18-20x. Decide before the P/E gate.
+- ROCE denominator: RULED 2026-08-30. Pillar 1 base 20-25% -> 19x on the
+  management/forward-capital basis; dissent 12x on standard EBIT/avg capital
+  incl. goodwill recorded. Condition: reverts to 12x on new M&A above ~Rs 200
+  Cr/rolling 12m. See operator ruling above.
+- Pillar 2 cash multiplier: INDETERMINATE (FCF uncomputable, no consolidated
+  capex line). Structural vs growth-induced unresolved. Expect it to cap the
+  FTTCP disposition one step down until H1 FY27 cash flow lands ~Nov 2026.
+- Section 1B has no pharma/MedTech distribution sector-cap row. July 15.0x
+  NOT BINDING. claude.ai recommends 18-20x; market median EV/EBITDA since
+  listing 24.2x. OPERATOR RULING REQUIRED before Stage 11.
+- Verify manifest.yaml sector_cap_row before Stage 11; it auto-populates
+  incorrectly.
 - Corpus: fetch DRHP dated 13-Sep-2023 from enterohealthcare.com; restore
   FY25 AR from git history; fetch Reg 30 announcements, 12 quarters of
   shareholding pattern, and the 19-Aug-2026 AGM scrutiniser report.
@@ -103,6 +128,32 @@ revenue; network-reach reconciliation.
 - Extraction prompt for Claude Code: did B07 capture master data
   management and the 15%-of-sales exclusive tie-ups? If not, the Emerging
   Moat score of 19 is understated.
+
+## ROLE 5.5 TRACKER PROOF
+Written to Notion DOWNSTREAM SIGNAL TRACKER 30-Aug-2026 by claude.ai
+(data_source_id 926b65ce-ddd2-4d8b-8eae-05e66b6f6c9f). 15 rows, all linked
+to COMPANIES MASTER row 3abbb2b9-d3ab-81ee-bf38-ef32aab39417.
+Tier 1 (thesis-deciding):
+1. NPPA Trade Margin Rationalisation, drug channel - 3ccbb2b9-d3ab-8100-895d-f9359d3720a9
+2. NPPA device scheduling, MedTech channel - 3ccbb2b9-d3ab-8108-a01a-debe4daf9179
+3. ENTERO Q2 FY27 proof gate (margin + cash conversion) - 3ccbb2b9-d3ab-81bd-bb90-d4d1f0e1a92d
+4. ENTERO organic growth as a multiple of IPM - 3ccbb2b9-d3ab-8165-a5f5-ffe77e8276a9
+5. ENTERO blended gross margin, clean basis - 3ccbb2b9-d3ab-81cd-9b26-f77a7ca13c20
+Tier 2 (trajectory):
+6. IPM unit vs value growth - 3ccbb2b9-d3ab-8147-9244-ce4b9104dcb7
+7. ENTERO minority interest as % of PAT - 3ccbb2b9-d3ab-81dc-90a2-fedfb669f797
+8. Keimed revenue/margin/Apollo captive share - 3ccbb2b9-d3ab-8148-99d1-fd8c1cbb3804
+9. Apollo HealthCo demerger and listing - 3ccbb2b9-d3ab-8164-9d12-fccb6006feac
+10. Ascent (Reliance-backed) scale and funding - 3ccbb2b9-d3ab-819d-8629-eff0edcf2430 (PLACEHOLDER primary-source URL; written but not monitoring-live until Ascent's rating agency is identified)
+11. GLP-1 India performance + tirzepatide patent - 3ccbb2b9-d3ab-8134-a39e-de2181e152dd
+12. Hospital occupancy, major listed chains - 3ccbb2b9-d3ab-810c-92b7-cae28f4eef65
+13. Diagnostic chain capacity expansion - 3ccbb2b9-d3ab-819e-af19-e5db70f10444
+Tier 3 (policy):
+14. Hospital/diagnostic price capping, transmitted - 3ccbb2b9-d3ab-81ad-a0b1-d822f1c8648d
+Tier 4 (hygiene):
+15. ENTERO CARO-qualified subsidiary count - 3ccbb2b9-d3ab-81c9-9ed9-db3a4f125267
+Next-check dates: 30-Sep-2026 (4 monthly rows), 31-Oct-2026 (GLP-1),
+15-Nov-2026 (7 quarterly rows), 31-Dec-2026 (Ascent), 31-Jul-2027 (CARO).
 
 ## RUN FOLDERS
 - runs/entero-2026-07-27/ (this run)

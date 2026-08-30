@@ -1,0 +1,17 @@
+stage: B14-thesis
+company: "SYSTANGO"
+run_date: "2026-08-29"
+model: claude-opus-4-8
+status: complete
+verdict: "WATCHLIST"          # DEEP WATCH, leaning AVOID; INSUFFICIENT-CONVICTION character; NOT a BUY. Promoter override CONCERN printed alongside (mandatory).
+entry_range: {low: 220, high: 315}   # CMP Rs 234 sits in-zone near the low; WITHDRAWN zone (proof gate not fired). 52-week low: price history unavailable.
+position_size: "Small"        # NO POSITION now; Small (2-3%) is the ceiling only IF it converts (proof fires AND DBX resolves)
+position_size_override: "None recorded. Operator override 29-Aug-2026 lets the name PROCEED past the promoter-CONCERN AVOID map; it does NOT lift the size cap. Promoter CONCERN cap + grade D + proof-gate-not-fired + A3 conditional swing + model-external downside all bind size to Small ceiling; Sector Literacy Track (>=3 books) unevidenced independently bars Medium+."
+thesis_broken_if: "H1 FY27 revenue < Rs 45 cr OR FY26 AR shows the FY26 receivable release came from write-offs/factoring (A3 fires -> destination 13.4x) OR FY26 AR confirms DBX Holdings is promoter-controlled with the customer-to-equity cash link"
+monitoring_checklist:
+  - "H1 FY27 revenue (Nov-2026): green > Rs 52 cr on the 17% base path; red < Rs 45 cr below the 10% downside path"
+  - "CFO/PAT quality: green holds >= 0.70x on collection; red below 0.70x or release traced to factoring/write-off (A3 fires, destination 16.8x -> 13.4x)"
+  - "FY26 AR (Sep-2026) receivables ageing + DBX ownership/Nilesh Rathi link: green DBX disclosed and no promoter-control link; red DBX confirmed promoter-controlled with the cash link"
+  - "IPO acquisitions bucket (Rs 800 lakh) + Tech Alchemy funding reconciliation: green deployed and reconciled on the disclosed close; red still 0% utilised or funded off-book"
+  - "SEZ Section 10AA expiry date + margin: green expiry pinned and margin holds ~33%; red expiry earlier than the Year-3 assumption or margin below 33%"
+  - "Unnamed on-demand loan book to 'Others' (Rs 5.30 cr, CARO): green repaid/frozen; red grows or adds undisclosed counterparties"

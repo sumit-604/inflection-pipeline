@@ -1,0 +1,15 @@
+stage: B13-synthesis
+company: "SYSTANGO"
+run_date: "2026-08-29"
+model: claude-opus-4-8
+status: complete
+verdict: "PROCEED WITH CAVEATS"
+verdict_rule_applied: 4
+flags_active: ["FLAG-PROMOTER", "FLAG-CASH", "FLAG-ACCOUNTING", "FLAG-GUIDANCE", "CORPUS GAPPED-FRESHNESS"]
+confidence_delta: {numerical: 97.1, redflag: 71, framework: 89, peer: 75, overall: 71}
+valuation_decision: "WATCHLIST capped at DEEP WATCH, leaning AVOID; posture VALUE-TRAP RISK"
+entry_range: {low: 220, high: 315}
+mos_price: 220
+headline: "Cheap software boutique the gates hold back"
+falsification_metric: "H1 FY27 revenue below Rs 45 cr, breaking the 10% downside path (or standalone CFO/PAT below 0.70x / FY26 AR release traced to write-offs-factoring)"
+publish_candidate: false

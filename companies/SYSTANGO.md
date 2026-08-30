@@ -31,12 +31,15 @@ Halt 1 decision (KILL/SHALLOW/PROCEED): 2026-08-29 PROCEED under explicit operat
 - 2026-08-29: Mental Model SIGNED (see HALT 1 GATE), with the proof-gate mix-share amendment (filed-document-only).
 - 2026-08-29: PROMOTER OVERRIDE. Promoter verdict is CONCERN (DBX-Rathi link confirmed [FILED]). Standing rule makes CONCERN -> AVOID; Claude web recommended AVOID with a September re-open. Operator overrides to continue the run to FTTCP and valuation. Recorded as an override, NOT a resolution; the finding stands. Governance flows into the RRM (discount rate), never an additive PE deduction. No BUY/WATCHLIST verdict card may be produced without this override ruling appearing alongside it. Role 3 must treat governance as the primary destruction vector; FTTCP Transition 4 must carry it explicitly.
 
-### PENDING OPERATOR RULINGS (required before /fttcp can close; from web handover Section 6)
-- UA (Undiscovered Alpha 1.25x) multiplier: PARKED. Premise falsified (informed investor Kacholia bought, sold, stayed out ~10 quarters through the surge). Do NOT apply 1.25x without a ruling; web recommends neutral, not a penalty.
-- Cash multiplier (Section 1B Pillar 2): INDETERMINATE. Do not resolve upward. If a value is forced to complete the run, use 0.80x growth-induced band with NO growth offset, flagged provisional pending FY26 AR.
-- Earnings basis: normalise tax (effective ~19% vs 25-29% statutory, SEZ 10AA sunset undisclosed); flag the unprovided gratuity/leave liability as an unquantified book-value deduction.
-- Option probabilities / mature revenue estimates: required from operator; FTTCP Amendment 18 Option Resolution Calendar. Dated resolution points: FY26 AR (Sep-2026), H1FY27 result (Nov-2026).
-- Amendment 17 (CONVERTER) check: assess the staff-augmentation slice; ambiguous defaults to CONVERTER (0.5 x ROCE + 7.5), not core PE.
+### FTTCP RULINGS SETTLED (30-Aug-2026; deliberation record outputs/final/fttcp-deliberation.md)
+- Composite 1/8, DEEP WATCH leaning AVOID, accepted in substance. Cash conversion +1 CONDITIONAL on FY26 AR.
+- Cash multiplier: 1.00x GROWTH INDUCED and unwound (Phase 1 INDETERMINATE resolved; web 0.80x provisional withdrawn). Reverts to 0.80x (governing destination 16.8x -> 13.4x) if the FY26 AR shows write-off/factoring rather than collection.
+- UA: NOT APPLIED (1.00x), neutral not penalty (Kacholia exit falsifies the institutional-absence premise).
+- Amendment 17: NON CONVERTER (labour is not a traded/quoted commodity; dossier "default to CONVERTER if ambiguous" withdrawn).
+- Governance into r (+1.5), not additive PE. Governing track Track 1 (RRM) destination 16.8x, range 15.5-18.0x; Track 2 additive 24.0x cross-check.
+- Revenue dual path BASE 17% / DOWNSIDE 10% CAGR carried to Role 1; margin H2-exit 33.05% held.
+- Earnings basis: FORWARD (one-year-forward operating EPS), operator 30-Aug-2026. Multiple meets operating EPS Rs 18.43 FY26 (reported 21.73), applied one year forward per Amendment 18.1.
+- STILL PENDING for Phase 3 (do not block the approved base): O2 option probabilities; O3 Step 1C live peer table (KSOLVES/INFOBEAN/ONWARDTEC/YUDIZ, claude.ai owes); O4 SEZ 10AA expiry date (post-expiry operating EPS Rs 16.95, 8% haircut).
 
 ## ACTIVE TRIPWIRES
 - Promoter perimeter UNBOUNDED: Nilesh Rathi's full UK directorship register not yet retrieved (fetch blocked 29-Aug); DBX is the only confirmed appointment. Highest-value outstanding check.

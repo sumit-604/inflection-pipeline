@@ -25,7 +25,7 @@ The operator accepted the deliberation in substance on 30 August 2026. The compo
 - **A4 ROCE: reported vs operating return split out** with arithmetic, and the FY26 capital-allocation split recorded. The projected 33% → ~26% fade is a capital-allocation outcome (treasury accumulation), not operational decay. Score UNCHANGED: 0; Pillar 1 handoff 33.0%, route NONE, no recovery credited, APPROVED. See section 2.4.
 
 ### Still open — NOT closed (halt at O1)
-- **O1 Earnings basis (forward FY27 EPS vs trailing FY26 EPS): OPERATOR RULING PENDING.** Not ruled. The VALUATION PILLAR APPROVAL gate stays open; `fttcp-deliberation.md` is NOT written until this is ruled. Settled sub-part: the multiple meets OPERATING EPS Rs 18.43 (FY26), not reported Rs 21.73 (Module B4).
+- **O1 Earnings basis: RULED FORWARD (one-year-forward EPS), operator, 30 August 2026.** "so we will use the forward EPS method." The VALUATION PILLAR APPROVAL gate is CLOSED; `fttcp-deliberation.md` is written. The multiple meets OPERATING EPS (Module B4), applied one-year-forward per Amendment 18.1; FY26 operating EPS is Rs 18.43 (reported Rs 21.73), and Phase 3 computes the FY27 forward operating EPS from the dual revenue path.
 - **O2 Option probabilities and mature-revenue estimates: OPERATOR INPUT PENDING** (Amendment 18 Option Resolution Calendar). Dated resolution points: FY26 AR (Sep-2026), H1 FY27 (Nov-2026).
 - **O3 Step 1C live peer table: CLAUDE WEB OWES THIS** (KSOLVES, INFOBEAN, ONWARDTEC, YUDIZ; P/E, EV/EBITDA, P/B, revenue growth, ROCE). Left PENDING LIVE PEER TABLE; pillar destination governs in the interim (Amendment 20.1 bars memory multiples).
 - **O4 SEZ Section 10AA expiry date: NOT FOUND, carried.** Post-expiry operating EPS Rs 16.95 (8.0% haircut) recorded; Year 3 uses post-expiry economics once the date is established from the FY26 AR tax note.
@@ -346,9 +346,9 @@ Pillar 2 is now SETTLED at 1.00x (ruling R1). The sensitivity is retained becaus
 | **1.00x** | **16.8x** | **24.0x** | **APPROVED base (R1)** |
 | 1.15x | 19.3x | 27.6x | upper bound, not live |
 
-### THE EARNINGS BASIS QUESTION (operator decides; I do not pick) — STILL PENDING (O1), HALT GATE
+### THE EARNINGS BASIS QUESTION — RULED FORWARD (operator, 30-Aug-2026)
 
-As of 30-Aug-2026 this is NOT ruled. The VALUATION PILLAR APPROVAL gate stays open and `fttcp-deliberation.md` is not written until it is ruled. Choose one, and it governs both ends of the trade per Amendment 18.1:
+Operator ruling: **FORWARD (one-year-forward EPS).** "so we will use the forward EPS method." The gate is closed; the deliberation record is written. Per Amendment 18.1 the destination PE multiplies one-year-forward EPS at both entry and exit (exit at Year N applies the multiple to Year N+1 EPS); mixing bases is barred. The two options as they stood:
 
 - **One year forward P/E:** the destination multiple applies to FY27 EPS.
 - **Trailing P/E:** the destination multiple applies to FY26 EPS.

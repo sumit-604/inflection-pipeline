@@ -1,0 +1,11 @@
+run: cmsinfo-2026-08-29
+produced_at: 2026-08-30
+framework_git_commit: fdfdfb7b1980ba4f082570c7aecbc0ab9c63be4b
+framework_tag: fdfdfb7
+framework_versions: "Master v3.6 / Section 1B v3.3+v3.5.1+v3.6+v3.7+v3.8+v3.9 / FTTCP v2.1"
+priced_under:
+  destination_pe: 17.0
+  destination_band: "15.7-18.3x"
+  earnings_basis: "FORWARD (entry FY27E, exit FY30E)"
+  disposition: "PROCEED WITH CAVEATS"
+  overall_confidence: 64

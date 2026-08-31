@@ -1,13 +1,14 @@
 confidence_delta:
   numerical_acceptance: 96.7    # B12a; 0 CRITICAL; the one MAJOR (receivables ageing) orchestrator-cleared at source
   redflag_coverage: 64          # B12b; 9 of 14 verifier-found concall flags already caught upstream (+3 partial)
-  framework_adherence: 96       # B12c phase-1 scope (Gate 0 + Emerging Moat); E2 alt-path corrected, GOOD unchanged
+  framework_adherence: 88       # combined: B12c phase-1 (Gate 0 + EM) 96 + phase-3 (valuation + thesis) 88; phase-3 half binds
   peer_utilisation: 83          # B12d; 5 of 6 peers used substantively (AURIONPRO software-benchmark only)
-  overall: 64                   # min of the four; binding constraint = redflag_coverage
+  overall: 64                   # min of the four; binding constraint = redflag_coverage (unchanged by phase-3)
   band: "60-74: PROCEED-family verdict downgrades one level (per orchestrator Section 5)"
-  valuation_framework_adherence: pending-phase-3
+  valuation_framework_adherence: 88   # B12c phase-3; ADHERES, no CRITICAL; 1 MAJOR (F6), 4 MINOR
   notes:
     - "overall 64 sits in the 60-74 band: a PROCEED-family gate verdict downgrades one level; not <60, so NO forced REWORK."
     - "No REWORK trigger: Verifier A found 0 CRITICAL source-fidelity findings; no verifier acceptance_rate < 60 (min is B12b 64 / B12d 67)."
     - "Verifier D CRITICAL is a peer-citation error in B06's supporting cross-read (QUESS Rs176cr unsupported), NOT a Verifier-A source-fidelity finding and NOT verdict-invalidating; the core DSO-contradiction rests on clean RADIANTCMS/SIS anchors. Synthesis corrects the two flawed citations (QUESS Rs176cr, AGSTRA Jul-2024) and does not cite them."
     - "redflag_coverage 64 is the binding constraint: B05 logged but under-flagged several concall walks (EBITDA-vs-EBIT framing on LBF-3, capex creep 300->350, ECL guidance walk 4->4.25-4.5%, segment-base discontinuity). These are surfaced in verifier-summary and the dossier monitorables."
+    - "phase-3 verifier C (valuation+thesis adherence) 88/100, ADHERES, 0 CRITICAL. 1 MAJOR: F6, the 20% MoS (Rs 227) was not tied to an evidence-scaled row; under the FY28 proof-gate 18-24 month window the floor could be ~Rs 170. Decision unaffected (WATCHLIST regardless; CMP above MoS either way; operator referenced Rs 227). 4 MINOR (band-table 16.0x vs formula 15.8x disclosed; Amendment 20 direction citation; B10 UA OR-logic reasoning; WATCHLIST label) all operator-approved or outcome-correct. Overall confidence 64 unchanged: framework_adherence was never the binding leg."

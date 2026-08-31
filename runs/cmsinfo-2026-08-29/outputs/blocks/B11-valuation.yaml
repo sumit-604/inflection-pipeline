@@ -1,0 +1,46 @@
+stage: B11-valuation
+company: "CMSINFO"
+run_date: "2026-08-29"
+model: claude-opus-4-8
+status: complete
+entity: "consolidated single-entity"
+entity_count: 1
+input_gaps: []
+flags:
+  - "FLAG-CASH: INDETERMINATE (INDUSTRY-EVENT-INDUCED). Pillar 2 multiplier applied = 1.15x (one notch below top band, FY26 FCF NEGATIVE breaks the 1.30x condition). Caps disposition at PROCEED WITH CAVEATS."
+  - "Proof gate FY28 ROCE>22% NOT fired. No forward Pillar 1 uplift credited. Shared catalyst: FY28 ROCE recovery and any future growth premium ride the same capex-fill event."
+  - "SOTP REJECTED: inter-segment billing 9.1% of revenue, its FY26 increase = 72% of Managed Services segment result; segment returns unusable. Combined Cash Management + Managed Services returns only."
+  - "Method divergence displayed not averaged: P/E relative check fails 30% test (trim to 17.0x); EV/EBITDA 5.8x vs 8.1-8.2x and EV/EBIT 8.9x vs 12.3x say CMS cheap. Leverage artefact (Brink's net debt 2.7x)."
+framework_versions: "Master v3.6 / Section 1B v3.3+v3.5.1+v3.6+v3.7+v3.8+v3.9 / FTTCP v2.1"
+pe_basis: "forward"
+exit_pe_base_approved: "17.0x (band 15.7x to 18.3x), forward basis both ends; operator-approved at FTTCP gate 30-Aug-2026, post Amendment 20 trim"
+destination_pe:
+  track1_rrm: {low: 14.9, mid: 14.9, high: 14.9, r_used: 0, rrm: 0}   # RRM ~14.9x draft from fttcp-deliberation Override 2; not re-derived; r_used/rrm not recomputed
+  track2_additive: {low: 15.7, mid: 17.0, high: 18.3}
+  divergence_pct: 12.4
+  governing_track: "Track 2 additive 17.0x (operator-approved post Amendment 20 trim); RRM 14.9x conservative reference; divergence 12.4% < 15%"
+pillar_detail:
+  roce_used: 16.6
+  roce_base: 16.6
+  roce_recovery_route: "not-credited"
+  pillar1_normalization_route: "none"
+  cash_multiplier: 1.15
+  structural_or_growth: "INDETERMINATE (industry-event-induced); conservative 1.15x multiplier applied"
+  growth_offset: 0
+  growth_premium: 0
+  strategic_premium: 0
+  shared_catalyst_flag: true
+  ua_applied: false
+  sector_cap_used: 25
+hurdle_ratio: {base: 2.20, bull_used: false, verdict: "PASS"}
+fair_values:
+  track1: {bear: 350, base: 488, bull: 543}
+  track2: {bear: 368, base: 555, bull: 661}
+expected_cagr_prob_weighted: 30.1
+entry_range: {low: 263, high: 305}
+mos_price: 227
+upside_downside_ratio: 5.1
+decision: "WATCHLIST (BUY-ON-DIPS on price: CMP Rs 243 is 14% below the Rs 284 entry, 7% above MoS Rs 227, Hurdle PASS 2.20; on-valuation favourable but disposition capped at PROCEED WITH CAVEATS by FLAG-CASH INDETERMINATE and unfired FY28 proof gate)"
+unresolved_inputs_used: []
+som_cagr_crosscheck: "consistent (base services CAGR 11.0% below management guidance 16-18% and below the SOM-implied signed pipeline; conservative, one band discounted)"
+one_line_thesis: "A contracted cash-logistics operator trading 14% below its 25% entry at 11x forward on a live re-rating gap to a 17x destination; HYBRID return, half earnings half discount closing, gated on the FY28 ROCE proof and the unresolved receivables flag."

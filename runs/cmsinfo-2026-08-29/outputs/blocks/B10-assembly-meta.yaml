@@ -1,0 +1,258 @@
+stage: B10-valinputs
+company: CMSINFO
+run_date: 2026-08-29
+model: claude-haiku-4-5
+status: complete
+
+input_gaps: []
+
+flags:
+  - "FLAG-CASH INDETERMINATE (operator refinement INDUSTRY-EVENT-INDUCED) per fttcp-deliberation.md; caps disposition PROCEED WITH CAVEATS"
+  - "EM 23 < 25 threshold: no Pillar 3 growth premium"
+  - "Proof gate FY28 ROCE>22% not yet fired: no forward ROCE uplift credited to Pillar 1"
+  - "FY26 FCF NEGATIVE Rs 19 Cr: Pillar 2 set one notch below top band at 1.15x"
+  - "Receivables 1-2yr overdue +752% YoY; SA loss allowance released same year; cash conversion verdict INDETERMINATE pending resolution"
+
+table:
+  # Identity and Market
+  ticker: CMSINFO (B00-inputs.yaml)
+  legal_name: "CMS Info Systems Limited (role1-handover.md Section 1)"
+  sector: "Business services — cash logistics, ATM managed services, BFSI technology (role1-handover.md Section 1)"
+  business_model: "Contracted infrastructure operator (web-handover-dossier.md Section 1)"
+  sector_cap_row: "Cables / Industrial products 25x non-binding (manifest.yaml, operator ruling 2026-08-30)"
+  cmp_rs: 243.0
+  market_cap_cr: 3888.0
+  shares_outstanding_diluted_cr: 16.00
+  net_cash_cr: 442.0
+  lease_liabilities_cr: 221.38
+  enterprise_value_excl_leases_cr: 3446.0
+  enterprise_value_incl_leases_cr: 3667.0
+
+  # Latest Financials FY26
+  revenue_cr: 2487.18
+  ebitda_cr: 596.0
+  ebitda_margin_pct: 24.0
+  pat_cr: 303.39
+  pat_margin_pct: 12.2
+  diluted_eps_rs: 18.44
+  cfo_cr: 389.59
+  capex_cr: 409.27
+  fcf_cr: -19.0
+  depreciation_cr: 207.64
+  ebit_cr: 388.0
+  book_value_per_share_rs: 134.0
+  cfo_pat_ratio: 1.28
+  cfo_pat_5yr_avg: 1.284
+  dso_days: 126
+  dividend_per_share_rs: 5.25
+  trailing_pe: 13.2
+  forward_pe: 11.0
+  ev_ebitda: 5.8
+  ev_ebit: 8.9
+  pb_ratio: 1.8
+
+  # Growth Metrics
+  revenue_cagr_3yr: 9.1
+  pat_cagr_3yr: 0.7
+  roce_fy26_pct: 16.6
+  roce_fy25_pct: 25.2
+  roce_fy24_pct: 25.4
+  roe_pct: 14.1
+
+  # Segments FY26 (Rs m)
+  segment_atm_management_rs_m: 13515
+  segment_atm_management_growth_pct: 5.3
+  segment_retail_logistics_rs_m: 5872
+  segment_retail_logistics_growth_pct: -7.8
+  segment_technology_payments_rs_m: 3735
+  segment_technology_payments_growth_pct: 42.0
+
+  # Management Guidance
+  fy27_revenue_guidance_range_cr: "2,750-2,850 (cut from 2,800-2,900)"
+  fy27_services_guidance_range_cr: "2,650-2,750 (cut from 2,700-2,800)"
+  fy27_ebitda_margin_guidance: "~27% (raised from 25-26%)"
+  fy27_capex_guidance_cr: "100-125 (down from FY26 Rs 409.27 Cr)"
+  fy30_services_revenue_cagr: "13-14% organic + 4% inorganic"
+  management_credibility_revenue: "POOR (three-year miss streak)"
+  management_credibility_margin: "GOOD (raised and held, Q1 printed 27.2%)"
+
+  # Growth Triggers
+  growth_trigger_1: "SBI Rs 1,000 Cr / 10yr contract, live Jan-2026, 4,000-5,000 ATMs"
+  growth_trigger_2: "HDFC Rs 400 Cr / 5yr, 6,000 ATMs from FY27"
+  growth_trigger_3: "FSS Rs 115 Cr asset buy (~8,000 units), closed Q1 FY27"
+
+  # Emerging Moat
+  em_score: 23
+  em_classification: MODEST
+  em_below_threshold_note: "Below STRENGTHENING threshold 25; no Pillar 3 premium"
+
+  # Cash Conversion
+  cash_determination: INDETERMINATE
+  cash_determination_detail: "Industry-event-induced per fttcp-deliberation.md; 1-2yr overdue receivables +752% YoY, SA loss allowance released; ICRA called transitory but FY26 audited proved otherwise"
+  receivables_trend: "1-2yr overdue Rs 177.94m (FY25) to Rs 1,516.32m (FY26), +752% consolidated"
+  wc_days_trend: "81.9 -> 95.3 days (+13.4)"
+
+  # Strategic Position
+  strategic_asset: "NO (multiple competitors, CMS won SBI as L1 lowest bidder, not monopoly)"
+  moat_strength: "MODERATE (network density, data asset, switching costs on multi-year bank contracts)"
+
+  # UA Qualifiers
+  ua_listed_12m: YES
+  ua_gate0_or_em: NO
+  ua_fii_dii_lt3: NO
+  ua_all_three_met: NO
+
+  # Peers (live 30-Aug-2026)
+  peer_cms_pe_ttm: 13.2
+  peer_cms_pe_fwd: 11.0
+  peer_bricks_pe_ttm: 12.9
+  peer_bricks_pe_fwd: 11.3
+  peer_radiant_pe: "11.3-13.0"
+  peer_median_pe_approx: 12.9
+  peer_cms_ev_ebitda: 5.8
+  peer_median_ev_ebitda: "8.1-8.2"
+  peer_cms_ev_ebit: 8.9
+  peer_median_ev_ebit: 12.3
+  peer_transaction_comp: "Brink's/NCR Atleos $6.6bn at 7.0x 2026E EBITDA (control premium)"
+
+  # FY27E / FY30E Earnings
+  fy27e_eps_rs: 22.0
+  fy27e_eps_source: "Conservative lower end (consensus 22.51, operator build 21.4)"
+  fy30e_eps_prob_weighted_rs: 31.5
+  fy30e_case_a_probability: 0.40
+  fy30e_case_b_probability: 0.40
+  fy30e_case_c_probability: 0.20
+
+  # --- OPERATOR-APPROVED VALUATION PILLARS (AUTHORITATIVE) ---
+  pillar_1_roce_current_pct: 16.6
+  pillar_1_roce_normalisation: NONE
+  pillar_1_roce_forward_uplift: NOT_CREDITED
+  pillar_1_base_pe: 16.0
+  pillar_2_cash_multiplier: 1.15
+  quality_adjusted_base_pe: 18.4
+  pillar_3_growth_premium: 0.0
+  strategic_premium: 0.0
+  undiscovered_alpha: 0.0
+  raw_destination_pe: 18.4
+  sector_cap_pe: 25.0
+  amendment_20_trim: YES
+  final_destination_pe: 17.0
+  final_destination_pe_band_low: 15.7
+  final_destination_pe_band_high: 18.3
+
+  # Earnings Basis
+  earnings_basis: FORWARD
+  entry_calculation: "CMP 243 / FY27E 22.0 = 11.0x"
+  exit_calculation: "17.0x × FY30E 31.5 = Rs 536.5"
+  amendment_18_symmetry: "Three-year hold to Aug 2029, five months into FY30; both looks one year forward"
+
+  # Converter & Shared Catalyst
+  converter_status: NON_CONVERTER
+  shared_catalyst: YES
+  shared_catalyst_detail: "FY28 ROCE recovery and any future growth premium ride same capex-fill event"
+
+  # Disposition
+  disposition: "PROCEED_WITH_CAVEATS"
+  disposition_reason: "FLAG-CASH INDETERMINATE and proof gate FY28 ROCE>22% not fired"
+
+conflicts: []
+
+unresolved:
+  - field: "HAWKAI revenue standalone basis"
+    why: "Rs 200m (Directors' Report) vs Rs 200 Cr (MD&A/CEO letter) — 100x discrepancy within AR"
+    where_it_might_be: "Directors' Report p.32 vs MD&A p.52; verify which is true standalone figure"
+
+  - field: "SBI contract tenure"
+    why: "9 years (MD&A) vs 10 years (Directors' Report)"
+    where_it_might_be: "SBI mandate award letter or concall clarification"
+
+  - field: "HDFC contract tenure"
+    why: "3 years (MD&A) vs 5 years (Investor Presentation slide 7)"
+    where_it_might_be: "HDFC mandate documentation"
+
+  - field: "BLA/transaction-linked revenue % of total"
+    why: "Company memory <10% [SECONDARY weak]; AR and presentation do not disclose"
+    where_it_might_be: "Q1 FY27 earnings Q&A or Reg-30 announcement"
+
+rating_wc_quote: |
+  ICRA (AA+ Stable / A1+, 31-Mar-2026): Called receivables transitory on 9M data to Dec-2025 and
+  forecast moderation by year end. AUDITED FULL YEAR SHOWED OPPOSITE: consolidated 1-2yr overdue
+  receivables Rs 177.94m (FY25) -> Rs 1,516.32m (FY26), +752% YoY; standalone loss allowance released
+  Rs 75.14m net same year. Rating is lagging on cash quality per B02-notes.yaml finding rank 1.
+  Source: role1-handover.md Section 2 Item "Rating agency commentary"; rating/142128.pdf ICRA full
+  rationale 31-Mar-2026 (B00-inputs.yaml).
+
+ua_qualifiers:
+  listed_12m: YES
+  gate0_or_em: NO
+  fii_dii_lt3: NO
+  all_met: NO
+
+credibility_grade: "B- (downgraded from B per web-handover-dossier.md Section 4)"
+
+downstream_candidates:
+  - signal: RBI_currency_in_circulation
+    entity_type: macro
+    demand_link: "Drives ATM cash-replenishment and retail cash-handling volume"
+    likely_source: "RBI Weekly Statistical Supplement / DBIE"
+    cadence: monthly
+    shared: true
+
+  - signal: Total_India_ATM_count_and_split
+    entity_type: regulatory
+    demand_link: "Defines unit base and TAM conversion headroom for ATM Management"
+    likely_source: "RBI DBIE / CATMi"
+    cadence: quarterly
+    shared: false
+
+  - signal: AGS_Transact_CIRP_proceedings
+    entity_type: counterparty
+    demand_link: "Resolution outcome determines CMS absorption of ~90k ATM book"
+    likely_source: "NCLT Mumbai / IBBI"
+    cadence: event_driven
+    shared: true
+
+  - signal: SBI_ICICI_HDFC_IPPB_contract_ramp
+    entity_type: end_customer
+    demand_link: "Determines if ~21k ATM signed pipeline materialises on schedule"
+    likely_source: "Company Reg-30, quarterly calls"
+    cadence: quarterly
+    shared: false
+
+  - signal: National_cash_fulfilment_rate
+    entity_type: macro
+    demand_link: "Tests if Q1 FY27 revenue drag is transitory external shock or structural"
+    likely_source: "CATMi / IBA data"
+    cadence: monthly
+    shared: true
+
+demand_externally_verifiable: true
+
+ar_new_downstream_entities:
+  - name: "Transaction Solutions International (India) Pvt Ltd"
+    where_in_ar: "Note 7(b)/48 (Section 186), SA p.88/147, p.103/147"
+    entity_type: "customer — overdue receivable converted to 3-year secured term loan Rs 580.12m"
+
+  - name: "FSS (ATM Managed Services asset seller)"
+    where_in_ar: "Note 10 (capital advances), SA p.89/147; MD&A Board's Report p.51/147"
+    entity_type: "M&A counterparty — Rs 1,150m total, Rs 600m paid, Rs 550m balance"
+
+  - name: "Securens Systems Private Limited"
+    where_in_ar: "Note 45 (business combination), Note 40 Schedule III, CARO throughout"
+    entity_type: "acquired subsidiary (16-Sep-2025), Vision AI/AIoT remote monitoring"
+
+analyst_note: |
+  Assembly complete. Every value anchored to fttcp-deliberation.md (AUTHORITATIVE) or role1-handover.md
+  (LOCKED). No re-derivation of Section 1B performed; operator-approved pillars carried verbatim.
+  Valuation basis FORWARD (both ends) per operator 30-Aug-2026 ruling. Pillar 1 (16.0x) from band
+  table per Amendment 5 resolution; formula 15.8x superseded but 0.2x immaterial. Pillar 2 (1.15x)
+  is one notch below top band precisely due to FY26 FCF NEGATIVE per operator reasoning. Final destination
+  17.0x (band 15.7-18.3x) after Amendment 20 trim from 18.4x. FLAG-CASH INDETERMINATE caps
+  disposition at PROCEED WITH CAVEATS; proof gate FY28 ROCE>22% not yet fired. Receivables deterioration
+  (1-2yr overdue +752%) and SA loss-allowance release coexist; cash conversion verdict rides both facts.
+  EM 23 < 25 threshold; no Pillar 3 premium. Segment figures corrected per web-handover-dossier.md S2:
+  ATM GREW 5.3%, Retail fell 7.8%. Brink's/NCR Atleos transaction (7.0x 2026E EBITDA, announced
+  26-Feb-2026) is valuation anchor for contracted ATM infrastructure control; CMS 5.8x EV/EBITDA
+  sits below this floor on pure multiple, but 30-point ROCE/margin gap and net-cash offset support
+  17.0x premium. Do NOT re-derive Pillars in Stage 11; carry as-is.
+

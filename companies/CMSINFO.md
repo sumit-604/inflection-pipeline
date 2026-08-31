@@ -415,6 +415,7 @@ Global anchors for the exit-multiple work at Role 1 (not on screener): Brink's, 
 ## 6. RULING LOG
 *(Operator entries appended below. Newest first. Every ruling dated and signed.)*
 ```
+2026-08-30 | Keerti | ROLE 1 P/E GATE RULED. Section 1B settled: base 16.0x x cash 1.15x = 18.4x raw, Amendment 20 trim to destination 17.0x (band 15.7-18.3x). Earnings basis FORWARD (entry FY27E, exit FY30E). Pillar 3 +0 (EM 23<25), strategic +0, UA none, NON-CONVERTER. Cash multiplier 1.15x (top band minus one notch for negative FY26 FCF). Do not re-derive.
 2026-08-30 | Keerti | MENTAL MODEL v2.1. Seven ValuePickr 92804 pp.8-9 amendments. Transition RESTATED (per-transaction -> per-month, supply-to-bank -> own-and-lease; CMS has owned machines since 2013). Transaction-linked BLA added as dominant variable 6 (unpinned); ALGO reclassified as hardware-displacement wedge, variable 7. Guidance record corrected to three straight misses. Understanding-Gate remains PROCEED. Full log at MM.16.
 2026-08-30 | Keerti | MENTAL MODEL SIGNED v2.0. Archetype: contracted infrastructure operator. Understanding-Gate: PROCEED. Halt 1 cleared. Manifest sector_cap_row correction required before Stage 11.
 2026-08-29 | Keerti | SPEAR VERDICT: HIT. Enters heavy pipeline. Peer set approved as listed in Section 5.
@@ -427,11 +428,11 @@ Global anchors for the exit-multiple work at Role 1 (not on screener): Brink's, 
 | Halt 1 | Stage 09b dossier + signed mental model + PROCEED | ✅ SIGNED 30-Aug-2026 (Mental Model v2.1, PROCEED) |
 | Role 5.5 tracker | Tracker row proof-of-write logged here | ✅ WRITTEN 30-Aug-2026 (5 rows, all Case B; COMPANIES MASTER row created) |
 | Handover | `runs/cmsinfo-<date>/inputs/research/web-handover-dossier.md` exists | ✅ FILED 30-Aug-2026 (`runs/cmsinfo-2026-08-29/inputs/research/web-handover-dossier.md`) |
-| P/E gate | Operator rulings on Pillar 1 base, cash multiplier, growth premium, earnings basis | ⬜ Pending |
-| Amendment 16 | ROCE vs cost of capital crossing during projection | ⬜ Not yet assessed |
-| Amendment 17 | Converter classification per slice | ⬜ Not yet assessed |
-| Amendment 18 | Exit-basis symmetry, Option Resolution Calendar | ⬜ Not yet assessed |
-| Amendment 19 | FV path table, FV CAGR, return-source classification | ⬜ Not yet assessed |
+| P/E gate | Operator rulings on Pillar 1 base, cash multiplier, growth premium, earnings basis | ✅ RULED 30-Aug-2026 (dest PE 17.0x fwd; cash 1.15x; Pillar 3 +0; basis FORWARD) |
+| Amendment 16 | ROCE vs cost of capital crossing during projection | ✅ Assessed: ROCE 16.6% > r 13.5%, gate OPEN on ROCE; Pillar 3 +0 anyway (EM 23<25) |
+| Amendment 17 | Converter classification per slice | ✅ Assessed: NON-CONVERTER; machinery not applied |
+| Amendment 18 | Exit-basis symmetry, Option Resolution Calendar | ✅ Assessed: FORWARD both ends, horizon hold+1; no option slices (Calendar N/A) |
+| Amendment 19 | FV path table, FV CAGR, return-source classification | ✅ Assessed: FV CAGR 13.8% -> HYBRID |
 ---
 ## 8. NEXT-QUARTER FALSIFICATION LINE
 Q2 FY27 results, expected around November 2026.
@@ -440,3 +441,17 @@ The thesis is falsified, not merely dented, if **all three** of the following ho
 2. EBITDA margin falls back below 25%, breaking the recovery from the Q3 FY26 bottom and contradicting the raised ~27% FY27 guidance.
 3. National cash fulfilment has recovered above 75% (per CATMi/IBA data) yet CMS revenue has still not responded — which would mean the revenue loss was never the external cash-supply issue management attributed it to.
 Condition 3 is the decisive one. If fulfilment recovers and revenue does not, the "external shock" explanation fails and the business is structurally losing ground rather than waiting out a distribution problem.
+---
+## 9. RUN OUTCOME — FTTCP + Role 1 (2026-08-30)
+**One-line thesis:** a cash-logistics leader repricing off a dying per-transaction model onto contracted fixed-fee machine rental; real transition, thin spread, unproven until the FY28 ROCE gate fires.
+**Gate verdict:** PROCEED WITH CAVEATS (FLAG-CASH INDETERMINATE cap). Overall confidence 64.
+**FTTCP:** composite +3, DEEP WATCH. ROCE forward RECOVERING, no uplift credited. Devil's advocate WEAKENED BUT ALIVE (all four dimensions weakened).
+**Valuation decision (this run):** WATCHLIST. Destination PE 17.0x forward (band 15.7-18.3x). Three-year value ~Rs 555. Entry zone Rs 227 to Rs 284 (MoS Rs 227; note verifier C F6 — under the 18-24 month proof-gate window the evidence-scaled floor could be ~Rs 170). Hurdle Ratio 2.20 PASS. FV CAGR 13.8% -> HYBRID. CMP Rs 243 sits 14% below entry, 7% above MoS (buy-on-dips on price only). Position: Small on conversion; no position at WATCHLIST. Tier A. Decision Status is operator-only (set in Notion).
+**Active flags:** FLAG-CASH INDETERMINATE (industry-event-induced), FLAG-PROMOTER TRUSTWORTHY (no promoter, positive), SHARED CATALYST (FY28 ROCE recovery + any future growth premium ride the same capex-fill event).
+**Dominant variable 6 PINNED (this run):** transaction-linked BLA ~8-12% of revenue (FY25 AR donut chart 8%, management 12% Q1 FY27). Corrects MM.2.3's "NOT DISCLOSED in any filing" — it is in the FY25 AR. The 8%->12% rise is unexplained by the corpus (named contradiction, against the transition direction).
+**Active tripwires (thesis-broken):**
+1. FY28 consolidated post-tax ROCE stays below 20% with capex at the Rs 100-125 Cr guide and capital flat (transition falsifier).
+2. 1-2yr overdue receivables bucket widens again while Cash Management revenue falls (FLAG-CASH hardens to structural).
+3. National cash fulfilment recovers to 80-85%+ while CMS services revenue does not respond (decline is structural, not shock).
+**Publish candidate (flagged, not written):** India ATM units grew 1.3% YoY while withdrawal VALUE fell ~7% (RBI/NPCI); CMS ATM Management grew 5.3%. Inverts the cash-is-dying read.
+**Run folders:** runs/cmsinfo-2026-08-29 (spear + Phase 1 evidence + Phase 2 FTTCP + Phase 3 finalize).

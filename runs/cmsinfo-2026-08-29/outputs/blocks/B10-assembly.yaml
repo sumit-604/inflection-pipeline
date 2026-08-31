@@ -1,0 +1,441 @@
+stage: B10-valinputs
+company: CMSINFO
+run_date: 2026-08-29
+model: claude-haiku-4-5
+status: complete
+input_gaps: []
+flags:
+  - "FLAG-CASH: INDETERMINATE per fttcp-deliberation.md, operator refinement INDUSTRY-EVENT-INDUCED. Caps disposition at PROCEED WITH CAVEATS."
+  - "Pillar 1 base sourced from band table (16.0x) per fttcp-deliberation.md Amendment 5 resolution; formula 15.8x is correct but immaterial."
+
+# --- COMPANY IDENTITY BLOCK ---
+company_identity:
+  ticker: CMSINFO (B00-inputs.yaml)
+  legal_name: "CMS Info Systems Limited (role1-handover.md Section 1)"
+  sector: "Business services — cash logistics, ATM managed services, BFSI technology (role1-handover.md Section 1)"
+  business_model_type: "Contracted infrastructure operator. Owns the machines, runs the cash, monitors the sites, paid fixed monthly fee on 5-10 year contracts (web-handover-dossier.md Section 1 Mental Model Declaration)"
+  sector_cap_row: "Cables / Industrial products, 25x non-binding (manifest.yaml, operator ruling 2026-08-30)"
+  cmp: "Rs 243 (NSE close 28-Aug-2026, role1-handover.md Section 1)"
+  market_cap_cr: "Rs 3,888 Cr (role1-handover.md Section 1: CMP 243 × shares 16.00 Cr)"
+  shares_outstanding_diluted_cr: "16.00 Cr (15,96,98,415 post-buyback + ESOP allotments, role1-handover.md Section 1)"
+  net_debt_cr: "Net CASH ~Rs 442 Cr (cash+investments Rs 610.08 Cr at 31-Mar-26, less Rs 167.93 Cr buyback, role1-handover.md Section 1)"
+  lease_liabilities_cr: "Rs 221.38 Cr (Ind AS 116, role1-handover.md Section 1)"
+  enterprise_value_excl_leases_cr: "Rs 3,446 Cr (computed: 3,888 + 442 = 4,330 - net cash reverses to add debt, so 3,888 - 442 = 3,446, role1-handover.md Section 1)"
+  enterprise_value_incl_leases_cr: "Rs 3,667 Cr (3,446 + 221.38, role1-handover.md Section 1)"
+
+# --- LATEST FINANCIALS (FY26 audited consolidated) ---
+latest_financials:
+  fy: "FY26 (year ended 31-Mar-2026)"
+  source: "role1-handover.md Section 1, verified against 05f75e67 audited results PDF and AR FY26 (all figures consolidated unless noted)"
+
+  revenue_cr: "2,487.18 (FY26 revenue, role1-handover.md Section 1)"
+  ebitda_cr: "596 (FY26 EBITDA, role1-handover.md Section 1; margin 24.0%)"
+  ebitda_margin_pct: 24.0
+  pat_cr: "303.39 (FY26 PAT, role1-handover.md Section 1)"
+  pat_margin_pct: 12.2
+  diluted_eps_rs: "18.44 (FY26 EPS diluted, role1-handover.md Section 1)"
+
+  cfo_cr: "389.59 (FY26 operating cash flow, role1-handover.md Section 1)"
+  capex_cr: "409.27 (FY26 capex cash-flow basis, role1-handover.md Section 1 NOTE: MD&A claim of <Rs1,000m average is false; use cash flow figures)"
+  fcf_cr: "-19 (NEGATIVE, FY26 FCF = CFO - capex = 389.59 - 409.27 = -19.68, role1-handover.md Section 1)"
+
+  depreciation_cr: "207.64 (FY26 D&A, role1-handover.md Section 1; NOTE: Q1 FY27 annualises to ~Rs 291 Cr, per role1-handover.md Section 6)"
+  ebit_cr: "388 (FY26 EBIT, role1-handover.md Section 1)"
+
+  book_value_per_share_rs: "~134 (net worth ~Rs 2,150 Cr post-buyback, role1-handover.md Section 1)"
+  net_cash_cr: "~442 (role1-handover.md Section 1)"
+
+  roce_fy26_pct: "16.6% (FY26 post-tax ROCE, role1-handover.md Section 1 and fttcp-deliberation.md; this is the SOLE authority for Pillar 1 ROCE input)"
+  roce_fy25_pct: "25.2% (FY25 post-tax ROCE, role1-handover.md Section 1)"
+  roce_fy24_pct: "25.4% (FY24 post-tax ROCE, role1-handover.md Section 1)"
+  roce_trend: "Deteriorating: 25.4% (FY24) -> 25.2% (FY25) -> 16.6% (FY26), collapsed 8.6 points in FY26 (web-handover-dossier.md Section 1 dominant variable 1)"
+
+  roe_pct: "~14.1% (role1-handover.md Section 1)"
+
+  revenue_cagr_3yr_pct: "9.1% (FY23-FY26, role1-handover.md Section 1)"
+  pat_cagr_3yr_pct: "0.7% (FY23-FY26, essentially flat Rs 297 Cr to Rs 303 Cr, role1-handover.md Section 1)"
+
+  cfo_pat_fy26: "1.28x (FY26 CFO 389.59 / PAT 303.39, role1-handover.md Section 1)"
+  cfo_pat_5yr_series: "1.14 / 1.37 / 1.27 / 1.30 / 1.28 (FY22-FY26, sustained above 1.0x, role1-handover.md Section 1)"
+
+  fcf_pat: "NEGATIVE (FY26 FCF -Rs 19 Cr / PAT 303.39 Cr = -0.063x, role1-handover.md Section 1)"
+  p_fcf: "NOT MEANINGFUL (FCF is negative, role1-handover.md Section 1)"
+
+  dso_days: "126 (FY26 standalone; FY25 116, FY23 100, FY21 140 — non-monotonic, but 1-2yr overdue receivables deteriorated dramatically: Rs 177.94m to Rs 1,516.32m consolidated +752%, web-handover-dossier.md Section 3 S3)"
+
+  dividend_per_share_rs: "5.25 (FY26: Rs 2.75 interim + Rs 2.50 final, role1-handover.md Section 1)"
+
+  trailing_pe: "13.2x (role1-handover.md Section 1)"
+  forward_pe: "11.0x (role1-handover.md Section 1)"
+  ev_ebitda: "5.8x (role1-handover.md Section 1; 6.2x including leases)"
+  ev_ebit: "8.9x (role1-handover.md Section 1)"
+  pb_ratio: "1.8x (role1-handover.md Section 1)"
+
+# --- SEGMENT REVENUE FY26 (MD&A platform view, Rs million, net of eliminations) ---
+segments:
+  atm_management_solutions:
+    revenue_m: 13515
+    growth_pct: 5.3
+    pct_of_total: 58
+    note: "ATM Management Solutions — GREW 5.3%, CORRECTED from B03-ardeep.md error which misassigned the -7.8% decline to this segment (web-handover-dossier.md Section 3 S2, role1-handover.md Section 1)"
+    source: "MD&A p.52 net of eliminations; Board's Report p.31 (verified)"
+
+  retail_currency_logistics:
+    revenue_m: 5872
+    growth_pct: -7.8
+    pct_of_total: 26
+    note: "Retail Solutions & Currency Logistics — FELL 7.8%, correctly assigned (web-handover-dossier.md Section 3 S2)"
+    source: "MD&A p.52 net of eliminations; Board's Report p.31"
+
+  technology_payment_solutions:
+    revenue_m: 3735
+    growth_pct: 42
+    pct_of_total: 16
+    source: "MD&A p.52 net of eliminations; Board's Report p.31"
+
+# --- FROM EARLIER ANALYSIS (B05-concall guidance, B05 management credibility) ---
+management_guidance:
+  fy27_total_revenue_range_cr: "Rs 2,750-2,850 Cr (cut from Rs 2,800-2,900 Cr in May 2026, Q1 FY27 call Aug 2026)"
+  fy27_services_revenue_range_cr: "Rs 2,650-2,750 Cr (cut from Rs 2,700-2,800 Cr in May 2026, Q1 FY27 call Aug 2026)"
+  fy27_ebitda_margin_band: "~27% (raised from 25-26% in Aug 2026, Q1 FY27 call; Q1 FY27 printed 27.2%)"
+  fy30_services_revenue_cagr: "13-14% organic plus ~4% inorganic, FY27-FY30 (role1-handover.md Section 2)"
+  fy27_capex_guidance_cr: "Rs 100-125 Cr (down from FY26's Rs 409.27 Cr, role1-handover.md Section 2)"
+  source: "B05-concall.yaml guidance table"
+
+management_delivery_track_record:
+  grade: "B- (downgraded from B in web-handover-dossier.md Section 4)"
+  revenue_credibility: "POOR — three consecutive years of guiding, walking down, and missing (web-handover-dossier.md Section 4 Promise-vs-Delivery Ledger)"
+  margin_credibility: "GOOD — raised and held in FY27, Q1 printed 27.2% vs guidance ~27%, margin guidance treated at close to face value (web-handover-dossier.md Section 4)"
+  note: "Discount revenue guidance by at least one band; treat margin guidance near face value. ZERO credit for any promised disclosure improvement (web-handover-dossier.md Section 4)"
+  source: "B05-concall.yaml credibility_grade; web-handover-dossier.md Section 4"
+
+growth_triggers_top3:
+  - trigger_1: "SBI Rs 1,000 Cr / 10yr, live Jan-2026, 4,000-5,000 ATMs (role1-handover.md Section 2, web-handover-dossier.md Section 2 V3)"
+  - trigger_2: "HDFC Rs 400 Cr / 5yr, 6,000 ATMs, from FY27 onwards (role1-handover.md Section 2)"
+  - trigger_3: "FSS asset buy Rs 115 Cr (~8,000 units), closed Q1 FY27, guided ~4% of FY27 services revenue (~Rs 100-120 Cr annual run-rate) (role1-handover.md Section 2)"
+  source: "role1-handover.md Section 2, B05-concall.yaml"
+
+# --- EM SCORE AND CLASSIFICATION (B07-emoat) ---
+emerging_moat:
+  score: 23
+  classification: "MODEST (below STRENGTHENING threshold of 25)"
+  strong_categories:
+    - "A3 Process innovation (documented, realised FY26): route optimisation 10%+ cut"
+    - "C1 Customer ecosystem (documented, live FY27): SBI/HDFC/ICICI multi-year integrated contracts"
+    - "D1 Proprietary data asset (documented, in production): 16 years, 150,000+ touchpoints"
+    - "D2 Digital platform (documented, live and scaling): HAWKAI hardware+software+AI, ALGO software"
+  moderate_categories:
+    - "B1 Backward integration (documented, built): full-stack hardware"
+    - "C2 Customer concentration improving (documented, ongoing)"
+    - "H1 Industry consolidation beneficiary (documented, two-sided/unresolved): AGS exit benefit not yet proven durable"
+  caveat: "Four of twelve moat tests scored ZERO due to peer screener CSVs being empty (collector bug) — EM is understated; fixing it could push EM above 25 and add +1x to Pillar 3 (B01-gate0.yaml input_gaps, B07-emoat.yaml)"
+  source: "B07-emoat.yaml em_score and analysis"
+
+catalyst_12m_primary: "FY28 consolidated post-tax ROCE crossing 22% with capital employed flat (18-24 months window); proof gate is FY28, not FY27 (role1-handover.md Section 2, fttcp-deliberation.md Section 1 and Section 4)"
+catalyst_evidence_quality: "Mostly documented (signed contracts SBI/HDFC/ICICI, filed capex, Note 29 lessor disclosure). Track: (1) SBI/HDFC/ICICI contract ramp-through FY27, (2) currency-supply fulfilment normalisation Q2 FY27, (3) Tech & Payments crossing 20% of services revenue by Q4 FY27 (role1-handover.md Section 2, B07-emoat.yaml)"
+evidence_mix: "Mostly documented (19 documented / 6 claim / 3 inference, B07-emoat.yaml evidence_mix)"
+
+# --- CASH CONVERSION DETERMINATION (AUTHORITATIVE: fttcp-deliberation.md) ---
+cash_conversion_determination: "INDETERMINATE (operator refinement: INDUSTRY-EVENT-INDUCED per fttcp-deliberation.md Section 1)"
+cash_determination_explanation: "Consolidated 1-2yr overdue receivables Rs 177.94m (FY25) to Rs 1,516.32m (FY26), +752% YoY, in a book that grew only 5.1%. Cause per ICRA: delayed payments by certain managed service providers after the AGS Transact collapse. Two competitors improved collections over the same months, so not sectoral (role1-handover.md Section 2, web-handover-dossier.md Section 2 V1). Standalone loss allowance FELL 14.1% even as 1-2yr overdue bucket grew 16.2x (B02-notes.yaml finding rank 1, B03-ardeep.md). FLAG-CASH disposition caps at PROCEED WITH CAVEATS (fttcp-deliberation.md Section 1)."
+working_capital_trend: "Block B trend DETERIORATING per B01-gate0.yaml: FY26 FCF -Rs 19.7 Cr vs FY25 +Rs 328.2 Cr as capex nearly tripled; WC days +13.4 (81.9->95.3 days); receivables 1-2yr overdue bucket exploded 8.5x CON / 16.2x SA YoY (B02-notes.yaml receivables_trend)"
+
+# --- RATING PDF EXTRACTION (ICRA 31-Mar-2026) ---
+rating_agency: "ICRA (B00-inputs.yaml)"
+rating_grade: "AA+ (Stable outlook)"
+rating_subordinated: "A1+ (B00-inputs.yaml)"
+rating_date: "31-Mar-2026 (B00-inputs.yaml rating/142128.pdf)"
+rating_wc_quote: "ICRA called receivables transitory on 9M data to Dec-2025 and forecast moderation by year end (role1-handover.md Section 2, Item: Rating agency commentary). **The audited full year showed the opposite: consolidated 1-2yr overdue receivables Rs 177.94m to Rs 1,516.32m (+752%), standalone loss allowance released Rs 75.14m net (B02-notes.yaml)** — this quote captures the rating's December-2025 view before the FY26 audited shock, making it a lagging indicator on cash quality."
+
+# --- STRATEGIC ASSET / MONOPOLY POSITION ---
+strategic_asset: "NO (role1-handover.md Section 2: 'Multiple players hold cash logistics approvals. Won flagship SBI contract as L1 (lowest bidder) after being the only qualified participant in a scrapped first round. Waiting on an IBA committee for pricing relief — a company with pricing power does not need a committee')"
+moat_description: "Contracted multi-year bank relationships (SBI, HDFC, ICICI) with switching costs, national CIT network density, proprietary 16-year transaction dataset. Moat is MODERATE-to-STRONG but NOT UNIQUE FRANCHISE; subject to contract renegotiation risk and peer competition (B07-emoat.yaml top_moat_risks, web-handover-dossier.md Section 1 Permanent structural feature)"
+
+# --- UA QUALIFIER CHECK (per stage 10 specification) ---
+ua_qualifiers:
+  listed_12m: "YES - listed 31-Dec-2021 (IPO), >3y tenure (B00-inputs.yaml listed_context)"
+  gate0_or_em: "NO — Gate0 76/88 (GOOD) but EM 23 < 25 (MODEST, not STRENGTHENING). Gate0 ≥60 OR EM ≥25 required; EM fails (B01-gate0.yaml core_score 76, B07-emoat.yaml em_score 23)"
+  fii_dii_lt3: "NO — FII+DII ~58.70% (Jun-2026, B00-inputs.yaml structural_notes), fails <3% threshold (B01-gate0.yaml E1 scored via alt-path FII+DII 58.70%)"
+  all_three_met: "NO (only listed_12m passes; gate0_or_em and fii_dii_lt3 both fail)"
+  note: "UA multiplier does NOT apply. HIGH institutional ownership (58.70% FII+DII), per B00-inputs.yaml structural_notes: 'UA multiplier does NOT apply: institutional ownership HIGH (FII+DII 58.70% Jun-2026).'"
+
+# --- PEER MEDIAN DATA (live 30-Aug-2026, role1-handover.md Section 3) ---
+peer_table:
+  - peer: "CMS (CMSINFO)"
+    market_cap: "Rs 3,888 Cr"
+    pe_trailing: "13.2x"
+    pe_forward: "11.0x"
+    ev_ebitda: "5.8x"
+    ev_ebit: "8.9x"
+    pb: "1.8x"
+    ebitda_margin: "24.0%"
+    returns_metric: "ROCE 16.6%"
+    balance_sheet: "Net cash ~Rs 442 Cr"
+
+  - peer: "Brink's (BCO, NYSE)"
+    market_cap: "~$4.7bn (~Rs 39,000 Cr)"
+    pe_trailing: "12.9x TTM"
+    pe_forward: "11.3x fwd"
+    ev_ebitda: "8.2x TTM / 6.8x fwd"
+    ev_ebit: "12.3x TTM / 9.2x fwd"
+    pb: "15.3x"
+    ebitda_margin: "19%"
+    returns_metric: "ROIC 6.5%"
+    balance_sheet: "Net debt $2.94bn, 2.7x EBITDA"
+    note: "Brink's acquiring NCR Atleos, announced 26-Feb-2026, $6.6bn at 7.0x 2026E EBITDA with control. Expected close Q1 2027. Acquired for 'owned-and-operated ATM network and fast-growing ATM as a Service outsourcing solutions' — precisely CMS's model (role1-handover.md Section 3)"
+
+  - peer: "Radiant (RADIANTCMS)"
+    market_cap: "Rs 366-418 Cr"
+    pe: "11.3-13.0x"
+    ev_ebitda: "8.1x"
+    pb: "1.4-1.5x"
+    returns_metric: "ROCE 12.7%"
+    balance_sheet: "Net cash"
+
+  - peer: "Quess"
+    market_cap: "Rs 5,560 Cr"
+    pe: "18.4x"
+    note: "Staffing/outsourcing, not a direct cash-logistics comparable (role1-handover.md Section 3 note)"
+
+peer_table_anchor: "role1-handover.md Section 3; live verified 30-Aug-2026"
+peer_median_pe: "~12.9x (Brink's TTM), 11.3x fwd — CMS 13.2x trailing is ABOVE peer median on trailing, near peer on forward"
+peer_median_ev_ebitda: "~8.1-8.2x (Radiant, Brink's) — CMS 5.8x is WELL BELOW peer median, suggesting undervaluation or quality/leverage discount"
+peer_median_ev_ebit: "~12.3x (Brink's) — CMS 8.9x is BELOW peer median"
+amendment_20_note: "P/E method says trim (43% premium at 18.4x destination vs 12.9x peer median fails 30% threshold; trimmed to 17.0x); EV method says CMS is cheap (5.8x vs 8.1-8.2x peer median, fully explained by net cash and ROCE delta). Both correct; disagreement is a leverage artefact, not a contradiction (role1-handover.md Section 4, fttcp-deliberation.md Section 2 Override 2)"
+
+# --- DOWNSTREAM SIGNAL CANDIDATES (B09-tam downstream_candidates) ---
+downstream_candidates:
+  - signal: "RBI currency-in-circulation (CIC)"
+    entity_type: "macro"
+    demand_link: "Drives ATM cash-replenishment and retail cash-handling volume across two platforms"
+    likely_source: "RBI Weekly Statistical Supplement / RBI DBIE"
+    cadence: "monthly"
+    shared: true
+
+  - signal: "Total India ATM count and outsourced-vs-self-managed split"
+    entity_type: "regulatory"
+    demand_link: "Defines physical unit base and conversion headroom for ATM Management Solutions TAM"
+    likely_source: "RBI DBIE / CATMi"
+    cadence: "quarterly"
+    shared: false
+
+  - signal: "AGS Transact Technologies CIRP resolution proceedings"
+    entity_type: "counterparty"
+    demand_link: "Resolution outcome determines how much of AGS's ~90,000-ATM book CMS can absorb"
+    likely_source: "NCLT Mumbai / IBBI / AGS exchange filings"
+    cadence: "event-driven"
+    shared: true
+
+  - signal: "SBI/ICICI/HDFC/IPPB contract ramp status"
+    entity_type: "end-customer"
+    demand_link: "Determines if the ~21,000-ATM signed pipeline funding the 3yr SOM materialises on schedule"
+    likely_source: "Company Reg-30 filings, quarterly investor calls"
+    cadence: "quarterly"
+    shared: false
+
+  - signal: "National cash fulfilment rate (indented vs received)"
+    entity_type: "macro"
+    demand_link: "Proxy for whether FY26/Q1 FY27 revenue drag is transitory external shock or structural"
+    likely_source: "CATMi press releases / IBA data"
+    cadence: "monthly"
+    shared: true
+
+demand_externally_verifiable: true (B09-tam.yaml)
+
+# --- AR NEW DOWNSTREAM ENTITIES (B03-ardeep ar_new_downstream_entities, feed for Step 10.5B at Role 5.5) ---
+ar_new_downstream_entities:
+  - name: "Transaction Solutions International (India) Private Limited"
+    where_in_ar: "Note 7(b)/48 (Section 186 disclosure), SA p.88/147, p.103/147"
+    entity_type: "customer counterparty — overdue receivable converted to 3-year secured term loan, Rs 580.12m (B03-ardeep.md, B02-notes.yaml finding rank 7)"
+
+  - name: "FSS (ATM Managed Services asset seller)"
+    where_in_ar: "Note 10 (capital advances), SA p.89/147; MD&A Board's Report point 4, p.51/147"
+    entity_type: "M&A counterparty — binding agreement Rs 1,150m total, Rs 600m paid, Rs 550m balance on completion (B03-ardeep.md)"
+
+  - name: "Securens Systems Private Limited"
+    where_in_ar: "Note 45 (business combination), Note 40 Schedule III, CARO Annexure A CON, throughout SA/CON notes"
+    entity_type: "newly acquired wholly-owned subsidiary (16-Sep-2025), Vision AI/AIoT remote monitoring (B03-ardeep.md)"
+
+# --- FY27E AND FY30E EPS GUIDANCE (role1-handover.md Section 5) ---
+fy27e_eps_rs: "22.0 (conservative, lower end: operator build Rs 21.4 vs consensus Rs 22.51 per role1-handover.md Section 5 instruction 'take the lower end')"
+fy27e_eps_source: "role1-handover.md Section 5: 'Consensus is Rs 22.51 (four analysts, cut from Rs 23.20 post-Q1). My build gives Rs 21.4. Take the lower end.'"
+
+fy30e_eps_probability_weighted_rs: "31.5 (Case A Rs 35.0 @40%, Case B Rs 32.5 @40%, Case C Rs 22.5 @20%, role1-handover.md Section 6)"
+fy30e_eps_guidance_cases:
+  - case_a: "One-off build (40% probability): Capex Rs 125 → Rs 250 → Rs 280 Cr, capital employed flat. EBITDA margin 26.0% / 26.8% / 27.1%. FY28 ROCE ~23.8%, FY29 ~26.7%. Proof gate FIRES. FY30E EPS Rs 35.0"
+  - case_b: "Treadmill (40% probability): Capex Rs 250 → Rs 350 → Rs 400 Cr. Capital employed keeps rising. FY28 ROCE ~20.8%, FY29 ~22.0%. Proof gate MISSES in FY28. FY30E EPS Rs 32.5"
+  - case_c: "Margin fails (20% probability): EBITDA margin reverts to 24.5%, capex overshoots. ROCE stuck near 15.8%, cost of capital. Transition falsifier fires. FY30E EPS Rs 22.5"
+  source: "role1-handover.md Section 6 'Three cases, with probability weights'"
+
+# --- OPERATOR-APPROVED VALUATION PILLARS (AUTHORITATIVE, from fttcp-deliberation.md Section 4) ---
+valuation_pillars:
+
+  pillar_1_roce:
+    value: "16.6% current"
+    normalisation_route: "NONE"
+    forward_uplift: "NOT credited (proof gate FY28 ROCE>22% not fired)"
+    source: "fttcp-deliberation.md Section 4 table row 'Pillar 1 ROCE'; this is FTTCP sole authority"
+    note: "RECOVERING per FTTCP forward verdict, but NO forward uplift credited because proof gate (FY28 ROCE>22% with capital employed flat) has NOT fired (fttcp-deliberation.md Section 1, Section 4)"
+
+  pillar_1_base_pe:
+    value: "16.0x"
+    source: "fttcp-deliberation.md Section 4 table, band table; Amendment 5 formula 15.8x superseded but immaterial 0.2x difference"
+    note: "Band table vs formula: See role1-handover.md Section 4 Pillar 1 formula query resolution — Amendment 5 (v3.3) general continuous formula 0.5 x ROCE + 7.5 = 15.8x is superseded by band table (16.0x); not an error per the formula documentation, but band-table-only reading is a trap for future runs, logged to LESSONS_ARCHIVE (fttcp-deliberation.md Section 2 Override 4)"
+
+  pillar_2_cash_multiplier:
+    value: "1.15x"
+    operator_override: "Draft 1.00-1.10x → operator 1.15x (Override 1, fttcp-deliberation.md Section 2)"
+    operator_reasoning: "CFO/PAT 1.28x sustained five years earns the top band, but FY26 FCF NEGATIVE breaks the 1.30x condition. One notch down, not two — the 1.00x band describes volatile conversion, which CMS is not (fttcp-deliberation.md Section 2)"
+    default_track_sensitivity: "Draft additive destination centred ~16.5x; the operator's 1.15x lifts quality-adjusted base to 18.4x before Amendment 20 trim, moving pre-trim destination by roughly +1.9x (fttcp-deliberation.md Section 2)"
+    fcf_caveat: "FY26 FCF NEGATIVE Rs 19 Cr is the condition-breaker. Pillar 2 set at 1.15x, one notch below top band, precisely because of that. DCF FCF as % revenue must be consistent with 1.15x cash multiplier — do not assume conversion magically improves (role1-handover.md Section 7)"
+    source: "fttcp-deliberation.md Section 2 Override 1"
+
+  quality_adjusted_base:
+    value: "18.4x"
+    calculation: "16.0x (Pillar 1) × 1.15x (Pillar 2)"
+    source: "fttcp-deliberation.md Section 4 table row"
+
+  pillar_3_growth_moat_premium:
+    value: "+0x"
+    reason: "EM 23 < 25 threshold (MODEST not STRENGTHENING)"
+    source: "fttcp-deliberation.md Section 4 table; B07-emoat.yaml em_score 23"
+
+  strategic_premium:
+    value: "+0x"
+    reason: "No licence/scarcity; multiple players in cash logistics, lowest-bidder pricing on SBI (role1-handover.md Section 2)"
+    source: "fttcp-deliberation.md Section 4 table"
+
+  undiscovered_alpha:
+    value: "no uplift"
+    reason: "FII+DII ~58%, fails <3% threshold"
+    source: "fttcp-deliberation.md Section 4 table; B01-gate0.yaml E1 scored via alt-path"
+
+  raw_destination_pe:
+    value: "18.4x"
+    calculation: "18.4x (quality-adjusted) + 0x (Pillar 3) + 0x (strategic)"
+    source: "fttcp-deliberation.md Section 4 table"
+
+  sector_cap:
+    value: "25x 'Cables / Industrial products' (non-binding)"
+    source: "manifest.yaml, fttcp-deliberation.md Section 4; operator ruling 2026-08-30"
+    note: "Non-binding; operator chose row for conceptual alignment with contracted infrastructure operator archetype, not a constraint on the final exit PE (fttcp-deliberation.md Section 4)"
+
+  amendment_20_relative_trim:
+    destination_before_trim: "18.4x"
+    trim_test: "30% threshold test FAILED at 18.4x vs ~12.9x peer median"
+    trim_result: "→ 17.0x"
+    source: "fttcp-deliberation.md Section 2 Override 2; role1-handover.md Section 4 Amendment 20 relative cross-check"
+    documented_justification: "Quality gap is real (net cash vs Brink's leverage, ROCE 16.6% vs Brink's ROIC 6.5%, EBITDA margin 24-27% vs 19%). But 43% is too much for a company that just recorded worst year and missed guidance three years running. At 17.0x the gap is 32%, marginal (fttcp-deliberation.md Section 2 Override 2)"
+    disagreement_note: "P/E method says trim (fails at 18.4x); EV/EBITDA says CMS cheap (5.8x vs 8.1-8.2x, passes). Both correct; disagreement is leverage artefact. Show both in final range (role1-handover.md Section 4)"
+
+  final_destination_pe:
+    value: "17.0x"
+    band: "15.7x to 18.3x"
+    source: "fttcp-deliberation.md Section 2 Override 2, Section 4; role1-handover.md Section 4 FINAL DESTINATION PE"
+    note: "Operator-approved, NON-NEGOTIABLE for Phase 3 (role1-handover.md Section 1 locked inputs)"
+
+  # --- EARNINGS BASIS (LOCKED FORWARD) ---
+  earnings_basis:
+    basis: "FORWARD (both entry and exit)"
+    entry: "CMP Rs 243 ÷ FY27E EPS Rs 22.0 = 11.0x (role1-handover.md Section 5)"
+    exit: "17.0x × FY30E EPS Rs 31.5 = Rs 536.5 (role1-handover.md Section 5, Amendment 18 symmetry)"
+    operator_override: "Operator ruling 30-Aug-2026: forward basis, both ends (fttcp-deliberation.md Section 2 Override 3)"
+    amendment_18_rationale: "Entry today is CMP against FY27E. Exit in three years is August 2029, five months into FY30, so the exit multiple applies to FY30E earnings. At the exit date the market looks one year forward exactly as it does today (role1-handover.md Section 5)"
+    source: "fttcp-deliberation.md Section 4 table; role1-handover.md Section 5"
+
+  # --- CONVERTER CLASSIFICATION ---
+  converter_status: "NON-CONVERTER"
+  converter_note: "Amendment 17 machinery does not apply; ROCE-recovery credit route is NEITHER Pillar 1 nor Strategic Premium because proof gate not fired (fttcp-deliberation.md Section 4)"
+  source: "fttcp-deliberation.md Section 4 table; role1-handover.md Section 1 locked inputs"
+
+  # --- SHARED CATALYST FLAG ---
+  shared_catalyst: "YES"
+  shared_catalyst_explanation: "FY28 ROCE recovery and any future growth premium ride the same capex-fill event; Role 3 to stress-test this coupling (fttcp-deliberation.md Section 4)"
+  source: "fttcp-deliberation.md Section 4 table"
+
+  # --- DISPOSITION ---
+  disposition_cap: "PROCEED WITH CAVEATS"
+  reason: "FLAG-CASH INDETERMINATE (operator refinement: INDUSTRY-EVENT-INDUCED) caps disposition; proof gate not fired"
+  source: "fttcp-deliberation.md Section 1, Section 4; role1-handover.md Section 2 Cash conversion determination"
+
+# --- RECORDED OPERATOR OVERRIDES (for sensitivity tracking) ---
+operator_overrides:
+  override_1_pillar_2:
+    item: "Pillar 2 cash multiplier"
+    draft_track: "1.00-1.10x (INDETERMINATE cash rounded down)"
+    operator_ruling: "1.15x"
+    reason: "CFO/PAT 1.28x sustained five years earns top band, but FY26 FCF NEGATIVE breaks 1.30x condition. One notch down."
+    default_track_sensitivity: "Draft destination ~16.5x additive → operator 18.4x pre-trim, +1.9x move"
+    source: "fttcp-deliberation.md Section 2 Override 1"
+
+  override_2_destination_pe:
+    item: "Destination PE and Amendment 20 trim"
+    draft_track: "Additive central ~16.5x (band 15.3-17.8x), RRM ~14.9x; Amendment 20 PENDING"
+    operator_ruling: "Raw 18.4x trimmed to 17.0x (band 15.7x-18.3x)"
+    reason: "Quality gap real (32% at 17.0x vs 43% at 18.4x, above 30% threshold) and justified, but company just recorded worst year and missed guidance three years. Step back from egregious premium."
+    source: "fttcp-deliberation.md Section 2 Override 2; role1-handover.md Section 4"
+
+  override_3_earnings_basis:
+    item: "Earnings basis"
+    draft_track: "Left to operator at gate (not picked)"
+    operator_ruling: "FORWARD, both ends. Entry = CMP / FY27E, exit = 17.0x x FY30E"
+    reason: "Amendment 18 symmetry: three-year hold to August 2029 lands five months into FY30, so exit looks one year forward exactly as entry does"
+    source: "fttcp-deliberation.md Section 2 Override 3; role1-handover.md Section 5"
+
+  override_4_pillar_1_base:
+    item: "Pillar 1 base (immaterial, logged)"
+    draft_track: "15.8x from continuous formula (0.5 x 16.6 + 7.5)"
+    operator_ruling: "16.0x from band table"
+    resolution: "Formula is Amendment 5 (v3.3) GENERAL to all archetypes, superseded band table; 0.2x immaterial and washes out under cash multiplier and trim. Logged to LESSONS_ARCHIVE."
+    source: "fttcp-deliberation.md Section 2 Override 4"
+
+# --- CONFLICTS ---
+conflicts: []
+
+# --- UNRESOLVED ITEMS ---
+unresolved:
+  - field: "HAWKAI revenue standalone basis"
+    why: "Stated as both Rs 200 million (Directors' Report p.32) and Rs 200 Cr (MD&A pp.4-5/52, Chairman's Letter; Investor Presentation slide 20) — 100x internal AR discrepancy"
+    where_it_might_be: "AR Directors' Report p.32 vs MD&A table p.52 vs Chairman's Letter (verify which is correct); HAWKAI segment revenue disclosed?"
+    anchor: "B04-bizmodel.yaml flags; noted but not resolved"
+
+  - field: "SBI contract tenure"
+    why: "Stated as both 9 years (MD&A p.51) and 10 years (Directors' Report)"
+    where_it_might_be: "Original SBI RFP award documentation or management clarification on concall"
+    anchor: "B04-bizmodel.yaml mgmt_questions"
+
+  - field: "HDFC contract tenure"
+    why: "Stated as both 3 years (MD&A p.51) and 5 years (Investor Presentation slide 7, post-AR)"
+    where_it_might_be: "HDFC mandate award letter or management concall clarification"
+    anchor: "B04-bizmodel.yaml mgmt_questions"
+
+  - field: "BLA/transaction-linked revenue as % of total revenue"
+    why: "Company memory estimates <10% from forum table [SECONDARY, weak]; AR and investor presentation do not disclose"
+    where_it_might_be: "Q1 FY27 earnings call Q&A or Reg-30 announcement"
+    anchor: "B04-bizmodel.yaml input_gaps, web-handover-dossier.md Section 6 operator inputs"
+
+  - field: "Transaction Solutions International (India) Pvt Ltd relationship"
+    why: "Converted customer receivable to 3-year secured loan (Note 48), but relationship label ('customer/supplier/related party') not disclosed in RPT"
+    where_it_might_be: "AR Note 7(b)/48, RPT completeness audit"
+    anchor: "B08-promoter.yaml input_gaps, B03-ardeep.md top finding rank 7"
+
+# --- ANALYST NOTE ---
+analyst_note: |
+  Every figure carried in this block is anchored to fttcp-deliberation.md (AUTHORITATIVE) or role1-handover.md
+  (LOCKED inputs). Valuation pillars are verbatim from operator-approved table in fttcp-deliberation.md Section 4,
+  non-negotiable for Phase 3. Earnings basis FORWARD (both ends) per operator ruling 30-Aug-2026. FLAG-CASH
+  INDETERMINATE caps disposition at PROCEED WITH CAVEATS, not to be overridden. No re-derivation of Section 1B
+  has occurred; assembly only, with anchors. Segment financials corrected per web-handover-dossier.md Section 3
+  S2: ATM Management GREW 5.3%, Retail fell 7.8% (B03-ardeep.md error noted and reversed). Cash multiplier 1.15x
+  is one notch below top band precisely due to FY26 FCF NEGATIVE, per operator reasoning. Receivables deterioration
+  (1-2yr overdue +752% YoY) and SA loss-allowance release coexist, both documented in B02-notes.yaml; cash conversion
+  verdict rides both facts, not headline CFO/PAT ratio alone. Three case projections (A/B/C) provided for Stage 11
+  sensitivity; FY30E prob-weighted Rs 31.5 is the point estimate. EM 23 below threshold (25); no forward Pillar 3
+  uplift. No peer screen-field data available (screener CSVs empty, collector bug); peer medians anchored to role1-handover.md
+  live 30-Aug-2026 table, verified. Brink's/NCR Atleos transaction (7.0x 2026E EBITDA, announced Feb-2026) is
+  the valuation anchor for contracted ATM infrastructure model at control; CMS at 5.8x EV/EBITDA (excl leases) sits
+  well below this floor on pure multiple basis, but the 30-point ROCE/margin quality gap and net-cash offset support
+  the premium. Do NOT re-derive Pillars; carry to Stage 11 as-is.
+
+timestamp: 2026-08-31T00:00:00Z
+verifier: "Stage 10 Assembly (Haiku 4.5), runs/cmsinfo-2026-08-29"

@@ -1,0 +1,19 @@
+stage: B14-thesis
+company: "CMSINFO"
+run_date: "2026-08-29"
+model: claude-opus-4-8
+status: complete
+verdict: "WATCHLIST"
+entry_range: {low: 227, high: 284}
+position_size: "Small"
+position_size_override: ""
+thesis_broken_if: "FY28 consolidated post-tax ROCE stays below 20% with FY28 capex at the Rs 100-125 Cr guide and capital employed flat (transition falsifier: CMS bought a thin-spread rental book). Also broken if the 1-2yr overdue receivables bucket widens again while Cash Management revenue falls (cash flag hardens from INDETERMINATE to structural), or if national cash fulfilment normalises to 80-85%+ while CMS services revenue does not respond (decline is structural, not shock-induced)."
+monitoring_checklist:
+  - "Consolidated post-tax ROCE: above 22% in FY28 on flat capital = proof fires; below 20% with capex at guide = falsifier"
+  - "1-2yr overdue receivables bucket: moderates toward FY25 (~Rs 178m consolidated) = green; widens again while Cash Management revenue falls = red"
+  - "Standalone loss-allowance cover vs aged receivables: cover rises with the bucket = green; diverges below 0.29x = red"
+  - "Services EBITDA margin: at or above 26.5% for two straight quarters = Margin to FIRING; slides toward 24-25% = red"
+  - "Services revenue vs FY27 guide Rs 2,650-2,750 Cr: low-teens YoY = confirming; sub-5% YoY = STAGNANT"
+  - "Capex vs Rs 100-125 Cr guide: at or below = one-off build; above = treadmill, capital rising"
+  - "National cash fulfilment vs CMS services revenue: normalises AND revenue responds = shock temporary; recovers to 80-85%+ AND revenue does not = structural"
+  - "ICICI ALGO go-live on 10,000+ machines in FY27: live outside SBI = wedge validated; single-customer past FY27 = red"

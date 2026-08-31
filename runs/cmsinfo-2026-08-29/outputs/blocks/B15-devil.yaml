@@ -1,0 +1,18 @@
+stage: B15-devil
+company: "CMSINFO"
+run_date: "2026-08-29"
+model: claude-opus-4-8
+status: complete
+dimensions:
+  growth_triggers: "weakened"
+  moat_durability: "weakened"
+  management_trust: "weakened"
+  valuation_safety: "weakened"
+overall: "WEAKENED BUT ALIVE"
+top_counters:
+  - "SHARED CATALYST slippage, not just failure: one FY28 ROCE print carries both pillars and ~half the return; on a three-year miss-streak management, a one-year slip pushes the exit toward ~12x and ~16% CAGR, below the hurdle (fttcp-deliberation Sec 4; 11-valuation 4.4)."
+  - "FLAG-CASH is arguably worse than INDETERMINATE: 1-2yr overdue +752% (Rs 177.94m to Rs 1,516.32m) in a book up 5.1%, loss allowance RELEASED (cover 0.29x vs 4-6x prior), one customer now a Rs 58 Cr distressed loan, DSO promise dropped (web-dossier S3, var 4; fttcp-draft 2.3)."
+  - "The recovery is a lower plateau by construction, not a temporary artifact: capital permanently +33%, spread ~3 points over CoE, useful-life extension flatters EBIT ~Rs 48m; STRUCTURAL-FEATURE case is live and would flip the matrix to VALUE-TRAP RISK (11-valuation 2.3; web-dossier Sec 1, Sec 6)."
+  - "The EV-cheap read is the seductive one: it imports a levered (Brink's 2.7x net debt) and below-own-history anchor; the P/E method says 17.0x is still 32% expensive (role1-handover Sec 3; fttcp-deliberation Override 2)."
+  - "The transaction-linked BLA book (AGS failure mode) rose 8% to ~14% of revenue against the transition direction and is unexplained; ALGO's installed base is essentially one customer with ICICI go-live not yet happened (role1-handover Sec 10; web-dossier V4)."
+  - "HR 2.20 PASS is circular: HR = exit price / CMP = 535.5/243, so the pass restates the assumption that a 17x re-rating is deserved before the proof gate fires (11-valuation 4.2, 4.3)."

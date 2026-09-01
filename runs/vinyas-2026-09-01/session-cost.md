@@ -16,3 +16,4 @@ wall recorded).
 | 8 | promoter | sonnet | default | - | - | 232873 | 414s | 1 |
 | 5 | concall | sonnet | default | - | - | 149328 | 459s | 1 |
 | 9 | tam | sonnet | default | - | - | 164256 | 464s | 1 |
+| 6 | peer-verification | sonnet | default | - | - | 181527 | 450s | 1 |

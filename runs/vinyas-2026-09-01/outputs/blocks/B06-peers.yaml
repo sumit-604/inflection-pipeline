@@ -1,0 +1,43 @@
+stage: B06-peers
+company: "VINYAS"
+run_date: "2026-09-01"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - "Claim 5 (capex-to-capacity, Rs 500-600cr/SMT-line, 2-3 month online) flagged contradicted vs Avalon/Syrma/Kaynes on cost and timeline; NOTE the peer-question phrasing mixed revenue-per-line with capex-per-line - Avalon's 10x asset turn (Rs 50-60cr capex -> Rs 500-600cr revenue) is actually consistent with VINYAS's ~8x; treat as needs-reconciliation not settled contradiction"
+  - "Claim 3 magnitude: closest analog CyientDLM DSO 77 days vs VINYAS claimed 161 days; VINYAS 161d matches CyientDLM's blended inventory-inflated NWC, not receivables"
+  - "Claim 1: structurally closest peer DataPatterns ~1.5% export vs VINYAS claimed ~50% export share"
+peers_provided: 12
+verified:
+  - {claim: "High-mix defence PCB/subsystem EMS players report EBITDA margins in 9-13% range", peers: ["CYIENTDLM", "CENTUM", "AVALON"], anchor_count: 3}
+  - {claim: "Peer defence-EMS-adjacent players disclose customer concentration (top-1/top-5%) when asked", peers: ["SYRMA", "AVALON"], anchor_count: 2}
+partially_verified:
+  - {claim: "VINYAS ~50% FY26 export share consistent with peer export mix", peers: ["CENTUM", "DATAPATTNS", "SYRMA", "ASTRAMICRO"]}
+  - {claim: "Peers report DSO and attribute long DSO to milestone/project timelines as VINYAS does", peers: ["CYIENTDLM", "CENTUM", "DATAPATTNS", "ASTRAMICRO", "KAYNES"]}
+  - {claim: "Peers size a similar Rs 9,000-10,000cr multi-year defence/aerospace pipeline", peers: ["ASTRAMICRO", "KAYNES", "DATAPATTNS"]}
+  - {claim: "Peers report sole-approved-vendor status correlated with margin premium", peers: ["DATAPATTNS", "ASTRAMICRO"]}
+contradicted:
+  - {claim: "VINYAS's Rs 500-600cr/SMT-line online in 2-3 months matches peer capex-to-capacity ratios", contradicting_peer: "AVALON", quote_anchor: "Avalon Aug 2026 Q1FY27: 'INR50-60 crores annual capex with 10x asset turn... INR500-600 crores additional revenue' - company-wide annual capex, not a single line's cost"}
+unverifiable:
+  - {claim: "Whether the Rs 9,000-10,000cr pipeline is double-counted across bidders for overlapping programs", peers_checked: ["CENTUM", "ASTRAMICRO", "DATAPATTNS", "KAYNES"]}
+peer_coverage_map:
+  - {peer: "ASTRAMICRO", usage: "SUBSTANTIVE", contribution: "Sector pipeline Rs 8,000-10,000cr; dual-source DCPP vendor status; ~33% EBITDA as IP-owner outlier"}
+  - {peer: "CENTUM", usage: "SUBSTANTIVE", contribution: "Export mix 50-55%; EMS margin benchmark 9-11%; WC days 142"}
+  - {peer: "CYIENTDLM", usage: "SUBSTANTIVE", contribution: "Explicit 9-11% core margin; DSO 77d vs blended NWC 161d; $0.5bn pipeline; West Asia risk"}
+  - {peer: "DATAPATTNS", usage: "SUBSTANTIVE", contribution: "Near-zero export book; 27-40% IP margin contrast; single-vendor GeM order"}
+  - {peer: "KAYNES", usage: "SUBSTANTIVE", contribution: "Core EMS WC days 53 vs blended 122; order book >Rs 9,000cr; OSAT/PCB capex scale"}
+  - {peer: "AVALON", usage: "SUBSTANTIVE", contribution: "EBITDA 12.0%; export/domestic 59/41; receivable days 72-74; top-10 concentration 61%; capex Rs 56cr -> Rs 500-600cr revenue"}
+  - {peer: "SYRMA", usage: "SUBSTANTIVE", contribution: "Customer concentration top-5/10/20; export 24%; EBITDA 10.1%; new PCB plant capex Rs 400cr"}
+industry_cross_read:
+  demand: "Broad consensus of strong/record order books; no peer describes a slowdown"
+  pricing_inputs: "Margins protected mainly via component cost pass-through, not independent pricing power; West Asia crisis a live sector-wide supply/cost risk"
+  capex_cycle: "Industry-wide capacity race (Kaynes, Syrma, Avalon, Astra all expanding), not a lone expander"
+risks_peers_raise:
+  - "West Asia/Israel crisis causing raw-material logistics delays and customer approval delays (CYIENTDLM, SYRMA)"
+  - "Memory/semiconductor component shortage and lead-time inflation (SYRMA, CYIENTDLM)"
+  - "US tariff uncertainty affecting demand timing and gross-margin optics (CYIENTDLM, AVALON)"
+  - "Deliberate strategic inventory build diluting margin and working capital (SYRMA, CYIENTDLM, KAYNES)"
+  - "Dual-source (not sole-source) qualification as the structural norm for DRDO/BEL programs (ASTRAMICRO)"
+net_narrative_effect: "complicates"
+analyst_note: "Cross-peer hypothesis: the sector trades receivables discipline for a deliberate inventory buffer against chip-shortage and West Asia supply risk (CYIENTDLM, SYRMA, KAYNES, CENTUM together). Any elevated working-capital figure, including VINYAS's 161d, needs decomposition into inventory-driven vs receivables-driven before being judged against peers - CyientDLM's matching 161d NWC is inventory-driven, true DSO 77d. The 9-11% EMS margin band is peer-confirmed, so VINYAS's 12.5% sits at/above the sector, not below."

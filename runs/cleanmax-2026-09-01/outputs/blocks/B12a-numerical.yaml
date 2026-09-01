@@ -1,0 +1,13 @@
+stage: B12a
+company: "CLEANMAX"
+run_date: "2026-09-01"
+model: claude-haiku-4-5
+status: complete
+numbers_checked: 35
+findings:
+  - {severity: "MINOR", location: "B01-gate0, Block A", claimed: "Median ROE (4 yrs FY23-26) = 1.94%", source_truth: "Simple median of reported ROE series (-5.28%, -2.04%, 1.27%, 2.61%) = -0.385%; reported 1.94% does not match direct median calculation", note: "Methodology likely uses averaging convention from Data_Sheet not independently reproducible from AR. Does not affect Gate 0 verdict (ROE scores 0 regardless). Flagged for transparency.", source_fidelity: false}
+critical_count: 0
+major_count: 0
+minor_count: 1
+acceptance_rate: 97
+coverage_note: "35 material numbers checked spanning Gate 0 scorecard (12 checks), AR deep-dive cross-verifications (7), business-model segment splits (2), TAM/SAM sizing and capacity assumptions (7), cash flow and P&L line items (7). Prioritised verdict-card figures, Section 1B pillar inputs (ROCE, leverage ratios, current ratio), and TAM sizing anchors. All critical figures (revenue CAGR 25.21%, ROCE 5.13%, Net Debt/EBITDA 8.03x, Interest Coverage 1.17x, deal-breaker triggers) verified exact to filed audited statements (AR pp.373-379) or sourced to transparent third-party anchors (Mercom, CRISIL). One minor flag on ROE averaging methodology (not independently reproducible without Data_Sheet granular access, but report is transparent about Data_Sheet source). No CRITICAL mismatches or MAJOR anchor-not-found issues detected. Gate 0 AVOID verdict grounded on verified audited figures."

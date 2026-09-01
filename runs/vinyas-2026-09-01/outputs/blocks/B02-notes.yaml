@@ -1,0 +1,42 @@
+stage: B02-notes
+company: "VINYAS"
+run_date: "2026-09-01"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - {type: FLAG-CASH, reason: "Standalone FY26 operating cash flow negative Rs 32.30 Cr against PAT Rs 30.87 Cr; receivables 6mo-1yr overdue +603% YoY with ECL allowance cut 83.6% (two-year pattern); payables turnover accelerated while receivables slowed, partly bank-financed (Buyer's Credit/bill discounting); cash burn funded by warrant proceeds and fresh short-term debt, not operations."}
+accounting_quality: 4
+top_findings:
+  - {rank: 1, finding: "Standalone FY26 operating cash flow negative Rs 32.30 Cr vs +Rs 8.21 Cr FY25 despite PAT Rs 30.87 Cr and PBT +66%", note_ref: "CFS p.70-71/112-113", rating: "RED"}
+  - {rank: 2, finding: "Receivables 6mo-1yr overdue +603% YoY (Rs 387.40L->2,724.19L) while ECL allowance cut 83.6% via Rs 14.59L reversal to Other Income; two-year pattern", note_ref: "Note 8.1 p.84; Note 19 p.91", rating: "RED"}
+  - {rank: 3, finding: "Payables turnover 17.50x->28.66x while receivables 2.99x->2.55x; payables substantially bank-financed (Buyer's Credit Rs 2,598.54L; bill discounting Rs 62.46L interest)", note_ref: "Note 35 p.105; Note 14.3 p.132; Note 23 p.134", rating: "RED"}
+  - {rank: 4, finding: "~Rs 77 Cr operating+investing burn funded by Rs 61.25 Cr warrant proceeds (~41% of ~Rs 150 Cr raise) + Rs 28.80 Cr short-term borrowing; net cash still fell", note_ref: "CFS p.70-71; Note 11(v) p.88", rating: "RED"}
+  - {rank: 5, finding: "No quantified FX exposure/hedging; Note 30 names FX risk then omits it, despite 70-75% imported RM and Rs 210.12L FX gain in Other Income", note_ref: "Note 30 p.98-99/138-139", rating: "RED"}
+  - {rank: 6, finding: "Raw material inventory +88.1% YoY (Rs 6,541L->12,302L); total inventory +68.3% vs revenue +29.67%; GST input credit +152.8%; no ageing/obsolescence disclosure", note_ref: "Note 7 p.83; Note 9 p.85/126", rating: "RED"}
+  - {rank: 7, finding: "Note 35 Debt-Equity commentary claims borrowings reduced, but Note 31 shows total borrowings +26.6% YoY (Rs 10,269.93L->13,006.04L)", note_ref: "Note 35 p.105; Note 31 p.98", rating: "WATCH"}
+  - {rank: 8, finding: "Note 38: trade receivables/payables/advances 'subject to balance confirmation and reconciliation' as of 28-May-2026 sign-off", note_ref: "Note 38 p.107", rating: "WATCH"}
+  - {rank: 9, finding: "Nexus Advanced Technologies (26%) and United Vinyas (49%) absent from FY26 audited notes; AGM Notice 31-Aug-2026 seeks approval as future RPTs up to Rs 400 Cr / Rs 150 Cr", note_ref: "Note 33/5.1; AGM Notice", rating: "WATCH"}
+  - {rank: 10, finding: "Second wholly-owned US subsidiary (incorp. 3-Feb-2026) absent from Notes 5.1/33/39; only in Board's Report/AOC-1", note_ref: "Board's Report Sec.19 p.50; AOC-1 p.60", rating: "WATCH"}
+  - {rank: 11, finding: "New GST demand Rs 372.94L (zero FY25) no nature/stage; bank guarantees +84.1% to Rs 3,568.30L; deposits +172% to Rs 1,706.64L, no earmark disclosure", note_ref: "Note 36 p.106; Note 8.2 p.85", rating: "WATCH"}
+  - {rank: 12, finding: "Only Rs 61.25 Cr received against ~Rs 150 Cr preferential warrant issue (25% upfront, 18-month conversion)", note_ref: "Note 11(v) p.88", rating: "WATCH"}
+  - {rank: 13, finding: "Labour Codes wage change: one-time Rs 495.69L gratuity + Rs 158.29L leave step-up; salary assumption 3%->10%; Rs 392.46L OCI actuarial loss; gratuity funded ratio 42.9%->21.2%", note_ref: "Note 37(xii)/32 p.107/101-102", rating: "WATCH"}
+  - {rank: 14, finding: "Secured overdraft +35.1% YoY (Rs 8,783.91L->11,862.71L); total borrowings +26.6%; secured by RM/WIP/book debts, MD-personal-name factory land, and WTD personal guarantees", note_ref: "Note 14.1/12.1/31 p.89/88/98", rating: "WATCH"}
+  - {rank: 15, finding: "No capital commitment disclosed in capex-heavy year (PPE additions Rs 3,089.06L); no segment/vertical revenue split; MSME note wrong period; headcount inconsistent across sections", note_ref: "Note 36/34 p.106/105", rating: "WATCH"}
+red_flags:
+  - "ECL allowance -83.6% (two-year pattern) while >6-month overdue receivables +603% YoY, reversal to Other Income, boosting PAT"
+  - "Standalone FY26 CFO negative Rs 32.30 Cr vs PAT +Rs 30.87 Cr; ~Rs 77 Cr burn funded by warrant proceeds and short-term debt"
+  - "Payables turnover accelerated while receivables slowed; payables acceleration bank-financed (Buyer's Credit, bill discounting)"
+  - "Note 30 names FX risk then omits discussion despite heavy imported-input dependence"
+  - "Note 35 Debt-Equity commentary misstates borrowing direction (claims reduction; borrowings +26.6% YoY)"
+  - "Trade receivables/payables balances unconfirmed with counterparties at audit sign-off (Note 38)"
+  - "Nexus (26%), United Vinyas (49%), and second US WOS all absent from FY26 audited notes"
+questions_for_mgmt:
+  - "Customer-level composition of the Rs 2,724.19L 6mo-1yr overdue bucket (+603% YoY), and quantitative basis for cutting ECL 83.6% same year?"
+  - "When were Nexus (26%) and United Vinyas (49%) acquired/formed, and why absent from FY26 Note 33/5.1/consol Note 39 at 31-Mar-2026, given AGM seeks RPT up to Rs 550 Cr?"
+  - "Quantified net FX exposure and hedging, given 70-75% imported RM and Note 30's unfulfilled FX-risk disclosure?"
+  - "Is any of the Rs 17.07 Cr 3-12m deposits lien-marked against Rs 35.68 Cr bank guarantees, and status of Note 38 balance confirmation?"
+  - "Given CFO negative Rs 32.30 Cr vs PAT Rs 30.87 Cr, timeline and levers to restore positive operating cash flow, and second US subsidiary FY27 capital needs?"
+receivables_trend: "deteriorating - gross receivables +28.2% YoY (Rs 17,722.78L->22,712.57L); 6mo-1yr overdue +603.3%, 2.3%->12.0% of gross; receivables turnover 2.99x->2.55x; ECL allowance -83.6% same year (Note 8.1 p.84)"
+going_concern_language: "NONE - standard going-concern basis only; unqualified opinion signed 28-May-2026; no material uncertainty flagged"
+analyst_note: "The weighty findings (ECL reversal, CFO negative vs PAT positive, payables/receivables divergence, bank-financed payables) are one cash-conversion root cause seen through five notes plus the CFS; weight as one risk, not five. Two items need live verification before crediting narrative: (1) Nexus/UVT and the second US WOS are absent from every audited FY26 note despite being central to memory and MD&A - confirm formation/consolidation dates before pricing JV or US optionality; (2) Note 35 ratio commentary contains a factual contradiction (Debt-Equity), so its other qualitative explanations are unverified narrative until cross-checked."

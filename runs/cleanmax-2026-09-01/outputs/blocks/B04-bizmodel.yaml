@@ -1,0 +1,64 @@
+stage: B04-bizmodel
+company: "CLEANMAX"
+run_date: "2026-09-01"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["Investor presentation is Q1 FY27 results deck only, no pre-IPO/analyst-day deck", "RE Services revenue split (CAPEX/EPC vs O&M vs Carbon Services) not separately disclosed", "No single AR-disclosed blended parent economic ownership % across SPVs", "No named-competitor comparative data in either document"]
+flags: ["FY26 financial covenant breach disclosed and rectified (AR Note 37.1, p.218)", "RE Services percentage-of-completion revenue is a Key Audit Matter - contract cost-to-complete estimation risk (AR p.144)", "New-PPA tariffs falling YoY on newly commissioned capacity (Rs4.12/kWh FY24 to Rs3.57/kWh FY26 trailing-12m, Inv. Pres. p.27)", "Parent economic share per project varies 51%-100% and is trending toward minority sell-downs (Apple 49% of Clean Max Taurus, Toyota Tsusho 49% of CMT JBIN, AR p.108)", "Grid backdown risk flagged for 525 MW Bikaner CTU project over next 6-12 months, ~13% of FY27 run-rate EBITDA exposure (Inv. Pres. p.15)"]
+business_type: "hybrid"
+revenue_streams:
+  - {name: "RE Power Sales", type: "long-term contracted annuity revenue", pct_of_revenue: 73.2, predictability: "H"}
+  - {name: "RE Services (CAPEX/EPC + O&M + Carbon Services)", type: "project/contract revenue, percentage-of-completion plus recurring service fee", pct_of_revenue: 26.0, predictability: "L"}
+  - {name: "Other unallocable", type: "miscellaneous", pct_of_revenue: 0.8, predictability: "M"}
+asset_intensity: "heavy"
+wc_intensity: "medium"
+pricing_power: "weak"
+cyclicality: "secular-growth"
+moats_present:
+  - {moat: "Regulatory/license structuring expertise (Captive Regulations)", durability: "durable"}
+  - {moat: "Efficient scale / secured grid-evacuation capacity", durability: "moderate-durable"}
+  - {moat: "Distribution/customer relationships, 74% repeat orders", durability: "moderate, contingent on execution"}
+  - {moat: "Switching costs on signed PPAs", durability: "high but contract-specific, does not aid new-deal wins"}
+  - {moat: "Cost advantage via SG&A leverage and falling project-debt cost", durability: "moderate, improving, not proprietary"}
+valuation_methods:
+  primary: {method: "EV/EBITDA (consolidated, NCI-adjusted)", why: "captures near-cash, stable per-MW EBITDA once seasoned and nets out the debt-funded capital structure; must adjust for minority SPV stakes"}
+  secondary: {method: "DCF of contracted PPA cash flows (parent economic share, by vintage)", why: "directly values the 23-year weighted-tenor contracted cash flow stream at CleanMax's actual post-NCI economic share"}
+  tertiary: {method: "SOTP by segment (Power Sales annuity value + Services as a service business)", why: "two economically different engines likely warrant different multiples"}
+  not_applicable: ["P/E (uncapped/standalone)", "P/B", "Dividend yield", "Asset-based/liquidation value"]
+irrelevant_ratios:
+  - {ratio: "Standalone/uncapped P/E", why: "EPS distorted by young-fleet depreciation/interest timing and by non-controlling interest wedge"}
+  - {ratio: "Headline consolidated revenue growth", why: "blends steady 47% Power Sales growth with 7.3x lumpy Services swing in the same quarter"}
+  - {ratio: "Net profit margin, single-year read", why: "swings mechanically as young SPVs season, not from a change in unit economics"}
+  - {ratio: "Current ratio", why: "0.66 looks distressed but is normal for project-finance IPPs with current maturities of long-tenor debt"}
+  - {ratio: "Generic Debt/Equity rule-of-thumb", why: "project debt is secured against 20-25yr contracted cash flows; leverage should be read via Net Debt/Run-rate EBITDA instead"}
+  - {ratio: "Reported ROE", why: "just 2.95% FY26 because the fleet is young; will rise mechanically as assets season"}
+must_track_metrics:
+  - {metric: "Segment EBITDA margin (Power Sales / Services)", healthy: "Power Sales >=80%, Services double-digit", red_flag: "either segment margin compresses materially"}
+  - {metric: "Net Debt / Run-rate EBITDA", healthy: "5.0x-5.5x company target band", red_flag: "persistently above 5.5x without EBITDA catching up"}
+  - {metric: "Cost of project debt (weighted avg)", healthy: "declining trend, 8.5% FY26", red_flag: "reversal upward"}
+  - {metric: "RE Services DSO / contract-accounting quality", healthy: "declining toward double digits, 93 days FY26", red_flag: "re-widening past ~130 days or major cost-to-complete revisions"}
+  - {metric: "PAT attributable to owners vs consolidated PAT (NCI share)", healthy: "owners' share growing at least as fast as consolidated PAT", red_flag: "NCI share of profit rising faster, i.e. dilution"}
+unit_economics:
+  unit: "1 MW/MWp of operational RE Power Sales capacity, seasoned to steady state"
+  revenue_per_unit: "derived, not directly disclosed: ~Rs4.20/kWh operational tariff x generation (PLF-dependent, solar ~24.6%, wind ~35.1%)"
+  margin_per_unit: "portfolio EBITDA margin 83-84%; Solar Rs50-55 Lakh/MWp, Wind Rs100-110 Lakh/MW run-rate EBITDA"
+  key_lever: "MW commissioned x PLF x locked PPA tariff, offset by falling new-contract tariffs and a shrinking parent equity share per project"
+first_deterioration_signals:
+  - {risk: "Group-captive/open-access regulatory change", first_signal: "RE Power Sales segment gross margin below ~90%"}
+  - {risk: "New-PPA tariff erosion", first_signal: "newly commissioned trailing-12m tariff falling further below Rs3.57/kWh"}
+  - {risk: "Mix shift to lower-margin Services", first_signal: "blended EBITDA margin on total income falling further below 53.0%"}
+  - {risk: "Grid backdown/curtailment on new CTU assets", first_signal: "plant/grid availability dropping below 98% trailing-12m"}
+  - {risk: "Leverage outrunning EBITDA seasoning", first_signal: "Net Debt/Run-rate EBITDA persistently above 5.5x"}
+  - {risk: "Financial covenant breach recurrence", first_signal: "any new breach disclosed in quarterly notes"}
+  - {risk: "Commissioning shortfall vs FY27 guided floor", first_signal: "quarterly MW commissioned trailing pro-rata 1.5GW/yr pace"}
+  - {risk: "Shrinking parent economic share per incremental GW", first_signal: "PAT attributable to owners growing slower than consolidated EBITDA/PAT"}
+mgmt_questions:
+  - "What is CleanMax's average parent ownership stake across SPVs commissioned in FY26/FY27, weighted by MW, and how is it trending?"
+  - "What share of contracted capacity is at newly commissioned (~Rs3.57/kWh) vs operational-book average (~Rs4.20/kWh) tariffs, and what is the outlook on further compression?"
+  - "What triggered the FY26 financial covenant breach, at which SPV/pool, and what remedial action was taken?"
+  - "What is the multi-year trajectory for RE Services margin and mix - strategic third-party business or pipeline support?"
+  - "For the 525 MW Bikaner CTU project, what is the duration and full financial impact of the flagged grid-backdown risk?"
+  - "What proportion of the FY26-commissioned 1.4 GW has reached steady-state run-rate EBITDA as of the latest quarter?"
+  - "Will future growth continue via project debt plus minority equity sell-downs, or will parent ownership retention rise using listed-market capital?"
+one_line_verdict: "Contracted-cash-flow IPP that dilutes its own upside through minority equity sell-downs on every new project."
+analyst_note: "CleanMax is best modeled as two businesses in one shell: a 73% annuity-like Power Sales engine (23yr PPAs, 83.5% EBITDA margin) and a 26% lumpy EPC/services engine (19.6% margin, 7.3x quarterly swings). The capital-recycler pattern is structural, not incidental: Electricity Act Captive Regulations legally require minimum 26% customer equity per group-captive SPV, and CleanMax has additionally sold down to 51% in several JVs (Apple 49% of Taurus, Toyota Tsusho 49% of CMT JBIN). This means consolidated revenue/EBITDA growth systematically overstates per-share economic growth, and the gap will vary project by project since no single disclosed metric tracks blended parent ownership. New-PPA tariffs are falling YoY, so the growth story rests on volume (MW commissioned) and financing-cost improvement (project debt 9.5%->8.4%) rather than pricing power. Section 1B destination PE must treat this as a leveraged IPP, not a growth industrial: EV/EBITDA and NCI-adjusted DCF of contracted cash flows are the only methods that avoid overpaying for economics CleanMax does not fully own."

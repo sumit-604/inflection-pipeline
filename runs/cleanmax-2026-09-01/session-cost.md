@@ -9,5 +9,8 @@ Per-stage token ledger. One row per subagent run.
 | 3 | stage-02-notes (pass 2) | sonnet | n/a | n/a | n/a | 143529 | 8m40s | 2 |
 | 4 | stage-02-notes (pass 3) | sonnet | n/a | n/a | n/a | 77227 | 4m24s | 3 |
 | 5 | stage-03-ardeep | sonnet | n/a | n/a | n/a | 215917 | 14m41s | 1 |
+| 6 | stage-04-bizmodel | sonnet | n/a | n/a | n/a | 129577 | 7m47s | 1 |
+| 7 | stage-05-concall | sonnet | n/a | n/a | n/a | 153617 | 8m28s | 1 |
+| 8 | stage-08-promoter | sonnet | n/a | n/a | n/a | 161347 | 9m50s | 1 |
 
 (Only aggregate subagent_tokens are exposed per run; in/out split shown n/a.)

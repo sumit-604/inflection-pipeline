@@ -126,3 +126,14 @@ FLAG-PROMOTER CONCERN acknowledged. Override for coverage only (not a quality up
 
 ## RUN FOLDERS
 - runs/maninds-2026-08-21/
+
+## QUARTERLY REVIEW LOG
+- 2026-09-01 Corporate Presentation (Reg 30, investor/analyst meet). Pipeline /run-quarterly, A1-A5, A5 verdict COMPLETE (1 loop: A4 net-debt cell + A3 certificate line). 37 slides / 439 ledger rows, all reviewed. Protocol verdict PROCEED WITH FLAGS; cash conversion INDETERMINATE (no cash-flow statement in a deck). DECISION STATUS UNCHANGED: WATCHLIST at CMP Rs714, entry Rs412-589, MoS Rs412, Position Small. No pre-committed trigger fired.
+  - Reject the deck's FY26 ROCE 18.4% (slide 3): flattered by Other Income in the numerator, Jammu CWIP stripped from the base, and an average denominator; the 920bps gap to 9.2% ROE is the tell. Our 13.8% (~13.9% ex-OI) stands.
+  - Tripwires 1, 2, 6 APPROACHING. T1 India standalone order book OMITTED from all 37 slides (only NPC USD120M shown) - selective silence on the kill metric. T2 CONTRADICTS: non-current (>1yr) receivables +145% (Rs97.3->238.5cr), WC deteriorating not normalising. T6 consol EBITDA margin 13.0% only on the non-standard EBITDA-incl-Other-Income basis; ex-OI 12.3%, below the 13% floor.
+  - T7 CONFIRMS peak concern: NPC forward guide 15-18% EBITDA / 11-14% PAT sits BELOW CY2025 actuals 24.8% / 18.1%. T5 CONFIRMS Jammu/Dammam Mar-2027 (no slip vs company; CRISIL Sep-2027 gap unaddressed).
+  - New reds: consolidated PAT below standalone in FY26 (subsidiary revenue collapsed Rs387->109cr, contribution flipped +16 to -25cr); undisclosed equity issuance (paid-up capital +15.7%, ~USD32M NPC slice); Rs579.7cr other current financial liabilities unexplained (governs net cash vs net debt); 5-yr revenue CAGR guide cut to 20-25% from 25-30%; complete governance silence (SEBI/SAT/MCA/SC) in a Reg 30 deck.
+  - 15 questions for management raised (top 3: India order book, ROCE basis, NPC peak). Next decisive test: Q2FY27 filed print ~14-Nov-2026 (India book split, WC direction, NPC first full quarter). Review: runs/maninds-corppres-2026-09/work/review_maninds_2026-09.md.
+
+## RUN FOLDERS (quarterly)
+- runs/maninds-corppres-2026-09/ (Corporate Presentation review, 2026-09-01)

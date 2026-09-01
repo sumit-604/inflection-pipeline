@@ -10,8 +10,10 @@
 Spear: OVERRIDE
 Date: 2026-09-01
 Analyst: Claude web
-Signed: [PENDING OPERATOR]
+Signed: Keerti Kaushik (operator) — 2026-09-01
 ```
+**Gate line (SPEAR GATE, above the Mental Model block):**
+Spear: OVERRIDE 2026-09-01 (operator)
 **Pond:** PASS. Largest C&I renewable provider in India, 3.49 GW operational, 555 customers,
 8% share of FY25 open access additions. The only listed pure play in the niche. Every direct
 competitor (Amplus, Fourth Partner, O2 Power, Serentica) is private. Continuum Green Energy has
@@ -212,6 +214,9 @@ regulated utilities); Continuum Green Energy (best peer, unlisted, DRHP only).
             Provisional entry zone ₹610–800. Framework exception proposed (Option A),
             operator ruling PENDING. Corpus verdict GAPPED. Peer set defined (6 names).
             EBITDA definition contradiction flagged.
+2026-09-01  Operator signed the spear OVERRIDE. SPEAR GATE cleared. /run-pipeline
+            authorised. Section 3 framework exception (Option A/B) remains UNSIGNED;
+            it blocks Section 1B in Phase 3, not Phase 1 evidence.
 ```
 **Slots to be filled as the pipeline runs:**
 ```

@@ -14,5 +14,6 @@ Per-stage token ledger. One row per subagent run.
 | 8 | stage-08-promoter | sonnet | n/a | n/a | n/a | 161347 | 9m50s | 1 |
 | 9 | stage-06-peers | sonnet | n/a | n/a | n/a | 161767 | 7m18s | 1 |
 | 10 | stage-07-emoat | sonnet | n/a | n/a | n/a | 206729 | 8m01s | 1 |
+| 11 | stage-09-tam | sonnet | n/a | n/a | n/a | 95863 | 9m04s | 1 |
 
 (Only aggregate subagent_tokens are exposed per run; in/out split shown n/a.)

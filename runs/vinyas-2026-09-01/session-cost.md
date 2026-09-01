@@ -13,3 +13,4 @@ wall recorded).
 | 7 | emerging-moat | sonnet | default | - | - | 191180 | 694s | 1 |
 | 3 | ar-deep-dive | sonnet | default | - | - | 192056 | 1059s | 1 |
 | 4 | business-model | sonnet | default | - | - | 205914 | 434s | 1 |
+| 8 | promoter | sonnet | default | - | - | 232873 | 414s | 1 |

@@ -1,0 +1,33 @@
+stage: B08-promoter
+company: "VINYAS"
+run_date: "2026-09-01"
+model: claude-sonnet-5
+status: partial
+input_gaps:
+  - "IPO prospectus/RHP not in corpus; NSE archive RHP URL located but not fetched"
+  - "Israeli JV partner's (74% co-owner of Nexus) legal name unresolved via web search"
+flags: []
+verdict: "CAUTION"
+scorecard: {clean: 6, caution: 4, red: 0}
+deal_breakers: []
+adverse_findings:
+  - {finding: "Nexus and UVT (26%/49% associates) absent from FY26 audited Note 33 RPT list and Note 19, yet AGM Notice (28-Aug-2026) proposes combined Rs 550 Cr RPT ceiling, exceeding FY26 turnover Rs 514 Cr; no subsequent-events note covers these post-year-end JV commitments", evidence_tier: "VERIFIED", source: "FY26 AR Note 33/19/37; AGM Notice items 6-7", date: "2026-08-28"}
+  - {finding: "Borrowings secured in part by factory land/building held personally in MD's name, plus personal guarantees of both Whole Time Directors", evidence_tier: "VERIFIED", source: "FY26 AR Note 14.1 p.89", date: "2026-05-28"}
+  - {finding: "Multiple relatives of directors draw combined Rs 129.03 lakh FY26 remuneration; disclosed but substantive-role verification not possible externally", evidence_tier: "VERIFIED", source: "FY26 AR Note 33(ii) p.103-104", date: "2026-05-28"}
+  - {finding: "Glassdoor weak on Culture & Values (2.6/5) and Senior Management (2.9/5), small sample N=7", evidence_tier: "MEDIA REPORTED", source: "Glassdoor", date: "2026-09-01"}
+transition_evidence:
+  - "Three externally credentialed independent directors added at Aug-2023 IPO listing, all still serving, active across committees"
+  - "NADCAP AC7120 accreditation achieved FY26 - external, hard-to-fake quality-system upgrade"
+  - "Non-family professional CFO (Amitava Majumdar) and CS (Subodh M R) as continuing KMPs despite family-heavy board"
+  - "Promoter participated in Rs 1,100/warrant preferential round priced above contemporaneous market range - skin-in-the-game signal"
+pledge_pct_latest: 0.0
+pledge_trend: "stable - 0.00% at FY26-end vs 0.00% FY25-end; no pledge history since Oct-2023 IPO"
+searches_performed:
+  - "Narendra Narayanan founder MD; SEBI order; IPO prospectus 2023; Nexus Advanced Technologies Israel JV; United Vinyas Technologies USA; NSE announcement JV; promoter pledge; Glassdoor/AmbitionBox; NCLT litigation; auditor/CFO resignation; IiAS/SES/proxy/short-seller; independent-director backgrounds; AGM RPT ceiling concern; board-meeting outcome defence JV"
+searches_skipped:
+  - "WebFetch hdfcsky.com / businessupturn.com / scanx.trade JV articles - EGRESS_BLOCKED by proxy"
+  - "WebFetch screener.in company page - EGRESS_BLOCKED"
+  - "AmbitionBox-specific review pull - no results"
+  - "nclt.gov.in company-specific full-text - general search only"
+verdict_basis: "Clean SEBI/criminal/tax/NCLT record, 0% pledge, stable non-selling promoter holding, and a real post-listing governance upgrade (3 external IDs since 2023, NADCAP FY26) offset by heavy family concentration across executive board, RPT counterparties and payroll, personal-asset-backed borrowings, and a combined Rs 550 Cr RPT ceiling sought for two JVs formed weeks before the AGM."
+analyst_note: "Nexus's Israeli JV partner (74% holder) could not be named from web search; JV mechanics confirmed (26% Vinyas stake, Rs 2.6 Cr, Reg 30 ~5-Aug-2026). UVT's partner, United Innovative Solutions (Illinois, founded 2000), is a real longstanding operating EMS company, lowering opaque-counterparty risk on the US side. The Note 33/AGM gap is best read as a timing issue (JVs formed after FY26 close), but the AR's silence on it as a subsequent event plus the ceiling size relative to turnover is a named FTTCP watch item, not a resolved fact."

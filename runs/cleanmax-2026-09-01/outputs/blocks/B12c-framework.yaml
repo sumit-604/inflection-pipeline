@@ -1,0 +1,28 @@
+stage: B12c
+company: "CLEANMAX"
+run_date: "2026-09-01"
+model: claude-opus-4-8
+status: complete
+gate0:
+  rules_checked: 38
+  fails:
+    - {rule: "OUTPUT — mandated closing fenced YAML block", severity: "MAJOR", detail: "B01 report file ends at the decision line (line 367) with no YAML block; prompt 01 OUTPUT mandates it. Scores/classification present in prose and consumed by B07, so AVOID survives, but the machine-readable stage payload is absent from the artifact. [ORCHESTRATOR NOTE: block captured to outputs/blocks/B01-gate0.yaml and appended to the report during phase-1 remediation.]"}
+emoat:
+  rules_checked: 12
+  fails: []
+valuation:
+  status: "PENDING — deferred to phase 3 (B10/B11 do not exist yet; valuation framework docs not loaded)"
+  rules_checked: 0
+  fails: []
+business_understanding_narrative: {present: false, five_questions_answered: false, prose_only: false, section6_candidates_named: 0, valuation_vocab_leak: false, fails: ["not in phase-1 scope — stage 13 not audited"]}
+recomputed_destination_pe: ""
+recomputed_decision: ""   # concurs: AVOID
+findings:
+  - {severity: "MAJOR", location: "B01 report file (whole)", claimed: "stage output complete", framework_truth: "prompt 01 requires a closing fenced YAML block; file has none", note: "decision AVOID survives via prose; machine-readable payload missing (remediated: block written to outputs/blocks and appended to report)"}
+  - {severity: "MINOR", location: "B01 Block C — C2/C4", claimed: "PAT CAGR N/M -> C2=0, C4=0", framework_truth: "both CAGR endpoints positive (25.32->94.13); strict first edge-rule bullet would compute ~30% -> C2=5, C4=5, Block C=20, Core=34", note: "loss-to-profit-swing clause invoked; defensible; still <40 and DB#6 fires -> AVOID unchanged"}
+  - {severity: "MINOR", location: "B01 data-confidence / history downgrade", claimed: "5-6 lower, no downgrade (6-yr overall)", framework_truth: "core Blocks A/B/D rest on 4-yr BS detail; 3-4 yr rule allows a one-tier downgrade", note: "decision-neutral"}
+  - {severity: "MINOR", location: "B07 Section 5 — H2", claimed: "mixed doc/voice treated documented at 1.0x", framework_truth: "documented core (Osaka Gas Rs176 Cr, Apple JV Rs100+ Cr); voice target parked in optionality register", note: "defensible, no score impact"}
+critical_count: 0
+major_count: 1
+minor_count: 3
+acceptance_rate: 98

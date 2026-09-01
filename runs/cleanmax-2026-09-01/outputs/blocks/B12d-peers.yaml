@@ -1,0 +1,26 @@
+stage: B12d
+company: "CLEANMAX"
+run_date: "2026-09-01"
+model: claude-sonnet-5
+status: complete
+peers_audited: 19
+substantive_confirmed: 13
+substantive_unsupported:
+  - "ACMESOLAR Q2 FY26 (Nov 2025): Sikar Rs17.5 Cr curtailment-loss citation not found in this transcript; figure actually appears in ACMESOLAR Q3 FY26 (Feb 2026) transcript, line 159"
+unused_but_relevant:
+  - {peer: "JSWENERGY Q4 FY26 (May 2026)", missed_item: "160 MU curtailed, ~Rs16 Cr quarterly / ~Rs50 Cr annual revenue loss with most under GNA permanent-recovery protection - a third, Rs-Cr-quantified confirmation of the GNA revenue-protection mechanism central to Claim 6, and a real-world scale comparator to CleanMax's ~Rs170 Cr Bikaner impact", anchor: "JSWENERGY-Concall_May_2026_Transcript.txt, lines 232-240"}
+  - {peer: "JSWENERGY Q3 FY26 (Jan 2026)", missed_item: "GNA-vs-TGNA curtailment exchange ('our portion is significantly small') reinforcing Claim 6 mechanism; redundant with Oct2025/Feb2026 citations already used", anchor: "JSWENERGY-Concall_Jan_2026_Transcript.txt, lines 861-880"}
+  - {peer: "ADANIGREEN Q3 FY26 (Jan 2026)", missed_item: "Curtailment Q&A reinforcing industry-wide curtailment direction for Claim 6; redundant with Jul2026/Apr2026 citations already used", anchor: "ADANIGREEN-Concall_Jan_2026_Transcript.txt, lines 197-233"}
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "MAJOR", location: "B06 Part 3, ACMESOLAR Q2 FY26 (Nov 2025) row", claimed: "Sikar (Rajasthan) curtailment loss of Rs17.5 Cr, cited to Nov 2025 transcript", source_truth: "Figure appears in ACMESOLAR Feb 2026 (Q3 FY26) transcript line 159, not in Nov 2025 transcript (zero matches for '17.5' or 'curtailment loss')", note: "Wrong-transcript citation; underlying fact is true but misattributed to the wrong call"}
+  - {severity: "MAJOR", location: "B06 Part 3, JSWENERGY Q4 FY26 (May 2026) row", claimed: "CITED-ONLY, merchant-tariff premium only", source_truth: "Transcript also contains 160 MU curtailment / Rs16-50 Cr revenue-loss GNA-protection disclosure directly relevant to Claim 6", note: "Directly claim-relevant peer statement left unused"}
+  - {severity: "MINOR", location: "B06 Part 3, JSWENERGY Q3 FY26 (Jan 2026) row", claimed: "CITED-ONLY, merchant-tariff premium only", source_truth: "Transcript also contains a GNA/TGNA curtailment exchange, redundant with citations already in use", note: "Industry-context miss, not decisive"}
+  - {severity: "MINOR", location: "B06 Part 3, ADANIGREEN Q3 FY26 (Jan 2026) row", claimed: "CITED-ONLY, 14% capacity-addition figure only", source_truth: "Transcript also contains curtailment Q&A, redundant with citations already in use", note: "Industry-context miss, not decisive"}
+  - {severity: "MINOR", location: "B06 Part 1, Claim 4 evidence (KPIGREEN Feb 2026)", claimed: "KPI Green CPP EBITDA margin 18-22%", source_truth: "Transcript gives 18-20% (management direct answer, line 571) and 20-22% (analyst-framed figure, line 564)", note: "Compressed range is a reasonable rounding, not a single verbatim figure"}
+critical_count: 0
+major_count: 2
+minor_count: 3
+acceptance_rate: 79
+peer_utilisation_pct: 68   # 13 substantive of 19 peer transcripts provided (orchestrator confidence-delta input)

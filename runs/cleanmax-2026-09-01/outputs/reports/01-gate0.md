@@ -365,3 +365,44 @@ promoter holding as at 31 Mar 2026, after having been reported released in the F
 2026 RHP) compounds the picture. This is a mechanical Gate 0 finding; it does not
 determine the pipeline's final verdict but is the load-bearing quantitative input to
 it.
+
+
+---
+
+```yaml
+stage: B01-gate0
+company: "CLEANMAX"
+run_date: "2026-09-01"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "ROCE Capital Employed FY21-FY22 NOT FOUND (no current-liability split in provided corpus for pre-RHP years)"
+  - "Trade Payables / WC Days FY21-FY22 NOT FOUND"
+  - "Capex breakdown (cash flow) FY21-FY22 NOT FOUND"
+  - "Promoter holding 3-year comparable trend (E2) NOT FOUND — recent IPO, pre-listing cap table not comparable"
+  - "Peer data for M2 (cost advantage), M5 (scale), M6 (R&D), M7 (regulatory player count), M9 (brand) NOT FOUND"
+  - "Distribution/client-count series (M8) NOT FOUND"
+flags:
+  - {type: FLAG-GATE0, reason: "Classification AVOID. Deal-breaker #6 (ND/EBITDA 8.03x AND Interest Coverage 1.17x) and Core score 24<40 both independently force AVOID. Depressor is FY24-FY26 IPO-cycle capacity build-out (CWIP ~2x, borrowings ~2.3x FY24-FY26) against a revenue base that never declined (25.2% 5yr CAGR) and OPM that expanded every year since FY23 — a leverage/ROCE-timing story, not declining unit economics. Downstream call on whether this reframes the verdict."}
+  - {type: FLAG-PLEDGE, reason: "Promoter pledge 20.02% of promoter holding (11,597,866 of 57,930,860 shares) as at 31 Mar 2026 (AR p.420), re-established after the RHP (p.150, filed 25-Feb-2026) had reported the same shares released prior to filing."}
+data_years: 6
+fy_range: "FY21 to FY26"
+blocks: {A: 5, B: 5, C: 10, D: 0, E: 4}
+core_score: 24
+moat_score: 14
+grand_total: 38
+moats_confirmed: 3
+moat_class: "MODERATE"
+classification: "AVOID"
+deal_breakers: ["1: Block A<8 -> max GOOD", "2: Block B<8 -> max GOOD", "3: median ROCE 5.83%<10% -> max AVERAGE", "5: promoter pledge 20.02%>15% -> max AVERAGE", "6: ND/EBITDA 8.03x>3x AND IC 1.17x<3x -> AVOID (dominant)", "8: PAT negative FY24 -> max AVERAGE"]
+history_downgrade: false
+data_notes:
+  - "Data_Sheet (screener) confirmed CONSOLIDATED throughout via exact cross-tie to RHP restated financials (FY23-25) and Q4FY26 audited results (FY25-26) on revenue, CFO, PBT, Interest, Depreciation, and Net Worth lines."
+  - "PAT CAGR marked N/M: profit-to-loss swing FY22->FY23, loss-to-profit swing FY24->FY25, both inside the CAGR window despite positive endpoints."
+  - "FY22 average Net Worth denominator distorted by a ~25x equity infusion mid-window (Rs 50.36 Cr -> Rs 1,260.64 Cr), mechanically depressing FY22 ROE."
+  - "B1 (cumulative CFO/PAT = 161.4x) is a distorted ratio: cumulative PAT (Rs 25.71 Cr) is near-zero because FY23-24 losses nearly offset FY25-26 profits, inflating any CFO/PAT ratio. Not read as evidence of strong cash conversion quality."
+  - "D1 EBITDA used is the company's own reported line (Rs 1,294.56 Cr, FY26) which includes Other Income (Rs 168.59 Cr); operating-only EBITDA (Rs 1,132.22 Cr) gives the same score outcome (still >3x ND/EBITDA)."
+  - "Standalone FY26 revenue (Rs 6,003 Cr per orchestrator brief) not used anywhere; all figures in this report are consolidated (Rs 1,912.87 Cr FY26 revenue)."
+block_b_trend: "deteriorating - FCF widened from -Rs 1,780 Cr (FY24) to -Rs 4,023 Cr (FY26); growth-capex driven, not operating breakdown: CFO grew 20x (Rs 86 Cr -> Rs 1,731 Cr) over the same window while capex grew 3.1x (Rs 1,866 Cr -> Rs 5,754 Cr), i.e. operating cash generation is scaling but capex on new capacity is scaling faster."
+analyst_note: "AVOID is doubly mechanical here: deal-breaker #6 fires AND Core<40 fires independently, so this is not a single fragile trigger. But the driver is worth naming precisely for downstream FTTCP: FY24-26 is a capacity build-out phase (CWIP ~2x, borrowings ~2.3x) for a company that IPO'd Feb 2026, revenue never declined (25.2% 5yr CAGR, OPM +20.6pp FY21-26), and low ROCE (median 5.83%) reflects capital deployed into CWIP not yet earning (FAT 0.16x FY26) rather than eroding unit economics. Separately and materially: the promoter pledge finding (20.02% of promoter holding, re-established after the RHP reported it released) is a governance flag independent of the leverage story and should carry through Halt 1 regardless of how the leverage/growth tension resolves."
+```

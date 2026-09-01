@@ -1,0 +1,25 @@
+stage: B12b
+company: "CLEANMAX"
+run_date: "2026-09-01"
+model: claude-opus-4-8
+status: complete
+independent_flags_found: 12
+caught: 8
+partially_caught: 2
+missed:
+  - {severity: "MAJOR", item: "Bikaner is on TGNA and curtailment is not revenue-protected (customers not liable to pay for uncurtailed power); disclosed by management but absent from B05. Directly answers B06's self-declared top open question (Bikaner GNA-vs-TGNA status).", anchor: "Concall_Mar_2026 p.18 (Puneet Gulati/Kuldeep Jain TGNA exchange); Concall_May_2026 p.11 (no pay-for-performance protection)"}
+  - {severity: "MAJOR", item: "Quarterly generation/PLF data requested in Q3 FY26 and again Q1 FY27 and deferred both times; the Q3 commitment to publish quarterly generation 'going forward' was not delivered. Not in B05's repeated-question tracker or promise table.", anchor: "Concall_Mar_2026 p.11,p.17; Concall_Aug_2026 p.14"}
+pipeline_flags_not_supported: []
+promise_delivery_spot_checks: {checked: 5, confirmed: 5, wrong: 0}
+credibility_grade_concur: "concur — B is right; transparency is real but missed TGNA disclosure and repeated forward-EBITDA/generation deferrals keep it below A"
+findings:
+  - {severity: "MAJOR", location: "B05 (Bikaner analysis: 2A/3C/4D)", note: "Missed disclosed TGNA status and no-revenue-protection mechanism (Mar p.18, May p.11); explains why 70% curtailment yields the Rs170 Cr hit and resolves B06's most consequential open question."}
+  - {severity: "MAJOR", location: "B05 2E / 2A", note: "Missed the repeated (2-quarter) deferral of quarterly generation/PLF disclosure and the unkept Q3 promise to provide it (Mar p.11/p.17; Aug p.14)."}
+  - {severity: "MINOR", location: "B05 2A", note: "Credit-rating 'full notch within one quarter' overstated; May call states no rating level, A+ is a year-ago reference, span A+ to AA is ~a year (May p.9; Aug p.3,p.9)."}
+  - {severity: "MINOR", location: "B05 2A promise table", note: "Counts 500 MW (incl. 100 MW RE services) as ~33% of the 1.5 GW floor; the floor is RE-power-sales/opex capacity, so 400 MW = ~27% (May p.6; Aug p.4,p.13)."}
+  - {severity: "MINOR", location: "B05 (net debt handling)", note: "Under-weighted: net debt Rs9,684->Rs11,809 Cr in one quarter with 38% (Rs4,483 Cr) against non-earning under-construction assets (Aug p.8)."}
+  - {severity: "MINOR", location: "B05 (curtailment/uptime framing)", note: "Under-weighted: blended 99%+ grid-uptime headline masks 70% CTU curtailment (May p.7; Aug p.6)."}
+critical_count: 0
+major_count: 2
+minor_count: 4
+acceptance_rate: 67

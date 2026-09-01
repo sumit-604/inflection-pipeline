@@ -1,0 +1,51 @@
+stage: B07-emoat
+company: "CLEANMAX"
+run_date: "2026-09-01"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "No top-5/top-10 customer concentration metric disclosed in AR or any of the three concalls (cross-referenced from B05)"
+  - "No 3-year forward revenue-mix guidance (RE Power Sales vs RE Services vs BESS) disclosed"
+  - "Peer/competitor evacuation-capacity, market-share, and remuneration data NOT FOUND (consistent with B01 peer-data gaps)"
+  - "Osaka Gas CORE JV and Apple JV #2 progress: no MW-level update since initial disclosure (Q3 FY26 / FY26), tracked as optionality not scored evidence"
+flags:
+  - {type: FLAG-ADVERSE-CATEGORY, reason: "C2 (customer concentration improving) and H1 (industry consolidation beneficiary) both score 0 with the honest finding being the opposite of a moat: Data & AI concentration rose 14%->42% of contracted capacity in two years, and management itself names Adani, Reliance and NTPC as active new entrants to the C&I space."}
+  - {type: FLAG-PRICING-POWER, reason: "Weighted average tariff for PPAs commissioned during the year fell Rs4.12/kWh (FY24) -> Rs3.76 (FY25) -> Rs3.57 (FY26) -> Rs3.59 (Q1 FY27 trailing 12m), per Inv. Pres. p.27 KPI table. The moat evidenced in this scan is capacity/relationship lock-in, not price. Contracted-yet-to-be-executed pipeline tariff quoted separately at ~Rs4.00/kWh reflects a different capacity mix (more CTU/wind), not a reversal of the underlying pricing trend."}
+em_score: 29
+em_classification: "STRENGTHENING"
+active_categories:
+  - {id: "B1", name: "Backward integration / evacuation capacity secured ahead of demand", strength: "Strong", evidence_type: "documented", time_to_materialise: "now/ongoing"}
+  - {id: "B2", name: "Qualification lock-in (Group Captive customer-equity SPV structure)", strength: "Strong", evidence_type: "documented", time_to_materialise: "now/ongoing"}
+  - {id: "C1", name: "Customer ecosystem / embedded relationships (repeat business)", strength: "Strong", evidence_type: "documented", time_to_materialise: "now/ongoing"}
+  - {id: "E1", name: "Geographic first-mover (first CTU-connected project, data-centre-hub proximity)", strength: "Moderate", evidence_type: "documented", time_to_materialise: "12-24m"}
+  - {id: "F2", name: "Execution moat (on-time, within-budget delivery track record)", strength: "Strong", evidence_type: "documented", time_to_materialise: "now/ongoing"}
+  - {id: "G2", name: "Working capital improvement trajectory (receivable days declining)", strength: "Moderate", evidence_type: "documented", time_to_materialise: "now/ongoing"}
+  - {id: "H2", name: "Strategic partnerships (Osaka Gas JV, Apple JV)", strength: "Moderate", evidence_type: "mixed documented/claim", time_to_materialise: "12-36m"}
+  - {id: "H3", name: "ESG moat (GRESB 100/100, AA- rating, ESG-linked capital access)", strength: "Moderate", evidence_type: "documented", time_to_materialise: "now/ongoing"}
+  - {id: "R1", name: "Regulatory/policy tailwinds (GST cut, PLI, ALMM2 window, Green Corridor)", strength: "Moderate", evidence_type: "documented, mostly industry-wide", time_to_materialise: "now/12m"}
+evidence_mix: {documented: 20, claim: 6, inference: 3}
+completionist_recount: "9 of 23 rows scored Strong/Moderate, above the 3-6 typical base rate. 20 distinct 📄 documented items recounted across those 9 categories. Elevated count explained by unusually heavy audited KPI disclosure from a recent IPO built for institutional scrutiny, not by claim-crediting: 12 of 22 categories scored zero, including three explicit adverse findings (C2 concentration worsening, G1 no war chest, H1 competitive intensity rising, not consolidating)."
+catalysts_12m:
+  - {catalyst: "FY27 capacity addition >=1.5 GW floor (33% delivered in Q1)", window: "through Mar-2027", evidence_type: "documented", anchor: "Inv. Pres. Q1FY27 p.6; Aug-2026 concall p.2-3"}
+  - {catalyst: "Koppal 529 MW CTU hybrid, two BESS bays", window: "Oct-2026 and Mar-2027", evidence_type: "management claim", anchor: "Aug-2026 concall p.9-10"}
+  - {catalyst: "First domestic corporate bond issuance (AA rating threshold cleared)", window: "near-term, undated", evidence_type: "management claim", anchor: "Aug-2026 concall p.10"}
+  - {catalyst: "ALMM2 module-cost benefit window (~Rs60 lakh/MW) closes", window: "31-Dec-2026", evidence_type: "documented", anchor: "Aug-2026 concall p.9"}
+  - {catalyst: "Bikaner 525 MW CTU curtailment resolution (currently 70%, no firm PGCIL date)", window: "FY27, undated", evidence_type: "management claim", anchor: "Aug-2026 concall p.13, p.21"}
+  - {catalyst: "100% land acquisition confirmation for FY27 pipeline (>=80% secured Feb-2026)", window: "by Sep-2026", evidence_type: "management claim", anchor: "Mar-2026 concall p.16-17"}
+capex_embedded_growth_pct: 123
+optionality_register:
+  - {optionality: "Osaka Gas JV (CORE) targets 400+ MW over 3 years; no MW-level progress update since Q3 FY26 launch", converting_evidence: "quarterly MW-commissioned or capex-disbursed update for the CORE JV", first_appears: "concall or exchange filing", window: "1-3 years"}
+  - {optionality: "BESS-as-a-service (~Rs3-4/kWh incremental tariff), 3 client MOUs signed, not yet material to capex", converting_evidence: "first signed BESS PPA/contract with disclosed MW and tariff", first_appears: "concall or exchange filing", window: "6-12 months"}
+  - {optionality: "Hyperscaler VPPA/EAPA contracts carry an option to convert to physical direct-supply PPAs as data centres ramp load", converting_evidence: "amended/new physical PPA filing tied to a named hyperscaler's live data centre", first_appears: "exchange filing / concall", window: "2-5 years"}
+  - {optionality: "First-ever domestic corporate bond issuance", converting_evidence: "completed bond issuance with priced spread", first_appears: "exchange filing", window: "under 12 months"}
+  - {optionality: "All-India C&I market share claimed 12%->14%, later figure unsourced", converting_evidence: "independent third-party market-share report corroborating level and trend", first_appears: "third-party industry report", window: "~12 months"}
+  - {optionality: "100% land acquisition for FY27 pipeline (>=80% secured Feb-2026), milestone already once dropped from disclosure", converting_evidence: "confirmed 100% land-acquisition disclosure", first_appears: "concall or shareholder letter", window: "by Sep-2026"}
+combined_assessment: "TURNAROUND"
+combined_reasoning: "Gate 0 AVOID is leverage/timing-driven (B01: capacity build-out, not eroding unit economics) while the Emerging Moat scan finds genuine, mostly-documented STRENGTHENING (29) built on evacuation-capacity and equity-SPV lock-ins plus a real execution record, with 12 of 22 categories honestly scored zero including three adverse findings."
+top_moat_risks:
+  - "B1 evacuation-capacity lock-in depends on PGCIL/CTU grid infrastructure CleanMax does not control; Bikaner curtailment (30%->70% in one quarter, resolution slipping three calls running) shows securing capacity years ahead does not guarantee usable capacity on schedule"
+  - "C2 concentration risk: Data & AI segment rose from 14% to 42% of contracted capacity in two years, the opposite of diversification, inside a customer base where no top-5/top-10 metric is disclosed"
+  - "H1 competitive intensity rising, not falling: Adani, Reliance and NTPC named by management as active new C&I entrants against CleanMax's own 14% market share in a fragmented market"
+  - "B2 equity-SPV lock-in scales complexity (~100 SPVs) alongside stickiness; related-party/governance friction at any one SPV is a plausible failure mode"
+  - "Promoter pledge finding (B01 FLAG-PLEDGE, 20.02% of promoter holding re-established after RHP reported it released) is a governance risk independent of, and not resolved by, this moat scan"
+analyst_note: "The single strongest documented moat in this scan (B1, evacuation capacity secured years ahead of demand) and the single largest named risk (Bikaner curtailment) are the same underlying resource: grid access CleanMax does not control. Whether curtailment is a one-off transmission-upgrade timing issue or a structural feature of scaling CTU connectivity is the load-bearing open question for the TURNAROUND read in 6D, and this stage's evidence does not resolve it. Pricing power is genuinely weak (new-PPA tariffs fell Rs4.12->Rs3.57/kWh, FY24-FY26) even as the moats scored here strengthened; the transition thesis, if any, rests on volume/relationship lock-in and execution compounding into margin, not on price."

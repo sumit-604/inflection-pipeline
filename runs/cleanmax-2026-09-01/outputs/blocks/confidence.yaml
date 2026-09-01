@@ -1,0 +1,22 @@
+confidence_delta:
+  numerical_acceptance: 97      # B12a: 34/35 numbers clean; 0 source-fidelity findings
+  redflag_coverage: 67          # B12b: 8 of 12 independent flags already caught upstream
+  framework_adherence: 98       # B12c: Gate 0 + Emerging Moat portion (phase 1); 49/50 rule checks
+  peer_utilisation: 68          # B12d: 13 substantive of 19 peer transcripts provided
+  overall: 67                   # min of the four
+  band: "60-74 (normal-minus): PROCEED-type verdicts downgrade one level; not <60, no forced REWORK"
+  valuation_adherence: pending-phase-3
+  rework_triggered: false
+  rework_check:
+    verifier_a_critical: 0
+    any_acceptance_below_60: false   # lowest is B12b 67%
+    source_fidelity_findings: 0
+  note: >
+    Overall is dragged to 67 by redflag_coverage (67) and peer_utilisation (68),
+    not by any accuracy failure. Verifier B's two MAJOR misses were both real,
+    disclosed items B05 did not surface (Bikaner TGNA / no revenue protection;
+    twice-deferred generation/PLF disclosure). Verifier D's two MAJOR items are
+    peer-citation defects in B06 (one misattributed transcript, one unused-but-
+    relevant JSW GNA disclosure). Numerical (97) and framework (98) are high.
+    No CRITICAL, no source-fidelity finding: the analysis is trustworthy; the
+    phase-1 gate downgrades one level per the band, it does not rework.

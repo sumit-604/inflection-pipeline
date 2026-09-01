@@ -1,0 +1,22 @@
+stage: B13-synthesis
+company: "CLEANMAX"
+run_date: "2026-09-01"
+model: claude-opus-4-8
+status: complete
+mode: phase-1-lite
+verdict: "PROCEED WITH CAVEATS"
+verdict_rule_applied: 3
+flags_active: ["FLAG-CASH", "FLAG-PROMOTER", "FLAG-GATE0"]
+confidence_delta: {numerical: 97, redflag: 67, framework: 98, peer: 68, overall: 67}
+valuation_decision: ""
+entry_range: {low: 0, high: 0}
+headline: "Renewable IPP building capacity faster than earnings"
+falsification_metric: "Q2 FY27 operating PBT before other income prints below zero"
+monitorables_count: 8
+publish_candidate: true
+publish_candidate_summary: "GNA versus TGNA connectivity decides whether curtailment costs a renewable IPP real money; Bikaner 525 MW is TGNA, so its 70% curtailment is a real ~Rs 170 Cr hit, not a protected one. Concept teardown, non-directional."
+notion_save:
+  page_title: "CLEANMAX - Inflection Alpha phase-1 (evidence gate) 2026-09-01"
+  summary: "Renewable IPP building capacity faster than earnings. Gate on evidence: PROCEED WITH CAVEATS. FLAG-CASH (INDETERMINATE), FLAG-PROMOTER (CAUTION), FLAG-GATE0 (classification only). Overall confidence 67, band 60-74. No valuation; phase 3 pending."
+  drive_link: ""
+  mode: append-never-overwrite-status

@@ -254,3 +254,77 @@ NET READ: A fast-scaling founder-led business with real, disclosed compliance
 6. Individual RoC/MCA status checks on the ~190+ named subsidiary SPVs for struck-off/shell status — relied on AR/RHP disclosure of the group structure, not independently verified entity-by-entity
 
 **status: partial** — core six-section analysis is complete and well-evidenced; the skips above are corroborating/secondary sources that would strengthen but not overturn the findings above.
+
+
+---
+
+```yaml
+stage: B08-promoter
+company: "CLEANMAX"
+run_date: "2026-09-01"
+model: claude-sonnet-5
+status: partial   # some WebFetch targets blocked by egress proxy; WebSearch + filings used
+input_gaps: []
+flags:
+  - type: FLAG-PROMOTER
+    verdict: "CAUTION"
+    top_findings:
+      - "SEBI settlement (AIF 25% concentration-limit breach), Rs 19.3 lakh paid, Oct-2024 (VERIFIED)"
+      - "RoC Section 454 penalty on Kuldeep Jain personally (Rs 1 lakh), illegal 3rd-term independent-director reappointment, self-reported, order Dec-2025 (VERIFIED)"
+      - "Green Earth criminal complaint (IPC 406/420/467/468/471/120B/506) naming Kuldeep Jain, pending since Aug-2020, now in mediation (VERIFIED)"
+      - "Promoter-group pledge 20.02% of holding (Rs 670 Cr KEMPINC LLP loan from 360 One Prime, used to buy more CleanMax stock from Brookfield), rising trend, disclosed (VERIFIED)"
+verdict: "CAUTION"
+scorecard: {clean: 7, caution: 2, red: 1}
+deal_breakers: []
+adverse_findings:
+  - {finding: "SEBI settlement order: Clean Max AIF exceeded 25% single-investee investment limit; Kuldeep Jain, Nikunj Ghodawat, Nitai Vijay named as KMPs in violation; settled without admission, Rs 1.93 million paid", evidence_tier: "VERIFIED", source: "RHP p.878 (SEBI settlement order dated 16-Oct-2024)", date: "2024-10-16"}
+  - {finding: "RoC Section 454 adjudication: illegal 3rd-term reappointment of independent director Sumit Banerjee; penalty Rs 0.30mn on Company + Rs 0.10mn each on Kuldeep Jain (MD), Nikunj Ghodawat (CFO), Ullash Parida (CS); self-reported and corrected pre-order; compounding application for related filing lapses still pending", evidence_tier: "VERIFIED", source: "RHP p.64-65 (Risk Factor 22), RoC Maharashtra order", date: "2025-12-31"}
+  - {finding: "Green Earth criminal complaint against Company and Kuldeep Jain under IPC 406/420/467/468/471/120B/506 over unpaid land-acquisition commission; quashing petition pending before Punjab & Haryana HC, referred to mediation", evidence_tier: "VERIFIED", source: "RHP p.871-872, p.879", date: "2020-08-05 (filed); 2026-01-12 (mediation referral)"}
+  - {finding: "Two pending GST/CGST summons (Jaipur and Mumbai) to Kuldeep Jain, Pratap Jain and Company signatories seeking records for FY2019-25; no allegation established in filed record", evidence_tier: "VERIFIED", source: "RHP p.877-878", date: "2025-09-19 / 2025-10-03"}
+  - {finding: "Promoter-group pledge: 11,597,866 shares (20.02% of promoter-group holding) pledged to 360 One Prime Ltd as at 31-Mar-2026, securing a Rs 670 Cr loan availed by KEMPINC LLP (Kuldeep Jain's LLP) to buy additional CleanMax stake from Brookfield; shares were released ahead of RHP filing and re-pledged per a plan disclosed in the RHP itself", evidence_tier: "VERIFIED", source: "AR Note 19(g) p.420; RHP p.50-55 (Capital Structure, pledge schedule)", date: "2025-07-22 (pledge deed); 2026-03-31 (year-end position)"}
+  - {finding: "12 board-composition changes in FY26; decomposes into one self-corrected compliance failure (Banerjee), a coordinated Brookfield board-seat wind-down (6 nominee directors, tied to BGTF ceasing holding-company status), and one RBI-forced exit (Arijit Basu, appointed IndusInd Bank Chairman) replaced by a credential upgrade (Dinesh Khara, ex-SBI Chairman)", evidence_tier: "VERIFIED", source: "AR pp.117-119, 331-332", date: "2025-07-09 to 2026-05-17"}
+  - {finding: "Historic RoC recordkeeping gap: untraceable Form 2 filings for a 2011 allotment to Kuldeep Jain and two 2012 CCPS allotments to Bessemer Venture Partners Trust; self-disclosed, independent PCS search report obtained", evidence_tier: "VERIFIED", source: "RHP p.68-69 (Risk Factor 23)", date: "2025-08-16"}
+transition_evidence:
+  - "Temasek (via Jongsong Investments Pte Ltd) invested ~Rs 760 Cr for 6.16-6.79% stake, closed 6-Feb-2026 (AR p.343 VERIFIED; Temasek-affiliate identity MEDIA REPORTED)"
+  - "Bain Capital invested ~Rs 350 Cr for ~3.13% stake in pre-IPO secondary round; 360 ONE and Steadview Capital also cited as participants (MEDIA REPORTED)"
+  - "Dinesh Khara, former Chairman of State Bank of India, appointed independent director 17-Mar-2026 (VERIFIED, AR p.331)"
+  - "Ajay Kaul (ex-CEO Jubilant FoodWorks), Santosh Janakiram Iyer (senior partner, Cyril Amarchand Mangaldas), Shilpa Divekar Nirula (ex-KPMG) added to independent-director bench in 2025 (VERIFIED, RHP p.524-525)"
+  - "Strategic JVs: Toyota Tsusho (CMT JBIN Pvt Ltd, 51% CleanMax), Apple India (via Clean Max Taurus, 51/49), Osaka Gas joint subsidiary (VERIFIED, AR notes)"
+  - "Sumit Banerjee Companies Act violation was self-reported to RoC suo moto (Aug-2025) and corrected via resignation (Jul-2025) before the adjudication order, i.e. voluntary rather than regulator-triggered (VERIFIED, RHP p.64-65)"
+  - "CFO Nikunj Ghodawat stable in seat 11 years (since 2014) through the IPO transition, no churn (VERIFIED, RHP p.524)"
+  - "Big-4 auditor (BSR & Co LLP) maintained, separately engaged to certify RPT arm's-length framework ahead of listing (VERIFIED, AR pp.14, 7327-7333)"
+pledge_pct_latest: 20.02
+pledge_trend: "rising - FY25: 205,404 shares pledged (immaterial, against NCD issuance) -> 22-Jul-2025: KEMPINC LLP/Kuldeep Jain/Nidhi Jain pledge shares to 360 One Prime Ltd securing Rs 670 Cr loan used to buy more CleanMax stock from Brookfield -> released before RHP filing (25-Feb-2026) per a pre-disclosed re-pledge plan -> 31-Mar-2026: 11,597,866 shares pledged = 20.02% of promoter-group holding, same lender, same underlying facility (AR Note 19(g); RHP Capital Structure pledge schedule)"
+searches_performed:
+  - "Clean Max Enviro Energy Kuldeep Jain promoter pledge shares 360 One Prime"
+  - "CleanMax Kuldeep Jain McKinsey founder background profile"
+  - "CleanMax promoter pledge 20% KEMPINC 360 One Prime re-pledged 2026"
+  - "Arijit Basu resigns CleanMax board IndusInd Bank chairman RBI conflict"
+  - "Clean Max SEBI settlement order AIF Kuldeep Jain Nikunj Ghodawat 2024"
+  - "CleanMax Glassdoor AmbitionBox employee reviews rating"
+  - "CleanMax Solar glassdoor employee reviews rating"
+  - "BGTF Brookfield CleanMax stake sale exit 2025 2026"
+  - "Jongsong Investments Pte Ltd CleanMax pre-IPO investor"
+  - "Rikhab Investments B.V. CleanMax shareholder"
+  - "Rikhab Investments B.V. Netherlands Kuldeep Jain family entity CleanMax"
+  - "Bain Capital CleanMax pre-IPO investment stake 2026"
+  - "CleanMax Kuldeep Jain SFIO ED PMLA enforcement directorate"
+  - "CleanMax IPO IiAS proxy advisory governance concerns review"
+  - "CleanMax IPO brokerage avoid reasons Samco regulatory non-compliance litigation governance"
+  - "Nikunj Ghodawat CFO CleanMax background career tenure"
+  - "CleanMax Enviro Energy news August September 2026 promoter"
+  - "CleanMax Enviro Energy stock price today share performance since listing"
+  - "Kuldeep Jain CleanMax electoral bonds political donation"
+  - "CleanMax Kuldeep Jain philanthropy foundation CSR initiative"
+  - "Full-text search of AR text-twin: shareholding pattern, board changes, Note 19(g) pledge, RPT/auditor sections"
+  - "Full-text search of RHP text-twin: Outstanding Litigation and Material Developments, Our Promoters, Our Management, pledge schedule, Risk Factors"
+searches_skipped:
+  - "WebFetch azbpartners.com (AZB deal note on promoter stake acquisition from Brookfield) - blocked by network egress proxy"
+  - "WebFetch ipocentral.in (brokerage '5 reasons to avoid' detail) - blocked by network egress proxy"
+  - "WebFetch business-standard.com ('5 key risks' IPO article) - blocked by network egress proxy"
+  - "Direct SEBI/court e-filing portal verification of Green Earth complaint docket and SEBI settlement order text - relied on prospectus + media summaries only"
+  - "Dedicated SES (Stakeholders Empowerment Services) proxy-advisory report search - not separately queried"
+  - "Entity-by-entity RoC/MCA struck-off status check on ~190+ subsidiary SPVs - relied on AR/RHP group-structure disclosure only"
+verdict_basis: "No deal-breaker triggered, but a genuine cluster of regulatory/legal friction (SEBI AIF settlement, RoC personal penalty, pending Green Earth criminal complaint, two GST summons) sits alongside a real, rising promoter share pledge (20.02%, personally-leveraged stock purchase) - offset by strong, verified transition evidence (Temasek/Bain entry, ex-SBI Chairman on board, Big-4 auditor, 11-year CFO tenure, self-corrected compliance failure pre-IPO)."
+analyst_note: "The board-churn count (12) and legal-record cluster look worse in aggregate than they are individually: most items decompose into explained, self-corrected, or regulation-forced events rather than a pattern of concealment. The one item that does not fully decompose is the Green Earth criminal complaint naming Kuldeep Jain under forgery/conspiracy IPC sections, unresolved for six years - track its mediation outcome. The pledge structure (leveraged personal purchase of own-company stock) is the second live tripwire: monitor LTV/top-up covenants and any further pledge increase, since it is a margin-call risk on promoter shares, not a cash-extraction risk to the company."
+```

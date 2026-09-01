@@ -1,0 +1,38 @@
+stage: B09b-dossier
+company: "VINYAS"
+run_date: "2026-09-01"
+model: claude-sonnet-5
+status: complete
+corpus_verdict: "CORPUS GAPPED"
+corpus_gaps:
+  - {document: "IPO prospectus / RHP", expected_source: "NSE Emerge archive", kind: "findable-missing"}
+  - {document: "Announcements folder (exchange filings)", expected_source: "BSE / company IR", kind: "findable-missing"}
+  - {document: "Shareholding pattern filings", expected_source: "BSE / company IR", kind: "findable-missing"}
+  - {document: "Broker/analyst research notes", expected_source: "broker distribution", kind: "plausibly-nonexistent"}
+  - {document: "Genuine third annual report (FY2023-24 or earlier)", expected_source: "company IR / BSE archives", kind: "findable-missing"}
+  - {document: "CARO 2020 / Section 143 statutory audit report FY26", expected_source: "MCA-21 ROC (AOC-4)", kind: "findable-missing"}
+transition:
+  - line: "Contract EMS manufacturing (single reportable segment)"
+    from_tier: "R2 COST-ADVANTAGED CONVERTER (sub-scale job-shop EMS)"
+    to_tier: "R3 VALUE-ADDED / SPEC'D SUPPLIER"
+    engine: "B2P-to-B2S design capture plus NADCAP/AS9100/ISO13485/IATF16949/Defence-License stack converting into qualified higher-value programmes and system integration"
+    proof_gate: "Gross margin (revenue less material cost) rises off its FY26 trough of 21.1% (from 27.0% FY25) for at least two consecutive half-yearly filings, independent of the WIP/inventory-change swing (AR Note 21)"
+    recognition_gap: "Open - Stage 11 resolves via Section 1B PE gap"
+    ugliness: "ARTIFACT-OF-CLIMB"
+    transition_falsifier: "Gross margin stays at/below the FY26 trough for two more halves while B2P/B2S and export mix stay undisclosed, confirming the FY26 margin lift was a timing artifact"
+dominant_variables:
+  - "Gross margin / material cost ratio trend, read separately from the WIP-inventory swing"
+  - "B2P-versus-B2S revenue mix disclosure"
+  - "Qualification-driven programme mix (higher-value certification-gated share of order book)"
+  - "Operating cash flow and receivables ageing (whether growth converts to cash)"
+business_falsifier: "Standalone operating cash flow stays structurally negative through H1 FY27 and FY27 full year while PAT stays positive; reinforced if the Nexus/UVT RPT ceiling (Rs 550 Cr vs Rs 514 Cr FY26 revenue) substitutes for genuine third-party demand"
+mental_model_status: "DRAFT - PENDING OPERATOR SIGN-OFF"
+fragility:
+  variable_count: 7
+  verifiability_ratio: "3 of 7 externally observable via future filings"
+  single_point_failure: "standalone operating cash flow / cash conversion"
+  fragility_verdict: "FRAGILE"
+candidate_count: 6
+research_brief_items: 10
+plain_summary_points: 15
+annex: {present: true, questions_answered: 10, corpus_commit_hash: "969e90d1224d75eab411e77f830c594eaca85321"}

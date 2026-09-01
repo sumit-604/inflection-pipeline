@@ -1,0 +1,28 @@
+stage: B12c
+company: "VINYAS"
+run_date: "2026-09-01"
+model: claude-opus-4-8
+status: complete
+scope: "PHASE 1 - gate0 + emerging-moat only; valuation adherence pending phase 3"
+gate0:
+  rules_checked: 14
+  fails:
+    - {severity: "MINOR", location: "01-gate0.md Block F M11 Network Effects", description: "Top band requires selling-expense % declining; FY26 selling expense merged into Other Expenses, so top-band rests on FY20-FY25 only. Immaterial: AVERAGE fixed by core 58 and deal-breaker 4."}
+    - {severity: "MINOR", location: "01-gate0.md end", description: "Report file lacks the mandated closing fenced YAML block; values present in prose and consumed downstream. VOID - B01-gate0.yaml is stored as a separate run artifact."}
+emoat:
+  rules_checked: 15
+  fails:
+    - {severity: "MINOR", location: "07-emoat.md I2", description: "I2 scored 1.0 on inference-only with sacrifice 'not proven-implausible'; above-0 defensible, kept out of top band. Immaterial: MODEST holds at 21.1 without I-family. Flagged for operator I1/I2 checkpoint."}
+    - {severity: "MINOR", location: "07-emoat.md end", description: "Report file lacks mandated closing YAML block; content complete in prose. VOID - B07-emoat.yaml stored separately."}
+valuation:
+  rules_checked: 0
+  status: "PENDING PHASE 3 - B10/B11 not produced; valuation framework docs deliberately not loaded"
+findings:
+  - {severity: "MINOR", location: "B01 Block F M11", description: "Top-band Network Effects asserts a selling-% condition whose FY26 leg is undisclosed; immaterial to AVERAGE."}
+  - {severity: "MINOR", location: "B01 output", description: "Missing closing YAML in report file; void - stored separately."}
+  - {severity: "MINOR", location: "B07 I2", description: "Borderline I2 above-0 on inference-only; compliant by design; flagged for operator I1/I2 checkpoint."}
+  - {severity: "MINOR", location: "B07 output", description: "Missing closing YAML in report file; void - stored separately."}
+critical_count: 0
+major_count: 0
+minor_count: 4
+acceptance_rate: 90

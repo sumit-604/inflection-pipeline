@@ -1,0 +1,32 @@
+stage: B01-gate0
+company: "VINYAS"
+run_date: "2026-09-01"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "prospectus absent (NSE Emerge listing ~2023, within 3y -> HIGH gap for backward/promoter stages)"
+  - "announcements folder absent (operator ferried 6-month event timeline separately)"
+  - "shareholding folder absent (operator ferried quarterly pattern; run used AR + H1 FY26 PDF, Sep-2024 to Mar-2026)"
+  - "research folder absent"
+  - "other folder absent"
+  - "balance sheet current/non-current liability split and trade payables unavailable FY2020-FY2024"
+flags:
+  - {type: FLAG-GATE0, reason: "Classification capped at AVERAGE by deal-breaker 4 (cumulative CFO/PAT -0.50 FY20-26, FCF/PAT -1.22x FY25-26); Block B also triggers deal-breaker 2 (3/20 <8). FY26 PAT Rs30.87Cr vs CFO -Rs32.30Cr."}
+  - {type: FLAG-CASH, reason: "Cash conversion deteriorating: cumulative CFO/PAT -0.50 (FY20-26); FY26 CFO -Rs32.30Cr worst in 7-year window against highest-ever PAT."}
+  - {type: FLAG-MARGIN-PUZZLE, reason: "Material cost/sales rose 71.14% (FY25) to 78.90% (FY26, AR Note 20) while OPM also rose 11.09% to 12.50% (AR p.43). Offsetting cost-line mechanism not traceable. Spear fact, unresolved."}
+  - {type: FLAG-DISCLOSURE, reason: "Customer concentration NOT DISCLOSED numerically FY23-FY26 (AR p.44); repeat vs new revenue split NOT DISCLOSED (AR p.41). Both spear facts unverified."}
+  - {type: FLAG-ROCE-LIMITED, reason: "ROCE computable only FY2025 (24.34%) and FY2026 (22.88%); rests on 2 data points (liability split absent FY20-FY24)."}
+  - {type: FLAG-RECEIVABLES, reason: "Receivable days 33 to 161 (FY23-FY26). Company cause (AR Note 35f customer-specific project timelines) unverified. Spear fact #4 open."}
+data_years: 7
+fy_range: "FY2020 to FY2026"
+blocks: {A: 14, B: 3, C: 20, D: 12, E: 9}
+core_score: 58
+moat_score: 18
+grand_total: 76
+moats_confirmed: 4
+moat_class: "STRONG"
+classification: "AVERAGE"
+deal_breakers: ["2: Block B (3) <8 -> max GOOD", "4: cumulative CFO/PAT (-0.50) <0.50 -> max AVERAGE"]
+history_downgrade: false
+block_b_trend: "deteriorating - cumulative CFO/PAT -0.50 FY20-26; FY26 worst CFO -Rs32.30Cr vs highest PAT Rs30.87Cr"
+analyst_note: "Textbook top-line and margin transition (revenue 22.8% CAGR, ROE ~4% to ~16% avg-equity) but Block B cash quality weakest by far: 7-year cumulative CFO/PAT -0.50x, FY26 worst CFO -Rs32.30Cr vs record PAT. Receivable days quadrupled 33 to 161 (FY23-FY26). Margin puzzle (material cost +7.8pp yet OPM +1.4pp) unresolved. ROCE/capex/WC-days rest on 2 usable years. AVERAGE cap from cash deal-breaker despite near-GOOD Core and STRONG moat count."

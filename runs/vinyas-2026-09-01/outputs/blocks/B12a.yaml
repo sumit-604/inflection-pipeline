@@ -1,0 +1,18 @@
+stage: B12a
+company: VINYAS
+run_date: 2026-09-01
+model: claude-haiku-4-5
+status: complete
+numbers_checked: 47
+findings:
+  - severity: MAJOR
+    location: "01-gate0.md Block D1 (Net Debt/EBITDA); repeated in 03-ardeep.md Phase 3B"
+    claimed: "Cash & bank balance Rs 18.45 Cr (used in Net Debt Rs 111.61 Cr)"
+    source_truth: "Note 8.2 (consolidated): cash on hand Rs 6.67L + banks Rs 11.66L + deposits Rs 121.49L = Rs 139.81L (Rs 1.39 Cr), not Rs 18.45 Cr; 3-12mo deposits Rs 1,706.64L shown separately"
+    note: "Cash overstated ~13x. Corrected Net Debt ~Rs 128.66 Cr vs reported Rs 111.61 Cr. Correct downstream; do not carry Rs 18.45 Cr into any valuation computation."
+    source_fidelity: true
+critical_count: 0
+major_count: 1
+minor_count: 0
+acceptance_rate: 98
+coverage_note: "47 material numeric claims across nine stage reports verified against FY26 consolidated AR (P&L, CFS, Balance Sheet, all 41 notes). Revenue, PAT, OCF, receivables ageing, inventory build, borrowings, leverage, ROCE/ROE all exact to source. One MAJOR flag on cash position; no CRITICAL mismatches; 46 of 47 clean."

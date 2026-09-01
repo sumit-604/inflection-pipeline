@@ -1,0 +1,50 @@
+stage: B07-emoat
+company: "VINYAS"
+run_date: "2026-09-01"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["announcements folder absent - NADCAP, JV, US subsidiary scored management-claim not documented", "shareholding folder absent", "B05 not yet supplied for F2 - used direct cross-call inference"]
+flags:
+  - "AR Note 34 states single geographical segment / no export split, contradicts management ~50% export claim (Jun-2026 call)"
+  - "capacity commissioning date inconsistent across concalls: ~Aug-2026 (Jun-2026) vs April-2027 (Nov-2025) for same capex round"
+  - "G2 working capital deteriorating not improving - Gate 0 cash deal-breaker unresolved and dominates"
+  - "FY26 utilisation guidance ~50% (Nov-2025) not evidenced at Jun-2026 call (35-40% reported)"
+em_score: 22.1
+em_classification: "MODEST"
+active_categories:
+  - {id: "A1", name: "Rare manufacturing capability", strength: "Strong", evidence_type: "management_claim"}
+  - {id: "A3", name: "Process innovation", strength: "Moderate", evidence_type: "management_claim"}
+  - {id: "B2", name: "Qualification lock-in", strength: "Strong", evidence_type: "management_claim"}
+  - {id: "C1", name: "Customer ecosystem", strength: "Moderate", evidence_type: "management_claim"}
+  - {id: "E2", name: "China+1 beneficiary", strength: "Strong", evidence_type: "management_claim"}
+  - {id: "F2", name: "Execution moat", strength: "Moderate", evidence_type: "analyst_inference"}
+  - {id: "G1", name: "War chest", strength: "Strong", evidence_type: "documented"}
+  - {id: "H2", name: "Strategic partnerships", strength: "Moderate", evidence_type: "management_claim"}
+  - {id: "I2", name: "Cannibalization barrier", strength: "Moderate", evidence_type: "analyst_inference"}
+  - {id: "R1", name: "Regulatory/policy tailwind", strength: "Strong", evidence_type: "management_claim"}
+evidence_mix: {documented: 2, claim: 13, inference: 4}
+catalysts_12m:
+  - {catalyst: "SMT-capacity commissioning date reconciliation", window: "0-3 months", evidence_type: "management_claim"}
+  - {catalyst: "Commercial-aerospace first-article-inspection outcome", window: "12-24 months", evidence_type: "management_claim"}
+  - {catalyst: "Israeli JV first disclosed programme", window: "12-18 months", evidence_type: "management_claim"}
+  - {catalyst: "US subsidiary first order", window: "12-24 months", evidence_type: "management_claim"}
+  - {catalyst: "Second tranche of Rs 150 Cr raise", window: "0-12 months", evidence_type: "documented"}
+capex_embedded_growth_pct: 69
+optionality_register:
+  - {optionality: "Customer concentration (top-5/top-10 %) undisclosed", converting_evidence: "disclosed concentration %", first_appears: "future AR note or filing", window: "uncertain"}
+  - {optionality: "Commercial-aerospace Tier-1 OEM qualification (first-article stage)", converting_evidence: "signed PO / qualified-vendor confirmation", first_appears: "concall or order announcement", window: "12-24 months"}
+  - {optionality: "Israeli JV - no disclosed programme/structure/revenue", converting_evidence: "signed JV doc, first PO, revenue disclosure", first_appears: "filing / next AR", window: "12-18 months"}
+  - {optionality: "US subsidiary - two shortlisted, no order", converting_evidence: "signed US contract, first revenue", first_appears: "filing / concall", window: "12-24 months"}
+  - {optionality: "MoD emergency-procurement enquiries (fresh)", converting_evidence: "confirmed order under emergency route", first_appears: "order announcement", window: "uncertain"}
+  - {optionality: "NADCAP + AS9100D/ISO13485 bundle concall-sourced only", converting_evidence: "independently sighted certificate/filing", first_appears: "website / filing", window: "re-verify next run"}
+  - {optionality: "Medical-device revenue ramp toward 10% (5-yr target)", converting_evidence: "segment revenue disclosure at that level", first_appears: "AR segment note or concall", window: "3-5 years"}
+  - {optionality: "50% export mix not corroborated by filed geographic segment", converting_evidence: "geographic/export split in audited statements", first_appears: "future AR Note 34", window: "next AR cycle"}
+combined_assessment: "AVERAGE"
+combined_reasoning: "Real but shallow forward moat (10/23 rows, 1 documented) sits mid-band MODEST, cannot lift above Gate 0 AVERAGE cap while cash deal-breaker (negative cumulative CFO/PAT, receivable days 33->161) unresolved; artifact-of-climb vs structural is Stage 11/FTTCP's question."
+top_moat_risks:
+  - "NADCAP/JV/subsidiary claims rest on concall-only disclosure, unverified against any filing in this corpus"
+  - "Rs 150 Cr war chest funding capacity expansion while FY26 operating cash flow negative (-Rs 32.30 Cr vs PAT +Rs 30.87 Cr)"
+  - "Israeli JV and US subsidiary early-stage, no disclosed programme economics or revenue"
+  - "Capacity commissioning timeline inconsistent across concalls for same capex round"
+  - "Defence programme push-out risk named by management as primary threat"
+analyst_note: "Score mid-band, not boundary-sensitive: even crediting NADCAP/JV/subsidiary as documented lifts total only to ~24-25, still MODEST. Carry the receivable ageing mitigant (AR Note 8.1: 96.4% under 6 months from due date) to Stage 11/FTTCP - suggests DSO growth is a milestone-billing artifact more than bad debt, though it does not resolve the CFO/PAT divergence."

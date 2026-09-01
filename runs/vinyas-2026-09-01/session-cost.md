@@ -19,3 +19,4 @@ wall recorded).
 | 6 | peer-verification | sonnet | default | - | - | 181527 | 450s | 1 |
 | 12a | verifier-numerical | haiku | default | - | - | 100524 | 126s | 1 |
 | 12b | verifier-redflags | opus | default | - | - | 120546 | 304s | 1 |
+| 12c | verifier-framework | opus | default | - | - | 80621 | 325s | 1 |

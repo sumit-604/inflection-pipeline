@@ -1,0 +1,46 @@
+stage: B00-inputs
+company: VINYAS
+run_date: 2026-09-01
+model: orchestrator
+status: complete
+input_gaps:
+  - prospectus (absent; NOT high, long-listed)
+  - announcements (folder absent; operator-ferried downstream substitute present)
+  - shareholding (folder absent; operator-ferried downstream substitute present)
+  - research (absent)
+  - other (absent)
+freshness_pairs:
+  - pair: results_to_concall
+    trigger_doc: results/VINYAS_28052026..OutcomeBM280526final.pdf (FY26 audited)
+    mate_expected: concalls/Concall_Jun_2026_Transcript.pdf
+    status: PASS
+    missing_doc: none
+  - pair: rating_bulletin_to_rationale
+    trigger_doc: rating/rating 2.pdf
+    mate_expected: full rationale in same PDF
+    status: PASS
+    missing_doc: none
+  - pair: sebi_order_to_text
+    trigger_doc: none referenced
+    mate_expected: n/a
+    status: PASS
+    missing_doc: none
+  - pair: ar_to_latest_audited_annual
+    trigger_doc: results FY26 audited
+    mate_expected: annual-report FY26
+    status: PASS
+    missing_doc: none
+freshness_verdict: FRESHNESS PAIRS OK
+spear_load_bearing_facts:
+  - customer_concentration_not_disclosed
+  - material_cost_pct_revenue
+  - repeat_vs_new_revenue
+  - receivables_161d_root_cause
+  - margin_puzzle_9_to_12_5_pct
+flags: []
+analyst_note: >
+  Rating PDFs are scanned images; read by rendering. Announcements and
+  shareholding folders absent but operator ferried a 6-month event timeline
+  and the quarterly shareholding pattern (downstream tier). UA already NOT
+  ELIGIBLE (FII+DII 7.02% > 3%), so the missing filed shareholding does not
+  change UA. Two Nov-2025 concall files are duplicates.

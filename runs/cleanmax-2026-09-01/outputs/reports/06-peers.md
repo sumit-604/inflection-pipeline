@@ -133,3 +133,64 @@ Peers provided: 19 transcripts across 5 tickers (KPIGREEN, ORIANA, ACMESOLAR, AD
 ## PART 5: CROSS-PEER HYPOTHESIS
 
 Across KPI Green, Oriana, ACME Solar, and Adani Green, a consistent pattern emerges that none of them states directly: **the sector is bifurcating along the GNA/TGNA connectivity axis, and that axis - not curtailment severity per se - is becoming the primary determinant of near-term earnings volatility for renewable IPPs and C&I developers with Rajasthan/CTU exposure.** ACME and JSW both independently describe the same regulatory fact (GNA-connected capacity is revenue-protected against curtailment; TGNA-connected capacity is not), and both are now visibly changing behaviour around it: ACME reports industry-wide reluctance to commission new capacity onto TGNA status specifically because of Rajasthan curtailment ("nobody in the industry would like to commission on TGNA"), and JSW is watching its own TGNA-status Rajasthan asset slip its connectivity timeline quarter over quarter, the same pattern of repeated slippage visible in CleanMax's own Bikaner disclosures. No single peer states this as a sector-wide strategic shift, but the combined pattern - two large IPPs independently citing the same specific regulatory distinction, both currently sitting with capacity stuck on the unprotected side of that line in the same region, in the same reporting window - suggests the real, testable near-term risk for the sector is not "how much curtailment," but "how much capacity is stuck on TGNA versus GNA when curtailment hits," which is a connectivity-administration and CTU-execution-pace variable, not a demand or pricing variable. This reframes the Bikaner question: the more decision-relevant fact for CleanMax's thesis may not be the 30%->70% curtailment percentage itself, but whether Bikaner's 525 MW has (or has not) achieved GNA status, since that single fact determines whether the curtailment translates into an earnings problem at all under the regulatory framework two peers describe.
+
+
+---
+
+```yaml
+stage: B06-peers
+company: "CLEANMAX"
+run_date: "2026-09-01"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - "MOST CONSEQUENTIAL: ACME Solar and JSW Energy both describe CTU curtailment as revenue-protected once an asset reaches GNA (permanent connectivity) status, with payment made per schedule regardless of actual curtailment; TGNA (temporary) status carries no such protection. If Bikaner's 525 MW is GNA-connected, this peer-described regulation is in tension with CleanMax's own disclosed ~Rs170 Cr full-year EBITDA impact at 70% curtailment. Bikaner's actual GNA/TGNA status was not established by this stage and should be verified directly."
+  - "Convergent peer signal (KPI Green, Oriana) of severe FY26 commodity/currency cost inflation (steel, cable, silver, copper, crude +88% YoY, INR ~84.5->95/USD) squeezing sector margins this period; CleanMax's own EBITDA margin trend (83%->83.5%->84% per B05) shows no equivalent pressure and this topic does not appear in any CleanMax call per B05 - worth asking directly."
+  - "KPI Green's own C&I-adjacent (CPP) segment margin runs 18-22%, far below both CleanMax's claimed 83-84% and the 89-91% utility-scale band, undercutting any assumption that a 'C&I tariff premium' mechanically explains CleanMax's margin position; the two companies' C&I business models are not structurally comparable."
+peers_provided: 19
+verified: []
+partially_verified:
+  - {claim: "Domestic vs imported module cost gap exists and industry front-loads commissioning ahead of ALMM2", peers: ["ACMESOLAR", "ORIANA"]}
+  - {claim: "Utility-scale/SECI-tariff peer EBITDA margin band of 89-91%", peers: ["ACMESOLAR"]}
+  - {claim: "Bikaner-style CTU curtailment is a genuine, live, industry-wide issue this period, not CleanMax-specific mis-forecasting", peers: ["ADANIGREEN", "ACMESOLAR", "JSWENERGY"]}
+contradicted: []
+unverifiable:
+  - {claim: "All-India C&I market share 12% rising to 14%", peers_checked: ["KPIGREEN", "ORIANA", "ACMESOLAR", "ADANIGREEN", "JSWENERGY"]}
+  - {claim: "7-8% green-PPA penetration / ~Rs3 lakh Cr addressable EBITDA TAM", peers_checked: ["KPIGREEN", "ORIANA", "ACMESOLAR", "ADANIGREEN", "JSWENERGY"]}
+  - {claim: "~30% C&I tariff premium over utility-scale/SECI tariffs (specific magnitude/mechanism)", peers_checked: ["KPIGREEN", "ORIANA", "ACMESOLAR", "ADANIGREEN", "JSWENERGY"]}
+  - {claim: "1 GW hyperscaler IT load requires ~6 GW new RE capacity / ~Rs40,000 Cr capex conversion ratio", peers_checked: ["KPIGREEN", "ORIANA", "ADANIGREEN"]}
+peer_coverage_map:
+  - {peer: "KPIGREEN", quarter: "Q1 FY27 (Aug 2026)", usage: "SUBSTANTIVE", contribution: "Execution-vs-guidance gap and geopolitical cost framing; data-centre engagement still early-stage"}
+  - {peer: "KPIGREEN", quarter: "Q4 FY26 (May 2026)", usage: "SUBSTANTIVE", contribution: "Khavda evacuation-delay parallel to Bikaner pattern"}
+  - {peer: "KPIGREEN", quarter: "Q3 FY26 (Feb 2026)", usage: "SUBSTANTIVE", contribution: "CPP vs IPP margin split (18-22% vs 85-90%), key Claim 4 complication"}
+  - {peer: "KPIGREEN", quarter: "Q2 FY26 (Nov 2025)", usage: "SUBSTANTIVE", contribution: "Data-centre/life-sciences JV, multi-year horizon, no revenue yet"}
+  - {peer: "ORIANA", quarter: "Q4 FY26 (Jun 2026)", usage: "SUBSTANTIVE", contribution: "ALMM front-loading behaviour and timing nuance"}
+  - {peer: "ORIANA", quarter: "Q2 FY26 (Dec 2025)", usage: "SUBSTANTIVE", contribution: "Curtailment framed as utility-scale-only, not C&I; commodity cost-shock quantification"}
+  - {peer: "ORIANA", quarter: "Q1 FY26 (Jun 2025)", usage: "CITED-ONLY", contribution: "General C&I PPA/margin commentary, nothing decisive"}
+  - {peer: "ACMESOLAR", quarter: "Q1 FY27 (Aug 2026)", usage: "SUBSTANTIVE", contribution: "Curtailment quantified ~1% of revenue; industry-wide TGNA caution; 91% margin"}
+  - {peer: "ACMESOLAR", quarter: "Q4 FY26 (May 2026)", usage: "SUBSTANTIVE", contribution: "88-89% margin data point"}
+  - {peer: "ACMESOLAR", quarter: "Q3 FY26 (Feb 2026)", usage: "SUBSTANTIVE", contribution: "TRAS-Down/GNA revenue-protection mechanism explained in detail; 91.5% margin; 20.6% cash ROE"}
+  - {peer: "ACMESOLAR", quarter: "Q2 FY26 (Nov 2025)", usage: "SUBSTANTIVE", contribution: "Module-cost-gap direction; Sikar Rajasthan curtailment loss Rs17.5 Cr under TGNA"}
+  - {peer: "ADANIGREEN", quarter: "Q1 FY27 (Jul 2026)", usage: "SUBSTANTIVE", contribution: "Khavda curtailment quantified at 5-7% of EBITDA, live and unresolved - strongest industry-wide corroboration"}
+  - {peer: "ADANIGREEN", quarter: "Q3 FY26 (Jan 2026)", usage: "CITED-ONLY", contribution: "14% of countrywide capacity addition - different metric, not decisive"}
+  - {peer: "ADANIGREEN", quarter: "Q4 FY26 (Apr 2026, transcript 2)", usage: "SUBSTANTIVE", contribution: "Khavda curtailment CUF impact 2.5-3% quantified; evacuation-bottleneck timeline"}
+  - {peer: "ADANIGREEN", quarter: "Q4 FY26 (Apr 2026, transcript 1)", usage: "CITED-ONLY", contribution: "General Khavda progress, no incremental contribution"}
+  - {peer: "JSWENERGY", quarter: "Q1 FY27 (Jul 2026)", usage: "SUBSTANTIVE", contribution: "Rajasthan TGNA project curtailment with slipping connectivity timeline, direct Bikaner parallel"}
+  - {peer: "JSWENERGY", quarter: "Q4 FY26 (May 2026)", usage: "CITED-ONLY", contribution: "Merchant-tariff premium theme, different mechanism from C&I premium claim"}
+  - {peer: "JSWENERGY", quarter: "Q3 FY26 (Jan 2026)", usage: "CITED-ONLY", contribution: "Same merchant-premium theme, no incremental contribution"}
+  - {peer: "JSWENERGY", quarter: "Q2 FY26 (Oct 2025)", usage: "SUBSTANTIVE", contribution: "GNA-vs-TGNA revenue-protection regulatory framework, foundational to Claim 6"}
+industry_cross_read:
+  demand: "Broadly constructive across all five peers, but KPI Green and Oriana both undershot their own guidance this period, citing input-cost and admin/political friction rather than weak demand; no peer confirms a hyperscaler-scale demand surge independently."
+  pricing_inputs: "Strong convergent peer signal (KPI Green, Oriana) of severe FY26 commodity/currency cost inflation (silver, copper, steel, crude, INR) squeezing margins - a theme absent from CleanMax's own calls despite its stable-to-improving margin trend."
+  capex_cycle: "Industry-wide capacity race, not a lone expander - all five peers are aggressively scaling (KPI Green +71% YoY portfolio, ACME ~7.4 GW, Adani Green targeting 5 GW/yr, JSW 1.1 GW YTD); CleanMax's >=1.5 GW FY27 guidance sits inside this pattern, not as an outlier."
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "Commodity/currency cost-inflation shock as an active margin risk this period (KPI Green, Oriana) - not addressed in any CleanMax call per B05"
+  - "BESS/battery input-cost volatility (lithium, cell pricing) as a tender-economics and margin risk (Oriana) - no equivalent caveat in CleanMax's own BESS trigger per B05"
+  - "GNA-vs-TGNA revenue-protection distinction for curtailed capacity (ACME, JSW) - directly relevant to interpreting Bikaner's EBITDA impact but not addressed in any CleanMax call per B05"
+  - "Governance/promoter-pledge and institutional-ownership concerns as a sector valuation theme (KPI Green) - not evidenced as CleanMax-specific but worth monitoring given DRHP-stage disclosure regime"
+  - "Rooftop/distributed-solar growth as a potential demand-cannibalisation vector raised by an analyst to Adani Green - not visible in any CleanMax call per B05"
+net_narrative_effect: "complicates"
+analyst_note: "The GNA/TGNA revenue-protection mechanism (ACME, JSW) is the single highest-priority item to carry forward: it is specific, checkable against CleanMax's own transmission-connectivity documentation, and directly bears on whether the Bikaner miss is purely external/mechanical (as CleanMax's disclosure pattern suggests) or reflects an unexplained curtailment exposure. Stage 11 and the operator should ask CleanMax directly whether Bikaner's 525 MW holds GNA or TGNA status before weighting the Bikaner flag in valuation."
+```

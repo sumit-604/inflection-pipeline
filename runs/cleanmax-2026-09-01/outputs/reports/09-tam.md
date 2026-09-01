@@ -387,3 +387,74 @@ implied by the FY27 4.6GW capacity floor read as a single-year growth rate (~49%
 independent SOM estimate here is the conservative cross-check, not the optimistic one. Stage 11
 should treat management's growth guidance as running ahead of what this stage's independent market
 sizing requires, not behind it.
+
+
+---
+
+```yaml
+stage: B09-tam
+company: "CLEANMAX"
+run_date: "2026-09-01"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["No named-competitor top-3 concentration figure for India C&I open-access RE disclosed anywhere in corpus or search", "Primary CRISIL 57GW-by-FY28 report not directly fetched (egress-blocked); relied on search-engine summary citing CRISIL", "CEA primary sectoral electricity-consumption report not directly fetched; relied on CEIC secondary aggregator (2025 vintage)", "No disclosed MW/GW figure for BESS-as-a-service or VPPA-to-physical-PPA conversion pipeline, so SAM-expansion-lever sizing NOT FOUND"]
+flags: ["Management's ~Rs3 lakh Cr addressable EBITDA pool claim is unsourced (B06 UNVERIFIABLE) but lands within ~1.15x of this stage's independent 100%-penetration bottom-up ceiling (~Rs2.51 lakh Cr EBITDA) -- i.e. plausible only as a theoretical ceiling, presented by management without the penetration/timeline caveat that makes it usable, which is exactly the TAM=SAM dishonesty this stage's operating rules warn against", "Management's 12%->14% market-share claim brackets within an independently-derived 7.7%-16.3% range depending on capacity base used (operational-only vs total on-books); not independently pinned to a single verifiable definition, consistent with B06's UNVERIFIABLE finding and the unnamed source for the 14% figure", "Market structure is fragmenting, not consolidating: Adani, Reliance and NTPC named by management itself as new active C&I entrants (B07), against a backdrop of falling new-PPA tariffs (Rs4.12->Rs3.57/kWh, FY24-FY26)", "SOM-implied revenue CAGR (37.8% 3yr / 34.3% 5yr) sits below management's own implied FY26-FY28 EBITDA CAGR (~52%) and below the FY27 4.6GW capacity-floor single-year growth rate (~49%) -- the independent estimate here is the conservative cross-check, not the optimistic one"]
+market_definition: "India C&I renewable power sales (solar/wind/hybrid/BESS via open access, group captive, CTU, VPPA/EAPA) plus RE Services (EPC+O&M) for C&I RE assets"
+tam_cr: {conservative: 31200, realistic: 44460}
+sam_cr: 25650
+sam_pct_of_tam: 57.7
+som_3yr_cr: 5003
+som_5yr_cr: 8373
+som_implied_revenue_cagr: {yr3: 37.8, yr5: 34.3}
+current_sam_share_pct: 7.46
+revenue_headroom_x: 13.4
+tam_growth_pct: 19.4
+runway_class: "STRONG"
+mgmt_claim_cr: 300000
+mgmt_claim_ratio: 9.62
+mgmt_claim_read: "inflated"
+capacity_check: "sufficient -- FY27 (Apr-2027) guided minimum 4.6GW capacity floor is within 2% of the ~4,695 MW Yr3-SOM requirement, reached over a year ahead of when the SOM target needs it; capex plan (B07 capex_embedded_growth_pct 123%) is the more optimistic side, not the SOM estimate"
+methods_used: ["top-down (CRISIL C&I open-access capacity forecast, current + FY28 forward)", "bottom-up (India C&I electricity consumption full-penetration theoretical ceiling)", "peer revenue aggregation (CleanMax + ACME Solar + KPI Green, plus 30% conservative unorganised-sector uplift; Adani Green excluded as non-comparable utility-scale mix)", "global-benchmark/policy-target context (India non-fossil 500GW-by-2030 trajectory, directional only)"]
+stale_data_flags: [{datapoint: "India sector-wise electricity consumption (Industry 655,562 GWh, Commercial 135,163 GWh)", source: "CEIC secondary aggregator (CEA-derived)", year: 2025}]
+searches_performed: ["India C&I open access renewable energy market size GW 2026 CRISIL ICRA Mercom", "India industrial electricity consumption total GW MU annual 2025 2026 CEA", "India data centre capacity MW 2026 2030 forecast growth", "India sector-wise electricity consumption share industrial commercial domestic agriculture percent 2025 CEA", "open access solar wind average PPA tariff India 2026 Rs/kWh weighted average", "ACME Solar Holdings FY26 revenue crore KPI Green Energy FY26 revenue crore", "Adani Green Energy FY26 revenue crore annual report", "India renewable energy capacity target 500 GW 2030 non-fossil MNRE", "Bridge to India open access solar market report 2026 GW", "KPI Green Energy FY26 annual revenue crore results", "Clean Max Enviro Energy Solutions share price market cap NSE BSE 2026 valuation"]
+searches_skipped: ["WebFetch to taiyangnews.info (CRISIL 57GW-by-FY28 primary report) blocked by egress proxy -- used search-engine summary citing CRISIL instead", "CEA primary sectoral-consumption report not directly fetched -- used CEIC secondary aggregator", "No India-vs-China/global per-capita C&I RE benchmark found -- Method 5 kept directional-only"]
+downstream_candidates:
+  - signal: "India C&I open-access RE capacity additions (quarterly GW)"
+    entity_type: "macro"
+    demand_link: "Direct proxy for the total addressable C&I RE market CleanMax competes for share within"
+    likely_source: "Mercom India Solar Open Access Market Report"
+    cadence: "quarterly"
+    shared: false
+  - signal: "India data-centre operational capacity (MW), by hyperscaler"
+    entity_type: "end-customer"
+    demand_link: "Data & AI is 42% of contracted capacity; mgmt ties 1GW IT load to ~6GW new RE demand (unverified)"
+    likely_source: "CBRE / Cushman & Wakefield / JLL India data-centre trackers"
+    cadence: "quarterly"
+    shared: true
+  - signal: "Named hyperscaler India data-centre capex/build announcements (Amazon, Google, Meta, Microsoft)"
+    entity_type: "end-customer"
+    demand_link: "Direct counterparties for VPPA/EAPA-to-physical-PPA conversion optionality"
+    likely_source: "Hyperscaler capex guidance calls / company IR disclosures"
+    cadence: "event-driven"
+    shared: true
+  - signal: "PGCIL/CTU grid-evacuation capacity delivery (Rajasthan corridor)"
+    entity_type: "regulatory"
+    demand_link: "Bikaner 525MW curtailment resolution gates whether CTU-connected TAM is usable, not just contracted"
+    likely_source: "PGCIL project status disclosures / CERC orders"
+    cadence: "quarterly"
+    shared: false
+  - signal: "State open-access/group-captive regulatory changes (cross-subsidy surcharge, banking rules)"
+    entity_type: "regulatory"
+    demand_link: "Directly sets the size of the practically-addressable SAM slice of the national TAM, state by state"
+    likely_source: "State Electricity Regulatory Commission (SERC) orders"
+    cadence: "event-driven"
+    shared: false
+  - signal: "Peer C&I RE capacity and revenue disclosures (Adani Green, ACME Solar, KPI Green, O2 Power)"
+    entity_type: "counterparty"
+    demand_link: "Tracks competitive-share dynamics behind management's own claimed (unverified) 12%->14% market share"
+    likely_source: "Peer quarterly results / investor presentations"
+    cadence: "quarterly"
+    shared: false
+demand_externally_verifiable: true
+analyst_note: "Revenue/MW conversion factor (Rs0.78 Cr/MW/yr) is derived from CleanMax's own FY28 guidance divided by its own disclosed margin, not an independent industry figure -- this makes Methods 1 and 3 partially circular (CleanMax's own economics used to price the whole market). Where CleanMax's per-MW economics differ materially from the market average (plausible, given its AA-plus customer skew and evacuation-capacity moat per B07), TAM/SAM/SOM Rs-Cr figures should be read as directionally sound but not independently market-priced. GW-based figures (40GW/57GW capacity stock, market-share brackets) are the more load-bearing numbers in this report; the Rs-Cr conversions ride on top of them."
+```

@@ -214,3 +214,88 @@ Pattern classification: **balanced** (external-blame where the cause genuinely i
 - LOW: FY28 EBITDA guidance implicitly assumes the full 4.6 GW opex-capacity base (as of 1-Apr-2027) contributes at a mature run rate for FY28, but management's own stated stabilisation lag (3-6 months post-COD) means capacity commissioned late in FY27 will not run a full stabilised year in FY28 — an optimism risk embedded in the guidance math that was not addressed on the call.
 
 ---
+
+
+---
+
+```yaml
+stage: B05-concall
+company: "CLEANMAX"
+run_date: "2026-09-01"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "EBITDA definition never reconciled: whether 'reported EBITDA' includes Other Income is not stated in any of the three calls, and no reconciliation to CARE's PBILDT (operating-only) basis appears anywhere."
+  - "Q1 FY27 call uses three EBITDA labels ('EBITDA'/'cash EBITDA'/'adjusted reported EBITDA' = Rs494 Cr vs 'reported EBITDA' = Rs462 Cr) without a reconciling bridge."
+  - "No customer-concentration metric (top-5/top-10 share) disclosed in any call."
+  - "Osaka Gas JV (400 MW/3-yr target) and the land-acquisition milestone (100% by Sep-2026) each disclosed once (Q3 FY26) with no follow-up in Q4 FY26 or Q1 FY27."
+  - "No interest-capitalisation statement for CWIP/under-construction debt (~38-44% of total net debt) in any call."
+flags:
+  - "Bikaner (525 MW CTU) curtailment severity escalated 30%->70% within one quarter and resolution timeline slipped three calls running."
+  - "EBITDA terminology/figures inconsistent within the Q1 FY27 call itself (Rs494 Cr vs Rs462 Cr), unresolved and unchallenged."
+  - "RE Services revenue 7.32x YoY jump in Q1 FY27 (mislabelled verbally as 'six fold') coincides with a shrinking order book (215 MW -> 147 MW) — lumpiness unaddressed."
+quarters_analysed: ["Q3 FY26", "Q4 FY26 / FY26 Full Year", "Q1 FY27"]
+triggers:
+  - {priority: 1, name: "Data & AI / hyperscaler demand growth (42% of capacity, 35% hyperscaler market share)", type: "VOLUME/SECTORAL", timeframe: "near/medium", conviction: "H", confirm_signal: "continued hyperscaler-named contract announcements and MW growth", kill_signal: "hyperscaler capex slowdown or insourcing/direct-PPA disintermediation"}
+  - {priority: 2, name: "FY27 capacity-addition delivery (>=1.5 GW guidance, 33% delivered in Q1)", type: "VOLUME", timeframe: "near-term", conviction: "H", confirm_signal: "TTM capacity-added trend staying above ~1.5 GW pace through FY27", kill_signal: "land/evacuation/CTU delays pushing full-year delivery materially below 1.5 GW"}
+  - {priority: 3, name: "FY28 EBITDA guidance (>=Rs3,000 Cr)", type: "REVENUE/MARGIN", timeframe: "medium-term", conviction: "M", confirm_signal: "FY27 quarterly EBITDA prints tracking toward implied run rate AND a reconciled EBITDA definition", kill_signal: "Bikaner-style curtailment on new CTU capacity or capacity-build shortfall vs 4.6 GW floor"}
+  - {priority: 4, name: "Cost-of-debt decline / AA rating / DCM access", type: "COST", timeframe: "near-term", conviction: "H", confirm_signal: "successful maiden bond issuance at improved spread", kill_signal: "rating downgrade or bond issuance shelved"}
+  - {priority: 5, name: "BESS/storage roll-out as DSM mitigant and tariff uplift", type: "COST", timeframe: "medium-term", conviction: "M", confirm_signal: "MOUs converting into signed BESS-linked PPAs/contracts", kill_signal: "MOUs fail to convert; DSM rules finalise unfavourably"}
+  - {priority: 6, name: "Conventional / Make-in-India C&I penetration (93% unpenetrated)", type: "VOLUME/SECTORAL", timeframe: "long-term", conviction: "M", confirm_signal: "continued ~40%+ CAGR in conventional segment", kill_signal: "slower industrial capex cycle in target states"}
+  - {priority: 7, name: "Bikaner CTU curtailment resolution", type: "VOLUME (recovery)", timeframe: "near/medium", conviction: "L", confirm_signal: "a firm, delivered PGCIL resolution date that actually holds", kill_signal: "curtailment persists/worsens into FY28 or spreads to Koppal CTU site"}
+guidance:
+  - {item: "FY27 capacity addition", number: ">=1.5 GW", timeframe: "FY27", stated_in: "Q3 FY26 call (reaffirmed Q4 FY26, Q1 FY27)"}
+  - {item: "FY28 EBITDA guidance", number: ">=Rs3,000 Cr", timeframe: "FY28", stated_in: "Q1 FY27 call (NEW)"}
+  - {item: "Opex capacity floor underlying FY28 guidance", number: "4.6 GW min by 1-Apr-2027", timeframe: "FY28 basis", stated_in: "Q1 FY27 call (NEW)"}
+  - {item: "Steady-state net debt at FY28 EBITDA target", number: "~Rs16,000 Cr", timeframe: "FY28", stated_in: "Q1 FY27 call (NEW)"}
+  - {item: "Weighted avg cost of debt", number: "8.7% (Dec'25) -> 8.5% (Mar'26) -> 8.4% (Jun'26)", timeframe: "trailing", stated_in: "Q3 FY26, Q4 FY26, Q1 FY27"}
+  - {item: "Run-rate EBITDA", number: "Rs1,140 Cr (1-Apr-25) -> Rs1,870 Cr (1-Apr-26)", timeframe: "point-in-time", stated_in: "Q3 FY26, Q4 FY26"}
+  - {item: "Tariff, capacity contracted-under-execution", number: "Rs3.84 -> Rs3.85 -> Rs4.00/unit", timeframe: "point-in-time", stated_in: "Q3 FY26, Q4 FY26, Q1 FY27"}
+  - {item: "Osaka Gas JV build target", number: "400+ MW over 3 years", timeframe: "3 years", stated_in: "Q3 FY26 only"}
+  - {item: "Land acquisition for FY27 capacity", number: "~80% acquired; 100% latest by Sep-2026", timeframe: "one-time commitment", stated_in: "Q3 FY26 only, never re-confirmed"}
+  - {item: "ALMM2 module-cost benefit", number: "~Rs60 lakh/MW", timeframe: "window to 31-Dec-2026", stated_in: "Q1 FY27 (NEW)"}
+promise_delivery:
+  delivered: 4
+  partial: 6
+  missed: 1
+  rows:
+    - {promised_in: "Q3 FY26", promise: "Bikaner 525 MW CTU backdown resolved Oct-Dec 2026 (grid estimate)", outcome: "missed", explanation: "Pushed to September 2026 (Q4 FY26, 30% curtailment); then 'unknown, assume continues rest of FY' (Q1 FY27, 70% curtailment). External-blame (grid), proactively disclosed, but forecast reliability poor across all three calls."}
+    - {promised_in: "Q3 FY26", promise: "Weighted avg cost of debt to keep falling", outcome: "delivered", explanation: "8.7% -> 8.5% -> 8.4% every quarter checked."}
+    - {promised_in: "Q3 FY26", promise: "RE Power Sales EBITDA margin toward 85-86% over 2-3 years", outcome: "partial", explanation: "83% -> 83.5% -> 84%; directionally on track, too early to grade fully."}
+    - {promised_in: "Q3 FY26", promise: "100% land acquired for FY27 capacity by September 2026", outcome: "partial", explanation: "No follow-up update given in Q4 FY26 or Q1 FY27."}
+    - {promised_in: "Q3 FY26", promise: "Osaka Gas JV to build 400+ MW over 3 years", outcome: "partial", explanation: "No progress update in either subsequent call."}
+    - {promised_in: "Q3 FY26", promise: "Projects built within Board-approved capex", outcome: "delivered", explanation: "Reaffirmed within-budget for FY26 full year and again for Q1 FY27, described as multi-year track record."}
+    - {promised_in: "Q4 FY26", promise: "DSM impact + BESS strategy properly announced within 3-4 months", outcome: "partial", explanation: "BESS strategy delivered in detail (Q1 FY27, ~3 months later) but explicit DSM Rs-impact number not delivered."}
+    - {promised_in: "Q4 FY26", promise: "Credit rating trajectory toward AA / bond-market readiness", outcome: "delivered", explanation: "A+ -> AA- threshold -> AA within ~one quarter; bond issuance itself still pending ('hopefully soon')."}
+    - {promised_in: "Q4 FY26", promise: "FY27 capacity addition >=1.5 GW (reaffirmed)", outcome: "partial", explanation: "500 MW added in Q1 FY27 = ~33% of full-year floor, ahead of straight-line pace."}
+    - {promised_in: "Q3/Q4 FY26", promise: "Repeat-business rate ~74-75% of new volume", outcome: "delivered", explanation: "74% (Q3 FY26), 74% (Q4 FY26), ~75-80% (Q1 FY27) — met or modestly exceeded each quarter."}
+    - {promised_in: "Q3 FY26", promise: "Credit-quality customer mix (AA/AAA/MNC + A-rated ~97%)", outcome: "partial", explanation: "83% (Q3 FY26) -> 82% (Q4 FY26) -> 'above 80%' with no A-rated add-on given (Q1 FY27); slight downward drift and reduced precision."}
+excuse_pattern: "balanced"
+repeated_evasions:
+  - {question: "Can you give an interim/current run-rate EBITDA or forward EBITDA/debt guidance for the current period (not just fiscal year-end)?", quarters_asked: ["Q3 FY26", "Q1 FY27"], classification: "deflected every time"}
+  - {question: "What is your peak/steady-state debt guidance tied to a future EBITDA target, by fiscal year?", quarters_asked: ["Q3 FY26", "Q1 FY27"], classification: "answer changed between quarters"}
+credibility_grade: "B"
+credibility_basis: "Strong, consistent delivery on every metric within management's control (capacity-build pace, cost of debt, credit rating, execution-within-budget, repeat-business rate) across all three calls; the one clear miss (Bikaner grid curtailment) is externally caused and proactively, quantifiably disclosed each quarter even as it worsens; offset by real definitional sloppiness (EBITDA labelled three ways with two figures in one call, no Other-Income/CARE-PBILDT reconciliation anywhere) and silent drop-off on two one-time disclosures (Osaka Gas JV, land-acquisition milestone)."
+peer_questions:
+  - {question: "CleanMax cites all-India C&I market share of 12% (Q3 FY26, DRHP-sourced) rising to 14% (Q1 FY27, source unnamed). Do peer/third-party estimates corroborate this level and trend?", why: "Market-share claim underpins the competitive-moat narrative; the later figure has no cited source.", check_peers: ["other listed/major C&I renewable energy developers in India", "industry market-research reports (e.g., Bridge to India, CRISIL)"]}
+  - {question: "Management states only 7-8% of India's industrial power is sourced via bilateral green PPAs, sizing the addressable EBITDA pool at ~Rs3 lakh Cr. Do peers/industry reports corroborate this penetration rate and TAM?", why: "Central to the long-term growth thesis.", check_peers: ["other C&I renewable developers", "industry association / CRISIL-type reports"]}
+  - {question: "CleanMax states the domestic-cell vs imported-cell module cost gap is ~Rs60 lakh/MW, with ALMM2 deferred to 31-Dec-2026. Do peer EPC/IPP players report similar cost deltas and are they also front-loading commissioning?", why: "Raw-material/policy-timing claim affecting near-term margin and volume.", check_peers: ["solar EPC contractors", "other C&I/utility-scale RE IPPs"]}
+  - {question: "CleanMax claims a ~30% tariff premium over utility-scale/SECI tariffs explains its lower EBITDA margin (83-84% vs peers' 89-91%) while delivering superior cash ROE. Do peer disclosures support both halves of this claim?", why: "Load-bearing justification for CleanMax's business-model economics vs commoditised utility-scale peers.", check_peers: ["utility-scale renewable IPPs", "other listed C&I RE players"]}
+  - {question: "Management states 1 GW of hyperscaler data-center IT load requires ~6 GW of new RE capacity (~Rs40,000 Cr capex). Do other RE developers serving data centers use a similar conversion ratio?", why: "A striking macro multiplier underlying the entire Data & AI growth thesis.", check_peers: ["other data-center-focused RE developers", "data-center operators' public disclosures"]}
+  - {question: "Grid curtailment at the Bikaner (Rajasthan) CTU substation is reported at 30% (Q4 FY26) rising to 70% (Q1 FY27). Do other RE generators on the same substation/corridor report comparable severity and timelines?", why: "Tests whether this is CleanMax-specific mis-forecasting or a genuinely industry-wide externally-caused issue.", check_peers: ["other RE IPPs with Rajasthan CTU-connected capacity"]}
+red_flags:
+  - "MEDIUM: Bikaner (525 MW CTU) curtailment escalated 30%->70% within one quarter; resolution timeline slipped from Oct-Dec 2026 estimate to September 2026 to 'unknown, assume rest of FY.' Contained to ~13% of run-rate EBITDA (~Rs170 Cr full-year impact at 70%) but forecast reliability repeatedly poor."
+  - "MEDIUM: Q1 FY27 call uses three EBITDA labels attached to two figures (Rs494 Cr vs Rs462 Cr) with no reconciling bridge, unchallenged by analysts; bears directly on interpreting the new FY28 >=Rs3,000 Cr guidance and on Other Income treatment, neither addressed in any call."
+  - "LOW-MEDIUM: No customer-concentration metric disclosed in any call despite ~42% of contracted capacity concentrated in Data & AI among named hyperscalers."
+  - "LOW-MEDIUM: RE Services revenue 7.32x YoY in Q1 FY27 (verbally understated as 'six fold') alongside a shrinking order book (215 MW -> 147 MW); recurrence unaddressed."
+  - "LOW: Osaka Gas JV (400 MW/3-yr target) and Apple JV #2 (150 MW) each disclosed once with no subsequent progress update."
+  - "LOW: FY28 EBITDA guidance implicitly assumes late-FY27-commissioned capacity contributes at a mature run rate in FY28, despite management's own stated 3-6 month post-COD stabilisation lag; not addressed on the call."
+dropped_triggers:
+  - "Osaka Gas JV (CORE) 400 MW-in-3-years build-out target - announced Q3 FY26, no update in Q4 FY26 or Q1 FY27"
+  - "Land-acquisition milestone (100% by September 2026 for FY27 capacity) - stated Q3 FY26, never re-confirmed"
+  - "Cross-subsidy-surcharge / Draft Electricity Amendment Bill regulatory risk (quantified at max 1.5% of EBITDA) - raised Q3 FY26, not revisited"
+timeline_slippages:
+  - "Bikaner (525 MW CTU) grid backdown resolution: Oct-Dec 2026 estimate (Q3 FY26) -> September 2026 (Q4 FY26) -> 'unknown, assume continues rest of FY27' (Q1 FY27); curtailment severity worsened from unquantified to 30% to 70% over the same period"
+  - "DSM impact quantification promised within '3-4 months' at Q4 FY26 call; by Q1 FY27 (~3 months later) only the BESS mitigation strategy was disclosed, explicit DSM revenue-impact number still not given"
+analyst_note: "The single most load-bearing gap for downstream valuation stages: no call ever states whether the FY28 >=Rs3,000 Cr 'reported EBITDA' guidance includes Other Income, and the Q1 FY27 call itself uses two different EBITDA figures (Rs494 Cr / Rs462 Cr) under three labels without reconciliation. Stage 11 should not treat the FY28 guidance as directly comparable to CARE's PBILDT or to any operating-only EBITDA basis without independent reconciliation. Separately, the Bikaner curtailment miss is genuinely external (grid/PGCIL) and proactively disclosed each quarter, which is why it does not by itself pull the grade below B despite three consecutive quarters of worsening numbers."
+```

@@ -927,3 +927,68 @@ memory figures are weighed, never anchored, per CLAUDE.md; every company-memory 
 above (promoter pledge %, borrowings reconciliation, FII holding) was independently
 cross-checked against a primary AR source in this pass and is now [FILED]-confirmed rather than
 [SECONDARY]-only.*
+
+
+---
+
+```yaml
+stage: B03-ardeep
+company: "CLEANMAX"
+run_date: "2026-09-01"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - {type: FLAG-CASH, reason: "CFO/PAT of 20.2x FY26 (72.3x FY25), driven by Rs 862.92 Cr trade-payables growth and large non-cash add-backs against a near-breakeven PBT base; FCF deeply negative and widening (approx Rs -4,023 Cr FY26 vs Rs -2,193 Cr FY25); confirms and extends Stage 2's FLAG-CASH."}
+  - {type: FLAG-PROMOTER-PRELIM, reason: "Promoter pledge rose from near-zero (205,404 shares/FY25, against CCPS issuance) to 11,597,866 shares (20.02% of promoter holding) FY26, securing Kuldeep Jain/KEMPINC LLP's own borrowings to 360 One Prime Ltd (Note 19(g), AR p.420), independently cross-checked against the shareholding pattern table (AR p.351); combined with 12 board changes in one fiscal year and zero independent directors with more than ~1 year tenure at year-end. Full promoter verdict deferred to B08."}
+phase_verdicts: {p1: "red", p2: "red", p3: "red", p4: "red", p5: "yellow", p6: "red", p7_best_fit: "GARP/Turnaround, both WATCHLIST"}
+overall_quality: 4
+quality_components: {governance: 5, accounting: 4, balance_sheet: 4, earnings: 3}
+kill_switch_notes:
+  - "Phase 1: 103 CARO-qualified entities (90+ cash-loss, 1 going-concern-adjacent) would give a human reviewer reason to pause; pipeline continues."
+  - "Phase 2: accounting-quality cluster (useful-life, discount-rate, interest capitalisation, plus this pass's new 169% current-tax-to-PBT finding) would give reason to defer Role 1 until PBT is rebuilt; pipeline continues."
+  - "Phase 3: CFO/PAT 20.2x and Other Income >100% of PBT both years would give strong reason to pause on earnings-quality grounds; pipeline continues."
+  - "Phase 4: MD&A risk-section boilerplate directly contradicted by the same document's statutory sections would be flagged as a transparency concern; pipeline continues."
+  - "Phase 5: promoter pledge trajectory and full board reconstitution would be flagged as the most important governance datapoint; pipeline continues, FLAG-PROMOTER-PRELIM set."
+triple_pass_verification:
+  verified: 12
+  discrepancies:
+    - {finding_rank: 11, triple_pass_value: "Parent RP loans jumped 4.3x to Rs 1,363.66 Cr, 36.87% of loan book (Note 49a)", ar_value: "CARO clause (iii) loans-in-nature-of-loans-without-terms table shows Rs 23.30 Cr aggregate to related parties (AR p.700) - a narrower, different population, not a contradiction", note_ref: "Note 49(a) vs CARO Annexure A clause (iii)"}
+    - {finding_rank: 13, triple_pass_value: "Reverse-factoring Rs 1,730.92 Cr (4.1x YoY) classified in investing cash flows (Note 26B)", ar_value: "Primary consolidated cash flow statement (AR p.379-380) shows no distinct investing-section line for acceptances; balance and 4.1x growth confirmed (AR p.373) but classification embeds in operating working-capital movements per this pass's read - needs Role 1 follow-up with Note 43 financing-liability roll-forward", note_ref: "Note 26(B) vs Cash Flow Statement AR p.379-380"}
+missing_risks:
+  - {risk: "Covenant breach already occurred in FY26 (Note 37.1)", evidence: "AR p.432 (per Stage 2); standalone CARO confirms parent itself clean, narrowing breach to a subsidiary facility (AR p.701)"}
+  - {risk: "Interest-rate risk ~88% unhedged on Rs 8,651.29 Cr floating debt", evidence: "Note 37.4.3B/C, AR p.437-441 (per Stage 2)"}
+  - {risk: "FX risk, only ~8% of Rs 1,431.37 Cr net USD exposure forward-covered", evidence: "Note 37.4.3B/C, AR p.437-441 (per Stage 2)"}
+  - {risk: "90 of 103 CARO-qualified entities posted cash losses both years", evidence: "Annexure A, AR p.365-370"}
+  - {risk: "Going-concern-adjacent doubt at Clean Max Patagonia with an active Rs 216.25 Cr RPT ceiling", evidence: "AR p.368; AGM Notice (per Stage 2)"}
+  - {risk: "Standalone PAT is 8.15x consolidated owners' PAT (Rs 767.35 Cr vs Rs 94.13 Cr)", evidence: "This pass's Phase 3C computation, AR p.271, 374, 708-709"}
+  - {risk: "54.4% of net IPO proceeds unutilised at FY26 year-end, three weeks post-listing", evidence: "Note 61, AR p.690"}
+guidance_table:
+  - {claim: "New commissioned capacity, minimum, floor not ceiling", number: "1.5 GW", timeframe: "FY2027", credibility: "Supported by 2.6 GW already contracted-and-under-execution; consistent with FY26's ~1.4 GW actual delivery (AR p.355)"}
+  - {claim: "Run-rate EBITDA", number: "Rs 1,870 Cr", timeframe: "undated, post-listing", credibility: "44% above the company's own reported EBITDA of Rs 1,294.56 Cr; undefined, not reconcilable to any statutory line (AR p.355)"}
+  - {claim: "FY28 minimum reported EBITDA guidance", number: "Rs 3,000 Cr", timeframe: "FY28", credibility: "NOT FOUND IN THIS AR; company-memory attributes it to investor-presentation/concall material outside the statutory document"}
+  - {claim: "4.6 GW capacity target", number: "4.6 GW", timeframe: "1-Apr-2027", credibility: "NOT FOUND IN THIS AR; company-memory figure not corroborated by the statutory document"}
+monitorables:
+  - {metric: "Q2 FY27 operating PBT before other income", threshold: ">=0", where: "Q2 FY27 results, due late Oct 2026", why: "Mental Model Seed's explicit falsifier"}
+  - {metric: "Interest capitalisation ratio", threshold: "revert toward ~7-10% FY25 norm; staying near 28-30% confirms accounting-artefact concern", where: "FY27 Notes 3/36 equivalents", why: "Tests whether FY26 crossover is real or partly artefact"}
+  - {metric: "CARO qualified-entity count / Patagonia Clause (xix) status", threshold: "material decline from 103, or Patagonia flag clears", where: "FY27 AR Annexure A", why: "Tests SPV cohort maturing toward self-funding"}
+  - {metric: "Promoter pledge % of promoter holding", threshold: "no further increase from 20.02%", where: "Subsequent shareholding/encumbrance disclosures", why: "Person-level leverage stress signal on controlling shareholder"}
+  - {metric: "CFO/PAT ratio and trade-payables growth", threshold: "CFO/PAT normalising to single digits; payables growth not outpacing revenue growth", where: "Next cash-flow statement/quarterly results", why: "Tests whether FY26 cash-flow signature was one-time or structural"}
+  - {metric: "Covenant-breach facility identity and recurrence", threshold: "no recurrence, or facility/lender identified", where: "FY27 AR Note 37.1 equivalent", why: "FY26 breach remains facility-unidentified"}
+ar_new_downstream_entities:
+  - {name: "Jongsong Investments Pte. Ltd.", where_in_ar: "Board's Report, preferential allotment disclosure (AR p.~273)", entity_type: "Pre-IPO institutional investor, 28,19,548 shares at Rs 1,053/share (Rs 296.90 Cr), 6-Feb-2026"}
+  - {name: "360 One Prime Limited", where_in_ar: "Note 19(g), promoter share pledge disclosure (AR p.420)", entity_type: "Pledgee for Kuldeep Jain/KEMPINC LLP promoter share pledge"}
+  - {name: "Osaka Gas", where_in_ar: "MD&A, strategic partnerships mention (AR p.355)", entity_type: "Named strategic partner, no transaction detail disclosed"}
+  - {name: "Envision Energy India Private Limited", where_in_ar: "Corporate Governance Report, preferential-allotment-adjacent disclosure (AR p.~350)", entity_type: "Wind turbine supplier, Rs 74.94 Cr paid to secure/block future turbine supply"}
+strengths_top3:
+  - "Clean, unmodified audit opinions both levels; no fraud, no whistleblower complaints, no CSR shortfall; specific, falsifiable FY27 capacity guidance (1.5 GW floor) consistent with FY26 actual delivery pace"
+  - "Core reported growth numbers (revenue +28%, EBITDA +28%, PAT +340%) are arithmetically accurate on their own stated basis; no fabrication or misstatement found"
+  - "Extensive disclosure where it matters structurally (103-entity CARO Annexure A, AGM Notice RPT ceilings, pledge Note 19g) allows full risk reconstruction even though narrative sections do not surface it"
+red_flags_top3:
+  - "FY26 operating-profit crossover sits on three compliant-but-flattering accounting choices in the same year; this pass adds a 169% current-tax-to-book-PBT ratio and 20.2x CFO/PAT ratio as further evidence PBT of Rs 135 Cr is not yet a trustworthy base"
+  - "90 of 103 CARO-qualified group entities posted cash losses both FY25 and FY26, directly contradicting the MD&A's 'no material risks are currently anticipated' framing (thesis-changing implicit retraction under Phase 6E)"
+  - "Promoter pledge rose from near-zero to 20.02% of promoter holding within the fiscal year, securing the promoter LLP's own borrowings, alongside a 12-change board reconstitution leaving zero independent directors with more than ~1 year tenure, including one who resigned 7 months after appointment over an RBI-barred conflict"
+best_fit_strategy: "GARP (WATCHLIST) and Turnaround (WATCHLIST) - both gated on the Q2 FY27 falsifier and a rebuilt PBT; not yet actionable on either strategy"
+one_line_verdict: "Real transition, unproven profitability, price and governance both demand patience before entry."
+analyst_note: "This pass independently re-verified 12 of Stage 2's 15 triple-pass findings against primary AR pages, resolving one open item (the Rs 12,684 Cr vs Rs 12,410.76 Cr borrowings gap = lease liabilities) and flagging one classification claim (reverse-factoring cash-flow presentation) for Role 1 follow-up. New findings this pass - the 20.2x CFO/PAT ratio, Other Income exceeding PBT both years, the undefined 'run-rate EBITDA' non-GAAP overlay, the 8.15x standalone-to-consolidated PAT gap, and the Phase 6E implicit retractions - all reinforce Stage 2's core conclusion without revising the 4/10 accounting-quality score. The promoter pledge and board-churn findings are new to this stage and should be weighted heavily at B08."
+```

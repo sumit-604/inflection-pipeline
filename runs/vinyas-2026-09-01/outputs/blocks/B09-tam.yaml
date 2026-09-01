@@ -1,0 +1,39 @@
+stage: B09-tam
+company: "VINYAS"
+run_date: "2026-09-01"
+model: claude-sonnet-5
+status: partial
+input_gaps:
+  - "KPMG India EMS report and IBEF defence-manufacturing page: full fetch blocked by egress proxy, only search-snippet data recovered"
+  - "No independent top-3 concentration or organised/unorganised split for India defence/aerospace-EMS sub-segment"
+  - "Data Patterns, Paras Defence, MTAR financials not in this run's screening folder - peer aggregation likely undercounts"
+flags:
+  - "SOM-implied CAGR (~7%) far below FY26 actual growth (29.67%) and guidance (30-35%) - divergence hinges on unverified ~50% export-mix claim (contradicted by AR Note 34 single-segment)"
+  - "Current P/E (~63x) not supported by SOM-anchored earnings path (implied PEG ~8-9x)"
+  - "mgmt_claim_ratio (1.70x) sits between reasonable and inflated bands; sensitive to TAM anchor"
+  - "Capacity is NOT the binding constraint on SOM; the demand/market-share assumption is the optimistic side"
+market_definition: "India defence/aerospace-led EMS (PCBA, harness, box-build/system integration) for defence, aerospace, medical, industrial OEMs, domestic + export"
+tam_cr: {conservative: 6000, realistic: 9500}
+sam_cr: 2873
+sam_pct_of_tam: 48
+som_3yr_cr: 629
+som_5yr_cr: 716
+som_implied_revenue_cagr: {yr3: 6.95, yr5: 6.84}
+current_sam_share_pct: 17.9
+revenue_headroom_x: 5.6
+tam_growth_pct: 9.7
+runway_class: "MODERATE"
+mgmt_claim_cr: 10200
+mgmt_claim_ratio: 1.70
+mgmt_claim_read: "reasonable"
+capacity_check: "sufficient - capex-embedded +69% (~Rs 869 Cr) and management ceiling (Rs 2,000-2,100 Cr) both exceed SOM_3yr (Rs 629 Cr) and SOM_5yr (Rs 716 Cr); optimistic side is the SOM/demand assumption, not capex"
+methods_used: ["top-down defence-electronics EMS slice", "peer revenue aggregation + unorganised estimate", "global benchmark (India share of global A&D EMS)", "import substitution cross-check"]
+demand_externally_verifiable: true
+downstream_candidates:
+  - {signal: "Positive Indigenisation List updates (MoD/DDP)", entity_type: "regulatory", cadence: "event-driven", shared: true}
+  - {signal: "Union Budget defence capital outlay", entity_type: "macro", cadence: "quarterly", shared: true}
+  - {signal: "NADCAP/PRI accreditation status (own and competitor)", entity_type: "regulatory", cadence: "event-driven", shared: true}
+  - {signal: "Global A&D Tier-1 OEMs / defence primes (foreign OEM, Israeli JV partner)", entity_type: "end-customer", cadence: "event-driven", shared: false}
+  - {signal: "Medical-device OEM localisation announcements (Fresenius Kabi-type)", entity_type: "end-customer", cadence: "quarterly", shared: false}
+  - {signal: "Independent EMS/A&D market trackers (Mordor, Fortune, SNS)", entity_type: "macro", cadence: "event-driven", shared: false}
+analyst_note: "Load-bearing: SOM-implied CAGR (~7%) diverges sharply from FY26 actual (29.67%) and guidance (30-35%). Resolution hinges on the unverified ~50% export-mix claim (contradicted by AR Note 34 single-segment). If Stage 11/FTTCP confirms export mix independently, true addressable market nears global A&D EMS TAM (~Rs 2,08,800 Cr raw), loosening the MODERATE runway call. Absent that, treat ~7% as anchored floor and 30-35% as the claim under test."

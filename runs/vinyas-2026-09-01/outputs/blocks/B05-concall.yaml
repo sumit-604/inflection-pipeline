@@ -1,0 +1,70 @@
+stage: B05-concall
+company: "VINYAS"
+run_date: "2026-09-01"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - "FY26 operating cash flow negative Rs 32.30 Cr vs PAT positive Rs 30.87 Cr never mentioned or questioned on the Q4 FY26 call"
+  - "Capacity ceiling restated three ways across three calls (Rs 1,200-1,400 / Rs 1,100-1,200 / Rs 2,000-2,100 Cr peak) without reconciliation"
+  - "Export claim jumped from 22-23% of orders to almost 50% of revenue in one year, uncorroborated by any segment filing (single ESDM segment)"
+  - "Customer concentration never quantified across three calls despite a direct analyst question (SPEAR fact unresolved)"
+  - "Receivable days ~161 at FY26 year-end, missing the CFO's own under-4-months target, never revisited"
+quarters_analysed: ["Q4 FY25 (FY25 annual)", "H1 FY26", "Q4 FY26 (FY26 annual)"]
+triggers:
+  - {priority: 1, name: "Order book Rs 1,309 Cr, 18-24m execution, 85-90% defence", type: "VOLUME", timeframe: "near", conviction: "H", confirm_signal: "sequential order-book growth, on-time execution", kill_signal: "program push-outs"}
+  - {priority: 2, name: "Capacity expansion (Rs 150 Cr raise, new SMT) to Rs 2,000-2,100 Cr peak", type: "VOLUME", timeframe: "medium", conviction: "M", confirm_signal: "capacity online, utilization past 50%", kill_signal: "timeline slippage; utilization stuck 35-40%"}
+  - {priority: 3, name: "System integration / subsystem margin expansion", type: "MARGIN", timeframe: "medium-long", conviction: "M", confirm_signal: "rising gross-margin mix", kill_signal: "margin flat at 9-11% despite volume"}
+  - {priority: 4, name: "NADCAP unlocking regulated aerospace/export-control programs", type: "REGULATORY-POLICY", timeframe: "medium", conviction: "M", confirm_signal: "named Tier-1 OEM order", kill_signal: "no conversion by FY27"}
+  - {priority: 5, name: "Export growth (22-23% of orders to ~50% of revenue claim)", type: "VOLUME", timeframe: "near", conviction: "L", confirm_signal: "segment-level AR disclosure corroborating", kill_signal: "no corroboration / reversion"}
+  - {priority: 6, name: "Medical devices vertical (~5% of FY27 revenue)", type: "VOLUME", timeframe: "medium", conviction: "M", confirm_signal: "Fresenius Kabi + second customer ramp in results", kill_signal: "'nothing substantial' repeats"}
+  - {priority: 7, name: "Israeli JV (26:74) + US subsidiary", type: "INORGANIC", timeframe: "long", conviction: "L", confirm_signal: "JV scope/financials disclosed", kill_signal: "JV stalls or quietly dropped"}
+guidance:
+  - {item: "FY26 order book target", number: "Rs 1,500-1,600 Cr by FY26-end", stated_in: "Q4 FY25 call"}
+  - {item: "FY26 revenue growth", number: "25%, revised to 30-35%", stated_in: "Q4 FY25 / H1 FY26"}
+  - {item: "FY26 EBITDA margin", number: "9-11%", stated_in: "Q4 FY25"}
+  - {item: "FY26 order inflow", number: "Rs 600-750 Cr", stated_in: "Q4 FY25"}
+  - {item: "Working capital target", number: "~30% of revenue from ~50%, in 2-3 years", stated_in: "Q4 FY25"}
+  - {item: "Receivable days target", number: "under 4 months", stated_in: "H1 FY26 (CFO)"}
+  - {item: "Capacity utilization path", number: "50%+ by end FY26, 70-75% by end FY27", stated_in: "H1 FY26"}
+  - {item: "Capex online date", number: "18 months, operational by April 2027", stated_in: "H1 FY26"}
+  - {item: "FY27 guidance", number: "order inflow +25-30%, revenue growth 30-35%, EBITDA margin 11-12%", stated_in: "Q4 FY26"}
+  - {item: "Peak revenue post capex", number: "Rs 2,000-2,100 Cr, online 2-3 months from Q4 FY26 call", stated_in: "Q4 FY26"}
+  - {item: "Export mix", number: "~50% of FY26 revenue, ~50/50 going forward", stated_in: "Q4 FY26"}
+  - {item: "Medical devices", number: "~5% of FY27 revenue", stated_in: "Q4 FY26"}
+promise_delivery_score: {delivered: 3, partial: 3, missed: 3}
+promise_delivery_rows:
+  - {promise: "FY26 revenue growth ~25%", outcome: "~30.6% consol / ~29.7% standalone", status: "delivered"}
+  - {promise: "FY26 EBITDA margin 9-11%", outcome: "12.5% audited", status: "delivered"}
+  - {promise: "FY26 order inflow Rs 600-750 Cr", outcome: "~Rs 960 Cr", status: "delivered"}
+  - {promise: "Order book Rs 1,500-1,600 Cr by FY26-end", outcome: "Rs 1,309 Cr, ~13-18% short; not addressed", status: "missed"}
+  - {promise: "Receivable days under 4 months (CFO)", outcome: "~161 days at FY26-end, flat; not revisited", status: "missed"}
+  - {promise: "Capacity utilization 50%+ by end FY26", outcome: "35-40% at Q4 FY26; ambition reframed", status: "missed"}
+  - {promise: "Capex operational by April 2027", outcome: "Q4 FY26 says online in 2-3 months; unreconciled", status: "partial"}
+  - {promise: "Commercial aerospace Tier-1 OEM update in H1 FY26", outcome: "no update given by Q4 FY26", status: "partial"}
+  - {promise: "Fresenius Kabi medical ramp over FY26", outcome: "nothing substantial H1; ramping, 5% FY27 target", status: "partial"}
+excuse_pattern: "external-blame-heavy"
+repeated_evasions:
+  - {question: "Current/peak capacity and revenue ceiling?", quarters_asked: ["Q4 FY25", "H1 FY26", "Q4 FY26"], classification: "answer changed between quarters"}
+  - {question: "Receivable/DSO trend and target?", quarters_asked: ["Q4 FY25", "H1 FY26", "Q4 FY26 (dropped)"], classification: "deflected by omission at the decisive quarter"}
+credibility_grade: "C"
+credibility_basis: "Every quoted PAT/EBITDA matches audited filings and revenue/margin/order-inflow guidance were beaten, but the order-book target and the CFO's own receivable-days target were missed and never revisited, capacity base and capex timeline shift across calls without reconciliation, and the most material FY26 fact (negative operating cash flow vs positive PAT) is never raised."
+peer_questions:
+  - {question: "Is VINYAS's claimed ~50% FY26 export revenue share consistent with peer defence-EMS export mix, given VINYAS reported only 22-23% of orders as export a year earlier?", check_peers: ["CENTUM", "ASTRAMICRO", "DATAPATTNS", "KAYNES", "SYRMA"]}
+  - {question: "Do comparable high-mix low-volume defence PCB/subsystem EMS players report EBITDA margins in the 9-13% range, or is VINYAS below what its complexity claim implies?", check_peers: ["CYIENTDLM", "AVALON", "KAYNES", "ASTRAMICRO"]}
+  - {question: "What receivable-days/DSO do peers report, and do they attribute long DSO to milestone/project timelines as VINYAS does?", check_peers: ["CENTUM", "DATAPATTNS", "ASTRAMICRO", "CYIENTDLM"]}
+  - {question: "Do peers size a similar Rs 9,000-10,000 Cr multi-year defence/aerospace pipeline for overlapping programs, or is it double-counted across bidders?", check_peers: ["CENTUM", "ASTRAMICRO", "DATAPATTNS", "KAYNES"]}
+  - {question: "What capex-to-capacity ratios do peers report for SMT/system-integration expansions vs VINYAS's Rs 500-600 Cr/SMT-line and 2-3 month online figure?", check_peers: ["KAYNES", "SYRMA", "CYIENTDLM", "AVALON"]}
+  - {question: "Do peer defence-EMS players disclose customer concentration (top-1/top-5 %)?", check_peers: ["CENTUM", "DATAPATTNS", "ASTRAMICRO", "KAYNES", "SYRMA"]}
+  - {question: "Do peers report sole-approved-vendor status on a meaningful share of order book, and does it correlate with a margin premium?", check_peers: ["CENTUM", "ASTRAMICRO", "DATAPATTNS"]}
+red_flags:
+  - "HIGH: FY26 operating cash flow negative Rs 32.30 Cr against PAT positive Rs 30.87 Cr; never mentioned/explained/questioned on the Q4 FY26 call"
+  - "MEDIUM: Receivable days ~161 at FY26-end, flat vs FY25 ~163, despite CFO's under-4-months promise; miss never revisited"
+  - "MEDIUM: Capacity ceiling restated three ways; capex-online timeline contracted from 18 months/April 2027 to 2-3 months, unreconciled"
+  - "MEDIUM: Export claim jumped 22-23% of orders to ~50% of revenue in one year, uncorroborated by segment filing, unprobed"
+  - "LOW-MEDIUM: Customer concentration never quantified despite a direct analyst question"
+  - "LOW: Product mix recycled to explain both margin declines and the margin increase"
+dropped_triggers:
+  - "Faster execution via emergency procurement (Q4 FY25, never mentioned again)"
+  - "Commercial aerospace Tier-1 OEM validation (promised H1 FY26 update, never delivered)"
+analyst_note: "Order-book target missed by ~13-18% while order inflow beat by 28%+ implies faster book-to-bill than modelled, plausibly good news, but management never reconciled it, so recorded as an unexplained miss. Israel supply-chain metric shifts denominators across calls (27-30% of programs to 10-15% of supplies); do not read as confirmed de-risking."

@@ -22,3 +22,29 @@ wall recorded).
 | 12c | verifier-framework | opus | default | - | - | 80621 | 325s | 1 |
 | 12d | verifier-peers | sonnet | default | - | - | 181627 | 319s | 1 |
 | 13 | synthesis-lite | opus | default | - | - | 78031 | 244s | 1 |
+| 09b | halt1-dossier | sonnet | default | - | - | 177031 | 440s | 1 |
+
+## SESSION CLOSE-OUT (PHASE 1)
+
+Run total (sum of all ledger rows): ~2,721,284 tokens.
+
+### (a) TOP FIVE BY TOKENS (stage totals; loop runs summed)
+| rank | stage | total_tok | share |
+|------|-------|-----------|-------|
+| 1 | 2 notes-pass (3 passes) | 486,282 | 17.9% |
+| 2 | 8 promoter | 232,873 | 8.6% |
+| 3 | 4 business-model | 205,914 | 7.6% |
+| 4 | 3 ar-deep-dive | 192,056 | 7.1% |
+| 5 | 7 emerging-moat | 191,180 | 7.0% |
+
+### (b) DOWNSHIFT FAILURES
+none. The only phase-1 mechanical stage routed to haiku is verifier A, which ran on claude-haiku-4-5 (B12a). Stage 0 validation was orchestrator-run; stage 10 assembly is phase 3.
+
+### (c) COST SPIKES
+none. No prior runs/vinyas-*/session-cost.md ledger exists for this ticker.
+
+### (d) OPERATOR SNAPSHOT
+Operator: run /cost and /usage now and paste the cache hit ratio and loop totals below. The orchestrator cannot read those interactive commands.
+
+#### Operator snapshot
+(pending operator paste)

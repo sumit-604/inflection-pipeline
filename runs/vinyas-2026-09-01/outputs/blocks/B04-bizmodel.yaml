@@ -1,0 +1,44 @@
+stage: B04-bizmodel
+company: "VINYAS"
+run_date: "2026-09-01"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "presentation folder 'rpt 1.pdf'/'rpt 2.pdf' are third-party Substack posts, not company material; their claims (50/50 export, 78% defence mix, JV, cash-cycle days) do not trace to AR/official deck and were NOT anchored"
+  - "Prospectus absent (HIGH)"
+  - "Announcements and shareholding folders absent"
+  - "AR Note 34 one geographical segment; no export/domestic split despite management export claims"
+flags:
+  - "RPT ceilings FY26-27 total Rs 550 Cr (Nexus 26% assoc Rs 400 Cr; UVT 49% assoc Rs 150 Cr) vs FY26 revenue Rs 514.32 Cr - forward growth may be substantially related-party; arm's-length basis stated but not verified"
+  - "FY26 operating cash flow NEGATIVE Rs 32.29 Cr vs PAT +Rs 30.86 Cr - profit-to-cash conversion broken, funded by equity/short-term debt"
+  - "Material cost/revenue worsened 72.98%->78.90% even as EBITDA margin rose 11.09%->12.50%; margin gain substantially a WIP-inventory-change swing (Note 21: Rs 33.26 Cr FY25 vs Rs 6.04 Cr FY26), an accounting-timing effect not proven operating leverage"
+  - "Customer concentration NOT DISCLOSED despite '100+ customers' cited"
+business_type: "manufacturing"
+revenue_streams:
+  - {name: "Sale of products (B2P + B2S combined, split not disclosed) - PCBAs, harnesses, sub-systems, box-builds", type: "contract manufacturing / EMS", pct_of_revenue: 100.76, predictability: "M"}
+  - {name: "Services (testing/engineering/after-sales)", type: "fee-for-service", pct_of_revenue: 1.18, predictability: "L"}
+asset_intensity: "medium"
+wc_intensity: "high"
+pricing_power: "moderate"
+cyclicality: "cyclical"
+moats_present:
+  - {moat: "Regulatory/licensing (NADCAP AC7120, AS9100-D, ISO 13485, IATF 16949, Defence Industrial License)", durability: "high"}
+  - {moat: "Switching costs from program qualification/re-certification lock-in", durability: "medium-high"}
+valuation_methods:
+  primary: {method: "EV/EBITDA peer multiple", why: "Standard for a profitable, leveraged, order-book-driven contract manufacturer; Section 1B governs the actual exit multiple"}
+  secondary: {method: "DCF anchored to order-book execution", why: "Rs 1,309.06 Cr order book (2.5x revenue); must model the FY26 working-capital drag, not just P&L profit"}
+  tertiary: {method: "EV/Sales", why: "Cross-check given cash conversion and margin quality unproven (negative FY26 OCF); avoids over-relying on distorted EBITDA/PAT"}
+irrelevant_ratios:
+  - {ratio: "Gross margin in isolation", why: "Swings with undisclosed B2P/B2S mix; FY26 gross margin fell (27.0%->21.1%) even as EBITDA margin rose (WIP-accounting swing)"}
+  - {ratio: "Price-to-Book", why: "Customer owns most design IP under B2P; book value understates order-book/relationship value"}
+  - {ratio: "Revenue growth alone", why: "Lumpy, order-execution driven; read against order-book growth and cash conversion"}
+  - {ratio: "PAT / PAT growth alone", why: "PAT +58.92% while OCF went negative Rs 32.29 Cr same year; misleading without cash context"}
+  - {ratio: "Dividend yield", why: "No dividend history; capital reinvested and raised (Rs 61.25 Cr warrants FY26)"}
+must_track_metrics:
+  - {metric: "Trade receivable days", healthy: "<90-120", red_flag: "rising or >180 (currently ~161)"}
+  - {metric: "Operating cash flow / EBITDA (cash conversion)", healthy: "positive, >60-70%", red_flag: "negative or persistently <50% (negative FY26)"}
+  - {metric: "Order book / trailing revenue", healthy: ">1.5-2x with rising inflow", red_flag: "below 1.0-1.5x or inflow growth below revenue growth"}
+  - {metric: "Material cost % of revenue", healthy: "stable or falling", red_flag: "rising without EBITDA-margin protection (78.90%, up from 72.98%)"}
+  - {metric: "Related-party revenue % (Nexus + UVT)", healthy: "small, transparently priced", red_flag: "rising toward the Rs 550 Cr combined ceiling vs Rs 514 Cr revenue"}
+one_line_verdict: "Defence EMS scaling on real orders, but cash and related-party plumbing need proof."
+analyst_note: "Two compressed findings: (1) FY26 EBITDA-margin improvement (11.09%->12.50%) traces mostly to a smaller WIP-inventory-change P&L swing (Note 21: Rs 33.26 Cr FY25 vs Rs 6.04 Cr FY26), not a cost/pricing advantage; gross margin fell. Treat the margin story as unproven until the WIP base effect laps. (2) AGM approves RPT ceilings for Nexus (26%) and UVT (49%) totalling Rs 550 Cr vs Rs 514 Cr revenue - not in FY26 actuals (Note 33 lists neither) but a structural watch on how much forward growth is third-party. The two Substack PDFs in the presentation folder were excluded from all anchors; worth a targeted claude.ai check at Halt 1."

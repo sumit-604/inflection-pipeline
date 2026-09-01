@@ -10,3 +10,4 @@ wall recorded).
 | 2 | notes-pass (pass 2) | sonnet | default | - | - | 206944 | 308s | 2 |
 | 1 | gate-0 | sonnet | default | - | - | 179488 | 649s | 1 |
 | 2 | notes-pass (pass 3) | sonnet | default | - | - | 94906 | 228s | 3 |
+| 7 | emerging-moat | sonnet | default | - | - | 191180 | 694s | 1 |

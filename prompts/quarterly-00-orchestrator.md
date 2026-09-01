@@ -73,14 +73,17 @@ The orchestrator resolves TICKER and creates (if absent):
 ```
 runs/<ticker>-<quarter>/
   inputs/        source PDFs copied or referenced here
+  extracted/     A1 output: fulltext + structured extraction (the evidence spine)
   work/          all agent working files (audit trail)
 ```
 `<quarter>` is the detected filing quarter, lowercased and hyphenated, e.g.
 `q1fy27`. If the quarter cannot be detected before A1 runs, use the run date
 `<yyyy-mm-dd>` as a placeholder and rename after A1 reports the quarter.
 
-Named working files (master-prompt filenames, one set per document):
-- A1: `work/extract_<doctype>_<ticker>_<quarter>.txt` + header block
+Named working files (one set per document; `<doctype>` disambiguates a
+multi-document run):
+- A1: `extracted/<ticker>-<doctype>-<quarter>-fulltext.md` (header block first)
+      + `extracted/<ticker>-<doctype>-<quarter>-structured.md`
 - A2: `work/ledger_<doctype>_<ticker>_<quarter>.md`
 - A3: `work/forensics_<ticker>_<quarter>.md` (one per document, doctype in title)
 - A4: `work/review_<ticker>_<quarter>.md` (single merged review)
@@ -107,8 +110,9 @@ decision in the run log.
 ## TOOLCHAIN PRECHECK (orchestrator, at session start)
 
 Extraction is mechanical and mandatory. Before A1, verify the toolchain:
-`pdftotext`, `pdfinfo` (poppler-utils), and for OCR fallback `pdftoppm` and
-`tesseract`. If any is missing, attempt install (`poppler-utils`,
+`pdftotext`, `pdfinfo`, `pdffonts` (poppler-utils; `pdffonts` is A1's
+text-layer gate), and for the scan-OCR fallback `pdftoppm` and `tesseract`. If
+any is missing, attempt install (`poppler-utils`,
 `tesseract-ocr`). If install is not possible in this environment, STOP and
 report the missing tool: the pipeline cannot run a trusted extraction without
 it. Do NOT substitute the Read tool's PDF rendering for A1 — the line-numbered
@@ -122,12 +126,17 @@ points at.
 For EACH document (results, then concall, then presentation, in whatever
 subset was supplied):
 
-1. Invoke A1 (quarterly-a1-extractor) with the document path and its detected
-   doctype. Collect its extract file and header.
+1. Invoke A1 (quarterly-a1-extractor) with the document path, its detected
+   doctype, and BOTH output paths (fulltext + structured). A1 runs the
+   text-layer gate (pdffonts) first: a document with a text layer is extracted
+   text-only, never rasterised for sparse pages; only a no-text-layer scan
+   triggers whole-document rendering, logged. Collect the fulltext, the
+   structured file, and the header.
    GATE A1: page coverage 100%. Any page unaccounted for = STOP, report the
-   gap, do not proceed for that document.
+   gap, do not proceed for that document. A1 is the ONLY agent that reads the
+   source document; no later agent receives the source path.
 
-2. Invoke A2 (quarterly-a2-enumerator) with the A1 extract path and doctype.
+2. Invoke A2 (quarterly-a2-enumerator) with the A1 fulltext path and doctype.
    Collect the ledger.
    GATE A2: the count test passes (grep count == manual sweep count for
    notes / turns / slides). A mismatch = STOP and re-invoke A2 once with the

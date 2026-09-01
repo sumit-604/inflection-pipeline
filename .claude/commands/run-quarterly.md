@@ -55,7 +55,8 @@ For each document, invoke as a foreground subagent that blocks until it
 returns. Pass file PATHS and the {{...}} inputs each prompt expects; never
 paste PDFs into a task message.
 
-- A1 (quarterly-a1-extractor): document path + doctype -> extract file.
+- A1 (quarterly-a1-extractor): document path + doctype -> fulltext + structured
+  extraction (text-layer gated; A1 is the only agent that reads the source).
   GATE A1: page coverage 100%. Any gap = STOP for that document, report it.
 - A2 (quarterly-a2-enumerator): A1 extract path + doctype -> ledger.
   GATE A2: count test matches. Mismatch = re-invoke A2 once naming it; second

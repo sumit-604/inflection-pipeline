@@ -217,12 +217,22 @@ regulated utilities); Continuum Green Energy (best peer, unlisted, DRHP only).
 2026-09-01  Operator signed the spear OVERRIDE. SPEAR GATE cleared. /run-pipeline
             authorised. Section 3 framework exception (Option A/B) remains UNSIGNED;
             it blocks Section 1B in Phase 3, not Phase 1 evidence.
+2026-09-01  /run-pipeline PHASE 1 (evidence) complete. Corpus verdict CORPUS CURRENT
+            (994pp IPO Prospectus recovered from a mis-file in annual-report/;
+            announcements + shareholding operator-ferried as SECONDARY). Freshness
+            pairs OK. Gate ON EVIDENCE: PROCEED WITH CAVEATS (INDETERMINATE cash cap
+            + confidence 67, band 60-74). Flags FLAG-CASH, FLAG-PROMOTER (CAUTION),
+            FLAG-GATE0 (classification only, NOT an investment AVOID). Fragility
+            FRAGILE; single-point falsifier Q2 FY27 operating PBT ex-other-income < 0.
+            Verifier B established Bikaner 525 MW is TGNA (curtailment NOT revenue-
+            protected, ~Rs170 Cr real hit). Mental Model DRAFT, UNSIGNED. Awaiting
+            Halt 1 operator decision (KILL / SHALLOW WATCH / PROCEED).
 ```
 **Slots to be filled as the pipeline runs:**
 ```
 HALT 1 MENTAL MODEL:      [ ] PROCEED  [ ] KILL     Signed:            Date:
 ROLE 5.5 TRACKER PROOF:                             Rows:              Date:
-HANDOVER DOSSIER:                                   Path:              Date:
+HANDOVER DOSSIER:         runs/cleanmax-2026-09-01/outputs/reports/09b-understanding-dossier.md   Date: 2026-09-01
 P/E GATE RULINGS:                                   Signed:            Date:
 FTTCP COMPLETE:                                     Date:
 NOTION ROW:                                         Page ID:           Date:

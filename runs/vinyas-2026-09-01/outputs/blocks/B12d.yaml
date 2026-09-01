@@ -1,0 +1,20 @@
+stage: B12d
+company: "VINYAS"
+run_date: "2026-09-01"
+model: claude-sonnet-5
+status: complete
+peers_audited: 12
+substantive_confirmed: 10
+peer_utilisation: 83
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "MAJOR", location: "06-peers.md Claim 5 (SYRMA)", description: "SYRMA PCB-plant capex reported '~Rs 400cr total across all phases'; transcript shows Rs 400cr is phase 1 alone (phase 2 flagged, phase 3 unquantified). Understates true cost ~half, narrowing (not eliminating) the capex-intensity gap Claim 5 rests on."}
+  - {severity: "MAJOR", location: "06-peers.md coverage map (CYIENTDLM, Claim 4)", description: "Credits CYIENTDLM SUBSTANTIVE for Claim 4 with '$0.5bn order pipeline confirmed'; Claim 4 text never cites CYIENTDLM and the Jul 2026 transcript shows management DISPUTING $0.5bn as too low, not confirming. SUBSTANTIVE tag without a findable accurate citation."}
+  - {severity: "MAJOR", location: "06-peers.md Claim 4 (ASTRAMICRO)", description: "ASTRAMICRO Rs 8,000-10,000cr is Astra's own program-by-program order-intake guidance, not independent sector sizing. B06 discounts the similar KAYNES figure on this basis but not ASTRAMICRO's, then leans on it as strongest support for VINYAS's pipeline - inconsistent evidentiary standard within one claim."}
+  - {severity: "MINOR", location: "06-peers.md Claim 7 (DATAPATTNS)", description: "'~Rs 1,700cr single-vendor GeM order' conflates a negotiated-but-unbooked total with a distinct unquantified L1 single-vendor GeM mention; transcript never states they are the same order."}
+  - {severity: "MINOR", location: "06-peers.md Claim 6 verdict", description: "VERIFIED headline rests on only 2 of 5 named peers actually disclosing a concentration figure (other 3 not asked); caveat stated in prose but clean VERIFIED framing overstates the hit rate."}
+critical_count: 0
+major_count: 3
+minor_count: 2
+acceptance_rate: 75

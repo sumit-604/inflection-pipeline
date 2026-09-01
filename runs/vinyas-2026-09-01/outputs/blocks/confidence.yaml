@@ -1,0 +1,12 @@
+confidence_delta:
+  numerical_acceptance: 98      # B12a
+  redflag_coverage: 94          # B12b
+  framework_adherence: 90       # B12c gate0+emoat scope; valuation adherence PENDING PHASE 3
+  peer_utilisation: 83          # B12d: 10 substantive / 12 provided
+  overall: 83                   # min of the four
+  band: "normal (75-89) - note specifics"
+  valuation_framework_adherence: "pending phase 3 (B10/B11 not yet produced)"
+  notes:
+    - "One MAJOR source-fidelity flag (B12a): cash Rs 18.45 Cr overstated ~13x (true ~Rs 1.39 Cr); correct to Net Debt ~Rs 128.66 Cr downstream. No CRITICAL numerical finding; no forced REWORK."
+    - "Peer coverage (B12d, acceptance 75) weakens B06 Claim 4 (pipeline) and Claim 5 (capex): SYRMA capex understated ~half, CyientDLM $0.5bn mis-attributed, ASTRAMICRO figure is own order-intake not sector sizing. Temper the pipeline/capex peer conclusions."
+    - "B06 Claim 5 magnitude leg overstated (B12b + B12d): 'Rs 500-600 Cr per SMT line' is revenue-per-line not capex (capex ~Rs 30 Cr); the 2-3-month timeline leg still holds."

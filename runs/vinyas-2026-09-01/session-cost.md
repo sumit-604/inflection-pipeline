@@ -7,3 +7,4 @@ wall recorded).
 | # | stage | model | effort | in_tok | out_tok | total_tok | wall | run# |
 |---|-------|-------|--------|--------|---------|-----------|------|------|
 | 2 | notes-pass (pass 1) | sonnet | default | - | - | 184432 | 377s | 1 |
+| 1 | gate-0 | sonnet | default | - | - | 179488 | 649s | 1 |

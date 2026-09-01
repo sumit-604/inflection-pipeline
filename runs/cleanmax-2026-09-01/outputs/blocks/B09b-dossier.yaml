@@ -1,0 +1,40 @@
+stage: B09b-dossier
+company: "CLEANMAX"
+run_date: "2026-09-01"
+model: claude-sonnet-5
+status: complete
+corpus_verdict: "CORPUS CURRENT"
+corpus_gaps: []
+archetypes:
+  - line: "RE Power Sales (73.2% of FY26 revenue)"
+    archetype: "Licence/scarcity business"
+  - line: "RE Services (26.0% of FY26 revenue)"
+    archetype: "Order-book business (EPC/capital goods)"
+transition:
+  - line: "RE Power Sales (dominant, 73.2% of revenue)"
+    from_tier: "R1 COMMODITY PRICE-TAKER (~12x neighbourhood)"
+    to_tier: "R3 VALUE-ADDED / SPEC'D SUPPLIER (~19x neighbourhood, ROCE 20-25%) -- flagged as a possible two-rung leap against the framework's one-rung-per-2-3-years base rate; Stage 11 should test whether R2 is the more defensible intermediate destination"
+    engine: "(1) fleet seasoning past the 3-6 month post-COD stabilisation lag, evidenced by RE Power Sales EBITDA margin climbing 83%->83.5%->84%; (2) falling cost/improving tenor of capital, cost of project debt 8.7%->8.4% with rating A+->AA- ->AA and a first bond issuance pending"
+    proof_gate: "Quarterly operating PBT before other income >= Rs 0, sustained; Q2 FY27 (due late Oct-2026) is the next and most-cited test"
+    recognition_gap: "OPEN QUESTION, not resolved here: does current market pricing already reflect seasoned TO-state economics (20-25% ROCE annuity), or does it still price today's build-out-distorted numbers (8.03x ND/EBITDA, 1.17x interest coverage, 5.83% median ROCE)? Resolved at Stage 11 via the PE gap."
+    ugliness: "ARTIFACT-OF-CLIMB"
+    transition_falsifier: "Q2 FY27 operating PBT before other income prints below zero; OR the interest-capitalisation ratio stays near 28-30% instead of reverting toward the FY25 7-10% norm, showing the FY26 crossover was substantially an accounting choice"
+dominant_variables:
+  - "Operating PBT before other income (crossed to small positive Q1 FY27; Q2 FY27 is the test)"
+  - "Interest capitalisation ratio (28-30% FY26 vs 7-10% FY25 norm)"
+  - "Fleet seasoning / capacity delivery pace vs the >=1.5 GW FY27 and 4.6 GW-by-Apr-2027 floors"
+  - "Cost of debt and credit-market access (8.7%->8.4% trend, AA rating, pending maiden bond issuance)"
+business_falsifier: "Consolidated current-liability shortfall (Rs 1,724.10 Cr) crystallising into an actual auditor-qualified going-concern doubt beyond the single Clean Max Patagonia CARO Clause (xix) flag; OR the promoter's 20.02% share pledge escalating into an actual margin call / forced sale that destabilises control -- either would mean the group-captive SPV funding model is structurally broken, not merely early-stage"
+mental_model_status: "DRAFT - PENDING OPERATOR SIGN-OFF"
+fragility:
+  variable_count: 7
+  verifiability_ratio: "6 of 7 externally observable"
+  single_point_failure: "Q2 FY27 operating PBT before other income printing below zero"
+  fragility_verdict: "FRAGILE"
+candidate_count: 6
+research_brief_items: 12
+plain_summary_points: 15
+annex:
+  present: true
+  questions_answered: 10
+  corpus_commit_hash: "ebc10ead3d0c30ab49f5c00500af34a7a77df42d"

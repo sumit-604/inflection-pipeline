@@ -4,3 +4,7 @@ Per-stage token ledger. One row per subagent run.
 
 | # | stage | model | effort | in_tok | out_tok | total_tok | wall | run# |
 |---|-------|-------|--------|--------|---------|-----------|------|------|
+| 1 | stage-01-gate0 | sonnet | n/a | n/a | n/a | 147214 | 9m51s | 1 |
+| 2 | stage-02-notes (pass 1) | sonnet | n/a | n/a | n/a | 237015 | 9m40s | 1 |
+
+(Only aggregate subagent_tokens are exposed per run; in/out split shown n/a.)

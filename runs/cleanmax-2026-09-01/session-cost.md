@@ -17,5 +17,7 @@ Per-stage token ledger. One row per subagent run.
 | 11 | stage-09-tam | sonnet | n/a | n/a | n/a | 95863 | 9m04s | 1 |
 | 12 | verifier-a-numerical | haiku | n/a | n/a | n/a | 85956 | 2m35s | 1 |
 | 13 | verifier-c-framework | opus | n/a | n/a | n/a | 82639 | 4m20s | 1 |
+| 14 | verifier-d-peers | sonnet | n/a | n/a | n/a | 99766 | 5m11s | 1 |
+| 15 | verifier-b-redflags | opus | n/a | n/a | n/a | 159673 | 6m08s | 1 |
 
 (Only aggregate subagent_tokens are exposed per run; in/out split shown n/a.)

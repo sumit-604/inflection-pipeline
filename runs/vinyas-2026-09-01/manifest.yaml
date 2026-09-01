@@ -1,0 +1,9 @@
+company: Vinyas Innovative Technologies Ltd
+ticker: VINYAS
+cmp: 1546.0
+market_cap_cr: 1945.0
+run_date: 2026-09-01
+run_type: full
+concalls_available: true
+sector_cap_row: "Pharma / CDMO"
+notes: "Collected from screener.in by collect_to_repo.py v3. Sector row auto-picked; verify."

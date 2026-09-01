@@ -1,0 +1,78 @@
+stage: B00-inputs
+company: CLEANMAX
+run_date: 2026-09-01
+model: orchestrator
+status: complete
+corpus_commit_hash: 9069a048c2abeb100998785b0750f5630c86264d
+run_type: full
+spear_gate:
+  form: OVERRIDE
+  line: "Spear: OVERRIDE 2026-09-01 (operator)"
+  signed: true
+  signed_by: "Keerti Kaushik (operator), in session 2026-09-01"
+inventory:
+  prospectus: 1        # RHP/Prospectus dated 2026-02-25, 994pp (relocated from annual-report/)
+  annual_report: 1     # FY2025-26 Annual Report, 859pp (16th AGM, dated 2026-06-30)
+  results: 2           # Q1 FY27 unaudited consol (qe 30 Jun 2026, board 31 Jul 2026); Q4 FY26 + FY26 audited (qe/ye 31 Mar 2026, board 12 May 2026)
+  rating: 2            # CARE PR 2025-10-12 (A+ Positive, reaffirmed); CARE PR 2026-05-12 (AA- Stable, upgraded). Use most recent.
+  concalls: 3          # Aug 2026 = Q1 FY27; May 2026 = Q4 FY26; Mar 2026 = Q3 FY26
+  peer_concalls: 19    # use up to 12 most relevant
+  announcements: 1     # operator-ferried summary, SECONDARY (see tier caveat)
+  shareholding: 1      # operator-ferried Screener table Mar/Jun 2026, SECONDARY (see tier caveat)
+  research: 7          # broker + IPO notes, NON-ANCHORED (leads only)
+  screening: 42        # CLEANMAX + 6 peers (KPIGREEN, ORIANA, ACMESOLAR, NTPCGREEN, ADANIGREEN, JSWENERGY) csv sets
+  presentation: 1      # Investor Presentation
+  other: 0             # not present; never consumed, not a gap
+concalls_available: true
+listed_within_3y: true   # IPO Feb 2026; prospectus now present. RECENTLY-LISTED priority applies.
+input_gaps:
+  - type: announcements
+    status: present_secondary
+    note: "Operator-ferried summary (Mar-Sep 2026), NOT filed Reg 30 PDFs. Action-record leads only; verify each figure vs concall/AR/results before anchoring. Verifier A cannot cross-check it against a corpus PDF."
+  - type: shareholding
+    status: present_secondary
+    note: "Operator-ferried Screener rendering (Mar/Jun 2026), NOT the filed quarterly pattern PDF. FII+DII category % usable with SECONDARY tier noted."
+  - type: manifest_sector_cap_row
+    status: wrong
+    note: "manifest sector_cap_row = 'Pharma / CDMO' is a collector auto-pick error. CLEANMAX is a renewable IPP. Phase-3 valuation must NOT use this row. companies/CLEANMAX.md Section 3 framework exception (EV/EBITDA primary, Option A/B) governs and is UNSIGNED. Flag carried to Phase 3."
+freshness_pairs:
+  - pair: results_to_concall
+    trigger_doc: "Q1 FY27 results (qe 30 Jun 2026)"
+    mate_expected: "Q1 FY27 concall transcript"
+    status: PASS
+    missing_doc: ""
+  - pair: rating_bulletin_to_rationale
+    trigger_doc: "CARE Press Release 2026-05-12 (AA- upgrade)"
+    mate_expected: "full rating rationale"
+    status: PASS
+    missing_doc: ""
+    note: "CARE Press Release format carries the full rationale."
+  - pair: sebi_order_to_text
+    trigger_doc: "none referenced"
+    mate_expected: ""
+    status: PASS
+    missing_doc: ""
+  - pair: ar_to_latest_audited_annual
+    trigger_doc: "FY26 audited annual results (ye 31 Mar 2026)"
+    mate_expected: "FY2025-26 annual report"
+    status: PASS
+    missing_doc: ""
+freshness_verdict: FRESHNESS PAIRS OK
+first_verification_priorities:   # from companies/CLEANMAX.md (spear OVERRIDE, not HIT; carried as run priorities)
+  - "EBITDA-definition contradiction: company 'reported EBITDA' includes other income; CARE PBILDT excludes it. Restate FY24-FY26 and FY28 guidance on ONE basis. (memory Section 5)"
+  - "Operating PBT ex other income crossover: FY24 (497) -> Q1 FY27 +51. Q2 FY27 (late Oct 2026) is the falsification line (memory Section 8)."
+  - "Minority-interest decomposition: parent's economic share of consolidated EBITDA as fleet grew 1.7 -> 3.5 GW (Apple 49% of Taurus, subs at 51/74/80%)."
+  - "Capitalised borrowing cost FY25/FY26: interest 786 Cr on avg borrowings ~10,386 Cr implies 7.6%; quantify capitalised interest, restate coverage (memory Section 9.9)."
+  - "Governance flags: promoter pledge 0 -> 20.02% (Mar 2026); Brookfield/BGTF 21.31% exit clock; corporate guarantees 6,888 Cr vs net worth 4,639 Cr; current liabilities exceed current assets by 623 Cr (going-concern note). (memory Section 9)"
+flags:
+  - FLAG-CASH-PRELIM: "FY24-FY26 free cash flow negative and widening ((1,807)/(1,551)/(4,039) Cr); borrowings 5,570 -> 12,684 Cr. Growth-capex driven on face; determination deferred to stage 11/FTTCP."
+analyst_note: >
+  Corpus is rich and current. The IPO Prospectus was misfiled in annual-report/
+  and has been relocated to prospectus/, closing the recently-listed HIGH gap.
+  Announcements and shareholding were absent; the operator ferried both as
+  SECONDARY summaries, filed with tier caveats. Freshness pairs all pass.
+  Two carry-forward items: (1) the manifest sector_cap_row is wrong (Pharma/CDMO
+  on a renewable IPP) and the Section 3 framework exception that fixes the
+  valuation approach is UNSIGNED, both Phase-3 concerns; (2) announcements and
+  shareholding are operator-ferried SECONDARY, so their specifics need
+  corpus/filing verification before any stage anchors them.

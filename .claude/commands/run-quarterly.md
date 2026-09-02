@@ -55,13 +55,15 @@ For each document, invoke as a foreground subagent that blocks until it
 returns. Pass file PATHS and the {{...}} inputs each prompt expects; never
 paste PDFs into a task message.
 
-- A1 (quarterly-a1-extractor): document path + doctype -> extract file.
+- A1 (quarterly-a1-extractor): document path + doctype -> fulltext + structured
+  extraction (text-layer gated; A1 is the only agent that reads the source).
   GATE A1: page coverage 100%. Any gap = STOP for that document, report it.
-- A2 (quarterly-a2-enumerator): A1 extract path + doctype -> ledger.
+- A2 (quarterly-a2-enumerator): A1 structured path + doctype -> ledger (reads
+  the structured extraction, not the source; cheapest agent, tokens below A1).
   GATE A2: count test matches. Mismatch = re-invoke A2 once naming it; second
   mismatch escalates to the human.
-- A3 (quarterly-a3-forensics): A1 extract + A2 ledger + doctype + the Notion
-  monitoring checklist -> forensics file.
+- A3 (quarterly-a3-forensics): A1 structured + A1 fulltext + A2 ledger + doctype
+  + the Notion monitoring checklist -> forensics file.
   GATE A3: every F1-F17 has a status and every FINDING cites a line. Any blank
   = re-invoke A3 once naming the blanks.
 

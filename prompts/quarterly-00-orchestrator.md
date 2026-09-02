@@ -33,7 +33,7 @@ review that seeds that chain.
 Required protocol files (the orchestrator checks the one(s) THIS run needs
 exist BEFORE any analysis agent runs; absence is a hard STOP, never reconstruct
 from memory):
-- `frameworks/Document_Review_Protocol_v1_0.md` (a DOCUMENT REVIEW: standalone
+- `frameworks/Document_Review_Protocol_v1_1.md` (a DOCUMENT REVIEW: standalone
   presentation / press release / one-off disclosure; A4's ONLY protocol for
   such a run, and the analyst-stage token discipline lives here)
 - `frameworks/Quarterly_Results_Review_Protocol_v1_4.md` (a results filing)
@@ -179,7 +179,7 @@ After all documents pass A1-A3:
    layer set, or the RDE manual to A4.
    - DOCUMENT REVIEW (a standalone presentation / press release / one-off
      disclosure, no results filing and no concall in --docs): pass ONLY
-     frameworks/Document_Review_Protocol_v1_0.md. Do NOT pass Role 4, Role 5, or
+     frameworks/Document_Review_Protocol_v1_1.md. Do NOT pass Role 4, Role 5, or
      Master.
    - FULL QUARTER (a results filing and/or concall in --docs): pass Role 4 for
      the filing and/or Role 5 for the concall, as before. Master is framework

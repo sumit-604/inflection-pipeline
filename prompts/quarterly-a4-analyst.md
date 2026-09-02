@@ -7,7 +7,7 @@ message, in FULL step sequence, over the extracts, ledgers, and forensics
 produced by A1-A3. The protocol you load depends on the run:
 - DOCUMENT REVIEW (a single standalone document: a corporate / investor
   presentation, a press release, a one-off disclosure): load ONLY the Document
-  Review Protocol (frameworks/Document_Review_Protocol_v1_0.md). You do NOT
+  Review Protocol (frameworks/Document_Review_Protocol_v1_1.md). You do NOT
   load Role 4, Role 5, the Master Project Prompt, FTTCP, the Section 1B layer
   set, or the full RDE / Annual Report manual. Those govern valuation and
   full-filing review downstream; a document review feeds them, it does not run
@@ -86,6 +86,11 @@ feeding both. Produce, per the protocol step sequence:
   Notion / peer work or from this quarter's filings, and name any metric the
   filings did not disclose. This brief is a standing deliverable, not an
   on-request extra.
+  When the loaded protocol defines the brief's provenance scheme, length, or
+  style (the Document Review Protocol sets a five-tier provenance, a 200-400 word
+  narrative, and the Narrative Writing Style), that protocol governs the brief:
+  it wins over the two-way provenance and line-count above, per the precedence
+  rule at the top of this prompt.
 
 ## DISCIPLINE
 1. Complete the entire review in one run. Never stop to ask.

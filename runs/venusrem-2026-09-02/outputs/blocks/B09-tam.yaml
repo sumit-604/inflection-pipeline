@@ -1,0 +1,54 @@
+stage: B09-tam
+company: "VENUSREM"
+run_date: "2026-09-02"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Precise CR3 concentration ratio for global generic sterile injectables - NOT FOUND"
+  - "India-specific unorganised-sector share for sterile injectable manufacturing - NOT FOUND"
+  - "Exact injectable-only share of India's total pharma export basket - NOT FOUND"
+  - "Total-company (not just international-segment) prior-year revenue for full YoY cross-check - NOT FOUND in injected inputs"
+  - "EBITDA/net-margin trajectory and current P/E, needed for Section 5E valuation-implication line - out of this stage's injected scope"
+flags:
+  - "SOM 5yr scenario (Rs2,990 Cr) runs ~85% ahead of the disclosed 16%/yr capex-embedded capacity ceiling (Rs1,617 Cr); SOM is the optimistic side unless VIP or unbudgeted capex materialises inside the window"
+  - "Management's headline TAM claim (generic sterile injectables, Rs4,86,115 Cr) is 1.87x the conservative estimate - borderline inflated, not geography- or product-filtered to Venus's footprint"
+  - "Core Europe (~31% of global TAM) is currently excluded from SAM pending EU GMP validation (FY27 priority, not complete) - a real but unrealised SAM-expansion lever"
+  - "ICMR cancer-incidence figure (2022) cited by management is 4 years stale as of run date; direction-only"
+market_definition: "Global (ex-US/core-EU) generic and specialty sterile injectables - anti-infective, oncology, critical care - reachable via Venus's 100+ country regulatory footprint, plus India domestic hospital/institutional channel"
+tam_cr: {conservative: 260300, realistic: 486115}
+sam_cr: 38200
+sam_pct_of_tam: 14.7
+som_3yr_cr: 1506
+som_5yr_cr: 2990
+som_implied_revenue_cagr: {yr3: 25.1, yr5: 31.2}
+current_sam_share_pct: 2.02
+revenue_headroom_x: 49.6
+tam_growth_pct: 9.29
+runway_class: "STRONG"
+mgmt_claim_cr: 486115
+mgmt_claim_ratio: 1.87
+mgmt_claim_read: "inflated"
+capacity_check: "gap of Rs1,373 Cr at 5yr (SOM5 Rs2,990 Cr vs 16%/yr capex-embedded-growth ceiling Rs1,617 Cr); SOM is the optimistic side, VIP capacity not yet funded or built within the window"
+methods_used:
+  - "top-down: generic sterile injectables, Mordor via management AR, cross-checked (Rs4,86,115 Cr realistic)"
+  - "top-down/global-benchmark: specialty injectable generics, market.us, independent (Rs2,60,300 Cr conservative)"
+  - "cross-check: India generic/sterile injectables, IMARC vs AR-cited Mordor, convergent within ~10%"
+  - "bottom-up capacity cross-check: active-MA revenue realisation + capex-embedded growth applied to SOM"
+stale_data_flags:
+  - {datapoint: "ICMR cancer incidence, 1.46 million cases", source: "AR p.47 citing ICMR", year: 2022}
+  - {datapoint: "Sterile injectables regional split (NA 45.4% / Europe 31.2% / APAC ~20%)", source: "web, aggregated market reports", year: 2024}
+  - {datapoint: "India anti-infective agents market, USD 6,822.6mn", source: "Grand View Research", year: 2024}
+searches_performed:
+  - "India sterile injectables market size 2025 CRISIL ICRA billion"
+  - "global specialty injectables market size 2025 oncology anti-infective billion"
+  - "India anti-infective injectables market size hospital institutional 2025"
+  - "Gland Pharma Hetero Shilpa Medicare export revenue injectables FY26 crore"
+  - "Shilpa Medicare Themis Panacea Unichem injectables revenue FY26 crore"
+  - "India pharmaceutical exports injectables value USD billion 2025 share"
+  - "USD INR exchange rate September 2026"
+  - "Troikaa/Albert David/Kopran/Neon Laboratories injectables revenue crore 2025"
+  - "sterile injectables market geographic split NA Europe APAC share percent"
+  - "generic sterile injectables market top players concentration fragmented CR3 2025"
+searches_skipped: []
+demand_externally_verifiable: true
+analyst_note: "Conservative TAM (Rs2,60,300 Cr) and realistic TAM (Rs4,86,115 Cr) diverge 1.87x on category-boundary definition, not data quality - both sides web-corroborated. The capacity gap is the single most decision-relevant finding: the 5yr SOM implies growth the currently-funded capex plan cannot physically deliver, so Stage 11 should treat the 5yr SOM CAGR (31.2%) as capacity-constrained upside contingent on VIP or further capex, not a base case, while the 3yr SOM CAGR (25.1%) sits close enough to the disclosed capacity ceiling to be a genuine base case."

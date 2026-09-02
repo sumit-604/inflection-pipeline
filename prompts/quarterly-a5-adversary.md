@@ -52,6 +52,19 @@ A4's review, and that no fresh-pass unit is missing from the structured file.
    If a counter survives (is supported by the extract), it must be added to
    A4's review before save. This is a completeness device, not the full Role 3
    Devil's Advocate — Role 3 still runs separately in the pipeline.
+   MANDATORY ACQUISITION-ECONOMICS PROBE. Whenever the document describes an
+   acquisition, a purchase, or a stake buy, you MUST test the purchase economics
+   as one of your adversarial reads, even when the deck frames the deal as a
+   win: compute the purchase price as a multiple of the target's stated earnings
+   (price / target PAT) and against its quality markers (ROCE, debt, cash,
+   customer tenure). A high-quality asset (high ROCE, zero or low debt,
+   cash-rich, long customer relationships) offered at a LOW earnings multiple is
+   the single most adversary-worthy claim in an acquisition deck: ask why it is
+   cheap and whether the stated earnings year is representative or a peak. State
+   the multiple explicitly (e.g. "~Rs X consideration / target PAT Y = ~N x
+   earnings") and either the bear reading survives (grafted into A4) or you show
+   from the extract why the multiple is fair. Never let a "cheap, accretive
+   acquisition" claim pass without this multiple stated and stress-tested.
 
 ## FINDING TYPE TAGGING (drives the correction loop; Point 8)
 Tag EVERY finding you raise as exactly one of:

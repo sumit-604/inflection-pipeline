@@ -10,8 +10,11 @@ Your complete instructions are in the repository file: prompts/quarterly-a4-anal
 Read that file FIRST with the Read tool. Everything above its
 "INJECTED INPUTS" section is your operating rules; follow them exactly.
 The variable inputs the file expects at its {{...}} markers are provided
-in your task message (as file paths, or inline content). The Role 4 and Role 5
-protocol files are the analytical authority; read them before analysing.
+in your task message (as file paths, or inline content). Load ONLY the protocol
+the task message passes: the Document Review Protocol for a standalone-document
+review, or Role 4 / Role 5 for a full quarter. Never load the Master Project
+Prompt, FTTCP, Section 1B, or the RDE manual. The loaded protocol is the
+analytical authority; read it before analysing.
 
 Non-negotiables:
 - Complete the entire merged review in one run. Never stop to ask for confirmation.

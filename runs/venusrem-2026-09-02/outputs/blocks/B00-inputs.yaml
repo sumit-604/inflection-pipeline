@@ -1,0 +1,83 @@
+stage: B00-inputs
+company: VENUSREM
+run_date: 2026-09-02
+model: orchestrator-inline
+status: complete
+run_type: full
+concalls_available: false
+mode: NO-CONCALL
+
+spear_gate:
+  line: "Spear: OVERRIDE 2026-09-02 (operator)"
+  source: companies/VENUSREM.md
+  verdict_context: "WATCH at CMP Rs 1,601; fair-case 25% CAGR entry <= Rs 1,200; MoS ~Rs 950"
+  load_bearing_facts:
+    - "FY26 OPM 19% held at 19% in seasonally weak Q1 FY27"
+    - "FY26 CFO/PAT 1.5x with net cash ~Rs 250 Cr"
+    - "lyophilised demand ~2x capacity per AGM, no capex announced"
+    - "Sunev promoter-entity RPTs (Rs 30 Cr IP purchase FY25) unresolved"
+  first_priority: "Every stage checks these four before its own work."
+
+inventory:
+  prospectus: {count: 0, note: "long-listed (37th AGM FY26); prospectus not expected, NOT a HIGH gap"}
+  annual-report: {count: 2, current: "Annual_Report.pdf = FY2025-26 (137pp)", prior: "e5b28718...pdf = FY2024-25 (131pp)"}
+  results: {count: 3, files: ["Q3FY26-Results_29Jan2026.pdf (Q/E Dec 2025)", "a32a5164...pdf = Q4 FY26 audited/full-year (26 May 2026)", "0931ed4c...pdf = Q1 FY27 (20 Jul 2026)"]}
+  rating: {count: 0}
+  concalls: {count: 0, note: "declared absent via concalls_available:false; NO-CONCALL MODE"}
+  peer-concalls: {count: 23, peers: [BETA, CAPLIPOINT, GLAND, KILITCH, LINCOLN, SHILPAMED, WOCKPHARMA]}
+  announcements: {count: 4, note: "37th AGM (20 Aug 2026) outcome set: proceedings, voting results, MoA/AoA alteration, director appointments"}
+  shareholding: {count: 0}
+  research: {count: 2, note: "Pee Aar note (2021, readable); rpt1.pdf (2026, image-only 0 chars unreadable). NON-ANCHORED leads only."}
+  screening: {count: 48, note: "7 peers + screener CSV sets"}
+  presentation: {count: 0}
+  other: {count: 0}
+
+input_gaps:
+  - type: rating
+    severity: MEDIUM
+    effect: "Stage 10 rating_wc_quote unresolved; Stage 11 Pillar 2 defaults conservative; FLAG-CASH rating-rationale evidence unavailable. Venus is near net-debt-free (borrowings Rs 12.4 Cr FY26), so may be unrated."
+  - type: shareholding
+    severity: MEDIUM
+    effect: "Stage 10 marks FII+DII unresolved; Stage 11 withholds UA (all-three-qualifier rule); promoter holding/pledge falls back to AR figure. Operator-supplied screener screenshot exists but is NON-ANCHORED."
+  - type: presentation
+    severity: LOW
+    effect: "Stage 4 runs from AR + results commentary; no investor deck."
+  - type: prospectus
+    severity: NONE
+    effect: "Long-listed company; prospectus not expected. Backward baseline from AR + Data_Sheet 10y."
+  - type: screener-csv-defect
+    severity: LOW
+    effect: "collect_to_repo v3 defect: screener-Profit_Loss/Balance_Sheet/Cash_Flow/Quarters CSVs are structural shells with no values. screener-Data_Sheet.csv is FULLY populated (FY17-FY26 P&L, 10 quarters to Q1 FY27, balance sheet, cash flow, price). Gate 0 uses Data_Sheet + results PDFs + AR financials."
+  - type: sector_cap_row
+    severity: LOW
+    effect: "manifest sector_cap_row 'Pharma / CDMO' auto-picked by collector; manifest note says verify. Venus is primarily own-brand/generic specialty injectables + R&D, not primarily a CDMO. FLAG for phase-3 Section 1B cap confirmation."
+
+freshness_pairs:
+  - pair: "RESULTS -> CONCALL"
+    trigger_doc: "Q1 FY27 results (20 Jul 2026)"
+    mate_expected: "Q1 FY27 concall transcript"
+    status: SKIPPED
+    missing_doc: "n/a (concalls_available:false; no calls held)"
+  - pair: "RATING BULLETIN -> RATIONALE"
+    trigger_doc: "none present"
+    mate_expected: "n/a"
+    status: PASS
+    missing_doc: "no rating bulletin in corpus; pair not triggered"
+  - pair: "SEBI ORDER -> ORDER TEXT"
+    trigger_doc: "none referenced at inventory"
+    mate_expected: "n/a"
+    status: PASS
+    missing_doc: "no SEBI order referenced in inventory; stages surface if one appears"
+  - pair: "AR -> LATEST AUDITED ANNUAL RESULTS"
+    trigger_doc: "Q4/FY26 audited full-year results (26 May 2026)"
+    mate_expected: "FY2025-26 annual report"
+    status: PASS
+    missing_doc: "n/a; FY2025-26 AR present, not older than latest audited annual"
+
+freshness_verdict: "FRESHNESS PAIRS OK"
+
+extracted_txt: "All 34 corpus PDFs pre-extracted to page-marked .txt alongside each PDF (===== PAGE n of M ===== markers). Stages read the .txt and cite p.N; source PDF sits alongside for image fallback. Only research/rpt1.pdf failed extraction (image-only)."
+
+operator_confirmation: "Empty-folder question asked once (prospectus/rating/shareholding/presentation). Operator: PROCEED WITH GAPS, 2026-09-02."
+flags: []
+analyst_note: "Screener Data_Sheet cross-check pre-run: FY26 CFO/PAT 155.77/102.79=1.52x; FY26 net cash cash 29.6 + investments 237.6 - borrowings 12.4 = ~255 Cr; FY26 and Q1 FY27 OPM both 19.1%; CWIP 26.4->51.4 Cr (nearly doubled). Load-bearing facts 1-2 corroborate; fact 3 'no capex announced' contested by CWIP doubling + AR TVC/VIP narrative -> stage 3 resolves against filed AR. Not anchored evidence; stages re-derive from filings."

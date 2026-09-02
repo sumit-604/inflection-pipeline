@@ -99,6 +99,20 @@ Capture, one row each, into typed tables:
   commitment.
 - DATE. Every date or period: quarters, financial years, commissioning dates,
   target months, record dates, term dates.
+- QUALIFIER. MANDATORY, no discretion, one row each: every asterisk (`*`),
+  dagger, superscript or other footnote MARKER and the footnote text it points
+  to; every line beginning "Note:", "Notes:", "Disclaimer:" or the like; every
+  fine-print qualifier that defines or restricts a headline number or metric
+  ("EBITDA is inclusive of Other Income", "Total Income includes Other Income",
+  "order book including executed to date", "including L1 orders", "gross of
+  GST", "excluding one-offs", "on a proforma basis", "unaudited",
+  "management-certified"). If a page carries an asterisk on a metric, the
+  defining footnote is a QUALIFIER row even when it sits at the foot of the
+  page or on another slide; pair the marker to its text and cite both lines. A
+  QUALIFIER is never a judgement call and never grouped away: it changes how a
+  number reads, so a missing qualifier silently mis-states the metric. When the
+  marker and its footnote text cannot both be found, capture the marker as a
+  QUALIFIER row flagged FOOTNOTE_UNRESOLVED so downstream hunts the definition.
 
 Each row starts with a STABLE ROW ID and reads:
 `R### | page N | line L | TYPE | verbatim value | short context (<=10 words)`.
@@ -111,9 +125,12 @@ A2-A5. A data row without an ID is invalid. ENTITY-SUMMARY rows carry IDs too.
 State the ID range (e.g. R001-R415) in the structured file header.
 
 ### MATERIALITY RULE (doctype-aware; never drops a signal-bearing item)
-The four typed captures are absolute for signal. On EVERY doctype, every NUMBER,
-every DATE, and every FORWARD-looking statement is an individual row. No
-grouping, ever, touches those three. They always carry signal.
+The typed captures are absolute for signal. On EVERY doctype, every NUMBER,
+every DATE, every FORWARD-looking statement, and every QUALIFIER is an
+individual row. No grouping, ever, touches those four. They always carry signal.
+A QUALIFIER that defines or restricts a metric is NEVER folded into a
+disclaimer summary: only decorative, non-defining safe-harbor boilerplate
+groups; a footnote that changes how a number reads is always its own row.
 
 What differs by doctype is descriptive boilerplate:
 - PRESENTATION (marketing deck). Boilerplate is grouped into a single SUMMARY
@@ -184,8 +201,9 @@ extraction_date: <run date>
 === END HEADER ===
 ```
 
-FILE 2 — the structured extraction: the four typed tables (NUMBER, ENTITY,
-FORWARD, DATE) defined above, each row carrying its ROW ID and page/line anchor.
+FILE 2 — the structured extraction: the five typed tables (NUMBER, ENTITY,
+FORWARD, DATE, QUALIFIER) defined above, each row carrying its ROW ID and
+page/line anchor.
 Head the file with the ID range (e.g. R001-R415) and a one-line count per table
 so downstream can reconcile.
 
@@ -219,6 +237,7 @@ structured_counts:          # rows per table in the structured file
   entity: 0
   forward: 0
   date: 0
+  qualifier: 0              # footnotes / asterisks / Note: lines / metric qualifiers (mandatory)
 structured_id_range: ""     # e.g. R001-R415; every row carries a stable ID
 gate_a1: pass               # pass | fail
 gap_note: ""                # non-empty only if gate_a1 fail

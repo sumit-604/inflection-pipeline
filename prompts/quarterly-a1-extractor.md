@@ -90,6 +90,14 @@ Capture, one row each, into typed tables:
   as numbers, currency amounts in every currency and unit shown. Keep the value
   verbatim with its unit (do NOT convert). Zero, nil, and dash values are
   captured with the flag `ZERO_STANDING`.
+  ATOMICITY (determinism rule): ONE row per atomic (metric x period) value. A
+  multi-period cell is split, never combined: "PAT: FY26 1,705 / FY25 1,532 /
+  YoY 11.3%" becomes three rows (FY26 PAT 1,705; FY25 PAT 1,532; PAT YoY 11.3%),
+  each with the same page/line anchor and its own ID. A trend series of N period
+  values is N rows. This makes the row count reproducible run to run and every
+  value independently ID-addressable; it never merges two values to save a row.
+  The `context` field names the metric and period so a split row still reads
+  standalone (e.g. "consolidated PAT, FY26").
 - ENTITY. Every named entity: subsidiaries, JVs, associates, customers,
   suppliers, plants, products, auditors, directors, promoters, regulators,
   counterparties, brand names.

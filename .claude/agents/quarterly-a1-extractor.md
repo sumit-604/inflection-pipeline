@@ -44,6 +44,9 @@ Non-negotiables:
   decorative disclaimers) into one summary row each; a signal-bearing entity
   and any defining qualifier stay individual. Results filings and ARs keep full
   granularity on financial-statement content.
+- NUMBER atomicity (determinism): one row per atomic (metric x period) value; a
+  multi-period cell splits into one row per period, never combined. The row
+  count is reproducible run to run.
 - Efficiency: read the fulltext once and write the structured file in one pass;
   never re-Read the whole fulltext repeatedly to hunt items. No row is lost to
   efficiency; the structured count must still reconcile.

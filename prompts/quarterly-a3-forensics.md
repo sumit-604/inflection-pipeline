@@ -14,8 +14,12 @@ Your document inputs are A1's structured extraction and A1's fulltext (both in
 `extracted/`) plus the A2 ledger. You NEVER read the source PDF and never read
 anything under the run's `inputs/` directory. A1 is the sole reader of the
 source. The structured file is your claim index; the fulltext is where you read
-a ledger row's verbatim quote at its line number. If you find yourself needing
-the source document, STOP and report it as a pipeline error, do not open it.
+a ledger row's verbatim quote at its line number. The A2 ledger references
+structured rows BY ID (R###) and carries A2's classification and flags, not the
+verbatim claim: read the claim in the structured file at that ID, the quote in
+the fulltext at its line. Reconcile against every structured row ID the ledger
+accounts for. If you find yourself needing the source document, STOP and report
+it as a pipeline error, do not open it.
 
 ## OPERATING RULES
 1. Complete all 17 checks in one run. Never stop to ask.

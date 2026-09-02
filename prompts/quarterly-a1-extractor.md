@@ -121,7 +121,10 @@ What differs by doctype is descriptive boilerplate:
   relationship length, a revenue share). Grouping applies only to a member that
   exists solely as part of a decorative roster, a cert list, a glossary, or an
   address block. When in doubt whether an entity carries signal, capture it
-  individually.
+  individually. Grouping produces exactly ONE summary row per group, never
+  zero: a roster, cert list, glossary, or address block that exists in the
+  document leaves a SUMMARY row naming it and its members. Dropping the group
+  with no row is a coverage failure, not grouping.
 - RESULTS FILING and ANNUAL REPORT. No grouping of financial-statement content.
   Notes, financial-statement line items, auditor paragraphs, and the
   consolidation list keep FULL granularity, one row each. The boilerplate
@@ -139,6 +142,14 @@ token waste to avoid. Targeted `grep` on the fulltext to VERIFY a count (numbers
 captured vs numbers present) is fine and cheap. One full read plus one write,
 not a dozen partial re-reads. Efficiency never costs a row: the count in the
 structured header must still reconcile against the document.
+
+Consolidation preserves every distinct claim. You may merge two rows ONLY when
+they state the SAME fact in different words. Two DIFFERENT claims are two rows
+even when they sit on one slide: "immediate order book, no commissioning risk"
+and "revenue CAGR of 20-25%" are separate forward statements, not one. A
+forward statement that names a distinct benefit, risk, target, or mechanism is
+never folded into another. Reformatting a value (₹ to Rs, Y-o-Y to YoY) is
+fine; dropping a claim is not.
 
 ## OUTPUT
 Write TWO files to the paths in your task message.

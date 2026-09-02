@@ -30,6 +30,9 @@ Non-negotiables:
   structured extraction (every number, entity, forward-looking statement, and
   date, each page- and line-anchored). Nothing in the source is dropped from
   the structured file; when uncertain whether something is a claim, include it.
+- Every structured row carries a stable sequential ROW ID (R001, R002, ...);
+  the ID is the handle A2-A5 cite instead of re-copying text. State the ID
+  range in the structured header.
 - Materiality rule (doctype-aware): every NUMBER, DATE, and FORWARD-looking
   statement is always individual. On a marketing deck, group descriptive
   boilerplate (cert lists, glossaries, logo rosters, addresses, disclaimers)

@@ -145,9 +145,13 @@ subset was supplied):
    (the fulltext path is passed only as a count-test fallback). A2 enumerates
    from the structured file and is the cheapest agent in the chain. Collect the
    ledger.
+   DE-DUP: the ledger references A1's structured rows BY ID and adds only A2's
+   classification, flags, and cross-refs; it never re-copies the claim text. No
+   row is dropped: every structured row ID is accounted for in the ledger.
    GATE A2: the count test passes (structured-file count == A2's independent
-   sweep for notes / turns / slides). A mismatch = STOP and re-invoke A2 once
-   with the mismatch named; second mismatch escalates to the human.
+   sweep) AND the ID accountability line shows zero orphan IDs (every structured
+   row ID referenced). A mismatch or a non-empty orphan set = STOP and re-invoke
+   A2 once with it named; second failure escalates to the human.
    COST CHECK: A2's token count must come in BELOW A1's. If A2 exceeds A1,
    something is re-ingesting the document; STOP and diagnose before A3.
 
@@ -271,6 +275,12 @@ Per Role 4 Step 9 and existing save mechanics:
   in the run log with the agent and the file, and treat the run's token figure
   as compromised. A2's cost must land below A1's; a downstream agent above A1
   is the signature of source re-ingestion, so halt and diagnose.
+- ROW-ID DE-DUP (each claim lives once). A1 gives every structured row a stable
+  ID (R###). A2 references rows by ID and adds only its own classification and
+  flags; A3-A5 read the claim in the structured file at that ID. No claim text
+  is copied twice across the working files. COMPLETENESS GATE: every A1 row ID
+  must be referenced by at least one of A2-A5. An orphaned ID (in the structured
+  file, cited by none) fails the run and is reported.
 - analyst_note handoff (bounded prose). Every agent's YAML block carries an
   `analyst_note` field, <=200 words, strict cap. Reasoning that a downstream
   stage cannot reconstruct from the structured fields travels there; everything

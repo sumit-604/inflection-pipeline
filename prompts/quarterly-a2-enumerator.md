@@ -22,10 +22,28 @@ an A1 output, in `extracted/`) to confirm against the spine; that is the only
 other file you touch. If you find yourself needing the source document, STOP
 and report it as a pipeline error, do not open it.
 
+## DE-DUPLICATION CONTRACT (reference by ID; never re-copy, never drop)
+Every claim already lives ONCE in A1's structured file, each row carrying a
+stable ID (R001, R002, ...). You do NOT re-copy the claim text into the ledger.
+You REFERENCE the row by its ID and add ONLY YOUR OWN contributions: the ledger
+category, your flags (ZERO_STANDING, ENTITY_CHANGE, DROPPED_SLIDE,
+REPEAT_QUESTION, FOOTNOTE_UNRESOLVED, MGMT_ABSENCE, and any you raise),
+cross-references between rows (e.g. a number restated on two slides -> both IDs,
+flag RESTATED), and a short materiality note where it matters. The verbatim
+value stays in the structured file at that ID; downstream reads it there.
+COMPLETENESS IS PRESERVED, NOT WEAKENED: every structured row ID must be
+accounted for in your ledger (referenced in a category, or grouped with its
+group's IDs). An ID you neither reference nor group is an orphan and fails the
+gate. If your independent sweep finds a disclosure unit A1's structured file
+LACKS, add a new ledger row flagged MISSING_FROM_STRUCTURED with its line
+number: that is a real miss to loop back to A1, and the only case where you
+write claim text the structured file does not already hold.
+
 ## OPERATING RULES
 1. Complete the entire enumeration in one run. Never stop to ask.
-2. Every row carries a page and line number (or turn / slide number), copied
-   from the structured file. No exceptions.
+2. Every ledger row cites a structured ROW ID (and through it the page/line);
+   a row you add yourself (MISSING_FROM_STRUCTURED) carries its own line number.
+   No exceptions.
 3. Zero, nil, and dash-valued standing line items are enumerated with the
    flag `ZERO_STANDING`. Never drop a nil row.
 4. Enumerate two ways and reconcile: the structured file's own per-table counts
@@ -83,8 +101,12 @@ and report it as a pipeline error, do not open it.
 
 ## OUTPUT
 Write `ledger_<doctype>_<ticker>_<quarter>.md` — one table per enumeration
-category above, every row carrying a line / turn / slide number, flags in a
-flags column. Head the file with the COUNT TEST:
+category above. Each ledger row is `ROW_ID | category | A2 flags | cross-ref /
+materiality note` — the ROW ID references A1's structured row; you do NOT
+re-copy its verbatim value. Only a MISSING_FROM_STRUCTURED row carries claim
+text. Head the file with the COUNT TEST plus an ID ACCOUNTABILITY line:
+`ids_in_structured: N | ids_referenced_in_ledger: N | orphan_ids: [] | match: yes/no`
+(orphan_ids must be empty; every structured row ID is accounted for).
 
 ```
 === A2 COUNT TEST ===
@@ -119,7 +141,11 @@ counts:                      # per applicable category
   slides: 0
   slide_numbers: 0
 flags_raised: []             # e.g. [ZERO_STANDING, ENTITY_CHANGE, REPEAT_QUESTION]
-gate_a2: pass                # pass | fail
+ids_in_structured: 0         # count of A1 structured row IDs
+ids_referenced: 0            # distinct row IDs your ledger references
+orphan_ids: []               # structured IDs not accounted for (must be empty)
+missing_from_structured: []  # units you found that A1's structured file lacks
+gate_a2: pass                # pass | fail (fail if orphan_ids non-empty)
 mismatch_note: ""            # non-empty only if gate_a2 fail
 analyst_note: ""             # optional, <=200 words (strict cap, excess
                              # truncated). Reasoning a downstream stage cannot

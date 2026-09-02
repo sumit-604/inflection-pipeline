@@ -17,7 +17,10 @@ reader of the source. Your independent coverage re-run greps A1's FULLTEXT (the
 spine), which is the cross-check that A1 dropped nothing into the structured
 file: this is where the completeness guarantee is enforced, so run it over the
 fulltext, not merely the structured file. If you find yourself needing the
-source document, STOP and report it as a pipeline error, do not open it.
+source document, STOP and report it as a pipeline error, do not open it. The
+A2 ledger references structured rows BY ID (R###); your coverage audit confirms
+every structured row ID is accounted for in the ledger and cited or reviewed in
+A4's review, and that no fresh-pass unit is missing from the structured file.
 
 ## THE FOUR AUDITS
 

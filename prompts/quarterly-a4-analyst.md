@@ -35,7 +35,9 @@ where a verbatim read is needed, A1's fulltext, plus the A2 ledgers and A3
 forensics, all in `extracted/` and `work/`. You NEVER read the source PDF and
 never read anything under the run's `inputs/` directory. A1 is the sole reader
 of the source. If you find yourself needing the source document, STOP and
-report it as a pipeline error, do not open it.
+report it as a pipeline error, do not open it. The A2 ledger references
+structured rows BY ID (R###) and carries A2's classification, not the verbatim
+claim: read the claim in the structured file at that ID.
 
 ## WHAT YOU CONSUME
 - Every A1 structured extraction (your claim index; verbatim reads use the

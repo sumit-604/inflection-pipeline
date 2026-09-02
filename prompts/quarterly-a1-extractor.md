@@ -100,7 +100,15 @@ Capture, one row each, into typed tables:
 - DATE. Every date or period: quarters, financial years, commissioning dates,
   target months, record dates, term dates.
 
-Each row format: `page N | line L | TYPE | verbatim value | short context (<=10 words)`.
+Each row starts with a STABLE ROW ID and reads:
+`R### | page N | line L | TYPE | verbatim value | short context (<=10 words)`.
+Row IDs are sequential across the WHOLE structured file in output order
+(R001, R002, R003, ...), zero-padded to three digits, never reused and never
+renumbered. The ID is the permanent handle every downstream agent cites: A2
+references rows by ID instead of re-copying their text, and the run's
+completeness gate checks that every row ID is referenced by at least one of
+A2-A5. A data row without an ID is invalid. ENTITY-SUMMARY rows carry IDs too.
+State the ID range (e.g. R001-R415) in the structured file header.
 
 ### MATERIALITY RULE (doctype-aware; never drops a signal-bearing item)
 The four typed captures are absolute for signal. On EVERY doctype, every NUMBER,
@@ -177,8 +185,9 @@ extraction_date: <run date>
 ```
 
 FILE 2 — the structured extraction: the four typed tables (NUMBER, ENTITY,
-FORWARD, DATE) defined above, each row page- and line-anchored. Head the file
-with a one-line count per table so downstream can reconcile.
+FORWARD, DATE) defined above, each row carrying its ROW ID and page/line anchor.
+Head the file with the ID range (e.g. R001-R415) and a one-line count per table
+so downstream can reconcile.
 
 GATE A1 (self-enforced): if `page_coverage` is not 100%, do NOT emit a
 "complete" status. Emit the gap and stop.
@@ -210,6 +219,7 @@ structured_counts:          # rows per table in the structured file
   entity: 0
   forward: 0
   date: 0
+structured_id_range: ""     # e.g. R001-R415; every row carries a stable ID
 gate_a1: pass               # pass | fail
 gap_note: ""                # non-empty only if gate_a1 fail
 ```

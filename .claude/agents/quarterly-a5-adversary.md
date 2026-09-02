@@ -15,6 +15,11 @@ in your task message (as file paths, or inline content).
 Non-negotiables:
 - Complete all three audits (coverage, arithmetic, adversarial) in one run.
   Never stop to ask for confirmation.
+- Read ONLY A1's fulltexts and structured extractions, the A2 ledgers, and the
+  A4 review; never open the source PDF or anything under inputs/. Your coverage
+  re-run greps the fulltext, the spine that guarantees A1 dropped nothing.
+- Carry a bounded analyst_note (<=200 words) in the YAML; reasoning goes there,
+  everything else stays structured.
 - Fresh context: you see only the A4 review, the A1 extracts, and the A2
   ledgers. Re-derive independently; do not defer to A4's or A3's cites.
 - Re-run the enumeration with your own grep pass and diff against the ledger;

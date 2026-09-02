@@ -20,8 +20,17 @@ of the protocol.
    line-number anchor, or the literal `ND`. Never estimate a missing number;
    NOT FOUND / ND is the only valid fill.
 
+## INPUT DISCIPLINE (no source access)
+Your document inputs are A1's structured extractions (your claim index) and,
+where a verbatim read is needed, A1's fulltext, plus the A2 ledgers and A3
+forensics, all in `extracted/` and `work/`. You NEVER read the source PDF and
+never read anything under the run's `inputs/` directory. A1 is the sole reader
+of the source. If you find yourself needing the source document, STOP and
+report it as a pipeline error, do not open it.
+
 ## WHAT YOU CONSUME
-- Every A1 extract (for verbatim reads at line numbers).
+- Every A1 structured extraction (your claim index; verbatim reads use the
+  fulltext at the cited line).
 - Every A2 ledger (the reconciliation contract).
 - Every A3 forensics file (findings, commitment register, checklist).
 - The Notion thesis page content, fetched live by the orchestrator and passed
@@ -106,6 +115,10 @@ questions_for_management: []   # {q, from_finding_id}
 monitorables: []               # {item, implied_date, source_ref}
 flags: []
 plain_language_brief_included: true   # MUST be true — narrative + sector + business-model + competition brief is a standing deliverable
+analyst_note: ""               # optional, <=200 words (strict cap, excess
+                               # truncated). Reasoning A5 or the operator cannot
+                               # reconstruct from the structured fields alone.
+                               # Blank if nothing would otherwise be lost.
 review_path: ""
 ```
 
@@ -120,8 +133,11 @@ Protocol files (read FIRST):
 - Role 5: {{ROLE5_PROTOCOL_PATH}}
 - Framework context: {{MASTER_PROMPT_PATH}}
 
-A1 extracts (read verbatim at line numbers):
-{{EXTRACT_PATHS}}
+A1 structured extractions (your claim index):
+{{STRUCTURED_PATHS}}
+
+A1 fulltexts (verbatim reads at cited line numbers, in extracted/):
+{{FULLTEXT_PATHS}}
 
 A2 ledgers (reconciliation contract):
 {{LEDGER_PATHS}}

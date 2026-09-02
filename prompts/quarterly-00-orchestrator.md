@@ -73,14 +73,17 @@ The orchestrator resolves TICKER and creates (if absent):
 ```
 runs/<ticker>-<quarter>/
   inputs/        source PDFs copied or referenced here
+  extracted/     A1 output: fulltext + structured extraction (the evidence spine)
   work/          all agent working files (audit trail)
 ```
 `<quarter>` is the detected filing quarter, lowercased and hyphenated, e.g.
 `q1fy27`. If the quarter cannot be detected before A1 runs, use the run date
 `<yyyy-mm-dd>` as a placeholder and rename after A1 reports the quarter.
 
-Named working files (master-prompt filenames, one set per document):
-- A1: `work/extract_<doctype>_<ticker>_<quarter>.txt` + header block
+Named working files (one set per document; `<doctype>` disambiguates a
+multi-document run):
+- A1: `extracted/<ticker>-<doctype>-<quarter>-fulltext.md` (header block first)
+      + `extracted/<ticker>-<doctype>-<quarter>-structured.md`
 - A2: `work/ledger_<doctype>_<ticker>_<quarter>.md`
 - A3: `work/forensics_<ticker>_<quarter>.md` (one per document, doctype in title)
 - A4: `work/review_<ticker>_<quarter>.md` (single merged review)
@@ -107,8 +110,9 @@ decision in the run log.
 ## TOOLCHAIN PRECHECK (orchestrator, at session start)
 
 Extraction is mechanical and mandatory. Before A1, verify the toolchain:
-`pdftotext`, `pdfinfo` (poppler-utils), and for OCR fallback `pdftoppm` and
-`tesseract`. If any is missing, attempt install (`poppler-utils`,
+`pdftotext`, `pdfinfo`, `pdffonts` (poppler-utils; `pdffonts` is A1's
+text-layer gate), and for the scan-OCR fallback `pdftoppm` and `tesseract`. If
+any is missing, attempt install (`poppler-utils`,
 `tesseract-ocr`). If install is not possible in this environment, STOP and
 report the missing tool: the pipeline cannot run a trusted extraction without
 it. Do NOT substitute the Read tool's PDF rendering for A1 — the line-numbered
@@ -122,26 +126,37 @@ points at.
 For EACH document (results, then concall, then presentation, in whatever
 subset was supplied):
 
-1. Invoke A1 (quarterly-a1-extractor) with the document path and its detected
-   doctype. Collect its extract file and header.
+1. Invoke A1 (quarterly-a1-extractor) with the document path, its detected
+   doctype, and BOTH output paths (fulltext + structured). A1 runs the
+   text-layer gate (pdffonts) first: a document with a text layer is extracted
+   text-only, never rasterised for sparse pages; only a no-text-layer scan
+   triggers whole-document rendering, logged. Collect the fulltext, the
+   structured file, and the header.
    GATE A1: page coverage 100%. Any page unaccounted for = STOP, report the
-   gap, do not proceed for that document.
+   gap, do not proceed for that document. A1 is the ONLY agent that reads the
+   source document; no later agent receives the source path.
 
-2. Invoke A2 (quarterly-a2-enumerator) with the A1 extract path and doctype.
-   Collect the ledger.
-   GATE A2: the count test passes (grep count == manual sweep count for
-   notes / turns / slides). A mismatch = STOP and re-invoke A2 once with the
-   mismatch named; second mismatch escalates to the human.
+2. Invoke A2 (quarterly-a2-enumerator) with the A1 STRUCTURED path and doctype
+   (the fulltext path is passed only as a count-test fallback). A2 enumerates
+   from the structured file and is the cheapest agent in the chain. Collect the
+   ledger.
+   GATE A2: the count test passes (structured-file count == A2's independent
+   sweep for notes / turns / slides). A mismatch = STOP and re-invoke A2 once
+   with the mismatch named; second mismatch escalates to the human.
+   COST CHECK: A2's token count must come in BELOW A1's. If A2 exceeds A1,
+   something is re-ingesting the document; STOP and diagnose before A3.
 
-3. Invoke A3 (quarterly-a3-forensics) with the A1 extract path, the A2 ledger
-   path, and doctype. Collect the forensics file.
+3. Invoke A3 (quarterly-a3-forensics) with the A1 structured path, the A1
+   fulltext path (for verbatim quotes at cited lines), the A2 ledger path, and
+   doctype. Collect the forensics file.
    GATE A3: every one of F1-F17 carries an explicit status (PASS / FINDING /
    N.A.) and every FINDING cites a line number. Any blank check = STOP and
    re-invoke A3 once naming the blank checks.
 
 After all documents pass A1-A3:
 
-4. Invoke A4 (quarterly-a4-analyst) ONCE with: every A1 extract path, every
+4. Invoke A4 (quarterly-a4-analyst) ONCE with: every A1 structured path, every
+   A1 fulltext path (verbatim reads only), every
    A2 ledger path, every A3 forensics path, the protocol file paths, and the
    live Notion thesis (the orchestrator fetches the company Notion page first
    per Step 0A and passes its Decision Status and monitoring checklist inline;
@@ -158,8 +173,9 @@ After all documents pass A1-A3:
    silently.
 
 5. Invoke A5 (quarterly-a5-adversary) with the A4 review path plus every A1
-   extract and A2 ledger path (for its independent coverage and arithmetic
-   re-run). Collect the audit.
+   fulltext, every A1 structured path, and every A2 ledger path (its
+   independent coverage re-run greps the FULLTEXT, the spine, so it cross-checks
+   that A1 dropped nothing into the structured file). Collect the audit.
    GATE A5: verdict COMPLETE. INCOMPLETE loops back to the named failing agent
    with the specific gap stated. Maximum two loops; a third failure escalates
    to the human with the unresolved gap stated plainly.
@@ -226,6 +242,21 @@ Per Role 4 Step 9 and existing save mechanics:
 ## RULES FOR THE ORCHESTRATOR SESSION
 - You coordinate; you do not analyse. Every finding comes from a subagent.
 - Pass file PATHS to subagents, not pasted PDFs; fresh context is the point.
+- INPUT DISCIPLINE (extract once, downstream reads the extraction). A1 is the
+  ONLY agent that reads the source document. A2 through A5 receive ONLY: A1's
+  structured extraction (and, where a verbatim read or an independent coverage
+  re-run needs it, A1's fulltext), the outputs of prior agents, their protocol,
+  and inline Notion. NEVER put a source path (anything under `inputs/`) in an
+  A2-A5 task message. If any A2-A5 subagent reports it read or needed a file
+  under `inputs/` or the source document, that is a discipline breach: log it
+  in the run log with the agent and the file, and treat the run's token figure
+  as compromised. A2's cost must land below A1's; a downstream agent above A1
+  is the signature of source re-ingestion, so halt and diagnose.
+- analyst_note handoff (bounded prose). Every agent's YAML block carries an
+  `analyst_note` field, <=200 words, strict cap. Reasoning that a downstream
+  stage cannot reconstruct from the structured fields travels there; everything
+  else stays structured. It keeps free prose from leaking into the tables and
+  inflating the handoff.
 - A5's independence is absolute: its task message carries only the A4 review,
   the A1 extracts, and the A2 ledgers, never your commentary.
 - Only mechanical failures (missing pages, count mismatch, blank checks,

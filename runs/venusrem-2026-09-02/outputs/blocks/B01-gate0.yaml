@@ -1,0 +1,29 @@
+stage: B01-gate0
+company: "VENUSREM"
+run_date: "2026-09-02"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["rating: NOT FOUND", "shareholding: partial (AR has FY25/FY26 snapshots only, no 3-yr-back trend for E2)", "presentation: NOT FOUND", "prospectus: NOT FOUND (long-listed, not expected)", "peer/segment comparison data: NOT FOUND (blocks M2, M5, M6, M7, M9)", "ROCE full 10-yr series: NOT FOUND (only FY25/FY26 computable, Data_Sheet lacks current-liability split FY17-FY24)"]
+flags: []
+data_years: 10
+fy_range: "FY17 to FY26"
+blocks: {A: 11, B: 20, C: 2, D: 20, E: 13}
+core_score: 66
+moat_score: 5
+grand_total: 71
+moats_confirmed: 1
+moat_class: "THIN"
+classification: "GOOD"
+deal_breakers: []
+history_downgrade: false
+data_notes:
+  - "loss-to-profit swing, FY17-FY20 to FY21-FY26; PAT CAGR N/M, C2/C4 scored 0"
+  - "ROCE computable for FY25/FY26 only (AR Note 39); Data_Sheet lacks current-liability split FY17-FY24, A1/A2/A4 rest on 2-point series"
+  - "ROE computed full FY17-FY26 (screener-data, consolidated basis); diverges from AR standalone ROE (basis difference, both anchored)"
+  - "FCF (B2/B3) and WC Days (B4) computed only FY25-FY26; Data_Sheet cash flow lacks capex breakdown and BS omits trade payables FY17-FY24"
+  - "Data_Sheet Borrowings row shows FY26 = Rs 12.41 Cr, conflicts with AR/results Zero-Debt disclosure (Nil); likely field-mapping error, matches FY26 micro-enterprise trade payables exactly; AR treated as authoritative"
+  - "PEER DATA NEEDED: M2, M5, M6 (comparison leg), M7, M9 all scored 0"
+  - "Spear fact 3 'no capex' REFUTED: CWIP nearly doubled FY25->FY26 (26.39->51.36 Cr), AR attributes to lyophilisation capacity expansion; '~2x demand' claim itself NOT FOUND in corpus (NO-CONCALL)"
+  - "Venus Pharma GmbH going-concern flag (Q3 FY26, net worth -94.15 lakhs) appears resolved by FY26 year-end (AOC-1 shows net worth ~+Rs 3.09 Cr); share application money Rs 2,859.72 lakhs still pending allotment"
+block_b_trend: "improving - FY26 CFO/PAT 1.52x and WC Days improved 12.44 days (68.96 to 56.52) FY25 to FY26"
+analyst_note: "GOOD rests on Block D (zero debt, net cash ~Rs267 Cr) and a genuine FY26 breakout (revenue +20%, EBITDA nearly doubled, OPM ~19% held into Q1 FY27). Block A's ROCE trend (13.07% to 18.56%) is a 2-point series, not a proven 10-year climb - screener CSV cannot support ROCE for FY17-FY24. Moat score (5/60, THIN) is half data-absence (5 tests need peer data) and half genuine weakness (3 revenue-decline years fail stickiness/switching tests). Revenue growth is the binding constraint: 9-yr CAGR 7.55%, dragged down by FY17-20 loss years despite FY26's +20%. Sunev-group Rs30 Cr IP purchase (FY25) category-confirmed, not entity-disaggregated, not repeated FY26 - open governance item."

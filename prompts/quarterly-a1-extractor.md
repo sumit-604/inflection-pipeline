@@ -102,6 +102,44 @@ Capture, one row each, into typed tables:
 
 Each row format: `page N | line L | TYPE | verbatim value | short context (<=10 words)`.
 
+### MATERIALITY RULE (doctype-aware; never drops a signal-bearing item)
+The four typed captures are absolute for signal. On EVERY doctype, every NUMBER,
+every DATE, and every FORWARD-looking statement is an individual row. No
+grouping, ever, touches those three. They always carry signal.
+
+What differs by doctype is descriptive boilerplate:
+- PRESENTATION (marketing deck). Boilerplate is grouped into a single SUMMARY
+  row per group, not one row per member: certification lists (ISO / API / BIS
+  certificate names), abbreviation or glossary slides, decorative customer /
+  client / partner LOGO ROSTERS, postal addresses, and safe-harbor / disclaimer
+  legal text. A SUMMARY row names the group, its page, and lists its members
+  inline: `page N | line L | ENTITY-SUMMARY | logo roster: 42 customers incl.
+  Aramco, GAIL, L&T | customer roster slide`. An ENTITY that carries standalone
+  analytical signal is STILL individual, even on a deck: a subsidiary, a JV or
+  associate, a counterparty named in a transaction, an auditor, a promoter, a
+  regulator, or a customer/supplier tied to a specific fact (an order, a
+  relationship length, a revenue share). Grouping applies only to a member that
+  exists solely as part of a decorative roster, a cert list, a glossary, or an
+  address block. When in doubt whether an entity carries signal, capture it
+  individually.
+- RESULTS FILING and ANNUAL REPORT. No grouping of financial-statement content.
+  Notes, financial-statement line items, auditor paragraphs, and the
+  consolidation list keep FULL granularity, one row each. The boilerplate
+  grouping above does NOT apply to filing or AR financial content.
+
+The materiality rule shrinks row count only where rows carry no analytical
+signal. It never merges, summarises, or drops a number, a date, a
+forward-looking statement, or a signal-bearing entity.
+
+### EFFICIENCY DISCIPLINE (build the structured file in one pass)
+The structured file is generated from the fulltext you just wrote. Read the
+fulltext ONCE, in full, and emit the structured file in a SINGLE write. Do not
+re-Read the whole fulltext repeatedly to hunt items one at a time; that is the
+token waste to avoid. Targeted `grep` on the fulltext to VERIFY a count (numbers
+captured vs numbers present) is fine and cheap. One full read plus one write,
+not a dozen partial re-reads. Efficiency never costs a row: the count in the
+structured header must still reconcile against the document.
+
 ## OUTPUT
 Write TWO files to the paths in your task message.
 

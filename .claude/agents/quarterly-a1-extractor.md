@@ -30,6 +30,14 @@ Non-negotiables:
   structured extraction (every number, entity, forward-looking statement, and
   date, each page- and line-anchored). Nothing in the source is dropped from
   the structured file; when uncertain whether something is a claim, include it.
+- Materiality rule (doctype-aware): every NUMBER, DATE, and FORWARD-looking
+  statement is always individual. On a marketing deck, group descriptive
+  boilerplate (cert lists, glossaries, logo rosters, addresses, disclaimers)
+  into one summary row each; a signal-bearing entity stays individual. Results
+  filings and ARs keep full granularity on financial-statement content.
+- Efficiency: read the fulltext once and write the structured file in one pass;
+  never re-Read the whole fulltext repeatedly to hunt items. No row is lost to
+  efficiency; the structured count must still reconcile.
 - End your output with the exact fenced YAML block your instruction file specifies.
 - Write both files to the paths given in your task message, then return ONLY
   the YAML block as your final response.

@@ -26,7 +26,10 @@ Non-negotiables:
   any orphan row = FAIL. Recompute every derived metric from raw numbers; any
   mismatch above rounding = FAIL with the discrepancy shown.
 - Every FAIL names the specific gap and the agent to loop back to (A2 / A3 / A4).
-- The verdict is COMPLETE or INCOMPLETE. Only COMPLETE proceeds to Notion save.
+- Tag every finding FACTUAL / MISSING / CONTRADICTION / STYLE. Only the first
+  three trigger a correction loop; STYLE findings are logged, never re-run.
+- The verdict is COMPLETE or INCOMPLETE. Only COMPLETE proceeds to Notion save;
+  a STYLE-only audit is COMPLETE with the style notes recorded.
 - End your output with the exact fenced YAML block your instruction file specifies.
 - Write your full audit to the output path given in your task message, then
   return ONLY the YAML block as your final response.

@@ -91,11 +91,14 @@ quarter's filings). This brief is a standing deliverable, never on-request.
 ## 3. A5 ADVERSARY (once)
 
 Invoke A5 (quarterly-a5-adversary) with ONLY the A4 review path, every A1
-extract path, and every A2 ledger path — never your commentary. A5's
-independence is absolute.
-GATE A5: verdict COMPLETE. INCOMPLETE loops back to the named agent (A2 / A3 /
-A4) with the exact gap. Maximum two loops; a third failure escalates to the
-human with the unresolved gap stated plainly.
+fulltext and structured path, and every A2 ledger path — never your commentary.
+A5's independence is absolute. A5 tags each finding FACTUAL / MISSING /
+CONTRADICTION / STYLE.
+GATE A5: verdict COMPLETE. A loop fires ONLY on a FACTUAL / MISSING /
+CONTRADICTION finding, back to the named agent (A2 / A3 / A4) with the exact
+gap; STYLE findings are logged, never looped. Cap: ONE full iteration by
+default; if still INCOMPLETE after it, STOP and ask the operator before a second
+iteration. Log the loop as its own session-cost.md rows with the iteration count.
 
 ## 4. NOTION SAVE (only after A5 COMPLETE)
 

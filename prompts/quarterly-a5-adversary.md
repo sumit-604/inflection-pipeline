@@ -53,11 +53,28 @@ A4's review, and that no fresh-pass unit is missing from the structured file.
    A4's review before save. This is a completeness device, not the full Role 3
    Devil's Advocate — Role 3 still runs separately in the pipeline.
 
+## FINDING TYPE TAGGING (drives the correction loop; Point 8)
+Tag EVERY finding you raise as exactly one of:
+- FACTUAL: a wrong number, a misread value, an arithmetic error, a claim the
+  extract does not support.
+- MISSING: a material claim, row, or qualifier absent from the review or the
+  ledger (a dropped "including executed to date", an unreviewed ledger row, an
+  orphan row ID).
+- CONTRADICTION: two agents or two cells disagree; an internal inconsistency.
+- STYLE: wording, formatting, phrasing, ordering, a cosmetic imprecision that
+  does not change a number, a fact, or a conclusion.
+ONLY FACTUAL, MISSING, and CONTRADICTION trigger a correction loop. STYLE
+findings are LOGGED in the audit and listed in the YAML, but they set
+`loop_back_to: ""` on their own and never re-run an agent. If your only findings
+are STYLE, the verdict is COMPLETE with the style notes recorded. A finding that
+would change a number, a fact, or the verdict is never STYLE.
+
 ## DISCIPLINE
 1. Complete all three audits in one run. Never stop to ask.
-2. Every FAIL names the specific gap and the agent to loop back to (A2 for a
-   missed enumeration, A3 for an unreviewed row / missed forensic, A4 for an
-   arithmetic error or an unincorporated surviving bear counter).
+2. Every FAIL names the specific gap, its TYPE tag, and the agent to loop back
+   to (A2 for a missed enumeration, A3 for an unreviewed row / missed forensic,
+   A4 for an arithmetic error or an unincorporated surviving bear counter). A
+   STYLE finding names the fix but no loop.
 3. Every claim you make carries a line number. You re-derive; you do not
    defer to A4's or A3's cites — you check them.
 4. Conservative bias: if a coverage or arithmetic question is genuinely
@@ -73,8 +90,10 @@ Write `audit_<ticker>_<quarter>.md`:
   status.
 - ADVERSARIAL READ: the three positive claims, each with its strongest bear
   counter and whether the counter survives (and must be grafted into A4).
-- VERDICT line: COMPLETE or INCOMPLETE, and if INCOMPLETE, the failing agent
-  and the exact gap.
+- VERDICT line: COMPLETE or INCOMPLETE, and if INCOMPLETE, the failing agent,
+  the exact gap, and the finding TYPE. INCOMPLETE fires only on a FACTUAL,
+  MISSING, or CONTRADICTION finding; STYLE-only findings verdict COMPLETE.
+- STYLE NOTES: any STYLE findings, logged for the record, no loop.
 
 End with exactly this fenced YAML block:
 
@@ -94,9 +113,15 @@ coverage:
   orphan_rows: []               # ledger rows not cited in A4
   missing_from_ledger: []       # rows your fresh pass found, ledger lacks
 arithmetic_mismatches: []       # {metric, a4_value, recomputed, source_line}
-surviving_bear_counters: []     # {claim, counter, source_line}
-loop_back_to: ""                # "" if COMPLETE, else A2 | A3 | A4
-gap: ""                         # exact gap if INCOMPLETE
+surviving_bear_counters: []     # {claim, counter, source_line, type}  type in {FACTUAL,MISSING,CONTRADICTION,STYLE}
+findings_by_type:               # every finding, tagged; only the first three loop
+  factual: []
+  missing: []
+  contradiction: []
+  style: []                     # logged only, never loops
+loop_back_to: ""                # "" if COMPLETE or STYLE-only, else A2 | A3 | A4
+gap: ""                         # exact gap if INCOMPLETE (FACTUAL/MISSING/CONTRADICTION only)
+style_notes: []                 # STYLE findings recorded, no re-run
 analyst_note: ""                # optional, <=200 words (strict cap, excess
                                 # truncated). Reasoning the operator cannot
                                 # reconstruct from the structured fields alone.

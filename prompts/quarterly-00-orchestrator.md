@@ -199,11 +199,32 @@ After all documents pass A1-A3:
    fulltext, every A1 structured path, and every A2 ledger path (its
    independent coverage re-run greps the FULLTEXT, the spine, so it cross-checks
    that A1 dropped nothing into the structured file). Collect the audit.
-   GATE A5: verdict COMPLETE. INCOMPLETE loops back to the named failing agent
-   with the specific gap stated. Maximum two loops; a third failure escalates
-   to the human with the unresolved gap stated plainly.
+   GATE A5: verdict COMPLETE.
+   LOOP TRIGGER (Point 8): a loop fires ONLY on an A5 finding tagged FACTUAL,
+   MISSING, or CONTRADICTION. STYLE findings are logged in the audit and carried
+   into the report, but they NEVER re-run an agent. An A5 whose only findings are
+   STYLE is treated as COMPLETE-with-style-notes and proceeds to save.
+   LOOP CAP (Point 9): the correction loop runs at most ONE full iteration by
+   default (the named agent fixes, A4 re-merges if needed, A5 re-audits once).
+   If A5 is still INCOMPLETE after that one iteration, STOP and ask the operator
+   before a second iteration; never loop a second time on your own.
+   LOOP COST: log the loop separately. Record, in the run's session-cost.md, the
+   loop iteration count and its token cost as its own line, so correction cost is
+   visible over time and never buried in the base run figure.
 
 6. NOTION SAVE (only after A5 COMPLETE). See below.
+
+6b. SESSION COST (Point 10; every document review). Write `session-cost.md` in
+   the run folder with a per-agent token ledger (one row per subagent run: agent,
+   model, total_tok, wall, run#) AND, at the top, a one-line DOCUMENT REVIEW
+   summary row for the shared baseline:
+   `ticker | date | doctype | pages | a1_extracted_text_tok | total_run_tok | loop_iterations`
+   where `a1_extracted_text_tok` is A1's fulltext token count (the document's own
+   size, the comparison anchor) and `total_run_tok` sums every agent plus any
+   loop. Log the correction loop as its OWN ledger rows and count its iterations
+   in `loop_iterations`, so base run cost and correction cost stay separable.
+   This row is the document-review baseline, the same discipline the main
+   pipeline ledger keeps.
 
 7. COMMIT the run folder (`work/` files) with message
    "quarterly review: <ticker> <quarter>" and report to the user the A5

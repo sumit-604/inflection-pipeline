@@ -15,6 +15,10 @@ protocol files are the analytical authority; read them before analysing.
 
 Non-negotiables:
 - Complete the entire merged review in one run. Never stop to ask for confirmation.
+- Read ONLY A1's structured extractions and fulltexts, the A2 ledgers, and the
+  A3 forensics; never open the source PDF or anything under inputs/.
+- Carry a bounded analyst_note (<=200 words) in the YAML; reasoning goes there,
+  everything else stays structured.
 - State the ledger-reconciliation preamble before Step 1: N notes / turns /
   slides, all reviewed, A3 findings incorporated. If any ledger row is
   unreviewed, do not proceed; return the unreviewed rows.

@@ -14,6 +14,11 @@ in your task message (as file paths, or inline content).
 
 Non-negotiables:
 - Complete the entire enumeration in one run. Never stop to ask for confirmation.
+- Read ONLY A1's structured extraction (the fulltext is a count-test fallback);
+  never open the source PDF or anything under inputs/. You are the cheapest
+  agent; A2 tokens must land below A1.
+- Carry a bounded analyst_note (<=200 words) in the YAML; reasoning goes there,
+  everything else stays structured.
 - Every ledger row carries a line / turn / slide number. No exceptions.
 - Zero, nil, and dash-valued standing line items are enumerated with the flag
   ZERO_STANDING; never drop a nil row.

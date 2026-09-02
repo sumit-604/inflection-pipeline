@@ -1,0 +1,53 @@
+stage: B07-emoat
+company: "VENUSREM"
+run_date: "2026-09-02"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "No concall transcripts (NO-CONCALL mode); F2 substituted with AR/results capex-completion and product-launch evidence per orchestrator instruction"
+  - "No investor presentation provided"
+  - "VIP (Venus Industrial Park) has no disclosed rupee capex figure anywhere in filed documents"
+  - "No R&D headcount, PhD count, or 3-year revenue-mix target disclosed"
+  - "PLI scheme duration/sunset date not disclosed"
+flags:
+  - "Venus Pharma GmbH (German subsidiary) flagged in Q1 FY27 auditor's emphasis of matter as facing financial challenges, Rs28.60Cr share application money outstanding - direct risk to the FY27 European audit A1/E1 depend on"
+  - "Rs20.84Cr (41% of FY26 CWIP) stuck in >3-year aging bucket, essentially unchanged YoY - documented execution gap inside the F2 category"
+  - "Sunev Pharma Solutions related-party IP purchase (director-linked, ~Rs30Cr, open governance item per Gate 0) sits undisaggregated inside the A2 patent-pipeline figure"
+em_score: 31
+em_classification: "STRENGTHENING"
+active_categories:
+  - {id: "A1", name: "Rare manufacturing capability", strength: "Strong", evidence_type: "documented", time_to_materialise: "12-24m"}
+  - {id: "A2", name: "Patent and IP pipeline", strength: "Moderate", evidence_type: "documented", time_to_materialise: "3-5yr"}
+  - {id: "A3", name: "Process innovation", strength: "Strong-Moderate", evidence_type: "documented", time_to_materialise: "0-12m"}
+  - {id: "C2", name: "Customer concentration improving", strength: "Moderate", evidence_type: "documented", time_to_materialise: "ongoing"}
+  - {id: "E1", name: "Geographic first-mover", strength: "Moderate-Strong", evidence_type: "documented", time_to_materialise: "0-12m"}
+  - {id: "F2", name: "Execution moat (mixed)", strength: "Moderate", evidence_type: "documented", time_to_materialise: "12-24m"}
+  - {id: "G1", name: "War chest", strength: "Strong", evidence_type: "documented", time_to_materialise: "0-12m"}
+  - {id: "G2", name: "WC improvement trajectory", strength: "Moderate", evidence_type: "documented", time_to_materialise: "0-12m"}
+  - {id: "H2", name: "Strategic partnerships", strength: "Moderate", evidence_type: "documented", time_to_materialise: "12-24m"}
+  - {id: "R1", name: "Regulatory/policy tailwind", strength: "Strong", evidence_type: "documented", time_to_materialise: "0-12m"}
+evidence_mix: {documented: 38, claim: 13, inference: 7}
+completionist_recount: "26 documented items across 10 active categories (A1:4, A2:4, A3:2, C2:1, E1:4, F2:3, G1:4, G2:1, H2:2, R1:2 cross-ref); 10 of 23 rows active, below the 12-category guard trigger"
+catalysts_12m:
+  - {catalyst: "VRP-048 CDSCO CTA filing", window: "4-6 quarters", evidence_type: "claim", anchor: "AR p.49-50"}
+  - {catalyst: "Major European market regulatory audit outcome", window: "FY27", evidence_type: "documented", anchor: "AR p.42, p.59"}
+  - {catalyst: "TVC facility BMS/STP-ETP commissioning", window: "H2 FY27", evidence_type: "documented", anchor: "AR p.67"}
+  - {catalyst: "First disclosed VIP rupee capex figure (or continued absence)", window: "FY27", evidence_type: "documented", anchor: "AR p.59"}
+capex_embedded_growth_pct: 16
+optionality_register:
+  - {optionality: "Venus Industrial Park, 100 Crore units/yr campus", converting_evidence: "Disclosed rupee capex commitment, land acquisition, construction start", first_appears: "AR capex note / exchange filing", window: "2027-2030"}
+  - {optionality: "Biopharma/biosimilars/cell&gene/vaccines/CDMO-CRO object-clause expansion", converting_evidence: "Named product, signed partner, or committed capex tied to new object clause", first_appears: "Exchange filing / future AR pipeline table", window: "NOT FOUND"}
+  - {optionality: "Exosome manufacturing capability", converting_evidence: "GMP-line commissioning or named manufacturing partnership", first_appears: "Future AR R&D section", window: "3-5yr+"}
+  - {optionality: "CRISPR/bacteriophage gene-editing delivery platform", converting_evidence: "IND/CTA filing or named development partner", first_appears: "Exchange filing / AR", window: "3-5yr"}
+  - {optionality: "VRP-048 CDSCO CTA filing", converting_evidence: "Actual CTA filing (currently only expected)", first_appears: "Exchange filing", window: "4-6 quarters"}
+  - {optionality: "Major European market approval (EU GMP major audit)", converting_evidence: "Audit pass / certificate issued", first_appears: "Exchange filing", window: "FY27"}
+  - {optionality: "Talent asymmetry (I1) structural claim", converting_evidence: "Named-inventor patent cross-reference + technical-staff remuneration above sector norm", first_appears: "Patent office records / AR remuneration annexure", window: "NOT FOUND"}
+combined_assessment: "GOOD+"
+combined_reasoning: "Gate 0 GOOD (71, moat 5/60 THIN) plus MOAT STRENGTHENING (31/92) forward: real documented forward activity (QIDP x2, CDSCO Phase 1, PLI cash, dividend resumption) but stops short of EXPANSION because VRP-034/048 are years from market, VIP has no disclosed capex, and one documented execution gap (aged CWIP) sits inside F2 itself."
+top_moat_risks:
+  - "Venus Pharma GmbH financial-challenge disclosure undercuts the FY27 European audit that A1/E1 depend on"
+  - "Rs20.84Cr CWIP stuck >3 years, unchanged YoY, inside the F2 execution category"
+  - "Sunev related-party IP purchase undisaggregated from the A2 patent-pipeline figure"
+  - "PLI cash inflow (Rs15.70Cr) has no disclosed sunset date"
+  - "VRP-034/048 pipeline revenue potential unquantified; Phase 1/preclinical stage carries high multi-year attrition risk"
+analyst_note: "I1 and I2 both scored 0 on clean absence of evidence, not a close call - no threshold crossing via I1/I2 for this name, a useful clean data point for the operator's 10-15-scan review checkpoint. The 2C capex-embedded-growth arithmetic diverges sharply by asset base (46% net-block vs 16% gross-block); net-block was rejected as an artefact of a heavily depreciated legacy asset base (WDV is 34% of gross carrying value) and only the conservative 16% figure is carried forward."

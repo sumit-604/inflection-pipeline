@@ -24,7 +24,7 @@ a. PARSE ARGUMENTS: the TICKER and the `--docs` list. Resolve each doc path
 b. PROTOCOL-FILE CHECK: verify the protocol(s) THIS run needs exist. If a
    needed one is absent, STOP and report which — never reconstruct a protocol
    from memory:
-   - frameworks/Document_Review_Protocol_v1_0.md (needed for a DOCUMENT REVIEW:
+   - frameworks/Document_Review_Protocol_v1_1.md (needed for a DOCUMENT REVIEW:
      a standalone presentation / press release / one-off disclosure with no
      results filing and no concall; this is A4's ONLY protocol for such a run)
    - frameworks/Quarterly_Results_Review_Protocol_v1_4.md (needed if a results

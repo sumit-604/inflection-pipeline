@@ -1,0 +1,22 @@
+stage: B12d
+company: "VENUSREM"
+run_date: "2026-09-02"
+model: claude-sonnet-5
+status: complete
+peers_audited: 23
+substantive_confirmed: 12
+substantive_unsupported: []
+unused_but_relevant:
+  - {peer: "SHILPAMED", missed_item: "May 2026 call mischaracterized CITED-ONLY ('nothing decisive'); contains RM/input-cost price-increase corroboration relevant to Claim 3 (platinum/API cost drag) and 2B pricing theme, plus a Jadcherla USFDA audit continuity update relevant to the 2E risk register", anchor: "SHILPAMED-Concall_May_2026_Transcript.txt p.15 (RM cost) and p.16 (Jadcherla Q&A)"}
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "MAJOR", item: "SHILPAMED May 2026 coverage-map label wrong (CITED-ONLY should be SUBSTANTIVE); two claim-relevant statements left unused", location: "B06 Part 3 coverage map"}
+  - {severity: "MINOR", item: "GLAND Aug 2026 page citation drift: Claim 6 cites p.5-6, true anchor p.4", location: "B06 Part 1 Claim 6"}
+  - {severity: "MINOR", item: "CAPLIPOINT Aug 2026 '5 to 17 sterile lines' quote cited within p.10-11 range, true anchor p.9", location: "B06 Part 2A / Part 3"}
+critical_count: 0
+major_count: 1
+minor_count: 2
+acceptance_rate: 96
+peer_utilisation: "18/23 substantive as classified by B06 (78%); audit finds 19/23 (83%) warranted given the SHILPAMED May 2026 misclassification"
+orchestrator_note: "1 MAJOR is a coverage-completeness finding (mislabeled peer call, corroboration left unused for the platinum/API-cost claim), not a source-fidelity CRITICAL; acceptance 96% > 60%, no REWORK. Confidence-delta peer_utilisation taken as 78% (B06 as-classified), audit upgrades to 83%."

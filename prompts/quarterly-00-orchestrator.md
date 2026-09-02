@@ -30,11 +30,16 @@ Gate 0 -> Role 4 (filing numbers) -> Role 5 (concall) -> FTTCP -> Role 1 ->
 Role 2 -> Role 3 -> Notion save. This pipeline produces the Role 4 / Role 5
 review that seeds that chain.
 
-Required protocol files (the orchestrator checks these exist BEFORE any
-analysis agent runs; absence is a hard STOP, never reconstruct from memory):
-- `frameworks/Quarterly_Results_Review_Protocol_v1_4.md`
-- `frameworks/Quarterly_Concall_Analysis_Protocol_v1_1.md`
-- `frameworks/Master_Project_Prompt_v3_6.md` (framework context, already present)
+Required protocol files (the orchestrator checks the one(s) THIS run needs
+exist BEFORE any analysis agent runs; absence is a hard STOP, never reconstruct
+from memory):
+- `frameworks/Document_Review_Protocol_v1_0.md` (a DOCUMENT REVIEW: standalone
+  presentation / press release / one-off disclosure; A4's ONLY protocol for
+  such a run, and the analyst-stage token discipline lives here)
+- `frameworks/Quarterly_Results_Review_Protocol_v1_4.md` (a results filing)
+- `frameworks/Quarterly_Concall_Analysis_Protocol_v1_1.md` (a concall)
+- `frameworks/Master_Project_Prompt_v3_6.md` (framework context by reference;
+  NOT an A4 input — the analyst never loads it)
 
 All figures in Rs Crores. Filing units (Lakhs / Crores / Millions) are
 detected and converted AT EXTRACTION, with the conversion factor stated in
@@ -156,14 +161,28 @@ subset was supplied):
 After all documents pass A1-A3:
 
 4. Invoke A4 (quarterly-a4-analyst) ONCE with: every A1 structured path, every
-   A1 fulltext path (verbatim reads only), every
-   A2 ledger path, every A3 forensics path, the protocol file paths, and the
-   live Notion thesis (the orchestrator fetches the company Notion page first
-   per Step 0A and passes its Decision Status and monitoring checklist inline;
-   subagents never call Notion themselves). A4 states the ledger-reconciliation
-   preamble, runs Role 4 and/or Role 5 in full step sequence, and writes the
-   merged review. Every A3 finding classified AMBIGUOUS or FORWARD-SIGNAL must
-   produce at least one Questions-for-Management row.
+   A1 fulltext path (verbatim reads only), every A2 ledger path, every A3
+   forensics path, the PROTOCOL FOR THIS RUN (doctype-conditional, below), and
+   the live Notion thesis (the orchestrator fetches the company Notion page
+   first per Step 0A and passes its Decision Status and monitoring checklist
+   inline; subagents never call Notion themselves). A4 states the
+   ledger-reconciliation preamble, runs the protocol in full step sequence, and
+   writes the merged review. Every A3 finding classified AMBIGUOUS or
+   FORWARD-SIGNAL must produce at least one Questions-for-Management row.
+
+   PROTOCOL SCOPING (the analyst-stage token discipline). Pass ONLY the protocol
+   this run needs; never pass the Master Project Prompt, FTTCP, the Section 1B
+   layer set, or the RDE manual to A4.
+   - DOCUMENT REVIEW (a standalone presentation / press release / one-off
+     disclosure, no results filing and no concall in --docs): pass ONLY
+     frameworks/Document_Review_Protocol_v1_0.md. Do NOT pass Role 4, Role 5, or
+     Master.
+   - FULL QUARTER (a results filing and/or concall in --docs): pass Role 4 for
+     the filing and/or Role 5 for the concall, as before. Master is framework
+     context by reference, not an A4 input.
+   NOTION vs SPEAR. If a live Notion thesis exists, pass it inline (thesis
+   check). If none exists, pass the Spear Pass template instead and tell A4 to
+   frame the output as a PRE-THESIS READ, not a thesis check.
 
    SIGNAL CONTEXT input note: if the operator supplies tracker rows for this
    ticker (from the DOWNSTREAM SIGNAL TRACKER), pass them to A4 as SIGNAL

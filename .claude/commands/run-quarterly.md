@@ -21,13 +21,18 @@ a. PARSE ARGUMENTS: the TICKER and the `--docs` list. Resolve each doc path
    are given, list candidate PDFs and ask which to run. This is the only
    permitted setup question.
 
-b. PROTOCOL-FILE CHECK: verify these exist. If any is absent, STOP and report
-   which — never reconstruct a protocol from memory:
+b. PROTOCOL-FILE CHECK: verify the protocol(s) THIS run needs exist. If a
+   needed one is absent, STOP and report which — never reconstruct a protocol
+   from memory:
+   - frameworks/Document_Review_Protocol_v1_0.md (needed for a DOCUMENT REVIEW:
+     a standalone presentation / press release / one-off disclosure with no
+     results filing and no concall; this is A4's ONLY protocol for such a run)
    - frameworks/Quarterly_Results_Review_Protocol_v1_4.md (needed if a results
      filing is in --docs)
    - frameworks/Quarterly_Concall_Analysis_Protocol_v1_1.md (needed if a
      concall is in --docs)
-   - frameworks/Master_Project_Prompt_v3_6.md (framework context)
+   - frameworks/Master_Project_Prompt_v3_6.md (framework context by reference;
+     NOT an A4 input — A4 never loads it)
 
 c. TOOLCHAIN PRECHECK: verify pdftotext, pdfinfo, pdftoppm, tesseract. If
    missing, attempt install (poppler-utils, tesseract-ocr). If that fails,

@@ -1,0 +1,50 @@
+stage: B09-tam
+company: "MODISONLTD"
+run_date: "2026-09-03"
+model: claude-sonnet-5
+status: partial
+input_gaps:
+  - "India-specific electrical contacts market report (valuates.com QYRE-Auto-38C15590) publish date could not be verified; WebFetch to source blocked by egress proxy, relied on search-snippet secondary reporting"
+  - "IMARC India switchgear components market page WebFetch blocked by egress proxy; relied on search-snippet secondary reporting"
+  - "LV/MV/HV revenue split not disclosed by Modison (per B04), preventing a precise back-calculation of an implied total market size from management's own segment-level share claims"
+  - "Installed capacity / utilization % NOT FOUND in AR or investor presentation, so Section 3C capacity cross-check is indirect/proxy-based only"
+  - "Contacts-as-%-of-switchgear-BOM ratio used in bottom-up Method 2 (3-8% range) is an unsourced analyst assumption, not a filed or published figure"
+  - "Volume vs metal-price split of FY26's 47% revenue growth NOT FOUND, so 'company CAGR vs TAM growth' in 5B partly reflects commodity-price inflation, not pure share gain"
+flags:
+  - "Market-size data for the 'electrical contacts and contact materials' category comes overwhelmingly from tertiary market-report-mill vendors (Precision Reports, valuates.com, Verified Market Reports, GlobalGrowthInsights) whose same-year global estimates for this category range USD 3.83B-6.5B (~1.7x), indicating low source reliability across Method 1"
+  - "Management gives no formal India-Rupee TAM figure; its only quantified market claims are unverified self-reported shares (LV 30-35%, HV 72-82%), and the same AGM Q&A also references an earlier, unreconciled 16-17% LV share figure"
+  - "SOM-implied revenue CAGR (~9.2-9.5%) is roughly HALF management's implied CAGR (~17.6%) to hit the Rs 1,360 Cr FY30 target - a material gap between share-gain-constrained modeling and management guidance"
+  - "FY26 capex (Rs 15.10 Cr) shows no committed capacity expansion behind the FY30 revenue target; growth to date has been working-capital-led, not capacity-led (per B07 input)"
+  - "India-specific top-down source (Method 1) contains an internal inconsistency: its stated India absolute value (USD 1,612M) does not reconcile with its own claimed 5.18%-of-global share (implies a ~USD 31B global market, 5-7x every other global figure found)"
+market_definition: "India electrical contacts and contact materials for LV/MV/HV power switchgear, circuit breakers and vacuum interrupters (industrial/utility segment only; excludes automotive and consumer-electronics contacts and finished switchgear assemblies)"
+tam_cr: {conservative: 2100, realistic: 4000}
+sam_cr: 2920
+sam_pct_of_tam: 73.1
+som_3yr_cr: 825
+som_5yr_cr: 984
+som_implied_revenue_cagr: {yr3: 9.53, yr5: 9.16}
+current_sam_share_pct: 21.4
+revenue_headroom_x: 4.11
+tam_growth_pct: 5.0
+runway_class: "GOOD"
+mgmt_claim_cr: 1360
+mgmt_claim_ratio: 0.65
+mgmt_claim_read: "conservative"
+capacity_check: "gap unquantified in Rs Cr - installed capacity/utilization NOT FOUND in AR; indirect flag - FY26 capex (Rs 15.10 Cr, non-capacity-led) shows no committed expansion behind the Rs 1,360 Cr FY30 target, so the revenue TARGET is the optimistic side of this comparison, not the SOM model"
+methods_used: ["top-down (global and India contacts market, end-use filtered)", "bottom-up (India switchgear market x BOM-value-share assumption)", "peer revenue aggregation (Modison + Shivalik + unorganized-sector estimate)", "global benchmark (capacity-share proxy, qualitative/directional only)"]
+stale_data_flags:
+  - {datapoint: "India electrical contacts & contact materials market USD 1,612.36M (2025)", source: "valuates.com QYRE-Auto-38C15590 (search snippet, primary page fetch blocked)", year: "publish date unverified; source also contains an internal 5.18%-of-global inconsistency"}
+  - {datapoint: "Global electrical contacts market USD 6.5B (2024) to USD 10.2B (2033)", source: "Verified Market Reports (search snippet)", year: "publish date unverified"}
+  - {datapoint: "India switchgear components market USD 2.4B (2025) to USD 3.9B (2034)", source: "IMARC Group (search snippet, primary page fetch blocked)", year: "publish date unverified"}
+  - {datapoint: "Global electrical contacts market USD 3.83B (2026) to USD 4.55B (2035)", source: "GlobalGrowthInsights (search snippet)", year: "publish date unverified"}
+searches_performed: ["Shivalik Bimetal Controls revenue FY2025 FY26 crore electrical contacts", "India electrical contacts market size crore silver contacts switchgear", "India switchgear components market contacts circuit breakers relays IMARC size 2025", "India electrical contacts and contact materials market size 2025 2033 CAGR valuates", "electrical contacts manufacturer India silver contacts company list Doduco private limited India", "Shivalik Bimetal Controls electrical contacts division growth FY26 outlook guidance capacity", "electrical contact materials percentage cost switchgear circuit breaker BOM silver tungsten component share", "electrical contacts and contact materials market share by end use industrial automotive consumer electronics percentage", "India renewable energy 500 GW 2030 switchgear demand data center capex India 2030", "India power transmission distribution capex 2026 2030 crore CEA investment plan T&D", "India switchgear market size crore CRISIL ICRA 2026 report", "electrical contacts and contact materials market India 1612.36 million 2025", "global electrical contacts contact materials market 6.5 billion 2024 10.2 billion 2033 CAGR", "USD to INR exchange rate September 2026", "Modison Ltd share price P/E ratio market cap September 2026"]
+searches_skipped: ["WebFetch imarcgroup.com/india-switchgear-components-market - blocked by egress proxy, compensated via search snippet", "WebFetch reports.valuates.com QYRE-Auto-38C15590 - blocked by egress proxy, compensated via search snippet"]
+downstream_candidates:
+  - {signal: "GE / Siemens / ABB / L&T / BHEL capex and order-book disclosures", entity_type: "end-customer", demand_link: "Named anchor OEM customers; their capex/order intake directly drives LV/HV contact orders", likely_source: "OEM investor-relations filings and capex announcements", cadence: "quarterly", shared: true}
+  - {signal: "CEA National Electricity Plan (Transmission) execution updates", entity_type: "regulatory", demand_link: "Rs 7.93 lakh Cr transmission capex programme is the largest structural driver for HV/MV switchgear demand", likely_source: "Central Electricity Authority (CEA) published plans and progress reports", cadence: "event-driven", shared: false}
+  - {signal: "MNRE renewable capacity addition data", entity_type: "macro", demand_link: "500 GW+ renewable target drives MV/HV switchgear demand for grid integration", likely_source: "Ministry of New and Renewable Energy monthly capacity-addition bulletins", cadence: "monthly", shared: false}
+  - {signal: "India data-centre capacity buildout trackers", entity_type: "macro", demand_link: "CEO links AI/data-centre growth directly to LV switchgear and contacts demand", likely_source: "JLL India / CBRE India / Cushman and Wakefield India data-centre reports", cadence: "quarterly", shared: false}
+  - {signal: "Silver (LBMA), copper (LME), tungsten APT prices", entity_type: "macro", demand_link: "87.1% of revenue is commodity pass-through; price moves drive both cost and reported revenue growth", likely_source: "LBMA silver, LME copper, Metal Bulletin/Argus tungsten APT", cadence: "monthly", shared: true}
+  - {signal: "Shivalik Bimetal Controls Ltd quarterly results, Electrical Contacts division", entity_type: "counterparty", demand_link: "Only other listed organized peer; its contacts-division growth is an independent category-demand proxy", likely_source: "Shivalik Bimetal Controls BSE/NSE quarterly filings and investor presentations", cadence: "quarterly", shared: false}
+demand_externally_verifiable: true
+analyst_note: "Two findings stage 11 should not rediscover from scratch. First, the SOM-implied revenue CAGR (9.2-9.5%) is roughly half management's implied CAGR (~17.6%) to hit Rs 1,360 Cr by FY30 - the gap is not explained by any disclosed capacity plan (FY26 capex Rs 15.10 Cr, non-capacity-led per B07), so treat the Rs 1,360 Cr target as needing either faster-than-normal share gains, price/mix tailwind from silver, or undisclosed capex, not as a market-size-validated number. Second, TAM/SAM figures here rest heavily on low-quality tertiary market-report vendors with internally inconsistent same-year global estimates spanning 1.7x; the peer-aggregation floor (Rs 2,060-2,100 Cr) is the most defensible number and happens to cross-check against management's own claimed 30-35% LV share, which is the main reason it anchors the conservative case."

@@ -1,0 +1,25 @@
+stage: B13-synthesis
+company: "MPSLTD"
+run_date: "2026-09-03"
+model: claude-opus-4-8
+status: complete
+phase: 1
+mode: LITE
+verdict: "PROCEED WITH CAVEATS"
+verdict_rule_applied: 3
+flags_active: ["FLAG-CASH", "FLAG-GATE0", "FLAG-EMOAT"]
+confidence_delta: {numerical: 87.5, redflag: 87, framework: 96, peer: 100, overall: 87.5}
+valuation_decision: "PENDING PHASE 3"
+entry_range: {low: 0, high: 0}
+headline: "Knowledge services compounder funding growth with debt"
+falsification_metric: "Q2 FY27 consolidated EBITDA run-rate materially below ~Rs 75 cr/quarter (undershooting the >Rs 300 cr FY27 floor with H2 FY26 already de-grown)"
+monitorables_count: 8
+publish_candidate: false
+publish_candidate_summary: ""
+cash_flag_determination: "INDETERMINATE — Leg 1 (current-ratio collapse) growth-induced/one-time (ICICI term loan for Unbound + one-time labour-code liability jump); Leg 2 (AJE ECL allowance +35.4% vs receivables +15.0%) a credit slip not resolvable to growth from the corpus. Missing evidence: consolidated AJE-level receivables ageing, absolute AJE revenue base, rating rationale (rating absent). Caps verdict at PROCEED WITH CAVEATS."
+files_written: ["outputs/final/business-narrative.md", "outputs/final/gate-recommendation.md", "outputs/final/verifier-summary.md"]
+notion_save:
+  page_title: "MPS Limited (MPSLTD) — Phase 1 Evidence Synthesis — 2026-09-03"
+  summary: "PROCEED WITH CAVEATS (rule 3, INDETERMINATE cash cap). Sticky STM knowledge services compounder, ~17% EBITDA CAGR since FY21, ROCE 38%, turned net-debt for the first time to fund M&A. FLAG-CASH INDETERMINATE, FLAG-GATE0, FLAG-EMOAT x2. Valuation deferred to phase 3."
+  drive_link: "NOT PROVIDED"
+  mode: append-never-overwrite-status

@@ -17,3 +17,4 @@ its own stage. Loop/retry runs get their own line with a run counter.
 | 6 | peers | claude-sonnet | - | - | - | 216616 | 4m01s | 1 |
 | 7 | emerging-moat | claude-sonnet | - | - | - | 168715 | 10m07s | 1 |
 | 9 | tam-sam-som | claude-sonnet | - | - | - | 117127 | 11m33s | 1 |
+| 12a | verifier-numerical | claude-haiku | - | - | - | 110862 | 3m34s | 1 |

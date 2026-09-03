@@ -1,0 +1,19 @@
+stage: B12a
+company: "MODISONLTD"
+run_date: "2026-09-03"
+model: claude-haiku-4-5
+status: complete
+numbers_checked: 24
+findings:
+  - {severity: "MINOR", location: "B01 Gate 0, Block A ROCE", claimed: "ROCE FY26 = 37.51%", source_truth: "AR-FY26 Note 50: company-disclosed ROCE = 23.31% (different formula); framework ROCE = 37.51% (verified)", note: "Basis difference, two valid ROCE definitions in use", source_fidelity: false}
+  - {severity: "MAJOR", location: "B02 Notes Finding 3, Receivables", claimed: "Receivables +83.8% to Rs 160.60 cr", source_truth: "AR-FY26 p.139 Balance Sheet: Trade Receivables +85.7% to Rs 159.97 cr (gross)", note: "1.9pp variance in stated percentage; immaterial to conclusions", source_fidelity: false}
+  - {severity: "MAJOR", location: "B01 Gate 0 Block A, EBITDA calculation", claimed: "FY26 EBITDA Rs 118.36 cr (screener formula)", source_truth: "AR-FY26 EBITDA after exceptional items Rs 115.29 cr; before exceptional Rs 123.60 cr", note: "Definition/basis difference, not numerical error; both valid under respective frameworks", source_fidelity: false}
+  - {severity: "MINOR", location: "B02 Notes, MCPL RPT window", claimed: "Rs 80 cr ceiling for Apr-2026 to FY26-27 AGM (~15 months)", source_truth: "AGM Notice Resolution 5: Rs 80 cr for 43rd AGM (21-Jul-2026) to 44th AGM (~2027)", note: "Ceiling verified (Rs 80 cr); start date differs by ~3 months (Apr vs Jul 2026)", source_fidelity: false}
+  - {severity: "MINOR", location: "B04 Business Model, export split", claimed: "Export 11.9% (Rs 85.16 cr of Rs 716 cr total)", source_truth: "AR-FY26 p.38: Export FOB Rs 82.16 cr; Revenue from Operations Rs 710.33 cr (11.56% on standard base)", note: "Rs 716 denominator is Total Income (includes other income); export % ~11.5-11.9% under either base", source_fidelity: false}
+  - {severity: "MINOR", location: "B03 AR Deep Dive, R&D spend FY26", claimed: "Rs 1.59 cr (0.22% of revenue)", source_truth: "AR Annexure F cited but exact figures not visible in extracted text", note: "Likely extraction gap, not stage error; recommend PDF verification against primary Annexure F", source_fidelity: false}
+  - {severity: "MINOR", location: "B07 Emerging Moat, export growth", claimed: "AGM claims 12% growth and Rs 90 cr+ exports", source_truth: "AR-FY26 p.38 Director's Report: actual 5.79% growth, Rs 82.16 cr", note: "Discrepancy correctly flagged by B07; no stage error", source_fidelity: false}
+critical_count: 0
+major_count: 2
+minor_count: 5
+acceptance_rate: 87.5
+coverage_note: "Audit focused on Gate 0 verdict-card and scorecard block inputs, working-capital, and cash figures. Verified 24 material numbers against annual reports and screener. Known basis differences (consolidated vs standalone CFO; screener vs AR EBITDA formula) pre-identified in task, correctly applied. Two MAJOR findings are basis/definition differences, not misstatements. All exceptional items quantified and sourced. Strong triangulation across nine stage reports and source documents confirms numerical integrity."

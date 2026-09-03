@@ -1,0 +1,61 @@
+stage: B00-inputs
+company: MPSLTD
+run_date: 2026-09-03
+model: orchestrator
+status: complete
+run_type: full
+spear_gate: "OVERRIDE 2026-09-03 (operator); entry <= Rs 1,775; MoS Rs 1,415; CMP Rs 2,635 (48% above entry); pre-positioning override, not a buy"
+spear_verification_priorities:
+  - "1. Q2 FY26 call (Nov-2025) M&A budget Rs 300-400 cr, 5 deals, Rs 150 cr min cash, Rs 200 cr debt capacity. NOTE: Q2 FY26 transcript NOT in corpus; verify status from Q3/Q4 FY26 + Q1 FY27 calls."
+  - "2. AJE revenue pruned USD 18M to 12M deliberately; ex-AJE Research +18.3% (secondary; verify against Q4 FY26 / Q1 FY27 transcripts + presentation)."
+  - "3. No-guidance policy stated Nov-2025 vs FY27 guidance issued May-2026 (credibility check; verify wording across calls)."
+  - "4. Platform margin 34.5% vs Content 41.2% (Q2 FY26) vs platforms 28% of revenue / 40% of PBT (Q2 FY25) (segment-mix check; verify against corpus segment disclosures)."
+
+inventory:
+  prospectus: 0        # absent; long-listed (56th AGM), NOT expected, not a gap
+  annual_report: 2     # FY2025-26 (56th, 171pp, PRIMARY, file misnamed Annual_Report_2022.pdf); FY2024-25 (55th, 163pp, backward)
+  results: 2           # Q1 FY27 (Jun-2026, unaudited); Q4+FY26 (Mar-2026, audited)
+  rating: 0            # ABSENT
+  concalls: 4          # Q3 FY26 (Feb), Q4 FY26 (May), Q1 FY27 (Jul) earnings + 1 Unbound Medicine acquisition call (Feb-2026)
+  peer_concalls: 16    # DATAMATICS, ECLERX, INDGN, NIITMTS (4 calls each)
+  announcements: 1     # operator-ferried SECONDARY summary Mar-Sep 2026 (NOT primary Reg 30 PDFs)
+  shareholding: 1      # screener.in SHP transcription Sep2023-Jun2026 (pledge data NOT included)
+  research: 7          # broker notes (NON-ANCHORED, leads only)
+  screening: 30        # screener + 4 peers x {BS, CF, Customization, Data_Sheet, PL, Quarters} csv
+  presentation: 1      # Investor_Presentation_1.pdf (14 slides, IMAGE-BASED, no text layer; agents must Read-render)
+  other: 0
+
+input_gaps:
+  - "prospectus: absent; long-listed, not expected, not a gap"
+  - "rating: ABSENT (real gap). Stage 10 rating_wc_quote unresolved; Stage 11 Pillar 2 defaults conservative. MPS is near debt-free, may be genuinely unrated."
+  - "announcements: PRIMARY Reg 30 filings ABSENT; only an operator-ferried SECONDARY summary present (tier: leads/management-intent, non-anchored). Every figure must be verified against corpus filed PDFs. Documented-ACTION grading degraded per DEGRADATION MAP; Unbound acquisition call partly covers M&A action."
+  - "shareholding: SHP present via screener transcription (anchorable). Promoter PLEDGE data NOT included in this source; pledge trend remains a residual gap; Stage 8 falls back to AR for pledge."
+  - "spear priority 1: Q2 FY26 (Nov-2025) concall NOT in corpus; M&A-budget status must be reconstructed from Q3/Q4 FY26 + Q1 FY27 calls, flagged where unconfirmed."
+
+freshness_pairs:
+  - pair: "RESULTS to CONCALL"
+    trigger_doc: "Results Q1 FY27 (qtr ended 30 Jun 2026)"
+    mate_expected: "Q1 FY27 concall"
+    status: PASS
+    missing_doc: "none (Concall_Jul_2026 held 22 Jul 2026 covers Q1 FY27)"
+  - pair: "RATING BULLETIN to RATIONALE"
+    trigger_doc: "none (rating/ empty)"
+    mate_expected: "n/a"
+    status: PASS
+    missing_doc: "none (no rating bulletin present; not a freshness fail)"
+  - pair: "SEBI ORDER to ORDER TEXT"
+    trigger_doc: "none referenced in inventory"
+    mate_expected: "n/a"
+    status: PASS
+    missing_doc: "none (stages surface if any filing references a SEBI order)"
+  - pair: "AR to LATEST AUDITED ANNUAL RESULTS"
+    trigger_doc: "Audited FY26 annual results (yr ended 31 Mar 2026)"
+    mate_expected: "FY2025-26 (56th) Annual Report"
+    status: PASS
+    missing_doc: "none (FY26 56th AR present, file misnamed Annual_Report_2022.pdf)"
+freshness_verdict: "FRESHNESS PAIRS OK"
+
+flags:
+  - "manifest sector_cap_row auto-picked wrong (Pharma/CDMO); corrected by operator to Consulting / Engineering services (cap 25x)"
+  - "AR filename Annual_Report_2022.pdf is really the FY2025-26 (56th) AR; corpus filename misleading"
+analyst_note: "Corpus is strong on the read-heavy side (2 full ARs, 3 quarterly earnings calls + 1 M&A call, 16 peer calls across 4 named peers, full screener sets). Weak on filed announcements and rating. Shareholding and announcements arrived operator-ferried, not as filed PDFs: shareholding is anchorable primary data (pledge excluded), the announcements narrative is leads-only and every figure needs corpus confirmation. Spear override, not a HIT: run is pre-positioning; entry Rs 1,775 pre-registered."

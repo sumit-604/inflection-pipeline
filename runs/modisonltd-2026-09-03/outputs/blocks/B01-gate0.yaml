@@ -1,0 +1,34 @@
+stage: B01-gate0
+company: "MODISONLTD"
+run_date: "2026-09-03"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "no filed shareholding-pattern PDF in this stage's source set: Block E1/E2/E3 (promoter holding, 3yr change, pledge) scored 0, N/A (not in provided data). NOTE: promoter holding IS in the FY26 AR and the operator screener lead; downstream stages 8/10 anchor it."
+  - "no announcements/ folder: not scored by Gate 0 but carried forward per B00"
+  - "Data_Sheet.csv balance sheet lacks a Current Liabilities / Trade Payables line for FY16-FY23: ROCE (A1/A2/A4) and Payable-Days-dependent metrics (B2/B3/B4) computed on a precise FY24-FY26 window only, not estimated for earlier years"
+flags:
+  - {type: FLAG-GATE0, reason: "Classification AVERAGE (Core 50/100) driven by Block B = 0/20: cumulative CFO/PAT 0.24x over FY16-26, three straight negative-CFO years FY24-26 (-3.89, -16.10, -64.19 cr) against rising PAT (21.36 to 72.54 cr), funded by a Rs 101.71 cr one-year borrowings jump FY25-FY26 and a working-capital-days rise of ~50 days FY24-FY26. Deal-breaker #4 (cumulative CFO/PAT <0.50) caps classification at max AVERAGE."}
+  - {type: FLAG-CASH, reason: "Three consecutive negative operating cash flow years despite rising PAT; growth (revenue +44.9% FY25-26) funded by debt (+139.8%) and a receivables/inventory build that outran revenue growth. Growth-induced-vs-structural determination needed downstream with receivables ageing and the full 3-year CFO trend."}
+  - {type: FLAG-DATA-GAP, reason: "Shareholding pattern not filed in corpus provided to this stage; Block E1-E3 unscored (0) pending a filed anchor at a later stage."}
+data_years: 10
+fy_range: "FY16 to FY26 (FY19 missing)"
+blocks: {A: 13, B: 0, C: 17, D: 15, E: 5}
+core_score: 50
+moat_score: 16
+grand_total: 66
+moats_confirmed: 4
+moat_class: "STRONG"
+classification: "AVERAGE"
+deal_breakers: ["Block B <8 (max GOOD)", "cumulative CFO/PAT <0.50 (max AVERAGE)"]
+history_downgrade: false
+data_notes:
+  - "EBITDA computed as Sales - Raw Material Cost + Change in Inventory - Power&Fuel - Other Mfr Exp - Employee Cost - Selling&Admin - Other Expenses (sign convention on Change in Inventory verified against the Quarters block's own Operating Profit row, which the annual figure reconciles to within ~1%)"
+  - "ROCE (A1/A2/A4): precise 3-year window (FY24-FY26) only; company's own AR-disclosed ROCE (different capital-employed definition: Net Worth+Lease Liab+DTL+Borrowings) reads 23.31% FY26 / 13.39% FY25, directionally consistent"
+  - "ROE (A3) cross-validated: computed FY25 11.75% and FY26 29.53% match the AR's own disclosed Return on Equity Ratio of 11.76% and 29.55% almost exactly (AR-FY26 p.182, Note 50)"
+  - "FCF (B2/B3) precise for FY24-FY26 only; FY16-FY23 capex cannot be isolated from Data_Sheet's aggregate Cash from Investing Activity line, which the AR shows contains non-capex items (ICD movements, investment purchases/sales, interest received) material enough (~Rs 6.85 cr in FY25 alone) to distort a CFI-as-capex proxy - marked NOT FOUND rather than approximated"
+  - "M9 Brand gross-margin proxy computed for reference only, not scored: (Revenue-Raw Material Cost)/Revenue = 16.13% FY25, 12.85% FY26 (PEER DATA NEEDED to score)"
+  - "M11 Network Effects passes the mechanical test (accelerating 3yr revenue CAGR, declining selling-expense ratio) but the underlying business (electrical contacts component manufacturer) has no genuine network-effect economics; flagged as a mechanical artifact, downstream stages should discount this moat"
+  - "One data reconciliation gap left unresolved: Data_Sheet's FY24 Cash from Investing Activity (-15.40 cr) does not match the AR-disclosed FY24 investing cash flow (-20.54 cr consol / -20.28 cr standalone, per the FY25 AR's comparative column); Data_Sheet used as primary per instructions, AR capex figure substituted only for the FCF capex component, discrepancy not otherwise resolved"
+block_b_trend: "deteriorating - cumulative CFO/PAT 0.24x over 10 years (FY16-26); most recent 3 years alone: CFO -3.89, -16.10, -64.19 cr against rising PAT (21.36 to 72.54 cr), funded by a Rs 101.71 cr one-year borrowings jump FY25-FY26"
+analyst_note: "Block B (0/20) is the whole story of this scorecard: every one of its four sub-metrics independently lands in the bottom scoring band, and it is corroborated across three independent evidence lines (Data_Sheet CFO series, AR-precise capex/payables for FY24-26, and the borrowings jump). Growth (Block C, 17/20) and near-term balance-sheet ratios (Block D, 15/20) both look strong in isolation, which is exactly the pattern a growth-funded-by-debt story produces before it shows up in interest coverage or gearing. ROCE and WC-days precision is confined to a 3-year window because Data_Sheet.csv never carries a Current Liabilities or Trade Payables line; this is a genuine source-granularity gap, not a shortcut, and it does not change Block B's verdict since B1 (the softest-data sub-metric) already uses the full 10-year window and lands at 0.24x on its own. Promoter alignment (Block E) is unscored on filed evidence, not adverse; treat E's 5/20 as a data gap flag for the next stage, not a governance finding."

@@ -7,3 +7,4 @@ its own stage. Loop/retry runs get their own line with a run counter.
 |---|-------|-------|--------|--------|---------|-----------|------|------|
 | 0 | input-validation | orchestrator-opus-4-8 (inline) | - | - | - | - | - | 1 |
 | 2 | notes-pass1 | claude-sonnet | - | - | - | 139801 | 7m40s | 1 |
+| 1 | gate0 | claude-sonnet | - | - | - | 111941 | 11m32s | 1 |

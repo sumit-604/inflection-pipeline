@@ -1,0 +1,52 @@
+stage: B09b-dossier
+company: "VILAS"
+run_date: "2026-09-03"
+model: claude-sonnet-5
+status: complete
+corpus_verdict: "CORPUS GAPPED-FRESHNESS"
+corpus_gaps:
+  - document: "FY26 Annual Report"
+    expected_source: "BSE/NSE exchange filing / company IR page"
+    kind: "freshness-pair"
+  - document: "Prospectus/DRHP (IPO, May-2024)"
+    expected_source: "NSE Emerge SME platform archive / company IR page"
+    kind: "findable-missing"
+  - document: "Announcements primary PDFs (AGM outcome, capital-raise filings)"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "Shareholding pattern primary exchange filing (with pledge column)"
+    expected_source: "BSE/NSE"
+    kind: "findable-missing"
+archetypes:
+  - line: "CRGO lamination/core conversion (core business, ~98% of FY25 revenue)"
+    archetype: "Commodity converter (Section 1B v3.7 Amendment 17 binds)"
+transition:
+  - line: "CRGO conversion (core business)"
+    from_tier: "R2 COST-ADVANTAGED CONVERTER"
+    to_tier: "R3 VALUE-ADDED / SPEC'D SUPPLIER (claimed, unproven)"
+    engine: "Unit-3 utilisation ramp absorbing the new fixed-cost base; product-mix shift into nanocrystalline cores, copper conductors, HV bushings, radiators"
+    proof_gate: "Unit-3 utilisation at/above the old base's ~90% norm for two consecutive quarters, cross-checked against gross margin recovering to >=20%, AND at least one new line at/above its latest guided run-rate for two consecutive quarters"
+    recognition_gap: "Open question, not concluded here - whether the market already reflects the claimed climb toward a diversified, spec'd component supplier; resolved at Stage 11 via the destination-PE gap"
+    ugliness: "ARTIFACT-OF-CLIMB"
+    transition_falsifier: "Unit-3 utilisation stalls materially below the old base's ~90% norm for several quarters running AND two or more of the four new lines (nano, copper, radiator, HV bushings) fail to reach even their already-once-cut FY27 targets"
+dominant_variables:
+  - "Unit-3 utilisation and CRGO volume vs the FY27 ~30,000 MT guide"
+  - "Spread per kg (realised price minus landed CRGO/copper input cost)"
+  - "New-line revenue delivery vs guidance (nanocrystalline, copper, radiator, HV bushings)"
+  - "Working-capital intensity (receivable/inventory/payable days) normalising as capex deploys"
+business_falsifier: "Either (a) a sustained multi-quarter CRGO price collapse below the cost curve that scale cannot offset, given 100% import dependence and zero forward-contract hedging, or (b) the governance/disclosure pattern (unexplained ~78,000-share promoter reduction, Atlas Transformers bidirectional RPT concentration and ceiling-consumption pace, undisclosed-terms SMT Packaging advance, recurring AR arithmetic tie-failures) escalating into a confirmed related-party value-extraction finding"
+mental_model_status: "DRAFT - PENDING OPERATOR SIGN-OFF"
+fragility:
+  variable_count: 7
+  verifiability_ratio: "5 of 7 externally observable"
+  single_point_failure: "none - failure requires conjunction (CRGO price/spread collapse flagged as the dominant single risk within that conjunction)"
+  fragility_verdict: "FRAGILE"
+candidate_count: 7
+research_brief_items: 8
+plain_summary_points: 15
+annex:
+  present: true
+  mode: "operator-substitution 2026-09-03: ten standing questions answered off-session and deferred (not re-run); five operator priority extractions answered from corpus instead"
+  questions_answered: 10
+  priority_extractions_answered: 5
+  corpus_commit_hash: "280e2d81a2c8668f6707b6d2b04a3353dc87ef3d"

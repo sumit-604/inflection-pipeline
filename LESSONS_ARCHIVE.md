@@ -279,3 +279,27 @@ Leveraged C&I renewable IPP, IPO Feb-2026. Verdict on evidence PROCEED WITH CAVE
 - CORPUS: announcements/ and shareholding/ folders empty at start; operator supplied both mid-turn as pasted text + a Screener screenshot. Filed as [SECONDARY] operator-ferried with explicit tier caveats (verifier A cannot cross-check them against a filed PDF). No empty-folder pause was needed after the prospectus was recovered and these two were filed.
 - EVIDENCE WIN: verifier B resolved B06's self-declared "single most consequential" open question. Bikaner 525 MW is on TGNA (not GNA), so its ~70% curtailment is NOT revenue-protected (~Rs170 Cr real hit) — disclosed in CleanMax's OWN Q3/Q4 concalls but missed by B05. The verifier layer earned its keep.
 - THESIS TENSION carried to Halt 1: FY26 operating-profit crossover coincides with three same-year accounting choices (useful-life 25->30yr, impairment discount-rate change, interest capitalisation ~Rs312-329 Cr making true all-in interest ~Rs1,100 Cr vs Rs786 Cr P&L). Crossover treated UNPROVEN pending a rebuilt PBT; single-point falsifier = Q2 FY27 operating PBT ex-other-income < 0 (late Oct-2026). Section 3 framework exception (IPP EV/EBITDA vs PE cap) remains UNSIGNED; blocks Section 1B in Phase 3.
+
+## 2026-09-03 — VILAS (vilas-2026-09-03) phase 1 (evidence)
+- Results PDFs: FY26 audited results (16.7 MB) exceeded the Read-tool media limit and
+  read as empty via the subagent Read path; extracted to a pypdf text sidecar
+  (_sidecar_FY26_audited_results.txt) which carried the FY24/FY25/FY26 current/non-current
+  balance-sheet split. H1 FY26 results PDF is image-only (no text layer) - needs OCR,
+  left unverified. Gate 0 first attempt scored a false AVOID on the unreadable PDFs;
+  re-ran clean to AVERAGE after the sidecar fix.
+- Verifier A (Haiku) first attempt failed prompt-too-long: the large injected base
+  context this session leaves Haiku little room for full-corpus + all-reports. Re-ran
+  lean (financial source-fidelity core vs screener Data_Sheet + sidecar). Both Verifier A
+  MAJOR source-fidelity flags (current ratio, payable days) were verifier arithmetic
+  slips, cleared at source and logged in verifier-disagreement-log.md.
+- Stage 3 and Stage 8/9 agents sometimes returned the YAML block only in the reply, not
+  written into the report file; orchestrator extracted from the message and appended the
+  fence. Consider reinforcing "write the fence into the file" in those stage prompts.
+- Manifest sector_cap_row auto-picked "Pharma / CDMO" for a CRGO electrical-steel
+  converter (collector error); carried CONVERTER (Amdt 17) manually, flagged for stage 10.
+- Company screener CSVs except Data_Sheet were empty templates; Data_Sheet held the real
+  7-year P&L/BS/CF.
+- Operator substitution: the ten Standing Extraction Annex questions were answered
+  off-session; Section 6 carried the five operator priority extractions instead. Not a
+  defect; documented at Halt 1.
+- Clean otherwise. Verdict PROCEED WITH CAVEATS (freshness cap, missing FY26 AR).

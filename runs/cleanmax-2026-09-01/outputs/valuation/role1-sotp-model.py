@@ -241,6 +241,18 @@ for dshift in (-0.015,0.0,0.015):
         row.append(bb['eps'])
     print(f"  {dshift*10000:+.0f}bps: " + "  ".join(f"Raj{p:.0%}=Rs{v:,.0f}" for p,v in zip((0,0.5,1.0),row)))
 
+print("\nDE-RISKED B2 grid (operating life at 8%+shift, capex at 11%+shift):")
+for dshift in (-0.015,0.0,0.015):
+    row=[]
+    e1 = bucket1_dcf(r1+dshift,False)[0]
+    e4 = bucket4_dcf(r4+dshift)[0]
+    for rp in (0.0,0.5,1.0):
+        e2 = bucket2_dcf(r2+dshift, rp, op_rate=r1+dshift)[0]
+        gEV = e1+e2+0+e4
+        bb=bridge(gEV,netdebt_ar,co_own,complexity,survival,"")
+        row.append(bb['eps'])
+    print(f"  {dshift*10000:+.0f}bps: " + "  ".join(f"Raj{p:.0%}=Rs{v:,.0f}" for p,v in zip((0,0.5,1.0),row)))
+
 # ============================================================
 # 8. KEY COMPARISON, ENTRY PRICE, MULTIPLES CROSS-CHECK
 # ============================================================

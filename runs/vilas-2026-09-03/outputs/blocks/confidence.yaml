@@ -1,0 +1,15 @@
+confidence_delta:
+  numerical_acceptance: 96.6      # B12a effective, after clearing 2 false-positive MAJORs (raw reported 89.7)
+  numerical_acceptance_raw: 89.7  # B12a as reported
+  redflag_coverage: 73            # B12b: 16 caught + 2 partial of 22 independently-found flags
+  framework_adherence: 100        # B12c Gate 0 + Emerging Moat portion; valuation-adherence PENDING phase 3
+  peer_utilisation: 92            # B06 used 11 of 12 peers substantively; see caveat
+  peer_accuracy_b12d: 75          # B12d acceptance: 3 MAJOR attribution errors in B06 (misquote, wrong-call, false-unreadable)
+  overall: 73                     # min of the four component axes; redflag_coverage binds
+  band: "60-74: PROCEED verdicts downgrade one level"
+  valuation_adherence: pending    # phase 3 (verifier C valuation half, B10/B11)
+notes:
+  - "Two Verifier A source-fidelity MAJORs (current ratio, payable days) cleared at source; logged in verifier-disagreement-log.md. Report figures correct."
+  - "peer_utilisation (coverage) is high at 92%, but B12d flags 3 MAJOR accuracy errors in B06's peer attributions (acceptance 75%); peer evidence reliability is tempered, not the utilisation count."
+  - "framework_adherence covers only Gate 0 + Emerging Moat in phase 1; the valuation-adherence audit runs in phase 3."
+  - "Verifier A ran on Haiku (cross-family binding read) but only after a lean re-scope: the full-corpus first attempt failed prompt-too-long on Haiku's window in this session; the re-run audited the financial source-fidelity core against the screener dataset and the FY26 sidecar. Qualitative-number fidelity is covered by Verifiers B (concall) and D (peers)."

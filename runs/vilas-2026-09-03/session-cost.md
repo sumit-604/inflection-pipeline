@@ -20,3 +20,5 @@ Per-stage token ledger. One line per subagent run.
 | 12b | verifier B redflags | claude-opus-4-8 | default | n/a | n/a | 232166 | 5m53s | 1 |
 | 12c | verifier C framework (phase-1) | claude-opus-4-8 | default | n/a | n/a | 93792 | 4m41s | 1 |
 | 12a | verifier A numerical (haiku, first attempt) | claude-haiku-4-5 | default | n/a | n/a | 0 | fail: prompt-too-long | 1 |
+| 12a | verifier A numerical (haiku, lean re-scope) | claude-haiku-4-5 | default | n/a | n/a | 83490 | 3m12s | 2 |
+| 12d | verifier D peer coverage | claude-sonnet | default | n/a | n/a | 570855 | 6m23s | 1 |

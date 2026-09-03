@@ -1,0 +1,24 @@
+stage: B12d
+company: "VILAS"
+run_date: "2026-09-03"
+model: claude-sonnet-5
+status: complete
+peers_audited: 12
+substantive_confirmed: 9
+substantive_unsupported:
+  - "PITTIENG Aug-2026 (one of two cited quotes attributed to Akshay Pitti was actually spoken by analyst Mohit Jain)"
+  - "544310/Yash Jan-2025 (the cited qualification-cycle risk quote is actually from the Jun-2025 call, not Jan-2025)"
+unused_but_relevant:
+  - {peer: "PITTIENG", missed_item: "H1 FY26 (May-2026) call marked UNUSED on a false 'file unreadable' claim; file is fully readable and contains a fourth, chronologically earlier, independent confirmation of the West Asia/war input-cost shock central to Q7 (opening remarks and Dhiral Shah Q&A on LPG/petroleum supply issues from March 1, close of FY26)", anchor: "PITTIENG-Concall_May_2026_Transcript.pdf, opening remarks + Dhiral Shah exchange"}
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "MAJOR", location: "B06 peer_coverage_map, PITTIENG H1 FY26 (May-2026) row", description: "File marked UNUSED with the stated reason 'tool returned no extractable text on two attempts'; independently re-read in full with clean text extraction. Contains claim-relevant West Asia/LPG cost-shock commentary from Q4 FY26 close, predating and corroborating the Aug-2026 citation already used for Q7."}
+  - {severity: "MAJOR", location: "B06 Part 1 Q7 evidence table + peer_coverage_map, PITTIENG Aug-2026 row", description: "Quote 'we had some LPG issues. Not only we, the entire industry, because of the war' is presented as an Akshay Pitti (management) statement; in the transcript it is spoken by analyst Mohit Jain as a question premise, not by management."}
+  - {severity: "MAJOR", location: "B06 risks_peers_raise list + peer_coverage_map, 544310/Yash Jan-2025 row", description: "The 2-4 year bushing customer-qualification-cycle quote ('it generally takes a time while for people to accept a new make... maybe two years, three years') attributed to the Jan-2025 call does not appear there; it is from the Jun-2025 (FY25 results) call, Lakshminarayanan K G exchange."}
+  - {severity: "MINOR", location: "B06 industry_cross_read.demand / Part 2 Q4", description: "'demand continues to be significantly exceed global supply capacity' is described as appearing 'Oct-2025/May-2026, repeatedly'; the exact sentence is confirmed only in the May-2026 opening remarks. Oct-2025 carries the same sentiment in different words, not the identical phrase."}
+  - {severity: "MINOR", location: "B06 Part 1 Q7 evidence table, Yash citation", description: "'a forex hit already showing in finance costs (Keyur Shah)' is a reasonable paraphrase of the currency-hedging discussion in the May-2026 call but is not a direct quotation; no exact matching sentence located."}
+critical_count: 0
+major_count: 3
+minor_count: 2
+acceptance_rate: 75

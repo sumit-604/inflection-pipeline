@@ -1,0 +1,28 @@
+stage: B12b
+company: "MPSLTD"
+run_date: "2026-09-03"
+model: claude-opus-4-8
+status: complete
+independent_flags_found: 15
+caught: 8
+partially_caught: 5
+missed:
+  - {severity: "MAJOR", item: "Record FY26 EPS 102.11 flattered by +INR 7.64 cr positive exceptional; underlying ex-exceptional EPS ~97-98, below the INR 100 milestone", anchor: "Q4 FY26 call, Prarthana Agarwal, p.2-3"}
+  - {severity: "MINOR", item: "Unbound founder/CEO Bill Detmer moved to advisor role at close; key-person risk for a domain-authority asset", anchor: "Unbound acquisition call, Rahul Arora, p.12, p.14"}
+pipeline_flags_not_supported: []
+promise_delivery_spot_checks: {checked: 5, confirmed: 5, wrong: 0}
+credibility_grade_concur: "would grade lower — EPS>100 cleared only via a +7.64cr exceptional and on H2 de-growth; a Feb dividend promise was reversed in May; B-/borderline, bear weight nearer 30-35% than 25%"
+redflag_coverage: "53% fully caught (8/15); 87% at least partially caught (13/15); one material miss (record EPS flattered by exceptional)"
+findings:
+  - {severity: "MAJOR", location: "B05 2A promise-delivery table / 4D red flags", claim: "record FY26 EPS 102.11 treated as clean; positive INR 7.64 cr exceptional not flagged", note: "underlying ex-exceptional EPS ~97-98 < 100; affects Role 1 entry-EPS basis"}
+  - {severity: "MAJOR", location: "B05 2E repeated-question tracker", claim: "no repeated evasion beyond Unbound revenue", note: "forex/organic-adjusted growth deflected in Q4 (Gunit Singh) and Q1 (Nachiket Kale)"}
+  - {severity: "MAJOR", location: "B05 2A row 'EPS >100 delivered'", claim: "scored delivered without caveat", note: "FY26 EPS 102.11 < Q2-FY26 TTM 104; H2 FY26 earnings declined"}
+  - {severity: "MINOR", location: "B05 4D dividend flag (LOW)", claim: "dividend withholding transparently disclosed", note: "contradicts acquisition-call promise (Feb) that distribution continues 'for the foreseeable future'; cross-call reversal not connected"}
+  - {severity: "MINOR", location: "B05 1C / trigger table (Unbound margin)", claim: "margin-ramp slippage caught", note: "Unbound called 'high-margin' in Q3 vs disclosed 14-19%; characterization gap not flagged"}
+  - {severity: "MINOR", location: "B05 4D / 2D management-turnover flag (LOW)", claim: "turnover acknowledged, never specified", note: "COO Sreenivas T.V. introduced as new hire in Q3, absent from Q4 panel one quarter later"}
+  - {severity: "MINOR", location: "B05 (Unbound acquisition coverage)", claim: "founder transition not addressed", note: "Bill Detmer moved to advisor at close; key-person risk"}
+critical_count: 0
+major_count: 3
+minor_count: 4
+acceptance_rate: 53
+orchestrator_note: "This block's acceptance_rate field (53) is the FULLY-caught red-flag share (8/15). The Section-5 confidence-delta metric redflag_coverage is 'share of verifier-found flags CAUGHT upstream'; counting a partially-caught flag as surfaced-upstream gives 87% (13/15). Both are recorded. The two genuine MISSES are additive and will be folded into the final flag set by synthesis: (1) MAJOR - record FY26 EPS 102.11 flattered by +7.64cr exceptional, ex-exceptional ~97-98 (binds the Role 1 entry-EPS basis in phase 3); (2) MINOR - Unbound founder Bill Detmer to advisor (key-person). Verifier B recommends a lower credibility grade (B-/borderline) than B05's B. Verdict selection and the strict-vs-lenient REWORK-threshold reading are stage 13's call, with this block in full view."

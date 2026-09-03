@@ -1,0 +1,22 @@
+stage: confidence-delta
+company: "MPSLTD"
+run_date: "2026-09-03"
+phase: 1
+confidence_delta:
+  numerical_acceptance: 87.5      # B12a; 32 numbers checked, 1 source_fidelity:true (AJE 18m->12m ANCHOR NOT FOUND, an operator SPEAR figure every stage already flagged), no fabricated/misread stage number
+  redflag_coverage: 87            # B12b; 13/15 verifier-found flags at least surfaced upstream (Section-5 "caught upstream"). See strict_reading below.
+  framework_adherence: 96         # B12c, PHASE-1 SCOPE ONLY (Gate 0 + Emerging Moat); valuation-adherence component pending phase 3
+  peer_utilisation: 100           # B12d; 4/4 peers used substantively (peer-entity basis)
+  overall: 87.5                   # min of the four available components
+band: "75-89 NORMAL — note specifics"
+valuation_adherence_component: "PENDING PHASE 3 (verifier C B10/B11 audit not run in phase 1)"
+rework_gate: "NOT TRIGGERED on available evidence. Verifier A (the sole fabrication/source-fidelity authority) is at 87.5% with zero fabricated or materially-misread stage numbers; its one source_fidelity:true item is an ANCHOR NOT FOUND on an operator SPEAR figure (AJE 18m->12m) that every reading stage independently flagged, with a corpus-anchored substitute (B07 AR-level AJE LLC ~USD 12m). No CRITICAL numerical finding in the REWORK sense (fabricated/misread)."
+strict_reading_caveat: "Verifier B's block sets its acceptance_rate field to 53 (FULLY-caught red flags, 8/15). A strict literal reading of the REWORK gate ('any verifier acceptance_rate < 60') would brush REWORK. This is recorded, not buried. Basis for using 87 as redflag_coverage: the Section-5 metric is 'share of verifier-found flags already CAUGHT upstream'; 13/15 flags were at least surfaced in B05, and the two genuine misses are ADDITIVE (a MAJOR - record FY26 EPS 102.11 flattered by +7.64cr exceptional, ex-exceptional ~97-98; and a MINOR - Unbound founder Bill Detmer to advisor), now folded into the final flag set rather than evidence the analysis is untrustworthy. VERDICT SELECTION IS STAGE 13's CALL with both readings in full view."
+specifics_to_carry:
+  - "SOURCE-FIDELITY (binds downstream, non-overridable): AJE 18m->12m magnitude is ANCHOR NOT FOUND in concalls; may NOT enter any verdict card / Section 1B pillar as anchored. Use B07 AR-level AJE LLC ~USD 12m (Directors' Report p.38-39) or treat segment-level AJE as NOT FOUND."
+  - "Record FY26 EPS 102.11 is flattered by a +Rs 7.64cr positive exceptional; ex-exceptional EPS ~97-98 (below the Rs 100 milestone). Binds the Role 1 entry-EPS basis in phase 3."
+  - "Screener-derived FY26 consolidated borrowings (60.63cr) diverge Rs 24.38cr from audited BS (36.25cr); stage 10/11 must use the audited BS figure."
+  - "Credibility: verifier B recommends B-/borderline vs B05's B; bear weight nearer 30-35%."
+  - "B06 peer citations carry date/quarter transpositions (facts correct, cells mis-dated, source_fidelity:false) and under-mined NIITMTS's quantified Corporate-Learning client-budget pullback; fold that deterioration into the Corporate Learning cross-read."
+disagreement_log_seed:
+  - "Verifier A source_fidelity flag (AJE 18m->12m ANCHOR NOT FOUND) vs SPEAR-supplied figure: disposition = figure not used as anchored; corpus-anchored substitute (AR AJE LLC ~USD 12m) carried instead. GATE HELD — figure corrected at source."

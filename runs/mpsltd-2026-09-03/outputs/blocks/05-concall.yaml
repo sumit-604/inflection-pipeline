@@ -1,0 +1,75 @@
+stage: B05-concall
+company: "MPSLTD"
+run_date: "2026-09-03"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Q2 FY26 (Nov-2025) earnings call transcript not in corpus; SPEAR-flagged M&A budget figures (Rs 300-400 cr, 5 deals, Rs 150 cr min cash, Rs 200 cr debt capacity) cannot be confirmed, only partially and directionally corroborated via later calls"
+  - "AJE absolute revenue (before/after pruning) never disclosed in any of the four documents read; only ex-AJE growth rates and qualitative 'pruning' commentary available"
+  - "Platform-only (HighWire/DigiCore Pro/THINK365) revenue or PBT split within Research segment never quantified standalone in any call"
+flags:
+  - "no-guidance self-description persists alongside formal multi-quarter EPS/EBITDA/revenue guidance"
+  - "Unbound EBITDA-margin ramp behind the specific timeline promised at acquisition (early 20s by second quarter promised; 18-20% delivered)"
+  - "Vision 2027 segment-mix target quietly revised from 40:40:20 to ~55:35:10 without being flagged as a change by management"
+  - "management-level turnover (exits/replacements) acknowledged but never specified"
+quarters_analysed: ["Q3 FY26", "Q4 FY26", "Q1 FY27"]
+triggers:
+  - {priority: 1, name: "Unbound margin ramp to MPS-average (~30%) by exit FY27", type: "INORGANIC/MARGIN", timeframe: "medium", conviction: "M", confirm_signal: "margin reaches mid-20s+ by Q2/Q3 FY27", kill_signal: "margin stuck at 18-20% through H2 FY27"}
+  - {priority: 2, name: "FY27 EBITDA crossing INR 300 cr", type: "BOTH", timeframe: "medium", conviction: "H", confirm_signal: "H2 FY27 run-rate confirms the guidance as a floor", kill_signal: "H2 materially undershoots Q1 FY27 pace (20.4% revenue growth, 34.3% margin)"}
+  - {priority: 3, name: "AJE stabilizing to positive growth in FY27", type: "PRICE-MIX", timeframe: "medium", conviction: "M", confirm_signal: "AJE revenue growth disclosed with an actual number, not just qualitative 'pruning behind us'", kill_signal: "AJE revenue/margin stays undisclosed and growth claim stays unverifiable"}
+  - {priority: 4, name: "Research AI-product layers sustaining 40%+ margins", type: "COST/PRICE-MIX", timeframe: "near", conviction: "H", confirm_signal: "segment margin holds/expands past 45.1% (Q1 FY27 print)", kill_signal: "margin reverts toward FY26 39.9% average as renewal cohort re-prices"}
+  - {priority: 5, name: "Corporate Learning organic growth catching up to 12-13% market rate", type: "VOLUME", timeframe: "medium-long", conviction: "M", confirm_signal: "revenue growth accelerates past current 6-7% pace", kill_signal: "growth stays capped near high single digits despite margin recovery"}
+  - {priority: 6, name: "M&A pipeline conversion into a second Education deal", type: "INORGANIC", timeframe: "medium", conviction: "M", confirm_signal: "a second Education acquisition announced, per management's own stated intent", kill_signal: "pipeline stays a pipeline through FY27"}
+  - {priority: 7, name: "Peer-review #1-by-volume claim", type: "VOLUME", timeframe: "near", conviction: "M", confirm_signal: "MPS verifiably reaches #1 peer-review provider by volume by end of CY26", kill_signal: "claim quietly drops out of subsequent-quarter commentary"}
+guidance:
+  - {item: "FY26 EPS", number: "comfortably surpass INR 100", timeframe: "FY26", stated_in: "Q3 FY26 call"}
+  - {item: "Unbound deal close date", number: "by 10-Feb-2026", timeframe: "near-term", stated_in: "Q3 FY26 call"}
+  - {item: "Unbound consideration (headline)", number: "USD 16.5m", timeframe: "at signing", stated_in: "Q3 FY26 call"}
+  - {item: "Unbound consideration (final)", number: "USD 15.18m", timeframe: "at close", stated_in: "Unbound acquisition call"}
+  - {item: "Unbound margin ramp", number: "14% Q1 -> early 20s Q2 -> ~30% exit FY27", timeframe: "FY27", stated_in: "Unbound acquisition call"}
+  - {item: "FY26 actual EPS", number: "INR 102.11, +16.3% YoY", timeframe: "FY26", stated_in: "Q4 FY26 call"}
+  - {item: "FY27 EBITDA guidance", number: "comfortably cross INR 300 cr (floor, not ceiling); 3-yr CAGR ~21% FY24-27", timeframe: "FY27", stated_in: "Q4 FY26 call, reaffirmed Q1 FY27 call"}
+  - {item: "FY27 EBITDA margin range", number: "30%-35%", timeframe: "FY27", stated_in: "Q4 FY26 call"}
+  - {item: "FY28 revenue target", number: "~INR 1,500 cr", timeframe: "FY28", stated_in: "Q4 FY26 call, reaffirmed Q1 FY27"}
+  - {item: "FY28 EBITDA target", number: "~INR 450 cr", timeframe: "FY28", stated_in: "Q1 FY27 call"}
+  - {item: "M&A financing capacity", number: "INR 300-500 cr acquisition doable via cash+debt; INR 200 cr debt comfortable", timeframe: "ongoing", stated_in: "Q1 FY27 call"}
+  - {item: "FY27 segment EBITDA split (ballpark)", number: "Research ~55% / Education ~35% / Corporate ~10%", timeframe: "FY27", stated_in: "Q4 FY26 call"}
+promise_delivery:
+  delivered: 5
+  partial: 2
+  missed: 0
+  rows:
+    - {promised_in: "Q3 FY26 call", promise: "FY26 EPS comfortably surpass INR 100", outcome: "delivered", explanation: "FY26 actual EPS INR 102.11, record, +16.3% YoY"}
+    - {promised_in: "Q3 FY26 call", promise: "Unbound deal to close by 10-Feb-2026", outcome: "delivered", explanation: "closed 09-Feb-2026"}
+    - {promised_in: "Q3 FY26 call", promise: "Q4 FY26 better quarter, FY27 exceptional year", outcome: "delivered", explanation: "Q4 revenue +12.7% YoY, EBITDA margin 32.9%, FY26 most profitable year in Company history"}
+    - {promised_in: "Q3 FY26 call", promise: "Education double-digit growth despite one-off Q3 moderation", outcome: "delivered, exceeded", explanation: "FY26 Education revenue +36.3% reported, +28.6% organic"}
+    - {promised_in: "Q3 FY26 call", promise: "Corporate Learning return to growth in FY27", outcome: "delivered, ahead of schedule", explanation: "positive growth print already in Q4 FY26, sustained into Q1 FY27"}
+    - {promised_in: "Unbound acquisition call", promise: "Unbound EBITDA margin reach early 20s by second quarter of ownership", outcome: "partial / timeline slippage", explanation: "Q1 FY27 checkpoint delivered 18-20% margin, near pre-acquisition historical range"}
+    - {promised_in: "Q3 FY26 call", promise: "AJE rapid decline stalls, FY27 stable revenue", outcome: "partial / too early to confirm", explanation: "pruning described as behind us, new service launched with strong early demand, but no full-year figure yet"}
+excuse_pattern: "balanced"
+repeated_evasions:
+  - {question: "What is Unbound Medicine's exact revenue/EBITDA?", quarters_asked: ["Unbound acquisition call (Feb 2026)", "Q4 FY26 call (May 2026)"], classification: "answered eventually"}
+credibility_grade: "B"
+credibility_basis: "Consistent delivery on every dated, specific promise except the Unbound margin-ramp timeline (slipped one checkpoint), plus genuine self-critical admissions and a proactive ethical walk-away from a deal, offset by a persistent 'we don't guide' self-description alongside formal multi-quarter guidance, and a segment-mix target revised without being flagged as a change."
+peer_questions:
+  - {question: "Is MPS's claimed ~52% manuscript-acceptance lift vs ~32% industry baseline independently verifiable?", why: "Repeated verbatim across two calls, underlies the outcomes-based pricing re-rating narrative for Author Solutions/AJE", check_peers: ["Cactus Communications/Editage", "Enago", "Elsevier-linked editorial services", "other listed STM publishing-services comparables"]}
+  - {question: "Is the cited healthcare-AI/knowledge-management TAM (USD 188bn by 2030; USD 3bn to 102bn subsector by 2034 at 42% CAGR) corroborated by any independent source?", why: "Underpins the entire Unbound Medicine investment case and Vision 2027/28 revenue math", check_peers: ["listed healthcare-IT/health-education peers", "independent market-research citations used by comparable medtech-content companies"]}
+  - {question: "Do independent sources support management's cited market growth rates (Research ~8-9%, Education ~15%, Corporate Learning ~12-13%)?", why: "MPS uses these benchmarks to claim outperformance in Research/Education and admits underperformance in Corporate", check_peers: ["listed BPO/KPO content-services peers", "corporate L&D/EdTech peers"]}
+  - {question: "Is the claimed AI-driven consolidation of fragmented markets (e.g., translation work shifting wholesale to MPS) a broad pattern or an isolated anecdote?", why: "Offered as core evidence for the AI-tailwind thesis across all three earnings calls", check_peers: ["translation/localization services peers", "content-services peers"]}
+  - {question: "Is MPS's self-reported 0.5% serviceable-market share consistent with independently sized markets, and do peers report wage/input-cost inflation that could offset MPS's claimed AI-driven margin gains?", why: "The 0.5% to 1% to 2% runway narrative and the margin-expansion thesis both depend on this", check_peers: ["Indian KPO/content-services/BPO exporters"]}
+  - {question: "Is MPS's claimed capital-deployment capacity (INR 300-500 cr acquisitions from ~INR 15-18 cr/month cash generation plus ~INR 200 cr comfortable debt) consistent with sector financing norms, and does it reconcile with the unconfirmed Q2 FY26 M&A budget figures?", why: "M&A capacity and financing discipline are central to the inorganic-growth thesis and FY28 target; the Q2 FY26 transcript is missing from this corpus and cannot be independently confirmed", check_peers: ["sector M&A transaction comparables (education/research-services roll-ups)"]}
+red_flags:
+  - {flag: "no-guidance self-description persists alongside formal multi-quarter EPS/EBITDA/revenue guidance", severity: "MEDIUM"}
+  - {flag: "Unbound EBITDA-margin ramp behind the specific timeline promised at acquisition announcement", severity: "MEDIUM"}
+  - {flag: "Vision 2027 segment-mix target quietly revised from 40:40:20 to ~55:35:10 without being flagged as a change", severity: "LOW-MEDIUM"}
+  - {flag: "management-level turnover acknowledged but never specified", severity: "LOW"}
+  - {flag: "AJE never sized in absolute revenue terms in any call in this corpus", severity: "MEDIUM"}
+  - {flag: "FY26 final dividend withheld for first time in disclosed 7-year INR 650 cr distribution record; rationale disclosed proactively", severity: "LOW"}
+  - {flag: "SPEAR-flagged Q2 FY26 M&A budget figures (Rs 300-400 cr, 5 deals, Rs 150 cr min cash, Rs 200 cr debt capacity) cannot be confirmed from this corpus; only debt-capacity figure directionally corroborated", severity: "EVIDENCE GAP"}
+dropped_triggers:
+  - "STAR account count (last given as ~90 accounts, Q3 FY26 call); not repeated in Q4 FY26 or Q1 FY27 calls"
+  - "Vision 2027 40:40:20 segment-mix target (Unbound acquisition call), superseded by ~55:35:10 EBITDA-split guidance without acknowledgement"
+timeline_slippages:
+  - "Unbound Medicine EBITDA margin: promised 'early 20s' by second quarter of ownership (Unbound acquisition call, Feb 2026); actual print at that checkpoint (Q1 FY27 call, Jul 2026) was 18-20%, still near the pre-acquisition historical range"
+analyst_note: "The AJE business is large enough to swing every headline growth number this pipeline reviewed, yet its absolute revenue is never disclosed in rupee or dollar terms across three earnings calls plus the acquisition call; all comparisons are ex-AJE growth rates or qualitative 'pruning' language. Downstream stages should treat any blended (non-ex-AJE) growth or margin figure with caution until an absolute AJE base is obtained. Separately, the Q2 FY26 transcript gap is the single largest hole in this SPEAR check: the debt-capacity figure now disclosed (~INR 200 cr) is a plausible match for what was reportedly said in Nov-2025, but the '5 deals' and 'Rs 150 cr minimum cash' claims have no anchor anywhere in this corpus and should not be treated as confirmed."
+no_concall_mode: false

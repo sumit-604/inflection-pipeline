@@ -12,3 +12,5 @@ Per-stage token ledger. One line per subagent run.
 | 2 | notes triple-pass (pass 3, consolidation + B02) | claude-sonnet | default | n/a | n/a | 79768 | 5m15s | 3 |
 | 7 | emerging moat scan | claude-sonnet | default | n/a | n/a | 528157 | 9m41s | 1 |
 | 3 | AR deep dive | claude-sonnet | default | n/a | n/a | 499439 | 11m37s | 1 |
+| 4 | business model decoder | claude-sonnet | default | n/a | n/a | 523998 | 7m21s | 1 |
+| 5 | concall analysis | claude-sonnet | default | n/a | n/a | 238078 | 8m30s | 1 |

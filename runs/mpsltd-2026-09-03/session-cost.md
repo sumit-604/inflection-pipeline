@@ -11,3 +11,4 @@ Per-stage token ledger (written and committed with each stage).
 | 3 | ardeep | claude-sonnet-5 | default | n/a | n/a | 240655 | 976s | 1 |
 | 4 | bizmodel | claude-sonnet-5 | default | n/a | n/a | 200411 | 397s | 1 |
 | 5 | concall | claude-sonnet-5 | default | n/a | n/a | 156768 | 490s | 1 |
+| 8 | promoter | claude-sonnet-5 | default | n/a | n/a | 240781 | 800s | 1 |

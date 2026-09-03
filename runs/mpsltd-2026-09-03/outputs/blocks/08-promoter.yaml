@@ -1,0 +1,30 @@
+stage: B08-promoter
+company: "MPSLTD"
+run_date: "2026-09-03"
+model: claude-sonnet-5
+status: partial          # two WebFetch calls (casemine.com, scanx.trade) blocked by egress proxy; equivalent info recovered via WebSearch snippets, but full source text unread
+input_gaps: ["ADI Holdings Private Limited scheme/valuation document not obtained", "primary NSE/BSE Reg 31(4) pledge filing not directly read (relied on media report)", "AmbitionBox rating not retrievable"]
+flags: []                # CAUTION verdict, not CONCERN/AVOID, so FLAG-PROMOTER not triggered per rule
+verdict: "CAUTION"
+scorecard: {clean: 5, caution: 5, red: 0}
+deal_breakers: []        # none triggered; see report Section 6C for full checklist (all NOT TRIGGERED)
+adverse_findings:
+  - {finding: "FY26 standalone Note 39 (contingent liabilities, authorized 15 May 2026) shows only Rs 403.76 lacs disputed income-tax liability, apparently not reflecting ~Rs 30.89 cr in new AY23-24 (Rs 21.78cr) and AY24-25 (Rs 9.11cr) demands whose orders (28-29 Apr 2026 and 23-27 Mar 2026) predate that authorization date", evidence_tier: "mixed: AR figure VERIFIED, order dates/amounts MEDIA-REPORTED cross-verified", source: "MPS FY25-26 AR Note 39 p.221; whalesbook.com; scanx.trade", date: "2026-05-15 (AR authorization) vs 2026-03-23/2026-04-28 (order dates)"}
+  - {finding: "ADI BPO Services Limited (holding co., source of ~Rs 3cr/yr rent+infra RPT to MPS) demerged its Infrastructure management and investing business undertaking into ADI Holdings Private Limited, not named in the MPS AR, before the residual shell merges into MPS; post-merger RPT/lease continuity with this unlisted vehicle is unresolved", evidence_tier: "UNVERIFIED (web search only, not corroborated by name in the AR)", source: "web search of MPS scheme disclosures; AR Note 48 / Directors' Report section 40 (demerger acknowledged, transferee not named)", date: "2025-07-18 (scheme approved by MPS board)"}
+  - {finding: "CEO-to-median employee remuneration ratio 191:1; Rahul Arora pay +31.33% vs average employee pay +4.43% in same record-profit FY26", evidence_tier: "VERIFIED", source: "MPS FY25-26 AR Annexure-B, p.59", date: "2026 (FY25-26)"}
+  - {finding: "Senior-management turnover cluster: Company Secretary resigned (eff. 28 Aug 2026), COO resigned after ~14-month tenure (eff. 3 Aug 2026), Chief People Officer role turned over twice within under a year", evidence_tier: "VERIFIED", source: "MPS FY25-26 AR Corporate Governance Report, Senior Management table, p.122", date: "2025-2026"}
+  - {finding: "Accounting software audit trail (edit-log) not enabled at database level in FY25-26, third year the Companies (Accounts) Rules requirement has applied", evidence_tier: "VERIFIED", source: "MPS FY25-26 AR Note 47, p.225", date: "2026 (FY25-26)"}
+transition_evidence:
+  - "New outside-professional independent directors added: Karthik Bhat Khandige & Suhas Khullar (30-Jul-2024), Divya Verma (24-Jan-2025) [AR Note 38(a)]"
+  - "Internal auditor upgraded PwC -> KPMG Assurance and Consulting Services LLP, 3-yr mandate FY26-27 to FY28-29 [AR p.45]"
+  - "Dedicated Chief Risk Officer role created, separated from CTO, effective 21-Jul-2026 [AR p.132]"
+  - "DII holding rose 0.60% (Sep-2023) to 2.14% (Jun-2026) even as FII fell [shareholding pattern]"
+  - "Founder-level equity alignment: Rodney Charles Beach (Liberate Group founder) given ~31.5 lakh shares + President role in MPS Interactive Systems Ltd [Secretarial Audit Annexure-A.II; media]"
+  - "Promoter holding-tier simplification: ADI BPO Services Ltd merging into MPS with separate public-shareholder approval (99.99% by value, Aug 2026) -- offset by unresolved ADI Holdings carve-out question"
+  - "2021 founder-to-successor CEO transition (Nishith Arora -> Rahul Arora) completed via disclosed 5-year plan"
+pledge_pct_latest: 0
+pledge_trend: "nil/stable - ADI BPO Services Ltd (holding co.) filed Reg 31(4) SAST declaration confirming no encumbrance created on MPS shares in FY25-26 (media-reported, not independently read from primary exchange filing); promoter stake flat at 68.34% for 12 consecutive quarters Sep-2023 to Jun-2026"
+searches_performed: ["MPS Limited SEBI order OR NCLT OR litigation Rahul Arora Nishith Arora promoter", "ADI BPO Services MPS Limited demerger infrastructure investing business undertaking", "MPS Limited Glassdoor OR AmbitionBox employee reviews", "Rodney Charles Beach MPS Interactive Systems investor", "Nishith Arora Family Trust SEBI MPS Limited takeover exemption order", "MPS Limited AmbitionBox rating reviews", "Walker Chandiok Rohit Arora partner chartered accountant", "MPS Limited IiAS OR SES OR InGovern proxy advisory recommendation AGM", "MPS Limited MPSLTD short seller report OR fraud OR scam allegation", "Rahul Arora MPS Limited CEO controversy OR interview OR profile", "MPS Limited income tax demand crore AY 2023-24 AY 2024-25 exchange filing", "MPS Limited MPSLTD promoter pledge shares encumbrance"]
+searches_skipped: ["WebFetch casemine.com (SEBI/Nishith Arora Family Trust case) - blocked by egress proxy", "WebFetch scanx.trade (AY23-24 tax demand article full text) - blocked by egress proxy", "AmbitionBox.com direct company page - no search hits retrievable", "IiAS/SES/InGovern MPS-specific coverage - none located either way"]
+verdict_basis: "Clean SEBI/criminal/economic-offence record and a disclosed, well-managed founder succession, set against an apparent tax-demand disclosure gap in Note 39, an unresolved ADI Holdings promoter carve-out question, a 191:1 CEO pay ratio widening in a record year, and a CS/COO/CPO turnover cluster beneath a single concentrated Chairman/CEO/MD."
+analyst_note: "Two items need direct primary-document verification the container could not perform: (1) the ADI BPO Services Ltd Scheme of Arrangement / valuation report, to see exactly what moved to ADI Holdings Private Limited and whether MPS's ~Rs 3cr/yr rent+infra RPT will continue with that private entity post-merger; (2) the actual Reg 30 tax-order PDFs, to reconcile against Note 39's Rs 403.76 lacs contingent-liability figure. Both are flagged, not resolved, in this report."

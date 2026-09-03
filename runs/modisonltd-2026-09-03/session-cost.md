@@ -6,3 +6,4 @@ its own stage. Loop/retry runs get their own line with a run counter.
 | # | stage | model | effort | in_tok | out_tok | total_tok | wall | run# |
 |---|-------|-------|--------|--------|---------|-----------|------|------|
 | 0 | input-validation | orchestrator-opus-4-8 (inline) | - | - | - | - | - | 1 |
+| 2 | notes-pass1 | claude-sonnet | - | - | - | 139801 | 7m40s | 1 |

@@ -21,13 +21,18 @@ a. PARSE ARGUMENTS: the TICKER and the `--docs` list. Resolve each doc path
    are given, list candidate PDFs and ask which to run. This is the only
    permitted setup question.
 
-b. PROTOCOL-FILE CHECK: verify these exist. If any is absent, STOP and report
-   which — never reconstruct a protocol from memory:
+b. PROTOCOL-FILE CHECK: verify the protocol(s) THIS run needs exist. If a
+   needed one is absent, STOP and report which — never reconstruct a protocol
+   from memory:
+   - frameworks/Document_Review_Protocol_v1_1.md (needed for a DOCUMENT REVIEW:
+     a standalone presentation / press release / one-off disclosure with no
+     results filing and no concall; this is A4's ONLY protocol for such a run)
    - frameworks/Quarterly_Results_Review_Protocol_v1_4.md (needed if a results
      filing is in --docs)
    - frameworks/Quarterly_Concall_Analysis_Protocol_v1_1.md (needed if a
      concall is in --docs)
-   - frameworks/Master_Project_Prompt_v3_6.md (framework context)
+   - frameworks/Master_Project_Prompt_v3_6.md (framework context by reference;
+     NOT an A4 input — A4 never loads it)
 
 c. TOOLCHAIN PRECHECK: verify pdftotext, pdfinfo, pdftoppm, tesseract. If
    missing, attempt install (poppler-utils, tesseract-ocr). If that fails,
@@ -86,11 +91,14 @@ quarter's filings). This brief is a standing deliverable, never on-request.
 ## 3. A5 ADVERSARY (once)
 
 Invoke A5 (quarterly-a5-adversary) with ONLY the A4 review path, every A1
-extract path, and every A2 ledger path — never your commentary. A5's
-independence is absolute.
-GATE A5: verdict COMPLETE. INCOMPLETE loops back to the named agent (A2 / A3 /
-A4) with the exact gap. Maximum two loops; a third failure escalates to the
-human with the unresolved gap stated plainly.
+fulltext and structured path, and every A2 ledger path — never your commentary.
+A5's independence is absolute. A5 tags each finding FACTUAL / MISSING /
+CONTRADICTION / STYLE.
+GATE A5: verdict COMPLETE. A loop fires ONLY on a FACTUAL / MISSING /
+CONTRADICTION finding, back to the named agent (A2 / A3 / A4) with the exact
+gap; STYLE findings are logged, never looped. Cap: ONE full iteration by
+default; if still INCOMPLETE after it, STOP and ask the operator before a second
+iteration. Log the loop as its own session-cost.md rows with the iteration count.
 
 ## 4. NOTION SAVE (only after A5 COMPLETE)
 

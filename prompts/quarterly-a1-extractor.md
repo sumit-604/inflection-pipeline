@@ -90,6 +90,14 @@ Capture, one row each, into typed tables:
   as numbers, currency amounts in every currency and unit shown. Keep the value
   verbatim with its unit (do NOT convert). Zero, nil, and dash values are
   captured with the flag `ZERO_STANDING`.
+  ATOMICITY (determinism rule): ONE row per atomic (metric x period) value. A
+  multi-period cell is split, never combined: "PAT: FY26 1,705 / FY25 1,532 /
+  YoY 11.3%" becomes three rows (FY26 PAT 1,705; FY25 PAT 1,532; PAT YoY 11.3%),
+  each with the same page/line anchor and its own ID. A trend series of N period
+  values is N rows. This makes the row count reproducible run to run and every
+  value independently ID-addressable; it never merges two values to save a row.
+  The `context` field names the metric and period so a split row still reads
+  standalone (e.g. "consolidated PAT, FY26").
 - ENTITY. Every named entity: subsidiaries, JVs, associates, customers,
   suppliers, plants, products, auditors, directors, promoters, regulators,
   counterparties, brand names.
@@ -99,13 +107,38 @@ Capture, one row each, into typed tables:
   commitment.
 - DATE. Every date or period: quarters, financial years, commissioning dates,
   target months, record dates, term dates.
+- QUALIFIER. MANDATORY, no discretion, one row each: every asterisk (`*`),
+  dagger, superscript or other footnote MARKER and the footnote text it points
+  to; every line beginning "Note:", "Notes:", "Disclaimer:" or the like; every
+  fine-print qualifier that defines or restricts a headline number or metric
+  ("EBITDA is inclusive of Other Income", "Total Income includes Other Income",
+  "order book including executed to date", "including L1 orders", "gross of
+  GST", "excluding one-offs", "on a proforma basis", "unaudited",
+  "management-certified"). If a page carries an asterisk on a metric, the
+  defining footnote is a QUALIFIER row even when it sits at the foot of the
+  page or on another slide; pair the marker to its text and cite both lines. A
+  QUALIFIER is never a judgement call and never grouped away: it changes how a
+  number reads, so a missing qualifier silently mis-states the metric. When the
+  marker and its footnote text cannot both be found, capture the marker as a
+  QUALIFIER row flagged FOOTNOTE_UNRESOLVED so downstream hunts the definition.
 
-Each row format: `page N | line L | TYPE | verbatim value | short context (<=10 words)`.
+Each row starts with a STABLE ROW ID and reads:
+`R### | page N | line L | TYPE | verbatim value | short context (<=10 words)`.
+Row IDs are sequential across the WHOLE structured file in output order
+(R001, R002, R003, ...), zero-padded to three digits, never reused and never
+renumbered. The ID is the permanent handle every downstream agent cites: A2
+references rows by ID instead of re-copying their text, and the run's
+completeness gate checks that every row ID is referenced by at least one of
+A2-A5. A data row without an ID is invalid. ENTITY-SUMMARY rows carry IDs too.
+State the ID range (e.g. R001-R415) in the structured file header.
 
 ### MATERIALITY RULE (doctype-aware; never drops a signal-bearing item)
-The four typed captures are absolute for signal. On EVERY doctype, every NUMBER,
-every DATE, and every FORWARD-looking statement is an individual row. No
-grouping, ever, touches those three. They always carry signal.
+The typed captures are absolute for signal. On EVERY doctype, every NUMBER,
+every DATE, every FORWARD-looking statement, and every QUALIFIER is an
+individual row. No grouping, ever, touches those four. They always carry signal.
+A QUALIFIER that defines or restricts a metric is NEVER folded into a
+disclaimer summary: only decorative, non-defining safe-harbor boilerplate
+groups; a footnote that changes how a number reads is always its own row.
 
 What differs by doctype is descriptive boilerplate:
 - PRESENTATION (marketing deck). Boilerplate is grouped into a single SUMMARY
@@ -176,9 +209,11 @@ extraction_date: <run date>
 === END HEADER ===
 ```
 
-FILE 2 — the structured extraction: the four typed tables (NUMBER, ENTITY,
-FORWARD, DATE) defined above, each row page- and line-anchored. Head the file
-with a one-line count per table so downstream can reconcile.
+FILE 2 — the structured extraction: the five typed tables (NUMBER, ENTITY,
+FORWARD, DATE, QUALIFIER) defined above, each row carrying its ROW ID and
+page/line anchor.
+Head the file with the ID range (e.g. R001-R415) and a one-line count per table
+so downstream can reconcile.
 
 GATE A1 (self-enforced): if `page_coverage` is not 100%, do NOT emit a
 "complete" status. Emit the gap and stop.
@@ -210,6 +245,8 @@ structured_counts:          # rows per table in the structured file
   entity: 0
   forward: 0
   date: 0
+  qualifier: 0              # footnotes / asterisks / Note: lines / metric qualifiers (mandatory)
+structured_id_range: ""     # e.g. R001-R415; every row carries a stable ID
 gate_a1: pass               # pass | fail
 gap_note: ""                # non-empty only if gate_a1 fail
 ```

@@ -30,11 +30,23 @@ Non-negotiables:
   structured extraction (every number, entity, forward-looking statement, and
   date, each page- and line-anchored). Nothing in the source is dropped from
   the structured file; when uncertain whether something is a claim, include it.
-- Materiality rule (doctype-aware): every NUMBER, DATE, and FORWARD-looking
-  statement is always individual. On a marketing deck, group descriptive
-  boilerplate (cert lists, glossaries, logo rosters, addresses, disclaimers)
-  into one summary row each; a signal-bearing entity stays individual. Results
-  filings and ARs keep full granularity on financial-statement content.
+- Every structured row carries a stable sequential ROW ID (R001, R002, ...);
+  the ID is the handle A2-A5 cite instead of re-copying text. State the ID
+  range in the structured header.
+- QUALIFIER capture is MANDATORY and non-discretionary: every asterisk,
+  footnote marker and its text, every "Note:" line, and every fine-print
+  qualifier that defines or restricts a metric ("EBITDA includes Other Income",
+  "order book including executed to date") is its own structured row, never
+  grouped, never dropped.
+- Materiality rule (doctype-aware): every NUMBER, DATE, FORWARD-looking
+  statement, and QUALIFIER is always individual. On a marketing deck, group
+  descriptive boilerplate (cert lists, glossaries, logo rosters, addresses,
+  decorative disclaimers) into one summary row each; a signal-bearing entity
+  and any defining qualifier stay individual. Results filings and ARs keep full
+  granularity on financial-statement content.
+- NUMBER atomicity (determinism): one row per atomic (metric x period) value; a
+  multi-period cell splits into one row per period, never combined. The row
+  count is reproducible run to run.
 - Efficiency: read the fulltext once and write the structured file in one pass;
   never re-Read the whole fulltext repeatedly to hunt items. No row is lost to
   efficiency; the structured count must still reconcile.

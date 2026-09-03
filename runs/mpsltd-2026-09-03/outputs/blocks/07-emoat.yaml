@@ -1,0 +1,48 @@
+stage: B07-emoat
+company: "MPSLTD"
+run_date: "2026-09-03"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "No 3-year forward segment revenue mix target disclosed anywhere in this corpus (1C NOT FOUND)"
+  - "Total company R&D expenditure never itemised as a separate figure (folded into P&L per Board's Report; BRSR 'R&D/CapEx' Nil answer is a narrower ESG-specific metric, not total R&D)"
+  - "No capex programme, utilisation, or capacity-addition table disclosed (asset-light model; Section 2A/2B not applicable)"
+  - "Five-year platform partnership counterparty and contract value never named (caps C1/H2 evidence tier)"
+  - "AI-product (Rubriq/DigiCorePro/Unbound Intelligence Assist) revenue or margin contribution never separately quantified"
+flags:
+  - {type: "FLAG-EMOAT", reason: "Five AI products claimed to have moved to production within FY26 with zero disclosed incremental R&D budget line; the AR's own R&D disclosure is folded into general P&L with no separate figure, an unresolved inconsistency between narrative breadth and disclosed spend."}
+  - {type: "FLAG-EMOAT", reason: "BridgeAI/AR-VR leg (via MPS Europa AG) is small and loss-making (revenue fell INR 789.56 lacs to 532.41 lacs, loss before tax INR 153.53 lacs, FY26) — undercuts the platform-breadth narrative for that specific leg."}
+em_score: 24
+em_classification: "MODEST"
+active_categories:
+  - {id: "C1", name: "Customer ecosystem / embedded relationships", strength: "Strong", evidence_type: "documented", time_to_materialise: "ongoing/near"}
+  - {id: "C2", name: "Customer concentration improving", strength: "Moderate", evidence_type: "management-claim", time_to_materialise: "near"}
+  - {id: "D1", name: "Proprietary data asset", strength: "Moderate-Strong", evidence_type: "documented", time_to_materialise: "ongoing"}
+  - {id: "A4", name: "Product platform / modular architecture", strength: "Moderate", evidence_type: "documented+management-claim", time_to_materialise: "near"}
+  - {id: "F1", name: "Talent density", strength: "Moderate", evidence_type: "documented", time_to_materialise: "ongoing"}
+  - {id: "F2", name: "Execution moat", strength: "Moderate", evidence_type: "documented", time_to_materialise: "ongoing"}
+  - {id: "G1", name: "War chest", strength: "Moderate", evidence_type: "documented+management-claim", time_to_materialise: "near"}
+  - {id: "H1", name: "Industry consolidation beneficiary", strength: "Strong", evidence_type: "documented", time_to_materialise: "near"}
+  - {id: "H2", name: "Strategic partnerships", strength: "Moderate", evidence_type: "documented(fact)+management-claim(value)", time_to_materialise: "ongoing"}
+evidence_mix: {documented: 14, claim: 9, inference: 2}
+completionist_recount: "14 distinct documented items across 7 categories (C1, D1, A4, F1, F2, G1, H1; H2 shares its item with C1). 13 of 22 categories explicitly rejected to None after scrutiny (A1, A2, B1, B2, B3, D2, E1, E2, G2, H3, I1, I2). Active-category count (8) exceeds the typical 3-6 base rate but stays below the explicit 12+ guard trigger; the elevation is attributed to a document-rich, deliberately AI-repositioned FY26 AR, not to crediting management claims as documented."
+catalysts_12m:
+  - {catalyst: "FY27 EBITDA crossing INR 300 Cr (management's stated floor)", window: "FY27 (by Mar-2027)", evidence_type: "management-claim", anchor: "AR p.2-3 Outlook; B05 Q4 FY26 call"}
+  - {catalyst: "Unbound Medicine margin reaching mid-20s+ (checkpoint already slipped once)", window: "H2 FY27", evidence_type: "management-claim", anchor: "B05 Unbound acquisition call / Q1 FY27 call"}
+  - {catalyst: "Second Education acquisition closing (pipeline >USD 11m disclosed)", window: "FY27", evidence_type: "documented(pipeline size)+management-claim(timing)", anchor: "AR p.33 Outlook; B05 Unbound acquisition call"}
+  - {catalyst: "AI-product (Rubriq/DigiCorePro/Unbound Intelligence Assist) revenue or margin first separately quantified", window: "uncertain, FY27 AR at earliest on current cadence", evidence_type: "optionality (currently unscored)", anchor: "AR p.30 (production-deployment claim only, no linked figure)"}
+capex_embedded_growth_pct: 0
+optionality_register:
+  - {optionality: "Patent/IP filing pipeline (A2)", converting_evidence: "Disclosed patent filing/grant with product linkage, or a licensing-revenue line item", first_appears: "AR Annexure E or exchange filing", window: "NOT FOUND, no stated plan"}
+  - {optionality: "AI-product revenue/margin attribution (A4/D2 impact)", converting_evidence: "Segment note or presentation slide disclosing platform/AI-product revenue or PBT standalone", first_appears: "AR segment note (next annual cycle) or a forced concall answer", window: "FY27 AR (Jul-2027) at earliest"}
+  - {optionality: "Talent-asymmetry claim (I1)", converting_evidence: "Named technical hires with traceable pedigree, or remuneration annexure showing above-sector pay for the MPS Labs cohort", first_appears: "AR remuneration annexure or concall", window: "NOT FOUND, no stated plan"}
+  - {optionality: "Second Education acquisition (H1 continuation, pipeline >USD 11m)", converting_evidence: "Signed SPA or Board approval via Regulation 30 filing", first_appears: "Exchange filing or next AR Directors' Report", window: "FY27, per management's stated near-term intent"}
+  - {optionality: "STAR account cross-sell index (dropped metric, last: ~90 accounts, 5.5x index, Q3 FY26)", converting_evidence: "Re-disclosure with updated numbers", first_appears: "Concall transcript", window: "Uncertain, metric already disappeared once"}
+combined_assessment: "AVERAGE"
+combined_reasoning: "Backward AVERAGE/THIN (Gate 0, itself flagged as data-gap-depressed) plus forward MODEST (24.4, one point below the 25-point STRENGTHENING threshold) does not clear the bar for an upgraded combined label despite two genuinely Strong, AR-anchored categories (C1, H1)."
+top_moat_risks:
+  - "Five AI products claimed launched/in-production with zero disclosed R&D budget line and zero disclosed revenue/margin attribution — the 'AI-first' narrative could be repositioning rather than new economics"
+  - "Unbound Medicine margin-ramp slippage documents real integration execution risk directly against the H1 consolidation thesis"
+  - "BridgeAI/AR-VR leg (MPS Europa AG) is small, shrinking, and loss-making in FY26, undercutting the platform-breadth claim for that leg specifically"
+  - "Five-year platform partnership (C1/H2) has no named counterparty or disclosed value across any document in this corpus, capping verifiability"
+analyst_note: "The FY26 AR is a deliberate repositioning document (title: 'The Engine of Knowledge... AI-first knowledge company'), which produces more specific disclosed facts than a typical AR and explains the above-base-rate active-category count (8, still below the 12+ guard trigger). The two Strong categories (C1, H1) are the most load-bearing and best-anchored; I1 and I2 both score 0 because the company's own stated competitive defense is explicitly relationship/switching-cost based (an execution lead), which the framework instructs analysts not to credit as a structural asymmetry. Separately, subsidiary-level notes in the Directors' Report (AR p.38-39) disclose AJE LLC standalone FY26 revenue of INR 10,097.28 lacs (~USD 12m) and AJO (China) revenue of INR 6,747.56 lacs — figures that partially resolve the B05-flagged 'AJE never sized in absolute terms' gap at the standalone-subsidiary level, though not at the concall-disclosed AJE-segment level; downstream stages should be aware this AR-level figure exists even though management never cited it on any call in this corpus."

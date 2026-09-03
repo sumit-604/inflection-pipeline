@@ -1,0 +1,17 @@
+stage: B12a
+company: "MPSLTD"
+run_date: "2026-09-03"
+model: claude-haiku-4-5
+status: complete
+numbers_checked: 32
+findings:
+  - {severity: "MAJOR", location: "B05 Concalls Section 1C, SPEAR gate", claimed: "AJE revenue pruning ~USD 18m -> 12m (SPEAR priority)", source_truth: "NOT FOUND in any concall transcript", note: "Absolute AJE revenue figures before/after pruning never quantified in Q3 FY26, Unbound acq, Q4 FY26, or Q1 FY27 calls. Trend direction (growth ex-AJE) is verified; magnitude is unanchored. Corpus-anchored substitute exists at AR level: B07 cites AJE LLC standalone FY26 revenue ~INR 10,097.28 lacs (~USD 12m), Directors' Report p.38-39.", source_fidelity: true}
+  - {severity: "MAJOR", location: "B01 Gate 0 Block D", claimed: "FY26 Consolidated Borrowings 60.63 cr (screener source)", source_truth: "Audited Consolidated BS: 3,625 lacs = 36.25 cr", note: "Screener-derived figure (gate0 p.1 discloses screener source) diverges 24.38 cr from audited BS. Data source attribution correct; reconciliation gap flagged for downstream risk. Stage 10/11 must use the audited BS borrowings, not the screener figure.", source_fidelity: false}
+  - {severity: "MINOR", location: "B05 Concalls Section 1C", claimed: "Vision 2027 mix 40:40:20 (Feb-2026) vs ~55:35:10 (Q4 FY26/Q1 FY27)", source_truth: "Both figures disclosed in respective calls; revision not explicitly flagged by management", note: "Disclosure gap (non-transparent guidance shift) rather than false number. Both figures are traceable to transcripts.", source_fidelity: false}
+  - {severity: "MINOR", location: "B07 Emerging Moat Section 1A", claimed: "Five AI products moved to production scale in FY26", source_truth: "No itemized R&D spend disclosed; R&D charged to P&L per AR p.66, BRSR R&D Nil", note: "Product launches documented; cost basis opaque. Material unanchored cost in OpEx.", source_fidelity: false}
+critical_count: 1
+major_count: 2
+minor_count: 2
+acceptance_rate: 87.5
+coverage_note: "Verified 32 material numbers across consolidated P&L, BS, segment reports from Results PDF (Q4+FY26 audited) and AR (FY26). Concall figures traced to four transcripts. Screener-derived gate0 numbers compared against audited PDF figures; divergence on borrowings documented. TAM/market-sizing claims are management-reported figures without third-party corroboration in this corpus. R&D spend is a material cost with no line-item disclosure. AJE pruning quantum cited as SPEAR priority is NOT FOUND in any concall."
+orchestrator_note: "The single source_fidelity:true finding is an ANCHOR NOT FOUND on the operator SPEAR figure (AJE 18m->12m), NOT a fabricated or materially-misread stage number: every reading stage (B05 especially) independently flagged that AJE absolute revenue is never disclosed on the calls, and B07 supplies the corpus-anchored AR-level substitute (~USD 12m AJE LLC standalone). Per the flag rules this binds the figure (the 18m->12m magnitude may not enter any downstream verdict card / Section 1B pillar input as anchored; use the AR-anchored figure or treat segment-level AJE as NOT FOUND) but does NOT meet the REWORK definition (fabricated/materially-misread). acceptance_rate 87.5% is above the 60% REWORK floor. The block's critical_count:1 vs findings-array MAJOR severity is the verifier's own encoding, recorded verbatim; the substance is handed to stage 13 which owns the verdict."

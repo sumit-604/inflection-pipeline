@@ -15,3 +15,5 @@ Per-stage token ledger (written and committed with each stage).
 | 7 | emoat | claude-sonnet-5 | default | n/a | n/a | 204904 | 633s | 1 |
 | 6 | peers | claude-sonnet-5 | default | n/a | n/a | 227989 | 711s | 1 |
 | 9 | tam | claude-sonnet-5 | default | n/a | n/a | 188715 | 765s | 1 |
+| 12a | verifier-a-numerical | claude-haiku-4-5 | default | n/a | n/a | 133868 | 215s | 1 |
+| 12c | verifier-c-framework | claude-opus-4-8 | default | n/a | n/a | 80001 | 240s | 1 |

@@ -1,0 +1,29 @@
+stage: B12c
+company: "MPSLTD"
+run_date: "2026-09-03"
+model: claude-opus-4-8
+status: complete       # PHASE-1 SCOPE (gate0 + emoat only); valuation section deferred to phase 3
+gate0:
+  rules_checked: 46
+  fails:
+    - {rule: "OUTPUT terminal YAML block", severity: "MINOR", note: "report file ends at input_gaps prose; mandated fenced YAML block absent from the report file (block was evidently injected into B07, which cites its values). Completeness gap, not a scoring error. Orchestrator holds the valid B01 block in outputs/blocks/01-gate0.yaml."}
+    - {rule: "ROCE formula (Capital Employed basis)", severity: "MINOR", note: "computed as Net Worth + Borrowings instead of Total Assets - Current Liabilities; disclosed data-gap substitution. Every ROCE score sits far inside band, no score flips. Faithful handling."}
+emoat:
+  rules_checked: 28
+  fails:
+    - {rule: "active-category count", severity: "MINOR", note: "prose states 8 active categories but nine distinct categories (C1,C2,D1,A4,F1,F2,G1,H1,H2) are enumerated and carried in the YAML; 'D1 straddles' rationale does not reconcile. No threshold effect (both below the 12+ completionist guard)."}
+valuation:
+  rules_checked: 0
+  fails: []
+  status: "pending phase 3 - stages 10/11 not yet produced; valuation framework docs not loaded"
+business_understanding_narrative: {present: false, five_questions_answered: false, prose_only: false, section6_candidates_named: 0, valuation_vocab_leak: false, fails: []}  # out of phase-1 scope (stage 13 not audited)
+recomputed_destination_pe: ""
+recomputed_decision: ""
+findings:
+  - {severity: "MINOR", location: "B01 report file (end)", claim: "mandated terminal YAML block", note: "absent from report file; block reached B07 at hand-off"}
+  - {severity: "MINOR", location: "B01 Block A / ROCE table", claim: "ROCE via Net Worth + Borrowings", note: "documented substitution for the fixed formula; non-decision-changing, scores far inside band"}
+  - {severity: "MINOR", location: "B07 Section 3 summary", claim: "8 active categories", note: "nine distinct categories listed and carried in YAML; count mislabelled; no threshold effect"}
+critical_count: 0
+major_count: 0
+minor_count: 3
+acceptance_rate: 96

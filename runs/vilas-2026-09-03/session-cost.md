@@ -16,3 +16,7 @@ Per-stage token ledger. One line per subagent run.
 | 5 | concall analysis | claude-sonnet | default | n/a | n/a | 238078 | 8m30s | 1 |
 | 8 | promoter check (web, partial) | claude-sonnet | default | n/a | n/a | 319465 | 12m40s | 1 |
 | 6 | peer concall verification | claude-sonnet | default | n/a | n/a | 681740 | 9m43s | 1 |
+| 9 | TAM/SAM/SOM | claude-sonnet | default | n/a | n/a | 394119 | 14m28s | 1 |
+| 12b | verifier B redflags | claude-opus-4-8 | default | n/a | n/a | 232166 | 5m53s | 1 |
+| 12c | verifier C framework (phase-1) | claude-opus-4-8 | default | n/a | n/a | 93792 | 4m41s | 1 |
+| 12a | verifier A numerical (haiku, first attempt) | claude-haiku-4-5 | default | n/a | n/a | 0 | fail: prompt-too-long | 1 |

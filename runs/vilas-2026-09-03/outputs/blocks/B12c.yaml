@@ -1,0 +1,29 @@
+stage: B12c
+company: "VILAS"
+run_date: "2026-09-03"
+model: claude-opus-4-8
+status: complete
+scope: phase-1  # Gate 0 + Emerging Moat only; valuation deferred to phase 3
+gate0:
+  rules_checked: 20
+  fails:
+    - {severity: MINOR, rule: "ROCE formula (fixed) — FY20-23 use Net Worth + Borrowings, not Total Assets − Current Liabilities", note: "data-forced (CL split absent in screener), disclosed, non-decision-changing; A-block scores unchanged"}
+    - {severity: MINOR, rule: "FCF formula (fixed) — FY20-24 capex proxied by total Cash from Investing, not PPE+intangibles", note: "disclosed; feeds only B2/B3, Block B already 3/20 and deal-breakered"}
+    - {severity: MINOR, rule: "B4 latest-vs-earliest — computed FY24 vs FY26, not FY20 vs FY26", note: "Trade Payables not broken out FY20-23; disclosed; direction (worsening >15d) unambiguous, score 0 unchanged"}
+emoat:
+  rules_checked: 12
+  fails:
+    - {severity: MINOR, rule: "completionist_recount vs evidence_mix labeling", note: "recount says 5 documented items, evidence_mix.documented=12; different scopes (scored-row 📄 subset vs all 📄 items), not reconciled in-report; cosmetic, no score effect"}
+valuation: {rules_checked: 0, fails: [], status: pending, note: "deferred to phase 3; B10/B11 absent and valuation framework docs out of phase-1 scope"}
+business_understanding_narrative: {present: false, five_questions_answered: false, prose_only: false, section6_candidates_named: 0, valuation_vocab_leak: false, fails: []}  # not in phase-1 scope (stage 13 not audited)
+recomputed_destination_pe: ""   # concur / not applicable in phase-1 scope
+recomputed_decision: ""         # concur: Gate 0 AVERAGE, Emerging Moat NONE, combined AVERAGE
+findings:
+  - {severity: MINOR, location: "01-gate0.md Block A / basis note", description: "ROCE for FY20-23 computed on Net Worth + Borrowings, a substitution for the fixed Total Assets − Current Liabilities denominator; data-forced, disclosed, no A-block score changes across a band"}
+  - {severity: MINOR, location: "01-gate0.md Block B / data_notes", description: "FCF capex for FY20-24 proxied by total Cash from Investing Activities rather than the fixed PPE+intangibles definition; disclosed, feeds only B2/B3 which sit inside an already deal-breakered Block B"}
+  - {severity: MINOR, location: "01-gate0.md Block B B4", description: "WC-days change computed FY24 vs FY26 rather than the rule's latest-vs-earliest (FY20 vs FY26) because Trade Payables is not broken out FY20-23; disclosed, direction and score 0 unaffected"}
+  - {severity: MINOR, location: "07-emoat.md Section 3 recount vs B07 evidence_mix", description: "completionist_recount reports 5 documented items while evidence_mix.documented=12; the two count different scopes and are not reconciled in the report; cosmetic, no score impact"}
+critical_count: 0
+major_count: 0
+minor_count: 4
+acceptance_rate: 100   # no rule materially misapplied; all 4 findings are MINOR imprecision/labeling per the severity scale

@@ -449,3 +449,106 @@ of BSE code "544310") returned thin or no usable India-specific data — this is
 (DATA THIN / NOT FOUND) within the relevant sections above, not treated as a skipped search.
 
 ---
+
+```yaml
+stage: B09-tam
+company: "VILAS"
+run_date: "2026-09-03"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "No independent third-party market-size report exists for transformer radiators as a standalone segment; the radiator figure in this stage is a capacity-implied ceiling on VILAS's own plant, not a market size"
+  - "No India-specific market size found for nanocrystalline cores or HV bushings; global-only backdrop data used with explicit no-allocation caveat"
+  - "No independently sourced organised-vs-unorganised revenue split for the India CRGO processing industry; standard uplift convention applied qualitatively only"
+flags:
+  - "Management's AR-cited transformer-market TAM (USD5.1bn 2024 -> USD7.44bn 2029) is the whole transformer industry, not VILAS's CRGO-processing slice; mgmt_claim_ratio ~4.7x conservative TAM reads INFLATED by definitional scope mismatch, not necessarily by the number itself"
+  - "5yr CRGO-only SOM (Rs1,170 Cr) exceeds the disclosed 36,000 MTPA nameplate revenue ceiling (~Rs828-900 Cr at current realisation) by an estimated Rs250-300 Cr; at the 5yr horizon the SOM path, not the capex plan, is the optimistic side - the reverse of the more typical finding"
+  - "Management's own FY27 copper-conductor revenue guidance (Rs100-120 Cr) implies capturing 20-40% of even a generously-sized rough India CTC/PICC TAM estimate (Rs300-500 Cr) in year one of commercial production from an unqualified, capacity-spec-disputed new line; reinforces B07's existing credibility discount on copper timeline guidance"
+  - "India CRGO national-consumption anchor (400,000-450,000 MT) underlying the bottom-up TAM method is FY23-24 vintage, now more than 2 years old versus this run's date; flagged STALE per the staleness rule and treated as directional, not exact-current-year"
+market_definition: "India CRGO lamination/transformer-core processing market (~98% of FY26 revenue); nanocrystalline, radiator, copper-conductor and HV-bushing adjacencies sized separately, different proof status each"
+tam_cr: {conservative: 9000, realistic: 10500}
+sam_cr: 5200
+sam_pct_of_tam: 58
+som_3yr_cr: 840
+som_5yr_cr: 1170
+som_implied_revenue_cagr: {yr3: 23, yr5: 21}   # FORMAL handoff to stage 11; CRGO-only, arithmetic from the funnel above. Company-level blended figure (CRGO + haircut-adjusted nano/radiator/copper) runs ~26% (3yr) / ~24% (5yr); see Section 5E and analyst_note.
+current_sam_share_pct: 8.8
+revenue_headroom_x: 11.4
+tam_growth_pct: 8
+runway_class: "STRONG"
+mgmt_claim_cr: 42600
+mgmt_claim_ratio: 4.7
+mgmt_claim_read: "inflated"
+capacity_check: "sufficient for 3yr SOM (implies ~93-99% utilisation of the 36,000 MTPA nameplate vs ~55% today); 5yr SOM exceeds the nameplate revenue ceiling by an estimated Rs250-300 Cr at current realisation - the SOM, not the capex plan, is the optimistic side at 5yr"
+methods_used:
+  - "top-down (India transformer market x core-steel cost share)"
+  - "bottom-up (national CRGO tonnage x VILAS-derived realisation)"
+  - "peer revenue aggregation (VILAS, Jay Bee Laminations, Kryfs Power Components, Pitti Engineering - floor check only, not headline)"
+  - "global benchmark (nanocrystalline, CTC/PICC, HV bushings adjacency pools only)"
+stale_data_flags:
+  - {datapoint: "India CRGO annual consumption 400,000-450,000 MT, ~90% import-dependent", source: "GTRI commentary via Deccan Chronicle / KNN India on DGTR anti-dumping filing (filed 22-Jun-2026)", year: "FY2023-24 baseline"}
+  - {datapoint: "India transformer market USD5.1bn (2024) -> USD7.44bn (2029), CAGR 7.9%", source: "VILAS AR 2024-25, MD's Message p.2 and MD&A Annexure IV p.34", year: "2024"}
+  - {datapoint: "Global nanocrystalline toroidal core market USD1.31bn (2024) -> USD3.52bn (2035)", source: "Spherical Insights market report", year: "2024"}
+searches_performed:
+  - "India transformer market size 2024 2029 CAGR billion"
+  - "India CRGO electrical steel market size lamination import volume"
+  - "DGTR CRGO anti-dumping investigation India demand consumption metric tonnes 2024 2025"
+  - "India power transmission distribution capex Rs lakh crore 2032 CEA National Electricity Plan transformer demand"
+  - "nanocrystalline core market India size transformer"
+  - "transformer radiator market size India manufacturers capacity"
+  - "India copper CTC conductor PICC market size transformer winding conductors"
+  - "HV bushings market India 12kV 400kV transformer bushing manufacturers import"
+  - "Pitti Engineering revenue FY25 CRGO lamination laser cutting"
+  - "Jaybee Laminations revenue CRGO transformer core India"
+  - "global electrical steel bushing market size transformer bushings USD million 2024"
+  - "BSE 544310 company CRGO laminations transformer"
+  - "India CRGO lamination processors market unorganised fragmented players list"
+  - "Kryfs Power Components revenue FY25 CRGO laminations BSE"
+  - "transformer manufacturing cost breakdown core steel percentage copper winding tank"
+searches_skipped: []
+downstream_candidates:
+  - signal: "PGCIL vendor-approval status"
+    entity_type: "regulatory"
+    demand_link: "Gates access to larger institutional/high-kV orders and global-MNC eligibility; in process >12 months"
+    likely_source: "Power Grid Corporation of India vendor-empanelment notices / VILAS exchange filings"
+    cadence: "event-driven"
+    shared: true
+  - signal: "CEA National Electricity Plan (Transmission) capacity-addition data"
+    entity_type: "macro"
+    demand_link: "Direct industry-wide demand driver for transformer-core (CRGO) tonnage"
+    likely_source: "Central Electricity Authority (CEA) publications"
+    cadence: "quarterly"
+    shared: false
+  - signal: "DGTR CRGO anti-dumping investigation outcome"
+    entity_type: "regulatory"
+    demand_link: "Any duty raises landed CRGO cost for all processors; margin and competitive-moat implications"
+    likely_source: "Directorate General of Trade Remedies (DGTR) notifications / Gazette of India"
+    cadence: "event-driven"
+    shared: false
+  - signal: "Atlas Transformers India Ltd related-party transaction volume"
+    entity_type: "counterparty"
+    demand_link: "~12.5% of FY25 revenue combined sales+purchase; trades both sides of VILAS's book"
+    likely_source: "Related-party-transaction disclosures / AGM resolutions (exchange filings)"
+    cadence: "quarterly"
+    shared: true
+  - signal: "Marquee OEM customer order books (Voltamp, Electrotherm, ECE Industries, Shilchar, Kirloskar Electric)"
+    entity_type: "end-customer"
+    demand_link: "Their capex/order-book cycles directly set VILAS's CRGO lamination offtake"
+    likely_source: "Individual company exchange filings / investor presentations"
+    cadence: "quarterly"
+    shared: false
+  - signal: "JSW JFE Electrical Steel Nashik domestic CRGO mill capacity status"
+    entity_type: "counterparty"
+    demand_link: "Any domestic CRGO capacity add changes the ~90% import-dependence structure and pricing"
+    likely_source: "JSW Group exchange filings / DGTR petitioner disclosures"
+    cadence: "event-driven"
+    shared: false
+  - signal: "Renewable capacity addition bulletins (solar/wind GW added)"
+    entity_type: "macro"
+    demand_link: "Each incremental GW requires step-up/evacuation transformers, a named structural driver"
+    likely_source: "Ministry of New and Renewable Energy (MNRE) / CEA monthly bulletins"
+    cadence: "monthly"
+    shared: false
+demand_externally_verifiable: true
+analyst_note: "Core CRGO SOM-implied CAGR (~23% 3yr, ~21% 5yr) sits just under the 25% hurdle alone; company-level blended CAGR adding haircut-adjusted nano/radiator/copper contributions runs ~26% (3yr) and ~24% (5yr) per Section 5E - the optionality lines are load-bearing for the hurdle, not optional upside. 5yr CRGO SOM (Rs1,170cr) exceeds the 36,000 MTPA nameplate ceiling (~Rs900cr) by ~Rs250-300cr - here the SOM, not the capex plan, is the optimistic side, reversing this framework's usual pattern. Radiator and HV-bushings sizing rest on no independent market report: the radiator TAM cited is VILAS's own capacity ceiling, not a market size; bushings SOM is NOT FOUND given pre-revenue, 25%-stake, unsigned-tech status. CRGO tonnage anchor (400-450k MT) is FY23-24 vintage, now stale; DGTR's June-2026 filing is fresh but does not update the headline tonnage. runway_class uses this stage's canonical MASSIVE/STRONG/GOOD/MODERATE/LIMITED enum; the task brief separately referenced ABUNDANT/ADEQUATE/CONSTRAINED, mapped here to STRONG."
+```

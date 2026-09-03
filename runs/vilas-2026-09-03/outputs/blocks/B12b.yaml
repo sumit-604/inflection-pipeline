@@ -1,0 +1,28 @@
+stage: B12b
+company: "VILAS"
+run_date: "2026-09-03"
+model: claude-opus-4-8
+status: complete
+independent_flags_found: 22
+caught: 16
+partially_caught: 2
+missed:
+  - {severity: "MAJOR", item: "HV Bushing new entity is 25% Vilas / 75% promoter, leverages Vilas customer base, a rented group building, and Yash Highvoltage founder as CEO, with promoter funding and unspecified future-merger terms; promoter-favorable related-party structure", anchor: "Concall_May_2026, Nilesh Patel, opening p.3 and Ritesh Bhagwati/Akash Jhaveri exchanges p.14-15"}
+  - {severity: "MAJOR", item: "Volunteered margin-normalization admission: FY25-type 14% EBITDA 'comes once in 3 or 4 years'; normal EBITDA 10-11% and PAT 7-8%. Recalibrates the earnings base; not surfaced as its own flag", anchor: "Concall_May_2026, Nilesh Patel, Prolin Nandu exchange p.10-11; foreshadowed Concall_May_2025 Prolin Nandu exchange p.9-10"}
+  - {severity: "MAJOR", item: "Other income runs ~15-20% of total profitability (treasury/FD income); PAT margin flattered; IPO funds ~95% utilized. Not flagged as an earnings-quality risk", anchor: "Concall_May_2026, Kushal Shah exchange p.23; Concall_May_2025 Rajesh Jain exchange p.20-21"}
+  - {severity: "MINOR", item: "Cluster: nanocrystalline full-capacity potential collapse Rs 150 cr (May-2025) to Rs 25-27 cr (May-2026); capex/CWIP Rs 10 cr reconciliation gap; FY25 EBITDA basis drift 14.8% reported to 12.68% Ind-AS restated; amorphous-core demand skepticism; '64% growth precisely in line with target' spin on a missed 24,000 MT goal", anchor: "Concall_May_2025 p.14,16,18-19; Concall_May_2026 p.3-5,20"}
+pipeline_flags_not_supported: []
+promise_delivery_spot_checks: {checked: 6, confirmed: 6, wrong: 0}
+credibility_grade_concur: "concur"   # C is right; my governance and earnings-quality finds reinforce it, do not lift it
+findings:
+  - {severity: "MAJOR", location: "B05 red_flags / peer_questions vs Concall_May_2026 p.3,14-15", description: "MISSED: HV Bushing 25%/75% promoter-favorable related-party structure using Vilas's customers, group building and Yash Highvoltage founder; possible future merger at unstated terms"}
+  - {severity: "MAJOR", location: "B05 guidance/promise_delivery vs Concall_May_2026 p.10-11", description: "MISSED: management's own admission that 14% EBITDA is a 1-in-3-4-year event and normal is 10-11% EBITDA / 7-8% PAT; thesis-critical for the normalized earnings base and exit multiple"}
+  - {severity: "MAJOR", location: "B05 (no earnings-quality flag) vs Concall_May_2026 p.23", description: "MISSED: other income ~15-20% of PAT from treasury/FD income; reported PAT margin flattered, IPO funds ~95% utilized"}
+  - {severity: "MAJOR", location: "B05 peer_questions #4 vs Concall_Nov_2025 p.7-8 and Concall_May_2026 p.21", description: "PARTIALLY CAUGHT: 2-quarter pattern of deflecting customer-weakness signals (Voltamp/Shilchar weak results) with a firm-price-order narrative was framed only as a forward verification question, not as a management deflection pattern"}
+  - {severity: "MINOR", location: "B05 flags/red_flags vs Concall_May_2025 p.16 and Concall_May_2026 p.20", description: "PARTIALLY CAUGHT: nanocrystalline stated full-capacity potential collapsed from Rs 150 cr to Rs 25-27 cr; only the near-term Rs 50->18-20 cr cut was weighted"}
+  - {severity: "MINOR", location: "Concall_May_2025 p.14 and p.4 vs Concall_May_2026 p.5", description: "MISSED: Rs 10 cr capex/CWIP reconciliation gap (Rs 50 cr stated vs PFI Rs 40.81 cr) and FY25 EBITDA basis drift (14.8% reported to 12.68% Ind-AS restated); comparability weak"}
+  - {severity: "MINOR", location: "Concall_May_2025 p.18-19 and Concall_May_2026 p.3-4", description: "MISSED: amorphous-core demand challenged by a sector-expert investor; and '64% growth precisely in line with our target' spin on a missed 24,000 MT FY26 volume goal (actual 19,500 MT)"}
+critical_count: 0
+major_count: 4
+minor_count: 3
+acceptance_rate: 73

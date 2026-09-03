@@ -21,3 +21,4 @@ its own stage. Loop/retry runs get their own line with a run counter.
 | 12b | verifier-redflags | claude-opus | - | - | - | 218715 | 4m43s | 1 |
 | 12c | verifier-framework | claude-opus | - | - | - | 90251 | 4m19s | 1 |
 | 12d | verifier-peers | claude-sonnet | - | - | - | 79339 | 4m40s | 1 |
+| 13 | synthesis-lite | claude-opus | - | - | - | 108174 | 7m39s | 1 |

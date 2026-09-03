@@ -227,13 +227,22 @@ regulated utilities); Continuum Green Energy (best peer, unlisted, DRHP only).
             Verifier B established Bikaner 525 MW is TGNA (curtailment NOT revenue-
             protected, ~Rs170 Cr real hit). Mental Model DRAFT, UNSIGNED. Awaiting
             Halt 1 operator decision (KILL / SHALLOW WATCH / PROCEED).
+2026-09-02  HALT 1 signed. Claude web ran live verification + downstream rounds 1-2 and
+            issued extraction Hand-off 1 (halt1-extraction-01.md, PR #137). Mental Model
+            v5 SIGNED PROCEED by operator (gate decision to continue; overrides the v5
+            analyst SHALLOW WATCH recommendation). Framework exception Option A adopted
+            (EV/EBITDA primary NCI-adjusted, DCF of contracted cash flows secondary, SOTP
+            tertiary; PE N/A; manifest Pharma/CDMO row overridden). Transition restated
+            R1 -> R1+ (guided FY28 ROCE 7-9%), NOT R1->R3. Signed model filed at
+            outputs/final/mental-model-declaration-v5-signed.md. /fttcp gated on Role 5.5
+            tracker writes (claude.ai) still pending.
 ```
 **Slots to be filled as the pipeline runs:**
 ```
-HALT 1 MENTAL MODEL:      [ ] PROCEED  [ ] KILL     Signed:            Date:
-ROLE 5.5 TRACKER PROOF:                             Rows:              Date:
+HALT 1 MENTAL MODEL:      [X] PROCEED  [ ] KILL     Signed: Keerti Kaushik   Date: 2026-09-02
+ROLE 5.5 TRACKER PROOF:   DOWNSTREAM SIGNAL TRACKER (ds 926b65ce), COMPANIES MASTER 3cfbb2b9-d3ab-81c6-bc5e-c5e6b18f91d6   Rows: 10   Date: 2026-09-02
 HANDOVER DOSSIER:         runs/cleanmax-2026-09-01/outputs/reports/09b-understanding-dossier.md   Date: 2026-09-01
-P/E GATE RULINGS:                                   Signed:            Date:
+P/E GATE RULINGS:         Option A (EV/EBITDA primary; PE N/A)  Signed: Keerti Kaushik   Date: 2026-09-02
 FTTCP COMPLETE:                                     Date:
 NOTION ROW:                                         Page ID:           Date:
 ```
@@ -248,3 +257,48 @@ PEER:CLEANMAX:https://www.screener.in/company/NTPCGREEN/consolidated/
 PEER:CLEANMAX:https://www.screener.in/company/ADANIGREEN/consolidated/
 PEER:CLEANMAX:https://www.screener.in/company/JSWENERGY/consolidated/
 ```
+---
+## 15. SIGNED MENTAL MODEL (v5, signed 2026-09-02) — COMPANY MEMORY
+Full text at runs/cleanmax-2026-09-01/outputs/final/mental-model-declaration-v5-signed.md. Memory to weigh, not anchored evidence.
+
+**Thesis (one line):** buy a contracted 23-year infrastructure compounder at a price made by a supply event, not a business event, accepting ~8% ROCE as the ceiling; not a thesis at Rs 1,247 because the guided FY28 state is already priced.
+
+**Signed model block:**
+- FROM -> TO: R1 COMMODITY PRICE-TAKER -> R1+ (guided FY28 ROCE 7-9%). Scale, not a quality-ladder climb. The earlier R1->R3 draft overstated it by two rungs.
+- Archetype: licence/scarcity business (RE Power Sales, 73% rev, ~87% run-rate EBITDA) holding a PARTIAL licence + a product-shape gap; RE Services (26%) is an order-book business liquidating backlog.
+- Engine: MW commissioned x EBITDA per MW, as young assets season (Rs 5,339 Cr CWIP converts to earning plant); EBITDA/MW now also depends on product shape (firmed vs intermittent), not just utilisation.
+- Proof gate: quarterly operating PBT before other income >= 0, sustained two quarters. FY25 (62.4) -> FY26 (33.6) -> Q1 FY27 +51.6. Next print Q2 FY27, late Oct-2026.
+- Ugliness: ARTIFACT-OF-CLIMB (revenue never declined, margin widened since FY23, accounting conservative).
+- Transition falsifier: any of (a) Q2 FY27 op PBT ex-OI < 0; (b) Koppal commissions on TGNA or slips past Dec-2026; (c) next central-grid site is in the Rajasthan corridor; (d) FY27 Data&AI contracting short while Serentica/NTPC/Adani sign firmed data-centre PPAs; (e) FY27 NCI profit share stays negative; (f) FY27 EBITDA/MW < Rs 50 lakh while fleet grows.
+- Business falsifier: Rs 1,724 Cr current-liability shortfall hardening into an auditor EoM or Patagonia Clause (xix) spreading; a margin call on the 360 One pledge; an SPV default invoking the parent/promoter guarantee; a second covenant breach.
+
+## DECISION STATUS AND ENTRY ZONE
+- 2026-09-02: HALT 1 gate PROCEED (operator override of the v5 SHALLOW WATCH recommendation; continue to /fttcp + Role 1). Decision Status WATCHLIST (COMPANIES MASTER row). NO POSITION, NO ENTRY AUTHORISED. Entry Price Max Rs 715, Margin of Safety Rs 470, vs CMP Rs 1,247 (43-62% above). Role 1 valuation in Phase 3 sets the binding zone; framework exception Option A governs (EV/EBITDA primary, DCF secondary, SOTP tertiary; PE N/A).
+
+## OPERATOR RULINGS
+- 2026-09-01: Signed the spear OVERRIDE (SPEAR GATE cleared).
+- 2026-09-02: Signed Mental Model v5 as PROCEED at Halt 1, overriding the analyst SHALLOW WATCH recommendation, to run deliberation and valuation.
+- 2026-09-02: Framework exception Option A adopted (EV/EBITDA primary NCI-adjusted, DCF of contracted PPA cash flows at parent economic share secondary, SOTP tertiary; PE not applicable per B04; manifest Pharma/CDMO sector-cap row overridden). Section 1B may run in Phase 3 on this basis.
+- 2026-09-02: Role 5.5 tracker gate satisfied (10 rows written by Claude web). Restated the B3 capitalisation reconciliation and ruled the consolidated CWIP opening/closing (FY25-FY26) a BLOCKING input for Stage 11: no destination multiple may be set without it. /fttcp authorised.
+
+## ACTIVE TRIPWIRES
+- Q2 FY27 operating PBT before other income < 0 (late Oct-2026) — single-point transition falsifier.
+- BLOCKING (Stage 11): consolidated CWIP opening AND closing, FY25 and FY26 — the one number settling the B3 capitalisation question. Operator restatement 2026-09-02: 28.43% (capitalised/total incurred) is a composition measure, not aggressiveness; 6.9% (interest/avg CWIP) is the Ind AS 23 compliance test but excluded Rs 126.76 Cr LC/BG fees. With fees, rate-on-CWIP is 8.5-11.7% vs 8.4% cost of debt, i.e. at/above the cap depending on opening CWIP. No destination multiple until CWIP is fixed. Also: LC/BG charges grew 6.2x while capex doubled (unexplained); full-expense case moves FY26 op PBT ex-OI to ~ -Rs 160 Cr.
+- Koppal (~529-543 MW) commissioning on TGNA, or substation slipping past Dec-2026.
+- Next ~500-800 MW central-grid site located in the Rajasthan corridor.
+- Supply overhang / promoter pledge cover: 33.9m shares free 26-Aug-2026; BGTF/Brookfield 21.31% ~Feb-2027; 360 One pledge cover ~2.17x vs ~2.25x trigger; any further pledge increase past 20.02% or a top-up call.
+- NCI share of profit staying negative in FY27.
+- Leverage vs CARE's own 5.5x net-debt/EBITDA downgrade trigger (opening 5.7x).
+- Green Earth criminal complaint (IPC forgery/conspiracy, in mediation) — any ruling.
+- FY27 EBITDA per MW < Rs 50 lakh (nameplate) while the fleet grows.
+
+## OPTIONALITY / DOWNSTREAM REGISTER (Role 5.5 candidates)
+- Storage / firmed (round-the-clock) PPA announcement -> converts the product-shape gap, first appears in a concall/press release, window 2 quarters.
+- India C&I open-access RE capacity additions (quarterly GW, Mercom) -> total-addressable proxy.
+- India data-centre capacity by hyperscaler (CBRE/JLL) -> Data&AI demand (42% of contracted).
+- PGCIL/CTU Rajasthan-corridor delivery (Bhadla-Bikaner upgrade, Bikaner-V) -> whether central-grid TAM is usable.
+- State open-access / group-captive regulatory changes (SERC orders) -> practically addressable SAM.
+- Peer C&I capacity/revenue (Serentica unlisted, ACME, KPI Green, Adani Green) -> competitive-share dynamics; Serentica is the fastest-growing direct competitor and is absent from the entire corpus.
+
+## RUN FOLDERS
+- runs/cleanmax-2026-09-01/

@@ -1,0 +1,41 @@
+stage: B01-gate0
+company: "VILAS"
+run_date: "2026-09-03"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - {item: "Prospectus (May-2024 IPO)", severity: HIGH, note: "not in corpus; FY20-22 restated figures visible only as screener aggregates, not primary source"}
+  - {item: "FY26 Annual Report", severity: HIGH, note: "not filed yet (results-only corpus); freshness gap, FY26 sourced from audited results filing + screener only"}
+  - {item: "H1 FY26 results PDF (VILAS_13112025)", severity: LOW, note: "image-only, no text layer, needs OCR; not required for annual Gate 0 scoring"}
+  - {item: "Announcements primary PDFs", severity: MEDIUM, note: "partial coverage in corpus"}
+  - {item: "Shareholding pattern primary exchange filing", severity: MEDIUM, note: "only aggregator (screener) table available; pledge column absent"}
+  - {item: "Contingent liabilities note", severity: MEDIUM, note: "not present in results sidecar or screener; needed for E4"}
+  - {item: "Peer set for moat tests M2/M5/M6/M7/M9", severity: MEDIUM, note: "PEER DATA NEEDED, none provided in corpus"}
+flags:
+  - {type: FLAG-GATE0, reason: "Core score 59/100 falls in the Core 40-59 band, giving AVERAGE regardless of the STRONG (4-moat) qualitative profile; primary depressor is Block B (3/20) cash generation quality."}
+  - {type: FLAG-CASH, reason: "Cumulative CFO/PAT 0.55x (FY20-26); CFO -35.46 Cr FY25 and -1.70 Cr FY26 (screener-data) against rising PAT (+34.17 Cr, +39.56 Cr); WC days rose 41.4 to 96.5 FY24-FY26 (computed). Reads growth-induced (Unit-3 capex/WC ramp, IPO- and borrowing-funded) not yet confirmed structural; flag a post-ramp (FY27) recheck."}
+data_years: 7
+fy_range: "FY20 to FY26"
+blocks: {A: 12, B: 3, C: 17, D: 19, E: 8}
+core_score: 59
+moat_score: 15
+grand_total: 74
+moats_confirmed: 4
+moat_class: "STRONG"
+classification: "AVERAGE"
+deal_breakers:
+  - "Rule 2: Block B = 3 (<8) -> caps classification at max GOOD; non-binding since AVERAGE already sits below GOOD. Driven by FY25 and FY26 negative CFO against rising PAT."
+history_downgrade: false
+data_notes:
+  - "No loss-to-profit swing: PAT positive in all 7 years (FY20 3.60 Cr to FY26 39.56 Cr, screener-data)."
+  - "ROCE FY20-23 computed on Net Worth + Borrowings capital-employed basis (current-liability split unavailable in screener); FY24-26 computed on exact Total Assets - Total Current Liabilities basis from the audited standalone balance sheet in the FY26 results sidecar, which gives all three dates (31-Mar-2026 / 31-Mar-2025 / 1-Apr-2024)."
+  - "EBIT for FY25 and FY26 taken from the sidecar's own audited P&L (PBT + Finance Costs) to match the exact-basis denominator; FY20-24 EBIT taken from screener-data (PBT + Interest)."
+  - "Capex for FY20-24 proxied by total Cash from Investing Activities (screener does not break out PPE/intangible purchases separately); FY25-26 capex is the exact 'Purchase of Property, Plant and Equipment' line from the sidecar cash flow statement."
+  - "WC Days (3-component, Receivable+Inventory-Payable) computable on an exact basis only for FY24-26 (Trade Payables not broken out for FY20-23 in screener); B4 trend uses FY24 vs FY26, not FY20 vs FY26."
+  - "FY25 CFO discrepancy: screener/operator anchor -35.46 Cr vs sidecar audited restated (Ind AS 101, transition date 1-Apr-2024) -41.53 Cr; screener used as the 7-year trend anchor, sidecar flagged as the freshly restated version filed with FY26 results."
+  - "PEER DATA NEEDED: M2 (cost advantage), M5 (scale/dominance), M7 (regulatory/license player count), M9 (brand vs peer GM) all scored 0 for lack of a peer set in corpus."
+  - "M6 (R&D) and M8 (distribution) scored 0 for lack of company-specific disclosure, not peer data."
+  - "E3 (pledge) and E4 (contingent liabilities/net worth) scored 0, N/A (not in provided data): aggregator shareholding table has no pledge column; results sidecar carries no contingent-liabilities note."
+  - "E2 promoter-holding-change window is ~2 years (IPO listing May-2024 to Mar-2026), short of the full 3-year window the metric assumes; stated, not papered over."
+block_b_trend: "deteriorating: cumulative CFO/PAT 0.55x; CFO -35.46 Cr FY25 and -1.70 Cr FY26 (screener-data) vs rising PAT (+34.17 Cr, +39.56 Cr); WC days 41.4 (FY24) to 96.5 (FY26, computed). Reads growth-induced (Unit-3 capex/WC ramp, CWIP 37.94 Cr FY25, receivables 38.93->77.50 Cr and inventory 25.78->72.33 Cr FY24-FY26, IPO- and borrowing-funded per financing cash flows), with a secondary WC-efficiency deterioration (trade payables fell 38.12->28.08 Cr FY25-FY26 even as receivables/inventory grew) not yet confirmed structural."
+analyst_note: "Classification AVERAGE is driven almost entirely by Block B (3/20), not by growth or balance-sheet quality, both of which score strongly (C 17/20, D 19/20). The moat profile is STRONG (4 confirmed: pricing power, capital efficiency, customer stickiness, switching costs) but sits below the Core>=60 threshold needed for the moat overlay to lift the classification. The cash-quality weakness coincides exactly with the Unit-3 capacity ramp (capex, receivables, inventory all stepping up FY25-26, externally funded via IPO proceeds and short-term borrowing) rather than with margin compression or revenue softness, which argues for growth-induced over structural, but this is unresolved evidence pending a post-ramp FY27 check, not a clean pass. Six of twelve moat tests (M2,M5,M6,M7,M8,M9) scored 0 purely for missing peer/disclosure data, not for a demonstrated absence of moat; treat the moat score as a floor, not a ceiling, until peer data is sourced downstream."

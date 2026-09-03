@@ -1,0 +1,46 @@
+stage: B07-emoat
+company: "MODISONLTD"
+run_date: "2026-09-03"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "No LV/HV/product-line segment revenue or margin disclosure anywhere in the filed AR (single primary segment reported); every LV/HV growth, mix, and market-share claim used in this scan is management-stated only, asked and deflected twice across sources four years apart"
+  - "No FY26 facility utilisation percentage disclosed for any plant; only capacity figures available are from the Mar-2024 investor presentation, out of scope for FY26 conclusions"
+  - "No independent confirmation (positive or negative) of the Sep-2022 LV Brownfield / HV Greenfield capex programme's completion status in any FY26 or later source"
+  - "No competitor-side or third-party corroboration for any 'sole/only manufacturer' claim (HV, LV+MV+HV combined)"
+flags:
+  - {type: FLAG-IR-AR-CONFLICT, reason: "Investor presentation frames Modison Copper Pvt Ltd (MCPL) as one of two 'Modison facilities' under a 'fully backward integrated' banner; the filed AR shows Modison holds 0% equity in MCPL, MCPL holds 1.26% of Modison, and MCPL depends on Modison for 48.76% of its own FY26 turnover via ordinary related-party transactions, not a captive supply agreement (AR p.26-28). B1 backward-integration credit denied on this basis."}
+  - {type: FLAG-RD-DECLINE, reason: "R&D spend fell 24.4% YoY (Rs.210.56 lakh to Rs.159.11 lakh, AR p.68) in the same year the AR states 'no new or significant efforts were made towards technology absorption' (AR p.67), directly undercutting the investor-presentation claim of 'specialized technology developed by way of inhouse research and development resulting in high entry barriers.'"}
+  - {type: FLAG-TALENT-DEPARTURE, reason: "The outside senior technical JMD/CEO (ex-ABB/Crompton Greaves, ~3 decades experience) who anchored the 2022 capex and value-chain-migration narrative does not appear in the FY26 AR's Board/KMP list; departure date and reason not disclosed in corpus. Negative signal for I1/F1, not scored positive."}
+  - {type: FLAG-DATA-CONSISTENCY, reason: "AGM export-growth claim (12%) conflicts with AR-filed export figure (+5.79%, Rs.82.16 cr FY26 vs Rs.77.67 cr FY25), a second instance (alongside the MCPL ~25% vs 48.76% conflict already in B05) of AGM commentary running ahead of the filed record."}
+em_score: 8
+em_classification: "NONE"
+active_categories:
+  - {id: "R1", name: "Regulatory/policy tailwind (ISRO import substitution)", strength: "Moderate", evidence_type: "documented+claim", time_to_materialise: "24-36m"}
+  - {id: "H2", name: "Strategic partnerships (GE Best Supplier award; GE/Siemens/ABB joint-improvement projects)", strength: "Moderate", evidence_type: "claim", time_to_materialise: "12-24m"}
+evidence_mix: {documented: 14, claim: 19, inference: 3}
+completionist_recount: "recount performed: 1 documented item across 1 category (R1, ISRO import-substitution recognition, AR Annexure F p.68); all other credited categories (H2 Moderate; A1/A3/A4/E2/H1 Weak) rest on management claims, several explicitly contradicted or unrefreshed by the filed record. 2 active Strong/Moderate categories total, well under the 12-category guard threshold."
+catalysts_12m:
+  - {catalyst: "FY27 quarterly revenue tracking toward Rs.880 cr guidance (Q1 FY27 already +101.6% YoY per B05)", window: "12m", evidence_type: "claim+partial-documented", anchor: "AGM Jul-2026 webcast; Q1 FY27 filed results per B05-concall"}
+  - {catalyst: "Export revenue tracking toward Rs.100 cr FY27 target from a filed Rs.82.16 cr FY26 base", window: "12m", evidence_type: "claim", anchor: "AGM Jul-2026 webcast; AR Directors' Report Export Highlights p.38"}
+  - {catalyst: "FY27 AR disclosure confirming or denying LV/HV factory completion status (targets from Oct-2022, already 3-4 years overdue)", window: "12m", evidence_type: "inference", anchor: "Concall Oct-2022 p.6-7; no completion confirmation found through FY26 AR/AGM"}
+  - {catalyst: "Any quantified ISRO or government/defense revenue disclosure", window: "12-24m", evidence_type: "claim", anchor: "AGM Jul-2026 webcast; AR Annexure F Technology Absorption p.68"}
+capex_embedded_growth_pct: 3.82
+optionality_register:
+  - {optionality: "New unnamed metal-segment expansion beyond silver/copper/tungsten", converting_evidence: "Named metal, board approval, capex or exchange announcement", first_appears: "Exchange filing / AR MD&A", window: "Unknown, ~4 years overdue"}
+  - {optionality: "Sub-assembly/value-added migration with L&T and GM Modular", converting_evidence: "Signed contract or disclosed value-added-revenue line", first_appears: "AR segment note / exchange filing", window: "Unknown, silent since 2022"}
+  - {optionality: "Precious-material-compound export segment (silver salts, Clariant relationship)", converting_evidence: "Disclosed export-revenue line item or repeat-order confirmation", first_appears: "AR MD&A / exports note", window: "Unknown, silent since 2022"}
+  - {optionality: "LV Brownfield + HV Greenfield factory completion (~Rs.25 cr, targeted Nov-2022/FY23)", converting_evidence: "Capex-completion announcement, capacity-addition figure disclosed", first_appears: "AR capex note / exchange filing", window: "Overdue; next disclosure point is FY27 AR"}
+  - {optionality: "ISRO import-substitution revenue quantification", converting_evidence: "Disclosed government/defense revenue line or purchase-order value", first_appears: "Exchange filing / AR segment note", window: "2-3 years"}
+  - {optionality: "GE/Siemens/ABB relationship converting into disclosed wallet-share gain", converting_evidence: "Quantified wallet-share disclosure or contract-value figure", first_appears: "Concall/AGM or AR", window: "12-24m"}
+  - {optionality: "'~260 new products developed last year' converting into a disclosed product-platform revenue metric", converting_evidence: "SKU-level or product-line revenue disclosure", first_appears: "AR or investor deck", window: "Unknown, no disclosure mechanism exists today"}
+combined_assessment: "AVERAGE"
+combined_reasoning: "AVERAGE backward (Gate 0 cash-conversion deal-breaker) meets a forward scan with no meaningful emerging moat (em_score 8/92, threshold 12) and two 2022-vintage capex/diversification promises still unconfirmed 3-4 years later; no transition catalyst validated this cycle, stays AVERAGE."
+top_moat_risks:
+  - "R&D spend fell 24.4% YoY in the same year the AR discloses 'no significant efforts towards technology absorption,' undercutting every IP/innovation claim in investor materials."
+  - "The Rs.25 cr LV Brownfield/HV Greenfield capex programme (targeted Nov-2022/FY23) has no completion confirmation anywhere 3-4 years later."
+  - "MCPL is presented in investor materials as a backward-integrated 'Modison facility' but is an unconsolidated, promoter-controlled related party depending on Modison for 48.76% of its own turnover - a governance/RPT-dependency risk, not a captive-supply moat."
+  - "Segment-level (LV/HV) revenue and margin have never been disclosed in a filed document despite being asked twice, four years apart; every HV 'crown business' growth claim is unverifiable against filed financials."
+  - "The outside senior technical executive who drove the 2022 capex and value-chain-migration narrative is no longer with the company by FY26, a negative signal for talent-asymmetry claims."
+  - "Cash conversion and working-capital trend (Gate 0 Block B) are actively deteriorating in the same period several 'emerging' growth narratives are being told in unfiled venues (AGM)."
+analyst_note: "The scan found almost nothing new forming: one credible-but-unquantified government-recognition item (ISRO) and one FY26-dated but unquantified OEM-award item (GE) are the entire positive yield from 22 categories plus I1/I2. Every other 2022-era emerging thread (LV/HV factories, sub-assembly migration, new metal segment, precious-compound exports) has gone silent or unconfirmed by FY26, and two investor-facing claims (MCPL dependency, export growth) conflict with the filed AR figures. The MCPL 'backward integration' framing is the single most important correction this stage makes to the existing investor narrative: it is not a captive supply relationship on Modison's balance sheet, and B1 should not be credited on IR-deck framing alone in any downstream stage."

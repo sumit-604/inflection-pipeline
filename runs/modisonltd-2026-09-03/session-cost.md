@@ -15,3 +15,4 @@ its own stage. Loop/retry runs get their own line with a run counter.
 | 5 | concall-agm | claude-sonnet | - | - | - | 119204 | 7m40s | 1 |
 | 8 | promoter | claude-sonnet | - | - | - | 142517 | 10m35s | 1 |
 | 6 | peers | claude-sonnet | - | - | - | 216616 | 4m01s | 1 |
+| 7 | emerging-moat | claude-sonnet | - | - | - | 168715 | 10m07s | 1 |

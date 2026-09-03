@@ -22,3 +22,29 @@ its own stage. Loop/retry runs get their own line with a run counter.
 | 12c | verifier-framework | claude-opus | - | - | - | 90251 | 4m19s | 1 |
 | 12d | verifier-peers | claude-sonnet | - | - | - | 79339 | 4m40s | 1 |
 | 13 | synthesis-lite | claude-opus | - | - | - | 108174 | 7m39s | 1 |
+
+## SESSION CLOSE-OUT (phase 1)
+
+Run token total across all ledger rows: ~2,285,829 tokens (stage 0 inline, not metered).
+
+### (a) TOP FIVE BY TOKENS (loop/retry runs summed into the stage)
+1. stage 2 notes (3 passes) - 305,763 - 13.4%
+2. stage 3 ar-deep-dive     - 222,338 -  9.7%
+3. verifier 12b red-flags   - 218,715 -  9.6%
+4. stage 6 peers            - 216,616 -  9.5%
+5. stage 7 emerging-moat    - 168,715 -  7.4%
+
+### (b) DOWNSHIFT FAILURES
+none. Verifier A (mechanical) ran on haiku as routed. Stage 10 assembly does not run in phase 1. Stage 0 validation is done inline by the orchestrator session (opus) by design, not as a routed haiku subagent, so it is not a downshift failure.
+
+### (c) COST SPIKES
+none. No prior runs/modisonltd-<date>/session-cost.md exists (first run for this ticker), so no 1.5x baseline to cross.
+
+### (d) OPERATOR SNAPSHOT
+Operator: run /cost and /usage now and paste the cache hit ratio and the loop totals below.
+
+#### Operator snapshot
+(to be filled by operator)
+
+<!-- late ledger row (dossier ran after close-out header was drafted) -->
+| 09b | halt1-dossier | claude-sonnet | - | - | - | 159947 | 9m22s | 1 |

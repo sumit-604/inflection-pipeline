@@ -1,0 +1,42 @@
+stage: B09b-dossier
+company: "MODISONLTD"
+run_date: "2026-09-03"
+model: claude-sonnet-5
+status: complete
+corpus_verdict: "CORPUS GAPPED"
+corpus_gaps:
+  - {document: "announcements/ folder (Reg 30 corporate-action filings)", expected_source: "BSE", kind: "findable-missing"}
+  - {document: "Filed shareholding-pattern PDF (promoter/FII/DII/pledge by quarter)", expected_source: "BSE", kind: "findable-missing"}
+  - {document: "Current (post-FY26) investor presentation (held copy dated Mar-2024)", expected_source: "company IR page", kind: "findable-missing"}
+  - {document: "BSE primary filing for the 13-Aug-2026 Modison HV Private Limited divestment", expected_source: "BSE", kind: "findable-missing"}
+archetypes:
+  - line: "Electrical contacts and contact materials (single reported segment, LV/MV/HV blended, domestic + export)"
+    archetype: "hybrid: Commodity converter (spread economics, silver/copper/tungsten pass-through, Amendment 17 likely binds) + Build-to-spec component maker (OEM design-in/type-approval switching costs)"
+transition:
+  - line: "Electrical contacts and contact materials (single reported segment)"
+    from_tier: "R1 COMMODITY PRICE-TAKER"
+    to_tier: "R3 VALUE-ADDED / SPEC'D SUPPLIER (claimed)"
+    engine: "Product-mix shift toward the HV 'crown business' and sub-assembly/value-added products with named OEMs (claimed 2022, silent by 2026); pass-through pricing capturing metal-cost moves faster than peers (FY26 record margin substantially a Q4 tungsten price-approval catch-up plus a Rs 9.51cr Q4 hedging loss)"
+    proof_gate: "EBITDA margin sustained >=~14% through at least 2 quarters of falling metal prices AND operating cash flow positive in at least 1 of the next 2 quarters (Q1/Q2 FY27), reversing the FY25-FY26 negative run"
+    recognition_gap: "Open: whether the market already prices the claimed value-added/HV-niche TO state, or still prices the pass-through commodity-converter FROM state, resolved at Stage 11 via the destination-PE gap"
+    ugliness: "INDETERMINATE - pending operator classification (evidence for both ARTIFACT-OF-CLIMB and STRUCTURAL-FEATURE present, see dossier Part B5)"
+    transition_falsifier: "Operating cash flow staying negative through Q2 FY27 while revenue keeps growing"
+dominant_variables:
+  - "EBITDA margin trajectory through the metal-price cycle"
+  - "Operating cash flow / cash conversion"
+  - "MCPL related-party dependency and pricing"
+  - "HV/value-added product mix and segment disclosure"
+business_falsifier: "Sustained EBITDA margin below the 10-year band floor (6.95%) combined with a third consecutive year of sharply rising leverage past FY26's 38.83% gearing"
+mental_model_status: "DRAFT - PENDING OPERATOR SIGN-OFF"
+fragility:
+  variable_count: 4
+  verifiability_ratio: "2 of 4 externally observable"
+  single_point_failure: "Operating cash flow (a third consecutive negative period, Q1 or Q2 FY27)"
+  fragility_verdict: "FRAGILE"
+candidate_count: 6
+research_brief_items: 10
+plain_summary_points: 15
+annex:
+  present: true
+  questions_answered: 10
+  corpus_commit_hash: "fb2cc81c0c7ffd30bab69981c198a37c2c5ce975"

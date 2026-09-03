@@ -1,0 +1,80 @@
+stage: B05-concall
+company: "MODISONLTD"
+run_date: "2026-09-03"
+model: claude-sonnet-5
+status: complete
+no_concall_mode: true
+input_gaps:
+  - "FY26 annual results filing: P&L/balance sheet/cash-flow pages did not OCR-extract cleanly; FY26 figures sourced from Q1 FY27 filing's FY26 comparative column instead"
+  - "Q3 FY26 (Dec-2025) results filing: P&L pages did not extract cleanly; AGM's 'Q4 top line ~doubled vs Q3' claim not numerically verifiable in this stage"
+  - "FILE_3 / third communication source: NOT PROVIDED"
+  - "No transcript for FY23-FY25 (the ~3.9-year gap between the two sources)"
+  - "LV/HV factory commissioning status (Nov-2022/FY23 targets) never confirmed in any later source"
+  - "MCPL related-party AR figures (48.76% / 11.27%) taken from task brief, not independently re-derived from the AR within this stage"
+flags:
+  - "MCPL related-party dependency figure at AGM (~25%) appears to conflict with AR figure (~48.76%)"
+  - "Vapi refinery fire minimized at AGM vs Rs 10.63 cr booked loss and largely unresolved Rs 18.02 cr insurance claim"
+  - "LV market share claim nearly doubled (16-17% to 30-35%) unexplained across sources"
+  - "LV market growth rate claim fell from >15% CAGR to ~5.1% unexplained across sources"
+  - "Primary FY26 source is a non-filed operator-supplied AGM webcast auto-transcript with acknowledged transcription errors"
+  - "'At least 10-12% profit' FY27 guidance ambiguous: EBITDA margin (step down from 16.2%) vs PAT margin (roughly flat vs FY26's ~10.2%)"
+quarters_analysed: ["Oct-2022 Investor Meet", "Jul-2026 43rd AGM (FY2025-26)"]
+triggers:
+  - {priority: 1, name: "Commodity (silver/tungsten) pass-through mechanics protect margin", type: "COST/PRICE-MIX", timeframe: "near", conviction: "M", confirm_signal: "Peer concall corroboration of pass-through norms; stable/improving margin through a silver price cycle", kill_signal: "Sharp margin fall despite stated pass-through contracts, unexplained"}
+  - {priority: 2, name: "Revenue trajectory to Rs 880cr FY27 / Rs 1,360cr by 2030 (raised target)", type: "VOLUME/PRICE-MIX", timeframe: "near/long", conviction: "M", confirm_signal: "FY27 quarters tracking toward Rs 880cr; continued target upgrades", kill_signal: "FY27 revenue materially below Rs 880cr, or 2030 target walked back again"}
+  - {priority: 3, name: "Export push to Rs 100cr FY27 from ~Rs 85-90cr FY26", type: "VOLUME", timeframe: "near", conviction: "M", confirm_signal: "Export figure disclosed and on pace in FY27 filings", kill_signal: "Export line stagnant or undisclosed for two consecutive quarters"}
+  - {priority: 4, name: "HV crown business, claimed sole India manufacturer", type: "VOLUME", timeframe: "near/medium", conviction: "L-M", confirm_signal: "Independent confirmation of no domestic HV crown competitor", kill_signal: "Competitor entrant named in a future filing/AGM"}
+  - {priority: 5, name: "ISRO import-substitution alloy win opening government/defense pipeline", type: "REGULATORY-POLICY/INORGANIC", timeframe: "medium/long", conviction: "L-M", confirm_signal: "Quantified government/defense revenue in a future filing", kill_signal: "No follow-through revenue within 2-3 years"}
+  - {priority: 6, name: "Value-chain migration to sub-assemblies (L&T, GM Modular)", type: "PRICE-MIX", timeframe: "medium", conviction: "L", confirm_signal: "Reappearance and quantification in a future source", kill_signal: "Continued silence"}
+  - {priority: 7, name: "New-metal-segment expansion beyond silver/copper/tungsten", type: "INORGANIC", timeframe: "long", conviction: "L", confirm_signal: "Any concrete announcement", kill_signal: "Continued silence (already 3.9 years overdue)"}
+guidance:
+  - {item: "Revenue", number: "Rs 500 cr", timeframe: "by FY25", stated_in: "SOURCE 1 (Sep-2022)"}
+  - {item: "Revenue", number: "Rs 1,000 cr", timeframe: "by 2030 (superseded)", stated_in: "SOURCE 1 (Sep-2022)"}
+  - {item: "Total capex (LV+HV)", number: "~Rs 25 cr", timeframe: "FY23 completion", stated_in: "SOURCE 1 (Sep-2022)"}
+  - {item: "Normalized EBITDA margin", number: "12-14%", timeframe: "ongoing", stated_in: "SOURCE 1 (Sep-2022)"}
+  - {item: "Revenue", number: "~Rs 710 cr (~47% growth stated; actual +44.9%)", timeframe: "FY26", stated_in: "SOURCE 2 (Jul-2026 AGM)"}
+  - {item: "EBITDA margin", number: "16.2% (record)", timeframe: "FY26", stated_in: "SOURCE 2 (Jul-2026 AGM)"}
+  - {item: "Export revenue", number: "~Rs 85-90 cr actual, Rs 100 cr target", timeframe: "FY26 actual / FY27 target", stated_in: "SOURCE 2 (Jul-2026 AGM)"}
+  - {item: "Revenue", number: "~Rs 880 cr (~19-20% growth)", timeframe: "FY27", stated_in: "SOURCE 2 (Jul-2026 AGM)"}
+  - {item: "Revenue", number: "Rs 1,360 cr (raised)", timeframe: "by 2030", stated_in: "SOURCE 2 (Jul-2026 AGM)"}
+  - {item: "Profit margin", number: "at least 10-12% (ambiguous metric)", timeframe: "FY27", stated_in: "SOURCE 2 (Jul-2026 AGM)"}
+promise_delivery:
+  delivered: 2
+  partial: 3
+  missed: 2
+  rows:
+    - {promised_in: "SOURCE 1 (Sep-2022)", promise: "Revenue Rs 500cr by FY25", outcome: "Implied ~Rs 490cr (~98% of target)", explanation: "Partial - essentially met, technically just short, unacknowledged by management"}
+    - {promised_in: "SOURCE 1 (Sep-2022)", promise: "Revenue Rs 1,000cr by 2030", outcome: "Now expected 2027-28; target raised to Rs 1,360cr by 2030", explanation: "Delivered/exceeded - ahead of schedule"}
+    - {promised_in: "SOURCE 1 (Sep-2022)", promise: "Normalized EBITDA margin 12-14%", outcome: "FY26 record 16.2% (AGM) / ~16.6% (computed)", explanation: "Delivered/exceeded"}
+    - {promised_in: "SOURCE 1 (Sep-2022)", promise: "New unnamed metal-segment expansion 'sooner rather than later'", outcome: "No mention anywhere in SOURCE 2, ~3.9 years later", explanation: "Missed / silently dropped"}
+    - {promised_in: "SOURCE 2 (Jul-2026)", promise: "FY27 revenue ~Rs 880cr; 'at least 10-12% profit'", outcome: "Q1 FY27 revenue +101.6% YoY; EBITDA margin ~18.5%, PAT margin ~12.5%", explanation: "Partial - strong one-quarter beat, too early to call full-year delivery"}
+    - {promised_in: "SOURCE 2 (Jul-2026)", promise: "MCPL depends on Modison for only ~25% of its sales", outcome: "AR reportedly shows Modison ~48.76% of MCPL turnover", explanation: "Missed / contradicted - most serious item in this tracker"}
+    - {promised_in: "SOURCE 2 (Jul-2026)", promise: "Vapi refinery fire recovered in 7-10 days, no orders lost", outcome: "Rs 10.63cr booked P&L loss; only Rs 1.70cr of Rs 18.02cr insurance claim received 6 months later", explanation: "Partial - directionally true but materially downplayed"}
+excuse_pattern: "external-blame-heavy"
+repeated_evasions:
+  - {question: "Segment-level (LV vs HV) margin/revenue breakup", quarters_asked: ["SOURCE 1 Sep-2022 (Aman Vij)", "SOURCE 2 Jul-2026 AGM (Yash Kotari)"], classification: "deflected every time"}
+credibility_grade: "C"
+credibility_basis: "Strong delivery on headline revenue/margin targets (FY25 revenue ~98% of target, 2030 target beaten and raised, EBITDA margin band beaten) is offset by a HIGH-severity unreconciled related-party (MCPL) dependency discrepancy vs the AR, a downplayed fire loss, and an unexplained near-doubling of self-reported LV market share; per NO-CONCALL/AGM-PRIMARY mode rules the grade may rise to B only on documented delivery evidence and stays at C given these unresolved governance/consistency flags."
+peer_questions:
+  - {question: "Do Salzer's or SBCL's concalls describe input-linked commodity pass-through pricing as an industry-standard mechanism matching Modison's description?", why: "Tests whether Modison's claimed margin insulation is an industry norm or an unverified company-specific claim", check_peers: ["SALZERELEC", "SBCL"]}
+  - {question: "Does Salzer/SBCL corroborate a >15% domestic LV CAGR (Modison 2022) or a ~5.1% global figure (Modison 2026 AGM)?", why: "Modison's own LV market growth claim fell sharply across sources without explanation", check_peers: ["SALZERELEC", "SBCL"]}
+  - {question: "Does SBCL offer an independent LV/HV market-share estimate corroborating or contradicting Modison's self-estimated 30-35% LV / 72-82% HV share?", why: "Modison's LV share claim nearly doubled (16-17% to 30-35%) with no methodology given", check_peers: ["SBCL", "SALZERELEC"]}
+  - {question: "What DSO/inventory-turnover norms do Salzer/SBCL report for the electrical-contacts trade, and do they corroborate Modison's claimed ITR improvement from ~3x to >5x?", why: "Tests whether claimed operational-efficiency gains are ahead of, in line with, or lagging the trade", check_peers: ["SALZERELEC", "SBCL"]}
+  - {question: "Do Salzer/SBCL describe OEM customer consolidation as a growth tailwind for component suppliers, corroborating Modison's 2022 narrative that went quiet by 2026?", why: "Tests whether this is a real industry-wide tailwind or a dropped Modison talking point", check_peers: ["SALZERELEC", "SBCL"]}
+  - {question: "Does SBCL disclose segment margins comparable to Modison's unquantified 'LV low-single-digit, HV high-double-digit' claim?", why: "Modison has never disclosed hard segment numbers despite being asked twice, four years apart", check_peers: ["SBCL"]}
+  - {question: "Do Salzer/SBCL describe accelerating export demand consistent with Modison's push to Rs 100cr FY27 across 23 countries?", why: "Corroborates or contradicts whether export demand is industry-wide or company-specific", check_peers: ["SALZERELEC", "SBCL"]}
+red_flags:
+  - {flag: "MCPL related-party dependency mismatch: AGM ~25% vs AR ~48.76%, unreconciled", severity: "HIGH"}
+  - {flag: "Fire-loss minimized at AGM vs Rs 10.63cr booked loss and largely unresolved Rs 18.02cr insurance claim", severity: "MEDIUM"}
+  - {flag: "LV market share claim roughly doubled (16-17% to 30-35%) unexplained", severity: "MEDIUM"}
+  - {flag: "LV market growth claim fell from >15% CAGR to ~5.1% unexplained", severity: "LOW-MEDIUM"}
+  - {flag: "Primary FY26 source is a non-filed operator-supplied AGM webcast auto-transcript with transcription errors", severity: "LOW"}
+  - {flag: "'At least 10-12% profit' FY27 guidance metric ambiguous (EBITDA vs PAT margin)", severity: "LOW"}
+dropped_triggers:
+  - "New unnamed metal-segment expansion beyond silver/copper/tungsten (promised 'sooner rather than later' Sep-2022; no mention Jul-2026)"
+  - "Value-chain migration to sub-assemblies with L&T/GM Modular (active Sep-2022; not revisited Jul-2026)"
+  - "DRDO/DMRL/DRDL defense partnership (named Sep-2022; only generic 'government connects' Jul-2026)"
+  - "Precious-material-compound export segment / Clariant silver-salt export (flagged Sep-2022; not mentioned Jul-2026)"
+timeline_slippages:
+  - "LV Brownfield factory (targeted end-Nov-2022) and HV Greenfield factory (targeted end-FY23/Mar-2023), both promised Sep-2022; no completion confirmation found in the AGM transcript or FY26/Q1 FY27 results filings, 3-4 years after target"
+analyst_note: "The MCPL dependency figure is the single fact this run could not resolve: the AGM says Modison is ~25% of MCPL's sales, the AR figure says ~48.76%. Both cannot be right on the same basis; downstream stages should treat this as an open item needing operator resolution against the actual AR text, not as settled. Q1 FY27 filed results (Aug-2026, post-AGM) are the only genuine forward-testing data in this run and show strong early delivery against FY27 guidance; weight that positive signal alongside the governance flags rather than letting either dominate alone."

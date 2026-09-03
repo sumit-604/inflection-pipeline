@@ -1,0 +1,62 @@
+stage: B04-bizmodel
+company: "MODISONLTD"
+run_date: "2026-09-03"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["Investor Presentation provided is dated 4-Mar-2024 (Q3FY24), two years before the FY2025-26 AR; used only for product/history/facility facts, not for FY26 figures", "LV/MV/HV revenue or volume split not disclosed", "top-5/top-10 customer concentration not disclosed in AR or Inv. Pres.", "capacity utilization and order book/inflow not disclosed", "per-unit price/volume data (contacts sold in kg or pieces) not disclosed"]
+flags: ["Cash conversion: FY26 operating cash flow Rs (64.18) cr vs PAT Rs 72.55 cr and EBITDA Rs 115.29 cr (AR MD&A Liquidity table, p.77) - profit not yet turning to cash", "Working-capital-funded leverage: short-term borrowings +142% YoY to Rs 172.47 cr, gearing 38.83% vs 25.12% FY25 (AR note 41, p.167), while capex was only Rs 15.10 cr", "Fire loss: Rs 10.63 cr exceptional loss to PPE/inventory FY26, only Rs 1.70 cr preliminary insurance claim received so far (AR notes 39 & 67)", "Market-leadership/100%-HV-market-share claims are self-reported by the company (Inv. Pres.) and unverified against any independent source in the documents provided", "Raw material is 87.1% of revenue from operations gross (74.5% net of inventory build) - conventional gross-margin ratios will mislead; use EBITDA margin instead", "R&D spend fell to Rs 1.59 cr (0.22% of revenue) FY26 from Rs 2.11 cr (0.43%) FY25 despite 45% revenue growth"]
+business_type: "manufacturing"
+revenue_streams:
+  - {name: "Domestic electrical contacts/materials (LV/MV/HV blended, single reported segment)", type: "B2B contract manufacturing, commodity-cost-pass-through", pct_of_revenue: 88.1, predictability: "M"}
+  - {name: "Export electrical contacts/materials", type: "B2B contract manufacturing, commodity-cost-pass-through, FX-exposed", pct_of_revenue: 11.9, predictability: "M"}
+asset_intensity: "medium"
+wc_intensity: "high"
+pricing_power: "moderate"
+cyclicality: "cyclical"
+moats_present:
+  - "Switching costs (OEM design-in/type-approval) - moderate durability"
+  - "Cost advantage (backward integration into silver/copper refining, claimed largest single-site HV facility) - moderate durability, unverified independently"
+  - "Intangible assets/IP (GOI-approved R&D dept, NABL lab, in-house alloy development, ISRO import-substitution recognition) - low-moderate durability, no patents disclosed, R&D spend declining"
+  - "Efficient scale in HV niche - moderate durability, self-claimed"
+  - "Distribution/relationships (4-decade OEM ties, exports to 20+ countries) - moderate durability"
+  - "Regulatory/licence - low, none disclosed beyond quality certifications"
+  - "Brand - low, B2B ingredient component"
+  - "Network effects - none, not applicable"
+valuation_methods:
+  primary: {method: "EV/EBITDA", why: "Captures the fabrication/conversion spread and normalizes for the FY26 fire-loss exceptional item; must be read against the 10-year margin band (6.95%-16.29%), not the current cycle-high 16.10% alone"}
+  secondary: {method: "Normalized P/E (ex-exceptional items)", why: "Reported FY26 EPS inflated by margin recovery off a cyclical trough and distorted by the fire-loss item; cash-backing of earnings unproven given negative operating cash flow"}
+  tertiary: {method: "Price/Book or RoNW cross-check", why: "RoNW jumped to 29.55% FY26; book value Rs 84.68/share gives a floor-type sanity check given the promoter-family structure and 20+ year dividend history"}
+  not_applicable: ["DCF - metal-price-linked cyclical cash flows and a negative FY26 free cash flow year make projection unreliable", "EV/Sales - revenue moves with metal price, not company-specific value creation", "SOTP - single reported segment, sole subsidiary immaterial (Rs 1.50 lakh FY26 turnover)"]
+irrelevant_ratios:
+  - "Gross margin on reported COGS - moves almost 1:1 with silver/copper/tungsten spot price (87.1% of revenue), not with company-specific value-add; use EBITDA margin instead"
+  - "Revenue growth YoY in isolation - FY26's 44.89% growth cannot be split into volume vs metal-price effect with disclosed data; must be read alongside metal spot-price moves"
+  - "Trailing P/E on reported EPS - FY26 EPS includes a fire-loss exceptional item and reflects margin recovery off a cyclical trough; normalize first"
+  - "Debt/Equity read as capacity leverage - FY26 gearing rose almost entirely to fund working capital, not new plant capacity (capex was only Rs 15.10 cr)"
+  - "ROCE on gross fixed assets alone - fixed assets are a small share of capital employed; working capital is the dominant capital consumer here"
+must_track_metrics:
+  - {metric: "EBITDA margin", healthy: "10-year band 6.95%-16.29%, FY26 at 16.10%", red_flag: "Sustained drop below ~9% (FY25 level)"}
+  - {metric: "Operating cash flow / EBITDA (cash conversion)", healthy: "Positive and rising", red_flag: "Second consecutive year of negative operating cash flow"}
+  - {metric: "Inventory days, especially WIP", healthy: "WIP growth slower than revenue growth", red_flag: "WIP continuing to outgrow revenue (WIP +76% YoY FY26 vs revenue +45%)"}
+  - {metric: "Trade receivable turnover", healthy: "Stable at or above 5.77x-6.43x", red_flag: "Turnover continuing to fall below 5.77x"}
+  - {metric: "Debt/Equity and gearing ratio", healthy: "Stabilizing near or below FY25's 0.34x / 25.12%", red_flag: "Continuing to rise past FY26's 0.64x / 38.83% without a matching cash-flow reversal"}
+unit_economics:
+  unit: "NOT FOUND - no per-piece/per-kg volume or price data disclosed"
+  revenue_per_unit: "NOT FOUND"
+  margin_per_unit: "NOT FOUND"
+  key_lever: "Fabrication/conversion making-charge per unit of metal processed, and the completeness/timing of pass-through of silver/copper/tungsten price moves to customers"
+first_deterioration_signals:
+  - {risk: "Revenue model - commodity-linked revenue entangled with OEM capex cycle", first_signal: "Revenue from operations turning negative YoY alongside falling metal spot prices"}
+  - {risk: "Margin - pass-through timing lag on sharp metal-price spikes", first_signal: "EBITDA margin falling >200bps QoQ while net material cost % of revenue rises"}
+  - {risk: "Balance sheet - working capital consuming cash faster than profit growth", first_signal: "A second consecutive year of negative operating cash flow, or further rise in short-term borrowings"}
+  - {risk: "Execution - fire-loss disruption to PPE/inventory", first_signal: "Further exceptional items/write-offs, or a shortfall between final insurance settlement and the Rs 10.63 cr loss"}
+  - {risk: "Structural - customer concentration in limited OEMs, named as a formal company risk", first_signal: "Any disclosed loss of a major customer, or rising receivable/inventory concentration tied to one buyer"}
+mgmt_questions:
+  - "What share of FY26's 44.89% revenue growth was volume versus metal-price?"
+  - "Why did operating cash flow turn to Rs (64.18) cr in a record-profit year - strategic inventory build or slower cash conversion?"
+  - "What is the top-5/top-10 customer revenue concentration today, and how has it trended?"
+  - "What is the typical time lag between a metal-price move and the customer price reset under pass-through agreements?"
+  - "What is the resolution timeline and expected recovery on the fire-loss insurance claim (Rs 10.63 cr loss vs Rs 1.70 cr preliminary claim)?"
+  - "What is the HV segment's revenue and margin contribution relative to LV/MV, given the strategic outlook prioritizes HV?"
+  - "With short-term borrowings up 142% YoY and gearing at 38.83%, what is the plan and timeline to normalize working capital and return to positive operating cash flow?"
+one_line_verdict: "A niche, OEM-qualified pass-through metal converter riding a real India capex tailwind, whose FY26 profit has not yet turned into cash."
+analyst_note: "Archetype is hybrid: build-to-spec component maker (OEM design-win/switching-cost moat) layered on a commodity-converter core (silver/copper/tungsten pass-through, 87% of revenue gross). Section 1B Amendment 17 converter-multiple treatment likely binds on the pass-through slice; do not feed spot-year ROCE or rupee WC trends for this name into Section 1B/FTTCP without adjusting for the FY26 inventory/receivable distortion, which is working-capital-driven, not operating-margin-driven. FY26 EBITDA margin (16.10%) sits at the top of a 10-year 6.95%-16.29% band - treat as near cycle-peak, not new normal, until at least one more year confirms."

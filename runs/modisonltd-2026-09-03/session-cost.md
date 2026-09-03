@@ -11,3 +11,5 @@ its own stage. Loop/retry runs get their own line with a run counter.
 | 2 | notes-pass2 | claude-sonnet | - | - | - | 100796 | 6m12s | 2 |
 | 2 | notes-pass3 | claude-sonnet | - | - | - | 65166 | 3m15s | 3 |
 | 3 | ar-deep-dive | claude-sonnet | - | - | - | 222338 | 12m18s | 1 |
+| 4 | bizmodel | claude-sonnet | - | - | - | 114320 | 7m29s | 1 |
+| 5 | concall-agm | claude-sonnet | - | - | - | 119204 | 7m40s | 1 |

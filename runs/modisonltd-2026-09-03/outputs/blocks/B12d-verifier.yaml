@@ -1,0 +1,26 @@
+stage: B12d
+company: "MODISONLTD"
+run_date: "2026-09-03"
+model: claude-sonnet-5
+status: complete
+peers_audited: 9
+substantive_confirmed: 7
+peer_utilisation: 100    # all 8 provided peer transcripts (SALZERELEC x4, SBCL x4) used substantively by B06; PRECWIRE had no transcript in corpus
+substantive_unsupported:
+  - "SBCL Q2/H1 FY26 (Nov-2025) - pass-through baseline quote confirmed real and correctly anchored, but two other credited contributions ('first NWC-days red flag 250-260 days' and 'flat/5-6% domestic switchgear-market growth read') are not present in this transcript; both quotes are verbatim in SBCL-Concall_Feb_2026_Transcript.txt instead. B06 Claim 4 explicitly attributes the 250-260-days quote to 'SBCL (Nov-2025)', which is incorrect."
+unused_but_relevant:
+  - {peer: "SBCL", missed_item: "SBCL describes its own silver-contacts division as having 'a very small market share to begin with' domestically (contrast to its 90% thermostatic-bimetal share) - industry-context colour on fragmentation in the contacts segment, not cited under Claim 3 (Modison's self-estimated LV/HV share, UNVERIFIABLE); would not change the verdict", anchor: "SBCL-Concall_May_2026_Transcript.txt, ~line 728-731"}
+  - {peer: "SALZERELEC", missed_item: "Aug-2026 call states a 'newer growth businesses' export target of 'back to 25%' over the medium term, alongside/instead of the company-wide 27-30% target B06 cites from the Nov-2025 call; scope may differ but the later, narrower figure is not flagged or reconciled in B06 Part 5/2E", anchor: "SALZERELEC-Concall_Aug_2026_Transcript.txt, ~line 143-146"}
+claims_all_addressed: true
+verdict_discipline_fails:
+  - {claim: "Claim 2 (~5.1% domestic/global LV growth figure)", issue: "Marked flat VERIFIED while resting on a single peer (SBCL, across 3 of its 4 quarters); Salzer is explicitly logged in the same claim's text as non-corroborating. Per rule 4 this should read PARTIALLY VERIFIED (single-peer).", severity: "MAJOR"}
+findings:
+  - {severity: "MAJOR", location: "B06 Claim 4, Part 1", claimed: "SBCL (Nov-2025): net working capital days 'almost from 250-260 days'... 'too high'... 'in the range of the previous year's numbers'", source_truth: "Quote is verbatim in SBCL-Concall_Feb_2026_Transcript.txt lines 741-763, not in the Nov-2025 transcript, which contains no 250-260-days figure anywhere", note: "Correct peer (SBCL), wrong quarter; underlying claim substance still stands on genuine Feb-2026 evidence"}
+  - {severity: "MAJOR", location: "B06 Part 3, coverage map row SBCL Nov-2025", claimed: "'flat/5-6% domestic switchgear-market growth read' credited to Nov-2025", source_truth: "The specific '5 or 6%' phrase is verbatim only in SBCL-Concall_Feb_2026_Transcript.txt lines 183-184; Nov-2025 has only a general 'flattish' theme, no 5-6% figure", note: "Same misattribution pattern as the NWC-days item, both belong to the Feb-2026 row instead"}
+  - {severity: "MAJOR", location: "B06 Claim 2 verdict field", claimed: "~5.1% LV growth figure marked VERIFIED", source_truth: "Evidence used is SBCL only across 3 quarters; Salzer explicitly logged in the same paragraph as non-corroborating on this specific sub-market", note: "Rule 4 requires PARTIALLY VERIFIED for single-peer VERIFIED verdicts"}
+  - {severity: "MINOR", location: "B06 Claim 3, Part 1", claimed: "Peer evidence: None (SBCL cites only its own 90% bimetal share)", source_truth: "SBCL May-2026 also states its own contacts business had 'a very small market share to begin with' domestically - unused context, not claim-determinative", note: "Would not change the UNVERIFIABLE verdict"}
+  - {severity: "MINOR", location: "B06 Part 5 / 2E export narrative", claimed: "Salzer's medium-term export target is 27-30% (cited from Nov-2025)", source_truth: "Salzer Aug-2026 states a 'newer growth businesses' export target of 'back to 25%'; scope vs. the company-wide 27-30% figure not reconciled", note: "Possible different segment scope; flagged for completeness only"}
+critical_count: 0
+major_count: 3
+minor_count: 2
+acceptance_rate: 89

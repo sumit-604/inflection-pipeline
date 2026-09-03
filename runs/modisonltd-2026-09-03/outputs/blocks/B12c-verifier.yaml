@@ -1,0 +1,17 @@
+stage: B12c
+company: "MODISONLTD"
+run_date: "2026-09-03"
+model: claude-opus-4-8
+status: complete
+scope: phase-1 (Gate 0 + Emerging Moat only)
+gate0: {rules_checked: 55, fails: []}
+emoat: {rules_checked: 17, fails: []}
+valuation: {rules_checked: 0, fails: [], status: "valuation audit deferred to phase 3"}
+business_understanding_narrative: {present: false, five_questions_answered: false, prose_only: false, section6_candidates_named: 0, valuation_vocab_leak: false, fails: [], status: "out of scope in phase 1 (stage 13 not audited)"}
+recomputed_destination_pe: ""
+recomputed_decision: ""
+findings: []
+critical_count: 0
+major_count: 0
+minor_count: 0
+acceptance_rate: 100            # rules passed (72) / rules checked (72)

@@ -1,0 +1,15 @@
+stage: confidence-delta
+company: "MODISONLTD"
+run_date: "2026-09-03"
+phase: 1
+confidence_delta:
+  numerical_acceptance: 87.5     # B12a: 24 numbers checked, 0 CRITICAL, 2 MAJOR both basis/definition differences (source_fidelity false), acceptance 87.5%
+  redflag_coverage: 81           # B12b: 16 independent flags found, 13 caught + 2 partial; acceptance 81%
+  framework_adherence: 100       # B12c PHASE-1 PORTION ONLY (Gate 0 + Emerging Moat): 72/72 rules passed, 0 fails. Valuation-adherence component PENDING phase 3.
+  peer_utilisation: 100          # B12d: all 8 provided peer transcripts used substantively; PRECWIRE had no transcript. (B12d accuracy acceptance 89% separately)
+  overall: 81                    # min of the four
+band: "normal (75-89): note specifics; no verdict downgrade, no forced REWORK"
+source_fidelity_gate: "CLEAR - Verifier A found 0 source-fidelity findings (no MISMATCH / ANCHOR NOT FOUND / material UNANCHORED). No number is barred from downstream use."
+rework_triggers: "NONE - no Verifier A CRITICAL; no verifier acceptance_rate below 60%."
+valuation_component_note: "framework_adherence covers only the Gate 0 + Emerging Moat checks in phase 1. The valuation-adherence half of Verifier C (B10/B11 against Master v3.6 / Section 1B / FTTCP) is DEFERRED to phase 3 and will re-weight this component then."
+analyst_note: "Overall 81 sits in the normal band; the binding number is redflag_coverage (81). The two verifier MAJOR clusters are analysis-quality, not source-fidelity or company-quality: B12b corrected B06's 'both peers compress' to a Salzer-only contradiction (SBCL, the closer silver-contacts peer, EXPANDED margin and calls silver margin-neutral), and B12d found B06 misattributed two SBCL quotes to Nov-2025 that belong to Feb-2026 (the ITR-deterioration substance still holds). Both corrections are carried into the gate recommendation and verifier summary; neither forces REWORK."

@@ -1,0 +1,65 @@
+stage: B04-bizmodel
+company: "MPSLTD"
+run_date: "2026-09-03"
+model: claude-sonnet-5
+status: complete
+input_gaps: []                # Investor presentation provided but is a Q1 FY27 earnings deck, not a standing corporate/IR deck; used for supplementary quarter-level colour only
+flags:
+  - "Named competitors and market-share data NOT FOUND in either source; competitive positioning map (2B) could not be built"
+  - "Client concentration: top-1 customer = 17.3% of FY26 revenue (Note 34ii); top-15 = 58.1% (consolidated basis)"
+  - "First-ever external borrowing (INR40.25 Cr) drawn in FY26 to fund Unbound Medicine; current ratio fell from 1.97x to 1.45x"
+  - "Goodwill nearly tripled YoY to INR376.3 Cr on Unbound + AJE acquisitions"
+  - "Generative AI commoditization of undifferentiated content services named as a structural threat by the company itself (AR p.32)"
+business_type: "services"
+revenue_streams:
+  - {name: "Research Solutions", type: "fee-for-service + platform/SaaS hosting", pct_of_revenue: 60, predictability: "M"}
+  - {name: "Education Solutions", type: "project/license fees + emerging subscription (Unbound Medicine)", pct_of_revenue: 27, predictability: "M"}
+  - {name: "Corporate Learning", type: "project/consulting, order-book style", pct_of_revenue: 13, predictability: "L"}
+asset_intensity: "light"      # physical assets; heavy on goodwill/intangibles from M&A
+wc_intensity: "low"           # DSO ~45-51 days, low-moderate
+pricing_power: "moderate"
+cyclicality: "secular-growth"
+moats_present:
+  - {moat: "Switching costs", durability: "High"}
+  - {moat: "Intangible assets / trust", durability: "Medium-High"}
+  - {moat: "Process power / proprietary AI", durability: "Medium-High"}
+  - {moat: "Cost advantage (Tier-2 delivery)", durability: "Medium"}
+  - {moat: "Regulatory/compliance barrier", durability: "Medium"}
+  - {moat: "Network effects", durability: "Weak / not classic network effect"}
+valuation_methods:
+  primary: {method: "EV/EBITDA", why: "Asset-light, serially-acquisitive, profitable services/platform hybrid; captures acquired EBITDA and normalizes exceptional items"}
+  secondary: {method: "P/E", why: "Cross-check given consistent PAT growth, clean balance sheet, and management's own EBITDA-framed FY27 guidance"}
+  tertiary: {method: "Sum-of-the-parts", why: "Three segments have materially different margin/growth profiles; blended multiple may mask segment value, especially new recurring Unbound asset"}
+  not_applicable: ["Asset-based/NAV", "Dividend discount model", "Replacement cost"]
+irrelevant_ratios:
+  - {ratio: "Asset turnover / fixed-asset-based ROCE proxies", why: "Asset-light business; capital employed growth now driven by acquisition goodwill, not fixed assets"}
+  - {ratio: "Standalone-entity revenue growth", why: "Distorted by intercompany recharge per prior-stage ruling; consolidated is the correct basis"}
+  - {ratio: "Inventory-based working-capital ratios", why: "Services/content business carries no meaningful inventory"}
+  - {ratio: "Unadjusted headline revenue growth", why: "Reported 5.71% YoY masks ~13.3% underlying growth ex-AJE/Unbound and 17-29% organic segment growth"}
+must_track_metrics:
+  - {metric: "Consolidated EBITDA margin", healthy: "~30%+, stable-to-rising", red_flag: "Compression >150-200bps YoY unexplained"}
+  - {metric: "ROCE (EBIT ex-exceptional / avg capital employed)", healthy: "30%+", red_flag: "Sustained decline toward cost of capital"}
+  - {metric: "Employee cost as % of revenue", healthy: "~40-42%", red_flag: "Rising >2-3pp YoY without matching revenue/margin gains"}
+  - {metric: "Top-1/top-15 customer revenue concentration", healthy: "Top-1 <=15-20%", red_flag: "Top-1 share rising further or top-5 client insourcing signal"}
+  - {metric: "Debt-Equity ratio", healthy: "Stable/declining from 0.07x", red_flag: "Material further increase without deleveraging plan"}
+unit_economics:
+  unit: "billable employee (FTE) - proxy; no per-transaction pricing disclosed"
+  revenue_per_unit: "~INR 24 lacs/employee/year (computed: FY26 revenue INR768.37 Cr / ~3,200 employees)"
+  margin_per_unit: "~INR 14 lacs/employee/year gross of employee cost (computed: revenue per employee minus cost per employee ~INR10 lacs)"
+  key_lever: "AI-driven throughput per employee (revenue growth materially outpacing headcount growth, e.g. Q1 FY27 revenue +20.4% vs headcount +2.7%)"
+first_deterioration_signals:
+  - {risk: "Client insourcing / captive setups by large publishers", first_signal: "Top-1 or top-15 customer revenue % declining, or a top-5 client's billed revenue dropping sharply"}
+  - {risk: "Wage/labour cost inflation eroding Tier-2 cost advantage", first_signal: "Employee benefits expense as % of revenue rising YoY without margin offset"}
+  - {risk: "Acquisition-funded balance sheet stress (goodwill, new debt)", first_signal: "Debt-Equity ratio rising further, or any goodwill impairment charge"}
+  - {risk: "Unbound/AJE integration and Corporate Learning turnaround execution", first_signal: "Corporate Learning EBITDA margin reversing, or Unbound renewal metrics falling short"}
+  - {risk: "Generative AI commoditizing undifferentiated content services", first_signal: "Research Solutions organic (ex-AJE) growth decelerating below ~17%, or price/unit compression"}
+mgmt_questions:
+  - "What steady-state EBITDA margin is achievable for Corporate Learning once Liberate Global integration completes, and is 25%+ durable?"
+  - "How much of FY26 growth (ex-AJE, ex-Unbound) is organic volume/pricing vs new-logo wins, and what is the pipeline?"
+  - "Is Unbound Medicine tracking its acquisition-case renewal rate and revenue contribution after a full quarter?"
+  - "What assumptions are most sensitive to a future goodwill impairment, particularly in Corporate Learning's CGU?"
+  - "Does the first external borrowing mark a durable shift from all-internal-funded M&A, and what is the leverage ceiling?"
+  - "What share of revenue is AI-embedded/premium-priced vs traditional per-unit production, and how is pricing defended against generic AI?"
+  - "With no FY26 final dividend, what is the 12-month capital allocation priority: M&A, debt paydown, or resumed shareholder returns?"
+one_line_verdict: "Sticky knowledge-services consolidator turning AI into margin, but client concentration and fresh M&A debt bear watching"
+analyst_note: "Consolidated basis used throughout per prior-stage ruling on standalone recharge distortion. No named competitors or market-share data exist in either source (AR or Q1 FY27 deck) despite repeated searching; 2B competitive map is necessarily thin and flagged. The Q1 FY27 earnings deck (dated Jul-2026) is NOT a standing IR presentation; it is used only for supplementary quarter-level metrics (client count, DSO, geography mix) that post-date FY26 year-end and should not be conflated with FY26 annual figures when Stage 11 builds its valuation base year."

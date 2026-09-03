@@ -13,3 +13,4 @@ Per-stage token ledger (written and committed with each stage).
 | 5 | concall | claude-sonnet-5 | default | n/a | n/a | 156768 | 490s | 1 |
 | 8 | promoter | claude-sonnet-5 | default | n/a | n/a | 240781 | 800s | 1 |
 | 7 | emoat | claude-sonnet-5 | default | n/a | n/a | 204904 | 633s | 1 |
+| 6 | peers | claude-sonnet-5 | default | n/a | n/a | 227989 | 711s | 1 |

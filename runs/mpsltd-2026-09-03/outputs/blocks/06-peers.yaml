@@ -1,0 +1,53 @@
+stage: B06-peers
+company: "MPSLTD"
+run_date: "2026-09-03"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - "no STM/manuscript-editing or translation/localization peer existed in the provided corpus, so Claims 1 and part of Claim 4 (translation anecdote) stay structurally unverifiable regardless of effort"
+  - "peer-confirmed annual wage inflation (2-3.5% EBITDA margin drag at eClerx and Indegene) is never netted against MPS's own AI-driven margin-expansion narrative in the B05 corpus"
+peers_provided: 16
+verified: []
+partially_verified:
+  - {claim: "AI-driven consolidation of fragmented markets toward domain-expert, tech-first specialists is a broad pattern, not an isolated MPS anecdote", peers: ["ECLERX", "INDGN"]}
+  - {claim: "Peers report real wage/input-cost inflation that complicates (without disproving) MPS's claimed AI-driven margin gains", peers: ["ECLERX", "INDGN", "DATAMATICS"]}
+  - {claim: "MPS's claimed M&A financing capacity (cash+debt funded bolt-ons) is consistent with sector norms", peers: ["DATAMATICS", "INDGN"]}
+contradicted: []
+unverifiable:
+  - {claim: "~52% manuscript-acceptance lift vs ~32% industry baseline", peers_checked: ["DATAMATICS", "ECLERX", "INDGN", "NIITMTS"]}
+  - {claim: "healthcare-AI/knowledge-management TAM (USD 188bn by 2030; USD 3bn-to-102bn subsector by 2034 at 42% CAGR)", peers_checked: ["DATAMATICS", "ECLERX", "INDGN", "NIITMTS"]}
+  - {claim: "cited segment market growth rates (Research ~8-9%, Education ~15%, Corporate Learning ~12-13%)", peers_checked: ["DATAMATICS", "ECLERX", "INDGN", "NIITMTS"]}
+  - {claim: "0.5% self-reported serviceable-market share consistency with independently sized markets", peers_checked: ["DATAMATICS", "ECLERX", "INDGN", "NIITMTS"]}
+  - {claim: "unconfirmed Q2 FY26 M&A budget figures (Rs 300-400 cr, 5 deals, Rs 150 cr min cash)", peers_checked: ["DATAMATICS", "ECLERX", "INDGN", "NIITMTS"]}
+peer_coverage_map:
+  - {peer: "DATAMATICS", quarter: "Q1 FY26 (Aug-2025)", usage: "SUBSTANTIVE", contribution: "baseline growth/margin trend anchoring the FY27 deceleration arc"}
+  - {peer: "DATAMATICS", quarter: "Q2 FY26 (Nov-2025)", usage: "CITED-ONLY", contribution: "confirms continued growth momentum, no decisive new evidence"}
+  - {peer: "DATAMATICS", quarter: "Q3 FY26 (Feb-2026)", usage: "SUBSTANTIVE", contribution: "publishing-as-AI-adoption-laggard quote; labour code cost note"}
+  - {peer: "DATAMATICS", quarter: "Q1 FY27 (Aug-2026)", usage: "SUBSTANTIVE", contribution: "sharp deceleration to +9.9% YoY, cautious FY27 guidance"}
+  - {peer: "ECLERX", quarter: "Q1 FY26 (Jul-2025)", usage: "CITED-ONLY", contribution: "confirms strong stable BPM/KPO demand baseline"}
+  - {peer: "ECLERX", quarter: "Q2 FY26 (Oct-2025)", usage: "SUBSTANTIVE", contribution: "consolidation-of-suppliers language; hedge/mark-to-market risk disclosure"}
+  - {peer: "ECLERX", quarter: "Q3 FY26 (Jan-2026)", usage: "SUBSTANTIVE", contribution: "explicit consolidation-market-share-gain quote; GCC in-house migration question"}
+  - {peer: "ECLERX", quarter: "Q4 FY26 (May-2026)", usage: "SUBSTANTIVE", contribution: "wage-inflation quantification; two-sided AI deflation risk; NPRM offshore-reshoring risk"}
+  - {peer: "INDGN", quarter: "Q2 FY26 (Oct-2025)", usage: "SUBSTANTIVE", contribution: "client-concentration disclosure norm; wage-increment quantification; H-1B risk; BioPharm cash-funded M&A precedent"}
+  - {peer: "INDGN", quarter: "Q3 FY26 (Jan-2026)", usage: "SUBSTANTIVE", contribution: "pharma industry growth-rate citation; accelerating demand"}
+  - {peer: "INDGN", quarter: "Q4 FY26 (Apr-2026)", usage: "SUBSTANTIVE", contribution: "pharma growth 9% vs 6.4% comparison; aggressive-expander capex pattern"}
+  - {peer: "INDGN", quarter: "Q1 FY27 (Jul-2026)", usage: "SUBSTANTIVE", contribution: "strongest read-across on AI-driven consolidation to specialists; strongest demand print in set"}
+  - {peer: "NIITMTS", quarter: "Q2 FY26 (Nov-2025)", usage: "CITED-ONLY", contribution: "soft corporate-training demand backdrop, no specific market-growth-rate citation found"}
+  - {peer: "NIITMTS", quarter: "Q3 FY26 (Feb-2026)", usage: "CITED-ONLY", contribution: "continued soft/mixed demand; general context only"}
+  - {peer: "NIITMTS", quarter: "Q4 FY26 (May-2026)", usage: "CITED-ONLY", contribution: "signs of stabilization; general context only"}
+  - {peer: "NIITMTS", quarter: "Q1 FY27 (Jul-2026)", usage: "CITED-ONLY", contribution: "continued recovery; general context only, no independent market-size citation found"}
+industry_cross_read:
+  demand: "Split, not consensus: INDGN (healthcare-adjacent) shows strong accelerating demand (+17% to +40% YoY across the year) attributed partly to AI; DATAMATICS decelerates sharply (+18.7% to +9.9% YoY) over the same window citing macro/tariff caution, undercutting any industry-wide AI-boom framing"
+  pricing_inputs: "Three of four peers (DATAMATICS, ECLERX, INDGN) independently quantify annual wage inflation at 2-3.5% of EBITDA margin, a structural cost MPS's own AI-driven margin narrative never nets out; ECLERX additionally flags AI as a possible two-sided force (productivity gain but also contract-value deflation)"
+  capex_cycle: "Mixed peer set, not an industry-wide capacity race: INDGN is the clear aggressive expander (3 acquisitions, ~150bps margin hit for 6-8 quarters); DATAMATICS is a modest opportunistic expander; ECLERX is in capital-return mode (buyback, bonus); NIITMTS shows no M&A activity. MPS's own aggressive M&A pace sits closest to the INDGN pattern, not the peer-set median"
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "GCC/captive migration risk to the outsourcing model (ECLERX, DATAMATICS)"
+  - "Two-sided AI risk: productivity gain vs contract-value/bookings deflation (ECLERX, Q4 FY26 call)"
+  - "US NPRM proposal on offshore call-center restrictions / reshoring risk (ECLERX, Q4 FY26 call)"
+  - "H-1B visa fee policy risk, quantified (INDGN, Q2 FY26 call)"
+  - "Formal quarterly top-5/10/20 client-concentration disclosure as a named risk metric (INDGN, all calls)"
+  - "Currency hedge mark-to-market volatility as a distinct disclosed risk to reported margins (ECLERX, INDGN)"
+net_narrative_effect: "complicates"
+analyst_note: "No STM-editing or translation peer existed in the corpus, so Claims 1 and the translation-specific half of Claim 4 were structurally unverifiable regardless of search effort; this is a corpus-composition limit, not a diligence gap. The most load-bearing finding is Claim 5b: three peers in MPS's own operating model independently disclose 2-3.5%/year wage-inflation margin drag that MPS's own calls never net against its AI-margin story. The Cross-Peer Hypothesis (Part 5) proposes a specific, falsifiable test: watch whether MPS's publishing clients show the same author-IP-rights caution Datamatics reports in its own publishing book, since that would signal MPS migrating toward the 'generic capacity' bucket rather than the 'domain-expert, outcome-priced' bucket where Indegene and eClerx sit."

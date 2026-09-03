@@ -1,0 +1,142 @@
+stage: B08-promoter
+company: "VILAS"
+run_date: "2026-09-03"
+model: claude-sonnet-5
+status: partial               # several primary sources (trendlyne.com, tofler.in,
+                               # nsearchives.nseindia.com, vilastranscore.com DRHP,
+                               # ipocentral.in) returned EGRESS_BLOCKED on direct WebFetch;
+                               # substituted with WebSearch summaries at 📰/❓ tier, not ✅
+input_gaps:
+  - "Prospectus/DRHP absent from repo corpus; DRHP litigation and competing-business
+     disclosures used here are second-hand web-search summaries, not directly opened"
+  - "Primary NSE/BSE SHP (shareholding pattern) filing not in corpus; pledge and full
+     promoter-group history sourced only to aggregator trackers"
+  - "FY24 AR (Annual_Report_2024.pdf) not separately re-read; relied on FY25 AR's FY24
+     comparatives, which are sufficient for the promoter checks in this stage"
+flags:
+  - type: FLAG-PROMOTER
+    verdict: "CONCERN"
+    top_findings:
+      - "Nilesh Patel's absolute shareholding fell ~1.10 lakh shares in FY25 (179.94->178.84
+         lakh) despite a 100% fresh-issue IPO with no OFS; only 0.32 lakh traceable to new
+         shareholder Tushar Patel; ~0.78-1.20 lakh shares unexplained, no matching
+         sale/gift/pledge disclosure found in AR or web search -- open monitorable"
+      - "CFO Vipulkumar Patel signed the FY25 financial statements as CFO on 21 May 2025,
+         the same date his CFO resignation took effect; successor Jagat Mazmudar had
+         joined the company only ~12 weeks earlier and became CFO the next day"
+      - "7 related-party entities tied to Nilesh Patel or his co-directors, including a
+         DRHP-disclosed competing-business risk (Pelton Power, Nanocryst Transformer, no
+         non-compete) and a new FY25 RPT counterparty (Tushar Transequipment Pvt Ltd,
+         Rs 10.09 Cr sales vs zero in FY24) whose director may overlap with the new
+         'Tushar Patel' promoter-group shareholder (unconfirmed)"
+      - "SMT Packaging Pvt Ltd received a Rs 4.20 Cr land/building advance with thin
+         disclosure depth; Atlas Transformers FY26 RPT ceiling (Rs 65 Cr) already 34%
+         consumed in 5 months"
+verdict: "CONCERN"
+scorecard: {clean: 4, caution: 4, red: 2}
+deal_breakers: []
+adverse_findings:
+  - finding: "Nilesh Patel's absolute shareholding fell from 179.94 lakh (99.97%, FY24) to
+      178.84 lakh (73.05%, FY25); IPO was 100% fresh issue with no OFS so no IPO mechanism
+      explains an absolute-count reduction; only 0.32 lakh shares traceable to new
+      shareholder Tushar Patel; ~0.78 lakh shares unexplained (and the gap is larger once a
+      disclosed 10,000-share on-market BUY on 29/08/2024 is netted in)"
+    evidence_tier: "MEDIA REPORTED / VERIFIED-mixed"
+    source: "FY25 AR Note 3(c)/(d) p.56-57 (VERIFIED); trendlyne.com insider-trading/SAST
+      page via WebSearch summary, primary fetch blocked (MEDIA REPORTED)"
+    date: "AR dated 28.08.2025; web search 2026-09-03"
+  - finding: "CFO Vipulkumar Patel signed FY25 financial statements as CFO on 21 May 2025,
+      the same date his CFO role ended; successor Jagat Mazmudar, who joined the company
+      only 28 Feb 2025, became CFO the next day, 22 May 2025"
+    evidence_tier: "VERIFIED"
+    source: "FY25 AR Board's Report p.20; financial statement signature blocks p.50-52;
+      Top-10-employees table p.23"
+    date: "28.08.2025"
+  - finding: "Seven related-party entities linked to Nilesh Patel/co-directors (Atlas
+      Transformers, Tashu Impex, Pelton Power, Nanocryst Transformer, SMT Packaging, Atlas
+      Composites, Tushar Transequipment); DRHP discloses Pelton Power and Nanocryst
+      Transcore as competing-business group companies with no non-compete agreement"
+    evidence_tier: "VERIFIED-mixed / MEDIA REPORTED"
+    source: "FY25 AR AOC-2 Annexure-II p.30-31 (VERIFIED); Vilas Transcore DRHP risk
+      factors via WebSearch summary, primary fetch blocked (MEDIA REPORTED)"
+    date: "AR 28.08.2025; DRHP ~mid-2024; web search 2026-09-03"
+  - finding: "SMT Packaging Pvt Ltd received a Rs 420.16 lakh (Rs 4.20 Cr) 'Advance for
+      Land & Building' in FY25, disclosed only as 'purchase of goods at arm's length
+      price' with no location, valuation, or repayment schedule; Nilesh Patel is a common
+      director of SMT Packaging with Tushar Somabhai Patel and Meeta Somabhai Patel"
+    evidence_tier: "VERIFIED-mixed / UNVERIFIED"
+    source: "FY25 AR Note 22, AOC-2 p.31 (VERIFIED); Zaubacorp/Tofler company records for
+      SMT Packaging via WebSearch summary (UNVERIFIED, not independently opened)"
+    date: "AR 28.08.2025; web search 2026-09-03"
+  - finding: "Tushar Transequipment Pvt Ltd is a new FY25 related-party sales counterparty
+      (Rs 10.09 Cr sales vs zero in FY24) carrying a Rs 4.89 Cr receivable at year-end (48%
+      of the year's sales uncollected); its director Tushar Somabhai Patel is also a
+      co-director with Nilesh Patel on SMT Packaging; a new shareholder 'Tushar Patel'
+      (0.32 lakh sh., 0.13%) appears in VILAS's own FY25 promoter-group table for the first
+      time; identity link between the two Tushar Patels is UNCONFIRMED"
+    evidence_tier: "VERIFIED-mixed / UNVERIFIED"
+    source: "FY25 AR AOC-2 p.31, Note 41(b) p.74, Note 3(d) p.56 (VERIFIED); Zaubacorp/
+      Globallinker/LinkedIn WebSearch summaries for Tushar Trans Equipment director
+      (UNVERIFIED)"
+    date: "AR 28.08.2025; web search 2026-09-03"
+  - finding: "MD Nilesh Patel's FY25 remuneration (Rs 4.20 Cr, 0% increase) is 140x the
+      company's median employee remuneration (Rs 25,000/month), while median employee
+      remuneration fell 0.79% YoY in FY25 even as PAT rose 48%"
+    evidence_tier: "VERIFIED"
+    source: "FY25 AR Board's Report Section 25, p.23"
+    date: "28.08.2025"
+transition_evidence:
+  - "New CFO from outside the family/prior company (Jagat Mazmudar, CA, ex-Sun
+     Pharmaceutical), appointed 22 May 2025, separating the CFO title from the Whole-time
+     Director role for the first time since listing -- early-stage (~3 months tenure at AR
+     sign-off), independence and durability unproven. Source: FY25 AR p.6, p.20, p.23,
+     dated 28.08.2025. Countervailing: FII+DII combined ownership fell from 10.46% (IPO,
+     May 2024) to 5.31% (Mar 2026) per operator-ferried shareholding file -- the opposite
+     of institutional entry."
+pledge_pct_latest: 0
+pledge_trend: "stable at 0% across all quarters checked (May 2024 - Mar 2026); no pledge
+  ever disclosed. Sourced only to web-aggregator trackers (tickertape/trendlyne-style,
+  MEDIA REPORTED tier); the FY25 AR itself is silent on pledge in every section read, and
+  the primary NSE/BSE SHP filing was not in corpus and not independently reachable"
+searches_performed:
+  - "Vilas Transcore Nilesh Patel promoter shares reduced off-market transfer"
+  - "Atlas Transformers India Limited Jayesh Electricals Nilesh Patel Vilas Transcore"
+  - "Tushar Transequipment Vadodara director Patel zaubacorp"
+  - "SMT Packaging Private Limited Vadodara director zaubacorp Patel"
+  - "Vilas Transcore SEBI order litigation Nilesh Patel director"
+  - "Vilas Transcore promoter pledge shares BSE NSE encumbrance"
+  - "Vilas Transcore insider trading SAST disclosure Nilesh Patel 2024/2025"
+  - "Jayesh Electricals Limited Nilesh Patel acquisition renamed Atlas Transformers 2020"
+  - "Vilas Transcore Glassdoor AmbitionBox employee reviews Nilesh Patel"
+  - "Vilas Transcore DRHP promoter litigation group companies risk factors"
+  - "Vilas Transcore IPO prospectus group companies Atlas Transformers Tashu Impex Pelton Power"
+  - "Vilas Transcore prospectus criminal proceedings Nilesh Patel promoter litigation details"
+  - "Vilas Transcore Nilesh Patel Natasha Patel promoters DRHP litigation cases against"
+  - "Vilas Transcore SME IPO SEBI surveillance scrutiny concerns 2025"
+  - "Sandeep Patel independent director Vilas Transcore background other companies"
+  - "Nilesh Jitubhai Patel director DIN 00447907 companies zaubacorp"
+searches_skipped:
+  - "Direct WebFetch of trendlyne.com insider-trading/SAST page -- EGRESS_BLOCKED,
+     substituted with WebSearch summary only (lower evidence tier)"
+  - "Direct WebFetch of tofler.in Atlas Transformers India Limited page -- EGRESS_BLOCKED"
+  - "Direct WebFetch of nsearchives.nseindia.com DRHP and Prospectus PDFs -- EGRESS_BLOCKED,
+     substituted with WebSearch summaries only"
+  - "Direct WebFetch of vilastranscore.com hosted DRHP PDF -- EGRESS_BLOCKED"
+  - "Direct WebFetch of ipocentral.in IPO review page -- EGRESS_BLOCKED"
+  - "Primary BSE/NSE SAST/PIT regulatory filing search for any Nilesh Patel share sale --
+     not independently reachable; relied on aggregator claim of 'no SAST since 2015'"
+verdict_basis: "Two unresolved red items -- an unexplained ~0.78-1.20 lakh share reduction
+  in the sole promoter's holding with no matching sale/gift/pledge disclosure anywhere
+  searched, and a related-party network carrying a DRHP-disclosed competing-business risk
+  plus a new receivable-heavy RPT counterparty with a possible unconfirmed link to a new
+  promoter-group shareholder -- outweigh an otherwise clean legal record and clean audit,
+  yielding CONCERN."
+analyst_note: "The FY25 AR is internally strong on process (clean audit, no ID exits, RPTs
+  routed through Audit Committee) but two items sit outside what the AR itself can resolve:
+  the share-count gap and the Tushar Patel/Tushar Transequipment name overlap. Both need a
+  primary-source pass (BSE/NSE SHP and SAST filings, MCA director-history search) that this
+  session's egress-blocked tools could not complete. Treat scorecard items 3 and 4 as
+  provisional pending that pass, not as settled findings. The Atlas Transformers PAT
+  exceeding turnover figure in the AR's own RPT explanatory statement (Rs 177.11 Cr PAT on
+  Rs 138.48 Cr turnover) is almost certainly a drafting error but was not correctable from
+  available sources."

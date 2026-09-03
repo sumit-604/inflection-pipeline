@@ -1,0 +1,48 @@
+stage: B07-emoat
+company: "VILAS"
+run_date: "2026-09-03"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - {item: "B05 concall promise-delivery record", severity: MEDIUM, note: "not provided to this stage; F2 and Section 6 built directly from the three concall transcripts (May-2025, Nov-2025, May-2026) in run inputs, applying TRUST-physical/HAIRCUT-guidance split per task instructions"}
+  - {item: "FY26 Annual Report", severity: HIGH, note: "not yet filed; FY26 figures sourced from the May-2026 concall and FY26 Investor Presentation, both anchored in-corpus"}
+  - {item: "GPCB CCA primary PDF", severity: LOW, note: "announcement text ferried by operator, primary PDF absent; treated as documented-event lead with operator provenance, not page-anchored, per the announcement file's own caveat"}
+  - {item: "Prospectus (May-2024 IPO)", severity: HIGH, note: "absent from corpus, carried forward from B01"}
+flags:
+  - {type: FLAG-SOURCE-CONFLICT, reason: "Copper conductor Phase-1 capacity stated as 1,500-1,800 MTPA in Investor Presentation (slides 5,12,19) vs 3,600 MTPA install spec cited in May-2026 concall (p.7: '300 metric tons per month'); unresolved in corpus, both anchored"}
+  - {type: FLAG-GUIDANCE-SLIPPAGE, reason: "PGCIL approval timeline moved FY27 (May-2025) -> March 2026 (Nov-2025) -> undated 'in process' (May-2026); copper commercial-sales date moved May/Jun-2026 (Nov-2025) -> trial Sep-2026/revenue H2 FY27 (May-2026), a slip visible within six months; radiator commercial launch slipped ~9 months (Jul-2025 guided -> Apr-2026 actual) on an unflagged power-connection issue"}
+em_score: 11
+em_classification: "NONE"
+active_categories:
+  - {id: "C1", name: "Customer ecosystem / embedded relationships (cross-sell wallet share)", strength: "Moderate", evidence_type: "management_claim", time_to_materialise: "ongoing-12m"}
+  - {id: "F2", name: "Execution moat (promise-delivery cross-reference)", strength: "Moderate", evidence_type: "management_claim_and_documented", time_to_materialise: "ongoing"}
+  - {id: "R1", name: "Regulatory tailwind (PGCIL approval, in process)", strength: "Moderate", evidence_type: "management_claim", time_to_materialise: "FY27, open-ended"}
+evidence_mix: {documented: 12, claim: 48, inference: 9}
+completionist_recount: "📄 recount performed: 5 documented items across 2 categories (Unit 3 commissioning date and FY25 above-nameplate production volume feeding F2, both from AR; ICRA rating action and IPO fund-utilisation table used as context only, not scored; RPT ceiling approval used as governance context only, not a moat category). All 3 Strong/Moderate rows (C1, F2, R1) rest primarily on 0.7x-discounted management claims; no category was over-credited to a documented tier it does not merit."
+catalysts_12m:
+  - {catalyst: "CRGO capacity tripling 12,000->36,000 MTPA / FY27 ~30,000 MT volume target", window: "12m", evidence_type: "documented_physical_build", anchor: "AR p.18 Board's Report; Inv. Pres. slide 6,12,20"}
+  - {catalyst: "Unit-3 ramp (CRGO + nanocrystalline lines)", window: "12m", evidence_type: "documented_physical_build", anchor: "AR p.18; May-2026 concall p.3-4"}
+  - {catalyst: "Nanocrystalline core scale-up (240 MTPA, FY27 target 180 MT / Rs18-20 Cr)", window: "12m, haircut 1-2Q", evidence_type: "management_claim", anchor: "May-2026 concall p.20; Inv. Pres. slide 6"}
+  - {catalyst: "Radiator commercialisation (7,200 MTPA, commercial from Apr-2026)", window: "12m, already slipped ~9 months once", evidence_type: "management_claim", anchor: "Nov-2025 concall p.4; May-2026 concall p.8"}
+  - {catalyst: "Copper conductor trial production and H2 FY27 revenue start", window: "12-18m, haircut 2-4Q (already slipped once)", evidence_type: "management_claim", anchor: "Inv. Pres. slide 5,12; May-2026 concall p.7,15"}
+  - {catalyst: "PGCIL approval, currently 'in process'", window: "open-ended, guided FY27 originally", evidence_type: "management_claim", anchor: "May-2025 concall p.6-7; Nov-2025 concall p.9; Inv. Pres. slide 12"}
+  - {catalyst: "HV Bushings 25%-stake R&D entity, tech-transfer talks", window: "FY27-28, unsigned", evidence_type: "management_claim", anchor: "May-2026 concall p.12-13; Inv. Pres. slide 5"}
+capex_embedded_growth_pct: 46
+optionality_register:
+  - {optionality: "PGCIL approval unlocking institutional/higher-kV orders and global-MNC eligibility", converting_evidence: "PGCIL grant letter or exchange filing", first_appears: "exchange filing / next AR", window: "FY27, open-ended, already slipped twice"}
+  - {optionality: "Copper conductor commercial ramp to Rs100-120 Cr FY27 revenue", converting_evidence: "first invoiced commercial sales / signed customer POs", first_appears: "quarterly results / concall", window: "H2 FY27, already slipped once"}
+  - {optionality: "HV Bushings JV / technology-transfer agreement with a global player", converting_evidence: "signed JV / tech-transfer agreement", first_appears: "exchange filing (material agreement)", window: "FY27-28, currently unsigned"}
+  - {optionality: "Nanocrystalline capacity add (new China machine, +4-5 MT/month)", converting_evidence: "machine installed and operational, utilisation disclosed", first_appears: "AR / concall", window: "~end-May-2026, unconfirmed"}
+  - {optionality: "Captive solar power installation", converting_evidence: "commissioned solar capacity disclosed with capex/output", first_appears: "Annual Report", window: "planned Jan-2026, unconfirmed complete"}
+  - {optionality: "Anti-dumping/safeguard duty on imported CRGO", converting_evidence: "government gazette notification", first_appears: "news/exchange filing", window: "uncertain, no filed proposal"}
+  - {optionality: "SME-to-mainboard migration", converting_evidence: "SEBI/exchange approval", first_appears: "exchange filing", window: "not before Jun-2027"}
+  - {optionality: "Talent asymmetry via named technical hires (Ramachandran/HV bushings team)", converting_evidence: "AR remuneration annexure with competitor-cannot-match argument", first_appears: "next Annual Report", window: "FY27 AR at earliest"}
+combined_assessment: "AVERAGE"
+combined_reasoning: "EM score (11) sits below the EM>=25 UA qualifier and below the 12-point Modest-Moat floor, so the Gate 0 AVERAGE classification (Core 59, 4 confirmed moats) is unchanged; this is not yet a HIGH POTENTIAL/TURNAROUND transition setup."
+top_moat_risks:
+  - "CRGO price volatility is explicitly un-hedgeable per management and directly compresses core-business margin regardless of new-line progress"
+  - "Every guided rupee/date target on the newer lines (PGCIL, radiator, copper) has slipped 2-9 months across three consecutive concalls"
+  - "The single highest-value catalyst (PGCIL approval) remains ungranted after 12+ months 'in process' with no firm date"
+  - "Working capital deterioration (WC days ~41->96 per B01) coincides exactly with the capacity ramp; structural-vs-transient question unresolved"
+  - "HV Bushings and copper technology partnerships remain unsigned; the bushings entity is a minority 25% stake with execution risk sitting with a newly joined external CEO"
+analyst_note: "em_score of 11 reflects a strict application of the evidence-quality discount: almost every forward claim in this name is 🎙️ concall guidance, and that guidance has a demonstrated 2-9 month slippage pattern across PGCIL, radiator, and copper timelines within a single year of calls. The two 📄-documented facts that do hold up (Unit 3 commissioned on schedule 25-Jul-2025; FY25 above-nameplate production) support F2 but do not by themselves establish a moat under this scan's definitions, since capacity build is growth, not moat. G1/G2 show active deterioration (cash down, ST debt up, WC days up, ICRA outlook cut Positive->Stable) coincident with the ramp, cross-referenced to B01 and not double-counted here. I1/I2 both score 0 on clean tests: no competitor-pay-scale argument exists for I1, and TRIL's own backward integration into CRGO lamination while remaining a VILAS customer directly answers I2's 'what must be destroyed' question with 'nothing.'"

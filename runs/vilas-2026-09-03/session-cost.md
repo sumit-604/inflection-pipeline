@@ -10,3 +10,4 @@ Per-stage token ledger. One line per subagent run.
 | 2 | notes triple-pass (pass 2) | claude-sonnet | default | n/a | n/a | 294324 | 6m11s | 2 |
 | 1 | gate 0 (re-run, corrected inputs) | claude-sonnet | default | n/a | n/a | 75449 | 5m52s | 2 |
 | 2 | notes triple-pass (pass 3, consolidation + B02) | claude-sonnet | default | n/a | n/a | 79768 | 5m15s | 3 |
+| 7 | emerging moat scan | claude-sonnet | default | n/a | n/a | 528157 | 9m41s | 1 |

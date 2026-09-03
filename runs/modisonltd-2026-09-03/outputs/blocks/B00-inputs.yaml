@@ -1,0 +1,74 @@
+stage: B00-inputs
+company: MODISONLTD
+run_date: 2026-09-03
+model: orchestrator-opus-4-8
+status: complete
+run_type: full
+cmp: 494.0
+market_cap_cr: 1604.0
+
+corpus_inventory:
+  prospectus: {count: 0, note: "absent; company listed 1983 (CIN L51900MH1983PLC029783, 43rd AGM) so long-listed, NOT a gap"}
+  annual_report:
+    count: 2
+    primary: "inputs/annual-report/Annual_Report.pdf  (FY2025-26, 43rd AGM, year ended 31-Mar-2026)"
+    secondary: "inputs/annual-report/5b7eeeee-112e-45bc-85ec-d222b909e348.pdf  (FY2024-25, 42nd AGM, year ended 31-Mar-2025)"
+  results:
+    count: 3
+    q1_fy27_unaudited: "inputs/results/a83fbfdb-d05c-4b75-969e-e6f4778f33b0.pdf  (quarter ended 30-Jun-2026, NEWEST)"
+    q4_fy26_audited_annual: "inputs/results/2bfd5705-158e-4ce4-b5e6-aff114e19398.pdf  (quarter and year ended 31-Mar-2026, AUDITED ANNUAL)"
+    q3_fy26: "inputs/results/71257702-2cb3-47e2-b967-2a86a788a7b5.pdf  (quarter and nine months ended 31-Dec-2025)"
+  rating:
+    count: 1
+    doc: "inputs/rating/202512131219_Modison_Limited.pdf  (CARE Ratings, Dec-2025, CARE A;Stable / CARE A1, FULL rationale present)"
+  concalls:
+    count: 2
+    oldest: "inputs/concalls/Concall_Oct_2022_Transcript.pdf  (Investor Meet, Oct-2022)"
+    newest: "inputs/concalls/AGM_43rd_Jul2026_webcast_operator_transcript.txt  (43rd AGM webcast, Jul-2026, OPERATOR-SUPPLIED auto-transcript, non-filed)"
+    chronology: ["Oct-2022 Investor Meet", "Jul-2026 43rd AGM"]
+  peer_concalls:
+    count: 8
+    SALZERELEC: ["Nov-2025", "Feb-2026", "May-2026", "Aug-2026"]
+    SBCL: ["Nov-2025", "Feb-2026", "May-2026", "Aug-2026"]
+  presentation: {count: 1, doc: "inputs/presentation/Investor_Presentation_1.pdf"}
+  research:
+    count: 4
+    broker_notes: ["inputs/research/rpt 1.pdf", "inputs/research/rpt2.pdf"]
+    operator_leads: ["inputs/research/operator-supplied-fy26-operational-summary.md", "inputs/research/operator-supplied-shareholding-pattern.md"]
+  screening:
+    count: 6_sets
+    company: "inputs/screening/screener-*.csv"
+    peers: ["PRECWIRE-*.csv", "SALZERELEC-*.csv", "SBCL-*.csv"]
+  announcements: {count: 0, note: "ABSENT — gap"}
+  shareholding: {count: 0, note: "no filed shareholding-pattern PDF; operator screener image saved as research lead (Jun-2026 promoter 52.23%, FII 0.92%, DII 0.00%)"}
+
+input_gaps:
+  - "announcements/ absent: documented-ACTION (Reg 30) record missing; intent-and-action cross-check runs on AR/concall/AGM/rating/web only. Operator states no material exchange announcement after 31-Mar-2026 beyond the FY26 AR."
+  - "shareholding/ absent as a FILED PDF: FII+DII UA qualifier and pledge trend fall back to the AR-filed pattern (as at 31-Mar-2026) plus the operator screener lead (Jun-2026). Promoter pledge: check AR/rating."
+  - "prospectus/ absent: NOT a gap; company long-listed since 1983."
+
+manifest_defects:
+  - "sector_cap_row 'Pharma / CDMO' is WRONG (collect_to_repo v3 default defect). Modison makes silver/copper/tungsten electrical contacts for HV/MV/LV switchgear. OVERRIDE to the electrical-contacts / electrical-equipment Section 1B cap row; CONFIRM exact row in phase 3 stage 11."
+  - "concalls_available: false in manifest, but operator ruling (2026-09-03) uses the Jul-2026 43rd AGM as the PRIMARY communication source. Stage 5 runs in AGM+concall mode, credibility grade capped at B (no regular quarterly earnings calls). Oct-2022 concall is stale (nearly 4y before run)."
+  - "Two AR PDFs present (contract expects 0-1): both retained. FY26 primary, FY25 secondary gives an extra backward year."
+
+freshness_pairs:
+  - {pair: "results -> same-quarter concall", trigger_doc: "Q1 FY27 results (Jun-2026)", mate_expected: "Q1 FY27 concall", status: SKIPPED, missing_doc: "n/a", note: "manifest concalls_available false; company holds no regular quarterly calls. AGM used as communication source per operator ruling. Absence declared, not a gap."}
+  - {pair: "rating bulletin -> full rationale", trigger_doc: "CARE rating Dec-2025", mate_expected: "CARE full rationale", status: PASS, missing_doc: "n/a", note: "detailed key rating drivers present in the same PDF"}
+  - {pair: "SEBI order -> order text", trigger_doc: "none referenced in corpus", mate_expected: "n/a", status: PASS, missing_doc: "n/a", note: "no SEBI order referenced across extracted corpus"}
+  - {pair: "AR -> latest audited annual results", trigger_doc: "audited FY26 annual results (Mar-2026)", mate_expected: "FY26 AR", status: PASS, missing_doc: "n/a", note: "FY26 AR present; same year. FY25 AR also held."}
+freshness_verdict: FRESHNESS PAIRS OK
+
+spear_gate:
+  status: HIT
+  line: "Spear: HIT 2026-09-03 - load-bearing facts: [margin path and pricing mechanics per Jul-26 concall; CFO negative 3yrs and debt 174 Cr; silver hedge coverage; Vapi fire claim 16.2 Cr pending]"
+  load_bearing_facts:
+    - "F1 margin path and pricing mechanics per Jul-26 AGM: EBITDA 9.6%->16.1% FY26; silver passed through per customer agreements; mgmt guides 'at least 10-12%' next year (a step DOWN from 16%). VERIFY at stages 1,4,5,7."
+    - "F2 CFO negative 3yrs and debt 174 Cr: FY26 borrowings Rs 174.5 cr (vs 72.8 cr) incl Rs 99 cr WCDL; negative operating cash flow FY26. VERIFY the 3-YEAR CFO trend in the CF statement / screener CF CSV at stages 1,3,10."
+    - "F3 silver hedge coverage: 'selective' hedging; Rs 2.61 cr hedging profit in exceptional items; FX (USD/EUR) hedged continuously. VERIFY at stages 3,4,5."
+    - "F4 Vapi fire claim 16.2 Cr pending: fire 7-Feb-2026; Rs 10.63 cr loss (exceptional); Rs 1.7 cr admitted; Rs 16.24 cr claim NOT yet admitted (contingent). VERIFY at stages 2,3."
+  note: "companies/MODISONLTD.md created 2026-09-03 with the HIT line; gate satisfied. These four facts are every later stage's FIRST verification priority."
+
+flags: []
+input_contract_note: "HALT conditions not met (manifest parses, inputs tree non-empty). Run proceeds full. PDF extraction verified via pypdf (cffi force-reinstalled); all input PDFs pre-extracted to inputs/_extracted/*.txt with page markers."
+analyst_note: "Sector is electrical contacts, NOT pharma. Load-bearing tension: record FY26 margin (16.1%) and record revenue growth (+45%) sit against negative operating cash flow, a doubling of debt to 174.5 cr, and a large WIP/receivables build. FLAG-CASH territory from stage 0: growth-induced vs structural must be determined with the 3-year CFO trend and receivables ageing. Vapi fire 16.24 cr claim is a contingent asset, not booked."

@@ -1,0 +1,40 @@
+stage: B09b-dossier
+company: "MPSLTD"
+run_date: "2026-09-03"
+model: claude-sonnet-5
+status: complete
+corpus_verdict: "CORPUS GAPPED"
+corpus_gaps:
+  - {document: "Q2 FY26 (Nov-2025) earnings concall transcript", expected_source: "company IR page", kind: "findable-missing"}
+  - {document: "Primary Reg 30 filed PDFs for Mar-Sep 2026 corporate actions (tax orders, leadership changes, ADI BPO scheme filings)", expected_source: "BSE", kind: "findable-missing"}
+  - {document: "Promoter pledge filing (Reg 31(4) SAST declaration)", expected_source: "BSE", kind: "findable-missing"}
+  - {document: "ADI Holdings Private Limited scheme/valuation document (ADI BPO infrastructure and investing undertaking demerger)", expected_source: "MCA / NCLT Chennai filings", kind: "findable-missing"}
+  - {document: "Credit rating rationale", expected_source: "rating agency site", kind: "plausibly-nonexistent"}
+archetypes:
+  - {line: "Research Solutions (~60% of revenue)", archetype: "Outsourcing partner (CDMO/EMS/IT services)"}
+  - {line: "Education Solutions (~27% of revenue)", archetype: "Outsourcing partner (CDMO/EMS/IT services); Unbound Medicine subscription layer fits no known archetype cleanly"}
+  - {line: "Corporate Learning (~13% of revenue)", archetype: "Order-book business (EPC/defence/capital goods) - nearest fit, approximate"}
+transition:
+  - {line: "Research Solutions", from_tier: "R3 VALUE-ADDED / SPEC'D SUPPLIER", to_tier: "R4 FRANCHISE / SHARE-OF-WALLET LEADER (claimed)", engine: "AI-driven throughput per employee (revenue +20.4% vs headcount +2.7%, Q1 FY27); claimed shift from effort-billing to outcomes-billing and industry consolidation toward technical specialists", proof_gate: "Segment margin holds/expands past Q1 FY27 ex-AJE print of 45.1% through FY27 without reverting toward FY26's 39.9% blended average", recognition_gap: "OPEN QUESTION - resolved at Stage 11 via the PE gap", ugliness: "ARTIFACT-OF-CLIMB", transition_falsifier: "Five claimed AI products show no separate revenue/margin/R&D line a full year on AND segment margin reverts toward the 39.9% FY26 average"}
+  - {line: "Education Solutions", from_tier: "R2/R3 boundary", to_tier: "R3 moving toward R4-adjacent recurring-subscription quality (claimed)", engine: "Unbound Medicine acquisition (closed 09-Feb-2026) adding a recurring point-of-care subscription layer to a project-fee segment", proof_gate: "Unbound Medicine EBITDA margin reaches mid-20s or higher by Q2/Q3 FY27", recognition_gap: "OPEN QUESTION, resolved at Stage 11", ugliness: "ARTIFACT-OF-CLIMB", transition_falsifier: "Unbound margin stuck at 18-20% through H2 FY27, compounded by founder Bill Detmer's move to advisor undermining domain-authority continuity"}
+  - {line: "Corporate Learning", from_tier: "R1 COMMODITY PRICE-TAKER", to_tier: "R3 VALUE-ADDED / SPEC'D SUPPLIER (claimed) - a two-rung leap in about one year, flagged as requiring extraordinary proof not yet supplied at filed-disclosure level", engine: "Full buyout/consolidation of Liberate Group under 'Liberate Global' alongside a new external minority equity investor (Rodney Beach) installed the same year goodwill was impaired; claimed shift from compliance training to AI/AR-VR/simulation delivery", proof_gate: "Segment revenue growth accelerates past the current 6-7% pace toward management's cited 12-13% market rate, sustained two more quarters without a second impairment", recognition_gap: "OPEN QUESTION, resolved at Stage 11; smallest segment (~13% of revenue), limited whole-company weight", ugliness: "CONTESTED - not resolved in this dossier; B03 names this the top-priority item for operator resolution", transition_falsifier: "A second goodwill impairment in this CGU, or segment growth failing to clear high single digits despite claimed margin recovery"}
+dominant_variables:
+  - "Research Solutions segment EBITDA margin trajectory (45.1% ex-AJE Q1 FY27 vs 39.9% FY26 blended average)"
+  - "Unbound Medicine EBITDA margin ramp (18-20% at Q1 FY27 checkpoint vs 'early 20s' promise, ~30% exit-FY27 target)"
+  - "Corporate Learning segment revenue/profit trend and further goodwill-impairment risk"
+  - "Consolidated leverage and liquidity (first-ever net debt; current ratio 1.97x to 1.45x)"
+business_falsifier: "A client-insourcing or captive (GCC) migration event at scale inside Research Solutions' top-15 customer base, the switching-cost anchor the whole company's earnings and pricing power rest on in both the FROM and TO states"
+mental_model_status: "DRAFT - PENDING OPERATOR SIGN-OFF"
+fragility:
+  variable_count: 4
+  verifiability_ratio: "3 of 4 externally observable via filed quarterly disclosures; 1 (Unbound Medicine margin) company-narrated only at current disclosure granularity"
+  single_point_failure: "Research Solutions segment margin compression from generative-AI commoditisation of undifferentiated content services (company-named structural threat, ~60% of consolidated revenue)"
+  fragility_verdict: "MODERATE"
+candidate_count: 6
+research_brief_items: 12
+plain_summary_points: 15
+annex:
+  present: true
+  questions_answered: 10
+  corpus_commit_hash: "0bde771b27ee8b0ee3d65f102d9edb111885f9de"
+mechanical_check: "PASS (6 sections in order; one corpus verdict line CORPUS GAPPED; DRAFT marker present in Section 2; annex Q1-Q10 in order; corpus-hash line at end)"

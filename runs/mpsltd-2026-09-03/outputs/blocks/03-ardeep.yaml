@@ -1,0 +1,61 @@
+stage: B03-ardeep
+company: "MPSLTD"
+run_date: "2026-09-03"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "MD&A's 'INR 113.75 crore net cash position' claim (p.29) does not reconcile exactly to disclosed consolidated balance-sheet cash/bank/investment/borrowing lines; nearest computed aggregates range ~54.3cr to ~119.2cr depending on definition; exact components NOT FOUND IN DOCUMENT"
+  - "Audit fee vs non-audit fee split for Walker Chandiok & Co LLP NOT FOUND IN DOCUMENT (only total consolidated fees of INR 90.47 lacs disclosed); cannot confirm/rule out non-audit-exceeds-audit flag"
+  - "Statutory auditor appointment history prior to the 51st AGM (~2021) NOT FOUND IN DOCUMENT"
+  - "Full Note 39 (standalone)/Note 38 (consolidated) aggregate contingent-liability figure not independently re-extracted line-by-line in this pass beyond the CARO disputed-tax table (INR 37.75cr); relies on B02's underlying note-read"
+flags:
+  - "FLAG-CASH"
+phase_verdicts: {p1: "🟡 Watch", p2: "🟡 Watch", p3: "🟡 Watch", p4: "🟡 Watch", p5: "🟡 Watch", p6: "🔴 Red Flag", p7_best_fit: "GARP"}
+overall_quality: 6.5
+quality_components: {governance: 6, accounting: 6, balance_sheet: 7, earnings: 7}
+kill_switch_notes:
+  - "Phase 1: would NOT halt — clean unqualified opinion, no adverse CARO clause, no fraud/default/going-concern issue"
+  - "Phase 2: would NOT halt — extensive, unqualified disclosure; concerns are narrative framing and revenue-quality interpretation, not mechanical failures"
+  - "Phase 3: would NOT halt — cash generation strong, leverage modest; goodwill concentration and unreconciled net-cash figure are valuation flags, not halts"
+  - "Phase 4: would NOT halt — nothing is a misstatement; concerns are omission and selective framing for the deliberation stage to weigh"
+  - "Phase 5: would NOT halt — no compliance breach found; pay-ratio divergence and KMP turnover are flags for the Halt-1 dossier"
+  - "Phase 6: would NOT halt on company quality (no STOP verdict exists), but would flag the Corporate Learning Quiet Abandonment as the top priority item for the signed Mental Model to resolve as ARTIFACT-OF-CLIMB vs STRUCTURAL before FTTCP/valuation proceeds"
+triple_pass_verification:
+  verified: 13
+  discrepancies:
+    - {finding_rank: 1, triple_pass_value: "Rodney Beach installed as President of Corporate Learning", ar_value: "Rodney Beach is a formal minority EQUITY investor in MPS Interactive Systems Limited under a Share Subscription and Shareholders' Agreement (31,52,652 shares), reducing MPS Limited's stake below 100% for the first time", note_ref: "Secretarial Audit Report Annexure-1, p.56-57"}
+    - {finding_rank: 8, triple_pass_value: "AJE Group acquisition implied as part of FY26 activity (per operator carry-forward context)", ar_value: "AJE was acquired in FY24 (per FY25 AR's own acquisition table and FY26 AR's consolidated entity list with no FY26 acquisition-date footnote for AJE); only the PPA measurement-period revision is a FY26 event", note_ref: "FY25 AR p.4; FY26 AR consolidated Annexure 1, p.237"}
+missing_risks:
+  - {risk: "Acquisition-funded leverage / new covenant compliance not named in MD&A risk table", evidence: "Note 14 (new DSCR/Debt-EBITDA/Debt-Net-Worth covenants); MD&A Liquidity risk row (p.33) still reads 'a net cash position... provide substantial headroom' with no mention of the new debt"}
+  - {risk: "Key-person / senior-management turnover not named in MD&A risk table", evidence: "Corporate Governance Report Senior Management table, p.122: COO ~14-month tenure, Chief People Officer turned over twice, Company Secretary resigning"}
+  - {risk: "Minority-investor dilution in a material subsidiary not named anywhere in risk disclosure", evidence: "Secretarial Audit Annexure-1, p.56-57: Rodney Beach equity investment in MPS Interactive Systems Limited"}
+  - {risk: "Standalone revenue-recognition/intercompany-recharge quality gap not named as a risk", evidence: "Note 38(b): 761% YoY jump in recharge to MPS North America LLC, 8.53% of standalone revenue in FY26 vs 1.24% in FY25"}
+guidance_table:
+  - {claim: "FY27 consolidated EBITDA above INR 300 crore, regarded as a floor", number: ">INR 300cr", timeframe: "FY27", credibility: "Plausible-to-aggressive; implies ~27% growth vs FY26's own realised 11.83% EBITDA growth"}
+  - {claim: "Vision 2027: revenue toward INR 1,500cr, EBITDA ~INR 450cr at ~30% margin", number: "INR 1,500cr revenue / INR 450cr EBITDA", timeframe: "FY28", credibility: "Aspirational, M&A-dependent; implies ~40%+ revenue CAGR vs 13-17% organic growth shown this year"}
+  - {claim: "MPS has compounded EBITDA at roughly 17 percent a year since FY21", number: "~17% CAGR", timeframe: "FY21-FY26, historical", credibility: "Verified, high — independently re-derived from the AR's own five-year EBITDA disclosure and cross-tied to the FY25 AR"}
+  - {claim: "A visible Education pipeline of more than USD 11 million", number: "USD 11m+", timeframe: "not specified", credibility: "Concrete but unverifiable pipeline figure; genuine FY27 monitorable"}
+monitorables:
+  - {metric: "Corporate Learning segment revenue/profit and further goodwill impairment", threshold: "Further YoY decline beyond FY26 levels or a second impairment", where: "Segment note, Note 5/28(c), quarterly results", why: "Resolves ARTIFACT-OF-CLIMB vs STRUCTURAL classification for Halt 1/FTTCP"}
+  - {metric: "Standalone vs consolidated revenue growth gap", threshold: "Gap persisting/widening beyond FY26's ~19pp", where: "Note 22/38(b)", why: "Confirms whether recharge-driven inflation is one-year or systemic"}
+  - {metric: "Current ratio, standalone and consolidated", threshold: "Standalone <2.0x or consolidated <1.3x", where: "Note 51 standalone / equivalent consolidated note", why: "Would signal genuine liquidity stress vs a one-year technical dip"}
+  - {metric: "FY27 consolidated EBITDA run-rate", threshold: "~INR 75cr/quarter pace needed for >300cr full year", where: "Quarterly results vs MD&A guidance p.33", why: "Tests credibility of the 'floor' guidance"}
+  - {metric: "Amortisation charge on Unbound Medicine/AJE intangibles", threshold: "Full-year charge materially exceeding FY26's partial-period charge", where: "Note 5/26, FY27 P&L", why: "Expected step-up could compress EPS despite real growth"}
+  - {metric: "ADI BPO amalgamation NCLT outcome", threshold: "Any retrospective restatement of FY26 comparatives", where: "Note 48/47, Directors' Report Item 40", why: "Live structural event with a built-in restatement mechanism"}
+  - {metric: "Unexplained Rent/Royalty cost-line spikes", threshold: "Recurrence or unexplained persistence into FY27", where: "Note 27", why: "Two order-of-magnitude cost jumps with zero narrative in this AR"}
+  - {metric: "Senior-management turnover", threshold: "Any further C-suite/KMP-adjacent departure within 12 months", where: "Corporate Governance Report Senior Management table", why: "Would compound an already-elevated key-person risk signal"}
+ar_new_downstream_entities:
+  - {name: "Rodney Charles Beach", where_in_ar: "Secretarial Audit Report Annexure-1 (MPS Interactive Systems Ltd), p.56-57", entity_type: "New minority equity investor in a material subsidiary (RPT/counterparty)"}
+  - {name: "Unbound Medicine, Inc.", where_in_ar: "Consolidated Annexure 1 entity list, p.237; Directors' Report p.39", entity_type: "New wholly-owned subsidiary, first entry into healthcare knowledge management vertical"}
+  - {name: "Ms. Papinani Radha Rani (General Counsel and, from 21-Jul-2026, Chief Risk Officer)", where_in_ar: "Directors' Report Item 24, p.45", entity_type: "New KMP-adjacent Senior Management appointment"}
+strengths_top3:
+  - "CFO/PAT >1x at both standalone (1.09x) and consolidated (1.14x) levels in FY26, up from sub-0.75x in FY25, holding even after stripping the non-cash exceptional write-back gain"
+  - "Verified, independently re-derivable multi-year track record: ~17% EBITDA CAGR FY21-26, ROCE 38.2%, RONW 32.2%, funded almost entirely from internal cash"
+  - "Clean audit opinion, no fraud/default/going-concern issue, no pledge, no promoter-selling pattern, demonstrated 12-month capital-return discipline"
+red_flags_top3:
+  - "Corporate Learning 'Quiet Abandonment': MD&A's 'The Turn' narrative omits the INR 1,292.54 lacs goodwill impairment, the full-year segment decline, and a new minority investor's stake in the same subsidiary"
+  - "Goodwill now 40% of consolidated total assets / 63% of consolidated net worth across three deals in two years, with one PPA already revised -28.2% and Unbound Medicine's PPA not yet finalised"
+  - "191:1 CEO-to-median pay ratio (CEO +31.33% vs median employee +2.37%), with the CEO also sitting on the Audit Committee and chairing both the CSR and Risk Management Committees"
+best_fit_strategy: "GARP"
+one_line_verdict: "GARP-quality compounder with real cash strength, undercut by an unresolved Corporate Learning narrative gap the operator's transition thesis cannot skip."
+analyst_note: "The 'new investor in Corporate Learning' is a direct minority EQUITY stake (Rodney Beach, 31,52,652 shares in MPS Interactive Systems Ltd via a Share Subscription and Shareholders' Agreement), not merely an executive appointment, taken the same year that CGU's goodwill was impaired by a matching amount. Use this as the anchor quote for Halt 1's ARTIFACT-OF-CLIMB vs STRUCTURAL call on Corporate Learning. Also: correct the operator carry-forward framing that AJE Group 'closed inside FY26' — AJE was acquired in FY24 per both ARs' own entity/acquisition tables; only its PPA measurement-period revision (-28.2% goodwill) is a FY26 event. Liberate Group full buyout and Unbound Medicine remain the two genuine FY26 acquisitions."

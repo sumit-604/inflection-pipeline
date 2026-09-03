@@ -1,0 +1,95 @@
+stage: B09-tam
+company: "MPSLTD"
+run_date: "2026-09-03"
+model: claude-sonnet-5
+status: partial               # concall-cited healthcare-AI TAM figures not independently traced to primary transcript; FX rate single-sourced
+input_gaps:
+  - "Investor_Presentation_1.pdf (Q1 FY27 earnings deck) contains zero market-sizing content; all mgmt TAM claims sourced from FY25-26 AR MD&A instead"
+  - "Concall-cited healthcare-AI TAM (USD188bn by 2030) and subsector (USD3bn->102bn by 2034, 42% CAGR) not independently traced to a primary concall transcript in this session (out of this stage's reading set)"
+  - "No named competitors/market-share data in either corpus doc (confirmed, consistent with B04); peer aggregation substitutes pipeline's 4 designated peers + 1 unaudited global KPO estimate (Straive)"
+  - "Managed Learning Services third-party market-size reports show wide dispersion (USD3.63bn-9.4bn for 2025); conservative estimate used lowest verified figure"
+flags:
+  - "Management's aggregate TAM claim ('markets that together exceed USD800bn', AR MD&A p.32) is ~30x the conservative independently-triangulated TAM and ~17x the realistic estimate; classified INFLATED"
+  - "Management's cited segment GROWTH RATES (Research 8-9%, Education ~15%, Corp Learning 12-13%) are reasonably close to independently-sourced service-layer CAGRs found here (4.7%, ~10.2%, ~10.3%) -- rate claims are far more defensible than size claims"
+  - "SOM yr3->yr5 share acceleration (1.0%->2.0%) requires continued M&A at FY24-26 cadence (~1 deal/yr); FY26's first-ever external borrowing (Rs40.25cr, per B04) suggests the M&A engine, not capacity, is the binding constraint on the back half of the SOM trajectory"
+  - "Named pipeline peers (Datamatics +15.3%, eClerx +22.6%, Indegene +23.6%, NIIT MTS +18% FY26 revenue growth) all grew faster than MPS's organic ex-M&A growth (~13.3%); MPS may be under-gaining share within its own peer set despite the enormous total opportunity"
+market_definition: "Global outsourced knowledge-services layer (STM publishing production/platform services, education content+assessment+healthcare point-of-care knowledge subscriptions, and managed/AI corporate learning delivery) MPS actually sells into -- not the trillion-dollar end-markets management cites"
+tam_cr: {conservative: 249706, realistic: 440004}
+sam_cr: 113617
+sam_pct_of_tam: 45.5
+som_3yr_cr: 1440
+som_5yr_cr: 3370
+som_implied_revenue_cagr: {yr3: 23.3, yr5: 34.4}   # FORMAL handoff to stage 11
+current_sam_share_pct: 0.6
+revenue_headroom_x: 147.9
+tam_growth_pct: 8.2
+runway_class: "MASSIVE"
+mgmt_claim_cr: 7544000
+mgmt_claim_ratio: 30.2
+mgmt_claim_read: "inflated"
+capacity_check: "sufficient on capex (capex_embedded_growth=0%, asset-light); optimistic side is the yr3->yr5 SOM share target (1.0%->2.0%), which requires continued M&A at FY24-26 cadence -- financing capacity (first-ever external debt in FY26), not physical capacity, is the real constraint"
+methods_used:
+  - "top-down (segment service-layer market reports: Publication Support Services, Assessment Services, Medical Reference Apps, Managed Learning Services)"
+  - "bottom-up (per-article production cost x 3.5m global S&E articles/yr, Research Solutions sanity check only)"
+  - "peer revenue aggregation (4 pipeline-designated peers: Datamatics, eClerx, Indegene, NIIT MTS + 1 unaudited global KPO estimate, Straive)"
+stale_data_flags:
+  - {datapoint: "Medical Reference Apps market size USD1.34bn", source: "Grand View Research", year: 2024}
+  - {datapoint: "Global S&E article output 3.5 million/year", source: "MPS AR FY25-26 MD&A (citing external research-output data)", year: 2024}
+searches_performed:
+  - "global scholarly STM publishing services outsourcing market size 2025"
+  - "global corporate e-learning market size 2025"
+  - "global K-12/higher education market size 2025"
+  - "clinical decision support software market size 2025"
+  - "global education technology (EdTech) market size 2025"
+  - "AI in healthcare market size 2030 188 billion (traced concall figure)"
+  - "Straive/SPi Global revenue and company size"
+  - "managed learning services outsourcing market size 2025"
+  - "e-learning content development outsourcing market size 2025"
+  - "test and assessment services market size 2025"
+  - "medical reference app / point-of-care clinical reference market size"
+  - "average cost per journal article production/editorial/typesetting outsourcing"
+  - "USD/INR exchange rate September 2026"
+  - "Datamatics, eClerx, Indegene, NIIT Learning Systems FY26 revenue"
+searches_skipped:
+  - "Primary concall transcripts (Q3/Q4 FY26, Q1 FY27, Unbound acquisition call) -- not re-read to verify the USD188bn healthcare-AI figure; outside this stage's assigned reading set"
+  - "Live WebFetch of source report pages beyond WebSearch snippet layer -- snippets treated as sufficient given named, attributable sources"
+  - "Separate India-specific TAM search -- India is delivery infrastructure only for this business, not a demand market (Section 1A/4C); considered omission, not a degrading skip"
+downstream_candidates:
+  - signal: "Global STM journal/article output volume"
+    entity_type: "macro"
+    demand_link: "Direct volume driver for Research Solutions production demand (denominator of segment's addressable flow)"
+    likely_source: "STM Association Annual STM Report / national science-indicator releases"
+    cadence: "annual"
+    shared: false
+  - signal: "Open-access/research-integrity regulatory mandates (Plan S, retraction enforcement)"
+    entity_type: "regulatory"
+    demand_link: "Drives demand for compliance/integrity-screening services within Research Solutions"
+    likely_source: "STM Association / COPE / Retraction Watch database"
+    cadence: "event-driven"
+    shared: false
+  - signal: "K-12/higher-ed digital-learning procurement and enrolment budgets"
+    entity_type: "macro"
+    demand_link: "Drives Education Solutions content/assessment demand"
+    likely_source: "National education-ministry budget releases / HolonIQ EdTech trackers"
+    cadence: "annual"
+    shared: false
+  - signal: "Hospital/nursing-institution point-of-care digital-tool adoption"
+    entity_type: "end-customer"
+    demand_link: "Drives Unbound Medicine subscription growth/renewal within Education Solutions"
+    likely_source: "HIMSS Analytics adoption surveys / American Nurses Association surveys"
+    cadence: "annual"
+    shared: false
+  - signal: "Enterprise L&D/reskilling budget surveys"
+    entity_type: "macro"
+    demand_link: "Drives Corporate Learning (Liberate Global) demand"
+    likely_source: "Training Magazine Industry Report / LinkedIn Workplace Learning Report"
+    cadence: "annual"
+    shared: false
+  - signal: "Named peer quarterly segment disclosures (Datamatics, eClerx, Indegene, NIIT MTS)"
+    entity_type: "counterparty"
+    demand_link: "Signals competitive intensity/pricing across all three MPS segments at once"
+    likely_source: "Company quarterly investor releases / exchange filings"
+    cadence: "quarterly"
+    shared: true
+demand_externally_verifiable: true
+analyst_note: "Key finding: mgmt TAM claim is 30x the conservative triangulated figure, yet runway is still MASSIVE (148x headroom) on the honest number -- both true at once. Stage 11 should anchor to the yr3 SOM CAGR (23.3%, largely organic+announced M&A), not yr5 (34.4%), which requires the FY24-26 acquisition cadence to continue and is financing-capacity-bound, not physical-capacity-bound, per FY26's first-ever external debt draw."

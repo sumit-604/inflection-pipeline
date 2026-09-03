@@ -1,0 +1,99 @@
+stage: B00-inputs
+company: VILAS
+run_date: 2026-09-03
+model: orchestrator (claude-opus-4-8)
+status: complete
+run_type: full
+concalls_available: true
+listed_recently: true
+listed_fy: FY24
+classification_carried: CONVERTER  # Amendment 17; manifest sector_cap_row "Pharma / CDMO" is WRONG, correct at stage 10
+spear_gate: OVERRIDE 2026-09-03 (operator)
+run_framing: "track-to-Rs227, not buy-today; spear WATCH at CMP Rs 353, entry Rs 227"
+
+anchors_operator_verified:
+  cmp: 353
+  market_cap_cr: 864
+  shares_cr: 2.448
+  fy26_revenue_cr: 460.7
+  fy26_ebitda_cr: 51.5
+  fy26_ebitda_margin_pct: 11.17
+  fy26_pat_cr: 39.6
+  fy26_eps: 16.16
+  trailing_pe: 21.8
+  roce_pct: 16
+  book_value: 134
+  fy26_crgo_volume_mt: 19856
+  crgo_installed_mtpa: 36000
+  crgo_utilisation_pct: 55
+
+inputs_present:
+  annual_report: [FY25, FY24]
+  results: [H1FY26_2025-11-13, FY26_audited_2026-05-11]
+  rating: [ICRA_2025-07-14_full_rationale]
+  concalls_used: [May-2025_FY25, Nov-2025_H1FY26, May-2026_FY26]
+  concalls_available_unused: [Nov-2024_H1FY25]
+  peer_concalls: {544310: 4, JAYBEE: 4, PITTIENG: 4}
+  presentation: [FY26_2026-05-11]
+  research: [rpt1, rpt2, operator-ops-digest_2026-09-03]
+  screening_company: screener-*.csv
+  shareholding: [operator-ferried_screener_Mar2026]
+  announcements: [GPCB_CCA_2026-05-01_operator-ferried]
+
+input_gaps:
+  - type: prospectus
+    severity: HIGH
+    reason: "listed FY24; DRHP is sole source of restated FY20-FY22; group map and pre-IPO Atlas RPT history not corpus-anchored"
+  - type: annual_report_FY26
+    severity: HIGH
+    reason: "freshness mate to FY26 audited annual results; drives CORPUS GAPPED-FRESHNESS"
+  - type: announcements_primary_pdf
+    severity: MEDIUM
+    reason: "only GPCB CCA ferried; no AGM outcome text, no capital-raise filings"
+  - type: shareholding_primary_filing
+    severity: LOW
+    reason: "aggregator table ferried; affirms trend and UA qualifier; pledge not shown"
+
+freshness_pairs:
+  - pair: results_to_concall
+    trigger_doc: FY26 results 2026-05-11
+    mate_expected: FY26 concall 2026-05-12
+    status: PASS
+    missing_doc: null
+  - pair: rating_bulletin_to_rationale
+    trigger_doc: ICRA 2025-07-14
+    mate_expected: full rationale
+    status: PASS
+    missing_doc: null
+  - pair: sebi_order_to_text
+    trigger_doc: none referenced
+    mate_expected: order text
+    status: PASS
+    missing_doc: null
+  - pair: ar_to_latest_audited_annual
+    trigger_doc: FY26 audited annual results 2026-05-11
+    mate_expected: FY26 annual report
+    status: FAIL
+    missing_doc: FY26 annual report
+
+freshness_verdict: CORPUS GAPPED-FRESHNESS
+corpus_verdict: CORPUS GAPPED-FRESHNESS
+gate_cap: PROCEED WITH CAVEATS
+gate_recommendation_first_line: "MISSING MATE: FY26 annual report (FY26 audited annual results filed 2026-05-11; AR not yet published)."
+
+priority_extractions_09b:
+  note: "operator ruling 2026-09-03; the ten Standing Extraction Annex Qs answered off-session, NOT re-run; Section 6 carries these five instead"
+  items:
+    - "1: FY24/FY25 segment revenue + CRGO tonnage -> per-kg realisation FY23-FY25"
+    - "2: single-customer concentration (ICRA 40-55%/4yr) named in any filing? else NOT DISCLOSED"
+    - "3: Atlas Transformers FY23-FY25 both directions + FY25 AGM Rs 65 Cr RPT resolution text"
+    - "4: WC/inventory/receivable days FY23-FY25 corpus (FY20-FY22 not in corpus); confirm/overturn spear STRUCTURAL"
+    - "5: capex schedule spent/CWIP; FY26 Rs 60 Cr, FY27 guided Rs 30-40 Cr"
+
+credibility_split:
+  trust: [physical build and volume]
+  haircut: [rupee revenue guidance, new-line timelines 2-4 quarters]
+  rule: "grade by category, do not collapse to a single grade"
+
+flags: []
+analyst_note: "CONVERTER (Amdt 17). Corpus GAPPED-FRESHNESS on FY26 AR plus HIGH prospectus gap. FY26 is audited-results + presentation + concall only. Backward baseline post-listing FY24-FY26 with FY23 from FY24 AR; FY20-FY22 on operator spear memory. Manifest sector row wrong (Pharma/CDMO); use converter cap in phase 3."

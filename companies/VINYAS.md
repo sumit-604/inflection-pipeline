@@ -1,6 +1,6 @@
 # VINYAS — Vinyas Innovative Technologies Ltd
 
-Spear: OVERRIDE
+Spear: OVERRIDE 2026-09-01 (operator)
 Spear date: 2026-09-01
 Ruling: MISS on price. OVERRIDE granted to proceed on business-quality grounds.
 Halt 1: SIGNED 2026-09-01. Decision: SHALLOW (read, not valued).

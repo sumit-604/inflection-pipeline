@@ -240,7 +240,7 @@ regulated utilities); Continuum Green Energy (best peer, unlisted, DRHP only).
 **Slots to be filled as the pipeline runs:**
 ```
 HALT 1 MENTAL MODEL:      [X] PROCEED  [ ] KILL     Signed: Keerti Kaushik   Date: 2026-09-02
-ROLE 5.5 TRACKER PROOF:   PENDING (claude.ai)       Rows:              Date:
+ROLE 5.5 TRACKER PROOF:   DOWNSTREAM SIGNAL TRACKER (ds 926b65ce), COMPANIES MASTER 3cfbb2b9-d3ab-81c6-bc5e-c5e6b18f91d6   Rows: 10   Date: 2026-09-02
 HANDOVER DOSSIER:         runs/cleanmax-2026-09-01/outputs/reports/09b-understanding-dossier.md   Date: 2026-09-01
 P/E GATE RULINGS:         Option A (EV/EBITDA primary; PE N/A)  Signed: Keerti Kaushik   Date: 2026-09-02
 FTTCP COMPLETE:                                     Date:
@@ -273,16 +273,17 @@ Full text at runs/cleanmax-2026-09-01/outputs/final/mental-model-declaration-v5-
 - Business falsifier: Rs 1,724 Cr current-liability shortfall hardening into an auditor EoM or Patagonia Clause (xix) spreading; a margin call on the 360 One pledge; an SPV default invoking the parent/promoter guarantee; a second covenant breach.
 
 ## DECISION STATUS AND ENTRY ZONE
-- 2026-09-02: HALT 1 gate PROCEED (operator override of the v5 SHALLOW WATCH recommendation; continue to /fttcp + Role 1). Investment posture (provisional, pre-valuation): SHALLOW WATCH, NO POSITION, NO ENTRY AUTHORISED. Provisional entry zone Rs 470-715 vs CMP Rs 1,247 (43-62% above). Role 1 valuation in Phase 3 sets the binding zone; framework exception Option A governs (EV/EBITDA primary, DCF secondary, SOTP tertiary; PE N/A).
+- 2026-09-02: HALT 1 gate PROCEED (operator override of the v5 SHALLOW WATCH recommendation; continue to /fttcp + Role 1). Decision Status WATCHLIST (COMPANIES MASTER row). NO POSITION, NO ENTRY AUTHORISED. Entry Price Max Rs 715, Margin of Safety Rs 470, vs CMP Rs 1,247 (43-62% above). Role 1 valuation in Phase 3 sets the binding zone; framework exception Option A governs (EV/EBITDA primary, DCF secondary, SOTP tertiary; PE N/A).
 
 ## OPERATOR RULINGS
 - 2026-09-01: Signed the spear OVERRIDE (SPEAR GATE cleared).
 - 2026-09-02: Signed Mental Model v5 as PROCEED at Halt 1, overriding the analyst SHALLOW WATCH recommendation, to run deliberation and valuation.
 - 2026-09-02: Framework exception Option A adopted (EV/EBITDA primary NCI-adjusted, DCF of contracted PPA cash flows at parent economic share secondary, SOTP tertiary; PE not applicable per B04; manifest Pharma/CDMO sector-cap row overridden). Section 1B may run in Phase 3 on this basis.
+- 2026-09-02: Role 5.5 tracker gate satisfied (10 rows written by Claude web). Restated the B3 capitalisation reconciliation and ruled the consolidated CWIP opening/closing (FY25-FY26) a BLOCKING input for Stage 11: no destination multiple may be set without it. /fttcp authorised.
 
 ## ACTIVE TRIPWIRES
 - Q2 FY27 operating PBT before other income < 0 (late Oct-2026) — single-point transition falsifier.
-- Interest-capitalisation ratio staying near 28-30% instead of reverting toward the ~7-10% FY25 norm (crossover-quality; note the v5 6.9%-CWIP-basis vs extraction 28.43%-Note36-basis reconciliation, Open Item for Role 1).
+- BLOCKING (Stage 11): consolidated CWIP opening AND closing, FY25 and FY26 — the one number settling the B3 capitalisation question. Operator restatement 2026-09-02: 28.43% (capitalised/total incurred) is a composition measure, not aggressiveness; 6.9% (interest/avg CWIP) is the Ind AS 23 compliance test but excluded Rs 126.76 Cr LC/BG fees. With fees, rate-on-CWIP is 8.5-11.7% vs 8.4% cost of debt, i.e. at/above the cap depending on opening CWIP. No destination multiple until CWIP is fixed. Also: LC/BG charges grew 6.2x while capex doubled (unexplained); full-expense case moves FY26 op PBT ex-OI to ~ -Rs 160 Cr.
 - Koppal (~529-543 MW) commissioning on TGNA, or substation slipping past Dec-2026.
 - Next ~500-800 MW central-grid site located in the Rajasthan corridor.
 - Supply overhang / promoter pledge cover: 33.9m shares free 26-Aug-2026; BGTF/Brookfield 21.31% ~Feb-2027; 360 One pledge cover ~2.17x vs ~2.25x trigger; any further pledge increase past 20.02% or a top-up call.

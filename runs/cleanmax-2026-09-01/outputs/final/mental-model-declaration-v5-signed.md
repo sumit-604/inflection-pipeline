@@ -87,13 +87,28 @@ Covered in 0.2. R1 -> R1+. Guided FY28 ROCE 7-9%. Scale, not a quality tier.
 **Status:** FY25 (62.4) -> FY26 (33.6) -> **Q1 FY27 +51.6**.
 **Next print:** Q2 FY27, late October 2026.
 The FY26 capitalisation flag was tested and cleared in v3: Rs 185.51 Cr capitalised on at least Rs 2,670 Cr average CWIP is 6.9% or less against an 8.4% cost of debt. Conservative, not aggressive. Quarterly capitalisation is NOT DISCLOSED, so the print cannot be independently rebuilt.
-> **Reconciliation flag for /fttcp (Claude Code note, not an operator edit).** The extraction Block A5
-> rebuild found FY26 reported Adjusted PBT of +Rs 22.02 Cr flips to -Rs 207.72 Cr at the FY25
-> capitalisation ratio, on an annual full-group basis, and the FY26 capitalisation ratio computed there
-> was 28.43% (Rs 312.27 Cr / Rs 1,098.19 Cr, Notes 3/36) versus the 6.9% figure v5 B3 uses. The two
-> use different bases (v5 uses Rs 185.51 Cr on CWIP-only average; the extraction uses the full Note-36
-> borrowing-cost reconciliation). This is Open Item to resolve at Role 1 / Stage 11 before the destination
-> multiple is set; it does not change the operator's PROCEED, and Q2 FY27 remains the live single-quarter test.
+> **§B3 CAPITALISATION RECONCILIATION — operator restatement, 2026-09-02 (supersedes the earlier clearance).**
+> The two ratios answer different questions and both are correct. 28.43% = capitalised borrowing cost / total
+> borrowing cost incurred, a COMPOSITION measure that rises mechanically as construction grows relative to
+> operating assets (exactly what a doubling fleet produces); it is not an aggressiveness test. 6.9% = capitalised
+> interest / average CWIP, the Ind AS 23 COMPLIANCE test (rate-on-CWIP against cost of debt).
+> The earlier clearance was too clean: it used Rs 185.51 Cr interest-only as the numerator and excluded
+> Rs 126.76 Cr of letter-of-credit and bank-guarantee charges, which are arguably capitalisable borrowing costs.
+> Put them back and the numerator is Rs 312.27 Cr:
+>
+> | Average CWIP assumption | Interest only | Interest + fees |
+> | --- | --- | --- |
+> | Rs 2,670 Cr (zero opening, floor case) | 6.9% | 11.7% |
+> | Rs 3,670 Cr (opening ~Rs 2,000 Cr) | 5.1% | 8.5% |
+>
+> Cost of debt 8.4%. On interest alone it is conservative on any assumption. On interest + fees it is at the cap
+> or above, depending entirely on the opening balance. So the aggressive-accounting reading is NOT supported on
+> interest alone; once fees are included it becomes MARGINAL and cannot be settled without one number:
+> consolidated construction in progress, opening AND closing, FY25 and FY26 (flagged since v3, still unresolved).
+> **BLOCKING: Stage 11 must not set a destination multiple without that CWIP number.**
+> Ledger: (i) LC/BG charges grew 6.2x while capex doubled, disproportionate and unexplained in all three calls;
+> (ii) if fully expensed rather than capitalised, FY26 operating PBT before other income moves from -Rs 34 Cr to
+> roughly -Rs 160 Cr, not the -Rs 263 Cr full stress test. None of this changes Q2 FY27 as the live test.
 ### B4. The recognition gap
 **Resolved against, provisionally.** ~27-37x guided FY28 attributable earnings at Rs 1,247. The market prices the FY28 state. PRICED NARRATIVE is the live branch. Stage 11 confirms.
 ### B5. The ugliness test
@@ -165,7 +180,7 @@ Any one of:
 7. Merchant share of central-grid revenue not covered by compensation clauses (about 17%).
 8. Whether CleanMax announces a storage-linked or firmed data-centre PPA in the next two quarters.
 9. Q2 FY27 results, late October 2026.
-10. Capitalisation-basis reconciliation (v5 B3 6.9% CWIP-only vs extraction A5 28.43% Note-36 full) before the destination multiple is set at Role 1.
+10. Consolidated construction in progress, opening AND closing, FY25 and FY26 — the one number that settles the §B3 capitalisation question (interest-only conservative vs interest+fees marginal). **BLOCKING** for Role 1 / Stage 11: no destination multiple without it. Flagged since v3.
 ---
 ## AUDIT TRAIL
 ```
@@ -185,4 +200,9 @@ Any one of:
 2026-09-02  OPERATOR SIGNED v5 as PROCEED (gate decision; overrides the SHALLOW WATCH
             recommendation to continue to /fttcp deliberation and Role 1 valuation).
             Framework exception Option A adopted. Filed by Claude Code.
+2026-09-02  Role 5.5 tracker written (10 rows, DOWNSTREAM SIGNAL TRACKER; COMPANIES MASTER
+            row Decision Status WATCHLIST, Entry Max Rs 715, MoS Rs 470). Tracker gate
+            satisfied. Operator restated B3 capitalisation reconciliation (interest-only
+            conservative; interest+fees marginal). CWIP opening/closing FY25-FY26 made a
+            BLOCKING input for Stage 11. /fttcp authorised.
 ```

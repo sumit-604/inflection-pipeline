@@ -1,0 +1,69 @@
+stage: B08-promoter
+company: "MODISONLTD"
+run_date: "2026-09-03"
+model: claude-sonnet-5
+status: partial               # BSE/company-site primary filing fetches blocked by egress proxy; core searches completed
+input_gaps:
+  - "Modison Solartech (formerly Hitech) divestment buyer identity and price unconfirmed - AR RPT table extraction corrupted, BSE/company-site source PDFs blocked by egress proxy"
+  - "Absolute Rupee managerial remuneration figures not disclosed in extracted AR Annexure C (ratios and % change only) - could not independently recompute the 12.6% of PAT figure from the brief"
+  - "No direct MCA21 or SEBI SCORES/enforcement database access; relied on aggregators (zaubacorp, tofler, trendlyne) which produced at least one confirmed data error (Modicon Private Limited MD misattribution)"
+  - "Filed shareholding pattern (pledge/encumbrance field) not directly sourced; relied on operator-supplied screener.in aggregate and AR nil-pledge language"
+flags:
+  - {type: FLAG-PROMOTER, verdict: "CAUTION", top_findings: ["Modison Copper Pvt Ltd RPT is 11.27% of Modison turnover and 48.76% of MCPL's own turnover, Rs 80 cr FY27 ceiling approved, thin arm's-length pricing disclosure", "Rs 14.60 cr dividend paid in a CARE-confirmed negative-operating-cash-flow year funded by rising working-capital debt", "MD remuneration 111x median employee pay (though decelerating vs employee pay growth in FY26)", "Two subsidiaries divested to promoter-linked hands within ~15 months (Modison HV sold directly to MD and JMD personally at ~book value; Modison Solartech buyer unconfirmed)"]}
+verdict: "CAUTION"
+scorecard: {clean: 6, caution: 4, red: 0}
+deal_breakers: []
+adverse_findings:
+  - {finding: "MCPL related-party transaction: Rs 50.42 cr FY26 (11.27% of Modison turnover), 48.76% of MCPL's own turnover, Rs 80 cr FY27 ceiling approved at 43rd AGM, thin arm's-length pricing justification in AR", evidence_tier: "VERIFIED", source: "Annual_Report.txt FY26 EGM notice, lines 1396-1734", date: "2026-05-22 (AR sign-off)"}
+  - {finding: "Dividend of Rs 14.60 cr paid in FY26 (Rs 11.36 cr in FY25) in a year CARE Ratings describes as operating-cash-flow-negative with rising working-capital borrowing (gearing 0.34x FY25 vs 0.16x FY24)", evidence_tier: "VERIFIED", source: "Annual_Report.txt line 2012-2013; CareEdge rating note 202512131219_Modison_Limited.txt lines 78-133", date: "2025-12-13 (rating note); FY26 AR 2026-05-22"}
+  - {finding: "MD Girdhari Lal Modi remuneration ratio to median employee pay is 111.38x (FY26); FY26 managerial pay grew 5.59% vs 12.25% median employee growth and 9.02% average employee growth", evidence_tier: "VERIFIED", source: "Annual_Report.txt Annexure C, lines 2975-3030", date: "2026-05-22"}
+  - {finding: "Modison HV Private Limited (100% subsidiary) divested 13-Aug-2026 directly to Girdhari Lal Modi and Kumar Jay Modi personally for Rs 27.68 lakh, close to the subsidiary's own book net worth (Rs 28.26 lakh per FY26 consolidated segment data)", evidence_tier: "MEDIA", source: "Aggregator summaries of 13-Aug-2026 BSE board-meeting outcome (bseindia.com primary filing blocked by egress proxy); net worth cross-check Annual_Report.txt line 13463-13465", date: "2026-08-13"}
+  - {finding: "Modison Solartech (formerly Modison Hitech, incorporated Jul-2023) ceased to be a subsidiary 09-Jun-2025; buyer identity and price not confirmable from the extracted AR RPT table (corrupted) or from blocked primary BSE/company-site filings", evidence_tier: "UNVERIFIED", source: "Annual_Report.txt lines 2136-2138, 9375-9398 (table corrupted)", date: "2025-06-09"}
+  - {finding: "Company Secretary turnover: 3 changes in ~5 years (Dadkar to Oct-2019, Arora to Nov-2023, Solanki Feb-2024 to Jan-2025, Sinha from Feb-2025), no stated adverse reason found for any exit", evidence_tier: "MEDIA/VERIFIED mix", source: "marketscreener.com director-history summaries; Annual_Report.txt corroborates Solanki's Jan-2025 exit", date: "multiple, 2019-2025"}
+transition_evidence:
+  - {finding: "FII/FPI holding rose from 0.48% (Mar-2026) to 0.92% (Jun-2026)", evidence_tier: "NON-ANCHORED", source: "operator-supplied screener.in shareholding pattern", date: "2026-06 quarter"}
+  - {finding: "New independent director Nandkishore Bafna appointed 01-Nov-2025 with over two decades of independent-director experience including prior audit-committee chairmanships, replacing a term-completed (not resigned) outgoing director", evidence_tier: "VERIFIED/MEDIA mix", source: "Annual_Report.txt lines 2281-2288, 4441, 4754; MEDIA company-filing summary", date: "2025-11-01"}
+pledge_pct_latest: 0
+pledge_trend: "stable - no pledge found in any source across the tracked period; not independently confirmed against the filed shareholding pattern's encumbrance field"
+searches_performed:
+  - "Modison Limited SEBI order adjudication"
+  - "Girdhari Lal Modi Modison SEBI"
+  - "Modison Metals Modison Limited promoter fraud litigation controversy"
+  - "Modison Copper Private Limited MCA strike off RoC"
+  - "Modison IiAS proxy advisory report"
+  - "Modison Ltd Glassdoor AmbitionBox employee reviews"
+  - "Kumar Jay Modi OR Rajkumar Mohanlal Modi court case NCLT"
+  - "Modison Limited related party transaction concern analyst report"
+  - "Modison HV Private Limited sale divestment 2026"
+  - "Modison HV Private Limited net worth loss subsidiary divest August 2026"
+  - "Modison Limited BSE filing Modison HV divestment board resolution"
+  - "Modison Solartech Modison Hitech divestment promoter 2025"
+  - "Modison Hitech OR Modison Solartech sale shares June 2025 buyer price"
+  - "Modicon Private Limited Modison related party"
+  - "Modison Limited BSE announcement divestment Modison Hitech Private Limited 2025"
+  - "site:modisonltd.com Modison Hitech OR Modison HV divestment"
+  - "Modison Hitech Private Limited tofler paid-up capital incorporated"
+  - "Modison Limited AGM 2025 minority shareholder vote against resolution"
+  - "Modison Limited CSR philanthropy foundation trust"
+  - "Modison short seller report OR accounting fraud OR forensic"
+  - "Modison Limited CFO resign OR company secretary resign history"
+  - "Nandkishore Bafna independent director Modison"
+  - "Jayant Kulkarni Modison independent director background other directorships"
+  - "Modison Limited institutional investor mutual fund stake FII entry 2026"
+  - "Modison Limited indiankanoon OR Modison Metals court judgment"
+  - "Modison Limited news 2026 silver contact business growth Economic Times"
+  - "Modison Vapi plant fire disruption operations restored February 2026"
+  - "Girdhari Lal Modi DIN disqualified director MCA"
+  - "Modison Copper Private Limited proxy advisory IiAS SES vote recommendation AGM 2026"
+  - "Modison ED PMLA SFIO raid income tax search"
+  - "Preeti Arvind Shah independent director qualification chartered accountant"
+searches_skipped:
+  - "Direct BSE (bseindia.com) corporate-filing PDF fetch - blocked by network egress proxy"
+  - "Direct company website (modisonltd.com) investor-relations PDF fetch - blocked by network egress proxy"
+  - "scanx.trade article fetch - blocked by network egress proxy"
+  - "Direct SEBI SCORES complaint database and enforcement-order database query"
+  - "Direct MCA21 company-master-data / director-master-data lookup"
+  - "AmbitionBox.com direct company-page search"
+  - "Line-by-line BSE/NSE insider-trading (SAST/PIT) disclosure check for promoter share transactions"
+verdict_basis: "Clean legal/regulatory record across SEBI, criminal, tax, civil litigation, pledge, and auditor independence, offset by a concentrated cluster of related-party and capital-allocation caution items centered on Modison Copper Pvt Ltd (11.27% of turnover, 48.76% of counterparty's turnover) plus a dividend paid in a CARE-confirmed cash-negative year and two subsidiary divestments into promoter-linked hands within 15 months."
+analyst_note: "The MCPL relationship is the single fact that most needs live verification beyond this run: get an independent arm's-length pricing benchmark or valuer opinion for the Rs 80 cr FY27 ceiling, since the AR's own justification is a bare 'conducted for many years without hindrance' statement. Also worth a direct BSE-filing pull (blocked here by egress proxy) to confirm the Modison Solartech buyer and price, since the AR table for that RPT line is corrupted in extraction and the pattern (two subsidiary exits to promoter-linked parties in 15 months) would read very differently if Solartech also went to family hands versus an arm's-length buyer."

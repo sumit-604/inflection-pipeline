@@ -13,3 +13,4 @@ its own stage. Loop/retry runs get their own line with a run counter.
 | 3 | ar-deep-dive | claude-sonnet | - | - | - | 222338 | 12m18s | 1 |
 | 4 | bizmodel | claude-sonnet | - | - | - | 114320 | 7m29s | 1 |
 | 5 | concall-agm | claude-sonnet | - | - | - | 119204 | 7m40s | 1 |
+| 8 | promoter | claude-sonnet | - | - | - | 142517 | 10m35s | 1 |

@@ -610,7 +610,7 @@ CLEAN RECORD ON: SEBI, criminal, tax/SFIO/PMLA, civil litigation, pledge,
 
 Because of the blocked primary-filing fetches for the Modison HV and
 Modison Solartech divestment mechanics, status is **partial**, even
-though the核心 legal/regulatory search coverage (Sections 2, most of
+though the core legal/regulatory search coverage (Sections 2, most of
 Section 3) was completed without tool errors.
 
 ---

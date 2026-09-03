@@ -9,3 +9,4 @@ its own stage. Loop/retry runs get their own line with a run counter.
 | 2 | notes-pass1 | claude-sonnet | - | - | - | 139801 | 7m40s | 1 |
 | 1 | gate0 | claude-sonnet | - | - | - | 111941 | 11m32s | 1 |
 | 2 | notes-pass2 | claude-sonnet | - | - | - | 100796 | 6m12s | 2 |
+| 2 | notes-pass3 | claude-sonnet | - | - | - | 65166 | 3m15s | 3 |

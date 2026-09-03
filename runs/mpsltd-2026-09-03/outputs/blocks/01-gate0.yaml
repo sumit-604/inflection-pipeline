@@ -1,0 +1,21 @@
+stage: B01-gate0
+company: "MPSLTD"
+run_date: "2026-09-03"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["shareholding pattern (promoter %, pledge %) not supplied to this stage (available at inputs/shareholding/, carry to stages 8/10/11)", "contingent liabilities not supplied", "Trade Payables all 10 years absent from every provided source", "itemized Capex (PP&E+intangibles) all 10 years absent from screener export", "peer EBITDA margin / peer mcap ranking / peer gross margin not provided", "R&D expense line item and distribution-reach metric not provided", "AJE segment USD revenue figures (18M->12M) not present in screener/results data"]
+flags: [{type: FLAG-GATE0, reason: "Classification AVERAGE (Core 55/100) is substantially a data-completeness artifact: Block E (0/20) is entirely unscored for lack of a shareholding pattern file, and Block B's deal-breaker trigger (4/20, <8) is driven by B2/B3/B4 scoring 0 for missing capex and trade-payables data, not by weak cash conversion (B1 cumulative CFO/PAT = 0.999, near-perfect). Blocks A (20/20) and D (19/20) are strong. Moat class THIN is also partly data-blocked: 5 of 12 tests (M2,M5,M6,M8,M9) scored 0 for missing peer/R&D/distribution data, not disconfirmed moat."}]
+data_years: 10
+fy_range: "FY2017 to FY2026"
+blocks: {A: 20, B: 4, C: 12, D: 19, E: 0}
+core_score: 55
+moat_score: 7
+grand_total: 62
+moats_confirmed: 1
+moat_class: "THIN"
+classification: "AVERAGE"
+deal_breakers: ["Block B <8 (actual 4) -> caps at max GOOD; no net effect since matrix result AVERAGE already below cap. Driven by B2/B3 (FCF, capex data absent all 10 years) and B4 (WC Days, Trade Payables absent all 10 years), not by B1 (0.999 cumulative CFO/PAT, scored 4/5)."]
+history_downgrade: false
+data_notes: ["ROCE computed (source ROCE field blank) as EBIT/(Net Worth+Borrowings); screener 'Other Liabilities' aggregates current+non-current, true Current Liabilities unavailable", "ROE FY2017 uses closing net worth only, no FY2016 opening balance provided", "B2/B3 scored 0/N/A: capex not itemized in any provided source, only aggregate Cash from Investing Activity given", "B4/M12 scored 0/N/A: Trade Payables absent from every provided source; Inventory=0 is a genuine services-business value, not a gap", "D4 Current Ratio computed on STANDALONE FY26 balance sheet (Results Q4 FY26 PDF p.2) since consolidated current asset/liability split not in screener export; basis differs from D1-D3 (consolidated)", "M2/M5/M9 scored 0 = PEER DATA NEEDED", "M6/M8 scored 0 = N/A, no R&D line item or distribution-reach metric provided", "no loss-to-profit swing; PAT positive all 10 years", "AJE (American Journal Experts) restructuring and INR 1,395 lacs customer-advance write-back disclosed in consolidated FY26 notes (Results Q1 FY27 PDF, notes 5a/5d, p.10), consistent with SPEAR AJE-pruning flag; USD figures not in provided data", "Consolidated FY26 segment margins: Research 36.7%, Education 37.0%, Corporate learning 11.8% (Results Q1 FY27 PDF, segment note p.9); Corporate learning (newest, acquired segment) drags blended margin"]
+block_b_trend: "stable with a dip: per-year CFO/PAT ranged 0.63x-1.70x FY17-26; recent 3yr avg (FY24-26) 0.94x vs prior 3yr avg (FY21-23) 1.35x, but FY26 rebounded to 1.14x after FY25 dipped to 0.68x; cumulative 10yr CFO/PAT = 0.999x"
+analyst_note: "Core score 55 (AVERAGE) is driven more by data gaps than fundamentals. Block A (returns, 20/20) and Block D (balance sheet, 19/20) are both near-max: median ROCE 30.5%, net cash position, 115x interest cover. Block E (0/20) and most of Block B/moat shortfall trace to missing shareholding pattern, trade payables, and capex line items, none of which were in the provided screener export or results PDFs. Before Halt 1, the operator should source a shareholding pattern filing (promoter %, pledge) and confirm trade-payables/capex history if precision on B2-B4/M12 matters to the thesis. Segment data shows the newly acquired Corporate learning line runs ~12-18% margin versus ~31-42% for legacy Research/Education, a real (not data-gap) finding worth carrying into stage 11 method selection given three acquisitions closed inside FY26 (Liberate Group, Unbound Medicine)."

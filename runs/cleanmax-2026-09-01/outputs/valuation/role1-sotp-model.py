@@ -112,12 +112,16 @@ remaining_capex = totcost_ue - cwip_spent
 print(f"total book cost = ({solar_ue:.0f}x3.5 + {wind_ue:.0f}x7.8)x1.06 = {totcost_ue:,.0f} Cr")
 print(f"less CWIP spent {cwip_spent:,.0f} -> remaining capex {remaining_capex:,.0f} Cr")
 
-def bucket2_dcf(rate, raj_prob):
-    # raj_prob applies Bikaner (70% curtail) economics to ~800 MW unnamed residual
+def bucket2_dcf(rate, raj_prob, op_rate=None):
+    # rate = rate for remaining-capex outflow (execution risk on the spend).
+    # op_rate = discount rate for the COMPLETED operating asset. Two treatments:
+    #   flat  (op_rate=None): whole life discounted at `rate` (11%) - conservative FLOOR
+    #   de-risked (op_rate=r1=8%): once commissioned and contracted it is a Bucket-1
+    #     asset (execution risk sits in the delay + the capex spend, not in the operating life)
+    if op_rate is None: op_rate = rate
     life=30; ppa=23
     raj_mw = 800.0*raj_prob
     clean_mw = mw_ue - raj_mw
-    # per-MW annual EBITDA
     def perMW_ebitda(g_permw):
         return g_permw*tariff2/10*margin1
     eb_clean = perMW_ebitda(genPerMW_clean)*clean_mw
@@ -125,7 +129,6 @@ def bucket2_dcf(rate, raj_prob):
     eb_y1_full = eb_clean+eb_raj
     maint2 = maint_per_mw*mw_ue
     gb2 = totcost_ue; bd2 = gb2/30.0
-    # completed-asset cash flows (per full-year), start after commissioning ramp
     fcfs=[]
     for t in range(1,life+1):
         eb = eb_y1_full*(1-degr)**(t-1)
@@ -133,15 +136,21 @@ def bucket2_dcf(rate, raj_prob):
         ebit=eb-bd2; ctax=cashtax_rate(t)*max(ebit,0)
         fcfs.append(eb-ctax-maint2)
     # commissioning profile: half commissions ~ start yr1.5, half ~ yr2.5 (cash starts post-ramp)
-    ev_asset = 0.5*pv_series(fcfs,rate,t0=1.5) + 0.5*pv_series(fcfs,rate,t0=2.5)
-    # remaining capex spread yr0.5 and yr1.5
+    ev_asset = 0.5*pv_series(fcfs,op_rate,t0=1.5) + 0.5*pv_series(fcfs,op_rate,t0=2.5)
+    # remaining capex spread yr0.5 and yr1.5, at the execution rate
     pv_capex = 0.5*remaining_capex/(1+rate)**0.5 + 0.5*remaining_capex/(1+rate)**1.5
     return ev_asset - pv_capex, ev_asset, pv_capex, eb_y1_full
 
+print("Treatment A - FLOOR: whole operating life at 11% (execution rate)")
 for rp in (0.0,0.5,1.0):
     net,ass,cap,eby1 = bucket2_dcf(r2, rp)
-    print(f"Raj={rp:.0%}: completed-asset PV {ass:,.0f} - PV capex {cap:,.0f} = net {net:,.0f} Cr (EBITDA/yr@full {eby1:,.0f})")
-evB2_base = bucket2_dcf(r2, 0.5)[0]
+    print(f"  Raj={rp:.0%}: completed PV {ass:,.0f} - PV capex {cap:,.0f} = net {net:,.0f} Cr")
+print("Treatment B - DE-RISKED: operating life at 8% (Bucket-1), capex at 11%")
+for rp in (0.0,0.5,1.0):
+    net,ass,cap,eby1 = bucket2_dcf(r2, rp, op_rate=r1)
+    print(f"  Raj={rp:.0%}: completed PV {ass:,.0f} - PV capex {cap:,.0f} = net {net:,.0f} Cr")
+evB2_base = bucket2_dcf(r2, 0.5)[0]                 # FLOOR treatment for the base bridge
+evB2_derisk = bucket2_dcf(r2, 0.5, op_rate=r1)[0]   # de-risked central
 
 # ============================================================
 # 4. BUCKET 3 - PIPELINE/PLATFORM (2,668 MW applied + intent)
@@ -232,6 +241,18 @@ for dshift in (-0.015,0.0,0.015):
         row.append(bb['eps'])
     print(f"  {dshift*10000:+.0f}bps: " + "  ".join(f"Raj{p:.0%}=Rs{v:,.0f}" for p,v in zip((0,0.5,1.0),row)))
 
+print("\nDE-RISKED B2 grid (operating life at 8%+shift, capex at 11%+shift):")
+for dshift in (-0.015,0.0,0.015):
+    row=[]
+    e1 = bucket1_dcf(r1+dshift,False)[0]
+    e4 = bucket4_dcf(r4+dshift)[0]
+    for rp in (0.0,0.5,1.0):
+        e2 = bucket2_dcf(r2+dshift, rp, op_rate=r1+dshift)[0]
+        gEV = e1+e2+0+e4
+        bb=bridge(gEV,netdebt_ar,co_own,complexity,survival,"")
+        row.append(bb['eps'])
+    print(f"  {dshift*10000:+.0f}bps: " + "  ".join(f"Raj{p:.0%}=Rs{v:,.0f}" for p,v in zip((0,0.5,1.0),row)))
+
 # ============================================================
 # 8. KEY COMPARISON, ENTRY PRICE, MULTIPLES CROSS-CHECK
 # ============================================================
@@ -241,14 +262,19 @@ print(f"Bucket 1 standalone EV {evB1_A:,.0f} vs current market EV {current_EV:,.
 print(f"Market pays {current_EV-evB1_A:,.0f} Cr above operational fleet (for B2/B3/B4 growth)")
 print(f"B2+B3+B4 SOTP value = {evB2_base+evB3_base+evB4:,.0f} Cr; justifies {(evB2_base+evB3_base+evB4)/(current_EV-evB1_A):.0%} of the growth premium")
 
-print("\nENTRY PRICE (base case, net debt AR):")
-FV = b_ar['eps']
-entry25 = FV/(1.25**3)
-mos = entry25*0.80
-print(f"Base FV/share Rs {FV:,.0f}; entry for 25% 3yr CAGR (exit at FV) = FV/1.953 = Rs {entry25:,.0f}")
-print(f"MoS 20% below entry = Rs {mos:,.0f}")
+print("\nENTRY PRICE (margin-of-safety basis; a DCF present value has NO compound-return entry):")
 CMP=1247
-print(f"CMP Rs {CMP}: implied 3yr CAGR to FV = {(FV/CMP)**(1/3)-1:+.1%}")
+for lbl,FV in (("AR base 178", b_ar['eps']), ("mgmt base 267", b_mgmt['eps'])):
+    e25 = FV*(1-0.25); e30 = FV*(1-0.30)
+    print(f"  {lbl}: FV Rs {FV:,.0f}; entry at 25% MoS = Rs {e25:,.0f}; at 30% MoS = Rs {e30:,.0f}")
+FV = b_ar['eps']
+print(f"  Buying at FV earns the discount rate (~{WACC:.0%}); to earn more needs a margin of safety.")
+print(f"  CMP Rs {CMP} is {CMP/FV:.1f}x the AR-base fair value.")
+# EV / Invested Capital (Part C2)
+tot_debt = 12410.76; tot_equity_incl_nci = 5524.0; cash = 1201.96
+IC = tot_debt + tot_equity_incl_nci - cash
+print(f"\nEV/IC: invested capital = debt {tot_debt:,.0f} + equity+NCI {tot_equity_incl_nci:,.0f} - cash {cash:,.0f} = {IC:,.0f}")
+print(f"  gross EV {grossEV:,.0f} / IC {IC:,.0f} = {grossEV/IC:.2f}x  (renewable transactions ~1.2-1.5x IC)")
 
 print("\nMULTIPLES CROSS-CHECK (<=15% weight):")
 rr_ebitda=1870.0
@@ -276,4 +302,9 @@ print(f"G3 identity: attributable-eq {pre_adj_eq:,.0f} + net debt {netdebt_ar:,.
 print(f"\nRAW numbers for report embedding:")
 print(f"B1_A={evB1_A:.0f} B1_B={evB1_B:.0f} B2={evB2_base:.0f} B3=0 B3down={evB3_down:.0f} B4={evB4:.0f}")
 print(f"grossEV={grossEV:.0f} finalEq_AR={b_ar['final']:.0f} eps_AR={b_ar['eps']:.0f} eps_mgmt={b_mgmt['eps']:.0f}")
-print(f"nci={b_ar['nci']:.0f} entry25={entry25:.0f} mos={mos:.0f}")
+print(f"nci={b_ar['nci']:.0f} B2_floor={evB2_base:.0f} B2_derisk={evB2_derisk:.0f} EV_IC={grossEV/IC:.2f}")
+# Gross EV and per-share under the DE-RISKED Bucket 2 (central case), net debt AR, Raj 50%
+grossEV_derisk = evB1_A + evB2_derisk + 0 + evB4
+bd = bridge(grossEV_derisk, netdebt_ar, co_own, complexity, survival, "de-risked B2")
+bd_m = bridge(grossEV_derisk, netdebt_mgmt, co_own, complexity, survival, "de-risked B2 mgmt")
+print(f"DE-RISKED B2: grossEV={grossEV_derisk:.0f} eps_AR={bd['eps']:.0f} eps_mgmt={bd_m['eps']:.0f}")

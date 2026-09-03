@@ -3,7 +3,8 @@
 Spear: OVERRIDE 2026-09-01 (operator)
 Spear date: 2026-09-01
 Ruling: MISS on price. OVERRIDE granted to proceed on business-quality grounds.
-Halt 1: SIGNED 2026-09-01. Decision: SHALLOW (read, not valued).
+Halt 1: SIGNED 2026-09-01. Decision: SHALLOW (read, not valued);
+  OVERRIDDEN to PROCEED 2026-09-03 (operator) — FTTCP + Role 1 valuation authorised.
 Role 5.5 tracker proof: COMPANIES MASTER row 3cfbb2b9-d3ab-81a1-affa-ec101ce847ca;
   15 DOWNSTREAM SIGNAL TRACKER rows written 2026-09-01, all linked.
 Operator sign-off: [KEERTI KAUSHIK — SIGN AND DATE]
@@ -296,6 +297,11 @@ d. The ~50-70 unexplained collection days.
   demand). Not PROCEED-to-valuation (transition posture reads VALUE-TRAP
   RISK; the deciding facts are unknowable until H1 FY27 lands ~15-Nov-2026;
   any valuation built before that print would be rebuilt after it).
+- **2026-09-03 — SHALLOW OVERRIDDEN to PROCEED (operator).** Operator elects
+  to run FTTCP deliberation and Role 1 valuation on today's evidence, ahead
+  of the H1 FY27 print. Model signed, tracker gate satisfied (15 rows written
+  2026-09-01). Acknowledged cost: valuation reads against a VALUE-TRAP-RISK
+  posture and will likely be revisited after H1 FY27 (~15-Nov-2026).
 - **2026-09-01 — B12a cash correction OVERTURNED.** Correct cash Rs.18.45 Cr
   (AR26 Note 8.2 grand total, standalone); correct net debt Rs.111.61 Cr.
   B12a read the cash-flow-statement subtotal and dropped Rs.17.07 Cr of

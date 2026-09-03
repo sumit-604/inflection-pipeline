@@ -1,0 +1,49 @@
+stage: B06-peers
+company: "MODISONLTD"
+run_date: "2026-09-03"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "PRECWIRE (Precision Wires): screener-listed peer, no transcript provided in this corpus; treated as unused"
+  - "Neither peer discusses tungsten specifically (only silver and copper), so Modison's tungsten pass-through claim has no peer read at all"
+flags:
+  - "PRIORITY: both peers report real, quantified EBITDA margin compression (SBCL inventory/transit exposure; Salzer 200bps then 400-450bps) from the same silver/copper spike spanning Modison's FY26; Salzer calls the pass-through lag 'an industry-wide challenge, not a Salzer-specific issue.' Modison reports a record 16.2% EBITDA margin in the same window with pass-through described as fully margin-protective. This divergence from the peer pattern needs independent verification before Halt 1."
+  - "Both peers show working capital/inventory DETERIORATING (not improving) over FY26 from the same silver/copper spike; this is the opposite direction of Modison's claimed ITR improvement from ~3x to >5x, and lines up instead with B05's own flag that Modison's receivables/inventory built sharply in FY26"
+  - "SBCL, despite operating in the same silver-contacts product category and naming a bimetal competitor (EMS Bimetal) elsewhere, never mentions Modison by name or description"
+peers_provided: 8
+verified:
+  - {claim: "Commodity pass-through pricing is an industry-standard contractual mechanism (not unique to Modison)", peers: ["SBCL", "SALZERELEC"], anchor_count: 6}
+  - {claim: "~5.1% domestic LV/switchgear-linked market growth (2026 AGM figure) is broadly consistent with peer-observed flat-to-mid-single-digit domestic demand", peers: ["SBCL"], anchor_count: 3}
+partially_verified:
+  - {claim: "Export demand recovery consistent with Modison's FY27 push", peers: ["SBCL", "SALZERELEC"]}
+contradicted:
+  - {claim: "Commodity pass-through protects margin from silver/copper swings (no P&L impact)", contradicting_peer: "SALZERELEC", quote_anchor: "SALZERELEC Q1 FY27 (Aug-2026): 'the primary reason for the pressure on margins during the quarter has been the sharp increase in key raw material costs...coupled with the lag in the full pass-through of these cost increases to the customers. This is an industry-wide challenge rather than a Salzer-specific issue'"}
+  - {claim: ">15% domestic LV CAGR (2022 claim)", contradicting_peer: "SBCL", quote_anchor: "SBCL Q4 FY26 (May-2026): 'the growth in India has generally been more on the flattish side, or even if there has been growth, it's been not very encouraging'"}
+  - {claim: "Inventory turnover improved from ~3x to >5x in FY26 (implies working-capital efficiency gain)", contradicting_peer: "SBCL", quote_anchor: "SBCL Q2/H1 FY26 (Nov-2025): net working capital days 'almost from 250-260 days'; SBCL Q3 FY26 (Feb-2026): inventory build tied directly to silver price spike during plant move"}
+unverifiable:
+  - {claim: "Self-estimated LV market share 30-35% / HV market share 72-82%", peers_checked: ["SBCL", "SALZERELEC"]}
+  - {claim: "OEM customer consolidation is an industry-wide growth tailwind for component suppliers", peers_checked: ["SBCL", "SALZERELEC"]}
+  - {claim: "SBCL segment margins validate Modison's unquantified 'LV low-single-digit / HV high-double-digit' split", peers_checked: ["SBCL"]}
+peer_coverage_map:
+  - {peer: "SBCL", quarter: "Q2/H1 FY26 (Nov-2025)", usage: "SUBSTANTIVE", contribution: "Pass-through-as-policy baseline; first NWC-days flag (250-260 days); flat/5-6% domestic switchgear market read"}
+  - {peer: "SBCL", quarter: "Q3/9M FY26 (Feb-2026)", usage: "SUBSTANTIVE", contribution: "Ties inventory build to silver spike during plant move; receivable-day creep on exports; confirms domestic bimetal market flat"}
+  - {peer: "SBCL", quarter: "Q4/FY26 (May-2026)", usage: "SUBSTANTIVE", contribution: "Quantifies silver's ~half-contribution to contacts revenue growth; 'limited impact on margins' claim; India-vs-export receivable-day breakdown"}
+  - {peer: "SBCL", quarter: "Q1 FY27 (Aug-2026)", usage: "SUBSTANTIVE", contribution: "Confirms silver contribution to growth in window comparable to Modison FY26/Q1FY27; first positive domestic bimetal demand signal in 4-5 quarters"}
+  - {peer: "SALZERELEC", quarter: "Q2/H1 FY26 (Nov-2025)", usage: "SUBSTANTIVE", contribution: "Establishes pass-through as stated policy pre-stress; baseline export share and margin guidance"}
+  - {peer: "SALZERELEC", quarter: "Q3/9M FY26 (Feb-2026)", usage: "SUBSTANTIVE", contribution: "First explicit quantified margin hit from silver/copper (200bps); US tariff exposure named; analyst directly challenges guidance credibility"}
+  - {peer: "SALZERELEC", quarter: "Q4/FY26 (May-2026)", usage: "SUBSTANTIVE", contribution: "Explains pass-through lag mechanic in detail (12%->8% EBITDA margin fall); working-capital ceiling breached; export share decline quantified"}
+  - {peer: "SALZERELEC", quarter: "Q1 FY27 (Aug-2026)", usage: "SUBSTANTIVE", contribution: "States lag is 'industry-wide...not Salzer-specific'; quantifies raw-material drag (3.2% of revenue) - strongest anchor for Claim 1 contradiction"}
+  - {peer: "PRECWIRE", quarter: "n/a", usage: "UNUSED", contribution: "No transcript provided in this corpus"}
+industry_cross_read:
+  demand: "Choppy, not a boom, through FY26: SBCL spent 3-4 quarters explaining muted volumes (tariff order deferrals, flat domestic MCB market) before turning constructive in Q4 FY26/Q1 FY27; Salzer's core switchgear/wires businesses grew double-digit on infrastructure capex while its smart-meter and EV-charger growth lines badly underdelivered guidance throughout"
+  pricing_inputs: "Sharp silver/copper spike through FY26-Q1FY27 at both peers; both report real, quantified margin compression from pass-through lag (SBCL: inventory/transit exposure event; Salzer: 200bps then 400-450bps, explicitly 'industry-wide'), contradicting a costless-pass-through narrative"
+  capex_cycle: "Neither peer runs an aggressive capacity race; both are selective/measured (SBCL's Pune forward-integration assembly bet ~Rs20-25cr incremental; Salzer defers major switchgear capex to FY28, Saudi greenfield delayed by conflict). If Modison's LV/HV capex program is larger or more aggressive than this peer pattern, that asymmetry needs naming, not assuming pace-with-sector."
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "Pass-through lag as a structural, quarter-plus margin risk during a commodity spike, quantified by both peers"
+  - "Bidirectional commodity risk: silver fell from ~Rs400/g to ~Rs250/g by Aug-2026 per Salzer, meaning a pass-through-linked tailwind can reverse as fast as it built"
+  - "Inventory/transit exposure specifically during a precious-metal price spike (SBCL), directly analogous to Modison's own FY26 inventory build"
+  - "Tariff and geopolitical disruption to export plans, discussed extensively by both peers across all four quarters"
+  - "Guidance credibility risk in adjacent growth lines: Salzer's smart-meter guidance collapsed from an implied Rs700-1000cr opportunity to under Rs100cr delivered over two years, drawing an on-call analyst accusation of misleading investors"
+net_narrative_effect: "complicates"
+analyst_note: "The peer set does both: it supports Modison's revised 2026 growth figures over its own stale 2022 figures, but actively undercuts the pass-through-protects-margin claim and the ITR-improvement claim via two independent peers showing the opposite direction from the identical FY26 commodity cycle. The margin divergence (peers compress, Modison claims a record) is the single highest-priority item for independent verification before Halt 1: it could be a genuine structural advantage or a costing/timing artifact that reverses once silver stabilizes or falls, as it already has per Salzer. Recommend the confirm signal for Trigger 1 be tightened to 'stable margin through a full commodity DOWN-cycle,' not stability during the up-cycle alone."

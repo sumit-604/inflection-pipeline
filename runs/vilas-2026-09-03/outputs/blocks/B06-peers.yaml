@@ -1,0 +1,55 @@
+stage: B06-peers
+company: "VILAS"
+run_date: "2026-09-03"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "None of the check_peers B05 actually named (Kryfs Power Components, Amod Stampings, Vardhaman Stampings, Voltamp Transformers, Shilchar Technologies, Electrotherm, APAR Industries, ASTA, Rational Engineers) were supplied in this run's corpus; all 12 files are three different companies (Pitti Engineering/CRNGO motors, Jay Bee Laminations/CRGO transformers, Yash Highvoltage/transformer bushings). Every verdict below is read-across, not the intended direct comparison."
+  - "PITTIENG-Concall_May_2026_Transcript.pdf returned no extractable text on two read attempts (file-size confirmation only); no claim in this report is anchored to it."
+  - "Manifest label 'Pharma/CDMO' for BSE scrip 544310 is a collector error, per run instructions; actual company is Yash Highvoltage Limited (transformer bushings)."
+flags:
+  - "VILAS's claim of a government anti-dumping/safeguard duty on CRGO imports is directly contradicted by JAYBEE management's explicit 'there is no safeguard duty on CRGO' (May-2025 call)."
+  - "VILAS's claim that NLMK held CRGO prices firm while imports fell is contradicted by JAYBEE naming NLMK among mills that 'faced pressure' industry-wide (May-2026 call)."
+  - "JAYBEE explicitly fears an industry-wide CRGO oversupply/price-war reversion to pre-COVID 5-7% EBITDA margins, and names VILAS's own capacity expansion (24,000->36,000 MTPA) as part of that race -- a systemic risk not present in VILAS's own B05 risk list."
+peers_provided: 12
+verified:
+  - {claim: "Transformer oil price shock tied to a Middle East/West Asia war disruption in early FY27, causing transformer-procurement delays", peers: ["JAYBEE", "Yash Highvoltage", "Pitti Engineering"], anchor_count: 3}
+partially_verified:
+  - {claim: "CRGO price fell from Rs 270-290/kg to ~Rs 195/kg (28-33% decline)", peers: ["JAYBEE"]}
+  - {claim: "Industry-wide EBITDA margin compression in FY26 (magnitude, not the NLMK sub-claim)", peers: ["JAYBEE"]}
+  - {claim: "VILAS's PGCIL approval slippage is worse than a comparable CRGO peer's own approval cadence", peers: ["JAYBEE"]}
+contradicted:
+  - {claim: "Government anti-dumping/safeguard duty on CRGO imports", contradicting_peer: "JAYBEE", quote_anchor: "JAYBEE H2/FY25 call (May-2025), Mudit Aggarwal: 'So there is no safeguard duty on CRGO.'"}
+  - {claim: "Local Indian mills NLMK/TKES held CRGO prices firm while import prices fell", contradicting_peer: "JAYBEE", quote_anchor: "JAYBEE H2/FY26 call (May-2026), Mudit Aggarwal: 'the entire industry faced pressure during the whole year, including supplier steel mills such as JSW and NLMK.'"}
+unverifiable:
+  - {claim: "Voltamp/Shilchar/Electrotherm corroborate VILAS's 'no demand slowdown' claim", peers_checked: ["Yash Highvoltage (adjacent, names Voltamp)", "JAYBEE (adjacent)"]}
+  - {claim: "~450,000 MT CRGO lamination TAM and 21 GW H1 FY26 solar capacity", peers_checked: ["JAYBEE"]}
+  - {claim: "Chinese BIS CRGO mill approval expiries specifically dated June/July-2026", peers_checked: ["JAYBEE", "Pitti Engineering (different grade)"]}
+  - {claim: "APAR/ASTA/Rational Engineers on CTC/PICC copper conductor short supply and a dated EPC mandate", peers_checked: ["Yash Highvoltage (adjacent, generic copper cost only)"]}
+peer_coverage_map:
+  - {peer: "PITTIENG (Pitti Engineering)", quarter: "Q2/H1 FY26 (Nov-2025)", usage: "SUBSTANTIVE", contribution: "Confirms CRNGO not CRGO; Chinese CRNGO mill BIS restriction still active"}
+  - {peer: "PITTIENG", quarter: "Q3/9M FY26 (Feb-2026)", usage: "SUBSTANTIVE", contribution: "Confirms BIS/QCO restriction on Chinese CRNGO mills still unrenewed"}
+  - {peer: "PITTIENG", quarter: "H1 FY26 (May-2026)", usage: "UNUSED", contribution: "Tool returned no extractable text on two attempts"}
+  - {peer: "PITTIENG", quarter: "Q1 FY27 (Aug-2026)", usage: "SUBSTANTIVE", contribution: "Third peer confirming West Asia war/LPG/forex cost shock"}
+  - {peer: "JAYBEE (Jay Bee Laminations)", quarter: "H1 FY25 (Oct-2024)", usage: "SUBSTANTIVE", contribution: "Baseline CRGO price; names its own peer set; distinguishes CRGO from CRNGO"}
+  - {peer: "JAYBEE", quarter: "H2/FY25 (May-2025)", usage: "SUBSTANTIVE", contribution: "CRGO price path; explicit no-safeguard-duty denial; BIS mill license swing"}
+  - {peer: "JAYBEE", quarter: "H1 FY26 (Nov-2025)", usage: "SUBSTANTIVE", contribution: "Names VILAS by name on capacity; 'no shortages' in CRGO market"}
+  - {peer: "JAYBEE", quarter: "H2/FY26 (May-2026)", usage: "SUBSTANTIVE", contribution: "30-35% CRGO price decline; NLMK contradiction; transformer-oil/war direct hit; investor names VILAS margin outperformance"}
+  - {peer: "544310 / Yash Highvoltage", quarter: "Q2 FY25 (Jan-2025)", usage: "SUBSTANTIVE", contribution: "Bushings qualification-cycle risk relevant to VILAS's HV Bushings JV"}
+  - {peer: "Yash Highvoltage", quarter: "FY25 (Jun-2025)", usage: "SUBSTANTIVE", contribution: "Growth/margin-expansion framing parallel to VILAS's new lines"}
+  - {peer: "Yash Highvoltage", quarter: "H1 FY26 (Oct-2025)", usage: "SUBSTANTIVE", contribution: "Names Voltamp as active OEM customer; industry-wide bushings capacity race"}
+  - {peer: "Yash Highvoltage", quarter: "H2/FY26 (May-2026)", usage: "SUBSTANTIVE", contribution: "Second confirmation of war-driven input cost shock; margin resilience despite shock"}
+industry_cross_read:
+  demand: "All three peers report undiminished, structurally strong demand throughout the window; no peer signals a genuine slowdown, though JAYBEE attributes its own volume miss to commodity-price-driven order deferral, not weaker end demand -- a mechanism VILAS could be citing for the same reason."
+  pricing_inputs: "Three peers independently corroborate a sharp CRGO/electrical-steel price collapse in FY26 driven by Chinese oversupply, not a supply-restricting duty; JAYBEE explicitly denies any CRGO safeguard duty exists."
+  capex_cycle: "Industry-wide capacity race, not a lone expander -- confirmed independently in both the CRGO tier (JAYBEE, naming VILAS) and the bushings tier (Yash); JAYBEE explicitly fears a return to pre-COVID 5-7% margins from this race."
+peer_mentions_of_company: 
+  - "\"Vilas our peer is going from 24,000 to 36,000 MTPA while we are -- we will be just reaching 24,000 MTPA once their expansion is done.\" -- Aditya Sen, analyst, JAYBEE H1 FY26 call (Nov-2025)"
+  - "\"our competitor, nearest competitor, VILAS, they are having far better margin than [us]... this is not for one month or one quarter... it is consistently their margins are far better than us.\" -- CS Sunil Bhansali, investor, JAYBEE H2/FY26 call (May-2026)"
+risks_peers_raise:
+  - "Systemic CRGO industry oversupply / price-war reversion to pre-COVID 5-7% EBITDA margins, with VILAS's own capacity expansion named as part of the capacity race (JAYBEE, Nov-2025 and May-2025 calls)"
+  - "Two-sided BIS/import-licensing volatility for Chinese mills (already whipsawed CRGO margins twice in 18 months per JAYBEE), a risk that cuts both ways, not the one-directional upside VILAS's framing implies"
+  - "Multi-year (2-4 year) customer qualification cycles for critical HV components, directly relevant to VILAS's HV Bushings JV ambition and not addressed in VILAS's own materials (Yash Highvoltage, Jan-2025 call)"
+  - "New-line margin dilution and execution/receivables risk during diversification, a structural analog to VILAS's radiator/nanocrystalline/copper lines (JAYBEE's own EPC/transformer diversification, Nov-2025/May-2026 calls)"
+net_narrative_effect: "complicates"
+analyst_note: "The peer set corroborates the CRGO price-crash magnitude and the war-driven cost shock as genuinely industry-wide, but directly contradicts the anti-dumping-duty story and the NLMK-held-firm claim. Both contradictions come from JAYBEE alone since it is the only true CRGO peer supplied; treat as single-source contradictions, not multi-peer consensus, even though they are direct management quotes. The three named check_peers for Q1/Q2, and all nine check_peers across Q1-Q8 collectively, were never supplied -- this run's peer verification is a read-across substitute, not the comparison B05 specified."

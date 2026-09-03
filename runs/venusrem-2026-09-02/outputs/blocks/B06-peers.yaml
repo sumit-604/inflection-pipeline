@@ -1,0 +1,58 @@
+stage: B06-peers
+company: "VENUSREM"
+run_date: "2026-09-02"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - "Claim 7 (Red Sea freight ~115% spike) unverifiable with informative silence: zero Red Sea/Suez mentions across all 23 peer transcripts (Nov 2024-Aug 2026), one peer (CAPLIPOINT) reports freight costs easing. Recommend direct re-check before carrying it forward as anchored."
+  - "Claim 2 (lyophilisation ~2x demand) direction corroborated by 2 peers (GLAND, BETA both 85-90%+ Lyo utilisation, both adding lines); the specific 2x magnitude remains untraced per Stage 0 spear flag and is not confirmed by any peer."
+peers_provided: 23
+verified: []
+partially_verified:
+  - {claim: "Lyophilisation demand-to-capacity imbalance", peers: ["GLAND", "BETA"]}
+  - {claim: "Platinum-compound (Carboplatin) API/margin drag FY26", peers: ["BETA"]}
+  - {claim: "China+1 sourcing-diversification tailwind", peers: ["BETA", "CAPLIPOINT"]}
+contradicted: []
+unverifiable:
+  - {claim: "Injectable-market CAGRs (7.45% / 10.35% / 9.29%)", peers_checked: ["BETA","CAPLIPOINT","GLAND","KILITCH","LINCOLN","SHILPAMED","WOCKPHARMA"]}
+  - {claim: "Named CM counterparties (Cipla, Zydus, Intas, Ajanta, Lupin) active relationship with Venus", peers_checked: ["BETA","CAPLIPOINT","GLAND","KILITCH","LINCOLN","SHILPAMED","WOCKPHARMA"]}
+  - {claim: "First-ever registration (Ceftriaxone Argentina, first global Plerixafor Saudi)", peers_checked: ["BETA","CAPLIPOINT","GLAND","KILITCH","LINCOLN","SHILPAMED","WOCKPHARMA"]}
+  - {claim: "Freight/Red Sea cost impact ~115% peak spike FY26", peers_checked: ["BETA","CAPLIPOINT","GLAND","KILITCH","LINCOLN","SHILPAMED","WOCKPHARMA"]}
+peer_coverage_map:
+  - {peer: "BETA", quarter: "Nov 2024", usage: "substantive"}
+  - {peer: "BETA", quarter: "May 2025", usage: "substantive"}
+  - {peer: "BETA", quarter: "Nov 2025", usage: "substantive"}
+  - {peer: "BETA", quarter: "May 2026", usage: "substantive"}
+  - {peer: "CAPLIPOINT", quarter: "Nov 2025", usage: "unused"}
+  - {peer: "CAPLIPOINT", quarter: "Feb 2026", usage: "substantive"}
+  - {peer: "CAPLIPOINT", quarter: "May 2026", usage: "substantive"}
+  - {peer: "CAPLIPOINT", quarter: "Aug 2026", usage: "substantive"}
+  - {peer: "GLAND", quarter: "Nov 2025", usage: "substantive"}
+  - {peer: "GLAND", quarter: "Feb 2026", usage: "substantive"}
+  - {peer: "GLAND", quarter: "May 2026", usage: "substantive"}
+  - {peer: "GLAND", quarter: "Aug 2026", usage: "substantive"}
+  - {peer: "KILITCH", quarter: "Jun 2023", usage: "substantive"}
+  - {peer: "KILITCH", quarter: "Jun 2024", usage: "substantive"}
+  - {peer: "LINCOLN", quarter: "May 2024", usage: "unused"}
+  - {peer: "LINCOLN", quarter: "Feb 2026", usage: "substantive"}
+  - {peer: "SHILPAMED", quarter: "Nov 2025", usage: "substantive"}
+  - {peer: "SHILPAMED", quarter: "Feb 2026", usage: "substantive"}
+  - {peer: "SHILPAMED", quarter: "May 2026", usage: "cited-only"}
+  - {peer: "SHILPAMED", quarter: "Aug 2026", usage: "substantive"}
+  - {peer: "WOCKPHARMA", quarter: "Feb 2023", usage: "cited-only"}
+  - {peer: "WOCKPHARMA", quarter: "Jun 2025", usage: "cited-only"}
+  - {peer: "WOCKPHARMA", quarter: "Jun 2026", usage: "substantive"}
+industry_cross_read:
+  demand: "Broad-based FY26 strength across the peer set (CAPLIPOINT booked out, GLAND CDMO wins and 19% US volume growth, BETA 20%+ brand growth, KILITCH capacity doubled) - consistent with, not undercutting, Venus's growth framing."
+  pricing_inputs: "Mostly mild input-cost pressure with offsetting cost programmes (GLAND, CAPLIPOINT under 2% COGS impact); SHILPAMED and BETA (Carboplatin/NPPA) report the sharpest margin pressure."
+  capex_cycle: "Industry-wide capacity race, not a lone expander: GLAND Rs2,000 Cr 5-yr doubling gross block, CAPLIPOINT 5/7 to 17 sterile lines, BETA adding Lyo lines at 85% utilisation, KILITCH capacity doubled FY24-25."
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "USFDA warning letter/import alert unresolved (SHILPAMED, Jadcherla)"
+  - "US tariff threat on Indian generic/pharma exports, unresolved (SHILPAMED, CAPLIPOINT)"
+  - "EU GMP re-inspection/audit-queue delay risk (LINCOLN, BETA)"
+  - "Saudi Arabia tender/geopolitical execution risk (GLAND NUPCO delay) - directly relevant to Venus's Saudi Plerixafor claim"
+  - "Regulated-price ceiling (NPPA) colliding with input cost on a specific oncology molecule (BETA Carboplatin)"
+net_narrative_effect: "complicates"
+analyst_note: "Grep tool silently respects the run folder's .gitignore (inputs/**/*.txt), blocking content search across all 23 transcripts by default; required an explicit glob:*.txt override to search. Flagging so downstream verifiers hitting the same corpus know the workaround. All 23 files confirmed present and searched; none skipped for tooling reasons."

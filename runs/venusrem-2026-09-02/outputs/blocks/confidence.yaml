@@ -1,0 +1,29 @@
+stage: confidence-delta
+company: "VENUSREM"
+run_date: "2026-09-02"
+phase: 1
+computed_by: orchestrator
+
+confidence_delta:
+  numerical_acceptance: 96        # B12a: 24 numbers, 0 CRITICAL/MAJOR, 1 MINOR EPS rounding; source-fidelity gate CLEAR
+  redflag_coverage: 89            # B12b pipeline-reconciled (raw B05-scoped acceptance_rate was 44%)
+  framework_adherence: 99         # B12c Gate 0 + Emerging Moat only; valuation-adherence pending phase 3
+  peer_utilisation: 78            # B12d: 18/23 substantive as classified (83% audit-warranted)
+  overall: 78                     # min of the four
+  valuation_framework_adherence: pending-phase-3
+
+band: "normal (75-89): note specifics"
+rework_gate:
+  triggered: false
+  evaluation: "Two REWORK conditions checked. (1) Verifier A CRITICAL numerical finding: NONE (0 CRITICAL). (2) Any verifier acceptance_rate < 60%: Verifier B reported 44%. NOT treated as REWORK - it is B05-scoped (verifier independence gave B12b only B05/B06). B05 is the NO-CONCALL communication stage and does not own note-level RPT/contingent-liability/governance forensics. All four B05-missed flags are caught upstream: RPT sourcing (B02/B03/B08), GST contingent (B02/B03), MD=CFO/family board (B03/B08), MOA+AGM dissent (B03/B08). Pipeline-wide red-flag coverage ~89%. Analysis is trustworthy; REWORK not warranted."
+raw_verifier_acceptance:
+  B12a_numerical: 96
+  B12b_redflag_B05_scoped: 44
+  B12b_redflag_pipeline_reconciled: 89
+  B12c_framework: 99
+  B12d_peer: 96
+notes:
+  - "Overall 78% sits in the normal band; PROCEED-family verdicts do NOT downgrade (that band is 60-74)."
+  - "peer_utilisation 78% is the binding (lowest) component; driven by 5/23 peer-quarters unused/cited-only (some by design - older or off-theme calls) plus one Shilpa May-2026 misclassification (Verifier D MAJOR)."
+  - "One genuinely incremental Verifier B finding carried to monitorables: Q4 FY26 was ~34% of full-year revenue at ~22% PBT margin - possible balancing-figure earnings-quality point."
+  - "Valuation-adherence (Verifier C's B10/B11 half) is deferred to phase 3; overall confidence will be recomputed then."

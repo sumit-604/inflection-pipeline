@@ -1,0 +1,67 @@
+stage: B05-concall
+company: "VENUSREM"
+run_date: "2026-09-02"
+model: claude-sonnet-5
+status: complete
+no_concall_mode: true
+input_gaps:
+  - "AGM proceedings filing is a bare procedural summary; records 7 of 14 registered speakers raised queries but transcribes no Q&A"
+  - "Q3 FY26, Q4/FY26 and Q1 FY27 results filings contain only statutory tables and auditor reports, no MD&A narrative or investor presentation"
+  - "No quantified rupee capex budget or total project cost disclosed for TVC or Venus Industrial Park; only CWIP actuals and qualitative windows"
+  - "Lyophilisation demand-to-capacity ratio (~2x) claim named in SPEAR brief not found in AR, results, or AGM proceedings; origin untraced"
+  - "Full expansion of the 'TVC' facility acronym not found anywhere in corpus"
+  - "Only one full annual guidance cycle (FY25 AR vs FY26 AR/results); three-quarter trigger-evolution not fully possible"
+flags:
+  - "no analyst Q&A source exists in corpus; 2E and defensiveness tone dimension unscored"
+  - "Venus Pharma GmbH subsidiary stabilization (FY26) reversed to a loss in Q1 FY27"
+  - "core SPEAR fact 'lyophilisation ~2x demand' unverified in filed corpus"
+quarters_analysed: ["FY26 Annual Report (guidance)", "Q3 FY26", "Q4 FY26 (Audited)", "Q1 FY27", "37th AGM (Aug 2026)"]
+triggers:
+  - {priority: 1, name: "International margin-led shift sustains (gross contribution 77%)", type: "PRICE-MIX", timeframe: "near", conviction: "M", confirm_signal: "FY27 gross-contribution % holds or rises", kill_signal: "Gross contribution reverts toward FY25's 72% or below"}
+  - {priority: 2, name: "TVC commissioning on H2 FY27 schedule (lyophilisation/high-value capacity)", type: "VOLUME", timeframe: "near", conviction: "M", confirm_signal: "Commissioning disclosed in Q2/Q3 FY27 filing or AGM", kill_signal: "H2 FY27 passes with TVC still 'underway', no update"}
+  - {priority: 3, name: "VRP-034 Phase 1 clinical progression (dosing begun Q1 FY27)", type: "REGULATORY-POLICY", timeframe: "long", conviction: "M", confirm_signal: "Phase 1 readout or Phase 2 CDSCO filing disclosed", kill_signal: "Trial pause, delay, or adverse-event disclosure"}
+  - {priority: 4, name: "Venus Pharma GmbH stabilizes on multi-quarter basis", type: "COST", timeframe: "near", conviction: "L", confirm_signal: "Q2 FY27 shows GmbH back to profit or reduced loss", kill_signal: "Continued losses, unresolved Rs 28.60 Cr share-application overhang"}
+  - {priority: 5, name: "European major-market audit clearance", type: "REGULATORY-POLICY", timeframe: "near", conviction: "L", confirm_signal: "FY27 filing confirms audit passed", kill_signal: "FY27 closes with no update or a failed/deferred audit"}
+  - {priority: 6, name: "Full domestic state coverage", type: "VOLUME", timeframe: "medium", conviction: "L", confirm_signal: "State count rising toward 'all states' ahead of FY28", kill_signal: "FY28 nears with no interim disclosure"}
+guidance:
+  - {item: "Full state institutional coverage", number: "all states, from 21 currently", timeframe: "by FY28", stated_in: "AR MD&A"}
+  - {item: "TVC commissioning (BMS energy monitoring, STP/ETP)", number: "n/a", timeframe: "by H2 FY27", stated_in: "AR environmental snapshot"}
+  - {item: "ESI channel approvals secured", number: "n/a", timeframe: "through April 2027", stated_in: "AR domestic business FY27 outlook"}
+  - {item: "VRP-048 CDSCO CTA filing", number: "n/a", timeframe: "within 4-6 quarters of FY26 year-end", stated_in: "AR R&D section"}
+  - {item: "Venus Industrial Park facilities in production", number: "1-2 facilities; 100 Crore units/year long-term vision", timeframe: "by 2030", stated_in: "Chairman's letter; AR manufacturing section"}
+  - {item: "CWIP (actual)", number: "Rs 51.36 Cr, up from Rs 26.39 Cr", timeframe: "as at 31 Mar 2026", stated_in: "AR; Q4 audited balance sheet"}
+  - {item: "Final dividend FY26", number: "Rs 10/share (100% of face value)", timeframe: "within 30 days of AGM approval", stated_in: "Q4 filing notes; AGM resolution 3"}
+  - {item: "International business growth target", number: "NO SPECIFIC NUMBER ('sustainable annual growth')", timeframe: "ongoing", stated_in: "AR international business outlook"}
+promise_delivery:
+  delivered: 3
+  partial: 2
+  missed: 0
+  rows:
+    - {promised_in: "FY25 AR", promise: "Enter ESI hospital segment", outcome: "FY26: 2 formulations approved under ESI, 74 hospitals supplied", explanation: "Delivered"}
+    - {promised_in: "FY25 AR (8-item R&D priority list)", promise: "VRP-034 clinical initiation, VRP-044/035 preclinical, VRP-048 advancement, CRISPR expansion, ARB screening, global platform, collaborations", outcome: "FY26 AR self-scored table: all 8 Delivered/Exceeded/On-track", explanation: "Delivered but self-reported and self-graded; zero admitted misses is a tone flag"}
+    - {promised_in: "Q3 FY26 auditor emphasis of matter", promise: "Venus Pharma GmbH expected to improve/stabilize by end FY26", outcome: "FY26 audited PAT +Rs 3.48 Cr, flag absent; Q1 FY27 net loss Rs 2.55 Cr, emphasis returns", explanation: "Partial/reversed - not durable"}
+    - {promised_in: "FY25 AR", promise: "Enter Nepal with 3 named products", outcome: "FY26: 1 of 3 launched (Methylprednisolone); other 2 in registration", explanation: "Partial - no revised timeline"}
+    - {promised_in: "AR FY26", promise: "VRP-034 CDSCO Phase 1 approval, readiness by 31 Mar 2026, dosing Q1 FY27", outcome: "Same AR confirms dosing began Q1 FY27 as targeted", explanation: "Delivered on timeline"}
+excuse_pattern: "balanced"
+repeated_evasions: []
+credibility_grade: "B"
+credibility_basis: "Documented, externally-checkable delivery on ESI market-entry (FY25->FY26 AR) and VRP-034 CDSCO-to-Q1-FY27-dosing timeline supports B under NO-CONCALL rules, offset by Venus Pharma GmbH FY26 'stabilization' reversing to a loss within one quarter and a zero-miss self-graded R&D scorecard not independently verifiable."
+peer_questions:
+  - {question: "Do peer sterile/generic injectable makers cite CAGR figures consistent with Venus's AR (sterile injectables 7.45% 2026-31; generic injectables 10.35% to 2035; generic sterile 9.29% to 2035)?", why: "Market-size claims underpin the Section 1A growth framing", check_peers: ["any injectable-focused CDMO/formulator"]}
+  - {question: "Do any peers/industry sources corroborate a lyophilisation demand-to-capacity imbalance (the '~2x demand' SPEAR figure), given Venus itself makes no such claim in any reviewed document?", why: "Determine whether the figure is peer-sourced, analyst extrapolation, or unsupported", check_peers: ["any peer discussing lyophilisation capacity utilisation"]}
+  - {question: "Do peers with oncology-injectable exposure corroborate platinum-compound API cost inflation as an FY26 margin drag?", why: "Venus names this without quantifying margin impact", check_peers: ["oncology injectable / API-consuming peers"]}
+  - {question: "Do peers corroborate 'China+1' sourcing-diversification tailwind at similar magnitude, or is it boilerplate?", why: "Recurs as a structural driver not specific to Venus", check_peers: ["India-based pharma exporters"]}
+  - {question: "Do named CM counterparties (Cipla, Zydus, Intas, Ajanta, Lupin) corroborate an active growing relationship with Venus?", why: "Named as customers with no volume/rupee disclosure", check_peers: ["Cipla", "Zydus Life Sciences", "Intas", "Ajanta Pharma", "Lupin"]}
+  - {question: "Is Venus's 'first-ever registration' positioning (Ceftriaxone Argentina, first global Plerixafor Saudi) corroborated or contested by peers in same molecules/geographies?", why: "No explicit market-share % claimed; only market-share-adjacent evidence", check_peers: ["injectable exporters in LatAm/Middle East, oncology/anti-infective overlap"]}
+  - {question: "Do peers report similar freight/Red Sea cost impact (~115% peak spike) for FY26?", why: "Presented as sector-wide macro context", check_peers: ["export-oriented peers"]}
+red_flags:
+  - "[MEDIUM] Venus Pharma GmbH: going-concern flag Q3 FY26 -> PAT +Rs 3.48 Cr FY26 (flag absent) -> net loss Rs 2.55 Cr Q1 FY27 (flag returns); stabilization not durable"
+  - "[MEDIUM] SPEAR claim 'lyophilisation demand ~2x capacity' not found anywhere in AR, letters, or AGM proceedings; origin untraced, not management guidance"
+  - "[LOW-MEDIUM] No rupee capex budget disclosed for TVC or VIP; 'no capex' REFUTED by CWIP doubling and PPE purchases Rs 9.58 Cr -> Rs 37.66 Cr, but total programme scale undisclosed"
+  - "[LOW] Self-scored 8-item FY25 R&D delivery table shows zero admitted misses"
+  - "[LOW] International-business growth guidance qualitative only, no % or rupee figure"
+dropped_triggers: []
+timeline_slippages:
+  - "VRP-048: FY25 AR asked to 'advance clinical development'; FY26 delivered only preclinical completion, CTA pushed 4-6 quarters"
+  - "Nepal: FY25 AR named 3 products; FY26 delivered 1 of 3, no revised timeline for remaining 2"
+analyst_note: "Only one guidance cycle exists in corpus and no results filing carries MD&A, so grade rests on thinner evidence than a normal 3-quarter concall stage. Two load-bearing externally-checkable deliveries (ESI entry, VRP-034 timeline) are real; the GmbH reversal and untraced lyophilisation-demand claim are open items for stage 6/claude.ai, not resolved facts."

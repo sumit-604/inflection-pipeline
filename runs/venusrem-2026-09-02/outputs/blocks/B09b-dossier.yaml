@@ -1,0 +1,40 @@
+stage: B09b-dossier
+company: "VENUSREM"
+run_date: "2026-09-02"
+model: claude-sonnet-5
+status: complete
+corpus_verdict: "CORPUS CURRENT"
+corpus_gaps: []
+archetypes:
+  - line: "Own-brand and generic specialty injectables (domestic + international, core line)"
+    archetype: "Licence/scarcity business (imperfect fit; regulatory-MA-driven variant)"
+  - line: "Contract manufacturing (CMO) for Cipla/Zydus/Intas/Ajanta/Lupin"
+    archetype: "Outsourcing partner (CDMO/EMS/IT services)"
+transition:
+  - line: "Own-brand and generic specialty injectables (domestic + international, core line)"
+    from_tier: "R1 COMMODITY PRICE-TAKER bordering early R2 COST-ADVANTAGED CONVERTER"
+    to_tier: "R3 VALUE-ADDED / SPEC'D SUPPLIER (claimed; only FY26 confirms it)"
+    engine: "Product/therapy mix shift toward oncology/AMR specialty (gross contribution 72%->77%); monetisation of dormant marketing authorisations into active sales without proportional new capex"
+    proof_gate: "Gross contribution holds at/above ~75% for 2+ further disclosed periods in FY27 AND TVC/lyophilisation capacity commissions inside its disclosed H2 FY27 window with no further slip"
+    recognition_gap: "OPEN QUESTION (unresolved here): does current pricing already reflect the FY26 value-added-supplier re-rating, or does it still sit at a pre-inflection level? Stage 11 resolves via the Section 1B PE gap."
+    ugliness: "STRUCTURAL-FEATURE"
+    transition_falsifier: "Gross contribution reverts to <=72% for 2 consecutive periods; OR TVC/lyo capacity fails to commission within FY27 with no revised timeline; OR active-MA count stagnates despite rising granted-MA count"
+dominant_variables:
+  - "International gross contribution % on exports (77% FY26 vs 72% FY25)"
+  - "Active-vs-granted marketing-authorisation conversion (511+ of 1,100+ granted)"
+  - "TVC/lyophilisation capacity commissioning progress (CWIP nearly doubled to Rs 51.36 Cr; 40.6% aged >3yr unresolved)"
+  - "Related-party IP-sourcing / governance resolution (CONCERN verdict, Rs 45 Cr cumulative two-year pattern unresolved)"
+business_falsifier: "A confirmed adverse finding on the related-party Patent IPR purchases (overvaluation/diversion/non-existence); OR Venus Pharma GmbH's loss/going-concern pattern escalating into impairment or wind-down of the Rs 28.60 Cr unallotted share-application money; OR a confirmed material loss of marketing authorisations or a failed major regulated-market audit"
+mental_model_status: "DRAFT - PENDING OPERATOR SIGN-OFF"
+fragility:
+  variable_count: 7
+  verifiability_ratio: "5 of 7 at least partially externally observable; 2 company-narrated only"
+  single_point_failure: "none - failure requires conjunction (gross-contribution reversion alone falsifies only the margin-engine sub-thesis, B6)"
+  fragility_verdict: "MODERATE"
+candidate_count: 7
+research_brief_items: 12
+plain_summary_points: 15
+annex:
+  present: true
+  questions_answered: 10
+  corpus_commit_hash: "04efd46007d4c7ef275dfa44bbb53d01f90f41bb"

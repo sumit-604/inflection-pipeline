@@ -1,0 +1,14 @@
+stage: B12a
+company: "VENUSREM"
+run_date: "2026-09-02"
+model: claude-haiku-4-5
+status: complete
+numbers_checked: 24
+findings:
+  - {severity: "MINOR", location: "01-gate0.md (Spear fact, line 24)", claimed: "EPS Rs 76.90 (consolidated FY26)", source_truth: "EPS Rs 76.89 (consolidated FY26, audited results line 1141/1147)", note: "Rounding difference of Rs 0.01 per share; 0.013% variance; immaterial to any decision", source_fidelity: true}
+critical_count: 0
+major_count: 0
+minor_count: 1
+acceptance_rate: 96
+coverage_note: "24 material numbers checked: FY26 revenue 769.6 Cr, CFO 155.77 Cr, CFO/PAT 1.52x, net cash 266.83 Cr, zero debt, EPS standalone 74.29 and consolidated 76.89, Rs30 Cr related-party IP, Rs21.55 Cr advance, Rs9.91 Cr FY25 exception, CWIP 51.36 Cr with 20.84 Cr aged >3yr, trade payables 110.77 Cr, payable days ~79, Gate 0 score 71/160. All basis traps verified (standalone vs consolidated, Cr vs Lakh). One MINOR rounding discrepancy on EPS (immaterial). Investor presentation absent; peer data excluded. All figures anchored to audited AR, consolidated balance sheet, audited results, and MD&A."
+orchestrator_note: "Verifier A ran on haiku (correct downshift, no DOWNSHIFT FAILURE). Zero CRITICAL/MAJOR - no false-CRITICAL over-labelling this run, no re-invoke needed. Source-fidelity gate CLEAR (no REWORK). The single MINOR source_fidelity finding is a cosmetic EPS rounding; corrected value consolidated EPS Rs 76.89 carried forward (GATE HELD - figure corrected at source)."

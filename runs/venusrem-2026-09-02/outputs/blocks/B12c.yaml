@@ -1,0 +1,22 @@
+stage: B12c
+company: "VENUSREM"
+run_date: "2026-09-02"
+model: claude-opus-4-8
+phase: 1
+status: complete
+gate0: {rules_checked: 45, fails: []}
+emoat: {rules_checked: 30, fails: ["completionist recount total states 26 but per-category breakdown sums to 27 (A1:4+A2:4+A3:2+C2:1+E1:4+F2:3+G1:4+G2:1+H2:2+R1:2); MINOR, guard outcome (10<12, no inflation) unaffected; 07-emoat.md L291-301 + B07-emoat.yaml L30"]}
+valuation: {rules_checked: 0, fails: ["pending-phase-3 - B10/B11 not in scope; valuation framework docs not loaded"]}
+business_understanding_narrative: {present: false, five_questions_answered: false, prose_only: false, section6_candidates_named: 0, valuation_vocab_leak: false, fails: ["N/A phase-1 - stage 13 synthesis not among inputs; not audited"]}
+recomputed_destination_pe: ""
+recomputed_decision: ""
+findings:
+  - {severity: "MINOR", location: "07-emoat.md L291-301 / B07-emoat.yaml L30", note: "completionist recount total 26 inconsistent with per-category breakdown summing to 27; presentational, guard decision unchanged"}
+  - {severity: "MINOR", location: "01-gate0.md L89-96,109-128,326-349", note: "B2/B3 (and A1/A2/A4) rest on 2-year window from Data_Sheet gap; permitted by rule 6 and disclosed; confidence caveat only"}
+  - {severity: "MINOR", location: "01-gate0.md L72-87", note: "basis mix - A1/A2/A4 standalone ROCE vs A3 consolidated ROE; both anchored and explained; formula defs do not mandate one basis"}
+  - {severity: "MINOR", location: "01-gate0.md L208 vs 07-emoat.md L84-87", note: "M3 FAT uses screener Net Block 231.60 while B07 uses AR net PP&E 110.23; number-reconciliation for Verifier A; M3 score (3) unaffected"}
+critical_count: 0
+major_count: 0
+minor_count: 4
+acceptance_rate: 99
+orchestrator_note: "Phase-1 scope: Gate 0 + Emerging Moat compliance only. Valuation-adherence audit (B10/B11) correctly deferred to phase 3. Ran on opus (correct - verifier C is opus). Both scorecards re-derive cleanly; all 4 findings MINOR/presentational, no framework breach."

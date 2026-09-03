@@ -1,0 +1,29 @@
+stage: B12b
+company: "VENUSREM"
+run_date: "2026-09-02"
+model: claude-opus-4-8
+status: complete
+independent_flags_found: 9
+caught: 4
+partially_caught: 1
+missed:
+  - {severity: "MAJOR", item: "Related-party sourcing of the IP/technology pipeline: Rs 30 Cr Purchase of Patent IPR & Technology + Rs 21.55 Cr Advance for in-Licensing from KMP-influence entities, plus recurring FY26 IT (Rs 4.36 Cr) and Brand/Platform (Rs 1.26 Cr) fees; growth thesis rests on this IP, not surfaced in B05", anchor: "AR p.112 lines 17906-17928 (RPT note)"}
+  - {severity: "MAJOR", item: "Rising GST disputed contingent liability, Rs 8.28 Cr -> Rs 19.26 Cr, pending in appeal; no contingent liability mentioned anywhere in B05", anchor: "AR Note 44 p.114 lines 18512-18514"}
+  - {severity: "MAJOR", item: "Managing Director is also CFO (Pawan Chaudhary signs as MD & CFO); family-dominated executive board", anchor: "AR p.114 line 18537; lines 2926-2987"}
+  - {severity: "MINOR", item: "Broad 36-object MOA/AOA expansion (lending, treasury/derivatives, e-commerce, cell/gene therapy); ~8% public dissent at AGM on AOA adoption; B05 notes MOA only procedurally", anchor: "Q1 p.12-15; AGM37-VotingResults lines 1673-1678"}
+pipeline_flags_not_supported: []
+promise_delivery_spot_checks: {checked: 5, confirmed: 5, wrong: 0}
+credibility_grade_concur: "concur (B); the four missed note-level governance flags argue for the low end of B, not a downgrade"
+findings:
+  - {severity: "MAJOR", location: "B05 4D red-flag list / 2D", claim: "no related-party IP sourcing flagged", source_truth: "Rs 30 Cr patent + Rs 21.55 Cr in-licensing from KMP-influence entities", note: "MISSED by B05; thesis-relevant"}
+  - {severity: "MAJOR", location: "B05 4D / 2D", claim: "no contingent-liability flag", source_truth: "GST demand Rs 19.26 Cr, up from Rs 8.28 Cr", note: "MISSED by B05"}
+  - {severity: "MAJOR", location: "B05 4C management-quality table", claim: "no board/financial-control concentration noted", source_truth: "MD is also CFO; family executive board", note: "MISSED governance by B05"}
+  - {severity: "MINOR", location: "B05 1C / trigger list", claim: "MOA/AOA treated as routine", source_truth: "36-object expansion + ~8% AGM dissent", note: "MISSED scope-creep signal by B05"}
+  - {severity: "MINOR", location: "B05 4A trigger #1 / 3C", claim: "margin step-up flagged only as open question", source_truth: "Q4 = 34% of FY revenue at ~22% PBT margin, balancing figure", note: "PARTIALLY CAUGHT - sharper earnings-quality point, carry forward"}
+  - {severity: "MINOR", location: "B05 3D", claim: "receivables fell (earnings-quality positive)", source_truth: "consolidated fell but standalone rose Rs 99.26->116.39 Cr; fall partly an elimination artifact", note: "one-sided positive in B05 (B02 covered both sides)"}
+  - {severity: "MINOR", location: "B05 RF#3", claim: "only CWIP actuals given, no capex number", source_truth: "capital commitment Rs 26.76 Cr disclosed in Note 44", note: "mildly overstated in B05 (B03/B09 have it)"}
+critical_count: 0
+major_count: 3
+minor_count: 4
+acceptance_rate: 44
+orchestrator_reconciliation: "acceptance_rate 44% is B05-SCOPED (verifier independence: B12b saw only B05/B06). B05 is the NO-CONCALL communication/guidance stage and does not own note-level RPT/contingent-liability/governance forensics. All four B05-missed flags are caught upstream by OTHER committed stages: RPT sourcing -> B02#1/B03/B08; GST contingent -> B02#5/B03; MD=CFO/family board -> B03/B08; MOA 36-object + ~8% AGM dissent -> B03/B08 (8.37% AoA dissent). Pipeline-wide red-flag coverage ~89% (8-8.5 of 9). The one genuinely incremental item is the Q4=34%-of-FY-revenue-at-22%-PBT balancing-figure earnings-quality point, carried forward to monitorables. REWORK gate evaluated: NOT triggered - the analysis is trustworthy (flags present in committed blocks); the 44% reflects NO-CONCALL scope of B05, not a pipeline failure. Confidence-delta redflag_coverage uses the pipeline-reconciled figure (89%), with the raw 44% disclosed."

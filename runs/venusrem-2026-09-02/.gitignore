@@ -1,0 +1,7 @@
+# Derived page-marked text extracts (regenerable from the committed source PDFs
+# via pymupdf; the PDFs are the tracked source of truth). Kept out of git to
+# keep the run folder lean; stage reports cite p.N from these deterministically.
+inputs/**/*.txt
+
+# Orchestrator scratch
+work/

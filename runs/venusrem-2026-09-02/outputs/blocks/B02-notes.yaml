@@ -1,0 +1,43 @@
+stage: B02-notes
+company: "VENUSREM"
+run_date: "2026-09-02"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - {type: FLAG-CASH, reason: "Trade payables +61.4% YoY (Rs 68.60 Cr to Rs 110.77 Cr), payable days stretched ~61 to ~79 days; inventory +28.7% (Rs 100.49 Cr to Rs 129.37 Cr) vs 13.0% core sales growth; working capital and a Rs 112.65 Cr treasury shift into equity/hybrid FVTOCI appear partly financed by extending supplier credit rather than solely internal cash generation (Notes 6, 18, 39)."}
+accounting_quality: 5
+pass_2_empty: false
+pass_3_empty: false
+top_findings:
+  - {rank: 1, finding: "Rs 30.00 Cr related-party 'Purchase of Patent IPR & Technology' (FY25); counterparty among the significant-influence entities never individually named", note_ref: "Std Note 36 (p.111-112); Cons Note 34 (p.131-132); Note 2C (p.105)", rating: "Red Flag"}
+  - {rank: 2, finding: "Rs 21.55 Cr related-party 'Advance for in Licensing for Technology' (FY25) has no traceable resting place on the balance sheet in FY25 or FY26 after exhaustive search", note_ref: "Std Note 36 / Cons Note 34; Notes 4/5/11/12/13", rating: "Red Flag"}
+  - {rank: 3, finding: "Board's Report claims RPTs arm's length, 'no materially significant RPTs,' AOC-2 not applicable, against a disclosed aggregate Rs 51.55 Cr related-party IP/licensing flow (~8.0% FY25 revenue, ~8.7% FY25 net worth)", note_ref: "Board's Report (line ~9556-9578); Std Note 36; Cons Note 34", rating: "Red Flag"}
+  - {rank: 4, finding: "Undisclosed Rs 9.91 Cr FY25 exceptional item (standalone and consolidated P&L, nil FY26); Board's Report/MD&A 'no exceptional items... distorting the comparison' is factually incorrect against the audited P&L", note_ref: "Standalone P&L (p.99); Consolidated P&L (p.~124); Board's Report/MD&A (p.~65)", rating: "Red Flag"}
+  - {rank: 5, finding: "GST disputed demand rose 132.6% (Rs 8.28 Cr to Rs 19.26 Cr) as old income-tax dispute resolved (Rs 29.92 Cr to Rs 0.60 Cr); nature undisclosed", note_ref: "Note 44 (p.114)", rating: "Red Flag (trend)"}
+  - {rank: 6, finding: "CWIP nearly doubled to Rs 51.36 Cr, but 40.6% (Rs 20.84 Cr) aged over 3 years, essentially unchanged from FY25, no write-off despite stated abandoned-CWIP policy", note_ref: "Note 2B (p.105); Board's Report (p.~57-58)", rating: "Watch"}
+  - {rank: 7, finding: "Trade payables +61.4% vs 13.0% core sales; payable days ~61 to ~79; MSME dues up 105% (none overdue)", note_ref: "Note 18 (p.108-109); Note 39; Note 33", rating: "Watch"}
+  - {rank: 8, finding: "Inventory +28.7% vs 13.0% core sales, led by WIP (+55.1%) and Stores/Spares (+100.6%); no NRV write-down disclosed", note_ref: "Note 6 (p.106)", rating: "Watch"}
+  - {rank: 9, finding: "~34.5% of FY26 revenue increase (Rs 42.86 Cr of Rs 124.26 Cr) from PLI incentive, forex gains, research income rather than core sales (13.0% growth)", note_ref: "Note 22 (p.109)", rating: "Watch"}
+  - {rank: 10, finding: "Cash & near-cash fell 63.8% while FVTOCI investments grew 182%, Rs 112.65 Cr now in equity/hybrid MFs carrying mark-to-market risk", note_ref: "Notes 3, 7, 9, 10 (p.106-107)", rating: "Watch"}
+  - {rank: 11, finding: "Rs 28.60 Cr share application money parked in WOS Venus Pharma GmbH, unallotted 2+ years; subsidiary net worth ~nil before advance, FY26 first profitable year", note_ref: "Note 4 (p.106); GmbH summary (p.115)", rating: "Watch"}
+  - {rank: 12, finding: "New Rs 1.03 Cr non-current gratuity provision plus one-time Rs 2.88 Cr Past Service Cost in FY26 P&L, implying undisclosed gratuity plan amendment", note_ref: "Note 16 (p.108); Note 27.2/27.3", rating: "Watch"}
+  - {rank: 13, finding: "Note 46 states 'no subsequent events' but Board's Report recommends Rs 10/share (~Rs 13.37 Cr) post-year-end final dividend, a conventional Ind AS 10 non-adjusting event", note_ref: "Note 46 (p.114); Board's Report (p.~9)", rating: "Watch"}
+  - {rank: 14, finding: "Recurring undisclosed 'Other X' catch-all lines: Other Selling Expenses +92.5% (largest opex driver), Other Admin +18.1%, Other Corporate +34.0%, Other Payable +111.0%, none sub-broken-down", note_ref: "Note 29 (p.111); Note 19 (p.109)", rating: "Watch"}
+  - {rank: 15, finding: "Fully debt-free standalone and group; zero promoter pledge; clean unqualified CARO no auditor-reported fraud; clean improving receivables ageing (>1yr 0.19%); no dilution, EPS nearly doubled", note_ref: "Note 39/42; Cons Note 17; Note 8; Note 31; Corp Gov (p.~46)", rating: "Clean / Strength"}
+red_flags:
+  - "Unnamed-counterparty related-party flow Rs 51.55 Cr (Rs 30 Cr IP purchase + Rs 21.55 Cr licensing advance) to significant-influence category incl. largest disclosed shareholder, in tension with Board's arm's-length / AOC-2-not-applicable language."
+  - "Rs 21.55 Cr licensing advance has no traceable resting place on the balance sheet in FY25 or FY26."
+  - "Undisclosed Rs 9.91 Cr FY25 exceptional item; Board's 'no exceptional items distorting the comparison' factually incorrect vs audited P&L."
+  - "GST disputed demand escalated 132.6% YoY (Rs 8.28 Cr to Rs 19.26 Cr) with no disclosed nature."
+  - "Note 46 'no subsequent events' omits the Board's own post-year-end final dividend recommendation."
+questions_for_mgmt:
+  - "Who is the specific counterparty for the FY25 Rs 30.00 Cr Patent IPR purchase and the Rs 21.55 Cr in-licensing advance, and what was the valuation basis for each?"
+  - "Where does the Rs 21.55 Cr in-licensing advance sit on the balance sheet at FY26 year-end?"
+  - "What was the nature of the Rs 9.91 Cr FY25 exceptional item, and why does the Board's Report state no exceptional items distorted the FY25-to-FY26 comparison?"
+  - "What is the underlying issue behind the GST disputed demand that rose from Rs 8.28 Cr to Rs 19.26 Cr, and management's assessment of an adverse outcome?"
+  - "What gratuity plan amendment drove the new Rs 2.88 Cr Past Service Cost and Rs 1.03 Cr non-current gratuity provision first recognised in FY26?"
+receivables_trend: "improving - Trade Receivables Rs 116.39 Cr (FY26) vs Rs 99.26 Cr (FY25), +17.3% in line with revenue; ageing >1yr just 0.19% of total (FY26) vs 0.12% (FY25); Trade Receivable Turnover 6.83x to 7.13x (+4%), receivable days ~53.4 to ~51.2. Deterioration sits in payables (~61 to ~79 days) and inventory (+28.7% vs 13.0% core sales), why FLAG-CASH is on working capital not receivables."
+restatements_found: []
+going_concern_language: "NONE"
+analyst_note: "Most important fact for downstream stages: both related-party items (Rs 30 Cr IP purchase, Rs 21.55 Cr licensing advance) date to FY25, the PRIOR year in this AR, not FY26. FY26's own RPT table shows nil for both. Does not remove the flag (counterparty unnamed, advance untraceable, Board language covers 'RPTs entered into during FY 2025-26' technically accurate for current year alone) but the FY26 year under primary review had no fresh instance. Stage 11/13 should treat this as a disclosure-quality and governance-history flag on the FY25 comparative, carried forward as an open question, NOT an FY26 earnings-quality adjustment; do not double-count against FY26 margins or cash flow."

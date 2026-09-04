@@ -1,0 +1,69 @@
+stage: B04-bizmodel
+company: "VILAS"
+run_date: "2026-09-03"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "FY26 Annual Report absent (gapped-freshness); all FY26 business colour sourced from the FY26 Investor Presentation only, not from statutory MD&A, segment notes, related-party notes, or audited financial statements for FY26"
+  - "Prospectus/RHP absent (HIGH) - no independent verification of IPO objects, promoter background, or customer-concentration disclosures beyond the FY24/FY25 Annual Reports"
+  - "No named competing CRGO processor anywhere in the corpus - competitive positioning map (2B) could not be built against rivals"
+flags:
+  - "FY26 volume-growth figure is internally inconsistent across the Investor Presentation: ~65% (Chairman's Message, p.5) vs ~50% (Business Updates, p.6) vs 64.6% computed from disclosed production MT (12,069 to 19,856, p.6/p.20)"
+  - "Accounting-basis mismatch: FY26 Investor Presentation figures are Ind AS-restated; the statutory FY25 Annual Report is prepared under Indian GAAP/AS. FY25 PAT differs ~1% between the two (Rs 341.7 Mn AR vs Rs 345 Mn presentation)"
+  - "Radiator capacity stated as both 7,200 MTPA (Inv. Pres. p.6/12/19/20) and 7,600 MTPA (Inv. Pres. p.15) within the same document, unreconciled"
+  - "Customer concentration named as a risk (AR p.38) but never quantified; only quantified related counterparty is Atlas Transformers India Ltd (majority-owned by VTL's Managing Director), ~12.5% of FY25 revenue on a combined sales+purchase basis"
+  - "Manifest sector tag 'Pharma / CDMO' is a collector error and is disregarded"
+business_type: "manufacturing"
+revenue_streams:
+  - {name: "CRGO laminations/cores/coils", type: "commodity conversion manufacturing", pct_of_revenue: 98, predictability: "medium"}
+  - {name: "Nanocrystalline cores", type: "higher value-add conversion manufacturing (ramp stage)", pct_of_revenue: 0.8, predictability: "low"}
+  - {name: "Radiators", type: "fabrication manufacturing (just commenced)", pct_of_revenue: 0, predictability: "low"}
+  - {name: "Copper conductors", type: "conversion/fabrication manufacturing (pre-commercial)", pct_of_revenue: 0, predictability: "low"}
+  - {name: "Job work", type: "processing fee (shrinking legacy line)", pct_of_revenue: 0.2, predictability: "low"}
+asset_intensity: "medium"
+wc_intensity: "high"
+pricing_power: "price-taker"
+cyclicality: "cyclical"
+moats_present:
+  - {moat: "OEM switching costs / qualification history", durability: "moderate"}
+  - {moat: "Processing scale among few qualified Indian CRGO processors", durability: "moderate"}
+valuation_methods:
+  primary: {method: "EV/EBITDA on normalised spread and utilisation", why: "Strips out the FY26 CRGO price trough and Unit-3 ramp fixed-cost drag; aligns with the converter destination-multiple framework Section 1B governs"}
+  secondary: {method: "Segment/SOTP cross-check pricing CRGO core separately from nano/radiator/copper/bushings optionality", why: "The new lines carry different proof status; blending them into one multiple hides unresolved optionality (Amendment 18)"}
+  tertiary: {method: "Replacement-cost/asset check on installed capacity (Rs per MTPA)", why: "Useful floor check given the scale of ongoing capex, though not a fair-value driver for an operating business"}
+  not_applicable:
+    - "DCF as primary method - too early in the multi-line ramp; spot margins and utilisation unrepresentative of steady state, three of four new lines have no earnings history"
+    - "Dividend Discount Model - company has never paid a dividend and has stated intent to retain funds for growth"
+irrelevant_ratios:
+  - "Rupee revenue growth YoY - conflates CRGO price movement with real volume growth"
+  - "Rupee working-capital growth - Amendment 17: mixes real volume ramp with CRGO price swings"
+  - "Gross/EBITDA margin YoY read without CRGO-price and ramp-fixed-cost context - misreads a price/ramp effect as a loss of pricing power VTL never had"
+  - "Spot-year ROCE/ROE - Amendment 17 forbids feeding spot-year figures into Section 1B/FTTCP for a converter; FY26 sits at a cyclical trough on both price and utilisation"
+  - "'Net debt free' headline claim alone - hides the Rs 114 Mn to Rs 390 Mn rise in short-term borrowings used to fund the working-capital ramp"
+must_track_metrics:
+  - {metric: "Production/sales volume (MT) by product line", healthy: "tracking or exceeding FY27 guidance of +45-50% CRGO volume growth", red_flag: "volume growth stalling below guidance for two consecutive quarters"}
+  - {metric: "Spread per kg (realised price minus landed CRGO/copper cost)", healthy: "stable to widening as utilisation rises", red_flag: "narrowing spread while volume rises"}
+  - {metric: "Unit-3 utilisation %", healthy: "progressing toward the ~100% utilisation the old base achieved", red_flag: "utilisation stuck materially below capacity two+ quarters after commercial-production claims"}
+  - {metric: "Gross margin %", healthy: "recovering toward the 20%+ band seen pre-ramp", red_flag: "further sequential decline below FY26's 17.82%"}
+  - {metric: "Short-term borrowings / revenue", healthy: "growing in line with, not faster than, revenue", red_flag: "STB growth outpacing revenue growth for two+ quarters"}
+unit_economics:
+  unit: "1 metric tonne of processed material (CRGO-weighted, FY26 blended)"
+  revenue_per_unit: "~Rs 2,32,050/MT (~Rs 232/kg), derived from Rs 4,607 Mn revenue / 19,856 MT FY26 production"
+  margin_per_unit: "~Rs 35,700/MT (~Rs 36/kg) gross margin, derived"
+  key_lever: "Spread per kg (selling price minus landed input cost) multiplied by volume, gated by Unit-3 utilisation absorbing the new fixed-cost base"
+first_deterioration_signals:
+  - {risk: "Customer/related-party concentration", first_signal: "revenue growth decoupling from disclosed volume growth without a price explanation, or a step-change in the Atlas Transformers related-party transaction line"}
+  - {risk: "CRGO price volatility and new-unit fixed-cost drag", first_signal: "sequential decline in gross margin % below FY26's 17.82%"}
+  - {risk: "Working capital funded by rising short-term debt", first_signal: "short-term borrowings growing faster than revenue for two or more consecutive quarters"}
+  - {risk: "Delayed ramp of nano/radiator/copper/bushings lines", first_signal: "new-line capacity utilisation staying near zero more than two quarters after a commercial-production announcement"}
+  - {risk: "100% import dependence for CRGO steel", first_signal: "import cost/duty rising while realised CRGO selling price stays flat or falls"}
+mgmt_questions:
+  - "What is the realised blended spread per kg in the latest quarter versus the Rs 180-185/kg FY26 trough?"
+  - "What is Unit 3's actual utilisation rate today versus the ~100% utilisation the old 12,000 MTPA base achieved?"
+  - "What is the realistic FY27 quarterly run-rate and gross margin for nanocrystalline cores beyond the Rs 3.48 Cr H2 FY26 base?"
+  - "What is the single largest customer's share of FY26 revenue, and how has concentration changed as capacity tripled?"
+  - "What is the timeline and VTL's total economic exposure for the HV bushings associate entity beyond the 25% equity stake?"
+  - "What is the expected PGCIL approval date and the addressable order value it unlocks?"
+  - "How will FY27's guided 45-50% volume growth be funded without further leverage or dilution, given short-term borrowings already rose to Rs 390 Mn in FY26?"
+one_line_verdict: "Commodity CRGO converter tripling capacity into unproven higher-value optionality"
+analyst_note: "Two data-quality issues cap confidence in FY26 figures: FY26 volume growth is reported as ~65% (Chairman), ~50% (Business Updates) and computes to 64.6% from the disclosed MT table, all in the same presentation; and FY26 presentation figures are Ind AS-restated while the statutory FY25 AR uses Indian GAAP/AS, producing a ~1% PAT gap for the overlapping FY25 year. Neither is resolved in this corpus. Separately, the only quantified customer-concentration data point is a promoter-related counterparty (Atlas Transformers, ~12.5% of FY25 revenue combined) trading on both the sales and purchase side of VTL - a governance detail worth carrying into stage 13's understanding narrative, not just a risk-register line. No FY26 AR exists yet, so all FY26 claims about the new product lines are management-asserted via the investor presentation, not independently audited-disclosure-anchored."

@@ -159,3 +159,26 @@ DE-RISKED (Bucket 2 operating at 8%):
 The valuation does not change the answer, it clarifies what the answer is. **Rs 178 is a floor, not a fair value.** The central DCF read on de-risked contracted assets is Rs 178 to Rs 295 on the AR basis, Rs 267 to Rs 385 on the management basis. Replacement cost puts the fleet at roughly Rs 500-950. Informed buyers and the market pay Rs 1,053 to Rs 1,247. On every one of these methods the price sits above the value, because the price pays in full for the growth, scarcity and platform that the DCF was instructed to value at zero. The under-execution book is worth roughly what it costs to build, no more. The pipeline earns below its cost of capital. The margin-of-safety entry is Rs 124-133 on the floor and Rs 207-221 on the de-risked central, against a price of Rs 1,247.
 
 *Role 1 SOTP FCFF revision 02, Option A. Valuation date 30-Jun-2026 rolled to 02-Sep-2026. Every number carries its source; NOT FOUND is the only fill. Model in `role1-sotp-model.py`. Bikaner cases, Rajasthan probabilities, and the two net-debt bases are reported separately, never blended. Open items unchanged: the Rs 1,524.80 Cr net-debt gap (NOT DISCLOSED in corpus) and the four VERIFY-LIVE market inputs (G-sec, ERP, beta, peer multiples).*
+
+---
+
+## ADDENDUM 2026-09-04 — RERUN AT LIVE-VERIFIED INPUTS (Task 0.2)
+
+The four VERIFY-LIVE cost-of-capital inputs are now live-verified per Mental Model v7: **risk-free 6.96%** (was 6.5%), **India ERP 7.0%** (was 7.5%), **beta 0.55 unchanged**. The two changes offset almost exactly:
+
+| Item | role1-sotp-02 | Rerun (v7 verified) |
+|---|---|---|
+| Cost of equity Ke | 13.35% | **13.36%** |
+| Group WACC | 10.05% | **10.05%** |
+| Bucket rates (1/2/3/4) | 8 / 11 / 14 / 12% | **unchanged** |
+
+Rf rose 0.46pp and ERP fell 0.50pp; with a levered beta of 0.914 the two nearly cancel (Ke +0.01pp). The bucket discount rates are unchanged, so **the equity values are unchanged**:
+
+| Read | AR net debt | Mgmt net debt |
+|---|---|---|
+| FLOOR (Bucket 2 at 11%) | **Rs 178** | Rs 267 |
+| DE-RISKED (Bucket 2 at 8% once operating) | **Rs 295** | Rs 385 |
+| EV/IC | 0.95x | — |
+| Bucket 2 (Raj 50%): floor / de-risked | (517) / +1,492 | — |
+
+Bucket-level sensitivity is unchanged from Section "Full sensitivity" above (FLOOR span Rs -6 to 405; DE-RISKED span Rs 79 to 569; every cell below CMP Rs 1,247). The live-verified inputs do not move the SOTP dissent. Under Mental Model v7 the governing thesis method is EV/EBITDA forward; this SOTP remains the recorded dissent, not averaged with it.

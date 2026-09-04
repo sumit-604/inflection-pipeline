@@ -8,8 +8,8 @@ def pv_series(cfs, r, t0=1):
 # ============================================================
 # 1. COST OF CAPITAL
 # ============================================================
-Rf   = 0.065          # India 10y G-sec [spec/verify]
-ERP  = 0.075          # Damodaran India ERP [spec/verify]
+Rf   = 0.0696        # India 10y G-sec [live-verified v7 2026-09-04]
+ERP  = 0.070         # Damodaran India ERP [live-verified v7 2026-09-04]
 bu   = 0.55           # unlevered beta, contracted power [spec/verify]
 tax  = 0.25
 # D/E at market: net debt (AR 11,208.80 + acceptances 1,730.92 = 12,939.72 ~12,940) / market cap 14,680

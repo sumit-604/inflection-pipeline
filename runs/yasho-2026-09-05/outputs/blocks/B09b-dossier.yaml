@@ -1,0 +1,43 @@
+stage: B09b-dossier
+company: "YASHO"
+run_date: "2026-09-05"
+model: claude-sonnet-5
+status: complete
+corpus_verdict: "CORPUS GAPPED"
+corpus_gaps:
+  - {document: "results (quarterly results PDFs)", expected_source: "BSE", kind: "findable-missing"}
+  - {document: "rating rationale", expected_source: "rating agency site", kind: "findable-missing"}
+  - {document: "announcements (Reg 30 filings)", expected_source: "BSE", kind: "findable-missing"}
+  - {document: "shareholding pattern filing", expected_source: "BSE", kind: "findable-missing"}
+  - {document: "screener Profit_Loss/Balance_Sheet/Cash_Flow/Quarters CSVs (header-only, collector defect)", expected_source: "company IR page", kind: "findable-missing"}
+archetypes:
+  - {line: "Industrial Chemicals (rubber chemicals, lubricant additives, ~89% FY26 revenue)", archetype: "Build-to-spec component maker"}
+  - {line: "Consumer Chemicals (aroma/F&F, personal care, agro/pharma intermediates, ~11% FY26 revenue)", archetype: "Build-to-spec component maker"}
+transition:
+  - line: "Industrial Chemicals / MNC LTSA line"
+    from_tier: "R2 Cost-Advantaged Converter"
+    to_tier: "R3 Value-Added / Spec'd Supplier"
+    engine: "Customer-funded dedicated capacity under the 15-year MNC supply agreement locking in a qualification-based relationship, plus mix shift toward higher-value Industrial chemistries with rising utilisation driving sharp operating leverage"
+    proof_gate: "MNC commercialisation on schedule (equipment Q2/Q3 FY27, trial Q4 FY27, commercial Q1 FY28) AND EBITDA margin holding above ~20% for 2-3 consecutive quarters AND working-capital days/DSCR not re-widening (DSCR clearing ~1.15x)"
+    recognition_gap: "OPEN QUESTION - whether the market already prices a value-added spec'd-supplier state is unresolved here; Stage 11 resolves via the PE gap"
+    ugliness: "ARTIFACT-OF-CLIMB"
+    transition_falsifier: "Further MNC commercial-supply slippage past Q1 FY28 or advance funding stalling/refunded; OR EBITDA margin reverting to the 17-19% band within 1-2 quarters; OR the three MNC advance figures (Rs29.52cr/Rs51.4cr/Rs98.12cr) failing to reconcile at the next filing"
+dominant_variables:
+  - "MNC LTSA commercialisation timeline (equipment Q2/Q3 FY27, trial Q4 FY27, commercial Q1 FY28; already slipped once unlabelled)"
+  - "EBITDA margin durability above ~20% (currently one quarter of print, 24.2% Q1FY27, vs 17-19% multi-year band)"
+  - "Working-capital cycle and DSCR trajectory (audited WC days worsened FY24-26 even as company presentation claims a cut; DSCR 1.04x near the 1.0x floor)"
+  - "MNC advance reconciliation (Rs29.52cr audited notes vs Rs51.4cr AR MD&A vs Rs98.12cr presentation, all independently verified as genuinely printed)"
+business_falsifier: "FY27 audited net debt/EBITDA and interest coverage failing to durably clear deal-breaker bands even after the capex cycle completes, combined with the accounting-quality cluster (subsidiary receivables/consolidation-profit divergence, recurring drawing-power variance, MSME payable stretch) proving structural rather than one-off"
+mental_model_status: "DRAFT - PENDING OPERATOR SIGN-OFF"
+fragility:
+  variable_count: 4
+  verifiability_ratio: "1 of 4 externally observable"
+  single_point_failure: "MNC LTSA commercialisation slipping again, or advance funding stalling/being refunded"
+  fragility_verdict: "FRAGILE"
+candidate_count: 6
+research_brief_items: 12
+plain_summary_points: 15
+annex:
+  present: true
+  questions_answered: 10
+  corpus_commit_hash: "016a7caf9f05bdf62aa29b63873ce00308011e49"

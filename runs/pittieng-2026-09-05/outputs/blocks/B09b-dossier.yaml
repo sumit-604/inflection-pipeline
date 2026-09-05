@@ -1,0 +1,69 @@
+stage: B09b-dossier
+company: "PITTIENG"
+run_date: "2026-09-05"
+model: claude-sonnet-5
+status: complete
+corpus_verdict: "CORPUS GAPPED"
+corpus_gaps:
+  - document: "Quarterly results PDFs (Q2 FY26 through Q1 FY27)"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "Full India Ratings rationale behind the IND AA-/Stable / IND A1+ grade"
+    expected_source: "rating agency site"
+    kind: "findable-missing"
+  - document: "Reg 30 announcement PDFs (QIP, PCPL/PRECL scheme, PIPL/DFPL NCLT scheme, Rs 290 Cr capex board approval)"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "Quarterly Shareholding Pattern (Reg 31) filings, last 12 quarters, incl. pledge"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "Prior-year annual reports FY22-FY25"
+    expected_source: "company IR page"
+    kind: "findable-missing"
+  - document: "Prior-quarter investor presentations (Q2-Q4 FY26)"
+    expected_source: "company IR page"
+    kind: "findable-missing"
+  - document: "Rupee-denominated product-line revenue split, named competitors, third-party market-share corroboration, CGU-level goodwill impairment note"
+    expected_source: "company IR page"
+    kind: "plausibly-nonexistent"
+archetypes:
+  - line: "Loose laminations & raw castings"
+    archetype: "Commodity converter (Section 1B v3.7 Amendment 17 binds)"
+  - line: "Value-added assemblies & machined components"
+    archetype: "Build-to-spec component maker"
+transition:
+  - line: "Loose laminations & raw castings (converter slice)"
+    from_tier: "R1 COMMODITY PRICE-TAKER"
+    to_tier: "R2 COST-ADVANTAGED CONVERTER"
+    engine: "Utilisation-driven fixed-cost absorption (76% sheet metal / 71% casting, FY26) and a quarterly steel-price pass-through mechanism defending cost position, not a spec premium (B04)."
+    proof_gate: "Adjusted EBITDA margin on the blended base holds ~15-18% through a full steel-price cycle without help from the value-added mix shift; not separately disclosed so untestable at the slice level this run (B04)."
+    recognition_gap: "Open question, resolved at Stage 11 via the destination-multiple gap: does the market already price this slice as a durable cost-advantaged converter, or still as a plain cyclical price-taker."
+    ugliness: "ARTIFACT-OF-CLIMB"
+    transition_falsifier: "Adjusted EBITDA margin falls back toward or below the FY23 level (~13.8%) while utilisation stays high, showing the cost position itself has eroded (B04)."
+  - line: "Value-added assemblies & machined components (build-to-spec slice)"
+    from_tier: "R2 COST-ADVANTAGED CONVERTER"
+    to_tier: "R3 VALUE-ADDED / SPEC'D SUPPLIER"
+    engine: "OEM qualification barrier (Qualify-Deliver-Expand-Integrate cycle) plus the Rs 290 Cr and Rs 150 Cr capex raising this slice's ceiling, aimed at named-OEM demand (B03, B04)."
+    proof_gate: "Value-added tonnage share keeps rising quarter over quarter AND the per-tonne realisation premium over loose lamination does not keep narrowing; the premium has already narrowed ~1.47x to ~1.29x (B12b), so the gate has not fired cleanly this run."
+    recognition_gap: "Open question, resolved at Stage 11 via the destination-multiple gap: does the market already price the value-added mix shift as delivered, leaving only earnings growth to carry forward."
+    ugliness: "ARTIFACT-OF-CLIMB, contested: clean CWIP ageing and strongly positive CFO argue for it; three consecutive missed inventory/net-debt promises and a three-year ROCE decline with no stated floor argue for caution before treating the read as settled (B02, B03, B05, B12b)."
+    transition_falsifier: "Value-added tonnage share stops rising for two consecutive quarters, or the Rs 290 Cr capex slips beyond Q1 FY30, or the realisation premium keeps narrowing toward parity (B04, B12b)."
+dominant_variables:
+  - "Value-added tonnage mix share and its per-tonne realisation premium over loose lamination (rising in volume, premium narrowing ~1.47x to ~1.29x, B04/B12b)"
+  - "Consolidated net debt and working-capital glide path toward the company's own repeatedly restated normalisation path (still rising through FY26, B02/B03/B05)"
+  - "Rs 290 Cr capex execution and commissioning date (Q1 FY30 vs Q1FY29, unresolved; no firm order figure yet, B03/B04)"
+  - "Consolidated ROCE trend (18.39% FY24 peak to 13.75% FY26, three straight years down, B01/B12b)"
+business_falsifier: "Capacity utilisation below 60% across sheet metal, machining or casting for two-plus quarters while new capex is still being committed; OR loss of one of the two unnamed customers making up 25.2% of consolidated revenue; OR a CGU-level impairment charge against the Rs 136.09 Cr goodwill signalling the acquired subsidiary businesses are not sound (B02, B04)."
+mental_model_status: "DRAFT - PENDING OPERATOR SIGN-OFF"
+fragility:
+  variable_count: 4
+  verifiability_ratio: "2 of 4 externally observable from filed financial statements; 2 of 4 company-narrated only"
+  single_point_failure: "none named by conjunction rule - customer concentration (2 customers = 25.2% of consolidated revenue) is the nearest single-name exposure, carried as the Part C3 business falsifier instead"
+  fragility_verdict: "FRAGILE"
+candidate_count: 7
+research_brief_items: 12
+plain_summary_points: 15
+annex:
+  present: true
+  questions_answered: 10
+  corpus_commit_hash: "1b96777065b25fd4b4dc52887a749ece04722ec3"

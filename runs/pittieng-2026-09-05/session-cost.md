@@ -26,3 +26,4 @@ where it does not.
 | 12a | verifier A numerical (pass 1: Gate 0 figures, 29 numbers) | claude-haiku | default | n/a | n/a | 96035 | 3m07s | 1 |
 | 12a | verifier A numerical (pass 2: coverage extension to 02/03/05/07, cumulative 52 numbers) | claude-haiku | default | n/a | n/a | 121991 | 3m53s | 2 |
 | 13 | synthesis-lite (phase 1: 3 files) | claude-opus | default | n/a | n/a | 148149 | 9m11s | 1 |
+| 9b | Halt 1 understanding dossier + Section 6 annex | claude-sonnet | default | n/a | n/a | 299624 | 17m12s | 1 |

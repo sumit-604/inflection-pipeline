@@ -1,0 +1,25 @@
+stage: B12d
+company: "KABRAEXTRU"
+run_date: "2026-09-05"
+model: claude-sonnet-5
+status: complete
+peers_audited: 6
+substantive_confirmed: 5
+substantive_unsupported: []
+unused_but_relevant:
+  - {peer: "WINDMACHIN", missed_item: "Screening CSV (inputs/screening/WINDMACHIN-Data_Sheet.csv) shows FY26 sales +72.9% YoY (Rs566.52 Cr vs Rs327.6 Cr FY25) with quarterly data reaching Q1 FY27 (quarter ended Jun-2026) -- the only peer data source in this corpus that actually reaches KABRAEXTRU's FY26 window, which every RAJOOENG transcript misses by ~17 months. Net profit stayed negative and an equity-capital/investments spike suggests the growth may be M&A-driven rather than organic, so it is not clean confirmation, but B06 never mentions the CSV exists, even to caveat it out of scope. Directly bears on Claims 1, 5, and 6 and on the report's own central staleness limitation.", anchor: "inputs/screening/WINDMACHIN-Data_Sheet.csv, rows 10-11 (FY26 column) and rows 27-28 (quarterly columns through 2026-06-30)"}
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "MAJOR", location: "Part 3 coverage map / WINDMACHIN row", claimed: "WINDMACHIN listed UNUSED, no transcript in corpus", note: "True but incomplete: the WINDMACHIN screening CSV in corpus reaches KABRAEXTRU's FY26 window and was never mentioned, unlike every RAJOOENG transcript which stops 17 months short; a material, available, claim-relevant data source went unacknowledged"}
+  - {severity: "MINOR", location: "Claim 4, RAJOOENG Q2 FY24 back-to-back procurement quote", claimed: "cited p.9", note: "quote is real and accurately transcribed but sits on PDF page 10"}
+  - {severity: "MINOR", location: "Claim 3 / Part 2D, RAJOOENG Q4 FY24 'Windsor machines and carbon extrusion' quote", claimed: "cited p.8", note: "quote is real and accurately transcribed but sits on PDF page 9"}
+  - {severity: "MINOR", location: "Claim 5, RAJOOENG Q4 FY24 45% FY24 export share", claimed: "cited p.11", note: "figure is real but sits on PDF page 12"}
+  - {severity: "MINOR", location: "Claim 3, RAJOOENG Q2 FY25 33% PVC / 55-60% blown-films market share quotes", claimed: "cited p.9-10", note: "quotes are real and accurately transcribed but sit on PDF pages 11 and 12 respectively"}
+  - {severity: "MINOR", location: "Claim 1 net read, RAJOOENG Q2 FY25 'domestic is not really encouraging margin' / 73% export quote", claimed: "cited p.11", note: "quote is real but sits on PDF page 12"}
+  - {severity: "MINOR", location: "Claim 8, HBLENGINE p.17 nickel-cadmium quote", claimed: "'everybody can import cells'", note: "transcript literally reads 'everybody can import sales'; substance intact, wording not verbatim"}
+  - {severity: "MINOR", location: "Part 4 Triangulation Summary, CONTRADICTED verdict labels", claimed: "CONTRADICTED", note: "label alone (outside its caveat) risks reading stronger than the framing-only scope the report consistently states; presentational note, not a discipline failure"}
+critical_count: 0
+major_count: 1
+minor_count: 7
+acceptance_rate: 83

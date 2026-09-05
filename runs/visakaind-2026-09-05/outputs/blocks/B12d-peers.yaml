@@ -1,0 +1,25 @@
+stage: B12d
+company: "VISAKAIND"
+run_date: "2026-09-05"
+model: claude-sonnet-5
+status: complete
+peers_audited: 6   # BirlaNu x4 quarter-rows (SUBSTANTIVE) + EVERESTIND + RAMCOIND (no-transcript rows) in B06's peer_coverage_map
+substantive_confirmed: 4   # all 4 BirlaNu SUBSTANTIVE quarter-rows have real, findable citations verified against the transcript text
+substantive_unsupported: []
+unused_but_relevant:
+  - {peer: "BirlaNu", missed_item: "Granular Q1 FY27 capex phasing (Nellore Boards Rs127cr, OPVC Rs40cr completed, Hyderabad plant 0.9x asset turn targeting ~Rs140cr revenue) that would have sharpened Claim 7's capex-scale comparison to Visaka's ~Rs450cr programme", anchor: "BIRLANU, Q1 FY27 call, Ajay Kapadia/Akshat Seth, p.23-25"}
+  - {peer: "BirlaNu", missed_item: "Boards industry structure detail (only 5-7 organized players of note, 15-20% import share) relevant background for Claim 4/Claim 8", anchor: "BIRLANU, Q1 FY27 call, Akshat Seth, p.16"}
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "MINOR", location: "B06 Claim 5, peer evidence row", description: "Quote \"nearing full utilization\" (Chennai Line 2) cited as (BIRLANU, Q2 FY26 call, Akshat Seth, p.5); actual location is transcript marker PAGE 3 (opening remarks). Content and speaker correct, page wrong.", peer: "BirlaNu", quarter: "Q2 FY26"}
+  - {severity: "MINOR", location: "B06 Claim 1, peer evidence row (Q4 FY26 sentence)", description: "Fibre/cement input-cost quote cited as p.9-10; actual quote spans transcript markers PAGE 10-11, Akshat Seth. Correct anchor is p.10-11.", peer: "BirlaNu", quarter: "Q4 FY26"}
+  - {severity: "MINOR", location: "B06 Part 2, cross-read item (a), rural demand paragraph", description: "\"Underlying resilience in the rural economy\" + steel-price-gap quote cited as p.9; actual location is transcript marker PAGE 10, Akshat Seth.", peer: "BirlaNu", quarter: "Q4 FY26"}
+  - {severity: "MINOR", location: "B06 Part 2, section 2A demand environment", description: "\"Strong bounce back from H1\" quote cited as p.6; actual location is transcript marker PAGE 4, Akshat Seth (opening remarks, Roofs segment). Largest anchor drift found (2 pages).", peer: "BirlaNu", quarter: "Q4 FY26"}
+  - {severity: "MINOR", location: "B06 Claim 7 / peer coverage map, Q1 FY27 row", description: "Granular Nellore/OPVC/Hyderabad capex-phasing figures (pp.23-25) not cited; would have sharpened but not changed the Claim 7 capex-scale benchmark.", peer: "BirlaNu", quarter: "Q1 FY27"}
+  - {severity: "MINOR", location: "B06 Claim 4 / Claim 8, industry-structure context", description: "Boards-industry structure detail (5-7 organized players, 15-20% imports, p.16) not cited; industry-context miss, does not change any verdict.", peer: "BirlaNu", quarter: "Q1 FY27"}
+critical_count: 0
+major_count: 0
+minor_count: 6
+acceptance_rate: 100   # peers used substantively AND correctly / peers with transcripts provided to this run = 1/1; see Part 4 for denominator justification
+denominator_used: "peers with transcripts provided to this run (BirlaNu = 1); Everest and Ramco carry zero transcripts and were correctly excluded from the substantive-use test, not penalized for a corpus gap they cannot fill"

@@ -1,0 +1,14 @@
+# Phase-1 confidence delta (orchestrator, per prompts/00-orchestrator.md Section 5).
+# DRAFT: numerical_acceptance pending verifier A. Rewritten when B12a lands.
+confidence_delta:
+  company: AEQUS
+  run_date: 2026-09-05
+  phase: 1
+  numerical_acceptance: pending        # B12a acceptance_rate (verifier A running)
+  redflag_coverage: 30                 # B12b: caught 9 / independent flags found 30 (partially caught 10 not credited per the B12b definition)
+  framework_adherence: 86              # B12c phase-1 scope: Gate 0 90%, Emerging Moat 82%; valuation half pending phase 3
+  peer_utilisation: 100                # B12d: 9 of 9 provided peer transcripts used substantively (B12d citation acceptance_rate 78%, 0 critical, 2 major, 6 minor)
+  overall: pending                     # min of the four; already capped at 30 by redflag_coverage
+  band: pending
+  forced_verdict: REWORK               # any verifier acceptance_rate <60% forces REWORK (00-orchestrator Section 4; 13-synthesis verdict rule 1); B12b = 30%
+  valuation_framework_adherence: pending phase 3

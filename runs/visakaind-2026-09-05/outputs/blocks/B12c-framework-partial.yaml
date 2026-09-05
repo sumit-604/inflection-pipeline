@@ -1,0 +1,56 @@
+stage: B12c
+company: "VISAKAIND"
+run_date: "2026-09-05"
+model: claude-opus-4-8
+status: complete
+scope: "phase-1: gate0 + emoat"
+gate0:
+  rules_checked: 54
+  fails:
+    - "G-06 ROCE formula fidelity: proxy capital employed FY17-FY23 blended with AR Schedule-III FY24-FY26"
+    - "G-13 Block B window consistency: B1 on 10 years, B2/B3/B4 on 3 years"
+    - "G-22 D2 interest coverage scored on an EBIT basis containing the Rs59.70cr one-off; recomputed D2 = 1"
+    - "G-27 E2 promoter change: 1-year window substituted for the mandated 3-year, maximum band awarded; recomputed E2 = 0"
+    - "G-38 M8 distribution: no rubric band fits a quantified and shrinking network; conservative 0 chosen by interpretation"
+    - "G-49 Rule 4 anchors: Net Block 676.89 and FY17 operating margin 12.20% unanchored at point of use"
+    - "G-51 Output format: moat profile bars and classification box absent"
+emoat:
+  rules_checked: 36
+  fails:
+    - "E-11 completionist recount attributes the 13 documented items differently in body and YAML"
+    - "E-13 Rule 3 anchors: several evidence items cite a document with no page or slide"
+    - "E-14 evidence_mix not reconcilable to the body; 5 inference items claimed, 0 tagged"
+    - "E-17 rows B1 and H3 graded at the documented multiplier on a management-claim headline; over-credit 0.6"
+    - "E-18 A3 impact graded medium in the scorecard, called smallest in impact in Section 6E"
+    - "E-31 catalysts_12m carries two 12-24m entries in a 12-month field feeding Pillar 3 proximity"
+    - "E-32 Section 6E catalyst list and YAML catalysts_12m disagree by one item each way"
+    - "E-35 cross-artifact divergence with B01 on two page anchors, the total-debt basis, and the WC-day series"
+    - "E-36 em_score 14.5 sits 2.5 points above the NONE floor with 21% on one already-realised row; sensitivity not disclosed"
+valuation:
+  status: "pending phase 3"
+  rules_checked: 0
+  fails: []
+business_understanding_narrative: {present: false, five_questions_answered: false, prose_only: false, section6_candidates_named: 0, valuation_vocab_leak: false, fails: ["NOT ASSESSED - B13 not among phase-1 inputs; deferred to the finalize verifier pass"]}
+recomputed_destination_pe: ""
+recomputed_decision: ""
+findings:
+  - {severity: "MAJOR", location: "B01 Block E, E2", description: "Mandated 3-year promoter-change window replaced by a 1-year window and scored at the maximum band of 5, on a +4.82pp move the same report calls unexplained and unverified, with 0.00% change in both named individual promoters. Rule 5 directs N/A and 0 when a data point is unavailable. Recomputed E2 = 0, Block E 9/20, core 51. Classification stays AVERAGE."}
+  - {severity: "MAJOR", location: "B07 YAML, evidence_mix", description: "evidence_mix {documented 16, claim 13, inference 5} is not reconcilable to the report body. No analyst-inference item is tagged anywhere, so the count of 5 has zero supporting items. The documented count of 16 contradicts the body, which enumerates 13 items supporting the Moderate rows plus at least 5 further documented facts. No effect on em_score because multipliers apply per category."}
+  - {severity: "MINOR", location: "B01 Formula Notes and Block A", description: "Two capital-employed bases blended in one 10-year ROCE series against the fixed-formula rule. Disclosed in input_gaps and cross-validated at FY26 (proxy 12.57% vs AR 11.87%). No effect on A1, A2 or A4. Consequential at M3: on the proxy basis FY26 ROCE clears the >12% leg and M3 would score 1, moat score 13, no class change."}
+  - {severity: "MINOR", location: "B01 Block B", description: "B1 runs on 10 years while B2, B3 and B4 run on 3 years, so the 17/20 block total mixes windows. B3's 1.367 ratio is flattered by an FY24-FY26 PAT denominator of 90.50 containing both trough years and the FY26 one-off. Disclosed. Deal-breaker 2 cannot fire in any variant because B1 and B4 alone hold Block B at or above 10."}
+  - {severity: "MINOR", location: "B01 Block D, D2", description: "Interest coverage of 4.34x scores 2 on an EBIT numerator containing the Rs59.70cr land gain. The report computes the ex-exceptional 2.53x and calls it the decision-relevant figure, then scores the higher band. Recomputed D2 = 1, Block D 12/20, core 55. Classification stays AVERAGE. D1 tested and robust: ex-exceptional ND/EBITDA is 1.858x, same band."}
+  - {severity: "MINOR", location: "B01 Block F, M8", description: "The M8 rubric has no band for a network that is quantified and shrinking. Band 1 reads mentioned-unquantified and band 0 reads none-or-purely-digital; neither fits 4,974 dealers down from 5,246. The report chose 0 and stated why. Conservative and disclosed. The defect is in the rubric. Alternate reading M8 = 1 gives moat score 13, no class change. Framework amendment candidate."}
+  - {severity: "MINOR", location: "B01 M3 and M1", description: "Two scored inputs carry no anchor at the point of use. M3's Net Block of 676.89 is unsourced and does not reconcile to B07's AR-sourced net PP&E of 675.98. M1's FY17 operating EBITDA margin of 12.20% is unsourced and its components are not shown. Rule 4 states an unanchored number counts against the stage. Existence routed to Verifier A."}
+  - {severity: "MINOR", location: "B01 output format", description: "The mandated dashboard format requires moat profile bars and a classification box. Neither is present. All blocks, line items, strongest and weakest block, and the decision line are present. Presentational only."}
+  - {severity: "MINOR", location: "B07 Section 3 recount vs YAML completionist_recount", description: "The body attributes the 13 documented items as A3 5, G2 3, R1 3, plus 2 capex-table items. The YAML attributes them as A3 5, G2 3, R1 5, folding the 2 capex items into R1 without explanation. Both total 13. The recount is the completionist guard artifact and must be exact."}
+  - {severity: "MINOR", location: "B07 Sections 1A, 1C, 6B", description: "Several evidence items name a document but give no page or slide, against the mandated (AR p.__) anchor format. Examples: the yarn margin series cited to AR2025/AR2026 segment notes; the 3 ATUM Life stores cited to AR FY26 BRSR; the 22-25% input-cost rise cited to the Aug-2023 call."}
+  - {severity: "MINOR", location: "B07 scorecard rows B1 and H3", description: "Both are mixed-evidence rows graded at the documented 1.0 multiplier. B1's headline raw-material-security claim rests on a concall quote, with only the captive solar plant documented. H3's among-the-few GreenPro exclusivity claim is self-assessed and unverified against peers, with only the certificates documented. Grading to the documented leg over-credits 0.6 points. em_score 13.9 on the stricter read. Band unchanged."}
+  - {severity: "MINOR", location: "B07 scorecard row A3", description: "A3 is graded HM, raw 3, adjusted 3.0, while Section 6E of the same report calls A3 the smallest in likely financial impact. An HL grade gives raw 2 and em_score 13.5. Band unchanged."}
+  - {severity: "MINOR", location: "B07 YAML, catalysts_12m", description: "Two of five entries carry a 12-24m window inside a field named for 12 months. The field feeds Pillar 3 catalyst proximity at Stage 11, where a 12-24m catalyst is less proximate. Each entry does state its own window, so a careful Stage 11 read recovers the truth."}
+  - {severity: "MINOR", location: "B07 Section 6E vs YAML catalysts_12m", description: "The body lists dealer-count reversal as a 12-month catalyst; the YAML omits it and substitutes total debt holding at or below Rs350cr. Both are defensible. The two lists should agree."}
+  - {severity: "MINOR", location: "B07 vs B01, cross-artifact", description: "Three divergences with no reconciling note. FY26 capex of Rs36.75cr anchored to AR FY26 p.155 in B07 and p.158 in B01. The nil-R&D statement anchored to p.92 in B07 and p.95 in B01. Total debt stated as Rs579cr FY24 and Rs350cr FY26 in B07 against Rs534.98cr and Rs303.44cr in B01, a lease-liability definition gap B01 flags at D3 and B07 never names. B07 also carries WC tenure of 94 and 81 days against B01's computed 110.51 and 92.42 days; different series, both anchored. Page-anchor truth routed to Verifier A."}
+  - {severity: "MINOR", location: "B07 Section 5", description: "em_score of 14.5 sits 2.5 points above the 12-point NONE floor, and G2 alone carries 3.0 of it, or 21%. Excluding G2 gives 11.5 and flips em_classification from MODEST to NONE. G2 is graded already-realised, which sits awkwardly against the scan's forming-moat scope line, though the G2 category text does contemplate a realised trend. The sensitivity is not disclosed anywhere in B07."}
+critical_count: 0
+major_count: 2
+minor_count: 14
+acceptance_rate: 82

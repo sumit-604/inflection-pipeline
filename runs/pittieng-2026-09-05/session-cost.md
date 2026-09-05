@@ -13,3 +13,4 @@ where it does not.
 | 2 | notes triple-pass (pass 3, consolidation + B02) | claude-sonnet | default | n/a | n/a | 80693 | 5m22s | 3 |
 | 3 | AR deep dive | claude-sonnet | default | n/a | n/a | 369769 | 13m07s | 1 |
 | 4 | business model decoder | claude-sonnet | default | n/a | n/a | 170183 | 11m11s | 1 |
+| 8 | promoter check (web, partial: 2 fetches proxy-blocked) | claude-sonnet | default | n/a | n/a | 245445 | 11m46s | 1 |

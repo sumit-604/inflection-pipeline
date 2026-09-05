@@ -14,3 +14,4 @@ Per-stage token ledger. One line per subagent run.
 | 6 | peers | claude-sonnet-5 | - | - | - | 174819 | 387s | 1 |
 | 7 | emerging-moat | claude-sonnet-5 | - | - | - | 119886 | 468s | 1 |
 | 2 | notes-pass3 | claude-sonnet-5 | - | - | - | 68092 | 188s | 3 |
+| 9 | tam | claude-sonnet-5 | - | - | - | 103468 | 578s | 1 |

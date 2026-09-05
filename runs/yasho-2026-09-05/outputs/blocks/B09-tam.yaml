@@ -1,0 +1,62 @@
+stage: B09-tam
+company: "YASHO"
+run_date: "2026-09-05"
+model: claude-sonnet-5
+status: partial
+input_gaps:
+  - "Stabilisers (acrylics/inks/resins) market size NOT FOUND - excluded from TAM rather than estimated"
+  - "New Pakhajan-building peak capacity (Rs250 Cr FY27 capex) undisclosed - management explicitly declined to state it (Aug 2026 concall)"
+  - "No per-segment competitor-share dataset exists for rubber accelerators+antioxidants, lube AO+CI, or aroma-chemical intermediates specifically - SAM capability filters are analyst judgement, not sourced shares"
+  - "India rubber-chemicals unorganised-sector % not sourced to this specific industry - used pipeline's generic 30-60% range"
+flags:
+  - "SOM-implied revenue CAGR (22.1% yr3 / 18.8% yr5) sits well below both management's 30-40% 2-3yr guide and the FY28 >Rs1,600cr target (~39% CAGR needed over 2 years) - genuine tension for stage 11 to price"
+  - "SOM Year 3 (Rs1,511 Cr) exceeds existing 2-plant capacity at management's own 70-75% target utilisation (Rs1,015-1,163 Cr) by Rs348-496 Cr - achieving SOM requires undisclosed new Pakhajan-building capacity to ramp on schedule; the capex plan, not the SOM figure, is the optimistic/unverified side"
+  - "Management's $12-15bn addressable-market claim was given with zero segment/geography definition (Aug 2026 concall); this stage's independent bottom-up decomposition coincidentally lands in the same range - read as loose corroboration, not management rigor"
+  - "TAM growth (blended ~4.9%) is roughly 4.5x below the SOM-implied company CAGR (~22%) - all projected growth is share-gain/capacity execution, not market beta, consistent with B04/B06 findings"
+  - "Lubricant-additive full-package market is a top-4 oligopoly (>85% share, sourced) - Yasho's SAM in this segment is structurally capped regardless of TAM growth"
+market_definition: "Global merchant markets for rubber accelerators/antioxidants, lubricant antioxidant/corrosion-inhibitor additives, and aroma chemicals - Yasho's actual product lines, not the full catch-all category totals"
+tam_cr: {conservative: 114534, realistic: 135135}
+sam_cr: 22717
+sam_pct_of_tam: 19.8
+som_3yr_cr: 1511
+som_5yr_cr: 1965
+som_implied_revenue_cagr: {yr3: 22.1, yr5: 18.8}
+current_sam_share_pct: 3.65
+revenue_headroom_x: 27.4
+tam_growth_pct: 4.9
+runway_class: "GOOD"
+mgmt_claim_cr: 127575
+mgmt_claim_ratio: 1.11
+mgmt_claim_read: "reasonable"
+capacity_check: "gap of Rs348-496 Cr against existing 2-plant capacity at management's own 70-75% target utilisation by SOM Year 3; new Pakhajan buildings (undisclosed capacity) must close it - capex plan is the optimistic, unverified side"
+methods_used: ["top-down segment sum", "bottom-up tyre-value cross-check (rubber only)", "peer revenue aggregation (NOCIL-implied India rubber chemicals market)", "import substitution (India lubricant antioxidants domestic vs import split)", "capacity-ceiling cross-check (disclosed peak-revenue plant capacity)"]
+stale_data_flags:
+  - {datapoint: "Rubber accelerator market size $1.94bn", source: "Verified Market Reports - rubber accelerator market", year: 2023}
+searches_performed:
+  - "global rubber chemicals market size 2026 2030 billion CAGR"
+  - "global lubricant additives market size 2026 billion CAGR forecast"
+  - "global aroma chemicals market size 2026 billion flavor fragrance"
+  - "India rubber chemicals market size crore 2026 CRISIL ICRA report"
+  - "rubber antioxidants accelerators market size share of total rubber chemicals market"
+  - "India specialty chemicals aroma flavour fragrance market size 2026 report"
+  - "India lubricant additives market size 2026 crore million report"
+  - "lubricant additives antioxidant corrosion inhibitor segment share of market percent"
+  - "NOCIL PIX Transpek India rubber chemicals companies revenue crore unorganised share"
+  - "India lubricant additives import substitution domestic production Atherstone Anglo India Additives"
+  - "USD INR exchange rate today September 2026"
+  - "global tire market size 2026 billion units produced annually"
+  - "China share of global chemical production sales percent 2025 2026"
+  - "Lubrizol Infineum Afton Chevron Oronite combined market share lubricant additives percent"
+searches_skipped:
+  - "stabilisers for acrylics/inks/resins market size (no result found, not pursued further)"
+  - "China-domestic rubber chemicals producer revenue aggregation for direct competitor-count Method 3"
+  - "rubber-chemicals-specific India unorganised-sector percentage"
+downstream_candidates:
+  - {signal: "Global tyre production volumes and majors' capex plans (Michelin, Bridgestone, Goodyear, Continental, MRF, Apollo, CEAT)", entity_type: "end-customer", demand_link: "Tyres are the largest single end-use for rubber accelerators/antioxidants", likely_source: "Tyre majors' quarterly results/investor days; IRMRA data", cadence: "quarterly", shared: false}
+  - {signal: "Undisclosed MNC counterparty on the 15-year supply agreement", entity_type: "counterparty", demand_link: "Single largest disclosed forward revenue block, ~Rs150 Cr/yr from Q1FY28", likely_source: "Company Regulation 30 filings (BSE/NSE) - NDA-bound", cadence: "event-driven", shared: true}
+  - {signal: "China rubber/lube-additive/aroma-chemical export pricing", entity_type: "macro", demand_link: "Directly named by management as the risk to Yasho's realisation", likely_source: "ICIS pricing / Chinese customs export data", cadence: "monthly", shared: false}
+  - {signal: "ECHA REACH registration status/renewals", entity_type: "regulatory", demand_link: "Gates EU market access", likely_source: "ECHA REACH database", cadence: "event-driven", shared: false}
+  - {signal: "Global lubricant consumption volumes", entity_type: "macro", demand_link: "Underlying demand driver for the lube-additive AO+CI segment", likely_source: "Kline & Company / S&P Global Lubes'n'Greases", cadence: "quarterly", shared: false}
+  - {signal: "Global F&F/personal-care majors' quarterly results (Givaudan, IFF, Symrise)", entity_type: "end-customer", demand_link: "Closest observable proxy for demand into Yasho's Consumer division", likely_source: "Givaudan, IFF, Symrise quarterly results", cadence: "quarterly", shared: false}
+demand_externally_verifiable: true
+analyst_note: "SAM's geography and capability filters are analyst judgement, not sourced per-segment competitor-share data - flagged rather than hidden. The two better-anchored inputs are the China tyre-production-share proxy and the sourced lube-additives top-4 concentration (>85%). Stage 11 should treat SAM/SOM as order-of-magnitude. The most decision-relevant output is the SOM-implied CAGR (22.1%/18.8%) against management's 30-40% guide and the FY28 >Rs1,600cr target - both management figures require the undisclosed new Pakhajan-building capacity to materialise on schedule, which this stage cannot verify."

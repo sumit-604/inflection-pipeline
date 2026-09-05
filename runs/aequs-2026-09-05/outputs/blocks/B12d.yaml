@@ -1,0 +1,25 @@
+stage: B12d
+company: "AEQUS"
+run_date: "2026-09-05"
+model: claude-sonnet-5
+status: complete
+peers_audited: 9
+substantive_confirmed: 9
+substantive_unsupported: []
+unused_but_relevant:
+  - {peer: "UNIMECH", missed_item: "Explicit policy statement declining segment-level margin disclosure by business line, which would reinforce B06's own Q3 net read on peer reticence over granular numbers", anchor: "UNIMECH Q1 FY27 (Aug-2026 call), Aakash Jaiswal, approx. p.13: 'we don't want to disclose margins on each businesses rather than only on a consolidated basis'"}
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "MAJOR", location: "B06 Part 1 Q3, AZAD Q3 FY26 (Feb-2026) margin guide", description: "B06 prose states '36-38% guided long-term' EBITDA margin but the transcript quote cited in the same sentence (Ronak Jajoo) reads '33% to 35%... sustainable'; no 36-38% figure exists in the transcript. Directional conclusion survives (33-35% still above Aequs' 20-27% band) but the reported number is wrong."}
+  - {severity: "MAJOR", location: "B06 Part 1 Q8 / Part 3 coverage map, UNIMECH Hobel acquisition-update call (28-Apr/04-May-2026), cited 'Management, p.10-11'", description: "The all-cash/internal-funds financing quote is real but located at the end of the transcript, roughly 10 pages after the cited location; pages 10-11 instead contain the customer-concentration and valuation-multiple discussion. Claim remains supported by AZAD's independent financing detail, so the Q8 verdict is unaffected, but this citation would not be found by a reader following the stated anchor."}
+  - {severity: "MINOR", location: "B06 Part 1 Q6, AZAD Q4 FY26 (May-2026)", description: "WC-day quote ('H1 ~200 tapering to H2 160-170') attributed to Ronak Jajoo (CFO) but actually spoken by Rakesh Chopdar (Chairman/CEO); page and content are correct."}
+  - {severity: "MINOR", location: "B06 Part 1 Q2, UNIMECH Q3 FY26 (Feb-2026), '52 weeks' citation", description: "Cited page (~p.10) is roughly two pages before the quote's actual location; speaker attribution correct."}
+  - {severity: "MINOR", location: "B06 Part 2A / risks register, UNIMECH Q4 FY26 (Jun-2026) geopolitical-caution quote", description: "Cited page (~p.3) is roughly two pages before the quote's actual location; speaker and content correct."}
+  - {severity: "MINOR", location: "B06 Part 1, systemic across citations", description: "Page citations inconsistently mix PDF-page-count and printed-in-document-page-number conventions with no stated rule, the proximate cause of the three MINOR anchor-location findings above; every citation checked resolves to correct content within 0-2 pages once the applicable convention is identified."}
+  - {severity: "MINOR", location: "B06 Part 1 Q3, UNIMECH Q1 FY27 (Aug-2026)", description: "B06 does not cite UNIMECH's explicit refusal to disclose per-business-line margins, which would have reinforced the report's own cross-peer 'reticence' observation (echoing the Q5 finding on concentration) by extending it to margin disclosure."}
+  - {severity: "MINOR", location: "B06 Part 2, AZAD all four calls", description: "The running DRDO/GTRE indigenous jet-engine delivery narrative across all four AZAD calls is not referenced anywhere in B06; tangential to all nine B05 claims, so omission does not reduce coverage completeness."}
+critical_count: 0
+major_count: 2
+minor_count: 6
+acceptance_rate: 78

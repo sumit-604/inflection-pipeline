@@ -8,3 +8,4 @@ Per-stage token ledger. One row per subagent run. Summary block appended at clos
 | 1 | gate0-scorecard | sonnet | default | n/a | n/a | 61075 | 317s | 1 |
 | 2 | notes-triple-pass (pass1) | sonnet | default | n/a | n/a | 167372 | 291s | 1 |
 | 2 | notes-triple-pass (pass2) | sonnet | default | n/a | n/a | 157280 | 150s | 2 |
+| 2 | notes-triple-pass (pass3-close) | sonnet | default | n/a | n/a | 53049 | 129s | 3 |

@@ -1,0 +1,44 @@
+stage: B02-notes
+company: "DIFFNKG"
+run_date: "2026-09-05"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - {item: "prospectus", severity: HIGH, note: "ABSENT; company listed 4-Oct-2024"}
+  - {item: "results/rating/announcements/shareholding/research", severity: MEDIUM, note: "ABSENT from corpus"}
+flags:
+  - {type: FLAG-CASH, reason: "Consolidated trade receivables +51.2% YoY vs +21.3% revenue growth; receivables turnover fell 4.55x to 3.82x consolidated and 4.19x to 3.61x standalone (Note 8/42)"}
+accounting_quality: 5
+pass_2_empty: false
+pass_3_empty: false
+top_findings:
+  - {rank: 1, finding: "Outgoing CEO remuneration jumped 552% (Rs2.40Mn to Rs15.66Mn) in year of resignation, unexplained", note_ref: "Note 38.2, p.171/219-220", rating: "RED FLAG"}
+  - {rank: 2, finding: "Note 36 carries three internal numeric mismatches across employee-benefit sub-tables (Leave Encashment DBO, Gratuity plan assets, current-liability split)", note_ref: "Note 36, p.216-219 consol / p.170 standalone", rating: "RED FLAG"}
+  - {rank: 3, finding: "Note 39 fair value hierarchy misclassifies cash/receivables as Level 3 and carries unexplained negative Level 3 plug, identically in both years, consolidated only", note_ref: "Note 39, p.222-224 consol / p.174 standalone", rating: "RED FLAG"}
+  - {rank: 4, finding: "Consolidated trade receivables +51.2% YoY vs +21.3% revenue growth; turnover ratio fell 4.55x to 3.82x (also standalone 4.19x to 3.61x)", note_ref: "Note 8/42", rating: "WATCH"}
+  - {rank: 5, finding: "New unrelated investment of Rs21.49Mn in Tejorup Sunmay Systems Pvt Ltd, no rationale disclosed", note_ref: "Note 5, p.153/201", rating: "WATCH"}
+  - {rank: 6, finding: "Segment reporting effectively absent in both standalone and consolidated statements despite standalone note promising it in the consolidated set", note_ref: "Note 41, both", rating: "WATCH"}
+  - {rank: 7, finding: "Note 34 tax reconciliation has two lines that fail to tie between standalone and consolidated for the same FY25 comparative (Others sign-flip; Effect of Deferred Tax)", note_ref: "Note 34, both", rating: "WATCH"}
+  - {rank: 8, finding: "Gratuity funded status deteriorated sharply (net liability Rs2.31Mn to Rs10.65Mn), driven by unexplained Rs5.97Mn past-service-cost exceptional item", note_ref: "Note 33/36, p.164-168", rating: "WATCH"}
+  - {rank: 9, finding: "No capital commitment note found despite CWIP growing ~7x YoY (Rs31.44Mn to Rs221.70Mn)", note_ref: "Note 3A, p.152", rating: "WATCH"}
+  - {rank: 10, finding: "Advance received from customers jumped ~514% in one year (Rs14.06Mn to Rs86.33Mn), no order-level detail", note_ref: "Note 23, p.160-161/210-211", rating: "WATCH"}
+  - {rank: 11, finding: "Diffusion Super-Conditioning Services related-party sales to parent collapsed 95% YoY (Rs98.21Mn to Rs4.71Mn), unexplained", note_ref: "Note 38.2, p.169", rating: "WATCH"}
+  - {rank: 12, finding: "New related-party advance for purchase of Rs47.14Mn to Diffusion Engineers Singapore, nil prior year, no stated purpose/terms", note_ref: "Note 38.3, p.174", rating: "WATCH"}
+  - {rank: 13, finding: "Standalone ROE fell (12.66% to 12.07%) with Net Capital Turnover down 22-27%, company attributes to undeployed IPO proceeds ~18 months post-listing", note_ref: "Note 42, both", rating: "WATCH"}
+  - {rank: 14, finding: "CSR spend routed through promoter-family-linked foundations, no CSR-required-vs-actual figure disclosed", note_ref: "Note 38.2/Note 32", rating: "WATCH"}
+  - {rank: 15, finding: "ESOP Trust: Rs90Mn market share purchase funded by company loan to Trust, loan not separately sized as RPT", note_ref: "Note 43, p.177-180/227-230", rating: "WATCH"}
+red_flags:
+  - "Outgoing CEO remuneration jumped 552% in resignation year with no explanation (Note 38.2)"
+  - "Note 36 (Employee Benefit Obligations) shows three separate internal numeric mismatches across its own sub-tables and standalone/consolidated boundary (Note 36)"
+  - "Note 39 (consolidated Fair Value Hierarchy) mechanically misclassifies non-fair-valued items as Level 3 and carries an unexplained negative plug, unchanged across two years (Note 39)"
+questions_for_mgmt:
+  - "Nature of the Rs15.66Mn payment to the outgoing CEO in his resignation year, and why not disclosed as exceptional (Note 38.2)"
+  - "Reconciliation of the three internal numeric mismatches inside Note 36 (Note 36)"
+  - "Business rationale for the Rs21.49Mn Tejorup Sunmay Systems investment and fit with IPO-proceeds use (Note 5)"
+  - "Cause of the 95% collapse in Diffusion Super-Conditioning related-party sales, and purpose/terms of the new Rs47.14Mn advance to Diffusion Engineers Singapore (Note 38.2/38.3)"
+  - "Customer/segment drivers of the 51.2% receivables growth and whether the ECL matrix is being revisited (Note 8)"
+receivables_trend: "deteriorating - consolidated receivables +51.2% YoY (Rs848.01Mn to Rs1,281.79Mn) vs +21.3% revenue growth, turnover ratio 4.55x to 3.82x; standalone +27.1% YoY vs +12.1% revenue growth, turnover 4.19x to 3.61x (Note 8/42); ageing mix itself modestly improved (>6m bucket 13.9% to 11.8% of gross, consolidated), so quantum is deteriorating while ageing quality is not worsening"
+restatements_found: []
+going_concern_language: "NONE"
+analyst_note: "The three internal-consistency clusters (Notes 34, 36, 39) are drafting/template failures, not evidence of misstated primary financials; all headline balance sheet and P&L figures tie out cleanly. They matter because they mean the notes, taken as a documentary record, cannot be trusted line-by-line without cross-checking sub-tables against each other, which raises the bar for any downstream stage relying on granular note figures (especially Note 36 employee-benefit numbers and Note 34 tax reconciliation detail). Separately, the RPT cluster (CEO remuneration spike, Singapore advance, Super-Conditioning sales collapse) and the undisclosed-rationale Tejorup Sunmay investment sit in the same period as ~18 months of still-undeployed IPO proceeds; read together they warrant closer capital-allocation scrutiny at Halt 1, independent of the notes' technical accounting quality."
+

@@ -1,0 +1,2665 @@
+<title>Engineer's Village</title>
+<style>
+/* ============================================================
+   Engineer's Village — all the on-screen styling lives here.
+   The 3D world is drawn by three.js onto the canvas. Everything
+   else (menus, speech bubbles, puzzle panels) is normal HTML
+   sitting on top of the canvas, styled by this file.
+   ============================================================ */
+
+/* Reset a few basics and set a warm, friendly default look. */
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+html, body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  background: #bfe3f2;
+  font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+  color: #2c2417;
+  user-select: none;
+}
+
+/* The canvas fills the whole window. */
+#game-canvas { display: block; width: 100vw; height: 100vh; }
+
+/* A "screen" is a full-window overlay (loading / start). */
+.screen {
+  position: fixed; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  z-index: 50;
+  background: linear-gradient(160deg, #ffe7b3 0%, #ffd08a 40%, #f6a86b 100%);
+  text-align: center;
+  padding: 20px;
+}
+.screen[hidden] { display: none; }
+
+.hardhat { font-size: 54px; line-height: 1; margin-bottom: 8px; }
+
+/* ---------- Loading screen ---------- */
+.loading-box { max-width: 340px; }
+.loading-title { font-size: 26px; font-weight: 700; margin-bottom: 16px; }
+.loading-bar {
+  width: 240px; height: 12px; margin: 0 auto 10px;
+  background: rgba(0,0,0,0.15); border-radius: 8px; overflow: hidden;
+}
+#loading-fill { width: 0%; height: 100%; background: #3a7d44; transition: width .25s ease; }
+.loading-text { font-size: 14px; opacity: 0.8; }
+
+/* ---------- Start screen ---------- */
+.start-box { max-width: 440px; }
+.start-box h1 { font-size: 32px; margin: 4px 0 6px; }
+.subtitle { font-size: 16px; margin: 0 0 22px; opacity: 0.85; }
+.pick-label { font-size: 15px; font-weight: 600; margin: 0 0 12px; }
+.profile-buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.profile-btn {
+  cursor: pointer; border: none; border-radius: 16px;
+  background: #fffdf6; box-shadow: 0 6px 0 rgba(0,0,0,0.12);
+  padding: 18px 20px; width: 190px;
+  display: flex; flex-direction: column; gap: 6px; align-items: center;
+  transition: transform .08s ease, box-shadow .08s ease;
+}
+.profile-btn:active { transform: translateY(4px); box-shadow: 0 2px 0 rgba(0,0,0,0.12); }
+.profile-name { font-size: 22px; font-weight: 700; color: #b4531a; }
+.profile-hint { font-size: 13px; opacity: 0.75; }
+.tiny-note { font-size: 12px; opacity: 0.6; margin-top: 18px; }
+
+/* ============================================================
+   HUD — the light layer shown while playing
+   ============================================================ */
+#hud { position: fixed; inset: 0; z-index: 20; pointer-events: none; }
+#hud > * { pointer-events: auto; }
+
+#rank-badge {
+  position: absolute; top: 12px; left: 12px;
+  background: rgba(255,253,246,0.92); border-radius: 999px;
+  padding: 6px 14px 6px 8px; display: flex; align-items: center; gap: 6px;
+  font-weight: 700; font-size: 15px; box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+.rank-icon { font-size: 18px; }
+
+#notebook-btn {
+  position: absolute; top: 12px; right: 12px;
+  width: 46px; height: 46px; border: none; border-radius: 12px;
+  background: rgba(255,253,246,0.92); font-size: 24px; cursor: pointer;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+
+#interact-prompt {
+  position: absolute; left: 50%; bottom: 130px; transform: translateX(-50%);
+  background: rgba(44,36,23,0.85); color: #fff; padding: 8px 16px;
+  border-radius: 999px; font-size: 15px; font-weight: 600; white-space: nowrap;
+}
+#interact-prompt[hidden] { display: none; }
+
+/* ---------- Controls reminder (laptop) ---------- */
+#controls-hint {
+  position: absolute; top: 70px; left: 50%; transform: translateX(-50%);
+  background: rgba(255,253,246,0.94); border-radius: 12px;
+  padding: 8px 14px; font-size: 14px; display: flex; gap: 16px; flex-wrap: wrap;
+  justify-content: center; box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+  transition: opacity .6s ease;
+}
+#controls-hint[hidden] { display: none; }
+#controls-hint.fade { opacity: 0; }
+
+/* ---------- Dialogue / speech panel ---------- */
+#dialogue {
+  position: absolute; left: 50%; bottom: 20px; transform: translateX(-50%);
+  width: min(560px, 92vw);
+  background: rgba(255,253,246,0.97); border-radius: 16px;
+  padding: 14px 16px 16px; box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+#dialogue[hidden] { display: none; }
+#dialogue-name { font-weight: 700; color: #b4531a; margin-bottom: 4px; font-size: 15px; }
+#dialogue-text { font-size: 16px; line-height: 1.45; margin-bottom: 10px; min-height: 44px; }
+#dialogue-next {
+  float: right; border: none; border-radius: 10px; cursor: pointer;
+  background: #3a7d44; color: #fff; font-weight: 700; font-size: 15px;
+  padding: 8px 18px;
+}
+
+/* ============================================================
+   Mobile touch controls
+   ============================================================ */
+#touch-controls[hidden] { display: none; }
+#joystick {
+  position: absolute; left: 22px; bottom: 26px;
+  width: 120px; height: 120px; border-radius: 50%;
+  background: rgba(255,255,255,0.28); border: 2px solid rgba(255,255,255,0.5);
+  touch-action: none;
+}
+#joystick-knob {
+  position: absolute; left: 35px; top: 35px;
+  width: 50px; height: 50px; border-radius: 50%;
+  background: rgba(255,253,246,0.9); box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+#touch-interact {
+  position: absolute; right: 26px; bottom: 40px;
+  width: 84px; height: 84px; border-radius: 50%; border: none;
+  background: #3a7d44; color: #fff; font-size: 26px; font-weight: 800;
+  box-shadow: 0 4px 0 #2c5e34; touch-action: none;
+}
+#touch-interact:active { transform: translateY(3px); box-shadow: 0 1px 0 #2c5e34; }
+
+/* ============================================================
+   Overlays — notebook, parent view, and job puzzle panels
+   ============================================================ */
+.overlay {
+  position: fixed; inset: 0; z-index: 40;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(30,22,10,0.5); padding: 16px;
+}
+.overlay[hidden] { display: none; }
+.overlay-card {
+  background: #fffdf6; border-radius: 18px; padding: 18px 20px;
+  width: min(620px, 96vw); max-height: 90vh; overflow-y: auto;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.35);
+}
+.overlay-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+.overlay-header h2 { margin: 0; font-size: 22px; color: #b4531a; }
+.overlay-close {
+  border: none; background: #eee; width: 34px; height: 34px; border-radius: 10px;
+  font-size: 18px; cursor: pointer;
+}
+
+/* Notebook job lists */
+.job-list { list-style: none; padding: 0; margin: 0 0 14px; }
+.job-list li { padding: 10px 12px; border-radius: 10px; background: #f4efe2; margin-bottom: 8px; }
+.job-list li .job-title { font-weight: 700; }
+.job-list li .job-concept { font-size: 13px; opacity: 0.75; margin-top: 2px; }
+.job-list.done li { background: #e3f0e0; }
+.section-label { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; opacity: 0.6; margin: 4px 0 8px; }
+
+/* ============================================================
+   Shared bits used by job puzzle panels
+   ============================================================ */
+.job-title-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.job-title-row h2 { margin: 0; font-size: 21px; color: #b4531a; }
+.job-brief { font-size: 15px; line-height: 1.45; margin: 8px 0 12px; }
+.job-goal {
+  background: #fff3d6; border: 1px solid #f0d190; border-radius: 10px;
+  padding: 8px 12px; font-size: 15px; margin-bottom: 12px;
+}
+.job-goal b { color: #b4531a; }
+
+.hint {
+  background: #fdecec; border: 1px solid #f2b6b6; border-radius: 10px;
+  padding: 8px 12px; font-size: 14px; margin: 10px 0; line-height: 1.4;
+}
+.hint[hidden] { display: none; }
+.worked-example {
+  background: #eef4ff; border: 1px solid #b8ccf2; border-radius: 10px;
+  padding: 8px 12px; font-size: 14px; margin: 10px 0; line-height: 1.5;
+}
+.worked-example[hidden] { display: none; }
+
+.big-btn {
+  border: none; border-radius: 12px; cursor: pointer;
+  background: #3a7d44; color: #fff; font-weight: 700; font-size: 16px;
+  padding: 11px 20px; box-shadow: 0 4px 0 #2c5e34;
+}
+.big-btn:active { transform: translateY(3px); box-shadow: 0 1px 0 #2c5e34; }
+.big-btn:disabled { background: #b9b9b9; box-shadow: 0 4px 0 #969696; cursor: default; }
+.ghost-btn {
+  border: 1px solid #d8cdb2; background: #fff; border-radius: 10px;
+  padding: 9px 16px; font-size: 15px; cursor: pointer; font-weight: 600;
+}
+.btn-row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-top: 12px; }
+
+/* ---------- Bridge job: planks ---------- */
+.plank-bank { display: flex; flex-wrap: wrap; gap: 10px; margin: 6px 0; }
+.plank {
+  cursor: pointer; border: none; border-radius: 8px;
+  background: linear-gradient(#d79a5b, #b9773c);
+  color: #3a2410; font-weight: 700; font-size: 14px;
+  padding: 10px 8px; box-shadow: 0 3px 0 #8a5626;
+  display: flex; flex-direction: column; align-items: center; min-width: 64px;
+}
+.plank:active { transform: translateY(2px); box-shadow: 0 1px 0 #8a5626; }
+.plank small { font-weight: 500; opacity: 0.8; font-size: 11px; }
+.plank.picked { outline: 3px solid #3a7d44; }
+.gap-meter { margin: 12px 0 6px; }
+.gap-bar-outer {
+  height: 26px; background: #e7ddc6; border-radius: 8px; overflow: hidden;
+  position: relative; border: 1px solid #d8cdb2;
+}
+.gap-bar-fill { height: 100%; width: 0%; background: #7cae59; transition: width .25s ease; }
+.gap-bar-fill.over { background: #d9704f; }
+.gap-readout { font-size: 15px; font-weight: 700; margin-top: 6px; }
+.picked-list { font-size: 14px; opacity: 0.8; margin-top: 4px; min-height: 20px; }
+
+/* ---------- School job: circuit board ---------- */
+.circuit-wrap { display: flex; gap: 16px; flex-wrap: wrap; }
+.circuit-board {
+  background: #24333a; border-radius: 12px; padding: 14px;
+  flex: 1 1 260px; min-width: 260px; color: #eaf4ef;
+}
+.slot-row { display: flex; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap; margin: 8px 0; }
+.comp-battery {
+  min-width: 74px; height: 46px; border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 700; text-align: center; padding: 4px;
+  background: #e9b84a; color: #3a2410;
+}
+.comp-bulb { background: #3d5158; color: #cfe; border: 2px dashed #6f8790; }
+.comp-bulb.lit { background: #ffe066; color: #7a5b00; border-color: #ffe066; box-shadow: 0 0 16px #ffe066; }
+.comp-slot {
+  min-width: 84px; height: 48px; border-radius: 8px;
+  border: 2px dashed #7f9aa3; background: rgba(255,255,255,0.06);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; color: #bcd; text-align: center;
+}
+.comp-slot.filled { border-style: solid; }
+.parts-tray { flex: 1 1 200px; min-width: 200px; }
+.part {
+  cursor: grab; border-radius: 8px; padding: 10px; margin-bottom: 8px;
+  font-weight: 700; font-size: 14px; text-align: center; color: #2c2417;
+  touch-action: none; /* let us handle drag on touch instead of scrolling */
+}
+.part-conductor { background: #d9c07a; border: 2px solid #b89a44; }
+.part-insulator { background: #d7c3b0; border: 2px solid #a98d72; }
+.part.used { opacity: 0.35; pointer-events: none; }
+.part-hint { font-size: 12px; font-weight: 500; opacity: 0.7; }
+
+/* ---------- Success banner ---------- */
+.solved-banner {
+  background: #e3f0e0; border: 1px solid #9ecb8f; border-radius: 12px;
+  padding: 12px 14px; margin-top: 12px; font-size: 15px; line-height: 1.45;
+}
+.solved-banner b { color: #2c6e2f; }
+
+/* Small helper so long panels stay readable on phones */
+@media (max-width: 520px) {
+  .overlay-card { padding: 14px; }
+  .job-title-row h2 { font-size: 18px; }
+}
+
+</style>
+
+  <!-- The 3D world is drawn onto this canvas by three.js -->
+  <canvas id="game-canvas"></canvas>
+
+  <!-- ============ LOADING SCREEN ============ -->
+  <div id="loading-screen" class="screen">
+    <div class="loading-box">
+      <div class="hardhat">⛑️</div>
+      <div class="loading-title">Engineer's Village</div>
+      <div class="loading-bar"><div id="loading-fill"></div></div>
+      <div class="loading-text">Waking up the village…</div>
+    </div>
+  </div>
+
+  <!-- ============ START SCREEN (pick a profile) ============ -->
+  <div id="start-screen" class="screen" hidden>
+    <div class="start-box">
+      <div class="hardhat">⛑️</div>
+      <h1>Engineer's Village</h1>
+      <p class="subtitle">You are the new Junior Engineer. The village needs your help.</p>
+      <p class="pick-label">Who is playing today?</p>
+      <div class="profile-buttons">
+        <button class="profile-btn" data-profile="class3">
+          <span class="profile-name">Class 3</span>
+          <span class="profile-hint">Whole numbers, one idea at a time</span>
+        </button>
+        <button class="profile-btn" data-profile="class5">
+          <span class="profile-name">Class 5</span>
+          <span class="profile-hint">Fractions, circuits, and planning ahead</span>
+        </button>
+      </div>
+      <p class="tiny-note">Your progress is saved on this device for each player.</p>
+    </div>
+  </div>
+
+  <!-- ============ HEADS-UP DISPLAY (shown while playing) ============ -->
+  <div id="hud" hidden>
+    <!-- Rank badge, top-left -->
+    <div id="rank-badge">
+      <span class="rank-icon">⛑️</span>
+      <span id="rank-text">Trainee</span>
+    </div>
+
+    <!-- Notebook button, top-right -->
+    <button id="notebook-btn" title="Notebook (N)">📓</button>
+
+    <!-- Little prompt that appears when you are near something to do -->
+    <div id="interact-prompt" hidden></div>
+
+    <!-- Controls reminder shown for a few seconds when you start (laptop only) -->
+    <div id="controls-hint" hidden>
+      <span><b>W A S D</b> or <b>↑ ↓ ← →</b> to walk</span>
+      <span><b>E</b> to talk / act</span>
+      <span><b>N</b> for notebook</span>
+    </div>
+
+    <!-- Speech / dialogue panel at the bottom -->
+    <div id="dialogue" hidden>
+      <div id="dialogue-name"></div>
+      <div id="dialogue-text"></div>
+      <button id="dialogue-next">Continue</button>
+    </div>
+
+    <!-- Mobile controls: joystick (left) and interact button (right) -->
+    <div id="touch-controls" hidden>
+      <div id="joystick"><div id="joystick-knob"></div></div>
+      <button id="touch-interact">E</button>
+    </div>
+  </div>
+
+  <!-- The notebook overlay (open jobs, done jobs, concepts learned) -->
+  <div id="notebook" class="overlay" hidden>
+    <div class="overlay-card">
+      <div class="overlay-header">
+        <h2>Engineer's Notebook</h2>
+        <button class="overlay-close" data-close="notebook">✕</button>
+      </div>
+      <div id="notebook-body"></div>
+      <p class="tiny-note">Tip: press and hold this book to see the parent view.</p>
+    </div>
+  </div>
+
+  <!-- Parent view overlay (concepts completed + attempts) -->
+  <div id="parent-view" class="overlay" hidden>
+    <div class="overlay-card">
+      <div class="overlay-header">
+        <h2>Parent View</h2>
+        <button class="overlay-close" data-close="parent-view">✕</button>
+      </div>
+      <div id="parent-body"></div>
+    </div>
+  </div>
+
+  <!-- A generic slot where each job mounts its own puzzle panel -->
+  <div id="job-panel" class="overlay" hidden>
+    <div class="overlay-card" id="job-card">
+      <!-- filled in by the active job -->
+    </div>
+  </div>
+
+  
+
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+} }
+</script>
+<script type="module">
+import * as THREE from 'three';
+
+// ===== src/engine/audio.js =====
+/* ============================================================
+   audio.js — a few short sounds made with the Web Audio API.
+
+   We do NOT load any sound files. Instead we ask the browser to
+   generate simple tones (like a tiny electronic keyboard). This
+   keeps the game small and works offline.
+
+   Browsers only allow sound to start after the user taps or
+   clicks, so we create the audio "context" lazily on first use.
+   ============================================================ */
+
+let ctx = null; // the Web Audio context, created on first sound
+
+// Make sure we have an audio context. Called from inside a click/tap.
+function getCtx() {
+  if (!ctx) {
+    const AC = window.AudioContext || window.webkitAudioContext;
+    if (AC) ctx = new AC();
+  }
+  // Some browsers start the context "suspended"; wake it up.
+  if (ctx && ctx.state === "suspended") ctx.resume();
+  return ctx;
+}
+
+// Play one short note. freq = pitch in Hz, dur = seconds.
+function tone(freq, startTime, dur, type = "sine", volume = 0.2) {
+  const c = getCtx();
+  if (!c) return;
+  const osc = c.createOscillator();
+  const gain = c.createGain();
+  osc.type = type;
+  osc.frequency.value = freq;
+  // A soft fade in/out so it doesn't click.
+  gain.gain.setValueAtTime(0, startTime);
+  gain.gain.linearRampToValueAtTime(volume, startTime + 0.02);
+  gain.gain.exponentialRampToValueAtTime(0.001, startTime + dur);
+  osc.connect(gain).connect(c.destination);
+  osc.start(startTime);
+  osc.stop(startTime + dur + 0.02);
+}
+
+// A cheerful rising pair of notes for solving something.
+function playSuccess() {
+  const c = getCtx();
+  if (!c) return;
+  const t = c.currentTime;
+  tone(523.25, t, 0.18, "triangle", 0.25);       // C5
+  tone(783.99, t + 0.14, 0.30, "triangle", 0.25); // G5
+}
+
+// A soft, low "not quite" tone for a wrong attempt (never harsh).
+function playRetry() {
+  const c = getCtx();
+  if (!c) return;
+  const t = c.currentTime;
+  tone(330, t, 0.16, "sine", 0.18);
+  tone(247, t + 0.12, 0.22, "sine", 0.18);
+}
+
+// The school bell: a few bright dings.
+function playBell() {
+  const c = getCtx();
+  if (!c) return;
+  const t = c.currentTime;
+  for (let i = 0; i < 3; i++) {
+    tone(1046.5, t + i * 0.28, 0.5, "sine", 0.22); // C6, ringing
+    tone(1568.0, t + i * 0.28, 0.4, "sine", 0.10); // G6 overtone
+  }
+}
+
+// A tiny click for picking things up (planks, parts).
+function playPick() {
+  const c = getCtx();
+  if (!c) return;
+  tone(660, c.currentTime, 0.06, "square", 0.12);
+}
+
+// A very short "voice" blip, played as a villager's words appear one by one.
+// `pitch` is the villager's base pitch in Hz; we wobble it a little so the
+// speech sounds lively rather than like a beep.
+function playTalkBlip(pitch = 400) {
+  const c = getCtx();
+  if (!c) return;
+  const wobble = 1 + (Math.random() - 0.5) * 0.25;
+  tone(pitch * wobble, c.currentTime, 0.055, "triangle", 0.09);
+}
+
+// ===== src/engine/save.js =====
+/* ============================================================
+   save.js — remembers progress in the browser (localStorage).
+
+   Each player profile ("class3" / "class5") gets its OWN saved
+   progress, so the two children never overwrite each other.
+
+   The shape we store looks like this:
+     {
+       jobsDone: ["bridge", "school"],   // ids of finished jobs
+       attempts: { bridge: 3, school: 1 } // tries per job (for parent view)
+     }
+   ============================================================ */
+
+// One localStorage key per profile. Bumping the "v1" resets old saves.
+const KEY = (profile) => `engineers-village.v1.${profile}`;
+
+// A fresh, empty progress record.
+function emptyProgress() {
+  return { jobsDone: [], attempts: {} };
+}
+
+// Read the saved progress for a profile. Always returns a valid object,
+// even if nothing is saved yet or the stored text is somehow broken.
+function loadProgress(profile) {
+  try {
+    const raw = localStorage.getItem(KEY(profile));
+    if (!raw) return emptyProgress();
+    const data = JSON.parse(raw);
+    // Be defensive: fill in anything missing.
+    return {
+      jobsDone: Array.isArray(data.jobsDone) ? data.jobsDone : [],
+      attempts: data.attempts && typeof data.attempts === "object" ? data.attempts : {},
+    };
+  } catch (e) {
+    // If storage is blocked (private mode, etc.) just play without saving.
+    console.warn("Could not read save; starting fresh.", e);
+    return emptyProgress();
+  }
+}
+
+// Write the progress back to storage. Safe to call often.
+function saveProgress(profile, progress) {
+  try {
+    localStorage.setItem(KEY(profile), JSON.stringify(progress));
+  } catch (e) {
+    console.warn("Could not save progress.", e);
+  }
+}
+
+// Mark a job as finished (only once) and remember it.
+function markJobDone(profile, progress, jobId) {
+  if (!progress.jobsDone.includes(jobId)) {
+    progress.jobsDone.push(jobId);
+  }
+  saveProgress(profile, progress);
+}
+
+// Count one attempt (right or wrong) against a job, for the parent view.
+function countAttempt(profile, progress, jobId) {
+  progress.attempts[jobId] = (progress.attempts[jobId] || 0) + 1;
+  saveProgress(profile, progress);
+}
+
+// ===== src/engine/input.js =====
+/* ============================================================
+   input.js — turns the keyboard and the on-screen joystick into
+   ONE simple thing the rest of the game can read:
+
+     input.move   -> { x, y }  each between -1 and 1
+                     x: left(-)/right(+),  y: forward(-)/back(+)
+     input.interactPressed()  -> true once, right when E/Space/button
+                                  is freshly pressed (not held).
+
+   This way the player code doesn't care whether you are on a
+   laptop or a phone. It just asks "which way, and did they press E?"
+   ============================================================ */
+
+class Input {
+  constructor() {
+    // Current movement request, updated by keys and the joystick.
+    this.move = { x: 0, y: 0 };
+
+    // Which keyboard keys are held right now.
+    this.keys = new Set();
+
+    // "Edge" flag for interact: set true when pressed, cleared once read.
+    this._interactQueued = false;
+
+    // Is this a touch device? If so we show the on-screen controls.
+    this.isTouch = matchMedia("(pointer: coarse)").matches || "ontouchstart" in window;
+
+    this._setupKeyboard();
+    this._setupTouch();
+  }
+
+  // ---- Keyboard (laptop) ----
+  _setupKeyboard() {
+    window.addEventListener("keydown", (e) => {
+      const k = e.key.toLowerCase();
+      this.keys.add(k);
+      // E or Space asks to interact. We queue it as a single press.
+      if (k === "e" || k === " " || k === "spacebar") {
+        this._interactQueued = true;
+        e.preventDefault();
+      }
+      this._recomputeKeyboardMove();
+    });
+    window.addEventListener("keyup", (e) => {
+      this.keys.delete(e.key.toLowerCase());
+      this._recomputeKeyboardMove();
+    });
+  }
+
+  // Convert the held keys into a move vector.
+  _recomputeKeyboardMove() {
+    let x = 0, y = 0;
+    if (this.keys.has("w") || this.keys.has("arrowup")) y -= 1;
+    if (this.keys.has("s") || this.keys.has("arrowdown")) y += 1;
+    if (this.keys.has("a") || this.keys.has("arrowleft")) x -= 1;
+    if (this.keys.has("d") || this.keys.has("arrowright")) x += 1;
+    // If the joystick is active, it wins (handled in touch code).
+    if (!this._joystickActive) this.move = { x, y };
+  }
+
+  // ---- Touch (phone) ----
+  _setupTouch() {
+    this._joystickActive = false;
+    const joystick = document.getElementById("joystick");
+    const knob = document.getElementById("joystick-knob");
+    const interactBtn = document.getElementById("touch-interact");
+    if (!joystick || !knob || !interactBtn) return;
+
+    const radius = 45; // how far the knob can slide from centre (pixels)
+    let startX = 0, startY = 0;
+
+    const begin = (touch) => {
+      const rect = joystick.getBoundingClientRect();
+      startX = rect.left + rect.width / 2;
+      startY = rect.top + rect.height / 2;
+      this._joystickActive = true;
+    };
+    const moveTo = (clientX, clientY) => {
+      let dx = clientX - startX;
+      let dy = clientY - startY;
+      // Clamp the knob inside the ring.
+      const dist = Math.hypot(dx, dy) || 1;
+      const clamped = Math.min(dist, radius);
+      const nx = (dx / dist) * clamped;
+      const ny = (dy / dist) * clamped;
+      knob.style.left = 35 + nx + "px";
+      knob.style.top = 35 + ny + "px";
+      // Normalise to -1..1 for the game.
+      this.move = { x: nx / radius, y: ny / radius };
+    };
+    const end = () => {
+      this._joystickActive = false;
+      this.move = { x: 0, y: 0 };
+      knob.style.left = "35px";
+      knob.style.top = "35px";
+    };
+
+    joystick.addEventListener("touchstart", (e) => {
+      e.preventDefault();
+      begin(e.changedTouches[0]);
+      moveTo(e.changedTouches[0].clientX, e.changedTouches[0].clientY);
+    }, { passive: false });
+    joystick.addEventListener("touchmove", (e) => {
+      e.preventDefault();
+      moveTo(e.changedTouches[0].clientX, e.changedTouches[0].clientY);
+    }, { passive: false });
+    joystick.addEventListener("touchend", (e) => { e.preventDefault(); end(); }, { passive: false });
+    joystick.addEventListener("touchcancel", (e) => { e.preventDefault(); end(); }, { passive: false });
+
+    // Interact button.
+    interactBtn.addEventListener("touchstart", (e) => {
+      e.preventDefault();
+      this._interactQueued = true;
+    }, { passive: false });
+  }
+
+  // Read the interact press ONCE. Returns true only on the frame it happened.
+  interactPressed() {
+    if (this._interactQueued) {
+      this._interactQueued = false;
+      return true;
+    }
+    return false;
+  }
+}
+
+// ===== src/engine/dialogue.js =====
+/* ============================================================
+   dialogue.js — the speech panel at the bottom of the screen.
+
+   You give it a name and a list of lines. Each line is "spoken":
+   the words appear a few letters at a time and a soft voice blip
+   plays as they do, so it feels like the villager is talking.
+   Pressing Continue while a line is still appearing shows the
+   whole line at once; pressing it again moves to the next line.
+   When the last line is done it runs "onDone" (often: open the
+   puzzle panel).
+   ============================================================ */
+
+
+class Dialogue {
+  constructor() {
+    this.panel = document.getElementById("dialogue");
+    this.nameEl = document.getElementById("dialogue-name");
+    this.textEl = document.getElementById("dialogue-text");
+    this.nextBtn = document.getElementById("dialogue-next");
+
+    this.lines = [];
+    this.index = 0;
+    this.onDone = null;
+    this.active = false;
+    this.pitch = 400;     // this speaker's voice pitch (Hz)
+
+    this._typing = null;  // the timer that reveals letters
+    this._shown = 0;      // how many letters are on screen so far
+
+    this.nextBtn.addEventListener("click", () => this._advance());
+  }
+
+  // Start a conversation.
+  //   name  = who's talking
+  //   lines = array of strings
+  //   opts.pitch = voice pitch in Hz (higher = lighter voice)
+  say(name, lines, onDone = null, opts = {}) {
+    this.lines = Array.isArray(lines) ? lines : [lines];
+    this.index = 0;
+    this.onDone = onDone;
+    this.pitch = opts.pitch || 400;
+    this.active = true;
+    this.nameEl.textContent = name;
+    this.panel.hidden = false;
+    this._show();
+  }
+
+  // Begin "speaking" the current line letter by letter.
+  _show() {
+    this._stopTyping();
+    const full = this.lines[this.index];
+    this._shown = 0;
+    this.textEl.textContent = "";
+    this.nextBtn.textContent = this.index === this.lines.length - 1 ? "Okay" : "Continue";
+
+    // Reveal 1 letter every 28 ms; blip on every 2nd non-space letter.
+    this._typing = setInterval(() => {
+      this._shown++;
+      this.textEl.textContent = full.slice(0, this._shown);
+      const ch = full[this._shown - 1];
+      if (ch && ch !== " " && this._shown % 2 === 0) playTalkBlip(this.pitch);
+      if (this._shown >= full.length) this._stopTyping();
+    }, 28);
+  }
+
+  // Is the current line still being revealed?
+  _isTyping() {
+    return this._typing != null;
+  }
+
+  _stopTyping() {
+    if (this._typing != null) {
+      clearInterval(this._typing);
+      this._typing = null;
+    }
+  }
+
+  _advance() {
+    // First press while typing: show the whole line right away.
+    if (this._isTyping()) {
+      this._stopTyping();
+      this.textEl.textContent = this.lines[this.index];
+      return;
+    }
+    this.index++;
+    if (this.index < this.lines.length) {
+      this._show();
+    } else {
+      this.close();
+      if (this.onDone) this.onDone();
+    }
+  }
+
+  close() {
+    this._stopTyping();
+    this.active = false;
+    this.panel.hidden = true;
+  }
+}
+
+// ===== src/jobs/jobPanel.js =====
+/* ============================================================
+   jobPanel.js — tiny helpers shared by every job's puzzle panel.
+
+   A "panel" is the big card that slides up when you start a job.
+   Jobs fill it with their own controls (planks, circuit board…),
+   so this file only handles opening/closing it and a couple of
+   formatting helpers used in more than one job.
+   ============================================================ */
+
+const panel = document.getElementById("job-panel");
+const card = document.getElementById("job-card");
+
+// Show the job card with some HTML inside it.
+function openPanel(html) {
+  card.innerHTML = html;
+  panel.hidden = false;
+  return card; // so the job can attach event listeners to its controls
+}
+
+// Hide the job card.
+function closePanel() {
+  panel.hidden = true;
+  card.innerHTML = "";
+}
+
+// Are we currently showing a job panel?
+function panelOpen() {
+  return !panel.hidden;
+}
+
+// Turn a decimal length like 2.75 into a friendly label like "2¾".
+// We only need halves and quarters for this game.
+function prettyLength(value) {
+  const whole = Math.floor(value);
+  const frac = +(value - whole).toFixed(2);
+  const fracMap = { 0: "", 0.25: "¼", 0.5: "½", 0.75: "¾" };
+  const fracStr = fracMap[frac];
+  if (fracStr === undefined) {
+    // Not a neat quarter — just show the decimal.
+    return value + " m";
+  }
+  if (whole === 0 && fracStr) return fracStr + " m";
+  return whole + fracStr + " m";
+}
+
+// Compare two lengths allowing for tiny rounding wobble.
+function sameLength(a, b) {
+  return Math.abs(a - b) < 0.001;
+}
+
+// ===== src/engine/ui.js =====
+/* ============================================================
+   ui.js — the HUD (rank badge, interact prompt), the notebook,
+   and the parent view. It also knows the list of jobs so it can
+   show what's open, what's done, and the concept behind each.
+
+   The actual puzzle panels live inside each job file; this file
+   only handles the "chrome" around them.
+   ============================================================ */
+
+// Ranks unlock as jobs are completed. Index into this by jobs-done count.
+const RANKS = [
+  { name: "Trainee", min: 0 },
+  { name: "Junior Engineer", min: 1 },
+  { name: "Site Engineer", min: 3 },
+  { name: "Chief Engineer", min: 5 },
+];
+
+// Work out the rank name for a number of finished jobs.
+function rankFor(jobsDoneCount) {
+  let current = RANKS[0];
+  for (const r of RANKS) if (jobsDoneCount >= r.min) current = r;
+  return current.name;
+}
+
+class UI {
+  constructor(game) {
+    this.game = game; // gives access to jobs list + progress
+
+    this.rankText = document.getElementById("rank-text");
+    this.interactPrompt = document.getElementById("interact-prompt");
+    this.notebookBtn = document.getElementById("notebook-btn");
+    this.notebook = document.getElementById("notebook");
+    this.notebookBody = document.getElementById("notebook-body");
+    this.parentView = document.getElementById("parent-view");
+    this.parentBody = document.getElementById("parent-body");
+
+    this._wireButtons();
+  }
+
+  _wireButtons() {
+    // Notebook: quick tap opens it; long press opens the parent view.
+    let pressTimer = null;
+    let longPressed = false;
+
+    const startPress = () => {
+      longPressed = false;
+      pressTimer = setTimeout(() => {
+        longPressed = true;
+        this.openParentView();
+      }, 650);
+    };
+    const endPress = () => {
+      clearTimeout(pressTimer);
+      if (!longPressed) this.toggleNotebook();
+    };
+    this.notebookBtn.addEventListener("mousedown", startPress);
+    this.notebookBtn.addEventListener("mouseup", endPress);
+    this.notebookBtn.addEventListener("mouseleave", () => clearTimeout(pressTimer));
+    this.notebookBtn.addEventListener("touchstart", (e) => { e.preventDefault(); startPress(); }, { passive: false });
+    this.notebookBtn.addEventListener("touchend", (e) => { e.preventDefault(); endPress(); }, { passive: false });
+
+    // Any overlay close button.
+    document.querySelectorAll(".overlay-close").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const id = btn.getAttribute("data-close");
+        document.getElementById(id).hidden = true;
+      });
+    });
+
+    // Keyboard: N toggles the notebook.
+    window.addEventListener("keydown", (e) => {
+      if (e.key.toLowerCase() === "n") this.toggleNotebook();
+    });
+  }
+
+  // Update the rank badge from the current progress.
+  refreshRank() {
+    const count = this.game.progress.jobsDone.length;
+    this.rankText.textContent = rankFor(count);
+  }
+
+  // Show or hide the little "Press E to talk" prompt.
+  setInteractPrompt(text) {
+    if (text) {
+      this.interactPrompt.textContent = text;
+      this.interactPrompt.hidden = false;
+    } else {
+      this.interactPrompt.hidden = true;
+    }
+  }
+
+  toggleNotebook() {
+    if (this.notebook.hidden) this.openNotebook();
+    else this.notebook.hidden = true;
+  }
+
+  openNotebook() {
+    // Close other overlays first.
+    this.parentView.hidden = true;
+    this._renderNotebook();
+    this.notebook.hidden = false;
+  }
+
+  _renderNotebook() {
+    const done = this.game.progress.jobsDone;
+    const openJobs = this.game.jobs.filter((j) => !done.includes(j.id));
+    const doneJobs = this.game.jobs.filter((j) => done.includes(j.id));
+
+    let html = "";
+
+    html += `<div class="section-label">Open jobs</div>`;
+    if (openJobs.length === 0) {
+      html += `<p>Every job is done. The village is thriving — well done, Chief Engineer.</p>`;
+    } else {
+      html += `<ul class="job-list">`;
+      for (const j of openJobs) {
+        html += `<li><div class="job-title">${j.title}</div>
+                     <div class="job-concept">${j.villagerName} needs you • ${j.where}</div></li>`;
+      }
+      html += `</ul>`;
+    }
+
+    html += `<div class="section-label">Finished</div>`;
+    if (doneJobs.length === 0) {
+      html += `<p class="tiny-note">Nothing finished yet. Head to the signpost and take a look.</p>`;
+    } else {
+      html += `<ul class="job-list done">`;
+      for (const j of doneJobs) {
+        html += `<li><div class="job-title">✔ ${j.title}</div>
+                     <div class="job-concept">Learned: ${j.concept}</div></li>`;
+      }
+      html += `</ul>`;
+    }
+
+    this.notebookBody.innerHTML = html;
+  }
+
+  openParentView() {
+    this.notebook.hidden = true;
+    const prog = this.game.progress;
+    let html = `<p>Profile: <b>${this.game.profileLabel}</b></p>`;
+    html += `<div class="section-label">Concepts completed</div>`;
+    html += `<ul class="job-list">`;
+    for (const j of this.game.jobs) {
+      const done = prog.jobsDone.includes(j.id);
+      const attempts = prog.attempts[j.id] || 0;
+      html += `<li>
+        <div class="job-title">${done ? "✔" : "○"} ${j.title}</div>
+        <div class="job-concept">${j.concept}</div>
+        <div class="job-concept">Attempts: ${attempts}${done ? " • completed" : ""}</div>
+      </li>`;
+    }
+    html += `</ul>`;
+    html += `<p class="tiny-note">Attempts count every try, right or wrong — a few tries is normal and healthy.</p>`;
+    this.parentBody.innerHTML = html;
+    this.parentView.hidden = false;
+  }
+}
+
+// ===== src/engine/world.js =====
+/* ============================================================
+   world.js — builds the whole village out of simple three.js
+   shapes (boxes, cylinders, cones). No image or model files.
+
+   Everything is "low poly": flat shading and a warm daytime
+   palette. We MERGE the many static shapes (ground details,
+   houses) where we can, so the phone has fewer things to draw.
+
+   The map is laid out like this (looking from above):
+
+              NORTH  (far bank — school, tank, windmill, market)
+        ~~~~~~~~~~ RIVER ~~~~~~~~~~   (broken bridge in the middle)
+              SOUTH  (near bank — entrance, signpost, Meera)
+
+   The player spawns at the entrance in the south and must build
+   the bridge (Job 1) to cross to the school (Job 2).
+   ============================================================ */
+
+
+// A small palette so colours stay consistent and warm.
+const COLORS = {
+  grass: 0x8bc46a,
+  grassDark: 0x6fae54,
+  path: 0xd8c08a,
+  water: 0x5fb6d9,
+  wood: 0xb9773c,
+  woodDark: 0x8a5626,
+  stone: 0xbfb6a5,
+  roofRed: 0xc0532f,
+  roofBlue: 0x3f6f9f,
+  wall: 0xf2e4c8,
+  leaf: 0x4e9e4a,
+  trunk: 0x7a5230,
+  schoolWall: 0xf6efd8,
+  windowDark: 0x35424a,
+  windowGlow: 0xffe27a,
+  metal: 0x9aa6ad,
+};
+
+// Helper: a flat-shaded standard material (soft, matte look).
+function mat(color) {
+  return new THREE.MeshStandardMaterial({ color, flatShading: true, roughness: 0.9, metalness: 0.05 });
+}
+
+class World {
+  constructor() {
+    // The scene holds everything we draw.
+    this.scene = new THREE.Scene();
+    this.scene.background = new THREE.Color(0xbfe3f2); // soft sky blue
+    this.scene.fog = new THREE.Fog(0xbfe3f2, 45, 90);  // fade distant hills
+
+    // Where the player starts, and useful spots other code can read.
+    this.spawn = new THREE.Vector3(0, 0, 22);
+
+    // Landmarks jobs and the camera care about.
+    this.points = {
+      signpost: new THREE.Vector3(2.4, 0, 19),
+      bridgeVillager: new THREE.Vector3(-3.5, 0, 6),   // Meera, near bank
+      schoolVillager: new THREE.Vector3(3.2, 0, -9),   // Ravi, far bank
+    };
+
+    // The river blocks crossing until the bridge is built.
+    // (z between these two values is water.)
+    this.riverZ = { near: 3, far: -3 };
+    this.bridgeBuilt = false;
+
+    // Groups we keep references to so jobs can change them later.
+    this.bridgePlanks = new THREE.Group(); // filled when bridge is solved
+    this.schoolWindows = [];               // meshes we light up
+    this.scene.add(this.bridgePlanks);
+
+    this._buildLights();
+    this._buildGround();
+    this._buildRiver();
+    this._buildNearBank();
+    this._buildFarBank();
+    this._buildTrees();
+  }
+
+  // ---- Lighting: warm daylight + a soft sky fill, with shadows ----
+  _buildLights() {
+    const sun = new THREE.DirectionalLight(0xfff2d6, 2.1);
+    sun.position.set(18, 30, 14);
+    sun.castShadow = true;
+    sun.shadow.mapSize.set(1024, 1024);
+    const s = 40;
+    sun.shadow.camera.left = -s;
+    sun.shadow.camera.right = s;
+    sun.shadow.camera.top = s;
+    sun.shadow.camera.bottom = -s;
+    sun.shadow.camera.near = 1;
+    sun.shadow.camera.far = 90;
+    sun.shadow.bias = -0.0005;
+    this.scene.add(sun);
+    this.sun = sun;
+
+    // Sky/ground fill light so shadows aren't pure black.
+    const hemi = new THREE.HemisphereLight(0xcfe9ff, 0x6a7d4a, 0.7);
+    this.scene.add(hemi);
+  }
+
+  // ---- The hillside ground, with a couple of rolling mounds ----
+  _buildGround() {
+    // Main flat-ish ground plane (slightly rough green).
+    const ground = new THREE.Mesh(new THREE.BoxGeometry(120, 2, 120), mat(COLORS.grass));
+    ground.position.y = -1;
+    ground.receiveShadow = true;
+    this.scene.add(ground);
+
+    // A few darker mounds in the distance to suggest hills.
+    const hillGeo = new THREE.SphereGeometry(14, 10, 8);
+    const hillMat = mat(COLORS.grassDark);
+    const hillPositions = [
+      [-38, -6, -40], [40, -7, -44], [-46, -5, 6], [48, -6, -10],
+    ];
+    for (const [x, y, z] of hillPositions) {
+      const hill = new THREE.Mesh(hillGeo, hillMat);
+      hill.position.set(x, y, z);
+      hill.scale.set(1.6, 0.8, 1.6);
+      hill.receiveShadow = true;
+      this.scene.add(hill);
+    }
+
+    // Footpaths: thin light-brown boxes joining the key places.
+    this._addPath(0, 20, 0, 8, 2.4);    // entrance up to river (south)
+    this._addPath(0, -8, 0, -3, 2.4);   // river to school area (north)
+    this._addPath(-8, -12, 8, -12, 2.2, true); // across the far bank
+  }
+
+  // Draw a flat path box between two points on the ground.
+  _addPath(x1, z1, x2, z2, width, horizontal = false) {
+    const dx = x2 - x1, dz = z2 - z1;
+    const len = Math.hypot(dx, dz);
+    const path = new THREE.Mesh(new THREE.BoxGeometry(width, 0.12, len), mat(COLORS.path));
+    path.position.set((x1 + x2) / 2, 0.01, (z1 + z2) / 2);
+    path.rotation.y = Math.atan2(dx, dz);
+    path.receiveShadow = true;
+    this.scene.add(path);
+  }
+
+  // ---- The river: a long blue slab with low banks ----
+  _buildRiver() {
+    const water = new THREE.Mesh(
+      new THREE.BoxGeometry(120, 0.4, this.riverZ.near - this.riverZ.far),
+      new THREE.MeshStandardMaterial({ color: COLORS.water, flatShading: true, roughness: 0.4, metalness: 0.1, transparent: true, opacity: 0.9 })
+    );
+    water.position.set(0, -0.2, (this.riverZ.near + this.riverZ.far) / 2);
+    this.scene.add(water);
+    this.water = water;
+
+    // Stone banks on each side of the water.
+    for (const z of [this.riverZ.near + 0.4, this.riverZ.far - 0.4]) {
+      const bank = new THREE.Mesh(new THREE.BoxGeometry(120, 0.5, 1.0), mat(COLORS.stone));
+      bank.position.set(0, 0.05, z);
+      bank.receiveShadow = true;
+      this.scene.add(bank);
+    }
+  }
+
+  // ---- Near bank (south): entrance arch + signpost ----
+  _buildNearBank() {
+    // Two posts and a beam make a simple entrance arch.
+    const postMat = mat(COLORS.woodDark);
+    for (const x of [-2.4, 2.4]) {
+      const post = new THREE.Mesh(new THREE.BoxGeometry(0.4, 3, 0.4), postMat);
+      post.position.set(x, 1.5, 24);
+      post.castShadow = true;
+      this.scene.add(post);
+    }
+    const beam = new THREE.Mesh(new THREE.BoxGeometry(5.4, 0.5, 0.5), mat(COLORS.wood));
+    beam.position.set(0, 3, 24);
+    beam.castShadow = true;
+    this.scene.add(beam);
+
+    // Signpost near the entrance (jobs board lives here in fiction).
+    const signPost = new THREE.Mesh(new THREE.CylinderGeometry(0.1, 0.1, 2.2, 8), postMat);
+    signPost.position.set(this.points.signpost.x, 1.1, this.points.signpost.z);
+    signPost.castShadow = true;
+    this.scene.add(signPost);
+    const board = new THREE.Mesh(new THREE.BoxGeometry(1.6, 0.9, 0.1), mat(COLORS.wood));
+    board.position.set(this.points.signpost.x, 1.9, this.points.signpost.z);
+    board.castShadow = true;
+    this.scene.add(board);
+    this.signpostMesh = board;
+  }
+
+  // ---- Far bank (north): school, water tank, windmill, market, houses ----
+  _buildFarBank() {
+    // ---------- School ----------
+    const school = new THREE.Group();
+    const body = new THREE.Mesh(new THREE.BoxGeometry(8, 3.2, 5), mat(COLORS.schoolWall));
+    body.position.y = 1.6;
+    body.castShadow = true; body.receiveShadow = true;
+    school.add(body);
+    // Sloped roof.
+    const roof = new THREE.Mesh(new THREE.ConeGeometry(6.2, 2.2, 4), mat(COLORS.roofRed));
+    roof.position.y = 4.3;
+    roof.rotation.y = Math.PI / 4;
+    roof.castShadow = true;
+    school.add(roof);
+    // Three classroom windows across the front; we light these in Job 2.
+    for (let i = 0; i < 3; i++) {
+      const win = new THREE.Mesh(
+        new THREE.BoxGeometry(1.3, 1.3, 0.15),
+        new THREE.MeshStandardMaterial({ color: COLORS.windowDark, flatShading: true, emissive: 0x000000 })
+      );
+      win.position.set(-2.4 + i * 2.4, 1.7, 2.55);
+      school.add(win);
+      this.schoolWindows.push(win);
+    }
+    // A little bell on the roof ridge.
+    const bell = new THREE.Mesh(new THREE.CylinderGeometry(0.28, 0.36, 0.5, 8), mat(COLORS.metal));
+    bell.position.set(0, 5.2, 0);
+    school.add(bell);
+    school.position.set(0, 0, -15);
+    this.scene.add(school);
+    this.schoolGroup = school;
+
+    // ---------- Water tank on a tower ----------
+    const tower = new THREE.Group();
+    for (const [x, z] of [[-1, -1], [1, -1], [-1, 1], [1, 1]]) {
+      const leg = new THREE.Mesh(new THREE.BoxGeometry(0.3, 5, 0.3), mat(COLORS.metal));
+      leg.position.set(x, 2.5, z);
+      leg.castShadow = true;
+      tower.add(leg);
+    }
+    const tank = new THREE.Mesh(new THREE.CylinderGeometry(1.8, 1.8, 2.4, 16), mat(0xdfe6ea));
+    tank.position.y = 6.2;
+    tank.castShadow = true;
+    tower.add(tank);
+    tower.position.set(-14, 0, -14);
+    this.scene.add(tower);
+    this.tankGroup = tower;
+
+    // ---------- Windmill ----------
+    const mill = new THREE.Group();
+    const millBody = new THREE.Mesh(new THREE.CylinderGeometry(1.4, 2.0, 5, 10), mat(COLORS.wall));
+    millBody.position.y = 2.5; millBody.castShadow = true;
+    mill.add(millBody);
+    const millRoof = new THREE.Mesh(new THREE.ConeGeometry(1.9, 1.6, 10), mat(COLORS.roofBlue));
+    millRoof.position.y = 5.6;
+    mill.add(millRoof);
+    // Four sail blades on a hub (we spin these in the render loop).
+    const blades = new THREE.Group();
+    for (let i = 0; i < 4; i++) {
+      const blade = new THREE.Mesh(new THREE.BoxGeometry(0.25, 3.4, 0.1), mat(COLORS.wood));
+      blade.position.y = 1.7;
+      const holder = new THREE.Group();
+      holder.add(blade);
+      holder.rotation.z = (i * Math.PI) / 2;
+      blades.add(holder);
+    }
+    blades.position.set(0, 4, 1.5);
+    mill.add(blades);
+    mill.position.set(15, 0, -14);
+    this.scene.add(mill);
+    this.windmillBlades = blades;
+
+    // ---------- Market square: a few stalls ----------
+    const marketColors = [COLORS.roofRed, COLORS.roofBlue, 0x6fae54];
+    for (let i = 0; i < 3; i++) {
+      const stall = new THREE.Group();
+      const table = new THREE.Mesh(new THREE.BoxGeometry(2, 0.2, 1.2), mat(COLORS.wood));
+      table.position.y = 1; stall.add(table);
+      for (const [x, z] of [[-0.8, -0.4], [0.8, -0.4], [-0.8, 0.4], [0.8, 0.4]]) {
+        const leg = new THREE.Mesh(new THREE.BoxGeometry(0.1, 1, 0.1), mat(COLORS.woodDark));
+        leg.position.set(x, 0.5, z); stall.add(leg);
+      }
+      const canopy = new THREE.Mesh(new THREE.BoxGeometry(2.4, 0.15, 1.6), mat(marketColors[i]));
+      canopy.position.y = 1.9; stall.add(canopy);
+      stall.position.set(-4 + i * 4, 0, -22);
+      stall.traverse((m) => { if (m.isMesh) m.castShadow = true; });
+      this.scene.add(stall);
+    }
+
+    // ---------- A few houses ----------
+    const housePos = [[-20, -6], [20, -6], [-22, -22], [22, -22]];
+    const roofColors = [COLORS.roofRed, COLORS.roofBlue];
+    housePos.forEach(([x, z], i) => {
+      const house = new THREE.Group();
+      const wall = new THREE.Mesh(new THREE.BoxGeometry(3, 2.4, 3), mat(COLORS.wall));
+      wall.position.y = 1.2; wall.castShadow = true; wall.receiveShadow = true;
+      house.add(wall);
+      const roof = new THREE.Mesh(new THREE.ConeGeometry(2.6, 1.6, 4), mat(roofColors[i % 2]));
+      roof.position.y = 3.1; roof.rotation.y = Math.PI / 4; roof.castShadow = true;
+      house.add(roof);
+      house.position.set(x, 0, z);
+      this.scene.add(house);
+    });
+  }
+
+  // ---- Scattered low-poly trees for a lived-in feel ----
+  _buildTrees() {
+    const trunkGeo = new THREE.CylinderGeometry(0.2, 0.28, 1.4, 6);
+    const leafGeo = new THREE.ConeGeometry(1.1, 2.2, 7);
+    const trunkMat = mat(COLORS.trunk);
+    const leafMat = mat(COLORS.leaf);
+    const spots = [
+      [-8, 14], [9, 15], [-14, 2], [13, 4], [-24, -2], [24, -2],
+      [-10, -26], [10, -26], [-30, -18], [30, -18], [-6, 26], [6, 27],
+    ];
+    for (const [x, z] of spots) {
+      const tree = new THREE.Group();
+      const trunk = new THREE.Mesh(trunkGeo, trunkMat);
+      trunk.position.y = 0.7; trunk.castShadow = true;
+      const leaves = new THREE.Mesh(leafGeo, leafMat);
+      leaves.position.y = 2.2; leaves.castShadow = true;
+      tree.add(trunk, leaves);
+      tree.position.set(x, 0, z);
+      tree.scale.setScalar(0.9 + Math.random() * 0.5);
+      this.scene.add(tree);
+    }
+  }
+
+  // Called by Job 1 when the bridge is solved: drop planks in one by one
+  // and open the crossing. `plankLengths` sets how wide each plank looks.
+  buildBridgeVisual(plankLengths, gap) {
+    // Clear anything already there.
+    this.bridgePlanks.clear();
+    const totalWidth = 4;                    // bridge deck width (x)
+    const startZ = this.riverZ.near;         // south edge of water
+    const spanZ = this.riverZ.near - this.riverZ.far; // water depth to cross
+    const plankDepthEach = spanZ / plankLengths.length;
+
+    plankLengths.forEach((len, i) => {
+      const plank = new THREE.Mesh(
+        new THREE.BoxGeometry(totalWidth, 0.18, plankDepthEach * 0.92),
+        mat(i % 2 ? COLORS.wood : COLORS.woodDark)
+      );
+      const z = startZ - plankDepthEach * (i + 0.5);
+      plank.position.set(0, 0.12, z);
+      plank.castShadow = true; plank.receiveShadow = true;
+      // Start invisible; the game fades/drops them in over time.
+      plank.scale.y = 0.01;
+      plank.userData.dropDelay = i * 0.25; // seconds
+      this.bridgePlanks.add(plank);
+    });
+
+    // Side rails for a finished look.
+    for (const x of [-totalWidth / 2, totalWidth / 2]) {
+      const rail = new THREE.Mesh(new THREE.BoxGeometry(0.15, 0.5, spanZ), mat(COLORS.woodDark));
+      rail.position.set(x, 0.4, (this.riverZ.near + this.riverZ.far) / 2);
+      this.bridgePlanks.add(rail);
+    }
+
+    this.bridgeBuilt = true;
+    this._bridgeAnimStart = performance.now() / 1000;
+  }
+
+  // Light the school windows and mark it done (Job 2).
+  lightSchool() {
+    for (const win of this.schoolWindows) {
+      win.material.color.set(COLORS.windowGlow);
+      win.material.emissive = new THREE.Color(COLORS.windowGlow);
+      win.material.emissiveIntensity = 0.9;
+    }
+  }
+
+  // Per-frame updates: spin the windmill, animate bridge planks dropping in.
+  update(dt, elapsed) {
+    if (this.windmillBlades) this.windmillBlades.rotation.z += dt * 0.6;
+
+    // Gentle water shimmer.
+    if (this.water) this.water.position.y = -0.2 + Math.sin(elapsed * 1.5) * 0.03;
+
+    // Animate the bridge planks growing to full height after being built.
+    if (this.bridgeBuilt && this._bridgeAnimStart != null) {
+      const t = performance.now() / 1000 - this._bridgeAnimStart;
+      this.bridgePlanks.children.forEach((plank) => {
+        const delay = plank.userData.dropDelay || 0;
+        const local = t - delay;
+        if (local > 0) {
+          plank.scale.y = Math.min(1, local * 3); // grow to full over ~0.33s
+        }
+      });
+    }
+  }
+
+  // Can the player stand at this x/z, or is it water they can't cross yet?
+  // Returns true if the spot is walkable.
+  isWalkable(x, z) {
+    const inRiver = z < this.riverZ.near && z > this.riverZ.far;
+    if (!inRiver) return true;               // not over water — fine
+    if (!this.bridgeBuilt) return false;     // water, no bridge — blocked
+    return Math.abs(x) < 2;                  // only the bridge corridor crosses
+  }
+}
+
+// ===== src/engine/characters.js =====
+/* ============================================================
+   characters.js — builds a simple, friendly HUMAN figure out of
+   basic shapes, and animates it (walking / idle).
+
+   Both the player and the villagers use this, so everyone in the
+   village looks like they belong together. Each figure has:
+     - two legs and two arms that swing when walking
+     - a torso (shirt) and hips (trousers)
+     - a head with eyes, a mouth, hair, and an optional hat
+
+   The figure faces +Z. Its feet are at y = 0, head top ≈ 1.85.
+
+   The returned group has `userData.parts` with the limb pivots so
+   the animation code can swing them.
+   ============================================================ */
+
+
+// A flat-shaded matte material (cheap and stylised).
+function humanMat(color) {
+  return new THREE.MeshStandardMaterial({ color, flatShading: true, roughness: 0.9 });
+}
+
+// Build a human. All options are colours except `hat` (null or a colour).
+function makeHuman({
+  skin = 0xe0a878,
+  shirt = 0x2f7db0,
+  trousers = 0x3b3f4a,
+  hair = 0x2b1d14,
+  shoes = 0x3a2a1c,
+  hat = null,
+  dress = false, // true = long dress instead of trousers (same colour as shirt)
+} = {}) {
+  const g = new THREE.Group();
+  const skinMat = humanMat(skin);
+  const shirtMat = humanMat(shirt);
+  const trouserMat = humanMat(dress ? shirt : trousers);
+  const hairMat = humanMat(hair);
+  const shoeMat = humanMat(shoes);
+
+  const parts = {};
+
+  // ---- Legs (pivot at the hip so they can swing) ----
+  const legLen = 0.72;
+  for (const side of [-1, 1]) {
+    const pivot = new THREE.Group();
+    pivot.position.set(side * 0.13, legLen, 0);
+    const leg = new THREE.Mesh(new THREE.BoxGeometry(0.18, legLen, 0.2), trouserMat);
+    leg.position.y = -legLen / 2;
+    leg.castShadow = true;
+    const shoe = new THREE.Mesh(new THREE.BoxGeometry(0.2, 0.1, 0.3), shoeMat);
+    shoe.position.set(0, -legLen + 0.05, 0.04);
+    pivot.add(leg, shoe);
+    g.add(pivot);
+    parts[side < 0 ? "legL" : "legR"] = pivot;
+  }
+  // A dress hangs as one piece over the legs.
+  if (dress) {
+    const skirt = new THREE.Mesh(new THREE.CylinderGeometry(0.28, 0.4, 0.7, 8), trouserMat);
+    skirt.position.y = 0.42;
+    skirt.castShadow = true;
+    g.add(skirt);
+  }
+
+  // ---- Torso ----
+  const torso = new THREE.Mesh(new THREE.BoxGeometry(0.5, 0.62, 0.28), shirtMat);
+  torso.position.y = legLen + 0.31;
+  torso.castShadow = true;
+  g.add(torso);
+  parts.torso = torso;
+
+  // ---- Arms (pivot at the shoulder) ----
+  const armLen = 0.6;
+  const shoulderY = legLen + 0.58;
+  for (const side of [-1, 1]) {
+    const pivot = new THREE.Group();
+    pivot.position.set(side * 0.33, shoulderY, 0);
+    const sleeve = new THREE.Mesh(new THREE.BoxGeometry(0.15, armLen * 0.55, 0.15), shirtMat);
+    sleeve.position.y = -armLen * 0.275;
+    sleeve.castShadow = true;
+    const forearm = new THREE.Mesh(new THREE.BoxGeometry(0.13, armLen * 0.45, 0.13), skinMat);
+    forearm.position.y = -armLen * 0.55 - armLen * 0.225;
+    const hand = new THREE.Mesh(new THREE.SphereGeometry(0.085, 8, 6), skinMat);
+    hand.position.y = -armLen - 0.02;
+    pivot.add(sleeve, forearm, hand);
+    g.add(pivot);
+    parts[side < 0 ? "armL" : "armR"] = pivot;
+  }
+
+  // ---- Neck + head ----
+  const neck = new THREE.Mesh(new THREE.CylinderGeometry(0.08, 0.09, 0.12, 8), skinMat);
+  neck.position.y = legLen + 0.66;
+  g.add(neck);
+
+  const headY = legLen + 0.92;
+  const head = new THREE.Group();
+  head.position.y = headY;
+  const skull = new THREE.Mesh(new THREE.SphereGeometry(0.23, 14, 12), skinMat);
+  skull.castShadow = true;
+  head.add(skull);
+
+  // Eyes: two little dark dots, slightly apart, on the front (+Z).
+  const eyeMat = humanMat(0x22201c);
+  for (const side of [-1, 1]) {
+    const eye = new THREE.Mesh(new THREE.SphereGeometry(0.03, 6, 6), eyeMat);
+    eye.position.set(side * 0.08, 0.04, 0.2);
+    head.add(eye);
+  }
+  // A small smile.
+  const mouth = new THREE.Mesh(new THREE.BoxGeometry(0.09, 0.02, 0.02), humanMat(0x9b4b3a));
+  mouth.position.set(0, -0.08, 0.215);
+  head.add(mouth);
+  // Ears.
+  for (const side of [-1, 1]) {
+    const ear = new THREE.Mesh(new THREE.SphereGeometry(0.045, 6, 6), skinMat);
+    ear.position.set(side * 0.22, 0, 0);
+    head.add(ear);
+  }
+  // Hair: a cap over the top-back of the head.
+  const hairCap = new THREE.Mesh(
+    new THREE.SphereGeometry(0.245, 14, 10, 0, Math.PI * 2, 0, Math.PI * 0.55),
+    hairMat
+  );
+  hairCap.position.set(0, 0.02, -0.03);
+  head.add(hairCap);
+
+  // Optional hat (e.g. the engineer's yellow hard hat).
+  if (hat != null) {
+    const hatMat = humanMat(hat);
+    const dome = new THREE.Mesh(new THREE.SphereGeometry(0.26, 14, 8, 0, Math.PI * 2, 0, Math.PI / 2), hatMat);
+    dome.position.y = 0.06;
+    dome.castShadow = true;
+    const brim = new THREE.Mesh(new THREE.CylinderGeometry(0.33, 0.33, 0.05, 14), hatMat);
+    brim.position.set(0, 0.06, 0.03);
+    head.add(dome, brim);
+  }
+
+  g.add(head);
+  parts.head = head;
+
+  g.userData.parts = parts;
+  g.userData.walkPhase = 0;
+  return g;
+}
+
+// Animate a human each frame.
+//   walking: true while moving. speed: 0..1 how fast.
+// Swings arms and legs in opposite pairs, like a real stride, and adds a
+// tiny idle breathing motion when standing still.
+function animateHuman(group, dt, walking, speed = 1) {
+  const p = group.userData.parts;
+  if (!p) return;
+
+  if (walking) {
+    group.userData.walkPhase += dt * 9 * Math.max(0.4, speed);
+    const s = Math.sin(group.userData.walkPhase) * 0.55;
+    p.legL.rotation.x = s;
+    p.legR.rotation.x = -s;
+    p.armL.rotation.x = -s * 0.8;
+    p.armR.rotation.x = s * 0.8;
+  } else {
+    // Ease limbs back to rest.
+    for (const k of ["legL", "legR", "armL", "armR"]) {
+      p[k].rotation.x += (0 - p[k].rotation.x) * Math.min(1, dt * 10);
+    }
+    // Gentle breathing.
+    const breathe = Math.sin(performance.now() / 600) * 0.01;
+    p.torso.scale.y = 1 + breathe;
+  }
+}
+
+// ===== src/engine/player.js =====
+/* ============================================================
+   player.js — the little engineer you control, plus the camera
+   that follows behind them.
+
+   The character is a proper little person (see characters.js):
+   arms and legs that swing as they walk, a face, and the yellow
+   hard hat that marks them as the engineer.
+
+   Movement is "camera relative": pushing up on the stick always
+   walks the way the camera is looking, and pushing left goes to
+   the LEFT of the screen. That feels natural.
+   ============================================================ */
+
+
+class Player {
+  constructor(world, camera) {
+    this.world = world;
+    this.camera = camera;
+
+    // Build the character: blue shirt, dark trousers, yellow hard hat.
+    this.group = makeHuman({
+      skin: 0xe8b98a,
+      shirt: 0x2f7db0,
+      trousers: 0x3b3f4a,
+      hair: 0x2b1d14,
+      hat: 0xffd21e,
+    });
+    this.group.position.copy(world.spawn);
+    world.scene.add(this.group);
+
+    // Movement tuning.
+    this.speed = 6.2;            // metres per second
+    this.facing = 0;             // which way the body points (radians)
+
+    // The camera sits behind and above, looking at the player.
+    this.camOffset = new THREE.Vector3(0, 6.5, 11);
+    this._tmp = new THREE.Vector3();
+    this._forward = new THREE.Vector3();
+    this._right = new THREE.Vector3();
+    this._dir = new THREE.Vector3();
+    // Snap the camera to a good spot right away.
+    this._placeCamera(1);
+  }
+
+  // Move the player each frame based on input.
+  // moveVec is { x, y } from the Input class, each -1..1.
+  //   x: left(-) / right(+)     y: forward(-) / back(+)
+  update(dt, moveVec) {
+    // How hard is the stick / key pushed?
+    const mag = Math.hypot(moveVec.x, moveVec.y);
+    const walking = mag > 0.05;
+
+    if (walking) {
+      // Work out the camera's flat (ignore-height) forward direction.
+      const fwd = this._forward.set(0, 0, -1).applyQuaternion(this.camera.quaternion);
+      fwd.y = 0; fwd.normalize();
+
+      // "Right" is forward turned a quarter-turn clockwise when seen from
+      // above. For forward (fx, 0, fz) that is (-fz, 0, fx).
+      // (Getting this the wrong way round flips left and right!)
+      const right = this._right.set(-fwd.z, 0, fwd.x);
+
+      // Combine: up on stick = forward, sideways = strafe.
+      const dir = this._dir.set(0, 0, 0);
+      dir.addScaledVector(fwd, -moveVec.y);
+      dir.addScaledVector(right, moveVec.x);
+      dir.normalize();
+
+      // Where we WANT to be next.
+      const step = Math.min(mag, 1) * this.speed * dt;
+      const nx = this.group.position.x + dir.x * step;
+      const nz = this.group.position.z + dir.z * step;
+
+      // Only move if the world says that spot is walkable (rivers block).
+      // We test each axis so you can slide along an edge instead of sticking.
+      if (this.world.isWalkable(nx, this.group.position.z)) this.group.position.x = nx;
+      if (this.world.isWalkable(this.group.position.x, nz)) this.group.position.z = nz;
+
+      // Keep inside the map bounds.
+      this.group.position.x = THREE.MathUtils.clamp(this.group.position.x, -55, 55);
+      this.group.position.z = THREE.MathUtils.clamp(this.group.position.z, -55, 55);
+
+      // Turn the body smoothly to face the way we're walking.
+      this.facing = Math.atan2(dir.x, dir.z);
+      this.group.rotation.y = this._lerpAngle(this.group.rotation.y, this.facing, 0.2);
+
+      // A gentle bob so walking feels alive.
+      this.group.position.y = Math.abs(Math.sin(performance.now() / 120)) * 0.05;
+    } else {
+      this.group.position.y = 0;
+    }
+
+    // Swing arms and legs (or breathe when standing).
+    animateHuman(this.group, dt, walking, Math.min(mag, 1));
+
+    this._placeCamera(dt * 6);
+  }
+
+  // Smoothly follow behind the player.
+  _placeCamera(t) {
+    const target = this._tmp.copy(this.camOffset).add(this.group.position);
+    // Ease the camera toward the target (t larger = snappier).
+    this.camera.position.lerp(target, Math.min(1, t));
+    // Look at a point a little above the player's feet.
+    this.camera.lookAt(this.group.position.x, this.group.position.y + 1.2, this.group.position.z);
+  }
+
+  // Angle interpolation that takes the short way around the circle.
+  _lerpAngle(a, b, t) {
+    let diff = b - a;
+    while (diff > Math.PI) diff -= Math.PI * 2;
+    while (diff < -Math.PI) diff += Math.PI * 2;
+    return a + diff * t;
+  }
+
+  get position() { return this.group.position; }
+}
+
+// ===== src/jobs/bridge.js =====
+/* ============================================================
+   JOB 1 — THE BROKEN BRIDGE   (measurement, adding lengths)
+
+   The river has a gap of a known length. Planks of different
+   lengths lie on the bank. The player PICKS planks; the lengths
+   they choose must add up to exactly the gap.
+
+   The maths is needed to act: you can't cross until the numbers
+   add up, and when they do, the bridge builds itself.
+
+   Difficulty:
+     Class 3  L1: whole metres            (gap 7, planks 2 3 4 5)
+     Class 3  L2: bigger whole metres     (gap 13, planks 3..8)
+     Class 5  L1: fractions, unlike denominators (gap 6½)
+     Class 5  L2: also a cost + budget — pick the CHEAPEST that fits
+   ============================================================ */
+
+
+// ---- The metadata the rest of the game reads about this job ----
+const bridge = {
+  id: "bridge",
+  title: "The Broken Bridge",
+  villagerName: "Meera",
+  voice: 520, // a lighter voice (Hz) for her speech blips
+  where: "By the river, south end",
+  concept: "Adding lengths to make an exact total.",
+
+  // Build the villager (a person shape) + a floating job marker.
+  // Returns { villager, marker, position } for the interaction system.
+  build(world) {
+    const pos = world.points.bridgeVillager;
+    // Meera: a deep red dress, dark hair.
+    const villager = makeVillager({ shirt: 0xc94848, dress: true, hair: 0x1d1410 });
+    villager.position.set(pos.x, 0, pos.z);
+    villager.lookAt(world.spawn.x, 0, world.spawn.z);
+    world.scene.add(villager);
+
+    const marker = makeMarker();
+    marker.position.set(pos.x, 2.6, pos.z);
+    world.scene.add(marker);
+
+    return { villager, marker, position: pos };
+  },
+
+  // Called when the player interacts. `ctx` carries everything we need.
+  start(ctx) {
+    // Choose the puzzle for this profile + level.
+    const puzzle = makeBridgePuzzle(ctx.profile, ctx.level);
+    runBridgePuzzle(ctx, puzzle);
+  },
+};
+
+// ============================================================
+// Puzzle definitions per profile / level
+//
+// Difficulty is pitched about TWO classes above the child's grade:
+//   "Class 3" profile does work aimed at roughly Class 5,
+//   "Class 5" profile does work aimed at roughly Class 7.
+// So even the "Class 3" bridge uses fractions, not whole numbers,
+// and the "Class 5" bridge is a cost-optimisation problem from the start.
+// ============================================================
+function makeBridgePuzzle(profile, level) {
+  if (profile === "class3") {
+    // Aimed at ~Class 5: adding fractions with unlike denominators.
+    if (level >= 2) {
+      // A first taste of cost + budget (still friendly numbers).
+      return {
+        gap: 7.5,
+        budget: 200,
+        planks: [
+          { value: 1.25, cost: 35 },
+          { value: 2.25, cost: 55 },
+          { value: 2.5, cost: 60 },
+          { value: 3.25, cost: 80 },
+          { value: 3.75, cost: 95 },
+          { value: 5.0, cost: 110 },
+        ],
+      };
+    }
+    // Valid sets that make 6½: {2¾, 3¾} or {1¼, 2½, 2¾}
+    return { gap: 6.5, planks: whole([1.25, 2.5, 2.75, 3.75]), budget: null };
+  }
+
+  // "Class 5" profile — aimed at ~Class 7: cost optimisation under a budget.
+  if (level >= 2) {
+    // Harder: bigger gap, more planks, a real "cheapest valid set" search.
+    // Valid sets making 9¼ include {5, 3, 1¼}=₹206, {5, 2¼, 2}=₹210,
+    // {4, 3, 2¼}=₹212, {3½, 3, 2¾}=₹208 — cheapest is ₹206.
+    return {
+      gap: 9.25,
+      budget: 300,
+      planks: [
+        { value: 1.25, cost: 28 },
+        { value: 2.0, cost: 48 },
+        { value: 2.25, cost: 52 },
+        { value: 2.75, cost: 62 },
+        { value: 3.0, cost: 68 },
+        { value: 3.5, cost: 78 },
+        { value: 4.0, cost: 92 },
+        { value: 5.0, cost: 110 },
+      ],
+    };
+  }
+  // Class 5 L1: cheapest valid set under budget. Cheapest is {5, 2½}=₹170.
+  return {
+    gap: 7.5,
+    budget: 200,
+    planks: [
+      { value: 1.25, cost: 35 },
+      { value: 2.25, cost: 55 },
+      { value: 2.5, cost: 60 },
+      { value: 3.25, cost: 80 },
+      { value: 3.75, cost: 95 },
+      { value: 5.0, cost: 110 },
+    ],
+  };
+}
+
+// Small helper: wrap plain numbers as plank objects (no cost).
+function whole(values) {
+  return values.map((v) => ({ value: v, cost: null }));
+}
+
+// ============================================================
+// The interactive panel
+// ============================================================
+function runBridgePuzzle(ctx, puzzle) {
+  const picked = new Set(); // indexes of chosen planks
+  let wrongTries = 0;
+
+  const hasCost = puzzle.budget != null;
+
+  // Build the HTML for the panel.
+  const card = openPanel(`
+    <div class="job-title-row">
+      <h2>The Broken Bridge</h2>
+      <button class="ghost-btn" id="bridge-close">Leave</button>
+    </div>
+    <p class="job-brief">
+      Meera: "The river gap is <b>${prettyLength(puzzle.gap)}</b> across.
+      Pick planks whose lengths add up to <b>exactly</b> that — no more, no less."
+    </p>
+    <div class="job-goal">
+      Goal: choose planks that total <b>${prettyLength(puzzle.gap)}</b>.
+      ${hasCost ? `You have a budget of <b>₹${puzzle.budget}</b>. Find the <b>cheapest</b> set that fits the gap.` : ""}
+    </div>
+
+    <div class="section-label">Planks on the bank</div>
+    <div class="plank-bank" id="plank-bank"></div>
+
+    <div class="gap-meter">
+      <div class="gap-bar-outer"><div class="gap-bar-fill" id="gap-fill"></div></div>
+      <div class="gap-readout" id="gap-readout"></div>
+      <div class="picked-list" id="picked-list"></div>
+    </div>
+
+    <div class="hint" id="bridge-hint" hidden></div>
+    <div class="worked-example" id="bridge-example" hidden></div>
+
+    <div class="btn-row">
+      <button class="big-btn" id="bridge-build">Lay the planks</button>
+      <button class="ghost-btn" id="bridge-clear">Clear</button>
+    </div>
+    <div id="bridge-solved"></div>
+  `);
+
+  const bank = card.querySelector("#plank-bank");
+  const fill = card.querySelector("#gap-fill");
+  const readout = card.querySelector("#gap-readout");
+  const pickedList = card.querySelector("#picked-list");
+  const hintEl = card.querySelector("#bridge-hint");
+  const exampleEl = card.querySelector("#bridge-example");
+  const buildBtn = card.querySelector("#bridge-build");
+
+  // Draw one button per plank.
+  puzzle.planks.forEach((plank, i) => {
+    const btn = document.createElement("button");
+    btn.className = "plank";
+    btn.innerHTML = `${prettyLength(plank.value)}${hasCost ? `<small>₹${plank.cost}</small>` : ""}`;
+    btn.addEventListener("click", () => {
+      if (picked.has(i)) picked.delete(i);
+      else picked.add(i);
+      btn.classList.toggle("picked", picked.has(i));
+      ctx.audio.playPick();
+      updateMeter();
+    });
+    bank.appendChild(btn);
+  });
+
+  // Recompute the running total and update the bar + text.
+  function currentTotal() {
+    let sum = 0;
+    for (const i of picked) sum += puzzle.planks[i].value;
+    return +sum.toFixed(2);
+  }
+  function currentCost() {
+    let c = 0;
+    for (const i of picked) c += puzzle.planks[i].cost || 0;
+    return c;
+  }
+  function updateMeter() {
+    const total = currentTotal();
+    const pct = Math.min(100, (total / puzzle.gap) * 100);
+    fill.style.width = pct + "%";
+    fill.classList.toggle("over", total > puzzle.gap + 0.001);
+    let text = `Chosen: ${prettyLength(total)} of ${prettyLength(puzzle.gap)}`;
+    if (hasCost) text += `  •  Cost: ₹${currentCost()} / ₹${puzzle.budget}`;
+    readout.textContent = text;
+    // List the chosen planks.
+    const names = [...picked].map((i) => prettyLength(puzzle.planks[i].value));
+    pickedList.textContent = names.length ? "Planks: " + names.join(" + ") : "No planks chosen yet.";
+  }
+  updateMeter();
+
+  // ---- Buttons ----
+  card.querySelector("#bridge-close").addEventListener("click", () => closePanel());
+  card.querySelector("#bridge-clear").addEventListener("click", () => {
+    picked.clear();
+    bank.querySelectorAll(".plank").forEach((b) => b.classList.remove("picked"));
+    hintEl.hidden = true;
+    updateMeter();
+  });
+
+  buildBtn.addEventListener("click", () => {
+    ctx.countAttempt(); // every "Lay the planks" is one attempt
+    const total = currentTotal();
+
+    // Case 1: nothing (or wrong total) — explain and let them retry.
+    if (!sameLength(total, puzzle.gap)) {
+      wrongTries++;
+      showHint();
+      ctx.audio.playRetry();
+      return;
+    }
+
+    // Case 2 (Class 5 L2 only): right length, but is it the cheapest?
+    if (hasCost) {
+      const cost = currentCost();
+      if (cost > puzzle.budget) {
+        wrongTries++;
+        hintEl.hidden = false;
+        hintEl.innerHTML = `That reaches the gap, but it costs ₹${cost}, over the ₹${puzzle.budget} budget. Look for a cheaper set of planks that still adds to ${prettyLength(puzzle.gap)}.`;
+        ctx.audio.playRetry();
+        return;
+      }
+      const cheapest = cheapestValidCost(puzzle);
+      if (cost > cheapest) {
+        wrongTries++;
+        hintEl.hidden = false;
+        hintEl.innerHTML = `This fits the gap and the budget (₹${cost}) — nice. But there is a cheaper set that also adds to ${prettyLength(puzzle.gap)}. Fewer, longer planks often cost less. Try again.`;
+        ctx.audio.playRetry();
+        return;
+      }
+    }
+
+    // Solved!
+    solve();
+  });
+
+  // Show a short reasoning hint. After 2 wrong tries, add a worked example
+  // that uses DIFFERENT numbers (never the answer).
+  function showHint() {
+    hintEl.hidden = false;
+    const total = currentTotal();
+    if (total === 0) {
+      hintEl.textContent = `No planks chosen yet. Tap some planks so their lengths add up to ${prettyLength(puzzle.gap)}.`;
+    } else if (total < puzzle.gap) {
+      const short = +(puzzle.gap - total).toFixed(2);
+      hintEl.textContent = `Close — you are ${prettyLength(short)} short. You need ${prettyLength(short)} more length. Add another plank.`;
+    } else {
+      const over = +(total - puzzle.gap).toFixed(2);
+      hintEl.textContent = `That is ${prettyLength(over)} too long — the bridge would stick out. Swap a plank for a shorter one.`;
+    }
+
+    if (wrongTries >= 2) {
+      exampleEl.hidden = false;
+      exampleEl.innerHTML = workedExample(puzzle);
+    }
+  }
+
+  function solve() {
+    ctx.audio.playSuccess();
+    // Clear any leftover hint / example from earlier tries.
+    hintEl.hidden = true;
+    exampleEl.hidden = true;
+    // Build the real bridge in the 3D world using the chosen plank lengths.
+    const lengths = [...picked].map((i) => puzzle.planks[i].value);
+    ctx.world.buildBridgeVisual(lengths, puzzle.gap);
+
+    // Show a success message inside the panel.
+    const solvedBox = card.querySelector("#bridge-solved");
+    solvedBox.innerHTML = `
+      <div class="solved-banner">
+        <b>The bridge is up.</b> Meera: "You added those lengths just right.
+        The far bank is open now — the school is that way. Thank you, Engineer."
+        <div class="btn-row"><button class="big-btn" id="bridge-done">Cross the bridge</button></div>
+      </div>`;
+    buildBtn.disabled = true;
+    card.querySelector("#bridge-done").addEventListener("click", () => {
+      closePanel();
+      ctx.onSolve(); // record progress, bump rank, etc.
+    });
+  }
+}
+
+// A worked example with DIFFERENT numbers than the puzzle, so it teaches
+// the method without handing over the answer.
+function workedExample(puzzle) {
+  if (puzzle.budget != null) {
+    // A cost + budget puzzle: teach "reach the length, then compare prices".
+    return `<b>Worked example (different numbers):</b> Suppose the gap is 6 m,
+      the budget is ₹150, and two sets both fit: 2 + 4 (₹120) and 1 + 2 + 3 (₹140).
+      Both reach 6 m, but the first costs less. So first make the length exact,
+      then pick the set that costs the fewest rupees.`;
+  }
+  // A plain fractions puzzle.
+  return `<b>Worked example (different numbers):</b> Suppose the gap is 5¼ m
+      with planks 1½, 2¼, 3, 3¾. Change to quarters: 1½ = 6/4, 2¼ = 9/4, 3¾ = 15/4.
+      The gap is 21/4. Then 6/4 + 15/4 = 21/4 — so 1½ + 3¾ = 5¼. Line up the
+      denominators, then add the top numbers.`;
+}
+
+// Work out the cheapest cost among all plank sets that exactly fill the gap.
+// (Small brute-force over subsets — fine for a handful of planks.)
+function cheapestValidCost(puzzle) {
+  const n = puzzle.planks.length;
+  let best = Infinity;
+  for (let mask = 1; mask < (1 << n); mask++) {
+    let sum = 0, cost = 0;
+    for (let i = 0; i < n; i++) {
+      if (mask & (1 << i)) { sum += puzzle.planks[i].value; cost += puzzle.planks[i].cost || 0; }
+    }
+    if (sameLength(+sum.toFixed(2), puzzle.gap) && cost <= puzzle.budget) {
+      best = Math.min(best, cost);
+    }
+  }
+  return best;
+}
+
+// ============================================================
+// Small shared shapes: a villager figure and a bobbing marker.
+// (Kept here so every job's people are built the same way.)
+// ============================================================
+
+// A villager is a full little person (see engine/characters.js).
+// `look` sets their colours, e.g. { shirt, trousers, hair, dress }.
+function makeVillager(look = {}) {
+  return makeHuman({ skin: 0xdba274, hair: 0x1d1410, ...look });
+}
+
+function makeMarker() {
+  // A floating exclamation made of a sphere over a cone.
+  const g = new THREE.Group();
+  const mat = new THREE.MeshStandardMaterial({ color: 0xffce3a, emissive: 0x7a5b00, emissiveIntensity: 0.4, flatShading: true });
+  const cone = new THREE.Mesh(new THREE.ConeGeometry(0.22, 0.5, 6), mat);
+  cone.position.y = 0.3;
+  const dot = new THREE.Mesh(new THREE.SphereGeometry(0.12, 8, 8), mat);
+  dot.position.y = -0.05;
+  g.add(cone, dot);
+  g.userData.isMarker = true;
+  return g;
+}
+
+// ===== src/jobs/school.js =====
+/* ============================================================
+   JOB 2 — SCHOOL ELECTRICITY   (circuits, conductors, series/parallel)
+
+   The school is dark. A circuit board has a battery, bulbs, and
+   empty gaps. The player fills the gaps from a tray of parts.
+   Some parts are CONDUCTORS (copper, iron) and let electricity
+   flow; some are INSULATORS (rubber, wood) and do not.
+
+   To place a part: DRAG it from the tray into a gap. The drag uses
+   Pointer Events, so the same code works with a mouse on a laptop and
+   a finger on a phone. Tap a filled gap to take the part back out.
+
+   Difficulty is pitched about two classes up, so both profiles do
+   series-vs-parallel; the flags below (not the profile) drive the UI:
+     Class 3 L1: three bulbs — choose SERIES or PARALLEL (parallel wins).
+     Class 3 L2: parallel plus a switch per room.
+     Class 5 L1: parallel plus a switch per room.
+     Class 5 L2: an extra shared gap to reason about, plus switches.
+   ============================================================ */
+
+
+const school = {
+  id: "school",
+  title: "The Dark School",
+  villagerName: "Ravi",
+  voice: 300, // a deeper voice (Hz) for his speech blips
+  where: "Across the bridge, north side",
+  concept: "Completing a circuit; conductors, and series vs parallel.",
+
+  build(world) {
+    const pos = world.points.schoolVillager;
+    // Ravi the teacher: blue shirt, grey trousers.
+    const villager = makeVillager({ shirt: 0x3f6f9f, trousers: 0x555b66 });
+    villager.position.set(pos.x, 0, pos.z);
+    villager.lookAt(0, 0, 0);
+    world.scene.add(villager);
+
+    const marker = makeMarker();
+    marker.position.set(pos.x, 2.6, pos.z);
+    world.scene.add(marker);
+
+    return { villager, marker, position: pos };
+  },
+
+  start(ctx) {
+    const puzzle = makeSchoolPuzzle(ctx.profile, ctx.level);
+    runSchoolPuzzle(ctx, puzzle);
+  },
+};
+
+// ---- Puzzle shape per profile / level ----
+//
+// Pitched about TWO classes up. So the "Class 3" profile starts straight
+// at series-vs-parallel (roughly Class 5), and the "Class 5" profile does
+// parallel + a switch per room and, at Level 2, an extra shared gap that
+// must also be a conductor (roughly Class 7).
+function makeSchoolPuzzle(profile, level) {
+  if (profile === "class3") {
+    // ~Class 5: three bulbs, choose series vs parallel.
+    if (level >= 2) return { slots: 3, bulbs: 3, needParallel: true, switches: 3 };
+    return { slots: 3, bulbs: 3, needParallel: true, switches: 0 };
+  }
+  // ~Class 7: parallel + individual switches, then more gaps to reason about.
+  if (level >= 2) return { slots: 4, bulbs: 3, needParallel: true, switches: 3 };
+  return { slots: 3, bulbs: 3, needParallel: true, switches: 3 };
+}
+
+// The parts available in the tray. Enough conductors to finish, plus a
+// few insulators as tempting-but-wrong choices.
+function makeParts() {
+  return [
+    { name: "Copper wire", conductor: true },
+    { name: "Copper wire", conductor: true },
+    { name: "Iron nail", conductor: true },
+    { name: "Copper wire", conductor: true },
+    { name: "Aluminium strip", conductor: true },
+    { name: "Rubber tube", conductor: false },
+    { name: "Wooden peg", conductor: false },
+    { name: "Plastic clip", conductor: false },
+  ];
+}
+
+function runSchoolPuzzle(ctx, puzzle) {
+  const parts = makeParts();
+  const slots = new Array(puzzle.slots).fill(null); // each holds a part index
+  let connection = "series";    // "series" or "parallel" (class 5)
+  const switches = new Array(puzzle.switches).fill(false); // all off to start
+
+  // Whether this puzzle needs the series/parallel chooser. (Driven by the
+  // puzzle, not the profile, so difficulty tiers can move between profiles.)
+  const needsParallel = puzzle.needParallel;
+
+  const card = openPanel(`
+    <div class="job-title-row">
+      <h2>The Dark School</h2>
+      <button class="ghost-btn" id="sch-close">Leave</button>
+    </div>
+    <p class="job-brief" id="sch-brief"></p>
+    <div class="job-goal" id="sch-goal"></div>
+
+    <div class="circuit-wrap">
+      <div class="circuit-board">
+        <div class="section-label" style="opacity:.7;color:#cfe">Circuit board</div>
+        <div class="slot-row"><div class="comp-battery">🔋 Battery</div></div>
+        ${needsParallel ? `<div class="slot-row" id="conn-row"></div>` : ""}
+        <div class="slot-row" id="slot-row"></div>
+        ${puzzle.switches ? `<div class="slot-row" id="switch-row"></div>` : ""}
+        <div class="slot-row" id="bulb-row"></div>
+      </div>
+
+      <div class="parts-tray">
+        <div class="section-label">Parts tray</div>
+        <div id="parts"></div>
+        <p class="part-hint">Drag a part into a gap. Tap a filled gap to take the part back.</p>
+      </div>
+    </div>
+
+    <div class="hint" id="sch-hint" hidden></div>
+
+    <div class="btn-row">
+      <button class="big-btn" id="sch-test">Test the circuit</button>
+    </div>
+    <div id="sch-solved"></div>
+  `);
+
+  const brief = card.querySelector("#sch-brief");
+  const goal = card.querySelector("#sch-goal");
+  const slotRow = card.querySelector("#slot-row");
+  const bulbRow = card.querySelector("#bulb-row");
+  const partsEl = card.querySelector("#parts");
+  const hintEl = card.querySelector("#sch-hint");
+
+  // ---- Intro text depends on the level ----
+  if (!needsParallel) {
+    brief.innerHTML = `Ravi: "The classroom light won't come on. There's a gap in the wire.
+      Fill it so electricity can flow all the way round — but mind you, not every material carries electricity."`;
+    goal.innerHTML = `Goal: fill <b>every gap</b> with a material that lets electricity flow (a <b>conductor</b>).`;
+  } else if (!puzzle.switches) {
+    brief.innerHTML = `Ravi: "Three classrooms, three bulbs, all dark. Wire them so all three glow at <b>full brightness</b> together.
+      Think about whether one line through all of them, or a branch each, shares the battery best."`;
+    goal.innerHTML = `Goal: fill the gaps with conductors, then choose <b>series</b> or <b>parallel</b> so all three bulbs are <b>bright and equal</b>.`;
+  } else {
+    brief.innerHTML = `Ravi: "Now each classroom needs its own switch, so a teacher can turn just their light on.
+      Wire it up, pick the connection, and turn every switch on."`;
+    goal.innerHTML = `Goal: conductors in every gap, the right connection, and <b>all switches on</b> so every bulb is bright.`;
+  }
+
+  // ---- Connection chooser (class 5) ----
+  if (needsParallel) {
+    const connRow = card.querySelector("#conn-row");
+    ["series", "parallel"].forEach((mode) => {
+      const b = document.createElement("button");
+      b.className = "ghost-btn";
+      b.textContent = mode === "series" ? "Series (one line)" : "Parallel (a branch each)";
+      b.dataset.mode = mode;
+      b.addEventListener("click", () => {
+        connection = mode;
+        connRow.querySelectorAll("button").forEach((x) => x.classList.remove("picked"));
+        b.classList.add("picked");
+        b.style.outline = "3px solid #7cae59";
+        connRow.querySelectorAll("button").forEach((x) => { if (x !== b) x.style.outline = "none"; });
+        render();
+      });
+      connRow.appendChild(b);
+    });
+  }
+
+  // ---- Switches (class 5 L2) ----
+  if (puzzle.switches) {
+    const switchRow = card.querySelector("#switch-row");
+    for (let i = 0; i < puzzle.switches; i++) {
+      const b = document.createElement("button");
+      b.className = "ghost-btn";
+      b.addEventListener("click", () => {
+        switches[i] = !switches[i];
+        b.textContent = `Switch ${i + 1}: ${switches[i] ? "ON" : "off"}`;
+        b.style.background = switches[i] ? "#d3f0cf" : "#fff";
+        render();
+      });
+      b.textContent = `Switch ${i + 1}: off`;
+      switchRow.appendChild(b);
+    }
+  }
+
+  // ---- Draw the parts tray ----
+  // Each unused part can be DRAGGED into a gap on the circuit board.
+  // Dragging uses Pointer Events, so the exact same code works with a mouse
+  // on a laptop and with a finger on a phone.
+  function renderParts() {
+    partsEl.innerHTML = "";
+    parts.forEach((part, i) => {
+      const used = slots.includes(i);
+      const el = document.createElement("div");
+      el.className = "part " + (part.conductor ? "part-conductor" : "part-insulator") + (used ? " used" : "");
+      el.innerHTML = `${part.name}<div class="part-hint">${part.conductor ? "metal — carries electricity" : "not metal — blocks it"}</div>`;
+      if (!used) {
+        el.style.cursor = "grab";
+        // Begin a drag when the child presses on this part.
+        el.addEventListener("pointerdown", (e) => beginDrag(e, i, part));
+      }
+      partsEl.appendChild(el);
+    });
+  }
+
+  // ---- Draw the gaps (drop targets) ----
+  function renderSlots() {
+    slotRow.innerHTML = "";
+    for (let s = 0; s < puzzle.slots; s++) {
+      const el = document.createElement("div");
+      const partIndex = slots[s];
+      el.className = "comp-slot" + (partIndex != null ? " filled" : "");
+      el.dataset.slot = String(s); // so a drop can find which gap it landed on
+      if (partIndex != null) {
+        el.textContent = parts[partIndex].name;
+        el.style.background = parts[partIndex].conductor ? "#d9c07a" : "#d7c3b0";
+        el.style.color = "#2c2417";
+        // Tap a filled gap to pull the part back out.
+        el.addEventListener("click", () => { slots[s] = null; render(); });
+      } else {
+        el.textContent = "drop here";
+      }
+      slotRow.appendChild(el);
+    }
+  }
+
+  // ---- The drag itself ----
+  // We make a floating "ghost" of the part that follows the pointer, and when
+  // the pointer is let go over a gap, we drop the part into that gap.
+  let ghost = null;
+  function beginDrag(e, partIndex, part) {
+    e.preventDefault();
+    // Build the ghost that follows the finger / cursor.
+    ghost = document.createElement("div");
+    ghost.className = "part " + (part.conductor ? "part-conductor" : "part-insulator");
+    ghost.textContent = part.name;
+    ghost.style.position = "fixed";
+    ghost.style.pointerEvents = "none"; // so elementFromPoint sees the gap, not the ghost
+    ghost.style.zIndex = "999";
+    ghost.style.opacity = "0.9";
+    ghost.style.width = "110px";
+    document.body.appendChild(ghost);
+    moveGhost(e.clientX, e.clientY);
+
+    const onMove = (ev) => {
+      moveGhost(ev.clientX, ev.clientY);
+      highlightSlotUnder(ev.clientX, ev.clientY);
+    };
+    const onUp = (ev) => {
+      window.removeEventListener("pointermove", onMove);
+      window.removeEventListener("pointerup", onUp);
+      const slotEl = slotUnder(ev.clientX, ev.clientY);
+      if (ghost) { ghost.remove(); ghost = null; }
+      clearSlotHighlights();
+      if (slotEl) {
+        const s = Number(slotEl.dataset.slot);
+        if (slots[s] == null) {          // only drop into an empty gap
+          slots[s] = partIndex;
+          ctx.audio.playPick();
+        }
+      }
+      render();
+    };
+    window.addEventListener("pointermove", onMove);
+    window.addEventListener("pointerup", onUp);
+  }
+
+  function moveGhost(x, y) {
+    if (ghost) { ghost.style.left = x - 55 + "px"; ghost.style.top = y - 24 + "px"; }
+  }
+  function slotUnder(x, y) {
+    const el = document.elementFromPoint(x, y);
+    const slot = el && el.closest(".comp-slot");
+    // Ignore already-filled gaps.
+    return slot && slot.dataset.slot != null && slots[Number(slot.dataset.slot)] == null ? slot : null;
+  }
+  function highlightSlotUnder(x, y) {
+    clearSlotHighlights();
+    const slot = slotUnder(x, y);
+    if (slot) slot.style.outline = "3px solid #7cae59";
+  }
+  function clearSlotHighlights() {
+    slotRow.querySelectorAll(".comp-slot").forEach((s) => (s.style.outline = "none"));
+  }
+
+  // ---- Draw the bulbs at whatever brightness the circuit gives ----
+  function renderBulbs() {
+    bulbRow.innerHTML = "";
+    const b = brightness();
+    for (let i = 0; i < puzzle.bulbs; i++) {
+      const el = document.createElement("div");
+      el.className = "comp-bulb" + (b === "bright" ? " lit" : "");
+      if (b === "dim") { el.classList.add("lit"); el.style.opacity = "0.55"; el.style.boxShadow = "0 0 6px #ffe066"; }
+      el.textContent = b === "off" ? "💡 off" : b === "dim" ? "💡 dim" : "💡 bright";
+      bulbRow.appendChild(el);
+    }
+  }
+
+  // Work out how bright the bulbs are, given the current wiring.
+  // Returns "off", "dim", or "bright".
+  function brightness() {
+    // Every gap must hold a CONDUCTOR, or no current flows at all.
+    const allFilledWithConductor =
+      slots.every((p) => p != null && parts[p].conductor);
+    if (!allFilledWithConductor) return "off";
+
+    // If there are switches, every switch must be on.
+    if (puzzle.switches && !switches.every(Boolean)) return "off";
+
+    // Class 3: a complete loop means the bulb is on.
+    if (!needsParallel) return "bright";
+
+    // Class 5: series shares the battery (dim); parallel gives full brightness.
+    return connection === "parallel" ? "bright" : "dim";
+  }
+
+  function render() {
+    renderParts();
+    renderSlots();
+    renderBulbs();
+  }
+  render();
+
+  // ---- Buttons ----
+  card.querySelector("#sch-close").addEventListener("click", () => closePanel());
+
+  card.querySelector("#sch-test").addEventListener("click", () => {
+    ctx.countAttempt();
+    const b = brightness();
+    if (b === "bright") { solve(); return; }
+
+    // Not solved — give a reason that teaches, then let them retry.
+    hintEl.hidden = false;
+    ctx.audio.playRetry();
+
+    // Which gap is empty or wrongly filled?
+    const badSlot = slots.findIndex((p) => p == null || !parts[p].conductor);
+    if (badSlot !== -1) {
+      const p = slots[badSlot];
+      if (p == null) {
+        hintEl.textContent = `Gap ${badSlot + 1} is still open, so the loop is broken and no electricity can flow. Fill every gap.`;
+      } else {
+        hintEl.innerHTML = `Gap ${badSlot + 1} has a <b>${parts[p].name}</b>. That's an insulator — electricity can't pass through rubber or wood. Swap it for a metal part.`;
+      }
+      return;
+    }
+    if (puzzle.switches && !switches.every(Boolean)) {
+      hintEl.textContent = `The wiring is good, but a switch is still off — an open switch breaks that branch. Turn every switch on.`;
+      return;
+    }
+    if (needsParallel && connection === "series") {
+      hintEl.innerHTML = `The bulbs light, but they are <b>dim</b>. In series, all three share one push from the battery, so each gets only a third. Give each bulb its own branch — try <b>parallel</b>.`;
+      return;
+    }
+    hintEl.textContent = `Something in the loop is still open. Check every gap and switch.`;
+  });
+
+  function solve() {
+    ctx.audio.playSuccess();
+    hintEl.hidden = true; // clear any leftover hint from earlier tries
+    ctx.world.lightSchool();
+    ctx.audio.playBell(); // the school bell rings
+
+    const box = card.querySelector("#sch-solved");
+    box.innerHTML = `
+      <div class="solved-banner">
+        <b>The lights come on.</b> Ravi: "Listen — the bell's ringing. The children can see their books again.
+        ${needsParallel ? "A branch each, so every bulb shines full and bright." : "A full loop, and the current flows."}
+        Thank you, Engineer."
+        <div class="btn-row"><button class="big-btn" id="sch-done">Finish up</button></div>
+      </div>`;
+    card.querySelector("#sch-test").disabled = true;
+    card.querySelector("#sch-done").addEventListener("click", () => {
+      closePanel();
+      ctx.onSolve();
+    });
+  }
+}
+
+// ===== src/main.js =====
+/* ============================================================
+   main.js — starts the game and runs the loop that ties every
+   piece together: world, player, input, UI, dialogue, and jobs.
+
+   Reading order for a curious beginner:
+     1. save.js      — how progress is remembered
+     2. world.js     — how the village is built
+     3. player.js    — the character + camera
+     4. jobs/*.js     — one file per villager problem
+     5. this file    — glues it together
+   ============================================================ */
+
+
+const Audio = { playSuccess, playRetry, playBell, playPick, playTalkBlip };
+
+
+// A short friendly greeting each villager says before their puzzle opens.
+const GREETINGS = {
+  bridge: ["You must be the new engineer.", "Our bridge washed away in the rains. Can you help us cross?"],
+  school: ["Good you made it across.", "The school has gone dark. The children can't see their books."],
+};
+
+// ============================================================
+// Game — holds all the live objects and the main loop.
+// ============================================================
+class Game {
+  constructor(profile) {
+    this.profile = profile;
+    this.profileLabel = profile === "class3" ? "Class 3" : "Class 5";
+    this.progress = loadProgress(profile);
+
+    // The list of jobs in this build. (Jobs 3–6 slot in here later.)
+    this.jobs = [bridge, school];
+
+    this._setupRenderer();
+    this.world = new World();
+    this.player = new Player(this.world, this.camera);
+    this.input = new Input();
+    this.dialogue = new Dialogue();
+    this.ui = new UI(this);
+    this.ui.refreshRank();
+
+    // Show touch controls only on touch devices. On a laptop, show the
+    // keyboard reminder for a few seconds instead, then fade it away.
+    if (this.input.isTouch) {
+      document.getElementById("touch-controls").hidden = false;
+    } else {
+      const hint = document.getElementById("controls-hint");
+      hint.hidden = false;
+      setTimeout(() => hint.classList.add("fade"), 9000);
+      setTimeout(() => (hint.hidden = true), 9800);
+    }
+
+    this._buildJobs();
+    this._buildInteractables();
+
+    this.clock = new THREE.Clock();
+    this._loop = this._loop.bind(this);
+    requestAnimationFrame(this._loop);
+
+    // Keep the view correct on resize / phone rotation.
+    window.addEventListener("resize", () => this._onResize());
+    window.addEventListener("orientationchange", () => setTimeout(() => this._onResize(), 200));
+  }
+
+  _setupRenderer() {
+    this.canvas = document.getElementById("game-canvas");
+    this.renderer = new THREE.WebGLRenderer({ canvas: this.canvas, antialias: true });
+    this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2)); // cap for phones
+    this.renderer.setSize(window.innerWidth, window.innerHeight);
+    this.renderer.shadowMap.enabled = true;
+    this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+
+    this.camera = new THREE.PerspectiveCamera(55, window.innerWidth / window.innerHeight, 0.1, 200);
+  }
+
+  // Ask each job to build its villager + marker in the world.
+  _buildJobs() {
+    for (const job of this.jobs) {
+      const built = job.build(this.world);
+      job._marker = built.marker;
+      job._villager = built.villager;
+      job._pos = built.position;
+      // Hide the "!" marker for jobs already finished on this profile.
+      if (this.progress.jobsDone.includes(job.id)) job._marker.visible = false;
+    }
+  }
+
+  // Build the list of things the player can walk up to and press E on.
+  _buildInteractables() {
+    this.interactables = [];
+
+    // The signboard opens the notebook (it "shows which jobs are open").
+    this.interactables.push({
+      pos: this.world.points.signpost,
+      radius: 3,
+      prompt: () => "Read the signboard",
+      activate: () => this.ui.openNotebook(),
+    });
+
+    // Each job's villager.
+    for (const job of this.jobs) {
+      this.interactables.push({
+        pos: job._pos,
+        radius: 2.6,
+        prompt: () => {
+          const done = this.progress.jobsDone.includes(job.id);
+          return done ? `Talk to ${job.villagerName} (try the harder job)` : `Talk to ${job.villagerName}`;
+        },
+        activate: () => this._startJob(job),
+      });
+    }
+  }
+
+  // Begin a job: short greeting, then open its puzzle panel.
+  _startJob(job) {
+    const done = this.progress.jobsDone.includes(job.id);
+    const level = done ? 2 : 1; // replaying a done job gives the harder version
+
+    const ctx = {
+      profile: this.profile,
+      level,
+      world: this.world,
+      audio: Audio,
+      // Count one attempt against this job (for the parent view).
+      countAttempt: () => countAttempt(this.profile, this.progress, job.id),
+      // Called when the puzzle is solved.
+      onSolve: () => this._completeJob(job),
+    };
+
+    const greet = GREETINGS[job.id] || ["Thanks for coming."];
+    // Each villager has their own voice pitch for the speech blips.
+    this.dialogue.say(job.villagerName, greet, () => job.start(ctx), { pitch: job.voice });
+  }
+
+  // Record a finished job, update rank + marker.
+  _completeJob(job) {
+    markJobDone(this.profile, this.progress, job.id);
+    this.ui.refreshRank();
+    job._marker.visible = false;
+  }
+
+  // Is some menu/panel open? If so we pause movement + interaction.
+  _uiBlocking() {
+    return (
+      this.dialogue.active ||
+      panelOpen() ||
+      !document.getElementById("notebook").hidden ||
+      !document.getElementById("parent-view").hidden
+    );
+  }
+
+  // ---- The main loop, called ~60 times a second ----
+  _loop() {
+    requestAnimationFrame(this._loop);
+    const dt = Math.min(this.clock.getDelta(), 0.05); // clamp big gaps (tab switch)
+    const elapsed = this.clock.elapsedTime;
+
+    const blocked = this._uiBlocking();
+
+    // Move the player only when no menu is up.
+    this.player.update(dt, blocked ? { x: 0, y: 0 } : this.input.move);
+    this.world.update(dt, elapsed);
+
+    // Bob and spin the job markers so they draw the eye, and let each
+    // villager breathe and turn to face you when you come close.
+    const pp = this.player.position;
+    for (const job of this.jobs) {
+      if (job._marker && job._marker.visible) {
+        job._marker.rotation.y += dt * 1.5;
+        job._marker.position.y = 2.6 + Math.sin(elapsed * 2 + job._pos.x) * 0.15;
+      }
+      if (job._villager) {
+        animateHuman(job._villager, dt, false);
+        const dx = pp.x - job._villager.position.x;
+        const dz = pp.z - job._villager.position.z;
+        if (Math.hypot(dx, dz) < 7) {
+          // Smoothly turn to look at the player (front of the figure is +Z).
+          const want = Math.atan2(dx, dz);
+          let diff = want - job._villager.rotation.y;
+          while (diff > Math.PI) diff -= Math.PI * 2;
+          while (diff < -Math.PI) diff += Math.PI * 2;
+          job._villager.rotation.y += diff * Math.min(1, dt * 4);
+        }
+      }
+    }
+
+    // Find the nearest thing we could interact with.
+    if (!blocked) {
+      const near = this._nearestInteractable();
+      if (near) {
+        this.ui.setInteractPrompt(near.prompt() + (this.input.isTouch ? "" : "  (E)"));
+        if (this.input.interactPressed()) near.activate();
+      } else {
+        this.ui.setInteractPrompt(null);
+        this.input.interactPressed(); // clear any stray press
+      }
+    } else {
+      this.ui.setInteractPrompt(null);
+    }
+
+    this.renderer.render(this.world.scene, this.camera);
+  }
+
+  _nearestInteractable() {
+    const p = this.player.position;
+    let best = null, bestDist = Infinity;
+    for (const it of this.interactables) {
+      const d = Math.hypot(p.x - it.pos.x, p.z - it.pos.z);
+      if (d < it.radius && d < bestDist) { best = it; bestDist = d; }
+    }
+    return best;
+  }
+
+  _onResize() {
+    this.camera.aspect = window.innerWidth / window.innerHeight;
+    this.camera.updateProjectionMatrix();
+    this.renderer.setSize(window.innerWidth, window.innerHeight);
+  }
+}
+
+// ============================================================
+// Boot sequence: loading screen -> start screen -> game
+// ============================================================
+function boot() {
+  const loadingScreen = document.getElementById("loading-screen");
+  // If anything goes wrong while starting, say so on screen instead of
+  // leaving a frozen loading bar.
+  window.addEventListener("error", (e) => {
+    const t = loadingScreen.querySelector(".loading-text");
+    if (t && !loadingScreen.hidden) t.textContent = "Something went wrong while loading: " + (e.message || "unknown error") + ". Try reloading the page.";
+  });
+  const loadingFill = document.getElementById("loading-fill");
+  const startScreen = document.getElementById("start-screen");
+  const hud = document.getElementById("hud");
+
+  // A short fake progress bar so the first paint feels intentional.
+  let pct = 0;
+  const timer = setInterval(() => {
+    pct = Math.min(100, pct + 20);
+    loadingFill.style.width = pct + "%";
+    if (pct >= 100) {
+      clearInterval(timer);
+      loadingScreen.hidden = true;
+      startScreen.hidden = false;
+    }
+  }, 120);
+
+  // Profile buttons start the game.
+  document.querySelectorAll(".profile-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const profile = btn.getAttribute("data-profile");
+      startScreen.hidden = true;
+      hud.hidden = false;
+      // Create the game. (One game per page load.)
+      window.__game = new Game(profile);
+    });
+  });
+}
+
+boot();
+
+</script>

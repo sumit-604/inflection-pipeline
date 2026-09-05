@@ -1,0 +1,49 @@
+stage: B08-promoter
+company: "DIFFNKG"
+run_date: "2026-09-05"
+model: claude-sonnet-5
+status: partial
+input_gaps:
+  - {item: "SEBI RHP/DRHP litigation schedule (case-level detail)", severity: MEDIUM, note: "sebi.gov.in blocked by network egress proxy this session; only a generic search-engine summary of boilerplate RHP risk-factor language was obtained, no case names/forums/amounts"}
+  - {item: "Multi-quarter shareholding pattern and pledge trend (beyond latest snapshot)", severity: LOW, note: "AR discloses only director-level holding at one date; BSE/NSE shareholding-pattern filings absent from corpus; only a single most-recent web-search snapshot (69.76% promoter, 0.00% pledge) was obtainable"}
+  - {item: "Basis for 'Dr.' honorific held by Nitin Garg", severity: LOW, note: "no source found confirming degree type; not adverse, genuinely unresolved"}
+flags: []
+verdict: "CAUTION"
+scorecard: {clean: 5, caution: 5, red: 0}
+deal_breakers: []
+adverse_findings:
+  - {finding: "Family directors hold 64.12% combined and 3 of 6 board seats; MD chairs the Risk Management Committee, the one statutory committee not chaired by an independent director", evidence_tier: "VERIFIED", source: "Annual Report 2025-26, Corporate Governance Report Shareholding of Directors table [PAGE 109]; Committee structure disclosure [PAGE 38 area, per B03]", date: "31-Mar-2026"}
+  - {finding: "~35% of FY26 CSR budget routed through N.K. Garg Foundation and BTSG Awareness Foundation, both controlled/founded by family directors who sit on the Diffusion board", evidence_tier: "VERIFIED", source: "AR Board's Report CSR Annexure, cross-referenced by B03 Phase 2 extension", date: "FY26"}
+  - {finding: "CEO resigned after ~1 year tenure ('personal reasons'), same board-meeting date as the Tejorup Sunmay stake approval, no successor named", evidence_tier: "MEDIA REPORTED", source: "TradingView/Reuters wire, Whalesbook, Prysm aggregator headlines (convergent on 'personal reasons', no dissenting account)", date: "6-Feb-2026"}
+  - {finding: "Non-audit (certification) fees exceed audit fees in both FY25 and FY26, ratio widening 1.10x to 1.47x", evidence_tier: "VERIFIED", source: "AR Note 32/33 Payment to Auditors, per B03", date: "FY25-FY26"}
+  - {finding: "Benvira Forward Algorithms Pvt Ltd, a small unrelated IoT venture co-directed by MD Prashant Garg and spouse Neelu Garg, shows declining revenue (-27.21%) and profit (-301.8%) in the one data point found", evidence_tier: "MEDIA REPORTED", source: "thecompanycheck.com company-profile aggregator", date: "FY2023 data, retrieved Sep-2026"}
+transition_evidence:
+  - "Institutional investor entry: HDFC Asset Management Company (3.21% of register) and 3P Investment Managers Pvt Ltd (2.70%), named post-IPO institutional holders (SimplyWall.st ownership page, retrieved Sep-2026)"
+  - "Independent board substantially reconstituted at IPO: three new independents (Anil Kumar Trigunayat, Sherry Samuel Oommen, Deepali Bendre) replaced two prior independents whose terms ended naturally 13-Sep-2024, per AR Note 38.3 footnote [PAGE 174]"
+  - "Pledge stable at 0.00% since listing, no evidence found of pledge at any point (stayed-clean signal)"
+pledge_pct_latest: 0.00
+pledge_trend: "stable at 0.00% per latest available snapshot; multi-quarter trend NOT FOUND (single-snapshot data only)"
+searches_performed:
+  - "Prashant Garg Diffusion Engineers Managing Director background"
+  - "Diffusion Engineers Limited SEBI order promoter"
+  - "Diffusion Engineers Limited promoter shareholding pledge quarterly pattern"
+  - "Diffusion Engineers Ltd CFO resignation company secretary change 2025 2026"
+  - "\"Diffusion Engineers\" court case litigation dispute Nagpur"
+  - "Diffusion Engineers Limited institutional investor FII DII stake mutual fund holding"
+  - "Diffusion Engineers Nagpur AmbitionBox Glassdoor employee reviews"
+  - "\"Prashant Garg\" OR \"Nitin Garg\" OR \"N K Garg\" SEBI adjudication order"
+  - "\"Diffusion Engineers\" IiAS OR InGovern OR SES proxy advisory recommendation AGM"
+  - "Dr Nitin Garg Diffusion Engineers profile doctor profession"
+  - "Diffusion Engineers CEO Ramesh Kumar N resigns reason"
+  - "Tejorup Sunmay Systems Private Limited defence Diffusion Engineers ownership promoters"
+  - "Diffusion Engineers Limited group companies LSN Diffusion Benvira Forward Algorithms"
+  - "\"Benvira Forward Algorithms Private Limited\""
+  - "Diffusion Engineers IPO RHP outstanding litigation promoter group companies"
+  - "WebFetch attempts: prysm.fi (blocked), screener.in (blocked), variantperceptions.substack.com (blocked), sebi.gov.in RHP (blocked)"
+searches_skipped:
+  - "Direct SEBI.gov.in RHP/DRHP full-text read of the Outstanding Litigation section (egress blocked; only a search-engine summary of the risk-factor boilerplate was obtained)"
+  - "Direct screener.in shareholding-pattern quarterly time series (egress blocked)"
+  - "MCA/RoC filing pull for each named group entity to check active/struck-off status individually (not attempted beyond the entities that surfaced organically in search)"
+verdict_basis: "Clean legal, pledge, and capital-allocation record on every item searchable; the CAUTION rating rests entirely on structural governance concentration (64.12% family board control, MD chairing the Risk Management Committee, CSR routed via family-linked foundations) and one unresolved CEO succession, none of which is a deal-breaker or an adverse legal/conduct finding."
+analyst_note: "Two tool-access gaps genuinely limit this stage's completeness: SEBI.gov.in and screener.in were both blocked by the network egress proxy, so the RHP's actual litigation schedule and the multi-quarter shareholding/pledge time series could not be read directly, only summarised via search-engine snippets. Both should be closed via claude.ai live verification at Halt 1 before the operator treats this promoter picture as final. Separately, the Tejorup Sunmay investment (flagged by B02/B03 as under-narrated) is confirmed here as a genuine third-party transaction with no Garg-family connection, which should reduce rather than add to any related-party concern on that specific item. The CEO resignation coinciding with the Tejorup Sunmay board approval date is a coincidence worth naming but not treating as causally linked absent further evidence."
+

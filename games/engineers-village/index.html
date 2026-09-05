@@ -309,6 +309,24 @@ html, body {
 }
 #touch-run.on { background: #ffce3a; box-shadow: 0 2px 0 #b8901a; }
 
+/* ---------- Lift panel and auto stand ---------- */
+.lift-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 8px; margin: 10px 0; }
+.lift-btn {
+  border: 2px solid #d8cdb2; background: #fff; border-radius: 12px; cursor: pointer;
+  padding: 10px 8px; display: flex; flex-direction: column; align-items: center; gap: 2px; color: #2c2417;
+}
+.lift-btn b { font-size: 20px; }
+.lift-btn span { font-size: 12px; opacity: 0.75; }
+.lift-btn.here { background: #e3f0e0; border-color: #7cae59; }
+.lift-btn:disabled { opacity: 0.5; cursor: default; }
+.travel-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; margin: 10px 0; }
+.travel-btn {
+  border: none; border-radius: 12px; cursor: pointer; background: #ffd21e; color: #2c2417;
+  padding: 12px 10px; font-weight: 700; font-size: 15px; box-shadow: 0 4px 0 #b8901a; text-align: left;
+}
+.travel-btn small { display: block; font-weight: 500; opacity: 0.75; font-size: 12px; }
+.travel-btn:active { transform: translateY(3px); box-shadow: 0 1px 0 #b8901a; }
+
 /* ---------- Multiple choice steps ---------- */
 .choice-bank { display: flex; flex-direction: column; gap: 8px; margin: 10px 0 4px; }
 .choice-btn {
@@ -1750,6 +1768,7 @@ function makeBuilding({
   }
   g.userData.footprint = { w, d };
   g.userData.sign = sign;
+  g.userData.floors = floors;
   return g;
 }
 
@@ -1893,6 +1912,7 @@ class World {
     this._buildVegetation();
     this._buildVehicles();
     this._buildCity();
+    this._buildAutoStands();
     try { this._flushStatic(); } catch (e) { console.warn("Static merge skipped:", e); }
   }
   // ==========================================================
@@ -2689,7 +2709,7 @@ class World {
     if (fp) this.addBox(x, z, fp.w, fp.d, rotY);
     if (fp && label !== false) {
       const dd = fp.d / 2 + 0.9;
-      this.addDoor(x + Math.sin(rotY) * dd, z + Math.cos(rotY) * dd, rotY, building.userData.sign || label || "House");
+      this.addDoor(x + Math.sin(rotY) * dd, z + Math.cos(rotY) * dd, rotY, building.userData.sign || label || "House", null, building.userData.floors || 1);
     }
     return building;
   }
@@ -2960,6 +2980,45 @@ class World {
     this.addCircle(120, 285, 3.8);
     this.mapItems.buildings.push([120, 285]);
 
+    // ---------- Hospital, school, hotel, police, fire station, petrol pump, pool ----------
+    this._place(makeBuilding({ w: 20, d: 14, h: 4, floors: 3, roof: "flat", wall: 0xffffff, roofColor: 0x9aa6ad, sign: "City Hospital" }), -136, 205, Math.PI / 2, "City Hospital");
+    const cross = makeTextSprite("+", { size: 90, color: "#ffffff", bg: "#c1121f", scale: 0.7 }); cross.position.set(-136, 13.6, 205); this.scene.add(cross);
+    const ambulance = makeCar(0xffffff); ambulance.position.set(-124, 0, 214); ambulance.rotation.y = Math.PI / 2; this.scene.add(ambulance); this.addBox(-124, 214, 4, 1.8);
+    const amb = makeTextSprite("AMBULANCE", { size: 44, color: "#c1121f", bg: "rgba(255,255,255,0.95)", scale: 0.6 }); amb.position.set(-124, 2.4, 214); this.scene.add(amb);
+    this._place(makeBuilding({ w: 24, d: 10, h: 3.6, floors: 2, roof: "gable", wall: 0xfff1d6, roofColor: 0xc0532f, sign: "Nava Delhi Public School" }), -60, 285, Math.PI, "School");
+    this._buildPlayground(-92, 282);
+    this._place(makeTower({ w: 14, d: 14, floors: 18, tint: 0xffe0a3, sign: "Grand Hotel" }), 140, 215, -Math.PI / 2, "Grand Hotel");
+    this._place(makeBuilding({ w: 14, d: 10, h: 3.6, roof: "flat", wall: 0xdfe6ea, roofColor: 0x1d3557, sign: "Police Station" }), -136, 245, Math.PI / 2, "Police Station");
+    const jeep = makeCar(0x1d3557); jeep.position.set(-126, 0, 252); jeep.rotation.y = Math.PI / 2; this.scene.add(jeep); this.addBox(-126, 252, 4, 1.8);
+    this._place(makeBuilding({ w: 14, d: 10, h: 4, roof: "flat", wall: 0xd62828, roofColor: 0x9aa6ad, sign: "Fire Station" }), -136, 275, Math.PI / 2, "Fire Station");
+    const truck = makeCityBus(0xd62828); truck.scale.set(1, 0.8, 0.8); truck.position.set(-124, 0, 282); truck.rotation.y = Math.PI / 2; this.scene.add(truck); this.addBox(-124, 282, 7.5, 2.5);
+    const ladder = new THREE.Mesh(new THREE.BoxGeometry(0.6, 0.15, 6), mat(0x9aa6ad)); ladder.position.set(-124, 2.6, 282); ladder.rotation.y = Math.PI / 2; this.scene.add(ladder);
+    // Petrol pump: a canopy on posts and two pumps.
+    for (const [dx, dz] of [[-4, -3], [4, -3], [-4, 3], [4, 3]]) { const post = new THREE.Mesh(new THREE.BoxGeometry(0.3, 4.5, 0.3), mat(0xdfe6ea)); post.position.set(140 + dx, 2.25, 250 + dz); this.scene.add(post); this.addBox(140 + dx, 250 + dz, 0.3, 0.3); }
+    const canopy = new THREE.Mesh(new THREE.BoxGeometry(11, 0.4, 9), mat(0xf77f00)); canopy.position.set(140, 4.7, 250); this.scene.add(canopy);
+    for (const dz of [-1.5, 1.5]) { const pump = new THREE.Mesh(new THREE.BoxGeometry(0.8, 1.6, 0.6), mat(0xd62828)); pump.position.set(140, 0.8, 250 + dz); this.scene.add(pump); this.addBox(140, 250 + dz, 0.8, 0.6); }
+    const pumpSign = makeTextSprite("Petrol Pump  ₹100 / L", { size: 44, scale: 1.2 }); pumpSign.position.set(140, 6, 250); this.scene.add(pumpSign);
+    this.mapItems.buildings.push([140, 250]);
+    // Swimming pool with a tiled rim and ladders.
+    const poolRim = new THREE.Mesh(new THREE.BoxGeometry(12, 0.3, 8), mat(0xdfe6ea)); poolRim.position.set(140, 0.15, 278); this.scene.add(poolRim);
+    const poolWater = new THREE.Mesh(new THREE.BoxGeometry(10.5, 0.2, 6.5), new THREE.MeshStandardMaterial({ color: 0x4fd0e7, roughness: 0.2 })); poolWater.position.set(140, 0.28, 278); this.scene.add(poolWater);
+    this.addBox(140, 278, 10.5, 6.5);
+    for (const dx of [-5, 5]) { const l = new THREE.Mesh(new THREE.BoxGeometry(0.6, 1.2, 0.1), mat(0x9aa6ad)); l.position.set(140 + dx, 0.9, 278); this.scene.add(l); }
+    const poolSign = makeTextSprite("Swimming Pool", { size: 48, scale: 1.1 }); poolSign.position.set(140, 3, 273); this.scene.add(poolSign);
+    // The Engineer's statue in the park.
+    const pedestal = new THREE.Mesh(new THREE.BoxGeometry(2.4, 1.2, 2.4), mat(COLORS.stone)); pedestal.position.set(21, 0.6, 222); this.scene.add(pedestal); this.addBox(21, 222, 2.4, 2.4);
+    const statue = makeHuman({ skin: 0x8a6a3a, shirt: 0x8a6a3a, trousers: 0x7a5c30, hair: 0x6a4c26, hat: 0x9a7a44, shoes: 0x6a4c26 }); statue.scale.setScalar(1.5); statue.position.set(21, 1.2, 222); statue.userData.dynamic = true; this.scene.add(statue);
+    const statueSign = makeTextSprite("The Village Engineer", { size: 44, scale: 1.0 }); statueSign.position.set(21, 4.6, 222); this.scene.add(statueSign);
+    // Food carts on the footpaths.
+    [["Chaat", -8, 236.5, 0xf77f00], ["Momos", 8, 236.5, 0xd62828], ["Kulfi", -46, 197, 0x3a86ff], ["Juice", 46, 197, 0x2a9d8f]].forEach(([name, x, z, color]) => {
+      const cart = new THREE.Mesh(new THREE.BoxGeometry(1.8, 1.0, 1.0), mat(0xb9773c)); cart.position.set(x, 0.8, z); this.scene.add(cart);
+      for (const dx of [-0.6, 0.6]) { const w = new THREE.Mesh(new THREE.CylinderGeometry(0.3, 0.3, 0.15, 10), mat(0x222222)); w.rotation.x = Math.PI / 2; w.position.set(x + dx, 0.3, z + 0.5); this.scene.add(w); }
+      const umb = new THREE.Mesh(new THREE.ConeGeometry(1.4, 0.7, 8), mat(color)); umb.position.set(x, 2.6, z); this.scene.add(umb);
+      const st = new THREE.Mesh(new THREE.CylinderGeometry(0.04, 0.04, 1.6, 6), mat(0x333333)); st.position.set(x, 1.8, z); this.scene.add(st);
+      const lab = makeTextSprite(name, { size: 56, scale: 0.6 }); lab.position.set(x, 3.3, z); this.scene.add(lab);
+      this.addBox(x, z, 1.8, 1.0);
+    });
+
     // ---------- Elevated metro: pillars, track, two stations, a moving train ----------
     const trackZ = 235, trackY = 7;
     for (let x = C.x1; x <= C.x2; x += 20) { const pillar = new THREE.Mesh(new THREE.BoxGeometry(1.2, trackY, 1.2), mat(0x9aa6ad)); pillar.position.set(x, trackY / 2, trackZ); this.scene.add(pillar); this.addBox(x, trackZ, 1.2, 1.2); }
@@ -3006,6 +3065,22 @@ class World {
     });
     const cityBus = makeCityBus(0x2a9d8f); cityBus.userData.dynamic = true; this.scene.add(cityBus);
     this.cityMovers.push(new PathMover(cityBus, [[-2.5, 292], [-2.5, 190], [-2.5, 160]], 8));
+  }
+
+  // Auto stands: a parked auto, a sign, and a spot to stand.
+  _buildAutoStands() {
+    for (const st of AUTO_STANDS) {
+      const auto = makeAuto();
+      auto.position.set(st.x, heightAt(st.x, st.z), st.z);
+      auto.rotation.y = Math.PI / 2;
+      this.scene.add(auto);
+      this.addBox(st.x, st.z, 2.4, 1.5);
+      const pole = new THREE.Mesh(new THREE.CylinderGeometry(0.06, 0.08, 2.8, 6), mat(0x333333));
+      pole.position.set(st.x - 2, heightAt(st.x, st.z) + 1.4, st.z); this.scene.add(pole);
+      const sign = makeTextSprite("Auto Stand", { size: 50, color: "#2c2417", bg: "#ffd21e", scale: 0.9 });
+      sign.position.set(st.x - 2, heightAt(st.x, st.z) + 3.2, st.z); this.scene.add(sign);
+      st.standAt = { x: st.x + 2.2, z: st.z };
+    }
   }
 
   _addTrafficLight(x, z) {
@@ -3295,13 +3370,18 @@ class World {
   }
 
   // ---- Doors and rooms ----
-  addDoor(x, z, rot, label, type = null) {
-    this.doors.push({ x, z, rot, label, type: type || roomTypeFor(label) });
+  addDoor(x, z, rot, label, type = null, floors = 1) {
+    this.doors.push({ x, z, rot, label, type: type || roomTypeFor(label), floors: floors >= 3 ? floors : 1, index: this.doors.length });
   }
-  // The room behind a door, built the first time it is needed.
-  getRoom(door) {
-    if (!this.rooms.has(door)) this.rooms.set(door, new Room(this, this.rooms.size, door.type, door.label));
-    return this.rooms.get(door);
+  // The room behind a door (and floor), built the first time it is needed.
+  getRoom(door, floor = 0) {
+    const key = door.index + ":" + floor;
+    if (!this.rooms.has(key)) {
+      const type = door.floors > 1 ? floorTypeFor(door, floor) : door.type;
+      const label = door.floors > 1 && floor > 0 ? `${door.label} · ${FLOOR_NAMES[type] || "Floor"} ${floor}` : door.label;
+      this.rooms.set(key, new Room(this, this.rooms.size, type, label, door.floors > 1));
+    }
+    return this.rooms.get(key);
   }
   // Ground height for the player: the room floor indoors, the terrain outdoors.
   groundAt(x, z) {
@@ -5129,6 +5209,7 @@ const CATEGORY_NAMES = {
   science: "Science in the village",
   logic: "Logic, patterns and data",
   city: "City life",
+  city_hard: "Nava Delhi challenges",
 };
 
 // A short helper to build a situation entry.
@@ -5266,6 +5347,25 @@ const SITUATIONS = [
   S("cty10", "city", "Park laps", (r, big) => { const lap = r.pick(big ? [450, 600, 750] : [200, 300]), n = r.int(2, big ? 8 : 5); return { story: `One lap of Central Park is ${lap} m. Neha jogs ${n} laps every morning.`, q: `How far does she jog?`, answer: lap * n, unit: "m", hint: "Lap length × laps.", example: "3 laps of 300 m is 900 m." }; }),
   S("cty11", "city", "Delivery route", (r, big) => { const n = r.int(4, big ? 10 : 6), d = r.pick(big ? [1.5, 2.5] : [2, 3]); return { story: `Sunny has ${n} deliveries, each ${d} km from the last, starting at the shop.`, q: `How far does he ride to finish them all?`, answer: n * d, unit: "km", hint: "Deliveries × distance each.", example: "5 deliveries 2 km apart is 10 km." }; }),
   S("cty12", "city", "Electricity bill", (r, big) => { const units = r.int(big ? 120 : 30, big ? 400 : 90), rate = r.pick(big ? [6, 8] : [5]); return { story: `Neha's flat used ${units} units of electricity this month, at ₹${rate} a unit.`, q: `What is the bill?`, answer: units * rate, unit: "₹", hint: "Units × price per unit.", example: "50 units at ₹5 is ₹250." }; }),
+  // ---------------- NAVA DELHI CHALLENGES (18, harder, many with several steps) ----------------
+  S("hrd01", "city_hard", "Metro pass", (r, big) => { const f = r.pick(big ? [15, 20] : [10]), d = r.pick(big ? [22, 24, 26] : [20]), pass = f * 2 * d - r.pick(big ? [90, 120, 150] : [50, 100]); return { story: `Neha rides the metro to work and back every working day. Each ride costs ₹${f}. This month has ${d} working days. A monthly pass costs ₹${pass}.`, steps: [{ q: `How much does she pay per day for the two rides?`, answer: 2 * f, unit: "₹", hint: "Two rides a day." }, { q: `How much for all ${d} days without a pass?`, answer: 2 * f * d, unit: "₹", hint: `Daily cost × ${d}.` }, { q: `How much does the ₹${pass} pass save her?`, answer: 2 * f * d - pass, unit: "₹", hint: "Take the pass price away from the total without a pass." }] }; }),
+  S("hrd02", "city_hard", "The tallest tower", (r, big) => { const n = r.int(big ? 15 : 8, big ? 30 : 15), h = r.pick(big ? [3.2, 3.5] : [3, 4]), v = r.pick([1, 2]); const H = n * h; return { story: `Skyline Heights has ${n} floors. Each floor is ${h} m tall. Its lift rises ${v} m every second.`, steps: [{ q: `How tall is the tower?`, answer: H, unit: "m", hint: "Floors × height of one floor." }, { q: `How many seconds does the lift take from the ground to the roof?`, answer: H / v, unit: "seconds", hint: `Height ÷ ${v}.` }] }; }),
+  S("hrd03", "city_hard", "Percent off", (r, big) => { const p = r.int(big ? 12 : 4, big ? 60 : 20) * 50, pct = big ? r.pick([20, 25, 30, 40]) : r.pick([10, 50]); return { story: `A bicycle at City Mall costs ₹${p}. Today it is ${pct}% off.`, steps: [{ q: `How many rupees is the discount?`, answer: (p * pct) / 100, unit: "₹", hint: `${pct}% means ${pct} out of every 100. Find 1% (÷100), then × ${pct}.`, example: "20% of ₹500: 1% is ₹5, so 20% is ₹100." }, { q: `What is the new price?`, answer: p - (p * pct) / 100, unit: "₹", hint: "Take the discount away from the price." }] }; }),
+  S("hrd04", "city_hard", "Average speed", (r, big) => { const d1 = r.int(big ? 30 : 10, big ? 60 : 20), t1 = 1, d2 = r.int(big ? 40 : 10, big ? 90 : 30), t2 = 2; const D = d1 + d2, T = t1 + t2; const s = D / T; if (!Number.isInteger(s)) return SITUATION_BY_ID.hrd04.gen(r, big); return { story: `The city bus covered ${d1} km in the first hour, then ${d2} km in the next two hours.`, steps: [{ q: `How far did it travel altogether?`, answer: D, unit: "km", hint: "Add the two distances." }, { q: `How long did the whole trip take?`, answer: T, unit: "hours", hint: "1 hour + 2 hours." }, { q: `What was its average speed?`, answer: s, unit: "km per hour", hint: "Total distance ÷ total time." }] }; }),
+  S("hrd05", "city_hard", "Electricity bill", (r, big) => { const units = r.int(big ? 150 : 40, big ? 420 : 120), rate = r.pick(big ? [6, 7, 8] : [5]), fixed = r.pick([50, 100]); return { story: `Ira's flat used ${units} units this month. Each unit costs ₹${rate}, and there is a fixed charge of ₹${fixed} on every bill.`, steps: [{ q: `What do the units cost?`, answer: units * rate, unit: "₹", hint: "Units × rate." }, { q: `What is the total bill with the fixed charge?`, answer: units * rate + fixed, unit: "₹", hint: `Add the ₹${fixed} fixed charge.` }] }; }),
+  S("hrd06", "city_hard", "Growing city", (r, big) => { if (big) { const P = r.int(2, 9) * 10000; return { story: `Nava Delhi had ${P} people twenty years ago. The population doubled every ten years.`, steps: [{ q: `How many people were there ten years ago?`, answer: P * 2, unit: "people", hint: "Double it once." }, { q: `How many people are there now?`, answer: P * 4, unit: "people", hint: "Double it again." }] }; } const P = r.int(2, 9) * 1000, g = r.int(1, 5) * 100, y = r.int(2, 6); return { story: `Nava Delhi had ${P} people. Every year ${g} more people moved in, for ${y} years.`, steps: [{ q: `How many people moved in altogether?`, answer: g * y, unit: "people", hint: `${g} × ${y}.` }, { q: `How many people live there now?`, answer: P + g * y, unit: "people", hint: "Add them to the old population." }] }; }),
+  S("hrd07", "city_hard", "Cinema night", (r, big) => { const rows = r.int(8, big ? 20 : 12), seats = r.int(10, big ? 24 : 12), total = rows * seats, sold = total - r.int(5, Math.floor(total / 4)), price = r.pick(big ? [120, 150, 180] : [50, 100]); return { story: `The mall cinema has ${rows} rows of ${seats} seats. Tonight ${sold} tickets were sold at ₹${price} each.`, steps: [{ q: `How many seats are there?`, answer: total, unit: "seats", hint: "Rows × seats per row." }, { q: `How many seats stayed empty?`, answer: total - sold, unit: "seats", hint: "Seats minus tickets sold." }, { q: `How much money did the cinema take?`, answer: sold * price, unit: "₹", hint: "Tickets × price." }] }; }),
+  S("hrd08", "city_hard", "Parking meter", (r, big) => { const inM = r.pick([0, 20, 40]), hrs = r.int(1, 3), outM = r.pick([10, 30, 50]); const mins = hrs * 60 + (outM - inM); const rate = r.pick(big ? [30, 40] : [20]); const billedHours = Math.ceil(mins / 60); return { story: `Bablu parked at 9:${String(inM).padStart(2, "0")} and left at ${9 + hrs}:${String(outM).padStart(2, "0")}. Parking costs ₹${rate} per hour, and any part of an hour counts as a full hour.`, steps: [{ q: `How many minutes was the auto parked?`, answer: mins, unit: "minutes", hint: `${hrs} full hours plus the extra minutes.` }, { q: `How many hours will he be charged for?`, answer: billedHours, unit: "hours", hint: "Round UP to the next whole hour." }, { q: `What does he pay?`, answer: billedHours * rate, unit: "₹", hint: `Hours × ₹${rate}.` }] }; }),
+  S("hrd09", "city_hard", "Metro timetable", (r, big) => { const m = r.pick(big ? [4, 6, 8] : [10, 15, 20]), hours = r.int(1, big ? 3 : 2); return { story: `Blue Line trains leave the station every ${m} minutes, starting at 6:00.`, steps: [{ q: `How many minutes are there from 6:00 to ${6 + hours}:00?`, answer: hours * 60, unit: "minutes", hint: "Hours × 60." }, { q: `How many trains leave from 6:00 up to and including ${6 + hours}:00?`, answer: (hours * 60) / m + 1, unit: "trains", hint: `${hours * 60} ÷ ${m} gaps, plus the very first train at 6:00.`, example: "Every 30 minutes for 1 hour: 6:00, 6:30, 7:00 is 3 trains, not 2." }] }; }),
+  S("hrd10", "city_hard", "Food court recipe", (r, big) => { const a = r.pick(big ? [300, 450, 600] : [200, 400]), n = r.pick(big ? [6, 10, 14] : [8, 12]); return { story: `The food court's dosa batter recipe uses ${a} g of rice flour for 4 people. A party of ${n} has just arrived.`, steps: [{ q: `How much flour per person?`, answer: a / 4, unit: "g", hint: "Divide by 4." }, { q: `How much flour for ${n} people?`, answer: (a / 4) * n, unit: "g", hint: `Per person × ${n}.` }] }; }),
+  S("hrd11", "city_hard", "Park with a pond", (r, big) => { const a = r.int(big ? 40 : 10, big ? 80 : 20), b = r.int(big ? 30 : 8, big ? 60 : 15), s = r.int(3, Math.min(a, b) / 2 | 0); return { story: `Central Park's lawn is ${a} m by ${b} m, with a square pond of ${s} m sides in the middle.`, steps: [{ q: `What is the area of the whole lawn including the pond?`, answer: a * b, unit: "m²", hint: "Length × width." }, { q: `What is the area of the pond?`, answer: s * s, unit: "m²", hint: "Side × side." }, { q: `How much grass is there to mow?`, answer: a * b - s * s, unit: "m²", hint: "Take the pond away from the lawn." }] }; }),
+  S("hrd12", "city_hard", "Petrol pump", (r, big) => { const kmpl = r.pick(big ? [12, 15, 18] : [10, 20]), d = kmpl * r.int(3, big ? 12 : 6), price = r.pick(big ? [95, 100, 105] : [100]); return { story: `Sunny's scooter goes ${kmpl} km on one litre. His deliveries today total ${d} km. Petrol costs ₹${price} a litre.`, steps: [{ q: `How many litres will he use?`, answer: d / kmpl, unit: "litres", hint: `Distance ÷ ${kmpl}.` }, { q: `What will the petrol cost?`, answer: (d / kmpl) * price, unit: "₹", hint: `Litres × ₹${price}.` }] }; }),
+  S("hrd13", "city_hard", "Lift limit", (r, big) => { const L = r.pick(big ? [630, 800, 1000] : [400, 500]), w = r.pick(big ? [70, 80] : [50]); return { story: `The lift in Tech Park is marked "Maximum ${L} kg". The office workers weigh about ${w} kg each.`, q: `How many people can ride at once?`, answer: Math.floor(L / w), unit: "people", hint: `${L} ÷ ${w}, then round DOWN. A part of a person cannot ride.`, example: "500 kg ÷ 60 kg is 8.3, so 8 people, never 9." }; }),
+  S("hrd14", "city_hard", "LED lights", (r, big) => { const old = r.pick([60, 100]), led = r.pick([9, 12]), h = r.int(4, 6), days = 30; if (!big) return { story: `Neha swapped a ${old} watt bulb for a ${led} watt LED. It runs ${h} hours a day.`, steps: [{ q: `How many watts does the LED save every hour?`, answer: old - led, unit: "watts", hint: "Old minus new." }, { q: `How many watt-hours does it save in a day?`, answer: (old - led) * h, unit: "watt-hours", hint: `Watts saved × ${h} hours.` }] }; const wh = (old - led) * h * days; return { story: `Neha swapped a ${old} watt bulb for a ${led} watt LED. It runs ${h} hours a day, 30 days a month. 1000 watt-hours is one unit of electricity.`, steps: [{ q: `How many watts does the LED save each hour?`, answer: old - led, unit: "watts", hint: "Old minus new." }, { q: `How many watt-hours does it save in the month?`, answer: wh, unit: "watt-hours", hint: `Watts saved × ${h} × 30.` }, { q: `How many units is that? (Type a decimal.)`, answer: wh / 1000, unit: "units", hint: "Divide by 1000." }] }; }),
+  S("hrd15", "city_hard", "Pizza party", (r, big) => { const pizzas = r.int(2, 4), kids = r.pick(big ? [5, 6, 7] : [4, 8]); const slices = pizzas * 8; return { story: `At the food court ${pizzas} pizzas, each cut into 8 slices, are shared equally by ${kids} children.`, steps: [{ q: `How many slices are there?`, answer: slices, unit: "slices", hint: "Pizzas × 8." }, { q: `How many whole slices does each child get?`, answer: Math.floor(slices / kids), unit: "slices", hint: `${slices} ÷ ${kids}, whole slices only.` }, { q: `How many slices are left over?`, answer: slices % kids, unit: "slices", hint: "The remainder." }] }; }),
+  S("hrd16", "city_hard", "Hot day", (r, big) => { const m = r.int(14, 22), rise = r.int(9, 16), drop = r.int(5, rise - 2); return { story: `At 6 in the morning Nava Delhi was ${m}°C. By 3 in the afternoon it had risen ${rise} degrees. By night it dropped ${drop} degrees.`, steps: [{ q: `What was the afternoon temperature?`, answer: m + rise, unit: "°C", hint: "Add the rise." }, { q: `What was the night temperature?`, answer: m + rise - drop, unit: "°C", hint: "Take the drop away from the afternoon figure." }] }; }),
+  S("hrd17", "city_hard", "Metro map scale", (r, big) => { const k = r.pick(big ? [2.5, 4] : [2, 5]), cm = r.int(3, big ? 12 : 8); return { story: `On the metro map, 1 cm stands for ${k} km. The Blue Line measures ${cm} cm on the map.`, q: `How long is the Blue Line really?`, answer: cm * k, unit: "km", hint: `Map centimetres × ${k}.` }; }),
+  S("hrd18", "city_hard", "Two towers", (r, big) => { const A = r.int(big ? 40 : 20, big ? 90 : 50) * (big ? 1 : 2), f = big ? r.pick([1.5, 2.5]) : 2; return { story: `Bank Tower is ${A} m tall. The new Grand Hotel will be ${f} times as tall.`, steps: [{ q: `How tall will the Grand Hotel be?`, answer: A * f, unit: "m", hint: `${A} × ${f}.` }, { q: `How much taller than Bank Tower is that?`, answer: A * f - A, unit: "m", hint: "Take Bank Tower's height away." }] }; }),
   S("log10", "logic", "Magic row", (r, big) => { const T = r.pick(big ? [30, 45, 60] : [15, 18, 20]), a = r.int(1, Math.floor(T / 3)), b = r.int(1, Math.floor(T / 3)); return { story: `Every row of Dr. Iyer's magic square adds up to ${T}. One row shows ${a}, ${b} and a blank.`, q: `What goes in the blank?`, answer: T - a - b, unit: "", hint: `Take both known numbers away from ${T}.`, example: "If a row adds to 15 and shows 8 and 1, the blank is 6." }; }),
 ];
 
@@ -5614,12 +5714,12 @@ const NPC_DEFS = [
   { id: "tara", name: "Tara", look: { shirt: 0x06d6a0, dress: true }, zone: "lake", child: true, cats: ["science", "logic"], greet: "Look, a frog! Also, I have a question." },
   { id: "pandit", name: "Panditji", look: { shirt: 0xffb703, trousers: 0xffffff, hair: 0xdddddd, skin: 0xc98d62 }, zone: "temple", cats: ["time", "logic"], greet: "Welcome to the hill. Sit a moment and think." },
   // City folk.
-  { id: "bablu", name: "Auto Driver Bablu", look: { shirt: 0x8d8a80, trousers: 0x333333, hair: 0x1d1410 }, zone: "city", cats: ["city", "money"], greet: "Kahan jaana hai? Meter is broken, so help me with the fare." },
-  { id: "kishan", name: "Ice Cream Wala Kishan", look: { shirt: 0xffffff, trousers: 0x1d3557, hat: 0xffffff }, zone: "city", cats: ["city", "fractions"], greet: "Kulfi! Orange bar! One free if you solve this." },
-  { id: "verma", name: "Constable Verma", look: { shirt: 0xc8b98a, trousers: 0x5a4632, hat: 0x5a4632 }, zone: "city", cats: ["city", "time"], greet: "Traffic, traffic. Help me time these signals." },
-  { id: "neha", name: "Office Worker Neha", look: { shirt: 0x3a86ff, trousers: 0x222831 }, zone: "city", cats: ["city", "logic"], greet: "Late for a meeting! One quick question and I'm off." },
+  { id: "bablu", name: "Auto Driver Bablu", look: { shirt: 0x8d8a80, trousers: 0x333333, hair: 0x1d1410 }, zone: "city", cats: ["city_hard", "money"], greet: "Kahan jaana hai? Meter is broken, so help me with the fare." },
+  { id: "kishan", name: "Ice Cream Wala Kishan", look: { shirt: 0xffffff, trousers: 0x1d3557, hat: 0xffffff }, zone: "city", cats: ["city_hard", "fractions"], greet: "Kulfi! Orange bar! One free if you solve this." },
+  { id: "verma", name: "Constable Verma", look: { shirt: 0xc8b98a, trousers: 0x5a4632, hat: 0x5a4632 }, zone: "city", cats: ["city_hard", "time"], greet: "Traffic, traffic. Help me time these signals." },
+  { id: "neha", name: "Office Worker Neha", look: { shirt: 0x3a86ff, trousers: 0x222831 }, zone: "city", cats: ["city_hard", "logic"], greet: "Late for a meeting! One quick question and I'm off." },
   { id: "ira", name: "Ira", look: { shirt: 0xff8fab, dress: true }, zone: "city", child: true, cats: ["city", "science"], greet: "I live on the 14th floor! Want to hear something cool?" },
-  { id: "sunny", name: "Delivery Rider Sunny", look: { shirt: 0xf77f00, trousers: 0x333333, hat: 0xf77f00 }, zone: "city", cats: ["city", "travel"], greet: "Ten deliveries before lunch. Help me plan the route." },
+  { id: "sunny", name: "Delivery Rider Sunny", look: { shirt: 0xf77f00, trousers: 0x333333, hat: 0xf77f00 }, zone: "city", cats: ["city_hard", "travel"], greet: "Ten deliveries before lunch. Help me plan the route." },
 ];
 
 // Open spots to wander between, per zone (x, z).
@@ -5777,6 +5877,16 @@ class Npc {
 
 const CITY = { x1: -150, z1: 178, x2: 150, z2: 292, name: "Nava Delhi" };
 
+// Auto rickshaw stands: talk to the driver to ride to another district.
+const AUTO_STANDS = [
+  { name: "Village Square", hint: "the bridge, the jobs, the school", x: 5, z: 21 },
+  { name: "Town Station", hint: "shops, the railway, the playground", x: 8, z: 78 },
+  { name: "The Farms", hint: "fields, barns, cows and goats", x: 105, z: 44 },
+  { name: "Lake Shore", hint: "boats, huts and the fish market", x: -58, z: 30 },
+  { name: "Temple Hill", hint: "the temple and the great banyan", x: 7, z: -96 },
+  { name: "Nava Delhi", hint: "the city: towers, metro and mall", x: 8, z: 193 },
+];
+
 // A window texture for towers: dark glass with lit windows. One image,
 // repeated across each facade to match its floors and width.
 let _windowTexture = null;
@@ -5828,6 +5938,7 @@ function makeTower({ w = 12, d = 12, floors = 10, tint = 0xffffff, sign = null }
   if (sign) { const s = makeTextSprite(sign, { size: 46, scale: 1.1 }); s.position.set(0, 4.2, d / 2 + 0.5); g.add(s); }
   g.userData.footprint = { w, d };
   g.userData.sign = sign;
+  g.userData.floors = floors;
   return g;
 }
 
@@ -5855,6 +5966,74 @@ function makeCityBus(color = 0xd62828) {
   for (const [x, z] of [[-1.1, 3], [1.1, 3], [-1.1, -3], [1.1, -3]]) { const w = new THREE.Mesh(new THREE.CylinderGeometry(0.5, 0.5, 0.4, 10), mat(0x222222)); w.rotation.z = Math.PI / 2; w.position.set(x, 0.5, z); g.add(w); }
   return g;
 }
+// ===== src/engine/lift.js =====
+/* ============================================================
+   lift.js — floors and lifts for tall buildings.
+
+   A tower's door leads to its LOBBY. From there the lift panel
+   takes you to any floor: offices, flats, a gym, a cafe, and the
+   rooftop garden at the very top. Every floor is its own room with
+   its own person and situation.
+   ============================================================ */
+
+// What each floor of a tall building is.
+function floorTypeFor(door, floor) {
+  if (floor === 0) return door.type === "mall" ? "mall" : door.type === "hotel" ? "lobby" : "lobby";
+  const top = (door.floors || 1) - 1;
+  if (floor === top) return "rooftop";
+  if (door.type === "mall") return floor === 1 ? "eatery" : "cinema";
+  if (door.type === "hotel") return floor % 4 === 0 ? "gym" : "hotelroom";
+  return ["office", "house", "office", "gym", "eatery", "office", "house"][floor % 7];
+}
+
+const FLOOR_NAMES = { lobby: "Lobby", office: "Office", house: "Flat", gym: "Gym", eatery: "Cafe", rooftop: "Rooftop Garden", cinema: "Cinema", mall: "Shops", hotelroom: "Hotel Room" };
+
+// A short ding when the lift arrives.
+function playDing() {
+  const c = getCtx();
+  if (!c) return;
+  const t = c.currentTime;
+  tone(1567.98, t, 0.5, "sine", 0.4);
+  tone(1174.66, t + 0.25, 0.6, "sine", 0.3);
+}
+
+// The lift panel: one button per floor.
+function openLiftPanel(door, currentFloor, onPick) {
+  const floors = door.floors || 1;
+  let buttons = "";
+  for (let f = floors - 1; f >= 0; f--) {
+    const name = FLOOR_NAMES[floorTypeFor(door, f)] || "Floor";
+    const label = f === 0 ? "G" : String(f);
+    buttons += `<button class="lift-btn ${f === currentFloor ? "here" : ""}" data-floor="${f}"><b>${label}</b><span>${name}</span></button>`;
+  }
+  const card = openPanel(`
+    <div class="job-title-row">
+      <h2>Lift: ${door.label}</h2>
+      <button class="ghost-btn" id="lift-close">Stay here</button>
+    </div>
+    <p class="job-brief">You are on ${currentFloor === 0 ? "the ground floor" : "floor " + currentFloor} of ${floors}. Press a button.</p>
+    <div class="lift-grid">${buttons}</div>
+    <div class="hint" id="lift-msg" hidden></div>
+  `);
+  card.querySelector("#lift-close").addEventListener("click", () => closePanel());
+  card.querySelectorAll(".lift-btn").forEach((b) => b.addEventListener("click", () => {
+    const f = Number(b.dataset.floor);
+    if (f === currentFloor) { const m = card.querySelector("#lift-msg"); m.hidden = false; m.textContent = "You are already on this floor."; return; }
+    // Ride: show the floors counting past, then arrive.
+    const msg = card.querySelector("#lift-msg");
+    msg.hidden = false;
+    card.querySelectorAll(".lift-btn").forEach((x) => (x.disabled = true));
+    let cur = currentFloor;
+    const dir = f > currentFloor ? 1 : -1;
+    playPick();
+    const timer = setInterval(() => {
+      cur += dir;
+      msg.textContent = `${dir > 0 ? "Going up" : "Going down"}… floor ${cur === 0 ? "G" : cur}`;
+      if (cur === f) { clearInterval(timer); playDing(); setTimeout(() => { closePanel(); onPick(f); }, 350); }
+    }, 220);
+  }));
+}
+
 // ===== src/engine/rooms.js =====
 /* ============================================================
    rooms.js — the insides of buildings.
@@ -5879,6 +6058,9 @@ function roomTypeFor(sign) {
   if (s.includes("apartment") || s.includes("tower") || s.includes("park") && !s.includes("central") || s.includes("heights") || s.includes("plaza") || s.includes("bank") || s.includes("depot")) return "office";
   if (s.includes("mall")) return "mall";
   if (s.includes("metro")) return "metro";
+  if (s.includes("hotel")) return "hotel";
+  if (s.includes("hospital")) return "clinic";
+  if (s.includes("police") || s.includes("fire")) return "office";
   if (s.includes("school")) return "school";
   if (s.includes("clinic") || s.includes("pharmacy")) return "clinic";
   if (s.includes("library") || s.includes("books")) return "library";
@@ -5901,6 +6083,11 @@ const OCCUPANTS = {
   station: ["Ticket Clerk Fernandes"],
   temple: ["Helper Gopi"],
   office: ["Manager Sharma", "Receptionist Priya", "Engineer Arjun", "Accountant Mehta"],
+  lobby: ["Receptionist Priya", "Guard Bahadur", "Concierge Rita"],
+  gym: ["Coach Vikram"],
+  rooftop: ["Gardener Lakhan", "Astronomer Aunty Meena"],
+  cinema: ["Usher Pappu"],
+  hotelroom: ["Housekeeper Sita"],
   mall: ["Security Guard Singh"],
   metro: ["Metro Guard Kaur"],
 };
@@ -5916,15 +6103,21 @@ const OCC_GREETS = {
   station: "Tickets, please! Or rather, a timetable question first.",
   temple: "Take off your shoes at the door. Then think with me a moment.",
   office: "Busy day! The lift, the floors, the bills... help me with one number?",
+  lobby: "Welcome! The lift is at the back. But first, a little challenge for the visitor.",
+  gym: "Ten push ups! Just kidding. Ten seconds of thinking instead.",
+  rooftop: "Look at that view! Now look at this problem.",
+  cinema: "Shh, the show is starting. One question before the trailers.",
+  hotelroom: "Room service! And a puzzle on the house.",
   mall: "Welcome to the mall. No running on the escalator. A quick question first?",
   metro: "Mind the gap! Before your token, a small sum for the timetable.",
 };
 
 class Room {
-  constructor(world, index, type, label) {
+  constructor(world, index, type, label, hasLift = false) {
     this.world = world;
     this.type = type;
     this.label = label;
+    this.hasLift = hasLift;
     this.x0 = ROOM_ORIGIN.x + (index % 8) * 30;
     this.z0 = ROOM_ORIGIN.z + Math.floor(index / 8) * 30;
     this.colliders = []; // world-space boxes {x1,z1,x2,z2}
@@ -5950,19 +6143,29 @@ class Room {
   }
 
   _build() {
-    const wallColors = { office: 0xe3ecf5, mall: 0xfff1d6, metro: 0xdfe6ea, house: 0xfff1d6, shop: 0xe3ecf5, eatery: 0xffe0a3, school: 0xf6efd8, clinic: 0xffffff, library: 0xf3d9c8, hall: 0xf2e4c8, station: 0xd9e4d0, temple: 0xfff1d6 };
-    const floorColors = { office: 0x9aa6ad, mall: 0xdfe6ea, metro: 0x8d8a80, house: 0xd7b98e, shop: 0xbfb6a5, eatery: 0xc9a86a, school: 0xbfb6a5, clinic: 0xdfe6ea, library: 0xa67c52, hall: 0xc4a484, station: 0xbfb6a5, temple: 0xe8d5b5 };
+    const wallColors = { lobby: 0xfff1d6, gym: 0xe3ecf5, rooftop: 0xbfe3f2, cinema: 0x2b2b3a, hotelroom: 0xf3d9c8, office: 0xe3ecf5, mall: 0xfff1d6, metro: 0xdfe6ea, house: 0xfff1d6, shop: 0xe3ecf5, eatery: 0xffe0a3, school: 0xf6efd8, clinic: 0xffffff, library: 0xf3d9c8, hall: 0xf2e4c8, station: 0xd9e4d0, temple: 0xfff1d6 };
+    const floorColors = { lobby: 0xdfe6ea, gym: 0x8d6e63, rooftop: 0x9e9e9e, cinema: 0x3a2f45, hotelroom: 0xa67c52, office: 0x9aa6ad, mall: 0xdfe6ea, metro: 0x8d8a80, house: 0xd7b98e, shop: 0xbfb6a5, eatery: 0xc9a86a, school: 0xbfb6a5, clinic: 0xdfe6ea, library: 0xa67c52, hall: 0xc4a484, station: 0xbfb6a5, temple: 0xe8d5b5 };
     const wall = wallColors[this.type] || 0xfff1d6;
     // Floor and three walls (the +z side stays open for the camera).
+    // The rooftop has only a low parapet, so the sky is all around.
+    const wallH = this.type === "rooftop" ? 0.9 : ROOM_H;
     this._box(ROOM_W, 0.2, ROOM_D, floorColors[this.type] || 0xd7b98e, 0, -0.1, 0, false);
-    this._box(ROOM_W, ROOM_H, 0.3, wall, 0, ROOM_H / 2, -ROOM_D / 2);
-    this._box(0.3, ROOM_H, ROOM_D, wall, -ROOM_W / 2, ROOM_H / 2, 0);
-    this._box(0.3, ROOM_H, ROOM_D, wall, ROOM_W / 2, ROOM_H / 2, 0);
-    // A rug.
-    this._box(3.5, 0.03, 2.5, 0xc94848, 0, 0.02, 0.5, false);
-    // A window on the back wall.
-    const win = new THREE.Mesh(new THREE.BoxGeometry(1.4, 1.1, 0.1), new THREE.MeshStandardMaterial({ color: 0xbfe3f2, emissive: 0x9fd3ea, emissiveIntensity: 0.5 }));
-    win.position.set(-3, 1.9, -ROOM_D / 2 + 0.18); this.group.add(win);
+    this._box(ROOM_W, wallH, 0.3, wall, 0, wallH / 2, -ROOM_D / 2);
+    this._box(0.3, wallH, ROOM_D, wall, -ROOM_W / 2, wallH / 2, 0);
+    this._box(0.3, wallH, ROOM_D, wall, ROOM_W / 2, wallH / 2, 0);
+    if (this.type !== "rooftop" && this.type !== "cinema") {
+      // A rug and a window on the back wall.
+      this._box(3.5, 0.03, 2.5, 0xc94848, 0, 0.02, 0.5, false);
+      const win = new THREE.Mesh(new THREE.BoxGeometry(1.4, 1.1, 0.1), new THREE.MeshStandardMaterial({ color: 0xbfe3f2, emissive: 0x9fd3ea, emissiveIntensity: 0.5 }));
+      win.position.set(-3, 1.9, -ROOM_D / 2 + 0.18); this.group.add(win);
+    }
+    // Lift doors on the left wall, near the front, in tall buildings.
+    if (this.hasLift) {
+      this._box(0.3, 2.6, 2.2, 0x9aa6ad, -ROOM_W / 2 + 0.45, 1.3, 2.0);
+      this._box(0.1, 2.4, 0.06, 0x555e66, -ROOM_W / 2 + 0.65, 1.3, 2.0, false);
+      const liftSign = makeTextSprite("LIFT", { size: 56, scale: 0.5 }); liftSign.position.set(-ROOM_W / 2 + 0.7, 2.95, 2.0); this.group.add(liftSign);
+      this.liftPos = { x: this.x0 - ROOM_W / 2 + 1.5, z: this.z0 + 2.0 };
+    }
     // The name of the place, on the back wall.
     const sign = makeTextSprite(this.label, { size: 48, scale: 0.9 });
     sign.position.set(2.5, 2.6, -ROOM_D / 2 + 0.3); this.group.add(sign);
@@ -5974,8 +6177,8 @@ class Room {
       this._box(1.8, 0.1, 1, 0x8a5626, 1.5, 0.75, -1.5); for (const dx of [-0.6, 0.6]) this._box(0.4, 0.1, 0.4, 0x8a5626, 1.5 + dx, 0.45, -0.6, false); // table, stools
       for (const dx of [-0.8, 0.8]) this._box(0.1, 0.75, 0.1, 0x5a3a24, 1.5 + dx, 0.37, -1.5, false);
       this._box(2.4, 0.9, 0.7, 0xbfb6a5, 3.5, 0.45, -3.4); this._box(0.5, 0.3, 0.5, 0x555555, 3.0, 1.05, -3.4, false); this._box(0.4, 0.25, 0.4, 0xd9a400, 4.0, 1.02, -3.4, false); // kitchen counter, pots
-      this._box(1.2, 1.8, 0.4, 0x8a5626, -4.2, 0.9, 1.5); for (let i = 0; i < 3; i++) this._box(1.0, 0.08, 0.35, 0xb9773c, -4.2, 0.5 + i * 0.55, 1.5, false); // shelf
-      for (let i = 0; i < 4; i++) this._box(0.25, 0.35, 0.2, [0xc94848, 0x3a86ff, 0x6fae54, 0xffb703][i], -4.5 + (i % 2) * 0.5, 0.75 + Math.floor(i / 2) * 0.55, 1.5, false);
+      this._box(1.2, 1.8, 0.4, 0x8a5626, -4.2, 0.9, -0.6); for (let i = 0; i < 3; i++) this._box(1.0, 0.08, 0.35, 0xb9773c, -4.2, 0.5 + i * 0.55, -0.6, false); // shelf
+      for (let i = 0; i < 4; i++) this._box(0.25, 0.35, 0.2, [0xc94848, 0x3a86ff, 0x6fae54, 0xffb703][i], -4.5 + (i % 2) * 0.5, 0.75 + Math.floor(i / 2) * 0.55, -0.6, false);
     } else if (t === "shop" || t === "eatery") {
       this._box(5, 1.0, 0.8, 0x8a5626, 0, 0.5, -1.2); // counter
       const goods = t === "eatery" ? [0xffb703, 0xd97742, 0xfff1d6, 0xc94848, 0x8a5626] : [0xc94848, 0x3a86ff, 0x6fae54, 0xffb703, 0x9b5de5, 0xff8fab];
@@ -5984,7 +6187,7 @@ class Room {
         this._box(0.4, 2.2, 5, 0x5a3a24, sx * (ROOM_W / 2 - 0.45), 1.1, -0.5);
         for (let r = 0; r < 3; r++) for (let k = 0; k < 5; k++) this._box(0.3, 0.35, 0.6, goods[(r + k) % goods.length], sx * (ROOM_W / 2 - 0.5), 0.5 + r * 0.65, -2.5 + k * 1.0, false);
       }
-      if (t === "eatery") { for (const dx of [-3, 3]) { this._box(1.2, 0.08, 1.2, 0xb9773c, dx, 0.75, 1.6); this._box(0.1, 0.7, 0.1, 0x5a3a24, dx, 0.37, 1.6, false); } this._box(1.2, 0.6, 0.8, 0x555555, 3.8, 0.9, -3.3); } // tables, stove
+      if (t === "eatery") { for (const dx of [-2.2, 2.2]) { this._box(1.2, 0.08, 1.2, 0xb9773c, dx, 0.75, 1.6); this._box(0.1, 0.7, 0.1, 0x5a3a24, dx, 0.37, 1.6, false); } this._box(1.2, 0.6, 0.8, 0x555555, 3.8, 0.9, -3.3); } // tables, stove
     } else if (t === "school") {
       this._box(4, 1.6, 0.1, 0x1f3b2c, 0, 1.8, -ROOM_D / 2 + 0.2, false); // blackboard
       const chalk = makeTextSprite("2 + 3 = 5", { size: 54, color: "#ffffff", bg: "rgba(0,0,0,0)", scale: 0.7 }); chalk.position.set(0, 1.9, -ROOM_D / 2 + 0.3); this.group.add(chalk);
@@ -6031,6 +6234,37 @@ class Room {
       this._box(2.4, 1.1, 0.8, 0x1e6091, 3.6, 0.55, -2.4); // token counter
       const mapBoard = makeTextSprite("Blue Line: 2 stations", { size: 40, scale: 1.2 }); mapBoard.position.set(-1.5, 2.3, -ROOM_D / 2 + 0.3); this.group.add(mapBoard);
       const tk = makeTextSprite("TOKENS ₹10", { size: 46, scale: 0.8 }); tk.position.set(3.6, 2.2, -2.3); this.group.add(tk);
+    } else if (t === "lobby") {
+      this._box(3.6, 1.1, 0.9, 0x8a5626, 1.5, 0.55, -2.4); this._box(3.6, 0.08, 1.0, 0xdfe6ea, 1.5, 1.14, -2.4, false); // reception desk
+      const rec = makeTextSprite("RECEPTION", { size: 50, scale: 0.8 }); rec.position.set(1.5, 2.3, -2.3); this.group.add(rec);
+      this._box(2.4, 0.5, 0.9, 0x3a86ff, 3.4, 0.25, 1.2); this._box(2.4, 0.5, 0.25, 0x3a86ff, 3.4, 0.75, 0.85, false); // sofa
+      this._box(0.6, 0.9, 0.6, 0x4e9e4a, -1.2, 0.45, -3.2); // plant
+      const dir = makeTextSprite("Floors: see the lift", { size: 40, scale: 1.0 }); dir.position.set(2.5, 2.6, -ROOM_D / 2 + 0.3); this.group.add(dir);
+    } else if (t === "gym") {
+      for (let i = 0; i < 3; i++) { this._box(0.8, 0.3, 1.8, 0x333333, -3.5 + i * 1.4, 0.15, -2.4); this._box(0.7, 0.9, 0.1, 0x555e66, -3.5 + i * 1.4, 0.75, -3.2, false); } // treadmills
+      this._box(2.4, 0.9, 0.5, 0x555e66, 3.4, 0.45, -3.3); for (let i = 0; i < 4; i++) this._box(0.5, 0.3, 0.3, 0x111111, 2.5 + i * 0.6, 1.05, -3.3, false); // dumbbell rack
+      this._box(2.0, 0.05, 1.2, 0x3a86ff, 2.5, 0.03, 1.2, false); // yoga mat
+      const mirror = new THREE.Mesh(new THREE.BoxGeometry(4, 1.6, 0.05), new THREE.MeshStandardMaterial({ color: 0xcfe6ff, emissive: 0x9fd3ea, emissiveIntensity: 0.3, metalness: 0.8 })); mirror.position.set(0, 1.6, -ROOM_D / 2 + 0.2); this.group.add(mirror);
+    } else if (t === "rooftop") {
+      for (let i = 0; i < 6; i++) this._box(0.7, 0.9, 0.7, [0x4e9e4a, 0x6fae54, 0x3f8f3a][i % 3], -4 + i * 1.6, 0.45, -3.2); // planters
+      for (let i = 0; i < 3; i++) this._box(0.5, 0.3, 0.5, [0xff6b8a, 0xffd23f, 0xffffff][i], -3.9 + i * 3.2, 1.05, -3.2, false); // flowers
+      this._box(1.8, 0.1, 0.5, 0xb9773c, -2, 0.5, 1.0); this._box(1.8, 0.1, 0.5, 0xb9773c, 2, 0.5, 1.0); // benches
+      const tank = this._box(1.6, 1.4, 1.6, 0x222222, 3.6, 0.7, -2.2); tank.geometry = new THREE.CylinderGeometry(0.8, 0.8, 1.4, 10);
+      this._box(0.1, 3, 0.1, 0x9aa6ad, 3.6, 2.9, -2.2, false); // antenna
+      const scope = this._box(0.15, 1.2, 0.15, 0x333333, 0.5, 0.6, -1.5); scope.geometry = new THREE.CylinderGeometry(0.06, 0.1, 1.2, 8);
+      const tele = this._box(0.9, 0.2, 0.2, 0x1d3557, 0.5, 1.35, -1.5, false); tele.geometry = new THREE.CylinderGeometry(0.1, 0.13, 0.9, 8); tele.rotation.z = Math.PI / 2; tele.rotation.y = 0.6;
+      const view = makeTextSprite("Rooftop Garden", { size: 50, scale: 1.0 }); view.position.set(0, 2.2, -ROOM_D / 2 + 0.2); this.group.add(view);
+    } else if (t === "cinema") {
+      const screen = new THREE.Mesh(new THREE.BoxGeometry(7, 3, 0.1), new THREE.MeshStandardMaterial({ color: 0xffffff, emissive: 0xcfe6ff, emissiveIntensity: 0.6 })); screen.position.set(0, 1.9, -ROOM_D / 2 + 0.2); this.group.add(screen);
+      const title = makeTextSprite("Now Showing: Engineer's Village", { size: 40, color: "#1d3557", bg: "rgba(255,255,255,0)", scale: 1.5 }); title.position.set(0, 2.2, -ROOM_D / 2 + 0.3); this.group.add(title);
+      for (let r = 0; r < 3; r++) for (let c = 0; c < 7; c++) this._box(0.7, 0.6, 0.6, 0xc1121f, -3.6 + c * 1.2, 0.3 + r * 0.15, -1.6 + r * 1.3, c === 0 || c === 6 || r === 0);
+      this._box(2.2, 1.0, 0.7, 0xffd21e, 3.6, 0.5, 2.6); const pop = makeTextSprite("POPCORN ₹50", { size: 46, scale: 0.7 }); pop.position.set(3.6, 1.9, 2.6); this.group.add(pop);
+    } else if (t === "hotelroom") {
+      this._box(2.6, 0.5, 2.0, 0xb9773c, -2.8, 0.25, -2.2); this._box(2.5, 0.25, 1.9, 0xffffff, -2.8, 0.62, -2.2, false); this._box(0.7, 0.2, 1.7, 0x3a86ff, -3.7, 0.85, -2.2, false); // double bed
+      this._box(1.6, 1.0, 0.1, 0x111111, 1.8, 1.6, -ROOM_D / 2 + 0.2, false); // TV
+      this._box(0.8, 0.9, 0.6, 0x555e66, 3.6, 0.45, -3.2); // minibar
+      this._box(1.2, 0.1, 0.6, 0x8a5626, 1.8, 0.75, -2.6); // desk
+      const rs = makeTextSprite("Room 204", { size: 50, scale: 0.6 }); rs.position.set(3.4, 2.6, -ROOM_D / 2 + 0.3); this.group.add(rs);
     } else if (t === "temple") {
       this._box(3, 0.6, 2, 0xe8d5b5, 0, 0.3, -2.8); // platform
       const idol = new THREE.Mesh(new THREE.ConeGeometry(0.6, 1.6, 8), mat(0xffc93c)); idol.position.set(0, 1.4, -2.8); this.group.add(idol);
@@ -6051,7 +6285,7 @@ class Room {
 
   // Where the room's occupant stands (local -> world).
   occupantPos() {
-    const spots = { office: [3.2, 1.6], mall: [0, 0.8], metro: [3.6, -1.0], house: [0.5, 0.5], shop: [0, -2.4], eatery: [0, -2.4], school: [2.2, -1.5], clinic: [1.8, -0.6], library: [-2.5, 1.5], hall: [-4.2, 0.6], station: [-2.5, -3.2], temple: [2.2, -1.2] };
+    const spots = { lobby: [1.5, -1.2], gym: [0, 0.6], rooftop: [0, 0.2], cinema: [-2.5, 2.6], hotelroom: [1.0, 0.8], office: [3.2, 1.6], mall: [0, 0.8], metro: [3.6, -1.0], house: [0.5, 0.5], shop: [0, -2.4], eatery: [0, -2.4], school: [2.2, -1.5], clinic: [1.8, -0.6], library: [-2.5, 1.5], hall: [-4.2, 0.6], station: [-2.5, -3.2], temple: [2.2, -1.2] };
     const [x, z] = spots[this.type] || [0, 0];
     return { x: this.x0 + x, z: this.z0 + z };
   }
@@ -6106,6 +6340,12 @@ class Minimap {
     // Buildings.
     g.fillStyle = "#7a4a2a";
     for (const [x, z] of this.world.mapItems.buildings) g.fillRect(this.px(x) - 1.5, this.pz(z) - 1.5, 3, 3);
+    // District names.
+    g.font = "bold 9px system-ui, sans-serif"; g.textAlign = "center"; g.fillStyle = "#2c2417";
+    g.strokeStyle = "rgba(255,253,246,0.9)"; g.lineWidth = 2.5;
+    for (const [name, x, z] of [["Village", 0, 36], ["Town", 0, 112], ["Farms", 105, -2], ["Lake", -108, 46], ["Temple", 0, -134], ["NAVA DELHI", 0, 262]]) {
+      g.strokeText(name, this.px(x), this.pz(z)); g.fillText(name, this.px(x), this.pz(z));
+    }
     this.static = off;
   }
 
@@ -6316,6 +6556,16 @@ class Game {
       });
     }
 
+    // Auto stands: press E to ride to another district.
+    for (const st of AUTO_STANDS) {
+      this.interactables.push({
+        pos: { x: st.x + 1.6, z: st.z + 1.6 },
+        radius: 2.6,
+        prompt: () => `Auto stand: ride somewhere`,
+        activate: () => this._openTravel(st),
+      });
+    }
+
     // Every door: walk up and press E to go inside.
     for (const door of this.world.doors) {
       this.interactables.push({
@@ -6337,14 +6587,41 @@ class Game {
     }
   }
 
+  // ---- Auto rides between districts ----
+  _openTravel(from) {
+    const others = AUTO_STANDS.filter((s) => s !== from);
+    const card = openPanel(`
+      <div class="job-title-row">
+        <h2>Auto Stand: ${from.name}</h2>
+        <button class="ghost-btn" id="travel-close">Walk instead</button>
+      </div>
+      <p class="job-brief">Driver: "Where to, Engineer? Hop in, no charge for the village engineer!"</p>
+      <div class="travel-grid">
+        ${others.map((s, i) => `<button class="travel-btn" data-i="${i}">🛺 ${s.name}<small>${s.hint}</small></button>`).join("")}
+      </div>
+    `);
+    card.querySelector("#travel-close").addEventListener("click", () => closePanel());
+    card.querySelectorAll(".travel-btn").forEach((b) => b.addEventListener("click", () => {
+      const dest = others[Number(b.dataset.i)];
+      closePanel();
+      playHorn();
+      this.player.group.position.set(dest.standAt.x, heightAt(dest.standAt.x, dest.standAt.z), dest.standAt.z);
+      this.player.camYaw = 0;
+      this.player._placeCamera(1);
+      this.ui.setInteractPrompt(null);
+    }));
+  }
+
   // ---- Going indoors and back out ----
-  _enterRoom(door) {
-    const room = this.world.getRoom(door);
+  _enterRoom(door, floor = 0) {
+    const room = this.world.getRoom(door, floor);
     if (!room.occupant) {
       // Someone lives or works here. They carry a situation like anyone else.
+      // In the city the questions are the harder ones.
       const names = OCCUPANTS[room.type] || OCCUPANTS.house;
       const name = names[this.world.rooms.size % names.length];
-      const cats = Object.keys(CATEGORY_NAMES);
+      const inCity = door.z > CITY.z1 - 6;
+      const cats = inCity ? ["city_hard", "city_hard", "city"] : Object.keys(CATEGORY_NAMES).filter((c) => c !== "city_hard");
       const def = {
         id: "room" + this.world.rooms.size,
         name,
@@ -6361,14 +6638,22 @@ class Game {
     this.world.roomLight.position.set(room.x0, 2.8, room.z0);
     this.world.roomLight.visible = true;
     this.insideDoor = door;
+    this.insideFloor = floor;
     this.player.group.position.copy(room.doorInside);
     this.player.group.rotation.y = Math.PI; // face into the room
     this.player._placeCamera(1);
     document.getElementById("minimap").hidden = true;
     this.roomInteractables = [
-      { pos: room.exitPos, radius: 1.6, prompt: () => `Go outside`, activate: () => this._exitRoom() },
+      { pos: room.exitPos, radius: 1.6, prompt: () => (floor === 0 ? `Go outside` : `Take the stairs down and out`), activate: () => this._exitRoom() },
       { pos: room.occupant.position, radius: 2.8, prompt: () => `Talk to ${room.occupant.name}`, activate: () => this._startErrand(room.occupant) },
     ];
+    if (room.hasLift) {
+      this.roomInteractables.push({
+        pos: room.liftPos, radius: 1.9,
+        prompt: () => `Take the lift (${door.floors} floors)`,
+        activate: () => openLiftPanel(door, floor, (f) => this._enterRoom(door, f)),
+      });
+    }
     Audio.playPick();
   }
 
@@ -6404,14 +6689,15 @@ class Game {
         this._engagedNpc = null;
       },
     };
-    const step = sit.choices
+    // A situation is one question, one multiple choice, or several steps.
+    const steps = sit.steps ? sit.steps : [sit.choices
       ? { q: sit.q, choices: sit.choices, answer: sit.answer, hint: sit.hint }
-      : { q: sit.q, answer: sit.answer, unit: sit.unit, hint: sit.hint, example: sit.example };
+      : { q: sit.q, answer: sit.answer, unit: sit.unit, hint: sit.hint, example: sit.example }];
     const open = () => runStepQuiz(ctx, {
       title: sit.title,
       intro: `${npc.name}: "${sit.story}"`,
-      goal: `Topic: <b>${CATEGORY_NAMES[sit.cat]}</b>. Solve it to earn a star.`,
-      steps: [step],
+      goal: `Topic: <b>${CATEGORY_NAMES[sit.cat]}</b>. ${steps.length > 1 ? `<b>${steps.length} steps.</b> ` : ""}Solve it to earn a star.`,
+      steps,
       doneBtn: "Take the star",
       doneHtml: `<b>⭐ Solved!</b> ${npc.name}: "That's it exactly. Thank you, Engineer."`,
     });

@@ -11,3 +11,4 @@ wall recorded). Stage 0 was orchestrator-run (no subagent row).
 | 2 | notes-pass (pass 2) | sonnet | default | - | - | 157747 | 544s | 2 |
 | 2 | notes-pass (pass 3) | sonnet | default | - | - | 116274 | 447s | 3 |
 | 3 | ar-deep-dive | sonnet | default | - | - | 305731 | 876s | 1 |
+| 4 | business-model | sonnet | default | - | - | 180908 | 512s | 1 |

@@ -1,0 +1,68 @@
+stage: B04-bizmodel
+company: "SHHARICH"
+run_date: "2026-09-05"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "presentation: no investor presentation in corpus"
+  - "results: no quarterly or annual results filing; Q1 FY27 (Jun-2026) results absent"
+  - "rating: no credit rating document"
+  - "announcements: no Reg 30 filings; AGM notice inside the AR is the partial substitute"
+  - "shareholding: no quarterly shareholding pattern; fallback AR pattern at 31-Mar-2026"
+  - "screening: only Data_Sheet CSVs populated (3 annual years FY24-FY26)"
+  - "concalls: declared unavailable (NO-CONCALL MODE); not a gap"
+  - "prospectus: not expected (listed 1987); not a gap"
+flags:
+  - {type: FLAG-TRADING-REVENUE, reason: "Note 35.2 mislabels the new Rs 3,349.83 lakh trading line as manufactured H-Acid, masking that organic manufactured revenue grew only c.4.8% while headline revenue grew 30.7% (AR FY26, Note 27 p.119, Note 35.2 p.126)"}
+  - {type: FLAG-FX-CONTRADICTION, reason: "Export revenue moved from Rs 0 to Rs 8,554.32 lakh (46.4% of revenue) in FY26 while Note 35.13 states no major foreign currency exposure and no hedging, identically in standalone and consolidated notes (AR FY26, p.129-130)"}
+  - {type: FLAG-NEGATIVE-OPERATING-LEVERAGE, reason: "FY26 revenue rose 30.7% while EBITDA fell from Rs 1,147.66 lakh to Rs 980.64 lakh (MD&A ratio table, AR FY26, p.77), consistent with trading-line margin dilution and/or spread compression on the manufactured line"}
+business_type: "manufacturing"
+revenue_streams:
+  - {name: "Manufactured H-Acid and other manufactured chemicals", type: "manufacturing (commodity converter, B2B spot/short-cycle)", pct_of_revenue: 78.5, predictability: "L"}
+  - {name: "Traded H-Acid (resale, no processing)", type: "trading, pass-through", pct_of_revenue: 18.2, predictability: "L"}
+  - {name: "By-products (Gypsum, Iron Sludge, Globular Salt)", type: "manufacturing by-product sale", pct_of_revenue: 1.2, predictability: "M"}
+  - {name: "Other operating revenue (lifting charges, scrap, subsidy, export benefit)", type: "ancillary/incentive income", pct_of_revenue: 2.2, predictability: "L"}
+asset_intensity: "medium"
+wc_intensity: "high"
+pricing_power: "price-taker"
+cyclicality: "cyclical"
+moats_present: []
+valuation_methods:
+  primary: {method: "Section 1B destination PE, commodity converter (v3.7 Amendment 17) treatment", why: "Business is a spread-driven H-Acid converter (R1-R2 quality-ladder neighbourhood); Section 1B is the sole exit-multiple authority and Amendment 17 bars feeding spot-year FY26 ROCE or margin into it"}
+  secondary: {method: "Relative valuation vs named dye-intermediate peers, cycle-normalised", why: "Peer set (Bodal Chemicals, AksharChem, Shree Pushkar Chemicals, per company memory) shares the same spread economics and lets FY26's cycle position be sanity-checked, but must be normalised for where each peer sits in the cycle"}
+  tertiary: {method: "Replacement-cost / asset-based floor on existing plant", why: "Gross Plant & Machinery block (Rs 4,579.74 lakh, Note 2 p.153) gives a floor reference, useful mainly to sanity-check the SDPL expansion capex once it capitalises"}
+  not_applicable: ["DCF on FY26 spot-year cash flows (cyclical, working-capital-distorted OCF)", "Dividend discount model (no dividend paid or proposed either year)", "SOTP/NAV as primary (SDPL currently zero revenue)"]
+irrelevant_ratios:
+  - {ratio: "Headline revenue growth %", why: "FY26's 30.7% growth is substantially a new near-zero-margin trading line; organic manufactured growth was only c.4.8%"}
+  - {ratio: "Net profit margin unadjusted for Other Income", why: "57.7% of FY26 PBT came from Other Income, over half an unexplained FX gain, overstating operating earnings quality"}
+  - {ratio: "Return on Net Worth as printed", why: "RoNW fall is driven mechanically by the equity base more than doubling from CCD conversion, not by an operating change; AR's own explanation ('favourable market conditions') does not address this"}
+  - {ratio: "Interest Coverage Ratio explanation as printed", why: "MD&A attributes the ICR improvement to 'Decrease in Borrowing' while standalone borrowings actually rose year on year"}
+  - {ratio: "Foreign currency exposure disclosure (Note 35.13) at face value", why: "States no major FX exposure and no hedging despite export revenue being 46.4% of FY26 sales"}
+must_track_metrics:
+  - {metric: "Organic manufactured H-Acid revenue (stripped of trading line)", healthy: "double-digit YoY growth to support the expansion thesis", red_flag: "persistent growth below 5-10% while headline growth is inflated by trading revenue"}
+  - {metric: "Operating Profit Margin on manufactured revenue", healthy: "8-12% company range, trending toward the higher end", red_flag: "sustained below 5%"}
+  - {metric: "Other Income as % of PBT", healthy: "below 15-20%", red_flag: "above 40-50% for a second year"}
+  - {metric: "Current Ratio", healthy: "at or above 1.0", red_flag: "falling further below 0.80"}
+  - {metric: "SDPL turnover and CWIP ageing", healthy: "first reported turnover, aged CWIP bucket shrinking", red_flag: "Nil turnover into a third year, aged CWIP bucket growing"}
+unit_economics:
+  unit: "1 metric tonne of H-Acid"
+  revenue_per_unit: "NOT FOUND - no production volume disclosed against the 270-tonne installed capacity (AR FY26, p.5)"
+  margin_per_unit: "NOT FOUND for the same reason; only aggregate cost lines disclosed"
+  key_lever: "The spread between global H-Acid realisation and the naphthalene-chain input cost basket, not unit volume growth alone; FY26 shows revenue up 30.7% while EBITDA fell, evidence that volume/trading growth without spread can destroy margin"
+first_deterioration_signals:
+  - {risk: "Trading-line revenue masking organic growth", first_signal: "Note 35.2 'H-Acid' line growing faster than a cleanly separated manufactured-goods figure"}
+  - {risk: "Unhedged/unexplained export exposure", first_signal: "Note 35.9 export revenue swinging again with no management explanation, or an FX loss appearing in Other Income"}
+  - {risk: "Margin/spread compression", first_signal: "Cost of Material Consumed (Note 29) rising faster than Sale of Manufactured Goods (Note 27)"}
+  - {risk: "Working capital and liquidity strain", first_signal: "Current Ratio falling further below 0.80, or working capital borrowing outpacing inventory plus receivables growth"}
+  - {risk: "SDPL execution slippage", first_signal: "AOC-1 showing SDPL turnover still Nil for a further year, or the aged CWIP bucket growing"}
+  - {risk: "Promoter cash extraction", first_signal: "Note 35.7 combined promoter-family remuneration, relatives' salary and rent staying above 100% of standalone PBT"}
+mgmt_questions:
+  - "What is current H-Acid capacity utilisation and FY26 production volume in tonnes?"
+  - "How much of the Rs 3,349.83 lakh FY26 trading revenue recurs in FY27, and what is the internal organic manufactured volume growth measure?"
+  - "What drove the export jump from zero to 46.4% of FY26 revenue, and why does Note 35.13 still deny material FX exposure?"
+  - "When will Shakambhari Dyechem Private Limited commence production, with what capacity and product mix?"
+  - "What is the Board's policy to cap promoter-family remuneration, relatives' salary and rent below 100% of PBT?"
+  - "What is the arm's-length benchmark for Rs 813.73 lakh of FY26 purchases from Shubhalakshmi Polyesters Ltd?"
+  - "What is management's plan to restore the current ratio above 1.0 after two consecutive sub-1.0 years?"
+one_line_verdict: "Unbranded H-Acid spread converter; FY26 growth masks trading dilution, unhedged FX and promoter extraction."
+analyst_note: "The single most load-bearing gap in this AR for the pipeline's own thesis question is the total absence of production volume or capacity utilisation disclosure against the stated 270-tonne capacity; every unit-economics field in Section 3D is NOT FOUND for this reason. This AR independently corroborates two of B02/B03's four load-bearing facts from the run brief: (1) Note 35.2 mislabels FY26 trading revenue as manufactured H-Acid, isolating organic manufactured growth at c.4.8% versus a 30.7% headline; (2) export revenue's jump from 0% to 46.4% of FY26 revenue directly contradicts Note 35.13's verbatim, twice-repeated claim of no major FX exposure and no hedging. A third AR-sourced finding not previously surfaced at this granularity: FY26 revenue grew 30.7% while EBITDA fell (Rs 1,147.66 lakh to Rs 980.64 lakh, MD&A p.77), meaning the incremental revenue carried negative incremental margin at the blended level, direct evidence against reading FY26 volume growth as value-accretive without first separating spread from trading-line dilution. These findings should anchor Section 1B/FTTCP's Amendment 17 converter treatment; FY26 must not be treated as a representative spot year for margin or ROCE."

@@ -21,3 +21,4 @@ Per-stage token ledger. One row per subagent run. Summary block appended at clos
 | 12c | verifier-c-framework | opus | default | n/a | n/a | 81902 | 241s | 1 |
 | 12b | verifier-b-redflags | opus | default | n/a | n/a | 149248 | 294s | 1 |
 | 12a | verifier-a-numerical | haiku | default | n/a | n/a | 88243 | 181s | 2 |
+| 13 | synthesis-lite | opus | default | n/a | n/a | 84752 | 263s | 1 |

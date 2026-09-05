@@ -1,0 +1,121 @@
+stage: B00-inputs
+company: VISAKAIND
+run_date: 2026-09-05
+model: orchestrator
+status: complete
+corpus_commit_hash: 65ce128d0e9c0deae087d8bb2681e7596a917acb
+run_type: full
+cmp: 93.4
+market_cap_cr: 807.0
+sector_cap_row: "Building materials"   # manifest, operator-corrected from collector auto-pick; row exists in Master v3.6 cap table (22x)
+spear_gate:
+  form: OVERRIDE
+  line: "Spear: OVERRIDE 2026-09-05 (operator standing ruling 2026-09-05: Step-1 intake replaces the web spear)"
+  signed: false
+  written_by: "run-pipeline orchestrator at run start, under the Step-1 standing ruling recorded in .claude/commands/step1.md section G"
+  note: >
+    companies/VISAKAIND.md did not exist when /run-pipeline started. The corpus
+    was collector-staged with peers selected and the sector row corrected
+    (manifest notes), i.e. the desktop half of /step1 (steps A-F) without
+    step G. No step1-business-brief.md exists in the run folder. The
+    orchestrator applied the Step-1 standing auto-override so the shelf run
+    proceeds to Halt 1; the operator confirms or KILLs the name at Halt 1.
+    This is recorded, not silent. No web spear was run on this name.
+inventory:
+  prospectus: 0        # not expected: 44th AGM in 2026, long-listed (BSE 509055 / NSE VISAKAIND); not a gap
+  annual_report: 2     # Annual_Report_2026.pdf = FY2025-26 AR (293pp, dated 08-Jul-2026, 44th AGM) PRIMARY; Annual_Report_2025.pdf = FY2024-25 AR (273pp, dated 08-Jul-2025, 43rd AGM) SECONDARY for backward baseline. Labels verified against cover letters.
+  results: 0           # ABSENT. No quarterly or annual results filing PDF. Latest-quarter figures (Q1 FY27, qe 30-Jun-2026) exist only in the screener Data_Sheet quarters table.
+  rating: 0            # ABSENT. No rating bulletin or rationale.
+  concalls: 4          # Visaka transcripts, all STALE: May-2022 = Q4 FY22 (18pp); Aug-2022 = Q1 FY23 (13pp); Nov-2022 = Q2 FY23 (18pp); Aug-2023 = Q1 FY24 (16pp, call held 16-Aug-2023). Use 3 most recent per contract: Q1 FY23, Q2 FY23, Q1 FY24. Newest is ~37 months old.
+  peer_concalls: 4     # ONE peer only: BirlaNu Ltd (formerly HIL, BSE 509675): Aug-2025 = Q1 FY26 (21pp); Nov-2025 = Q2 FY26 (20pp); May-2026 = Q4 FY26 (22pp); Aug-2026 = Q1 FY27 (25pp). Everest Industries and Ramco Industries have NO transcripts (screening CSVs only).
+  announcements: 0     # ABSENT
+  shareholding: 0      # ABSENT
+  research: 0          # ABSENT (folder created with .gitkeep for the Halt 1 handover dossier)
+  screening: 24        # 4 screener export sets x 6 CSVs: screener-* = VISAKAIND (main); 509675-* = BirlaNu; EVERESTIND-*; RAMCOIND-*. Only the Data_Sheet CSV in each set is populated (10y P&L FY17-FY26, 10 quarters Q4FY24-Q1FY27, BS, CF, price). The Profit_Loss / Balance_Sheet / Cash_Flow / Quarters / Customization CSVs are empty formula shells (known collector defect).
+  presentation: 1      # Investor_Presentation_1.pdf = Q1 FY24 investor presentation filed 10-Aug-2023 (51pp). Genuine company deck, STALE (~3 years old).
+  other: 0             # not present; never consumed, not a gap
+text_twins: "Every input PDF has a page-tagged .txt twin beside it (pdftotext -layout, '===== PAGE N =====' markers), generated at session start for grep navigation; twins are working files, not committed. All 11 PDFs are text-native; near-empty pages: AR FY26 3, AR FY25 4, presentation 1, transcripts 0."
+concalls_available: true
+concall_mode: "STALE CONCALL MODE: newest main-company transcript is Q1 FY24 (16-Aug-2023), ~37 months before run_date. Whether the company held calls after Aug-2023 is NOT KNOWN from the corpus (AR FY26 text has no 'earnings call' / 'conference call' mention). Stage 5 promise-vs-delivery is checked against AR FY24/FY25/FY26 audited outcomes; forward catalysts from filed documents only; credibility read carries a staleness caveat. Peer (BirlaNu) transcripts are current to Q1 FY27, so the industry read is current while the main-company voice is not."
+listed_within_3y: false
+input_gaps:
+  - type: results
+    status: absent
+    note: "No quarterly/annual results filing PDF. Q1 FY27 (qe 30-Jun-2026) and Q4 FY26 results exist only as screener Data_Sheet quarter rows (secondary, unverifiable against a filing). Gate 0 runs from screener + AR audited statements; latest-quarter fields carry screener-tier anchors only. Freshness pair 1 has no trigger."
+  - type: rating
+    status: absent
+    note: "No credit rating bulletin or rationale. Pillar 2 / FLAG-CASH determination cannot cite a rating rationale; INDETERMINATE handling per Section 4 applies if cash conversion is flagged."
+  - type: announcements
+    status: absent
+    note: "No Reg 30 filings (last ~12m). Stages 5, 7, 8 lose the documented-ACTION record; intent-and-action cross-check runs on AR/concall evidence only; stage 8 relies on web search for material events."
+  - type: shareholding
+    status: absent
+    note: "No quarterly shareholding pattern filing. FII+DII UA qualifier unresolved for Phase 3; promoter holding/pledge trend from AR FY26 (as at 31-Mar-2026) only, staleness noted."
+  - type: research
+    status: absent
+    note: "No broker notes. No effect on anchored evidence."
+  - type: concalls_stale
+    status: present_stale
+    note: "Main-company transcripts end at Q1 FY24 (Aug-2023). FY25-FY27 management commentary is available only via AR letters/MD&A and the Q1 FY24 deck. If Q4 FY26 / Q1 FY27 calls were held, their transcripts are the FIRST upload for the operator."
+  - type: peer_concalls_partial
+    status: partial
+    note: "Only 1 of 3 selected peers (BirlaNu/HIL 509675) has transcripts (4). Everest Industries (EVERESTIND) and Ramco Industries (RAMCOIND) are screening-CSV only. Peer utilisation denominator for Verifier D = peers with transcripts provided."
+  - type: presentation_stale
+    status: present_stale
+    note: "Only deck is the Q1 FY24 investor presentation (Aug-2023). Capacity / ATUM / product-mix claims in it are 3 years old and must be re-checked against AR FY26."
+  - type: screening_split_csvs_empty
+    status: collector_defect
+    note: "Profit_Loss / Balance_Sheet / Cash_Flow / Quarters CSVs in all 4 sets are empty formula shells; only Data_Sheet is populated. Recorded, not fixed. Data_Sheet is sufficient for Gate 0 and peer screening."
+  - type: step1_business_brief
+    status: absent
+    note: "runs/visakaind-2026-09-05/step1-business-brief.md does not exist (Step-1 steps B/G not committed). First verification priorities below are orchestrator-identified from the manifest notes and the screener Data_Sheet, not from a web read."
+freshness_pairs:
+  - pair: results_to_concall
+    trigger_doc: "none: inputs/results/ is empty"
+    mate_expected: "same-quarter concall transcript"
+    status: PASS
+    trigger_present: false
+    missing_doc: ""
+    note: "Pair cannot fail without a trigger; the results absence itself is input_gaps[results]. Concall staleness is recorded separately under concall_mode."
+  - pair: rating_bulletin_to_rationale
+    trigger_doc: "none: inputs/rating/ is empty"
+    mate_expected: "full rating rationale"
+    status: PASS
+    trigger_present: false
+    missing_doc: ""
+  - pair: sebi_order_to_text
+    trigger_doc: "none referenced (grep of all 11 text twins for 'SEBI order', 'adjudicat', 'show cause': no hits)"
+    mate_expected: ""
+    status: PASS
+    missing_doc: ""
+  - pair: ar_to_latest_audited_annual
+    trigger_doc: "FY2025-26 audited annual statements (ye 31-Mar-2026) inside Annual_Report_2026.pdf"
+    mate_expected: "FY2025-26 annual report"
+    status: PASS
+    missing_doc: ""
+    note: "AR FY26 is the latest audited annual; FY27 has not ended. No newer audited annual result exists."
+freshness_verdict: FRESHNESS PAIRS OK
+corpus_verdict_prelim: CORPUS GAPPED     # results, rating, announcements, shareholding absent; main concalls and deck stale
+first_verification_priorities:   # orchestrator-identified targets (NOT anchored; every stage verifies against AR FY26/FY25 pages)
+  - "FY26 Other Income Rs 66.81 Cr vs Rs 8.06 Cr in FY25 (screener Data_Sheet; quarters show Rs 38.44 Cr in Q1 FY26 and Rs 24.65 Cr in Q4 FY26). FY26 PBT Rs 110.25 Cr. Identify the nature (one-off asset sale, insurance, reversal, fair-value) and recurrence in AR FY26 Notes; operating PBT ex other income must be stated separately."
+  - "Earnings trough and recovery: PAT FY23 54.79 -> FY24 2.53 -> FY25 0.14 -> FY26 87.83 Cr; Q1 FY27 PAT 50.03 Cr on sales 588.85 Cr (screener). Verify the FY26 and Q1 FY27 operating recovery against AR FY26 segment results and Q1 FY27 filing (absent; screener-tier only)."
+  - "Debt reduction: borrowings FY24 534.98 -> FY25 479.36 -> FY26 303.44 Cr; CFO FY26 182.64 Cr; CFI FY26 +36.21 Cr (positive: asset sale?). Confirm the source of the FY26 deleveraging (operating cash vs asset disposal) in AR FY26 cash flow statement and notes."
+  - "ATUM integrated solar roofing (manifest: 'growth optionality'): segment/product revenue, losses, capacity and any impairment in AR FY26 vs the Aug-2023 deck claims. Stage 7 classifies it under the evidence taxonomy; stage 9 sizes it separately from fibre-cement roofing."
+  - "Sector cap row: manifest says 'Building materials' (22x), operator-corrected from collector auto-pick 'EPC / Civil construction'. Business mix (fibre-cement roofing + boards/panels + synthetic yarn + ATUM) to be confirmed by stage 4; blended-row question carried to Phase 3."
+peers_selected:
+  - {ticker: "509675", name: "BirlaNu Ltd (formerly HIL Ltd)", transcripts: 4, screening: yes}
+  - {ticker: "EVERESTIND", name: "Everest Industries Ltd", transcripts: 0, screening: yes}
+  - {ticker: "RAMCOIND", name: "Ramco Industries Ltd", transcripts: 0, screening: yes}
+operator_pause:
+  empty_folder_confirmation: "NOT ASKED. Autonomous remote session (operator not present) and the Step-1 standing default (2026-09-05) 'proceed with the gaps' applied. Empty folders: results, rating, announcements, shareholding, research (prospectus not expected). Listed for the operator in the Halt 1 message so documents can be pushed with collect_to_repo.py --push-again."
+flags: []
+analyst_note: >
+  Corpus is AR-heavy and commentary-light. Two consecutive annual reports
+  (FY25, FY26) give a solid audited backward baseline, but there is no
+  results filing, no rating, no shareholding pattern, no announcements, and
+  the company's own voice stops at Aug-2023 (Q1 FY24 call and deck). The
+  single peer with transcripts (BirlaNu) is current to Q1 FY27. Freshness
+  pairs all pass on their own terms because no trigger document is present
+  for pairs 1-2; the corpus verdict is CORPUS GAPPED, not GAPPED-FRESHNESS.
+  Spear gate satisfied by the recorded Step-1 standing override, written by
+  the orchestrator, unsigned by the operator; the operator rules at Halt 1.

@@ -1,0 +1,120 @@
+SETUP INSTRUCTIONS — Screener Document Collector
+=================================================
+
+STEP 1 — INSTALL PYTHON (if not already installed)
+----------------------------------------------------
+1. Go to https://www.python.org/downloads/
+2. Download Python 3.11 or newer
+3. During installation: CHECK the box that says "Add Python to PATH"
+4. Click Install Now
+
+To verify: Open Command Prompt (Win+R → type cmd → Enter)
+Type: python --version
+Should show: Python 3.11.x or similar
+
+
+STEP 2 — INSTALL REQUIRED PACKAGES
+-------------------------------------
+Open Command Prompt and run these two commands one by one:
+
+    pip install playwright python-dotenv
+
+    playwright install chromium
+
+The second command downloads the Chromium browser (~150MB).
+This only needs to be done once.
+
+
+STEP 3 — CREATE YOUR .env FILE
+--------------------------------
+In the SAME FOLDER as screener_collect.py, create a new text file
+called exactly:   .env   (note: starts with a dot, no .txt extension)
+
+To create it:
+1. Open Notepad
+2. Type these two lines (replace with your actual credentials):
+
+SCREENER_EMAIL=sumitsharmasatish@gmail.com
+SCREENER_PASSWORD=your_new_password_here
+
+3. Save as → File name: .env → Save as type: All Files (*)
+   Save in the same folder as screener_collect.py
+
+IMPORTANT: Never share this file with anyone.
+
+
+STEP 4 — SET YOUR GOOGLE DRIVE PATH
+--------------------------------------
+Open screener_collect.py in Notepad or any text editor.
+Find this line near the top:
+
+    GDRIVE_BASE = r"G:\My Drive"
+
+Change it to your actual Google Drive Desktop path.
+To find your path:
+1. Open File Explorer
+2. Find your Google Drive folder
+3. Click on it → look at the address bar at the top
+4. Copy that path
+
+Common examples:
+    GDRIVE_BASE = r"G:\My Drive"
+    GDRIVE_BASE = r"C:\Users\Sumit\Google Drive\My Drive"
+
+
+STEP 5 — RUN THE SCRIPT
+-------------------------
+Open Command Prompt.
+Navigate to the folder where the script is saved:
+
+    cd C:\Users\Sumit\Desktop\screener_collector
+
+Run the script with a screener.in company URL:
+
+    python screener_collect.py https://www.screener.in/company/VENUSPIPES/
+
+The browser will open automatically and you can watch it work.
+All files will appear in your Google Drive folder when done.
+
+
+EXAMPLES OF VALID URLS
+-----------------------
+    python screener_collect.py https://www.screener.in/company/IVALUE/
+    python screener_collect.py https://www.screener.in/company/KRN/
+    python screener_collect.py https://www.screener.in/company/SJLOGISTICS/
+    python screener_collect.py https://www.screener.in/company/AEROFLEX/
+
+
+WHAT GETS DOWNLOADED
+----------------------
+For each company, the script creates this folder in Google Drive:
+
+    stock analysis-_output [Company Name]/
+        Financials.xlsx               ← Financial data export
+        Annual Report FY25.pdf        ← Latest annual report
+        Annual Report FY24.pdf        ← Prior year annual report
+        Concall Q3FY26.pdf            ← Latest concall transcript
+        Concall Q2FY26.pdf
+        Concall Q1FY26.pdf
+        Concall Q4FY25.pdf
+        Investor Presentation.pdf     ← Latest investor presentation
+
+
+TROUBLESHOOTING
+----------------
+Problem: "python not recognized"
+Fix: Reinstall Python and make sure "Add to PATH" is checked
+
+Problem: "No module named playwright"
+Fix: Run: pip install playwright
+
+Problem: Login fails
+Fix: Check your .env file — make sure there are no spaces around = sign
+
+Problem: Files not downloading
+Fix: screener.in may have updated their page layout.
+     Open an issue or run the script with headless=False to watch
+     what happens (it is already set to headless=False by default)
+
+Problem: Google Drive path not found
+Fix: Update GDRIVE_BASE in the script to match your actual Drive path

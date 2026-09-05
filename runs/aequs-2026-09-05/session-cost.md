@@ -16,3 +16,4 @@ wall recorded). Stage 0 ran in the orchestrator session, no subagent row.
 | 8 | promoter | sonnet | default | - | - | 275992 | 852s | 1 |
 | 6 | peer-verification | sonnet | default | - | - | 0 | aborted (API 429 session limit, no output) | 1 |
 | 7 | emerging-moat | sonnet | default | - | - | 0 | aborted (API 429 session limit, no output) | 1 |
+| 6 | peer-verification | sonnet | default | - | - | 273591 | 447s | 2 |

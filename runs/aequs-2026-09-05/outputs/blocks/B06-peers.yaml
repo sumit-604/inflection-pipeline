@@ -1,0 +1,49 @@
+stage: B06-peers
+company: "AEQUS"
+run_date: "2026-09-05"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "peer-concalls: DYNAMATECH represented by a single stale investor-day transcript (23-Feb-2024, ~30 months stale, narrative format with no Q&A on financials); 9 of 12 possible peer-call slots filled"
+  - "no peer transcript covers the Consumer/toys segment (Q7 unverifiable by construction, no coverage gap to close within this peer set)"
+flags:
+  - "Two listed peers (AZAD, UNIMECH) post materially HIGHER blended EBITDA margins (30s%) than Aequs' 20-27% aerospace-segment band, complicating rather than supporting the 'vertically integrated ecosystem margin edge' framing management used when pressed by analysts (stage 5, 3C)"
+  - "AZAD's Q4 FY26 explicit answer of 'no risk observed' from Middle East geopolitical tension on its own supply chain is a soft complication (not a direct contradiction) to Aequs' West Asia logistics-disruption narrative"
+  - "AZAD runs consistently HIGHER working-capital days (140-200) than Aequs across three consecutive quarters, undercutting any read of Aequs' 120-151-day NWC profile as a company-specific execution failure"
+peers_provided: 9
+verified:
+  - {claim: "Airbus/Boeing single-aisle (A320/737) rate ramps corroborated by peer order-book growth and direct LEAP/GTF engine demand commentary", peers: ["AZAD", "UNIMECH"], anchor_count: 4}
+  - {claim: "Peer net-working-capital-day norms (120-200 days) confirm Aequs' 120-151 day range as sector-normal, not structurally elevated", peers: ["AZAD", "UNIMECH"], anchor_count: 6}
+  - {claim: "Peer capex accelerates around order wins, funded via a blend of accrual, debt, and pre-emptive equity/QIP, matching Aequs' own capex-plus-possible-raise pattern", peers: ["AZAD", "UNIMECH"], anchor_count: 5}
+partially_verified:
+  - {claim: "Other Indian precision/aerospace-adjacent manufacturers sustain strong EBITDA margins (direction confirmed) but at materially higher magnitude (30s%) than Aequs' 20-27% band, not 'similar'", peers: ["AZAD", "UNIMECH"]}
+  - {claim: "Heavy raw-material import dependency is a structural, industry-wide feature (direction confirmed) but the exact ~99% magnitude is not independently quantified by any peer", peers: ["AZAD", "DYNAMATECH"]}
+contradicted: []
+unverifiable:
+  - {claim: "India's share of the global aerospace supply chain ~5% today, targeted ~10%", peers_checked: ["AZAD", "UNIMECH", "DYNAMATECH"]}
+  - {claim: "Specific raw-material lead-time magnitudes (titanium ~52wk, steels 65-75wk) and West Asia logistics-delay magnitudes (sea +5-6wk, air +6-8 days)", peers_checked: ["AZAD", "UNIMECH"]}
+  - {claim: "Customer concentration near Aequs' AR-implied ~58% (four anonymised customers) is typical of listed Indian aerospace component makers", peers_checked: ["AZAD", "UNIMECH", "DYNAMATECH"]}
+  - {claim: "Peer disclosure of a comparable China-to-India consumer-brand sourcing shift and customer discontinuation (Mattel/Hasbro analogue)", peers_checked: []}
+peer_coverage_map:
+  - {peer: "AZAD", quarter: "Q2 FY26 (Nov-2025)", usage: "substantive", contribution: "Wallet-share framing, RM cost-fluctuation contract structure, capex/QIP funding detail, export FX hedge"}
+  - {peer: "AZAD", quarter: "Q3 FY26 (Feb-2026)", usage: "substantive", contribution: "WC-day targets, long-term margin guide, domestic-sourcing progress, Safran/Pratt & Whitney demand commentary"}
+  - {peer: "AZAD", quarter: "Q4 FY26 (May-2026)", usage: "substantive", contribution: "Middle East geopolitical-risk Q&A ('no risk' answer), WC-day update, FY26 capex/margin actuals, Saudi facility delay"}
+  - {peer: "AZAD", quarter: "Q1 FY27 (Aug-2026)", usage: "substantive", contribution: "Raw-material import-dependency detail, Howmet peer-margin comparison, WC-day update, margin actuals"}
+  - {peer: "UNIMECH", quarter: "Q3 FY26 (Feb-2026)", usage: "substantive", contribution: "US tariff demand shock (risk analogue absent from Aequs' set), WC-day target, margin detail"}
+  - {peer: "UNIMECH", quarter: "Hobel acquisition update (Apr-2026, filed May-2026)", usage: "substantive", contribution: "Hobel customer-concentration disclosure (non-aerospace sub-segment), all-cash acquisition financing detail"}
+  - {peer: "UNIMECH", quarter: "Q4 FY26 (held 29-May-2026, filed Jun-2026)", usage: "substantive", contribution: "WC-days actual, FY26 margin actual, order-book growth, India-as-destination framing, client-insourcing risk question"}
+  - {peer: "UNIMECH", quarter: "Q1 FY27 (Aug-2026)", usage: "substantive", contribution: "LEAP-engine demand quote (direct single-aisle corroboration), WC-day guide, margin actual, FACC agreement, enabling QIP resolution"}
+  - {peer: "DYNAMATECH", quarter: "Investor day (23-Feb-2024, ~30 months stale)", usage: "substantive", contribution: "Raw-material import-dependency statement and Airbus A318-A321 flap-track-beam single-aisle background; no margin/WC/concentration figures in this narrative-only transcript"}
+industry_cross_read:
+  demand: "All three peers describe a favourable, structural demand backdrop consistent with Aequs' framing; the one qualifier is UNIMECH's own severe US-tariff-driven demand shock in Q3 FY26, a risk type not disclosed in Aequs' three calls despite similar USD-linkage."
+  pricing_inputs: "Peers attribute margin resilience to long-term fixed-price contracts and natural FX hedging rather than raw-material cost trends; neither peer corroborates the specific West Asia lead-time/logistics-cost shock Aequs describes."
+  capex_cycle: "Industry-wide capacity race, not a lone-expander situation: AZAD and UNIMECH are both capitalizing aggressively around order wins (QIP-funded plants; Hobel acquisition plus Saudi JV plus enabling QIP resolution), paralleling Aequs' own capex acceleration."
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "US tariff exposure on export-oriented aerospace supply chains (UNIMECH, halved sequential revenue in Q3 FY26) — not named as a risk in any Aequs call despite ~93-94% USD-linked revenue"
+  - "Manpower/hiring bottleneck as an explicit, quantified capacity constraint (AZAD) — not named as a risk in Aequs' calls"
+  - "Client in-house insourcing of tooling work as a disintermediation risk (UNIMECH) — not raised in any Aequs call"
+  - "Named certification/qualification-cycle gating risk with explicit timelines, e.g. NADCAP, AS9100 (AZAD, UNIMECH) — Aequs discusses audits/validation only in general terms"
+  - "Geopolitical conflict delaying an overseas facility timeline (AZAD's Saudi Baker Hughes plant) — a risk category Aequs' own West Asia commentary does not extend to facility/capex timing, only to logistics cost"
+net_narrative_effect: "complicates"
+analyst_note: "The margin finding under Q3 is the priority item for stage 13: two direct listed peers post materially higher blended margins than Aequs' 20-27% band, which cuts against management's own 'scale is our differentiator' answer to the same analyst pushback (stage 5, 3C), even though true segment-isolated comparability is imperfect. DYNAMATECH's single stale, narrative-only transcript limits Q9 and Q4 confidence; treat its anchors as directional colour, not quantified confirmation. The Part 5 qualification-cycle-timing hypothesis suggests utilization/certification-completion tracking is a better near-term earnings predictor for this whole peer cohort, including Aequs, than order-book growth alone — worth carrying into stage 11/13 as a monitoring framework rather than a valuation input."

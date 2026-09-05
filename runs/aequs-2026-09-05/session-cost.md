@@ -21,3 +21,4 @@ wall recorded). Stage 0 ran in the orchestrator session, no subagent row.
 | 12d | verifier-peers | sonnet | default | - | - | 263465 | 346s | 1 |
 | 12c | verifier-framework (phase-1 scope) | opus | default | - | - | 137381 | 728s | 1 |
 | 12b | verifier-redflags | opus | default | - | - | 358756 | 873s | 1 |
+| 9 | tam | sonnet | default | - | - | 168715 | 934s | 1 |

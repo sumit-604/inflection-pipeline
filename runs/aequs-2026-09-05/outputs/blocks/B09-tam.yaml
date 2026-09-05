@@ -1,0 +1,106 @@
+stage: B09-tam
+company: "AEQUS"
+run_date: "2026-09-05"
+model: claude-sonnet-5
+status: partial
+input_gaps:
+  - "prospectus ABSENT — no DRHP-stated TAM to cross-check management's own market-sizing claims"
+  - "aerospace-only and consumer-only fixed asset turnover NOT FOUND (per B07) — limits 3C capacity-check precision to a blended, company-wide basis"
+  - "aerospace order-book conversion cadence / book-to-bill ratio NOT FOUND — order-book reconciliation in 3C is a bracketed range, not a point estimate"
+  - "India-specific market sizing for consumer-electronics-enclosure and export-cookware contract manufacturing NOT FOUND — only broad, wrong-scope end-market retail figures exist"
+  - "PLI/ECMS scheme quantum specific to Aequs NOT FOUND (approval confirmed elsewhere in corpus per B07, Rs value and sunset date absent)"
+flags:
+  - "AR's own commissioned India aerospace TAM ($3.06Bn by 2030, AR p.39) is 7-10x SMALLER than independent third-party estimates (IMARC $17.3-31.3Bn, GVR $21.48Bn by 2030) for an apparently similar label — likely a scope difference (AR excludes defence-platform/MRO manufacturing that third-party numbers probably include), taken at face value per conservative bias but the scope gap itself is a finding for Stage 11/13"
+  - "Management's 'India ~5% of global aerospace supply chain, targeting ~10%' claim (Q3 FY26 concall) is internally inconsistent in the same sentence (also states '2% of global supply chain') and is explicitly UNVERIFIABLE against peer disclosure per B06 — treated as directional colour only, not load-bearing"
+  - "Consumer segment TAM rests on materially thinner evidence than Aerospace: no India-specific contract-manufacturing-wallet figure exists for toys-for-export, CE enclosures, or cookware-for-export; Consumer SOM was built via a B07 capacity-conversion cross-check rather than a market-share-of-SAM calculation and should be read as lower confidence"
+  - "Blended SOM-implied revenue CAGR (20.4% at 5yr) sits well below management's own Vision 2031 target (4-6x FY26 revenue by FY31 = 32-43% CAGR); EBITDA CAGR under the SOM path with management's own margin-expansion guidance (13% to 18-22%) closes much of this gap (~30-32% EBITDA CAGR) but PAT CAGR is not meaningful from FY26's net-loss base"
+  - "Order-book conversion cadence is NOT FOUND; on a fast (3yr) conversion assumption the order book implies materially FASTER revenue realisation than this section's SOM, i.e. the order book — not this TAM/SAM/SOM framework — may be the more optimistic signal"
+market_definition: "India (plus France/US) precision-component manufacturing for global commercial-aerospace OEM/Tier-1 supply chains (85% of revenue) plus India-based contract manufacturing of toys, CE enclosures and cookware for global consumer brands (15%); excludes defence-platform manufacturing, MRO/aftermarket, and India domestic-retail consumer markets"
+tam_cr: {conservative: 16231, realistic: 20920}
+sam_cr: 11673
+sam_pct_of_tam: 55.8
+som_3yr_cr: 2218
+som_5yr_cr: 3112
+som_implied_revenue_cagr: {yr3: 21.7, yr5: 20.4}
+current_sam_share_pct: 10.5
+revenue_headroom_x: 9.5
+tam_growth_pct: 7.3
+runway_class: "STRONG"
+mgmt_claim_cr: 25709
+mgmt_claim_ratio: 1.17
+mgmt_claim_read: "reasonable"
+capacity_check: "sufficient — Aerospace utilisation catch-up (70%→~90%) plus disclosed capex (Hosur Rs1,900cr/10yr, Karnataka Rs2,856cr/5yr) cover both SOM_3yr and SOM_5yr with margin to spare; Consumer SOM sits inside B07's 4-5x capacity-conversion ceiling; precision limited by NOT FOUND segment-specific fixed asset turnover"
+methods_used:
+  - "top-down (AR/company-commissioned India aerospace manufacturing market, back-solved to current year)"
+  - "bottom-up (global aerostructures market x management's stated India share)"
+  - "peer revenue aggregation (AZAD/Unimech/Dynamatic aerospace-segment revenue + unorganised/private-player judgment multiplier)"
+  - "top-down + global benchmark (India toy-export trade data cross-checked against global toy-manufacturing-value share) for Consumer"
+  - "capacity-conversion cross-check (B07 capex-embedded growth) substituted for Consumer SOM given thin market data"
+stale_data_flags:
+  - {datapoint: "India Precision Engineered Components (PEC) market $996.10Mn by 2034", source: "AR p.40 footnote 10, imarcgroup.com", year: "undated in AR, likely ~2024 vintage IMARC report"}
+searches_performed:
+  - "India aerospace components manufacturing market size 2025 2030 CRISIL ICRA billion USD"
+  - "India toys market size 2025 IMARC billion rupees"
+  - "global aerostructures market size 2025 forecast 2030 billion aerospace component suppliers Tier 1"
+  - "India ECMS scheme consumer electronics manufacturing market size PLI 2.0 billion"
+  - "India electronics manufacturing services EMS market size 2025 billion IBEF"
+  - "India cookware market size 2025 billion crore"
+  - "AZAD Engineering FY26 annual revenue crore FY2025-26"
+  - "Unimech Aerospace FY26 annual revenue crore Dynamatic Technologies aerospace revenue"
+  - "Dynamatic Technologies aerospace segment revenue FY26 crore hydraulics segment split"
+  - "India toy exports value 2025 government target billion self-reliant toy manufacturing China imports"
+  - "India consumer electronics contract manufacturing enclosures precision Apple wearables market Dixon Technologies"
+  - "USD INR exchange rate September 2026"
+  - "Aequs Ltd IPO prospectus DRHP TAM market size aerospace precision components India"
+  - "WebFetch: grandviewresearch.com India aerospace parts manufacturing market press release"
+  - "WebFetch: aequs.com Industry-Report.pdf"
+  - "WebFetch: imarcgroup.com india-aircraft-components-market"
+searches_skipped:
+  - {reason: "egress-blocked", target: "www.grandviewresearch.com/press-release/india-aerospace-parts-manufacturing-market-analysis"}
+  - {reason: "egress-blocked", target: "www.aequs.com/wp-content/uploads/2025/10/Industry-Report.pdf"}
+  - {reason: "egress-blocked", target: "www.imarcgroup.com/india-aircraft-components-market"}
+downstream_candidates:
+  - signal: "Airbus + Boeing combined single-aisle/long-range delivery and backlog trend"
+    entity_type: "end-customer"
+    demand_link: "Aequs's whole Aerospace book rides OEM build-rate ramps and backlog conversion"
+    likely_source: "Airbus/Boeing monthly delivery reports, annual order-and-delivery statements"
+    cadence: "monthly"
+    shared: true
+  - signal: "Safran Landing Systems A320 wheel programme ramp (15-yr agreement)"
+    entity_type: "end-customer"
+    demand_link: "Single largest named new-programme revenue-visibility catalyst (load-bearing fact 4)"
+    likely_source: "Safran investor disclosures; Aequs Reg-30 filings"
+    cadence: "event-driven"
+    shared: true
+  - signal: "Collins Aerospace / Honeywell / GKN Aerospace / Eaton programme awards"
+    entity_type: "end-customer"
+    demand_link: "Additional Tier-1 wallet-share expansion beyond Airbus/Boeing/Safran"
+    likely_source: "Company investor-relations pages, aerospace trade press"
+    cadence: "event-driven"
+    shared: false
+  - signal: "India ECMS / PLI 2.0 scheme approvals and disbursement"
+    entity_type: "regulatory"
+    demand_link: "Directly funds and gates Consumer Electronics capacity expansion"
+    likely_source: "MeitY / PIB press releases"
+    cadence: "event-driven"
+    shared: false
+  - signal: "Tamil Nadu (Hosur) and Karnataka state MoU execution milestones"
+    entity_type: "regulatory"
+    demand_link: "Gates the Rs1,900cr and Rs2,856cr capacity programmes underlying SOM_5yr"
+    likely_source: "State government press releases; Aequs Reg-30 filings"
+    cadence: "event-driven"
+    shared: false
+  - signal: "USD/INR exchange rate"
+    entity_type: "macro"
+    demand_link: "~93-95% of Aequs revenue is USD-linked (B06); moves reported Rs revenue and margin directly"
+    likely_source: "RBI reference rate / FBIL"
+    cadence: "monthly"
+    shared: true
+  - signal: "Mattel and Spin Master global sourcing/production guidance"
+    entity_type: "end-customer"
+    demand_link: "Two-client concentration in the toys sub-segment; their supply-chain commentary signals Aequs toy-line demand"
+    likely_source: "Mattel/Spin Master quarterly earnings calls"
+    cadence: "quarterly"
+    shared: false
+demand_externally_verifiable: true
+analyst_note: "The two biggest judgment calls in this build are the Aerospace SAM capability filter (75%, reflecting Engine/Landing-Gear as still-maturing categories) and the Consumer unorganised/private-player multiplier (15-20% listed-to-total assumption) — both are ANALYST JUDGMENT, not sourced, and Stage 11 should treat SAM/SOM as a band, not a point figure, given this. The AR's own $3.06Bn aerospace TAM being smaller than independent third-party figures is unusual (management understating rather than inflating) and is worth a direct operator question at Halt 1: does Aequs's own commissioned Industry Report exclude defence/MRO, and if so, does that make Ajna's UAV entry a bigger latent SAM-expansion lever than 5D currently credits it."

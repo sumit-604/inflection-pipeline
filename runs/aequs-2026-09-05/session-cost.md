@@ -23,3 +23,4 @@ wall recorded). Stage 0 ran in the orchestrator session, no subagent row.
 | 12b | verifier-redflags | opus | default | - | - | 358756 | 873s | 1 |
 | 9 | tam | sonnet | default | - | - | 168715 | 934s | 1 |
 | 12a | verifier-numerical | haiku | default | - | - | 121063 | 159s | 1 |
+| 13 | synthesis-lite | opus | default | - | - | 178004 | 823s | 1 |

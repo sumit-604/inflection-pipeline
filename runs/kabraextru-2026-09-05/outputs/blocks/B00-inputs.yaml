@@ -27,7 +27,16 @@ inventory:
   results: {count: 0}
   rating: {count: 0}
   concalls: {count: 0, note: "declared absent via concalls_available:false; NO-CONCALL MODE"}
-  peer-concalls: {count: 5, peers: {RAJOOENG: ["May_2023", "Nov_2023", "Apr_2024", "Nov_2025"], HBLENGINE: ["Sep_2025"], WINDMACHIN: []}, note: "Windsor Machines named as a peer in the manifest but has no transcript; screening CSVs only"}
+  peer-concalls:
+    count: 5
+    quarter_map_verified_from_page_1:
+      - {file: "RAJOOENG-Concall_May_2023_Transcript", call_date: "2023-05-16", quarter: "Q4 FY23 (year ended 31-Mar-2023)"}
+      - {file: "RAJOOENG-Concall_Nov_2023_Transcript", call_date: "2023-11-06", quarter: "Q2 FY24 (half year ended 30-Sep-2023)"}
+      - {file: "RAJOOENG-Concall_Apr_2024_Transcript", call_date: "2024-04-18", quarter: "Q4 FY24 (year ended 31-Mar-2024)"}
+      - {file: "RAJOOENG-Concall_Nov_2025_Transcript", call_date: "2024-10-22", quarter: "Q2 FY25 (half year ended 30-Sep-2024); FILENAME MISLABELED by the collector, transcript filed 26-Oct-2024"}
+      - {file: "HBLENGINE-Concall_Sep_2025_Transcript", call_date: "2025-09-25", quarter: "FY25 AGM transcript (25-Sep-2025), NOT an earnings call"}
+    peers: {RAJOOENG: 4, HBLENGINE: 1, WINDMACHIN: 0}
+    note: "Windsor Machines named as a peer in the manifest but has no transcript; screening CSVs only. Newest genuine peer earnings call is Oct-2024 (~2 years before run_date)."
   announcements: {count: 0}
   shareholding: {count: 0}
   research: {count: 0, note: ".gitkeep planted so the folder survives checkout for the handover dossier"}
@@ -59,7 +68,10 @@ input_gaps:
     effect: "Only deck is Q3 FY24 (Dec-2023). Stage 4 and 7 may use it for business structure and management framing only; every figure in it is 2.5 years old and must be dated as such. Later decks absent from corpus."
   - type: peer-concall-windsor
     severity: LOW
-    effect: "Windsor Machines transcript absent; stage 6 verifies against RAJOOENG (4 calls) + HBLENGINE (1 call) only; Windsor appears in screening CSVs only."
+    effect: "Windsor Machines transcript absent; stage 6 verifies against RAJOOENG (4 calls) + HBLENGINE (1 AGM transcript) only; Windsor appears in screening CSVs only."
+  - type: peer-concall-mislabel-stale
+    severity: MEDIUM
+    effect: "Collector mislabel: RAJOOENG-Concall_Nov_2025_Transcript is the 22-Oct-2024 call (Q2 FY25). HBLENGINE-Concall_Sep_2025_Transcript is the 25-Sep-2025 AGM transcript, not an earnings call. Newest genuine peer earnings call is Oct-2024; peer verification of FY26 claims runs on stale peer commentary and says so. Stages 6, 12b, 12d use the verified quarter map above, not the filenames."
   - type: screener-csv-defect
     severity: LOW
     effect: "collect_to_repo v3 defect: screener-Profit_Loss / Balance_Sheet / Cash_Flow / Quarters CSVs are formula shells with no values (main and all three peers). Every Data_Sheet.csv IS fully populated (FY17-FY26 P&L, 10 quarters to Q1 FY27, balance sheet, cash flow, price). Gate 0 uses Data_Sheet + AR financials."

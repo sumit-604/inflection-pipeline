@@ -39,3 +39,14 @@ verified on the presentation. All 8 PDFs pre-extracted to page-marked .txt twins
 
 ## Operator confirmation
 Empty-folder question asked once. Operator: proceed with the gaps (2026-09-05).
+
+## Peer transcript quarter map (verified from page 1 of each transcript)
+| file | call date | quarter |
+|---|---|---|
+| RAJOOENG-Concall_May_2023 | 16-May-2023 | Q4 FY23 |
+| RAJOOENG-Concall_Nov_2023 | 06-Nov-2023 | Q2 FY24 |
+| RAJOOENG-Concall_Apr_2024 | 18-Apr-2024 | Q4 FY24 |
+| RAJOOENG-Concall_Nov_2025 | 22-Oct-2024 | Q2 FY25 (filename mislabeled by the collector) |
+| HBLENGINE-Concall_Sep_2025 | 25-Sep-2025 | FY25 AGM transcript, not an earnings call |
+Newest genuine peer earnings call is Oct-2024. Recorded as input gap
+peer-concall-mislabel-stale (MEDIUM).

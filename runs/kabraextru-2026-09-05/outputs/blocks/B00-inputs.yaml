@@ -1,0 +1,98 @@
+stage: B00-inputs
+company: KABRAEXTRU
+run_date: 2026-09-05
+model: orchestrator-inline
+status: complete
+run_type: full
+concalls_available: false
+mode: NO-CONCALL
+cmp: 579.0
+market_cap_cr: 2025.0
+sector_cap_row_manifest: "Cables / Industrial products"
+
+spear_gate:
+  line: "Spear: OVERRIDE 2026-09-05 (operator standing ruling 2026-09-05: Step-1 intake replaces the web spear)"
+  source: companies/KABRAEXTRU.md
+  basis: "/run-pipeline invoked directly on the collector corpus (PR #151, corpus commit 8374c2f); no step1-business-brief.md exists; override recorded by the orchestrator at stage 0 per .claude/commands/step1.md section G"
+  load_bearing_facts:
+    - "~40% market share in plastic extrusion machinery (manifest note): where stated, by whom, on what base"
+    - "Battrixx / Geon Energy li-ion battery packs as the growth optionality: revenue, losses, capex; does the FY26 consolidated loss sit there"
+    - "FY26 consolidated loss (screener PBT -7.78 Cr, PAT -5.37 Cr) against CRISIL A+/Neg -> A/Neg -> A-/Stable, A1 -> A2+ w.e.f. 13-May-2026 (AR FY26 CG report); rationale NOT in corpus"
+    - "Sales FY23 670 -> FY26 451 Cr; borrowings 74 -> 145 Cr; FY26 CFO 8.96 Cr; cash 3.08 Cr (screener): cash-conversion direction and cause"
+  first_priority: "Every stage checks these four before its own work. They are memory, not anchored evidence."
+
+inventory:
+  prospectus: {count: 0, note: "long-listed (43rd AGM for FY26, CIN L28900MH1982PLC028535, listed NSE+BSE scrip 524109); prospectus not expected, NOT a HIGH gap"}
+  annual-report: {count: 2, current: "Annual_Report_2026.pdf = FY2025-26 (170pp, filed 20-Jul-2026)", prior: "Annual_Report_2025.pdf = FY2024-25 (168pp, filed 24-Jun-2025)", note: "contract says 0-1; FY26 is primary, FY25 is the prior-year AR for the backward baseline"}
+  results: {count: 0}
+  rating: {count: 0}
+  concalls: {count: 0, note: "declared absent via concalls_available:false; NO-CONCALL MODE"}
+  peer-concalls: {count: 5, peers: {RAJOOENG: ["May_2023", "Nov_2023", "Apr_2024", "Nov_2025"], HBLENGINE: ["Sep_2025"], WINDMACHIN: []}, note: "Windsor Machines named as a peer in the manifest but has no transcript; screening CSVs only"}
+  announcements: {count: 0}
+  shareholding: {count: 0}
+  research: {count: 0, note: ".gitkeep planted so the folder survives checkout for the handover dossier"}
+  screening: {count: 24, note: "main (screener-*) + RAJOOENG + WINDMACHIN + HBLENGINE, six CSVs each"}
+  presentation: {count: 1, file: "Investor_Presentation_1.pdf = Q3 FY24 investor presentation (quarter ended 31-Dec-2023, filed 25-Jan-2024, 32pp)", note: "STALE: 2.5 years before run_date; image-heavy, text twin thin on 6 pages"}
+  other: {count: 0}
+
+input_gaps:
+  - type: results
+    severity: HIGH
+    effect: "No results PDFs. Gate 0 runs from screening Data_Sheet + AR financials. Screener Data_Sheet carries 10 quarters to Jun-2026 (Q1 FY27: sales 124.49, PAT -1.74) so the NEWEST quarter exists only as unanchored screener numbers; the FY26 audited annual results filing and the Q1 FY27 results filing are both absent. Stage 5 NO-CONCALL delivery check runs on AR-vs-AR only. Halt 1 upload list: Q1 FY27 results (Jun-2026 quarter) and FY26 audited results."
+  - type: rating
+    severity: HIGH
+    effect: "No rating rationale. AR FY26 corporate governance report discloses CRISIL long-term A/Negative (downgraded from A+/Negative, upto 5-Apr-2025) then A-/Stable w.e.f. 13-May-2026, short-term A1 then A2+, reason 'basis performance reported for Quarter 3'. The rationale is the named FLAG-CASH evidence; without it an INDETERMINATE cash determination cannot resolve. Stage 10 rating_wc_quote unresolved; Stage 11 Pillar 2 defaults conservative. Halt 1 upload list: CRISIL rating rationale for the 13-May-2026 action."
+  - type: announcements
+    severity: MEDIUM
+    effect: "Stages 5, 7, 8 lose the documented-ACTION record (Reg 30 filings last 12m). Intent-and-action cross-check runs on AR evidence only; stage 8 relies on web search for material events."
+  - type: shareholding
+    severity: MEDIUM
+    effect: "Stage 10 marks FII+DII unresolved; Stage 11 withholds UA (all-three-qualifier rule). Promoter holding falls back to AR FY26 note 14.4 (promoters 60.49% at 31-Mar-2026 vs 60.24% at 31-Mar-2025) with staleness noted."
+  - type: research
+    severity: LOW
+    effect: "No broker notes. No effect on anchored evidence."
+  - type: prospectus
+    severity: NONE
+    effect: "Long-listed company; prospectus not expected. Backward baseline from AR FY26 + AR FY25 + Data_Sheet 10y (FY17-FY26)."
+  - type: presentation-stale
+    severity: LOW
+    effect: "Only deck is Q3 FY24 (Dec-2023). Stage 4 and 7 may use it for business structure and management framing only; every figure in it is 2.5 years old and must be dated as such. Later decks absent from corpus."
+  - type: peer-concall-windsor
+    severity: LOW
+    effect: "Windsor Machines transcript absent; stage 6 verifies against RAJOOENG (4 calls) + HBLENGINE (1 call) only; Windsor appears in screening CSVs only."
+  - type: screener-csv-defect
+    severity: LOW
+    effect: "collect_to_repo v3 defect: screener-Profit_Loss / Balance_Sheet / Cash_Flow / Quarters CSVs are formula shells with no values (main and all three peers). Every Data_Sheet.csv IS fully populated (FY17-FY26 P&L, 10 quarters to Q1 FY27, balance sheet, cash flow, price). Gate 0 uses Data_Sheet + AR financials."
+  - type: sector_cap_row
+    severity: LOW
+    effect: "Collector auto-pick 'Pharma / CDMO' was corrected in the manifest to 'Cables / Industrial products' (25x) by the intake note. Plastic-extrusion machinery is capital goods, not cables; FLAG for phase-3 Section 1B cap-row confirmation (Capital goods / Industrial machinery row if one exists)."
+
+freshness_pairs:
+  - pair: "RESULTS -> CONCALL"
+    trigger_doc: "none (results/ empty)"
+    mate_expected: "n/a"
+    status: SKIPPED
+    missing_doc: "n/a (concalls_available:false; no calls held)"
+  - pair: "RATING BULLETIN -> RATIONALE"
+    trigger_doc: "AR FY26 corporate governance report, credit-rating disclosure: CRISIL A-/Stable and A2+ w.e.f. 13-May-2026 (downgrades)"
+    mate_expected: "CRISIL rating rationale / press release for the 13-May-2026 rating action"
+    status: FAIL
+    missing_doc: "CRISIL rating rationale (13-May-2026 action, KABRAEXTRU) — expected source: crisilratings.com press release or the company's exchange intimation of the rating revision. Basis: no bulletin sits in inputs/rating/, so by the letter the pair has no trigger; applied on the MANINDS principle because the AR itself is the present filing that names a rating action whose rationale is absent, and that rationale is the FLAG-CASH named evidence."
+  - pair: "SEBI ORDER -> ORDER TEXT"
+    trigger_doc: "none referenced at inventory (AR FY26 grep: only the standard director not-debarred declaration)"
+    mate_expected: "n/a"
+    status: PASS
+    missing_doc: "no SEBI order referenced; stages surface if one appears"
+  - pair: "AR -> LATEST AUDITED ANNUAL RESULTS"
+    trigger_doc: "FY2025-26 is the latest audited annual (screener FY26 column; AR FY26 filed 20-Jul-2026)"
+    mate_expected: "FY2025-26 annual report"
+    status: PASS
+    missing_doc: "n/a; FY2025-26 AR present"
+
+freshness_verdict: "CORPUS GAPPED-FRESHNESS"
+
+extracted_txt: "All 8 corpus PDFs pre-extracted with pdftotext -layout to page-marked .txt twins alongside each PDF (===== PAGE n ===== markers, n = PDF page). Stages read the .txt and cite p.N; the PDF sits alongside for Read-tool page render of tables or image slides. Presentation twin is thin on 6 image-only slides."
+
+operator_confirmation: "Empty-folder question asked once (results, rating, announcements, shareholding, research, prospectus; Windsor transcript and stale deck noted). Operator: PROCEED WITH THE GAPS, 2026-09-05."
+flags: []
+analyst_note: "Screener Data_Sheet pre-run read, unanchored: sales FY23 670.01 -> FY24 607.77 -> FY25 476.85 -> FY26 451.05; PAT 37.5 -> 33.82 -> 32.2 -> -5.37; other income FY25 22.02 / FY26 23.43 props the P&L; borrowings 73.98 -> 145.06; CFO FY26 8.96 vs FY25 43.45; cash 3.08; inventory 286 Cr on 451 Cr sales; CWIP 50.35 -> 12.21 (capex commissioned FY26, net block 204 -> 246). Four of the last six quarters loss-making. Subsidiaries per AR FY26: Varos Technology Pvt Ltd and Kabra Energy Pvt Ltd; Geon (erstwhile Battrixx) is a DIVISION. Promoters: Anand S. Kabra (CMD from 1-Aug-2025, DIN 00016010), Shreevallabh G. Kabra (Executive Chairman to 15-Sep-2025), Kolsite group entities; a Jan-2022 preferential warrant issue at Rs 329. Stages re-derive from the filings."

@@ -1,0 +1,56 @@
+stage: B03-ardeep
+company: "YASHO"
+run_date: "2026-09-05"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - {type: FLAG-CASH, reason: "CFO recovery (CON -Rs40.85cr FY25 to +Rs151.29cr FY26) is meaningfully working-capital/one-off-liability-assisted: new Rs27.45cr customer-advance liability is 18% of the CFO swing; interest paid classified in Financing not Operating (CFO-flattering choice); trade payables/MSME overdue principal stretch contributed materially; Note 45 audited receivables turnover WORSENED (4.94x->4.68x) even as its own text and the MD&A narrative claim working-capital/DSO improvement"}
+  - {type: FLAG-MNC-ADVANCE-RECONCILIATION, reason: "Directors' Report/MD&A states Rs51.4cr in MNC customer advances received as of FY25-26; audited Note 19/24/48 chain shows only Rs29.52cr total (Rs27.45cr Note-48-linked) - a ~1.75-1.9x within-document gap between the AR's own narrative and its own audited notes, independent of and additional to the company-memory Rs98.12cr gap; Note 48 (the auditor's KAM) contains zero rupee figures"}
+  - {type: FLAG-PROMOTER-PRELIM, reason: "No pledge, no selling, no dilution found (Note 14A(vii)): promoter holding unchanged ~67.9% both years - clean on the negative tests; watch item is promoter-family executive comp = 45.6% of standalone PAT and an Executive Chairman/MD-CEO structure held entirely within one family"}
+phase_verdicts: {p1: "Watch", p2: "Red Flag", p3: "Watch", p4: "Watch", p5: "Watch", p6: "Red Flag", p7_best_fit: "Turnaround (Watchlist, leaning constructive)"}
+overall_quality: 5
+quality_components: {governance: 6, accounting: 5, balance_sheet: 5, earnings: 5}
+kill_switch_notes:
+  - "Phase 1: would not halt - no fraud/qualification/default/going-concern doubt; Note 48's zero-figure KAM note is the top verification priority carried forward"
+  - "Phase 2: would not halt - nothing is a fabrication signal; MNC-advance reconciliation (Rs51.4cr MD&A vs Rs29.52cr/Rs27.45cr audited notes) is the single non-negotiable item to resolve with management before any valuation leans on the 15-year supply agreement"
+  - "Phase 3: would not halt - underlying operating recovery (raw-material efficiency, margin-driven ROE via DuPont) is real; CFO composition and the two unreconciled ratio tables (Directors' Report vs audited Note 45) should be named explicitly in downstream valuation"
+  - "Phase 4: would not halt - MD&A is specific and largely evidenced operationally; the Rs51.4cr/Rs29.52cr gap and the Q4 FY27 vs Q1 FY28 MNC-revenue-timing inconsistency should be management's first questions"
+  - "Phase 5: would not halt - no governance deal-breaker; family-concentrated comp (46% of PAT) and unified Chairman/MD-CEO family structure are watch items, not stoppers"
+  - "Phase 6: would not halt on company quality per pipeline rule, but two Quiet Abandonment items (working-capital narrative vs Note 45/39/22.1; silent Rs51.4cr/Rs29.52cr advance gap) are both rated high-materiality and bear directly on the run's load-bearing question"
+triple_pass_verification:
+  verified: 15
+  discrepancies:
+    - {finding_rank: 9, triple_pass_value: "Rs46.50cr director/KMP loans", ar_value: "Rs47.00cr (Rs4,700.01L, Note 39(C) closing balance)", note_ref: "Note 39(C) SA p.144"}
+missing_risks:
+  - {risk: "Related-party/intercompany cash-conversion risk on subsidiary receivables (78.7% growth, ~292-day implied DSO) never named in the MD&A risk table", evidence: "Note 39(C) SA p.144-145; MD&A risk table p.30"}
+  - {risk: "Recoverability/utilisation risk on the MNC advance itself, referenced in the auditor's own KAM procedures but absent from the MD&A risk table", evidence: "Auditor's Report KAM p.94-95; Note 48 p.155; MD&A risk table p.30"}
+  - {risk: "Lender drawing-power reconciliation risk (Rs32.6-52.7cr variance every quarter of FY26) never surfaced as a named risk despite recurring quarterly", evidence: "Note 46 SA p.154"}
+  - {risk: "Cash-tax deferral duration risk - zero current tax on Rs28.99cr PBT with no stated brought-forward-loss/MAT-credit schedule or duration", evidence: "Note 35A/35D/35E SA p.138-139"}
+guidance_table:
+  - {claim: "Revenue target ~Rs1,500cr", number: "Rs1,500cr", timeframe: "FY2027-28", credibility: "Implies ~35% 2yr CAGR vs FY21-26 18.2% CAGR and FY26's own 22.85% growth; high execution dependency on MNC ramp and new lines landing on schedule"}
+  - {claim: "MNC contract annual revenue upon commercial supply", number: "~Rs150cr/year", timeframe: "upon commencement", credibility: "Note 48 says Q4 FY27 commercial-supply start; MD's letter says revenue generation begins Q1 FY2027-28 - unreconciled ~1-quarter gap"}
+  - {claim: "MNC customer advances received to date", number: "Rs51.4cr", timeframe: "as of FY25-26", credibility: "Contradicted by audited Note 19/24/48 total of Rs29.52cr (Rs27.45cr Note-48-linked) - see FLAG-MNC-ADVANCE-RECONCILIATION"}
+  - {claim: "Debt-to-EBITDA improvement", number: "4.70x to 3.75x (CON)", timeframe: "FY25 to FY26", credibility: "Verified against independent SA calculation (4.49x to 3.76x) - consistent, credible"}
+  - {claim: "Capacity utilisation combined", number: "~60%", timeframe: "FY26, improving FY27", credibility: "No quantified FY27 target given, qualitative only"}
+monitorables:
+  - {metric: "MNC customer advance balance (Note 19/24/48)", threshold: "Reconciles to, or explains gap from, Rs51.4cr/Rs98.12cr", where: "Next quarterly/AR balance sheet notes", why: "Resolves the run's single load-bearing verification question"}
+  - {metric: "Subsidiary trade receivables DSO and consolidation-adjustment swing", threshold: "DSO stabilises below ~250 days; adjustment stays under 30% of combined profit", where: "Note 39 and Schedule III additional info, next AR/quarterly", why: "Tests whether FLAG-CASH resolves or worsens"}
+  - {metric: "DSCR", threshold: "Sustained >=1.15x", where: "Note 45 or quarterly ratio disclosure", why: "Tests debt-service cushion into FY27 capex ramp"}
+  - {metric: "Drawing-power variance recurrence", threshold: "Narrows below Rs20cr/quarter or explained with line-item detail", where: "Note 46 or lender correspondence", why: "Tests whether FY26 pattern was one-off or structural"}
+  - {metric: "Debtors/Inventory turnover, audited Note 45 table specifically", threshold: "Improves consistently, not just asserted", where: "Audited notes, not MD&A/Directors' Report prose", why: "Tests whether the 'improved DSO' claim becomes true"}
+  - {metric: "MNC commercial-supply start date", threshold: "On or near Q4 FY27", where: "Next quarterly results/AR", why: "Tests delivery against Rs150cr/year and Rs1,500cr FY28 guidance chain"}
+ar_new_downstream_entities:
+  - {name: "Global MNC customer (lubricant additives, 15-year supply agreement)", where_in_ar: "MD&CEO's Message p.13; Note 48 p.155; Auditor's KAM p.94-95", entity_type: "named customer counterparty, undisclosed identity"}
+  - {name: "J B Shah & Associates (Tax Auditor)", where_in_ar: "Corporate Governance Report, auditor fee table p.55", entity_type: "new-disclosure service-provider counterparty (separate from statutory auditor)"}
+strengths_top3:
+  - "FY26 recovery is margin-driven not leverage-driven per DuPont decomposition: raw-material cost fell 7.5pp of revenue; leverage component actually declined"
+  - "Clean governance negative-tests both years: no promoter selling, no share pledge, no dilution, no fraud, no covenant breach, no going-concern doubt"
+  - "Capital allocation discipline evidenced in cash: Rs23.30cr term-loan prepayment executed during a still-heavy capex year"
+red_flags_top3:
+  - "MNC-contract advance figure does not reconcile within the AR itself: MD&A claims Rs51.4cr, audited Note 19/24/48 chain shows Rs29.52cr (Rs27.45cr Note-48-linked)"
+  - "'Financial discipline'/working-capital narrative contradicted by its own audited ratio note: Note 45 receivables turnover worsened while its own text claims DSO improved; subsidiary receivables +78.7% vs +15.9% sales; MSME overdue payables +327.6%"
+  - "Liquidity structure thin relative to growth ambition: DSCR 1.04x, 43.2% on-demand borrowings, Rs32.6-52.7cr quarterly drawing-power variance every quarter of FY26, against capital commitments +295% and a Rs1,500cr FY28 revenue target"
+best_fit_strategy: "Turnaround (Watchlist, leaning constructive)"
+one_line_verdict: "Real margin-driven recovery, still an unproven turnaround with an unreconciled MNC-advance figure."
+analyst_note: "Independent verification of all 15 Stage-2 findings against source found zero material discrepancies, strengthening rather than revising the 5/10 accounting-quality score. The single most important addition this stage makes is finding the MNC-advance gap TWICE more: once inside the AR's own text (Rs51.4cr MD&A vs Rs29.52cr audited notes), and once in the unreconciled Directors'-Report-vs-Note-45 ratio tables. Both are new, both are anchored, and both point the same direction as company memory's larger Rs98.12cr gap - toward a pattern where this company's narrative sections consistently outrun what its own audited notes support. Recommend this be the first extraction/verification target at Halt 1."

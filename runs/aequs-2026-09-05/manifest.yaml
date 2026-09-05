@@ -1,0 +1,16 @@
+company: Aequs Ltd
+ticker: AEQUS
+cmp: 254.42             # approx, Aug 2026; screener egress-blocked, verify locally
+market_cap_cr: 16250    # Bull_AI 2026-09-05
+run_date: 2026-09-05
+run_type: full          # full | refresh | valuation-only
+concalls_available: true
+sector_cap_row: "Recycling / Manufacturing"   # 25x; aerospace-precision has no dedicated row, flag phase-3
+listed_date: 2025-12-10
+notes: >
+  Step-1 intake in REMOTE container. Screener collector NOT run: screener.in
+  egress-blocked and no collector .env present. inputs/ folders are EMPTY.
+  Corpus was NOT collected. Bull_AI has AEQUS coverage (FY26 annual report,
+  Q3/Q4 FY26 + Q1 FY27 transcripts, investor presentations). Peers: AZAD,
+  DYNAMATECH, DIXON. See step1-STATUS.md for the blocker and the operator's
+  next step. Phase 1 stages 0-9 NOT run: no corpus.

@@ -1,0 +1,31 @@
+stage: B01-gate0
+company: "DIFFNKG"
+run_date: "2026-09-05"
+model: claude-sonnet-5
+status: complete
+input_gaps: [prospectus ABSENT, results ABSENT, rating ABSENT, announcements ABSENT, shareholding ABSENT, research ABSENT]
+flags:
+  - type: FLAG-GATE0
+    reason: "Classification AVERAGE (core 57/100). Two depressors identified as historical/mechanical rather than operating: FY25 ROCE 12.54% and ROE dip reflect IPO equity-base enlargement (Reserves 162.68cr->331.45cr FY24->FY25), and FY26 negative FCF proxy (-16.36cr) reflects IPO-funded capacity capex (CWIP +19.84cr), not distress. Block B deal-breaker (cumulative CFO/PAT 0.58, FCF proxy negative in 5/7 years) caps classification at max GOOD but core score already sits in AVERAGE band. Trade Payables not isolated in provided data, so WC Days (B4) and true Current Ratio (D4, proxy used) are incomplete; promoter shareholding entirely absent."
+data_years: 8
+fy_range: "FY2019 to FY2026"
+blocks: {A: 13, B: 1, C: 18, D: 20, E: 5}
+core_score: 57
+moat_score: 13
+grand_total: 70
+moats_confirmed: 3
+moat_class: "MODERATE"
+classification: "AVERAGE"
+deal_breakers: ["Block B <8 (score 1) -> caps at max GOOD (non-binding, core score already below GOOD in AVERAGE band)"]
+history_downgrade: true
+data_notes:
+  - "Capex computed as proxy (delta Net Block + delta CWIP + Depreciation, screener-data) since AR2026 standalone cash-flow-statement PPE purchase line is unit-inconsistent against the screener Balance Sheet by a non-round factor (~9-10x, not a clean 100x Lakh->Crore conversion) and was excluded as unreliable."
+  - "Trade Payables not isolated in screener Data Sheet (combined into Other Liabilities); B4 (WC Days) marked N/A, scored 0. Partial context: Receivable+Inventory days (sales basis) rose 161.5 -> 181.2 days FY19->FY26."
+  - "D4 Current Ratio computed via screener-convention proxy (Other Assets / Other Liabilities = 4.35), not a literal current-asset/current-liability schedule."
+  - "M2, M5, M9 scored 0 as PEER DATA NEEDED (GEE Ltd, Esab India, Ador Welding not in provided corpus)."
+  - "M6 R&D described qualitatively in AR2026 p.99-100 (DSIR recognition, NABL lab, doctoral candidate) but never quantified as %-of-revenue; scored 0, not estimated."
+  - "FY25 ROCE (12.54%) and ROE dip are AR-stated consequence of IPO equity-base enlargement (Reserves 162.68cr FY24 -> 331.45cr FY25 on IPO proceeds), not operating deterioration."
+  - "Revenue CAGR FY19-FY26 = 14.89%, just under the 15% threshold used in M8/M11 middle tiers; both scored at the lower tier as a result."
+data_notes_source: "runs/diffnkg-2026-09-05/inputs/screening/screener-Data_Sheet.csv; runs/diffnkg-2026-09-05/work/txt/annual-report/Annual_Report_2026.txt pp.99-100,142,145,168"
+block_b_trend: "deteriorating - FY26 FCF proxy -16.36cr despite record PAT 50.32cr (screener-data), driven by capex proxy 39.15cr (CWIP alone +19.84cr) and receivables (128.18cr) outgrowing sales"
+analyst_note: "Two of the three worst-looking numbers (FY25 ROCE/ROE dip, FY26 negative FCF) are IPO-linked base and capex effects per AR2026, not operating decay; downstream stages should weigh Block A/B scores with this in mind rather than reading them as raw deterioration. The genuine gap is shareholder-alignment data (promoter holding wholly absent) and the payables data gap blocking a complete WC Days read. Moat base is thin (3/12) but 4 tests are blocked purely by missing peer data, not by evidenced weakness, so MODERATE may understate once GEE/Esab/Ador figures are available downstream."

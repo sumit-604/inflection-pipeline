@@ -1,0 +1,22 @@
+stage: B13-synthesis
+company: "PITTIENG"
+run_date: "2026-09-05"
+phase: 1
+model: claude-opus-5
+status: complete
+verdict: "REWORK"
+verdict_rule_applied: 1
+flags_active: ["FLAG-CASH", "FLAG-GATE0"]
+confidence_delta: {numerical: 98.1, redflag: 30, framework: 92, peer: 100, overall: 30}
+valuation_decision: "not run (phase 1)"
+entry_range: {low: 0, high: 0}
+headline: "Scale lamination maker climbing on borrowed money"
+falsification_metric: "Q2 FY27 consolidated net debt printing above Rs 491 Cr"
+monitorables_count: 8
+publish_candidate: true
+publish_candidate_summary: "FY26 annual report Technology Absorption annexure reports R&D expenditure, effort and benefit as Nil, while the Q1 FY27 investor presentation markets R&D and tooling expertise as a strength. Same company, same year, two public documents, opposite claims. Short post slot, non directional."
+notion_save:
+  page_title: "Pitti Engineering Ltd (PITTIENG) - run 2026-09-05"
+  summary: "Phase 1 evidence pass only. Verdict REWORK on analysis quality (rule 1: red flag coverage 30 and overall 30, both below 60). Company evidence would otherwise support PROCEED WITH CAVEATS, capped there by an INDETERMINATE cash conversion determination. Valuation, entry zone and Notion payload deferred to phase 3."
+  drive_link: "none; run folder runs/pittieng-2026-09-05/ in the inflection-pipeline repository"
+  mode: "deferred to phase 3"

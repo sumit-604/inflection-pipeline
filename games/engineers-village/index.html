@@ -450,6 +450,7 @@ html, body {
     <div id="controls-hint" hidden>
       <span><b>W A S D</b> to walk</span>
       <span><b>← →</b> or drag to look around</span>
+      <span><b>E</b> on a scooty, bike or car to ride it</span>
       <span><b>Shift</b> to run</span>
       <span><b>E</b> to talk / act</span>
       <span><b>N</b> for notebook</span>
@@ -710,6 +711,26 @@ function playQuack() {
   const t = c.currentTime;
   for (let i = 0; i < 2; i++) tone(300 + Math.random() * 60, t + i * 0.16, 0.12, "sawtooth", 0.2);
 }
+// A soft chant drone that fades in as you enter the Himalaya valley.
+let chantNode = null;
+function startChant() {
+  const c = getCtx();
+  if (!c || chantNode) return;
+  chantNode = c.createGain();
+  chantNode.gain.value = 0;
+  const f = c.createBiquadFilter(); f.type = "lowpass"; f.frequency.value = 600;
+  for (const [freq, type] of [[110, "sine"], [165, "sine"], [220, "triangle"]]) {
+    const o = c.createOscillator(); o.type = type; o.frequency.value = freq;
+    const g = c.createGain(); g.gain.value = type === "triangle" ? 0.15 : 0.4;
+    o.connect(g).connect(f); o.start();
+  }
+  f.connect(chantNode).connect(master);
+}
+function chantTick(strength) {
+  if (!chantNode || !ctx) return;
+  chantNode.gain.setTargetAtTime(muted ? 0 : strength * 0.12, ctx.currentTime, 0.8);
+}
+
 // A car horn: two tones together, short.
 function playHorn() {
   if (muted) return;
@@ -1612,7 +1633,14 @@ const FLAT_ZONES = [
   { x1: -152, z1: 12, x2: -58, z2: 84, pad: 16 },    // lake shore, south west
   { x1: -150, z1: 178, x2: 150, z2: 292, pad: 14 },  // the city, beyond the hills
   { x1: -12, z1: 146, x2: 12, z2: 184, pad: 7 },     // the road pass through the ridge
+  { x1: -90, z1: -268, x2: 90, z2: -192, pad: 18 },  // the Himalaya valley, north of the temple hill
 ];
+const HIMALAYA = { x1: -90, z1: -268, x2: 90, z2: -192 };
+// Mansarovar, the sacred lake in the valley.
+const MANSAROVAR = { cx: -46, cz: -236, r: 14 };
+function inMansarovar(x, z) { return Math.hypot(x - MANSAROVAR.cx, z - MANSAROVAR.cz) < MANSAROVAR.r; }
+// Any water you cannot walk on.
+function inWater(x, z) { return inLake(x, z) || inMansarovar(x, z); }
 
 // The lake: an ellipse of water in the south west.
 const LAKE = { cx: -108, cz: 46, rx: 34, rz: 24 };
@@ -1668,8 +1696,12 @@ function heightAt(x, z) {
     h += t * t * 45 * (0.8 + 0.4 * Math.sin(x * 0.11) * Math.cos(z * 0.13));
   }
 
-  // The lake bed dips below the water.
-  if (inLake(x, z)) h = -1.2;
+  // Kailash Parvat: a great peak rising behind the valley.
+  const dk = Math.hypot(x, z + 340);
+  h += 95 * Math.exp(-(dk * dk) / (2 * 26 * 26));
+
+  // Lake beds dip below the water.
+  if (inWater(x, z)) h = -1.2;
   return h;
 }
 
@@ -1912,6 +1944,7 @@ class World {
     this._buildVegetation();
     this._buildVehicles();
     this._buildCity();
+    this._buildHimalaya();
     this._buildAutoStands();
     try { this._flushStatic(); } catch (e) { console.warn("Static merge skipped:", e); }
   }
@@ -2726,7 +2759,7 @@ class World {
     this._place(makeBuilding({ w: 7, d: 6, h: 3.2, roof: "gable", wall: 0xffffff, roofColor: 0x3f6f9f, sign: "Clinic" }), -32, -10, Math.PI / 2);
     this._place(makeBuilding({ w: 7, d: 6, h: 3.2, roof: "pyramid", wall: 0xf6efd8, roofColor: W.roofRed, sign: "Library" }), 32, -10, -Math.PI / 2);
     this._place(makeBuilding({ w: 10, d: 6, h: 3.6, roof: "gable", wall: 0xf2e4c8, roofColor: 0x556b2f, sign: "Community Hall" }), 0, -34);
-    this._place(makeBuilding({ w: 4, d: 4, h: 5, roof: "dome", wall: 0xe8d5b5, roofColor: 0x9aa6ad }), 30, -26, 0, false);   // granary
+    this._place(makeBuilding({ w: 4, d: 4, h: 5, roof: "dome", wall: 0xe8d5b5, roofColor: 0x9aa6ad }), 30, -26, 0, "Granary");   // granary
     this._place(makeBuilding({ w: 4, d: 4, h: 2.8, roof: "gable", wall: pick(walls, 3), roofColor: pick(roofs, 1), chimney: true }), -34, 20);
     this._place(makeBuilding({ w: 4, d: 4, h: 2.8, roof: "gable", wall: pick(walls, 5), roofColor: pick(roofs, 3), chimney: true }), 34, 22);
 
@@ -2777,7 +2810,7 @@ class World {
     const farmSpots = [[72, -62], [128, -66], [78, 62], [134, 60], [96, -8], [118, 12]];
     farmSpots.forEach(([x, z], i) => {
       this._place(makeBuilding({ w: 6, d: 5, h: 3, roof: "gable", wall: pick(walls, i), roofColor: pick(roofs, i + 2), chimney: true }), x, z, (i % 2) * Math.PI / 2, "Farmhouse");
-      if (i % 2 === 0) this._place(makeBuilding({ w: 8, d: 6, h: 4, roof: "gable", wall: 0xa0522d, roofColor: 0x5a3a24 }), x + 10, z + 4, 0, false); // barn
+      if (i % 2 === 0) this._place(makeBuilding({ w: 8, d: 6, h: 4, roof: "gable", wall: 0xa0522d, roofColor: 0x5a3a24 }), x + 10, z + 4, 0, "Barn"); // barn
       else this._addSilo(x - 8, z + 3);
     });
     // Fields of crops in different colours, with fences.
@@ -2848,6 +2881,7 @@ class World {
       const shrine = makeBuilding({ w: 3, d: 3, h: 2.5, roof: "dome", wall: 0xfff1d6, roofColor: 0xd4a017 });
       shrine.position.set(x, th + 0.4, -116); this.scene.add(shrine);
       this.addBox(x, -116, 3, 3);
+      this.addDoor(x, -116 + 2.4, 0, "Hill Shrine", "temple");
     }
     // Bell posts and stone lanterns up the path.
     for (const [x, z] of [[-4, -110], [4, -110]]) {
@@ -3032,7 +3066,7 @@ class World {
     }
     const metro = new THREE.Group();
     for (let k = 0; k < 3; k++) {
-      const coach = new THREE.Mesh(new THREE.BoxGeometry(9, 2.8, 2.8), mat(0xeef2f5)); coach.position.set(k * 9.6 - 9.6, 1.6, 0); metro.add(coach);
+      const coach = new THREE.Mesh(new THREE.BoxGeometry(9, 2.8, 2.8), new THREE.MeshStandardMaterial({ color: 0xeef2f5, transparent: true, opacity: 0.55, flatShading: true })); coach.position.set(k * 9.6 - 9.6, 1.6, 0); metro.add(coach);
       const band = new THREE.Mesh(new THREE.BoxGeometry(9.05, 0.6, 2.85), mat(0x1e6091)); band.position.set(k * 9.6 - 9.6, 0.9, 0); metro.add(band);
       const win = new THREE.Mesh(new THREE.BoxGeometry(8.5, 0.9, 2.9), mat(0x35424a)); win.position.set(k * 9.6 - 9.6, 2.2, 0); metro.add(win);
     }
@@ -3127,6 +3161,116 @@ class World {
       m.group.position.x = m.x;
     }
     if (this.fountainJet) this.fountainJet.scale.y = 1 + Math.sin(elapsed * 6) * 0.15;
+    for (const y of this.yogis || []) y.userData.parts.torso.scale.y = 1 + Math.sin(elapsed * 1.2) * 0.03;
+  }
+
+  // ==========================================================
+  // THE HIMALAYA VALLEY: meditation, dhams, pilgrims, Kailash
+  // ==========================================================
+  _buildHimalaya() {
+    const H = HIMALAYA;
+    // The road from the temple down the north slope into the valley.
+    this._addRoad([[0, -118], [-16, -140], [-12, -170], [0, -192], [0, -240], [0, -266]], 3.5, 0xcfc7b8);
+    this._addSign(5, -196, ["↑ Himalaya Valley", "↓ Temple, Village"]);
+    this._addSign(5, -262, ["↑ Kailash Darshan (steps)", "← Mansarovar Lake"]);
+
+    // Mansarovar: a deep blue sacred lake.
+    const lake = makeWaterSheet(MANSAROVAR.r * 2, MANSAROVAR.r * 2, 30, 30, 0x2f6fa8);
+    const lp = lake.geo.attributes.position;
+    for (let i = 0; i < lp.count; i++) { const x = lp.getX(i) / MANSAROVAR.r, z = lp.getZ(i) / MANSAROVAR.r; const r = Math.hypot(x, z); if (r > 1) { lp.setX(i, lp.getX(i) / r); lp.setZ(i, lp.getZ(i) / r); } }
+    lake.base = lp.array.slice();
+    lake.mesh.position.set(MANSAROVAR.cx, -0.05, MANSAROVAR.cz);
+    this.scene.add(lake.mesh);
+    this.waters.push(lake);
+    this.mapItems.water.push({ type: "ellipse", cx: MANSAROVAR.cx, cz: MANSAROVAR.cz, rx: MANSAROVAR.r, rz: MANSAROVAR.r });
+    const lakeSign = makeTextSprite("Mansarovar Lake", { size: 46, scale: 1.3 }); lakeSign.position.set(MANSAROVAR.cx, 3, MANSAROVAR.cz + MANSAROVAR.r + 3); this.scene.add(lakeSign);
+    // Stone parikrama path round the lake.
+    for (let a = 0; a < Math.PI * 2; a += 0.12) {
+      const rr = MANSAROVAR.r + 3.5;
+      const x = MANSAROVAR.cx + Math.cos(a) * rr, z = MANSAROVAR.cz + Math.sin(a) * rr;
+      const slab = new THREE.Mesh(new THREE.BoxGeometry(2.2, 0.15, 2.0), mat(0xcfc7b8)); slab.position.set(x, heightAt(x, z) + 0.05, z); slab.rotation.y = -a; this.scene.add(slab);
+    }
+
+    // Meditation Centre: a white hall with a saffron dome.
+    this._place(makeBuilding({ w: 16, d: 16, h: 5, roof: "dome", wall: 0xfff8ec, roofColor: 0xf77f00, sign: "Meditation Centre" }), 0, -232, 0, "Meditation Centre");
+    // Himalaya Ashram.
+    this._place(makeBuilding({ w: 22, d: 8, h: 3.4, roof: "gable", wall: 0xf3d9c8, roofColor: 0x8a5626, sign: "Himalaya Ashram" }), 44, -212, Math.PI, "Himalaya Ashram");
+    // Four dhams: small shrines with golden domes and flags.
+    const dhams = [["Badri Dham", -22, -256], ["Kedar Dham", 22, -256], ["Gangotri Dham", 64, -240], ["Yamunotri Dham", -74, -210]];
+    for (const [name, x, z] of dhams) {
+      this._place(makeBuilding({ w: 5, d: 5, h: 3.2, roof: "dome", wall: 0xfff1d6, roofColor: 0xffc93c, sign: name }), x, z, 0, name);
+      const spire = new THREE.Mesh(new THREE.ConeGeometry(0.4, 1.4, 8), mat(0xffc93c)); spire.position.set(x, heightAt(x, z) + 3.2 + 2.75 + 0.7, z); this.scene.add(spire);
+      const flagPole = new THREE.Mesh(new THREE.CylinderGeometry(0.05, 0.05, 4, 6), mat(0x8a5626)); flagPole.position.set(x + 3.2, heightAt(x, z) + 2, z + 2); this.scene.add(flagPole);
+      const flag = new THREE.Mesh(new THREE.PlaneGeometry(1.2, 0.7, 6, 1), new THREE.MeshStandardMaterial({ color: 0xf77f00, side: THREE.DoubleSide, flatShading: true })); flag.position.set(x + 3.2 + 0.62, heightAt(x, z) + 3.7, z + 2); flag.userData.dynamic = true; this.scene.add(flag); this.flags.push(flag);
+      this.addCircle(x + 3.2, z + 2, 0.15);
+    }
+
+    // Prayer flag lines: five colours repeating, strung between poles.
+    const flagColors = [0x1e6091, 0xffffff, 0xd62828, 0x2f9e44, 0xffd21e];
+    const lines = [[-30, -222, 30, -222], [-40, -248, -6, -262], [6, -262, 40, -248], [20, -200, 60, -200]];
+    for (const [x1, z1, x2, z2] of lines) {
+      for (const [x, z] of [[x1, z1], [x2, z2]]) { const pole = new THREE.Mesh(new THREE.CylinderGeometry(0.06, 0.08, 4.5, 6), mat(0x8a5626)); pole.position.set(x, heightAt(x, z) + 2.25, z); this.scene.add(pole); this.addCircle(x, z, 0.15); }
+      const n = 14;
+      const rope = new THREE.Mesh(new THREE.BoxGeometry(Math.hypot(x2 - x1, z2 - z1), 0.03, 0.03), mat(0x333333)); rope.position.set((x1 + x2) / 2, (heightAt(x1, z1) + heightAt(x2, z2)) / 2 + 4.3, (z1 + z2) / 2); rope.rotation.y = -Math.atan2(z2 - z1, x2 - x1); this.scene.add(rope);
+      for (let i = 1; i < n; i++) {
+        const t = i / n, x = x1 + (x2 - x1) * t, z = z1 + (z2 - z1) * t;
+        const f = new THREE.Mesh(new THREE.PlaneGeometry(0.6, 0.45, 4, 1), new THREE.MeshStandardMaterial({ color: flagColors[i % 5], side: THREE.DoubleSide, flatShading: true }));
+        f.position.set(x, heightAt(x1, z1) * (1 - t) + heightAt(x2, z2) * t + 4.0, z);
+        f.rotation.y = -Math.atan2(z2 - z1, x2 - x1);
+        f.userData.dynamic = true;
+        this.scene.add(f);
+        this.flags.push(f);
+      }
+    }
+
+    // Yoga lawn with mats and six yogis sitting cross-legged.
+    const lawn = new THREE.Mesh(new THREE.BoxGeometry(22, 0.25, 14), mat(0x8bc46a)); lawn.position.set(30, heightAt(30, -240) + 0.1, -240); this.scene.add(lawn);
+    for (let i = 0; i < 6; i++) {
+      const x = 22 + (i % 3) * 8, z = -244 + Math.floor(i / 3) * 7;
+      const matY = new THREE.Mesh(new THREE.BoxGeometry(1.8, 0.05, 0.7), mat([0x9b5de5, 0x3a86ff, 0xff8fab][i % 3])); matY.position.set(x, heightAt(x, z) + 0.26, z); this.scene.add(matY);
+      const yogi = makeHuman({ skin: [0xe0a878, 0xc98d62, 0xdba274][i % 3], shirt: [0xf77f00, 0xffffff, 0xffd21e][i % 3], trousers: 0xffffff, hair: 0x1d1410 });
+      yogi.position.set(x, heightAt(x, z) + 0.28, z); yogi.rotation.y = Math.PI;
+      const p = yogi.userData.parts; p.legL.rotation.x = -1.5; p.legR.rotation.x = -1.5; p.legL.rotation.z = 0.9; p.legR.rotation.z = -0.9; p.armL.rotation.x = -0.6; p.armR.rotation.x = -0.6; p.armL.rotation.z = 0.5; p.armR.rotation.z = -0.5;
+      yogi.scale.y = 0.75; // sitting
+      this.scene.add(yogi);
+      this.yogis = this.yogis || []; this.yogis.push(yogi);
+    }
+    const yogaSign = makeTextSprite("Sunrise Yoga", { size: 48, scale: 1.1 }); yogaSign.position.set(30, heightAt(30, -240) + 3, -232); this.scene.add(yogaSign);
+
+    // Bells at the valley entrance.
+    for (const x of [-3.5, 3.5]) { const post = new THREE.Mesh(new THREE.BoxGeometry(0.3, 3.2, 0.3), mat(COLORS.woodDark)); post.position.set(x, heightAt(x, -194) + 1.6, -194); this.scene.add(post); const bell = new THREE.Mesh(new THREE.CylinderGeometry(0.32, 0.45, 0.7, 8), mat(0xffc93c)); bell.position.set(x, heightAt(x, -194) + 2.6, -194); this.scene.add(bell); this.addBox(x, -194, 0.3, 0.3); }
+
+    // Stone steps up toward Kailash and a viewpoint platform.
+    for (let i = 0; i < 14; i++) {
+      const z = -268 - i * 1.4, h = heightAt(0, z);
+      const step = new THREE.Mesh(new THREE.BoxGeometry(4, 0.3, 1.5), mat(COLORS.stone)); step.position.set(0, h + 0.15, z); this.scene.add(step);
+    }
+    const vp = heightAt(0, -290);
+    const platform = new THREE.Mesh(new THREE.CylinderGeometry(4, 4.4, 0.5, 14), mat(COLORS.stone)); platform.position.set(0, vp + 0.25, -290); this.scene.add(platform);
+    const rail = new THREE.Mesh(new THREE.TorusGeometry(3.8, 0.08, 6, 20), mat(COLORS.woodDark)); rail.rotation.x = Math.PI / 2; rail.position.set(0, vp + 1.2, -290); this.scene.add(rail);
+    const darshan = makeTextSprite("Kailash Darshan", { size: 50, scale: 1.4 }); darshan.position.set(0, vp + 3.5, -290); this.scene.add(darshan);
+    const om = makeTextSprite("ॐ", { size: 90, color: "#f77f00", bg: "rgba(255,248,236,0.95)", scale: 1.0 }); om.position.set(0, vp + 2.2, -293); this.scene.add(om);
+    const peakSign = makeTextSprite("Kailash Parvat", { size: 50, color: "#ffffff", bg: "rgba(29,53,87,0.9)", scale: 3 }); peakSign.position.set(0, heightAt(0, -320) + 14, -320); this.scene.add(peakSign);
+
+    // Pine trees on the valley slopes.
+    const nPine = 180;
+    const pines = new THREE.InstancedMesh(new THREE.ConeGeometry(1.2, 4.5, 7), mat(0x2f6b3a), nPine);
+    const trunks = new THREE.InstancedMesh(new THREE.CylinderGeometry(0.2, 0.3, 1.6, 6), mat(COLORS.trunk), nPine);
+    const dummy = new THREE.Object3D();
+    let placed = 0, tries = 0;
+    while (placed < nPine && tries < 4000) {
+      tries++;
+      const x = -130 + Math.random() * 260, z = -300 + Math.random() * 110;
+      const h = heightAt(x, z);
+      if (h > 30 || inWater(x, z) || rectDist(x, z, H) < 3) continue;
+      const s = 0.8 + Math.random() * 0.8;
+      dummy.position.set(x, h + 0.8 * s, z); dummy.scale.setScalar(s); dummy.rotation.set(0, 0, 0); dummy.updateMatrix(); trunks.setMatrixAt(placed, dummy.matrix);
+      dummy.position.y = h + 3.6 * s; dummy.updateMatrix(); pines.setMatrixAt(placed, dummy.matrix);
+      this.addCircle(x, z, 0.3 * s);
+      placed++;
+    }
+    pines.count = placed; trunks.count = placed; pines.castShadow = true;
+    this.scene.add(pines, trunks);
   }
 
   _addLamp(x, z) {
@@ -3268,7 +3412,7 @@ class World {
       tries++;
       const x = (Math.random() * 2 - 1) * (WORLD_HALF - 10), z = (Math.random() * 2 - 1) * (WORLD_HALF - 10);
       const h = heightAt(x, z);
-      if (h > 26 || inLake(x, z)) continue;                 // no trees on snow or in water
+      if (h > 26 || inWater(x, z)) continue;                // no trees on snow or in water
       if (Math.abs(z) < 12) continue;                        // river valley clear
       let flat = false;
       for (const r of FLAT_ZONES) if (rectDist(x, z, r) < 4) { flat = true; break; }
@@ -3294,7 +3438,7 @@ class World {
     const rocks = new THREE.InstancedMesh(new THREE.DodecahedronGeometry(0.8, 0), mat(0x8d8a80), nRocks);
     for (let i = 0; i < nRocks; i++) {
       let x, z, h;
-      do { x = (Math.random() * 2 - 1) * (WORLD_HALF - 5); z = (Math.random() * 2 - 1) * (WORLD_HALF - 5); h = heightAt(x, z); } while (h < 4 || inLake(x, z));
+      do { x = (Math.random() * 2 - 1) * (WORLD_HALF - 5); z = (Math.random() * 2 - 1) * (WORLD_HALF - 5); h = heightAt(x, z); } while (h < 4 || inWater(x, z));
       const sx = 0.6 + Math.random() * 1.8, sz = 0.6 + Math.random() * 1.8;
       dummy.position.set(x, h + 0.3, z); dummy.scale.set(sx, 0.5 + Math.random(), sz);
       dummy.rotation.set(Math.random(), Math.random() * 6, Math.random()); dummy.updateMatrix();
@@ -3308,7 +3452,7 @@ class World {
     const grass = new THREE.InstancedMesh(new THREE.ConeGeometry(0.18, 0.5, 4), mat(0x76b852), nGrass);
     for (let i = 0; i < nGrass; i++) {
       let x, z, h;
-      do { x = (Math.random() * 2 - 1) * (WORLD_HALF - 20); z = (Math.random() * 2 - 1) * (WORLD_HALF - 20); h = heightAt(x, z); } while (h > 12 || inLake(x, z) || Math.abs(z) < 5 || rectDist(x, z, CITY) < 2);
+      do { x = (Math.random() * 2 - 1) * (WORLD_HALF - 20); z = (Math.random() * 2 - 1) * (WORLD_HALF - 20); h = heightAt(x, z); } while (h > 12 || inWater(x, z) || Math.abs(z) < 5 || rectDist(x, z, CITY) < 2);
       dummy.position.set(x, h + 0.2, z); dummy.scale.setScalar(0.7 + Math.random() * 0.8); dummy.rotation.set(0, Math.random() * 6, 0); dummy.updateMatrix();
       grass.setMatrixAt(i, dummy.matrix);
     }
@@ -3480,7 +3624,7 @@ class World {
   isWalkable(x, z) {
     if (this.currentRoom) return this.currentRoom.walkable(x, z);
     if (Math.abs(x) > WORLD_HALF - 4 || Math.abs(z) > WORLD_HALF - 4) return false; // edge of the world
-    if (inLake(x, z)) return false;                           // the lake
+    if (inWater(x, z)) return false;                          // lakes
     if (heightAt(x, z) > 30) return false;                    // too steep, high mountains
     if (this.blockedBySolid(x, z)) return false;              // walls, trunks, posts
     const inRiver = z < this.riverZ.near && z > this.riverZ.far;
@@ -3748,80 +3892,107 @@ class Player {
   // Move the player each frame based on input.
   // moveVec is { x, y } from the Input class, each -1..1.
   //   x: left(-) / right(+)     y: forward(-) / back(+)
+  // What the controls move: the player, or the vehicle being ridden.
+  get mover() { return this.riding ? this.riding.group : this.group; }
+
   update(dt, moveVec, running = false, camDelta = 0, camIdle = 99) {
-    // How hard is the stick / key pushed?
     const mag = Math.hypot(moveVec.x, moveVec.y);
     const walking = mag > 0.05;
-    const speed = this.speed * (running ? 1.8 : 1);
+    const body = this.mover;
+    const controlled = !this.riding || this.riding.controlled !== false;
+    const speed = this.riding ? this.riding.speed : this.speed * (running ? 1.8 : 1);
 
     // Turn the camera. Indoors it settles to look straight into the room.
     if (this.world.currentRoom) {
       this.camYaw = this._lerpAngle(this.camYaw, 0, Math.min(1, dt * 4));
     } else {
       this.camYaw += camDelta;
-      // Gentle auto-follow: after a couple of seconds without manual turning,
-      // while walking, the camera drifts round to sit behind the player.
-      if (walking && camIdle > 2) this.camYaw = this._lerpAngle(this.camYaw, this.facing + Math.PI, Math.min(1, dt * 0.9));
+      if (walking && camIdle > 2 && controlled) this.camYaw = this._lerpAngle(this.camYaw, this.facing + Math.PI, Math.min(1, dt * 0.9));
     }
     this.camOffset.set(Math.sin(this.camYaw) * 11, 6.5, Math.cos(this.camYaw) * 11);
 
-    if (walking) {
-      // Work out the camera's flat (ignore-height) forward direction.
+    if (walking && controlled) {
+      // Camera-relative direction.
       const fwd = this._forward.set(0, 0, -1).applyQuaternion(this.camera.quaternion);
       fwd.y = 0; fwd.normalize();
-
-      // "Right" is forward turned a quarter-turn clockwise when seen from
-      // above. For forward (fx, 0, fz) that is (-fz, 0, fx).
-      // (Getting this the wrong way round flips left and right!)
       const right = this._right.set(-fwd.z, 0, fwd.x);
-
-      // Combine: up on stick = forward, sideways = strafe.
       const dir = this._dir.set(0, 0, 0);
       dir.addScaledVector(fwd, -moveVec.y);
       dir.addScaledVector(right, moveVec.x);
       dir.normalize();
 
-      // Where we WANT to be next.
       const step = Math.min(mag, 1) * speed * dt;
-      const nx = this.group.position.x + dir.x * step;
-      const nz = this.group.position.z + dir.z * step;
+      const nx = body.position.x + dir.x * step;
+      const nz = body.position.z + dir.z * step;
 
-      // Only move if the world says that spot is walkable (rivers, walls and
-      // steep slopes block). We test each axis so you can slide along an edge.
-      const h0 = this.world.groundAt(this.group.position.x, this.group.position.z);
-      const probeX = this.group.position.x + dir.x * 0.6, probeZ = this.group.position.z + dir.z * 0.6;
-      const steep = this.world.groundAt(probeX, probeZ) - h0 > 0.7; // more than about 50 degrees
-      if (!steep && this.world.isWalkable(nx, this.group.position.z)) this.group.position.x = nx;
-      if (!steep && this.world.isWalkable(this.group.position.x, nz)) this.group.position.z = nz;
+      // Rivers, walls and steep slopes block. Each axis is tested so you slide.
+      const h0 = this.world.groundAt(body.position.x, body.position.z);
+      const probeX = body.position.x + dir.x * 0.6, probeZ = body.position.z + dir.z * 0.6;
+      const steep = this.world.groundAt(probeX, probeZ) - h0 > 0.7;
+      if (!steep && this.world.isWalkable(nx, body.position.z)) body.position.x = nx;
+      if (!steep && this.world.isWalkable(body.position.x, nz)) body.position.z = nz;
 
-      // Keep inside the map bounds (rooms sit far outside and are bounded by their walls).
       if (!this.world.currentRoom) {
-        this.group.position.x = THREE.MathUtils.clamp(this.group.position.x, -(WORLD_HALF - 5), WORLD_HALF - 5);
-        this.group.position.z = THREE.MathUtils.clamp(this.group.position.z, -(WORLD_HALF - 5), WORLD_HALF - 5);
+        body.position.x = THREE.MathUtils.clamp(body.position.x, -(WORLD_HALF - 5), WORLD_HALF - 5);
+        body.position.z = THREE.MathUtils.clamp(body.position.z, -(WORLD_HALF - 5), WORLD_HALF - 5);
       }
 
-      // Turn the body smoothly to face the way we're walking.
+      // Turn to face the way we go. Vehicles turn a little more slowly.
       this.facing = Math.atan2(dir.x, dir.z);
-      this.group.rotation.y = this._lerpAngle(this.group.rotation.y, this.facing, 0.2);
-
+      body.rotation.y = this._lerpAngle(body.rotation.y, this.facing, this.riding ? 0.12 : 0.2);
     }
-    // Stand on the ground, with a gentle bob while walking.
-    const ground = this.world.groundAt(this.group.position.x, this.group.position.z);
-    this.group.position.y = ground + (walking ? Math.abs(Math.sin(performance.now() / (running ? 80 : 120))) * 0.05 : 0);
 
-    // Swing arms and legs (or breathe when standing).
-    animateHuman(this.group, dt, walking, Math.min(mag, 1) * (running ? 1.6 : 1));
+    if (controlled) {
+      const ground = this.world.groundAt(body.position.x, body.position.z);
+      const bob = walking && !this.riding ? Math.abs(Math.sin(performance.now() / (running ? 80 : 120))) * 0.05 : 0;
+      body.position.y = ground + bob;
+    }
+
+    if (this.riding) {
+      sitPose(this.group, this.riding.kind);
+      // Blink and breathe still.
+      animateHuman(this.group, dt, false, 1);
+      sitPose(this.group, this.riding.kind);
+      if (this.riding.kind !== "metro") { for (const c of body.children) if (c.geometry && c.geometry.type === "CylinderGeometry" && walking) c.rotation.x += dt * speed; }
+    } else {
+      animateHuman(this.group, dt, walking, Math.min(mag, 1) * (running ? 1.6 : 1));
+    }
 
     this._placeCamera(dt * 6);
   }
 
-  // Smoothly follow behind the player.
+  // Hop onto a vehicle. `ride` = { group, speed, kind, controlled }.
+  mount(ride) {
+    if (this.riding) return;
+    this.riding = ride;
+    ride.group.add(this.group);
+    const seat = ride.group.userData.seat || { x: 0, y: 0.3, z: 0 };
+    this.group.position.set(seat.x, seat.y, seat.z);
+    this.group.rotation.set(0, 0, 0);
+    this.facing = ride.group.rotation.y;
+  }
+
+  // Step off beside the vehicle.
+  dismount() {
+    if (!this.riding) return;
+    const v = this.riding.group;
+    const side = Math.cos(v.rotation.y), sideZ = -Math.sin(v.rotation.y);
+    let x = v.position.x + side * 1.6, z = v.position.z + sideZ * 1.6;
+    if (!this.world.isWalkable(x, z)) { x = v.position.x - side * 1.6; z = v.position.z - sideZ * 1.6; }
+    if (!this.world.isWalkable(x, z)) { x = v.position.x; z = v.position.z + 2.2; }
+    this.world.scene.add(this.group);
+    this.group.position.set(x, this.world.groundAt(x, z), z);
+    this.group.rotation.set(0, v.rotation.y, 0);
+    standPose(this.group);
+    this.riding = null;
+  }
+
+  // Smoothly follow behind the player (or the vehicle they ride).
   _placeCamera(t) {
-    const target = this._tmp.copy(this.camOffset).add(this.group.position);
-    // Ease the camera toward the target (t larger = snappier).
+    const p = this.position;
+    const target = this._tmp.copy(this.camOffset).add(p);
     this.camera.position.lerp(target, Math.min(1, t));
-    // Look at a point a little above the player's feet.
-    this.camera.lookAt(this.group.position.x, this.group.position.y + 1.2, this.group.position.z);
+    this.camera.lookAt(p.x, p.y + 1.2, p.z);
   }
 
   // Angle interpolation that takes the short way around the circle.
@@ -3832,7 +4003,8 @@ class Player {
     return a + diff * t;
   }
 
-  get position() { return this.group.position; }
+  // Where the player is in the world (the vehicle's spot while riding).
+  get position() { return this.riding ? this.riding.group.position : this.group.position; }
 }
 
 // ===== src/jobs/bridge.js =====
@@ -5210,6 +5382,7 @@ const CATEGORY_NAMES = {
   logic: "Logic, patterns and data",
   city: "City life",
   city_hard: "Nava Delhi challenges",
+  himalaya: "Himalaya wisdom",
 };
 
 // A short helper to build a situation entry.
@@ -5366,6 +5539,19 @@ const SITUATIONS = [
   S("hrd16", "city_hard", "Hot day", (r, big) => { const m = r.int(14, 22), rise = r.int(9, 16), drop = r.int(5, rise - 2); return { story: `At 6 in the morning Nava Delhi was ${m}°C. By 3 in the afternoon it had risen ${rise} degrees. By night it dropped ${drop} degrees.`, steps: [{ q: `What was the afternoon temperature?`, answer: m + rise, unit: "°C", hint: "Add the rise." }, { q: `What was the night temperature?`, answer: m + rise - drop, unit: "°C", hint: "Take the drop away from the afternoon figure." }] }; }),
   S("hrd17", "city_hard", "Metro map scale", (r, big) => { const k = r.pick(big ? [2.5, 4] : [2, 5]), cm = r.int(3, big ? 12 : 8); return { story: `On the metro map, 1 cm stands for ${k} km. The Blue Line measures ${cm} cm on the map.`, q: `How long is the Blue Line really?`, answer: cm * k, unit: "km", hint: `Map centimetres × ${k}.` }; }),
   S("hrd18", "city_hard", "Two towers", (r, big) => { const A = r.int(big ? 40 : 20, big ? 90 : 50) * (big ? 1 : 2), f = big ? r.pick([1.5, 2.5]) : 2; return { story: `Bank Tower is ${A} m tall. The new Grand Hotel will be ${f} times as tall.`, steps: [{ q: `How tall will the Grand Hotel be?`, answer: A * f, unit: "m", hint: `${A} × ${f}.` }, { q: `How much taller than Bank Tower is that?`, answer: A * f - A, unit: "m", hint: "Take Bank Tower's height away." }] }; }),
+  // ---------------- HIMALAYA (12) ----------------
+  S("him01", "himalaya", "Colder up high", (r, big) => { const start = r.int(10, 18), per = big ? 150 : 100, climb = per * r.int(3, big ? 12 : 8); return { story: `At the valley it is ${start}°C. The air gets 1 degree colder for every ${per} m you climb. The Darshan point is ${climb} m higher.`, steps: [{ q: `How many degrees colder is it at the Darshan point?`, answer: climb / per, unit: "degrees", hint: `${climb} ÷ ${per}.` }, { q: `What is the temperature there?`, answer: start - climb / per, unit: "°C", hint: "Take the drop away from the valley temperature." }] }; }),
+  S("him02", "himalaya", "Parikrama", (r, big) => { const perDay = r.pick(big ? [13, 16] : [10, 12]), days = r.int(3, 5); return { story: `The walk all round Kailash is ${perDay * days} km. Pilgrim Ramesh walks ${perDay} km each day.`, q: `How many days does the parikrama take?`, answer: days, unit: "days", hint: "Distance ÷ km per day.", example: "48 km at 12 km a day is 4 days." }; }),
+  S("him03", "himalaya", "Prayer flags", (r) => { const n = r.int(11, 40); const colors = ["blue", "white", "red", "green", "yellow"]; const ans = colors[(n - 1) % 5]; return { story: `Prayer flags hang in a repeating pattern: blue, white, red, green, yellow, blue, white, red, green, yellow...`, q: `What colour is flag number ${n}?`, choices: colors.slice(), answer: ans, hint: `The pattern repeats every 5. Divide ${n - 1} by 5 and look at the remainder: 0 is blue, 1 white, 2 red, 3 green, 4 yellow.` }; }),
+  S("him04", "himalaya", "Pilgrim buses", (r, big) => { const buses = r.int(3, big ? 9 : 6), seats = r.pick(big ? [42, 48, 54] : [20, 30]); return { story: `${buses} buses of pilgrims arrived this morning, each with ${seats} seats, all full.`, q: `How many pilgrims came?`, answer: buses * seats, unit: "pilgrims", hint: "Buses × seats." }; }),
+  S("him05", "himalaya", "Meditation hours", (r, big) => { const sess = r.int(3, 4), m = r.pick(big ? [25, 35, 45] : [20, 30]); return { story: `Swami Anand holds ${sess} meditation sessions a day, each ${m} minutes long.`, steps: [{ q: `How many minutes of meditation is that a day?`, answer: sess * m, unit: "minutes", hint: "Sessions × minutes." }, { q: `How many minutes short of, or over, two hours is that? Type the difference.`, answer: Math.abs(sess * m - 120), unit: "minutes", hint: "Two hours is 120 minutes. Find the gap." }] }; }),
+  S("him06", "himalaya", "Steps to the shrine", (r, big) => { if (big) { const H = r.pick([6600, 5000, 4500]); return { story: `Kailash Parvat is about ${H} m tall.`, q: `How many kilometres is that? (Type a decimal.)`, answer: H / 1000, unit: "km", hint: "1000 m make 1 km. Divide by 1000." }; } const steps = r.pick([108, 120, 150]), cm = r.pick([15, 20]); return { story: `The stone stairway has ${steps} steps. Each step is ${cm} cm high.`, steps: [{ q: `How many centimetres do you climb?`, answer: steps * cm, unit: "cm", hint: "Steps × height." }, { q: `How many metres is that?`, answer: (steps * cm) / 100, unit: "m", hint: "100 cm make 1 m." }] }; }),
+  S("him07", "himalaya", "Yak milk", (r, big) => { const l = r.pick(big ? [4.5, 6] : [3, 5]), yaks = r.int(2, 5), days = r.int(2, big ? 7 : 4); return { story: `Each yak gives ${l} litres of milk a day. The ashram keeps ${yaks} yaks.`, steps: [{ q: `How much milk a day?`, answer: l * yaks, unit: "litres", hint: "Litres × yaks." }, { q: `How much in ${days} days?`, answer: l * yaks * days, unit: "litres", hint: `Daily milk × ${days}.` }] }; }),
+  S("him08", "himalaya", "Thin air", (r, big) => { const alt = r.int(2, big ? 6 : 4) * 1000; return { story: `At sea level the air has all its oxygen, 100%. Monk Tenzin says you lose about 10% for every 1000 m you climb.`, q: `Roughly what percent is left at ${alt} m?`, answer: 100 - (alt / 1000) * 10, unit: "%", hint: `${alt / 1000} thousand metres means ${alt / 1000} × 10% lost.` }; }),
+  S("him09", "himalaya", "Ashram beds", (r, big) => { const rooms = r.int(4, big ? 12 : 8), beds = r.int(3, 6), guests = r.int(rooms, rooms * beds - 2); return { story: `The ashram has ${rooms} rooms with ${beds} beds each. Tonight ${guests} pilgrims are staying.`, steps: [{ q: `How many beds are there?`, answer: rooms * beds, unit: "beds", hint: "Rooms × beds." }, { q: `How many beds are free?`, answer: rooms * beds - guests, unit: "beds", hint: "Beds minus guests." }] }; }),
+  S("him10", "himalaya", "Temple bells", (r) => { const m = r.pick([10, 12, 15, 20]); return { story: `The valley bells ring every ${m} minutes, starting at 5:00 and ending with the 6:00 bell.`, q: `How many times do they ring from 5:00 to 6:00, counting both?`, answer: 60 / m + 1, unit: "times", hint: `60 ÷ ${m} gaps, plus one for the first bell at 5:00.` }; }),
+  S("him11", "himalaya", "Mala beads", (r, big) => { const rounds = r.int(2, big ? 9 : 3); return { story: `A mala has 108 beads. Pilgrim Ramesh chants one name on each bead and goes round the mala ${rounds} times.`, q: `How many names does he chant?`, answer: 108 * rounds, unit: "names", hint: `108 × ${rounds}. Try 100 × ${rounds} plus 8 × ${rounds}.` }; }),
+  S("him12", "himalaya", "Snow line", (r, big) => { const peak = 6638, snow = r.pick([5000, 5200]), camp = r.pick([4400, 4600]); if (!big) return { story: `Snow starts at ${snow} m. The trekkers' camp is at ${camp} m.`, q: `How many metres above the camp does the snow begin?`, answer: snow - camp, unit: "m", hint: "Snow line minus camp height." }; return { story: `Kailash Parvat's peak is ${peak} m. Snow begins at ${snow} m. Base camp sits at ${camp} m.`, steps: [{ q: `How high is the climb from base camp to the peak?`, answer: peak - camp, unit: "m", hint: "Peak minus camp." }, { q: `How much of that climb is in snow?`, answer: peak - snow, unit: "m", hint: "Peak minus the snow line." }] }; }),
   S("log10", "logic", "Magic row", (r, big) => { const T = r.pick(big ? [30, 45, 60] : [15, 18, 20]), a = r.int(1, Math.floor(T / 3)), b = r.int(1, Math.floor(T / 3)); return { story: `Every row of Dr. Iyer's magic square adds up to ${T}. One row shows ${a}, ${b} and a blank.`, q: `What goes in the blank?`, answer: T - a - b, unit: "", hint: `Take both known numbers away from ${T}.`, example: "If a row adds to 15 and shows 8 and 1, the blank is 6." }; }),
 ];
 
@@ -5625,7 +5811,7 @@ function updateCritters(critters, dt, elapsed, playerPos, world) {
       swingLegs(p, b.phase, b.kind === "peck" ? 0 : 0.5);
       if (b.kind === "peck") c.position.y = Math.abs(Math.sin(b.phase)) * 0.08; // hop
       // Do not walk into buildings or water: choose a different spot instead.
-      if (world.blockedBySolid(b.target.x, b.target.z, 0.5) || inLake(b.target.x, b.target.z) || Math.abs(b.target.z) < 4) { b.target = null; continue; }
+      if (world.blockedBySolid(b.target.x, b.target.z, 0.5) || inWater(b.target.x, b.target.z) || Math.abs(b.target.z) < 4) { b.target = null; continue; }
       if (stepToward(c, b.target.x, b.target.z, b.speed, dt)) {
         b.target = null;
         b.wait = 1.5 + r01() * 4;
@@ -5713,6 +5899,11 @@ const NPC_DEFS = [
   { id: "noor", name: "Noor the Fisher", look: { shirt: 0x00b4d8, trousers: 0x023e8a }, zone: "lake", cats: ["water", "length"], greet: "The lake is calm. My sums are not." },
   { id: "tara", name: "Tara", look: { shirt: 0x06d6a0, dress: true }, zone: "lake", child: true, cats: ["science", "logic"], greet: "Look, a frog! Also, I have a question." },
   { id: "pandit", name: "Panditji", look: { shirt: 0xffb703, trousers: 0xffffff, hair: 0xdddddd, skin: 0xc98d62 }, zone: "temple", cats: ["time", "logic"], greet: "Welcome to the hill. Sit a moment and think." },
+  // Himalaya valley.
+  { id: "devika", name: "Yoga Teacher Devika", look: { shirt: 0xf77f00, trousers: 0xffffff, hair: 0x1d1410 }, zone: "himalaya", cats: ["himalaya", "science"], greet: "Breathe. Good. Now stretch your mind a little." },
+  { id: "ramesh", name: "Pilgrim Ramesh", look: { shirt: 0xffffff, trousers: 0xffd21e, hair: 0x888888 }, zone: "himalaya", cats: ["himalaya", "travel"], greet: "Har Har Mahadev! Long walk. Help an old pilgrim count?" },
+  { id: "tenzin", name: "Monk Tenzin", look: { shirt: 0xc1121f, trousers: 0xf77f00, hair: 0x333333 }, zone: "himalaya", cats: ["himalaya", "logic"], greet: "Peace, young engineer. A riddle from the mountains." },
+  { id: "anu", name: "Anu", look: { shirt: 0x9b5de5, dress: true }, zone: "himalaya", child: true, cats: ["himalaya", "fractions"], greet: "I saw a yak! Also, papa gave me a puzzle I can't do." },
   // City folk.
   { id: "bablu", name: "Auto Driver Bablu", look: { shirt: 0x8d8a80, trousers: 0x333333, hair: 0x1d1410 }, zone: "city", cats: ["city_hard", "money"], greet: "Kahan jaana hai? Meter is broken, so help me with the fare." },
   { id: "kishan", name: "Ice Cream Wala Kishan", look: { shirt: 0xffffff, trousers: 0x1d3557, hat: 0xffffff }, zone: "city", cats: ["city_hard", "fractions"], greet: "Kulfi! Orange bar! One free if you solve this." },
@@ -5731,10 +5922,11 @@ const WAYPOINTS = {
   farms_s: [[80, 45], [112, 50], [96, 22], [70, 34], [128, 30], [104, 60]],
   lake: [[-74, 40], [-74, 52], [-60, 36], [-90, 74], [-62, 56], [-84, 14]],
   temple: [[-6, -114], [6, -114], [0, -108], [-10, -122], [10, -122], [-2, -104]],
+  himalaya: [[-10, -205], [16, -208], [-20, -225], [20, -225], [-6, -250], [40, -232], [-64, -214], [26, -262], [-24, -212], [12, -246]],
   city: [[-8, 196], [8, 196], [-30, 224], [30, 224], [-46, 185], [46, 236], [-74, 276], [74, 276], [6, 262], [-34, 264], [34, 264], [100, 236], [-100, 224], [26, 278], [34, 262]],
 };
 // Which side of the river each zone sits on.
-const ZONE_BANK = { village_s: "near", town: "near", farms_s: "near", lake: "near", city: "near", village_n: "far", farms_n: "far", temple: "far" };
+const ZONE_BANK = { village_s: "near", town: "near", farms_s: "near", lake: "near", city: "near", village_n: "far", farms_n: "far", temple: "far", himalaya: "far" };
 
 class Npc {
   constructor(def, world, opts = {}) {
@@ -5885,6 +6077,7 @@ const AUTO_STANDS = [
   { name: "Lake Shore", hint: "boats, huts and the fish market", x: -58, z: 30 },
   { name: "Temple Hill", hint: "the temple and the great banyan", x: 7, z: -96 },
   { name: "Nava Delhi", hint: "the city: towers, metro and mall", x: 8, z: 193 },
+  { name: "Himalaya Valley", hint: "meditation centre, dhams, Kailash view", x: 10, z: -204 },
 ];
 
 // A window texture for towers: dark glass with lit windows. One image,
@@ -6034,6 +6227,77 @@ function openLiftPanel(door, currentFloor, onPick) {
   }));
 }
 
+// ===== src/engine/ride.js =====
+/* ============================================================
+   ride.js — things you can ride: scooty, bicycle, car, and the metro.
+
+   Walk up to a parked vehicle and press E to hop on. Your walking
+   controls now drive the vehicle (faster!). Press E again to get
+   off. The metro is different: you board it at a station while it
+   waits, ride along the track, and get off at the next stop.
+   ============================================================ */
+
+const RIDEABLES = [
+  { kind: "scooty", x: -4, z: 23, speed: 13, label: "Scooty" },
+  { kind: "bike", x: 12, z: 84, speed: 10, label: "Bicycle" },
+  { kind: "car", x: 14, z: 198, speed: 20, label: "Car" },
+  { kind: "scooty", x: -14, z: 198, speed: 13, label: "Scooty" },
+  { kind: "bike", x: -60, z: 40, speed: 10, label: "Bicycle" },
+  { kind: "scooty", x: 104, z: 48, speed: 13, label: "Scooty" },
+  { kind: "bike", x: 8, z: -206, speed: 10, label: "Bicycle" },
+];
+
+function makeScooty(color = 0xd62828) {
+  const g = new THREE.Group();
+  const body = new THREE.Mesh(new THREE.BoxGeometry(0.5, 0.35, 1.2), mat(color)); body.position.set(0, 0.5, -0.2); g.add(body);
+  const seat = new THREE.Mesh(new THREE.BoxGeometry(0.45, 0.12, 0.6), mat(0x222222)); seat.position.set(0, 0.72, -0.35); g.add(seat);
+  const board = new THREE.Mesh(new THREE.BoxGeometry(0.45, 0.06, 0.6), mat(0x333333)); board.position.set(0, 0.3, 0.2); g.add(board);
+  const column = new THREE.Mesh(new THREE.BoxGeometry(0.12, 0.7, 0.12), mat(color)); column.position.set(0, 0.7, 0.55); column.rotation.x = -0.3; g.add(column);
+  const bars = new THREE.Mesh(new THREE.BoxGeometry(0.7, 0.06, 0.06), mat(0x222222)); bars.position.set(0, 1.05, 0.62); g.add(bars);
+  const lamp = new THREE.Mesh(new THREE.SphereGeometry(0.1, 8, 6), new THREE.MeshStandardMaterial({ color: 0xffffcc, emissive: 0xffffaa, emissiveIntensity: 0.6 })); lamp.position.set(0, 0.9, 0.75); g.add(lamp);
+  for (const z of [0.7, -0.6]) { const w = new THREE.Mesh(new THREE.CylinderGeometry(0.22, 0.22, 0.12, 10), mat(0x222222)); w.rotation.z = Math.PI / 2; w.position.set(0, 0.22, z); g.add(w); }
+  g.userData.seat = { x: 0, y: 0.78, z: -0.3 };
+  g.userData.dynamic = true;
+  return g;
+}
+function makeBicycle(color = 0x2a9d8f) {
+  const g = new THREE.Group();
+  const frame1 = new THREE.Mesh(new THREE.BoxGeometry(0.06, 0.06, 1.0), mat(color)); frame1.position.set(0, 0.55, 0); g.add(frame1);
+  const frame2 = new THREE.Mesh(new THREE.BoxGeometry(0.06, 0.6, 0.06), mat(color)); frame2.position.set(0, 0.6, -0.35); g.add(frame2);
+  const frame3 = new THREE.Mesh(new THREE.BoxGeometry(0.06, 0.65, 0.06), mat(color)); frame3.position.set(0, 0.62, 0.45); frame3.rotation.x = -0.25; g.add(frame3);
+  const seat = new THREE.Mesh(new THREE.BoxGeometry(0.25, 0.08, 0.35), mat(0x222222)); seat.position.set(0, 0.92, -0.35); g.add(seat);
+  const bars = new THREE.Mesh(new THREE.BoxGeometry(0.6, 0.05, 0.05), mat(0x222222)); bars.position.set(0, 0.98, 0.5); g.add(bars);
+  for (const z of [0.55, -0.55]) { const w = new THREE.Mesh(new THREE.TorusGeometry(0.32, 0.04, 6, 14), mat(0x222222)); w.rotation.y = Math.PI / 2; w.position.set(0, 0.32, z); g.add(w); }
+  g.userData.seat = { x: 0, y: 0.95, z: -0.3 };
+  g.userData.dynamic = true;
+  return g;
+}
+function makeRideCar(color = 0xf77f00) {
+  const g = makeCar(color);
+  // See-through cabin so the rider is visible.
+  const cabin = g.children[1];
+  cabin.material = new THREE.MeshStandardMaterial({ color: 0x9fd3ea, transparent: true, opacity: 0.45, roughness: 0.2 });
+  g.userData.seat = { x: -0.4, y: 0.75, z: 0.1 };
+  g.userData.dynamic = true;
+  return g;
+}
+
+// Sit the rider on a vehicle: legs forward, hands on the bars.
+function sitPose(group, kind) {
+  const p = group.userData.parts;
+  if (!p) return;
+  const legs = kind === "car" ? -1.4 : -0.9;
+  p.legL.rotation.x = legs; p.legR.rotation.x = legs;
+  p.armL.rotation.x = -1.0; p.armR.rotation.x = -1.0;
+  p.armL.rotation.z = 0.25; p.armR.rotation.z = -0.25;
+}
+// Back to a normal stance after riding.
+function standPose(group) {
+  const p = group.userData.parts;
+  if (!p) return;
+  for (const k of ["legL", "legR", "armL", "armR"]) { p[k].rotation.x = 0; p[k].rotation.z = 0; }
+}
+
 // ===== src/engine/rooms.js =====
 /* ============================================================
    rooms.js — the insides of buildings.
@@ -6059,6 +6323,11 @@ function roomTypeFor(sign) {
   if (s.includes("mall")) return "mall";
   if (s.includes("metro")) return "metro";
   if (s.includes("hotel")) return "hotel";
+  if (s.includes("meditation")) return "meditation";
+  if (s.includes("ashram")) return "ashram";
+  if (s.includes("dham") || s.includes("shrine")) return "temple";
+  if (s.includes("barn")) return "barn";
+  if (s.includes("granary")) return "granary";
   if (s.includes("hospital")) return "clinic";
   if (s.includes("police") || s.includes("fire")) return "office";
   if (s.includes("school")) return "school";
@@ -6084,6 +6353,10 @@ const OCCUPANTS = {
   temple: ["Helper Gopi"],
   office: ["Manager Sharma", "Receptionist Priya", "Engineer Arjun", "Accountant Mehta"],
   lobby: ["Receptionist Priya", "Guard Bahadur", "Concierge Rita"],
+  meditation: ["Swami Anand"],
+  ashram: ["Guru Ma"],
+  barn: ["Farmhand Raju"],
+  granary: ["Storekeeper Lal"],
   gym: ["Coach Vikram"],
   rooftop: ["Gardener Lakhan", "Astronomer Aunty Meena"],
   cinema: ["Usher Pappu"],
@@ -6104,6 +6377,10 @@ const OCC_GREETS = {
   temple: "Take off your shoes at the door. Then think with me a moment.",
   office: "Busy day! The lift, the floors, the bills... help me with one number?",
   lobby: "Welcome! The lift is at the back. But first, a little challenge for the visitor.",
+  meditation: "Breathe in... breathe out... and now, one calm question.",
+  ashram: "Beta, you walked all the way up? Sit, eat, and think about this.",
+  barn: "Mind the hay! The cow is friendly. Can you help me count the feed?",
+  granary: "Sacks and sacks and sacks. Help me keep track of them.",
   gym: "Ten push ups! Just kidding. Ten seconds of thinking instead.",
   rooftop: "Look at that view! Now look at this problem.",
   cinema: "Shh, the show is starting. One question before the trailers.",
@@ -6143,8 +6420,8 @@ class Room {
   }
 
   _build() {
-    const wallColors = { lobby: 0xfff1d6, gym: 0xe3ecf5, rooftop: 0xbfe3f2, cinema: 0x2b2b3a, hotelroom: 0xf3d9c8, office: 0xe3ecf5, mall: 0xfff1d6, metro: 0xdfe6ea, house: 0xfff1d6, shop: 0xe3ecf5, eatery: 0xffe0a3, school: 0xf6efd8, clinic: 0xffffff, library: 0xf3d9c8, hall: 0xf2e4c8, station: 0xd9e4d0, temple: 0xfff1d6 };
-    const floorColors = { lobby: 0xdfe6ea, gym: 0x8d6e63, rooftop: 0x9e9e9e, cinema: 0x3a2f45, hotelroom: 0xa67c52, office: 0x9aa6ad, mall: 0xdfe6ea, metro: 0x8d8a80, house: 0xd7b98e, shop: 0xbfb6a5, eatery: 0xc9a86a, school: 0xbfb6a5, clinic: 0xdfe6ea, library: 0xa67c52, hall: 0xc4a484, station: 0xbfb6a5, temple: 0xe8d5b5 };
+    const wallColors = { meditation: 0xfff8ec, ashram: 0xf3d9c8, barn: 0xa0522d, granary: 0xe8d5b5, lobby: 0xfff1d6, gym: 0xe3ecf5, rooftop: 0xbfe3f2, cinema: 0x2b2b3a, hotelroom: 0xf3d9c8, office: 0xe3ecf5, mall: 0xfff1d6, metro: 0xdfe6ea, house: 0xfff1d6, shop: 0xe3ecf5, eatery: 0xffe0a3, school: 0xf6efd8, clinic: 0xffffff, library: 0xf3d9c8, hall: 0xf2e4c8, station: 0xd9e4d0, temple: 0xfff1d6 };
+    const floorColors = { meditation: 0xe8d5b5, ashram: 0xd7b98e, barn: 0x8a5626, granary: 0xbfb6a5, lobby: 0xdfe6ea, gym: 0x8d6e63, rooftop: 0x9e9e9e, cinema: 0x3a2f45, hotelroom: 0xa67c52, office: 0x9aa6ad, mall: 0xdfe6ea, metro: 0x8d8a80, house: 0xd7b98e, shop: 0xbfb6a5, eatery: 0xc9a86a, school: 0xbfb6a5, clinic: 0xdfe6ea, library: 0xa67c52, hall: 0xc4a484, station: 0xbfb6a5, temple: 0xe8d5b5 };
     const wall = wallColors[this.type] || 0xfff1d6;
     // Floor and three walls (the +z side stays open for the camera).
     // The rooftop has only a low parapet, so the sky is all around.
@@ -6265,6 +6542,26 @@ class Room {
       this._box(0.8, 0.9, 0.6, 0x555e66, 3.6, 0.45, -3.2); // minibar
       this._box(1.2, 0.1, 0.6, 0x8a5626, 1.8, 0.75, -2.6); // desk
       const rs = makeTextSprite("Room 204", { size: 50, scale: 0.6 }); rs.position.set(3.4, 2.6, -ROOM_D / 2 + 0.3); this.group.add(rs);
+    } else if (t === "meditation") {
+      for (let r = 0; r < 2; r++) for (let c = 0; c < 4; c++) this._box(1.6, 0.05, 0.7, [0xf77f00, 0xffd21e, 0x9b5de5, 0x3a86ff][c], -3.6 + c * 2.4, 0.03, -1.6 + r * 2.2, false); // mats
+      for (let i = 0; i < 5; i++) { const cand = new THREE.Mesh(new THREE.SphereGeometry(0.1, 6, 5), new THREE.MeshStandardMaterial({ color: 0xffb703, emissive: 0xff8f00, emissiveIntensity: 1 })); cand.position.set(-2 + i, 0.6, -3.2); this.group.add(cand); this._box(0.15, 0.5, 0.15, 0xfff1d6, -2 + i, 0.25, -3.2, false); }
+      const om = makeTextSprite("ॐ", { size: 100, color: "#f77f00", bg: "rgba(255,255,255,0)", scale: 1.4 }); om.position.set(0, 2.0, -ROOM_D / 2 + 0.3); this.group.add(om);
+      const q = makeTextSprite("Silence, please", { size: 40, scale: 0.9 }); q.position.set(3.2, 2.6, -ROOM_D / 2 + 0.3); this.group.add(q);
+    } else if (t === "ashram") {
+      for (let i = 0; i < 4; i++) { this._box(0.9, 0.4, 2.0, 0xb9773c, -3.9 + i * 1.3, 0.2, -2.4); this._box(0.85, 0.15, 1.9, 0xfff1d6, -3.9 + i * 1.3, 0.47, -2.4, false); }
+      this._box(2.4, 0.9, 0.7, 0xbfb6a5, 3.5, 0.45, -3.4); this._box(0.6, 0.35, 0.6, 0x555555, 3.5, 1.07, -3.4, false); // kitchen, big pot
+      this._box(3, 0.08, 1.0, 0x8a5626, 1.5, 0.45, 1.2); // low dining table
+      const s2 = makeTextSprite("Seva · Simplicity · Study", { size: 40, scale: 1.2 }); s2.position.set(0, 2.6, -ROOM_D / 2 + 0.3); this.group.add(s2);
+    } else if (t === "barn") {
+      for (let i = 0; i < 4; i++) { const hay = this._box(1.2, 0.9, 1.2, 0xe2c463, -3.6 + (i % 2) * 1.3, 0.45 + Math.floor(i / 2) * 0.9, -3.0, i < 2); hay.geometry = new THREE.CylinderGeometry(0.6, 0.6, 1.2, 8); hay.rotation.z = Math.PI / 2; }
+      this._box(3.5, 1.0, 0.1, 0x8a5626, 2.8, 0.5, -1.4); this._box(0.1, 1.0, 2.4, 0x8a5626, 1.1, 0.5, -2.6); // stall rails
+      const cow = makeCow(); cow.position.set(3, 0, -2.6); cow.rotation.y = -Math.PI / 2; this.group.add(cow); this._solid(3, -2.6, 1.6, 0.9);
+      this._box(0.1, 1.6, 0.1, 0x5a3a24, -4.4, 0.8, 1.5); this._box(0.5, 0.1, 0.1, 0x9aa6ad, -4.4, 1.6, 1.5, false); // pitchfork
+      const b = makeTextSprite("Feed: 3 kg per cow", { size: 44, scale: 1.0 }); b.position.set(0, 2.6, -ROOM_D / 2 + 0.3); this.group.add(b);
+    } else if (t === "granary") {
+      for (let r = 0; r < 3; r++) for (let c = 0; c < 5; c++) { const sack = this._box(0.7, 0.6, 0.6, 0xd9c39a, -3.2 + c * 1.1 + (r % 2) * 0.3, 0.3 + r * 0.55, -2.6, r === 0); sack.geometry = new THREE.SphereGeometry(0.4, 8, 6); sack.scale.set(1, 0.8, 0.9); }
+      this._box(1.2, 0.1, 0.8, 0x8a5626, 3.5, 0.75, 0.5); this._box(0.4, 0.3, 0.4, 0x9aa6ad, 3.5, 0.95, 0.5, false); // weighing scale
+      const g2 = makeTextSprite("Stock: 15 sacks × 50 kg", { size: 40, scale: 1.2 }); g2.position.set(0, 2.6, -ROOM_D / 2 + 0.3); this.group.add(g2);
     } else if (t === "temple") {
       this._box(3, 0.6, 2, 0xe8d5b5, 0, 0.3, -2.8); // platform
       const idol = new THREE.Mesh(new THREE.ConeGeometry(0.6, 1.6, 8), mat(0xffc93c)); idol.position.set(0, 1.4, -2.8); this.group.add(idol);
@@ -6285,7 +6582,7 @@ class Room {
 
   // Where the room's occupant stands (local -> world).
   occupantPos() {
-    const spots = { lobby: [1.5, -1.2], gym: [0, 0.6], rooftop: [0, 0.2], cinema: [-2.5, 2.6], hotelroom: [1.0, 0.8], office: [3.2, 1.6], mall: [0, 0.8], metro: [3.6, -1.0], house: [0.5, 0.5], shop: [0, -2.4], eatery: [0, -2.4], school: [2.2, -1.5], clinic: [1.8, -0.6], library: [-2.5, 1.5], hall: [-4.2, 0.6], station: [-2.5, -3.2], temple: [2.2, -1.2] };
+    const spots = { meditation: [3.0, 0.6], ashram: [1.5, 2.4], barn: [-1.5, 1.2], granary: [0, 0.8], lobby: [1.5, -1.2], gym: [0, 0.6], rooftop: [0, 0.2], cinema: [-2.5, 2.6], hotelroom: [1.0, 0.8], office: [3.2, 1.6], mall: [0, 0.8], metro: [3.6, -1.0], house: [0.5, 0.5], shop: [0, -2.4], eatery: [0, -2.4], school: [2.2, -1.5], clinic: [1.8, -0.6], library: [-2.5, 1.5], hall: [-4.2, 0.6], station: [-2.5, -3.2], temple: [2.2, -1.2] };
     const [x, z] = spots[this.type] || [0, 0];
     return { x: this.x0 + x, z: this.z0 + z };
   }
@@ -6343,7 +6640,7 @@ class Minimap {
     // District names.
     g.font = "bold 9px system-ui, sans-serif"; g.textAlign = "center"; g.fillStyle = "#2c2417";
     g.strokeStyle = "rgba(255,253,246,0.9)"; g.lineWidth = 2.5;
-    for (const [name, x, z] of [["Village", 0, 36], ["Town", 0, 112], ["Farms", 105, -2], ["Lake", -108, 46], ["Temple", 0, -134], ["NAVA DELHI", 0, 262]]) {
+    for (const [name, x, z] of [["Village", 0, 36], ["Town", 0, 112], ["Farms", 105, -2], ["Lake", -108, 46], ["Temple", 0, -134], ["NAVA DELHI", 0, 262], ["Himalaya", 0, -276], ["Kailash", 0, -320]]) {
       g.strokeText(name, this.px(x), this.pz(z)); g.fillText(name, this.px(x), this.pz(z));
     }
     this.static = off;
@@ -6434,8 +6731,9 @@ class Game {
     this._buildAnimals();
     this._buildInteractables();
     this.minimap = new Minimap(this.world);
-    this._ambient = { chirp: 3, moo: 8, quack: 12, horn: 5 };
+    this._ambient = { chirp: 3, moo: 8, quack: 12, horn: 5, bell: 10 };
     startAmbient();
+    startChant();
 
     this.clock = new THREE.Clock();
     this._loop = this._loop.bind(this);
@@ -6556,6 +6854,35 @@ class Game {
       });
     }
 
+    // Parked vehicles you can ride.
+    this.rideables = RIDEABLES.map((def) => {
+      const group = def.kind === "car" ? makeRideCar() : def.kind === "bike" ? makeBicycle() : makeScooty([0xd62828, 0x3a86ff, 0xffd21e][Math.floor(Math.random() * 3)]);
+      group.position.set(def.x, heightAt(def.x, def.z), def.z);
+      group.rotation.y = Math.PI / 2;
+      this.world.scene.add(group);
+      const ride = { group, speed: def.speed, kind: def.kind, label: def.label, controlled: true };
+      this.interactables.push({
+        pos: group.position, radius: 2.4,
+        prompt: () => `Ride the ${def.label}`,
+        activate: () => { this.player.mount(ride); Audio.playPick(); },
+      });
+      return ride;
+    });
+
+    // Metro stations: board when the train is waiting at the platform.
+    for (const sx of [-60, 60]) {
+      this.interactables.push({
+        pos: { x: sx + 8, z: 226 }, radius: 3.2,
+        prompt: () => (this._metroWaitingAt(sx) ? `Board the metro` : `Metro stop (wait for the train)`),
+        activate: () => {
+          if (!this._metroWaitingAt(sx)) { Audio.playRetry(); return; }
+          this.player.mount({ group: this.world.metro.group, speed: 0, kind: "metro", label: "Metro", controlled: false });
+          this.world.metro.wait = Math.max(this.world.metro.wait, 1.2);
+          playDing();
+        },
+      });
+    }
+
     // Auto stands: press E to ride to another district.
     for (const st of AUTO_STANDS) {
       this.interactables.push({
@@ -6587,6 +6914,33 @@ class Game {
     }
   }
 
+  // Is the metro stopped at the station with platform x = sx?
+  _metroWaitingAt(sx) {
+    const m = this.world.metro;
+    return m && m.wait > 0 && Math.abs(m.x - sx) < 2;
+  }
+
+  // While riding: E gets you off. On the metro only at a station.
+  _updateRiding() {
+    const r = this.player.riding;
+    if (r.kind === "metro") {
+      const m = this.world.metro;
+      const at = [-60, 60].find((sx) => m.wait > 0 && Math.abs(m.x - sx) < 2);
+      this.ui.setInteractPrompt(at != null ? `Get off at this station${this.input.isTouch ? "" : "  (E)"}` : `Riding the Blue Line…`);
+      if (this.input.interactPressed() && at != null) {
+        this.world.scene.add(this.player.group);
+        this.player.riding = null;
+        standPose(this.player.group);
+        this.player.group.position.set(at + 8, heightAt(at + 8, 224), 224);
+        this.player.group.rotation.set(0, Math.PI, 0);
+        playDing();
+      } else this.input.interactPressed();
+    } else {
+      this.ui.setInteractPrompt(`Get off the ${r.label}${this.input.isTouch ? "" : "  (E)"}`);
+      if (this.input.interactPressed()) { this.player.dismount(); Audio.playPick(); }
+    }
+  }
+
   // ---- Auto rides between districts ----
   _openTravel(from) {
     const others = AUTO_STANDS.filter((s) => s !== from);
@@ -6605,6 +6959,7 @@ class Game {
       const dest = others[Number(b.dataset.i)];
       closePanel();
       playHorn();
+      if (this.player.riding) this.player.dismount();
       this.player.group.position.set(dest.standAt.x, heightAt(dest.standAt.x, dest.standAt.z), dest.standAt.z);
       this.player.camYaw = 0;
       this.player._placeCamera(1);
@@ -6614,6 +6969,7 @@ class Game {
 
   // ---- Going indoors and back out ----
   _enterRoom(door, floor = 0) {
+    if (this.player.riding) { this.player.dismount(); }
     const room = this.world.getRoom(door, floor);
     if (!room.occupant) {
       // Someone lives or works here. They carry a situation like anyone else.
@@ -6788,7 +7144,11 @@ class Game {
     // Ambient sound: wind follows the gusts; birds, cows and ducks now and then.
     ambientTick(0.5 + Math.sin(elapsed * 0.35) * 0.5);
     const amb = this._ambient;
-    amb.chirp -= dt; amb.moo -= dt; amb.quack -= dt; amb.horn -= dt;
+    amb.chirp -= dt; amb.moo -= dt; amb.quack -= dt; amb.horn -= dt; amb.bell -= dt;
+    // The chant grows as you go deeper into the Himalaya valley.
+    const inValley = pp.z < -180 && !this.world.currentRoom;
+    chantTick(inValley ? Math.min(1, (-180 - pp.z) / 40) : 0);
+    if (amb.bell <= 0) { amb.bell = 14 + Math.random() * 12; if (inValley) playBell(); }
     if (amb.horn <= 0) {
       amb.horn = 5 + Math.random() * 9;
       if (pp.z > CITY.z1 - 10 && !this.world.currentRoom) playHorn();
@@ -6805,7 +7165,9 @@ class Game {
     }
 
     // Find the nearest thing we could interact with.
-    if (!blocked) {
+    if (!blocked && this.player.riding) {
+      this._updateRiding();
+    } else if (!blocked) {
       if (this._engagedNpc && !this.dialogue.active && !panelOpen()) this._engagedNpc = null;
       const near = this._nearestInteractable();
       if (near) {

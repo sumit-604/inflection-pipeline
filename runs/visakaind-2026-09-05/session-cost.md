@@ -22,3 +22,4 @@ not. Stage 0 ran inline in the orchestrator session (no subagent).
 | 13 | verifier-d-peers | sonnet | n/a | n/a | n/a | 189839 | 8m09s | 1 |
 | 14 | verifier-c-framework (phase-1 scope) | opus | n/a | n/a | n/a | 124882 | 10m32s | 1 |
 | 15 | verifier-b-redflags | opus | n/a | n/a | n/a | 287346 | 12m43s | 1 |
+| 16 | stage-09-tam | sonnet | n/a | n/a | n/a | 226959 | 18m46s | 1 |

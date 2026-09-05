@@ -1,0 +1,115 @@
+stage: B09-tam
+company: "VISAKAIND"
+run_date: "2026-09-05"
+model: claude-sonnet-5
+status: partial
+input_gaps:
+  - "Results filings, credit-rating rationale, corporate announcements, shareholding pattern and formal sell-side research were not provided to this pipeline run (carried from B00)."
+  - "Main concalls are stale: newest transcript is Q1 FY24 (Aug-2023), 37 months before run date (carried from B00/B05/B07)."
+  - "Investor presentation is the same Aug-2023 vintage; used only as a cross-check against AR FY26, never as the current-figure source (carried from B00)."
+  - "Only 1 of 3 named peers (BirlaNu) has concall transcripts in this corpus, limiting Method 3 (peer aggregation) for roofing and boards to a single high-quality but non-exhaustive competitor voice."
+  - "ATUM Solar Roof revenue is undisclosed for the 8th consecutive year since 2018 launch (carried from B01/B04/B07); its TAM is sized directionally only, and SAM/SOM are not computable."
+  - "No segment-level (roofing-only / boards-only) revenue disclosure exists for any of the three named peers in the screener-tier CSVs supplied; Method 3 peer revenue aggregation is degraded to a single direct-competitor management quote (BirlaNu) rather than a clean bottom-up sum."
+  - "Yarn TAM is not reliably sized at the product-category level in Rs Cr terms: the closest third-party benchmarks found (polyester filament yarn, synthetic fibres) are scope-mismatched to Visaka's actual product (air-jet-spun blended yarn); yarn SAM/SOM are carried at Visaka's own current revenue as a floor, not a market estimate."
+  - "ICRA's 'Asbestos-based Roofing Sheet Market' note (Jun-2024) and IMARC's India BIPV market page could not be fetched directly (egress-blocked); both are cited from third-party search-snippet quotations only, unverified at source."
+  - "No independent third-party organised/unorganised concentration statistic exists for the fibre cement boards market (unlike roofing's ICRA figure); Visaka's own 'largest player'/33% share claim is uncorroborated by a named third party."
+flags:
+  - "Management's own AR-cited boards market claim (USD 4.8bn, 2024) is ~26.7x the conservative estimate (Rs1,500cr) triangulated from Visaka's own share arithmetic and a direct competitor's (BirlaNu) on-record Aug-2026 statement — read as INFLATED by a very wide margin, likely a scope-mismatched third-party citation."
+  - "AR's cited broad 'India roofing market' (USD8.08bn) and 'India building materials market' (USD44.4bn) figures are far too broad (all roofing materials; all building materials) to represent Visaka's actual chrysotile-roofing-sheet addressable market (~Rs4,900-5,400cr per ICRA/bottom-up back-solve); not used as TAM."
+  - "AR FY26's yarn 'Market share (%) 80' claim (p.60) almost certainly refers to an extremely narrow, unnamed technology/product niche, not the broader Indian synthetic yarn market; not used to size yarn TAM."
+  - "Boards SOM trajectory (Rs784cr yr3 / Rs1,046cr yr5) exceeds what even full utilisation of installed capacity could produce (~Rs588cr ceiling) by Rs196-458cr, and the only capacity that is actually contracted (Rs16.87cr, Note 39) closes almost none of this gap; the SOM is the optimistic side unless the narrative Rs450cr-by-2030 capex plan converts to committed, funded capacity (unconfirmed per B07)."
+  - "Export markets, a lever most SAM-expansion analyses would assume is being pursued, are instead actively retrenching (V-Next export share 17%->15% FY25->FY26, explicit management language of 'recalibration'/'moderation')."
+  - "Blended SOM-implied revenue CAGR (7.3% yr3 / 7.8% yr5) sits far below the strategy's 25% CAGR hurdle and does not support the underlying (pre-exceptional) ~20-22x P/E from organic growth alone; any 25% CAGR thesis must rest on quality-ladder re-rating or ATUM optionality converting, not on TAM/SAM/SOM-derived growth."
+  - "ATUM's directional BIPV pond (~Rs26,700cr, India, back-solved from a single non-primary source) is excluded from all blended numeric TAM/SAM/SOM fields per the operator's evidence-gating instruction; its capturable share remains entirely unresolved after 8 years of zero disclosed revenue."
+market_definition: "Four separate India ponds -- chrysotile cement roofing sheets (rural/semi-urban), fibre cement boards & panels (organised construction/interiors), synthetic/polyester-blend spun yarn (specialty fabric manufacturers, a textiles-sector line), and nascent integrated solar roofing/BIPV (ATUM, revenue undisclosed) -- sized separately and blended only at the company level, with ATUM held out of the numeric blend."
+tam_cr: {conservative: 6651, realistic: 7401}
+sam_cr: 6429
+sam_pct_of_tam: 86.9
+som_3yr_cr: 2069
+som_5yr_cr: 2441
+som_implied_revenue_cagr: {yr3: 7.3, yr5: 7.8}
+current_sam_share_pct: 25.6
+revenue_headroom_x: 3.84
+tam_growth_pct: 5.8
+runway_class: "MODERATE"
+mgmt_claim_cr: 40080
+mgmt_claim_ratio: 26.7
+mgmt_claim_read: "inflated"
+capacity_check: "roofing sufficient; yarn plausible but unverifiable (no FY26 utilisation disclosed); boards gap of ~Rs196cr (yr3) to ~Rs458cr (yr5) versus even full-utilisation of installed capacity -- SOM is the optimistic side unless the narrative Rs450cr/2030 capex plan converts to committed capacity (only Rs16.87cr contracted per Note 39, B07)"
+methods_used:
+  - "Method 1 top-down: third-party/industry research (ICRA roofing note; AR-cited TechSci-sourced boards figure; India BIPV research)"
+  - "Method 2 bottom-up: installed capacity x utilisation x realisation; market-share back-solve using Visaka's own claimed national share"
+  - "Method 2b directional cross-check: chrysotile fibre import volumes vs assumed fibre-content ratio (roofing only, unsourced composition assumption, direction only)"
+  - "Method 3 peer revenue aggregation: degraded to a single direct-competitor (BirlaNu) on-record market-size statement for boards; NOT FOUND for roofing (no segment splits in peer CSVs)"
+  - "Method 5 global/per-capita benchmark: India vs global building-materials spend per capita (macro context only, not carried into numeric TAM)"
+per_line_tam_cr:
+  roofing: {conservative: 4900, realistic: 5400, sam: 4428, som_3yr: 954, som_5yr: 1027}
+  boards: {conservative: 1500, realistic: 1750, sam: 1750, som_3yr: 784, som_5yr: 1046}
+  yarn: {conservative: 251, realistic: 251, sam: 251, som_3yr: 290, som_5yr: 320, note: "current-revenue floor, not market-derived; TAM not reliably sized at product-category level"}
+  atum_bipv: {tam_directional: 26700, sam: "NOT COMPUTABLE", som_3yr: 0, som_5yr: 0, note: "revenue undisclosed 8 years running; excluded from blended numeric sum; pure optionality"}
+stale_data_flags:
+  - {datapoint: "Asbestos-based roofing sheet market Rs5,200cr, 8.5% 5yr CAGR", source: "ICRA research note (title/date via web search snippet; icra.in direct fetch blocked)", year: "Jun-2024"}
+  - {datapoint: "Roofing 18% share, boards 32% share, capacity figures", source: "Investor Presentation", year: "Aug-2023"}
+  - {datapoint: "India fibre cement boards and sheets market USD4.8bn", source: "AR FY26 p.71 (TechSci Research per cross-check)", year: "2024 base, flagged both stale-adjacent and scope-mismatched/inflated"}
+  - {datapoint: "India BIPV market ~USD3.1bn (2025, back-solved)", source: "imarcgroup.com (web search snippet only; direct fetch blocked)", year: "vintage unclear"}
+  - {datapoint: "India polyester filament yarn 2.53mn tonnes", source: "third-party web aggregator (beekaylon.com); scope-mismatched to spun yarn", year: "2024"}
+searches_performed:
+  - "India fibre cement roofing sheets market size crore 2025"
+  - "India asbestos cement sheet industry market size tonnes"
+  - "India fibre cement board market size 2025 Mordor Intelligence Grand View"
+  - "India synthetic polyester spun yarn market size 2025"
+  - "BIPV building integrated photovoltaics market size India 2025"
+  - "\"asbestos fibre cement\" India ICRA market Rs 5200 crore FY2024"
+  - "India man-made fibre yarn production million tonnes 2025 CITI polyester spun yarn"
+  - "chrysotile asbestos fibre imports India tonnes 2024 2025 DGCI&S Russia Kazakhstan Brazil"
+  - "global building integrated photovoltaics BIPV market size 2025 USD billion base year"
+  - "India synthetic yarn spinning industry market size crore rupees 2025 specialty yarn"
+  - "USD INR exchange rate September 2026 current rupee dollar"
+searches_skipped:
+  - "WebFetch icra.in/Rating/DownloadResearchSummaryReport?id=5748 -- EGRESS_BLOCKED"
+  - "WebFetch imarcgroup.com/india-building-integrated-photovoltaics-market -- EGRESS_BLOCKED"
+downstream_candidates:
+  - signal: "PMAY-Gramin / PMAY-Urban physical progress (houses sanctioned/completed)"
+    entity_type: "regulatory"
+    demand_link: "Rural/semi-urban house construction pace drives cement roofing sheet demand directly"
+    likely_source: "Ministry of Housing & Urban Affairs / PMAY-G dashboard"
+    cadence: "quarterly"
+    shared: false
+  - signal: "Chrysotile asbestos fibre import volumes (Russia/Kazakhstan/Brazil)"
+    entity_type: "counterparty"
+    demand_link: "100% import-dependent key input; volume/price leads industry-wide roofing output and margin"
+    likely_source: "DGCI&S, Ministry of Commerce trade statistics"
+    cadence: "monthly"
+    shared: false
+  - signal: "BirlaNu (HIL) quarterly results, investor calls and presentations"
+    entity_type: "counterparty"
+    demand_link: "Largest peer; discloses its own roofing and boards/Walls segment size and growth as a cross-check"
+    likely_source: "Company investor relations / BSE-NSE filings"
+    cadence: "quarterly"
+    shared: true
+  - signal: "IMD monsoon bulletins / agricultural MSP and farm-income data"
+    entity_type: "macro"
+    demand_link: "Roofing demand explicitly tied to rural income and monsoon quality by both AR and peer management"
+    likely_source: "India Meteorological Department; Ministry of Agriculture MSP releases"
+    cadence: "quarterly"
+    shared: false
+  - signal: "PM Surya Ghar: Muft Bijli Yojana enrolment and subsidy disbursement"
+    entity_type: "regulatory"
+    demand_link: "Direct proxy for rooftop-solar/BIPV adoption momentum relevant to undisclosed ATUM revenue"
+    likely_source: "MNRE PM Surya Ghar dashboard"
+    cadence: "monthly"
+    shared: false
+  - signal: "Domestic GI/colour-coated steel roofing sheet price index"
+    entity_type: "macro"
+    demand_link: "Main substitute product; price differential swings demand toward or away from cement roofing"
+    likely_source: "SteelMint / Joint Plant Committee (JPC) steel price data"
+    cadence: "monthly"
+    shared: false
+  - signal: "CARE Ratings rating rationale (next annual review)"
+    entity_type: "regulatory"
+    demand_link: "Negative outlook governs cost/availability of capital needed to fund the boards capacity gap"
+    likely_source: "CARE Ratings press release / BSE Reg 30 filing"
+    cadence: "event-driven"
+    shared: true
+demand_externally_verifiable: true
+analyst_note: "Two findings dominate this stage. First, management's own cited boards TAM (USD4.8bn) is ~27x the figure independently triangulated from Visaka's own share arithmetic and a named competitor's (BirlaNu) on-record Aug-2026 statement (Rs1,500-2,000cr) -- treat the AR's industry-narrative paragraphs as decorative, not load-bearing. Second, the blended SOM-implied revenue CAGR (7.3-7.8%) is far below the 25% CAGR hurdle; roofing (53% of revenue) is capacity-sufficient but management-capped at near-zero growth by its own stated strategy, boards (30%) can grow at 15%+ but is capacity-constrained beyond a narrative, uncommitted capex plan, and yarn (15%) has no reliable market size at all. ATUM (0% disclosed revenue after 8 years) is the one lever that could change this picture and is entirely unpriced here by design. Stage 11 should treat this stage's growth numbers as a hard ceiling check against any DCF/multiple-based revenue assumption exceeding ~10% for roofing+boards+yarn combined, absent a specific, evidenced reason (e.g., a confirmed boards capex commitment or a first ATUM revenue disclosure)."

@@ -9,3 +9,5 @@ where it does not.
 | 0 | input validation + corpus audit | orchestrator (claude-fable-5-1) | n/a | n/a | n/a | n/a | ~12m | 1 |
 | 2 | notes triple-pass (pass 1) | claude-sonnet | default | n/a | n/a | 283170 | 8m31s | 1 |
 | 2 | notes triple-pass (pass 2) | claude-sonnet | default | n/a | n/a | 148436 | 8m57s | 2 |
+| 1 | gate 0 scorecard | claude-sonnet | default | n/a | n/a | 180950 | 18m33s | 1 |
+| 1 | gate 0 scorecard | claude-sonnet | default | n/a | n/a | 180950 | 18m33s | 1 |

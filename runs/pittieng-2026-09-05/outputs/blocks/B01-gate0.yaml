@@ -1,0 +1,46 @@
+stage: B01-gate0
+company: "PITTIENG"
+run_date: "2026-09-05"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "results filings absent"
+  - "rating rationale absent"
+  - "exchange announcements absent"
+  - "shareholding pattern filing absent (AR FY26 tables as of 31-Mar-2026 stand in, only 2 years deep)"
+  - "research absent"
+  - "screener P&L/BS/CF/Quarters CSVs header-only (Data_Sheet populated)"
+  - "AR weblink letter misfiled as AR (ignored)"
+  - "Trade Payables available FY25-FY26 only; no multi-year series for WC-days trend"
+  - "Capex line-item available FY25-FY26 only; FY22-FY24 capex is a Net-Block-delta proxy"
+  - "promoter holding 3-year trend (E2) NOT FOUND"
+  - "promoter pledge (E3) NOT FOUND"
+  - "FY27/FY28 management guidance NOT FOUND in AR or Q1 FY27 presentation sidecars"
+  - "customer identity behind Note 25.6(c) 2-customer concentration NOT named"
+flags:
+  - type: FLAG-GATE0
+    reason: "Classification AVERAGE (Core 58/100). Depressors: Block B cash-conversion strain (cumulative FCF FY22-26 negative, -Rs42.40cr vs Rs440.50cr cumulative PAT, driven by FY24 brownfield capex and FY25 subsidiary-consolidation capex) and Block E (7/20, but half data-gap-driven: E2/E3 NOT FOUND, not confirmed adverse findings). Moat MODERATE (3/12: M1 pricing power, M4 customer stickiness, M11 network-effect-adjacent growth), consistent with commodity-adjacent B2B component-maker archetype, no brand/R&D/licence/distribution edge."
+data_years: 7
+fy_range: "FY20 to FY26"
+blocks: {A: 15, B: 8, C: 18, D: 10, E: 7}
+core_score: 58
+moat_score: 11
+grand_total: 69
+moats_confirmed: 3
+moat_class: "MODERATE"
+classification: "AVERAGE"
+deal_breakers: []
+history_downgrade: false
+data_notes:
+  - "Block A: FY21 ROCE/ROE proxy-computed (Equity+Total Borrowings; closing-only net worth); FY22-FY26 anchored to AR FY26 PDF p.16, cross-validated exactly against own PAT/avg-equity computation and Note 25.21 standalone (PDF p.89)."
+  - "Block B: capex FY22-FY24 proxied as Δ(NetBlock+CWIP)+Depreciation (screener-data); FY25/FY26 capex from AR cash flow statement actuals (PDF p.96-97), since FY25 Net Block jump reflects 2024 subsidiary acquisitions, not cash capex."
+  - "Block B: WC Days use Revenue basis (COGS not consistently available); Trade Payables only available FY25-FY26 (AR PDF p.96), so B4 is a 2-year read."
+  - "Block D: D1 shown on two debt bases (excl./incl. lease liabilities); primary uses excl.-lease per AR Note 25.21's own convention (1.75x, score 3); incl.-lease cross-check gives 2.10x (score 1). Moves Block D 10 vs 8, does not change classification band."
+  - "Block F: M5 scored 0, PEER DATA NEEDED (no full segment-wide mcap/margin ranking; only RKFORGE+SANSERA available, neither a true lamination peer)."
+  - "Block F: M2/M9 use median-of-2 peer set (RKFORGE, SANSERA); VILAS has no CSV this run, excluded not estimated."
+  - "Management's Adjusted EBITDA (FY26 Rs325.8cr, +19.9% YoY) exceeds Reported EBITDA (Rs315.5cr) used for scoring; source Investor_Presentation_1 sidecar p.25."
+  - "No loss-to-profit swing: PAT positive every year FY20-FY26."
+  - "Company memory load-bearing fact #3 (~40% railway/traction via Wabtec+Alstom): AR shows Railways=33% of revenue (not traction-specific, not 40%); Note 25.6(c) shows 2 unnamed customers >10% each aggregating 40.36% FY25 / 25.19% FY26; Alstom not mentioned anywhere in AR; Wabtec appears only as a past supplier award (2019/2022)."
+  - "Company memory load-bearing fact #4: AR states capex/casting-capacity commissioning 'by Q1 2029-30' (Q1 FY30), one year later than memory's 'Q1 FY29'."
+block_b_trend: "deteriorating - WC Days rose from 54.85 (FY25) to 68.31 (FY26), +13.46 days, even as FCF turned positive again in FY26 (+Rs31.82cr) after two negative years (FY24 -Rs177.14cr, FY25 -Rs21.46cr); cumulative FCF/PAT FY22-26 is negative (-0.10x)"
+analyst_note: "PAT fell (Rs122.3cr to Rs117.8cr) FY25 to FY26 despite Adjusted EBITDA +19.9%, because Depreciation (+Rs24.2cr), Finance cost (+Rs15.6cr) and Tax (+Rs10.5cr) together outran EBITDA growth (+Rs44-54cr): a scale-up cost story (new capacity depreciating, more debt funding it), not a margin problem. A4 scores 5 on endpoint comparison (FY26 ROCE 13.75% above FY21's 12.32%) but this masks 3 straight years of ROCE decline from an FY24 peak of 18.39%, coincident with FY25 subsidiary acquisitions and brownfield capex. The moat profile (3/12) fits a plain B2B component-maker: no brand, R&D, licence or distribution edge; present tests are customer-qualification stickiness (M4) and scale-compounding (M11), both diluted by a decelerating 3yr revenue CAGR (28% prior window to 20% latest). Customer concentration (2 unnamed customers, 25-40% of revenue depending on year) is a real, unnamed tripwire; verify identity and durability before treating railway/traction exposure as diversified."

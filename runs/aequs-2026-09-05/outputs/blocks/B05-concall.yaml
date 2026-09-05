@@ -1,0 +1,103 @@
+stage: B05-concall
+company: "AEQUS"
+run_date: "2026-09-05"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "prospectus (ABSENT; HIGH gap; listed 10-Dec-2025)"
+  - "results (ABSENT; delivery checks used AR + Q1 FY27 investor presentation only)"
+  - "rating (ABSENT as document; CARE BBB-/Stable at AR p.113)"
+  - "announcements (ABSENT; Safran wheel deal and any distinct Safran engine-parts deal verifiable only from these transcripts/presentation; no separate Safran engine-parts agreement was independently identified in any transcript)"
+  - "shareholding (ABSENT)"
+  - "research (ABSENT)"
+  - "other (ABSENT)"
+  - "screening (companion CSVs header-only; Data_Sheet populated)"
+  - "peer-concalls (DYNAMATECH single transcript Feb-2024, stale relative to these three FY26/FY27 calls)"
+  - "manifest (no listed_date; sector_cap_row set by Step 1 brief)"
+  - "prior-year ARs (FY24, FY25 absent)"
+flags:
+  - "FY26 net-working-capital-days figure internally inconsistent across two consecutive calls (151 vs 127 for the same FY26 close), never reconciled"
+  - "Hasbro exit: optimistic 'growing' statement (Q3 FY26) reversed to full discontinuation one quarter later (Q4 FY26), no root cause disclosed"
+  - "Consumer sub-segment revenue/margin split refused for three consecutive quarters"
+  - "Net debt/equity swung 0.1x to 0.23x within one quarter (9M FY26 to FY26 full year), not flagged as a reversal"
+  - "Consolidated PAT-positive timeline slipped from informal pre-IPO 'end FY27' to formal H1 FY28 guide"
+  - "Consumer capex (Rs 500cr) revealed in Q1 FY27 as conditional on utilization, a conditionality absent from the original Q4 FY26 commitment framing"
+  - "The company-memory load-bearing 'Safran engine-parts agreement' is not independently identifiable in any of the three transcripts; only the Safran Landing Systems 15-year A320 wheels agreement is named"
+quarters_analysed: ["Q3 FY26", "Q4 FY26", "Q1 FY27"]
+triggers:
+  - {priority: 1, name: "Aerospace revenue +25-30% FY27 at >20% segment EBITDA margin", type: "revenue+margin", timeframe: "near", conviction: "H", confirm_signal: "Q2-Q4 FY27 prints stay within/above guided band, as Q1 FY27 already did (+40%/23%)", kill_signal: "Growth falls below 20% YoY or segment margin under 20% for two straight quarters"}
+  - {priority: 2, name: "Aerospace order book conversion incl. Safran A320 wheels + 2 new Tier-1 deals (not yet booked)", type: "revenue", timeframe: "long", conviction: "H", confirm_signal: "Order book jumps further in Q2 FY27 as Farnborough wins are booked; wheel program deliveries begin", kill_signal: "Order-book growth stalls or wheel program slips"}
+  - {priority: 3, name: "Consumer segment EBITDA breakeven by Q4 FY27", type: "margin", timeframe: "near", conviction: "M", confirm_signal: "Loss keeps narrowing each quarter and utilization climbs past 30%", kill_signal: "Loss widens again in Q2/Q3 FY27 or utilization stalls near 22-25%"}
+  - {priority: 4, name: "Rs 500cr consumer capex, now explicitly conditional on utilization", type: "cost/capital", timeframe: "near", conviction: "M", confirm_signal: "Capex phased down if utilization misses, as management now says", kill_signal: "Capex proceeds unchanged despite a utilization miss"}
+  - {priority: 5, name: "Aerospace capex acceleration funded by reallocating from consumer", type: "capex", timeframe: "near-medium", conviction: "M", confirm_signal: "FY27 split updated in Q2/Q3 calls with aerospace capex above Rs160cr", kill_signal: "No reallocation disclosed and aerospace capacity constraints emerge"}
+  - {priority: 6, name: "Hosur aero-engine/landing-gear ecosystem (Rs1,900cr/10yr), Phase 1 Sep-2026 to Mar-2027", type: "capacity", timeframe: "long", conviction: "M", confirm_signal: "Phase 1 commissions on schedule, FY29 revenue begins as guided", kill_signal: "Phase 1 slips past FY28 or MoU investment scaled back"}
+  - {priority: 7, name: "Consolidated PAT breakeven H1 FY28", type: "margin", timeframe: "medium", conviction: "M", confirm_signal: "Aerospace profit growth plus consumer loss narrowing tracks cleanly to H1 FY28", kill_signal: "Further slippage disclosed beyond H1 FY28"}
+  - {priority: 8, name: "~USD150mn capital raise to fund FY27-31 USD350-400mn capex plan", type: "capital structure", timeframe: "medium", conviction: "M", confirm_signal: "A specific, debt-weighted raise announced within FY27-28", kill_signal: "Raise is equity-heavy/dilutive beyond expectation or delayed and constrains capex"}
+  - {priority: 9, name: "Consumer revenue mix rising to 40-60% of total over 5 years", type: "revenue mix", timeframe: "long", conviction: "L", confirm_signal: "Consumer share visibly climbs past 25-30% within 2 years", kill_signal: "Consumer share stagnates near current 19-22% band"}
+  - {priority: 10, name: "Working-capital/cash-conversion normalization post West Asia disruption", type: "cost/cash", timeframe: "near", conviction: "L", confirm_signal: "NWC days decline cleanly and consistently across subsequent calls", kill_signal: "NWC days keep rising or the company keeps reporting inconsistent NWC figures"}
+guidance:
+  - {item: "Aerospace revenue growth", number: "25-30% YoY", timeframe: "FY27", stated_in: "Q4 FY26 call"}
+  - {item: "Aerospace segment EBITDA margin", number: "above 20%", timeframe: "FY27", stated_in: "Q4 FY26 call, reaffirmed Q1 FY27"}
+  - {item: "Consumer revenue growth", number: "125-150% YoY", timeframe: "FY27", stated_in: "Q4 FY26 call"}
+  - {item: "Consumer EBITDA breakeven", number: "Q4 FY27", timeframe: "FY27", stated_in: "Q4 FY26 call, reaffirmed Q1 FY27"}
+  - {item: "Consolidated revenue growth", number: "45-50%", timeframe: "FY27", stated_in: "Q4 FY26 call, reaffirmed Q1 FY27"}
+  - {item: "Operational EBITDA growth", number: "doubling vs FY26 (~Rs180cr)", timeframe: "FY27", stated_in: "Q4 FY26 call, confirmed Q1 FY27"}
+  - {item: "Consolidated PAT breakeven", number: "H1 FY28", timeframe: "FY28", stated_in: "Q4 FY26 call, reaffirmed Q1 FY27"}
+  - {item: "Consumer PAT breakeven", number: "FY30", timeframe: "FY30", stated_in: "Q1 FY27 call"}
+  - {item: "Group steady-state ROCE", number: "~20%", timeframe: "FY31", stated_in: "Q1 FY27 call"}
+  - {item: "FY27 capex, total", number: "Rs 660cr (Rs500cr consumer/Rs160cr aerospace, reallocating toward aerospace)", timeframe: "FY27", stated_in: "Q4 FY26 call; reallocation flagged Q1 FY27"}
+  - {item: "Hosur (Tamil Nadu) investment", number: "Rs 1,900cr", timeframe: "10 years", stated_in: "Q4 FY26 call, reaffirmed Q1 FY27"}
+  - {item: "Karnataka MoU investment", number: "Rs 2,856cr", timeframe: "5 years", stated_in: "Q4 FY26 call, reaffirmed Q1 FY27"}
+  - {item: "Group 5-year capex plan", number: "USD 350-400mn", timeframe: "FY27-31", stated_in: "Q1 FY27 call"}
+  - {item: "Possible capital raise", number: "~USD 150mn", timeframe: "not this year unless capex pull-in/inorganic", stated_in: "Q1 FY27 call"}
+  - {item: "Consumer asset turns (steady state)", number: "~1.5x", timeframe: "peak utilization", stated_in: "Q4 FY26 call, reaffirmed Q1 FY27"}
+  - {item: "Consumer ROCE (steady state)", number: "18-20%, same as aerospace", timeframe: "long-term", stated_in: "Q4 FY26 call, reaffirmed Q1 FY27"}
+  - {item: "Aerospace utilization target", number: "~75%", timeframe: "ongoing", stated_in: "Q3 FY26 call"}
+  - {item: "Consumer utilization target", number: "40-50%", timeframe: "by FY27 year-end", stated_in: "Q4 FY26 call, reaffirmed Q1 FY27"}
+  - {item: "Consumer revenue mix (5-yr)", number: "40-60% of total", timeframe: "over 5 years", stated_in: "Q1 FY27 call"}
+promise_delivery:
+  delivered: 4
+  partial: 4
+  missed: 2
+  rows:
+    - {promised_in: "Q3 FY26", promise: "Hasbro 'growing', will continue to grow alongside Mattel", outcome: "missed", explanation: "Hasbro discontinued sourcing entirely, disclosed Q4 FY26 as 'unexpected', no root cause given"}
+    - {promised_in: "pre-IPO (cited by analyst, Q3 FY26)", promise: "Consolidated PAT positive by end of FY27", outcome: "missed", explanation: "Formal guide became H1 FY28 (Q4 FY26 call), attributed to customer capacity-expansion requests"}
+    - {promised_in: "Q4 FY26", promise: "Aerospace FY27 revenue +25-30% at >20% segment EBITDA margin", outcome: "delivered", explanation: "Q1 FY27 delivered +40% YoY at 23% segment margin, above both bands"}
+    - {promised_in: "Q4 FY26", promise: "Consumer FY27 revenue +125-150%", outcome: "delivered", explanation: "Q1 FY27 delivered +190% YoY"}
+    - {promised_in: "Q4 FY26", promise: "Consumer EBITDA loss path to Q4 FY27 breakeven", outcome: "partial", explanation: "Q1 FY27 loss narrowed Rs473mn to Rs361mn, -24% QoQ, first quarterly proof point; full realization still three quarters out"}
+    - {promised_in: "Q3 FY26", promise: "Aerospace utilization ~71%, targeting ~75%", outcome: "partial", explanation: "Q1 FY27 cites ~70% unchallenged, 'adding a machine a week', cap comfortably at 75%; not re-quantified every quarter"}
+    - {promised_in: "Q3 FY26", promise: "MeitY/ECMS PLI approval received", outcome: "partial", explanation: "Q4 FY26: no FY26 income booked, FY27 is first eligible year; timing clarification not a miss"}
+    - {promised_in: "Q4 FY26", promise: "FY27 capex Rs660cr, split Rs500cr consumer/Rs160cr aerospace", outcome: "partial", explanation: "Q1 FY27: total unchanged but split reallocating toward aerospace, disclosed proactively at Farnborough"}
+excuse_pattern: "balanced"
+repeated_evasions:
+  - {question: "What is the revenue/margin split between consumer sub-verticals (toys, consumer electronics, durables)?", quarters_asked: ["Q3 FY26", "Q4 FY26", "Q1 FY27"], classification: "deflected every time"}
+  - {question: "When will consumer segment breakeven / what is the timeline?", quarters_asked: ["Q3 FY26", "Q4 FY26"], classification: "answered eventually"}
+  - {question: "Why commit large consumer capex (Rs500cr) while utilization is still low (~23%)?", quarters_asked: ["Q4 FY26", "Q1 FY27"], classification: "answer changed between quarters"}
+credibility_grade: "B"
+credibility_basis: "Delivered ahead of both aerospace and consumer FY27 growth guidance in the first tracked quarter (Q1 FY27) and proactively disclosed CFO exit and Hasbro loss, but a genuine NWC-days data inconsistency across two consecutive calls, three on-call number misstatements in one transcript, an unflagged net-debt-to-equity reversal, a PAT-timeline slip, and a three-quarter stonewall on the consumer sub-segment split keep this out of A."
+peer_questions:
+  - {question: "Is India's share of the global aerospace supply chain really ~5% today, targeted toward ~10% (Aequs Q3 FY26 claim)?", why: "Unsourced industry claim underlying the entire growth thesis", check_peers: ["AZAD", "UNIMECH", "DYNAMATECH"]}
+  - {question: "Do peers report similar raw-material lead times (titanium ~52 weeks, steels 65-75 weeks) and West Asia logistics disruption (sea +5-6 weeks, air +6-8 days)?", why: "Tests whether Aequs' working-capital build is industry-wide or company-specific execution", check_peers: ["AZAD", "UNIMECH"]}
+  - {question: "Do other Indian aerospace precision manufacturers report segment EBITDA margins in the low-to-mid 20s, matching or beating Aequs' 20-27% band?", why: "Tests the vertically-integrated-ecosystem margin claim analysts repeatedly pushed back on", check_peers: ["AZAD", "UNIMECH", "DYNAMATECH"]}
+  - {question: "Have Airbus/Boeing single-aisle (A320/737) rate ramps, Aequs' main cited demand driver, been corroborated by other Indian suppliers' order-book growth?", why: "Tests whether the demand tailwind is industry-wide or Aequs-specific framing", check_peers: ["AZAD", "UNIMECH", "DYNAMATECH"]}
+  - {question: "Is customer concentration near Aequs' AR-implied ~58% (four anonymised customers) typical of listed Indian aerospace component makers?", why: "Aequs declined every concentration question across all three calls; tests whether that reticence is industry norm or an outlier risk", check_peers: ["AZAD", "UNIMECH", "DYNAMATECH"]}
+  - {question: "Do peer aerospace component makers run similar net-working-capital-day norms (~120-150 days), or is Aequs structurally higher?", why: "Ties directly to the AR's flagged DSO increase and negative FY26 operating cash flow", check_peers: ["AZAD", "UNIMECH", "DYNAMATECH"]}
+  - {question: "Has any peer disclosed a China-to-India consumer-brand sourcing shift comparable to Aequs' Mattel/Hasbro experience, including a comparable customer discontinuation?", why: "Tests whether the India-sourcing-shift narrative and customer-churn risk are durable industry patterns or Aequs-specific; none of the three named peers serve consumer/toys, a coverage gap to flag explicitly", check_peers: []}
+  - {question: "Do peer capex cycles show a similar pattern of accelerating capex right after major order wins, and how do peers fund it (debt vs equity vs accrual)?", why: "Tests whether Aequs' capex-acceleration-plus-possible-raise pattern is normal financing behavior or over-extension", check_peers: ["AZAD", "UNIMECH"]}
+  - {question: "Is ~99% import dependency for aerospace/consumer-electronics raw materials typical for Indian precision manufacturers, or is Aequs unusually import-reliant given its Make-in-India positioning?", why: "Could undercut the reshoring narrative used to justify the growth story", check_peers: ["AZAD", "UNIMECH", "DYNAMATECH"]}
+red_flags:
+  - {flag: "FY26 net-working-capital-days figure internally inconsistent across two consecutive calls (151 days per Q4 FY26 call vs 127 days per Q1 FY27 call, for the same FY26 close), never reconciled", severity: "HIGH"}
+  - {flag: "Hasbro exit: an optimistic 'Hasbro is growing' statement (Q3 FY26) reversed to full discontinuation within one quarter (Q4 FY26), described as 'unexpected' with no root cause disclosed", severity: "HIGH"}
+  - {flag: "Three-quarter-running refusal to disclose consumer sub-segment (toys/consumer electronics/durables) revenue and margin split", severity: "MEDIUM"}
+  - {flag: "Three separate on-call number misstatements in the single Q3 FY26 call, each corrected only in the written transcript afterward", severity: "MEDIUM"}
+  - {flag: "Net debt/equity swung from 0.1x (9M FY26) to 0.23x (FY26 full year) within one quarter, framed only as 'well capitalized', not flagged as a reversal", severity: "MEDIUM"}
+  - {flag: "Consolidated PAT-positive timeline effectively slipped ~2-3 quarters from an informal pre-IPO framing (by end FY27) to a formal H1 FY28 guide", severity: "MEDIUM"}
+  - {flag: "Consumer capex (Rs500cr) revealed in Q1 FY27 as explicitly conditional on utilization materializing, a conditionality absent from the original Q4 FY26 commitment framing", severity: "LOW-MEDIUM"}
+  - {flag: "~99% of raw-material sourcing remains imported even as the India-sourcing-shift narrative underpins the growth thesis", severity: "LOW"}
+  - {flag: "CFO transition mid-stream (Dinesh Iyer exit effective end-June 2026, no permanent replacement named as of Q1 FY27 call) during a heavy capex/possible-fundraising phase", severity: "LOW"}
+  - {flag: "None of the AR-level governance findings (CARO adverse remarks across seven entities, audit-trail qualification, RPT flows, France impairment) were raised or asked about on any of the three calls", severity: "LOW"}
+dropped_triggers:
+  - "Hasbro as a toys growth driver: framed as 'growing' in Q3 FY26, disclosed as fully discontinued by Q4 FY26 with no question ever asked about the root cause"
+timeline_slippages:
+  - "Consolidated PAT-positive timeline: informal pre-IPO framing of 'by end FY27' (cited by an analyst, Q3 FY26) became a formal H1 FY28 guide two calls later, a slip of roughly 2-3 quarters"
+analyst_note: "The single most important unresolved item for stage 6/11 is the Safran claim mismatch: company memory names both a 15-year Safran Landing Systems A320 wheels agreement AND a separate 'Safran engine-parts agreement', but only the wheels deal is named in any of the three transcripts, with no value or delivery date given (the FY28-delivery detail also does not appear verbatim in these transcripts). Verify the engine-parts agreement and delivery date against the Reg 30 announcement layer before treating it as confirmed. Separately, the two conflicting FY26 NWC-day figures (151 vs 127) should be run to ground against the AR's own cash-flow note before any DSO/cash-conversion conclusion is finalized."

@@ -268,6 +268,68 @@ html, body {
 }
 .solved-banner b { color: #2c6e2f; }
 
+/* ---------- Sound toggle (next to the notebook) ---------- */
+#sound-btn {
+  position: absolute; top: 12px; right: 66px;
+  width: 46px; height: 46px; border: none; border-radius: 12px;
+  background: rgba(255,253,246,0.92); font-size: 22px; cursor: pointer;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+
+/* ---------- Step quiz (tank, roof): one question at a time ---------- */
+.step-track { display: flex; gap: 6px; margin: 12px 0 8px; }
+.step-dot { width: 14px; height: 14px; border-radius: 50%; background: #e7ddc6; border: 1px solid #d8cdb2; }
+.step-dot.done { background: #7cae59; border-color: #5f9a45; }
+.step-dot.now { background: #ffce3a; border-color: #d9a400; }
+.quiz-q {
+  font-size: 17px; font-weight: 600; line-height: 1.45;
+  background: #fff; border: 1px solid #eee3c8; border-radius: 10px; padding: 10px 12px;
+}
+.num-row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin: 10px 0 4px; }
+.num-input {
+  width: 140px; font-size: 22px; font-weight: 700; padding: 8px 10px;
+  border: 2px solid #d8cdb2; border-radius: 10px; text-align: center; background: #fff; color: #2c2417;
+}
+.num-input:focus { outline: 3px solid #7cae59; border-color: #7cae59; }
+.num-unit { font-size: 16px; font-weight: 600; opacity: 0.75; }
+.step-ok { color: #2c6e2f; font-weight: 700; margin: 6px 0; }
+
+/* ---------- Windmill job: gears ---------- */
+.gear-bank { display: flex; flex-wrap: wrap; gap: 10px; margin: 6px 0 10px; }
+.gear {
+  cursor: pointer; border: none; border-radius: 50%; width: 74px; height: 74px;
+  background: radial-gradient(circle at 50% 45%, #cfd6db 0 28%, #8e9aa3 30% 100%);
+  color: #1e2a30; font-weight: 800; font-size: 15px; box-shadow: 0 3px 0 #5d6970;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+}
+.gear small { font-weight: 600; font-size: 11px; opacity: 0.8; }
+.gear.picked { outline: 4px solid #3a7d44; }
+.gear:active { transform: translateY(2px); box-shadow: 0 1px 0 #5d6970; }
+.mill-facts { background: #eef4ff; border: 1px solid #b8ccf2; border-radius: 10px; padding: 8px 12px; font-size: 15px; margin: 8px 0; }
+.speed-readout { font-size: 17px; font-weight: 700; margin: 8px 0; }
+
+/* ---------- Market job: balance scales ---------- */
+.scale-wrap { margin: 10px 0; }
+.scale-beam { position: relative; height: 10px; background: #8a5626; border-radius: 6px; margin: 34px 16px 0; transition: transform .35s ease; transform-origin: 50% 50%; }
+.scale-post { width: 12px; height: 40px; background: #8a5626; margin: 0 auto; border-radius: 0 0 6px 6px; }
+.scale-pans { display: flex; justify-content: space-between; gap: 12px; margin-top: -30px; }
+.pan {
+  flex: 1 1 0; min-height: 88px; background: #f4efe2; border: 2px solid #d8cdb2; border-radius: 0 0 26px 26px;
+  padding: 26px 10px 10px; font-size: 14px; text-align: center;
+}
+.pan b { display: block; font-size: 13px; opacity: 0.7; margin-bottom: 4px; text-transform: uppercase; letter-spacing: .04em; }
+.weight-bank { display: flex; flex-wrap: wrap; gap: 10px; margin: 8px 0; }
+.weight {
+  cursor: pointer; border: none; border-radius: 8px 8px 12px 12px; min-width: 66px; padding: 10px 8px;
+  background: linear-gradient(#6f7a84, #46515a); color: #fff; font-weight: 800; font-size: 15px;
+  box-shadow: 0 3px 0 #2c343a; display: flex; flex-direction: column; align-items: center;
+}
+.weight small { font-weight: 600; font-size: 11px; opacity: 0.85; }
+.weight.on-right { outline: 3px solid #3a7d44; }
+.weight.on-left { outline: 3px solid #d9704f; }
+.weight:active { transform: translateY(2px); box-shadow: 0 1px 0 #2c343a; }
+.balance-readout { font-size: 16px; font-weight: 700; margin: 6px 0; }
+
 /* Small helper so long panels stay readable on phones */
 @media (max-width: 520px) {
   .overlay-card { padding: 14px; }
@@ -320,6 +382,8 @@ html, body {
 
     <!-- Notebook button, top-right -->
     <button id="notebook-btn" title="Notebook (N)">📓</button>
+    <!-- Sound on/off -->
+    <button id="sound-btn" title="Sound on / off">🔊</button>
 
     <!-- Little prompt that appears when you are near something to do -->
     <div id="interact-prompt" hidden></div>
@@ -396,23 +460,52 @@ import * as THREE from 'three';
 
    Browsers only allow sound to start after the user taps or
    clicks, so we create the audio "context" lazily on first use.
+   All tones pass through one master gain and a compressor, so the
+   game is clearly audible without clipping on phone speakers.
    ============================================================ */
 
-let ctx = null; // the Web Audio context, created on first sound
+let ctx = null;     // the Web Audio context, created on first sound
+let master = null;  // master gain -> compressor -> speakers
+let muted = false;
+
+// Remember the mute choice on this device.
+try { muted = localStorage.getItem("engineers-village.muted") === "1"; } catch (e) {}
+
+function isMuted() { return muted; }
+function setMuted(v) {
+  muted = !!v;
+  try { localStorage.setItem("engineers-village.muted", muted ? "1" : "0"); } catch (e) {}
+}
 
 // Make sure we have an audio context. Called from inside a click/tap.
 function getCtx() {
   if (!ctx) {
     const AC = window.AudioContext || window.webkitAudioContext;
-    if (AC) ctx = new AC();
+    if (!AC) return null;
+    ctx = new AC();
+    // Compressor keeps loud chords from crackling; master gain sets the level.
+    const comp = ctx.createDynamicsCompressor();
+    comp.threshold.value = -12;
+    comp.knee.value = 20;
+    comp.ratio.value = 6;
+    comp.attack.value = 0.003;
+    comp.release.value = 0.2;
+    master = ctx.createGain();
+    master.gain.value = 1.0;
+    master.connect(comp).connect(ctx.destination);
   }
   // Some browsers start the context "suspended"; wake it up.
-  if (ctx && ctx.state === "suspended") ctx.resume();
+  if (ctx.state === "suspended") ctx.resume();
   return ctx;
 }
 
+// Call this from the first tap (profile button) so sound is ready to go.
+function unlockAudio() { getCtx(); }
+
 // Play one short note. freq = pitch in Hz, dur = seconds.
-function tone(freq, startTime, dur, type = "sine", volume = 0.2) {
+// `volume` is 0..1 of full level (the old values were far too quiet).
+function tone(freq, startTime, dur, type = "sine", volume = 0.6) {
+  if (muted) return;
   const c = getCtx();
   if (!c) return;
   const osc = c.createOscillator();
@@ -421,20 +514,32 @@ function tone(freq, startTime, dur, type = "sine", volume = 0.2) {
   osc.frequency.value = freq;
   // A soft fade in/out so it doesn't click.
   gain.gain.setValueAtTime(0, startTime);
-  gain.gain.linearRampToValueAtTime(volume, startTime + 0.02);
+  gain.gain.linearRampToValueAtTime(volume, startTime + 0.015);
   gain.gain.exponentialRampToValueAtTime(0.001, startTime + dur);
-  osc.connect(gain).connect(c.destination);
+  osc.connect(gain).connect(master);
   osc.start(startTime);
   osc.stop(startTime + dur + 0.02);
 }
 
-// A cheerful rising pair of notes for solving something.
+// A bright rising arpeggio for solving something: C5 E5 G5 C6.
 function playSuccess() {
   const c = getCtx();
   if (!c) return;
   const t = c.currentTime;
-  tone(523.25, t, 0.18, "triangle", 0.25);       // C5
-  tone(783.99, t + 0.14, 0.30, "triangle", 0.25); // G5
+  tone(523.25, t, 0.22, "triangle", 0.7);
+  tone(659.25, t + 0.11, 0.22, "triangle", 0.7);
+  tone(783.99, t + 0.22, 0.28, "triangle", 0.7);
+  tone(1046.5, t + 0.34, 0.5, "triangle", 0.75);
+  tone(523.25, t + 0.34, 0.5, "sine", 0.35); // a warm low note under the top
+}
+
+// A small "step done" chime for finishing one part of a bigger puzzle.
+function playStep() {
+  const c = getCtx();
+  if (!c) return;
+  const t = c.currentTime;
+  tone(659.25, t, 0.14, "triangle", 0.6);
+  tone(987.77, t + 0.09, 0.2, "triangle", 0.6);
 }
 
 // A soft, low "not quite" tone for a wrong attempt (never harsh).
@@ -442,8 +547,8 @@ function playRetry() {
   const c = getCtx();
   if (!c) return;
   const t = c.currentTime;
-  tone(330, t, 0.16, "sine", 0.18);
-  tone(247, t + 0.12, 0.22, "sine", 0.18);
+  tone(330, t, 0.16, "sine", 0.55);
+  tone(247, t + 0.12, 0.26, "sine", 0.55);
 }
 
 // The school bell: a few bright dings.
@@ -452,16 +557,18 @@ function playBell() {
   if (!c) return;
   const t = c.currentTime;
   for (let i = 0; i < 3; i++) {
-    tone(1046.5, t + i * 0.28, 0.5, "sine", 0.22); // C6, ringing
-    tone(1568.0, t + i * 0.28, 0.4, "sine", 0.10); // G6 overtone
+    tone(1046.5, t + i * 0.28, 0.6, "sine", 0.65); // C6, ringing
+    tone(1568.0, t + i * 0.28, 0.45, "sine", 0.3); // G6 overtone
+    tone(2093.0, t + i * 0.28, 0.25, "sine", 0.12); // shimmer
   }
 }
 
-// A tiny click for picking things up (planks, parts).
+// A tiny click for picking things up (planks, parts, weights, gears).
 function playPick() {
   const c = getCtx();
   if (!c) return;
-  tone(660, c.currentTime, 0.06, "square", 0.12);
+  tone(660, c.currentTime, 0.07, "square", 0.32);
+  tone(990, c.currentTime + 0.02, 0.05, "square", 0.18);
 }
 
 // A very short "voice" blip, played as a villager's words appear one by one.
@@ -470,8 +577,8 @@ function playPick() {
 function playTalkBlip(pitch = 400) {
   const c = getCtx();
   if (!c) return;
-  const wobble = 1 + (Math.random() - 0.5) * 0.25;
-  tone(pitch * wobble, c.currentTime, 0.055, "triangle", 0.09);
+  const wobble = 1 + (Math.random() - 0.5) * 0.3;
+  tone(pitch * wobble, c.currentTime, 0.06, "triangle", 0.3);
 }
 
 // ===== src/engine/save.js =====
@@ -573,6 +680,8 @@ class Input {
   // ---- Keyboard (laptop) ----
   _setupKeyboard() {
     window.addEventListener("keydown", (e) => {
+      // Typing in a number box must not walk the player or press E.
+      if (e.target && e.target.tagName === "INPUT") return;
       const k = e.key.toLowerCase();
       this.keys.add(k);
       // E or Space asks to interact. We queue it as a single press.
@@ -691,6 +800,7 @@ class Dialogue {
     this.onDone = null;
     this.active = false;
     this.pitch = 400;     // this speaker's voice pitch (Hz)
+    this.speaker = null;  // id of the villager whose lips should move
 
     this._typing = null;  // the timer that reveals letters
     this._shown = 0;      // how many letters are on screen so far
@@ -707,6 +817,7 @@ class Dialogue {
     this.index = 0;
     this.onDone = onDone;
     this.pitch = opts.pitch || 400;
+    this.speaker = opts.speaker || null;
     this.active = true;
     this.nameEl.textContent = name;
     this.panel.hidden = false;
@@ -734,6 +845,11 @@ class Dialogue {
   // Is the current line still being revealed?
   _isTyping() {
     return this._typing != null;
+  }
+
+  // Should the villager with this id be moving their lips right now?
+  talkingFor(id) {
+    return this.active && this.speaker === id && this._isTyping();
   }
 
   _stopTyping() {
@@ -817,6 +933,130 @@ function sameLength(a, b) {
   return Math.abs(a - b) < 0.001;
 }
 
+// ============================================================
+// A reusable "answer the steps" panel. Several jobs are a chain of
+// small calculations (tank, roof). This shows ONE question at a time
+// with a number box, gives a hint on a wrong try, and after two wrong
+// tries shows a worked example with different numbers.
+//
+// cfg = {
+//   title, intro (html), goal (html), extraHtml (optional),
+//   steps: [{ q, answer, unit, hint, example }],
+//   doneHtml, doneBtn, onSolved()   // onSolved changes the 3D world
+// }
+// ============================================================
+function runStepQuiz(ctx, cfg) {
+  let idx = 0;
+  let wrongHere = 0; // wrong tries on the current step
+
+  const card = openPanel(`
+    <div class="job-title-row">
+      <h2>${cfg.title}</h2>
+      <button class="ghost-btn" id="quiz-close">Leave</button>
+    </div>
+    <p class="job-brief">${cfg.intro}</p>
+    <div class="job-goal">${cfg.goal}</div>
+    ${cfg.extraHtml || ""}
+    <div class="step-track" id="quiz-track"></div>
+    <div id="quiz-log"></div>
+    <div class="quiz-q" id="quiz-q"></div>
+    <div class="num-row" id="quiz-row">
+      <input class="num-input" id="quiz-in" type="number" inputmode="decimal" step="any" placeholder="?">
+      <span class="num-unit" id="quiz-unit"></span>
+      <button class="big-btn" id="quiz-check">Check</button>
+    </div>
+    <div class="hint" id="quiz-hint" hidden></div>
+    <div class="worked-example" id="quiz-example" hidden></div>
+    <div id="quiz-solved"></div>
+  `);
+
+  const track = card.querySelector("#quiz-track");
+  const log = card.querySelector("#quiz-log");
+  const qEl = card.querySelector("#quiz-q");
+  const input = card.querySelector("#quiz-in");
+  const unitEl = card.querySelector("#quiz-unit");
+  const hintEl = card.querySelector("#quiz-hint");
+  const exampleEl = card.querySelector("#quiz-example");
+  const checkBtn = card.querySelector("#quiz-check");
+
+  function paintTrack() {
+    track.innerHTML = cfg.steps
+      .map((_, i) => `<div class="step-dot ${i < idx ? "done" : i === idx ? "now" : ""}"></div>`)
+      .join("");
+  }
+  function showStep() {
+    paintTrack();
+    const st = cfg.steps[idx];
+    qEl.innerHTML = `Step ${idx + 1} of ${cfg.steps.length}: ${st.q}`;
+    unitEl.textContent = st.unit || "";
+    input.value = "";
+    hintEl.hidden = true;
+    exampleEl.hidden = true;
+    wrongHere = 0;
+    setTimeout(() => input.focus(), 50);
+  }
+
+  function check() {
+    const raw = input.value.trim();
+    if (raw === "") {
+      hintEl.hidden = false;
+      hintEl.textContent = "Type a number first, then press Check.";
+      return;
+    }
+    ctx.countAttempt();
+    const val = Number(raw);
+    const st = cfg.steps[idx];
+    if (Math.abs(val - st.answer) < 0.001) {
+      // Right. Log it and move on, or finish.
+      log.innerHTML += `<div class="step-ok">✔ ${st.q} <b>${st.answer} ${st.unit || ""}</b></div>`;
+      idx++;
+      if (idx < cfg.steps.length) {
+        ctx.audio.playStep();
+        showStep();
+      } else {
+        solve();
+      }
+      return;
+    }
+    // Wrong: hint, then example after two wrong tries.
+    wrongHere++;
+    ctx.audio.playRetry();
+    hintEl.hidden = false;
+    const direction = val < st.answer ? "Your number is too small." : "Your number is too big.";
+    hintEl.textContent = `${direction} ${st.hint || ""}`;
+    if (wrongHere >= 2 && st.example) {
+      exampleEl.hidden = false;
+      exampleEl.innerHTML = `<b>Worked example (different numbers):</b> ${st.example}`;
+    }
+  }
+
+  checkBtn.addEventListener("click", check);
+  input.addEventListener("keydown", (e) => { if (e.key === "Enter") check(); });
+  card.querySelector("#quiz-close").addEventListener("click", () => closePanel());
+
+  function solve() {
+    ctx.audio.playSuccess();
+    paintTrack();
+    qEl.hidden = true;
+    card.querySelector("#quiz-row").hidden = true;
+    hintEl.hidden = true;
+    exampleEl.hidden = true;
+    if (cfg.onSolved) cfg.onSolved();
+    const box = card.querySelector("#quiz-solved");
+    box.innerHTML = `
+      <div class="solved-banner">
+        ${cfg.doneHtml}
+        <div class="btn-row"><button class="big-btn" id="quiz-done">${cfg.doneBtn || "Finish up"}</button></div>
+      </div>`;
+    card.querySelector("#quiz-done").addEventListener("click", () => {
+      closePanel();
+      ctx.onSolve();
+    });
+  }
+
+  showStep();
+}
+
 // ===== src/engine/ui.js =====
 /* ============================================================
    ui.js — the HUD (rank badge, interact prompt), the notebook,
@@ -833,6 +1073,7 @@ const RANKS = [
   { name: "Junior Engineer", min: 1 },
   { name: "Site Engineer", min: 3 },
   { name: "Chief Engineer", min: 5 },
+  { name: "Master Engineer", min: 6 },
 ];
 
 // Work out the rank name for a number of finished jobs.
@@ -887,8 +1128,19 @@ class UI {
       });
     });
 
-    // Keyboard: N toggles the notebook.
+    // Sound on/off button.
+    const soundBtn = document.getElementById("sound-btn");
+    const paintSound = () => (soundBtn.textContent = isMuted() ? "🔇" : "🔊");
+    paintSound();
+    soundBtn.addEventListener("click", () => {
+      setMuted(!isMuted());
+      paintSound();
+      if (!isMuted()) playPick();
+    });
+
+    // Keyboard: N toggles the notebook (not while typing in a number box).
     window.addEventListener("keydown", (e) => {
+      if (e.target && e.target.tagName === "INPUT") return;
       if (e.key.toLowerCase() === "n") this.toggleNotebook();
     });
   }
@@ -1037,6 +1289,10 @@ class World {
       signpost: new THREE.Vector3(2.4, 0, 19),
       bridgeVillager: new THREE.Vector3(-3.5, 0, 6),   // Meera, near bank
       schoolVillager: new THREE.Vector3(3.2, 0, -9),   // Ravi, far bank
+      roofVillager: new THREE.Vector3(-9.2, 0, 15),    // Nanu, near bank house
+      tankVillager: new THREE.Vector3(-10.5, 0, -10.5), // Lakshmi, water tower
+      millVillager: new THREE.Vector3(12, 0, -10.5),   // Farhan, windmill
+      marketVillager: new THREE.Vector3(1.5, 0, -19),  // Bhola, market square
     };
 
     // The river blocks crossing until the bridge is built.
@@ -1055,6 +1311,7 @@ class World {
     this._buildNearBank();
     this._buildFarBank();
     this._buildTrees();
+    this._buildAmbient();
   }
 
   // ---- Lighting: warm daylight + a soft sky fill, with shadows ----
@@ -1162,6 +1419,50 @@ class World {
     board.castShadow = true;
     this.scene.add(board);
     this.signpostMesh = board;
+
+    // A small house whose roof leaks (job: The Leaky Roof). Its roof is a
+    // dull patchy grey until the job is done, then it turns a fresh red.
+    const house = new THREE.Group();
+    const wall = new THREE.Mesh(new THREE.BoxGeometry(3.2, 2.4, 3.2), mat(COLORS.wall));
+    wall.position.y = 1.2; wall.castShadow = true; wall.receiveShadow = true;
+    house.add(wall);
+    const roof = new THREE.Mesh(new THREE.ConeGeometry(2.8, 1.6, 4), mat(0x8a7f70));
+    roof.position.y = 3.1; roof.rotation.y = Math.PI / 4; roof.castShadow = true;
+    house.add(roof);
+    const door = new THREE.Mesh(new THREE.BoxGeometry(0.7, 1.3, 0.1), mat(COLORS.woodDark));
+    door.position.set(0, 0.65, 1.62);
+    house.add(door);
+    house.position.set(-12, 0, 14);
+    this.scene.add(house);
+    this.leakyRoof = roof;
+
+    // The village well.
+    const well = new THREE.Group();
+    const ring = new THREE.Mesh(new THREE.CylinderGeometry(0.9, 0.9, 0.8, 12), mat(COLORS.stone));
+    ring.position.y = 0.4; ring.castShadow = true;
+    well.add(ring);
+    for (const x of [-0.8, 0.8]) {
+      const p = new THREE.Mesh(new THREE.BoxGeometry(0.12, 2.2, 0.12), mat(COLORS.woodDark));
+      p.position.set(x, 1.1, 0);
+      well.add(p);
+    }
+    const wellRoof = new THREE.Mesh(new THREE.ConeGeometry(1.3, 0.7, 4), mat(COLORS.roofBlue));
+    wellRoof.position.y = 2.5; wellRoof.rotation.y = Math.PI / 4;
+    well.add(wellRoof);
+    well.position.set(7, 0, 12);
+    this.scene.add(well);
+
+    // Fence posts along both sides of the entrance path.
+    const postGeo = new THREE.BoxGeometry(0.14, 0.9, 0.14);
+    const fenceMat = mat(COLORS.wood);
+    for (let z = 9; z <= 20; z += 2.2) {
+      for (const x of [-1.9, 1.9]) {
+        const fp = new THREE.Mesh(postGeo, fenceMat);
+        fp.position.set(x, 0.45, z);
+        fp.castShadow = true;
+        this.scene.add(fp);
+      }
+    }
   }
 
   // ---- Far bank (north): school, water tank, windmill, market, houses ----
@@ -1208,6 +1509,23 @@ class World {
     tank.position.y = 6.2;
     tank.castShadow = true;
     tower.add(tank);
+    // A pipe down from the tank to a stone trough. The trough fills with
+    // water when the tank job is solved.
+    const pipe = new THREE.Mesh(new THREE.CylinderGeometry(0.08, 0.08, 5, 6), mat(COLORS.metal));
+    pipe.position.set(1.3, 2.5, 1.3);
+    tower.add(pipe);
+    const trough = new THREE.Mesh(new THREE.BoxGeometry(2.4, 0.6, 1.0), mat(COLORS.stone));
+    trough.position.set(2.6, 0.3, 2.2);
+    trough.castShadow = true;
+    tower.add(trough);
+    const troughWater = new THREE.Mesh(
+      new THREE.BoxGeometry(2.2, 0.1, 0.8),
+      new THREE.MeshStandardMaterial({ color: COLORS.water, flatShading: true, roughness: 0.3 })
+    );
+    troughWater.position.set(2.6, 0.62, 2.2);
+    troughWater.visible = false;
+    tower.add(troughWater);
+    this.troughWater = troughWater;
     tower.position.set(-14, 0, -14);
     this.scene.add(tower);
     this.tankGroup = tower;
@@ -1232,6 +1550,16 @@ class World {
     }
     blades.position.set(0, 4, 1.5);
     mill.add(blades);
+    // The grindstone beside the mill. It only turns once the gears are right.
+    const stone = new THREE.Mesh(new THREE.CylinderGeometry(0.9, 0.9, 0.3, 14), mat(COLORS.stone));
+    stone.position.set(-3, 0.5, 1.5);
+    stone.castShadow = true;
+    mill.add(stone);
+    const stoneBase = new THREE.Mesh(new THREE.CylinderGeometry(0.5, 0.6, 0.4, 10), mat(COLORS.woodDark));
+    stoneBase.position.set(-3, 0.2, 1.5);
+    mill.add(stoneBase);
+    this.grindstone = stone;
+    this.millFixed = false;
     mill.position.set(15, 0, -14);
     this.scene.add(mill);
     this.windmillBlades = blades;
@@ -1252,6 +1580,19 @@ class World {
       stall.traverse((m) => { if (m.isMesh) m.castShadow = true; });
       this.scene.add(stall);
     }
+    // Sacks of rice that appear on the middle stall when the market job is done.
+    const sacks = new THREE.Group();
+    const sackMat = mat(0xd9c39a);
+    for (const [x, y] of [[-0.5, 1.3], [0.1, 1.3], [-0.2, 1.75]]) {
+      const sack = new THREE.Mesh(new THREE.SphereGeometry(0.32, 8, 6), sackMat);
+      sack.position.set(x, y, 0);
+      sack.scale.set(1, 0.85, 0.8);
+      sacks.add(sack);
+    }
+    sacks.position.set(0, 0, -22);
+    sacks.visible = false;
+    this.scene.add(sacks);
+    this.marketSacks = sacks;
 
     // ---------- A few houses ----------
     const housePos = [[-20, -6], [20, -6], [-22, -22], [22, -22]];
@@ -1276,7 +1617,7 @@ class World {
     const trunkMat = mat(COLORS.trunk);
     const leafMat = mat(COLORS.leaf);
     const spots = [
-      [-8, 14], [9, 15], [-14, 2], [13, 4], [-24, -2], [24, -2],
+      [-5, 10], [9, 15], [-14, 2], [13, 4], [-24, -2], [24, -2],
       [-10, -26], [10, -26], [-30, -18], [30, -18], [-6, 26], [6, 27],
     ];
     for (const [x, z] of spots) {
@@ -1327,6 +1668,67 @@ class World {
     this._bridgeAnimStart = performance.now() / 1000;
   }
 
+  // ---- Clouds, birds, and flowers so the village feels alive ----
+  _buildAmbient() {
+    // Clouds: soft white puffs drifting slowly across the sky.
+    this.clouds = [];
+    const cloudMat = new THREE.MeshStandardMaterial({ color: 0xffffff, flatShading: true, roughness: 1 });
+    for (let i = 0; i < 7; i++) {
+      const cloud = new THREE.Group();
+      const n = 3 + Math.floor(Math.random() * 3);
+      for (let k = 0; k < n; k++) {
+        const puff = new THREE.Mesh(new THREE.SphereGeometry(1.2 + Math.random() * 1.2, 7, 6), cloudMat);
+        puff.position.set(k * 1.6 - n * 0.8, Math.random() * 0.5, Math.random() * 0.8);
+        cloud.add(puff);
+      }
+      cloud.position.set(-60 + Math.random() * 120, 16 + Math.random() * 6, -50 + Math.random() * 70);
+      cloud.userData.speed = 0.6 + Math.random() * 0.8;
+      this.scene.add(cloud);
+      this.clouds.push(cloud);
+    }
+
+    // Birds: two little wings that flap, circling above the village.
+    this.birds = [];
+    const birdMat = mat(0x333333);
+    for (let i = 0; i < 4; i++) {
+      const bird = new THREE.Group();
+      for (const side of [-1, 1]) {
+        const wing = new THREE.Mesh(new THREE.BoxGeometry(0.5, 0.04, 0.16), birdMat);
+        wing.position.x = side * 0.25;
+        bird.add(wing);
+      }
+      bird.userData = {
+        angle: Math.random() * Math.PI * 2,
+        r: 6 + Math.random() * 8,
+        cx: -10 + Math.random() * 20,
+        cz: -12 + Math.random() * 24,
+        h: 8 + Math.random() * 4,
+        speed: 0.4 + Math.random() * 0.4,
+      };
+      this.scene.add(bird);
+      this.birds.push(bird);
+    }
+
+    // Flowers: tiny coloured dots in the grass, away from water and paths.
+    const flowerMats = [0xff6b8a, 0xffd23f, 0xffffff, 0xb57bee].map((c) => mat(c));
+    const petal = new THREE.SphereGeometry(0.12, 5, 4);
+    for (let i = 0; i < 90; i++) {
+      const x = -40 + Math.random() * 80;
+      const z = -35 + Math.random() * 62;
+      if (Math.abs(z) < 5) continue;              // not in the river
+      if (Math.abs(x) < 2 && z > -9) continue;    // not on the main path
+      const flower = new THREE.Mesh(petal, flowerMats[i % flowerMats.length]);
+      flower.position.set(x, 0.12, z);
+      this.scene.add(flower);
+    }
+  }
+
+  // ---- Things jobs change in the world when they are solved ----
+  fixMill() { this.millFixed = true; }
+  fillTank() { if (this.troughWater) this.troughWater.visible = true; }
+  stockMarket() { if (this.marketSacks) this.marketSacks.visible = true; }
+  patchRoof() { if (this.leakyRoof) this.leakyRoof.material.color.set(COLORS.roofRed); }
+
   // Light the school windows and mark it done (Job 2).
   lightSchool() {
     for (const win of this.schoolWindows) {
@@ -1338,7 +1740,25 @@ class World {
 
   // Per-frame updates: spin the windmill, animate bridge planks dropping in.
   update(dt, elapsed) {
-    if (this.windmillBlades) this.windmillBlades.rotation.z += dt * 0.6;
+    // The mill turns lazily until its gears are fixed, then properly.
+    if (this.windmillBlades) this.windmillBlades.rotation.z += dt * (this.millFixed ? 2.0 : 0.6);
+    if (this.millFixed && this.grindstone) this.grindstone.rotation.y += dt * 3;
+
+    // Clouds drift east and wrap around.
+    for (const cloud of this.clouds || []) {
+      cloud.position.x += dt * cloud.userData.speed;
+      if (cloud.position.x > 65) cloud.position.x = -65;
+    }
+    // Birds circle and flap.
+    for (const bird of this.birds || []) {
+      const u = bird.userData;
+      u.angle += dt * u.speed;
+      bird.position.set(u.cx + Math.cos(u.angle) * u.r, u.h + Math.sin(elapsed * 2 + u.r) * 0.4, u.cz + Math.sin(u.angle) * u.r);
+      bird.rotation.y = -u.angle;
+      const flap = Math.sin(elapsed * 10 + u.r) * 0.6;
+      bird.children[0].rotation.z = flap;
+      bird.children[1].rotation.z = -flap;
+    }
 
     // Gentle water shimmer.
     if (this.water) this.water.position.y = -0.2 + Math.sin(elapsed * 1.5) * 0.03;
@@ -1468,16 +1888,23 @@ function makeHuman({
   head.add(skull);
 
   // Eyes: two little dark dots, slightly apart, on the front (+Z).
+  // We keep them in `parts` so they can blink.
   const eyeMat = humanMat(0x22201c);
   for (const side of [-1, 1]) {
     const eye = new THREE.Mesh(new THREE.SphereGeometry(0.03, 6, 6), eyeMat);
     eye.position.set(side * 0.08, 0.04, 0.2);
     head.add(eye);
+    parts[side < 0 ? "eyeL" : "eyeR"] = eye;
+    // A thin eyebrow above each eye.
+    const brow = new THREE.Mesh(new THREE.BoxGeometry(0.06, 0.014, 0.012), hairMat);
+    brow.position.set(side * 0.08, 0.095, 0.205);
+    head.add(brow);
   }
-  // A small smile.
-  const mouth = new THREE.Mesh(new THREE.BoxGeometry(0.09, 0.02, 0.02), humanMat(0x9b4b3a));
+  // A small mouth. Its height grows and shrinks while the person talks.
+  const mouth = new THREE.Mesh(new THREE.BoxGeometry(0.09, 0.028, 0.02), humanMat(0x9b4b3a));
   mouth.position.set(0, -0.08, 0.215);
   head.add(mouth);
+  parts.mouth = mouth;
   // Ears.
   for (const side of [-1, 1]) {
     const ear = new THREE.Mesh(new THREE.SphereGeometry(0.045, 6, 6), skinMat);
@@ -1508,6 +1935,8 @@ function makeHuman({
 
   g.userData.parts = parts;
   g.userData.walkPhase = 0;
+  g.userData.blinkTimer = 1 + Math.random() * 3; // seconds until the next blink
+  g.userData.blinkLeft = 0;                       // seconds the eyes stay shut
   return g;
 }
 
@@ -1515,9 +1944,36 @@ function makeHuman({
 //   walking: true while moving. speed: 0..1 how fast.
 // Swings arms and legs in opposite pairs, like a real stride, and adds a
 // tiny idle breathing motion when standing still.
-function animateHuman(group, dt, walking, speed = 1) {
+//   talking: true while this person is speaking (moves the lips, nods).
+function animateHuman(group, dt, walking, speed = 1, talking = false) {
   const p = group.userData.parts;
   if (!p) return;
+  const u = group.userData;
+
+  // ---- Face: blink every few seconds ----
+  u.blinkTimer -= dt;
+  if (u.blinkTimer <= 0) {
+    u.blinkTimer = 2 + Math.random() * 3.5;
+    u.blinkLeft = 0.14;
+  }
+  if (u.blinkLeft > 0) u.blinkLeft -= dt;
+  const eyeOpen = u.blinkLeft > 0 ? 0.12 : 1;
+  if (p.eyeL) { p.eyeL.scale.y = eyeOpen; p.eyeR.scale.y = eyeOpen; }
+
+  // ---- Face: lips move and the head nods a little while talking ----
+  if (p.mouth) {
+    const now = performance.now();
+    if (talking) {
+      const open = 1 + Math.abs(Math.sin(now / 55)) * 3.2;
+      p.mouth.scale.set(1 + Math.sin(now / 90) * 0.25, open, 1);
+      if (p.head) p.head.rotation.x = Math.sin(now / 260) * 0.06;
+    } else {
+      const k = Math.min(1, dt * 12);
+      p.mouth.scale.x += (1 - p.mouth.scale.x) * k;
+      p.mouth.scale.y += (1 - p.mouth.scale.y) * k;
+      if (p.head) p.head.rotation.x *= 1 - Math.min(1, dt * 8);
+    }
+  }
 
   if (walking) {
     group.userData.walkPhase += dt * 9 * Math.max(0.4, speed);
@@ -2399,6 +2855,587 @@ function runSchoolPuzzle(ctx, puzzle) {
   }
 }
 
+// ===== src/jobs/roof.js =====
+/* ============================================================
+   JOB — THE LEAKY ROOF   (area, multiplication, rounding up)
+
+   Grandpa Nanu's roof leaks. The player works out the roof area,
+   how many tiles cover it, and how many packs to buy (packs cannot
+   be split, so the answer must round UP). Class 5 adds a second
+   slope, quarter-square tiles, and the cost.
+   ============================================================ */
+
+const roof = {
+  id: "roof",
+  title: "The Leaky Roof",
+  villagerName: "Nanu",
+  voice: 250, // an older, deeper voice
+  where: "The small house, south west of the entrance",
+  concept: "Area of a rectangle; dividing into packs and rounding up.",
+
+  build(world) {
+    const pos = world.points.roofVillager;
+    // Nanu: grey hair, cream shirt, brown trousers.
+    const villager = makeVillager({ shirt: 0xe8e0c8, trousers: 0x5a4632, hair: 0xcfcfcf, skin: 0xc98d62 });
+    villager.position.set(pos.x, 0, pos.z);
+    villager.lookAt(world.spawn.x, 0, world.spawn.z);
+    world.scene.add(villager);
+    const marker = makeMarker();
+    marker.position.set(pos.x, 2.6, pos.z);
+    world.scene.add(marker);
+    return { villager, marker, position: pos };
+  },
+
+  start(ctx) {
+    runStepQuiz(ctx, makeRoofQuiz(ctx));
+  },
+};
+
+function makeRoofQuiz(ctx) {
+  const { profile, level } = ctx;
+  const base = {
+    title: "The Leaky Roof",
+    doneBtn: "Climb down",
+    onSolved: () => ctx.world.patchRoof(),
+    doneHtml: `<b>The roof is patched.</b> Nanu: "Not a drop gets through now. You measured, you multiplied, and you bought just enough. That's an engineer."`,
+  };
+  const roundUp = "Packs cannot be split. If the division leaves a remainder, go UP to the next whole pack.";
+
+  if (profile === "class3") {
+    if (level >= 2) {
+      return Object.assign(base, {
+        intro: `Nanu: "The rain comes right through. My roof is a rectangle, 7 metres long and 5 metres wide. The new tiles each cover half a square metre, and the shop sells them in packs of 8."`,
+        goal: `Goal: work out the <b>area</b>, the <b>number of tiles</b>, and the <b>packs to buy</b>.`,
+        steps: [
+          { q: "The roof is 7 m long and 5 m wide. What is its area?", answer: 35, unit: "m²", hint: "Area of a rectangle = length × width.", example: "A 6 m by 4 m roof has area 6 × 4 = 24 m²." },
+          { q: "Each tile covers ½ m². How many tiles cover 35 m²?", answer: 70, unit: "tiles", hint: "Two tiles make 1 m². So multiply the area by 2.", example: "For 20 m² with ½ m² tiles you need 20 × 2 = 40 tiles." },
+          { q: "Tiles come in packs of 8. How many packs must Nanu buy for 70 tiles?", answer: 9, unit: "packs", hint: `70 ÷ 8 = 8 remainder 6. ${roundUp}`, example: "For 30 tiles in packs of 4: 30 ÷ 4 = 7 remainder 2, so buy 8 packs." },
+        ],
+      });
+    }
+    return Object.assign(base, {
+      intro: `Nanu: "The rain comes right through. My roof is a rectangle, 6 metres long and 4 metres wide. Each new tile covers 2 square metres, and the shop sells them in packs of 5."`,
+      goal: `Goal: work out the <b>area</b>, the <b>number of tiles</b>, and the <b>packs to buy</b>.`,
+      steps: [
+        { q: "The roof is 6 m long and 4 m wide. What is its area?", answer: 24, unit: "m²", hint: "Area of a rectangle = length × width.", example: "A 5 m by 3 m roof has area 5 × 3 = 15 m²." },
+        { q: "Each tile covers 2 m². How many tiles cover 24 m²?", answer: 12, unit: "tiles", hint: "Divide the area by what one tile covers: 24 ÷ 2.", example: "For 18 m² with 3 m² tiles you need 18 ÷ 3 = 6 tiles." },
+        { q: "Tiles come in packs of 5. How many packs for 12 tiles?", answer: 3, unit: "packs", hint: `12 ÷ 5 = 2 remainder 2. ${roundUp}`, example: "For 9 tiles in packs of 4: 9 ÷ 4 = 2 remainder 1, so buy 3 packs." },
+      ],
+    });
+  }
+
+  if (level >= 2) {
+    return Object.assign(base, {
+      intro: `Nanu: "This roof is L-shaped: one part is 10 m by 4 m, the other is 6 m by 3 m. Tiles cover ½ m² each, packs hold 25 tiles, and a pack costs ₹220."`,
+      goal: `Goal: <b>total area</b>, <b>tiles</b>, <b>packs</b> (round up), then the <b>cost</b>.`,
+      steps: [
+        { q: "Add the two rectangles: 10 × 4 and 6 × 3. What is the total roof area?", answer: 58, unit: "m²", hint: "Find each rectangle's area first, then add them: 40 + 18.", example: "An L of 8 × 2 and 5 × 2 has area 16 + 10 = 26 m²." },
+        { q: "Each tile covers ½ m². How many tiles for 58 m²?", answer: 116, unit: "tiles", hint: "Two tiles per square metre: 58 × 2.", example: "For 31 m² you need 31 × 2 = 62 tiles." },
+        { q: "Packs hold 25 tiles. How many packs for 116 tiles?", answer: 5, unit: "packs", hint: `116 ÷ 25 = 4 remainder 16. ${roundUp}`, example: "For 55 tiles in packs of 20: 55 ÷ 20 = 2 remainder 15, so buy 3 packs." },
+        { q: "A pack costs ₹220. What do 5 packs cost?", answer: 1100, unit: "₹", hint: "Multiply packs by the price of one pack: 5 × 220.", example: "3 packs at ₹150 cost 3 × 150 = ₹450." },
+      ],
+    });
+  }
+  return Object.assign(base, {
+    intro: `Nanu: "My roof has two slopes, each 8 m long and 3½ m wide. Tiles cover a quarter of a square metre each, packs hold 20, and a pack costs ₹150."`,
+    goal: `Goal: <b>total area</b> of both slopes, <b>tiles</b>, <b>packs</b> (round up), then the <b>cost</b>.`,
+    steps: [
+      { q: "Two slopes, each 8 m by 3.5 m. What is the total area? (Type a decimal if you need one.)", answer: 56, unit: "m²", hint: "One slope is 8 × 3.5 = 28. There are two.", example: "Two slopes of 6 × 2.5 = 15 each make 30 m² in total." },
+      { q: "Each tile covers ¼ m². How many tiles for 56 m²?", answer: 224, unit: "tiles", hint: "Four tiles per square metre: 56 × 4.", example: "For 12 m² with ¼ m² tiles you need 12 × 4 = 48 tiles." },
+      { q: "Packs hold 20 tiles. How many packs for 224 tiles?", answer: 12, unit: "packs", hint: `224 ÷ 20 = 11 remainder 4. ${roundUp}`, example: "For 65 tiles in packs of 30: 65 ÷ 30 = 2 remainder 5, so buy 3 packs." },
+      { q: "A pack costs ₹150. What do 12 packs cost?", answer: 1800, unit: "₹", hint: "Multiply: 12 × 150.", example: "4 packs at ₹120 cost 4 × 120 = ₹480." },
+    ],
+  });
+}
+
+// ===== src/jobs/tank.js =====
+/* ============================================================
+   JOB — THE THIRSTY TANK   (volume, rates, multi-step arithmetic)
+
+   The water tower is empty. Class 3 counts buckets and works out
+   how many days a full tank lasts. Class 5 works with litres per
+   minute, two pipes together, and a leak (a rate taken away).
+   ============================================================ */
+
+const tank = {
+  id: "tank",
+  title: "The Thirsty Tank",
+  villagerName: "Lakshmi",
+  voice: 470,
+  where: "Under the water tower, north west",
+  concept: "Volume in litres; multiplying and dividing with rates.",
+
+  build(world) {
+    const pos = world.points.tankVillager;
+    // Lakshmi: a green dress.
+    const villager = makeVillager({ shirt: 0x3b8f6a, dress: true, hair: 0x1d1410 });
+    villager.position.set(pos.x, 0, pos.z);
+    villager.lookAt(0, 0, 0);
+    world.scene.add(villager);
+    const marker = makeMarker();
+    marker.position.set(pos.x, 2.6, pos.z);
+    world.scene.add(marker);
+    return { villager, marker, position: pos };
+  },
+
+  start(ctx) {
+    runStepQuiz(ctx, makeTankQuiz(ctx));
+  },
+};
+
+function makeTankQuiz(ctx) {
+  const { profile, level } = ctx;
+  const base = {
+    title: "The Thirsty Tank",
+    doneBtn: "Turn on the tap",
+    onSolved: () => ctx.world.fillTank(),
+    doneHtml: `<b>Water flows.</b> Lakshmi: "The trough is full and every house knows how long it will last. You did the sums before the work, like a real engineer."`,
+  };
+
+  if (profile === "class3") {
+    if (level >= 2) {
+      return Object.assign(base, {
+        intro: `Lakshmi: "The tank holds 900 litres. We fill it by hand, 30 litres a bucket. Five families each use 2 buckets a day. I need to know how long a full tank lasts."`,
+        goal: `Goal: <b>buckets to fill</b> the tank, <b>buckets used per day</b>, then <b>days</b> a full tank lasts.`,
+        steps: [
+          { q: "The tank holds 900 L and a bucket carries 30 L. How many buckets fill it from empty?", answer: 30, unit: "buckets", hint: "Divide the tank by one bucket: 900 ÷ 30.", example: "A 400 L tank filled with 20 L buckets needs 400 ÷ 20 = 20 buckets." },
+          { q: "5 families each use 2 buckets a day. How many buckets is that a day?", answer: 10, unit: "buckets a day", hint: "Multiply families by buckets each: 5 × 2.", example: "4 families using 3 buckets each is 4 × 3 = 12 buckets a day." },
+          { q: "A full tank is 30 buckets. At 10 buckets a day, how many days does it last?", answer: 3, unit: "days", hint: "Divide the full tank by the daily use: 30 ÷ 10.", example: "A 24 bucket tank at 6 buckets a day lasts 24 ÷ 6 = 4 days." },
+        ],
+      });
+    }
+    return Object.assign(base, {
+      intro: `Lakshmi: "The tank holds 600 litres. We fill it by hand, 20 litres a bucket. Three families each use 2 buckets a day."`,
+      goal: `Goal: <b>buckets to fill</b> the tank, <b>buckets used per day</b>, then <b>days</b> a full tank lasts.`,
+      steps: [
+        { q: "The tank holds 600 L and a bucket carries 20 L. How many buckets fill it from empty?", answer: 30, unit: "buckets", hint: "Divide the tank by one bucket: 600 ÷ 20.", example: "A 300 L tank filled with 10 L buckets needs 300 ÷ 10 = 30 buckets." },
+        { q: "3 families each use 2 buckets a day. How many buckets is that a day?", answer: 6, unit: "buckets a day", hint: "Multiply families by buckets each: 3 × 2.", example: "2 families using 4 buckets each is 2 × 4 = 8 buckets a day." },
+        { q: "A full tank is 30 buckets. At 6 buckets a day, how many days does it last?", answer: 5, unit: "days", hint: "Divide the full tank by the daily use: 30 ÷ 6.", example: "A 20 bucket tank at 4 buckets a day lasts 20 ÷ 4 = 5 days." },
+      ],
+    });
+  }
+
+  if (level >= 2) {
+    return Object.assign(base, {
+      intro: `Lakshmi: "The tank holds 1500 litres. Two pipes fill it: one gives 50 litres a minute, the other 25. But there is a leak losing 15 litres a minute."`,
+      goal: `Goal: the <b>filling rate</b> of both pipes, the <b>time without the leak</b>, then the <b>time with the leak</b>.`,
+      steps: [
+        { q: "Pipe A gives 50 L a minute and pipe B gives 25 L a minute. Together, how many litres a minute?", answer: 75, unit: "L per minute", hint: "Rates going the same way add up: 50 + 25.", example: "Pipes of 30 and 20 L a minute together give 50 L a minute." },
+        { q: "At 75 L a minute, how many minutes to fill 1500 L?", answer: 20, unit: "minutes", hint: "Time = amount ÷ rate: 1500 ÷ 75.", example: "800 L at 40 L a minute takes 800 ÷ 40 = 20 minutes." },
+        { q: "The leak loses 15 L a minute. With the leak, how many minutes to fill 1500 L?", answer: 25, unit: "minutes", hint: "The leak works against the pipes: 75 − 15 = 60 L a minute really goes in. Then 1500 ÷ 60.", example: "Filling at 50 with a 10 leak is really 40 L a minute; 400 L takes 400 ÷ 40 = 10 minutes." },
+      ],
+    });
+  }
+  return Object.assign(base, {
+    intro: `Lakshmi: "The tank holds 1200 litres. The pipe gives 40 litres a minute. But there is a small leak losing 10 litres a minute."`,
+    goal: `Goal: the <b>time without the leak</b>, the <b>real filling rate</b> with the leak, then the <b>time with the leak</b>.`,
+    steps: [
+      { q: "At 40 L a minute, how many minutes to fill 1200 L?", answer: 30, unit: "minutes", hint: "Time = amount ÷ rate: 1200 ÷ 40.", example: "600 L at 30 L a minute takes 600 ÷ 30 = 20 minutes." },
+      { q: "The pipe adds 40 L a minute and the leak takes 10 L a minute. How many litres really go in each minute?", answer: 30, unit: "L per minute", hint: "Take the leak away from the pipe: 40 − 10.", example: "A pipe of 25 with a leak of 5 really fills 25 − 5 = 20 L a minute." },
+      { q: "At 30 L a minute, how many minutes to fill 1200 L?", answer: 40, unit: "minutes", hint: "1200 ÷ 30.", example: "900 L at 45 L a minute takes 900 ÷ 45 = 20 minutes." },
+    ],
+  });
+}
+
+// ===== src/jobs/mill.js =====
+/* ============================================================
+   JOB — THE SLOW WINDMILL   (gears and ratios)
+
+   The big windmill gear turns slowly. The player picks a smaller
+   gear for the grindstone so it turns at the speed the miller
+   wants. A gear with FEWER teeth turns MORE times for each turn
+   of the big gear:  grindstone speed = big teeth × big speed ÷ small teeth.
+   Class 5 Level 2 has a two-stage gear train.
+   ============================================================ */
+
+const mill = {
+  id: "mill",
+  title: "The Slow Windmill",
+  villagerName: "Farhan",
+  voice: 340,
+  where: "The windmill, north east",
+  concept: "Gears and ratios: fewer teeth means more turns.",
+
+  build(world) {
+    const pos = world.points.millVillager;
+    // Farhan: orange shirt, dark trousers.
+    const villager = makeVillager({ shirt: 0xd08a2a, trousers: 0x4a4a55 });
+    villager.position.set(pos.x, 0, pos.z);
+    villager.lookAt(0, 0, 0);
+    world.scene.add(villager);
+    const marker = makeMarker();
+    marker.position.set(pos.x, 2.6, pos.z);
+    world.scene.add(marker);
+    return { villager, marker, position: pos };
+  },
+
+  start(ctx) {
+    runMillPuzzle(ctx, makeMillPuzzle(ctx.profile, ctx.level));
+  },
+};
+
+// puzzle = { bigTeeth, bigRpm, target, options, stage2: null | { midTeeth, options } }
+function makeMillPuzzle(profile, level) {
+  if (profile === "class3") {
+    if (level >= 2) return { bigTeeth: 36, bigRpm: 15, target: 60, options: [6, 9, 12, 18, 27], stage2: null };
+    return { bigTeeth: 40, bigRpm: 10, target: 40, options: [5, 8, 10, 16, 20], stage2: null };
+  }
+  if (level >= 2) {
+    // Two stages: big gear -> gear A (on a shaft with a 30-tooth gear) -> gear B on the grindstone.
+    // grindstone = 60 × 10 ÷ A × 30 ÷ B = 18000 ÷ (A × B). Target 100 means A × B = 180.
+    return { bigTeeth: 60, bigRpm: 10, target: 100, options: [10, 12, 15, 20], stage2: { midTeeth: 30, options: [9, 12, 15, 18] } };
+  }
+  return { bigTeeth: 60, bigRpm: 12, target: 90, options: [6, 8, 10, 12, 15], stage2: null };
+}
+
+function runMillPuzzle(ctx, puzzle) {
+  let pickA = null;
+  let pickB = null;
+  let wrongTries = 0;
+  const twoStage = !!puzzle.stage2;
+
+  const card = openPanel(`
+    <div class="job-title-row">
+      <h2>The Slow Windmill</h2>
+      <button class="ghost-btn" id="mill-close">Leave</button>
+    </div>
+    <p class="job-brief">
+      Farhan: "The sails turn the big gear, but the grindstone barely moves. Put the right gear on the grindstone.
+      A gear with <b>fewer teeth</b> turns <b>more times</b> for every turn of the big one."
+    </p>
+    <div class="job-goal">Goal: make the grindstone turn <b>exactly ${puzzle.target} times a minute</b>.</div>
+
+    <div class="mill-facts">
+      The big gear has <b>${puzzle.bigTeeth} teeth</b> and turns <b>${puzzle.bigRpm} times a minute</b>.
+      ${twoStage ? `It drives gear A. On the same shaft as gear A sits a <b>${puzzle.stage2.midTeeth} tooth</b> gear, which drives gear B on the grindstone.` : "It drives the grindstone gear directly."}
+      <br>Rule: <b>speed of small gear = big teeth × big speed ÷ small teeth</b>.
+    </div>
+
+    <div class="section-label">${twoStage ? "Gear A (driven by the big gear)" : "Pick the grindstone gear"}</div>
+    <div class="gear-bank" id="gear-a"></div>
+    ${twoStage ? `<div class="section-label">Gear B (on the grindstone)</div><div class="gear-bank" id="gear-b"></div>` : ""}
+
+    <div class="speed-readout" id="mill-speed"></div>
+    <div class="hint" id="mill-hint" hidden></div>
+    <div class="worked-example" id="mill-example" hidden></div>
+
+    <div class="btn-row">
+      <button class="big-btn" id="mill-start">Start the mill</button>
+      <button class="ghost-btn" id="mill-clear">Clear</button>
+    </div>
+    <div id="mill-solved"></div>
+  `);
+
+  const bankA = card.querySelector("#gear-a");
+  const bankB = card.querySelector("#gear-b");
+  const speedEl = card.querySelector("#mill-speed");
+  const hintEl = card.querySelector("#mill-hint");
+  const exampleEl = card.querySelector("#mill-example");
+  const startBtn = card.querySelector("#mill-start");
+
+  function drawBank(bank, options, getPick, setPick) {
+    bank.innerHTML = "";
+    options.forEach((teeth) => {
+      const b = document.createElement("button");
+      b.className = "gear" + (getPick() === teeth ? " picked" : "");
+      b.innerHTML = `${teeth}<small>teeth</small>`;
+      b.addEventListener("click", () => {
+        setPick(getPick() === teeth ? null : teeth);
+        ctx.audio.playPick();
+        render();
+      });
+      bank.appendChild(b);
+    });
+  }
+
+  // Grindstone speed for the current picks, or null if a gear is missing.
+  function speed() {
+    if (pickA == null) return null;
+    let rpm = (puzzle.bigTeeth * puzzle.bigRpm) / pickA;
+    if (twoStage) {
+      if (pickB == null) return null;
+      rpm = (rpm * puzzle.stage2.midTeeth) / pickB;
+    }
+    return rpm;
+  }
+
+  function render() {
+    drawBank(bankA, puzzle.options, () => pickA, (v) => (pickA = v));
+    if (twoStage) drawBank(bankB, puzzle.stage2.options, () => pickB, (v) => (pickB = v));
+    const sp = speed();
+    if (sp == null) {
+      speedEl.textContent = `Grindstone speed: — (choose ${twoStage ? "both gears" : "a gear"})`;
+    } else {
+      const shown = Math.round(sp * 10) / 10;
+      speedEl.textContent = `Grindstone speed: ${shown} turns a minute (need ${puzzle.target})`;
+    }
+  }
+  render();
+
+  card.querySelector("#mill-close").addEventListener("click", () => closePanel());
+  card.querySelector("#mill-clear").addEventListener("click", () => {
+    pickA = null; pickB = null; hintEl.hidden = true; render();
+  });
+
+  startBtn.addEventListener("click", () => {
+    ctx.countAttempt();
+    const sp = speed();
+    hintEl.hidden = false;
+    if (sp == null) {
+      hintEl.textContent = twoStage ? "Choose gear A and gear B first." : "Choose a gear first.";
+      return;
+    }
+    if (Math.abs(sp - puzzle.target) < 0.01) { solve(); return; }
+    wrongTries++;
+    ctx.audio.playRetry();
+    if (sp < puzzle.target) {
+      hintEl.innerHTML = `Too slow (${Math.round(sp * 10) / 10} a minute). A gear with <b>fewer teeth</b> spins faster. Try smaller gears.`;
+    } else {
+      hintEl.innerHTML = `Too fast (${Math.round(sp * 10) / 10} a minute). A gear with <b>more teeth</b> spins slower. Try bigger gears.`;
+    }
+    if (wrongTries >= 2) {
+      exampleEl.hidden = false;
+      exampleEl.innerHTML = twoStage
+        ? `<b>Worked example (different numbers):</b> Big gear 50 teeth at 6 a minute drives gear A with 10 teeth: 50 × 6 ÷ 10 = 30 a minute. Its shaft gear has 20 teeth and drives gear B with 8 teeth: 30 × 20 ÷ 8 = 75 a minute. Work stage by stage.`
+        : `<b>Worked example (different numbers):</b> Big gear 30 teeth at 8 a minute. A 6 tooth gear turns 30 × 8 ÷ 6 = 40 times a minute. For 60 a minute you would need 30 × 8 ÷ 60 = 4 teeth.`;
+    }
+  });
+
+  function solve() {
+    ctx.audio.playSuccess();
+    hintEl.hidden = true;
+    exampleEl.hidden = true;
+    ctx.world.fixMill();
+    startBtn.disabled = true;
+    card.querySelector("#mill-solved").innerHTML = `
+      <div class="solved-banner">
+        <b>The grindstone hums.</b> Farhan: "Exactly ${puzzle.target} a minute. Flour by evening. You understood the gears, Engineer."
+        <div class="btn-row"><button class="big-btn" id="mill-done">Watch it spin</button></div>
+      </div>`;
+    card.querySelector("#mill-done").addEventListener("click", () => {
+      closePanel();
+      ctx.onSolve();
+    });
+  }
+}
+
+// ===== src/jobs/market.js =====
+/* ============================================================
+   JOB — THE WOBBLY SCALES   (balance, equations, money)
+
+   Bhola's balance scales work, but he has lost some weights. The
+   player must arrange the weights so that a BALANCED scale means
+   exactly the asked amount of rice. Weights on the right pan add;
+   weights on the left pan (beside the rice) take away:
+        rice = right pan − left pan.
+   Then the player works out the price. Class 5 uses weights
+   1, 3, 9, 27 so both pans MUST be used.
+   ============================================================ */
+
+const market = {
+  id: "market",
+  title: "The Wobbly Scales",
+  villagerName: "Bhola",
+  voice: 280,
+  where: "The market square, far north",
+  concept: "Balancing an equation: adding on one side, taking away on the other; then money.",
+
+  build(world) {
+    const pos = world.points.marketVillager;
+    // Bhola: purple shirt, dark trousers.
+    const villager = makeVillager({ shirt: 0x7a4fa0, trousers: 0x33363f });
+    villager.position.set(pos.x, 0, pos.z);
+    villager.lookAt(0, 0, 0);
+    world.scene.add(villager);
+    const marker = makeMarker();
+    marker.position.set(pos.x, 2.6, pos.z);
+    world.scene.add(marker);
+    return { villager, marker, position: pos };
+  },
+
+  start(ctx) {
+    runMarketPuzzle(ctx, makeMarketPuzzle(ctx.profile, ctx.level));
+  },
+};
+
+// puzzle = { target (kg of rice), weights (kg each), price (₹ per kg) }
+function makeMarketPuzzle(profile, level) {
+  if (profile === "class3") {
+    if (level >= 2) return { target: 13, weights: [1, 2, 5, 10, 20], price: 45 };
+    return { target: 8, weights: [1, 2, 5, 10], price: 40 };
+  }
+  if (level >= 2) return { target: 14, weights: [1, 3, 9, 27], price: 48 };
+  return { target: 7, weights: [1, 3, 9], price: 52 };
+}
+
+function runMarketPuzzle(ctx, puzzle) {
+  // Where each weight sits: "tray", "right", or "left".
+  const place = puzzle.weights.map(() => "tray");
+  let weighed = false;
+  let wrongTries = 0;
+
+  const card = openPanel(`
+    <div class="job-title-row">
+      <h2>The Wobbly Scales</h2>
+      <button class="ghost-btn" id="mk-close">Leave</button>
+    </div>
+    <p class="job-brief">
+      Bhola: "A customer wants <b>${puzzle.target} kg</b> of rice, but I've lost some of my weights!
+      Rice goes on the <b>left</b> pan. Put weights on the <b>right</b> pan to add,
+      or on the <b>left</b> pan beside the rice to take away. When the scale balances, the rice weighs
+      <b>right − left</b>."
+    </p>
+    <div class="job-goal">Goal: arrange the weights so a balanced scale means <b>exactly ${puzzle.target} kg</b> of rice.</div>
+
+    <div class="section-label">Weights (tap to move: tray → right pan → left pan → tray)</div>
+    <div class="weight-bank" id="mk-weights"></div>
+
+    <div class="scale-wrap">
+      <div class="scale-beam" id="mk-beam"></div>
+      <div class="scale-post"></div>
+      <div class="scale-pans">
+        <div class="pan" id="mk-left"></div>
+        <div class="pan" id="mk-right"></div>
+      </div>
+    </div>
+    <div class="balance-readout" id="mk-readout"></div>
+
+    <div class="hint" id="mk-hint" hidden></div>
+    <div class="worked-example" id="mk-example" hidden></div>
+
+    <div class="btn-row" id="mk-actions">
+      <button class="big-btn" id="mk-weigh">Weigh the rice</button>
+      <button class="ghost-btn" id="mk-clear">Clear</button>
+    </div>
+
+    <div id="mk-money" hidden>
+      <div class="quiz-q">Rice costs <b>₹${puzzle.price} per kg</b>. How much does the customer pay for ${puzzle.target} kg?</div>
+      <div class="num-row">
+        <span class="num-unit">₹</span>
+        <input class="num-input" id="mk-in" type="number" inputmode="numeric" placeholder="?">
+        <button class="big-btn" id="mk-pay">Check</button>
+      </div>
+      <div class="hint" id="mk-money-hint" hidden></div>
+    </div>
+    <div id="mk-solved"></div>
+  `);
+
+  const bank = card.querySelector("#mk-weights");
+  const left = card.querySelector("#mk-left");
+  const right = card.querySelector("#mk-right");
+  const beam = card.querySelector("#mk-beam");
+  const readout = card.querySelector("#mk-readout");
+  const hintEl = card.querySelector("#mk-hint");
+  const exampleEl = card.querySelector("#mk-example");
+
+  function sumOn(side) {
+    let t = 0;
+    puzzle.weights.forEach((w, i) => { if (place[i] === side) t += w; });
+    return t;
+  }
+  // What the rice would weigh if the scale balanced.
+  function measured() { return sumOn("right") - sumOn("left"); }
+
+  function render() {
+    bank.innerHTML = "";
+    puzzle.weights.forEach((w, i) => {
+      const b = document.createElement("button");
+      b.className = "weight" + (place[i] === "right" ? " on-right" : place[i] === "left" ? " on-left" : "");
+      b.innerHTML = `${w} kg<small>${place[i] === "tray" ? "in tray" : place[i] === "right" ? "right pan" : "left pan"}</small>`;
+      b.disabled = weighed;
+      b.addEventListener("click", () => {
+        place[i] = place[i] === "tray" ? "right" : place[i] === "right" ? "left" : "tray";
+        ctx.audio.playPick();
+        hintEl.hidden = true;
+        render();
+      });
+      bank.appendChild(b);
+    });
+    const l = puzzle.weights.filter((_, i) => place[i] === "left");
+    const r = puzzle.weights.filter((_, i) => place[i] === "right");
+    left.innerHTML = `<b>Left pan</b>🌾 rice${l.length ? " + " + l.map((w) => w + " kg").join(" + ") : ""}`;
+    right.innerHTML = `<b>Right pan</b>${r.length ? r.map((w) => w + " kg").join(" + ") : "(empty)"}`;
+    const m = measured();
+    // Tilt the beam toward the heavier side when the arrangement is off target.
+    const diff = m - puzzle.target;
+    const tilt = Math.max(-8, Math.min(8, diff * 1.5));
+    beam.style.transform = `rotate(${tilt}deg)`;
+    if (r.length === 0) readout.textContent = "Put some weights on the right pan.";
+    else if (m <= 0) readout.textContent = `Right ${sumOn("right")} − left ${sumOn("left")} = ${m}. The left pan is too heavy already.`;
+    else readout.textContent = `Balanced, the rice would weigh ${sumOn("right")} − ${sumOn("left")} = ${m} kg.`;
+  }
+  render();
+
+  card.querySelector("#mk-close").addEventListener("click", () => closePanel());
+  card.querySelector("#mk-clear").addEventListener("click", () => {
+    if (weighed) return;
+    place.fill("tray");
+    hintEl.hidden = true;
+    render();
+  });
+
+  card.querySelector("#mk-weigh").addEventListener("click", () => {
+    ctx.countAttempt();
+    const m = measured();
+    if (m === puzzle.target) {
+      weighed = true;
+      ctx.audio.playStep();
+      hintEl.hidden = true;
+      exampleEl.hidden = true;
+      render();
+      card.querySelector("#mk-actions").hidden = true;
+      readout.innerHTML = `✔ Balanced at <b>${puzzle.target} kg</b>: ${sumOn("right")} − ${sumOn("left")} = ${puzzle.target}.`;
+      card.querySelector("#mk-money").hidden = false;
+      setTimeout(() => card.querySelector("#mk-in").focus(), 50);
+      return;
+    }
+    wrongTries++;
+    ctx.audio.playRetry();
+    hintEl.hidden = false;
+    if (m < puzzle.target) {
+      hintEl.innerHTML = `That measures ${m} kg, which is ${puzzle.target - m} kg short. Add a weight to the <b>right</b> pan, or move one off the left pan.`;
+    } else {
+      hintEl.innerHTML = `That measures ${m} kg, which is ${m - puzzle.target} kg too much. Take a weight off the right pan, or put one on the <b>left</b> pan beside the rice to subtract it.`;
+    }
+    if (wrongTries >= 2) {
+      exampleEl.hidden = false;
+      exampleEl.innerHTML = `<b>Worked example (different numbers):</b> To weigh 6 kg with weights 1, 3 and 9: put 9 on the right and 3 on the left. Balanced, rice + 3 = 9, so rice = 9 − 3 = 6 kg. A weight on the rice side takes away.`;
+    }
+  });
+
+  card.querySelector("#mk-pay").addEventListener("click", checkMoney);
+  card.querySelector("#mk-in").addEventListener("keydown", (e) => { if (e.key === "Enter") checkMoney(); });
+
+  function checkMoney() {
+    const input = card.querySelector("#mk-in");
+    const mh = card.querySelector("#mk-money-hint");
+    const raw = input.value.trim();
+    if (raw === "") { mh.hidden = false; mh.textContent = "Type the price first."; return; }
+    ctx.countAttempt();
+    const val = Number(raw);
+    const answer = puzzle.target * puzzle.price;
+    if (val === answer) { solve(); return; }
+    ctx.audio.playRetry();
+    mh.hidden = false;
+    mh.innerHTML = `${val < answer ? "Too little." : "Too much."} Multiply the kilograms by the price of one kilogram: ${puzzle.target} × ${puzzle.price}. Try splitting it: ${puzzle.target} × ${Math.floor(puzzle.price / 10) * 10} plus ${puzzle.target} × ${puzzle.price % 10}.`;
+  }
+
+  function solve() {
+    ctx.audio.playSuccess();
+    ctx.world.stockMarket();
+    card.querySelector("#mk-money").hidden = true;
+    card.querySelector("#mk-solved").innerHTML = `
+      <div class="solved-banner">
+        <b>Sold!</b> Bhola: "${puzzle.target} kg, ₹${puzzle.target * puzzle.price}, and not a grain wasted. You balanced both sides like a proper equation. Thank you, Engineer."
+        <div class="btn-row"><button class="big-btn" id="mk-done">Finish up</button></div>
+      </div>`;
+    card.querySelector("#mk-done").addEventListener("click", () => {
+      closePanel();
+      ctx.onSolve();
+    });
+  }
+}
+
 // ===== src/main.js =====
 /* ============================================================
    main.js — starts the game and runs the loop that ties every
@@ -2413,13 +3450,17 @@ function runSchoolPuzzle(ctx, puzzle) {
    ============================================================ */
 
 
-const Audio = { playSuccess, playRetry, playBell, playPick, playTalkBlip };
+const Audio = { playSuccess, playStep, playRetry, playBell, playPick, playTalkBlip };
 
 
 // A short friendly greeting each villager says before their puzzle opens.
 const GREETINGS = {
   bridge: ["You must be the new engineer.", "Our bridge washed away in the rains. Can you help us cross?"],
+  roof: ["Ah, young engineer! Mind the puddle.", "My roof leaks like a basket. Help me work out how many tiles to buy?"],
   school: ["Good you made it across.", "The school has gone dark. The children can't see their books."],
+  tank: ["Namaste, Engineer.", "The tank is empty and nobody knows how long a full one lasts. Can you do the sums?"],
+  mill: ["Hear that? Nothing. The grindstone should be humming.", "The gears are wrong. Help me pick the right one?"],
+  market: ["Welcome to the market, Engineer!", "I've lost half my weights and a customer is waiting. Can you help me weigh the rice?"],
 };
 
 // ============================================================
@@ -2431,8 +3472,8 @@ class Game {
     this.profileLabel = profile === "class3" ? "Class 3" : "Class 5";
     this.progress = loadProgress(profile);
 
-    // The list of jobs in this build. (Jobs 3–6 slot in here later.)
-    this.jobs = [bridge, school];
+    // The six jobs. The first two sit on the near bank; the bridge opens the rest.
+    this.jobs = [bridge, roof, school, tank, mill, market];
 
     this._setupRenderer();
     this.world = new World();
@@ -2532,7 +3573,7 @@ class Game {
 
     const greet = GREETINGS[job.id] || ["Thanks for coming."];
     // Each villager has their own voice pitch for the speech blips.
-    this.dialogue.say(job.villagerName, greet, () => job.start(ctx), { pitch: job.voice });
+    this.dialogue.say(job.villagerName, greet, () => job.start(ctx), { pitch: job.voice, speaker: job.id });
   }
 
   // Record a finished job, update rank + marker.
@@ -2573,7 +3614,8 @@ class Game {
         job._marker.position.y = 2.6 + Math.sin(elapsed * 2 + job._pos.x) * 0.15;
       }
       if (job._villager) {
-        animateHuman(job._villager, dt, false);
+        // Lips move while this villager is speaking in the dialogue box.
+        animateHuman(job._villager, dt, false, 1, this.dialogue.talkingFor(job.id));
         const dx = pp.x - job._villager.position.x;
         const dz = pp.z - job._villager.position.z;
         if (Math.hypot(dx, dz) < 7) {
@@ -2652,6 +3694,7 @@ function boot() {
   document.querySelectorAll(".profile-btn").forEach((btn) => {
     btn.addEventListener("click", () => {
       const profile = btn.getAttribute("data-profile");
+      unlockAudio(); // first tap: browsers allow sound from here on
       startScreen.hidden = true;
       hud.hidden = false;
       // Create the game. (One game per page load.)

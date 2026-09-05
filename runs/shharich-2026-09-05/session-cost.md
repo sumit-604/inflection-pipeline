@@ -25,3 +25,28 @@ wall recorded). Stage 0 was orchestrator-run (no subagent row).
 | 12a | verifier-numerical | haiku | default | - | - | 85152 | 224s | 2 |
 | 13 | synthesis-lite | opus | default | - | - | 142631 | 495s | 1 |
 | 09b | halt1-dossier | sonnet | default | - | - | 39084 | 1429s | 1 |
+
+## SESSION CLOSE-OUT (PHASE 1)
+
+Run total (sum of all numeric ledger rows): ~3,039,106 tokens. Two rows carry n/a (stage 6 run 1 and stage 7 run 1, terminated by an HTTP 429 session limit; the harness reported no usage) and are excluded from the total, which therefore understates true spend.
+
+### (a) TOP FIVE BY TOKENS (stage totals; loop and retry runs summed)
+| rank | stage | total_tok | share |
+|------|-------|-----------|-------|
+| 1 | 2 notes-pass | 480,225 | 15.8% |
+| 2 | 12b verifier-redflags (no-concall mode) | 353,556 | 11.6% |
+| 3 | 3 ar-deep-dive | 305,731 | 10.1% |
+| 4 | 8 promoter | 243,672 | 8.0% |
+| 5 | 12d verifier-peers | 235,676 | 7.8% |
+
+### (b) DOWNSHIFT FAILURES
+none. The only phase-1 mechanical stage routed to haiku is verifier A, which ran on haiku (B12a). Stage 0 validation was run by the orchestrator session itself per run-pipeline.md step 1 (no subagent, no Opus); stage 10 assembly is phase 3.
+
+### (c) COST SPIKES
+none. No prior runs/shharich-*/session-cost.md ledger exists for this ticker (first run).
+
+### (d) OPERATOR SNAPSHOT
+Operator: run /cost and /usage now and paste the cache hit ratio and loop totals below. The orchestrator cannot read those interactive commands.
+
+#### Operator snapshot
+(pending operator paste)

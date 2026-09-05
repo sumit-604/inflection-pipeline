@@ -1,0 +1,76 @@
+stage: B04-bizmodel
+company: "VISAKAIND"
+run_date: "2026-09-05"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Investor presentation is stale (Q1 FY24, filed Aug-2023); used only for context, AR FY26 governs all current figures"
+  - "No named competitor for any of the four product lines in either the AR or the presentation; competitive map built from Visaka's own claimed rank/share only"
+  - "ATUM Solar Roof has no separately disclosed revenue line; folded into the combined Building products segment with roofing and boards"
+  - "Roofing and boards profitability are not split from each other; only the combined Building products segment profit is disclosed (AR FY26 Note 37, p.199)"
+  - "No R&D spend is separately quantified (AR FY26 p.92: 'no specific expenditure exclusively on R&D has been incurred')"
+  - "Concalls, results, rating rationale, announcements, shareholding and screening data were not provided to this stage"
+flags:
+  - "Cement roofing (53% of revenue) is built on chrysotile asbestos fibre, a structural long-run regulatory and reputational risk not resolved by current compliance"
+  - "ATUM Solar Roof revenue is undisclosed; its two related subsidiaries (Visaka Green, Atum Life) are loss-making, and Atum Life's net worth (Rs0.32cr) already sits below its Rs7.795cr cost of investment"
+  - "FY26 PBT and PAT include a one-off Rs59.70cr exceptional land-sale gain; underlying PBT before exceptional items was Rs50.55cr, not the headline Rs110.25cr"
+  - "Dealer count and dealer-channel revenue share both declined in FY26 (5,246 to 4,974; 62.91% to 59.91%) with no management explanation found in the AR"
+  - "CARE rating outlook stayed Negative in FY26 despite improved leverage metrics, unresolved credit overhang"
+  - "The manifest's single 'Building materials' sector cap does not fit the blended entity: synthetic yarn (15% of revenue) is a textiles-sector cyclical converter, not a building-materials line, and needs separate Section 1B treatment"
+business_type: manufacturing
+revenue_streams:
+  - {name: "Cement roofing sheets", type: "manufactured goods, commodity-adjacent", pct_of_revenue: 53, predictability: "M"}
+  - {name: "Fibre cement boards & panels (V-Next)", type: "manufactured goods, value-added/branded", pct_of_revenue: 30, predictability: "M"}
+  - {name: "Synthetic yarn (Wonder Yarn)", type: "manufactured goods, commodity with niche variants", pct_of_revenue: 15, predictability: "L"}
+  - {name: "ATUM Solar Roof", type: "manufactured goods, emerging category, revenue not separately disclosed", pct_of_revenue: 0, predictability: "L"}
+asset_intensity: heavy
+wc_intensity: high
+pricing_power: moderate
+cyclicality: cyclical
+moats_present:
+  - {moat: "Distribution reach (7,000+ dealers/stockists, 13 marketing offices)", durability: "moderate-high"}
+  - {moat: "Boards certifications and process technology (GreenPro, TUV, ISI, Hatschek/autoclave)", durability: "moderate"}
+  - {moat: "ATUM patents (India, US, South Africa)", durability: "moderate on paper, unproven in revenue"}
+  - {moat: "Twin air-jet spinning technology in yarn", durability: "low-moderate"}
+valuation_methods:
+  primary: {method: "Segment-wise (SOTP) EV/EBITDA or P/E, keyed to Section 1B destination PE per line's archetype", why: "Roofing (converter), boards (value-added supplier) and yarn (converter, different sector) sit on different quality-ladder rungs; a single blended multiple hides the growth engine inside the legacy engine"}
+  secondary: {method: "Consolidated EV/EBITDA cross-check", why: "Sanity-checks against whole-company peers and captures the FY26 deleveraging story (net debt/EBITDA 2.19x vs 4.66x FY25) that a segment view alone would miss"}
+  tertiary: {method: "Replacement cost / asset-based, on the Rs450cr boards capex plan through 2030", why: "Gives a concrete floor for what new boards capacity costs to build, a check on whether the expansion is priced in at all"}
+  not_applicable:
+    - "DCF as primary: multi-segment cash flows with different growth/margin trajectories make a single blended discount rate fragile before segmentation"
+    - "Dividend Discount Model: payout ratio swung 31.5% to 3,085.71% to 11.81% across three years, no stable policy to anchor on"
+    - "PEG: FY26 PAT growth is a meaningless statistic off a near-zero FY25 base and includes a one-off exceptional gain"
+    - "Blended unsegmented trailing P/E as primary: masks the different quality-ladder rungs of roofing versus boards"
+irrelevant_ratios:
+  - {ratio: "Consolidated blended net profit margin", why: "Blends a declining commodity line, a growth line and a cyclical line, masking which engine is improving"}
+  - {ratio: "PAT growth % (reported 62,636% FY26)", why: "FY25 base PAT was near zero (Rs0.14cr); use absolute Rupee PAT instead"}
+  - {ratio: "Single-year Return on Equity", why: "FY26 RoE inflated by a one-off Rs59.70cr exceptional land-sale gain"}
+  - {ratio: "Dividend payout ratio", why: "FY25's 3,085.71% is an EPS-denominator artefact, not a real payout signal; use absolute dividend Rupees"}
+  - {ratio: "1-year stock price return vs Sensex", why: "Thin free float and small market cap (Rs444cr) make short-window relative return uninformative"}
+must_track_metrics:
+  - {metric: "Boards (V-Next) segment revenue growth and capacity utilisation", healthy: "double-digit growth, utilisation 80%+", red_flag: "utilisation falls while new capacity comes online"}
+  - {metric: "Non-asbestos revenue share", healthy: "rising year on year from FY26's 47%", red_flag: "stalls or reverses"}
+  - {metric: "Net debt / EBITDA", healthy: "at or below FY26's 2.19x through the capex ramp", red_flag: "rises back above 3x"}
+  - {metric: "Dealer count and dealer-channel revenue share", healthy: "stable or explained shift to institutional accounts", red_flag: "continued unexplained decline"}
+  - {metric: "CARE rating outlook", healthy: "moves from Negative to Stable", red_flag: "stays Negative another full cycle or the rating itself is cut"}
+unit_economics:
+  unit: "1 tonne of fibre cement board sold (V-Next)"
+  revenue_per_unit: "~Rs16,500/tonne (derived: FY26 sales Rs506cr / implied ~3.06 lakh tonnes at 86% utilisation of 3,55,750-tonne capacity; AR FY26 p.55)"
+  margin_per_unit: "NOT FOUND at board-only level; only combined Building products segment margin (~9.1% standalone, Rs128.28cr on Rs1,413.37cr revenue) is disclosed (AR FY26 Note 37, p.199)"
+  key_lever: "Capacity utilisation and product mix shift to value-added designer boards; near-full utilisation means incremental revenue flows mostly to margin (AR FY26 p.16, p.55)"
+first_deterioration_signals:
+  - {risk: "Rural income cycle weakens, roofing volumes fall", first_signal: "Cement roofing segment sales/volume growth turns negative (AR FY26 p.51)"}
+  - {risk: "Imported fibre/PET cost spike not passed through", first_signal: "Cost of materials consumed rises above ~50% of standalone revenue (AR FY26 Note 26, p.156)"}
+  - {risk: "Rs450cr boards capex outpaces demand", first_signal: "Net debt/EBITDA rises back above FY26's 2.19x, or debt-equity above 0.42 (AR FY26 p.31)"}
+  - {risk: "New boards capacity underutilised on commissioning", first_signal: "Boards capacity utilisation falls below FY26's 86% even as installed capacity rises (AR FY26 p.55)"}
+  - {risk: "Asbestos regulatory action / ATUM optionality unwinds", first_signal: "Non-gradual drop in cement roofing revenue, or further impairment of the Rs7.795cr Atum Life investment (AR FY26 Note 44, p.272-273)"}
+mgmt_questions:
+  - "What is ATUM's standalone revenue, and why is it not its own reportable segment despite being a distinct, patented product line?"
+  - "Given cement roofing (53% of revenue) uses chrysotile asbestos, what is the contingency plan if India tightens or bans its use?"
+  - "Of the Rs450cr boards capex plan through 2030, what portion is committed, how is it funded, and what incremental EBITDA/IRR is expected?"
+  - "Why did dealer count fall from 5,246 to 4,974 and dealer-channel revenue share fall from 62.91% to 59.91%? Deliberate shift or attrition?"
+  - "Will Visaka Green and Atum Life reach breakeven, and on what timeline?"
+  - "CARE's outlook stayed Negative despite improved leverage. What specific conditions would move it to Stable?"
+  - "Is the FY26 synthetic yarn recovery (segment profit Rs14.08cr vs Rs1.36cr FY25) structural or a cyclical bounce?"
+one_line_verdict: "Rural roofing cash cow funds a real boards growth engine, riding alongside an undisclosed solar bet."
+analyst_note: "Visaka is not one business for valuation purposes. Roofing (53% of revenue) is a mature, asbestos-exposed commodity converter; boards (30%) is a genuine, capacity-constrained value-added grower; synthetic yarn (15%) is a cyclical converter in a different sector than the manifest's 'Building materials' cap suggests; ATUM has no disclosed revenue and sits inside loss-making subsidiaries. Stage 11 should treat this as a sum-of-the-parts problem, applying the Section 1B destination PE separately to the converter slices (roofing, yarn) and the value-added slice (boards), rather than one blended multiple. FY26's headline PBT/PAT recovery is real at the segment level (segment operating profit +49.7% standalone) but the reported PBT is flattered by a Rs59.70cr one-off land sale; use the Rs50.55cr pre-exceptional PBT as the base. Dealer network erosion and the CARE Negative outlook are the two live evidence gaps a verifier should chase next."

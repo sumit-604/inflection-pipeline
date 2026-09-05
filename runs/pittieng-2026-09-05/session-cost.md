@@ -11,3 +11,4 @@ where it does not.
 | 2 | notes triple-pass (pass 2) | claude-sonnet | default | n/a | n/a | 148436 | 8m57s | 2 |
 | 1 | gate 0 scorecard | claude-sonnet | default | n/a | n/a | 180950 | 18m33s | 1 |
 | 2 | notes triple-pass (pass 3, consolidation + B02) | claude-sonnet | default | n/a | n/a | 80693 | 5m22s | 3 |
+| 3 | AR deep dive | claude-sonnet | default | n/a | n/a | 369769 | 13m07s | 1 |

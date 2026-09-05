@@ -1,0 +1,34 @@
+stage: B02-notes-pass2
+company: "SHHARICH"
+run_date: "2026-09-05"
+model: claude-sonnet-5
+status: complete
+pass: 2
+pass_2_empty: false
+input_gaps:
+  - "results: no quarterly or annual results filing; Q1 FY27 (Jun-2026) results absent"
+  - "rating: no credit rating document"
+  - "announcements: no Reg 30 filings; AGM notice inside the AR is the partial substitute"
+  - "shareholding: no quarterly shareholding pattern; fallback AR pattern at 31-Mar-2026"
+  - "screening: only Data_Sheet CSVs populated (3 annual years FY24-FY26)"
+  - "concalls: declared unavailable (NO-CONCALL MODE); not a gap"
+  - "prospectus: not expected (listed 1987); not a gap"
+new_findings:
+  - {rank: 1, finding: "Note 35.15 Fair Values table shows numbers impossible for FVTPL lines (carrying value must equal fair value) and blank/mismatched figures for several balance-sheet lines, identically in standalone and consolidated statements", note_ref: "Note 35.15, standalone p.133, consolidated p.172", rating: "RED", why: "Materially wrong Ind AS 107 disclosure signed off by the auditor in both statements, not just a mis-reference"}
+  - {rank: 2, finding: "Note 32 Gratuity P&L charge (Rs 49.04 lakh FY26) does not reconcile to Note 35.11(E)'s P&L reconciliation (Rs 24.03 lakh FY26) for the same plan; gap widened from Rs 4.20 lakh (FY25) to Rs 25.01 lakh (FY26), coinciding with the unexplained Rs 27.26 lakh Past Service Cost", note_ref: "Note 32 p.123/162; Note 35.11(E) p.131/169", rating: "RED", why: "Quantified cross-note inconsistency in the audited P&L, not just a missing narrative"}
+  - {rank: 3, finding: "Promoter-group ownership rose from 54.21% to 59.25% (+5.04pp) in one year, entirely via CCD conversion to four promoter-linked holders (Suman Agarwal, Gayatri Devi Agarwal, Kanta Agarwal, Shubhalaxmi Polyesters)", note_ref: "Note 35.1(ii)/(iii), consolidated p.165", rating: "YELLOW", why: "Quantifies the realised dilution/control-concentration effect behind Pass 1's CCD overhang finding"}
+  - {rank: 4, finding: "Consolidated-only RoDTEP export-incentive receivable (Rs 15.42 lakh) and higher government-authority balances appear despite Group revenue being identical, rupee for rupee, to standalone revenue", note_ref: "Note 14 p.157 vs Note 27 p.161 (consolidated)", rating: "RED", why: "Unreconciled inconsistency implying undisclosed subsidiary export activity or a stray balance; unresolved from the Notes"}
+  - {rank: 5, finding: "Consolidated CWIP ageing shows Rs 73.55 lakh aged 1-2 years, entirely at the subsidiary (standalone shows zero aged CWIP), proving SDPL's capex programme predates FY26", note_ref: "Note 2(ii)(a), consolidated p.154 vs standalone p.115", rating: "YELLOW", why: "Refines the SDPL capex/product-mix timeline flagged in company memory"}
+  - {rank: 6, finding: "Consolidated PAT is lower than standalone PAT in both years (Rs 7.27 lakh gap FY26, Rs 2.65 lakh gap FY25), implying a widening subsidiary-level net loss", note_ref: "Note 35.8, standalone p.129 vs consolidated p.168", rating: "YELLOW", why: "Confirms the subsidiary is currently a pure cost centre with no revenue contribution"}
+  - {rank: 7, finding: "Subsidiary holds approximately Rs 700 lakh of cash/FDs not present at standalone level, which explains the better consolidated current ratio (0.95 vs 0.81) and working-capital ratio despite identical Group revenue", note_ref: "Notes 10/11, consolidated p.157 vs standalone p.118", rating: "YELLOW", why: "The apparent group liquidity improvement is idle subsidiary cash pre-capex, not a structural parent-level improvement"}
+  - {rank: 8, finding: "CORRECTION to Pass 1 finding #10: Note 35.23(c) standalone DOES admit a related-party loan exists in-Notes (not only in CARO); only the amount, rate, tenure and counterparty remain undisclosed", note_ref: "Note 35.23(c), standalone p.137", rating: "YELLOW", why: "Pass 1's claim that no note discloses the loan needs correction; the quantification gap it flagged remains valid"}
+red_flags_new:
+  - "Note 35.15 (Fair Values) contains numbers that are impossible or blank for several financial-instrument lines, identically in both standalone and consolidated statements"
+  - "Note 32 vs Note 35.11(E) gratuity P&L charge does not reconcile, and the gap widened nearly 6x this year alongside an unexplained Past Service Cost"
+  - "Consolidated-only export-incentive (RoDTEP) receivable exists despite Group revenue being identical to standalone revenue, implying an unreconciled subsidiary activity"
+corrections_to_pass1:
+  - "Pass 1 finding #10 stated no note discloses a related-party loan; Note 35.23(c) standalone (p.137) does admit the loan's existence in-Notes. The quantification gap Pass 1 flagged (no amount/rate/tenure) remains valid and unresolved."
+receivables_trend: "unchanged from Pass 1 (improving, with the same 2-3yr ageing-migration caveat); no new receivables evidence surfaced in this pass"
+going_concern_language: "unchanged from Pass 1: NONE beyond standard boilerplate"
+notes_read_confirmation: "Note 1 through Note 35.25 re-read in full against Pass 1's output, standalone (AR pp.110-138) and consolidated (AR pp.149-177)"
+analyst_note: "Findings 4, 5, 6 and 7 form one coherent picture the Notes support but do not narrate: the subsidiary's consolidated cash/FD balances (c.Rs 700 lakh), its 1-2-year-aged CWIP, its own small net loss, and an export-incentive receivable that cannot be reconciled to Group revenue together suggest SDPL's capex programme is older, more advanced in fund deployment timing, and less transparent than the standalone-only view in Pass 1 implied. Finding 1 (broken Fair Values note) and Finding 2 (gratuity P&L mismatch) are the two findings most likely to move the accounting-quality score materially below Pass 1's implicit read, since both are numeric errors in audited disclosures, not wording or cross-reference slips."

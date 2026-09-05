@@ -18,3 +18,4 @@ wall recorded). Stage 0 was orchestrator-run (no subagent row).
 | 7 | emerging-moat | sonnet | default | - | - | n/a (HTTP 429 session limit on final reply; report + block complete on disk, accepted) | ~15m | 1 |
 | 6 | peer-verification | sonnet | default | - | - | 215760 | 513s | 2 |
 | 12c | verifier-framework (phase-1 scope) | opus | default | - | - | 119537 | 582s | 1 |
+| 12d | verifier-peers | sonnet | default | - | - | 235676 | 511s | 1 |

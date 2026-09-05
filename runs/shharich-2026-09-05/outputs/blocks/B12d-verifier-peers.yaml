@@ -1,0 +1,26 @@
+stage: B12d
+company: "SHHARICH"
+run_date: "2026-09-05"
+model: claude-sonnet-5
+status: complete
+peers_audited: 9
+substantive_confirmed: 8
+substantive_unsupported: []
+unused_but_relevant:
+  - {peer: "AKSHARCHEM", missed_item: "Quantified pollution-treatment expense as % of revenue (4.4%-5.7%, FY15-FY19), topically responsive to Q8 but 6-10 years stale; correctly left unused rather than material miss", anchor: "AKSHARCHEM Aug-2019 investor presentation, PDF p.19"}
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "MAJOR", location: "B06 Part 1 Q5 / Part 3 (BODALCHEM Q3 FY25 row)", claimed: "'almost 90% utilization' anchored at p.4-5 and p.11-12", source_truth: "quote is genuine but located at PDF marker p.8; p.11-12 covers unrelated power-cost/ZLD content", note: "F1: anchor-location error, quote real but mislocated"}
+  - {severity: "MAJOR", location: "B06 Part 1 Q2 / Part 4 (BODALCHEM Q4 FY25 row)", claimed: "ADD/TCCA quote anchored at p.1 and p.3", source_truth: "quote is genuine but located at PDF marker p.4; p.1 is BSE cover letter, p.3 is management-names page", note: "F2: anchor-location error on the flagship CONTRADICTED-verdict citation"}
+  - {severity: "MINOR", location: "B06 Part 1 Q10 / Part 3 (SHREEPUSHK Q2 FY26 row)", claimed: "Rs30cr preferential quote anchored p.7", source_truth: "actual PDF marker p.8 (matches transcript's own printed footer, not PDF-marker convention)", note: "F3 instance 1 of 3, systematic off-by-one in this transcript"}
+  - {severity: "MINOR", location: "B06 Part 1 Q3 (SHREEPUSHK Q2 FY26 row)", claimed: "export-mix quote anchored p.10", source_truth: "actual PDF marker p.11", note: "F3 instance 2 of 3"}
+  - {severity: "MINOR", location: "B06 Part 1 Q10 (SHREEPUSHK Q2 FY26 row)", claimed: "ten-year-promoter-pattern quote anchored p.11", source_truth: "actual PDF marker p.12", note: "F3 instance 3 of 3"}
+  - {severity: "MINOR", location: "B06 Part 3 (SHREEPUSHK Q1 FY27 row)", claimed: "'in the last 15-20 days' attributed to Punit Makharia, p.13", source_truth: "phrase spoken by analyst Prit Nagersheth, same page (p.13)", note: "F4: speaker misattribution, page correct"}
+  - {severity: "MINOR", location: "B06 Part 1 Q2 (SHREEPUSHK Q1 FY27 row)", claimed: "'we have plenty of inquiries...China is giving orders back to India' as one Punit Makharia quote, p.13", source_truth: "spliced from Makharia's sentence plus a separate analyst (Prit Nagersheth) phrase, same page", note: "F5: two speakers merged into one quote via ellipsis; substance independently supported by both"}
+  - {severity: "MINOR", location: "B06 Part 3 (AKSHARCHEM row)", claimed: "UNUSED, no fact used in any verdict", source_truth: "deck does contain a stale (FY15-19) pollution-cost-%-of-revenue figure topically relevant to Q8", note: "F6: defensible omission given 6-10 year staleness, noted for completeness"}
+  - {severity: "MINOR", location: "B06 Part 2, item 2E", claimed: "BODALCHEM Turkey AS29 losses 'Rs1.45-2.44cr per quarter across all four calls'", source_truth: "the four in-scope quarters run Rs1.45-2.34cr; Rs2.44cr belongs to a fifth, out-of-scope quarter (Q1 FY25) mentioned only in passing", note: "F7: minor range overstatement, background cross-read item, not one of the 10 B05 claims"}
+critical_count: 0
+major_count: 2
+minor_count: 7
+acceptance_rate: 78

@@ -1,0 +1,69 @@
+stage: B04-bizmodel
+company: "DIFFNKG"
+run_date: "2026-09-05"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Investor presentation supplied is the Q1 FY27 result presentation, not a dedicated equity-story deck; limited incremental unit-economics or product-line revenue detail beyond the AR"
+  - "No product-line revenue split disclosed anywhere (single Ind AS 108 operating segment); only order-book split by product line is available"
+  - "No customer concentration percentage disclosed"
+  - "No per-unit (Rs/m2 or Rs/tonne) revenue or cost realisation disclosed"
+  - "No named-peer comparative data (Esab India, Ador Welding, GEE Ltd) present in AR or investor presentation; peer set from task brief only"
+flags:
+  - "Order book is 81.6% Heavy Engineering (Mar-26) / 75.8% (Jun-26), a lumpy, milestone-billed, project-execution line, versus only 5.7-11.5% Welding Consumables; this is order-book mix, not revenue mix, but signals a structural shift in business character not yet visible in reported financials"
+  - "Working capital (receivable days, NWC days) has steadily worsened every year from FY22 to FY26"
+  - "FY25/FY26 ROE, ROCE, and current ratio year-over-year comparisons are distorted by the Oct-2024 IPO capital infusion; do not read these ratios at face value without adjustment"
+business_type: "manufacturing"
+revenue_streams:
+  - {name: "Manufacturing (welding consumables, wear plates/parts, heavy engineering)", type: "product sale, B2B", pct_of_revenue: 76.3, predictability: "M"}
+  - {name: "Job work / services (reconditioning, in-situ repair, kiln consultancy)", type: "service fee", pct_of_revenue: 7.9, predictability: "M"}
+  - {name: "Export sales", type: "product sale, cross-border", pct_of_revenue: 7.8, predictability: "M"}
+  - {name: "Trading (allied industrial products)", type: "product resale", pct_of_revenue: 7.4, predictability: "L-M"}
+  - {name: "Other operating revenue (recoveries, export incentive)", type: "pass-through/incentive", pct_of_revenue: 0.6, predictability: "L"}
+asset_intensity: "medium"
+wc_intensity: "high"
+pricing_power: "moderate"
+cyclicality: "cyclical"
+moats_present:
+  - {moat: "switching costs / OEM-approved specs, 44-year relationships, 80%+ repeat customers", durability: "moderate-strong"}
+  - {moat: "cost advantage from backward integration (own wire feeds own wear-plate/part production)", durability: "moderate"}
+  - {moat: "process/data (NABL-accredited testing lab, DSIR R&D)", durability: "moderate"}
+  - {moat: "brand (B2B technical reputation, certifications)", durability: "moderate"}
+valuation_methods:
+  primary: {method: "P/E on normalised consolidated earnings", why: "Manufacturing peer set (Esab India, Ador Welding, GEE Ltd) is conventionally valued on earnings multiples; requires normalising FY26 one-time items"}
+  secondary: {method: "DCF", why: "5-year revenue/EBITDA/PAT track record exists; must explicitly model rising working-capital drag and ongoing capacity-expansion capex"}
+  tertiary: {method: "EV/EBITDA", why: "Useful capital-goods/engineering peer cross-check during a mid-capex-cycle phase when reported net profit carries IPO-related base-effect noise"}
+  not_applicable: ["SOTP/NAV (single reportable Ind AS 108 segment)", "Asset-based/replacement value (not asset-heavy or distressed)"]
+irrelevant_ratios:
+  - {ratio: "Same-store/like-for-like sales growth", why: "Not a retail or franchise model"}
+  - {ratio: "Blended gross margin without mix adjustment", why: "Consumables, project, and service lines likely carry very different margins; masks mix shift toward Heavy Engineering"}
+  - {ratio: "Standard retail inventory turnover benchmarks", why: "Inventory includes bespoke heavy-engineering WIP, not shelf-stock"}
+  - {ratio: "Headline YoY ROE/ROCE without IPO-base adjustment", why: "Company itself attributes FY25 decline to enlarged post-IPO equity base, not operating deterioration"}
+must_track_metrics:
+  - {metric: "Order book total and product-line mix", healthy: "growing, not skewing further toward Heavy Engineering alone", red_flag: "order book flat/declining QoQ, or Heavy Engineering share still rising"}
+  - {metric: "EBITDA margin excluding other income", healthy: "13-14.6% consolidated (FY22-26 range)", red_flag: "sustained drop below ~11-12%"}
+  - {metric: "Trade receivable days / net working capital days", healthy: "stable or falling", red_flag: "continued rise beyond FY26 levels (~98/~102 days)"}
+  - {metric: "Raw materials as % of total expenditure", healthy: "stable or falling as % of revenue", red_flag: "rising for 2+ consecutive quarters without stated repricing pass-through"}
+  - {metric: "Debt-to-equity and DSCR", healthy: "low leverage (0.06-0.07x), high DSCR", red_flag: "debt rising to fund capex without matching earnings growth"}
+unit_economics:
+  unit: "square metre of wear-overlay/cladding surface produced (only per-unit capacity metric disclosed)"
+  revenue_per_unit: "NOT FOUND"
+  margin_per_unit: "NOT FOUND"
+  key_lever: "capacity utilisation and mix shift toward higher-value CCO/flux-cored products, offset by commodity input cost volatility (nickel, chromium, ferro-alloys)"
+first_deterioration_signals:
+  - {risk: "Order book concentration in lumpy Heavy Engineering", first_signal: "quarterly revenue growth volatility / weakening book-to-bill"}
+  - {risk: "Raw material price spikes outrunning repricing clauses", first_signal: "raw materials as % of revenue rising in Note 27 / quarterly cost tables"}
+  - {risk: "Working capital cycle lengthening", first_signal: "trade receivables turnover ratio / receivable days"}
+  - {risk: "Heavy-engineering project delays or cost overruns", first_signal: "work-in-progress inventory build, delayed revenue recognition"}
+  - {risk: "Commoditisation of standardised electrodes/wires under import pressure", first_signal: "blended realisation/ASP commentary in quarterly presentations"}
+mgmt_questions:
+  - "What is the revenue split (not just order-book split) across Welding Consumables, Wear Plates & Parts, Heavy Engineering, and Services?"
+  - "What is customer concentration — revenue share of top 5 and top 10 customers?"
+  - "How is the Nimji/Unit IV capacity expansion being funded, and what is the utilisation ramp-up timeline?"
+  - "What is the price realisation trend on standardised (commodity) electrodes given China import pressure?"
+  - "Why did net working capital days rise from ~75 (FY22) to ~102 (FY26), and what is the target range going forward?"
+  - "What proportion of FY26 revenue was one-time/project-driven versus recurring?"
+  - "What is the status and expected commercial contribution of the UAE operation and new verticals (Railways, Nuclear, Defence)?"
+one_line_verdict: "Diversified wear-and-tear manufacturer with real backward-integration cost edge, but order book skewing toward lumpier, lower-visibility Heavy Engineering while working capital steadily worsens."
+analyst_note: "Single reportable segment under Ind AS 108 means no product-line revenue or margin split exists in filed documents; all mix analysis here rests on the ORDER BOOK, a leading but imperfect proxy for revenue mix. The order-book skew toward Heavy Engineering (81.6% Mar-26) is the single most consequential unresolved fact for Section 1B/FTTCP: it implies a business character shift from a consumables-and-reorder model toward a project-execution model, which carries different working-capital, margin-visibility, and cyclicality characteristics than the 44-year welding-consumables core the AR narrative emphasises. Downstream stages should treat the FY25-FY26 ROE/ROCE/current-ratio year-over-year deltas as IPO-base-effect noise, not operating signal, per the company's own MD&A disclosure."
+

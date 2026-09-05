@@ -11,3 +11,4 @@ Per-stage token ledger. One row per subagent run. Summary block appended at clos
 | 2 | notes-triple-pass (pass3-close) | sonnet | default | n/a | n/a | 53049 | 129s | 3 |
 | 7 | emerging-moat-scan | sonnet | default | n/a | n/a | 95447 | 323s | 1 |
 | 3 | ar-deep-dive | sonnet | default | n/a | n/a | 179604 | 649s | 1 |
+| 4 | business-model | sonnet | default | n/a | n/a | 103833 | 254s | 1 |

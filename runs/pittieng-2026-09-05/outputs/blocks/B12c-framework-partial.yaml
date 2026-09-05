@@ -1,0 +1,45 @@
+stage: B12c
+company: "PITTIENG"
+run_date: "2026-09-05"
+model: claude-opus-4-8
+status: complete
+gate0:
+  rules_checked: 74
+  fails:
+    - "Formula rule: ROCE basis substituted for FY21 (Net Worth + Total Borrowings), creating a cross-basis A4 endpoint comparison [G-01, MAJOR]"
+    - "Formula rule: FCF capex definition proxied for FY22-FY24 (delta Net Block+CWIP + Depreciation) instead of the cash flow statement line [G-03, MINOR]"
+    - "D2: EBIT includes other income while D1 EBITDA excludes it; two bases inside one block, on a band boundary [G-02, MAJOR]"
+    - "B01 block: data_years 7 contradicts the six-year binding window used for the data-confidence band; 'may not have seen full cycle' flag not carried into the block [G-04, MINOR]"
+emoat:
+  rules_checked: 63
+  fails:
+    - "Completionist recount line counts transposed (9 items across 11 categories vs its own list of 11 items across 9) and omits F2 [EM-02, MINOR]"
+    - "Section 2C used the company-guided capex-specific asset turn (1.0-1.2x) in place of the framework's historical fixed asset turnover (2.0x) [EM-01, MAJOR]"
+    - "Section 2C revenue denominator Rs 1,952.91 Cr differs from the B01 revenue base Rs 1,912.81 Cr [EM-05, MINOR]"
+    - "A4 scored at a 0.6 multiplier, which is not one of the three defined values (1.0/0.7/0.5); A1 has the same mixed tier at 0.7 [EM-04, MINOR]"
+    - "I2 applied by name to only 2 of the 6 active moats, against 'for each moat claimed anywhere in this scan' [EM-06, MINOR]"
+    - "Optionality register: block carries 8 of the report's 10 rows; marine propulsion and Caterpillar data-centre dropped [EM-07, MINOR]"
+    - "evidence_mix documented count 9 against 10 categories tagged with a documented item [EM-03, MINOR]"
+valuation: {rules_checked: 0, fails: [], note: "pending phase 3"}
+business_understanding_narrative: {present: false, five_questions_answered: false, prose_only: false, section6_candidates_named: 0, valuation_vocab_leak: false, fails: [], note: "pending phase 3"}
+recomputed_destination_pe: ""
+recomputed_decision: ""
+findings:
+  - {severity: "MAJOR", location: "B01 Block A, FY21 ROCE row and A4", rule: "Formula definitions are fixed, do not substitute alternatives", recomputed: "A4 = 1 (FY22 17.28 to FY26 13.75, decline 3.53pp), Block A = 11/20, Core = 54, classification AVERAGE unchanged", note: "FY21 capital employed computed as Net Worth + Total Borrowings, not Total Assets minus Current Liabilities. Disclosed twice, still a substitution, and it is the earliest endpoint A4 rests on. A4 also compares a maker-computed FY21 against an AR-computed FY26."}
+  - {severity: "MAJOR", location: "B01 Block D, D1 and D2", rule: "One basis per block; D1 EBITDA and D2 EBIT must share an other-income treatment", recomputed: "Exclude other income from both: EBIT 211.09, IC 2.53x, D2 = 1, Block D = 9/20, Core = 57. Include in both: ND/EBITDA 1.55x, D1 stays 3, no change", note: "IC of 3.01x clears the 3.0x band line by 0.01x. The maker took the higher-scoring basis in each of the two tests. Deal-breaker 6 stays unfired at 2.53x because the ND/EBITDA leg never exceeds 2.10x."}
+  - {severity: "MAJOR", location: "B07 Section 2C and block capex_embedded_growth_pct", rule: "Total capex under execution x historical fixed asset turnover", recomputed: "Rs 440 Cr x 2.0x = Rs 880 Cr = 45.1% of FY26 revenue, against the reported 25%", note: "Substitution is disclosed and reasoned, and both figures appear in the report. The block carries only 25, and downstream stages read the block. Carry both or carry the framework value with the caveat."}
+  - {severity: "MINOR", location: "B01 Block B capex table, FY22-FY24", rule: "FCF = CFO minus capex from the cash flow statement, exclude acquisitions", recomputed: "Strict basis, FY25-FY26 only: B2 = 2, B3 = 0, both unchanged", note: "Proxy disclosed. Acquisition-year exclusion handled correctly for FY25. No score impact."}
+  - {severity: "MINOR", location: "B01-gate0.yaml data_years", rule: "Data confidence bands and their flag", recomputed: "Binding window is 6 years, band 5-6 lower, flag 'may not have seen full cycle'", note: "Block says 7, which maps to the moderate band with no flag. The flag text is in the report only. history_downgrade false is correct at either window."}
+  - {severity: "MINOR", location: "B01 D1", rule: "Net Debt / EBITDA, basis for lease liabilities undefined by the framework", recomputed: "Excl. lease 1.75x scores 3; incl. lease 2.10x scores 1; Block D 10 vs 8", note: "Discretionary choice, disclosed on both bases, anchored to the AR's own Note 25.21 convention. Classification band unchanged either way."}
+  - {severity: "MINOR", location: "B01 M10", rule: "Switching costs, 3-band 'growth all but 1 year AND stable'", recomputed: "Alternative read gives M10 = 3, Block F = 14/60, moats present 4, moat_class STRONG instead of MODERATE; classification stays AVERAGE", note: "Maker's literal read (a minus 82 day move is not stable) is defensible and disclosed. Flagged because moat_class is consumed downstream."}
+  - {severity: "MINOR", location: "B01 M4 basis text", rule: "M4 5-band needs zero decline years AND receivable days stable", recomputed: "Score 3 correct either way", note: "Rationale says the top band fails on stability, not decline count. The decline-count leg fails too, since FY21 declined. Presentational."}
+  - {severity: "MINOR", location: "B07 Section 3 recount line and block completionist_recount", rule: "State the recount as n documented items across m categories", recomputed: "At least 11 documented items across 10 categories (A3, B1, C1, C2, E2, F1, F2, H1, H3, R1)", note: "Stated counts are transposed against the report's own enumeration, and F2 is omitted although Section 3 tags it as documented. The guard itself was performed and the 12-category trigger was checked."}
+  - {severity: "MINOR", location: "B07-emoat.yaml evidence_mix", rule: "evidence_mix item counts must match the report's tags", recomputed: "documented 10 categories, not 9; claim 10 and inference 3 both confirmed", note: "Same root cause as the recount finding: F2 omitted."}
+  - {severity: "MINOR", location: "B07 Section 5, A4 row", rule: "Evidence multipliers are 1.0, 0.7, 0.5", recomputed: "A4 at 0.7 gives 18.6 (em_score 19); at 0.5 gives 18.4 (em_score 18); MODEST in both cases", note: "0.6 is not a defined multiplier. A1 carries the identical mixed tier at 0.7, so the treatment is also internally inconsistent."}
+  - {severity: "MINOR", location: "B07 Section 2C denominator", rule: "Cross-stage basis consistency with the injected Gate 0 revenue", recomputed: "On B01's Rs 1,912.81 Cr: 23.0% to 27.6%, midpoint 25.3%", note: "Immaterial to the reported 25. Which revenue figure is correct in the source is Verifier A's call."}
+  - {severity: "MINOR", location: "B07 I2", rule: "Apply the cannibalization test to each moat claimed anywhere in the scan", recomputed: "2 of 6 active moats tested by name (B2, C1); E2, C2, F2, R1 not individually tested", note: "Score 0 would very likely stand, since the report elsewhere calls E2 and R1 sector-wide and shared. Enumeration is still short of the rule."}
+  - {severity: "MINOR", location: "B07-emoat.yaml optionality_register", rule: "Register carried in the block, synthesis merges it into the monitoring checklist", recomputed: "8 of 10 rows carried", note: "Marine propulsion and Caterpillar data-centre platform dropped. Caterpillar survives via catalysts_12m; marine propulsion is lost."}
+critical_count: 0
+major_count: 3
+minor_count: 11
+acceptance_rate: 92

@@ -1,0 +1,97 @@
+stage: B09-tam
+company: "DIFFNKG"
+run_date: "2026-09-05"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "No India-specific split of hardfacing/anti-wear consumables as % of total welding consumables market; used a global cross-market proxy (2023 US-tier hardfacing data vs 2025 global welding total)"
+  - "No disclosed market size for the heavy-engineering repair/reconditioning (kiln, roller, in-situ machining) service niche specifically"
+  - "No Rs-per-MT revenue realisation rate disclosed, so the 3C capacity cross-check is directional, not exact"
+  - "Unorganised-sector share (45-55%) sourced from an undated general web result, not a tiered India-specific report"
+  - "ESAB India / Ador Welding niche-relevance discount (15-20% of total revenue) is an analyst assumption, not a disclosed segment split"
+flags:
+  - "Management's MD&A cites total industry sizes (incl. the full construction-equipment OEM market, Rs 69,046 cr) without ever narrowing to Diffusion's actual product/service niche -- implied claim is 38.7x the conservative TAM estimate, read INFLATED"
+  - "AR2026 and its own cited source (Fortune Business Insights) show internally inconsistent India welding-consumables figures across the two documents searched (USD 1.66bn vs USD 1.8bn for the same nominal source/year)"
+  - "Current SAM share (33.3%) is high by construction of a tightly filtered SAM -- true expansion room lies in loosening product/customer/geography filters (5D), not in SAM share gain alone"
+market_definition: "India market for anti-wear/hardfacing welding consumables, wear plates/parts and heavy-engineering repair services sold to steel, cement, power, mining, sugar, rail and defence customers -- excludes general welding consumables and construction-equipment OEM manufacture"
+tam_cr: {conservative: 2200, realistic: 2600}
+sam_cr: 1130
+sam_pct_of_tam: 43.5
+som_3yr_cr: 502
+som_5yr_cr: 609
+som_implied_revenue_cagr: {yr3: 10.1, yr5: 10.1}
+current_sam_share_pct: 33.3
+revenue_headroom_x: 2.78
+tam_growth_pct: 6.0
+runway_class: "MODERATE"
+mgmt_claim_cr: 85091
+mgmt_claim_ratio: 38.7
+mgmt_claim_read: "inflated"
+capacity_check: "sufficient (directional) -- nameplate capacity growth (+100%, 9,000 to 18,000 MT) exceeds SOM_5yr-implied niche revenue growth (~62%); the capex plan, not the SOM, is the more optimistic side"
+methods_used: ["top-down narrowed", "peer revenue aggregation + unorganised estimate", "global per-capita benchmark (directional only)"]
+stale_data_flags:
+  - {datapoint: "global hardfacing welding market size (used as India narrowing proxy)", source: "Grand View Research, web search", year: 2023}
+  - {datapoint: "global/India wear plate market base year", source: "Grand View Research / AR2026 PAGE 48", year: 2024}
+searches_performed:
+  - "India welding consumables market size crore 2026 unorganised organised share"
+  - "Ador Welding ESAB India Diffusion Engineers revenue FY2026 comparison"
+  - "USD to INR exchange rate 2026"
+  - "ESAB India revenue FY2026 crore annual report welding consumables"
+  - "GEE Ltd wear plate India revenue crore hardfacing"
+  - "India welding consumables unorganised sector share percent"
+  - "ESAB India FY26 annual revenue crore screener financial results"
+  - "hardfacing welding consumables market share of total welding consumables market"
+  - "wear resistant steel plate market India cement steel mining sector split"
+searches_skipped: []
+downstream_candidates:
+  - signal: "Cement capacity additions (+40 MT/yr by FY26-27)"
+    entity_type: "macro"
+    demand_link: "New kilns and life-extension drive wear-plate and hardfacing repair demand"
+    likely_source: "Cement Manufacturers' Association / CRISIL MI&A"
+    cadence: "quarterly"
+    shared: true
+  - signal: "Steel sector capacity expansion (Vision 300 MT)"
+    entity_type: "macro"
+    demand_link: "Capacity growth drives hardfacing electrode and roller-supply demand"
+    likely_source: "Ministry of Steel / Joint Plant Committee"
+    cadence: "quarterly"
+    shared: true
+  - signal: "Coal output target and critical-minerals mining growth"
+    entity_type: "macro"
+    demand_link: "Expands crusher/conveyor/bucket-liner wear-part market"
+    likely_source: "Ministry of Coal / Coal India Ltd"
+    cadence: "quarterly"
+    shared: true
+  - signal: "Power-sector capex (Rs 25 lakh cr over 5 years)"
+    entity_type: "macro"
+    demand_link: "Drives in-situ repair and heavy-engineering fabrication demand"
+    likely_source: "Central Electricity Authority (CEA)"
+    cadence: "event-driven"
+    shared: true
+  - signal: "Wear-plate import volumes (China/Germany/US origin)"
+    entity_type: "macro"
+    demand_link: "Signals both demand growth and import-substitution opportunity/threat"
+    likely_source: "DGCI&S / Ministry of Commerce trade data"
+    cadence: "monthly"
+    shared: false
+  - signal: "Railway electrification and rolling-stock programmes"
+    entity_type: "counterparty"
+    demand_link: "Extends automated welding and in-situ machining demand at rail OEMs/workshops"
+    likely_source: "Ministry of Railways / Indian Railways"
+    cadence: "quarterly"
+    shared: false
+  - signal: "Defence indigenisation production value"
+    entity_type: "regulatory"
+    demand_link: "Growing domestic defence output creates precision fabrication and hardfacing demand"
+    likely_source: "Ministry of Defence / Dept. of Defence Production"
+    cadence: "event-driven"
+    shared: false
+  - signal: "Sugar-sector ethanol blending capex (E30 roadmap)"
+    entity_type: "regulatory"
+    demand_link: "Distillery capex drives recurring hardfacing/cold-repair demand"
+    likely_source: "Indian Sugar Mills Association (ISMA) / Ministry of Petroleum"
+    cadence: "annual"
+    shared: false
+demand_externally_verifiable: true
+analyst_note: "The single biggest finding here is scope, not size: management's MD&A backdrop (Rs 85,091 cr implied) mixes markets Diffusion serves with markets it does not (full construction-equipment OEM manufacture). The niche-scoped TAM (Rs 2,200-2,600 cr) is roughly 30-38x smaller. SOM-implied 5yr CAGR (10.1%) sits close to, but below, the reverse-engineered CAGR from management's Rs 650 cr+ aspiration (9.8% over 5yr from FY26 base) -- a useful independent consistency check, not proof. Capacity (doubling) is not the constraint; the capex plan is sized more optimistically than this report's conservative SOM."
+

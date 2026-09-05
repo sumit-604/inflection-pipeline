@@ -1,0 +1,60 @@
+stage: B04-bizmodel
+company: "KABRAEXTRU"
+run_date: "2026-09-05"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["investor-presentation-stale-2.5yr-Dec2023", "results", "rating-detail-beyond-AR-disclosure", "announcements", "shareholding", "research", "prospectus-not-expected", "peer-concall-windsor", "peer-concall-mislabel-stale", "screener-csv-defect", "sector_cap_row-flagged-phase3"]
+flags:
+  - "Battery segment loss ratio WIDENED (-20.1% to -31.9% of segment revenue) even as segment revenue GREW 7.2%, directly contradicting MD&A claim that the business 'is expected to move towards profitability as volumes scale up' (AR26 Note 38 p.160-161 vs AR26 p.38)"
+  - "AR25's '~40% market share' claim (AR25 p.37) and all Deck-era moat claims (ARAI/AIS-156 certification, IATF-approved facility, '90%+ design-win' share, data network effect) are ABSENT from AR26 and cannot be treated as current evidence"
+  - "CRISIL downgraded both long-term and short-term ratings within FY26 with rationale disclosed only as 'basis performance reported for Quarter 3' (AR26 p.51) — no further detail available in the provided documents"
+  - "Cash near-zero (~Rs 2 Cr) with mutual-fund liquidity buffer nearly halved and borrowings up 12.2% in the same year (AR26 Notes 8, 10, 17)"
+  - "HEVPL (Hero Electric) receivable Rs 30.39 Cr under NCLT insolvency, a realised customer-concentration/credit-quality failure, not a hypothetical risk (AR26 Note 9 p.87-88)"
+  - "Battery segment revenue growth (7.2%) ran at under a third of the cited India EV industry unit growth (24.6%) in the same fiscal year (AR26 Note 38 vs AR26 p.32-33) — an implied share-loss signal not addressed in the MD&A"
+business_type: "hybrid"
+revenue_streams:
+  - {name: "Extrusion Machinery Division", type: "capital-goods sale (engineer-to-order)", pct_of_revenue: 69.8, predictability: "M"}
+  - {name: "Battery Division (Geon, erstwhile Battrixx)", type: "component/pack assembly manufacturing for OEMs + nascent D2C retail", pct_of_revenue: 30.2, predictability: "L"}
+asset_intensity: "medium"
+wc_intensity: "high"
+pricing_power: "weak"
+cyclicality: "cyclical"
+moats_present: []
+valuation_methods:
+  primary: {method: "Sum-of-the-parts (segment-level, per Note 38)", why: "Two segments with fundamentally different economics (mature, historically profitable capital goods vs early-stage, loss-widening battery assembly) sit in one consolidated P&L that a blended multiple would badly distort; Note 38 gives clean segment revenue/result/assets/liabilities to build it"}
+  secondary: {method: "Mid-cycle EV/EBITDA, Extrusion segment only", why: "Extrusion is a cyclical, government-infra-linked capital-goods business at a margin trough (16.1% of segment revenue, down from 19.3%); a normalised cross-check isolates it from the Battery loss"}
+  tertiary: {method: "EV/Sales or capacity-replacement-cost, Battery segment only", why: "Battery segment is loss-making at EBITDA (-31.9% of segment revenue), so earnings multiples do not work; EV/Sales or the disclosed ~Rs 250 Cr sunk capacity cost is the only workable cross-check pre-profitability"}
+  not_applicable: ["P/E (consolidated and standalone EPS both negative FY26)", "Dividend discount model (proposed dividend Nil FY26)", "PEG (no positive comparable growth-adjusted earnings base)"]
+irrelevant_ratios:
+  - {ratio: "Blended consolidated EBITDA margin", why: "Nets a shrinking-but-profitable Extrusion segment against a growing-but-more-loss-making Battery segment, hiding that the two are diverging, not converging"}
+  - {ratio: "Trade receivables turnover ratio", why: "Improved (4.97x to 5.22x) mainly because the receivable base shrank after the HEVPL write-off, while the ageing schedule shows growing multi-year overdue amounts"}
+  - {ratio: "Net capital turnover ratio", why: "Rose (2.37x to 2.67x) in a way that can reflect a shrinking working-capital base as much as genuine efficiency; contradicted by a falling current ratio and near-zero cash"}
+  - {ratio: "Trailing P/E", why: "Not computable; FY26 standalone and consolidated EPS are both negative"}
+  - {ratio: "Disclosed debt-service coverage ratio at face value", why: "Rose (10.32x to 14.36x) with the filing's own stated reason ('due to generate lower net operating income') internally inconsistent with an improving-safety reading; check underlying CFO, which nearly halved"}
+must_track_metrics:
+  - {metric: "Battery Division segment result as % of segment revenue (Note 38)", healthy: "loss ratio narrowing toward breakeven", red_flag: "loss ratio widening further (went from -20.1% to -31.9% FY25 to FY26)"}
+  - {metric: "Cash and cash equivalents + current investments buffer", healthy: "stable or rebuilding", red_flag: "continued drawdown (cash ~Rs 2 Cr, mutual funds halved Rs 53 Cr to Rs 23 Cr FY26)"}
+  - {metric: "Total borrowings and debt-equity ratio", healthy: "flat or declining", red_flag: "continued rise alongside falling equity (0.27x to 0.32x FY26)"}
+  - {metric: "Trade receivables ageing, >1yr and >3yr buckets", healthy: "shrinking overdue balances", red_flag: "growing overdue balances despite an improving turnover ratio"}
+  - {metric: "CRISIL (or successor rating agency) rating trajectory", healthy: "stable outlook, no further downgrade", red_flag: "any additional downgrade after two already occurred in FY26"}
+unit_economics:
+  unit: "Extrusion: one engineered extrusion line/machine. Battery: one lithium-ion battery pack/BMS module"
+  revenue_per_unit: "NOT FOUND — AR discloses only aggregate segment revenue, no unit counts or ASP for either segment"
+  margin_per_unit: "NOT FOUND at unit level — segment result margin is disclosed (Extrusion 16.1% of segment revenue FY26 down from 19.3%; Battery -31.9% of segment revenue FY26 down from -20.1%), but not per-unit"
+  key_lever: "Extrusion: government infra-capex cycle (JJM) timing. Battery: utilisation of the ~7 GWh Chakan capacity against a management-claimed Rs 1,500+ Cr revenue ceiling (implied ~9% utilisation on FY26 segment revenue of Rs 136.11 Cr, a computed cross-check, not an AR-stated figure)"
+first_deterioration_signals:
+  - {risk: "Revenue model: Battery segment growth trailing its own cited industry growth", first_signal: "Battery Division segment revenue (Note 38) growth rate vs disclosed EV industry unit growth"}
+  - {risk: "Margin: negative operating leverage in Battery segment", first_signal: "Battery Division segment result as % of segment revenue, next reporting period"}
+  - {risk: "Balance sheet: cash near-zero, rising debt, falling liquidity buffer", first_signal: "Cash and cash equivalents (Note 10) and current investments (Note 8) balances"}
+  - {risk: "Execution: unnamed ~Rs 150 Cr FY27 order and unquantified capacity utilisation", first_signal: "Battery Division segment revenue realised in FY27 vs the Rs 150 Cr claim"}
+  - {risk: "Structural: no captive cell supply, exposed to global cell price/FX", first_signal: "Consolidated/segment gross margin trend if cost data is ever disaggregated by segment"}
+mgmt_questions:
+  - "Battery segment loss widened Rs 25.53 Cr to Rs 43.35 Cr on 7.2% revenue growth — what quantified factors explain this against the MD&A's 'moving towards profitability as volumes scale up' claim?"
+  - "Who is the counterparty and what is the delivery schedule for the ~Rs 150 Cr FY27 order cited in the MD&A?"
+  - "What specific metric triggered the two CRISIL downgrades within FY26, and is the rating now stable into FY27?"
+  - "What is current utilisation of the ~7 GWh Geon capacity, and what incremental capex is needed to reach the claimed Rs 1,500+ Cr revenue ceiling?"
+  - "Following the Rs 30.39 Cr HEVPL/NCLT write-off, what credit-vetting process now applies to new EV-OEM and D2C customers?"
+  - "Customer advances fell 18.9% while inventory stayed flat and receivables aged into multi-year overdue buckets — is this demand softness or a collections problem?"
+  - "Is the Extrusion segment's 27.7% profit decline from temporary JJM funding delays, or from structural competitive pricing pressure?"
+one_line_verdict: "Profitable shrinking machine business is subsidising a loss-widening battery bet growing slower than its own market."
+analyst_note: "Every moat claim tested (market share, ARAI/AIS-156, IATF, design-win share, data network effect) traces only to the 2.5-year-stale Dec-2023 deck or to AR25; none appears in AR26. The single most load-bearing contradiction in this filing is that Battery segment revenue grew 7.2% while its loss ratio widened from -20.1% to -31.9% of segment revenue — the opposite of the operating-leverage story management tells in the same MD&A paragraph. Segment-level cost data (materials, employee cost by segment) is not disclosed, so unit economics and the margin-compression driver cannot be isolated between the two businesses; this is a genuine document gap, not an estimation opportunity."

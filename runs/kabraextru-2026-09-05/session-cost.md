@@ -14,3 +14,5 @@ Per-stage token ledger. One row per subagent run. Stage 0 is orchestrator-inline
 | 2 | notes triple-pass (pass 3 + consolidation) | claude-sonnet-5 | default | n/a | n/a | 116854 | 457s | 3 |
 | 3 | AR deep dive (8 phases) | claude-sonnet-5 | default | n/a | n/a | 305649 | 730s | 1 |
 | 5 | concall (NO-CONCALL: AR guidance vs delivery) | claude-sonnet-5 | default | n/a | n/a | 185340 | 792s | 1 |
+| 4 | business model decoder | claude-sonnet-5 | default | n/a | n/a | 172321 | 955s | 1 |
+| 6 | peer concall verification (FAILED: API 429 session rate limit, aborted mid-read, no report written) | claude-sonnet-5 | default | n/a | n/a | n/a | n/a | 1 |

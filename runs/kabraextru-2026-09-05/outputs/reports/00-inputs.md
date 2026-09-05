@@ -50,3 +50,8 @@ Empty-folder question asked once. Operator: proceed with the gaps (2026-09-05).
 | HBLENGINE-Concall_Sep_2025 | 25-Sep-2025 | FY25 AGM transcript, not an earnings call |
 Newest genuine peer earnings call is Oct-2024. Recorded as input gap
 peer-concall-mislabel-stale (MEDIUM).
+
+## Run log
+- Stage 6 run 1 aborted on an API rate limit (HTTP 429, "session limit, resets
+  17:30 UTC") while reading the HBL AGM transcript; no report written. Mechanical
+  error per orchestrator Section 7; retried after the reset window (run 2).

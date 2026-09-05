@@ -430,7 +430,8 @@ html, body {
 
     <!-- Controls reminder shown for a few seconds when you start (laptop only) -->
     <div id="controls-hint" hidden>
-      <span><b>W A S D</b> or <b>↑ ↓ ← →</b> to walk</span>
+      <span><b>W A S D</b> to walk</span>
+      <span><b>← →</b> or drag to look around</span>
       <span><b>Shift</b> to run</span>
       <span><b>E</b> to talk / act</span>
       <span><b>N</b> for notebook</span>
@@ -871,6 +872,10 @@ class Input {
     this._interactQueued = false;
     // Running: Shift held on a laptop, or the run button toggled on a phone.
     this.runToggle = false;
+    // Camera turning: -1..1 from the arrow keys, plus drag distance in pixels.
+    this._dragPixels = 0;
+    this._lastCameraInput = 0; // time of the last manual camera turn
+    this._setupDrag();
 
     // Is this a touch device? If so we show the on-screen controls.
     this.isTouch = matchMedia("(pointer: coarse)").matches || "ontouchstart" in window;
@@ -904,8 +909,8 @@ class Input {
     let x = 0, y = 0;
     if (this.keys.has("w") || this.keys.has("arrowup")) y -= 1;
     if (this.keys.has("s") || this.keys.has("arrowdown")) y += 1;
-    if (this.keys.has("a") || this.keys.has("arrowleft")) x -= 1;
-    if (this.keys.has("d") || this.keys.has("arrowright")) x += 1;
+    if (this.keys.has("a")) x -= 1;
+    if (this.keys.has("d")) x += 1;
     // If the joystick is active, it wins (handled in touch code).
     if (!this._joystickActive) this.move = { x, y };
   }
@@ -971,6 +976,39 @@ class Input {
       this.runToggle = !this.runToggle;
       runBtn.classList.toggle("on", this.runToggle);
     }, { passive: false });
+  }
+
+  // ---- Turning the camera ----
+  // Drag anywhere on the game canvas (mouse or finger) to look around.
+  _setupDrag() {
+    const canvas = document.getElementById("game-canvas");
+    if (!canvas) return;
+    let dragging = false, lastX = 0;
+    canvas.addEventListener("pointerdown", (e) => { dragging = true; lastX = e.clientX; });
+    window.addEventListener("pointermove", (e) => {
+      if (!dragging) return;
+      this._dragPixels += e.clientX - lastX;
+      lastX = e.clientX;
+      this._lastCameraInput = performance.now();
+    });
+    window.addEventListener("pointerup", () => { dragging = false; });
+    window.addEventListener("pointercancel", () => { dragging = false; });
+  }
+
+  // How far to turn the camera this frame, in radians. Arrow keys turn at a
+  // steady rate; a drag turns by the distance moved. Positive = turn left.
+  cameraDelta(dt) {
+    let d = 0;
+    if (this.keys.has("arrowleft")) { d += dt * 2.2; this._lastCameraInput = performance.now(); }
+    if (this.keys.has("arrowright")) { d -= dt * 2.2; this._lastCameraInput = performance.now(); }
+    d -= this._dragPixels * 0.006;
+    this._dragPixels = 0;
+    return d;
+  }
+
+  // Seconds since the player last turned the camera by hand.
+  cameraIdleFor() {
+    return (performance.now() - this._lastCameraInput) / 1000;
   }
 
   // Is the player asking to run?
@@ -3296,7 +3334,10 @@ class Player {
     this.speed = 6.2;            // metres per second
     this.facing = 0;             // which way the body points (radians)
 
-    // The camera sits behind and above, looking at the player.
+    // The camera sits behind and above, looking at the player. `camYaw` is the
+    // direction it looks from; the player can turn it, and it eases in behind
+    // the player while walking if left alone.
+    this.camYaw = 0;
     this.camOffset = new THREE.Vector3(0, 6.5, 11);
     this._tmp = new THREE.Vector3();
     this._forward = new THREE.Vector3();
@@ -3309,11 +3350,22 @@ class Player {
   // Move the player each frame based on input.
   // moveVec is { x, y } from the Input class, each -1..1.
   //   x: left(-) / right(+)     y: forward(-) / back(+)
-  update(dt, moveVec, running = false) {
+  update(dt, moveVec, running = false, camDelta = 0, camIdle = 99) {
     // How hard is the stick / key pushed?
     const mag = Math.hypot(moveVec.x, moveVec.y);
     const walking = mag > 0.05;
     const speed = this.speed * (running ? 1.8 : 1);
+
+    // Turn the camera. Indoors it settles to look straight into the room.
+    if (this.world.currentRoom) {
+      this.camYaw = this._lerpAngle(this.camYaw, 0, Math.min(1, dt * 4));
+    } else {
+      this.camYaw += camDelta;
+      // Gentle auto-follow: after a couple of seconds without manual turning,
+      // while walking, the camera drifts round to sit behind the player.
+      if (walking && camIdle > 2) this.camYaw = this._lerpAngle(this.camYaw, this.facing + Math.PI, Math.min(1, dt * 0.9));
+    }
+    this.camOffset.set(Math.sin(this.camYaw) * 11, 6.5, Math.cos(this.camYaw) * 11);
 
     if (walking) {
       // Work out the camera's flat (ignore-height) forward direction.
@@ -5937,7 +5989,7 @@ class Game {
     const blocked = this._uiBlocking();
 
     // Move the player only when no menu is up.
-    this.player.update(dt, blocked ? { x: 0, y: 0 } : this.input.move, this.input.running);
+    this.player.update(dt, blocked ? { x: 0, y: 0 } : this.input.move, this.input.running, blocked ? 0 : this.input.cameraDelta(dt), this.input.cameraIdleFor());
     this.world.update(dt, elapsed, this.player.position);
 
     // Bob and spin the job markers so they draw the eye, and let each

@@ -1,0 +1,20 @@
+stage: B12d
+company: "PITTIENG"
+run_date: "2026-09-05"
+model: claude-sonnet-5
+status: complete
+peers_audited: 12
+substantive_confirmed: 12
+substantive_unsupported: []
+unused_but_relevant: []
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "MAJOR", location: "B06 Part 1 Claim 6 net-read", claimed: "RKFORGE, Q2 FY26 call, Lalit Khetan, PDF p.9 — 'debt levels have substantially shot up as on September '25 to, I think, more than Rs. 2,500 crores'", source_truth: "RKFORGE Nov-2025 transcript p.9: this sentence is spoken by analyst Sunny Gosar as a question, not by Lalit Khetan; Lalit Khetan's actual reply cites a Rs 600 Cr six-month increase and Naresh Jalan later states 'close to Rs. 2,400 crores'", note: "analyst's figure misattributed to management; does not flip Claim 6's CONTRADICTED verdict, which is independently carried by correctly-attributed RKFORGE debt-reduction figures elsewhere"}
+  - {severity: "MAJOR", location: "B06 Part 1 Claim 4 net-read", claimed: "'we will run out of space' cited as SANSERA Q2 FY26 call, PDF p.7", source_truth: "phrase does not appear in the SANSERA Nov-2025 (Q2/H1 FY26) transcript at all; it appears in the SANSERA May-2026 (Q4 FY26) transcript, PDF p.8, spoken by B.R. Preetham", note: "wrong quarter cited for a quote used to support an 'every quarter' capacity-racing pattern; PARTIALLY VERIFIED verdict for Claim 4 survives on other correctly-cited anchors"}
+  - {severity: "MINOR", location: "B06 Part 1 Claim 3/4 quotes", claimed: "RKFORGE Nov-2025 'bagged orders worth Rs. 200 crores' cited PDF p.4; SANSERA Feb-2026 'trade deal and EU FTA' cited PDF p.2; SANSERA May-2026 'forging could be a very, very shortage' cited PDF p.9", source_truth: "actual pages are p.5, p.3, and p.10 respectively (confirmed by page-marker search)", note: "three independent off-by-one page slips, all in the same direction; content and attribution otherwise correct; no verdict affected"}
+  - {severity: "MINOR", location: "B06 Part 1 Claim 6 net-read", claimed: "RKFORGE Q1 FY27 call, PDF p.21 — operating cash flow 'about Rs. 840 crores last year and probably is highest in the history of the company'", source_truth: "this figure is spoken by analyst Bharat C. Shah inside his own question, not confirmed with that number by management in the same exchange", note: "sourcing-provenance gap, not a fabrication; management does not contest the figure but does not independently restate it either"}
+critical_count: 0
+major_count: 2
+minor_count: 4
+acceptance_rate: 100

@@ -1,0 +1,37 @@
+stage: B01-gate0
+company: "YASHO"
+run_date: "2026-09-05"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "screener Profit_Loss/Balance_Sheet/Cash_Flow/Quarters CSVs are header-only (collector defect); all financials extracted from screener-Data_Sheet.csv and AR FY2026/FY2025 text instead"
+  - "no results/ or rating/ PDFs in corpus; Q1FY27 latest-period figures sourced only from Investor Presentation (unaudited), used for context, never substituted into a deal-breaker or Block D/E score in place of FY2026 audited figures"
+  - "promoter holding 3-year change (E2): only FY2025-FY2026 + Q1FY27 available in corpus, no FY2023 baseline"
+  - "capex breakdown and trade payables unavailable for FY2021-FY2023 (no AR corpus for those years); FCF (Block B2/B3) and WC days (Block B4) computed only for FY2024-FY2026"
+  - "peer/sector comparison data absent in corpus for moat tests M2, M5, M9"
+flags:
+  - {type: FLAG-GATE0, reason: "Classification AVOID; Core 35/100 driven by growth-quality decoupling (revenue CAGR 18.22% vs PAT CAGR 3.30%, FY21-26) and a triggered leverage/coverage deal-breaker (ND/EBITDA 3.74x, EBIT/Interest 1.61x, FY2026 audited), both traced to the FY2024 Pakhajan capex cycle (Rs 336.99 cr in one year)."}
+  - {type: FLAG-CASH, reason: "Block B 5/20; cumulative FCF/PAT FY2024-FY2026 = -2.50x, only 1 of 3 measurable years FCF-positive, driven by FY2024 capex exceeding CFO; FY2026 shows a sharp reversal (CFO Rs 151.29 cr vs Rs -40.85 cr FY2025) not yet reflected in the cumulative ratio."}
+  - {type: FLAG-LEVERAGE-DIVERGENCE, reason: "FY2026 audited ND/EBITDA (3.74x, triggers deal-breaker 6) vs Q1FY27 company-disclosed ND/EBITDA (1.86x, Investor Presentation p.17-18); TTM EBITDA basis behind the Q1FY27 figure could not be reconciled from provided data. Matches company memory load-bearing verification items #2 and #3 (margin step-up and leverage improvement, structural or one quarter) — top downstream verification priority."}
+data_years: 6
+fy_range: "FY2021 to FY2026"
+blocks: {A: 6, B: 5, C: 7, D: 4, E: 13}
+core_score: 35
+moat_score: 10
+grand_total: 45
+moats_confirmed: 3
+moat_class: "MODERATE"
+classification: "AVOID"
+deal_breakers:
+  - "1: Block A 6 <8 -> max GOOD (non-binding)"
+  - "2: Block B 5 <8 -> max GOOD (non-binding)"
+  - "6: ND/EBITDA 3.74x >3x AND Interest Coverage 1.61x <3x (FY2026 audited) -> AVOID (binding)"
+history_downgrade: false
+data_notes:
+  - "PEER DATA NEEDED for M2 (cost advantage), M5 (scale/dominance), M9 (brand) — no peer/sector comparison set in corpus"
+  - "WC days (Block B4) and FCF (Block B2/B3) computed only for FY2024-FY2026; wider FY21-23 window unavailable due to missing capex/payables detail"
+  - "M9 gross-margin proxy used: (Revenue - Material Cost) / Revenue = 40.13% FY2026, no peer benchmark available to score against"
+  - "E3 (0% pledge) is an absence-of-disclosure inference (no pledge/encumbrance mention found in AR FY2026 full text), not an explicit stated percentage"
+  - "D1/D2 scored on FY2026 audited annual basis; Q1FY27 company-disclosed leverage improvement (3.74x -> 1.86x ND/EBITDA) noted but not used to score or override deal-breaker 6, methodology unreconciled from provided data"
+block_b_trend: "improving, but from a weak base: CFO swung from -Rs 40.85 cr (FY2025) to +Rs 151.29 cr (FY2026); cumulative FY24-26 FCF/PAT still -2.50x"
+analyst_note: "AVOID is mechanical, not a company-quality verdict: Block D failure and much of Block B weakness trace to one event, the FY2024 Pakhajan capex cycle (Rs 336.99 cr in a single year), which pushed FY2026 audited ND/EBITDA to 3.74x and interest coverage to 1.61x, triggering deal-breaker 6. Growth quality is separately weak on its own terms: revenue CAGR 18.22% has not converted to PAT CAGR (3.30%) over FY21-26, with FY2025 a near-trough year (PAT Rs 6.11 cr, ROE 1.46%). The scorecard cannot see past FY2026 (Mar-2026): the only later data point, Q1FY27, shows large moves in the same metrics that drove the AVOID (leverage 3.74x->1.86x, margin 17.4%->23.8% per company memory) but its EBITDA/leverage methodology is not reconcilable from the provided corpus, so none of it is scored here. Whether that Q1FY27 move is structural (supports a transition thesis) or a single strong quarter is the single highest-value fact for downstream verification, and is already named as such in company memory's spear load-bearing facts."

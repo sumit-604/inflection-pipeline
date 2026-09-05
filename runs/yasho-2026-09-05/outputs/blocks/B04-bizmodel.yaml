@@ -1,0 +1,63 @@
+stage: B04-bizmodel
+company: "YASHO"
+run_date: "2026-09-05"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - "Revenue mix by division inconsistent within the AR itself for FY2025-26: About Us page shows 87% Industrial / 13% Consumer (AR p.5); MD&A shows 89% Industrial / 11% Consumer (AR p.29). Investor Presentation Q1FY27 shows 89/11 for Q1FY27 and 87/13 for Q1FY26 (Inv. Pres. slide 16), matching each AR figure to a different period. This report uses the MD&A (statutory) figure, 89/11, as primary."
+  - "No customer-concentration disclosure (top 1/5/10 customer % of revenue) anywhere in AR or Investor Presentation, despite risk mitigation language citing customer diversification. One MNC contract is expected to add ~Rs150 cr annual revenue from Q1FY28, a material single-customer block that cannot be sized against total revenue without this disclosure."
+  - "No named competitors or market-share figures anywhere in the source documents; competitive intensity is described only generically."
+  - "Ind AS 108 treats the entire company as ONE reportable operating segment ('manufacture of rubber chemicals'); Industrial vs Consumer divisional profitability (margin, ROCE) is not separately audited or disclosed."
+business_type: "manufacturing"
+revenue_streams:
+  - {name: "Industrial Chemicals (rubber chemicals, lubricant additives, stabilisers)", type: "B2B manufactured-goods sale, spec-driven ingredient supply", pct_of_revenue: 89, predictability: "M"}
+  - {name: "Consumer Chemicals (aroma/F&F, food additives, personal care, agro/pharma intermediates)", type: "B2B manufactured-goods sale, spec-driven ingredient supply", pct_of_revenue: 11, predictability: "M"}
+asset_intensity: "heavy"
+wc_intensity: "high"
+pricing_power: "moderate"
+cyclicality: "cyclical"
+moats_present:
+  - {moat: "switching costs (customer-funded 15-year MNC supply agreement)", durability: "medium-high, concentrated in one relationship"}
+  - {moat: "regulatory/intangible assets (REACH + 8 international certifications)", durability: "medium"}
+  - {moat: "distribution (port-proximate plants + 2 overseas subsidiaries)", durability: "medium"}
+  - {moat: "brand (Star Export House status, 40-year track record)", durability: "low-medium"}
+valuation_methods:
+  primary: {method: "EV/EBITDA", why: "EBITDA is less distorted than PAT/EPS by the depreciation and interest swings from the active, debt-funded capex cycle (Debt/EBITDA 5.12x FY24 to 1.86x Q1FY27)"}
+  secondary: {method: "DCF", why: "The 15-year customer-funded MNC supply agreement gives an unusually long contracted revenue anchor to build explicit cash flows around, though near-term FCF is depressed by the FY27 Rs250 cr capex outlay"}
+  tertiary: {method: "P/E", why: "Usable once 2-3 quarters of post-capex-cycle earnings establish a stable base; currently distorted by the sharp margin inflection (Q1FY26 EBITDA margin 16.46% to Q1FY27 24.18%)"}
+  not_applicable: ["DDM (nominal dividend, earnings retained for growth)", "P/B (not an asset-backed or financial-sector story)", "SOTP/NAV (single reportable operating segment under Ind AS 108)", "Replacement cost (not the relevant lens for this growth-stage name)"]
+irrelevant_ratios:
+  - {ratio: "Trailing net profit margin in isolation", why: "Understated by heavy interest cost carried through the capex cycle; FY26 PAT margin only 3.04% despite 20.99% EBITDA growth"}
+  - {ratio: "Trailing P/E", why: "PAT swung +312.74% YoY FY26 and EBITDA +127.61% YoY Q1FY27 as utilisation crossed an inflection point; earnings base is not stable"}
+  - {ratio: "Dividend yield", why: "FY26 dividend nominal at Rs0.50/share; Board explicitly retains earnings for growth"}
+  - {ratio: "Static current ratio", why: "Flat 1.37 FY26 vs 1.38 FY25 even as the underlying WC cycle was cut from 190 to 143 days; misses the trend"}
+  - {ratio: "Single-year ROE/RoNW level", why: "Depressed by leverage carried through the capex cycle and mid-cycle margin inflection; understates normalized earning power"}
+  - {ratio: "Asset turnover as pure efficiency signal", why: "Mechanically depressed by capacity built ahead of demand (Pakhajan land only 25% utilised by design)"}
+must_track_metrics:
+  - {metric: "Revenue growth YoY / volume growth YoY", healthy: "tracking toward 30-40% guide, volume leading revenue", red_flag: "volume growth below revenue growth or below ~15%"}
+  - {metric: "EBITDA margin", healthy: "sustaining above ~20%", red_flag: "falling back toward 16-17%"}
+  - {metric: "Gross margin (revenue less material cost)", healthy: "at or above ~40%", red_flag: "compression below high-30s%"}
+  - {metric: "Debt/EBITDA", healthy: "at or below 2.5x covenant", red_flag: "rising back above 2.5-3x given FY27 borrowing plan"}
+  - {metric: "Working capital cycle (days)", healthy: "holding near/below 143 days", red_flag: "drifting back toward 190 days"}
+unit_economics:
+  unit: "1 tonne of specialty chemical product (blended, Industrial + Consumer)"
+  revenue_per_unit: "NOT FOUND - company discloses % volume growth, not absolute tonnage or per-tonne realization"
+  margin_per_unit: "NOT FOUND"
+  key_lever: "Capacity utilisation and product mix - Q1FY27 incremental EBITDA margin on added revenue was ~38.2% (vs FY26 full-year ~16.3%), showing operating leverage accelerating sharply as utilisation crosses a pivot point"
+first_deterioration_signals:
+  - {risk: "Revenue model - growth guide depends on continued MNC engagement and new design wins", first_signal: "Volume growth YoY falling below management's guided range, or export revenue % declining"}
+  - {risk: "Margin - raw material volatility and Chinese import pricing pressure", first_signal: "Gross margin % contracting quarter-on-quarter"}
+  - {risk: "Balance sheet - FY27 capex outlay doubled to Rs250 cr with ~Rs100 cr fresh borrowing against a 2.5x covenant", first_signal: "Debt/EBITDA ticking back above ~2x or interest coverage declining q/q"}
+  - {risk: "Execution - tight MNC-contract plant construction timeline (equipment Q3FY27, trial Q4FY27, commercial Q1FY28)", first_signal: "Any slippage in these milestone dates, or slower customer-advance disbursement pace"}
+  - {risk: "Structural - industry CAGR (3.65-5.5%) well below the company's 30-40% growth guide", first_signal: "Capacity utilisation plateauing below the stated 20-25% no-further-capex headroom while growth decelerates toward industry rates"}
+mgmt_questions:
+  - "What is the top 1/5/10 customer revenue concentration, and how much of the FY26-28 growth guide rests on the single MNC contract?"
+  - "Of the 42% Q1FY27 volume growth, how much is existing-customer off-take versus genuinely new customers/geographies?"
+  - "What is the blended realized price per tonne trend by division, separating volume-led from price/mix-led margin gains?"
+  - "How much of the FY27 capex increase (Rs125 cr to Rs250 cr) is tied to signed contracts versus speculative capacity?"
+  - "What is the raw-material import-dependency ratio, and what hedging/alternate-sourcing exists for the volatile sulphur-based chemistries?"
+  - "What is the Debt/EBITDA covenant headroom if growth comes in at half the guided 30-40% rate?"
+  - "Is the working-capital cycle cut from 190 to 143 days structural (process change) or a timing/one-off effect?"
+one_line_verdict: "Spec-driven chemicals manufacturer growing on design wins and capacity, not industry beta, with real but unevenly distributed pricing power."
+analyst_note: "The central open question this stage cannot resolve is how much of Yasho's margin story is genuine value-added pricing power versus fixed-cost absorption (operating leverage) as utilisation rises from ~60% to ~65%+. The Q1FY27 incremental EBITDA margin (~38%) is far above the FY26 full-year incremental margin (~16%), which is consistent with operating leverage doing most of the work as volumes surge, not necessarily with pricing power strengthening. If utilisation growth slows, margin could give back more than the mix story alone would predict. Also note the AR's own internal 87/13 vs 89/11 divisional-split inconsistency (flagged above) - downstream stages should not treat either number as more precise than a rounded estimate. No divisional (Industrial vs Consumer) profitability is disclosed since Ind AS 108 reports a single operating segment, so any divisional margin/ROCE analysis downstream must be sourced elsewhere or marked NOT FOUND."

@@ -1,0 +1,79 @@
+stage: B05-concall
+company: "YASHO"
+run_date: "2026-09-05"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags: ["FY28 revenue target and margin guidance both revised upward every quarter with thin multi-quarter proof", "plant-level utilisation withheld under repeated direct questioning", "MNC LTSA timeline slipped Q4FY27->Q1FY28 without being labelled a change"]
+quarters_analysed: ["Q3 FY26", "Q4 FY26", "Q1 FY27"]
+triggers:
+  - {priority: 1, name: "MNC LTSA commercialisation (customer-funded capex)", type: "INORGANIC/VOLUME", timeframe: "Q1 FY28", conviction: "M", confirm_signal: "equipment delivery on schedule Q2/Q3 FY27, advance funding keeps growing beyond INR51.4cr", kill_signal: "further timeline slip beyond Q1 FY28, advance stalls or is refunded"}
+  - {priority: 2, name: "EBITDA margin durability at 22%+ vs 17.4% FY26 base", type: "COST/PRICE-MIX", timeframe: "next 2-3 quarters", conviction: "L-M", confirm_signal: "Q2/Q3 FY27 prints hold margin above ~20%", kill_signal: "margin reverts toward the old 17-19% band next quarter"}
+  - {priority: 3, name: "Capacity ramp: utilisation >75% FY27, INR250cr Pakhajan capex on schedule", type: "VOLUME", timeframe: "FY27", conviction: "M", confirm_signal: "utilisation tracks toward 75%, new buildings commission on 15-month timeline", kill_signal: "utilisation stalls below 65-70%, capex further deferred"}
+  - {priority: 4, name: "FY28 revenue target >INR1,600cr / 30-40% growth guidance", type: "VOLUME", timeframe: "FY28", conviction: "L-M", confirm_signal: "quarterly revenue growth stays 30-40% for 2+ more quarters", kill_signal: "growth decelerates below 25% YoY for two consecutive quarters, or FY28 number walked back"}
+  - {priority: 5, name: "Debt/rating momentum (1.86x, A-)", type: "COST", timeframe: "ongoing", conviction: "H", confirm_signal: "ratio holds below 2.5x despite new ~INR100cr FY27 borrowing", kill_signal: "ratio rises materially past 2.5x post-borrowing, or ratings reversal"}
+  - {priority: 6, name: "Export/geographic diversification (US tariff relief, EU FTA, new Asia/Africa/LatAm)", type: "REGULATORY-POLICY/SECTORAL", timeframe: "FY27-28", conviction: "M", confirm_signal: "export mix closes on 69-75%, FTA timing clarified", kill_signal: "export mix stalls below 65%, FTA further delayed"}
+  - {priority: 7, name: "New molecule pipeline (INR50-100cr/molecule threshold)", type: "VOLUME", timeframe: "long", conviction: "L", confirm_signal: "a named new molecule crosses commercial scale", kill_signal: "R&D threshold language keeps shifting without a delivered molecule"}
+guidance:
+  - {item: "FY26 revenue", number: "INR800-850 cr", timeframe: "FY26", stated_in: "Q2 FY26 call (context)"}
+  - {item: "FY26 EBITDA margin band", number: "17-19%", timeframe: "FY26", stated_in: "Q2 FY26 call (context)"}
+  - {item: "Debt-to-EBITDA target", number: "3.0-3.5x", timeframe: "by FY27", stated_in: "Q2 FY26 call (context)"}
+  - {item: "WC/inventory days target", number: "160-175 days", timeframe: "by March 2026 (FY26 year end)", stated_in: "Q2 FY26 call (context)"}
+  - {item: "Export mix target", number: "~70% of revenue", timeframe: "6-18 months from Nov 2025", stated_in: "Q2 FY26 call (context)"}
+  - {item: "MNC LTSA plant operational", number: "n/a (milestone)", timeframe: "Q4 FY27", stated_in: "Q2 FY26 call (context)"}
+  - {item: "MNC project capex", number: "INR85-90 cr, customer-funded", timeframe: "ongoing", stated_in: "Q3 FY26 call"}
+  - {item: "MNC equipment delivery/commercialisation", number: "n/a", timeframe: "equipment Q2 FY27, commercial Q1 FY28", stated_in: "Q3 FY26 call"}
+  - {item: "Two new manufacturing lines capex", number: "INR25.9 cr", timeframe: "trials Mar'26, commercial Q1 FY27", stated_in: "Q3 FY26 call"}
+  - {item: "FY28 revenue potential", number: "~INR1,500 cr", timeframe: "FY28", stated_in: "Q3 FY26 call"}
+  - {item: "Pakhajan-only optimal utilisation/revenue", number: "80-85% utilisation, INR750-850 cr revenue", timeframe: "by FY28", stated_in: "Q3 FY26 call"}
+  - {item: "FY27 capacity utilisation target", number: ">75%", timeframe: "FY27", stated_in: "Q4 FY26 call"}
+  - {item: "FY27 capex plan (original)", number: "INR125 cr, internal accruals", timeframe: "FY27", stated_in: "Q4 FY26 call"}
+  - {item: "Debt-to-EBITDA comfort zone", number: "2.5x", timeframe: "medium term", stated_in: "Q4 FY26 call"}
+  - {item: "WC days target (revised)", number: "170-175 days", timeframe: "6-12 months from May 2026", stated_in: "Q4 FY26 call"}
+  - {item: "FY27 EBITDA margin guidance", number: "at least 2-3pp higher than FY26 (~19-20%+); once '20% or so'", timeframe: "FY27", stated_in: "Q4 FY26 call"}
+  - {item: "FY27 volume growth guidance", number: "35-45% (after intra-call wobble)", timeframe: "FY27", stated_in: "Q4 FY26 call"}
+  - {item: "Gross margin band", number: "40-42%", timeframe: "ongoing", stated_in: "Q4 FY26 call"}
+  - {item: "FY28 revenue target (revised up)", number: ">INR1,600 cr", timeframe: "FY28", stated_in: "Q1 FY27 call"}
+  - {item: "Annual revenue growth guidance", number: "30-40%", timeframe: "next few years", stated_in: "Q1 FY27 call"}
+  - {item: "FY27 capex plan (revised up)", number: "INR250 cr", timeframe: "FY27", stated_in: "Q1 FY27 call"}
+  - {item: "FY27 incremental borrowing plan", number: "~INR100 cr", timeframe: "FY27", stated_in: "Q1 FY27 call"}
+  - {item: "EBITDA margin sustainability", number: "24.2% (Q1 FY27 actual), guided to maintain", timeframe: "going forward", stated_in: "Q1 FY27 call"}
+promise_delivery:
+  delivered: 7
+  partial: 2
+  missed: 1
+  rows:
+    - {promised_in: "Q2 FY26 call", promise: "FY26 revenue INR800-850 cr", outcome: "delivered", explanation: "FY26 actual INR830 cr per Q4 FY26 call"}
+    - {promised_in: "Q2 FY26 call", promise: "FY26 EBITDA margin 17-19%", outcome: "delivered", explanation: "FY26 actual 17.4%, low end of band"}
+    - {promised_in: "Q2 FY26 call", promise: "Debt/EBITDA 3.0-3.5x by FY27", outcome: "delivered", explanation: "3.75x at FY26 close, then 1.86x by Q1 FY27, well inside target a year early"}
+    - {promised_in: "Q2 FY26 call", promise: "Inventory/WC days 160-175 by March (FY26 year-end)", outcome: "missed", explanation: "190 days reported at Q4 FY26 call; miss not directly acknowledged"}
+    - {promised_in: "Q2 FY26 call", promise: "Export mix ~70% within 6-18 months", outcome: "delivered (near, behind interim pace)", explanation: "62% at Q4 FY26 (behind pace), 69% at Q1 FY27 (on target)"}
+    - {promised_in: "Q2 FY26 call", promise: "MNC LTSA plant operational Q4 FY27", outcome: "partial/slipped", explanation: "Q3 FY26 call reframes to commercialisation Q1 FY28; not flagged as a change"}
+    - {promised_in: "Q2 FY26 call (implied ~INR100cr FY26 capex)", promise: "FY26 capex plan", outcome: "partial", explanation: "actual INR75 cr; deferred balance capex citing tariff uncertainty, explained honestly"}
+    - {promised_in: "Q4 FY26 call", promise: "WC days 170-175 in 6-12 months", outcome: "delivered", explanation: "143 days at Q1 FY27, beaten within 3 months"}
+    - {promised_in: "Q4 FY26 call", promise: "Debt/EBITDA comfort zone 2.5x", outcome: "delivered", explanation: "1.86x at Q1 FY27, beaten early; corroborated by CRISIL/ICRA upgrade to A-"}
+    - {promised_in: "Q4 FY26 call", promise: "FY27 volume growth 35-45%", outcome: "delivered", explanation: "Q1 FY27 volume +42% YoY"}
+excuse_pattern: "balanced"
+repeated_evasions:
+  - {question: "What is the individual utilisation of Pakhajan vs Vapi?", quarters_asked: ["Q4 FY26", "Q1 FY27"], classification: "deflected every time"}
+  - {question: "Is the FY28 revenue number (1,500->1,600cr) real guidance or aspiration?", quarters_asked: ["Q3 FY26", "Q4 FY26", "Q1 FY27"], classification: "answer changed between quarters (hedge softened as number rose)"}
+  - {question: "How exposed is Yasho to Chinese/Asian lube-additive competitor capacity, and what is the pricing impact?", quarters_asked: ["Q3 FY26", "Q4 FY26", "Q1 FY27"], classification: "answered eventually, never with hard numbers"}
+credibility_grade: "B"
+credibility_basis: "7 of 10 tracked promises delivered, several beaten ahead of schedule (debt/EBITDA, WC days, rating upgrade independently corroborated); misses explained via legitimate external-blame or honest self-attribution, not denial; but FY28 target and margin guidance both revised upward every quarter on thinning multi-quarter proof, and plant-level detail withheld under repeated direct questioning."
+peer_questions:
+  - {question: "Is the $12-15bn global addressable market for lube additives/adjacent chemistry corroborated by any peer's market-sizing commentary?", why: "underpins credibility of the 30-40% growth and >INR1,600cr FY28 target", check_peers: ["NOCIL", "other listed Indian rubber-chemical/lube-additive peers"]}
+  - {question: "Do peers report pricing or volume pressure from Chinese/Asian lube-additive capacity expansion coming online around FY27?", why: "tests whether margin expansion (17.4%->24.2%) is happening despite or because this threat is over/understated", check_peers: ["rubber-chemical/lube-additive peer set with disclosed China import commentary"]}
+  - {question: "Do peers corroborate raw-material/petrochemical inflation of 10-15% since 'pre-war era'?", why: "validates or challenges Yasho's claim margin held up despite input cost inflation", check_peers: ["specialty chemical peers with petrochemical-derivative raw material base"]}
+  - {question: "What is the actual dated implementation timeline of the India-EU FTA chemical-tariff cut to 0%?", why: "resolves internal inconsistency (already helping in Q3 FY26 vs not yet in place per Q4 FY26) and tests EU growth narrative timing", check_peers: ["Indian chemical exporters with EU exposure"]}
+  - {question: "Is a 15-year, fully customer-funded capex LTSA a recognised structure elsewhere in Indian specialty chemicals, and on what terms?", why: "tests whether Yasho's deal terms are market-standard or unusually favourable/unfavourable", check_peers: ["CDMO-adjacent or specialty-chemical peers with disclosed customer-funded capacity deals"]}
+  - {question: "Do peer brownfield capex-to-revenue asset-turn ratios support Yasho's stated 2.5x-4:1 revenue-to-capex assumption?", why: "load-bearing assumption behind the FY28 capacity-driven revenue build", check_peers: ["comparable brownfield-heavy specialty-chemical capex programs"]}
+red_flags:
+  - {flag: "FY28 revenue target revised upward every quarter (1,500cr->1,450cr reconfirmed->>1,600cr) alongside margin guidance rising from a multi-year 17-19% band to a single-quarter 24.2% print guided to be maintained", severity: "MEDIUM"}
+  - {flag: "Plant-level utilisation (Pakhajan vs Vapi) withheld across three consecutive quarters despite repeated specific requests", severity: "LOW-MEDIUM"}
+  - {flag: "MNC LTSA 'operational by Q4 FY27' silently became 'commercialisation Q1 FY28' from Q3 FY26 onward, never explicitly labelled as a change", severity: "LOW"}
+  - {flag: "New FY27 borrowing plan (~INR100cr) sits against earlier stated no-absolute-debt-increase framing; functional reversal not framed as a change", severity: "LOW"}
+  - {flag: "India-EU FTA timing described inconsistently between Q3 FY26 and Q4 FY26 calls", severity: "LOW"}
+  - {flag: "Internal inconsistency in FY27 volume-growth guidance within the single Q4 FY26 call before settling", severity: "LOW"}
+dropped_triggers: ["Domestic lube-packaging players building Indian plants as an RM-demand tailwind for Yasho (raised Q2 FY26 call, never mentioned again in Q3/Q4 FY26 or Q1 FY27)"]
+timeline_slippages: ["MNC LTSA: 'plant operational Q4 FY27' (Q2 FY26 call) -> 'commercialisation Q1 FY28' (Q3 FY26 call onward), ~1-quarter slip", "WC/inventory: '160-175 days by March' (Q2 FY26 call) missed at 190 days (Q4 FY26 call); recovered and beaten at 143 days by Q1 FY27 against a re-set target", "India-EU FTA: implied already helping per Q3 FY26 call, then 'will come in place only by early January, hopefully' per Q4 FY26 call"]
+analyst_note: "The single largest open question: Q1 FY27's 24.2% EBITDA margin rests on ONE quarter of print against a 17-19% multi-year guided band. Management's mechanism explanation (utilisation 50%->65%, offtake, mix, 10-12% margin premium on new products) is plausible and was given under skeptical direct questioning, which lends some credibility. But the FY28 target has risen every quarter in lockstep with rising margin confidence, and the Q3 FY26 call's own numbers (1,500cr 'at 40% utilisation of available space' vs. Jay's separately quoted 750-850cr Pakhajan-only figure) were never reconciled across any of the three calls. Treat >20% margin and >INR1,600cr FY28 as unproven-but-not-yet-contradicted; stage 6 peer verification and one more quarter of print are the tests, not this stage."

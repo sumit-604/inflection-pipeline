@@ -1,0 +1,51 @@
+stage: B00-inputs
+company: SHHARICH
+run_date: 2026-09-05
+model: orchestrator-session (claude-fable-5-1; stage 0 run by the orchestrator per run-pipeline.md step 1)
+status: complete
+spear_gate: "OVERRIDE 2026-09-05 (operator standing ruling 2026-09-05: Step-1 intake replaces the web spear); companies/SHHARICH.md written at Phase 1 start"
+empty_folder_confirmation: "standing answer 'proceed with the gaps' applied (Step-1 autonomy contract); no operator present"
+no_concall_mode: true
+run_type: full
+prior_run: none
+company_memory: [companies/SHHARICH.md, runs/shharich-2026-09-05/step1-business-brief.md]
+inventory:
+  prospectus: {count: 0, note: "not expected; listed 1987"}
+  annual_report: {count: 1, file: inputs/annual-report/Annual_Report_2026_2.pdf, year: FY2025-26, pages: 181, misfiled: "inputs/annual-report/Annual_Report_2026.pdf is a 2-page Reg 30/36(1)(b) AGM-notice dispatch letter dated 02-Sep-2026 (announcement, not an AR)"}
+  results: {count: 0}
+  rating: {count: 0}
+  concalls: {count: 0, declared_unavailable: true}
+  peer_concalls: {count: 9, effective_transcripts: 8, peers: {SHREEPUSHK: [Nov-2025, Feb-2026, May-2026, Aug-2026], BODALCHEM: [Nov-2024, Feb-2025, May-2025, Aug-2025], AKSHARCHEM: ["Aug-2019 INVESTOR PRESENTATION mislabeled as transcript; not a concall; 7y stale"]}}
+  announcements: {count: 0}
+  shareholding: {count: 0}
+  research: {count: 0}
+  screening: {count: 24, populated: [screener-Data_Sheet.csv, BODALCHEM-Data_Sheet.csv, AKSHARCHEM-Data_Sheet.csv, SHREEPUSHK-Data_Sheet.csv], empty_templates: "all Profit_Loss / Balance_Sheet / Cash_Flow / Quarters / Customization CSVs", annual_years: [FY24, FY25, FY26], quarters: "Mar-2024 to Jun-2026 (10)"}
+  presentation: {count: 0}
+  other: {count: 0}
+input_gaps:
+  - "results: no quarterly or annual results filing; Q1 FY27 (Jun-2026) results absent (load-bearing fact 1); FY26 audited annual results filing absent (AR carries audited FY26 statements)"
+  - "rating: no credit rating document"
+  - "announcements: no Reg 30 filings; 25-Aug-2026 board outcome on Rs 40.24 cr preferential warrants absent (load-bearing fact 2); 23-Mar-2026 SDPL rights subscription filing absent; AGM notice inside the AR is the partial substitute"
+  - "shareholding: no quarterly shareholding pattern; Jun-2026 pattern absent; fallback AR pattern at 31-Mar-2026"
+  - "research: none (non-anchored; no evidence effect)"
+  - "presentation: none"
+  - "screening: only Data_Sheet CSVs populated (3 annual years FY24-FY26); Profit_Loss/Balance_Sheet/Cash_Flow/Quarters/Customization CSVs are empty templates (collector defect)"
+  - "peer-concalls: AKSHARCHEM file is an Aug-2019 investor presentation, not a transcript; peer transcript coverage effectively 2 of 3 peers (8 transcripts); BODALCHEM newest transcript Aug-2025 (~13 months stale)"
+  - "annual-report: Annual_Report_2026.pdf misfiled (2-page AGM-notice dispatch letter, an announcement)"
+  - "concalls: declared unavailable (NO-CONCALL MODE); not a gap"
+  - "prospectus: not expected (listed 1987); not a gap"
+freshness_pairs:
+  - {pair: "RESULTS to CONCALL", trigger_doc: "none present", mate_expected: "same-quarter concall", status: SKIPPED, missing_doc: "n/a (concalls_available false)"}
+  - {pair: "RATING BULLETIN to RATIONALE", trigger_doc: "none present", mate_expected: "full rating rationale", status: PASS, missing_doc: "none (no trigger)"}
+  - {pair: "SEBI ORDER to ORDER TEXT", trigger_doc: "none referenced in AR", mate_expected: "order text", status: PASS, missing_doc: "none (no trigger)"}
+  - {pair: "AR to LATEST AUDITED ANNUAL", trigger_doc: "Annual Report FY2025-26", mate_expected: "AR for latest audited year (FY26)", status: PASS, missing_doc: "none"}
+freshness_verdict: FRESHNESS PAIRS OK
+corpus_verdict_for_09b: CORPUS GAPPED
+load_bearing_facts:
+  - "1 VOLUME VS SPREAD: split Q1 FY27 sales Rs 54.91 cr (+126% YoY) / PAT Rs 5.92 cr into H-Acid spread vs volume; if spread, spot-year ROCE must not feed Section 1B / FTTCP (v3.7 Amendment 17)"
+  - "2 EXPANSION AND CAPITAL ALLOCATION: Rs 40.24 cr warrants at Rs 176.10 to promoter group vs CMP Rs 248; SDPL capex and product mix"
+  - "3 CASH CONVERSION AND CAPITALISED INTEREST: OCF vs PAT, receivables and inventory trend, capitalised interest, no dividend"
+  - "4 SUBSIDIARY AND RELATED PARTY: SDPL financials, RPTs with parent, promoter warrant money into the group"
+pdf_extraction: "pypdf 6.17.0 (cffi reinstalled); all 11 PDFs readable; page-marked text in work/*.txt (git-ignored)"
+flags: []
+analyst_note: "Corpus is AR-heavy and filing-light. The two load-bearing facts the Step-1 thesis rests on (Q1 FY27 volume-vs-spread, the 25-Aug-2026 warrant filing) have no primary filing in the corpus; only the screener quarter row and the AGM-notice resolution text stand in. Every stage must say so where it leans on them."

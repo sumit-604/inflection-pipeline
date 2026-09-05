@@ -1,0 +1,47 @@
+stage: B13-synthesis
+company: "SHHARICH"
+run_date: "2026-09-05"
+model: claude-opus-4-8
+mode: phase-1-lite
+status: complete
+verdict: "REWORK"
+verdict_rule_applied: 1
+flags_active:
+  - FLAG-CASH (INDETERMINATE; missing evidence named; does not resolve to PROCEED)
+  - FLAG-GATE0 (core 56/100, Verifier C recompute 51/100; grand 73/160; 3-year history downgrade)
+  - FLAG-TRADING-REVENUE
+  - FLAG-FX-CONTRADICTION
+  - FLAG-NEGATIVE-OPERATING-LEVERAGE
+  - FLAG-CREDIBILITY (grade D, no-concall mode)
+  - FLAG-DISCLOSURE
+  - FLAG-NARRATIVE
+  - FLAG-CONSISTENCY
+  - FLAG-EMOAT-SDPL
+  - FLAG-EMOAT-CREDIBILITY
+  - FLAG-EMOAT-CAPACITY-GAP
+  - FLAG-NO-MGMT-TAM-CLAIM
+  - FLAG-TAM-METHOD-DIVERGENCE
+  - FLAG-CAPACITY-PERIOD-AMBIGUOUS
+  - FLAG-SOM-CAGR-BELOW-HURDLE
+  - FLAG-SAM-GEOGRAPHY-INFERENCE
+  - B09 STATUS PARTIAL (WebFetch blocked on all 14 market/trade domains)
+  - PEER CONTRADICTED: Q2 China competition / anti-dumping framing
+  - FLAG-PROMOTER not fired (B08 verdict CAUTION, no deal-breaker, transition_evidence none)
+confidence_delta: {numerical: 98.1, redflag: 26, framework: 94, peer: 78, overall: 26}
+valuation_decision: "not run in phase 1"
+entry_range: {low: 0, high: 0}
+headline: "Revenue grew 31 percent, profit fell 18"
+falsification_metric: "Next quarterly print with revenue at or above the Jun-2026 quarter's Rs 54.91 cr and EBITDA margin below 5.3 percent"
+monitorables_count: 8
+publish_candidate: true
+publish_candidate_summary: "31 percent revenue growth with profit down 18 percent and EBITDA down in rupees; most of the increase is bought-in H Acid resold at about 1 percent, labelled as manufactured output in the company's own product note, while manufactured sales grew about 5 percent. Teaching post on reading a top line. Held until the stage 5 and stage 6 rerun closes."
+files_written:
+  - runs/shharich-2026-09-05/outputs/final/business-narrative.md
+  - runs/shharich-2026-09-05/outputs/final/gate-recommendation.md
+  - runs/shharich-2026-09-05/outputs/final/verifier-summary.md
+  - runs/shharich-2026-09-05/outputs/final/verifier-disagreement-log.md
+notion_save:
+  page_title: ""
+  summary: ""
+  drive_link: ""
+  mode: "not emitted in phase 1"

@@ -1,0 +1,38 @@
+stage: B06-peers
+company: "YASHO"
+run_date: "2026-09-05"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["11 peer transcripts provided, not the up-to-12 ceiling in the protocol header", "FINEORG only 3 calls vs 4 for NOCIL/CAMLINFINE, and they are annual-results calls spaced further apart (May'24, May'25, Mar'26) rather than the same quarterly cadence as the other two peers", "no direct lube-additive-market peer in the set (NOCIL=rubber chemicals, CAMLINFINE=aroma/antioxidants, FINEORG=oleochemical additives; all adjacent chemistry, not lube additives)", "no CDMO-adjacent peer to test the customer-funded LTSA structure question (Q5), which needed a different peer set than the one provided"]
+flags: ["peers in the same petrochemical-feedstock window report EBITDA margin COMPRESSION to single digits from the same war-driven RM inflation Yasho cites as a mild 10-15% headwind, while Yasho reports margin EXPANSION 17.4%->24.2% in the identical window - sharpest divergence in the whole exercise, feeds synthesis", "two independent peers (NOCIL, CAMLINFINE) confirm active, ongoing Chinese capacity expansion and aggressive underpricing through FY27, directly complicating the benign China-competition read in company memory", "NOCIL Feb 2026 call places the India-EU FTA coming into force only in calendar year 27 roughly, contradicting the more optimistic framing implied in Yasho's own Q3 FY26 call"]
+peers_provided: 11
+verified:
+  - {claim: "Chinese/Asian lube-additive-adjacent capacity expansion and pricing pressure continuing into and through FY27", peers: ["NOCIL", "CAMLINFINE"], anchor_count: 6}
+partially_verified:
+  - {claim: "Petrochemical raw-material inflation of 10-15% since the pre-war era", peers: ["NOCIL", "CAMLINFINE", "FINEORG"]}
+contradicted:
+  - {claim: "India-EU FTA already helping per Q3 FY26 framing", contradicting_peer: "NOCIL", quote_anchor: "NOCIL Feb 2026 call (Q3 FY26 results): 'the India-EU FTA is only expected to come into play in calendar year 27 roughly'"}
+  - {claim: "Brownfield capex-to-revenue asset-turn of 2.5x-4:1 supporting the FY28 capacity-driven revenue build", contradicting_peer: "NOCIL", quote_anchor: "NOCIL May 2026 call: Rs.250cr Dahej capex drives ~20% capacity increase against FY26 revenue base of Rs.1,303cr, implying ~1.0-1.1x asset turn, computed from disclosed figures not a peer-stated ratio"}
+unverifiable:
+  - {claim: "Global $12-15bn lube-additive/adjacent-chemistry TAM", peers_checked: ["NOCIL", "CAMLINFINE", "FINEORG"]}
+  - {claim: "15-year fully customer-funded capex LTSA is a recognised structure elsewhere in Indian specialty chemicals", peers_checked: ["NOCIL", "CAMLINFINE", "FINEORG"]}
+peer_coverage_map:
+  - {peer: "NOCIL", quarter: "Q2 FY26 (Nov 2025)", usage: "SUBSTANTIVE", contribution: "China/Korea import-dumping dynamics, FTA context, early aniline price signals"}
+  - {peer: "NOCIL", quarter: "Q3 FY26 (Feb 2026)", usage: "SUBSTANTIVE", contribution: "Explicit EU FTA timeline (CY27 roughly), confirms ongoing Chinese capacity build in prior 12-15 months"}
+  - {peer: "NOCIL", quarter: "Q4 FY26 / FY26 annual (May 2026)", usage: "SUBSTANTIVE", contribution: "Aniline price jump ~70-73%, Dahej capex figures used to compute asset-turn, FY26 revenue base, single-digit EBITDA margins"}
+  - {peer: "NOCIL", quarter: "Q1 FY27 (Aug 2026)", usage: "SUBSTANTIVE", contribution: "Named Chinese competitor capacity addition, Middle East war/logistics impact, volume growth guidance"}
+  - {peer: "CAMLINFINE", quarter: "Q2 FY26 (Nov 2025)", usage: "SUBSTANTIVE", contribution: "Direct evidence of severe Chinese underpricing ($7-$7.5), US tariff margin impact"}
+  - {peer: "CAMLINFINE", quarter: "Q3 FY26 (Feb 2026)", usage: "SUBSTANTIVE", contribution: "Margin trajectory, tariff-driven realization dynamics, anti-dumping-duty math"}
+  - {peer: "CAMLINFINE", quarter: "Q4 FY26 / FY26 annual (May 2026)", usage: "SUBSTANTIVE", contribution: "Richest RM-inflation detail in corpus (phenol, caustic, catechol), China sourcing shift, EBITDA guidance cut"}
+  - {peer: "CAMLINFINE", quarter: "Q1 FY27 (Aug 2026)", usage: "SUBSTANTIVE", contribution: "Continued war-driven RM pressure, EBITDA guidance, detailed ADD-vs-Chinese-price mechanics"}
+  - {peer: "FINEORG", quarter: "FY24 annual (May 2024)", usage: "CITED-ONLY", contribution: "Historical margin baseline and qualitative asset-turn comment, not quantified enough to anchor Q6"}
+  - {peer: "FINEORG", quarter: "FY25 annual (May 2025)", usage: "SUBSTANTIVE", contribution: "Only market-sizing quote in corpus ($1bn/$25bn plastic additives, adjacent category), geopolitical RM commentary"}
+  - {peer: "FINEORG", quarter: "FY26 annual (Mar 2026)", usage: "SUBSTANTIVE", contribution: "SEZ capex with management declining to project revenue potential, West Asia conflict as freight-cost driver"}
+industry_cross_read:
+  demand: "Sector-wide volume growth in the peer set is low-single-digit to low-double-digit (NOCIL FY26 +3%, Q1FY27 +9%; underlying rubber-chemicals penetration growth ~2.8% CAGR 2022-25) with FINEORG healthier and CAMLINFINE in active distress; no peer shows anything near Yasho's 30-40%, so if real it is almost entirely share-taking and capacity-driven, not a sector tailwind"
+  pricing_inputs: "All three peers independently confirm severe, geopolitically-driven petrochemical RM inflation in the identical window Yasho describes, but at 4-7x the magnitude Yasho states (peer-quantified inputs +70-100% vs Yasho's 10-15%), and NOCIL/CAMLINFINE margins compressed to single digits from it while Yasho reports margin expansion - the sharpest divergence in the whole peer set"
+  capex_cycle: "Mixed, not a lone-expander or a uniform capacity race: NOCIL and FINEORG both actively expanding brownfield/greenfield capacity in the same window; CAMLINFINE is contracting (plant shutdown, active cash-burn reduction) under RM/geopolitical distress"
+peer_mentions_of_company: []
+risks_peers_raise: ["Middle East/geopolitical conflict as a named, severe, ongoing RM and freight cost driver, larger in peer-quantified magnitude than Yasho's stated 10-15%", "DGTR anti-dumping-duty recommendations stuck pending Finance Ministry sign-off for months (NOCIL), a regulatory-lag risk absent from Yasho's own China-competition framing", "Korean import dumping as a second, distinct Asian competitive threat sometimes undercutting Chinese pricing itself (NOCIL), beyond the China-only framing in Yasho's disclosures", "Trade/dealer financing dependency compressing gross margin by 1-2pp (CAMLINFINE), a margin-erosion mechanism not present in Yasho's disclosures", "FTAs cut both ways: an FTA can strip a domestic producer's existing duty protection on an imported intermediate just as it opens an export market (NOCIL), a risk absent from Yasho's purely tailwind EU FTA framing"]
+net_narrative_effect: "complicates"
+analyst_note: "The peer set corroborates Yasho's directional facts (geopolitical RM inflation is real; Chinese pricing pressure is real and ongoing through FY27) but complicates or contradicts the specific numbers built on those facts: FTA timeline over-stated in the Q3 FY26 call, RM inflation magnitude a fraction of comparable peers', implied brownfield asset-turn well below the stated 2.5-4x, and most importantly a margin-EXPANSION story running opposite to every commodity/converter peer's margin-COMPRESSION experience in the same input-cost environment. None of this proves Yasho wrong - superior mix, longer RM contracts, or genuine new-business pricing power could explain it - but the peer set offers no support for it, and stage 11 should treat the margin divergence as unresolved, not corroborated."

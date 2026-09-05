@@ -253,7 +253,7 @@ def main():
 
     print(f"\nDownloading main company -> {stage}")
     subprocess.run([sys.executable, str(COLLECTOR), url,
-                    "--output-dir", str(stage)], cwd=SCRIPT_DIR)
+                    "--output-dir", str(stage), "--no-drive"], cwd=SCRIPT_DIR)
     peer_dirs = {}
     for u in peer_urls:
         m = re.search(r"/company/([^/]+)/", u)
@@ -263,7 +263,7 @@ def main():
         peer_dirs[pt] = pd
         print(f"\nDownloading peer {pt} -> {pd}")
         subprocess.run([sys.executable, str(COLLECTOR), u,
-                        "--output-dir", str(pd)], cwd=SCRIPT_DIR)
+                        "--output-dir", str(pd), "--no-drive"], cwd=SCRIPT_DIR)
 
     # classify
     print("\nClassifying...")

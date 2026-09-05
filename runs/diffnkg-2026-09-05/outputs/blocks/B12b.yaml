@@ -1,0 +1,25 @@
+stage: B12b
+company: "DIFFNKG"
+run_date: "2026-09-05"
+model: claude-opus-4-8
+status: complete
+independent_flags_found: 15
+caught: 11
+partially_caught: 1
+missed:
+  - {severity: "MAJOR", item: "Earnings quality: reported PAT flattered by non-operating items (IPO-FD other income on ~INR67cr, one-time ~INR5cr Singapore subsidiary dividend in standalone Q1 FY26, associate LSN Diffusion profit spike to ~INR4.4cr vs INR1-2cr normal); PAT growth far exceeds EBITDA growth (9M FY26 consol PAT +49.55% vs EBITDA +12.60%). Not surfaced as an earnings-quality flag.", anchor: "Aug-2026 PAGE 7, PAGE 10-11, PAGE 17; Feb-2026 PAGE 5; May-2026 PAGE 4"}
+  - {severity: "MAJOR", item: "Fastest-growing segment (heavy engineering, ~76% of order book) is 70% cyclical new-project-build / 30% spares, qualifying the 80%-repeat-customer stickiness narrative that underpins the transition thesis.", anchor: "Aug-2026 PAGE 3-4 (order book split) and PAGE 18 (70/30 new-build vs spares)"}
+  - {severity: "MINOR", item: "Units 2 and 3 running at ~2-3% utilization, against the headline 85%-utilization story used to justify expansion.", anchor: "Aug-2026 PAGE 20"}
+pipeline_flags_not_supported: []
+promise_delivery_spot_checks: {checked: 5, confirmed: 5, wrong: 0}
+credibility_grade_concur: "concur — grade C stands; the missed earnings-quality flag reinforces C rather than raising it, since bottom-line delivery is propped by non-operating income while the operating engine (margins, capex timeline) underdelivers"
+findings:
+  - {severity: "MAJOR", location: "B05 (concall) — Sec 2B/2D and red_flags; earnings-quality flag absent", description: "Reported PAT materially flattered by IPO-FD other income, a one-time ~INR5cr Singapore subsidiary dividend, and an associate profit spike; PAT growth runs far ahead of EBITDA growth across quarters. Thesis-relevant to cash-conversion quality and Role 1 FCF. Missed."}
+  - {severity: "MAJOR", location: "B05 (concall) — Sec 1A/4A trigger framing; Aug-2026 PAGE 18", description: "Heavy engineering, the fastest-growing segment and ~76% of the order book, is 70% new-project-build (capex-cyclical); this qualifies the repeat-customer stickiness framing central to the transition/quality-ladder thesis. Missed."}
+  - {severity: "MINOR", location: "B05 (concall) — Tejorup treatment, Sec 1C/3C; Feb-2026 PAGE 6", description: "Tejorup 10% stake priced on a soft basis (pre-revenue, estimated PSO value / valuer reports); captured as optionality/regulatory risk but not weighted as a capital-allocation red flag. Partially caught / under-weighted."}
+  - {severity: "MINOR", location: "B05 (concall) — utilization narrative; Aug-2026 PAGE 20", description: "Units 2/3 at ~2-3% utilization not noted against the headline 85% story. Missed, minor."}
+critical_count: 0
+major_count: 2
+minor_count: 2
+acceptance_rate: 73
+

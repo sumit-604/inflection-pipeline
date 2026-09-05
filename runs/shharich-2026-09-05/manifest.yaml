@@ -1,0 +1,9 @@
+company: Shree Hari Chemicals Export Ltd
+ticker: SHHARICH
+cmp: 248.0
+market_cap_cr: 156.0
+run_date: 2026-09-05
+run_type: full
+concalls_available: false
+sector_cap_row: "Specialty chemicals"
+notes: "Collected from screener.in by collect_to_repo.py v3. Sector row corrected from auto-picked 'Pharma / CDMO' to 'Specialty chemicals' per step1-business-brief.md. CAVEAT: H-Acid is a commodity dye intermediate (spread-driven converter, R1-R2), so destination PE sits well below the 35x specialty-chem cap under v3.7 Amendment 17. No main-company concalls on screener (genuine gap, concalls_available: false)."

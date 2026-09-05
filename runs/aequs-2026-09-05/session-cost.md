@@ -13,3 +13,6 @@ wall recorded). Stage 0 ran in the orchestrator session, no subagent row.
 | 3 | ar-deep-dive | sonnet | default | - | - | 338448 | 1379s | 1 |
 | 4 | business-model | sonnet | default | - | - | 188309 | 761s | 1 |
 | 5 | concall | sonnet | default | - | - | 182556 | 829s | 1 |
+| 8 | promoter | sonnet | default | - | - | 275992 | 852s | 1 |
+| 6 | peer-verification | sonnet | default | - | - | 0 | aborted (API 429 session limit, no output) | 1 |
+| 7 | emerging-moat | sonnet | default | - | - | 0 | aborted (API 429 session limit, no output) | 1 |

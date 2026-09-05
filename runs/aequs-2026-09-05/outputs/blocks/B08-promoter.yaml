@@ -1,0 +1,88 @@
+stage: B08-promoter
+company: "AEQUS"
+run_date: "2026-09-05"
+model: claude-sonnet-5
+status: partial
+input_gaps:
+  - "prospectus: ABSENT (HIGH gap; listed 10-Dec-2025); RHP litigation section (p.581) and full promoter/group history could not be read directly — WebFetch on SEBI filing page and Kotak-hosted RHP PDF both egress-blocked; all RHP-derived facts in this report are 📰 MEDIA REPORTED, cross-checked against the AR"
+  - "results: ABSENT"
+  - "rating: ABSENT as a document; CARE BBB-;Stable on Rs 25 Cr bank facilities disclosed inside AR p.113"
+  - "announcements: ABSENT; Safran agreements (Jun-2026) and CFO resignation sourced only via web (📰), primary BSE/NSE filing PDF egress-blocked"
+  - "shareholding: ABSENT as a filing; AR p.111 (31-Mar-2026) is the only document-anchored shareholding source; company's own Dec-2025 shareholding-pattern PDF egress-blocked"
+  - "research: ABSENT"
+  - "other: ABSENT"
+  - "screening: companion CSVs header-only"
+  - "peer-concalls: DYNAMATECH single transcript Feb-2024 (stale)"
+  - "manifest: no listed_date; sector_cap_row set by Step 1 brief"
+  - "prior-year ARs: FY24, FY25 absent — no multi-year CXO/pledge trend testable"
+flags: []
+verdict: "CAUTION"
+scorecard: {clean: 4, caution: 4, red: 2}
+deal_breakers:
+  - {check: "SEBI market ban", triggered: false, basis: "Clean 3-year record, AR p.113 + web search"}
+  - {check: "Economic offence conviction", triggered: false, basis: "None found"}
+  - {check: "Live SFIO", triggered: false, basis: "None found"}
+  - {check: "PMLA with attached assets", triggered: false, basis: "None found"}
+  - {check: "Auditor resignation within 3 years", triggered: false, basis: "B S R & Co continuing fresh 5-year term at group level; French subsidiary auditor (PKF Arsilon) appointed 26-Jun-2026 post-signoff, resignation-vs-rotation not confirmable from this corpus — adjacent caution, not triggered"}
+  - {check: "Pledge >40%", triggered: false, basis: "0% pledge, two independent corroborations (AR p.111 silence + AMIPL no-encumbrance disclosure)"}
+  - {check: "Multiple mid-term independent exits within 3 years", triggered: false, basis: "Zero independent-director resignations in FY26 (AR p.98 verbatim); one non-independent director (Dr. Shubhada Rao) exited pre-IPO board reconstitution, single instance"}
+  - {check: "Restatement cutting past profits >10%", triggered: false, basis: "None found (Stage 3 full-document search)"}
+adverse_findings:
+  - {finding: "Both standalone and consolidated FY26 audit opinions carry a Section 143(3)(b)/Rule 11(g) audit-trail qualification (edit-log not enabled at database level 1-Apr-2025 to 15-Dec-2025, and at application level for certain fields 1-Apr-2025 to 9-Oct-2025)", evidence_tier: "VERIFIED", source: "AR p.152-153 (standalone), p.222-223 (consolidated)", date: "2026-05-26 (sign-off)"}
+  - {finding: "CARO Annexure A names adverse remarks across 7 group entities including 3 auditor-confirmed cash-loss Consumer subsidiaries; 4 further entities had no CARO report issued at all", evidence_tier: "VERIFIED", source: "AR p.224 (consolidated Annexure A clause xxi)", date: "2026-05-26"}
+  - {finding: "CFO Dinesh Iyer resigned, reported as 'personal reasons', effective 30-Jun-2026, five weeks after the FY26 audit sign-off; no successor publicly named as of run date", evidence_tier: "MEDIA REPORTED (wire/Reuters via TradingView); resignation fact itself VERIFIED at AR p.60, p.83", source: "AR p.60/83; TradingView/Reuters", date: "resignation effective 2026-06-30"}
+  - {finding: "Material foreign subsidiary Aequs Aerospace France SAS's auditor (PKF Arsilon) appointed 26-Jun-2026, one month after the 26-May-2026 group audit sign-off, not explained in the AR", evidence_tier: "UNVERIFIED (derived from Stage 3 reading of AR auditor disclosures, not independently re-confirmed against a primary French-registry source this stage)", source: "Stage 3 (03-ardeep.md) citing AR auditor disclosures", date: "2026-06-26"}
+  - {finding: "CEO (Aravind Melligeri) total remuneration rose 111% to Rs 9.27 Cr (Rs 92.74 Mn) in FY26 vs Rs 43.89 Mn FY25, in the same year consolidated net loss widened and median employee remuneration fell -16.82%; CEO-to-median FIXED-pay multiple 129.31x reported separately in Annexure 4, on a basis that excludes variable pay and is not reconciled against the Note 34 total-pay figure in the same AR", evidence_tier: "VERIFIED", source: "AR p.286 (Note 34), p.83 (Annexure 4), p.108 (CG Report remuneration table)", date: "FY2025-26"}
+  - {finding: "Rs 779.56 Mn (Rs 77.96 Cr) income-tax demand for AY2018-19, underlying substance per web-sourced RHP litigation summary being ~Rs 712.13 Mn received from Jagadish Shivaputrappa Melligeri (shares Aravind Melligeri's distinctive patronymic) treated as undisclosed income; Karnataka High Court set the order aside and REMANDED for fresh assessment — not resolved on the merits", evidence_tier: "VERIFIED for the AR-anchored demand/remand facts; MEDIA REPORTED for the Jagadish Melligeri/undisclosed-income detail (RHP primary text not fetchable)", source: "AR p.207-208 (standalone Note 29); web search (RHP litigation section para., page 581, secondary summaries)", date: "order 2021-09-27; HC relief FY2025-26 (year of AR)"}
+  - {finding: "Wide promoter/family-linked RPT web continuing post-listing: 13% p.a. loans from AMIPL (Rs 28.43 Cr) and Melligeri Investment LLC (Rs 1.81 Cr), Rs 1 Cr/year branding fee to promoter-linked MFO IP Holdings, guarantee fee to Aequs SEZ Pvt Ltd up 473% YoY (Rs 5.85 Cr vs Rs 1.02 Cr), Melligeri personal guarantees continuing on Consumer-segment (ACPPL) bank facilities, MFRE family-trust property pledged as loan collateral", evidence_tier: "VERIFIED", source: "AR Note 15 p.264-266, Note 34 p.284-289", date: "FY2025-26"}
+  - {finding: "21-entity consolidated group with 7 subsidiaries/JVs liquidated, struck off, inactive, or discontinued (incl. former US oil & gas sideline)", evidence_tier: "VERIFIED", source: "AR p.54-57 (Board's Report), Note 37 p.293-295", date: "FY2025-26"}
+  - {finding: "Weak first-AGM attendance: 4 of 6 directors, including the CEO, did not attend the 30-Sep-2025 AGM", evidence_tier: "VERIFIED", source: "AR p.97", date: "2025-09-30"}
+  - {finding: "Non-audit fees 4.3x audit fees (Rs 4.21 Cr vs Rs 0.98 Cr), ~80% IPO-related one-time work", evidence_tier: "VERIFIED", source: "AR p.114 (CG Report fee disclosure)", date: "FY2025-26"}
+transition_evidence:
+  - {item: "Credible pre-IPO institutional/strategic investor entry: Amicus Capital, Amansa Capital, Steadview Capital, Catamaran (Narayana Murthy family office), Sparta Group", evidence_tier: "MEDIA REPORTED", source: "freepressjournal.in, elitewealth.in", date: "pre-Dec-2025"}
+  - {item: "Diversified, credible IPO anchor book: SBI MF, HDFC MF, ICICI Prudential MF, Axis MF, Motilal Oswal MF, BlackRock Global Funds, Steadview Capital, Citigroup — Rs 413.92 Cr, 33 anchor funds at Rs 124/share", evidence_tier: "MEDIA REPORTED", source: "newsdrum.in, devdiscourse.com", date: "2025-12-08"}
+  - {item: "Governance overhaul with real, checkable credentials: 3 new independent directors appointed 25-Apr-2025 ahead of listing — former IAS/Commerce Secretary (Anup Wadhawan), CA/CS ex-Bosch/3M/Tata Motors (Vidya Sarathy), ex-Airbus/BMW/McKinsey (Eberhard Klaus Richter)", evidence_tier: "VERIFIED", source: "AR p.33-34, p.60", date: "2025-04-25"}
+  - {item: "Conversion to public company and adoption of full LODR governance stack (RPT policy, whistleblower policy, material-RPT shareholder-approval gate exercised for ASEZ)", evidence_tier: "VERIFIED", source: "AR p.53, p.63", date: "2025-04-25 onward"}
+  - {item: "Clean 0% pledge maintained through and after the listing transition despite an extensive promoter-family financing web", evidence_tier: "VERIFIED / MEDIA REPORTED (corroborating)", source: "AR p.111; AMIPL no-encumbrance disclosure (secondary)", date: "FY2025-26"}
+pledge_pct_latest: 0
+pledge_trend: "stable at 0% pre- and post-listing; AR p.111 shows no promoter share pledge line, corroborated by a separately reported AMIPL no-encumbrance confirmation for FY26; no multi-year trend testable (first year listed, no prior shareholding filings in corpus)"
+searches_performed:
+  - "Aravind Melligeri QuEST Global founder Aequs"
+  - "Aequs IPO pre-IPO investors Amicus Steadview Catamaran anchor investors"
+  - "Aequs Limited promoter share pledge shareholding pattern 2026"
+  - "Aequs IPO lock-in expiry anchor investor shares"
+  - "Aequs SEZ Private Limited ownership Melligeri family"
+  - "Aequs Oil and Gas LLC wind down former US business Melligeri"
+  - "Aequs Limited SEBI observations DRHP litigation promoter"
+  - "Aravind Melligeri controversy lawsuit court case"
+  - "Aequs IPO RHP promoter litigation outstanding litigation Melligeri Kaul"
+  - "Aequs Safran engine parts A320 wheels agreement announcement June 2026"
+  - "\"Jagadish Shivaputrappa Melligeri\""
+  - "Aequs RHP undisclosed income Melligeri tax notice 712.13 million"
+  - "Khanij Industries India Private Limited Melligeri"
+  - "Melligeri Investments and Consultancy LLP Aequs"
+  - "Aequs AmbitionBox Glassdoor employee reviews"
+  - "Aequs IiAS SES InGovern proxy advisory report"
+  - "Aequs short seller report activist campaign concerns"
+  - "Aequs promoter Melligeri CEO salary criticism analyst governance concern"
+  - "Aequs electoral bonds political donation"
+  - "Aequs CEO remuneration 111% increase Rs 9.27 crore criticism"
+  - "Aequs FY27 capex Rs 660 crore consumer segment Rs 500 crore allocation"
+  - "Aequs Rs 2856 crore Karnataka investment Hosur Tamil Nadu MoU"
+  - "Melligeri Foundation Cayman Islands trust structure"
+  - "Aequs Limited SEBI consent order adjudication insider trading"
+  - "Aequs new CFO appointed 2026 Dinesh Iyer successor"
+  - "Aequs promoter stake reduced 64.49 59.08 percent"
+  - "Aequs shareholding pattern December 31 2025 promoter percentage"
+searches_skipped:
+  - "WebFetch aequs.com Shareholding-pattern-as-on-December-31-2025.pdf (EGRESS_BLOCKED)"
+  - "WebFetch scanx.trade 'Aequs promoters confirm no encumbrance on shares in FY26' (EGRESS_BLOCKED)"
+  - "WebFetch trendlyne.com AEQUS shareholding page (EGRESS_BLOCKED)"
+  - "WebFetch inc42.com 'Aequs DRHP: Shareholding Structure & Leadership Breakdown' (EGRESS_BLOCKED)"
+  - "WebFetch investmentbank.kotak.com Aequs Limited Red Herring Prospectus PDF (EGRESS_BLOCKED) — primary RHP litigation section p.581 not directly read"
+  - "WebFetch sebi.gov.in Aequs Limited RHP filing page (EGRESS_BLOCKED)"
+  - "WebFetch businessupturn.com Karnataka HC tax-demand article (EGRESS_BLOCKED)"
+  - "WebFetch instafinancials.com Jagadish Shivaputrappa Melligeri director page (EGRESS_BLOCKED)"
+  - "WebFetch bseindia.com CFO resignation corporate-filing PDF (EGRESS_BLOCKED)"
+verdict_basis: "No deal-breaker fired and the legal/SEBI/pledge record is clean and self-disclosed, but both audit opinions carry a Rule 11(g) qualification with CARO adverse remarks across 7 group entities plus a CFO exit and a material-subsidiary auditor change landing within weeks of sign-off, alongside a CEO total-pay increase of 111% in a widening-loss, falling-median-pay year — a genuine first-year-listed cluster of red flags, not offset enough by the credible new board/investor base to clear CAUTION."
+analyst_note: "Two items a downstream stage cannot reconstruct from the fields above. First, the AR itself publishes two non-reconciled CEO-pay figures (129.31x/+0.63% fixed-pay-only in Annexure 4 vs +111%/Rs 9.27 Cr total in Note 34); the gap is plausibly a prior-year variable-pay tranche paid in FY26, per a CG-report footnote, but the AR never bridges the two numbers for the reader. Second, the Jagadish Shivaputrappa Melligeri tax matter rests on converging AR (VERIFIED, Rs 779.56 Mn demand, remanded not resolved) and web (MEDIA REPORTED, Rs 712.13 Mn underlying receipt) sources that could not be jointly confirmed against the primary RHP text (egress-blocked); treat the family-member identification as probable, not certain, until the operator can pull the RHP directly. Both items should be asked of management directly at Halt 1 rather than resolved by inference."

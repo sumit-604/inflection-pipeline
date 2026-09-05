@@ -13,3 +13,4 @@ wall recorded). Stage 0 was orchestrator-run (no subagent row).
 | 3 | ar-deep-dive | sonnet | default | - | - | 305731 | 876s | 1 |
 | 4 | business-model | sonnet | default | - | - | 180908 | 512s | 1 |
 | 8 | promoter | sonnet | default | - | - | 243672 | 610s | 1 |
+| 5 | concall (no-concall mode) | sonnet | default | - | - | 177190 | 640s | 1 |

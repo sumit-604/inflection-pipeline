@@ -24,3 +24,39 @@ wall recorded). Stage 0 ran in the orchestrator session, no subagent row.
 | 9 | tam | sonnet | default | - | - | 168715 | 934s | 1 |
 | 12a | verifier-numerical | haiku | default | - | - | 121063 | 159s | 1 |
 | 13 | synthesis-lite | opus | default | - | - | 178004 | 823s | 1 |
+| 09b | halt1-dossier | sonnet | default | - | - | 257301 | 759s | 1 |
+
+## SESSION CLOSE-OUT (PHASE 1)
+
+Run total (sum of all ledger rows, 19 subagent runs incl. 2 aborted): 3,713,414 tokens.
+
+### (a) TOP FIVE BY TOKENS (loop/retry runs summed per stage)
+
+| rank | stage | total_tok | share of run | runs |
+|---|---|---|---|---|
+| 1 | 2 notes-pass | 547,451 | 14.7% | 3 |
+| 2 | 12b verifier-redflags | 358,756 | 9.7% | 1 |
+| 3 | 3 ar-deep-dive | 338,448 | 9.1% | 1 |
+| 4 | 8 promoter | 275,992 | 7.4% | 1 |
+| 5 | 6 peer-verification | 273,591 | 7.4% | 2 |
+
+### (b) DOWNSHIFT FAILURES
+
+none. Verifier A ran on haiku; stage 0 ran inside the orchestrator session (no subagent); stage 10 is phase 3.
+
+### (c) COST SPIKES
+
+none. No prior runs/aequs-<date>/session-cost.md exists; this is the first AEQUS run.
+
+### (d) OPERATOR SNAPSHOT
+
+Operator: run /cost and /usage now and paste the cache hit ratio and the loop totals below under "Operator snapshot". The orchestrator cannot read those interactive commands.
+
+#### Operator snapshot
+(pending operator paste)
+
+
+### RUN NOTES (mechanical)
+
+- Stages 6 and 7 first runs aborted on an API 429 session limit (reset 17:30 UTC); both re-run cleanly as run# 2. Both rows kept.
+- Verifier C phase-1 scope ran on opus per DISPATCH (verifiers B and C are opus by design, not a downshift failure).

@@ -1,0 +1,75 @@
+stage: B09b-dossier
+company: "AEQUS"
+run_date: "2026-09-05"
+model: claude-sonnet-5
+status: complete
+corpus_verdict: "CORPUS GAPPED"
+corpus_gaps:
+  - document: "prospectus / RHP"
+    expected_source: "BSE / SEBI filing page or company IR page"
+    kind: "findable-missing"
+  - document: "all quarterly and annual results filings"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "rating rationale (only a single CG-report rating line exists in corpus)"
+    expected_source: "rating agency site (CARE Ratings) or BSE"
+    kind: "findable-missing"
+  - document: "Reg 30 / corporate announcements"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "shareholding pattern filings beyond the single FY26 year-end AR snapshot"
+    expected_source: "BSE / company IR page"
+    kind: "findable-missing"
+  - document: "FY24 and FY25 Annual Reports"
+    expected_source: "BSE / company IR page"
+    kind: "findable-missing"
+  - document: "screener companion CSVs (Profit_Loss/Balance_Sheet/Cash_Flow/Quarters/Customization), header-only for AEQUS and all peers"
+    expected_source: "screener.in"
+    kind: "findable-missing"
+  - document: "current DYNAMATECH peer transcripts beyond the single Feb-2024 investor-day recording"
+    expected_source: "company IR page or BSE"
+    kind: "findable-missing"
+  - document: "research / broker notes"
+    expected_source: "n/a"
+    kind: "plausibly-nonexistent"
+archetypes:
+  - line: "Aerospace (85% of FY26 revenue)"
+    archetype: "Build-to-spec component maker"
+  - line: "Consumer (15% of FY26 revenue)"
+    archetype: "Outsourcing partner (CDMO/EMS/IT services)"
+transition:
+  - line: "Aerospace"
+    from_tier: "R2 COST-ADVANTAGED CONVERTER"
+    to_tier: "R3 VALUE-ADDED / SPEC'D SUPPLIER (claimed; contested by management's own no-pricing-power statements)"
+    engine: "Capacity-utilisation catch-up converting already-built SEZ fixed cost into margin, plus the USD 889mn-to-1,004mn order book converting via qualified programs including the Safran A320-wheel agreement"
+    proof_gate: "Aerospace segment EBITDA margin, computed like-for-like ex-other-income on the guide's own cost basis, at or above 20% for two consecutive quarters"
+    recognition_gap: "Open question, resolved at Stage 11: does the market price already reflect Aerospace's climb from a cost-advantaged converter to a value-added spec'd-supplier posture, leaving only earnings growth as a return source, or does price still sit at the FROM-state converter tier"
+    ugliness: "ARTIFACT-OF-CLIMB"
+    transition_falsifier: "Like-for-like segment EBITDA margin falls below 20% for two consecutive quarters, or new aerospace parts added per quarter (433 to 86 QoQ, unexplained) do not recover, evidencing the qualification-lock-in engine has stalled"
+  - line: "Consumer"
+    from_tier: "at or below R1 COMMODITY PRICE-TAKER"
+    to_tier: "R2 COST-ADVANTAGED CONVERTER (claimed via management's 18-20% long-term ROCE guide; unsupported by any moat evidence found in this corpus)"
+    engine: "Capacity-utilisation climbing from 22% (Q1 FY27) toward the 40-50% FY27 exit target"
+    proof_gate: "Segment EBITDA loss narrows every quarter with utilisation past 30%, en route to the guided Q4 FY27 breakeven"
+    recognition_gap: "Open question, resolved at Stage 11: since no moat evidence supports the claimed destination tier at all, is there any tier migration for the market to price, or is Consumer's value entirely a function of reaching basic operating breakeven"
+    ugliness: "STRUCTURAL-FEATURE"
+    transition_falsifier: "Q2 FY27 segment EBITDA loss at or wider than the Q1 FY27 Rs 36.1 cr, with utilisation still at or below 23%"
+dominant_variables:
+  - "Aerospace segment EBITDA margin on a like-for-like, ex-other-income basis, quarter by quarter"
+  - "New aerospace part numbers added per quarter (qualification-engine proxy; fell 433 to 86 QoQ)"
+  - "Consumer segment utilisation percentage (fell 31% to 23% to 22% across three quarters)"
+  - "Consolidated operating cash flow against capex (FY26 CFO -Rs 98.75 cr vs Rs 342.6 cr capex)"
+business_falsifier: "Either (a) the Aerospace segment's reported margin and ROCE are shown materially inflated by non-operating items on a recurring basis across two or more further quarters, leaving no verified profitable core anywhere in the Group, or (b) the Rule 11(g) audit-trail qualification and seven-entity CARO adverse remarks recur in the FY27 Auditor's Report rather than clearing as a first-year-listed transition matter, undermining the reliability of every company-narrated number in this dossier, not only the transition variables"
+mental_model_status: "DRAFT - PENDING OPERATOR SIGN-OFF"
+fragility:
+  variable_count: 7
+  verifiability_ratio: "4 of 7 externally observable"
+  single_point_failure: "governance and audit-trail control-environment reliability: if the Rule 11(g) qualification and 7-entity CARO adverse remarks persist into FY27, confidence in every other company-narrated tracking variable breaks at once"
+  fragility_verdict: "FRAGILE"
+candidate_count: 7
+research_brief_items: 12
+plain_summary_points: 15
+annex:
+  present: true
+  questions_answered: 10
+  corpus_commit_hash: "53a59aeecea0c852c3e6cac719d3fddb95915265"

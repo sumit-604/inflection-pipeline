@@ -1,0 +1,27 @@
+stage: B12c
+company: "DIFFNKG"
+run_date: "2026-09-05"
+model: claude-opus-4-8
+status: complete
+gate0:
+  rules_checked: 14
+  fails:
+    - {severity: "MINOR", rule: "data-confidence / history-downgrade field", location: "B01 YAML history_downgrade", issue: "Set true, but body states no history-length tier downgrade applies at 8yrs (moderate); field records the IPO-rebase depressor, not the length downgrade it names. Body and YAML contradict. Classification AVERAGE correct regardless.", fix: "set history_downgrade: false; keep IPO-rebase point in flags/data_notes"}
+emoat:
+  rules_checked: 13
+  fails:
+    - {severity: "MAJOR", rule: "Section 5 evidence-quality multiplier (only 1.0/0.7/0.5 defined)", location: "B07 Section 5 scorecard rows B1,B2,F1,F2,H2", issue: "Invented 'blended 0.85' multiplier on 5 mixed-evidence rows; 0.85 not in the defined set and no blending rule exists. Recompute at either governing tier (0.7x ~15.9 or 1.0x ~19.2) leaves classification MODEST and below EM>=25. Systematic departure, decision survives.", fix: "assign one governing evidence tier per category or ratify a blend rule via operator"}
+    - {severity: "MINOR", rule: "Section 5 adjusted-total sum/rounding", location: "B07 Section 5 total / em_score", issue: "Sum of stated adjusted column = 17.25 (rounds 17), report states 17.55 -> em_score 18. Both in 12-24 MODEST band; classification unaffected.", fix: "correct arithmetic; em_score 17 on the stated components"}
+valuation: {rules_checked: 0, fails: [], status: "pending-phase-3 (B10/B11 not run; valuation framework docs not loaded in phase-1 scope)"}
+business_understanding_narrative: {present: false, five_questions_answered: false, prose_only: false, section6_candidates_named: 0, valuation_vocab_leak: false, fails: [], status: "out-of-scope-phase-1 (stage 13 not audited; not a REWORK trigger this phase)"}
+recomputed_destination_pe: ""
+recomputed_decision: ""
+findings:
+  - {severity: "MAJOR", location: "B07 Section 5 scorecard (B1,B2,F1,F2,H2)", note: "Invented 0.85 evidence-quality multiplier outside the defined 1.0/0.7/0.5 set; outcome-neutral, classification stays MODEST"}
+  - {severity: "MINOR", location: "B01 YAML history_downgrade", note: "history_downgrade:true contradicts body (no history-length downgrade at 8yrs); no decision impact"}
+  - {severity: "MINOR", location: "B07 Section 5 adjusted total / em_score", note: "Stated components sum to 17.25 (rounds 17), report shows 17.55->18; MODEST band unaffected"}
+critical_count: 0
+major_count: 1
+minor_count: 2
+acceptance_rate: 89
+

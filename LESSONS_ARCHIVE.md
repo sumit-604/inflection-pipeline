@@ -279,3 +279,49 @@ Leveraged C&I renewable IPP, IPO Feb-2026. Verdict on evidence PROCEED WITH CAVE
 - CORPUS: announcements/ and shareholding/ folders empty at start; operator supplied both mid-turn as pasted text + a Screener screenshot. Filed as [SECONDARY] operator-ferried with explicit tier caveats (verifier A cannot cross-check them against a filed PDF). No empty-folder pause was needed after the prospectus was recovered and these two were filed.
 - EVIDENCE WIN: verifier B resolved B06's self-declared "single most consequential" open question. Bikaner 525 MW is on TGNA (not GNA), so its ~70% curtailment is NOT revenue-protected (~Rs170 Cr real hit) — disclosed in CleanMax's OWN Q3/Q4 concalls but missed by B05. The verifier layer earned its keep.
 - THESIS TENSION carried to Halt 1: FY26 operating-profit crossover coincides with three same-year accounting choices (useful-life 25->30yr, impairment discount-rate change, interest capitalisation ~Rs312-329 Cr making true all-in interest ~Rs1,100 Cr vs Rs786 Cr P&L). Crossover treated UNPROVEN pending a rebuilt PBT; single-point falsifier = Q2 FY27 operating PBT ex-other-income < 0 (late Oct-2026). Section 3 framework exception (IPP EV/EBITDA vs PE cap) remains UNSIGNED; blocks Section 1B in Phase 3.
+
+## 2026-09-05 — DIFFNKG (Diffusion Engineers) Phase 1 evidence run
+- Operator OVERRODE the spear gate (no live spear pass; companies/DIFFNKG.md
+  created with "Spear: OVERRIDE 2026-09-05 (operator)") and directed a full run.
+- SESSION MODEL SWITCHED mid-run (operator ran /model to claude-opus-4-8 after
+  stage 0). CLAUDE.md SESSION DISCIPLINE warns this busts the prompt cache and
+  re-prefills at full price; noted, proceeded on operator instruction.
+- RECURRED (poppler/cffi, per INDOBORAX 2026-08-30): pdftotext and pypdf both
+  absent at start; pypdf's cffi backend broken and apt poppler mirror 404'd on
+  first try. Fixed per the known pattern: pip install --force-reinstall cffi,
+  apt-get update THEN poppler-utils. Pre-extracted all 13 input PDFs to
+  page-marked text (work/txt/, "[PAGE N]" markers) so Read/Grep-only stage
+  agents navigate by grep and cite real pages. FIX STILL PENDING: session-start
+  hook should install the extractor and standardise page-tagged text twins.
+- RECURRED (YAML-only-in-result, per INDOBORAX): B01, B03, B06, B09b emitted
+  the handoff block only in the result message, not into the report file.
+  Orchestrator reconstructed each and appended it to the report. Verifier C
+  did NOT flag B01 this run (block was reconstructed before C ran). FIX STILL
+  PENDING: stage prompts must require the YAML block be WRITTEN TO THE REPORT.
+- RECURRED (Verifier A haiku false CRITICAL, the standing pattern): run-1 raised
+  a CRITICAL on the ~INR1.6bn welding-consumables TAM as a ~100x source mismatch.
+  It is a MANAGEMENT-cited figure the pipeline itself flagged (B05 "likely a
+  units error") and contradicted (B06 via GEE), and B09's actual TAM does not
+  use it — a faithfully transcribed, already-caught company anomaly, not an
+  analyst fabrication. Orchestrator sanity-checked against source_truth and
+  re-invoked once with the severity-semantics + coverage addendum; run-2 came
+  back clean (95.2%, 0 CRITICAL). Logged as verifier disagreement, disposition
+  FLAG CLEARED (re-check by Verifier A re-invoke + orchestrator sanity-check).
+- COLLECTOR DEFECT (recurring): manifest sector_cap_row auto-picked
+  "Pharma / CDMO" for a welding-consumables/industrial company; operator had
+  manually corrected it to "Cables / Industrial products" pre-run. No confirmed
+  welding-consumables Section 1B cap row exists; flagged for Phase 3 (stage 11)
+  confirmation, not used.
+- CORPUS: prospectus (HIGH, listed 4-Oct-2024), results, rating, announcements,
+  shareholding, research all empty. Freshness pairs PASS (no present trigger
+  lacked its mate). Operator was shown the empty-folder list in the prior turn
+  and answered "run the full pipeline" — the single permitted stage-0 question,
+  answered; no second pause. Stage 8 partial: sebi.gov.in and screener.in
+  blocked by egress proxy, so RHP litigation schedule and multi-quarter pledge
+  trend deferred to Halt 1 / claude.ai live verification.
+- OUTCOME: PROCEED WITH CAVEATS. FLAG-CASH INDETERMINATE (CFO/PAT 0.15-0.45,
+  negative FCF both years, receivables +51% vs revenue +21%, PAT propped by
+  non-operating income per verifier B; corpus lacks rating rationale and
+  receivables ageing). Gate 0 AVERAGE (70/160), emerging moat MODEST (18/92),
+  credibility C, promoter CAUTION, niche TAM Rs2,200-2,600cr. Confidence 73
+  (60-74 band). Fragility MODERATE. Mental model DRAFT, unsigned.

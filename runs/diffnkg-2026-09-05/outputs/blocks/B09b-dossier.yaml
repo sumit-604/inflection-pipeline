@@ -1,0 +1,52 @@
+stage: B09b-dossier
+company: "DIFFNKG"
+run_date: "2026-09-05"
+model: claude-sonnet-5
+status: complete
+corpus_verdict: "CORPUS GAPPED"
+corpus_gaps:
+  - {document: "IPO prospectus (RHP/DRHP)", expected_source: "BSE", kind: "findable-missing"}
+  - {document: "Quarterly results filings", expected_source: "BSE", kind: "findable-missing"}
+  - {document: "Credit rating rationale", expected_source: "rating agency site", kind: "findable-missing"}
+  - {document: "Corporate action (Reg 30) announcement filings", expected_source: "BSE", kind: "findable-missing"}
+  - {document: "BSE/NSE shareholding pattern filing (multi-quarter, pledge column)", expected_source: "BSE", kind: "findable-missing"}
+  - {document: "Broker/research notes", expected_source: "BSE / company IR page", kind: "plausibly-nonexistent"}
+archetypes:
+  - {line: "Welding consumables / wear parts", archetype: "Brand/franchise consumer + Outsourcing partner (hybrid)"}
+  - {line: "Heavy engineering / project execution", archetype: "Order-book business (EPC/defence/capital goods)"}
+transition:
+  - line: "Welding consumables / wear parts"
+    from_tier: "R2 COST-ADVANTAGED CONVERTER"
+    to_tier: "R3 VALUE-ADDED / SPEC'D SUPPLIER"
+    engine: "Nimji/Unit 4 capacity doubling (9,000 to 18,000 MT) converting to utilised output; order-book mix converting into stickier spec-locked revenue"
+    proof_gate: "Two consecutive quarters consolidated CFO/PAT >=0.7 with receivables turnover back to >=4.0x"
+    recognition_gap: "OPEN: does CMP already reflect the TO state, resolved at Stage 11 via the PE gap"
+    ugliness: "INDETERMINATE (leaning toward classification pending rating rationale and full ageing schedule)"
+    transition_falsifier: "Two more consecutive quarters CFO/PAT <0.7 with receivables still outrunning revenue, and Nimji utilisation below 60% past FY28"
+  - line: "Heavy engineering / project execution"
+    from_tier: "R1 COMMODITY PRICE-TAKER (project-execution)"
+    to_tier: "R3 VALUE-ADDED / SPEC'D SUPPLIER (claimed, unproven for this line)"
+    engine: "Same Nimji capacity doubling; conversion of 70% new-build order mix into repeat/spares-based stickiness"
+    recognition_gap: "OPEN: same Stage 11 PE-gap question, per line"
+    ugliness: "ARTIFACT-OF-CLIMB claimed by management; corpus shows 70% new-build cyclical mix undercutting the claim (B12b)"
+    transition_falsifier: "Order-book mix keeps skewing further to Heavy Engineering with no rise in spares share, or margin on backlog lags consumables margin"
+    proof_gate: "Firm Nimji/Unit 4 commissioning date that holds at the next call, plus disclosed post-ramp utilisation"
+dominant_variables:
+  - "Nimji/Unit 4 commissioning date and post-ramp utilisation"
+  - "Consolidated CFO/PAT ratio and trade receivables turnover"
+  - "Order-book mix (heavy engineering share, new-build vs spares)"
+  - "EBITDA margin trajectory vs guidance"
+business_falsifier: "Two or more consecutive quarters of order-book decline (not just mix shift) alongside a sustained EBITDA margin drop below ~11-12%"
+mental_model_status: "DRAFT - PENDING OPERATOR SIGN-OFF"
+fragility:
+  variable_count: 4
+  verifiability_ratio: "2 of 4 externally observable"
+  single_point_failure: "none - failure requires conjunction"
+  fragility_verdict: "MODERATE"
+candidate_count: 8
+research_brief_items: 10
+plain_summary_points: 15
+annex:
+  present: true
+  questions_answered: 10
+  corpus_commit_hash: "2682765666495df541d3eb8765f7012b5f70a1db"

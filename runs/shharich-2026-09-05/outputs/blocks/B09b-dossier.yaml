@@ -1,0 +1,67 @@
+stage: B09b-dossier
+company: "SHHARICH"
+run_date: "2026-09-05"
+model: claude-sonnet-5
+status: complete
+corpus_verdict: "CORPUS GAPPED"
+corpus_gaps:
+  - document: "Q1 FY27 (Jun-2026) quarterly results filing"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "FY26 audited annual results filing (separate from the bound AR)"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "25-Aug-2026 Reg 30 board outcome on the Rs 40.24 cr preferential warrants"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "23-Mar-2026 SDPL rights subscription filing (Rs 4.95 cr)"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "Jun-2026 quarterly shareholding pattern"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "Credit rating rationale, should one later be obtained"
+    expected_source: "rating agency site"
+    kind: "findable-missing"
+  - document: "Main-company concall transcripts"
+    expected_source: "company IR page"
+    kind: "plausibly-nonexistent"
+  - document: "Investor presentation"
+    expected_source: "company IR page"
+    kind: "plausibly-nonexistent"
+  - document: "Prospectus"
+    expected_source: "BSE / company IR page"
+    kind: "plausibly-nonexistent"
+archetypes:
+  - line: "H-Acid manufacturing (78.5% of FY26 revenue)"
+    archetype: "Commodity converter"
+  - line: "Traded H-Acid resale (18.2% of FY26 revenue)"
+    archetype: "fits no known archetype"
+transition:
+  - line: "H-Acid manufacturing (dominant, 78.5% of FY26 revenue)"
+    from_tier: "R1 COMMODITY PRICE-TAKER (~12x neighbourhood)"
+    to_tier: "R2 COST-ADVANTAGED CONVERTER (~15-17x neighbourhood, durable mid-teens ROCE)"
+    engine: "(1) Shakambhari Dyechem (SDPL) capacity coming online, adding H-Acid and other chemical volume beyond the single Mahad plant; (2) captive solar power (3.35 MW total) lowering unit power cost"
+    proof_gate: "Organic manufactured H-Acid revenue growth (Sale of Manufactured Goods, Note 27, net of the trading line), sustained above 10% YoY for two consecutive annual reporting periods; FY26 organic growth was ~4.8-5.5%, not yet fired"
+    recognition_gap: "OPEN QUESTION, not resolved here: does CMP Rs 248 (~13.3x trailing P/E) already reflect an R2 destination, or does it still price R1 economics? Resolved at Stage 11 via the PE gap."
+    ugliness: "STRUCTURAL-FEATURE (provisionally)"
+    transition_falsifier: "Organic manufactured H-Acid growth stays below 5-10% for a second consecutive year; OR Shakambhari Dyechem reports a third consecutive year of Nil turnover with CWIP ageing further and no disclosed capacity or commissioning date"
+dominant_variables:
+  - "Organic manufactured H-Acid revenue growth, stripped of the trading line (~4.8-5.5% FY26 vs 30.7% headline)"
+  - "Shakambhari Dyechem (SDPL) capitalisation date and first reported turnover (currently Nil turnover, CWIP aged 1-2 years)"
+  - "Warrant conversion pace and the ~Rs 30.18 cr balance payment (25% paid-in, 18-month window from 25-Aug-2026)"
+  - "Operating EBITDA margin recovery toward the peer median as captive solar ramps (3.57% FY26 vs 9.28% two-peer median)"
+business_falsifier: "Promoter-family cash extraction (currently 112.7% of standalone FY26 PBT) staying above 100% of PBT for a second consecutive year while the current ratio still does not recover above 1.0x; OR the Rs 100 cr combined RPT ceiling being actually drawn against Shubhlaxmi Dyetex Private Limited (zero FY26 turnover, ~Rs 1,163 cr net worth, no disclosed business rationale) -- either would show the listed entity is becoming a capital-allocation vehicle for the wider promoter-family group rather than an operating H-Acid business"
+mental_model_status: "DRAFT - PENDING OPERATOR SIGN-OFF"
+fragility:
+  variable_count: 7
+  verifiability_ratio: "3 of 7 externally observable"
+  single_point_failure: "Organic manufactured H-Acid revenue growth staying below 5-10% for a second consecutive year"
+  fragility_verdict: "FRAGILE"
+candidate_count: 6
+research_brief_items: 12
+plain_summary_points: 15
+annex:
+  present: true
+  questions_answered: 10
+  corpus_commit_hash: "3e67de89c4b7a35d5315770c17b718405ac98372"

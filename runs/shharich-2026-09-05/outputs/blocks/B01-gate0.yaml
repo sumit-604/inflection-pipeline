@@ -1,0 +1,42 @@
+stage: B01-gate0
+company: "SHHARICH"
+run_date: "2026-09-05"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "results: no quarterly or annual results filing; Q1 FY27 (Jun-2026) results absent; FY26 audited annual results filing absent (AR carries audited FY26 statements)"
+  - "rating: no credit rating document"
+  - "announcements: no Reg 30 filings; AGM notice inside the AR is the partial substitute"
+  - "shareholding: no quarterly shareholding pattern; fallback AR pattern at 31-Mar-2026"
+  - "screening: only Data_Sheet CSVs populated (3 annual years FY24-FY26); other screener CSVs are empty templates"
+  - "concalls: declared unavailable (NO-CONCALL MODE); not a gap"
+  - "prospectus: not expected (listed 1987); not a gap"
+flags:
+  - type: FLAG-GATE0
+    reason: "Classification AVOID driven primarily by the 3-year LIMITED-history downgrade (Core 56/100 = AVERAGE band, downgraded one tier per data-confidence rule), not by a clean deal-breaker; historical depressors: only 2 of 3 years have ROCE (FY24 BS lacks current/non-current split anywhere in this corpus), only 2 of 3 years have Trade Payables (FY24 NOT FOUND), zero FCF-positive years in the 2 assessable years, current ratio 0.95x, and a moat profile with only 5/12 tests present, weak on cost position (M2), scale (M5) and brand (M9) vs BODALCHEM/SHREEPUSHK."
+data_years: 3
+fy_range: "FY2024 to FY2026"
+blocks: {A: 9, B: 8, C: 19, D: 6, E: 14}
+core_score: 56
+moat_score: 17
+grand_total: 73
+moats_confirmed: 5
+moat_class: "STRONG"
+classification: "AVOID"
+deal_breakers: []
+history_downgrade: true
+data_notes:
+  - "ROCE: source-reported (AR Note 35.22, consolidated p.176/standalone p.137) available for FY25 (29%) and FY26 (17%) only; FY24 NOT FOUND (no current/non-current BS split for FY24 in any provided source). A4 trend uses FY25 as the earliest available year, not FY24."
+  - "ROE computed per fixed formula (PAT/avg Net Worth), not the AR's own ROE note, which uses closing-equity basis and has an apparent typo in the standalone FY25 cell (shows 2.48, a duplicate of the DSCR row above). FY24 ROE uses closing Net Worth only (FY23 opening not in corpus)."
+  - "E2 promoter-holding change scored on a 1-year window (54.21% to 59.25%, AR FY26 p.125) because the AR carries only 31-Mar-2025 and 31-Mar-2026; no 3-year-prior figure exists in this corpus."
+  - "E3 promoter pledge: no pledge disclosure found in the AR Corporate Governance Report; no quarterly shareholding pattern in corpus. Scored 0/N/A, not asserted as zero pledge."
+  - "Capex/FCF isolable only for FY25 (Rs 5.30 cr) and FY26 (Rs 12.93 cr) from the AR consolidated cash flow statement (p.146); FY24 capex NOT FOUND (screener gives only a lump investing-CF total). B2/B3 scored on the 2 assessable years only."
+  - "Trade Payables available only for FY25 and FY26 (AR Note 22, p.131/p.170 area); FY24 NOT FOUND (not in screener Data_Sheet, no FY24 AR in corpus). B4 WC-Days change compares FY26 to FY25, not FY26 to FY24."
+  - "Inventory Days and Payable Days computed on a COGS basis (Cost of Material Consumed + Purchase of Stock-in-Trade + Changes in Inventories, AR P&L) since COGS is explicitly available; Receivable Days computed on Revenue basis (formula's only option)."
+  - "PAT CAGR (34.13%, FY24-FY26 endpoints) is inflated by FY25 being a cyclical spread peak; FY26 PAT fell 19.2% YoY versus FY25 despite 30.7% revenue growth (AR FY26 p.59, p.77). Flagged for downstream stages; consistent with the company-memory 'volume vs spread' load-bearing question, not re-litigated here."
+  - "D1 EBITDA basis: used AR's own disclosed consolidated EBITDA convention (PBT+Depreciation+Interest, includes Other Income), giving Net Debt/EBITDA 2.64x (D1=1). A stricter operating-EBITDA-only measure (excludes Other Income) gives 3.90x (D1=0, Block D would be 5/20 instead of 6/20). Formula set does not define an EBITDA basis; sensitivity flagged."
+  - "Peer data: AKSHARCHEM-Data_Sheet.csv contains only FY2015-16 figures, stale and unusable for FY26 comparison. M2 and M9 computed using the 2 usable peers (BODALCHEM, SHREEPUSHK) only, not scored as PEER DATA NEEDED since sufficient peer data existed."
+  - "No loss-to-profit swing in the 3-year window; PAT positive all 3 years (FY24 Rs 2.29 cr, FY25 Rs 5.10 cr, FY26 Rs 4.12 cr)."
+  - "Basis check: screener-data figures (Sales, PAT, CFO, investing CF, Total Assets, Equity, Receivables, Inventory, Borrowings) verified line-by-line against CONSOLIDATED AR figures for FY25/FY26. FY24 basis assumed consolidated=standalone (SDPL pre-operational; no FY24 AR in corpus to verify)."
+block_b_trend: "deteriorating — cumulative FCF over the only 2 assessable years is -Rs 12.40 cr (FY25 -6.10 cr, FY26 -6.30 cr), both negative on rising capex (Rs 5.30 cr to Rs 12.93 cr); FY25 CFO was -Rs 0.80 cr despite +Rs 5.10 cr PAT, the sharpest single cash-quality data point in the window"
+analyst_note: "Classification lands at AVOID mainly because of the 3-year LIMITED-history downgrade rule: Core score 56/100 sits inside the AVERAGE band (40-59), and a 3-year-only record forces one tier down regardless of the underlying profile. The scorecard reads as a commodity converter mid-cycle, not a broken business: strong revenue/PAT CAGR are inflated by FY25 being a cyclical spread peak (PAT fell 19% YoY in FY26 despite 31% revenue growth); FCF was negative in both computable years on subsidiary-expansion capex; current ratio sits below 1.0x; moat tests fail on cost position (M2), scale (M5), and brand (M9) against BODALCHEM/SHREEPUSHK. ROCE, ROE-trend, and WC-day-trend metrics could only use 2 of 3 years because no source in this corpus splits FY24's balance sheet into current/non-current liabilities or carries FY24 trade payables. Per Amendment 17, none of this spot-year data should feed Section 1B or FTTCP directly; that gate sits downstream. The one unambiguously strong signal is M10 (switching costs, full marks): revenue grew every year while receivable days fell rather than rose."

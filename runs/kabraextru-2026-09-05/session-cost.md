@@ -7,3 +7,4 @@ Per-stage token ledger. One row per subagent run. Stage 0 is orchestrator-inline
 |---|-------|-------|--------|--------|---------|-----------|------|------|
 | 0 | input validation | orchestrator-inline (fable) | n/a | n/a | n/a | n/a | n/a | 1 |
 | 8 | promoter check | claude-sonnet-5 | default | n/a | n/a | 178598 | 830s | 1 |
+| 2 | notes triple-pass (pass 1) | claude-sonnet-5 | default | n/a | n/a | 229345 | 791s | 1 |

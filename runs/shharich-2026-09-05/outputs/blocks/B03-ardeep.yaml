@@ -1,0 +1,61 @@
+stage: B03-ardeep
+company: "SHHARICH"
+run_date: "2026-09-05"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "results: no quarterly or annual results filing; Q1 FY27 (Jun-2026) results absent"
+  - "rating: no credit rating document"
+  - "announcements: no Reg 30 filings; AGM notice inside the AR is the partial substitute"
+  - "shareholding: no quarterly shareholding pattern; fallback AR pattern at 31-Mar-2026"
+  - "screening: only Data_Sheet CSVs populated (3 annual years FY24-FY26)"
+  - "concalls: declared unavailable (NO-CONCALL MODE); not a gap"
+  - "prospectus: not expected (listed 1987); not a gap"
+flags:
+  - {type: FLAG-CASH, reason: "OCF swung from Rs -147.99 lakh (FY25, vs PAT Rs 512.40 lakh) to Rs 1,105.64 lakh (FY26, vs PAT Rs 422.22 lakh) substantially on a one-year Rs 379.71 lakh receivables release; current ratio stayed below 1.0 both years (0.81 FY26 standalone); PAT fell 17.6% YoY despite 30.7% revenue growth; Other Income reached 57.7% of PBT in FY26, over half of it an unexplained, apparently-unhedged FX gain (Cash Flow Statement p.107; P&L p.106; Other Income Note; MD&A ratio table p.77)"}
+  - {type: FLAG-PROMOTER-PRELIM, reason: "Not pledge or open-market selling; instead a sustained, discount-priced, promoter-family-exclusive control-concentration pattern (promoter holding 54.21% to 59.25% to 64.25%, with a path to 73.75% via a pending warrant issue), combined with promoter-family cash extraction (remuneration + relatives salary + rent) at 112.7% of FY26 PBT; three of the four warrant allottees are also paid Senior Management Personnel (AGM Notice pp.44,47; Corporate Governance Report pp.78,85,89; Note 35.7). Full promoter verdict deferred to B08 per protocol."}
+phase_verdicts: {p1: "WATCH", p2: "RED FLAG", p3: "RED FLAG", p4: "RED FLAG", p5: "WATCH", p6: "WATCH", p7_best_fit: "GARP/Turnaround - both WATCHLIST, unproven"}
+overall_quality: 3.5
+quality_components: {governance: 4, accounting: 3, balance_sheet: 4, earnings: 3}
+kill_switch_notes:
+  - "Phase 1: would not stop on the opinion/CARO alone (both clean on substance), but would flag that KAM selection missed the report's own most contentious numbers (FX, Fair Values note, gratuity reconciliation) and that CARO clause x(b) shows a probable drafting defect."
+  - "Phase 2: would pause on the cumulative pattern - promoter-family cash extraction exceeding PBT, a Rs 100 crore RPT ceiling sought against a Rs 156 crore market cap for a newly-surfaced, financially unusual related party (Shubhlaxmi Dyetex Private Limited), and numeric errors within the audited Notes."
+  - "Phase 3: would pause because the 30.7% revenue-growth headline conceals a 17.6% PAT decline, an OCF swing driven by one-year working-capital timing, and a profit base 57.7% dependent on an unexplained Other Income / FX gain."
+  - "Phase 4: would pause because the risk section and MD&A omit the single most decision-relevant fact for this thesis (capacity utilisation / volume vs spread) and repeat a wrong-direction ratio explanation across three separate tables."
+  - "Phase 5: would pause on the scale and exclusivity of the promoter-family capital-raising pattern, though nothing found is a compliance breach."
+  - "Phase 6: would note the SDPL 'near term' production claim is a hedged retreat against the AR's own operational evidence (aged, incomplete, zero-revenue CWIP), though no statement is factually false."
+triple_pass_verification:
+  verified: 15
+  discrepancies: []
+missing_risks:
+  - {risk: "Foreign currency / unhedged export exposure", evidence: "46.4% of FY26 revenue is export (Note 35.9), Rs 169.32 lakh new FX gain in Other Income, yet the Corporate Governance Report's SEBI-mandated risk disclosure (p.89) covers only commodity price risk and never mentions currency risk"}
+  - {risk: "Related-party concentration / promoter cash extraction", evidence: "Promoter-family compensation at 112.7% of PBT (Note 35.7); Rs 100 crore RPT ceiling sought (AGM Notice Item 11) against a Rs 156 crore market cap; never framed as a risk in MD&A Section E"}
+  - {risk: "Dilution / control concentration from convertible instruments", evidence: "Promoter holding 54.21% to 59.25% to 64.25%, prospective 73.75%, entirely via CCD conversion and pending warrants (Note 35.1, AGM Notice Item 16); never framed as a shareholder risk"}
+  - {risk: "Subsidiary execution / capital-deployment risk", evidence: "Shakambhari Dyechem Private Limited CWIP partly aged 1-2 years with zero revenue to date (Note 2(ii) ageing); only became a 'material subsidiary' after the FY26 year-end (Board's Report p.62)"}
+  - {risk: "Cash-tax transition risk", evidence: "DTA balance (Rs 581.95 lakh) being drawn down at Rs 100-180 lakh/year (Note 7/35.19); once exhausted the Company becomes a cash taxpayer, compressing net margin further"}
+  - {risk: "Capacity utilisation / volume disclosure gap", evidence: "AR discloses installed capacity (270 tonnes, p.5) but no production volume or utilisation percentage anywhere in the document (confirmed by direct search)"}
+guidance_table:
+  - {claim: "Expected profit level (Schedule V minimum-remuneration justification)", number: "approximately Rs 10 Crores", timeframe: "not explicitly stated", credibility: "Low as an operating forecast - more than double FY26 actual PAT (Rs 4.22 crore standalone), with no operating plan disclosed; this is a standard boilerplate justification for minimum remuneration, not a considered forecast, but is the only forward profit number in the AR"}
+  - {claim: "Shakambhari Dyechem Private Limited commencement of production", number: "not quantified", timeframe: "near term (unquantified)", credibility: "Low - contradicted in tone by aged, incomplete, zero-revenue CWIP evidence elsewhere in the same AR (Phase 6E hedged retreat)"}
+  - {claim: "Warrant-funded expansion objects utilisation timeline", number: "Rs 40.24 crore across 4 objects", timeframe: "March 2031 (tentative, all 4 objects)", credibility: "Plausible as stated but a very long runway for funds only 25% paid-in at subscription; informative on expected pace, not a red flag per se"}
+monitorables:
+  - {metric: "Organic manufactured H-Acid revenue growth vs total revenue growth", threshold: ">10-15% organic growth needed to support the transition thesis; a repeat of ~5% organic against a higher headline is a red flag", where: "Next results filing / next AR's product-disaggregation note", why: "Directly tests the volume-vs-spread load-bearing question this pipeline run exists to answer"}
+  - {metric: "Other Income as % of PBT", threshold: "should fall back toward ~12-15%; persistence above 40-50% is a red flag", where: "Next P&L / Other Income note", why: "FY26 profit is unusually non-operating-income-dependent (57.7% of PBT); persistence would confirm an earnings-quality problem, not a one-off"}
+  - {metric: "Promoter-family remuneration + relatives salary + rent as % of PBT", threshold: "should fall back below 100% (was 84.9% FY25, 112.7% FY26)", where: "Next AR's related-party note / AOC-2", why: "Tests whether FY26 was a peak or a new normal for promoter cash extraction"}
+  - {metric: "Shakambhari Dyechem Private Limited capitalisation date and first revenue", threshold: "any capitalisation of the aged CWIP, or first reported turnover", where: "Next AR's CWIP ageing note / AOC-1", why: "Resolves the Phase 6E near-term production claim, the single fact this thesis most needs delivered"}
+  - {metric: "Warrant conversion pace and 75% balance payment", threshold: "full conversion within the 18-month window vs partial/lapsed warrants", where: "Reg 30 filings / next AR's share capital note", why: "Confirms whether promoters follow through on the ~Rs 30.18 crore balance payment or let warrants lapse"}
+  - {metric: "Export revenue and FX hedging disclosure", threshold: "any hedging programme introduced, or an explanation for the export step-change", where: "Next AR's foreign exchange / risk management note", why: "Tests whether the unhedged 46.4%-of-revenue export exposure is addressed or persists unmanaged"}
+  - {metric: "Capacity utilisation disclosure", threshold: "any explicit volume/utilisation % disclosed for the first time", where: "Next AR's MD&A or segment note", why: "Currently NOT FOUND anywhere in this AR; its appearance or continued absence is itself informative"}
+ar_new_downstream_entities:
+  - {name: "Shubhlaxmi Dyetex Private Limited", where_in_ar: "AGM Notice Item 11 explanatory statement and SEBI Industry Standards Annexure-I to the Notice (pp.32-41)", entity_type: "RPT counterparty (promoter-group; proposed Rs 50 crore omnibus RPT authorisation despite Nil FY26 transactions; disclosed FY26 unaudited financials: Turnover Nil, PAT Rs 87,323, Net worth ~Rs 1,163 crore)"}
+strengths_top3:
+  - "No channel-stuffing, no restatement, immaterial contingent liabilities (3.03% of net worth), clean CARO on substance"
+  - "Capital discipline in deployment: CCD proceeds raised in FY26 were deployed into capex/investments, not hoarded; cash balance fell across both years despite capital raises"
+  - "Clean auditor-fee and continuity profile: zero non-audit fee, stable fee, no resignation, no Section 143(12) fraud reporting, no SEBI/MCA action in 3 years"
+red_flags_top3:
+  - "Promoter-family cash extraction at 112.7% of FY26 PBT, with every dilutive capital-raising instrument (CCDs, pending warrants) allotted exclusively to promoter-family members, three of whom are also paid Senior Management Personnel; promoter holding on a path from 54.21% to a prospective 73.75%"
+  - "Headline 30.7% revenue growth conceals a 17.6% PAT decline, margin compression (EBITDA margin 8.13% to 5.31%), and a profit base 57.7% dependent on Other Income, over half of it an unexplained FX gain tied to an unexplained 46.4%-of-revenue export emergence the Company's own risk note denies"
+  - "A Rs 100 crore combined RPT ceiling sought against a Rs 156 crore market cap, including a newly-disclosed related party with Rs 1,163 crore net worth and zero turnover, alongside numeric errors in audited disclosures and a four-instance drafting/QC pattern spanning CARO, the Notes, and the Board's own MD&A"
+best_fit_strategy: "GARP-transition and Turnaround both WATCHLIST - growth and cash generation not yet proven structural; capex bet unproven"
+one_line_verdict: "A cyclical converter's 31% revenue headline hides a 18% profit fall, extraction exceeding profit, and an unproven capex bet - WATCHLIST, GARP unproven."
+analyst_note: "The two findings most load-bearing beyond B02's own scope are: (1) the AGM Notice's Item 11 material-RPT authorisation, which surfaces a brand-new related party (Shubhlaxmi Dyetex Private Limited, not a subsidiary - do not confuse with Shakambhari Dyechem Private Limited, the actual subsidiary) with an unusual Rs 1,163 crore net worth / zero turnover profile and a proposed Rs 50 crore ceiling; and (2) the discovery that the same wrong-direction ratio-explanation defect B02 found in Note 35.22 recurs twice more in the Board's own MD&A (Interest Coverage Ratio and Return on Net Worth commentary, p.77) - meaning the drafting-quality problem is a Board-level, not only an auditor-Notes-level, pattern. Also load-bearing: the CG Report (p.91) fully quantifies the related-party loan B02 could only find partially disclosed (Rs 1,88,28,133 to Shakambhari Dyechem Private Limited, since repaid), and Other Income at 57.7% of PBT is a new, AR-anchored earnings-quality finding that should inform Section 1B/FTTCP's treatment of FY26 as a non-representative spot year for this converter."

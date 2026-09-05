@@ -35,7 +35,12 @@ Brief: none (step1-business-brief.md absent).
 
 ## HALT 1 GATE
 - Mental Model signed: NOT SIGNED. Draft produced by stage 09b at
-  runs/visakaind-2026-09-05/outputs/reports/09b-understanding-dossier.md.
+  runs/visakaind-2026-09-05/outputs/reports/09b-understanding-dossier.md
+  (2026-09-05; corpus verdict CORPUS GAPPED; fragility FRAGILE).
+- Phase 1 gate recommendation (evidence only, 2026-09-05): REWORK, forced by
+  Verifier B red-flag coverage 53%; indicative PROCEED WITH CAVEATS once the
+  stage 5/6 rework clears (FLAG-PROMOTER CONCERN, FLAG-CASH INDETERMINATE,
+  FLAG-GATE0 AVERAGE 56/100). See outputs/final/gate-recommendation.md.
 - Halt 1 decision (KILL/SHALLOW/PROCEED): PENDING.
 
 ## OPERATOR RULINGS

@@ -26,3 +26,36 @@ not. Stage 0 ran inline in the orchestrator session (no subagent).
 | 17 | verifier-a-numerical | haiku | n/a | n/a | n/a | 118742 | 3m43s | 1 |
 | 18 | stage-13-synthesis (PHASE 1 LITE) | opus | n/a | n/a | n/a | 169300 | 11m12s | 1 |
 | 19 | stage-09b-dossier | sonnet | n/a | n/a | n/a | 275033 | 18m44s | 1 |
+
+## Close-out summary
+
+Run total (all ledger rows, subagent tokens as reported by the harness): 3,409,135 tokens over 20 subagent runs; stage 0 ran inline (no subagent tokens).
+
+### (a) TOP FIVE BY TOKENS
+
+| rank | stage (loop/retry runs summed) | total_tok | share of run |
+|---|---|---|---|
+| 1 | stage-02-notes | 551,704 | 16.2% |
+| 2 | stage-03-ardeep | 383,079 | 11.2% |
+| 3 | stage-07-emoat | 325,789 | 9.6% |
+| 4 | verifier-b-redflags | 287,346 | 8.4% |
+| 5 | stage-09b-dossier | 275,033 | 8.1% |
+
+### (b) DOWNSHIFT FAILURES
+
+none (stage 0 ran inline in the orchestrator session; verifier A ran on haiku; stage 10 is Phase 3)
+
+### (c) COST SPIKES
+
+none (no prior runs/visakaind-*/session-cost.md ledger exists; first run for this ticker)
+
+### (d) OPERATOR SNAPSHOT
+
+Operator: run /cost and /usage now and paste the cache hit ratio and the loop totals below under "Operator snapshot". The orchestrator cannot read those interactive commands.
+
+#### Operator snapshot
+(pending operator paste)
+
+### Run notes
+- Three stages (6, 7, 8) were cut off mid-run by an HTTP 429 session limit at ~16:50 UTC (reset 17:30 UTC). Stage 8 had already written its report and valid block to disk and was accepted; stages 6 and 7 were resumed in their own contexts (run# 2 rows) after the reset.
+- Token counts are the harness-reported subagent totals; input/output split and effort were not exposed, hence n/a.

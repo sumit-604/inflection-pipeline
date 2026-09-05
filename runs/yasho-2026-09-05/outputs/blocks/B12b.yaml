@@ -1,0 +1,26 @@
+stage: B12b
+company: "YASHO"
+run_date: "2026-09-05"
+model: claude-opus-4-8
+status: complete
+independent_flags_found: 13
+caught: 8
+partially_caught: 3
+missed:
+  - {severity: "MAJOR", item: "\"We have shut Vapi\" (Q1 FY27) contradicts uncorrected \"Vapi 95-98%\" and is never reconciled; B05 omits it entirely. Masks that the utilisation/margin ramp is a Pakhajan-only story", anchor: "Q1 FY27 call pp11,15; Q4 FY26 p12"}
+  - {severity: "MAJOR", item: "Celebrated WC beat 190->143 days presented as clean discipline; management's own \"genuine supply issue... inventory base came down\" admission (partly forced RM shortage) unrecorded by B05", anchor: "Q1 FY27 call p17; CFO p5"}
+pipeline_flags_not_supported: []
+promise_delivery_spot_checks: {checked: 5, confirmed: 4, wrong: 1}
+credibility_grade_concur: "concur (B); the two misses and the under-weighted plant-utilisation evasion press Transparency to the low end, not below B"
+redflag_coverage: 85            # caught + partially caught / independent flags found (11/13)
+findings:
+  - {severity: "MAJOR", location: "B05 2D/2E (utilisation) + 2A tracker", claimed: "plant-level detail withheld for competitive reasons only", source_truth: "Q1 FY27 p15 'we have shut Vapi' vs p11 'Vapi 95-98%' unreconciled; ramp is a Pakhajan-only story", note: "MISSED contradiction; material to the operating-leverage/margin thesis"}
+  - {severity: "MAJOR", location: "B05 2A tracker + 2C (WC 143 'delivered early and exceeded')", claimed: "WC 190->143 a clean quality beat", source_truth: "Q1 FY27 p17 'genuine supply issue... inventory base came down' - partly involuntary", note: "MISSED; inverts a headline positive"}
+  - {severity: "MAJOR", location: "B05 4B Q6 (asset turn as peer question)", claimed: "asset turn 2.5x-4:1 range, for peer check", source_truth: "Yasho's OWN assumption fell 4:1 (Q3 FY26 p4) -> 2.5x (Q1 FY27 pp8-9) while FY28 target rose; B06 contradicts to ~1x", note: "under-weighted; own-number downgrade not flagged as a red flag"}
+  - {severity: "MINOR", location: "B05 4D red flags (LOW-MEDIUM)", claimed: "plant-utilisation evasion LOW-MEDIUM", source_truth: "2+ quarter evasion of the load-bearing operating variable behind the margin story", note: "should grade higher"}
+  - {severity: "MINOR", location: "B05 2A promise tracker row (WC by March)", claimed: "inventory/WC 160-175 by March MISSED (190)", source_truth: "promise was INVENTORY days; Q3 inventory ~170 in band; 190 is WORKING-CAPITAL days", note: "basis mismatch; overstated miss (conservative direction)"}
+  - {severity: "MINOR", location: "B05 2C/ANALYST NOTE", claimed: "margin durability treated at aggregate", source_truth: "scripted 'confident to sustain' (Q1 FY27 pp2,5) softens to 'can't promise / try our best' (pp13-14)", note: "script-vs-Q&A softening not isolated"}
+critical_count: 0
+major_count: 3
+minor_count: 3
+acceptance_rate: 62             # fully caught / independent flags found (8/13)

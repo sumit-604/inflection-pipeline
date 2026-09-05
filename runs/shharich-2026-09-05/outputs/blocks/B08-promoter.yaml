@@ -1,0 +1,58 @@
+stage: B08-promoter
+company: "SHHARICH"
+run_date: "2026-09-05"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "announcements: no Reg 30 filings; 25-Aug-2026 warrant board outcome absent; AGM notice inside the AR is the partial substitute"
+  - "shareholding: no quarterly shareholding pattern; fallback AR pattern at 31-Mar-2026; pledge status not disclosed in corpus (independently confirmed nil via web/Trendlyne)"
+  - "results: no quarterly or annual results filing"
+  - "rating: no credit rating document"
+  - "concalls: declared unavailable (NO-CONCALL MODE); not a gap"
+  - "prospectus: not expected (listed 1987); not a gap"
+flags:
+  - {type: FLAG-PROMOTER, verdict: "CAUTION", top_findings: ["Promoter-family cash extraction at 112.7% of FY26 standalone PBT", "Promoter-exclusive discounted dilution path: holding 54.21% -> 59.25% -> 64.25% -> prospective 73.75% via CCDs at Rs79 and warrants at Rs176.10 vs CMP Rs248", "Rs 100 crore combined omnibus RPT ceiling sought for Shubhalakshmi Polyesters Ltd and Shubhlaxmi Dyetex Pvt Ltd (the latter: nil turnover, ~Rs1,163cr net worth, zero prior transactions)", "Zero pledge, zero SEBI/criminal/tax adverse action found; no deal-breaker triggered"]}
+verdict: "CAUTION"
+scorecard: {clean: 4, caution: 6, red: 0}
+deal_breakers: []
+adverse_findings:
+  - {finding: "Promoter-family cash extraction (remuneration + relatives' salaries + rent) reached 112.7% of standalone FY26 PBT, up from 84.9% in FY25", evidence_tier: "VERIFIED", source: "AR FY26 Note 35.7 pp.124-129; P&L p.106", date: "FY26 (year ended 31-Mar-2026)"}
+  - {finding: "Two consecutive dilutive capital raises (CCDs at Rs79, warrants at Rs176.10) allotted exclusively to promoter-family individuals at discounts to CMP Rs248, moving promoter holding from 54.21% to a prospective 73.75%", evidence_tier: "VERIFIED", source: "AR FY26 Note 35.1 p.126; AGM Notice Item 16 pp.44-47", date: "FY25-26; warrants approved 25-Aug-2026"}
+  - {finding: "New combined Rs 100 crore omnibus material-RPT ceiling sought for Shubhalakshmi Polyesters Ltd and Shubhlaxmi Dyetex Pvt Ltd; the latter shows FY26 unaudited net worth of approximately Rs 1,163 crore against nil turnover and zero prior transactions", evidence_tier: "VERIFIED", source: "AGM Notice Item 11 and Annexure, AR FY26 pp.15-16, 35-42", date: "AGM 24-Sep-2026 (proposed)"}
+  - {finding: "Family entity Shubhalakshmi Polyesters Ltd sold its polyester manufacturing business to Reliance Industries for Rs 1,522 crore in March 2023 (affiliate Shubhlaxmi Polytex sold for Rs 70 crore); SPL nonetheless continues as an active related party and promoter of SHHARICH (FY26 turnover Rs 432.16 crore, PAT -Rs 7.87 crore)", evidence_tier: "MEDIA REPORTED", source: "Fibre2Fashion, Trilegal, Outlook Business coverage of the Reliance Polyester acquisition, March 2023", date: "March 2023 deal; ongoing relationship per AR FY26"}
+  - {finding: "Promoter-family private-entity network extends to at least a dozen unlisted vehicles across finance, real estate/logistics, infrastructure, e-commerce and cleantech; a pending AGM object-clause amendment would let SHHARICH itself enter heavy-equipment, EPC and infrastructure businesses that mirror several of these private entities' lines", evidence_tier: "VERIFIED (MCA director records) / prospective, unconfirmed capital transfer", source: "QuickCompany/Zauba director records for Nihit Agarwal DIN 07586882; AGM Notice Item 15, AR FY26 pp.17-19", date: "current as of Sep-2026 search; MOA amendment proposed at AGM 24-Sep-2026"}
+  - {finding: "Related-party loan of Rs 1,88,28,133 to wholly-owned subsidiary Shakambhari Dyechem Pvt Ltd during FY26, repaid in full before year-end; disclosed with a figure only in the Corporate Governance Report, while the standalone Note admits the loan's existence without quantifying it", evidence_tier: "VERIFIED", source: "AR FY26 Corporate Governance Report p.91; Note 35.23(c) p.137", date: "FY26"}
+  - {finding: "Numeric/cross-reference errors in audited disclosures (Fair Values Note carrying-value mismatch, gratuity reconciliation failure, an ROE transcription error) recur identically in standalone and consolidated statements under an unqualified audit opinion", evidence_tier: "VERIFIED", source: "AR FY26 Notes 32, 35.11(E), 35.15, 35.22, pp.123, 130-131, 133, 137 (per B02-notes.yaml findings 4-5)", date: "FY26 audited financials, signed 15-May-2026"}
+  - {finding: "One independent director (Parag Agarwal) left the board effective 20-Jun-2024 with the AR recording only the departure date, not a reason or term-completion status, unlike two contemporaneous independent-director exits explicitly described as term completions", evidence_tier: "UNVERIFIED", source: "AR FY26 Note 35.7(c) p.124 ('upto 20.06.2024'); web search could not resolve the reason", date: "20-Jun-2024"}
+transition_evidence: []
+pledge_pct_latest: 0
+pledge_trend: "stable at 0% -- no pledge disclosed in AR FY26 Corporate Governance Report p.90, independently corroborated via Trendlyne SAST/insider-trading tracker; no pledge history found in web search"
+searches_performed:
+  - "Shree Hari Chemicals Export Limited SEBI order"
+  - "\"Bankesh Chandra Agrawal\" director"
+  - "Shree Hari Chemicals Export BIFR sick company history"
+  - "\"Shubhlaxmi Dyetex Private Limited\""
+  - "\"Shubhalakshmi Polyesters Limited\" news"
+  - "\"Shubhalakshmi Polyesters\" current business after Reliance deal 2023"
+  - "Shree Hari Chemicals Export ASM GSM surveillance BSE"
+  - "\"Om Pareek Investment Company\" Shree Hari"
+  - "\"Shree Hari Finvest\" company"
+  - "Shree Hari Chemicals Export promoter pledge shares"
+  - "\"Shree Hari Chemicals\" court case litigation dispute"
+  - "Indian H-Acid manufacturers cartel CCI anti-dumping case"
+  - "Shree Hari Chemicals Export Glassdoor AmbitionBox reviews"
+  - "\"Kailash Chand Jain\" Chartered Accountants NFRA audit quality"
+  - "Shree Hari Chemicals Export IiAS proxy advisory shareholder"
+  - "\"Shree Hari Chemicals Export Ltd\" \"Union of India\" Supreme Court 2006 excise"
+  - "Shree Hari Chemicals Export Limited history 1990s promoter founder"
+  - "\"Nihit Agarwal\" OR \"Sarthak Agarwal\" Shree Hari Chemicals director background"
+  - "\"Raviqu Infrastructure\" OR \"Navapur Industrial Park\" Agarwal company"
+  - "Shree Hari Chemicals Export ASM stage BSE long term short term"
+  - "\"Shree Hari Chemicals\" independent director resigned"
+  - "\"Parag Agarwal\" independent director resignation Shree Hari Chemicals reason"
+  - "Shree Hari Chemicals Export CFO Company Secretary resignation 2024 2025"
+  - "\"Shree Hari Chemicals\" SFIO ED PMLA raid income tax"
+  - "Shree Hari Chemicals Export object clause amendment cranes infrastructure diversification"
+searches_skipped: []
+verdict_basis: "Zero pledge and a clean SEBI/criminal/tax/civil-litigation record across all searches, but promoter-family cash extraction at 112.7% of FY26 PBT plus a promoter-exclusive discounted dilution path pushing control from 54% toward a prospective 74%, alongside a Rs100cr RPT ceiling for related parties including a nil-turnover, Rs1,163cr-net-worth entity, together outweigh the clean legal record and place this at CAUTION rather than TRUSTWORTHY."
+analyst_note: "The Reliance Industries acquisition of Shubhalakshmi Polyesters/Shubhlaxmi Polytex for Rs1,592cr combined (Mar-2023) is the single most load-bearing web finding: it most plausibly explains Shubhlaxmi Dyetex's otherwise-unexplained Rs1,163cr net worth against nil turnover (B03's 'unusual' flag), reframing the family as large and liquid rather than opaque or thinly capitalised. That same liquidity, combined with the pending MOA broadening into infrastructure/EPC objects mirroring the family's other private entities (Raviqu Infrastructure, Navapur Industrial Park, Sumeru Logistics Park), is why the capital-allocation-direction risk is flagged as prospective rather than asserted: no funds have moved yet. Independently verify Amrut Urkude's professional background and the precise reason for Parag Agarwal's Jun-2024 departure before treating either as settled."

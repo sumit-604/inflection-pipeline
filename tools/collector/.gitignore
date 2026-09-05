@@ -1,0 +1,10 @@
+# Secrets — never commit. These live only on the operator's disk.
+.env
+credentials.json
+token.json
+
+# Per-run working file (written fresh by /step1 each run) and runtime artifacts
+companies.txt
+_last_folder.txt
+__pycache__/
+*.pyc

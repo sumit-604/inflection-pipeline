@@ -294,6 +294,21 @@ html, body {
 .num-unit { font-size: 16px; font-weight: 600; opacity: 0.75; }
 .step-ok { color: #2c6e2f; font-weight: 700; margin: 6px 0; }
 
+/* ---------- Minimap ---------- */
+#minimap {
+  position: absolute; top: 66px; right: 12px; width: 160px; height: 160px;
+  border-radius: 14px; background: rgba(255,253,246,0.85);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2); border: 2px solid rgba(255,253,246,0.9);
+}
+@media (max-width: 520px) { #minimap { width: 110px; height: 110px; top: 62px; } }
+#touch-run {
+  position: absolute; right: 126px; bottom: 48px;
+  width: 64px; height: 64px; border-radius: 50%; border: none;
+  background: rgba(255,253,246,0.92); font-size: 26px;
+  box-shadow: 0 4px 0 rgba(0,0,0,0.2); touch-action: none;
+}
+#touch-run.on { background: #ffce3a; box-shadow: 0 2px 0 #b8901a; }
+
 /* ---------- Multiple choice steps ---------- */
 .choice-bank { display: flex; flex-direction: column; gap: 8px; margin: 10px 0 4px; }
 .choice-btn {
@@ -407,6 +422,8 @@ html, body {
     <button id="notebook-btn" title="Notebook (N)">📓</button>
     <!-- Sound on/off -->
     <button id="sound-btn" title="Sound on / off">🔊</button>
+    <!-- The map of the whole land -->
+    <canvas id="minimap" width="160" height="160"></canvas>
 
     <!-- Little prompt that appears when you are near something to do -->
     <div id="interact-prompt" hidden></div>
@@ -414,6 +431,7 @@ html, body {
     <!-- Controls reminder shown for a few seconds when you start (laptop only) -->
     <div id="controls-hint" hidden>
       <span><b>W A S D</b> or <b>↑ ↓ ← →</b> to walk</span>
+      <span><b>Shift</b> to run</span>
       <span><b>E</b> to talk / act</span>
       <span><b>N</b> for notebook</span>
     </div>
@@ -429,6 +447,7 @@ html, body {
     <div id="touch-controls" hidden>
       <div id="joystick"><div id="joystick-knob"></div></div>
       <button id="touch-interact">E</button>
+      <button id="touch-run" title="Run">🏃</button>
     </div>
   </div>
 
@@ -788,6 +807,8 @@ class Input {
 
     // "Edge" flag for interact: set true when pressed, cleared once read.
     this._interactQueued = false;
+    // Running: Shift held on a laptop, or the run button toggled on a phone.
+    this.runToggle = false;
 
     // Is this a touch device? If so we show the on-screen controls.
     this.isTouch = matchMedia("(pointer: coarse)").matches || "ontouchstart" in window;
@@ -881,6 +902,18 @@ class Input {
       e.preventDefault();
       this._interactQueued = true;
     }, { passive: false });
+    // Run toggle.
+    const runBtn = document.getElementById("touch-run");
+    if (runBtn) runBtn.addEventListener("touchstart", (e) => {
+      e.preventDefault();
+      this.runToggle = !this.runToggle;
+      runBtn.classList.toggle("on", this.runToggle);
+    }, { passive: false });
+  }
+
+  // Is the player asking to run?
+  get running() {
+    return this.keys.has("shift") || this.runToggle;
   }
 
   // Read the interact press ONCE. Returns true only on the frame it happened.
@@ -1418,6 +1451,206 @@ class UI {
   }
 }
 
+// ===== src/engine/terrain.js =====
+/* ============================================================
+   terrain.js — the big landscape. The world is 400 m by 400 m.
+
+   Height comes from a smooth noise function. Around the places
+   where people live (the village, the town, the farms, the lake
+   shore, the river valley) the ground is FLATTENED so buildings
+   and roads sit properly. A hill rises in the north for the
+   temple, and mountains ring the edge of the map.
+
+   heightAt(x, z) is the one source of truth. The terrain mesh,
+   the roads, the player, the villagers and the animals all ask it.
+   ============================================================ */
+
+const WORLD_HALF = 200;
+
+// Rectangles that are kept flat, with a soft edge `pad` metres wide.
+const FLAT_ZONES = [
+  { x1: -200, z1: -14, x2: 200, z2: 14, pad: 12 },   // the river valley
+  { x1: -48, z1: -48, x2: 48, z2: 48, pad: 16 },     // central village
+  { x1: -42, z1: 66, x2: 42, z2: 150, pad: 16 },     // south town + station
+  { x1: 58, z1: -78, x2: 152, z2: 78, pad: 16 },     // farmland, east
+  { x1: -152, z1: 12, x2: -58, z2: 84, pad: 16 },    // lake shore, south west
+];
+
+// The lake: an ellipse of water in the south west.
+const LAKE = { cx: -108, cz: 46, rx: 34, rz: 24 };
+function inLake(x, z) {
+  const dx = (x - LAKE.cx) / LAKE.rx, dz = (z - LAKE.cz) / LAKE.rz;
+  return dx * dx + dz * dz < 1;
+}
+
+// The temple hill: a flat-topped mound in the north.
+const HILL = { cx: 0, cz: -122, top: 16, plateau: 20, foot: 62 };
+
+function smoothstep(t) { t = Math.max(0, Math.min(1, t)); return t * t * (3 - 2 * t); }
+
+// Distance from a point to a rectangle (0 when inside).
+function rectDist(x, z, r) {
+  const dx = Math.max(r.x1 - x, 0, x - r.x2);
+  const dz = Math.max(r.z1 - z, 0, z - r.z2);
+  return Math.hypot(dx, dz);
+}
+
+// Rolling ground: a few sine waves layered, always a little above zero.
+function terrainNoise(x, z) {
+  return 2.4 * Math.sin(x * 0.021) * Math.cos(z * 0.018 + 0.7)
+    + 1.5 * Math.sin(x * 0.047 + 1.3) * Math.sin(z * 0.039)
+    + 0.8 * Math.cos(x * 0.09) * Math.sin(z * 0.083 + 2)
+    + 3.2;
+}
+
+function heightAt(x, z) {
+  // How "wild" is this spot? 0 inside a flat zone, 1 far from all of them.
+  let mask = 1;
+  for (const r of FLAT_ZONES) {
+    const d = rectDist(x, z, r);
+    mask = Math.min(mask, smoothstep(d / r.pad));
+  }
+  let h = terrainNoise(x, z) * mask;
+
+  // Temple hill with a flat top.
+  const dh = Math.hypot(x - HILL.cx, z - HILL.cz);
+  if (dh < HILL.foot) {
+    const t = 1 - smoothstep((dh - HILL.plateau) / (HILL.foot - HILL.plateau));
+    h = h * (1 - t) + HILL.top * t;
+  }
+
+  // Mountains ring the map. They start 150 m out and reach ~45 m at the edge.
+  const r = Math.max(Math.abs(x), Math.abs(z));
+  if (r > 148) {
+    const t = (r - 148) / 52;
+    h += t * t * 45 * (0.8 + 0.4 * Math.sin(x * 0.11) * Math.cos(z * 0.13));
+  }
+
+  // The lake bed dips below the water.
+  if (inLake(x, z)) h = -1.2;
+  return h;
+}
+
+// A text label on a canvas, shown as a sprite that always faces the camera.
+function makeTextSprite(text, { size = 40, color = "#2c2417", bg = "rgba(255,253,246,0.92)", scale = 1 } = {}) {
+  const canvas = document.createElement("canvas");
+  canvas.width = 512; canvas.height = 128;
+  const g = canvas.getContext("2d");
+  g.fillStyle = bg;
+  g.beginPath();
+  g.roundRect(8, 8, 496, 112, 28);
+  g.fill();
+  g.fillStyle = color;
+  g.font = `bold ${size}px "Segoe UI", system-ui, Arial, sans-serif`;
+  g.textAlign = "center";
+  g.textBaseline = "middle";
+  g.fillText(text, 256, 66);
+  const tex = new THREE.CanvasTexture(canvas);
+  const sprite = new THREE.Sprite(new THREE.SpriteMaterial({ map: tex, transparent: true, depthWrite: false }));
+  sprite.scale.set(4 * scale, 1 * scale, 1);
+  return sprite;
+}
+
+// A building from a few boxes: walls, a roof (gable, pyramid, flat or dome),
+// windows, a door, and an optional sign. Everything is sized in metres.
+function makeBuilding({
+  w = 5, d = 5, h = 3, floors = 1, roof = "gable",
+  wall = 0xf2e4c8, roofColor = 0xc0532f, sign = null, chimney = false,
+} = {}) {
+  const g = new THREE.Group();
+  const H = h * floors;
+  const body = new THREE.Mesh(new THREE.BoxGeometry(w, H, d), mat(wall));
+  body.position.y = H / 2;
+  body.castShadow = true; body.receiveShadow = true;
+  g.add(body);
+
+  // Roof.
+  let roofMesh;
+  if (roof === "gable") {
+    const shape = new THREE.Shape();
+    shape.moveTo(-w / 2 - 0.4, 0); shape.lineTo(w / 2 + 0.4, 0); shape.lineTo(0, Math.max(1.4, w * 0.35)); shape.closePath();
+    const geo = new THREE.ExtrudeGeometry(shape, { depth: d + 0.6, bevelEnabled: false });
+    roofMesh = new THREE.Mesh(geo, mat(roofColor));
+    roofMesh.position.set(0, H, -d / 2 - 0.3);
+  } else if (roof === "pyramid") {
+    roofMesh = new THREE.Mesh(new THREE.ConeGeometry(Math.max(w, d) * 0.78, Math.max(1.6, w * 0.4), 4), mat(roofColor));
+    roofMesh.position.y = H + Math.max(1.6, w * 0.4) / 2;
+    roofMesh.rotation.y = Math.PI / 4;
+  } else if (roof === "dome") {
+    roofMesh = new THREE.Mesh(new THREE.SphereGeometry(Math.min(w, d) * 0.55, 12, 8, 0, Math.PI * 2, 0, Math.PI / 2), mat(roofColor));
+    roofMesh.position.y = H;
+  } else {
+    roofMesh = new THREE.Mesh(new THREE.BoxGeometry(w + 0.4, 0.3, d + 0.4), mat(roofColor));
+    roofMesh.position.y = H + 0.15;
+  }
+  roofMesh.castShadow = true;
+  g.add(roofMesh);
+
+  // Windows on the front and back, one row per floor.
+  const winMat = new THREE.MeshStandardMaterial({ color: 0x35424a, flatShading: true, emissive: 0x1b2a33, emissiveIntensity: 0.4 });
+  const cols = Math.max(1, Math.floor(w / 2.2));
+  for (let f = 0; f < floors; f++) {
+    for (let c = 0; c < cols; c++) {
+      const x = -w / 2 + (w / (cols + 1)) * (c + 1);
+      for (const side of [1, -1]) {
+        if (f === 0 && side === 1 && c === Math.floor(cols / 2)) continue; // door goes here
+        const win = new THREE.Mesh(new THREE.BoxGeometry(0.9, 0.9, 0.1), winMat);
+        win.position.set(x, f * h + h * 0.6, side * (d / 2 + 0.03));
+        g.add(win);
+      }
+    }
+  }
+  // Door.
+  const door = new THREE.Mesh(new THREE.BoxGeometry(0.9, 1.7, 0.12), mat(COLORS.woodDark));
+  door.position.set(cols % 2 === 1 ? 0 : -w / 2 + (w / (cols + 1)) * (Math.floor(cols / 2) + 1), 0.85, d / 2 + 0.04);
+  g.add(door);
+  if (chimney) {
+    const ch = new THREE.Mesh(new THREE.BoxGeometry(0.5, 1.2, 0.5), mat(COLORS.stone));
+    ch.position.set(w / 3, H + 0.9, -d / 4);
+    g.add(ch);
+  }
+  if (sign) {
+    const s = makeTextSprite(sign, { size: 46, scale: 0.9 });
+    s.position.set(0, H + (roof === "flat" ? 1.0 : 2.4), d / 2 + 0.2);
+    g.add(s);
+  }
+  g.userData.footprint = { w, d };
+  return g;
+}
+
+// A sheet of water that ripples. Returns { mesh, geo, base }.
+function makeWaterSheet(w, d, segX, segZ, color = COLORS.water) {
+  const geo = new THREE.PlaneGeometry(w, d, segX, segZ);
+  geo.rotateX(-Math.PI / 2);
+  const m = new THREE.MeshStandardMaterial({ color, flatShading: true, roughness: 0.35, metalness: 0.15, transparent: true, opacity: 0.92 });
+  const mesh = new THREE.Mesh(geo, m);
+  return { mesh, geo, base: geo.attributes.position.array.slice() };
+}
+
+// Moves an object back and forth along a list of points at a steady speed.
+class PathMover {
+  constructor(obj, points, speed, { loop = false, yOffset = 0 } = {}) {
+    this.obj = obj; this.points = points; this.speed = speed; this.loop = loop; this.yOffset = yOffset;
+    this.i = 0; this.dir = 1; this.wait = 0;
+    obj.position.set(points[0][0], heightAt(points[0][0], points[0][1]) + yOffset, points[0][1]);
+  }
+  update(dt) {
+    if (this.wait > 0) { this.wait -= dt; return; }
+    const next = this.points[this.i + this.dir];
+    if (!next) {
+      if (this.loop) { this.i = -this.dir === 1 ? 0 : this.points.length - 1; this.obj.position.set(this.points[0][0], 0, this.points[0][1]); this.i = 0; return; }
+      this.dir *= -1; this.wait = 2.5; this.obj.rotation.y += Math.PI; return;
+    }
+    const dx = next[0] - this.obj.position.x, dz = next[1] - this.obj.position.z;
+    const dist = Math.hypot(dx, dz);
+    const step = this.speed * dt;
+    if (dist <= step) { this.i += this.dir; this.obj.position.x = next[0]; this.obj.position.z = next[1]; }
+    else { this.obj.position.x += (dx / dist) * step; this.obj.position.z += (dz / dist) * step; }
+    this.obj.position.y = heightAt(this.obj.position.x, this.obj.position.z) + this.yOffset;
+    if (dist > 0.01) this.obj.rotation.y = Math.atan2(dx, dz);
+  }
+}
+
 // ===== src/engine/world.js =====
 /* ============================================================
    world.js — builds the whole village out of simple three.js
@@ -1468,7 +1701,7 @@ class World {
     // The scene holds everything we draw.
     this.scene = new THREE.Scene();
     this.scene.background = new THREE.Color(0xbfe3f2); // soft sky blue
-    this.scene.fog = new THREE.Fog(0xbfe3f2, 45, 90);  // fade distant hills
+    this.scene.fog = new THREE.Fog(0xbfe3f2, 150, 420); // fade the far mountains
 
     // Where the player starts, and useful spots other code can read.
     this.spawn = new THREE.Vector3(0, 0, 22);
@@ -1493,8 +1726,12 @@ class World {
     this.bridgePlanks = new THREE.Group(); // filled when bridge is solved
     this.schoolWindows = [];               // meshes we light up
     this.scene.add(this.bridgePlanks);
+    this.waters = [];   // every rippling water sheet (river, lake)
+    this.fields = [];   // instanced crop fields
+    this.swayers = [];  // things the wind moves
 
     this._buildLights();
+    this._buildTerrain();
     this._buildGround();
     this._buildRiver();
     this._buildNearBank();
@@ -1502,6 +1739,10 @@ class World {
     this._buildTrees();
     this._buildAmbient();
     this._buildLife();
+    this._buildRoads();
+    this._buildDistricts();
+    this._buildVegetation();
+    this._buildVehicles();
   }
   // ---- Water that moves, smoke, wind, boats, a pond, a field ----
   _buildLife() {
@@ -1515,6 +1756,7 @@ class World {
     this.scene.add(this.water);
     this.waterGeo = waterGeo;
     this._waterBase = waterGeo.attributes.position.array.slice();
+    this.waters.push({ mesh: this.water, geo: waterGeo, base: this._waterBase });
 
     // A pond by the well with lily pads.
     const pond = new THREE.Mesh(new THREE.CylinderGeometry(3.2, 3.2, 0.2, 18), new THREE.MeshStandardMaterial({ color: 0x4fa3c7, flatShading: true, roughness: 0.3 }));
@@ -1534,7 +1776,6 @@ class World {
     this.scene.add(rim);
 
     // Things that sway in the wind: trees, wheat, flags.
-    this.swayers = [];
     for (const t of this.trees || []) this.swayers.push({ obj: t, phase: Math.random() * 10, amp: 0.035 });
 
     // A wheat field on the far bank: rows of tall thin stalks that ripple.
@@ -1621,16 +1862,16 @@ class World {
 
   // Ripple the river, sway things, puff smoke, drift the boat, jump fish.
   _updateLife(dt, elapsed) {
-    // Water ripples.
-    if (this.waterGeo) {
-      const pos = this.waterGeo.attributes.position;
-      const base = this._waterBase;
+    // Water ripples on every sheet (river, lake).
+    for (const w of this.waters) {
+      const pos = w.geo.attributes.position;
+      const base = w.base;
       for (let i = 0; i < pos.count; i++) {
         const x = base[i * 3], z = base[i * 3 + 2];
         pos.array[i * 3 + 1] = Math.sin(x * 0.45 + elapsed * 2.2) * 0.07 + Math.sin(x * 1.4 - elapsed * 3.1 + z * 2) * 0.04;
       }
       pos.needsUpdate = true;
-      this.waterGeo.computeVertexNormals();
+      w.geo.computeVertexNormals();
     }
     // Wind: a slow gust strength everything shares.
     const gust = 0.6 + Math.sin(elapsed * 0.35) * 0.4;
@@ -1682,7 +1923,7 @@ class World {
     this.scene.background.copy(sky);
     this.scene.fog.color.copy(sky);
     const ang = 0.9 + this.dayT * 1.2;
-    this.sun.position.set(Math.cos(ang) * 28, 24 + Math.sin(this.dayT * Math.PI) * 8, 14);
+    this.sunOffset.set(Math.cos(ang) * 28, 24 + Math.sin(this.dayT * Math.PI) * 8, 14);
   }
 
 
@@ -1692,7 +1933,7 @@ class World {
     sun.position.set(18, 30, 14);
     sun.castShadow = true;
     sun.shadow.mapSize.set(1024, 1024);
-    const s = 40;
+    const s = 55;
     sun.shadow.camera.left = -s;
     sun.shadow.camera.right = s;
     sun.shadow.camera.top = s;
@@ -1701,7 +1942,9 @@ class World {
     sun.shadow.camera.far = 90;
     sun.shadow.bias = -0.0005;
     this.scene.add(sun);
+    this.scene.add(sun.target);
     this.sun = sun;
+    this.sunOffset = new THREE.Vector3(18, 30, 14); // sun stays this far from the player
 
     // Sky/ground fill light so shadows aren't pure black.
     const hemi = new THREE.HemisphereLight(0xcfe9ff, 0x6a7d4a, 0.7);
@@ -1710,27 +1953,7 @@ class World {
 
   // ---- The hillside ground, with a couple of rolling mounds ----
   _buildGround() {
-    // Main flat-ish ground plane (slightly rough green).
-    const ground = new THREE.Mesh(new THREE.BoxGeometry(120, 2, 120), mat(COLORS.grass));
-    ground.position.y = -1;
-    ground.receiveShadow = true;
-    this.scene.add(ground);
-
-    // A few darker mounds in the distance to suggest hills.
-    const hillGeo = new THREE.SphereGeometry(14, 10, 8);
-    const hillMat = mat(COLORS.grassDark);
-    const hillPositions = [
-      [-38, -6, -40], [40, -7, -44], [-46, -5, 6], [48, -6, -10],
-    ];
-    for (const [x, y, z] of hillPositions) {
-      const hill = new THREE.Mesh(hillGeo, hillMat);
-      hill.position.set(x, y, z);
-      hill.scale.set(1.6, 0.8, 1.6);
-      hill.receiveShadow = true;
-      this.scene.add(hill);
-    }
-
-    // Footpaths: thin light-brown boxes joining the key places.
+    // The terrain mesh is the ground now. Here we only add the village footpaths.
     this._addPath(0, 20, 0, 8, 2.4);    // entrance up to river (south)
     this._addPath(0, -8, 0, -3, 2.4);   // river to school area (north)
     this._addPath(-8, -12, 8, -12, 2.2, true); // across the far bank
@@ -2092,7 +2315,7 @@ class World {
       if (Math.abs(z) < 5) continue;              // not in the river
       if (Math.abs(x) < 2 && z > -9) continue;    // not on the main path
       const flower = new THREE.Mesh(petal, flowerMats[i % flowerMats.length]);
-      flower.position.set(x, 0.12, z);
+      flower.position.set(x, heightAt(x, z) + 0.12, z);
       this.scene.add(flower);
     }
   }
@@ -2102,6 +2325,506 @@ class World {
   fillTank() { if (this.troughWater) this.troughWater.visible = true; }
   stockMarket() { if (this.marketSacks) this.marketSacks.visible = true; }
   patchRoof() { if (this.leakyRoof) this.leakyRoof.material.color.set(COLORS.roofRed); }
+
+  // ==========================================================
+  // THE BIG LANDSCAPE: terrain, roads, districts, vegetation
+  // ==========================================================
+
+  // Terrain mesh coloured by height: grass low, darker grass on slopes,
+  // grey rock and white snow on the mountains.
+  _buildTerrain() {
+    const seg = 160;
+    const geo = new THREE.PlaneGeometry(WORLD_HALF * 2, WORLD_HALF * 2, seg, seg);
+    geo.rotateX(-Math.PI / 2);
+    const pos = geo.attributes.position;
+    const colors = new Float32Array(pos.count * 3);
+    const cGrass = new THREE.Color(COLORS.grass), cDark = new THREE.Color(COLORS.grassDark);
+    const cRock = new THREE.Color(0x8d8a80), cSnow = new THREE.Color(0xf4f6f8), cSand = new THREE.Color(0xd8c08a);
+    const c = new THREE.Color();
+    for (let i = 0; i < pos.count; i++) {
+      const x = pos.getX(i), z = pos.getZ(i);
+      const h = heightAt(x, z);
+      pos.setY(i, h);
+      if (h > 34) c.copy(cSnow);
+      else if (h > 18) c.copy(cRock).lerp(cSnow, (h - 18) / 16);
+      else if (h > 9) c.copy(cDark).lerp(cRock, (h - 9) / 9);
+      else if (h < -0.5) c.copy(cSand);
+      else c.copy(cGrass).lerp(cDark, h / 9);
+      colors[i * 3] = c.r; colors[i * 3 + 1] = c.g; colors[i * 3 + 2] = c.b;
+    }
+    geo.setAttribute("color", new THREE.BufferAttribute(colors, 3));
+    geo.computeVertexNormals();
+    const terrain = new THREE.Mesh(geo, new THREE.MeshStandardMaterial({ vertexColors: true, flatShading: true, roughness: 0.95 }));
+    terrain.receiveShadow = true;
+    this.scene.add(terrain);
+    this.terrain = terrain;
+    this.mapItems = { roads: [], buildings: [], water: [] };
+  }
+
+  // A road built from short slabs that follow the ground.
+  _addRoad(points, width = 4, color = COLORS.path) {
+    const m = mat(color);
+    for (let s = 0; s < points.length - 1; s++) {
+      const [x1, z1] = points[s], [x2, z2] = points[s + 1];
+      const len = Math.hypot(x2 - x1, z2 - z1);
+      const pieces = Math.max(1, Math.ceil(len / 6));
+      for (let k = 0; k < pieces; k++) {
+        const ax = x1 + ((x2 - x1) * k) / pieces, az = z1 + ((z2 - z1) * k) / pieces;
+        const bx = x1 + ((x2 - x1) * (k + 1)) / pieces, bz = z1 + ((z2 - z1) * (k + 1)) / pieces;
+        const ha = heightAt(ax, az), hb = heightAt(bx, bz);
+        const plen = Math.hypot(bx - ax, bz - az);
+        const slab = new THREE.Mesh(new THREE.BoxGeometry(width, 0.2, plen + 0.4), m);
+        slab.position.set((ax + bx) / 2, (ha + hb) / 2 + 0.06, (az + bz) / 2);
+        slab.rotation.y = Math.atan2(bx - ax, bz - az);
+        slab.rotation.x = -Math.atan2(hb - ha, plen);
+        slab.receiveShadow = true;
+        this.scene.add(slab);
+      }
+    }
+    this.mapItems.roads.push(points);
+  }
+
+  _buildRoads() {
+    // Main road north to south: town, bridge, village, up the hill to the temple.
+    this._addRoad([[0, 195], [0, 150], [0, 66], [0, 30], [0, 8]], 4.5);
+    this._addRoad([[0, -8], [0, -48], [0, -80], [-10, -100], [0, -118]], 4.5);
+    // East to west roads on each bank.
+    this._addRoad([[-72, 30], [-40, 30], [40, 30], [150, 30]], 4);
+    this._addRoad([[-40, -30], [40, -30], [150, -30]], 4);
+    // Town streets.
+    this._addRoad([[-36, 90], [36, 90]], 3.5);
+    this._addRoad([[-36, 110], [36, 110]], 3.5);
+    this._addRoad([[-36, 128], [36, 128]], 3.5);
+    this._addRoad([[-24, 66], [-24, 140]], 3);
+    this._addRoad([[24, 66], [24, 140]], 3);
+    // Farm lanes.
+    this._addRoad([[100, -70], [100, 70]], 3);
+    this._addRoad([[70, -55], [140, -55]], 2.5);
+    this._addRoad([[70, 55], [140, 55]], 2.5);
+    // Lake shore lane and temple path.
+    this._addRoad([[-72, 30], [-70, 60], [-90, 76]], 2.5);
+    // Railway: two rails and sleepers along z = 150.
+    const railMat = mat(COLORS.metal), sleeperMat = mat(COLORS.woodDark);
+    for (const dz of [-0.8, 0.8]) {
+      for (let x = -WORLD_HALF; x < WORLD_HALF; x += 8) {
+        const rail = new THREE.Mesh(new THREE.BoxGeometry(8.2, 0.15, 0.15), railMat);
+        rail.position.set(x + 4, heightAt(x + 4, 150) + 0.25, 150 + dz);
+        this.scene.add(rail);
+      }
+    }
+    for (let x = -WORLD_HALF; x < WORLD_HALF; x += 2.5) {
+      const sl = new THREE.Mesh(new THREE.BoxGeometry(0.3, 0.12, 2.4), sleeperMat);
+      sl.position.set(x, heightAt(x, 150) + 0.14, 150);
+      this.scene.add(sl);
+    }
+    this.mapItems.roads.push([[-200, 150], [200, 150]]);
+
+    // Signposts at the junctions.
+    this._addSign(4, 34, ["↑ Village  ↓ Town", "→ Farms   ← Lake"]);
+    this._addSign(4, -34, ["↑ Temple Hill", "→ Farms   ↓ Village"]);
+    this._addSign(4, 64, ["↑ Village", "↓ Station"]);
+    this._addSign(60, 33, ["→ Farms", "← Village"]);
+    this._addSign(-66, 33, ["← Lake", "→ Village"]);
+    this._addSign(6, -84, ["↑ Temple", "↓ Village"]);
+  }
+
+  _addSign(x, z, lines) {
+    const h = heightAt(x, z);
+    const post = new THREE.Mesh(new THREE.CylinderGeometry(0.08, 0.1, 2.6, 6), mat(COLORS.woodDark));
+    post.position.set(x, h + 1.3, z);
+    this.scene.add(post);
+    lines.forEach((t, i) => {
+      const s = makeTextSprite(t, { size: 44, scale: 1.1 });
+      s.position.set(x, h + 3.0 - i * 1.0, z);
+      this.scene.add(s);
+    });
+  }
+
+  // Place a building on the ground and remember it for the minimap.
+  _place(building, x, z, rotY = 0) {
+    building.position.set(x, heightAt(x, z), z);
+    building.rotation.y = rotY;
+    this.scene.add(building);
+    this.mapItems.buildings.push([x, z]);
+    return building;
+  }
+
+  _buildDistricts() {
+    const W = COLORS;
+    const walls = [0xf2e4c8, 0xfff1d6, 0xe8d5b5, 0xf6efd8, 0xd9e4d0, 0xf3d9c8, 0xe3ecf5];
+    const roofs = [W.roofRed, W.roofBlue, 0x6fae54, 0x8a5626, 0xb5651d, 0x556b2f];
+    const pick = (arr, i) => arr[i % arr.length];
+
+    // ---------- Central village extras ----------
+    this._place(makeBuilding({ w: 5, d: 4, h: 3, roof: "flat", wall: 0xffe0a3, roofColor: 0x8a5626, sign: "Tea Stall" }), 18, 21, Math.PI);
+    this._place(makeBuilding({ w: 5, d: 5, h: 3, roof: "gable", wall: 0xe3ecf5, roofColor: W.roofBlue, sign: "Tailor" }), -20, 22, Math.PI);
+    this._place(makeBuilding({ w: 7, d: 6, h: 3.2, roof: "gable", wall: 0xffffff, roofColor: 0x3f6f9f, sign: "Clinic" }), -32, -10, Math.PI / 2);
+    this._place(makeBuilding({ w: 7, d: 6, h: 3.2, roof: "pyramid", wall: 0xf6efd8, roofColor: W.roofRed, sign: "Library" }), 32, -10, -Math.PI / 2);
+    this._place(makeBuilding({ w: 10, d: 6, h: 3.6, roof: "gable", wall: 0xf2e4c8, roofColor: 0x556b2f, sign: "Community Hall" }), 0, -34);
+    this._place(makeBuilding({ w: 4, d: 4, h: 5, roof: "dome", wall: 0xe8d5b5, roofColor: 0x9aa6ad }), 30, -26);   // granary
+    this._place(makeBuilding({ w: 4, d: 4, h: 2.8, roof: "gable", wall: pick(walls, 3), roofColor: pick(roofs, 1), chimney: true }), -34, 20);
+    this._place(makeBuilding({ w: 4, d: 4, h: 2.8, roof: "gable", wall: pick(walls, 5), roofColor: pick(roofs, 3), chimney: true }), 34, 22);
+
+    // ---------- South town ----------
+    const townSigns = ["Bakery", "Post Office", "Sweets", "Books", "Cycle Repair", "Pharmacy", "Cloth Store", "Toy Shop", "Dhaba", "Barber"];
+    let si = 0;
+    for (const street of [90, 110, 128]) {
+      for (let k = 0; k < 8; k++) {
+        const x = -34 + k * 9.7 + (k >= 4 ? 4 : 0);
+        if (Math.abs(x) < 3.5) continue; // leave the main road clear
+        for (const side of [-1, 1]) {
+          const z = street + side * 5.5;
+          const floors = (k + street) % 3 === 0 ? 2 : 1;
+          const isShop = side === -1 && street !== 128 && si < townSigns.length;
+          const b = makeBuilding({
+            w: 5.5 + (k % 2), d: 5, h: 3, floors,
+            roof: ["gable", "flat", "pyramid"][(k + street / 10) % 3],
+            wall: pick(walls, k + street), roofColor: pick(roofs, k + side + 1),
+            sign: isShop ? townSigns[si++] : null, chimney: (k + side) % 3 === 0,
+          });
+          this._place(b, x, z, side === -1 ? 0 : Math.PI);
+        }
+      }
+    }
+    // Station and platform by the rails.
+    this._place(makeBuilding({ w: 14, d: 6, h: 3.4, roof: "gable", wall: 0xf3d9c8, roofColor: 0x8a5626, sign: "Railway Station" }), 24, 140, Math.PI);
+    const platform = new THREE.Mesh(new THREE.BoxGeometry(40, 0.6, 4), mat(COLORS.stone));
+    platform.position.set(24, heightAt(24, 146) + 0.3, 146);
+    this.scene.add(platform);
+    // Bus stop shelter.
+    const shelter = new THREE.Group();
+    const roofS = new THREE.Mesh(new THREE.BoxGeometry(4, 0.2, 2), mat(W.roofBlue));
+    roofS.position.y = 2.6; shelter.add(roofS);
+    for (const x of [-1.8, 1.8]) { const p = new THREE.Mesh(new THREE.BoxGeometry(0.15, 2.6, 0.15), mat(W.metal)); p.position.set(x, 1.3, -0.8); shelter.add(p); }
+    const bench = new THREE.Mesh(new THREE.BoxGeometry(3.4, 0.15, 0.6), mat(W.wood)); bench.position.set(0, 0.5, -0.4); shelter.add(bench);
+    const stopSign = makeTextSprite("Bus Stop", { size: 48, scale: 0.8 }); stopSign.position.set(0, 3.4, 0); shelter.add(stopSign);
+    shelter.position.set(5, heightAt(5, 70), 70);
+    this.scene.add(shelter);
+    // Street lamps along the main road in town.
+    for (let z = 70; z <= 140; z += 14) for (const x of [-3.6, 3.6]) this._addLamp(x, z);
+    // Playground: swing, seesaw, slide.
+    this._buildPlayground(-30, 76);
+    // A small park pond in town.
+    this._addPondDecor(30, 76);
+
+    // ---------- East farmland ----------
+    const farmSpots = [[72, -62], [128, -66], [78, 62], [134, 60], [96, -8], [118, 12]];
+    farmSpots.forEach(([x, z], i) => {
+      this._place(makeBuilding({ w: 6, d: 5, h: 3, roof: "gable", wall: pick(walls, i), roofColor: pick(roofs, i + 2), chimney: true }), x, z, (i % 2) * Math.PI / 2);
+      if (i % 2 === 0) this._place(makeBuilding({ w: 8, d: 6, h: 4, roof: "gable", wall: 0xa0522d, roofColor: 0x5a3a24 }), x + 10, z + 4); // barn
+      else this._addSilo(x - 8, z + 3);
+    });
+    // Fields of crops in different colours, with fences.
+    const crops = [0xe2c463, 0x7cb342, 0x9ccc65, 0xd4a017, 0x8bc34a, 0xffb74d];
+    const fields = [[68, -42], [92, -46], [116, -40], [70, 30], [92, 36], [118, 34], [64, 6], [130, -10]];
+    fields.forEach(([x, z], i) => this._addField(x, z, 18, 14, crops[i % crops.length]));
+    // Haystacks and scarecrows.
+    for (let i = 0; i < 10; i++) {
+      const hs = new THREE.Mesh(new THREE.ConeGeometry(1.2, 1.8, 8), mat(0xe2c463));
+      const x = 64 + Math.random() * 80, z = -70 + Math.random() * 140;
+      if (Math.abs(z) < 16) continue;
+      hs.position.set(x, heightAt(x, z) + 0.9, z); hs.castShadow = true; this.scene.add(hs);
+    }
+    for (const [x, z] of [[80, -34], [104, 44], [126, -28], [74, 18]]) this._addScarecrow(x, z);
+
+    // ---------- West lake hamlet ----------
+    const lake = makeWaterSheet(LAKE.rx * 2, LAKE.rz * 2, 40, 28, 0x4fa3c7);
+    lake.mesh.position.set(LAKE.cx, -0.05, LAKE.cz);
+    // Trim the sheet to an ellipse by hiding corners: simply scale the plane's corners down.
+    const lp = lake.geo.attributes.position;
+    for (let i = 0; i < lp.count; i++) {
+      const x = lp.getX(i) / LAKE.rx, z = lp.getZ(i) / LAKE.rz;
+      const r = Math.hypot(x, z);
+      if (r > 1) { lp.setX(i, (lp.getX(i) / r)); lp.setZ(i, (lp.getZ(i) / r)); }
+    }
+    lake.base = lp.array.slice();
+    this.scene.add(lake.mesh);
+    this.waters.push(lake);
+    this.mapItems.water.push({ type: "ellipse", ...LAKE });
+    // Jetty and boats.
+    const jetty = new THREE.Mesh(new THREE.BoxGeometry(2, 0.3, 14), mat(COLORS.woodDark));
+    jetty.position.set(LAKE.cx + LAKE.rx - 2, 0.5, LAKE.cz - 4);
+    jetty.rotation.y = Math.PI / 2;
+    this.scene.add(jetty);
+    this.lakeBoats = [];
+    for (let i = 0; i < 3; i++) {
+      const b = this._makeBoat(0xd97742);
+      b.position.set(LAKE.cx - 6 + i * 7, -0.05, LAKE.cz + 4 + i * 3);
+      b.rotation.y = i * 1.2;
+      this.scene.add(b); this.lakeBoats.push(b);
+    }
+    // Fishermen's huts along the shore.
+    for (let i = 0; i < 5; i++) {
+      const a = -0.9 + i * 0.45;
+      const x = LAKE.cx + Math.cos(a) * (LAKE.rx + 9), z = LAKE.cz + Math.sin(a) * (LAKE.rz + 9);
+      this._place(makeBuilding({ w: 4, d: 3.5, h: 2.6, roof: "pyramid", wall: 0xe8d5b5, roofColor: 0x8a5626 }), x, z, Math.atan2(LAKE.cx - x, LAKE.cz - z));
+    }
+    this._place(makeBuilding({ w: 6, d: 5, h: 3, roof: "gable", wall: 0xd9e4d0, roofColor: 0x3f6f9f, sign: "Fish Market" }), -70, 66, Math.PI);
+    // Reeds round the lake.
+    this._addReeds();
+
+    // ---------- Temple on the hill ----------
+    const th = heightAt(0, -122);
+    const base = new THREE.Mesh(new THREE.BoxGeometry(26, 1.2, 22), mat(COLORS.stone));
+    base.position.set(0, th + 0.6, -122); base.receiveShadow = true; this.scene.add(base);
+    const temple = makeBuilding({ w: 10, d: 10, h: 5, roof: "pyramid", wall: 0xfff1d6, roofColor: 0xd4a017 });
+    temple.position.set(0, th + 1.2, -124); this.scene.add(temple);
+    this.mapItems.buildings.push([0, -124]);
+    const spire = new THREE.Mesh(new THREE.ConeGeometry(2.2, 7, 8), mat(0xffc93c));
+    spire.position.set(0, th + 1.2 + 5 + 3.5 + 1.5, -124); spire.castShadow = true; this.scene.add(spire);
+    const kalash = new THREE.Mesh(new THREE.SphereGeometry(0.6, 8, 6), mat(0xffd700));
+    kalash.position.set(0, th + 1.2 + 5 + 7 + 1.7, -124); this.scene.add(kalash);
+    for (const x of [-9, 9]) {
+      const shrine = makeBuilding({ w: 3, d: 3, h: 2.5, roof: "dome", wall: 0xfff1d6, roofColor: 0xd4a017 });
+      shrine.position.set(x, th + 1.2, -116); this.scene.add(shrine);
+    }
+    // Bell posts and stone lanterns up the path.
+    for (const [x, z] of [[-4, -110], [4, -110]]) {
+      const post = new THREE.Mesh(new THREE.BoxGeometry(0.3, 3, 0.3), mat(COLORS.woodDark));
+      post.position.set(x, th + 1.2 + 1.5, z); this.scene.add(post);
+      const bell = new THREE.Mesh(new THREE.CylinderGeometry(0.3, 0.42, 0.6, 8), mat(0xffc93c));
+      bell.position.set(x, th + 1.2 + 2.4, z); this.scene.add(bell);
+    }
+    for (let z = -50; z > -100; z -= 10) for (const x of [-3.6, 3.6]) this._addLantern(x, z);
+    // The great banyan beside the temple.
+    const banyan = new THREE.Group();
+    const trunk = new THREE.Mesh(new THREE.CylinderGeometry(1.2, 1.8, 5, 9), mat(COLORS.trunk));
+    trunk.position.y = 2.5; banyan.add(trunk);
+    for (const [dx, dz, s] of [[0, 0, 6], [4, 2, 4], [-4, 1, 4.5], [1, -4, 4]]) {
+      const canopy = new THREE.Mesh(new THREE.SphereGeometry(s, 9, 7), mat(COLORS.leaf));
+      canopy.position.set(dx, 6.5, dz); canopy.scale.y = 0.6; canopy.castShadow = true; banyan.add(canopy);
+    }
+    banyan.position.set(-16, th, -118);
+    this.scene.add(banyan);
+    this.swayers.push({ obj: banyan, phase: 1, amp: 0.012 });
+  }
+
+  _addLamp(x, z) {
+    const h = heightAt(x, z);
+    const pole = new THREE.Mesh(new THREE.CylinderGeometry(0.07, 0.1, 4, 6), mat(COLORS.metal));
+    pole.position.set(x, h + 2, z); this.scene.add(pole);
+    const lamp = new THREE.Mesh(new THREE.SphereGeometry(0.25, 8, 6), new THREE.MeshStandardMaterial({ color: 0xfff1b8, emissive: 0xffe27a, emissiveIntensity: 0.6 }));
+    lamp.position.set(x, h + 4.1, z); this.scene.add(lamp);
+  }
+
+  _addLantern(x, z) {
+    const h = heightAt(x, z);
+    const l = new THREE.Mesh(new THREE.BoxGeometry(0.5, 1.2, 0.5), mat(COLORS.stone));
+    l.position.set(x, h + 0.6, z); this.scene.add(l);
+    const cap = new THREE.Mesh(new THREE.ConeGeometry(0.5, 0.4, 4), mat(COLORS.stone));
+    cap.position.set(x, h + 1.4, z); cap.rotation.y = Math.PI / 4; this.scene.add(cap);
+  }
+
+  _addSilo(x, z) {
+    const h = heightAt(x, z);
+    const silo = new THREE.Mesh(new THREE.CylinderGeometry(2, 2, 7, 12), mat(0xdfe6ea));
+    silo.position.set(x, h + 3.5, z); silo.castShadow = true; this.scene.add(silo);
+    const cap = new THREE.Mesh(new THREE.ConeGeometry(2.2, 1.6, 12), mat(COLORS.roofRed));
+    cap.position.set(x, h + 7.8, z); this.scene.add(cap);
+    this.mapItems.buildings.push([x, z]);
+  }
+
+  _addScarecrow(x, z) {
+    const h = heightAt(x, z);
+    const g = new THREE.Group();
+    const post = new THREE.Mesh(new THREE.BoxGeometry(0.12, 2.2, 0.12), mat(COLORS.woodDark)); post.position.y = 1.1; g.add(post);
+    const arms = new THREE.Mesh(new THREE.BoxGeometry(1.6, 0.1, 0.1), mat(COLORS.woodDark)); arms.position.y = 1.7; g.add(arms);
+    const shirt = new THREE.Mesh(new THREE.BoxGeometry(0.6, 0.7, 0.3), mat(0xc94848)); shirt.position.y = 1.5; g.add(shirt);
+    const head = new THREE.Mesh(new THREE.SphereGeometry(0.25, 8, 6), mat(0xe2c463)); head.position.y = 2.1; g.add(head);
+    const hat = new THREE.Mesh(new THREE.ConeGeometry(0.45, 0.4, 8), mat(0xb9773c)); hat.position.y = 2.4; g.add(hat);
+    g.position.set(x, h, z);
+    this.scene.add(g);
+  }
+
+  // A rectangular crop field: instanced stalks in rows, fenced.
+  _addField(cx, cz, w, d, color) {
+    const rows = Math.floor(d / 1.4), cols = Math.floor(w / 1.1);
+    const geo = new THREE.BoxGeometry(0.1, 0.9, 0.1);
+    const inst = new THREE.InstancedMesh(geo, mat(color), rows * cols);
+    const dummy = new THREE.Object3D();
+    let i = 0;
+    for (let r = 0; r < rows; r++) for (let c = 0; c < cols; c++) {
+      const x = cx - w / 2 + 0.6 + c * 1.1, z = cz - d / 2 + 0.7 + r * 1.4;
+      dummy.position.set(x, heightAt(x, z) + 0.45, z);
+      dummy.rotation.set(0, 0, 0);
+      dummy.scale.set(1, 0.8 + Math.random() * 0.5, 1);
+      dummy.updateMatrix();
+      inst.setMatrixAt(i++, dummy.matrix);
+    }
+    inst.userData.field = { cx, cz, rows, cols, w, d };
+    this.scene.add(inst);
+    this.fields.push(inst);
+    // Fence posts round the field.
+    const pm = mat(COLORS.woodDark);
+    const step = 3;
+    for (let x = cx - w / 2; x <= cx + w / 2; x += step) for (const z of [cz - d / 2, cz + d / 2]) {
+      const p = new THREE.Mesh(new THREE.BoxGeometry(0.12, 0.8, 0.12), pm); p.position.set(x, heightAt(x, z) + 0.4, z); this.scene.add(p);
+    }
+    for (let z = cz - d / 2; z <= cz + d / 2; z += step) for (const x of [cx - w / 2, cx + w / 2]) {
+      const p = new THREE.Mesh(new THREE.BoxGeometry(0.12, 0.8, 0.12), pm); p.position.set(x, heightAt(x, z) + 0.4, z); this.scene.add(p);
+    }
+  }
+
+  _addReeds() {
+    const n = 160;
+    const inst = new THREE.InstancedMesh(new THREE.ConeGeometry(0.08, 1.4, 4), mat(0x5e8f3a), n);
+    const dummy = new THREE.Object3D();
+    for (let i = 0; i < n; i++) {
+      const a = Math.random() * Math.PI * 2, rr = 1.02 + Math.random() * 0.12;
+      const x = LAKE.cx + Math.cos(a) * LAKE.rx * rr, z = LAKE.cz + Math.sin(a) * LAKE.rz * rr;
+      dummy.position.set(x, heightAt(x, z) + 0.6, z);
+      dummy.rotation.set(0, 0, (Math.random() - 0.5) * 0.2);
+      dummy.updateMatrix();
+      inst.setMatrixAt(i, dummy.matrix);
+    }
+    this.scene.add(inst);
+  }
+
+  _addPondDecor(x, z) {
+    const pond = new THREE.Mesh(new THREE.CylinderGeometry(4, 4, 0.2, 16), new THREE.MeshStandardMaterial({ color: 0x4fa3c7, flatShading: true, roughness: 0.3 }));
+    pond.position.set(x, heightAt(x, z) - 0.02, z); this.scene.add(pond);
+    const rim = new THREE.Mesh(new THREE.TorusGeometry(4.1, 0.2, 6, 20), mat(COLORS.stone));
+    rim.rotation.x = Math.PI / 2; rim.position.set(x, heightAt(x, z) + 0.05, z); this.scene.add(rim);
+    for (let i = 0; i < 4; i++) { const b = new THREE.Mesh(new THREE.BoxGeometry(1.8, 0.12, 0.5), mat(COLORS.wood)); const a = i * Math.PI / 2; b.position.set(x + Math.cos(a) * 5.5, heightAt(x, z) + 0.5, z + Math.sin(a) * 5.5); b.rotation.y = -a; this.scene.add(b); }
+  }
+
+  _buildPlayground(x, z) {
+    const h = heightAt(x, z);
+    // Swing: frame plus a seat that swings.
+    const frame = new THREE.Group();
+    for (const dx of [-1.2, 1.2]) { const p = new THREE.Mesh(new THREE.BoxGeometry(0.12, 3, 0.12), mat(COLORS.metal)); p.position.set(dx, 1.5, 0); frame.add(p); }
+    const bar = new THREE.Mesh(new THREE.BoxGeometry(2.6, 0.12, 0.12), mat(COLORS.metal)); bar.position.y = 3; frame.add(bar);
+    const swing = new THREE.Group(); swing.position.y = 3;
+    for (const dx of [-0.35, 0.35]) { const rope = new THREE.Mesh(new THREE.BoxGeometry(0.04, 2.2, 0.04), mat(0x555555)); rope.position.set(dx, -1.1, 0); swing.add(rope); }
+    const seat = new THREE.Mesh(new THREE.BoxGeometry(0.9, 0.08, 0.3), mat(COLORS.wood)); seat.position.y = -2.2; swing.add(seat);
+    frame.add(swing);
+    frame.position.set(x, h, z); this.scene.add(frame);
+    this.swing = swing;
+    // Seesaw.
+    const pivot = new THREE.Mesh(new THREE.BoxGeometry(0.3, 0.6, 0.3), mat(COLORS.metal)); pivot.position.set(x + 5, h + 0.3, z); this.scene.add(pivot);
+    const plank = new THREE.Mesh(new THREE.BoxGeometry(3.6, 0.1, 0.4), mat(0xffb703)); plank.position.set(x + 5, h + 0.65, z); this.scene.add(plank);
+    this.seesaw = plank;
+    // Slide.
+    const ladder = new THREE.Mesh(new THREE.BoxGeometry(0.6, 2, 0.1), mat(COLORS.metal)); ladder.position.set(x + 10, h + 1, z - 1); this.scene.add(ladder);
+    const slide = new THREE.Mesh(new THREE.BoxGeometry(0.7, 0.1, 3.2), mat(0x3a86ff)); slide.position.set(x + 10, h + 1.05, z + 0.8); slide.rotation.x = 0.6; this.scene.add(slide);
+  }
+
+  _makeBoat(color) {
+    const boat = new THREE.Group();
+    const hull = new THREE.Mesh(new THREE.BoxGeometry(2.4, 0.5, 1), mat(color));
+    hull.position.y = 0.25; boat.add(hull);
+    const rim = new THREE.Mesh(new THREE.BoxGeometry(2.6, 0.12, 1.2), mat(COLORS.woodDark));
+    rim.position.y = 0.5; boat.add(rim);
+    return boat;
+  }
+
+  // Trees, rocks and grass all over the wild land, drawn with instancing.
+  _buildVegetation() {
+    const dummy = new THREE.Object3D();
+    // Trees: dense on the temple hill slopes and the foothills, sparse elsewhere.
+    const nTrees = 700;
+    const trunks = new THREE.InstancedMesh(new THREE.CylinderGeometry(0.25, 0.35, 1.8, 6), mat(COLORS.trunk), nTrees);
+    const leaves = new THREE.InstancedMesh(new THREE.ConeGeometry(1.4, 3, 7), mat(COLORS.leaf), nTrees);
+    const leaves2 = new THREE.InstancedMesh(new THREE.SphereGeometry(1.5, 7, 6), mat(0x5aa84f), nTrees);
+    let placed = 0, tries = 0;
+    while (placed < nTrees && tries < nTrees * 20) {
+      tries++;
+      const x = (Math.random() * 2 - 1) * 190, z = (Math.random() * 2 - 1) * 190;
+      const h = heightAt(x, z);
+      if (h > 26 || inLake(x, z)) continue;                 // no trees on snow or in water
+      if (Math.abs(z) < 12) continue;                        // river valley clear
+      let flat = false;
+      for (const r of FLAT_ZONES) if (rectDist(x, z, r) < 4) { flat = true; break; }
+      if (flat && Math.random() < 0.93) continue;            // few trees where people live
+      const dh = Math.hypot(x - HILL.cx, z - HILL.cz);
+      if (dh < HILL.plateau + 4) continue;                   // temple terrace clear
+      const s = 0.8 + Math.random() * 0.9;
+      dummy.position.set(x, h + 0.9 * s, z); dummy.scale.setScalar(s); dummy.rotation.set(0, Math.random() * 6, 0); dummy.updateMatrix();
+      trunks.setMatrixAt(placed, dummy.matrix);
+      const round = Math.random() < 0.4;
+      dummy.position.y = h + (round ? 3.0 : 3.2) * s; dummy.updateMatrix();
+      if (round) { leaves2.setMatrixAt(placed, dummy.matrix); dummy.scale.setScalar(0); dummy.updateMatrix(); leaves.setMatrixAt(placed, dummy.matrix); }
+      else { leaves.setMatrixAt(placed, dummy.matrix); dummy.scale.setScalar(0); dummy.updateMatrix(); leaves2.setMatrixAt(placed, dummy.matrix); }
+      placed++;
+    }
+    trunks.count = placed; leaves.count = placed; leaves2.count = placed;
+    trunks.castShadow = true; leaves.castShadow = true; leaves2.castShadow = true;
+    this.scene.add(trunks, leaves, leaves2);
+
+    // Rocks on the slopes.
+    const nRocks = 220;
+    const rocks = new THREE.InstancedMesh(new THREE.DodecahedronGeometry(0.8, 0), mat(0x8d8a80), nRocks);
+    for (let i = 0; i < nRocks; i++) {
+      let x, z, h;
+      do { x = (Math.random() * 2 - 1) * 195; z = (Math.random() * 2 - 1) * 195; h = heightAt(x, z); } while (h < 4 || inLake(x, z));
+      dummy.position.set(x, h + 0.3, z); dummy.scale.set(0.6 + Math.random() * 1.8, 0.5 + Math.random(), 0.6 + Math.random() * 1.8);
+      dummy.rotation.set(Math.random(), Math.random() * 6, Math.random()); dummy.updateMatrix();
+      rocks.setMatrixAt(i, dummy.matrix);
+    }
+    this.scene.add(rocks);
+
+    // Grass tufts everywhere the land is green.
+    const nGrass = 1500;
+    const grass = new THREE.InstancedMesh(new THREE.ConeGeometry(0.18, 0.5, 4), mat(0x76b852), nGrass);
+    for (let i = 0; i < nGrass; i++) {
+      let x, z, h;
+      do { x = (Math.random() * 2 - 1) * 180; z = (Math.random() * 2 - 1) * 180; h = heightAt(x, z); } while (h > 12 || inLake(x, z) || Math.abs(z) < 5);
+      dummy.position.set(x, h + 0.2, z); dummy.scale.setScalar(0.7 + Math.random() * 0.8); dummy.rotation.set(0, Math.random() * 6, 0); dummy.updateMatrix();
+      grass.setMatrixAt(i, dummy.matrix);
+    }
+    this.scene.add(grass);
+  }
+
+  // Bus, train and tractor that drive about on their own.
+  _buildVehicles() {
+    this.movers = [];
+    // Bus: a long box with windows and wheels, up and down the town road.
+    const bus = new THREE.Group();
+    const body = new THREE.Mesh(new THREE.BoxGeometry(2.4, 2.4, 7), mat(0xf4a300)); body.position.y = 1.7; bus.add(body);
+    const winStrip = new THREE.Mesh(new THREE.BoxGeometry(2.5, 0.8, 6), mat(0x35424a)); winStrip.position.y = 2.2; bus.add(winStrip);
+    for (const [x, z] of [[-1.1, 2.2], [1.1, 2.2], [-1.1, -2.2], [1.1, -2.2]]) { const w = new THREE.Mesh(new THREE.CylinderGeometry(0.5, 0.5, 0.4, 10), mat(0x222222)); w.rotation.z = Math.PI / 2; w.position.set(x, 0.5, z); bus.add(w); }
+    const busSign = makeTextSprite("Village Bus", { size: 48, scale: 0.7 }); busSign.position.y = 3.6; bus.add(busSign);
+    this.scene.add(bus);
+    this.movers.push(new PathMover(bus, [[1.2, 190], [1.2, 150], [1.2, 66], [1.2, 34]], 9));
+
+    // Train: engine plus two coaches along the rails at z = 150, looping.
+    const train = new THREE.Group();
+    const engine = new THREE.Mesh(new THREE.BoxGeometry(6, 2.6, 2.4), mat(0x1d3557)); engine.position.set(0, 1.6, 0); train.add(engine);
+    const cab = new THREE.Mesh(new THREE.BoxGeometry(2, 1.2, 2.4), mat(0x457b9d)); cab.position.set(-1.5, 3.2, 0); train.add(cab);
+    const funnel = new THREE.Mesh(new THREE.CylinderGeometry(0.3, 0.4, 1.2, 8), mat(0x222222)); funnel.position.set(2, 3.4, 0); train.add(funnel);
+    for (let k = 1; k <= 2; k++) {
+      const coach = new THREE.Mesh(new THREE.BoxGeometry(6, 2.4, 2.4), mat(k === 1 ? 0xc1121f : 0x2a9d8f)); coach.position.set(-7 * k, 1.5, 0); train.add(coach);
+      const cw = new THREE.Mesh(new THREE.BoxGeometry(5.5, 0.7, 2.5), mat(0xdfe6ea)); cw.position.set(-7 * k, 2.0, 0); train.add(cw);
+    }
+    for (let k = 0; k <= 2; k++) for (const dx of [-2, 2]) for (const dz of [-1.1, 1.1]) { const w = new THREE.Mesh(new THREE.CylinderGeometry(0.45, 0.45, 0.3, 10), mat(0x222222)); w.rotation.x = Math.PI / 2; w.position.set(-7 * k + dx, 0.45, dz); train.add(w); }
+    this.scene.add(train);
+    this.train = train;
+    this._trainX = -190;
+    this.smokes.push(...[0, 1, 2, 3].map((k) => { const puff = new THREE.Mesh(new THREE.SphereGeometry(0.3, 6, 5), new THREE.MeshStandardMaterial({ color: 0xdddddd, transparent: true, opacity: 0.5 })); puff.userData = { x: 0, z: 150, t: k / 4, train: true }; this.scene.add(puff); return puff; }));
+
+    // Tractor: pootles along the farm lane.
+    const tractor = new THREE.Group();
+    const tb = new THREE.Mesh(new THREE.BoxGeometry(1.4, 1, 2.4), mat(0x2a9d8f)); tb.position.y = 1.1; tractor.add(tb);
+    const seat = new THREE.Mesh(new THREE.BoxGeometry(1.2, 1, 1), mat(0x1d3557)); seat.position.set(0, 1.9, -0.5); tractor.add(seat);
+    for (const [x, z, r] of [[-0.9, 0.8, 0.4], [0.9, 0.8, 0.4], [-0.9, -0.8, 0.7], [0.9, -0.8, 0.7]]) { const w = new THREE.Mesh(new THREE.CylinderGeometry(r, r, 0.4, 10), mat(0x222222)); w.rotation.z = Math.PI / 2; w.position.set(x, r, z); tractor.add(w); }
+    this.scene.add(tractor);
+    this.movers.push(new PathMover(tractor, [[101.5, -68], [101.5, 68]], 3));
+  }
+
+  // Per-frame: vehicles, swing, seesaw, boats, lake ripples.
+  _updateExpansion(dt, elapsed) {
+    for (const m of this.movers || []) m.update(dt);
+    if (this.train) {
+      this._trainX += dt * 14;
+      if (this._trainX > 205) this._trainX = -205;
+      this.train.position.set(this._trainX, heightAt(this._trainX, 150) + 0.3, 150);
+      this.train.rotation.y = Math.PI / 2;
+      for (const puff of this.smokes) if (puff.userData.train) { puff.userData.x = this._trainX + 2; puff.userData.z = 150; }
+    }
+    if (this.swing) this.swing.rotation.x = Math.sin(elapsed * 1.6) * 0.6;
+    if (this.seesaw) this.seesaw.rotation.z = Math.sin(elapsed * 1.1) * 0.25;
+    for (const b of this.lakeBoats || []) { b.position.y = -0.05 + Math.sin(elapsed * 1.5 + b.rotation.y) * 0.06; b.rotation.z = Math.sin(elapsed * 1.2 + b.rotation.y) * 0.04; }
+  }
 
   // Light the school windows and mark it done (Job 2).
   lightSchool() {
@@ -2113,7 +2836,13 @@ class World {
   }
 
   // Per-frame updates: spin the windmill, animate bridge planks dropping in.
-  update(dt, elapsed) {
+  update(dt, elapsed, followPos = null) {
+    // The sun (and its shadow box) travels with the player across the big map.
+    if (followPos) {
+      this.sun.position.copy(followPos).add(this.sunOffset);
+      this.sun.target.position.copy(followPos);
+    }
+    this._updateExpansion(dt, elapsed);
     // The mill turns lazily until its gears are fixed, then properly.
     if (this.windmillBlades) this.windmillBlades.rotation.z += dt * (this.millFixed ? 2.0 : 0.6);
     if (this.millFixed && this.grindstone) this.grindstone.rotation.y += dt * 3;
@@ -2152,6 +2881,9 @@ class World {
   // Can the player stand at this x/z, or is it water they can't cross yet?
   // Returns true if the spot is walkable.
   isWalkable(x, z) {
+    if (Math.abs(x) > 196 || Math.abs(z) > 196) return false; // edge of the world
+    if (inLake(x, z)) return false;                           // the lake
+    if (heightAt(x, z) > 30) return false;                    // too steep, high mountains
     const inRiver = z < this.riverZ.near && z > this.riverZ.far;
     if (!inRiver) return true;               // not over water — fine
     if (!this.bridgeBuilt) return false;     // water, no bridge — blocked
@@ -2414,10 +3146,11 @@ class Player {
   // Move the player each frame based on input.
   // moveVec is { x, y } from the Input class, each -1..1.
   //   x: left(-) / right(+)     y: forward(-) / back(+)
-  update(dt, moveVec) {
+  update(dt, moveVec, running = false) {
     // How hard is the stick / key pushed?
     const mag = Math.hypot(moveVec.x, moveVec.y);
     const walking = mag > 0.05;
+    const speed = this.speed * (running ? 1.8 : 1);
 
     if (walking) {
       // Work out the camera's flat (ignore-height) forward direction.
@@ -2436,7 +3169,7 @@ class Player {
       dir.normalize();
 
       // Where we WANT to be next.
-      const step = Math.min(mag, 1) * this.speed * dt;
+      const step = Math.min(mag, 1) * speed * dt;
       const nx = this.group.position.x + dir.x * step;
       const nz = this.group.position.z + dir.z * step;
 
@@ -2446,21 +3179,20 @@ class Player {
       if (this.world.isWalkable(this.group.position.x, nz)) this.group.position.z = nz;
 
       // Keep inside the map bounds.
-      this.group.position.x = THREE.MathUtils.clamp(this.group.position.x, -55, 55);
-      this.group.position.z = THREE.MathUtils.clamp(this.group.position.z, -55, 55);
+      this.group.position.x = THREE.MathUtils.clamp(this.group.position.x, -195, 195);
+      this.group.position.z = THREE.MathUtils.clamp(this.group.position.z, -195, 195);
 
       // Turn the body smoothly to face the way we're walking.
       this.facing = Math.atan2(dir.x, dir.z);
       this.group.rotation.y = this._lerpAngle(this.group.rotation.y, this.facing, 0.2);
 
-      // A gentle bob so walking feels alive.
-      this.group.position.y = Math.abs(Math.sin(performance.now() / 120)) * 0.05;
-    } else {
-      this.group.position.y = 0;
     }
+    // Stand on the ground, with a gentle bob while walking.
+    const ground = heightAt(this.group.position.x, this.group.position.z);
+    this.group.position.y = ground + (walking ? Math.abs(Math.sin(performance.now() / (running ? 80 : 120))) * 0.05 : 0);
 
     // Swing arms and legs (or breathe when standing).
-    animateHuman(this.group, dt, walking, Math.min(mag, 1));
+    animateHuman(this.group, dt, walking, Math.min(mag, 1) * (running ? 1.6 : 1));
 
     this._placeCamera(dt * 6);
   }
@@ -4215,6 +4947,7 @@ function updateCritters(critters, dt, elapsed, playerPos, world) {
     if (b.kind === "graze" || b.kind === "peck") {
       if (b.wait > 0) {
         b.wait -= dt;
+        c.position.y = heightAt(c.position.x, c.position.z);
         // Grazing: dip the head; pecking: bob the head.
         if (p && p.neck) p.neck.rotation.z = b.kind === "graze" ? Math.min(0.9, p.neck.rotation.z + dt * 2) : 0;
         if (p && p.head && b.kind === "peck") p.head.rotation.z = Math.sin(elapsed * 12 + b.phase) * 0.5;
@@ -4236,6 +4969,7 @@ function updateCritters(critters, dt, elapsed, playerPos, world) {
         b.wait = 1.5 + r01() * 4;
         c.position.y = 0;
       }
+      c.position.y += heightAt(c.position.x, c.position.z);
     } else if (b.kind === "swim") {
       b.t += dt * b.speed;
       if (b.kind === "swim" && b.river !== undefined) {
@@ -4275,13 +5009,12 @@ function updateCritters(critters, dt, elapsed, playerPos, world) {
         c.rotation.y += diff * Math.min(1, dt * 4);
       }
       if (p && p.tail) p.tail.rotation.x = Math.sin(elapsed * 14) * (d < 4 ? 0.7 : 0.2);
+      c.position.y = heightAt(c.position.x, c.position.z);
     } else if (b.kind === "flutter") {
       b.t += dt;
-      c.position.set(
-        b.cx + Math.sin(b.t * 0.7) * 2.5 + Math.sin(b.t * 2.3) * 0.5,
-        b.h + Math.sin(b.t * 1.9) * 0.3,
-        b.cz + Math.cos(b.t * 0.5) * 2.5
-      );
+      const fx = b.cx + Math.sin(b.t * 0.7) * 2.5 + Math.sin(b.t * 2.3) * 0.5;
+      const fz = b.cz + Math.cos(b.t * 0.5) * 2.5;
+      c.position.set(fx, heightAt(fx, fz) + b.h + Math.sin(b.t * 1.9) * 0.3, fz);
       c.rotation.y = b.t * 0.7;
       const flap = Math.sin(elapsed * 22 + b.t) * 1.1;
       p.wings[0].rotation.z = flap;
@@ -4299,22 +5032,39 @@ function updateCritters(critters, dt, elapsed, playerPos, world) {
    at a time. Solving it earns a star and they pick another.
    ============================================================ */
 
+// Each villager lives in a zone. Zones south of the river are "near",
+// north of it "far"; crossing needs the bridge.
 const NPC_DEFS = [
-  { id: "asha", name: "Asha", look: { shirt: 0xe75480, dress: true, hair: 0x1d1410 }, bank: "near", cats: ["length", "money"], greet: "Namaste! I could use a clever head." },
-  { id: "gopal", name: "Gopal", look: { shirt: 0x4f772d, trousers: 0x3b3f4a }, bank: "near", cats: ["time", "logic"], greet: "Ah, the engineer! Got a minute?" },
-  { id: "chotu", name: "Chotu", look: { shirt: 0xffb703, trousers: 0x264653 }, bank: "near", child: true, cats: ["fractions", "logic"], greet: "Hey! Wanna help me with something?" },
-  { id: "vijay", name: "Postman Vijay", look: { shirt: 0xc1121f, trousers: 0x1d3557, hat: 0x1d3557 }, bank: "near", cats: ["travel", "time"], greet: "Letters, letters... and a question for you." },
-  { id: "pinky", name: "Pinky", look: { shirt: 0xff8fab, dress: true }, bank: "far", child: true, cats: ["science", "fractions"], greet: "I saw something funny today. Can you explain it?" },
-  { id: "iyer", name: "Dr. Iyer", look: { shirt: 0xffffff, trousers: 0x222831, hair: 0x555555 }, bank: "far", cats: ["science", "water"], greet: "Good day. Science first, tea later." },
-  { id: "salma", name: "Salma", look: { shirt: 0x3a86ff, dress: true }, bank: "far", cats: ["area", "ratio"], greet: "Perfect timing. I'm planning the garden." },
-  { id: "ramu", name: "Ramu Kaka", look: { shirt: 0x8d6e63, trousers: 0x4e342e, hair: 0xbdbdbd, skin: 0xb9805a }, bank: "far", cats: ["travel", "money"], greet: "Sit, sit. Well, don't sit, help me count." },
+  { id: "asha", name: "Asha", look: { shirt: 0xe75480, dress: true, hair: 0x1d1410 }, zone: "village_s", cats: ["length", "money"], greet: "Namaste! I could use a clever head." },
+  { id: "gopal", name: "Gopal", look: { shirt: 0x4f772d, trousers: 0x3b3f4a }, zone: "village_s", cats: ["time", "logic"], greet: "Ah, the engineer! Got a minute?" },
+  { id: "chotu", name: "Chotu", look: { shirt: 0xffb703, trousers: 0x264653 }, zone: "village_s", child: true, cats: ["fractions", "logic"], greet: "Hey! Wanna help me with something?" },
+  { id: "vijay", name: "Postman Vijay", look: { shirt: 0xc1121f, trousers: 0x1d3557, hat: 0x1d3557 }, zone: "town", cats: ["travel", "time"], greet: "Letters, letters... and a question for you." },
+  { id: "rosy", name: "Rosy the Baker", look: { shirt: 0xfff1d6, trousers: 0x6d4c41, hair: 0x4a2c1a }, zone: "town", cats: ["fractions", "money"], greet: "Fresh buns! And a fresh problem." },
+  { id: "dsouza", name: "Station Master D'Souza", look: { shirt: 0x1d3557, trousers: 0x111111, hat: 0x1d3557, hair: 0x888888 }, zone: "town", cats: ["time", "travel"], greet: "Right on time. Help me with the timetable?" },
+  { id: "meenu", name: "Meenu", look: { shirt: 0x9b5de5, dress: true }, zone: "town", child: true, cats: ["logic", "length"], greet: "I'm playing shop. Be my customer!" },
+  { id: "pinky", name: "Pinky", look: { shirt: 0xff8fab, dress: true }, zone: "village_n", child: true, cats: ["science", "fractions"], greet: "I saw something funny today. Can you explain it?" },
+  { id: "iyer", name: "Dr. Iyer", look: { shirt: 0xffffff, trousers: 0x222831, hair: 0x555555 }, zone: "village_n", cats: ["science", "water"], greet: "Good day. Science first, tea later." },
+  { id: "salma", name: "Salma", look: { shirt: 0x3a86ff, dress: true }, zone: "village_n", cats: ["area", "ratio"], greet: "Perfect timing. I'm planning the garden." },
+  { id: "ramu", name: "Ramu Kaka", look: { shirt: 0x8d6e63, trousers: 0x4e342e, hair: 0xbdbdbd, skin: 0xb9805a }, zone: "farms_n", cats: ["travel", "money"], greet: "Sit, sit. Well, don't sit, help me count." },
+  { id: "kamla", name: "Kamla", look: { shirt: 0xf77f00, dress: true }, zone: "farms_n", cats: ["area", "ratio"], greet: "The harvest waits for nobody. Quick question." },
+  { id: "bhima", name: "Bhima", look: { shirt: 0x386641, trousers: 0x3b3f4a }, zone: "farms_s", cats: ["water", "logic"], greet: "You look like someone who can count cows." },
+  { id: "noor", name: "Noor the Fisher", look: { shirt: 0x00b4d8, trousers: 0x023e8a }, zone: "lake", cats: ["water", "length"], greet: "The lake is calm. My sums are not." },
+  { id: "tara", name: "Tara", look: { shirt: 0x06d6a0, dress: true }, zone: "lake", child: true, cats: ["science", "logic"], greet: "Look, a frog! Also, I have a question." },
+  { id: "pandit", name: "Panditji", look: { shirt: 0xffb703, trousers: 0xffffff, hair: 0xdddddd, skin: 0xc98d62 }, zone: "temple", cats: ["time", "logic"], greet: "Welcome to the hill. Sit a moment and think." },
 ];
 
-// Open spots to wander between, per bank (x, z).
+// Open spots to wander between, per zone (x, z).
 const WAYPOINTS = {
-  near: [[-4, 20], [4, 17], [-7, 11], [8, 9], [11, 15], [-15, 18], [-3, 9], [13, 20], [3, 12], [-11, 9]],
-  far: [[-5, -8], [5, -7], [-8, -19], [8, -18], [-12, -7], [12, -7], [-6, -25], [6, -25], [0, -10], [16, -20], [-17, -19]],
+  village_s: [[-4, 20], [4, 17], [-7, 11], [8, 9], [11, 15], [-15, 18], [-3, 9], [13, 20], [3, 12], [-11, 9], [24, 26], [-26, 26]],
+  village_n: [[-5, -8], [5, -7], [-8, -19], [8, -18], [-12, -7], [12, -7], [-6, -25], [6, -25], [0, -10], [16, -20], [-17, -19], [-26, -14], [26, -14]],
+  town: [[-8, 80], [8, 84], [-20, 100], [20, 100], [-8, 118], [10, 120], [-30, 90], [30, 110], [4, 74], [20, 136], [-14, 136]],
+  farms_n: [[80, -50], [110, -50], [125, -40], [92, -30], [70, -20], [104, -14], [130, -20]],
+  farms_s: [[80, 45], [112, 50], [96, 22], [70, 34], [128, 30], [104, 60]],
+  lake: [[-70, 32], [-66, 50], [-72, 64], [-90, 74], [-62, 40], [-80, 20]],
+  temple: [[-6, -114], [6, -114], [0, -108], [-10, -122], [10, -122], [-2, -104]],
 };
+// Which side of the river each zone sits on.
+const ZONE_BANK = { village_s: "near", town: "near", farms_s: "near", lake: "near", village_n: "far", farms_n: "far", temple: "far" };
 
 class Npc {
   constructor(def, world) {
@@ -4322,10 +5072,16 @@ class Npc {
     this.id = "npc:" + def.id;
     this.name = def.name;
     this.bank = def.bank;
+    this.zone = def.zone;
+    this.bank = ZONE_BANK[def.zone];
     this.group = makeVillager(def.look);
     if (def.child) this.group.scale.setScalar(0.72);
-    const wp = WAYPOINTS[def.bank][Math.floor(Math.random() * WAYPOINTS[def.bank].length)];
-    this.group.position.set(wp[0], 0, wp[1]);
+    // A name label floating over the head.
+    const label = makeTextSprite(def.name, { size: 52, scale: 0.55 });
+    label.position.y = def.child ? 2.6 : 2.25;
+    this.group.add(label);
+    const wp = WAYPOINTS[def.zone][Math.floor(Math.random() * WAYPOINTS[def.zone].length)];
+    this.group.position.set(wp[0], heightAt(wp[0], wp[1]), wp[1]);
     world.scene.add(this.group);
     this.target = null;
     this.wait = Math.random() * 3;
@@ -4357,11 +5113,15 @@ class Npc {
         animateHuman(this.group, dt, false);
       } else {
         if (!this.target) {
-          // Once the bridge stands, near-bank folk sometimes visit the far bank and back.
-          const banks = bridgeBuilt ? ["near", "far"] : [this.bank];
-          const bank = banks[Math.floor(Math.random() * banks.length)];
-          const wp = WAYPOINTS[bank][Math.floor(Math.random() * WAYPOINTS[bank].length)];
-          this.target = { x: wp[0], z: wp[1], bank };
+          // Mostly wander the home zone; sometimes visit another zone on the
+          // same bank, or any zone once the bridge stands.
+          let zone = this.zone;
+          if (Math.random() < 0.25) {
+            const zones = Object.keys(WAYPOINTS).filter((z) => bridgeBuilt || ZONE_BANK[z] === this.bank);
+            zone = zones[Math.floor(Math.random() * zones.length)];
+          }
+          const wp = WAYPOINTS[zone][Math.floor(Math.random() * WAYPOINTS[zone].length)];
+          this.target = { x: wp[0], z: wp[1], zone };
         }
         // Walk toward the target, crossing only over the bridge corridor.
         let tx = this.target.x, tz = this.target.z;
@@ -4386,6 +5146,8 @@ class Npc {
         animateHuman(this.group, dt, true, 0.6);
       }
     }
+    // Feet on the ground wherever they are.
+    this.position.y = heightAt(this.position.x, this.position.z);
     // A wave of the right arm.
     if (this.waving > 0) {
       this.waving -= dt;
@@ -4396,6 +5158,80 @@ class Npc {
       const p = this.group.userData.parts;
       p.armR.rotation.z += (0 - p.armR.rotation.z) * Math.min(1, dt * 6);
     }
+  }
+}
+
+// ===== src/engine/minimap.js =====
+/* ============================================================
+   minimap.js — a small map in the corner. The land, water, roads
+   and buildings are drawn once; the player, villagers and job
+   markers are drawn every frame on top.
+   ============================================================ */
+
+class Minimap {
+  constructor(world) {
+    this.world = world;
+    this.canvas = document.getElementById("minimap");
+    this.size = this.canvas.width;
+    this.ctx = this.canvas.getContext("2d");
+    this.scale = this.size / (WORLD_HALF * 2);
+    this._drawStatic();
+  }
+
+  // World (x, z) -> canvas pixels.
+  px(x) { return (x + WORLD_HALF) * this.scale; }
+  pz(z) { return (z + WORLD_HALF) * this.scale; }
+
+  _drawStatic() {
+    const off = document.createElement("canvas");
+    off.width = off.height = this.size;
+    const g = off.getContext("2d");
+    // Land coloured by height, coarse.
+    const step = 4;
+    for (let i = 0; i < this.size; i += step) for (let j = 0; j < this.size; j += step) {
+      const x = i / this.scale - WORLD_HALF, z = j / this.scale - WORLD_HALF;
+      const h = heightAt(x, z);
+      g.fillStyle = h > 34 ? "#f4f6f8" : h > 18 ? "#9a978e" : h > 9 ? "#6fae54" : "#8bc46a";
+      g.fillRect(i, j, step, step);
+    }
+    // River and lake.
+    g.fillStyle = "#5fb6d9";
+    g.fillRect(0, this.pz(-3), this.size, 6 * this.scale);
+    for (const w of this.world.mapItems.water) {
+      if (w.type === "ellipse") { g.beginPath(); g.ellipse(this.px(w.cx), this.pz(w.cz), w.rx * this.scale, w.rz * this.scale, 0, 0, Math.PI * 2); g.fill(); }
+    }
+    // Roads.
+    g.strokeStyle = "#d8c08a"; g.lineWidth = 1.5;
+    for (const road of this.world.mapItems.roads) {
+      g.beginPath();
+      road.forEach(([x, z], i) => (i ? g.lineTo(this.px(x), this.pz(z)) : g.moveTo(this.px(x), this.pz(z))));
+      g.stroke();
+    }
+    // Buildings.
+    g.fillStyle = "#7a4a2a";
+    for (const [x, z] of this.world.mapItems.buildings) g.fillRect(this.px(x) - 1.5, this.pz(z) - 1.5, 3, 3);
+    this.static = off;
+  }
+
+  draw(playerPos, playerFacing, npcs, jobs, jobsDone) {
+    const g = this.ctx;
+    g.clearRect(0, 0, this.size, this.size);
+    g.drawImage(this.static, 0, 0);
+    // Open jobs: yellow stars.
+    for (const job of jobs) {
+      if (jobsDone.includes(job.id)) continue;
+      g.fillStyle = "#ffce3a"; g.strokeStyle = "#7a5b00"; g.lineWidth = 1;
+      g.beginPath(); g.arc(this.px(job._pos.x), this.pz(job._pos.z), 3.5, 0, Math.PI * 2); g.fill(); g.stroke();
+    }
+    // Villagers: orange dots.
+    g.fillStyle = "#ff7a45";
+    for (const n of npcs) { g.beginPath(); g.arc(this.px(n.position.x), this.pz(n.position.z), 2, 0, Math.PI * 2); g.fill(); }
+    // Player: a white arrow with a dark edge.
+    const x = this.px(playerPos.x), z = this.pz(playerPos.z);
+    g.save(); g.translate(x, z); g.rotate(-playerFacing);
+    g.fillStyle = "#ffffff"; g.strokeStyle = "#2c2417"; g.lineWidth = 1.2;
+    g.beginPath(); g.moveTo(0, -6); g.lineTo(4.5, 5); g.lineTo(0, 2.5); g.lineTo(-4.5, 5); g.closePath(); g.fill(); g.stroke();
+    g.restore();
   }
 }
 
@@ -4461,6 +5297,7 @@ class Game {
     this._buildNpcs();
     this._buildAnimals();
     this._buildInteractables();
+    this.minimap = new Minimap(this.world);
     this._ambient = { chirp: 3, moo: 8, quack: 12 };
     startAmbient();
 
@@ -4481,7 +5318,7 @@ class Game {
     this.renderer.shadowMap.enabled = true;
     this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 
-    this.camera = new THREE.PerspectiveCamera(55, window.innerWidth / window.innerHeight, 0.1, 200);
+    this.camera = new THREE.PerspectiveCamera(55, window.innerWidth / window.innerHeight, 0.1, 700);
   }
 
   // Ask each job to build its villager + marker in the world.
@@ -4520,19 +5357,31 @@ class Game {
     const w = this.world;
     this.critters = [];
     const add = (m) => { w.scene.add(m); this.critters.push(m); return m; };
-    // Cows graze in the far-bank meadow, goats near the wheat field.
+    // Village: a few cows and goats, chickens by the houses.
     for (let i = 0; i < 3; i++) add(grazer(makeCow(), 22 + i * 2, -14, 5, 0.7));
     for (let i = 0; i < 3; i++) add(grazer(makeGoat(), -24, -14, 4, 1.1));
-    // Goats also on the near bank so there is life before the bridge.
     for (let i = 0; i < 2; i++) add(grazer(makeGoat(), 16, 13, 4, 1.1));
-    // Chickens around the leaky house and the far-bank houses.
     for (let i = 0; i < 4; i++) add(pecker(makeChicken(), -14, 11, 3));
     for (let i = 0; i < 3; i++) add(pecker(makeChicken(), 20, -8, 3));
-    // Ducks: two on the river, three on the pond.
-    for (let i = 0; i < 2; i++) add(swimmer(makeDuck(), { river: 0, y: 0.05 }));
+    // Farms: herds of cows and sheep, more chickens by the farmhouses.
+    for (let i = 0; i < 6; i++) add(grazer(makeCow(), 84 + (i % 3) * 6, -20 + Math.floor(i / 3) * 8, 8, 0.7));
+    for (let i = 0; i < 8; i++) add(grazer(makeGoat(), 112 + (i % 4) * 4, 8 + Math.floor(i / 4) * 5, 7, 1.0));
+    for (let i = 0; i < 5; i++) add(pecker(makeChicken(), 74, -58, 4));
+    for (let i = 0; i < 4; i++) add(pecker(makeChicken(), 132, 56, 4));
+    // Lake: buffalo-dark cows by the shore, goats near the huts.
+    for (let i = 0; i < 3; i++) add(grazer(makeCow(), -70, 24 + i * 6, 5, 0.6));
+    for (let i = 0; i < 3; i++) add(grazer(makeGoat(), -86, 78, 5, 1.0));
+    // Town: goats in the park, chickens behind the dhaba.
+    for (let i = 0; i < 2; i++) add(grazer(makeGoat(), 30, 82, 4, 1.0));
+    for (let i = 0; i < 3; i++) add(pecker(makeChicken(), -30, 118, 3));
+    // Temple hill: goats on the terrace edge.
+    for (let i = 0; i < 3; i++) add(grazer(makeGoat(), 12, -104, 5, 1.0));
+    // Ducks: on the river, the village pond and the lake.
+    for (let i = 0; i < 4; i++) add(swimmer(makeDuck(), { river: 0, y: 0.05 }));
     for (let i = 0; i < 3; i++) add(swimmer(makeDuck(), { cx: w.pond.cx, cz: w.pond.cz, r: 1.2 + i * 0.5, y: 0.12 }));
-    // Butterflies over flower patches.
-    for (const [x, z] of [[-8, 18], [10, 10], [-16, -12], [14, -20], [5, -6]]) add(flutterer(makeButterfly(), x, z));
+    for (let i = 0; i < 8; i++) add(swimmer(makeDuck(), { cx: LAKE.cx + (i % 2 ? 8 : -8), cz: LAKE.cz + (i % 3) * 4 - 4, r: 4 + i * 1.5, y: 0.02 }));
+    // Butterflies over flower patches all across the land.
+    for (const [x, z] of [[-8, 18], [10, 10], [-16, -12], [14, -20], [5, -6], [-20, 92], [26, 116], [90, 40], [76, -36], [-76, 60], [8, -112], [-60, 26]]) add(flutterer(makeButterfly(), x, z));
     // One dog that follows the engineer everywhere.
     const dog = follower(makeDog());
     dog.position.set(w.spawn.x + 1.5, 0, w.spawn.z + 1);
@@ -4654,8 +5503,8 @@ class Game {
     const blocked = this._uiBlocking();
 
     // Move the player only when no menu is up.
-    this.player.update(dt, blocked ? { x: 0, y: 0 } : this.input.move);
-    this.world.update(dt, elapsed);
+    this.player.update(dt, blocked ? { x: 0, y: 0 } : this.input.move, this.input.running);
+    this.world.update(dt, elapsed, this.player.position);
 
     // Bob and spin the job markers so they draw the eye, and let each
     // villager breathe and turn to face you when you come close.
@@ -4718,6 +5567,7 @@ class Game {
       this.ui.setInteractPrompt(null);
     }
 
+    this.minimap.draw(pp, this.player.facing, this.npcs, this.jobs, this.progress.jobsDone);
     this.renderer.render(this.world.scene, this.camera);
   }
 

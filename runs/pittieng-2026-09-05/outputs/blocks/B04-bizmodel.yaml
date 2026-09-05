@@ -1,0 +1,77 @@
+stage: B04-bizmodel
+company: "PITTIENG"
+run_date: "2026-09-05"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Rupee/percentage revenue split by product type (laminations vs castings vs machined components vs assemblies) NOT FOUND in either document; only physical volume (tonnes) is disclosed, and only for Q1FY27 at full product granularity"
+  - "Named domestic or international competitors NOT FOUND in either document"
+  - "Third-party market-share data corroborating the self-declared 'India's largest manufacturer' claim NOT FOUND"
+  - "Rs 290 Cr capex commissioning date conflicts between primary sources: Q1FY29 (Inv. Pres. Q1FY27 slide 11) vs Q1 2029-30 (AR FY26 PDF p.14), unresolved"
+  - "results filings absent; rating rationale absent; exchange announcements absent; shareholding pattern filing absent; sell-side research absent; screener CSVs header-only (carried from Gate 0)"
+flags:
+  - type: FLAG-BIZMODEL-ARCHETYPE-SPLIT
+    reason: "Pitti is not a single archetype. Loose laminations and raw castings behave as a COMMODITY CONVERTER (Section 1B v3.7 Amendment 17 must bind this slice); value-added assemblies and machined components behave as BUILD-TO-SPEC. No document discloses the rupee split between the two; the physical-volume mix is shifting toward the build-to-spec tier (value-added volumes +21.8% to +37.1% vs loose-lamination volume growth materially slower), but stage 11/FTTCP must not apply Amendment 17 treatment to the whole company."
+  - type: FLAG-CAPEX-DATE-CONFLICT
+    reason: "The Rs 290 Cr castings/machined-components capex programme's commissioning date differs by roughly one year between the two primary sources this run reads: Q1FY29 (Inv. Pres. Q1FY27, slide 11) vs Q1 2029-30 / Q1FY30 (AR FY26, PDF p.14). Neither document reconciles this; carry as a direct management question (4D #1)."
+  - type: FLAG-LBF3-DISCONFIRMED
+    reason: "Company memory load-bearing fact #3 ('railway/traction ~40% of revenue via Wabtec and Alstom') is not supported by either primary source. AR states Traction Motor and Railway Components = 33% of FY26 revenue (PDF p.8); Alstom is never named in either document; Wabtec appears only as a 2017 Rs 500 Cr deal reference (Inv. Pres. slide 11) and 2019/2022 supplier awards (AR PDF p.19), never tied to a current revenue percentage. Consistent with Gate 0 and B03's independent findings."
+business_type: "manufacturing"
+revenue_streams:
+  - {name: "Traction motor and railway components", type: "B2B unit-sale, component manufacturing (export-heavy, ~63% of this line)", pct_of_revenue: 33, predictability: "M"}
+  - {name: "Power generation", type: "B2B unit-sale, component manufacturing", pct_of_revenue: 15, predictability: "M"}
+  - {name: "Industrial and commercial motors", type: "B2B unit-sale, component manufacturing", pct_of_revenue: 13, predictability: "M"}
+  - {name: "Special purpose motors", type: "B2B unit-sale, component manufacturing (niche/high-spec)", pct_of_revenue: 7, predictability: "M"}
+  - {name: "Mining, oil and gas", type: "B2B unit-sale, heavy castings/components", pct_of_revenue: 6, predictability: "M"}
+  - {name: "Renewable energy / pump motors", type: "B2B unit-sale, component manufacturing (policy-backed)", pct_of_revenue: 4, predictability: "M-H"}
+  - {name: "Data centres", type: "B2B unit-sale, component manufacturing (early-stage)", pct_of_revenue: 3, predictability: "L"}
+  - {name: "Others (home appliances, automotive, scrap, other income)", type: "B2B unit-sale + scrap trading + non-operating other income", pct_of_revenue: 19, predictability: "L"}
+asset_intensity: "heavy"
+wc_intensity: "high"
+pricing_power: "moderate"
+cyclicality: "cyclical"
+moats_present:
+  - {moat: "Switching costs / OEM qualification barrier", durability: "moderate-to-high, applies only to the value-added/build-to-spec tier, not loose laminations"}
+  - {moat: "Cost advantage / economies of scale", durability: "moderate, self-declared and unverified by third-party market-share data; ROCE has declined three straight years despite the scale claim"}
+valuation_methods:
+  primary: {method: "EV/EBITDA on normalized, mid-capex-cycle Adjusted EBITDA", why: "Adjusted EBITDA (company-disclosed, ex-other-income, ex-ESOP) is the cleanest operating measure available; PAT is distorted this year by a rising depreciation base, a deferred-tax reversal, and finance-cost growth from the capex programme"}
+  secondary: {method: "P/E on Adjusted PAT", why: "Company-disclosed Adjusted PAT supports a growth-multiple cross-check on the transition thesis, read alongside the ROCE decline from an FY24 peak so the multiple is not paid on a peak-margin base"}
+  tertiary: {method: "Replacement-cost / EV per tonne of installed capacity", why: "Company discloses its own target of 1.0x-1.2x asset turns at full ramp-up of the new capex, giving a self-supplied capital-efficiency anchor once new-tranche utilisation data starts printing"}
+  not_applicable:
+    - "Sum-of-the-parts / segment valuation (single-segment reporting under Ind AS 108, no segment-level profitability disclosed)"
+    - "Dividend discount / yield-based (modest payout, capex programme consuming free cash flow)"
+    - "Book value / NAV, asset-holding basis (operating manufacturer, not an asset-holding or financial company)"
+irrelevant_ratios:
+  - {ratio: "Reported EBITDA/margin including Other Income", why: "Other Income is 24-28% of PBT, ~77% of it an opaque, undated subsidy receivable; use Adjusted EBITDA instead"}
+  - {ratio: "Trade payables turnover / DPO", why: "Rs 83.85 Cr of TReDS supplier-finance is embedded in payables, masking real deleveraging; use net debt including the TReDS balance as quasi-debt instead"}
+  - {ratio: "Reported PAT / net profit margin as an operating signal", why: "FY26 PAT fell on a tax-rate/DTL-reversal timing effect, not an operating deterioration; use EBIT/Adjusted EBITDA trend instead"}
+  - {ratio: "ROE as shown in Note 25.21's own variance table (percentage-point basis)", why: "The note's own formula uses percentage-point difference for ROE, hiding a -32.5% relative decline; recompute on a relative-% basis"}
+  - {ratio: "Standalone-only ratios, read alone", why: "~20% of consolidated revenue sits in subsidiaries being merged into the parent via NCLT (appointed date 1-Apr-2026); FY27 comparability will break"}
+  - {ratio: "Headline asset turnover (revenue / average net PPE)", why: "Currently depressed by capex-in-progress not yet generating revenue, a denominator effect, not an efficiency loss; use capacity utilisation % instead"}
+must_track_metrics:
+  - {metric: "Adjusted EBITDA margin (ex-other income)", healthy: "15-18%", red_flag: "sustained fall below ~13.8% (FY23 level)"}
+  - {metric: "Capacity utilisation, sheet metal/machining/casting", healthy: ">75% across all three", red_flag: "any below 60% while new capex is being committed"}
+  - {metric: "Consolidated net debt vs guided ~Rs 300 Cr glide path", healthy: "sequential decline starting Q1 FY27", red_flag: "still rising for 2+ consecutive quarters"}
+  - {metric: "Customer concentration (top 2-3 customers, % of revenue)", healthy: "below 30%", red_flag: "above 45%"}
+  - {metric: "ROCE (consolidated)", healthy: "above 15%", red_flag: "below 12%"}
+unit_economics:
+  unit: "one tonne of finished output, blended across loose laminations, value-added assemblies, castings and machined components (company does not disclose an un-blended per-unit figure)"
+  revenue_per_unit: "CALCULATED (not company-disclosed): approx. Rs 23.5 lakh/tonne blended FY26 (Rs 1,912.8 Cr revenue from operations over approx. 81,529 tonnes combined lamination/assembly and casting/machined volume); masks a wide spread since value-added tiers earn more per tonne than loose laminations"
+  margin_per_unit: "NOT FOUND (no per-tonne margin disclosed; only blended Adjusted EBITDA margin of 17.03% FY26 consolidated)"
+  key_lever: "Mix shift from loose laminations toward integrated assemblies and machined components, each step disclosed to improve realisation per tonne, combined with capacity utilisation gains for fixed-cost absorption"
+first_deterioration_signals:
+  - {risk: "Customer/revenue-model concentration", first_signal: "Note 25.6(c) top-customer revenue % rising quarter over quarter"}
+  - {risk: "Margin / input-cost pass-through failure", first_signal: "gross margin or COGS-to-revenue ratio compressing quarter over quarter"}
+  - {risk: "Balance sheet / working-capital reversal not materialising", first_signal: "consolidated net debt or WC days still rising in Q1/Q2 FY27 results"}
+  - {risk: "Execution slippage on the Rs 290 Cr capex programme", first_signal: "CWIP ageing beyond 2 years, or a revised/later commissioning date in a subsequent filing"}
+  - {risk: "Structural goodwill impairment", first_signal: "any impairment charge, or first-time CGU-level disclosure, in the FY27 AR notes"}
+mgmt_questions:
+  - "Is the Rs 290 Cr capex programme commissioning by Q1FY29 (per the investor presentation) or Q1 2029-30 (per the Annual Report)?"
+  - "Can you name the top 2-3 customers behind the 25.2% consolidated / 40.7% standalone revenue concentration in Note 25.6, and confirm or correct the ~40% railway/traction Wabtec/Alstom characterization?"
+  - "What is the cumulative total, in rupees, of the current capex programme (Rs 150 Cr + Rs 290 Cr), and how does it map to FY26's Rs 175-200 Cr of gross PP&E additions?"
+  - "What is the rupee (not tonnage) revenue split between loose laminations, value-added assemblies, castings, and machined components?"
+  - "What is the multi-year glide path for net debt toward the guided ~Rs 300 Cr, given FY26 net debt rose 26.3% consolidated?"
+  - "What CGU-level assumptions (discount rate, growth rate, headroom) support the Rs 136.09 Cr goodwill carrying value?"
+  - "Beyond the five named OEMs (Caterpillar, Voith, Progress Rail, Siemens Mobility, Medha Servo), is there a firm purchase order or order-book figure behind the Rs 290 Cr capex decision?"
+one_line_verdict: "Scale commodity-lamination maker climbing toward qualified assemblies, funded by rising leverage."
+analyst_note: "The archetype split (converter for loose laminations/raw castings vs build-to-spec for value-added assemblies/machined components) is the single most load-bearing finding for downstream stages: Section 1B Amendment 17 must bind only the converter slice, and no document gives the rupee split needed to size that slice precisely, only physical-volume proxies that show the build-to-spec share growing faster. The Q1FY29-vs-Q1-2029-30 capex-date conflict between the AR and the Q1FY27 investor presentation is new this run (not previously flagged by B01/B02/B03) and should be resolved before FTTCP treats either date as load-bearing. Revenue-mix percentages in this report are all end-market based (AR PDF p.8), since no product-type rupee split exists in either document; do not conflate the two dimensions downstream."

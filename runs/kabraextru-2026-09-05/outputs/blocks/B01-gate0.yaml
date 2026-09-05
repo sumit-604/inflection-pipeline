@@ -1,0 +1,51 @@
+stage: B01-gate0
+company: "KABRAEXTRU"
+run_date: "2026-09-05"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "results: HIGH - no results filings in corpus; Q1 FY27 (Jun-2026) exists only as screener quarterly numbers"
+  - "rating: HIGH - CRISIL detailed rationale report absent; AR FY26 CG report (p.51) discloses the downgrade dates and a one-line trigger ('basis performance reported for Quarter 3') only"
+  - "announcements: not in corpus"
+  - "shareholding: SEBI shareholding-pattern filing not in corpus; promoter pledge (E3) NOT FOUND as a result"
+  - "research: not in corpus"
+  - "prospectus: not expected, long-listed company"
+  - "presentation-stale: only a Dec-2023 investor deck available"
+  - "peer-concall-windsor: not in corpus"
+  - "screener-csv-defect: sibling screener-Profit_Loss/Balance_Sheet/Cash_Flow/Quarters CSVs are empty formula shells; only Data_Sheet populated"
+  - "sector_cap_row: manifest sector 'Cables / Industrial products' flagged for phase-3 confirmation"
+flags:
+  - type: FLAG-GATE0
+    reason: "Classification AVOID (Core 22/100, well below 40 floor; deal-breaker 6 also independently forces AVOID: Net Debt/EBITDA 4.19x with Interest Coverage 0.317x). Historical depressor is FY26-specific and segment-identifiable: Battery/Geon division segment loss widened to -43.35 Cr (AR FY26 Note 38, p.105-106/p.160), overwhelming a still-profitable but declining Extrusion Machinery core (+50.75 Cr). Revenue declined in 6 of 9 years; PAT negative in FY26 (of last 3 years); WC days rose 154->244 (FY24->FY26)."
+data_years: 10
+fy_range: "FY17 to FY26"
+blocks: {A: 1, B: 1, C: 1, D: 8, E: 11}
+core_score: 22
+moat_score: 3
+grand_total: 25
+moats_confirmed: 0
+moat_class: "NONE"
+classification: "AVOID"
+deal_breakers:
+  - "1: Block A score 1/20 (<8) -> caps at GOOD"
+  - "2: Block B score 1/20 (<8) -> caps at GOOD"
+  - "6: FY26 Net Debt/EBITDA 4.19x (>3x) AND Interest Coverage 0.317x (<3x) -> AVOID"
+  - "7: revenue declined in 6 of 9 YoY years (FY18,19,20,24,25,26) -> caps at AVERAGE"
+  - "8: PAT negative in FY26 (of last 3 years FY24-26) -> caps at AVERAGE"
+history_downgrade: false
+data_notes:
+  - "profit-to-loss swing, FY25 (PAT +32.20 Cr) to FY26 (PAT -5.37 Cr); no synthetic PAT CAGR attempted (C2/C4 scored 0 per rule)"
+  - "ROCE computed as EBIT(PBT+Interest)/(Net Worth+Borrowings), a proxy for Total Assets-Current Liabilities since the screener Data_Sheet does not split current/non-current liabilities; cross-validated against AR FY26 Note 43 disclosed consolidated ROCE (FY26 0.61% vs 0.62% computed; FY25 8.67% vs 8.63% computed)"
+  - "ROE computed as PAT/average Net Worth; matches AR FY26 Note 43 consolidated ROE exactly for FY26 (-1.19%) and FY25 (7.04%)"
+  - "FCF (B2/B3) computable only for FY24-FY26 because capex breakdown requires AR cash-flow statements, and only Annual_Report_2025.txt and Annual_Report_2026.txt are in this run's corpus; FY17-FY23 capex NOT FOUND (screener's aggregate Investing Activity line conflates capex with investment purchases/sales)"
+  - "WC days (B4) computable only for FY24-FY26 because trade payables are NOT FOUND in the corpus for FY17-FY23 (screener balance sheet aggregates payables inside 'Other Liabilities'); latest-vs-earliest comparison is FY26 vs FY24, not FY26 vs FY17"
+  - "FY24 AR cash-flow statement shows the 'Expenditure on intangibles' line as a positive (net inflow) figure of Rs 357.21 lakh, unusual versus the outflow convention used every other year; treated at face value, noted as a data quirk"
+  - "promoter holding (E1/E2) taken from AR Note 14.4 'Shares held by promoters' Total row (60.49% FY26), not from the Corporate Governance Report's shareholder-category table which splits the same population differently (Promoters 40.51% + Corporate Bodies (Promoter Co) 19.47% + Relatives of promoters 2.70%)"
+  - "E2 FY23 promoter % (~60.23%) is derived (FY24 total 60.24% minus FY24 stated change +0.01%, AR FY25 p.89 Note 14.4), not a directly-stated point value"
+  - "E3 promoter pledge: NOT FOUND in provided corpus; scored 0, not assumed 0% pledge"
+  - "M2/M5/M9 used peer Data_Sheets for RAJOOENG, WINDMACHIN, HBLENGINE (3 comparators); HBLENGINE is a diversified defence-electronics/battery major and a weak segment comparator, noted not excluded"
+  - "M6 R&D/Revenue (1.22% FY26) sourced from AR FY26 Annexure-4 (p.28-29), Extrusion Rs 367 lakh + Geon Rs 185.18 lakh; only one year of R&D disclosure available in corpus"
+  - "~40% market-share claim (Company Memory priority 1) is self-reported in AR FY25 (p.37) only, unsourced, product-category undefined, and not repeated in AR FY26"
+  - "Board recommended Rs 0.00 dividend for FY26 vs Rs 2.50 FY25 (AR FY26 p.110, Note 44), a full dividend cut, not separately scored but relevant context"
+block_b_trend: "deteriorating - working capital days rose from ~154 (FY24) to ~244 (FY26), +90 days in two years (screener Data_Sheet Receivables/Inventory/Sales; AR FY26/FY25 Note 34.1 Trade Payables)"
+analyst_note: "AVOID is doubly confirmed: Core score (22) sits far below the 40 floor, and deal-breaker 6 (ND/EBITDA 4.19x with IC 0.317x) fires independently. The cause is narrow and traceable, not a broad quality collapse: Segment Note 38 shows the Extrusion Machinery core stayed solidly profitable (+50.75 Cr FY26, down from +70.14 Cr FY25), while the Battery/Geon division's loss widened for a second straight year (-25.53 Cr FY25 to -43.35 Cr FY26) and swamped it. Two scoring lines sat just barrier-side of a deal-breaker: median ROCE 10.31% (0.31pp above the <10% AVERAGE-cap line) and cumulative CFO/PAT 0.543 (0.04 above the <0.50 line) - both would read materially worse if FY26 repeats. The ~40% market-share claim underpinning any bull case is unsourced and was dropped from the current-year report. CRISIL's stated downgrade trigger ('Q3 performance') is thin; no independent rating rationale is in corpus. Promoter pledge is an unresolved data gap, not evidence of cleanliness."

@@ -1,0 +1,91 @@
+stage: B00-inputs
+company: PITTIENG
+run_date: 2026-09-05
+model: orchestrator (claude-fable-5-1)
+status: complete
+run_type: full
+concalls_available: true
+listed_recently: false
+incorporated: 1983 (CIN L29253TG1983PLC004141)
+spear_gate: "OVERRIDE 2026-09-05 (operator standing ruling 2026-09-05: Step-1 intake replaces the web spear); companies/PITTIENG.md created this session (step1 step G completed here)"
+operator_confirmation: "asked once at stage 0; answer: Proceed with these gaps"
+sector_cap_row_manifest: "Cables / Industrial products"
+sector_cap_row_note: "corrected by step1 brief from collector default Pharma / CDMO; confirm at Halt 1 / Phase 3"
+
+inputs_present:
+  annual_report: [FY26 (Annual_Report_2026_2.pdf, 130 PDF pages, filed 2026-08-24)]
+  annual_report_nonreport_files: [Annual_Report_2026.pdf (2-page weblink letter, not an AR)]
+  results: []
+  rating: []
+  concalls_used: [Feb-2026_Q3FY26, May-2026_Q4FY26, Aug-2026_Q1FY27]
+  concalls_available_unused: [Nov-2025_Q2FY26 (passed to stage 7 and verifier B as extra)]
+  peer_concalls: {RKFORGE: 4, SANSERA: 4, VILAS: 4}
+  presentation: [Q1FY27_2026-08-10 (30 pages)]
+  research: []
+  screening_company: screener-Data_Sheet.csv (FY20-FY26 P&L, FY21-FY26 BS/CF, quarters Mar-2024..Jun-2026)
+  screening_peers: [RKFORGE-Data_Sheet.csv, SANSERA-Data_Sheet.csv]
+  screening_empty_csvs: [Profit_Loss, Balance_Sheet, Cash_Flow, Quarters (company and both peers, header-only)]
+  shareholding: []
+  announcements: []
+  text_sidecars: inputs/_text/<folder>__<file>.txt (page-marked, PDF page index)
+
+input_gaps:
+  - type: results
+    severity: MEDIUM
+    reason: "no results PDFs; Q1FY27 and FY26 audited results reached only via presentation, concalls, screener quarters row"
+  - type: rating
+    severity: MEDIUM
+    reason: "no rating rationale; WC/debt read has no agency anchor; INDETERMINATE cash conversion would cap at PROCEED WITH CAVEATS"
+  - type: announcements
+    severity: MEDIUM
+    reason: "no Reg 30 record; capex approvals, acquisitions, order wins not filing-anchored"
+  - type: shareholding
+    severity: LOW
+    reason: "AR FY26 tables (31-Mar-2026) stand in; Jun-2026 pattern and pledge trend absent"
+  - type: research
+    severity: NONE
+    reason: "non-anchored source; no effect on evidence"
+  - type: collector_defects
+    severity: LOW
+    reason: "AR weblink letter misfiled as AR; screener P&L/BS/CF/Quarters CSVs empty; sector_cap_row auto-pick wrong (corrected)"
+
+freshness_pairs:
+  - pair: results_to_concall
+    trigger_doc: none (results/ empty)
+    mate_expected: same-quarter concall
+    status: PASS
+    missing_doc: null
+  - pair: rating_bulletin_to_rationale
+    trigger_doc: none (rating/ empty)
+    mate_expected: full rationale
+    status: PASS
+    missing_doc: null
+  - pair: sebi_order_to_text
+    trigger_doc: none referenced
+    mate_expected: order text
+    status: PASS
+    missing_doc: null
+  - pair: ar_to_latest_audited_annual
+    trigger_doc: FY26 audited annual results (Q4FY26 call 2026-05-18)
+    mate_expected: FY26 annual report
+    status: PASS
+    missing_doc: null
+
+freshness_verdict: FRESHNESS PAIRS OK
+corpus_verdict: CORPUS GAPPED
+gate_cap: none (no freshness failure)
+
+concall_quarter_map:
+  - {file: Concall_Nov_2025_Transcript.pdf, quarter: Q2 FY26, call_date: 2025-11-10, stage5: false}
+  - {file: Concall_Feb_2026_Transcript.pdf, quarter: Q3 FY26, call_date: 2026-02-06, stage5: true}
+  - {file: Concall_May_2026_Transcript.pdf, quarter: Q4 and FY26, call_date: 2026-05-18, stage5: true}
+  - {file: Concall_Aug_2026_Transcript.pdf, quarter: Q1 FY27, call_date: 2026-08-11, stage5: true}
+
+load_bearing_facts:
+  - "FY28 turnover > Rs 2,500 Cr at 90,000 t, EBITDA margin 17-17.2%; FY27 EBITDA ~Rs 370 Cr (guidance vs delivery)"
+  - "FY26 adj. EBITDA up ~20% yet PAT fell; net debt Rs 525+ Cr guided toward Rs 300 Cr (cash conversion)"
+  - "Railway/traction ~40% of revenue via Wabtec and Alstom (concentration)"
+  - "Rs 290 Cr machined-components capex; castings to 36,000 MT by Q1 FY29 (capex funding, value-add proof)"
+
+flags: []
+analyst_note: "Long-listed lamination maker turned integrated component platform; FY26 AR, four concalls, Q1FY27 presentation and screener Data_Sheet carry the run. No results, rating, announcements or shareholding filings: cash-conversion and UA evidence will be thinner than the AR alone can fix. No freshness failure; corpus is GAPPED, not GAPPED-FRESHNESS."

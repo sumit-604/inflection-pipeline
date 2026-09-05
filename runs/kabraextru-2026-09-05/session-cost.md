@@ -13,3 +13,4 @@ Per-stage token ledger. One row per subagent run. Stage 0 is orchestrator-inline
 | 7 | emerging moat scan | claude-sonnet-5 | default | n/a | n/a | 243831 | 973s | 1 |
 | 2 | notes triple-pass (pass 3 + consolidation) | claude-sonnet-5 | default | n/a | n/a | 116854 | 457s | 3 |
 | 3 | AR deep dive (8 phases) | claude-sonnet-5 | default | n/a | n/a | 305649 | 730s | 1 |
+| 5 | concall (NO-CONCALL: AR guidance vs delivery) | claude-sonnet-5 | default | n/a | n/a | 185340 | 792s | 1 |

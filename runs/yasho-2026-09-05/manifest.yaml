@@ -6,4 +6,5 @@ run_date: 2026-09-05
 run_type: full
 concalls_available: true
 sector_cap_row: "Specialty chemicals"
-notes: "Collected from screener.in by collect_to_repo.py v3. Sector row auto-picked; verify."
+listed_date: ""   # long-listed (BSE SME 2018, main-board since ~2021); prospectus not expected, not a gap
+notes: "Collected from screener.in by collect_to_repo.py v3. Sector row CONFIRMED Step-1 D against Master v3.6 cap table (Specialty chemicals = 35x). YASHO P&L/BS/CF/Quarters screening CSVs are the known collector defect (empty, header-only); only Data_Sheet populated -> B00 gap; Gate 0 extracts from Data_Sheet + AR financials. No results/ PDFs in corpus."

@@ -1,0 +1,22 @@
+stage: B00-inputs
+company: YASHO
+run_date: 2026-09-05
+model: orchestrator
+status: complete
+input_gaps:
+  - results (no quarterly results PDFs; Gate 0 from Data_Sheet + AR + Q1FY27 presentation)
+  - rating (no rating rationale; A- upgrade is presentation-sourced only)
+  - announcements (no Reg 30 documented-ACTION record)
+  - shareholding (no filing; holding pattern is presentation-sourced)
+  - screening_csv_partial (YASHO P&L/BS/CF/Quarters CSVs empty; only Data_Sheet populated — collector v3 defect)
+freshness_pairs:
+  - {pair: results_to_concall, trigger_doc: none, mate_expected: same_quarter_concall, status: PASS, missing_doc: none}
+  - {pair: rating_bulletin_to_rationale, trigger_doc: none, mate_expected: rating_rationale, status: PASS, missing_doc: none}
+  - {pair: sebi_order_to_text, trigger_doc: none, mate_expected: order_text, status: PASS, missing_doc: none}
+  - {pair: ar_to_latest_audited_annual, trigger_doc: AR_FY2026, mate_expected: not_older_than_latest_annual, status: PASS, missing_doc: none}
+freshness_verdict: FRESHNESS PAIRS OK
+corpus_verdict: CORPUS GAPPED
+listed_status: long-listed (prospectus not expected)
+sector_cap_row: "Specialty chemicals"
+flags: []
+analyst_note: "Two ARs present (FY25+FY26); stage 5 capped at 3 most recent concalls (Feb/May/Aug 2026 oldest-first), Nov-2025 extra. YASHO screening P&L/BS/CF/Quarters empty (collector defect); Gate 0 leans on Data_Sheet + AR + Q1FY27 pres. Holding and rating are presentation-sourced, not filings."

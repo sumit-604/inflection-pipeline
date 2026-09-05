@@ -8,3 +8,4 @@ not. Stage 0 ran inline in the orchestrator session (no subagent).
 |---|-------|-------|--------|--------|---------|-----------|------|------|
 | 0 | stage-00-inputs (inline) | orchestrator | n/a | n/a | n/a | n/a | n/a | 1 |
 | 1 | stage-02-notes (pass 1) | sonnet | n/a | n/a | n/a | 217786 | 7m48s | 1 |
+| 2 | stage-02-notes (pass 2) | sonnet | n/a | n/a | n/a | 186770 | 7m37s | 2 |

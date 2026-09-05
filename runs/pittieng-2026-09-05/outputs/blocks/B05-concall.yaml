@@ -1,0 +1,105 @@
+stage: B05-concall
+company: "PITTIENG"
+run_date: "2026-09-05"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Results filings absent: no results PDFs to test delivery against; used management-stated numbers from the calls and the Q1 FY27 investor presentation text where cited"
+  - "Rating rationale absent"
+  - "Exchange announcements absent"
+  - "Shareholding pattern filing absent"
+  - "Research absent"
+  - "Screener P&L/BS/CF/Quarters CSVs header-only"
+flags:
+  - "Q3 FY26 call transcript gives FY27 consolidated top-line guidance as 'INR20 crores to INR50 crores', internally inconsistent with the 9M FY26 run-rate and with all later guidance (~Rs2,300 Cr per Q4 FY26 call); treated as a probable transcription/OCR defect, not usable as a number"
+  - "Q1 FY27 transcript page footers misprint the call date as 11-Aug-2027; cover letter and title page confirm 11-Aug-2026 (Q1 FY27), consistent with the quarter map"
+  - "Company memory's 'net debt guided toward Rs300 Cr' appears to conflate an inventory target (Rs300 Cr, Q3 FY26 call) with net debt (never given a Rs300 Cr target on any call); corrected in this report"
+  - "Company memory's 'Q1 FY29' commissioning date for the Rs290 Cr castings capex does not match any call; all three calls and the FY26 AR say Q1 FY30"
+quarters_analysed: ["Q3 FY26", "Q4 FY26", "Q1 FY27"]
+triggers:
+  - {priority: 1, name: "Value-added mix shift (machine components + integrated assemblies)", type: "margin+revenue", timeframe: "medium", conviction: "H", confirm_signal: "High-value tonnage share and per-ton EBITDA keep rising each quarter", kill_signal: "High-value tonnage growth stalls or reverts to loose-lamination-led growth"}
+  - {priority: 2, name: "Rs290 Cr greenfield casting/machining (Hyderabad)", type: "revenue+margin", timeframe: "medium-long (Q1 FY30)", conviction: "M", confirm_signal: "Capex spend tracks the Rs290 Cr schedule; casting/machining tonnage rises toward 36,000 t / 10.8 lakh hours on time", kill_signal: "Commissioning slips past Q1 FY30, or realised asset-turn/margin (1.2x, 25-28%) undershoots at start-up"}
+  - {priority: 3, name: "Data centers (Cummins/Marathon/Nidec/Caterpillar)", type: "revenue", timeframe: "near", conviction: "M", confirm_signal: "Revenue share keeps rising past 5% with 25-30% YoY growth sustained", kill_signal: "AI-driven genset capex slows, or a top customer pulls back (management's own new caution, Q1 FY27)"}
+  - {priority: 4, name: "Mining/off-highway", type: "revenue", timeframe: "near", conviction: "M", confirm_signal: "Share keeps rising past ~10% of revenue with named US/Europe mining wins converting to firm orders", kill_signal: "Commodity-cycle-driven mining capex reverses (management's own words: 'can correct very fast')"}
+  - {priority: 5, name: "China Plus One / US tariff relief / new export customers", type: "volume+revenue", timeframe: "medium", conviction: "M", confirm_signal: "Two pipeline export customers convert to revenue on the guided Q3 FY27 timeline; $10-15 Mn incremental export revenue over 2-3 years materialises", kill_signal: "Customer sampling stalls past Q3 FY27, or the tariff relief reverses"}
+  - {priority: 6, name: "Working-capital / net-debt normalisation", type: "margin+cash", timeframe: "near", conviction: "L", confirm_signal: "Net debt falls below the ~Rs470 Cr interim marker and inventory below ~Rs350 Cr with a firm new date", kill_signal: "Net debt or inventory levels stay flat, or rise, for another 2 quarters"}
+  - {priority: 7, name: "Railways with a widening named-customer roster", type: "revenue", timeframe: "medium", conviction: "M", confirm_signal: "Railway revenue share stops declining and named customers convert to higher rupee volumes", kill_signal: "Revenue share keeps declining past 25% despite the growing customer list"}
+  - {priority: 8, name: "Bangalore facility + further equipment capex", type: "revenue", timeframe: "long", conviction: "L", confirm_signal: "Board approval and land acquisition announced", kill_signal: "No board approval materialises within FY28"}
+guidance:
+  - {item: "FY26 revenue", number: "Rs1,900-2,000 Cr (~Rs1,950 Cr midpoint)", timeframe: "FY26", stated_in: "Q3 FY26 call"}
+  - {item: "Rs150 Cr capex commissioning", number: "Rs150 Cr, fully operational", timeframe: "by end FY27", stated_in: "Q3 FY26 call"}
+  - {item: "Inventory level", number: "Rs500 Cr to Rs300 Cr", timeframe: "by April 2026", stated_in: "Q3 FY26 call"}
+  - {item: "Finance cost reduction FY27", number: "Rs15 Cr reduction", timeframe: "FY27", stated_in: "Q3 FY26 call"}
+  - {item: "FY27 EBITDA margin", number: "~17% midpoint, +/-50bps", timeframe: "FY27", stated_in: "Q3 FY26 call"}
+  - {item: "FY27 lamination volume", number: "78,000 tons", timeframe: "FY27", stated_in: "Q3 FY26 call (later revised)"}
+  - {item: "FY27 machine components + castings volume", number: "14,000 tons", timeframe: "FY27", stated_in: "Q3 FY26 call (later revised)"}
+  - {item: "Casting capacity debottleneck", number: "18,600 to ~24,000-24,600 tons", timeframe: "by H1 FY27", stated_in: "Q3 FY26 / Q4 FY26 calls"}
+  - {item: "Net debt", number: "~Rs550 Cr", timeframe: "as of Q3 FY26 call", stated_in: "Q3 FY26 call"}
+  - {item: "FY26 actuals", number: "Revenue Rs1,953 Cr (+12%); EBITDA Rs326 Cr (+20%, margin 17%); tax Rs128 Cr", timeframe: "FY26", stated_in: "Q4 FY26 call"}
+  - {item: "FY27 revenue", number: "~Rs2,300 Cr", timeframe: "FY27", stated_in: "Q4 FY26 call"}
+  - {item: "FY27 machine components volume (revised)", number: "16,000 tons (up from 14,000t)", timeframe: "FY27", stated_in: "Q4 FY26 call"}
+  - {item: "Rs290 Cr greenfield casting capex", number: "Rs290 Cr; casting capacity to 36,000 t; machine hours 7.2 lakh to 10.8 lakh", timeframe: "commissioning Q1 FY30", stated_in: "Q4 FY26 call"}
+  - {item: "New capex facility economics", number: "1.2x asset turn, 25-28% EBITDA margin, 90-120 days net working capital", timeframe: "post-commissioning", stated_in: "Q4 FY26 call"}
+  - {item: "Net debt (near-term)", number: "~Rs570 Cr to ~Rs470 Cr (Rs125 Cr WC release)", timeframe: "FY27, before capex/earnings", stated_in: "Q4 FY26 call"}
+  - {item: "Net debt (long-term)", number: "~Rs250 Cr, ex further capex", timeframe: "by FY28/29", stated_in: "Q4 FY26 call"}
+  - {item: "Tax rate", number: "~33%", timeframe: "'at least a couple of years'", stated_in: "Q4 FY26 call"}
+  - {item: "Total borrowings / cost of debt", number: "Rs698 Cr total, 7-7.5% average cost", timeframe: "as of FY26-end", stated_in: "Q4 FY26 call"}
+  - {item: "Maharashtra subsidy", number: "~Rs40 Cr/yr potential on Rs400 Cr invested (7yr vs 9yr recovery)", timeframe: "from FY28 (deferred from possible FY27)", stated_in: "Q4 FY26 / Q1 FY27 calls"}
+  - {item: "FY27 lamination volume (revised)", number: "82,000 tons (up from 78,000t)", timeframe: "FY27", stated_in: "Q1 FY27 call"}
+  - {item: "FY27 casting volume (revised)", number: "17,000 tons (up from 16,000t)", timeframe: "FY27", stated_in: "Q1 FY27 call"}
+  - {item: "FY27 EBITDA", number: "~Rs370 Cr", timeframe: "FY27", stated_in: "Q1 FY27 call"}
+  - {item: "FY28 turnover and margin (ex incremental capex)", number: ">Rs2,500 Cr at 90,000t lamination, ~17-17.2% EBITDA margin", timeframe: "FY28", stated_in: "Q1 FY27 call"}
+  - {item: "Tax rate (revised)", number: "~25%", timeframe: "FY27 full year", stated_in: "Q1 FY27 call"}
+  - {item: "Net debt (as of Q1 FY27)", number: "~Rs491 Cr", timeframe: "as of Q1 FY27-end (30-Jun-2026)", stated_in: "Q1 FY27 call"}
+  - {item: "Further WC optimization potential", number: "Rs20-25 Cr / Rs25-30 Cr", timeframe: "no date given", stated_in: "Q1 FY27 call"}
+  - {item: "Peak revenue, current facilities (ex Rs290 Cr capex)", number: "~Rs2,500 Cr", timeframe: "not dated", stated_in: "Q1 FY27 call"}
+  - {item: "Potential future capex (Bangalore + equipment)", number: "~Rs400 Cr incremental, taking topline to Rs3,000-3,300 Cr", timeframe: "FY28-29, not board-approved", stated_in: "Q1 FY27 call"}
+  - {item: "Long-term EBITDA margin target", number: "upwards of 18%, closer to 18-18.5%", timeframe: "~3 years out", stated_in: "Q1 FY27 call"}
+promise_delivery:
+  delivered: 5
+  partial: 4
+  missed: 3
+  rows:
+    - {promised_in: "Q3 FY26 call", promise: "FY26 revenue Rs1,900-2,000 Cr", outcome: "delivered", explanation: "Actual FY26 revenue Rs1,953 Cr, at the guided midpoint (Q4 FY26 call)"}
+    - {promised_in: "Q3 FY26 call", promise: "Rs150 Cr capex fully operational by end FY27", outcome: "delivered", explanation: "Confirmed commissioned, sheet metal capacity 108,000 t (Q1 FY27 call)"}
+    - {promised_in: "Q3/Q4 FY26 calls", promise: "Casting capacity debottleneck to ~24,000-24,600 t by H1 FY27", outcome: "delivered", explanation: "Confirmed 'casting capacity has gone to 24,000 tons' (Q1 FY27 call)"}
+    - {promised_in: "Q4 FY26 call", promise: "FY27 lamination 78,000t / machine components 16,000t", outcome: "delivered and raised", explanation: "Revised up to 82,000t / 17,000t mid-year on genuine Q1 FY27 volume outperformance (19% YoY)"}
+    - {promised_in: "Q4 FY26 call", promise: "Q4 FY26 export/margin miss (~Rs20 Cr) tied to LPG/shipping disruption would normalise", outcome: "delivered", explanation: "Confirmed resolved: 'there is no LPG issue... steady supplies' (Q1 FY27 call)"}
+    - {promised_in: "Q3 FY26 call", promise: "Inventory Rs500 Cr to Rs300 Cr by April 2026", outcome: "missed", explanation: "Actual ~Rs390-400 Cr as of Q4 FY26 call; reframed as new steady state rather than acknowledged as a miss; Q1 FY27 call implies Rs300 Cr will not be reached"}
+    - {promised_in: "Q3 FY26 call", promise: "Net debt to fall as BIS Korea/Japan steel deals unlock working capital", outcome: "partial/missed near-term", explanation: "Net debt rose to ~Rs570 Cr (Q4 FY26 call, consistent with FY26 AR's Rs554.56 Cr, +26% YoY) before falling to ~Rs491 Cr (Q1 FY27 call), short of the Rs470 Cr interim marker given in Q4 FY26"}
+    - {promised_in: "Q3 FY26 call", promise: "Finance cost reduction Rs15 Cr for FY27", outcome: "partial/untestable", explanation: "Q1 FY27 print distorted by a ~Rs3 Cr forex swing; underlying reduction claimed but not cleanly isolated after one quarter"}
+    - {promised_in: "Q3 FY26 call", promise: "FY27 EBITDA margin ~17% midpoint, +/-50bps band", outcome: "missed", explanation: "Q4 FY26 actual 16.6%; Q1 FY27 actual 16.8%; both below the stated band, attributed to a Q4 energy 'Black Swan' and Q1 manpower cost front-loading"}
+    - {promised_in: "Q4 FY26 call", promise: "Tax rate ~33%, to persist 'at least a couple of years'", outcome: "missed/reversed", explanation: "Revised to ~25% full year three months later (Q1 FY27 call) without reconciling the prior multi-year claim when an analyst cited it directly"}
+    - {promised_in: "Q4 FY26 call", promise: "Net debt ~Rs250 Cr by FY28/29, ex further capex", outcome: "partial/softened", explanation: "When asked again in Q1 FY27, management declined to reaffirm a number, citing capex-timing dependency"}
+    - {promised_in: "Q4 FY26 call", promise: "Maharashtra subsidy claim open between FY27 and FY28 start", outcome: "partial/slipped", explanation: "Resolved to FY28-only start (Q1 FY27 call); ~Rs70 Cr still pending from government, no firm date"}
+excuse_pattern: "balanced"
+repeated_evasions:
+  - {question: "What is your PAT/bottom-line guidance for FY27 (and FY28)?", quarters_asked: ["Q4 FY26", "Q1 FY27"], classification: "deflected every time"}
+  - {question: "What tax rate should we model for FY27 (and beyond)?", quarters_asked: ["Q4 FY26", "Q1 FY27"], classification: "answer changed between quarters"}
+  - {question: "Where does net debt settle over the next 1-2 years / by FY28-29?", quarters_asked: ["Q4 FY26", "Q1 FY27"], classification: "answer changed between quarters"}
+credibility_grade: "C"
+credibility_basis: "Real, verifiable delivery on FY26 revenue guidance (hit exactly), capacity commissioning (Rs150 Cr capex and casting debottleneck both on schedule), and volume guidance raised mid-year on genuine outperformance; set against a materially missed central promise (inventory/net-debt normalisation via BIS Korea/Japan deals, the most repeated theme across all three calls, quietly reset rather than owned as a miss), an EBITDA margin band undershot twice, PAT guidance withheld on two direct requests, and an unreconciled 33%-to-25% tax-rate reversal."
+peer_questions:
+  - {question: "Is BIS-certified electrical steel from Korean and Japanese mills now reliably available, resolving the import-supply uncertainty Pitti cited through FY26?", why: "Pitti's inventory/net-debt normalisation thesis rests on this supply unlock, and Pitti's own record shows the Rs300 Cr inventory target was missed despite the tie-ups being announced", check_peers: ["VILAS"]}
+  - {question: "Do peers report the same India-US tariff relief (Section 232 reciprocal cut 50% to 18%) and the same customer-acquisition tailwind Pitti describes?", why: "Tests whether the China Plus One/US reshoring narrative behind Pitti's new export customers and data-center growth guide is sector-wide or company-specific optimism", check_peers: ["SANSERA", "RKFORGE"]}
+  - {question: "Is domestic railway capex actually moderating, even as Pitti's named railway customers (Wabtec, Alstom, Progress Rail, Siemens Mobility) keep growing internationally?", why: "Tests whether Pitti's declining railway revenue share (31.9% to 33% to 28%) reflects real end-market softness or company-specific share loss inside named accounts", check_peers: ["RKFORGE"]}
+  - {question: "Do peer forged/cast component makers report the same casting and machining capacity tightness Pitti calls 'the biggest bottleneck' (not the order book)?", why: "If peers are adding capacity faster, Pitti's stated bottleneck may reflect capital discipline lagging demand rather than an industry-wide shortage", check_peers: ["SANSERA", "RKFORGE"]}
+  - {question: "Does any peer confirm a data-center generator/genset demand surge of the magnitude Pitti describes (segment share 3% to 5% of revenue, 25-30% growth guide)?", why: "Tests whether the data-center trigger is a structural market shift or a single-customer-driven number (Cummins, Marathon, Nidec) that could reverse", check_peers: ["RKFORGE", "SANSERA", "VILAS"]}
+  - {question: "Do peers report the same working-capital/inventory build feeding a net-debt increase across FY26, and are they unwinding it faster than Pitti's missed promise?", why: "Cross-checks whether Pitti's 26% YoY net-debt increase (FY26 AR) and its delayed unwind is an industry-wide raw-material/BIS story or a Pitti-specific execution lag", check_peers: ["VILAS", "RKFORGE", "SANSERA"]}
+red_flags:
+  - "[HIGH] Central working-capital/net-debt promise (Rs500 Cr to Rs300 Cr inventory by April 2026, via BIS Korea/Japan steel deals) missed materially across all three quarters; FY26 net debt rose 26% YoY to Rs554.56 Cr (per AR/B02) despite the promise; management reframed the shortfall as a new steady state rather than acknowledging it as a miss against its own Rs300 Cr number"
+  - "[MEDIUM] Tax rate guidance reversed from ~33% (Q4 FY26, stated to persist 'at least a couple of years') to ~25% (Q1 FY27) with no reconciliation of the change when an analyst directly cited the prior guidance"
+  - "[MEDIUM] EBITDA margin undershot the company's own stated '17% +/-50bps' band in 2 of the 3 quarters tested (Q4 FY26 16.6%, Q1 FY27 16.8%)"
+  - "[MEDIUM] PAT/bottom-line guidance withheld specifically on two consecutive direct requests (Q4 FY26, Q1 FY27) even as EBITDA and revenue numbers were given freely both times"
+  - "[MEDIUM] Net debt long-term target (~Rs250 Cr by FY28/29 ex-capex, given specifically in Q4 FY26 call) walked back to a vague, non-committal answer when asked again in Q1 FY27"
+  - "[LOW-MEDIUM] ROCE has fallen from ~19% to ~15% over three years (analyst's own figure, Q1 FY27 call); management's mitigation (future capex mix shifting toward equipment) is plausible but unproven"
+  - "[LOW] Railway/traction revenue share trending down (31.9% to 33% to 28%) even as management calls railways 'a key focus area and major growth driver'; no concall evidence supports the ~40% railway-revenue figure carried in prior company memory (corrected in this report)"
+  - "[LOW] Customer concentration (2 customers = 25.2% of consolidated revenue, per B02) is never acknowledged or discussed as a risk on any of the three calls despite management repeatedly naming a small set of large customers"
+  - "[LOW] Maharashtra state subsidy claim start pushed from a possible FY27 start (Q4 FY26 call framing) to a confirmed FY28-only start (Q1 FY27 call), with ~Rs70 Cr still pending from government and no firm date"
+dropped_triggers:
+  - "Forging business entry: mentioned once (Q3 FY26 call, 250-300 t/month current forging consumption cited as the scale threshold); not revisited in Q4 FY26 or Q1 FY27 calls, and no analyst re-asked"
+timeline_slippages:
+  - "Inventory reduction Rs500 Cr to Rs300 Cr by April 2026 (Q3 FY26 call) -> actual ~Rs390-400 Cr as of Q4 FY26 call, no new firm date given; by Q1 FY27 call remaining optimisation potential reduced to only Rs20-25 Cr, implying Rs300 Cr will not be reached"
+  - "Maharashtra subsidy claim start: open FY27-or-FY28 framing (Q4 FY26 call) hardened to confirmed FY28-only start (Q1 FY27 call)"
+  - "Net debt long-term target: specific ~Rs250 Cr by FY28/29 ex-capex (Q4 FY26 call) softened to a conditional, no-number answer when asked again (Q1 FY27 call)"
+analyst_note: "Company memory's Spear load-bearing facts #2 and #4 need correction: the Rs300 Cr figure tied to the BIS Korea/Japan steel deals is an INVENTORY target, not a net-debt target (no call ever gives net debt a Rs300 Cr target); and the Rs290 Cr castings capex commissioning date is Q1 FY30 on every call and in the AR, not Q1 FY29. Spear fact #3 (railway ~40% via Wabtec/Alstom) is not supported by any disclosed figure; actual share ran 28-33% across the three calls, on a declining trend, even as the named customer roster (Wabtec, Alstom, Progress Rail, Siemens Mobility) grew. Spear fact #1 (FY28 turnover/margin, FY27 EBITDA ~Rs370 Cr) is confirmed as a real, specific, dated guidance statement (Q1 FY27 call) but is not yet testable against a full-year print."

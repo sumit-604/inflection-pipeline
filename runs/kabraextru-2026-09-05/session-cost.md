@@ -24,3 +24,35 @@ Per-stage token ledger. One row per subagent run. Stage 0 is orchestrator-inline
 | 12a | verifier A numerical | claude-haiku-4-5 | default | n/a | n/a | 120887 | 263s | 1 |
 | 13 | synthesis-lite (phase 1) | claude-opus-4-8 | default | n/a | n/a | 192948 | 855s | 1 |
 | 09b | Halt 1 dossier | claude-sonnet-5 | default | n/a | n/a | 303087 | 1074s | 1 |
+
+## PHASE 1 CLOSE-OUT
+
+Total subagent tokens across all rows: ~3,439,882 (stage 0 orchestrator-inline, no metadata; stage 6 run 1 aborted on a 429 rate limit with no usage returned).
+
+### (a) TOP FIVE BY TOKENS (stage totals, loop/retry summed)
+1. Stage 2 notes triple-pass (3 runs: 229,345 + 180,031 + 116,854) = 526,230 — 15.3%
+2. Stage 12b verifier B red-flags = 362,059 — 10.5%
+3. Stage 3 AR deep dive = 305,649 — 8.9%
+4. Stage 09b Halt 1 dossier = 303,087 — 8.8%
+5. Stage 7 emerging moat scan = 243,831 — 7.1%
+
+### (b) DOWNSHIFT FAILURES
+none. Verifier A (mechanical) ran on haiku as dispatched. Stage 0 validation is
+orchestrator-inline by design per run-pipeline "do this yourself", not a
+dispatched subagent. Stage 10 assembly does not run in phase 1.
+
+### (c) COST SPIKES
+none. No prior runs/kabraextru-*/ ledger exists (first KABRAEXTRU run); nothing
+to compare against 1.5x.
+
+### (d) OPERATOR SNAPSHOT
+Operator: run /cost and /usage now and paste the cache hit ratio and loop totals
+under an "Operator snapshot" heading below. The orchestrator cannot read those
+interactive commands.
+
+### Run notes
+- Stage 6 run 1 aborted on an API 429 session rate limit (reset 17:30 UTC); run 2
+  completed clean after the reset. Aborted draft kept as
+  outputs/reports/06-peers-run1-aborted.md for the record.
+- Stages 8 and 9 status partial: WebSearch worked, WebFetch to sebi.gov.in,
+  crisil.com, bseindia.com and research-report hosts was egress-blocked.

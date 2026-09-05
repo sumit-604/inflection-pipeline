@@ -692,6 +692,17 @@ function playQuack() {
   const t = c.currentTime;
   for (let i = 0; i < 2; i++) tone(300 + Math.random() * 60, t + i * 0.16, 0.12, "sawtooth", 0.2);
 }
+// A car horn: two tones together, short.
+function playHorn() {
+  if (muted) return;
+  const c = getCtx();
+  if (!c) return;
+  const t = c.currentTime;
+  const len = 0.25 + Math.random() * 0.3;
+  tone(415, t, len, "square", 0.16);
+  tone(523, t, len, "square", 0.14);
+}
+
 // A little coin sound for earning a star.
 function playCoin() {
   const c = getCtx();
@@ -1572,7 +1583,7 @@ class UI {
    the roads, the player, the villagers and the animals all ask it.
    ============================================================ */
 
-const WORLD_HALF = 200;
+const WORLD_HALF = 340;
 
 // Rectangles that are kept flat, with a soft edge `pad` metres wide.
 const FLAT_ZONES = [
@@ -1581,6 +1592,8 @@ const FLAT_ZONES = [
   { x1: -42, z1: 66, x2: 42, z2: 150, pad: 16 },     // south town + station
   { x1: 58, z1: -78, x2: 152, z2: 78, pad: 16 },     // farmland, east
   { x1: -152, z1: 12, x2: -58, z2: 84, pad: 16 },    // lake shore, south west
+  { x1: -150, z1: 178, x2: 150, z2: 292, pad: 14 },  // the city, beyond the hills
+  { x1: -12, z1: 146, x2: 12, z2: 184, pad: 7 },     // the road pass through the ridge
 ];
 
 // The lake: an ellipse of water in the south west.
@@ -1619,6 +1632,10 @@ function heightAt(x, z) {
   }
   let h = terrainNoise(x, z) * mask;
 
+  // A ridge of hills between the town and the city, cut by the road pass.
+  const dr = z - 165;
+  h += 13 * Math.exp(-(dr * dr) / 120) * mask * (0.75 + 0.25 * Math.sin(x * 0.05));
+
   // Temple hill with a flat top.
   const dh = Math.hypot(x - HILL.cx, z - HILL.cz);
   if (dh < HILL.foot) {
@@ -1626,10 +1643,10 @@ function heightAt(x, z) {
     h = h * (1 - t) + HILL.top * t;
   }
 
-  // Mountains ring the map. They start 150 m out and reach ~45 m at the edge.
+  // Mountains ring the map. They start about 45 m from the edge.
   const r = Math.max(Math.abs(x), Math.abs(z));
-  if (r > 148) {
-    const t = (r - 148) / 52;
+  if (r > WORLD_HALF - 46) {
+    const t = (r - (WORLD_HALF - 46)) / 46;
     h += t * t * 45 * (0.8 + 0.4 * Math.sin(x * 0.11) * Math.cos(z * 0.13));
   }
 
@@ -1744,15 +1761,15 @@ class PathMover {
   }
   update(dt) {
     if (this.wait > 0) { this.wait -= dt; return; }
-    const next = this.points[this.i + this.dir];
+    const next = this.loop ? this.points[(this.i + this.dir + this.points.length) % this.points.length] : this.points[this.i + this.dir];
     if (!next) {
-      if (this.loop) { this.i = -this.dir === 1 ? 0 : this.points.length - 1; this.obj.position.set(this.points[0][0], 0, this.points[0][1]); this.i = 0; return; }
+      if (this.loop) { this.i = (this.i + this.dir + this.points.length) % this.points.length; return; }
       this.dir *= -1; this.wait = 2.5; this.obj.rotation.y += Math.PI; return;
     }
     const dx = next[0] - this.obj.position.x, dz = next[1] - this.obj.position.z;
     const dist = Math.hypot(dx, dz);
     const step = this.speed * dt;
-    if (dist <= step) { this.i += this.dir; this.obj.position.x = next[0]; this.obj.position.z = next[1]; }
+    if (dist <= step) { this.i = this.loop ? (this.i + this.dir + this.points.length) % this.points.length : this.i + this.dir; this.obj.position.x = next[0]; this.obj.position.z = next[1]; }
     else { this.obj.position.x += (dx / dist) * step; this.obj.position.z += (dz / dist) * step; }
     this.obj.position.y = heightAt(this.obj.position.x, this.obj.position.z) + this.yOffset;
     if (dist > 0.01) this.obj.rotation.y = Math.atan2(dx, dz);
@@ -1809,7 +1826,7 @@ class World {
     // The scene holds everything we draw.
     this.scene = new THREE.Scene();
     this.scene.background = new THREE.Color(0xbfe3f2); // soft sky blue
-    this.scene.fog = new THREE.Fog(0xbfe3f2, 150, 420); // fade the far mountains
+    this.scene.fog = new THREE.Fog(0xbfe3f2, 170, 520); // fade the far mountains
 
     // Where the player starts, and useful spots other code can read.
     this.spawn = new THREE.Vector3(0, 0, 22);
@@ -1855,6 +1872,7 @@ class World {
     this._buildDistricts();
     this._buildVegetation();
     this._buildVehicles();
+    this._buildCity();
   }
   // ---- Water that moves, smoke, wind, boats, a pond, a field ----
   _buildLife() {
@@ -2461,7 +2479,7 @@ class World {
   // Terrain mesh coloured by height: grass low, darker grass on slopes,
   // grey rock and white snow on the mountains.
   _buildTerrain() {
-    const seg = 160;
+    const seg = 240;
     const geo = new THREE.PlaneGeometry(WORLD_HALF * 2, WORLD_HALF * 2, seg, seg);
     geo.rotateX(-Math.PI / 2);
     const pos = geo.attributes.position;
@@ -2514,7 +2532,7 @@ class World {
 
   _buildRoads() {
     // Main road north to south: town, bridge, village, up the hill to the temple.
-    this._addRoad([[0, 195], [0, 150], [0, 66], [0, 30], [0, 8]], 4.5);
+    this._addRoad([[0, 150], [0, 66], [0, 30], [0, 8]], 4.5);
     this._addRoad([[0, -8], [0, -48], [0, -80], [-10, -100], [0, -118]], 4.5);
     // East to west roads on each bank.
     this._addRoad([[-72, 30], [-40, 30], [40, 30], [150, 30]], 4);
@@ -2550,7 +2568,7 @@ class World {
     // Signposts at the junctions.
     this._addSign(4, 34, ["↑ Village  ↓ Town", "→ Farms   ← Lake"]);
     this._addSign(4, -34, ["↑ Temple Hill", "→ Farms   ↓ Village"]);
-    this._addSign(4, 64, ["↑ Village", "↓ Station"]);
+    this._addSign(4, 64, ["↑ Village", "↓ Station, Nava Delhi"]);
     this._addSign(60, 33, ["→ Farms", "← Village"]);
     this._addSign(-66, 33, ["← Lake", "→ Village"]);
     this._addSign(6, -84, ["↑ Temple", "↓ Village"]);
@@ -2741,6 +2759,205 @@ class World {
     this.swayers.push({ obj: banyan, phase: 1, amp: 0.012 });
   }
 
+  // ==========================================================
+  // NAVA DELHI: the city beyond the hills
+  // ==========================================================
+  _buildCity() {
+    const C = CITY;
+    this.cityLights = [];
+    this.cityMovers = [];
+    // ---------- Avenues: a grid of wide roads with white lane lines ----------
+    const avenuesX = [-120, -80, -40, 40, 80, 120];
+    const avenuesZ = [190, 230, 270];
+    for (const x of avenuesX) this._addRoad([[x, C.z1], [x, C.z2]], 8, 0x4a4a4a);
+    for (const z of avenuesZ) this._addRoad([[C.x1, z], [C.x2, z]], 8, 0x4a4a4a);
+    // The main road through the pass and the city, wider and darker.
+    this._addRoad([[0, 150], [0, 178], [0, 296]], 9, 0x4a4a4a);
+    const lineMat = mat(0xf5f5f5);
+    for (const z of avenuesZ) for (let x = C.x1; x < C.x2; x += 6) { const l = new THREE.Mesh(new THREE.BoxGeometry(3, 0.02, 0.25), lineMat); l.position.set(x, 0.18, z); this.scene.add(l); }
+    for (const x of [...avenuesX, 0]) for (let z = C.z1; z < C.z2; z += 6) { const l = new THREE.Mesh(new THREE.BoxGeometry(0.25, 0.02, 3), lineMat); l.position.set(x, 0.18, z); this.scene.add(l); }
+    // Zebra crossings and traffic lights at every crossroads.
+    for (const x of [...avenuesX, 0]) for (const z of avenuesZ) {
+      for (let k = -3; k <= 3; k++) { const s = new THREE.Mesh(new THREE.BoxGeometry(0.6, 0.02, 3.5), lineMat); s.position.set(x + k * 1.1, 0.19, z + 6.5); this.scene.add(s); }
+      this._addTrafficLight(x + 5.5, z + 5.5);
+      this._addLamp(x - 5.5, z - 5.5);
+    }
+    // Footpaths: pale slabs along each avenue.
+    const pathMat = mat(0xcfc7b8);
+    for (const z of avenuesZ) for (const side of [-1, 1]) { const p = new THREE.Mesh(new THREE.BoxGeometry(C.x2 - C.x1, 0.25, 2.4), pathMat); p.position.set(0, 0.12, z + side * 5.2); this.scene.add(p); }
+    for (const x of [...avenuesX, 0]) for (const side of [-1, 1]) { const p = new THREE.Mesh(new THREE.BoxGeometry(2.4, 0.25, C.z2 - C.z1), pathMat); p.position.set(x + side * 5.2, 0.12, (C.z1 + C.z2) / 2); this.scene.add(p); }
+
+    // ---------- Welcome sign at the pass and big billboards ----------
+    this._addSign(6, 168, ["↓ " + C.name + " 2 km", "↑ Village, Town"]);
+    this._addBillboard(-14, 184, C.name + " welcomes you", 0x1d3557);
+    this._addBillboard(60, 184, "Sector 18 Market →", 0xc1121f);
+    this._addBillboard(-60, 276, "Metro: Blue Line", 0x1e6091);
+    this._addBillboard(100, 276, "Fresh Juice ₹20", 0xf77f00);
+
+    // ---------- Towers: office and apartment blocks ----------
+    const tints = [0xbfe3f2, 0xdfe6ea, 0xcfd8dc, 0xa7c4d9, 0xe8d5b5, 0xb0bec5];
+    const towerBlocks = [[-100, 210], [-60, 210], [60, 210], [-60, 250], [-20, 250], [20, 250], [100, 250], [-100, 290 - 20]];
+    let ti = 0;
+    for (const [bx, bz] of towerBlocks) {
+      // Two or three towers per block, leaving the footpaths clear.
+      const spots = [[-9, -9], [9, -9], [-9, 9], [9, 9]].slice(0, 2 + (ti % 2));
+      for (const [dx, dz] of spots) {
+        const floors = 6 + ((ti * 7 + dx + dz) % 11);
+        const w = 10 + (ti % 3) * 2, d = 10 + ((ti + 1) % 3) * 2;
+        const sign = ti % 3 === 0 ? ["Tech Park", "Sunrise Apartments", "Bank Tower", "Skyline Heights", "Ganga Towers", "Lotus Plaza"][(ti / 3) % 6 | 0] : null;
+        const t = makeTower({ w, d, floors, tint: tints[ti % tints.length], sign });
+        this._place(t, bx + dx, bz + dz, 0, sign || "Apartments");
+        this.cityLights.push(t.userData.blink);
+        ti++;
+      }
+    }
+
+    // ---------- Central Park with a lake and fountain (either side of the main road) ----------
+    for (const side of [-1, 1]) {
+      const lawn = new THREE.Mesh(new THREE.BoxGeometry(30, 0.3, 32), mat(0x8bc46a)); lawn.position.set(side * 21, 0.12, 210); lawn.receiveShadow = true; this.scene.add(lawn);
+      for (let i = 0; i < 6; i++) { const b = new THREE.Mesh(new THREE.BoxGeometry(1.8, 0.12, 0.5), mat(COLORS.wood)); b.position.set(side * 21 + (i % 3 - 1) * 9, 0.6, 198 + Math.floor(i / 3) * 24); this.scene.add(b); }
+      const hedgeMat = mat(0x4e9e4a);
+      for (let x = -14; x <= 14; x += 4) { const h = new THREE.Mesh(new THREE.BoxGeometry(3.5, 0.9, 0.8), hedgeMat); h.position.set(side * 21 + x, 0.7, 194.5); this.scene.add(h); }
+    }
+    const fountainBase = new THREE.Mesh(new THREE.CylinderGeometry(4, 4.4, 0.6, 20), mat(COLORS.stone)); fountainBase.position.set(-21, 0.55, 210); this.scene.add(fountainBase);
+    const fountainWater = new THREE.Mesh(new THREE.CylinderGeometry(3.6, 3.6, 0.2, 20), new THREE.MeshStandardMaterial({ color: 0x4fa3c7, roughness: 0.3 })); fountainWater.position.set(-21, 0.9, 210); this.scene.add(fountainWater);
+    const jet = new THREE.Mesh(new THREE.CylinderGeometry(0.15, 0.5, 3, 8), new THREE.MeshStandardMaterial({ color: 0xbfe3f2, transparent: true, opacity: 0.7 })); jet.position.set(-21, 2.4, 210); this.scene.add(jet);
+    this.fountainJet = jet;
+    this.addCircle(-21, 210, 4.6);
+    const parkSign = makeTextSprite("Central Park", { size: 50, scale: 1.3 }); parkSign.position.set(21, 3.5, 194); this.scene.add(parkSign);
+    // A small pond on the other lawn.
+    this._addPondDecor(21, 210);
+    // Pigeons live here (added by the game).
+
+    // ---------- Victory Gate over the main road ----------
+    const gateMat = mat(0xe8d5b5);
+    for (const x of [-6, 6]) { const leg = new THREE.Mesh(new THREE.BoxGeometry(4, 16, 4), gateMat); leg.position.set(x, 8, 250); leg.castShadow = true; this.scene.add(leg); this.addBox(x, 250, 4, 4); }
+    const arch = new THREE.Mesh(new THREE.BoxGeometry(16, 5, 4), gateMat); arch.position.set(0, 18.5, 250); arch.castShadow = true; this.scene.add(arch);
+    const flame = new THREE.Mesh(new THREE.ConeGeometry(0.6, 1.6, 8), new THREE.MeshStandardMaterial({ color: 0xff8f00, emissive: 0xff6d00, emissiveIntensity: 1 })); flame.position.set(0, 21.8, 250); this.scene.add(flame);
+    const gateSign = makeTextSprite("Victory Gate", { size: 50, scale: 1.4 }); gateSign.position.set(0, 16.2, 252.5); this.scene.add(gateSign);
+    this.mapItems.buildings.push([-6, 250], [6, 250]);
+
+    // ---------- City Mall ----------
+    const mall = makeBuilding({ w: 30, d: 26, h: 4, floors: 3, roof: "flat", wall: 0xf3d9c8, roofColor: 0x8d6e63, sign: "City Mall" });
+    this._place(mall, 60, 250, 0, "City Mall");
+    for (let i = 0; i < 4; i++) { const b = makeTextSprite(["Toys", "Food Court", "Cinema", "Books"][i], { size: 44, scale: 0.8 }); b.position.set(60 - 10 + i * 6.6, 9.5, 263.4); this.scene.add(b); }
+
+    // ---------- Stadium ----------
+    const bowl = new THREE.Mesh(new THREE.CylinderGeometry(17, 15, 7, 24, 1, true), new THREE.MeshStandardMaterial({ color: 0xdfe6ea, side: THREE.DoubleSide, flatShading: true }));
+    bowl.position.set(-100, 3.5, 250); this.scene.add(bowl);
+    const pitch = new THREE.Mesh(new THREE.CylinderGeometry(14, 14, 0.2, 24), mat(0x6fae54)); pitch.position.set(-100, 0.1, 250); this.scene.add(pitch);
+    for (let i = 0; i < 4; i++) { const a = i * Math.PI / 2 + Math.PI / 4; const p = new THREE.Mesh(new THREE.BoxGeometry(0.4, 14, 0.4), mat(0x9aa6ad)); p.position.set(-100 + Math.cos(a) * 17.5, 7, 250 + Math.sin(a) * 17.5); this.scene.add(p); const lamp = new THREE.Mesh(new THREE.BoxGeometry(2.4, 1.2, 0.4), new THREE.MeshStandardMaterial({ color: 0xffffff, emissive: 0xfff6c0, emissiveIntensity: 0.8 })); lamp.position.set(-100 + Math.cos(a) * 17.5, 14.5, 250 + Math.sin(a) * 17.5); lamp.lookAt(-100, 14.5, 250); this.scene.add(lamp); }
+    this.addCircle(-100, 250, 17.5);
+    const stSign = makeTextSprite("Nava Delhi Stadium", { size: 46, scale: 1.4 }); stSign.position.set(-100, 8.5, 268.5); this.scene.add(stSign);
+    this.mapItems.buildings.push([-100, 250]);
+
+    // ---------- Bus depot ----------
+    this._place(makeBuilding({ w: 16, d: 10, h: 4, roof: "flat", wall: 0xdfe6ea, roofColor: 0x555e66, sign: "Bus Depot" }), 100, 200, 0, "Bus Depot");
+    for (let i = 0; i < 3; i++) { const b = makeCityBus([0xd62828, 0x2a9d8f, 0xf77f00][i]); b.position.set(90 + i * 6, 0.2, 218); this.scene.add(b); this.addBox(90 + i * 6, 218, 2.5, 9); }
+
+    // ---------- Sector 18 Market: a row of small shops ----------
+    const shops = ["Chaat Corner", "Mobile Store", "Sweets", "Juice Bar", "Bookshop", "Tailor", "Pharmacy", "Toys"];
+    shops.forEach((name, i) => this._place(makeBuilding({ w: 6, d: 6, h: 3.4, roof: "flat", wall: [0xffe0a3, 0xe3ecf5, 0xf3d9c8, 0xd9e4d0][i % 4], roofColor: 0x8d6e63, sign: name }), 20 + i * 9, 284, Math.PI));
+
+    // ---------- The Minar: a tall tower to spot from anywhere ----------
+    const minar = new THREE.Mesh(new THREE.CylinderGeometry(2.2, 3.6, 32, 12), mat(0xb5651d)); minar.position.set(120, 16, 285); minar.castShadow = true; this.scene.add(minar);
+    for (let i = 1; i <= 4; i++) { const ring = new THREE.Mesh(new THREE.CylinderGeometry(3.9 - i * 0.35, 3.9 - i * 0.35, 0.5, 12), mat(0xe8d5b5)); ring.position.set(120, i * 7, 285); this.scene.add(ring); }
+    const cap = new THREE.Mesh(new THREE.SphereGeometry(2.2, 10, 8, 0, Math.PI * 2, 0, Math.PI / 2), mat(0xe8d5b5)); cap.position.set(120, 32, 285); this.scene.add(cap);
+    this.addCircle(120, 285, 3.8);
+    this.mapItems.buildings.push([120, 285]);
+
+    // ---------- Elevated metro: pillars, track, two stations, a moving train ----------
+    const trackZ = 235, trackY = 7;
+    for (let x = C.x1; x <= C.x2; x += 20) { const pillar = new THREE.Mesh(new THREE.BoxGeometry(1.2, trackY, 1.2), mat(0x9aa6ad)); pillar.position.set(x, trackY / 2, trackZ); this.scene.add(pillar); this.addBox(x, trackZ, 1.2, 1.2); }
+    const track = new THREE.Mesh(new THREE.BoxGeometry(C.x2 - C.x1 + 10, 0.6, 4), mat(0x6c757d)); track.position.set(0, trackY, trackZ); this.scene.add(track);
+    for (const dz of [-1.4, 1.4]) { const rail = new THREE.Mesh(new THREE.BoxGeometry(C.x2 - C.x1 + 10, 0.15, 0.15), mat(COLORS.metal)); rail.position.set(0, trackY + 0.38, trackZ + dz); this.scene.add(rail); }
+    for (const sx of [-60, 60]) {
+      const platform = new THREE.Mesh(new THREE.BoxGeometry(24, 0.4, 4), mat(0xdfe6ea)); platform.position.set(sx, trackY + 0.3, trackZ - 4); this.scene.add(platform);
+      const canopy = new THREE.Mesh(new THREE.BoxGeometry(24, 0.3, 9), mat(0x1e6091)); canopy.position.set(sx, trackY + 4.5, trackZ - 2); this.scene.add(canopy);
+      this._place(makeBuilding({ w: 12, d: 8, h: 3.5, roof: "flat", wall: 0xdfe6ea, roofColor: 0x1e6091, sign: "Metro Station" }), sx, trackZ - 9, Math.PI, "Metro Station");
+      const stairs = new THREE.Mesh(new THREE.BoxGeometry(2, trackY, 6), mat(0x9aa6ad)); stairs.position.set(sx + 8, trackY / 2, trackZ - 8); stairs.rotation.x = -0.6; this.scene.add(stairs);
+    }
+    const metro = new THREE.Group();
+    for (let k = 0; k < 3; k++) {
+      const coach = new THREE.Mesh(new THREE.BoxGeometry(9, 2.8, 2.8), mat(0xeef2f5)); coach.position.set(k * 9.6 - 9.6, 1.6, 0); metro.add(coach);
+      const band = new THREE.Mesh(new THREE.BoxGeometry(9.05, 0.6, 2.85), mat(0x1e6091)); band.position.set(k * 9.6 - 9.6, 0.9, 0); metro.add(band);
+      const win = new THREE.Mesh(new THREE.BoxGeometry(8.5, 0.9, 2.9), mat(0x35424a)); win.position.set(k * 9.6 - 9.6, 2.2, 0); metro.add(win);
+    }
+    metro.position.set(C.x1, trackY + 0.3, trackZ);
+    this.scene.add(metro);
+    this.metro = { group: metro, x: C.x1, dir: 1, wait: 0 };
+    this.mapItems.roads.push([[C.x1, trackZ], [C.x2, trackZ]]);
+
+    // ---------- Traffic: cars, autos and buses looping the avenues ----------
+    const loops = [
+      [[-120, 190], [-40, 190], [-40, 270], [-120, 270]],
+      [[40, 190], [120, 190], [120, 270], [40, 270]],
+      [[-80, 190], [80, 190], [80, 230], [-80, 230]],
+      [[-120, 230], [120, 230], [120, 270], [-120, 270]],
+    ];
+    const carColors = [0xd62828, 0xffffff, 0x1d3557, 0xf77f00, 0x2a9d8f, 0x6a4c93, 0xffd21e, 0x333333];
+    loops.forEach((loop, li) => {
+      for (let k = 0; k < 3; k++) {
+        const car = makeCar(carColors[(li * 3 + k) % carColors.length]);
+        this.scene.add(car);
+        const mover = new PathMover(car, loop.map(([x, z]) => [x + 2.5, z + 2.5]), 9 + k * 1.5, { loop: true });
+        mover.i = k % loop.length; car.position.set(loop[mover.i][0] + 2.5, 0, loop[mover.i][1] + 2.5);
+        this.cityMovers.push(mover);
+      }
+      const auto = makeAuto(); this.scene.add(auto);
+      const am = new PathMover(auto, loop.map(([x, z]) => [x - 2.5, z - 2.5]).reverse(), 7, { loop: true });
+      this.cityMovers.push(am);
+    });
+    const cityBus = makeCityBus(0x2a9d8f); this.scene.add(cityBus);
+    this.cityMovers.push(new PathMover(cityBus, [[-2.5, 292], [-2.5, 190], [-2.5, 160]], 8));
+  }
+
+  _addTrafficLight(x, z) {
+    const h = heightAt(x, z);
+    const pole = new THREE.Mesh(new THREE.CylinderGeometry(0.1, 0.12, 4.2, 6), mat(0x333333)); pole.position.set(x, h + 2.1, z); this.scene.add(pole);
+    const box = new THREE.Mesh(new THREE.BoxGeometry(0.5, 1.5, 0.4), mat(0x222222)); box.position.set(x, h + 4.4, z); this.scene.add(box);
+    const lights = ["#ff3b30", "#ffcc00", "#34c759"].map((c, i) => {
+      const l = new THREE.Mesh(new THREE.SphereGeometry(0.17, 8, 6), new THREE.MeshStandardMaterial({ color: new THREE.Color(c), emissive: new THREE.Color(c), emissiveIntensity: 0.1 }));
+      l.position.set(x, h + 4.9 - i * 0.5, z + 0.25); this.scene.add(l); return l;
+    });
+    this.trafficLights = this.trafficLights || [];
+    this.trafficLights.push({ lights, phase: Math.random() * 9 });
+    this.addCircle(x, z, 0.2);
+  }
+
+  _addBillboard(x, z, text, color) {
+    const h = heightAt(x, z);
+    for (const dx of [-2.2, 2.2]) { const p = new THREE.Mesh(new THREE.BoxGeometry(0.25, 7, 0.25), mat(0x555e66)); p.position.set(x + dx, h + 3.5, z); this.scene.add(p); }
+    const board = new THREE.Mesh(new THREE.BoxGeometry(6.4, 2.6, 0.2), mat(color)); board.position.set(x, h + 6.5, z); this.scene.add(board);
+    const label = makeTextSprite(text, { size: 44, color: "#ffffff", bg: "rgba(0,0,0,0)", scale: 1.5 }); label.position.set(x, h + 6.5, z + 0.3); this.scene.add(label);
+    this.addBox(x, z, 5, 0.5);
+  }
+
+  _updateCity(dt, elapsed) {
+    for (const m of this.cityMovers || []) m.update(dt);
+    // Traffic lights cycle red, green, amber every nine seconds.
+    for (const tl of this.trafficLights || []) {
+      const t = (elapsed + tl.phase) % 9;
+      const on = t < 4 ? 0 : t < 8 ? 2 : 1;
+      tl.lights.forEach((l, i) => (l.material.emissiveIntensity = i === on ? 1.2 : 0.08));
+    }
+    // Tower beacons blink.
+    for (const b of this.cityLights || []) b.material.emissiveIntensity = Math.sin(elapsed * 3) > 0 ? 1 : 0.1;
+    // The metro glides between the ends of its line, pausing at each station.
+    if (this.metro) {
+      const m = this.metro;
+      if (m.wait > 0) m.wait -= dt;
+      else {
+        m.x += dt * 16 * m.dir;
+        for (const sx of [-60, 60]) if (Math.abs(m.x - sx) < 0.3) { m.wait = 3; m.x = sx + 0.31 * m.dir; }
+        if (m.x > CITY.x2 - 10) { m.dir = -1; m.wait = 3; }
+        if (m.x < CITY.x1 + 10) { m.dir = 1; m.wait = 3; }
+      }
+      m.group.position.x = m.x;
+    }
+    if (this.fountainJet) this.fountainJet.scale.y = 1 + Math.sin(elapsed * 6) * 0.15;
+  }
+
   _addLamp(x, z) {
     const h = heightAt(x, z);
     const pole = new THREE.Mesh(new THREE.CylinderGeometry(0.07, 0.1, 4, 6), mat(COLORS.metal));
@@ -2870,14 +3087,14 @@ class World {
   _buildVegetation() {
     const dummy = new THREE.Object3D();
     // Trees: dense on the temple hill slopes and the foothills, sparse elsewhere.
-    const nTrees = 700;
+    const nTrees = 1100;
     const trunks = new THREE.InstancedMesh(new THREE.CylinderGeometry(0.25, 0.35, 1.8, 6), mat(COLORS.trunk), nTrees);
     const leaves = new THREE.InstancedMesh(new THREE.ConeGeometry(1.4, 3, 7), mat(COLORS.leaf), nTrees);
     const leaves2 = new THREE.InstancedMesh(new THREE.SphereGeometry(1.5, 7, 6), mat(0x5aa84f), nTrees);
     let placed = 0, tries = 0;
     while (placed < nTrees && tries < nTrees * 20) {
       tries++;
-      const x = (Math.random() * 2 - 1) * 190, z = (Math.random() * 2 - 1) * 190;
+      const x = (Math.random() * 2 - 1) * (WORLD_HALF - 10), z = (Math.random() * 2 - 1) * (WORLD_HALF - 10);
       const h = heightAt(x, z);
       if (h > 26 || inLake(x, z)) continue;                 // no trees on snow or in water
       if (Math.abs(z) < 12) continue;                        // river valley clear
@@ -2901,11 +3118,11 @@ class World {
     this.scene.add(trunks, leaves, leaves2);
 
     // Rocks on the slopes.
-    const nRocks = 220;
+    const nRocks = 320;
     const rocks = new THREE.InstancedMesh(new THREE.DodecahedronGeometry(0.8, 0), mat(0x8d8a80), nRocks);
     for (let i = 0; i < nRocks; i++) {
       let x, z, h;
-      do { x = (Math.random() * 2 - 1) * 195; z = (Math.random() * 2 - 1) * 195; h = heightAt(x, z); } while (h < 4 || inLake(x, z));
+      do { x = (Math.random() * 2 - 1) * (WORLD_HALF - 5); z = (Math.random() * 2 - 1) * (WORLD_HALF - 5); h = heightAt(x, z); } while (h < 4 || inLake(x, z));
       const sx = 0.6 + Math.random() * 1.8, sz = 0.6 + Math.random() * 1.8;
       dummy.position.set(x, h + 0.3, z); dummy.scale.set(sx, 0.5 + Math.random(), sz);
       dummy.rotation.set(Math.random(), Math.random() * 6, Math.random()); dummy.updateMatrix();
@@ -2915,11 +3132,11 @@ class World {
     this.scene.add(rocks);
 
     // Grass tufts everywhere the land is green.
-    const nGrass = 1500;
+    const nGrass = 2200;
     const grass = new THREE.InstancedMesh(new THREE.ConeGeometry(0.18, 0.5, 4), mat(0x76b852), nGrass);
     for (let i = 0; i < nGrass; i++) {
       let x, z, h;
-      do { x = (Math.random() * 2 - 1) * 180; z = (Math.random() * 2 - 1) * 180; h = heightAt(x, z); } while (h > 12 || inLake(x, z) || Math.abs(z) < 5);
+      do { x = (Math.random() * 2 - 1) * (WORLD_HALF - 20); z = (Math.random() * 2 - 1) * (WORLD_HALF - 20); h = heightAt(x, z); } while (h > 12 || inLake(x, z) || Math.abs(z) < 5 || rectDist(x, z, CITY) < 2);
       dummy.position.set(x, h + 0.2, z); dummy.scale.setScalar(0.7 + Math.random() * 0.8); dummy.rotation.set(0, Math.random() * 6, 0); dummy.updateMatrix();
       grass.setMatrixAt(i, dummy.matrix);
     }
@@ -2936,7 +3153,7 @@ class World {
     for (const [x, z] of [[-1.1, 2.2], [1.1, 2.2], [-1.1, -2.2], [1.1, -2.2]]) { const w = new THREE.Mesh(new THREE.CylinderGeometry(0.5, 0.5, 0.4, 10), mat(0x222222)); w.rotation.z = Math.PI / 2; w.position.set(x, 0.5, z); bus.add(w); }
     const busSign = makeTextSprite("Village Bus", { size: 48, scale: 0.7 }); busSign.position.y = 3.6; bus.add(busSign);
     this.scene.add(bus);
-    this.movers.push(new PathMover(bus, [[1.2, 190], [1.2, 150], [1.2, 66], [1.2, 34]], 9));
+    this.movers.push(new PathMover(bus, [[2.2, 290], [2.2, 190], [2.2, 150], [2.2, 66], [2.2, 34]], 9));
 
     // Train: engine plus two coaches along the rails at z = 150, looping.
     const train = new THREE.Group();
@@ -2967,7 +3184,7 @@ class World {
     for (const m of this.movers || []) m.update(dt);
     if (this.train) {
       this._trainX += dt * 14;
-      if (this._trainX > 205) this._trainX = -205;
+      if (this._trainX > WORLD_HALF + 5) this._trainX = -(WORLD_HALF + 5);
       this.train.position.set(this._trainX, heightAt(this._trainX, 150) + 0.3, 150);
       this.train.rotation.y = Math.PI / 2;
       for (const puff of this.smokes) if (puff.userData.train) { puff.userData.x = this._trainX + 2; puff.userData.z = 150; }
@@ -3042,6 +3259,7 @@ class World {
       this.sun.target.position.copy(followPos);
     }
     this._updateExpansion(dt, elapsed);
+    this._updateCity(dt, elapsed);
     // The mill turns lazily until its gears are fixed, then properly.
     if (this.windmillBlades) this.windmillBlades.rotation.z += dt * (this.millFixed ? 2.0 : 0.6);
     if (this.millFixed && this.grindstone) this.grindstone.rotation.y += dt * 3;
@@ -3081,7 +3299,7 @@ class World {
   // Returns true if the spot is walkable.
   isWalkable(x, z) {
     if (this.currentRoom) return this.currentRoom.walkable(x, z);
-    if (Math.abs(x) > 196 || Math.abs(z) > 196) return false; // edge of the world
+    if (Math.abs(x) > WORLD_HALF - 4 || Math.abs(z) > WORLD_HALF - 4) return false; // edge of the world
     if (inLake(x, z)) return false;                           // the lake
     if (heightAt(x, z) > 30) return false;                    // too steep, high mountains
     if (this.blockedBySolid(x, z)) return false;              // walls, trunks, posts
@@ -3398,8 +3616,8 @@ class Player {
 
       // Keep inside the map bounds (rooms sit far outside and are bounded by their walls).
       if (!this.world.currentRoom) {
-        this.group.position.x = THREE.MathUtils.clamp(this.group.position.x, -195, 195);
-        this.group.position.z = THREE.MathUtils.clamp(this.group.position.z, -195, 195);
+        this.group.position.x = THREE.MathUtils.clamp(this.group.position.x, -(WORLD_HALF - 5), WORLD_HALF - 5);
+        this.group.position.z = THREE.MathUtils.clamp(this.group.position.z, -(WORLD_HALF - 5), WORLD_HALF - 5);
       }
 
       // Turn the body smoothly to face the way we're walking.
@@ -4810,6 +5028,7 @@ const CATEGORY_NAMES = {
   ratio: "Ratios, recipes and gears",
   science: "Science in the village",
   logic: "Logic, patterns and data",
+  city: "City life",
 };
 
 // A short helper to build a situation entry.
@@ -4934,6 +5153,19 @@ const SITUATIONS = [
   S("log07", "logic", "Busiest day", (r) => { let a, b, c; do { a = r.int(3, 20); b = r.int(3, 20); c = r.int(3, 20); } while (a === b || b === c || a === c); const best = Math.max(a, b, c); const day = best === a ? "Monday" : best === b ? "Tuesday" : "Wednesday"; return { story: `Bhola's stall sold ${a} kg of rice on Monday, ${b} kg on Tuesday and ${c} kg on Wednesday.`, q: `Which day was busiest?`, choices: ["Monday", "Tuesday", "Wednesday"], answer: day, hint: "Look for the biggest number." }; }),
   S("log08", "logic", "Grandma's age", (r, big) => { const c = r.int(6, 12), d = r.int(big ? 50 : 40, big ? 70 : 60); return { story: `Chotu is ${c} years old. His grandmother is ${d} years older than him.`, q: `How old is his grandmother?`, answer: c + d, unit: "years", hint: "Add the difference to Chotu's age.", example: "A 7 year old with a grandma 50 years older: 57." }; }),
   S("log09", "logic", "Missing number", (r, big) => { const a = r.int(2, big ? 60 : 12), b = a + r.int(2, big ? 45 : 10); return { story: `The blackboard says: ${a} + ? = ${b}.`, q: `What number is hiding behind the question mark?`, answer: b - a, unit: "", hint: `Take ${a} away from ${b}.`, example: "5 + ? = 12 means ? = 7." }; }),
+  // ---------------- CITY (12) ----------------
+  S("cty01", "city", "Metro fare", (r, big) => { const st = r.int(2, big ? 9 : 5), f = r.pick(big ? [12, 15] : [10]); return { story: `The Blue Line charges ₹${f} for every station you pass. Ira rides ${st} stations to school.`, q: `What is her fare?`, answer: st * f, unit: "₹", hint: "Stations × fare per station.", example: "3 stations at ₹10 each is ₹30." }; }),
+  S("cty02", "city", "The lift", (r, big) => { const a = r.int(2, big ? 12 : 6), b = a + r.int(3, big ? 14 : 8); return { story: `Neha gets in the lift on floor ${a} and goes up to floor ${b}.`, q: `How many floors does the lift climb?`, answer: b - a, unit: "floors", hint: "Take the start floor from the end floor.", example: "From floor 3 to floor 9 is 6 floors." }; }),
+  S("cty03", "city", "Traffic light", (r, big) => { const g = r.int(20, 40), y = r.int(3, 6), rd = r.int(20, 40); return { story: `Constable Verma's signal shows green for ${g} seconds, amber for ${y}, and red for ${rd}.`, q: `How long is one full cycle?`, answer: g + y + rd, unit: "seconds", hint: "Add the three colours.", example: "30 + 5 + 25 = 60 seconds." }; }),
+  S("cty04", "city", "Parking rows", (r, big) => { const rows = r.int(3, big ? 12 : 6), per = r.int(6, big ? 20 : 10); return { story: `The mall car park has ${rows} rows with ${per} cars in each row.`, q: `How many cars are parked?`, answer: rows * per, unit: "cars", hint: "Rows × cars per row.", example: "4 rows of 8 cars is 32 cars." }; }),
+  S("cty05", "city", "Flats in a tower", (r, big) => { const fl = r.int(6, big ? 20 : 10), per = r.int(2, big ? 8 : 4); return { story: `Sunrise Apartments has ${fl} floors with ${per} flats on each floor.`, q: `How many flats in the tower?`, answer: fl * per, unit: "flats", hint: "Floors × flats per floor.", example: "10 floors with 4 flats each is 40 flats." }; }),
+  S("cty06", "city", "Auto fare", (r, big) => { const base = r.pick([25, 30]), perKm = r.pick(big ? [12, 15] : [10]), km = r.int(2, big ? 12 : 6); return { story: `Bablu's auto charges ₹${base} to start, then ₹${perKm} for every kilometre. The ride is ${km} km.`, q: `What is the fare?`, answer: base + perKm * km, unit: "₹", hint: `Start with ₹${base}, then add ${km} × ${perKm}.`, example: "₹25 to start plus 3 km at ₹10 is 25 + 30 = ₹55." }; }),
+  S("cty07", "city", "Sale at the mall", (r, big) => { if (big) { const p = r.int(6, 40) * 50; return { story: `Shoes at City Mall cost ₹${p}. Today everything is half price.`, q: `What do the shoes cost today?`, answer: p / 2, unit: "₹", hint: "Half price means divide by 2.", example: "₹800 at half price is ₹400." }; } const p = r.int(6, 20) * 10, off = r.int(2, 8) * 10; return { story: `A toy at City Mall costs ₹${p}. Today it is ₹${off} off.`, q: `What does it cost today?`, answer: p - off, unit: "₹", hint: "Take the discount away.", example: "₹120 with ₹40 off is ₹80." }; }),
+  S("cty08", "city", "Water tanker", (r, big) => { const t = r.pick(big ? [4000, 6000] : [2000, 3000]), per = r.pick([200, 250, 500]); return { story: `A water tanker brings ${t} litres to the apartments. Each flat takes ${per} litres.`, q: `How many flats can it fill?`, answer: t / per, unit: "flats", hint: "Divide the tanker by one flat's share.", example: "2000 litres at 250 a flat fills 8 flats." }; }),
+  S("cty09", "city", "Cricket score", (r, big) => { const a = r.int(20, big ? 90 : 40), b = r.int(20, big ? 90 : 40), c = r.int(5, big ? 60 : 25); return { story: `At the stadium, the openers made ${a} and ${b}, and the rest of the team added ${c}.`, q: `What was the total score?`, answer: a + b + c, unit: "runs", hint: "Add all three.", example: "30 + 25 + 10 = 65 runs." }; }),
+  S("cty10", "city", "Park laps", (r, big) => { const lap = r.pick(big ? [450, 600, 750] : [200, 300]), n = r.int(2, big ? 8 : 5); return { story: `One lap of Central Park is ${lap} m. Neha jogs ${n} laps every morning.`, q: `How far does she jog?`, answer: lap * n, unit: "m", hint: "Lap length × laps.", example: "3 laps of 300 m is 900 m." }; }),
+  S("cty11", "city", "Delivery route", (r, big) => { const n = r.int(4, big ? 10 : 6), d = r.pick(big ? [1.5, 2.5] : [2, 3]); return { story: `Sunny has ${n} deliveries, each ${d} km from the last, starting at the shop.`, q: `How far does he ride to finish them all?`, answer: n * d, unit: "km", hint: "Deliveries × distance each.", example: "5 deliveries 2 km apart is 10 km." }; }),
+  S("cty12", "city", "Electricity bill", (r, big) => { const units = r.int(big ? 120 : 30, big ? 400 : 90), rate = r.pick(big ? [6, 8] : [5]); return { story: `Neha's flat used ${units} units of electricity this month, at ₹${rate} a unit.`, q: `What is the bill?`, answer: units * rate, unit: "₹", hint: "Units × price per unit.", example: "50 units at ₹5 is ₹250." }; }),
   S("log10", "logic", "Magic row", (r, big) => { const T = r.pick(big ? [30, 45, 60] : [15, 18, 20]), a = r.int(1, Math.floor(T / 3)), b = r.int(1, Math.floor(T / 3)); return { story: `Every row of Dr. Iyer's magic square adds up to ${T}. One row shows ${a}, ${b} and a blank.`, q: `What goes in the blank?`, answer: T - a - b, unit: "", hint: `Take both known numbers away from ${T}.`, example: "If a row adds to 15 and shows 8 and 1, the blank is 6." }; }),
 ];
 
@@ -5059,6 +5291,14 @@ function makeChicken() {
     g.add(leg);
   }
   g.userData.parts = { head };
+  return g;
+}
+
+// A pigeon: a small grey chicken without the comb.
+function makePigeon() {
+  const g = makeChicken();
+  g.scale.setScalar(0.7);
+  g.traverse((m) => { if (m.isMesh && m.material && m.material.color) m.material = critterMat(0x8d8a80); });
   return g;
 }
 
@@ -5273,6 +5513,13 @@ const NPC_DEFS = [
   { id: "noor", name: "Noor the Fisher", look: { shirt: 0x00b4d8, trousers: 0x023e8a }, zone: "lake", cats: ["water", "length"], greet: "The lake is calm. My sums are not." },
   { id: "tara", name: "Tara", look: { shirt: 0x06d6a0, dress: true }, zone: "lake", child: true, cats: ["science", "logic"], greet: "Look, a frog! Also, I have a question." },
   { id: "pandit", name: "Panditji", look: { shirt: 0xffb703, trousers: 0xffffff, hair: 0xdddddd, skin: 0xc98d62 }, zone: "temple", cats: ["time", "logic"], greet: "Welcome to the hill. Sit a moment and think." },
+  // City folk.
+  { id: "bablu", name: "Auto Driver Bablu", look: { shirt: 0x8d8a80, trousers: 0x333333, hair: 0x1d1410 }, zone: "city", cats: ["city", "money"], greet: "Kahan jaana hai? Meter is broken, so help me with the fare." },
+  { id: "kishan", name: "Ice Cream Wala Kishan", look: { shirt: 0xffffff, trousers: 0x1d3557, hat: 0xffffff }, zone: "city", cats: ["city", "fractions"], greet: "Kulfi! Orange bar! One free if you solve this." },
+  { id: "verma", name: "Constable Verma", look: { shirt: 0xc8b98a, trousers: 0x5a4632, hat: 0x5a4632 }, zone: "city", cats: ["city", "time"], greet: "Traffic, traffic. Help me time these signals." },
+  { id: "neha", name: "Office Worker Neha", look: { shirt: 0x3a86ff, trousers: 0x222831 }, zone: "city", cats: ["city", "logic"], greet: "Late for a meeting! One quick question and I'm off." },
+  { id: "ira", name: "Ira", look: { shirt: 0xff8fab, dress: true }, zone: "city", child: true, cats: ["city", "science"], greet: "I live on the 14th floor! Want to hear something cool?" },
+  { id: "sunny", name: "Delivery Rider Sunny", look: { shirt: 0xf77f00, trousers: 0x333333, hat: 0xf77f00 }, zone: "city", cats: ["city", "travel"], greet: "Ten deliveries before lunch. Help me plan the route." },
 ];
 
 // Open spots to wander between, per zone (x, z).
@@ -5284,9 +5531,10 @@ const WAYPOINTS = {
   farms_s: [[80, 45], [112, 50], [96, 22], [70, 34], [128, 30], [104, 60]],
   lake: [[-74, 40], [-74, 52], [-60, 36], [-90, 74], [-62, 56], [-84, 14]],
   temple: [[-6, -114], [6, -114], [0, -108], [-10, -122], [10, -122], [-2, -104]],
+  city: [[-8, 196], [8, 196], [-30, 224], [30, 224], [-46, 185], [46, 236], [-74, 276], [74, 276], [6, 262], [-34, 264], [34, 264], [100, 236], [-100, 224], [26, 278], [34, 262]],
 };
 // Which side of the river each zone sits on.
-const ZONE_BANK = { village_s: "near", town: "near", farms_s: "near", lake: "near", village_n: "far", farms_n: "far", temple: "far" };
+const ZONE_BANK = { village_s: "near", town: "near", farms_s: "near", lake: "near", city: "near", village_n: "far", farms_n: "far", temple: "far" };
 
 class Npc {
   constructor(def, world, opts = {}) {
@@ -5416,6 +5664,97 @@ class Npc {
   }
 }
 
+// ===== src/engine/city.js =====
+/* ============================================================
+   city.js — NAVA DELHI, the big city beyond the hills.
+
+   South of the town a ridge of hills rises; the main road cuts
+   through a pass and comes out in a grid of wide avenues, glass
+   towers, an elevated metro, a mall, a stadium, a park, and the
+   Victory Gate. Cars, autos and buses drive the avenues; traffic
+   lights change; the metro glides along its track.
+   ============================================================ */
+
+const CITY = { x1: -150, z1: 178, x2: 150, z2: 292, name: "Nava Delhi" };
+
+// A window texture for towers: dark glass with lit windows. One image,
+// repeated across each facade to match its floors and width.
+let _windowTexture = null;
+function windowTexture() {
+  if (_windowTexture) return _windowTexture;
+  const c = document.createElement("canvas");
+  c.width = 64; c.height = 64;
+  const g = c.getContext("2d");
+  g.fillStyle = "#3b4a5a"; g.fillRect(0, 0, 64, 64);
+  for (let i = 0; i < 2; i++) for (let j = 0; j < 2; j++) {
+    const lit = (i * 3 + j * 5) % 3 !== 0;
+    g.fillStyle = lit ? "#cfe6ff" : "#22303c";
+    g.fillRect(6 + i * 32, 6 + j * 32, 20, 22);
+  }
+  const tex = new THREE.CanvasTexture(c);
+  tex.wrapS = tex.wrapT = THREE.RepeatWrapping;
+  tex.magFilter = THREE.NearestFilter;
+  _windowTexture = tex;
+  return tex;
+}
+
+// A tower: box of `floors` floors with a window facade, a plain roof slab,
+// a water tank and an antenna. Colour tints the glass.
+function makeTower({ w = 12, d = 12, floors = 10, tint = 0xffffff, sign = null } = {}) {
+  const g = new THREE.Group();
+  const H = floors * 3.2;
+  const tex = windowTexture().clone();
+  tex.repeat.set(Math.max(1, Math.round(w / 3)), floors);
+  tex.needsUpdate = true;
+  const facade = new THREE.MeshStandardMaterial({ map: tex, color: tint, roughness: 0.35, metalness: 0.3 });
+  const body = new THREE.Mesh(new THREE.BoxGeometry(w, H, d), facade);
+  body.position.y = H / 2;
+  body.castShadow = true; body.receiveShadow = true;
+  g.add(body);
+  const roof = new THREE.Mesh(new THREE.BoxGeometry(w + 0.3, 0.5, d + 0.3), mat(0x555e66));
+  roof.position.y = H + 0.25; g.add(roof);
+  const tank = new THREE.Mesh(new THREE.CylinderGeometry(1, 1, 1.4, 10), mat(0x222222));
+  tank.position.set(w / 4, H + 1.2, d / 4); g.add(tank);
+  const mast = new THREE.Mesh(new THREE.CylinderGeometry(0.06, 0.1, 4, 6), mat(0x9aa6ad));
+  mast.position.set(-w / 4, H + 2.5, -d / 4); g.add(mast);
+  const blink = new THREE.Mesh(new THREE.SphereGeometry(0.2, 6, 5), new THREE.MeshStandardMaterial({ color: 0xff0000, emissive: 0xff0000, emissiveIntensity: 1 }));
+  blink.position.set(-w / 4, H + 4.6, -d / 4); g.add(blink);
+  g.userData.blink = blink;
+  // Ground floor lobby and door.
+  const lobby = new THREE.Mesh(new THREE.BoxGeometry(w * 0.4, 3, 0.3), mat(0xfff1d6));
+  lobby.position.set(0, 1.5, d / 2 + 0.1); g.add(lobby);
+  const door = new THREE.Mesh(new THREE.BoxGeometry(1.4, 2.2, 0.15), mat(0x1d3557));
+  door.position.set(0, 1.1, d / 2 + 0.3); g.add(door);
+  if (sign) { const s = makeTextSprite(sign, { size: 46, scale: 1.1 }); s.position.set(0, 4.2, d / 2 + 0.5); g.add(s); }
+  g.userData.footprint = { w, d };
+  g.userData.sign = sign;
+  return g;
+}
+
+// Vehicles for the avenues.
+function makeCar(color) {
+  const g = new THREE.Group();
+  const body = new THREE.Mesh(new THREE.BoxGeometry(1.8, 0.7, 4), mat(color)); body.position.y = 0.75; g.add(body);
+  const cabin = new THREE.Mesh(new THREE.BoxGeometry(1.6, 0.6, 2), mat(0x35424a)); cabin.position.set(0, 1.35, -0.2); g.add(cabin);
+  for (const [x, z] of [[-0.9, 1.3], [0.9, 1.3], [-0.9, -1.3], [0.9, -1.3]]) { const w = new THREE.Mesh(new THREE.CylinderGeometry(0.35, 0.35, 0.3, 10), mat(0x222222)); w.rotation.z = Math.PI / 2; w.position.set(x, 0.35, z); g.add(w); }
+  for (const x of [-0.6, 0.6]) { const l = new THREE.Mesh(new THREE.BoxGeometry(0.3, 0.2, 0.1), new THREE.MeshStandardMaterial({ color: 0xffffcc, emissive: 0xffffaa, emissiveIntensity: 0.8 })); l.position.set(x, 0.8, 2.02); g.add(l); }
+  return g;
+}
+function makeAuto() {
+  const g = new THREE.Group();
+  const body = new THREE.Mesh(new THREE.BoxGeometry(1.3, 1.2, 2.2), mat(0x2f9e44)); body.position.y = 1.0; g.add(body);
+  const top = new THREE.Mesh(new THREE.BoxGeometry(1.4, 0.15, 2.3), mat(0xffd21e)); top.position.y = 1.65; g.add(top);
+  const nose = new THREE.Mesh(new THREE.BoxGeometry(0.9, 0.7, 0.6), mat(0xffd21e)); nose.position.set(0, 0.75, 1.3); g.add(nose);
+  for (const [x, z] of [[0, 1.4], [-0.6, -0.7], [0.6, -0.7]]) { const w = new THREE.Mesh(new THREE.CylinderGeometry(0.3, 0.3, 0.25, 10), mat(0x222222)); w.rotation.z = Math.PI / 2; w.position.set(x, 0.3, z); g.add(w); }
+  return g;
+}
+function makeCityBus(color = 0xd62828) {
+  const g = new THREE.Group();
+  const body = new THREE.Mesh(new THREE.BoxGeometry(2.5, 2.6, 9), mat(color)); body.position.y = 1.8; g.add(body);
+  const strip = new THREE.Mesh(new THREE.BoxGeometry(2.6, 0.9, 8), mat(0x35424a)); strip.position.y = 2.3; g.add(strip);
+  for (const [x, z] of [[-1.1, 3], [1.1, 3], [-1.1, -3], [1.1, -3]]) { const w = new THREE.Mesh(new THREE.CylinderGeometry(0.5, 0.5, 0.4, 10), mat(0x222222)); w.rotation.z = Math.PI / 2; w.position.set(x, 0.5, z); g.add(w); }
+  return g;
+}
 // ===== src/engine/rooms.js =====
 /* ============================================================
    rooms.js — the insides of buildings.
@@ -5437,6 +5776,9 @@ function roomTypeFor(sign) {
   if (!sign) return "house";
   const s = sign.toLowerCase();
   if (s.includes("house") || s.includes("hut")) return "house";
+  if (s.includes("apartment") || s.includes("tower") || s.includes("park") && !s.includes("central") || s.includes("heights") || s.includes("plaza") || s.includes("bank") || s.includes("depot")) return "office";
+  if (s.includes("mall")) return "mall";
+  if (s.includes("metro")) return "metro";
   if (s.includes("school")) return "school";
   if (s.includes("clinic") || s.includes("pharmacy")) return "clinic";
   if (s.includes("library") || s.includes("books")) return "library";
@@ -5458,6 +5800,9 @@ const OCCUPANTS = {
   hall: ["Sarpanch Devi"],
   station: ["Ticket Clerk Fernandes"],
   temple: ["Helper Gopi"],
+  office: ["Manager Sharma", "Receptionist Priya", "Engineer Arjun", "Accountant Mehta"],
+  mall: ["Security Guard Singh"],
+  metro: ["Metro Guard Kaur"],
 };
 
 const OCC_GREETS = {
@@ -5470,6 +5815,9 @@ const OCC_GREETS = {
   hall: "The whole village meets here. Today the question is for you.",
   station: "Tickets, please! Or rather, a timetable question first.",
   temple: "Take off your shoes at the door. Then think with me a moment.",
+  office: "Busy day! The lift, the floors, the bills... help me with one number?",
+  mall: "Welcome to the mall. No running on the escalator. A quick question first?",
+  metro: "Mind the gap! Before your token, a small sum for the timetable.",
 };
 
 class Room {
@@ -5502,8 +5850,8 @@ class Room {
   }
 
   _build() {
-    const wallColors = { house: 0xfff1d6, shop: 0xe3ecf5, eatery: 0xffe0a3, school: 0xf6efd8, clinic: 0xffffff, library: 0xf3d9c8, hall: 0xf2e4c8, station: 0xd9e4d0, temple: 0xfff1d6 };
-    const floorColors = { house: 0xd7b98e, shop: 0xbfb6a5, eatery: 0xc9a86a, school: 0xbfb6a5, clinic: 0xdfe6ea, library: 0xa67c52, hall: 0xc4a484, station: 0xbfb6a5, temple: 0xe8d5b5 };
+    const wallColors = { office: 0xe3ecf5, mall: 0xfff1d6, metro: 0xdfe6ea, house: 0xfff1d6, shop: 0xe3ecf5, eatery: 0xffe0a3, school: 0xf6efd8, clinic: 0xffffff, library: 0xf3d9c8, hall: 0xf2e4c8, station: 0xd9e4d0, temple: 0xfff1d6 };
+    const floorColors = { office: 0x9aa6ad, mall: 0xdfe6ea, metro: 0x8d8a80, house: 0xd7b98e, shop: 0xbfb6a5, eatery: 0xc9a86a, school: 0xbfb6a5, clinic: 0xdfe6ea, library: 0xa67c52, hall: 0xc4a484, station: 0xbfb6a5, temple: 0xe8d5b5 };
     const wall = wallColors[this.type] || 0xfff1d6;
     // Floor and three walls (the +z side stays open for the camera).
     this._box(ROOM_W, 0.2, ROOM_D, floorColors[this.type] || 0xd7b98e, 0, -0.1, 0, false);
@@ -5561,6 +5909,28 @@ class Room {
       const win2 = makeTextSprite("TICKETS", { size: 52, scale: 0.7 }); win2.position.set(-2.5, 2.5, -2.1); this.group.add(win2);
       for (const dx of [1.5, 3.6]) this._box(1.8, 0.1, 0.5, 0xb9773c, dx, 0.5, 1.0); // benches
       const board = makeTextSprite("Next train: 10:40", { size: 40, scale: 1.0 }); board.position.set(2.5, 2.2, -ROOM_D / 2 + 0.3); this.group.add(board);
+    } else if (t === "office") {
+      for (let r = 0; r < 2; r++) for (let c = 0; c < 3; c++) {
+        const x = -3 + c * 3, z = -2.4 + r * 2.6;
+        this._box(1.8, 0.08, 0.9, 0xdfe6ea, x, 0.75, z); this._box(0.1, 0.75, 0.1, 0x555e66, x, 0.37, z, false);
+        this._box(0.7, 0.5, 0.06, 0x1d3557, x, 1.1, z - 0.2, false); // monitor
+        this._box(0.5, 0.45, 0.5, 0x333333, x, 0.22, z + 0.8, false); // chair
+      }
+      this._box(0.5, 1.2, 0.5, 0x4fa3c7, 4.2, 0.6, -3.2); // water cooler
+      this._box(0.6, 0.9, 0.6, 0x4e9e4a, -4.2, 0.45, -3.2); // plant
+      const chart = makeTextSprite("Sales ↑ 12%", { size: 46, scale: 0.9 }); chart.position.set(0, 2.4, -ROOM_D / 2 + 0.3); this.group.add(chart);
+    } else if (t === "mall") {
+      const goods = [0xc94848, 0x3a86ff, 0x6fae54, 0xffb703, 0x9b5de5, 0xff8fab];
+      for (const x of [-3.2, 0, 3.2]) { this._box(2.4, 1.0, 0.8, 0xdfe6ea, x, 0.5, -2.4); for (let k = 0; k < 4; k++) this._box(0.4, 0.3, 0.4, goods[(k + x) % 6 | 0], x - 0.9 + k * 0.6, 1.15, -2.4, false); }
+      this._box(1.4, 0.1, 5, 0x9aa6ad, 4.2, 1.2, 0); // escalator ramp
+      this.group.children[this.group.children.length - 1].rotation.x = 0.35;
+      for (let i = 0; i < 3; i++) { const s = makeTextSprite(["Toys", "Shoes", "Ice Cream"][i], { size: 44, scale: 0.7 }); s.position.set(-3.2 + i * 3.2, 1.9, -2.3); this.group.add(s); }
+      const bigSign = makeTextSprite("SALE 50% OFF", { size: 50, color: "#ffffff", bg: "#c1121f", scale: 1.0 }); bigSign.position.set(0, 2.7, -ROOM_D / 2 + 0.3); this.group.add(bigSign);
+    } else if (t === "metro") {
+      for (const x of [-3, -1.5, 0, 1.5]) this._box(0.4, 1.0, 0.8, 0x9aa6ad, x, 0.5, -1.0); // turnstiles
+      this._box(2.4, 1.1, 0.8, 0x1e6091, 3.6, 0.55, -2.4); // token counter
+      const mapBoard = makeTextSprite("Blue Line: 2 stations", { size: 40, scale: 1.2 }); mapBoard.position.set(-1.5, 2.3, -ROOM_D / 2 + 0.3); this.group.add(mapBoard);
+      const tk = makeTextSprite("TOKENS ₹10", { size: 46, scale: 0.8 }); tk.position.set(3.6, 2.2, -2.3); this.group.add(tk);
     } else if (t === "temple") {
       this._box(3, 0.6, 2, 0xe8d5b5, 0, 0.3, -2.8); // platform
       const idol = new THREE.Mesh(new THREE.ConeGeometry(0.6, 1.6, 8), mat(0xffc93c)); idol.position.set(0, 1.4, -2.8); this.group.add(idol);
@@ -5585,7 +5955,7 @@ class Room {
 
   // Where the room's occupant stands (local -> world).
   occupantPos() {
-    const spots = { house: [0.5, 0.5], shop: [0, -2.4], eatery: [0, -2.4], school: [2.2, -1.5], clinic: [1.8, -0.6], library: [-2.5, 1.5], hall: [-4.2, 0.6], station: [-2.5, -3.2], temple: [2.2, -1.2] };
+    const spots = { office: [3.2, 1.6], mall: [0, 0.8], metro: [3.6, -1.0], house: [0.5, 0.5], shop: [0, -2.4], eatery: [0, -2.4], school: [2.2, -1.5], clinic: [1.8, -0.6], library: [-2.5, 1.5], hall: [-4.2, 0.6], station: [-2.5, -3.2], temple: [2.2, -1.2] };
     const [x, z] = spots[this.type] || [0, 0];
     return { x: this.x0 + x, z: this.z0 + z };
   }
@@ -5728,7 +6098,7 @@ class Game {
     this._buildAnimals();
     this._buildInteractables();
     this.minimap = new Minimap(this.world);
-    this._ambient = { chirp: 3, moo: 8, quack: 12 };
+    this._ambient = { chirp: 3, moo: 8, quack: 12, horn: 5 };
     startAmbient();
 
     this.clock = new THREE.Clock();
@@ -5748,7 +6118,7 @@ class Game {
     this.renderer.shadowMap.enabled = true;
     this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 
-    this.camera = new THREE.PerspectiveCamera(55, window.innerWidth / window.innerHeight, 0.1, 700);
+    this.camera = new THREE.PerspectiveCamera(55, window.innerWidth / window.innerHeight, 0.1, 900);
   }
 
   // Ask each job to build its villager + marker in the world.
@@ -5779,6 +6149,9 @@ class Game {
     if (!options.length) options = pool(SITUATIONS.filter((x) => !done.includes(x.id)));
     if (!options.length) options = pool(SITUATIONS.filter((x) => npc.def.cats.includes(x.cat)));
     if (!options.length) options = pool(SITUATIONS);
+    // More people than situations: share one that someone else also carries.
+    if (!options.length) options = SITUATIONS.filter((x) => npc.def.cats.includes(x.cat));
+    if (!options.length) options = SITUATIONS;
     npc.situationId = options[Math.floor(Math.random() * options.length)].id;
   }
 
@@ -5812,6 +6185,10 @@ class Game {
     for (let i = 0; i < 8; i++) add(swimmer(makeDuck(), { cx: LAKE.cx + (i % 2 ? 8 : -8), cz: LAKE.cz + (i % 3) * 4 - 4, r: 4 + i * 1.5, y: 0.02 }));
     // Butterflies over flower patches all across the land.
     for (const [x, z] of [[-8, 18], [10, 10], [-16, -12], [14, -20], [5, -6], [-20, 92], [26, 116], [90, 40], [76, -36], [-76, 60], [8, -112], [-60, 26]]) add(flutterer(makeButterfly(), x, z));
+    // City: pigeons in the park, stray dogs, and cows that sit on the road like in Delhi.
+    for (let i = 0; i < 8; i++) add(pecker(makePigeon(), (i < 4 ? -21 : 21), 210, 10));
+    for (let i = 0; i < 3; i++) add(grazer(makeDog(), -40 + i * 40, 262, 10, 2.0));
+    for (let i = 0; i < 2; i++) add(grazer(makeCow(), 4, 250 + i * 12, 6, 0.4));
     // One dog that follows the engineer everywhere.
     const dog = follower(makeDog());
     dog.position.set(w.spawn.x + 1.5, 0, w.spawn.z + 1);
@@ -6026,7 +6403,11 @@ class Game {
     // Ambient sound: wind follows the gusts; birds, cows and ducks now and then.
     ambientTick(0.5 + Math.sin(elapsed * 0.35) * 0.5);
     const amb = this._ambient;
-    amb.chirp -= dt; amb.moo -= dt; amb.quack -= dt;
+    amb.chirp -= dt; amb.moo -= dt; amb.quack -= dt; amb.horn -= dt;
+    if (amb.horn <= 0) {
+      amb.horn = 5 + Math.random() * 9;
+      if (pp.z > CITY.z1 - 10 && !this.world.currentRoom) playHorn();
+    }
     if (amb.chirp <= 0) { playChirp(); amb.chirp = 3 + Math.random() * 6; }
     if (amb.moo <= 0) {
       amb.moo = 9 + Math.random() * 10;

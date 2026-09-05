@@ -9,3 +9,4 @@ wall recorded). Stage 0 was orchestrator-run (no subagent row).
 | 1 | gate-0 | sonnet | default | - | - | 153998 | 778s | 1 |
 | 2 | notes-pass (pass 1) | sonnet | default | - | - | 206204 | 877s | 1 |
 | 2 | notes-pass (pass 2) | sonnet | default | - | - | 157747 | 544s | 2 |
+| 2 | notes-pass (pass 3) | sonnet | default | - | - | 116274 | 447s | 3 |

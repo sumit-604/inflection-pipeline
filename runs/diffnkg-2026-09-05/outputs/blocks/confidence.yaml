@@ -1,0 +1,19 @@
+confidence_delta:
+  numerical_acceptance: 95.2   # B12a (run 2, authoritative)
+  redflag_coverage: 73         # B12b: 11 of 15 verifier-found flags caught upstream
+  framework_adherence: 89      # B12c: Gate 0 + Emerging Moat portion only
+  peer_utilisation: 100        # B12d: 6 of 6 peer transcripts used substantively
+  overall: 73                  # min of the four
+  band: "60-74 — PROCEED verdicts downgrade one level (not <60, so no forced REWORK)"
+  valuation_adherence: pending-phase-3   # B12c valuation half deferred (B10/B11 not run)
+  binding_component: redflag_coverage
+  notes: >
+    No CRITICAL in any verifier; no acceptance_rate below 60%, so no REWORK trigger.
+    The binding component is redflag_coverage (73%): Verifier B surfaced two new MAJOR
+    misses (earnings-quality props on PAT; heavy-engineering 70% cyclical new-build
+    qualifying the stickiness narrative), both thesis-relevant, neither fabricated.
+    Verifier A run-1 CRITICAL on the ~INR1.6bn welding TAM was CLEARED on re-check:
+    it is a management-cited figure the pipeline itself flagged (B05 "likely a units
+    error") and contradicted (B06), and B09's actual TAM does not use it. Logged as a
+    verifier disagreement, disposition FLAG CLEARED (re-checked by Verifier A re-invoke
+    + orchestrator sanity-check).

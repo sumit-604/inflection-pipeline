@@ -1,0 +1,14 @@
+stage: B12a
+company: "DIFFNKG"
+run_date: "2026-09-05"
+model: claude-haiku-4-5-20251001
+status: complete
+numbers_checked: 21
+findings:
+  - {severity: "MINOR", location: "Gate 0 Section B1, Block A PAT row FY26; cumulative PAT Section B3", claimed: "Consolidated PAT FY26: 50.32 Cr (screener-data, Net profit row)", source_truth: "Annual_Report_2026.txt [PAGE 191] Consolidated P&L: Net profit for the year 504.10 Million = 50.41 Cr", note: "0.09 Cr variance (0.18% relative). Screener: 50.32 Cr. AR: 50.41 Cr. Likely screener rounding or extraction-timing difference. Immaterial to ROCE/ROE verdicts (<0.01pp impact). Does not affect downstream decisions or Gate 0 classification.", source_fidelity: false}
+critical_count: 0
+major_count: 0
+minor_count: 1
+acceptance_rate: 95.2
+coverage_note: "Audited all material figures: Gate 0 scorecard (Blocks A/B/C/D/E), FY26 consolidated and standalone revenue/PAT, receivables, ROCE/ROE and inputs, CFO/PAT ratios and cumulative sums, all TAM/SAM/SOM methodology and component figures, capex-related CWIP. All figures traced to Annual Report P&L/Balance Sheet or screener time series. No unanchored numbers found. Single minor variance (PAT rounding) carries no verdict impact."
+

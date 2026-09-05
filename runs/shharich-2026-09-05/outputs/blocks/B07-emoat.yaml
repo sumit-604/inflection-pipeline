@@ -1,0 +1,46 @@
+stage: B07-emoat
+company: "SHHARICH"
+run_date: "2026-09-05"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "concalls: declared unavailable (NO-CONCALL MODE); F2 test run on AR capex-completion evidence"
+  - "presentation: no investor presentation in corpus"
+  - "results: no quarterly or annual results filing; Q1 FY27 (Jun-2026) results absent"
+  - "rating: no credit rating document"
+  - "announcements: no Reg 30 filings; 25-Aug-2026 warrant board outcome absent; AGM notice inside the AR is the partial substitute"
+  - "shareholding: no quarterly shareholding pattern; fallback AR pattern at 31-Mar-2026"
+  - "screening: only Data_Sheet CSVs populated (3 annual years FY24-FY26)"
+  - "prospectus: not expected (listed 1987); not a gap"
+flags:
+  - {type: FLAG-EMOAT-SDPL, reason: "SDPL, the larger of the two warrant-funded growth vehicles, has been non-operational for over 2 years since incorporation (24-Apr-2024); AOC-1 shows Nil turnover and consolidated CWIP has aged into the 1-2 year bucket (Rs 73.55 lakh of Rs 1,130.42 lakh), directly contradicting the Chairman's undated 'near term' production claim (AR FY26 p.7, p.74, Note 2(ii) p.154)"}
+  - {type: FLAG-EMOAT-CREDIBILITY, reason: "F2 execution-moat test carries B05's credibility_grade D forward: one CCD-proceeds object slipped ~1 year past its own timeline, and two MD&A ratio explanations (ICR, RoNW) contradict the company's own disclosed numbers (AR FY26 p.77, p.90)"}
+  - {type: FLAG-EMOAT-CAPACITY-GAP, reason: "No tonnage, MTPA, or capacity-addition percentage is disclosed anywhere in the AR for either warrant-funded expansion object or the SDPL facility, forcing capex_embedded_growth_pct to NOT FOUND rather than an estimate"}
+em_score: 8
+em_classification: "NONE"
+active_categories:
+  - {id: "H3", name: "ESG moat (captive solar capacity)", strength: "Moderate", evidence_type: "documented", time_to_materialise: "already partly realised; watch FY27 cost trajectory"}
+evidence_mix: {documented: 5, claim: 1, inference: 1}
+completionist_recount: "5 documented items across 5 categories (A3 by-product revenue growth; F2 CCD-utilisation timeline record; G2 debtors-turnover/current-ratio trend; H3 solar capacity expansion; R1 SDPL Environmental Clearance), plus 1 item (E2 export revenue jump) scored at inference quality; no category credited at claim-strength as primary evidence. 6 of 22 categories touch any evidence; only 1 (H3) clears Moderate."
+catalysts_12m:
+  - {catalyst: "Convertible warrant conversion pace (Rs 40.24 cr, 22.85L warrants, 18-month window from 25-Aug-2026 allotment; 75% balance payment due on conversion)", window: "12-18m", evidence_type: "documented", anchor: "AR FY26, AGM Notice Item 16, pp.44-46"}
+  - {catalyst: "SDPL first reported turnover, or a third consecutive year of Nil turnover in the next AOC-1/CWIP ageing note", window: "12-24m", evidence_type: "documented baseline; management claim on timing", anchor: "AR FY26, AOC-1 p.74; Note 2(ii) CWIP ageing p.154; Chairman's Message p.7"}
+  - {catalyst: "FY27 organic manufactured H-Acid volume/growth disclosure separated from the FY26 near-zero-margin trading line", window: "12m", evidence_type: "inference (monitorable, not yet disclosed)", anchor: "AR FY26 Note 35.2 p.126 baseline"}
+  - {catalyst: "Warrant-funded direct-expansion object (Rs 10.24 cr) capacity-addition disclosure", window: "12-24m", evidence_type: "documented object; capacity figure NOT FOUND", anchor: "AR FY26, AGM Notice Item 16 explanatory statement, p.45"}
+capex_embedded_growth_pct: "NOT FOUND"
+optionality_register:
+  - {optionality: "SDPL commencing production would convert a 2-year-plus nil-turnover subsidiary into a revenue unit", converting_evidence: "First disclosed SDPL turnover in AOC-1, or CWIP capitalised into PPE with a stated capacity", first_appears: "Next AR's AOC-1 / Note 2 PPE-CWIP movement", window: "12-24m (already slipped past an undated 'near term' claim)"}
+  - {optionality: "Warrant-funded direct expansion (Rs 10.24 cr) could add H-Acid or other-chemicals capacity", converting_evidence: "A disclosed tonnage or MTPA capacity-addition figure and a commissioning date", first_appears: "Next AR's MD&A, or a capex-completion Reg 30 filing", window: "12-36m (object utilisation runs to March 2031)"}
+  - {optionality: "Export step-change (0% to 46.4% of FY26 revenue) could be a durable new market rather than a one-year trading pass-through", converting_evidence: "Management explanation naming customers/countries, plus an FX-hedging policy resolving the Note 35.13 contradiction", first_appears: "Next AR's export/FX risk note, or a Reg 30 clarification", window: "12m"}
+  - {optionality: "Captive renewable power (3.35 MW total) could structurally lower unit power cost as revenue scales", converting_evidence: "A disclosed Power & Fuel cost trend falling for a second consecutive year", first_appears: "Next AR's cost breakdown", window: "12m"}
+  - {optionality: "MOA broadening into cranes/heavy equipment/EPC/infrastructure could open a wholly new revenue line", converting_evidence: "Actual capital deployment, a signed contract, or a disclosed order under a new object-clause line", first_appears: "Next AR's Board's Report, or a Reg 30 order announcement", window: "Uncertain; object clause alone carries no capital commitment and is a related-party-alignment risk per B08, not a credited pipeline item"}
+  - {optionality: "A named technical hire or patent filing could establish a genuine talent or IP moat", converting_evidence: "AR remuneration annexure showing a technical specialist paid above sector norms, or a patent filing on Espacenet/ipindia.gov.in", first_appears: "Next AR's Annexure II, or a patent-office filing", window: "Not visible currently; R&D expenditure is NIL (AR FY26 p.63)"}
+combined_assessment: "AVOID"
+combined_reasoning: "Backward moat is deteriorating (Gate 0: AVOID, Core 56/100, Moat 17/60) and the forward pipeline scores only 8/92, below the 12-point MODEST floor, dragged there by SDPL's two-year-plus stalled build and a D-grade execution record, so no transition case overrides the backward verdict."
+top_moat_risks:
+  - "SDPL has been non-operational for over 2 years since incorporation (24-Apr-2024), aged CWIP, directly contradicting the Chairman's undated 'near term' production claim (AOC-1 p.74; Note 2(ii) p.154)"
+  - "F2 execution credibility grade D: a working-capital object slipped ~1 year past its own timeline, and two MD&A ratio explanations contradict the company's own disclosed numbers (AR p.77)"
+  - "Export step-change (0% to 46.4% of FY26 revenue) is unexplained, contradicts the company's own no-FX-exposure risk note, and is plausibly confounded by the new near-zero-margin trading line rather than genuine export-market capability (Note 35.9 p.130 vs Note 35.13 p.129; Note 35.2 p.126)"
+  - "Rising borrowings (+8.4% YoY) and negative FCF in both assessable years undercut any self-funded-expansion reading of the capital programme (B01 block_b_trend)"
+  - "No physical capacity-addition figure is disclosed for either warrant-funded expansion object, so the capex-embedded-growth claim cannot be verified or sized"
+analyst_note: "H3 (solar/ESG) and E2 (export shift) both straddle two category definitions in the taxonomy (H3 vs B1 for captive power; A3 vs H3 for by-product/waste framing). Each underlying fact was assigned to exactly one category to avoid crediting one improvement through two mechanisms: solar capacity to H3 only, by-product revenue to A3 only, leaving B1 at NO EVIDENCE FOUND since no raw-material backward integration exists. E2's export number is real and audited but scored at inference quality because its causal story (durable export win vs one-year trading pass-through) is unproven and contradicts the company's own FX risk note. The em_score of 8 is internally consistent with B01's Gate 0 finding of a deteriorating backward moat: this is a company where neither the existing nor the forming competitive position currently supports a transition thesis, independent of the volume-vs-spread question this run's spear gate was designed to test."

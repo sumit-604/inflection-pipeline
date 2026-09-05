@@ -15,3 +15,4 @@ where it does not.
 | 4 | business model decoder | claude-sonnet | default | n/a | n/a | 170183 | 11m11s | 1 |
 | 8 | promoter check (web, partial: 2 fetches proxy-blocked) | claude-sonnet | default | n/a | n/a | 245445 | 11m46s | 1 |
 | 5 | concall analysis | claude-sonnet | default | n/a | n/a | 163199 | 14m26s | 1 |
+| 6 | peer concall verification | claude-sonnet | default | n/a | n/a | 361695 | 9m41s | 1 |

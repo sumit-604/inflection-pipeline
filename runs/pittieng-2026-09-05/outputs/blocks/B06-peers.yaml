@@ -1,0 +1,48 @@
+stage: B06-peers
+company: "PITTIENG"
+run_date: "2026-09-05"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - "Claim 1 (BIS Korea/Japan steel) tested only against VILAS, an adjacent-market peer (CRGO transformer-grade vs Pitti's mainly CRNGO motor-grade); treat the CONTRADICTED verdict as directional, not a direct test of Pitti's specific Korea/Japan mill relationships"
+  - "Claim 5 (data-centre genset demand) has no directly relevant peer among the three provided; verdict rests on an adjacent, indirect AI/data-centre macro read from SANSERA's semicon-equipment business, a different product entirely"
+  - "VILAS's two older calls (Nov-2024, May-2025) predate Pitti's Q3 FY26-Q1 FY27 window and are weighted as context/baseline only, not as contemporaneous evidence"
+peers_provided: 3
+verified:
+  - {claim: "Peers report the same India-US tariff relief (Section 232 reciprocal cut, ~18% for Sansera) and a converting customer-acquisition tailwind", peers: ["SANSERA", "RKFORGE"], anchor_count: 5}
+partially_verified:
+  - {claim: "Peer forged/cast component makers report the same casting/machining capacity tightness Pitti calls its biggest bottleneck", peers: ["SANSERA"]}
+contradicted:
+  - {claim: "BIS-certified electrical steel from Korean and Japanese mills is now reliably available, resolving Pitti's import-supply uncertainty", contradicting_peer: "VILAS", quote_anchor: "VILAS H1 FY26 call, PDF p.5 (CRGO prices declined 15-20% on Chinese-mill BIS reopening, not a Korea/Japan resolution); VILAS FY26 call, PDF p.7 (BIS license renewals for the two approved mills still uncertain, dated June/July 2026 expiry)"}
+  - {claim: "Domestic railway capex is actually moderating, explaining Pitti's declining railway revenue share", contradicting_peer: "RKFORGE", quote_anchor: "RKFORGE Q4 FY26 call, PDF p.4 (railway revenue share grown from 4.6% to 7.5% year on year); RKFORGE Q3 FY26 call, PDF p.5 (Indian Railways demand worth Rs 2,000 Cr cited for the forthcoming year)"}
+  - {claim: "Pitti's FY26 working-capital/inventory build and net-debt increase, and its delayed unwind, reflect an industry-wide raw-material/BIS story rather than a Pitti-specific execution lag", contradicting_peer: "RKFORGE", quote_anchor: "RKFORGE Q1 FY27 call, PDF p.17 (net debt down to Rs 1,900 Cr on a quantified, on-track reduction schedule versus a Rs 2,500 Cr FY26 peak); RKFORGE Q3 FY26 call, PDF p.6 (Rs 350 Cr debt reduction delivered in a single quarter)"}
+unverifiable:
+  - {claim: "A data-centre generator/genset demand surge of the magnitude Pitti describes (3% to 5% of revenue, 25-30% growth)", peers_checked: ["RKFORGE", "SANSERA", "VILAS"]}
+peer_coverage_map:
+  - {peer: "RKFORGE", quarter: "Q2/H1 FY26 (Nov-2025)", usage: "substantive", contribution: "Baseline domestic railway strength and the initial net-debt run-up later tested against Pitti's own missed unwind"}
+  - {peer: "RKFORGE", quarter: "Q3 FY26 (Feb-2026)", usage: "substantive", contribution: "Rs 2,000 Cr Indian Railways demand figure and on-schedule debt-reduction progress, contradicting both the railway-moderation and slow-unwind claims"}
+  - {peer: "RKFORGE", quarter: "Q4 FY26 (May-2026)", usage: "substantive", contribution: "Railway revenue share nearly doubling (4.6% to 7.5%) and explicit capex-discipline language showing spare, not tight, capacity"}
+  - {peer: "RKFORGE", quarter: "Q1 FY27 (Jul-2026)", usage: "substantive", contribution: "Net debt down to Rs 1,900 Cr on a quantified schedule; energy/shipping cost risk language absent from Pitti's own calls"}
+  - {peer: "SANSERA", quarter: "Q2/H1 FY26 (Nov-2025)", usage: "substantive", contribution: "First explicit 10-20% base-tariff discussion and industry-wide skilled-labour shortage risk"}
+  - {peer: "SANSERA", quarter: "Q3 FY26 (Feb-2026)", usage: "substantive", contribution: "Direct 18% tariff figure quoted verbatim, the strongest single confirmation anchor for the tariff-relief claim"}
+  - {peer: "SANSERA", quarter: "Q4 FY26 (May-2026)", usage: "substantive", contribution: "Forging-capacity-shortage warning and AI/data-centre framing feeding the adjacent genset-demand read"}
+  - {peer: "SANSERA", quarter: "Q1 FY27 (Aug-2026)", usage: "substantive", contribution: "Confirms India-sourcing customer-acquisition tailwind converting into real behaviour, and dates AI/semicon demand visibility to FY29-30"}
+  - {peer: "VILAS", quarter: "H1 FY25 (Nov-2024)", usage: "substantive", contribution: "Earliest BIS/Korea-Japan-mill sourcing context and first mention of raw-material stocking as a working-capital driver"}
+  - {peer: "VILAS", quarter: "FY25 (May-2025)", usage: "substantive", contribution: "Confirms continued BIS-driven supply volatility and multi-country sourcing diversification"}
+  - {peer: "VILAS", quarter: "H1 FY26 (Nov-2025)", usage: "substantive", contribution: "Key contradiction evidence: Chinese-mill BIS reopening drove a 15-20% CRGO price decline, the opposite of a resolved, tight-supply story"}
+  - {peer: "VILAS", quarter: "FY26 (May-2026)", usage: "substantive", contribution: "Dated BIS-license-renewal uncertainty, anti-dumping-duty risk, and working-capital days rising to 95-100 without any net-debt increase"}
+industry_cross_read:
+  demand: "All three peers describe a strongly supportive FY26-27 domestic environment and recovering exports; the one clear tension with Pitti's own story is that RKFORGE's comparable railway business is accelerating while Pitti's railway revenue share is declining."
+  pricing_inputs: "Steel/raw-material pass-through is common ground (RKFORGE, quarterly lag; Pitti, quarterly reset), but energy and shipping costs are a recurring, non-pass-through drag industry-wide, not a one-off Black Swan as Pitti's own framing suggests; VILAS's unhedged, opportunistic CRGO margin model is structurally more exposed than Pitti's claimed reset mechanism."
+  capex_cycle: "Not a uniform capacity race. SANSERA is racing (confidently, self-funded) in ADS/aerospace-semicon; RKFORGE just finished a debt-funded multi-front wave and is now consolidating; VILAS is incremental and cash-funded. Pitti's debt-funded Rs 290 Cr commitment sits closer to RKFORGE's margin-compressing playbook than to SANSERA's or VILAS's discipline-preserving one."
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "Recurring, structural energy/gas and shipping-cost inflation tied to the West Asia conflict, requiring ongoing customer force-majeure negotiations (RKFORGE, Q4 FY26 and Q1 FY27 calls)"
+  - "New Labour Code compliance cost taken as an exceptional charge (RKFORGE, Q3 FY26 call)"
+  - "Industry-wide skilled-labour shortage and attrition risk as an active growth constraint (SANSERA, multiple calls)"
+  - "Single/concentrated-customer dependency named openly as a managed risk by a peer, a topic Pitti's own calls never raise despite comparable concentration (SANSERA vs Pitti's 2 customers = 25.2% of revenue per B02)"
+  - "A government anti-dumping duty on CRGO imports under active consideration, a dated policy risk to the same BIS-gated import channel Pitti also depends on (VILAS, FY26 call)"
+  - "Dated BIS-mill-license-renewal risk (specific June/July 2026 expiry) on the same import-BIS mechanism underlying Pitti's own inventory/net-debt thesis (VILAS, FY26 call)"
+net_narrative_effect: "complicates"
+analyst_note: "The peer set splits cleanly by financing discipline, not by sector exposure: SANSERA and VILAS fund growth from cash and preserve margin/ROCE through their capex waves; RKFORGE funded a comparable wave partly through debt and saw ROCE compress before recovering on a multi-year schedule. Pitti's debt-funded Rs290 Cr commitment and its own flagged ROCE decline (19% to 15%) place it on the RKFORGE side of this split, which is a more useful lens for judging Pitti's medium-term ROCE trajectory than any single claim-by-claim verdict above. Weight Claim 1 and Claim 4 cautiously: VILAS (SME-listed, CRGO not CRNGO) and the SANSERA/RKFORGE capacity split both involve real product and scale mismatches with Pitti, not clean apples-to-apples tests."

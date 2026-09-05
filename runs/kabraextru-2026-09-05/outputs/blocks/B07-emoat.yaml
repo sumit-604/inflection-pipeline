@@ -1,0 +1,46 @@
+stage: B07-emoat
+company: "KABRAEXTRU"
+run_date: "2026-09-05"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "NO-CONCALL MODE: no concall transcripts exist; F2 uses AR-to-AR capex-completion evidence (CWIP/PPE notes) in place of a promise-delivery record, per orchestrator substitution rule"
+  - "presentation-stale: only investor deck available is Q3 FY24 (dated 31-Dec-2023), 2.5 years stale; used for structure/framing context only, every figure dated"
+  - "no segment-level capex/capacity breakdown (Extrusion vs Geon) disclosed in either AR; the FY26 gross PP&E addition of Rs 68.12 Cr and the new Rs 31.77 Cr capital commitment cannot be attributed to a specific division"
+  - "GEON's ~7 GWh / Rs 250 Cr cumulative-investment claim (AR26 p.4-5) has no FY25 baseline to check growth or promise-delivery against; first appears in the FY26 AR only"
+  - "2026 preferential issue (Singularity Large Value Fund III, Nitish Mittersain, ~Rs 120-141 Cr, EGM reportedly 2-Sep-2026) is entirely outside this document corpus (AR signed 28-May-2026, pre-dates the reported EGM); carried as 📰 media-reported, unscored, per Company Memory"
+  - "no announcements/Reg-30 filings in corpus to corroborate the AR-stated '~150 Cr order secured for FY27 execution' claim (AR26 p.37)"
+flags:
+  - type: FLAG-EMOAT
+    reason: "em_score 9/92, well under the 12-point floor (NO MEANINGFUL EMERGING MOAT), consistent with Gate 0's independent AVOID/NONE finding. The two Moderate-strength signals found (A4 GEON product-platform expansion; C2 improving customer concentration) are each undercut by countervailing evidence: the Battery/Geon segment loss widened for a second straight year (-25.53 Cr FY25 to -43.35 Cr FY26, AR26 p.105-106) even as the product range broadens, and the customer-concentration improvement coincides with the insolvency of the company's largest disclosed customer relationship (Hero Electric, Rs 30.39 Cr receivable under NCLT CIRP, AR26 p.87-88), not confirmed new-customer wins."
+  - type: FLAG-DROPPED-CLAIMS
+    reason: "Three flagship differentiator claims from the Dec-2023 investor deck (first ARAI/AIS-156 accreditation, IATF-approved facility, 90%+ customer design-win rate/data network effect) do not appear in either the FY2024-25 or FY2025-26 Annual Report (confirmed by full-text search). This is the same pattern already flagged by Gate 0 for the ~40% market-share claim (stated AR FY25 p.37 only, dropped in AR FY26). A recurring pattern of asserted-then-abandoned differentiators should raise the evidentiary bar for any new claim in this company's filings."
+em_score: 9
+em_classification: "NONE"
+active_categories:
+  - {id: "A4", name: "Product platform / modular architecture", strength: "Moderate", evidence_type: "documented", time_to_materialise: "ongoing (RESS live now; HV e-bus packs 12-24m)"}
+  - {id: "C2", name: "Customer concentration improving", strength: "Moderate", evidence_type: "documented", time_to_materialise: "already happening (2-year trend, FY25-FY26)"}
+evidence_mix: {documented: 25, claim: 10, inference: 6}
+completionist_recount: "9 documented items across 4 categories carrying scoring weight (A4, C2, F2, R1); only A4 and C2 clear the Moderate bar. Of ~25 total documented items across the full scan, the majority (credit downgrade, WC deterioration to 244 days, dividend cut to zero, insolvent anchor customer, dropped market-share and certification claims, loss-making data subsidiary) are evidence against an emerging moat, not for one. 2 Moderate-strength categories is well under the 3-6 base rate, appropriate given Gate 0's independent AVOID/NONE finding."
+catalysts_12m:
+  - {catalyst: "2026 preferential issue outcome (Singularity Large Value Fund III, Nitish Mittersain, ~Rs 120-141 Cr for Geon capacity, EGM reportedly 2-Sep-2026)", window: "0-3m (filing confirmation)", evidence_type: "media-reported (unconfirmed in corpus)", anchor: "Company Memory / not in AR26 (signed 28-May-2026, pre-dates EGM)"}
+  - {catalyst: "Delivery of the ~INR 150 Crore FY27 order into recognised Battery-segment revenue", window: "0-12m (FY27)", evidence_type: "management claim", anchor: "AR FY26 p.37, MD&A Key Strengths item 8"}
+  - {catalyst: "Further CRISIL rating action following FY27 quarterly results", window: "0-12m", evidence_type: "documented (rating history) + inference (trend)", anchor: "AR FY26 p.51, Corporate Governance Report"}
+  - {catalyst: "Commissioning of the new Rs 31.77 Cr capital commitment and whether it shows as revenue, not just assets", window: "12-24m (per past CWIP 1-2yr cycle)", evidence_type: "documented", anchor: "AR FY26 p.110, Note 41(b) and p.83, Note 2B"}
+capex_embedded_growth_pct: 16.6
+optionality_register:
+  - {optionality: "GEON reaching its own claimed 'optimal' Rs 1,500+ Cr revenue scale on the existing facility", converting_evidence: "Disclosed utilisation % or sustained Battery-segment revenue run-rate materially above Rs 136 Cr/yr", first_appears: "Future AR MD&A / Note 38 segment revenue, or a Reg-30 capacity filing", window: "3-5 years"}
+  - {optionality: "The ~INR 150 Cr order secured for FY27 execution", converting_evidence: "Revenue recognised in FY27 segment note, or a named-counterparty Reg-30 order-win filing", first_appears: "FY2026-27 AR Note 38, or exchange announcement", window: "12 months"}
+  - {optionality: "2026 preferential issue to Singularity Large Value Fund III / Nitish Mittersain for Geon capacity", converting_evidence: "EGM special-resolution outcome, Form PAS-3 allotment, and preferential-issue utilisation note in FY27 AR", first_appears: "BSE/NSE Reg-30 filing; FY2026-27 AR", window: "0-3m filing; 12-24m capacity delivery"}
+  - {optionality: "ARAI/AIS-156 accreditation, IATF-approved facility, 90%+ design-win rate/data network effect claims (Dec-2023 deck)", converting_evidence: "Re-statement/update with current data in a future AR, or independent certification-body listing", first_appears: "AR Annexure-4 or Key Strengths section", window: "uncertain; already dropped for 2 consecutive ARs"}
+  - {optionality: "R&D headcount growth beyond the '100+ engineers' plateau", converting_evidence: "Disclosed headcount figure exceeding 100+ with growth trajectory, or named premium-paid technical hires in Annexure-5", first_appears: "MD&A Human Capital section or Annexure-5", window: "12-24 months"}
+  - {optionality: "Varos Technology subsidiary becoming a real monetised data asset", converting_evidence: "Disclosed Varos revenue growth / path to profitability", first_appears: "Future AOC-1 Annexure-1", window: "3-5 years; currently trending the wrong direction"}
+combined_assessment: "AVOID"
+combined_reasoning: "Core score 22/100 (AVOID, deal-breaker-confirmed) pairs with an emerging-moat score of 9/92 (NONE); the only two Moderate-strength emerging signals (GEON product-platform expansion, improving customer concentration) are each undercut by widening segment losses and an insolvent former anchor customer, so neither backward nor forward evidence supports a transition case."
+top_moat_risks:
+  - "GEON segment loss widened for a second straight year (-25.53 Cr FY25 to -43.35 Cr FY26, AR FY26 Note 38 p.105-106) even as the product platform broadens into new use cases; growth in scope without profitability is capital-destructive, not moat-building."
+  - "Customer-concentration improvement (2 customers/26.94% FY25 to 1 customer/19.11% FY26, AR FY26 Note 38 p.106) may be partly mechanical: the Hero Electric relationship central to Geon's earlier certification story is now under NCLT insolvency (Rs 30.39 Cr receivable, AR FY26 Note 9 p.87-88), not proven proactive diversification."
+  - "Every flagship differentiator claim in the Dec-2023 investor deck (first ARAI/AIS-156 accreditation, IATF-approved facility, 90%+ design-win rate, data network effect) is absent from both the FY25 and FY26 Annual Reports; claims that vanish across filing cycles should not be relied on until re-verified."
+  - "The one hard, quantified forward capex commitment (Rs 31.77 Cr, AR FY26 Note 41b p.110) implies only ~16.6% incremental revenue at the company's own historical fixed-asset turnover, a small fraction of management's stated 'Rs 1,500+ Cr optimal' GEON revenue potential (AR FY26 p.37), which has no capex or capacity plan anchoring it in this corpus."
+  - "Revenue per employee fell 12% FY25 to FY26 (Rs 77.0 lakh to Rs 67.8 lakh, computed from AR FY26 p.17/p.30) in the same year capex was being commissioned (Rs 44.12 Cr transferred from CWIP, AR FY26 p.83); capacity is being built faster than it is being monetised."
+analyst_note: "No-concall substitution for F2 relied on CWIP/PPE ageing schedules (AR25 p.83, AR26 p.83) as the best available capex-completion proxy; this shows on-schedule execution but cannot attribute spend to Extrusion vs Geon, since neither AR splits capex by segment. Separately, the 2026 preferential issue's EGM (reportedly 2-Sep-2026 per Company Memory) falls 3 days before this run's date (5-Sep-2026) and entirely outside the AR corpus (signed 28-May-2026); its outcome may already be public via an exchange filing not yet collected into this repo, and is the single highest-value item for the next collector refresh before Halt 1."

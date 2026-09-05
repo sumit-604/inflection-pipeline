@@ -1662,7 +1662,8 @@ function makeTextSprite(text, { size = 40, color = "#2c2417", bg = "rgba(255,253
   const g = canvas.getContext("2d");
   g.fillStyle = bg;
   g.beginPath();
-  g.roundRect(8, 8, 496, 112, 28);
+  if (g.roundRect) g.roundRect(8, 8, 496, 112, 28);
+  else g.rect(8, 8, 496, 112); // older browsers: square corners
   g.fill();
   g.fillStyle = color;
   g.font = `bold ${size}px "Segoe UI", system-ui, Arial, sans-serif`;
@@ -1673,6 +1674,15 @@ function makeTextSprite(text, { size = 40, color = "#2c2417", bg = "rgba(255,253
   const sprite = new THREE.Sprite(new THREE.SpriteMaterial({ map: tex, transparent: true, depthWrite: false }));
   sprite.scale.set(4 * scale, 1 * scale, 1);
   return sprite;
+}
+
+let _winMat = null;
+function buildingWindowMat() {
+  if (!_winMat) {
+    _winMat = new THREE.MeshStandardMaterial({ color: 0x35424a, flatShading: true, emissive: 0x1b2a33, emissiveIntensity: 0.4 });
+    _winMat.userData.batchable = true;
+  }
+  return _winMat;
 }
 
 // A building from a few boxes: walls, a roof (gable, pyramid, flat or dome),
@@ -1711,7 +1721,7 @@ function makeBuilding({
   g.add(roofMesh);
 
   // Windows on the front and back, one row per floor.
-  const winMat = new THREE.MeshStandardMaterial({ color: 0x35424a, flatShading: true, emissive: 0x1b2a33, emissiveIntensity: 0.4 });
+  const winMat = buildingWindowMat();
   const cols = Math.max(1, Math.floor(w / 2.2));
   for (let f = 0; f < floors; f++) {
     for (let c = 0; c < cols; c++) {
@@ -1816,9 +1826,15 @@ const COLORS = {
   metal: 0x9aa6ad,
 };
 
-// Helper: a flat-shaded standard material (soft, matte look).
+// Helper: a flat-shaded standard material (soft, matte look). Materials made
+// here are the same for the same colour, so still objects can be merged.
+const _matCache = new Map();
 function mat(color) {
-  return new THREE.MeshStandardMaterial({ color, flatShading: true, roughness: 0.9, metalness: 0.05 });
+  if (_matCache.has(color)) return _matCache.get(color);
+  const m = new THREE.MeshStandardMaterial({ color, flatShading: true, roughness: 0.9, metalness: 0.05 });
+  m.userData.batchable = true;
+  _matCache.set(color, m);
+  return m;
 }
 
 class World {
@@ -1853,6 +1869,10 @@ class World {
     this.scene.add(this.bridgePlanks);
     this.colliders = new Map(); // grid cell -> list of solid things (walls, trunks)
     this.doors = [];            // every door you can walk through
+    // One indoor light shared by every room; it moves to the room you enter.
+    this.roomLight = new THREE.PointLight(0xfff1d6, 18, 16, 2);
+    this.roomLight.visible = false;
+    this.scene.add(this.roomLight);
     this.rooms = new Map();     // door -> Room, built on first entry
     this.currentRoom = null;    // the room the player is in, or null outdoors
     this.waters = [];   // every rippling water sheet (river, lake)
@@ -1873,6 +1893,70 @@ class World {
     this._buildVegetation();
     this._buildVehicles();
     this._buildCity();
+    try { this._flushStatic(); } catch (e) { console.warn("Static merge skipped:", e); }
+  }
+  // ==========================================================
+  // STATIC BATCHING: thousands of small still objects (fence posts,
+  // lane lines, walls, roofs, lamps) are merged into a few dozen big
+  // meshes, one per material look. The GPU then draws the whole
+  // village in a handful of calls instead of thousands. Anything
+  // that moves or changes later is marked `dynamic` and left alone.
+  // ==========================================================
+  _flushStatic() {
+    const groups = new Map();
+    const toRemove = [];
+    const isDynamic = (obj) => { for (let o = obj; o; o = o.parent) if (o.userData && o.userData.dynamic) return true; return false; };
+    this.scene.updateMatrixWorld(true);
+    this.scene.traverse((obj) => {
+      if (!obj.isMesh || obj.isInstancedMesh || obj.isSprite) return;
+      const m = obj.material;
+      if (!m || Array.isArray(m) || !m.userData || !m.userData.batchable) return;
+      if (isDynamic(obj)) return;
+      const g = obj.geometry;
+      if (!g || !g.attributes || !g.attributes.position || !g.attributes.normal) return;
+      const key = [m.color.getHex(), m.emissive ? m.emissive.getHex() : 0, m.emissiveIntensity || 0, m.roughness, m.metalness, m.transparent ? 1 : 0, m.opacity, m.side, m.flatShading ? 1 : 0].join("|");
+      if (!groups.has(key)) groups.set(key, { material: m, items: [] });
+      groups.get(key).items.push(obj);
+    });
+    let merged = 0, removed = 0;
+    for (const { material, items } of groups.values()) {
+      if (items.length < 2) continue;
+      try {
+        // Bake each mesh's world transform into a copy of its geometry.
+        const geos = items.map((o) => {
+          let g = o.geometry.index ? o.geometry.toNonIndexed() : o.geometry.clone();
+          g.applyMatrix4(o.matrixWorld);
+          return g;
+        });
+        const total = geos.reduce((n, g) => n + g.attributes.position.count, 0);
+        const pos = new Float32Array(total * 3), nor = new Float32Array(total * 3);
+        const hasUv = geos.every((g) => g.attributes.uv);
+        const uv = hasUv ? new Float32Array(total * 2) : null;
+        let off = 0;
+        for (const g of geos) {
+          const n = g.attributes.position.count;
+          pos.set(g.attributes.position.array.subarray(0, n * 3), off * 3);
+          nor.set(g.attributes.normal.array.subarray(0, n * 3), off * 3);
+          if (uv) uv.set(g.attributes.uv.array.subarray(0, n * 2), off * 2);
+          off += n;
+          g.dispose();
+        }
+        const geo = new THREE.BufferGeometry();
+        geo.setAttribute("position", new THREE.BufferAttribute(pos, 3));
+        geo.setAttribute("normal", new THREE.BufferAttribute(nor, 3));
+        if (uv) geo.setAttribute("uv", new THREE.BufferAttribute(uv, 2));
+        const mesh = new THREE.Mesh(geo, material);
+        mesh.castShadow = true; mesh.receiveShadow = true;
+        mesh.frustumCulled = false; // spans the whole map
+        this.scene.add(mesh);
+        for (const o of items) toRemove.push(o);
+        merged++;
+      } catch (e) {
+        console.warn("Batching skipped for one material:", e);
+      }
+    }
+    for (const o of toRemove) { if (o.parent) o.parent.remove(o); removed++; }
+    this.batchInfo = { merged, removed };
   }
   // ---- Water that moves, smoke, wind, boats, a pond, a field ----
   _buildLife() {
@@ -1918,6 +2002,7 @@ class World {
         const stalk = new THREE.Mesh(stalkGeo, stalkMat);
         stalk.position.set(-30 + i * 1.1, 0.55, -8 + j * 1.1);
         stalk.userData.phase = i * 0.6 + j * 0.3;
+        stalk.userData.dynamic = true;
         this.scene.add(stalk);
         this.wheat.push(stalk);
       }
@@ -1972,6 +2057,7 @@ class World {
     sail.position.set(0.55, 1.6, 0);
     boat.add(sail);
     boat.position.set(-30, -0.1, 0);
+    boat.userData.dynamic = true;
     this.scene.add(boat);
     this.boat = boat;
     this._boatDir = 1;
@@ -1982,7 +2068,7 @@ class World {
       const f = new THREE.Mesh(new THREE.ConeGeometry(0.12, 0.5, 5), mat(0xbfd7e0));
       f.rotation.z = -Math.PI / 2;
       f.visible = false;
-      f.userData = { t: -Math.random() * 6, x: 0 };
+      f.userData = { t: -Math.random() * 6, x: 0, dynamic: true };
       this.scene.add(f);
       this.fish.push(f);
     }
@@ -2154,8 +2240,9 @@ class World {
     const wall = new THREE.Mesh(new THREE.BoxGeometry(3.2, 2.4, 3.2), mat(COLORS.wall));
     wall.position.y = 1.2; wall.castShadow = true; wall.receiveShadow = true;
     house.add(wall);
-    const roof = new THREE.Mesh(new THREE.ConeGeometry(2.8, 1.6, 4), mat(0x8a7f70));
+    const roof = new THREE.Mesh(new THREE.ConeGeometry(2.8, 1.6, 4), mat(0x8a7f70).clone());
     roof.position.y = 3.1; roof.rotation.y = Math.PI / 4; roof.castShadow = true;
+    roof.userData.dynamic = true; // its colour changes when the job is done
     house.add(roof);
     const door = new THREE.Mesh(new THREE.BoxGeometry(0.7, 1.3, 0.1), mat(COLORS.woodDark));
     door.position.set(0, 0.65, 1.62);
@@ -2284,10 +2371,12 @@ class World {
       blades.add(holder);
     }
     blades.position.set(0, 4, 1.5);
+    blades.userData.dynamic = true;
     mill.add(blades);
     // The grindstone beside the mill. It only turns once the gears are right.
     const stone = new THREE.Mesh(new THREE.CylinderGeometry(0.9, 0.9, 0.3, 14), mat(COLORS.stone));
     stone.position.set(-3, 0.5, 1.5);
+    stone.userData.dynamic = true;
     stone.castShadow = true;
     mill.add(stone);
     const stoneBase = new THREE.Mesh(new THREE.CylinderGeometry(0.5, 0.6, 0.4, 10), mat(COLORS.woodDark));
@@ -2329,6 +2418,7 @@ class World {
     }
     sacks.position.set(0, 0, -22);
     sacks.visible = false;
+    sacks.userData.dynamic = true;
     this.scene.add(sacks);
     this.marketSacks = sacks;
 
@@ -2370,6 +2460,7 @@ class World {
       tree.add(trunk, leaves);
       tree.position.set(x, 0, z);
       tree.scale.setScalar(0.9 + Math.random() * 0.5);
+      tree.userData.dynamic = true; // it sways
       this.scene.add(tree);
       this.trees.push(tree);
       this.addCircle(x, z, 0.3);
@@ -2441,6 +2532,7 @@ class World {
         bird.add(wing);
       }
       bird.userData = {
+        dynamic: true,
         angle: Math.random() * Math.PI * 2,
         r: 6 + Math.random() * 8,
         cx: -10 + Math.random() * 20,
@@ -2706,6 +2798,7 @@ class World {
       const b = this._makeBoat(0xd97742);
       b.position.set(LAKE.cx - 6 + i * 7, -0.05, LAKE.cz + 4 + i * 3);
       b.rotation.y = i * 1.2;
+      b.userData.dynamic = true;
       this.scene.add(b); this.lakeBoats.push(b);
     }
     // Fishermen's huts along the shore.
@@ -2754,6 +2847,7 @@ class World {
       canopy.position.set(dx, 6.5, dz); canopy.scale.y = 0.6; canopy.castShadow = true; banyan.add(canopy);
     }
     banyan.position.set(-16, th, -118);
+    banyan.userData.dynamic = true; // it sways
     this.scene.add(banyan);
     this.addCircle(-16, -118, 1.9);
     this.swayers.push({ obj: banyan, phase: 1, amp: 0.012 });
@@ -2821,7 +2915,7 @@ class World {
     }
     const fountainBase = new THREE.Mesh(new THREE.CylinderGeometry(4, 4.4, 0.6, 20), mat(COLORS.stone)); fountainBase.position.set(-21, 0.55, 210); this.scene.add(fountainBase);
     const fountainWater = new THREE.Mesh(new THREE.CylinderGeometry(3.6, 3.6, 0.2, 20), new THREE.MeshStandardMaterial({ color: 0x4fa3c7, roughness: 0.3 })); fountainWater.position.set(-21, 0.9, 210); this.scene.add(fountainWater);
-    const jet = new THREE.Mesh(new THREE.CylinderGeometry(0.15, 0.5, 3, 8), new THREE.MeshStandardMaterial({ color: 0xbfe3f2, transparent: true, opacity: 0.7 })); jet.position.set(-21, 2.4, 210); this.scene.add(jet);
+    const jet = new THREE.Mesh(new THREE.CylinderGeometry(0.15, 0.5, 3, 8), new THREE.MeshStandardMaterial({ color: 0xbfe3f2, transparent: true, opacity: 0.7 })); jet.position.set(-21, 2.4, 210); jet.userData.dynamic = true; this.scene.add(jet);
     this.fountainJet = jet;
     this.addCircle(-21, 210, 4.6);
     const parkSign = makeTextSprite("Central Park", { size: 50, scale: 1.3 }); parkSign.position.set(21, 3.5, 194); this.scene.add(parkSign);
@@ -2884,6 +2978,7 @@ class World {
       const win = new THREE.Mesh(new THREE.BoxGeometry(8.5, 0.9, 2.9), mat(0x35424a)); win.position.set(k * 9.6 - 9.6, 2.2, 0); metro.add(win);
     }
     metro.position.set(C.x1, trackY + 0.3, trackZ);
+    metro.userData.dynamic = true;
     this.scene.add(metro);
     this.metro = { group: metro, x: C.x1, dir: 1, wait: 0 };
     this.mapItems.roads.push([[C.x1, trackZ], [C.x2, trackZ]]);
@@ -2899,16 +2994,17 @@ class World {
     loops.forEach((loop, li) => {
       for (let k = 0; k < 3; k++) {
         const car = makeCar(carColors[(li * 3 + k) % carColors.length]);
+        car.userData.dynamic = true;
         this.scene.add(car);
         const mover = new PathMover(car, loop.map(([x, z]) => [x + 2.5, z + 2.5]), 9 + k * 1.5, { loop: true });
         mover.i = k % loop.length; car.position.set(loop[mover.i][0] + 2.5, 0, loop[mover.i][1] + 2.5);
         this.cityMovers.push(mover);
       }
-      const auto = makeAuto(); this.scene.add(auto);
+      const auto = makeAuto(); auto.userData.dynamic = true; this.scene.add(auto);
       const am = new PathMover(auto, loop.map(([x, z]) => [x - 2.5, z - 2.5]).reverse(), 7, { loop: true });
       this.cityMovers.push(am);
     });
-    const cityBus = makeCityBus(0x2a9d8f); this.scene.add(cityBus);
+    const cityBus = makeCityBus(0x2a9d8f); cityBus.userData.dynamic = true; this.scene.add(cityBus);
     this.cityMovers.push(new PathMover(cityBus, [[-2.5, 292], [-2.5, 190], [-2.5, 160]], 8));
   }
 
@@ -3061,13 +3157,14 @@ class World {
     const seat = new THREE.Mesh(new THREE.BoxGeometry(0.9, 0.08, 0.3), mat(COLORS.wood)); seat.position.y = -2.2; swing.add(seat);
     frame.add(swing);
     frame.position.set(x, h, z); this.scene.add(frame);
+    frame.userData.dynamic = true;
     this.swing = swing;
     for (const dx of [-1.2, 1.2]) this.addCircle(x + dx, z, 0.15);
     this.addCircle(x + 5, z, 0.3);
     this.addBox(x + 10, z, 0.8, 4.2);
     // Seesaw.
     const pivot = new THREE.Mesh(new THREE.BoxGeometry(0.3, 0.6, 0.3), mat(COLORS.metal)); pivot.position.set(x + 5, h + 0.3, z); this.scene.add(pivot);
-    const plank = new THREE.Mesh(new THREE.BoxGeometry(3.6, 0.1, 0.4), mat(0xffb703)); plank.position.set(x + 5, h + 0.65, z); this.scene.add(plank);
+    const plank = new THREE.Mesh(new THREE.BoxGeometry(3.6, 0.1, 0.4), mat(0xffb703)); plank.position.set(x + 5, h + 0.65, z); plank.userData.dynamic = true; this.scene.add(plank);
     this.seesaw = plank;
     // Slide.
     const ladder = new THREE.Mesh(new THREE.BoxGeometry(0.6, 2, 0.1), mat(COLORS.metal)); ladder.position.set(x + 10, h + 1, z - 1); this.scene.add(ladder);
@@ -3152,6 +3249,7 @@ class World {
     const winStrip = new THREE.Mesh(new THREE.BoxGeometry(2.5, 0.8, 6), mat(0x35424a)); winStrip.position.y = 2.2; bus.add(winStrip);
     for (const [x, z] of [[-1.1, 2.2], [1.1, 2.2], [-1.1, -2.2], [1.1, -2.2]]) { const w = new THREE.Mesh(new THREE.CylinderGeometry(0.5, 0.5, 0.4, 10), mat(0x222222)); w.rotation.z = Math.PI / 2; w.position.set(x, 0.5, z); bus.add(w); }
     const busSign = makeTextSprite("Village Bus", { size: 48, scale: 0.7 }); busSign.position.y = 3.6; bus.add(busSign);
+    bus.userData.dynamic = true;
     this.scene.add(bus);
     this.movers.push(new PathMover(bus, [[2.2, 290], [2.2, 190], [2.2, 150], [2.2, 66], [2.2, 34]], 9));
 
@@ -3165,6 +3263,7 @@ class World {
       const cw = new THREE.Mesh(new THREE.BoxGeometry(5.5, 0.7, 2.5), mat(0xdfe6ea)); cw.position.set(-7 * k, 2.0, 0); train.add(cw);
     }
     for (let k = 0; k <= 2; k++) for (const dx of [-2, 2]) for (const dz of [-1.1, 1.1]) { const w = new THREE.Mesh(new THREE.CylinderGeometry(0.45, 0.45, 0.3, 10), mat(0x222222)); w.rotation.x = Math.PI / 2; w.position.set(-7 * k + dx, 0.45, dz); train.add(w); }
+    train.userData.dynamic = true;
     this.scene.add(train);
     this.train = train;
     this._trainX = -190;
@@ -3175,6 +3274,7 @@ class World {
     const tb = new THREE.Mesh(new THREE.BoxGeometry(1.4, 1, 2.4), mat(0x2a9d8f)); tb.position.y = 1.1; tractor.add(tb);
     const seat = new THREE.Mesh(new THREE.BoxGeometry(1.2, 1, 1), mat(0x1d3557)); seat.position.set(0, 1.9, -0.5); tractor.add(seat);
     for (const [x, z, r] of [[-0.9, 0.8, 0.4], [0.9, 0.8, 0.4], [-0.9, -0.8, 0.7], [0.9, -0.8, 0.7]]) { const w = new THREE.Mesh(new THREE.CylinderGeometry(r, r, 0.4, 10), mat(0x222222)); w.rotation.z = Math.PI / 2; w.position.set(x, r, z); tractor.add(w); }
+    tractor.userData.dynamic = true;
     this.scene.add(tractor);
     this.movers.push(new PathMover(tractor, [[101.5, -68], [101.5, 68]], 3));
   }
@@ -5938,10 +6038,6 @@ class Room {
       for (let i = 0; i < 6; i++) this._box(0.2, 0.1, 0.2, [0xff6b8a, 0xffd23f, 0xffffff][i % 3], -1 + i * 0.4, 0.65, -2.2, false); // flowers
       for (const dx of [-3.5, 3.5]) { const bell = new THREE.Mesh(new THREE.CylinderGeometry(0.2, 0.3, 0.45, 8), mat(0xffc93c)); bell.position.set(dx, 2.4, 0); this.group.add(bell); }
     }
-    // A soft light so rooms are bright even at "morning" tint.
-    const light = new THREE.PointLight(0xfff1d6, 18, 14, 2);
-    light.position.set(0, 2.8, 0);
-    this.group.add(light);
   }
 
   // Can someone stand at world (x, z) inside this room?
@@ -6262,6 +6358,8 @@ class Game {
       this._assignSituation(room.occupant);
     }
     this.world.currentRoom = room;
+    this.world.roomLight.position.set(room.x0, 2.8, room.z0);
+    this.world.roomLight.visible = true;
     this.insideDoor = door;
     this.player.group.position.copy(room.doorInside);
     this.player.group.rotation.y = Math.PI; // face into the room
@@ -6277,6 +6375,7 @@ class Game {
   _exitRoom() {
     const door = this.insideDoor;
     this.world.currentRoom = null;
+    this.world.roomLight.visible = false;
     const out = 1.6;
     const x = door.x + Math.sin(door.rot) * out, z = door.z + Math.cos(door.rot) * out;
     this.player.group.position.set(x, heightAt(x, z), z);
@@ -6490,8 +6589,17 @@ function boot() {
       unlockAudio(); // first tap: browsers allow sound from here on
       startScreen.hidden = true;
       hud.hidden = false;
-      // Create the game. (One game per page load.)
-      window.__game = new Game(profile);
+      // Create the game. (One game per page load.) If anything fails, say so
+      // on screen instead of leaving a blank page.
+      try {
+        window.__game = new Game(profile);
+      } catch (err) {
+        console.error(err);
+        hud.hidden = true;
+        loadingScreen.hidden = false;
+        const t = loadingScreen.querySelector(".loading-text");
+        if (t) t.textContent = "The game could not start: " + (err && err.message ? err.message : err) + ". Please tell the maker this message.";
+      }
     });
   });
 }

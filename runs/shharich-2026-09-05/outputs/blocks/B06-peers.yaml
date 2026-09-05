@@ -1,0 +1,52 @@
+stage: B06-peers
+company: "SHHARICH"
+run_date: "2026-09-05"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "peer-concalls: AKSHARCHEM file is an Aug-2019 investor presentation, not a transcript; effective peer transcript coverage 2 of 3 peers (8 transcripts); BODALCHEM newest transcript Aug-2025 (Q1 FY26), about 13 months before run date"
+  - "concalls: main company holds no earnings calls (NO-CONCALL MODE); claims verified come from its FY26 annual report"
+  - "results: no quarterly or annual results filing for the main company"
+  - "announcements: no Reg 30 filings for the main company"
+flags:
+  - "Q2 CONTRADICTED: SHHARICH AR's Chinese-competition/anti-dumping risk framing runs opposite to peer evidence (China's export competitiveness eroding, trade flow reversing toward India); priority item for synthesis"
+  - "Q9 load-bearing: peer evidence shows sector profitability turned explicitly price-led with volume sacrificed in the exact window covering SHHARICH's Q1 FY27 inflection; does not prove but removes benefit of the doubt on the volume-vs-spread question central to this run (v3.7 Amendment 17)"
+peers_provided: 9
+verified:
+  - {claim: "H-Acid/Vinyl Sulphone/K-Acid price trend through FY26 into Q1 FY27 (stable ~Rs 500-530/kg through most of FY26, then +40-45% spike Mar-Aug 2026)", peers: ["BODALCHEM", "SHREEPUSHK"], anchor_count: 8}
+  - {claim: "Sulphur/sulphuric-acid/oleum raw-material cost spike (2x-4x) concentrated in H2 FY26 into Q1 FY27, driven by a West Asia conflict-linked shortage", peers: ["BODALCHEM", "SHREEPUSHK"], anchor_count: 7}
+  - {claim: "FY26/Q1 FY27 sector profitability regime split: volume-led through mid-2025, then explicitly price-led with volume sacrificed from H2 FY26 into Q1 FY27", peers: ["BODALCHEM", "SHREEPUSHK"], anchor_count: 6}
+partially_verified:
+  - {claim: "Industry capacity/utilization: tight for the largest H-Acid/Vinyl Sulphone maker (~90%), but headroom (65%) at the other named peer's broader chemicals segment; no overcapacity found", peers: ["BODALCHEM", "SHREEPUSHK"]}
+  - {claim: "Peer EBITDA margin range under raw-material pressure, direction matches SHHARICH but both peers sit well above SHHARICH's 5.31-8.13% band", peers: ["BODALCHEM", "SHREEPUSHK"]}
+  - {claim: "Promoter-only preferential capital funding expansion is a recognisable sector pattern (SHREEPUSHK, three rounds) but not universal (BODALCHEM avoided/cancelled one); discount-to-CMP and timeline terms unverifiable", peers: ["SHREEPUSHK", "BODALCHEM"]}
+contradicted:
+  - {claim: "SHHARICH AR's generic Chinese price-competition and anti-dumping-duty threat framing", contradicting_peer: "SHREEPUSHK", quote_anchor: "SHREEPUSHK, Q3 FY26 call (12-Feb-2026), Punit Makharia, p.7-8: China VAT refund withdrawal makes Chinese exports non-competitive; India net-exporting H-Acid to China since Jun/Jul 2025; no anti-dumping duty on H-Acid/dye intermediates found in any peer transcript"}
+unverifiable:
+  - {claim: "Peer export-mix step-change comparable to SHHARICH's 0% to 46.4% FY26 jump", peers_checked: ["BODALCHEM", "SHREEPUSHK"]}
+  - {claim: "Peer working-capital days (receivable/payable/inventory) for H-Acid converters", peers_checked: ["BODALCHEM", "SHREEPUSHK"]}
+  - {claim: "Peer ZLD/environmental compliance cost trend in rupee terms", peers_checked: ["BODALCHEM", "SHREEPUSHK"]}
+peer_coverage_map:
+  - {peer: "BODALCHEM", quarter: "Q2 FY25 (18-Nov-2024)", usage: "SUBSTANTIVE", contribution: "First H-Acid/Vinyl Sulphone Rs/kg data point; volume-led recovery narrative"}
+  - {peer: "BODALCHEM", quarter: "Q3 FY25 (17-Feb-2025)", usage: "SUBSTANTIVE", contribution: "Raw-material basket named; competitors named (incl. AksharChem, Shree Pushkar); ZLD framed as solved; cancelled warrant deal; demand-normalization timing"}
+  - {peer: "BODALCHEM", quarter: "Q4 FY25 (31-May-2025)", usage: "SUBSTANTIVE", contribution: "Sulphur/sulphuric-acid price trend with numbers; explicit no-major-capex, deleveraging stance"}
+  - {peer: "BODALCHEM", quarter: "Q1 FY26 (14-Aug-2025)", usage: "SUBSTANTIVE", contribution: "H-Acid flat QoQ; export mix 22%; sulphur/sulphuric flat; reiterated no-capex stance (newest BODALCHEM data point, cannot reach H2 FY26/Q1 FY27)"}
+  - {peer: "SHREEPUSHK", quarter: "Q2 FY26 (10-Nov-2025)", usage: "SUBSTANTIVE", contribution: "Promoter Rs 30cr preferential disclosed; chemicals/fertiliser utilization 65%/70%; export-led sales mix statement; ten-year promoter-dilution pattern"}
+  - {peer: "SHREEPUSHK", quarter: "Q3 FY26 (12-Feb-2026)", usage: "SUBSTANTIVE", contribution: "Sulphur cost spike with margin mechanics; China VAT-refund withdrawal and reversed H-Acid trade flow; Bangladesh risk quantified; third preferential allotment confirmed"}
+  - {peer: "SHREEPUSHK", quarter: "Q4 FY26 (19-May-2026)", usage: "SUBSTANTIVE", contribution: "Most load-bearing data point: explicit H-Acid/Vinyl Sulphone price spike; ammonia/sulphur ~3x cost shock; deliberate volume-for-price trade-off, Kharif season foregone"}
+  - {peer: "SHREEPUSHK", quarter: "Q1 FY27 (13-Aug-2026)", usage: "SUBSTANTIVE", contribution: "Only peer document covering Apr-Jun 2026: K-Acid price rise, China orders returning; chemical volume -38.6% YoY vs revenue +17.1% YoY, explicit price-led framing; WC mechanism"}
+  - {peer: "AKSHARCHEM", quarter: "N/A (Aug-2019 investor presentation)", usage: "UNUSED", contribution: "Mislabeled file, not a transcript; seven years stale; no fact used in any verdict"}
+industry_cross_read:
+  demand: "Two-phase: organic, volume-led demand recovery through roughly mid-2025, followed by a geopolitical raw-material cost shock (West Asia conflict) from Feb-Mar 2026 that suppresses volume and pushes prices, not demand-pull growth"
+  pricing_inputs: "H-Acid/Vinyl Sulphone/K-Acid prices rose ~40-45% Feb-Aug 2026 on a 2x-4x sulphur/ammonia cost spike, with a documented lag between input-cost rise and finished-good price catch-up; matches the shape of SHHARICH's margin-pressure narrative but not necessarily its full-year timing"
+  capex_cycle: "Not an industry-wide capacity race; a company-specific split. SHREEPUSHK is the aggressive, self-funded, promoter-backed expander (three capex rounds, near-zero net debt); BODALCHEM is deleveraging and explicitly ruling out major capex for 4-6 quarters after its own leveraged benzene-derivatives project underdelivered. SHHARICH's promoter-warrant-funded, low-leverage structure sits closer to the SHREEPUSHK pattern."
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "Dated, quantified sulphur/ammonia raw-material shock tied to a specific geopolitical trigger (SHREEPUSHK, Q4 FY26 and Q1 FY27 calls), versus SHHARICH's unquantified 'increase in Raw Material Price'"
+  - "Advance-payment-input/credit-sale-output working-capital mismatch that intensifies when input prices spike (SHREEPUSHK, Q1 FY27 call, Punit Makharia, p.12)"
+  - "China's export competitiveness eroding and trade flow reversing toward India (SHREEPUSHK, Q3 FY26 call) — opposite of SHHARICH's stated Chinese-competition risk"
+  - "Bangladesh political instability and its quantified (~7-8% of revenue) impact on textile-linked export demand (SHREEPUSHK, Q3 FY26 and Q4 FY26 calls)"
+  - "Electricity/grid-connection delay as a concrete capacity-expansion execution risk, repeatedly pushing back commissioning across three consecutive calls (SHREEPUSHK)"
+  - "Overseas-subsidiary currency/hyperinflation accounting drag, quantified every quarter (BODALCHEM's Turkey subsidiary, AS 29)"
+net_narrative_effect: "complicates"
+analyst_note: "The two peer sets are temporally complementary rather than overlapping: BODALCHEM covers the volume-led recovery phase through Q1 FY26 (Apr-Jun 2025), SHREEPUSHK alone covers the price-led cost-shock phase from Q3 FY26 through Q1 FY27 that matters most for SHHARICH's own inflection. Treat Q9's verdict as the most decision-relevant finding in this stage: it does not prove SHHARICH's Q1 FY27 print was spread-driven, but it is the strongest available contemporaneous evidence pointing that way, and it should weigh directly on whether stage 11/FTTCP treats SHHARICH's spot-year margin as converter-cyclical (v3.7 Amendment 17) rather than as evidence of a durable volume-led transition."

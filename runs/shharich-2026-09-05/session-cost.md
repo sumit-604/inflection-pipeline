@@ -16,3 +16,4 @@ wall recorded). Stage 0 was orchestrator-run (no subagent row).
 | 5 | concall (no-concall mode) | sonnet | default | - | - | 177190 | 640s | 1 |
 | 6 | peer-verification | sonnet | default | - | - | n/a (HTTP 429 session limit mid-run; partial draft, no block; discarded) | ~15m | 1 |
 | 7 | emerging-moat | sonnet | default | - | - | n/a (HTTP 429 session limit on final reply; report + block complete on disk, accepted) | ~15m | 1 |
+| 6 | peer-verification | sonnet | default | - | - | 215760 | 513s | 2 |

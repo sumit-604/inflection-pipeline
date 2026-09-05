@@ -1,0 +1,35 @@
+stage: B02-notes-pass1
+company: "SHHARICH"
+run_date: "2026-09-05"
+model: claude-sonnet-5
+status: complete
+pass: 1
+input_gaps:
+  - "results: no quarterly or annual results filing; Q1 FY27 (Jun-2026) results absent"
+  - "rating: no credit rating document"
+  - "announcements: no Reg 30 filings; AGM notice inside the AR is the partial substitute"
+  - "shareholding: no quarterly shareholding pattern; fallback AR pattern at 31-Mar-2026"
+  - "screening: only Data_Sheet CSVs populated (3 annual years FY24-FY26)"
+  - "concalls: declared unavailable (NO-CONCALL MODE); not a gap"
+  - "prospectus: not expected (listed 1987); not a gap"
+top_findings:
+  - {rank: 1, finding: "Promoter-family cash extraction (mgmt remuneration + relatives salary + rent = Rs 596.92 lakh) exceeds standalone PBT (Rs 529.59 lakh) at 112.7%, up from 84.9% in FY25", note_ref: "Note 35.7, AR p.124-129", rating: "RED", why: "Nearly all pre-tax profit routed to promoter family before minority shareholders"}
+  - {rank: 2, finding: "Export revenue Rs 0 (FY25) to Rs 8,554.32 lakh / 46.4% of revenue (FY26), unexplained, contradicts risk note's 'no major forex exposure, no hedging' claim", note_ref: "Note 35.9 p.130 vs Note 35.13 p.129", rating: "RED", why: "Structural shift with apparently unhedged live FX exposure the company's own note denies"}
+  - {rank: 3, finding: "FY26 revenue growth (+30.7%) mostly a new c.1.03% margin trading line (Rs 3,349.83 lakh); Note 35.2 mislabels it as manufactured H-Acid, masking that organic manufacturing growth was only c.4.8%", note_ref: "Notes 27/30 p.119,123; Note 35.2 p.126", rating: "RED", why: "Tests the pipeline's core volume-vs-spread thesis question directly"}
+  - {rank: 4, finding: "Related-party purchases from Shubhalakshmi Polyesters Ltd (also a CCD subscriber) were Rs 813.73 lakh FY26 (4.4% of revenue) and Rs 1,730.56 lakh FY25 (20.8% of purchases)", note_ref: "Note 35.7 p.129", rating: "RED", why: "Two-way related-party dependency, no arm's-length benchmarking disclosed"}
+  - {rank: 5, finding: "Rs 612.21 lakh CCDs pending conversion, all held by Shubhalakshmi Polyesters Ltd, convertible at Rs 79/share vs CMP Rs 248 (c.14% further dilution to one promoter entity)", note_ref: "Note 16 p.119-120; Note 35.24 p.138", rating: "YELLOW", why: "Concentrated future dilution already visible in the basic-vs-diluted EPS gap"}
+  - {rank: 6, finding: "Five cross-reference/numbering errors plus a factual ROE transcription error (FY25 shown as 2.48 vs correct 0.16) and an incorrect DSCR 'reason' narrative contradicting the company's own borrowings figures", note_ref: "Notes 1(k)/1(m), 7, 22.1, 35.19, 35.22", rating: "RED", why: "Pattern of low drafting/QC rigor across audited statements"}
+  - {rank: 7, finding: "Standalone risk/fair-value notes (35.13/35.15/35.16) copy-pasted from consolidated template, refer to 'the Group' and 'consolidated financial statements' inside standalone notes", note_ref: "Notes 35.13/35.15/35.16 standalone p.129,133-134", rating: "YELLOW", why: "Corroborates the QC pattern in finding 6"}
+  - {rank: 8, finding: "OCF was Rs -147.99 lakh in FY25 despite PAT Rs 512.40 lakh, swung to Rs 1,105.64 lakh in FY26 substantially on a Rs 379.71 lakh one-year receivables release; current ratio stayed below 1.0 throughout", note_ref: "Cash Flow Statement p.107; Notes 8,9,22,35.22", rating: "YELLOW", why: "Cash generation quality not yet proven structural"}
+  - {rank: 9, finding: "Gratuity plan only c.9% funded, net liability up 49.8% YoY, new unexplained Rs 27.26 lakh Past Service Cost first appears in FY26", note_ref: "Note 35.11 p.130-131", rating: "YELLOW", why: "Growing unfunded liability with no narrative for the cost spike"}
+  - {rank: 10, finding: "Investment in Subsidiary is one undifferentiated Rs 1,005.00 lakh figure despite two named subsidiaries; no note discloses any loan/ICD to the subsidiary despite Board's Report/CARO referencing one", note_ref: "Note 3 p.116; Note 35.7 p.124", rating: "YELLOW", why: "Cannot trace fund allocation between subsidiaries or verify the referenced intercompany loan from the Notes alone"}
+red_flags_preliminary:
+  - "Promoter-family compensation exceeds full-year PBT (112.7% in FY26)"
+  - "Export revenue step-change (0 to 46% of revenue) contradicts the forex risk note"
+  - "Headline revenue growth is substantially thin-margin trading, mislabelled as manufactured in Note 35.2"
+  - "Related-party purchase concentration from a dual supplier/CCD-investor entity"
+  - "Factual ROE transcription error and incorrect DSCR reason narrative in Note 35.22"
+receivables_trend: "improving: >6 months receivables fell from Rs 164.82 lakh (5.9% of total) to Rs 134.78 lakh (5.5% of total); total receivables fell 13.5% while revenue rose 30.6% (Note 9 p.117, Note 35.17 p.135); caveat: FY25's 1-2yr bucket (Rs 157.37 lakh) appears to have aged into FY26's 2-3yr bucket (Rs 121.02 lakh) rather than being collected"
+going_concern_language: "NONE beyond standard boilerplate (Note 1(a)(ii): financial statements prepared on accrual and going concern basis; CARO clause xix: auditor found no material uncertainty on ability to meet liabilities within one year)"
+notes_read_confirmation: "Note 1 through Note 35.25 read in full, standalone (AR pp.110-138) and consolidated (AR pp.149-177)"
+analyst_note: "Two findings are unusually load-bearing for the pipeline's own thesis question (company memory: 'Q1 FY27 may be spread, not volume'): the FY26 Notes already show organic manufactured H-Acid grew only c.4.8% while headline revenue grew 30.7%, with the gap explained by a brand-new, near-zero-margin trading line; and export revenue went from zero to 46% of sales with no explanation, contradicting the forex risk note. Both predate Q1 FY27 and should anchor Section 1B/FTTCP method selection (Amendment 17 converter treatment) rather than being treated as new information."

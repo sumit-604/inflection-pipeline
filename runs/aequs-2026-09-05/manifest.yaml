@@ -1,0 +1,9 @@
+company: Aequs Ltd
+ticker: AEQUS
+cmp: 242.0
+market_cap_cr: 16242.0
+run_date: 2026-09-05
+run_type: full
+concalls_available: true
+sector_cap_row: "Defence / strategic"
+notes: "Collected from screener.in by collect_to_repo.py v3. Sector row corrected from auto-picked 'Pharma / CDMO' to 'Defence / strategic' per step1-business-brief.md (certified commercial-aerospace precision components for global OEMs)."

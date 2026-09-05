@@ -14,3 +14,6 @@ not. Stage 0 ran inline in the orchestrator session (no subagent).
 | 5 | stage-03-ardeep | sonnet | n/a | n/a | n/a | 383079 | 19m43s | 1 |
 | 6 | stage-04-bizmodel | sonnet | n/a | n/a | n/a | 190888 | 10m58s | 1 |
 | 7 | stage-05-concall | sonnet | n/a | n/a | n/a | 192647 | 13m16s | 1 |
+| 8 | stage-06-peers | sonnet | n/a | n/a | n/a | n/a | ~11m, cut off HTTP 429 session limit ~16:52 UTC (report on disk, YAML block missing) | 1 |
+| 9 | stage-07-emoat | sonnet | n/a | n/a | n/a | 60870 | 0m46s, cut off HTTP 429 (no report written) | 1 |
+| 10 | stage-08-promoter | sonnet | n/a | n/a | n/a | n/a | ~22m, HTTP 429 after report + valid block were written to disk; ACCEPTED as complete (status partial: 6 egress-blocked searches) | 1 |

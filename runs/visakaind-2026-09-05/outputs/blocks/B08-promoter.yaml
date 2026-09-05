@@ -1,0 +1,90 @@
+stage: B08-promoter
+company: "VISAKAIND"
+run_date: "2026-09-05"
+model: claude-sonnet-5
+status: partial               # 6 WebFetch attempts blocked by egress proxy (see searches_skipped)
+input_gaps:
+  - "inputs/announcements/ empty: no documented-action/exchange-filing corpus; relied on web search"
+  - "inputs/shareholding/ empty: no quarterly SEBI shareholding pattern in corpus; relied on web search"
+  - "results absent (carried from B00)"
+  - "rating rationale absent (carried from B00)"
+  - "research absent (carried from B00)"
+  - "main concalls stale, newest Q1 FY24 Aug-2023 (carried from B00)"
+  - "presentation stale (carried from B00)"
+  - "only 1 of 3 peers has transcripts (carried from B00)"
+  - "no primary ED/PMLA order located; case status as of run date is NOT FOUND (media reporting only, no chargesheet/attachment/closure confirmed)"
+  - "SEBI shareholding-pattern filings (category-level roll-forward) not directly fetchable; promoter-category reconciliation rests on search-snippet evidence, not a primary filing read"
+flags:
+  - type: FLAG-PROMOTER
+    verdict: "CONCERN"
+    top_findings:
+      - "Nov-2023 ED/IT search (FEMA/PMLA) at Visaka Industries' own Begumpet office and the Chairman's residences, over an Rs 8 Cr transfer from the Chairman's personal account to Vigilance Security Services Pvt Ltd; unresolved as of this run, no confirmed chargesheet/attachment/closure found"
+      - "Vigilance Security Services Pvt Ltd (the entity named in the ED probe) has since been deepened as a related party: disclosed as RPT from 7-Dec-2023 (16 days post-raid), extended a Rs 21.00 Cr ICD facility to Visaka in FY26 at 8% p.a. (Rs 5.25 Cr outstanding), and was formally reclassified into the SEBI ICDR promoter group in FY26 (41,69,120 shares, 4.83%) -- an amount that reconciles almost exactly with the AR's unexplained +4.82pp promoter-category jump (48.42% to 53.24%)"
+      - "FY26 statutory Rule 5(1) remuneration annexure, signed by the Chairman, states 'Nil' / 'no increase' in Executive Director remuneration, while the AR's own Note 40 shows the MD's and JMD's remuneration rising 58% and 107% respectively, coincident with a Rs 59.70 Cr exceptional land-sale gain"
+      - "Chairman Dr. G. Vivek Venkatswamy Gaddam is concurrently a sitting Telangana Cabinet Minister for Labour, Employment Training & Factories, Mines & Geology (since 8-Jun-2025), a portfolio directly overlapping the company's own regulatory environment; undisclosed in the AR board-composition table; documented six-party-switch, 14-year political history"
+      - "Recurring same-year round-trip promoter loans to the company (Rs 13 Cr FY24, Rs 13.03 Cr FY26) with no disclosed economic rationale; Rs 7.00 Cr of ICDs to two undisclosed-related counterparties (Bhagyanagar Hotels, Galvanizz Projects) fully written off in FY26; a Rs 6.00 Cr ICD at an anomalous 18% p.a. to a football club with no disclosed business rationale"
+      - "Outside CEO hire (Abinash Mishra, strong external credentials) resigned after ~4 months citing personal reasons, during the same window as the intensified RPT activity"
+verdict: "CONCERN"
+scorecard: {clean: 2, caution: 3, red: 5}
+deal_breakers: []             # recorded, never enforced here; PMLA-cited search occurred (21-Nov-2023) but no
+                               # confirmed asset attachment found -- treat as UNRESOLVED, not cleared
+adverse_findings:
+  - {finding: "Nov-2023 ED/IT search under FEMA/PMLA at Visaka Industries' Begumpet office and Chairman's residences, over Rs 8 Cr transfer to Vigilance Security Services Pvt Ltd; unresolved", evidence_tier: "MEDIA REPORTED", source: "Deccan Chronicle, Deccan Herald, The Federal, NewsMeter, The South First, TaxScan, Siasat, IANS (cross-corroborated)", date: "2023-11-21 (reported); status as of 2026-09-05 unresolved"}
+  - {finding: "Vigilance Security Services Pvt Ltd reclassified into SEBI ICDR promoter group in FY26, holding 41,69,120 shares (4.83%), reconciling with the promoter-category jump from 48.42% to 53.24%", evidence_tier: "MEDIA/EXCHANGE REPORTED", source: "NSE corporate disclosure (nsearchives.nseindia.com, fetch blocked -- via search snippet)", date: "on/around 2026-06-09"}
+  - {finding: "Rule 5(1) statutory annexure states 'Nil' remuneration increase for MD and JMD while Note 40 shows +58% and +107% respectively", evidence_tier: "VERIFIED", source: "AR FY26 p.97 (Annexure-6) vs AR FY26 p.201 (Note 40)", date: "AR signed 2026-05-18"}
+  - {finding: "Chairman is concurrently a sitting Telangana Cabinet Minister for Labour, Employment Training & Factories, Mines & Geology, portfolio overlapping the company's regulatory environment; not disclosed in AR board bios", evidence_tier: "VERIFIED", source: "Wikipedia 'G. Vivekanand' cross-checked against Revanth Reddy ministry list", date: "in office since 2025-06-08"}
+  - {finding: "Recurring same-year round-trip promoter loans: Rs 13 Cr (FY24, Chairman + MD), Rs 13.03 Cr (FY26, Chairman alone), no disclosed rationale", evidence_tier: "VERIFIED", source: "AR FY25 p.187 and AR FY26 p.204, Note 40", date: "FY24 and FY26"}
+  - {finding: "Rs 7.00 Cr ICDs to Bhagyanagar Hotels and Galvanizz Projects Private Limited (not disclosed as related parties) fully provided for / written off in FY26", evidence_tier: "VERIFIED", source: "AR FY26 p.179 (Note 12), pp.150-151 (CARO iii)", date: "FY26"}
+  - {finding: "Rs 6.00 Cr ICD to Sreenidi-Deccan Football Club Private Limited at an anomalous 18% p.a., no disclosed business rationale; no confirmed promoter ownership link to the club established", evidence_tier: "VERIFIED (transaction) / UNVERIFIED (ownership link)", source: "AR FY26 p.179, Note 12; web search found club attributed to 'Sreenidhi Group', link to Gaddam family not confirmed", date: "FY26"}
+  - {finding: "Vigilance Security Services only disclosed as a Companies Act related party w.e.f. 7-Dec-2023, 16 days after the ED/IT raid publicly named it", evidence_tier: "VERIFIED", source: "AR FY25 Note 40 (effective-date footnote)", date: "2023-12-07"}
+  - {finding: "Outside CEO Abinash Mishra (IIT Bombay, Olin Business School, 27 yrs experience) resigned after ~4 months, 'personal reasons'", evidence_tier: "VERIFIED", source: "AR FY26 p.76 Board's Report; corroborated by MarketScreener/TradingView news", date: "2025-08-22"}
+  - {finding: "HCA arbitration self-dealing optics: Chairman was a former HCA president whose own company (Visaka) won a Rs 25.92 Cr (now ~Rs 68.73 Cr) arbitral award against HCA, upheld through the Supreme Court (6-Oct-2025); TDCA sought a BCCI probe and Chairman publicly denied misappropriation allegations", evidence_tier: "MEDIA REPORTED", source: "Telangana Today, Deccan Chronicle, scanx.trade", date: "award 2016; SC dismissal 2025-10-06"}
+  - {finding: "FPI holding fell from 0.45% (FY25) to 0.10% (FY26); institutional ownership shrinking, not entering", evidence_tier: "VERIFIED", source: "AR FY25 p.117 and AR FY26 p.132, Categories of Shareholders", date: "31-Mar-2025 vs 31-Mar-2026"}
+  - {finding: "VIL Media Private Limited (promoter-family media entity, plausibly linked to V6 News) received Rs 11.13 Cr (FY26) / Rs 11.93 Cr (FY25) in advertising fees from Visaka, no arm's-length benchmarking disclosed", evidence_tier: "VERIFIED (transaction) / UNVERIFIED (V6 News link)", source: "AR FY26 p.204, Note 40", date: "FY25 and FY26"}
+transition_evidence: []       # NONE FOUND; institutional ownership shrank (FPI 0.45%->0.10%), family footprint
+                               # expanded (new paid role for Chairman's daughter), and the ED-flagged RPT
+                               # entity's ties deepened rather than reduced -- the opposite of transition evidence
+pledge_pct_latest: 0
+pledge_trend: "stable at zero. Historical 2009 pledge (G. Vivekanand 16.76 lakh shares/10.55%; Saroja Vivekanand 1.10 lakh shares/0.69%, per Business Standard 2009) fully released; a FY26 non-encumbrance declaration by the Chief Promoter, covering nine promoter entities, confirms zero pledge as of FY26 (media-reported, scanx.trade summary, direct filing fetch blocked)"
+searches_performed:
+  - "Visaka Industries promoter shareholding pattern 2026 BSE NSE"
+  - "Visaka Industries promoter pledge shares"
+  - "Visaka Industries Arudra Roofings Private Limited"
+  - "Visaka Industries Vigilance Security Services Private Limited"
+  - "Sreenidi Deccan FC owner Gaddam Visaka"
+  - "Visaka Industries Vigilance Security Services promoter group Regulation 2(pp)"
+  - "Visaka Industries Arudra Roofings promoter group Gaddam family"
+  - "Visaka Industries Abinash Mishra CEO resigned August 2025"
+  - "Visaka Industries land sale exceptional gain FY26 crore"
+  - "Visaka Industries Vivek Venkatswamy Gaddam political FICCI CII chairman"
+  - "Visaka Industries SEBI order adjudication"
+  - "Visaka Industries Glassdoor AmbitionBox employee reviews"
+  - "Visaka Industries Joginapalli Pruthvidhar Rao COO exit"
+  - "Visaka Industries IiAS OR InGovern OR SES proxy advisory"
+  - "G Vivekanand Telangana Cabinet Minister Labour Employment Factories Mines Congress 2024"
+  - "Vivek Venkata Swamy Peddapalli MP BJP Congress switch"
+  - "G Vivekanand Chennur MLA criminal cases affidavit assets"
+  - "Vivek Venkatswamy controversy corruption land allotment Telangana"
+  - "Visaka Industries Sreenidi Deccan Football Club sponsorship Gaddam Vamsi"
+  - "V6 channel Vivek Venkatswamy ED case owner media"
+  - "Yeshwant Realtors foreign national shareholder Vigilance Security FEMA"
+  - "Gaddam Vivekanand ED case attachment PMLA 2025 2026"
+  - "Visaka Industries stock exchange disclosure IT ED raid November 2023 material event"
+  - "Gaddam Vivekanand ED case latest news 2026"
+  - "Visaka Industries asbestos health litigation NGT ban"
+  - "Visaka Industries NCLT oppression mismanagement family dispute"
+  - "Visaka Industries short seller report activist investor"
+  - "Vritika Gaddam Visaka Industries education background"
+  - "Visaka Industries CFO Shafiulla Company Secretary Ramakanth tenure years"
+  - "Supreme Court Visaka Industries 25.92 crore arbitration case ruling"
+  - "G Vivekanand HCA arbitration award misappropriation allegations reject"
+  - "ED FEMA case Gaddam Vivekanand Visaka Industries Rs 8 crore vigilance security 2023"
+searches_skipped:
+  - "WebFetch nsearchives.nseindia.com -- EGRESS_BLOCKED (NSE promoter-group disclosure primary source)"
+  - "WebFetch bsmedia.business-standard.com -- EGRESS_BLOCKED (BSE Chief Promoter declaration PDF)"
+  - "WebFetch scanx.trade -- EGRESS_BLOCKED (FY26 non-encumbrance declaration and results articles)"
+  - "WebFetch trendlyne.com -- EGRESS_BLOCKED (shareholding-pattern trend page)"
+  - "WebFetch www.screener.in -- EGRESS_BLOCKED (shareholding-pattern quarterly trend)"
+  - "WebFetch telanganatoday.com -- EGRESS_BLOCKED (Chairman's direct rebuttal statement on HCA allegation)"
+verdict_basis: "Unresolved Nov-2023 ED/IT (FEMA/PMLA) search at the company's own premises over promoter-to-Vigilance-Security-Services fund transfers, compounded by the company deepening ties with that same flagged entity in FY26 (as an 8% lender and as a newly reclassified 4.83% promoter-group member) rather than curtailing them, alongside a signed statutory annexure that misstates a 58%/107% executive remuneration increase as 'Nil'."
+analyst_note: "The ED/PMLA matter is a live, fast-moving fact pattern this container cannot verify beyond Nov-2023 media reports; no primary ED order, chargesheet, or closure was locatable, so its current status is genuinely NOT FOUND rather than resolved either way -- flag this explicitly to the operator as the top verification priority carried forward, alongside independent confirmation of the Vigilance Security Services promoter-group filing (direct NSE/BSE fetch was blocked here). The Rule 5(1) remuneration misstatement is the one finding in this report that required no web search at all -- it is a straight internal contradiction inside the FY26 AR between Annexure-6 and Note 40, and should be checked against the signed original rather than dismissed as an extraction error."

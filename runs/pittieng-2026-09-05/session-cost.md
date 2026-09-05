@@ -7,3 +7,4 @@ where it does not.
 | # | stage | model | effort | in_tok | out_tok | total_tok | wall | run# |
 |---|-------|-------|--------|--------|---------|-----------|------|------|
 | 0 | input validation + corpus audit | orchestrator (claude-fable-5-1) | n/a | n/a | n/a | n/a | ~12m | 1 |
+| 2 | notes triple-pass (pass 1) | claude-sonnet | default | n/a | n/a | 283170 | 8m31s | 1 |

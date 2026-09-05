@@ -1,0 +1,9 @@
+# RUN LOG — SHHARICH 2026-09-05, PHASE 1 (orchestrator notes, mechanical events only)
+
+- Session start: pypdf import failed (cffi backend broken, the known LESSONS.md pattern). Fixed with `pip install --force-reinstall cffi`; pypdf 6.17.0 then read all 11 input PDFs. poppler-utils absent (no pdftotext). Every PDF pre-extracted to page-marked text in `work/*.txt` (git-ignored); stages and verifiers were pointed at the .txt with the PDF as anchor of record. No PDF unreadable.
+- Spear gate: companies/SHHARICH.md absent at start; Step-1 intake step G completed under the operator standing ruling 2026-09-05 (OVERRIDE line written). See B00.
+- Empty-folder confirmation: standing answer "proceed with the gaps" applied (Step-1 autonomy contract, no operator present). Empty: results, rating, announcements, shareholding, research, presentation; prospectus not expected.
+- Stage 0: run by the orchestrator session (run-pipeline.md step 1), no subagent.
+- Stage 1: 778 s. Stage 2: pass 1 877 s, pass 2 544 s, pass 3 447 s. Stage 3: 876 s. Stage 4: 512 s. Stage 5: 640 s. Stage 8: 610 s. None exceeded 45 minutes.
+- Stage 5 (no-concall mode): the subagent returned a valid B05 block as its final reply but did not append it to outputs/reports/05-concall.md. The orchestrator appended the returned block verbatim to the report (marked "HANDOFF BLOCK", mechanical copy) and wrote outputs/blocks/B05-concall.yaml plus the two sub-blocks stage 6 and stage 7 read. No retry needed: the block was present and well-formed.
+- Stages 6 and 7 launched in parallel after stage 5 (stage 7 also after stage 1). Stage 9 follows stage 7. Verifiers follow stage 9.

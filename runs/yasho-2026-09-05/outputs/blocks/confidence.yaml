@@ -1,0 +1,9 @@
+confidence_delta:
+  numerical_acceptance: 85.7      # B12a
+  redflag_coverage: 85          # B12b (share of verifier flags caught upstream)
+  framework_adherence: 100       # B12c gate0+emoat portion (valuation half pending phase 3)
+  peer_utilisation: 90.9          # B12d
+  overall: 85              # min of the four
+  band: "75-89 normal; note specifics; no verdict downgrade"
+  valuation_framework_adherence: pending-phase-3
+  rework_triggers: none           # 0 CRITICAL source-fidelity (A re-graded); no acceptance_rate <60

@@ -19,3 +19,4 @@ Per-stage token ledger. One line per subagent run.
 | 12d | verifier-d-peers | claude-sonnet-5 | - | - | - | 67839 | 127s | 1 |
 | 12c | verifier-c-framework | claude-opus-4-8 | - | - | - | 78066 | 237s | 1 |
 | 12b | verifier-b-redflags | claude-opus-4-8 | - | - | - | 147625 | 359s | 1 |
+| 12a | verifier-a-numerical | claude-haiku-4-5 | - | - | - | 213780 | 383s | 1+2(re-grade) |

@@ -1,0 +1,83 @@
+stage: B04-bizmodel
+company: "AEQUS"
+run_date: "2026-09-05"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "prospectus (ABSENT; HIGH gap; listed 10-Dec-2025)"
+  - "results (ABSENT beyond AR and Q1 FY27 presentation)"
+  - "rating (ABSENT as a document; CARE BBB-;Stable on Rs 25 Cr bank facilities disclosed at AR p.113)"
+  - "announcements (ABSENT; no Reg 30 filing for the Safran A320-wheel agreement in corpus)"
+  - "shareholding (ABSENT as a standalone document; AR p.111 pattern only)"
+  - "research (ABSENT)"
+  - "other (ABSENT)"
+  - "screening (companion CSVs header-only; Data_Sheet populated)"
+  - "peer-concalls (DYNAMATECH single transcript Feb-2024, stale)"
+  - "manifest (no listed_date; sector_cap_row corrected by Step 1 brief to Defence / strategic)"
+  - "prior-year ARs (FY24, FY25 absent; FY24 figures on the AR p.14 Key Financial Highlights chart could not be reliably extracted this run — PDF text order is corrupted on that page and no image-render tool was available in this session; FY25/FY26 figures instead confirmed via the clean AR p.46 tables)"
+  - "FY27 capex split (~Rs 660 cr total, ~Rs 500 cr to Consumer) cited in company memory: NOT FOUND in the AR or the Q1 FY27 investor presentation text this run; check concall or a later investor-day deck"
+  - "Safran A320-wheel agreement: 15-year duration and FY28 delivery timeline cited in company memory: NOT FOUND in the AR or the Q1 FY27 investor presentation; only the fact of a new Safran Landing Systems wheel contract is confirmed (Inv. Pres. slide 7-8)"
+  - "FY27 guidance framed as 'aerospace revenue +25-30%, segment EBITDA margin above 20%, ~20% manufacturing ROCE' cited in company memory: NOT FOUND verbatim in the AR or the Q1 FY27 presentation this run; the documents instead confirm a longer-horizon FY31 Vision target (4-6x revenue, 18-22% EBITDA margin, ~20% steady-state ROCE, AR p.10; Inv. Pres. slide 6) plus near-term milestones of Consumer EBITDA breakeven by Q4 FY27 and consolidated PAT breakeven by H1 FY28 (AR p.9-10; Inv. Pres. slide 6)"
+flags:
+  - "GUIDANCE_NOT_IN_CORPUS: the specific FY27 aerospace guidance figures (+25-30% revenue, >20% segment margin, ~20% manufacturing ROCE) named in company memory could not be found in the AR or the provided investor presentation; only the FY31 Vision targets and the two breakeven milestones are confirmed"
+  - "SAFRAN_TERMS_UNCONFIRMED: 15-year tenure and FY28 delivery for the new Safran A320-wheel agreement are not in the corpus; verify via concall or Reg 30 filing before treating as load-bearing"
+  - "CONSUMER_CAPEX_SPLIT_UNCONFIRMED: the ~Rs 500 cr of ~Rs 660 cr FY27 capex said to go to Consumer is not in the AR or the presentation; verify before using in valuation"
+  - "SEGMENT_ROCE_DIVERGENCE: consolidated ROCE (1.56% FY26, AR p.46) is far below Aerospace's own segment ROCE (21.69% Q1 FY27, Inv. Pres. slide 12) because Consumer's segment ROCE is deeply negative (-24.77% Q1 FY27) and worsening; never read consolidated ROCE as a proxy for Aerospace quality"
+  - "CUSTOMER_CONCENTRATION_HIGH: top 4 customers = 58% of FY26 revenue (AR p.294), all Aerospace"
+  - "CAPITAL_ASSET_MISMATCH: Consumer holds nearly as much segment assets as Aerospace (Rs 1,286.9 cr vs Rs 1,378.3 cr, AR p.293) for one-sixth the revenue and a negative margin"
+business_type: "manufacturing"
+revenue_streams:
+  - {name: "Aerospace (engine, structures, actuation, landing systems, turnings, interiors/cargo, assemblies)", type: "Contract manufacturing - build-to-print/spec long-term program supply", pct_of_revenue: 85.0, predictability: "H"}
+  - {name: "Consumer (toys, cookware/durables, consumer electronics enclosures)", type: "Contract manufacturing - build-to-order branded consumer products", pct_of_revenue: 15.0, predictability: "M"}
+asset_intensity: "heavy"
+wc_intensity: "high"
+pricing_power: "moderate"
+cyclicality: "cyclical"
+moats_present:
+  - {moat: "Switching costs (qualification cycles, single/dual sourcing, 15-yr avg top-3 tenure)", durability: "durable"}
+  - {moat: "Regulatory/certification barrier (NADCAP, AS9100, first India Airbus/Boeing-approved surface treatment)", durability: "durable but partly JV-held, not wholly owned"}
+  - {moat: "Efficient scale (single-SEZ vertically integrated India ecosystem)", durability: "moderate, narrowing as India capacity builds"}
+  - {moat: "Cost advantage (India labour arbitrage + co-location logistics)", durability: "moderate, replicable over time"}
+valuation_methods:
+  primary: {method: "Sum-of-the-parts: segment EV/EBITDA for Aerospace + asset/replacement-cost anchor for pre-breakeven Consumer", why: "Aerospace (85% of revenue, 26.9% EBITDA margin, ~21.7% segment ROCE) and Consumer (15% of revenue, -42.5% EBITDA margin) sit at different profitability and life-cycle stages; one blended multiple hides the Aerospace engine's value and overstates Consumer's readiness (AR p.292; Inv. Pres. slide 12)"}
+  secondary: {method: "DCF to FY31 Vision-2031 targets", why: "Long qualification cycles and the multi-year capex plan make forward cash flow the right lens; management has published its own FY31 revenue/margin/ROCE targets to anchor assumptions (AR p.10; Inv. Pres. slide 6)"}
+  tertiary: {method: "Order-book-to-EV cross-check (Aerospace)", why: "USD 1,004mn order book gives an independent revenue-visibility sanity check distinct from any multiple choice (Inv. Pres. slide 7)"}
+  not_applicable:
+    - "Trailing consolidated P/E (company net-loss-making at consolidated level every disclosed year, AR p.46)"
+    - "Dividend discount model (no dividend paid or distribution policy exercised, AR p.113 area)"
+    - "PEG ratio (near-term consolidated earnings negative/volatile, denominator undefined)"
+    - "Consolidated P/B (book value freshly reset by the Dec-2025 IPO equity infusion, not yet earnings-tested)"
+    - "Consolidated EV/EBITDA (blends the profitable Aerospace engine with the loss-making Consumer build-out)"
+irrelevant_ratios:
+  - "Consolidated ROCE/ROE/net margin - blends a 26.9% EBITDA-margin Aerospace engine with a -42.5% EBITDA-margin Consumer build-out (AR p.292); track segment ROCE/EBITDA margin instead (Inv. Pres. slide 12)"
+  - "Trailing consolidated P/E - company is net-loss-making at the consolidated level (PAT -Rs 113.3 cr FY26, AR p.46); no meaningful denominator"
+  - "Headline consolidated revenue growth alone - Consumer's +84% off a small base (AR p.292) inflates the growth optic versus the margin-accretive +27% Aerospace growth that actually drives value"
+  - "Pre-IPO leverage trend - Debt-Equity FY25 0.99x was reset by the Dec-2025 IPO equity infusion (AR p.46); track the post-IPO 0.23x base and its trajectory instead"
+  - "Consolidated inventory/receivables turnover - blends a long qualification-cycle Aerospace WC rhythm with Consumer's shorter cycle; segment WC days are NOT FOUND, so track the consolidated cash-flow statement and segment revenue/EBITDA instead (AR p.231-232)"
+must_track_metrics:
+  - {metric: "Aerospace order book (USD mn, QoQ growth)", healthy: "steady sequential growth (USD 889mn 31-Mar-2026 to USD 1,004mn Q1 FY27, +13% QoQ)", red_flag: "flat or declining QoQ for 2+ quarters"}
+  - {metric: "Aerospace segment EBITDA margin", healthy: "holds at/above 26.9% FY26 (up from 19.4% FY25)", red_flag: "compresses back toward 20% or below"}
+  - {metric: "Consumer segment EBITDA margin (path to Q4 FY27 breakeven)", healthy: "loss narrowing every quarter on schedule", red_flag: "loss flat or widening"}
+  - {metric: "Operating cash flow vs capex", healthy: "CFO turns positive and gap to capex narrows", red_flag: "CFO stays deeply negative (was -Rs 98.75 cr FY26 vs capex Rs 342.6 cr) while capex continues unabated"}
+  - {metric: "Debt-Equity / Net Debt-Equity ratio", healthy: "stays near FY26 post-IPO 0.23x (AR) / trending down from Q1 FY27's 0.34x (Inv. Pres.)", red_flag: "re-leveraging materially without matching EBITDA growth"}
+unit_economics:
+  unit: "One qualified aerospace part-number/assembly shipped under a long-term OEM program (Aerospace); one branded consumer product unit shipped to a brand customer (Consumer)"
+  revenue_per_unit: "NOT FOUND - only segment revenue disclosed, not per-part/per-SKU pricing across ~5,654 aerospace SKUs (AR p.19) or consumer product lines"
+  margin_per_unit: "NOT FOUND - only segment EBITDA margin disclosed (Aerospace 26.9%, Consumer -42.5%, FY26, AR p.292)"
+  key_lever: "Capacity utilisation and fixed-cost absorption: Aerospace 62-70% and Consumer 22-23% utilised at FY26 year end (AR p.7); Q1 FY27 operational EBITDA rose 3.5x sequentially as Consumer losses narrowed on rising utilisation (Inv. Pres. slide 6), showing most incremental revenue drops through to EBITDA once volumes rise against an already-built fixed cost base"
+first_deterioration_signals:
+  - {risk: "Revenue model - customer concentration (top 4 = 58% of FY26 revenue, all Aerospace)", first_signal: "Aerospace segment revenue growth deceleration or order-book QoQ decline"}
+  - {risk: "Margin - Consumer breakeven milestone slips", first_signal: "Consumer segment EBITDA margin not narrowing quarter on quarter"}
+  - {risk: "Balance sheet - multi-year capex plan outruns the post-IPO cushion", first_signal: "Debt-Equity ratio re-leveraging while CFO stays negative"}
+  - {risk: "Execution - capacity built ahead of demand", first_signal: "Fixed asset turnover continuing to fall / utilisation % stalling"}
+  - {risk: "Structural - dependence on JV partners for critical capability (Magellan surface treatment, Aubert & Duval forging)", first_signal: "JV segment result deterioration or renegotiation of JV terms"}
+mgmt_questions:
+  - "What is the actual FY27 capex split between Aerospace and Consumer, and how much of any total figure is committed vs discretionary?"
+  - "Is the Consumer EBITDA-breakeven (Q4 FY27) and consolidated PAT-breakeven (H1 FY28) milestone still on track quarter by quarter?"
+  - "What are the commercial terms (duration, minimum volumes, cost pass-through) of the new Safran A320-wheel agreement and other Q1 FY27 Tier-1 wins?"
+  - "How much of the USD 1,004mn order book is contractually firm vs indicative, and what is the historical book-to-revenue conversion cadence?"
+  - "How will the USD 350-450mn FY27-31 capex programme be funded, and does it require further equity dilution?"
+  - "Why does Consumer segment ROCE keep worsening (-7.45% to -24.77% YoY) even as Consumer revenue nearly triples?"
+  - "Which customers sit behind the ~58-63% top-customer concentration, and are any of these programs up for re-tender soon?"
+one_line_verdict: "Profitable aerospace engine funding an unproven, capital-heavy consumer bet."
+analyst_note: "Two AR tables (p.46 Financial Overview/Key Financial Ratios and p.292-294 Note 36 segment note) double-verify the prior-stage FY26 segment PBT figures (Aerospace Rs 173.98 cr, Consumer -Rs 217.92 cr) to the rupee. But three company-memory load-bearing facts could not be confirmed in this run's corpus: the specific FY27 aerospace guidance framing (+25-30% revenue, >20% margin, ~20% manufacturing ROCE - only the FY31 Vision target and two breakeven milestones exist in the documents), the ~Rs 500/660 cr FY27 capex split, and the 15-year/FY28-delivery Safran wheel terms. Treat all three as unverified until a concall transcript or Reg 30 filing is added to the corpus. The AR p.14 Key Financial Highlights chart's FY24 figures are also not reliably extractable this run due to PDF text-order corruption and the absence of an image-render tool in this session; FY25/FY26 figures were instead sourced from the clean p.46 tables, which do not carry FY24 data."

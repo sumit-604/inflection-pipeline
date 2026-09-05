@@ -1,0 +1,71 @@
+stage: B12b
+company: "SHHARICH"
+run_date: "2026-09-05"
+model: claude-opus-4-8
+status: complete
+no_concall_mode: true
+independent_flags_found: 38
+caught: 10
+partially_caught: 7
+missed:
+  - {severity: "CRITICAL", item: "Repeated unanswered volume-versus-realisation question at SHREEPUSHK across two consecutive quarters, on the exact reconciliation B06 calls its strongest confirmation", anchor: "SHREEPUSHK Q4 FY26 call 19-May-2026, Raghav Bhutodia, internal p.8 ('we will answer this question to you through our IR'); SHREEPUSHK Q1 FY27 call 13-Aug-2026, Riddhesh Ram Gandhi, internal p.10-11 ('I fail to understand where you don't see a recovery')"}
+  - {severity: "CRITICAL", item: "Executive remuneration ceiling raised to Rs 6.60 cr per year (156% of FY26 PAT) in the same AR that skips the dividend to conserve cash; FY26 pay already Rs 370.22 lakh, 87.7% of PAT; Annexure II states there was no exceptional increase and median employee pay fell 8.34%", anchor: "AR pp.32-35 Items 7-10; AR p.51 past remuneration; AR p.59 dividend; AR p.70 Annexure II; AR p.106 PAT 422.22"}
+  - {severity: "CRITICAL", item: "Form AOC-2 declares 8 related-party contracts NOT at arm's length totalling Rs 202.70 lakh (48% of PAT) with no section 188 general-meeting resolution, against a Corporate Governance statement that there are no materially significant conflicted RPTs", anchor: "AR pp.71-72 AOC-2; AR p.89 CG other disclosures (a)"}
+  - {severity: "CRITICAL", item: "Rs 100 crore related-party ceiling sought (27.10% of turnover each) with Rs 50 crore for a counterparty whose FY26 transactions were NIL and whose turnover is NIL; the other counterparty is loss-making; 'SDPL' is used for two different companies in one AR", anchor: "AR pp.16, 37, 39, 40 Item 11 and Annexure-I; AR p.7 (Shakambhari Dyechem) versus AR p.35 (Shubhlaxmi Dyetex)"}
+  - {severity: "MAJOR", item: "Object clause widened into cranes, defence vehicles, infrastructure EPC/BOT and an investment business with no rationale, contradicting the Chairman's Message and the warrant objects in the same notice", anchor: "AR pp.17-19 Item 15; AR p.43 explanatory statement; AR p.7; AR p.43 Item 16"}
+  - {severity: "MAJOR", item: "Warrant 18-month conversion window is arithmetically incompatible with the stated 'less than 5% of post issue fully diluted share capital in any financial year' undertaking (22,85,000 of 85,97,880 = 26.58%); promoter stake goes 64.25% to 73.75%, float to 26.25%", anchor: "AR pp.44-45, p.47"}
+  - {severity: "MAJOR", item: "Corporate Governance report denies material commodity price exposure while the MD&A blames commodity prices for the margin decline and Note 35.13 says the company is affected by commodity price volatility", anchor: "AR p.89 item 14; AR p.77; AR p.76; AR p.132"}
+  - {severity: "MAJOR", item: "Reg 32(7A) footnote says net proceeds went 'towards other purposes considered expedient'; the next line declares there were no deviations; Note 35.24 gives a third version. This inverts B05's only delivery credit", anchor: "AR p.90 table; AR p.91 footnote and no-deviation line; AR p.138 Note 35.24"}
+  - {severity: "MAJOR", item: "A subsidiary became material after year-end, unnamed and unexplained, two pages after the report declares no other material changes; the CG report of the same date omits it", anchor: "AR p.60; AR p.62; AR p.90(e)"}
+  - {severity: "MAJOR", item: "AOC-1 declares 'Names of subsidiaries which are yet to commence operations - None' on the page after showing both subsidiaries at nil turnover, against the Chairman's 'near term' production claim", anchor: "AR p.75; AR p.74; AR p.7"}
+  - {severity: "MAJOR", item: "Board's Report consolidated PAT of 411.81 and TCI of 410.61 contradict the audited consolidated P&L (414.95 / 413.74); the standalone deferred tax of 107.37 was carried into the consolidated column", anchor: "AR p.59; AR p.145; AR p.147; AR p.77"}
+  - {severity: "MAJOR", item: "Note 35.22(d) shows FY25 Return on Equity as 2.48, copied from the Debt Service Coverage row above; the consolidated twin reads 0.16. B05 endorsed this row as the economically coherent explanation", anchor: "AR p.137 Note 35.22(d); AR p.176 consolidated Note 35.22(d)"}
+  - {severity: "MAJOR", item: "R&D expenditure and technology-absorption effort both reported NIL while the AR presents R&D and technological advancement as core strengths and assigns a whole-time director to R&D", anchor: "AR p.63; AR pp.5, 6, 9, 51"}
+  - {severity: "MAJOR", item: "The FY26 margin excuse omits the trading-mix effect (about a third of the 2.82pt compression) and the other-income inflation (ex other income the margin fell 7.51% to 3.66%)", anchor: "AR p.77 explanation; AR p.122 Notes 27 and 28; AR p.123 Note 30; AR p.50"}
+  - {severity: "MAJOR", item: "BODALCHEM states raw-material cost was passed through in tandem, not with a lag, and its margin expanded through the same input spike SHHARICH blames for its decline", anchor: "BODALCHEM Q4 FY25 call 29-May-2025, Mayur Padhya, internal p.9-10"}
+  - {severity: "MAJOR", item: "The sulphur and sulphuric-acid spike documented by the peers is flat through Q1 FY26 and sharp only from late Feb 2026, i.e. mostly outside SHHARICH's FY26", anchor: "BODALCHEM Q1 FY26 call 14-Aug-2025, Mayur Padhya, internal p.8; SHREEPUSHK Q3 FY26 internal p.4-5; SHREEPUSHK Q4 FY26 internal p.5"}
+  - {severity: "MAJOR", item: "SHREEPUSHK's Q3 FY26 chemical segment was volume-led with realisations down 21% (volume +75.6% YoY), the opposite of the price-led regime B06 dates to that quarter", anchor: "SHREEPUSHK Q3 FY26 call 12-Feb-2026, Deepak Beriwala internal p.3 and Harshil Solanki internal p.8"}
+  - {severity: "MAJOR", item: "Peer names a 7,000-8,000 tonne India-to-China H-Acid export flow beginning Jun/Jul 2025, a sector explanation for SHHARICH's nil-to-Rs 8,554 lakh export step-change that B06 graded UNVERIFIABLE and called an informative silence", anchor: "SHREEPUSHK Q3 FY26 call 12-Feb-2026, Punit Makharia, internal p.7; AR p.130 Note 35.9"}
+  - {severity: "MAJOR", item: "Peer is commissioning 72,000 MTPA of additional chemical capacity, about 2x its current chemical volume, plus a 240,000 t acid complex, into the same price window; B06 concluded no peer supports an overcapacity narrative", anchor: "SHREEPUSHK Q1 FY27 call 13-Aug-2026, Punit Makharia, internal p.2-3 and p.12; SHREEPUSHK Q2 FY26 call, internal p.13"}
+  - {severity: "MAJOR", item: "Combined AR and peer inference: Rs 3,298.68 lakh of H-Acid bought in with nil FX outgo, resold at a 1.03% spread, in the year exports went from nil to Rs 8,554.32 lakh, against peer utilisation near 90% and a documented China pull", anchor: "AR p.123 Note 30; AR p.130 Note 35.9; AR p.63; AR p.10; BODALCHEM Q3 FY25 internal p.7; SHREEPUSHK Q3 FY26 internal p.7"}
+  - {severity: "MINOR", item: "The two adverse ratio moves (Operating Profit Margin, Net Profit Margin) are the only declines printed without a minus sign in a column headed 'increase (decrease)'; the MD&A's Operating Profit Margin is never reconciled to the same AR's EBITDA-to-turnover figure", anchor: "AR p.77; AR p.50"}
+pipeline_flags_not_supported:
+  - "B06 Part 2B: 'a documented lag between input cost rise and finished-good price catch-up (both peers describe this lag independently)'. BODALCHEM states the opposite: pass-through 'is usually in the tandem with sulfur' (Q4 FY25 call, Mayur Padhya, internal p.9-10). Only SHREEPUSHK describes a lag, and only for the fertiliser leg."
+  - "B06 Q3 net read: 'nothing in the peer set corroborates an industry-wide export-mix shock of this magnitude... This is an informative silence.' Contradicted by B06's own Q2 evidence: SHREEPUSHK names a 7,000-8,000 tonne India-to-China H-Acid flow from Jun/Jul 2025 (Q3 FY26 call, Punit Makharia, internal p.7), the same product and the same window as SHHARICH's export step-change."
+promise_delivery_spot_checks: {checked: 5, confirmed: 4, wrong: 1}
+credibility_grade_concur: "concur with D. The independent read finds more contradictions between management's words and its own numbers than B05 found, and B05's single delivery credit is undercut by the AR's own Reg 32(7A) footnote; D is the floor of the NO-CONCALL scale so the grade cannot move lower."
+findings:
+  - {severity: "CRITICAL", location: "B06 Parts 1 Q9 and 4, peer transcripts", issue: "Missed repeated evasion across two consecutive SHREEPUSHK quarters on the volume-versus-realisation reconciliation that B06 calls its single strongest independent confirmation"}
+  - {severity: "CRITICAL", location: "B05 Sections 2A, 2C, 4C and red_flags", issue: "Missed the governance-extraction cluster: remuneration ceiling to 156% of PAT beside a no-dividend rationale, Rs 202.70 lakh of declared non-arm's-length family payments, and a Rs 100 cr RPT ceiling half of which is for a nil-transaction counterparty"}
+  - {severity: "MAJOR", location: "B05 Section 1A and guidance", issue: "AGM Item 15 object-clause alteration into cranes, defence vehicles, infrastructure EPC and investments is absent from the report"}
+  - {severity: "MAJOR", location: "B05 Section 1A trigger 2 and guidance", issue: "Warrant terms not examined: the 18-month window and the 5%-per-financial-year cap cannot both hold, and promoter holding rises to 73.75%"}
+  - {severity: "MAJOR", location: "B05 Section 2D", issue: "Corporate Governance p.89 commodity-price-risk denial missed; it contradicts the MD&A's own raw-material excuse"}
+  - {severity: "MAJOR", location: "B05 promise_delivery row 1 and credibility_basis", issue: "The AR's own footnote says the proceeds went to other purposes; the Delivered verdict and the delivery credit do not survive it"}
+  - {severity: "MAJOR", location: "B05 Section 2D", issue: "Post-year-end material subsidiary declared without name, date or explanation, against a no-material-changes statement two pages earlier"}
+  - {severity: "MAJOR", location: "B05 promise_delivery row 4", issue: "AOC-1 p.75 'yet to commence operations - None' contradicts the same statement's nil turnover and the Chairman's near-term claim"}
+  - {severity: "MAJOR", location: "B05 Section 2A and flags", issue: "Board's Report consolidated PAT and TCI disagree with the audited consolidated accounts"}
+  - {severity: "MAJOR", location: "B05 Section 2A row 6 and flags", issue: "Note 35.22(d) FY25 ROE value is wrong; B05 endorsed the row as economically coherent"}
+  - {severity: "MAJOR", location: "B05 Section 2D and 4C", issue: "R&D and technology absorption reported NIL against R&D presented as a core strength; rung-relevant and unflagged"}
+  - {severity: "MAJOR", location: "B05 Section 2B", issue: "Margin excuse never decomposed: the trading mix explains about a third of the compression and other income flatters the reported EBITDA margin"}
+  - {severity: "MAJOR", location: "B06 Part 2B", issue: "'Both peers describe this lag independently' is not supported; BODALCHEM says pass-through is in tandem"}
+  - {severity: "MAJOR", location: "B06 Q4 net read", issue: "Cost shock dated to H2 FY26; BODALCHEM shows the sulphur chain flat through Q1 FY26 and SHREEPUSHK dates the sharp leg to late Feb 2026"}
+  - {severity: "MAJOR", location: "B06 Q9 net read", issue: "Regime flip dated to Q3 FY26; that quarter was volume-led at the peer with realisations down 21%"}
+  - {severity: "MAJOR", location: "B06 Q3 verdict and net read", issue: "UNVERIFIABLE and 'informative silence' contradicted by B06's own Q2 evidence of a 7,000-8,000 t India-to-China H-Acid flow"}
+  - {severity: "MAJOR", location: "B06 Q5 net read", issue: "'No peer supports an overcapacity narrative' understates a disclosed 72,000 MTPA chemical capacity addition"}
+  - {severity: "MAJOR", location: "B05 Section 2D and B06 Part 2", issue: "Neither report joins the bought-in H-Acid, the nil FX outgo and the peer China pull into the capacity-constrained export-fill reading"}
+  - {severity: "MAJOR", location: "B05 Section 2D and flags", issue: "Schedule V financial table reports export performance as nil for FY26 against Rs 8,554.31 lakh of FX earnings in the same AR"}
+  - {severity: "MAJOR", location: "B05 Sections 2C, 2D and red_flags", issue: "The 270 tonnes capacity figure carries no unit of time; B05 quoted it as usable, which is what makes utilisation uncomputable"}
+  - {severity: "MAJOR", location: "B05 Section 2B and flags", issue: "Chairman attributes 31% revenue growth to demand for the company's products; 77% of the increase is bought-in goods at a 1.03% spread"}
+  - {severity: "MAJOR", location: "B05 Section 2A row 7 and guidance", issue: "The Rs 10 crore profit expectation is never set against the Q1 FY27 print it post-dates, where PAT already exceeded all of FY26"}
+  - {severity: "MINOR", location: "B05 Section 2B", issue: "Unsigned adverse percentages and an unreconciled Operating Profit Margin in the MD&A ratio table not flagged"}
+  - {severity: "MINOR", location: "B05 Section 2A row 5", issue: "Interest Coverage versus Debt Service Coverage mislabel acknowledged in passing but not flagged as a finding"}
+  - {severity: "MINOR", location: "B05 anchors, three occurrences", issue: "Note 35.22 cited as p.134; it is PDF p.137 (printed page 134). Mixed anchoring convention against B05's own declared PDF page index. Verifier A owns the source-fidelity call"}
+  - {severity: "MINOR", location: "B05 promise_delivery row 3 and guidance", issue: "No-dividend statement cited as p.56; it is PDF p.59 (printed page 56). Same mixed convention"}
+  - {severity: "MINOR", location: "B05 red_flags", issue: "Warrant pricing at Rs 176.10 against a CMP of Rs 247.65 appears only in peer_questions, never in red_flags"}
+  - {severity: "MINOR", location: "AR p.70 versus pp.12 and 61", issue: "Company Secretary appointment date given as August 13, 2026 in Annexure II and as 13.08.2025 elsewhere"}
+  - {severity: "MINOR", location: "AR p.107", issue: "Standalone cash-flow line labelled 'Cash Outflow from Financial Activities' for a net inflow of Rs 829.21 lakh"}
+  - {severity: "MINOR", location: "B05 Section 2A and 4A", issue: "The second wholly owned subsidiary, Shakambhari Chemtech Private Limited, is never mentioned"}
+critical_count: 2
+major_count: 20
+minor_count: 8
+acceptance_rate: 26

@@ -1,0 +1,38 @@
+stage: B12c
+company: "SHHARICH"
+run_date: "2026-09-05"
+model: claude-opus-4-8
+status: complete
+gate0:
+  rules_checked: 64
+  fails:
+    - "E2 promoter-holding change over 3 years scored 5 on a 1-year proxy; Gate 0 rule 5 prescribes N/A and 0. Recomputed E2=0, Block E=9/20, Core=51/100. Classification unchanged (AVERAGE band, AVOID after history downgrade). MAJOR"
+    - "M5 scored 0 without the mandated PEER DATA NEEDED mark, with company-memory peer names as the stated basis; literal read of the provided 4-company set gives M5=1, moat 18/60, grand total 74, classification unchanged. MINOR"
+    - "Gate 0 rule 4 anchors: Block F derived inputs unanchored (net block Rs 20.92 cr; operating EBITDA margin series 2.71/7.49/3.57; GM proxy 31.76%). MINOR"
+    - "Output contract: mandated dashboard element 'moat profile bars' absent, table substituted. MINOR"
+    - "Cross-artifact consistency: FY26 current ratio 0.95 rising (B01, AR p.176) contradicts 0.81 falling (B07, MD&A p.77); FY26/FY25 EBITDA 9.70/11.45 cr (B01, claimed exact) contradicts 980.64/1,147.66 lakh (B07). Referred to Verifier A. No score or classification change under either reading. MINOR"
+emoat:
+  rules_checked: 67
+  fails:
+    - "Section 2C prescribed arithmetic (capex under execution x historical FAT) not shown though both inputs exist (CWIP Rs 11.30 cr x FAT 8.82x = about Rs 99.7 cr, about +54% of FY26 revenue); capex_embedded_growth_pct emitted as the string 'NOT FOUND' in a numeric field. Maker cites an orchestrator-injected NOT FOUND rule not in my rule sources. UNRESOLVED, for orchestrator adjudication. MINOR"
+    - "catalysts_12m carries two 12-24m rows and one 12-18m row in a 12-month field that feeds Pillar 3 catalyst proximity; each row states its own window. MINOR"
+    - "Stage 7 rule 3 anchors: the I1 remuneration-annexure evidence statement carries no page anchor; every other evidence item in the scan is anchored. MINOR"
+valuation: {rules_checked: 0, fails: ["pending phase 3"]}
+business_understanding_narrative: {present: false, five_questions_answered: false, prose_only: false, section6_candidates_named: 0, valuation_vocab_leak: false, fails: ["pending phase 3"]}
+recomputed_destination_pe: ""
+recomputed_decision: ""
+findings:
+  - {severity: "MAJOR", location: "B01 Block E, E2", claimed: "E2 = 5 on a 1-year promoter-holding change of +5.04pp", rule: "Gate 0 rule 5, unavailable data point is N/A and scores 0", recomputed: "E2 = 0, Block E = 9/20, Core = 51/100, grand total 68; classification AVOID unchanged", note: "Metric window is hard-coded at 3 years; the corpus holds 1 year. The same maker applied the N/A rule correctly to E3 in the same block."}
+  - {severity: "MINOR", location: "B01 Block F, M5", claimed: "M5 = 0 justified by company-memory peer names", rule: "Block F peer-data rule, score 0 and mark PEER DATA NEEDED", recomputed: "literal read on the provided set gives M5 = 1, moat 18/60, grand total 74; moat_class STRONG and classification unchanged", note: "Score 0 is the framework's prescribed value; the mandated mark is missing and the basis is unanchored memory."}
+  - {severity: "MINOR", location: "B01 Block F preamble and M3", claimed: "net block Rs 20.92 cr; margins 2.71/7.49/3.57; GM proxy 31.76%", rule: "Gate 0 rule 4, mandatory source anchors", recomputed: "no score change", note: "Source class given instead of a page or line; these inputs drive M1, M2, M3, M9."}
+  - {severity: "MINOR", location: "B01 output format", claimed: "moat scoring presented as a table", rule: "Gate 0 output contract, dashboard elements", recomputed: "presentational only", note: "Moat profile bars absent; every other mandated element present."}
+  - {severity: "MINOR", location: "B01 Block D, D1", claimed: "EBITDA Rs 9.70 cr includes Other Income Rs 3.13 cr", rule: "observation, framework defines no EBITDA basis", recomputed: "strict operating basis: ND/EBITDA 3.90x, D1 = 0, Block D = 5/20, Core = 55/100; classification unchanged; deal-breaker 6 still cannot fire", note: "Disclosed by the maker with the sensitivity shown. Observation, not counted in the rule-fail tally."}
+  - {severity: "MINOR", location: "B01 D4 vs B07 G2 and 6E", claimed: "FY26 current ratio 0.95 rising vs 0.81 falling", rule: "cross-artifact consistency", recomputed: "D4 = 0 and G2 raw = 1 under both readings; em_score 8 unchanged", note: "Referred to Verifier A, whose source-fidelity verdict binds."}
+  - {severity: "MINOR", location: "B01 EBITDA note vs B07 Section 1C", claimed: "B01 says its 9.70/11.45 cr reproduces the AR line exactly; B07 quotes 980.64/1,147.66 lakh", rule: "cross-artifact consistency", recomputed: "ND/EBITDA 2.61x on B07's figure, same 2-3x band, D1 = 1 unchanged", note: "Referred to Verifier A."}
+  - {severity: "MINOR", location: "B07 Section 2C and capex_embedded_growth_pct", claimed: "NOT FOUND, arithmetic not run", rule: "Stage 7 Section 2C, show the arithmetic", recomputed: "Rs 11.30 cr x 8.82 = about Rs 99.7 cr, about +54% of FY26 revenue; em_score and classification unaffected", note: "UNRESOLVED. Maker cites an orchestrator-injected rule not in my rule sources. Amendment 17 bars the input from Section 1B and FTTCP, not the stage 7 computation."}
+  - {severity: "MINOR", location: "B07 catalysts_12m", claimed: "four catalysts, windows 12m, 12-18m, 12-24m, 12-24m", rule: "field contract, 12-month window feeding Pillar 3", recomputed: "one row is a true 12m catalyst", note: "Each row states its own window, so downstream can filter."}
+  - {severity: "MINOR", location: "B07 I1", claimed: "remuneration annexure shows only promoter-family executives", rule: "Stage 7 rule 3, source anchors on every evidence item", recomputed: "I1 = 0 stands", note: "No page number given; every other evidence item in the scan is anchored."}
+critical_count: 0
+major_count: 1
+minor_count: 9
+acceptance_rate: 94

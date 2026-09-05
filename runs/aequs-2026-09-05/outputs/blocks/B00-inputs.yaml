@@ -1,0 +1,59 @@
+stage: B00-inputs
+company: AEQUS
+run_date: 2026-09-05
+model: orchestrator
+status: complete
+input_gaps:
+  - prospectus (ABSENT; HIGH gap; listed 10-Dec-2025, inside ~3y window; RHP carries promoter/group history and restated pre-IPO financials)
+  - results (ABSENT; no results filings; Gate 0 from screener Data_Sheet + AR; Q1 FY27 via presentation + concall only)
+  - rating (ABSENT; no rating rationale; Pillar 2 / FLAG-CASH without rating evidence)
+  - announcements (ABSENT; no Reg 30 record; Safran agreements Jun-2026 verifiable only from concall/presentation)
+  - shareholding (ABSENT; FII+DII UA qualifier unresolved; promoter holding/pledge from AR at 31-Mar-2026)
+  - research (ABSENT; .gitkeep planted)
+  - other (ABSENT; no effect)
+  - screening (collector v3 defect: Profit_Loss/Balance_Sheet/Cash_Flow/Quarters/Customization CSVs header-only for AEQUS and all 3 peers; Data_Sheet populated FY23-FY26 + 7 quarters to Jun-2026)
+  - peer-concalls (DYNAMATECH single transcript Feb-2024, ~30 months stale; AZAD 4 and UNIMECH 4 current)
+  - manifest (no listed_date; sector_cap_row set by Step 1 brief to "Defence / strategic" over collector auto-pick "Pharma / CDMO"; commercial-aerospace business, phase 3 confirms row)
+freshness_pairs:
+  - pair: results_to_concall
+    trigger_doc: none (inputs/results/ empty)
+    mate_expected: n/a
+    status: PASS
+    missing_doc: none (results absence is an input gap, not a missing mate)
+  - pair: rating_bulletin_to_rationale
+    trigger_doc: none (inputs/rating/ empty)
+    mate_expected: n/a
+    status: PASS
+    missing_doc: none
+  - pair: sebi_order_to_text
+    trigger_doc: none referenced in AR FY26
+    mate_expected: n/a
+    status: PASS
+    missing_doc: none
+  - pair: ar_to_latest_audited_annual
+    trigger_doc: annual-report/Annual_Report_2026.pdf (FY2025-26)
+    mate_expected: latest audited annual year = FY26
+    status: PASS
+    missing_doc: none
+freshness_verdict: FRESHNESS PAIRS OK
+spear_gate: OVERRIDE 2026-09-05 (step1 standing ruling; companies/AEQUS.md created by orchestrator this run)
+spear_load_bearing_facts:
+  - fy27_guidance_aero_growth_25_30pct_segment_ebitda_above_20pct_roce_20pct
+  - consumer_segment_ebitda_negative_vs_rs500cr_of_rs660cr_fy27_capex
+  - net_loss_fy25_fy26_q1fy27_debt_interest_ocf_vs_capex_wc_trend
+  - order_book_usd1004mn_safran_a320_wheel_15yr_deliveries_fy28_conversion_cadence
+concall_map:
+  - Concall_Feb_2026_Transcript.pdf: Q3 FY26 (filed 04-Feb-2026)
+  - Concall_Jun_2026_Transcript.pdf: Q4 FY26 / FY26 annual (held 26-May-2026)
+  - Concall_Aug_2026_Transcript.pdf: Q1 FY27 (held 29-Jul-2026)
+empty_folder_pause: SUPPRESSED (step1 AUTONOMY CONTRACT standing answer "proceed with the gaps"; run folder is a step1 intake product)
+market_cap_note: Rs 16,242 cr above small/micro-cap remit; operator call at Halt 1
+flags: []
+analyst_note: >
+  No results filings, no prospectus, no announcements, no shareholding, no
+  rating. The corpus is AR FY26 + three concalls + Q1 FY27 presentation +
+  screener Data_Sheet + 9 peer transcripts. Every Q1 FY27 number is anchored
+  to the presentation or the Aug-2026 transcript, never to a results filing.
+  The prospectus gap is HIGH: a Dec-2025 listing with a two-segment group
+  (aerospace + loss-making consumer) needs the RHP group map and restated
+  financials that the AR alone does not carry.

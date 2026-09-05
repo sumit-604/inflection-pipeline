@@ -1,0 +1,58 @@
+stage: B06-peers
+company: "KABRAEXTRU"
+run_date: "2026-09-05"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "results (HIGH): no results PDFs in corpus; FY26 audited AR used as delivery record"
+  - "rating (HIGH): CRISIL two-step downgrade disclosed AR FY26 p.51, only generic reason given, no rationale document in corpus"
+  - "announcements: no Reg 30 record; ~Rs150 Cr order and web-reported 2026 preferential issue uncorroborated by filings"
+  - "shareholding: not in corpus"
+  - "research: not in corpus"
+  - "prospectus: not expected"
+  - "presentation-stale: only investor presentation in corpus is Dec-2023 deck, 2.5 years stale"
+  - "peer-concall-windsor: Windsor Machines has no transcript, excluded from peer verification; RAJOOENG independently named Windsor as one of its two named domestic competitors, making this gap material, not incidental"
+  - "peer-concall-mislabel-stale: RAJOOENG-Concall_Nov_2025_Transcript.txt is mislabeled by the collector; verified from p.1 as the Q2 FY25 call held 22-Oct-2024. All four RAJOOENG transcripts stop 18 months before KABRAEXTRU's FY26 close (31-Mar-2026); HBLENGINE is a 25-Sep-2025 AGM, not an earnings call, and is a segment mismatch for Geon (Navy-only lithium-ion vs EV battery packs)"
+  - "screener-csv-defect: carried forward per orchestrator; no defect observed in rows used here"
+  - "sector_cap_row: carried forward per orchestrator, not applicable to this stage"
+flags:
+  - "FLAG-PEER-DATA-STALE-VS-FY26-CLAIM-WINDOW"
+  - "FLAG-WINDSOR-TRANSCRIPT-MISSING-NAMED-BY-PEER"
+  - "FLAG-HBL-SEGMENT-MISMATCH-GEON-UNVERIFIABLE"
+  - "FLAG-POSSIBLE-PEER-MENTION-CARBON-EXTRUSION-KABRA-MISTRANSCRIPTION"
+  - "FLAG-EXPORT-MIX-MARGIN-HYPOTHESIS-UNTESTED-BY-KABRAEXTRU-DISCLOSURE"
+peers_provided: 5
+verified: []
+partially_verified:
+  - {claim: "Extrusion machinery industry CAGR cited by KABRAEXTRU (3.9% AR FY25 vs 6.7% AR FY26)", peers: ["RAJOOENG"]}
+contradicted:
+  - {claim: "External-blame framing (JJM/state infra disbursement delays) for 13.2% extrusion segment revenue decline", contradicting_peer: "RAJOOENG", quote_anchor: "RAJOOENG Q2 FY25, 22-Oct-2024, p.13/15: order book Rs200+ Cr, Rs1,000 Cr pipeline, no JJM mention across 4 calls (May-2023 to Oct-2024)"}
+  - {claim: "11.6% export revenue decline framed as sector-wide geopolitical/currency weakness", contradicting_peer: "RAJOOENG", quote_anchor: "RAJOOENG Q2 FY25, 22-Oct-2024, p.9-11: export share rose to 73-74% of H1 FY25 revenue, 'domestic is not really encouraging margin, the margin comes from export'"}
+  - {claim: "Capex nearly halved (Rs61.81 Cr to Rs29.51 Cr) alongside reiterated long-term extrusion growth trajectory", contradicting_peer: "RAJOOENG", quote_anchor: "RAJOOENG Q2 FY25, 22-Oct-2024, p.15: 'probably FY 26 we would be able to fill up all the capacity which we have installed'"}
+unverifiable:
+  - {claim: "~40% extrusion machinery market share, dropped without explanation from AR FY26", peers_checked: ["RAJOOENG"]}
+  - {claim: "Raw-material cost trend / pass-through behind 326 bps FY25-26 gross margin decline", peers_checked: ["RAJOOENG"]}
+  - {claim: "HBL Engineering EV-OEM customer credit quality, distressed 2W/3W OEM exposure", peers_checked: ["HBLENGINE"]}
+  - {claim: "HBL Engineering capacity utilisation / margin trend in own lithium-ion battery pack business", peers_checked: ["HBLENGINE"]}
+  - {claim: "India EV battery pack market-size figure (KABRAEXTRU's own two ARs cite figures ~100x apart)", peers_checked: ["HBLENGINE"]}
+peer_coverage_map:
+  - {peer: "RAJOOENG", quarter: "Q4 FY23 (16-May-2023)", usage: "SUBSTANTIVE", contribution: "Baseline FY23 currency/export shock, initial capex and margin data"}
+  - {peer: "RAJOOENG", quarter: "Q2 FY24 (6-Nov-2023)", usage: "SUBSTANTIVE", contribution: "Global CAGR citation (4.6%/4.2%), export-mix-driven EBITDA jump, capacity expansion, RM commentary"}
+  - {peer: "RAJOOENG", quarter: "Q4 FY24 (18-Apr-2024)", usage: "SUBSTANTIVE", contribution: "Second CAGR citation, narrow-category domestic market shares, named domestic competitors, RM stability"}
+  - {peer: "RAJOOENG", quarter: "Q2 FY25 (22-Oct-2024)", usage: "SUBSTANTIVE", contribution: "Newest data point: 73-74% export share, continued capacity expansion, FY26 capacity-fill guidance; anchors the staleness caveat"}
+  - {peer: "HBLENGINE", quarter: "FY25 AGM (25-Sep-2025)", usage: "SUBSTANTIVE", contribution: "Establishes segment mismatch for Geon (Navy-only lithium-ion, explicit avoidance of EV/mass lithium-ion); supplies structural risk points, not positive confirmation"}
+  - {peer: "WINDMACHIN", quarter: "n/a", usage: "UNUSED", contribution: "No transcript in corpus; named unprompted by RAJOOENG as one of only two domestic competitors it tracks, making the gap material"}
+industry_cross_read:
+  demand: "RAJOOENG shows accelerating revenue and order book through Oct-2024 (last observable point), the opposite of an industry bracing for JJM/infra-driven weakness; no read for the FY26 window itself"
+  pricing_inputs: "RAJOOENG reports raw material broadly stable through Oct-2024, with margin expansion driven by capacity utilisation and export mix rather than commodity relief"
+  capex_cycle: "RAJOOENG is a continuous capacity expander in all four calls; only one directly comparable peer available, so this cannot be classified lone-expander vs industry-wide race (WINDMACHIN's absence is the limiting factor)"
+peer_mentions_of_company:
+  - "RAJOOENG, Q4 FY24 (18-Apr-2024), p.8: MD named two domestic competitors as 'Windsor machines and carbon extrusion' when asked directly who Rajoo's main peers are. 'Carbon extrusion' does not match any known Indian extrusion-machinery maker and is very likely a mistranscription of 'Kabra Extrusion.' Treated as a tentative, unconfirmed inference, not a certain company mention."
+risks_peers_raise:
+  - "Red Sea shipping crisis: import lead-time and working-capital distortion (RAJOOENG, Q4 FY24, 18-Apr-2024, p.7)"
+  - "Shortening machine replacement cycle (20yr to 10yr) creating a refurbishment/replacement demand stream (RAJOOENG, Q4 FY24, 18-Apr-2024, p.8)"
+  - "Late-dispatch/space-occupation risk in large custom machine manufacturing, costing 2-3% margin (RAJOOENG, Q4 FY23, 16-May-2023, p.8-9)"
+  - "Conglomerate/portfolio discount risk for multi-segment companies (HBLENGINE AGM, 25-Sep-2025, p.5), directly relevant to KABRAEXTRU's own extrusion-plus-battery structure but never addressed in KABRAEXTRU's own disclosures"
+  - "Structural unprofitability of lithium-ion cell production outside China, and cautionary large-scale domestic failures (Reliance, Exide, Amara Raja, Northvolt) (HBLENGINE AGM, 25-Sep-2025, p.4)"
+net_narrative_effect: "undercuts"
+analyst_note: "Every CONTRADICTED verdict here is a contradiction of framing plausibility as of the closest peer data point (through Oct-2024), not a direct test of KABRAEXTRU's FY26 figures; no transcript reaches FY26. The four RAJOOENG calls are a strong, consistent single-peer dataset (four points, ~18 months apart from FY23 to H1 FY25) showing accelerating revenue, exports, and capex, which is what drives every contradicted verdict. HBLENGINE is correctly a weak fit for Geon and should not be over-weighted in synthesis; its main contribution is the two structural risk points (commoditised lithium-ion economics, conglomerate discount) in Part 2E, not any direct confirmation or denial. The 'carbon extrusion' finding is flagged at moderate confidence only; synthesis should not treat it as a confirmed peer mention of KABRAEXTRU without independent corroboration."

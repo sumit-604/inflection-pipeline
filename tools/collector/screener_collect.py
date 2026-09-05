@@ -494,6 +494,10 @@ def main():
             "of creating a new top-level folder."
         )
     )
+    parser.add_argument(
+        "--no-drive", action="store_true",
+        help="Skip all Google Drive access (the G: existence check and the "
+             "xlsx->Google Sheet conversion). collect_to_repo.py passes this.")
     args = parser.parse_args()
 
     url       = args.url.rstrip("/") + "/"
@@ -503,7 +507,7 @@ def main():
         print("  URL must be a screener.in company page.")
         sys.exit(1)
 
-    if not Path(GDRIVE_BASE).exists():
+    if not args.no_drive and not Path(GDRIVE_BASE).exists():
         print(f"  Google Drive path not found: {GDRIVE_BASE}")
         sys.exit(1)
 
@@ -614,9 +618,10 @@ def main():
     # ------------------------------------------------------------------
     # Step 7: Convert Financials.xlsx -> Google Sheet on Drive
     # ------------------------------------------------------------------
-    print(f"\n  Converting Excel files to Google Sheets...")
-    drive_service = get_drive_service()
-    convert_all_financials_to_gsheet(drive_service)
+    if not args.no_drive:
+        print(f"\n  Converting Excel files to Google Sheets...")
+        drive_service = get_drive_service()
+        convert_all_financials_to_gsheet(drive_service)
 
     print(f"\n  All done.\n")
 

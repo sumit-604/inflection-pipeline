@@ -516,6 +516,7 @@ try { muted = localStorage.getItem("engineers-village.muted") === "1"; } catch (
 function isMuted() { return muted; }
 function setMuted(v) {
   muted = !!v;
+  if (muted) stopSpeech();
   try { localStorage.setItem("engineers-village.muted", muted ? "1" : "0"); } catch (e) {}
 }
 
@@ -698,6 +699,44 @@ function playCoin() {
   tone(1318.5, t, 0.1, "square", 0.3);
   tone(1760, t + 0.08, 0.3, "square", 0.3);
 }
+
+// ---- Real speech through the browser's built-in voices ----
+// Every phone and laptop browser ships a text-to-speech engine. We use it
+// for the villagers' lines, so they speak proper English sentences. The
+// beeps below are only a fallback for browsers without speech.
+function speechAvailable() {
+  return typeof window !== "undefined" && "speechSynthesis" in window && typeof SpeechSynthesisUtterance !== "undefined";
+}
+function pickVoice() {
+  const voices = speechSynthesis.getVoices();
+  if (!voices.length) return null;
+  // Prefer an Indian English voice, then British, then any English.
+  for (const pref of ["en-in", "en-gb", "en-au", "en-us", "en"]) {
+    const v = voices.find((v) => (v.lang || "").replace("_", "-").toLowerCase().startsWith(pref));
+    if (v) return v;
+  }
+  return voices[0];
+}
+function speakLine(text, pitch = 400) {
+  if (muted || !speechAvailable()) return;
+  try {
+    speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(text.replace(/[*_`]/g, ""));
+    const v = pickVoice();
+    if (v) u.voice = v;
+    // Villager pitch 400 Hz is a normal voice; children are higher, elders lower.
+    u.pitch = Math.max(0.5, Math.min(2, pitch / 400));
+    u.rate = 0.95;
+    u.volume = 1;
+    speechSynthesis.speak(u);
+  } catch (e) { /* speech is a nicety; never break the game over it */ }
+}
+function stopSpeech() {
+  if (!speechAvailable()) return;
+  try { speechSynthesis.cancel(); } catch (e) {}
+}
+// Voices load lazily in some browsers; ask early so the first line is not silent.
+if (speechAvailable()) { try { speechSynthesis.getVoices(); speechSynthesis.onvoiceschanged = () => speechSynthesis.getVoices(); } catch (e) {} }
 
 // A short "voice" blip, played as a villager's words appear. `pitch` is the
 // villager's base pitch in Hz. Each LETTER has its own fixed note (vowels a
@@ -1006,6 +1045,9 @@ class Dialogue {
     this._shown = 0;
     this.textEl.textContent = "";
     this.nextBtn.textContent = this.index === this.lines.length - 1 ? "Okay" : "Continue";
+    // Say the line out loud. The letter blips only play where speech is missing.
+    speakLine(full, this.pitch);
+    const useBlips = !speechAvailable();
 
     // Reveal 1 letter every 28 ms. A voice blip plays on every 4th letter,
     // never on spaces or punctuation, so the blips do not pile on each other.
@@ -1013,7 +1055,7 @@ class Dialogue {
       this._shown++;
       this.textEl.textContent = full.slice(0, this._shown);
       const ch = full[this._shown - 1];
-      if (ch && /[a-z0-9]/i.test(ch) && this._shown % 4 === 0) playTalkBlip(this.pitch, ch);
+      if (useBlips && ch && /[a-z0-9]/i.test(ch) && this._shown % 4 === 0) playTalkBlip(this.pitch, ch);
       if (this._shown >= full.length) this._stopTyping();
     }, 28);
   }
@@ -1025,7 +1067,9 @@ class Dialogue {
 
   // Should the villager with this id be moving their lips right now?
   talkingFor(id) {
-    return this.active && this.speaker === id && this._isTyping();
+    if (!this.active || this.speaker !== id) return false;
+    if (speechAvailable() && !muted) { try { return speechSynthesis.speaking; } catch (e) {} }
+    return this._isTyping();
   }
 
   _stopTyping() {
@@ -1053,6 +1097,7 @@ class Dialogue {
 
   close() {
     this._stopTyping();
+    stopSpeech();
     this.active = false;
     this.panel.hidden = true;
   }
@@ -1428,7 +1473,7 @@ class UI {
       const sit = npc.situationId ? SITUATION_BY_ID[npc.situationId] : null;
       html += `<li><div><div class="job-title">${npc.name}</div>
         <div class="job-concept">${sit ? sit.title + " • " + CATEGORY_NAMES[sit.cat] : "wandering"}</div></div>
-        <div class="cat-count">${npc.bank === "near" ? "this side" : "across the river"}</div></li>`;
+        <div class="cat-count">${npc.bank === "near" ? "this side" : npc.bank === "indoors" ? "indoors" : "across the river"}</div></li>`;
     }
     html += `</ul>`;
     html += `<div class="section-label">By topic</div><ul class="job-list">`;
@@ -1639,6 +1684,7 @@ function makeBuilding({
     g.add(s);
   }
   g.userData.footprint = { w, d };
+  g.userData.sign = sign;
   return g;
 }
 
@@ -1751,6 +1797,9 @@ class World {
     this.schoolWindows = [];               // meshes we light up
     this.scene.add(this.bridgePlanks);
     this.colliders = new Map(); // grid cell -> list of solid things (walls, trunks)
+    this.doors = [];            // every door you can walk through
+    this.rooms = new Map();     // door -> Room, built on first entry
+    this.currentRoom = null;    // the room the player is in, or null outdoors
     this.waters = [];   // every rippling water sheet (river, lake)
     this.fields = [];   // instanced crop fields
     this.swayers = [];  // things the wind moves
@@ -2059,6 +2108,7 @@ class World {
     this.scene.add(house);
     this.leakyRoof = roof;
     this.addBox(-12, 14, 3.2, 3.2);
+    this.addDoor(-12, 16.5, 0, "Nanu's House");
 
     // The village well.
     const well = new THREE.Group();
@@ -2122,6 +2172,7 @@ class World {
     this.scene.add(school);
     this.schoolGroup = school;
     this.addBox(0, -15, 8, 5);
+    this.addDoor(0, -12.2, 0, "School", "school");
 
     // ---------- Water tank on a tower ----------
     const tower = new THREE.Group();
@@ -2239,6 +2290,7 @@ class World {
       house.position.set(x, 0, z);
       this.scene.add(house);
       this.addBox(x, z, 3, 3);
+      this.addDoor(x, z + 2.4, 0, "House");
     });
   }
 
@@ -2479,13 +2531,18 @@ class World {
   }
 
   // Place a building on the ground and remember it for the minimap.
-  _place(building, x, z, rotY = 0) {
+  // `label` names the room inside; pass false for a building with no door.
+  _place(building, x, z, rotY = 0, label = null) {
     building.position.set(x, heightAt(x, z), z);
     building.rotation.y = rotY;
     this.scene.add(building);
     this.mapItems.buildings.push([x, z]);
     const fp = building.userData.footprint;
     if (fp) this.addBox(x, z, fp.w, fp.d, rotY);
+    if (fp && label !== false) {
+      const dd = fp.d / 2 + 0.9;
+      this.addDoor(x + Math.sin(rotY) * dd, z + Math.cos(rotY) * dd, rotY, building.userData.sign || label || "House");
+    }
     return building;
   }
 
@@ -2501,7 +2558,7 @@ class World {
     this._place(makeBuilding({ w: 7, d: 6, h: 3.2, roof: "gable", wall: 0xffffff, roofColor: 0x3f6f9f, sign: "Clinic" }), -32, -10, Math.PI / 2);
     this._place(makeBuilding({ w: 7, d: 6, h: 3.2, roof: "pyramid", wall: 0xf6efd8, roofColor: W.roofRed, sign: "Library" }), 32, -10, -Math.PI / 2);
     this._place(makeBuilding({ w: 10, d: 6, h: 3.6, roof: "gable", wall: 0xf2e4c8, roofColor: 0x556b2f, sign: "Community Hall" }), 0, -34);
-    this._place(makeBuilding({ w: 4, d: 4, h: 5, roof: "dome", wall: 0xe8d5b5, roofColor: 0x9aa6ad }), 30, -26);   // granary
+    this._place(makeBuilding({ w: 4, d: 4, h: 5, roof: "dome", wall: 0xe8d5b5, roofColor: 0x9aa6ad }), 30, -26, 0, false);   // granary
     this._place(makeBuilding({ w: 4, d: 4, h: 2.8, roof: "gable", wall: pick(walls, 3), roofColor: pick(roofs, 1), chimney: true }), -34, 20);
     this._place(makeBuilding({ w: 4, d: 4, h: 2.8, roof: "gable", wall: pick(walls, 5), roofColor: pick(roofs, 3), chimney: true }), 34, 22);
 
@@ -2551,8 +2608,8 @@ class World {
     // ---------- East farmland ----------
     const farmSpots = [[72, -62], [128, -66], [78, 62], [134, 60], [96, -8], [118, 12]];
     farmSpots.forEach(([x, z], i) => {
-      this._place(makeBuilding({ w: 6, d: 5, h: 3, roof: "gable", wall: pick(walls, i), roofColor: pick(roofs, i + 2), chimney: true }), x, z, (i % 2) * Math.PI / 2);
-      if (i % 2 === 0) this._place(makeBuilding({ w: 8, d: 6, h: 4, roof: "gable", wall: 0xa0522d, roofColor: 0x5a3a24 }), x + 10, z + 4); // barn
+      this._place(makeBuilding({ w: 6, d: 5, h: 3, roof: "gable", wall: pick(walls, i), roofColor: pick(roofs, i + 2), chimney: true }), x, z, (i % 2) * Math.PI / 2, "Farmhouse");
+      if (i % 2 === 0) this._place(makeBuilding({ w: 8, d: 6, h: 4, roof: "gable", wall: 0xa0522d, roofColor: 0x5a3a24 }), x + 10, z + 4, 0, false); // barn
       else this._addSilo(x - 8, z + 3);
     });
     // Fields of crops in different colours, with fences.
@@ -2599,7 +2656,7 @@ class World {
     for (let i = 0; i < 5; i++) {
       const a = -0.9 + i * 0.45;
       const x = LAKE.cx + Math.cos(a) * (LAKE.rx + 9), z = LAKE.cz + Math.sin(a) * (LAKE.rz + 9);
-      this._place(makeBuilding({ w: 4, d: 3.5, h: 2.6, roof: "pyramid", wall: 0xe8d5b5, roofColor: 0x8a5626 }), x, z, Math.atan2(LAKE.cx - x, LAKE.cz - z));
+      this._place(makeBuilding({ w: 4, d: 3.5, h: 2.6, roof: "pyramid", wall: 0xe8d5b5, roofColor: 0x8a5626 }), x, z, Math.atan2(LAKE.cx - x, LAKE.cz - z), "Fisher's Hut");
     }
     this._place(makeBuilding({ w: 6, d: 5, h: 3, roof: "gable", wall: 0xd9e4d0, roofColor: 0x3f6f9f, sign: "Fish Market" }), -70, 66, Math.PI);
     // Reeds round the lake.
@@ -2613,6 +2670,7 @@ class World {
     temple.position.set(0, th + 0.4, -124); this.scene.add(temple);
     this.mapItems.buildings.push([0, -124]);
     this.addBox(0, -124, 10, 10);
+    this.addDoor(0, -118.2, 0, "Temple", "temple");
     const spire = new THREE.Mesh(new THREE.ConeGeometry(2.2, 7, 8), mat(0xffc93c));
     spire.position.set(0, th + 0.4 + 5 + 3.5 + 1.5, -124); spire.castShadow = true; this.scene.add(spire);
     const kalash = new THREE.Mesh(new THREE.SphereGeometry(0.6, 8, 6), mat(0xffd700));
@@ -2881,6 +2939,20 @@ class World {
     for (const b of this.lakeBoats || []) { b.position.y = -0.05 + Math.sin(elapsed * 1.5 + b.rotation.y) * 0.06; b.rotation.z = Math.sin(elapsed * 1.2 + b.rotation.y) * 0.04; }
   }
 
+  // ---- Doors and rooms ----
+  addDoor(x, z, rot, label, type = null) {
+    this.doors.push({ x, z, rot, label, type: type || roomTypeFor(label) });
+  }
+  // The room behind a door, built the first time it is needed.
+  getRoom(door) {
+    if (!this.rooms.has(door)) this.rooms.set(door, new Room(this, this.rooms.size, door.type, door.label));
+    return this.rooms.get(door);
+  }
+  // Ground height for the player: the room floor indoors, the terrain outdoors.
+  groundAt(x, z) {
+    return this.currentRoom ? 0 : heightAt(x, z);
+  }
+
   // ---- Solid things nobody can walk through ----
   // A box collider: centre (x, z), half sizes hw/hd, turned by rot radians.
   addBox(x, z, w, d, rot = 0) { this._addCollider({ x, z, hw: w / 2, hd: d / 2, rot }); }
@@ -2970,6 +3042,7 @@ class World {
   // Can the player stand at this x/z, or is it water they can't cross yet?
   // Returns true if the spot is walkable.
   isWalkable(x, z) {
+    if (this.currentRoom) return this.currentRoom.walkable(x, z);
     if (Math.abs(x) > 196 || Math.abs(z) > 196) return false; // edge of the world
     if (inLake(x, z)) return false;                           // the lake
     if (heightAt(x, z) > 30) return false;                    // too steep, high mountains
@@ -3265,15 +3338,17 @@ class Player {
 
       // Only move if the world says that spot is walkable (rivers, walls and
       // steep slopes block). We test each axis so you can slide along an edge.
-      const h0 = heightAt(this.group.position.x, this.group.position.z);
+      const h0 = this.world.groundAt(this.group.position.x, this.group.position.z);
       const probeX = this.group.position.x + dir.x * 0.6, probeZ = this.group.position.z + dir.z * 0.6;
-      const steep = heightAt(probeX, probeZ) - h0 > 0.7; // more than about 50 degrees
+      const steep = this.world.groundAt(probeX, probeZ) - h0 > 0.7; // more than about 50 degrees
       if (!steep && this.world.isWalkable(nx, this.group.position.z)) this.group.position.x = nx;
       if (!steep && this.world.isWalkable(this.group.position.x, nz)) this.group.position.z = nz;
 
-      // Keep inside the map bounds.
-      this.group.position.x = THREE.MathUtils.clamp(this.group.position.x, -195, 195);
-      this.group.position.z = THREE.MathUtils.clamp(this.group.position.z, -195, 195);
+      // Keep inside the map bounds (rooms sit far outside and are bounded by their walls).
+      if (!this.world.currentRoom) {
+        this.group.position.x = THREE.MathUtils.clamp(this.group.position.x, -195, 195);
+        this.group.position.z = THREE.MathUtils.clamp(this.group.position.z, -195, 195);
+      }
 
       // Turn the body smoothly to face the way we're walking.
       this.facing = Math.atan2(dir.x, dir.z);
@@ -3281,7 +3356,7 @@ class Player {
 
     }
     // Stand on the ground, with a gentle bob while walking.
-    const ground = heightAt(this.group.position.x, this.group.position.z);
+    const ground = this.world.groundAt(this.group.position.x, this.group.position.z);
     this.group.position.y = ground + (walking ? Math.abs(Math.sin(performance.now() / (running ? 80 : 120))) * 0.05 : 0);
 
     // Swing arms and legs (or breathe when standing).
@@ -5162,22 +5237,27 @@ const WAYPOINTS = {
 const ZONE_BANK = { village_s: "near", town: "near", farms_s: "near", lake: "near", village_n: "far", farms_n: "far", temple: "far" };
 
 class Npc {
-  constructor(def, world) {
+  constructor(def, world, opts = {}) {
     this.def = def;
     this._world = world;
     this.id = "npc:" + def.id;
     this.name = def.name;
-    this.bank = def.bank;
     this.zone = def.zone;
-    this.bank = ZONE_BANK[def.zone];
+    this.fixed = !!opts.fixed; // indoor people stand in one spot
+    this.bank = this.fixed ? "indoors" : ZONE_BANK[def.zone];
     this.group = makeVillager(def.look);
     if (def.child) this.group.scale.setScalar(0.72);
     // A name label floating over the head.
     const label = makeTextSprite(def.name, { size: 52, scale: 0.55 });
     label.position.y = def.child ? 2.6 : 2.25;
     this.group.add(label);
-    const wp = WAYPOINTS[def.zone][Math.floor(Math.random() * WAYPOINTS[def.zone].length)];
-    this.group.position.set(wp[0], heightAt(wp[0], wp[1]), wp[1]);
+    if (opts.pos) {
+      this.group.position.set(opts.pos.x, 0, opts.pos.z);
+      this.group.rotation.y = Math.PI * 0.05;
+    } else {
+      const wp = WAYPOINTS[def.zone][Math.floor(Math.random() * WAYPOINTS[def.zone].length)];
+      this.group.position.set(wp[0], heightAt(wp[0], wp[1]), wp[1]);
+    }
     world.scene.add(this.group);
     this.target = null;
     this.wait = Math.random() * 3;
@@ -5191,6 +5271,23 @@ class Npc {
   update(dt, playerPos, engaged, talking, bridgeBuilt) {
     const dx = playerPos.x - this.position.x, dz = playerPos.z - this.position.z;
     const near = Math.hypot(dx, dz) < 4.5;
+
+    if (this.fixed) {
+      // Indoors: stand still, breathe, and turn to face a visitor.
+      animateHuman(this.group, dt, false, 1, talking);
+      if (near) {
+        const want = Math.atan2(dx, dz);
+        let diff = want - this.group.rotation.y;
+        while (diff > Math.PI) diff -= Math.PI * 2;
+        while (diff < -Math.PI) diff += Math.PI * 2;
+        this.group.rotation.y += diff * Math.min(1, dt * 5);
+        if (!this._wasNear) this.waving = 1.2;
+      }
+      this._wasNear = near;
+      this.position.y = 0;
+      this._wave(dt);
+      return;
+    }
 
     if (engaged || near) {
       // Stop, face the player, wave briefly on approach.
@@ -5250,7 +5347,11 @@ class Npc {
     }
     // Feet on the ground wherever they are.
     this.position.y = heightAt(this.position.x, this.position.z);
-    // A wave of the right arm.
+    this._wave(dt);
+  }
+
+  // A wave of the right arm.
+  _wave(dt) {
     if (this.waving > 0) {
       this.waving -= dt;
       const p = this.group.userData.parts;
@@ -5260,6 +5361,181 @@ class Npc {
       const p = this.group.userData.parts;
       p.armR.rotation.z += (0 - p.armR.rotation.z) * Math.min(1, dt * 6);
     }
+  }
+}
+
+// ===== src/engine/rooms.js =====
+/* ============================================================
+   rooms.js — the insides of buildings.
+
+   Walk up to a door and press E to go inside. Each room is built
+   the first time you enter it, far away from the village (so it
+   never shows through the walls outside), and the player is moved
+   there. Rooms are "dollhouse" style: three walls, no ceiling, and
+   the fourth side open toward the camera. Every room has someone
+   inside to talk to, and they carry a situation just like the
+   villagers outdoors.
+   ============================================================ */
+
+const ROOM_ORIGIN = { x: 600, z: 600 }; // far from the village
+const ROOM_W = 10, ROOM_D = 8, ROOM_H = 3.2;
+
+// Which room type a building becomes, from its sign (or "house").
+function roomTypeFor(sign) {
+  if (!sign) return "house";
+  const s = sign.toLowerCase();
+  if (s.includes("house") || s.includes("hut")) return "house";
+  if (s.includes("school")) return "school";
+  if (s.includes("clinic") || s.includes("pharmacy")) return "clinic";
+  if (s.includes("library") || s.includes("books")) return "library";
+  if (s.includes("hall")) return "hall";
+  if (s.includes("station")) return "station";
+  if (s.includes("temple")) return "temple";
+  if (s.includes("tea") || s.includes("dhaba") || s.includes("bakery") || s.includes("sweets")) return "eatery";
+  return "shop";
+}
+
+// Names for the people found indoors, by room type.
+const OCCUPANTS = {
+  house: ["Dadi", "Amma", "Uncle Prem", "Aunty Leela", "Baba", "Nani"],
+  shop: ["Shopkeeper Mohan", "Shopkeeper Rani", "Shopkeeper Iqbal", "Shopkeeper Geeta"],
+  eatery: ["Cook Basheer", "Baker Rosy's helper Anu", "Chaiwala Raju", "Halwai Munna"],
+  school: ["Teacher Anjali"],
+  clinic: ["Nurse Joseph"],
+  library: ["Librarian Uma"],
+  hall: ["Sarpanch Devi"],
+  station: ["Ticket Clerk Fernandes"],
+  temple: ["Helper Gopi"],
+};
+
+const OCC_GREETS = {
+  house: "Come in, come in. Sit. Now, help an old head with a small sum?",
+  shop: "Welcome! Have a look around. And since you're here, a quick question.",
+  eatery: "Something hot? First, a little puzzle, then a treat.",
+  school: "Class, look who's here. Engineer, can you show them how it's done?",
+  clinic: "Nothing broken, I hope. Good. Then help me with the medicine count.",
+  library: "Shh. Quietly now. I have a puzzle from a very old book.",
+  hall: "The whole village meets here. Today the question is for you.",
+  station: "Tickets, please! Or rather, a timetable question first.",
+  temple: "Take off your shoes at the door. Then think with me a moment.",
+};
+
+class Room {
+  constructor(world, index, type, label) {
+    this.world = world;
+    this.type = type;
+    this.label = label;
+    this.x0 = ROOM_ORIGIN.x + (index % 8) * 30;
+    this.z0 = ROOM_ORIGIN.z + Math.floor(index / 8) * 30;
+    this.colliders = []; // world-space boxes {x1,z1,x2,z2}
+    this.group = new THREE.Group();
+    this.group.position.set(this.x0, 0, this.z0);
+    world.scene.add(this.group);
+    this._build();
+    // Where the player stands when they come in (by the open side).
+    this.doorInside = new THREE.Vector3(this.x0, 0, this.z0 + ROOM_D / 2 - 1.2);
+    this.exitPos = { x: this.x0, z: this.z0 + ROOM_D / 2 - 0.4 };
+  }
+
+  // A solid piece of furniture at local (x, z) with size (w, d).
+  _solid(x, z, w, d) {
+    this.colliders.push({ x1: this.x0 + x - w / 2, z1: this.z0 + z - d / 2, x2: this.x0 + x + w / 2, z2: this.z0 + z + d / 2 });
+  }
+  _box(w, h, d, color, x, y, z, solid = true) {
+    const m = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), mat(color));
+    m.position.set(x, y, z); m.castShadow = true; m.receiveShadow = true;
+    this.group.add(m);
+    if (solid) this._solid(x, z, w, d);
+    return m;
+  }
+
+  _build() {
+    const wallColors = { house: 0xfff1d6, shop: 0xe3ecf5, eatery: 0xffe0a3, school: 0xf6efd8, clinic: 0xffffff, library: 0xf3d9c8, hall: 0xf2e4c8, station: 0xd9e4d0, temple: 0xfff1d6 };
+    const floorColors = { house: 0xd7b98e, shop: 0xbfb6a5, eatery: 0xc9a86a, school: 0xbfb6a5, clinic: 0xdfe6ea, library: 0xa67c52, hall: 0xc4a484, station: 0xbfb6a5, temple: 0xe8d5b5 };
+    const wall = wallColors[this.type] || 0xfff1d6;
+    // Floor and three walls (the +z side stays open for the camera).
+    this._box(ROOM_W, 0.2, ROOM_D, floorColors[this.type] || 0xd7b98e, 0, -0.1, 0, false);
+    this._box(ROOM_W, ROOM_H, 0.3, wall, 0, ROOM_H / 2, -ROOM_D / 2);
+    this._box(0.3, ROOM_H, ROOM_D, wall, -ROOM_W / 2, ROOM_H / 2, 0);
+    this._box(0.3, ROOM_H, ROOM_D, wall, ROOM_W / 2, ROOM_H / 2, 0);
+    // A rug.
+    this._box(3.5, 0.03, 2.5, 0xc94848, 0, 0.02, 0.5, false);
+    // A window on the back wall.
+    const win = new THREE.Mesh(new THREE.BoxGeometry(1.4, 1.1, 0.1), new THREE.MeshStandardMaterial({ color: 0xbfe3f2, emissive: 0x9fd3ea, emissiveIntensity: 0.5 }));
+    win.position.set(-3, 1.9, -ROOM_D / 2 + 0.18); this.group.add(win);
+    // The name of the place, on the back wall.
+    const sign = makeTextSprite(this.label, { size: 48, scale: 0.9 });
+    sign.position.set(2.5, 2.6, -ROOM_D / 2 + 0.3); this.group.add(sign);
+
+    const t = this.type;
+    if (t === "house") {
+      this._box(2, 0.5, 1, 0xb9773c, -3.5, 0.25, -2.5); this._box(1.9, 0.25, 0.9, 0x3a86ff, -3.5, 0.62, -2.5, false); // bed
+      this._box(0.5, 0.2, 0.9, 0xffffff, -4.2, 0.85, -2.5, false); // pillow
+      this._box(1.8, 0.1, 1, 0x8a5626, 1.5, 0.75, -1.5); for (const dx of [-0.6, 0.6]) this._box(0.4, 0.1, 0.4, 0x8a5626, 1.5 + dx, 0.45, -0.6, false); // table, stools
+      for (const dx of [-0.8, 0.8]) this._box(0.1, 0.75, 0.1, 0x5a3a24, 1.5 + dx, 0.37, -1.5, false);
+      this._box(2.4, 0.9, 0.7, 0xbfb6a5, 3.5, 0.45, -3.4); this._box(0.5, 0.3, 0.5, 0x555555, 3.0, 1.05, -3.4, false); this._box(0.4, 0.25, 0.4, 0xd9a400, 4.0, 1.02, -3.4, false); // kitchen counter, pots
+      this._box(1.2, 1.8, 0.4, 0x8a5626, -4.2, 0.9, 1.5); for (let i = 0; i < 3; i++) this._box(1.0, 0.08, 0.35, 0xb9773c, -4.2, 0.5 + i * 0.55, 1.5, false); // shelf
+      for (let i = 0; i < 4; i++) this._box(0.25, 0.35, 0.2, [0xc94848, 0x3a86ff, 0x6fae54, 0xffb703][i], -4.5 + (i % 2) * 0.5, 0.75 + Math.floor(i / 2) * 0.55, 1.5, false);
+    } else if (t === "shop" || t === "eatery") {
+      this._box(5, 1.0, 0.8, 0x8a5626, 0, 0.5, -1.2); // counter
+      const goods = t === "eatery" ? [0xffb703, 0xd97742, 0xfff1d6, 0xc94848, 0x8a5626] : [0xc94848, 0x3a86ff, 0x6fae54, 0xffb703, 0x9b5de5, 0xff8fab];
+      for (let i = 0; i < 5; i++) this._box(0.5, 0.3, 0.4, goods[i % goods.length], -2 + i, 1.15, -1.2, false);
+      for (const sx of [-1, 1]) { // shelves along the side walls, full of goods
+        this._box(0.4, 2.2, 5, 0x5a3a24, sx * (ROOM_W / 2 - 0.45), 1.1, -0.5);
+        for (let r = 0; r < 3; r++) for (let k = 0; k < 5; k++) this._box(0.3, 0.35, 0.6, goods[(r + k) % goods.length], sx * (ROOM_W / 2 - 0.5), 0.5 + r * 0.65, -2.5 + k * 1.0, false);
+      }
+      if (t === "eatery") { for (const dx of [-3, 3]) { this._box(1.2, 0.08, 1.2, 0xb9773c, dx, 0.75, 1.6); this._box(0.1, 0.7, 0.1, 0x5a3a24, dx, 0.37, 1.6, false); } this._box(1.2, 0.6, 0.8, 0x555555, 3.8, 0.9, -3.3); } // tables, stove
+    } else if (t === "school") {
+      this._box(4, 1.6, 0.1, 0x1f3b2c, 0, 1.8, -ROOM_D / 2 + 0.2, false); // blackboard
+      const chalk = makeTextSprite("2 + 3 = 5", { size: 54, color: "#ffffff", bg: "rgba(0,0,0,0)", scale: 0.7 }); chalk.position.set(0, 1.9, -ROOM_D / 2 + 0.3); this.group.add(chalk);
+      this._box(1.6, 0.1, 0.8, 0x8a5626, 3.2, 0.75, -2.6); this._box(0.1, 0.75, 0.1, 0x5a3a24, 3.2, 0.37, -2.6, false); // teacher's table
+      for (let r = 0; r < 2; r++) for (let c = 0; c < 3; c++) { const x = -2.5 + c * 2.5, z = -0.5 + r * 1.8; this._box(1.2, 0.08, 0.6, 0xb9773c, x, 0.65, z); this._box(0.1, 0.65, 0.1, 0x5a3a24, x, 0.32, z, false); this._box(0.5, 0.4, 0.5, 0x3f6f9f, x, 0.2, z + 0.7, false); }
+    } else if (t === "clinic") {
+      this._box(2, 0.6, 1, 0xffffff, -3.2, 0.3, -2.2); this._box(1.9, 0.2, 0.9, 0x8ecae6, -3.2, 0.7, -2.2, false); // bed
+      this._box(1.2, 1.8, 0.5, 0xdfe6ea, 3.5, 0.9, -3.4); for (let i = 0; i < 6; i++) this._box(0.2, 0.3, 0.2, [0xc94848, 0x3a86ff, 0xffffff][i % 3], 3.1 + (i % 3) * 0.4, 0.6 + Math.floor(i / 3) * 0.7, -3.3, false); // cabinet, bottles
+      this._box(1.6, 0.1, 0.8, 0x8a5626, 0.5, 0.75, -1.8); this._box(0.1, 0.75, 0.1, 0x5a3a24, 0.5, 0.37, -1.8, false); // desk
+      const cross = makeTextSprite("+", { size: 90, color: "#c1121f", bg: "rgba(255,255,255,0.95)", scale: 0.6 }); cross.position.set(-2.5, 2.6, -ROOM_D / 2 + 0.3); this.group.add(cross);
+    } else if (t === "library") {
+      for (const x of [-3.6, -1.2, 1.2, 3.6]) { this._box(1.8, 2.4, 0.5, 0x5a3a24, x, 1.2, -3.3); for (let r = 0; r < 4; r++) for (let k = 0; k < 6; k++) this._box(0.22, 0.45, 0.3, [0xc94848, 0x3a86ff, 0x6fae54, 0xffb703, 0x9b5de5][(r + k) % 5], x - 0.7 + k * 0.28, 0.35 + r * 0.55, -3.15, false); }
+      this._box(3, 0.1, 1.2, 0x8a5626, 0, 0.75, 0.5); for (const dx of [-1.2, 1.2]) this._box(0.1, 0.75, 0.1, 0x5a3a24, dx, 0.37, 0.5, false);
+      for (let i = 0; i < 3; i++) this._box(0.35, 0.05, 0.5, [0xc94848, 0x3a86ff, 0x6fae54][i], -1 + i, 0.83, 0.5, false);
+    } else if (t === "hall") {
+      this._box(6, 0.5, 2, 0x8a5626, 0, 0.25, -2.8); // stage
+      const drum = this._box(0.8, 0.6, 0.8, 0xb9773c, 2, 0.8, -2.8, false); drum.geometry = new THREE.CylinderGeometry(0.4, 0.4, 0.6, 10);
+      for (let r = 0; r < 3; r++) for (let c = 0; c < 6; c++) this._box(0.5, 0.45, 0.5, 0x3f6f9f, -3 + c * 1.2, 0.22, -0.5 + r * 1.1, r === 0);
+      const banner = makeTextSprite("Village Meeting Today", { size: 44, scale: 1.1 }); banner.position.set(0, 2.7, -ROOM_D / 2 + 0.3); this.group.add(banner);
+    } else if (t === "station") {
+      this._box(3, 1.1, 0.8, 0x8a5626, -2.5, 0.55, -2.2); this._box(3, 1.2, 0.1, 0x9aa6ad, -2.5, 1.7, -2.2, false); // ticket window
+      const win2 = makeTextSprite("TICKETS", { size: 52, scale: 0.7 }); win2.position.set(-2.5, 2.5, -2.1); this.group.add(win2);
+      for (const dx of [1.5, 3.6]) this._box(1.8, 0.1, 0.5, 0xb9773c, dx, 0.5, 1.0); // benches
+      const board = makeTextSprite("Next train: 10:40", { size: 40, scale: 1.0 }); board.position.set(2.5, 2.2, -ROOM_D / 2 + 0.3); this.group.add(board);
+    } else if (t === "temple") {
+      this._box(3, 0.6, 2, 0xe8d5b5, 0, 0.3, -2.8); // platform
+      const idol = new THREE.Mesh(new THREE.ConeGeometry(0.6, 1.6, 8), mat(0xffc93c)); idol.position.set(0, 1.4, -2.8); this.group.add(idol);
+      for (const dx of [-1.6, 1.6]) { const lamp = new THREE.Mesh(new THREE.SphereGeometry(0.15, 8, 6), new THREE.MeshStandardMaterial({ color: 0xffb703, emissive: 0xff8f00, emissiveIntensity: 1 })); lamp.position.set(dx, 0.9, -2.0); this.group.add(lamp); }
+      for (let i = 0; i < 6; i++) this._box(0.2, 0.1, 0.2, [0xff6b8a, 0xffd23f, 0xffffff][i % 3], -1 + i * 0.4, 0.65, -2.2, false); // flowers
+      for (const dx of [-3.5, 3.5]) { const bell = new THREE.Mesh(new THREE.CylinderGeometry(0.2, 0.3, 0.45, 8), mat(0xffc93c)); bell.position.set(dx, 2.4, 0); this.group.add(bell); }
+    }
+    // A soft light so rooms are bright even at "morning" tint.
+    const light = new THREE.PointLight(0xfff1d6, 18, 14, 2);
+    light.position.set(0, 2.8, 0);
+    this.group.add(light);
+  }
+
+  // Can someone stand at world (x, z) inside this room?
+  walkable(x, z) {
+    const pad = 0.35;
+    if (x < this.x0 - ROOM_W / 2 + 0.3 + pad || x > this.x0 + ROOM_W / 2 - 0.3 - pad) return false;
+    if (z < this.z0 - ROOM_D / 2 + 0.3 + pad || z > this.z0 + ROOM_D / 2 + 0.6) return false;
+    for (const c of this.colliders) if (x > c.x1 - pad && x < c.x2 + pad && z > c.z1 - pad && z < c.z2 + pad) return false;
+    return true;
+  }
+
+  // Where the room's occupant stands (local -> world).
+  occupantPos() {
+    const spots = { house: [0.5, 0.5], shop: [0, -2.4], eatery: [0, -2.4], school: [2.2, -1.5], clinic: [1.8, -0.6], library: [-2.5, 1.5], hall: [-4.2, 0.6], station: [-2.5, -3.2], temple: [2.2, -1.2] };
+    const [x, z] = spots[this.type] || [0, 0];
+    return { x: this.x0 + x, z: this.z0 + z };
   }
 }
 
@@ -5515,6 +5791,16 @@ class Game {
       });
     }
 
+    // Every door: walk up and press E to go inside.
+    for (const door of this.world.doors) {
+      this.interactables.push({
+        pos: { x: door.x, z: door.z },
+        radius: 2.0,
+        prompt: () => `Enter the ${door.label}`,
+        activate: () => this._enterRoom(door),
+      });
+    }
+
     // Each wandering villager (their position moves, so we point at the live vector).
     for (const npc of this.npcs) {
       this.interactables.push({
@@ -5524,6 +5810,52 @@ class Game {
         activate: () => this._startErrand(npc),
       });
     }
+  }
+
+  // ---- Going indoors and back out ----
+  _enterRoom(door) {
+    const room = this.world.getRoom(door);
+    if (!room.occupant) {
+      // Someone lives or works here. They carry a situation like anyone else.
+      const names = OCCUPANTS[room.type] || OCCUPANTS.house;
+      const name = names[this.world.rooms.size % names.length];
+      const cats = Object.keys(CATEGORY_NAMES);
+      const def = {
+        id: "room" + this.world.rooms.size,
+        name,
+        look: { shirt: [0xe75480, 0x4f772d, 0x3a86ff, 0xffb703, 0x9b5de5, 0x2a9d8f][this.world.rooms.size % 6], dress: this.world.rooms.size % 2 === 0, hair: 0x1d1410 },
+        zone: null,
+        cats: [cats[this.world.rooms.size % cats.length], cats[(this.world.rooms.size * 3 + 1) % cats.length]],
+        greet: OCC_GREETS[room.type] || OCC_GREETS.house,
+      };
+      room.occupant = new Npc(def, this.world, { pos: room.occupantPos(), fixed: true });
+      this.npcs.push(room.occupant);
+      this._assignSituation(room.occupant);
+    }
+    this.world.currentRoom = room;
+    this.insideDoor = door;
+    this.player.group.position.copy(room.doorInside);
+    this.player.group.rotation.y = Math.PI; // face into the room
+    this.player._placeCamera(1);
+    document.getElementById("minimap").hidden = true;
+    this.roomInteractables = [
+      { pos: room.exitPos, radius: 1.6, prompt: () => `Go outside`, activate: () => this._exitRoom() },
+      { pos: room.occupant.position, radius: 2.8, prompt: () => `Talk to ${room.occupant.name}`, activate: () => this._startErrand(room.occupant) },
+    ];
+    Audio.playPick();
+  }
+
+  _exitRoom() {
+    const door = this.insideDoor;
+    this.world.currentRoom = null;
+    const out = 1.6;
+    const x = door.x + Math.sin(door.rot) * out, z = door.z + Math.cos(door.rot) * out;
+    this.player.group.position.set(x, heightAt(x, z), z);
+    this.player.group.rotation.y = door.rot; // face away from the door
+    this.player._placeCamera(1);
+    document.getElementById("minimap").hidden = false;
+    this.roomInteractables = null;
+    Audio.playPick();
   }
 
   // A villager's situation: greeting, story, then one question.
@@ -5676,7 +6008,8 @@ class Game {
   _nearestInteractable() {
     const p = this.player.position;
     let best = null, bestDist = Infinity;
-    for (const it of this.interactables) {
+    const list = this.world.currentRoom ? this.roomInteractables : this.interactables;
+    for (const it of list) {
       const d = Math.hypot(p.x - it.pos.x, p.z - it.pos.z);
       if (d < it.radius && d < bestDist) { best = it; bestDist = d; }
     }

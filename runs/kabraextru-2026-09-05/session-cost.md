@@ -6,3 +6,4 @@ Per-stage token ledger. One row per subagent run. Stage 0 is orchestrator-inline
 | # | stage | model | effort | in_tok | out_tok | total_tok | wall | run# |
 |---|-------|-------|--------|--------|---------|-----------|------|------|
 | 0 | input validation | orchestrator-inline (fable) | n/a | n/a | n/a | n/a | n/a | 1 |
+| 8 | promoter check | claude-sonnet-5 | default | n/a | n/a | 178598 | 830s | 1 |

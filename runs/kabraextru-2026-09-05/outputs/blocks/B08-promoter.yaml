@@ -1,0 +1,65 @@
+stage: B08-promoter
+company: "KABRAEXTRU"
+run_date: "2026-09-05"
+model: claude-sonnet-5
+status: partial
+input_gaps: [announcements, shareholding, research, prospectus]
+flags: []
+verdict: "CAUTION"
+scorecard: {clean: 6, caution: 3, red: 1}
+deal_breakers: []
+adverse_findings:
+  - {finding: "SEBI Settlement Order against Ekta Anand Kabra (now Vice-Chairperson & MD) in the matter of Kabra Extrusiontechnik Ltd; disgorgement Rs 72,500 plus interest Rs 10,679 at 12% p.a., settled without admission of guilt (SO/EFD-2/SD/373/FEBRUARY/2021)", evidence_tier: "VERIFIED", source: "sebi.gov.in enforcement order listing, corroborated via WebSearch (direct fetch blocked by network egress)", date: "2021-02"}
+  - {finding: "CRISIL downgraded long-term rating twice within ~13 months: A+/Negative to A/Negative (by 5-Apr-2025), then A-/Stable w.e.f. 13-May-2026; short-term A1 to A2+ (May-2026), cited to Q3 FY26 performance", evidence_tier: "VERIFIED", source: "AR FY2025-26 Corporate Governance Report p.51, corroborated by CRISIL rating rationale pages via web search", date: "2025-04 to 2026-05"}
+  - {finding: "Five KMP/senior-management exits within ~6 months (CFO, interim CFO, COO-Geon Division, Head-Strategy & Alliances, Company Secretary), all disclosed as voluntary resignations, concurrent with the credit downgrades and the consolidated loss", evidence_tier: "VERIFIED", source: "AR FY2025-26 corporate-information page and Note 38 KMP list; Reg 30 disclosures corroborated via web search", date: "2026-02 to 2026-07"}
+  - {finding: "Chairman & MD Anand Kabra's remuneration rose ~6.6% (Rs 205.02 lakh to Rs 218.64 lakh) in the year the company swung from a Rs 33.87 cr standalone profit to a Rs 2.44 cr standalone loss", evidence_tier: "VERIFIED", source: "AR FY2024-25 p.41 and AR FY2025-26 p.44, Corporate Governance Report remuneration tables", date: "FY2025-26"}
+  - {finding: "Independent Director Utpal Sheth is also a named personal investor allottee in the 2026 preferential issue approved by the board he sits on; final allocation size not disclosed in available sources, raising an unresolved question about proximity to the 2 percent independent-director shareholding threshold", evidence_tier: "UNVERIFIED", source: "web media aggregation of the August 2026 board disclosure (primary BSE filing fetch blocked)", date: "2026-08"}
+transition_evidence:
+  - "Marquee institutional/investor entry: Singularity Large Value Fund III (Madhu Kela), Nitish Mittersain (Nazara Technologies founder-CEO) and others subscribing Rs 120-141 cr at Rs 375/share via 2026 preferential issue, explicitly to fund Geon EV-battery capacity (media reported, EGM 2-Sep-2026, outcome not yet confirmable at run date)"
+  - "New Independent Director Munjal Kapadia (appointed Aug-2025) is MD of a battery-casings manufacturer, a governance appointment directly aligned to the Geon pivot"
+  - "Transparent, multi-year, AR-disclosed succession: patriarch Shreevallabh Kabra's personal stake wound down from 7.86% to 0.00% over FY24-FY26 into a family trust, with generational handover to Anand and Ekta Kabra completed by FY26-end"
+  - "Zero promoter pledge maintained throughout the period reviewed despite rising company-level leverage"
+pledge_pct_latest: 0
+pledge_trend: "stable - nil pledge across FY24-FY26 and post-FY26 web snapshots; no primary SAST filing in corpus, relies on secondary aggregator data (Trendlyne/upmazing, undated)"
+searches_performed: [
+  "Kabra Extrusiontechnik SEBI order",
+  "Kabra Extrusiontechnik Shreevallabh Kabra chairman resign 2025",
+  "Kabra Extrusiontechnik CRISIL downgrade 2026",
+  "Kabra Extrusiontechnik Battrixx Geon battery loss",
+  "Kabra Extrusiontechnik Company Secretary resignation 2026",
+  "Kabra Extrusiontechnik IiAS OR SES proxy advisory",
+  "Kabra Extrusiontechnik promoter pledge shares",
+  "Kabra Extrusiontechnik Glassdoor AmbitionBox reviews employees",
+  "Kabra Extrusiontechnik Utpal Sheth Madhu Kela Singularity preferential allotment investor",
+  "Kabra Extrusiontechnik promoter open market sale shares date price 2025 2026",
+  "Kabra Extrusiontechnik CRISIL rating April 2025 downgrade A+ to A reason",
+  "Utpal Sheth Rare Enterprises independent director Kabra Extrusiontechnik Star Health",
+  "Kabra Extrusiontechnik preferential issue allottees list Garudlaxmi Ventures Siddharth Kabra Nitish Mittersain",
+  "Kabra family dispute litigation Kolsite Plastiblends court case",
+  "Anand Kabra OR Shreevallabh Kabra SEBI SFIO ED fraud court case",
+  "Plastiblends India Limited SEBI penalty dispute controversy",
+  "SEBI settlement order Ekta Anand Kabra Kabra Extrusiontechnik 2021",
+  "Ekta Kabra SEBI insider trading PIT consent settlement Kabra Extrusiontechnik",
+  "SO/EFD 373 2021 SEBI Ekta Kabra settlement disgorgement",
+  "Ekta Kabra Kabra Extrusiontechnik SEBI PIT Regulation 4 trading window violation 2021",
+  "Boman Moradian independent director background profile",
+  "Chitra Andrade independent director background profile",
+  "Munjal Kapadia independent director Kabra packaging industry background",
+  "Varos Technology Private Limited Kabra Extrusiontechnik business",
+  "Kolsite Corporation LLP Kolsite Industries MCA active status struck off",
+  "Kabra Extrusiontechnik CSR spend philanthropy activities",
+  "Kabra Extrusiontechnik Arnab Saha resignation",
+  "Kabra Extrusiontechnik promoter group reshuffles shareholding Kolsite Corporation LLP Anand Ekta",
+  "Kabra Extrusiontechnik preferential issue 120 crore 2026 details price"
+]
+searches_skipped: [
+  "WebFetch sebi.gov.in full settlement-order text (EGRESS_BLOCKED)",
+  "WebFetch crisil.com full rating rationale text, both actions (EGRESS_BLOCKED)",
+  "WebFetch bseindia.com preferential-issue disclosure PDF (EGRESS_BLOCKED)",
+  "WebFetch scanx.trade articles - promoter sale detail, EGM corrigendum, board outcome (EGRESS_BLOCKED)",
+  "WebFetch sahi.com, multibagg.ai, whalesbook.com, rakesh-jhunjhunwala.in preferential-issue articles (EGRESS_BLOCKED)",
+  "Primary NSE/BSE quarterly shareholding-pattern (SAST) filings - not available",
+  "IiAS/SES/InGovern proxy-advisory database - no access"
+]
+verdict_basis: "Old, minor, consent-settled SEBI PIT order against the sitting Vice-Chairperson & MD (2021) plus a concentrated ~6-month cluster of five KMP/senior exits (CFO x2, COO-Geon, Head-Strategy, Company Secretary) coincident with two CRISIL downgrades and a swing to consolidated loss, against zero pledge, clean RPTs/audit, a credible independent board, transparent multi-year succession, and fresh marquee-investor capital (Kela/Mittersain/Sheth) backing the Geon pivot."
+analyst_note: "The FY26 consolidated loss context the run brief asked about: AR26 and AR25 both show the Geon/Battrixx division's largest customer, Hero Electric Vehicle Pvt Ltd, entered NCLT insolvency (CIRP admitted 20-Dec-2024) with Rs 30.39 cr trade receivables outstanding; KET booked an ECL provision against this in FY25-26. This is an external customer-credit event, not a promoter-conduct issue, but it materially explains the Geon-division loss the company memory flagged. Also note: the AR26 director remuneration table is headed FY2024-25 but its own footnotes describe FY26 events, an apparent labelling carry-over error worth a footnote in synthesis, not a governance finding."

@@ -179,10 +179,9 @@ via Autocar Professional / Openthemagazine / Tribune coverage, WebSearch
 India EV component market ₹41,000 Cr (2025); battery packs = 52% of
 that = **₹21,320 Cr** (2025). Same report's own 2025→2032 endpoints
 (₹41,000 Cr → ₹3,02,000 Cr) imply a CAGR of (302,000/41,000)^(1/7)-1 =
-7.366^(0.1429)-1 = **33.0%** (computed here directly from the two
-endpoints; a WebSearch-synthesized summary stated "about 38%", which
-this report does not use, preferring the figure computed from the
-report's own two stated endpoints).
+7.366^(0.1429)-1 = **33.0%** (computed here directly from the report's
+own two stated endpoints; a WebSearch-synthesized summary stated "about
+38%", which this report does not use).
 Project to 2026: 21,320 × 1.330 = **₹28,356 Cr**.
 
 Route (b) — AR25's own citation (Fortune Business Insights-style),
@@ -565,3 +564,99 @@ demand_externally_verifiable: true (6 candidates identified, all
 independently observable outside company disclosure).
 
 ---
+
+```yaml
+stage: B09-tam
+company: "KABRAEXTRU"
+run_date: "2026-09-05"
+model: claude-sonnet-5
+status: partial               # several WebFetch verification attempts EGRESS_BLOCKED; see searches_skipped
+input_gaps: ["results", "rating-detail-beyond-AR-disclosure", "announcements", "shareholding", "research", "prospectus-not-expected", "investor-presentation-stale-2.5yr-Dec2023", "peer-concall-windsor", "peer-concall-mislabel-stale", "screener-csv-defect", "sector_cap_row-flagged-phase3"]
+flags:
+  - "AR26's own cited 'India EV battery pack market' (Mordor Intelligence, USD 53.76M / Rs 507.5 Cr, 2026) is SMALLER than GEON's own FY26 segment revenue (Rs 136.11 Cr = ~27% implied share) -- internally inconsistent, treated as a scope/citation error, not a usable TAM ceiling"
+  - "AR25's '~40% market share in its product category' claim (undefined denominator) back-calculates to an implied machinery sub-market of only Rs 787.5 Cr, 0.19-0.47x this report's independent Extrusion TAM estimates (Rs 1,685-4,200 Cr); claim dropped entirely from AR26"
+  - "Battery TAM: bottom-up (mobility-only, Rs 4,450 Cr) vs top-down full-value-chain (Rs 28,356-31,492 Cr) diverge ~6.7x before a cell-cost-share adjustment (cells ~78-80% of pack cost, BloombergNEF/DOE 2025) narrows it to Rs 4,450 Cr vs Rs 6,280 Cr (~1.4x); residual uncertainty remains, primary IESA/Fortune Business Insights report methodology could not be verified (WebFetch egress-blocked)"
+  - "OEM vertical integration (large 2W/3W players building cell-to-pack in-house) is a real SAM-narrowing risk for GEON with no disclosed/sourced percentage to quantify; treated qualitatively only, not netted out of SAM"
+  - "Segment-level capex split NOT FOUND (AR discloses only a single blended Rs 31.77 Cr capital commitment); the 3C capacity cross-check against B07 is directional, not segment-precise"
+  - "Company is currently NOT capturing the sized opportunity: consolidated revenue declined -5.45% FY26 while both segments' cited underlying markets grew; battery segment revenue growth (7.2%) trailed cited EV industry unit growth (24.6%)"
+market_definition: "India plastic extrusion machinery (pipe/film/sheet/compounding, excl. injection/blow-molding) plus India li-ion battery pack assembly and BMS for EV mobility and adjacent stationary storage (excl. cell manufacturing and grid-scale BESS), sized and summed as two segments per B04's sum-of-the-parts structure"
+tam_cr: {conservative: 6135, realistic: 10480}
+sam_cr: 6135
+sam_pct_of_tam: 58.5
+som_3yr_cr: 677.8
+som_5yr_cr: 963.9
+som_implied_revenue_cagr: {yr3: 14.6, yr5: 16.4}   # FORMAL handoff to stage 11
+current_sam_share_pct: 7.35
+revenue_headroom_x: 13.6
+tam_growth_pct: 15.9
+runway_class: "STRONG"
+mgmt_claim_cr: 507.5
+mgmt_claim_ratio: 0.114            # claim / conservative estimate (Battery segment, AR26 Mordor citation vs conservative bottom-up)
+mgmt_claim_read: "conservative"    # literal ratio reading; SEE FLAGS -- this is an internal-inconsistency artefact, not genuine conservatism
+capacity_check: "sufficient"       # 7GWh nameplate vastly exceeds modelled SOM in both segments; binding constraint is demand execution, not capacity
+methods_used: ["top-down (India/global industry aggregator reports)", "bottom-up (unit x pack-size x price)", "peer revenue aggregation (Extrusion: KABRA+Rajoo+Windsor+unorganised estimate)", "cell-cost-share scope adjustment (Battery: full value chain to pack-assembly-only)", "management-claim back-calculation (Extrusion 40%-share implied TAM)"]
+stale_data_flags:
+  - {datapoint: "Investor Presentation 18% li-ion segment share and 40% extrusion market share claims", source: "Investor_Presentation_1.txt (Q3 FY24 deck)", year: "2024-01"}
+  - {datapoint: "India Plastic/Extrusion Machinery Market base-year figures (USD 519.8M/571.2M-equivalent base)", source: "WebSearch snippet, Grand View Research / 6Wresearch-style India Extrusion Machinery Market reports", year: "2023"}
+  - {datapoint: "AR25 'Indian EV battery market' USD 2.22bn (2024) to USD 13.89bn (2033) citation", source: "Annual_Report_2025.txt p.4-5/173", year: "2024"}
+searches_performed:
+  - "India plastic extrusion machinery market size 2025 crore CRISIL Plastindia"
+  - "India EV battery pack market size 2026 crore IESA"
+  - "India lithium ion battery pack cost per kWh 2025 2026 average price"
+  - "average battery pack size kWh electric two wheeler three wheeler India"
+  - "IESA India EV component market Rs 41000 crore 2025 battery pack 52% IESW 2026"
+  - "average battery pack capacity kWh electric three wheeler India e-rickshaw L5"
+  - "India battery energy storage system BESS market size 2026 GWh crore IESA"
+  - "Kabra Extrusiontechnik market share plastic extrusion machinery India"
+  - "India plastics processing machinery industry turnover crore Plastindia Foundation PMMAI"
+  - "India pipe extrusion machinery market size crore 2025 report"
+  - "EV battery pack cost breakdown cell cost percentage of total pack cost BMS 2025"
+  - "India electric bus sales 2026 units FAME PM-eBus"
+  - "USD INR exchange rate September 2026"
+searches_skipped:
+  - "WebFetch grandviewresearch.com/horizon/outlook/plastic-extrusion-machinery-market/india -- EGRESS_BLOCKED"
+  - "WebFetch 6wresearch.com/industry-report/india-plastic-extrusion-machine-market -- EGRESS_BLOCKED"
+  - "WebFetch autocarpro.in (IESA EV component market article) -- EGRESS_BLOCKED"
+  - "WebFetch mordorintelligence.com/industry-reports/india-ev-battery-pack-market (scope verification) -- EGRESS_BLOCKED"
+  - "WebFetch dailypioneer.com (IESA EV component market article) -- EGRESS_BLOCKED"
+  - "WebFetch evinfrastructurenews.com (IESA FY25-26 EV sales article) -- EGRESS_BLOCKED"
+downstream_candidates:
+  - signal: "Jal Jeevan Mission 2.0 fund disbursement pace"
+    entity_type: "macro"
+    demand_link: "JJM funding delays cited by AR26 as the cause of FY26 extrusion segment decline"
+    likely_source: "JJM dashboard (jaljeevanmission.gov.in) + PIB (Ministry of Jal Shakti) + sansad.in Q&A"
+    cadence: "monthly"
+    shared: false
+  - signal: "India EV retail registrations by category (E-2W/3W/4W/CV)"
+    entity_type: "macro"
+    demand_link: "Direct unit-volume driver of GEON's addressable battery-pack demand"
+    likely_source: "Vahan Dashboard (MoRTH) / FADA monthly retail data"
+    cadence: "monthly"
+    shared: false
+  - signal: "Union Budget capex allocation (JJM AND PLI-ACC/PM E-DRIVE lines)"
+    entity_type: "macro"
+    demand_link: "One annual event sets policy tailwind for both segments at once"
+    likely_source: "Union Budget documents (indiabudget.gov.in) + CGA monthly expenditure data"
+    cadence: "event-driven"
+    shared: true
+  - signal: "HEVPL (Hero Electric) NCLT insolvency resolution status"
+    entity_type: "end-customer"
+    demand_link: "GEON carries a realised Rs 30.39 Cr write-off exposure to this counterparty"
+    likely_source: "NCLT cause list / IBBI CIRP filings; MCA-21 filings"
+    cadence: "event-driven"
+    shared: false
+  - signal: "PLI-ACC / PM E-DRIVE scheme disbursement and localisation milestones"
+    entity_type: "regulatory"
+    demand_link: "Direct cost-curve and demand-incentive driver for the Battery segment"
+    likely_source: "PIB releases (Ministry of Heavy Industries) / PLI scheme portal"
+    cadence: "quarterly"
+    shared: false
+  - signal: "Lithium carbonate / EV cell price index"
+    entity_type: "macro"
+    demand_link: "Input-cost driver behind the pack-price assumption used in the bottom-up TAM"
+    likely_source: "Trading Economics / Benchmark Mineral Intelligence spot price; BloombergNEF annual Battery Price Survey"
+    cadence: "monthly"
+    shared: false
+demand_externally_verifiable: true
+analyst_note: "Two management TAM claims were tested, not one, because company memory flagged both. The Extrusion '40% share' claim back-calculates to an implied Rs 787.5 Cr market, below this report's independent estimates -- consistent with an undefined, possibly narrow denominator, and the claim vanished from AR26. The Battery AR26 Mordor citation (Rs 507.5 Cr) is smaller than GEON's own segment revenue -- an internal-consistency failure, not a genuine market read; mgmt_claim_cr/ratio in this YAML uses that figure only because it is the one explicit numeric 'market size' claim in the current-year AR, per the schema's single-field design. Battery TAM/SAM/SOM rest on a cell-cost-share bridge (cells ~78-80% of pack cost) between a well-converged top-down full-value-chain estimate and an independently-built bottom-up estimate; this bridge is the load-bearing, unverified assumption in the whole battery analysis and should be re-tested with primary IESA/Mordor source access at Halt 1 or in claude.ai verification."
+```

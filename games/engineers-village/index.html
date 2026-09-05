@@ -1696,9 +1696,17 @@ function heightAt(x, z) {
     h += t * t * 45 * (0.8 + 0.4 * Math.sin(x * 0.11) * Math.cos(z * 0.13));
   }
 
-  // Kailash Parvat: a great peak rising behind the valley.
-  const dk = Math.hypot(x, z + 340);
-  h += 95 * Math.exp(-(dk * dk) / (2 * 26 * 26));
+  // Kailash Parvat: the real shape, a four-faced pyramid with a rounded
+  // crown, steep faces and layered snow shelves (see the terrain colours).
+  const kx = Math.abs(x), kz = Math.abs(z + 342);
+  const cheb = Math.max(kx, kz);            // square distance: gives four flat faces
+  if (cheb < 62) {
+    let peak = 118 * (1 - cheb / 62);
+    peak = Math.min(peak, 112 - (cheb * cheb) / 40); // round the very top
+    // Shelves: small steps every 9 m so snow sits in bands like the real mountain.
+    peak += Math.sin(peak * 0.7) * 1.2;
+    h += Math.max(0, peak);
+  }
 
   // Lake beds dip below the water.
   if (inWater(x, z)) h = -1.2;
@@ -1945,6 +1953,7 @@ class World {
     this._buildVehicles();
     this._buildCity();
     this._buildHimalaya();
+    this._buildSpiritual();
     this._buildAutoStands();
     try { this._flushStatic(); } catch (e) { console.warn("Static merge skipped:", e); }
   }
@@ -2636,7 +2645,12 @@ class World {
       const x = pos.getX(i), z = pos.getZ(i);
       const h = heightAt(x, z);
       pos.setY(i, h);
-      if (h > 34) c.copy(cSnow);
+      const onKailash = Math.max(Math.abs(x), Math.abs(z + 342)) < 62;
+      if (onKailash && h > 30) {
+        // Alternating snow and dark rock bands on the sacred peak.
+        const band = Math.floor(h / 9) % 2 === 0;
+        c.copy(band ? cSnow : new THREE.Color(0x5a5652)).lerp(cSnow, Math.min(1, (h - 30) / 90) * (band ? 0 : 0.35));
+      } else if (h > 34) c.copy(cSnow);
       else if (h > 18) c.copy(cRock).lerp(cSnow, (h - 18) / 16);
       else if (h > 9) c.copy(cDark).lerp(cRock, (h - 9) / 9);
       else if (h < -0.5) c.copy(cSand);
@@ -3242,14 +3256,14 @@ class World {
 
     // Stone steps up toward Kailash and a viewpoint platform.
     for (let i = 0; i < 14; i++) {
-      const z = -268 - i * 1.4, h = heightAt(0, z);
+      const z = -268 - i * 0.6, h = heightAt(0, z);
       const step = new THREE.Mesh(new THREE.BoxGeometry(4, 0.3, 1.5), mat(COLORS.stone)); step.position.set(0, h + 0.15, z); this.scene.add(step);
     }
-    const vp = heightAt(0, -290);
-    const platform = new THREE.Mesh(new THREE.CylinderGeometry(4, 4.4, 0.5, 14), mat(COLORS.stone)); platform.position.set(0, vp + 0.25, -290); this.scene.add(platform);
-    const rail = new THREE.Mesh(new THREE.TorusGeometry(3.8, 0.08, 6, 20), mat(COLORS.woodDark)); rail.rotation.x = Math.PI / 2; rail.position.set(0, vp + 1.2, -290); this.scene.add(rail);
-    const darshan = makeTextSprite("Kailash Darshan", { size: 50, scale: 1.4 }); darshan.position.set(0, vp + 3.5, -290); this.scene.add(darshan);
-    const om = makeTextSprite("ॐ", { size: 90, color: "#f77f00", bg: "rgba(255,248,236,0.95)", scale: 1.0 }); om.position.set(0, vp + 2.2, -293); this.scene.add(om);
+    const vp = heightAt(0, -277);
+    const platform = new THREE.Mesh(new THREE.CylinderGeometry(4, 4.4, 0.5, 14), mat(COLORS.stone)); platform.position.set(0, vp + 0.25, -277); this.scene.add(platform);
+    const rail = new THREE.Mesh(new THREE.TorusGeometry(3.8, 0.08, 6, 20), mat(COLORS.woodDark)); rail.rotation.x = Math.PI / 2; rail.position.set(0, vp + 1.2, -277); this.scene.add(rail);
+    const darshan = makeTextSprite("Kailash Darshan", { size: 50, scale: 1.4 }); darshan.position.set(0, vp + 3.5, -277); this.scene.add(darshan);
+    const om = makeTextSprite("ॐ", { size: 90, color: "#f77f00", bg: "rgba(255,248,236,0.95)", scale: 1.0 }); om.position.set(0, vp + 2.2, -280); this.scene.add(om);
     const peakSign = makeTextSprite("Kailash Parvat", { size: 50, color: "#ffffff", bg: "rgba(29,53,87,0.9)", scale: 3 }); peakSign.position.set(0, heightAt(0, -320) + 14, -320); this.scene.add(peakSign);
 
     // Pine trees on the valley slopes.
@@ -3271,6 +3285,91 @@ class World {
     }
     pines.count = placed; trunks.count = placed; pines.castShadow = true;
     this.scene.add(pines, trunks);
+  }
+
+  // ==========================================================
+  // PLACES OF WORSHIP AND THE ENGINEER'S HOME
+  // ==========================================================
+  _buildSpiritual() {
+    // ---- Shiv Mandir by the lake, with a trident on the roof and Nandi outside ----
+    this._place(makeBuilding({ w: 10, d: 10, h: 4.5, roof: "pyramid", wall: 0xfff1d6, roofColor: 0xf77f00, sign: "Shiv Mandir" }), -80, -256, 0, "Shiv Mandir");
+    const th = heightAt(-80, -256);
+    const trident = new THREE.Group();
+    const shaft = new THREE.Mesh(new THREE.CylinderGeometry(0.08, 0.08, 4, 6), mat(0xffc93c)); shaft.position.y = 2; trident.add(shaft);
+    for (const dx of [-0.5, 0, 0.5]) { const prong = new THREE.Mesh(new THREE.ConeGeometry(0.1, 1.2, 6), mat(0xffc93c)); prong.position.set(dx, 4.4, 0); trident.add(prong); }
+    const bar = new THREE.Mesh(new THREE.BoxGeometry(1.1, 0.1, 0.1), mat(0xffc93c)); bar.position.y = 3.8; trident.add(bar);
+    trident.position.set(-80, th + 4.5 + 3.6, -256); this.scene.add(trident);
+    const nandi = makeQuadruped({ body: 0xf3ede3, belly: null, head: 0xf3ede3, horns: true, s: 1.0, legLen: 0.4 });
+    nandi.position.set(-80, th, -248.5); nandi.rotation.y = Math.PI / 2; nandi.userData.dynamic = true; this.scene.add(nandi); this.addBox(-80, -248.5, 1.6, 1.8);
+    for (const dx of [-3, 3]) { const bellPost = new THREE.Mesh(new THREE.BoxGeometry(0.25, 2.8, 0.25), mat(COLORS.woodDark)); bellPost.position.set(-80 + dx, th + 1.4, -249); this.scene.add(bellPost); const bell = new THREE.Mesh(new THREE.CylinderGeometry(0.25, 0.35, 0.5, 8), mat(0xffc93c)); bell.position.set(-80 + dx, th + 2.3, -249); this.scene.add(bell); }
+
+    // ---- Buddhist monastery with a row of prayer wheels ----
+    this._place(makeBuilding({ w: 12, d: 9, h: 4, floors: 2, roof: "flat", wall: 0xfff8ec, roofColor: 0xc1121f, sign: "Tashi Monastery" }), 72, -262, 0, "Tashi Monastery");
+    const mh = heightAt(72, -262);
+    const goldTrim = new THREE.Mesh(new THREE.BoxGeometry(12.6, 0.5, 9.6), mat(0xffc93c)); goldTrim.position.set(72, mh + 8.3, -262); this.scene.add(goldTrim);
+    this.prayerWheels = [];
+    for (let i = 0; i < 6; i++) {
+      const wheel = new THREE.Mesh(new THREE.CylinderGeometry(0.35, 0.35, 0.8, 10), mat(0xffc93c));
+      wheel.position.set(66 + i * 2.4, mh + 1.1, -256.5); wheel.userData.dynamic = true; this.scene.add(wheel); this.prayerWheels.push(wheel);
+      const post = new THREE.Mesh(new THREE.BoxGeometry(0.12, 1.5, 0.12), mat(0xc1121f)); post.position.set(66 + i * 2.4, mh + 0.75, -256.5); this.scene.add(post);
+    }
+    const stupa = new THREE.Mesh(new THREE.SphereGeometry(1.6, 12, 8), mat(0xffffff)); stupa.position.set(84, mh + 1.6, -256); this.scene.add(stupa);
+    const stupaBase = new THREE.Mesh(new THREE.BoxGeometry(3.6, 1, 3.6), mat(0xe8d5b5)); stupaBase.position.set(84, mh + 0.5, -256); this.scene.add(stupaBase); this.addBox(84, -256, 3.6, 3.6);
+    const stupaTop = new THREE.Mesh(new THREE.ConeGeometry(0.5, 2, 8), mat(0xffc93c)); stupaTop.position.set(84, mh + 4, -256); this.scene.add(stupaTop);
+
+    // ---- Sadhu's cave at the valley edge, with a small fire ----
+    const cave = new THREE.Mesh(new THREE.SphereGeometry(4, 10, 8, 0, Math.PI * 2, 0, Math.PI / 2), mat(0x6b6560)); cave.position.set(-30, heightAt(-30, -272), -272); cave.scale.set(1.3, 1, 1); this.scene.add(cave); this.addCircle(-30, -272, 3.8);
+    const fire = new THREE.Mesh(new THREE.ConeGeometry(0.4, 0.9, 7), new THREE.MeshStandardMaterial({ color: 0xff8f00, emissive: 0xff6d00, emissiveIntensity: 1.2 })); fire.position.set(-30, heightAt(-30, -266) + 0.45, -266); fire.userData.dynamic = true; this.scene.add(fire); this.fire = fire;
+    const sadhu = makeHuman({ skin: 0xc98d62, shirt: 0xf77f00, trousers: 0xf77f00, hair: 0x333333 }); sadhu.position.set(-30, heightAt(-30, -268) + 0.28, -268); sadhu.scale.y = 0.75;
+    const sp = sadhu.userData.parts; sp.legL.rotation.x = -1.5; sp.legR.rotation.x = -1.5; sp.legL.rotation.z = 0.9; sp.legR.rotation.z = -0.9; sp.armL.rotation.x = -0.6; sp.armR.rotation.x = -0.6;
+    this.scene.add(sadhu); this.yogis.push(sadhu);
+    const caveSign = makeTextSprite("Sadhu Baba's Cave", { size: 44, scale: 1.0 }); caveSign.position.set(-30, heightAt(-30, -272) + 5, -270); this.scene.add(caveSign);
+
+    // ---- Aarti ghat at Mansarovar: steps down to the water, floating lamps ----
+    const gx = MANSAROVAR.cx, gz = MANSAROVAR.cz + MANSAROVAR.r + 1;
+    for (let i = 0; i < 4; i++) { const step = new THREE.Mesh(new THREE.BoxGeometry(10 - i, 0.3, 1.2), mat(COLORS.stone)); step.position.set(gx, heightAt(gx, gz) + 0.9 - i * 0.3, gz + 3.6 - i * 1.2); this.scene.add(step); }
+    this.diyas = [];
+    for (let i = 0; i < 8; i++) {
+      const diya = new THREE.Mesh(new THREE.SphereGeometry(0.12, 6, 5), new THREE.MeshStandardMaterial({ color: 0xffb703, emissive: 0xff8f00, emissiveIntensity: 1 }));
+      diya.userData = { a: Math.random() * Math.PI * 2, r: 3 + Math.random() * 8, dynamic: true };
+      this.scene.add(diya); this.diyas.push(diya);
+    }
+    const ghatSign = makeTextSprite("Aarti Ghat", { size: 46, scale: 1.0 }); ghatSign.position.set(gx, heightAt(gx, gz) + 3, gz + 5); this.scene.add(ghatSign);
+
+    // ---- Gurudwara in the town, church and masjid in the city ----
+    this._place(makeBuilding({ w: 10, d: 8, h: 4, roof: "dome", wall: 0xffffff, roofColor: 0xffc93c, sign: "Gurudwara Sahib" }), 36, 74, Math.PI, "Gurudwara Sahib");
+    const nishan = new THREE.Mesh(new THREE.CylinderGeometry(0.06, 0.08, 8, 6), mat(0xffc93c)); nishan.position.set(42, heightAt(42, 74) + 4, 70); this.scene.add(nishan); this.addCircle(42, 70, 0.2);
+    const nishanFlag = new THREE.Mesh(new THREE.PlaneGeometry(1.4, 1.0, 6, 1), new THREE.MeshStandardMaterial({ color: 0xf77f00, side: THREE.DoubleSide, flatShading: true })); nishanFlag.position.set(42.7, heightAt(42, 74) + 7.4, 70); nishanFlag.userData.dynamic = true; this.scene.add(nishanFlag); this.flags.push(nishanFlag);
+    this._place(makeBuilding({ w: 9, d: 14, h: 5, roof: "gable", wall: 0xf6efd8, roofColor: 0x8d6e63, sign: "St. Mary's Church" }), -20, 285, Math.PI, "St. Mary's Church");
+    const steeple = new THREE.Mesh(new THREE.BoxGeometry(2.4, 9, 2.4), mat(0xf6efd8)); steeple.position.set(-20, heightAt(-20, 285) + 4.5, 279); this.scene.add(steeple); this.addBox(-20, 279, 2.4, 2.4);
+    const spire = new THREE.Mesh(new THREE.ConeGeometry(1.7, 3, 4), mat(0x8d6e63)); spire.position.set(-20, heightAt(-20, 285) + 10.5, 279); spire.rotation.y = Math.PI / 4; this.scene.add(spire);
+    const crossV = new THREE.Mesh(new THREE.BoxGeometry(0.2, 1.6, 0.2), mat(0xffc93c)); crossV.position.set(-20, heightAt(-20, 285) + 12.8, 279); this.scene.add(crossV);
+    const crossH = new THREE.Mesh(new THREE.BoxGeometry(1.0, 0.2, 0.2), mat(0xffc93c)); crossH.position.set(-20, heightAt(-20, 285) + 13.1, 279); this.scene.add(crossH);
+    this._place(makeBuilding({ w: 12, d: 10, h: 4.5, roof: "dome", wall: 0xfff8ec, roofColor: 0x2f9e44, sign: "Jama Masjid" }), 100, 285, Math.PI, "Jama Masjid");
+    for (const dx of [-7, 7]) { const minaret = new THREE.Mesh(new THREE.CylinderGeometry(0.8, 1.0, 12, 10), mat(0xfff8ec)); minaret.position.set(100 + dx, heightAt(100, 285) + 6, 285); this.scene.add(minaret); this.addCircle(100 + dx, 285, 1.1); const cap = new THREE.Mesh(new THREE.SphereGeometry(1.1, 10, 8, 0, Math.PI * 2, 0, Math.PI / 2), mat(0x2f9e44)); cap.position.set(100 + dx, heightAt(100, 285) + 12, 285); this.scene.add(cap); }
+    const crescent = makeTextSprite("☪", { size: 90, color: "#2f9e44", bg: "rgba(255,255,255,0)", scale: 1.2 }); crescent.position.set(100, heightAt(100, 285) + 11, 285); this.scene.add(crescent);
+
+    // ---- The Engineer's own home, by the river on the near bank ----
+    const home = makeBuilding({ w: 7, d: 6, h: 3.2, roof: "gable", wall: 0xffe7b3, roofColor: 0x3f6f9f, sign: "The Engineer's Home", chimney: true });
+    this._place(home, -26, 9, 0, "The Engineer's Home");
+    const hy = heightAt(-26, 9);
+    // A little garden with a swing, a cycle, and a garland on the door.
+    const gardenFence = mat(0xffffff);
+    for (let x = -30.5; x <= -21.5; x += 1.5) for (const z of [13.5]) { const p = new THREE.Mesh(new THREE.BoxGeometry(0.1, 0.7, 0.1), gardenFence); p.position.set(x, hy + 0.35, z); this.scene.add(p); }
+    for (const z of [13.5, 12, 10.5, 9, 7.5, 6]) for (const x of [-30.5, -21.5]) { const p = new THREE.Mesh(new THREE.BoxGeometry(0.1, 0.7, 0.1), gardenFence); p.position.set(x, hy + 0.35, z); this.scene.add(p); }
+    const flowerMats2 = [0xff6b8a, 0xffd23f, 0xffffff].map((c) => mat(c));
+    for (let i = 0; i < 10; i++) { const f = new THREE.Mesh(new THREE.SphereGeometry(0.14, 5, 4), flowerMats2[i % 3]); f.position.set(-30 + i * 0.9, hy + 0.15, 12.8); this.scene.add(f); }
+    const garland = makeTextSprite("Welcome home, Engineer!", { size: 40, color: "#b4531a", bg: "rgba(255,241,214,0.95)", scale: 1.1 }); garland.position.set(-26, hy + 3.9, 12.3); this.scene.add(garland);
+    const nameplate = makeTextSprite("Kaushik Family", { size: 46, scale: 0.8 }); nameplate.position.set(-23.5, hy + 2.2, 12.2); this.scene.add(nameplate);
+    // The player starts at the garden gate.
+    this.spawn.set(-26, hy, 16);
+  }
+
+  _updateSpiritual(dt, elapsed) {
+    for (const w of this.prayerWheels || []) w.rotation.y += dt * 1.5;
+    if (this.fire) { this.fire.scale.y = 1 + Math.sin(elapsed * 9) * 0.2; this.fire.rotation.y += dt * 2; }
+    for (const d of this.diyas || []) { d.userData.a += dt * 0.15; d.position.set(MANSAROVAR.cx + Math.cos(d.userData.a) * d.userData.r, 0.08 + Math.sin(elapsed * 2 + d.userData.r) * 0.03, MANSAROVAR.cz + Math.sin(d.userData.a) * d.userData.r); }
+    for (const r of this.rooms.values()) for (const w of r.spinners || []) w.rotation.y += dt * 2;
   }
 
   _addLamp(x, z) {
@@ -3584,6 +3683,7 @@ class World {
     }
     this._updateExpansion(dt, elapsed);
     this._updateCity(dt, elapsed);
+    this._updateSpiritual(dt, elapsed);
     // The mill turns lazily until its gears are fixed, then properly.
     if (this.windmillBlades) this.windmillBlades.rotation.z += dt * (this.millFixed ? 2.0 : 0.6);
     if (this.millFixed && this.grindstone) this.grindstone.rotation.y += dt * 3;
@@ -5899,6 +5999,36 @@ const NPC_DEFS = [
   { id: "noor", name: "Noor the Fisher", look: { shirt: 0x00b4d8, trousers: 0x023e8a }, zone: "lake", cats: ["water", "length"], greet: "The lake is calm. My sums are not." },
   { id: "tara", name: "Tara", look: { shirt: 0x06d6a0, dress: true }, zone: "lake", child: true, cats: ["science", "logic"], greet: "Look, a frog! Also, I have a question." },
   { id: "pandit", name: "Panditji", look: { shirt: 0xffb703, trousers: 0xffffff, hair: 0xdddddd, skin: 0xc98d62 }, zone: "temple", cats: ["time", "logic"], greet: "Welcome to the hill. Sit a moment and think." },
+  // The Engineer's family (Maa and Dadi are at home; Papa and Gudiya are out and about).
+  { id: "papa", name: "Papa", look: { shirt: 0x3f6f9f, trousers: 0x3b3f4a, hair: 0x1d1410 }, zone: "village_s", cats: ["logic", "money"], greet: "There's my engineer! Proud of you, beta. Now, a quick one before dinner." },
+  { id: "gudiya", name: "Gudiya", look: { shirt: 0xff8fab, dress: true, hair: 0x1d1410 }, zone: "village_s", child: true, cats: ["fractions", "logic"], greet: "Didi! Bhaiya! Play with me! Solve my puzzle first!" },
+  // More villagers everywhere.
+  { id: "x01", name: "Sunita", look: { shirt: 0x9b5de5, dress: true }, zone: "village_s", cats: ["length", "time"], greet: "Namaste! Got a moment?" },
+  { id: "x02", name: "Harish", look: { shirt: 0x386641, trousers: 0x3b3f4a }, zone: "village_s", cats: ["money", "area"], greet: "Engineer sahab! One question." },
+  { id: "x03", name: "Babloo", look: { shirt: 0xffd21e, trousers: 0x264653 }, zone: "village_s", child: true, cats: ["logic", "science"], greet: "Race you to the bridge! After this puzzle." },
+  { id: "x04", name: "Rekha", look: { shirt: 0xff7a45, dress: true }, zone: "village_n", cats: ["water", "fractions"], greet: "Come, come. Help me with this." },
+  { id: "x05", name: "Dinesh", look: { shirt: 0x8d6e63, trousers: 0x4e342e }, zone: "village_n", cats: ["ratio", "area"], greet: "Ah, good. A thinking person." },
+  { id: "x06", name: "Kavya", look: { shirt: 0x06d6a0, dress: true }, zone: "village_n", child: true, cats: ["science", "logic"], greet: "I found a beetle! Also a question." },
+  { id: "x07", name: "Mr. Fernandes", look: { shirt: 0xffffff, trousers: 0x222831, hair: 0x888888 }, zone: "town", cats: ["time", "money"], greet: "Good afternoon. A small matter of arithmetic." },
+  { id: "x08", name: "Pooja", look: { shirt: 0x3a86ff, dress: true }, zone: "town", cats: ["length", "ratio"], greet: "Perfect, I needed someone clever." },
+  { id: "x09", name: "Aarav", look: { shirt: 0xc1121f, trousers: 0x264653 }, zone: "town", child: true, cats: ["logic", "travel"], greet: "Bet you can't solve this one!" },
+  { id: "x10", name: "Auntie Shobha", look: { shirt: 0xf77f00, dress: true, hair: 0x888888 }, zone: "town", cats: ["money", "fractions"], greet: "Beta, help an aunty with her shopping sums." },
+  { id: "x11", name: "Mangal", look: { shirt: 0x556b2f, trousers: 0x4e342e }, zone: "farms_n", cats: ["area", "water"], greet: "Fields don't count themselves. Help?" },
+  { id: "x12", name: "Lakhi", look: { shirt: 0xff8fab, dress: true }, zone: "farms_n", child: true, cats: ["fractions", "logic"], greet: "The goats ran off again! One question first." },
+  { id: "x13", name: "Sheru", look: { shirt: 0xffb703, trousers: 0x3b3f4a }, zone: "farms_s", cats: ["ratio", "money"], greet: "Tractor's stuck. Brain isn't. Help me?" },
+  { id: "x14", name: "Amina", look: { shirt: 0x2a9d8f, dress: true }, zone: "farms_s", cats: ["water", "time"], greet: "Salaam! Quick sum for the harvest." },
+  { id: "x15", name: "Fisherman Joseph", look: { shirt: 0x00b4d8, trousers: 0x023e8a, hair: 0x555555 }, zone: "lake", cats: ["length", "logic"], greet: "Big catch today. Help me weigh it in my head." },
+  { id: "x16", name: "Meher", look: { shirt: 0xffd21e, dress: true }, zone: "lake", child: true, cats: ["science", "fractions"], greet: "Look at the ducks! Also, a puzzle." },
+  { id: "x17", name: "Pilgrim Lata", look: { shirt: 0xffffff, dress: true, hair: 0x888888 }, zone: "temple", cats: ["time", "logic"], greet: "Jai ho. Sit a while and think." },
+  { id: "x18", name: "Pilgrim Gopal", look: { shirt: 0xf77f00, trousers: 0xffffff }, zone: "himalaya", cats: ["himalaya", "travel"], greet: "The mountain air clears the head. Try this." },
+  { id: "x19", name: "Pilgrim Radha", look: { shirt: 0xc94848, dress: true }, zone: "himalaya", cats: ["himalaya", "fractions"], greet: "Om. One question on the way round the lake." },
+  { id: "x20", name: "Nun Pema", look: { shirt: 0xc1121f, trousers: 0xf77f00 }, zone: "himalaya", cats: ["himalaya", "logic"], greet: "Peace. A riddle from the monastery." },
+  { id: "x21", name: "Trekker Sam", look: { shirt: 0x3a86ff, trousers: 0x333333, hat: 0x333333 }, zone: "himalaya", cats: ["himalaya", "science"], greet: "Hey! Altitude question for you." },
+  { id: "x22", name: "Priya", look: { shirt: 0x9b5de5, trousers: 0x222831 }, zone: "city", cats: ["city_hard", "money"], greet: "Running late! One quick one?" },
+  { id: "x23", name: "Rahul", look: { shirt: 0xffffff, trousers: 0x1d3557 }, zone: "city", cats: ["city_hard", "logic"], greet: "Metro's late. Help me pass the time." },
+  { id: "x24", name: "Zoya", look: { shirt: 0x06d6a0, dress: true }, zone: "city", child: true, cats: ["city", "science"], greet: "I can count all the floors! Can you?" },
+  { id: "x25", name: "Guard Bahadur", look: { shirt: 0x1d3557, trousers: 0x111111, hat: 0x1d3557 }, zone: "city", cats: ["city_hard", "time"], greet: "Halt! Just joking. A question." },
+  { id: "x26", name: "Vendor Kaka", look: { shirt: 0x8d6e63, trousers: 0x4e342e, hair: 0xbdbdbd }, zone: "city", cats: ["city", "money"], greet: "Fresh bhutta! Solve this and it's yours." },
   // Himalaya valley.
   { id: "devika", name: "Yoga Teacher Devika", look: { shirt: 0xf77f00, trousers: 0xffffff, hair: 0x1d1410 }, zone: "himalaya", cats: ["himalaya", "science"], greet: "Breathe. Good. Now stretch your mind a little." },
   { id: "ramesh", name: "Pilgrim Ramesh", look: { shirt: 0xffffff, trousers: 0xffd21e, hair: 0x888888 }, zone: "himalaya", cats: ["himalaya", "travel"], greet: "Har Har Mahadev! Long walk. Help an old pilgrim count?" },
@@ -6323,6 +6453,12 @@ function roomTypeFor(sign) {
   if (s.includes("mall")) return "mall";
   if (s.includes("metro")) return "metro";
   if (s.includes("hotel")) return "hotel";
+  if (s.includes("engineer's home")) return "home";
+  if (s.includes("mandir")) return "mandir";
+  if (s.includes("monastery")) return "monastery";
+  if (s.includes("gurudwara")) return "gurudwara";
+  if (s.includes("church")) return "church";
+  if (s.includes("masjid")) return "masjid";
   if (s.includes("meditation")) return "meditation";
   if (s.includes("ashram")) return "ashram";
   if (s.includes("dham") || s.includes("shrine")) return "temple";
@@ -6354,6 +6490,12 @@ const OCCUPANTS = {
   office: ["Manager Sharma", "Receptionist Priya", "Engineer Arjun", "Accountant Mehta"],
   lobby: ["Receptionist Priya", "Guard Bahadur", "Concierge Rita"],
   meditation: ["Swami Anand"],
+  home: ["Maa"],
+  mandir: ["Pujari ji"],
+  monastery: ["Lama Dorje"],
+  gurudwara: ["Granthi ji"],
+  church: ["Father Thomas"],
+  masjid: ["Imam Sahab"],
   ashram: ["Guru Ma"],
   barn: ["Farmhand Raju"],
   granary: ["Storekeeper Lal"],
@@ -6378,6 +6520,12 @@ const OCC_GREETS = {
   office: "Busy day! The lift, the floors, the bills... help me with one number?",
   lobby: "Welcome! The lift is at the back. But first, a little challenge for the visitor.",
   meditation: "Breathe in... breathe out... and now, one calm question.",
+  home: "Beta! You're home! Wash your hands. Dadi has a question from her puzzle book.",
+  mandir: "Om Namah Shivaya. Ring the bell, then think with me.",
+  monastery: "Tashi delek. Spin the wheels, then a gentle puzzle.",
+  gurudwara: "Sat Sri Akal! Langar is ready. First, one small sum for the sangat.",
+  church: "Welcome, child. The choir is practising. A question while we wait?",
+  masjid: "As-salamu alaykum. Come, sit on the mat. A little question before prayers.",
   ashram: "Beta, you walked all the way up? Sit, eat, and think about this.",
   barn: "Mind the hay! The cow is friendly. Can you help me count the feed?",
   granary: "Sacks and sacks and sacks. Help me keep track of them.",
@@ -6420,8 +6568,8 @@ class Room {
   }
 
   _build() {
-    const wallColors = { meditation: 0xfff8ec, ashram: 0xf3d9c8, barn: 0xa0522d, granary: 0xe8d5b5, lobby: 0xfff1d6, gym: 0xe3ecf5, rooftop: 0xbfe3f2, cinema: 0x2b2b3a, hotelroom: 0xf3d9c8, office: 0xe3ecf5, mall: 0xfff1d6, metro: 0xdfe6ea, house: 0xfff1d6, shop: 0xe3ecf5, eatery: 0xffe0a3, school: 0xf6efd8, clinic: 0xffffff, library: 0xf3d9c8, hall: 0xf2e4c8, station: 0xd9e4d0, temple: 0xfff1d6 };
-    const floorColors = { meditation: 0xe8d5b5, ashram: 0xd7b98e, barn: 0x8a5626, granary: 0xbfb6a5, lobby: 0xdfe6ea, gym: 0x8d6e63, rooftop: 0x9e9e9e, cinema: 0x3a2f45, hotelroom: 0xa67c52, office: 0x9aa6ad, mall: 0xdfe6ea, metro: 0x8d8a80, house: 0xd7b98e, shop: 0xbfb6a5, eatery: 0xc9a86a, school: 0xbfb6a5, clinic: 0xdfe6ea, library: 0xa67c52, hall: 0xc4a484, station: 0xbfb6a5, temple: 0xe8d5b5 };
+    const wallColors = { home: 0xffe7b3, mandir: 0xfff1d6, monastery: 0xfff8ec, gurudwara: 0xffffff, church: 0xf6efd8, masjid: 0xfff8ec, meditation: 0xfff8ec, ashram: 0xf3d9c8, barn: 0xa0522d, granary: 0xe8d5b5, lobby: 0xfff1d6, gym: 0xe3ecf5, rooftop: 0xbfe3f2, cinema: 0x2b2b3a, hotelroom: 0xf3d9c8, office: 0xe3ecf5, mall: 0xfff1d6, metro: 0xdfe6ea, house: 0xfff1d6, shop: 0xe3ecf5, eatery: 0xffe0a3, school: 0xf6efd8, clinic: 0xffffff, library: 0xf3d9c8, hall: 0xf2e4c8, station: 0xd9e4d0, temple: 0xfff1d6 };
+    const floorColors = { home: 0xd7b98e, mandir: 0xe8d5b5, monastery: 0x8a5626, gurudwara: 0xdfe6ea, church: 0xa67c52, masjid: 0xc94848, meditation: 0xe8d5b5, ashram: 0xd7b98e, barn: 0x8a5626, granary: 0xbfb6a5, lobby: 0xdfe6ea, gym: 0x8d6e63, rooftop: 0x9e9e9e, cinema: 0x3a2f45, hotelroom: 0xa67c52, office: 0x9aa6ad, mall: 0xdfe6ea, metro: 0x8d8a80, house: 0xd7b98e, shop: 0xbfb6a5, eatery: 0xc9a86a, school: 0xbfb6a5, clinic: 0xdfe6ea, library: 0xa67c52, hall: 0xc4a484, station: 0xbfb6a5, temple: 0xe8d5b5 };
     const wall = wallColors[this.type] || 0xfff1d6;
     // Floor and three walls (the +z side stays open for the camera).
     // The rooftop has only a low parapet, so the sky is all around.
@@ -6542,6 +6690,61 @@ class Room {
       this._box(0.8, 0.9, 0.6, 0x555e66, 3.6, 0.45, -3.2); // minibar
       this._box(1.2, 0.1, 0.6, 0x8a5626, 1.8, 0.75, -2.6); // desk
       const rs = makeTextSprite("Room 204", { size: 50, scale: 0.6 }); rs.position.set(3.4, 2.6, -ROOM_D / 2 + 0.3); this.group.add(rs);
+    } else if (t === "home") {
+      // The Engineer's own home: two beds, a study desk with drawings, toys, a family photo.
+      this._box(2, 0.5, 1, 0xb9773c, -3.5, 0.25, -2.5); this._box(1.9, 0.25, 0.9, 0x3a86ff, -3.5, 0.62, -2.5, false); // parents' bed
+      this._box(1.6, 0.45, 0.8, 0xb9773c, 3.6, 0.22, -2.6); this._box(1.5, 0.2, 0.7, 0xff8fab, 3.6, 0.55, -2.6, false); // little sister's bed
+      this._box(1.8, 0.1, 0.9, 0x8a5626, 0, 0.75, -3.0); this._box(0.1, 0.75, 0.1, 0x5a3a24, 0, 0.37, -3.0, false); // study desk
+      const plans = makeTextSprite("Bridge plan · 6½ m", { size: 40, scale: 0.9 }); plans.position.set(0, 1.4, -3.0); this.group.add(plans);
+      this._box(0.5, 0.45, 0.5, 0x3f6f9f, 0, 0.22, -2.1, false); // chair
+      this._box(1.8, 0.1, 1, 0x8a5626, 0.5, 0.45, 1.2); // low dining table
+      for (let i = 0; i < 4; i++) this._box(0.3, 0.3, 0.3, [0xc94848, 0xffb703, 0x6fae54, 0x9b5de5][i], -3.2 + i * 0.4, 0.15, 1.2, false); // toy blocks
+      this._box(2.4, 0.9, 0.7, 0xbfb6a5, -3.5, 0.45, -0.4); this._box(0.5, 0.3, 0.5, 0x555555, -3.9, 1.05, -0.4, false); // kitchen
+      const photo = makeTextSprite("Our Family ❤", { size: 44, color: "#b4531a", scale: 0.9 }); photo.position.set(3, 2.4, -ROOM_D / 2 + 0.3); this.group.add(photo);
+      // Dadi knits on a stool; little sister Gudiya plays on the floor.
+      const dadi = makeHuman({ skin: 0xc98d62, shirt: 0xffffff, dress: true, hair: 0xdddddd }); dadi.position.set(2.2, 0.28, 0.2); dadi.scale.y = 0.8; dadi.rotation.y = Math.PI;
+      const dp = dadi.userData.parts; dp.legL.rotation.x = -1.4; dp.legR.rotation.x = -1.4; dp.armL.rotation.x = -1.0; dp.armR.rotation.x = -1.0;
+      this.group.add(dadi); this._solid(2.2, 0.2, 0.7, 0.7);
+      const dadiTag = makeTextSprite("Dadi", { size: 52, scale: 0.5 }); dadiTag.position.set(2.2, 2.0, 0.2); this.group.add(dadiTag);
+      const gudiya = makeHuman({ skin: 0xe8b98a, shirt: 0xff8fab, dress: true, hair: 0x1d1410 }); gudiya.scale.setScalar(0.62); gudiya.position.set(-2.4, 0, 1.6); gudiya.rotation.y = 0.8;
+      this.group.add(gudiya); this._solid(-2.4, 1.6, 0.6, 0.6);
+      const gTag = makeTextSprite("Gudiya", { size: 52, scale: 0.45 }); gTag.position.set(-2.4, 2.1, 1.6); this.group.add(gTag);
+      this.extras = [dadi, gudiya];
+    } else if (t === "mandir") {
+      this._box(2.4, 0.5, 2.4, 0xe8d5b5, 0, 0.25, -2.6); // platform
+      const ling = this._box(0.6, 0.9, 0.6, 0x333333, 0, 0.95, -2.6, false); ling.geometry = new THREE.CylinderGeometry(0.3, 0.3, 0.9, 12);
+      const yoni = this._box(1.6, 0.2, 1.2, 0x555e66, 0, 0.6, -2.6, false);
+      const nandi = makeQuadruped({ body: 0xf3ede3, belly: null, head: 0xf3ede3, horns: true, s: 0.6, legLen: 0.4 }); nandi.position.set(0, 0, 0.6); nandi.rotation.y = Math.PI / 2; this.group.add(nandi); this._solid(0, 0.6, 1.0, 0.6);
+      for (const dx of [-3.5, 3.5]) { const bell = new THREE.Mesh(new THREE.CylinderGeometry(0.2, 0.3, 0.45, 8), mat(0xffc93c)); bell.position.set(dx, 2.4, -1); this.group.add(bell); }
+      for (let i = 0; i < 5; i++) { const diya = new THREE.Mesh(new THREE.SphereGeometry(0.08, 6, 5), new THREE.MeshStandardMaterial({ color: 0xffb703, emissive: 0xff8f00, emissiveIntensity: 1 })); diya.position.set(-1 + i * 0.5, 0.55, -1.7); this.group.add(diya); }
+      const om = makeTextSprite("ॐ नमः शिवाय", { size: 46, color: "#f77f00", scale: 1.3 }); om.position.set(0, 2.5, -ROOM_D / 2 + 0.3); this.group.add(om);
+    } else if (t === "monastery") {
+      this._box(3, 0.6, 1.6, 0xc1121f, 0, 0.3, -2.8); // altar
+      const buddhaBody = this._box(1.2, 1.2, 0.9, 0xffc93c, 0, 1.2, -2.8, false); buddhaBody.geometry = new THREE.SphereGeometry(0.7, 10, 8); buddhaBody.scale.set(1, 1.1, 0.8);
+      const head = new THREE.Mesh(new THREE.SphereGeometry(0.35, 10, 8), mat(0xffc93c)); head.position.set(0, 2.2, -2.8); this.group.add(head);
+      this.spinners = [];
+      for (let i = 0; i < 5; i++) { const w = new THREE.Mesh(new THREE.CylinderGeometry(0.28, 0.28, 0.6, 10), mat(0xffc93c)); w.position.set(-ROOM_W / 2 + 0.9, 1.0, -2.6 + i * 1.2); this.group.add(w); this.spinners.push(w); this._solid(-ROOM_W / 2 + 0.9, -2.6 + i * 1.2, 0.6, 0.6); }
+      for (let i = 0; i < 6; i++) this._box(0.7, 0.05, 0.5, [0xc1121f, 0xf77f00][i % 2], -2 + (i % 3) * 2, 0.03, -0.4 + Math.floor(i / 3) * 1.4, false); // cushions
+      const b = makeTextSprite("Om Mani Padme Hum", { size: 40, scale: 1.3 }); b.position.set(0, 2.7, -ROOM_D / 2 + 0.3); this.group.add(b);
+    } else if (t === "gurudwara") {
+      this._box(3.2, 0.5, 2, 0xffffff, 0, 0.25, -2.6); this._box(2.6, 0.3, 1.4, 0xf77f00, 0, 0.65, -2.6, false); // palki with cloth
+      for (const dx of [-1.4, 1.4]) this._box(0.1, 2.4, 0.1, 0xffc93c, dx, 1.2, -3.2, false);
+      this._box(3.4, 0.15, 2.2, 0xffc93c, 0, 2.5, -2.6, false); // golden canopy
+      for (let r = 0; r < 2; r++) this._box(7, 0.08, 0.6, 0xb9773c, 0, 0.3, 0.2 + r * 1.4, r === 0); // langar rows (low tables)
+      for (let i = 0; i < 6; i++) this._box(0.45, 0.06, 0.45, 0x9aa6ad, -2.5 + i, 0.36, 0.2, false); // plates
+      const sign = makeTextSprite("Langar: everyone eats together", { size: 36, scale: 1.4 }); sign.position.set(0, 2.9, -ROOM_D / 2 + 0.3); this.group.add(sign);
+    } else if (t === "church") {
+      this._box(2.4, 1.0, 0.9, 0xffffff, 0, 0.5, -2.8); // altar
+      this._box(0.2, 1.6, 0.2, 0xffc93c, 0, 1.9, -3.3, false); this._box(1.0, 0.2, 0.2, 0xffc93c, 0, 2.3, -3.3, false); // cross
+      for (let r = 0; r < 3; r++) for (const side of [-1, 1]) this._box(3, 0.45, 0.5, 0x8a5626, side * 2.2, 0.22, -1.2 + r * 1.3, r === 0 || side === -1);
+      const glass = makeTextSprite("✦ ✦ ✦", { size: 70, color: "#c1121f", bg: "rgba(63,111,159,0.9)", scale: 1.0 }); glass.position.set(-3, 2.3, -ROOM_D / 2 + 0.3); this.group.add(glass);
+      const glass2 = makeTextSprite("✦ ✦ ✦", { size: 70, color: "#ffd21e", bg: "rgba(63,111,159,0.9)", scale: 1.0 }); glass2.position.set(3, 2.3, -ROOM_D / 2 + 0.3); this.group.add(glass2);
+    } else if (t === "masjid") {
+      for (let r = 0; r < 3; r++) for (let c = 0; c < 5; c++) this._box(0.8, 0.04, 1.4, [0x2f9e44, 0xffffff][(r + c) % 2], -3.6 + c * 1.8, 0.03, -1.8 + r * 1.6, false); // prayer mats
+      this._box(2.2, 2.6, 0.5, 0xfff1d6, 0, 1.3, -ROOM_D / 2 + 0.5); // mihrab
+      const arch = new THREE.Mesh(new THREE.SphereGeometry(1.1, 10, 8, 0, Math.PI * 2, 0, Math.PI / 2), mat(0x2f9e44)); arch.position.set(0, 2.6, -ROOM_D / 2 + 0.5); this.group.add(arch);
+      const lamp = new THREE.Mesh(new THREE.SphereGeometry(0.25, 8, 6), new THREE.MeshStandardMaterial({ color: 0xffd21e, emissive: 0xffb703, emissiveIntensity: 0.8 })); lamp.position.set(0, 2.9, 0); this.group.add(lamp);
+      const cal = makeTextSprite("☪ Bismillah", { size: 46, color: "#2f9e44", scale: 1.2 }); cal.position.set(3, 2.6, -ROOM_D / 2 + 0.3); this.group.add(cal);
     } else if (t === "meditation") {
       for (let r = 0; r < 2; r++) for (let c = 0; c < 4; c++) this._box(1.6, 0.05, 0.7, [0xf77f00, 0xffd21e, 0x9b5de5, 0x3a86ff][c], -3.6 + c * 2.4, 0.03, -1.6 + r * 2.2, false); // mats
       for (let i = 0; i < 5; i++) { const cand = new THREE.Mesh(new THREE.SphereGeometry(0.1, 6, 5), new THREE.MeshStandardMaterial({ color: 0xffb703, emissive: 0xff8f00, emissiveIntensity: 1 })); cand.position.set(-2 + i, 0.6, -3.2); this.group.add(cand); this._box(0.15, 0.5, 0.15, 0xfff1d6, -2 + i, 0.25, -3.2, false); }
@@ -6582,7 +6785,7 @@ class Room {
 
   // Where the room's occupant stands (local -> world).
   occupantPos() {
-    const spots = { meditation: [3.0, 0.6], ashram: [1.5, 2.4], barn: [-1.5, 1.2], granary: [0, 0.8], lobby: [1.5, -1.2], gym: [0, 0.6], rooftop: [0, 0.2], cinema: [-2.5, 2.6], hotelroom: [1.0, 0.8], office: [3.2, 1.6], mall: [0, 0.8], metro: [3.6, -1.0], house: [0.5, 0.5], shop: [0, -2.4], eatery: [0, -2.4], school: [2.2, -1.5], clinic: [1.8, -0.6], library: [-2.5, 1.5], hall: [-4.2, 0.6], station: [-2.5, -3.2], temple: [2.2, -1.2] };
+    const spots = { home: [-1.2, -1.0], mandir: [2.6, -0.8], monastery: [2.8, 0.6], gurudwara: [3.2, -1.2], church: [0, 1.4], masjid: [3.6, -1.0], meditation: [3.0, 0.6], ashram: [1.5, 2.4], barn: [-1.5, 1.2], granary: [0, 0.8], lobby: [1.5, -1.2], gym: [0, 0.6], rooftop: [0, 0.2], cinema: [-2.5, 2.6], hotelroom: [1.0, 0.8], office: [3.2, 1.6], mall: [0, 0.8], metro: [3.6, -1.0], house: [0.5, 0.5], shop: [0, -2.4], eatery: [0, -2.4], school: [2.2, -1.5], clinic: [1.8, -0.6], library: [-2.5, 1.5], hall: [-4.2, 0.6], station: [-2.5, -3.2], temple: [2.2, -1.2] };
     const [x, z] = spots[this.type] || [0, 0];
     return { x: this.x0 + x, z: this.z0 + z };
   }
@@ -7136,10 +7339,22 @@ class Game {
 
     // Wandering villagers and animals.
     const engagedId = this._engagedNpc && blocked ? this._engagedNpc.id : null;
+    // Only people and animals within about 130 m are drawn and moved.
     for (const npc of this.npcs) {
-      npc.update(dt, pp, npc.id === engagedId, this.dialogue.talkingFor(npc.id), this.world.bridgeBuilt);
+      const dxn = npc.position.x - pp.x, dzn = npc.position.z - pp.z;
+      const near = dxn * dxn + dzn * dzn < 130 * 130 || npc.id === engagedId;
+      npc.group.visible = near;
+      if (near) npc.update(dt, pp, npc.id === engagedId, this.dialogue.talkingFor(npc.id), this.world.bridgeBuilt);
     }
-    updateCritters(this.critters, dt, elapsed, pp, this.world);
+    this._nearCritters = this._nearCritters || [];
+    this._nearCritters.length = 0;
+    for (const c of this.critters) {
+      const dxc = c.position.x - pp.x, dzc = c.position.z - pp.z;
+      const near = dxc * dxc + dzc * dzc < 130 * 130;
+      c.visible = near;
+      if (near) this._nearCritters.push(c);
+    }
+    updateCritters(this._nearCritters, dt, elapsed, pp, this.world);
 
     // Ambient sound: wind follows the gusts; birds, cows and ducks now and then.
     ambientTick(0.5 + Math.sin(elapsed * 0.35) * 0.5);

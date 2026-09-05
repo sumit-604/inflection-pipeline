@@ -25,3 +25,4 @@ not. Stage 0 ran inline in the orchestrator session (no subagent).
 | 16 | stage-09-tam | sonnet | n/a | n/a | n/a | 226959 | 18m46s | 1 |
 | 17 | verifier-a-numerical | haiku | n/a | n/a | n/a | 118742 | 3m43s | 1 |
 | 18 | stage-13-synthesis (PHASE 1 LITE) | opus | n/a | n/a | n/a | 169300 | 11m12s | 1 |
+| 19 | stage-09b-dossier | sonnet | n/a | n/a | n/a | 275033 | 18m44s | 1 |

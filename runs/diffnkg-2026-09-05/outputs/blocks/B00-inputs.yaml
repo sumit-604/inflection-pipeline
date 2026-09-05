@@ -1,0 +1,73 @@
+stage: B00-inputs
+company: DIFFNKG
+run_date: 2026-09-05
+model: inline-orchestrator
+status: complete
+input_gaps:
+  - type: prospectus
+    severity: HIGH
+    reason: "Listed 4 Oct 2024 (within ~3y of run_date); IPO prospectus is the foundational promoter/group + restated pre-IPO financials document. Absent."
+  - type: results
+    severity: normal
+    reason: "No quarterly results PDFs; Gate 0 from screening + AR financials; stage 10 latest-period fields unresolved."
+  - type: rating
+    severity: normal
+    reason: "No rating PDF; rating_wc_quote unresolved; Pillar 2 conservative default."
+  - type: announcements
+    severity: normal
+    reason: "No Reg 30 filings; documented-ACTION record absent; stage 8 web-leaning; intent-and-action on concall/AR only."
+  - type: shareholding
+    severity: normal
+    reason: "No shareholding pattern; FII+DII unresolved; UA withheld; promoter/pledge from AR with staleness."
+  - type: research
+    severity: low
+    reason: "No broker notes; non-anchored source only; no effect on anchored evidence."
+  - type: concalls-beyond-cap
+    severity: info
+    reason: "4 concalls present; stage 5 uses 3 most recent (Feb/May/Aug 2026); Nov 2025 available beyond the 3-cap."
+  - type: sector-cap-unconfirmed
+    severity: normal
+    reason: "manifest sector_cap_row manually corrected from wrong Pharma/CDMO to Cables/Industrial products; no confirmed welding-consumables Section 1B row; confirm at stage 11."
+freshness_pairs:
+  - pair: "results->concall"
+    trigger_doc: "none (no results filing)"
+    mate_expected: "Q1FY27 concall (Aug 2026 present)"
+    status: PASS
+    missing_doc: "none (trigger absent; results recorded as input_gap)"
+  - pair: "rating->rationale"
+    trigger_doc: "none (no rating filing)"
+    mate_expected: "n/a"
+    status: PASS
+    missing_doc: "none"
+  - pair: "sebi_order->text"
+    trigger_doc: "none referenced at stage 0"
+    mate_expected: "n/a"
+    status: PASS
+    missing_doc: "none"
+  - pair: "AR->latest_audited_annual"
+    trigger_doc: "AR FY2026 present"
+    mate_expected: "FY2026 audited annual"
+    status: PASS
+    missing_doc: "none"
+freshness_verdict: "FRESHNESS PAIRS OK"
+corpus_verdict: "CORPUS GAPPED"
+listed_date: "2024-10-04"
+recently_listed: true
+peers_identified:
+  - "GEE Ltd (BSE 504028)"
+  - "Esab India Ltd (ESABINDIA)"
+  - "Ador Welding Ltd (ADOR)"
+sector_cap_row_manifest: "Cables / Industrial products"
+spear_gate: "OVERRIDE 2026-09-05 (operator)"
+flags:
+  - id: SECTOR-CAP-UNCONFIRMED
+    detail: "Confirm welding-consumables cap row at stage 11."
+  - id: POST-IPO-REBASE
+    detail: "FY25 ROE/ROCE depressed by IPO equity base; historical, not operating."
+analyst_note: >
+  Operator overrode the spear gate and directed a full Phase 1 run. Corpus is
+  AR-heavy (FY25+FY26), concall-rich (4), peer-rich (6), screening-complete for
+  4 names, but has no prospectus (HIGH, listed Oct-2024), no results/rating/
+  announcements/shareholding. Freshness pairs pass (no present trigger lacks its
+  mate). Extraction: all 13 PDFs pre-rendered to page-marked text under work/txt/
+  (poppler installed, cffi fixed) so no stage hits the render wall.

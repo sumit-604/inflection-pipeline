@@ -1,0 +1,73 @@
+stage: B12c
+company: "AEQUS"
+run_date: "2026-09-05"
+model: claude-opus-4-8
+status: complete
+scope: "phase 1 only — Gate 0 (B01) and Emerging Moat (B07). Valuation audit deferred to phase 3."
+gate0:
+  rules_checked: 63
+  rules_passed: 57
+  acceptance_pct: 90
+  fails:
+    - "D1 net debt basis excludes lease liabilities while D3 includes them; recomputed D1 = 1, Block D = 9, core = 23, grand total = 32, classification unchanged AVOID"
+    - "B3 scored 0 by declared override of the band rather than via the band's own 'or negative' clause; stage rule 2 forbids qualitative judgments; outcome 0 stands"
+    - "M6 anchor incomplete: 'AR p.?', page marker not captured"
+    - "FCF capex taken as PPE only; formula definition is PPE + intangibles, and the intangibles leg is not declared absent"
+    - "deal_breakers[] entries 1-4 omit the driving years that prompt L155 requires; only entry 8 names them"
+    - "B01 YAML carries freshness_verdict, a field the stage 1 schema does not define"
+emoat:
+  rules_checked: 67
+  rules_passed: 55
+  acceptance_pct: 82
+  fails:
+    - "Optionality register items also scored: Hosur (A1, E1), Farnborough agreements (B2, C2), Ajna (H2); prompt L195-196 says registered options are watched, never scored; recomputed range 29.4-32.4, band unchanged"
+    - "Already-realised, in-financials advantages scored inside an emerging-moat scan: B2 and E1 both state the base is realised, then score H x H = 4 undivided"
+    - "F2 scores execution against FY27 guidance that B01 recorded as NOT FOUND in corpus and attributed to company memory; propagates into 6A"
+    - "2C uses FY27 capex guidance (Rs 660 cr, claim-grade) instead of capex under execution (audited commitment Rs 21.01 cr); capex_embedded_growth_pct 63 vs 1.7 recomputed on the audited figure"
+    - "A1 evidence labelled 'capex committed', contradicted by the report's own 2A audited commitment of Rs 21.01 cr"
+    - "E2 uses an undefined 'mixed 0.7x' multiplier tier; taxonomy defines only 1.0/0.7/0.5"
+    - "Farnborough Tier-1 agreements graded documented in 1A and B2 but claim/documented in C2"
+    - "6C omits the injected existing-moat count (2 confirmed, MODERATE) that prompt L201-203 requires"
+    - "evidence_mix.documented 47 unreconciled with completionist_recount of ~26 documented items"
+    - "Section 3 categories presented as prose, not the per-category evidence tables prompt L66-67 mandates"
+    - "Two of four catalysts_12m typed documented where the dated event is management commentary; feeds Pillar 3 catalyst proximity"
+    - "Two evidence anchors carry no page reference: A2 Form B, 4B SEZ tax reconciliation"
+  framework_gaps_not_counted_as_fails:
+    - "Combined Gate0+EmergingMoat lookup matrix absent from prompts/07; 6D TURNAROUND label unverifiable; maker declared the gap and logged it in input_gaps; operator ruling needed"
+    - "Likelihood x impact matrix has no cell for contradicting evidence; floor LL=1 gives B1, G1, G2 three points for categories the report says argue against the moat"
+valuation: "pending phase 3"
+business_understanding_narrative:
+  present: false
+  five_questions_answered: false
+  prose_only: false
+  section6_candidates_named: 0
+  valuation_vocab_leak: false
+  fails: []
+  scope_note: "Stage 13 synthesis is not in phase-1 scope and does not exist for this run. Not evaluated, not a REWORK trigger here. Deferred to the stage 13 verifier pass."
+recomputed_destination_pe: ""
+recomputed_decision: ""
+findings:
+  - {severity: "MAJOR", location: "runs/aequs-2026-09-05/outputs/reports/01-gate0.md L119-125 (D1) vs L128-133 (D3)", description: "Net debt basis excludes lease liabilities in D1 while D3 includes them, same block and same date. B07 cites the AR's own p.46 net debt/equity of 0.23x, implying net debt of about Rs 342 cr against the Rs 250.05 cr used. Recomputed D1 = 1, Block D = 9, core = 23, grand total = 32. Classification unchanged AVOID; deal-breaker 6 still does not fire at 2.14x."}
+  - {severity: "MAJOR", location: "runs/aequs-2026-09-05/outputs/reports/07-emoat.md Optionality Register vs Section 5 rows A1/E1/B2/C2/H2", description: "Hosur, the two Farnborough Tier-1 agreements and the Ajna JV are entered in the Optionality Register and also scored. prompts/07 L195-196: registered options are watched, never scored. Recomputed total falls to between 29.4 and 32.4; STRENGTHENING band unchanged."}
+  - {severity: "MAJOR", location: "runs/aequs-2026-09-05/outputs/reports/07-emoat.md L191-199 (B2), L238-244 (E1)", description: "Two of the three Strong rows score already-realised, in-financials advantages inside a scan defined as moats currently forming. Both rows state the base is already realised, then score H x H = 4 without separating base from increment. A1 handled this correctly by naming its row the Hosur increment. Realised moat is already priced in Gate 0 Block F."}
+  - {severity: "MAJOR", location: "runs/aequs-2026-09-05/outputs/reports/07-emoat.md L273-284 (F2) and L533 (6A), against runs/aequs-2026-09-05/outputs/reports/01-gate0.md L246-252", description: "F2 scores execution delivery against FY27 aerospace guidance of +25-30% revenue at >20% segment margin. B01 recorded that exact guidance as NOT FOUND in corpus and attributed it to company memory, likely a news article outside the provided documents. A memory-derived figure re-enters as a documented benchmark and propagates into the 6A timeline."}
+  - {severity: "MAJOR", location: "runs/aequs-2026-09-05/outputs/reports/07-emoat.md L91-114 (2C) and runs/aequs-2026-09-05/outputs/blocks/B07-emoat.yaml L44", description: "capex_embedded_growth_pct = 63 is built on the claim-grade FY27 capex guidance of Rs 660 cr, not on capex under execution as prompts/07 L61-63 specifies. The report's own 2A gives the audited commitment of Rs 21.01 cr, which recomputes to 1.7%; Q1 FY27 actual spend of Rs 83 cr gives 8.0%. The block carries 63 as a bare integer with no evidence tier for downstream consumption."}
+  - {severity: "MINOR", location: "runs/aequs-2026-09-05/outputs/reports/01-gate0.md L64-69 and B01-gate0.yaml data_notes entry 3", description: "B3 reached score 0 through a declared override of the scoring band. Stage operating rule 2 forbids qualitative judgments. The same 0 is reachable through the band's own '<0.20 or negative = 0' clause read against the negative cumulative FCF. Outcome stands; the route is off-rule. Framework should disambiguate what 'negative' attaches to."}
+  - {severity: "MINOR", location: "runs/aequs-2026-09-05/outputs/reports/01-gate0.md L59-61", description: "FCF capex taken as acquisition of property, plant and equipment only. The formula definition is purchase of PPE plus intangibles. The intangibles leg is neither included nor declared absent. Both computable FCF years sit far from the B2 and B3 band edges, so no score moves."}
+  - {severity: "MINOR", location: "runs/aequs-2026-09-05/outputs/reports/01-gate0.md L176 (M6)", description: "Anchor reads 'AR p.?, Directors Report technology-absorption section, grep-located, page marker not captured in extract'. An anchor without a page fails the mandatory source-anchor rule. The M6 score of 0 is not in doubt."}
+  - {severity: "MINOR", location: "runs/aequs-2026-09-05/outputs/reports/01-gate0.md L218-224 and B01-gate0.yaml deal_breakers[]", description: "prompts/01 L155 requires stating which years drive any deal-breaker. Only entry 8 names its years. Entries 3 and 4 rest on materially different windows (median ROCE on FY25-FY26 only; cumulative CFO/PAT on FY23-FY26) and the windows appear only in data_notes."}
+  - {severity: "MINOR", location: "runs/aequs-2026-09-05/outputs/blocks/B01-gate0.yaml L19", description: "The block carries freshness_verdict, a field the stage 1 schema does not define, against an instruction to end with exactly the specified YAML block. B07 carries no equivalent field. If the run-pipeline orchestrator mandates it, this is a rule-source conflict to reconcile rather than a maker error."}
+  - {severity: "MINOR", location: "runs/aequs-2026-09-05/outputs/reports/07-emoat.md L142-144 and Section 1A row 1", description: "A1 evidence labelled documented on the basis of MoU plus capex committed. The report's own Section 2A shows the audited contracted commitment is Rs 21.01 cr and the reciprocal state incentive package is NOT FOUND. The signed MoU is fairly documented; capex committed is not supported by the report's own finding. At the claim multiplier A1 falls 3.0 to 2.1, band unchanged."}
+  - {severity: "MINOR", location: "runs/aequs-2026-09-05/outputs/reports/07-emoat.md Section 5, E2 row", description: "E2 applies a 'mixed 0.7x' multiplier. The taxonomy defines only documented 1.0x, claim 0.7x and inference 0.5x. Using the claim multiplier for a mixed category is conservative but the tier is undefined. At 1.0x the total is 36.0, band unchanged."}
+  - {severity: "MINOR", location: "runs/aequs-2026-09-05/outputs/reports/07-emoat.md L26 and L196-197 against L222-223", description: "The two Farnborough Tier-1 agreements are graded documented in Section 1A and in B2, and claim/documented in C2. One evidence item carries two tiers in the same report."}
+  - {severity: "MINOR", location: "runs/aequs-2026-09-05/outputs/reports/07-emoat.md Section 6C table", description: "prompts/07 L201-203 requires the combined table to carry the injected core score, existing moat count and both classifications. The moat score 9/60 is carried but the existing moat count (2 confirmed, moat_class MODERATE) is not. Core score and both classifications match B01 exactly."}
+  - {severity: "MINOR", location: "runs/aequs-2026-09-05/outputs/blocks/B07-emoat.yaml L37 against L38", description: "evidence_mix.documented is 47 while completionist_recount states approximately 26 distinct documented items. Two documented counts on two definitions, unreconciled in the same block. The completionist guard turns on this count, so the ambiguity is not cosmetic."}
+  - {severity: "MINOR", location: "runs/aequs-2026-09-05/outputs/reports/07-emoat.md Section 3, all categories", description: "prompts/07 L66-67 requires an evidence table or NO EVIDENCE FOUND for each category. Categories are written as anchored prose paragraphs. Content is complete and every claim carries an anchor, and the consolidated 22-row summary table is present; only the mandated per-category form is missing."}
+  - {severity: "MINOR", location: "runs/aequs-2026-09-05/outputs/blocks/B07-emoat.yaml L40-41", description: "Two of four catalysts_12m are typed evidence_type documented where the dated catalyst event is forward-looking management commentary: ECMS PLI first eligible income year FY27, and the Farnborough agreements entering the order book in Q2 FY27. Both are anchored to concalls. A documented fact underlies each, but the dated event is a claim. This feeds Pillar 3 catalyst proximity downstream."}
+  - {severity: "MINOR", location: "runs/aequs-2026-09-05/outputs/reports/07-emoat.md L146-151 (A2) and L450 (4B SEZ row)", description: "Two evidence anchors carry no page reference: 'AR Board's Report, Form B' and 'AR consolidated tax reconciliation'. prompts/07 L35-36 requires a page or slide anchor on every evidence item. Neither item carries a score."}
+  - {severity: "MINOR", location: "prompts/07-emerging-moat-pipeline.md L203-208 and runs/aequs-2026-09-05/outputs/reports/07-emoat.md Section 6D", description: "FRAMEWORK GAP, not a maker error, and not counted as an adherence fail. The combined Gate0 plus Emerging Moat lookup matrix is absent from the rule source, which names the eight labels but prints no mapping. The maker declared the gap, reasoned transparently and logged it in input_gaps, which is the compliant response. TURNAROUND is therefore unverifiable; AVERAGE and AVOID are also available and defensible for an AVOID backward score paired with STRENGTHENING forward. Operator ruling needed before combined_assessment travels downstream."}
+  - {severity: "MINOR", location: "prompts/07-emerging-moat-pipeline.md L170-171 and runs/aequs-2026-09-05/outputs/reports/07-emoat.md rows B1, G1, G2", description: "FRAMEWORK GAP, not a maker error, and not counted as an adherence fail. The likelihood times impact matrix has no cell for evidence that contradicts a category; its floor for any evidenced category is LL = 1. B1, G1 and G2 therefore add 3.0 points for three categories the report explicitly says the evidence argues against. Removing all three gives 32.4, band unchanged. Consider a contradicted-evidence cell scoring 0."}
+critical_count: 0
+major_count: 5
+minor_count: 15
+acceptance_rate: 86

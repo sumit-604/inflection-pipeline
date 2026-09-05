@@ -1,0 +1,9 @@
+company: Kabra Extrusion Technik Ltd
+ticker: KABRAEXTRU
+cmp: 579.0
+market_cap_cr: 2025.0
+run_date: 2026-09-05
+run_type: full
+concalls_available: false
+sector_cap_row: "Cables / Industrial products"
+notes: "Collected from screener.in by collect_to_repo.py v3. Sector row corrected from auto-picked 'Pharma / CDMO' to 'Cables / Industrial products' (25x) per framework Sector Cap Table (engineered plastic-extrusion machinery, ~40pct market share; Battrixx li-ion battery packs are the growth optionality). No main-company concall transcripts on screener (genuine gap, concalls_available: false). Peers: Rajoo Engineers, Windsor Machines (both direct plastic-machinery), HBL Engineering (battery-vertical comp for Battrixx)."

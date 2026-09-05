@@ -16,3 +16,4 @@ Per-stage token ledger. One row per subagent run. Summary block appended at clos
 | 8 | promoter-check | sonnet | default | n/a | n/a | 101121 | 315s | 1 |
 | 9 | tam-sam-som | sonnet | default | n/a | n/a | 83282 | 357s | 1 |
 | 6 | peer-verification | sonnet | default | n/a | n/a | 77665 | 196s | 1 |
+| 12d | verifier-d-peers | sonnet | default | n/a | n/a | 68720 | 162s | 1 |

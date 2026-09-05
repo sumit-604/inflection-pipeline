@@ -1,0 +1,23 @@
+stage: B12d
+company: "DIFFNKG"
+run_date: "2026-09-05"
+model: claude-sonnet-5
+status: complete
+peers_audited: 6
+substantive_confirmed: 6
+substantive_unsupported: []
+unused_but_relevant:
+  - {peer: "GEE Ltd (504028)", missed_item: "Direct three-way employee-cost comparison naming Ador and ESAB ('GEE Limited has the lowest employee cost... vis-à-vis Ador and ESAB')", anchor: "504028-Concall_May_2026_Transcript.txt, line 947-949 (PAGE 20)"}
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "MAJOR", location: "06-peers.md Part 1, Q5 net read paragraph", description: "Ador Fontech merger date 'effective 25 September 2024' cited to Ador Nov 2024 call PAGE 8-9; no merger date appears anywhere in that transcript. Unanchored specific fact presented as source-cited."}
+  - {severity: "MINOR", location: "06-peers.md Part 2E, risk item 2", description: "Ador '65% of welding equipments are imported' quote cited PAGE 12; actual location is PAGE 13. Quote text itself is accurate."}
+  - {severity: "MINOR", location: "06-peers.md Part 1, Q3 row", description: "GEE cobalt-alloy business quote cited PAGE 13; actual location is PAGE 14. Quote text itself is accurate."}
+  - {severity: "MINOR", location: "06-peers.md Part 1, Q6 row", description: "GEE RDSO/10-year railway empanelment quote cited PAGE 3; actual location is PAGE 4. Quote text itself is accurate."}
+  - {severity: "MINOR", location: "06-peers.md Part 2A / Part 3 coverage map, Ador May 2026 row", description: "'Best order book' demand-tone characterization asserted without an inline page anchor in Part 1."}
+critical_count: 0
+major_count: 1
+minor_count: 4
+acceptance_rate: 100    # 6 of 6 peer transcripts correctly handled (label accurate, citations locatable); the merger-date defect is a MAJOR finding on one sub-claim, not a mislabeled peer
+

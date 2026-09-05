@@ -1,0 +1,19 @@
+stage: B12d
+company: "YASHO"
+run_date: "2026-09-05"
+model: claude-sonnet-5
+status: complete
+peers_audited: 11
+substantive_confirmed: 10
+substantive_unsupported: []
+unused_but_relevant: []
+claims_all_addressed: true
+verdict_discipline_fails: []
+peer_utilisation: 90.9   # 10 substantive calls / 11 peer calls provided (entity-level: 3/3 = 100%)
+findings:
+  - {severity: "MINOR", location: "B06 Part 1 Q6 verdict table + Part 4 YAML contradicted[]", claimed: "CONTRADICTED (peer brownfield asset-turn ~1.0-1.1x vs Yasho's 2.5-4x)", source_truth: "single peer (NOCIL), single computed inference from disclosed capex/revenue figures, not a peer-stated ratio", note: "B06 hedges this correctly in prose ('directional rather than definitive') but the bare CONTRADICTED label risks being read with the same weight as the 2-peer VERIFIED Q2 finding at synthesis", source_fidelity: true}
+  - {severity: "MINOR", location: "B06 Part 1 Q4 verdict table + Part 4 YAML contradicted[]", claimed: "CONTRADICTED (EU FTA timeline)", source_truth: "single peer (NOCIL Feb'26), direct dated verbatim quote, correctly anchored", note: "single-peer basis noted for completeness; anchor quality (direct quote, not computed) makes this lower-risk than Q6"}
+critical_count: 0
+major_count: 0
+minor_count: 2
+acceptance_rate: 100   # peers correctly handled / peers, %; all 3 peer entities and 10/11 calls correctly handled, 1 correctly downgraded to CITED-ONLY, zero fabricated or unsupported SUBSTANTIVE citations

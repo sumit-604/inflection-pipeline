@@ -1,0 +1,21 @@
+stage: B13-synthesis
+company: "KABRAEXTRU"
+run_date: "2026-09-05"
+model: claude-opus-4-8
+status: "complete-phase1-lite"
+verdict: "REWORK"
+verdict_rule_applied: 1
+flags_active: ["FLAG-CASH", "FLAG-GATE0", "FLAG-EMOAT", "FLAG-DROPPED-CLAIMS"]
+confidence_delta: {numerical: 93.3, redflag: 23.0, framework: 93.8, peer: 83.0, overall: 23.0}
+valuation_decision: "pending phase 3"
+entry_range: {low: 0, high: 0}
+headline: "Machine business funds a widening battery loss"
+falsification_metric: "Battery/Geon segment result in the Q2 FY27 filing still a loss wider than 20% of segment revenue (FY26: -31.9%, FY25: -20.1%, AR FY26 Note 38 p.105-106)"
+monitorables_count: 8
+publish_candidate: false
+publish_candidate_summary: ""
+notion_save:
+  page_title: "KABRAEXTRU, Kabra Extrusion Technik Ltd, phase 1 evidence run 2026-09-05"
+  summary: "Machine business funds a widening battery loss. Verdict REWORK (rule 1: redflag coverage 23.0 and overall 23.0, both below the 60 floor; no B12a CRITICAL and no source-fidelity finding). REWORK judges the analysis, not the company; failing stages are 5 and 6. Valuation decision pending phase 3; no entry range, no destination PE, no Hurdle verdict. Flags active: FLAG-CASH (determination INDETERMINATE, missing evidence named), FLAG-GATE0 (core 22/100, grand 25/160, classification AVOID as a backward scorecard class only), FLAG-EMOAT (9/92, NONE), FLAG-DROPPED-CLAIMS. FLAG-PROMOTER not active (stage 8 CAUTION, status partial). Freshness verdict CORPUS GAPPED-FRESHNESS; missing mate document is the CRISIL rating rationale for the 13-May-2026 action. Transition posture PENDING the signed Mental Model. Stages 8 and 9 ran partial on blocked web egress."
+  drive_link: "n/a (repo run folder runs/kabraextru-2026-09-05)"
+  mode: append-never-overwrite-status

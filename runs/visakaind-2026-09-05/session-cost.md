@@ -13,3 +13,4 @@ not. Stage 0 ran inline in the orchestrator session (no subagent).
 | 4 | stage-02-notes (pass 3) | sonnet | n/a | n/a | n/a | 147148 | 12m16s | 3 |
 | 5 | stage-03-ardeep | sonnet | n/a | n/a | n/a | 383079 | 19m43s | 1 |
 | 6 | stage-04-bizmodel | sonnet | n/a | n/a | n/a | 190888 | 10m58s | 1 |
+| 7 | stage-05-concall | sonnet | n/a | n/a | n/a | 192647 | 13m16s | 1 |

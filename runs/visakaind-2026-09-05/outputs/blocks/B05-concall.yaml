@@ -1,0 +1,104 @@
+stage: B05-concall
+company: "VISAKAIND"
+run_date: "2026-09-05"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "No concall transcript newer than Q1 FY24 (Aug-2023) exists in the corpus; 37 months stale relative to run_date. Whether calls occurred after Aug-2023 is NOT KNOWN."
+  - "Vnext-specific EBITDA margin is never disclosed as a distinct segment in either AR (only combined 'Building products' = roofing + Vnext); the repeated 12-15% Vnext margin claim cannot be independently verified at that granularity."
+  - "ATUM revenue, order book, and MW-capacity-achieved are not disclosed as figures in either AR or in any of the three transcripts beyond one-off quarterly ranges; cannot verify multi-year ATUM trajectory."
+  - "Promoter shareholding-pattern filings are outside this corpus; the promised reduction in the 15.68% pledge level (as of 30-Jun-2023) is not verifiable."
+  - "Only one peer (BirlaNu Ltd) has concall transcripts available for the peer-verification stage; the other stated peers have no transcripts in this run."
+  - "Screener Data_Sheet quarterly figures (Q4 FY24-Q1 FY27) are unverified, screener-tier data and were not required for the annual-guidance checks performed here."
+flags:
+  - "STALE_CONCALL_MODE: newest transcript is Q1 FY24 (Aug-2023), ~37 months before run_date; credibility_grade describes 2022-2023 management behaviour only."
+  - "Yarn segment margin, repeatedly guided at 15%+, collapsed to ~0.6% in FY25 (standalone segment note) with no advance warning in any of the three calls."
+  - "Debt-reduction guidance given in Q1 FY24 (off a stated Rs410cr base) reversed; total debt rose to Rs579cr by FY24 year-end before falling to Rs350cr by FY26."
+  - "ATUM has disclosed zero revenue/order-book figures across three calls and two annual reports despite an 8-year history since 2018 launch."
+  - "ATUM Life and Visaka Green (Vnext Solutions/turnkey) subsidiaries are both loss-making with shrinking net worth through FY26 against >Rs10cr combined equity+loan commitment; neither is discussed by name after Q1 FY23."
+  - "Identical demerger question asked by the same investor in Q1 FY23 and Q1 FY24 received a near-identical non-committal answer both times."
+  - "FY26 headline PAT (Rs87.83cr standalone) includes a Rs59.70cr exceptional land-sale gain; core pre-exceptional PBT was only ~Rs50.55cr (company-memory item, corroborated in AR2026 Note on exceptional items)."
+no_concall_mode: false
+stale_concall_mode: true
+newest_transcript: "Q1 FY24 (Aug-2023)"
+quarters_analysed: ["Q1 FY23", "Q2 FY23", "Q1 FY24"]
+triggers:
+  - {priority: 1, name: "Vnext (fibre cement boards & panels) growth resumption and margin capture", type: "volume+margin", timeframe: "near-medium", conviction: "M", confirm_signal: "Sustained double-digit Vnext segment revenue growth and a disclosed, rising Vnext-specific EBITDA margin", kill_signal: "Repeat of the FY24 growth reversal (-4%) or continued non-disclosure of a stuck low-teens blended margin"}
+  - {priority: 2, name: "Debt reduction / deleveraging follow-through", type: "cost/balance-sheet", timeframe: "near", conviction: "M", confirm_signal: "FY26's Rs350cr debt level (down from FY24 Rs579cr peak) holds or falls further without fresh large debt-funded capex", kill_signal: "Return to debt-funded capacity additions before the ~Rs450cr 2030 capex plan is self-funded"}
+  - {priority: 3, name: "Yarn segment margin normalisation", type: "margin", timeframe: "near", conviction: "L", confirm_signal: "Segment margin sustaining meaningfully above the ~5.4% FY26 level", kill_signal: "Repeat of the FY25 near-zero (~0.6%) margin"}
+  - {priority: 4, name: "Revenue mix shift toward new-age (Vnext+yarn) vs legacy roofing", type: "both", timeframe: "medium", conviction: "L", confirm_signal: "Mix moving meaningfully past ~42% new-age share (FY25) toward the promised 50:50", kill_signal: "Continued legacy-roofing dominance (~58%+) years after the FY25 target date has passed"}
+  - {priority: 5, name: "ATUM solar roof commercial validation", type: "volume", timeframe: "long", conviction: "L", confirm_signal: "A first disclosed ATUM revenue/order-book figure in an AR or future concall", kill_signal: "Continued silence on ATUM numbers past FY26"}
+  - {priority: 6, name: "Vnext capacity cadence (next plant beyond Midnapore)", type: "volume", timeframe: "long", conviction: "L", confirm_signal: "A newly announced/commissioned Vnext plant beyond Midnapore", kill_signal: "No new plant commissioned through FY26 year-end, four years after the cadence was first promised"}
+  - {priority: 7, name: "Demerger of Vnext", type: "inorganic", timeframe: "undefined", conviction: "L", confirm_signal: "An actual scheme of arrangement or public statement of intent", kill_signal: "Continued identical non-answers to the same question"}
+guidance:
+  - {item: "Vnext FY23 revenue", number: "Rs 350-400 crore", timeframe: "FY23", stated_in: "Q1 FY23 call"}
+  - {item: "Vnext growth rate", number: "30-40% YoY", timeframe: "ongoing", stated_in: "Q1 FY23 call"}
+  - {item: "Vnext margin", number: "12-15%", timeframe: "FY23-FY25", stated_in: "Q1 FY23 call"}
+  - {item: "West Bengal (Midnapore) plant capex", number: "~Rs 100 crore", timeframe: "FY23-24", stated_in: "Q1 FY23 call; reaffirmed Q2 FY23 call"}
+  - {item: "West Bengal plant capacity", number: "72,000 MT", timeframe: "n/a", stated_in: "Q1 FY23 call"}
+  - {item: "West Bengal plant commissioning", number: "mid-2023, later revised to September 2023", timeframe: "2023", stated_in: "Q2 FY23 call; revised Q1 FY24 call"}
+  - {item: "Vnext long-run capacity", number: "double via 4-5 more plants", timeframe: "by 2030", stated_in: "Q1 FY23 call"}
+  - {item: "Vnext long-run revenue", number: "~Rs 1,000 crore", timeframe: "by 2030", stated_in: "Q1 FY23 call; reaffirmed Q1 FY24 call"}
+  - {item: "ATUM FY23 revenue target", number: "~Rs 40 crore (double FY22's Rs 20cr), later revised to ~Rs 50 crore", timeframe: "FY23", stated_in: "Q1 FY23 call; revised Q2 FY23 call"}
+  - {item: "ATUM Life stores", number: "~10 stores", timeframe: "FY23", stated_in: "Q1 FY23 call"}
+  - {item: "Vnext Solutions revenue", number: "Rs 100-150 crore", timeframe: "by 2025", stated_in: "Q1 FY23 call"}
+  - {item: "Roofing capacity", number: "9 lakh MT", timeframe: "FY23", stated_in: "Q1 FY23 call"}
+  - {item: "Non-asbestos (new-age) revenue mix", number: "60:40 -> >50% non-asbestos", timeframe: "next couple of years (from Q2 FY23)", stated_in: "Q2 FY23 call"}
+  - {item: "Vnext FY24 revenue", number: "~Rs 450 crore", timeframe: "FY24", stated_in: "Q1 FY24 call"}
+  - {item: "Vnext growth rate (reiterated)", number: "25-30%", timeframe: "ongoing", stated_in: "Q1 FY24 call"}
+  - {item: "Revenue mix legacy:new-age", number: "50:50", timeframe: "by FY25", stated_in: "Q1 FY24 call"}
+  - {item: "Gross debt / direction", number: "Rs 410 crore, expected to come down", timeframe: "FY24 outlook", stated_in: "Q1 FY24 call"}
+  - {item: "Promoter share pledge", number: "15.68% of total shares (as of 30-Jun-2023)", timeframe: "current, expected to reduce", stated_in: "Q1 FY24 call"}
+  - {item: "Yarn margin", number: "15%+, some years 18%", timeframe: "ongoing", stated_in: "Q2 FY23 call; reaffirmed Q1 FY24 call"}
+promise_delivery:
+  delivered: 4
+  partial: 2
+  missed: 7
+  rows:
+    - {promised_in: "Q1 FY23 call", promise: "Vnext FY23 revenue Rs350-400cr, growth 30-40%", outcome: "FY23 actual Rs405cr, +43% (AR2026 p.49)", explanation: "n/a - delivered"}
+    - {promised_in: "Q1 FY23 / Q2 FY23 calls", promise: "Midnapore plant capex ~Rs100cr, commissioning mid-2023", outcome: "Capitalised at Rs131.32cr (AR2025 p.153); commercial production 07-Dec-2023, ~3-6 months late", explanation: "No explanation offered for either the cost or timeline slip in any of the three calls"}
+    - {promised_in: "Q1 FY24 call", promise: "Vnext FY24 revenue ~Rs450cr, growth 'track record 25-30% for 2-3 years'", outcome: "FY24 actual Rs389cr, -4% (AR2026 p.49)", explanation: "No explanation given; the miss postdates the corpus's last transcript"}
+    - {promised_in: "Q2 FY23 / Q1 FY24 calls", promise: "Yarn margin 15%+ sustainable, 'least impacted' in downturns", outcome: "FY24 ~13.2%, FY25 collapsed to ~0.6% (AR2025 Note 38), FY26 ~5.4% (AR2026 Note 37)", explanation: "Framed proactively as manageable cyclicality in Q1 FY24; no warning that a near-total margin collapse was imminent"}
+    - {promised_in: "Q1 FY24 call", promise: "Revenue mix 50:50 legacy:new-age by FY25", outcome: "~58:42 legacy:new-age using FY25 MD&A segment sales (AR2026 p.48-51)", explanation: "Not addressed in this corpus (no post-FY25 transcript exists)"}
+    - {promised_in: "Q1 FY24 call", promise: "Gross debt (Rs410cr) expected to come down", outcome: "FY24 year-end total debt Rs579cr, the four-year-window high (AR2026 p.28)", explanation: "Not addressed in this corpus"}
+    - {promised_in: "Q1 FY23 call", promise: "ATUM Life ~10 stores in FY23", outcome: "Only 3 ATUM life stores nationally as of FY26 (AR2026 BRSR)", explanation: "Never revisited in Q2 FY23 or Q1 FY24 calls"}
+    - {promised_in: "Q1 FY23 / Q2 FY23 / Q1 FY24 calls", promise: "ATUM revenue/order book to become material 'in 6 months to a year'", outcome: "No ATUM revenue or order-book figure disclosed in either AR through FY26", explanation: "Repeated 'gestation period' framing in every call; never resolved with a number"}
+    - {promised_in: "Q1 FY23 call", promise: "Demerger of Vnext under consideration", outcome: "Identical non-answer to the same question 12 months later (Q1 FY24), no scheme found in either AR", explanation: "No reason given for a year of apparent inaction"}
+    - {promised_in: "Q1 FY23 call", promise: "Vnext plant capacity cadence: a plant every 1.5-2 years, 4-5 more by 2030", outcome: "Only Midnapore added since 2022 (installed capacity 249,750 MT FY23 -> 355,750 MT FY26)", explanation: "Not addressed; AR2026 frames further capacity as a forthcoming 'next phase' only as of FY26"}
+    - {promised_in: "Q1 FY23 call", promise: "Roofing capacity 9 lakh MT for FY23", outcome: "FY23-26 installed capacity 830,000-848,000 MT, consistent with the claim (AR2026 p.51)", explanation: "n/a - delivered"}
+    - {promised_in: "Q1 FY23 call", promise: "Yarn back to full capacity, production and sales", outcome: "Q2 FY23 volume +33% YoY, value +50% YoY", explanation: "n/a - delivered"}
+    - {promised_in: "Q1 FY23 call", promise: "Vnext export growth momentum", outcome: "Q2 FY23 export volumes +50% YoY", explanation: "n/a - delivered"}
+excuse_pattern: "external-blame-heavy"
+repeated_evasions:
+  - {question: "Should Visaka demerge the Vnext division to unlock shareholder value?", quarters_asked: ["Q1 FY23", "Q1 FY24"], classification: "deflected every time"}
+  - {question: "What is ATUM's current revenue / order book, and when does it become material?", quarters_asked: ["Q1 FY23", "Q2 FY23", "Q1 FY24"], classification: "answer changed between quarters; never directly answered on a current-period basis"}
+credibility_grade: "D"
+credibility_basis: "Delivered the one headline FY23 Vnext target, then missed or reversed nearly every other quantified, repeated commitment since (Midnapore cost/timeline, the FY24 Vnext growth claim, yarn margin collapse, the FY25 50:50 mix target, and the debt-direction call), with zero self-attributed misses across three transcripts; grade describes 2022-2023 management behaviour only (stale, no transcript exists past Aug-2023)."
+peer_questions:
+  - {question: "In 2025-2026 commentary, does BirlaNu describe chrysotile fibre/raw-material cost as stabilised or still elevated/'the new normal'?", why: "Tests whether Visaka's FY24-FY25 margin weakness was industry-wide (as management claimed) or company-specific execution", check_peers: ["BirlaNu"]}
+  - {question: "Does BirlaNu disclose a stand-alone fibre-cement board/panel segment margin, and what growth has it shown in FY26/FY27?", why: "Benchmarks whether Visaka's non-disclosure of Vnext-specific margins is company-specific opacity or a sector norm", check_peers: ["BirlaNu"]}
+  - {question: "Is BirlaNu discussing an integrated solar-roofing (BIPV) product, and does it disclose revenue/order-book figures?", why: "Tests whether BIPV is genuinely slow-gestation industry-wide or Visaka-specific under-execution (ATUM: zero revenue disclosed after 8 years)", check_peers: ["BirlaNu"]}
+  - {question: "What building-materials/roofing industry growth rate does BirlaNu cite for FY26-FY27 versus Visaka's own downward-revised range (5-10% down to 3-5% within Visaka's own three calls)?", why: "Independent check on whether Visaka's own growth citation was accurate or overly cautious/optimistic at different points", check_peers: ["BirlaNu"]}
+  - {question: "Does BirlaNu show a comparable capacity-utilisation dip-then-recovery pattern after a capacity addition, and over what ramp period?", why: "Benchmarks whether Visaka's multi-year Midnapore ramp (96%->72%->79%->86%) is normal industry pacing or company-specific lag", check_peers: ["BirlaNu"]}
+  - {question: "Does BirlaNu comment on export market volatility/moderation for fibre-cement boards in 2025-2026?", why: "Cross-checks whether Visaka's own pull-back from export ambition (per AR2026 MD&A) is sector-wide or company-specific", check_peers: ["BirlaNu"]}
+  - {question: "Does BirlaNu discuss capex plans/funding comparable to Visaka's ~Rs450cr through-2030 boards programme, and how is it funded?", why: "Visaka's own debt rose sharply (to Rs579cr, FY24) during its last capex cycle; useful comparison point", check_peers: ["BirlaNu"]}
+  - {question: "Does BirlaNu name Visaka as a competitor or estimate market share in fibre-cement boards (an analyst asserted Visaka holds ~32%, uncorrected by Visaka management)?", why: "Triangulates an unconfirmed market-share claim left dangling in the Q1 FY24 call", check_peers: ["BirlaNu"]}
+red_flags:
+  - {flag: "Yarn margin claimed 15%+ sustainable across two calls; actual FY25 standalone segment margin ~0.6%", severity: "High"}
+  - {flag: "Debt-reduction guidance (Q1 FY24) reversed; total debt rose to a four-year-window high of Rs579cr by FY24 year-end", severity: "High"}
+  - {flag: "ATUM: zero revenue/order-book disclosure across three calls and both ARs despite 8 years since launch", severity: "High"}
+  - {flag: "ATUM Life and Visaka Green (Vnext Solutions/turnkey) subsidiaries both loss-making with shrinking net worth through FY26, against >Rs10cr combined commitment, undiscussed by name after Q1 FY23", severity: "Medium-High"}
+  - {flag: "Same demerger question asked by the same investor a year apart, answered near-identically both times with no resolution", severity: "Medium"}
+  - {flag: "Midnapore capex overrun (~31% above the twice-stated Rs100cr) never flagged in the call held after it was substantially incurred", severity: "Medium"}
+  - {flag: "Defensive, non-substantive response to a direct strategy critique from an analyst (Q2 FY23)", severity: "Medium"}
+  - {flag: "50:50 legacy:new-age revenue mix target for FY25 missed (actual ~58:42), unacknowledged within this corpus", severity: "Medium"}
+  - {flag: "Promoter share pledge (15.68% of total shares as of 30-Jun-2023, incl. 57% of one promoter's holding) surfaced only on direct analyst question", severity: "Low-Medium"}
+dropped_triggers:
+  - "ATUM Charge (EV charging network) - explicitly noted by an analyst as dropped from the presentation deck (Q2 FY23), never revisited in Q1 FY24; persists only as boilerplate subsidiary description in AR2026 with zero operating metrics"
+  - "ATUM Life experience stores - promised ~10 stores in Q1 FY23, never mentioned again in Q2 FY23 or Q1 FY24; only 3 stores exist as of FY26 per BRSR"
+  - "Vnext Solutions (B2B turnkey/EPC arm) - discussed in Q1 FY23 and Q2 FY23, not mentioned in Q1 FY24; activity appears to continue only inside a small, loss-making subsidiary (Visaka Green Private Limited) never named on any of the three calls"
+timeline_slippages:
+  - "West Bengal (Midnapore) plant commissioning: 'next year' (Q1 FY23) -> 'mid next year/mid-2023' (Q2 FY23) -> 'September 2023' (Q1 FY24) -> actual commercial production 07-Dec-2023 (AR2025 p.153)"
+  - "Non-asbestos/new-age revenue mix reaching >50%: 'next couple of years' (Q2 FY23) -> restated as a fixed 'by FY25' date (Q1 FY24) -> missed, actual ~42% new-age share in FY25 (AR2026 MD&A tables)"
+  - "Vnext plant cadence ('a plant every 1.5-2 years' from Q1 FY23): only one plant (Midnapore) commissioned in the four years to FY26; AR2026 frames the next capacity phase as only now beginning"
+analyst_note: "Grade is D on hard delivery evidence, not tone: the one big promise with a near-term audited check (Vnext FY23 revenue/growth) was met, but nearly everything checked afterward (Midnapore cost/date, the FY24 Vnext growth claim contradicted within the same quarter it was made, yarn margin 15%+ claimed vs ~0.6% delivered FY25, the FY25 50:50 mix target, debt direction) missed, several badly. ATUM's complete absence of any revenue figure after 8 years, and ATUM Life/Visaka Green's quiet, unspoken capital destruction, are the most durable signal: management narrates new growth engines confidently and stops discussing them once results disappoint, rather than reporting the miss. This is a 2022-2023 read only; no transcript newer than Aug-2023 exists (37 months stale), so the grade is a prior on management style, not a live signal. FY26 AR narrative (Vnext +19%, debt down to Rs350cr, RoCE to 11.87%) is genuinely stronger than anything visible in the three calls, but FY26 PAT also carries a Rs59.70cr exceptional land-sale gain this stage cannot cross-check against live management commentary."

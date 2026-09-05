@@ -27,3 +27,33 @@ where it does not.
 | 12a | verifier A numerical (pass 2: coverage extension to 02/03/05/07, cumulative 52 numbers) | claude-haiku | default | n/a | n/a | 121991 | 3m53s | 2 |
 | 13 | synthesis-lite (phase 1: 3 files) | claude-opus | default | n/a | n/a | 148149 | 9m11s | 1 |
 | 9b | Halt 1 understanding dossier + Section 6 annex | claude-sonnet | default | n/a | n/a | 299624 | 17m12s | 1 |
+
+## Summary block (close-out)
+
+Run total (sum of every ledger row with a token figure): 3,696,333 tokens. Rows without token metadata (stage 0 inline; stage 7, whose agent was cut by an API 429 after writing its report) are excluded from the sum and the ranking.
+
+### (a) TOP FIVE BY TOKENS (loop/retry runs summed per stage)
+
+| rank | stage | model | total_tok | share |
+|---|---|---|---|---|
+| 1 | 2 notes triple-pass | claude-sonnet | 512,299 | 13.9% |
+| 2 | 12b verifier B red flags | claude-opus | 386,274 | 10.5% |
+| 3 | 3 AR deep dive | claude-sonnet | 369,769 | 10.0% |
+| 4 | 6 peer concall verification | claude-sonnet | 361,695 | 9.8% |
+| 5 | 12d verifier D peer coverage | claude-sonnet | 326,482 | 8.8% |
+
+### (b) DOWNSHIFT FAILURES
+
+none. Verifier A (12a) ran on claude-haiku (both passes). Stage 10 does not run in phase 1. Stage 0 validation ran inline in the orchestrator session (claude-fable-5-1) per the run-pipeline command's "do this yourself" instruction; no haiku subagent exists for it, so it is not a downshift failure, but it is not a haiku run either.
+
+### (c) COST SPIKES
+
+none. No prior runs/pittieng-*/session-cost.md exists (first run for this ticker).
+
+### (d) OPERATOR SNAPSHOT
+
+Operator: run /cost and /usage now and paste the cache hit ratio and the loop totals under the heading below.
+
+## Operator snapshot
+
+(to be filled by the operator)

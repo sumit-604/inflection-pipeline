@@ -7,3 +7,4 @@ Per-stage token ledger. One row per subagent run. Summary block appended at clos
 | 0 | input-validation | inline-orch | n/a | n/a | n/a | n/a | n/a | 1 |
 | 1 | gate0-scorecard | sonnet | default | n/a | n/a | 61075 | 317s | 1 |
 | 2 | notes-triple-pass (pass1) | sonnet | default | n/a | n/a | 167372 | 291s | 1 |
+| 2 | notes-triple-pass (pass2) | sonnet | default | n/a | n/a | 157280 | 150s | 2 |

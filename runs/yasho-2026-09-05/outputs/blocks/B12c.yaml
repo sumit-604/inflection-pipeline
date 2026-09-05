@@ -1,0 +1,18 @@
+stage: B12c
+company: "YASHO"
+run_date: "2026-09-05"
+model: claude-opus-4-8
+status: complete
+gate0: {rules_checked: 36, fails: []}
+emoat: {rules_checked: 29, fails: []}
+valuation: {rules_checked: 0, fails: []}   # PENDING — deferred to Phase 3 (B10/B11 not in scope)
+business_understanding_narrative: {present: false, five_questions_answered: false, prose_only: false, section6_candidates_named: 0, valuation_vocab_leak: false, fails: []}  # not in phase-1 scope (stage 13 not audited)
+recomputed_destination_pe: ""   # concur / not in phase-1 scope
+recomputed_decision: ""         # concur — Gate 0 AVOID re-derived and confirmed
+findings:
+  - {severity: "MINOR", location: "B01 Block F / M3", note: "M3 uses FY26 latest ROCE (11.34%); pairing median ROCE (12.87%) with the FAT tier would give M3=1 and grand_total 45->46. No effect on moats-present (3, MODERATE) or classification (AVOID via Core<40 + deal-breaker 6). Latest-ROCE pairing is internally consistent with the FY26 FAT and defensible; advisory only."}
+  - {severity: "MINOR", location: "B01 confidence / YAML flags[]", note: "The '5-6 yrs lower confidence, may not have seen full cycle' note is in the dashboard prose but not surfaced in the YAML flags[] array. Cosmetic; flags[] slot is scoped to FLAG-GATE0 for <=AVERAGE, which is present."}
+critical_count: 0
+major_count: 0
+minor_count: 2
+acceptance_rate: 100    # rules passed / rules checked (gate0 + emoat); no rule misapplied

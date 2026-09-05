@@ -527,9 +527,9 @@ function getCtx() {
     ctx = new AC();
     // Compressor keeps loud chords from crackling; master gain sets the level.
     const comp = ctx.createDynamicsCompressor();
-    comp.threshold.value = -12;
-    comp.knee.value = 20;
-    comp.ratio.value = 6;
+    comp.threshold.value = -6;
+    comp.knee.value = 12;
+    comp.ratio.value = 3;
     comp.attack.value = 0.003;
     comp.release.value = 0.2;
     master = ctx.createGain();
@@ -699,14 +699,37 @@ function playCoin() {
   tone(1760, t + 0.08, 0.3, "square", 0.3);
 }
 
-// A very short "voice" blip, played as a villager's words appear one by one.
-// `pitch` is the villager's base pitch in Hz; we wobble it a little so the
-// speech sounds lively rather than like a beep.
-function playTalkBlip(pitch = 400) {
+// A short "voice" blip, played as a villager's words appear. `pitch` is the
+// villager's base pitch in Hz. Each LETTER has its own fixed note (vowels a
+// little higher), so speech has a cadence instead of random buzzing. Blips
+// never overlap: a new one cuts the previous one off cleanly.
+let talkOsc = null, talkGain = null;
+function playTalkBlip(pitch = 400, ch = "a") {
+  if (muted) return;
   const c = getCtx();
   if (!c) return;
-  const wobble = 1 + (Math.random() - 0.5) * 0.3;
-  tone(pitch * wobble, c.currentTime, 0.06, "triangle", 0.3);
+  const t = c.currentTime;
+  if (!talkOsc) {
+    talkOsc = c.createOscillator();
+    talkOsc.type = "sine";
+    talkGain = c.createGain();
+    talkGain.gain.value = 0;
+    const f = c.createBiquadFilter();
+    f.type = "lowpass"; f.frequency.value = 1800;
+    talkOsc.connect(f).connect(talkGain).connect(master);
+    talkOsc.start();
+  }
+  const code = ch.toLowerCase().charCodeAt(0);
+  const vowel = "aeiou".includes(ch.toLowerCase());
+  const step = ((code * 7) % 8) / 8;                 // 0..1, fixed per letter
+  const freq = pitch * (0.85 + step * 0.3) * (vowel ? 1.18 : 1);
+  talkOsc.frequency.cancelScheduledValues(t);
+  talkOsc.frequency.setValueAtTime(freq, t);
+  talkOsc.frequency.linearRampToValueAtTime(freq * 0.94, t + 0.08);
+  talkGain.gain.cancelScheduledValues(t);
+  talkGain.gain.setValueAtTime(talkGain.gain.value, t);
+  talkGain.gain.linearRampToValueAtTime(0.22, t + 0.012);
+  talkGain.gain.linearRampToValueAtTime(0.0, t + 0.085);
 }
 
 // ===== src/engine/save.js =====
@@ -984,12 +1007,13 @@ class Dialogue {
     this.textEl.textContent = "";
     this.nextBtn.textContent = this.index === this.lines.length - 1 ? "Okay" : "Continue";
 
-    // Reveal 1 letter every 28 ms; blip on every 2nd non-space letter.
+    // Reveal 1 letter every 28 ms. A voice blip plays on every 4th letter,
+    // never on spaces or punctuation, so the blips do not pile on each other.
     this._typing = setInterval(() => {
       this._shown++;
       this.textEl.textContent = full.slice(0, this._shown);
       const ch = full[this._shown - 1];
-      if (ch && ch !== " " && this._shown % 2 === 0) playTalkBlip(this.pitch);
+      if (ch && /[a-z0-9]/i.test(ch) && this._shown % 4 === 0) playTalkBlip(this.pitch, ch);
       if (this._shown >= full.length) this._stopTyping();
     }, 28);
   }
@@ -1726,6 +1750,7 @@ class World {
     this.bridgePlanks = new THREE.Group(); // filled when bridge is solved
     this.schoolWindows = [];               // meshes we light up
     this.scene.add(this.bridgePlanks);
+    this.colliders = new Map(); // grid cell -> list of solid things (walls, trunks)
     this.waters = [];   // every rippling water sheet (river, lake)
     this.fields = [];   // instanced crop fields
     this.swayers = [];  // things the wind moves
@@ -1763,6 +1788,7 @@ class World {
     pond.position.set(12, -0.02, 17);
     this.scene.add(pond);
     this.pond = { cx: 12, cz: 17, r: 2.4 };
+    this.addCircle(12, 17, 3.3);
     const padMat = mat(0x3f8f3a);
     for (let i = 0; i < 6; i++) {
       const pad = new THREE.Mesh(new THREE.CylinderGeometry(0.35, 0.35, 0.04, 8), padMat);
@@ -2009,6 +2035,8 @@ class World {
     signPost.position.set(this.points.signpost.x, 1.1, this.points.signpost.z);
     signPost.castShadow = true;
     this.scene.add(signPost);
+    this.addCircle(this.points.signpost.x, this.points.signpost.z, 0.2);
+    for (const x of [-2.4, 2.4]) this.addBox(x, 24, 0.4, 0.4); // arch posts
     const board = new THREE.Mesh(new THREE.BoxGeometry(1.6, 0.9, 0.1), mat(COLORS.wood));
     board.position.set(this.points.signpost.x, 1.9, this.points.signpost.z);
     board.castShadow = true;
@@ -2030,6 +2058,7 @@ class World {
     house.position.set(-12, 0, 14);
     this.scene.add(house);
     this.leakyRoof = roof;
+    this.addBox(-12, 14, 3.2, 3.2);
 
     // The village well.
     const well = new THREE.Group();
@@ -2046,6 +2075,7 @@ class World {
     well.add(wellRoof);
     well.position.set(7, 0, 12);
     this.scene.add(well);
+    this.addCircle(7, 12, 0.95);
 
     // Fence posts along both sides of the entrance path.
     const postGeo = new THREE.BoxGeometry(0.14, 0.9, 0.14);
@@ -2091,6 +2121,7 @@ class World {
     school.position.set(0, 0, -15);
     this.scene.add(school);
     this.schoolGroup = school;
+    this.addBox(0, -15, 8, 5);
 
     // ---------- Water tank on a tower ----------
     const tower = new THREE.Group();
@@ -2124,6 +2155,8 @@ class World {
     tower.position.set(-14, 0, -14);
     this.scene.add(tower);
     this.tankGroup = tower;
+    this.addBox(-14, -14, 2.6, 2.6);          // tower legs
+    this.addBox(-14 + 2.6, -14 + 2.2, 2.4, 1); // trough
 
     // ---------- Windmill ----------
     const mill = new THREE.Group();
@@ -2158,6 +2191,8 @@ class World {
     mill.position.set(15, 0, -14);
     this.scene.add(mill);
     this.windmillBlades = blades;
+    this.addCircle(15, -14, 2.1);   // mill body
+    this.addCircle(12, -12.5, 1.0); // grindstone
 
     // ---------- Market square: a few stalls ----------
     const marketColors = [COLORS.roofRed, COLORS.roofBlue, 0x6fae54];
@@ -2174,6 +2209,7 @@ class World {
       stall.position.set(-4 + i * 4, 0, -22);
       stall.traverse((m) => { if (m.isMesh) m.castShadow = true; });
       this.scene.add(stall);
+      this.addBox(-4 + i * 4, -22, 2.2, 1.4);
     }
     // Sacks of rice that appear on the middle stall when the market job is done.
     const sacks = new THREE.Group();
@@ -2202,6 +2238,7 @@ class World {
       house.add(roof);
       house.position.set(x, 0, z);
       this.scene.add(house);
+      this.addBox(x, z, 3, 3);
     });
   }
 
@@ -2227,6 +2264,7 @@ class World {
       tree.scale.setScalar(0.9 + Math.random() * 0.5);
       this.scene.add(tree);
       this.trees.push(tree);
+      this.addCircle(x, z, 0.3);
     }
   }
 
@@ -2395,8 +2433,8 @@ class World {
     this._addRoad([[-36, 90], [36, 90]], 3.5);
     this._addRoad([[-36, 110], [36, 110]], 3.5);
     this._addRoad([[-36, 128], [36, 128]], 3.5);
-    this._addRoad([[-24, 66], [-24, 140]], 3);
-    this._addRoad([[24, 66], [24, 140]], 3);
+    this._addRoad([[-19.5, 66], [-19.5, 140]], 3);
+    this._addRoad([[23.4, 66], [23.4, 140]], 3);
     // Farm lanes.
     this._addRoad([[100, -70], [100, 70]], 3);
     this._addRoad([[70, -55], [140, -55]], 2.5);
@@ -2446,6 +2484,8 @@ class World {
     building.rotation.y = rotY;
     this.scene.add(building);
     this.mapItems.buildings.push([x, z]);
+    const fp = building.userData.footprint;
+    if (fp) this.addBox(x, z, fp.w, fp.d, rotY);
     return building;
   }
 
@@ -2488,8 +2528,8 @@ class World {
     }
     // Station and platform by the rails.
     this._place(makeBuilding({ w: 14, d: 6, h: 3.4, roof: "gable", wall: 0xf3d9c8, roofColor: 0x8a5626, sign: "Railway Station" }), 24, 140, Math.PI);
-    const platform = new THREE.Mesh(new THREE.BoxGeometry(40, 0.6, 4), mat(COLORS.stone));
-    platform.position.set(24, heightAt(24, 146) + 0.3, 146);
+    const platform = new THREE.Mesh(new THREE.BoxGeometry(40, 0.3, 4), mat(COLORS.stone));
+    platform.position.set(24, heightAt(24, 146) + 0.15, 146);
     this.scene.add(platform);
     // Bus stop shelter.
     const shelter = new THREE.Group();
@@ -2500,6 +2540,7 @@ class World {
     const stopSign = makeTextSprite("Bus Stop", { size: 48, scale: 0.8 }); stopSign.position.set(0, 3.4, 0); shelter.add(stopSign);
     shelter.position.set(5, heightAt(5, 70), 70);
     this.scene.add(shelter);
+    this.addBox(5, 69.6, 3.6, 0.8);
     // Street lamps along the main road in town.
     for (let z = 70; z <= 140; z += 14) for (const x of [-3.6, 3.6]) this._addLamp(x, z);
     // Playground: swing, seesaw, slide.
@@ -2524,6 +2565,7 @@ class World {
       const x = 64 + Math.random() * 80, z = -70 + Math.random() * 140;
       if (Math.abs(z) < 16) continue;
       hs.position.set(x, heightAt(x, z) + 0.9, z); hs.castShadow = true; this.scene.add(hs);
+      this.addCircle(x, z, 1.1);
     }
     for (const [x, z] of [[80, -34], [104, 44], [126, -28], [74, 18]]) this._addScarecrow(x, z);
 
@@ -2565,25 +2607,28 @@ class World {
 
     // ---------- Temple on the hill ----------
     const th = heightAt(0, -122);
-    const base = new THREE.Mesh(new THREE.BoxGeometry(26, 1.2, 22), mat(COLORS.stone));
-    base.position.set(0, th + 0.6, -122); base.receiveShadow = true; this.scene.add(base);
+    const base = new THREE.Mesh(new THREE.BoxGeometry(26, 0.4, 22), mat(COLORS.stone));
+    base.position.set(0, th + 0.2, -122); base.receiveShadow = true; this.scene.add(base);
     const temple = makeBuilding({ w: 10, d: 10, h: 5, roof: "pyramid", wall: 0xfff1d6, roofColor: 0xd4a017 });
-    temple.position.set(0, th + 1.2, -124); this.scene.add(temple);
+    temple.position.set(0, th + 0.4, -124); this.scene.add(temple);
     this.mapItems.buildings.push([0, -124]);
+    this.addBox(0, -124, 10, 10);
     const spire = new THREE.Mesh(new THREE.ConeGeometry(2.2, 7, 8), mat(0xffc93c));
-    spire.position.set(0, th + 1.2 + 5 + 3.5 + 1.5, -124); spire.castShadow = true; this.scene.add(spire);
+    spire.position.set(0, th + 0.4 + 5 + 3.5 + 1.5, -124); spire.castShadow = true; this.scene.add(spire);
     const kalash = new THREE.Mesh(new THREE.SphereGeometry(0.6, 8, 6), mat(0xffd700));
-    kalash.position.set(0, th + 1.2 + 5 + 7 + 1.7, -124); this.scene.add(kalash);
+    kalash.position.set(0, th + 0.4 + 5 + 7 + 1.7, -124); this.scene.add(kalash);
     for (const x of [-9, 9]) {
       const shrine = makeBuilding({ w: 3, d: 3, h: 2.5, roof: "dome", wall: 0xfff1d6, roofColor: 0xd4a017 });
-      shrine.position.set(x, th + 1.2, -116); this.scene.add(shrine);
+      shrine.position.set(x, th + 0.4, -116); this.scene.add(shrine);
+      this.addBox(x, -116, 3, 3);
     }
     // Bell posts and stone lanterns up the path.
     for (const [x, z] of [[-4, -110], [4, -110]]) {
       const post = new THREE.Mesh(new THREE.BoxGeometry(0.3, 3, 0.3), mat(COLORS.woodDark));
-      post.position.set(x, th + 1.2 + 1.5, z); this.scene.add(post);
+      post.position.set(x, th + 0.4 + 1.5, z); this.scene.add(post);
       const bell = new THREE.Mesh(new THREE.CylinderGeometry(0.3, 0.42, 0.6, 8), mat(0xffc93c));
-      bell.position.set(x, th + 1.2 + 2.4, z); this.scene.add(bell);
+      bell.position.set(x, th + 0.4 + 2.4, z); this.scene.add(bell);
+      this.addBox(x, z, 0.3, 0.3);
     }
     for (let z = -50; z > -100; z -= 10) for (const x of [-3.6, 3.6]) this._addLantern(x, z);
     // The great banyan beside the temple.
@@ -2596,6 +2641,7 @@ class World {
     }
     banyan.position.set(-16, th, -118);
     this.scene.add(banyan);
+    this.addCircle(-16, -118, 1.9);
     this.swayers.push({ obj: banyan, phase: 1, amp: 0.012 });
   }
 
@@ -2603,6 +2649,7 @@ class World {
     const h = heightAt(x, z);
     const pole = new THREE.Mesh(new THREE.CylinderGeometry(0.07, 0.1, 4, 6), mat(COLORS.metal));
     pole.position.set(x, h + 2, z); this.scene.add(pole);
+    this.addCircle(x, z, 0.15);
     const lamp = new THREE.Mesh(new THREE.SphereGeometry(0.25, 8, 6), new THREE.MeshStandardMaterial({ color: 0xfff1b8, emissive: 0xffe27a, emissiveIntensity: 0.6 }));
     lamp.position.set(x, h + 4.1, z); this.scene.add(lamp);
   }
@@ -2622,6 +2669,7 @@ class World {
     const cap = new THREE.Mesh(new THREE.ConeGeometry(2.2, 1.6, 12), mat(COLORS.roofRed));
     cap.position.set(x, h + 7.8, z); this.scene.add(cap);
     this.mapItems.buildings.push([x, z]);
+    this.addCircle(x, z, 2);
   }
 
   _addScarecrow(x, z) {
@@ -2685,6 +2733,7 @@ class World {
     pond.position.set(x, heightAt(x, z) - 0.02, z); this.scene.add(pond);
     const rim = new THREE.Mesh(new THREE.TorusGeometry(4.1, 0.2, 6, 20), mat(COLORS.stone));
     rim.rotation.x = Math.PI / 2; rim.position.set(x, heightAt(x, z) + 0.05, z); this.scene.add(rim);
+    this.addCircle(x, z, 4.2);
     for (let i = 0; i < 4; i++) { const b = new THREE.Mesh(new THREE.BoxGeometry(1.8, 0.12, 0.5), mat(COLORS.wood)); const a = i * Math.PI / 2; b.position.set(x + Math.cos(a) * 5.5, heightAt(x, z) + 0.5, z + Math.sin(a) * 5.5); b.rotation.y = -a; this.scene.add(b); }
   }
 
@@ -2700,6 +2749,9 @@ class World {
     frame.add(swing);
     frame.position.set(x, h, z); this.scene.add(frame);
     this.swing = swing;
+    for (const dx of [-1.2, 1.2]) this.addCircle(x + dx, z, 0.15);
+    this.addCircle(x + 5, z, 0.3);
+    this.addBox(x + 10, z, 0.8, 4.2);
     // Seesaw.
     const pivot = new THREE.Mesh(new THREE.BoxGeometry(0.3, 0.6, 0.3), mat(COLORS.metal)); pivot.position.set(x + 5, h + 0.3, z); this.scene.add(pivot);
     const plank = new THREE.Mesh(new THREE.BoxGeometry(3.6, 0.1, 0.4), mat(0xffb703)); plank.position.set(x + 5, h + 0.65, z); this.scene.add(plank);
@@ -2741,6 +2793,7 @@ class World {
       const s = 0.8 + Math.random() * 0.9;
       dummy.position.set(x, h + 0.9 * s, z); dummy.scale.setScalar(s); dummy.rotation.set(0, Math.random() * 6, 0); dummy.updateMatrix();
       trunks.setMatrixAt(placed, dummy.matrix);
+      this.addCircle(x, z, 0.35 * s);
       const round = Math.random() < 0.4;
       dummy.position.y = h + (round ? 3.0 : 3.2) * s; dummy.updateMatrix();
       if (round) { leaves2.setMatrixAt(placed, dummy.matrix); dummy.scale.setScalar(0); dummy.updateMatrix(); leaves.setMatrixAt(placed, dummy.matrix); }
@@ -2757,9 +2810,11 @@ class World {
     for (let i = 0; i < nRocks; i++) {
       let x, z, h;
       do { x = (Math.random() * 2 - 1) * 195; z = (Math.random() * 2 - 1) * 195; h = heightAt(x, z); } while (h < 4 || inLake(x, z));
-      dummy.position.set(x, h + 0.3, z); dummy.scale.set(0.6 + Math.random() * 1.8, 0.5 + Math.random(), 0.6 + Math.random() * 1.8);
+      const sx = 0.6 + Math.random() * 1.8, sz = 0.6 + Math.random() * 1.8;
+      dummy.position.set(x, h + 0.3, z); dummy.scale.set(sx, 0.5 + Math.random(), sz);
       dummy.rotation.set(Math.random(), Math.random() * 6, Math.random()); dummy.updateMatrix();
       rocks.setMatrixAt(i, dummy.matrix);
+      if (Math.max(sx, sz) > 1.2) this.addCircle(x, z, 0.7 * Math.max(sx, sz));
     }
     this.scene.add(rocks);
 
@@ -2826,6 +2881,40 @@ class World {
     for (const b of this.lakeBoats || []) { b.position.y = -0.05 + Math.sin(elapsed * 1.5 + b.rotation.y) * 0.06; b.rotation.z = Math.sin(elapsed * 1.2 + b.rotation.y) * 0.04; }
   }
 
+  // ---- Solid things nobody can walk through ----
+  // A box collider: centre (x, z), half sizes hw/hd, turned by rot radians.
+  addBox(x, z, w, d, rot = 0) { this._addCollider({ x, z, hw: w / 2, hd: d / 2, rot }); }
+  // A round collider (tree trunks, wells, silos).
+  addCircle(x, z, r) { this._addCollider({ x, z, r }); }
+  _addCollider(c) {
+    const reach = c.r != null ? c.r : Math.hypot(c.hw, c.hd);
+    const cs = 16; // grid cell size in metres
+    for (let gx = Math.floor((c.x - reach) / cs); gx <= Math.floor((c.x + reach) / cs); gx++) {
+      for (let gz = Math.floor((c.z - reach) / cs); gz <= Math.floor((c.z + reach) / cs); gz++) {
+        const key = gx + "," + gz;
+        if (!this.colliders.has(key)) this.colliders.set(key, []);
+        this.colliders.get(key).push(c);
+      }
+    }
+  }
+  // Is (x, z) inside any solid thing, with `pad` metres of body width?
+  blockedBySolid(x, z, pad = 0.35) {
+    const key = Math.floor(x / 16) + "," + Math.floor(z / 16);
+    const list = this.colliders.get(key);
+    if (!list) return false;
+    for (const c of list) {
+      const dx = x - c.x, dz = z - c.z;
+      if (c.r != null) {
+        if (dx * dx + dz * dz < (c.r + pad) * (c.r + pad)) return true;
+      } else {
+        const cs = Math.cos(c.rot), sn = Math.sin(c.rot);
+        const lx = dx * cs - dz * sn, lz = dx * sn + dz * cs;
+        if (Math.abs(lx) < c.hw + pad && Math.abs(lz) < c.hd + pad) return true;
+      }
+    }
+    return false;
+  }
+
   // Light the school windows and mark it done (Job 2).
   lightSchool() {
     for (const win of this.schoolWindows) {
@@ -2884,6 +2973,7 @@ class World {
     if (Math.abs(x) > 196 || Math.abs(z) > 196) return false; // edge of the world
     if (inLake(x, z)) return false;                           // the lake
     if (heightAt(x, z) > 30) return false;                    // too steep, high mountains
+    if (this.blockedBySolid(x, z)) return false;              // walls, trunks, posts
     const inRiver = z < this.riverZ.near && z > this.riverZ.far;
     if (!inRiver) return true;               // not over water — fine
     if (!this.bridgeBuilt) return false;     // water, no bridge — blocked
@@ -3173,10 +3263,13 @@ class Player {
       const nx = this.group.position.x + dir.x * step;
       const nz = this.group.position.z + dir.z * step;
 
-      // Only move if the world says that spot is walkable (rivers block).
-      // We test each axis so you can slide along an edge instead of sticking.
-      if (this.world.isWalkable(nx, this.group.position.z)) this.group.position.x = nx;
-      if (this.world.isWalkable(this.group.position.x, nz)) this.group.position.z = nz;
+      // Only move if the world says that spot is walkable (rivers, walls and
+      // steep slopes block). We test each axis so you can slide along an edge.
+      const h0 = heightAt(this.group.position.x, this.group.position.z);
+      const probeX = this.group.position.x + dir.x * 0.6, probeZ = this.group.position.z + dir.z * 0.6;
+      const steep = heightAt(probeX, probeZ) - h0 > 0.7; // more than about 50 degrees
+      if (!steep && this.world.isWalkable(nx, this.group.position.z)) this.group.position.x = nx;
+      if (!steep && this.world.isWalkable(this.group.position.x, nz)) this.group.position.z = nz;
 
       // Keep inside the map bounds.
       this.group.position.x = THREE.MathUtils.clamp(this.group.position.x, -195, 195);
@@ -4964,6 +5057,8 @@ function updateCritters(critters, dt, elapsed, playerPos, world) {
       b.phase += dt * (b.kind === "peck" ? 14 : 6);
       swingLegs(p, b.phase, b.kind === "peck" ? 0 : 0.5);
       if (b.kind === "peck") c.position.y = Math.abs(Math.sin(b.phase)) * 0.08; // hop
+      // Do not walk into buildings or water: choose a different spot instead.
+      if (world.blockedBySolid(b.target.x, b.target.z, 0.5) || inLake(b.target.x, b.target.z) || Math.abs(b.target.z) < 4) { b.target = null; continue; }
       if (stepToward(c, b.target.x, b.target.z, b.speed, dt)) {
         b.target = null;
         b.wait = 1.5 + r01() * 4;
@@ -5055,12 +5150,12 @@ const NPC_DEFS = [
 
 // Open spots to wander between, per zone (x, z).
 const WAYPOINTS = {
-  village_s: [[-4, 20], [4, 17], [-7, 11], [8, 9], [11, 15], [-15, 18], [-3, 9], [13, 20], [3, 12], [-11, 9], [24, 26], [-26, 26]],
+  village_s: [[-4, 20], [4, 17], [-7, 11], [8, 9], [18, 10], [-15, 18], [-3, 9], [8, 26], [3, 12], [-11, 9], [24, 26], [-26, 26]],
   village_n: [[-5, -8], [5, -7], [-8, -19], [8, -18], [-12, -7], [12, -7], [-6, -25], [6, -25], [0, -10], [16, -20], [-17, -19], [-26, -14], [26, -14]],
-  town: [[-8, 80], [8, 84], [-20, 100], [20, 100], [-8, 118], [10, 120], [-30, 90], [30, 110], [4, 74], [20, 136], [-14, 136]],
+  town: [[-8, 80], [8, 90], [-19.5, 100], [23.4, 100], [-8, 110], [10, 128], [-30, 90], [30, 110], [4, 74], [0, 136], [-19.5, 136]],
   farms_n: [[80, -50], [110, -50], [125, -40], [92, -30], [70, -20], [104, -14], [130, -20]],
   farms_s: [[80, 45], [112, 50], [96, 22], [70, 34], [128, 30], [104, 60]],
-  lake: [[-70, 32], [-66, 50], [-72, 64], [-90, 74], [-62, 40], [-80, 20]],
+  lake: [[-74, 40], [-74, 52], [-60, 36], [-90, 74], [-62, 56], [-84, 14]],
   temple: [[-6, -114], [6, -114], [0, -108], [-10, -122], [10, -122], [-2, -104]],
 };
 // Which side of the river each zone sits on.
@@ -5069,6 +5164,7 @@ const ZONE_BANK = { village_s: "near", town: "near", farms_s: "near", lake: "nea
 class Npc {
   constructor(def, world) {
     this.def = def;
+    this._world = world;
     this.id = "npc:" + def.id;
     this.name = def.name;
     this.bank = def.bank;
@@ -5135,8 +5231,14 @@ class Npc {
           this.wait = 2 + Math.random() * 5;
         } else if (d > 0.05) {
           const step = Math.min(d, this.speed * dt);
-          this.position.x += (ddx / d) * step;
-          this.position.z += (ddz / d) * step;
+          const nx = this.position.x + (ddx / d) * step, nz = this.position.z + (ddz / d) * step;
+          if (this._world.blockedBySolid(nx, nz, 0.4)) {
+            // Something solid in the way: give up on this target, pick another soon.
+            this.target = null; this.wait = 0.4 + Math.random();
+            return;
+          }
+          this.position.x = nx;
+          this.position.z = nz;
           const want = Math.atan2(ddx, ddz);
           let diff = want - this.group.rotation.y;
           while (diff > Math.PI) diff -= Math.PI * 2;

@@ -12,3 +12,4 @@ Per-stage token ledger. One line per subagent run.
 | 8 | promoter | claude-sonnet-5 | - | - | - | 137136 | 478s | 1 |
 | 2 | notes-pass2 | claude-sonnet-5 | - | - | - | 129047 | 352s | 2 |
 | 6 | peers | claude-sonnet-5 | - | - | - | 174819 | 387s | 1 |
+| 7 | emerging-moat | claude-sonnet-5 | - | - | - | 119886 | 468s | 1 |

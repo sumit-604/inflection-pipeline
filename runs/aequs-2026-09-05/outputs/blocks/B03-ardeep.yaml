@@ -1,0 +1,90 @@
+stage: B03-ardeep
+company: "AEQUS"
+run_date: "2026-09-05"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "prospectus: ABSENT (HIGH gap; company listed 10-Dec-2025)"
+  - "results: ABSENT"
+  - "rating: ABSENT as a separate document; a CARE BBB-;Stable rating on Rs 25 Cr long-term bank facilities is disclosed inside the AR's Corporate Governance Report (p.113)"
+  - "announcements: ABSENT"
+  - "shareholding: ABSENT as a separate document; the AR's own CG Report shareholding pattern (p.111) is the only source, and carries no YoY comparison (first year listed)"
+  - "research: ABSENT"
+  - "other: ABSENT"
+  - "screening: companion CSVs header-only; Data_Sheet populated"
+  - "peer-concalls: DYNAMATECH single transcript Feb-2024 (stale)"
+  - "manifest: no listed_date; sector_cap_row set by Step 1 brief"
+  - "prior-year ARs: FY24 and FY25 ARs absent; Phase 6D (tone/priority drift vs prior year) and part of Phase 5D (promoter selling pattern) are NOT FOUND IN DOCUMENT for this reason"
+flags:
+  - type: FLAG-CASH
+    reason: "Independently re-verified: consolidated CFO turned negative (Rs -98.75 Cr FY26 vs +Rs 26.14 Cr FY25) for the first time in the two years shown, converting zero of Rs 154.45 Cr FY26 EBITDA to operating cash (CFO/EBITDA -0.64x); FCF negative and worsening both years; the entire FY26 cash build is IPO-proceeds-funded, not operations-funded. Corroborates Stage 2's receivables/ECL/stock-statement FLAG-CASH with an independent cash-flow-statement angle (Consolidated Cash Flow Statement, AR p.231-232)."
+  - type: FLAG-GOVERNANCE
+    reason: "Both statutory audit opinions (standalone AR p.152-153, consolidated AR p.222-223) carry a Section 143(3)(b)/Rule 11(g) audit-trail qualification; CARO Annexure A (AR p.224) names adverse remarks across 7 Group entities including auditor-confirmed cash losses at 3; CEO-to-median pay multiple is 129.31x (Annexure 4, AR p.83) with an unreconciled +0.63% fixed-pay-increase vs +111% total-remuneration-increase internal contradiction; CFO and a material foreign subsidiary's auditor both turned over after the FY26 audit sign-off date, undisclosed beyond footnotes."
+phase_verdicts: {p1: "Red Flag", p2: "Watch", p3: "Watch (leaning Red on cash)", p4: "Watch", p5: "Watch", p6: "Watch", p7_best_fit: "Capex-Led Growth"}
+overall_quality: 4.5
+quality_components: {governance: 4, accounting: 5, balance_sheet: 6, earnings: 3}
+kill_switch_notes:
+  - "Phase 1: a reviewer would pause on the group-wide audit-trail qualification and 7-entity CARO adverse remarks in a first listed year; continued per protocol."
+  - "Phase 2: would not halt but would require the five Stage 2 management questions answered before Halt 1; continued per protocol."
+  - "Phase 3: would flag that Rs 154 Cr EBITDA converted to zero operating cash and that DSCR sits below 1.0x on both bases; continued per protocol."
+  - "Phase 5: would want the CEO-to-median multiple, the CFO departure, and the France-subsidiary auditor change explained before Halt 1; continued per protocol."
+triple_pass_verification:
+  verified: 15
+  discrepancies: []
+missing_risks:
+  - {risk: "Cash conversion deterioration (DSO, ECL coverage, Axis Bank stock-statement gap)", evidence: "Note 9(i) AR p.250; Note 28(A)(ii) AR p.279; Note 15(B) AR p.267 — absent from MD&A Risk Management table AR p.50-51"}
+  - {risk: "Governance/audit-trail/CARO risk", evidence: "Auditor's Reports AR p.152-153, p.222-224 — absent from MD&A Risk Management table AR p.50-51"}
+  - {risk: "Related-party financial dependency (13% p.a. RP loans, promoter personal guarantees, ~9.4% of revenue in RPT flows)", evidence: "Note 34 AR p.284-289; Note 15 AR p.264-266 — absent from MD&A Risk Management table"}
+  - {risk: "Leverage-measurement reliability (three non-reconciling FY26 leverage ratios in one AR)", evidence: "Note 15(C) AR p.267; Note 29 AR p.282-283; MD&A AR p.46 — absent from MD&A Risk Management table"}
+  - {risk: "CFO (finance-leadership) transition", evidence: "KMP table footnote AR p.60, p.83 — absent from MD&A Risk Management table"}
+  - {risk: "Consumer-segment capital-allocation tension (PBT loss scale vs Aerospace)", evidence: "Note 36 AR p.292-294 — absent from MD&A Risk Management table"}
+guidance_table:
+  - {claim: "Consumer segment EBITDA breakeven", number: "0% margin", timeframe: "Q4 FY2026-27", credibility: "Aggressive: FY26 Consumer margin -42.5% (Note 36); >40pp swing in ~4 quarters, no interim bridge given (CEO letter AR p.9)"}
+  - {claim: "Consolidated PAT breakeven", number: "breakeven", timeframe: "H1 FY2027-28", credibility: "Requires Aerospace PBT growth to keep outrunning Consumer losses and finance costs; consolidated PBT still -Rs 71.54 Cr FY26 (CEO letter AR p.9)"}
+  - {claim: "Consumer net-level profitability", number: "profitable", timeframe: "FY2029-30", credibility: "3+ year-out, not independently testable from this AR (CEO letter AR p.9)"}
+  - {claim: "Vision 2031 revenue growth", number: "4-6x FY26 base", timeframe: "FY2030-31", credibility: "Implies ~19-33% CAGR for 5 years; Aerospace alone grew 27% FY26, plausible if sustained and Consumer scales (CEO letter AR p.10)"}
+  - {claim: "Vision 2031 EBITDA margin", number: "18-22%", timeframe: "FY2030-31", credibility: "Aerospace already at 26.9% FY26 exceeds the top end of this group target; Consumer at -42.5% is the sole drag (CEO letter AR p.10; Note 36)"}
+  - {claim: "Vision 2031 ROCE", number: "~20% steady state", timeframe: "FY2030-31", credibility: "Consolidated ROCE only 1.56% FY26 (MD&A AR p.46), below the FY24 level of 3.4% (front-matter chart AR p.14); no interim bridge given anywhere in this AR"}
+  - {claim: "FY27 aerospace revenue +25-30%, segment EBITDA margin above 20%, ~20% manufacturing ROCE (company memory)", number: "n/a", timeframe: "FY2026-27", credibility: "NOT FOUND IN THIS AR; only Vision 2031 (FY30-31) and the three CEO milestone dates appear in this document"}
+monitorables:
+  - {metric: "DSO (days sales outstanding)", threshold: "further rise above 78.5 days", where: "Quarterly results / next AR Note 9(i)", why: "DSO rose 61.8->78.5 days FY26 alongside ECL coverage halving; FLAG-CASH driver"}
+  - {metric: "Axis Bank quarterly stock-statement gap (trade receivables)", threshold: "gap continuing to widen past Rs 59.01 Cr", where: "Next AR Note 15(B) / quarterly bank filings", why: "Independently corroborates the receivables/ECL trend from a lender-facing disclosure"}
+  - {metric: "Consolidated ROCE (company's own MD&A formula)", threshold: "material improvement above the FY26 1.56% base, tracking toward Vision 2031's ~20%", where: "Next AR MD&A Key Financial Ratios table", why: "Single largest guidance-vs-delivery gap found in this AR"}
+  - {metric: "Net debt reconciliation across Notes 15(C)/28(C)(ii)/29", threshold: "whether the FY26 discrepancy is corrected or explained", where: "FY27 AR Notes 15/28/29", why: "Feeds the leverage ratio presented as evidence of post-IPO balance-sheet repair"}
+  - {metric: "Consumer segment PBT and finance-cost share of combined segment finance costs", threshold: "narrowing toward the CEO's Q4 FY26-27 EBITDA-breakeven milestone", where: "Quarterly segment disclosures / FY27 AR Note 36", why: "Tests the single most specific, checkable guidance claim in this AR"}
+  - {metric: "Rule 11(g) audit-trail qualification and CARO adverse-remark count (7 entities)", threshold: "whether the FY27 opinion clears the qualification and adverse-remark count falls", where: "FY27 Auditor's Report and CARO Annexure A", why: "Tests whether this was a one-off IPO-year transition issue or a persistent group-wide gap"}
+  - {metric: "Consolidated CFO / CFO-EBITDA conversion", threshold: "return to positive CFO, conversion above ~0.5x", where: "Quarterly cash-flow disclosures / FY27 AR cash flow statement", why: "FY26 EBITDA of Rs 154 Cr converted to zero operating cash"}
+  - {metric: "CFO (person) successor and stated reason for departure", threshold: "named permanent successor disclosed", where: "Exchange filings / next AR KMP section", why: "First-year-listed finance-leadership turnover coincided with the audit-trail qualification and negative CFO"}
+ar_new_downstream_entities:
+  - name: "Ajna Aerospace & Defence Private Limited"
+    where_in_ar: "Board's Report p.56-57 (Performance of JVs); Note 37 p.293; CARO Annexure A clause vii(a)/xiv p.224"
+    entity_type: "New joint venture (UAV/defence manufacturing), incorporated 22-Oct-2025"
+  - name: "Accel India VIII (Mauritius) Limited"
+    where_in_ar: "Board's Report p.56-57 (Ajna JV partner)"
+    entity_type: "New JV partner (PE/VC investor in Ajna Aerospace & Defence)"
+  - name: "Vagus Defence Tech & Aerospace Fund I"
+    where_in_ar: "Board's Report p.56-57 (Ajna JV partner)"
+    entity_type: "New JV partner (defence-tech fund, Ajna Aerospace & Defence)"
+  - name: "Twin and Bull Opportunities Fund-1"
+    where_in_ar: "Note 15(A) borrowings, AR p.265"
+    entity_type: "New financing counterparty; Rs 37.16 Cr NCD at 13% p.a., unsecured, 24-month tenor"
+  - name: "Vivriti Capital Limited"
+    where_in_ar: "Note 15(A) borrowings, AR p.264-266"
+    entity_type: "New lender; Rs 1.92 Cr term loan at 11.80% p.a. to ASMIPL/AFCPPL, secured"
+  - name: "Hasbro / Mattel / Spin Master"
+    where_in_ar: "BRSR Section A, AR p.121 (types of customers)"
+    entity_type: "Named Consumer-segment (toy brand) customers, first explicit naming in this AR; not tied to a disclosed revenue percentage"
+  - name: "Safran (named alongside Airbus, Boeing, Collins Aerospace, Honeywell, SAAB, GKN Aerospace, Eaton, DTL, Bombardier)"
+    where_in_ar: "BRSR Section A AR p.121; Global Operations AR p.15"
+    entity_type: "Named Aerospace-segment customer, first explicit naming in this AR; corroborates but does not size or confirm the company-memory Safran LTA claim, and is not tied to Note 36's anonymised Customer 1-4"
+strengths_top3:
+  - "Aerospace segment PBT more than doubled to Rs 173.98 Cr (+144.5%), segment EBITDA margin 26.9% FY26 already exceeding the >20% guidance neighbourhood a year early (Note 36, independently verified)"
+  - "Post-IPO balance sheet materially delevered: D/E 0.99 to 0.23, current ratio 1.10 to 1.58, genuine net-cash position both years, zero borrowing defaults (CARO ix(a))"
+  - "Management directly names and explains the loss with three specific, checkable milestones (Consumer EBITDA breakeven Q4 FY26-27, consolidated PAT breakeven H1 FY27-28), unusually candid for a first-year-listed AR"
+red_flags_top3:
+  - "Both statutory audit opinions carry a Section 143(3)(b)/Rule 11(g) audit-trail qualification; CARO names adverse remarks (including auditor-confirmed cash losses) across 7 Group entities, with 4 more entities having no CARO issued at all"
+  - "Cash conversion deteriorating on two corroborating notes plus an independently verified cash-flow-statement angle: CFO turned negative (Rs -98.75 Cr), converting zero of Rs 154.45 Cr EBITDA to cash (FLAG-CASH)"
+  - "Consolidated ROCE of just 1.56% FY26 (company's own disclosed formula) sits far below the Vision 2031 ~20% steady-state target with no interim bridge in this AR, and the FY27-specific near-term ROCE guidance referenced in company memory does not appear in this document at all"
+best_fit_strategy: "Capex-Led Growth"
+one_line_verdict: "Aerospace beats its own guidance. Cash, tax and governance flags need answers first."
+analyst_note: "Two refinements beyond Stage 2, both load-bearing for Stage 11. First, Note 15(C)'s own formula produces a NEGATIVE net debt (net CASH) of Rs 344.28 Cr FY26 in both years shown; Note 29's positive Rs 250.05 Cr figure and the front-matter/MD&A 0.23 ratio use different, narrower formulas that this AR does not fully itemise — three leverage figures exist, only two are independently reconcilable, and the underlying economic position is net cash, not net debt, on the most defensible basis. Second, the post-tax loss widening (-102.35 to -113.25 Cr) is substantially a TAX-CHARGE story: pretax loss actually NARROWED (-94.08 to -71.54 Cr) but a 5x larger tax charge on a pretax loss reversed that improvement. Neither nuance appears in the CEO/MD letters. Phase 6E found two genuine quiet abandonments (Vision 2031 ROCE vs the 1.56% actual; Consumer 'commercial scale' framing vs its worsening margin) that bear directly on the transition thesis's credibility."

@@ -1,0 +1,100 @@
+stage: B09-tam
+company: "PITTIENG"
+run_date: "2026-09-05"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "No rupee-denominated product-type revenue split (laminations vs castings vs machined components), carried from B04/B07; SAM/SOM built on a blended, not product-line, basis"
+  - "No third-party HHI/concentration data for the Indian electrical-steel-lamination or motor-core industry; competitor names (Vilas Transcore, Jay Bee Laminations) sourced via web search, not corpus"
+  - "No direct import statistics for FINISHED laminations/castings/machined components; Method 4 (import substitution) not computable for Pitti's own output market"
+  - "No sourced 'precision/OEM-qualified grade' share of the India metal casting market; the 10% castings-slice figure used in TAM Method 1b is an unsourced analyst assumption, the single largest driver of TAM uncertainty here"
+  - "Vilas Transcore's Rs 461 Cr revenue figure (web search) has unconfirmed vintage/freshness"
+  - "Rs 290 Cr capex commissioning date conflict (Q1FY29 slide vs Q1 2029-30 AR/calls) unresolved, carried from B04/B07, directly affects the SOM(yr3) capacity-timing finding in Section 3C"
+flags:
+  - type: "FLAG-TAM-CLAIM-BROAD-NOT-COMPANY-SPECIFIC"
+    reason: "Management's most prominent market-size citation (global railroad market, USD 343.8bn 2025) is a whole-of-industry backdrop figure, ~130x this stage's conservative component-level TAM; management never quantifies its own addressable slice anywhere in the corpus. Credibility read: BROAD."
+  - type: "FLAG-AR-INTERNAL-MARKET-DATA-INCONSISTENCY"
+    reason: "AR FY26 cites two different 2025 sizes for 'the global rail market' (USD 343.8bn PDF p.5 vs USD 572.46bn PDF p.22, different vendor reports) and two different 2025-forward paths for 'the global oil and gas market' (to USD10.8trn by 2030, PDF p.6, vs to USD8.75trn by 2026, PDF p.23), unreconciled within the same document."
+  - type: "FLAG-CRNGO-CRGO-GRADE-DISTINCTION"
+    reason: "Web-search-sourced CRGO (grain-oriented, transformer-grade) import/production statistics are for a DIFFERENT steel grade than Pitti's own CRNGO (non-oriented, motor-grade) input; not used as Pitti-specific evidence anywhere in this report to avoid a wrong anchor."
+  - type: "FLAG-CAPACITY-TIMING-TIGHT-YR3-SOM"
+    reason: "SOM(yr3) = Rs 2,754 Cr sits inside management's own stated capacity ceiling only if the Rs 290 Cr castings/machining capex commissions on the EARLIER of its two conflicting stated dates (Q1FY29); the AR and all three concalls instead state Q1 2029-30."
+  - type: "FLAG-SOM-YR5-EXCEEDS-MGMT-CEILING"
+    reason: "SOM(yr5) = Rs 3,453 Cr exceeds management's own stated capacity ceiling of Rs 3,000-3,300 Cr (which itself assumes a further ~Rs 400 Cr Bangalore capex not yet board-approved) by Rs 150-450 Cr. The SOM is the optimistic side at the 5-year horizon."
+market_definition: "India + export B2B market for electrical steel laminations, motor/generator core assemblies, iron castings and precision machined components for rotating electrical equipment across railways, power generation, industrial/special-purpose motors, mining/oil&gas, renewables and data centres"
+tam_cr: {conservative: 25000, realistic: 34250}
+sam_cr: 12000
+sam_pct_of_tam: 48
+som_3yr_cr: 2754
+som_5yr_cr: 3453
+som_implied_revenue_cagr: {yr3: 12.9, yr5: 12.5}
+current_sam_share_pct: 16
+revenue_headroom_x: 6.3
+tam_growth_pct: 6.5
+runway_class: "GOOD"
+mgmt_claim_cr: 2500
+mgmt_claim_ratio: 1.11
+mgmt_claim_read: "reasonable"
+capacity_check: "gap of ~Rs 150-450 Cr at year 5 vs management's own stated capacity ceiling (Rs 3,000-3,300 Cr, incl. an unapproved ~Rs 400 Cr Bangalore capex); SOM is the optimistic side"
+methods_used: ["top-down (product-line component markets)", "bottom-up (tonnage)", "peer revenue aggregation", "global benchmark"]
+stale_data_flags:
+  - {datapoint: "India CRNO lamination market 14% CAGR (2019-27 base)", source: "Transparency Market Research, web search", year: 2019}
+  - {datapoint: "Jay Bee Laminations revenue >Rs 200 Cr", source: "web search", year: 2023}
+searches_performed:
+  - "India electrical steel lamination motor core manufacturers market size crore"
+  - "Pitti Engineering competitors electrical steel laminations India market share"
+  - "India CRNGO electrical steel import volume tonnes 2025 domestic production deficit"
+  - "Indian Railways traction motor rolling stock components market size crore 2026"
+  - "CRNO CRGO electrical steel lamination market India size 2024 2025 crore report"
+  - "India machined components precision engineering market size 2025 billion IMARC"
+  - "Vilas Transcore Jay Bee Laminations revenue annual report crore"
+  - "India iron casting foundry industry unorganised sector share percent"
+  - "India foundry industry casting end use segment split automotive railway power percentage"
+  - "\"data center\" India capacity MW 2025 2026 additions CBRE JLL"
+  - "USD INR exchange rate September 2026"
+searches_skipped: []
+downstream_candidates:
+  - signal: "Indian Railways production-unit (CLW/ICF/BLW) rolling-stock and traction-equipment output counts"
+    entity_type: "end-customer"
+    demand_link: "Pitti supplies traction cores/components directly to these units; output volume proxies Pitti's largest revenue stream"
+    likely_source: "Ministry of Railways Annual Report / Indian Railways Production Unit statistics"
+    cadence: "quarterly"
+    shared: false
+  - signal: "Global rail OEM capex, order intake and delivery counts: Wabtec, Alstom, Siemens Mobility, Progress Rail"
+    entity_type: "counterparty"
+    demand_link: "Named customers; international locomotive/metro programmes sustain railway demand as domestic capex moderates"
+    likely_source: "Company quarterly filings/earnings calls (Wabtec, Alstom, Siemens Mobility)"
+    cadence: "quarterly"
+    shared: false
+  - signal: "Caterpillar and Cummins power-systems/genset segment shipment data"
+    entity_type: "counterparty"
+    demand_link: "Named customers; genset shipments drive both Power Generation and Data Centres revenue streams"
+    likely_source: "Company quarterly filings (Caterpillar, Cummins segment reports)"
+    cadence: "quarterly"
+    shared: true
+  - signal: "India data centre capacity addition trackers"
+    entity_type: "macro"
+    demand_link: "Sizes the Data Centres stream directly and Power Generation indirectly via backup gensets"
+    likely_source: "CBRE India / JLL India Data Centre Market reports"
+    cadence: "quarterly"
+    shared: true
+  - signal: "CEA monthly generation-capacity-addition report and MNRE renewable-capacity data"
+    entity_type: "macro"
+    demand_link: "Drives Power Generation (thermal/hydro additions) and Renewable Energy (wind/solar/pumped-storage) streams"
+    likely_source: "Central Electricity Authority monthly executive summary; MNRE"
+    cadence: "monthly"
+    shared: true
+  - signal: "DGCIS import-volume data for CRNGO electrical steel and the BIS approved-producer licence list"
+    entity_type: "regulatory"
+    demand_link: "Tracks the company's own disclosed CRNGO supply deficit; input-side risk, not a demand signal"
+    likely_source: "DGCIS; Bureau of Indian Standards licence database"
+    cadence: "monthly"
+    shared: false
+  - signal: "Union Budget railway capex allocation and PIB rail-infrastructure updates"
+    entity_type: "regulatory"
+    demand_link: "Rs 2.78 Lakh Cr railway capex and new-track allocation cited directly as a Railways demand driver"
+    likely_source: "Union Budget documents (Ministry of Finance); PIB India Portal"
+    cadence: "event-driven"
+    shared: false
+demand_externally_verifiable: true
+analyst_note: "The generic B09 template defines mgmt_claim_ratio as the TAM-claim-vs-conservative-estimate ratio (computed in Section 2 prose: ~130x, inflated, using the railroad-market figure). This run's Company Memory carries an explicit override instructing the FY28 revenue guidance (Rs2,500 Cr+ at 90,000t) be used as 'the management growth claim your SOM-implied revenue CAGR cross-checks (mgmt_claim_ratio)'. The YAML fields above follow that explicit instruction (mgmt_claim_cr=2500, ratio=1.11 of implied CAGRs, read=reasonable); the standard TAM-claim finding is preserved in full in Section 2 prose and the FLAG-TAM-CLAIM-BROAD-NOT-COMPANY-SPECIFIC flag so nothing is lost. The single largest uncertainty in this report is the unsourced 10% 'precision-grade castings' assumption used to size Method 1b (Rs13,227 Cr of the Rs25,000 Cr conservative TAM); stage 11 should treat the castings-driven portion of TAM/SAM/SOM with that caveat in mind."

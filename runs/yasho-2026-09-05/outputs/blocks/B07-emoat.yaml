@@ -1,0 +1,47 @@
+stage: B07-emoat
+company: "YASHO"
+run_date: "2026-09-05"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "customer concentration (top 5/10 %) not disclosed in AR or concalls; cannot verify C2 improving-concentration claim quantitatively"
+  - "plant-level utilisation (Pakhajan vs Vapi split) withheld under repeated questioning across Q4FY26/Q1FY27 calls; B2/2B trajectory only available at consolidated level"
+  - "no patent filings, IP registry, or named inventor data found in AR; A2/I1 evidence hierarchy sources (Espacenet/ipindia.gov.in) not in corpus, out of Claude Code's live-web scope"
+  - "PLI/chemical-park/customs-duty scheme enrollment status for Yasho specifically not confirmed; AR discloses only sector-wide policy context, not a named-beneficiary disclosure"
+flags:
+  - {type: "FLAG-EM-SINGLE-PILLAR", reason: "EM score of 17 rests almost entirely on one strong category (B2, MNC 15-year customer-funded LTSA); if Q1FY28 commercialisation slips again (already slipped once, Q4FY27->Q1FY28 per B05), the emerging-moat case collapses toward NONE. Same load-bearing fact as company memory and B05 priority-1 trigger."}
+  - {type: "FLAG-EM-MARGIN-UNPROVEN", reason: "F2/G2 credit rests partly on a single-quarter margin/WC print (24.2% EBITDA, 143 WC days, Q1FY27) not yet repeated; consistent with B01's leverage-divergence flag and B05's analyst note."}
+  - {type: "FLAG-EM-NO-TALENT-IP-EVIDENCE", reason: "I1 and I2 both score 0; no named scientists, no patents, no documented competitor-cost-asymmetry. The 'unique molecule/process' behind the MNC deal is NDA-protected and unverifiable beyond management's word."}
+em_score: 17
+em_classification: "MODEST"
+active_categories:
+  - {id: "B2", name: "Qualification lock-in", strength: "Strong", evidence_type: "documented", time_to_materialise: "12m (Q1 FY28 commercialisation)"}
+  - {id: "C1", name: "Customer ecosystem / embedded relationships", strength: "Moderate", evidence_type: "claim", time_to_materialise: "ongoing"}
+  - {id: "F1", name: "Talent density", strength: "Moderate", evidence_type: "documented", time_to_materialise: "24-36m"}
+  - {id: "F2", name: "Execution moat", strength: "Moderate", evidence_type: "documented/claim", time_to_materialise: "ongoing"}
+  - {id: "G2", name: "WC improvement trajectory", strength: "Moderate", evidence_type: "documented", time_to_materialise: "6-12m to prove durability"}
+evidence_mix: {documented: 11, claim: 9, inference: 1}
+completionist_recount: "recount performed: 11 documented items across 5 categories (B2, E1, F1, G2, H3); 10 of 22 categories carry any evidence at all (below the 12-category red-flag threshold); 5 of those reach Strong/Moderate."
+catalysts_12m:
+  - {catalyst: "MNC LTSA equipment delivery completion", window: "Q3 FY27", evidence_type: "claim", anchor: "Concall Aug 2026 p.13; Inv. Pres. p.13"}
+  - {catalyst: "MNC LTSA trial production start", window: "Q4 FY27", evidence_type: "claim", anchor: "Concall Feb 2026 p.4; Inv. Pres. p.13"}
+  - {catalyst: "Named new molecule (Rs 50-100cr threshold) reaching commercial scale", window: "12-24 months, unspecified", evidence_type: "claim", anchor: "Concall Nov 2025 p.8-9; Concall Aug 2026 p.16-17"}
+  - {catalyst: "WC days holding at 143-175 band for 2-3 more quarters", window: "next 2-3 quarters", evidence_type: "documented", anchor: "AR p.18 ratios; Inv. Pres. p.11 (143 days Q1FY27)"}
+  - {catalyst: "Debt/EBITDA holding below 2.5x despite ~Rs100cr FY27 new borrowing", window: "FY27, ongoing", evidence_type: "documented", anchor: "Inv. Pres. p.17 (1.86x); Concall Aug 2026"}
+  - {catalyst: "Export mix closing to 75-80% band", window: "FY27-28", evidence_type: "claim", anchor: "Concall Aug 2026 p.4-5"}
+capex_embedded_growth_pct: 42
+optionality_register:
+  - {optionality: "New molecule pipeline (Rs 50-100cr threshold) reaching commercial scale", converting_evidence: "named molecule with committed capex or filed regulatory application, plus first reported revenue figure", first_appears: "exchange filing, AR product note, or concall naming the product", window: "FY27-FY29"}
+  - {optionality: "China+1/Asia-Africa share gains becoming durable structural advantage, not tariff-timing effect", converting_evidence: "country-wise export revenue disclosure or named international customer win with disclosed volume", first_appears: "AR export-geography note or concall", window: "FY27-FY28"}
+  - {optionality: "Customer concentration genuinely improving, not just adding one large MNC", converting_evidence: "top-5/top-10 customer revenue percentage disclosed, ideally declining", first_appears: "AR related-party/customer-concentration note, or BRSR", window: "FY27 AR"}
+  - {optionality: "Talent asymmetry (I1): named senior technical hires with verifiable prior employer and above-sector-norm pay", converting_evidence: "AR remuneration annexure showing technical KMP pay vs sector norm, or named hires verifiable on professional networks", first_appears: "AR remuneration annexure (Sec.197(12))", window: "FY27 AR"}
+  - {optionality: "ESG/ZLD moat extending beyond one of four facilities", converting_evidence: "disclosed ZLD conversion dates/completion for remaining three facilities, aggregate renewable-energy percentage trend", first_appears: "AR sustainability section / BRSR", window: "24-36 months"}
+  - {optionality: "Cannibalization barrier (I2): specific named structural sacrifice a competitor would face to copy the MNC relationship", converting_evidence: "competitor's own filings, pricing disclosures, or org-structure evidence naming the rigidity", first_appears: "external competitor filings (claude.ai live-verification item)", window: "unclear"}
+combined_assessment: "AVOID"
+combined_reasoning: "Backward AVOID is mechanical (leverage deal-breaker, not quality, Core 35); forward EM is MODEST (17, single-pillar B2), short of the >=25 STRENGTHENING threshold needed to argue a qualifying TURNAROUND, and backward is not GOOD/AVERAGE so HIGH POTENTIAL does not apply either."
+top_moat_risks:
+  - "B2 (Strong, sole load-bearing pillar): MNC LTSA already slipped once (Q4FY27->Q1FY28) without being flagged as a change; any further slip or advance stall/refund collapses the entire EM case toward NONE."
+  - "C1/F2 rest on unverified management claims (50%+ long-term pricing share; guidance consistency) not corroborated by audited disclosure."
+  - "G2 improvement is a single-quarter print (143 WC days) layered on cumulative-negative FY24-26 FCF per B01; risk of reversal."
+  - "No talent/IP structural moat exists (I1=0, I2=0, A2=0); the 'unique molecule' claim behind B2 is NDA-protected and unverifiable beyond management's word."
+analyst_note: "This is a single-pillar emerging-moat case, not a broad-based one. Every Moderate category (C1, F1, F2, G2) either shares its strongest anchor with the MNC LTSA (B2) or with the same recent-quarter print flagged elsewhere as unproven (B01 leverage-divergence, B05 margin-durability). Strip out the MNC contract and this scan would likely fall below 12 (NO MEANINGFUL EMERGING MOAT). The transition thesis (converter -> value-added supplier) is real on paper (signed contract, customer funding, certifications) but concentrated in one customer relationship with one commercialisation date (Q1 FY28) as the entire proof point. Downstream verification priority: confirm the MNC deal stays on schedule and get an independent read on whether the 24.2% Q1FY27 margin is structural."

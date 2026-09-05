@@ -1,0 +1,75 @@
+stage: B07-emoat
+company: "AEQUS"
+run_date: "2026-09-05"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - prospectus (ABSENT; no DRHP/RHP in corpus to cross-check pre-IPO claims)
+  - announcements (ABSENT; no Reg 30 record to verify order-book/contract disclosures independently of concalls)
+  - PLI/ECMS scheme quantum and duration (NOT FOUND; approval confirmed but Rs value and sunset date absent)
+  - aerospace-only and consumer-only fixed asset turnover series (NOT FOUND; only blended company-wide figures disclosed)
+  - state incentive package under the Tamil Nadu and Karnataka MoUs (NOT FOUND; only Aequs's investment commitment is disclosed, not the reciprocal state incentive)
+  - combined Gate0+EmergingMoat classification lookup matrix (NOT PROVIDED in this stage's injected inputs; 6D classification reasoned from the instruction's own framing)
+flags:
+  - type: FLAG-EVIDENCE-QUALITY
+    reason: >
+      Aerospace utilisation figures across three sources do not reconcile to
+      one trend line: AR FY26 year-end 62% (Aequs)/70% (India avg, AR p.7),
+      Q3 FY26 call 71% India/target 75% (Feb-2026), Q1 FY27 Investor Pres 70%
+      (Aequs)/78% (India avg, slide 8). Reported as-is; not forced into a
+      single narrative.
+  - type: FLAG-CASH
+    reason: >
+      G1 "war chest" evidence found argues against the category: net
+      debt/equity improvement (0.99x->0.23x) is IPO-proceeds-funded, not
+      organic; FY26 CFO negative Rs98.75cr, Q1FY27 CFO negative Rs41.4cr, and
+      management has flagged a further ~USD150mn raise as likely needed.
+em_score: 35
+em_classification: "STRENGTHENING"
+active_categories:
+  - {id: "B2", name: "Qualification lock-in", strength: "Strong", evidence_type: "documented", time_to_materialise: "0-12m (increment)"}
+  - {id: "E1", name: "Geographic first-mover", strength: "Strong", evidence_type: "documented", time_to_materialise: "24-36m (Hosur increment)"}
+  - {id: "H2", name: "Strategic partnerships", strength: "Strong", evidence_type: "documented", time_to_materialise: "12-60m"}
+  - {id: "A1", name: "Rare manufacturing capability", strength: "Moderate", evidence_type: "documented", time_to_materialise: "24-36m"}
+  - {id: "A4", name: "Product platform / modular architecture", strength: "Moderate", evidence_type: "documented", time_to_materialise: "0-12m"}
+  - {id: "H3", name: "ESG moat", strength: "Moderate", evidence_type: "documented", time_to_materialise: "ongoing"}
+  - {id: "R1", name: "Regulatory & policy tailwinds", strength: "Moderate", evidence_type: "documented", time_to_materialise: "FY27 (PLI)"}
+evidence_mix: {documented: 47, claim: 24, inference: 6}
+completionist_recount: "📄 recount performed: approximately 26 distinct documented items across 7 categories scored Strong or Moderate (B2, E1, H2 Strong; A1, A4, H3, R1 Moderate); 9 further categories scored Weak on genuine but contradicting or thin documented evidence (A3, B1, C1, C2, E2, F1, F2, G1, G2); 7 categories scored None (A2, B3, D1, D2, H1, I1, I2)."
+catalysts_12m:
+  - {catalyst: "ECMS PLI first eligible income year", window: "FY27", evidence_type: "documented", anchor: "Q4 FY26 call, Harish Bang"}
+  - {catalyst: "Two Farnborough Tier-1 agreements enter disclosed order book", window: "Q2 FY27 (next quarter)", evidence_type: "documented", anchor: "Q1 FY27 call, Aravind Melligeri"}
+  - {catalyst: "Consumer EBITDA breakeven", window: "Q4 FY27", evidence_type: "claim", anchor: "Q4 FY26 and Q1 FY27 calls"}
+  - {catalyst: "Hosur Phase-1 machining facility commissioning", window: "Sept-2026 to Mar-2027", evidence_type: "claim", anchor: "Q1 FY27 call, Aravind Melligeri"}
+capex_embedded_growth_pct: 63
+optionality_register:
+  - {optionality: "Ajna Aerospace & Defence UAV/UAS vertical", converting_evidence: "First qualified UAV product, order, or booked revenue at AADPL", first_appears: "AR subsidiary/JV note or future concall", window: "NOT FOUND, plausibly 3-5 years"}
+  - {optionality: "Hosur aero-engine/landing-gear ecosystem", converting_evidence: "Phase-1 facility confirmed operational plus first qualified part shipped", first_appears: "concall / AR", window: "first revenue guided FY29"}
+  - {optionality: "Two unbooked Farnborough Tier-1 agreements", converting_evidence: "Contracts appear in disclosed order book with stated value", first_appears: "quarterly investor presentation / concall", window: "next quarter (Q2 FY27)"}
+  - {optionality: "Consumer capex (Rs500cr of Rs660cr, now conditional) converting to revenue and margin", converting_evidence: "Consumer utilisation reaching guided 40-50% and segment EBITDA turning positive", first_appears: "quarterly investor presentation", window: "Q4 FY27 (EBITDA); FY30 (net PAT)"}
+  - {optionality: "Talent asymmetry / cannibalization barrier becoming genuinely structural", converting_evidence: "Named senior technical hires with ex-DRDO/HAL/global-major pedigree AND a quantified competitor cost-structure constraint", first_appears: "AR remuneration annexure / patent filings / competitor filings", window: "NOT FOUND"}
+  - {optionality: "USD150mn possible equity raise / USD350-400mn 5-year capex plan", converting_evidence: "Raise completed on disclosed terms, or FY27 capex delivered without incremental dilution", first_appears: "exchange filing / concall", window: "FY27-28"}
+combined_assessment: "TURNAROUND"
+combined_reasoning: >
+  Gate 0 AVOID (34/140, driven by cash conversion and returns, not the
+  aerospace story) paired with Emerging Moat STRENGTHENING (35/92) is one
+  notch below the operation's ideal AVERAGE-backward/EXPANSION-forward setup
+  on both axes, but the same transition shape: a real, already-profitable
+  Aerospace franchise sitting alongside a still-loss-making Consumer segment
+  and a negative-CFO balance sheet that IPO proceeds, not operations, currently
+  fund.
+top_moat_risks:
+  - "Consumer capex (Rs500cr of Rs660cr FY27 plan, now conditional) funds a segment whose ROCE worsened YoY (-7.45% to -24.77%, Q1FY27) even as revenue grew; this is the single largest emerging-moat catalyst and its non-conversion has no near-term backstop."
+  - "Cash conversion: FY26 CFO -Rs98.75cr, FCF deeply negative both computable years; balance-sheet strength is IPO-funded, not organic, and management already flags a further ~USD150mn raise may be needed."
+  - "Hosur and Karnataka MoUs and the 5-year USD350-400mn capex plan are multi-year, execution-dependent commitments (Hosur revenue only FY29+) from a company that just lost one customer relationship (Hasbro) with no disclosed root cause."
+  - "No Reg 30 announcements, no prospectus, no rating rationale in this corpus; PLI quantum, state-incentive detail, and aerospace-only fixed asset turnover are all NOT FOUND, widening this scan's own error bars."
+analyst_note: >
+  The two categories most contradicted by the company's own disclosed numbers
+  (G1 war chest, G2 working capital) are both Financial & Structural rows.
+  Read together with Gate 0's own deal-breakers (cumulative CFO/PAT 0.25x,
+  negative FCF both computable years), the emerging-moat story here is almost
+  entirely an OPERATING one (Aerospace qualification lock-in, new customer
+  wins, Hosur, ESG, a regulatory approval) with essentially no supporting
+  FINANCIAL emerging moat. That split is itself a finding: the thesis has to
+  clear on operating execution and capital discipline simultaneously, with
+  no cash cushion doing any of the work.

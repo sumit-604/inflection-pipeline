@@ -1,0 +1,55 @@
+stage: B07-emoat
+company: "PITTIENG"
+run_date: "2026-09-05"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "No third-party market-share data corroborating the self-declared 'India's largest manufacturer' claim (A1)"
+  - "No global manufacturer count or disclosed qualification-timeline length for A1"
+  - "No sector-specific qualification certification (IATF/AS9100/NADCAP/cGMP) named anywhere in the corpus for B2"
+  - "No rupee-denominated segment/product-type revenue split; end-market % only (carried from B04, affects 1C precision)"
+  - "No management-disclosed 3-year forward segment-mix target; 1C uses a one-year quarterly proxy (Inv. Pres. Q1FY26 vs Q1FY27) instead"
+  - "Scheme name for the Rs 96.55 Cr State Industrial Promotion Subsidy receivable undisclosed (R1, carried from B02)"
+  - "No firm purchase order/PO figures behind the five OEMs named as Rs 290 Cr capex demand visibility (H2, carried from B03)"
+  - "This environment has no live web/patent-database access to independently check Espacenet/ipindia.gov.in for I1 leg (a); relied entirely on corpus silence"
+flags:
+  - type: "FLAG-RD-DISCLOSURE-CONTRADICTION"
+    reason: "Investor Presentation slide 17 markets 'R&D and Tooling Expertise... in-house design and tool development capabilities' while the AR's own formal Technology Absorption disclosure (Annexure-1, Section B, PDF p.29) states R&D expenditure, efforts, and benefits are all 'Nil.' The marketing claim is not supported by the company's own statutory disclosure; treat A2/A4/F1 evidence as promotional narrative, not documented R&D capability."
+  - type: "FLAG-CAPEX-DATE-CONFLICT"
+    reason: "Carried from stage 4/B04: Rs 290 Cr capex commissioning is Q1 FY30 per the AR and all three concalls, but Q1FY29 per Inv. Pres. slide 11. Treated as documented per the AR/call date throughout this scan (2A, 6A)."
+em_score: 19
+em_classification: "MODEST"
+active_categories:
+  - {id: "B2", name: "Qualification lock-in (emerging angle)", strength: "Moderate", evidence_type: "management claim", time_to_materialise: "medium"}
+  - {id: "C1", name: "Customer ecosystem / embedded relationships", strength: "Moderate", evidence_type: "documented + management claim", time_to_materialise: "near-medium"}
+  - {id: "C2", name: "Customer concentration improving", strength: "Moderate", evidence_type: "documented + management claim", time_to_materialise: "ongoing"}
+  - {id: "E2", name: "China+1 beneficiary", strength: "Strong", evidence_type: "documented", time_to_materialise: "near-medium (Q3 FY27)"}
+  - {id: "F2", name: "Execution moat", strength: "Moderate", evidence_type: "documented + management claim, mixed (credibility grade C)", time_to_materialise: "ongoing"}
+  - {id: "R1", name: "Regulatory/policy tailwinds", strength: "Moderate", evidence_type: "documented + management claim, shared with peers", time_to_materialise: "near (tariff) / medium (subsidy)"}
+evidence_mix: {documented: 9, claim: 10, inference: 3}
+completionist_recount: "9 documented items across 11 categories; 6 categories scored Strong/Moderate (B2, C1, C2, E2, F2, R1), within the realistic 3-6-category base rate; no 12-category trigger reached, so no further recheck was required."
+catalysts_12m:
+  - {catalyst: "Caterpillar data-centre platform commercial revenue start", window: "Q3 FY27", evidence_type: "management claim", anchor: "Q4 FY26 call, Keshav Joshi exchange, PDF p.15"}
+  - {catalyst: "Two China+1 pipeline export customers converting to revenue", window: "Q3 FY27", evidence_type: "management claim", anchor: "B05 trigger #5, Q3/Q4 FY26 calls"}
+  - {catalyst: "Machining capacity ramp against the 86.33% utilisation bottleneck", window: "ongoing, next 2-4 quarters", evidence_type: "management claim", anchor: "Q1 FY27 call, PDF p.9"}
+  - {catalyst: "Net debt/inventory normalisation test", window: "next 2 quarters", evidence_type: "documented + management claim", anchor: "B05 trigger #6, B01 block_b_trend"}
+  - {catalyst: "Mining/off-highway order conversion to firm orders", window: "near, within 12m", evidence_type: "management claim", anchor: "Q1 FY27 call, PDF p.8, p.11"}
+capex_embedded_growth_pct: 25
+optionality_register:
+  - {optionality: "Forging business entry (dormant since Q3 FY26 call)", converting_evidence: "Board approval or a signed capex order for forging capacity", first_appears: "Concall or exchange filing", window: "Unclear, no date given"}
+  - {optionality: "Green hydrogen electrolyzer components (~EUR 2 Mn, flat)", converting_evidence: "Disclosed revenue growth beyond EUR 2 Mn, or a second named customer", first_appears: "Concall or AR MD&A", window: "Not indicated, management skeptical"}
+  - {optionality: "Bangalore facility + further equipment capex (~Rs 400 Cr)", converting_evidence: "Board approval and land acquisition", first_appears: "Exchange filing", window: "B05 kill signal: no approval within FY28"}
+  - {optionality: "Maharashtra state investment subsidy (~Rs 40 Cr/yr potential)", converting_evidence: "Government confirmation of final scheme terms and first cash receipt", first_appears: "Concall or AR Note", window: "FY28 per latest framing, already slipped once"}
+  - {optionality: "China+1 pipeline export customers (2 in sampling)", converting_evidence: "Revenue conversion in the P&L or a named contract", first_appears: "Quarterly results", window: "Q3 FY27"}
+  - {optionality: "Talent-asymmetry claim (BRSR 'special skill set' retention risk)", converting_evidence: "Named credentialed hires with traceable specialist background, plus documented competitor pay-scale ceiling", first_appears: "AR remuneration annexure or professional-network cross-check", window: "Not indicated"}
+  - {optionality: "Sector-specific qualification certification (IATF/AS9100/NADCAP-type)", converting_evidence: "A named certification disclosure tied to a specific customer's sole-source requirement", first_appears: "AR or exchange filing", window: "Not indicated"}
+  - {optionality: "Net-debt/war-chest reversal", converting_evidence: "Confirmed sequential net-debt decline for 2+ consecutive quarters toward the guided path", first_appears: "Quarterly results", window: "Softened once already, Q1 FY27 call"}
+combined_assessment: "AVERAGE"
+combined_reasoning: "AVERAGE backward (Gate 0, core 58/100) paired with only MODEST forward moat formation (19/~92); the transition thesis lacks the STRENGTHENING/EXPANSION forward signal the HIGH POTENTIAL setup requires, and is not depressed enough at the backward end to read as TURNAROUND."
+top_moat_risks:
+  - "Credibility grade C on guidance (tax rate, net debt, EBITDA margin) undermines confidence that any forming advantage converts cleanly to documented evidence."
+  - "China+1/tariff tailwind and railway budget support are sector-wide, not exclusive to Pitti."
+  - "Data centre and mining growth both carry management's own cyclicality caveats, raised unprompted in Q1 FY27."
+  - "Net debt and working capital moved the wrong way in FY26, the opposite of a war-chest or WC-improvement signal (G1/G2 both NO EVIDENCE, adverse)."
+  - "Customer concentration remains ~25% in 2 still-unnamed consolidated accounts despite the improving trend."
+analyst_note: "The single most load-bearing finding in this scan is the R&D-Nil vs. R&D-marketed contradiction: the AR's own statutory Technology Absorption disclosure states R&D expenditure and effort are Nil, while the investor presentation markets 'R&D and Tooling Expertise' as a strength. This directly caps A2, A4, and F1, and is why I1 fails leg (a) cleanly rather than marginally. Six categories cross into Moderate-or-better (B2, C1, C2, E2, F2, R1), all clustered around the same underlying transition story (mix shift, widening customer roster, China+1 export tailwind) rather than being independent, diversified sources of forming advantage — a concentration risk in the emerging-moat read itself, worth naming for synthesis."

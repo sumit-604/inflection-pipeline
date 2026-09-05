@@ -16,3 +16,6 @@ where it does not.
 | 8 | promoter check (web, partial: 2 fetches proxy-blocked) | claude-sonnet | default | n/a | n/a | 245445 | 11m46s | 1 |
 | 5 | concall analysis | claude-sonnet | default | n/a | n/a | 163199 | 14m26s | 1 |
 | 6 | peer concall verification | claude-sonnet | default | n/a | n/a | 361695 | 9m41s | 1 |
+| 7 | emerging moat scan (report + B07 block complete on disk; agent cut by API 429 while returning, so token metadata lost) | claude-sonnet | default | n/a | n/a | n/a | n/a | 1 |
+| 12b | verifier B red flags (FAILED: API 429 session limit after independent read) | claude-opus | default | n/a | n/a | n/a | n/a | 1 |
+| 12d | verifier D peer coverage (FAILED: API 429 session limit at launch) | claude-sonnet | default | n/a | n/a | n/a | n/a | 1 |

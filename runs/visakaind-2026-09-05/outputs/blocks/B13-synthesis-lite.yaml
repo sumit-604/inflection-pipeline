@@ -1,0 +1,71 @@
+stage: B13-synthesis-lite
+company: "VISAKAIND"
+run_date: "2026-09-05"
+model: claude-opus-4-8
+phase: 1
+mode: "PHASE 1 LITE (no valuation-dependent content; stages 10 and 11 did not run; mental model unsigned)"
+status: complete
+verdict: "REWORK"
+verdict_rule_applied: 1          # B12b redflag_coverage 53% < 60%; overall delta 53 < 60
+verdict_scope: "REWORK judges the analysis, not the company. No B12a CRITICAL; source-fidelity gate PASS, so every number stands."
+rework_failing_stages:
+  - "stage 5 concall analysis (1 CRITICAL, 9 MAJOR, 6 MINOR)"
+  - "stage 6 peer verification, Claims 1 and 5 (3 MAJOR)"
+rework_fix_count: 12
+indicative_verdict_pending_rework: "PROCEED WITH CAVEATS"
+indicative_verdict_basis: "Rule 3 would fire on FLAG-PROMOTER (CONCERN) and FLAG-CASH; INDETERMINATE cash caps at PROCEED WITH CAVEATS with the missing evidence named. Rule 2 skipped-core-stage test does not fire (stages 2 and 3 both ran on two audited ARs; Gate 0 ran with screening data)."
+flags_active:
+  - FLAG-PROMOTER          # verdict CONCERN; transition_evidence NONE FOUND
+  - FLAG-CASH              # determination INDETERMINATE
+  - FLAG-GATE0             # AVERAGE, core 56/100, 1 deal breaker, depressors historical and genuine
+  - FLAG-ACCOUNTING
+  - FLAG-GOVERNANCE
+  - FLAG-DATA-GAP
+  - FLAG-STALE-CONCALL
+  - FLAG-ATUM-OPACITY
+  - FLAG-CAPEX-GAP
+  - FLAG-RATING-NEGATIVE
+  - FLAG-DEALER-DECLINE
+  - FLAG-EXECUTION-DEFICIT
+promoter_verdict: "CONCERN"
+cash_determination: "INDETERMINATE"
+cash_missing_evidence:
+  - "CARE Ratings rationale behind the A+ Negative outlook, with its working capital commentary (CARE Ratings press release / Reg 30 filing on BSE or NSE)"
+  - "Q1 FY27 and Q4 FY26 results filings (BSE 509055 / NSE VISAKAIND); currently screener tier only"
+  - "Receivables ageing schedule newer than 31-Mar-2026"
+gate0_classification: "AVERAGE"
+transition_posture: "NOT CLASSIFIABLE at phase 1; mental model unsigned. Open state variables: PROOF GATE (Part B3) and RECOGNITION GAP (Part B4, resolved at Stage 11)."
+confidence_delta: {numerical: 100, redflag: 53, framework: 82, peer: 100, overall: 53}
+confidence_overall: 53
+confidence_band: "FORCED REWORK (<60)"
+framework_adherence_valuation: "pending phase 3"
+verifier_disagreements: "none"
+anchor_convention_defect: true
+freshness_verdict: "FRESHNESS PAIRS OK"
+freshness_cap_applied: false
+corpus_verdict: "CORPUS GAPPED"
+corpus_gaps:
+  - "results filings absent (BSE 509055 / NSE VISAKAIND)"
+  - "credit rating rationale absent (CARE Ratings)"
+  - "Reg 30 announcements absent (BSE / NSE announcement archives)"
+  - "quarterly shareholding pattern absent (BSE / NSE)"
+  - "main concalls stale at Q1 FY24, Aug-2023, 37 months (company IR / exchange filings)"
+  - "investor presentation stale at Aug-2023 (company IR / exchange filings)"
+valuation_decision: ""           # pending phase 3; stage 11 did not run
+entry_range: {low: null, high: null}   # pending phase 3
+hurdle_verdict: ""               # pending phase 3
+headline: "Roofing cash funds boards growth, solar unproven"
+falsification_metric: "FY27 H1 V-Next boards and panels revenue growth at or below zero against FY26 plus 19%, with boards capacity utilisation below 86%"
+monitorables_count: 8
+contradicted_claims_count: 18    # 14 management claim vs audited/peer evidence, 4 internal AR contradictions
+publish_candidate: false
+publish_candidate_summary: ""
+files_written:
+  - "runs/visakaind-2026-09-05/outputs/final/business-narrative.md"
+  - "runs/visakaind-2026-09-05/outputs/final/gate-recommendation.md"
+  - "runs/visakaind-2026-09-05/outputs/final/verifier-summary.md"
+files_not_written:
+  - "fttcp-handoff.md (phase 1 lite: valuation-dependent, deferred to phase 3)"
+  - "notion-payload (phase 1 lite: no Notion payload in this mode)"
+  - "verifier-disagreement-log.md (phase 1 lite: the 'none' line is carried inside verifier-summary.md)"
+business_understanding_narrative: {present: true, five_questions_answered: true, prose_only: true, section6_candidates_named: 6, valuation_vocab_leak: false}

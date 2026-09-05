@@ -7,3 +7,4 @@ not. Stage 0 ran inline in the orchestrator session (no subagent).
 | # | stage | model | effort | in_tok | out_tok | total_tok | wall | run# |
 |---|-------|-------|--------|--------|---------|-----------|------|------|
 | 0 | stage-00-inputs (inline) | orchestrator | n/a | n/a | n/a | n/a | n/a | 1 |
+| 1 | stage-02-notes (pass 1) | sonnet | n/a | n/a | n/a | 217786 | 7m48s | 1 |

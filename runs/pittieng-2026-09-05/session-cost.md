@@ -21,3 +21,4 @@ where it does not.
 | 12d | verifier D peer coverage (FAILED: API 429 session limit at launch) | claude-sonnet | default | n/a | n/a | n/a | n/a | 1 |
 | 12d | verifier D peer coverage (retry) | claude-sonnet | default | n/a | n/a | 326482 | 6m04s | 2 |
 | 12c | verifier C framework (phase-1 scope: Gate 0 + EM only) | claude-opus | default | n/a | n/a | 131382 | 10m37s | 1 |
+| 12b | verifier B red flags (retry) | claude-opus | default | n/a | n/a | 386274 | 17m12s | 2 |

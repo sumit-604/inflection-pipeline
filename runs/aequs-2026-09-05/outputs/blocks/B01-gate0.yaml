@@ -1,0 +1,74 @@
+stage: B01-gate0
+company: "AEQUS"
+run_date: "2026-09-05"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - prospectus (ABSENT; HIGH gap; listed 10-Dec-2025, inside ~3y window)
+  - results (ABSENT; no results filings; Gate 0 from screener Data_Sheet + AR; Q1 FY27 via presentation + concall only)
+  - rating (ABSENT; no rating rationale)
+  - announcements (ABSENT; no Reg 30 record)
+  - shareholding (ABSENT; FII+DII UA qualifier unresolved; Block E1-E3 scored 0/NOT FOUND)
+  - research (ABSENT)
+  - other (ABSENT)
+  - screening (collector v3 defect: Profit_Loss/Balance_Sheet/Cash_Flow/Quarters/Customization CSVs header-only for AEQUS and all 3 peers; Data_Sheet populated FY23-FY26 + 7 quarters to Jun-2026)
+  - peer-concalls (DYNAMATECH single transcript Feb-2024, ~30 months stale)
+  - manifest (no listed_date; sector_cap_row set by Step 1 brief to "Defence / strategic"; phase 3 confirms row)
+  - prior-year ARs (FY24, FY25 ARs ABSENT; only the FY2025-26 AR's 2-year comparative balance sheet gives a current/non-current split, so ROCE A1/A2/A4, WC Days B4, and Capex/FCF B2/B3 are computable only for FY25-FY26, not the full FY23-FY26 window)
+  - PDF page rendering (pdftoppm/poppler-utils not installed in this environment; AR p.14 "Key Financial Highlights" 3-year chart could not be visually verified and was excluded as an anchor after a Net Debt/Equity FY24 cross-check failed by ~4x on text extraction alone)
+freshness_verdict: FRESHNESS PAIRS OK
+flags:
+  - type: FLAG-GATE0
+    reason: >
+      Classification AVOID (core 25/80, moat 9/60). Historical depressors:
+      PAT negative FY23-FY26 (4 consecutive years); cumulative CFO/PAT 0.25x;
+      FY26 FCF -Rs441.30cr, FY25 FCF -Rs239.02cr (both computable years
+      negative); WC days rose +19.6 days FY25-FY26; interest coverage 0.24x
+      FY26; Consumer segment FY26 full-year margin -42.5% (AR Note 36),
+      worse than the -24% H1FY26 figure in company memory.
+data_years: 4
+fy_range: "FY23 to FY26"
+blocks: {A: 5, B: 0, C: 4, D: 11, E: 5}
+core_score: 25
+moat_score: 9
+grand_total: 34
+moats_confirmed: 2
+moat_class: "MODERATE"
+classification: "AVOID"
+deal_breakers:
+  - "1: Block A <8 (5) -> max GOOD"
+  - "2: Block B <8 (0) -> max GOOD"
+  - "3: median ROCE <10% (-0.65%) -> max AVERAGE"
+  - "4: cumulative CFO/PAT <0.50 (0.25) -> max AVERAGE"
+  - "8: PAT negative in FY24, FY25, FY26 (all of last 3 years) -> max AVERAGE"
+history_downgrade: true
+data_notes:
+  - "ROCE (A1/A2/A4) and WC Days (B4) computable only for FY25-FY26 (2 of 4 years); FY23/FY24 balance sheet lacks current/non-current split and Trade Payables in any corpus source"
+  - "Capex/FCF (B2/B3) computable only for FY25-FY26 (AR Consolidated Cash Flow Statement, AR p.231, gives one comparative year only; no prior AR in corpus)"
+  - "B3 cumulative FCF/PAT arithmetic ratio (3.155) overridden to score 0: both cumulative FCF (-680.32cr) and cumulative PAT (-215.60cr) are negative, not cash-backed earnings"
+  - "WC Days (B4) computed on AR-sourced Receivables/Inventory/Payables (AR p.227, p.252) for internal consistency, not screener-Data_Sheet Inventory, which differs from AR by a constant ~Rs42-43cr in both FY25 and FY26 for reasons not identified"
+  - "EBITDA (Block D1, M1, M2) computed as PBT+Interest+Depreciation (screener-data), includes Other Income; basis chosen because FY26 computed value (Rs160.56cr, 13.05% margin) reproduces the company/press-reported FY26 figure (Rs154.5cr, 13% margin per company memory sourcing) almost exactly"
+  - "D1 Net Debt uses the AR's own audited figure (Rs250.05cr FY26, Note 29 Capital management, AR p.282, cross-validated against AR's own 0.17x Net debt/equity ratio), not the cruder screener Borrowings-minus-Cash calc (Rs344.28cr)"
+  - "M9 Brand and M2 Cost Advantage use GM/EBITDA-margin proxies stated explicitly (GM = (Sales-Raw Material Cost)/Sales; EBITDA = PBT+Interest+Depreciation); both computed identically for AEQUS and all 3 peers (AZAD, DYNAMATECH, UNIMECH) from their screener-Data_Sheets"
+  - "No loss-to-profit swing: PAT negative in all of FY23-FY26 (screener-data); C2/C4 scored 0 as N/M per rule, not a swing"
+  - "FY27 aerospace-specific guidance (+25-30% revenue, >20% segment EBITDA margin, ~20% manufacturing ROCE) cited in company memory NOT FOUND verbatim in AR or Q1FY27 presentation; only AR's medium-term 'Vision 2031' target (4-6x revenue by FY30-31, 18-22% EBITDA margin, ~20% steady-state ROCE) is confirmed in corpus (AR p.10)"
+  - "FY27 capex plan (~Rs660cr, ~Rs500cr to Consumer) cited in company memory NOT FOUND in AR or Q1FY27 presentation text in this corpus"
+  - "AR p.14 'Key Financial Highlights' 3-year chart NOT used as an anchor anywhere; text-extraction order could not be reliably mapped to FY24/FY25/FY26 (Net Debt/Equity FY24 cross-check: chart-implied 0.55x vs independently computed 2.09x, ~4x off)"
+  - "PEER DATA NEEDED: none — peer Data_Sheets (AZAD, DYNAMATECH, UNIMECH) were available and used for all tests requiring peer comparison (M2, M5, M9)"
+block_b_trend: "deteriorating -- CFO swung from +Rs26.14cr (FY25, screener-data) to -Rs98.75cr (FY26, screener-data) while WC days rose +19.6 days (131.9->151.4, computed from AR p.227,231)"
+analyst_note: >
+  AVOID is driven almost entirely by Blocks A/B (returns, cash), not by the
+  aerospace story. Aerospace segment margin (26.9% FY26, AR Note 36) and Q1FY27
+  segment ROCE (21.7%, Inv Pres slide 12) already clear the bar company memory
+  flagged for verification. The drag is Consumer: full-year FY26 segment margin
+  (-42.5%) is materially worse than the -24% H1FY26 figure carried into this
+  run, and Consumer segment assets grew 48% in one year against Rs184cr of
+  revenue, a capital-intensity mismatch. Group cash conversion is the real
+  deal-breaker: CFO turned negative FY26, FCF deeply negative both computable
+  years, WC days rising, interest coverage 0.24x. ROCE/WC-days scoring is
+  structurally limited to a 2-year window (FY25-FY26) because the sole AR in
+  corpus gives the current/non-current balance-sheet split for only those two
+  years; FY23/FY24 equivalents are NOT FOUND, not estimated. The AR's own p.14
+  highlight chart was excluded as an anchor after a Net Debt/Equity cross-check
+  failed by ~4x on text extraction alone (poppler-utils unavailable to
+  visually re-render).

@@ -1,0 +1,13 @@
+stage: B12a
+company: "AEQUS"
+run_date: "2026-09-05"
+model: claude-haiku-4-5
+status: complete
+numbers_checked: 40
+findings:
+  - {severity: "MAJOR", location: "05-concall.md, Section 1B table, row 'Aerospace segment EBITDA margin'", claimed: "Maintained 'at 20%' (Q4 FY26 call) / 'above 20%' (Q1 FY27 call)", source_truth: "Q4 FY26 call transcript p.3 states 'maintained at 20%'; Q1 FY27 call transcript p.3 states 'above 20%' — two different framings, not consistent guidance language", note: "No numerical error: FY26 actual 26.9% exceeds both bars. But guidance phrasing shifted between the two calls without explanation. Report cites correct page numbers but does not flag the phrasing shift or clarify whether it represents a tightening or a clarification. This is a source-fidelity flag on the interpretation of management guidance stability, not a number mismatch.", source_fidelity: true}
+critical_count: 0
+major_count: 1
+minor_count: 0
+acceptance_rate: 97.5
+coverage_note: "40 material figures checked: verdict-card inputs (Gate 0 scores, classification) 4/4 verified; scorecard pillar inputs (ROCE, CFO, CAGR, Moat scores, segment P&L) 12/12 verified; financial statement totals (assets, liabilities, equity) 15/15 verified; customer/segment details 8/8 verified; cash flow and WC metrics 6/6 verified; contingent liabilities and audit-quality (CARO, ECL) 5/5 verified. Sources: screener-Data_Sheet (16 figures), Annual Report FY2025-26 consolidated and standalone (24 figures from p.162, 227-228, 231, 250, 264, 267, 282-283, 292, 301), concalls (1 guidance phrase checked), investor presentation (1 order book spot-check). No unanchored or estimated figures found. Acceptance_rate 39 clean ÷ 40 checked = 97.5% (one guidance-phrasing flag does not change the numerical accuracy but reflects a non-technical interpretation finding). AR figure-to-Crore conversion (÷10) verified on spot-check basis; no conversion errors. Standalone vs. consolidated distinction observed and flagged where applicable."

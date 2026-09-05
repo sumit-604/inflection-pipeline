@@ -1,14 +1,15 @@
 # Phase-1 confidence delta (orchestrator, per prompts/00-orchestrator.md Section 5).
-# DRAFT: numerical_acceptance pending verifier A. Rewritten when B12a lands.
 confidence_delta:
   company: AEQUS
   run_date: 2026-09-05
   phase: 1
-  numerical_acceptance: pending        # B12a acceptance_rate (verifier A running)
-  redflag_coverage: 30                 # B12b: caught 9 / independent flags found 30 (partially caught 10 not credited per the B12b definition)
-  framework_adherence: 86              # B12c phase-1 scope: Gate 0 90%, Emerging Moat 82%; valuation half pending phase 3
-  peer_utilisation: 100                # B12d: 9 of 9 provided peer transcripts used substantively (B12d citation acceptance_rate 78%, 0 critical, 2 major, 6 minor)
-  overall: pending                     # min of the four; already capped at 30 by redflag_coverage
-  band: pending
-  forced_verdict: REWORK               # any verifier acceptance_rate <60% forces REWORK (00-orchestrator Section 4; 13-synthesis verdict rule 1); B12b = 30%
+  numerical_acceptance: 97.5           # B12a: 39 clean of 40 material figures checked; 0 CRITICAL, 1 MAJOR (a guidance-phrasing shift, source_fidelity flagged), 0 MINOR
+  redflag_coverage: 30                 # B12b: caught 9 / independent flags found 30 (partially caught 10 not credited per the B12b definition); 1 CRITICAL, 17 MAJOR, 6 MINOR; verifier would grade credibility C not B
+  framework_adherence: 86              # B12c phase-1 scope: Gate 0 90% (63 rules), Emerging Moat 82% (67 rules); 0 CRITICAL, 5 MAJOR, 15 MINOR; valuation half pending phase 3
+  peer_utilisation: 100                # B12d: 9 of 9 provided peer transcripts used substantively (B12d citation acceptance_rate 78%; 0 CRITICAL, 2 MAJOR, 6 MINOR)
+  overall: 30                          # min of the four
+  band: "<60: forced REWORK"           # 00-orchestrator Section 5 bands; Section 4: any verifier acceptance_rate <60% forces REWORK regardless of company quality
+  forced_verdict: REWORK
+  rework_driver: "B12b redflag_coverage 30%: stage 5 (concall) missed 11 of 30 independent red flags, including the CRITICAL finding that reported and segment EBITDA include other income (Q4 FY26 operational EBITDA Rs 42mn vs headline Rs 321mn, disclosed one call later)"
   valuation_framework_adherence: pending phase 3
+  b12a_critical_sanity_check: "no CRITICAL findings; LESSONS re-invoke rule not triggered"

@@ -1,0 +1,42 @@
+stage: B06-peers
+company: "DIFFNKG"
+run_date: "2026-09-05"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["ESAB India transcript not in corpus", "JSW Steel/Tata Steel/UltraTech transcripts not in corpus (Q2)", "ISGEC/Walchandnagar/ThyssenKrupp India transcripts not in corpus (Q4)", "Titagarh/Texmaco/Vande Bharat supplier transcripts not in corpus (Q6)", "standalone pre-merger Ador Fontech transcript not in corpus (Q5 debtor-days comparator)"]
+flags: ["Q1 welding-consumables TAM of ~INR1.6bn contradicted by GEE-stated industry TAM of INR15,000-20,000 crore, ~100x gap", "Q3 tungsten >300% RM spike carries zero independent peer corroboration across 6 transcripts spanning Nov2024-Aug2026", "Q5 DEL debtor days (98) unverifiable against any peer figure in corpus; inventory days (66) compares unfavorably to Ador's ~47"]
+peers_provided: 6
+verified: []
+partially_verified:
+  - {claim: "DEL FY26 inventory days ~66 vs peer working-capital cycle", peers: ["Ador Welding"]}
+contradicted:
+  - {claim: "India welding consumables market ~INR1.6 billion (~INR160 crore)", contradicting_peer: "GEE Ltd (504028)", quote_anchor: "504028-Concall_May_2026_Transcript.txt, PAGE 14: 'the Indian welding industry itself is, I think, a INR15,000 crore to INR20,000 crore market'"}
+unverifiable:
+  - {claim: "Finished-steel production growth ~6% annual (8.3% Q1FY27) and cement volume growth 7-8% FY27", peers_checked: ["Ador Welding", "GEE Ltd"]}
+  - {claim: "Tungsten/nickel/cobalt/molybdenum RM price spikes of DEL-cited magnitude (tungsten >300% of 2024 avg)", peers_checked: ["Ador Welding", "GEE Ltd"]}
+  - {claim: "DEL gaining genuine share in heavy engineering vs ISGEC/Walchandnagar/ThyssenKrupp", peers_checked: []}
+  - {claim: "Ador Fontech / ESAB India debtor days vs DEL 98-day FY26 figure", peers_checked: ["Ador Welding (post-merger combined entity only, no standalone Fontech or debtor-day figure disclosed)"]}
+  - {claim: "Realistic timeline, first-time vendor RITES inspection to confirmed railway orders", peers_checked: ["GEE Ltd (only as an unrelated 10-year incumbent empanelment reference)"]}
+peer_coverage_map:
+  - {peer: "Ador Welding (ADOR)", quarter: "Q2 FY25 (Nov 2024)", usage: "SUBSTANTIVE", contribution: "Merger timing resolving Fontech debtor-data gap; RM pass-through mechanics; ESAB India competitive mention"}
+  - {peer: "Ador Welding (ADOR)", quarter: "Q4 FY25 (May 2025)", usage: "SUBSTANTIVE", contribution: "Combined working-capital metric (~18 days improvement); nickel/high-temp consumables mix"}
+  - {peer: "Ador Welding (ADOR)", quarter: "Q2 FY26 (Oct 2025)", usage: "SUBSTANTIVE", contribution: "Only hard inventory-day figure in corpus (~47 days), used as Q5 comparator"}
+  - {peer: "Ador Welding (ADOR)", quarter: "Q4 FY26 (May 2026)", usage: "SUBSTANTIVE", contribution: "Demand-environment tone (best order book); nickel consumables scale-up"}
+  - {peer: "GEE Ltd (504028)", quarter: "Q4 FY26 (May 2026)", usage: "SUBSTANTIVE", contribution: "INR15,000-20,000 crore welding TAM, contradicting Q1; cobalt-alloy volume; commodity pass-through lag"}
+  - {peer: "GEE Ltd (504028)", quarter: "Q1 FY27 (Aug 2026)", usage: "SUBSTANTIVE", contribution: "Aggressive greenfield capex posture (2C); RM competitiveness vs China; RDSO/railway tenure"}
+  - {peer: "ESAB India", quarter: "n/a", usage: "CITED-ONLY", contribution: "No transcript in corpus; named only inside Ador's own Nov 2024 call by an analyst"}
+  - {peer: "JSW Steel/Tata Steel/UltraTech", quarter: "n/a", usage: "UNUSED", contribution: "No transcript in corpus, needed for Q2"}
+  - {peer: "ISGEC/Walchandnagar/ThyssenKrupp India", quarter: "n/a", usage: "UNUSED", contribution: "No transcript in corpus, needed for Q4"}
+  - {peer: "Titagarh/Texmaco/Vande Bharat suppliers", quarter: "n/a", usage: "UNUSED", contribution: "No transcript in corpus, needed for Q6"}
+industry_cross_read:
+  demand: "Both peers describe a recovering-to-improving 2025-2026 demand cycle (Ador: soft H1FY25 to 'best order book' by May2026; GEE: 25-30% CAGR target off organized-share capture), broadly consistent with DEL's improving-cycle framing, though neither corroborates DEL's specific 6-8% volume figures."
+  pricing_inputs: "Both peers pass through RM cost with a ~1-month lag (steel HRC for Ador, generic commodity inflation for GEE); neither names a tungsten-magnitude spike, leaving Q3 uncorroborated by omission across 6 quarters of calls."
+  capex_cycle: "Split, not an industry-wide race: GEE is an aggressive greenfield expander (INR30-40cr capex toward INR1,000cr revenue North Star); Ador is in post-merger consolidation/margin-repair mode with no major fresh capex disclosed in these calls."
+peer_mentions_of_company: []
+risks_peers_raise:
+  - {risk: "Unorganized-to-organized market-share shift as the sector's real growth engine, not end-market volume growth", anchor: "GEE Ltd, 504028-Concall_May_2026_Transcript.txt, PAGE 14"}
+  - {risk: "Import competition specifically on welding equipment (~65% imported per Ador)", anchor: "Ador Welding, ADOR-Concall_Nov_2024_Transcript.txt, PAGE 12"}
+  - {risk: "Employee-cost inflation offsetting RM pass-through gains during an aggressive growth/hiring phase", anchor: "GEE Ltd, 504028-Concall_May_2026_Transcript.txt, PAGE 19-20"}
+net_narrative_effect: "complicates"
+analyst_note: "The Q1 TAM contradiction is the load-bearing finding of this stage: a ~100x gap between DEL's cited consumables TAM and GEE's own stated whole-industry TAM cannot be waved away as segment-scoping noise and should force a re-derivation of any DEL market-share or headroom math built on the INR1.6bn figure. Four of six questions could not be reached at all because the named peers (steel/cement majors, heavy-engineering EPC names, rolling-stock suppliers) are simply not in this corpus; treat those as open, not resolved. The tungsten RM-spike claim has zero peer corroboration across six quarters of adjacent-sector welding-consumables calls, which is worth a flag even though it does not amount to a contradiction."
+

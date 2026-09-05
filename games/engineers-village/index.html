@@ -294,6 +294,27 @@ html, body {
 .num-unit { font-size: 16px; font-weight: 600; opacity: 0.75; }
 .step-ok { color: #2c6e2f; font-weight: 700; margin: 6px 0; }
 
+/* ---------- Multiple choice steps ---------- */
+.choice-bank { display: flex; flex-direction: column; gap: 8px; margin: 10px 0 4px; }
+.choice-btn {
+  border: 2px solid #d8cdb2; background: #fff; border-radius: 10px; cursor: pointer;
+  padding: 11px 14px; font-size: 16px; font-weight: 600; text-align: left; color: #2c2417;
+}
+.choice-btn:hover { border-color: #7cae59; }
+.choice-btn.wrong { background: #fdecec; border-color: #f2b6b6; opacity: 0.7; }
+
+/* ---------- Star badge for village situations ---------- */
+#star-badge {
+  position: absolute; top: 62px; left: 12px;
+  background: rgba(255,253,246,0.92); border-radius: 999px;
+  padding: 5px 12px 5px 8px; display: flex; align-items: center; gap: 6px;
+  font-weight: 700; font-size: 14px; box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+.errand-list li { display: flex; justify-content: space-between; gap: 8px; }
+.errand-list .cat-count { font-weight: 700; color: #b4531a; white-space: nowrap; }
+.cat-bar { height: 6px; background: #e7ddc6; border-radius: 4px; overflow: hidden; margin-top: 6px; }
+.cat-bar > div { height: 100%; background: #7cae59; }
+
 /* ---------- Windmill job: gears ---------- */
 .gear-bank { display: flex; flex-wrap: wrap; gap: 10px; margin: 6px 0 10px; }
 .gear {
@@ -379,6 +400,8 @@ html, body {
       <span class="rank-icon">⛑️</span>
       <span id="rank-text">Trainee</span>
     </div>
+    <!-- Stars: village situations solved -->
+    <div id="star-badge"><span class="rank-icon">⭐</span><span id="star-text">0 / 100</span></div>
 
     <!-- Notebook button, top-right -->
     <button id="notebook-btn" title="Notebook (N)">📓</button>
@@ -571,6 +594,92 @@ function playPick() {
   tone(990, c.currentTime + 0.02, 0.05, "square", 0.18);
 }
 
+// ---- Ambient village sounds: wind, birdsong, the odd moo and quack ----
+let windNode = null;
+function startAmbient() {
+  const c = getCtx();
+  if (!c || windNode) return;
+  // Wind: looping soft noise through a low-pass filter.
+  const seconds = 2;
+  const buf = c.createBuffer(1, c.sampleRate * seconds, c.sampleRate);
+  const data = buf.getChannelData(0);
+  for (let i = 0; i < data.length; i++) data[i] = (Math.random() * 2 - 1) * 0.6;
+  const src = c.createBufferSource();
+  src.buffer = buf;
+  src.loop = true;
+  const filter = c.createBiquadFilter();
+  filter.type = "lowpass";
+  filter.frequency.value = 380;
+  windNode = c.createGain();
+  windNode.gain.value = 0;
+  src.connect(filter).connect(windNode).connect(master);
+  src.start();
+}
+// Called every frame: fades the wind with the gust strength, silent when muted.
+function ambientTick(gust) {
+  if (!windNode || !ctx) return;
+  const target = muted ? 0 : 0.05 + gust * 0.06;
+  windNode.gain.setTargetAtTime(target, ctx.currentTime, 0.4);
+}
+// A quick two note bird chirp with a little slide.
+function playChirp() {
+  if (muted) return;
+  const c = getCtx();
+  if (!c) return;
+  const t = c.currentTime;
+  const base = 1800 + Math.random() * 1200;
+  for (let i = 0; i < 2 + Math.floor(Math.random() * 3); i++) {
+    const osc = c.createOscillator();
+    const g = c.createGain();
+    osc.type = "sine";
+    const t0 = t + i * 0.13;
+    osc.frequency.setValueAtTime(base, t0);
+    osc.frequency.linearRampToValueAtTime(base * 1.35, t0 + 0.06);
+    g.gain.setValueAtTime(0, t0);
+    g.gain.linearRampToValueAtTime(0.16, t0 + 0.02);
+    g.gain.exponentialRampToValueAtTime(0.001, t0 + 0.1);
+    osc.connect(g).connect(master);
+    osc.start(t0);
+    osc.stop(t0 + 0.12);
+  }
+}
+// A low cow moo with a slow dip in pitch.
+function playMoo() {
+  if (muted) return;
+  const c = getCtx();
+  if (!c) return;
+  const t = c.currentTime;
+  const osc = c.createOscillator();
+  const g = c.createGain();
+  const f = c.createBiquadFilter();
+  f.type = "lowpass"; f.frequency.value = 500;
+  osc.type = "sawtooth";
+  osc.frequency.setValueAtTime(130, t);
+  osc.frequency.linearRampToValueAtTime(95, t + 0.9);
+  g.gain.setValueAtTime(0, t);
+  g.gain.linearRampToValueAtTime(0.35, t + 0.15);
+  g.gain.linearRampToValueAtTime(0.25, t + 0.6);
+  g.gain.exponentialRampToValueAtTime(0.001, t + 1.0);
+  osc.connect(f).connect(g).connect(master);
+  osc.start(t); osc.stop(t + 1.05);
+}
+// Duck quacks: short buzzy notes.
+function playQuack() {
+  if (muted) return;
+  const c = getCtx();
+  if (!c) return;
+  const t = c.currentTime;
+  for (let i = 0; i < 2; i++) tone(300 + Math.random() * 60, t + i * 0.16, 0.12, "sawtooth", 0.2);
+}
+// A little coin sound for earning a star.
+function playCoin() {
+  const c = getCtx();
+  if (!c) return;
+  const t = c.currentTime;
+  tone(1318.5, t, 0.1, "square", 0.3);
+  tone(1760, t + 0.08, 0.3, "square", 0.3);
+}
+
 // A very short "voice" blip, played as a villager's words appear one by one.
 // `pitch` is the villager's base pitch in Hz; we wobble it a little so the
 // speech sounds lively rather than like a beep.
@@ -600,7 +709,7 @@ const KEY = (profile) => `engineers-village.v1.${profile}`;
 
 // A fresh, empty progress record.
 function emptyProgress() {
-  return { jobsDone: [], attempts: {} };
+  return { jobsDone: [], attempts: {}, situationsDone: [], replays: {} };
 }
 
 // Read the saved progress for a profile. Always returns a valid object,
@@ -614,6 +723,8 @@ function loadProgress(profile) {
     return {
       jobsDone: Array.isArray(data.jobsDone) ? data.jobsDone : [],
       attempts: data.attempts && typeof data.attempts === "object" ? data.attempts : {},
+      situationsDone: Array.isArray(data.situationsDone) ? data.situationsDone : [],
+      replays: data.replays && typeof data.replays === "object" ? data.replays : {},
     };
   } catch (e) {
     // If storage is blocked (private mode, etc.) just play without saving.
@@ -636,6 +747,14 @@ function markJobDone(profile, progress, jobId) {
   if (!progress.jobsDone.includes(jobId)) {
     progress.jobsDone.push(jobId);
   }
+  saveProgress(profile, progress);
+}
+
+// Mark a village situation solved (stars). Replays are counted separately
+// so the numbers change each time.
+function markSituationDone(profile, progress, id) {
+  if (!progress.situationsDone.includes(id)) progress.situationsDone.push(id);
+  else progress.replays[id] = (progress.replays[id] || 0) + 1;
   saveProgress(profile, progress);
 }
 
@@ -984,16 +1103,53 @@ function runStepQuiz(ctx, cfg) {
       .map((_, i) => `<div class="step-dot ${i < idx ? "done" : i === idx ? "now" : ""}"></div>`)
       .join("");
   }
+  const rowEl = card.querySelector("#quiz-row");
+  const choiceEl = document.createElement("div");
+  choiceEl.className = "choice-bank";
+  rowEl.parentNode.insertBefore(choiceEl, rowEl);
+
   function showStep() {
     paintTrack();
     const st = cfg.steps[idx];
-    qEl.innerHTML = `Step ${idx + 1} of ${cfg.steps.length}: ${st.q}`;
+    const label = cfg.steps.length > 1 ? `Step ${idx + 1} of ${cfg.steps.length}: ` : "";
+    qEl.innerHTML = label + st.q;
     unitEl.textContent = st.unit || "";
     input.value = "";
+    // A multiple choice step shows buttons instead of the number box.
+    choiceEl.innerHTML = "";
+    if (st.choices) {
+      rowEl.hidden = true;
+      st.choices.forEach((c) => {
+        const b = document.createElement("button");
+        b.className = "choice-btn";
+        b.textContent = c;
+        b.addEventListener("click", () => checkChoice(c, b));
+        choiceEl.appendChild(b);
+      });
+    } else {
+      rowEl.hidden = false;
+    }
     hintEl.hidden = true;
     exampleEl.hidden = true;
     wrongHere = 0;
     setTimeout(() => input.focus(), 50);
+  }
+
+  function checkChoice(choice, btn) {
+    ctx.countAttempt();
+    const st = cfg.steps[idx];
+    if (choice === st.answer) {
+      log.innerHTML += `<div class="step-ok">✔ ${st.q} <b>${st.answer}</b></div>`;
+      idx++;
+      if (idx < cfg.steps.length) { ctx.audio.playStep(); showStep(); } else { solve(); }
+      return;
+    }
+    wrongHere++;
+    ctx.audio.playRetry();
+    btn.classList.add("wrong");
+    btn.disabled = true;
+    hintEl.hidden = false;
+    hintEl.textContent = `Not that one. ${st.hint || ""}`;
   }
 
   function check() {
@@ -1038,6 +1194,7 @@ function runStepQuiz(ctx, cfg) {
     ctx.audio.playSuccess();
     paintTrack();
     qEl.hidden = true;
+    choiceEl.hidden = true;
     card.querySelector("#quiz-row").hidden = true;
     hintEl.hidden = true;
     exampleEl.hidden = true;
@@ -1149,6 +1306,8 @@ class UI {
   refreshRank() {
     const count = this.game.progress.jobsDone.length;
     this.rankText.textContent = rankFor(count);
+    const stars = this.game.progress.situationsDone.length;
+    document.getElementById("star-text").textContent = `${stars} / ${SITUATIONS.length}`;
   }
 
   // Show or hide the little "Press E to talk" prompt.
@@ -1204,6 +1363,26 @@ class UI {
       html += `</ul>`;
     }
 
+    // Village situations: who is offering what, and progress by category.
+    const doneS = this.game.progress.situationsDone;
+    html += `<div class="section-label">Village situations: ${doneS.length} of ${SITUATIONS.length} solved</div>`;
+    html += `<ul class="job-list errand-list">`;
+    for (const npc of this.game.npcs || []) {
+      const sit = npc.situationId ? SITUATION_BY_ID[npc.situationId] : null;
+      html += `<li><div><div class="job-title">${npc.name}</div>
+        <div class="job-concept">${sit ? sit.title + " • " + CATEGORY_NAMES[sit.cat] : "wandering"}</div></div>
+        <div class="cat-count">${npc.bank === "near" ? "this side" : "across the river"}</div></li>`;
+    }
+    html += `</ul>`;
+    html += `<div class="section-label">By topic</div><ul class="job-list">`;
+    for (const cat of Object.keys(CATEGORY_NAMES)) {
+      const all = SITUATIONS.filter((x) => x.cat === cat);
+      const got = all.filter((x) => doneS.includes(x.id)).length;
+      html += `<li><div class="job-title">${CATEGORY_NAMES[cat]} <span class="cat-count">${got} / ${all.length}</span></div>
+        <div class="cat-bar"><div style="width:${(100 * got) / all.length}%"></div></div></li>`;
+    }
+    html += `</ul>`;
+
     this.notebookBody.innerHTML = html;
   }
 
@@ -1221,6 +1400,16 @@ class UI {
         <div class="job-concept">${j.concept}</div>
         <div class="job-concept">Attempts: ${attempts}${done ? " • completed" : ""}</div>
       </li>`;
+    }
+    html += `</ul>`;
+    html += `<div class="section-label">Village situations</div>`;
+    html += `<p>${prog.situationsDone.length} of ${SITUATIONS.length} solved. Replays with new numbers: ${Object.values(prog.replays).reduce((a, b) => a + b, 0)}.</p>`;
+    html += `<ul class="job-list">`;
+    for (const cat of Object.keys(CATEGORY_NAMES)) {
+      const all = SITUATIONS.filter((x) => x.cat === cat);
+      const got = all.filter((x) => prog.situationsDone.includes(x.id));
+      html += `<li><div class="job-title">${CATEGORY_NAMES[cat]}: ${got.length} / ${all.length}</div>
+        <div class="job-concept">${got.map((x) => x.title).join(", ") || "none yet"}</div></li>`;
     }
     html += `</ul>`;
     html += `<p class="tiny-note">Attempts count every try, right or wrong — a few tries is normal and healthy.</p>`;
@@ -1312,7 +1501,190 @@ class World {
     this._buildFarBank();
     this._buildTrees();
     this._buildAmbient();
+    this._buildLife();
   }
+  // ---- Water that moves, smoke, wind, boats, a pond, a field ----
+  _buildLife() {
+    // Replace the flat river slab with a rippling surface.
+    this.scene.remove(this.water);
+    const waterGeo = new THREE.PlaneGeometry(120, this.riverZ.near - this.riverZ.far, 90, 6);
+    waterGeo.rotateX(-Math.PI / 2);
+    const waterMat = new THREE.MeshStandardMaterial({ color: COLORS.water, flatShading: true, roughness: 0.35, metalness: 0.15, transparent: true, opacity: 0.92 });
+    this.water = new THREE.Mesh(waterGeo, waterMat);
+    this.water.position.set(0, -0.05, (this.riverZ.near + this.riverZ.far) / 2);
+    this.scene.add(this.water);
+    this.waterGeo = waterGeo;
+    this._waterBase = waterGeo.attributes.position.array.slice();
+
+    // A pond by the well with lily pads.
+    const pond = new THREE.Mesh(new THREE.CylinderGeometry(3.2, 3.2, 0.2, 18), new THREE.MeshStandardMaterial({ color: 0x4fa3c7, flatShading: true, roughness: 0.3 }));
+    pond.position.set(12, -0.02, 17);
+    this.scene.add(pond);
+    this.pond = { cx: 12, cz: 17, r: 2.4 };
+    const padMat = mat(0x3f8f3a);
+    for (let i = 0; i < 6; i++) {
+      const pad = new THREE.Mesh(new THREE.CylinderGeometry(0.35, 0.35, 0.04, 8), padMat);
+      const a = (i / 6) * Math.PI * 2;
+      pad.position.set(12 + Math.cos(a) * 2.2, 0.1, 17 + Math.sin(a) * 2.2);
+      this.scene.add(pad);
+    }
+    const rim = new THREE.Mesh(new THREE.TorusGeometry(3.3, 0.18, 6, 18), mat(COLORS.stone));
+    rim.rotation.x = Math.PI / 2;
+    rim.position.set(12, 0.05, 17);
+    this.scene.add(rim);
+
+    // Things that sway in the wind: trees, wheat, flags.
+    this.swayers = [];
+    for (const t of this.trees || []) this.swayers.push({ obj: t, phase: Math.random() * 10, amp: 0.035 });
+
+    // A wheat field on the far bank: rows of tall thin stalks that ripple.
+    const stalkGeo = new THREE.BoxGeometry(0.08, 1.1, 0.08);
+    const stalkMat = mat(0xe2c463);
+    this.wheat = [];
+    for (let i = 0; i < 9; i++) {
+      for (let j = 0; j < 6; j++) {
+        const stalk = new THREE.Mesh(stalkGeo, stalkMat);
+        stalk.position.set(-30 + i * 1.1, 0.55, -8 + j * 1.1);
+        stalk.userData.phase = i * 0.6 + j * 0.3;
+        this.scene.add(stalk);
+        this.wheat.push(stalk);
+      }
+    }
+    // Low fence round the field.
+    for (let i = 0; i <= 9; i++) {
+      for (const z of [-9, -1.5]) {
+        const post = new THREE.Mesh(new THREE.BoxGeometry(0.12, 0.7, 0.12), mat(COLORS.woodDark));
+        post.position.set(-30.6 + i * 1.1, 0.35, z);
+        this.scene.add(post);
+      }
+    }
+
+    // Flags on the entrance arch.
+    const flagMat = new THREE.MeshStandardMaterial({ color: 0xff7a45, side: THREE.DoubleSide, flatShading: true });
+    this.flags = [];
+    for (const x of [-2.4, 2.4]) {
+      const pole = new THREE.Mesh(new THREE.CylinderGeometry(0.04, 0.04, 1.4, 6), mat(COLORS.woodDark));
+      pole.position.set(x, 3.9, 24);
+      this.scene.add(pole);
+      const flag = new THREE.Mesh(new THREE.PlaneGeometry(0.9, 0.5, 6, 1), flagMat);
+      flag.position.set(x + 0.47, 4.3, 24);
+      this.scene.add(flag);
+      this.flags.push(flag);
+    }
+
+    // Chimneys and smoke on the four far-bank houses.
+    this.smokes = [];
+    const smokeMat = new THREE.MeshStandardMaterial({ color: 0xf0f0f0, transparent: true, opacity: 0.55, flatShading: true });
+    for (const [x, z] of [[-20, -6], [20, -6], [-22, -22], [22, -22]]) {
+      const chimney = new THREE.Mesh(new THREE.BoxGeometry(0.4, 1.0, 0.4), mat(COLORS.stone));
+      chimney.position.set(x + 0.9, 3.4, z - 0.6);
+      this.scene.add(chimney);
+      for (let k = 0; k < 4; k++) {
+        const puff = new THREE.Mesh(new THREE.SphereGeometry(0.22, 6, 5), smokeMat);
+        puff.position.set(x + 0.9, 4 + k * 0.7, z - 0.6);
+        puff.userData = { x: x + 0.9, z: z - 0.6, t: k / 4 };
+        this.scene.add(puff);
+        this.smokes.push(puff);
+      }
+    }
+
+    // A little boat drifting up and down the river.
+    const boat = new THREE.Group();
+    const hull = new THREE.Mesh(new THREE.BoxGeometry(2.2, 0.5, 0.9), mat(COLORS.woodDark));
+    hull.position.y = 0.25;
+    boat.add(hull);
+    const mast = new THREE.Mesh(new THREE.CylinderGeometry(0.04, 0.04, 2, 6), mat(COLORS.wood));
+    mast.position.set(0, 1.4, 0);
+    boat.add(mast);
+    const sail = new THREE.Mesh(new THREE.PlaneGeometry(1.1, 1.3), new THREE.MeshStandardMaterial({ color: 0xfff6e0, side: THREE.DoubleSide, flatShading: true }));
+    sail.position.set(0.55, 1.6, 0);
+    boat.add(sail);
+    boat.position.set(-30, -0.1, 0);
+    this.scene.add(boat);
+    this.boat = boat;
+    this._boatDir = 1;
+
+    // Fish: a pool of small silver fish that jump out of the river now and then.
+    this.fish = [];
+    for (let i = 0; i < 3; i++) {
+      const f = new THREE.Mesh(new THREE.ConeGeometry(0.12, 0.5, 5), mat(0xbfd7e0));
+      f.rotation.z = -Math.PI / 2;
+      f.visible = false;
+      f.userData = { t: -Math.random() * 6, x: 0 };
+      this.scene.add(f);
+      this.fish.push(f);
+    }
+
+    // The day tint: very gentle, always daytime, so it never gets gloomy.
+    this.dayT = 0.25;
+  }
+
+  // Ripple the river, sway things, puff smoke, drift the boat, jump fish.
+  _updateLife(dt, elapsed) {
+    // Water ripples.
+    if (this.waterGeo) {
+      const pos = this.waterGeo.attributes.position;
+      const base = this._waterBase;
+      for (let i = 0; i < pos.count; i++) {
+        const x = base[i * 3], z = base[i * 3 + 2];
+        pos.array[i * 3 + 1] = Math.sin(x * 0.45 + elapsed * 2.2) * 0.07 + Math.sin(x * 1.4 - elapsed * 3.1 + z * 2) * 0.04;
+      }
+      pos.needsUpdate = true;
+      this.waterGeo.computeVertexNormals();
+    }
+    // Wind: a slow gust strength everything shares.
+    const gust = 0.6 + Math.sin(elapsed * 0.35) * 0.4;
+    for (const s of this.swayers || []) s.obj.rotation.z = Math.sin(elapsed * 1.3 + s.phase) * s.amp * gust;
+    for (const w of this.wheat || []) w.rotation.z = Math.sin(elapsed * 2.2 + w.userData.phase) * 0.18 * gust;
+    for (const f of this.flags || []) {
+      const p = f.geometry.attributes.position;
+      for (let i = 0; i < p.count; i++) {
+        const x = p.getX(i);
+        p.setZ(i, Math.sin(x * 4 + elapsed * 9) * 0.08 * (x + 0.45));
+      }
+      p.needsUpdate = true;
+    }
+    // Smoke rises, widens, thins, and restarts.
+    for (const puff of this.smokes || []) {
+      const u = puff.userData;
+      u.t += dt * 0.35;
+      if (u.t > 1) u.t -= 1;
+      puff.position.set(u.x + Math.sin(elapsed + u.t * 6) * 0.3 * u.t, 4 + u.t * 3, u.z);
+      const sc = 0.6 + u.t * 1.6;
+      puff.scale.setScalar(sc);
+    }
+    // The boat sails along the river and turns at the ends.
+    if (this.boat) {
+      this.boat.position.x += dt * 1.1 * this._boatDir;
+      if (this.boat.position.x > 45) this._boatDir = -1;
+      if (this.boat.position.x < -45) this._boatDir = 1;
+      this.boat.rotation.y = this._boatDir > 0 ? 0 : Math.PI;
+      this.boat.rotation.z = Math.sin(elapsed * 1.7) * 0.05;
+      this.boat.position.y = -0.1 + Math.sin(elapsed * 2) * 0.05;
+    }
+    // Fish jump in an arc every few seconds.
+    for (const f of this.fish || []) {
+      const u = f.userData;
+      u.t += dt;
+      if (u.t < 0) { f.visible = false; continue; }
+      if (u.t === 0 || !f.visible) { u.x = -35 + Math.random() * 70; f.visible = true; }
+      const k = u.t / 0.9; // 0..1 over the jump
+      if (k >= 1) { f.visible = false; u.t = -(4 + Math.random() * 8); continue; }
+      f.position.set(u.x + k * 1.2, Math.sin(k * Math.PI) * 1.1 - 0.1, (this.riverZ.near + this.riverZ.far) / 2 + Math.sin(u.x));
+      f.rotation.z = -Math.PI / 2 + (k - 0.5) * 2.4;
+    }
+    // Soft day tint: sun colour and sky drift between morning gold and noon blue.
+    this.dayT = (this.dayT + dt / 240) % 1;
+    const warm = 0.5 + 0.5 * Math.cos(this.dayT * Math.PI * 2); // 1 at "morning", 0 at "noon"
+    this.sun.color.setRGB(1, 0.95 - warm * 0.08, 0.84 - warm * 0.14);
+    this.sun.intensity = 1.9 + (1 - warm) * 0.4;
+    const sky = new THREE.Color(0xbfe3f2).lerp(new THREE.Color(0xf6d9b0), warm * 0.35);
+    this.scene.background.copy(sky);
+    this.scene.fog.color.copy(sky);
+    const ang = 0.9 + this.dayT * 1.2;
+    this.sun.position.set(Math.cos(ang) * 28, 24 + Math.sin(this.dayT * Math.PI) * 8, 14);
+  }
+
 
   // ---- Lighting: warm daylight + a soft sky fill, with shadows ----
   _buildLights() {
@@ -1612,6 +1984,7 @@ class World {
 
   // ---- Scattered low-poly trees for a lived-in feel ----
   _buildTrees() {
+    this.trees = [];
     const trunkGeo = new THREE.CylinderGeometry(0.2, 0.28, 1.4, 6);
     const leafGeo = new THREE.ConeGeometry(1.1, 2.2, 7);
     const trunkMat = mat(COLORS.trunk);
@@ -1630,6 +2003,7 @@ class World {
       tree.position.set(x, 0, z);
       tree.scale.setScalar(0.9 + Math.random() * 0.5);
       this.scene.add(tree);
+      this.trees.push(tree);
     }
   }
 
@@ -1760,8 +2134,7 @@ class World {
       bird.children[1].rotation.z = -flap;
     }
 
-    // Gentle water shimmer.
-    if (this.water) this.water.position.y = -0.2 + Math.sin(elapsed * 1.5) * 0.03;
+    this._updateLife(dt, elapsed);
 
     // Animate the bridge planks growing to full height after being built.
     if (this.bridgeBuilt && this._bridgeAnimStart != null) {
@@ -3436,6 +3809,596 @@ function runMarketPuzzle(ctx, puzzle) {
   }
 }
 
+// ===== src/situations.js =====
+/* ============================================================
+   situations.js — ONE HUNDRED small village situations.
+
+   Wandering villagers carry these. Each is a tiny story with a
+   question. Every situation is a GENERATOR: it takes a random
+   number helper `r` and a flag `big` (true for the Class 5
+   profile) and returns fresh numbers every time it is asked, so
+   a situation can be replayed with different values.
+
+   A situation returns:
+     { story, q, answer, unit, hint, example }           // type a number
+     { story, q, choices:[...], answer:"text", hint }     // pick one
+   Categories: length, money, time, fractions, area, water,
+               travel, ratio, science, logic
+   ============================================================ */
+
+// A tiny seeded random helper so a replay with the same seed repeats.
+function makeRng(seed) {
+  let s = (seed >>> 0) || 1;
+  const next = () => {
+    s = (s * 1664525 + 1013904223) >>> 0;
+    return s / 4294967296;
+  };
+  return {
+    int: (lo, hi) => lo + Math.floor(next() * (hi - lo + 1)),
+    pick: (arr) => arr[Math.floor(next() * arr.length)],
+    shuffle: (arr) => { const a = arr.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(next() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; },
+  };
+}
+
+// Turn a string into a number for seeding.
+function hashStr(str) {
+  let h = 2166136261;
+  for (let i = 0; i < str.length; i++) { h ^= str.charCodeAt(i); h = Math.imul(h, 16777619); }
+  return h >>> 0;
+}
+
+const CATEGORY_NAMES = {
+  length: "Length and measuring",
+  money: "Money and shopping",
+  time: "Time and calendar",
+  fractions: "Fractions and sharing",
+  area: "Area, perimeter and building",
+  water: "Water, volume and rates",
+  travel: "Speed, distance and travel",
+  ratio: "Ratios, recipes and gears",
+  science: "Science in the village",
+  logic: "Logic, patterns and data",
+};
+
+// A short helper to build a situation entry.
+function S(id, cat, title, gen) { return { id, cat, title, gen }; }
+
+const SITUATIONS = [
+  // ---------------- LENGTH (10) ----------------
+  S("len01", "length", "Two ropes", (r, big) => { const a = r.int(3, big ? 45 : 9), b = r.int(2, big ? 38 : 8); return { story: `The ferry rope snapped. I have one rope ${a} m long and another ${b} m long, and I will tie them together.`, q: `How long is the tied rope? (Ignore the knot.)`, answer: a + b, unit: "m", hint: "Add the two lengths.", example: "A 4 m rope tied to a 6 m rope makes 10 m." }; }),
+  S("len02", "length", "Fence posts", (r, big) => { const d = r.pick(big ? [2, 3, 4, 5] : [2, 5]), n = r.int(4, big ? 15 : 8), L = d * n; return { story: `I am fencing one straight side of my field. It is ${L} m long and I put a post every ${d} m, with a post at both ends.`, q: `How many posts do I need?`, answer: n + 1, unit: "posts", hint: `${L} ÷ ${d} gives the gaps. Posts are one MORE than the gaps, because of the post at the very start.`, example: "A 10 m side with posts every 5 m has 2 gaps but 3 posts." }; }),
+  S("len03", "length", "Cutting cloth", (r, big) => { const p = r.pick(big ? [3, 4, 6] : [2, 3]), n = r.int(3, big ? 12 : 6), rem = r.int(0, p - 1), L = p * n + rem; return { story: `A bolt of cloth is ${L} m long. Each school uniform needs ${p} m.`, q: `How many whole uniforms can I cut?`, answer: n, unit: "uniforms", hint: `Divide ${L} by ${p} and ignore the leftover piece.`, example: "From 14 m of cloth with 3 m each: 14 ÷ 3 = 4 remainder 2, so 4 uniforms." }; }),
+  S("len04", "length", "Short ladder", (r, big) => { const h = r.int(big ? 8 : 4, big ? 15 : 7), l = h - r.int(1, 3); return { story: `The mango tree branch is ${h} m up. My ladder is only ${l} m tall.`, q: `How much taller must the ladder be to reach the branch?`, answer: h - l, unit: "m", hint: "Take the ladder height away from the branch height.", example: "A 6 m branch and a 4 m ladder: 6 − 4 = 2 m short." }; }),
+  S("len05", "length", "Metres to centimetres", (r, big) => { const a = r.int(1, big ? 12 : 5), b = r.int(1, 99); return { story: `The tailor measured my little brother: ${a} m ${b} cm tall. He writes heights in centimetres only.`, q: `What is that in centimetres?`, answer: a * 100 + b, unit: "cm", hint: "1 metre is 100 cm. Multiply the metres by 100, then add the centimetres.", example: "1 m 25 cm = 100 + 25 = 125 cm." }; }),
+  S("len06", "length", "Around the block", (r, big) => { const a = r.int(big ? 30 : 5, big ? 90 : 12), b = r.int(big ? 20 : 4, big ? 70 : 10); return { story: `Every morning I walk ${a} m north to the well, ${b} m east to the temple, then the same way back home.`, q: `How far do I walk in total?`, answer: 2 * (a + b), unit: "m", hint: "Going out is a + b. Coming back is the same again.", example: "Out 5 m and 3 m, back 3 m and 5 m: total 16 m." }; }),
+  S("len07", "length", "Bamboo row", (r, big) => { const n = r.int(3, big ? 14 : 8), s = r.pick(big ? [45, 60, 75, 120] : [20, 30, 50]); return { story: `I laid ${n} bamboo sticks end to end. Each is ${s} cm long.`, q: `How long is the row in centimetres?`, answer: n * s, unit: "cm", hint: "Multiply the number of sticks by one stick's length.", example: "4 sticks of 30 cm make 120 cm." }; }),
+  S("len08", "length", "Kite string", (r, big) => { const L = r.pick(big ? [150, 200, 250] : [50, 60, 80]), u = r.int(10, L - 10); return { story: `My kite string is ${L} m long. The kite has taken ${u} m of it up into the sky.`, q: `How much string is still on the spool?`, answer: L - u, unit: "m", hint: "Take the used part away from the whole.", example: "A 50 m string with 35 m out leaves 15 m." }; }),
+  S("len09", "length", "Counting steps", (r, big) => { const s = r.pick(big ? [40, 50, 60, 75] : [50]), D = r.int(2, big ? 12 : 8) * (s === 50 ? 1 : s === 40 ? 2 : 3); return { story: `Each of my steps is ${s} cm. The path to the school gate is ${D} m long.`, q: `How many steps is that?`, answer: (D * 100) / s, unit: "steps", hint: `Change ${D} m into centimetres first (× 100), then divide by ${s}.`, example: "A 3 m path with 50 cm steps: 300 ÷ 50 = 6 steps." }; }),
+  S("len10", "length", "Plank bridge", (r, big) => { const n = r.int(4, big ? 12 : 8), w = r.pick(big ? [0.5, 0.75, 1.5] : [1, 2]); return { story: `The new footbridge over the stream is ${n} planks wide, side by side. Each plank is ${prettyLength(w)} wide.`, q: `How wide is the stream there? (Type a decimal if you need one.)`, answer: n * w, unit: "m", hint: "Multiply the number of planks by one plank's width.", example: "6 planks of ½ m make 3 m." }; }),
+
+  // ---------------- MONEY (12) ----------------
+  S("mon01", "money", "Pencils", (r, big) => { const n = r.int(3, big ? 24 : 9), p = r.pick(big ? [7, 8, 12, 15] : [2, 3, 5]); return { story: `Pencils cost ₹${p} each. The class needs ${n} pencils.`, q: `How much do they cost altogether?`, answer: n * p, unit: "₹", hint: "Multiply the number of pencils by the price of one.", example: "4 pencils at ₹3 cost ₹12." }; }),
+  S("mon02", "money", "Change please", (r, big) => { const N = r.pick(big ? [200, 500] : [20, 50, 100]), c = r.int(N / 4, N - 5); return { story: `I paid for vegetables costing ₹${c} with a ₹${N} note.`, q: `How much change should I get?`, answer: N - c, unit: "₹", hint: "Take the cost away from the note.", example: "Paying ₹50 for ₹32 of goods gives ₹18 change." }; }),
+  S("mon03", "money", "Saving up", (r, big) => { const s = r.pick(big ? [25, 40, 75] : [5, 10, 20]), w = r.int(3, big ? 14 : 8); return { story: `I want a cricket bat that costs ₹${s * w}. I can save ₹${s} every week.`, q: `How many weeks until I can buy it?`, answer: w, unit: "weeks", hint: "Divide the price by what you save each week.", example: "₹60 at ₹10 a week takes 6 weeks." }; }),
+  S("mon04", "money", "Mangoes by the dozen", (r, big) => { const p = r.pick(big ? [84, 96, 120] : [24, 36, 48]), k = r.int(2, big ? 6 : 4); return { story: `Mangoes are ₹${p} a dozen at Bhola's stall. My mother wants ${k} dozen.`, q: `How much will she pay?`, answer: p * k, unit: "₹", hint: "Multiply the price of one dozen by the number of dozens.", example: "3 dozen at ₹24 a dozen cost ₹72." }; }),
+  S("mon05", "money", "Shopping list", (r, big) => { const a = r.int(big ? 45 : 5, big ? 180 : 30), b = r.int(big ? 30 : 5, big ? 150 : 25), c = r.int(big ? 20 : 5, big ? 99 : 20); return { story: `Rice ₹${a}, dal ₹${b}, oil ₹${c}.`, q: `What is the total bill?`, answer: a + b + c, unit: "₹", hint: "Add all three prices.", example: "₹10 + ₹15 + ₹5 = ₹30." }; }),
+  S("mon06", "money", "Splitting the bill", (r, big) => { const n = r.pick(big ? [4, 5, 6, 8] : [2, 3, 4]), e = r.int(big ? 35 : 5, big ? 120 : 20); return { story: `${n} friends shared a plate of samosas costing ₹${n * e}. They split it equally.`, q: `How much does each friend pay?`, answer: e, unit: "₹", hint: "Divide the bill by the number of friends.", example: "₹40 shared by 4 friends is ₹10 each." }; }),
+  S("mon07", "money", "Sale day", (r, big) => { if (big) { const p = r.int(8, 40) * 10; return { story: `A schoolbag is ₹${p}. Today it is 10% off.`, q: `What does it cost today?`, answer: p * 0.9, unit: "₹", hint: "10% is one tenth. Take one tenth of the price away.", example: "₹200 with 10% off: one tenth is ₹20, so ₹180." }; } const p = r.int(30, 90), d = r.int(5, 20); return { story: `A schoolbag is ₹${p}. Today the shop takes ₹${d} off.`, q: `What does it cost today?`, answer: p - d, unit: "₹", hint: "Take the discount away from the price.", example: "₹50 with ₹10 off is ₹40." }; }),
+  S("mon08", "money", "Farmer's profit", (r, big) => { const b = r.int(big ? 400 : 20, big ? 900 : 60), s = b + r.int(big ? 60 : 5, big ? 350 : 30); return { story: `Ramu bought a goat for ₹${b} and sold it at the fair for ₹${s}.`, q: `How much profit did he make?`, answer: s - b, unit: "₹", hint: "Profit is selling price minus buying price.", example: "Bought for ₹30, sold for ₹45: profit ₹15." }; }),
+  S("mon09", "money", "Daily wage", (r, big) => { const w = r.pick(big ? [180, 250, 320] : [20, 30, 50]), d = r.int(3, big ? 12 : 6); return { story: `The bridge worker earns ₹${w} a day and worked ${d} days.`, q: `How much did he earn?`, answer: w * d, unit: "₹", hint: "Multiply the daily wage by the days.", example: "₹20 a day for 5 days is ₹100." }; }),
+  S("mon10", "money", "Five rupee coins", (r, big) => { const n = r.int(3, big ? 40 : 12); return { story: `My piggy bank has only ₹5 coins. It holds ₹${n * 5}.`, q: `How many coins are inside?`, answer: n, unit: "coins", hint: "Divide the total by 5.", example: "₹35 in ₹5 coins is 7 coins." }; }),
+  S("mon11", "money", "Bus to town", (r, big) => { const n = r.int(2, big ? 7 : 4), f = r.pick(big ? [18, 25, 35] : [5, 10]); return { story: `${n} of us are taking the bus to town and back. A ticket costs ₹${f} each way.`, q: `What do the tickets cost in total?`, answer: n * f * 2, unit: "₹", hint: "Each person pays twice: there and back. Multiply people × fare × 2.", example: "2 people at ₹5 each way: 2 × 5 × 2 = ₹20." }; }),
+  S("mon12", "money", "Pocket money", (r, big) => { const m = r.pick(big ? [12, 15, 25] : [2, 5, 10]); return { story: `I get ₹${m} pocket money every day.`, q: `How much is that in a week?`, answer: m * 7, unit: "₹", hint: "A week has 7 days.", example: "₹2 a day is ₹14 a week." }; }),
+
+  // ---------------- TIME (10) ----------------
+  S("tim01", "time", "School day", (r, big) => { const h1 = r.int(7, 9), h2 = r.int(1, 4); return { story: `School starts at ${h1} in the morning and ends at ${h2} in the afternoon.`, q: `How many hours long is the school day?`, answer: 12 - h1 + h2, unit: "hours", hint: `From ${h1} to 12 noon, then from 12 to ${h2}. Add the two parts.`, example: "9 to 12 is 3 hours, 12 to 2 is 2 hours: 5 hours." }; }),
+  S("tim02", "time", "Hours to minutes", (r, big) => { const h = r.int(2, big ? 9 : 5); return { story: `The train to the city takes ${h} hours.`, q: `How many minutes is that?`, answer: h * 60, unit: "minutes", hint: "One hour is 60 minutes.", example: "3 hours is 3 × 60 = 180 minutes." }; }),
+  S("tim03", "time", "Bus arrival", (r, big) => { const m0 = r.pick([10, 15, 20]), m = r.int(10, 35); return { story: `The bus leaves the village at 9:${m0} and the ride to town takes ${m} minutes.`, q: `How many minutes past 9 does it arrive?`, answer: m0 + m, unit: "minutes past 9", hint: `Add the ride time to the ${m0} minutes it already is.`, example: "Leaving at 9:10 for a 20 minute ride arrives at 9:30, that is 30 minutes past 9." }; }),
+  S("tim04", "time", "Weeks to days", (r, big) => { const w = r.int(2, big ? 12 : 6); return { story: `The rains are expected in ${w} weeks.`, q: `How many days is that?`, answer: w * 7, unit: "days", hint: "One week is 7 days.", example: "3 weeks is 21 days." }; }),
+  S("tim05", "time", "How old", (r, big) => { const y = 2026 - r.int(6, big ? 70 : 12); return { story: `Nanu says the big banyan tree was planted in ${y}. It is 2026 now.`, q: `How old is the tree?`, answer: 2026 - y, unit: "years", hint: "Take the planting year away from this year.", example: "Planted in 2016, now 2026: 10 years old." }; }),
+  S("tim06", "time", "Cooking together", (r, big) => { const a = r.int(15, 30), b = a + r.int(5, 20); return { story: `Rice takes ${a} minutes and dal takes ${b} minutes. Amma starts both at the same time on two stoves.`, q: `After how many minutes is dinner ready?`, answer: b, unit: "minutes", hint: "They cook at the SAME time, so you wait only for the slower one.", example: "If rice takes 20 and dal takes 30, both together, dinner is ready in 30 minutes." }; }),
+  S("tim07", "time", "A night's sleep", (r, big) => { const b = r.int(8, 10), w = r.int(5, 7); return { story: `Chotu sleeps at ${b} at night and wakes at ${w} in the morning.`, q: `How many hours does he sleep?`, answer: 12 - b + w, unit: "hours", hint: `From ${b} to midnight, then from midnight to ${w}. Add.`, example: "9 to midnight is 3 hours, midnight to 6 is 6 hours: 9 hours." }; }),
+  S("tim08", "time", "Festival countdown", (r, big) => { const d = r.int(2, 14), f = d + r.int(3, 15); return { story: `Today is the ${d}th of the month. The village festival is on the ${f}th.`, q: `How many days until the festival?`, answer: f - d, unit: "days", hint: "Take today's date away from the festival date.", example: "From the 5th to the 12th is 7 days." }; }),
+  S("tim09", "time", "Minute hand", (r, big) => { const k = r.int(2, 11); return { story: `Look at the school clock. The minute hand points to the ${k}.`, q: `How many minutes past the hour is it?`, answer: k * 5, unit: "minutes", hint: "Each number on the clock is 5 minutes.", example: "The minute hand on the 3 means 15 minutes past." }; }),
+  S("tim10", "time", "Minutes to seconds", (r, big) => { const m = r.int(2, big ? 12 : 5); return { story: `The relay race took ${m} minutes.`, q: `How many seconds is that?`, answer: m * 60, unit: "seconds", hint: "One minute is 60 seconds.", example: "2 minutes is 120 seconds." }; }),
+
+  // ---------------- FRACTIONS (10) ----------------
+  S("fra01", "fractions", "Halves of roti", (r, big) => { const k = r.pick([2, 3, 4, 6]), each = r.int(1, big ? 4 : 2), n = (k * each) / 2; return { story: `Amma made ${n} rotis and cut every one in half to share among ${k} children equally.`, q: `How many halves does each child get?`, answer: each, unit: "halves", hint: `${n} rotis make ${n * 2} halves. Share ${n * 2} among ${k}.`, example: "3 rotis are 6 halves; shared by 2 children is 3 halves each." }; }),
+  S("fra02", "fractions", "Half of", (r, big) => { const N = 2 * r.int(4, big ? 60 : 15); return { story: `There were ${N} marbles in the jar and I gave half to my sister.`, q: `How many did I give her?`, answer: N / 2, unit: "marbles", hint: "Half means divide by 2.", example: "Half of 18 is 9." }; }),
+  S("fra03", "fractions", "A quarter of", (r, big) => { const N = 4 * r.int(3, big ? 30 : 8); return { story: `A quarter of the ${N} chicks are yellow.`, q: `How many chicks are yellow?`, answer: N / 4, unit: "chicks", hint: "A quarter means divide by 4.", example: "A quarter of 20 is 5." }; }),
+  S("fra04", "fractions", "Three quarters", (r, big) => { const N = 4 * r.int(3, big ? 30 : 8); return { story: `Three quarters of the ${N} seats in the school hall are filled.`, q: `How many seats are filled?`, answer: (3 * N) / 4, unit: "seats", hint: "Find one quarter (divide by 4), then multiply by 3.", example: "Three quarters of 20: one quarter is 5, so 15." }; }),
+  S("fra05", "fractions", "Pizza slices", (r, big) => { const e = r.int(1, 7); return { story: `The pizza at the fair is cut into 8 equal slices. We ate ${e}.`, q: `How many slices are left?`, answer: 8 - e, unit: "slices", hint: "Take the eaten slices away from 8.", example: "8 slices with 3 eaten leaves 5, that is 5/8 of the pizza." }; }),
+  S("fra06", "fractions", "Water bottle", (r, big) => { const L = big ? r.pick([1, 1.5, 2]) : 1, part = r.pick([2, 4]); return { story: `My bottle holds ${L} litre${L > 1 ? "s" : ""}, that is ${L * 1000} ml. I drank ${part === 2 ? "half" : "a quarter"} of it.`, q: `How many millilitres are left?`, answer: L * 1000 - (L * 1000) / part, unit: "ml", hint: `Find ${part === 2 ? "half" : "a quarter"} of ${L * 1000}, then take it away.`, example: "A 1000 ml bottle with a quarter drunk: 1000 − 250 = 750 ml left." }; }),
+  S("fra07", "fractions", "Absent today", (r, big) => { const N = 3 * r.int(4, big ? 15 : 8); return { story: `Our class has ${N} students. One third are absent with colds.`, q: `How many students are present?`, answer: N - N / 3, unit: "students", hint: "One third is N ÷ 3. Take that away from the whole class.", example: "A class of 24 with a third absent: 24 − 8 = 16 present." }; }),
+  S("fra08", "fractions", "Same slice, more pieces", (r, big) => { const b = r.pick([2, 3, 4, 5]), a = r.int(1, b - 1), k = r.pick([2, 3, big ? 4 : 2]); return { story: `Salma cut her cake into ${b} equal pieces and ate ${a}. Pinky cut the same size cake into ${b * k} pieces.`, q: `How many of Pinky's pieces equal Salma's ${a}/${b}?`, answer: a * k, unit: "pieces", hint: `Pinky's pieces are ${k} times smaller, so she needs ${k} times as many.`, example: "2/4 of a cake is the same as 4/8." }; }),
+  S("fra09", "fractions", "Adding fifths", (r, big) => { const d = r.pick([5, 6, 8, 10]), a = r.int(1, d - 3), b = r.int(1, d - a - 1); return { story: `Of the field, ${a}/${d} is planted with wheat and ${b}/${d} with mustard.`, q: `What fraction is planted in total? Type only the top number (out of ${d}).`, answer: a + b, unit: `/ ${d}`, hint: "When the bottoms are the same, add only the tops.", example: "1/5 + 2/5 = 3/5." }; }),
+  S("fra10", "fractions", "Two and a half", (r, big) => { const a = r.int(1, big ? 9 : 4), b = r.int(1, big ? 9 : 4); return { story: `Grandpa walked ${a}½ km to the temple and ${b}½ km on to the market.`, q: `How far did he walk altogether?`, answer: a + b + 1, unit: "km", hint: "Add the whole kilometres, then the two halves make one more.", example: "1½ + 2½ = 4." }; }),
+
+  // ---------------- AREA (10) ----------------
+  S("are01", "area", "Carpet for the hall", (r, big) => { const a = r.int(3, big ? 14 : 8), b = r.int(2, big ? 12 : 6); return { story: `The school hall floor is ${a} m by ${b} m. We want a carpet that covers it exactly.`, q: `What area is the carpet?`, answer: a * b, unit: "m²", hint: "Area of a rectangle is length × width.", example: "A 5 m by 4 m floor is 20 m²." }; }),
+  S("are02", "area", "Garden fence", (r, big) => { const a = r.int(3, big ? 25 : 9), b = r.int(2, big ? 20 : 7); return { story: `Salma's vegetable garden is ${a} m by ${b} m. She wants a fence all the way round.`, q: `How long is the fence?`, answer: 2 * (a + b), unit: "m", hint: "Perimeter: add all four sides, or 2 × (length + width).", example: "A 6 by 4 garden needs 6 + 4 + 6 + 4 = 20 m." }; }),
+  S("are03", "area", "Floor tiles", (r, big) => { const a = r.int(3, big ? 12 : 7), b = r.int(2, big ? 10 : 6); return { story: `The clinic floor is ${a} m by ${b} m. Each tile is exactly 1 m by 1 m.`, q: `How many tiles are needed?`, answer: a * b, unit: "tiles", hint: "One tile per square metre, so count the square metres.", example: "A 3 by 4 floor needs 12 tiles." }; }),
+  S("are04", "area", "Square field", (r, big) => { const s = r.int(3, big ? 15 : 9); return { story: `Ramu's field is a square with sides of ${s} m.`, q: `What is its area?`, answer: s * s, unit: "m²", hint: "A square's area is side × side.", example: "A square with 6 m sides has area 36 m²." }; }),
+  S("are05", "area", "Painting a wall", (r, big) => { const c = r.pick(big ? [6, 8, 12] : [4, 5]), n = r.int(2, big ? 9 : 6), a = c, b = n; return { story: `The school wall is ${a} m by ${b} m. One litre of paint covers ${c} m².`, q: `How many litres do we need?`, answer: (a * b) / c, unit: "litres", hint: "Find the area first, then divide by what one litre covers.", example: "A 20 m² wall with paint covering 4 m² a litre needs 5 litres." }; }),
+  S("are06", "area", "Path round the pond", (r, big) => { const s = r.int(3, big ? 10 : 8); if (big) return { story: `The square pond has ${s} m sides. A path 1 m wide runs all round it.`, q: `What is the area of the path?`, answer: (s + 2) * (s + 2) - s * s, unit: "m²", hint: `The outside square is ${s + 2} m wide. Big square minus pond.`, example: "A 3 m pond with a 1 m path: 5 × 5 − 3 × 3 = 16 m²." }; return { story: `The square pond has ${s} m sides. I walk once all the way round its edge.`, q: `How far do I walk?`, answer: 4 * s, unit: "m", hint: "A square has 4 equal sides.", example: "Round a 3 m square is 12 m." }; }),
+  S("are07", "area", "Window panes", (r, big) => { const h = r.int(2, big ? 6 : 4), w = r.int(2, big ? 8 : 5); return { story: `The new school window has ${h} rows of glass panes with ${w} panes in each row.`, q: `How many panes is that?`, answer: h * w, unit: "panes", hint: "Rows × panes per row.", example: "3 rows of 4 panes is 12 panes." }; }),
+  S("are08", "area", "Brick wall", (r, big) => { const rows = r.int(4, big ? 25 : 10), b = r.int(6, big ? 30 : 12); return { story: `The wall is ${rows} bricks high and every row has ${b} bricks.`, q: `How many bricks in the wall?`, answer: rows * b, unit: "bricks", hint: "Multiply rows by bricks per row.", example: "5 rows of 8 bricks is 40 bricks." }; }),
+  S("are09", "area", "Two garden beds", (r, big) => { const a = r.int(2, big ? 12 : 6), b = 2 * r.int(1, big ? 6 : 4); return { story: `A garden bed ${a} m by ${b} m is split into two equal halves, one for tomatoes and one for beans.`, q: `What area do the tomatoes get?`, answer: (a * b) / 2, unit: "m²", hint: "Find the whole area, then halve it.", example: "A 4 by 6 bed is 24 m²; half is 12 m²." }; }),
+  S("are10", "area", "Missing side", (r, big) => { const L = r.int(4, big ? 30 : 10), W = r.int(2, L - 1), P = 2 * (L + W); return { story: `The fence around the rectangular goat pen is ${P} m long. The pen is ${L} m long.`, q: `How wide is the pen?`, answer: W, unit: "m", hint: `Half the fence is ${P / 2} m, which is length + width. Take away the length.`, example: "A 20 m fence, 6 m long: half is 10, so width is 10 − 6 = 4 m." }; }),
+
+  // ---------------- WATER (10) ----------------
+  S("wat01", "water", "Bucket count", (r, big) => { const b = r.pick(big ? [15, 25, 40] : [10, 20]), n = r.int(4, big ? 30 : 12); return { story: `The clinic tank holds ${b * n} litres. Our buckets carry ${b} litres.`, q: `How many buckets fill it?`, answer: n, unit: "buckets", hint: "Divide the tank by one bucket.", example: "200 L in 20 L buckets is 10 buckets." }; }),
+  S("wat02", "water", "Pipe and leak", (r, big) => { const inn = r.pick(big ? [45, 60, 80] : [10, 20, 30]), out = r.int(2, inn / 2); return { story: `A pipe fills the pond at ${inn} litres a minute, but a crack leaks ${out} litres a minute.`, q: `How much water really goes in each minute?`, answer: inn - out, unit: "L per minute", hint: "Take the leak away from the pipe.", example: "20 in and 5 out is really 15 a minute." }; }),
+  S("wat03", "water", "Rain gauge", (r, big) => { const rr = r.int(big ? 12 : 3, big ? 45 : 10), d = r.int(3, 7); return { story: `Dr. Iyer's rain gauge showed ${rr} mm every day for ${d} days.`, q: `How much rain fell in total?`, answer: rr * d, unit: "mm", hint: "Multiply the daily rain by the days.", example: "5 mm a day for 4 days is 20 mm." }; }),
+  S("wat04", "water", "Drinking water", (r, big) => { const n = r.int(3, big ? 9 : 6), g = r.pick(big ? [2.5, 3] : [2, 3]); return { story: `A family of ${n} each drink ${g} litres of water a day.`, q: `How much water does the family drink in a day?`, answer: n * g, unit: "litres", hint: "People × litres each.", example: "4 people drinking 2 litres each is 8 litres." }; }),
+  S("wat05", "water", "Running tap", (r, big) => { const c = r.pick(big ? [7, 9, 12] : [3, 5, 10]), m = r.int(3, big ? 25 : 12); return { story: `The tap fills ${c} litres a minute and was left running for ${m} minutes.`, q: `How much water came out?`, answer: c * m, unit: "litres", hint: "Rate × time.", example: "5 litres a minute for 6 minutes is 30 litres." }; }),
+  S("wat06", "water", "Rising pond", (r, big) => { const d = r.int(1, 3), rise = r.int(10, 90); return { story: `The pond was ${d} m deep. After the rains it rose ${rise} cm.`, q: `How deep is it now, in centimetres?`, answer: d * 100 + rise, unit: "cm", hint: "Change the metres to centimetres, then add the rise.", example: "2 m plus 40 cm is 240 cm." }; }),
+  S("wat07", "water", "Cups from a kettle", (r, big) => { const cup = r.pick([200, 250, 500]), n = r.int(3, big ? 12 : 6), L = (cup * n) / 1000; return { story: `The kettle holds ${L} litre${L !== 1 ? "s" : ""}. Each cup takes ${cup} ml.`, q: `How many cups can it fill?`, answer: n, unit: "cups", hint: `${L} litres is ${L * 1000} ml. Divide by ${cup}.`, example: "1 litre (1000 ml) fills four 250 ml cups." }; }),
+  S("wat08", "water", "Freezing", (r, big) => ({ story: `Pinky left a bowl of water outside on the coldest night of the year, when it went down to 0°C.`, q: `What happened to the water?`, choices: ["It froze into ice", "It boiled", "It turned to steam", "Nothing at all"], answer: "It froze into ice", hint: "Water freezes at 0°C and boils at 100°C." })),
+  S("wat09", "water", "Where did the puddle go?", (r, big) => ({ story: `After the rain there was a big puddle by the well. By afternoon the sun had come out and the puddle was gone.`, q: `Where did the water go?`, choices: ["Up into the air as water vapour", "It sank into the sky", "The birds drank all of it", "It turned into sand"], answer: "Up into the air as water vapour", hint: "The sun's heat makes water evaporate: it becomes an invisible gas and rises." })),
+  S("wat10", "water", "Sharing the tank", (r, big) => { const n = r.pick(big ? [6, 8, 12] : [3, 4, 5]), each = r.int(big ? 40 : 10, big ? 150 : 40); return { story: `The village tank has ${n * each} litres today, shared equally among ${n} houses.`, q: `How much does each house get?`, answer: each, unit: "litres", hint: "Divide the water by the number of houses.", example: "120 litres shared by 4 houses is 30 each." }; }),
+
+  // ---------------- TRAVEL (8) ----------------
+  S("trv01", "travel", "Bullock cart", (r, big) => { const s = r.int(3, big ? 12 : 6), t = r.int(2, big ? 6 : 4); return { story: `Ramu's bullock cart moves ${s} km every hour. He travels for ${t} hours.`, q: `How far does he go?`, answer: s * t, unit: "km", hint: "Distance = speed × time.", example: "4 km an hour for 3 hours is 12 km." }; }),
+  S("trv02", "travel", "How long to town", (r, big) => { const s = r.pick(big ? [30, 40, 45, 60] : [5, 10]), t = r.int(2, big ? 5 : 4); return { story: `Town is ${s * t} km away. The bus goes ${s} km every hour.`, q: `How many hours does the trip take?`, answer: t, unit: "hours", hint: "Time = distance ÷ speed.", example: "30 km at 10 km an hour takes 3 hours." }; }),
+  S("trv03", "travel", "Cycling speed", (r, big) => { const t = r.int(2, 4), s = r.int(big ? 8 : 3, big ? 18 : 8); return { story: `Postman Vijay cycled ${s * t} km in ${t} hours at a steady speed.`, q: `How many kilometres did he cover each hour?`, answer: s, unit: "km per hour", hint: "Speed = distance ÷ time.", example: "24 km in 3 hours is 8 km an hour." }; }),
+  S("trv04", "travel", "Bus stops", (r, big) => { const n = r.int(4, big ? 12 : 7), d = r.int(2, big ? 9 : 5); return { story: `The bus route has ${n} stops, and every stop is ${d} km from the next.`, q: `How far is it from the first stop to the last?`, answer: (n - 1) * d, unit: "km", hint: `${n} stops have ${n - 1} gaps between them.`, example: "4 stops 3 km apart: 3 gaps, so 9 km." }; }),
+  S("trv05", "travel", "There and back", (r, big) => { const d = r.int(2, big ? 28 : 9); return { story: `The market is ${d} km away. Salma walks there and back.`, q: `How far does she walk in total?`, answer: 2 * d, unit: "km", hint: "Double the one way distance.", example: "3 km there and 3 km back is 6 km." }; }),
+  S("trv06", "travel", "A week of walking", (r, big) => { const w = r.int(1, big ? 6 : 3); return { story: `Gopal walks ${w} km to the fields and home again every day, that is ${2 * w} km a day.`, q: `How far does he walk in 7 days?`, answer: 14 * w, unit: "km", hint: `Multiply ${2 * w} by 7.`, example: "4 km a day for 7 days is 28 km." }; }),
+  S("trv07", "travel", "Relay race", (r, big) => { const n = r.int(3, 6), l = r.pick(big ? [150, 200, 400] : [50, 100]); return { story: `The school relay has ${n} runners and each runs ${l} m.`, q: `How long is the whole race?`, answer: n * l, unit: "m", hint: "Runners × distance each.", example: "4 runners of 100 m make 400 m." }; }),
+  S("trv08", "travel", "Train arrival", (r, big) => { const h0 = r.int(6, 9), h = r.int(1, 3); return { story: `The train leaves at ${h0} in the morning and travels for ${h} hours.`, q: `At what o'clock does it arrive?`, answer: h0 + h, unit: "o'clock", hint: "Add the travel hours to the departure hour.", example: "Leaving at 7 and travelling 2 hours arrives at 9." }; }),
+
+  // ---------------- RATIO (8) ----------------
+  S("rat01", "ratio", "Rice and water", (r, big) => { const c = r.int(2, big ? 8 : 4); return { story: `Amma's rule: every cup of rice needs 2 cups of water. Tonight she cooks ${c} cups of rice.`, q: `How many cups of water?`, answer: 2 * c, unit: "cups", hint: "Two cups of water for each cup of rice.", example: "3 cups of rice need 6 cups of water." }; }),
+  S("rat02", "ratio", "Gear speed", (r, big) => { const T = r.pick([24, 30, 40, 60]), t = r.pick([6, 10, 12].filter((x) => T % x === 0)), R = r.int(2, big ? 12 : 5); return { story: `At the mill, a ${T} tooth gear turning ${R} times a minute drives a ${t} tooth gear.`, q: `How many times a minute does the small gear turn?`, answer: (T * R) / t, unit: "turns a minute", hint: "Small gear speed = big teeth × big speed ÷ small teeth.", example: "A 20 tooth gear at 3 a minute driving a 10 tooth gear: 20 × 3 ÷ 10 = 6." }; }),
+  S("rat03", "ratio", "Mixing orange", (r, big) => { const k = r.int(2, big ? 8 : 4); return { story: `One cup of red paint and two cups of yellow make orange. Pinky wants ${3 * k} cups of orange.`, q: `How many cups of red does she need?`, answer: k, unit: "cups", hint: "Every 3 cups of orange use 1 red. Divide by 3.", example: "6 cups of orange need 2 red and 4 yellow." }; }),
+  S("rat04", "ratio", "Reading the map", (r, big) => { const k = r.pick(big ? [5, 8, 12] : [2, 5]), a = r.int(2, big ? 15 : 8); return { story: `On the district map, 1 cm stands for ${k} km. The city is ${a} cm away on the map.`, q: `How far is the city really?`, answer: a * k, unit: "km", hint: "Multiply the map centimetres by the kilometres each one stands for.", example: "If 1 cm is 5 km, then 3 cm is 15 km." }; }),
+  S("rat05", "ratio", "Lemonade stall", (r, big) => { const L = r.int(2, big ? 12 : 5), per = r.pick([3, 4]); return { story: `My lemonade recipe uses ${per} lemons for every litre. The fair needs ${L} litres.`, q: `How many lemons do I need?`, answer: per * L, unit: "lemons", hint: "Lemons per litre × litres.", example: "3 lemons a litre for 4 litres is 12 lemons." }; }),
+  S("rat06", "ratio", "Shadow of the tree", (r, big) => { const s = r.pick(big ? [1.5, 2, 2.5] : [2, 3]), k = r.int(3, big ? 9 : 5); return { story: `At noon a 1 m stick casts a ${s} m shadow. The tamarind tree casts a ${s * k} m shadow.`, q: `How tall is the tree?`, answer: k, unit: "m", hint: `The tree's shadow is ${k} times the stick's shadow, so the tree is ${k} times as tall.`, example: "If a 1 m stick has a 2 m shadow, a tree with an 8 m shadow is 4 m tall." }; }),
+  S("rat07", "ratio", "Boys and girls", (r, big) => { const m = r.int(3, big ? 12 : 6); return { story: `In the school choir there are 2 boys for every 3 girls. There are ${2 * m} boys.`, q: `How many girls are there?`, answer: 3 * m, unit: "girls", hint: `${2 * m} boys is ${m} groups of 2. Each group has 3 girls.`, example: "4 boys is 2 groups; 2 × 3 = 6 girls." }; }),
+  S("rat08", "ratio", "Pulley lift", (r, big) => { const W = 2 * r.int(big ? 20 : 5, big ? 80 : 20); return { story: `Farhan hangs a ${W} kg sack of flour from a rope over two pulleys. Two pulleys halve the pull you need.`, q: `How hard must he pull, in kilograms?`, answer: W / 2, unit: "kg", hint: "Halve the weight.", example: "A 40 kg sack with two pulleys needs a 20 kg pull." }; }),
+
+  // ---------------- SCIENCE (12) ----------------
+  S("sci01", "science", "Which wire?", () => ({ story: `Ravi's torch has a broken wire. He has some things in his pocket to bridge the gap.`, q: `Which one lets electricity flow?`, choices: ["Copper wire", "Rubber band", "Wooden matchstick", "Plastic straw"], answer: "Copper wire", hint: "Metals are conductors. Rubber, wood and plastic are insulators." })),
+  S("sci02", "science", "Bulb stays dark", () => ({ story: `The battery is new and the bulb is fine, but the school bulb will not light. The switch is open.`, q: `What should Ravi do?`, choices: ["Close the switch so the loop is complete", "Add a second bulb", "Turn the battery upside down", "Wait for it to warm up"], answer: "Close the switch so the loop is complete", hint: "Electricity needs a complete loop. An open switch is a gap in the loop." })),
+  S("sci03", "science", "One bulb breaks", () => ({ story: `Three classroom bulbs are wired so that each has its own branch to the battery. One bulb burns out.`, q: `What happens to the other two?`, choices: ["They stay on", "They go out too", "They get dimmer", "They explode"], answer: "They stay on", hint: "Each branch is its own loop. That is parallel wiring." })),
+  S("sci04", "science", "Lifting a rock", () => ({ story: `Gopal uses a long bamboo pole as a lever to lift a rock. It is too heavy to move.`, q: `Where should he push to make it easier?`, choices: ["Farther from the pivot", "Closer to the pivot", "Right on the pivot", "On the rock itself"], answer: "Farther from the pivot", hint: "A longer arm on your side of the pivot gives more lift for the same push." })),
+  S("sci05", "science", "Float or sink", () => ({ story: `The children drop things into the pond to see what floats.`, q: `Which one floats?`, choices: ["A wooden log", "A stone", "An iron nail", "A brass key"], answer: "A wooden log", hint: "Wood is lighter than the same amount of water, so it floats." })),
+  S("sci06", "science", "Long shadows", () => ({ story: `Chotu is measuring his shadow through the day.`, q: `When is his shadow longest?`, choices: ["Early morning", "Noon", "Midnight", "When it is cloudy"], answer: "Early morning", hint: "When the sun is low in the sky, shadows stretch out long." })),
+  S("sci07", "science", "How plants eat", () => ({ story: `Salma's tomato plants in the shed are pale and weak. The ones outside are green and strong.`, q: `What are the shed plants missing?`, choices: ["Sunlight", "Music", "Salt", "Sugar"], answer: "Sunlight", hint: "Plants make their own food from sunlight, water and air." })),
+  S("sci08", "science", "Planting seeds", (r, big) => { const s = r.int(5, big ? 25 : 10), rows = r.int(3, big ? 12 : 6); return { story: `Salma plants ${s} seeds in each row and makes ${rows} rows.`, q: `How many seeds does she plant?`, answer: s * rows, unit: "seeds", hint: "Seeds per row × rows.", example: "6 seeds in 4 rows is 24 seeds." }; }),
+  S("sci09", "science", "Raincoat material", () => ({ story: `The monsoon is coming and the tailor is making raincoats.`, q: `Which material keeps the rain out best?`, choices: ["Plastic sheet", "Cotton cloth", "Paper", "Wool"], answer: "Plastic sheet", hint: "Plastic is waterproof. Cotton, paper and wool soak up water." })),
+  S("sci10", "science", "The magnet", () => ({ story: `Chotu dropped a box of odds and ends in the grass. He has a magnet.`, q: `Which thing will the magnet pick up?`, choices: ["Iron nail", "Copper coin", "Plastic button", "Glass bead"], answer: "Iron nail", hint: "Magnets pull on iron and steel, not on copper, plastic or glass." })),
+  S("sci11", "science", "Slow slide", () => ({ story: `The wooden slide in the playground has become rough and slow.`, q: `What will make the slide faster?`, choices: ["Make it smooth and polished", "Make it rougher", "Make it wet with mud", "Paint it a bright colour"], answer: "Make it smooth and polished", hint: "Rough surfaces have more friction, which slows things down." })),
+  S("sci12", "science", "Clouds", () => ({ story: `Pinky is watching the clouds drift over the windmill.`, q: `What are clouds made of?`, choices: ["Tiny drops of water", "Cotton", "Smoke from kitchens", "Dust from the road"], answer: "Tiny drops of water", hint: "Water vapour rises, cools, and turns back into tiny droplets that make clouds." })),
+
+  // ---------------- LOGIC (10) ----------------
+  S("log01", "logic", "Counting by steps", (r, big) => { const st = r.pick(big ? [3, 4, 6, 7, 9] : [2, 5, 10]), a = st * r.int(1, 4); return { story: `The stones on the temple steps are numbered ${a}, ${a + st}, ${a + 2 * st}, ${a + 3 * st}, ...`, q: `What is the next number?`, answer: a + 4 * st, unit: "", hint: `Each number goes up by ${st}.`, example: "2, 4, 6, 8: the next is 10." }; }),
+  S("log02", "logic", "Doubling", (r, big) => { const a = r.pick([1, 2, 3, 5]); return { story: `A rumour spreads through the village: ${a} people know it, then ${2 * a}, then ${4 * a}, then ${8 * a}...`, q: `How many people know it at the next step?`, answer: 16 * a, unit: "people", hint: "Each step doubles the number before it.", example: "1, 2, 4, 8: the next is 16." }; }),
+  S("log03", "logic", "Odd one out", () => ({ story: `Chotu made a list of things he saw on the farm: cow, goat, chicken, tractor.`, q: `Which one is the odd one out?`, choices: ["Tractor", "Cow", "Goat", "Chicken"], answer: "Tractor", hint: "Three of them are animals." })),
+  S("log04", "logic", "Counting legs", (r, big) => { const c = r.int(2, big ? 9 : 5), h = r.int(2, big ? 12 : 6); return { story: `In Ramu's yard there are ${c} cows and ${h} chickens.`, q: `How many legs altogether?`, answer: 4 * c + 2 * h, unit: "legs", hint: "Cows have 4 legs, chickens have 2. Count each group, then add.", example: "2 cows and 3 chickens: 8 + 6 = 14 legs." }; }),
+  S("log05", "logic", "Library shelves", (r, big) => { const k = r.pick([5, 6, 8, 10]), n = r.int(3, big ? 12 : 6) * k + r.int(1, k - 1); return { story: `The new library has ${n} books. Each shelf holds ${k} books.`, q: `How many shelves are needed so every book has a place?`, answer: Math.ceil(n / k), unit: "shelves", hint: `${n} ÷ ${k} leaves a remainder. Those leftover books need one more shelf.`, example: "23 books on shelves of 5: 4 shelves hold 20, so 5 shelves." }; }),
+  S("log06", "logic", "Water tally", (r, big) => { const a = r.int(2, big ? 15 : 8), b = r.int(2, big ? 15 : 8), c = r.int(2, big ? 15 : 8); return { story: `Lakshmi's tally of buckets carried: Monday ${a}, Tuesday ${b}, Wednesday ${c}.`, q: `How many buckets over the three days?`, answer: a + b + c, unit: "buckets", hint: "Add the three days.", example: "4 + 6 + 5 = 15." }; }),
+  S("log07", "logic", "Busiest day", (r) => { let a, b, c; do { a = r.int(3, 20); b = r.int(3, 20); c = r.int(3, 20); } while (a === b || b === c || a === c); const best = Math.max(a, b, c); const day = best === a ? "Monday" : best === b ? "Tuesday" : "Wednesday"; return { story: `Bhola's stall sold ${a} kg of rice on Monday, ${b} kg on Tuesday and ${c} kg on Wednesday.`, q: `Which day was busiest?`, choices: ["Monday", "Tuesday", "Wednesday"], answer: day, hint: "Look for the biggest number." }; }),
+  S("log08", "logic", "Grandma's age", (r, big) => { const c = r.int(6, 12), d = r.int(big ? 50 : 40, big ? 70 : 60); return { story: `Chotu is ${c} years old. His grandmother is ${d} years older than him.`, q: `How old is his grandmother?`, answer: c + d, unit: "years", hint: "Add the difference to Chotu's age.", example: "A 7 year old with a grandma 50 years older: 57." }; }),
+  S("log09", "logic", "Missing number", (r, big) => { const a = r.int(2, big ? 60 : 12), b = a + r.int(2, big ? 45 : 10); return { story: `The blackboard says: ${a} + ? = ${b}.`, q: `What number is hiding behind the question mark?`, answer: b - a, unit: "", hint: `Take ${a} away from ${b}.`, example: "5 + ? = 12 means ? = 7." }; }),
+  S("log10", "logic", "Magic row", (r, big) => { const T = r.pick(big ? [30, 45, 60] : [15, 18, 20]), a = r.int(1, Math.floor(T / 3)), b = r.int(1, Math.floor(T / 3)); return { story: `Every row of Dr. Iyer's magic square adds up to ${T}. One row shows ${a}, ${b} and a blank.`, q: `What goes in the blank?`, answer: T - a - b, unit: "", hint: `Take both known numbers away from ${T}.`, example: "If a row adds to 15 and shows 8 and 1, the blank is 6." }; }),
+];
+
+// Quick lookup by id.
+const SITUATION_BY_ID = Object.fromEntries(SITUATIONS.map((s) => [s.id, s]));
+
+// Build a fresh instance of a situation for a profile. `salt` changes the
+// numbers on a replay.
+function instantiateSituation(id, profile, salt = 0) {
+  const def = SITUATION_BY_ID[id];
+  const r = makeRng(hashStr(id + ":" + profile + ":" + salt));
+  const inst = def.gen(r, profile === "class5");
+  if (inst.choices) inst.choices = r.shuffle(inst.choices);
+  return Object.assign({ id, cat: def.cat, title: def.title }, inst);
+}
+
+// ===== src/engine/animals.js =====
+/* ============================================================
+   animals.js — cows, goats, chickens, ducks, a dog, butterflies
+   and jumping fish, all made from boxes and spheres.
+
+   Every animal is a "critter": a group with userData describing
+   how it behaves. `updateCritters` moves them each frame:
+     - cows and goats wander slowly inside a home circle and graze
+     - chickens hop about and peck
+     - ducks paddle along the river or round the pond
+     - the dog follows the player and wags its tail
+     - butterflies flutter round the flowers
+   ============================================================ */
+
+function critterMat(color) {
+  return new THREE.MeshStandardMaterial({ color, flatShading: true, roughness: 0.95 });
+}
+
+// Four legged body shared by cows and goats. `s` scales the whole animal.
+function makeQuadruped({ body, belly, head, horns, s = 1, legLen = 0.5 }) {
+  const g = new THREE.Group();
+  const bodyMat = critterMat(body);
+  const parts = { legs: [] };
+  const torso = new THREE.Mesh(new THREE.BoxGeometry(1.4, 0.8, 0.7), bodyMat);
+  torso.position.y = legLen + 0.4;
+  torso.castShadow = true;
+  g.add(torso);
+  if (belly) {
+    const patch = new THREE.Mesh(new THREE.BoxGeometry(0.9, 0.5, 0.72), critterMat(belly));
+    patch.position.set(0.1, legLen + 0.3, 0);
+    g.add(patch);
+  }
+  for (const [x, z] of [[-0.5, -0.25], [0.5, -0.25], [-0.5, 0.25], [0.5, 0.25]]) {
+    const pivot = new THREE.Group();
+    pivot.position.set(x, legLen, z);
+    const leg = new THREE.Mesh(new THREE.BoxGeometry(0.18, legLen, 0.18), bodyMat);
+    leg.position.y = -legLen / 2;
+    pivot.add(leg);
+    g.add(pivot);
+    parts.legs.push(pivot);
+  }
+  // Head on a neck pivot so it can dip to graze.
+  const neck = new THREE.Group();
+  neck.position.set(0.75, legLen + 0.7, 0);
+  const headMesh = new THREE.Mesh(new THREE.BoxGeometry(0.5, 0.45, 0.45), critterMat(head));
+  headMesh.position.set(0.3, -0.05, 0);
+  headMesh.castShadow = true;
+  neck.add(headMesh);
+  const eyeMat = critterMat(0x111111);
+  for (const side of [-1, 1]) {
+    const eye = new THREE.Mesh(new THREE.SphereGeometry(0.04, 5, 5), eyeMat);
+    eye.position.set(0.5, 0.05, side * 0.18);
+    neck.add(eye);
+  }
+  if (horns) {
+    for (const side of [-1, 1]) {
+      const horn = new THREE.Mesh(new THREE.ConeGeometry(0.05, 0.25, 5), critterMat(0xe9e2d0));
+      horn.position.set(0.25, 0.25, side * 0.15);
+      horn.rotation.z = -0.3;
+      neck.add(horn);
+    }
+  }
+  g.add(neck);
+  parts.neck = neck;
+  // Tail.
+  const tail = new THREE.Mesh(new THREE.BoxGeometry(0.08, 0.5, 0.08), bodyMat);
+  tail.position.set(-0.72, legLen + 0.55, 0);
+  tail.rotation.z = 0.5;
+  g.add(tail);
+  parts.tail = tail;
+  g.scale.setScalar(s);
+  g.userData.parts = parts;
+  return g;
+}
+
+function makeCow() {
+  return makeQuadruped({ body: r01() < 0.5 ? 0xf3ede3 : 0x6b4a2f, belly: 0x3b2a1e, head: 0xf3ede3, horns: true, s: 1.1, legLen: 0.55 });
+}
+function makeGoat() {
+  return makeQuadruped({ body: 0xf7f4ee, belly: null, head: 0xe2ddd2, horns: true, s: 0.6, legLen: 0.5 });
+}
+function r01() { return Math.random(); }
+
+function makeChicken() {
+  const g = new THREE.Group();
+  const bodyMat = critterMat(r01() < 0.5 ? 0xffffff : 0xc9713d);
+  const body = new THREE.Mesh(new THREE.SphereGeometry(0.22, 8, 6), bodyMat);
+  body.position.y = 0.32;
+  body.scale.set(1.2, 1, 1);
+  body.castShadow = true;
+  g.add(body);
+  const head = new THREE.Group();
+  head.position.set(0.22, 0.55, 0);
+  const skull = new THREE.Mesh(new THREE.SphereGeometry(0.12, 7, 6), bodyMat);
+  head.add(skull);
+  const beak = new THREE.Mesh(new THREE.ConeGeometry(0.05, 0.12, 5), critterMat(0xffb300));
+  beak.position.set(0.14, -0.02, 0);
+  beak.rotation.z = -Math.PI / 2;
+  head.add(beak);
+  const comb = new THREE.Mesh(new THREE.BoxGeometry(0.08, 0.1, 0.04), critterMat(0xd62828));
+  comb.position.set(0, 0.13, 0);
+  head.add(comb);
+  g.add(head);
+  for (const side of [-1, 1]) {
+    const leg = new THREE.Mesh(new THREE.BoxGeometry(0.04, 0.2, 0.04), critterMat(0xffb300));
+    leg.position.set(0, 0.1, side * 0.08);
+    g.add(leg);
+  }
+  g.userData.parts = { head };
+  return g;
+}
+
+function makeDuck() {
+  const g = new THREE.Group();
+  const body = new THREE.Mesh(new THREE.SphereGeometry(0.28, 8, 6), critterMat(0xfff3c4));
+  body.scale.set(1.3, 0.8, 1);
+  body.castShadow = true;
+  g.add(body);
+  const head = new THREE.Mesh(new THREE.SphereGeometry(0.15, 7, 6), critterMat(0x2f7d32));
+  head.position.set(0.3, 0.3, 0);
+  g.add(head);
+  const beak = new THREE.Mesh(new THREE.BoxGeometry(0.16, 0.05, 0.1), critterMat(0xffb300));
+  beak.position.set(0.48, 0.28, 0);
+  g.add(beak);
+  return g;
+}
+
+function makeDog() {
+  const g = makeQuadruped({ body: 0xb98b56, belly: null, head: 0xb98b56, horns: false, s: 0.55, legLen: 0.45 });
+  // Floppy ears.
+  const p = g.userData.parts;
+  for (const side of [-1, 1]) {
+    const ear = new THREE.Mesh(new THREE.BoxGeometry(0.1, 0.25, 0.05), critterMat(0x7a5230));
+    ear.position.set(0.25, 0.15, side * 0.25);
+    p.neck.add(ear);
+  }
+  return g;
+}
+
+function makeButterfly() {
+  const g = new THREE.Group();
+  const color = [0xff8fab, 0xffd166, 0x8ecae6, 0xffffff][Math.floor(r01() * 4)];
+  const wingMat = new THREE.MeshStandardMaterial({ color, flatShading: true, side: THREE.DoubleSide });
+  const wings = [];
+  for (const side of [-1, 1]) {
+    const pivot = new THREE.Group();
+    const wing = new THREE.Mesh(new THREE.PlaneGeometry(0.22, 0.18), wingMat);
+    wing.position.x = side * 0.11;
+    wing.rotation.x = -Math.PI / 2;
+    pivot.add(wing);
+    g.add(pivot);
+    wings.push(pivot);
+  }
+  g.userData.parts = { wings };
+  return g;
+}
+
+// ---- Behaviours -------------------------------------------------
+
+// A grazing animal: wanders inside a circle, pauses, dips its head.
+function grazer(mesh, cx, cz, radius, speed) {
+  mesh.position.set(cx + (r01() - 0.5) * radius, 0, cz + (r01() - 0.5) * radius);
+  mesh.rotation.y = r01() * Math.PI * 2;
+  mesh.userData.behave = { kind: "graze", cx, cz, radius, speed, target: null, wait: r01() * 3, graze: 0, phase: r01() * 10 };
+  return mesh;
+}
+function pecker(mesh, cx, cz, radius) {
+  mesh.position.set(cx + (r01() - 0.5) * radius, 0, cz + (r01() - 0.5) * radius);
+  mesh.userData.behave = { kind: "peck", cx, cz, radius, speed: 1.2, target: null, wait: r01() * 2, phase: r01() * 10 };
+  return mesh;
+}
+function swimmer(mesh, path) {
+  // path: { kind:"river", y } or { kind:"pond", cx, cz, r, y }
+  mesh.userData.behave = Object.assign({ kind: "swim", t: r01() * 100, dir: r01() < 0.5 ? 1 : -1, speed: 0.6 + r01() * 0.5 }, path);
+  return mesh;
+}
+function follower(mesh) {
+  mesh.userData.behave = { kind: "follow", phase: 0 };
+  return mesh;
+}
+function flutterer(mesh, cx, cz) {
+  mesh.userData.behave = { kind: "flutter", cx, cz, t: r01() * 100, h: 0.6 + r01() * 0.8 };
+  return mesh;
+}
+
+// Move `obj` toward (tx,tz). Returns true when arrived.
+function stepToward(obj, tx, tz, speed, dt) {
+  const dx = tx - obj.position.x, dz = tz - obj.position.z;
+  const d = Math.hypot(dx, dz);
+  if (d < 0.15) return true;
+  const step = Math.min(d, speed * dt);
+  obj.position.x += (dx / d) * step;
+  obj.position.z += (dz / d) * step;
+  const want = Math.atan2(dx, dz) - Math.PI / 2; // quadrupeds face +X
+  let diff = want - obj.rotation.y;
+  while (diff > Math.PI) diff -= Math.PI * 2;
+  while (diff < -Math.PI) diff += Math.PI * 2;
+  obj.rotation.y += diff * Math.min(1, dt * 5);
+  return false;
+}
+
+function swingLegs(parts, phase, amp) {
+  if (!parts || !parts.legs) return;
+  const s = Math.sin(phase) * amp;
+  parts.legs[0].rotation.z = s; parts.legs[3].rotation.z = s;
+  parts.legs[1].rotation.z = -s; parts.legs[2].rotation.z = -s;
+}
+
+function updateCritters(critters, dt, elapsed, playerPos, world) {
+  for (const c of critters) {
+    const b = c.userData.behave;
+    const p = c.userData.parts;
+    if (!b) continue;
+
+    if (b.kind === "graze" || b.kind === "peck") {
+      if (b.wait > 0) {
+        b.wait -= dt;
+        // Grazing: dip the head; pecking: bob the head.
+        if (p && p.neck) p.neck.rotation.z = b.kind === "graze" ? Math.min(0.9, p.neck.rotation.z + dt * 2) : 0;
+        if (p && p.head && b.kind === "peck") p.head.rotation.z = Math.sin(elapsed * 12 + b.phase) * 0.5;
+        if (p && p.tail) p.tail.rotation.x = Math.sin(elapsed * 3 + b.phase) * 0.3;
+        swingLegs(p, 0, 0);
+        continue;
+      }
+      if (p && p.neck) p.neck.rotation.z = Math.max(0, p.neck.rotation.z - dt * 2);
+      if (p && p.head) p.head.rotation.z = 0;
+      if (!b.target) {
+        const a = r01() * Math.PI * 2, rr = r01() * b.radius;
+        b.target = { x: b.cx + Math.cos(a) * rr, z: b.cz + Math.sin(a) * rr };
+      }
+      b.phase += dt * (b.kind === "peck" ? 14 : 6);
+      swingLegs(p, b.phase, b.kind === "peck" ? 0 : 0.5);
+      if (b.kind === "peck") c.position.y = Math.abs(Math.sin(b.phase)) * 0.08; // hop
+      if (stepToward(c, b.target.x, b.target.z, b.speed, dt)) {
+        b.target = null;
+        b.wait = 1.5 + r01() * 4;
+        c.position.y = 0;
+      }
+    } else if (b.kind === "swim") {
+      b.t += dt * b.speed;
+      if (b.kind === "swim" && b.river !== undefined) {
+        // Paddle along the river, turning round at the ends.
+        c.position.x += dt * b.speed * b.dir;
+        if (c.position.x > 40) b.dir = -1;
+        if (c.position.x < -40) b.dir = 1;
+        c.position.z = b.river + Math.sin(b.t) * 1.2;
+        c.rotation.y = b.dir > 0 ? 0 : Math.PI;
+      } else {
+        c.position.x = b.cx + Math.cos(b.t * 0.5) * b.r;
+        c.position.z = b.cz + Math.sin(b.t * 0.5) * b.r;
+        c.rotation.y = -b.t * 0.5 - Math.PI / 2;
+      }
+      c.position.y = b.y + Math.sin(elapsed * 2.5 + b.t) * 0.04;
+      c.rotation.z = Math.sin(elapsed * 2 + b.t) * 0.08;
+    } else if (b.kind === "follow") {
+      // The dog trots behind the player and wags when close.
+      const dx = playerPos.x - c.position.x, dz = playerPos.z - c.position.z;
+      const d = Math.hypot(dx, dz);
+      if (d > 2.6) {
+        const tx = playerPos.x - (dx / d) * 1.8, tz = playerPos.z - (dz / d) * 1.8;
+        // Only step where the player could stand (no swimming dogs).
+        if (world.isWalkable(tx, tz) || d > 12) {
+          if (d > 12) { c.position.set(tx, 0, tz); } // teleport if left far behind
+          else stepToward(c, tx, tz, 7.5, dt);
+        }
+        b.phase += dt * 12;
+        swingLegs(p, b.phase, 0.7);
+      } else {
+        swingLegs(p, 0, 0);
+        // Face the player.
+        const want = Math.atan2(dx, dz) - Math.PI / 2;
+        let diff = want - c.rotation.y;
+        while (diff > Math.PI) diff -= Math.PI * 2;
+        while (diff < -Math.PI) diff += Math.PI * 2;
+        c.rotation.y += diff * Math.min(1, dt * 4);
+      }
+      if (p && p.tail) p.tail.rotation.x = Math.sin(elapsed * 14) * (d < 4 ? 0.7 : 0.2);
+    } else if (b.kind === "flutter") {
+      b.t += dt;
+      c.position.set(
+        b.cx + Math.sin(b.t * 0.7) * 2.5 + Math.sin(b.t * 2.3) * 0.5,
+        b.h + Math.sin(b.t * 1.9) * 0.3,
+        b.cz + Math.cos(b.t * 0.5) * 2.5
+      );
+      c.rotation.y = b.t * 0.7;
+      const flap = Math.sin(elapsed * 22 + b.t) * 1.1;
+      p.wings[0].rotation.z = flap;
+      p.wings[1].rotation.z = -flap;
+    }
+  }
+}
+
+// ===== src/engine/npcs.js =====
+/* ============================================================
+   npcs.js — the wandering villagers who carry the 100 situations.
+
+   Each NPC walks between waypoints on their side of the river,
+   pauses, waves when you come close, and offers ONE situation
+   at a time. Solving it earns a star and they pick another.
+   ============================================================ */
+
+const NPC_DEFS = [
+  { id: "asha", name: "Asha", look: { shirt: 0xe75480, dress: true, hair: 0x1d1410 }, bank: "near", cats: ["length", "money"], greet: "Namaste! I could use a clever head." },
+  { id: "gopal", name: "Gopal", look: { shirt: 0x4f772d, trousers: 0x3b3f4a }, bank: "near", cats: ["time", "logic"], greet: "Ah, the engineer! Got a minute?" },
+  { id: "chotu", name: "Chotu", look: { shirt: 0xffb703, trousers: 0x264653 }, bank: "near", child: true, cats: ["fractions", "logic"], greet: "Hey! Wanna help me with something?" },
+  { id: "vijay", name: "Postman Vijay", look: { shirt: 0xc1121f, trousers: 0x1d3557, hat: 0x1d3557 }, bank: "near", cats: ["travel", "time"], greet: "Letters, letters... and a question for you." },
+  { id: "pinky", name: "Pinky", look: { shirt: 0xff8fab, dress: true }, bank: "far", child: true, cats: ["science", "fractions"], greet: "I saw something funny today. Can you explain it?" },
+  { id: "iyer", name: "Dr. Iyer", look: { shirt: 0xffffff, trousers: 0x222831, hair: 0x555555 }, bank: "far", cats: ["science", "water"], greet: "Good day. Science first, tea later." },
+  { id: "salma", name: "Salma", look: { shirt: 0x3a86ff, dress: true }, bank: "far", cats: ["area", "ratio"], greet: "Perfect timing. I'm planning the garden." },
+  { id: "ramu", name: "Ramu Kaka", look: { shirt: 0x8d6e63, trousers: 0x4e342e, hair: 0xbdbdbd, skin: 0xb9805a }, bank: "far", cats: ["travel", "money"], greet: "Sit, sit. Well, don't sit, help me count." },
+];
+
+// Open spots to wander between, per bank (x, z).
+const WAYPOINTS = {
+  near: [[-4, 20], [4, 17], [-7, 11], [8, 9], [11, 15], [-15, 18], [-3, 9], [13, 20], [3, 12], [-11, 9]],
+  far: [[-5, -8], [5, -7], [-8, -19], [8, -18], [-12, -7], [12, -7], [-6, -25], [6, -25], [0, -10], [16, -20], [-17, -19]],
+};
+
+class Npc {
+  constructor(def, world) {
+    this.def = def;
+    this.id = "npc:" + def.id;
+    this.name = def.name;
+    this.bank = def.bank;
+    this.group = makeVillager(def.look);
+    if (def.child) this.group.scale.setScalar(0.72);
+    const wp = WAYPOINTS[def.bank][Math.floor(Math.random() * WAYPOINTS[def.bank].length)];
+    this.group.position.set(wp[0], 0, wp[1]);
+    world.scene.add(this.group);
+    this.target = null;
+    this.wait = Math.random() * 3;
+    this.speed = def.child ? 2.4 : 1.8;
+    this.situationId = null; // set by the game
+    this.waving = 0;
+  }
+
+  get position() { return this.group.position; }
+
+  update(dt, playerPos, engaged, talking, bridgeBuilt) {
+    const dx = playerPos.x - this.position.x, dz = playerPos.z - this.position.z;
+    const near = Math.hypot(dx, dz) < 4.5;
+
+    if (engaged || near) {
+      // Stop, face the player, wave briefly on approach.
+      animateHuman(this.group, dt, false, 1, talking);
+      const want = Math.atan2(dx, dz);
+      let diff = want - this.group.rotation.y;
+      while (diff > Math.PI) diff -= Math.PI * 2;
+      while (diff < -Math.PI) diff += Math.PI * 2;
+      this.group.rotation.y += diff * Math.min(1, dt * 5);
+      if (!this._wasNear) this.waving = 1.4;
+      this._wasNear = true;
+    } else {
+      this._wasNear = false;
+      if (this.wait > 0) {
+        this.wait -= dt;
+        animateHuman(this.group, dt, false);
+      } else {
+        if (!this.target) {
+          // Once the bridge stands, near-bank folk sometimes visit the far bank and back.
+          const banks = bridgeBuilt ? ["near", "far"] : [this.bank];
+          const bank = banks[Math.floor(Math.random() * banks.length)];
+          const wp = WAYPOINTS[bank][Math.floor(Math.random() * WAYPOINTS[bank].length)];
+          this.target = { x: wp[0], z: wp[1], bank };
+        }
+        // Walk toward the target, crossing only over the bridge corridor.
+        let tx = this.target.x, tz = this.target.z;
+        const crossing = (this.position.z > 3 && tz < -3) || (this.position.z < -3 && tz > 3);
+        if (crossing && Math.abs(this.position.x) > 1.2 && Math.abs(this.position.z) < 9) { tx = 0; tz = this.position.z; }
+        else if (crossing && Math.abs(this.position.x) > 1.2) { tx = 0; tz = this.position.z > 0 ? 8 : -8; }
+        const ddx = tx - this.position.x, ddz = tz - this.position.z;
+        const d = Math.hypot(ddx, ddz);
+        if (Math.hypot(this.target.x - this.position.x, this.target.z - this.position.z) < 0.3) {
+          this.target = null;
+          this.wait = 2 + Math.random() * 5;
+        } else if (d > 0.05) {
+          const step = Math.min(d, this.speed * dt);
+          this.position.x += (ddx / d) * step;
+          this.position.z += (ddz / d) * step;
+          const want = Math.atan2(ddx, ddz);
+          let diff = want - this.group.rotation.y;
+          while (diff > Math.PI) diff -= Math.PI * 2;
+          while (diff < -Math.PI) diff += Math.PI * 2;
+          this.group.rotation.y += diff * Math.min(1, dt * 6);
+        }
+        animateHuman(this.group, dt, true, 0.6);
+      }
+    }
+    // A wave of the right arm.
+    if (this.waving > 0) {
+      this.waving -= dt;
+      const p = this.group.userData.parts;
+      p.armR.rotation.z = -2.6 + Math.sin(performance.now() / 90) * 0.4;
+      p.armR.rotation.x = 0;
+    } else {
+      const p = this.group.userData.parts;
+      p.armR.rotation.z += (0 - p.armR.rotation.z) * Math.min(1, dt * 6);
+    }
+  }
+}
+
 // ===== src/main.js =====
 /* ============================================================
    main.js — starts the game and runs the loop that ties every
@@ -3450,7 +4413,7 @@ function runMarketPuzzle(ctx, puzzle) {
    ============================================================ */
 
 
-const Audio = { playSuccess, playStep, playRetry, playBell, playPick, playTalkBlip };
+const Audio = { playSuccess, playStep, playRetry, playBell, playPick, playTalkBlip, playCoin };
 
 
 // A short friendly greeting each villager says before their puzzle opens.
@@ -3495,7 +4458,11 @@ class Game {
     }
 
     this._buildJobs();
+    this._buildNpcs();
+    this._buildAnimals();
     this._buildInteractables();
+    this._ambient = { chirp: 3, moo: 8, quack: 12 };
+    startAmbient();
 
     this.clock = new THREE.Clock();
     this._loop = this._loop.bind(this);
@@ -3529,6 +4496,49 @@ class Game {
     }
   }
 
+  // ---- Wandering villagers, each carrying one of the 100 situations ----
+  _buildNpcs() {
+    this.npcs = NPC_DEFS.map((def) => new Npc(def, this.world));
+    for (const npc of this.npcs) this._assignSituation(npc);
+  }
+
+  // Pick a situation for an NPC: unsolved from their favourite topics first,
+  // then any unsolved, then anything (a replay with new numbers).
+  _assignSituation(npc) {
+    const done = this.progress.situationsDone;
+    const taken = new Set(this.npcs.map((n) => n.situationId).filter(Boolean));
+    const pool = (list) => list.filter((x) => !taken.has(x.id));
+    let options = pool(SITUATIONS.filter((x) => npc.def.cats.includes(x.cat) && !done.includes(x.id)));
+    if (!options.length) options = pool(SITUATIONS.filter((x) => !done.includes(x.id)));
+    if (!options.length) options = pool(SITUATIONS.filter((x) => npc.def.cats.includes(x.cat)));
+    if (!options.length) options = pool(SITUATIONS);
+    npc.situationId = options[Math.floor(Math.random() * options.length)].id;
+  }
+
+  // ---- Animals ----
+  _buildAnimals() {
+    const w = this.world;
+    this.critters = [];
+    const add = (m) => { w.scene.add(m); this.critters.push(m); return m; };
+    // Cows graze in the far-bank meadow, goats near the wheat field.
+    for (let i = 0; i < 3; i++) add(grazer(makeCow(), 22 + i * 2, -14, 5, 0.7));
+    for (let i = 0; i < 3; i++) add(grazer(makeGoat(), -24, -14, 4, 1.1));
+    // Goats also on the near bank so there is life before the bridge.
+    for (let i = 0; i < 2; i++) add(grazer(makeGoat(), 16, 13, 4, 1.1));
+    // Chickens around the leaky house and the far-bank houses.
+    for (let i = 0; i < 4; i++) add(pecker(makeChicken(), -14, 11, 3));
+    for (let i = 0; i < 3; i++) add(pecker(makeChicken(), 20, -8, 3));
+    // Ducks: two on the river, three on the pond.
+    for (let i = 0; i < 2; i++) add(swimmer(makeDuck(), { river: 0, y: 0.05 }));
+    for (let i = 0; i < 3; i++) add(swimmer(makeDuck(), { cx: w.pond.cx, cz: w.pond.cz, r: 1.2 + i * 0.5, y: 0.12 }));
+    // Butterflies over flower patches.
+    for (const [x, z] of [[-8, 18], [10, 10], [-16, -12], [14, -20], [5, -6]]) add(flutterer(makeButterfly(), x, z));
+    // One dog that follows the engineer everywhere.
+    const dog = follower(makeDog());
+    dog.position.set(w.spawn.x + 1.5, 0, w.spawn.z + 1);
+    this.dog = add(dog);
+  }
+
   // Build the list of things the player can walk up to and press E on.
   _buildInteractables() {
     this.interactables = [];
@@ -3553,6 +4563,48 @@ class Game {
         activate: () => this._startJob(job),
       });
     }
+
+    // Each wandering villager (their position moves, so we point at the live vector).
+    for (const npc of this.npcs) {
+      this.interactables.push({
+        pos: npc.position,
+        radius: 2.6,
+        prompt: () => `Talk to ${npc.name}`,
+        activate: () => this._startErrand(npc),
+      });
+    }
+  }
+
+  // A villager's situation: greeting, story, then one question.
+  _startErrand(npc) {
+    const sit = instantiateSituation(npc.situationId, this.profile, this.progress.replays[npc.situationId] || 0);
+    this._engagedNpc = npc;
+    const ctx = {
+      profile: this.profile,
+      level: 1,
+      world: this.world,
+      audio: Audio,
+      countAttempt: () => countAttempt(this.profile, this.progress, "situation:" + sit.id),
+      onSolve: () => {
+        markSituationDone(this.profile, this.progress, sit.id);
+        Audio.playCoin();
+        this.ui.refreshRank();
+        this._assignSituation(npc);
+        this._engagedNpc = null;
+      },
+    };
+    const step = sit.choices
+      ? { q: sit.q, choices: sit.choices, answer: sit.answer, hint: sit.hint }
+      : { q: sit.q, answer: sit.answer, unit: sit.unit, hint: sit.hint, example: sit.example };
+    const open = () => runStepQuiz(ctx, {
+      title: sit.title,
+      intro: `${npc.name}: "${sit.story}"`,
+      goal: `Topic: <b>${CATEGORY_NAMES[sit.cat]}</b>. Solve it to earn a star.`,
+      steps: [step],
+      doneBtn: "Take the star",
+      doneHtml: `<b>⭐ Solved!</b> ${npc.name}: "That's it exactly. Thank you, Engineer."`,
+    });
+    this.dialogue.say(npc.name, [npc.def.greet, sit.story], open, { pitch: npc.def.child ? 560 : 380, speaker: npc.id });
   }
 
   // Begin a job: short greeting, then open its puzzle panel.
@@ -3629,8 +4681,31 @@ class Game {
       }
     }
 
+    // Wandering villagers and animals.
+    const engagedId = this._engagedNpc && blocked ? this._engagedNpc.id : null;
+    for (const npc of this.npcs) {
+      npc.update(dt, pp, npc.id === engagedId, this.dialogue.talkingFor(npc.id), this.world.bridgeBuilt);
+    }
+    updateCritters(this.critters, dt, elapsed, pp, this.world);
+
+    // Ambient sound: wind follows the gusts; birds, cows and ducks now and then.
+    ambientTick(0.5 + Math.sin(elapsed * 0.35) * 0.5);
+    const amb = this._ambient;
+    amb.chirp -= dt; amb.moo -= dt; amb.quack -= dt;
+    if (amb.chirp <= 0) { playChirp(); amb.chirp = 3 + Math.random() * 6; }
+    if (amb.moo <= 0) {
+      amb.moo = 9 + Math.random() * 10;
+      // Only moo when a cow is within earshot.
+      if (this.critters.some((c) => c.userData.behave && c.userData.behave.kind === "graze" && c.scale.x > 1 && Math.hypot(c.position.x - pp.x, c.position.z - pp.z) < 14)) playMoo();
+    }
+    if (amb.quack <= 0) {
+      amb.quack = 8 + Math.random() * 10;
+      if (this.critters.some((c) => c.userData.behave && c.userData.behave.kind === "swim" && Math.hypot(c.position.x - pp.x, c.position.z - pp.z) < 12)) playQuack();
+    }
+
     // Find the nearest thing we could interact with.
     if (!blocked) {
+      if (this._engagedNpc && !this.dialogue.active && !panelOpen()) this._engagedNpc = null;
       const near = this._nearestInteractable();
       if (near) {
         this.ui.setInteractPrompt(near.prompt() + (this.input.isTouch ? "" : "  (E)"));

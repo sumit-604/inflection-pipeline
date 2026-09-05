@@ -1,0 +1,21 @@
+stage: confidence-delta
+company: SHHARICH
+run_date: '2026-09-05'
+phase: 1
+confidence_delta:
+  numerical_acceptance: 98.1
+  redflag_coverage: 26.0
+  framework_adherence: 94.0
+  framework_adherence_scope: Gate 0 + Emerging Moat only; valuation adherence pending
+    phase 3
+  peer_utilisation: 78.0
+  overall: 26.0
+interpretation_band: forced REWORK (<60)
+rework_triggers:
+  b12a_critical_count: 0
+  any_acceptance_below_60: true
+  overall_below_60: true
+b12a_source_fidelity_findings: 0
+weakest_component: redflag_coverage
+valuation_framework_adherence: pending phase 3
+computed_by: orchestrator (prompts/00-orchestrator.md Section 5)

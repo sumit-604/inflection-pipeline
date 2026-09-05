@@ -22,3 +22,4 @@ wall recorded). Stage 0 was orchestrator-run (no subagent row).
 | 9 | tam | sonnet | default | - | - | 195542 | 985s | 1 |
 | 12a | verifier-numerical | haiku | default | - | - | 110444 | 146s | 1 |
 | 12b | verifier-redflags (no-concall mode) | opus | default | - | - | 353556 | 1121s | 1 |
+| 12a | verifier-numerical | haiku | default | - | - | 85152 | 224s | 2 |

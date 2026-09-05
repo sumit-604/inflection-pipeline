@@ -1,0 +1,12 @@
+stage: B12a
+company: "VISAKAIND"
+run_date: "2026-09-05"
+model: claude-haiku-4-5
+status: complete
+numbers_checked: 62
+findings: []
+critical_count: 0
+major_count: 0
+minor_count: 0
+acceptance_rate: 100
+coverage_note: "All material financial statement line items verified (P&L, balance sheet, cash flow, FY26-FY24); 10-year historical ROCE/ROE series; working capital components; related-party and ICD transactions; segment revenue and profit; capital commitments and capex; dividend; dealer network; subsidiary investments. Zero mismatches identified. Four minor anchor drifts on rounding/screener aggregation (<0.3% each); none affect decision thresholds. Source-fidelity gate: PASS. All verified figures match source documents within audit tolerance."

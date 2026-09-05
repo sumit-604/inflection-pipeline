@@ -1,0 +1,16 @@
+confidence_delta:
+  stage: confidence
+  company: VISAKAIND
+  run_date: 2026-09-05
+  phase: 1
+  numerical_acceptance: 100        # B12a: 62 numbers checked vs AR FY26 / AR FY25 / screener Data_Sheet, 0 findings, source-fidelity gate PASS
+  redflag_coverage: 53             # B12b: 16 of 30 independently found transcript red flags caught upstream (5 partially caught, 9 missed); 1 CRITICAL, 12 MAJOR, 7 MINOR
+  framework_adherence: 82          # B12c PHASE-1 PORTION ONLY (Gate 0 + Emerging Moat: 16 fails / 90 rules; 0 CRITICAL, 2 MAJOR, 14 MINOR); valuation-adherence component PENDING PHASE 3
+  framework_adherence_valuation: pending phase 3
+  peer_utilisation: 100             # B12d: 1 of 1 peer with transcripts used substantively and correctly (denominator = peers with transcripts; Everest and Ramco had none); 0 CRITICAL, 0 MAJOR, 6 MINOR
+  overall: 53                       # min of the four available components
+  band: "FORCED REWORK (<60)"
+  rework_forced: true
+  rework_trigger: "B12b redflag_coverage 53% < 60% (orchestrator Section 4: any verifier acceptance_rate below 60% forces REWORK; the gate judges the analysis, not the company). No B12a CRITICAL."
+  rework_scope: "Stage 5 (concall analysis) transcript red-flag coverage and Stage 6 (peer verification) two verdicts, per B12b findings; Verifier A source fidelity is clean, so the numbers stand."
+  verifier_disagreements: "none (Verifier A logged no source-fidelity finding for any downstream step to conflict with)"

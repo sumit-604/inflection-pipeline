@@ -31,7 +31,7 @@ Verification priorities (first priority for every stage):
 
 ## HALT 1 GATE
 - Mental Model signed: NOT SIGNED
-- Halt 1 decision (KILL/SHALLOW/PROCEED): pending
+- Halt 1 decision (KILL/SHALLOW/PROCEED): pending (Phase 1 reached Halt 1 on 2026-09-05; the analysis verdict is REWORK, stages 5 and 6 named; the CRISIL rationale and the FY26/Q1 FY27 results filings are on the upload list)
 
 ## OPERATOR RULINGS
 - 2026-09-05: /run-pipeline invoked directly on the collector corpus; spear
@@ -46,4 +46,4 @@ Verification priorities (first priority for every stage):
 - Pending stage 7.
 
 ## RUN FOLDERS
-- runs/kabraextru-2026-09-05/ (full run, Phase 1 in progress)
+- runs/kabraextru-2026-09-05/ (full run; Phase 1 complete 2026-09-05, verdict on evidence REWORK by rule 1; Halt 1 pending; dossier at outputs/reports/09b-understanding-dossier.md)

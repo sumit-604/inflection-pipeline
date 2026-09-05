@@ -1,0 +1,70 @@
+stage: B09b-dossier
+company: "KABRAEXTRU"
+run_date: "2026-09-05"
+model: claude-sonnet-5
+status: complete
+corpus_verdict: "CORPUS GAPPED-FRESHNESS"
+corpus_gaps:
+  - document: "CRISIL rating rationale for the 13-May-2026 action (and the pre-5-Apr-2025 action)"
+    expected_source: "rating agency site"
+    kind: "freshness-pair"
+  - document: "FY26 audited annual results filing (discrete BSE/NSE filing)"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "Q1 FY27 (Jun-2026) results filing"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "Reg 30 announcements record (orders, JVs, capex, raises)"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "Quarterly shareholding-pattern (SAST) filings, last twelve quarters"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "Broker / research notes"
+    expected_source: "company IR page"
+    kind: "plausibly-nonexistent"
+  - document: "Prospectus"
+    expected_source: "BSE"
+    kind: "plausibly-nonexistent"
+  - document: "Investor presentation newer than Q3 FY24 (Dec-2023)"
+    expected_source: "company IR page"
+    kind: "findable-missing"
+  - document: "Windsor Machines peer transcript"
+    expected_source: "company IR page"
+    kind: "findable-missing"
+  - document: "2026 preferential issue Reg 30 filings and Form PAS-3 allotment"
+    expected_source: "BSE"
+    kind: "findable-missing"
+archetypes:
+  - line: "Extrusion Machinery Division"
+    archetype: "Order-book business (EPC/defence/capital goods)"
+  - line: "Battery Division (Geon, erstwhile Battrixx)"
+    archetype: "Build-to-spec component maker"
+transition:
+  - line: "Battery Division (Geon)"
+    from_tier: "R1 COMMODITY PRICE-TAKER"
+    to_tier: "R3 VALUE-ADDED / SPEC'D SUPPLIER (claimed)"
+    engine: "(1) Converting the built-out ~7 GWh Chakan capacity (~Rs250 Cr sunk, capex substantially commissioned) into utilisation against the claimed Rs1,500+ Cr ceiling; (2) locking in OEM design-in/certification across multiple vehicle programs to replace single-customer concentration with program-level, switching-cost-bearing revenue"
+    proof_gate: "Battery/Geon segment result as % of segment revenue (Note 38 equivalent) narrowing versus the FY26 print of -31.9% (FY25: -20.1%); NOT fired as of this run, since FY26 widened rather than narrowed"
+    recognition_gap: "Open question, resolved at Stage 11 via the PE gap: whether a Battery/Geon destination beyond its current commodity-assembly state is already reflected in market pricing; FY26 EPS is negative on both bases, so no trailing earnings multiple exists on the current earnings basis to test against"
+    ugliness: "STRUCTURAL-FEATURE"
+    transition_falsifier: "A second consecutive full-year, or two consecutive quarters once resumed, in which the Battery/Geon segment loss ratio fails to narrow from the FY26 print of -31.9% of segment revenue despite continued revenue growth; or the ~Rs150 Cr FY27 order failing to convert into recognised segment revenue while customer advances keep falling"
+dominant_variables:
+  - "Battery/Geon segment result as % of segment revenue (Note 38): FY26 -31.9%, FY25 -20.1%, widening despite revenue growth"
+  - "Battery/Geon capacity utilisation of the ~7 GWh Chakan facility against the claimed Rs1,500+ Cr ceiling: implied ~9% on FY26 revenue, no company-disclosed utilisation figure"
+  - "OEM design-win / customer diversification and credit quality: concentration improved to one customer at 19.11% FY26 from two at 26.94% FY25, but coincides with the HEVPL insolvency, not confirmed new wins"
+  - "The ~Rs150 Cr FY27 order's conversion to recognised revenue, against customer advances (the order-book proxy) falling 18.9% to Rs59.39 Cr in FY26"
+business_falsifier: "Extrusion Machinery segment swinging to a full-year segment LOSS (not merely declining profit), which would mean the profitable-core-funding-a-loss-making-bet framing no longer holds; or a further CRISIL downgrade removing access to the Rs140.92 Cr of on-demand secured working-capital lines the company depends on against Rs1.97 Cr standalone cash"
+mental_model_status: "DRAFT - PENDING OPERATOR SIGN-OFF"
+fragility:
+  variable_count: 7
+  verifiability_ratio: "4 of 7 externally observable"
+  single_point_failure: "Battery/Geon segment loss ratio (Note 38 equivalent) failing to narrow from the FY26 print of -31.9% of segment revenue"
+  fragility_verdict: "FRAGILE"
+candidate_count: 6
+research_brief_items: 10
+plain_summary_points: 15
+annex:
+  present: true
+  questions_answered: 10
+  corpus_commit_hash: "c446c2471c9f8ff2838694ce6169f1c95597599b"

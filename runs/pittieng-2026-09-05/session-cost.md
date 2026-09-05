@@ -24,3 +24,4 @@ where it does not.
 | 12b | verifier B red flags (retry) | claude-opus | default | n/a | n/a | 386274 | 17m12s | 2 |
 | 9 | TAM SAM SOM (web) | claude-sonnet | default | n/a | n/a | 182856 | 14m17s | 1 |
 | 12a | verifier A numerical (pass 1: Gate 0 figures, 29 numbers) | claude-haiku | default | n/a | n/a | 96035 | 3m07s | 1 |
+| 12a | verifier A numerical (pass 2: coverage extension to 02/03/05/07, cumulative 52 numbers) | claude-haiku | default | n/a | n/a | 121991 | 3m53s | 2 |

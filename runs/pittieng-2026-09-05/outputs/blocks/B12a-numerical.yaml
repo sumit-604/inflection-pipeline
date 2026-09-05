@@ -3,11 +3,11 @@ company: "PITTIENG"
 run_date: "2026-09-05"
 model: claude-haiku-4-5-20251001
 status: complete
-numbers_checked: 29
+numbers_checked: 52
 findings:
-  - {severity: "MINOR", location: "01-gate0.md, Block D, EBITDA calculation", claimed: "EBITDA FY26 Rs 315.75 Cr, computed as 167.58+104.66+83.41-39.90 (screener-data basis)", source_truth: "AR consolidated P&L (PDF p.96): 167.58+104.66+83.41-40.11 = 315.54 Cr. AR Financial Performance (p.16): 315.54 Cr. Investor presentation (p.25): Reported EBITDA 315.5 Cr. Basis difference: screener-data used 39.90 Cr vs AR actual 40.11 Cr for Other Income.", note: "Screener-data and AR cite slightly different Other Income figures (39.90 vs 40.11). Report correctly cited investor presentation's 315.5 Cr as 'Reported EBITDA'; computed 315.75 uses screener basis, resulting in 0.21 Cr overstatement. Not material and disclosed as two separate sources. No downstream decision affected.", source_fidelity: true}
+  - {severity: "MINOR", location: "01-gate0.md, Block D, EBITDA calculation (Pass 1)", claimed: "EBITDA FY26 Rs 315.75 Cr, computed as 167.58+104.66+83.41-39.90 (screener-data basis)", source_truth: "AR consolidated P&L (PDF p.96): 167.58+104.66+83.41-40.11 = 315.54 Cr. AR Financial Performance (p.16): 315.54 Cr. Investor presentation (p.25): Reported EBITDA 315.5 Cr.", note: "Screener-data used 39.90 Cr vs AR actual 40.11 Cr for Other Income. Report correctly cited investor presentation's 315.5 Cr as 'Reported EBITDA'; computed 315.75 uses screener basis, 0.21 Cr overstatement. Not material and disclosed as two separate sources. No downstream decision affected.", source_fidelity: true}
 critical_count: 0
 major_count: 0
 minor_count: 1
-acceptance_rate: 96.6
-coverage_note: "Checked 29 material figures across P&L (8), Balance Sheet (8), Cash Flow (3), Key Ratios (5), Growth Metrics (2), Shareholder Data (1), Working Capital (2). All pillar inputs (verdict-card eligible: revenue, EBITDA, PAT, net debt, capex, ROCE, ROE) verified clean match. Unit traps (Rs Cr vs Rs lakh, standalone vs consolidated, FY basis) all correct. Acceptance: 28/29 clean; 1 minor on basis difference, immaterial."
+acceptance_rate: 98.1
+coverage_note: "Pass 1: 29 figures (all from 01-gate0.md P&L/BS/CF/ratios/shareholder data) = 28 clean + 1 MINOR. Pass 2: 23 figures (02-notes 8; 03-ardeep 4; 05-concall 9; 07-emoat 2) = 23 clean. Total 52 figures: 51 clean, 1 MINOR (basis variance, immaterial). All pillar inputs verified: revenue 1,912.81 Cr, EBITDA 315.5 Cr (reported), PAT 117.81 Cr, net debt 554.56 Cr (consolidated), capex 173.09 Cr, CFO 204.91 Cr, ROCE/ROE series, leverage ratios, goodwill, receivables, TReDS, contingent liabilities, subsidy, guidance numbers (FY27 Rs 2,300 Cr revenue, Rs 370 Cr EBITDA, etc.). Unit conversions (Rs Cr vs Rs lakh), standalone/consolidated split, and FY basis all verified correct. No ANCHOR NOT FOUND on material figures. No MISMATCH on verdict-card inputs."

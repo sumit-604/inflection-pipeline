@@ -1,0 +1,20 @@
+stage: confidence-delta
+company: PITTIENG
+run_date: 2026-09-05
+phase: 1
+computed_by: orchestrator (claude-fable-5-1), per prompts/00-orchestrator.md Section 5
+confidence_delta:
+  numerical_acceptance: 98.1        # B12a
+  redflag_coverage: 30            # B12b: caught / independent flags found
+  framework_adherence: 92          # B12c, Gate 0 + Emerging Moat portion only
+  framework_adherence_valuation: pending phase 3   # B12c valuation half runs at /finalize
+  peer_utilisation: 100          # B12d
+  overall: 30                 # min of the four available components
+interpretation_band: "forced REWORK (<60)"
+verifier_counts:
+  B12a: {critical: 0, major: 0, minor: 1, numbers_checked: 52, source_fidelity_findings: 1}
+  B12b: {critical: 2, major: 18, minor: 3, independent_flags: 30, caught: 9, partially_caught: 8}
+  B12c: {critical: 0, major: 3, minor: 11, gate0_rules: 74, emoat_rules: 63}
+  B12d: {critical: 0, major: 2, minor: 4, peers_audited: 12}
+rework_triggers: ['B12b redflag_coverage=30 (<60 forces REWORK)', 'overall=30 (<60 forces REWORK)']
+note: "Phase 1 delta. The valuation framework-adherence component is pending phase 3 and does not enter the min."

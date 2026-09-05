@@ -1,0 +1,119 @@
+stage: B09-tam
+company: "SHHARICH"
+run_date: "2026-09-05"
+model: claude-sonnet-5
+status: partial               # WebFetch blocked by egress proxy on every market-report/trade-data domain tried; all web figures are search-snippet syntheses, not primary-page reads
+input_gaps:
+  - "presentation: no investor presentation in corpus"
+  - "concalls: declared unavailable (NO-CONCALL MODE); not a gap"
+  - "results: no quarterly or annual results filing; Q1 FY27 (Jun-2026) results absent"
+  - "announcements: no Reg 30 filings; AGM notice inside the AR is the partial substitute"
+  - "capacity: AR discloses installed capacity (270 tonnes, period unstated) but no production volume, utilisation or capacity-addition figure; B07 capex_embedded_growth_pct NOT FOUND"
+  - "web access: WebFetch blocked by network egress proxy on every specialty-chemical market-report and trade-data domain attempted (chemanalyst.com, imarcgroup.com, grandviewresearch.com, verifiedmarketreports.com, dataintelo.com, industryresearch.co, globalmarketstatistics.com, indianchemicalnews.com, dgtr.gov.in, dgciskol.gov.in, seair.co.in, openpr.com, en.wikipedia.org); all web-sourced figures rest on WebSearch snippet synthesis only"
+  - "India-specific top-down H-Acid TAM: no dedicated CRISIL/ICRA/CARE/IBEF report found; SAM built via peer-capacity aggregation and an unsourced geography-share inference instead"
+  - "SHHARICH export destination countries: AR states 'exports to 4 countries' without naming them; cannot confirm or rule out direct US tariff exposure"
+flags:
+  - {type: "FLAG-NO-MGMT-TAM-CLAIM", reason: "AR pp.1-77, AGM Notice pp.17-19/43-48 contain zero numeric market-size claim of any kind despite the company asking shareholders to fund a Rs 40.24 cr warrant-based expansion; mgmt_claim_cr and mgmt_claim_ratio are NOT FOUND, not zero"}
+  - {type: "FLAG-TAM-METHOD-DIVERGENCE", reason: "Global TAM value estimate (USD 689.9-755.75M, 2026, aggregator sites) diverges 61% from the price cross-check (234,500t x USD 4,724/MT China spot Sept 2025 = USD 1,107.8M); neither could be verified via primary source (WebFetch blocked)"}
+  - {type: "FLAG-CAPACITY-PERIOD-AMBIGUOUS", reason: "AR's '270 tonnes' capacity figure (p.5, period unstated) is arithmetically inconsistent with FY26's implied production of 3,225-5,067 tonnes if read as annual; internally more consistent read as monthly (270 x 12 = 3,240t), but this is this report's own inference, not a disclosed fact"}
+  - {type: "FLAG-SOM-CAGR-BELOW-HURDLE", reason: "SOM-implied revenue CAGR of ~4.9-5.2% sits far below the strategy's 25% CAGR transition-alpha target; any Stage 11 revenue assumption materially above ~5% needs share-gain or TAM-growth evidence this report does not find"}
+  - {type: "FLAG-SAM-GEOGRAPHY-INFERENCE", reason: "The ~25% 'India share of global H-Acid capacity' used to filter TAM to SAM is this report's own inference from partial data points (Kiri's >15% single-company share; an unsourced India+China >75%-of-Asia-Pacific claim), not a directly sourced single statistic"}
+market_definition: "Global commodity H-Acid (dye intermediate) market; SHHARICH is a small Indian price-taker manufacturer/trader selling domestically and to 4 undisclosed export markets"
+tam_cr: {conservative: 6554, realistic: 8539}
+sam_cr: 1183
+sam_pct_of_tam: 18.1
+som_3yr_cr: 170
+som_5yr_cr: 189
+som_implied_revenue_cagr: {yr3: 4.9, yr5: 5.2}   # FORMAL handoff to stage 11
+current_sam_share_pct: 12.43
+revenue_headroom_x: 8.05
+tam_growth_pct: 3.57
+runway_class: "MODERATE"
+mgmt_claim_cr: "NOT FOUND"
+mgmt_claim_ratio: "NOT FOUND"
+mgmt_claim_read: "no numeric claim made"
+capacity_check: "gap not quantifiable in Rs Cr (B07 capex_embedded_growth_pct NOT FOUND); tonnage cross-check implies ~500-800 t/yr of incremental production needed by yr3 with no disclosed capacity-addition figure behind the Rs 10.24 cr warrant object or SDPL; SOM is the optimistic side"
+methods_used:
+  - "Method 1: top-down (global aggregator market-value/volume reports)"
+  - "Method 2: reverse bottom-up tonnage cross-check (Section 3C; forward bottom-up not executable, no company unit-economics disclosed)"
+  - "Method 3: peer capacity-to-revenue aggregation (India-named producers) plus unorganised-sector uplift"
+  - "Method 4: import substitution / anti-dumping review (inconclusive — no H-Acid-specific ADD found; China competition is a threat, not a protected substitution opportunity)"
+  - "Method 5: global benchmark price cross-check (China spot price x global volume)"
+stale_data_flags:
+  - {datapoint: "Organised vs unorganised Indian dye/dye-intermediate market split (~65:35 by value)", source: "Fibre2Fashion / downtoearth.org.in secondary reporting, via WebSearch", year: "2010-11"}
+  - {datapoint: "Shree Pushkar Chemicals H-Acid capacity (2,400 tpa base + 750 tpa expansion)", source: "Business Standard B2B Connect archive, via WebSearch", year: "2015-2016"}
+  - {datapoint: "India dye/dyestuff industry export value ~USD 3.5 billion", source: "trade-press aggregation, via WebSearch (primary article not fetchable)", year: "FY2023-24"}
+searches_performed:
+  - "H-Acid market size global 2026 dye intermediate tonnes"
+  - "India H-Acid market size dye intermediates CRISIL ICRA report"
+  - "India dye intermediates market size 2026 report"
+  - "H-Acid China anti-dumping duty India 2025 2026"
+  - "DGTR H-Acid anti-dumping duty China India notification"
+  - "India H-Acid export import data DGCIS tonnes value 2025"
+  - "\"H-Acid\" capacity tonnes per annum India Bodal Chemicals plant Dahej"
+  - "AksharChem India H-Acid capacity Kalyan Silvassa tonnes"
+  - "Shree Pushkar Chemicals H-Acid capacity Vinyl Sulphone tonnes plant"
+  - "China H-Acid overcapacity oversupply price crash dye intermediate 2025"
+  - "India share global H-Acid production percentage capacity total industry"
+  - "USD to INR exchange rate September 2026"
+  - "Bodal Chemicals dye intermediates segment revenue FY25 FY26 annual report"
+  - "India unorganised small scale dye intermediates manufacturers share percent"
+  - "IBEF chemical industry dyes report India specialty chemicals market size 2026"
+  - "CARE ratings Aksharchem India H-acid dye intermediate industry outlook 2026"
+  - "\"H Acid\" India exporter leading manufacturer capacity tonnes Bodal AksharChem Shree Pushkar"
+  - "India dyes dyestuff industry USD 7 billion market 2024 CAGR H-Acid Bodal capacity"
+  - "\"dye intermediates\" India export value USD billion FY24 FY25 source CHEMEXCIL"
+searches_skipped:
+  - "WebFetch chemanalyst.com/industry-report/h-acid-market-2982 (EGRESS_BLOCKED)"
+  - "WebFetch reports.valuates.com/market-reports/QYRE-Auto-39F15915/global-and-india-h-acid (EGRESS_BLOCKED)"
+  - "WebFetch imarcgroup.com/h-acid-pricing-report (EGRESS_BLOCKED)"
+  - "WebFetch seair.co.in/h-acid-import-data.aspx (EGRESS_BLOCKED)"
+  - "WebFetch industryresearch.co/market-reports/h-acid-market-307539 (EGRESS_BLOCKED)"
+  - "WebFetch globalmarketstatistics.com/market-reports/h-acid-market-15812 (EGRESS_BLOCKED)"
+  - "WebFetch indianchemicalnews.com/opinion/colors-of-opportunity-indias-expanding-dye-and-dyestuff-industry-27154 (EGRESS_BLOCKED)"
+  - "WebFetch dataintelo.com/report/global-h-acid-market (EGRESS_BLOCKED)"
+  - "WebFetch verifiedmarketreports.com/product/h-acid-market/ (EGRESS_BLOCKED)"
+  - "WebFetch dgtr.gov.in/en (EGRESS_BLOCKED)"
+  - "WebFetch grandviewresearch.com/horizon/outlook/dyes-market/india (EGRESS_BLOCKED)"
+  - "WebFetch imarcgroup.com/india-dyes-pigments-market (EGRESS_BLOCKED)"
+  - "WebFetch openpr.com/news/4583211/h-acid-production-plant-project-report-2026-setup-cost (EGRESS_BLOCKED)"
+  - "WebFetch en.wikipedia.org/wiki/H_acid (EGRESS_BLOCKED)"
+downstream_candidates:
+  - signal: "India H-Acid export/import trade volumes (HS-code specific)"
+    entity_type: "macro"
+    demand_link: "Direct proxy for external demand and import-competition intensity; SHHARICH exports 46.4% of FY26 revenue"
+    likely_source: "DGCIS monthly foreign trade statistics"
+    cadence: "monthly"
+    shared: true
+  - signal: "CHEMEXCIL dye and dye-intermediates export bulletins"
+    entity_type: "macro"
+    demand_link: "Sector-wide demand trend and China-competition context for the whole industry"
+    likely_source: "CHEMEXCIL (export promotion council) statistics"
+    cadence: "quarterly"
+    shared: true
+  - signal: "Global/China H-Acid spot price index"
+    entity_type: "macro"
+    demand_link: "Sets realisation ceiling/floor for both manufactured and traded H-Acid revenue lines"
+    likely_source: "ChemAnalyst H-Acid pricing tracker"
+    cadence: "monthly"
+    shared: true
+  - signal: "DGTR anti-dumping case status on H-Acid / related intermediates (e.g. DASDA) from China"
+    entity_type: "regulatory"
+    demand_link: "A future duty would directly lift domestic realisations; none exists for H-Acid today"
+    likely_source: "DGTR case list and Gazette notifications"
+    cadence: "event-driven"
+    shared: true
+  - signal: "Indian reactive/acid/direct dye manufacturers' production and sourcing disclosures"
+    entity_type: "end-customer"
+    demand_link: "Direct demand pull for H-Acid as a key input; peer dye-makers' results proxy end-demand strength"
+    likely_source: "Peer dye-manufacturer annual reports / quarterly results"
+    cadence: "quarterly"
+    shared: false
+  - signal: "US tariff policy on Indian chemical/textile exports"
+    entity_type: "macro"
+    demand_link: "50% US tariff already compressing peer AksharChem's dye-intermediate realisations; SHHARICH's own export destinations are undisclosed"
+    likely_source: "USTR / US Federal Register; Indian Ministry of Commerce trade-policy bulletins"
+    cadence: "event-driven"
+    shared: false
+demand_externally_verifiable: true
+analyst_note: "The ~25% 'India share of global H-Acid capacity' geography filter is this report's own inference from partial data points, not a directly sourced statistic, though it cross-validates against the independently built Method-3 peer sum (Rs 1,183-1,540cr vs Rs 1,475cr top-down). Both rest on thin, uneven-vintage peer disclosures gathered via search-snippet synthesis with no primary-page verification possible this run (WebFetch blocked throughout). The robust finding across every method: SOM-implied revenue CAGR clusters around 5%, far below the 25% strategy hurdle, driven more by weak execution/moat evidence (B07 em_score 8/92, AVOID) and slow demand-side TAM growth (3.57%) than by scarcity of addressable market (SAM is 8x current revenue)."

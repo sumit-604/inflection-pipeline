@@ -1,0 +1,61 @@
+no_concall_mode: true
+credibility_grade: D
+promise_delivery:
+  delivered: 2
+  partial: 2
+  missed: 2
+  rows:
+  - promised_in: FY25-vintage preferential issue (CCD proceeds)
+    promise: Deploy Rs 10 cr to SDPL investment and Rs 1 cr to general-corporate purposes, tentative timeline March 2026
+    outcome: Delivered
+    explanation: Rs 9.99 cr and Rs 1.01 cr utilised as at 31-Mar-2026, essentially on the stated timeline (AR FY26, p.90)
+  - promised_in: FY25-vintage preferential issue (CCD proceeds)
+    promise: Deploy Rs 3.75 cr to working capital/debt repayment, tentative timeline March 2025
+    outcome: Partial (late)
+    explanation: Utilisation disclosed only as at 31-Mar-2026, roughly a year after the object's own stated tentative timeline (AR FY26, p.90)
+  - promised_in: Board's Report, p.56, this AR
+    promise: No FY26 dividend, to conserve resources for working capital
+    outcome: Delivered / consistent with observed behaviour
+    explanation: Standalone cash flow shows Rs 1,940.79 lakh used in investing activities in FY26 against Rs 829.21 lakh net financing inflow; cash balance fell slightly despite large capital raises, consistent
+      with the stated rationale (AR FY26, p.107)
+  - promised_in: Chairman's Message, p.7, this AR
+    promise: SDPL expected to commence production 'in the near term'
+    outcome: Partial / not delivered as of AR date
+    explanation: AOC-1 (p.74) shows SDPL FY26 turnover Nil, PBT loss Rs 9.92 lakh, accumulated losses; capital-deployment half of the promise was kept, the operational half was not
+  - promised_in: MD&A ratio table p.77 and Note 35.22 p.134, this AR
+    promise: Attributes the Interest/Debt Service Coverage Ratio improvement (2.48x to 3.56x) to 'Decrease in Borrowing'
+    outcome: Missed / contradicted by own numbers
+    explanation: Standalone total borrowings (Notes 17 and 21) rose 8.4% YoY (Rs 2,619.05 lakh to Rs 2,838.07 lakh), the opposite of the stated cause
+  - promised_in: MD&A Section J, p.77, this AR
+    promise: Attributes the Return on Net Worth decline (16.10% to 9.51%) to 'favourable market conditions'
+    outcome: Missed / non-sequitur
+    explanation: A falling return ratio is not explained by favourable conditions; Note 35.22(d) gives the coherent cause (equity dilution from CCD conversion) for the related ROE metric, an internally
+      inconsistent pair of explanations
+guidance:
+- item: Expected profit level (Schedule V minimum-remuneration justification)
+  number: approximately Rs 10 crore
+  timeframe: not specified (implicitly forward)
+  stated_in: AR FY26, p.52, Schedule V Statement annexed to AGM Notice
+- item: SDPL commencement of production
+  number: not quantified
+  timeframe: near term (undated)
+  stated_in: AR FY26, p.7, Chairman's Message
+- item: Warrant issue objects utilisation
+  number: Rs 40.24 crore across 4 objects (Rs 10.24 cr/25.45%; 3x Rs 10.00 cr/24.85% each)
+  timeframe: March 2031, all four objects (tentative)
+  stated_in: AR FY26, AGM Notice Item 16, pp.45-46
+- item: No dividend for FY26; cash conserved for working capital
+  number: Rs 0
+  timeframe: FY26
+  stated_in: AR FY26, Board's Report, p.56
+- item: Prior (FY25-vintage) CCD-proceeds utilisation objects
+  number: 'Rs 14.75 cr across 3 objects: SDPL investment Rs 10.00 cr, working capital/debt repayment Rs 3.75 cr, general corporate Rs 1.00 cr'
+  timeframe: 'SDPL and general-corporate: March 2026; working capital: March 2025'
+  stated_in: AR FY26, Corporate Governance Report, p.90
+- item: Borrowing-limit enabling resolution (headroom, not a spending commitment)
+  number: up to Rs 200 crore
+  timeframe: ongoing until revoked
+  stated_in: AR FY26, AGM Notice Item 12, p.42
+timeline_slippages:
+- FY25-vintage CCD-proceeds object 2 (working capital/debt repayment, Rs 3.75 cr / 25.44% of proceeds) had a tentative timeline of March 2025 but utilisation is disclosed only as at 31-Mar-2026, roughly
+  a one-year slippage against its own stated timeline (AR FY26, Corporate Governance Report, p.90)

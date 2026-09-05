@@ -1,0 +1,51 @@
+peer_questions:
+- question: Did H-Acid price/spread trend up or down through FY26 and into Q1 FY27 (Apr-Jun 2026)?
+  why: SHHARICH's AR gives no H-Acid price or spread figure anywhere; needed to determine whether FY26/Q1 FY27 profit is spread-driven or volume-driven, the run's core thesis question
+  check_peers:
+  - BODALCHEM
+  - SHREEPUSHK
+- question: Did Chinese H-Acid/dye-intermediate supply or any anti-dumping duty status change during FY26/Q1 FY27?
+  why: SHHARICH's MD&A cites 'price competition from Chinese manufacturers' and 'potential trade restrictions such as anti-dumping duties' as generic unquantified threats
+  check_peers:
+  - BODALCHEM
+  - SHREEPUSHK
+- question: Did peer H-Acid/dye-intermediate makers see a similar step-change in export mix or export geography during FY26?
+  why: SHHARICH's export revenue moved from Rs 0 (FY25) to 46.4% of revenue (FY26) with zero explanation; a sector-wide read tests whether this is industry-wide or company-specific
+  check_peers:
+  - BODALCHEM
+  - SHREEPUSHK
+- question: What raw-material (naphthalene, sulphuric acid/oleum) cost trend did peers report through FY26 into Q1 FY27?
+  why: SHHARICH's MD&A blames 'increase in Raw Material Price' for its FY26 margin decline but gives no input-cost numbers
+  check_peers:
+  - BODALCHEM
+  - SHREEPUSHK
+- question: Are peers adding H-Acid/dye-intermediate capacity, and does the industry face overcapacity or tight supply into FY27?
+  why: SHHARICH is adding capacity via warrant-funded expansion and SDPL with no capacity or utilisation numbers disclosed anywhere in its AR
+  check_peers:
+  - BODALCHEM
+  - SHREEPUSHK
+- question: What margin range (gross/EBITDA) did peers report for H-Acid conversion through FY26 and Q1 FY27, and was it volume-led or price-led?
+  why: SHHARICH's own EBITDA margin fell from 8.13% to 5.31% in FY26 while revenue rose 30.7%; peer margin direction and driver tests whether this is company-specific or sector-wide
+  check_peers:
+  - BODALCHEM
+  - SHREEPUSHK
+- question: What working-capital norms (receivable/payable/inventory days) do peers report for H-Acid converters through FY26?
+  why: SHHARICH's current ratio stayed below 1.0 in both years despite an OCF improvement driven by a one-year receivables release; peer norms test whether this is structural to the business model
+  check_peers:
+  - BODALCHEM
+  - SHREEPUSHK
+- question: What ZLD/environmental compliance cost trend do peers report, and is it rising industry-wide?
+  why: SHHARICH's MD&A cites 'rising environmental compliance costs' as a threat with no rupee figure attached
+  check_peers:
+  - BODALCHEM
+  - SHREEPUSHK
+- question: Was FY26/Q1 FY27 sector profitability for H-Acid dye-intermediate makers generally volume-led or price-led?
+  why: This is the single load-bearing question for SHHARICH's own transition thesis (volume vs spread); peer commentary on their own volume-vs-price mix is the most direct comparable evidence available
+  check_peers:
+  - BODALCHEM
+  - SHREEPUSHK
+- question: Did any peer's promoter group raise capital via preferential warrants/CCDs at a discount to CMP during FY26, and what stated purpose/timeline did they attach?
+  why: SHHARICH's Rs 40.24 cr warrant issue at Rs 176.10 (vs CMP Rs 248) is exclusively promoter-family allotted; a sector base rate calibrates whether SHHARICH's terms and pace are typical
+  check_peers:
+  - BODALCHEM
+  - SHREEPUSHK

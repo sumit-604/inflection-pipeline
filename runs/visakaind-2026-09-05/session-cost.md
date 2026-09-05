@@ -10,3 +10,4 @@ not. Stage 0 ran inline in the orchestrator session (no subagent).
 | 1 | stage-02-notes (pass 1) | sonnet | n/a | n/a | n/a | 217786 | 7m48s | 1 |
 | 2 | stage-02-notes (pass 2) | sonnet | n/a | n/a | n/a | 186770 | 7m37s | 2 |
 | 3 | stage-01-gate0 | sonnet | n/a | n/a | n/a | 184608 | 18m14s | 1 |
+| 4 | stage-02-notes (pass 3) | sonnet | n/a | n/a | n/a | 147148 | 12m16s | 3 |

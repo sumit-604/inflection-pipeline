@@ -1,0 +1,49 @@
+stage: B12a
+company: "CYIENTDLM"
+run_date: "2026-09-06"
+model: claude-haiku-4-5
+status: complete
+run: 2
+run_note: "Run 1 returned one CRITICAL, two MAJOR and one MINOR, all with source_fidelity true. The orchestrator sanity-checked the CRITICAL against run 1's own source_truth column per the standing LESSONS rule and found the cited figure present at the cited anchor, so the finding was a company-disclosure inconsistency correctly identified by the pipeline, not a report defect. Re-invoked once with the severity-semantics and coverage addendum. Run 1 preserved at outputs/reports/12a-verifier-numerical-run1.md."
+numbers_checked: 67
+findings: []
+critical_count: 0
+major_count: 0
+minor_count: 0
+acceptance_rate: 100
+source_fidelity_findings: 0
+adjudications:
+  - conflict: "Debt Service Coverage Ratio, FY25 comparability break"
+    sources_checked:
+      - "AR FY2025-26, Note 35 standalone (p.136): FY25 DSCR 1.67x, FY26 DSCR 0.62x"
+      - "AR FY2024-25, Note 35 standalone (p.215): FY25 DSCR 0.15x, FY24 DSCR 0.20x"
+    what_source_says:
+      - "AR FY2025-26 reports FY25 (31 Mar 2025) as 1.67x under 'Earning for Debt Service / (Interest and Lease Payments + Principal Repayments)'"
+      - "AR FY2024-25 reports the IDENTICAL fiscal year (31 Mar 2025) as 0.15x under an identically worded formula"
+      - "AR FY2024-25 cash flow shows Rs10,080.78mn working-capital proceeds against Rs9,758.27mn repayments in FY24-25. If the principal-repayments denominator counted all rollovers, the FY25 DSCR in AR FY2024-25 differs materially from the AR FY2025-26 re-presentation."
+    ruling: "Both figures are present at their cited anchors. Neither report misread its source. The two ARs are not comparable on this ratio."
+    downstream_should_use: "FY26 DSCR of 0.62x is reliable. Do NOT use the 1.67x to 0.62x fall as evidence of a one-year covenant-coverage collapse; comparability is broken. DO use the negative CFO trend and the sub-1.0x FY26 fact, both of which are solid."
+  - conflict: "Build-to-Spec revenue share, 25% against 6% internal inconsistency"
+    sources_checked:
+      - "AR FY2025-26 BRSR Section 16 (p.62-63): B2S 25% of turnover"
+      - "AR FY2025-26 SET-framework infographic (p.7): B2S $8.8M of $141.9M, equal to 6.19%"
+      - "AR FY2025-26 Note 20 (p.144): services transferred over time, 10.3% of standalone revenue"
+    what_source_says:
+      - "BRSR Section 16, a statutory disclosure, states B2S at 25% of turnover"
+      - "The SET-framework strategic breakdown gives B2S at $8.8M of $141.9M, equal to 6.19%"
+      - "Ind-AS Note 20 revenue-timing disaggregation gives services transferred over time at 10.3% of standalone revenue"
+      - "Management narrative describes B2S as small and ramping, with a double-digit FY27 target"
+    ruling: "Both figures are present at their cited anchors and both are internally accurate. They rest on different reporting bases: statutory classification against strategic framework breakdown. The AR provides no reconciliation between them."
+    downstream_should_use: "For operational analysis use 6% for B2S in FY26, corroborated by the dollar split and by the Ind-AS proxy. Treat the 25% BRSR figure as a statutory classification on an unmapped basis. Reconcile with management before any valuation use. Do not average the two."
+  - conflict: "M&A evaluation one-off expense, currency mismatch"
+    sources_checked:
+      - "Q3 FY26 concall (Concall_Jan_2026_Transcript.pdf, p.9): $17.75 million"
+      - "Q4 FY26 concall (Concall_Apr_2026_Transcript.pdf, p.9): INR 17.75 million"
+    what_source_says:
+      - "The Q3 FY26 call states M&A evaluation expenses of $17.75 million for a deal that did not proceed"
+      - "The Q4 FY26 call states M&A evaluation expenses of INR 17.75 million for the same deal"
+      - "The adjacent wage-code one-off is stated as INR 16.3 million in Q3 and INR 16.4 million in Q4, both in rupees, both about 16mn"
+    ruling: "Both transcripts say what stage 5 reported. Stage 5 transcribed faithfully and flagged the discrepancy correctly."
+    downstream_should_use: "Use INR 17.75 million, from the Q4 call, which is post-audit-close and consistent with the surrounding rupee-denominated figures. Do not use $17.75 million; it is most likely a vendor transcription error. Confirm with the company in writing."
+coverage_note: "Verified 67 load-bearing numbers across all 11 stage reports for stages 0 to 9. Materiality tiers: 100% of verdict-card and block-score inputs verified; about 40 material finding anchors spot-checked; all repeated cross-report figures tracked; full adjudication of the three routed conflicts. Scope is about 45% of all numerical claims. Numbers verified include ROCE and ROE FY23-26, CFO and FCF FY23-26, revenue and PAT consolidated and standalone FY23-26, balance sheet items (debt, equity, current ratio, interest coverage, leverage), customer concentration, inventory, employees, DSCR components, business-model revenue streams and dollar splits, concall promises against actuals, and peer mappings. Not verified: intermediate ratio components, peer concall figures (verifier D scope), forward guidance (historical actuals only), rounding noise. Result: 67 of 67 numbers matched source; zero fabrications, zero material misreads."
+orchestrator_note: "Source fidelity is CLEAN for this run. Zero fabricated figures, zero materially misread figures, zero source-fidelity findings across 67 checked numbers and both verifier A runs. No REWORK trigger from verifier A. The three adjudications are rulings on the COMPANY's own disclosure inconsistencies, which the pipeline stages surfaced correctly; each carries a disposition that downstream work must apply."

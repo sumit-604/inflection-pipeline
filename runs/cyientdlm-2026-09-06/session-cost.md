@@ -11,3 +11,4 @@ stage returns and committed with that stage.
 | 2 | notes triple-pass, pass 2 of 3 | claude-sonnet-5 | default | n/a | n/a | 119743 | 7m24s | 2 |
 | 8 | promoter background check | claude-sonnet-5 | default | n/a | n/a | 164995 | 7m55s | 1 |
 | 5 | concall analysis, main company | claude-sonnet-5 | default | n/a | n/a | 156702 | 9m14s | 1 |
+| 2 | notes triple-pass, pass 3 of 3 (consolidation, emits B02) | claude-sonnet-5 | default | n/a | n/a | 68098 | 3m17s | 3 |

@@ -1,0 +1,56 @@
+stage: B02-notes
+company: "CYIENTDLM"
+run_date: "2026-09-06"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "prospectus ABSENT, priority HIGH: no restated pre-IPO financials; notes history reaches only as far as the two ARs own comparatives (FY23-26)"
+  - "results ABSENT"
+  - "rating ABSENT"
+  - "announcements ABSENT"
+  - "shareholding filing ABSENT, partly substituted from AR corporate governance section (ownership-category table p.100, over-1% holders p.101)"
+  - "research ABSENT"
+  - "screening PARTIAL (only screener-Data_Sheet.csv holds data)"
+flags:
+  - {type: FLAG-CASH, reason: "Inventory +13.3% consolidated (finished goods +52.0%, Note 9 p.155) and +11.8% standalone against revenue falling 17.0%/29.9%; trade payable days stretched about 84 to about 127 (Note 17 p.161-162); unbilled payables +125.6%; Note 23 changes-in-inventory generated a Rs538.33mn P&L credit (p.163-164); Rs368.47mn IPO capex proceeds reallocated to working capital 8 days before year-end (Note 12(h) p.158-159). Independently corroborates Gate 0 cumulative FY2023-26 CFO of -Rs25.07cr against PAT of +Rs234.29cr."}
+accounting_quality: 4
+pass_2_empty: false
+pass_3_empty: true
+top_findings:
+  - {rank: 1, finding: "100% of consolidated PAT growth (+7.65%) manufactured at US-subsidiary level; Indian parent standalone PAT fell 26.6% (Rs766.98mn to Rs563.24mn)", note_ref: "Note 35 CONSOLIDATED, p.171", rating: "Red Flag", why: "Headline consolidated growth is a mix-shift artifact, not operating improvement"}
+  - {rank: 2, finding: "India-geography revenue collapse: consolidated -83.2%, standalone -84.4%; standalone total revenue -29.9% against consolidated -17.0%, cushioned by acquired Altek", note_ref: "Note 20/34 CONSOLIDATED p.162/171; Note 33 STANDALONE p.135", rating: "Red Flag", why: "Core India EMS business, the actual transition-thesis entity, is contracting sharply beneath consolidation optics"}
+  - {rank: 3, finding: "Changes-in-inventory P&L line: Rs538.33mn favourable consolidated swing, the largest single profit-flattering item this year", note_ref: "Note 23 CONSOLIDATED p.163-164, STANDALONE p.128-129", rating: "Red Flag", why: "Reported PBT flattered by unsold production; converts to write-downs if it does not sell through"}
+  - {rank: 4, finding: "Rs195.75mn unlabelled non-cash Altek earn-out fair-value gain drives flat PBT (ex-gain PBT fell about 19.8%); Altek FY26 full-year profit Rs31.32mn below its FY25 part-year profit Rs39.70mn", note_ref: "Note 21 p.161-162; Note 33.1.4 p.170; Note 35 p.171 (all CONSOLIDATED)", rating: "Red Flag", why: "The gain and Altek target miss are the same event viewed from two notes"}
+  - {rank: 5, finding: "Inventory +13.3% consolidated / +11.8% standalone against falling revenue; payable days about 84 to about 127; unbilled payables +125.6%; Rs368.47mn IPO capex funds reallocated to WC 8 days before year-end", note_ref: "Note 9 CONSOLIDATED p.155, STANDALONE p.116; Note 17 p.161-162; Note 12(h) p.158-159", rating: "Red Flag", why: "Corroborates the Gate 0 cash-conversion deal-breaker independently"}
+  - {rank: 6, finding: "New related-party subcontracting flow to parent Cyient Limited: Rs537.56mn from Rs NIL, payable up 257% to Rs442.12mn, no arm's-length benchmarking disclosed", note_ref: "Note 30 CONSOLIDATED/STANDALONE p.164-166/132-134", rating: "Red Flag", why: "Material new flow to the listed parent coincident with the India revenue collapse; pricing basis unverifiable"}
+  - {rank: 7, finding: "Debt Service Coverage Ratio fell below 1.0x: 1.67x to 0.62x (-62.9%)", note_ref: "Note 35 STANDALONE p.136-137", rating: "Red Flag", why: "Earnings did not cover debt-service obligations this year"}
+  - {rank: 8, finding: "Unhedged FX exposure grew about 15x (5% sensitivity Rs4.87mn to Rs73.38mn) with no forward contracts as export mix rose to about 86.5% of revenue", note_ref: "Note 33.2 CONSOLIDATED p.171", rating: "Red Flag", why: "New, quantifiable, currently uncovered risk growing with export mix"}
+  - {rank: 9, finding: "Customer concentration extreme: top customers 55.71% consolidated / 70.54% standalone of revenue (improved from 69.21%/78.19%)", note_ref: "Note 20/33, both statements", rating: "Red Flag", why: "Structural, persistent single-customer-loss risk"}
+  - {rank: 10, finding: "Standalone employee cost fell 18.8% while consolidated employee cost rose 21.8% (full-year Altek headcount)", note_ref: "Note 24 STANDALONE p.129, CONSOLIDATED p.164", rating: "Watch", why: "Second independent metric confirming consolidation masks a shrinking India operation"}
+  - {rank: 11, finding: "Permanent FVTOCI loss on Stuam Technologies investment: cumulative Rs792.88mn (84.5%) destroyed over two years, will never hit P&L due to irrevocable election", note_ref: "Note 6/13(f)/33.1.4 CONSOLIDATED p.154/160/169-170", rating: "Watch", why: "Legitimate election but permanent value destruction invisible to a P&L-only reading"}
+  - {rank: 12, finding: "Two of three Key Audit Matters (inventory obsolescence, investment valuation) unchanged for a second consecutive year", note_ref: "Independent Auditor's Report, standalone, p.104-106; cross-checked AR FY2024-25", rating: "Watch", why: "Upgrades to structural, unresolved judgement risk over two annual cycles"}
+  - {rank: 13, finding: "Share-based payment expense reversed to a Rs28.92mn credit (from a Rs62.16mn charge) on mass ESOP forfeitures tied to CEO and CFO transitions", note_ref: "Note 24 CONSOLIDATED p.163", rating: "Watch", why: "Mechanically correct but another item flattering profit in a declining year"}
+  - {rank: 14, finding: "Cash fell 56.3% (Rs2,877.82mn to Rs1,258.00mn) as IPO proceeds were spent; unutilised bank credit lines stayed stable at about Rs4.17bn", note_ref: "Note 33.2 CONSOLIDATED, Liquidity risk, p.169", rating: "Watch (mixed)", why: "Cash cushion largely spent, but a stable credit-line cushion is a genuine mitigant to the Gate 0 cash-conversion flag"}
+  - {rank: 15, finding: "No events-after-reporting-period note despite CEO change (Jul-2025), CFO change (Oct-2025), and Citibank loan amendment (23-Mar-2026, 8 days before year-end) close to or within the reporting period", note_ref: "Note 1 CONSOLIDATED/STANDALONE p.146/111", rating: "Watch", why: "Disclosure-completeness gap given unusual within-period events"}
+red_flags:
+  - "India standalone revenue collapse (-29.9%; geography -84.4%) masked at consolidated level (-17.0%) by the newly acquired Altek subsidiary"
+  - "Consolidated PAT growth (+7.65%) entirely attributable to US-subsidiary structure; Indian parent standalone PAT fell 26.6% (Note 35 CONSOLIDATED, p.171)"
+  - "Reported PBT propped by three unlabelled non-recurring items (Rs195.75mn Altek FV gain plus Rs538.33mn inventory-build credit plus about Rs91mn ESOP-reversal swing), combined larger than the YoY PBT movement"
+  - "Altek Electronics FY26 full-year profit (Rs31.32mn) lower than its FY25 part-year profit (Rs39.70mn), evidencing an acquisition-case earn-out target miss"
+  - "Inventory +13.3% consolidated (finished goods +52.0%) while revenue fell 17-30%; trade payable days stretched about 84 to about 127; unbilled payables +125.6%"
+  - "New related-party subcontracting flow to ultimate parent, Rs537.56mn from Rs NIL, no arm's-length benchmarking disclosed beyond boilerplate"
+  - "Debt Service Coverage Ratio fell below 1.0x (1.67x to 0.62x)"
+  - "Unhedged FX exposure grew about 15x with no forward contracts as export mix rose to about 86.5% of revenue"
+  - "Extreme, persistent customer concentration (55.71% consolidated / 70.54% standalone in top customers)"
+  - "No events-after-reporting-period note despite leadership transition and a loan amendment 8 days before year-end"
+  - "Minor: Rs2.08mn GST dispute disclosed in CARO annexure (p.107) not surfaced in Note 28 NIL contingent-liabilities statement (completeness gap, immaterial in size)"
+questions_for_mgmt:
+  - "What caused standalone India-geography revenue to fall 84.4%, and what is the business rationale and pricing basis for the new Rs537.56mn subcontracting arrangement with parent Cyient Limited?"
+  - "Given Altek full-year FY26 profit (Rs31.32mn) is below its FY25 part-year profit (Rs39.70mn), does management still expect Altek to meet its acquisition-case earn-out targets, and should investors expect further downward remeasurement of the contingent-consideration liability?"
+  - "What is the plan and timeline to sell through the built-up finished goods (+52%) and raw-material inventory behind the Rs538.33mn favourable changes-in-inventory swing, and what happens to that swing if demand weakness is not temporary?"
+  - "Why did the Debt Service Coverage Ratio fall below 1.0x, and why was the Citibank term loan amended eight days before year-end to both reduce the margin and accelerate instalments? Was this covenant-related?"
+  - "Why is there no events-after-the-reporting-period note despite the CEO change, the CFO change, and the 23-Mar-2026 loan amendment sitting close to or within the reporting period?"
+receivables_trend: "mixed: consolidated receivable days lengthened 83.4 to 88.9 (Note 10, p.155-156) even as the ageing profile improved (over-6-month bucket 12.7% to 7.9%; not-due bucket 58.5% to 66.7%); top-customer receivable concentration remains high at 61% (down from 68%). Not a clean improving or deteriorating call; feeds FLAG-CASH alongside the inventory and payables findings."
+restatements_found: []
+going_concern_language: "NONE - only standard SA-700/SA-570 auditor-responsibility boilerplate found (AR FY2025-26 standalone and consolidated auditor reports); no material uncertainty paragraph, no management going-concern disclosure anywhere in the document."
+analyst_note: "The three passes together show one connected story, not three separate flags: the consolidated flat-to-growing headline (PBT about flat, PAT +7.65%) is built entirely from (a) a US-subsidiary mix shift (Note 35) and (b) three unlabelled non-recurring P&L items (Altek FV gain, inventory-build credit, ESOP reversal) that together exceed the entire YoY PBT change. Strip all three out and the India core business is shrinking on revenue (-29.9%), profit (-26.6%) and cash conversion (Gate 0 -Rs25.07cr cumulative CFO), with working capital financing part of the gap. Stage 11 should not treat consolidated PAT or PBT growth as evidence of an operating transition; any re-rating case must rest on standalone and India-core metrics, and any consolidated-growth narrative from management or sell-side should be discounted to the extent it leans on these three items or on Altek, which the notes show is itself underperforming its own acquisition case."

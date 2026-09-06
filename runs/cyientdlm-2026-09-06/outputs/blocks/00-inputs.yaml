@@ -27,9 +27,9 @@ input_gaps:
     priority: MEDIUM
     reason: "No Reg 30 record. Intent-and-action cross-check loses the documented-ACTION half."
   - type: shareholding
-    status: ABSENT
-    priority: MEDIUM
-    reason: "FII+DII unresolved. UA qualifier cannot be affirmed in phase 3."
+    status: ABSENT_BUT_PARTLY_SUBSTITUTED
+    priority: LOW
+    reason: "No quarterly shareholding pattern filing. The AR FY2025-26 corporate governance section substitutes at 31-Mar-2026: full ownership-category table (AR FY2025-26, p.100) and the over-1% shareholder list (AR FY2025-26, p.101). FII+DII IS derivable and anchored at FY26 year end; it is one quarter stale against a Q1FY27 filing. Promoter holding 52.1222% (Cyient Limited, sole promoter). No pledge disclosure located yet."
   - type: research
     status: ABSENT
     priority: LOW
@@ -81,4 +81,4 @@ text_extraction: "all 19 input PDFs extracted to work/text/*.txt, page-marked, z
 sector_cap_row: "Cables / Industrial products"
 sector_cap_caveat: "No ESDM/EMS row exists in the Section 1B cap table. Aerospace-and-defence mix may argue the Defence / strategic row (38x). PHASE 3 confirmation item."
 flags: []
-analyst_note: "Operator override satisfied the spear gate with no load-bearing facts, so this run has no pre-set verification priority. Two structural constraints shape every stage. First, only four years of annual history exist (FY23-FY26) because the company listed in FY2023-24 and no prospectus was supplied, so every backward test runs short and Gate 0 must downgrade history. Second, the corpus holds no results filings, no rating rationale, no announcements and no shareholding pattern, so the documented-ACTION record and the UA qualifier cannot be built from filings at all. The freshness pairs pass only because their trigger documents are themselves missing; do not read FRESHNESS PAIRS OK as a complete corpus."
+analyst_note: "Operator override satisfied the spear gate with no load-bearing facts, so this run has no pre-set verification priority. Two structural constraints shape every stage. First, only four years of annual history exist (FY23-FY26) because the company listed in FY2023-24 and no prospectus was supplied, so every backward test runs short and Gate 0 must downgrade history. Second, the corpus holds no results filings, no rating rationale, no announcements and no shareholding filing, so the documented-ACTION record cannot be built from filings at all. The UA qualifier is the exception: the AR corporate governance section carries the ownership-category table at 31-Mar-2026, so FII+DII is anchored and derivable, one quarter stale. The freshness pairs pass only because their trigger documents are themselves missing; do not read FRESHNESS PAIRS OK as a complete corpus."

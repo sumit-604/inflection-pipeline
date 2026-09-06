@@ -1,0 +1,23 @@
+stage: B12d
+company: "INA"
+run_date: "2026-09-06"
+model: claude-sonnet-5
+status: complete
+peers_audited: 11
+substantive_confirmed: 9
+substantive_unsupported: []
+unused_but_relevant:
+  - {peer: "Waaree (25-Feb-2026, US tariffs call)", missed_item: "Cell capacity 25-30GW current, projected 50-60GW in 2-3 years; module 100GW+ (Abhishek Pareek) — directly relevant corroborating data for Q1's overcapacity question, not folded into the Q1 evidence stack despite the call being read in full", anchor: "Waaree, 25-Feb-2026 call, extraction PAGE 12 (transcript footer Page 11 of 14)"}
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "MAJOR", location: "B06 report Part 1, Q1 (Premier 23-Jan-2026 citation, p.14-15)", description: "The Kotak '54 gigawatt / way below 30 gigawatt' quote (Chiranjeev Saluja) is genuine but sits under extraction PAGE 11 (transcript footer 'Page 10 of 26'), about 4 pages before the cited p.14-15; only the paired '45 to 50 companies / 200 gigawatts' quote (Vinay Rustagi) is correctly at that location. Two distinct quotes merged under one partly-wrong anchor on a load-bearing Q1 claim."}
+  - {severity: "MAJOR", location: "B06 report Part 1 Q1 and Q5, Part 2A cross-read, and YAML flags (Premier Aug-2026 citation, p.6-7, reused 3 times)", description: "'non-DCR business is not profitable... 250 odd gigawatt... 30 gigawatt is DCR' and 'government extending up to December' (Chiranjeev Saluja) both sit under extraction PAGE 9 (footer 'Page 8 of 20'); the separately-cited '1st January onwards... DCR modules' clause (Vinay Rustagi) sits under extraction PAGE 5 (footer 'Page 4 of 20'). Neither location is p.6-7. This anchor is reused three times, including in the highest-priority YAML flag."}
+  - {severity: "MINOR", location: "B06 report, multiple citations across Websol 28-Apr-2026, Waaree 22-Jan-2026 (x2), Premier 23-Jan-2026", description: "Recurring one-page-short citations traceable to using the transcript's internal footer number ('Page X of Y') instead of the extraction '===== PAGE N =====' marker, on documents where an unnumbered SEBI cover letter offsets the two by exactly one page throughout. Quotes are genuine and correctly attributed; only the page pointer is off by one."}
+  - {severity: "MINOR", location: "B06 report Part 3, peer coverage map row 'Waaree (Feb 2026)'", description: "CITED-ONLY classification is correct on subject-matter grounds, but a relevant, non-contradictory cell/module capacity figure from the same call (Abhishek Pareek) was not surfaced for Q1 despite the call having been read in full."}
+critical_count: 0
+major_count: 2
+minor_count: 2
+acceptance_rate: 82
+peer_utilisation: 91
+coverage_note: "7 of 11 transcripts independently re-read and spot-checked this session (Waaree Jan/Feb-2026, Premier Jan/Aug-2026, Websol Feb/May/Aug-2026); Waaree May-2026, Waaree Aug-2026, Premier Nov-2025, and Premier May-2026 were not independently re-verified and are marked UNAUDITED above, not confirmed."

@@ -11,3 +11,7 @@ runs/*/work/txt/ar_FY*.txt
 # Chartink pipeline: rendered pages and the run log are regenerated nightly.
 data/chartink/**/*.html
 data/chartink/_collector.log
+
+# Shallow-analysis corpus: raw PDFs stay on the operator's disk; the page-marked
+# text extractions, cards, manifests and framework are tracked and readable.
+screens/corpus/**/*.pdf

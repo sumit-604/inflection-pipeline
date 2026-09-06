@@ -8062,9 +8062,17 @@ class Game {
         const along = dx * fx + dz * fz, side = dx * fz - dz * fx;
         if (Math.abs(along) < mv.L + pad && Math.abs(side) < mv.W + pad) return true;
       }
-      for (const rd of this.rideables || []) {
-        if (rd.group === self || this.player.riding === rd) continue;
-        if (Math.hypot(x - rd.group.position.x, z - rd.group.position.z) < 1.4 + pad) return true;
+      // Parked vehicles you can ride, and the autos at the stands: solid boxes turned with the vehicle.
+      const sizes = { car: [2.2, 1.0], scooty: [1.0, 0.5], bike: [1.0, 0.4], auto: [1.2, 0.8] };
+      const parked = (this.rideables || []).map((rd) => [rd.group, rd.kind]).concat(AUTO_STANDS.filter((st) => st.auto).map((st) => [st.auto, "auto"]));
+      for (const [grp, kind] of parked) {
+        if (grp === self) continue;
+        const dx = x - grp.position.x, dz = z - grp.position.z;
+        if (dx * dx + dz * dz > 36) continue;
+        const r = grp.rotation.y, fx = Math.sin(r), fz = Math.cos(r);
+        const along = dx * fx + dz * fz, side = dx * fz - dz * fx;
+        const [L, W] = sizes[kind] || [1.2, 0.8];
+        if (Math.abs(along) < L + pad && Math.abs(side) < W + pad) return true;
       }
       const m = this.world.metro; // the metro is up on its track; the train is handled by the tracks rule
       return false;
@@ -8698,18 +8706,24 @@ class Game {
   }
 
   // ---- Auto rides between districts ----
+  // The fare: ₹20 to start, then ₹3 for every 10 metres. Shown on every button so
+  // the child sees the sum before choosing.
+  _fare(from, to) { return 20 + Math.round(Math.hypot(to.x - from.x, to.z - from.z) / 10) * 3; }
+
   _openTravel(from) {
     const others = AUTO_STANDS.filter((s) => s !== from);
+    const money = this.progress.money;
     const card = openPanel(`
       <div class="job-title-row">
         <h2>Auto Stand: ${from.name}</h2>
         <button class="ghost-btn" id="travel-close">Walk instead</button>
       </div>
-      <p class="job-brief">Driver: "Where to, Engineer? Hop in, no charge for the village engineer! Or take the wheel yourself, if you have your licence."</p>
+      <p class="job-brief">Driver: "Where to, Engineer? Meter is ₹20 to start, then ₹3 for every 10 metres. You have <b>₹${money}</b>. Or take the wheel yourself, if you have your licence."</p>
       <div class="travel-grid">
         <button class="travel-btn" id="travel-drive" style="background:#2f9e44;color:#fff;box-shadow:0 4px 0 #1e6b2e">🛺 Drive this auto myself<small>${this.hasLicence() ? "licence valid · 3 questions first" : "licence needed: RTO Office, Suryanagar"}</small></button>
-        ${others.map((s, i) => `<button class="travel-btn" data-i="${i}">🛺 ${s.name}<small>${s.hint}</small></button>`).join("")}
+        ${others.map((s, i) => { const f = this._fare(from, s), d = Math.round(Math.hypot(s.x - from.x, s.z - from.z)); return `<button class="travel-btn" data-i="${i}" ${money < f ? 'style="opacity:.55"' : ""}>🛺 ${s.name} · ₹${f}<small>${d} m · ${s.hint}</small></button>`; }).join("")}
       </div>
+      <p class="tiny-note">Walking is free. Earn money by solving the village's problems.</p>
     `);
     card.querySelector("#travel-close").addEventListener("click", () => closePanel());
     card.querySelector("#travel-drive").addEventListener("click", () => {
@@ -8719,7 +8733,10 @@ class Game {
     });
     card.querySelectorAll(".travel-btn").forEach((b) => b.addEventListener("click", () => {
       const dest = others[Number(b.dataset.i)];
+      const fare = this._fare(from, dest);
+      if (this.progress.money < fare) { Audio.playRetry(); showToast(`The fare is ₹${fare} and you have ₹${this.progress.money}. Solve a problem or two, or walk.`, 3600, "bad"); return; }
       closePanel();
+      this.addMoney(-fare, `auto fare to ${dest.name}`);
       playHorn();
       if (this.player.riding) this.player.dismount();
       this.player.group.position.set(dest.standAt.x, heightAt(dest.standAt.x, dest.standAt.z), dest.standAt.z);

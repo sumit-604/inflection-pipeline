@@ -1,0 +1,53 @@
+stage: confidence-delta
+phase: 1
+company: "CEIGALL"
+run_date: "2026-09-06"
+computed_by: orchestrator
+method: "prompts/00-orchestrator.md Section 5, computed over the FINAL verifier blocks (B12a run 2, B12b run 2, B12c, B12d). Superseded runs are retained beside them and are not used in this computation."
+
+confidence_delta:
+  numerical_acceptance: 75      # B12a run 2, after the orchestrator source re-check cleared one false CRITICAL
+  redflag_coverage: 70          # B12b run 2, (caught 20 + partially caught 10) / 43 independent flags
+  framework_adherence: 95       # B12c, 81 of 85 rules passed; Gate 0 51/51, Emerging Moat 30/34
+  peer_utilisation: 100         # B12d, 3 of 3 peers substantive, 12 of 12 transcripts used
+  overall: 70                   # minimum of the four
+  band: "60-74: PROCEED verdicts downgrade one level"
+
+component_notes:
+  numerical_acceptance:
+    value: 75
+    basis: "B12a run 2 audited 12 deliberately-hardest annual-report figures, not a representative sample: 9 verified clean or substantially clean. B12a run 1 audited 48 numbers broadly and returned 97.9% with zero CRITICAL and zero MAJOR. The conservative targeted figure is used."
+    caveat: "One live source-fidelity flag stands: the FY24 Contract Assets baseline of Rs 4,039m is not in the FY26 note. Three figures are RESOLUTION-LIMITED and unconfirmed, not contradicted: the reverse-factoring quantum, the MSME statutory interest, and the CMD remuneration ratio."
+  redflag_coverage:
+    value: 70
+    basis: "B12b run 2, measured against the REMEDIATED B05 run 2 and B06 run 2. The first audit measured 48% against the superseded artifacts. On CRITICAL and MAJOR flags alone the surfaced rate is 90% (28 of 31)."
+    caveat: "See gate_rule_tension below. B05 run 3 has since closed further named gaps but was not re-audited."
+  framework_adherence:
+    value: 95
+    basis: "B12c, phase-1 scope only. Gate 0 re-derived from source data, 51 of 51 rules passed. Emerging Moat 30 of 34. Zero CRITICAL, zero MAJOR."
+    caveat: "The valuation-adherence component is NOT included and is pending phase 3, where B10 and B11 exist. framework_adherence will be recomputed then."
+  peer_utilisation:
+    value: 100
+    basis: "B12d confirmed all three peers substantive on audit and agreed the stage's own count. B06 run 2 additionally raised tests from 7 to 10."
+    caveat: "B12d raised 9 anchor-offset findings against B06 run 1; substance was correct in every case and B06 run 2 corrected 18 anchors in total."
+
+gate_rule_tension:
+  rule: "prompts/00-orchestrator.md Section 4: 'If Verifier A finds any CRITICAL numerical finding, or any verifier's acceptance_rate falls below 60%, the synthesis verdict is REWORK regardless of company quality.'"
+  status: "UNRESOLVED BY THE ORCHESTRATOR, CARRIED TO THE OPERATOR"
+  facts:
+    - "No CRITICAL numerical finding survives. B12a run 2 emitted one; the orchestrator re-read Annual_Report_2026.pdf sheet 80 and cleared it, logged in outputs/final/verifier-disagreement-log.md. The standalone cash flow line reads 4,569.46 positive, as stage 3 reported."
+    - "B12b run 2 reports acceptance_rate 47, below the 60 floor. It also reports redflag_coverage 70, which is the metric Section 5 names for this verifier."
+    - "The verifier states its acceptance_rate follows the rubric literally with no credit for partial catches, and that the residual is dominated by a twelve-item MINOR tail of which the pipeline carries one. On CRITICAL and MAJOR items alone, 61% caught and 90% surfaced."
+    - "B05 run 3 subsequently closed the named CRITICAL evasion, three missed guidance and disclosure items, two under-weighted items, five minor items, and one arithmetic error, and corrected roughly 30 citation anchors. It was NOT re-audited: verifier B's independent flag list grew from 33 to 43 between its own two passes, so a third pass would measure a moving denominator rather than the pipeline's improvement."
+  operator_question: "Does the acceptance_rate floor bind here, forcing REWORK, or does redflag_coverage at 70 with 90% of thesis-weight flags surfaced satisfy the rule's intent? The rule exists to catch an analysis that cannot be trusted. This analysis's flags were all supported: pipeline_flags_not_supported is empty in both verifier B passes. The failure was coverage, it was diagnosed, and it was remediated across three stage-5 runs and two stage-6 runs. The orchestrator does not rule on this."
+  gate_recommendation_handling: "gate-recommendation.md must state this tension in full, name the verdict it would carry under each reading, and leave the ruling to the operator at Halt 1."
+
+interpretation:
+  band_effect: "overall 70 sits in the 60-74 band, so any PROCEED verdict downgrades one level."
+  note: "The binding constraint is redflag_coverage at 70, which is a measure of how much of the concall red-flag surface the pipeline reached, not a measure of company quality. framework_adherence at 95 and peer_utilisation at 100 are strong. numerical_acceptance at 75 is a conservative reading of a deliberately adversarial targeted pass."
+
+remediation_record:
+  - {stage: "stage 5", runs: 3, reason: "run 1 scoped to 3 of 4 transcripts under the input-contract cap; run 2 added the fourth plus cross-call reconciliation; run 3 closed the second audit's named residual gaps"}
+  - {stage: "stage 6", runs: 2, reason: "run 2 fixed 18 citation anchors, re-ruled Q5 from UNVERIFIABLE to CONTRADICTED, and added three peer tests"}
+  - {stage: "verifier A", runs: 2, reason: "run 1 self-declared it had not re-verified the notes-stage AR citations; run 2 targeted the twelve hardest figures"}
+  - {stage: "verifier B", runs: 2, reason: "run 1 measured 48% coverage against the pre-remediation artifacts; run 2 measured 70% against the remediated ones"}

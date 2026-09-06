@@ -1,0 +1,50 @@
+stage: B13-synthesis
+company: "CEIGALL"
+run_date: "2026-09-06"
+model: claude-opus-4-8
+status: complete
+mode: "PHASE 1 LITE. Stages 10 and 11 did not run. No valuation, destination PE, entry zone, MoS price, Hurdle verdict or BUY/WATCHLIST/AVOID decision exists in this phase."
+verdict: "PROCEED WITH CAVEATS"
+verdict_rule_applied: 3
+verdict_conditionality: "Conditional on the operator's ruling on the unresolved FLAG RULES gate question recorded in confidence.yaml and stated at the head of gate-recommendation.md. Under the strict reading of the acceptance_rate floor the verdict is REWORK. The orchestrator did not resolve it and stage 13 did not resolve it."
+flags_active:
+  - FLAG-PROMOTER
+  - FLAG-CASH
+  - FLAG-GATE0
+  - FLAG-CONCALL-SILENCE
+  - FLAG-DISCLOSURE-DECAY
+  - FLAG-CASHFLOW-NARRATIVE
+  - FLAG-RECONCILIATION
+  - FLAG-REPEATED-EVASION
+  - FLAG-FUNDING-CAPACITY
+  - FLAG-MISSTATEMENT
+  - FLAG-PEER-CONTRADICTION
+  - FLAG-PEER-RESOLVES-GAP
+  - FLAG-EMOAT-SPARSE
+  - FLAG-EMOAT-NETTED
+  - FLAG-HYBRID-VALUATION
+  - FLAG-PRERISK-RENEWABLES
+  - FLAG-TAM-SCOPE-NARROW
+  - FLAG-SOM-CAGR-SHORTFALL
+  - FLAG-AWARD-SLOWDOWN
+  - FLAG-CAPACITY-FINANCING
+  - FLAG-CITATION-CORRECTION
+confidence_delta: {numerical: 75, redflag: 70, framework: 95, peer: 100, overall: 70}
+cash_determination: "INDETERMINATE"
+cash_determination_basis: "The rating rationale, the document that normally separates STRUCTURAL from GROWTH-INDUCED, is absent from the corpus. Per the CLAUDE.md NEVER rule and the FLAG-CASH block, INDETERMINATE never silently resolves to PROCEED: it caps the verdict at PROCEED WITH CAVEATS with the missing evidence named."
+valuation_decision: ""
+entry_range: {low: 0, high: 0}
+headline: "Order book grows, group cash does not"
+falsification_metric: "H1 FY27 consolidated operating cash flow more negative than the FY26 full year minus Rs 91 cr, while Contract Assets plus RUSCA rise above 71 percent of trailing twelve month revenue"
+monitorables_count: 8
+publish_candidate: false
+publish_candidate_summary: ""
+files_written:
+  - "outputs/final/business-narrative.md"
+  - "outputs/final/gate-recommendation.md"
+  - "outputs/final/verifier-summary.md"
+notion_save:
+  page_title: "CEIGALL - Phase 1 evidence run, 2026-09-06"
+  summary: "PROCEED WITH CAVEATS, conditional on the operator's ruling on the unresolved FLAG RULES gate question (verifier B strict acceptance_rate 47 against redflag_coverage 70); REWORK under the strict reading. Phase 1 only: stages 10 and 11 did not run, so there is no valuation, entry zone, destination PE or Hurdle verdict. FLAG-CASH is INDETERMINATE with the rating rationale absent from the corpus, which caps the verdict. FLAG-PROMOTER is CONCERN. Gate 0 classifies AVOID at core 37/100 on a cash conversion deal-breaker. Overall confidence 70."
+  drive_link: "NOT FOUND"
+  mode: append-never-overwrite-status

@@ -1,0 +1,72 @@
+stage: B09b-dossier
+company: "INA"
+run_date: "2026-09-06"
+model: claude-sonnet-5
+status: complete
+corpus_verdict: "CORPUS GAPPED-FRESHNESS"
+corpus_gaps:
+  - document: "Q1FY27 results filing (QE 30-Jun-2026) and its concall transcript"
+    expected_source: "BSE / NSE corporate filings; company IR page"
+    kind: "freshness-pair"
+  - document: "Prospectus (IPO FY2022-23, BSE SME)"
+    expected_source: "BSE SME prospectus archive / company IR page"
+    kind: "findable-missing"
+  - document: "Credit rating rationale for FY2026 borrowing step-up"
+    expected_source: "rating agency site (CARE / CRISIL / ICRA / India Ratings)"
+    kind: "findable-missing"
+  - document: "SEBI shareholding-pattern filing (pledge trend, FII/DII split)"
+    expected_source: "BSE / NSE quarterly shareholding-pattern filing"
+    kind: "findable-missing"
+  - document: "Research / broker notes"
+    expected_source: "broker research, if any exists"
+    kind: "findable-missing"
+  - document: "Screener companion CSVs (Profit_Loss/Balance_Sheet/Cash_Flow/Quarters)"
+    expected_source: "collector re-run (known defect, not company-side)"
+    kind: "findable-missing"
+  - document: "Granular corporate-action filings (orders/JV/capex) beyond one thin Reg 30 letter"
+    expected_source: "BSE / NSE corporate announcements"
+    kind: "plausibly-nonexistent"
+  - document: "AR Notes 1-3, Material Accounting Policies text"
+    expected_source: "company IR page / BSE-NSE filed annual report (re-extraction)"
+    kind: "findable-missing"
+archetypes:
+  - line: "Module manufacturing and trading (98.9% of FY2026 revenue)"
+    archetype: "Commodity converter"
+  - line: "Sale of electricity (IPP / PM-KUSUM, 0.2% of FY2026 revenue)"
+    archetype: "Licence / scarcity business"
+transition:
+  - line: "Module manufacturing and trading"
+    from_tier: "R1 COMMODITY PRICE-TAKER"
+    to_tier: "R2 COST-ADVANTAGED CONVERTER"
+    engine: "Backward integration into cell manufacture (4.5GW TOPCon line, Narmadapuram) removing a bought-in cost that is ~78% of revenue"
+    proof_gate: "Narmadapuram cell line reaches commercial production on a date that holds, and group EBITDA margin moves visibly toward 20%+ within 2-3 quarters after commissioning, without the corresponding PAT margin falling on a like-for-like basis"
+    recognition_gap: "OPEN QUESTION: whether the market's current pricing of INA already reflects the claimed cell-integration margin uplift; resolved at Stage 11 via the Section 1B PE gap, no number stated here"
+    ugliness: "INDETERMINATE (not yet classified ARTIFACT-OF-CLIMB vs STRUCTURAL-FEATURE; evidence supports both reads, see Section 2 B5)"
+    transition_falsifier: "Cell line fails to reach commercial production within 12 further months of any of its three stated dates, OR margin does not move toward the guided range post-COD, OR the uplift arrives only via a PAT-to-EBITDA guidance-basis switch"
+  - line: "Sale of electricity (IPP / PM-KUSUM)"
+    from_tier: "R0 NON-OPERATING / pre-operating"
+    to_tier: "R1 COMMODITY PRICE-TAKER"
+    engine: "PM-KUSUM allotment commissioning from ~38-40MW toward the stated 400MW capacity build"
+    proof_gate: "Sale-of-electricity revenue line scales toward a run-rate consistent with commissioned MW x load factor x tariff, rather than staying near Rs 4-5cr for multiple quarters past stated commissioning dates"
+    recognition_gap: "OPEN QUESTION: not separately assessed for this near-zero-revenue line; folded into the overall Stage 11 PE-gap resolution"
+    ugliness: "ARTIFACT-OF-CLIMB candidate (pre-revenue build phase), not yet tested"
+    transition_falsifier: "Commissioning pace stays near the current ~38-40MW level for multiple further quarters with no revised date given"
+dominant_variables:
+  - "Narmadapuram 4.5GW cell line COD and post-COD margin trajectory (three internally inconsistent guided dates)"
+  - "Consolidated CFO/PAT and CFO/EBITDA ratios, and receivables aged beyond six months (39.5% FY26)"
+  - "Usable cell/module capacity as a share of nameplate (internally contested, 50-55% to 84-89% within one company)"
+  - "DCR cell-supply dependency (Emvee/Premier tie-up) and the ALMM Part 2/ALCM enforcement date (already deferred once)"
+business_falsifier: "The module/trading engine's cash-conversion problem proves structural rather than a one-year ramp (aged receivables continuing past 39.5% into FY2027, spreading to the parent's own book), combined with the Rs 1,654.01cr corporate guarantee structure (205% of net worth, 3.0x parent assets) crystallising against the listed parent"
+mental_model_status: "DRAFT - PENDING OPERATOR SIGN-OFF"
+fragility:
+  variable_count: 4
+  verifiability_ratio: "2 of 4 externally observable"
+  single_point_failure: "none - failure requires conjunction"
+  fragility_verdict: "FRAGILE"
+candidate_count: 7
+research_brief_items: 10
+plain_summary_points: 15
+annex:
+  present: true
+  questions_answered: 10
+  corpus_commit_hash: "1b59eddc18060027eb405351cb35950fbf6419f7"

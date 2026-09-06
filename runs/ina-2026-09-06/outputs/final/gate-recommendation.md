@@ -1,4 +1,4 @@
-# INA (Insolation Energy Ltd) — gate recommendation
+# INA (Insolation Energy Ltd) gate recommendation
 
 Run: ina-2026-09-06. Phase 1 (evidence stages 0 to 9 plus verifiers A to D). Stages 10 and 11 have not run. B10 and B11 do not exist. No valuation, no entry zone, no destination PE, no Hurdle verdict appears anywhere in this file. The investment decision is formed in phase 3. This is the gate decision on evidence alone.
 

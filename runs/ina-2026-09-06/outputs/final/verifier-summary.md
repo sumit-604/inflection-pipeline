@@ -1,4 +1,4 @@
-# INA (Insolation Energy Ltd) — verifier summary
+# INA (Insolation Energy Ltd) verifier summary
 
 Run: ina-2026-09-06. Phase 1. All four verifier findings tables, sorted CRITICAL first, then MAJOR, then MINOR, each with its location anchor. No commentary beyond what the verifiers wrote.
 
@@ -12,7 +12,7 @@ Run: ina-2026-09-06. Phase 1. All four verifier findings tables, sorted CRITICAL
 | peer_utilisation | B12d | claude-sonnet-5 | 91 | 82% | 0 | 2 | 2 |
 | **overall** | minimum of the four | | **42** | | **7** | **23** | **19** |
 
-Band: BELOW 60 — FORCED REWORK. Rule: prompts/00-orchestrator.md Section 5, overall below 60 forces REWORK. Second, independent trigger: Section 4, any verifier acceptance_rate below 60 percent forces REWORK; B12b sits below 60 on all three counting conventions.
+Band: BELOW 60. FORCED REWORK. Rule: prompts/00-orchestrator.md Section 5, overall below 60 forces REWORK. Second, independent trigger: Section 4, any verifier acceptance_rate below 60 percent forces REWORK; B12b sits below 60 on all three counting conventions.
 
 **Verifier C valuation half: PENDING PHASE 3.** rules_checked 0, fails 0. Stages 10 and 11 have not run, B10 and B11 do not exist, and the valuation framework documents were not loaded under phase 1 scope. Verifier C rules 4, 7, 11 and 12 were not evaluated. The 86 above covers Gate 0 (46 of 52 rules, 88.5 percent) and Emerging Moat (35 of 42 rules, 83.3 percent) only. It is not a whole pipeline score.
 

@@ -25,3 +25,56 @@ deferred to the end of the run.
 | 12c | verifier C framework (phase 1 scope) | claude-opus-4-8 | default | n/a | n/a | 118,538 | 8m43s | 1 |
 | 12b | verifier B red flags | claude-opus-4-8 | default | n/a | n/a | 350,100 | 18m04s | 1 |
 | 13 | synthesis-lite (3 files) | claude-opus-4-8 | default | n/a | n/a | 143,702 | 7m49s | 1 |
+| 09b | Halt 1 understanding dossier | claude-sonnet-5 | default | n/a | n/a | 221,301 | 13m07s | 1 |
+
+## SESSION CLOSE-OUT
+
+Total subagent tokens across 19 runs: 3,767,682. Stage 0 ran inline in the
+orchestrator session and reports no subagent metering, so it is absent from the
+ranking below.
+
+### (a) TOP FIVE BY TOKENS
+
+| rank | # | stage | runs | total_tok | share of run |
+|---|---|-------|------|-----------|--------------|
+| 1 | 3 | AR deep dive (8 phases) | 3 | 898,155 | 23.8% |
+| 2 | 12b | verifier B red flags | 1 | 350,100 | 9.3% |
+| 3 | 6 | peer concall verification (11) | 1 | 327,257 | 8.7% |
+| 4 | 12d | verifier D peer coverage | 1 | 243,053 | 6.5% |
+| 5 | 09b | Halt 1 understanding dossier | 1 | 221,301 | 5.9% |
+Stage 3 is 23.8% of the run on its own because it ran three times: the analysis
+pass, then a block-append, then a monitorables fix. Two of those three runs
+produced no new analysis. Each resume re-read the stage's own context, so the
+two schema-repair runs cost 658,377 tokens, 17.5% of the entire run, to add one
+YAML field and move a table into a block. That is the single largest avoidable
+cost here and it belongs in LESSONS_ARCHIVE.
+
+### (b) DOWNSHIFT FAILURES
+
+DOWNSHIFT FAILURE: stage 0 input validation. DISPATCH routes stage 0 to Haiku
+4.5 as a mechanical stage; it ran on the orchestrator session model (Opus 5).
+
+This is a designed conflict, not a routing accident: run-pipeline.md step 1
+instructs "VALIDATE (stage 0, do this yourself)", which puts stage 0 in the
+orchestrator session, where the session model governs and cannot be changed
+mid-session without busting the prompt cache. Recorded as a failure because the
+rule says to record it. The fix is a prompt decision for the operator: either
+route stage 0 to a haiku subagent, or amend DISPATCH to stop listing stage 0 as
+a haiku stage.
+
+Verifier A ran on claude-haiku-4-5 as routed. Stage 10 assembly does not run in
+phase 1.
+
+### (c) COST SPIKES
+
+None. This is the first pipeline run on INA, so no prior session-cost.md ledger
+exists for this ticker and the 1.5x test has no baseline.
+
+### (d) OPERATOR SNAPSHOT
+
+Keerti: run /cost and /usage now and paste the cache hit ratio and the loop
+totals below. The orchestrator cannot read those interactive commands.
+
+#### Operator snapshot
+
+(paste /cost and /usage output here)

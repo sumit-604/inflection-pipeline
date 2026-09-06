@@ -1,4 +1,4 @@
-# INA (Insolation Energy Ltd) — business narrative
+# INA (Insolation Energy Ltd) business narrative
 
 Run: ina-2026-09-06. Phase 1 (evidence stages 0 to 9 plus verifiers). No valuation has been run.
 

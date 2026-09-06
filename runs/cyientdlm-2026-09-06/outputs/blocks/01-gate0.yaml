@@ -1,0 +1,41 @@
+stage: B01-gate0
+company: "CYIENTDLM"
+run_date: "2026-09-06"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "prospectus ABSENT, priority HIGH: no pre-IPO restated financials; FY2023 capex and any pre-FY2023 comparatives not in corpus"
+  - "results ABSENT: quantitative base is screener-Data_Sheet.csv plus AR financial statements only"
+  - "rating ABSENT"
+  - "announcements ABSENT"
+  - "shareholding filing ABSENT but partly substituted from AR: promoter holding available FY2025 and FY2026 only, no 3-year trend, no pledge/encumbrance disclosure found"
+  - "research ABSENT"
+  - "screening PARTIAL: screener-Profit_Loss.csv, screener-Balance_Sheet.csv, screener-Cash_Flow.csv, screener-Quarters.csv header-only; screener-Data_Sheet.csv used as primary"
+  - "no peer/comparator dataset in corpus: M2, M5, M7, M9 scored 0 as PEER DATA NEEDED"
+flags:
+  - type: FLAG-GATE0
+    reason: "Classification AVOID (at or below AVERAGE). Historical depressors identified: Block B cash-generation collapse concentrated in FY2024 (CFO -Rs70.54cr) and FY2025 (CFO -Rs62.39cr), AR-attributed to working-capital investment behind large-deal execution and post-IPO capacity build, not margin or demand collapse. ROCE stuck near 11% FY24-26 against an 18% FY2022 pre-IPO peak outside the scored window. FY2026 PAT growth includes a one-off earn-out reversal (AR FY2025-26 p.27), inflating C2 and C4 growth scores."
+data_years: 4
+fy_range: "FY2023 to FY2026"
+blocks: {A: 5, B: 0, C: 14, D: 15, E: 9}
+core_score: 43
+moat_score: 4
+grand_total: 47
+moats_confirmed: 1
+moat_class: "THIN"
+classification: "AVOID"
+deal_breakers:
+  - "#4 cumulative CFO/PAT below 0.50 -> max AVERAGE (ratio = -0.11; driver years FY2024 CFO -Rs70.54cr and FY2025 CFO -Rs62.39cr)"
+  - "#1 Block A below 8 -> max GOOD (A=5, no incremental effect)"
+  - "#2 Block B below 8 -> max GOOD (B=0, no incremental effect)"
+history_downgrade: true
+data_notes:
+  - "ROCE used as company-disclosed (AR FY2025-26 p.27 consolidated KPI chart: FY22 18%, FY23 13%, FY24 11%, FY25 11%, FY26 11.4%), not independently computed, per source-provided-figure rule."
+  - "FY2023 capex NOT FOUND (no AR FY2023-24 in corpus); B2/B3 computed on matched 3-year window FY24-26 instead of 4."
+  - "B4/M12 WC days use company-disclosed 'Net Working Capital (Days)' KPI (AR FY2025-26 p.27: 48/79/127/145 FY23-26) rather than a formula rebuild, since Trade Payables were unavailable in screener-Data_Sheet.csv for all 4 years."
+  - "M9 gross-margin proxy = (Revenue - Material Cost)/Revenue, stated as proxy, not scored (no peer median)."
+  - "FY2026 reported PAT +7.6% YoY driven by reversal of one-off earn-out provisions (AR FY2025-26 p.27); normalized PAT declined 24% YoY. Affects credibility of C2 (PAT CAGR 32.2%) and C4."
+  - "E2 (promoter holding 3-yr change) and E3 (promoter pledge) both N/A, not in provided corpus; only FY2025 (52.16%, AR FY2024-25 p.150) and FY2026 (52.12%, AR FY2025-26 p.100-101) promoter % available."
+  - "No PAT loss-to-profit swing in window."
+block_b_trend: "improving - CFO swung from -Rs62.39cr (FY2025) to +Rs53.90cr (FY2026), a Rs116.29cr YoY swing, though cumulative FY2023-26 CFO remains -Rs25.07cr against cumulative PAT of +Rs234.29cr"
+analyst_note: "AVOID is mechanical, not a verdict on the business. Two forces drive it: Block B (0/20) is a cash-conversion failure entirely concentrated in FY24-25 working-capital build that the company's own AR ties to large-deal execution and post-IPO capacity investment, with FY26 CFO already recovering; and Block A shows ROCE anchored near 11% for three years running against an 18% FY22 pre-IPO peak that sits outside the declared 4-year scoring window, understating the true peak-to-trough decline. Growth and balance sheet blocks are genuinely solid. Four gaps need Phase 3 closure before this AVOID is trusted: promoter pledge status, promoter holding history beyond one year, any peer comparator set for the four PEER-DATA-NEEDED moat tests, and FY2023 capex. The FY2026 PAT beat is partly a one-off earn-out reversal, not organic; treat C2/C4 growth scores as optimistic."

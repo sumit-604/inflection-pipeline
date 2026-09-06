@@ -22,3 +22,4 @@ deferred to the end of the run.
 | 9 | TAM SAM SOM (web) | claude-sonnet-5 + web | default | n/a | n/a | 131,322 | 10m18s | 1 |
 | 12a | verifier A numerical | claude-haiku-4-5 | default | n/a | n/a | 95,756 | 3m19s | 1 |
 | 12d | verifier D peer coverage | claude-sonnet-5 | default | n/a | n/a | 243,053 | 6m54s | 1 |
+| 12c | verifier C framework (phase 1 scope) | claude-opus-4-8 | default | n/a | n/a | 118,538 | 8m43s | 1 |

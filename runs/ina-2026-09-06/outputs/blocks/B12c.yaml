@@ -1,0 +1,94 @@
+stage: B12c
+company: "INA"
+run_date: "2026-09-06"
+model: claude-opus-4-8
+status: complete
+scope: "PHASE 1 - Gate 0 (B01) and Emerging Moat (B07) only. Valuation audit deferred to phase 3."
+gate0:
+  rules_checked: 52
+  fails:
+    - "G5 FCF/capex definition: capex proxied from AR Note 4 gross-block additions plus change in CWIP instead of the cash-flow-statement PPE line the framework fixes. Disclosed in data_notes, forced by a PDF extraction defect."
+    - "G26 E2 promoter holding change: measured FY2024 to FY2026 (2 years) but labelled 'over 3 years'; substitution not recorded in data_notes. Score almost certainly unchanged, since dilution accumulates and a longer window still lands in the >3pp band."
+    - "G35 M7 regulatory/license: stage states ALMM listing requirements exist AND >10 listed module makers exist, which maps to the 'regulated but >10 players = 1' band, but scored 0. Recomputed moat score 16, grand total 70, moat count and classification unchanged."
+    - "G36 M8 distribution: stage asserts 'no distribution-network or outlet data disclosed' while B07 cites AR p.96 BRSR dealer count 93 to 82 and channel share 12.44% to 11.61% from the same AR. Score stays 0 on that data because the network is shrinking, so no score effect."
+    - "G45 Grand total maximum stated as 120 in the classification table; the correct maximum is 160 (100 core + 60 moat). B07 6C states 69/160 correctly, which exposes the B01 typo. Presentational."
+    - "G53 Anchor discipline (framework rule 4): Block F peer comparison table carries a collective basis line but no per-cell anchors, and three scoring inputs are unanchored inline - FY2022 EBITDA margin 6.45% (M1), FY2022 receivable days 27.98 (M10), FY2022-FY2025 selling and admin percentages (M11)."
+emoat:
+  rules_checked: 42
+  fails:
+    - "E13 Section 2C: framework requires implied incremental revenue expressed as % ABOVE current revenue. Stage names Rs 11,420cr as incremental then reports +428%, which subtracts 100 as if Rs 11,420cr were the total post-capex base. Correct value is 11,420/2,163.52 = +528%. Recomputed capex_embedded_growth_pct = 528."
+    - "E23 Section 5 scoring matrix: H1 raw score entered as '2 (LM)'. The framework matrix sets ML/LM = 1, not 2. On the stage's own label H1 adjusted is 0.7, not 1.4, and the total is 7.9 rounding to 8. Recomputed em_score = 8. Classification unchanged (both below the 12 floor)."
+    - "E6 Completionist recount stated as a prose paragraph rather than the prescribed line form 'documented recount performed: [n] documented items across [m] categories'. Both counts (1 item, 1 category) are present. Presentational."
+    - "E26 B1 carries a 1.0x documented multiplier although the stage's own summary table grades it 'documented (construction), claim (margin benefit)'. The impact half of the raw score rests on the claim-grade 400-500bps margin uplift. A blended or 0.7 treatment gives B1 2.1 and a total near 7.0. Classification unchanged."
+    - "E40 Block schema extended off-spec with capex_fy2026_cr and capex_fy2026_anchor. Useful and well anchored, but the framework specifies 'exactly this fenced YAML block'."
+    - "E42 evidence_mix {documented: 11, claim: 24, inference: 3} is not reconstructable from the report. No item tally is shown and no row anywhere is tagged as an analyst inference, so the inference count of 3 has no visible support. The completionist guard depends on this tally."
+    - "E47 FY2026 revenue basis differs from the injected B01 block: 2C uses Rs 2,163.52cr, B01 uses Rs 2,146.02cr. Neither states whether the figure is total income or revenue from operations. Affects the FAT in 2C. Existence of each figure is verifier A's ruling, not mine."
+valuation:
+  rules_checked: 0
+  fails: []
+  status: "PENDING PHASE 3 - stage 10 and stage 11 have not run; B10 and B11 do not exist; valuation framework docs not loaded per phase-1 scope. Verifier C rules 4, 7, 11 and 12 not evaluated."
+business_understanding_narrative:
+  present: false
+  five_questions_answered: false
+  prose_only: false
+  section6_candidates_named: 0
+  valuation_vocab_leak: false
+  fails: []
+  status: "NOT APPLICABLE IN PHASE 1 - stage 13 has not run. Not a fail, not a REWORK trigger. Deferred with the valuation audit."
+recomputed_destination_pe: ""    # not applicable in phase 1, no valuation stage has run
+recomputed_decision: ""          # concur: Gate 0 AVERAGE, Emerging Moat NONE, combined AVERAGE
+recomputed_values:
+  em_score: "reported 9, recomputed 8 (H1 matrix value, finding E23)"
+  capex_embedded_growth_pct: "reported 428, recomputed 528 (finding E13)"
+  gate0_core_score: "reported 54, concur"
+  gate0_moat_score: "reported 15, recomputed 16 under the M7 alternate reading (finding G35); moat count and classification unchanged either way"
+  gate0_classification: "reported AVERAGE, concur"
+  em_classification: "reported NO MEANINGFUL EMERGING MOAT, concur (8 and 9 both below the 12 floor)"
+findings:
+  - severity: "MAJOR"
+    location: "B07 Section 2C / block capex_embedded_growth_pct"
+    description: "Framework 2C requires implied incremental revenue expressed as % above current revenue. The stage names Rs 11,420cr as incremental, then reports +428%, treating that figure as the total post-capex base instead. Correct application gives 11,420/2,163.52 = +528%. The block field 428 travels downstream. The stage does flag the whole number as not credible and carries management's own +131% beside it, which contains the damage."
+  - severity: "MAJOR"
+    location: "B07 Section 5 scoring table, row H1 / block em_score"
+    description: "H1 raw score entered as '2 (LM)' against a framework matrix that sets ML/LM = 1. Label and number disagree. On the stage's own label the adjusted score is 0.7 and the total is 7.9, rounding to em_score 8 rather than 9. Classification is unchanged because both sit below the 12-point floor."
+  - severity: "MINOR"
+    location: "B01 formula definitions / Block B FCF"
+    description: "Capex proxied from AR Note 4 gross-block additions plus change in CWIP instead of the cash-flow-statement PPE and intangibles line the framework fixes. Forced by a PDF extraction defect, disclosed in data_notes, and no double count introduced. Recorded as a deviation from a fixed formula."
+  - severity: "MINOR"
+    location: "B01 Block E, E2"
+    description: "Promoter holding change measured over a 2-year window (FY2024 to FY2026) but labelled 'over 3 years', and the substitution is absent from data_notes while every comparable substitution in this stage was recorded. Score is almost certainly unaffected: dilution accumulates, so a true 3-year window still lands in the '>3pp decrease = 0' band."
+  - severity: "MINOR"
+    location: "B01 Block F, M7"
+    description: "The stage states that ALMM listing requirements apply and that more than 10 listed module makers exist. Those two facts map to the framework's 'regulated but >10 players = 1' band, but M7 was scored 0. Defensible on the category's intent. Cost is 1 point: moat score 16, grand total 70, moat count 4 and moat class STRONG unchanged."
+  - severity: "MINOR"
+    location: "B01 Block F, M8"
+    description: "Stage asserts 'no distribution-network or outlet data disclosed' and scores 0. B07 cites AR p.96 BRSR for a dealer/distributor count (93 to 82) and channel sales share (12.44% to 11.61%) from the same annual report. The M8 bands were therefore not tested against available data. Score stays 0 because the network is shrinking. Whether the p.96 disclosure exists is verifier A's ruling."
+  - severity: "MINOR"
+    location: "B01 classification table, Grand Total row"
+    description: "Grand total maximum stated as 120. The correct maximum is 160 (100 core plus 60 moat). B07 Section 6C states 69/160 correctly. Presentational, no score effect."
+  - severity: "MINOR"
+    location: "B01 Block F peer table and moat scoring inputs"
+    description: "Framework rule 4 requires an anchor on every extracted number. The peer comparison table carries a collective basis line but no per-cell anchors, and three figures used in scoring carry no inline anchor: FY2022 EBITDA margin 6.45% (M1), FY2022 receivable days 27.98 (M10), FY2022-FY2025 selling and admin percentages (M11). Source file named in the anchor index. Existence is verifier A's ruling."
+  - severity: "MINOR"
+    location: "B07 Section 3 completionist recount"
+    description: "Recount stated as a prose paragraph rather than the prescribed line form. Both required counts (1 documented item, 1 category) are present, and the guard's 12-category trigger is not reached. Presentational."
+  - severity: "MINOR"
+    location: "B07 Section 5, row B1 multiplier"
+    description: "B1 carries a 1.0x documented multiplier while the stage's own summary table grades it 'documented (construction), claim (margin benefit)'. The impact half of the raw score rests on the claim-grade 400-500bps margin uplift, so a full documented multiplier credits a claim at documented weight. Blended or 0.7 treatment gives B1 2.1 and a total near 7.0. Classification unchanged."
+  - severity: "MINOR"
+    location: "B07 block schema"
+    description: "Two fields added off-schema, capex_fy2026_cr and capex_fy2026_anchor, against a framework instruction to end with exactly the prescribed block. The addition is useful and well anchored, but a schema-strict downstream parser will not expect it."
+  - severity: "MINOR"
+    location: "B07 block evidence_mix"
+    description: "evidence_mix {documented: 11, claim: 24, inference: 3} cannot be reconstructed from the report body. No item-by-item tally is shown, and no row anywhere in the report is tagged as an analyst inference, so the inference count of 3 has no visible support. The completionist guard depends on this tally being honest."
+  - severity: "MINOR"
+    location: "B07 Section 2C vs B01 Block C, FY2026 revenue basis"
+    description: "2C uses FY2026 revenue of Rs 2,163.52cr while B01 uses Rs 2,146.02cr for the same year, and neither stage states whether its figure is total income or revenue from operations. Affects the fixed asset turnover in 2C (4.57x vs 4.53x) and therefore the 2C output. Conclusion unchanged. Which figure sits in which document is verifier A's ruling, not mine."
+critical_count: 0
+major_count: 2
+minor_count: 11
+acceptance_rate: 86        # 81 rules passed of 94 checked, Gate 0 + Emerging Moat only
+framework_adherence: 86    # PARTIAL SCORE. Gate 0 88.5% (46/52) + Emerging Moat 83.3% (35/42).
+                           # Valuation portion PENDING PHASE 3 and excluded from this figure.
+                           # Not a whole-pipeline score.
+rework_triggered: false    # zero CRITICAL findings; acceptance well above the 60% floor

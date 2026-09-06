@@ -1,0 +1,53 @@
+stage: B06-peers
+company: "CYIENTDLM"
+run_date: "2026-09-06"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - "Q7 (NWC/cash-conversion trend) CONTRADICTED: two of three peers show improving NWC and positive, growing OCF through FY25-27 at 27-46% YoY revenue growth; the one peer with deteriorating cash conversion (Kaynes) isolates it to a named non-core government-receivables subsidiary, with core EMS improving. Favours STRUCTURAL over GROWTH-INDUCED classification for the Gate 0 cash-conversion deal-breaker."
+  - "Q5 AI-data-centre margin claim: comparable peer (Syrma) explicitly declines to attach a margin mechanism to the same vertical when asked; the CYIENTDLM unhedged claim is an outlier relative to peer practice."
+  - "Q2 order-book growth 35-40% benchmark not representative of the peer set (range about 23% to 50% across three peers); two of three peers grow order book below that band."
+peers_provided: 3
+verified:
+  - {claim: "About 50% US tariff exposure with customer-level mitigation, FY26", peers: ["AVALON", "SYRMA"], anchor_count: 6}
+  - {claim: "Memory and component shortage and extended lead times, Jan-Jun 2026 window", peers: ["KAYNES", "SYRMA", "AVALON"], anchor_count: 5}
+partially_verified:
+  - {claim: "Peer order-book or order-intake growth of 35-40% YoY as a parity benchmark", peers: ["AVALON", "KAYNES", "SYRMA"]}
+  - {claim: "AI-data-centre or robotics vertical entry with a margin premium claim", peers: ["SYRMA"]}
+  - {claim: "Aerospace and defence entry barriers as a durable moat", peers: ["SYRMA", "AVALON"]}
+contradicted:
+  - {claim: "NWC and cash-conversion-cycle deterioration is sector-wide or growth-induced (FY25-27)", contradicting_peer: "AVALON; SYRMA", quote_anchor: "AVALON Q4 FY26 call (May-2026) p.2 NWC 112 days against 124 days FY25, OCF INR57cr against INR25cr; SYRMA Q4 FY26 call (Jun-2026) p.4 NWC 63 days against 69 days FY25, OCF INR290cr equal to 53% of EBITDA"}
+unverifiable:
+  - {claim: "Global EMS TAM about $650bn (2025) to about $1.1tn (2033), about 6% CAGR", peers_checked: ["AVALON", "KAYNES", "SYRMA"]}
+peer_coverage_map:
+  - {peer: "AVALON", quarter: "Q2 FY26 (Nov-2025)", usage: "SUBSTANTIVE", contribution: "Tariff quantification baseline (50 rates, 99% recovery); NWC and OCF starting point"}
+  - {peer: "AVALON", quarter: "Q3 FY26 (Feb-2026)", usage: "SUBSTANTIVE", contribution: "Tariff cut 50% to 18%, optical margin math; NWC 32-day YoY improvement"}
+  - {peer: "AVALON", quarter: "Q4/FY26 (May-2026)", usage: "SUBSTANTIVE", contribution: "Full-year NWC and OCF trend beating guidance; FY26 revenue +46% against CYIENTDLM -17%"}
+  - {peer: "AVALON", quarter: "Q1 FY27 (Aug-2026)", usage: "SUBSTANTIVE", contribution: "Memory-exposure quote; data-centre cross-read; NWC 25-day YoY improvement"}
+  - {peer: "KAYNES", quarter: "Business update (Dec-2025)", usage: "SUBSTANTIVE", contribution: "NWC methodology dispute against short-seller report; governance-risk cross-read"}
+  - {peer: "KAYNES", quarter: "Q3 FY26 (Feb-2026)", usage: "SUBSTANTIVE", contribution: "Order book about 50% YoY growth outlier; 9M OCF -INR55cr"}
+  - {peer: "KAYNES", quarter: "Q4/FY26 (May-2026)", usage: "SUBSTANTIVE", contribution: "Core EMS NWC improvement (83 to 53 days) isolated from metering-driven consolidated OCF -INR600cr"}
+  - {peer: "KAYNES", quarter: "Q1 FY27 (Aug-2026)", usage: "SUBSTANTIVE", contribution: "West Asia conflict named as disruption cause matching the CYIENTDLM excuse; PCB and component shortage detail"}
+  - {peer: "SYRMA", quarter: "Q2 FY26 (Nov-2025)", usage: "SUBSTANTIVE", contribution: "Tariff exposure percentage, tariff and rare-earth inventory build; defence entry-barrier rationale"}
+  - {peer: "SYRMA", quarter: "Q3 FY26 (Feb-2026)", usage: "SUBSTANTIVE", contribution: "NWC improvement ex-Elcome; defence margin and gestation detail; L&T competitive-intensity flag"}
+  - {peer: "SYRMA", quarter: "Q4/FY26 (Jun-2026)", usage: "SUBSTANTIVE", contribution: "Full-year NWC 11-day YoY improvement; OCF INR290cr equal to 53% of EBITDA"}
+  - {peer: "SYRMA", quarter: "Q1 FY27 (Aug-2026)", usage: "SUBSTANTIVE", contribution: "Explicit memory-price pass-through discussion; deliberate strategic-inventory NWC uptick explained; AI-data-centre and semiconductor-shortage link"}
+peer_utilisation_summary:
+  peers_provided: 3
+  peers_substantive: 3
+  transcripts_provided: 12
+  transcripts_substantive: 12
+industry_cross_read:
+  demand: "All three peers report broad-based, robust demand with no slowdown, yet all three GREW revenue 27-46% YoY in FY26 while CYIENTDLM consolidated revenue FELL 17.0% over the same period, pointing to execution or company-specific issues rather than demand."
+  pricing_inputs: "All three peers run near-complete cost pass-through with a lag; absolute margins protected even as percentage margins are optically compressed by tariff and component gross-up (Avalon about 100-110bps; Syrma explains the mechanic explicitly)."
+  capex_cycle: "Industry-wide capacity race, not a lone expander: Avalon (new Chennai plant plus land bank), Kaynes (OSAT and PCB, INR1,200cr plus), Syrma (INR800cr plus PCB plant plus Bangalore, Pune and Jodhpur expansion), all co-funded by ECMS, PLI and ISM 2.0 government schemes."
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "Governance and disclosure-control risk (Kaynes short-seller and forensic accounting episode, Dec-2025 call). A risk class absent from the CYIENTDLM record."
+  - "New-entrant competitive intensity from large conglomerates, for example L&T INR50bn EMS capex (SYRMA Q4 FY26 call, Jun-2026, p.15)"
+  - "AI-data-centre demand competing for semiconductor supply as a distinct driver of the current chip shortage (SYRMA Q1 FY27 call, Aug-2026, p.15)"
+  - "Government-tender and long-cycle receivable risk in adjacent business lines as a risk category distinct from core EMS execution risk (KAYNES, multiple calls)"
+  - "Rare-earth-specific input constraints distinct from general component shortages (SYRMA Q2 FY26 call, Nov-2025, p.5)"
+net_narrative_effect: "complicates"
+analyst_note: "Q7 is the load-bearing finding: peer evidence directly undercuts a growth-induced or industry-wide reading of the CYIENTDLM cash-conversion deterioration. Two of three peers show the opposite trend at similar or higher growth rates; the one peer with real deterioration isolates it to a named non-EMS, government-receivables subsidiary. This should push the Gate 0 FLAG-CASH determination toward STRUCTURAL, not GROWTH-INDUCED, pending Halt 1 review of the CYIENTDLM customer and payment-term mix (aerospace and defence government programmes against private OEM contracts), which this stage could not verify from peer transcripts alone."

@@ -1,0 +1,71 @@
+stage: B09-tam
+company: "CYIENTDLM"
+run_date: "2026-09-06"
+model: claude-sonnet-5
+status: partial
+status_reason: "No domain blocks were hit, but India EMS market-size sources diverge by over 80% and the SAM filters required analyst judgment calls on segment share. Flagged rather than treated as clean."
+input_gaps:
+  - "prospectus ABSENT priority HIGH"
+  - "results ABSENT"
+  - "rating ABSENT"
+  - "announcements ABSENT"
+  - "shareholding filing ABSENT but partly substituted from the AR"
+  - "research ABSENT (no broker notes; no independent third-party market sizing in corpus, web search was the only route)"
+  - "screening PARTIAL"
+  - "current share price and P/E NOT supplied to this stage, so the Section 5E valuation-implication line could not be completed with a multiple. Formal gap for stage 11."
+  - "FY24 baseline revenue not isolated in the injected extracts, so multi-year company CAGR against TAM could not be computed"
+flags:
+  - "AR internal inconsistency: the p.6 infographic states Industrial 27% and Medical 19% of FY26 mix, while MD&A prose (p.51) states Industrial about 30% and MedTech about 15%. Infographic figures used, per the stage 4 precedent."
+  - "Management's $650bn global EMS TAM claim (Q4 FY26 concall p.5; Q1 FY27 concall p.4) is roughly consistent with independent third-party estimates on its own terms, but it is the WRONG DENOMINATOR for this company. The ratio to the conservative TAM is about 70x. Read as inflated purely on scope mismatch: a global all-segment TAM against an India-manufactured, certified, four-vertical niche."
+  - "The AR is internally inconsistent on the global EMS TAM terminal year: the concalls and deck say 2033, the AR MD&A (p.51) says 2034, for the same $648-650bn to $1.1 trillion claim."
+  - "SAM filter percentages (product, geography, channel and capability multipliers) are analyst judgment calls anchored to disclosed facts, not independently sourced third-party splits. Treat SAM and SOM as DIRECTIONAL."
+  - "The 5-year SOM (Rs2,772cr) exceeds the roughly Rs2,194cr ceiling implied by AR-disclosed 55-60% capacity utilisation (p.52) by about Rs578cr, roughly 26%. It contradicts management's no-additional-capex-beyond-1-2%-of-revenue framing at that horizon. SOM is the mildly optimistic side at 5 years, though not at 3 years."
+  - "India EMS market-size estimates diverge sharply across independent sources (Mordor $35.4bn against P&S and the AR at $65bn for 2025, an spread above 80%). Triangulation confidence held at MEDIUM and the conservative-bias rule applied: the lowest defensible top-down variant (method 5, Rs88,000cr) is the TAM anchor rather than an average of the spread."
+market_definition: "India and US-manufactured, certified (AS9100 / NADCAP / ITAR / ISO13485 / IATF16949) high-mix low-volume EMS for Aerospace and Defence, Industrial, MedTech and Automotive OEMs. Excludes consumer electronics, high-volume commodity assembly, and the unquantified AI-data-centre and robotics optionality."
+tam_cr: {conservative: 88000, realistic: 220700}
+sam_cr: 21600
+sam_pct_of_tam: 24.6
+som_3yr_cr: 2053
+som_5yr_cr: 2772
+som_implied_revenue_cagr: {yr3: 17.6, yr5: 17.1}
+current_sam_share_pct: 5.84
+revenue_headroom_x: 17.1
+tam_growth_pct: 9
+runway_class: "STRONG"
+mgmt_claim_cr: 6131671
+mgmt_claim_ratio: 69.7
+mgmt_claim_read: "inflated"
+capacity_check: "3-year SOM sits within the roughly Rs2,194cr ceiling implied by 55-60% utilisation (AR FY2025-26, p.52). 5-year SOM exceeds it by about Rs578cr, roughly 26%, so SOM is the optimistic side at the 5-year horizon."
+methods_used:
+  - "top-down: global relevant-vertical (36% filter on the AR-cited $648bn global EMS)"
+  - "top-down: India total EMS times a 36% relevant-vertical filter (two anchors: KPMG conservative, AR and P&S realistic)"
+  - "top-down: vertical-by-vertical build (India 4% global-EMS share times AR and web-search global vertical sizes)"
+  - "peer revenue aggregation plus a 30% unorganised-sector markup (a current-capture cross-check, not TAM)"
+  - "global benchmark (India's stated 4% share of global EMS times a 36% relevant-vertical filter)"
+stale_data_flags: []
+searches_performed:
+  - "global EMS market size 2025 2033 billion CAGR electronics manufacturing services"
+  - "India EMS market size 2025 2030 billion CAGR electronics manufacturing services"
+  - "aerospace and defense EMS market size global 2025 billion"
+  - "Kaynes Technology Avalon Technologies Syrma SGS revenue FY26 annual"
+  - "Kaynes Technology FY26 annual revenue crore full year results"
+  - "Avalon Technologies FY26 annual revenue crore full year results"
+  - "India aerospace defence electronics manufacturing market size ITAR certified EMS companies"
+  - "India unorganised electronics manufacturing services market share percent"
+  - "medical device contract manufacturing EMS market size global 2025 billion"
+  - "high reliability high-mix low-volume EMS segment share of total EMS market percent"
+  - "India ESDM market size 2025 IESA ELCINA electronics manufacturing crore"
+  - "EMS market by end-use industry segment share percentage consumer industrial automotive aerospace medical 2025"
+  - "USD INR exchange rate March 2026"
+searches_skipped: []
+downstream_candidates:
+  - {signal: "BEL (Bharat Electronics Ltd) repeat orders for Indian Navy and MoD", entity_type: "end-customer", demand_link: "Repeat-order timing tracks MoD budget release; a direct A&D-vertical revenue driver", likely_source: "BEL corporate announcements; MoD Press Information Bureau releases", cadence: "event-driven", shared: false}
+  - {signal: "India MoD modernisation programme and defence budget allocation", entity_type: "regulatory", demand_link: "Defence budget and indigenisation targets directly set the defence-vertical order pool size", likely_source: "Union Budget defence allocation; MoD Annual Report; PIB", cadence: "event-driven", shared: false}
+  - {signal: "MeitY PLI (electronic components) and ECMS scheme disbursement", entity_type: "regulatory", demand_link: "Government capital sized at the ESDM ecosystem the company operates inside", likely_source: "MeitY official notifications; PIB", cadence: "event-driven", shared: false}
+  - {signal: "Honeywell Aerospace", entity_type: "end-customer", demand_link: "Named anchor account; the ramp-up is explicitly expected to drive growth over the next 18 months", likely_source: "Honeywell Aerospace 10-K and 10-Q and investor disclosures on outsourcing and supply chain", cadence: "quarterly", shared: false}
+  - {signal: "Thales", entity_type: "end-customer", demand_link: "Named European defence anchor; order flow tracks European defence budget expansion", likely_source: "Thales Group financial disclosures", cadence: "quarterly", shared: true}
+  - {signal: "EU ReArm Europe initiative (EUR 800bn)", entity_type: "macro", demand_link: "Cited as driving European defence-electronics procurement feeding the European A&D pipeline", likely_source: "European Commission and European Defence Agency publications", cadence: "event-driven", shared: true}
+  - {signal: "US CHIPS Act and semiconductor capital equipment OEM customers", entity_type: "macro", demand_link: "CHIPS Act investment catalyses US semiconductor capacity build-out, driving semiconductor capital equipment subsystem orders", likely_source: "US Department of Commerce CHIPS Program Office; semiconductor-equipment OEM investor disclosures", cadence: "event-driven", shared: false}
+demand_externally_verifiable: true
+analyst_note: "FX fixed at the AR's own year-end rate (1 USD = INR 94.3334, p.47) throughout, which slightly inflates USD-to-INR conversions against a lower average rate. Flagged, not hidden. The SAM filter multipliers (0.65, 0.70, 0.60, 0.90) are reasoned judgment anchored to disclosed certifications, footprint and capacity, not sourced third-party splits, so treat SAM and SOM as directional. The India EMS market-size literature disagrees by over 80% across named sources (Mordor $35.4bn against P&S and the AR at $65bn for 2025); the conservative-bias rule was used to select the lowest defensible top-down variant (method 5, Rs88,000cr) as the TAM anchor rather than averaging the spread away. Management's $650bn global EMS claim roughly matches independent estimates on its own terms but is the wrong denominator for this company. Using it as the opportunity for a certified, India-and-US, four-vertical niche is the TAM-washing pattern this framework exists to catch."
+orchestrator_note: "LESSONS Amendment 14 fade guard is LIVE for phase 3. The SOM-implied revenue CAGR is 17.6% at 3 years and 17.1% at 5 years, materially above the automatic fade-to-10% that a MODEST emerging-moat classification (B07 em_score 21) would otherwise apply. Per the ENTERO 2026-08-30 open action, flag the fade for operator ruling at stage 11 rather than applying it silently."

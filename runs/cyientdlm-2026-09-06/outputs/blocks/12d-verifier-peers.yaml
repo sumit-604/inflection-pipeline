@@ -1,0 +1,35 @@
+stage: B12d
+company: "CYIENTDLM"
+run_date: "2026-09-06"
+model: claude-sonnet-5
+status: complete
+peers_audited: 3
+substantive_confirmed: 3
+substantive_unsupported: []
+unused_but_relevant: []
+claims_all_addressed: true
+verdict_discipline_fails: []
+peer_utilisation: 100
+peer_utilisation_basis: "3 of 3 peers used substantively; 12 of 12 provided transcripts used substantively, confirmed independently against the transcripts rather than against the B06 self-assessment"
+citations_checked: 45
+peer_coverage_map:
+  AVALON: {calls: 4, substantive: 4, cited_only: 0, unused: 0, anchor_precision: "exact on every citation checked"}
+  KAYNES: {calls: 4, substantive: 4, cited_only: 0, unused: 0, anchor_precision: "exact on most citations; 3 instances off by 1-2 pages"}
+  SYRMA: {calls: 4, substantive: 4, cited_only: 0, unused: 0, anchor_precision: "exact on most citations; 6 instances off by 1-3 pages"}
+findings:
+  - {severity: "MINOR", location: "B06 Part 1 Q7 / KAYNES Q4 FY26 citation", description: "The 122 days for FY26 NWC figure is cited as p.2; the actual location is p.4, in the same paragraph as the correctly cited 83 to 53 day core-EMS figure."}
+  - {severity: "MINOR", location: "B06 Part 1 Q4 / KAYNES Q1 FY27 citation", description: "The phrase 6 to 8 months even for order booking is folded into a p.14-15 citation range with the 30-35% price-rise quote; the order-booking phrase actually appears on p.5 of the same call, in a different discussion."}
+  - {severity: "MINOR", location: "B06 Part 3 map / KAYNES Q1 FY27 citation", description: "Receivables to INR1,925 crores cited p.14; actual location p.13."}
+  - {severity: "MINOR", location: "B06 Part 1 Q3 / SYRMA Q2 FY26 citations", description: "The tariff-exposure quote (5-6% of revenue) and the last ball is yet to be born quote are both cited p.6; both are actually on printed p.7."}
+  - {severity: "MINOR", location: "B06 Part 1 Q6 / SYRMA Q3 FY26 citation", description: "The gestation period is pretty long, lumpy quote cited p.12; actual location p.11."}
+  - {severity: "MINOR", location: "B06 Part 2A and Part 1 Q7 / SYRMA Q4 FY26 citations", description: "FY26 revenue +27% cited p.5 (actual p.4); OCF INR290cr and the 63-58 day NWC cited p.4 (actual p.5). The slips run in opposite directions within the same transcript."}
+  - {severity: "MINOR", location: "B06 Part 1 Q1 / SYRMA Q4 FY26 citations", description: "The $1 billion company, Jabil, $20bn/$25bn and the $600 million addressable-market quotes are both cited p.14; actual location p.13."}
+  - {severity: "MINOR", location: "B06 Part 2D / SYRMA Q4 FY26 citation", description: "The L&T INR50bn EMS capex competitive-threat flag cited p.15; actual location p.12. The largest single page gap found, 3 pages."}
+  - {severity: "MINOR", location: "B06 Part 1 Q7 / SYRMA Q1 FY27 citations", description: "The NWC-to-71-days and net-cash-INR122cr figures are both cited p.5; actual location p.6."}
+critical_count: 0
+major_count: 0
+minor_count: 9
+acceptance_rate: 100
+root_cause_note: "All nine findings share one mechanical cause and none touches content. The KAYNES and SYRMA transcript PDFs carry a filing cover page, so the PRINTED footer page number runs one or more behind the RAW PDF page number. The pipeline's page-marked text extraction stamps the RAW PDF page, and stage 6 anchored to that. The content is correct in every case and sits within the same call, a page or two from the cited location. Zero fabrications, zero misattributions, zero content errors across 45-plus discrete citations checked."
+orchestrator_note: "Recorded for LESSONS. The page-marked pre-extraction stamps the raw PDF page index. Where a source PDF carries a cover page, the printed footer page and the raw page diverge by a constant offset, and an anchor is ambiguous unless it says which convention it uses. This is a pipeline-wide anchoring convention issue, not a CYIENTDLM issue, and it costs verifier time on every run that uses pre-extracted text. Candidate for /compost to promote into the extraction step or the anchor rule."
+analyst_note: "Verdict discipline held throughout. No VERIFIED claim rests on a single peer anchor, no verdict was upgraded from peer silence, and no question in the injected list was skipped. No missed peer evidence was found that would have changed or strengthened an answer."

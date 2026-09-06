@@ -18,3 +18,4 @@ stage returns and committed with that stage.
 | 4 | business model decoder | claude-sonnet-5 | default | n/a | n/a | 155052 | 7m30s | 1 |
 | 9 | TAM SAM SOM market sizing | claude-sonnet-5 | default | n/a | n/a | 208001 | 12m54s | 1 |
 | 12a | verifier A numerical audit | claude-haiku-4-5 | default | n/a | n/a | 84244 | 3m21s | 1 |
+| 12d | verifier D peer coverage | claude-sonnet-5 | default | n/a | n/a | 329374 | 6m26s | 1 |

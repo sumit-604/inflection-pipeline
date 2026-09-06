@@ -1,0 +1,30 @@
+stage: B12a
+company: "INA"
+run_date: "2026-09-06"
+model: claude-haiku-4-5
+status: complete
+numbers_checked: 18
+findings:
+  - severity: MAJOR
+    location: "Stage 0, Section 1, Priority Question 1; carried through stage 1"
+    claimed: "FY2026 Consolidated PAT Rs 200.22 Cr (screener-derived)"
+    source_truth: "FY2026 Consolidated PAT Rs 200.63 Cr (AR Consolidated P&L p.117, 'Profit for the year' line = Rs 20,063.15 Lakh)"
+    note: "Screener-Data_Sheet.csv carries Rs 200.22 Cr; AR Consolidated Statement of Profit and Loss carries Rs 200.63 Cr. The 0.41 Cr (~0.2%) discrepancy is immaterial in magnitude but indicates CSV/AR consolidation or extraction basis difference. Stage 3 correctly cites both AR figures (200.63 and 200.47 for TCI). Impact: CFO/PAT cash-conversion metric changes negligibly, but the stage-0 cash-conversion question rests on an inconsistent baseline."
+    source_fidelity: true
+  - severity: MAJOR
+    location: "Stage 1 (B01) line 155 capex table vs Stage 3 (B03) line 283-284"
+    claimed: "FY2026 Consolidated Capex Rs 430.63 Cr (Note 4 additions per p.119) vs Rs 448.05 Cr (CFS purchase of PPE per p.118)"
+    source_truth: "Both figures exist in AR but represent different items: (a) Rs 43,063.31 Lakh = Rs 430.63 Cr appears in PPE note tangible-asset 'additions' line (consolidated or standalone basis unclear in extraction); (b) Rs 44,804.75 Lakh = Rs 448.05 Cr appears in Consolidated CFS 'Purchase of Property, Plant & Equipment' line (investing activities, p.118). Difference of Rs 17.42 Cr likely represents scope or timing difference (tangible additions ex-CWIP/intangibles vs cash purchase including all PPE categories)."
+    note: "No single 'consolidated capex' figure verified in one reconciled line. Stage 1 uses Note 4 path (430.63 + CWIP 20.05 = 450.68 Cr total proxy); Stage 3 references CFS (448.05 Cr). Both are sourced from AR but neither is explicitly certified as 'consolidated capex' by the reports. Downstream valuation / FTTCP must clarify which series governs."
+    source_fidelity: true
+  - severity: MINOR
+    location: "Stage 3, Phase 1D (CARO clause iii vs Note 42(i) inconsistency discussion)"
+    claimed: "Corporate Guarantee Rs 1,654.01 Cr does not reconcile with CARO Rs 15.78 Cr (1,577.72 Lakh)"
+    source_truth: "Both figures are correct in their respective consolidation scopes: Consolidated Note 42(i) p.137 = Rs 1,65,401.00 Lakh = Rs 1,654.01 Cr (group/consolidated total guarantee). Standalone CARO (iii) p.156 = Rs 1,577.72 Lakh = Rs 15.78 Cr (parent-only direct guarantee of subsidiary credit). The difference (Rs 1,638.23 Cr) represents subsidiary-given guarantees and reverse guarantees, disclosed separately as 'counter-guarantee' (Note 42(ii)) and internal guarantee flows. Not a discrepancy; a legitimate component allocation across consolidated boundaries."
+    note: "No error; both numbers are factually correct and traceable to AR. Stage 3 flags the non-reconciliation as a three-way conflict (Note 4, Note 18A, CARO), which is valid flag-raising on internal consistency but does not indicate a number is false. The guarantees structure is complex and multi-directional (parent→subsidiary, subsidiary→parent, parent→external); consolidated total is Rs 1,654.01 Cr and is the material figure for analysis."
+    source_fidelity: false
+critical_count: 0
+major_count: 2
+minor_count: 1
+acceptance_rate: 83
+coverage_note: "18 material claims across verdict-card inputs, Section 1B pillars, and key financial metrics checked. Primary focus: 3 named conflicts (PAT, capex, guarantees) + 15 supporting figures (revenue, CFO, receivables, inventory, borrowings, depreciation, interest, PPE, CWIP, EPS, deferred tax). All material non-conflict figures verified to the rupee or within <1% tolerance. Screener discrepancy on PAT and capex basis ambiguity (consolidated vs standalone in extraction) are the only gaps; both are resolvable by clarifying CSV basis or re-reading the consolidated PPE note. No numbers are fabricated, no anchor-not-found errors, no material unanchored figures."

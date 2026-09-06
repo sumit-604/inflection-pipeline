@@ -20,3 +20,4 @@ deferred to the end of the run.
 | 6 | peer concall verification (11) | claude-sonnet-5 | default | n/a | n/a | 327,257 | 10m57s | 1 |
 | 7 | emerging moat 22-category scan | claude-sonnet-5 | default | n/a | n/a | 195,140 | 11m45s | 1 |
 | 9 | TAM SAM SOM (web) | claude-sonnet-5 + web | default | n/a | n/a | 131,322 | 10m18s | 1 |
+| 12a | verifier A numerical | claude-haiku-4-5 | default | n/a | n/a | 95,756 | 3m19s | 1 |

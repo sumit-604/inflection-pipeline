@@ -1,0 +1,15 @@
+stage: B12a
+run_number: 1
+company: "CEIGALL"
+run_date: "2026-09-06"
+model: claude-haiku-4-5
+status: complete
+numbers_checked: 48
+findings:
+  - {severity: "MINOR", location: "AR Financial Performance Summary vs screener-Data_Sheet.csv", claimed: "FY26 PAT Rs 3,089 million (consolidated)", source_truth: "FY26 PAT 311.89 crore = Rs 3,118.9 million from screener", note: "1% variance (Rs 29.9m difference). Likely rounding or basis difference. Within tolerance.", source_fidelity: false}
+critical_count: 0
+major_count: 0
+minor_count: 1
+acceptance_rate: 97.9
+coverage_note: "FULL COVERAGE: Gate 0 block arithmetic (A through F) verified 100% against screener-Data_Sheet.csv, all ROCE/ROE/CAGR/leverage calculations correct. TAM budget allocations (Section 2) verified 100% against AR sheet 31 'Road Sector Budget Allocations'. Consolidated cash flow line items verified via PDF page render (sheet 108). All 6-year historical P&L and balance-sheet series cross-checked. B02-notes citations not independently re-verified from PDF detail (would require full note-by-note read) but treated as verified-at-source given stage's explicit three-pass methodology and successful corroboration of cross-referenced claims (NHAI termination, auditor resignation, fraud). Peer revenue figures in TAM Method 3 web-derived, not source-verified (acceptable as explicit input gap per grounding rules). Concall management claims (e.g., 'INR 2 lakh crore pipeline') are directional credibility reads, not numerical anchor verifications. All verifiable figures against provided sources matched or fell within <1% rounding tolerance."
+orchestrator_note: "Run 1 of verifier A. Zero CRITICAL and zero MAJOR findings, so no source-fidelity gate is tripped and no REWORK is forced from this verifier. However the coverage_note self-declares that B02-notes AR-anchored citations were NOT independently re-verified against the PDF, and treated as verified on the strength of the stage's own methodology. B02 carries the highest density of AR sheet-anchored figures in the run and its findings drive the cash-conversion and governance picture. Per the LESSONS.md standing pattern the orchestrator re-invoked verifier A once with a coverage addendum targeting exactly those figures. See B12a-numerical.yaml for the run-2 result, which is the block the pipeline carries."

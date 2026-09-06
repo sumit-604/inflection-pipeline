@@ -1175,8 +1175,9 @@ class Input {
       const ny = (dy / dist) * clamped;
       knob.style.left = 35 + nx + "px";
       knob.style.top = 35 + ny + "px";
-      // Normalise to -1..1 for the game.
-      this.move = { x: nx / radius, y: ny / radius };
+      // Normalise to -1..1 for the game (small wobble near the centre is ignored).
+      const mx = nx / radius, my = ny / radius;
+      this.move = Math.hypot(mx, my) < 0.18 ? { x: 0, y: 0 } : { x: mx, y: my };
     };
     const end = () => {
       this._joystickActive = false;
@@ -4478,6 +4479,9 @@ class Player {
     this._forward = new THREE.Vector3();
     this._right = new THREE.Vector3();
     this._dir = new THREE.Vector3();
+    this._steerDir = new THREE.Vector3();
+    this.basisYaw = 0;
+    this._moving = false;
     // Snap the camera to a good spot right away.
     this._placeCamera(1);
   }
@@ -4489,8 +4493,10 @@ class Player {
   get mover() { return this.riding ? this.riding.group : this.group; }
 
   update(dt, moveVec, running = false, camDelta = 0, camIdle = 99) {
-    const mag = Math.hypot(moveVec.x, moveVec.y);
-    const walking = mag > 0.05;
+    // A dead zone so a resting thumb on the joystick does not creep.
+    let mag = Math.hypot(moveVec.x, moveVec.y);
+    if (mag < 0.18) mag = 0;
+    const walking = mag > 0;
     const body = this.mover;
     const controlled = !this.riding || this.riding.controlled !== false;
     // Vehicles have a normal speed and a fast one (Shift or the run button);
@@ -4503,19 +4509,39 @@ class Player {
       this.camYaw = this._lerpAngle(this.camYaw, 0, Math.min(1, dt * 4));
     } else {
       this.camYaw += camDelta;
-      if (walking && camIdle > 2 && controlled) this.camYaw = this._lerpAngle(this.camYaw, this.facing + Math.PI, Math.min(1, dt * 0.9));
+      // Gentle auto-follow behind the player. It never changes your direction of
+      // travel, because the movement reference below is frozen while you hold a key.
+      if (walking && camIdle > 2 && controlled) this.camYaw = this._lerpAngle(this.camYaw, this.facing + Math.PI, Math.min(1, dt * 0.5));
     }
     this.camOffset.set(Math.sin(this.camYaw) * 11, 6.5, Math.cos(this.camYaw) * 11);
 
     if (walking && controlled) {
-      // Camera-relative direction.
-      const fwd = this._forward.set(0, 0, -1).applyQuaternion(this.camera.quaternion);
-      fwd.y = 0; fwd.normalize();
+      // The direction reference is the camera yaw at the moment you START
+      // moving (or when you turn the camera by hand). It stays fixed while the
+      // key or stick is held, so the auto-follow cannot make you drift.
+      if (!this._moving || camDelta !== 0) this.basisYaw = this.camYaw;
+      this._moving = true;
+      const fwd = this._forward.set(-Math.sin(this.basisYaw), 0, -Math.cos(this.basisYaw));
       const right = this._right.set(-fwd.z, 0, fwd.x);
-      const dir = this._dir.set(0, 0, 0);
-      dir.addScaledVector(fwd, -moveVec.y);
-      dir.addScaledVector(right, moveVec.x);
-      dir.normalize();
+      const want = this._dir.set(0, 0, 0);
+      want.addScaledVector(fwd, -moveVec.y);
+      want.addScaledVector(right, moveVec.x);
+      want.normalize();
+
+      let dir = want;
+      if (this.riding) {
+        // Vehicles steer: the body turns toward the stick at a limited rate and
+        // always moves the way it is pointing. Tight turns slow it down a little.
+        const wantYaw = Math.atan2(want.x, want.z);
+        const rate = { bike: 3.0, scooty: 2.8, auto: 2.4, car: 2.0 }[this.riding.kind] || 2.4;
+        let diff = wantYaw - body.rotation.y;
+        while (diff > Math.PI) diff -= Math.PI * 2;
+        while (diff < -Math.PI) diff += Math.PI * 2;
+        body.rotation.y += Math.max(-rate * dt, Math.min(rate * dt, diff));
+        this.facing = body.rotation.y;
+        dir = this._steerDir.set(Math.sin(body.rotation.y), 0, Math.cos(body.rotation.y));
+        mag *= Math.max(0.35, Math.cos(diff));
+      }
 
       const step = Math.min(mag, 1) * speed * dt;
       const nx = body.position.x + dir.x * step;
@@ -4541,9 +4567,13 @@ class Player {
         body.position.z = THREE.MathUtils.clamp(body.position.z, -(WORLD_HALF - 5), WORLD_HALF - 5);
       }
 
-      // Turn to face the way we go. Vehicles turn a little more slowly.
-      this.facing = Math.atan2(dir.x, dir.z);
-      body.rotation.y = this._lerpAngle(body.rotation.y, this.facing, this.riding ? 0.12 : 0.2);
+      // On foot: face the way we go, smoothly.
+      if (!this.riding) {
+        this.facing = Math.atan2(dir.x, dir.z);
+        body.rotation.y = this._lerpAngle(body.rotation.y, this.facing, Math.min(1, dt * 12));
+      }
+    } else {
+      this._moving = false;
     }
 
     if (controlled) {

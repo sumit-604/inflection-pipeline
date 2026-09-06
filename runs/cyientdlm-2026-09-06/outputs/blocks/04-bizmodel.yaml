@@ -1,0 +1,75 @@
+stage: B04-bizmodel
+company: "CYIENTDLM"
+run_date: "2026-09-06"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["investor_presentation: available and used (Q1 FY27 deck, postdates the AR, used for trend confirmation only)", "prospectus: ABSENT (priority HIGH)", "results: ABSENT", "rating: ABSENT", "announcements: ABSENT", "shareholding filing: ABSENT, partly substituted from AR", "research: ABSENT", "screening: PARTIAL (screener-Data_Sheet.csv only)"]
+flags:
+  - "FLAG 1 (material): the AR discloses two conflicting B2S revenue shares for FY26 in the same document. BRSR Section 16 states 25% of turnover (AR FY2025-26, p.62-63); the SET-framework infographic states 6% of FY26 revenue with an explicit FY27 double-digit target (AR p.7). The 6% figure is independently corroborated twice: by the $133.1M B2P against $8.8M B2S dollar split (AR p.61) and by the standalone Ind-AS services-transferred-over-time line at 10.3% of standalone revenue (AR p.144, Note 20). Treat 25% as unreliable."
+  - "FLAG 2 (minor): vertical mix stated two ways in the same AR. The p.6 infographic gives Aerospace 43%, Defence 9%, Industrial 27%, Medical 19%, Automotive 2% for FY26; MD&A prose (p.51) separately states Industrial approximately 30% and MedTech approximately 15%. Non-load-bearing but unresolved."
+  - "Consolidated FY26 headline numbers (revenue -16.99%, PAT +7.65%) mask a standalone India-parent collapse (revenue -29.9%, PAT -26.6%, India-geography revenue -84.4%) entirely offset by the US subsidiary Cyient DLM Inc swinging from a Rs84.69mn loss to a Rs246.69mn profit, partly a one-off Rs195.75mn earn-out reversal (AR p.171 Note 35; p.54)."
+  - "Reported FY26 PAT growth (+7.65%) is earn-out-reversal inflated; normalised PAT fell 24% YoY (AR p.27). Do not use reported PAT for trend extrapolation."
+  - "NWC days (consolidated) 63/48/79/127/145 across FY22-FY26, rising to 161 by Q1 FY27, driven by DIO not DSO (receivables fell YoY). Company-specific deterioration, not industry-wide: named peers AVALON and SYRMA improved working capital while growing faster, per stage 6."
+contradicts_upstream:
+  - claim: "B2S is 25% of turnover"
+    asserted_in: ["B07-emoat (analyst_note and monitorable on B2S share)"]
+    finding: "The 25% figure comes from BRSR Section 16 (AR FY2025-26, p.62-63). The same AR states 6% on p.7, and 6% is corroborated twice independently: the $133.1M B2P against $8.8M B2S split (p.61) and the standalone services-transferred-over-time line at 10.3% of standalone revenue (p.144, Note 20)."
+    disposition: "Treat 6% as the working number. Do NOT average or split the difference between 6% and 25%. Raise the discrepancy as a named management question. This materially changes how fast the margin-accretive B2S transition is actually running, which is the central re-rating thesis for the name."
+    routed_to: ["verifier-a-numerical", "stage-13-synthesis"]
+business_type: "manufacturing"
+revenue_streams:
+  - {name: "Build-to-Print (B2P) manufacturing", type: "contract manufacturing, point-in-time unit sale", pct_of_revenue: 94, predictability: "M"}
+  - {name: "Build-to-Spec (B2S) design-led manufacturing", type: "contract manufacturing plus engineering services, programme or annuity-like", pct_of_revenue: 6, predictability: "L"}
+  - {name: "PCBA product line", type: "manufacturing product category", pct_of_revenue: 52, predictability: "M"}
+  - {name: "Box Build product line", type: "manufacturing product category", pct_of_revenue: 30, predictability: "M"}
+  - {name: "Mechanical / precision machining", type: "manufacturing product category", pct_of_revenue: 16, predictability: "M"}
+  - {name: "Cable harness assembly", type: "manufacturing product category", pct_of_revenue: 2, predictability: "M"}
+revenue_stream_note: "The first two rows are the B2P/B2S engagement-model split. The last four are the product-line split. They are two different cuts of the same revenue, not six additive streams."
+asset_intensity: "medium"
+wc_intensity: "high"
+pricing_power: "weak"
+cyclicality: "cyclical"
+moats_present:
+  - {moat: "Certification and qualification lock-in (AS9100 / NADCAP / ITAR / ISO13485 / IATF16949)", durability: "Strong"}
+  - {moat: "Reputational and legacy brand via the Cyient Ltd group heritage", durability: "Weak-to-moderate"}
+  - {moat: "Regulatory-licence-like certification maintenance burden", durability: "Moderate"}
+  - {moat: "Emerging IP and design ownership under B2S (BOM influence)", durability: "Weak today, potentially strengthening"}
+valuation_methods:
+  primary: {method: "Relative valuation (EV/EBITDA on normalised earnings against AVALON, KAYNES, SYRMA)", why: "Standard cross-sectional approach for an EMS contract manufacturer. Reported EPS is earn-out inflated this year, so normalised earnings must anchor the multiple."}
+  secondary: {method: "DCF with explicit working-capital-drag modelling", why: "Positive but volatile FCF. The four-year NWC deterioration behind the Gate 0 AVOID must be modelled as a cash-conversion haircut, not assumed away."}
+  tertiary: {method: "Sum-of-the-parts (India standalone against US Cyient DLM Inc and Altek)", why: "The two entities are moving in opposite directions (standalone PAT -26.6% against consolidated +7.65%); a blended multiple hides this."}
+  not_applicable: ["Asset-based or replacement cost (PP&E is only about 10-11% of total assets)", "Dividend discount model (no dividend policy evidence; post-IPO reinvestment phase)"]
+irrelevant_ratios:
+  - {ratio: "Consolidated revenue growth taken alone", why: "Nets off two entities moving in opposite directions; must be split standalone against consolidated"}
+  - {ratio: "Reported net profit margin FY26", why: "Inflated by a one-off Rs195.75mn earn-out reversal; normalised PAT fell 24% YoY, the opposite signal"}
+  - {ratio: "Single-year ROCE snapshot", why: "The company attributes the multi-year decline to WC and capex investment largely completed, an unproven forward claim not yet evidenced by the FY26 11.4%"}
+  - {ratio: "DSO in isolation", why: "The working-capital blowout is inventory-driven (DIO); receivables actually fell YoY, so DSO alone would miss the real story"}
+  - {ratio: "Gross or operating margin trend without a cost-structure split", why: "The direct material cost ratio dropped sharply from FY25 to FY26 mechanically, because Altek's different cost structure entered the consolidation mix, not because of India efficiency gains"}
+must_track_metrics:
+  - {metric: "Standalone (India parent) revenue and PAT, reported separately", healthy: "Growing YoY, narrowing the gap to the consolidated trend", red_flag: "Continued double-digit decline while consolidated is reported flat or up"}
+  - {metric: "Net working capital days (consolidated)", healthy: "Falling toward the peer range of 60-125 days", red_flag: "Any further rise beyond the 161 days of Q1 FY27 without matching inventory-turnover improvement"}
+  - {metric: "B2S revenue as a percentage of total", healthy: "Moving from about 6% (FY26) toward double digits (FY27 target)", red_flag: "Flat or declining despite management's stated target"}
+  - {metric: "Normalised EBITDA margin", healthy: "Trending toward the company's stated mid-teens long-term target", red_flag: "Sustained decline below 9%"}
+  - {metric: "Top-customer concentration (consolidated and standalone)", healthy: "Continuing to fall from 55.71% and 70.54%", red_flag: "Re-widening"}
+unit_economics:
+  unit: "one manufacturing programme or contract (a qualified customer part number or assembly), not a single physical unit"
+  revenue_per_unit: "NOT FOUND (only aggregate product-line revenue disclosed, AR FY2025-26 p.24)"
+  margin_per_unit: "NOT FOUND"
+  key_lever: "Mix shift toward B2S and toward the Box Build and mechanical categories, plus working-capital discipline not yet delivered in four years"
+first_deterioration_signals:
+  - {risk: "B2S transition stalls, or the 6% against 25% disclosure gap resolves unfavourably", first_signal: "B2S revenue line in future quarterly decks; standalone services-transferred-over-time line (AR Note 20)"}
+  - {risk: "Loss of a large programme (a recurred pattern, per the FY25 defence order completion)", first_signal: "Order book and order intake growth rate (AR FY2025-26 p.27)"}
+  - {risk: "Import-dependent material cost spike outruns pass-through clauses", first_signal: "Direct material cost as a percentage of revenue rising without a mix explanation (MD&A p.54)"}
+  - {risk: "The Altek and US mix effect reverses", first_signal: "Employee benefit expense as a percentage of consolidated revenue (AR p.54)"}
+  - {risk: "NWC continues to expand (already AVOID-level per stage 1)", first_signal: "Net working capital days, specifically DIO (AR p.27; investor presentation slide 12)"}
+  - {risk: "Standalone India revenue keeps shrinking while consolidated looks fine", first_signal: "Standalone revenue and PAT (AR Note 33, p.135; p.110)"}
+mgmt_questions:
+  - "Which is the real B2S share of FY26 revenue: the BRSR-disclosed 25% or the infographic-disclosed 6%, and how does the FY27 double-digit target reconcile with whichever is correct?"
+  - "Why did Altek Electronics Inc standalone PAT fall from about Rs39.70mn over six months in FY25 to Rs31.32mn over the full FY26?"
+  - "What specifically is driving the finished-goods inventory build-up, and when does NWC peak and reverse?"
+  - "Is capacity utilisation actually rising as order intake grows, and by how much?"
+  - "What is standalone (India parent) revenue guidance for FY27, independent of the US subsidiary?"
+  - "What is the plan to reduce customer concentration further, and which named new-logo wins convert to volume in FY27?"
+  - "Given 85-90% import dependency on components, what is the realistic timeline and margin impact of PLI-supported localisation?"
+one_line_verdict: "A two-entity EMS story where a US turnaround masks an India core in decline, riding a real but small and disputed design-led margin transition."
+analyst_note: "The single most important finding this stage produced is Flag 1: the AR contradicts itself on B2S share (25% BRSR against 6% infographic) in ways that materially change how fast the margin-accretive transition is actually running. Downstream valuation and FTTCP work should NOT average or split the difference between 6% and 25%. Treat 6% as the working number, corroborated independently twice, and raise the discrepancy as a named question. Separately, the two-entity divergence (India parent shrinking, US subsidiary swinging to profit substantially via a one-off earn-out reversal) means any single blended growth or margin number for FY27 guidance should be sourced from management with the standalone and consolidated split explicit, never inferred from the consolidated print alone."

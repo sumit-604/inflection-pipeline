@@ -15,3 +15,4 @@ stage returns and committed with that stage.
 | 6 | peer concall verification | claude-sonnet-5 | default | n/a | n/a | 317321 | 6m33s | 1 |
 | 7 | emerging moat 22-category scan | claude-sonnet-5 | default | n/a | n/a | 189274 | 8m32s | 1 |
 | 3 | AR backward deep dive, 8 phases | claude-sonnet-5 | default | n/a | n/a | 283226 | 12m34s | 1 |
+| 4 | business model decoder | claude-sonnet-5 | default | n/a | n/a | 155052 | 7m30s | 1 |

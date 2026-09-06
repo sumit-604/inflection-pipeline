@@ -337,8 +337,25 @@ table.keys td { padding: 6px 8px; border-bottom: 1px solid #eee3c8; vertical-ali
 table.keys td:first-child { white-space: nowrap; font-weight: 700; width: 34%; }
 kbd { display: inline-block; border: 1px solid #d8cdb2; border-bottom-width: 3px; border-radius: 6px; padding: 1px 7px; background: #fff; font-family: inherit; font-weight: 700; font-size: 13px; }
 
+#money-badge, #energy-badge {
+  position: absolute; left: 12px;
+  background: rgba(255,253,246,0.92); border-radius: 999px;
+  padding: 5px 12px 5px 8px; display: flex; align-items: center; gap: 6px;
+  font-weight: 700; font-size: 14px; box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+#money-badge { top: 138px; }
+#energy-badge { top: 176px; }
+.energy-bar { width: 70px; height: 10px; background: #e7ddc6; border-radius: 6px; overflow: hidden; }
+#energy-fill { height: 100%; width: 100%; background: #7cae59; transition: width .3s ease; }
+#energy-fill.low { background: #d9704f; }
+.shop-list { display: flex; flex-direction: column; gap: 6px; margin: 10px 0; }
+.shop-item { display: flex; align-items: center; justify-content: space-between; gap: 8px; background: #f4efe2; border-radius: 10px; padding: 8px 10px; }
+.shop-item .price { font-weight: 800; color: #b4531a; white-space: nowrap; }
+.shop-item small { display: block; opacity: .7; font-weight: 500; }
+.buy-btn { border: none; border-radius: 8px; background: #3a7d44; color: #fff; font-weight: 700; padding: 7px 12px; cursor: pointer; box-shadow: 0 3px 0 #2c5e34; white-space: nowrap; }
+.buy-btn:disabled { background: #b9b9b9; box-shadow: 0 3px 0 #969696; cursor: default; }
 #fuel-badge {
-  position: absolute; top: 138px; left: 12px;
+  position: absolute; top: 214px; left: 12px;
   background: rgba(255,253,246,0.92); border-radius: 999px;
   padding: 5px 12px 5px 8px; display: flex; align-items: center; gap: 6px;
   font-weight: 700; font-size: 14px; box-shadow: 0 3px 8px rgba(0,0,0,0.15);
@@ -506,8 +523,12 @@ kbd { display: inline-block; border: 1px solid #d8cdb2; border-bottom-width: 3px
     <div id="star-badge"><span class="rank-icon">⭐</span><span id="star-text">0 / 100</span></div>
     <!-- Road safety points and licence -->
     <div id="safety-badge" title="Road Safety points"><span class="rank-icon">🚦</span><span id="safety-text">0</span><span id="licence-icon" hidden>🪪</span></div>
-    <!-- Ride time: earned by solving problems, spent by riding -->
-    <div id="fuel-badge" title="Ride time: solve problems to earn it"><span class="rank-icon">⏱</span><span id="fuel-text">0:00</span></div>
+    <!-- Money earned by solving problems -->
+    <div id="money-badge" title="Money: solve problems to earn it"><span class="rank-icon">💰</span><span id="money-text">₹0</span></div>
+    <!-- Energy: eat and drink to keep it up -->
+    <div id="energy-badge" title="Energy: food and drink restore it"><span class="rank-icon">⚡</span><div class="energy-bar"><div id="energy-fill"></div></div></div>
+    <!-- Petrol bought with money, burned by riding -->
+    <div id="fuel-badge" title="Petrol: buy it at a pump"><span class="rank-icon">⛽</span><span id="fuel-text">0 L</span></div>
     <!-- Speedometer, shown while riding -->
     <div id="speedo" hidden><span id="speedo-text">0 km/h</span></div>
     <!-- Short messages from drivers, signals and the constable -->
@@ -626,7 +647,9 @@ kbd { display: inline-block; border: 1px solid #d8cdb2; border-bottom-width: 3px
         <tr><td>🚦</td><td>Road Safety points; 🪪 once you have the licence.</td></tr>
         <tr><td>Minimap</td><td>Orange dots are villagers, yellow dots open jobs, the white arrow is you.</td></tr>
         <tr><td>km/h</td><td>Your speed while riding; red means over the limit.</td></tr>
-        <tr><td>⏱</td><td>Ride time. Solve situations (+1 min) and jobs (+3 min) to earn it; riding spends it.</td></tr>
+        <tr><td>💰</td><td>Money. Solving pays: situation ₹50, job ₹300, lesson ₹100. Spend it in shops, on food, clothes, books and petrol. Fines take it away.</td></tr>
+        <tr><td>⚡</td><td>Energy. Walking uses it; food and drink restore it. Below 25 you walk slowly.</td></tr>
+        <tr><td>⛽</td><td>Petrol, ₹100 a litre at a pump, 1½ minutes of riding per litre. Bicycles need none.</td></tr>
         <tr><td>🪪</td><td>Driving licence from the RTO Office (20 questions, 16 to pass). Two challans cancel it.</td></tr>
       </table>
     </div>
@@ -990,7 +1013,7 @@ const KEY = (profile) => `engineers-village.v1.${profile}`;
 
 // A fresh, empty progress record.
 function emptyProgress() {
-  return { jobsDone: [], attempts: {}, situationsDone: [], replays: {}, safety: { points: 0, lessons: [], licence: { valid: false, challans: 0, tests: 0 }, fines: 0 }, fuel: 0 };
+  return { jobsDone: [], attempts: {}, situationsDone: [], replays: {}, safety: { points: 0, lessons: [], licence: { valid: false, challans: 0, tests: 0 }, fines: 0 }, fuel: 0, money: 0, energy: 100, items: [], hints: 0, outfit: {} };
 }
 
 // Read the saved progress for a profile. Always returns a valid object,
@@ -1012,6 +1035,11 @@ function loadProgress(profile) {
             fines: Number(data.safety.fines) || 0 }
         : { points: 0, lessons: [], licence: { valid: false, challans: 0, tests: 0 }, fines: 0 },
       fuel: Number(data.fuel) || 0,
+      money: Number(data.money) || 0,
+      energy: data.energy == null ? 100 : Math.max(0, Math.min(100, Number(data.energy))),
+      items: Array.isArray(data.items) ? data.items : [],
+      hints: Number(data.hints) || 0,
+      outfit: data.outfit && typeof data.outfit === "object" ? data.outfit : {},
     };
   } catch (e) {
     // If storage is blocked (private mode, etc.) just play without saving.
@@ -1431,8 +1459,20 @@ function runStepQuiz(ctx, cfg) {
     </div>
     <div class="hint" id="quiz-hint" hidden></div>
     <div class="worked-example" id="quiz-example" hidden></div>
+    <div class="btn-row"><button class="ghost-btn" id="quiz-token">📘 Use a hint token</button></div>
     <div id="quiz-solved"></div>
   `);
+  // Hint tokens (bought at bookshops) reveal the worked example at once.
+  const tokenBtn = card.querySelector("#quiz-token");
+  const refreshToken = () => { const n = (window.__game && window.__game.progress.hints) || 0; tokenBtn.textContent = `📘 Use a hint token (${n} left)`; tokenBtn.disabled = n <= 0; };
+  refreshToken();
+  tokenBtn.addEventListener("click", () => {
+    const g = window.__game; if (!g || g.progress.hints <= 0) return;
+    const st = cfg.steps[idx]; if (!st) return;
+    g.progress.hints--; saveProgress(g.profile, g.progress); refreshToken();
+    exampleEl.hidden = false;
+    exampleEl.innerHTML = `<b>Hint token:</b> ${st.example || st.hint || "Read the question again slowly and write down what you know."}`;
+  });
 
   const track = card.querySelector("#quiz-track");
   const log = card.querySelector("#quiz-log");
@@ -1578,6 +1618,9 @@ const RANKS = [
   { name: "Master Engineer", min: 6 },
 ];
 
+// Petrol in litres with the riding time it gives (90 seconds a litre).
+function fmtFuel(l) { return `${(Math.max(0, l)).toFixed(1)} L (${fmtTime(Math.max(0, l) * 90)})`; }
+
 // Seconds as m:ss.
 function fmtTime(sec) { sec = Math.max(0, Math.floor(sec)); return `${Math.floor(sec / 60)}:${String(sec % 60).padStart(2, "0")}`; }
 
@@ -1679,7 +1722,11 @@ class UI {
     const sf = this.game.progress.safety;
     document.getElementById("safety-text").textContent = String(sf.points);
     document.getElementById("licence-icon").hidden = !sf.licence.valid;
-    document.getElementById("fuel-text").textContent = fmtTime(this.game.progress.fuel);
+    document.getElementById("fuel-text").textContent = fmtFuel(this.game.progress.fuel);
+    document.getElementById("money-text").textContent = "₹" + this.game.progress.money;
+    const ef = document.getElementById("energy-fill");
+    ef.style.width = Math.round(this.game.progress.energy) + "%";
+    ef.classList.toggle("low", this.game.progress.energy < 25);
   }
 
   // Show or hide the little "Press E to talk" prompt.
@@ -1747,8 +1794,12 @@ class UI {
     }
     html += `</ul>`;
     const sf = this.game.progress.safety;
+    const pr = this.game.progress;
+    html += `<div class="section-label">Wallet and backpack</div><ul class="job-list"><li><div class="job-title">💰 ₹${pr.money} · ⚡ energy ${Math.round(pr.energy)} · 📘 hint tokens ${pr.hints}</div>
+      <div class="job-concept">Earn: situation ₹50 (city challenge ₹100), job ₹300, lesson ₹100, licence ₹200, safe crossing ₹10. Spend at tea stalls, carts, the sabzi mandi, shops, the barber, bookshops and petrol pumps.</div>
+      <div class="job-concept">Backpack: ${pr.items.length ? pr.items.join(", ") : "empty"}</div></li></ul>`;
     html += `<div class="section-label">Road safety and riding</div><ul class="job-list"><li><div class="job-title">🚦 ${sf.points} points ${sf.licence.valid ? `· 🪪 Licence valid (challans ${sf.licence.challans}/2)` : "· no licence: take the test at the RTO Office, Suryanagar"}</div>
-      <div class="job-concept">⏱ Ride time ${fmtTime(this.game.progress.fuel)}. Every solved situation gives 1 minute, a job 3 minutes, a lesson 1½ minutes. Riding spends it. Lessons passed: ${sf.lessons.length} of ${SAFETY_LESSONS.length}. Fines paid: ₹${sf.fines}.</div></li></ul>`;
+      <div class="job-concept">⛽ Petrol ${fmtFuel(this.game.progress.fuel)}. Buy it at a pump with money you earned; bicycles need none. Lessons passed: ${sf.lessons.length} of ${SAFETY_LESSONS.length}. Fines paid: ₹${sf.fines}.</div></li></ul>`;
     html += `<div class="section-label">By topic</div><ul class="job-list">`;
     for (const cat of Object.keys(CATEGORY_NAMES)) {
       const all = SITUATIONS.filter((x) => x.cat === cat);
@@ -1778,7 +1829,7 @@ class UI {
     }
     html += `</ul>`;
     html += `<div class="section-label">Road safety</div>`;
-    html += `<p>Licence ${prog.safety.licence.valid ? "valid" : "not held"}, tests taken ${prog.safety.licence.tests}, challans on this licence ${prog.safety.licence.challans}, fines ₹${prog.safety.fines}, ride time ${fmtTime(prog.fuel)}.</p><p>${prog.safety.points} points. Lessons passed: ${SAFETY_LESSONS.filter((l) => prog.safety.lessons.includes(l.id)).map((l) => l.title.replace(/Lesson \d: /, "")).join(", ") || "none yet"}. ${prog.safety.lessons.length >= SAFETY_LESSONS.length ? "Licence earned." : "No licence yet."}</p>`;
+    html += `<p>Wallet ₹${prog.money}, energy ${Math.round(prog.energy)}, hint tokens ${prog.hints}, backpack: ${prog.items.join(", ") || "empty"}.</p><p>Licence ${prog.safety.licence.valid ? "valid" : "not held"}, tests taken ${prog.safety.licence.tests}, challans on this licence ${prog.safety.licence.challans}, fines ₹${prog.safety.fines}, petrol ${fmtFuel(prog.fuel)}.</p><p>${prog.safety.points} points. Lessons passed: ${SAFETY_LESSONS.filter((l) => prog.safety.lessons.includes(l.id)).map((l) => l.title.replace(/Lesson \d: /, "")).join(", ") || "none yet"}. ${prog.safety.lessons.length >= SAFETY_LESSONS.length ? "Licence earned." : "No licence yet."}</p>`;
     html += `<div class="section-label">Village situations</div>`;
     html += `<p>${prog.situationsDone.length} of ${SITUATIONS.length} solved. Replays with new numbers: ${Object.values(prog.replays).reduce((a, b) => a + b, 0)}.</p>`;
     html += `<ul class="job-list">`;
@@ -2604,6 +2655,14 @@ class World {
     this.scene.add(board);
     this.signpostMesh = board;
 
+    // Setugram's little petrol pump by the entrance.
+    for (const [dx, dz] of [[-2, -1.5], [2, -1.5], [-2, 1.5], [2, 1.5]]) { const post = new THREE.Mesh(new THREE.BoxGeometry(0.2, 3.2, 0.2), mat(0xdfe6ea)); post.position.set(13 + dx, 1.6, 30 + dz); this.scene.add(post); this.addBox(13 + dx, 30 + dz, 0.2, 0.2); }
+    const vCanopy = new THREE.Mesh(new THREE.BoxGeometry(6, 0.3, 4.5), mat(0xf77f00)); vCanopy.position.set(13, 3.3, 30); this.scene.add(vCanopy);
+    const vPump = new THREE.Mesh(new THREE.BoxGeometry(0.7, 1.4, 0.5), mat(0xd62828)); vPump.position.set(13, 0.7, 30); this.scene.add(vPump); this.addBox(13, 30, 0.7, 0.5);
+    const vSign = makeTextSprite("Setugram Petrol ₹100 / L", { size: 44, scale: 1.1 }); vSign.position.set(13, 4.4, 30); this.scene.add(vSign);
+    this.shopSpots.push({ x: 13, z: 32.6, label: "Buy petrol", name: "Setugram Petrol", cat: "petrol", keeper: "Pump attendant" });
+    this.mapItems.buildings.push([13, 30]);
+
     // A small house whose roof leaks (job: The Leaky Roof). Its roof is a
     // dull patchy grey until the job is done, then it turns a fresh red.
     const house = new THREE.Group();
@@ -2777,6 +2836,9 @@ class World {
       this.scene.add(stall);
       this.addBox(-4 + i * 4, -22, 2.2, 1.4);
     }
+    // Bhola's stall sells fruit and vegetables (the sabzi mandi).
+    const mandiSign = makeTextSprite("Sabzi Mandi: fruit & veg", { size: 44, scale: 1.0 }); mandiSign.position.set(-4, 3.2, -22); this.scene.add(mandiSign);
+    this.shopSpots.push({ x: -4, z: -20.2, label: "Buy fruit and vegetables", name: "Sabzi Mandi", cat: "produce", keeper: "Bhola" });
     // Sacks of rice that appear on the middle stall when the market job is done.
     const sacks = new THREE.Group();
     const sackMat = mat(0xd9c39a);
@@ -2973,6 +3035,7 @@ class World {
     this.terrain = terrain;
     this.mapItems = { roads: [], buildings: [], water: [] };
     this.roadSegs = [];
+    this.shopSpots = []; // places outdoors where things are sold
   }
 
   // A road built from short slabs that follow the ground.
@@ -3152,6 +3215,8 @@ class World {
     shelter.position.set(5, heightAt(5, 70), 70);
     this.scene.add(shelter);
     this.addBox(5, 69.6, 3.6, 0.8);
+    // The sports shop in town.
+    this._place(makeBuilding({ w: 7, d: 6, h: 3.4, roof: "flat", wall: 0xe3ecf5, roofColor: 0x2a9d8f, sign: "Sports Shop" }), -40, 70, Math.PI / 2, "Sports Shop");
     // Street lamps along the main road in town.
     for (let z = 70; z <= 140; z += 14) for (const x of [-3.6, 3.6]) this._addLamp(x, z);
     // Playground: swing, seesaw, slide.
@@ -3430,7 +3495,9 @@ class World {
       const st = new THREE.Mesh(new THREE.CylinderGeometry(0.04, 0.04, 1.6, 6), mat(0x333333)); st.position.set(x, 1.8, z); this.scene.add(st);
       const lab = makeTextSprite(name, { size: 56, scale: 0.6 }); lab.position.set(x, 3.3, z); this.scene.add(lab);
       this.addBox(x, z, 1.8, 1.0);
+      this.shopSpots.push({ x: x, z: z + 1.6, label: `Buy ${name.toLowerCase()}`, name: name + " cart", cat: "food", keeper: "Cart wala" });
     });
+    this.shopSpots.push({ x: 140, z: 254.5, label: "Buy petrol", name: "Suryanagar Petrol Pump", cat: "petrol", keeper: "Pump attendant" });
 
     // ---------- Elevated metro: pillars, track, two stations, a moving train ----------
     const trackZ = 235, trackY = 7;
@@ -3503,9 +3570,12 @@ class World {
     const pole = new THREE.Mesh(new THREE.CylinderGeometry(0.1, 0.12, 4.2, 6), mat(0x333333)); pole.position.set(x, h + 2.1, z); this.scene.add(pole);
     const box = new THREE.Mesh(new THREE.BoxGeometry(0.5, 1.5, 0.4), mat(0x222222)); box.position.set(x, h + 4.4, z); this.scene.add(box);
     const lights = ["#ff3b30", "#ffcc00", "#34c759"].map((c, i) => {
-      const l = new THREE.Mesh(new THREE.SphereGeometry(0.17, 8, 6), new THREE.MeshStandardMaterial({ color: new THREE.Color(c), emissive: new THREE.Color(c), emissiveIntensity: 0.1 }));
-      l.position.set(x, h + 4.9 - i * 0.5, z + 0.25); this.scene.add(l); return l;
+      const l = new THREE.Mesh(new THREE.SphereGeometry(0.26, 10, 8), new THREE.MeshStandardMaterial({ color: new THREE.Color(c), emissive: new THREE.Color(c), emissiveIntensity: 0.1 }));
+      l.position.set(x, h + 5.0 - i * 0.55, z + 0.3); this.scene.add(l); return l;
     });
+    // Big readable words above the lamps: one sprite per colour, shown in turn.
+    const labels = [["RED · STOP", "#ff3b30"], ["AMBER · WAIT", "#d9a400"], ["GREEN · GO", "#2f9e44"]].map(([t, c]) => { const sp = makeTextSprite(t, { size: 54, color: "#ffffff", bg: c, scale: 1.0 }); sp.position.set(x, h + 5.9, z); sp.visible = false; this.scene.add(sp); return sp; });
+    lights.labels = labels;
     (dir === "h" ? inter.lightsH : inter.lightsV).push(lights);
     this.addCircle(x, z, 0.2);
   }
@@ -3515,9 +3585,11 @@ class World {
     const h = heightAt(x, z);
     const pole = new THREE.Mesh(new THREE.CylinderGeometry(0.06, 0.08, 2.6, 6), mat(0x333333)); pole.position.set(x, h + 1.3, z); this.scene.add(pole);
     const box = new THREE.Mesh(new THREE.BoxGeometry(0.34, 0.8, 0.3), mat(0x222222)); box.position.set(x, h + 2.7, z); this.scene.add(box);
-    const red = new THREE.Mesh(new THREE.SphereGeometry(0.12, 8, 6), new THREE.MeshStandardMaterial({ color: 0xff3b30, emissive: 0xff3b30, emissiveIntensity: 0.1 })); red.position.set(x, h + 2.9, z + 0.18); this.scene.add(red);
-    const green = new THREE.Mesh(new THREE.SphereGeometry(0.12, 8, 6), new THREE.MeshStandardMaterial({ color: 0x34c759, emissive: 0x34c759, emissiveIntensity: 0.1 })); green.position.set(x, h + 2.5, z + 0.18); this.scene.add(green);
-    this.pedSignals.push({ red, green, inter, across });
+    const red = new THREE.Mesh(new THREE.SphereGeometry(0.18, 8, 6), new THREE.MeshStandardMaterial({ color: 0xff3b30, emissive: 0xff3b30, emissiveIntensity: 0.1 })); red.position.set(x, h + 2.95, z + 0.2); this.scene.add(red);
+    const green = new THREE.Mesh(new THREE.SphereGeometry(0.18, 8, 6), new THREE.MeshStandardMaterial({ color: 0x34c759, emissive: 0x34c759, emissiveIntensity: 0.1 })); green.position.set(x, h + 2.45, z + 0.2); this.scene.add(green);
+    const wait = makeTextSprite("WAIT", { size: 60, color: "#ffffff", bg: "#ff3b30", scale: 0.6 }); wait.position.set(x, h + 3.55, z); this.scene.add(wait);
+    const walk = makeTextSprite("WALK", { size: 60, color: "#ffffff", bg: "#2f9e44", scale: 0.6 }); walk.position.set(x, h + 3.55, z); walk.visible = false; this.scene.add(walk);
+    this.pedSignals.push({ red, green, wait, walk, inter, across });
     this.addCircle(x, z, 0.15);
   }
 
@@ -3544,14 +3616,25 @@ class World {
     for (const inter of this.intersections || []) {
       const st = signalState(inter.phase, elapsed);
       const idx = (c) => (c === "red" ? 0 : c === "amber" ? 1 : 2);
-      for (const lights of inter.lightsH) lights.forEach((l, i) => (l.material.emissiveIntensity = i === idx(st.h) ? 1.2 : 0.08));
-      for (const lights of inter.lightsV) lights.forEach((l, i) => (l.material.emissiveIntensity = i === idx(st.v) ? 1.2 : 0.08));
+      const pulse = 1.2 + Math.sin(elapsed * 6) * 0.6; // the live lamp throbs so it reads at a distance
+      const paint = (lights, state) => {
+        const on = idx(state);
+        lights.forEach((l, i) => { l.material.emissiveIntensity = i === on ? pulse : 0.05; l.scale.setScalar(i === on ? 1.25 : 0.9); });
+        if (lights.labels) lights.labels.forEach((sp, i) => (sp.visible = i === on));
+      };
+      for (const lights of inter.lightsH) paint(lights, st.h);
+      for (const lights of inter.lightsV) paint(lights, st.v);
     }
     for (const ps of this.pedSignals || []) {
       const st = signalState(ps.inter.phase, elapsed);
       const go = ps.across === "h" ? st.pedAcrossH : st.pedAcrossV;
-      ps.green.material.emissiveIntensity = go ? 1.2 : 0.08;
-      ps.red.material.emissiveIntensity = go ? 0.08 : 1.2;
+      const secs = ps.across === "h" ? st.secsPedH : st.secsPedV;
+      // The green man blinks in its last four seconds: do not start crossing then.
+      const blink = go && secs <= 4 && Math.sin(elapsed * 12) > 0;
+      ps.green.material.emissiveIntensity = go && !blink ? 1.4 : 0.05;
+      ps.red.material.emissiveIntensity = go ? 0.05 : 1.2 + Math.sin(elapsed * 6) * 0.4;
+      ps.walk.visible = go && !blink;
+      ps.wait.visible = !go;
     }
     // Tower beacons blink.
     for (const b of this.cityLights || []) b.material.emissiveIntensity = Math.sin(elapsed * 3) > 0 ? 1 : 0.1;
@@ -4260,6 +4343,7 @@ function makeHuman({
   );
   hairCap.position.set(0, 0.02, -0.03);
   head.add(hairCap);
+  parts.hair = hairCap;
 
   // Optional hat (e.g. the engineer's yellow hard hat).
   if (hat != null) {
@@ -4411,7 +4495,7 @@ class Player {
     const controlled = !this.riding || this.riding.controlled !== false;
     // Vehicles have a normal speed and a fast one (Shift or the run button);
     // in the city the fast one is over the limit and the constable notices.
-    const speed = this.riding ? this.riding.speed * (running ? 1.5 : 1) : this.speed * (running ? 1.8 : 1);
+    const speed = this.riding ? this.riding.speed * (running ? 1.5 : 1) : this.speed * (running ? 1.8 : 1) * (this.tired ? 0.7 : 1);
     this.speedKmh = (walking && controlled ? Math.min(mag, 1) * speed : 0) * 3.6;
 
     // Turn the camera. Indoors it settles to look straight into the room.
@@ -7115,6 +7199,113 @@ function bankSize() { return QBANK_FIXED.length + QBANK_GEN.length * 12; }
 const VEHICLE_NAMES = { bike: "bicycle", scooty: "scooty", auto: "auto rickshaw", car: "car" };
 const VEHICLE_TAG = { bike: "bicycle", scooty: "scooty", auto: "auto", car: "car" };
 
+// ===== src/engine/shops.js =====
+/* ============================================================
+   shops.js — earning and spending money.
+
+   Every solved problem pays rupees. Shops sell food and drink
+   (energy), fruit and vegetables, clothes (your outfit changes),
+   sports gear, books (hint tokens), haircuts, and petrol. Riding a
+   motor vehicle burns petrol bought with money, so riding always
+   costs problems solved.
+   ============================================================ */
+
+// item: { name, price, kind, value }  kind: energy | fuel | shirt | trousers | hair | hint | item
+const SHOP_CATALOGS = {
+  food: [
+    { name: "Cup of tea ☕", price: 10, kind: "energy", value: 10 },
+    { name: "Coffee ☕", price: 20, kind: "energy", value: 15 },
+    { name: "Samosa 🥟", price: 15, kind: "energy", value: 15 },
+    { name: "Bun and butter 🍞", price: 12, kind: "energy", value: 12 },
+    { name: "Jalebi 🍥", price: 25, kind: "energy", value: 20 },
+    { name: "Plate of chaat 🥗", price: 30, kind: "energy", value: 25 },
+    { name: "Momos 🥟", price: 40, kind: "energy", value: 30 },
+    { name: "Kulfi 🍦", price: 30, kind: "energy", value: 20 },
+    { name: "Fresh juice 🧃", price: 20, kind: "energy", value: 20 },
+    { name: "Full thali 🍛", price: 80, kind: "energy", value: 60 },
+  ],
+  produce: [
+    { name: "Banana 🍌", price: 5, kind: "energy", value: 8 },
+    { name: "Apple 🍎", price: 15, kind: "energy", value: 12 },
+    { name: "Mango 🥭", price: 25, kind: "energy", value: 18 },
+    { name: "Carrot 🥕", price: 8, kind: "energy", value: 8 },
+    { name: "Cucumber 🥒", price: 10, kind: "energy", value: 8 },
+    { name: "Coconut water 🥥", price: 30, kind: "energy", value: 25 },
+    { name: "Bag of vegetables 🧺", price: 60, kind: "energy", value: 40 },
+    { name: "Fresh fish 🐟", price: 120, kind: "energy", value: 50 },
+  ],
+  sports: [
+    { name: "Cricket bat 🏏", price: 350, kind: "item", value: "Cricket bat" },
+    { name: "Football ⚽", price: 250, kind: "item", value: "Football" },
+    { name: "Kite 🪁", price: 40, kind: "item", value: "Kite" },
+    { name: "Skipping rope", price: 60, kind: "item", value: "Skipping rope" },
+    { name: "Chess set ♟️", price: 200, kind: "item", value: "Chess set" },
+    { name: "Badminton set 🏸", price: 300, kind: "item", value: "Badminton set" },
+    { name: "Bag of marbles", price: 20, kind: "item", value: "Marbles" },
+    { name: "Bicycle bell 🔔", price: 50, kind: "item", value: "Bicycle bell" },
+  ],
+  books: [
+    { name: "Puzzle book 📘 (1 hint token)", price: 120, kind: "hint", value: 1 },
+    { name: "Story book 📗", price: 150, kind: "item", value: "Story book" },
+    { name: "Atlas of the land 🗺️", price: 200, kind: "item", value: "Atlas" },
+    { name: "Science kit 🔬 (2 hint tokens)", price: 400, kind: "hint", value: 2 },
+    { name: "Notebook and pencils ✏️", price: 40, kind: "item", value: "Notebook" },
+  ],
+  clothes: [
+    { name: "Red shirt", price: 150, kind: "shirt", value: 0xc94848 },
+    { name: "Blue shirt", price: 150, kind: "shirt", value: 0x2f7db0 },
+    { name: "Yellow shirt", price: 150, kind: "shirt", value: 0xffd21e },
+    { name: "Green kurta", price: 200, kind: "shirt", value: 0x2a9d8f },
+    { name: "Saffron kurta", price: 220, kind: "shirt", value: 0xf77f00 },
+    { name: "White shirt", price: 160, kind: "shirt", value: 0xffffff },
+    { name: "Black trousers", price: 200, kind: "trousers", value: 0x222222 },
+    { name: "White trousers", price: 200, kind: "trousers", value: 0xf5f5f5 },
+    { name: "Blue jeans", price: 250, kind: "trousers", value: 0x1d3557 },
+    { name: "Khaki trousers", price: 180, kind: "trousers", value: 0xc8b98a },
+  ],
+  barber: [
+    { name: "Haircut, black", price: 50, kind: "hair", value: 0x1d1410 },
+    { name: "Haircut, brown", price: 60, kind: "hair", value: 0x6d4c41 },
+    { name: "Haircut, silver streak", price: 80, kind: "hair", value: 0xbdbdbd },
+    { name: "Haircut, blue (fun!)", price: 80, kind: "hair", value: 0x3a86ff },
+  ],
+  pharmacy: [
+    { name: "First aid kit 🩹", price: 150, kind: "item", value: "First aid kit" },
+    { name: "Glucose drink", price: 25, kind: "energy", value: 20 },
+    { name: "Sunscreen", price: 80, kind: "item", value: "Sunscreen" },
+  ],
+  petrol: [
+    { name: "1 litre petrol ⛽ (1½ min of riding)", price: 100, kind: "fuel", value: 1 },
+    { name: "3 litres petrol ⛽", price: 300, kind: "fuel", value: 3 },
+    { name: "5 litres petrol ⛽", price: 500, kind: "fuel", value: 5 },
+  ],
+};
+
+// Which catalogue a place sells, from its name.
+function catalogFor(label, type) {
+  const s = (label || "").toLowerCase();
+  if (s.includes("petrol")) return "petrol";
+  if (s.includes("fish") || s.includes("sabzi") || s.includes("fruit") || s.includes("vegetable")) return "produce";
+  if (s.includes("toy") || s.includes("sport")) return "sports";
+  if (s.includes("book")) return "books";
+  if (s.includes("cloth") || s.includes("tailor")) return "clothes";
+  if (s.includes("barber")) return "barber";
+  if (s.includes("pharmacy") || s.includes("hospital")) return "pharmacy";
+  if (s.includes("tea") || s.includes("bakery") || s.includes("sweet") || s.includes("chaat") || s.includes("momo") || s.includes("kulfi") || s.includes("juice") || s.includes("dhaba") || s.includes("food") || s.includes("cafe") || type === "eatery") return "food";
+  if (type === "shop" || type === "mall") return "sports";
+  return null;
+}
+
+// What an item does, in words.
+function effectText(it) {
+  return it.kind === "energy" ? `+${it.value} energy` : it.kind === "fuel" ? `${it.value} litre${it.value > 1 ? "s" : ""}, ${fmtTime(it.value * 90)} of riding` : it.kind === "shirt" ? "changes your shirt" : it.kind === "trousers" ? "changes your trousers" : it.kind === "hair" ? "changes your hair" : it.kind === "hint" ? `${it.value} hint token${it.value > 1 ? "s" : ""}` : "goes in your backpack";
+}
+
+// Rupees for a solved situation, by topic.
+function payFor(cat) {
+  return { city_hard: 100, himalaya: 80 }[cat] || 50;
+}
+
 // ===== src/engine/ride.js =====
 /* ============================================================
    ride.js — things you can ride: scooty, bicycle, car, and the metro.
@@ -7233,6 +7424,7 @@ function roomTypeFor(sign) {
   if (s.includes("gurudwara")) return "gurudwara";
   if (s.includes("church")) return "church";
   if (s.includes("masjid")) return "masjid";
+  if (s.includes("sports") || s.includes("toy") || s.includes("cloth") || s.includes("barber") || s.includes("mobile") || s.includes("cycle") || s.includes("bookshop")) return "shop";
   if (s.includes("meditation")) return "meditation";
   if (s.includes("ashram")) return "ashram";
   if (s.includes("dham") || s.includes("shrine")) return "temple";
@@ -7877,6 +8069,7 @@ class Game {
       const m = this.world.metro; // the metro is up on its track; the train is handled by the tracks rule
       return false;
     };
+    this.applyOutfit();
     this.minimap = new Minimap(this.world);
     this.bigmap = new BigMap(this);
     this.minimap.rideables = this.rideables;
@@ -8037,6 +8230,11 @@ class Game {
       });
     }
 
+    // Outdoor shopping: carts, the village sabzi stall, petrol pumps, the sports shop.
+    for (const sp of this.world.shopSpots || []) {
+      this.interactables.push({ pos: { x: sp.x, z: sp.z }, radius: 2.2, prompt: () => `${sp.label} (₹${this.progress.money})`, activate: () => this._openShop(sp.name, sp.cat, sp.keeper) });
+    }
+
     // Auto stands: press E to ride to another district.
     for (const st of AUTO_STANDS) {
       this.interactables.push({
@@ -8074,11 +8272,68 @@ class Game {
   // ---- Licence, tests, ride time ----
   hasLicence() { return this.progress.safety.licence.valid; }
 
-  addFuel(sec, why) {
-    this.progress.fuel = Math.max(0, this.progress.fuel + sec);
+  // Money: earned by solving, spent in shops and on fines.
+  addMoney(n, why) {
+    this.progress.money = Math.max(0, this.progress.money + n);
     saveProgress(this.profile, this.progress);
     this.ui.refreshRank();
-    if (why) showToast(`⏱ +${fmtTime(sec)} ride time: ${why}`, 2600, "good");
+    if (why && n > 0) { playCoin(); showToast(`💰 +₹${n}: ${why}. Wallet ₹${this.progress.money}`, 2800, "good"); }
+    else if (why) showToast(`💰 −₹${-n}: ${why}. Wallet ₹${this.progress.money}`, 2800, "bad");
+  }
+  addEnergy(n) {
+    this.progress.energy = Math.max(0, Math.min(100, this.progress.energy + n));
+    saveProgress(this.profile, this.progress);
+    this.ui.refreshRank();
+  }
+  addFuel(litres) {
+    this.progress.fuel = Math.max(0, this.progress.fuel + litres);
+    saveProgress(this.profile, this.progress);
+    this.ui.refreshRank();
+  }
+
+  // Dress the engineer in what has been bought.
+  applyOutfit() {
+    const o = this.progress.outfit, p = this.player.group.userData.parts;
+    const paint = (mesh, c) => { if (mesh && mesh.material && mesh.material.color) mesh.material.color.set(c); };
+    if (o.shirt != null) { paint(p.torso, o.shirt); for (const k of ["armL", "armR"]) paint(p[k].children[0], o.shirt); }
+    if (o.trousers != null) for (const k of ["legL", "legR"]) paint(p[k].children[0], o.trousers);
+    if (o.hair != null) paint(p.hair, o.hair);
+  }
+
+  // A shop panel: buy with rupees.
+  _openShop(name, key, keeper = "Shopkeeper") {
+    const items = SHOP_CATALOGS[key];
+    if (!items) return;
+    const render = () => {
+      const money = this.progress.money;
+      const card = openPanel(`
+        <div class="job-title-row"><h2>${name}</h2><button class="ghost-btn" id="shop-close">Leave</button></div>
+        <p class="job-brief">${keeper}: "Welcome! You have <b>₹${money}</b>. Earn more by solving the village's problems."</p>
+        <div class="shop-list">${items.map((it, i) => `<div class="shop-item"><div>${it.name}<small>${effectText(it)}</small></div><span class="price">₹${it.price}</span><button class="buy-btn" data-i="${i}" ${money < it.price ? "disabled" : ""}>Buy</button></div>`).join("")}</div>
+        <p class="tiny-note">⚡ Energy keeps you walking fast. 🧢 Clothes change how you look. 📘 Hint tokens reveal a worked example in any puzzle. ⛽ Petrol is needed to ride motor vehicles.</p>
+      `);
+      card.querySelector("#shop-close").addEventListener("click", () => closePanel());
+      card.querySelectorAll(".buy-btn").forEach((b) => b.addEventListener("click", () => { this._buy(items[Number(b.dataset.i)]); render(); }));
+    };
+    render();
+  }
+
+  _buy(it) {
+    if (this.progress.money < it.price) { Audio.playRetry(); return; }
+    this.progress.money -= it.price;
+    const pr = this.progress;
+    let msg = `Bought ${it.name} for ₹${it.price}.`;
+    if (it.kind === "energy") { pr.energy = Math.min(100, pr.energy + it.value); msg += ` ⚡ +${it.value} energy.`; }
+    else if (it.kind === "fuel") { pr.fuel += it.value; msg += ` ⛽ ${pr.fuel.toFixed(1)} L in the tank.`; }
+    else if (it.kind === "shirt") { pr.outfit.shirt = it.value; this.applyOutfit(); msg += " Looking smart!"; }
+    else if (it.kind === "trousers") { pr.outfit.trousers = it.value; this.applyOutfit(); msg += " Looking smart!"; }
+    else if (it.kind === "hair") { pr.outfit.hair = it.value; this.applyOutfit(); msg += " New hair!"; }
+    else if (it.kind === "hint") { pr.hints += it.value; msg += ` 📘 Hint tokens: ${pr.hints}.`; }
+    else if (it.kind === "item") { pr.items.push(it.value); msg += " It is in your backpack (see the notebook)."; }
+    saveProgress(this.profile, pr);
+    this.ui.refreshRank();
+    playCoin();
+    showToast(msg, 3000, "good");
   }
 
   // A test panel: one multiple choice question at a time, no retries, a score at the end.
@@ -8136,7 +8391,7 @@ class Game {
         if (pass === null) return;
         lic.tests++;
         countAttempt(this.profile, this.progress, "licence-test");
-        if (pass) { lic.valid = true; lic.challans = 0; this.addSafety(5, "🪪 Licence issued! Two challans cancel it."); this.addFuel(120, "licence test passed"); }
+        if (pass) { lic.valid = true; lic.challans = 0; this.addSafety(5, "🪪 Licence issued! Two challans cancel it."); this.addMoney(200, "licence test passed"); }
         else saveProgress(this.profile, this.progress);
         this.ui.refreshRank();
       });
@@ -8157,7 +8412,7 @@ class Game {
   _tryMount(ride) {
     const lic = this.progress.safety.licence;
     if (ride.kind !== "bike" && !lic.valid) { Audio.playRetry(); showToast("No licence. Take the 20 question test at the RTO Office in Suryanagar.", 3800, "bad"); return; }
-    if (this.progress.fuel <= 0) { Audio.playRetry(); showToast("No ride time left. Solve a situation (+1 min) or a job (+3 min) to earn some.", 4000, "bad"); return; }
+    if (ride.kind !== "bike" && this.progress.fuel <= 0) { Audio.playRetry(); showToast("Empty tank! Buy petrol at a pump (₹100 a litre). Earn money by solving problems.", 4200, "bad"); return; }
     this._preRide(ride, () => {
       this.player.mount(ride);
       Audio.playPick();
@@ -8170,6 +8425,7 @@ class Game {
     const lic = this.progress.safety.licence;
     playWhistle();
     this.progress.safety.fines += fine;
+    this.progress.money = Math.max(0, this.progress.money - fine);
     this.addSafety(-1);
     if (lic.valid && this.player.riding && this.player.riding.kind !== "bike") {
       lic.challans++;
@@ -8229,7 +8485,7 @@ class Game {
         if (!sf.lessons.includes(lesson.id)) {
           sf.lessons.push(lesson.id);
           this.addSafety(10, `Lesson passed! +10 safety points.`);
-          this.addFuel(90);
+          this.addMoney(100, "lesson passed");
           if (sf.lessons.length >= SAFETY_LESSONS.length) setTimeout(() => showToast("🪪 Licence earned! You may now ride the scooty and the car. Helmet and seat belt, always.", 5000, "good"), 1200);
         }
         this._openSafetySchool();
@@ -8336,7 +8592,7 @@ class Game {
       if (this._road && this._road.safe && this._road.crossing) {
         const c = this._road.crossing;
         const sideNow = c.across === "h" ? Math.sign(pp.z - c.inter.z) : Math.sign(pp.x - c.inter.x);
-        if (sideNow !== this._road.enterSide) { this.addSafety(1, "Safe crossing on the green man! +1 🚦"); this.addFuel(20); }
+        if (sideNow !== this._road.enterSide) { this.addSafety(1, "Safe crossing on the green man! +1 🚦"); this.addMoney(10); }
       }
       this._road = null;
       return;
@@ -8360,7 +8616,7 @@ class Game {
     const w = this.world, pp = this.player.position;
     const speedo = document.getElementById("speedo");
     speedo.hidden = false;
-    document.getElementById("speedo-text").textContent = String(Math.round(this.player.speedKmh)) + " km/h · ⏱ " + fmtTime(this.progress.fuel);
+    document.getElementById("speedo-text").textContent = String(Math.round(this.player.speedKmh)) + " km/h" + (this.player.riding.kind === "bike" ? "" : " · ⛽ " + this.progress.fuel.toFixed(1) + " L");
     const inCity = pp.z > CITY.z1 - 6;
     const over = inCity && this.player.speedKmh > 52;
     speedo.classList.toggle("fast", over);
@@ -8402,7 +8658,7 @@ class Game {
         // Push anyone standing between the arms to the safe side.
         if (Math.abs(pp.x) < 6 && Math.abs(pp.z - 150) < 7) { const mover = this.player.mover; mover.position.z = pp.z < 150 ? 142 : 158; }
         if (Math.hypot(pp.x, pp.z - 150) < 16 && !this._uiBlocking() && !this.player.riding) {
-          const ctx = { profile: this.profile, level: 1, world: w, audio: Audio, countAttempt: () => countAttempt(this.profile, this.progress, "gate"), onSolve: () => { this.addSafety(2, "Waited at the gate and worked it out. +2 🚦"); this.addFuel(30); } };
+          const ctx = { profile: this.profile, level: 1, world: w, audio: Audio, countAttempt: () => countAttempt(this.profile, this.progress, "gate"), onSolve: () => { this.addSafety(2, "Waited at the gate and worked it out. +2 🚦"); this.addMoney(20); } };
           runStepQuiz(ctx, { title: GATE_QUESTION.title, intro: GATE_QUESTION.intro, goal: "The gate is down. Answer while the train passes.", steps: GATE_QUESTION.steps, doneBtn: "Watch the train go by", doneHtml: `<b>Right.</b> Station Master D'Souza: "Twenty seconds. Never race a train, Engineer."` });
         }
       }
@@ -8510,6 +8766,11 @@ class Game {
       { pos: room.exitPos, radius: 1.6, prompt: () => (floor === 0 ? `Go outside` : `Take the stairs down and out`), activate: () => this._exitRoom() },
       { pos: room.occupant.position, radius: 2.8, prompt: () => (room.occupant.def.isRTO ? `Take the licence test with ${room.occupant.name}` : `Talk to ${room.occupant.name}`), activate: () => (room.occupant.def.isRTO ? this._talkRTO(room.occupant) : this._startErrand(room.occupant)) },
     ];
+    // A counter to buy things in shops, eateries and the mall.
+    const cat = catalogFor(door.label, room.type);
+    if (cat && ["shop", "eatery", "mall", "clinic"].includes(room.type)) {
+      this.roomInteractables.push({ pos: { x: room.x0, z: room.z0 - 0.3 }, radius: 2.0, prompt: () => `Buy at the counter (₹${this.progress.money})`, activate: () => this._openShop(door.label, cat, room.occupant.name) });
+    }
     if (room.hasLift) {
       this.roomInteractables.push({
         pos: room.liftPos, radius: 1.9,
@@ -8546,8 +8807,7 @@ class Game {
       countAttempt: () => countAttempt(this.profile, this.progress, "situation:" + sit.id),
       onSolve: () => {
         markSituationDone(this.profile, this.progress, sit.id);
-        Audio.playCoin();
-        this.addFuel(60, "situation solved");
+        this.addMoney(payFor(sit.cat), "situation solved");
         this.ui.refreshRank();
         this._assignSituation(npc);
         this._engagedNpc = null;
@@ -8592,7 +8852,7 @@ class Game {
   // Record a finished job, update rank + marker.
   _completeJob(job) {
     markJobDone(this.profile, this.progress, job.id);
-    this.addFuel(180, job.title + " done");
+    this.addMoney(this.progress.jobsDone.includes(job.id) ? 400 : 300, job.title + " done");
     this.ui.refreshRank();
     job._marker.visible = false;
   }
@@ -8645,12 +8905,19 @@ class Game {
       }
     }
 
-    // Ride time burns while a vehicle moves; at zero the ride ends.
-    if (this.player.riding && this.player.riding.kind !== "metro" && this.player.speedKmh > 1) {
-      this.progress.fuel -= dt;
-      if (this.progress.fuel <= 0) { this.progress.fuel = 0; this.player.dismount(); showToast("⏱ Out of ride time! Solve situations and jobs to earn more.", 4500, "bad"); saveProgress(this.profile, this.progress); }
-      if (Math.floor(this.progress.fuel) !== this._fuelShown) { this._fuelShown = Math.floor(this.progress.fuel); document.getElementById("fuel-text").textContent = fmtTime(this.progress.fuel); }
+    // Petrol burns while a motor vehicle moves (a litre every 90 seconds); on empty the ride ends.
+    if (this.player.riding && !["metro", "bike"].includes(this.player.riding.kind) && this.player.speedKmh > 1) {
+      this.progress.fuel -= dt / 90;
+      if (this.progress.fuel <= 0) { this.progress.fuel = 0; this.player.dismount(); showToast("⛽ Out of petrol! Walk to a pump and buy some with the money you earn.", 4500, "bad"); saveProgress(this.profile, this.progress); }
+      if (Math.floor(this.progress.fuel * 10) !== this._fuelShown) { this._fuelShown = Math.floor(this.progress.fuel * 10); document.getElementById("fuel-text").textContent = fmtFuel(this.progress.fuel); }
     }
+    // Energy: walking and running use it; low energy slows you down.
+    if (!this.player.riding && this.player.speedKmh > 1 && !this.world.currentRoom) {
+      this.progress.energy = Math.max(0, this.progress.energy - dt / (this.input.running ? 6 : 12));
+      if (Math.floor(this.progress.energy) !== this._energyShown) { this._energyShown = Math.floor(this.progress.energy); this.ui.refreshRank(); }
+      if (this.progress.energy < 25 && elapsed - (this._hungryToast || -99) > 30) { this._hungryToast = elapsed; showToast("⚡ Low energy! Buy something to eat or drink. You walk slower when hungry.", 3500, "bad"); }
+    }
+    this.player.tired = this.progress.energy < 25;
     // Why a ride stopped: off the road, or a vehicle in the way (auto brake).
     if (this.player.blockedBy && elapsed - (this._lastBlockToast || -9) > 2.5) {
       this._lastBlockToast = elapsed;

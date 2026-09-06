@@ -309,6 +309,36 @@ html, body {
 }
 #touch-run.on { background: #ffce3a; box-shadow: 0 2px 0 #b8901a; }
 
+/* ---------- Road safety HUD ---------- */
+#safety-badge {
+  position: absolute; top: 100px; left: 12px;
+  background: rgba(255,253,246,0.92); border-radius: 999px;
+  padding: 5px 12px 5px 8px; display: flex; align-items: center; gap: 6px;
+  font-weight: 700; font-size: 14px; box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+#speedo {
+  position: absolute; left: 50%; bottom: 30px; transform: translateX(-50%);
+  background: rgba(30,22,10,0.8); color: #fff; padding: 8px 18px; border-radius: 999px;
+  font-weight: 800; font-size: 20px; letter-spacing: .02em;
+}
+#speedo[hidden] { display: none; }
+#speedo.fast { background: #c1121f; }
+#toast {
+  position: absolute; left: 50%; top: 96px; transform: translateX(-50%);
+  background: rgba(255,253,246,0.97); color: #2c2417; padding: 10px 18px; border-radius: 14px;
+  font-weight: 700; font-size: 15px; max-width: min(520px, 90vw); text-align: center;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25); border: 2px solid #ffce3a;
+}
+#toast[hidden] { display: none; }
+#toast.bad { border-color: #d9704f; }
+#toast.good { border-color: #7cae59; }
+.lesson-list { display: flex; flex-direction: column; gap: 8px; margin: 10px 0; }
+.lesson-btn {
+  border: 2px solid #d8cdb2; background: #fff; border-radius: 12px; cursor: pointer;
+  padding: 12px 14px; font-size: 16px; font-weight: 700; text-align: left; color: #2c2417;
+}
+.lesson-btn.done { background: #e3f0e0; border-color: #7cae59; }
+
 /* ---------- Lift panel and auto stand ---------- */
 .lift-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 8px; margin: 10px 0; }
 .lift-btn {
@@ -436,6 +466,12 @@ html, body {
     </div>
     <!-- Stars: village situations solved -->
     <div id="star-badge"><span class="rank-icon">⭐</span><span id="star-text">0 / 100</span></div>
+    <!-- Road safety points and licence -->
+    <div id="safety-badge" title="Road Safety points"><span class="rank-icon">🚦</span><span id="safety-text">0</span><span id="licence-icon" hidden>🪪</span></div>
+    <!-- Speedometer, shown while riding -->
+    <div id="speedo" hidden><span id="speedo-text">0</span> km/h</div>
+    <!-- Short messages from drivers, signals and the constable -->
+    <div id="toast" hidden></div>
 
     <!-- Notebook button, top-right -->
     <button id="notebook-btn" title="Notebook (N)">📓</button>
@@ -842,7 +878,7 @@ const KEY = (profile) => `engineers-village.v1.${profile}`;
 
 // A fresh, empty progress record.
 function emptyProgress() {
-  return { jobsDone: [], attempts: {}, situationsDone: [], replays: {} };
+  return { jobsDone: [], attempts: {}, situationsDone: [], replays: {}, safety: { points: 0, lessons: [] } };
 }
 
 // Read the saved progress for a profile. Always returns a valid object,
@@ -858,6 +894,9 @@ function loadProgress(profile) {
       attempts: data.attempts && typeof data.attempts === "object" ? data.attempts : {},
       situationsDone: Array.isArray(data.situationsDone) ? data.situationsDone : [],
       replays: data.replays && typeof data.replays === "object" ? data.replays : {},
+      safety: data.safety && typeof data.safety === "object"
+        ? { points: Number(data.safety.points) || 0, lessons: Array.isArray(data.safety.lessons) ? data.safety.lessons : [] }
+        : { points: 0, lessons: [] },
     };
   } catch (e) {
     // If storage is blocked (private mode, etc.) just play without saving.
@@ -1424,6 +1463,18 @@ const RANKS = [
   { name: "Master Engineer", min: 6 },
 ];
 
+// A short message at the top of the screen (drivers, signals, the constable).
+let _toastTimer = null;
+function showToast(text, ms = 2600, kind = "") {
+  const el = document.getElementById("toast");
+  if (!el) return;
+  el.textContent = text;
+  el.className = kind;
+  el.hidden = false;
+  clearTimeout(_toastTimer);
+  _toastTimer = setTimeout(() => (el.hidden = true), ms);
+}
+
 // Work out the rank name for a number of finished jobs.
 function rankFor(jobsDoneCount) {
   let current = RANKS[0];
@@ -1499,6 +1550,9 @@ class UI {
     this.rankText.textContent = rankFor(count);
     const stars = this.game.progress.situationsDone.length;
     document.getElementById("star-text").textContent = `${stars} / ${SITUATIONS.length}`;
+    const sf = this.game.progress.safety;
+    document.getElementById("safety-text").textContent = String(sf.points);
+    document.getElementById("licence-icon").hidden = sf.lessons.length < SAFETY_LESSONS.length;
   }
 
   // Show or hide the little "Press E to talk" prompt.
@@ -1565,6 +1619,9 @@ class UI {
         <div class="cat-count">${npc.bank === "near" ? "this side" : npc.bank === "indoors" ? "indoors" : "across the river"}</div></li>`;
     }
     html += `</ul>`;
+    const sf = this.game.progress.safety;
+    html += `<div class="section-label">Road safety</div><ul class="job-list"><li><div class="job-title">🚦 ${sf.points} points ${sf.lessons.length >= SAFETY_LESSONS.length ? "· 🪪 Licence earned" : "· no licence yet"}</div>
+      <div class="job-concept">Lessons passed: ${sf.lessons.length} of ${SAFETY_LESSONS.length}. Find Constable Verma in Suryanagar. Cross at zebra crossings on the green man for +1; walking into traffic costs 1.</div></li></ul>`;
     html += `<div class="section-label">By topic</div><ul class="job-list">`;
     for (const cat of Object.keys(CATEGORY_NAMES)) {
       const all = SITUATIONS.filter((x) => x.cat === cat);
@@ -1593,6 +1650,8 @@ class UI {
       </li>`;
     }
     html += `</ul>`;
+    html += `<div class="section-label">Road safety</div>`;
+    html += `<p>${prog.safety.points} points. Lessons passed: ${SAFETY_LESSONS.filter((l) => prog.safety.lessons.includes(l.id)).map((l) => l.title.replace(/Lesson \d: /, "")).join(", ") || "none yet"}. ${prog.safety.lessons.length >= SAFETY_LESSONS.length ? "Licence earned." : "No licence yet."}</p>`;
     html += `<div class="section-label">Village situations</div>`;
     html += `<p>${prog.situationsDone.length} of ${SITUATIONS.length} solved. Replays with new numbers: ${Object.values(prog.replays).reduce((a, b) => a + b, 0)}.</p>`;
     html += `<ul class="job-list">`;
@@ -1824,13 +1883,16 @@ function makeWaterSheet(w, d, segX, segZ, color = COLORS.water) {
 
 // Moves an object back and forth along a list of points at a steady speed.
 class PathMover {
-  constructor(obj, points, speed, { loop = false, yOffset = 0 } = {}) {
+  constructor(obj, points, speed, { loop = false, yOffset = 0, L = 2, W = 1, city = false } = {}) {
     this.obj = obj; this.points = points; this.speed = speed; this.loop = loop; this.yOffset = yOffset;
+    this.L = L; this.W = W; this.city = city; // half length, half width, obeys city signals
     this.i = 0; this.dir = 1; this.wait = 0;
     obj.position.set(points[0][0], heightAt(points[0][0], points[0][1]) + yOffset, points[0][1]);
   }
   update(dt) {
     if (this.wait > 0) { this.wait -= dt; return; }
+    // Braking for a person in front, a red light, or a vehicle ahead; or stopped after a bump.
+    if (this.obj.userData.brake || (this.obj.userData.stopUntil || 0) > performance.now() / 1000) return;
     const next = this.loop ? this.points[(this.i + this.dir + this.points.length) % this.points.length] : this.points[this.i + this.dir];
     if (!next) {
       if (this.loop) { this.i = (this.i + this.dir + this.points.length) % this.points.length; return; }
@@ -2724,6 +2786,20 @@ class World {
       this.scene.add(sl);
     }
     this.mapItems.roads.push([[-200, 150], [200, 150]]);
+    // The railway gate where the main road crosses the line: two barrier arms
+    // that come down while the train passes, with bells and a warning sign.
+    this.gateArms = [];
+    for (const [px, pz, dir] of [[-5.5, 143.5, 1], [5.5, 156.5, -1]]) {
+      const post = new THREE.Mesh(new THREE.BoxGeometry(0.4, 1.4, 0.4), mat(0xd62828)); post.position.set(px, heightAt(px, pz) + 0.7, pz); this.scene.add(post); this.addBox(px, pz, 0.4, 0.4);
+      const pivot = new THREE.Group(); pivot.position.set(px, heightAt(px, pz) + 1.2, pz);
+      const arm = new THREE.Mesh(new THREE.BoxGeometry(10, 0.18, 0.18), mat(0xffffff)); arm.position.x = dir * 5;
+      for (let k = 0; k < 5; k++) { const stripe = new THREE.Mesh(new THREE.BoxGeometry(1, 0.2, 0.2), mat(0xd62828)); stripe.position.x = dir * (1 + k * 2); pivot.add(stripe); }
+      pivot.add(arm); pivot.rotation.z = dir * Math.PI / 2; pivot.userData.dir = dir; pivot.userData.dynamic = true;
+      this.scene.add(pivot); this.gateArms.push(pivot);
+      const lamp = new THREE.Mesh(new THREE.SphereGeometry(0.16, 8, 6), new THREE.MeshStandardMaterial({ color: 0xff3b30, emissive: 0xff3b30, emissiveIntensity: 0.1 })); lamp.position.set(px, heightAt(px, pz) + 1.7, pz); this.scene.add(lamp); this.gateArms.push(lamp);
+    }
+    this.gateDown = false;
+    const gateSign = makeTextSprite("Railway crossing: stop when the gate is down", { size: 36, scale: 1.4 }); gateSign.position.set(-8, heightAt(-8, 141) + 3.4, 141); this.scene.add(gateSign);
 
     // Signposts at the junctions.
     this._addSign(4, 34, ["↑ Setugram  ↓ Town", "→ Farms   ← Lake"]);
@@ -2939,12 +3015,36 @@ class World {
     const lineMat = mat(0xf5f5f5);
     for (const z of avenuesZ) for (let x = C.x1; x < C.x2; x += 6) { const l = new THREE.Mesh(new THREE.BoxGeometry(3, 0.02, 0.25), lineMat); l.position.set(x, 0.18, z); this.scene.add(l); }
     for (const x of [...avenuesX, 0]) for (let z = C.z1; z < C.z2; z += 6) { const l = new THREE.Mesh(new THREE.BoxGeometry(0.25, 0.02, 3), lineMat); l.position.set(x, 0.18, z); this.scene.add(l); }
-    // Zebra crossings and traffic lights at every crossroads.
+    // Every crossroads: two traffic lights (east-west and north-south cars), a
+    // zebra crossing 13 m along each avenue with pedestrian signals, a lamp.
+    this.intersections = [];
+    this.crossings = [];
+    this.pedSignals = [];
+    this.roadBands = { h: avenuesZ.map((z) => ({ z, half: 4 })), v: [...avenuesX, 0].map((x) => ({ x, half: x === 0 ? 4.5 : 4 })) };
     for (const x of [...avenuesX, 0]) for (const z of avenuesZ) {
-      for (let k = -3; k <= 3; k++) { const s = new THREE.Mesh(new THREE.BoxGeometry(0.6, 0.02, 3.5), lineMat); s.position.set(x + k * 1.1, 0.19, z + 6.5); this.scene.add(s); }
-      this._addTrafficLight(x + 5.5, z + 5.5);
+      const inter = { x, z, phase: Math.random() * SIGNAL_CYCLE, lightsH: [], lightsV: [] };
+      this.intersections.push(inter);
+      // Across the east-west avenue (walk north-south), east of the crossroads.
+      for (let k = 0; k < 8; k++) { const st = new THREE.Mesh(new THREE.BoxGeometry(3, 0.02, 0.5), lineMat); st.position.set(x + 13, 0.19, z - 3.5 + k); this.scene.add(st); }
+      this.crossings.push({ x1: x + 11.3, x2: x + 14.7, z1: z - 4.8, z2: z + 4.8, inter, across: "h" });
+      this._addPedSignal(x + 14.9, z - 5.4, inter, "h"); this._addPedSignal(x + 11.1, z + 5.4, inter, "h");
+      // Across the north-south avenue (walk east-west), north of the crossroads (not past the last row).
+      if (z !== 270) {
+        for (let k = 0; k < 8; k++) { const st = new THREE.Mesh(new THREE.BoxGeometry(0.5, 0.02, 3), lineMat); st.position.set(x - 3.5 + k, 0.19, z + 13); this.scene.add(st); }
+        this.crossings.push({ x1: x - 4.8, x2: x + 4.8, z1: z + 11.3, z2: z + 14.7, inter, across: "v" });
+        this._addPedSignal(x - 5.4, z + 11.1, inter, "v"); this._addPedSignal(x + 5.4, z + 14.9, inter, "v");
+      }
+      this._addTrafficLight(x + 5.5, z - 5.5, inter, "h");
+      this._addTrafficLight(x - 5.5, z + 5.5, inter, "v");
       this._addLamp(x - 5.5, z - 5.5);
     }
+    // Road signs the lessons talk about.
+    this._addRoadSign(-100, 185, "⭕ 50", "Speed limit 50");
+    this._addRoadSign(100, 185, "⭕ 50", "Speed limit 50");
+    this._addRoadSign(-46, 278, "🔺 School ahead", "Slow down");
+    this._addRoadSign(-122, 198, "🅷 Hospital", "No horns");
+    this._addRoadSign(92, 208, "⛔ No entry", "Bus depot only");
+    this._addRoadSign(6, 184, "🦓 Cross at the zebra", "Wait for the green man");
     // Footpaths: pale slabs along each avenue.
     const pathMat = mat(0xcfc7b8);
     for (const z of avenuesZ) for (const side of [-1, 1]) { const p = new THREE.Mesh(new THREE.BoxGeometry(C.x2 - C.x1, 0.25, 2.4), pathMat); p.position.set(0, 0.12, z + side * 5.2); this.scene.add(p); }
@@ -3104,16 +3204,16 @@ class World {
         const car = makeCar(carColors[(li * 3 + k) % carColors.length]);
         car.userData.dynamic = true;
         this.scene.add(car);
-        const mover = new PathMover(car, loop.map(([x, z]) => [x + 2.5, z + 2.5]), 9 + k * 1.5, { loop: true });
+        const mover = new PathMover(car, loop.map(([x, z]) => [x + 2.5, z + 2.5]), 9 + k * 1.5, { loop: true, L: 2.2, W: 1.0, city: true });
         mover.i = k % loop.length; car.position.set(loop[mover.i][0] + 2.5, 0, loop[mover.i][1] + 2.5);
         this.cityMovers.push(mover);
       }
       const auto = makeAuto(); auto.userData.dynamic = true; this.scene.add(auto);
-      const am = new PathMover(auto, loop.map(([x, z]) => [x - 2.5, z - 2.5]).reverse(), 7, { loop: true });
+      const am = new PathMover(auto, loop.map(([x, z]) => [x - 2.5, z - 2.5]).reverse(), 7, { loop: true, L: 1.2, W: 0.75, city: true });
       this.cityMovers.push(am);
     });
     const cityBus = makeCityBus(0x2a9d8f); cityBus.userData.dynamic = true; this.scene.add(cityBus);
-    this.cityMovers.push(new PathMover(cityBus, [[-2.5, 292], [-2.5, 190], [-2.5, 160]], 8));
+    this.cityMovers.push(new PathMover(cityBus, [[-2.5, 292], [-2.5, 190], [-2.5, 160]], 8, { L: 4.6, W: 1.35, city: true }));
   }
 
   // Auto stands: a parked auto, a sign, and a spot to stand.
@@ -3132,7 +3232,7 @@ class World {
     }
   }
 
-  _addTrafficLight(x, z) {
+  _addTrafficLight(x, z, inter, dir) {
     const h = heightAt(x, z);
     const pole = new THREE.Mesh(new THREE.CylinderGeometry(0.1, 0.12, 4.2, 6), mat(0x333333)); pole.position.set(x, h + 2.1, z); this.scene.add(pole);
     const box = new THREE.Mesh(new THREE.BoxGeometry(0.5, 1.5, 0.4), mat(0x222222)); box.position.set(x, h + 4.4, z); this.scene.add(box);
@@ -3140,9 +3240,27 @@ class World {
       const l = new THREE.Mesh(new THREE.SphereGeometry(0.17, 8, 6), new THREE.MeshStandardMaterial({ color: new THREE.Color(c), emissive: new THREE.Color(c), emissiveIntensity: 0.1 }));
       l.position.set(x, h + 4.9 - i * 0.5, z + 0.25); this.scene.add(l); return l;
     });
-    this.trafficLights = this.trafficLights || [];
-    this.trafficLights.push({ lights, phase: Math.random() * 9 });
+    (dir === "h" ? inter.lightsH : inter.lightsV).push(lights);
     this.addCircle(x, z, 0.2);
+  }
+
+  // A pedestrian signal: a short pole with a red man on top and a green man below.
+  _addPedSignal(x, z, inter, across) {
+    const h = heightAt(x, z);
+    const pole = new THREE.Mesh(new THREE.CylinderGeometry(0.06, 0.08, 2.6, 6), mat(0x333333)); pole.position.set(x, h + 1.3, z); this.scene.add(pole);
+    const box = new THREE.Mesh(new THREE.BoxGeometry(0.34, 0.8, 0.3), mat(0x222222)); box.position.set(x, h + 2.7, z); this.scene.add(box);
+    const red = new THREE.Mesh(new THREE.SphereGeometry(0.12, 8, 6), new THREE.MeshStandardMaterial({ color: 0xff3b30, emissive: 0xff3b30, emissiveIntensity: 0.1 })); red.position.set(x, h + 2.9, z + 0.18); this.scene.add(red);
+    const green = new THREE.Mesh(new THREE.SphereGeometry(0.12, 8, 6), new THREE.MeshStandardMaterial({ color: 0x34c759, emissive: 0x34c759, emissiveIntensity: 0.1 })); green.position.set(x, h + 2.5, z + 0.18); this.scene.add(green);
+    this.pedSignals.push({ red, green, inter, across });
+    this.addCircle(x, z, 0.15);
+  }
+
+  _addRoadSign(x, z, text, sub) {
+    const h = heightAt(x, z);
+    const pole = new THREE.Mesh(new THREE.CylinderGeometry(0.06, 0.08, 3, 6), mat(0x9aa6ad)); pole.position.set(x, h + 1.5, z); this.scene.add(pole);
+    const s1 = makeTextSprite(text, { size: 52, color: "#c1121f", bg: "rgba(255,255,255,0.97)", scale: 1.1 }); s1.position.set(x, h + 3.4, z); this.scene.add(s1);
+    const s2 = makeTextSprite(sub, { size: 40, scale: 0.9 }); s2.position.set(x, h + 2.6, z); this.scene.add(s2);
+    this.addCircle(x, z, 0.15);
   }
 
   _addBillboard(x, z, text, color) {
@@ -3155,11 +3273,19 @@ class World {
 
   _updateCity(dt, elapsed) {
     for (const m of this.cityMovers || []) m.update(dt);
-    // Traffic lights cycle red, green, amber every nine seconds.
-    for (const tl of this.trafficLights || []) {
-      const t = (elapsed + tl.phase) % 9;
-      const on = t < 4 ? 0 : t < 8 ? 2 : 1;
-      tl.lights.forEach((l, i) => (l.material.emissiveIntensity = i === on ? 1.2 : 0.08));
+    // Traffic lights and pedestrian signals follow one shared 30 second cycle
+    // per crossroads: east-west cars green, then north-south cars green.
+    for (const inter of this.intersections || []) {
+      const st = signalState(inter.phase, elapsed);
+      const idx = (c) => (c === "red" ? 0 : c === "amber" ? 1 : 2);
+      for (const lights of inter.lightsH) lights.forEach((l, i) => (l.material.emissiveIntensity = i === idx(st.h) ? 1.2 : 0.08));
+      for (const lights of inter.lightsV) lights.forEach((l, i) => (l.material.emissiveIntensity = i === idx(st.v) ? 1.2 : 0.08));
+    }
+    for (const ps of this.pedSignals || []) {
+      const st = signalState(ps.inter.phase, elapsed);
+      const go = ps.across === "h" ? st.pedAcrossH : st.pedAcrossV;
+      ps.green.material.emissiveIntensity = go ? 1.2 : 0.08;
+      ps.red.material.emissiveIntensity = go ? 0.08 : 1.2;
     }
     // Tower beacons blink.
     for (const b of this.cityLights || []) b.material.emissiveIntensity = Math.sin(elapsed * 3) > 0 ? 1 : 0.1;
@@ -3570,7 +3696,7 @@ class World {
     const busSign = makeTextSprite("Village Bus", { size: 48, scale: 0.7 }); busSign.position.y = 3.6; bus.add(busSign);
     bus.userData.dynamic = true;
     this.scene.add(bus);
-    this.movers.push(new PathMover(bus, [[2.2, 290], [2.2, 190], [2.2, 150], [2.2, 66], [2.2, 34]], 9));
+    this.movers.push(new PathMover(bus, [[2.2, 290], [2.2, 190], [2.2, 150], [2.2, 66], [2.2, 34]], 9, { L: 3.6, W: 1.3, city: true }));
 
     // Train: engine plus two coaches along the rails at z = 150, looping.
     const train = new THREE.Group();
@@ -3595,7 +3721,7 @@ class World {
     for (const [x, z, r] of [[-0.9, 0.8, 0.4], [0.9, 0.8, 0.4], [-0.9, -0.8, 0.7], [0.9, -0.8, 0.7]]) { const w = new THREE.Mesh(new THREE.CylinderGeometry(r, r, 0.4, 10), mat(0x222222)); w.rotation.z = Math.PI / 2; w.position.set(x, r, z); tractor.add(w); }
     tractor.userData.dynamic = true;
     this.scene.add(tractor);
-    this.movers.push(new PathMover(tractor, [[101.5, -68], [101.5, 68]], 3));
+    this.movers.push(new PathMover(tractor, [[101.5, -68], [101.5, 68]], 3, { L: 1.4, W: 0.9 }));
   }
 
   // Per-frame: vehicles, swing, seesaw, boats, lake ripples.
@@ -3728,6 +3854,7 @@ class World {
     if (inWater(x, z)) return false;                          // lakes
     if (heightAt(x, z) > 30) return false;                    // too steep, high mountains
     if (this.blockedBySolid(x, z)) return false;              // walls, trunks, posts
+    if (this.gateDown && Math.abs(x) < 6 && Math.abs(z - 150) < 7) return false; // railway gate is down
     const inRiver = z < this.riverZ.near && z > this.riverZ.far;
     if (!inRiver) return true;               // not over water — fine
     if (!this.bridgeBuilt) return false;     // water, no bridge — blocked
@@ -3877,6 +4004,7 @@ function makeHuman({
     const brim = new THREE.Mesh(new THREE.CylinderGeometry(0.33, 0.33, 0.05, 14), hatMat);
     brim.position.set(0, 0.06, 0.03);
     head.add(dome, brim);
+    parts.hat = [dome, brim];
   }
 
   g.add(head);
@@ -3973,6 +4101,19 @@ class Player {
     this.group.position.copy(world.spawn);
     world.scene.add(this.group);
 
+    // Safety gear, shown only while riding: a red helmet with a visor on
+    // the scooty or bicycle, a seat belt in the car.
+    const parts = this.group.userData.parts;
+    this.helmet = new THREE.Group();
+    const hdome = new THREE.Mesh(new THREE.SphereGeometry(0.28, 14, 8, 0, Math.PI * 2, 0, Math.PI * 0.62), humanMat(0xd62828)); hdome.position.y = 0.04; this.helmet.add(hdome);
+    const visor = new THREE.Mesh(new THREE.BoxGeometry(0.34, 0.12, 0.08), humanMat(0x222222)); visor.position.set(0, 0.06, 0.26); this.helmet.add(visor);
+    this.helmet.visible = false;
+    parts.head.add(this.helmet);
+    this.belt = new THREE.Mesh(new THREE.BoxGeometry(0.09, 0.7, 0.04), humanMat(0x222222));
+    this.belt.position.set(0.05, parts.torso.position.y, 0.16); this.belt.rotation.z = 0.55; this.belt.visible = false;
+    this.group.add(this.belt);
+    this.speedKmh = 0;
+
     // Movement tuning.
     this.speed = 6.2;            // metres per second
     this.facing = 0;             // which way the body points (radians)
@@ -4001,7 +4142,10 @@ class Player {
     const walking = mag > 0.05;
     const body = this.mover;
     const controlled = !this.riding || this.riding.controlled !== false;
-    const speed = this.riding ? this.riding.speed : this.speed * (running ? 1.8 : 1);
+    // Vehicles have a normal speed and a fast one (Shift or the run button);
+    // in the city the fast one is over the limit and the constable notices.
+    const speed = this.riding ? this.riding.speed * (running ? 1.5 : 1) : this.speed * (running ? 1.8 : 1);
+    this.speedKmh = (walking && controlled ? Math.min(mag, 1) * speed : 0) * 3.6;
 
     // Turn the camera. Indoors it settles to look straight into the room.
     if (this.world.currentRoom) {
@@ -4071,6 +4215,9 @@ class Player {
     this.group.position.set(seat.x, seat.y, seat.z);
     this.group.rotation.set(0, 0, 0);
     this.facing = ride.group.rotation.y;
+    const parts = this.group.userData.parts;
+    if (ride.kind === "scooty" || ride.kind === "bike") { this.helmet.visible = true; if (parts.hat) parts.hat.forEach((m) => (m.visible = false)); }
+    if (ride.kind === "car") this.belt.visible = true;
   }
 
   // Step off beside the vehicle.
@@ -4086,6 +4233,9 @@ class Player {
     this.group.rotation.set(0, v.rotation.y, 0);
     standPose(this.group);
     this.riding = null;
+    this.helmet.visible = false; this.belt.visible = false;
+    const parts = this.group.userData.parts;
+    if (parts.hat) parts.hat.forEach((m) => (m.visible = true));
   }
 
   // Smoothly follow behind the player (or the vehicle they ride).
@@ -6358,6 +6508,113 @@ function openLiftPanel(door, currentFloor, onPick) {
   }));
 }
 
+// ===== src/engine/roadsafety.js =====
+/* ============================================================
+   roadsafety.js — roads that teach.
+
+   Vehicles are solid and careful: they brake when the engineer is
+   in front, and if you walk into the road they stop, honk, and the
+   driver scolds you (you lose one Road Safety point, never health).
+   Zebra crossings have pedestrian signals that cars obey. Constable
+   Verma runs a Road Safety School of five lessons; passing all five
+   earns the licence that unlocks the scooty and the car.
+   ============================================================ */
+
+// Signal timing at every crossroads (seconds). Cars along the east-west
+// avenue get green first, then cars along the north-south avenue.
+const SIGNAL_CYCLE = 30;
+function signalState(phase, elapsed) {
+  const t = (elapsed + phase) % SIGNAL_CYCLE;
+  const h = t < 12 ? "green" : t < 14 ? "amber" : "red";                 // east-west traffic
+  const v = t >= 15 && t < 27 ? "green" : t >= 27 && t < 29 ? "amber" : "red"; // north-south traffic
+  return {
+    h, v,
+    pedAcrossH: t >= 14.5 && t < 29.5,   // safe to walk ACROSS the east-west avenue (its cars are red)
+    pedAcrossV: t < 13.5 || t >= 29.5,   // safe to walk ACROSS the north-south avenue
+    tH: h === "green" ? 12 - t : h === "amber" ? 14 - t : 30 - t + 0,
+    secsPedH: t >= 14.5 && t < 29.5 ? Math.ceil(29.5 - t) : Math.ceil((t < 14.5 ? 14.5 - t : 44.5 - t)),
+    secsPedV: t < 13.5 ? Math.ceil(13.5 - t) : t >= 29.5 ? Math.ceil(43.5 - t) : Math.ceil(29.5 - t),
+  };
+}
+
+// A short referee's whistle.
+function playWhistle() {
+  if (muted) return;
+  const c = getCtx();
+  if (!c) return;
+  const t = c.currentTime;
+  const o = c.createOscillator(); const g = c.createGain();
+  o.type = "square"; o.frequency.setValueAtTime(2200, t); o.frequency.linearRampToValueAtTime(2600, t + 0.08); o.frequency.linearRampToValueAtTime(2300, t + 0.3);
+  g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(0.25, t + 0.01); g.gain.linearRampToValueAtTime(0.001, t + 0.35);
+  o.connect(g).connect(master); o.start(t); o.stop(t + 0.36);
+}
+// A railway crossing bell: quick dings.
+function playCrossingBell() {
+  if (muted) return;
+  const c = getCtx();
+  if (!c) return;
+  const t = c.currentTime;
+  for (let i = 0; i < 4; i++) tone(1760, t + i * 0.18, 0.15, "sine", 0.35);
+}
+
+// ---- The five lessons of the Road Safety School ----
+const SAFETY_LESSONS = [
+  {
+    id: "lights", title: "Lesson 1: Traffic lights",
+    intro: `Constable Verma: "Every crossroads talks to you with three colours. Learn what each one says."`,
+    steps: [
+      { q: "The light is RED. What must a driver do?", choices: ["Stop and wait behind the line", "Go fast before it changes", "Honk and go slowly", "Turn around"], answer: "Stop and wait behind the line", hint: "Red always means stop." },
+      { q: "The light turns AMBER (yellow). What does it mean?", choices: ["Get ready to stop, the light is about to turn red", "Speed up", "Pedestrians may cross", "The road is closed"], answer: "Get ready to stop, the light is about to turn red", hint: "Amber is a warning that red is coming." },
+      { q: "The green WALKING MAN is showing at a crossing. Who may go?", choices: ["People on foot, across the zebra crossing", "Cars", "Only buses", "Nobody"], answer: "People on foot, across the zebra crossing", hint: "The walking man is for walkers." },
+    ],
+  },
+  {
+    id: "zebra", title: "Lesson 2: The zebra crossing",
+    intro: `Constable Verma: "The zebra crossing is the ONLY place to cross a busy road. And even there, you use your eyes."`,
+    steps: [
+      { q: "Before you step onto the crossing, what do you do?", choices: ["Look right, look left, look right again, then cross", "Run across as fast as you can", "Close your eyes and walk", "Wave at the cars"], answer: "Look right, look left, look right again, then cross", hint: "Cars in India drive on the left, so the nearest traffic comes from your right." },
+      { q: "The green man shows for 24 seconds. You walk 1 metre every second. The road is 8 metres wide. How many seconds will you have to spare?", answer: 16, unit: "seconds", hint: "8 metres at 1 metre per second takes 8 seconds. Take that from 24." },
+      { q: "The green man starts flashing while you are still on the footpath. What do you do?", choices: ["Wait for the next green", "Sprint across", "Cross halfway and stop", "Ask a car to wait"], answer: "Wait for the next green", hint: "Flashing means the green is ending. Never start on a flashing green." },
+    ],
+  },
+  {
+    id: "stopping", title: "Lesson 3: Stopping distance",
+    intro: `Constable Verma: "A car cannot stop on the spot. The faster it goes, the MUCH longer it needs. This is why speed limits exist."`,
+    steps: [
+      { q: "A car at 40 km per hour needs 20 metres to stop. A car at 80 km per hour is how many times faster?", answer: 2, unit: "times", hint: "80 ÷ 40." },
+      { q: "Stopping distance grows with speed × speed. Twice the speed means 2 × 2 = ? times the distance.", answer: 4, unit: "times", hint: "2 × 2." },
+      { q: "So how many metres does the car at 80 km per hour need to stop?", answer: 80, unit: "metres", hint: "20 metres × 4." },
+    ],
+  },
+  {
+    id: "signs", title: "Lesson 4: Road signs",
+    intro: `Constable Verma: "Signs are the road's picture language. Read them and the road tells you what is ahead."`,
+    steps: [
+      { q: "A red circle with a white bar across it means?", choices: ["No entry", "Hospital ahead", "Parking", "Go faster"], answer: "No entry", hint: "The white bar is like a closed gate." },
+      { q: "A red triangle with two children walking means?", choices: ["School ahead, slow down", "Children may not walk here", "Playground closed", "Bus stop"], answer: "School ahead, slow down", hint: "Triangles warn you about what is ahead." },
+      { q: "A red circle with the number 30 inside means?", choices: ["Speed limit 30 km per hour", "30 metres to the next town", "30 cars allowed", "Turn after 30 seconds"], answer: "Speed limit 30 km per hour", hint: "A number in a red circle is a limit." },
+      { q: "A blue square with a white H means?", choices: ["Hospital", "Hotel", "Highway", "Helmet zone"], answer: "Hospital", hint: "H for hospital. Drive quietly and slowly near it." },
+    ],
+  },
+  {
+    id: "helmet", title: "Lesson 5: Helmet and seat belt",
+    intro: `Constable Verma: "Last lesson, and the most important. Your head and your body are worth more than any hurry."`,
+    steps: [
+      { q: "On a scooty or motorbike, what must you wear, every single time?", choices: ["A helmet, strapped under the chin", "Sunglasses", "A cap", "Nothing, if the ride is short"], answer: "A helmet, strapped under the chin", hint: "Even a short ride. Even at slow speed." },
+      { q: "In a car, what must everyone wear, in the front AND the back seat?", choices: ["A seat belt", "A helmet", "Gloves", "Only the driver needs anything"], answer: "A seat belt", hint: "Belts hold you in place if the car stops suddenly." },
+      { q: "Helmets cut the chance of a head injury by about 70%. Out of 100 riders in crashes, how many does a helmet protect?", answer: 70, unit: "riders", hint: "70% of 100 is 70." },
+      { q: "Where should a child sit in a car?", choices: ["In the back seat, belted in", "On the driver's lap", "In the front, standing up", "In the boot"], answer: "In the back seat, belted in", hint: "The back seat is the safest place for children." },
+    ],
+  },
+];
+
+// The railway gate question, asked once while the train passes.
+const GATE_QUESTION = {
+  title: "The railway gate",
+  intro: `Station Master D'Souza: "Gate's down, train's coming. While we wait, a quick one."`,
+  steps: [{ q: "The train is 300 metres away and moves 15 metres every second. In how many seconds will it reach the gate?", answer: 20, unit: "seconds", hint: "Distance ÷ speed: 300 ÷ 15." }],
+};
+
 // ===== src/engine/ride.js =====
 /* ============================================================
    ride.js — things you can ride: scooty, bicycle, car, and the metro.
@@ -6369,12 +6626,12 @@ function openLiftPanel(door, currentFloor, onPick) {
    ============================================================ */
 
 const RIDEABLES = [
-  { kind: "scooty", x: -4, z: 23, speed: 13, label: "Scooty" },
+  { kind: "scooty", x: -4, z: 23, speed: 11, label: "Scooty" },
   { kind: "bike", x: 12, z: 84, speed: 10, label: "Bicycle" },
-  { kind: "car", x: 14, z: 198, speed: 20, label: "Car" },
-  { kind: "scooty", x: -14, z: 198, speed: 13, label: "Scooty" },
+  { kind: "car", x: 14, z: 198, speed: 14, label: "Car" },
+  { kind: "scooty", x: -14, z: 198, speed: 11, label: "Scooty" },
   { kind: "bike", x: -60, z: 40, speed: 10, label: "Bicycle" },
-  { kind: "scooty", x: 104, z: 48, speed: 13, label: "Scooty" },
+  { kind: "scooty", x: 104, z: 48, speed: 11, label: "Scooty" },
   { kind: "bike", x: 8, z: -206, speed: 10, label: "Bicycle" },
 ];
 
@@ -7067,8 +7324,17 @@ class Game {
       const ride = { group, speed: def.speed, kind: def.kind, label: def.label, controlled: true };
       this.interactables.push({
         pos: group.position, radius: 2.4,
-        prompt: () => `Ride the ${def.label}`,
-        activate: () => { this.player.mount(ride); Audio.playPick(); },
+        prompt: () => (def.kind === "bike" || this.hasLicence() ? `Ride the ${def.label}` : `${def.label}: licence needed (Constable Verma)`),
+        activate: () => {
+          if (def.kind !== "bike" && !this.hasLicence()) {
+            Audio.playRetry();
+            showToast("No licence yet! Pass Constable Verma's five Road Safety lessons in Suryanagar. Bicycles are fine.", 4000, "bad");
+            return;
+          }
+          this.player.mount(ride);
+          Audio.playPick();
+          showToast(def.kind === "car" ? "Seat belt on. Speed limit in the city is 50 km/h." : "Helmet on. Speed limit in the city is 50 km/h.", 3000, "good");
+        },
       });
       return ride;
     });
@@ -7108,13 +7374,246 @@ class Game {
     }
 
     // Each wandering villager (their position moves, so we point at the live vector).
+    // Constable Verma runs the Road Safety School instead of a situation.
     for (const npc of this.npcs) {
+      const constable = npc.def.id === "verma";
       this.interactables.push({
         pos: npc.position,
         radius: 2.6,
-        prompt: () => `Talk to ${npc.name}`,
-        activate: () => this._startErrand(npc),
+        prompt: () => (constable ? `Talk to ${npc.name} (Road Safety School)` : `Talk to ${npc.name}`),
+        activate: () => (constable ? this._talkConstable(npc) : this._startErrand(npc)),
       });
+    }
+  }
+
+  // ---- Road Safety School ----
+  hasLicence() { return this.progress.safety.lessons.length >= SAFETY_LESSONS.length; }
+
+  addSafety(n, text, kind) {
+    const sf = this.progress.safety;
+    sf.points = Math.max(0, sf.points + n);
+    saveProgress(this.profile, this.progress);
+    this.ui.refreshRank();
+    if (text) showToast(text, 3200, kind || (n < 0 ? "bad" : "good"));
+  }
+
+  _talkConstable(npc) {
+    this._engagedNpc = npc;
+    const sf = this.progress.safety;
+    const line = sf.lessons.length >= SAFETY_LESSONS.length
+      ? ["Licence holder! Still, a refresher never hurts."]
+      : ["Traffic, traffic. Every day someone forgets the rules.", "Come, I'll teach you. Five lessons, and the licence is yours."];
+    this.dialogue.say(npc.name, line, () => this._openSafetySchool(), { pitch: npc.def.child ? 560 : 380, speaker: npc.id });
+  }
+
+  _openSafetySchool() {
+    const sf = this.progress.safety;
+    const buttons = SAFETY_LESSONS.map((l) => `<button class="lesson-btn ${sf.lessons.includes(l.id) ? "done" : ""}" data-id="${l.id}">${sf.lessons.includes(l.id) ? "✔ " : ""}${l.title}</button>`).join("");
+    const card = openPanel(`
+      <div class="job-title-row"><h2>Road Safety School</h2><button class="ghost-btn" id="school-close">Leave</button></div>
+      <p class="job-brief">Constable Verma: "Roads are shared. Learn the rules and the city is yours."</p>
+      <div class="job-goal">🚦 <b>${sf.points}</b> points · Lessons passed <b>${sf.lessons.length} / ${SAFETY_LESSONS.length}</b>. Each lesson is worth 10 points. Pass all five to earn your <b>licence</b> for the scooty and the car.</div>
+      <div class="lesson-list">${buttons}</div>
+      <p class="tiny-note">Out on the roads: cross on the green man at a zebra crossing for +1. Walk into traffic, run a red light, or speed, and you lose 1.</p>
+    `);
+    card.querySelector("#school-close").addEventListener("click", () => { closePanel(); this._engagedNpc = null; });
+    card.querySelectorAll(".lesson-btn").forEach((b) => b.addEventListener("click", () => {
+      const lesson = SAFETY_LESSONS.find((l) => l.id === b.dataset.id);
+      closePanel();
+      this._runLesson(lesson);
+    }));
+  }
+
+  _runLesson(lesson) {
+    const ctx = {
+      profile: this.profile, level: 1, world: this.world, audio: Audio,
+      countAttempt: () => countAttempt(this.profile, this.progress, "lesson:" + lesson.id),
+      onSolve: () => {
+        const sf = this.progress.safety;
+        if (!sf.lessons.includes(lesson.id)) {
+          sf.lessons.push(lesson.id);
+          this.addSafety(10, `Lesson passed! +10 safety points.`);
+          if (sf.lessons.length >= SAFETY_LESSONS.length) setTimeout(() => showToast("🪪 Licence earned! You may now ride the scooty and the car. Helmet and seat belt, always.", 5000, "good"), 1200);
+        }
+        this._openSafetySchool();
+      },
+    };
+    runStepQuiz(ctx, {
+      title: lesson.title,
+      intro: lesson.intro,
+      goal: `Road Safety School. <b>${lesson.steps.length} steps.</b> Pass to earn 10 safety points.`,
+      steps: lesson.steps,
+      doneBtn: "Back to the school",
+      doneHtml: `<b>Lesson passed!</b> Constable Verma: "Shabash. That is how a real engineer moves through a city."`,
+    });
+  }
+
+  // ---- Traffic that behaves: brakes, red lights, bumps, crossings, the gate ----
+  _checkTraffic(dt, elapsed) {
+    const w = this.world;
+    if (w.currentRoom) return;
+    const pp = this.player.position;
+    const riding = this.player.riding;
+    const rideGroup = riding ? riding.group : null;
+    const now = performance.now() / 1000;
+    const movers = [...(w.movers || []), ...(w.cityMovers || [])];
+
+    for (const mv of movers) {
+      const v = mv.obj;
+      v.userData.brake = false;
+      if (v === rideGroup) continue;
+      const r = v.rotation.y, fx = Math.sin(r), fz = Math.cos(r);
+      // Brake for the engineer in front, or bump if the engineer is in the way.
+      const dx = pp.x - v.position.x, dz = pp.z - v.position.z;
+      if (dx * dx + dz * dz < 40 * 40) {
+        const along = dx * fx + dz * fz, side = dx * fz - dz * fx;
+        if (Math.abs(along) < mv.L + 0.7 && Math.abs(side) < mv.W + 0.7) this._bump(mv, side, now);
+        else if (along > 0 && along < mv.L + 7 && Math.abs(side) < mv.W + 1.2) v.userData.brake = true;
+      }
+      // Brake for a vehicle ahead.
+      if (!v.userData.brake) for (const o of movers) {
+        if (o === mv) continue;
+        const ox = o.obj.position.x - v.position.x, oz = o.obj.position.z - v.position.z;
+        const along = ox * fx + oz * fz, side = ox * fz - oz * fx;
+        if (along > 0 && along < mv.L + o.L + 3 && Math.abs(side) < 1.6) { v.userData.brake = true; break; }
+      }
+      // Stop at a red or amber light ahead.
+      if (!v.userData.brake && mv.city) {
+        const horizontal = Math.abs(fx) > Math.abs(fz);
+        for (const it of w.intersections) {
+          const ax = it.x - v.position.x, az = it.z - v.position.z;
+          const ahead = ax * fx + az * fz, lateral = Math.abs(ax * fz - az * fx);
+          if (ahead > 4 && ahead < 16 && lateral < 6) {
+            const st = signalState(it.phase, elapsed);
+            if ((horizontal ? st.h : st.v) !== "green") v.userData.brake = true;
+            break;
+          }
+        }
+      }
+    }
+
+    // The train never brakes: stay off the tracks.
+    if (!riding || riding.kind !== "metro") {
+      const tx = w._trainX;
+      if (Math.abs(pp.z - 150) < 2.4 && pp.x > tx - 19 && pp.x < tx + 4 && now - (this._lastBump || 0) > 3) {
+        this._lastBump = now;
+        const mover = this.player.mover;
+        const nz = pp.z < 150 ? 146 : 154;
+        if (w.isWalkable(mover.position.x, nz)) mover.position.z = nz;
+        playCrossingBell();
+        this.addSafety(-1, "The train! Never stand on the tracks. (−1)");
+      }
+    }
+
+    if (riding && riding.kind !== "metro") this._checkRidingRules(elapsed, now);
+    else if (!riding) this._checkPedestrian(elapsed, now);
+    this._checkGate(now);
+  }
+
+  _bump(mv, side, now) {
+    if (now - (this._lastBump || 0) < 3) return;
+    this._lastBump = now;
+    const w = this.world, v = mv.obj;
+    v.userData.stopUntil = now + 2;
+    playHorn();
+    const mover = this.player.mover;
+    const r = v.rotation.y, rx = Math.cos(r), rz = -Math.sin(r);
+    const sgn = side >= 0 ? 1 : -1;
+    let tx = v.position.x + rx * sgn * (mv.W + 1.8), tz = v.position.z + rz * sgn * (mv.W + 1.8);
+    if (!w.isWalkable(tx, tz)) { tx = v.position.x - rx * sgn * (mv.W + 1.8); tz = v.position.z - rz * sgn * (mv.W + 1.8); }
+    if (w.isWalkable(tx, tz)) { mover.position.x = tx; mover.position.z = tz; }
+    this.addSafety(-1, this.player.riding ? "Driver: Keep your distance, Engineer! (−1)" : "Driver: Arre, Engineer! Not here. Use the zebra crossing! (−1)");
+  }
+
+  // Walking in the city: roads are for crossings, crossings are for the green man.
+  _checkPedestrian(elapsed, now) {
+    const w = this.world, pp = this.player.position;
+    if (!w.roadBands || pp.z < CITY.z1 - 6) { this._road = null; return; }
+    const hBand = w.roadBands.h.find((b) => Math.abs(pp.z - b.z) < b.half);
+    const vBand = w.roadBands.v.find((b) => Math.abs(pp.x - b.x) < b.half);
+    const onRoad = hBand || vBand;
+    const cz = w.crossings.find((c) => pp.x > c.x1 && pp.x < c.x2 && pp.z > c.z1 && pp.z < c.z2);
+    if (!onRoad) {
+      // Leaving the road: a crossing started on green and finished on the far side earns a point.
+      if (this._road && this._road.safe && this._road.crossing) {
+        const c = this._road.crossing;
+        const sideNow = c.across === "h" ? Math.sign(pp.z - c.inter.z) : Math.sign(pp.x - c.inter.x);
+        if (sideNow !== this._road.enterSide) this.addSafety(1, "Safe crossing on the green man! +1 🚦");
+      }
+      this._road = null;
+      return;
+    }
+    if (this._road) return; // already on the road; judged at entry
+    if (cz) {
+      const st = signalState(cz.inter.phase, elapsed);
+      const go = cz.across === "h" ? st.pedAcrossH : st.pedAcrossV;
+      const enterSide = cz.across === "h" ? Math.sign(pp.z - cz.inter.z) : Math.sign(pp.x - cz.inter.x);
+      this._road = { safe: go, crossing: cz, enterSide };
+      if (go) showToast(`Green man: cross now. ${cz.across === "h" ? st.secsPedH : st.secsPedV} seconds left. Look right, left, right again.`, 2600, "good");
+      else { showToast(`Red man! Wait for the green. ${cz.across === "h" ? st.secsPedH : st.secsPedV} seconds to go.`, 2600, "bad"); playHorn(); }
+    } else {
+      this._road = { safe: false, crossing: null };
+      showToast("Not here! Cross only at the zebra crossing with the green man.", 2600, "bad");
+    }
+  }
+
+  // Riding in the city: red lights and the speed limit apply to you too.
+  _checkRidingRules(elapsed, now) {
+    const w = this.world, pp = this.player.position;
+    const speedo = document.getElementById("speedo");
+    speedo.hidden = false;
+    document.getElementById("speedo-text").textContent = String(Math.round(this.player.speedKmh));
+    const inCity = pp.z > CITY.z1 - 6;
+    const over = inCity && this.player.speedKmh > 52;
+    speedo.classList.toggle("fast", over);
+    if (!inCity) { this._speedingSince = null; return; }
+    // Speeding: a whistle after two seconds over the limit, then every six.
+    if (over) {
+      if (this._speedingSince == null) this._speedingSince = now;
+      if (now - this._speedingSince > 2 && now - (this._lastSpeedTicket || 0) > 6) {
+        this._lastSpeedTicket = now;
+        playWhistle();
+        this.addSafety(-1, "Constable Verma: Over the speed limit of 50! Slow down. (−1)");
+      }
+    } else this._speedingSince = null;
+    // Red lights: entering a crossroads against your light.
+    const fx = Math.sin(this.player.facing), fz = Math.cos(this.player.facing);
+    const horizontal = Math.abs(fx) > Math.abs(fz);
+    for (const it of w.intersections) {
+      const d = Math.hypot(pp.x - it.x, pp.z - it.z);
+      if (d < 5.5) {
+        if (this._inInter !== it) {
+          this._inInter = it;
+          const st = signalState(it.phase, elapsed);
+          if ((horizontal ? st.h : st.v) === "red") { playWhistle(); this.addSafety(-1, "Red light! Stop behind the line and wait. (−1)"); }
+        }
+        return;
+      }
+    }
+    if (this._inInter && Math.hypot(pp.x - this._inInter.x, pp.z - this._inInter.z) > 8) this._inInter = null;
+  }
+
+  // The railway gate comes down while the train is near; a question passes the time.
+  _checkGate(now) {
+    const w = this.world;
+    const down = Math.abs(w._trainX) < 80;
+    if (down !== w.gateDown) {
+      w.gateDown = down;
+      if (down) {
+        playCrossingBell();
+        const pp = this.player.position;
+        // Push anyone standing between the arms to the safe side.
+        if (Math.abs(pp.x) < 6 && Math.abs(pp.z - 150) < 7) { const mover = this.player.mover; mover.position.z = pp.z < 150 ? 142 : 158; }
+        if (Math.hypot(pp.x, pp.z - 150) < 16 && !this._uiBlocking() && !this.player.riding) {
+          const ctx = { profile: this.profile, level: 1, world: w, audio: Audio, countAttempt: () => countAttempt(this.profile, this.progress, "gate"), onSolve: () => this.addSafety(2, "Waited at the gate and worked it out. +2 🚦") };
+          runStepQuiz(ctx, { title: GATE_QUESTION.title, intro: GATE_QUESTION.intro, goal: "The gate is down. Answer while the train passes.", steps: GATE_QUESTION.steps, doneBtn: "Watch the train go by", doneHtml: `<b>Right.</b> Station Master D'Souza: "Twenty seconds. Never race a train, Engineer."` });
+        }
+      }
+    }
+    // Swing the arms and blink the lamps.
+    for (const g of w.gateArms) {
+      if (g.userData.dir != null) { const target = down ? 0 : g.userData.dir * Math.PI / 2; g.rotation.z += (target - g.rotation.z) * 0.06; }
+      else g.material.emissiveIntensity = down && Math.sin(now * 8) > 0 ? 1.2 : 0.1;
     }
   }
 
@@ -7337,6 +7836,10 @@ class Game {
         }
       }
     }
+
+    // Roads that teach: braking, lights, bumps, crossings, the railway gate.
+    this._checkTraffic(dt, elapsed);
+    if (!this.player.riding || this.player.riding.kind === "metro") document.getElementById("speedo").hidden = true;
 
     // Wandering villagers and animals.
     const engagedId = this._engagedNpc && blocked ? this._engagedNpc.id : null;

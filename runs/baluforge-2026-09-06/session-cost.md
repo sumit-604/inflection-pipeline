@@ -15,6 +15,8 @@ Per-stage token ledger, written as each stage returns.
 | 6 | Peer concall verification | claude-sonnet-5 | default | n/r | n/r | 301,616 | 6m32s | 1 |
 | 8 | Promoter background check | claude-sonnet-5 | default | n/r | n/r | 132,378 | 10m00s | 1 |
 | 7 | Emerging moat 22-category scan | claude-sonnet-5 | default | n/r | n/r | 126,236 | 9m37s | 1 |
+| 9 | TAM SAM SOM market sizing | claude-sonnet-5 | default | n/r | n/r | 149,555 | 14m26s | 1 |
+| 12a | Verifier A numerical | claude-haiku-4-5 | default | n/r | n/r | 92,869 | 3m41s | 1 |
 
 n/r = the subagent result reported a single total-token figure, not an input/output split.
 

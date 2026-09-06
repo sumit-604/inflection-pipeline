@@ -1,0 +1,77 @@
+stage: B09-tam
+company: "BALUFORGE"
+run_date: "2026-09-06"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["no company-wide management TAM claim exists, only vertical-specific defence/ammunition figures", "no independently-sized addressable market found for oil & gas, agriculture, heavy engineering, or power generation forged-component sub-verticals (51% of FY26 revenue), confirmed after direct search", "no utilisation % disclosed for old or new forging/machining capacity, blocking a true capacity-to-revenue conversion", "no absolute order book value disclosed, only percentage mix", "no per-unit/per-tonne realised price disclosed for any vertical except one illustrative shell-order data point", "current P/E diverges sharply across market-data aggregators (29.2x vs 48.82x, Sept 2026), no primary-source anchor accessible (BSE/NSE EGRESS_BLOCKED)", "AIFI India forging installed-capacity figures internally inconsistent across sources (3.85m MT vs 4.8m MT), exact publication date NOT FOUND"]
+flags: ["TAM primarily anchored on Method 3 peer-revenue aggregation because 4 of 6 served end markets have no independently-sized addressable market", "Yr5 SOM (Rs 1,885 Cr) exceeds the machining-capacity ceiling implied by B07's non-turnover-derived 78% proxy by Rs 240 Cr; SOM's Yr5 leg is the optimistic side absent further disclosed capacity", "SOM-implied revenue CAGR (14.6% Yr3 / 15.3% Yr5) sits below both management's historical growth guidance (40-45% FY26, missed at 19.9% actual, Stage 5) and the strategy's 25% CAGR hurdle", "defence/aerospace TAM addressability capped by missing AS9100/NADCAP accreditation and an unnamed ammunition MoU counterparty (Stage 7); broader aerospace beyond one order treated as not yet addressable", "management's own vertical-specific TAM claim (global ammunition market, Rs 1,71,400 Cr by 2030) is UNUSUALLY CONSERVATIVE against independent research (ratio 0.51x), the opposite of the standard inflation risk"]
+market_definition: "Forged and precision-machined components sold direct to OEMs across six end markets (auto/CV, agriculture, oil & gas, defence/aerospace/railway, heavy engineering, power generation), India and export combined, excluding OEM captive forging and small-arms/full-airframe-aerospace scope"
+tam_cr: {conservative: 31000, realistic: 38000}
+sam_cr: 10500
+sam_pct_of_tam: 34
+som_3yr_cr: 1390
+som_5yr_cr: 1885
+som_implied_revenue_cagr: {yr3: 14.6, yr5: 15.3}
+current_sam_share_pct: 8.8
+revenue_headroom_x: 11.4
+tam_growth_pct: 7
+runway_class: "STRONG"
+mgmt_claim_cr: 171400
+mgmt_claim_ratio: 0.51
+mgmt_claim_read: "conservative"
+capacity_check: "Yr3 broadly sufficient (gap Rs 4 Cr, immaterial); Yr5 gap of Rs 240 Cr vs machining-capacity ceiling, SOM's Yr5 leg is the optimistic side"
+methods_used: ["top-down (global and India forging market)", "peer revenue aggregation (primary anchor)", "bottom-up (illustrative, ammunition shell line only)", "import substitution (defence vertical only)"]
+stale_data_flags: []
+searches_performed: ["India forging industry market size 2025 crores AIFI Association of Indian Forging Industry", "global crankshaft market size 2025 2030 CAGR", "India auto components industry size ACMA FY25 turnover crore", "global ammunition market size 2030 forecast billion", "India forging market size 2025 billion USD IMARC report crores", "India defence production target Rs 3 lakh crore 2029 defence exports Rs 50000 crore target", "Balu Forge Industries order book FY26 crore Rs", "Union Budget 2026-27 defence allocation Rs lakh crore India February 2026", "USD INR exchange rate September 2026", "Bharat Forge Ramkrishna Forgings Happy Forgings MM Forgings FY25 revenue crore", "India defence indigenization ammunition production private sector Make in India shells market", "Ramkrishna Forgings FY25 full year revenue crore annual results", "MM Forgings Limited FY25 annual revenue crore results", "global forging market size 2025 billion USD automotive share forecast", "India oilfield equipment forged components market size crore agriculture equipment forging market India", "India power generation turbine forging market size heavy engineering forged components India", "Balu Forge Industries share price P/E ratio market cap September 2026"]
+searches_skipped: ["Method 5 global benchmark / per-capita comparison - not meaningful for a B2B precision-component manufacturer, deliberate scope decision not a blocked search"]
+downstream_candidates:
+  - signal: "NATO-affiliated entity (unnamed), 5-year large-calibre ammunition MoU"
+    entity_type: "counterparty"
+    demand_link: "Sole named long-term demand-visibility contract in defence/aerospace/railway vertical"
+    likely_source: "Company Reg. 30 disclosures; defence-trade press"
+    cadence: "event-driven"
+    shared: false
+  - signal: "Alpha Aircraft Systems Inc. (USA) maiden aerospace order"
+    entity_type: "end-customer"
+    demand_link: "Entry point into aerospace supply chain currently excluded from SAM"
+    likely_source: "Company Reg. 30 disclosure; US aerospace trade press"
+    cadence: "event-driven"
+    shared: false
+  - signal: "MoD capital procurement / Union Budget defence allocation"
+    entity_type: "macro"
+    demand_link: "Sets size of Indian-industry pool defence/aerospace/railway vertical draws from"
+    likely_source: "Union Budget documents; PIB; Ministry of Defence releases"
+    cadence: "event-driven"
+    shared: true
+  - signal: "AS9100 / NADCAP accreditation status"
+    entity_type: "regulatory"
+    demand_link: "Gates addressable aerospace slice of TAM, currently absent"
+    likely_source: "SAE ITC (AS9100) and PRI (NADCAP) registries"
+    cadence: "event-driven"
+    shared: false
+  - signal: "Unnamed Indian energetics player (155mm/152mm shell order counterparty)"
+    entity_type: "counterparty"
+    demand_link: "Direct near-term revenue driver for commercialised shell line"
+    likely_source: "Company Reg. 30 disclosure; defence-sector trade press"
+    cadence: "event-driven"
+    shared: false
+  - signal: "USD/INR exchange rate"
+    entity_type: "macro"
+    demand_link: "83.4% of revenue export-earned; net unhedged FX exposure Rs 336-361 Cr"
+    likely_source: "RBI reference rate"
+    cadence: "monthly"
+    shared: true
+  - signal: "Two customers each >10% of consolidated revenue (identities undisclosed)"
+    entity_type: "counterparty"
+    demand_link: "Direct revenue concentration; loss/change is a first-deterioration signal"
+    likely_source: "Company annual report/related-party disclosure (currently undisclosed)"
+    cadence: "quarterly"
+    shared: true
+  - signal: "SIAM commercial-vehicle production data"
+    entity_type: "macro"
+    demand_link: "Leading indicator for the 36% legacy auto/CV revenue share, already showing decline"
+    likely_source: "SIAM monthly production statistics"
+    cadence: "monthly"
+    shared: false
+demand_externally_verifiable: true
+analyst_note: "TAM/SAM rest on Method 3 (peer aggregation) because 4 of 6 verticals (51% of revenue) have no independent third-party sizing after genuine search. A tonnage-share approach using AIFI installed-capacity data was tried and abandoned: BALUFORGE's high-value-add mix (crankshafts, machined defence parts) makes MTPA share a poor proxy for revenue share, understating it. SOM figures do not depend on B07's 50%/78% capacity proxy; only the 3C feasibility check does, and that check assumes full utilisation, which is unverified in either stage. The 15% SOM-implied CAGR is a deliberately disciplined, share-gain-rule output, not a fit to the one good (19.9%) or one bad (guided 40-45%) year on record."

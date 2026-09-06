@@ -1,0 +1,83 @@
+stage: B00-inputs
+company: INA
+run_date: 2026-09-06
+model: orchestrator-inline
+status: complete
+input_gaps:
+  - type: prospectus
+    severity: HIGH
+    note: "IPO FY2022-23 on BSE SME; main-board listing 09-Mar-2026. Pre-IPO restated financials and full promoter/group map unavailable elsewhere. Backward series starts FY2022."
+  - type: results
+    severity: HIGH
+    note: "0 of 2-3 PDFs. Q1FY27 print (QE 30-Jun-2026) exists per screener but no filing in corpus."
+  - type: rating
+    severity: MEDIUM
+    note: "0 PDFs. No rating rationale for the FY26 borrowing step-up (Rs 108cr to Rs 888cr)."
+  - type: shareholding
+    severity: MEDIUM
+    note: "0 files. FII+DII unresolved; UA multiplier withheld at stage 11; pledge trend falls back to AR."
+  - type: research
+    severity: LOW
+    note: "0 files. Non-anchored source; no effect on evidence."
+  - type: screening-csv-shells
+    severity: MEDIUM
+    note: "Profit_Loss/Balance_Sheet/Cash_Flow/Quarters CSVs header-only for subject and all 3 peers. Only Data_Sheet.csv populated. Known collect_to_repo v3 defect."
+  - type: sector_cap_row-mismatch
+    severity: MEDIUM
+    note: "Manifest says 'EV charging / energy transition equipment'; company makes solar modules and cells. Flagged for phase-3 confirmation; Section 1B cap ruled at stage 11."
+  - type: announcements-thin
+    severity: MEDIUM
+    note: "1 file, a 2-page Reg 30 AR-weblink letter with no material-event content. Documented-ACTION record effectively absent."
+  - type: peer-concalls-partial
+    severity: LOW
+    note: "11 of 12. WEBELSOLAR has 3 (no Nov-2025 call); WAAREEENER and PREMIERENE have 4 each."
+  - type: share-count-blank-FY26
+    severity: LOW
+    note: "screener-Data_Sheet 'No. of Equity Shares' blank for FY2026. Take share count from AR share-capital note."
+freshness_pairs:
+  - pair: "results-to-concall"
+    trigger_doc: "Q1FY27 print (QE 30-Jun-2026) evidenced in screener-Data_Sheet.csv"
+    mate_expected: "Q1FY27 results filing and Q1FY27 earnings call transcript"
+    status: FAIL
+    missing_doc: "Q1FY27 results filing (QE 30-Jun-2026) and its concall transcript"
+  - pair: "rating-bulletin-to-rationale"
+    trigger_doc: "none"
+    mate_expected: "n/a"
+    status: "N/A"
+    missing_doc: ""
+  - pair: "sebi-order-to-order-text"
+    trigger_doc: "none; no SEBI order referenced in any corpus document"
+    mate_expected: "n/a"
+    status: "N/A"
+    missing_doc: ""
+  - pair: "ar-to-latest-audited-annual"
+    trigger_doc: "Latest audited annual: FY2026 (YE 31-Mar-2026)"
+    mate_expected: "AR FY2026"
+    status: PASS
+    missing_doc: ""
+freshness_verdict: "CORPUS GAPPED-FRESHNESS"
+corpus_inventory:
+  prospectus: 0
+  annual_report: 1
+  results: 0
+  rating: 0
+  concalls: 3
+  peer_concalls: 11
+  announcements: 1
+  shareholding: 0
+  research: 0
+  screening: 24
+  presentation: 1
+  total_pdfs: 17
+  total_pages: 536
+  unreadable: 0
+concalls_available: true
+no_concall_mode: false
+spear_gate: "PASS - OVERRIDE 2026-09-06 (operator); no load-bearing facts named"
+listed_date_derived: "IPO FY2022-23 (BSE SME); main-board BSE+NSE listing 2026-03-09"
+prior_run: none
+flags:
+  - id: FLAG-FRESHNESS
+    severity: MEDIUM
+    detail: "CORPUS GAPPED-FRESHNESS. Q1FY27 results and concall absent. Gate caps at PROCEED WITH CAVEATS."
+analyst_note: "Corpus is AR-and-concall heavy and filing-light. No results, rating, shareholding or prospectus PDFs at all, so four of the eleven input types are empty and the documented-ACTION record is effectively absent. The backward series survives only because screener Data_Sheet.csv is populated FY2022-FY2026 while its four companion CSVs are empty shells. The single most consequential gap is the Q1FY27 quarter: the print exists publicly, shows net profit roughly halving against Q4FY26, and the corpus holds neither its filing nor its call. Every downstream stage reasons about a company whose newest disclosed quarter it cannot read."

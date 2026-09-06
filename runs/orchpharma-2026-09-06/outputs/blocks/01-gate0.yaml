@@ -1,0 +1,44 @@
+stage: B01-gate0
+company: "ORCHPHARMA"
+run_date: "2026-09-06"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "results: no quarterly or annual results filing in corpus"
+  - "rating: no credit rating bulletin or rationale in corpus"
+  - "announcements: no exchange / Reg 30 filings in corpus"
+  - "shareholding: no quarterly shareholding pattern in corpus"
+  - "research: no broker notes in corpus (non-anchored; no evidence effect)"
+  - "screening: Profit_Loss, Balance_Sheet, Cash_Flow, Quarters CSVs are empty templates (collect_to_repo v3 defect); Data_Sheet used in their place"
+  - "presentation: image-based, 3124 chars over 14 pages; treated as near-absent"
+  - "FY2026 primary filings absent: no FY2026 annual report and no FY2026 audited annual results filing; FY2026 figures are screener aggregates only"
+  - "FY2026 cost breakdown blank in Data_Sheet; FY2026 cost split is NOT FOUND"
+flags:
+  - {type: FLAG-GATE0, reason: "Classification AVOID (Core 29/100) with historical depressors identified: full 10yr window includes FY17-21 CDR-restructuring losses that suppress medians, but even audited FY22-25 years never clear 8.33% ROCE, so the low score is not purely a history artifact"}
+  - {type: FLAG-DEALBREAKER-6, reason: "AVOID trigger (ND/EBITDA 4.46x, IC 2.16x) rests solely on unverified FY2026 screener-aggregate figures with a broken cost-line split and an unreconciled ~7.95cr quarterly-vs-annual PBT gap; FY2025 audited figures show net cash and 7.40x interest coverage instead"}
+  - {type: FLAG-CASH, reason: "block_b_trend deteriorating: FCF swung from +75.58cr (FY24) to -41.06cr (FY25) as capex outran CFO; only 3 years (FY23-25) carry primary capex/payables evidence"}
+  - {type: FLAG-DATA-GAP, reason: "Promoter pledge (E3) and true 3-year promoter-holding trend (E2) not found in either AR; scored 0 and 3 respectively as data-availability findings, not evidenced negatives"}
+data_years: 10
+fy_range: "FY2017 to FY2026"
+blocks: {A: 5, B: 5, C: 1, D: 5, E: 13}
+core_score: 29
+moat_score: 11
+grand_total: 40
+moats_confirmed: 2
+moat_class: "MODERATE"
+classification: "AVOID"
+deal_breakers: [1, 2, 3, 4, 6]
+history_downgrade: true
+data_notes:
+  - "Capital Employed = Equity Share Capital + Reserves + Borrowings (proxy, Data_Sheet has no current/non-current liability split)"
+  - "Data_Sheet net worth is 48.85-56.76cr lower than AR standalone Total Equity for FY24/FY25 (both anchored); no band change"
+  - "PAT loss-to-profit-loss-profit swings across FY17-FY26; no synthetic CAGR attempted"
+  - "FY2026 cost-line split blank in Data_Sheet (Power&Fuel, Other Mfr Exp, Selling and admin); Other Expenses 237.10cr FY26 vs 11.40cr FY25 is a broken split, not a real cost spike"
+  - "FY2026 quarterly PBT sum (2.48cr) vs FY2026 annual PBT (10.43cr): ~7.95cr unreconciled gap, unresolved in corpus"
+  - "Trade Payables and capex absent from Data_Sheet for all 10 years; sourced from AR, available FY2023-FY2025 only; B2/B3/B4 scored on this 3yr window"
+  - "Contingent liabilities (E4) sourced from Consolidated FS note 45 only; no standalone note 45 located; subsidiaries described as largely dormant"
+  - "M2/M5/M9 peer comparisons limited to 3 named peers (Neuland, Kopran, Granules), context-only; PEER DATA NEEDED for a fuller segment set"
+  - "M7 PEER DATA NEEDED: no count of competing listed Cephalosporin API/FDF players in corpus"
+  - "M8 business-model mismatch flagged: test framed for FMCG distribution, Orchid is a B2B bulk-API/FDF exporter"
+block_b_trend: "deteriorating — FCF +75.58cr (FY24) to -41.06cr (FY25); cumulative FCF/PAT FY23-25 = -0.15x"
+analyst_note: "AVOID rests on two legs. Core score (29/100) is weak even ignoring FY2026: ROCE never cleared 8.33% in any audited year, so this is not solely a pre-2020 CDR-restructuring artifact, though FY17-21 losses pull the 10yr medians down further. Deal breaker 6 (ND/EBITDA>3x, IC<3x) fires only on unverified FY2026 figures alongside a broken cost-line split and an unreconciled quarterly-vs-annual PBT gap; FY2025 audited figures show net cash and 7.4x coverage instead. Moat scan: 2/12 present (MODERATE) - margin stability with growth (M1), network-effects proxy (M11) - but Orchid sits below all 3 named peers on EBITDA margin and gross-margin proxy. Block E (shareholder alignment) is the clean area: 69.84% promoter holding, unchanged, low contingent liabilities; pledge could not be evidenced either way."

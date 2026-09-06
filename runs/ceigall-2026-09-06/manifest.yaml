@@ -1,0 +1,10 @@
+company: Ceigall India Ltd
+ticker: CEIGALL
+cmp: 356.0
+market_cap_cr: 6198.0
+run_date: 2026-09-06
+run_type: full
+concalls_available: true
+sector_cap_row: "EPC / Civil construction"
+listed_date: ""
+notes: "Collected from screener.in by collect_to_repo.py v3 on 2026-09-06. Sector row set by hand: road and highway EPC with HAM assets; EPC / Civil construction (20x) is the matching row (the auto-picker chose Cables / Industrial products). Peers: HGINFRA, PNCINFRA, KNRCON (road EPC with HAM portfolios). Gaps: results, rating, prospectus, shareholding, research. One file the collector filed as Annual_Report_2025.pdf is a 3-page Reg 30 AGM-dispatch letter dated 2026-09-05; moved to announcements/. annual-report/ holds the FY2026 AR only. Company listed August 2024 (recently listed): the IPO prospectus is a HIGH-priority gap; confirm listed_date at stage 0."

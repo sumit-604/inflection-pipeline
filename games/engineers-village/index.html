@@ -309,6 +309,22 @@ html, body {
 }
 #touch-run.on { background: #ffce3a; box-shadow: 0 2px 0 #b8901a; }
 
+/* ---------- Big map and compass ---------- */
+.bigmap-card { width: min(96vw, 820px); }
+#bigmap-canvas { display: block; width: 100%; max-height: 70vh; aspect-ratio: 1 / 1; object-fit: contain; border-radius: 12px; background: #bfe3f2; cursor: crosshair; }
+.find-row { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin-bottom: 8px; }
+.find-btn { border: 1px solid #d8cdb2; background: #fff; border-radius: 999px; padding: 6px 10px; font-size: 13px; font-weight: 600; cursor: pointer; }
+.find-btn:hover { border-color: #7cae59; }
+#compass {
+  position: absolute; left: 50%; top: 12px; transform: translateX(-50%);
+  background: rgba(255,253,246,0.94); border-radius: 999px; padding: 6px 10px 6px 12px;
+  display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 14px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+#compass[hidden] { display: none; }
+#compass-arrow { display: inline-block; font-size: 20px; color: #c1121f; transform-origin: 50% 50%; transition: transform .15s linear; }
+#waypoint-clear { border: none; background: #eee; border-radius: 8px; width: 24px; height: 24px; cursor: pointer; }
+
 /* ---------- Controls board ---------- */
 #controls-btn {
   position: absolute; top: 12px; right: 120px;
@@ -484,6 +500,8 @@ kbd { display: inline-block; border: 1px solid #d8cdb2; border-bottom-width: 3px
     <div id="speedo" hidden><span id="speedo-text">0</span> km/h</div>
     <!-- Short messages from drivers, signals and the constable -->
     <div id="toast" hidden></div>
+    <!-- Compass to the planted flag -->
+    <div id="compass" hidden><span id="compass-arrow">➤</span><span id="compass-text"></span><button id="waypoint-clear" title="Remove the flag">✕</button></div>
 
     <!-- Notebook button, top-right -->
     <button id="notebook-btn" title="Notebook (N)">📓</button>
@@ -502,6 +520,7 @@ kbd { display: inline-block; border: 1px solid #d8cdb2; border-bottom-width: 3px
       <span><b>W A S D</b> to walk</span>
       <span><b>← →</b> or drag to look around</span>
       <span><b>E</b> on a scooty, bike or car to ride it</span>
+      <span><b>M</b> opens the map</span>
       <span><b>H</b> shows all controls</span>
       <span><b>Shift</b> to run</span>
       <span><b>E</b> to talk / act</span>
@@ -535,6 +554,30 @@ kbd { display: inline-block; border: 1px solid #d8cdb2; border-bottom-width: 3px
     </div>
   </div>
 
+  <!-- The big map -->
+  <div id="bigmap" class="overlay" hidden>
+    <div class="overlay-card bigmap-card">
+      <div class="overlay-header">
+        <h2>Map of the Land</h2>
+        <button class="overlay-close" data-close="bigmap">✕</button>
+      </div>
+      <div class="find-row">
+        <span class="section-label" style="margin:0">Find nearest:</span>
+        <button class="find-btn" data-find="bike">🚲 Bicycle</button>
+        <button class="find-btn" data-find="scooty">🛵 Scooty</button>
+        <button class="find-btn" data-find="car">🚗 Car</button>
+        <button class="find-btn" data-find="auto">🛺 Auto stand</button>
+        <button class="find-btn" data-find="metro">🚇 Metro</button>
+        <button class="find-btn" data-find="constable">👮 Constable</button>
+        <button class="find-btn" data-find="jobs">⭐ Open job</button>
+        <button class="find-btn" data-find="home">🏠 Home</button>
+        <button class="find-btn" data-find="kailash">🏔️ Kailash</button>
+      </div>
+      <canvas id="bigmap-canvas" width="720" height="720"></canvas>
+      <p class="tiny-note">Tap anywhere on the map to plant a flag. The white arrow is you. Orange dots are villagers, yellow dots are open jobs, the dark blue dot is Constable Verma. Press M to open or close this map.</p>
+    </div>
+  </div>
+
   <!-- Controls board -->
   <div id="controls-board" class="overlay" hidden>
     <div class="overlay-card">
@@ -550,6 +593,7 @@ kbd { display: inline-block; border: 1px solid #d8cdb2; border-bottom-width: 3px
         <tr><td><kbd>Shift</kbd></td><td>Run. On a vehicle: go fast (over the city limit!).</td></tr>
         <tr><td><kbd>E</kbd> or <kbd>Space</kbd></td><td>Talk, enter a door, ride a vehicle, get off, board the metro, use the lift or the auto stand.</td></tr>
         <tr><td><kbd>N</kbd></td><td>Notebook: jobs, situations, road safety.</td></tr>
+        <tr><td><kbd>M</kbd></td><td>The big map: find vehicles, plant a flag, follow the compass.</td></tr>
         <tr><td><kbd>H</kbd></td><td>This board.</td></tr>
         <tr><td><kbd>Enter</kbd></td><td>Check an answer in a puzzle.</td></tr>
         <tr><td><kbd>Esc</kbd></td><td>Close a panel.</td></tr>
@@ -7179,15 +7223,167 @@ class Minimap {
       g.fillStyle = "#ffce3a"; g.strokeStyle = "#7a5b00"; g.lineWidth = 1;
       g.beginPath(); g.arc(this.px(job._pos.x), this.pz(job._pos.z), 3.5, 0, Math.PI * 2); g.fill(); g.stroke();
     }
-    // Villagers: orange dots.
+    // Villagers: orange dots (indoor people are not on the land).
     g.fillStyle = "#ff7a45";
-    for (const n of npcs) { g.beginPath(); g.arc(this.px(n.position.x), this.pz(n.position.z), 2, 0, Math.PI * 2); g.fill(); }
+    for (const n of npcs) if (n.bank !== "indoors") { g.beginPath(); g.arc(this.px(n.position.x), this.pz(n.position.z), 2, 0, Math.PI * 2); g.fill(); }
+    // Vehicles you can ride: blue dots. The flag: red.
+    g.fillStyle = "#1d3557";
+    for (const r of this.rideables || []) { g.beginPath(); g.arc(this.px(r.group.position.x), this.pz(r.group.position.z), 2.2, 0, Math.PI * 2); g.fill(); }
+    if (this.waypoint) { g.fillStyle = "#c1121f"; g.beginPath(); g.arc(this.px(this.waypoint.x), this.pz(this.waypoint.z), 3.5, 0, Math.PI * 2); g.fill(); }
     // Player: a white arrow with a dark edge.
     const x = this.px(playerPos.x), z = this.pz(playerPos.z);
     g.save(); g.translate(x, z); g.rotate(-playerFacing);
     g.fillStyle = "#ffffff"; g.strokeStyle = "#2c2417"; g.lineWidth = 1.2;
     g.beginPath(); g.moveTo(0, -6); g.lineTo(4.5, 5); g.lineTo(0, 2.5); g.lineTo(-4.5, 5); g.closePath(); g.fill(); g.stroke();
     g.restore();
+  }
+}
+
+// ===== src/engine/bigmap.js =====
+/* ============================================================
+   bigmap.js — the full-screen map. Press M or tap the small map.
+
+   It shows the whole land with district names, named places,
+   and live dots: you, the villagers, the vehicles you can ride,
+   the auto stands and Constable Verma. Tap anywhere to plant a
+   flag, or use a Find button; a compass at the top of the screen
+   then points to the flag and counts down the distance.
+   ============================================================ */
+
+const NOTABLE_SKIP = ["House", "Apartments", "Farmhouse", "Fisher's Hut", "Barn", "Hill Shrine", "Granary"];
+
+class BigMap {
+  constructor(game) {
+    this.game = game;
+    this.world = game.world;
+    this.canvas = document.getElementById("bigmap-canvas");
+    this.size = this.canvas.width;
+    this.ctx = this.canvas.getContext("2d");
+    this.scale = this.size / (WORLD_HALF * 2);
+    this.overlay = document.getElementById("bigmap");
+    this.waypoint = null;
+    this._drawStatic();
+    this._wire();
+  }
+
+  px(x) { return (x + WORLD_HALF) * this.scale; }
+  pz(z) { return (z + WORLD_HALF) * this.scale; }
+
+  _drawStatic() {
+    const off = document.createElement("canvas");
+    off.width = off.height = this.size;
+    const g = off.getContext("2d");
+    const step = 3;
+    for (let i = 0; i < this.size; i += step) for (let j = 0; j < this.size; j += step) {
+      const x = i / this.scale - WORLD_HALF, z = j / this.scale - WORLD_HALF;
+      const h = heightAt(x, z);
+      g.fillStyle = h > 34 ? "#f4f6f8" : h > 18 ? "#9a978e" : h > 9 ? "#6fae54" : h < -0.5 ? "#5fb6d9" : "#8bc46a";
+      g.fillRect(i, j, step, step);
+    }
+    // City ground, river, lakes.
+    g.fillStyle = "#d9d4c7"; g.fillRect(this.px(CITY.x1), this.pz(CITY.z1), (CITY.x2 - CITY.x1) * this.scale, (CITY.z2 - CITY.z1) * this.scale);
+    g.fillStyle = "#5fb6d9"; g.fillRect(0, this.pz(-3), this.size, 6 * this.scale);
+    for (const w of this.world.mapItems.water) if (w.type === "ellipse") { g.beginPath(); g.ellipse(this.px(w.cx), this.pz(w.cz), w.rx * this.scale, w.rz * this.scale, 0, 0, Math.PI * 2); g.fill(); }
+    // Roads.
+    g.strokeStyle = "#d8c08a"; g.lineWidth = 2.2; g.lineCap = "round";
+    for (const road of this.world.mapItems.roads) { g.beginPath(); road.forEach(([x, z], i) => (i ? g.lineTo(this.px(x), this.pz(z)) : g.moveTo(this.px(x), this.pz(z)))); g.stroke(); }
+    // Buildings.
+    g.fillStyle = "#7a4a2a";
+    for (const [x, z] of this.world.mapItems.buildings) g.fillRect(this.px(x) - 2, this.pz(z) - 2, 4, 4);
+    // District names.
+    g.textAlign = "center"; g.lineWidth = 4; g.strokeStyle = "rgba(255,253,246,0.9)"; g.fillStyle = "#2c2417";
+    g.font = "bold 18px system-ui, sans-serif";
+    for (const [name, x, z] of [["SETUGRAM", 0, 40], ["Town", 0, 100], ["Farms", 105, -6], ["Lake", -108, 46], ["Temple Hill", 0, -140], ["SURYANAGAR", 0, 262], ["Himalaya Valley", 0, -282], ["KAILASH PARVAT", 0, -322]]) {
+      g.strokeText(name, this.px(x), this.pz(z)); g.fillText(name, this.px(x), this.pz(z));
+    }
+    // Named places from their doors, plus a few landmarks without doors.
+    g.font = "bold 10px system-ui, sans-serif"; g.lineWidth = 3;
+    const places = this.world.doors.filter((d) => !NOTABLE_SKIP.includes(d.label)).map((d) => [d.label, d.x, d.z]);
+    places.push(["Windmill", 15, -14], ["Water Tank", -14, -14], ["Market", 0, -22], ["Kailash Darshan", 0, -277], ["Aarti Ghat", MANSAROVAR.cx, MANSAROVAR.cz + MANSAROVAR.r + 4], ["Stadium", -100, 250], ["Petrol Pump", 140, 250], ["Pool", 140, 278], ["Central Park", 21, 214], ["Victory Gate", 0, 250], ["Railway Gate", 0, 150], ["Playground", -30, 76]);
+    for (const [name, x, z] of places) { g.strokeText(name, this.px(x), this.pz(z) - 5); g.fillText(name, this.px(x), this.pz(z) - 5); }
+    this.static = off;
+  }
+
+  _wire() {
+    document.querySelector("#bigmap .overlay-close").addEventListener("click", () => this.close());
+    document.getElementById("minimap").addEventListener("click", () => this.open());
+    document.getElementById("waypoint-clear").addEventListener("click", () => { this.waypoint = null; this._refreshCompass(); });
+    // Tap the map to plant a flag.
+    this.canvas.addEventListener("click", (e) => {
+      const r = this.canvas.getBoundingClientRect();
+      const x = ((e.clientX - r.left) * this.canvas.width) / r.width / this.scale - WORLD_HALF;
+      const z = ((e.clientY - r.top) * this.canvas.height) / r.height / this.scale - WORLD_HALF;
+      this.setWaypoint(x, z, "Flag");
+    });
+    // Find buttons: nearest of a kind.
+    document.querySelectorAll(".find-btn").forEach((b) => b.addEventListener("click", () => this.find(b.dataset.find)));
+  }
+
+  find(kind) {
+    const g = this.game, pp = g.player.position;
+    let list = [];
+    if (kind === "bike" || kind === "scooty" || kind === "car") list = g.rideables.filter((r) => r.kind === kind).map((r) => ({ x: r.group.position.x, z: r.group.position.z, label: r.label }));
+    if (kind === "auto") list = AUTO_STANDS.map((s) => ({ x: s.x, z: s.z, label: "Auto stand: " + s.name }));
+    if (kind === "constable") { const n = g.npcs.find((n) => n.def.id === "verma"); if (n) list = [{ x: n.position.x, z: n.position.z, label: "Constable Verma" }]; }
+    if (kind === "home") list = [{ x: -26, z: 14, label: "The Engineer's Home" }];
+    if (kind === "metro") list = [{ x: -52, z: 226, label: "Metro Station" }, { x: 68, z: 226, label: "Metro Station" }];
+    if (kind === "jobs") list = g.jobs.filter((j) => !g.progress.jobsDone.includes(j.id)).map((j) => ({ x: j._pos.x, z: j._pos.z, label: j.title + " (" + j.villagerName + ")" }));
+    if (kind === "kailash") list = [{ x: 0, z: -277, label: "Kailash Darshan" }];
+    if (!list.length) { showToast("Nothing of that kind to find right now.", 2200); return; }
+    list.sort((a, b) => Math.hypot(a.x - pp.x, a.z - pp.z) - Math.hypot(b.x - pp.x, b.z - pp.z));
+    this.setWaypoint(list[0].x, list[0].z, list[0].label);
+  }
+
+  setWaypoint(x, z, label) {
+    this.waypoint = { x, z, label };
+    this._refreshCompass();
+    showToast(`🚩 ${label}: follow the compass at the top.`, 2600, "good");
+  }
+
+  _refreshCompass() {
+    document.getElementById("compass").hidden = !this.waypoint;
+  }
+
+  open() { this.overlay.hidden = false; this.draw(); }
+  close() { this.overlay.hidden = true; }
+  get isOpen() { return !this.overlay.hidden; }
+
+  // Live layer: vehicles, auto stands, villagers, the constable, the flag, you.
+  draw() {
+    const g = this.ctx, game = this.game;
+    g.clearRect(0, 0, this.size, this.size);
+    g.drawImage(this.static, 0, 0);
+    const dot = (x, z, r, fill, stroke) => { g.beginPath(); g.arc(this.px(x), this.pz(z), r, 0, Math.PI * 2); g.fillStyle = fill; g.fill(); if (stroke) { g.strokeStyle = stroke; g.lineWidth = 1.2; g.stroke(); } };
+    const icon = (x, z, ch) => { g.font = "14px system-ui, sans-serif"; g.textAlign = "center"; g.fillText(ch, this.px(x), this.pz(z) + 5); };
+    for (const s of AUTO_STANDS) icon(s.x, s.z, "🛺");
+    for (const r of game.rideables) icon(r.group.position.x, r.group.position.z, r.kind === "car" ? "🚗" : r.kind === "bike" ? "🚲" : "🛵");
+    icon(-52, 226, "🚇"); icon(68, 226, "🚇");
+    for (const job of game.jobs) if (!game.progress.jobsDone.includes(job.id)) dot(job._pos.x, job._pos.z, 5, "#ffce3a", "#7a5b00");
+    for (const n of game.npcs) if (n.bank !== "indoors") dot(n.position.x, n.position.z, 2.5, n.def.id === "verma" ? "#1d3557" : "#ff7a45");
+    const c = game.npcs.find((n) => n.def.id === "verma"); if (c) icon(c.position.x, c.position.z - 2, "👮");
+    if (this.waypoint) icon(this.waypoint.x, this.waypoint.z - 1, "🚩");
+    const p = game.player.position;
+    g.save(); g.translate(this.px(p.x), this.pz(p.z)); g.rotate(-game.player.facing);
+    g.fillStyle = "#ffffff"; g.strokeStyle = "#2c2417"; g.lineWidth = 1.5;
+    g.beginPath(); g.moveTo(0, -9); g.lineTo(6, 7); g.lineTo(0, 3.5); g.lineTo(-6, 7); g.closePath(); g.fill(); g.stroke();
+    g.restore();
+  }
+
+  // The compass strip at the top: an arrow relative to the camera, and the distance.
+  updateCompass(camYaw) {
+    if (!this.waypoint) return;
+    const p = this.game.player.position;
+    const dx = this.waypoint.x - p.x, dz = this.waypoint.z - p.z;
+    const dist = Math.hypot(dx, dz);
+    if (dist < 6) { showToast(`🚩 You have reached ${this.waypoint.label}.`, 2600, "good"); this.waypoint = null; this._refreshCompass(); return; }
+    // World bearing of the flag, minus where the camera looks, gives the screen direction.
+    const bearing = Math.atan2(dx, dz);           // 0 = +z (toward the camera side)
+    const camForward = camYaw + Math.PI;           // camera looks toward -z when yaw is 0
+    let rel = bearing - camForward;
+    while (rel > Math.PI) rel -= Math.PI * 2;
+    while (rel < -Math.PI) rel += Math.PI * 2;
+    document.getElementById("compass-arrow").style.transform = `rotate(${-rel}rad)`;
+    document.getElementById("compass-text").textContent = `${this.waypoint.label} · ${Math.round(dist)} m`;
   }
 }
 
@@ -7254,6 +7450,13 @@ class Game {
     this._buildAnimals();
     this._buildInteractables();
     this.minimap = new Minimap(this.world);
+    this.bigmap = new BigMap(this);
+    this.minimap.rideables = this.rideables;
+    window.addEventListener("keydown", (e) => {
+      if (e.target && e.target.tagName === "INPUT") return;
+      if (e.key.toLowerCase() === "m") { if (this.bigmap.isOpen) this.bigmap.close(); else this.bigmap.open(); }
+      if (e.key === "Escape") this.bigmap.close();
+    });
     this._ambient = { chirp: 3, moo: 8, quack: 12, horn: 5, bell: 10 };
     startAmbient();
     startChant();
@@ -7860,6 +8063,7 @@ class Game {
       panelOpen() ||
       !document.getElementById("notebook").hidden ||
       !document.getElementById("controls-board").hidden ||
+      !document.getElementById("bigmap").hidden ||
       !document.getElementById("parent-view").hidden
     );
   }
@@ -7963,7 +8167,10 @@ class Game {
       this.ui.setInteractPrompt(null);
     }
 
+    this.minimap.waypoint = this.bigmap.waypoint;
     this.minimap.draw(pp, this.player.facing, this.npcs, this.jobs, this.progress.jobsDone);
+    if (this.bigmap.isOpen) this.bigmap.draw();
+    this.bigmap.updateCompass(this.player.camYaw);
     this.renderer.render(this.world.scene, this.camera);
   }
 

@@ -25,6 +25,11 @@ flow. The data comes from two Chartink dashboards, collected every weekday at
   is needed.
 - `data/chartink/analysis/market_breadth_recent.csv`. The last 90 trade
   dates, one row per date, one column per market-wide breadth metric.
+- `data/chartink/analysis/NOTES.md`. Sumit's own notebook of findings, newest
+  first, each tied to a trade date. Read it before every brainstorm. When a
+  brainstorm produces a finding worth keeping, offer the note in the file's
+  format, dated, naming the trade date and the brief, so Sumit can paste it
+  in. You cannot write to the file yourself.
 
 ## What is in the repo but not in project knowledge
 

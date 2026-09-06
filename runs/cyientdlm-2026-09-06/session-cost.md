@@ -22,3 +22,4 @@ stage returns and committed with that stage.
 | 12c | verifier C framework adherence (phase 1 scope) | claude-opus-4-8 | default | n/a | n/a | 109967 | 9m03s | 1 |
 | 12a | verifier A numerical audit (re-run, addendum) | claude-haiku-4-5 | default | n/a | n/a | 102160 | 7m16s | 2 |
 | 12b | verifier B concall red flags | claude-opus-5 | default | n/a | n/a | 459016 | 13m59s | 1 |
+| 13 | synthesis-lite (phase 1, three files) | claude-opus-5 | default | n/a | n/a | 120858 | 5m37s | 1 |

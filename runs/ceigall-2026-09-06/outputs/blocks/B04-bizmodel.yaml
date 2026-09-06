@@ -1,0 +1,67 @@
+stage: B04-bizmodel
+company: "CEIGALL"
+run_date: "2026-09-06"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - {area: prospectus, severity: HIGH, note: "company listed August 2024, no prospectus in corpus"}
+  - {area: results, severity: MEDIUM, note: "no standalone results filing PDF beyond investor presentation extracts"}
+  - {area: rating, severity: MEDIUM, note: "no dedicated rating rationale document; only rating grade cited in investor presentation (IND AA-/Stable)"}
+  - {area: shareholding, severity: HIGH, note: "no shareholding corpus"}
+  - {area: research, severity: LOW, note: "no third-party research in corpus; no named competitors could be sourced from provided documents"}
+  - {area: announcements-substantive, severity: MEDIUM, note: "no substantive announcements corpus beyond the two provided documents"}
+flags:
+  - {type: FLAG-HYBRID-VALUATION, reason: "Business is two archetypes in one set of accounts (order-book EPC + HAM annuity-asset owner) with opposite cash and WC profiles; the AR's segmental split (EPC 57.86%, HAM 41.68%, O&M 0.46%, AR sheet 32) does not disclose how much of the HAM figure is construction-phase versus post-COD annuity income, which materially affects earnings-quality read and valuation method choice."}
+  - {type: FLAG-PRERISK-RENEWABLES, reason: "Renewable and T&D verticals show 0.0% completion on every order-book line as of 30-Jun-2026 (Inv. Pres. pp.22-23) despite Rs 39,365m and Rs 4,068m cumulative LOA/PPA value respectively; not yet a revenue stream and should not be modelled as one."}
+business_type: "hybrid"
+revenue_streams:
+  - {name: "EPC (roads, highways, metro, tunnels, bridges)", type: "contract / percentage-of-completion", pct_of_revenue: 57.86, predictability: "medium"}
+  - {name: "HAM (construction phase + undisclosed annuity share)", type: "contract blending into government annuity concession income", pct_of_revenue: 41.68, predictability: "medium (construction phase); high but currently small (post-COD annuity, undisclosed split)"}
+  - {name: "O&M", type: "fixed periodic service fee", pct_of_revenue: 0.46, predictability: "high"}
+asset_intensity: "medium"
+wc_intensity: "high"
+pricing_power: "weak"
+cyclicality: "cyclical"
+moats_present:
+  - {moat: "specialised-structure execution niche (tunnels, elevated corridors, hilly terrain)", durability: "moderate-high"}
+  - {moat: "asset-light cost-efficiency model (equipment rental/buyback, in-house design team, scale)", durability: "moderate"}
+  - {moat: "per-asset regulatory exclusivity once a HAM concession is won", durability: "high but narrow, not portfolio-wide"}
+valuation_methods:
+  primary: {method: "Sum-of-the-parts (SOTP): EPC on earnings/EV-EBITDA multiple + HAM SPV portfolio on DCF/NAV of concession cash flows", why: "A single blended multiple conflates a project-execution earnings stream (EPC) with a government-annuity financial-asset stream (HAM) that has different risk, duration and cash-conversion profiles"}
+  secondary: {method: "Consolidated EV/EBITDA cross-check against comparable road EPC/HAM peers", why: "Useful sanity check only, with the explicit caveat that it blends both engines and does not resolve the construction-vs-annuity split within HAM revenue"}
+  tertiary: {method: "Standalone EPC-only P/E or EV/EBITDA excluding HAM SPV finance cost and investment income", why: "Isolates the pure-contracting earnings power for direct benchmarking against peer EPC contractors"}
+  not_applicable: ["DDM (no disclosed dividend policy, NOT FOUND)", "Asset-based/replacement cost (EPC engine not asset-heavy; book value materially misstates HAM concession value)"]
+irrelevant_ratios:
+  - {ratio: "Blended consolidated P/E or EPS", why: "Mixes EPC's cash-ish project margin with HAM's largely non-cash, leveraged concession income"}
+  - {ratio: "Standard debtor/receivable turnover on consolidated revenue", why: "HAM's RUSCA is a financial asset amortising over 15-20 years, not trade credit; blending distorts collection-risk read"}
+  - {ratio: "Asset turnover / fixed-asset turnover", why: "Physical PP&E is only ~6% of standalone assets; the assets that matter are financial (SPV equity, RUSCA), not fixed"}
+  - {ratio: "Inventory days", why: "Meaningless for the HAM annuity model; relevant only to the EPC book"}
+  - {ratio: "Consolidated ROCE/ROE as a standalone quality signal", why: "Sharp declines (ROCE 31.98%->19.22%, ROE 33.57%->14.39%, FY24-26) are largely a mechanical artefact of capital locked in non-earning-yet SPVs pre-COD, not necessarily a quality collapse"}
+  - {ratio: "Consolidated CFO/free cash flow read in isolation", why: "Negative consolidated CFO is structurally the parent funding HAM SPV construction; needs the standalone-vs-consolidated split to separate structural funding from genuine cash-conversion failure"}
+must_track_metrics:
+  - {metric: "Order book and book-to-bill ratio", healthy: "3-5x book-to-bill", red_flag: "sustained below ~2x"}
+  - {metric: "Consolidated EBITDA margin", healthy: "12-16%", red_flag: "sustained sub-10%"}
+  - {metric: "Contract Assets + RUSCA as % of revenue", healthy: "stable, not climbing", red_flag: "further rise past ~71%, or any impairment"}
+  - {metric: "Interest Service Coverage Ratio", healthy: ">2.5-3x", red_flag: "below 2x"}
+  - {metric: "Consolidated Debt/Equity", healthy: "<1x", red_flag: "above ~1.5x, or undisclosed reverse-factoring growth"}
+unit_economics:
+  unit: "1 lane-km of road/structure constructed"
+  revenue_per_unit: "NOT FOUND (no disclosed revenue-recognition rate per lane-km); illustrative total project cost per lane-km ranges ~Rs 131m-197m depending on structure type (Inv. Pres. pp.20-22)"
+  margin_per_unit: "NOT FOUND (no project-level margin disclosed; blended standalone gross margin 16.2% FY26, AR sheet 37)"
+  key_lever: "Structure complexity (tunnel/elevated vs flat highway) drives contract value and bid-competition intensity more than it drives margin; scale is claimed to lower per-unit cost but is not quantified"
+first_deterioration_signals:
+  - {risk: "Revenue model: government counterparty concentration + fixed-price contract risk", first_signal: "Gross margin compression on Cost of Construction line"}
+  - {risk: "Margin: raw material price volatility", first_signal: "Cost of Material Consumed as % of revenue rising QoQ"}
+  - {risk: "Balance sheet: nil-impairment Contract Assets/RUSCA growth", first_signal: "Further rise in Contract Assets + RUSCA as % of revenue past ~71%, or first impairment provision"}
+  - {risk: "Execution: SPV-level project stalls", first_signal: "Stagnant % completion at a named HAM SPV, or a new termination/EoM disclosure"}
+  - {risk: "Structural: renewables/T&D still pre-revenue", first_signal: "Continued 0.0% completion past promised timelines, or absence of first segment-level revenue disclosure"}
+mgmt_questions:
+  - "Can you disclose gross margin separately for EPC and HAM segments rather than only a blended company-level margin?"
+  - "What is the sale consideration and realised gain/loss on the Malout-Abohar HAM divestment, and will future monetisations disclose this upfront?"
+  - "What share of the disclosed 41.68% HAM revenue is post-COD annuity/interest income versus construction-phase revenue?"
+  - "What is the expected timeline for renewable and T&D projects to move from 0% completion to first revenue recognition?"
+  - "Why did group operating cash flow remain negative in FY26 while standalone parent operating cash flow turned strongly positive?"
+  - "What is driving Contract Assets and RUSCA to a combined ~71% of one year's revenue with nil impairment provisioning?"
+  - "What continuity risk does the recent leadership churn pose to execution of the current order book?"
+one_line_verdict: "Two businesses, one balance sheet, one undisclosed seam between them."
+analyst_note: "The single most consequential gap for valuation is that the AR's segment note (57.86% EPC / 41.68% HAM / 0.46% O&M, sheet 32) does not split HAM revenue into construction-phase versus post-COD annuity income. Only one HAM asset has reached COD and been monetised, so the annuity share is almost certainly small today, meaning the 41.68% figure behaves financially much more like EPC revenue than like the bond-like annuity income the 'developer' narrative implies. This caps how much of the current multiple can credibly be justified by annuity-style predictability, and it is the reason SOTP with an explicit, separately-modelled HAM concession DCF is the primary method rather than a single blended multiple. Renewables and T&D are real letters of award but zero-revenue verticals as of the balance sheet date and should not be given any revenue credit in Role 1 valuation until a segment-level P&L disclosure exists."

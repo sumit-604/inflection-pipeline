@@ -1,0 +1,77 @@
+stage: B05-concall
+company: "CYIENTDLM"
+run_date: "2026-09-06"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["results filings ABSENT - promise/delivery checked against next transcript's own restatement, not a filed results PDF", "announcements/Reg 30 ABSENT - documented-action cross-check not built"]
+flags: ["NWC promise vs delivery is a direct contradiction on the exact metric Gate 0 flagged as the cash-conversion deal-breaker", "single most material forward promise (Q4 FY26 YoY revenue growth) missed after being reaffirmed twice", "$17.75 million vs INR17.75 million inconsistency across two transcripts for the identical M&A one-off line item"]
+quarters_analysed: ["Q2 FY26 (backward context only)", "Q3 FY26", "Q4 FY26 / FY26 full year", "Q1 FY27"]
+triggers:
+  - {priority: 1, name: "Order book conversion into revenue growth", type: "VOLUME", timeframe: "near-term", conviction: "M", confirm_signal: "revenue growth tracks the record order book in FY27 quarters", kill_signal: "continued conversion lag as seen in 3 of last 4 quarters"}
+  - {priority: 2, name: "Working-capital / NWC normalisation", type: "COST(cash)", timeframe: "medium (couple of years, per Q4 FY26 call)", conviction: "L", confirm_signal: "NWC days trend down toward stated 100-120 target", kill_signal: "continued rise past 161 days or persistent negative OCF"}
+  - {priority: 3, name: "Double-digit EBITDA margin sustainability", type: "COST/PRICE-MIX", timeframe: "near-term", conviction: "H", confirm_signal: "double-digit EBITDA continues through further FY27 quarters", kill_signal: "reversion below 10% as volumes/mix normalise"}
+  - {priority: 4, name: "BTS scale-up to double-digit % of revenue plus margin uplift", type: "PRICE-MIX", timeframe: "medium (FY27-28)", conviction: "M", confirm_signal: "BTS crosses 10% of revenue and +250-300bps shows in reported EBITDA", kill_signal: "BTS stays sub-10% or margin uplift absent by FY28"}
+  - {priority: 5, name: "AI data centre / robotics / semiconductor equipment verticals", type: "SECTORAL", timeframe: "medium/long (FY27-29)", conviction: "L", confirm_signal: "a named customer or disclosed revenue contribution appears", kill_signal: "continued vagueness with no disclosure past FY27"}
+  - {priority: 6, name: "Altek US synergy / margin accretion", type: "INORGANIC", timeframe: "medium", conviction: "L", confirm_signal: "disclosed Altek revenue/margin improving with named cross-sell wins", kill_signal: "continued non-disclosure or a further earn-out-style reversal"}
+  - {priority: 7, name: "Aerospace OEM ramp (Honeywell, Thales)", type: "VOLUME", timeframe: "near/medium (18 months)", conviction: "M", confirm_signal: "aerospace revenue share holds above 40% with disclosed OEM ramp progress", kill_signal: "ramp delay beyond the 18-month window given in Q1 FY27"}
+guidance:
+  - {item: "Book-to-bill ratio FY26", number: "1.4x-1.5x", timeframe: "full year FY26", stated_in: "Q2 FY26 call, 14-Oct-2025, p.5"}
+  - {item: "Revenue YoY growth resumption", number: "positive YoY growth", timeframe: "Q4 FY26", stated_in: "Q2 FY26 call p.5-6, reaffirmed Q3 FY26 call p.9,16"}
+  - {item: "NWC normalisation", number: "better NWC levels", timeframe: "by end of Q4 FY26", stated_in: "Q3 FY26 call, 20-Jan-2026, p.8"}
+  - {item: "NWC target (restated)", number: "100-120 days", timeframe: "couple of years", stated_in: "Q4 FY26 call, 21-Apr-2026, p.16"}
+  - {item: "FY27 revenue growth", number: "20%-25%, no doubt", timeframe: "FY27", stated_in: "Q3 FY26 call p.15"}
+  - {item: "BTS revenue share FY26", number: "about 5%, revised to 6%-7%", timeframe: "FY26", stated_in: "Q2 FY26 call p.8; Q3 FY26 call p.15-16"}
+  - {item: "BTS revenue share FY27", number: "double-digit %", timeframe: "FY27", stated_in: "Q3 FY26 call p.16, reaffirmed Q4 FY26 call p.14"}
+  - {item: "BTS margin uplift", number: "+250-300 bps consolidated EBITDA", timeframe: "next 12-18 months", stated_in: "Q1 FY27 call, 21-Jul-2026, p.14"}
+  - {item: "Order pipeline size", number: "$0.5 billion (later disputed, no replacement figure)", timeframe: "as of Q4 FY26 / Q1 FY27", stated_in: "Q4 FY26 call p.15; disputed Q1 FY27 call p.13-14"}
+  - {item: "Regular annual capex", number: "1%-2% of revenue", timeframe: "ongoing", stated_in: "Q3 FY26 call p.13"}
+  - {item: "Working-capital debt headroom", number: "additional Rs350-400cr", timeframe: "available immediately", stated_in: "Q3 FY26 call p.12"}
+  - {item: "M&A one-off evaluation expense (failed deal)", number: "$17.75 million (Q3 FY26 transcript) vs INR17.75 million (Q4 FY26 transcript) - inconsistent", timeframe: "FY26", stated_in: "Q3 FY26 call p.9; Q4 FY26 call p.9"}
+  - {item: "Aerospace OEM ramp (Honeywell)", number: "ramp-up within 18 months", timeframe: "from Q1 FY27", stated_in: "Q1 FY27 call p.17-18"}
+  - {item: "BTS lab capacity", number: "6,000 sq ft to 15,000 sq ft, delivered", timeframe: "as of Q1 FY27", stated_in: "Q1 FY27 call p.6"}
+promise_delivery_score: "2 delivered / 3 partial / 3 missed"
+promise_delivery:
+  delivered: 2
+  partial: 3
+  missed: 3
+  rows:
+    - {promised_in: "Q2 FY26 call, 14-Oct-2025, p.5", promise: "Book-to-bill 1.4x-1.5x for FY26", outcome: "DELIVERED - full-year book-to-bill 1.5x confirmed in Q4 FY26 call, 21-Apr-2026, p.3", explanation: "n/a"}
+    - {promised_in: "Q2 FY26 call p.5-6, reaffirmed Q3 FY26 call p.9,16", promise: "Q4 FY26 revenue returns to positive YoY growth", outcome: "MISSED - Q4 FY26 revenue down 13.8% YoY (Q4 FY26 call p.6-7)", explanation: "West Asia war delaying materials and approvals, delayed NPA customer approvals, memory-component lead times (Q4 FY26 call p.11). External-blame, no internal-planning admission"}
+    - {promised_in: "Q3 FY26 call p.8", promise: "NWC to normalise by end of Q4 FY26", outcome: "MISSED - FY26 NWC 145 days, worse than FY25 127 days (stage 1, AR FY2025-26); promise itself replaced by a vaguer multi-year target in the very next call (Q4 FY26 call p.16)", explanation: "Inventory build framed as deliberate growth investment, not acknowledged as a broken commitment"}
+    - {promised_in: "Q3 FY26 call p.15", promise: "FY27 revenue growth of 20-25%, no doubt", outcome: "PARTIAL - Q1 FY27 actual +34.3% YoY beat the range, but the specific guidance number was explicitly declined when re-asked in Q4 FY26 call p.13 and Q1 FY27 call p.11", explanation: "Guidance discipline weakened even though the outcome beat the original number"}
+    - {promised_in: "Q3 FY26 call p.14", promise: "Q4 FY26 order intake rebounds to the about Rs500cr per quarter level seen in Q1-Q2 FY26", outcome: "MISSED (derived) - Q4 FY26 net order-book addition of INR672mn against Q4 revenue of about Rs369cr implies gross Q4 intake near Rs430-440cr, still close to Q3 depressed INR387cr level", explanation: "Not addressed or reconciled in the Q4 FY26 call"}
+    - {promised_in: "Q3 FY26 call p.9", promise: "Altek contribution healthy and profitable", outcome: "PARTIAL - Q4 FY26 call admits US/Altek margin is structurally lower and cross-pollination synergies remain on a trial basis 18 months post-acquisition (p.13); no hard Altek P&L ever disclosed", explanation: "Reframed rather than retracted"}
+    - {promised_in: "Q4 FY26 call p.15", promise: "Order pipeline size approximately $0.5 billion", outcome: "PARTIAL/inconsistent - Q1 FY27 call disputes the same $0.5bn figure when an analyst cites it, claims substantially higher with no replacement number (p.13-14)", explanation: "No reconciliation offered"}
+    - {promised_in: "Q3 FY26 call p.6", promise: "4 BTS anchor customers to begin revenue within 2 years, meaningful contribution from FY28", outcome: "DELIVERED (on-track, unchanged) - Q4 FY26 call reconfirms flag end of FY27 and also FY28 both (p.14)", explanation: "n/a"}
+excuse_pattern: "external-blame-heavy"
+repeated_evasions:
+  - {question: "Give us a hard FY27 revenue growth number", quarters_asked: ["Q3 FY26", "Q4 FY26", "Q1 FY27"], classification: "answer changed between quarters - from a committed 20-25% figure (Q3 FY26 call p.15) to explicit refusal to guide (Q4 FY26 call p.13, Q1 FY27 call p.11)"}
+  - {question: "What is Altek standalone financial contribution?", quarters_asked: ["Q2 FY26", "Q3 FY26", "Q4 FY26"], classification: "deflected every time - no segment P&L ever disclosed"}
+  - {question: "Quantify the West Asia/tariff revenue impact in rupees", quarters_asked: ["Q3 FY26", "Q4 FY26"], classification: "deflected every time - explicit refusal to quantify both times"}
+  - {question: "What is the order pipeline size?", quarters_asked: ["Q4 FY26", "Q1 FY27"], classification: "answer changed between quarters - a specific $0.5bn figure (Q4 FY26 call p.15) disputed without replacement the next quarter (Q1 FY27 call p.13-14)"}
+credibility_grade: "C"
+credibility_basis: "Book-to-bill and BTS-timeline promises delivered, but the two most material self-set commitments, Q4 FY26 revenue growth (reaffirmed twice, then missed by -13.8% YoY) and NWC normalisation by Q4 FY26 (missed and still worsening to 161 days by Q1 FY27), failed, with external-blame explanations and no ownership language, while a specific FY27 growth number was given then twice withdrawn under repeated questioning."
+peer_questions:
+  - {question: "Do peer EMS companies cite a similar global EMS TAM/growth figure (about $650bn 2025 rising to about $1.1 trillion 2033, about 6% CAGR)?", why: "tests whether Cyient DLM market-sizing claim (Q4 FY26 call p.5; Q1 FY27 call p.4) is industry-standard or company-specific framing", check_peers: ["AVALON", "KAYNES", "SYRMA"]}
+  - {question: "Did AVALON/KAYNES/SYRMA report order-book or order-intake growth of 35-40% YoY for FY25-FY26, the level Cyient DLM chairman claims parity or outperformance against (Q4 FY26 call p.20)?", why: "the single most load-bearing, checkable competitive claim in the record; tests whether Cyient DLM growth lag is company-specific or industry-wide", check_peers: ["AVALON", "KAYNES", "SYRMA"]}
+  - {question: "Do peer EMS companies report a comparable about 50% US tariff exposure on India-origin exports for FY26, and what customer-level mitigation do they disclose?", why: "Cyient DLM never quantifies its own tariff impact in rupees despite being asked twice; peer disclosure gives an indirect read on true scale", check_peers: ["AVALON", "KAYNES", "SYRMA"]}
+  - {question: "Did peers report a memory-component shortage or extended lead-time issue in the same Q4 FY26/Q1 FY27 window (Jan-Jun 2026)?", why: "corroborates or undermines whether the shortage is industry-wide or a company-specific inventory and planning issue", check_peers: ["AVALON", "KAYNES", "SYRMA"]}
+  - {question: "Do any peers describe a similar AI-data-centre or robotics vertical entry plan, and do they attach a margin premium claim and on what basis?", why: "Cyient DLM claims margin upside from these verticals without a mechanism when directly challenged (Q1 FY27 call p.15-16)", check_peers: ["KAYNES", "SYRMA"]}
+  - {question: "Do peers with aerospace/defence exposure describe entry barriers (moat) in similar terms to Cyient DLM (Q1 FY27 call p.18), or is this an overstated company-specific claim?", why: "tests whether the aerospace-as-moat argument underwriting long-term margin durability is a market feature or company-specific narrative", check_peers: ["AVALON", "SYRMA"]}
+  - {question: "What NWC or cash-conversion-cycle trend do peers report over FY25, FY26 and Q1 FY27, and is a rising trend sector-wide or specific to Cyient DLM?", why: "Cyient DLM NWC deteriorated every period disclosed (127 to 145 to 161 days) despite repeated normalisation promises; this bears directly on the Gate 0 cash-conversion deal-breaker", check_peers: ["AVALON", "KAYNES", "SYRMA"]}
+red_flags:
+  - "HIGH: NWC promised to normalise by Q4 FY26 instead worsened (127 to 145 to 161 days), contradicting stated intent on the exact metric Gate 0 flagged as the cash-conversion deal-breaker"
+  - "HIGH: Central, twice-repeated promise of Q4 FY26 YoY revenue growth missed by a wide margin (-13.8% YoY actual)"
+  - "MEDIUM: $17.75 million (Q3 FY26 transcript p.9) vs INR17.75 million (Q4 FY26 transcript p.9) for the identical M&A one-off line item. Unresolved 85x discrepancy"
+  - "MEDIUM: FY27 growth guidance given as a specific number then withdrawn to no guidance twice in subsequent calls"
+  - "MEDIUM: Altek standalone financials never disclosed across four calls despite an earn-out reversal and admitted ongoing margin drag"
+  - "LOW/MEDIUM: Order-pipeline size restated inconsistently across consecutive quarters with no reconciliation"
+  - "LOW: India revenue-share collapse (14% to 6%) runs directly counter to the strengthening India narrative repeated every call"
+dropped_triggers:
+  - "Automotive/EV charging infrastructure push (prominent Q2 FY26) reduced to 1% of revenue by Q1 FY27, no longer discussed as a distinct pillar"
+  - "Indian MoD order revival for a named past defence customer (Q2 FY26 call p.8) never revisited in three subsequent calls"
+timeline_slippages:
+  - "Revenue YoY growth resumption: promised for Q4 FY26 (Q2 and Q3 FY26 calls), actually arrived one quarter late, in Q1 FY27"
+  - "NWC normalisation: promised by end of Q4 FY26 (Q3 FY26 call), replaced by a vague multi-year target (Q4 FY26 call), then worsened further into Q1 FY27"
+analyst_note: "The Q4 FY26 growth miss and the NWC miss are self-set, twice-repeated management commitments, not analyst-consensus misses, a stronger credibility signal than a missed street number. Revenue growth and margin strength did appear one quarter late (Q1 FY27: +34.3% YoY revenue, 10.5% EBITDA margin, PAT +118% YoY), so the operating story is not fabricated; only timing and working-capital discipline are weak. The AI, robotics and semiconductor Expand narrative was formalised only after the sharpest analyst challenge in the record (Q4 FY26), so treat it as aspirational, not committed, in any Role 1 build until a named customer or number appears."
+no_concall_mode: false

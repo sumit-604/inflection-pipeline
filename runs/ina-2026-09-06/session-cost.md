@@ -24,3 +24,4 @@ deferred to the end of the run.
 | 12d | verifier D peer coverage | claude-sonnet-5 | default | n/a | n/a | 243,053 | 6m54s | 1 |
 | 12c | verifier C framework (phase 1 scope) | claude-opus-4-8 | default | n/a | n/a | 118,538 | 8m43s | 1 |
 | 12b | verifier B red flags | claude-opus-4-8 | default | n/a | n/a | 350,100 | 18m04s | 1 |
+| 13 | synthesis-lite (3 files) | claude-opus-4-8 | default | n/a | n/a | 143,702 | 7m49s | 1 |

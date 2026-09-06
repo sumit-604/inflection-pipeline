@@ -140,6 +140,22 @@ intent-and-action cross-check is effectively absent: no Reg 30 filings for the
 Rs 780 cr borrowing increase, the capex programme, or the main-board migration.
 Stages 5, 7 and 8 lose the 📄 action grade and run on AR and concall evidence.
 
+**D6 — The annual report omits the text of Notes 1-3 (Material Accounting
+Policies).** Confirmed by stage 0 after stage 2 pass 1 raised it. Both balance
+sheets (consolidated and standalone) and the independent auditor's report
+cross-reference "Material Accounting Policies (Note No. 1-3)", but the policy
+text appears nowhere in the 200-page PDF. Two independent extractors agree
+(pypdf and `pdftotext -layout`), and a per-page scan found exactly one page
+under 150 characters (page 2, a design page), so this is not an image-only page
+or an extraction artifact. The document is either a partial annual report as
+collected, or the policies were omitted as filed. Effect: the revenue
+recognition policy, the expected-credit-loss methodology, the inventory
+valuation basis and the depreciation policy are all unavailable to this run.
+That bears directly on the FY2026 cash-conversion determination, because the
+receivables book carries no ECL provision and the run cannot read the policy
+that governs it. Named for the operator's Halt 1 upload list: the complete
+FY2026 annual report, or the standalone accounting-policies pages.
+
 **D5 — `No. of Equity Shares` blank for FY2026** in `screener-Data_Sheet.csv`.
 Adjusted equity shares show 22.04 cr. Stage 1 and stage 10 must take the share
 count from the AR share-capital note, not the blank cell.
@@ -233,6 +249,9 @@ input_gaps:
   - type: peer-concalls-partial
     severity: LOW
     note: "11 of 12. WEBELSOLAR has 3 (no Nov-2025 call); WAAREEENER and PREMIERENE have 4 each."
+  - type: annual-report-notes-1-3-absent
+    severity: HIGH
+    note: "AR omits the text of Notes 1-3 Material Accounting Policies though both balance sheets and the audit report cross-reference them. Verified by two extractors; no image-only pages. Revenue recognition, ECL methodology, inventory valuation and depreciation policy all unavailable."
   - type: share-count-blank-FY26
     severity: LOW
     note: "screener-Data_Sheet 'No. of Equity Shares' blank for FY2026. Take share count from AR share-capital note."

@@ -1,0 +1,45 @@
+stage: B01-gate0
+company: "INA"
+run_date: "2026-09-06"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "prospectus (HIGH)"
+  - "results (HIGH)"
+  - "rating (MEDIUM)"
+  - "shareholding (MEDIUM)"
+  - "research (LOW)"
+  - "screening-csv-shells (MEDIUM)"
+  - "sector_cap_row-mismatch (MEDIUM)"
+  - "announcements-thin (MEDIUM)"
+  - "peer-concalls-partial (LOW)"
+  - "share-count-blank-FY26 (LOW, resolved via AR Note 15, p.123)"
+flags:
+  - type: FLAG-GATE0
+    reason: "Classification AVERAGE (Core 54/100) with historical depressors concentrated entirely in FY2026: cash-conversion collapse (CFO -Rs73.13cr vs PAT +Rs200.22cr, cumulative 5yr CFO/PAT 0.194) and Working Capital Days blowout (31.48 to 62.58 days) drive both Block B (2/20) and two deal-breaker triggers (Block B<8, cumulative CFO/PAT<0.50). FY2022-FY2025 standalone-of-that-period trend was healthy (FY2025 CFO/PAT ratio 0.90). Also flags an unresolved intra-group contingent guarantee overhang (~Rs1,654cr, 205% of net worth, AR Note 42) and a consolidation-scope restatement that makes the 5yr growth CAGR not fully like-for-like."
+data_years: 5
+fy_range: "FY2022 to FY2026"
+blocks: {A: 14, B: 2, C: 20, D: 13, E: 5}
+core_score: 54
+moat_score: 15
+grand_total: 69
+moats_confirmed: 4
+moat_class: "STRONG"
+classification: "AVERAGE"
+deal_breakers:
+  - "Block B <8 (actual 2) -> caps classification at max GOOD (no net effect, already AVERAGE)"
+  - "Cumulative CFO/PAT <0.50 (actual 0.194) -> caps classification at max AVERAGE"
+history_downgrade: false
+data_notes:
+  - "screener-Data_Sheet.csv is CONSOLIDATED basis for FY2025-26 (verified vs AR exactly); standalone FY2026 Total Assets is only Rs544.04cr vs consolidated Rs2,155.13cr -- almost all business sits in subsidiary Insolation Green Energy Pvt Ltd."
+  - "AR FY2026 restates the FY2024 opening balance sheet ('1 April 2024' column) for newly-added subsidiaries (6 entities incorporated Jul-2024 to Aug-2025); restated FY2024 Total Assets (Rs274.69cr, AR p.116) and FY2025 CWIP (Rs52.88cr, AR p.116) do not match screener's own un-restated FY2024/25 figures (Rs262.78cr / Rs46.10cr) -- Block C's 5yr CAGR is not on a fully consistent consolidation basis."
+  - "ROCE, Current Ratio, Trade Payables and Working Capital Days computable only for FY2024-2026 (3yrs) -- no FY2022/2023 AR in corpus to obtain the Current Liabilities / Trade Payables split; screener-Data_Sheet.csv does not carry these splits for any year."
+  - "FCF/Capex proxied via AR Note 4 PPE gross-block Additions (p.119) plus change in CWIP for FY2025-26; via Delta Net Block + Depreciation + Delta CWIP for FY2023-24 (no Note 4 comparative that far back); FY2022 capex N/A (no FY2021 opening balance in corpus). CFO statement's own investing-activity capex line could not be isolated due to PDF extraction label/value separation."
+  - "Internal screener cash reconciliation gap: FY2026 CFO+CFI+CFF implies closing cash of Rs753.03cr but screener's own FY2026 Cash & Bank line shows Rs520.94cr (~Rs232cr gap), unresolved from corpus; affects D1 Net Debt/EBITDA sensitivity (1.28x as reported vs 0.47x if CF-implied cash is used)."
+  - "E3 Promoter pledge: no encumbrance/pledge disclosure found anywhere in the AR; this data lives only in the SEBI shareholding-pattern filing, absent this run (Stage 0 gap). Scored 0 per grounding rule, not confirmed as a >15% deal-breaker trigger."
+  - "E4 Contingent liability (AR Note 42, consolidated, p.137, ~Rs1,654cr, 205% of net worth) is substantially corporate guarantees for the already-consolidated subsidiary's own bank debt (which is already on the Block D balance sheet as Rs887.91cr group borrowings); scored mechanically as disclosed with no qualitative override, but flagged so it is not double-counted as fresh off-balance-sheet risk."
+  - "M5/M2/M9 peer comparison used only the 3 peer CSVs provided (Waaree, Premier Energies, Websol); broader listed solar-module-maker universe not in corpus, so M5 scored conservatively (PEER DATA NEEDED for full segment ranking)."
+  - "M6 (R&D) and M8 (Distribution): no R&D expenditure line or distribution-network data disclosed anywhere in screener-data or the AR; scored 0 as N/A (not in provided data), not as a negative qualitative judgment."
+  - "M11 Network Effects: only 5 years available against the test's preferred >=6yr two-window design; scored conservatively on the overall FY22-25 trend (FY2026 Selling & admin expense is blank in screener-data, not disclosed, so the most recent data point could not be confirmed)."
+block_b_trend: "deteriorating - CFO swung from +Rs113.10cr (FY2025) to -Rs73.13cr (FY2026) while PAT rose from Rs126.20cr to Rs200.22cr; Working Capital Days rose from 31.48 (FY2025) to 62.58 (FY2026), driven by inventory (Rs76.98cr to Rs379.05cr) and receivables (Rs110.09cr to Rs281.59cr) both outrunning payables growth."
+analyst_note: "The scorecard is a study in two eras. FY2022-FY2025 shows genuine operating improvement: margins expanded, ROCE stayed high, and FY2025 alone converted cash at 0.90x PAT. FY2026 breaks that pattern completely: PAT still grew 59% but CFO went negative, working capital days nearly doubled, and the balance sheet gained Rs1,308cr of assets funded mostly by Rs780cr of new borrowings, on the same year the company migrated to the Main Board and drew a large IREDA term loan (Rs1,134cr guarantee, Note 42). This reads like a capacity-and-working-capital ramp funded ahead of collections, not an earnings-quality failure per se, but Gate 0 cannot distinguish those two stories from numbers alone -- that judgment needs the Q1FY27 filing (absent from this corpus) and the AR's own MD&A commentary on the ramp, which stage 2+ should pull specifically. The Rs1,654cr guarantee figure and the restated-vs-unrestated FY2024/25 gap are both large enough that a verifier should re-check them independently before Halt 1."

@@ -773,3 +773,69 @@ thin disclosure apparatus underneath it — GARP watchlist, not yet a clean entr
   driven and FY26 working-capital trends are unresolved between a "ramp" and a "revenue-quality"
   reading, whichever mental-model archetype INA is declared under at Halt 1 should weigh this
   stage's Phase 3 finding directly when deciding which year's ROCE/WC figures are admissible.
+
+```yaml
+stage: B03-ardeep
+company: "INA"
+run_date: "2026-09-06"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - {gap: "prospectus", severity: "HIGH"}
+  - {gap: "results", severity: "HIGH"}
+  - {gap: "annual-report-notes-1-3-absent", severity: "HIGH"}
+  - {gap: "rating", severity: "MEDIUM"}
+  - {gap: "shareholding", severity: "MEDIUM"}
+  - {gap: "screening-csv-shells", severity: "MEDIUM"}
+  - {gap: "sector_cap_row-mismatch", severity: "MEDIUM"}
+  - {gap: "announcements-thin", severity: "MEDIUM"}
+  - {gap: "research", severity: "LOW"}
+  - {gap: "peer-concalls-partial", severity: "LOW"}
+  - {gap: "share-count-blank-FY26", severity: "LOW"}
+flags:
+  - {type: FLAG-CASH, reason: "Consolidated CFO swung from +Rs34.68cr (FY25) to -Rs73.13cr (FY26), independently confirmed against the Consolidated Statement of Cash Flows (p.117-118); CFO/PAT -36.5%, CFO/EBITDA -24.0%; no narrative section (MD&A, Directors' Report, Chairman/MD letters) anywhere explains the inversion beyond a mechanical one-line ratio-table attribution."}
+  - {type: FLAG-GUARANTEE, reason: "Corporate guarantees Rs1,654.01cr (Note 42(i), p.137, verified exactly) = 205% of consolidated net worth = 825% of consolidated PAT = 3.0x parent's own standalone total assets; includes a reverse leg where the subsidiary guarantees an AU Bank facility of the parent itself; no covenant disclosure."}
+  - {type: FLAG-RPT, reason: "AOC-2 (Annexure III, p.64) states related-party disclosure tables are 'Not applicable' while financial-statement RPT notes carry real, named, quantified transactions (LLP investments, personal guarantees, KMP comp); Rs32.5-34.5cr in promoter-family LLPs carried forward from B02 with no arm's-length pricing statement found anywhere."}
+  - {type: FLAG-PROMOTER-PRELIM, reason: "Promoter/Promoter Group holds 66.12% (p.82) with no pledge disclosure or NIL statement found anywhere; 4 of 10 board seats (both executive seats) held by two promoter-family couples; both promoter-directors hold 15 other directorships each; a promoter's spouse sits on the NRC that recommends the promoters' own remuneration. Full promoter verdict deferred to B08."}
+phase_verdicts: {p1: "WATCH", p2: "RED FLAG", p3: "RED FLAG", p4: "RED FLAG", p5: "WATCH (leaning RED on board/NRC structure)", p6: "WATCH (leaning RED on customer-concentration retraction)", p7_best_fit: "GARP: WATCHLIST; Turnaround: FAIL as a turnaround thesis"}
+overall_quality: 4
+quality_components: {governance: 4, accounting: 4, balance_sheet: 4, earnings: 4}
+kill_switch_notes:
+  - "Phase 1: a human reviewer would NOT halt on the audit opinion/CARO alone (every tested clause is technically clean, auditor rotation is ordinary Sec 139 tenure completion) but would query CARO clause (i)(c) [title deeds] and clause (iii) [guarantee figure, Rs15.78cr vs Note 42(i)'s Rs1,654.01cr] directly before relying on either as stated."
+  - "Phase 2: would not halt the run (no fraud, no going-concern, no fabricated primary number found) but would not sign off on the guarantee quantum or title chain as settled without a management query."
+  - "Phase 3: would want the FY27 Q1-Q2 cash-flow and receivables-collection trend before extending any further capital-commitment view; would not halt the pipeline run itself."
+  - "Phase 4: would not halt on MD&A tone alone, but the verbatim textile-industry boilerplate found in the MD&A 'Challenges' box (p.50) is reason to independently verify every other MD&A claim rather than take any of it as company-specific without a second source."
+  - "Phase 5: would not halt on governance structure alone but would raise the NRC composition (promoter's spouse voting on promoter remuneration) and the Stakeholders Relationship Committee's single FY26 meeting directly with the company."
+triple_pass_verification:
+  verified: 8
+  discrepancies:
+    - {finding_rank: 3, triple_pass_value: "PAT Rs 200.22cr", ar_value: "Rs 200.63cr (Consolidated Statement of P&L 'Profit for the year', p.117; also Note 58 p.152, Directors' Report table p.53, MD's letter) or Rs 200.47cr (Total Comprehensive Income / EPS-basis PAT attributable to equity holders, Note 58 p.152-153); neither matches the triple-pass figure. Immaterial in magnitude (~0.1-0.2%), logged for correctness.", note_ref: "Consol Statement of P&L p.117; Note 58 p.152"}
+    - {finding_rank: "CARO cross-reference (not a B02 top-15 rank, found this stage)", triple_pass_value: "n/a - new finding", ar_value: "CARO clause (iii), standalone Annexure p.156, discloses 'Corporate Guarantee to Banks & Financial Institution for credit facilities granted to its wholly owned subsidiary amounting to Rs. 1577.72 Lakhs' (~Rs15.78cr), which does not reconcile with Note 42(i)'s Rs1,654.01cr cumulative outstanding guarantee total (a ~105x gap, unresolved, no cross-reference given in the AR).", note_ref: "CARO(iii) p.156 vs Note 42(i) p.137"}
+missing_risks:
+  - {risk: "Negative operating cash flow / working capital build never discussed in any narrative section", evidence: "Rs(73.13)cr CFO (CFS p.117-118); full-document search for 'working capital'/'cash flow' finds no substantive narrative explanation anywhere, only mechanical ratio-table remarks (MD&A p.49-50)"}
+  - {risk: "Receivables ageing / unbilled revenue concentration", evidence: "Note 13 (B02): 39.5% aged >6m, Rs135.98cr unbilled; not mentioned in MD&A or Directors' Report"}
+  - {risk: "Corporate guarantee concentration (825% of PAT)", evidence: "Note 42(i) p.137, independently confirmed; not discussed as a risk anywhere in MD&A"}
+  - {risk: "Customer concentration actually rose, contradicting the AR's own claim of reduction", evidence: "Directors' Report p.53 claims 'reduced customer concentration risk'; Note 46 shows new customer Solarworld Energy Solutions at 12.4% of FY26 revenue, NIL in FY25"}
+  - {risk: "Related-party capital allocation to promoter-family LLPs", evidence: "Note 8 (B02); not discussed outside the financial-statement note"}
+  - {risk: "Land title uncertainty", evidence: "Note 4 vs Note 18A vs CARO(i)(c), a three-way conflict; not discussed in any narrative section"}
+guidance_table:
+  - {claim: "4.5 GW solar cell manufacturing facility, Narmadapuram MP", number: "4.5 GW", timeframe: "COD Q4 FY27", credibility: "Unverifiable yet (new commitment this year); funded via Rs901.43cr capital commitments"}
+  - {claim: "Aluminium frame manufacturing facility, Narmadapuram MP", number: "18,000 MTA", timeframe: "COD Q3 FY27", credibility: "Unverifiable yet"}
+  - {claim: "IPP capacity target", number: "300MW+", timeframe: "FY27", credibility: "Unverifiable yet"}
+  - {claim: "EPC and O&M capacity target", number: "300MW+", timeframe: "FY27", credibility: "Unverifiable yet"}
+  - {claim: "Module manufacturing capacity expansion (Sawarda 4.5GW facility)", number: "5.5 GW total (from 80MW at founding)", timeframe: "Delivered FY26", credibility: "VERIFIED DELIVERED - one prior commitment that checked out, corroborated across Manufacturing Facilities section and capex/commitments notes"}
+  - {claim: "BESS assembly, solar ingot/wafer manufacturing", number: "Capacity to be announced shortly", timeframe: "Undated", credibility: "Correctly non-committal, not overclaimed; but front-matter's full '1:1:1 ingot:wafer:cell:module' integration claim is not yet matched by any committed capacity or capital commitment for ingots/wafers specifically (hedged retreat, see Phase 6E)"}
+strengths_top3:
+  - "Manufacturing capacity build-out is real, funded, and partially delivered: Sawarda 4.5GW module facility commissioned within the reporting period, capex (Rs448.05cr) tracks capital commitments (Rs901.43cr) cleanly, corroborated independently across P&L, cash flow, and notes."
+  - "No fraud, no going-concern qualification, no fabricated primary number found across two independent audit opinions and multiple independent review passes (B02's three passes plus this stage's direct reads)."
+  - "CARO compliance clean on every individually tested clause (statutory dues, borrowing defaults, deposits, CSR spend, IPO/rights-issue proceeds independently monitored by CARE Ratings)."
+red_flags_top3:
+  - "Cash conversion has inverted (CFO +Rs34.68cr to -Rs73.13cr) with CFO/PAT and CFO/EBITDA both deeply negative, and no narrative section in the entire Annual Report addresses why."
+  - "The listed parent's guarantee exposure (Rs1,654.01cr = 205% of net worth = 825% of PAT = 3.0x parent's own standalone assets, including a reverse guarantee leg) sits on a parent whose own standalone revenue fell 13.3% and whose headcount (42) is 9.4x smaller than the group's (394); board control (4 of 10 seats, both executive seats) mirrors the same concentration."
+  - "Disclosure quality lags group complexity: zero KAM in a 5x-scale-up year, a three-way conflict on factory land title (Note 4 vs Note 18A vs the auditor's own CARO opinion), AOC-2 says RPTs are 'not applicable' beside a note that lists real ones, and the MD&A's own 'Challenges' box is verbatim textile-industry boilerplate."
+best_fit_strategy: "GARP (WATCHLIST) - real, evidenced growth and a funded capacity build-out, but leverage-driven ROE, negative and unexplained cash conversion, and a guarantee structure at 825% of PAT mean the earnings base cannot yet be taken at face value for entry pricing; Turnaround FAILS as a distinct thesis (no distress being exited, this is a growth-capex story, not a recovery story)."
+one_line_verdict: "Real capacity growth funded by guarantee-heavy debt, cash inversion unexplained."
+analyst_note: "Three findings this stage adds beyond B02 that materially reinforce (not merely repeat) Lead 1: (1) Note 58's Schedule III segment table shows the parent's own consolidation-adjusted profit share was NEGATIVE in both FY25 and FY26 even though standalone PAT was small-positive both years - the parent contributes a loss to the group's true economics, not just declining revenue. (2) Standalone headcount (42) vs group headcount (394), a 9.4x gap, independently confirms the thin-parent/thick-subsidiary structure from a headcount angle. (3) The MD&A 'Challenges' box is verbatim textile-industry boilerplate (PM MITRA, MMF, cotton, Bangladesh/Vietnam garment competition) - direct physical evidence the narrative section was not written with company-specific care, which should discount confidence in every other unverified MD&A claim. None of these three appear in B02 since they required the narrative/segment sections only Stage 3 reads."
+ar_new_downstream_entities:
+  - {name: "Solarworld Energy Solutions Ltd", where_in_ar: "Note 46 (customer concentration/RPT-adjacent disclosure), p.144", entity_type: "customer, first year >10% of revenue (12.4% FY26, NIL FY25)"}
+```

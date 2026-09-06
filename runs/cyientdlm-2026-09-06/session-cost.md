@@ -9,3 +9,4 @@ stage returns and committed with that stage.
 | 2 | notes triple-pass, pass 1 of 3 | claude-sonnet-5 | default | n/a | n/a | 154100 | 8m11s | 1 |
 | 1 | Gate 0 quantitative scorecard | claude-sonnet-5 | default | n/a | n/a | 121289 | 10m49s | 1 |
 | 2 | notes triple-pass, pass 2 of 3 | claude-sonnet-5 | default | n/a | n/a | 119743 | 7m24s | 2 |
+| 8 | promoter background check | claude-sonnet-5 | default | n/a | n/a | 164995 | 7m55s | 1 |

@@ -1,0 +1,57 @@
+stage: B08-promoter
+company: "CYIENTDLM"
+run_date: "2026-09-06"
+model: claude-sonnet-5
+status: partial
+status_reason: "SEBI primary order database unreachable (sebi.gov.in blocked at network egress). RHP/DRHP not in corpus and the SEBI-hosted copy could not be fetched. Web-search indexing substituted, a weaker check."
+input_gaps:
+  - "No DRHP/RHP in corpus; group-company map and pre-listing promoter history are WEB-DERIVED, NOT FILING-ANCHORED"
+  - "sebi.gov.in blocked at network egress layer; SEBI order-database name search could not be run directly, only via web-search indexing"
+  - "No announcements/Reg-30 filings folder in corpus; Altek Electronics acquisition governance sourced from AR plus web only"
+  - "Cyient-DLM-specific employee sentiment (as distinct from group-wide) NOT FOUND"
+  - "No IiAS or SES proxy advisory coverage found for Cyient DLM specifically"
+verdict: "TRUSTWORTHY"
+scorecard: {clean: 7, caution: 3, red: 0}
+flags:
+  - type: FLAG-PROMOTER-WATCH
+    reason: "Watch items recorded at TRUSTWORTHY. (1) Related-party concentration with parent Cyient Limited: Rs537.56mn sub-contracting charges newly appearing in FY26; Rs4,470mn financial guarantee closed. (2) FY26 reported PAT growth flattered by a one-off Altek earn-out reversal; normalised PAT fell 24% YoY. (3) Two independent directors and the CFO exited within FY26, each independently verified as a promotion or a credible personal reason, each replaced by a stronger externally credentialed hire. (4) Zero promoter pledge confirmed, holding stable near 52.1-52.2% across two listed years."
+orchestrator_note: "FLAG-PROMOTER per orchestrator Section 4 does NOT fire. That flag is defined to fire only when B08.verdict is CONCERN or AVOID; the verdict here is TRUSTWORTHY. The stage returned its watch items under a FLAG-PROMOTER label; the orchestrator relabelled the entry FLAG-PROMOTER-WATCH so synthesis does not place a promoter flag block inside the verdict line on a trigger that was not met. No content was removed. The watch items stand and travel to synthesis as watch items."
+deal_breakers:
+  - "Multiple mid-term independent exits within 3 years - TRIGGERED (recorded, not enforced): Dr. Ajay Kumar resigned 15-May-2025 (appointed UPSC Chairman) and Mr. Madan Pillutla resigned 18-Aug-2025 (pre-occupation, Dean ISB), both within FY26 (AR FY2025-26, p.42 and p.92); both independently corroborated to credible, non-adverse reasons"
+adverse_findings: []
+transition_evidence:
+  - {finding: "New external CFO R.M. Subramanian (ex-Avalon Technologies Group CFO, led its 2023 IPO) appointed 24-Oct-2025", evidence_tier: "MEDIA REPORTED", source: "HRToday / MarketScreener via web search", date: "accessed 2026-09-06"}
+  - {finding: "New Independent Director Dr. Ganesh Natarajan (ex-Zensar CEO, ex-NASSCOM Chairman) appointed 14-Oct-2025", evidence_tier: "VERIFIED", source: "AR FY2025-26, p.92-93", date: "2026-09-06"}
+  - {finding: "New Independent Director Giridhar Aramane (former Defence Secretary of India) appointed 26-Nov-2025", evidence_tier: "VERIFIED", source: "AR FY2025-26, p.92-93", date: "2026-09-06"}
+  - {finding: "Parent's Rs4,470mn financial guarantee to Cyient DLM closed in FY26; term loan repayment to parent accelerated (Rs746.72mn against Rs248.91mn in FY25). Reduced financial dependency on the promoter.", evidence_tier: "VERIFIED", source: "AR FY2025-26, notes to consolidated financial statements, p.167-168", date: "2026-09-06"}
+  - {finding: "Zero promoter pledge maintained per FY26 Reg 31(4) SAST compliance filing", evidence_tier: "MEDIA REPORTED", source: "ScanX / Whalesbook / Trendlyne via web search", date: "accessed 2026-09-06"}
+  - {finding: "COUNTER-SIGNAL, not positive: HDFC Mutual Fund defence-sector vehicles reduced holdings in both Cyient DLM and parent Cyient Limited during 2026. No institutional entry found.", evidence_tier: "MEDIA REPORTED", source: "ScanX / Business Standard via web search", date: "accessed 2026-09-06"}
+pledge_pct_latest: 0.0
+pledge_trend: "stable - zero pledge in both FY25 and FY26 compliance filings; no encumbrance history found"
+searches_performed:
+  - "SEBI order Cyient Limited adjudication"
+  - "Krishna Bodanapu Cyient SEBI insider trading OR fraud OR case"
+  - "B.V.R. Mohan Reddy Cyient controversy OR litigation OR case"
+  - "Cyient DLM independent director resignation Ajay Kumar Madan Pillutla 2025"
+  - "Cyient DLM CFO Shrinivas Kulkarni resignation reason"
+  - "Cyient DLM promoter pledge shares Cyient Limited encumbrance"
+  - "Cyient DLM Glassdoor AmbitionBox employee reviews"
+  - "Cyient DLM IiAS SES proxy advisory report"
+  - "Cyient Limited SEBI settlement consent order"
+  - "Cyient NCLT OR oppression OR ED OR PMLA OR SFIO case"
+  - "Cyient DLM stock price fall 2025 2026 reasons order book"
+  - "Cyient Limited group companies list subsidiaries structure 2025"
+  - "Cyient short seller report OR whistleblower OR accounting concern"
+  - "B.V.R. Mohan Reddy Krishna Bodanapu philanthropy foundation donation"
+  - "Giridhar Aramane IAS controversy OR case"
+  - "Ganesh Natarajan Zensar OR NASSCOM controversy governance"
+  - "Vanitha Datla Coromandel International controversy"
+  - "R M Subramanian Cyient DLM CFO background career"
+  - "HDFC Defence Fund Cyient DLM stake reduce sell"
+  - "Jehangir Ardeshir Greaves Cotton background controversy"
+  - "Muralidhar Yadama director background Cyient DLM"
+searches_skipped:
+  - {search: "WebFetch sebi.gov.in RHP filing page (cyient-dlm-limited-rhp_72861.html)", reason: "EGRESS_BLOCKED - sebi.gov.in blocked by network egress proxy"}
+  - {search: "Direct sebi.gov.in enforcement-order database name search for Cyient Limited / Krishna Bodanapu / B.V.R. Mohan Reddy", reason: "same domain block expected; substituted with web-search indexing only, a weaker check"}
+verdict_basis: "Two full annual reporting cycles show nil SEBI, regulatory or court action against the company, its directors, its KMP or its promoter. Zero pledge with stable 52.1-52.2% holding. Unchanged clean-opinion EY-network auditor. All board and CFO mid-term exits independently verified as promotions or credible personal-capacity reasons, each replaced by a stronger externally credentialed hire."
+analyst_note: "The promoter is a listed corporate (Cyient Limited, 52.12%), not a family, so this check ran two tracks: Cyient DLM's own board and KMP, and the Bodanapu and Mohan Reddy family that controls the parent. The one family relationship, Krishna Bodanapu being B.V.R. Mohan Reddy's son, is company-disclosed, not hidden. The verdict rests on AR primary sources plus corroborated web search. The SEBI primary order database and the DRHP/RHP, the two strongest sources for promoter-group litigation history, were unreachable this run because of an egress block, not by choice. Severe stock and order-book weakness (down about 35-40% year on year, a ninth straight quarter of order-book decline) is a business-quality matter for other stages and is not scored here as a promoter-integrity flag."

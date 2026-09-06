@@ -7,3 +7,7 @@ canary/canary.log
 runs/*/work/raster/
 runs/*/work/*.txt
 runs/*/work/txt/ar_FY*.txt
+
+# Chartink pipeline: rendered pages and the run log are regenerated nightly.
+data/chartink/**/*.html
+data/chartink/_collector.log

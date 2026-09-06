@@ -7,6 +7,7 @@ with its own stage. A stage that loops or retries gets one line per run.
 |---|-------|-------|--------|--------|---------|-----------|------|------|
 | 0 | input validation | orchestrator (opus) | — | — | — | — | ~25m | 1 |
 | 1 | gate 0 scorecard | claude-sonnet-5 | default | — | — | 54,376 | 5m06s | 1 |
+| 2 | notes triple-pass (pass 1) | claude-sonnet-5 | default | — | — | 138,673 | 8m55s | 1 |
 
 Stage 0 ran in the orchestrator session, not as a subagent, so it has no
 subagent metadata. Its wall time is dominated by a rejected OCR attempt on

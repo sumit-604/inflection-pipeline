@@ -7,6 +7,8 @@ Per-stage token ledger, written as each stage returns.
 | 0 | input validation + corpus extraction | orchestrator-inline | n/a | n/a | n/a | n/a | n/a | 1 |
 | 1 | Gate 0 scorecard | claude-sonnet-5 | default | n/r | n/r | 130,317 | 11m37s | 1 |
 | 2 | Notes triple-pass, pass 1 | claude-sonnet-5 | default | n/r | n/r | 183,568 | 8m51s | 1 |
+| 2 | Notes triple-pass, pass 2 | claude-sonnet-5 | default | n/r | n/r | 141,426 | 9m44s | 2 |
+| 2 | Notes triple-pass, pass 3 + consolidation | claude-sonnet-5 | default | n/r | n/r | 82,839 | 3m47s | 3 |
 
 n/r = the subagent result reported a single total-token figure, not an input/output split.
 

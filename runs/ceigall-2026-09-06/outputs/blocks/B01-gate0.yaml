@@ -1,0 +1,36 @@
+stage: B01-gate0
+company: "CEIGALL"
+run_date: "2026-09-06"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Annual Report FY2026 text extraction unusable: 150 of 151 pages blank, page 1 garbled/mojibake; no AR-sourced figure used in this stage. RESOLVED AFTER THIS STAGE RAN: the AR was re-extracted by OCR (tools/ocr_pdf.py). Downstream stages read the OCR text; this block's figures do not."
+  - "screener CSVs: only Data_Sheet populated; Profit_Loss, Balance_Sheet, Cash_Flow, Quarters, Customization tabs are empty templates"
+  - "Shareholding pattern absent from corpus; Block E (E1-E4) fully N/A, scored 0"
+  - "Trade payables and current-liabilities split unavailable for FY2021-FY2023 (screener lumps into 'Other Liabilities'); ROCE (A1/A2/A4), Current Ratio (D4), and the payables leg of WC Days (B4) computed only for FY2024-FY2026 using Investor Presentation balance sheet"
+  - "Capex (purchase of PPE + intangibles) not broken out in any provided source; only aggregate Investing Cash Flow given; FCF metrics B2/B3 marked N/A"
+  - "Contingent liabilities not disclosed in any provided source; E4 N/A"
+flags:
+  - {type: FLAG-GATE0, reason: "Classification AVERAGE. Deal-breaker #4 (cumulative CFO/PAT -0.70) and #2 (Block B 5/20) both triggered despite strong Block A (65%) and Block C (75%) scores. Revenue CAGR 35.73% vs PAT CAGR 22.62% (-13.1pp, C4=0) and ROCE fell 14.27pp FY24->FY26 (A4=0): growth is real but not yet self-funding or capital-efficient at the margin."}
+data_years: 6
+fy_range: "FY2021 to FY2026"
+blocks: {A: 13, B: 5, C: 15, D: 12, E: 0}
+core_score: 45
+moat_score: 12
+grand_total: 57
+moats_confirmed: 2
+moat_class: "MODERATE"
+classification: "AVERAGE"
+deal_breakers:
+  - "#2 Block B <8 (actual 5) -> max GOOD (non-binding, matrix already AVERAGE)"
+  - "#4 cumulative CFO/PAT <0.50 (actual -0.70) -> max AVERAGE (binding)"
+history_downgrade: false
+data_notes:
+  - "No loss-to-profit swing: PAT positive all 6 years (FY21-FY26)."
+  - "WC Days computed on Revenue basis throughout (no explicit standalone COGS line in any source)."
+  - "M9 Brand GM proxy = (Revenue-Material Cost)/Revenue; FY2026 Raw Material Cost lines are not comparable across CEIGALL/KNRCON/PNCINFRA due to a categorization shift in the FY2026 screener export (cost buckets appear lumped into fewer lines); FY2025 used instead for the peer GM comparison, the last year with cleanly split cost lines for all four companies."
+  - "M2/M5/M9/M11 peer comparisons use a 3-name named peer set (HGINFRA, KNRCON, PNCINFRA) only, not an exhaustive listed road-EPC/HAM universe; PEER DATA NEEDED for a fuller segment ranking on M5 in particular."
+  - "A1 computed ROCE (FY26 17.71%) diverges 2.3pp from the Investor Presentation's own disclosed ROCE (20.0%, p.36); plausibly explained by an INR 5,431mn 'held for sale' asset/INR 3,303mn matching liability in the FY26 consolidated balance sheet (p.39) that the company may net out of its own capital-employed base. Scored on the fixed-formula computed figure, not the company chart, per rule."
+block_b_trend: "improving"        # CFO narrowed from -519.56 Cr (FY25) to -91.28 Cr (FY26), though cumulative 6-year CFO of -925.74 Cr against cumulative PAT of +1,317.68 Cr remains deeply negative (B1 = 0)
+analyst_note: "Two distinct stories coexist. Blocks A and C say this is a fast, profitable grower (35.7% revenue CAGR, 33.4% median ROE, zero revenue-decline years). Block B says the growth has not yet turned to cash: CFO was negative in 5 of 6 years and cumulative CFO trails cumulative PAT by 925.74 Cr, driven by Contract Assets/WIP nearly quadrupling FY24-FY26 (402.8 to 1,413.2 Cr), an item the fixed WC-Days formula does not capture, so B4 and M12 score well despite this. ROCE nearly halved FY24 (31.98%) to FY26 (17.71%) as post-IPO HAM equity and working capital have not yet earned a return. Block E is a pure data gap (no shareholding file), not a governance finding; treat classification AVERAGE as growth-outrunning-cash-conversion, not as a quality problem, pending Block E and the missing capex breakdown."
+orchestrator_note: "This stage ran while the FY2026 AR text layer was unusable, so every figure here comes from the screener Data_Sheet and the investor presentation. The AR has since been OCR'd. The gaps this block names as AR-dependent (capex breakdown, contingent liabilities, the FY2021-FY2023 payables split) are now answerable from the OCR text, and stage 10 in Phase 3 should re-anchor them rather than carry the N/A forward."

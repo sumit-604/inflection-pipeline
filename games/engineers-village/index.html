@@ -318,7 +318,9 @@ html, body {
 #touch-run.on { background: #ffce3a; box-shadow: 0 2px 0 #b8901a; }
 
 /* ---------- Big map and compass ---------- */
-.bigmap-card { width: min(96vw, 820px); }
+.bigmap-card { width: min(96vw, 940px); }
+#bigmap-canvas { touch-action: none; }
+#map-goto { max-width: 220px; }
 #bigmap-canvas { display: block; width: 100%; max-height: 70vh; aspect-ratio: 1 / 1; object-fit: contain; border-radius: 12px; background: #bfe3f2; cursor: crosshair; }
 .find-row { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin-bottom: 8px; }
 .find-btn { border: 1px solid #d8cdb2; background: #fff; border-radius: 999px; padding: 6px 10px; font-size: 13px; font-weight: 600; cursor: pointer; }
@@ -334,6 +336,33 @@ html, body {
 #waypoint-clear { border: none; background: #eee; border-radius: 8px; width: 24px; height: 24px; cursor: pointer; }
 
 /* ---------- Controls board ---------- */
+#bag-btn {
+  position: absolute; top: 12px; right: 174px;
+  width: 46px; height: 46px; border: none; border-radius: 12px;
+  background: rgba(255,253,246,0.92); font-size: 22px; cursor: pointer;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+.cart-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; background: #f4efe2; border-radius: 10px; padding: 6px 10px; }
+.cart-row .qty { display: flex; align-items: center; gap: 6px; }
+.qty-btn { border: none; border-radius: 8px; width: 30px; height: 30px; font-size: 18px; font-weight: 800; cursor: pointer; background: #3a7d44; color: #fff; }
+.qty-btn.minus { background: #d9704f; }
+.qty-btn:disabled { background: #b9b9b9; }
+.qty-num { min-width: 22px; text-align: center; font-weight: 800; }
+.bill { width: 100%; border-collapse: collapse; margin: 8px 0; font-size: 15px; }
+.bill td { padding: 5px 8px; border-bottom: 1px dashed #d8cdb2; }
+.bill td:last-child { text-align: right; white-space: nowrap; }
+.cash-drawer { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0; }
+.cash-btn { border: none; border-radius: 8px; padding: 10px 12px; font-weight: 800; font-size: 15px; cursor: pointer; color: #2c2417; box-shadow: 0 3px 0 rgba(0,0,0,0.2); }
+.cash-btn.n500 { background: #cbb3d9; } .cash-btn.n200 { background: #f5d38b; } .cash-btn.n100 { background: #b9d5e8; } .cash-btn.n50 { background: #d6e8c8; } .cash-btn.n20 { background: #f3c5a8; } .cash-btn.n10 { background: #d8c9a8; }
+.cash-btn.n5, .cash-btn.n2, .cash-btn.n1 { background: #e0e0e0; border-radius: 50%; width: 44px; height: 44px; padding: 0; }
+.cash-btn:disabled { opacity: 0.4; cursor: default; }
+.handed { display: flex; flex-wrap: wrap; gap: 6px; min-height: 34px; padding: 6px; background: #fff; border: 2px dashed #d8cdb2; border-radius: 10px; }
+.cash-chip { border: none; border-radius: 999px; padding: 5px 10px; font-weight: 700; background: #ffe7b3; cursor: pointer; }
+.bag-list { display: flex; flex-direction: column; gap: 6px; margin: 6px 0 12px; }
+.bag-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; background: #f4efe2; border-radius: 10px; padding: 7px 10px; }
+.bag-row.on { background: #e3f0e0; }
+.use-btn { border: none; border-radius: 8px; background: #3a7d44; color: #fff; font-weight: 700; padding: 7px 12px; cursor: pointer; white-space: nowrap; }
+.use-btn.off { background: #8d6e63; }
 #controls-btn {
   position: absolute; top: 12px; right: 120px;
   width: 46px; height: 46px; border: none; border-radius: 12px;
@@ -551,6 +580,8 @@ kbd { display: inline-block; border: 1px solid #d8cdb2; border-bottom-width: 3px
     <button id="notebook-btn" title="Notebook (N)">📓</button>
     <!-- Sound on/off -->
     <button id="sound-btn" title="Sound on / off">🔊</button>
+    <!-- Backpack: eat, wear, hold, read what you bought -->
+    <button id="bag-btn" title="Backpack (B)">🎒</button>
     <!-- Controls board -->
     <button id="controls-btn" title="Controls (H)">⌨️</button>
     <!-- The map of the whole land -->
@@ -616,9 +647,18 @@ kbd { display: inline-block; border: 1px solid #d8cdb2; border-bottom-width: 3px
         <button class="find-btn" data-find="jobs">⭐ Open job</button>
         <button class="find-btn" data-find="home">🏠 Home</button>
         <button class="find-btn" data-find="kailash">🏔️ Devshikhar</button>
+        <button class="find-btn" data-find="shops">🛍️ Shop</button>
+        <button class="find-btn" data-find="food">🍽️ Food</button>
       </div>
-      <canvas id="bigmap-canvas" width="720" height="720"></canvas>
-      <p class="tiny-note">Tap anywhere on the map to plant a flag. The white arrow is you. Orange dots are villagers, yellow dots are open jobs, the dark blue dot is Constable Verma. Press M to open or close this map.</p>
+      <div class="find-row">
+        <button class="find-btn" id="map-zoom-in">➕ Zoom in</button>
+        <button class="find-btn" id="map-zoom-out">➖ Zoom out</button>
+        <span id="map-zoom-text" class="tiny-note" style="margin:0">1.0×</span>
+        <button class="find-btn" id="map-me">📍 Centre on me</button>
+        <select id="map-goto" class="find-btn"></select>
+      </div>
+      <canvas id="bigmap-canvas" width="900" height="900"></canvas>
+      <p class="tiny-note">Scroll or use ➕ ➖ to zoom, drag to move the map, tap a spot to plant a flag. Place names appear as you zoom in. The white arrow is you, orange dots are villagers, yellow dots open jobs. Press M to open or close.</p>
     </div>
   </div>
 
@@ -638,6 +678,8 @@ kbd { display: inline-block; border: 1px solid #d8cdb2; border-bottom-width: 3px
         <tr><td><kbd>E</kbd> or <kbd>Space</kbd></td><td>Talk, enter a door, ride a vehicle, get off, board the metro, use the lift or the auto stand.</td></tr>
         <tr><td><kbd>N</kbd></td><td>Notebook: jobs, situations, road safety.</td></tr>
         <tr><td><kbd>M</kbd></td><td>The big map: find vehicles, plant a flag, follow the compass.</td></tr>
+        <tr><td><kbd>B</kbd></td><td>Backpack: eat food, wear clothes, hold gear, read books.</td></tr>
+        <tr><td><kbd>F</kbd></td><td>Use what you hold: swing the bat or racket, kick the ball hard, skip the rope, spin the top.</td></tr>
         <tr><td><kbd>H</kbd></td><td>This board.</td></tr>
         <tr><td><kbd>Enter</kbd></td><td>Check an answer in a puzzle.</td></tr>
         <tr><td><kbd>Esc</kbd></td><td>Close a panel.</td></tr>
@@ -658,7 +700,8 @@ kbd { display: inline-block; border: 1px solid #d8cdb2; border-bottom-width: 3px
         <tr><td>🚦</td><td>Road Safety points; 🪪 once you have the licence.</td></tr>
         <tr><td>Minimap</td><td>Orange dots are villagers, yellow dots open jobs, the white arrow is you.</td></tr>
         <tr><td>km/h</td><td>Your speed while riding; red means over the limit.</td></tr>
-        <tr><td>💰</td><td>Money. Solving pays: situation ₹50, job ₹300, lesson ₹100. Spend it in shops, on food, clothes, books and petrol. Fines take it away.</td></tr>
+        <tr><td>💰</td><td>Money. Solving pays: situation ₹50, job ₹300, lesson ₹100. In a shop you choose items and quantities, work out the bill, hand over notes and coins, and count your change.</td></tr>
+        <tr><td>🎒</td><td>Backpack. Everything you buy goes here. Eat, wear, hold or read it.</td></tr>
         <tr><td>⚡</td><td>Energy. Walking uses it; food and drink restore it. Below 25 you walk slowly.</td></tr>
         <tr><td>⛽</td><td>Petrol, ₹100 a litre at a pump, 1½ minutes of riding per litre. Bicycles need none.</td></tr>
         <tr><td>🪪</td><td>Driving licence from the RTO Office (20 questions, 16 to pass). Two challans cancel it.</td></tr>
@@ -839,6 +882,45 @@ function startAmbient() {
   src.connect(filter).connect(windNode).connect(master);
   src.start();
 }
+// ---- Vehicle and street sounds ----
+let engineOsc = null, engineGain = null, engineFilter = null, crowdGain = null, trafficGain = null, chainT = 0;
+function engineTick(kind, kmh, dt) {
+  if (!ctx) return;
+  if (!engineOsc) {
+    engineOsc = ctx.createOscillator(); engineOsc.type = "sawtooth"; engineOsc.frequency.value = 60;
+    engineFilter = ctx.createBiquadFilter(); engineFilter.type = "lowpass"; engineFilter.frequency.value = 420;
+    engineGain = ctx.createGain(); engineGain.gain.value = 0;
+    engineOsc.connect(engineFilter).connect(engineGain).connect(master); engineOsc.start();
+  }
+  const t = ctx.currentTime;
+  if (!kind || muted || kind === "bike" || kind === "metro") { engineGain.gain.setTargetAtTime(0, t, 0.15); }
+  else {
+    const base = { car: 38, scooty: 70, auto: 52 }[kind] || 50, rise = { car: 1.3, scooty: 2.6, auto: 2.0 }[kind] || 2;
+    engineOsc.frequency.setTargetAtTime(base + kmh * rise, t, 0.12);
+    engineFilter.frequency.setTargetAtTime(300 + kmh * 12, t, 0.12);
+    engineGain.gain.setTargetAtTime(0.045 + Math.min(kmh, 60) / 700, t, 0.15);
+  }
+  // Bicycle: the chain ticks once per turn of the wheel.
+  if (kind === "bike" && kmh > 1 && !muted) { chainT -= dt; if (chainT <= 0) { chainT = 2.0 / (kmh / 3.6); tone(2600, t, 0.02, "sine", 0.06); } }
+}
+// A soft crowd murmur (markets) and a low traffic rumble (city streets).
+function streetTick(crowd, traffic) {
+  if (!ctx || !windNode) return;
+  if (!crowdGain) {
+    const mk = (type, freq, q) => { const n = ctx.createBufferSource(); const buf = ctx.createBuffer(1, ctx.sampleRate * 2, ctx.sampleRate); const d = buf.getChannelData(0); for (let i = 0; i < d.length; i++) d[i] = Math.random() * 2 - 1; n.buffer = buf; n.loop = true; const f = ctx.createBiquadFilter(); f.type = type; f.frequency.value = freq; f.Q.value = q; const g = ctx.createGain(); g.gain.value = 0; n.connect(f).connect(g).connect(master); n.start(); return g; };
+    crowdGain = mk("bandpass", 700, 0.7);
+    trafficGain = mk("lowpass", 140, 0.5);
+  }
+  const t = ctx.currentTime;
+  const wobble = 0.75 + 0.25 * Math.sin(t * 1.7) * Math.sin(t * 0.6);
+  crowdGain.gain.setTargetAtTime(muted ? 0 : crowd * 0.07 * wobble, t, 0.5);
+  trafficGain.gain.setTargetAtTime(muted ? 0 : traffic * 0.09, t, 0.6);
+}
+// A short bit of market chatter: two soft voice-like notes.
+function playChatter() { if (muted) return; const c = getCtx(); if (!c) return; const t = c.currentTime; const f = 180 + Math.random() * 260; tone(f, t, 0.12, "triangle", 0.05); tone(f * (0.8 + Math.random() * 0.5), t + 0.14, 0.16, "triangle", 0.045); }
+// A shop door bell.
+function playShopBell() { const c = getCtx(); if (!c) return; const t = c.currentTime; tone(2093, t, 0.35, "sine", 0.25); tone(2637, t + 0.12, 0.4, "sine", 0.2); }
+
 // Called every frame: fades the wind with the gust strength, silent when muted.
 function ambientTick(gust) {
   if (!windNode || !ctx) return;
@@ -925,6 +1007,11 @@ function playHorn() {
   tone(415, t, len, "square", 0.16);
   tone(523, t, len, "square", 0.14);
 }
+
+// A bat swing, a kick, a marble click.
+function playWhoosh() { if (muted) return; const c = getCtx(); if (!c) return; const t = c.currentTime; const o = c.createOscillator(), g = c.createGain(), f = c.createBiquadFilter(); f.type = "bandpass"; f.frequency.setValueAtTime(400, t); f.frequency.linearRampToValueAtTime(1800, t + 0.18); o.type = "sawtooth"; o.frequency.value = 90; g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(0.18, t + 0.05); g.gain.linearRampToValueAtTime(0.001, t + 0.25); o.connect(f).connect(g).connect(master); o.start(t); o.stop(t + 0.26); }
+function playKick() { const c = getCtx(); if (!c) return; tone(110, c.currentTime, 0.12, "triangle", 0.5); tone(70, c.currentTime, 0.2, "sine", 0.4); }
+function playMarble() { const c = getCtx(); if (!c) return; tone(2400, c.currentTime, 0.04, "sine", 0.25); tone(1900, c.currentTime + 0.05, 0.05, "sine", 0.2); }
 
 // A little coin sound for earning a star.
 function playCoin() {
@@ -1025,7 +1112,7 @@ const KEY = (profile) => `engineers-village.v1.${profile}`;
 
 // A fresh, empty progress record.
 function emptyProgress() {
-  return { jobsDone: [], attempts: {}, situationsDone: [], replays: {}, safety: { points: 0, lessons: [], licence: { valid: false, challans: 0, tests: 0 }, fines: 0, debt: 0 }, fuel: 0, money: 0, energy: 100, items: [], hints: 0, outfit: {} };
+  return { jobsDone: [], attempts: {}, situationsDone: [], replays: {}, safety: { points: 0, lessons: [], licence: { valid: false, challans: 0, tests: 0 }, fines: 0, debt: 0 }, fuel: 0, money: 0, energy: 100, items: [], bag: [], wardrobe: [], held: null, hints: 0, outfit: {} };
 }
 
 // Read the saved progress for a profile. Always returns a valid object,
@@ -1052,6 +1139,9 @@ function loadProgress(profile) {
 
       energy: data.energy == null ? 100 : Math.max(0, Math.min(100, Number(data.energy))),
       items: Array.isArray(data.items) ? data.items : [],
+      bag: Array.isArray(data.bag) ? data.bag.filter((b) => b && typeof b === "object") : (Array.isArray(data.items) ? data.items.map((n) => ({ id: "old_" + n, name: n, kind: "item", value: n, icon: "🎒", qty: 1 })) : []),
+      wardrobe: Array.isArray(data.wardrobe) ? data.wardrobe.filter((b) => b && typeof b === "object") : [],
+      held: typeof data.held === "string" ? data.held : null,
       hints: Number(data.hints) || 0,
       outfit: data.outfit && typeof data.outfit === "object" ? data.outfit : {},
     };
@@ -1143,6 +1233,7 @@ class Input {
         this._interactQueued = true;
         e.preventDefault();
       }
+      if (k === "f") this._useQueued = true;
       this._recomputeKeyboardMove();
     });
     window.addEventListener("keyup", (e) => {
@@ -1263,6 +1354,9 @@ class Input {
   get running() {
     return this.keys.has("shift") || this.runToggle;
   }
+
+  // F (or the touch button): use what you hold. Read once.
+  usePressed() { if (this._useQueued) { this._useQueued = false; return true; } return false; }
 
   // Read the interact press ONCE. Returns true only on the frame it happened.
   interactPressed() {
@@ -1718,6 +1812,7 @@ class UI {
     // Controls board: the keyboard button or H.
     const board = document.getElementById("controls-board");
     document.getElementById("controls-btn").addEventListener("click", () => (board.hidden = !board.hidden));
+    document.getElementById("bag-btn").addEventListener("click", () => { if (panelOpen()) closePanel(); else this.game._openBag(); });
 
     // Keyboard: N toggles the notebook, H the controls, Esc closes panels
     // (not while typing in a number box).
@@ -1726,6 +1821,7 @@ class UI {
       const k = e.key.toLowerCase();
       if (k === "n") this.toggleNotebook();
       if (k === "h") board.hidden = !board.hidden;
+      if (k === "b") { if (panelOpen()) closePanel(); else this.game._openBag(); }
       if (k === "escape") { board.hidden = true; this.notebook.hidden = true; this.parentView.hidden = true; if (panelOpen()) closePanel(); }
     });
   }
@@ -1818,7 +1914,7 @@ class UI {
     const pr = this.game.progress;
     html += `<div class="section-label">Wallet and backpack</div><ul class="job-list"><li><div class="job-title">💰 ₹${pr.money} · ⚡ energy ${Math.round(pr.energy)} · 📘 hint tokens ${pr.hints}</div>
       <div class="job-concept">Earn: situation ₹50 (city challenge ₹100), job ₹300, lesson ₹100, licence ₹200, safe crossing ₹10. Spend at tea stalls, carts, the sabzi mandi, shops, the barber, bookshops and petrol pumps.</div>
-      <div class="job-concept">Backpack: ${pr.items.length ? pr.items.join(", ") : "empty"}</div></li></ul>`;
+      <div class="job-concept">Backpack: ${pr.bag.length ? pr.bag.map((b) => `${b.icon || ""} ${b.name}${b.qty > 1 ? " ×" + b.qty : ""}`).join(", ") : "empty"}. Wardrobe: ${pr.wardrobe.length} pieces. Press B.</div></li></ul>`;
     html += `<div class="section-label">Road safety and riding</div><ul class="job-list"><li><div class="job-title">🚦 ${sf.points} points ${sf.licence.valid ? `· 🪪 Licence valid (challans ${sf.licence.challans}/2)` : "· no licence: take the test at the RTO Office, Suryanagar"}</div>
       <div class="job-concept">⛽ Petrol ${fmtFuel(this.game.progress.fuel)}. Buy it at a pump with money you earned; bicycles need none. Lessons passed: ${sf.lessons.length} of ${SAFETY_LESSONS.length}. Fines paid: ₹${sf.fines}.</div></li></ul>`;
     html += `<div class="section-label">By topic</div><ul class="job-list">`;
@@ -1850,7 +1946,7 @@ class UI {
     }
     html += `</ul>`;
     html += `<div class="section-label">Road safety</div>`;
-    html += `<p>Wallet ${fmtMoney(prog.money)}, energy ${Math.round(prog.energy)}, hint tokens ${prog.hints}, backpack: ${prog.items.join(", ") || "empty"}.</p><p>Licence ${prog.safety.licence.valid ? "valid" : "not held"}, tests taken ${prog.safety.licence.tests}, challans on this licence ${prog.safety.licence.challans}, fines ₹${prog.safety.fines}, challan still to refund ₹${prog.safety.debt || 0}, petrol ${fmtFuel(prog.fuel)}.</p><p>${prog.safety.points} points. Lessons passed: ${SAFETY_LESSONS.filter((l) => prog.safety.lessons.includes(l.id)).map((l) => l.title.replace(/Lesson \d: /, "")).join(", ") || "none yet"}. ${prog.safety.lessons.length >= SAFETY_LESSONS.length ? "Licence earned." : "No licence yet."}</p>`;
+    html += `<p>Wallet ${fmtMoney(prog.money)}, energy ${Math.round(prog.energy)}, hint tokens ${prog.hints}, backpack: ${prog.bag.map((b) => b.name + (b.qty > 1 ? " ×" + b.qty : "")).join(", ") || "empty"}.</p><p>Licence ${prog.safety.licence.valid ? "valid" : "not held"}, tests taken ${prog.safety.licence.tests}, challans on this licence ${prog.safety.licence.challans}, fines ₹${prog.safety.fines}, challan still to refund ₹${prog.safety.debt || 0}, petrol ${fmtFuel(prog.fuel)}.</p><p>${prog.safety.points} points. Lessons passed: ${SAFETY_LESSONS.filter((l) => prog.safety.lessons.includes(l.id)).map((l) => l.title.replace(/Lesson \d: /, "")).join(", ") || "none yet"}. ${prog.safety.lessons.length >= SAFETY_LESSONS.length ? "Licence earned." : "No licence yet."}</p>`;
     html += `<div class="section-label">Village situations</div>`;
     html += `<p>${prog.situationsDone.length} of ${SITUATIONS.length} solved. Replays with new numbers: ${Object.values(prog.replays).reduce((a, b) => a + b, 0)}.</p>`;
     html += `<ul class="job-list">`;
@@ -2112,7 +2208,7 @@ class PathMover {
     else { this.obj.position.x += (dx / dist) * step; this.obj.position.z += (dz / dist) * step; }
     this.obj.position.y = heightAt(this.obj.position.x, this.obj.position.z) + this.yOffset;
     if (dist > 0.01) this.obj.rotation.y = Math.atan2(dx, dz);
-    for (const c of this.obj.children) if (c.userData.wheel) c.rotation.x += step * 2.8;
+    rollWheels(this.obj, step);
   }
 }
 
@@ -2133,8 +2229,12 @@ function makeWheel(r = 0.36, w = 0.26) {
   const tyre = new THREE.Mesh(new THREE.CylinderGeometry(r, r, w, 18), mat(0x1f1f1f)); tyre.rotation.z = Math.PI / 2; g.add(tyre);
   const rim = new THREE.Mesh(new THREE.CylinderGeometry(r * 0.62, r * 0.62, w + 0.02, 12), mat(0xcfd8dc)); rim.rotation.z = Math.PI / 2; g.add(rim);
   for (let k = 0; k < 5; k++) { const spoke = new THREE.Mesh(new THREE.BoxGeometry(w + 0.03, r * 0.5, 0.05), mat(0x9aa6ad)); spoke.rotation.x = (k * Math.PI * 2) / 5; spoke.position.y = 0; g.add(spoke); }
-  g.userData.wheel = true;
+  g.userData.wheel = true; g.userData.wheelR = r;
   return g;
+}
+// Spin every tagged wheel of a vehicle by the distance it moved.
+function rollWheels(obj, dist) {
+  for (const c of obj.children) if (c.userData.wheel) c.rotation.x += dist / (c.userData.wheelR || 0.36);
 }
 
 // A modern hatchback: side profile extruded across the width.
@@ -3238,6 +3338,11 @@ class World {
     this.addBox(5, 69.6, 3.6, 0.8);
     // The sports shop in town.
     this._place(makeBuilding({ w: 7, d: 6, h: 3.4, roof: "flat", wall: 0xe3ecf5, roofColor: 0x2a9d8f, sign: "Sports Shop" }), -40, 70, Math.PI / 2, "Sports Shop");
+    // Setugram Bazaar: a row of small shops along the south side of the east-west road.
+    const bazaar = [["Kirana Store", -42, 0xffe0a3], ["Sweet Shop", -33, 0xf3d9c8], ["Stationery", -24, 0xe3ecf5], ["Ice Cream Parlour", -15, 0xd9e4d0], ["Shoe Shop", -6, 0xfff1d6], ["Chemist", 24, 0xffffff], ["Fruit Shop", 33, 0xd9e4d0], ["Bangles & Toys", 42, 0xf3d9c8]];
+    bazaar.forEach(([name, x, wallC], i) => this._place(makeBuilding({ w: 7, d: 5, h: 3.2, roof: ["flat", "gable"][i % 2], wall: wallC, roofColor: pick(roofs, i + 2), sign: name }), x, 39, Math.PI));
+    const bzSign = makeTextSprite("Setugram Bazaar", { size: 50, color: "#ffffff", bg: "rgba(29,53,87,0.9)", scale: 1.6 }); bzSign.position.set(-24, heightAt(-24, 34) + 6.2, 34); this.scene.add(bzSign);
+    for (let x = -44; x <= 44; x += 8) { if (Math.abs(x) < 6) continue; const cloth = new THREE.Mesh(new THREE.BoxGeometry(6, 0.06, 2.2), mat([0xd62828, 0xffd21e, 0x2a9d8f, 0x3a86ff][Math.abs(x / 8) % 4])); cloth.position.set(x, heightAt(x, 35) + 3.0, 35.2); this.scene.add(cloth); }
     // Street lamps along the main road in town.
     for (let z = 70; z <= 140; z += 14) for (const x of [-3.6, 3.6]) this._addLamp(x, z);
     // Playground: swing, seesaw, slide.
@@ -3401,7 +3506,15 @@ class World {
     // ---------- Welcome sign at the pass and big billboards ----------
     this._addSign(6, 168, ["↓ " + C.name + " 2 km", "↑ Setugram, Town"]);
     this._addBillboard(-14, 184, C.name + " welcomes you", 0x1d3557);
-    this._addBillboard(60, 184, "Sector 18 Market →", 0xc1121f);
+    this._addBillboard(26, 184, "Sector 18 Market →", 0xc1121f);
+    // Two market blocks on the north edge of the city, facing the first avenue.
+    this._place(makeBuilding({ w: 12, d: 7, h: 4, roof: "flat", wall: 0xdfe6ea, roofColor: 0x2f9e44, sign: "Suryanagar Supermarket" }), -66, 183, 0, "Suryanagar Supermarket");
+    this._place(makeBuilding({ w: 6, d: 6, h: 3.4, roof: "flat", wall: 0xf3d9c8, roofColor: 0x8d6e63, sign: "Shoe Store" }), -56.5, 183, 0, "Shoe Store");
+    this._place(makeBuilding({ w: 6, d: 6, h: 3.4, roof: "flat", wall: 0xe3ecf5, roofColor: 0x1d3557, sign: "Electronics" }), -49, 183, 0, "Electronics");
+    this._place(makeBuilding({ w: 6, d: 6, h: 3.4, roof: "flat", wall: 0xffe0a3, roofColor: 0xd62828, sign: "Pizza Corner" }), 49, 183, 0, "Pizza Corner");
+    this._place(makeBuilding({ w: 6, d: 6, h: 3.4, roof: "flat", wall: 0xfff1d6, roofColor: 0x8a5626, sign: "City Bakery" }), 56.5, 183, 0, "City Bakery");
+    this._place(makeBuilding({ w: 6, d: 6, h: 3.4, roof: "flat", wall: 0xd9e4d0, roofColor: 0x3a86ff, sign: "Stationery Mart" }), 64, 183, 0, "Stationery Mart");
+    this._place(makeBuilding({ w: 6, d: 6, h: 3.4, roof: "flat", wall: 0xe3ecf5, roofColor: 0x2a9d8f, sign: "Fruit Shop" }), 71.5, 183, 0, "Fruit Shop");
     this._addBillboard(-60, 276, "Metro: Blue Line", 0x1e6091);
     this._addBillboard(100, 276, "Fresh Juice ₹20", 0xf77f00);
 
@@ -4062,7 +4175,7 @@ class World {
     const bus = new THREE.Group();
     const body = new THREE.Mesh(new THREE.BoxGeometry(2.4, 2.4, 7), mat(0xf4a300)); body.position.y = 1.7; bus.add(body);
     const winStrip = new THREE.Mesh(new THREE.BoxGeometry(2.5, 0.8, 6), mat(0x35424a)); winStrip.position.y = 2.2; bus.add(winStrip);
-    for (const [x, z] of [[-1.1, 2.2], [1.1, 2.2], [-1.1, -2.2], [1.1, -2.2]]) { const w = new THREE.Mesh(new THREE.CylinderGeometry(0.5, 0.5, 0.4, 10), mat(0x222222)); w.rotation.z = Math.PI / 2; w.position.set(x, 0.5, z); bus.add(w); }
+    for (const [x, z] of [[-1.1, 2.2], [1.1, 2.2], [-1.1, -2.2], [1.1, -2.2]]) { const w = makeWheel(0.5, 0.36); w.position.set(x, 0.5, z); bus.add(w); }
     const busSign = makeTextSprite("Village Bus", { size: 48, scale: 0.7 }); busSign.position.y = 3.6; bus.add(busSign);
     bus.userData.dynamic = true;
     this.scene.add(bus);
@@ -4088,7 +4201,7 @@ class World {
     const tractor = new THREE.Group();
     const tb = new THREE.Mesh(new THREE.BoxGeometry(1.4, 1, 2.4), mat(0x2a9d8f)); tb.position.y = 1.1; tractor.add(tb);
     const seat = new THREE.Mesh(new THREE.BoxGeometry(1.2, 1, 1), mat(0x1d3557)); seat.position.set(0, 1.9, -0.5); tractor.add(seat);
-    for (const [x, z, r] of [[-0.9, 0.8, 0.4], [0.9, 0.8, 0.4], [-0.9, -0.8, 0.7], [0.9, -0.8, 0.7]]) { const w = new THREE.Mesh(new THREE.CylinderGeometry(r, r, 0.4, 10), mat(0x222222)); w.rotation.z = Math.PI / 2; w.position.set(x, r, z); tractor.add(w); }
+    for (const [x, z, r] of [[-0.9, 0.8, 0.4], [0.9, 0.8, 0.4], [-0.9, -0.8, 0.7], [0.9, -0.8, 0.7]]) { const w = makeWheel(r, 0.36); w.position.set(x, r, z); tractor.add(w); }
     tractor.userData.dynamic = true;
     this.scene.add(tractor);
     this.movers.push(new PathMover(tractor, [[101.5, -68], [101.5, 68]], 3, { L: 1.4, W: 0.9 }));
@@ -4480,6 +4593,7 @@ class Player {
     const visor = new THREE.Mesh(new THREE.BoxGeometry(0.34, 0.12, 0.08), humanMat(0x222222)); visor.position.set(0, 0.06, 0.26); this.helmet.add(visor);
     this.helmet.visible = false;
     parts.head.add(this.helmet);
+    this.held = null; this.heldMesh = null; this.eatT = 0; this.jumpT = 0; this.swingT = 0; this.spinT = 0;
     this.belt = new THREE.Mesh(new THREE.BoxGeometry(0.09, 0.7, 0.04), humanMat(0x222222));
     this.belt.position.set(0.05, parts.torso.position.y, 0.16); this.belt.rotation.z = 0.55; this.belt.visible = false;
     this.group.add(this.belt);
@@ -4526,14 +4640,17 @@ class Player {
 
     // Turn the camera. Indoors it settles to look straight into the room.
     if (this.world.currentRoom) {
-      this.camYaw = this._lerpAngle(this.camYaw, 0, Math.min(1, dt * 4));
+      // Indoors the camera drifts back to face into the room, but you may turn it.
+      if (camDelta !== 0) this.camYaw += camDelta;
+      else if (camIdle > 3) this.camYaw = this._lerpAngle(this.camYaw, 0, Math.min(1, dt * 1.5));
     } else {
       this.camYaw += camDelta;
       // Gentle auto-follow behind the player. It never changes your direction of
       // travel, because the movement reference below is frozen while you hold a key.
       if (walking && camIdle > 2 && controlled) this.camYaw = this._lerpAngle(this.camYaw, this.facing + Math.PI, Math.min(1, dt * 0.5));
     }
-    this.camOffset.set(Math.sin(this.camYaw) * 11, 6.5, Math.cos(this.camYaw) * 11);
+    const camDist = this.world.currentRoom ? 13 : 11, camUp = this.world.currentRoom ? 8.5 : 6.5;
+    this.camOffset.set(Math.sin(this.camYaw) * camDist, camUp, Math.cos(this.camYaw) * camDist);
 
     if (walking && controlled) {
       // The direction reference is the camera yaw at the moment you START
@@ -4608,16 +4725,37 @@ class Player {
       if (walking && controlled) this.pedal = (this.pedal || 0) + dt * speed * 0.9;
       sitPose(this.group, this.riding.kind, this.pedal || 0);
       if (this.riding.kind !== "metro" && walking) for (const c of body.children) {
-        const t = c.geometry && c.geometry.type;
-        if (c.userData.wheel) c.rotation.x += dt * speed * 2.8;                                // alloy wheels
-        if (t === "CylinderGeometry" && c.rotation.z !== 0) c.rotation.x += dt * speed;      // auto wheels
-        if (t === "TorusGeometry") c.rotation.x += dt * speed * 1.4;                          // bicycle wheels
+        if (c.userData.wheel) c.rotation.x += Math.min(mag, 1) * speed * dt / (c.userData.wheelR || 0.36); // roll by distance
+        if (c.userData.crank) c.rotation.x = this.pedal || 0;                                            // pedals turn with the legs
       }
     } else {
-      animateHuman(this.group, dt, walking, Math.min(mag, 1) * (running ? 1.6 : 1));
+      if (this.eatT > 0) this.eatT -= dt;
+      animateHuman(this.group, dt, walking, Math.min(mag, 1) * (running ? 1.6 : 1), this.eatT > 0);
+      const parts = this.group.userData.parts;
+      // A skipping hop: up and down over 0.6 s.
+      if (this.jumpT > 0) { this.jumpT -= dt; const k = 1 - this.jumpT / 0.6; body.position.y += Math.sin(Math.PI * Math.max(0, Math.min(1, k))) * 0.7; parts.armL.rotation.z = 0.9; parts.armR.rotation.z = -0.9; parts.armL.rotation.x = 0; parts.armR.rotation.x = 0; }
+      else if (!walking) { parts.armL.rotation.z += (0 - parts.armL.rotation.z) * Math.min(1, dt * 6); parts.armR.rotation.z += (0 - parts.armR.rotation.z) * Math.min(1, dt * 6); }
+      // A bat or racket swing: the right arm sweeps round.
+      if (this.swingT > 0) { this.swingT -= dt; const k = 1 - this.swingT / 0.45; parts.armR.rotation.x = -0.4 - Math.sin(Math.PI * k) * 2.4; parts.armR.rotation.z = -0.5 * Math.sin(Math.PI * k); parts.torso.rotation.y = Math.sin(Math.PI * k) * 0.5; }
+      else if (parts.torso.rotation.y !== 0) parts.torso.rotation.y *= 1 - Math.min(1, dt * 8);
+      // Holding a bat or racket: the arm hangs a little forward.
+      else if (this.heldMesh && !walking) parts.armR.rotation.x = -0.35;
+      if (this.heldMesh && this.held === "top" && this.spinT > 0) { this.spinT -= dt; this.heldMesh.rotation.y += dt * 30; }
     }
 
     this._placeCamera(dt * 6);
+  }
+
+  // Hold something in the right hand (bat, racket, top, marbles, chess box).
+  setHeld(kind) {
+    const parts = this.group.userData.parts;
+    if (this.heldMesh) { parts.armR.remove(this.heldMesh); this.heldMesh = null; }
+    this.held = kind;
+    if (kind && !["football", "kite"].includes(kind)) {
+      this.heldMesh = makeGearMesh(kind);
+      this.heldMesh.position.set(0, -0.62, 0.08);
+      parts.armR.add(this.heldMesh);
+    }
   }
 
   // Hop onto a vehicle. `ride` = { group, speed, kind, controlled }.
@@ -6767,6 +6905,8 @@ class Npc {
    ============================================================ */
 
 const CITY = { x1: -150, z1: 178, x2: 150, z2: 292, name: "Suryanagar" };
+// Where crowds gather (x, z, radius): the murmur of people grows as you get close.
+const MARKET_HUBS = [[0, 36, 40], [-4, -20, 22], [0, 110, 45], [50, 284, 40], [0, 230, 45], [60, 250, 30], [-70, 66, 18], [-58, 183, 30], [60, 183, 30], [0, -232, 30]];
 
 // Auto rickshaw stands: talk to the driver to ride to another district.
 const AUTO_STANDS = [
@@ -6840,14 +6980,14 @@ function makeAuto() {
   const body = new THREE.Mesh(new THREE.BoxGeometry(1.3, 1.2, 2.2), mat(0x2f9e44)); body.position.y = 1.0; g.add(body);
   const top = new THREE.Mesh(new THREE.BoxGeometry(1.4, 0.15, 2.3), mat(0xffd21e)); top.position.y = 1.65; g.add(top);
   const nose = new THREE.Mesh(new THREE.BoxGeometry(0.9, 0.7, 0.6), mat(0xffd21e)); nose.position.set(0, 0.75, 1.3); g.add(nose);
-  for (const [x, z] of [[0, 1.4], [-0.6, -0.7], [0.6, -0.7]]) { const w = new THREE.Mesh(new THREE.CylinderGeometry(0.3, 0.3, 0.25, 10), mat(0x222222)); w.rotation.z = Math.PI / 2; w.position.set(x, 0.3, z); g.add(w); }
+  for (const [x, z] of [[0, 1.4], [-0.6, -0.7], [0.6, -0.7]]) { const w = makeWheel(0.3, 0.22); w.position.set(x, 0.3, z); g.add(w); }
   return g;
 }
 function makeCityBus(color = 0xd62828) {
   const g = new THREE.Group();
   const body = new THREE.Mesh(new THREE.BoxGeometry(2.5, 2.6, 9), mat(color)); body.position.y = 1.8; g.add(body);
   const strip = new THREE.Mesh(new THREE.BoxGeometry(2.6, 0.9, 8), mat(0x35424a)); strip.position.y = 2.3; g.add(strip);
-  for (const [x, z] of [[-1.1, 3], [1.1, 3], [-1.1, -3], [1.1, -3]]) { const w = new THREE.Mesh(new THREE.CylinderGeometry(0.5, 0.5, 0.4, 10), mat(0x222222)); w.rotation.z = Math.PI / 2; w.position.set(x, 0.5, z); g.add(w); }
+  for (const [x, z] of [[-1.1, 3], [1.1, 3], [-1.1, -3], [1.1, -3]]) { const w = makeWheel(0.5, 0.36); w.position.set(x, 0.5, z); g.add(w); }
   return g;
 }
 // ===== src/engine/lift.js =====
@@ -7260,101 +7400,93 @@ const VEHICLE_TAG = { bike: "bicycle", scooty: "scooty", auto: "auto", car: "car
    costs problems solved.
    ============================================================ */
 
-// item: { name, price, kind, value }  kind: energy | fuel | shirt | trousers | hair | hint | item
+// ===== src/engine/shopping.js =====
+/* ============================================================
+   shopping.js — real shopping: choose items and quantities, work
+   out the bill, hand over notes and coins, count the change.
+   Everything bought goes into the BACKPACK and can be used: food
+   is eaten, clothes are worn, gear is held and played with, books
+   are read.
+   ============================================================ */
+
+// One item: id, name, price, kind, value, icon.
+//   kind: food (energy on eating) | fuel | shirt | trousers | shoes | hair |
+//         hint | gear (held in the hand) | book | item
+function I(id, name, price, kind, value, icon = "") { return { id, name, price, kind, value, icon }; }
+
 const SHOP_CATALOGS = {
-  food: [
-    { name: "Cup of tea ☕", price: 10, kind: "energy", value: 10 },
-    { name: "Coffee ☕", price: 20, kind: "energy", value: 15 },
-    { name: "Samosa 🥟", price: 15, kind: "energy", value: 15 },
-    { name: "Bun and butter 🍞", price: 12, kind: "energy", value: 12 },
-    { name: "Jalebi 🍥", price: 25, kind: "energy", value: 20 },
-    { name: "Plate of chaat 🥗", price: 30, kind: "energy", value: 25 },
-    { name: "Momos 🥟", price: 40, kind: "energy", value: 30 },
-    { name: "Kulfi 🍦", price: 30, kind: "energy", value: 20 },
-    { name: "Fresh juice 🧃", price: 20, kind: "energy", value: 20 },
-    { name: "Full thali 🍛", price: 80, kind: "energy", value: 60 },
-  ],
-  produce: [
-    { name: "Banana 🍌", price: 5, kind: "energy", value: 8 },
-    { name: "Apple 🍎", price: 15, kind: "energy", value: 12 },
-    { name: "Mango 🥭", price: 25, kind: "energy", value: 18 },
-    { name: "Carrot 🥕", price: 8, kind: "energy", value: 8 },
-    { name: "Cucumber 🥒", price: 10, kind: "energy", value: 8 },
-    { name: "Coconut water 🥥", price: 30, kind: "energy", value: 25 },
-    { name: "Bag of vegetables 🧺", price: 60, kind: "energy", value: 40 },
-    { name: "Fresh fish 🐟", price: 120, kind: "energy", value: 50 },
-  ],
-  sports: [
-    { name: "Cricket bat 🏏", price: 350, kind: "item", value: "Cricket bat" },
-    { name: "Football ⚽", price: 250, kind: "item", value: "Football" },
-    { name: "Kite 🪁", price: 40, kind: "item", value: "Kite" },
-    { name: "Skipping rope", price: 60, kind: "item", value: "Skipping rope" },
-    { name: "Chess set ♟️", price: 200, kind: "item", value: "Chess set" },
-    { name: "Badminton set 🏸", price: 300, kind: "item", value: "Badminton set" },
-    { name: "Bag of marbles", price: 20, kind: "item", value: "Marbles" },
-    { name: "Bicycle bell 🔔", price: 50, kind: "item", value: "Bicycle bell" },
-  ],
-  books: [
-    { name: "Puzzle book 📘 (1 hint token)", price: 120, kind: "hint", value: 1 },
-    { name: "Story book 📗", price: 150, kind: "item", value: "Story book" },
-    { name: "Atlas of the land 🗺️", price: 200, kind: "item", value: "Atlas" },
-    { name: "Science kit 🔬 (2 hint tokens)", price: 400, kind: "hint", value: 2 },
-    { name: "Notebook and pencils ✏️", price: 40, kind: "item", value: "Notebook" },
-  ],
-  clothes: [
-    { name: "Red shirt", price: 150, kind: "shirt", value: 0xc94848 },
-    { name: "Blue shirt", price: 150, kind: "shirt", value: 0x2f7db0 },
-    { name: "Yellow shirt", price: 150, kind: "shirt", value: 0xffd21e },
-    { name: "Green kurta", price: 200, kind: "shirt", value: 0x2a9d8f },
-    { name: "Saffron kurta", price: 220, kind: "shirt", value: 0xf77f00 },
-    { name: "White shirt", price: 160, kind: "shirt", value: 0xffffff },
-    { name: "Black trousers", price: 200, kind: "trousers", value: 0x222222 },
-    { name: "White trousers", price: 200, kind: "trousers", value: 0xf5f5f5 },
-    { name: "Blue jeans", price: 250, kind: "trousers", value: 0x1d3557 },
-    { name: "Khaki trousers", price: 180, kind: "trousers", value: 0xc8b98a },
-  ],
-  barber: [
-    { name: "Haircut, black", price: 50, kind: "hair", value: 0x1d1410 },
-    { name: "Haircut, brown", price: 60, kind: "hair", value: 0x6d4c41 },
-    { name: "Haircut, silver streak", price: 80, kind: "hair", value: 0xbdbdbd },
-    { name: "Haircut, blue (fun!)", price: 80, kind: "hair", value: 0x3a86ff },
-  ],
-  pharmacy: [
-    { name: "First aid kit 🩹", price: 150, kind: "item", value: "First aid kit" },
-    { name: "Glucose drink", price: 25, kind: "energy", value: 20 },
-    { name: "Sunscreen", price: 80, kind: "item", value: "Sunscreen" },
-  ],
-  petrol: [
-    { name: "1 litre petrol ⛽ (1½ min of riding)", price: 100, kind: "fuel", value: 1 },
-    { name: "3 litres petrol ⛽", price: 300, kind: "fuel", value: 3 },
-    { name: "5 litres petrol ⛽", price: 500, kind: "fuel", value: 5 },
-  ],
+  tea: [I("tea", "Cup of tea", 10, "food", 10, "☕"), I("coffee", "Coffee", 20, "food", 15, "☕"), I("samosa", "Samosa", 15, "food", 15, "🥟"), I("bun", "Bun and butter", 12, "food", 12, "🍞"), I("biscuit", "Packet of biscuits", 10, "food", 8, "🍪"), I("chai_kulhad", "Kulhad chai", 15, "food", 12, "🍵")],
+  dhaba: [I("thali", "Full thali", 80, "food", 60, "🍛"), I("dal_roti", "Dal and roti", 40, "food", 35, "🫓"), I("paratha", "Aloo paratha", 30, "food", 25, "🫓"), I("lassi", "Lassi", 25, "food", 20, "🥛"), I("chai_kulhad", "Kulhad chai", 15, "food", 12, "🍵")],
+  chaat: [I("chaat", "Plate of chaat", 30, "food", 25, "🥗"), I("golgappa", "Golgappa, 6 pieces", 20, "food", 15, "🫧"), I("bhel", "Bhel puri", 25, "food", 20, "🥣"), I("momos", "Momos", 40, "food", 30, "🥟"), I("nimbu", "Nimbu pani", 15, "food", 15, "🍋")],
+  sweets: [I("jalebi", "Jalebi", 25, "food", 20, "🍥"), I("ladoo", "Ladoo", 15, "food", 15, "🟠"), I("barfi", "Barfi, 4 pieces", 40, "food", 30, "🍬"), I("rasgulla", "Rasgulla", 20, "food", 18, "⚪"), I("gulab", "Gulab jamun", 20, "food", 18, "🟤")],
+  bakery: [I("bread", "Loaf of bread", 30, "food", 25, "🍞"), I("cake", "Slice of cake", 40, "food", 30, "🍰"), I("cookie", "Cookies, 4", 25, "food", 20, "🍪"), I("patty", "Veg patty", 20, "food", 18, "🥐"), I("bun", "Bun and butter", 12, "food", 12, "🍞")],
+  icecream: [I("kulfi", "Kulfi", 30, "food", 20, "🍦"), I("cone", "Ice cream cone", 35, "food", 22, "🍦"), I("orangebar", "Orange bar", 15, "food", 12, "🍊"), I("sundae", "Sundae", 60, "food", 35, "🍨"), I("falooda", "Falooda", 50, "food", 30, "🥤")],
+  juice: [I("juice", "Fresh juice", 20, "food", 20, "🧃"), I("coconut", "Coconut water", 30, "food", 25, "🥥"), I("sugarcane", "Sugarcane juice", 20, "food", 20, "🎋"), I("shake", "Mango shake", 40, "food", 30, "🥭"), I("nimbu", "Nimbu pani", 15, "food", 15, "🍋")],
+  pizza: [I("pizza", "Pizza slice", 60, "food", 35, "🍕"), I("garlic", "Garlic bread", 40, "food", 25, "🥖"), I("pasta", "Pasta bowl", 90, "food", 50, "🍝"), I("cold", "Cold drink", 25, "food", 15, "🥤")],
+  produce: [I("banana", "Banana", 5, "food", 8, "🍌"), I("apple", "Apple", 15, "food", 12, "🍎"), I("mango", "Mango", 25, "food", 18, "🥭"), I("orange", "Orange", 10, "food", 10, "🍊"), I("carrot", "Carrot", 8, "food", 8, "🥕"), I("cucumber", "Cucumber", 10, "food", 8, "🥒"), I("coconut", "Coconut water", 30, "food", 25, "🥥"), I("vegbag", "Bag of vegetables", 60, "food", 40, "🧺"), I("fish", "Fresh fish", 120, "food", 50, "🐟")],
+  kirana: [I("rice", "Rice, 1 kg", 60, "item", "Rice", "🍚"), I("dal", "Dal, 1 kg", 120, "item", "Dal", "🫘"), I("oil", "Oil, 1 litre", 150, "item", "Cooking oil", "🫙"), I("biscuit", "Packet of biscuits", 10, "food", 8, "🍪"), I("chips", "Packet of chips", 20, "food", 10, "🥔"), I("soap", "Soap", 25, "item", "Soap", "🧼"), I("candle", "Candles, 6", 30, "item", "Candles", "🕯️"), I("matches", "Matchbox", 2, "item", "Matchbox", "🔥")],
+  supermarket: [I("rice", "Rice, 1 kg", 55, "item", "Rice", "🍚"), I("dal", "Dal, 1 kg", 110, "item", "Dal", "🫘"), I("bread", "Loaf of bread", 30, "food", 25, "🍞"), I("juicebox", "Juice box", 20, "food", 15, "🧃"), I("chips", "Packet of chips", 20, "food", 10, "🥔"), I("apple", "Apple", 15, "food", 12, "🍎"), I("soap", "Soap", 25, "item", "Soap", "🧼"), I("football", "Football", 250, "gear", "football", "⚽"), I("puzzle", "Puzzle book (1 hint token)", 120, "hint", 1, "📘"), I("torch", "Torch", 150, "item", "Torch", "🔦")],
+  stationery: [I("notebook", "Notebook and pencils", 40, "item", "Notebook", "✏️"), I("crayons", "Box of crayons", 60, "item", "Crayons", "🖍️"), I("geometry", "Geometry box", 120, "item", "Geometry box", "📐"), I("eraser", "Eraser and sharpener", 15, "item", "Eraser", "🧽"), I("puzzle", "Puzzle book (1 hint token)", 120, "hint", 1, "📘"), I("kite", "Kite", 40, "gear", "kite", "🪁")],
+  sports: [I("bat", "Cricket bat", 350, "gear", "bat", "🏏"), I("football", "Football", 250, "gear", "football", "⚽"), I("kite", "Kite", 40, "gear", "kite", "🪁"), I("rope", "Skipping rope", 60, "gear", "rope", "➰"), I("chess", "Chess set", 200, "gear", "chess", "♟️"), I("racket", "Badminton racket", 300, "gear", "racket", "🏸"), I("marbles", "Bag of marbles", 20, "gear", "marbles", "🔮"), I("bell", "Bicycle bell", 50, "item", "Bicycle bell", "🔔")],
+  toys: [I("kite", "Kite", 40, "gear", "kite", "🪁"), I("marbles", "Bag of marbles", 20, "gear", "marbles", "🔮"), I("top", "Spinning top (lattu)", 30, "gear", "top", "🪀"), I("football", "Football", 250, "gear", "football", "⚽"), I("chess", "Chess set", 200, "gear", "chess", "♟️"), I("doll", "Cloth doll", 80, "item", "Cloth doll", "🧸"), I("car_toy", "Toy car", 90, "item", "Toy car", "🚗")],
+  books: [I("puzzle", "Puzzle book (1 hint token)", 120, "hint", 1, "📘"), I("story1", "Story: The Clever Crow", 50, "book", "story1", "📗"), I("story2", "Story: The Bridge Builder", 60, "book", "story2", "📗"), I("story3", "Story: Rani and the Rain", 60, "book", "story3", "📗"), I("atlas", "Atlas of the land", 200, "book", "atlas", "🗺️"), I("science", "Science kit (2 hint tokens)", 400, "hint", 2, "🔬"), I("notebook", "Notebook and pencils", 40, "item", "Notebook", "✏️")],
+  clothes: [I("sh_red", "Red shirt", 150, "shirt", 0xc94848, "👕"), I("sh_blue", "Blue shirt", 150, "shirt", 0x2f7db0, "👕"), I("sh_yellow", "Yellow shirt", 150, "shirt", 0xffd21e, "👕"), I("sh_green", "Green kurta", 200, "shirt", 0x2a9d8f, "👕"), I("sh_saffron", "Saffron kurta", 220, "shirt", 0xf77f00, "👕"), I("sh_white", "White shirt", 160, "shirt", 0xffffff, "👕"), I("sh_purple", "Purple kurta", 210, "shirt", 0x9b5de5, "👕"), I("tr_black", "Black trousers", 200, "trousers", 0x222222, "👖"), I("tr_white", "White trousers", 200, "trousers", 0xf5f5f5, "👖"), I("tr_jeans", "Blue jeans", 250, "trousers", 0x1d3557, "👖"), I("tr_khaki", "Khaki trousers", 180, "trousers", 0xc8b98a, "👖")],
+  shoes: [I("shoe_black", "Black school shoes", 300, "shoes", 0x1a1a1a, "👞"), I("shoe_white", "White sports shoes", 450, "shoes", 0xf5f5f5, "👟"), I("shoe_red", "Red sneakers", 400, "shoes", 0xd62828, "👟"), I("shoe_brown", "Brown sandals", 200, "shoes", 0x8a5626, "🩴"), I("shoe_blue", "Blue canvas shoes", 350, "shoes", 0x3a86ff, "👟")],
+  barber: [I("hair_black", "Haircut, black", 50, "hair", 0x1d1410, "💇"), I("hair_brown", "Haircut, brown", 60, "hair", 0x6d4c41, "💇"), I("hair_silver", "Haircut, silver streak", 80, "hair", 0xbdbdbd, "💇"), I("hair_blue", "Haircut, blue (fun!)", 80, "hair", 0x3a86ff, "💇")],
+  pharmacy: [I("firstaid", "First aid kit", 150, "item", "First aid kit", "🩹"), I("glucose", "Glucose drink", 25, "food", 20, "🥤"), I("sunscreen", "Sunscreen", 80, "item", "Sunscreen", "🧴"), I("bandage", "Bandages", 30, "item", "Bandages", "🩹"), I("ors", "ORS packet", 15, "food", 12, "💧")],
+  electronics: [I("torch", "Torch", 150, "item", "Torch", "🔦"), I("watch", "Wrist watch", 400, "item", "Wrist watch", "⌚"), I("calc", "Calculator", 250, "item", "Calculator", "🧮"), I("radio", "Pocket radio", 350, "item", "Pocket radio", "📻"), I("batteries", "Batteries, 4", 60, "item", "Batteries", "🔋")],
+  petrol: [I("petrol1", "1 litre petrol (1½ min of riding)", 100, "fuel", 1, "⛽"), I("petrol3", "3 litres petrol", 300, "fuel", 3, "⛽"), I("petrol5", "5 litres petrol", 500, "fuel", 5, "⛽")],
 };
+SHOP_CATALOGS.food = SHOP_CATALOGS.tea;
 
 // Which catalogue a place sells, from its name.
 function catalogFor(label, type) {
   const s = (label || "").toLowerCase();
   if (s.includes("petrol")) return "petrol";
+  if (s.includes("supermarket")) return "supermarket";
+  if (s.includes("kirana") || s.includes("general")) return "kirana";
   if (s.includes("fish") || s.includes("sabzi") || s.includes("fruit") || s.includes("vegetable")) return "produce";
-  if (s.includes("toy") || s.includes("sport")) return "sports";
-  if (s.includes("book")) return "books";
+  if (s.includes("stationery")) return "stationery";
+  if (s.includes("electronic") || s.includes("mobile")) return "electronics";
+  if (s.includes("shoe")) return "shoes";
+  if (s.includes("toy") || s.includes("bangle")) return "toys";
+  if (s.includes("sport") || s.includes("cycle")) return "sports";
+  if (s.includes("book") || s.includes("library")) return "books";
   if (s.includes("cloth") || s.includes("tailor")) return "clothes";
   if (s.includes("barber")) return "barber";
-  if (s.includes("pharmacy") || s.includes("hospital")) return "pharmacy";
-  if (s.includes("tea") || s.includes("bakery") || s.includes("sweet") || s.includes("chaat") || s.includes("momo") || s.includes("kulfi") || s.includes("juice") || s.includes("dhaba") || s.includes("food") || s.includes("cafe") || type === "eatery") return "food";
+  if (s.includes("pharmacy") || s.includes("chemist") || s.includes("hospital") || s.includes("clinic")) return "pharmacy";
+  if (s.includes("ice cream") || s.includes("kulfi")) return "icecream";
+  if (s.includes("pizza")) return "pizza";
+  if (s.includes("bakery")) return "bakery";
+  if (s.includes("sweet")) return "sweets";
+  if (s.includes("chaat") || s.includes("momo")) return "chaat";
+  if (s.includes("juice")) return "juice";
+  if (s.includes("dhaba") || s.includes("food court") || s.includes("cafe") || s.includes("canteen")) return "dhaba";
+  if (type === "station") return "tea";
+  if (s.includes("tea") || s.includes("chai") || type === "eatery") return "tea";
   if (type === "shop" || type === "mall") return "sports";
   return null;
 }
 
 // What an item does, in words.
 function effectText(it) {
-  return it.kind === "energy" ? `+${it.value} energy` : it.kind === "fuel" ? `${it.value} litre${it.value > 1 ? "s" : ""}, ${fmtTime(it.value * 90)} of riding` : it.kind === "shirt" ? "changes your shirt" : it.kind === "trousers" ? "changes your trousers" : it.kind === "hair" ? "changes your hair" : it.kind === "hint" ? `${it.value} hint token${it.value > 1 ? "s" : ""}` : "goes in your backpack";
+  return it.kind === "food" ? `eat it: +${it.value} energy` : it.kind === "fuel" ? `${it.value} litre${it.value > 1 ? "s" : ""}, ${fmtTime(it.value * 90)} of riding` : it.kind === "shirt" ? "wear it" : it.kind === "trousers" ? "wear them" : it.kind === "shoes" ? "wear them" : it.kind === "hair" ? "a new look, done here" : it.kind === "hint" ? `${it.value} hint token${it.value > 1 ? "s" : ""}` : it.kind === "gear" ? "hold it and play (F)" : it.kind === "book" ? "read it from the backpack" : "goes in your backpack";
 }
 
 // Rupees for a solved situation, by topic.
 function payFor(cat) {
   return { city_hard: 100, himalaya: 80 }[cat] || 50;
 }
+
+// Indian notes and coins, largest first.
+const CASH = [500, 200, 100, 50, 20, 10, 5, 2, 1];
+
+// Three short story books for the bookshop.
+const STORIES = {
+  story1: { title: "The Clever Crow", text: "A thirsty crow found a pot with a little water at the bottom. Its beak could not reach. The crow dropped pebbles into the pot, one by one. The water rose with every pebble. At last the crow drank.", q: "Why did the water rise?", choices: ["Each pebble took up space, pushing the water up", "The pebbles turned into water", "The sun heated the pot", "The crow blew into the pot"], answer: "Each pebble took up space, pushing the water up" },
+  story2: { title: "The Bridge Builder", text: "Two villages sat on either side of a river. Every monsoon the rope bridge washed away. A girl named Meera measured the gap with a long stick, counted the planks, and added their lengths until they matched. The new bridge stood for thirty years.", q: "What did Meera do first?", choices: ["Measured the gap", "Bought planks", "Asked the river to stop", "Built a boat"], answer: "Measured the gap" },
+  story3: { title: "Rani and the Rain", text: "Rani's village had no water in summer. She noticed that the rain of July ran straight down the hill into the river. She dug a pond at the foot of the hill. The next July the pond filled, and the wells stayed full until winter.", q: "What did the pond do?", choices: ["Caught the rain so it soaked into the ground", "Made more rain fall", "Stopped the river", "Cooled the village"], answer: "Caught the rain so it soaked into the ground" },
+};
 
 // ===== src/engine/ride.js =====
 /* ============================================================
@@ -7383,9 +7515,17 @@ function makeBicycle(color = 0x2a9d8f) {
   const frame3 = new THREE.Mesh(new THREE.BoxGeometry(0.06, 0.65, 0.06), mat(color)); frame3.position.set(0, 0.62, 0.45); frame3.rotation.x = -0.25; g.add(frame3);
   const seat = new THREE.Mesh(new THREE.BoxGeometry(0.25, 0.08, 0.35), mat(0x222222)); seat.position.set(0, 0.92, -0.35); g.add(seat);
   const bars = new THREE.Mesh(new THREE.BoxGeometry(0.6, 0.05, 0.05), mat(0x222222)); bars.position.set(0, 1.0, 0.55); g.add(bars);
-  const crank = new THREE.Mesh(new THREE.CylinderGeometry(0.06, 0.06, 0.3, 8), mat(0x555555)); crank.rotation.z = Math.PI / 2; crank.position.set(0, 0.32, 0); g.add(crank);
-  for (const side of [-1, 1]) { const pedal = new THREE.Mesh(new THREE.BoxGeometry(0.1, 0.03, 0.16), mat(0x222222)); pedal.position.set(side * 0.18, 0.32 + side * 0.1, side * 0.1); g.add(pedal); }
-  for (const z of [0.55, -0.55]) { const w = new THREE.Mesh(new THREE.TorusGeometry(0.32, 0.04, 6, 14), mat(0x222222)); w.rotation.y = Math.PI / 2; w.position.set(0, 0.32, z); g.add(w); for (let k = 0; k < 3; k++) { const spoke = new THREE.Mesh(new THREE.BoxGeometry(0.02, 0.6, 0.02), mat(0x9aa6ad)); spoke.rotation.x = k * Math.PI / 3; spoke.position.set(0, 0.32, z); g.add(spoke); } }
+  const crankG = new THREE.Group(); crankG.position.set(0, 0.32, 0); crankG.userData.crank = true;
+  const crank = new THREE.Mesh(new THREE.CylinderGeometry(0.06, 0.06, 0.3, 8), mat(0x555555)); crank.rotation.z = Math.PI / 2; crankG.add(crank);
+  for (const side of [-1, 1]) { const arm = new THREE.Mesh(new THREE.BoxGeometry(0.03, 0.22, 0.03), mat(0x555555)); arm.position.set(side * 0.16, side * 0.09, 0); crankG.add(arm); const pedal = new THREE.Mesh(new THREE.BoxGeometry(0.1, 0.03, 0.16), mat(0x222222)); pedal.position.set(side * 0.2, side * 0.18, 0); crankG.add(pedal); }
+  g.add(crankG);
+  for (const z of [0.55, -0.55]) {
+    const wg = new THREE.Group(); wg.position.set(0, 0.32, z); wg.userData.wheel = true; wg.userData.wheelR = 0.32;
+    const tyre = new THREE.Mesh(new THREE.TorusGeometry(0.32, 0.04, 6, 16), mat(0x222222)); tyre.rotation.y = Math.PI / 2; wg.add(tyre);
+    const hub = new THREE.Mesh(new THREE.CylinderGeometry(0.05, 0.05, 0.08, 8), mat(0x9aa6ad)); hub.rotation.z = Math.PI / 2; wg.add(hub);
+    for (let k = 0; k < 6; k++) { const spoke = new THREE.Mesh(new THREE.BoxGeometry(0.015, 0.62, 0.015), mat(0x9aa6ad)); spoke.rotation.x = k * Math.PI / 6; wg.add(spoke); }
+    g.add(wg);
+  }
   // The rider's hips sit on the saddle: feet hang 0.72 below the hips.
   g.userData.seat = { x: 0, y: 0.92 - 0.72 + 0.1, z: -0.32 };
   g.userData.dynamic = true;
@@ -7457,7 +7597,9 @@ function standPose(group) {
    ============================================================ */
 
 const ROOM_ORIGIN = { x: 600, z: 600 }; // far from the village
-const ROOM_W = 10, ROOM_D = 8, ROOM_H = 3.2;
+const ROOM_H = 3.2;
+// Floor sizes by room type (metres). Big places get several rooms joined by doorways.
+const ROOM_PLANS = { home: [26, 16], school: [30, 16], clinic: [30, 16], office: [30, 18], mall: [34, 22], supermarket: [30, 18], lobby: [24, 16], station: [26, 14], hall: [26, 16], library: [22, 14], gym: [24, 14], cinema: [24, 16], metro: [26, 14], rooftop: [22, 16], house: [18, 12], shop: [18, 12], eatery: [18, 12], hotelroom: [16, 12], temple: [18, 14], mandir: [18, 14], monastery: [18, 14], gurudwara: [20, 14], church: [18, 16], masjid: [20, 14], meditation: [20, 14], ashram: [22, 14], barn: [18, 12], granary: [16, 12] };
 
 // Which room type a building becomes, from its sign (or "house").
 function roomTypeFor(sign) {
@@ -7465,6 +7607,7 @@ function roomTypeFor(sign) {
   const s = sign.toLowerCase();
   if (s.includes("house") || s.includes("hut")) return "house";
   if (s.includes("apartment") || s.includes("tower") || s.includes("park") && !s.includes("central") || s.includes("heights") || s.includes("plaza") || s.includes("bank") || s.includes("depot")) return "office";
+  if (s.includes("supermarket")) return "supermarket";
   if (s.includes("mall")) return "mall";
   if (s.includes("metro")) return "metro";
   if (s.includes("hotel")) return "hotel";
@@ -7521,6 +7664,7 @@ const OCCUPANTS = {
   hotelroom: ["Housekeeper Sita"],
   mall: ["Security Guard Singh"],
   metro: ["Metro Guard Kaur"],
+  supermarket: ["Cashier Meena"],
 };
 
 const OCC_GREETS = {
@@ -7551,6 +7695,7 @@ const OCC_GREETS = {
   hotelroom: "Room service! And a puzzle on the house.",
   mall: "Welcome to the mall. No running on the escalator. A quick question first?",
   metro: "Mind the gap! Before your token, a small sum for the timetable.",
+  supermarket: "Welcome! Trolleys on the right. A quick sum for the checkout queue?",
 };
 
 class Room {
@@ -7559,16 +7704,18 @@ class Room {
     this.type = type;
     this.label = label;
     this.hasLift = hasLift;
-    this.x0 = ROOM_ORIGIN.x + (index % 8) * 30;
-    this.z0 = ROOM_ORIGIN.z + Math.floor(index / 8) * 30;
+    const [pw, pd] = ROOM_PLANS[type] || [16, 12];
+    this.w = pw; this.d = pd;
+    this.x0 = ROOM_ORIGIN.x + (index % 6) * 64;
+    this.z0 = ROOM_ORIGIN.z + Math.floor(index / 6) * 64;
     this.colliders = []; // world-space boxes {x1,z1,x2,z2}
     this.group = new THREE.Group();
     this.group.position.set(this.x0, 0, this.z0);
     world.scene.add(this.group);
     this._build();
     // Where the player stands when they come in (by the open side).
-    this.doorInside = new THREE.Vector3(this.x0, 0, this.z0 + ROOM_D / 2 - 1.2);
-    this.exitPos = { x: this.x0, z: this.z0 + ROOM_D / 2 - 0.4 };
+    this.doorInside = new THREE.Vector3(this.x0, 0, this.z0 + this.d / 2 - 1.2);
+    this.exitPos = { x: this.x0, z: this.z0 + this.d / 2 - 0.4 };
   }
 
   // A solid piece of furniture at local (x, z) with size (w, d).
@@ -7584,34 +7731,37 @@ class Room {
   }
 
   _build() {
-    const wallColors = { home: 0xffe7b3, mandir: 0xfff1d6, monastery: 0xfff8ec, gurudwara: 0xffffff, church: 0xf6efd8, masjid: 0xfff8ec, meditation: 0xfff8ec, ashram: 0xf3d9c8, barn: 0xa0522d, granary: 0xe8d5b5, lobby: 0xfff1d6, gym: 0xe3ecf5, rooftop: 0xbfe3f2, cinema: 0x2b2b3a, hotelroom: 0xf3d9c8, office: 0xe3ecf5, mall: 0xfff1d6, metro: 0xdfe6ea, house: 0xfff1d6, shop: 0xe3ecf5, eatery: 0xffe0a3, school: 0xf6efd8, clinic: 0xffffff, library: 0xf3d9c8, hall: 0xf2e4c8, station: 0xd9e4d0, temple: 0xfff1d6 };
-    const floorColors = { home: 0xd7b98e, mandir: 0xe8d5b5, monastery: 0x8a5626, gurudwara: 0xdfe6ea, church: 0xa67c52, masjid: 0xc94848, meditation: 0xe8d5b5, ashram: 0xd7b98e, barn: 0x8a5626, granary: 0xbfb6a5, lobby: 0xdfe6ea, gym: 0x8d6e63, rooftop: 0x9e9e9e, cinema: 0x3a2f45, hotelroom: 0xa67c52, office: 0x9aa6ad, mall: 0xdfe6ea, metro: 0x8d8a80, house: 0xd7b98e, shop: 0xbfb6a5, eatery: 0xc9a86a, school: 0xbfb6a5, clinic: 0xdfe6ea, library: 0xa67c52, hall: 0xc4a484, station: 0xbfb6a5, temple: 0xe8d5b5 };
+    const wallColors = { supermarket: 0xffffff, home: 0xffe7b3, mandir: 0xfff1d6, monastery: 0xfff8ec, gurudwara: 0xffffff, church: 0xf6efd8, masjid: 0xfff8ec, meditation: 0xfff8ec, ashram: 0xf3d9c8, barn: 0xa0522d, granary: 0xe8d5b5, lobby: 0xfff1d6, gym: 0xe3ecf5, rooftop: 0xbfe3f2, cinema: 0x2b2b3a, hotelroom: 0xf3d9c8, office: 0xe3ecf5, mall: 0xfff1d6, metro: 0xdfe6ea, house: 0xfff1d6, shop: 0xe3ecf5, eatery: 0xffe0a3, school: 0xf6efd8, clinic: 0xffffff, library: 0xf3d9c8, hall: 0xf2e4c8, station: 0xd9e4d0, temple: 0xfff1d6 };
+    const floorColors = { supermarket: 0xdfe6ea, home: 0xd7b98e, mandir: 0xe8d5b5, monastery: 0x8a5626, gurudwara: 0xdfe6ea, church: 0xa67c52, masjid: 0xc94848, meditation: 0xe8d5b5, ashram: 0xd7b98e, barn: 0x8a5626, granary: 0xbfb6a5, lobby: 0xdfe6ea, gym: 0x8d6e63, rooftop: 0x9e9e9e, cinema: 0x3a2f45, hotelroom: 0xa67c52, office: 0x9aa6ad, mall: 0xdfe6ea, metro: 0x8d8a80, house: 0xd7b98e, shop: 0xbfb6a5, eatery: 0xc9a86a, school: 0xbfb6a5, clinic: 0xdfe6ea, library: 0xa67c52, hall: 0xc4a484, station: 0xbfb6a5, temple: 0xe8d5b5 };
     const wall = wallColors[this.type] || 0xfff1d6;
+    this.wallColor = wall;
     // Floor and three walls (the +z side stays open for the camera).
     // The rooftop has only a low parapet, so the sky is all around.
     const wallH = this.type === "rooftop" ? 0.9 : ROOM_H;
-    this._box(ROOM_W, 0.2, ROOM_D, floorColors[this.type] || 0xd7b98e, 0, -0.1, 0, false);
-    this._box(ROOM_W, wallH, 0.3, wall, 0, wallH / 2, -ROOM_D / 2);
-    this._box(0.3, wallH, ROOM_D, wall, -ROOM_W / 2, wallH / 2, 0);
-    this._box(0.3, wallH, ROOM_D, wall, ROOM_W / 2, wallH / 2, 0);
+    this._box(this.w, 0.2, this.d, floorColors[this.type] || 0xd7b98e, 0, -0.1, 0, false);
+    this._box(this.w, wallH, 0.3, wall, 0, wallH / 2, -this.d / 2);
+    this._box(0.3, wallH, this.d, wall, -this.w / 2, wallH / 2, 0);
+    this._box(0.3, wallH, this.d, wall, this.w / 2, wallH / 2, 0);
     if (this.type !== "rooftop" && this.type !== "cinema") {
       // A rug and a window on the back wall.
       this._box(3.5, 0.03, 2.5, 0xc94848, 0, 0.02, 0.5, false);
       const win = new THREE.Mesh(new THREE.BoxGeometry(1.4, 1.1, 0.1), new THREE.MeshStandardMaterial({ color: 0xbfe3f2, emissive: 0x9fd3ea, emissiveIntensity: 0.5 }));
-      win.position.set(-3, 1.9, -ROOM_D / 2 + 0.18); this.group.add(win);
+      win.position.set(-3, 1.9, -this.d / 2 + 0.18); this.group.add(win);
     }
     // Lift doors on the left wall, near the front, in tall buildings.
     if (this.hasLift) {
-      this._box(0.3, 2.6, 2.2, 0x9aa6ad, -ROOM_W / 2 + 0.45, 1.3, 2.0);
-      this._box(0.1, 2.4, 0.06, 0x555e66, -ROOM_W / 2 + 0.65, 1.3, 2.0, false);
-      const liftSign = makeTextSprite("LIFT", { size: 56, scale: 0.5 }); liftSign.position.set(-ROOM_W / 2 + 0.7, 2.95, 2.0); this.group.add(liftSign);
-      this.liftPos = { x: this.x0 - ROOM_W / 2 + 1.5, z: this.z0 + 2.0 };
+      this._box(0.3, 2.6, 2.2, 0x9aa6ad, -this.w / 2 + 0.45, 1.3, 2.0);
+      this._box(0.1, 2.4, 0.06, 0x555e66, -this.w / 2 + 0.65, 1.3, 2.0, false);
+      const liftSign = makeTextSprite("LIFT", { size: 56, scale: 0.5 }); liftSign.position.set(-this.w / 2 + 0.7, 2.95, 2.0); this.group.add(liftSign);
+      this.liftPos = { x: this.x0 - this.w / 2 + 1.5, z: this.z0 + 2.0 };
     }
     // The name of the place, on the back wall.
     const sign = makeTextSprite(this.label, { size: 48, scale: 0.9 });
-    sign.position.set(2.5, 2.6, -ROOM_D / 2 + 0.3); this.group.add(sign);
+    sign.position.set(2.5, 2.6, -this.d / 2 + 0.3); this.group.add(sign);
 
     const t = this.type;
+    this._decor();
+    if (this._buildBig()) return;
     if (t === "house") {
       this._box(2, 0.5, 1, 0xb9773c, -3.5, 0.25, -2.5); this._box(1.9, 0.25, 0.9, 0x3a86ff, -3.5, 0.62, -2.5, false); // bed
       this._box(0.5, 0.2, 0.9, 0xffffff, -4.2, 0.85, -2.5, false); // pillow
@@ -7625,20 +7775,22 @@ class Room {
       const goods = t === "eatery" ? [0xffb703, 0xd97742, 0xfff1d6, 0xc94848, 0x8a5626] : [0xc94848, 0x3a86ff, 0x6fae54, 0xffb703, 0x9b5de5, 0xff8fab];
       for (let i = 0; i < 5; i++) this._box(0.5, 0.3, 0.4, goods[i % goods.length], -2 + i, 1.15, -1.2, false);
       for (const sx of [-1, 1]) { // shelves along the side walls, full of goods
-        this._box(0.4, 2.2, 5, 0x5a3a24, sx * (ROOM_W / 2 - 0.45), 1.1, -0.5);
-        for (let r = 0; r < 3; r++) for (let k = 0; k < 5; k++) this._box(0.3, 0.35, 0.6, goods[(r + k) % goods.length], sx * (ROOM_W / 2 - 0.5), 0.5 + r * 0.65, -2.5 + k * 1.0, false);
+        const L = this.d - 4;
+        this._box(0.4, 2.2, L, 0x5a3a24, sx * (this.w / 2 - 0.45), 1.1, -1);
+        for (let r = 0; r < 3; r++) for (let k = 0; k < Math.floor(L); k++) this._box(0.3, 0.35, 0.6, goods[(r + k) % goods.length], sx * (this.w / 2 - 0.5), 0.5 + r * 0.65, -1 - L / 2 + 0.5 + k * 1.0, false);
+        if (t === "eatery") for (let k = 0; k < 3; k++) { this._box(1.2, 0.08, 1.2, 0xb9773c, sx * 5.5, 0.75, 1.5 + k * 2 - 2); this._box(0.1, 0.7, 0.1, 0x5a3a24, sx * 5.5, 0.37, 1.5 + k * 2 - 2, false); }
       }
       if (t === "eatery") { for (const dx of [-2.2, 2.2]) { this._box(1.2, 0.08, 1.2, 0xb9773c, dx, 0.75, 1.6); this._box(0.1, 0.7, 0.1, 0x5a3a24, dx, 0.37, 1.6, false); } this._box(1.2, 0.6, 0.8, 0x555555, 3.8, 0.9, -3.3); } // tables, stove
     } else if (t === "school") {
-      this._box(4, 1.6, 0.1, 0x1f3b2c, 0, 1.8, -ROOM_D / 2 + 0.2, false); // blackboard
-      const chalk = makeTextSprite("2 + 3 = 5", { size: 54, color: "#ffffff", bg: "rgba(0,0,0,0)", scale: 0.7 }); chalk.position.set(0, 1.9, -ROOM_D / 2 + 0.3); this.group.add(chalk);
+      this._box(4, 1.6, 0.1, 0x1f3b2c, 0, 1.8, -this.d / 2 + 0.2, false); // blackboard
+      const chalk = makeTextSprite("2 + 3 = 5", { size: 54, color: "#ffffff", bg: "rgba(0,0,0,0)", scale: 0.7 }); chalk.position.set(0, 1.9, -this.d / 2 + 0.3); this.group.add(chalk);
       this._box(1.6, 0.1, 0.8, 0x8a5626, 3.2, 0.75, -2.6); this._box(0.1, 0.75, 0.1, 0x5a3a24, 3.2, 0.37, -2.6, false); // teacher's table
       for (let r = 0; r < 2; r++) for (let c = 0; c < 3; c++) { const x = -2.5 + c * 2.5, z = -0.5 + r * 1.8; this._box(1.2, 0.08, 0.6, 0xb9773c, x, 0.65, z); this._box(0.1, 0.65, 0.1, 0x5a3a24, x, 0.32, z, false); this._box(0.5, 0.4, 0.5, 0x3f6f9f, x, 0.2, z + 0.7, false); }
     } else if (t === "clinic") {
       this._box(2, 0.6, 1, 0xffffff, -3.2, 0.3, -2.2); this._box(1.9, 0.2, 0.9, 0x8ecae6, -3.2, 0.7, -2.2, false); // bed
       this._box(1.2, 1.8, 0.5, 0xdfe6ea, 3.5, 0.9, -3.4); for (let i = 0; i < 6; i++) this._box(0.2, 0.3, 0.2, [0xc94848, 0x3a86ff, 0xffffff][i % 3], 3.1 + (i % 3) * 0.4, 0.6 + Math.floor(i / 3) * 0.7, -3.3, false); // cabinet, bottles
       this._box(1.6, 0.1, 0.8, 0x8a5626, 0.5, 0.75, -1.8); this._box(0.1, 0.75, 0.1, 0x5a3a24, 0.5, 0.37, -1.8, false); // desk
-      const cross = makeTextSprite("+", { size: 90, color: "#c1121f", bg: "rgba(255,255,255,0.95)", scale: 0.6 }); cross.position.set(-2.5, 2.6, -ROOM_D / 2 + 0.3); this.group.add(cross);
+      const cross = makeTextSprite("+", { size: 90, color: "#c1121f", bg: "rgba(255,255,255,0.95)", scale: 0.6 }); cross.position.set(-2.5, 2.6, -this.d / 2 + 0.3); this.group.add(cross);
     } else if (t === "library") {
       for (const x of [-3.6, -1.2, 1.2, 3.6]) { this._box(1.8, 2.4, 0.5, 0x5a3a24, x, 1.2, -3.3); for (let r = 0; r < 4; r++) for (let k = 0; k < 6; k++) this._box(0.22, 0.45, 0.3, [0xc94848, 0x3a86ff, 0x6fae54, 0xffb703, 0x9b5de5][(r + k) % 5], x - 0.7 + k * 0.28, 0.35 + r * 0.55, -3.15, false); }
       this._box(3, 0.1, 1.2, 0x8a5626, 0, 0.75, 0.5); for (const dx of [-1.2, 1.2]) this._box(0.1, 0.75, 0.1, 0x5a3a24, dx, 0.37, 0.5, false);
@@ -7647,12 +7799,12 @@ class Room {
       this._box(6, 0.5, 2, 0x8a5626, 0, 0.25, -2.8); // stage
       const drum = this._box(0.8, 0.6, 0.8, 0xb9773c, 2, 0.8, -2.8, false); drum.geometry = new THREE.CylinderGeometry(0.4, 0.4, 0.6, 10);
       for (let r = 0; r < 3; r++) for (let c = 0; c < 6; c++) this._box(0.5, 0.45, 0.5, 0x3f6f9f, -3 + c * 1.2, 0.22, -0.5 + r * 1.1, r === 0);
-      const banner = makeTextSprite("Village Meeting Today", { size: 44, scale: 1.1 }); banner.position.set(0, 2.7, -ROOM_D / 2 + 0.3); this.group.add(banner);
+      const banner = makeTextSprite("Village Meeting Today", { size: 44, scale: 1.1 }); banner.position.set(0, 2.7, -this.d / 2 + 0.3); this.group.add(banner);
     } else if (t === "station") {
       this._box(3, 1.1, 0.8, 0x8a5626, -2.5, 0.55, -2.2); this._box(3, 1.2, 0.1, 0x9aa6ad, -2.5, 1.7, -2.2, false); // ticket window
       const win2 = makeTextSprite("TICKETS", { size: 52, scale: 0.7 }); win2.position.set(-2.5, 2.5, -2.1); this.group.add(win2);
       for (const dx of [1.5, 3.6]) this._box(1.8, 0.1, 0.5, 0xb9773c, dx, 0.5, 1.0); // benches
-      const board = makeTextSprite("Next train: 10:40", { size: 40, scale: 1.0 }); board.position.set(2.5, 2.2, -ROOM_D / 2 + 0.3); this.group.add(board);
+      const board = makeTextSprite("Next train: 10:40", { size: 40, scale: 1.0 }); board.position.set(2.5, 2.2, -this.d / 2 + 0.3); this.group.add(board);
     } else if (t === "office") {
       for (let r = 0; r < 2; r++) for (let c = 0; c < 3; c++) {
         const x = -3 + c * 3, z = -2.4 + r * 2.6;
@@ -7662,30 +7814,30 @@ class Room {
       }
       this._box(0.5, 1.2, 0.5, 0x4fa3c7, 4.2, 0.6, -3.2); // water cooler
       this._box(0.6, 0.9, 0.6, 0x4e9e4a, -4.2, 0.45, -3.2); // plant
-      const chart = makeTextSprite("Sales ↑ 12%", { size: 46, scale: 0.9 }); chart.position.set(0, 2.4, -ROOM_D / 2 + 0.3); this.group.add(chart);
+      const chart = makeTextSprite("Sales ↑ 12%", { size: 46, scale: 0.9 }); chart.position.set(0, 2.4, -this.d / 2 + 0.3); this.group.add(chart);
     } else if (t === "mall") {
       const goods = [0xc94848, 0x3a86ff, 0x6fae54, 0xffb703, 0x9b5de5, 0xff8fab];
       for (const x of [-3.2, 0, 3.2]) { this._box(2.4, 1.0, 0.8, 0xdfe6ea, x, 0.5, -2.4); for (let k = 0; k < 4; k++) this._box(0.4, 0.3, 0.4, goods[(k + x) % 6 | 0], x - 0.9 + k * 0.6, 1.15, -2.4, false); }
       this._box(1.4, 0.1, 5, 0x9aa6ad, 4.2, 1.2, 0); // escalator ramp
       this.group.children[this.group.children.length - 1].rotation.x = 0.35;
       for (let i = 0; i < 3; i++) { const s = makeTextSprite(["Toys", "Shoes", "Ice Cream"][i], { size: 44, scale: 0.7 }); s.position.set(-3.2 + i * 3.2, 1.9, -2.3); this.group.add(s); }
-      const bigSign = makeTextSprite("SALE 50% OFF", { size: 50, color: "#ffffff", bg: "#c1121f", scale: 1.0 }); bigSign.position.set(0, 2.7, -ROOM_D / 2 + 0.3); this.group.add(bigSign);
+      const bigSign = makeTextSprite("SALE 50% OFF", { size: 50, color: "#ffffff", bg: "#c1121f", scale: 1.0 }); bigSign.position.set(0, 2.7, -this.d / 2 + 0.3); this.group.add(bigSign);
     } else if (t === "metro") {
       for (const x of [-3, -1.5, 0, 1.5]) this._box(0.4, 1.0, 0.8, 0x9aa6ad, x, 0.5, -1.0); // turnstiles
       this._box(2.4, 1.1, 0.8, 0x1e6091, 3.6, 0.55, -2.4); // token counter
-      const mapBoard = makeTextSprite("Blue Line: 2 stations", { size: 40, scale: 1.2 }); mapBoard.position.set(-1.5, 2.3, -ROOM_D / 2 + 0.3); this.group.add(mapBoard);
+      const mapBoard = makeTextSprite("Blue Line: 2 stations", { size: 40, scale: 1.2 }); mapBoard.position.set(-1.5, 2.3, -this.d / 2 + 0.3); this.group.add(mapBoard);
       const tk = makeTextSprite("TOKENS ₹10", { size: 46, scale: 0.8 }); tk.position.set(3.6, 2.2, -2.3); this.group.add(tk);
     } else if (t === "lobby") {
       this._box(3.6, 1.1, 0.9, 0x8a5626, 1.5, 0.55, -2.4); this._box(3.6, 0.08, 1.0, 0xdfe6ea, 1.5, 1.14, -2.4, false); // reception desk
       const rec = makeTextSprite("RECEPTION", { size: 50, scale: 0.8 }); rec.position.set(1.5, 2.3, -2.3); this.group.add(rec);
       this._box(2.4, 0.5, 0.9, 0x3a86ff, 3.4, 0.25, 1.2); this._box(2.4, 0.5, 0.25, 0x3a86ff, 3.4, 0.75, 0.85, false); // sofa
       this._box(0.6, 0.9, 0.6, 0x4e9e4a, -1.2, 0.45, -3.2); // plant
-      const dir = makeTextSprite("Floors: see the lift", { size: 40, scale: 1.0 }); dir.position.set(2.5, 2.6, -ROOM_D / 2 + 0.3); this.group.add(dir);
+      const dir = makeTextSprite("Floors: see the lift", { size: 40, scale: 1.0 }); dir.position.set(2.5, 2.6, -this.d / 2 + 0.3); this.group.add(dir);
     } else if (t === "gym") {
       for (let i = 0; i < 3; i++) { this._box(0.8, 0.3, 1.8, 0x333333, -3.5 + i * 1.4, 0.15, -2.4); this._box(0.7, 0.9, 0.1, 0x555e66, -3.5 + i * 1.4, 0.75, -3.2, false); } // treadmills
       this._box(2.4, 0.9, 0.5, 0x555e66, 3.4, 0.45, -3.3); for (let i = 0; i < 4; i++) this._box(0.5, 0.3, 0.3, 0x111111, 2.5 + i * 0.6, 1.05, -3.3, false); // dumbbell rack
       this._box(2.0, 0.05, 1.2, 0x3a86ff, 2.5, 0.03, 1.2, false); // yoga mat
-      const mirror = new THREE.Mesh(new THREE.BoxGeometry(4, 1.6, 0.05), new THREE.MeshStandardMaterial({ color: 0xcfe6ff, emissive: 0x9fd3ea, emissiveIntensity: 0.3, metalness: 0.8 })); mirror.position.set(0, 1.6, -ROOM_D / 2 + 0.2); this.group.add(mirror);
+      const mirror = new THREE.Mesh(new THREE.BoxGeometry(4, 1.6, 0.05), new THREE.MeshStandardMaterial({ color: 0xcfe6ff, emissive: 0x9fd3ea, emissiveIntensity: 0.3, metalness: 0.8 })); mirror.position.set(0, 1.6, -this.d / 2 + 0.2); this.group.add(mirror);
     } else if (t === "rooftop") {
       for (let i = 0; i < 6; i++) this._box(0.7, 0.9, 0.7, [0x4e9e4a, 0x6fae54, 0x3f8f3a][i % 3], -4 + i * 1.6, 0.45, -3.2); // planters
       for (let i = 0; i < 3; i++) this._box(0.5, 0.3, 0.5, [0xff6b8a, 0xffd23f, 0xffffff][i], -3.9 + i * 3.2, 1.05, -3.2, false); // flowers
@@ -7694,18 +7846,18 @@ class Room {
       this._box(0.1, 3, 0.1, 0x9aa6ad, 3.6, 2.9, -2.2, false); // antenna
       const scope = this._box(0.15, 1.2, 0.15, 0x333333, 0.5, 0.6, -1.5); scope.geometry = new THREE.CylinderGeometry(0.06, 0.1, 1.2, 8);
       const tele = this._box(0.9, 0.2, 0.2, 0x1d3557, 0.5, 1.35, -1.5, false); tele.geometry = new THREE.CylinderGeometry(0.1, 0.13, 0.9, 8); tele.rotation.z = Math.PI / 2; tele.rotation.y = 0.6;
-      const view = makeTextSprite("Rooftop Garden", { size: 50, scale: 1.0 }); view.position.set(0, 2.2, -ROOM_D / 2 + 0.2); this.group.add(view);
+      const view = makeTextSprite("Rooftop Garden", { size: 50, scale: 1.0 }); view.position.set(0, 2.2, -this.d / 2 + 0.2); this.group.add(view);
     } else if (t === "cinema") {
-      const screen = new THREE.Mesh(new THREE.BoxGeometry(7, 3, 0.1), new THREE.MeshStandardMaterial({ color: 0xffffff, emissive: 0xcfe6ff, emissiveIntensity: 0.6 })); screen.position.set(0, 1.9, -ROOM_D / 2 + 0.2); this.group.add(screen);
-      const title = makeTextSprite("Now Showing: Engineer's Village", { size: 40, color: "#1d3557", bg: "rgba(255,255,255,0)", scale: 1.5 }); title.position.set(0, 2.2, -ROOM_D / 2 + 0.3); this.group.add(title);
+      const screen = new THREE.Mesh(new THREE.BoxGeometry(7, 3, 0.1), new THREE.MeshStandardMaterial({ color: 0xffffff, emissive: 0xcfe6ff, emissiveIntensity: 0.6 })); screen.position.set(0, 1.9, -this.d / 2 + 0.2); this.group.add(screen);
+      const title = makeTextSprite("Now Showing: Engineer's Village", { size: 40, color: "#1d3557", bg: "rgba(255,255,255,0)", scale: 1.5 }); title.position.set(0, 2.2, -this.d / 2 + 0.3); this.group.add(title);
       for (let r = 0; r < 3; r++) for (let c = 0; c < 7; c++) this._box(0.7, 0.6, 0.6, 0xc1121f, -3.6 + c * 1.2, 0.3 + r * 0.15, -1.6 + r * 1.3, c === 0 || c === 6 || r === 0);
       this._box(2.2, 1.0, 0.7, 0xffd21e, 3.6, 0.5, 2.6); const pop = makeTextSprite("POPCORN ₹50", { size: 46, scale: 0.7 }); pop.position.set(3.6, 1.9, 2.6); this.group.add(pop);
     } else if (t === "hotelroom") {
       this._box(2.6, 0.5, 2.0, 0xb9773c, -2.8, 0.25, -2.2); this._box(2.5, 0.25, 1.9, 0xffffff, -2.8, 0.62, -2.2, false); this._box(0.7, 0.2, 1.7, 0x3a86ff, -3.7, 0.85, -2.2, false); // double bed
-      this._box(1.6, 1.0, 0.1, 0x111111, 1.8, 1.6, -ROOM_D / 2 + 0.2, false); // TV
+      this._box(1.6, 1.0, 0.1, 0x111111, 1.8, 1.6, -this.d / 2 + 0.2, false); // TV
       this._box(0.8, 0.9, 0.6, 0x555e66, 3.6, 0.45, -3.2); // minibar
       this._box(1.2, 0.1, 0.6, 0x8a5626, 1.8, 0.75, -2.6); // desk
-      const rs = makeTextSprite("Room 204", { size: 50, scale: 0.6 }); rs.position.set(3.4, 2.6, -ROOM_D / 2 + 0.3); this.group.add(rs);
+      const rs = makeTextSprite("Room 204", { size: 50, scale: 0.6 }); rs.position.set(3.4, 2.6, -this.d / 2 + 0.3); this.group.add(rs);
     } else if (t === "home") {
       // The Engineer's own home: two beds, a study desk with drawings, toys, a family photo.
       this._box(2, 0.5, 1, 0xb9773c, -3.5, 0.25, -2.5); this._box(1.9, 0.25, 0.9, 0x3a86ff, -3.5, 0.62, -2.5, false); // parents' bed
@@ -7716,7 +7868,7 @@ class Room {
       this._box(1.8, 0.1, 1, 0x8a5626, 0.5, 0.45, 1.2); // low dining table
       for (let i = 0; i < 4; i++) this._box(0.3, 0.3, 0.3, [0xc94848, 0xffb703, 0x6fae54, 0x9b5de5][i], -3.2 + i * 0.4, 0.15, 1.2, false); // toy blocks
       this._box(2.4, 0.9, 0.7, 0xbfb6a5, -3.5, 0.45, -0.4); this._box(0.5, 0.3, 0.5, 0x555555, -3.9, 1.05, -0.4, false); // kitchen
-      const photo = makeTextSprite("Our Family ❤", { size: 44, color: "#b4531a", scale: 0.9 }); photo.position.set(3, 2.4, -ROOM_D / 2 + 0.3); this.group.add(photo);
+      const photo = makeTextSprite("Our Family ❤", { size: 44, color: "#b4531a", scale: 0.9 }); photo.position.set(3, 2.4, -this.d / 2 + 0.3); this.group.add(photo);
       // Dadi knits on a stool; little sister Gudiya plays on the floor.
       const dadi = makeHuman({ skin: 0xc98d62, shirt: 0xffffff, dress: true, hair: 0xdddddd }); dadi.position.set(2.2, 0.28, 0.2); dadi.scale.y = 0.8; dadi.rotation.y = Math.PI;
       const dp = dadi.userData.parts; dp.legL.rotation.x = -1.4; dp.legR.rotation.x = -1.4; dp.armL.rotation.x = -1.0; dp.armR.rotation.x = -1.0;
@@ -7733,54 +7885,54 @@ class Room {
       const nandi = makeQuadruped({ body: 0xf3ede3, belly: null, head: 0xf3ede3, horns: true, s: 0.6, legLen: 0.4 }); nandi.position.set(0, 0, 0.6); nandi.rotation.y = Math.PI / 2; this.group.add(nandi); this._solid(0, 0.6, 1.0, 0.6);
       for (const dx of [-3.5, 3.5]) { const bell = new THREE.Mesh(new THREE.CylinderGeometry(0.2, 0.3, 0.45, 8), mat(0xffc93c)); bell.position.set(dx, 2.4, -1); this.group.add(bell); }
       for (let i = 0; i < 5; i++) { const diya = new THREE.Mesh(new THREE.SphereGeometry(0.08, 6, 5), new THREE.MeshStandardMaterial({ color: 0xffb703, emissive: 0xff8f00, emissiveIntensity: 1 })); diya.position.set(-1 + i * 0.5, 0.55, -1.7); this.group.add(diya); }
-      const om = makeTextSprite("ॐ नमः शिवाय", { size: 46, color: "#f77f00", scale: 1.3 }); om.position.set(0, 2.5, -ROOM_D / 2 + 0.3); this.group.add(om);
+      const om = makeTextSprite("ॐ नमः शिवाय", { size: 46, color: "#f77f00", scale: 1.3 }); om.position.set(0, 2.5, -this.d / 2 + 0.3); this.group.add(om);
     } else if (t === "monastery") {
       this._box(3, 0.6, 1.6, 0xc1121f, 0, 0.3, -2.8); // altar
       const buddhaBody = this._box(1.2, 1.2, 0.9, 0xffc93c, 0, 1.2, -2.8, false); buddhaBody.geometry = new THREE.SphereGeometry(0.7, 10, 8); buddhaBody.scale.set(1, 1.1, 0.8);
       const head = new THREE.Mesh(new THREE.SphereGeometry(0.35, 10, 8), mat(0xffc93c)); head.position.set(0, 2.2, -2.8); this.group.add(head);
       this.spinners = [];
-      for (let i = 0; i < 5; i++) { const w = new THREE.Mesh(new THREE.CylinderGeometry(0.28, 0.28, 0.6, 10), mat(0xffc93c)); w.position.set(-ROOM_W / 2 + 0.9, 1.0, -2.6 + i * 1.2); this.group.add(w); this.spinners.push(w); this._solid(-ROOM_W / 2 + 0.9, -2.6 + i * 1.2, 0.6, 0.6); }
+      for (let i = 0; i < 5; i++) { const w = new THREE.Mesh(new THREE.CylinderGeometry(0.28, 0.28, 0.6, 10), mat(0xffc93c)); w.position.set(-this.w / 2 + 0.9, 1.0, -2.6 + i * 1.2); this.group.add(w); this.spinners.push(w); this._solid(-this.w / 2 + 0.9, -2.6 + i * 1.2, 0.6, 0.6); }
       for (let i = 0; i < 6; i++) this._box(0.7, 0.05, 0.5, [0xc1121f, 0xf77f00][i % 2], -2 + (i % 3) * 2, 0.03, -0.4 + Math.floor(i / 3) * 1.4, false); // cushions
-      const b = makeTextSprite("Om Mani Padme Hum", { size: 40, scale: 1.3 }); b.position.set(0, 2.7, -ROOM_D / 2 + 0.3); this.group.add(b);
+      const b = makeTextSprite("Om Mani Padme Hum", { size: 40, scale: 1.3 }); b.position.set(0, 2.7, -this.d / 2 + 0.3); this.group.add(b);
     } else if (t === "gurudwara") {
       this._box(3.2, 0.5, 2, 0xffffff, 0, 0.25, -2.6); this._box(2.6, 0.3, 1.4, 0xf77f00, 0, 0.65, -2.6, false); // palki with cloth
       for (const dx of [-1.4, 1.4]) this._box(0.1, 2.4, 0.1, 0xffc93c, dx, 1.2, -3.2, false);
       this._box(3.4, 0.15, 2.2, 0xffc93c, 0, 2.5, -2.6, false); // golden canopy
       for (let r = 0; r < 2; r++) this._box(7, 0.08, 0.6, 0xb9773c, 0, 0.3, 0.2 + r * 1.4, r === 0); // langar rows (low tables)
       for (let i = 0; i < 6; i++) this._box(0.45, 0.06, 0.45, 0x9aa6ad, -2.5 + i, 0.36, 0.2, false); // plates
-      const sign = makeTextSprite("Langar: everyone eats together", { size: 36, scale: 1.4 }); sign.position.set(0, 2.9, -ROOM_D / 2 + 0.3); this.group.add(sign);
+      const sign = makeTextSprite("Langar: everyone eats together", { size: 36, scale: 1.4 }); sign.position.set(0, 2.9, -this.d / 2 + 0.3); this.group.add(sign);
     } else if (t === "church") {
       this._box(2.4, 1.0, 0.9, 0xffffff, 0, 0.5, -2.8); // altar
       this._box(0.2, 1.6, 0.2, 0xffc93c, 0, 1.9, -3.3, false); this._box(1.0, 0.2, 0.2, 0xffc93c, 0, 2.3, -3.3, false); // cross
       for (let r = 0; r < 3; r++) for (const side of [-1, 1]) this._box(3, 0.45, 0.5, 0x8a5626, side * 2.2, 0.22, -1.2 + r * 1.3, r === 0 || side === -1);
-      const glass = makeTextSprite("✦ ✦ ✦", { size: 70, color: "#c1121f", bg: "rgba(63,111,159,0.9)", scale: 1.0 }); glass.position.set(-3, 2.3, -ROOM_D / 2 + 0.3); this.group.add(glass);
-      const glass2 = makeTextSprite("✦ ✦ ✦", { size: 70, color: "#ffd21e", bg: "rgba(63,111,159,0.9)", scale: 1.0 }); glass2.position.set(3, 2.3, -ROOM_D / 2 + 0.3); this.group.add(glass2);
+      const glass = makeTextSprite("✦ ✦ ✦", { size: 70, color: "#c1121f", bg: "rgba(63,111,159,0.9)", scale: 1.0 }); glass.position.set(-3, 2.3, -this.d / 2 + 0.3); this.group.add(glass);
+      const glass2 = makeTextSprite("✦ ✦ ✦", { size: 70, color: "#ffd21e", bg: "rgba(63,111,159,0.9)", scale: 1.0 }); glass2.position.set(3, 2.3, -this.d / 2 + 0.3); this.group.add(glass2);
     } else if (t === "masjid") {
       for (let r = 0; r < 3; r++) for (let c = 0; c < 5; c++) this._box(0.8, 0.04, 1.4, [0x2f9e44, 0xffffff][(r + c) % 2], -3.6 + c * 1.8, 0.03, -1.8 + r * 1.6, false); // prayer mats
-      this._box(2.2, 2.6, 0.5, 0xfff1d6, 0, 1.3, -ROOM_D / 2 + 0.5); // mihrab
-      const arch = new THREE.Mesh(new THREE.SphereGeometry(1.1, 10, 8, 0, Math.PI * 2, 0, Math.PI / 2), mat(0x2f9e44)); arch.position.set(0, 2.6, -ROOM_D / 2 + 0.5); this.group.add(arch);
+      this._box(2.2, 2.6, 0.5, 0xfff1d6, 0, 1.3, -this.d / 2 + 0.5); // mihrab
+      const arch = new THREE.Mesh(new THREE.SphereGeometry(1.1, 10, 8, 0, Math.PI * 2, 0, Math.PI / 2), mat(0x2f9e44)); arch.position.set(0, 2.6, -this.d / 2 + 0.5); this.group.add(arch);
       const lamp = new THREE.Mesh(new THREE.SphereGeometry(0.25, 8, 6), new THREE.MeshStandardMaterial({ color: 0xffd21e, emissive: 0xffb703, emissiveIntensity: 0.8 })); lamp.position.set(0, 2.9, 0); this.group.add(lamp);
-      const cal = makeTextSprite("☪ Bismillah", { size: 46, color: "#2f9e44", scale: 1.2 }); cal.position.set(3, 2.6, -ROOM_D / 2 + 0.3); this.group.add(cal);
+      const cal = makeTextSprite("☪ Bismillah", { size: 46, color: "#2f9e44", scale: 1.2 }); cal.position.set(3, 2.6, -this.d / 2 + 0.3); this.group.add(cal);
     } else if (t === "meditation") {
       for (let r = 0; r < 2; r++) for (let c = 0; c < 4; c++) this._box(1.6, 0.05, 0.7, [0xf77f00, 0xffd21e, 0x9b5de5, 0x3a86ff][c], -3.6 + c * 2.4, 0.03, -1.6 + r * 2.2, false); // mats
       for (let i = 0; i < 5; i++) { const cand = new THREE.Mesh(new THREE.SphereGeometry(0.1, 6, 5), new THREE.MeshStandardMaterial({ color: 0xffb703, emissive: 0xff8f00, emissiveIntensity: 1 })); cand.position.set(-2 + i, 0.6, -3.2); this.group.add(cand); this._box(0.15, 0.5, 0.15, 0xfff1d6, -2 + i, 0.25, -3.2, false); }
-      const om = makeTextSprite("ॐ", { size: 100, color: "#f77f00", bg: "rgba(255,255,255,0)", scale: 1.4 }); om.position.set(0, 2.0, -ROOM_D / 2 + 0.3); this.group.add(om);
-      const q = makeTextSprite("Silence, please", { size: 40, scale: 0.9 }); q.position.set(3.2, 2.6, -ROOM_D / 2 + 0.3); this.group.add(q);
+      const om = makeTextSprite("ॐ", { size: 100, color: "#f77f00", bg: "rgba(255,255,255,0)", scale: 1.4 }); om.position.set(0, 2.0, -this.d / 2 + 0.3); this.group.add(om);
+      const q = makeTextSprite("Silence, please", { size: 40, scale: 0.9 }); q.position.set(3.2, 2.6, -this.d / 2 + 0.3); this.group.add(q);
     } else if (t === "ashram") {
       for (let i = 0; i < 4; i++) { this._box(0.9, 0.4, 2.0, 0xb9773c, -3.9 + i * 1.3, 0.2, -2.4); this._box(0.85, 0.15, 1.9, 0xfff1d6, -3.9 + i * 1.3, 0.47, -2.4, false); }
       this._box(2.4, 0.9, 0.7, 0xbfb6a5, 3.5, 0.45, -3.4); this._box(0.6, 0.35, 0.6, 0x555555, 3.5, 1.07, -3.4, false); // kitchen, big pot
       this._box(3, 0.08, 1.0, 0x8a5626, 1.5, 0.45, 1.2); // low dining table
-      const s2 = makeTextSprite("Seva · Simplicity · Study", { size: 40, scale: 1.2 }); s2.position.set(0, 2.6, -ROOM_D / 2 + 0.3); this.group.add(s2);
+      const s2 = makeTextSprite("Seva · Simplicity · Study", { size: 40, scale: 1.2 }); s2.position.set(0, 2.6, -this.d / 2 + 0.3); this.group.add(s2);
     } else if (t === "barn") {
       for (let i = 0; i < 4; i++) { const hay = this._box(1.2, 0.9, 1.2, 0xe2c463, -3.6 + (i % 2) * 1.3, 0.45 + Math.floor(i / 2) * 0.9, -3.0, i < 2); hay.geometry = new THREE.CylinderGeometry(0.6, 0.6, 1.2, 8); hay.rotation.z = Math.PI / 2; }
       this._box(3.5, 1.0, 0.1, 0x8a5626, 2.8, 0.5, -1.4); this._box(0.1, 1.0, 2.4, 0x8a5626, 1.1, 0.5, -2.6); // stall rails
       const cow = makeCow(); cow.position.set(3, 0, -2.6); cow.rotation.y = -Math.PI / 2; this.group.add(cow); this._solid(3, -2.6, 1.6, 0.9);
       this._box(0.1, 1.6, 0.1, 0x5a3a24, -4.4, 0.8, 1.5); this._box(0.5, 0.1, 0.1, 0x9aa6ad, -4.4, 1.6, 1.5, false); // pitchfork
-      const b = makeTextSprite("Feed: 3 kg per cow", { size: 44, scale: 1.0 }); b.position.set(0, 2.6, -ROOM_D / 2 + 0.3); this.group.add(b);
+      const b = makeTextSprite("Feed: 3 kg per cow", { size: 44, scale: 1.0 }); b.position.set(0, 2.6, -this.d / 2 + 0.3); this.group.add(b);
     } else if (t === "granary") {
       for (let r = 0; r < 3; r++) for (let c = 0; c < 5; c++) { const sack = this._box(0.7, 0.6, 0.6, 0xd9c39a, -3.2 + c * 1.1 + (r % 2) * 0.3, 0.3 + r * 0.55, -2.6, r === 0); sack.geometry = new THREE.SphereGeometry(0.4, 8, 6); sack.scale.set(1, 0.8, 0.9); }
       this._box(1.2, 0.1, 0.8, 0x8a5626, 3.5, 0.75, 0.5); this._box(0.4, 0.3, 0.4, 0x9aa6ad, 3.5, 0.95, 0.5, false); // weighing scale
-      const g2 = makeTextSprite("Stock: 15 sacks × 50 kg", { size: 40, scale: 1.2 }); g2.position.set(0, 2.6, -ROOM_D / 2 + 0.3); this.group.add(g2);
+      const g2 = makeTextSprite("Stock: 15 sacks × 50 kg", { size: 40, scale: 1.2 }); g2.position.set(0, 2.6, -this.d / 2 + 0.3); this.group.add(g2);
     } else if (t === "temple") {
       this._box(3, 0.6, 2, 0xe8d5b5, 0, 0.3, -2.8); // platform
       const idol = new THREE.Mesh(new THREE.ConeGeometry(0.6, 1.6, 8), mat(0xffc93c)); idol.position.set(0, 1.4, -2.8); this.group.add(idol);
@@ -7790,11 +7942,154 @@ class Room {
     }
   }
 
+  // ---- Helpers for bigger interiors ----
+  // An inner wall from (x1,z1) to (x2,z2), axis aligned, with door gaps [[from,to],...] along it.
+  _wall(x1, z1, x2, z2, gaps = [], h = ROOM_H, color = null) {
+    const c = color == null ? this.wallColor : color;
+    const horizontal = z1 === z2;
+    const a = horizontal ? Math.min(x1, x2) : Math.min(z1, z2), b = horizontal ? Math.max(x1, x2) : Math.max(z1, z2);
+    const cuts = [a, ...gaps.flat().sort((p, q) => p - q), b];
+    for (let i = 0; i < cuts.length - 1; i += 2) {
+      const s = cuts[i], e = cuts[i + 1];
+      if (e - s < 0.05) continue;
+      if (horizontal) this._box(e - s, h, 0.3, c, (s + e) / 2, h / 2, z1);
+      else this._box(0.3, h, e - s, c, x1, h / 2, (s + e) / 2);
+    }
+  }
+  _label(text, x, z, y = 2.6, scale = 0.8) { const sp = makeTextSprite(text, { size: 46, scale }); sp.position.set(x, y, z); this.group.add(sp); return sp; }
+  _desk(x, z, color = 0x8a5626) { this._box(1.6, 0.08, 0.8, color, x, 0.75, z); this._box(0.1, 0.75, 0.1, 0x5a3a24, x, 0.37, z, false); this._box(0.5, 0.45, 0.5, 0x3f6f9f, x, 0.22, z + 0.8, false); }
+  _bed(x, z, color = 0x3a86ff, w = 2, d = 1) { this._box(w, 0.5, d, 0xb9773c, x, 0.25, z); this._box(w - 0.1, 0.25, d - 0.1, color, x, 0.62, z, false); this._box(0.5, 0.2, d - 0.2, 0xffffff, x - w / 2 + 0.4, 0.85, z, false); }
+  _plant(x, z) { this._box(0.5, 0.5, 0.5, 0xb5651d, x, 0.25, z); const leaves = new THREE.Mesh(new THREE.SphereGeometry(0.45, 7, 6), mat(0x4e9e4a)); leaves.position.set(x, 0.95, z); this.group.add(leaves); }
+  _sofa(x, z, color = 0x3a86ff, w = 2.4) { this._box(w, 0.5, 0.9, color, x, 0.25, z); this._box(w, 0.5, 0.25, color, x, 0.75, z - 0.35, false); }
+  _shelfRow(x, z, len, along = "x", color = 0x5a3a24, goods = [0xc94848, 0x3a86ff, 0x6fae54, 0xffb703, 0x9b5de5, 0xff8fab]) {
+    if (along === "x") { this._box(len, 1.8, 0.5, color, x, 0.9, z); for (let r = 0; r < 3; r++) for (let k = 0; k < Math.floor(len / 0.8); k++) this._box(0.5, 0.35, 0.55, goods[(r + k) % goods.length], x - len / 2 + 0.5 + k * 0.8, 0.45 + r * 0.6, z, false); }
+    else { this._box(0.5, 1.8, len, color, x, 0.9, z); for (let r = 0; r < 3; r++) for (let k = 0; k < Math.floor(len / 0.8); k++) this._box(0.55, 0.35, 0.5, goods[(r + k) % goods.length], x, 0.45 + r * 0.6, z - len / 2 + 0.5 + k * 0.8, false); }
+  }
+  // Plants in the corners and a bigger rug: every room gets these.
+  _decor() {
+    const W = this.w, D = this.d;
+    if (this.type === "rooftop") return;
+    for (const [x, z] of [[-W / 2 + 0.9, -D / 2 + 0.9], [W / 2 - 0.9, -D / 2 + 0.9]]) this._plant(x, z);
+    if (!["cinema", "gym", "supermarket", "mall"].includes(this.type)) this._box(Math.min(6, W * 0.4), 0.03, Math.min(4, D * 0.35), 0xc94848, 0, 0.02, D * 0.1, false);
+  }
+
+  // The big floor plans: several rooms joined by doorways.
+  _buildBig() {
+    const t = this.type, W = this.w, D = this.d, hx = W / 2, hz = D / 2;
+    if (t === "home") {
+      // Living room on the left; kitchen back right; bedroom front right.
+      this._wall(-4, -hz, -4, 1); this._wall(-4, -1, hx, -1, [[3, 5.4]]);
+      this._label("Living Room", -8, -hz + 0.3); this._label("Kitchen", 5, -hz + 0.3); this._label("Bedroom", 8, 0.2, 2.9);
+      this._sofa(-9, -5, 0x3a86ff); this._sofa(-6, 2, 0xc94848, 1.6);
+      this._box(1.6, 1.0, 0.1, 0x111111, -8, 1.5, -hz + 0.2, false); // TV on the back wall
+      this._box(2.2, 0.1, 1.0, 0x8a5626, -9, 0.45, 0); // low table
+      this._box(1.8, 0.08, 1.0, 0x8a5626, -11, 0.75, 4); for (const dx of [-0.6, 0.6]) this._box(0.4, 0.45, 0.4, 0x3f6f9f, -11 + dx, 0.22, 5, false); // dining table
+      this._box(3.6, 0.9, 0.7, 0xbfb6a5, 8, 0.45, -hz + 0.5); this._box(0.5, 0.3, 0.5, 0x555555, 7, 1.05, -hz + 0.5, false); this._box(0.8, 1.8, 0.7, 0xdfe6ea, 11.5, 0.9, -hz + 0.5); // kitchen counter, stove, fridge
+      this._box(1.4, 0.08, 0.9, 0x8a5626, 6, 0.75, -3.5); // kitchen table
+      this._bed(6, 4, 0x3a86ff, 2.2, 1.2); this._bed(11, 4, 0xff8fab, 1.6, 0.9);
+      this._desk(9, 1.2); this._label("Bridge plan · 6½ m", 9, 1.0, 1.5, 0.7);
+      for (let i = 0; i < 4; i++) this._box(0.3, 0.3, 0.3, [0xc94848, 0xffb703, 0x6fae54, 0x9b5de5][i], 3 + i * 0.4, 0.15, 6, false); // toy blocks
+      this._label("Our Family ❤", -2, -hz + 0.3, 2.4);
+      const dadi = makeHuman({ skin: 0xc98d62, shirt: 0xffffff, dress: true, hair: 0xdddddd }); dadi.position.set(-5.5, 0.28, 2); dadi.scale.y = 0.8; dadi.rotation.y = Math.PI / 2;
+      const dp = dadi.userData.parts; dp.legL.rotation.x = -1.4; dp.legR.rotation.x = -1.4; dp.armL.rotation.x = -1.0; dp.armR.rotation.x = -1.0;
+      this.group.add(dadi); this._solid(-5.5, 2, 0.7, 0.7); this._label("Dadi", -5.5, 2, 2.0, 0.5);
+      const gudiya = makeHuman({ skin: 0xe8b98a, shirt: 0xff8fab, dress: true, hair: 0x1d1410 }); gudiya.scale.setScalar(0.62); gudiya.position.set(4, 0, 5.5); gudiya.rotation.y = 0.8;
+      this.group.add(gudiya); this._solid(4, 5.5, 0.6, 0.6); this._label("Gudiya", 4, 5.5, 2.1, 0.45);
+      this.extras = [dadi, gudiya];
+      return true;
+    }
+    if (t === "school") {
+      // A corridor along the front, two classrooms behind it.
+      this._wall(-hx, 2, hx, 2, [[-9, -6.6], [6.6, 9]]); this._wall(0, -hz, 0, 2);
+      this._label("Class 3", -7.5, 1.6, 2.9); this._label("Class 5", 7.5, 1.6, 2.9); this._label("Corridor", 0, 5.5, 2.9);
+      for (const cx of [-7.5, 7.5]) {
+        this._box(4, 1.6, 0.1, 0x1f3b2c, cx, 1.8, -hz + 0.2, false);
+        this._label(cx < 0 ? "2 + 3 = 5" : "¾ + ¼ = 1", cx, -hz + 0.3, 1.9, 0.7);
+        this._desk(cx + 4.5, -hz + 1.6);
+        for (let r = 0; r < 2; r++) for (let c = 0; c < 3; c++) { const x = cx - 3 + c * 2.4, z = -3.5 + r * 2.2; this._box(1.2, 0.08, 0.6, 0xb9773c, x, 0.65, z); this._box(0.1, 0.65, 0.1, 0x5a3a24, x, 0.32, z, false); this._box(0.5, 0.4, 0.5, 0x3f6f9f, x, 0.2, z + 0.7, false); }
+      }
+      for (const x of [-4, 4, 12, -12]) this._box(1.8, 0.1, 0.5, 0xb9773c, x, 0.5, 5.5); // corridor benches
+      this._box(3, 1.2, 0.1, 0x8a5626, 0, 1.6, 2.2, false); this._label("Notice Board", 0, 2.3, 2.3, 0.6);
+      return true;
+    }
+    if (t === "clinic") {
+      this._wall(-3, -hz, -3, 1);
+      this._label("Reception", -9, -hz + 0.3); this._label("Ward", 6, -hz + 0.3);
+      this._box(3.4, 1.0, 0.8, 0xdfe6ea, -9, 0.5, -3); this._label("+", -9, -hz + 0.3, 2.6, 0.6);
+      for (let i = 0; i < 4; i++) this._box(0.5, 0.45, 0.5, 0x3f6f9f, -12 + i * 1.3, 0.22, 3, false); // waiting chairs
+      for (let i = 0; i < 4; i++) { this._bed(1 + i * 3.4, -hz + 1.6, 0x8ecae6, 2, 1); this._box(0.05, 2.2, 1.6, 0x9aa6ad, 2.7 + i * 3.4, 1.1, -hz + 1.6, false); } // beds and curtain rails
+      this._box(1.2, 1.8, 0.5, 0xdfe6ea, hx - 1.2, 0.9, -hz + 0.5); for (let i = 0; i < 6; i++) this._box(0.2, 0.3, 0.2, [0xc94848, 0x3a86ff, 0xffffff][i % 3], hx - 1.6 + (i % 3) * 0.4, 0.6 + Math.floor(i / 3) * 0.7, -hz + 0.6, false);
+      this._desk(8, 3); this._label("Doctor", 8, 3, 2.0, 0.5);
+      this._box(0.6, 1.2, 0.6, 0x4fa3c7, hx - 1.2, 0.6, 4); // water cooler
+      return true;
+    }
+    if (t === "office") {
+      this._wall(-hx, -2, hx, -2, [[-5, -2.6], [2.6, 5]]);
+      this._label("Cabins", 0, -hz + 0.3); this._label("Open Office", 0, 6, 2.9);
+      for (const x of [-11, -6, 6, 11]) { this._desk(x, -hz + 2.2, 0xdfe6ea); this._box(0.7, 0.5, 0.06, 0x1d3557, x, 1.1, -hz + 2.0, false); if (x !== 11) this._wall(x + 2.5, -hz, x + 2.5, -2, [], 2.2, 0xe3ecf5); }
+      for (let r = 0; r < 2; r++) for (let c = 0; c < 4; c++) { const x = -9 + c * 6, z = 1 + r * 3; this._desk(x, z, 0xdfe6ea); this._box(0.7, 0.5, 0.06, 0x1d3557, x, 1.1, z - 0.2, false); }
+      this._box(0.5, 1.2, 0.5, 0x4fa3c7, hx - 1.2, 0.6, 4); this._label("Sales ↑ 12%", 0, -hz + 0.3, 2.4, 0.9);
+      return true;
+    }
+    if (t === "mall") {
+      // Three shop bays across the back, an atrium in front with a fountain.
+      const bays = [["Toys", -11, 0xff8fab], ["Shoes", 0, 0x3a86ff], ["Ice Cream", 11, 0xffd21e]];
+      for (const x of [-5.5, 5.5]) this._wall(x, -hz, x, -3, [], 1.6, 0xdfe6ea);
+      for (const [name, x, color] of bays) {
+        this._box(4, 1.0, 0.8, 0xdfe6ea, x, 0.5, -4.5); for (let k = 0; k < 5; k++) this._box(0.4, 0.3, 0.4, [color, 0xffffff, 0x2a9d8f][k % 3], x - 1.6 + k * 0.8, 1.15, -4.5, false);
+        this._shelfRow(x, -hz + 0.6, 8, "x", 0xdfe6ea);
+        this._label(name, x, -hz + 0.4, 2.9, 0.9);
+      }
+      this._box(0.9, 0.09, 0.9, 0x9aa6ad, 0, 0.05, 4, false);
+      const fount = this._box(2.2, 0.5, 2.2, 0xbfb6a5, 0, 0.25, 4); fount.geometry = new THREE.CylinderGeometry(1.1, 1.2, 0.5, 14);
+      const water = new THREE.Mesh(new THREE.CylinderGeometry(1.0, 1.0, 0.1, 14), new THREE.MeshStandardMaterial({ color: 0x4fa3c7 })); water.position.set(0, 0.55, 4); this.group.add(water);
+      for (const x of [-8, 8]) for (const z of [2, 6]) this._box(1.8, 0.1, 0.5, 0xb9773c, x, 0.5, z);
+      const ramp = this._box(1.6, 0.1, 6, 0x9aa6ad, hx - 1.5, 1.4, 1); ramp.rotation.x = 0.35; this._label("Escalator ↑", hx - 1.5, 1, 3.2, 0.6);
+      this._label("SALE 50% OFF", 0, -hz + 0.3, 3.4, 1.0);
+      return true;
+    }
+    if (t === "supermarket") {
+      // Aisles of shelves, a fridge wall, and checkout counters by the door.
+      const goods = [[0xffb703, 0xc94848, 0xfff1d6], [0x3a86ff, 0xffffff, 0x2a9d8f], [0x6fae54, 0xffd21e, 0xff8fab], [0x9b5de5, 0xd62828, 0xbfe3f2]];
+      for (let i = 0; i < 4; i++) this._shelfRow(-9 + i * 6, -1.5, 10, "z", 0xdfe6ea, goods[i]);
+      for (let i = 0; i < 4; i++) this._label(["Rice & Dal", "Snacks", "Fruit", "Soap & Home"][i], -9 + i * 6, -7, 2.4, 0.6);
+      for (let i = 0; i < 5; i++) { this._box(1.6, 2.0, 0.7, 0xdfe6ea, -8 + i * 4, 1.0, -hz + 0.5); this._box(1.4, 1.4, 0.1, 0x9fd3ea, -8 + i * 4, 1.1, -hz + 0.9, false); } // fridges
+      this._label("Cold Drinks · Milk · Juice", 0, -hz + 0.4, 2.7, 0.9);
+      for (let i = 0; i < 2; i++) { this._box(3, 1.0, 0.9, 0x8a5626, -9 + i * 4.5, 0.5, 6); this._box(0.5, 0.4, 0.4, 0x222222, -8 + i * 4.5, 1.2, 6, false); } // checkouts with tills
+      this._label("Checkout", -7, 6, 2.3, 0.7);
+      for (let i = 0; i < 3; i++) this._box(0.7, 0.9, 1.0, 0x9aa6ad, 10 + i * 1.2, 0.45, 6.5); // trolleys
+      this.counterPos = { x: this.x0 - 7, z: this.z0 + 7.4 };
+      return true;
+    }
+    if (t === "lobby") {
+      this._box(4.6, 1.1, 0.9, 0x8a5626, 3, 0.55, -hz + 1.6); this._box(4.6, 0.08, 1.0, 0xdfe6ea, 3, 1.14, -hz + 1.6, false); this._label("RECEPTION", 3, -hz + 1.2, 2.3, 0.8);
+      this._sofa(-6, 2, 0x3a86ff); this._sofa(8, 2, 0x3a86ff); this._box(1.4, 0.1, 1.4, 0x8a5626, 1, 0.45, 3);
+      this._label("Floors: see the lift", -3, -hz + 0.3, 2.6, 1.0);
+      for (let i = 0; i < 6; i++) this._box(0.5, 0.05, 0.5, i % 2 ? 0xffffff : 0x222222, -3 + i * 1.2, 0.03, -hz + 4, false); // floor tiles
+      return true;
+    }
+    if (t === "station") {
+      this._box(3.6, 1.1, 0.8, 0x8a5626, -8, 0.55, -hz + 1.2); this._box(3.6, 1.2, 0.1, 0x9aa6ad, -8, 1.7, -hz + 1.2, false); this._label("TICKETS", -8, -hz + 1.3, 2.5, 0.7);
+      for (let r = 0; r < 2; r++) for (let c = 0; c < 4; c++) this._box(1.8, 0.1, 0.5, 0xb9773c, -5 + c * 3, 0.5, 0 + r * 2.4);
+      this._label("Next train: 10:40 · Platform 1", 2, -hz + 0.3, 2.4, 1.0);
+      this._box(3, 1.0, 0.8, 0xffd21e, 9, 0.5, -hz + 1.2); this._label("Tea & Snacks", 9, -hz + 1.2, 2.2, 0.7);
+      this.counterPos = { x: this.x0 + 9, z: this.z0 - hz + 2.4 };
+      return true;
+    }
+    if (t === "hall") {
+      this._box(W - 2, 0.5, 3, 0x8a5626, 0, 0.25, -hz + 1.8); const drum = this._box(0.8, 0.6, 0.8, 0xb9773c, 4, 0.8, -hz + 1.8, false); drum.geometry = new THREE.CylinderGeometry(0.4, 0.4, 0.6, 10);
+      for (let r = 0; r < 4; r++) for (let c = 0; c < 8; c++) this._box(0.5, 0.45, 0.5, 0x3f6f9f, -8.4 + c * 2.4, 0.22, -1 + r * 1.6, r === 0 && c % 2 === 0);
+      this._label("Village Meeting Today", 0, -hz + 0.3, 2.9, 1.1);
+      return true;
+    }
+    return false;
+  }
+
   // Can someone stand at world (x, z) inside this room?
   walkable(x, z) {
     const pad = 0.35;
-    if (x < this.x0 - ROOM_W / 2 + 0.3 + pad || x > this.x0 + ROOM_W / 2 - 0.3 - pad) return false;
-    if (z < this.z0 - ROOM_D / 2 + 0.3 + pad || z > this.z0 + ROOM_D / 2 + 0.6) return false;
+    if (x < this.x0 - this.w / 2 + 0.3 + pad || x > this.x0 + this.w / 2 - 0.3 - pad) return false;
+    if (z < this.z0 - this.d / 2 + 0.3 + pad || z > this.z0 + this.d / 2 + 0.6) return false;
     for (const c of this.colliders) if (x > c.x1 - pad && x < c.x2 + pad && z > c.z1 - pad && z < c.z2 + pad) return false;
     return true;
   }
@@ -7802,7 +8097,8 @@ class Room {
   // Where the room's occupant stands (local -> world).
   occupantPos() {
     const spots = { home: [-1.2, -1.0], mandir: [2.6, -0.8], monastery: [2.8, 0.6], gurudwara: [3.2, -1.2], church: [0, 1.4], masjid: [3.6, -1.0], meditation: [3.0, 0.6], ashram: [1.5, 2.4], barn: [-1.5, 1.2], granary: [0, 0.8], lobby: [1.5, -1.2], gym: [0, 0.6], rooftop: [0, 0.2], cinema: [-2.5, 2.6], hotelroom: [1.0, 0.8], office: [3.2, 1.6], mall: [0, 0.8], metro: [3.6, -1.0], house: [0.5, 0.5], shop: [0, -2.4], eatery: [0, -2.4], school: [2.2, -1.5], clinic: [1.8, -0.6], library: [-2.5, 1.5], hall: [-4.2, 0.6], station: [-2.5, -3.2], temple: [2.2, -1.2] };
-    const [x, z] = spots[this.type] || [0, 0];
+    const big = { home: [-8.5, 3.2], school: [0, 5.5], clinic: [-9, -1.2], office: [0, 5.5], mall: [0, 7.5], supermarket: [-7, 4.8], lobby: [3, -3.5], station: [-8, -3.6], hall: [-4, 4] };
+    const [x, z] = big[this.type] || spots[this.type] || [0, 0];
     return { x: this.x0 + x, z: this.z0 + z };
   }
 }
@@ -7820,70 +8116,61 @@ class Minimap {
     this.canvas = document.getElementById("minimap");
     this.size = this.canvas.width;
     this.ctx = this.canvas.getContext("2d");
-    this.scale = this.size / (WORLD_HALF * 2);
+    this.zoom = 3; // a close-up about 220 m across
     this._drawStatic();
   }
 
-  // World (x, z) -> canvas pixels.
-  px(x) { return (x + WORLD_HALF) * this.scale; }
-  pz(z) { return (z + WORLD_HALF) * this.scale; }
-
+  // The whole land drawn once at three times the minimap size, so the close-up stays sharp.
   _drawStatic() {
+    const S = this.size * this.zoom, sc = S / (WORLD_HALF * 2);
     const off = document.createElement("canvas");
-    off.width = off.height = this.size;
+    off.width = off.height = S;
     const g = off.getContext("2d");
-    // Land coloured by height, coarse.
+    const px = (x) => (x + WORLD_HALF) * sc, pz = (z) => (z + WORLD_HALF) * sc;
     const step = 4;
-    for (let i = 0; i < this.size; i += step) for (let j = 0; j < this.size; j += step) {
-      const x = i / this.scale - WORLD_HALF, z = j / this.scale - WORLD_HALF;
+    for (let i = 0; i < S; i += step) for (let j = 0; j < S; j += step) {
+      const x = i / sc - WORLD_HALF, z = j / sc - WORLD_HALF;
       const h = heightAt(x, z);
-      g.fillStyle = h > 34 ? "#f4f6f8" : h > 18 ? "#9a978e" : h > 9 ? "#6fae54" : "#8bc46a";
+      g.fillStyle = h > 34 ? "#f4f6f8" : h > 18 ? "#9a978e" : h > 9 ? "#6fae54" : h < -0.5 ? "#5fb6d9" : "#8bc46a";
       g.fillRect(i, j, step, step);
     }
-    // River and lake.
-    g.fillStyle = "#5fb6d9";
-    g.fillRect(0, this.pz(-3), this.size, 6 * this.scale);
-    for (const w of this.world.mapItems.water) {
-      if (w.type === "ellipse") { g.beginPath(); g.ellipse(this.px(w.cx), this.pz(w.cz), w.rx * this.scale, w.rz * this.scale, 0, 0, Math.PI * 2); g.fill(); }
-    }
-    // Roads.
-    g.strokeStyle = "#d8c08a"; g.lineWidth = 1.5;
-    for (const road of this.world.mapItems.roads) {
-      g.beginPath();
-      road.forEach(([x, z], i) => (i ? g.lineTo(this.px(x), this.pz(z)) : g.moveTo(this.px(x), this.pz(z))));
-      g.stroke();
-    }
-    // Buildings.
+    g.fillStyle = "#d9d4c7"; g.fillRect(px(CITY.x1), pz(CITY.z1), (CITY.x2 - CITY.x1) * sc, (CITY.z2 - CITY.z1) * sc);
+    g.fillStyle = "#5fb6d9"; g.fillRect(0, pz(-3), S, 6 * sc);
+    for (const w of this.world.mapItems.water) if (w.type === "ellipse") { g.beginPath(); g.ellipse(px(w.cx), pz(w.cz), w.rx * sc, w.rz * sc, 0, 0, Math.PI * 2); g.fill(); }
+    g.strokeStyle = "#d8c08a"; g.lineWidth = 2.5; g.lineCap = "round";
+    for (const road of this.world.mapItems.roads) { g.beginPath(); road.forEach(([x, z], i) => (i ? g.lineTo(px(x), pz(z)) : g.moveTo(px(x), pz(z)))); g.stroke(); }
     g.fillStyle = "#7a4a2a";
-    for (const [x, z] of this.world.mapItems.buildings) g.fillRect(this.px(x) - 1.5, this.pz(z) - 1.5, 3, 3);
-    // District names.
-    g.font = "bold 9px system-ui, sans-serif"; g.textAlign = "center"; g.fillStyle = "#2c2417";
-    g.strokeStyle = "rgba(255,253,246,0.9)"; g.lineWidth = 2.5;
-    for (const [name, x, z] of [["Setugram", 0, 36], ["Town", 0, 112], ["Farms", 105, -2], ["Lake", -108, 46], ["Temple", 0, -134], ["SURYANAGAR", 0, 262], ["Shanti Valley", 0, -276], ["Devshikhar", 0, -320]]) {
-      g.strokeText(name, this.px(x), this.pz(z)); g.fillText(name, this.px(x), this.pz(z));
+    for (const [x, z] of this.world.mapItems.buildings) g.fillRect(px(x) - 2.5, pz(z) - 2.5, 5, 5);
+    g.font = "bold 11px system-ui, sans-serif"; g.textAlign = "center"; g.fillStyle = "#2c2417";
+    g.strokeStyle = "rgba(255,253,246,0.9)"; g.lineWidth = 3;
+    for (const [name, x, z] of [["Setugram", 0, 36], ["Bazaar", 0, 46], ["Town", 0, 112], ["Farms", 105, -2], ["Lake", -108, 46], ["Temple", 0, -134], ["SURYANAGAR", 0, 262], ["Sector 18", 50, 290], ["Shanti Valley", 0, -276], ["Devshikhar", 0, -320]]) {
+      g.strokeText(name, px(x), pz(z)); g.fillText(name, px(x), pz(z));
     }
     this.static = off;
   }
 
   draw(playerPos, playerFacing, npcs, jobs, jobsDone) {
-    const g = this.ctx;
-    g.clearRect(0, 0, this.size, this.size);
-    g.drawImage(this.static, 0, 0);
-    // Open jobs: yellow stars.
+    const g = this.ctx, S = this.size, Z = this.zoom;
+    g.clearRect(0, 0, S, S);
+    const half = WORLD_HALF / Z;
+    const cx = Math.max(-WORLD_HALF + half, Math.min(WORLD_HALF - half, playerPos.x));
+    const cz = Math.max(-WORLD_HALF + half, Math.min(WORLD_HALF - half, playerPos.z));
+    const sx = (x) => (x - cx) * (S / (WORLD_HALF * 2)) * Z + S / 2, sz = (z) => (z - cz) * (S / (WORLD_HALF * 2)) * Z + S / 2;
+    const srcX = (cx - half + WORLD_HALF) / (WORLD_HALF * 2) * this.static.width, srcZ = (cz - half + WORLD_HALF) / (WORLD_HALF * 2) * this.static.height;
+    g.drawImage(this.static, srcX, srcZ, this.static.width / Z, this.static.height / Z, 0, 0, S, S);
     for (const job of jobs) {
       if (jobsDone.includes(job.id)) continue;
       g.fillStyle = "#ffce3a"; g.strokeStyle = "#7a5b00"; g.lineWidth = 1;
-      g.beginPath(); g.arc(this.px(job._pos.x), this.pz(job._pos.z), 3.5, 0, Math.PI * 2); g.fill(); g.stroke();
+      g.beginPath(); g.arc(sx(job._pos.x), sz(job._pos.z), 4, 0, Math.PI * 2); g.fill(); g.stroke();
     }
-    // Villagers: orange dots (indoor people are not on the land).
     g.fillStyle = "#ff7a45";
-    for (const n of npcs) if (n.bank !== "indoors") { g.beginPath(); g.arc(this.px(n.position.x), this.pz(n.position.z), 2, 0, Math.PI * 2); g.fill(); }
-    // Vehicles you can ride: blue dots. The flag: red.
+    for (const n of npcs) if (n.bank !== "indoors") { g.beginPath(); g.arc(sx(n.position.x), sz(n.position.z), 2.2, 0, Math.PI * 2); g.fill(); }
     g.fillStyle = "#1d3557";
-    for (const r of this.rideables || []) { g.beginPath(); g.arc(this.px(r.group.position.x), this.pz(r.group.position.z), 2.2, 0, Math.PI * 2); g.fill(); }
-    if (this.waypoint) { g.fillStyle = "#c1121f"; g.beginPath(); g.arc(this.px(this.waypoint.x), this.pz(this.waypoint.z), 3.5, 0, Math.PI * 2); g.fill(); }
-    // Player: a white arrow with a dark edge.
-    const x = this.px(playerPos.x), z = this.pz(playerPos.z);
+    for (const r of this.rideables || []) { g.beginPath(); g.arc(sx(r.group.position.x), sz(r.group.position.z), 2.5, 0, Math.PI * 2); g.fill(); }
+    if (this.waypoint) { g.fillStyle = "#c1121f"; g.beginPath(); g.arc(sx(this.waypoint.x), sz(this.waypoint.z), 4, 0, Math.PI * 2); g.fill(); }
+    // A red arrow at the edge points to a flag that is off the close-up.
+    if (this.waypoint) { const dx = sx(this.waypoint.x) - S / 2, dz = sz(this.waypoint.z) - S / 2; if (Math.abs(dx) > S / 2 - 6 || Math.abs(dz) > S / 2 - 6) { const a = Math.atan2(dz, dx); g.save(); g.translate(S / 2 + Math.cos(a) * (S / 2 - 8), S / 2 + Math.sin(a) * (S / 2 - 8)); g.rotate(a); g.fillStyle = "#c1121f"; g.beginPath(); g.moveTo(6, 0); g.lineTo(-4, 4); g.lineTo(-4, -4); g.closePath(); g.fill(); g.restore(); } }
+    const x = sx(playerPos.x), z = sz(playerPos.z);
     g.save(); g.translate(x, z); g.rotate(-playerFacing);
     g.fillStyle = "#ffffff"; g.strokeStyle = "#2c2417"; g.lineWidth = 1.2;
     g.beginPath(); g.moveTo(0, -6); g.lineTo(4.5, 5); g.lineTo(0, 2.5); g.lineTo(-4.5, 5); g.closePath(); g.fill(); g.stroke();
@@ -7914,61 +8201,95 @@ class BigMap {
     this.scale = this.size / (WORLD_HALF * 2);
     this.overlay = document.getElementById("bigmap");
     this.waypoint = null;
+    // Zoom and the world point at the centre of the view.
+    this.zoom = 1; this.cx = 0; this.cz = 0;
     this._drawStatic();
+    this._places();
     this._wire();
   }
 
-  px(x) { return (x + WORLD_HALF) * this.scale; }
-  pz(z) { return (z + WORLD_HALF) * this.scale; }
+  // World -> canvas pixels at the current zoom and centre.
+  sx(x) { return (x - this.cx) * this.scale * this.zoom + this.size / 2; }
+  sz(z) { return (z - this.cz) * this.scale * this.zoom + this.size / 2; }
+  // Canvas pixels -> world.
+  wx(px) { return (px - this.size / 2) / (this.scale * this.zoom) + this.cx; }
+  wz(pz) { return (pz - this.size / 2) / (this.scale * this.zoom) + this.cz; }
 
+  // The land, water, roads and buildings, drawn once at double resolution.
   _drawStatic() {
+    const R = 2, S = this.size * R, sc = this.scale * R;
     const off = document.createElement("canvas");
-    off.width = off.height = this.size;
+    off.width = off.height = S;
     const g = off.getContext("2d");
-    const step = 3;
-    for (let i = 0; i < this.size; i += step) for (let j = 0; j < this.size; j += step) {
-      const x = i / this.scale - WORLD_HALF, z = j / this.scale - WORLD_HALF;
+    const px = (x) => (x + WORLD_HALF) * sc, pz = (z) => (z + WORLD_HALF) * sc;
+    const step = 4;
+    for (let i = 0; i < S; i += step) for (let j = 0; j < S; j += step) {
+      const x = i / sc - WORLD_HALF, z = j / sc - WORLD_HALF;
       const h = heightAt(x, z);
       g.fillStyle = h > 34 ? "#f4f6f8" : h > 18 ? "#9a978e" : h > 9 ? "#6fae54" : h < -0.5 ? "#5fb6d9" : "#8bc46a";
       g.fillRect(i, j, step, step);
     }
-    // City ground, river, lakes.
-    g.fillStyle = "#d9d4c7"; g.fillRect(this.px(CITY.x1), this.pz(CITY.z1), (CITY.x2 - CITY.x1) * this.scale, (CITY.z2 - CITY.z1) * this.scale);
-    g.fillStyle = "#5fb6d9"; g.fillRect(0, this.pz(-3), this.size, 6 * this.scale);
-    for (const w of this.world.mapItems.water) if (w.type === "ellipse") { g.beginPath(); g.ellipse(this.px(w.cx), this.pz(w.cz), w.rx * this.scale, w.rz * this.scale, 0, 0, Math.PI * 2); g.fill(); }
-    // Roads.
-    g.strokeStyle = "#d8c08a"; g.lineWidth = 2.2; g.lineCap = "round";
-    for (const road of this.world.mapItems.roads) { g.beginPath(); road.forEach(([x, z], i) => (i ? g.lineTo(this.px(x), this.pz(z)) : g.moveTo(this.px(x), this.pz(z)))); g.stroke(); }
-    // Buildings.
+    g.fillStyle = "#d9d4c7"; g.fillRect(px(CITY.x1), pz(CITY.z1), (CITY.x2 - CITY.x1) * sc, (CITY.z2 - CITY.z1) * sc);
+    g.fillStyle = "#5fb6d9"; g.fillRect(0, pz(-3), S, 6 * sc);
+    for (const w of this.world.mapItems.water) if (w.type === "ellipse") { g.beginPath(); g.ellipse(px(w.cx), pz(w.cz), w.rx * sc, w.rz * sc, 0, 0, Math.PI * 2); g.fill(); }
+    g.strokeStyle = "#d8c08a"; g.lineWidth = 4; g.lineCap = "round";
+    for (const road of this.world.mapItems.roads) { g.beginPath(); road.forEach(([x, z], i) => (i ? g.lineTo(px(x), pz(z)) : g.moveTo(px(x), pz(z)))); g.stroke(); }
     g.fillStyle = "#7a4a2a";
-    for (const [x, z] of this.world.mapItems.buildings) g.fillRect(this.px(x) - 2, this.pz(z) - 2, 4, 4);
-    // District names.
-    g.textAlign = "center"; g.lineWidth = 4; g.strokeStyle = "rgba(255,253,246,0.9)"; g.fillStyle = "#2c2417";
-    g.font = "bold 18px system-ui, sans-serif";
-    for (const [name, x, z] of [["SETUGRAM", 0, 40], ["Town", 0, 100], ["Farms", 105, -6], ["Lake", -108, 46], ["Temple Hill", 0, -140], ["SURYANAGAR", 0, 262], ["Shanti Valley", 0, -282], ["MOUNT DEVSHIKHAR", 0, -322]]) {
-      g.strokeText(name, this.px(x), this.pz(z)); g.fillText(name, this.px(x), this.pz(z));
-    }
-    // Named places from their doors, plus a few landmarks without doors.
-    g.font = "bold 10px system-ui, sans-serif"; g.lineWidth = 3;
-    const places = this.world.doors.filter((d) => !NOTABLE_SKIP.includes(d.label)).map((d) => [d.label, d.x, d.z]);
-    places.push(["Windmill", 15, -14], ["Water Tank", -14, -14], ["Market", 0, -22], ["Devshikhar Darshan", 0, -277], ["Aarti Ghat", MANSAROVAR.cx, MANSAROVAR.cz + MANSAROVAR.r + 4], ["Stadium", -100, 250], ["Petrol Pump", 140, 250], ["Pool", 140, 278], ["Central Park", 21, 214], ["Victory Gate", 0, 250], ["Railway Gate", 0, 150], ["Playground", -30, 76]);
-    for (const [name, x, z] of places) { g.strokeText(name, this.px(x), this.pz(z) - 5); g.fillText(name, this.px(x), this.pz(z) - 5); }
+    for (const [x, z] of this.world.mapItems.buildings) g.fillRect(px(x) - 4, pz(z) - 4, 8, 8);
     this.static = off;
+  }
+
+  // Every named place, for the labels and the "Go to" list.
+  _places() {
+    const list = this.world.doors.filter((d) => !NOTABLE_SKIP.includes(d.label)).map((d) => ({ name: d.label, x: d.x, z: d.z }));
+    for (const sp of this.world.shopSpots || []) list.push({ name: sp.name, x: sp.x, z: sp.z });
+    list.push(...[["Windmill", 15, -14], ["Water Tank", -14, -14], ["Sabzi Mandi", -4, -22], ["Setugram Bazaar", 0, 39], ["Devshikhar Darshan", 0, -277], ["Aarti Ghat", MANSAROVAR.cx, MANSAROVAR.cz + MANSAROVAR.r + 4], ["Stadium", -100, 250], ["Petrol Pump", 140, 250], ["Swimming Pool", 140, 278], ["Central Park", 21, 214], ["Victory Gate", 0, 250], ["Railway Gate", 0, 150], ["Playground", -30, 76], ["Setugram Petrol", 13, 30], ["The Minar", 120, 285], ["Bus Depot", 100, 200]].map(([name, x, z]) => ({ name, x, z, landmark: true })));
+    // One entry per name (the first), sorted A to Z.
+    const seen = new Set();
+    this.places = list.filter((p) => (seen.has(p.name) ? false : seen.add(p.name))).sort((a, b) => a.name.localeCompare(b.name));
+    const sel = document.getElementById("map-goto");
+    if (sel) sel.innerHTML = `<option value="">Go to a place…</option>` + this.places.map((p, i) => `<option value="${i}">${p.name}</option>`).join("");
   }
 
   _wire() {
     document.querySelector("#bigmap .overlay-close").addEventListener("click", () => this.close());
     document.getElementById("minimap").addEventListener("click", () => this.open());
     document.getElementById("waypoint-clear").addEventListener("click", () => { this.waypoint = null; this._refreshCompass(); });
-    // Tap the map to plant a flag.
-    this.canvas.addEventListener("click", (e) => {
-      const r = this.canvas.getBoundingClientRect();
-      const x = ((e.clientX - r.left) * this.canvas.width) / r.width / this.scale - WORLD_HALF;
-      const z = ((e.clientY - r.top) * this.canvas.height) / r.height / this.scale - WORLD_HALF;
-      this.setWaypoint(x, z, "Flag");
+    const zoomBy = (f, ax, az) => {
+      const z0 = this.zoom;
+      this.zoom = Math.max(1, Math.min(6, this.zoom * f));
+      if (ax != null) { // keep the point under the cursor still
+        const k = 1 - z0 / this.zoom;
+        this.cx += (ax - this.cx) * k; this.cz += (az - this.cz) * k;
+      }
+      this._clampCentre(); this.draw();
+    };
+    document.getElementById("map-zoom-in").addEventListener("click", () => zoomBy(1.5));
+    document.getElementById("map-zoom-out").addEventListener("click", () => zoomBy(1 / 1.5));
+    document.getElementById("map-me").addEventListener("click", () => { const p = this.game.player.position; this.cx = p.x; this.cz = p.z; if (this.zoom < 3) this.zoom = 3; this._clampCentre(); this.draw(); });
+    document.getElementById("map-goto").addEventListener("change", (e) => { const p = this.places[Number(e.target.value)]; if (p) { this.setWaypoint(p.x, p.z, p.name); this.cx = p.x; this.cz = p.z; if (this.zoom < 3) this.zoom = 3; this._clampCentre(); this.draw(); } e.target.value = ""; });
+    this.canvas.addEventListener("wheel", (e) => { e.preventDefault(); const r = this.canvas.getBoundingClientRect(); const px = ((e.clientX - r.left) * this.canvas.width) / r.width, pz = ((e.clientY - r.top) * this.canvas.height) / r.height; zoomBy(e.deltaY < 0 ? 1.25 : 0.8, this.wx(px), this.wz(pz)); }, { passive: false });
+    // Drag to pan; a click without a drag plants a flag.
+    let down = null, moved = false;
+    const toCanvas = (e) => { const r = this.canvas.getBoundingClientRect(); return [((e.clientX - r.left) * this.canvas.width) / r.width, ((e.clientY - r.top) * this.canvas.height) / r.height]; };
+    this.canvas.addEventListener("pointerdown", (e) => { down = toCanvas(e); moved = false; this.canvas.setPointerCapture(e.pointerId); });
+    this.canvas.addEventListener("pointermove", (e) => {
+      if (!down) return;
+      const [px, pz] = toCanvas(e);
+      if (Math.hypot(px - down[0], pz - down[1]) > 6) moved = true;
+      if (moved) { this.cx -= (px - down[0]) / (this.scale * this.zoom); this.cz -= (pz - down[1]) / (this.scale * this.zoom); down = [px, pz]; this._clampCentre(); this.draw(); }
     });
-    // Find buttons: nearest of a kind.
+    this.canvas.addEventListener("pointerup", (e) => {
+      if (down && !moved) { const [px, pz] = toCanvas(e); this.setWaypoint(this.wx(px), this.wz(pz), "Flag"); }
+      down = null;
+    });
     document.querySelectorAll(".find-btn").forEach((b) => b.addEventListener("click", () => this.find(b.dataset.find)));
+  }
+
+  _clampCentre() {
+    const half = WORLD_HALF - (WORLD_HALF / this.zoom);
+    this.cx = Math.max(-half, Math.min(half, this.cx));
+    this.cz = Math.max(-half, Math.min(half, this.cz));
   }
 
   find(kind) {
@@ -7981,9 +8302,13 @@ class BigMap {
     if (kind === "metro") list = [{ x: -52, z: 226, label: "Metro Station" }, { x: 68, z: 226, label: "Metro Station" }];
     if (kind === "jobs") list = g.jobs.filter((j) => !g.progress.jobsDone.includes(j.id)).map((j) => ({ x: j._pos.x, z: j._pos.z, label: j.title + " (" + j.villagerName + ")" }));
     if (kind === "kailash") list = [{ x: 0, z: -277, label: "Devshikhar Darshan" }];
+    const shopCat = (p) => (p.landmark ? null : catalogFor(p.name, roomTypeFor(p.name)));
+    if (kind === "shops") list = this.places.filter((p) => shopCat(p)).map((p) => ({ x: p.x, z: p.z, label: p.name }));
+    if (kind === "food") list = this.places.filter((p) => ["tea", "dhaba", "chaat", "sweets", "bakery", "icecream", "juice", "pizza", "produce"].includes(shopCat(p))).map((p) => ({ x: p.x, z: p.z, label: p.name }));
     if (!list.length) { showToast("Nothing of that kind to find right now.", 2200); return; }
     list.sort((a, b) => Math.hypot(a.x - pp.x, a.z - pp.z) - Math.hypot(b.x - pp.x, b.z - pp.z));
     this.setWaypoint(list[0].x, list[0].z, list[0].label);
+    this.cx = list[0].x; this.cz = list[0].z; if (this.zoom < 2.5) this.zoom = 2.5; this._clampCentre(); this.draw();
   }
 
   setWaypoint(x, z, label) {
@@ -7996,29 +8321,43 @@ class BigMap {
     document.getElementById("compass").hidden = !this.waypoint;
   }
 
-  open() { this.overlay.hidden = false; this.draw(); }
+  open() { const p = this.game.player.position; this.cx = p.x; this.cz = p.z; if (this.zoom < 2.5) this.zoom = 2.5; this._clampCentre(); this.overlay.hidden = false; this.draw(); }
   close() { this.overlay.hidden = true; }
   get isOpen() { return !this.overlay.hidden; }
 
-  // Live layer: vehicles, auto stands, villagers, the constable, the flag, you.
+  // Live layer: names, vehicles, auto stands, villagers, the constable, the flag, you.
   draw() {
-    const g = this.ctx, game = this.game;
-    g.clearRect(0, 0, this.size, this.size);
-    g.drawImage(this.static, 0, 0);
-    const dot = (x, z, r, fill, stroke) => { g.beginPath(); g.arc(this.px(x), this.pz(z), r, 0, Math.PI * 2); g.fillStyle = fill; g.fill(); if (stroke) { g.strokeStyle = stroke; g.lineWidth = 1.2; g.stroke(); } };
-    const icon = (x, z, ch) => { g.font = "14px system-ui, sans-serif"; g.textAlign = "center"; g.fillText(ch, this.px(x), this.pz(z) + 5); };
+    const g = this.ctx, game = this.game, S = this.size;
+    g.clearRect(0, 0, S, S);
+    // The land, scaled and panned.
+    const half = WORLD_HALF / this.zoom;
+    const srcX = (this.cx - half + WORLD_HALF) / (WORLD_HALF * 2) * this.static.width, srcZ = (this.cz - half + WORLD_HALF) / (WORLD_HALF * 2) * this.static.height;
+    const srcW = this.static.width / this.zoom;
+    g.drawImage(this.static, srcX, srcZ, srcW, srcW, 0, 0, S, S);
+    const dot = (x, z, r, fill, stroke) => { g.beginPath(); g.arc(this.sx(x), this.sz(z), r, 0, Math.PI * 2); g.fillStyle = fill; g.fill(); if (stroke) { g.strokeStyle = stroke; g.lineWidth = 1.2; g.stroke(); } };
+    const icon = (x, z, ch, size = 16) => { g.font = `${size}px system-ui, sans-serif`; g.textAlign = "center"; g.fillText(ch, this.sx(x), this.sz(z) + size * 0.35); };
+    // District names always; place names once you zoom in.
+    g.textAlign = "center"; g.lineWidth = 4; g.strokeStyle = "rgba(255,253,246,0.9)"; g.fillStyle = "#2c2417";
+    g.font = "bold 18px system-ui, sans-serif";
+    for (const [name, x, z] of [["SETUGRAM", 0, 40], ["Town", 0, 100], ["Farms", 105, -6], ["Lake", -108, 46], ["Temple Hill", 0, -140], ["SURYANAGAR", 0, 262], ["Shanti Valley", 0, -282], ["MOUNT DEVSHIKHAR", 0, -322]]) { g.strokeText(name, this.sx(x), this.sz(z)); g.fillText(name, this.sx(x), this.sz(z)); }
+    if (this.zoom >= 1.8) {
+      g.font = "bold 11px system-ui, sans-serif"; g.lineWidth = 3;
+      for (const p of this.places) { const x = this.sx(p.x), z = this.sz(p.z); if (x < -40 || z < 0 || x > S + 40 || z > S) continue; g.strokeText(p.name, x, z - 6); g.fillText(p.name, x, z - 6); }
+    }
     for (const s of AUTO_STANDS) icon(s.x, s.z, "🛺");
     for (const r of game.rideables) icon(r.group.position.x, r.group.position.z, r.kind === "car" ? "🚗" : r.kind === "bike" ? "🚲" : "🛵");
     icon(-52, 226, "🚇"); icon(68, 226, "🚇");
+    if (this.zoom >= 1.8) for (const p of this.places) { const c = p.landmark ? null : catalogFor(p.name, roomTypeFor(p.name)); if (c) icon(p.x, p.z, ["tea", "dhaba", "chaat", "sweets", "bakery", "icecream", "juice", "pizza"].includes(c) ? "🍽️" : c === "produce" ? "🍎" : c === "petrol" ? "⛽" : "🛍️", 13); }
     for (const job of game.jobs) if (!game.progress.jobsDone.includes(job.id)) dot(job._pos.x, job._pos.z, 5, "#ffce3a", "#7a5b00");
     for (const n of game.npcs) if (n.bank !== "indoors") dot(n.position.x, n.position.z, 2.5, n.def.id === "verma" ? "#1d3557" : "#ff7a45");
     const c = game.npcs.find((n) => n.def.id === "verma"); if (c) icon(c.position.x, c.position.z - 2, "👮");
-    if (this.waypoint) icon(this.waypoint.x, this.waypoint.z - 1, "🚩");
+    if (this.waypoint) icon(this.waypoint.x, this.waypoint.z - 1, "🚩", 20);
     const p = game.player.position;
-    g.save(); g.translate(this.px(p.x), this.pz(p.z)); g.rotate(-game.player.facing);
+    g.save(); g.translate(this.sx(p.x), this.sz(p.z)); g.rotate(-game.player.facing);
     g.fillStyle = "#ffffff"; g.strokeStyle = "#2c2417"; g.lineWidth = 1.5;
-    g.beginPath(); g.moveTo(0, -9); g.lineTo(6, 7); g.lineTo(0, 3.5); g.lineTo(-6, 7); g.closePath(); g.fill(); g.stroke();
+    g.beginPath(); g.moveTo(0, -10); g.lineTo(7, 8); g.lineTo(0, 4); g.lineTo(-7, 8); g.closePath(); g.fill(); g.stroke();
     g.restore();
+    document.getElementById("map-zoom-text").textContent = `${this.zoom.toFixed(1)}×`;
   }
 
   // The compass strip at the top: an arrow relative to the camera, and the distance.
@@ -8028,15 +8367,79 @@ class BigMap {
     const dx = this.waypoint.x - p.x, dz = this.waypoint.z - p.z;
     const dist = Math.hypot(dx, dz);
     if (dist < 6) { showToast(`🚩 You have reached ${this.waypoint.label}.`, 2600, "good"); this.waypoint = null; this._refreshCompass(); return; }
-    // World bearing of the flag, minus where the camera looks, gives the screen direction.
-    const bearing = Math.atan2(dx, dz);           // 0 = +z (toward the camera side)
-    const camForward = camYaw + Math.PI;           // camera looks toward -z when yaw is 0
+    const bearing = Math.atan2(dx, dz);
+    const camForward = camYaw + Math.PI;
     let rel = bearing - camForward;
     while (rel > Math.PI) rel -= Math.PI * 2;
     while (rel < -Math.PI) rel += Math.PI * 2;
     document.getElementById("compass-arrow").style.transform = `rotate(${-rel}rad)`;
     document.getElementById("compass-text").textContent = `${this.waypoint.label} · ${Math.round(dist)} m`;
   }
+}
+
+// ===== src/engine/gear.js =====
+/* ============================================================
+   gear.js — things you can hold and play with: a cricket bat, a
+   badminton racket, a skipping rope, a kite, a football, a
+   spinning top, marbles and a chess set. Hold one from the
+   backpack; F uses it.
+   ============================================================ */
+
+const GEAR_NOTES = {
+  bat: "Press F to swing it.",
+  racket: "Press F to smash.",
+  rope: "Press F to skip. Each skip is a hop.",
+  kite: "Walk and it climbs. Press F to tug the line.",
+  football: "Walk into the ball to dribble. F kicks it far.",
+  top: "Press F to spin the lattu.",
+  marbles: "Press F to flick a marble.",
+  chess: "Press F to sit and play a game (a logic puzzle).",
+};
+
+// The mesh held in the right hand. The hand is at the end of the arm pivot.
+function makeGearMesh(kind) {
+  const g = new THREE.Group();
+  if (kind === "bat") {
+    const blade = new THREE.Mesh(new THREE.BoxGeometry(0.11, 0.62, 0.04), mat(0xd9b27c)); blade.position.y = -0.36; g.add(blade);
+    const handle = new THREE.Mesh(new THREE.CylinderGeometry(0.025, 0.025, 0.3, 6), mat(0x222222)); handle.position.y = 0.05; g.add(handle);
+  } else if (kind === "racket") {
+    const handle = new THREE.Mesh(new THREE.CylinderGeometry(0.02, 0.02, 0.4, 6), mat(0x222222)); handle.position.y = -0.15; g.add(handle);
+    const head = new THREE.Mesh(new THREE.TorusGeometry(0.14, 0.015, 6, 16), mat(0xd62828)); head.position.y = -0.5; g.add(head);
+    const strings = new THREE.Mesh(new THREE.CircleGeometry(0.13, 12), new THREE.MeshStandardMaterial({ color: 0xffffff, transparent: true, opacity: 0.5, side: THREE.DoubleSide })); strings.position.y = -0.5; g.add(strings);
+  } else if (kind === "top") {
+    const cone = new THREE.Mesh(new THREE.ConeGeometry(0.09, 0.14, 10), mat(0xd62828)); cone.rotation.x = Math.PI; g.add(cone);
+    const cap = new THREE.Mesh(new THREE.CylinderGeometry(0.09, 0.09, 0.05, 10), mat(0xffd21e)); cap.position.y = 0.09; g.add(cap);
+  } else if (kind === "marbles") {
+    for (let i = 0; i < 4; i++) { const m = new THREE.Mesh(new THREE.SphereGeometry(0.03, 6, 5), mat([0x3a86ff, 0x2a9d8f, 0xffd21e, 0xd62828][i])); m.position.set((i % 2) * 0.05 - 0.02, -0.02 - Math.floor(i / 2) * 0.05, 0.03); g.add(m); }
+  } else if (kind === "chess") {
+    const box = new THREE.Mesh(new THREE.BoxGeometry(0.28, 0.05, 0.28), mat(0x8a5626)); g.add(box);
+    for (let i = 0; i < 16; i++) { const sq = new THREE.Mesh(new THREE.BoxGeometry(0.06, 0.01, 0.06), mat((i + Math.floor(i / 4)) % 2 ? 0xffffff : 0x222222)); sq.position.set(-0.1 + (i % 4) * 0.066, 0.03, -0.1 + Math.floor(i / 4) * 0.066); g.add(sq); }
+  } else if (kind === "rope") {
+    const h = new THREE.Mesh(new THREE.CylinderGeometry(0.02, 0.02, 0.14, 6), mat(0xd62828)); g.add(h);
+  }
+  g.userData.dynamic = true;
+  return g;
+}
+
+// A football that rolls, bounces off walls, and can be kicked.
+function makeFootball() {
+  const ball = new THREE.Mesh(new THREE.IcosahedronGeometry(0.22, 1), new THREE.MeshStandardMaterial({ color: 0xffffff, flatShading: true }));
+  const patches = new THREE.Mesh(new THREE.IcosahedronGeometry(0.225, 0), new THREE.MeshStandardMaterial({ color: 0x222222, flatShading: true, wireframe: true }));
+  ball.add(patches);
+  ball.userData = { dynamic: true, vx: 0, vz: 0, vy: 0 };
+  ball.castShadow = true;
+  return ball;
+}
+
+// A kite: a diamond on a string, with a tail.
+function makeKite() {
+  const g = new THREE.Group();
+  const shape = new THREE.Shape(); shape.moveTo(0, 0.6); shape.lineTo(0.45, 0); shape.lineTo(0, -0.7); shape.lineTo(-0.45, 0); shape.closePath();
+  const body = new THREE.Mesh(new THREE.ShapeGeometry(shape), new THREE.MeshStandardMaterial({ color: 0xd62828, side: THREE.DoubleSide, flatShading: true })); g.add(body);
+  const half = new THREE.Mesh(new THREE.ShapeGeometry(shape), new THREE.MeshStandardMaterial({ color: 0xffd21e, side: THREE.DoubleSide, flatShading: true })); half.scale.set(0.5, 1, 1); half.position.x = 0.001; g.add(half);
+  for (let i = 0; i < 5; i++) { const bow = new THREE.Mesh(new THREE.BoxGeometry(0.12, 0.06, 0.01), mat([0x3a86ff, 0x2a9d8f, 0xffffff][i % 3])); bow.position.set(0, -0.9 - i * 0.28, 0); bow.userData.tail = i; g.add(bow); }
+  g.userData.dynamic = true;
+  return g;
 }
 
 // ===== src/main.js =====
@@ -8128,6 +8531,9 @@ class Game {
       return false;
     };
     this.applyOutfit();
+    this._gear = { ball: null, kite: null, line: null };
+    this.player.setHeld(this.progress.held || null);
+    this._gearChanged();
     this.minimap = new Minimap(this.world);
     this.bigmap = new BigMap(this);
     this.minimap.rideables = this.rideables;
@@ -8356,43 +8762,224 @@ class Game {
     if (o.shirt != null) { paint(p.torso, o.shirt); for (const k of ["armL", "armR"]) paint(p[k].children[0], o.shirt); }
     if (o.trousers != null) for (const k of ["legL", "legR"]) paint(p[k].children[0], o.trousers);
     if (o.hair != null) paint(p.hair, o.hair);
+    if (o.shoes != null) for (const k of ["legL", "legR"]) paint(p[k].children[1], o.shoes);
   }
 
-  // A shop panel: buy with rupees.
+  // ---- Shopping: choose, work out the bill, pay in cash, count the change ----
   _openShop(name, key, keeper = "Shopkeeper") {
     const items = SHOP_CATALOGS[key];
     if (!items) return;
-    const render = () => {
+    if (this.progress.money < 0) { Audio.playRetry(); showToast(`${keeper}: "Your wallet is in minus, Engineer. Do your community work first."`, 3800, "bad"); return; }
+    const cart = new Map(); // item id -> qty
+    const qtyOf = (it) => cart.get(it.id) || 0;
+    const lines = () => items.filter((it) => qtyOf(it) > 0).map((it) => ({ it, qty: qtyOf(it), total: qtyOf(it) * it.price }));
+    const billTotal = () => lines().reduce((n, l) => n + l.total, 0);
+    let wrongBill = 0, wrongChange = 0;
+
+    // Step 1: browse the shelves and fill the basket.
+    const browse = () => {
       const money = this.progress.money;
+      const count = lines().reduce((n, l) => n + l.qty, 0);
       const card = openPanel(`
         <div class="job-title-row"><h2>${name}</h2><button class="ghost-btn" id="shop-close">Leave</button></div>
-        <p class="job-brief">${keeper}: "Welcome! You have <b>${fmtMoney(money)}</b>. Earn more by solving the village's problems."</p>
-        <div class="shop-list">${items.map((it, i) => `<div class="shop-item"><div>${it.name}<small>${effectText(it)}</small></div><span class="price">₹${it.price}</span><button class="buy-btn" data-i="${i}" ${money < it.price ? "disabled" : ""}>Buy</button></div>`).join("")}</div>
-        <p class="tiny-note">⚡ Energy keeps you walking fast. 🧢 Clothes change how you look. 📘 Hint tokens reveal a worked example in any puzzle. ⛽ Petrol is needed to ride motor vehicles.</p>
+        <p class="job-brief">${keeper}: "Welcome! Pick what you want and how many. You have <b>${fmtMoney(money)}</b>."</p>
+        <div class="shop-list">${items.map((it) => `<div class="cart-row"><div>${it.icon} ${it.name}<small>${effectText(it)}</small></div><span class="price">₹${it.price}</span><div class="qty"><button class="qty-btn minus" data-id="${it.id}" data-d="-1" ${qtyOf(it) ? "" : "disabled"}>−</button><span class="qty-num">${qtyOf(it)}</span><button class="qty-btn" data-id="${it.id}" data-d="1">+</button></div></div>`).join("")}</div>
+        <div class="btn-row"><button class="big-btn" id="shop-counter" ${count ? "" : "disabled"}>Go to the counter (${count} item${count === 1 ? "" : "s"})</button><span class="tiny-note" style="margin:0">The bill is worked out at the counter. No prices are added for you.</span></div>
       `);
       card.querySelector("#shop-close").addEventListener("click", () => closePanel());
-      card.querySelectorAll(".buy-btn").forEach((b) => b.addEventListener("click", () => { this._buy(items[Number(b.dataset.i)]); render(); }));
+      card.querySelectorAll(".qty-btn").forEach((b) => b.addEventListener("click", () => {
+        const it = items.find((x) => x.id === b.dataset.id);
+        cart.set(it.id, Math.max(0, Math.min(9, qtyOf(it) + Number(b.dataset.d))));
+        Audio.playPick();
+        browse();
+      }));
+      card.querySelector("#shop-counter").addEventListener("click", () => { wrongBill = 0; bill(); });
     };
-    render();
+
+    // Step 2: the bill. The child multiplies and adds; the shopkeeper only checks.
+    const bill = () => {
+      const ls = lines();
+      const card = openPanel(`
+        <div class="job-title-row"><h2>${name}: the bill</h2><button class="ghost-btn" id="bill-back">Back to the shelves</button></div>
+        <p class="job-brief">${keeper}: "Let me write it down. You tell me the total."</p>
+        <table class="bill">${ls.map((l) => `<tr><td>${l.it.icon} ${l.it.name}</td><td>${l.qty} × ₹${l.it.price}</td><td>₹ ____</td></tr>`).join("")}<tr><td colspan="2"><b>Total</b></td><td><b>₹ ?</b></td></tr></table>
+        <div class="num-row"><span class="num-unit">Total ₹</span><input class="num-input" id="bill-in" type="number" inputmode="numeric" placeholder="?"><button class="big-btn" id="bill-check">Check</button></div>
+        <div class="hint" id="bill-hint" hidden></div>
+        <div class="worked-example" id="bill-example" hidden></div>
+      `);
+      card.querySelector("#bill-back").addEventListener("click", browse);
+      const input = card.querySelector("#bill-in"), hint = card.querySelector("#bill-hint"), ex = card.querySelector("#bill-example");
+      const check = () => {
+        const v = Number(input.value);
+        if (input.value.trim() === "") { hint.hidden = false; hint.textContent = "Type the total first."; return; }
+        countAttempt(this.profile, this.progress, "shop-bill");
+        const T = billTotal();
+        if (v === T) { Audio.playStep(); wrongChange = 0; pay(); return; }
+        wrongBill++; Audio.playRetry();
+        hint.hidden = false;
+        hint.textContent = `${v < T ? "Too little." : "Too much."} For each line multiply the number of pieces by the price of one. Then add all the lines.`;
+        if (wrongBill >= 2) { ex.hidden = false; ex.innerHTML = `<b>Line by line:</b> ${ls.map((l) => `${l.qty} × ${l.it.price} = ${l.total}`).join(", ")}. Now add them up.`; }
+      };
+      card.querySelector("#bill-check").addEventListener("click", check);
+      input.addEventListener("keydown", (e) => { if (e.key === "Enter") check(); });
+      setTimeout(() => input.focus(), 50);
+    };
+
+    // Step 3: take out the cash. Notes and coins are tapped into the shopkeeper's hand.
+    const pay = () => {
+      const T = billTotal(), money = this.progress.money;
+      const handed = [];
+      const sum = () => handed.reduce((a, b) => a + b, 0);
+      const render = () => {
+        const H = sum();
+        const card = openPanel(`
+          <div class="job-title-row"><h2>${name}: pay ₹${T}</h2><button class="ghost-btn" id="pay-back">Back</button></div>
+          <p class="job-brief">${keeper}: "That is <b>₹${T}</b>. Take out your cash." You have <b>${fmtMoney(money)}</b> in your wallet.</p>
+          ${money < T ? `<div class="hint">Not enough money for this bill. Go back and take something out of the basket, or earn more first.</div>` : `
+          <div class="section-label">Your wallet: tap notes and coins to hand them over</div>
+          <div class="cash-drawer">${CASH.map((n) => `<button class="cash-btn n${n}" data-n="${n}" ${H + n > money ? "disabled" : ""}>₹${n}</button>`).join("")}</div>
+          <div class="section-label">In the shopkeeper's hand: ₹${H} (tap one to take it back)</div>
+          <div class="handed">${handed.map((n, i) => `<button class="cash-chip" data-i="${i}">₹${n}</button>`).join("") || "<span class='tiny-note' style='margin:0'>nothing yet</span>"}</div>
+          <div class="btn-row"><button class="big-btn" id="pay-give" ${H >= T ? "" : "disabled"}>Hand over ₹${H}</button>${H > 0 && H < T ? `<span class="tiny-note" style="margin:0">₹${T - H} more is needed.</span>` : ""}</div>`}
+        `);
+        card.querySelector("#pay-back").addEventListener("click", () => bill());
+        card.querySelectorAll(".cash-btn").forEach((b) => b.addEventListener("click", () => { handed.push(Number(b.dataset.n)); playCoin(); render(); }));
+        card.querySelectorAll(".cash-chip").forEach((b) => b.addEventListener("click", () => { handed.splice(Number(b.dataset.i), 1); render(); }));
+        const give = card.querySelector("#pay-give");
+        if (give) give.addEventListener("click", () => { if (sum() === T) done(T, 0); else change(T, sum()); });
+      };
+      render();
+    };
+
+    // Step 4: count the change.
+    const change = (T, H) => {
+      const card = openPanel(`
+        <div class="job-title-row"><h2>${name}: your change</h2></div>
+        <p class="job-brief">${keeper}: "You gave me <b>₹${H}</b> for a bill of <b>₹${T}</b>. How much change do I owe you?"</p>
+        <div class="num-row"><span class="num-unit">Change ₹</span><input class="num-input" id="chg-in" type="number" inputmode="numeric" placeholder="?"><button class="big-btn" id="chg-check">Check</button></div>
+        <div class="hint" id="chg-hint" hidden></div>
+      `);
+      const input = card.querySelector("#chg-in"), hint = card.querySelector("#chg-hint");
+      const check = () => {
+        const v = Number(input.value);
+        if (input.value.trim() === "") { hint.hidden = false; hint.textContent = "Type the change first."; return; }
+        countAttempt(this.profile, this.progress, "shop-change");
+        if (v === H - T) { done(T, H - T); return; }
+        wrongChange++; Audio.playRetry();
+        hint.hidden = false;
+        hint.textContent = `${v < H - T ? "That is too little; the shopkeeper would keep your money!" : "That is too much; the shopkeeper would lose money!"} Change = money given − bill. ${wrongChange >= 2 ? `Work it out: ${H} − ${T}.` : "Count up from the bill to what you gave."}`;
+      };
+      card.querySelector("#chg-check").addEventListener("click", check);
+      input.addEventListener("keydown", (e) => { if (e.key === "Enter") check(); });
+      setTimeout(() => input.focus(), 50);
+    };
+
+    // Done: pay, receive the goods, print the receipt.
+    const done = (T, chg) => {
+      const ls = lines();
+      this.progress.money -= T;
+      const notes = [];
+      for (const l of ls) notes.push(this._receive(l.it, l.qty));
+      saveProgress(this.profile, this.progress);
+      this.ui.refreshRank();
+      Audio.playSuccess();
+      const card = openPanel(`
+        <div class="job-title-row"><h2>Receipt: ${name}</h2></div>
+        <table class="bill">${ls.map((l) => `<tr><td>${l.it.icon} ${l.it.name}</td><td>${l.qty} × ₹${l.it.price}</td><td>₹${l.total}</td></tr>`).join("")}<tr><td colspan="2"><b>Total</b></td><td><b>₹${T}</b></td></tr>${chg ? `<tr><td colspan="2">Change returned</td><td>₹${chg}</td></tr>` : `<tr><td colspan="3">Exact money. Shabash!</td></tr>`}</table>
+        <div class="solved-banner">${keeper}: "Thank you, Engineer. Wallet now <b>${fmtMoney(this.progress.money)}</b>." ${notes.filter(Boolean).join(" ")}
+        <div class="btn-row"><button class="big-btn" id="rc-bag">Open the backpack</button><button class="ghost-btn" id="rc-more">Shop more</button><button class="ghost-btn" id="rc-leave">Leave</button></div></div>
+      `);
+      cart.clear();
+      card.querySelector("#rc-bag").addEventListener("click", () => this._openBag());
+      card.querySelector("#rc-more").addEventListener("click", browse);
+      card.querySelector("#rc-leave").addEventListener("click", () => closePanel());
+    };
+
+    browse();
   }
 
-  _buy(it) {
-    if (this.progress.money < it.price) { Audio.playRetry(); return; }
-    this.progress.money -= it.price;
+  // Put a bought item where it belongs. Returns a short note for the receipt.
+  _receive(it, qty) {
     const pr = this.progress;
-    let msg = `Bought ${it.name} for ₹${it.price}.`;
-    if (it.kind === "energy") { pr.energy = Math.min(100, pr.energy + it.value); msg += ` ⚡ +${it.value} energy.`; }
-    else if (it.kind === "fuel") { pr.fuel += it.value; msg += ` ⛽ ${pr.fuel.toFixed(1)} L in the tank.`; }
-    else if (it.kind === "shirt") { pr.outfit.shirt = it.value; this.applyOutfit(); msg += " Looking smart!"; }
-    else if (it.kind === "trousers") { pr.outfit.trousers = it.value; this.applyOutfit(); msg += " Looking smart!"; }
-    else if (it.kind === "hair") { pr.outfit.hair = it.value; this.applyOutfit(); msg += " New hair!"; }
-    else if (it.kind === "hint") { pr.hints += it.value; msg += ` 📘 Hint tokens: ${pr.hints}.`; }
-    else if (it.kind === "item") { pr.items.push(it.value); msg += " It is in your backpack (see the notebook)."; }
-    saveProgress(this.profile, pr);
-    this.ui.refreshRank();
-    playCoin();
-    showToast(msg, 3000, "good");
+    if (it.kind === "fuel") { pr.fuel += it.value * qty; return `⛽ ${pr.fuel.toFixed(1)} L in the tank.`; }
+    if (it.kind === "hint") { pr.hints += it.value * qty; return `📘 Hint tokens: ${pr.hints}.`; }
+    if (it.kind === "hair") { pr.outfit.hair = it.value; this.applyOutfit(); return "💇 New hair!"; }
+    if (it.kind === "shirt" || it.kind === "trousers" || it.kind === "shoes") {
+      if (!pr.wardrobe.some((w) => w.id === it.id)) pr.wardrobe.push({ id: it.id, name: it.name, kind: it.kind, value: it.value, icon: it.icon });
+      pr.outfit[it.kind] = it.value; this.applyOutfit();
+      return `${it.icon} Wearing the ${it.name.toLowerCase()} now.`;
+    }
+    const have = pr.bag.find((b) => b.id === it.id);
+    if (have) have.qty += qty; else pr.bag.push({ id: it.id, name: it.name, kind: it.kind, value: it.value, icon: it.icon, qty });
+    return "";
   }
+
+  // ---- The backpack: eat, wear, hold, read ----
+  _openBag() {
+    const pr = this.progress;
+    const held = pr.held;
+    const row = (b, btn) => `<div class="bag-row ${b.on ? "on" : ""}"><div>${b.icon || "🎒"} ${b.name}${b.qty > 1 ? ` <b>×${b.qty}</b>` : ""}<small>${b.note || ""}</small></div>${btn}</div>`;
+    const food = pr.bag.filter((b) => b.kind === "food"), gear = pr.bag.filter((b) => b.kind === "gear"), books = pr.bag.filter((b) => b.kind === "book"), other = pr.bag.filter((b) => !["food", "gear", "book"].includes(b.kind));
+    const card = openPanel(`
+      <div class="job-title-row"><h2>🎒 Backpack</h2><button class="ghost-btn" id="bag-close">Close</button></div>
+      <p class="job-brief">Wallet <b>${fmtMoney(pr.money)}</b> · energy <b>${Math.round(pr.energy)}</b> · hint tokens <b>${pr.hints}</b> · petrol <b>${fmtFuel(pr.fuel)}</b></p>
+      <div class="section-label">Food and drink</div>
+      <div class="bag-list">${food.map((b) => row({ ...b, note: `+${b.value} energy` }, `<button class="use-btn" data-use="eat" data-id="${b.id}">Eat</button>`)).join("") || "<span class='tiny-note' style='margin:0'>Nothing to eat. Tea stalls, carts and the sabzi mandi sell food.</span>"}</div>
+      <div class="section-label">Wardrobe (tap to wear)</div>
+      <div class="bag-list">${pr.wardrobe.map((w) => { const on = pr.outfit[w.kind] === w.value; return row({ ...w, on, note: w.kind }, on ? `<span class="tiny-note" style="margin:0">wearing</span>` : `<button class="use-btn" data-use="wear" data-id="${w.id}">Wear</button>`); }).join("") || "<span class='tiny-note' style='margin:0'>No clothes yet. The Tailor, Cloth Store and Shoe Shop sell them.</span>"}</div>
+      <div class="section-label">Gear (hold it, then press F to play)</div>
+      <div class="bag-list">${gear.map((b) => { const on = held === b.value; return row({ ...b, on, note: GEAR_NOTES[b.value] || "" }, `<button class="use-btn ${on ? "off" : ""}" data-use="hold" data-id="${b.id}">${on ? "Put away" : "Hold"}</button>`); }).join("") || "<span class='tiny-note' style='margin:0'>No gear yet. The Sports Shop and Toy Shop sell it.</span>"}</div>
+      <div class="section-label">Books</div>
+      <div class="bag-list">${books.map((b) => row(b, `<button class="use-btn" data-use="read" data-id="${b.id}">Read</button>`)).join("") || "<span class='tiny-note' style='margin:0'>No books yet.</span>"}</div>
+      <div class="section-label">Other things</div>
+      <div class="bag-list">${other.map((b) => row(b, `<button class="use-btn" data-use="use" data-id="${b.id}">Use</button>`)).join("") || "<span class='tiny-note' style='margin:0'>Empty.</span>"}</div>
+    `);
+    card.querySelector("#bag-close").addEventListener("click", () => closePanel());
+    card.querySelectorAll(".use-btn").forEach((b) => b.addEventListener("click", () => this._useItem(b.dataset.use, b.dataset.id)));
+  }
+
+  _useItem(how, id) {
+    const pr = this.progress;
+    if (how === "wear") {
+      const w = pr.wardrobe.find((x) => x.id === id); if (!w) return;
+      pr.outfit[w.kind] = w.value; this.applyOutfit(); saveProgress(this.profile, pr); Audio.playPick();
+      showToast(`${w.icon} Wearing the ${w.name.toLowerCase()}.`, 2200, "good"); this._openBag(); return;
+    }
+    const b = pr.bag.find((x) => x.id === id); if (!b) return;
+    if (how === "eat") {
+      b.qty--; if (b.qty <= 0) pr.bag.splice(pr.bag.indexOf(b), 1);
+      pr.energy = Math.min(100, pr.energy + b.value);
+      this.player.eatT = 2.2; // lips move while chewing
+      saveProgress(this.profile, pr); this.ui.refreshRank(); Audio.playStep();
+      showToast(`${b.icon} Mmm, ${b.name.toLowerCase()}. ⚡ Energy ${Math.round(pr.energy)}.`, 2400, "good");
+      closePanel(); return;
+    }
+    if (how === "hold") {
+      const nowHeld = pr.held === b.value ? null : b.value;
+      pr.held = nowHeld; saveProgress(this.profile, pr);
+      this.player.setHeld(nowHeld);
+      this._gearChanged();
+      Audio.playPick();
+      if (nowHeld) showToast(`${b.icon} Holding the ${b.name.toLowerCase()}. ${GEAR_NOTES[b.value] || ""}`, 3200, "good");
+      closePanel(); return;
+    }
+    if (how === "read") {
+      if (b.value === "atlas") { closePanel(); this.bigmap.open(); return; }
+      this._readStory(b.value); return;
+    }
+    // Other things.
+    if (b.id === "firstaid" || b.id === "bandage") { pr.energy = Math.min(100, pr.energy + 30); b.qty--; if (b.qty <= 0) pr.bag.splice(pr.bag.indexOf(b), 1); saveProgress(this.profile, pr); this.ui.refreshRank(); showToast("🩹 Patched up. ⚡ +30 energy.", 2400, "good"); closePanel(); return; }
+    const notes = { Torch: "🔦 You switch the torch on. It lights the dark rooms of tall towers.", Sunscreen: "🧴 Sunscreen on. No sunburn at the lake today.", "Bicycle bell": "🔔 Tring tring! It is fitted to the next bicycle you ride.", Notebook: "✏️ You note down today's problems. A neat engineer writes things down.", Rice: "🍚 Give the rice to Maa at home; she will cook it for dinner.", Dal: "🫘 Dal for dinner. Maa will be pleased.", "Cooking oil": "🫙 For the kitchen at home.", Soap: "🧼 Wash your hands before you eat!", Candles: "🕯️ Handy when the power goes.", Matchbox: "🔥 Only with a grown-up nearby.", "Wrist watch": "⌚ Now you always know the time. Trains wait for nobody.", Calculator: "🧮 Tempting, but the shopkeeper wants YOUR sums, not the calculator's.", "Pocket radio": "📻 Old film songs from Suryanagar FM.", Batteries: "🔋 For the torch and the radio.", "Cloth doll": "🧸 Gudiya will love this.", "Toy car": "🚗 Vroom! It runs across the floor at home.", Crayons: "🖍️ You draw the bridge you built.", "Geometry box": "📐 Angles, circles, straight lines. An engineer's best friend.", Eraser: "🧽 Mistakes rubbed out, lessons kept." };
+    showToast(notes[b.value] || `${b.icon} ${b.name}.`, 3200, "good"); closePanel();
+  }
+
+  // A story book: read it, then one question about it for ₹20.
+  _readStory(id) {
+    const st = STORIES[id]; if (!st) return;
+    const ctx = { profile: this.profile, level: 1, world: this.world, audio: Audio, countAttempt: () => countAttempt(this.profile, this.progress, "story:" + id), onSolve: () => { this.addMoney(20, "read a story"); } };
+    runStepQuiz(ctx, { title: st.title, intro: `<i>${st.text}</i>`, goal: "You read the whole story. One question, ₹20.", steps: [{ q: st.q, choices: st.choices, answer: st.answer, hint: "Read the story once more, slowly." }], doneBtn: "Close the book", doneHtml: "<b>Well read!</b>" });
+  }
+
 
   // A test panel: one multiple choice question at a time, no retries, a score at the end.
   _runTest(title, intro, questions, passMark, onDone) {
@@ -8562,6 +9149,88 @@ class Game {
       animateHuman(cop, dt, true, 1);
       if (ps.t > 5) { cop.visible = false; this._policeStop = null; }
     }
+  }
+
+  // ---- Gear in the world: the football and the kite ----
+  _gearChanged() {
+    const w = this.world, g = this._gear, held = this.player.held;
+    if (held !== "football" && g.ball) { w.scene.remove(g.ball); g.ball = null; }
+    if (held !== "kite" && g.kite) { w.scene.remove(g.kite); w.scene.remove(g.line); g.kite = null; g.line = null; }
+    if (held === "football" && !g.ball) {
+      g.ball = makeFootball();
+      const pp = this.player.position, f = this.player.facing;
+      g.ball.position.set(pp.x + Math.sin(f) * 1.4, w.groundAt(pp.x, pp.z) + 0.22, pp.z + Math.cos(f) * 1.4);
+      w.scene.add(g.ball);
+    }
+    if (held === "kite" && !g.kite) {
+      g.kite = makeKite();
+      const geo = new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(), new THREE.Vector3()]);
+      g.line = new THREE.Line(geo, new THREE.LineBasicMaterial({ color: 0x333333 }));
+      g.line.frustumCulled = false; g.line.userData.dynamic = true;
+      w.scene.add(g.kite); w.scene.add(g.line);
+    }
+  }
+
+  _updateGear(dt, elapsed, usePressed) {
+    const w = this.world, g = this._gear, pl = this.player, held = pl.held;
+    if (!held) return;
+    const pp = pl.position, indoors = !!w.currentRoom, riding = !!pl.riding;
+    if (usePressed && !riding) {
+      if (held === "bat" || held === "racket") { pl.swingT = 0.45; playWhoosh(); }
+      else if (held === "rope") { if (pl.jumpT <= 0) { pl.jumpT = 0.6; Audio.playStep(); } }
+      else if (held === "top") { pl.spinT = 4; showToast("🪀 The lattu spins!", 1600, "good"); Audio.playPick(); }
+      else if (held === "marbles") { playMarble(); showToast("🔮 Flick! The marble rolls across the ground.", 1600, "good"); }
+      else if (held === "chess") this._playChess();
+      else if (held === "kite" && g.kite) { g.kite.userData.tug = 1; Audio.playPick(); }
+      else if (held === "football" && g.ball) { const f = pl.facing; g.ball.userData.vx = Math.sin(f) * 14; g.ball.userData.vz = Math.cos(f) * 14; g.ball.userData.vy = 5; playKick(); }
+    }
+    if (held === "football" && g.ball) {
+      const b = g.ball, u = b.userData;
+      // Dribble: walking into the ball nudges it along.
+      const dx = b.position.x - pp.x, dz = b.position.z - pp.z, d = Math.hypot(dx, dz);
+      if (d < 0.9 && pl.speedKmh > 1 && !riding) { const f = pl.facing; u.vx = Math.sin(f) * 5; u.vz = Math.cos(f) * 5; u.vy = 1.2; Audio.playPick(); }
+      if (Math.abs(u.vx) + Math.abs(u.vz) > 0.02 || u.vy !== 0) {
+        const nx = b.position.x + u.vx * dt, nz = b.position.z + u.vz * dt;
+        if (w.isWalkable(nx, b.position.z)) b.position.x = nx; else u.vx = -u.vx * 0.5;
+        if (w.isWalkable(b.position.x, nz)) b.position.z = nz; else u.vz = -u.vz * 0.5;
+        u.vy -= 14 * dt;
+        const ground = w.groundAt(b.position.x, b.position.z) + 0.22;
+        b.position.y += u.vy * dt;
+        if (b.position.y < ground) { b.position.y = ground; u.vy = u.vy < -1.5 ? -u.vy * 0.45 : 0; }
+        const slow = Math.max(0, 1 - dt * 0.9);
+        u.vx *= slow; u.vz *= slow;
+        b.rotation.x += u.vz * dt / 0.22; b.rotation.z -= u.vx * dt / 0.22;
+      }
+      // Lost it? It comes back to your feet.
+      if (d > 45 || indoors !== (b.userData.indoor || false)) { b.position.set(pp.x + 1.2, w.groundAt(pp.x, pp.z) + 0.22, pp.z); u.vx = u.vz = u.vy = 0; b.userData.indoor = indoors; }
+    }
+    if (held === "kite" && g.kite) {
+      const k = g.kite, u = k.userData;
+      k.visible = g.line.visible = !indoors && !riding;
+      if (k.visible) {
+        u.h = u.h == null ? 4 : u.h;
+        const target = pl.speedKmh > 1 ? 9 : 4.5;
+        u.h += (target - u.h) * Math.min(1, dt * 0.6);
+        if (u.tug) { u.h += 1.5; u.tug = 0; }
+        const back = pl.facing + Math.PI;
+        const kx = pp.x + Math.sin(back) * 3.5 + Math.sin(elapsed * 0.9) * 1.6, kz = pp.z + Math.cos(back) * 3.5 + Math.cos(elapsed * 0.7) * 1.2;
+        const ky = w.groundAt(pp.x, pp.z) + u.h + Math.sin(elapsed * 1.6) * 0.5;
+        k.position.set(kx, ky, kz);
+        k.rotation.set(0.5, pl.facing, Math.sin(elapsed * 2) * 0.3);
+        k.children.forEach((c) => { if (c.userData.tail != null) c.position.x = Math.sin(elapsed * 6 + c.userData.tail) * 0.15; });
+        const pos = g.line.geometry.attributes.position;
+        pos.setXYZ(0, pp.x, w.groundAt(pp.x, pp.z) + 1.2, pp.z); pos.setXYZ(1, kx, ky - 0.6, kz); pos.needsUpdate = true;
+      }
+    }
+  }
+
+  // A game of chess on a bench: one logic puzzle, paid like any situation.
+  _playChess() {
+    const pool = SITUATIONS.filter((x) => x.cat === "logic");
+    const sit = instantiateSituation(pool[Math.floor(Math.random() * pool.length)].id, this.profile, Math.floor(Math.random() * 50));
+    const ctx = { profile: this.profile, level: 1, world: this.world, audio: Audio, countAttempt: () => countAttempt(this.profile, this.progress, "chess"), onSolve: () => this.addMoney(30, "won at chess") };
+    const steps = sit.steps ? sit.steps : [sit.choices ? { q: sit.q, choices: sit.choices, answer: sit.answer, hint: sit.hint } : { q: sit.q, answer: sit.answer, unit: sit.unit, hint: sit.hint, example: sit.example }];
+    runStepQuiz(ctx, { title: "♟️ A game of chess", intro: `You set the board on a bench. Your opponent thinks hard, then says: "${sit.story}"`, goal: "Checkmate comes to the clear thinker. Solve it to win the game (₹30).", steps, doneBtn: "Checkmate!", doneHtml: "<b>You win the game.</b> Your opponent shakes your hand." });
   }
 
   // Community work: each problem solved for a villager refunds part of the challan.
@@ -8916,8 +9585,9 @@ class Game {
     ];
     // A counter to buy things in shops, eateries and the mall.
     const cat = catalogFor(door.label, room.type);
-    if (cat && ["shop", "eatery", "mall", "clinic"].includes(room.type)) {
-      this.roomInteractables.push({ pos: { x: room.x0, z: room.z0 - 0.3 }, radius: 2.0, prompt: () => `Buy at the counter (${fmtMoney(this.progress.money)})`, activate: () => this._openShop(door.label, cat, room.occupant.name) });
+    if (cat && ["shop", "eatery", "mall", "clinic", "supermarket"].includes(room.type)) playShopBell();
+    if (cat && ["shop", "eatery", "mall", "clinic", "supermarket", "station"].includes(room.type)) {
+      this.roomInteractables.push({ pos: room.counterPos || { x: room.x0, z: room.z0 - 0.3 }, radius: 2.2, prompt: () => `Buy at the counter (${fmtMoney(this.progress.money)})`, activate: () => this._openShop(door.label, cat, room.occupant.name) });
     }
     if (room.hasLift) {
       this.roomInteractables.push({
@@ -9073,6 +9743,8 @@ class Game {
       this._lastBlockToast = elapsed;
       showToast(this.player.blockedBy === "road" ? "Vehicles stay on the road! No grass, no footpaths." : "Auto brake: something is in the way.", 2200, "bad");
     }
+    // Gear you hold: the ball rolls, the kite flies, F swings or skips.
+    this._updateGear(dt, elapsed, !blocked && this.input.usePressed());
     // Roads that teach: braking, lights, bumps, crossings, the railway gate.
     this._checkTraffic(dt, elapsed);
     if (!this.player.riding || this.player.riding.kind === "metro") document.getElementById("speedo").hidden = true;
@@ -9098,6 +9770,14 @@ class Game {
 
     // Ambient sound: wind follows the gusts; birds, cows and ducks now and then.
     ambientTick(0.5 + Math.sin(elapsed * 0.35) * 0.5);
+    // Engine hum while riding, crowd murmur near markets, traffic rumble in the city.
+    engineTick(this.player.riding ? this.player.riding.kind : null, this.player.speedKmh, dt);
+    let crowd = 0;
+    if (!this.world.currentRoom) for (const [hx, hz, r] of MARKET_HUBS) { const d = Math.hypot(pp.x - hx, pp.z - hz); if (d < r) crowd = Math.max(crowd, 1 - d / r); }
+    const traffic = this.world.currentRoom ? 0 : pp.z > CITY.z1 - 10 ? 1 : pp.z > 80 && pp.z < 150 ? 0.35 : 0;
+    streetTick(crowd, traffic);
+    this._chatterT = (this._chatterT || 0) - dt;
+    if (crowd > 0.3 && this._chatterT <= 0) { this._chatterT = 1.2 + Math.random() * 3 / crowd; playChatter(); }
     const amb = this._ambient;
     amb.chirp -= dt; amb.moo -= dt; amb.quack -= dt; amb.horn -= dt; amb.bell -= dt;
     // The chant grows as you go deeper into the Shanti Valley.

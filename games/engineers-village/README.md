@@ -24,6 +24,18 @@ Published copy: https://claude.ai/code/artifact/675adcb1-3c28-41fa-bf7f-274f4ca0
   topics. Each regenerates its numbers on replay. See `SITUATIONS` in the script.
 - Progress saves per profile in the browser (localStorage). A parent view shows
   attempts and topics covered (long press the notebook).
+- Real shopping: pick items and quantities, work out the bill, hand over notes
+  and coins from the wallet, count the change. Around 40 shops and stalls across
+  Setugram Bazaar, the town, Sector 18 and two city market blocks.
+- A backpack (B): eat food for energy, wear bought clothes and shoes, hold gear
+  (bat, racket, football, kite, skipping rope, spinning top, marbles, chess) and
+  play with it (F), read story books for a question and a reward.
+- Larger interiors with several rooms joined by doorways: home, school, clinic,
+  office, mall, supermarket, lobby, station and hall have floor plans.
+- A zoomable map (M): scroll or buttons to zoom, drag to pan, a place list, and
+  Find buttons. The corner minimap is a close-up around the player.
+- Wheels roll at true speed with spokes and cranks; engine hum while riding,
+  market murmur near bazaars, traffic rumble in the city.
 
 ## Version history
 

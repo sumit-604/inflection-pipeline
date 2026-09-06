@@ -1,0 +1,31 @@
+stage: B12c
+company: "CEIGALL"
+run_date: "2026-09-06"
+model: claude-opus-4-8
+status: complete
+scope: "phase-1 only: Gate 0 (B01) + Emerging Moat (B07). Valuation audit deferred to phase 3."
+gate0: {rules_checked: 51, fails: []}
+emoat:
+  rules_checked: 34
+  fails:
+    - "E04: Section 2C capex-embedded-growth arithmetic not shown; capex_embedded_growth_pct reported as 0 meaning not-applicable"
+    - "E11: completionist recount line states 4 categories is 'below' the 3-6 base rate; 4 is inside it"
+    - "E31: evidence_mix claim count (5) understates the >=7 management-claim items tagged in the report body"
+    - "E34: block YAML differs from report YAML beyond the disclosed brace repair ('all [documented-glyph]' -> 'all documented')"
+valuation: {rules_checked: 0, fails: [], status: "pending phase 3"}
+business_understanding_narrative: {present: false, five_questions_answered: false, prose_only: false, section6_candidates_named: 0, valuation_vocab_leak: false, fails: []}  # NOT ASSESSED - stage 13 runs after phase 1; empty fails, no REWORK implied
+recomputed_destination_pe: ""
+recomputed_decision: ""
+findings:
+  - {severity: MINOR, location: "B07 Section 2C / capex_embedded_growth_pct", finding: "Mandated capex x FAT arithmetic not shown; justified as force-fit avoidance but block carries numeric 0 for not-applicable", recomputed: "~1.0% on CWIP basis (Rs3.58cr x 11.79x); ~9-10% on FY27 guided capex Rs30-35cr; no decision impact"}
+  - {severity: MINOR, location: "B07 report L132 recount line", finding: "States 4 categories is below the 3-6 completionist base rate; 4 sits inside 3-6", recomputed: "4 categories with evidence, inside base rate; 0 reach Strong/Moderate"}
+  - {severity: MINOR, location: "B07 block evidence_mix", finding: "claim: 5 understates the management-claim items tagged in the report body (>=7 distinct)", recomputed: "claim >=7; documented: 6 reconciles correctly to the recount"}
+  - {severity: MINOR, location: "B07 block flags[1] vs report YAML", finding: "Orchestrator repair altered the documented-evidence glyph to the word 'documented' in the FLAG-EMOAT-NETTED reason, beyond the disclosed single closing brace; no judgement changed", recomputed: "orchestrator-attributable, not stage 7"}
+  - {severity: MINOR, location: "B01 Block F M3", finding: "ADVISORY. M3 rule does not name the ROCE basis; stage used FY26 (16.76%) and scored 3, stating the basis. Median ROCE (22.72%) would score 5", recomputed: "M3=5 -> Block F 10/60, grand total 47/160; moats_confirmed 2, moat_class MODERATE, core 37, classification AVOID all unchanged"}
+gate0_concur: "AVOID (Core 37/100, moat 8/60 MODERATE, 2 moats confirmed) - all 51 rules re-derived from screener-Data_Sheet.csv, no fails"
+emoat_concur: "em_score 4.3/92, NONE, combined AVOID - likelihood x impact and evidence multipliers re-derived, all correct; evidence-tier discipline conservative throughout, no spoken-claim-as-documented credit found"
+critical_count: 0
+major_count: 0
+minor_count: 5
+acceptance_rate: 95             # 81 of 85 rules passed (51/51 gate0 + 30/34 emoat)
+orchestrator_disposition_note: "Finding E34 is against the orchestrator, not stage 7, and it is correct. When transcribing the repaired B07 block the orchestrator replaced the documented-evidence glyph with the word 'documented' and then recorded a repair note claiming nothing but the closing brace had changed. The glyph has been restored in B07-emoat.yaml and the repair note corrected to disclose both changes. Logged here as a verifier catch that held. The other four findings are against stage 7 and stage 1, all MINOR, none with decision impact; the B01 M3 advisory is explicitly recomputed as leaving core score, moat class, moats confirmed and the AVOID classification unchanged."

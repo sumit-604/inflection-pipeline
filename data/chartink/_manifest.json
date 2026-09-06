@@ -1,0 +1,922 @@
+{
+  "mbm-swing-ka-sultan": [
+    {
+      "dashboard": "mbm-swing-ka-sultan",
+      "dashboard_id": "133280",
+      "widget_id": 1310091,
+      "name": "MBM 2.0 (magnitude)",
+      "file": "mbm-swing-ka-sultan/mbm-2-0-magnitude-1310091.csv",
+      "kind": "market",
+      "result_type": "table",
+      "columns": [
+        "abv 10ma",
+        "abv 20ma",
+        "abv 50ma",
+        "abv 200ma"
+      ]
+    },
+    {
+      "dashboard": "mbm-swing-ka-sultan",
+      "dashboard_id": "133280",
+      "widget_id": 1310098,
+      "name": "Above 50MA",
+      "file": "mbm-swing-ka-sultan/above-50ma-1310098.csv",
+      "kind": "market",
+      "result_type": "areachart",
+      "columns": [
+        "above 50ma"
+      ]
+    },
+    {
+      "dashboard": "mbm-swing-ka-sultan",
+      "dashboard_id": "133280",
+      "widget_id": 1310092,
+      "name": "Above 10MA",
+      "file": "mbm-swing-ka-sultan/above-10ma-1310092.csv",
+      "kind": "market",
+      "result_type": "areachart",
+      "columns": [
+        "%"
+      ]
+    },
+    {
+      "dashboard": "mbm-swing-ka-sultan",
+      "dashboard_id": "133280",
+      "widget_id": 1310094,
+      "name": "Above 20MA",
+      "file": "mbm-swing-ka-sultan/above-20ma-1310094.csv",
+      "kind": "market",
+      "result_type": "areachart",
+      "columns": [
+        "%"
+      ]
+    },
+    {
+      "dashboard": "mbm-swing-ka-sultan",
+      "dashboard_id": "133280",
+      "widget_id": 1310100,
+      "name": "Above 200MA",
+      "file": "mbm-swing-ka-sultan/above-200ma-1310100.csv",
+      "kind": "market",
+      "result_type": "areachart",
+      "columns": [
+        "above 200ma"
+      ]
+    },
+    {
+      "dashboard": "mbm-swing-ka-sultan",
+      "dashboard_id": "133280",
+      "widget_id": 1310101,
+      "name": "MBM 2.0 (velocity) - basic",
+      "file": "mbm-swing-ka-sultan/mbm-2-0-velocity-basic-1310101.csv",
+      "kind": "market",
+      "result_type": "table",
+      "columns": [
+        "4% advance",
+        "4% decline",
+        "net breadth",
+        "3% range",
+        "5d range",
+        "volume",
+        "+15% in 5d",
+        "-10% in 5d",
+        "10% + 10ema",
+        "10% - 10ema"
+      ]
+    },
+    {
+      "dashboard": "mbm-swing-ka-sultan",
+      "dashboard_id": "133280",
+      "widget_id": 1310104,
+      "name": "MBM 2.0 (velocity) - advanced",
+      "file": "mbm-swing-ka-sultan/mbm-2-0-velocity-advanced-1310104.csv",
+      "kind": "market",
+      "result_type": "table",
+      "columns": [
+        "breakouts",
+        "breakdowns",
+        "up close %",
+        "down close %",
+        "new 52-wk high",
+        "new 52-wk low",
+        "net nh-nl",
+        "15% 52wh",
+        "15% 52wl",
+        "net 15% h-l",
+        "30% 52wh",
+        "30% 52 wl",
+        "net 30% h-l"
+      ]
+    },
+    {
+      "dashboard": "mbm-swing-ka-sultan",
+      "dashboard_id": "133280",
+      "widget_id": 1310105,
+      "name": "4% Advance & Decline",
+      "file": "mbm-swing-ka-sultan/4-advance-decline-1310105.csv",
+      "kind": "market",
+      "result_type": "linechart",
+      "columns": [
+        "4% advance",
+        "4% decline"
+      ]
+    },
+    {
+      "dashboard": "mbm-swing-ka-sultan",
+      "dashboard_id": "133280",
+      "widget_id": 1310106,
+      "name": "52-wk high & low",
+      "file": "mbm-swing-ka-sultan/52-wk-high-low-1310106.csv",
+      "kind": "market",
+      "result_type": "linechart",
+      "columns": [
+        "new 52-wk high",
+        "new 52-wk low"
+      ]
+    },
+    {
+      "dashboard": "mbm-swing-ka-sultan",
+      "dashboard_id": "133280",
+      "widget_id": 1310117,
+      "name": "10% +/- from 10DEMA",
+      "file": "mbm-swing-ka-sultan/10-from-10dema-1310117.csv",
+      "kind": "market",
+      "result_type": "linechart",
+      "columns": [
+        "10% + 10ema",
+        "10% - 10ema"
+      ]
+    },
+    {
+      "dashboard": "mbm-swing-ka-sultan",
+      "dashboard_id": "133280",
+      "widget_id": 1310108,
+      "name": "Volume",
+      "file": "mbm-swing-ka-sultan/volume-1310108.csv",
+      "kind": "market",
+      "result_type": "areachart",
+      "columns": [
+        "volume"
+      ]
+    },
+    {
+      "dashboard": "mbm-swing-ka-sultan",
+      "dashboard_id": "133280",
+      "widget_id": 1310110,
+      "name": "4% Advance & Decline (Today)",
+      "file": "mbm-swing-ka-sultan/4-advance-decline-today-1310110.csv",
+      "kind": "market",
+      "result_type": "barchart",
+      "columns": [
+        "4% advance",
+        "4% decline",
+        "net breadth"
+      ]
+    },
+    {
+      "dashboard": "mbm-swing-ka-sultan",
+      "dashboard_id": "133280",
+      "widget_id": 1310111,
+      "name": "52-wk high & low (today)",
+      "file": "mbm-swing-ka-sultan/52-wk-high-low-today-1310111.csv",
+      "kind": "market",
+      "result_type": "barchart",
+      "columns": [
+        "new 52-wk high",
+        "new 52-wk low"
+      ]
+    },
+    {
+      "dashboard": "mbm-swing-ka-sultan",
+      "dashboard_id": "133280",
+      "widget_id": 1310112,
+      "name": "Net Breadth",
+      "file": "mbm-swing-ka-sultan/net-breadth-1310112.csv",
+      "kind": "market",
+      "result_type": "areachart",
+      "columns": [
+        "net breadth"
+      ]
+    },
+    {
+      "dashboard": "mbm-swing-ka-sultan",
+      "dashboard_id": "133280",
+      "widget_id": 1310113,
+      "name": "15% up & 10% down",
+      "file": "mbm-swing-ka-sultan/15-up-10-down-1310113.csv",
+      "kind": "market",
+      "result_type": "linechart",
+      "columns": [
+        "+15% in 5d",
+        "-10% in 5d"
+      ]
+    },
+    {
+      "dashboard": "mbm-swing-ka-sultan",
+      "dashboard_id": "133280",
+      "widget_id": 1310114,
+      "name": "Net NH NL",
+      "file": "mbm-swing-ka-sultan/net-nh-nl-1310114.csv",
+      "kind": "market",
+      "result_type": "areachart",
+      "columns": [
+        "net nh-nl"
+      ]
+    }
+  ],
+  "market-breadth-analysis": [
+    {
+      "dashboard": "market-breadth-analysis",
+      "dashboard_id": "148889",
+      "widget_id": 2938359,
+      "name": "Minervini Screener",
+      "file": "market-breadth-analysis/minervini-screener-2938359.csv",
+      "kind": "stock",
+      "result_type": "table",
+      "columns": [
+        "sector",
+        "market cap",
+        "1 week %",
+        "vol > yr avg"
+      ]
+    },
+    {
+      "dashboard": "market-breadth-analysis",
+      "dashboard_id": "148889",
+      "widget_id": 2938364,
+      "name": "Return Yearly",
+      "file": "market-breadth-analysis/return-yearly-2938364.csv",
+      "kind": "stock",
+      "result_type": "table",
+      "columns": [
+        "% change"
+      ]
+    },
+    {
+      "dashboard": "market-breadth-analysis",
+      "dashboard_id": "148889",
+      "widget_id": 1485953,
+      "name": "New high vs low count: Market Bearishness vs Bullishness",
+      "file": "market-breadth-analysis/new-high-vs-low-count-market-bearishness-vs-bullishness-1485953.csv",
+      "kind": "market",
+      "result_type": "linechart",
+      "columns": [
+        "high",
+        "low"
+      ]
+    },
+    {
+      "dashboard": "market-breadth-analysis",
+      "dashboard_id": "148889",
+      "widget_id": 2938366,
+      "name": "Return 3Month",
+      "file": "market-breadth-analysis/return-3month-2938366.csv",
+      "kind": "stock",
+      "result_type": "table",
+      "columns": [
+        "% change"
+      ]
+    },
+    {
+      "dashboard": "market-breadth-analysis",
+      "dashboard_id": "148889",
+      "widget_id": 2938361,
+      "name": "Potential Breakouts",
+      "file": "market-breadth-analysis/potential-breakouts-2938361.csv",
+      "kind": "stock",
+      "result_type": "table",
+      "columns": [
+        "sector",
+        "market cap",
+        "1 week %",
+        "vol > yr avg"
+      ]
+    },
+    {
+      "dashboard": "market-breadth-analysis",
+      "dashboard_id": "148889",
+      "widget_id": 2938345,
+      "name": "Weekly Percentage Change in Indices",
+      "file": "market-breadth-analysis/weekly-percentage-change-in-indices-2938345.csv",
+      "kind": "index",
+      "result_type": "table",
+      "columns": [
+        "% change"
+      ]
+    },
+    {
+      "dashboard": "market-breadth-analysis",
+      "dashboard_id": "148889",
+      "widget_id": 2938346,
+      "name": "Large Cap Stocks Above VWAP",
+      "file": "market-breadth-analysis/large-cap-stocks-above-vwap-2938346.csv",
+      "kind": "stock",
+      "result_type": "table",
+      "columns": [
+        "ltp",
+        "vwap"
+      ]
+    },
+    {
+      "dashboard": "market-breadth-analysis",
+      "dashboard_id": "148889",
+      "widget_id": 1485950,
+      "name": "% Stocks above 50 EMA",
+      "file": "market-breadth-analysis/stocks-above-50-ema-1485950.csv",
+      "kind": "market",
+      "result_type": "linechart",
+      "columns": [
+        "%",
+        "50/50"
+      ]
+    },
+    {
+      "dashboard": "market-breadth-analysis",
+      "dashboard_id": "148889",
+      "widget_id": 2939698,
+      "name": "CCI Weekly crossing above -100 (Trendline reversal scanner)",
+      "file": "market-breadth-analysis/cci-weekly-crossing-above-100-trendline-reversal-scanner-2939698.csv",
+      "kind": "stock",
+      "result_type": "table",
+      "columns": [
+        "current price",
+        "market cap",
+        "category",
+        "sector",
+        "industry",
+        "% change",
+        "volume"
+      ]
+    },
+    {
+      "dashboard": "market-breadth-analysis",
+      "dashboard_id": "148889",
+      "widget_id": 1514070,
+      "name": "Current vs Previous yr volumes in Crores",
+      "file": "market-breadth-analysis/current-vs-previous-yr-volumes-in-crores-1514070.csv",
+      "kind": "market",
+      "result_type": "linechart",
+      "columns": [
+        "current",
+        "1 yr back"
+      ]
+    },
+    {
+      "dashboard": "market-breadth-analysis",
+      "dashboard_id": "148889",
+      "widget_id": 1487412,
+      "name": "YTD Sectoral Advances - Nifty 500",
+      "file": "market-breadth-analysis/ytd-sectoral-advances-nifty-500-1487412.csv",
+      "kind": "sector",
+      "result_type": "barchart",
+      "columns": [
+        "% change"
+      ]
+    },
+    {
+      "dashboard": "market-breadth-analysis",
+      "dashboard_id": "148889",
+      "widget_id": 2938365,
+      "name": "Return 6Month",
+      "file": "market-breadth-analysis/return-6month-2938365.csv",
+      "kind": "stock",
+      "result_type": "table",
+      "columns": [
+        "% change"
+      ]
+    },
+    {
+      "dashboard": "market-breadth-analysis",
+      "dashboard_id": "148889",
+      "widget_id": 1485963,
+      "name": "5. Advance Decline Ratio",
+      "file": "market-breadth-analysis/5-advance-decline-ratio-1485963.csv",
+      "kind": "market",
+      "result_type": "barchart",
+      "columns": [
+        "advance",
+        "decline"
+      ]
+    },
+    {
+      "dashboard": "market-breadth-analysis",
+      "dashboard_id": "148889",
+      "widget_id": 2939695,
+      "name": "CCI Daily crossing 100 (Short to medium term breakout scanner)",
+      "file": "market-breadth-analysis/cci-daily-crossing-100-short-to-medium-term-breakout-scanner-2939695.csv",
+      "kind": "stock",
+      "result_type": "table",
+      "columns": [
+        "market cap",
+        "category",
+        "sector",
+        "industry",
+        "% change",
+        "volume"
+      ]
+    },
+    {
+      "dashboard": "market-breadth-analysis",
+      "dashboard_id": "148889",
+      "widget_id": 2939696,
+      "name": "CCI Weekly crossing 100 (Long term breakout scanner)",
+      "file": "market-breadth-analysis/cci-weekly-crossing-100-long-term-breakout-scanner-2939696.csv",
+      "kind": "stock",
+      "result_type": "table",
+      "columns": [
+        "market cap",
+        "category",
+        "sector",
+        "industry",
+        "% change",
+        "volume"
+      ]
+    },
+    {
+      "dashboard": "market-breadth-analysis",
+      "dashboard_id": "148889",
+      "widget_id": 1485961,
+      "name": "Index Level Changes",
+      "file": "market-breadth-analysis/index-level-changes-1485961.csv",
+      "kind": "index",
+      "result_type": "table",
+      "columns": [
+        "% change",
+        "ltp"
+      ]
+    },
+    {
+      "dashboard": "market-breadth-analysis",
+      "dashboard_id": "148889",
+      "widget_id": 1486326,
+      "name": "% Stocks at 52 Week High/ Low ( within 10% range )",
+      "file": "market-breadth-analysis/stocks-at-52-week-high-low-within-10-range-1486326.csv",
+      "kind": "market",
+      "result_type": "linechart",
+      "columns": [
+        "low",
+        "high"
+      ]
+    },
+    {
+      "dashboard": "market-breadth-analysis",
+      "dashboard_id": "148889",
+      "widget_id": 1527198,
+      "name": "Momentum Investing",
+      "file": "market-breadth-analysis/momentum-investing-1527198.csv",
+      "kind": "stock",
+      "result_type": "table",
+      "columns": [
+        "column1",
+        "std deviation",
+        "annual std dev",
+        "roc"
+      ]
+    },
+    {
+      "dashboard": "market-breadth-analysis",
+      "dashboard_id": "148889",
+      "widget_id": 1485948,
+      "name": "% Stocks above 20 EMA",
+      "file": "market-breadth-analysis/stocks-above-20-ema-1485948.csv",
+      "kind": "market",
+      "result_type": "linechart",
+      "columns": [
+        "%",
+        "50/50"
+      ]
+    },
+    {
+      "dashboard": "market-breadth-analysis",
+      "dashboard_id": "148889",
+      "widget_id": 2938362,
+      "name": "Modified Relative Strength",
+      "file": "market-breadth-analysis/modified-relative-strength-2938362.csv",
+      "kind": "stock",
+      "result_type": "table",
+      "columns": [
+        "sector",
+        "market cap",
+        "1 week %",
+        "vol > yr avg"
+      ]
+    },
+    {
+      "dashboard": "market-breadth-analysis",
+      "dashboard_id": "148889",
+      "widget_id": 2938369,
+      "name": "Return 1Week",
+      "file": "market-breadth-analysis/return-1week-2938369.csv",
+      "kind": "stock",
+      "result_type": "table",
+      "columns": [
+        "% change"
+      ]
+    },
+    {
+      "dashboard": "market-breadth-analysis",
+      "dashboard_id": "148889",
+      "widget_id": 2019695,
+      "name": "Drawdowns Peaks",
+      "file": "market-breadth-analysis/drawdowns-peaks-2019695.csv",
+      "kind": "market",
+      "result_type": "areachart",
+      "columns": [
+        "blw 3%"
+      ]
+    },
+    {
+      "dashboard": "market-breadth-analysis",
+      "dashboard_id": "148889",
+      "widget_id": 2939697,
+      "name": "CCI Daily crossing above -100 (Trendline reversal scanner)",
+      "file": "market-breadth-analysis/cci-daily-crossing-above-100-trendline-reversal-scanner-2939697.csv",
+      "kind": "stock",
+      "result_type": "table",
+      "columns": [
+        "current price",
+        "market cap",
+        "category",
+        "sector",
+        "industry",
+        "% change",
+        "volume"
+      ]
+    },
+    {
+      "dashboard": "market-breadth-analysis",
+      "dashboard_id": "148889",
+      "widget_id": 2938355,
+      "name": "Stocks Where FIIs are Increasing Shareholding",
+      "file": "market-breadth-analysis/stocks-where-fiis-are-increasing-shareholding-2938355.csv",
+      "kind": "stock",
+      "result_type": "table",
+      "columns": [
+        "% 3 qtr ago",
+        "% 2 qtr ago",
+        "% 1 qtr ago",
+        "% current qtr",
+        "change in 3 qtr"
+      ]
+    },
+    {
+      "dashboard": "market-breadth-analysis",
+      "dashboard_id": "148889",
+      "widget_id": 2938344,
+      "name": "Quarterly Percentage Change in Indices",
+      "file": "market-breadth-analysis/quarterly-percentage-change-in-indices-2938344.csv",
+      "kind": "index",
+      "result_type": "table",
+      "columns": [
+        "% change"
+      ]
+    },
+    {
+      "dashboard": "market-breadth-analysis",
+      "dashboard_id": "148889",
+      "widget_id": 2938348,
+      "name": "Small Cap Stocks Above VWAP",
+      "file": "market-breadth-analysis/small-cap-stocks-above-vwap-2938348.csv",
+      "kind": "stock",
+      "result_type": "table",
+      "columns": [
+        "ltp",
+        "vwap"
+      ]
+    },
+    {
+      "dashboard": "market-breadth-analysis",
+      "dashboard_id": "148889",
+      "widget_id": 1485959,
+      "name": "DII increased shareholding in terms of %",
+      "file": "market-breadth-analysis/dii-increased-shareholding-in-terms-of-1485959.csv",
+      "kind": "stock",
+      "result_type": "table",
+      "columns": [
+        "% 3 quarter ago",
+        "% 2 quarter ago",
+        "% 1 quarter ago",
+        "% current quarter",
+        "change in % in 3 qtrs",
+        "change in % in 1 qtr"
+      ]
+    },
+    {
+      "dashboard": "market-breadth-analysis",
+      "dashboard_id": "148889",
+      "widget_id": 1485988,
+      "name": "% of Stocks in a Sector with at least 20% gain in 4 Weeks",
+      "file": "market-breadth-analysis/of-stocks-in-a-sector-with-at-least-20-gain-in-4-weeks-1485988.csv",
+      "kind": "sector",
+      "result_type": "piechart",
+      "columns": [
+        "column2"
+      ]
+    },
+    {
+      "dashboard": "market-breadth-analysis",
+      "dashboard_id": "148889",
+      "widget_id": 1485943,
+      "name": "% Industry wise stocks close to 52 Week Highs",
+      "file": "market-breadth-analysis/industry-wise-stocks-close-to-52-week-highs-1485943.csv",
+      "kind": "industry",
+      "result_type": "barchart",
+      "columns": [
+        "high"
+      ]
+    },
+    {
+      "dashboard": "market-breadth-analysis",
+      "dashboard_id": "148889",
+      "widget_id": 1486161,
+      "name": "Nifty 500 % Stocks above & below 200 EMA",
+      "file": "market-breadth-analysis/nifty-500-stocks-above-below-200-ema-1486161.csv",
+      "kind": "market",
+      "result_type": "linechart",
+      "columns": [
+        "% above 200 ema",
+        "% below 200 ema",
+        "60%"
+      ]
+    },
+    {
+      "dashboard": "market-breadth-analysis",
+      "dashboard_id": "148889",
+      "widget_id": 1557273,
+      "name": "Gold ETFs vs Nifty - 1 month chg %",
+      "file": "market-breadth-analysis/gold-etfs-vs-nifty-1-month-chg-1557273.csv",
+      "kind": "market",
+      "result_type": "areachart",
+      "columns": [
+        "gold",
+        "nifty"
+      ]
+    },
+    {
+      "dashboard": "market-breadth-analysis",
+      "dashboard_id": "148889",
+      "widget_id": 2938357,
+      "name": "Stocks Where Promoters are Increasing Shareholding",
+      "file": "market-breadth-analysis/stocks-where-promoters-are-increasing-shareholding-2938357.csv",
+      "kind": "stock",
+      "result_type": "table",
+      "columns": [
+        "% 3 qtr ago",
+        "% 2 qtr ago",
+        "% 1 qtr ago",
+        "% current qtr",
+        "change in 3 qtrs"
+      ]
+    },
+    {
+      "dashboard": "market-breadth-analysis",
+      "dashboard_id": "148889",
+      "widget_id": 1514063,
+      "name": "Where is the Money going: Every Month",
+      "file": "market-breadth-analysis/where-is-the-money-going-every-month-1514063.csv",
+      "kind": "sector",
+      "result_type": "piechart",
+      "columns": [
+        "column1"
+      ]
+    },
+    {
+      "dashboard": "market-breadth-analysis",
+      "dashboard_id": "148889",
+      "widget_id": 2938341,
+      "name": "Sectors Above Key Weekly EMA",
+      "file": "market-breadth-analysis/sectors-above-key-weekly-ema-2938341.csv",
+      "kind": "sector",
+      "result_type": "table",
+      "columns": [
+        "4w ema",
+        "20w ema",
+        "30w ema",
+        "40w ema",
+        "52w ema"
+      ]
+    },
+    {
+      "dashboard": "market-breadth-analysis",
+      "dashboard_id": "148889",
+      "widget_id": 2938358,
+      "name": "Stocks at 52 week high",
+      "file": "market-breadth-analysis/stocks-at-52-week-high-2938358.csv",
+      "kind": "stock",
+      "result_type": "table",
+      "columns": [
+        "close",
+        "yearhigh",
+        "market cap",
+        "market cap category",
+        "industry",
+        "sector",
+        "weekly return",
+        "current vol multiple of yearly avg"
+      ]
+    },
+    {
+      "dashboard": "market-breadth-analysis",
+      "dashboard_id": "148889",
+      "widget_id": 1485949,
+      "name": "3. % Stocks above 200 EMA",
+      "file": "market-breadth-analysis/3-stocks-above-200-ema-1485949.csv",
+      "kind": "market",
+      "result_type": "linechart",
+      "columns": [
+        "%",
+        "50/50"
+      ]
+    },
+    {
+      "dashboard": "market-breadth-analysis",
+      "dashboard_id": "148889",
+      "widget_id": 1485947,
+      "name": "% at 52-wk high",
+      "file": "market-breadth-analysis/at-52-wk-high-1485947.csv",
+      "kind": "marketcap",
+      "result_type": "linechart",
+      "columns": [
+        "%"
+      ]
+    },
+    {
+      "dashboard": "market-breadth-analysis",
+      "dashboard_id": "148889",
+      "widget_id": 2938368,
+      "name": "Return 2Week",
+      "file": "market-breadth-analysis/return-2week-2938368.csv",
+      "kind": "stock",
+      "result_type": "table",
+      "columns": [
+        "% change"
+      ]
+    },
+    {
+      "dashboard": "market-breadth-analysis",
+      "dashboard_id": "148889",
+      "widget_id": 1519256,
+      "name": "% Sector wise Nifty 500 stocks close to 52 Week Highs",
+      "file": "market-breadth-analysis/sector-wise-nifty-500-stocks-close-to-52-week-highs-1519256.csv",
+      "kind": "sector",
+      "result_type": "barchart",
+      "columns": [
+        "high"
+      ]
+    },
+    {
+      "dashboard": "market-breadth-analysis",
+      "dashboard_id": "148889",
+      "widget_id": 2938363,
+      "name": "Breakouts v2",
+      "file": "market-breadth-analysis/breakouts-v2-2938363.csv",
+      "kind": "stock",
+      "result_type": "table",
+      "columns": [
+        "sector",
+        "market cap",
+        "1 week %",
+        "vol > yr avg"
+      ]
+    },
+    {
+      "dashboard": "market-breadth-analysis",
+      "dashboard_id": "148889",
+      "widget_id": 1485958,
+      "name": "Oversold vs Overbought Stocks: RSI",
+      "file": "market-breadth-analysis/oversold-vs-overbought-stocks-rsi-1485958.csv",
+      "kind": "market",
+      "result_type": "linechart",
+      "columns": [
+        "oversold",
+        "overbought"
+      ]
+    },
+    {
+      "dashboard": "market-breadth-analysis",
+      "dashboard_id": "148889",
+      "widget_id": 2938347,
+      "name": "Mid Cap Stocks Above VWAP",
+      "file": "market-breadth-analysis/mid-cap-stocks-above-vwap-2938347.csv",
+      "kind": "stock",
+      "result_type": "table",
+      "columns": [
+        "ltp",
+        "vwap"
+      ]
+    },
+    {
+      "dashboard": "market-breadth-analysis",
+      "dashboard_id": "148889",
+      "widget_id": 2938367,
+      "name": "Return 1Month",
+      "file": "market-breadth-analysis/return-1month-2938367.csv",
+      "kind": "stock",
+      "result_type": "table",
+      "columns": [
+        "% change"
+      ]
+    },
+    {
+      "dashboard": "market-breadth-analysis",
+      "dashboard_id": "148889",
+      "widget_id": 2938342,
+      "name": "Indices : %Age Away from 30 WMA",
+      "file": "market-breadth-analysis/indices-age-away-from-30-wma-2938342.csv",
+      "kind": "index",
+      "result_type": "table",
+      "columns": [
+        "% from 30w ema"
+      ]
+    },
+    {
+      "dashboard": "market-breadth-analysis",
+      "dashboard_id": "148889",
+      "widget_id": 2938360,
+      "name": "Darvas Screener",
+      "file": "market-breadth-analysis/darvas-screener-2938360.csv",
+      "kind": "stock",
+      "result_type": "table",
+      "columns": [
+        "sector",
+        "market cap",
+        "1 week %",
+        "vol > yr avg"
+      ]
+    },
+    {
+      "dashboard": "market-breadth-analysis",
+      "dashboard_id": "148889",
+      "widget_id": 2097892,
+      "name": "Percentage of Stocks Trading above 40W EMA by Market Cap",
+      "file": "market-breadth-analysis/percentage-of-stocks-trading-above-40w-ema-by-market-cap-2097892.csv",
+      "kind": "marketcap",
+      "result_type": "linechart",
+      "columns": [
+        "percentage"
+      ]
+    },
+    {
+      "dashboard": "market-breadth-analysis",
+      "dashboard_id": "148889",
+      "widget_id": 1521581,
+      "name": "Top Gainers Today",
+      "file": "market-breadth-analysis/top-gainers-today-1521581.csv",
+      "kind": "stock",
+      "result_type": "table",
+      "columns": [
+        "changeinpercentage"
+      ]
+    },
+    {
+      "dashboard": "market-breadth-analysis",
+      "dashboard_id": "148889",
+      "widget_id": 1485954,
+      "name": "Market Breadth: Number above 500 indicates trend reversal",
+      "file": "market-breadth-analysis/market-breadth-number-above-500-indicates-trend-reversal-1485954.csv",
+      "kind": "market",
+      "result_type": "table",
+      "columns": [
+        "up 4.5%+ today",
+        "down 4.5%+ today",
+        "up 20%+ in 5d",
+        "down 20%+ in 5d",
+        "above 20dma",
+        "below 20dma",
+        "above 50dma",
+        "below 50dma",
+        "above 200dma",
+        "below 200dma"
+      ]
+    },
+    {
+      "dashboard": "market-breadth-analysis",
+      "dashboard_id": "148889",
+      "widget_id": 2938356,
+      "name": "Stocks Where Retail is Increasing Shareholding",
+      "file": "market-breadth-analysis/stocks-where-retail-is-increasing-shareholding-2938356.csv",
+      "kind": "stock",
+      "result_type": "table",
+      "columns": [
+        "% 3 qtrs ago",
+        "% 2 qtr ago",
+        "% 1 qtr ago",
+        "% current qtr",
+        "change in 3 qtrs"
+      ]
+    },
+    {
+      "dashboard": "market-breadth-analysis",
+      "dashboard_id": "148889",
+      "widget_id": 3043744,
+      "name": "Weekly RSI 50:50",
+      "file": "market-breadth-analysis/weekly-rsi-50-50-3043744.csv",
+      "kind": "market",
+      "result_type": "linechart",
+      "columns": [
+        "% below rsi 50",
+        "% above rsi 50"
+      ]
+    }
+  ]
+}

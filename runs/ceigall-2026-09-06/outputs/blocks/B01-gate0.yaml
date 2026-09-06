@@ -1,0 +1,38 @@
+stage: B01-gate0
+company: "CEIGALL"
+run_date: "2026-09-06"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - {area: prospectus, severity: HIGH, note: "company listed August 2024, no prospectus in corpus"}
+  - {area: results, severity: MEDIUM, note: "inputs/results/ empty, no results filing PDF"}
+  - {area: rating, severity: MEDIUM, note: "inputs/rating/ empty"}
+  - {area: shareholding, severity: HIGH, note: "inputs/shareholding/ empty, drove Block E to 0/20"}
+  - {area: research, severity: LOW, note: "no third-party research in corpus"}
+  - {area: announcements-substantive, severity: MEDIUM, note: "no substantive announcements corpus"}
+flags:
+  - {type: FLAG-GATE0, reason: "Classification AVOID (Core 37/100). Two deal-breakers triggered: Block B <8 (Block B = 0/20, cumulative CFO/PAT -0.70x, CFO negative in 5 of 6 years FY22-FY26 despite PAT rising FY21 Rs112.5cr to FY26 Rs311.89cr) caps max GOOD; cumulative CFO/PAT <0.50 caps max AVERAGE. Block E (0/20) is an evidence gap (no shareholding corpus), not a scored quality finding, and should not be read as a governance red flag on its own. Block F moat score (8/60, MODERATE, 2 confirmed) is depressed partly by 5 of 12 tests scoring 0 for PEER DATA NEEDED rather than absence of moat."}
+data_years: 6
+fy_range: "FY2021 to FY2026"
+blocks: {A: 14, B: 0, C: 15, D: 8, E: 0}
+core_score: 37
+moat_score: 8
+grand_total: 45
+moats_confirmed: 2
+moat_class: "MODERATE"
+classification: "AVOID"
+deal_breakers:
+  - "Rule 2: Block B (0) < 8 -> caps classification at max GOOD"
+  - "Rule 4: Cumulative CFO/PAT (-0.70x) < 0.50 -> caps classification at max AVERAGE"
+history_downgrade: false
+data_notes:
+  - "EBIT computed as PBT + Interest; EBITDA computed as PBT + Depreciation + Interest - Other Income; Capital Employed computed as Equity Share Capital + Reserves + Borrowings (= Total Assets - Other Liabilities); all screener-data, stated as computed since the sheet has no separate ratios section."
+  - "FCF (B2, B3) and Payable Days (B4, M12) scored N/A/0: screener-Data_Sheet's cash flow section carries only aggregate Operating/Investing/Financing lines (no PPE/intangibles purchase line), and the balance sheet lumps payables inside an undifferentiated 'Other Liabilities' line. Not estimated, per CLAUDE.md never-estimate rule."
+  - "Current Ratio (D4) scored N/A/0: screener-data does not split current vs non-current assets or liabilities."
+  - "Block E (E1-E4) scored 0: no shareholding corpus provided; E4 contingent liabilities also unscored because this stage runs from screener data alone per run instruction (AR not opened)."
+  - "FY21 ROCE (47.10%) sits on a pre-scale, pre-IPO capital base (982,100 shares, face value Rs10, Net Worth Rs305cr) before the FY22 stock split, FY24 bonus issue and Aug-2024 IPO; drives A4 to 0 by mechanical rule, flagged as not comparable to the current capital structure rather than softened."
+  - "M2, M5, M7, M9 scored 0 as PEER DATA NEEDED (no sector-comp source in provided corpus), not as confirmed absence of moat."
+  - "M6, M8 scored 0 as not applicable to an EPC road contractor business model (no R&D or distribution-network line items)."
+  - "No PAT loss-to-profit swing in the FY21-FY26 window; PAT positive throughout."
+block_b_trend: "deteriorating - cumulative CFO / cumulative PAT = -0.70x, CFO negative in 5 of 6 years (FY22-FY26) while PAT rose from Rs112.5cr (FY21) to Rs311.89cr (FY26)"
+analyst_note: "FY21 is an outlier base (tiny pre-IPO capital, 982,100 shares) that mechanically drives A4 to 0; treat the ROCE trend read with that caveat rather than as a genuine capital-efficiency deterioration signal alone. Block B is the dominant, evidenced depressor: CFO has been negative in 5 of 6 years through a HAM-asset build-out phase funded by debt and equity raises (large financing inflows FY22-FY25), while reported PAT rose steadily; this is a real cash-conversion gap, not a data artifact. Block E's 0/20 is purely an evidence gap (no shareholding corpus), and should be re-scored once that data lands rather than read as a governance flag. Five of twelve moat tests scored 0 solely for missing peer data; the MODERATE moat read is unconfirmed, not negative. Classification AVOID rests on Core <40, which is driven almost entirely by Blocks B and E; Blocks A and C independently show a strong growth and returns profile."

@@ -1,0 +1,104 @@
+stage: B00-inputs
+company: ORCHPHARMA
+run_date: 2026-09-06
+model: claude-opus-5
+status: complete
+spear_gate:
+  form: OVERRIDE
+  line: "Spear: OVERRIDE 2026-09-06 (operator)"
+  recorded_at: companies/ORCHPHARMA.md
+  commit: 58396df
+  load_bearing_facts: []
+  note: "No spear pass ran. No pre-set first verification priority for this run."
+manifest:
+  parses: true
+  company: Orchid Pharma Ltd
+  ticker: ORCHPHARMA
+  cmp: 954.65
+  cmp_source: "inputs/screening/screener-Data_Sheet.csv META Current Price"
+  market_cap_cr: 5716.94
+  run_type: full
+  concalls_available: true
+  sector_cap_row: "Pharma / CDMO"
+  sector_cap_confirmed_hand: true
+  sector_cap_phase3_recheck_required: true
+  listed_date: ""
+  listed_recently: false
+  listed_evidence: "screener Data_Sheet carries FY2017-FY2026 financials and year-end prices"
+inventory:
+  prospectus: 0
+  annual_report: 2
+  results: 0
+  rating: 0
+  concalls: 4
+  peer_concalls: 11
+  announcements: 0
+  shareholding: 0
+  research: 0
+  screening: 24
+  presentation: 1
+  other: 0
+input_gaps:
+  - "results: no quarterly or annual results filing in corpus"
+  - "rating: no credit rating bulletin or rationale in corpus"
+  - "announcements: no exchange / Reg 30 filings in corpus"
+  - "shareholding: no quarterly shareholding pattern in corpus"
+  - "research: no broker notes in corpus (non-anchored; no evidence effect)"
+  - "screening: Profit_Loss, Balance_Sheet, Cash_Flow, Quarters CSVs are empty templates for all four companies (collect_to_repo v3 defect); Data_Sheet is the sole populated screener source and is used in their place"
+  - "presentation: Investor_Presentation_1.pdf is image-based, 3124 chars over 14 pages; treated as near-absent for stage 4"
+  - "FY2026 primary filings absent: no FY2026 annual report and no FY2026 audited annual results filing; FY2026 figures available only as screener aggregates"
+  - "FY2026 cost breakdown (Power and Fuel, Other Mfr. Exp, Selling and admin) blank in Data_Sheet with Other Expenses at 237.10 vs 11.40 prior year; FY2026 cost split is NOT FOUND"
+  - "KOPRAN peer concalls all predate Apr-2025, roughly 18 months staler than the GRANULES and NEULANDLAB sets"
+not_gaps:
+  - "prospectus: company long listed (FY2017-FY2026 price history); IPO prospectus not expected"
+freshness_pairs:
+  - pair: "RESULTS to CONCALL"
+    trigger_doc: "none in corpus (inputs/results/ empty)"
+    mate_expected: "same-quarter concall transcript"
+    status: NO TRIGGER
+    missing_doc: ""
+  - pair: "RATING BULLETIN to RATIONALE"
+    trigger_doc: "none in corpus (inputs/rating/ empty)"
+    mate_expected: "full rating rationale"
+    status: NO TRIGGER
+    missing_doc: ""
+  - pair: "SEBI ORDER to ORDER TEXT"
+    trigger_doc: "not determinable at stage 0"
+    mate_expected: "order text for any order referenced in filings"
+    status: PENDING STAGE EVIDENCE
+    missing_doc: ""
+    note: "stages 2, 3, 8 must surface any referenced regulatory order; an unmatched reference fails this pair retrospectively"
+  - pair: "AR to LATEST AUDITED ANNUAL RESULTS"
+    trigger_doc: "FY2026 audited annual results, evidenced by the complete FY2026 column in inputs/screening/screener-Data_Sheet.csv (sales 1232.78, PBT 10.43, balance sheet and cash flow dated 2026-03-31)"
+    mate_expected: "FY2026 annual report, or the FY2026 audited annual results filing"
+    status: FAIL
+    missing_doc: "Orchid Pharma FY2026 audited annual results filing (Q4 FY26 / full-year Reg 33), and the FY2026 Annual Report when filed. Source: BSE/NSE corporate filings or company IR page."
+freshness_verdict: CORPUS GAPPED-FRESHNESS
+gate_cap_applied: "PROCEED WITH CAVEATS (freshness cap; more severe verdicts still stand)"
+no_concall_mode: false
+concall_chronology:
+  - {file: "inputs/concalls/Concall_Nov_2025_Transcript.pdf", call_month: "Nov 2025", quarter: "Q2 FY26"}
+  - {file: "inputs/concalls/Concall_Feb_2026_Transcript.pdf", call_month: "Feb 2026", quarter: "Q3 FY26"}
+  - {file: "inputs/concalls/Concall_Jun_2026_Transcript.pdf", call_month: "Jun 2026", quarter: "Q4 FY26 + FY26 full year"}
+  - {file: "inputs/concalls/Concall_Aug_2026_Transcript.pdf", call_month: "Aug 2026", quarter: "Q1 FY27"}
+peer_set:
+  - {peer: GRANULES, calls: 4, span: "Nov 2025 - Jul 2026"}
+  - {peer: NEULANDLAB, calls: 4, span: "Nov 2025 - Aug 2026"}
+  - {peer: KOPRAN, calls: 3, span: "Nov 2024 - Mar 2025", note: "stale relative to the other two"}
+text_extracts:
+  path: "work/text/"
+  files: 18
+  page_markers: "===== PAGE n ====="
+  note: "convenience layer; verifier A audits against the source PDFs"
+degradation_applied:
+  - "Gate 0 runs from screener Data_Sheet (no results PDFs)"
+  - "stage 4 builds from annual reports and concalls (presentation near-absent)"
+  - "stage 10 will mark latest-period fields, rating_wc_quote and FII+DII unresolved in phase 3"
+  - "UA withheld in phase 3: no shareholding pattern, institutional-absence qualifier cannot be affirmed"
+  - "stages 5, 7, 8 lose the documented-ACTION record (no announcements)"
+operator_rulings_this_run:
+  - "2026-09-06: spear gate overridden; pipeline proceeds without a live-web spear pass"
+  - "2026-09-06: empty-folder confirmation answered in advance; proceed with declared gaps, do not pause"
+halt: false
+flags: []
+analyst_note: "Corpus is strong on narrative and weak on FY2026 primary filings. Two annual reports and four own concalls cover the business well through FY2025 and give management's FY2026 account, but no audited FY2026 statement exists anywhere in the corpus while the screener shows FY2026 as the year of largest change. Pair 4 fails on that basis and caps the gate. The empty screener P&L/BS/CF/Quarters files are a known collector defect, not missing data: Data_Sheet holds the same series and every stage reads it instead. The investor presentation is image-based and cannot be relied on for figures."

@@ -1,0 +1,58 @@
+stage: B04-bizmodel
+company: "BALUFORGE"
+run_date: "2026-09-06"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["investor presentation absent (four Reg. 30 concall PPTs used instead, no live concall audio/transcript exists)", "export contract pricing/pass-through mechanism not disclosed", "exact percentage/identity of two >10% customers not disclosed", "per-part/per-tonne unit economics not disclosed", "named competitors and market share not disclosed", "FY2026 Annual Report not available, FY26 figures from PPT are unaudited"]
+flags: ["archetype resolved as build-to-spec component maker, NOT converter; Amendment 17 converter multiple cap does not bind this name", "export pricing mechanism undisclosed despite exports being 83.4% of consolidated FY25 revenue", "cumulative CFO/PAT 0.21x (Stage 1) means cash-conversion-adjusted valuation approach required", "single-customer concentration >10% both domestic and export, percentages undisclosed", "Rs 64.78 cr bank-discounted receivables, recourse status undisclosed (Stage 2)", "three inconsistent AR ROCE figures for FY25, do not use a single AR-quoted ROCE (Stage 3)", "unaudited New Energy/E-Mobility segment claim with no supporting disclosure (Stage 3)", "net unhedged FX exposure Rs 336-361 cr, no hedge policy (Stage 3)"]
+business_type: "manufacturing"
+archetype: "build-to-spec component maker"
+archetype_basis: "Five independent evidence lines: OEM/customer-specified part drawings (weight, material, scope of supply); customer-dictated steel specification; a 15-20 year design-in customer lifecycle with IATF/AS9100 qualification; a disclosed per-contract price mechanism rather than a spread formula; and raw-material intensity falling 76.4% to 65.8% of revenue FY24 to FY25, tracking mix shift toward machining and defence/aerospace rather than the steel cycle. Section 1B v3.7 Amendment 17 (converter cap) therefore does NOT bind this name."
+revenue_streams:
+  - {name: "Legacy auto/commercial vehicle forged & machined components", type: "build-to-order unit sale", pct_of_revenue: 36, predictability: "M"}
+  - {name: "Agriculture", type: "build-to-order unit sale", pct_of_revenue: 20, predictability: "M"}
+  - {name: "Oil & Gas", type: "build-to-order unit sale", pct_of_revenue: 16, predictability: "M"}
+  - {name: "Defence/Aerospace/Railway", type: "build-to-order unit sale, order-book driven", pct_of_revenue: 13, predictability: "L"}
+  - {name: "Heavy Engineering & Industrial Machinery", type: "build-to-order unit sale", pct_of_revenue: 10, predictability: "M"}
+  - {name: "Power Generation", type: "build-to-order unit sale", pct_of_revenue: 5, predictability: "M"}
+asset_intensity: "heavy"
+wc_intensity: "high"
+pricing_power: "weak"
+cyclicality: "cyclical"
+moats_present:
+  - {moat: "switching costs / OEM design-in qualification", durability: "moderate"}
+  - {moat: "regulatory/licence (defence and aerospace approvals)", durability: "moderate, vertical-specific"}
+  - {moat: "cost advantage (backward-integrated forging)", durability: "weak-to-moderate"}
+valuation_methods:
+  primary: {method: "P/E on normalised earnings, Section 1B destination PE (non-converter basis)", why: "build-to-spec component maker archetype confirmed; Section 1B governs the exit multiple directly"}
+  secondary: {method: "EV/EBITDA", why: "cross-check against capex-cycle PAT distortion and near-zero-tax Dubai subsidiary PAT distortion"}
+  tertiary: {method: "", why: ""}
+  not_applicable: ["SOTP/NAV", "replacement-cost/asset-based", "dividend discount model"]
+irrelevant_ratios:
+  - {ratio: "gross margin trend read as pricing power", why: "FY24-FY25 margin jump is a disclosed mix-shift effect (fully-machined and defence/aerospace share), not evidence of durable per-part pricing power"}
+  - {ratio: "single AR-quoted ROCE figure", why: "AR contains three internally inconsistent ROCE figures for the same year (Stage 3)"}
+  - {ratio: "low institutional ownership as risk", why: "CLAUDE.md rules this out as a risk signal; UA multiplier framework governs instead"}
+  - {ratio: "receivable days vs generic manufacturing benchmark", why: "does not capture the undisclosed recourse status of Rs 64.78 cr in bank-discounted receivables"}
+  - {ratio: "segment-level margin comparison across auto/defence/aerospace", why: "company reports a single reportable segment under Ind AS 108; no such data exists"}
+must_track_metrics:
+  - {metric: "Defence/Aerospace/Railway revenue share", healthy: "rising each year, currently 13% FY26", red_flag: "flat or declining for two consecutive quarters"}
+  - {metric: "Cost of materials consumed as % of revenue", healthy: "falling or stable, 65.8% FY25 vs 76.4% FY24", red_flag: "rising without a stated mix explanation"}
+  - {metric: "Cumulative CFO/PAT ratio", healthy: "rising toward 1.0x over rolling 3-4 quarters", red_flag: "remaining near or below the 0.21x flagged in Stage 1"}
+  - {metric: "Trade receivable days and discounted-receivables balance", healthy: "stable/falling, recourse status disclosed", red_flag: "discounted balance growing faster than revenue, recourse remains undisclosed"}
+  - {metric: "Net unhedged FX exposure", healthy: "narrowing or hedging policy adopted", red_flag: "widening with no policy change"}
+first_deterioration_signals:
+  - {risk: "single-customer concentration (2 customers each >10% of consolidated revenue)", first_signal: "revenue from operations, quarter-over-quarter decline without stated cause"}
+  - {risk: "firm-price export orders with unhedged commodity exposure", first_signal: "cost of materials consumed as % of revenue rising quarter-over-quarter without stated mix cause"}
+  - {risk: "bank-discounted receivables with undisclosed recourse", first_signal: "discounted receivables balance growing faster than revenue"}
+  - {risk: "capex-cycle commissioning delay (25T press, defence/aerospace lines)", first_signal: "capital work-in-progress ageing beyond disclosed H1 FY26 commissioning timeline"}
+  - {risk: "unsubstantiated New Energy/E-Mobility segment claim recurring elsewhere", first_signal: "any new investor-communication claim not matched by audited segment/product disclosure"}
+mgmt_questions:
+  - "What is the pricing mechanism on export contracts specifically, as distinct from the domestic pass-through mechanism disclosed for commodity price risk?"
+  - "What are the exact percentages and identities of the two customers (one India, one non-India) each individually exceeding 10% of consolidated revenue?"
+  - "Are the bank-discounted receivables (Rs 64.78 cr) with recourse or without recourse?"
+  - "What audited segment or product disclosure supports the New Energy and E-Mobility segment referenced in the Chairman's letter?"
+  - "What is the commissioning timeline and current utilisation status of the 25T hydraulic press and dedicated defence/aerospace lines?"
+  - "What is the current effective tax rate and profit contribution of Safa Otomotiv FZ-LLC (Dubai), and is this share expected to grow?"
+  - "What is the commercial status, project scope, and capital commitment ceiling of the Swan Balu Heavy Industries JV?"
+one_line_verdict: "Build-to-spec forger-machiner climbing toward defence and aerospace, on disclosure already flagged weak."
+analyst_note: "Archetype verdict (build-to-spec, not converter) rests on product specificity, OEM design-in cycle, and certification regime; it does NOT rest on the export pricing mechanism, which is undisclosed despite exports being 83.4% of consolidated revenue. This is a genuine evidentiary gap, not a close call on the overall archetype: five independent evidence lines (product naming, input-spec dictation, 15-20yr customer lifecycle, certification regime, margin-tracks-mix-not-steel-price) all point the same way, and no disclosed evidence points toward a converter reading. Flag the export-pricing gap as a Halt 1 verification priority regardless."

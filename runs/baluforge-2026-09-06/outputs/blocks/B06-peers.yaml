@@ -1,0 +1,46 @@
+stage: B06-peers
+company: "BALUFORGE"
+run_date: "2026-09-06"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - {severity: MAJOR, description: "Peer-contradicted: Balu Forge's Q4 FY26 revenue decline (-2.3% YoY) blamed on Middle East geopolitical disruption to India-UAE logistics. Two peers (RKFORGE, MMFL) independently confirm a real Middle East/West Asia conflict hit sector energy and shipping costs in the identical quarter, but describe it as a COST-side hit only; all three peers (RKFORGE +28% YoY, HappyForge +20.4% YoY best-ever, MMFL guiding strong) posted their strongest revenue growth of FY26 in that same window. RKFORGE explicitly has zero West Asia revenue/client exposure yet still grew 28%. The revenue-decline mechanism is not supported by peer evidence; credibility grade C does not improve."}
+  - {severity: MODERATE, description: "Peers show non-steel input costs (energy, gas, freight/shipping via Hormuz Strait) rose sharply and were NOT fully pass-through in Q4 FY26/Q1 FY27 due to the same Middle East event; Balu Forge's materials never discuss this cost channel despite a flat raw-material ratio claim through the same slowdown"}
+peers_provided: 12
+verified: []
+partially_verified:
+  - {claim: "Margin resilience via value-added product mix offsetting falling raw material costs (crankshaft/machined-forging realisation, FY26 Q3-Q4)", peers: ["HAPPYFORGE", "MMFL", "RKFORGE"]}
+  - {claim: "Full raw-material (steel) pass-through with a lag, flat raw-material cost ratio through the slowdown", peers: ["HAPPYFORGE", "MMFL", "RKFORGE"]}
+  - {claim: "Plausibility of un-bridged capacity/tonnage claims (Mercedes Benz unit, aggregate 100,000+ TPA)", peers: ["HAPPYFORGE", "MMFL", "RKFORGE"]}
+contradicted:
+  - {claim: "Q4 FY26 revenue decline caused by Middle East geopolitical disruption to India-UAE logistics", contradicting_peer: "RKFORGE, MMFL, HAPPYFORGE", quote_anchor: "RKFORGE May 2026 concall p.3-4 (+28% YoY same quarter, zero West Asia exposure p.19); MMFL Mar 2026 investor conf p.3 (Hormuz risk named, Q4 'seems strong'); HAPPYFORGE May 2026 concall p.4/p.6 ('U.S. Iran issue' cost-only, best-ever +20.4% YoY quarter)"}
+  - {claim: "Demand-momentum framing implying industry weakness/deceleration Oct-Dec 2025 and Jan-Mar 2026", contradicting_peer: "HAPPYFORGE, MMFL, RKFORGE", quote_anchor: "HAPPYFORGE Feb 2026 p.3 and May 2026 p.3 (all-time-high, best-ever); MMFL Mar 2026 p.3 ('fourth quarter seems to be strong'); RKFORGE Feb 2026 p.3 and May 2026 p.4 (+28% YoY, 'strong note')"}
+unverifiable:
+  - {claim: "Comparable defence/aerospace/railway order-book shift or defence-linked wins (NATO, artillery) at peers", peers_checked: ["HAPPYFORGE", "MMFL", "RKFORGE"]}
+peer_coverage_map:
+  - {peer: "HAPPYFORGE", quarter: "Q2/H1 FY26 (Nov 2025)", usage: "SUBSTANTIVE", contribution: "Pre-ME baseline: weak exports blamed on US tariffs/destocking only, no ME mention"}
+  - {peer: "HAPPYFORGE", quarter: "Q3/9M FY26 (Feb 2026)", usage: "SUBSTANTIVE", contribution: "Confirms accelerating demand Oct-Dec 2025, no ME mention"}
+  - {peer: "HAPPYFORGE", quarter: "Q4/FY26 (May 2026)", usage: "SUBSTANTIVE", contribution: "Best-ever quarter (+20.4% YoY) same quarter as Balu Forge's decline; 'U.S. Iran issue' framed as cost item only"}
+  - {peer: "HAPPYFORGE", quarter: "Q1 FY27 (Aug 2026)", usage: "SUBSTANTIVE", contribution: "Only peer data tying a geopolitical event to an actual revenue effect, but one quarter later and segment-confined"}
+  - {peer: "MMFL", quarter: "Q2 FY26 (Nov 2025)", usage: "SUBSTANTIVE", contribution: "US Class VIII destocking narrative, no ME mention"}
+  - {peer: "MMFL", quarter: "Q3 FY26 (Feb 2026)", usage: "SUBSTANTIVE", contribution: "Confirms sequential recovery Oct-Dec 2025, no ME mention"}
+  - {peer: "MMFL", quarter: "investor conf. mid-Q4 FY26 (5 Mar 2026)", usage: "SUBSTANTIVE", contribution: "Names Hormuz Strait/Iran fuel risk explicitly while reporting strong Q4; names RKFORGE/HAPPYFORGE not Balu Forge as competitors"}
+  - {peer: "MMFL", quarter: "Q1 FY27 (Aug 2026)", usage: "SUBSTANTIVE", contribution: "Confirms West Asian conflict fuel-cost hit and Hormuz-routed freight cost alongside 16% YoY revenue growth"}
+  - {peer: "RKFORGE", quarter: "Q2/H1 FY26 (Nov 2025)", usage: "SUBSTANTIVE", contribution: "Own guidance-discipline parallel: maintained double-digit guidance through a revenue-decline quarter"}
+  - {peer: "RKFORGE", quarter: "Q3/9M FY26 (Feb 2026)", usage: "SUBSTANTIVE", contribution: "9M growth ~1% vs unrevised double-digit guidance, a second peer with the same guidance-management pattern"}
+  - {peer: "RKFORGE", quarter: "Q4/FY26 (May 2026)", usage: "SUBSTANTIVE", contribution: "Single most valuable citation: explicit dated Middle East conflict language same quarter, +28% YoY revenue, zero West Asia exposure"}
+  - {peer: "RKFORGE", quarter: "Q1 FY27 (Jul 2026)", usage: "SUBSTANTIVE", contribution: "Confirms conflict as continuing overhang, cost/working-capital channel only, explicit 'no demand deflection'"}
+industry_cross_read:
+  demand: "All three peers describe H1 FY26 export weakness (US tariffs/destocking) easing from Oct-Dec 2025 and accelerating strongly through Jan-Mar 2026 on GST-cut domestic demand and Class 8 truck recovery; no peer reports industry-wide weakness in Balu Forge's decline quarter."
+  pricing_inputs: "Steel/raw-material pass-through with a lag is universal and matches Balu Forge; non-steel costs (energy, gas, freight/Hormuz) were NOT fully pass-through in Q4 FY26/Q1 FY27 and created a real margin drag tied to the Middle East event, a channel Balu Forge's materials never discuss."
+  capex_cycle: "Industry-wide capacity race, not a lone expander: all three peers are simultaneously expanding and diversifying (industrial/PV/energy/railway); new heavy-tonnage capacity takes 12 months to several years to ramp across all three, tempering (not resolving) Stage 5's unbridged capacity-tonnage concern."
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "Continuing (not one-quarter) Middle East/West Asia conflict risk to energy and shipping costs, still an overhang as of Jul 2026 (RKFORGE)"
+  - "Currency/forex hedging policy and realised hedging losses (HAPPYFORGE, RKFORGE); no hedging policy disclosed in Balu Forge's materials"
+  - "US Section 232 tariff exposure and evolving trade-deal fine print (all three peers); not addressed in Balu Forge's decks"
+  - "Manpower/labour availability constraints on production ramp (MMFL, RKFORGE Q1 FY27); not discussed by Balu Forge"
+  - "Proactive discretionary ECL provisioning against a peer's own prudential judgment (RKFORGE Rs.42cr ECL, May 2026), contrasting with Stage 3/5's flagged ECL-cut-against-rising-overdue-receivables concern at Balu Forge"
+net_narrative_effect: "undercuts"
+analyst_note: "The single most consequential finding: the Middle East event Balu Forge cites is real (two peers independently name it, unprompted, in the identical quarter) but every peer that names it describes a cost-side hit only, while posting its own strongest revenue growth of the year in that exact window. This is stronger than a simple 'peers saw normal demand' finding: it shows the one channel by which the event demonstrably hit the sector (energy/freight costs) is undiscussed in Balu Forge's own materials, while the channel Balu Forge claims (revenue/logistics) is the one channel peers do NOT show. Recommend Stage 11/13 treat this as reinforcing, not softening, the MAJOR guidance-miss flag."

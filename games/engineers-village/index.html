@@ -337,6 +337,16 @@ table.keys td { padding: 6px 8px; border-bottom: 1px solid #eee3c8; vertical-ali
 table.keys td:first-child { white-space: nowrap; font-weight: 700; width: 34%; }
 kbd { display: inline-block; border: 1px solid #d8cdb2; border-bottom-width: 3px; border-radius: 6px; padding: 1px 7px; background: #fff; font-family: inherit; font-weight: 700; font-size: 13px; }
 
+#fuel-badge {
+  position: absolute; top: 138px; left: 12px;
+  background: rgba(255,253,246,0.92); border-radius: 999px;
+  padding: 5px 12px 5px 8px; display: flex; align-items: center; gap: 6px;
+  font-weight: 700; font-size: 14px; box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+.test-q { font-size: 17px; font-weight: 600; line-height: 1.45; background: #fff; border: 1px solid #eee3c8; border-radius: 10px; padding: 10px 12px; }
+.test-progress { font-size: 13px; opacity: .7; margin: 8px 0 4px; }
+.score-big { font-size: 34px; font-weight: 800; color: #b4531a; margin: 6px 0; }
+
 /* ---------- Road safety HUD ---------- */
 #safety-badge {
   position: absolute; top: 100px; left: 12px;
@@ -496,8 +506,10 @@ kbd { display: inline-block; border: 1px solid #d8cdb2; border-bottom-width: 3px
     <div id="star-badge"><span class="rank-icon">⭐</span><span id="star-text">0 / 100</span></div>
     <!-- Road safety points and licence -->
     <div id="safety-badge" title="Road Safety points"><span class="rank-icon">🚦</span><span id="safety-text">0</span><span id="licence-icon" hidden>🪪</span></div>
+    <!-- Ride time: earned by solving problems, spent by riding -->
+    <div id="fuel-badge" title="Ride time: solve problems to earn it"><span class="rank-icon">⏱</span><span id="fuel-text">0:00</span></div>
     <!-- Speedometer, shown while riding -->
-    <div id="speedo" hidden><span id="speedo-text">0</span> km/h</div>
+    <div id="speedo" hidden><span id="speedo-text">0 km/h</span></div>
     <!-- Short messages from drivers, signals and the constable -->
     <div id="toast" hidden></div>
     <!-- Compass to the planted flag -->
@@ -614,6 +626,8 @@ kbd { display: inline-block; border: 1px solid #d8cdb2; border-bottom-width: 3px
         <tr><td>🚦</td><td>Road Safety points; 🪪 once you have the licence.</td></tr>
         <tr><td>Minimap</td><td>Orange dots are villagers, yellow dots open jobs, the white arrow is you.</td></tr>
         <tr><td>km/h</td><td>Your speed while riding; red means over the limit.</td></tr>
+        <tr><td>⏱</td><td>Ride time. Solve situations (+1 min) and jobs (+3 min) to earn it; riding spends it.</td></tr>
+        <tr><td>🪪</td><td>Driving licence from the RTO Office (20 questions, 16 to pass). Two challans cancel it.</td></tr>
       </table>
     </div>
   </div>
@@ -976,7 +990,7 @@ const KEY = (profile) => `engineers-village.v1.${profile}`;
 
 // A fresh, empty progress record.
 function emptyProgress() {
-  return { jobsDone: [], attempts: {}, situationsDone: [], replays: {}, safety: { points: 0, lessons: [] } };
+  return { jobsDone: [], attempts: {}, situationsDone: [], replays: {}, safety: { points: 0, lessons: [], licence: { valid: false, challans: 0, tests: 0 }, fines: 0 }, fuel: 0 };
 }
 
 // Read the saved progress for a profile. Always returns a valid object,
@@ -993,8 +1007,11 @@ function loadProgress(profile) {
       situationsDone: Array.isArray(data.situationsDone) ? data.situationsDone : [],
       replays: data.replays && typeof data.replays === "object" ? data.replays : {},
       safety: data.safety && typeof data.safety === "object"
-        ? { points: Number(data.safety.points) || 0, lessons: Array.isArray(data.safety.lessons) ? data.safety.lessons : [] }
-        : { points: 0, lessons: [] },
+        ? { points: Number(data.safety.points) || 0, lessons: Array.isArray(data.safety.lessons) ? data.safety.lessons : [],
+            licence: data.safety.licence && typeof data.safety.licence === "object" ? { valid: !!data.safety.licence.valid, challans: Number(data.safety.licence.challans) || 0, tests: Number(data.safety.licence.tests) || 0 } : { valid: false, challans: 0, tests: 0 },
+            fines: Number(data.safety.fines) || 0 }
+        : { points: 0, lessons: [], licence: { valid: false, challans: 0, tests: 0 }, fines: 0 },
+      fuel: Number(data.fuel) || 0,
     };
   } catch (e) {
     // If storage is blocked (private mode, etc.) just play without saving.
@@ -1561,6 +1578,9 @@ const RANKS = [
   { name: "Master Engineer", min: 6 },
 ];
 
+// Seconds as m:ss.
+function fmtTime(sec) { sec = Math.max(0, Math.floor(sec)); return `${Math.floor(sec / 60)}:${String(sec % 60).padStart(2, "0")}`; }
+
 // A short message at the top of the screen (drivers, signals, the constable).
 let _toastTimer = null;
 function showToast(text, ms = 2600, kind = "") {
@@ -1658,7 +1678,8 @@ class UI {
     document.getElementById("star-text").textContent = `${stars} / ${SITUATIONS.length}`;
     const sf = this.game.progress.safety;
     document.getElementById("safety-text").textContent = String(sf.points);
-    document.getElementById("licence-icon").hidden = sf.lessons.length < SAFETY_LESSONS.length;
+    document.getElementById("licence-icon").hidden = !sf.licence.valid;
+    document.getElementById("fuel-text").textContent = fmtTime(this.game.progress.fuel);
   }
 
   // Show or hide the little "Press E to talk" prompt.
@@ -1726,8 +1747,8 @@ class UI {
     }
     html += `</ul>`;
     const sf = this.game.progress.safety;
-    html += `<div class="section-label">Road safety</div><ul class="job-list"><li><div class="job-title">🚦 ${sf.points} points ${sf.lessons.length >= SAFETY_LESSONS.length ? "· 🪪 Licence earned" : "· no licence yet"}</div>
-      <div class="job-concept">Lessons passed: ${sf.lessons.length} of ${SAFETY_LESSONS.length}. Find Constable Verma in Suryanagar. Cross at zebra crossings on the green man for +1; walking into traffic costs 1.</div></li></ul>`;
+    html += `<div class="section-label">Road safety and riding</div><ul class="job-list"><li><div class="job-title">🚦 ${sf.points} points ${sf.licence.valid ? `· 🪪 Licence valid (challans ${sf.licence.challans}/2)` : "· no licence: take the test at the RTO Office, Suryanagar"}</div>
+      <div class="job-concept">⏱ Ride time ${fmtTime(this.game.progress.fuel)}. Every solved situation gives 1 minute, a job 3 minutes, a lesson 1½ minutes. Riding spends it. Lessons passed: ${sf.lessons.length} of ${SAFETY_LESSONS.length}. Fines paid: ₹${sf.fines}.</div></li></ul>`;
     html += `<div class="section-label">By topic</div><ul class="job-list">`;
     for (const cat of Object.keys(CATEGORY_NAMES)) {
       const all = SITUATIONS.filter((x) => x.cat === cat);
@@ -1757,7 +1778,7 @@ class UI {
     }
     html += `</ul>`;
     html += `<div class="section-label">Road safety</div>`;
-    html += `<p>${prog.safety.points} points. Lessons passed: ${SAFETY_LESSONS.filter((l) => prog.safety.lessons.includes(l.id)).map((l) => l.title.replace(/Lesson \d: /, "")).join(", ") || "none yet"}. ${prog.safety.lessons.length >= SAFETY_LESSONS.length ? "Licence earned." : "No licence yet."}</p>`;
+    html += `<p>Licence ${prog.safety.licence.valid ? "valid" : "not held"}, tests taken ${prog.safety.licence.tests}, challans on this licence ${prog.safety.licence.challans}, fines ₹${prog.safety.fines}, ride time ${fmtTime(prog.fuel)}.</p><p>${prog.safety.points} points. Lessons passed: ${SAFETY_LESSONS.filter((l) => prog.safety.lessons.includes(l.id)).map((l) => l.title.replace(/Lesson \d: /, "")).join(", ") || "none yet"}. ${prog.safety.lessons.length >= SAFETY_LESSONS.length ? "Licence earned." : "No licence yet."}</p>`;
     html += `<div class="section-label">Village situations</div>`;
     html += `<p>${prog.situationsDone.length} of ${SITUATIONS.length} solved. Replays with new numbers: ${Object.values(prog.replays).reduce((a, b) => a + b, 0)}.</p>`;
     html += `<ul class="job-list">`;
@@ -1911,11 +1932,17 @@ function buildingWindowMat() {
 
 // A building from a few boxes: walls, a roof (gable, pyramid, flat or dome),
 // windows, a door, and an optional sign. Everything is sized in metres.
+let _styleCounter = 0;
 function makeBuilding({
   w = 5, d = 5, h = 3, floors = 1, roof = "gable",
-  wall = 0xf2e4c8, roofColor = 0xc0532f, sign = null, chimney = false,
+  wall = 0xf2e4c8, roofColor = 0xc0532f, sign = null, chimney = false, style = null,
 } = {}) {
   const g = new THREE.Group();
+  // Plain houses get one of five styles in turn so no two neighbours match.
+  if (!style && !sign) style = ["cottage", "bungalow", "haveli", "kerala", "modern"][_styleCounter++ % 5];
+  if (style === "kerala") roof = "none";
+  if (style === "modern") roof = "flat";
+  if (style === "haveli" && floors < 2) floors = 2;
   const H = h * floors;
   const body = new THREE.Mesh(new THREE.BoxGeometry(w, H, d), mat(wall));
   body.position.y = H / 2;
@@ -1937,12 +1964,14 @@ function makeBuilding({
   } else if (roof === "dome") {
     roofMesh = new THREE.Mesh(new THREE.SphereGeometry(Math.min(w, d) * 0.55, 12, 8, 0, Math.PI * 2, 0, Math.PI / 2), mat(roofColor));
     roofMesh.position.y = H;
+  } else if (roof === "none") {
+    roofMesh = null;
   } else {
     roofMesh = new THREE.Mesh(new THREE.BoxGeometry(w + 0.4, 0.3, d + 0.4), mat(roofColor));
     roofMesh.position.y = H + 0.15;
   }
-  roofMesh.castShadow = true;
-  g.add(roofMesh);
+  if (roofMesh) { roofMesh.castShadow = true; g.add(roofMesh); }
+  if (style) styleBuilding(g, style, { w, d, h, floors });
 
   // Windows on the front and back, one row per floor.
   const winMat = buildingWindowMat();
@@ -2011,6 +2040,116 @@ class PathMover {
     else { this.obj.position.x += (dx / dist) * step; this.obj.position.z += (dz / dist) * step; }
     this.obj.position.y = heightAt(this.obj.position.x, this.obj.position.z) + this.yOffset;
     if (dist > 0.01) this.obj.rotation.y = Math.atan2(dx, dz);
+    for (const c of this.obj.children) if (c.userData.wheel) c.rotation.x += step * 2.8;
+  }
+}
+
+// ===== src/engine/models.js =====
+/* ============================================================
+   models.js — modern vehicle shapes and house styles.
+   The car has a sloping bonnet and boot, a curved roof, mirrors,
+   lights and alloy wheels. The scooty has curved body panels, a
+   windshield and a headlamp. Houses come in five styles: cottage,
+   bungalow with a porch, haveli with balconies and a jali, kerala
+   with a deep tiled roof, and modern with a flat roof and big
+   windows.
+   ============================================================ */
+
+// A wheel with a tyre and a five-spoke alloy.
+function makeWheel(r = 0.36, w = 0.26) {
+  const g = new THREE.Group();
+  const tyre = new THREE.Mesh(new THREE.CylinderGeometry(r, r, w, 18), mat(0x1f1f1f)); tyre.rotation.z = Math.PI / 2; g.add(tyre);
+  const rim = new THREE.Mesh(new THREE.CylinderGeometry(r * 0.62, r * 0.62, w + 0.02, 12), mat(0xcfd8dc)); rim.rotation.z = Math.PI / 2; g.add(rim);
+  for (let k = 0; k < 5; k++) { const spoke = new THREE.Mesh(new THREE.BoxGeometry(w + 0.03, r * 0.5, 0.05), mat(0x9aa6ad)); spoke.rotation.x = (k * Math.PI * 2) / 5; spoke.position.y = 0; g.add(spoke); }
+  g.userData.wheel = true;
+  return g;
+}
+
+// A modern hatchback: side profile extruded across the width.
+function makeCar(color) {
+  const g = new THREE.Group();
+  const W = 1.8;
+  // Side profile (z along the car, y up), extruded along x.
+  const shape = new THREE.Shape();
+  shape.moveTo(-2.1, 0.35); shape.lineTo(2.1, 0.35); shape.lineTo(2.15, 0.7); shape.lineTo(1.9, 0.85);
+  shape.lineTo(0.9, 0.95); shape.lineTo(0.55, 1.45); shape.lineTo(-0.9, 1.5); shape.lineTo(-1.6, 1.15); shape.lineTo(-2.1, 1.0); shape.closePath();
+  const body = new THREE.Mesh(new THREE.ExtrudeGeometry(shape, { depth: W, bevelEnabled: true, bevelSize: 0.06, bevelThickness: 0.06, bevelSegments: 2 }), new THREE.MeshStandardMaterial({ color, roughness: 0.35, metalness: 0.4 }));
+  body.rotation.y = Math.PI / 2; body.position.x = -W / 2 - 0.03;
+  body.castShadow = true;
+  g.add(body);
+  // Glass: windscreen, rear and side windows as one dark band.
+  const glass = new THREE.MeshStandardMaterial({ color: 0x9fd3ea, transparent: true, opacity: 0.55, roughness: 0.1, metalness: 0.3 });
+  const cabin = new THREE.Mesh(new THREE.BoxGeometry(W - 0.2, 0.5, 1.45), glass); cabin.position.set(0, 1.2, -0.15); g.add(cabin);
+  // Mirrors, lights, bumpers, number plate.
+  for (const side of [-1, 1]) { const m = new THREE.Mesh(new THREE.BoxGeometry(0.18, 0.1, 0.12), mat(color)); m.position.set(side * (W / 2 + 0.1), 1.05, 0.55); g.add(m); }
+  for (const side of [-1, 1]) {
+    const hl = new THREE.Mesh(new THREE.BoxGeometry(0.4, 0.16, 0.08), new THREE.MeshStandardMaterial({ color: 0xffffff, emissive: 0xfff6c0, emissiveIntensity: 0.9 })); hl.position.set(side * 0.62, 0.72, 2.16); g.add(hl);
+    const tl = new THREE.Mesh(new THREE.BoxGeometry(0.34, 0.14, 0.06), new THREE.MeshStandardMaterial({ color: 0xff3b30, emissive: 0xff3b30, emissiveIntensity: 0.6 })); tl.position.set(side * 0.62, 1.0, -2.14); g.add(tl);
+  }
+  const plate = makeTextSprite("SN 07 AB 1234", { size: 40, scale: 0.35 }); plate.position.set(0, 0.5, 2.25); g.add(plate);
+  for (const [x, z] of [[-0.85, 1.3], [0.85, 1.3], [-0.85, -1.3], [0.85, -1.3]]) { const w = makeWheel(0.36, 0.24); w.position.set(x, 0.36, z); g.add(w); }
+  g.userData.footprint = { L: 2.2, W: 1.0 };
+  return g;
+}
+
+// A modern scooter: curved panels from a lathe, a windshield, a bright headlamp.
+function makeScooty(color = 0xd62828) {
+  const g = new THREE.Group();
+  const paint = new THREE.MeshStandardMaterial({ color, roughness: 0.35, metalness: 0.3 });
+  // Rear body: a rounded shell.
+  const shell = new THREE.Mesh(new THREE.SphereGeometry(0.34, 12, 8), paint); shell.scale.set(0.8, 0.8, 1.6); shell.position.set(0, 0.62, -0.35); shell.castShadow = true; g.add(shell);
+  const seat = new THREE.Mesh(new THREE.BoxGeometry(0.42, 0.12, 0.7), mat(0x222222)); seat.position.set(0, 0.86, -0.35); g.add(seat);
+  const board = new THREE.Mesh(new THREE.BoxGeometry(0.46, 0.08, 0.7), mat(0x333333)); board.position.set(0, 0.32, 0.15); g.add(board);
+  // Front apron and column, curved.
+  const apron = new THREE.Mesh(new THREE.SphereGeometry(0.28, 12, 8), paint); apron.scale.set(1.0, 1.9, 0.6); apron.position.set(0, 0.7, 0.62); g.add(apron);
+  const bars = new THREE.Mesh(new THREE.BoxGeometry(0.72, 0.06, 0.06), mat(0x222222)); bars.position.set(0, 1.12, 0.6); g.add(bars);
+  const shield = new THREE.Mesh(new THREE.BoxGeometry(0.5, 0.35, 0.03), new THREE.MeshStandardMaterial({ color: 0x9fd3ea, transparent: true, opacity: 0.5 })); shield.position.set(0, 1.3, 0.66); shield.rotation.x = -0.2; g.add(shield);
+  const lamp = new THREE.Mesh(new THREE.SphereGeometry(0.11, 10, 8), new THREE.MeshStandardMaterial({ color: 0xffffff, emissive: 0xfff6c0, emissiveIntensity: 0.9 })); lamp.position.set(0, 1.0, 0.82); g.add(lamp);
+  for (const side of [-1, 1]) { const m = new THREE.Mesh(new THREE.SphereGeometry(0.06, 8, 6), mat(0x222222)); m.position.set(side * 0.36, 1.28, 0.55); g.add(m); }
+  const exhaust = new THREE.Mesh(new THREE.CylinderGeometry(0.05, 0.06, 0.6, 8), mat(0x9aa6ad)); exhaust.rotation.x = Math.PI / 2; exhaust.position.set(0.22, 0.4, -0.5); g.add(exhaust);
+  for (const z of [0.72, -0.62]) { const w = makeWheel(0.24, 0.12); w.position.set(0, 0.24, z); g.add(w); }
+  g.userData.seat = { x: 0, y: 0.86 - 0.72 + 0.12, z: -0.3 };
+  g.userData.dynamic = true;
+  return g;
+}
+
+// House styles applied on top of the basic building.
+function styleBuilding(g, style, { w, d, h, floors }) {
+  const H = h * floors;
+  const add = (m, x, y, z) => { m.position.set(x, y, z); m.castShadow = true; g.add(m); return m; };
+  if (style === "bungalow") {
+    // A porch on columns with its own little roof, and a plinth.
+    add(new THREE.Mesh(new THREE.BoxGeometry(w + 0.8, 0.3, d + 0.8), mat(0xbfb6a5)), 0, 0.15, 0);
+    const pw = Math.min(w, 4);
+    add(new THREE.Mesh(new THREE.BoxGeometry(pw, 0.25, 2), mat(COLORS.roofRed)), 0, 2.6, d / 2 + 1.0);
+    for (const x of [-pw / 2 + 0.3, pw / 2 - 0.3]) add(new THREE.Mesh(new THREE.CylinderGeometry(0.12, 0.14, 2.5, 8), mat(0xfff8ec)), x, 1.25, d / 2 + 1.8);
+  } else if (style === "haveli") {
+    // Balconies with railings on upper floors, a carved jali and arched frames.
+    for (let f = 1; f < floors; f++) {
+      add(new THREE.Mesh(new THREE.BoxGeometry(w * 0.7, 0.15, 1.0), mat(0xe8d5b5)), 0, f * h + 0.05, d / 2 + 0.5);
+      for (let k = 0; k <= 6; k++) add(new THREE.Mesh(new THREE.BoxGeometry(0.06, 0.8, 0.06), mat(0x8a5626)), -w * 0.35 + (w * 0.7 * k) / 6, f * h + 0.5, d / 2 + 0.95);
+    }
+    const jali = new THREE.Mesh(new THREE.BoxGeometry(1.2, 1.2, 0.1), mat(0xd9c39a)); add(jali, -w / 2 + 0.02, 1.7, 0); jali.rotation.y = Math.PI / 2;
+    for (let k = 0; k < 3; k++) for (let j = 0; j < 3; j++) add(new THREE.Mesh(new THREE.BoxGeometry(0.06, 0.25, 0.25), mat(0x8a5626)), -w / 2 - 0.02, 1.35 + k * 0.35, -0.35 + j * 0.35);
+    add(new THREE.Mesh(new THREE.BoxGeometry(w + 0.5, 0.3, 0.3), mat(0xd4a017)), 0, H + 0.1, d / 2 + 0.1); // golden cornice
+  } else if (style === "kerala") {
+    // A deep, low tiled roof with wide eaves and a second small gable on top.
+    const eave = new THREE.Mesh(new THREE.ConeGeometry(Math.max(w, d) * 0.95, 1.4, 4), mat(0x8b3a2a)); eave.rotation.y = Math.PI / 4; add(eave, 0, H + 0.6, 0);
+    const top = new THREE.Mesh(new THREE.ConeGeometry(Math.max(w, d) * 0.5, 1.0, 4), mat(0x8b3a2a)); top.rotation.y = Math.PI / 4; add(top, 0, H + 1.7, 0);
+    for (const x of [-w / 2 + 0.4, w / 2 - 0.4]) add(new THREE.Mesh(new THREE.BoxGeometry(0.16, H, 0.16), mat(0x5a3a24)), x, H / 2, d / 2 + 0.6);
+    add(new THREE.Mesh(new THREE.BoxGeometry(w, 0.12, 1.2), mat(0xb9773c)), 0, 0.3, d / 2 + 0.6); // verandah
+  } else if (style === "modern") {
+    // Big glass panels, a roof terrace with a parapet, and a sun shade.
+    const glass = new THREE.MeshStandardMaterial({ color: 0x9fd3ea, transparent: true, opacity: 0.6, roughness: 0.1, metalness: 0.3 });
+    add(new THREE.Mesh(new THREE.BoxGeometry(w * 0.55, H * 0.6, 0.1), glass), w * 0.1, H * 0.45, d / 2 + 0.06);
+    add(new THREE.Mesh(new THREE.BoxGeometry(w + 0.2, 0.5, 0.15), mat(0xffffff)), 0, H + 0.25, d / 2 + 0.05);
+    add(new THREE.Mesh(new THREE.BoxGeometry(w * 0.6, 0.1, 1.2), mat(0x555e66)), w * 0.1, H * 0.78, d / 2 + 0.6); // sun shade
+    add(new THREE.Mesh(new THREE.BoxGeometry(0.15, H, 1.0), mat(0x8a5626)), -w / 2 + 0.3, H / 2, d / 2 + 0.1); // wood feature strip
+  } else {
+    // cottage: flower boxes under the windows and a round attic window.
+    add(new THREE.Mesh(new THREE.BoxGeometry(w * 0.8, 0.2, 0.3), mat(0x6fae54)), 0, 1.1, d / 2 + 0.2);
+    for (let k = 0; k < 5; k++) add(new THREE.Mesh(new THREE.SphereGeometry(0.1, 5, 4), mat([0xff6b8a, 0xffd23f, 0xffffff][k % 3])), -w * 0.35 + k * w * 0.175, 1.28, d / 2 + 0.25);
+    const attic = new THREE.Mesh(new THREE.CylinderGeometry(0.3, 0.3, 0.1, 12), mat(0x35424a)); attic.rotation.x = Math.PI / 2; add(attic, 0, H + 0.7, d / 2 - 0.2);
   }
 }
 
@@ -2833,6 +2972,7 @@ class World {
     this.scene.add(terrain);
     this.terrain = terrain;
     this.mapItems = { roads: [], buildings: [], water: [] };
+    this.roadSegs = [];
   }
 
   // A road built from short slabs that follow the ground.
@@ -2856,9 +2996,25 @@ class World {
       }
     }
     this.mapItems.roads.push(points);
+    for (let i = 0; i < points.length - 1; i++) this.roadSegs.push({ x1: points[i][0], z1: points[i][1], x2: points[i + 1][0], z2: points[i + 1][1], half: width / 2 });
+  }
+
+  // Is (x, z) on a road (or its shoulder), where vehicles may go?
+  onRoad(x, z, margin = 3.4) {
+    for (const sg of this.roadSegs) {
+      const dx = sg.x2 - sg.x1, dz = sg.z2 - sg.z1;
+      const len2 = dx * dx + dz * dz || 1;
+      let t = ((x - sg.x1) * dx + (z - sg.z1) * dz) / len2;
+      t = Math.max(0, Math.min(1, t));
+      const px = sg.x1 + dx * t, pz = sg.z1 + dz * t;
+      if (Math.hypot(x - px, z - pz) <= sg.half + margin) return true;
+    }
+    return false;
   }
 
   _buildRoads() {
+    // The bridge is part of the main road for vehicles.
+    this.roadSegs.push({ x1: 0, z1: 8, x2: 0, z2: -8, half: 2 });
     // Main road north to south: town, bridge, village, up the hill to the temple.
     this._addRoad([[0, 150], [0, 66], [0, 30], [0, 8]], 4.5);
     this._addRoad([[0, -8], [0, -48], [0, -80], [-10, -100], [0, -118]], 4.5);
@@ -3244,6 +3400,8 @@ class World {
     this._buildPlayground(-92, 282);
     this._place(makeTower({ w: 14, d: 14, floors: 18, tint: 0xffe0a3, sign: "Grand Hotel" }), 140, 215, -Math.PI / 2, "Grand Hotel");
     this._place(makeBuilding({ w: 14, d: 10, h: 3.6, roof: "flat", wall: 0xdfe6ea, roofColor: 0x1d3557, sign: "Police Station" }), -136, 245, Math.PI / 2, "Police Station");
+    this._place(makeBuilding({ w: 12, d: 8, h: 3.4, roof: "flat", wall: 0xfff1d6, roofColor: 0x8d6e63, sign: "RTO Office" }), -136, 228, Math.PI / 2, "RTO Office");
+    const rtoSign = makeTextSprite("Driving licence test here", { size: 40, scale: 1.1 }); rtoSign.position.set(-128, heightAt(-128, 228) + 2.6, 228); this.scene.add(rtoSign);
     const jeep = makeCar(0x1d3557); jeep.position.set(-126, 0, 252); jeep.rotation.y = Math.PI / 2; this.scene.add(jeep); this.addBox(-126, 252, 4, 1.8);
     this._place(makeBuilding({ w: 14, d: 10, h: 4, roof: "flat", wall: 0xd62828, roofColor: 0x9aa6ad, sign: "Fire Station" }), -136, 275, Math.PI / 2, "Fire Station");
     const truck = makeCityBus(0xd62828); truck.scale.set(1, 0.8, 0.8); truck.position.set(-124, 0, 282); truck.rotation.y = Math.PI / 2; this.scene.add(truck); this.addBox(-124, 282, 7.5, 2.5);
@@ -4230,6 +4388,7 @@ class Player {
     // direction it looks from; the player can turn it, and it eases in behind
     // the player while walking if left alone.
     this.camYaw = 0;
+    this.riding = null;
     this.camOffset = new THREE.Vector3(0, 6.5, 11);
     this._tmp = new THREE.Vector3();
     this._forward = new THREE.Vector3();
@@ -4282,8 +4441,16 @@ class Player {
       const h0 = this.world.groundAt(body.position.x, body.position.z);
       const probeX = body.position.x + dir.x * 0.6, probeZ = body.position.z + dir.z * 0.6;
       const steep = this.world.groundAt(probeX, probeZ) - h0 > 0.7;
-      if (!steep && this.world.isWalkable(nx, body.position.z)) body.position.x = nx;
-      if (!steep && this.world.isWalkable(body.position.x, nz)) body.position.z = nz;
+      // Vehicles stay on roads and never enter another vehicle; walkers cannot pass through vehicles either.
+      const ok = (x, z) => {
+        if (!this.world.isWalkable(x, z)) return false;
+        if (this.riding && !this.world.currentRoom && !this.world.onRoad(x, z)) { this.blockedBy = "road"; return false; }
+        if (this.world.vehicleBlocked && this.world.vehicleBlocked(x, z, this.riding ? this.riding.group : null, this.riding ? 0.9 : 0.5)) { this.blockedBy = "vehicle"; return false; }
+        return true;
+      };
+      this.blockedBy = null;
+      if (!steep && ok(nx, body.position.z)) body.position.x = nx;
+      if (!steep && ok(body.position.x, nz)) body.position.z = nz;
 
       if (!this.world.currentRoom) {
         body.position.x = THREE.MathUtils.clamp(body.position.x, -(WORLD_HALF - 5), WORLD_HALF - 5);
@@ -4308,7 +4475,8 @@ class Player {
       sitPose(this.group, this.riding.kind, this.pedal || 0);
       if (this.riding.kind !== "metro" && walking) for (const c of body.children) {
         const t = c.geometry && c.geometry.type;
-        if (t === "CylinderGeometry" && c.rotation.z !== 0) c.rotation.x += dt * speed;      // wheels on their axles
+        if (c.userData.wheel) c.rotation.x += dt * speed * 2.8;                                // alloy wheels
+        if (t === "CylinderGeometry" && c.rotation.z !== 0) c.rotation.x += dt * speed;      // auto wheels
         if (t === "TorusGeometry") c.rotation.x += dt * speed * 1.4;                          // bicycle wheels
       }
     } else {
@@ -6292,6 +6460,10 @@ const NPC_DEFS = [
   { id: "x24", name: "Zoya", look: { shirt: 0x06d6a0, dress: true }, zone: "city", child: true, cats: ["city", "science"], greet: "I can count all the floors! Can you?" },
   { id: "x25", name: "Guard Bahadur", look: { shirt: 0x1d3557, trousers: 0x111111, hat: 0x1d3557 }, zone: "city", cats: ["city_hard", "time"], greet: "Halt! Just joking. A question." },
   { id: "x26", name: "Vendor Kaka", look: { shirt: 0x8d6e63, trousers: 0x4e342e, hair: 0xbdbdbd }, zone: "city", cats: ["city", "money"], greet: "Fresh bhutta! Solve this and it's yours." },
+  // Traffic police on duty (they stand at crossroads and hand out tips and challans).
+  { id: "police1", name: "Traffic Police Yadav", look: { shirt: 0xffffff, trousers: 0x1d3557, hat: 0xffffff }, zone: "city", police: true, post: [7, 196], cats: ["rules"], greet: "Red means stop. Amber means get ready. Green means go, if it is clear. Two challans and your licence is gone." },
+  { id: "police2", name: "Traffic Police Rani", look: { shirt: 0xffffff, trousers: 0x1d3557, hat: 0xffffff }, zone: "city", police: true, post: [-33, 236], cats: ["rules"], greet: "Helmet strapped, belt clicked, phone away. That is how you ride in my city." },
+  { id: "police3", name: "Traffic Police Khan", look: { shirt: 0xffffff, trousers: 0x1d3557, hat: 0xffffff }, zone: "city", police: true, post: [47, 276], cats: ["rules"], greet: "Speed limit 50. Stay on the road. Cross at the zebra. Simple, no?" },
   // Shanti Valley.
   { id: "devika", name: "Yoga Teacher Devika", look: { shirt: 0xf77f00, trousers: 0xffffff, hair: 0x1d1410 }, zone: "himalaya", cats: ["himalaya", "science"], greet: "Breathe. Good. Now stretch your mind a little." },
   { id: "ramesh", name: "Pilgrim Ramesh", look: { shirt: 0xffffff, trousers: 0xffd21e, hair: 0x888888 }, zone: "himalaya", cats: ["himalaya", "travel"], greet: "Har Har Mahadev! Long walk. Help an old pilgrim count?" },
@@ -6465,12 +6637,12 @@ const CITY = { x1: -150, z1: 178, x2: 150, z2: 292, name: "Suryanagar" };
 // Auto rickshaw stands: talk to the driver to ride to another district.
 const AUTO_STANDS = [
   { name: "Setugram Square", hint: "the bridge, the jobs, the school", x: 5, z: 21 },
-  { name: "Town Station", hint: "shops, the railway, the playground", x: 8, z: 78 },
-  { name: "The Farms", hint: "fields, barns, cows and goats", x: 105, z: 44 },
+  { name: "Town Station", hint: "shops, the railway, the playground", x: 5.4, z: 78 },
+  { name: "The Farms", hint: "fields, barns, cows and goats", x: 104.4, z: 44 },
   { name: "Lake Shore", hint: "boats, huts and the fish market", x: -58, z: 30 },
-  { name: "Temple Hill", hint: "the temple and the great banyan", x: 7, z: -96 },
+  { name: "Temple Hill", hint: "the temple and the great banyan", x: -2, z: -86 },
   { name: "Suryanagar", hint: "the city: towers, metro and mall", x: 8, z: 193 },
-  { name: "Shanti Valley", hint: "meditation centre, dhams, Devshikhar view", x: 10, z: -204 },
+  { name: "Shanti Valley", hint: "meditation centre, dhams, Devshikhar view", x: 4.6, z: -204 },
 ];
 
 // A window texture for towers: dark glass with lit windows. One image,
@@ -6528,15 +6700,7 @@ function makeTower({ w = 12, d = 12, floors = 10, tint = 0xffffff, sign = null }
   return g;
 }
 
-// Vehicles for the avenues.
-function makeCar(color) {
-  const g = new THREE.Group();
-  const body = new THREE.Mesh(new THREE.BoxGeometry(1.8, 0.7, 4), mat(color)); body.position.y = 0.75; g.add(body);
-  const cabin = new THREE.Mesh(new THREE.BoxGeometry(1.6, 0.6, 2), mat(0x35424a)); cabin.position.set(0, 1.35, -0.2); g.add(cabin);
-  for (const [x, z] of [[-0.9, 1.3], [0.9, 1.3], [-0.9, -1.3], [0.9, -1.3]]) { const w = new THREE.Mesh(new THREE.CylinderGeometry(0.35, 0.35, 0.3, 10), mat(0x222222)); w.rotation.z = Math.PI / 2; w.position.set(x, 0.35, z); g.add(w); }
-  for (const x of [-0.6, 0.6]) { const l = new THREE.Mesh(new THREE.BoxGeometry(0.3, 0.2, 0.1), new THREE.MeshStandardMaterial({ color: 0xffffcc, emissive: 0xffffaa, emissiveIntensity: 0.8 })); l.position.set(x, 0.8, 2.02); g.add(l); }
-  return g;
-}
+// Vehicles for the avenues. (The car comes from models.js.)
 function makeAuto() {
   const g = new THREE.Group();
   const body = new THREE.Mesh(new THREE.BoxGeometry(1.3, 1.2, 2.2), mat(0x2f9e44)); body.position.y = 1.0; g.add(body);
@@ -6727,6 +6891,230 @@ const GATE_QUESTION = {
   steps: [{ q: "The train is 300 metres away and moves 15 metres every second. In how many seconds will it reach the gate?", answer: 20, unit: "seconds", hint: "Distance ÷ speed: 300 ÷ 15." }],
 };
 
+// ===== src/engine/licence.js =====
+/* ============================================================
+   licence.js — the driving licence and the question bank.
+
+   Riding any motor vehicle needs a LICENCE from the RTO Office in
+   Suryanagar: a 20 question test drawn at random from a bank of
+   several hundred questions (rules, signs, each vehicle, first aid,
+   the maths of driving). Pass mark 16. Every ride starts with a 3
+   question quiz about that particular vehicle. Two challans from the
+   police cancel the licence; the next test draws fresh questions.
+   Vehicles also need RIDE TIME, which is earned only by solving
+   the village's problems.
+   ============================================================ */
+
+// One question: tag, text, correct answer, three wrong answers.
+function Q(tag, q, a, ...d) {
+  // Keep the three wrong answers distinct from each other and from the right one.
+  const out = [];
+  for (const x of d) if (x !== a && !out.includes(x)) out.push(x);
+  let k = 1;
+  while (out.length < 3) {
+    const m = String(a).match(/^(\D*)(\d+(?:\.\d+)?)(.*)$/);
+    const cand = m ? `${m[1]}${parseFloat(m[2]) * (k + 2)}${m[3]}` : ["None of these", "All of these", "It depends on the weather"][k % 3];
+    if (cand !== a && !out.includes(cand)) out.push(cand);
+    k++;
+  }
+  return { tag, q, a, d: out };
+}
+
+const QBANK_FIXED = [
+  // ---- bicycle ----
+  Q("bicycle", "Which part of a bicycle turns the pedalling into wheel movement?", "The chain", "The bell", "The brake cable", "The mudguard"),
+  Q("bicycle", "Before a ride, which bicycle check matters most?", "Brakes and tyre air", "The colour of the paint", "The bell only", "The basket"),
+  Q("bicycle", "On a bicycle at night you must have...", "A front white light and a rear red reflector", "A loud horn", "A radio", "Nothing"),
+  Q("bicycle", "Which side of the road do cyclists ride on in India?", "The left side, close to the kerb", "The right side", "The middle", "Any side"),
+  Q("bicycle", "Turning right on a bicycle, you should first...", "Look behind and signal with your right arm", "Ring the bell and turn", "Speed up", "Close your eyes"),
+  Q("bicycle", "A bicycle helmet protects mainly your...", "Head", "Knees", "Elbows", "Feet"),
+  Q("bicycle", "How many people should ride a normal bicycle?", "One", "Two, one on the carrier", "Three", "As many as fit"),
+  Q("bicycle", "Riding a bicycle uses which of your body's energy?", "Muscle energy from the food you eat", "Petrol", "Electricity", "Wind"),
+  Q("bicycle", "Bicycle brakes work by...", "Rubber pads pressing on the wheel rim or disc", "Making the chain stop", "Air resistance", "Magnets"),
+  Q("bicycle", "A bicycle wheel that goes round faster than the pedals is thanks to...", "Gears: a big front cog and a small back cog", "Magic", "Bigger tyres", "The bell"),
+  Q("bicycle", "The bicycle bell is for...", "Warning people ahead that you are coming", "Music", "Scaring dogs", "Decoration"),
+  Q("bicycle", "Cycling on a wet road you should...", "Brake earlier and go slower", "Go faster", "Ride with no hands", "Brake only at the last second"),
+  Q("bicycle", "What is the bicycle part you hold to steer?", "The handlebar", "The saddle", "The crank", "The spoke"),
+  Q("bicycle", "Cycle tyres should be...", "Pumped firm, not soft", "As soft as possible", "Half flat", "Filled with water"),
+  Q("bicycle", "A cyclist must NOT...", "Hold on to a moving vehicle to get pulled along", "Use the bell", "Wear a helmet", "Stop at red lights"),
+  Q("bicycle", "The bicycle was invented around...", "The 1800s", "The 1990s", "Ancient Egypt", "Last year"),
+  Q("bicycle", "Which is the safest place to cycle?", "A cycle lane or the left edge of the road", "The footpath at full speed", "The middle of a highway", "Railway tracks"),
+  Q("bicycle", "Hand signal for stopping on a bicycle:", "Right arm out and bent down", "Both arms up", "Wave", "No signal is needed"),
+  // ---- scooty / two-wheeler ----
+  Q("scooty", "On a scooty the helmet must be...", "Strapped under the chin", "Hung on the handle", "Worn only on highways", "Optional for short rides"),
+  Q("scooty", "How many people may ride a scooty?", "The rider and one pillion, both with helmets", "Three", "Four", "As many as fit"),
+  Q("scooty", "The minimum age for a two-wheeler licence in India is...", "18 years (16 for gearless up to 50 cc)", "10 years", "12 years", "25 years"),
+  Q("scooty", "A scooty runs on...", "Petrol, or a battery if electric", "Water", "Muscle power", "Coal"),
+  Q("scooty", "The rear-view mirrors on a scooty are for...", "Seeing traffic behind you", "Checking your hair", "Decoration", "Signalling"),
+  Q("scooty", "Before turning on a scooty you must...", "Use the indicator and check the mirror", "Honk three times", "Speed up", "Wave your leg"),
+  Q("scooty", "Riding a scooty on the footpath is...", "Not allowed; footpaths are for people walking", "Fine if it is quick", "Allowed after 6 pm", "Allowed for children"),
+  Q("scooty", "A scooty's kick or self-start does what?", "Starts the engine", "Opens the seat", "Turns on the light", "Locks the wheel"),
+  Q("scooty", "The scooty's speedometer shows...", "How fast you are going, in km per hour", "How much petrol is left", "The time", "The temperature"),
+  Q("scooty", "Where does the pillion rider put their feet?", "On the foot rests", "Dangling near the wheel", "On the rider's shoulders", "On the road"),
+  Q("scooty", "Using a mobile phone while riding a scooty is...", "Dangerous and against the law", "Fine at slow speed", "Allowed for maps", "Allowed with one hand"),
+  Q("scooty", "The scooty's fuel gauge tells you...", "How much petrol is in the tank", "The speed", "The distance to the city", "The tyre pressure"),
+  Q("scooty", "A gearless scooter changes speed with...", "The throttle on the right handle", "A gear lever on the foot", "The horn", "The seat"),
+  Q("scooty", "Two-wheelers are more at risk in crashes because...", "They have no metal body around the rider", "They are too fast", "They are too heavy", "They cannot brake"),
+  Q("scooty", "The scooty's front brake lever is on the...", "Right handlebar", "Left handlebar", "Seat", "Foot rest"),
+  Q("scooty", "An electric scooty is charged from...", "An electric socket", "A petrol pump", "The sun only", "A bicycle"),
+  // ---- auto rickshaw ----
+  Q("auto", "How many wheels does an auto rickshaw have?", "Three", "Two", "Four", "Six"),
+  Q("auto", "An auto rickshaw is steered with...", "A handlebar, like a scooter", "A steering wheel", "Pedals", "Reins"),
+  Q("auto", "The meter in an auto shows...", "The fare for the distance travelled", "The speed only", "The time", "The weather"),
+  Q("auto", "How many passengers may an auto legally carry?", "Three, on the back seat", "Ten", "One", "As many as fit"),
+  Q("auto", "An auto driver must have...", "A commercial driving licence and a permit", "A school certificate", "No papers", "A cricket bat"),
+  Q("auto", "Many city autos run on...", "CNG, a cleaner gas fuel", "Coal", "Diesel only", "Wood"),
+  Q("auto", "Why is an auto more likely to tip over than a car?", "It has three wheels and a narrow base", "It is too fast", "It has no seats", "It is too heavy"),
+  Q("auto", "In an auto, passengers should...", "Sit inside and keep hands and heads in", "Stand on the step", "Hang out of the side", "Sit on the roof"),
+  Q("auto", "The auto's yellow and black or green colour tells you...", "It is a public passenger vehicle", "It is a police vehicle", "It is a school bus", "It is broken"),
+  Q("auto", "An auto stopping to pick up passengers should...", "Pull to the left kerb", "Stop in the middle of the road", "Stop at the crossroads", "Reverse"),
+  Q("auto", "The engine of an auto rickshaw is usually...", "Small, under the driver's seat or at the back", "In the front bonnet", "On the roof", "Under the passengers' feet"),
+  Q("auto", "An auto's horn should be used...", "Only to warn, never to bully", "All the time", "At hospitals", "Never at all"),
+  Q("auto", "Auto rickshaws are also called...", "Tuk-tuks or three-wheelers", "Trains", "Trams", "Trucks"),
+  // ---- car ----
+  Q("car", "A car has how many wheels on the road?", "Four", "Three", "Two", "Six"),
+  Q("car", "The pedal on the far right in a car is the...", "Accelerator", "Brake", "Clutch", "Horn"),
+  Q("car", "The pedal in the middle of a manual car is the...", "Brake", "Accelerator", "Clutch", "Wiper"),
+  Q("car", "Seat belts must be worn by...", "Everyone in the car, front and back", "The driver only", "Front passengers only", "Nobody on short trips"),
+  Q("car", "Children in a car should sit...", "In the back, belted in or in a child seat", "On the driver's lap", "In the front seat standing", "In the boot"),
+  Q("car", "The car's indicator lights are for...", "Telling others which way you will turn", "Looking pretty", "Seeing at night", "Signalling to the police"),
+  Q("car", "A car's hand brake is used...", "To hold the car still when parked", "To go faster", "To turn", "To honk"),
+  Q("car", "The rear-view mirror shows...", "The road behind you", "Your face", "The road ahead", "The sky"),
+  Q("car", "Wipers on a car are for...", "Clearing rain from the windscreen", "Cleaning the tyres", "Cooling the engine", "Signalling"),
+  Q("car", "In India, the car's steering wheel is on the...", "Right side", "Left side", "Middle", "Back seat"),
+  Q("car", "Which fuel do most cars use?", "Petrol or diesel, or electricity", "Water", "Milk", "Coal"),
+  Q("car", "An airbag in a car...", "Inflates in a crash to cushion you", "Keeps the tyres pumped", "Stores luggage", "Holds the fuel"),
+  Q("car", "Before starting the car you should...", "Adjust the seat and mirrors and wear the belt", "Honk", "Switch on the radio loud", "Open all doors"),
+  Q("car", "The car's headlights on high beam should be dipped when...", "A vehicle comes toward you", "It is raining", "You are parking", "Never"),
+  Q("car", "Overtaking is done from which side in India?", "The right side", "The left side", "Either side", "The footpath"),
+  Q("car", "The engine of most cars is...", "Under the front bonnet", "On the roof", "In the boot", "Under the back seat"),
+  Q("car", "A car's number plate is...", "A unique registration to identify the car", "A price tag", "A sticker for fun", "The owner's phone number"),
+  Q("car", "Reversing a car, you should...", "Look behind and go slowly", "Go fast", "Honk continuously", "Close your eyes"),
+  Q("car", "What does ABS in a car do?", "Stops the wheels locking when braking hard", "Plays music", "Cools the seats", "Opens the doors"),
+  // ---- rules ----
+  Q("rules", "At a red light you must...", "Stop behind the line", "Go if no police", "Slow down and go", "Honk and go"),
+  Q("rules", "An amber light means...", "Stop if you safely can; red is next", "Go faster", "Turn left only", "Pedestrians go"),
+  Q("rules", "A green light means...", "Go, if the road ahead is clear", "Stop", "Reverse", "Honk"),
+  Q("rules", "Vehicles in India drive on the...", "Left side of the road", "Right side", "Middle", "Whichever side is empty"),
+  Q("rules", "Speed limit near a school is...", "Low, about 25 km/h", "100 km/h", "As fast as you like", "60 km/h"),
+  Q("rules", "The speed limit inside Suryanagar city is...", "50 km/h", "120 km/h", "10 km/h", "80 km/h"),
+  Q("rules", "Honking near a hospital is...", "Not allowed; it is a silence zone", "Encouraged", "Required", "Fine at night"),
+  Q("rules", "Who has the first right at a zebra crossing?", "People walking", "Cars", "Buses", "Autos"),
+  Q("rules", "A no-parking sign means...", "Do not leave your vehicle there", "Park quickly", "Park only cars", "Parking is free"),
+  Q("rules", "At a crossroads without lights, who goes first?", "The vehicle already in the crossing, then the one on the right", "The loudest horn", "The biggest vehicle", "Whoever is fastest"),
+  Q("rules", "When an ambulance with a siren comes behind you...", "Move to the left and let it pass", "Race it", "Stop in the middle", "Ignore it"),
+  Q("rules", "Driving after drinking alcohol is...", "Illegal and very dangerous", "Fine if slow", "Allowed at night", "Allowed on empty roads"),
+  Q("rules", "A one-way sign means...", "Traffic goes only in the direction of the arrow", "One vehicle at a time", "The road is closed", "Only one lane"),
+  Q("rules", "When a school bus stops with its lights flashing...", "Stop and wait; children may cross", "Overtake quickly", "Honk", "Go around it fast"),
+  Q("rules", "Before changing lanes you must...", "Check the mirror and signal", "Honk", "Speed up", "Close the window"),
+  Q("rules", "Documents a driver must carry:", "Licence, registration, insurance, pollution certificate", "A photo album", "Only a licence", "None"),
+  Q("rules", "The horn must not be used...", "Between 10 pm and 6 am in residential areas", "Ever", "In daylight", "On highways"),
+  Q("rules", "A flashing red light at a railway crossing means...", "Stop; a train is coming", "Go faster", "The gate is open", "Nothing"),
+  Q("rules", "A pedestrian should cross the road...", "At a zebra crossing when the green man shows", "Anywhere", "Diagonally across the crossroads", "While looking at a phone"),
+  Q("rules", "The white broken line in the middle of the road...", "Separates lanes; you may cross it to overtake if safe", "Means stop", "Marks a footpath", "Means no overtaking"),
+  Q("rules", "A solid yellow line in the middle of the road means...", "Do not cross it to overtake", "Overtake freely", "Park here", "Turn right"),
+  Q("rules", "If your vehicle breaks down on the road you should...", "Move it to the side and put a warning triangle behind it", "Leave it in the lane", "Run away", "Honk for help"),
+  Q("rules", "Traffic police signal with an arm straight up means...", "Stop", "Go", "Turn left", "Go faster"),
+  Q("rules", "The minimum age to drive a car in India is...", "18 years", "12 years", "16 years", "21 years"),
+  Q("rules", "In fog you should drive with...", "Low beam lights and slowly", "No lights", "High beam", "Hazard lights while speeding"),
+  Q("rules", "Following distance behind a vehicle should be...", "At least two seconds", "One car length always", "Touching bumpers", "Zero on highways"),
+  // ---- signs ----
+  Q("signs", "A red circle with a white bar means...", "No entry", "Hospital", "Parking", "Speed up"),
+  Q("signs", "A red triangle with a black cross inside means...", "Crossroads ahead", "Hospital", "Church", "No entry"),
+  Q("signs", "A blue square with a white P means...", "Parking", "Police", "Petrol", "Playground"),
+  Q("signs", "A red triangle with a walking person means...", "Pedestrian crossing ahead", "No walking", "Running race", "School closed"),
+  Q("signs", "A red circle with 30 inside means...", "Speed limit 30 km/h", "30 metres to go", "30 cars allowed", "Route 30"),
+  Q("signs", "A red circle with a horn crossed out means...", "No honking", "Honk here", "Music zone", "Silence in the car"),
+  Q("signs", "A red triangle with a cow means...", "Cattle may be on the road", "Milk shop", "No cows", "Farm sale"),
+  Q("signs", "A red triangle with two children means...", "School ahead", "No children", "Playground closed", "Children crossing race"),
+  Q("signs", "A blue square with a white H means...", "Hospital", "Hotel", "Helmet", "Highway"),
+  Q("signs", "A blue circle with a white arrow means...", "Compulsory direction: go that way", "Do not go that way", "One vehicle only", "Parking direction"),
+  Q("signs", "A red octagon (8 sides) with STOP means...", "Come to a full stop, then go when clear", "Slow down only", "Stop only at night", "Speed up"),
+  Q("signs", "A red triangle with a U-shaped curve means...", "Sharp bend ahead", "U-turn allowed", "River ahead", "Roundabout"),
+  Q("signs", "A red circle with a U-turn arrow crossed out means...", "No U-turn", "U-turn here", "Turn around", "Roundabout"),
+  Q("signs", "A red triangle with a train means...", "Railway crossing ahead", "Station this way", "No trains", "Train race"),
+  Q("signs", "A red circle with a bicycle crossed out means...", "No cycling", "Cycle lane", "Cycle shop", "Cycles only"),
+  Q("signs", "A green board with white letters on a highway shows...", "Directions and distances to places", "Speed limits", "Prices", "Warnings"),
+  Q("signs", "A red triangle with a falling rock means...", "Falling rocks ahead", "Rock shop", "Mountain race", "Road closed"),
+  Q("signs", "A red triangle with a wavy road means...", "Slippery road", "River crossing", "Waves ahead", "Bumpy music"),
+  Q("signs", "A blue circle with a white bicycle means...", "Cycle track: compulsory for cycles", "No cycling", "Cycle shop", "Cycles forbidden"),
+  Q("signs", "A yellow diamond with a black arrow means...", "A warning about the road ahead", "A prize", "A parking area", "A bus stop"),
+  // ---- first aid ----
+  Q("firstaid", "The emergency number for ambulance, police and fire in India is...", "112", "007", "999 999", "1234"),
+  Q("firstaid", "If someone is bleeding from a cut, first...", "Press a clean cloth firmly on the wound", "Pour water on it", "Blow on it", "Wait"),
+  Q("firstaid", "After a road accident, an injured person should be moved...", "Only if in danger, and carefully", "Quickly by the arms", "By the legs", "Always"),
+  Q("firstaid", "A burn from a hot exhaust pipe should be...", "Cooled under running water for 10 minutes", "Covered in butter", "Rubbed hard", "Ignored"),
+  Q("firstaid", "In a first aid kit you should find...", "Bandages, antiseptic, plasters, gloves", "Sweets", "A cricket ball", "A phone charger"),
+  Q("firstaid", "If a friend falls off a bicycle and hits their head, you should...", "Keep them still and call an adult or 112", "Make them stand and run", "Give them cold water only", "Laugh"),
+  Q("firstaid", "The first thing to do at an accident scene is...", "Make sure the place is safe, then call for help", "Take photos", "Move all the vehicles", "Argue about whose fault it is"),
+  Q("firstaid", "A sprained ankle from a fall should be...", "Rested, iced, and raised", "Walked on hard", "Rubbed with oil", "Ignored"),
+  // ---- vehicles general ----
+  Q("general", "Which vehicle carries the most people at once?", "A bus", "A car", "A scooty", "An auto"),
+  Q("general", "Which vehicle is best for a short trip with no pollution?", "A bicycle", "A car", "A bus", "A truck"),
+  Q("general", "A tyre is filled with...", "Air under pressure", "Water", "Sand", "Oil"),
+  Q("general", "The engine turns fuel into...", "Movement, using small explosions inside", "Water", "Light only", "Sound only"),
+  Q("general", "A vehicle's brakes turn movement into...", "Heat, by rubbing", "Cold", "Light", "Fuel"),
+  Q("general", "The metro runs on...", "Electricity from the overhead line or third rail", "Petrol", "Coal", "Muscle power"),
+  Q("general", "A bus driver can see the door and the passengers behind using...", "Mirrors", "The horn", "The radio", "The wipers"),
+  Q("general", "What does a speed breaker on a road do?", "Makes vehicles slow down", "Makes them faster", "Marks a bus stop", "Stops rain"),
+  Q("general", "Vehicles pollute less when...", "They are serviced and the engine is tuned", "They are old and smoky", "They idle at signals", "They go very fast"),
+  Q("general", "Turning off the engine at a long red light...", "Saves fuel and cuts pollution", "Wastes fuel", "Breaks the engine", "Is against the law"),
+  Q("general", "A tractor is built for...", "Pulling farm tools and heavy loads slowly", "Racing", "Carrying passengers", "Flying"),
+  Q("general", "Trains cannot swerve because...", "They run on fixed rails", "They are too slow", "The driver is asleep", "They have no wheels"),
+  Q("general", "A bus stop is marked so that...", "Buses stop there and people wait there safely", "Cars can park", "Cows can rest", "Autos can race"),
+  Q("general", "An electric vehicle is quiet, so a pedestrian should...", "Look carefully, not only listen", "Ignore it", "Walk on the road", "Cover their ears"),
+  Q("general", "A car's fuel tank is filled at a...", "Petrol pump", "Water tank", "Bus stop", "Metro station"),
+  Q("general", "Kilometres per hour measures...", "Speed", "Weight", "Fuel", "Time"),
+];
+
+// Parametric questions: numbers change on every draw.
+const QBANK_GEN = [
+  (r) => { const s = r.pick([30, 40, 50, 60]), t = r.pick([1, 2, 3]); return Q("maths", `A car goes ${s} km every hour. How far does it go in ${t} hour${t > 1 ? "s" : ""}?`, `${s * t} km`, `${s + t} km`, `${s * t * 2} km`, `${s} km`); },
+  (r) => { const d = r.pick([60, 90, 120, 150]), s = r.pick([30, 60]); return Q("maths", `Suryanagar is ${d} km away. At ${s} km/h, how long does the drive take?`, `${d / s} hour${d / s > 1 ? "s" : ""}`, `${d / s + 1} hours`, `${d - s} minutes`, `${d / s / 2} hours`); },
+  (r) => { const v = r.pick([60, 80]); const base = { 60: 45, 80: 80 }[v]; return Q("maths", `A car at 40 km/h needs 20 m to stop. About how much does it need at ${v} km/h?`, `${base} m`, `${base / 2} m`, `${base * 2} m`, `20 m`); },
+  (r) => { const l = r.pick([5, 8, 10]), kmpl = r.pick([15, 20, 25]); return Q("maths", `A scooty does ${kmpl} km on one litre. How far on ${l} litres?`, `${l * kmpl} km`, `${l + kmpl} km`, `${kmpl} km`, `${l * kmpl * 2} km`); },
+  (r) => { const f = r.pick([20, 25, 30]), km = r.pick([4, 6, 8]), per = r.pick([10, 12]); return Q("maths", `An auto charges ₹${f} to start and ₹${per} per km. What is the fare for ${km} km?`, `₹${f + per * km}`, `₹${f + per}`, `₹${per * km}`, `₹${f * km}`); },
+  (r) => { const g = r.pick([20, 30, 40]), y = r.pick([3, 5]), rd = r.pick([25, 35]); return Q("maths", `A signal shows green ${g} s, amber ${y} s, red ${rd} s. How long is one cycle?`, `${g + y + rd} seconds`, `${g + rd} seconds`, `${g + y} seconds`, `${g * 2} seconds`); },
+  (r) => { const w = r.pick([6, 8, 10]), sp = r.pick([1, 2]); return Q("maths", `A road is ${w} m wide. Walking ${sp} m each second, how long to cross?`, `${w / sp} seconds`, `${w * sp} seconds`, `${w + sp} seconds`, `${w} minutes`); },
+  (r) => { const n = r.pick([3, 4, 5]), per = r.pick([40, 45, 50]); return Q("maths", `${n} buses each carry ${per} people. How many people in total?`, `${n * per}`, `${n + per}`, `${per}`, `${n * per * 2}`); },
+  (r) => { const h = r.pick([6, 7, 8]), m = r.pick([20, 30, 45]); return Q("maths", `A bus leaves at ${h}:00 and the ride takes ${m} minutes. When does it arrive?`, `${h}:${m}`, `${h + 1}:${m}`, `${h}:00`, `${h + m}:00`); },
+  (r) => { const a = r.pick([15, 18, 20]), b = r.pick([2, 3, 4]); return Q("maths", `A tyre lasts ${a * 1000} km. You drive ${b * 1000} km a year. How many years does it last?`, `${a / b > 5 ? Math.round((a / b) * 10) / 10 : a / b} years`, `${a} years`, `${b} years`, `${a * b} years`); },
+  (r) => { const p = r.pick([100, 105, 110]), l = r.pick([2, 5, 10]); return Q("maths", `Petrol costs ₹${p} a litre. What do ${l} litres cost?`, `₹${p * l}`, `₹${p + l}`, `₹${p}`, `₹${p * l * 2}`); },
+  (r) => { const s = r.pick([36, 54, 72]); return Q("maths", `${s} km/h is how many metres per second? (Divide by 3.6.)`, `${s / 3.6} m/s`, `${s} m/s`, `${s / 2} m/s`, `${s * 3.6} m/s`); },
+  (r) => { const c = r.pick([3, 4, 6]), s = r.pick([2, 3]); return Q("maths", `${c} cars and ${s} scooties are parked. How many wheels touch the ground?`, `${c * 4 + s * 2}`, `${c + s}`, `${c * 4}`, `${(c + s) * 4}`); },
+  (r) => { const v = r.pick([50, 60, 80]), lim = 50; return Q("rules", `The limit is ${lim} km/h and your speedometer shows ${v}. Are you speeding?`, v > lim ? "Yes, slow down" : "No, that is within the limit", v > lim ? "No, that is within the limit" : "Yes, slow down", "Only if police are watching", "Speed limits are advice only"); },
+  (r) => { const veh = r.pick(["scooty", "car", "auto", "bicycle"]); const ans = { scooty: "A helmet", car: "A seat belt", auto: "A commercial licence and permit", bicycle: "Working brakes and a bell" }[veh]; return Q("rules", `What must you have to ride a ${veh} properly?`, ans, ...["A radio", "A cricket bat", "Sunglasses"]); },
+  (r) => { const n = r.pick([2, 3, 4]); return Q("rules", `Two people are allowed on a scooty. ${n + 2} people are riding one. How many too many?`, `${n}`, `${n + 2}`, `0`, `1`); },
+  (r) => { const dist = r.pick([200, 300, 450]), sp = r.pick([10, 15]); return Q("maths", `A train ${dist} m away moves ${sp} m every second. In how many seconds does it reach the gate?`, `${dist / sp} seconds`, `${dist} seconds`, `${sp} seconds`, `${dist / sp / 2} seconds`); },
+  (r) => { const d = r.pick([1.5, 2, 2.5]), m = r.pick([10, 15]); return Q("maths", `You cycle ${d} km in ${m} minutes. How far in ${m * 2} minutes at the same speed?`, `${d * 2} km`, `${d} km`, `${d * 4} km`, `${d + m} km`); },
+  (r) => { const color = r.pick(["red", "green", "amber"]); const ans = { red: "Stop", green: "Go if clear", amber: "Prepare to stop" }[color]; return Q("rules", `The traffic light is ${color}. What do you do?`, ans, ...["Stop", "Go if clear", "Prepare to stop"].filter((x) => x !== ans), "Honk"); },
+  (r) => { const veh = r.pick(["car", "bus", "scooty", "bicycle", "auto"]); const wheels = { car: 4, bus: 6, scooty: 2, bicycle: 2, auto: 3 }[veh]; return Q("general", `How many wheels does a ${veh} usually have?`, `${wheels}`, `${wheels + 1}`, `${wheels - 1 || 1}`, `${wheels * 2}`); },
+  (r) => { const a = r.pick([2, 3]), b = r.pick([4, 5, 6]); return Q("maths", `You keep a ${a} second gap. The car ahead is ${b} seconds ahead. Is your gap safe?`, "Yes, more than two seconds", "No, too close", "Gaps do not matter", "Only at night"); },
+  (r) => { const l = r.pick([4, 6, 8]), per = r.pick([250, 300]); return Q("maths", `A bus needs ${per} litres of diesel for a day. How much for ${l} days?`, `${per * l} litres`, `${per + l} litres`, `${per} litres`, `${per * l * 2} litres`); },
+  (r) => { const s = r.pick([12, 15, 20]); return Q("maths", `A bicycle goes ${s} km/h. How far in half an hour?`, `${s / 2} km`, `${s} km`, `${s * 2} km`, `${s / 4} km`); },
+  (r) => { const n = r.pick([4, 5, 6]); return Q("maths", `A metro train has ${n} coaches with 60 seats each. How many seats?`, `${n * 60}`, `${n + 60}`, `${60}`, `${n * 30}`); },
+  (r) => { const st = r.pick([5, 8, 12]), f = r.pick([10, 15]); return Q("maths", `The metro charges ₹${f} per station. What is the fare for ${st} stations?`, `₹${st * f}`, `₹${st + f}`, `₹${f}`, `₹${st * f * 2}`); },
+];
+
+// Draw n distinct questions for the given tags (any tag if empty).
+function drawQuestions(n, tags = [], rng = null) {
+  const r = rng || makeRng(Math.floor(Math.random() * 1e9));
+  const pool = QBANK_FIXED.filter((q) => !tags.length || tags.includes(q.tag)).slice();
+  const gens = QBANK_GEN.map((g) => g(r)).filter((q) => !tags.length || tags.includes(q.tag));
+  const all = r.shuffle(pool.concat(gens));
+  const picked = [];
+  const seen = new Set();
+  for (const q of all) { if (seen.has(q.q)) continue; seen.add(q.q); picked.push(q); if (picked.length >= n) break; }
+  return picked.map((q) => ({ q: q.q, choices: r.shuffle([q.a, ...q.d]), answer: q.a, hint: "Think about what keeps everyone on the road safe." }));
+}
+
+// How many different questions the bank can produce (fixed plus generated variants).
+function bankSize() { return QBANK_FIXED.length + QBANK_GEN.length * 12; }
+
+// Nice names per vehicle kind.
+const VEHICLE_NAMES = { bike: "bicycle", scooty: "scooty", auto: "auto rickshaw", car: "car" };
+const VEHICLE_TAG = { bike: "bicycle", scooty: "scooty", auto: "auto", car: "car" };
+
 // ===== src/engine/ride.js =====
 /* ============================================================
    ride.js — things you can ride: scooty, bicycle, car, and the metro.
@@ -6738,28 +7126,15 @@ const GATE_QUESTION = {
    ============================================================ */
 
 const RIDEABLES = [
-  { kind: "scooty", x: -4, z: 23, speed: 11, label: "Scooty" },
-  { kind: "bike", x: 12, z: 84, speed: 10, label: "Bicycle" },
-  { kind: "car", x: 14, z: 198, speed: 14, label: "Car" },
-  { kind: "scooty", x: -14, z: 198, speed: 11, label: "Scooty" },
-  { kind: "bike", x: -60, z: 40, speed: 10, label: "Bicycle" },
-  { kind: "scooty", x: 104, z: 48, speed: 11, label: "Scooty" },
-  { kind: "bike", x: 8, z: -206, speed: 10, label: "Bicycle" },
+  { kind: "scooty", x: 3.6, z: 27, speed: 11, label: "Scooty" },
+  { kind: "bike", x: 12, z: 92.4, speed: 10, label: "Bicycle" },
+  { kind: "car", x: 14, z: 195.6, speed: 14, label: "Car" },
+  { kind: "scooty", x: -14, z: 184.6, speed: 11, label: "Scooty" },
+  { kind: "bike", x: -68, z: 40, speed: 10, label: "Bicycle" },
+  { kind: "scooty", x: 103.2, z: 48, speed: 11, label: "Scooty" },
+  { kind: "bike", x: 3.4, z: -206, speed: 10, label: "Bicycle" },
 ];
 
-function makeScooty(color = 0xd62828) {
-  const g = new THREE.Group();
-  const body = new THREE.Mesh(new THREE.BoxGeometry(0.5, 0.35, 1.2), mat(color)); body.position.set(0, 0.5, -0.2); g.add(body);
-  const seat = new THREE.Mesh(new THREE.BoxGeometry(0.45, 0.12, 0.6), mat(0x222222)); seat.position.set(0, 0.72, -0.35); g.add(seat);
-  const board = new THREE.Mesh(new THREE.BoxGeometry(0.45, 0.06, 0.6), mat(0x333333)); board.position.set(0, 0.3, 0.2); g.add(board);
-  const column = new THREE.Mesh(new THREE.BoxGeometry(0.12, 0.7, 0.12), mat(color)); column.position.set(0, 0.7, 0.55); column.rotation.x = -0.3; g.add(column);
-  const bars = new THREE.Mesh(new THREE.BoxGeometry(0.7, 0.06, 0.06), mat(0x222222)); bars.position.set(0, 1.05, 0.62); g.add(bars);
-  const lamp = new THREE.Mesh(new THREE.SphereGeometry(0.1, 8, 6), new THREE.MeshStandardMaterial({ color: 0xffffcc, emissive: 0xffffaa, emissiveIntensity: 0.6 })); lamp.position.set(0, 0.9, 0.75); g.add(lamp);
-  for (const z of [0.7, -0.6]) { const w = new THREE.Mesh(new THREE.CylinderGeometry(0.22, 0.22, 0.12, 10), mat(0x222222)); w.rotation.z = Math.PI / 2; w.position.set(0, 0.22, z); g.add(w); }
-  g.userData.seat = { x: 0, y: 0.72 - 0.72 + 0.12, z: -0.3 };
-  g.userData.dynamic = true;
-  return g;
-}
 function makeBicycle(color = 0x2a9d8f) {
   const g = new THREE.Group();
   const frame1 = new THREE.Mesh(new THREE.BoxGeometry(0.06, 0.06, 1.0), mat(color)); frame1.position.set(0, 0.55, 0); g.add(frame1);
@@ -6864,7 +7239,7 @@ function roomTypeFor(sign) {
   if (s.includes("barn")) return "barn";
   if (s.includes("granary")) return "granary";
   if (s.includes("hospital")) return "clinic";
-  if (s.includes("police") || s.includes("fire")) return "office";
+  if (s.includes("police") || s.includes("fire") || s.includes("rto")) return "office";
   if (s.includes("school")) return "school";
   if (s.includes("clinic") || s.includes("pharmacy")) return "clinic";
   if (s.includes("library") || s.includes("books")) return "library";
@@ -7484,6 +7859,24 @@ class Game {
     this._buildNpcs();
     this._buildAnimals();
     this._buildInteractables();
+    // Vehicles are solid for the player, on foot or riding.
+    this.world.vehicleBlocked = (x, z, self, pad) => {
+      const movers = [...(this.world.movers || []), ...(this.world.cityMovers || [])];
+      for (const mv of movers) {
+        const v = mv.obj; if (v === self) continue;
+        const dx = x - v.position.x, dz = z - v.position.z;
+        if (dx * dx + dz * dz > 100) continue;
+        const r = v.rotation.y, fx = Math.sin(r), fz = Math.cos(r);
+        const along = dx * fx + dz * fz, side = dx * fz - dz * fx;
+        if (Math.abs(along) < mv.L + pad && Math.abs(side) < mv.W + pad) return true;
+      }
+      for (const rd of this.rideables || []) {
+        if (rd.group === self || this.player.riding === rd) continue;
+        if (Math.hypot(x - rd.group.position.x, z - rd.group.position.z) < 1.4 + pad) return true;
+      }
+      const m = this.world.metro; // the metro is up on its track; the train is handled by the tracks rule
+      return false;
+    };
     this.minimap = new Minimap(this.world);
     this.bigmap = new BigMap(this);
     this.minimap.rideables = this.rideables;
@@ -7530,7 +7923,7 @@ class Game {
 
   // ---- Wandering villagers, each carrying one of the 100 situations ----
   _buildNpcs() {
-    this.npcs = NPC_DEFS.map((def) => new Npc(def, this.world));
+    this.npcs = NPC_DEFS.map((def) => new Npc(def, this.world, def.post ? { pos: { x: def.post[0], z: def.post[1] }, fixed: true } : {}));
     for (const npc of this.npcs) this._assignSituation(npc);
   }
 
@@ -7624,17 +8017,8 @@ class Game {
       const ride = { group, speed: def.speed, kind: def.kind, label: def.label, controlled: true };
       this.interactables.push({
         pos: group.position, radius: 2.4,
-        prompt: () => (def.kind === "bike" || this.hasLicence() ? `Ride the ${def.label}` : `${def.label}: licence needed (Constable Verma)`),
-        activate: () => {
-          if (def.kind !== "bike" && !this.hasLicence()) {
-            Audio.playRetry();
-            showToast("No licence yet! Pass Constable Verma's five Road Safety lessons in Suryanagar. Bicycles are fine.", 4000, "bad");
-            return;
-          }
-          this.player.mount(ride);
-          Audio.playPick();
-          showToast(def.kind === "car" ? "Seat belt on. Speed limit in the city is 50 km/h." : "Helmet on. Speed limit in the city is 50 km/h.", 3000, "good");
-        },
+        prompt: () => (def.kind === "bike" || this.hasLicence() ? `Ride the ${def.label} (3 questions first)` : `${def.label}: licence needed (RTO Office)`),
+        activate: () => this._tryMount(ride),
       });
       return ride;
     });
@@ -7677,17 +8061,129 @@ class Game {
     // Constable Verma runs the Road Safety School instead of a situation.
     for (const npc of this.npcs) {
       const constable = npc.def.id === "verma";
+      const police = !!npc.def.police;
       this.interactables.push({
         pos: npc.position,
         radius: 2.6,
         prompt: () => (constable ? `Talk to ${npc.name} (Road Safety School)` : `Talk to ${npc.name}`),
-        activate: () => (constable ? this._talkConstable(npc) : this._startErrand(npc)),
+        activate: () => (constable ? this._talkConstable(npc) : police ? this.dialogue.say(npc.name, [npc.def.greet], null, { pitch: 380, speaker: npc.id }) : this._startErrand(npc)),
       });
     }
   }
 
+  // ---- Licence, tests, ride time ----
+  hasLicence() { return this.progress.safety.licence.valid; }
+
+  addFuel(sec, why) {
+    this.progress.fuel = Math.max(0, this.progress.fuel + sec);
+    saveProgress(this.profile, this.progress);
+    this.ui.refreshRank();
+    if (why) showToast(`⏱ +${fmtTime(sec)} ride time: ${why}`, 2600, "good");
+  }
+
+  // A test panel: one multiple choice question at a time, no retries, a score at the end.
+  _runTest(title, intro, questions, passMark, onDone) {
+    let i = 0, right = 0;
+    const card = openPanel(`
+      <div class="job-title-row"><h2>${title}</h2><button class="ghost-btn" id="test-quit">Give up</button></div>
+      <p class="job-brief">${intro}</p>
+      <div class="test-progress" id="test-progress"></div>
+      <div class="test-q" id="test-q"></div>
+      <div class="choice-bank" id="test-choices"></div>
+      <div id="test-result"></div>
+    `);
+    card.querySelector("#test-quit").addEventListener("click", () => { closePanel(); onDone(null); });
+    const show = () => {
+      const q = questions[i];
+      card.querySelector("#test-progress").textContent = `Question ${i + 1} of ${questions.length} · right so far: ${right}`;
+      card.querySelector("#test-q").textContent = q.q;
+      const bank = card.querySelector("#test-choices");
+      bank.innerHTML = "";
+      q.choices.forEach((c) => {
+        const b = document.createElement("button");
+        b.className = "choice-btn"; b.textContent = c;
+        b.addEventListener("click", () => {
+          const ok = c === q.answer;
+          if (ok) { right++; Audio.playStep(); } else { Audio.playRetry(); }
+          bank.querySelectorAll("button").forEach((x) => { x.disabled = true; if (x.textContent === q.answer) x.style.borderColor = "#7cae59"; if (x === b && !ok) x.classList.add("wrong"); });
+          setTimeout(() => { i++; if (i < questions.length) show(); else finish(); }, ok ? 500 : 1100);
+        });
+        bank.appendChild(b);
+      });
+    };
+    const finish = () => {
+      const pass = right >= passMark;
+      card.querySelector("#test-q").hidden = true; card.querySelector("#test-choices").hidden = true;
+      card.querySelector("#test-result").innerHTML = `<div class="score-big">${right} / ${questions.length}</div>
+        <div class="solved-banner">${pass ? "<b>Passed.</b>" : "<b>Not passed.</b>"} You needed ${passMark}. ${pass ? "" : "Read the Road Safety lessons and try again; the questions will be different."}
+        <div class="btn-row"><button class="big-btn" id="test-done">${pass ? "Collect" : "Okay"}</button></div></div>`;
+      card.querySelector("#test-done").addEventListener("click", () => { closePanel(); onDone(pass); });
+      if (pass) Audio.playSuccess();
+    };
+    show();
+  }
+
+  // The RTO licence test: 20 questions from the whole bank, pass mark 16.
+  _talkRTO(npc) {
+    this._engagedNpc = npc;
+    const lic = this.progress.safety.licence;
+    const line = lic.valid ? ["Your licence is valid. Two challans and it is cancelled, remember."] : ["Welcome to the RTO. Twenty questions, sixteen to pass.", "Rules, signs, every kind of vehicle, first aid, and some sums. Ready?"];
+    this.dialogue.say(npc.name, line, () => {
+      if (lic.valid) { this._engagedNpc = null; return; }
+      const qs = drawQuestions(20);
+      this._runTest("Driving Licence Test", `RTO Officer Mrs. Rao: "Answer carefully. There is no going back to a question."`, qs, 16, (pass) => {
+        this._engagedNpc = null;
+        if (pass === null) return;
+        lic.tests++;
+        countAttempt(this.profile, this.progress, "licence-test");
+        if (pass) { lic.valid = true; lic.challans = 0; this.addSafety(5, "🪪 Licence issued! Two challans cancel it."); this.addFuel(120, "licence test passed"); }
+        else saveProgress(this.profile, this.progress);
+        this.ui.refreshRank();
+      });
+    }, { pitch: 420, speaker: npc.id });
+  }
+
+  // Before every ride: three questions about that vehicle. All three must be right.
+  _preRide(ride, onPass) {
+    const tag = VEHICLE_TAG[ride.kind];
+    const qs = drawQuestions(2, [tag]).concat(drawQuestions(1, ["rules", "signs"]));
+    this._runTest(`Before you ride the ${VEHICLE_NAMES[ride.kind]}`, `Three questions about the ${VEHICLE_NAMES[ride.kind]} and the road. All three must be right.`, qs, 3, (pass) => {
+      if (pass) { showToast("All correct. Ride safely.", 2200, "good"); onPass(); }
+      else if (pass === false) showToast(`Not this time. Learn about the ${VEHICLE_NAMES[ride.kind]} and try again with new questions.`, 3600, "bad");
+    });
+  }
+
+  // Everything that must be true before a ride begins.
+  _tryMount(ride) {
+    const lic = this.progress.safety.licence;
+    if (ride.kind !== "bike" && !lic.valid) { Audio.playRetry(); showToast("No licence. Take the 20 question test at the RTO Office in Suryanagar.", 3800, "bad"); return; }
+    if (this.progress.fuel <= 0) { Audio.playRetry(); showToast("No ride time left. Solve a situation (+1 min) or a job (+3 min) to earn some.", 4000, "bad"); return; }
+    this._preRide(ride, () => {
+      this.player.mount(ride);
+      Audio.playPick();
+      showToast(ride.kind === "car" ? "Seat belt on. Limit 50 km/h. Stay on the road." : ride.kind === "auto" ? "Meter on. Limit 50 km/h. Stay on the road." : "Helmet on. Stay on the road.", 3000, "good");
+    });
+  }
+
+  // A challan from the police: a fine, a point, and a strike on the licence.
+  _challan(reason, fine) {
+    const lic = this.progress.safety.licence;
+    playWhistle();
+    this.progress.safety.fines += fine;
+    this.addSafety(-1);
+    if (lic.valid && this.player.riding && this.player.riding.kind !== "bike") {
+      lic.challans++;
+      if (lic.challans >= 2) {
+        lic.valid = false;
+        showToast(`🚔 CHALLAN ₹${fine}: ${reason}. Second mistake: LICENCE CANCELLED. Take the test again at the RTO.`, 6000, "bad");
+        this.player.dismount();
+      } else showToast(`🚔 CHALLAN ₹${fine}: ${reason}. Licence mistakes: 1 of 2.`, 4200, "bad");
+    } else showToast(`🚔 CHALLAN ₹${fine}: ${reason}.`, 3600, "bad");
+    saveProgress(this.profile, this.progress);
+    this.ui.refreshRank();
+  }
+
   // ---- Road Safety School ----
-  hasLicence() { return this.progress.safety.lessons.length >= SAFETY_LESSONS.length; }
 
   addSafety(n, text, kind) {
     const sf = this.progress.safety;
@@ -7733,6 +8229,7 @@ class Game {
         if (!sf.lessons.includes(lesson.id)) {
           sf.lessons.push(lesson.id);
           this.addSafety(10, `Lesson passed! +10 safety points.`);
+          this.addFuel(90);
           if (sf.lessons.length >= SAFETY_LESSONS.length) setTimeout(() => showToast("🪪 Licence earned! You may now ride the scooty and the car. Helmet and seat belt, always.", 5000, "good"), 1200);
         }
         this._openSafetySchool();
@@ -7822,7 +8319,8 @@ class Game {
     let tx = v.position.x + rx * sgn * (mv.W + 1.8), tz = v.position.z + rz * sgn * (mv.W + 1.8);
     if (!w.isWalkable(tx, tz)) { tx = v.position.x - rx * sgn * (mv.W + 1.8); tz = v.position.z - rz * sgn * (mv.W + 1.8); }
     if (w.isWalkable(tx, tz)) { mover.position.x = tx; mover.position.z = tz; }
-    this.addSafety(-1, this.player.riding ? "Driver: Keep your distance, Engineer! (−1)" : "Driver: Arre, Engineer! Not here. Use the zebra crossing! (−1)");
+    if (this.player.riding) this._challan("hit another vehicle", 500);
+    else this.addSafety(-1, "Driver: Arre, Engineer! Not here. Use the zebra crossing! (−1)");
   }
 
   // Walking in the city: roads are for crossings, crossings are for the green man.
@@ -7838,7 +8336,7 @@ class Game {
       if (this._road && this._road.safe && this._road.crossing) {
         const c = this._road.crossing;
         const sideNow = c.across === "h" ? Math.sign(pp.z - c.inter.z) : Math.sign(pp.x - c.inter.x);
-        if (sideNow !== this._road.enterSide) this.addSafety(1, "Safe crossing on the green man! +1 🚦");
+        if (sideNow !== this._road.enterSide) { this.addSafety(1, "Safe crossing on the green man! +1 🚦"); this.addFuel(20); }
       }
       this._road = null;
       return;
@@ -7862,7 +8360,7 @@ class Game {
     const w = this.world, pp = this.player.position;
     const speedo = document.getElementById("speedo");
     speedo.hidden = false;
-    document.getElementById("speedo-text").textContent = String(Math.round(this.player.speedKmh));
+    document.getElementById("speedo-text").textContent = String(Math.round(this.player.speedKmh)) + " km/h · ⏱ " + fmtTime(this.progress.fuel);
     const inCity = pp.z > CITY.z1 - 6;
     const over = inCity && this.player.speedKmh > 52;
     speedo.classList.toggle("fast", over);
@@ -7872,8 +8370,7 @@ class Game {
       if (this._speedingSince == null) this._speedingSince = now;
       if (now - this._speedingSince > 2 && now - (this._lastSpeedTicket || 0) > 6) {
         this._lastSpeedTicket = now;
-        playWhistle();
-        this.addSafety(-1, "Constable Verma: Over the speed limit of 50! Slow down. (−1)");
+        this._challan("over the 50 km/h limit", 1000);
       }
     } else this._speedingSince = null;
     // Red lights: entering a crossroads against your light.
@@ -7885,7 +8382,7 @@ class Game {
         if (this._inInter !== it) {
           this._inInter = it;
           const st = signalState(it.phase, elapsed);
-          if ((horizontal ? st.h : st.v) === "red") { playWhistle(); this.addSafety(-1, "Red light! Stop behind the line and wait. (−1)"); }
+          if ((horizontal ? st.h : st.v) === "red") this._challan("jumped a red light", 1000);
         }
         return;
       }
@@ -7905,7 +8402,7 @@ class Game {
         // Push anyone standing between the arms to the safe side.
         if (Math.abs(pp.x) < 6 && Math.abs(pp.z - 150) < 7) { const mover = this.player.mover; mover.position.z = pp.z < 150 ? 142 : 158; }
         if (Math.hypot(pp.x, pp.z - 150) < 16 && !this._uiBlocking() && !this.player.riding) {
-          const ctx = { profile: this.profile, level: 1, world: w, audio: Audio, countAttempt: () => countAttempt(this.profile, this.progress, "gate"), onSolve: () => this.addSafety(2, "Waited at the gate and worked it out. +2 🚦") };
+          const ctx = { profile: this.profile, level: 1, world: w, audio: Audio, countAttempt: () => countAttempt(this.profile, this.progress, "gate"), onSolve: () => { this.addSafety(2, "Waited at the gate and worked it out. +2 🚦"); this.addFuel(30); } };
           runStepQuiz(ctx, { title: GATE_QUESTION.title, intro: GATE_QUESTION.intro, goal: "The gate is down. Answer while the train passes.", steps: GATE_QUESTION.steps, doneBtn: "Watch the train go by", doneHtml: `<b>Right.</b> Station Master D'Souza: "Twenty seconds. Never race a train, Engineer."` });
         }
       }
@@ -7954,18 +8451,15 @@ class Game {
       </div>
       <p class="job-brief">Driver: "Where to, Engineer? Hop in, no charge for the village engineer! Or take the wheel yourself, if you have your licence."</p>
       <div class="travel-grid">
-        <button class="travel-btn" id="travel-drive" style="background:#2f9e44;color:#fff;box-shadow:0 4px 0 #1e6b2e">🛺 Drive this auto myself<small>${this.hasLicence() ? "you have your licence" : "licence needed: Constable Verma"}</small></button>
+        <button class="travel-btn" id="travel-drive" style="background:#2f9e44;color:#fff;box-shadow:0 4px 0 #1e6b2e">🛺 Drive this auto myself<small>${this.hasLicence() ? "licence valid · 3 questions first" : "licence needed: RTO Office, Suryanagar"}</small></button>
         ${others.map((s, i) => `<button class="travel-btn" data-i="${i}">🛺 ${s.name}<small>${s.hint}</small></button>`).join("")}
       </div>
     `);
     card.querySelector("#travel-close").addEventListener("click", () => closePanel());
     card.querySelector("#travel-drive").addEventListener("click", () => {
       closePanel();
-      if (!this.hasLicence()) { Audio.playRetry(); showToast("No licence yet! Pass Constable Verma's five lessons in Suryanagar first.", 3600, "bad"); return; }
       if (!from.auto) return;
-      this.player.mount({ group: from.auto, speed: 12, kind: "auto", label: "Auto", controlled: true });
-      playHorn();
-      showToast("You're driving the auto. Speed limit in the city is 50 km/h.", 3000, "good");
+      this._tryMount({ group: from.auto, speed: 12, kind: "auto", label: "Auto", controlled: true });
     });
     card.querySelectorAll(".travel-btn").forEach((b) => b.addEventListener("click", () => {
       const dest = others[Number(b.dataset.i)];
@@ -7998,6 +8492,7 @@ class Game {
         cats: [cats[this.world.rooms.size % cats.length], cats[(this.world.rooms.size * 3 + 1) % cats.length]],
         greet: OCC_GREETS[room.type] || OCC_GREETS.house,
       };
+      if (door.label === "RTO Office") { def.name = "RTO Officer Mrs. Rao"; def.look = { shirt: 0xffffff, trousers: 0x1d3557, hair: 0x1d1410 }; def.isRTO = true; }
       room.occupant = new Npc(def, this.world, { pos: room.occupantPos(), fixed: true });
       this.npcs.push(room.occupant);
       this._assignSituation(room.occupant);
@@ -8013,7 +8508,7 @@ class Game {
     document.getElementById("minimap").hidden = true;
     this.roomInteractables = [
       { pos: room.exitPos, radius: 1.6, prompt: () => (floor === 0 ? `Go outside` : `Take the stairs down and out`), activate: () => this._exitRoom() },
-      { pos: room.occupant.position, radius: 2.8, prompt: () => `Talk to ${room.occupant.name}`, activate: () => this._startErrand(room.occupant) },
+      { pos: room.occupant.position, radius: 2.8, prompt: () => (room.occupant.def.isRTO ? `Take the licence test with ${room.occupant.name}` : `Talk to ${room.occupant.name}`), activate: () => (room.occupant.def.isRTO ? this._talkRTO(room.occupant) : this._startErrand(room.occupant)) },
     ];
     if (room.hasLift) {
       this.roomInteractables.push({
@@ -8052,6 +8547,7 @@ class Game {
       onSolve: () => {
         markSituationDone(this.profile, this.progress, sit.id);
         Audio.playCoin();
+        this.addFuel(60, "situation solved");
         this.ui.refreshRank();
         this._assignSituation(npc);
         this._engagedNpc = null;
@@ -8096,6 +8592,7 @@ class Game {
   // Record a finished job, update rank + marker.
   _completeJob(job) {
     markJobDone(this.profile, this.progress, job.id);
+    this.addFuel(180, job.title + " done");
     this.ui.refreshRank();
     job._marker.visible = false;
   }
@@ -8148,6 +8645,17 @@ class Game {
       }
     }
 
+    // Ride time burns while a vehicle moves; at zero the ride ends.
+    if (this.player.riding && this.player.riding.kind !== "metro" && this.player.speedKmh > 1) {
+      this.progress.fuel -= dt;
+      if (this.progress.fuel <= 0) { this.progress.fuel = 0; this.player.dismount(); showToast("⏱ Out of ride time! Solve situations and jobs to earn more.", 4500, "bad"); saveProgress(this.profile, this.progress); }
+      if (Math.floor(this.progress.fuel) !== this._fuelShown) { this._fuelShown = Math.floor(this.progress.fuel); document.getElementById("fuel-text").textContent = fmtTime(this.progress.fuel); }
+    }
+    // Why a ride stopped: off the road, or a vehicle in the way (auto brake).
+    if (this.player.blockedBy && elapsed - (this._lastBlockToast || -9) > 2.5) {
+      this._lastBlockToast = elapsed;
+      showToast(this.player.blockedBy === "road" ? "Vehicles stay on the road! No grass, no footpaths." : "Auto brake: something is in the way.", 2200, "bad");
+    }
     // Roads that teach: braking, lights, bumps, crossings, the railway gate.
     this._checkTraffic(dt, elapsed);
     if (!this.player.riding || this.player.riding.kind === "metro") document.getElementById("speedo").hidden = true;

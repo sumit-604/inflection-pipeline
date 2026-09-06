@@ -1,0 +1,62 @@
+stage: B07-emoat
+company: "INA"
+run_date: "2026-09-06"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "prospectus (HIGH)"
+  - "results (HIGH)"
+  - "annual-report-notes-1-3-absent (HIGH)"
+  - "rating (MEDIUM)"
+  - "shareholding (MEDIUM)"
+  - "screening-csv-shells (MEDIUM)"
+  - "sector_cap_row-mismatch (MEDIUM)"
+  - "announcements-thin (MEDIUM)"
+  - "research (LOW)"
+  - "peer-concalls-partial (LOW)"
+  - "share-count-blank-FY26 (LOW)"
+flags:
+  - type: FLAG-EMOAT-RD-ZERO
+    reason: "AR BRSR discloses R&D expense at 0.00% of total R&D+capex investment for FY2026 (0.00083% FY2025), AR p.96-97. This falsifies any R&D-driven or innovation-driven moat claim made in the concalls or the investor presentation (e.g. 'strong focus on research and development,' Jun-2025 call)."
+  - type: FLAG-EMOAT-EXPORTS-ZERO
+    reason: "AR BRSR discloses exports at NIL percent of turnover, AR p.87. Directly contradicts any China+1/export-beneficiary framing used in the investor presentation (slides 20-24)."
+  - type: FLAG-EMOAT-DEALER-DECLINE
+    reason: "AR BRSR shows dealer/distributor count falling from 93 to 82 and dealer-channel sales share falling from 12.44% to 11.61% of total sales, FY25 to FY26, AR p.96. Contradicts the '1000+ channel partners' distribution-strength narrative repeated in the presentation and on the Jun-2026 call, and contradicts the 'diversified demand reduces customer concentration risk' claim (Inv. Pres. slide 18)."
+  - type: FLAG-EMOAT-CAPACITY-CUT-UNDISCLOSED
+    reason: "Aluminium frame capacity at Narmadapuram was stated as 54,000 metric tons on the Jun-2025 call and has appeared as 18,000 MTA in every subsequent call, the investor presentation, and the AR itself, a ~67% reduction never flagged as a revision anywhere in the corpus."
+  - type: FLAG-EMOAT-EXECUTION-CROSSREF
+    reason: "F2 (execution moat) and every forward-capex-dependent category (B1, H2, R1) inherit the B05 Grade D promise-delivery record (1 delivered/5 partial/5 missed of 11 tracked promises, all misses externally blamed) and should be read at a material discount to the company's own framing."
+em_score: 9
+em_classification: "NONE"
+active_categories:
+  - {id: "B1", name: "Backward integration and RM security", strength: "Moderate", evidence_type: "documented", time_to_materialise: "12-18 months, timeline unreliable"}
+  - {id: "R1", name: "Regulatory/policy tailwind (ALMM/ALCM/ALMM Part 3)", strength: "Moderate", evidence_type: "documented policy, claim on capture", time_to_materialise: "ongoing to 2028, benefit shared with peers"}
+evidence_mix: {documented: 11, claim: 24, inference: 3}
+completionist_recount: "1 documented item across 1 category carries genuine forward-moat weight without qualification (B1: cell-line construction progress plus IREDA loan drawdown). A second category (R1) rests on documented government policy but undocumented, non-differentiating capture. Every other 'evidence' row in this scan is either a documented negative finding (R&D=0%, exports=NIL, dealer share declining, WC deteriorating, leverage rising, Grade D execution) or an unsupported management claim. Far below the 3-6 category base rate; the shortfall itself is the finding."
+catalysts_12m:
+  - {catalyst: "4.5GW TOPCon cell line reaches a fourth, internally-consistent COD date and first commercial output", window: "6-12 months", evidence_type: "claim", anchor: "Q4 FY26 call (27-May-2026), internally inconsistent Q3 vs Q4 FY27; Inv. Pres. slide 13, FCO Dec-2026"}
+  - {catalyst: "Aluminium frame facility COD", window: "3-9 months", evidence_type: "claim", anchor: "Q4 FY26 call: Q1 FY27; Inv. Pres. slide 13: Sep'26 -- two different dates for one facility"}
+  - {catalyst: "IPP KUSUM 400MW commissioning pace", window: "12 months", evidence_type: "claim", anchor: "Q4 FY26 call (27-May-2026): ~38-40MW commissioned vs ~400MW target"}
+  - {catalyst: "Wafer/ingot DPR finalisation and capex commitment decision", window: "3-6 months for DPR, capex decision beyond", evidence_type: "claim", anchor: "Q4 FY26 call (27-May-2026): 'some 2-3 months time to finalize DPR'"}
+  - {catalyst: "ALMM/ALCM enforcement visibly shrinking the ~30GW non-ALMM overhang", window: "12 months", evidence_type: "claim", anchor: "Q4 FY26 call (27-May-2026), Mitesh Mehta Q&A"}
+  - {catalyst: "Named large orders (NTPC Rs558cr, MEIL/L&T Rs362cr, RREC Rs340cr, IPP+KUSUM AP Rs516cr) converting to recognised revenue through FY27", window: "2-4 quarters", evidence_type: "claim (presentation-sourced, not primary filing sighted)", anchor: "Investor Presentation slide 25, dated Jul-2026"}
+capex_embedded_growth_pct: 428
+capex_fy2026_cr: 430.63
+capex_fy2026_anchor: "Consolidated PPE gross-block Additions, AR Note 4 Property Plant and Equipment, consolidated, p.119; cross-checks to Consolidated Balance Sheet closing net PPE Rs473.77cr, AR p.116, and Investor Presentation slide 31 (FY26 PPE Rs474cr). Consolidated CWIP additionally moved from Rs52.88cr to Rs72.93cr, AR p.116."
+optionality_register:
+  - {optionality: "Ingot/wafer backward integration (4.5GW, DPR stage, no technology partner named)", converting_evidence: "Signed technology-partner agreement, firm capex figure, DPR finalised and announced", first_appears: "Exchange filing / next AR capex note", window: "FY27-FY28"}
+  - {optionality: "BESS assembly entry", converting_evidence: "Firm capex commitment tied to a named policy trigger", first_appears: "Exchange filing / concall", window: "Long, policy-contingent; unchanged across all three calls"}
+  - {optionality: "US export market entry", converting_evidence: "Named export order or completed quality certification", first_appears: "Concall / exchange filing", window: "1-2 years, low conviction"}
+  - {optionality: "MP government incentive package (land/power/water/capex subsidy, claimed 17-35%)", converting_evidence: "Government grant, subsidy income, or capital-subsidy receivable recognised in AR financial statements", first_appears: "Next AR Notes to Accounts", window: "FY27-FY28 AR"}
+  - {optionality: "Talent asymmetry (I1)", converting_evidence: "Named inventors on patent filings with traceable employment history, or AR remuneration annexure showing above-market technical pay", first_appears: "Patent database / AR remuneration annexure", window: "Uncertain, no current trajectory"}
+  - {optionality: "ALMM Part 3 wafer scarcity pricing power", converting_evidence: "INA's own wafer capacity commissioned ahead of or at the 1-Jun-2028 mandate while India-wide wafer capacity remains scarce", first_appears: "Exchange filing on commissioning", window: "2027-2028, contingent on wafer optionality converting first"}
+  - {optionality: "Customer/channel diversification reversing its current decline", converting_evidence: "Independently disclosed rise in dealer count and channel-sales share, decline in the 79.74% intra-group revenue share", first_appears: "Next year's BRSR (AR)", window: "FY27 AR"}
+combined_assessment: "AVERAGE"
+combined_reasoning: "Core AVERAGE (B01) plus Emerging Moat NONE (9/92, below the 12-point floor) is not the GOOD/AVERAGE-plus-EXPANSION transition setup this pipeline hunts, so the combined classification stays at the Gate 0 ceiling rather than elevating."
+top_moat_risks:
+  - "Cell-line COD has three inconsistent dates in the corpus (Q3 FY27, Q4 FY27, Dec-2026); a fourth slip or inconsistency is the single largest risk to the one real emerging-moat category (B1)."
+  - "Aluminium frame capacity was cut ~67% (54,000 MT to 18,000 MTA) with no acknowledgement anywhere in the corpus, evidencing a pattern likely to recur on the larger cell and wafer programmes."
+  - "Named large orders (NTPC/MEIL/L&T/RREC, Inv. Pres. slide 25) are sourced only from the company's own presentation; the order book has already been reported on three non-comparable bases across three calls (B05)."
+  - "The ALMM/ALCM regulatory tailwind (R1) is shared equally with Waaree, Premier Energies and Websol by management's own account, and the presentation's own slide discloses an ALMM-II exemption extension that loosens, not tightens, near-term enforcement."
+  - "Every forward category in this scan is funded by, and dependent on, a leverage-up/cash-flow-negative balance sheet (FY26 CFO -Rs73.13cr) built by a management team B05 grades D on promise delivery."
+analyst_note: "The presentation and concalls describe a company mid-transition up the solar value chain. The primary documents support only one leg of that story with real capital: the cell line under construction. Every other forward claim (wafer, BESS, exports, MP subsidies, large-customer partnerships) is unbacked by a financial-statement line, and several headline claims (R&D focus, export diversification, dealer-network depth) are directly contradicted by the company's own BRSR disclosures in the same annual report. Given B05's Grade D finding and this scan's independent discovery of an unacknowledged 67% capacity cut, the cell line's own guided dates and margin uplift should be treated as unverified until at least one quarter of actual segment results exists."

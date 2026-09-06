@@ -1,0 +1,108 @@
+# PHASE 1 CONFIDENCE DELTA — INA, run 2026-09-06
+# Computed by the orchestrator from B12a, B12b, B12c (partial), B12d
+# per prompts/00-orchestrator.md Section 5.
+
+confidence_delta:
+  numerical_acceptance: 83      # B12a. 18 material claims checked, 0 CRITICAL.
+  redflag_coverage: 42          # B12b. 20 of 59 independently-found flags caught
+                                #       upstream, 9 partially caught, credited at
+                                #       half: (20 + 4.5) / 59 = 42%.
+  framework_adherence: 86       # B12c. PARTIAL: Gate 0 (46/52) + Emerging Moat
+                                #       (35/42) only. Valuation portion pending
+                                #       phase 3 and excluded.
+  peer_utilisation: 91          # B12d. 10 of 11 peer transcripts used
+                                #       substantively by stage 6.
+  overall: 42                   # minimum of the four, per Section 5.
+
+band: "BELOW 60 — FORCED REWORK"
+band_rule: "prompts/00-orchestrator.md Section 5: overall < 60 forces REWORK."
+
+rework_triggered: true
+rework_basis:
+  - "Section 5 confidence band: overall 42 is below the 60 floor."
+  - "Section 4 FLAG RULES: 'any verifier's acceptance_rate falls below 60%' forces
+     REWORK. B12b acceptance_rate is 34% strict, 42% with partial credit, 49%
+     counting partial as caught. All three conventions sit below 60."
+rework_scope: "STAGES 5 AND 6 ONLY, not the whole run."
+rework_reasoning: >
+  REWORK here judges the pipeline, not the company, exactly as the orchestrator
+  intends. The failure is concentrated and identified. Verifier A found zero
+  CRITICAL numerical findings and 83% acceptance across 18 material claims, so
+  the evidence base is sound and no figure is fabricated. Verifier C found zero
+  CRITICAL and 86% framework adherence. Verifier D found no fabricated quotes and
+  91% peer utilisation. Only the concall red-flag layer failed, and it failed on
+  COVERAGE rather than accuracy: B12b spot-checked six of B05's promise-delivery
+  rows and confirmed all six, found no unsupported pipeline flag, and concurs
+  that credibility grade D is correct. B05 and B06 did not get things wrong so
+  much as miss a great deal, principally internal arithmetic inside a single
+  call, and peer verification of operating norms (utilisation, ramp duration,
+  capex per GW) as distinct from peer prices and dates, which B06 handled well.
+
+valuation_component: "PENDING PHASE 3. Verifier C's valuation-adherence audit
+  (rules 4, 7, 11, 12) could not run: stage 10 and stage 11 do not execute in
+  phase 1, so B10 and B11 do not exist."
+
+verifier_disagreements_for_stage_13:
+  - number_or_claim: "Corporate guarantee Rs 1,654.01cr vs CARO Rs 15.78cr"
+    verifier_a_verdict: "Both correct at different consolidation scopes. Consolidated
+      Note 42(i) p.137 = Rs 1,654.01cr group total; standalone CARO clause (iii)
+      p.156 = Rs 15.78cr parent-only direct guarantee. Not a discrepancy."
+    downstream_step: "B03 stage 3 raised it as an unreconciled three-way conflict
+      on the guarantee quantum."
+    disposition: "FLAG CLEARED — source re-check found both numbers at correct
+      anchors in different scopes (re-checked by verifier A)."
+    note: "Stage 3's flag was reasonable: the AR gives no cross-reference between
+      the two. The substantive concern, a parent guaranteeing Rs 1,654.01cr
+      against Rs 544.04cr of its own assets, is unaffected."
+  - number_or_claim: "FY2026 consolidated capex"
+    verifier_a_verdict: "Both figures exist on different lines. Rs 430.63cr =
+      Note 4 tangible-asset additions p.119. Rs 448.05cr = consolidated cash flow
+      statement purchase of PPE p.118. Rs 17.42cr of scope or timing difference.
+      Neither certified as THE consolidated capex. source_fidelity: true."
+    downstream_step: "B07 carries Rs 430.63cr as capex_fy2026_cr and B09 consumed
+      it; B02 pass 2 derived Rs 448.05cr."
+    disposition: "GATE HELD — unresolved, must be ruled at stage 10 in phase 3
+      before either figure enters a Section 1B pillar."
+  - number_or_claim: "FY2026 consolidated PAT"
+    verifier_a_verdict: "AR Consolidated P&L p.117 = Rs 200.63cr 'Profit for the
+      year'; Rs 200.47cr total comprehensive income. Screener's Rs 200.22cr is a
+      basis difference of about 0.2%. source_fidelity: true."
+    downstream_step: "B00 and B01 carried the screener figure through."
+    disposition: "GATE HELD — figure corrected at source; the AR figure of
+      Rs 200.63cr governs downstream."
+  - number_or_claim: "B07 evidence_mix {documented: 11, claim: 24, inference: 3}"
+    verifier_a_verdict: "Not a verifier A ruling; raised by verifier C."
+    downstream_step: "B07 block field, quoted in the run's own reporting."
+    disposition: "GATE HELD — treat the precise split as unsupported. Verifier C
+      found the tally cannot be reconstructed from the report body: no item
+      count is shown and no row is tagged as an inference. The individual BRSR
+      contradictions underneath it remain separately anchored."
+  - number_or_claim: "B06 Q2 conclusion that realisation parity 'removes pricing
+      as a plausible source of INA's margin or cash flow underperformance'"
+    verifier_a_verdict: "Not a verifier A ruling; raised by verifier B as
+      OVERSTATED."
+    downstream_step: "B06 Q2."
+    disposition: "GATE HELD — conclusion overstated against its own anchor, which
+      shows Waaree at Rs 15-16/W non-DCR in the same quarter INA reported
+      Rs 13-14/W. Must not carry into synthesis as written."
+
+carry_to_lessons_archive:
+  - "Citation-basis defect, systemic: stages 5 and 6 cited each transcript's
+     printed 'Page X of Y' footer instead of the extraction '===== PAGE N ====='
+     marker. An unnumbered SEBI cover letter offsets the two by exactly one page
+     on every transcript, so anchors drift. Found independently by verifier D
+     (2 MAJOR) and verifier B (1 MINOR). Fix: name the extraction marker as the
+     sole anchor authority in the stage task message and bar the printed footer."
+  - "Concall stages verify peer PRICES and DATES well and peer OPERATING NORMS
+     poorly. B06 verified realisations and regulatory dates cleanly but did not
+     test utilisation, ramp duration or capex per GW against peers, which is
+     where verifier B found 3 of its 7 CRITICALs. Candidate for a named
+     sub-checklist in prompts/06."
+  - "B05 promise-delivery tracker completeness: three missed promises absent from
+     the tracker (FY26 volume 2,000-2,100MW, FY26 EPC revenue Rs 400cr, Units 1-2
+     TOPCon conversion). Accuracy was fine, six of six spot-checks confirmed;
+     completeness was not. Candidate for an explicit sweep instruction."
+  - "A B05 hand-off to stage 6 was written and then not executed: the Emvee and
+     Premier DCR cell tie-up was flagged as worth checking against Premier's own
+     concall and never was. peer_questions[] should be a checklist stage 6 must
+     tick, not a suggestion."

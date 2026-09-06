@@ -1,0 +1,10 @@
+stage: B02-notes
+pass: 2
+company: "CYIENTDLM"
+run_date: "2026-09-06"
+model: claude-sonnet-5
+status: complete
+output_file: "runs/cyientdlm-2026-09-06/outputs/reports/02-notes-pass2.md"
+pass_2_empty: false
+top_finding_preview: "CONSOLIDATED Note 35 (Schedule III entity-wise net-assets/profit table, p.171) missed in Pass 1: standalone India-parent PAT fell 26.6% (Rs766.98mn to Rs563.24mn) while consolidated PAT rose 7.65%, entirely on a Rs331.38mn swing at US subsidiary Cyient DLM Inc.; Altek Electronics Inc. full-year FY26 profit (Rs31.32mn) is lower than its part-year FY25 profit (Rs39.70mn for about 6 months), direct evidence Altek is missing its earn-out targets."
+orchestrator_note: "Pass 2 emits no schema-defined block; the instruction file defines the consolidated B02 handoff at pass 3. This file is a completion marker."

@@ -2228,7 +2228,7 @@ function makeWheel(r = 0.36, w = 0.26) {
   const g = new THREE.Group();
   const tyre = new THREE.Mesh(new THREE.CylinderGeometry(r, r, w, 18), mat(0x1f1f1f)); tyre.rotation.z = Math.PI / 2; g.add(tyre);
   const rim = new THREE.Mesh(new THREE.CylinderGeometry(r * 0.62, r * 0.62, w + 0.02, 12), mat(0xcfd8dc)); rim.rotation.z = Math.PI / 2; g.add(rim);
-  for (let k = 0; k < 5; k++) { const spoke = new THREE.Mesh(new THREE.BoxGeometry(w + 0.03, r * 0.5, 0.05), mat(0x9aa6ad)); spoke.rotation.x = (k * Math.PI * 2) / 5; spoke.position.y = 0; g.add(spoke); }
+  for (let k = 0; k < 3; k++) { const spoke = new THREE.Mesh(new THREE.BoxGeometry(w + 0.03, r * 1.5, 0.05), mat(0x9aa6ad)); spoke.rotation.x = (k * Math.PI) / 3; g.add(spoke); }
   g.userData.wheel = true; g.userData.wheelR = r;
   return g;
 }
@@ -2692,6 +2692,7 @@ class World {
     sun.position.set(18, 30, 14);
     sun.castShadow = true;
     sun.shadow.mapSize.set(1024, 1024);
+    sun.shadow.autoUpdate = true;
     const s = 55;
     sun.shadow.camera.left = -s;
     sun.shadow.camera.right = s;
@@ -8217,7 +8218,7 @@ class BigMap {
 
   // The land, water, roads and buildings, drawn once at double resolution.
   _drawStatic() {
-    const R = 2, S = this.size * R, sc = this.scale * R;
+    const R = 1.5, S = Math.round(this.size * R), sc = S / (WORLD_HALF * 2);
     const off = document.createElement("canvas");
     off.width = off.height = S;
     const g = off.getContext("2d");
@@ -8557,8 +8558,19 @@ class Game {
 
   _setupRenderer() {
     this.canvas = document.getElementById("game-canvas");
-    this.renderer = new THREE.WebGLRenderer({ canvas: this.canvas, antialias: true });
-    this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2)); // cap for phones
+    // Antialias only on plain screens; a capped pixel ratio keeps the GPU load low on phones and laptops.
+    const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+    this.renderer = new THREE.WebGLRenderer({ canvas: this.canvas, antialias: dpr <= 1, powerPreference: "high-performance", failIfMajorPerformanceCaveat: false });
+    this.renderer.setPixelRatio(dpr);
+    // If the graphics driver drops the context (a GPU hiccup), keep the page and let the browser restore it.
+    this.canvas.addEventListener("webglcontextlost", (e) => {
+      e.preventDefault();
+      this._contextLost = true;
+      showToast("⚠️ Graphics paused for a moment. Restoring…", 4000, "bad");
+      clearTimeout(this._ctxTimer);
+      this._ctxTimer = setTimeout(() => { if (this._contextLost) location.reload(); }, 6000);
+    }, false);
+    this.canvas.addEventListener("webglcontextrestored", () => { this._contextLost = false; clearTimeout(this._ctxTimer); showToast("Graphics are back.", 2000, "good"); }, false);
     this.renderer.setSize(window.innerWidth, window.innerHeight);
     this.renderer.shadowMap.enabled = true;
     this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
@@ -9820,7 +9832,7 @@ class Game {
     this.minimap.draw(pp, this.player.facing, this.npcs, this.jobs, this.progress.jobsDone);
     if (this.bigmap.isOpen) this.bigmap.draw();
     this.bigmap.updateCompass(this.player.camYaw);
-    this.renderer.render(this.world.scene, this.camera);
+    if (!this._contextLost) this.renderer.render(this.world.scene, this.camera);
   }
 
   _nearestInteractable() {
@@ -9877,15 +9889,25 @@ function boot() {
       hud.hidden = false;
       // Create the game. (One game per page load.) If anything fails, say so
       // on screen instead of leaving a blank page.
-      try {
-        window.__game = new Game(profile);
-      } catch (err) {
-        console.error(err);
-        hud.hidden = true;
-        loadingScreen.hidden = false;
-        const t = loadingScreen.querySelector(".loading-text");
-        if (t) t.textContent = "The game could not start: " + (err && err.message ? err.message : err) + ". Please tell the maker this message.";
-      }
+      const t = loadingScreen.querySelector(".loading-text");
+      let tries = 0;
+      const attempt = () => {
+        try {
+          window.__game = new Game(profile);
+        } catch (err) {
+          console.error(err);
+          hud.hidden = true;
+          loadingScreen.hidden = false;
+          const webgl = /webgl/i.test(String(err && err.message));
+          // The browser sometimes refuses a graphics context for a few seconds after a GPU restart. Try again.
+          if (webgl && tries < 6) { tries++; if (t) t.textContent = `Waiting for the graphics driver… (try ${tries} of 6)`; setTimeout(attempt, 1500); return; }
+          if (t) t.innerHTML = webgl
+            ? `The browser could not start 3D graphics. Close other game tabs, then <button class="big-btn" id="retry-btn">Reload</button>. If it keeps happening, restart the browser or turn on hardware acceleration in its settings.`
+            : "The game could not start: " + (err && err.message ? err.message : err) + ". Please tell the maker this message.";
+          const rb = document.getElementById("retry-btn"); if (rb) rb.addEventListener("click", () => location.reload());
+        }
+      };
+      attempt();
     });
   });
 }

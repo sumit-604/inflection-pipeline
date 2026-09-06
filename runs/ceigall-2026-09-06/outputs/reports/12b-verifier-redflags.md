@@ -1,530 +1,790 @@
-# Stage 12B: Verifier B — Independent Concall Red-Flag Audit
-Company: Ceigall India Ltd (CEIGALL) | Run date: 2026-09-06 | Model: claude-opus-4-8
+# Stage 12B: Verifier B — Independent Concall Red-Flag Audit — CEIGALL
 
-Scope: 4 company transcripts (Nov-2025, Feb-2026, May-2026, Aug-2026) + 12 peer transcripts
-(HGINFRA, KNRCON, PNCINFRA, four quarters each). Compared afterwards against B05-concall and
-B06-peers.
+Run date: 2026-09-06 | Model: claude-opus-4-8 | Emits: B12b
+Scope: 4 Ceigall transcripts (primary) + 12 peer transcripts (HGINFRA, KNRCON, PNCINFRA)
+Artifacts audited: B05-concall.yaml (run 2), B06-peers.yaml (run 2),
+05-concall.md (run 2), 06-peers.md (run 2)
 
-Method note. The independent read was done first, on the raw transcripts alone, before any
-upstream artifact was opened. Every finding below carries a filename and page anchor. Where a
-B05 finding rests on the annual report (B02/B03) rather than on a transcript, it is outside my
-evidence base and is not counted against the pipeline in either direction.
-
-Citation convention: page numbers are the PDF page markers in the text extracts, matching the
-source PDFs beside them.
-
----
-
-## PART 1: INDEPENDENT RED-FLAG LIST
-
-33 red-flag-grade items. Anchors are (filename, p.N).
-
-### 1A. Repeated evasions (asked in 2+ quarters, never answered)
-
-**IF-09. Segment margin bifurcation refused across all four calls. CRITICAL.**
-Four different analysts asked, in four consecutive quarters, what margins the new verticals
-carry versus core road EPC. Every answer was a restatement of the blended guidance.
-- Nov-2025, Priyam Shah: "are these more margin accretive than our current businesses?" →
-  "If I have to say, initially, yes, but let's execute it on site" (Concall_Nov_2025, p.14).
-- Feb-2026, Nimish Pandya: "are these low margin entry level bids or do they match your
-  historical 15% plus EBITDA margin levels?" → "Yes, yes, they'll match" (Concall_Feb_2026, p.12).
-- May-2026, Tejpal Singh, asked twice: "in our order book we have different segments. So what
-  are the margin accretive segment in those? If you can bifurcate margins?" → "we always guide
-  on a conservative way... between 11% to 12.5%" (Concall_May_2026, p.9).
-- Aug-2026, Chetrika Deshpande: "How do you see margins and returns in renewable compared to our
-  traditional and road EPC business?" → "the same kind of margin" (Concall_Aug_2026, p.9).
-Peer contradiction: HGINFRA discloses the split unprompted — roads and rail "bears a decent
-margin of about 14% to 15%", while "battery and transmission... do have around 10% to 11%"
-(HGINFRA-Concall_May_2026, p.14). KNRCON discloses HAM at 15-16%, irrigation 18-20%, and new
-aggressive wins at 11-13% (KNRCON-Concall_Jun_2026, p.14). The disclosure is achievable; Ceigall
-declines it in a year when 35% of its inflow came from the vertical in question.
-
-**IF-07. Working-capital target asked once, never answered, then the metric stopped being
-reported. MAJOR (four-quarter pattern).**
-Nov-2025, Balasubramanian: net working capital days "increased to 70 days in H1 come back to 45
-days in FY '25... What is the target for this end of this year?" The CFO explained the cause
-(Atmanirbhar withdrawal, 6% NHAI retention) and never gave the target (Concall_Nov_2025, p.10).
-Feb-2026: working capital not discussed at all. May-2026: surfaces only because Ishita Lodha
-raises payables 79 → 138 days and unbilled revenue 94 → 133 days (Concall_May_2026, p.8).
-Aug-2026: Chetrika asks whether intensity improves in FY27; the answer is "Definitely, there
-will be an improvement", with no number, no target and no current-quarter figure
-(Concall_Aug_2026, p.9). Four quarters, no target ever given, no absolute rupee figure ever
-given.
-
-**IF-08. Solar and BESS revenue never quantified across three quarters of direct questioning.
-MAJOR.**
-Feb-2026, Vaibhav Shah: "out of the INR 3,500 crores order book of solar and BESS, what kind of
-revenue are you targeting for FY27 and FY28?" → "everything depends upon the PPA"
-(Concall_Feb_2026, p.7). By May-2026 the PPAs were signed and execution had commenced
-(Concall_May_2026, p.4, p.11); still no number. By Aug-2026 two Maharashtra solar projects were
-running and were credited with the margin beat (Concall_Aug_2026, p.7); still no number.
-Every peer quantifies: PNCINFRA gives INR600cr FY27 and INR1,400cr FY28 for solar
-(PNCINFRA-Concall_May_2026, p.13); HGINFRA gives INR225cr annual BESS revenue and INR500-550cr
-total energy top line (HGINFRA-Concall_May_2026, p.6, p.16).
-
-**IF-02. NHAI awarding pace refused twice, to the same broker, in two consecutive quarters.
-MAJOR.**
-Feb-2026, Ketan (Avendus Spark), asked three times: "how many kilometers has been awarded till
-date by NHAI and MoRTH combined, in kilometers and in rupees?" → "any number specific... will
-not be correct", then "there are a lot of contracts available online", then "it is not easy for
-us to do this. We can check it on NHAI website" (Concall_Feb_2026, p.7-8). May-2026, Dheeraj
-Kripalani (Avendus Spark), asked twice: "how was the NHAI awarding in FY '26 in kilometer terms
-and in value terms" → "these are the figures which NHAI has put on their own website", after
-which the moderator cut the line (Concall_May_2026, p.9).
-Peer contradiction, same quarters, same question: PNCINFRA gave the exact Q3 FY26 figure in its
-prepared remarks — "NHAI awarding only 377 km of new road projects in Q3 FY26, compared to
-around 504 km in Q3 FY25" (PNCINFRA-Concall_Feb_2026, p.3). KNRCON gave the 9M figure in the
-same quarter — "MoRTH and NHAI awarding 1448 km and 712 km" (KNRCON-Concall_Feb_2026, p.3) —
-and the full-year figure the following quarter, "NHAI awarded 3,100 kilometres... lower by
-approximately 22% year-on-year" (KNRCON-Concall_Jun_2026, p.3). PNCINFRA repeated the discipline
-in Q1 FY27: "only 107 kilometers awarded" (PNCINFRA-Concall_Aug_2026, p.3).
-
-### 1B. Guidance quietly restated, dropped, or arithmetically unsupported
-
-**IF-03. The Feb-2026 mid-year inflow claim of "close to INR8500 crores" does not reconcile to
-awarded orders and only closes if two unawarded L1 positions are counted. MAJOR.**
-Feb-2026, p.10: "last year we guided our investors that we will be getting INR5000 crores.
-Against INR5000 crores, we have already got close to INR8500 crores." Awarded orders at that
-date: H1 FY26 new orders "around INR4,000 crores" (Concall_Nov_2025, p.9) plus Q3 inflow
-"approximately INR1,403 crores" (Concall_Feb_2026, p.4) = ~INR5,403cr. The gap to 8,500 closes
-almost exactly by adding Sahebganj-Areraj-Bettiah (INR2,160cr) and Jaipur Rail Corporation
-(INR918cr) — both explicitly L1 only, with LOAs not received: "Bihar LOA is not received yet"
-(p.7) and "we are L1, we are still waiting for the LOA" (p.11), both in the same transcript.
-The full-year figure of INR11,332cr (Concall_May_2026, p.3) reconciles cleanly to
-5,403 + 6,014 (Q4 inflow) = 11,417, i.e. without the L1s. So the year-end number is sound and
-the mid-year claim is the outlier. Counting unawarded L1s into a guidance-versus-delivery figure,
-without saying so, is the flag.
-
-**IF-04. FY27 order-inflow guidance moved three times in six months, never reconciled. MAJOR.**
-Feb-2026, p.10: "this year also our guidance would be incremental of 15%. So should be around
-INR5800 crores." May-2026, p.4: "order inflow guidance of minimum INR5,500 crores." Aug-2026,
-p.7: analyst Mahesh Patil quotes the guidance back as "around INR55 billion" (INR5,500cr) and
-management corrects him upward without acknowledging any change: "we have guided our investors
-for INR6,000 crores." Three numbers, one direction reversal, zero reconciliation. Separately,
-FY26 inflow was INR11,332cr, so an FY27 guide of 5,500-6,000cr is a ~50% decline in inflow that
-is never framed as one.
-
-**IF-22. The international contribution target was dropped without mention. MAJOR.**
-Feb-2026, p.10: "We should target at least 10 to 15% coming from international." May-2026
-escalates the claim to a single Romanian 17-km highway bid at "close to INR13,000 crores"
-(p.6), which the analyst correctly sizes at "almost 65% to 70% of our current book" (p.6-7).
-Aug-2026 drops both the target and the bids: "Because of this war situation, we are a little
-more conservative now" (p.11). Neither the Romania bid outcome nor the 10-15% target is
-mentioned again.
-
-**IF-15. The debt-reduction promise was met on standalone, missed on consolidated, and the
-consolidated disclosure was then withdrawn. MAJOR.**
-Nov-2025, p.5: "We're actively formulating plans to reduce our outstanding debt by a significant
-margin throughout the full-year." Consolidated debt then rose: INR13,412mn at Sep-2025
-(Concall_Nov_2025, p.5) → INR1,421cr at Dec-2025 (Concall_Feb_2026, p.4), an increase of ~80cr.
-Disclosure regressed in step: Nov-2025 gave the full consolidated composition (equipment term
-loan, term loans, HAM term loan, working capital); Feb-2026 gave two absolutes; May-2026 gave
-ratios only, "standalone debt-to-equity stood at 0.2x... On a consolidated basis, it stood at
-0.6" (p.4); Aug-2026 gave no debt figure at all. No analyst asked in either of the last two
-calls.
-
-**IF-20. A land-status claim was reversed nine months later without acknowledgment. MAJOR.**
-Nov-2025, p.7, on Southern Ludhiana bypass: "Land status in Southern bypass is very clear...
-I think we should get the 80% land cleared by December, and we'll start the work full-fledged...
-we are targeting to start this project in December." Aug-2026, p.5: "Ludhiana, the land is only
-62% available with us, so that is a challenge", with FY27 execution cut to "at least 15%".
-The same call also carried the broader promise that "by 31st March 2026, all our HAM projects
-will be under execution" (Concall_Nov_2025, p.7); appointed dates for VRK 11, VRK 12 and
-Indore-Ujjain actually arrived after Q1 FY27 quarter-end (Concall_Aug_2026, p.4), and Southern
-Ludhiana is not among them.
-
-### 1C. Promises never revisited
-
-**IF-06. The Ramban-Banihal (J&K tunnel) commitments were made in detail and never mentioned
-again. MAJOR.**
-Nov-2025, p.11-12, three dated promises: "we are targeting to complete this by March '27, and
-tunnel, we are completing in the next 3 months"; "20% of the tunnel work, which would be around
-INR180 crores would be completed before this March"; "We are targeting to complete the entire
-work by February, so payment will be released by March." The project is not mentioned in the
-Feb-2026, May-2026 or Aug-2026 calls, by management or by any analyst. The Nov-2025 call had
-also disclosed that this project lost 4-5 months to flood, landslide and "Operation Sindoor"
-(p.11), so it was a known execution risk when the silence began.
-
-**IF-13. Management asserted completed sales that its own prepared remarks in the same call
-described as non-binding — in two consecutive quarters. CRITICAL.**
-Feb-2026 prepared remarks, p.4: "the Board has in-principle approved a binding offer for 100%
-divestment of Ceigall Malout-Abohar-Sadhuwali HAM asset." Five pages later, in Q&A, p.9: "we
-have already sold one HAM asset, which we have announced it also today."
-May-2026 prepared remarks, p.4: "For Bathinda-Dabwali and Jalbehra Shahbad, we have signed
-non-binding offer and these are currently under due diligence." Three pages later, p.7: "we have
-already sold three assets to Neo", repeated on p.8: "we've sold three assets, so more than
-INR400 crores will come from Neo also after selling those assets." Two of the three were, on
-management's own account minutes earlier, non-binding and in diligence. The overstatement is
-load-bearing: it is used both times to support the claim that funding the equity programme is
-not a constraint. No analyst challenged it in either call.
-
-**IF-14. The Malout-Abohar-Sadhuwali consideration has never been disclosed. MAJOR.**
-Feb-2026, p.11, an analyst supplies a figure — "you completed a sale to, I think Neo Asset for
-about INR177 crores" — and management answers only on timelines, neither confirming nor denying
-(p.11). May-2026 gives an aggregate "more than INR400 crores" for three assets (p.7). Aug-2026
-reports the transaction as complete and claims it "has given much more the IRR what we committed
-or we guided our investors" (p.9) with no consideration, no IRR and no equity-invested figure.
-Peers disclose: HGINFRA gives per-SPV considerations of INR153.71cr, INR81.69cr and INR203cr
-(HGINFRA-Concall_May_2026, p.5); PNCINFRA confirms full receipt from Vertis on request
-(PNCINFRA-Concall_May_2026, p.16).
-
-**IF-05. The order book did not move in Q1 FY27 and the arithmetic was neither offered nor
-requested. MAJOR.**
-Order book INR18,554cr at 31-Mar-2026 (Concall_May_2026, p.3) → INR18,568cr at 30-Jun-2026
-(Concall_Aug_2026, p.4), a rise of 14cr. Against that quarter: consolidated revenue INR970cr
-(standalone INR901cr) and inflow of "close to INR600" crores (Concall_Aug_2026, p.4, p.7).
-18,554 − 970 + 600 = 18,184; on the standalone basis, 18,253. Either way ~315-385cr is
-unexplained. Q1 inflow was also disclosed only under questioning, not in prepared remarks, and
-at ~10% of the INR6,000cr full-year guide.
-
-### 1D. Numbers that change between calls without reconciliation
-
-**IF-01. Two different infusion targets in the same call; ~1% of either was delivered. MAJOR.**
-Nov-2025, p.10, Sehgal: "We are targeting to infuse about INR297 crores in coming 3 months."
-Nov-2025, p.12, Aggarwal, same window, same projects: "We are going to infuse close to INR200
-crores in the next 3 months in the VRK as well as the Ludhiana-Bathinda and Northern and
-Southern Ayodhya projects." Cumulative HAM equity was INR603.2cr as at Oct-2025
-(Concall_Nov_2025, p.5) and INR605.6cr at Dec-2025 (Concall_Feb_2026, p.4) — INR2.4cr delivered.
-Neither the internal contradiction nor the shortfall was raised by any analyst in any later call.
-
-**IF-28. The FY27 infusion plan requires a 12x step-up on the Q1 run-rate, unchallenged; and the
-project-level list does not sum to the stated total. MAJOR.**
-Aug-2026, p.6: "this year, our balance equity commitment is INR859 crores, and FY28 is INR744
-crores." Aug-2026, p.8: Q1 FY27 infusion was "INR23 crores... cumulative both HAM and solar".
-Delivering 859cr after a 23cr first quarter requires ~279cr per quarter for the remaining nine
-months. No analyst tested it. Separately, the per-project FY27 HAM list given on p.10
-(53 + 61 + 53 + 97 + 139 + 38 + 60 + 50 + 16) sums to INR567cr against the stated "in totality,
-this comes to INR550 crores"; and the same page refers to "all 11 of our HAM projects" while the
-order book on p.4 lists 10 HAM projects.
-
-**IF-30. Renewable inflow and renewable order book do not tie on a segment that barely executed.
-MAJOR.**
-May-2026, p.3: FY26 order inflow composition "includes approximately 35.02% from renewable
-sector" — 35.02% of INR11,332cr = ~INR3,968cr. May-2026, p.5: "renewables contributing 19% of
-the total order book" — 19% of INR18,554cr = ~INR3,525cr. Renewable execution in FY26 was
-negligible; the same call describes Maharashtra solar as at "land development, fencing, piling"
-stage and Madhya Pradesh at land-leasing (p.11). A closing book below the year's own inflow, on
-a segment with near-zero billing, is a basis inconsistency that was never reconciled. Prior
-data points on the same segment also shift: 22% of the book (Concall_Nov_2025, p.4) and "about
-21%" ten pages later in the same call (p.14); INR3,168cr cumulative renewable orders
-(Concall_Feb_2026, p.4) against an analyst's uncorrected "INR3,500 crores" in the same call (p.7).
-
-### 1E. Tone that does not match the arithmetic
-
-**IF-11. The CFO told an analyst margins had risen, contradicting the figures he had given seven
-pages earlier in the same call. MAJOR.**
-May-2026, p.4, Aggarwal's prepared remarks: FY26 standalone EBITDA margin "12.6% in FY '26
-versus 12.8% in FY '25" — down. May-2026, p.11, under a third round of questioning from Maitri
-Shah on Slide 41: "No, no. EBITDA margin is stable, that's not decreasing. And if you look at
-the numbers of the current year as well, our EBITDA margins has grown up as compared to the
-previous year." On the standalone figures he himself reported, that is false; on the
-consolidated basis the analyst was asking about, no prior-year margin was ever supplied to test
-it. The exchange then produced a genuine disclosure — that FY24 and FY25 EBITDA included bonus
-and royalty income booked inside revenue from operations (p.11) — but only after the denial.
-
-**IF-18. Q4 FY26 carried a third of the year's revenue and the whole margin beat, and the direct
-one-off question was answered about something else. MAJOR.**
-Q4 FY26 standalone revenue INR1,294cr on a full-year INR3,869cr = 33.4% of the year, +30.5% YoY,
-after H1 grew 1.4% (Concall_Nov_2025, p.6) and 9M grew 7.6% (Concall_Feb_2026, p.4). Q4
-standalone EBITDA margin 14.1% versus 12.3% in Q3 and a guided band of 11-12.5%
-(Concall_May_2026, p.4). Mahesh Patil asked precisely the right question — "is there any one-off
-or if this is just because of the execution" (p.9) — and the answer addressed PAT and the prior
-year: "last year if you look at, we have started four HAM projects which have majorly
-contributed to the PAT margins." The same balance-sheet date carries unbilled revenue at 133
-days and trade payables at 138 days (p.8). Revenue concentration, margin spike and unbilled
-build all land on one date and are never connected on the call.
-
-**IF-16. Consolidated PAT sat below standalone PAT for three quarters while consolidated EBITDA
-sat well above it. Never mentioned, never asked. MAJOR.**
-H1 FY26: standalone PAT INR1,118mn versus consolidated INR1,075mn, on consolidated EBITDA of
-INR2,227mn versus standalone INR1,853mn (Concall_Nov_2025, p.6-7). 9M FY26: standalone PAT
-INR186cr versus consolidated INR180cr, on consolidated EBITDA INR362cr versus standalone
-INR305cr (Concall_Feb_2026, p.4-5). FY26 full year: standalone PAT INR305cr versus consolidated
-INR309cr, on consolidated EBITDA INR585cr versus standalone INR487cr (Concall_May_2026, p.4-5).
-The HAM SPV portfolio generated ~INR98cr of incremental EBITDA in FY26 and ~INR4cr of
-incremental PAT. The concession portfolio's earnings quality is the load-bearing element of the
-monetization thesis and is not discussed in any of the four calls.
-
-**IF-17. Consolidated EBITDA and PAT were dropped from the Q1 FY27 disclosure. MAJOR.**
-Feb-2026 and May-2026 both gave consolidated revenue, EBITDA and PAT (p.4-5 in each).
-Aug-2026, p.4, gives consolidated revenue only — "Revenue from operations for Q1 FY27 stood at
-INR970 crores" — with no consolidated EBITDA and no consolidated PAT anywhere in the transcript.
-Standalone EBITDA and PAT were given as usual. No analyst asked for the missing lines.
-
-**IF-24. FY26 inflow of INR11,332cr was booked in the weakest awarding year the peer set
-describes. MAJOR.**
-HGINFRA: "We have started the last year with expected new order inflows of INR10,000 crores, but
-due to lukewarm bids pipeline, we could secure only new orders of INR1,300 crores during the
-year" (HGINFRA-Concall_May_2026, p.6). PNCINFRA: "there have been no major orders during the
-last three years from NHAI" (PNCINFRA-Concall_May_2026, p.10). KNRCON: "because of the big gap
-that has come in NHAI, for 2 years there has been very less job inflow that has caused us to bid
-in such a way" (KNRCON-Concall_Jun_2026, p.9). Ceigall's inflow was 8.7x HGINFRA's in the same
-window. Thirty-five percent was renewable and the road wins were HAM and state, so this is not
-impossible — but it is a large outlier that no call and no upstream stage stress-tests.
-
-### 1F. Peer statements that contradict the company
-
-**IF-23. Ceigall claims full escalation pass-through; three peers describe partial, temporary
-relief and are absorbing margin damage. MAJOR.**
-May-2026, p.9, Sehgal: "The increased cost is already compensated by the department; they
-already come up with the circular for compensating the escalation part... whatever increase in
-the cost, that we can that will be paid by the authority ultimately to the EPC contractor."
-PNCINFRA: the mechanism is "payable from 1st April 2026" and expected "to provide some relief
-margin pressures... to certain extent" (PNCINFRA-Concall_May_2026, p.5), and later "the
-compensation mechanism that they introduced is only for three months from the 1st of April for
-the ongoing projects" (p.20). PNC still cut EBITDA guidance from 13-13.5% to 12% (p.9). KNRCON
-describes only a timing change, "reduced the price adjustment cycle from 3 months to 1 month"
-(KNRCON-Concall_Jun_2026, p.3), and reports EBITDA "around 10 kind of level now" (p.9).
-HGINFRA's Q4 FY26 standalone margin fell to 9.37% on "higher input cost for all metal, HSD,
-bitumen, cement, logistics" (HGINFRA-Concall_May_2026, p.2, p.6). Ceigall alone claims full
-pass-through and expanding margins in the same quarter.
-
-**IF-10. A 15%-plus margin framing was allowed to stand with one investor while 11-12.5% was
-guided to everyone else. MAJOR.**
-Feb-2026, p.12, Nimish Pandya: "are these low margin entry level bids or do they match your
-historical 15% plus EBITDA margin levels?" → "Yes, yes, they'll match the historical EBITDA
-margin levels." The company's own stated EPC band is "11-11.5%" (Concall_Nov_2025, p.14) and
-"11% to 12.5%" (Concall_May_2026, p.4). HGINFRA puts the same verticals at 10-11%
-(HGINFRA-Concall_May_2026, p.14). Two different margin pictures given to two different
-audiences, on the same segment, in the same reporting year.
-
-**IF-25. Peers volunteer serious adverse events; Ceigall volunteered none in four calls. MAJOR.**
-PNCINFRA opened its Q1 FY27 call to questioning on an NHAI show-cause notice, a suspended toll
-collection and a possible non-performer designation on Kanpur-Lucknow
-(PNCINFRA-Concall_Aug_2026, p.6-7, p.12-13). HGINFRA volunteered a CBI and Anti-Corruption
-Bureau search of its offices in prepared remarks (HGINFRA-Concall_Feb_2026, p.6), a lender
-recall of INR99.27cr of solar SPV debt (HGINFRA-Concall_May_2026, p.5), and the removal of the
-MSRDC Nagpur-Chandrapur packages from its order book (p.4). KNRCON volunteered INR670cr of stuck
-Telangana debtors (KNRCON-Concall_Jun_2026, p.7) and "I'm very shameful to say that it is around
-10 kind of level now we are getting" on EBITDA (p.9). Across four Ceigall calls the only
-volunteered negatives are monsoon and, once and only when asked, the Jalbehra EOT
-(Concall_Feb_2026, p.11).
-
-**IF-26. Peers give absolute balance-sheet figures on request; Ceigall gives day-ratios or
-nothing. MAJOR.**
-HGINFRA gave a full contract-asset breakup totalling INR1,857cr plus debtors of INR1,560cr,
-retention INR190cr and mobilization advance INR327cr on a single request
-(HGINFRA-Concall_May_2026, p.12). PNCINFRA gave inventory INR847cr, debtors INR1,900cr, trade
-payables INR680cr, mobilization INR178cr, retention INR295cr and unbilled INR462cr in one answer
-(PNCINFRA-Concall_Aug_2026, p.8). KNRCON gave unbilled of INR800cr irrigation and INR500cr road
-(KNRCON-Concall_Jun_2026, p.14). Across four Ceigall calls the only comparable disclosure is HAM
-receivables of INR6,186mn (Concall_Nov_2025, p.11); everything else is a ratio or absent.
-
-### 1G. Governance and disclosure
-
-**IF-19. The promoter's personal equity in a HAM SPV that is being monetized surfaced once, as a
-side remark, and was never explored. MAJOR.**
-Feb-2026, p.5, Aggarwal, while answering a question about a different SPV: "In case of
-Bathinda-Dabwali, Ramneek sir, he has also contributed INR20 crores. So being a promoter of the
-company, he has invested INR20 crores in Bathinda-Dabwali." Bathinda-Dabwali is one of the three
-assets in the Neo divestment pipeline (Concall_May_2026, p.4, p.8). The CMD's immediate reply,
-"No, no, entire money has been put by company only. That was before IPO, yes" (p.5), was
-directed at the different SPVs the analyst had named, so it is not a clean contradiction — but
-it leaves the promoter co-investment unexplained and unquantified as a share, in an asset the
-company is selling. No analyst returned to it. The same exchange produced the admission "I think
-there is some issue in the PPT, slide 38" → "It's a mistake" (p.5-6).
-
-**IF-21. Three different senior management line-ups in four calls, none explained. MAJOR.**
-Nov-2025: CMD and CFO only (Concall_Nov_2025, p.2). Feb-2026: adds Sudhir Hoshing, Whole-Time
-Director (Concall_Feb_2026, p.2). May-2026: Hoshing gone; A. Sarvanan appears as CEO and Akshay
-Jain as VP Strategy and Planning (Concall_May_2026, p.2). Aug-2026: Saravanan is Whole-Time
-Director and CEO; Akshay Jain gone (Concall_Aug_2026, p.2). No call mentions any of it. The
-investor relations provider also changed between Nov-2025 (Ernst & Young LLP) and Feb-2026
-(Adfactors PR) with no comment.
-
-**IF-12. The filed May-2026 transcript carries an erratum that cuts stated liquidity by 71%, in
-the sentence used to prove funding is not a constraint. MAJOR.**
-May-2026, p.7: "We have an unencumbered cash lying in our bank on 31st March, which is close to
-INR266 crores, and unencumbered FDR close to INR146 crores (It was erroneously mentioned that
-the unencumbered cash and unencumbered FDR stood at INR 266 crores and INR 146 crores,
-respectively. The actual figures should be read as INR 166 crores for unencumbered cash and
-INR 75 crores for unencumbered FDR.). So, equity is not a problem with Ceigall, we have amazing
-cash flow available with us." INR412cr becomes INR241cr, a INR171cr correction, made silently in
-the filed document with no live correction and no later acknowledgment. Cash figures elsewhere
-move on unstated bases: "Including FD it is INR225 crores" at Dec-2025 (Concall_Feb_2026, p.10)
-versus "close to almost INR320 crores FDs lying in the books" at Jun-2026 (Concall_Aug_2026,
-p.10), the latter apparently gross rather than unencumbered.
-
-**IF-27. Full utilisation of IPO proceeds was disclosed a quarter late, in passing, inside an
-answer about other income. MINOR.**
-Aug-2026, p.10: "We have 100% utilized the IPO proceeds in the last quarter of the FY26." The
-May-2026 call, which reported that very quarter, does not mention it. The same answer discloses
-that royalty income has stopped — "Right now, we are not charging royalty" — which, read with
-the May-2026 admission that royalty sat inside revenue from operations, means a component of
-prior-period reported EBITDA was non-recurring by construction.
-
-### 1H. Minor items
-
-**IF-29.** Nov-2025, p.7 states "26 ongoing projects" while the same paragraph lists 15 EPC +
-7 HAM + 10 O&M + 1 DBFOT + 3 tariff-based = 36; the 10 O&M projects then vanish from every later
-project count (28, 37, 39). Renewables are 22% of the book on p.4 and "about 21%" on p.14 of the
-same transcript. MINOR.
-
-**IF-31.** May-2026, p.12 renders the Sahebganj project as "one INR21,160 crores project", a
-transcription error for INR2,160cr; uncorrected in the filed document. The Feb-2026 filing letter
-is dated 13-02-2026 for a call held 09-02-2026 (Concall_Feb_2026, p.1-2), so filing dates and
-call dates differ across the set. MINOR.
-
-**IF-32.** Two analyst questions were lost and never returned to: Krish Bhatia's question on FY27
-highway awards ended when "The line for the participant has dropped" and was not revisited
-(Concall_Aug_2026, p.6); Rohit Mehra's question on a border-area project was closed with "No, we
-don't have any project for Punjab fencing" (Concall_Feb_2026, p.8). MINOR.
-
-**IF-33.** Nov-2025, p.10, Balasubramanian states the bid book as "nearly INR16,000 crores" when
-management's own figure in the same call is INR14,320mn-equivalent / "INR14,000 crores" (p.6,
-p.9); the analyst's figure is left uncorrected. MINOR.
+METHOD. I read all four Ceigall transcripts end to end and built my own
+red-flag list before opening any upstream artifact. I then targeted the peer
+corpus on the specific claims my own pass raised (NHAI award pace, escalation
+pass-through, HAM monetisation disclosure, working-capital granularity,
+governance disclosure, solar ramp timing, order-book reconciliation practice).
+Only after that did I open B05/B06. Every anchor below is the
+`===== [PAGE N] =====` marker, which is the PDF page number. In the Nov-2025
+and Aug-2026 files the printed "Page N of M" header runs exactly one page
+behind the marker; I use the marker throughout and flag where upstream did not.
 
 ---
 
-## PART 2: COMPARISON AGAINST B05 AND B06
+## PART 1: INDEPENDENT RED-FLAG LIST (built before reading B05/B06)
 
-Definitions used below:
-- CAUGHT — the pipeline identified the item and weighted it at least as heavily as I do.
-- PARTIALLY CAUGHT — identified but under-weighted, mis-scoped, or missing a load-bearing leg.
-- MISSED — not present in B05 or B06 in any form.
+### 1.1 Repeated evasion (2+ quarters on the same question)
 
-| # | Item (short) | Severity | Verdict | Where in B05/B06, or why missed |
+**IF-1. NHAI awarding pace, refused twice, third attempt lost.** CRITICAL
+Feb-2026 p.8-9: Ketan (Avendus Spark) asks three times in one exchange how many
+km NHAI and MoRTH have awarded. Answers: "any number specific, a specific number
+discussing at this moment will not be correct"; then "there are a lot of
+contracts available online"; then "I mean, it is not easy for us to do this. We
+can check it on NHAI website and then we can update you, maybe you can share
+your email with Kapil." May-2026 p.9-10: Dheeraj Kripalani (Avendus Spark) asks
+twice for FY26 awarding in km and value; answer: "these are the figures which
+NHAI has put on their own website," then the line is cut. Aug-2026 p.6: Krish
+Bhatia begins the same question ("Highway projects to be awarded in FY27... how
+much do you expect to be awarded within this year") and the line drops.
+Peer contrast is decisive: PNCINFRA volunteers "NHAI's project awarding activity
+remained subdued in Q1 FY2027 also, with only 107 kilometers awarded"
+(PNCINFRA-Concall_Aug_2026_Transcript.txt, p.3) and "Awarding activity by
+National Highways Authority of India stood at 3,124 km aggregate length, more
+than 30% below the targeted length of 4,500 km"
+(PNCINFRA-Concall_May_2026_Transcript.txt, p.4). KNRCON volunteers the same
+class of figure every quarter. The number Ceigall calls impossible is in two
+peers' prepared remarks, unprompted.
+
+**IF-2. "Was the margin beat a one-off?" — asked in two consecutive quarters,
+answered neither time.** CRITICAL
+May-2026 p.9, Mahesh Patil (ICICI Securities): "if we see on Q4 compared to last
+Q4, there has been significant increase. So is there any one-off or if this is
+just because of the execution that we have." Kapil Aggarwal answers: "last year
+if you look at, we have started four HAM projects which have majorly contributed
+to the PAT margins" — an answer about PAT, not about the EBITDA one-off, and it
+never says yes or no.
+Aug-2026 p.7, Mahesh Patil again: "we have posted good margins of more than
+around 13.5% this quarter against our guidance of around 11% to 12.5%... what led
+to this improvement, and can we see similar margins in the upcoming quarters or
+was there any one-off this quarter?" Kapil answers: "we have started 3 new
+projects in this quarter. 2 are Maharashtra solar projects, MH1 and MH2, and road
+projects, HAM projects in Indore-Ujjain." Starting three projects does not
+explain a 90-240bp margin beat. The one-off question is again unanswered, and
+guidance is reaffirmed at 11-12.5% without explaining why the margin should fall
+back.
+Same analyst, same question, two consecutive calls, a non-answer of the same
+shape both times. This is the pattern the rubric grades CRITICAL, and it is
+absent from B05's repeated-question tracker.
+
+**IF-3. Segment margin bifurcation (renewables/T&D vs core EPC), four
+quarters, never a number.** CRITICAL
+Nov-2025 p.13 (Priyam Shah), Feb-2026 p.13 (Nimish Pandya), May-2026 p.7-8
+(Tejpal Singh), Aug-2026 p.9 (Chetrika Deshpande). Four asks, zero splits.
+Nimish Pandya's framing "do they match your historical 15% plus EBITDA margin
+levels" is answered "Yes, yes, they'll match the historical EBITDA margin
+levels" (Feb-2026 p.13) — the company's own guided band is 11-12.5%, so a 15%+
+framing was accepted without correction.
+Peer contrast: HGINFRA gives the split when asked — infra/rail/roads "about 14%
+to 15%," battery and transmission "around 10% to 11%"
+(HGINFRA-Concall_May_2026_Transcript.txt, p.14).
+
+**IF-4. Total/pending equity requirement, asked every call, a new
+unreconciled number every call.** CRITICAL
+Nov-2025 p.10: Rs788cr HAM pending, plus "a little less than INR600 crores" for
+solar and BESS (p.12). Feb-2026 p.9-10: Rs1,391cr HAM total, Rs395cr for two new
+projects, "close to 810" for solar including T&D. May-2026 p.6: "in next three
+years, we have to put close to INR2,000 crores, INR1,937 crores," split Rs800cr
+renewable / rest HAM. Aug-2026 p.5-6: Rs253cr at IPO, Rs692cr cumulative today,
+Rs859cr FY27, Rs744cr FY28. No call ever bridges to the previous call's figure.
+
+### 1.2 Statements contradicted by the same call's own numbers
+
+**IF-5. Feb-2026: "our growth is much more than [10-15%]" — false against the
+same call's 9M figures.** MAJOR
+Feb-2026 p.14: "We were always guiding 10% to 15%, our growth is much more than
+that. Thank you." The same call's CFO reported 9M FY26 standalone revenue growth
+of 7.6% and consolidated growth of 8.7% (p.5-6). Both are below the bottom of
+the guided band, not "much more" than the top of it. Earlier in the same call
+(p.7) the CMD had already said "we are targeting to achieve 10% to 15%, and we
+are on track." The year did close inside the band on Q4 execution, but the
+February claim was untrue when made and was never corrected.
+
+**IF-6. May-2026: "EBITDA margin is stable, that's not decreasing... has grown
+up as compared to the previous year."** MAJOR
+May-2026 p.10, answering Maitri Shah on Slide 41. The same call's own opening
+remarks state standalone FY26 EBITDA margin 12.6% versus 12.8% in FY25 (p.5).
+The margin fell. Maitri Shah pressed three times before the CFO conceded that
+FY24 and FY25 headline EBITDA carried bonus and royalty income ("we have INR20
+crores royalty and bonus in FY '25"). The concession came only after the third
+push, and it never produced the FY26 like-for-like comparable that would settle
+the question.
+
+**IF-7. May-2026: assets under a non-binding offer described as "already sold,"
+twice, in the same call.** MAJOR
+Prepared remarks, p.4: "For Bathinda-Dabwali and Jalbehra Shahbad, we have signed
+non-binding offer and these are currently under due diligence." Q&A, p.6: "we
+have already sold three assets to Neo in which first asset we are expecting it
+should get executed in this month only." Q&A again, p.7: "we've sold three
+assets, so more than INR400 crores will come from Neo also after selling those
+assets." Two assets under due diligence cannot be "sold." The same pattern
+appears in Feb-2026: "in-principle approved a binding offer" (p.4) versus "we
+have already sold one HAM asset" (p.9). By Aug-2026, only one of the three has
+completed and the other two are not mentioned at all.
+
+**IF-8. Nov-2025: two different equity-infusion figures for the same three-month
+window, in one call.** MAJOR
+p.10, Ramneek Sehgal: "We are targeting to infuse about INR297 crores in coming
+3 months." p.11, Kapil Aggarwal: "We are going to infuse close to INR200 crores
+in the next 3 months in the VRK as well as the Ludhiana-Bathinda and Northern and
+Southern Ayodhya projects." No bridge is offered between the two. (Note: the
+Rs200cr line sits on PDF page 11, not page 12.)
+
+**IF-9. Aug-2026: a nine-project equity list that sums to Rs567cr against a
+stated Rs550cr, and 11 HAM projects against the same call's 10.** MAJOR
+p.10, Kapil Aggarwal, after an analyst's own arithmetic came to Rs430-440cr:
+53 + 61 + 53 + 97 + 139 + 38 + 60 + 50 + 16 = Rs567cr. He says "in totality, this
+comes to INR550 crores." He also says the figure is "across all 11 of our HAM
+projects" (p.9), while his own opening remarks list "10 HAM projects" in the
+order book (p.4). Three different totals in one exchange, none reconciled.
+
+**IF-10. Nov-2025: bid pipeline total does not equal its own components.** MINOR
+p.6: "Ceigall has submitted totalling of INR1,43,200 million" with components
+"INR88,860 million in the Road segment, INR48,960 million in the Railway segment,
+and around INR6,000 million in the Renewable segment" — the components sum to
+Rs14,382cr against a stated Rs14,320cr. On p.9 the same pipeline is "INR14,000
+crores." An analyst says "nearly INR16,000 crores" (p.10) and is not corrected.
+
+**IF-11. Nov-2025: revenue mix stated twice in one call, inconsistently.** MINOR
+p.3: "renewable energy accounts for 22% of order book." p.14: "renewable is about
+21%." The p.14 sector split sums to 98.9%; the delivery-model split on the same
+page (HAM 45%, EPC 25%, tariff 24%, DBFOT 1%) sums to 95%.
+
+**IF-12. Nov-2025: Ramban-Banihal figures incoherent inside one exchange.** MINOR
+p.11: the analyst puts balance work at Rs385cr "for both the projects"; management
+replies that "the other project... is totally INR369 crores," that "20% of the
+tunnel work... would be around INR180 crores" (implying a ~Rs900cr tunnel scope),
+and that the second project is "54% of the project completed and 45% financially."
+None of these tie to each other.
+
+### 1.3 Cross-call numbers that change without reconciliation
+
+**IF-13. Order-book roll-forward fails in all three testable quarters.** MAJOR
+I recomputed this independently before reading B05. Using consolidated revenue as
+executed value:
+
+| Quarter | Opening | + Inflow | − Revenue | = Implied | Actual | Gap |
+|---|---|---|---|---|---|---|
+| Q3 FY26 | 12,598 (Nov-25 p.3) | 1,403 (Feb-26 p.4) | 991 (Feb-26 p.5) | 13,010 | 13,295 (Feb-26 p.4) | **+285** |
+| Q4 FY26 | 13,295 | 6,014 (May-26 p.4) | 1,386 (May-26 p.5) | 17,923 | 18,554 (May-26 p.3) | **+631** |
+| Q1 FY27 | 18,554 | ~600 (Aug-26 p.7) | 970 (Aug-26 p.4) | 18,184 | 18,568 (Aug-26 p.4) | **+384** |
+
+The three gaps are confirmed exactly as B05 states them. Average +Rs433cr;
+2.1%, 3.4% and 2.1% of book. Always positive. Never explained on any call.
+Basis note: on standalone revenue the gaps become +264 / +539 / +315 — the
+direction and the unexplained residual survive either basis, so the finding is
+robust to the choice. Peers reconcile this on request: when an analyst asked
+PNCINFRA to reconcile a Rs22,000cr order book against a Rs15,000cr figure,
+management walked through the additions on the call
+(PNCINFRA-Concall_Aug_2026_Transcript.txt, p.13).
+
+**IF-14. Feb-2026: 9M order inflow claimed at "close to INR8500 crores," which
+the FY26 total contradicts.** MAJOR
+Feb-2026 p.10: "last year we guided our investors that we will be getting
+INR5000 crores. Against INR5000 crores, we have already got close to INR8500
+crores." The same call reports Q3 inflow of "approximately INR1,403 crores"
+(p.4), and H1 inflow was Rs3,747cr (Nov-2025 p.3) — 9M actual Rs5,150cr.
+Independently, May-2026 reports FY26 inflow of Rs11,332cr with Q4 at Rs6,014cr
+(p.4), implying 9M inflow of Rs5,318cr. The Feb claim is ~60% above what the
+company's own annual figures support. The gap is the value of L1 positions
+counted as won: Sahebganj Rs2,160cr + Jaipur Rail Rs918cr + Indore-Ujjain
+Rs1,089cr + Surya Mitra Rs423cr = Rs4,590cr, which added to Rs3,747cr gives
+Rs8,337cr. Feb-2026 states plainly that the Sahebganj LOA "is not received yet"
+(p.7) and that Jaipur Rail is "still waiting for the LOA" (p.11).
+
+**IF-15. Solar/BESS equity requirement rises 35% in one quarter on the same
+scope.** MAJOR
+Nov-2025 p.12: asked the equity requirement for the T&D projects, Ramneek Sehgal
+answers "closer to a little less than INR600 crores," confirmed as "for both
+solar and BESS combined." Feb-2026 p.9: "the equity will be close to INR750 to
+INR800 crores in the solar projects," then p.10: "for solar it is close to 810,"
+and, asked whether that includes T&D, "Yes, yes." Same scope, Rs600cr to Rs810cr
+in one quarter, no explanation.
+
+**IF-16. Cash is disclosed on a different basis every quarter.** MAJOR
+Dec-2025: "Including FD it is INR225 crores" (Feb-2026 p.10). Mar-2026:
+unencumbered cash Rs266cr and unencumbered FDR Rs146cr, corrected by written
+erratum to Rs166cr and Rs75cr (May-2026 p.6). Jun-2026: "whatever FDs we have
+close to almost INR320 crores FDs lying in the books of accounts" (Aug-2026
+p.11). Three quarters, three definitions, no series a reader can build. The
+Rs320cr figure does not appear in B05 at all.
+
+**IF-17. The May-2026 erratum overstates liquidity by 71%, not 41.5%.** MAJOR
+(computed independently; see Part 4 for the arithmetic dispute with B05)
+May-2026 p.6, inside the sentence arguing "equity is not a problem with Ceigall,
+we have amazing cash flow available with us": stated Rs266cr unencumbered cash
+and Rs146cr unencumbered FDR (Rs412cr combined); the filed erratum corrects
+these to Rs166cr and Rs75cr (Rs241cr combined). Cash alone was overstated 60.2%;
+FDR alone 94.7%; combined 70.95%.
+
+**IF-18. Consolidated EBITDA and consolidated PAT disappear in Aug-2026;
+consolidated debt disclosure decays to nothing across four calls.** MAJOR
+Nov-2025 p.5 gives both debt levels with a full loan-type breakdown. Feb-2026
+p.5 gives aggregates only (standalone Rs552cr, consolidated Rs1,421cr — note
+consolidated debt rose from Rs1,341cr at Sep-25 while the narrative is
+"balance sheet optimization"). May-2026 p.4 gives ratios only (0.2x standalone,
+0.6x consolidated), no rupee figures. Aug-2026 gives neither, at either level.
+The same Aug-2026 call also drops consolidated EBITDA and consolidated PAT,
+disclosing only consolidated revenue (p.4). Peers disclose the opposite way:
+PNCINFRA gives standalone and consolidated net worth, debt, cash and net-cash
+position in its Q1 FY27 prepared remarks
+(PNCINFRA-Concall_Aug_2026_Transcript.txt, p.5).
+
+**IF-19. Consolidated PAT sits below standalone PAT in H1 and 9M FY26.** MAJOR
+H1 FY26: standalone Rs111.8cr, consolidated Rs107.5cr (Nov-2025 p.6-7). 9M FY26:
+standalone Rs186cr, consolidated Rs180cr (Feb-2026 p.5). In both periods
+consolidated EBITDA is above standalone (Rs222.7cr vs Rs185.3cr; Rs362cr vs
+Rs305cr), so the SPV interest and depreciation load more than consumes the
+uplift. FY26 flips by Rs4cr (Rs309cr vs Rs305cr). Never commented on. The one
+quarter where this would next be testable, Q1 FY27, is the quarter the
+consolidated P&L disclosure stopped.
+
+### 1.4 Promises made and never revisited
+
+**IF-20. HAM equity infusion pace: Rs297cr promised in three months, Rs2.4cr
+delivered, Rs89cr over eight months.** MAJOR
+Nov-2025 p.5: Rs515.4cr infused at Sep-2025, Rs603.2cr "as on date" (Oct-2025).
+Nov-2025 p.10: Rs297cr targeted in the coming three months. Feb-2026 p.4:
+Rs605.6cr infused at Dec-2025 — Rs2.4cr added. Aug-2026 p.5: cumulative Rs692cr
+"as on today's date," i.e. Rs89cr added in eight months against a Rs297cr
+three-month target. Never acknowledged, never asked about.
+
+**IF-21. FY27 equity commitment Rs859cr against Q1 delivery of Rs23cr.** MAJOR
+Aug-2026 p.5-6: "this year, our balance equity commitment is INR859 crores"
+(Rs310cr solar, Rs550cr HAM, per p.6). Aug-2026 p.8: "INR23 crores we have
+invested" in Q1. That is 2.7% of the annual plan in 25% of the year, against a
+demonstrated run rate of Rs23-30cr per quarter and a required Rs279cr per quarter
+for the remaining nine months. No analyst tested it.
+
+**IF-22. Southern Ludhiana bypass land: 80% "by December" 2025 becomes 62% in
+August 2026 — a regression, not a delay.** MAJOR
+Nov-2025 p.7: "Land status in Southern bypass is very clear... Southern bypass, I
+think we should get the 80% land cleared by December, and we'll start the work
+full-fledged." Aug-2026 p.5: "But Ludhiana, the land is only 62% available with
+us, so that is a challenge," and the year's execution is cut to "at least 15%"
+from the 25-30% the analyst assumed. Neither intervening call flags the slip.
+
+**IF-23. "By 31st March 2026, all our HAM projects will be under execution" —
+abandoned without mention.** MAJOR
+Nov-2025 p.7: VRK12 appointed date "any time before 31st December 2025,"
+Southern bypass "before 31st December 2025," VRK11 "before 31st March 2026,"
+and the blanket claim "I think by 31st March 2026, all our HAM projects will be
+under execution." Feb-2026 p.7: VRK12 "around tomorrow or day after," Southern
+"this month," both "before 31st March." May-2026: silent. Aug-2026 p.3:
+"Subsequent to the quarter end, we received the appointed dates of VRK 11, VRK
+12, Indore-Ujjain" — July or August 2026, a five-to-eight month slip. Southern
+Ludhiana still has no appointed date. May-2026 p.9 concedes the general position
+without naming the promise: "in HAM till the time 80% land is given clear to us,
+it doesn't start."
+
+**IF-24. Ramban-Banihal: three dated promises, then three calls of silence.**
+MAJOR (B05 grades this LOW)
+Nov-2025 p.11: tunnel "completing in the next 3 months"; "20% of the tunnel work,
+which would be around INR180 crores would be completed before this March";
+viaduct "by March '27" on redesigned steel girders. The project is never
+mentioned again in Feb-2026, May-2026 or Aug-2026, and no analyst asks. This is
+a difficult-terrain J&K project with a stated Rs385cr balance of work and a
+publicly narrated redesign; three calls of total silence on it is not a low-grade
+item.
+
+**IF-25. May-2026 FY27 renewable-revenue guidance (20-25% of total) never
+revisited or tested.** MAJOR
+May-2026 p.4: "For Financial Year '27, we are guiding 15% minimum revenue growth
+with renewable sector contributing close to 20% to 25% of the total revenue."
+On a FY26 consolidated base of Rs4,022cr plus 15%, that is Rs925-1,156cr of
+renewable revenue in FY27. Aug-2026 discloses no renewable revenue, no segment
+split, and confirms Morena/BESS has neither PPA nor transmission tender ("Till
+now only LOA is received, PPA is yet to be signed and even transmission line
+tender is not even received," May-2026 p.11) and that Rewa still waits on
+transmission (Aug-2026 p.5). Peer benchmark: PNCINFRA, at a comparable solar
+stage, guides first revenue only in Q4 FY27 and completion across FY28-29
+(PNCINFRA-Concall_Aug_2026_Transcript.txt, p.9 and p.14).
+
+**IF-26. Aug-2026: Q1 standalone growth of 10.2% against a reaffirmed "minimum
+15%," never addressed.** MAJOR
+Aug-2026 p.4: standalone Q1 FY27 revenue Rs901cr versus Rs818cr, +10.2%.
+Consolidated +15.7% is quoted; the standalone shortfall is not. p.8: "earlier we
+used to say it should be between 10% to 15%. This year, it should be minimum
+15%." The quarter is framed as "another encouraging quarter" (p.3). The same
+pattern as Feb-2026 (IF-5): an in-year shortfall against guidance, restated as
+being on track.
+
+**IF-27. Malout-Abohar-Sadhuwali: no price on any of four calls, and an IRR
+claim with no number.** MAJOR
+Feb-2026 p.10: Parth Patel says "you completed a sale to, I think Neo Asset for
+about INR177 crores" — neither confirmed nor corrected. May-2026 p.6: "more than
+INR400 crores will come from Neo" for three assets. Aug-2026 p.3 confirms the
+first monetisation completed, with no consideration disclosed, and p.9 asserts it
+"has given much more the IRR what we committed or we guided our investors,"
+again with no number. Peer contrast: HGINFRA states the enterprise value
+(Rs3,584cr), equity invested (Rs767cr) and debt (Rs2,200cr) for its Neo
+transaction and repeats the same figures across three calls
+(HGINFRA-Concall_Aug_2025_Transcript.txt, p.5-6); PNCINFRA gives an enterprise
+value of Rs630cr when asked.
+
+**IF-28. Bathinda-Dabwali and Jalbehra-Shahbad divestments: "before September"
+becomes Q2/Q3 FY27, then silence past the original deadline.** MAJOR
+Feb-2026 p.12: "these two we are targeting to close it before September."
+May-2026 p.7: Bathinda-Dabwali "in second quarter," Jalbehra Shahbad "in third
+quarter." Aug-2026: neither is mentioned, and the Feb deadline has passed.
+
+**IF-29. Nov-2025: "We have 1.5 years to dilute another 8% also" — never
+explained, never repeated.** MAJOR
+Nov-2025 p.12, dropped into an answer about solar project financing. For a
+company listed in August 2024, a further ~8% dilution inside 1.5 years reads as
+minimum-public-shareholding compliance and is a real equity overhang. It is
+never mentioned again on any of the three later calls, and no analyst asks. In
+Aug-2026 p.12 an analyst refers to "post-IPO and post-QIP type capital raises"
+and the CFO neither confirms nor corrects the QIP premise.
+
+**IF-30. Aug-2026: "we have 100% utilized the IPO proceeds in the last quarter of
+the FY26," disclosed only as an aside.** MAJOR
+Aug-2026 p.11, answering why other income fell from Rs15cr to Rs9.5cr: "Other
+income... is primarily on account of royalty, which we were getting in the
+earlier years. Right now, we are not charging royalty, and plus FDR... in the
+previous financial year, we were having proceeds from IPO on which we were
+getting returns... So, we don't have that surplus now. We have 100% utilized the
+IPO proceeds in the last quarter of the FY26." Two structural facts arrive in one
+Q&A answer: the IPO cash cushion is gone, and the royalty stream the CFO used in
+May-2026 to defend margin optics has stopped. Neither is in any prepared remark.
+
+### 1.5 Tone that does not match the arithmetic, and peer contradictions
+
+**IF-31. Full escalation pass-through claimed; all three peers say partial and
+time-boxed.** MAJOR
+May-2026 p.9: "The increased cost is already compensated by the department; they
+already come up with the circular for compensating the escalation part and
+earlier it was linked to 3 months and now it has been linked to monthly basis. So
+whatever increase in the cost, that we can that will be paid by the authority
+ultimately to the EPC contractor."
+PNCINFRA, same period: the mechanism is "expected to provide some relief margin
+pressures... to certain extent" (PNCINFRA-Concall_May_2026_Transcript.txt, p.6),
+and pressed later, "certainly, we cannot deny that there would not be any margin
+pressure. Certainly, there will be pressure on our margins" (p.8). KNRCON frames
+it as a faster pass-through cycle, not a guarantee. HGINFRA's Q4 FY26 standalone
+EBITDA margin fell to 9.37%, with management attributing the quarter directly to
+"higher commodity prices... cost escalation and profitability"
+(HGINFRA-Concall_May_2026_Transcript.txt, p.6).
+
+**IF-32. Ceigall's best-ever quarterly margin lands in the same quarter a peer's
+margin collapses on unrecovered escalation.** MAJOR
+Ceigall Q4 FY26 standalone EBITDA margin 14.1% (May-2026 p.5), up from 12.3% in
+Q3, the highest of the four quarters. HGINFRA's Q4 FY26 standalone margin:
+9.37%, explicitly attributed to unrecovered cost escalation. Ceigall's management
+denies any input-cost impact at all in the same call. The direct question about a
+one-off went unanswered (IF-2). This juxtaposition is not drawn anywhere upstream.
+
+**IF-33. Nov-2025: "significant uptick in order awarding by NHAI" against a peer
+set describing a multi-year downcycle.** MINOR
+Nov-2025 p.5: "we expect a significant uptick in order awarding by NHAI." KNRCON,
+one week later, describes bids "getting postponed," an order book at its lowest
+road share in ten years, and asks openly "whether there is an upcycle at all in
+the next few years" (KNRCON-Concall_Nov_2025_Transcript.txt, p.9-10). PNCINFRA in
+May-2026: "there has been a very unhealthy competition for the last two to three
+years, coupled with the low awarding activity by NHAI... there have been no major
+orders during the last three years from NHAI"
+(PNCINFRA-Concall_May_2026_Transcript.txt, p.9). Ceigall's Nov-2025 claim that
+tightened net-worth norms mean "probability will be more for us" (p.14) sits
+against a peer calling the competition unhealthy through the same window.
+
+**IF-34. MoRTH FY27 budget figure differs from a peer's by 7%.** MINOR
+Ceigall, Feb-2026 p.3: MoRTH "increased its budgetary allotment by around 8% to
+approximately INR3.1 trillion for the year '26-'27." PNCINFRA, May-2026 p.5:
+"INR 2.9 trillion for FY27, representing an increase of around 8% over the
+previous year." Same metric, same year, same stated growth rate, two different
+levels.
+
+**IF-35. Romania: a Rs13,000cr bid on a company that says it takes "baby
+steps."** MINOR (context, not a standalone flag)
+May-2026 p.5: domestic tenders under evaluation "close to INR13,000 crores," and
+a single 17km Romanian highway also "close to INR13,000 crores" — 70% of the
+order book. Feb-2026 p.7 had said international work needs "no equity
+requirement, but we'll be requiring only the BG limits." Aug-2026 p.11 reverts to
+"we want to take baby steps there." The bid is never mentioned again.
+
+### 1.6 Governance, disclosure and material events the calls never carry
+
+**IF-36. Promoter's personal Rs20cr equity in the Bathinda-Dabwali HAM SPV, an
+asset inside the divestment pipeline.** MAJOR
+Feb-2026 p.6, Kapil Aggarwal, answering a question about a different SPV: "In
+case of Bathinda-Dabwali, Ramneek sir, he has also contributed INR20 crores. So
+being a promoter of the company, he has invested INR20 crores in Bathinda-
+Dabwali." Bathinda-Dabwali is one of the three assets being sold to Neo (Feb-2026
+p.10, May-2026 p.7). How a promoter's personal equity in an asset earmarked for
+third-party sale is priced and exited is never addressed, and no analyst asks.
+
+**IF-37. Senior management churn across four calls, never explained; the IR
+agency also changes without mention.** MAJOR
+Nov-2025: CMD + CFO, moderated by Ernst & Young LLP. Feb-2026: CMD + Sudhir
+Hoshing (Whole-Time Director, new, unintroduced) + CFO, moderated by Adfactors
+PR. May-2026: CMD + A. Sarvanan (CEO, new) + CFO + Akshay Jain (VP Strategy);
+Hoshing gone. Aug-2026: CMD + CFO + A. Saravanan now "Whole-Time Director and
+CEO"; Akshay Jain gone. May-2026 p.5 also mentions "we have already appointed one
+CEO International." Four calls, four different management line-ups, zero
+commentary. Peers' analysts do ask this question: HGINFRA was pressed on "a
+dramatic exit of 3 senior executives from the company"
+(HGINFRA-Concall_Feb_2026_Transcript.txt, p.12).
+
+**IF-38. Investor-presentation error admitted live.** MINOR
+Feb-2026 p.5-6: Vaibhav Shah finds equity-invested figures on Slide 38 that do
+not match the company's stated share. Ramneek Sehgal: "It's a mistake, but
+otherwise entire equity has been put by the company only." A clean admission, but
+the underlying defect is a disclosure error in a filed investor presentation.
+
+**IF-39. A 10x number error left uncorrected in the same filed transcript that
+carries a cash erratum.** MINOR
+May-2026 p.12: "we have already got one INR21,160 crores project and one INR600
+crores project of Zirakpur bypass." The project is Sahebganj at Rs2,160cr, named
+correctly on p.3 of the same document. The company issued a written erratum for
+the cash and FDR figures in this transcript and left a ten-fold order-value error
+in it.
+
+**IF-40. Feb-2026: "seven of our projects have completed ahead of schedule"
+alongside a late project awaiting an EOT, then silence.** MINOR
+Feb-2026 p.4 makes the early-completion claim; p.11 discloses that Jalbehra has
+"an ROW problem... a flood problem," that the government "is planning to give us
+an EOT," and that bonus eligibility cannot be stated until the EOT is in hand.
+The EOT is never mentioned again in May-2026 or Aug-2026.
+
+**IF-41. Aug-2026: Northern Ayodhya execution collapse answered with a denial,
+a weather excuse and a concession, in one breath.** MAJOR (B05 rates this
+"plausible and seasonal, not disputed")
+Aug-2026 p.4-5, Vaibhav Shah: "In Northern Ayodhya bypass, the execution has
+fallen in Q1 to almost INR42-odd crores. So, any particular reason, any issues we
+are facing?" Answer: "No, no. I mean, it is going proper. There's nothing. Now,
+from last 1.5 months, there's been rain. Otherwise, progress is steady. We've been
+achieving all our milestones before ahead, before time. It's just — sometimes you
+don't achieve the milestone, payment can only be made only once the milestone is
+achieved." The answer denies a problem, blames rain, claims all milestones are
+beaten, then concedes a missed milestone. Northern Ayodhya is one of the largest
+HAM assets and carries Rs61cr of the FY27 equity plan (p.10).
+
+**IF-42. Aug-2026: Rs100cr commercial paper justified only on a rate spread,
+one quarter after the IPO cash was exhausted.** MINOR
+Aug-2026 p.11-12: the CP is "carve[d] out from our working capital limits" at
+6.8-7.0% versus WCDL at 7.5-7.8%, "which will give more benefits to the company
+and visibility to the company." No analyst connects it to the exhausted IPO
+proceeds (IF-30) or to the Rs859cr FY27 equity call (IF-21).
+
+**IF-43. Never mentioned on any of the four calls.** MAJOR (transcript half
+verified; the underlying events sit in B02/B03, outside my inputs)
+No call contains any reference to a procurement fraud, a qualified internal
+financial controls opinion, a GST search action, an NHAI termination of a
+step-down SPV, a subsidiary auditor resignation, or contingent-liability growth.
+I confirm the silence across all four transcripts. I cannot verify the events
+themselves from my inputs.
+
+---
+
+## PART 2: COMPARISON AGAINST B05 (run 2) AND B06 (run 2)
+
+Legend: CAUGHT = upstream carries the finding at comparable weight.
+PARTIALLY CAUGHT = carried but under-weighted, mis-severitied, or the specific
+arithmetic/contradiction is absent. MISSED = absent from both artifacts.
+
+| # | Finding | Sev | Status | Where upstream / why not |
 |---|---|---|---|---|
-| IF-01 | Nov-25 INR297cr vs INR200cr same call; ~2.4cr delivered | MAJOR | PARTIALLY CAUGHT | B05 promise_delivery row and guidance row both capture the 297 → 2.4 miss. The same-call contradiction with the CFO's INR200cr is absent. |
-| IF-02 | NHAI km refused twice, peer-contradicted | MAJOR | CAUGHT | B05 repeated_evasions #1; B06 Q2 PARTIALLY VERIFIED. |
-| IF-03 | Feb-26 "INR8500cr" includes unawarded L1s | MAJOR | MISSED | B05 repeats the 8,500 figure uncritically in the promise table as evidence of a beat. |
-| IF-04 | FY27 inflow 5,800 → 5,500 → 6,000 | MAJOR | PARTIALLY CAUGHT | B05 caught the 5,500 → 6,000 step but rated it LOW and omitted the Feb-26 5,800 leg. |
-| IF-05 | Order book flat, ~315-385cr unreconciled | MAJOR | MISSED | B05 Section 1C reads the same series as "STRENGTHENING every quarter". |
-| IF-06 | Ramban-Banihal promises never revisited | MAJOR | MISSED | Not in dropped_triggers or timeline_slippages. |
-| IF-07 | WC target unanswered, metric then dropped | MAJOR | PARTIALLY CAUGHT | B05 covers the May-26 ratios and the FY27 improvement promise, but explicitly rules out any repeated evasion beyond its two named ones. |
-| IF-08 | Solar/BESS revenue refused 3 quarters | MAJOR | PARTIALLY CAUGHT | Implicit in B05 trigger 3's confirm signal; not classified as an evasion, Feb-26 question not cited. |
-| IF-09 | Segment margins refused 4 quarters | CRITICAL | MISSED | Not in repeated_evasions; B06 did not test segment margins against peers. |
-| IF-10 | "15% plus" affirmed to one investor | MAJOR | MISSED | Not in either report. |
-| IF-11 | "margins has grown up" false vs own p.4 numbers | MAJOR | PARTIALLY CAUGHT | B05 records the deflect-then-concede sequence but reads the outcome as resolved and the trend as "STRENGTHENING and increasingly well explained". |
-| IF-12 | Cash/FDR erratum, 71% overstatement | MAJOR | CAUGHT | B05 FLAG-CASH-NARRATIVE and red flag row; rated MEDIUM, which I read as one notch light. |
-| IF-13 | "already sold" vs same-call non-binding, 2 quarters | CRITICAL | MISSED | B05 captures the timeline slip and the missing price, not the overstatement against its own prepared remarks. |
-| IF-14 | Sale consideration never disclosed | MAJOR | CAUGHT | B05 red flag; B06 Q3 sharpened it against peers. Well handled. |
-| IF-15 | Consolidated debt rose; disclosure withdrawn | MAJOR | MISSED | B05 records "continued standalone deleveraging — delivered" only. |
-| IF-16 | Consolidated PAT below standalone for 3 quarters | MAJOR | MISSED | Not in either report. |
-| IF-17 | Aug-26 consolidated EBITDA/PAT withheld | MAJOR | MISSED | Not in either report. |
-| IF-18 | Q4 concentration + unbilled build + dodged one-off | MAJOR | PARTIALLY CAUGHT | B05 caught the WC ratios and tied them to the B02 contract-asset KAM; it did not connect them to the Q4 revenue and margin spike, and logged FY26 margin as simply delivered. |
-| IF-19 | Promoter INR20cr in an SPV being sold | MAJOR | MISSED | B05 records only the slide-38 admission from the same exchange, as a positive. |
-| IF-20 | Southern Ludhiana land "very clear" → 62% | MAJOR | PARTIALLY CAUGHT | Covered generically as an appointed-date slip; the reversal of a specific factual claim is not named. |
-| IF-21 | Three management line-ups, none explained | MAJOR | CAUGHT | B05 FLAG-CONCALL-SILENCE and red flag row. Akshay Jain and the IR-agency change are additions, not corrections. |
-| IF-22 | International 10-15% target dropped | MAJOR | PARTIALLY CAUGHT | B05 caught the Romania drop and the unnamed war; the dropped inflow target is absent. |
-| IF-23 | Full escalation pass-through, peer-contradicted | MAJOR | MISSED | B06 recorded the MoRTH policy change as peer context but never tested Ceigall's pass-through claim against it. |
-| IF-24 | INR11,332cr inflow in the worst awarding year | MAJOR | CAUGHT | B06 Part 2A flags it explicitly for synthesis. |
-| IF-25 | Volunteered-negative asymmetry | MAJOR | MISSED | B06 Q5 returned UNVERIFIABLE after searching only for fraud/IFC/auditor terms. See Part 4. |
-| IF-26 | Absolute balance-sheet data never given | MAJOR | PARTIALLY CAUGHT | B06 Q6 covered working-capital days, not the absolute-disclosure asymmetry. |
-| IF-27 | IPO proceeds fully used, disclosed late | MINOR | MISSED | Not in either report. |
-| IF-28 | 23cr Q1 vs 859cr FY27; 567 vs 550; 11 vs 10 HAM | MAJOR | PARTIALLY CAUGHT | B05 caught the shifting totals generically; the pace problem and both arithmetic errors are absent. |
-| IF-29 | Nov-25 26 vs 36 projects; 22% vs 21% | MINOR | MISSED | Nov-25 was out of B05's primary scope. |
-| IF-30 | Renewable inflow 3,968 vs closing book 3,525 | MAJOR | PARTIALLY CAUGHT | B05 read the 22% → 19% move as a share effect on a bigger base, not as a rupee inconsistency. |
-| IF-31 | "INR21,160 crores" typo; filing vs call dates | MINOR | MISSED | Not in either report. |
-| IF-32 | Two analyst questions lost, never returned to | MINOR | MISSED | Not in either report. |
-| IF-33 | INR16,000cr bid figure left uncorrected | MINOR | MISSED | Nov-25 out of scope. |
+| IF-1 | NHAI award pace, repeated evasion | CRITICAL | CAUGHT | B05 2E row 1; B06 Q2 |
+| IF-2 | "Was the margin beat a one-off?", 2 quarters unanswered | CRITICAL | **MISSED** | Not in B05 2E, not in 3C; Mahesh Patil appears nowhere in B05 |
+| IF-3 | Segment margin bifurcation, 4 quarters | CRITICAL | CAUGHT | B05 2E row 3; B06 Q8 |
+| IF-4 | Equity requirement, new number every call | CRITICAL | CAUGHT | B05 2E row 2, 2F.3 |
+| IF-5 | Feb-26 "growth much more than 10-15%" false vs 7.6%/8.7% | MAJOR | **MISSED** | B05 records the reaffirmation, never tests it |
+| IF-6 | May-26 "margin has grown up" vs 12.6% vs 12.8% | MAJOR | CAUGHT | B05 2B, 2C, 3C |
+| IF-7 | "Already sold three assets" vs non-binding/DD, same call | MAJOR | CAUGHT | B05 4D MEDIUM row |
+| IF-8 | Nov-25 Rs297cr vs Rs200cr, same call | MAJOR | CAUGHT | B05 1B, 2F.3 |
+| IF-9 | Rs567cr list vs Rs550cr stated; 11 vs 10 HAM | MAJOR | CAUGHT | B05 2F.7 |
+| IF-10 | Nov-25 bid total vs components | MINOR | **MISSED** | Absent |
+| IF-11 | Nov-25 revenue mix inconsistent, sums to 95%/98.9% | MINOR | PARTIAL | B05 2F.5 tracks the 22%→19% series, not the intra-call 22/21 split |
+| IF-12 | Ramban-Banihal figures incoherent in-call | MINOR | **MISSED** | B05 carries the promises, not the internal incoherence |
+| IF-13 | Order-book roll-forward +285/+631/+384 | MAJOR | CAUGHT | B05 2F.1, arithmetic independently confirmed |
+| IF-14 | Feb-26 "Rs8,500cr" 9M inflow vs Rs5,318cr implied | MAJOR | PARTIAL | B05 2F.2 raises the L1 question but never runs 11,332−6,014 against it |
+| IF-15 | Solar/BESS equity Rs600cr → Rs810cr, same scope | MAJOR | PARTIAL | B05 lists both numbers; never names the 35% one-quarter step |
+| IF-16 | Cash basis changes every quarter; Rs320cr absent | MAJOR | **MISSED** | Rs320cr (Aug-26 p.11) appears nowhere in B05 |
+| IF-17 | Erratum = 71% overstatement | MAJOR | CAUGHT (flag) / WRONG (magnitude) | B05 4D and red_flags state 41.5%; see Part 4 |
+| IF-18 | Consolidated debt and consolidated P&L disclosure decay | MAJOR | CAUGHT | B05 2F.4, 2F.6 |
+| IF-19 | Consolidated PAT below standalone, H1 and 9M | MAJOR | CAUGHT | B05 2F.4 |
+| IF-20 | Rs297cr promised, Rs2.4cr / Rs89cr delivered | MAJOR | CAUGHT | B05 2A, promise_delivery |
+| IF-21 | Rs859cr FY27 plan vs Rs23cr Q1 | MAJOR | CAUGHT | B05 4D MEDIUM row |
+| IF-22 | Southern Ludhiana 80% → 62% regression | MAJOR | CAUGHT | B05 2A |
+| IF-23 | "All HAM under execution by 31-Mar-26" abandoned | MAJOR | PARTIAL | B05 tracks the AD slippage; the blanket Nov-25 claim itself is absent |
+| IF-24 | Ramban-Banihal, three promises, three calls silent | MAJOR | PARTIAL | B05 carries it at LOW; I grade MAJOR |
+| IF-25 | FY27 renewable revenue 20-25% guidance never tested | MAJOR | **MISSED** | Absent from B05's guidance table entirely |
+| IF-26 | Q1 FY27 standalone +10.2% vs "minimum 15%" | MAJOR | **MISSED** | B05 records the reaffirmation, never tests the quarter |
+| IF-27 | Malout sale price never given; IRR claimed without a number | MAJOR | CAUGHT | B05 2D, 4D; B06 Q3 |
+| IF-28 | Divestment timeline slipped then dropped | MAJOR | CAUGHT | B05 2A, timeline_slippages |
+| IF-29 | "1.5 years to dilute another 8%" | MAJOR | **MISSED** | Absent |
+| IF-30 | IPO proceeds 100% utilised; royalty stopped | MAJOR | **MISSED** | Absent; B05 has the ROE question but not this |
+| IF-31 | Full escalation pass-through claim | MAJOR | CAUGHT | B06 Q9 |
+| IF-32 | 14.1% Ceigall Q4 vs 9.37% HGINFRA Q4 | MAJOR | PARTIAL | B06 Q9 uses HGINFRA's 9.37%; neither report juxtaposes Ceigall's own Q4 jump |
+| IF-33 | "Significant uptick in NHAI awarding" vs peer downcycle | MINOR | PARTIAL | B06 2A covers the muted-award consensus; the competition-intensity contradiction is not drawn |
+| IF-34 | MoRTH Rs3.1trn vs peer Rs2.9trn | MINOR | **MISSED** | Both figures appear in the two reports; never cross-checked |
+| IF-35 | Romania Rs13,000cr vs "baby steps" | MINOR | CAUGHT | B05 1C, 3C |
+| IF-36 | Promoter's Rs20cr in a sale-pipeline SPV | MAJOR | CAUGHT | B05 2D, 4D |
+| IF-37 | Four-call management churn + IR agency change | MAJOR | PARTIAL | B05 catches the WTD/CEO change; not the four-call sequence or the E&Y→Adfactors switch |
+| IF-38 | Slide 38 error admitted | MINOR | CAUGHT | B05 2B |
+| IF-39 | "INR21,160 crores" 10x error uncorrected | MINOR | **MISSED** | Absent |
+| IF-40 | Jalbehra EOT/bonus limbo vs "seven completed early" | MINOR | **MISSED** | Absent |
+| IF-41 | Northern Ayodhya denial → rain → concession | MAJOR | PARTIAL | B05 2B rates it "plausible and seasonal, not disputed" |
+| IF-42 | Rs100cr CP against exhausted IPO cash | MINOR | PARTIAL | B05 lists CP as a trigger; the juxtaposition is not made |
+| IF-43 | Four-call silence on governance events | MAJOR | CAUGHT | B05 flags, 2D, 4D; B06 Q5 |
 
-**Counts: CAUGHT 5, PARTIALLY CAUGHT 11, MISSED 17, of 33 independent flags.**
+**Tally over 43 independent company red flags:**
+- CAUGHT 20 (3 of 4 CRITICAL; 16 of 27 MAJOR; 1 of 12 MINOR)
+- PARTIALLY CAUGHT 10
+- MISSED 13 (1 CRITICAL, 6 MAJOR, 6 MINOR)
 
-- acceptance_rate (rubric formula: caught ÷ found) = 5/33 = **15%**
-- redflag_coverage (caught + partially caught ÷ found, per the run brief) = 16/33 = **48%**
+Note on the denominator: IF-1 through IF-43 are company-directed red flags only.
+Three further findings I raise against the pipeline's own artifacts (Part 4) are
+excluded from the coverage denominator, since coverage measures how much of the
+company red-flag surface upstream had already reached.
 
-Both sit below the 60% REWORK threshold. See Part 5 for what I think the right remedy is,
-which is narrower than a full redo.
+### Pipeline flags I did not independently find
+
+I found no B05 or B06 red flag that the transcripts do not support. Every
+transcript-testable flag in both artifacts is SUPPORTED. Two qualifications:
+
+- **B05 2F.5, renewable inflow (~Rs3,968cr) vs closing renewable book
+  (Rs3,525cr), ~Rs443cr gap: SUPPORTED, soft.** The arithmetic is right
+  (35.02% × 11,332 = 3,968; 19% × 18,554 = 3,525; 3,968 − 3,168 = ~800 implied
+  Q4 renewable inflow vs a Rs357cr actual book increase). It rests on the
+  assumption that "renewable" means the same thing in the inflow percentage and
+  the order-book percentage, which no call states. B05 names this caveat itself,
+  so the flag is not overstated.
+- **B05's governance-silence flags (fraud, IFC qualification, GST search, NHAI
+  SPV termination, auditor resignation, contingent liabilities, negative
+  consolidated CFO): the transcript half is SUPPORTED — I confirm total silence
+  across all four calls.** The existence and quantum of the underlying events
+  come from B02/B03, which are outside my inputs; I neither confirm nor dispute
+  them.
 
 ---
 
-## PART 3: PIPELINE FLAGS I DID NOT INDEPENDENTLY FIND
+## PART 3: PROMISE-DELIVERY SPOT CHECKS (6 checked, 6 confirmed, 0 wrong)
 
-Assessed per rule 3. All are SUPPORTED. None is OVERSTATED or NOT SUPPORTED.
+1. **FY26 revenue growth 10-15% → delivered.** Promise confirmed at Nov-2025 p.7
+   ("about 10% to 15% from our last year performance"). Outcome confirmed at
+   May-2026 p.5 (standalone Rs3,869cr, +14.3%; consolidated Rs4,022cr, +17.1%).
+   I re-derived both from the quarterly prints: 818 + 787 + 970 + 1,294 = 3,869
+   and 838 + 807 + 991 + 1,386 = 4,022. Direction CORRECT.
+2. **Rs297cr HAM equity in three months → Rs2.4cr.** Promise at Nov-2025 p.10.
+   Base Rs603.2cr at Oct-2025 (Nov-2025 p.5); outcome Rs605.6cr at Dec-2025
+   (Feb-2026 p.4). Direction CORRECT. One refinement: the promise window is
+   Nov-Jan and the measurement window is Oct-Dec, so the check is a two-month
+   proxy; the Aug-2026 cumulative of Rs692cr (p.5) settles it — Rs89cr in eight
+   months.
+3. **Southern Ludhiana 80% land by December → 62%.** Promise at Nov-2025 p.7;
+   outcome at Aug-2026 p.5. Direction CORRECT. B05's outcome anchor (p.6) is one
+   page high; the quote is on PDF page 5.
+4. **Malout sale proceeds before 31-Mar-2026 → completed in Q1 FY27.** Promise
+   at Feb-2026 p.10 ("our target is we should get that money before 31st
+   March"); May-2026 p.7 still expects it "in this month"; Aug-2026 p.3 confirms
+   completion. Direction CORRECT on the transcript-testable half. The 16-Jun-2026
+   completion date comes from B03 and is outside my inputs.
+5. **VRK 11 / VRK 12 / Indore-Ujjain appointed dates → Jul/Aug-2026.** Promises
+   at Nov-2025 p.7-8 and Feb-2026 p.7; outcome at Aug-2026 p.3. Direction
+   CORRECT.
+6. **11-11.5% EPC margin band held → FY26 standalone 12.6%.** Promise at
+   Nov-2025 p.13; outcome at May-2026 p.5. Direction CORRECT, with a
+   qualification B05 does not state: 12.6% is the headline standalone margin,
+   FY25 was 12.8%, so the like-for-like direction across the two years is down,
+   and the CFO's own position is that headline margin in earlier years carried
+   bonus and royalty income the guided band excludes. The row is right; the
+   "DELIVERED" framing is generous.
 
-| B05 flag | Assessment | Basis |
+---
+
+## PART 4: THE TWO NUMBERS THE TASK ASKED ME TO SETTLE
+
+### 4.1 The May-2026 erratum: 71% is right, 41.5% is mislabelled
+
+The erratum, May-2026 p.6, verbatim:
+> "(It was erroneously mentioned that the unencumbered cash and unencumbered FDR
+> stood at INR 266 crores and INR 146 crores, respectively. The actual figures
+> should be read as INR 166 crores for unencumbered cash and INR 75 crores for
+> unencumbered FDR.)"
+
+Stated Rs266cr + Rs146cr = Rs412cr. Actual Rs166cr + Rs75cr = Rs241cr.
+Difference Rs171cr.
+
+- Overstatement relative to the truth: 171 ÷ 241 = **70.95%**, i.e. the stated
+  figure was 71% above the real one.
+- Cash line alone: 100 ÷ 166 = 60.2%. FDR line alone: 71 ÷ 75 = 94.7%.
+- Restatement measured against the stated figure: 171 ÷ 412 = **41.5%**, i.e.
+  the corrected figure is 41.5% below what was said.
+
+Both statistics are arithmetically real; they answer different questions. "X was
+overstated by Y%" conventionally means (stated − actual) ÷ actual, which is 71%.
+B05 run 2 labels 41.5% as "a ~41.5% overstatement," which uses the wrong
+denominator for that word.
+
+B05's stated reason for the correction is also wrong. It says the 71% figure
+"appears to conflate the FDR line's Rs71cr absolute rupee change with a
+percentage." No conflation occurred: 171 ÷ 241 = 70.95% exactly. That the FDR
+line happens to fall by Rs71cr is a coincidence, and it appears to be what led
+stage 5 to the wrong diagnosis.
+
+**Ruling: the earlier audit's ~71% was correct. B05 run 2's correction is wrong
+on both the label and the reason.** The correct wording is either "overstated by
+71%" or "the stated figure was cut by 41.5% on correction." B05's severity
+upgrade to HIGH is sound and stands; only the magnitude sentence and the
+orchestrator_note need fixing. This matters downstream because the sentence the
+erratum sits inside is the one arguing "equity is not a problem with Ceigall, we
+have amazing cash flow available with us."
+
+### 4.2 The order-book roll-forward: B05's arithmetic is correct
+
+I recomputed all three quarters from the transcripts before reading B05 (Part 1,
+IF-13). All three gaps reproduce exactly: +Rs285cr, +Rs631cr, +Rs384cr, average
++Rs433cr, 2.1% / 3.4% / 2.1% of the closing book. Every input anchors:
+Rs12,598cr (Nov-2025 p.3), Rs1,403cr and Rs991cr and Rs13,295cr (Feb-2026 p.4
+and p.5), Rs6,014cr and Rs1,386cr and Rs18,554cr (May-2026 p.4, p.5, p.3),
+"close to INR600" and Rs970cr and Rs18,568cr (Aug-2026 p.7, p.4, p.4).
+
+One methodological refinement B05 should carry: the test uses consolidated
+revenue against an order book whose basis the company never states. On standalone
+revenue the gaps are +Rs264cr, +Rs539cr and +Rs315cr. The finding survives either
+basis — same sign, same order of magnitude, same absence of explanation — so the
+conclusion holds. B05's characterisation of the residual is fair, and the most
+likely mechanism is the one B05 does not connect to it: the Nov-2025 order book
+is explicitly stated to cover projects "under execution and at allotment stages"
+(Nov-2025 p.3), and Feb-2026 counts L1 positions in a Rs8,500cr inflow claim that
+the FY26 total contradicts (IF-14). The roll-forward gap and the L1-counting
+problem are probably the same finding seen from two sides.
+
+### 4.3 Three defects in the artifacts themselves
+
+**D-1 (MAJOR). B05 run 2's citation anchors are one page high in the Nov-2025
+and Aug-2026 transcripts.** The report opens by stating that all page citations
+"use that PDF page number, independently re-derived by re-reading each transcript
+in full." At least nine do not:
+
+| B05 claim | B05 anchor | Actual PDF page |
 |---|---|---|
-| Silence on the INR89.65m procurement fraud and the qualified IFC opinion | SUPPORTED (transcript half) | I confirm zero occurrences of fraud, IFC, internal financial control or qualified opinion in any of the four calls, and no analyst question on any of them. The underlying events are AR-sourced and outside my evidence. |
-| Silence on the NHAI step-down SPV termination and sister-SPV auditor resignation | SUPPORTED (transcript half) | Confirmed absent from all four transcripts. Underlying events AR-sourced. |
-| "Amazing cash flow" / "equity is not a problem" against negative consolidated CFO | SUPPORTED | Quotes verified: Concall_Feb_2026 p.10 "equity availability is not a problem or not a challenge for Ceigall"; Concall_May_2026 p.7 "equity is not a problem with Ceigall, we have amazing cash flow available with us". The CFO figures are B03-sourced. |
-| Silence on the DGGI GST search | SUPPORTED (transcript half) | Confirmed absent from all four transcripts. |
-| Contingent liabilities at 83.7% of standalone net worth never mentioned | SUPPORTED (transcript half) | Confirmed: contingent liabilities are not raised by management or any analyst in any call. |
-| WTD/CEO change never acknowledged | SUPPORTED, and understated | I independently found the same and two further changes (Akshay Jain; the IR-agency switch). |
-| Unnamed "war situation" | SUPPORTED | Quote verified (Concall_Aug_2026, p.11), and B06's resolution to the West Asia conflict is sound: all three peers name it, and Ceigall's own May-2026 references (p.6, p.7) fit the same event. |
+| Rs200cr in "next 3 months" (Kapil) | Nov-25 p.12 | p.11 |
+| Ramban-Banihal promises | Nov-25 p.12 | p.11 |
+| "10 HAM projects" order-book line | Aug-26 p.5 | p.4 |
+| Order book Rs18,568cr / consol revenue Rs970cr | Aug-26 p.5 | p.4 |
+| Southern Ludhiana "only 62% available" | Aug-26 p.6 | p.5 |
+| Rs253cr / Rs439cr / Rs692cr equity | Aug-26 p.6 | p.5 |
+| Rs23cr Q1 FY27 infusion | Aug-26 p.9 | p.8 |
+| "all 11 of our HAM projects" | Aug-26 p.10 | p.9 |
+| "non-binding offer... under due diligence" | May-26 p.3 | p.4 |
 
-**pipeline_flags_not_supported: none.** B05 did not invent a signal. Its defect is coverage,
-not fabrication — a materially better failure mode than the alternative.
+The first eight are exactly the printed "Page N of M" header rather than the
+`[PAGE N]` marker — the failure mode B06 wrote an 18-row correction log about.
+B05's Feb-2026 and May-2026 anchors are mostly correct, so the method is
+inconsistent within one report. Substance is unaffected in every case; a reader
+following the anchor lands on the wrong page.
+
+**D-2 (MINOR). B06 run 2 repeats the same off-by-one in the PNCINFRA Aug-2026
+file**, the transcript carrying its only clean VERIFIED finding:
+the rupee-level working-capital breakdown is on p.7, cited p.8; net working
+capital 110 days is on p.8, cited p.9; the NHAI show-cause confirmation is on
+p.9, cited p.10. (The Rs42 lakh/day penalty at p.12 and the 107km at p.3 are
+correct.)
+
+**D-3 (MAJOR). B06's Q4 comparative verdict overstates the peer contrast.**
+B06 says two of three peers "reconcile cleanly" and HGINFRA shows only "a milder,
+unexplained version" whose "mechanics are traceable." HGINFRA's own May-2026
+prepared remarks do not reconcile: "the total equity requirements for these 11
+HAM projects is around INR1,903 crores. As of March '26, INR1,210 crores being
+infused. Of the remaining amount, INR414 crores is estimated for infusion in
+FY27, followed by INR1,229 crores in FY28 and INR50 crores in FY29"
+(HGINFRA-Concall_May_2026_Transcript.txt, p.6). Remaining is Rs693cr; the
+schedule sums to Rs1,693cr — a Rs1,000cr internal gap in the same sentence. That
+is not milder than Ceigall's failure; it is larger in rupees. The Q4 conclusion
+that Ceigall's version is "more severe in degree" is not supported by this peer
+set and should be softened.
+
+Two lesser artifact notes: B06's report and YAML still describe Ceigall's
+governance silence as "3-call" in five places, against a B05 that now covers four
+calls; and B06 cites KNRCON's FY26 NHAI target of 7,500km and PNCINFRA's 4,500km
+for the same year without noting the conflict (the awarded figures, 3,100km and
+3,124km, do agree).
 
 ---
 
-## PART 4: PROMISE-DELIVERY SPOT CHECKS
+## PART 5: CREDIBILITY GRADE
 
-Six rows checked against both the promising call and the outcome call.
+**Concur with C, at the low end of C.**
 
-| # | B05 row | Promise verified? | Outcome verified? | Verdict |
-|---|---|---|---|---|
-| SC-1 | FY26 revenue growth 10-15% → delivered 14.3%/17.1% | Yes — "about 10% to 15% from our last year performance" (Concall_Nov_2025, p.7) | Yes — 14.3% standalone (Concall_May_2026, p.4), 17.1% consolidated (p.5) | CONFIRMED |
-| SC-2 | INR297cr HAM equity in 3 months → ~INR2.4cr | Yes (Concall_Nov_2025, p.10) | Yes — 603.2 (p.5) → 605.6 (Concall_Feb_2026, p.4) | CONFIRMED; the row omits the CFO's conflicting INR200cr on p.12 of the same call |
-| SC-3 | Malout-Abohar proceeds by 31-Mar-2026 → partial | Yes — "our target is we should get that money before 31st March" (Concall_Feb_2026, p.9) | Partly — May-2026 still calls it "a binding document" (p.4) and expects execution "in this month" (p.8); Aug-2026 confirms completion (p.3). The 16-Jun-2026 date is AR-sourced, not testable here | CONFIRMED (direction right) |
-| SC-4 | Bathinda-Dabwali / Jalbehra close before Sep-2026 → missed | Yes — "for sale of other two assets we are targeting 30th September" (Concall_Feb_2026, p.11), repeated p.13 | Yes — pushed to Q2/Q3 FY27 (Concall_May_2026, p.8); no mention at all in Aug-2026 | CONFIRMED exactly |
-| SC-5 | Ambala-Chandigarh-Zirakpur concession progress → delivered | Weak — May-2026 names only "one INR600 crores project of Zirakpur bypass" (p.12); no concession commitment is actually made | Yes — signed (Concall_Aug_2026, p.4) | CONFIRMED-WEAK; a delivery is credited against a promise the May call did not make |
-| SC-6 | VRK 11/12, Southern Ludhiana, Indore-Ujjain ADs by Dec-25/Mar-26 → arrived Jul/Aug-26 | Yes (Concall_Nov_2025, p.7; Concall_Feb_2026, p.7) | **Partly wrong** — Aug-2026 p.4 lists appointed dates for VRK 11, VRK 12 and Indore-Ujjain only. Southern Ludhiana is not among them and is still land-constrained at 62% (p.5) | **WRONG** on one bundled element |
+The case against D is real and B05 states it correctly: revenue growth, order
+inflow, the standalone deleveraging ratio and the margin band were all met or
+beaten across four calls, and the company answers operational questions with
+project-level numbers when asked. The case against B is what my own pass
+reinforces. Two separate statements are false against the same call's own
+arithmetic (Feb-2026 growth, May-2026 margin), not one. A second repeated evasion
+runs alongside the four B05 already found — the same analyst asked whether the
+margin beat was a one-off in two consecutive quarters and got a non-answer about
+project starts both times. Two headline FY27 guidance items are never tested
+against delivery anywhere: the 20-25% renewable revenue share and the minimum-15%
+growth rate against a Q1 standalone print of 10.2%. And the single most
+consequential structural disclosure of the year — that the IPO proceeds were
+fully consumed in Q4 FY26, one quarter before a Rs859cr equity plan — arrives as
+an aside in a Q&A answer about other income.
 
-**checked: 6, confirmed: 5, wrong: 1.**
-
-The single error is directional in the company's favour: bundling Southern Ludhiana into the
-"arrived" set converts an outstanding failure into a completed slip.
+None of this moves the grade off C on its own, because the delivery record is
+genuine. But the trajectory B05 names is right, and my pass adds to it rather
+than softening it.
 
 ---
 
-## PART 5: ASSESSMENT
+## PART 6: CONSOLIDATED FINDINGS
 
-**Root cause of the coverage gap.** B05 scoped itself to three transcripts and used Nov-2025
-only "to trace two promises back one quarter" (05-concall.md, lines 9-11). My brief names four
-company transcripts. Seven of my seventeen MISSED items (IF-01 partial, IF-06, IF-10, IF-15,
-IF-20 partial, IF-29, IF-33) and part of two others originate in Nov-2025. That scoping decision
-is the largest single driver of the gap, and it is a mechanical fix.
+| # | Severity | Finding | Anchor |
+|---|---|---|---|
+| 1 | CRITICAL | MISSED repeated evasion: "was the margin beat a one-off?" asked by the same analyst in two consecutive quarters, answered both times with an unrelated list of newly started projects | Concall_May_2026 p.9; Concall_Aug_2026 p.7 |
+| 2 | MAJOR | MISSED: Feb-2026 claim "our growth is much more than [10-15%]" is false against the same call's 9M growth of 7.6% standalone and 8.7% consolidated | Concall_Feb_2026 p.14 vs p.5-6 |
+| 3 | MAJOR | MISSED: the May-2026 FY27 guidance that renewables contribute 20-25% of total revenue is absent from B05's guidance table and never tested against Aug-2026, where no renewable revenue is disclosed and two projects still lack PPA or transmission | Concall_May_2026 p.4; Concall_Aug_2026 p.5 |
+| 4 | MAJOR | MISSED: Q1 FY27 standalone revenue growth of 10.2% against a "minimum 15%" FY27 guidance reaffirmed in the same call; only the 15.7% consolidated figure is quoted | Concall_Aug_2026 p.4, p.8 |
+| 5 | MAJOR | MISSED: "We have 100% utilized the IPO proceeds in the last quarter of the FY26," plus the cessation of royalty income, disclosed only as an aside in a Q&A about other income | Concall_Aug_2026 p.11 |
+| 6 | MAJOR | MISSED: cash disclosed on a different basis in each of three quarters (Rs225cr incl. FD, Rs241cr unencumbered corrected, Rs320cr FDs); the Rs320cr figure appears nowhere in B05 | Concall_Feb_2026 p.10; Concall_May_2026 p.6; Concall_Aug_2026 p.11 |
+| 7 | MAJOR | MISSED: "We have 1.5 years to dilute another 8% also," an unexplained dilution or minimum-public-shareholding overhang stated once and never repeated across three later calls | Concall_Nov_2025 p.12 |
+| 8 | MAJOR | B05 arithmetic wrong: the erratum is a 71.0% overstatement (171÷241), not 41.5% (171÷412, which is the restatement-down); B05's stated reason, that 71% conflates an absolute rupee change with a percentage, is false | Concall_May_2026 p.6; 05-concall.md 4D and B05 red_flags/orchestrator_note |
+| 9 | MAJOR | B05 citation anchors are one page high in at least nine places in the Nov-2025 and Aug-2026 transcripts, matching the printed header the report states it avoided | See Part 4.3 table |
+| 10 | MAJOR | B06 Q4 overstates the peer contrast: HGINFRA's own HAM equity schedule fails to reconcile by ~Rs1,000cr (Rs693cr remaining vs Rs1,693cr scheduled), so its drift is not "milder" than Ceigall's | HGINFRA-Concall_May_2026 p.6; 06-peers.md Q4 |
+| 11 | MAJOR | Under-weighted: the Northern Ayodhya execution collapse to ~Rs42cr is answered with a denial, a weather excuse and a milestone concession in one breath; B05 rates it "plausible and seasonal, not disputed" | Concall_Aug_2026 p.4-5; 05-concall.md 2B |
+| 12 | MAJOR | Under-weighted: Ceigall posts its best quarterly margin of the year (14.1% standalone, Q4 FY26) in the exact quarter HGINFRA's falls to 9.37% on unrecovered escalation, and denies any input-cost impact; the juxtaposition is not drawn in either artifact | Concall_May_2026 p.5, p.9; HGINFRA-Concall_May_2026 p.6 |
+| 13 | MINOR | B06 repeats the printed-header off-by-one in the PNCINFRA Aug-2026 file at three anchors (p.8→7, p.9→8, p.10→9), the file carrying its only clean VERIFIED finding | PNCINFRA-Concall_Aug_2026 p.7, p.8, p.9 |
+| 14 | MINOR | B06 report and YAML still describe Ceigall's governance silence as "3-call" in five places against a four-call B05 | 06-peers.md Q5, Part 4; B06 flags |
+| 15 | MINOR | MISSED: Nov-2025 bid pipeline stated at Rs14,320cr while its own components sum to Rs14,382cr, quoted as Rs14,000cr elsewhere in the call, and an analyst's Rs16,000cr goes uncorrected | Concall_Nov_2025 p.6, p.9, p.10 |
+| 16 | MINOR | MISSED: Ceigall's MoRTH FY27 allocation of ~Rs3.1 trillion against PNCINFRA's Rs2.9 trillion for the same year, both stated as +8% | Concall_Feb_2026 p.3; PNCINFRA-Concall_May_2026 p.5 |
+| 17 | MINOR | MISSED: the May-2026 filed transcript carries "one INR21,160 crores project" (Sahebganj is Rs2,160cr, correct on p.3 of the same file) uncorrected, in the same document that carries a written cash erratum | Concall_May_2026 p.12 |
+| 18 | MINOR | MISSED: Ramban-Banihal figures do not cohere inside one exchange (Rs385cr for both projects vs Rs369cr for one; 20% of tunnel = Rs180cr; 54% physical vs 45% financial) | Concall_Nov_2025 p.11 |
+| 19 | MINOR | MISSED: Feb-2026 leaves an analyst's "INR3,500 crores order book of solar and BESS" uncorrected against the Rs3,168cr cumulative renewable orders stated in the same call | Concall_Feb_2026 p.4, p.9 |
+| 20 | MINOR | MISSED: Feb-2026 claims "seven of our projects have completed ahead of schedule" while the same call discloses Jalbehra is late and awaiting an EOT with bonus eligibility unresolved; the EOT is never revisited | Concall_Feb_2026 p.4, p.11 |
+| 21 | MINOR | MISSED: B06 uses KNRCON's 7,500km and PNCINFRA's 4,500km FY26 NHAI targets side by side without noting the conflict | KNRCON-Concall_Jun_2026 p.3; PNCINFRA-Concall_May_2026 p.4 |
 
-It does not explain everything. Ten MISSED items sit squarely inside B05's own three-transcript
-scope: IF-03, IF-05, IF-09, IF-13, IF-16, IF-17, IF-19, IF-23, IF-25, IF-27. Four of those
-(IF-05, IF-16, IF-17, IF-13) are arithmetic or internal-consistency checks against the company's
-own reported figures, which suggests the stage read the transcripts for narrative and promise
-tracking rather than reconciling the numbers across calls.
+Counts: CRITICAL 1, MAJOR 11, MINOR 9.
 
-**What B05 and B06 did well, and I want on the record.** B05's central finding — the asymmetry
-between high operational specificity and total silence on governance items — is correct,
-important, and something I independently confirm on the transcript side. Its promise-delivery
-table is 5-of-6 accurate on spot check. B06's Q3 (monetization price), Q7 (bonus and royalty
-treatment) and Part 2A (inflow beat in a soft awarding year) are genuinely strong peer work, and
-its resolution of the unnamed "war situation" is sound. Nothing in either report is fabricated.
+---
 
-**The one methodological objection.** B06 Q5 returned UNVERIFIABLE on peer governance-disclosure
-culture after searching the peer set for "fraud", "IFC", "auditor resign" and similar, finding
-none, and concluding no comparable event exists to benchmark against. The peer set does contain
-the benchmark, in a form those search terms could not reach: HGINFRA disclosed a CBI and
-Anti-Corruption Bureau search of its own offices in prepared remarks
-(HGINFRA-Concall_Feb_2026, p.6); PNCINFRA fielded extended questioning on an NHAI show-cause
-notice and a suspended toll (PNCINFRA-Concall_Aug_2026, p.6-7, p.12-13); HGINFRA disclosed a
-lender debt recall (HGINFRA-Concall_May_2026, p.5). The question was answerable and the answer
-would have gone against Ceigall. This is the one place where a verdict should change: Q5 should
-move from UNVERIFIABLE to CONTRADICTED, which strengthens rather than weakens B05's central
-finding.
+## COVERAGE ARITHMETIC
 
-**Credibility grade.** B05 grades C. I concur, at the bottom of the band. Guidance on revenue,
-margin, inflow and standalone debt was genuinely delivered, which rules out D. But my pass adds
-a four-quarter refusal to disclose segment margins, a repeated assertion of completed asset sales
-that the same calls describe as non-binding, a false statement to an analyst about the direction
-of the company's own reported margin, a mid-year inflow claim inflated by unawarded L1s, and the
-progressive withdrawal of consolidated debt and consolidated profit disclosure. None of that
-supports anything above C, and it removes any argument for the upper half of C.
+Independent company red flags found: **43** (IF-1 to IF-43). Findings against the
+pipeline's own artifacts (D-1, D-2, D-3 in Part 4.3) are excluded from this
+denominator; they appear in Part 6 as findings but not as coverage items.
 
-**Recommended remedy — targeted, not a full redo.** The acceptance rate fires the REWORK trigger
-mechanically. What the evidence supports is a narrow re-run of stage 5 with two changes:
-(1) treat Nov-2025 as a primary transcript, not context; (2) add a cross-call numeric
-reconciliation pass (order book roll-forward, equity infused versus committed, consolidated
-versus standalone EBITDA and PAT, renewable inflow versus renewable book). B06 needs only the
-Q5 verdict revised and two new peer tests added (segment margins; escalation pass-through).
-The narrative and governance findings in both reports should be carried forward intact.
+- CAUGHT 20 → **acceptance_rate = 20 ÷ 43 = 47%**
+- CAUGHT + PARTIALLY CAUGHT = 20 + 10 = 30 →
+  **redflag_coverage = 30 ÷ 43 = 70%**
+- MISSED 13
 
-**Downstream note for stage 11 and stage 13.** Three items in this report bear directly on
-valuation inputs rather than on tone. IF-16 (the HAM SPV portfolio producing ~INR98cr of
-incremental EBITDA and ~INR4cr of incremental PAT in FY26) speaks to how any SOTP slice on the
-concession portfolio should be built. IF-18 (a third of FY26 revenue and the entire margin beat
-landing in Q4 on the same date as unbilled revenue at 133 days) speaks to earnings quality and
-cash conversion. IF-11 and IF-27 together establish that reported EBITDA in FY24 and FY25
-included bonus and royalty income inside revenue from operations, and that royalty charging has
-since stopped — so any margin trend line drawn through FY24-FY26 is not like-for-like.
+By severity: CRITICAL 3 of 4 caught (75%), 4 of 4 surfaced (100%).
+MAJOR 16 of 27 caught (59%), 24 of 27 surfaced (89%).
+MINOR 1 of 12 caught (8%), 3 of 12 surfaced (25%).
+CRITICAL + MAJOR only: 19 of 31 caught (61%), 28 of 31 surfaced (90%).
+
+The two rates differ because they answer different questions. acceptance_rate
+follows the rubric literally (caught ÷ independent flags found) and gives no
+credit for a finding upstream reached but under-weighted. redflag_coverage
+follows the task's definition — the share of my findings upstream had already
+surfaced — and counts a PARTIALLY CAUGHT item as surfaced, because it is on the
+page and a reader would meet it.
+
+Judgement on the 60% floor. The strict 47% is dominated by the MINOR tail: I
+enumerated twelve minor items and B05 carries one of them. On the flags that
+carry thesis weight the picture is different — 61% of CRITICAL and MAJOR flags
+are caught outright and 90% are at least surfaced, against 48% at the last audit.
+The remediation worked. What did not clear is the one CRITICAL miss (a second
+repeated evasion, two quarters, same analyst, same question) and two untested
+FY27 guidance items, which are the specific gaps to close rather than a reason to
+re-run the whole stage.
 
 ---
 
@@ -534,64 +794,52 @@ company: "CEIGALL"
 run_date: "2026-09-06"
 model: claude-opus-4-8
 status: complete
-independent_flags_found: 33
-caught: 5
-partially_caught: 11
+independent_flags_found: 43
+caught: 20
+partially_caught: 10
 missed:
-  - {severity: "CRITICAL", item: "Segment margin bifurcation refused in all four consecutive calls (Nov-25 Priyam Shah, Feb-26 Nimish Pandya, May-26 Tejpal Singh x2, Aug-26 Chetrika Deshpande); HGINFRA discloses the same split at 10-11% renewables/transmission vs 14-15% roads/rail", anchor: "Concall_Nov_2025.pdf p.14; Concall_Feb_2026.pdf p.12; Concall_May_2026.pdf p.9; Concall_Aug_2026.pdf p.9; HGINFRA-Concall_May_2026.pdf p.14"}
-  - {severity: "CRITICAL", item: "Management asserted completed asset sales that the same call's prepared remarks describe as in-principle or non-binding, in two consecutive quarters, both times to support the claim that equity funding is not constrained", anchor: "Concall_Feb_2026.pdf p.4 vs p.9; Concall_May_2026.pdf p.4 vs p.7 and p.8"}
-  - {severity: "MAJOR", item: "Feb-26 claim of 'close to INR8500 crores' inflow against a INR5,000cr guide only reconciles by counting Sahebganj (INR2,160cr) and Jaipur Rail (INR918cr) L1 positions whose LOAs the same call says were not received", anchor: "Concall_Feb_2026.pdf p.10 vs p.4, p.7, p.11"}
-  - {severity: "MAJOR", item: "Order book flat at INR18,568cr vs INR18,554cr despite ~INR970cr consolidated revenue executed and ~INR600cr inflow in Q1 FY27; ~INR315-385cr unreconciled, never asked", anchor: "Concall_May_2026.pdf p.3; Concall_Aug_2026.pdf p.4, p.7"}
-  - {severity: "MAJOR", item: "Ramban-Banihal J&K tunnel: three dated Nov-25 promises (tunnel in 3 months, INR180cr billed before March-26, viaduct by March-27) never mentioned again in Feb, May or Aug 2026 by management or any analyst", anchor: "Concall_Nov_2025.pdf p.11-12"}
-  - {severity: "MAJOR", item: "A '15% plus' EBITDA margin framing for renewables/T&D affirmed to a retail investor while 11-11.5% / 11-12.5% is guided elsewhere; HGINFRA puts the same verticals at 10-11%", anchor: "Concall_Feb_2026.pdf p.12; Concall_Nov_2025.pdf p.14; Concall_May_2026.pdf p.4; HGINFRA-Concall_May_2026.pdf p.14"}
-  - {severity: "MAJOR", item: "Consolidated debt rose INR1,341cr (Sep-25) to INR1,421cr (Dec-25) against a Nov-25 promise of significant full-year reduction, and consolidated debt disclosure then regressed from full composition to ratios to nothing across four calls", anchor: "Concall_Nov_2025.pdf p.5; Concall_Feb_2026.pdf p.4; Concall_May_2026.pdf p.4; Concall_Aug_2026.pdf (absent)"}
-  - {severity: "MAJOR", item: "Consolidated PAT below standalone PAT for H1 and 9M FY26 while consolidated EBITDA ran well above it; HAM SPVs added ~INR98cr EBITDA and ~INR4cr PAT in FY26. Never mentioned or asked in any call", anchor: "Concall_Nov_2025.pdf p.6-7; Concall_Feb_2026.pdf p.4-5; Concall_May_2026.pdf p.4-5"}
-  - {severity: "MAJOR", item: "Q1 FY27 disclosure drops consolidated EBITDA and consolidated PAT, both given in Feb-26 and May-26; only consolidated revenue survives. No analyst asked", anchor: "Concall_Aug_2026.pdf p.4"}
-  - {severity: "MAJOR", item: "Promoter's personal INR20cr equity in the Bathinda-Dabwali HAM SPV, one of three assets in the Neo divestment pipeline, surfaced once as a side remark and never explored", anchor: "Concall_Feb_2026.pdf p.5; Concall_May_2026.pdf p.4, p.8"}
-  - {severity: "MAJOR", item: "Claim that escalation cost is fully compensated by the authority, contradicted by all three peers who describe a temporary three-month, partial-relief mechanism while absorbing margin damage", anchor: "Concall_May_2026.pdf p.9; PNCINFRA-Concall_May_2026.pdf p.5 and p.20; KNRCON-Concall_Jun_2026.pdf p.3; HGINFRA-Concall_May_2026.pdf p.2, p.6"}
-  - {severity: "MAJOR", item: "Volunteered-negative asymmetry: peers disclose a CBI search, an NHAI show-cause notice with toll suspension, a lender debt recall and stuck debtors unprompted; Ceigall volunteers only monsoon across four calls", anchor: "HGINFRA-Concall_Feb_2026.pdf p.6; HGINFRA-Concall_May_2026.pdf p.4-5; PNCINFRA-Concall_Aug_2026.pdf p.6-7, p.12-13; KNRCON-Concall_Jun_2026.pdf p.7, p.9"}
-  - {severity: "MINOR", item: "IPO proceeds '100% utilized in the last quarter of FY26' disclosed a quarter late, inside an other-income answer; royalty charging also confirmed stopped", anchor: "Concall_Aug_2026.pdf p.10"}
-  - {severity: "MINOR", item: "Nov-25 states 26 ongoing projects while the same paragraph lists 36; 10 O&M projects vanish from every later count; renewables given as 22% on p.4 and 21% on p.14 of the same call", anchor: "Concall_Nov_2025.pdf p.7, p.4, p.14"}
-  - {severity: "MINOR", item: "Uncorrected transcript errors: 'one INR21,160 crores project' for the INR2,160cr Sahebganj project; filing dates differ from call dates across the set", anchor: "Concall_May_2026.pdf p.12; Concall_Feb_2026.pdf p.1-2"}
-  - {severity: "MINOR", item: "Two analyst questions lost and never returned to: Krish Bhatia on FY27 highway awards (line dropped), Rohit Mehra closed with a flat denial", anchor: "Concall_Aug_2026.pdf p.6; Concall_Feb_2026.pdf p.8"}
-  - {severity: "MINOR", item: "Analyst's 'nearly INR16,000 crores' bid-book figure left uncorrected against management's own INR14,000cr in the same call", anchor: "Concall_Nov_2025.pdf p.10 vs p.6, p.9"}
+  - {severity: "CRITICAL", item: "Repeated evasion, 2 consecutive quarters: 'was the margin beat a one-off?' asked by Mahesh Patil (ICICI Securities) and answered both times with an unrelated list of newly started projects, never yes or no", anchor: "Concall_May_2026_Transcript.txt p.9; Concall_Aug_2026_Transcript.txt p.7"}
+  - {severity: "MAJOR", item: "Feb-2026 claim 'we were always guiding 10% to 15%, our growth is much more than that' is false against the same call's 9M FY26 growth of 7.6% standalone and 8.7% consolidated", anchor: "Concall_Feb_2026_Transcript.txt p.14 vs p.5-6"}
+  - {severity: "MAJOR", item: "May-2026 FY27 guidance that renewables contribute 20-25% of total revenue is absent from B05's guidance table and never tested; Aug-2026 discloses no renewable revenue and Morena/Rewa still lack PPA or transmission", anchor: "Concall_May_2026_Transcript.txt p.4, p.11; Concall_Aug_2026_Transcript.txt p.5"}
+  - {severity: "MAJOR", item: "Q1 FY27 standalone revenue growth of 10.2% against a 'minimum 15%' FY27 guidance reaffirmed in the same call; only the 15.7% consolidated figure is quoted, the shortfall never addressed", anchor: "Concall_Aug_2026_Transcript.txt p.4, p.8"}
+  - {severity: "MAJOR", item: "'We have 100% utilized the IPO proceeds in the last quarter of the FY26' plus cessation of royalty income, disclosed only as an aside answering a question about other income, one quarter before a Rs859cr FY27 equity plan", anchor: "Concall_Aug_2026_Transcript.txt p.11"}
+  - {severity: "MAJOR", item: "Cash disclosed on a different basis in each of three quarters: Rs225cr including FD (Dec-25), Rs241cr unencumbered after erratum (Mar-26), Rs320cr FDs (Jun-26); the Rs320cr figure appears nowhere in B05", anchor: "Concall_Feb_2026_Transcript.txt p.10; Concall_May_2026_Transcript.txt p.6; Concall_Aug_2026_Transcript.txt p.11"}
+  - {severity: "MAJOR", item: "'We have 1.5 years to dilute another 8% also' — an unexplained dilution or minimum-public-shareholding overhang stated once and never repeated on any of three later calls; an Aug-2026 analyst's 'post-QIP' premise also left uncorrected", anchor: "Concall_Nov_2025_Transcript.txt p.12; Concall_Aug_2026_Transcript.txt p.12"}
+  - {severity: "MINOR", item: "Nov-2025 bid pipeline stated at Rs14,320cr while its own components sum to Rs14,382cr, quoted as Rs14,000cr elsewhere in the same call, and an analyst's Rs16,000cr left uncorrected", anchor: "Concall_Nov_2025_Transcript.txt p.6, p.9, p.10"}
+  - {severity: "MINOR", item: "Ceigall's MoRTH FY27 allocation of ~Rs3.1 trillion against PNCINFRA's Rs2.9 trillion for the same year, both stated as +8%", anchor: "Concall_Feb_2026_Transcript.txt p.3; PNCINFRA-Concall_May_2026_Transcript.txt p.5"}
+  - {severity: "MINOR", item: "The May-2026 filed transcript carries 'one INR21,160 crores project' (Sahebganj is Rs2,160cr, correct on p.3 of the same file) uncorrected, in the same document that carries a written cash erratum", anchor: "Concall_May_2026_Transcript.txt p.12"}
+  - {severity: "MINOR", item: "Ramban-Banihal figures do not cohere inside one exchange: Rs385cr balance for both projects vs Rs369cr for one alone; 20% of tunnel work = Rs180cr; 54% physically vs 45% financially complete", anchor: "Concall_Nov_2025_Transcript.txt p.11"}
+  - {severity: "MINOR", item: "Feb-2026 leaves an analyst's 'INR3,500 crores order book of solar and BESS' uncorrected against the Rs3,168cr cumulative renewable orders stated in the same call", anchor: "Concall_Feb_2026_Transcript.txt p.4, p.9"}
+  - {severity: "MINOR", item: "Feb-2026 claims 'seven of our projects have completed ahead of schedule' while the same call discloses Jalbehra is late awaiting an EOT with bonus eligibility unresolved; the EOT is never revisited in May-2026 or Aug-2026", anchor: "Concall_Feb_2026_Transcript.txt p.4, p.11"}
 pipeline_flags_not_supported: []
-promise_delivery_spot_checks: {checked: 6, confirmed: 5, wrong: 1}
-credibility_grade_concur: "concur (bottom of band) - guidance was genuinely delivered, which rules out D, but a four-quarter segment-margin refusal, a repeated 'already sold' overstatement against the same calls' own prepared remarks, and progressive withdrawal of consolidated disclosure remove any case for the upper half of C"
+promise_delivery_spot_checks: {checked: 6, confirmed: 6, wrong: 0}
+credibility_grade_concur: "concur with C, at the low end — the delivered guidance record genuinely argues against D, but two separate claims are false against their own call's arithmetic (Feb-2026 growth, May-2026 margin), not one, and a second two-quarter repeated evasion runs alongside the four B05 found"
 findings:
-  - {severity: "CRITICAL", location: "B05 repeated_evasions / red_flags", item: "MISSED repeated evasion spanning four quarters: segment margin bifurcation for renewables and T&D never disclosed, while HGINFRA and KNRCON disclose the equivalent split", anchor: "Concall_Nov_2025.pdf p.14; Concall_Feb_2026.pdf p.12; Concall_May_2026.pdf p.9; Concall_Aug_2026.pdf p.9"}
-  - {severity: "CRITICAL", location: "B05 red_flags / promise_delivery", item: "MISSED repeated misstatement across two quarters: completed sales asserted in Q&A against non-binding status in the same calls' prepared remarks", anchor: "Concall_Feb_2026.pdf p.4 vs p.9; Concall_May_2026.pdf p.4 vs p.7-8"}
-  - {severity: "MAJOR", location: "B05 promise_delivery table", item: "The Feb-26 INR8,500cr inflow figure is repeated as evidence of a guidance beat without reconciliation; it requires unawarded L1 positions to close", anchor: "05-concall.md line 85; Concall_Feb_2026.pdf p.10"}
-  - {severity: "MAJOR", location: "B05 Section 1C", item: "Order book series read as 'STRENGTHENING every quarter' when the Q1 FY27 roll-forward does not close by ~INR315-385cr", anchor: "05-concall.md line 67; Concall_Aug_2026.pdf p.4, p.7"}
-  - {severity: "MAJOR", location: "B05 dropped_triggers / timeline_slippages", item: "Ramban-Banihal promise set absent from every list despite three dated commitments and four quarters of silence", anchor: "Concall_Nov_2025.pdf p.11-12"}
-  - {severity: "MAJOR", location: "B05 repeated_evasions", item: "Working-capital target asked Nov-25 and never answered; metric absent from Feb-26 and Aug-26; not classified as a repeated evasion", anchor: "Concall_Nov_2025.pdf p.10; Concall_Aug_2026.pdf p.9"}
-  - {severity: "MAJOR", location: "B05 repeated_evasions / trigger 3", item: "Solar and BESS revenue refused across three quarters including after PPAs signed and execution commenced; every peer quantifies", anchor: "Concall_Feb_2026.pdf p.7; PNCINFRA-Concall_May_2026.pdf p.13; HGINFRA-Concall_May_2026.pdf p.6"}
-  - {severity: "MAJOR", location: "B05 Section 2B / 1C", item: "The May-26 margin exchange is characterised as resolved and 'increasingly well explained'; the CFO's intervening claim that margins 'has grown up' is false against the 12.6% vs 12.8% he reported on p.4 of the same call", anchor: "05-concall.md lines 71, 102; Concall_May_2026.pdf p.4 vs p.11"}
-  - {severity: "MAJOR", location: "B05 promise_delivery / guidance", item: "'Continued standalone deleveraging - delivered' recorded without noting that consolidated debt rose and consolidated debt disclosure was progressively withdrawn", anchor: "Concall_Nov_2025.pdf p.5; Concall_Feb_2026.pdf p.4; Concall_May_2026.pdf p.4"}
-  - {severity: "MAJOR", location: "B05 (absent)", item: "HAM SPV earnings quality never examined: consolidated PAT below standalone for two reporting periods on much higher consolidated EBITDA; load-bearing for the monetization thesis", anchor: "Concall_Nov_2025.pdf p.6-7; Concall_Feb_2026.pdf p.4-5; Concall_May_2026.pdf p.4-5"}
-  - {severity: "MAJOR", location: "B05 (absent)", item: "Q1 FY27 withholding of consolidated EBITDA and PAT not detected", anchor: "Concall_Aug_2026.pdf p.4"}
-  - {severity: "MAJOR", location: "B05 Section 2B", item: "The Feb-26 slide-38 exchange is logged only as a 'rare, clean HONEST-ADMISSION'; the promoter's INR20cr personal equity in an SPV being monetized, disclosed in the same exchange, is not flagged", anchor: "05-concall.md line 103; Concall_Feb_2026.pdf p.5"}
-  - {severity: "MAJOR", location: "B05 Section 1C / 4A", item: "Q4 FY26 revenue concentration (33% of the year) and the margin spike are not connected to the same-date unbilled revenue at 133 days, and the dodged one-off question is not identified as dodged", anchor: "Concall_May_2026.pdf p.4, p.8, p.9"}
-  - {severity: "MAJOR", location: "B06 Q5 verdict", item: "Q5 returned UNVERIFIABLE on peer governance-disclosure culture; the benchmark exists in the peer set in a form the search terms could not reach (CBI search, NHAI show-cause with toll suspension, lender debt recall). Verdict should be CONTRADICTED, which strengthens B05's central finding", anchor: "06-peers.md lines 181-199; HGINFRA-Concall_Feb_2026.pdf p.6; PNCINFRA-Concall_Aug_2026.pdf p.6-7"}
-  - {severity: "MAJOR", location: "B06 Part 1 (absent test)", item: "Ceigall's full-escalation-pass-through claim never tested against peers who describe a three-month partial mechanism while cutting margin guidance", anchor: "Concall_May_2026.pdf p.9; PNCINFRA-Concall_May_2026.pdf p.5, p.20"}
-  - {severity: "MAJOR", location: "B05 red_flags severity", item: "FY27 inflow guidance drift rated LOW; it is a three-step move (5,800 Feb-26, 5,500 May-26, 6,000 Aug-26) in which management corrected an analyst upward without acknowledging any change", anchor: "Concall_Feb_2026.pdf p.10; Concall_May_2026.pdf p.4; Concall_Aug_2026.pdf p.7"}
-  - {severity: "MAJOR", location: "B05 red_flags severity", item: "Cash/FDR erratum rated MEDIUM; the correction cuts stated unencumbered liquidity by INR171cr (71%) inside the sentence used to prove funding is not a constraint", anchor: "Concall_May_2026.pdf p.7"}
-  - {severity: "MAJOR", location: "B05 promise_delivery row 8", item: "Southern Ludhiana bundled into the appointed-dates-arrived set; Aug-26 lists only VRK 11, VRK 12 and Indore-Ujjain, and shows Southern Ludhiana still at 62% land. Error runs in the company's favour", anchor: "05-concall.md line 91; Concall_Aug_2026.pdf p.4, p.5"}
-  - {severity: "MAJOR", location: "B05 guidance / 1C", item: "Southern Ludhiana land status reversed from 'very clear, 80% by December' (Nov-25) to 62% (Aug-26); logged as a date slip, not as a reversed factual claim", anchor: "Concall_Nov_2025.pdf p.7; Concall_Aug_2026.pdf p.5"}
-  - {severity: "MAJOR", location: "B05 guidance rows", item: "Nov-25 contains two conflicting infusion targets for the same window (INR297cr CMD p.10, INR200cr CFO p.12); only the first is carried", anchor: "Concall_Nov_2025.pdf p.10, p.12"}
-  - {severity: "MAJOR", location: "B05 red_flags", item: "FY27 equity plan of INR859cr against INR23cr actually infused in Q1 FY27 requires ~INR279cr per quarter thereafter; the per-project list also sums to INR567cr against a stated INR550cr, and cites 11 HAM projects against 10 in the order book", anchor: "Concall_Aug_2026.pdf p.6, p.8, p.10, p.4"}
-  - {severity: "MAJOR", location: "B05 Section 1C", item: "Renewables 22% to 19% read as a share effect; the rupee inconsistency (FY26 renewable inflow ~INR3,968cr vs closing renewable book ~INR3,525cr on near-zero execution) is not surfaced", anchor: "Concall_May_2026.pdf p.3, p.5, p.11"}
-  - {severity: "MAJOR", location: "B05 red_flags", item: "International 10-15%-of-inflow target (Feb-26) dropped without mention; B05 caught the Romania drop but not the target", anchor: "Concall_Feb_2026.pdf p.10; Concall_Aug_2026.pdf p.11"}
-  - {severity: "MAJOR", location: "B06 Q6", item: "Working-capital days benchmarked, but not the absolute-disclosure asymmetry: peers give unbilled, retention, mobilization and debtor splits in rupees on request; Ceigall gave one such figure in four calls", anchor: "HGINFRA-Concall_May_2026.pdf p.12; PNCINFRA-Concall_Aug_2026.pdf p.8; KNRCON-Concall_Jun_2026.pdf p.14; Concall_Nov_2025.pdf p.11"}
-  - {severity: "MINOR", location: "B05 (absent)", item: "IPO proceeds fully utilised disclosed a quarter late in passing; royalty charging confirmed stopped, making prior-period other income non-recurring by construction", anchor: "Concall_Aug_2026.pdf p.10"}
-  - {severity: "MINOR", location: "B05 (absent, Nov-25 out of scope)", item: "Nov-25 internal inconsistencies: 26 vs 36 projects; renewables 22% vs 21% in the same call; 10 O&M projects vanish from later counts", anchor: "Concall_Nov_2025.pdf p.4, p.7, p.14"}
-  - {severity: "MINOR", location: "B05 (absent)", item: "Uncorrected transcript errors: 'INR21,160 crores' for INR2,160cr; filing dates differ from call dates across the set", anchor: "Concall_May_2026.pdf p.12; Concall_Feb_2026.pdf p.1-2"}
-  - {severity: "MINOR", location: "B05 (absent)", item: "Two analyst questions lost and never returned to", anchor: "Concall_Aug_2026.pdf p.6; Concall_Feb_2026.pdf p.8"}
-  - {severity: "MINOR", location: "B05 (absent, Nov-25 out of scope)", item: "Analyst bid-book figure of INR16,000cr left uncorrected against management's own INR14,000cr", anchor: "Concall_Nov_2025.pdf p.10"}
-critical_count: 2
-major_count: 26
-minor_count: 5
-acceptance_rate: 15
-redflag_coverage: 48
-coverage_note: "acceptance_rate = caught (5) / independent flags found (33) = 15%, per the stage rubric. redflag_coverage = (caught 5 + partially caught 11) / 33 = 48%, per the run brief's definition. Both below the 60% REWORK threshold. Largest single root cause: B05 scoped itself to three transcripts and used Nov-2025 only for two promise traces, while the run carries four; seven missed items originate there. Ten further misses sit inside B05's own scope and are cross-call arithmetic reconciliations (order-book roll-forward, equity infused vs committed, consolidated vs standalone EBITDA and PAT, renewable inflow vs renewable book). No pipeline flag was fabricated or overstated; every B05 flag I could test on the transcripts is SUPPORTED. Recommended remedy is targeted: re-run stage 5 with Nov-2025 as a primary transcript plus a cross-call numeric reconciliation pass, and revise B06 Q5 from UNVERIFIABLE to CONTRADICTED while adding two peer tests (segment margins, escalation pass-through). Peer coverage of my own pass: all 12 peer transcripts consulted, 6 read in full, 6 searched targetedly for awarding, margin, working-capital and disclosure-practice content."
+  - {severity: "CRITICAL", location: "B05 2E repeated-question tracker", claim: "MISSED repeated evasion: margin one-off question asked in two consecutive quarters, non-answer both times; Mahesh Patil appears nowhere in B05", anchor: "Concall_May_2026 p.9; Concall_Aug_2026 p.7"}
+  - {severity: "MAJOR", location: "B05 2A / 2C", claim: "MISSED: Feb-2026 growth claim false against the same call's 9M figures", anchor: "Concall_Feb_2026 p.14 vs p.5-6"}
+  - {severity: "MAJOR", location: "B05 1B guidance table", claim: "MISSED: FY27 renewable revenue guidance of 20-25% of total absent entirely and never tested", anchor: "Concall_May_2026 p.4"}
+  - {severity: "MAJOR", location: "B05 1B / 2A", claim: "MISSED: Q1 FY27 standalone +10.2% against reaffirmed minimum-15% guidance, gap never addressed", anchor: "Concall_Aug_2026 p.4, p.8"}
+  - {severity: "MAJOR", location: "B05 2D / 4D", claim: "MISSED: IPO proceeds 100% utilised in Q4 FY26 and royalty income ceased, disclosed only as a Q&A aside", anchor: "Concall_Aug_2026 p.11"}
+  - {severity: "MAJOR", location: "B05 1B guidance table", claim: "MISSED: cash basis changes every quarter; the Rs320cr Jun-2026 FD figure is absent from B05", anchor: "Concall_Aug_2026 p.11"}
+  - {severity: "MAJOR", location: "B05 4D", claim: "MISSED: 'We have 1.5 years to dilute another 8% also', an unexplained dilution/MPS overhang never repeated", anchor: "Concall_Nov_2025 p.12"}
+  - {severity: "MAJOR", location: "B05 4D red flag row 5; B05 red_flags; B05 orchestrator_note", claim: "Arithmetic wrong: the erratum is a 71.0% overstatement (171/241), not 41.5% (171/412 is the restatement-down); the stated reason, that 71% conflates an absolute rupee change with a percentage, is false — 171/241 = 70.95% exactly. The earlier audit's 71% was correct; the severity upgrade to HIGH stands", anchor: "Concall_May_2026 p.6"}
+  - {severity: "MAJOR", location: "05-concall.md citation convention paragraph", claim: "At least nine B05 anchors are one page high in the Nov-2025 and Aug-2026 transcripts, matching the printed 'Page N of M' header rather than the [PAGE N] marker the report says it used", anchor: "See report Part 4.3 table"}
+  - {severity: "MAJOR", location: "06-peers.md Q4", claim: "Peer contrast overstated: HGINFRA's own May-2026 HAM equity schedule fails to reconcile by ~Rs1,000cr (Rs1,903cr total less Rs1,210cr infused = Rs693cr remaining, against Rs414 + Rs1,229 + Rs50 = Rs1,693cr scheduled), so its drift is not 'milder' than Ceigall's", anchor: "HGINFRA-Concall_May_2026 p.6"}
+  - {severity: "MAJOR", location: "B05 2B excuse pattern", claim: "Under-weighted: the Northern Ayodhya collapse to ~Rs42cr is answered with a denial, a rain excuse and a milestone concession in one breath; B05 calls it 'plausible and seasonal, not disputed'", anchor: "Concall_Aug_2026 p.4-5"}
+  - {severity: "MAJOR", location: "B05 4D / B06 Q9", claim: "Under-weighted: Ceigall's best quarterly margin of the year (14.1% standalone Q4 FY26) lands in the quarter HGINFRA's falls to 9.37% on unrecovered escalation, with any input-cost impact denied; neither artifact juxtaposes the two", anchor: "Concall_May_2026 p.5, p.9; HGINFRA-Concall_May_2026 p.6"}
+  - {severity: "MINOR", location: "06-peers.md Q10, Q6, Q5", claim: "B06 repeats the printed-header off-by-one in the PNCINFRA Aug-2026 file at three anchors (p.8 should be p.7, p.9 should be p.8, p.10 should be p.9)", anchor: "PNCINFRA-Concall_Aug_2026 p.7, p.8, p.9"}
+  - {severity: "MINOR", location: "06-peers.md Q5 / Part 4 / B06 flags", claim: "B06 still describes Ceigall's governance silence as '3-call' in five places against a four-call B05 run 2", anchor: "06-peers.md Q5, Part 4"}
+  - {severity: "MINOR", location: "B05 Section 1", claim: "MISSED: Nov-2025 bid total Rs14,320cr vs components summing Rs14,382cr; Rs14,000cr elsewhere; analyst's Rs16,000cr uncorrected", anchor: "Concall_Nov_2025 p.6, p.9, p.10"}
+  - {severity: "MINOR", location: "B05 3B / B06 2A", claim: "MISSED: MoRTH FY27 allocation Rs3.1trn (Ceigall) vs Rs2.9trn (PNCINFRA), both stated as +8%, never cross-checked", anchor: "Concall_Feb_2026 p.3; PNCINFRA-Concall_May_2026 p.5"}
+  - {severity: "MINOR", location: "B05 2B", claim: "MISSED: a 10x order-value error ('INR21,160 crores') left uncorrected in the same filed transcript that carries a written cash erratum", anchor: "Concall_May_2026 p.12"}
+  - {severity: "MINOR", location: "B05 2A Ramban-Banihal row", claim: "MISSED: the Ramban-Banihal figures do not cohere within the Nov-2025 exchange itself", anchor: "Concall_Nov_2025 p.11"}
+  - {severity: "MINOR", location: "B05 2F.5", claim: "MISSED: Feb-2026 leaves an analyst's Rs3,500cr solar/BESS order-book figure uncorrected against Rs3,168cr stated in the same call", anchor: "Concall_Feb_2026 p.4, p.9"}
+  - {severity: "MINOR", location: "B05 2A", claim: "MISSED: 'seven projects completed ahead of schedule' alongside Jalbehra's unresolved EOT and bonus, never revisited", anchor: "Concall_Feb_2026 p.4, p.11"}
+  - {severity: "MINOR", location: "06-peers.md 2A / Part 3", claim: "MISSED: KNRCON's 7,500km and PNCINFRA's 4,500km FY26 NHAI targets used side by side without noting the conflict (awarded figures 3,100km and 3,124km do agree)", anchor: "KNRCON-Concall_Jun_2026 p.3; PNCINFRA-Concall_May_2026 p.4"}
+critical_count: 1
+major_count: 11
+minor_count: 9
+acceptance_rate: 47
+redflag_coverage: 70
+coverage_note: "Denominator for both rates is 43 independent company-directed red flags (IF-1 to IF-43), built from the four Ceigall transcripts and targeted peer cross-checks BEFORE any upstream artifact was opened. Three findings against the artifacts themselves (B05 anchor errors, B06 anchor errors, B06 Q4 overstatement) are excluded from the denominator because coverage measures how much of the company red-flag surface upstream reached, not artifact hygiene; they appear in findings. acceptance_rate = CAUGHT / 43 = 20/43 = 47%, following the rubric literally (no credit for partial). redflag_coverage = (CAUGHT + PARTIALLY CAUGHT) / 43 = 30/43 = 70%, following the task definition of 'already surfaced', where PARTIALLY CAUGHT means upstream carries the item but under-weighted, mis-severitied, or without the specific arithmetic. By severity: CRITICAL 3/4 caught, 4/4 surfaced; MAJOR 16/27 caught, 24/27 surfaced; MINOR 1/12 caught, 3/12 surfaced. CRITICAL+MAJOR alone: 19/31 caught (61%), 28/31 surfaced (90%). The strict 47% is dominated by a twelve-item MINOR tail of which B05 carries one; on thesis-weight flags the remediation clearly worked, up from the 48% measured at the last audit. The residual gaps are specific and fixable: one CRITICAL repeated evasion (the margin one-off question, May-2026 p.9 and Aug-2026 p.7), two untested FY27 guidance items (renewable revenue share, minimum-15% growth vs a 10.2% Q1), and the IPO-proceeds-exhausted disclosure. On the two numbers the task asked me to settle: the May-2026 erratum is a 71.0% overstatement (171/241), so the earlier audit was right and B05 run 2's 41.5% is the restatement-down mislabelled, with a false diagnosis attached; and B05's order-book roll-forward gaps of +Rs285cr, +Rs631cr and +Rs384cr reproduce exactly on independent recomputation (the finding also survives a standalone-revenue basis at +264/+539/+315)."
 ```

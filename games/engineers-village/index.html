@@ -309,6 +309,18 @@ html, body {
 }
 #touch-run.on { background: #ffce3a; box-shadow: 0 2px 0 #b8901a; }
 
+/* ---------- Controls board ---------- */
+#controls-btn {
+  position: absolute; top: 12px; right: 120px;
+  width: 46px; height: 46px; border: none; border-radius: 12px;
+  background: rgba(255,253,246,0.92); font-size: 22px; cursor: pointer;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+table.keys { width: 100%; border-collapse: collapse; margin-bottom: 10px; font-size: 14px; }
+table.keys td { padding: 6px 8px; border-bottom: 1px solid #eee3c8; vertical-align: top; }
+table.keys td:first-child { white-space: nowrap; font-weight: 700; width: 34%; }
+kbd { display: inline-block; border: 1px solid #d8cdb2; border-bottom-width: 3px; border-radius: 6px; padding: 1px 7px; background: #fff; font-family: inherit; font-weight: 700; font-size: 13px; }
+
 /* ---------- Road safety HUD ---------- */
 #safety-badge {
   position: absolute; top: 100px; left: 12px;
@@ -477,6 +489,8 @@ html, body {
     <button id="notebook-btn" title="Notebook (N)">📓</button>
     <!-- Sound on/off -->
     <button id="sound-btn" title="Sound on / off">🔊</button>
+    <!-- Controls board -->
+    <button id="controls-btn" title="Controls (H)">⌨️</button>
     <!-- The map of the whole land -->
     <canvas id="minimap" width="160" height="160"></canvas>
 
@@ -488,6 +502,7 @@ html, body {
       <span><b>W A S D</b> to walk</span>
       <span><b>← →</b> or drag to look around</span>
       <span><b>E</b> on a scooty, bike or car to ride it</span>
+      <span><b>H</b> shows all controls</span>
       <span><b>Shift</b> to run</span>
       <span><b>E</b> to talk / act</span>
       <span><b>N</b> for notebook</span>
@@ -517,6 +532,45 @@ html, body {
       </div>
       <div id="notebook-body"></div>
       <p class="tiny-note">Tip: press and hold this book to see the parent view.</p>
+    </div>
+  </div>
+
+  <!-- Controls board -->
+  <div id="controls-board" class="overlay" hidden>
+    <div class="overlay-card">
+      <div class="overlay-header">
+        <h2>Controls</h2>
+        <button class="overlay-close" data-close="controls-board">✕</button>
+      </div>
+      <div class="section-label">Laptop</div>
+      <table class="keys">
+        <tr><td><kbd>W</kbd> <kbd>A</kbd> <kbd>S</kbd> <kbd>D</kbd></td><td>Walk. W is always into the screen.</td></tr>
+        <tr><td><kbd>←</kbd> <kbd>→</kbd></td><td>Turn the camera. Or drag with the mouse.</td></tr>
+        <tr><td><kbd>↑</kbd> <kbd>↓</kbd></td><td>Walk forward and back.</td></tr>
+        <tr><td><kbd>Shift</kbd></td><td>Run. On a vehicle: go fast (over the city limit!).</td></tr>
+        <tr><td><kbd>E</kbd> or <kbd>Space</kbd></td><td>Talk, enter a door, ride a vehicle, get off, board the metro, use the lift or the auto stand.</td></tr>
+        <tr><td><kbd>N</kbd></td><td>Notebook: jobs, situations, road safety.</td></tr>
+        <tr><td><kbd>H</kbd></td><td>This board.</td></tr>
+        <tr><td><kbd>Enter</kbd></td><td>Check an answer in a puzzle.</td></tr>
+        <tr><td><kbd>Esc</kbd></td><td>Close a panel.</td></tr>
+      </table>
+      <div class="section-label">Phone</div>
+      <table class="keys">
+        <tr><td>Joystick</td><td>Walk (bottom left).</td></tr>
+        <tr><td>Drag scenery</td><td>Turn the camera.</td></tr>
+        <tr><td><kbd>E</kbd> button</td><td>Talk, enter, ride, get off.</td></tr>
+        <tr><td>🏃</td><td>Run on / off.</td></tr>
+        <tr><td>📓</td><td>Notebook. Hold for the parent view.</td></tr>
+        <tr><td>🔊</td><td>Sound on / off.</td></tr>
+      </table>
+      <div class="section-label">On screen</div>
+      <table class="keys">
+        <tr><td>Rank</td><td>Trainee up to Master Engineer, from jobs done.</td></tr>
+        <tr><td>⭐</td><td>Situations solved.</td></tr>
+        <tr><td>🚦</td><td>Road Safety points; 🪪 once you have the licence.</td></tr>
+        <tr><td>Minimap</td><td>Orange dots are villagers, yellow dots open jobs, the white arrow is you.</td></tr>
+        <tr><td>km/h</td><td>Your speed while riding; red means over the limit.</td></tr>
+      </table>
     </div>
   </div>
 
@@ -1537,10 +1591,18 @@ class UI {
       if (!isMuted()) playPick();
     });
 
-    // Keyboard: N toggles the notebook (not while typing in a number box).
+    // Controls board: the keyboard button or H.
+    const board = document.getElementById("controls-board");
+    document.getElementById("controls-btn").addEventListener("click", () => (board.hidden = !board.hidden));
+
+    // Keyboard: N toggles the notebook, H the controls, Esc closes panels
+    // (not while typing in a number box).
     window.addEventListener("keydown", (e) => {
       if (e.target && e.target.tagName === "INPUT") return;
-      if (e.key.toLowerCase() === "n") this.toggleNotebook();
+      const k = e.key.toLowerCase();
+      if (k === "n") this.toggleNotebook();
+      if (k === "h") board.hidden = !board.hidden;
+      if (k === "escape") { board.hidden = true; this.notebook.hidden = true; this.parentView.hidden = true; if (panelOpen()) closePanel(); }
     });
   }
 
@@ -7797,6 +7859,7 @@ class Game {
       this.dialogue.active ||
       panelOpen() ||
       !document.getElementById("notebook").hidden ||
+      !document.getElementById("controls-board").hidden ||
       !document.getElementById("parent-view").hidden
     );
   }

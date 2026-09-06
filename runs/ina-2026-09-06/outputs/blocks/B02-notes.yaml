@@ -1,0 +1,60 @@
+stage: B02-notes
+company: "INA"
+run_date: "2026-09-06"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - {gap: "prospectus", severity: "HIGH"}
+  - {gap: "results", severity: "HIGH"}
+  - {gap: "annual-report-notes-1-3-absent", severity: "HIGH"}
+  - {gap: "rating", severity: "MEDIUM"}
+  - {gap: "shareholding", severity: "MEDIUM"}
+  - {gap: "screening-csv-shells", severity: "MEDIUM"}
+  - {gap: "sector_cap_row-mismatch", severity: "MEDIUM"}
+  - {gap: "announcements-thin", severity: "MEDIUM"}
+  - {gap: "research", severity: "LOW"}
+  - {gap: "peer-concalls-partial", severity: "LOW"}
+  - {gap: "share-count-blank-FY26", severity: "LOW"}
+flags:
+  - {type: FLAG-CASH, reason: "Consolidated receivables aged >6 months rose from 5.7% (1-Apr-2024) to 12.1% (FY25) to 39.5%/Rs 111.35cr (FY26) of a 2.56x-larger book, entirely at the subsidiary; PAT Rs 200.22cr vs CFO Rs (73.13)cr; zero ECL provision throughout (Note 13, p.122-123)."}
+  - {type: FLAG-GUARANTEE, reason: "Corporate guarantees of Rs 1,654.01cr (up 16.6x YoY) backing subsidiary debt, 205% of consolidated net worth and 3.0x the parent's own total assets, with no covenant disclosure (Note 42(i), p.137)."}
+  - {type: FLAG-RPT, reason: "Rs 32.5-34.5cr invested in two LLPs 90%-owned by the two promoter-director families, no arm's-length pricing statement in the RPT note, no stated rationale (Note 8, p.121)."}
+accounting_quality: 4
+pass_2_empty: false
+pass_3_empty: false
+top_findings:
+  - {rank: 1, finding: "Group structure: parent standalone revenue fell 13.3% while consolidated rose 60.9%; ~94% of group capex and effectively all receivables deterioration sit in the subsidiary; parent guarantees 3.0x its own total assets", note_ref: "Standalone/Consol P&L p.160/117; CFS p.117/160-161; Note 42(i) p.137", rating: "RED FLAG"}
+  - {rank: 2, finding: "Corporate guarantee exposure Rs 1,654.01cr (FY26), up 16.6x YoY, 205% of consolidated net worth, backing subsidiary borrowings incl. Rs 1,134cr IREDA facility", note_ref: "Note 42(i), p.137", rating: "RED FLAG"}
+  - {rank: 3, finding: "Receivables ageing collapse: >6-month-aged share rose from 5.7% to 12.1% to 39.5% (Rs 111.35cr) in two years, entirely a subsidiary phenomenon; explains PAT Rs 200.22cr vs CFO Rs (73.13)cr", note_ref: "Note 13 p.122-123; Note 12 standalone p.166", rating: "RED FLAG"}
+  - {rank: 4, finding: "Capital commitments Rs 901.43cr (FY26) vs Rs 152.08cr (FY25) and Rs 1.28cr (FY24), against ~Rs 807cr net worth", note_ref: "Note 42(b), p.138", rating: "RED FLAG"}
+  - {rank: 5, finding: "Zero ECL provision, every bucket, every year, against a Rs 281.59cr consolidated receivables book with no disclosed methodology", note_ref: "Note 13, p.122-123", rating: "RED FLAG"}
+  - {rank: 6, finding: "Land/title contradiction: Note 4 says title deeds held in Company's name; Note 18A shows factory land mortgaged in promoter-directors' personal names", note_ref: "Note 4 p.120 vs Note 18A p.126/169", rating: "RED FLAG"}
+  - {rank: 7, finding: "Rs 32.5-34.5cr invested in two LLPs 90%-owned by promoter-director families; internal table-vs-narrative figure inconsistency; no stated rationale", note_ref: "Note 8, p.121", rating: "RED FLAG"}
+  - {rank: 8, finding: "Audit-scrutiny cluster: zero KAM in a 5x+ scale-up year, auditor replaced this AGM, only 5 of ~76 SPVs have Note 59 disclosure, NCI immaterial despite 49%-voting subsidiaries", note_ref: "p.114/166; AGM Notice Item 4; Note 57-59 p.150-153; Note 17 p.124", rating: "RED FLAG"}
+  - {rank: 9, finding: "Note 53 ratio table parenthetical-sign anomaly isolated to the two improving ratios (DSCR, ROE); accrual-based DSCR of 9.35x sits against Rs (73.13)cr operating cash outflow", note_ref: "Note 53, p.150-151", rating: "WATCH"}
+  - {rank: 10, finding: "New customer concentration: Solarworld Energy Solutions Rs 265.19cr (12.4% of FY26 revenue), NIL FY25, no ageing-by-customer disclosure", note_ref: "Note 46, p.144", rating: "WATCH"}
+  - {rank: 11, finding: "IREDA facility largely undrawn (Rs 468.89cr aggregate secured non-current borrowings vs Rs 1,134cr sanction); guarantee and leverage will mechanically rise as it draws, no covenants disclosed", note_ref: "Note 18A, p.124/126", rating: "WATCH"}
+  - {rank: 12, finding: "Notes 1-3 (Material Accounting Policies) absent from the entire 200-page extraction, referenced on both balance sheets but text not found", note_ref: "Balance Sheets p.116/159 (text NOT FOUND)", rating: "WATCH (corpus gap)"}
+  - {rank: 13, finding: "No promoter shareholding-pledge disclosure exists at all, not even NIL, distinct from ordinary subsidiary-share loan collateral", note_ref: "Shareholding pattern p.82/159-160; Note 18A p.127", rating: "WATCH"}
+  - {rank: 14, finding: "Inventory grew 4.9x, outpacing 60.9% revenue growth; Finished Goods grew ~14.7x; no write-down or obsolescence disclosure found", note_ref: "Note 12, p.121-122; Note 37/36", rating: "WATCH"}
+  - {rank: 15, finding: "Basic EPS equals Diluted EPS in both years despite a deeply in-the-money outstanding ESOP pool", note_ref: "Statement of P&L p.117; Note 44/43", rating: "WATCH"}
+red_flags:
+  - "Zero ECL provision against a receivables book whose >6-month-aged share nearly tripled since transition date, with no disclosed impairment methodology (Note 13, p.122-123)."
+  - "Corporate guarantee exposure of Rs 1,654.01cr, 3.0x the parent's own total assets, with no covenant disclosure (Note 42(i), p.137)."
+  - "Internal contradiction on core-asset title between Note 4 and Note 18A, unresolved (p.120 vs p.126/169)."
+  - "Rs 32.5-34.5cr deployed into LLPs 90%-owned by the two promoter-director families, no arm's-length pricing statement, no stated rationale (Note 8, p.121)."
+  - "Zero Key Audit Matters from an auditor being replaced the same AGM, in the year inventory grew 4.9x, receivables 2.56x, and guarantees 16.6x (p.114/166; AGM Notice Item 4)."
+  - "Note 53 parenthetical-sign anomaly isolated to the two improving ratios (DSCR, ROE), understating the gap between accrual DSCR of 9.35x and Rs (73.13)cr operating cash outflow (Note 53, p.150-151)."
+  - "~70 of ~76 step-down SPVs consolidated with no Note 59 business-combination disclosure; NCI immaterial despite 49%-voting-interest holdings, mechanism undisclosed (Note 57-59 p.150-153; Note 17 p.124)."
+questions_for_mgmt:
+  - "What is the legal or contractual basis for consolidating ~70+ step-down SPVs with near-100% economic interest despite several being held at only 49% voting interest and NCI remaining immaterial (Note 59, Note 17, p.124)?"
+  - "Note 4 states title deeds are held in the Company's name; Note 18A shows the factory land mortgaged in the promoter-directors' personal names. Which reflects actual legal title, and is transfer to the Company planned (Note 4 p.120 vs Note 18A p.126/169)?"
+  - "What is the business rationale, expected return, and exit plan for the ~Rs 32.5-34.5cr investment in two LLPs 90%-owned by the promoter-director families (Note 8, p.121)?"
+  - "What ECL methodology supports a Rs NIL provision against a book now 39.5% aged beyond 6 months, and what is the ageing status of the new Rs 265.19cr Solarworld Energy Solutions receivable (Note 13 p.122-123; Note 46 p.144)?"
+  - "Why are Basic and Diluted EPS identical in both years despite a deeply in-the-money outstanding ESOP pool, and has any tranche vested (Note 44/43, p.141-143)?"
+receivables_trend: "deteriorating - consolidated receivables aged beyond 6 months rose from 5.7% (Rs 5.92cr of Rs 103.92cr, 1-Apr-2024) to 12.1% (Rs 13.36cr of Rs 110.09cr, FY25) to 39.5% (Rs 111.35cr of Rs 281.59cr, FY26); entirely a subsidiary phenomenon, parent standalone book stayed at ~6% aged beyond 6 months (Note 13 p.122-123; Note 12 standalone p.166)"
+restatements_found:
+  - "Standard 'Regrouped, Recast, Reclassified' boilerplate (Note 52 consolidated / Note 54 standalone, p.130/177), no specific quantified restatement identified."
+  - "FY24 (1-Apr-2024) opening balance sheet is the Ind AS 101 transition date; PPE opening balances use the deemed-cost exemption, so pre-FY25 figures are IGAAP-derived, not independently Ind-AS-measured (Note 4 footnote p.120; Note 43/42 p.137-139) - a comparability caveat, not a restatement."
+going_concern_language: "NONE"
+analyst_note: "The single largest finding is structural, not a line item: the listed parent (Rs 544cr total assets) guarantees Rs 1,654cr of subsidiary debt, 3.0x its own balance sheet, while nearly all growth, capex, and receivables risk sit in the subsidiary. Section 1B/valuation stages should price the CONSOLIDATED entity's earnings quality, not the parent's clean standalone book, since the guarantee structure makes the parent liable for subsidiary outcomes regardless of which entity books the revenue. The cash-inversion question (Lead 2) is genuinely unresolved from the notes alone; treat as an open item requiring the missing Notes 1-3 policy text and customer-level ageing, not a settled read either way."

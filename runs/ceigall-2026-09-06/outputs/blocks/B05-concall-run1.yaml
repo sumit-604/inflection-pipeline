@@ -1,0 +1,74 @@
+stage: B05-concall
+company: "CEIGALL"
+run_date: "2026-09-06"
+model: claude-sonnet-5
+status: complete
+input_gaps: [prospectus, results, rating, shareholding, research, announcements-substantive]
+flags:
+  - {type: FLAG-CONCALL-SILENCE, reason: "Across all three transcripts (Feb-2026, May-2026, Aug-2026), management never mentions the FY26 procurement fraud, the qualified IFC opinion (both levels), the DGGI GST search action, the NHAI termination of a step-down SPV, the associated auditor resignation, the CEO/WTD change (Hoshing to Sarvanan/Saravanan), or the contingent-liability rise to 83.7% of standalone net worth; no analyst asks about any of these in any call."}
+  - {type: FLAG-CASH-NARRATIVE, reason: "Management repeatedly states cash flow and equity funding are 'not a problem' / 'amazing' (Feb-2026 p.10, May-2026 p.6) while consolidated CFO was negative in FY25 (Rs -515.6cr) and FY26 (Rs -91.3cr per B03); never reconciled on any call. A May-2026 call cash/FDR figure (Rs266cr/Rs146cr) required a written erratum correcting it to Rs166cr/Rs75cr, a combined ~71% overstatement."}
+quarters_analysed: ["Q3 FY26", "Q4 FY26", "Q1 FY27"]
+triggers:
+  - {priority: 1, name: "HAM monetization / capital-recycling cycle", type: "INORGANIC", timeframe: "near-medium", conviction: "M", confirm_signal: "Disclosed sale price and a second/third completed HAM divestment with disclosed consideration and IRR", kill_signal: "Further divestments stall, or a disclosed consideration shows value destruction vs equity invested"}
+  - {priority: 2, name: "Order book scale and diversification (Rs18,568cr, 4.8x book-to-bill)", type: "VOLUME", timeframe: "near-medium", conviction: "H", confirm_signal: "Continued execution translating book into billed revenue at guided margins", kill_signal: "Contract assets/unbilled revenue keep rising faster than billed revenue"}
+  - {priority: 3, name: "Renewables/T&D vertical ramp (35% of FY26 order inflow)", type: "SECTORAL", timeframe: "medium", conviction: "M", confirm_signal: "First disclosed renewable-segment revenue/EBITDA line in line with core EPC margins", kill_signal: "Renewable segment margins disclosed materially below the 11-12.5% EPC band"}
+  - {priority: 4, name: "NHAI/MoRTH policy tailwind and billing-notification cash-flow relief", type: "REGULATORY-POLICY", timeframe: "near", conviction: "M", confirm_signal: "Payable-days and unbilled-revenue-days actually improve in FY27 as promised", kill_signal: "No improvement in FY27 despite the cited monthly-billing notification"}
+  - {priority: 5, name: "EBITDA margin resilience (11-12.5% band)", type: "COST", timeframe: "near", conviction: "M", confirm_signal: "FY27 actual margin holds within/above guided band on a like-for-like basis", kill_signal: "Margin compresses below 11% for two consecutive quarters"}
+  - {priority: 6, name: "International expansion", type: "INORGANIC", timeframe: "long", conviction: "L", confirm_signal: "Any signed international order with disclosed EBITDA/IRR terms", kill_signal: "Continued zero execution for another 2+ years"}
+guidance:
+  - {item: "FY26 revenue growth", number: "10-15% YoY, delivered 14.3% standalone / 17.1% consolidated", timeframe: "FY26", stated_in: "Nov 2025 call (4th transcript), reaffirmed Feb 2026 call"}
+  - {item: "FY27 revenue growth", number: "minimum 15% YoY", timeframe: "FY27", stated_in: "May 2026 call"}
+  - {item: "FY27 EBITDA margin", number: "11%-12.5%", timeframe: "FY27", stated_in: "May 2026 call, reaffirmed Aug 2026 call"}
+  - {item: "FY26 order inflow", number: "guided Rs5,000cr, delivered Rs11,332cr", timeframe: "FY26", stated_in: "Nov 2025 call; outcome May 2026 call"}
+  - {item: "FY27 order inflow guidance", number: "minimum Rs5,500cr, restated Rs6,000cr", timeframe: "FY27", stated_in: "May 2026 call vs Aug 2026 call, inconsistent"}
+  - {item: "Standalone D/E", number: "0.2x (Mar-26) vs 0.4x (FY25)", timeframe: "FY26", stated_in: "May 2026 call"}
+  - {item: "HAM equity infusion pace", number: "Rs297cr targeted in 3 months, ~Rs2.4cr delivered", timeframe: "Nov-25 to Feb-26", stated_in: "Nov 2025 call, tested against Feb 2026 call"}
+  - {item: "Malout-Abohar-Sadhuwali sale price", number: "NOT FOUND (never stated in any call)", timeframe: "n/a", stated_in: "n/a"}
+promise_delivery:
+  delivered: 5
+  partial: 2
+  missed: 2
+  rows:
+    - {promised_in: "Nov 2025 call (4th transcript)", promise: "FY26 revenue growth 10-15%", outcome: "delivered", explanation: "n/a - delivered 14.3%/17.1% per May 2026 call"}
+    - {promised_in: "Nov 2025 / Feb 2026 calls", promise: "FY26 order inflow Rs5,000cr", outcome: "delivered (beaten 2.3x)", explanation: "n/a - Rs11,332cr actual per May 2026 call"}
+    - {promised_in: "Nov 2025 / Feb 2026 calls", promise: "continued standalone deleveraging", outcome: "delivered", explanation: "n/a - D/E fell 0.4x to 0.2x"}
+    - {promised_in: "Feb 2026 call", promise: "FY26 EBITDA margin in historical band", outcome: "delivered", explanation: "n/a - 12.6% full year"}
+    - {promised_in: "May 2026 call", promise: "Ambala-Chandigarh-Zirakpur HAM concession progress", outcome: "delivered", explanation: "n/a - concession signed Q1 FY27"}
+    - {promised_in: "Nov 2025 call (4th transcript)", promise: "Rs297cr HAM equity infusion in 3 months", outcome: "missed", explanation: "no explanation offered; ~Rs2.4cr actual per Feb 2026 call figures, not raised by any analyst"}
+    - {promised_in: "Feb 2026 call", promise: "Malout-Abohar-Sadhuwali proceeds by 31 March 2026", outcome: "partial", explanation: "SPA signed 3-Jun-2026, completed 16-Jun-2026 per AR; ~2.5 month slip never acknowledged as a slip"}
+    - {promised_in: "Nov 2025 / Feb 2026 calls", promise: "VRK 11, VRK 12, Indore-Ujjain appointed dates by Dec-25/Mar-26", outcome: "partial", explanation: "arrived subsequent to Q1 FY27 quarter end (Jul/Aug-26), 4-8 month slip, no update at all in May 2026 call"}
+    - {promised_in: "Feb 2026 call", promise: "Bathinda-Dabwali / Jalbehra-Shahbad divestments close before September 2026", outcome: "missed", explanation: "silently revised to Q2/Q3 FY27 in May 2026 call; no update at all in Aug 2026 call"}
+excuse_pattern: "balanced-leaning-silence"
+repeated_evasions:
+  - {question: "What was NHAI's awarding pace in FY26, in kilometres and in rupees?", quarters_asked: ["Q3 FY26 (Feb-2026 call)", "Q4 FY26 (May-2026 call)"], classification: "deflected every time"}
+  - {question: "What is the total/pending equity requirement across HAM, solar and T&D, reconciled with last quarter's figure?", quarters_asked: ["Q3 FY26 (Feb-2026 call)", "Q4 FY26 (May-2026 call)", "Q1 FY27 (Aug-2026 call)"], classification: "answer changed between quarters, never reconciled"}
+credibility_grade: "C"
+credibility_basis: "Revenue, margin, order-inflow and debt guidance were delivered or beaten across all three calls, but management stayed silent for three consecutive quarters on the fraud, IFC qualification, NHAI SPV termination, leadership churn and contingent-liability growth the audited FY26 accounts carry as top findings, never reconciled its own shifting equity-commitment and cash figures, and needed a written erratum to correct an overstated liquidity number."
+peer_questions:
+  - {question: "What is your consolidated operating cash flow trend over FY25-FY26, and does management's tone on calls acknowledge or omit a negative CFO figure?", why: "Tests whether Ceigall's 'cash flow is not a problem' narrative despite negative CFO is sector-wide or company-specific.", check_peers: ["HGINFRA", "KNRCON", "PNCINFRA"]}
+  - {question: "What NHAI award pace (km and Rs value) do peer managements cite for FY26 when asked directly?", why: "Benchmarks whether Ceigall's deflection to the NHAI website on this repeatable question is unusual or standard reticence.", check_peers: ["HGINFRA", "KNRCON", "PNCINFRA"]}
+  - {question: "What HAM-asset or InvIT monetization considerations (sale price, realised equity IRR) have peers disclosed for completed transactions?", why: "Benchmarks whether Ceigall's non-disclosure of the Malout-Abohar-Sadhuwali sale price is industry-standard opacity or a specific red flag.", check_peers: ["HGINFRA", "KNRCON", "PNCINFRA"]}
+  - {question: "Do peer HAM equity-commitment figures reconcile cleanly quarter to quarter on a consistent scope?", why: "Tests whether Ceigall's shifting, unreconciled equity-commitment totals reflect a company-specific disclosure problem.", check_peers: ["HGINFRA", "KNRCON", "PNCINFRA"]}
+  - {question: "Do peer managements proactively address fraud, IFC qualifications, auditor resignations, or leadership churn on calls, or only when compelled by a filing?", why: "Benchmarks Ceigall's total silence on governance events against sector disclosure culture.", check_peers: ["HGINFRA", "KNRCON", "PNCINFRA"]}
+  - {question: "What working-capital-day trends (receivables, unbilled revenue, payables) have peers reported since the FY24 Atmanirbhar-scheme withdrawal?", why: "Tests whether Ceigall's working-capital stretch (payable days 79 to 138, unbilled-revenue days 94 to 133) is sector-wide or company-specific.", check_peers: ["HGINFRA", "KNRCON", "PNCINFRA"]}
+  - {question: "What margin-guidance bands do peers give, and how do they treat one-off bonus/royalty income relative to headline EBITDA margin?", why: "Tests whether Ceigall's practice of folding bonus/royalty income into some periods' headline EBITDA is standard sector practice.", check_peers: ["HGINFRA", "KNRCON", "PNCINFRA"]}
+red_flags:
+  - {severity: "HIGH", flag: "Total silence across three calls on the Rs89.65m procurement fraud and the qualified IFC opinion at both levels; no analyst asked"}
+  - {severity: "HIGH", flag: "Total silence across three calls on the NHAI termination of a step-down SPV and the associated sister-SPV auditor resignation"}
+  - {severity: "HIGH", flag: "Management asserts strong/'amazing' cash flow every call while consolidated CFO was negative in FY25 and FY26; never reconciled"}
+  - {severity: "MEDIUM-HIGH", flag: "No acknowledgment on any call of the WTD/CEO change (Hoshing out, Sarvanan/Saravanan in) between Feb-2026 and May-2026 calls"}
+  - {severity: "MEDIUM", flag: "Malout-Abohar-Sadhuwali sale consideration never disclosed despite being cited three times as proof of the capital-recycling thesis"}
+  - {severity: "MEDIUM", flag: "Written erratum in the filed May-2026 transcript corrects an ~71% overstatement of unencumbered cash/FDR"}
+  - {severity: "MEDIUM", flag: "HAM/renewable/T&D equity-commitment totals quoted on different, unreconciled bases in every call"}
+  - {severity: "LOW-MEDIUM", flag: "Contingent liabilities at 83.7% of standalone net worth and the standalone/consolidated bank-guarantee inconsistency never mentioned nor asked"}
+  - {severity: "LOW", flag: "FY27 order-inflow guidance restated from Rs5,500cr minimum to Rs6,000cr with no acknowledgment"}
+  - {severity: "LOW", flag: "Unnamed 'war situation' introduced in Aug-2026 call as a new, unexplained reason for international caution"}
+dropped_triggers:
+  - "Jaipur Rail Corporation (Jaipur Metro), Rs918cr, L1 announced Feb-2026 call, never mentioned again"
+  - "Romania/EU mega-bid (~Rs13,000cr, single 17km project) and Sobha/Dubai tender, both live per May-2026 call, unmentioned in Aug-2026 call"
+timeline_slippages:
+  - "VRK 11, VRK 12, Southern Ludhiana, Indore-Ujjain appointed dates: promised Dec-2025/Mar-2026 (Nov-2025, Feb-2026 calls), delivered subsequent to Q1 FY27 quarter end (Jul/Aug-2026), a 4-8 month slip"
+  - "Malout-Abohar-Sadhuwali HAM sale: promised proceeds by 31 March 2026 (Feb-2026 call), SPA completed 16-Jun-2026 per AR, ~2.5 month slip"
+  - "Bathinda-Dabwali / Jalbehra-Shahbad divestments: promised close before September 2026 (Feb-2026 call), revised to Q2/Q3 FY27 (May-2026 call), no update in Aug-2026 call"
+analyst_note: "The clearest finding is asymmetry: high specificity and delivered guidance on operating metrics, versus total silence across three calls on governance/compliance/cash-flow items the audited accounts treat as top findings. No analyst on any call asked about the fraud, IFC qualification, NHAI termination, auditor resignation, leadership churn, or contingent liabilities - a gap in analyst coverage as much as management disclosure. The unnamed 'war situation' cited in Aug-2026 as a reason for international caution is never identified and merits a direct claude.ai verification question."
+no_concall_mode: false

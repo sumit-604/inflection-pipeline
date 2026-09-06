@@ -1,0 +1,85 @@
+stage: B12c
+company: "CYIENTDLM"
+run_date: "2026-09-06"
+model: claude-opus-4-8
+status: complete
+scope: "phase-1: Gate 0 (B01) and Emerging Moat (B07) only"
+gate0:
+  rules_checked: 62
+  rules_passed: 58
+  acceptance_rate: 94
+  recomputed_core_score: 43
+  recomputed_moat_score: 3
+  recomputed_grand_total: 46
+  reported_grand_total: 47
+  recomputed_classification: "AVOID"
+  classification_concurs: true
+  fails:
+    - "F-G01 MAJOR: the 4-year window declaration is outcome-determining (the LIMITED tier downgrade turns AVERAGE into AVOID); disclosed but unratified"
+    - "F-G02 MAJOR: M4 scored 1 with no prompt band satisfied; a strict reading gives 0, Block F 3/60, grand total 46/160"
+    - "F-G03 MINOR: B4 and M12 substitute the company NWC-days KPI for the prompt's fixed WC-days formula; disclosed, score-invariant"
+    - "F-G04 MINOR: the M4 cross-reference to analyst_note is dangling; analyst_note does not discuss M4"
+emoat:
+  rules_checked: 44
+  rules_passed: 34
+  acceptance_rate: 77
+  categories_addressed: 23
+  categories_required: 23
+  arithmetic_verified: true
+  recomputed_em_score: "17.0 to 20.0"
+  reported_em_score: 21.0
+  recomputed_classification: "MODEST"
+  classification_concurs: true
+  ua_qualifier_met: false
+  ua_note: "The EM 25 threshold is missed on every recomputation, so the UA conclusion is unchanged."
+  fails:
+    - "F-E01 MAJOR: B2 scored HH=4 as the top row while the report states it predates FY26 and is not emerging; the certification evidence is shared with R1=3.0"
+    - "F-E02 MINOR: Section 3 uses prose per category, not the evidence table the prompt asks for"
+    - "F-E03 MINOR: the analyst-inference tier is never applied; evidence_mix inference count is 0 despite inferences in the text"
+    - "F-E04 MINOR: the completionist recount line says 6 categories, names 7, and the block says 7"
+    - "F-E05 MINOR: a few evidence items carry no page anchor (H2, G1 related-party note)"
+    - "F-E06 MINOR: I2 answered for B2 only, not for each moat claimed in the scan"
+    - "F-E07 MINOR: the optionality register has 9 rows in the report and 8 in the block; the rung-jump row was dropped"
+    - "F-E08 MINOR: strength labels fall outside the Strong/Moderate/Weak/None set"
+    - "F-E09 MINOR: the evidence_mix claim count of 22 is not enumerated or reconcilable from the report"
+    - "F-E10 MINOR: the block carries five fields outside the mandated schema"
+valuation:
+  status: pending
+  reason: "Stages 10 and 11 have not run; B10 and B11 do not exist. The valuation adherence audit is deferred to phase 3. Master Prompt v3.6, the Section 1B layer set and FTTCP v2.1 were deliberately not loaded, per the phase-1 scoping rule."
+  rules_checked: 0
+  fails: []
+business_understanding_narrative:
+  status: not_applicable_phase_1
+  reason: "Stage 13 has not run; the narrative check belongs to the phase-3 verifier pass."
+  present: false
+  fails: []
+findings:
+  - {severity: "MAJOR", id: "F-G01", location: "B01 report, data-availability declaration and Classification section", description: "The declared 4-year scoring window is outcome-determining and unratified. At 4 years the LIMITED confidence tier fires a one-tier downgrade that turns AVERAGE into AVOID. The company's own ROCE series reaches FY2022, and on a 5-year declaration the tier carries no downgrade, leaving AVERAGE even with A4 falling to 0 (core 40, still inside the 40-59 band). The report discloses the A4 sensitivity but never runs the confidence-tier consequence. The 4-year reading is defensible under rule 6 taken as full financial history. It needs an OPERATOR RULING before AVOID travels downstream."}
+  - {severity: "MAJOR", id: "F-G02", location: "B01 report, Block F, test M4", description: "M4 scored 1 where no prompt band is satisfied. One revenue-decline year, unrecovered, fails the 3-band condition 'fully recovered', and the 1-band's stated condition is '2 decline years'. The score was awarded by analogy, while M10 two tests later applies the strict else-0 reading on the identical receivable-days leg. Recomputed Block F is 3/60 and the grand total 46/160. Moats confirmed, moat class THIN and classification AVOID are all unchanged."}
+  - {severity: "MAJOR", id: "F-E01", location: "B07 Section 5 scorecard, row B2", description: "B2 qualification lock-in is scored HH=4 at 1.0x, the largest single row, while the report itself states in 6D and 6E that the advantage predates FY26 and is not emerging. The stage scores moats currently forming. The genuinely new increment (IATF16949, NADCAP cable-harness re-scope) is already scored at R1=3.0, and the report's own recount concedes B2 and R1 share the certification evidence base. That credits one quality improvement through two mechanisms. Recomputed em_score is 20.0 rescoring B2 on the increment, or 17.0 removing it, against 21.0 reported. The MODEST band and the EM 25 UA miss hold in every case."}
+  - {severity: "MINOR", id: "F-G03", location: "B01 report, B4 and M12", description: "The prompt's fixed working-capital-days formula (receivable plus inventory minus payable) was replaced by the company-disclosed NWC-days KPI, against the instruction not to substitute alternatives. The substitution is disclosed with cause and is score-invariant: the MD&A DSO/DIO/DPO route and the prompt's own N/A-to-zero route both land in the same bands."}
+  - {severity: "MINOR", id: "F-G04", location: "B01 report, M4 line", description: "The M4 line says judgment flagged, see analyst_note. The analyst_note does not mention M4. A dangling cross-reference on the one line item that most needed the explanation."}
+  - {severity: "MINOR", id: "F-E02", location: "B07 Section 3", description: "The prompt asks for an evidence table or NO EVIDENCE FOUND per category. Categories are presented as anchored prose instead. The 23-row summary table supplies the required structure, so the loss is presentational."}
+  - {severity: "MINOR", id: "F-E03", location: "B07 report body and block evidence_mix", description: "The analyst-inference tier is never applied anywhere and evidence_mix reports inference 0, although the report makes and labels inferences in prose (the C2 consolidation-artifact reading, the 2C utilisation-not-capex conclusion, the 6E base-rate argument). The taxonomy is meant to cover every piece of evidence. No score effect."}
+  - {severity: "MINOR", id: "F-E04", location: "B07 Section 3, completionist recount line", description: "The mandated recount line states 13 documented items across 6 categories, then names seven (B1, B2, C2, F1, G2, H3, R1), and the block says seven. The stated count contradicts its own list and the block."}
+  - {severity: "MINOR", id: "F-E05", location: "B07 categories H2 and G1", description: "A few evidence items carry no page anchor, for example 'related-party term loan structure, AR consolidated notes'. The prompt requires an anchor on every evidence item. Whether the referenced content exists at any page is verifier A's call, not mine."}
+  - {severity: "MINOR", id: "F-E06", location: "B07 Section 3, category I2", description: "The prompt requires the cannibalisation test to be answered for each moat claimed anywhere in the scan. It is answered for B2 only; C1, C2 and R1 are covered by a generalising sentence rather than individually. The score would remain 0 in each case."}
+  - {severity: "MINOR", id: "F-E07", location: "B07 optionality register against block optionality_register", description: "Nine rows in the report table, eight in the block. The rung-jump B2S row is not carried. The prompt states the register is carried in the block and merged into the monitoring checklist, so the row is lost to synthesis. Its content overlaps the carried B2S transform-phase row."}
+  - {severity: "MINOR", id: "F-E08", location: "B07 Section 3 summary table and block", description: "Strength labels depart from the prompt's Strong / Moderate / Weak / None set: Weak-Moderate, None (negative), Moderate (artifact-caveated). The boundary case B1 was resolved conservatively and excluded from active_categories, so there is no outcome effect."}
+  - {severity: "MINOR", id: "F-E09", location: "B07 block, evidence_mix", description: "The claim count of 22 is not enumerated or reconcilable from the report body, unlike the documented count of 13, which is itemised. It cannot be checked from the artifact."}
+  - {severity: "MINOR", id: "F-E10", location: "B07 block", description: "The prompt says to end with exactly the specified fenced YAML block. Five fields sit outside the schema: em_score_scale, ua_qualifier_threshold, ua_qualifier_met, capex_embedded_growth_note, orchestrator_note. All informative, none contradictory; the risk is only to a strict downstream parser."}
+critical_count: 0
+major_count: 3
+minor_count: 11
+rules_checked_total: 106
+rules_passed_total: 92
+acceptance_rate: 87
+framework_adherence: 87
+rework_trigger: false
+rework_basis: "No CRITICAL finding, and acceptance is above 60% in both scopes."
+operator_rulings_required:
+  - id: "F-G01"
+    question: "Is the Gate 0 scoring window declared at 4 years or 5 years for CYIENTDLM?"
+    why_it_matters: "It is outcome-determining. At 4 years the LIMITED confidence tier fires a one-tier downgrade and the classification is AVOID. At 5 years there is no downgrade and the classification is AVERAGE, even with A4 at 0. The company listed in FY2023-24 and no prospectus is in the corpus, so 4 years of full audited financial history is defensible; the company's own disclosed ROCE series nonetheless reaches FY2022."
+    default_if_unruled: "AVOID stands, as scored. The AVOID travels downstream carrying this flag."
+orchestrator_note: "Both headline classifications are CONCURRED: Gate 0 AVOID and Emerging Moat MODEST both survive every recomputation verifier C ran. The score arithmetic differs slightly (grand total 46 recomputed against 47 reported; em_score 17.0-20.0 recomputed against 21.0 reported) without moving either band or the UA conclusion. F-E01 is the CLAUDE.md NEVER rule on crediting one quality improvement through two mechanisms, caught in the emerging-moat scorecard."

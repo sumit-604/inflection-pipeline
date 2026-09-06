@@ -1,0 +1,10 @@
+company: Cyient DLM Ltd
+ticker: CYIENTDLM
+cmp: 857.0
+market_cap_cr: 6803.0
+run_date: 2026-09-06
+run_type: full
+concalls_available: true
+sector_cap_row: "Cables / Industrial products"
+listed_date: ""
+notes: "Collected from screener.in by collect_to_repo.py v3 on 2026-09-06. Sector row set by hand: no ESDM/EMS row exists in the Section 1B cap table; Cables / Industrial products (25x) taken as the conservative fit. Aerospace-and-defence revenue mix may argue the Defence / strategic row (38x); confirm at Phase 3. Peers: AVALON, KAYNES, SYRMA (high-mix low-volume ESDM). Gaps: results, rating, prospectus, announcements, shareholding, research. Company listed 2023 (recently listed): IPO prospectus is a HIGH-priority gap; confirm listed_date at stage 0."

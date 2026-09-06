@@ -1,0 +1,66 @@
+stage: B06-peers
+company: "INA"
+run_date: "2026-09-06"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "prospectus (HIGH)"
+  - "results (HIGH)"
+  - "annual-report-notes-1-3-absent (HIGH)"
+  - "rating (MEDIUM)"
+  - "shareholding (MEDIUM)"
+  - "screening-csv-shells (MEDIUM)"
+  - "sector_cap_row-mismatch (MEDIUM)"
+  - "announcements-thin (MEDIUM)"
+  - "research (LOW)"
+  - "peer-concalls-partial (LOW)"
+  - "share-count-blank-FY26 (LOW)"
+flags:
+  - "Q7 (LC/receivables) resolves against a sector-wide explanation: the peer that most clearly uses LC-backed receivables (Websol) converted 84% of FY26 PAT to operating cash in the same period INA converted none (negative Rs73.13cr vs Rs201cr PAT). Priority item for synthesis."
+  - "Q5: the June-2026 ALMM-2 effective date every peer confirmed was itself deferred to December 2026 in peer calls dated after INA's own corpus closes (Websol 11-Aug-2026, Premier Aug-2026) — new negative information for INA's cell-integration margin-bridge timeline that INA's own corpus could not have caught."
+  - "Q1: INA's '142GW ALMM cell capacity' figure closely matches Websol's disclosed ALMM MODULE capacity (145GW), not any peer's cell-capacity figure (Waaree ~30GW relevant, Premier ~27-30GW actual, Websol 24GW approved) — likely a cell/module conflation in INA's own claim, not a verified industry fact."
+peers_provided: 11
+verified:
+  - {claim: "Peer Q4/Q3 FY26 non-DCR and DCR module realizations match INA's stated Rs13-14/Rs20-22 per watt", peers: ["Waaree", "Premier", "Websol"], anchor_count: 5}
+  - {claim: "Polysilicon/silver and cell price volatility is real and sector-wide", peers: ["Waaree", "Premier", "Websol"], anchor_count: 4}
+partially_verified:
+  - {claim: "No-overcapacity argument for ALMM-compliant cell capacity vs DCR demand", peers: ["Waaree", "Premier", "Websol"]}
+  - {claim: "Per-GW capex and commissioning timeline for a comparable-scale TOPCon cell line", peers: ["Websol", "Premier"]}
+  - {claim: "Cell-driven PAT margin premium magnitude and multi-year compression timeline", peers: ["Waaree", "Premier", "Websol"]}
+  - {claim: "ALCM / ALMM Part 2 effective date of 1 June 2026", peers: ["Waaree", "Premier", "Websol"]}
+  - {claim: "Declining order book reflects normal sector churn", peers: ["Waaree", "Premier", "Websol"]}
+  - {claim: "Shift from advance payment to LC terms drives receivables growth", peers: ["Waaree", "Premier", "Websol"]}
+  - {claim: "6-9 month fixed-price order book duration is a sector norm", peers: ["Premier", "Waaree", "Websol"]}
+contradicted:
+  - {claim: "INA's 142GW ALMM cell capacity figure", contradicting_peer: "Websol (24GW ALMM cell capacity disclosed; 145GW figure applies to modules, not cells)", quote_anchor: "Websol, 30-Jan-2026 call, p.19"}
+  - {claim: "ALCM/ALMM Part 2 effective date of January 2026 (INA's alternate stated date)", contradicting_peer: "Waaree, Premier, Websol (all confirm 1 June 2026 as the governing date at the time)", quote_anchor: "Waaree, 30-Apr-2026 call, p.28; Premier, 29-Oct-2025 call, p.16"}
+  - {claim: "Receivables growth from LC-shift reflects a sector-wide cash-conversion problem", contradicting_peer: "Websol (84% FY26 cash conversion despite using LC-backed receivables)", quote_anchor: "Websol, 28-Apr-2026 call, p.4 and p.19-20"}
+unverifiable:
+  - {claim: "45-day specific LC tenor matching INA's stated terms", peers_checked: ["Waaree", "Premier", "Websol"]}
+  - {claim: "Cell-only greenfield capex at exactly INA's 4.5GW scale", peers_checked: ["Websol", "Premier", "Waaree"]}
+peer_coverage_map:
+  - {peer: "Waaree (Jan 2026)", quarter: "Q3 FY26", usage: "SUBSTANTIVE", contribution: "Baseline realizations, advance-payment model, overcapacity framing"}
+  - {peer: "Waaree (Feb 2026)", quarter: "Special call (US tariffs)", usage: "CITED-ONLY", contribution: "Orthogonal subject matter (US CVD exposure); read in full, no INA mention"}
+  - {peer: "Waaree (May 2026)", quarter: "Q4 FY26", usage: "SUBSTANTIVE", contribution: "Same-quarter realization match, ALMM-II capacity figure, June 2026 date, order book decline mechanics"}
+  - {peer: "Waaree (Aug 2026)", quarter: "Q1 FY27", usage: "SUBSTANTIVE", contribution: "Post-INA-corpus quarter; order book recovery, softening realizations, margin premium quantified"}
+  - {peer: "Premier (Nov 2025)", quarter: "Q2 FY26", usage: "SUBSTANTIVE", contribution: "Cell capacity reality-check vs nameplate, brownfield capex economics"}
+  - {peer: "Premier (Jan 2026)", quarter: "Q3 FY26", usage: "SUBSTANTIVE", contribution: "Same-quarter realization match, ALMM-2 date, capacity-vs-nameplate gap"}
+  - {peer: "Premier (May 2026)", quarter: "Q4 FY26", usage: "SUBSTANTIVE", contribution: "Order book growth trajectory as sector norm, June 2026 date reconfirmed"}
+  - {peer: "Premier (Aug 2026)", quarter: "Q1 FY27", usage: "SUBSTANTIVE", contribution: "Post-INA-corpus quarter; explicit non-DCR overcapacity admission, ALMM deferral"}
+  - {peer: "Websol (Feb 2026)", quarter: "Q3 FY26", usage: "SUBSTANTIVE", contribution: "Realization match, ALMM cell-vs-module capacity split, greenfield capex benchmark"}
+  - {peer: "Websol (May 2026)", quarter: "Q4 FY26", usage: "SUBSTANTIVE", contribution: "LC-backed receivables disclosure (decisive for Q7), cash conversion contrast"}
+  - {peer: "Websol (Aug 2026)", quarter: "Q1 FY27", usage: "SUBSTANTIVE", contribution: "Post-INA-corpus quarter; ALMM deferral to December 2026, margin compression from mix"}
+industry_cross_read:
+  demand: "Bifurcated, not uniform: DCR/scheme demand tight-to-undersupplied per all three peers; non-DCR module demand explicitly oversupplied and unprofitable per Premier (Aug 2026)."
+  pricing_inputs: "Silver/commodity volatility real and sector-wide, actively hedged by all three peers via procurement/consumption-reduction programs INA's own corpus never discusses."
+  capex_cycle: "Industry-wide capacity race, not a lone expander: all three peers simultaneously expand cell capacity and move toward ingot/wafer backward integration; INA's capex program follows the same template, not an outlier in either direction."
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "China anti-dumping/anti-involution price dynamics and pass-through effect on Indian cell costs (Waaree, Premier)"
+  - "Active silver hedging and consumption-reduction as a named discipline, absent from INA's own calls (all three peers)"
+  - "Explicit non-DCR module overcapacity and unprofitability (Premier, Aug 2026 call)"
+  - "Mono PERC to TOPCon/G12R technology transition risk stranding undifferentiated smaller cell lines (Premier, 23-Jan-2026 call)"
+  - "ALMM-2 deferral itself as a live, evolving regulatory risk rather than a fixed date (Websol, Premier, Aug 2026 calls)"
+  - "Customer-side liquidity constraints causing deferred offtake, openly named and quantified by peers versus deflected by INA management on debtor-day questions (Websol, Premier)"
+net_narrative_effect: "complicates"
+analyst_note: "Q7 is the load-bearing finding: the LC-receivables mechanism is real and sector-standard (Websol), but the peer using it converted 84% of PAT to cash while INA converted none. This reframes INA's cash flow problem from a financing-terms story to a company-specific collections/concentration story, and should be weighted accordingly at synthesis. Q5's post-corpus ALMM deferral (June to December 2026) is new information no INA stage could have surfaced and should be carried forward as a fresh timeline risk to the cell-integration margin bridge."

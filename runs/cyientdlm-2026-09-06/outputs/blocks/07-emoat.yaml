@@ -1,0 +1,48 @@
+stage: B07-emoat
+company: "CYIENTDLM"
+run_date: "2026-09-06"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["prospectus ABSENT (HIGH priority)", "results ABSENT", "rating ABSENT (no company-specific issuer rating found; ICRA appears only as IPO monitoring agency)", "announcements ABSENT (no Reg 30 record for documented-action cross-check)", "shareholding filing ABSENT, partly substituted from AR", "research ABSENT", "screening PARTIAL", "investor presentation PARTIAL for pages beyond the Q1 FY27 deck"]
+flags:
+  - "G2 working capital deteriorating four consecutive periods against three broken normalisation promises"
+  - "F2 execution credibility Grade C (B05) actively undercuts the execution-moat claim"
+  - "C2 customer-concentration improvement is substantially an Altek-consolidation artifact; standalone concentration still 70.54%"
+  - "automotive/EV pipeline item dropped from headline win to 1% of revenue within two quarters, setting the base-rate expectation for the AI and robotics lanes"
+  - "internal AR against concall inconsistency on the eVTOL mass-production year (FY28 against FY29)"
+em_score: 21
+em_score_scale: "adjusted total on an approximately 0-90 scale, ceiling 92 with I1/I2"
+em_classification: "MODEST"
+ua_qualifier_threshold: 25
+ua_qualifier_met: false
+active_categories:
+  - {id: "B2", name: "Qualification lock-in", strength: "Strong", evidence_type: "documented", time_to_materialise: "active now"}
+  - {id: "C1", name: "Customer ecosystem / embedded relationships", strength: "Moderate", evidence_type: "claim", time_to_materialise: "12-24m"}
+  - {id: "C2", name: "Customer concentration improving", strength: "Moderate (artifact-caveated)", evidence_type: "documented", time_to_materialise: "already partly realised"}
+  - {id: "R1", name: "Regulatory and policy (new certifications)", strength: "Moderate", evidence_type: "documented", time_to_materialise: "FY27"}
+evidence_mix: {documented: 13, claim: 22, inference: 0}
+completionist_recount: "Documented recount performed: 13 documented items across 7 categories (B1, B2, C2, F1, G2, H3, R1)."
+catalysts_12m:
+  - {catalyst: "NWC normalisation below 145 days (already promised and broken twice)", window: "FY27", evidence_type: "claim", anchor: "Q4 FY26 call p.16; Q1 FY27 call p.14"}
+  - {catalyst: "IATF16949 first automotive-OEM revenue conversion", window: "FY27", evidence_type: "documented", anchor: "AR FY2025-26 p.9"}
+  - {catalyst: "AI data centre or robotics named-customer disclosure, or quiet abandonment", window: "1-2 quarters", evidence_type: "claim", anchor: "Q1 FY27 call p.10"}
+  - {catalyst: "BTS anchor-customer first mass-production orders", window: "flag end FY27 / FY28", evidence_type: "claim", anchor: "Q4 FY26 call p.14"}
+capex_embedded_growth_pct: 0
+capex_embedded_growth_note: "Not meaningfully computable. No rupee figures are disclosed for the BTS lab, the Mysore land or the Bengaluru machining expansion, and management states the new lanes need no additional capex beyond the regular run rate."
+optionality_register:
+  - {optionality: "AI infrastructure and data centre lane, no named customer", converting_evidence: "Named hyperscaler or OEM contract, or a disclosed revenue line", first_appears: "concall Q and A, or a Reg 30 filing", window: "FY28-29"}
+  - {optionality: "Robotics lane, same status as AI and data centre", converting_evidence: "Signed order or named customer", first_appears: "concall Q and A", window: "FY28-29"}
+  - {optionality: "Semiconductor capital equipment series production, unnamed customer", converting_evidence: "Disclosed customer name or segment revenue figure", first_appears: "AR segment note or concall", window: "FY27-28"}
+  - {optionality: "Own IP-led B2S product platform (transform-phase 13-18% margin claim)", converting_evidence: "Disclosed product-revenue line or signed platform-licensing agreement", first_appears: "AR product-mix note", window: "FY30+"}
+  - {optionality: "Patent and IP pipeline, currently absent", converting_evidence: "Patent published on ipindia.gov.in or Espacenet naming Cyient DLM inventors", first_appears: "public patent registry, then AR IP disclosure", window: "not guided"}
+  - {optionality: "Europe inorganic expansion", converting_evidence: "Signed acquisition agreement or Reg 30 announcement", first_appears: "exchange filing", window: "opportunistic; one FY26 attempt already failed"}
+  - {optionality: "Talent asymmetry (I1), currently unevidenced", converting_evidence: "Named ex-DRDO, ex-HAL or ex-global-major hires plus a documented competitor pay-scale constraint", first_appears: "AR remuneration annexure or hire announcement", window: "not guided"}
+  - {optionality: "Company-specific PLI or ECMS enrolment", converting_evidence: "AR or filing disclosing the company's own scheme enrolment with rupee amount and duration", first_appears: "AR next cycle or exchange filing", window: "not guided"}
+combined_assessment: "AVOID"
+combined_reasoning: "Gate 0 AVOID (mechanical cash-conversion deal-breaker) is not offset by a MODEST forward score, rather than an EXPANSION or STRENGTHENING one, with two categories carrying active negative evidence (execution credibility, working capital)."
+top_moat_risks:
+  - "Customer and programme concentration (55.71% consolidated, 70.54% standalone) leaves revenue exposed to single-order swings, as the FY26 17% revenue decline already showed"
+  - "The consolidated customer-concentration improvement may reverse once Altek growth normalises; it was never clearly organic India-core diversification"
+  - "New certifications (IATF16949, NADCAP re-scope) may produce no named commercial conversion, repeating the automotive and EV pattern already seen in FY26"
+analyst_note: "The scan's central tension: the one real, durable moat (B2, certification-driven qualification lock-in) predates this filing year and is not itself emerging. What is genuinely new this year (B2S mix growth, two new certifications, narrowing consolidated concentration) is real but modest, while the most-discussed forward narratives (AI data centre, robotics) are concept-stage with a base rate set by the FY26 automotive and EV pipeline item, which was prominent in Q2 FY26 and fell to 1% of revenue by Q1 FY27. Two categories, F2 and G2, carry active negative evidence tied directly to the Grade C credibility record, not mere absence of data."
+orchestrator_note: "The stage reports that the investor presentation extracted cleanly and was usable, contrary to the PARTIAL caveat carried from stage 0. Recorded here so the corpus audit is not read as a limitation the stage did not actually hit."

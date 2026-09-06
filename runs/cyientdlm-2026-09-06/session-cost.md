@@ -13,3 +13,4 @@ stage returns and committed with that stage.
 | 5 | concall analysis, main company | claude-sonnet-5 | default | n/a | n/a | 156702 | 9m14s | 1 |
 | 2 | notes triple-pass, pass 3 of 3 (consolidation, emits B02) | claude-sonnet-5 | default | n/a | n/a | 68098 | 3m17s | 3 |
 | 6 | peer concall verification | claude-sonnet-5 | default | n/a | n/a | 317321 | 6m33s | 1 |
+| 7 | emerging moat 22-category scan | claude-sonnet-5 | default | n/a | n/a | 189274 | 8m32s | 1 |

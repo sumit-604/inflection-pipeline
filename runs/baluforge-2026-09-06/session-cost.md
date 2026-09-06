@@ -14,6 +14,7 @@ Per-stage token ledger, written as each stage returns.
 | 5 | Concall analysis (NO-CONCALL MODE) | claude-sonnet-5 | default | n/r | n/r | 182,796 | 8m59s | 1 |
 | 6 | Peer concall verification | claude-sonnet-5 | default | n/r | n/r | 301,616 | 6m32s | 1 |
 | 8 | Promoter background check | claude-sonnet-5 | default | n/r | n/r | 132,378 | 10m00s | 1 |
+| 7 | Emerging moat 22-category scan | claude-sonnet-5 | default | n/r | n/r | 126,236 | 9m37s | 1 |
 
 n/r = the subagent result reported a single total-token figure, not an input/output split.
 

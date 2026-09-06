@@ -1,0 +1,83 @@
+stage: B04-bizmodel
+company: "INA"
+run_date: "2026-09-06"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - prospectus (HIGH)
+  - results (HIGH)
+  - annual-report-notes-1-3-absent (HIGH)
+  - rating (MEDIUM)
+  - shareholding (MEDIUM)
+  - screening-csv-shells (MEDIUM)
+  - sector_cap_row-mismatch (MEDIUM)
+  - announcements-thin (MEDIUM)
+  - research (LOW)
+  - peer-concalls-partial (LOW)
+  - share-count-blank-FY26 (LOW)
+  - no-per-watt-ASP-or-utilisation-disclosed (LOW-MEDIUM)
+flags:
+  - "Single Ind AS 108 segment ('Manufacturing & Trading of Solar Photovoltaic Modules') means no company-disclosed EPC, IPP, or O&M margin exists; all stream-level economics in this report are derived from the Ind AS 115 revenue disaggregation, not from segment reporting (AR p.144-145, p.149-150)."
+  - "Sale of Electricity (IPP revenue) is only Rs 4.22cr, 0.2% of FY26 consolidated revenue, despite the narrative emphasis on a 400MW+ IPP pipeline and large associated capex and guarantees (AR p.130, Note 25)."
+  - "Parent guarantees Rs 1,654.01cr of subsidiary debt against its own Rs 544.04cr assets (3.0x), including a reverse guarantee where the subsidiary guarantees a parent AU Bank facility (AR p.137, Note 42)."
+  - "MD&A PLI/PM MITRA references repeat the same generic, possibly copy-pasted industry narrative flagged by Stage 3 (textile-scheme boilerplate); no INA-specific PLI allocation is disclosed (AR p.55-56)."
+business_type: "hybrid"
+revenue_streams:
+  - {name: "Finished Goods (own-manufactured modules)", type: "manufacturing, point-in-time goods", pct_of_revenue: 81.9, predictability: "M"}
+  - {name: "Trading Sales (bought-and-resold goods)", type: "trading, point-in-time goods", pct_of_revenue: 17.0, predictability: "L"}
+  - {name: "Sale of Electricity (IPP)", type: "asset-owner power sale", pct_of_revenue: 0.2, predictability: "H"}
+  - {name: "Other operational revenue (installation, job work, scrap, freight)", type: "services/ancillary", pct_of_revenue: 0.5, predictability: "L"}
+asset_intensity: "medium"
+wc_intensity: "high"
+pricing_power: "weak"
+cyclicality: "cyclical"
+moats_present:
+  - {moat: "Regulatory/licence (ALMM listing, BIS/IEC/UL/TUV/CE certification)", durability: "medium"}
+  - {moat: "Scale (5.5 GW installed capacity)", durability: "medium"}
+  - {moat: "Distribution (1000+ channel partners, pan-India dealer network)", durability: "medium"}
+  - {moat: "Brand (IPL sponsorship, retail recall)", durability: "low-medium"}
+valuation_methods:
+  primary: {method: "Sum-of-the-parts: manufacturing/trading engine (EV/EBITDA-style) + IPP SPV portfolio (per-MW/DCF/NAV)", why: "A single consolidated multiple cannot represent a 99%-revenue commodity manufacturing/trading engine bolted to a ~76-SPV, near-zero-revenue but capital- and guarantee-heavy IPP build-out; the parts have structurally different risk, cash-cycle, and earnings-timing profiles"}
+  secondary: {method: "EV/EBITDA on consolidated basis vs listed module-manufacturing peers", why: "Useful sanity cross-check on the dominant manufacturing/trading engine, but must be read knowing it understates true engine profitability by blending in near-zero-earning IPP capital"}
+  tertiary: {method: "EV / installed capacity (Rs cr per GW module, Rs cr per MW IPP)", why: "Appropriate during this capex-heavy build-out phase when near-term earnings are not yet stabilised (cell plant not commissioned, IPP not generating); flags if the market is pricing capacity that has not yet produced cash"}
+  not_applicable:
+    - "DCF (near-term FCF unreliable; FY26 consolidated OCF is negative against positive PAT)"
+    - "Standalone P/E or P/B (parent's consolidation-adjusted profit share was negative in both FY25 and FY26, per AR p.152 Note 58)"
+    - "Dividend discount model (no dividend disclosed; heavy capex/growth phase)"
+irrelevant_ratios:
+  - {ratio: "Standalone-only revenue growth or P/E", why: "Standalone revenue fell 13.3% in FY26 while consolidated revenue grew 60.9%; reading the listed entity alone inverts the real trend"}
+  - {ratio: "Blended consolidated ROCE/ROE", why: "Mixes a mature trading stream, a growing manufacturing stream, and a pre-revenue, capital-heavy IPP base with almost no return yet"}
+  - {ratio: "Blended cash conversion (OCF/EBITDA)", why: "FY26 OCF is negative against ~Rs 200cr PAT; the blended ratio cannot separate genuine receivable-quality risk from normal IPP/EPC working-capital build"}
+  - {ratio: "Blended inventory turnover / receivable days", why: "Mixes fast-moving trading inventory, manufacturing WIP, and long-cycle EPC/IPP project inventory; hides which piece is deteriorating"}
+  - {ratio: "Blended fixed-asset turnover", why: "IPP capex lands ahead of IPP revenue by design; a single ratio looks artificially weak even if manufacturing asset efficiency is fine"}
+  - {ratio: "Any implied segment-margin comparison", why: "No reportable segment exists; Ind AS 108 discloses one segment, 'Manufacturing & Trading of Solar Photovoltaic Modules'"}
+  - {ratio: "Parent guarantee coverage read from either entity's balance sheet alone", why: "The Rs 1,654.01cr guarantee (3.0x parent assets) includes a reverse guarantee from the subsidiary back to the parent; reading one entity in isolation hides the circular exposure"}
+must_track_metrics:
+  - {metric: "Sale of Electricity (IPP revenue)", healthy: "Scaling toward a run-rate consistent with commissioned MW x load factor x tariff", red_flag: "Stays near Rs 4-5cr for multiple quarters after stated COD dates"}
+  - {metric: "Trade receivables aged beyond 6 months, % of book", healthy: "Falling share as new sales book at normal terms", red_flag: "Rising share, or spreading from subsidiary to parent"}
+  - {metric: "Group EBITDA margin", healthy: "Continuing the FY22 6.3% to FY26 14.0% rise", red_flag: "Flat or falling once the cell plant commissions"}
+  - {metric: "Consolidated vs standalone revenue growth", healthy: "Directionally aligned over time", red_flag: "Sustained divergence beyond one year"}
+  - {metric: "Parent guarantee-to-parent-assets ratio", healthy: "Below 1x", red_flag: "Above 3x, already the case at FY26 (Rs1,654.01cr / Rs544.04cr)"}
+unit_economics:
+  unit: "1 Watt (Wp) of module capacity/output (natural unit; no per-watt figures disclosed)"
+  revenue_per_unit: "NOT FOUND, check investor presentation or concall"
+  margin_per_unit: "NOT FOUND, check investor presentation or concall"
+  key_lever: "Bought-in raw material cost (cells, wafers, aluminium frames) at ~78% of revenue; backward integration into cells/frames/wafers is the stated lever to change this, not yet commissioned"
+first_deterioration_signals:
+  - {risk: "EPC/IPP narrative not yet monetized", first_signal: "Sale of Electricity line stays flat near Rs 4.22cr for multiple quarters after stated COD"}
+  - {risk: "Trading Sales displacing manufactured sales (margin dilution)", first_signal: "Trading Sales share of Note 25/24 revenue rises alongside gross margin compression"}
+  - {risk: "Raw material pass-through failure", first_signal: "Cost of Raw Material Consumed rising faster than revenue in the quarterly P&L"}
+  - {risk: "Receivable quality deterioration", first_signal: "Trade receivables aged beyond 6 months rises further or spreads to the parent entity"}
+  - {risk: "Parent guarantee exposure crystallising", first_signal: "Any subsidiary debt covenant breach or restructuring disclosure"}
+  - {risk: "Cell facility execution delay", first_signal: "Capital work-in-progress balance stalls without commissioning past Q4 FY27/Dec 2026"}
+  - {risk: "Structural opacity across entities", first_signal: "Widening gap between standalone and consolidated results, or a segment-reporting change"}
+mgmt_questions:
+  - "What is the actual revenue and margin split between the manufacturing subsidiary, the EPC subsidiary, and the ~76 IPP SPVs?"
+  - "Why is 39.5% of consolidated trade receivables aged beyond 6 months, and why does it sit entirely at the subsidiary?"
+  - "What is the actual per-watt module ASP and per-watt cash cost today, and how does that change once the cell plant commissions?"
+  - "Why did standalone revenue fall 13.3% while consolidated revenue grew 60.9%, and is real activity migrating away from the listed entity?"
+  - "What is the contingency plan if the Narmadapuram cell facility COD slips past Q4 FY27/Dec 2026?"
+  - "Has INA itself been allocated capacity under the PLI scheme, and on what terms?"
+  - "What tariff and offtake terms (PPA counterparties, tenor, tariff) apply to the ~400MW+ IPP pipeline, and when does each project reach COD?"
+one_line_verdict: "Commodity module manufacturer/trader today; the EPC-IPP-cell integration story is capital-heavy but revenue-unproven."
+analyst_note: "The single most load-bearing finding this stage: Ind AS 115 disaggregation (AR p.130, p.149-150) shows FY26 consolidated revenue is 81.9% own-manufactured Finished Goods, 17.0% Trading Sales, and only 0.2% Sale of Electricity. The AR and investor presentation both foreground EPC, IPP, BESS and cell/wafer/ingot integration, but the accounts show none of that has yet become a material, disclosed revenue line, and the group's own Ind AS 108 note still classifies itself as one segment. This is not evidence the transition thesis is false; it is evidence the transition has not yet shown up in reported revenue, so Stage 11/FTTCP should not treat EPC/IPP as an earnings stream to multiply, only as unresolved optionality plus committed capital and guarantee risk. The parent-vs-subsidiary structure (three-plus entities, ~76 SPVs) is real and load-bearing for both the WC and the valuation-method questions; treat every future ratio or multiple as needing the same SOTP lens applied here."

@@ -14,6 +14,8 @@ with its own stage. A stage that loops or retries gets one line per run.
 | 4 | business model decoder | claude-sonnet-5 | default | — | — | 131,038 | 7m02s | 1 |
 | 5 | concall analysis (3 transcripts) | claude-sonnet-5 | default | — | — | 126,037 | 7m11s | 1 |
 | 8 | promoter check (web) | claude-sonnet-5 | default | — | — | 143,350 | 10m33s | 1 |
+| 6 | peer concall verification | claude-sonnet-5 | default | — | — | 166,182 | 10m43s | 1 |
+| 7 | emerging moat 22-cat scan | claude-sonnet-5 | default | — | — | 239,049 | 9m46s | 1 |
 
 Stage 0 ran in the orchestrator session, not as a subagent, so it has no
 subagent metadata. Its wall time is dominated by a rejected OCR attempt on

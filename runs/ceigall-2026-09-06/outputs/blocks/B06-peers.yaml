@@ -1,0 +1,52 @@
+stage: B06-peers
+company: "CEIGALL"
+run_date: "2026-09-06"
+model: claude-sonnet-5
+status: complete
+input_gaps: [prospectus, results, rating, shareholding, research, announcements-substantive]
+flags:
+  - {type: FLAG-PEER-CONTRADICTION, reason: "Two of three peers (HGINFRA consistently across 3 calls; PNCINFRA once asked) disclose hard enterprise-value/consideration figures for completed or binding HAM monetizations. Ceigall never disclosed the Malout-Abohar-Sadhuwali sale price on any of 3 calls despite the SPA being signed and completed per AR, and despite citing the deal 3 times as proof of the capital-recycling thesis. This is not matched by peer practice on completed deals."}
+  - {type: FLAG-PEER-CONTRADICTION, reason: "No peer uses a blanket qualitative cash-flow reassurance framing equivalent to Ceigall's 'not a problem'/'amazing'; all three peers instead name the specific driver of every debt/working-capital movement. Ceigall's framing, unreconciled against negative consolidated CFO in FY25 and FY26, is not sector-standard tone."}
+  - {type: FLAG-PEER-CONTRADICTION, reason: "All three peers name, quantify, and attribute one-off bonus/royalty items to specific projects and quarters every time the topic arises (PNCINFRA: Rs5.3cr Mathura, Rs14cr Hardoi, Rs50cr+ MSRDC explicitly tied to a prior year's elevated turnover; KNRCON: per-project bonus tracking; HGINFRA: Rs43cr Ganga Expressway royalty change-in-law quantified). This contradicts folding such income into headline EBITDA margin without separate disclosure as standard sector practice."}
+  - {type: FLAG-PEER-RESOLVES-GAP, reason: "All three peers explicitly name the West Asia geopolitical conflict as the driver of elevated crude/bitumen/logistics costs in this exact window (HGINFRA, KNRCON, PNCINFRA all use near-identical language). This very likely resolves the unnamed 'war situation' Ceigall cited in its Aug-2026 call without identifying it, flagged as an open item in B05's analyst_note."}
+quarters_analysed: ["Q1 FY26", "Q2 FY26", "Q3 FY26", "Q4 FY26", "Q1 FY27"]
+peers_provided: 12
+verified: []
+partially_verified:
+  - {claim: "Ceigall's deflection on NHAI award-pace questions is standard sector reticence", peers: ["HGINFRA", "KNRCON", "PNCINFRA"]}
+  - {claim: "Ceigall's unreconciled shifting HAM/renewable/T&D equity-commitment totals reflect a company-specific disclosure problem", peers: ["HGINFRA", "KNRCON", "PNCINFRA"]}
+  - {claim: "Ceigall's working-capital stretch (payable days 79-138, unbilled days 94-133) is sector-wide vs company-specific", peers: ["KNRCON", "PNCINFRA"]}
+contradicted:
+  - {claim: "Ceigall's 'cash flow is not a problem'/'amazing' narrative despite negative CFO is sector-wide tone", contradicting_peer: "HGINFRA, KNRCON (no peer uses blanket reassurance; all name specific drivers of debt/WC movement)", quote_anchor: "HGINFRA-Concall_May_2026_Transcript.txt, p.6"}
+  - {claim: "Non-disclosure of the Malout-Abohar-Sadhuwali HAM sale price is industry-standard opacity", contradicting_peer: "HGINFRA, PNCINFRA", quote_anchor: "HGINFRA-Concall_Aug_2025_Transcript.txt, p.5-6; PNCINFRA-Concall_Nov_2025_Transcript.txt, p.10"}
+  - {claim: "Folding bonus/royalty income into headline EBITDA margin without separate disclosure is standard sector practice", contradicting_peer: "PNCINFRA, KNRCON, HGINFRA", quote_anchor: "PNCINFRA-Concall_May_2026_Transcript.txt, p.14"}
+unverifiable:
+  - {claim: "Do peer managements proactively address fraud, IFC qualifications, auditor resignations, or leadership churn on calls, or only when compelled", peers_checked: ["HGINFRA", "KNRCON", "PNCINFRA"]}
+  - {claim: "Realised equity IRR disclosure on completed HAM monetizations", peers_checked: ["HGINFRA", "KNRCON", "PNCINFRA"]}
+peer_coverage_map:
+  - {peer: "HGINFRA", quarter: "Q1 FY26 (Aug-2025)", usage: "SUBSTANTIVE", contribution: "HAM monetization EV/equity/debt disclosure baseline; HAM equity requirement Rs1,664cr; one-off margin attribution"}
+  - {peer: "HGINFRA", quarter: "Q2 FY26 (Nov-2025)", usage: "SUBSTANTIVE", contribution: "HAM equity requirement continuation (Rs1,709cr); monetization EV repeat-disclosure"}
+  - {peer: "HGINFRA", quarter: "Q3 FY26 (Feb-2026)", usage: "SUBSTANTIVE", contribution: "Monetization SPA-execution update; HAM equity requirement (Rs1,750cr); one-off margin denial exchange"}
+  - {peer: "HGINFRA", quarter: "Q4 FY26 (May-2026)", usage: "SUBSTANTIVE", contribution: "Names 'West Asian conflict'/war situation explicitly; NHAI-km deflection matching Ceigall's pattern; HAM equity drift (Rs1,903cr)"}
+  - {peer: "KNRCON", quarter: "Q1 FY26 (Aug-2025)", usage: "SUBSTANTIVE", contribution: "Working-capital spike (93->169 days) with named cause; HAM equity baseline (Rs990cr); monetization-proceeds deflection on live deal"}
+  - {peer: "KNRCON", quarter: "Q2 FY26 (Nov-2025)", usage: "SUBSTANTIVE", contribution: "HAM equity reconciliation continuation (Rs991cr, exact tie-out); per-project bonus tracking"}
+  - {peer: "KNRCON", quarter: "Q3/9M FY26 (Feb-2026)", usage: "SUBSTANTIVE", contribution: "Proactive unprompted NHAI/MoRTH km disclosure (1,448km/712km); WC recovery to 82 days"}
+  - {peer: "KNRCON", quarter: "Q4 FY26 (Jun-2026)", usage: "SUBSTANTIVE", contribution: "Full-year NHAI award figure (3,100km, -22% YoY); explicit West Asia/bitumen narrative; MoRTH price-cycle policy change"}
+  - {peer: "PNCINFRA", quarter: "Q2 FY26 (Nov-2025)", usage: "SUBSTANTIVE", contribution: "NHAI 6,300km target cited unprompted; HAM equity baseline (Rs1,744cr); named bonus (Rs5.3cr); monetization EV (Rs630cr)"}
+  - {peer: "PNCINFRA", quarter: "Q3 FY26 (Feb-2026)", usage: "SUBSTANTIVE", contribution: "Proactive NHAI km disclosure (377km vs 504km); HAM equity reconciliation continuation (exact tie-out)"}
+  - {peer: "PNCINFRA", quarter: "Q4 FY26 (May-2026)", usage: "SUBSTANTIVE", contribution: "HAM equity scope-change explicitly reconciled (Rs1,744cr->Rs1,623cr); bonus-to-turnover attribution; West Asia input-cost narrative"}
+  - {peer: "PNCINFRA", quarter: "Q1 FY27 (Aug-2026)", usage: "SUBSTANTIVE", contribution: "Proactive NHAI km disclosure (107km); net WC days (110) with named driver and recovery path"}
+peer_utilisation_summary: {peers_provided: 3, peers_used_substantively: 3, transcripts_provided: 12, transcripts_used_substantively: 12}
+industry_cross_read:
+  demand: "All three peers describe FY26 NHAI/MoRTH awarding as muted/subdued (3,100km FY26, -22% YoY, below 7,500km target; still only 107km Q1 FY27), attributed to land acquisition/cabinet-approval delay, not demand weakness; Ceigall's own sharp FY26 order-inflow beat in this same soft-award year needs its own explanation."
+  pricing_inputs: "All three peers explicitly name West Asia geopolitical conflict as driver of elevated crude/bitumen/logistics costs FY26-Q1FY27; KNRCON notes MoRTH shortened price-adjustment pass-through cycle 3mo to 1mo in response; this likely resolves Ceigall's unnamed 'war situation' reference."
+  capex_cycle: "Industry-wide capacity/diversification race, not a lone-expander situation: all three peers (HGINFRA, KNRCON, PNCINFRA) are simultaneously entering solar/BESS/transmission/metro/mining/water in the same period, consistent with Ceigall's renewables/T&D push."
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "West Asia geopolitical conflict named explicitly as input-cost and demand risk (all 3 peers) - unnamed on Ceigall's own calls"
+  - "NHAI possibly shifting preference toward BOT-toll over HAM, changing future order funding profile (HGINFRA-Concall_May_2026_Transcript.txt, p.17)"
+  - "NHAI arbitration/dispute-settlement risk as a distinct government-counterparty category, incl. Rs235cr Vivad-se-Vishwas III settlement (PNCINFRA) and a one-month bidding suspension after an NHAI show-cause notice (KNRCON)"
+  - "Land acquisition and cabinet-approval delay named explicitly as the systemic driver of the sector-wide award slowdown (all 3 peers)"
+net_narrative_effect: "complicates"
+analyst_note: "Peer evidence sharpens two existing B05 red flags into company-specific findings (cash-flow reassurance tone, HAM sale-price silence even post-completion) and shows the bonus/royalty folding practice runs against clear peer norms. It also validates two Ceigall growth claims as sector-consistent (renewables/T&D diversification, and the previously unexplained 'war situation') and shows HGINFRA shares some of Ceigall's weaker habits (NHAI-km deflection, unreconciled equity drift), so Ceigall is an outlier on the sharper items, not on every axis."
+no_concall_mode: false

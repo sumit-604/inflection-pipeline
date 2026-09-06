@@ -1,0 +1,44 @@
+stage: B07-emoat
+company: "CEIGALL"
+run_date: "2026-09-06"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - {area: prospectus, severity: HIGH, note: "company listed August 2024, no prospectus in corpus"}
+  - {area: results, severity: MEDIUM, note: "no standalone results filing PDF beyond investor presentation extracts"}
+  - {area: rating, severity: MEDIUM, note: "no dedicated rating rationale document in corpus"}
+  - {area: shareholding, severity: HIGH, note: "no shareholding corpus"}
+  - {area: research, severity: LOW, note: "no third-party research in corpus"}
+  - {area: announcements-substantive, severity: MEDIUM, note: "no substantive announcements corpus beyond concalls/presentation/AR"}
+flags:
+  - {type: FLAG-EMOAT-SPARSE, reason: "Adjusted emerging-moat score 4.3/92, below even the 12-24 MODEST band. Only 4 of 22 categories carry any scored weight (C2, E1, F2, R1), all WEAK; I1 and I2 both score 0 with no threshold-crossing. This is a genuinely sparse scan, not an under-search: R&D and technology-absorption disclosures in AR Annexure-6 are explicit NIL/0.00% across both FY25 and FY26."}
+  - {type: FLAG-EMOAT-NETTED, reason: "F2 execution moat nets a genuinely documented specialised-structure delivery record (early-completion bonuses, tunnel/elevated-corridor progress, all documented) against F2's own guidance-delivery yardstick, which the injected B05 record grades C with named timeline slippages and total management silence on the fraud/IFC/NHAI-termination/leadership-churn findings. Net WEAK, not the Moderate the documented half alone would suggest."}
+em_score: 4.3
+em_classification: "NONE"
+active_categories: []
+evidence_mix: {documented: 6, claim: 5, inference: 2}
+completionist_recount: "6 documented items across 4 categories (F2, C2, E1, R1); 0 categories reach Strong or Moderate; sparse scan confirmed, not an over-credit correction"
+catalysts_12m:
+  - {catalyst: "VRK 11/VRK 12/Indore-Ujjain HAM execution ramp following appointed dates received Jul/Aug-2026", window: "0-12m", evidence_type: "claim", anchor: "Aug-2026 call"}
+  - {catalyst: "Disclosed sale price/IRR on Bathinda-Dabwali and Jalbehra-Shahbad HAM divestments", window: "6-12m (already slipped from Sep-2026 target)", evidence_type: "claim", anchor: "May-2026 call"}
+  - {catalyst: "First renewable-segment revenue/EBITDA data point (MH1/MH2 solar construction started Q1 FY27)", window: "0-12m", evidence_type: "claim", anchor: "Aug-2026 call"}
+  - {catalyst: "Romania (~Rs13,000cr) and Arunachal Pradesh EPC bid outcomes", window: "0-12m, uncertain (dropped from Aug-2026 commentary)", evidence_type: "claim", anchor: "May-2026 call; silence noted Aug-2026 call"}
+  - {catalyst: "NHAI FY27 tendering pipeline (~Rs2 lakh crore) converting to order inflow beating Rs6,000cr guidance", window: "0-12m", evidence_type: "claim", anchor: "Aug-2026 call"}
+capex_embedded_growth_pct: 0
+optionality_register:
+  - {optionality: "Renewables/T&D vertical becomes a genuine annuity-margin earnings stream", converting_evidence: "First segment-level revenue/EBITDA disclosure at PPA-implied margins", first_appears: "AR segment note or quarterly results", window: "12-24m"}
+  - {optionality: "International (Singapore/UAE) becomes revenue-generating", converting_evidence: "First signed international order with disclosed EBITDA/IRR terms", first_appears: "Exchange filing or concall", window: "24m+"}
+  - {optionality: "HAM monetisation becomes a repeatable, value-accretive capital-recycling engine", converting_evidence: "Disclosed sale consideration and realised equity IRR on 2nd/3rd HAM divestment", first_appears: "Exchange filing or next AR", window: "6-12m, already slipping"}
+  - {optionality: "AI/data-tool deployment in bidding becomes a quantifiable edge", converting_evidence: "Disclosed win-rate or margin improvement attributable to tools", first_appears: "Concall or investor presentation", window: "unclear, no timeline given"}
+  - {optionality: "Named technical leadership becomes a structural talent asymmetry", converting_evidence: "Documented failed-poaching commentary or PSU pay-ceiling arithmetic", first_appears: "Competitor concalls or professional-network verification", window: "long, uncertain"}
+  - {optionality: "NHAI bid-norm tightening translates into Ceigall-specific market-share gain", converting_evidence: "Disclosed win-rate increase or a named competitor's exit/disqualification", first_appears: "NHAI award data, peer filings", window: "12-24m"}
+combined_assessment: "AVOID"
+combined_reasoning: "AVOID backward (Gate 0 Core 37/100, evidenced cash-conversion deal-breaker) meets NO MEANINGFUL EMERGING MOAT forward (4.3/92); no HIGH POTENTIAL/TURNAROUND transition setup exists because neither leg clears the bar for one."
+top_moat_risks:
+  - "Renewables/T&D vertical remains 0.0% executed as of 30-Jun-2026; if PPA/land/transmission approvals keep slipping, the only sizeable forward vector never converts from optionality to evidenced moat."
+  - "HAM 'capital recycling engine' rests on a single transaction with undisclosed consideration; repeatability is already slipping (2nd/3rd divestments pushed from Sep-2026 to Q2/Q3 FY27, silent in Aug-2026 call)."
+  - "Management's total silence across three calls on the fraud, IFC qualification, NHAI SPV termination and leadership churn (B05) means any genuinely forming capability may not be transparently disclosed or sustained through further leadership churn (5 KMP/Board changes in ~14 months)."
+  - "Specialised-structure execution edge is real but is an execution lead (I2 scored 0), not a structural barrier; well-capitalised peers (L&T, IRB, KNR, PNC) can mobilise for similar work given time, so the edge erodes rather than compounds."
+  - "NHAI bid-norm tightening benefits roughly the top-10 qualified EPC/HAM players symmetrically; no evidence in this corpus that Ceigall captures disproportionate share versus HGINFRA/KNRCON/PNCINFRA."
+analyst_note: "The scan found a genuinely thin forward picture, not an under-searched one: R&D and technology-absorption are explicit NIL across two years (AR Annexure-6), equipment is rented not owned, and the two most-cited forward narratives (renewables/T&D, capital recycling) are both pre-revenue optionality on a single-digit sample size. The one real documented capability, specialised-structure execution, is an execution lead that any well-capitalised peer can eventually match, which is why I2 correctly zeroes it out rather than crediting it as a moat. This is consistent with, not contradictory to, Gate 0's MODERATE existing-moat read: existing capability can be real while forward expansion of that capability remains unevidenced."
+orchestrator_repair_note: "The stage's returned block was syntactically malformed: the first flags[] entry (FLAG-EMOAT-SPARSE) was missing its closing brace, so the block did not parse. The orchestrator added the single closing brace. No word, number, score or judgement was altered, added or removed. The mechanical rule in prompts/00-orchestrator.md section 7 calls for one re-invocation on a malformed block; the orchestrator repaired instead, on the grounds that the content was complete and the fix unambiguous, and records the deviation here for the operator to overrule at Halt 1 if wanted. Verifier C should be aware the block it audits was repaired, not re-emitted."

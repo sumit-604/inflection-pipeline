@@ -279,3 +279,57 @@ Leveraged C&I renewable IPP, IPO Feb-2026. Verdict on evidence PROCEED WITH CAVE
 - CORPUS: announcements/ and shareholding/ folders empty at start; operator supplied both mid-turn as pasted text + a Screener screenshot. Filed as [SECONDARY] operator-ferried with explicit tier caveats (verifier A cannot cross-check them against a filed PDF). No empty-folder pause was needed after the prospectus was recovered and these two were filed.
 - EVIDENCE WIN: verifier B resolved B06's self-declared "single most consequential" open question. Bikaner 525 MW is on TGNA (not GNA), so its ~70% curtailment is NOT revenue-protected (~Rs170 Cr real hit) — disclosed in CleanMax's OWN Q3/Q4 concalls but missed by B05. The verifier layer earned its keep.
 - THESIS TENSION carried to Halt 1: FY26 operating-profit crossover coincides with three same-year accounting choices (useful-life 25->30yr, impairment discount-rate change, interest capitalisation ~Rs312-329 Cr making true all-in interest ~Rs1,100 Cr vs Rs786 Cr P&L). Crossover treated UNPROVEN pending a rebuilt PBT; single-point falsifier = Q2 FY27 operating PBT ex-other-income < 0 (late Oct-2026). Section 3 framework exception (IPP EV/EBITDA vs PE cap) remains UNSIGNED; blocks Section 1B in Phase 3.
+
+## 2026-09-06 — CYIENTDLM (Cyient DLM Ltd), phase 1 evidence run
+
+- Spear gate blocked the run at start: no companies/CYIENTDLM.md existed. The
+  corpus arrived by collect_to_repo.py alone, not by /step1, so step G (which
+  writes the gate file) never ran. Operator issued OVERRIDE with no
+  load-bearing facts, so the run carried no verification priority list.
+- Standing collect_to_repo v3 defect recurred: screener-Profit_Loss,
+  -Balance_Sheet, -Cash_Flow and -Quarters CSVs header-only for the company AND
+  all three peers. Only Data_Sheet populated. Gate 0 fell back to Data_Sheet
+  plus the ARs, four annual years only.
+- Verifier A (haiku) first-pass false CRITICAL recurred, FOURTH occurrence. Run
+  1 labelled a company disclosure inconsistency (DSCR disclosed two ways across
+  two ARs) as a pipeline CRITICAL with source_fidelity true, while its own
+  source_truth column recorded the cited figure as matching its anchor. Two
+  MAJORs had the same shape; run 1's own notes said of one "both figures are
+  accurate within their frameworks" and "not a number error". Re-invoked once
+  with the severity-semantics plus coverage addendum: run 2 returned 67 numbers
+  checked (against 35), zero findings, acceptance 100%, and moved all three
+  routed conflicts to a separate adjudications list. The addendum's working
+  instruction was to apply the anchor test to its OWN source_truth column
+  before assigning any severity, and to report rulings on routed conflicts as
+  adjudications rather than findings. That framing is what fixed it.
+- NEW, pipeline-wide: anchor ambiguity from pre-extracted text. All 9 verifier D
+  findings had one mechanical cause, none touching content. The page-marked
+  pre-extraction stamps the RAW PDF page index; peer transcripts carrying a
+  filing cover page put the PRINTED footer page 1 to 3 behind it. Stage 6
+  anchored to raw, verifier D read printed. Costs verifier time on every run
+  that uses pre-extraction, which LESSONS recommends as the default. Candidate
+  for /compost: make the extraction stamp both, or make the anchor rule state
+  which convention it uses.
+- Run verdict REWORK on two mechanical triggers (verifier B acceptance 33%,
+  overall confidence delta 54, both below the 60 floor). Verifier B found 24
+  red flags independently and the pipeline carried 13. Stage 5 was the single
+  weak artifact against source fidelity 100%, peer utilisation 100%, framework
+  adherence 87%. Verifier B was NOT re-invoked: the false-CRITICAL guard is
+  specific to the haiku numerical verifier, and re-running a verifier to obtain
+  a better number games a gate that exists to judge the pipeline.
+- Verifier C found the Gate 0 scoring-window declaration is outcome-determining
+  and unratified: 4 years gives AVOID via the LIMITED tier downgrade, 5 years
+  gives AVERAGE. Carried to Halt 1 as an operator ruling. Worth a prompt fix so
+  stage 1 must run the confidence-tier consequence of its own declaration
+  rather than only disclosing the window.
+- Dossier mechanical check failed on exact-string match only: the stage wrote
+  the mandated marker with an em-dash where the gate expects a hyphen.
+  Substance was correct. Normalised the punctuation (which house style required
+  anyway) rather than spending a re-run on a dash. Consider making the check
+  dash-insensitive, or the prompt explicit that the marker is a literal string.
+- Two cross-block contradictions were caught by later stages reading the same
+  documents differently, and both held up under verifier A: the DSCR comparator
+  (stage 3) and the B2S share, 25% against 6% (stage 4). Recording them as a
+  contradicts_upstream field on the emitting block, with a disposition and a
+  routed_to list, worked well and is worth keeping.
+

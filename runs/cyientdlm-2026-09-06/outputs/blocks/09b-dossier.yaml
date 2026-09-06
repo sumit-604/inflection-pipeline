@@ -1,0 +1,52 @@
+stage: B09b-dossier
+company: "CYIENTDLM"
+run_date: "2026-09-06"
+model: claude-sonnet-5
+status: complete
+corpus_verdict: "CORPUS GAPPED"
+corpus_gaps:
+  - {document: "IPO Prospectus (DRHP/RHP)", expected_source: "SEBI-hosted RHP page / BSE-NSE IPO filings", kind: "findable-missing", priority: "HIGH"}
+  - {document: "Results filings (quarterly and annual)", expected_source: "BSE", kind: "findable-missing"}
+  - {document: "Rating rationale", expected_source: "rating agency site", kind: "findable-missing"}
+  - {document: "Announcements (Reg 30)", expected_source: "BSE", kind: "findable-missing"}
+  - {document: "Shareholding pattern filing (quarterly)", expected_source: "BSE", kind: "findable-missing"}
+  - {document: "Research / broker notes", expected_source: "company IR page", kind: "findable-missing"}
+archetypes:
+  - {line: "Cyient DLM (single reportable operating segment, electronic manufacturing solutions)", archetype: "Outsourcing partner (CDMO/EMS/IT services)"}
+transition:
+  - line: "Engagement-model mix within the single segment (Build-to-Print against Build-to-Spec)"
+    from_tier: "R2 COST-ADVANTAGED CONVERTER (certification-barrier cost position; FY26 ROCE of 11.4% sits BELOW the R2 durable mid-teens band, a fit gap the operator must settle)"
+    to_tier: "R3 VALUE-ADDED / SPEC'D SUPPLIER (Build-to-Spec design ownership, BOM influence, 9 to 20 year programmes)"
+    engine: "B2S share scaling off its 6% FY26 base toward the FY27 double-digit target; new certifications (IATF16949, NADCAP re-scope) converting into spec-in wins beyond the single automotive pilot"
+    proof_gate: "B2S share, tracked via the standalone services-transferred-over-time proxy (Note 20, 10.3% in FY26), crossing double digits for two consecutive quarters, with reported EBITDA margin showing at least 100bps of the promised 250-300bps uplift over the same two quarters"
+    recognition_gap: "OPEN QUESTION. Does the market already price a B2S transition premium, given a 34.8% one-year share price decline alongside a record order book and improving EBITDA margin? Unresolved in phase 1; resolved at stage 11 via the PE gap."
+    ugliness: "STRUCTURAL-FEATURE"
+    transition_falsifier: "B2S share stays near 6%, or the 25%/6% gap resolves toward the artifact reading, with no named customer conversion and no EBITDA margin uplift through FY28, while NWC stays above 145 days"
+dominant_variables:
+  - "Build-to-Spec revenue share against the double-digit FY27 target, tracked via the standalone services-transferred-over-time proxy, not the disputed 25% BRSR figure"
+  - "Consolidated net working capital days and quarterly operating cash flow, against the company's own 100-120 day target"
+  - "Standalone (India parent) revenue and PAT, reported separately from consolidated"
+  - "Altek Electronics Inc standalone profitability and earn-out remeasurement direction"
+business_falsifier: "Standalone India-parent revenue and PAT keep declining beyond FY27, DSCR stays sub-1.0x for a second consecutive year, and a top-5 customer is lost or a qualified programme is not renewed. Together those would evidence that the certification-locked B2P core is itself structurally shrinking, not merely absorbing the completion of one large FY25 defence order."
+mental_model_status: "DRAFT - PENDING OPERATOR SIGN-OFF"
+fragility:
+  variable_count: 6
+  verifiability_ratio: "4 of 6 externally observable"
+  single_point_failure: "Net working capital and cash conversion. The run's peer cross-check removes the growth-induced defence, so continued deterioration breaks the re-rating case even if every other variable goes right."
+  fragility_verdict: "FRAGILE"
+candidate_count: 7
+research_brief_items: 10
+plain_summary_points: 15
+annex:
+  present: true
+  questions_answered: 10
+  corpus_commit_hash: "325c97abbbbbf9d13da4b97ac332767b5c2b2edf"
+mechanical_checks:
+  six_section_headers_in_order: PASS
+  exactly_one_corpus_verdict_line: PASS
+  draft_marker_present_section_2: PASS
+  annex_ten_questions_in_order: PASS
+  annex_ends_with_commit_hash: PASS
+  no_signed_marker: PASS
+  no_valuation_content: PASS
+orchestrator_note: "The draft-marker check initially failed on exact-string match only. The stage had written 'DRAFT (em-dash) PENDING OPERATOR SIGN-OFF' where the gate expects a hyphen. The substance was present and correct. The orchestrator normalised the punctuation, which the anti-ai-writing-style authority required in any case (no em-dashes as punctuation, headings included), rather than spending a re-run of the stage on a dash. Five lines were corrected: the marker line and four headings. No content was altered. All seven checks then passed."

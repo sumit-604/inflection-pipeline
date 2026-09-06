@@ -410,7 +410,8 @@ html, body {
     <div class="start-box">
       <div class="hardhat">⛑️</div>
       <h1>Engineer's Village</h1>
-      <p class="subtitle">You are the new Junior Engineer. The village needs your help.</p>
+      <p class="subtitle">You are the new Junior Engineer of Setugram village. The village needs your help.</p>
+      <p class="tiny-note" style="margin:-10px 0 16px">Setugram sits by the river, below Temple Hill. Beyond the southern hills lies the city of Suryanagar. To the north, the Himalaya.</p>
       <p class="pick-label">Who is playing today?</p>
       <div class="profile-buttons">
         <button class="profile-btn" data-profile="class3">
@@ -2725,12 +2726,12 @@ class World {
     this.mapItems.roads.push([[-200, 150], [200, 150]]);
 
     // Signposts at the junctions.
-    this._addSign(4, 34, ["↑ Village  ↓ Town", "→ Farms   ← Lake"]);
-    this._addSign(4, -34, ["↑ Temple Hill", "→ Farms   ↓ Village"]);
-    this._addSign(4, 64, ["↑ Village", "↓ Station, Nava Delhi"]);
+    this._addSign(4, 34, ["↑ Setugram  ↓ Town", "→ Farms   ← Lake"]);
+    this._addSign(4, -34, ["↑ Temple Hill", "→ Farms   ↓ Setugram"]);
+    this._addSign(4, 64, ["↑ Setugram", "↓ Station, Suryanagar"]);
     this._addSign(60, 33, ["→ Farms", "← Village"]);
     this._addSign(-66, 33, ["← Lake", "→ Village"]);
-    this._addSign(6, -84, ["↑ Temple", "↓ Village"]);
+    this._addSign(6, -84, ["↑ Temple", "↓ Setugram"]);
   }
 
   _addSign(x, z, lines) {
@@ -2922,7 +2923,7 @@ class World {
   }
 
   // ==========================================================
-  // NAVA DELHI: the city beyond the hills
+  // SURYANAGAR: the city beyond the hills
   // ==========================================================
   _buildCity() {
     const C = CITY;
@@ -2950,7 +2951,7 @@ class World {
     for (const x of [...avenuesX, 0]) for (const side of [-1, 1]) { const p = new THREE.Mesh(new THREE.BoxGeometry(2.4, 0.25, C.z2 - C.z1), pathMat); p.position.set(x + side * 5.2, 0.12, (C.z1 + C.z2) / 2); this.scene.add(p); }
 
     // ---------- Welcome sign at the pass and big billboards ----------
-    this._addSign(6, 168, ["↓ " + C.name + " 2 km", "↑ Village, Town"]);
+    this._addSign(6, 168, ["↓ " + C.name + " 2 km", "↑ Setugram, Town"]);
     this._addBillboard(-14, 184, C.name + " welcomes you", 0x1d3557);
     this._addBillboard(60, 184, "Sector 18 Market →", 0xc1121f);
     this._addBillboard(-60, 276, "Metro: Blue Line", 0x1e6091);
@@ -3010,7 +3011,7 @@ class World {
     const pitch = new THREE.Mesh(new THREE.CylinderGeometry(14, 14, 0.2, 24), mat(0x6fae54)); pitch.position.set(-100, 0.1, 250); this.scene.add(pitch);
     for (let i = 0; i < 4; i++) { const a = i * Math.PI / 2 + Math.PI / 4; const p = new THREE.Mesh(new THREE.BoxGeometry(0.4, 14, 0.4), mat(0x9aa6ad)); p.position.set(-100 + Math.cos(a) * 17.5, 7, 250 + Math.sin(a) * 17.5); this.scene.add(p); const lamp = new THREE.Mesh(new THREE.BoxGeometry(2.4, 1.2, 0.4), new THREE.MeshStandardMaterial({ color: 0xffffff, emissive: 0xfff6c0, emissiveIntensity: 0.8 })); lamp.position.set(-100 + Math.cos(a) * 17.5, 14.5, 250 + Math.sin(a) * 17.5); lamp.lookAt(-100, 14.5, 250); this.scene.add(lamp); }
     this.addCircle(-100, 250, 17.5);
-    const stSign = makeTextSprite("Nava Delhi Stadium", { size: 46, scale: 1.4 }); stSign.position.set(-100, 8.5, 268.5); this.scene.add(stSign);
+    const stSign = makeTextSprite("Suryanagar Stadium", { size: 46, scale: 1.4 }); stSign.position.set(-100, 8.5, 268.5); this.scene.add(stSign);
     this.mapItems.buildings.push([-100, 250]);
 
     // ---------- Bus depot ----------
@@ -3033,7 +3034,7 @@ class World {
     const cross = makeTextSprite("+", { size: 90, color: "#ffffff", bg: "#c1121f", scale: 0.7 }); cross.position.set(-136, 13.6, 205); this.scene.add(cross);
     const ambulance = makeCar(0xffffff); ambulance.position.set(-124, 0, 214); ambulance.rotation.y = Math.PI / 2; this.scene.add(ambulance); this.addBox(-124, 214, 4, 1.8);
     const amb = makeTextSprite("AMBULANCE", { size: 44, color: "#c1121f", bg: "rgba(255,255,255,0.95)", scale: 0.6 }); amb.position.set(-124, 2.4, 214); this.scene.add(amb);
-    this._place(makeBuilding({ w: 24, d: 10, h: 3.6, floors: 2, roof: "gable", wall: 0xfff1d6, roofColor: 0xc0532f, sign: "Nava Delhi Public School" }), -60, 285, Math.PI, "School");
+    this._place(makeBuilding({ w: 24, d: 10, h: 3.6, floors: 2, roof: "gable", wall: 0xfff1d6, roofColor: 0xc0532f, sign: "Suryanagar Public School" }), -60, 285, Math.PI, "School");
     this._buildPlayground(-92, 282);
     this._place(makeTower({ w: 14, d: 14, floors: 18, tint: 0xffe0a3, sign: "Grand Hotel" }), 140, 215, -Math.PI / 2, "Grand Hotel");
     this._place(makeBuilding({ w: 14, d: 10, h: 3.6, roof: "flat", wall: 0xdfe6ea, roofColor: 0x1d3557, sign: "Police Station" }), -136, 245, Math.PI / 2, "Police Station");
@@ -3185,7 +3186,7 @@ class World {
     const H = HIMALAYA;
     // The road from the temple down the north slope into the valley.
     this._addRoad([[0, -118], [-16, -140], [-12, -170], [0, -192], [0, -240], [0, -266]], 3.5, 0xcfc7b8);
-    this._addSign(5, -196, ["↑ Himalaya Valley", "↓ Temple, Village"]);
+    this._addSign(5, -196, ["↑ Himalaya Valley", "↓ Temple, Setugram"]);
     this._addSign(5, -262, ["↑ Kailash Darshan (steps)", "← Mansarovar Lake"]);
 
     // Mansarovar: a deep blue sacred lake.
@@ -5481,7 +5482,7 @@ const CATEGORY_NAMES = {
   science: "Science in the village",
   logic: "Logic, patterns and data",
   city: "City life",
-  city_hard: "Nava Delhi challenges",
+  city_hard: "Suryanagar challenges",
   himalaya: "Himalaya wisdom",
 };
 
@@ -5620,13 +5621,13 @@ const SITUATIONS = [
   S("cty10", "city", "Park laps", (r, big) => { const lap = r.pick(big ? [450, 600, 750] : [200, 300]), n = r.int(2, big ? 8 : 5); return { story: `One lap of Central Park is ${lap} m. Neha jogs ${n} laps every morning.`, q: `How far does she jog?`, answer: lap * n, unit: "m", hint: "Lap length × laps.", example: "3 laps of 300 m is 900 m." }; }),
   S("cty11", "city", "Delivery route", (r, big) => { const n = r.int(4, big ? 10 : 6), d = r.pick(big ? [1.5, 2.5] : [2, 3]); return { story: `Sunny has ${n} deliveries, each ${d} km from the last, starting at the shop.`, q: `How far does he ride to finish them all?`, answer: n * d, unit: "km", hint: "Deliveries × distance each.", example: "5 deliveries 2 km apart is 10 km." }; }),
   S("cty12", "city", "Electricity bill", (r, big) => { const units = r.int(big ? 120 : 30, big ? 400 : 90), rate = r.pick(big ? [6, 8] : [5]); return { story: `Neha's flat used ${units} units of electricity this month, at ₹${rate} a unit.`, q: `What is the bill?`, answer: units * rate, unit: "₹", hint: "Units × price per unit.", example: "50 units at ₹5 is ₹250." }; }),
-  // ---------------- NAVA DELHI CHALLENGES (18, harder, many with several steps) ----------------
+  // ---------------- SURYANAGAR CHALLENGES (18, harder, many with several steps) ----------------
   S("hrd01", "city_hard", "Metro pass", (r, big) => { const f = r.pick(big ? [15, 20] : [10]), d = r.pick(big ? [22, 24, 26] : [20]), pass = f * 2 * d - r.pick(big ? [90, 120, 150] : [50, 100]); return { story: `Neha rides the metro to work and back every working day. Each ride costs ₹${f}. This month has ${d} working days. A monthly pass costs ₹${pass}.`, steps: [{ q: `How much does she pay per day for the two rides?`, answer: 2 * f, unit: "₹", hint: "Two rides a day." }, { q: `How much for all ${d} days without a pass?`, answer: 2 * f * d, unit: "₹", hint: `Daily cost × ${d}.` }, { q: `How much does the ₹${pass} pass save her?`, answer: 2 * f * d - pass, unit: "₹", hint: "Take the pass price away from the total without a pass." }] }; }),
   S("hrd02", "city_hard", "The tallest tower", (r, big) => { const n = r.int(big ? 15 : 8, big ? 30 : 15), h = r.pick(big ? [3.2, 3.5] : [3, 4]), v = r.pick([1, 2]); const H = n * h; return { story: `Skyline Heights has ${n} floors. Each floor is ${h} m tall. Its lift rises ${v} m every second.`, steps: [{ q: `How tall is the tower?`, answer: H, unit: "m", hint: "Floors × height of one floor." }, { q: `How many seconds does the lift take from the ground to the roof?`, answer: H / v, unit: "seconds", hint: `Height ÷ ${v}.` }] }; }),
   S("hrd03", "city_hard", "Percent off", (r, big) => { const p = r.int(big ? 12 : 4, big ? 60 : 20) * 50, pct = big ? r.pick([20, 25, 30, 40]) : r.pick([10, 50]); return { story: `A bicycle at City Mall costs ₹${p}. Today it is ${pct}% off.`, steps: [{ q: `How many rupees is the discount?`, answer: (p * pct) / 100, unit: "₹", hint: `${pct}% means ${pct} out of every 100. Find 1% (÷100), then × ${pct}.`, example: "20% of ₹500: 1% is ₹5, so 20% is ₹100." }, { q: `What is the new price?`, answer: p - (p * pct) / 100, unit: "₹", hint: "Take the discount away from the price." }] }; }),
   S("hrd04", "city_hard", "Average speed", (r, big) => { const d1 = r.int(big ? 30 : 10, big ? 60 : 20), t1 = 1, d2 = r.int(big ? 40 : 10, big ? 90 : 30), t2 = 2; const D = d1 + d2, T = t1 + t2; const s = D / T; if (!Number.isInteger(s)) return SITUATION_BY_ID.hrd04.gen(r, big); return { story: `The city bus covered ${d1} km in the first hour, then ${d2} km in the next two hours.`, steps: [{ q: `How far did it travel altogether?`, answer: D, unit: "km", hint: "Add the two distances." }, { q: `How long did the whole trip take?`, answer: T, unit: "hours", hint: "1 hour + 2 hours." }, { q: `What was its average speed?`, answer: s, unit: "km per hour", hint: "Total distance ÷ total time." }] }; }),
   S("hrd05", "city_hard", "Electricity bill", (r, big) => { const units = r.int(big ? 150 : 40, big ? 420 : 120), rate = r.pick(big ? [6, 7, 8] : [5]), fixed = r.pick([50, 100]); return { story: `Ira's flat used ${units} units this month. Each unit costs ₹${rate}, and there is a fixed charge of ₹${fixed} on every bill.`, steps: [{ q: `What do the units cost?`, answer: units * rate, unit: "₹", hint: "Units × rate." }, { q: `What is the total bill with the fixed charge?`, answer: units * rate + fixed, unit: "₹", hint: `Add the ₹${fixed} fixed charge.` }] }; }),
-  S("hrd06", "city_hard", "Growing city", (r, big) => { if (big) { const P = r.int(2, 9) * 10000; return { story: `Nava Delhi had ${P} people twenty years ago. The population doubled every ten years.`, steps: [{ q: `How many people were there ten years ago?`, answer: P * 2, unit: "people", hint: "Double it once." }, { q: `How many people are there now?`, answer: P * 4, unit: "people", hint: "Double it again." }] }; } const P = r.int(2, 9) * 1000, g = r.int(1, 5) * 100, y = r.int(2, 6); return { story: `Nava Delhi had ${P} people. Every year ${g} more people moved in, for ${y} years.`, steps: [{ q: `How many people moved in altogether?`, answer: g * y, unit: "people", hint: `${g} × ${y}.` }, { q: `How many people live there now?`, answer: P + g * y, unit: "people", hint: "Add them to the old population." }] }; }),
+  S("hrd06", "city_hard", "Growing city", (r, big) => { if (big) { const P = r.int(2, 9) * 10000; return { story: `Suryanagar had ${P} people twenty years ago. The population doubled every ten years.`, steps: [{ q: `How many people were there ten years ago?`, answer: P * 2, unit: "people", hint: "Double it once." }, { q: `How many people are there now?`, answer: P * 4, unit: "people", hint: "Double it again." }] }; } const P = r.int(2, 9) * 1000, g = r.int(1, 5) * 100, y = r.int(2, 6); return { story: `Suryanagar had ${P} people. Every year ${g} more people moved in, for ${y} years.`, steps: [{ q: `How many people moved in altogether?`, answer: g * y, unit: "people", hint: `${g} × ${y}.` }, { q: `How many people live there now?`, answer: P + g * y, unit: "people", hint: "Add them to the old population." }] }; }),
   S("hrd07", "city_hard", "Cinema night", (r, big) => { const rows = r.int(8, big ? 20 : 12), seats = r.int(10, big ? 24 : 12), total = rows * seats, sold = total - r.int(5, Math.floor(total / 4)), price = r.pick(big ? [120, 150, 180] : [50, 100]); return { story: `The mall cinema has ${rows} rows of ${seats} seats. Tonight ${sold} tickets were sold at ₹${price} each.`, steps: [{ q: `How many seats are there?`, answer: total, unit: "seats", hint: "Rows × seats per row." }, { q: `How many seats stayed empty?`, answer: total - sold, unit: "seats", hint: "Seats minus tickets sold." }, { q: `How much money did the cinema take?`, answer: sold * price, unit: "₹", hint: "Tickets × price." }] }; }),
   S("hrd08", "city_hard", "Parking meter", (r, big) => { const inM = r.pick([0, 20, 40]), hrs = r.int(1, 3), outM = r.pick([10, 30, 50]); const mins = hrs * 60 + (outM - inM); const rate = r.pick(big ? [30, 40] : [20]); const billedHours = Math.ceil(mins / 60); return { story: `Bablu parked at 9:${String(inM).padStart(2, "0")} and left at ${9 + hrs}:${String(outM).padStart(2, "0")}. Parking costs ₹${rate} per hour, and any part of an hour counts as a full hour.`, steps: [{ q: `How many minutes was the auto parked?`, answer: mins, unit: "minutes", hint: `${hrs} full hours plus the extra minutes.` }, { q: `How many hours will he be charged for?`, answer: billedHours, unit: "hours", hint: "Round UP to the next whole hour." }, { q: `What does he pay?`, answer: billedHours * rate, unit: "₹", hint: `Hours × ₹${rate}.` }] }; }),
   S("hrd09", "city_hard", "Metro timetable", (r, big) => { const m = r.pick(big ? [4, 6, 8] : [10, 15, 20]), hours = r.int(1, big ? 3 : 2); return { story: `Blue Line trains leave the station every ${m} minutes, starting at 6:00.`, steps: [{ q: `How many minutes are there from 6:00 to ${6 + hours}:00?`, answer: hours * 60, unit: "minutes", hint: "Hours × 60." }, { q: `How many trains leave from 6:00 up to and including ${6 + hours}:00?`, answer: (hours * 60) / m + 1, unit: "trains", hint: `${hours * 60} ÷ ${m} gaps, plus the very first train at 6:00.`, example: "Every 30 minutes for 1 hour: 6:00, 6:30, 7:00 is 3 trains, not 2." }] }; }),
@@ -5636,7 +5637,7 @@ const SITUATIONS = [
   S("hrd13", "city_hard", "Lift limit", (r, big) => { const L = r.pick(big ? [630, 800, 1000] : [400, 500]), w = r.pick(big ? [70, 80] : [50]); return { story: `The lift in Tech Park is marked "Maximum ${L} kg". The office workers weigh about ${w} kg each.`, q: `How many people can ride at once?`, answer: Math.floor(L / w), unit: "people", hint: `${L} ÷ ${w}, then round DOWN. A part of a person cannot ride.`, example: "500 kg ÷ 60 kg is 8.3, so 8 people, never 9." }; }),
   S("hrd14", "city_hard", "LED lights", (r, big) => { const old = r.pick([60, 100]), led = r.pick([9, 12]), h = r.int(4, 6), days = 30; if (!big) return { story: `Neha swapped a ${old} watt bulb for a ${led} watt LED. It runs ${h} hours a day.`, steps: [{ q: `How many watts does the LED save every hour?`, answer: old - led, unit: "watts", hint: "Old minus new." }, { q: `How many watt-hours does it save in a day?`, answer: (old - led) * h, unit: "watt-hours", hint: `Watts saved × ${h} hours.` }] }; const wh = (old - led) * h * days; return { story: `Neha swapped a ${old} watt bulb for a ${led} watt LED. It runs ${h} hours a day, 30 days a month. 1000 watt-hours is one unit of electricity.`, steps: [{ q: `How many watts does the LED save each hour?`, answer: old - led, unit: "watts", hint: "Old minus new." }, { q: `How many watt-hours does it save in the month?`, answer: wh, unit: "watt-hours", hint: `Watts saved × ${h} × 30.` }, { q: `How many units is that? (Type a decimal.)`, answer: wh / 1000, unit: "units", hint: "Divide by 1000." }] }; }),
   S("hrd15", "city_hard", "Pizza party", (r, big) => { const pizzas = r.int(2, 4), kids = r.pick(big ? [5, 6, 7] : [4, 8]); const slices = pizzas * 8; return { story: `At the food court ${pizzas} pizzas, each cut into 8 slices, are shared equally by ${kids} children.`, steps: [{ q: `How many slices are there?`, answer: slices, unit: "slices", hint: "Pizzas × 8." }, { q: `How many whole slices does each child get?`, answer: Math.floor(slices / kids), unit: "slices", hint: `${slices} ÷ ${kids}, whole slices only.` }, { q: `How many slices are left over?`, answer: slices % kids, unit: "slices", hint: "The remainder." }] }; }),
-  S("hrd16", "city_hard", "Hot day", (r, big) => { const m = r.int(14, 22), rise = r.int(9, 16), drop = r.int(5, rise - 2); return { story: `At 6 in the morning Nava Delhi was ${m}°C. By 3 in the afternoon it had risen ${rise} degrees. By night it dropped ${drop} degrees.`, steps: [{ q: `What was the afternoon temperature?`, answer: m + rise, unit: "°C", hint: "Add the rise." }, { q: `What was the night temperature?`, answer: m + rise - drop, unit: "°C", hint: "Take the drop away from the afternoon figure." }] }; }),
+  S("hrd16", "city_hard", "Hot day", (r, big) => { const m = r.int(14, 22), rise = r.int(9, 16), drop = r.int(5, rise - 2); return { story: `At 6 in the morning Suryanagar was ${m}°C. By 3 in the afternoon it had risen ${rise} degrees. By night it dropped ${drop} degrees.`, steps: [{ q: `What was the afternoon temperature?`, answer: m + rise, unit: "°C", hint: "Add the rise." }, { q: `What was the night temperature?`, answer: m + rise - drop, unit: "°C", hint: "Take the drop away from the afternoon figure." }] }; }),
   S("hrd17", "city_hard", "Metro map scale", (r, big) => { const k = r.pick(big ? [2.5, 4] : [2, 5]), cm = r.int(3, big ? 12 : 8); return { story: `On the metro map, 1 cm stands for ${k} km. The Blue Line measures ${cm} cm on the map.`, q: `How long is the Blue Line really?`, answer: cm * k, unit: "km", hint: `Map centimetres × ${k}.` }; }),
   S("hrd18", "city_hard", "Two towers", (r, big) => { const A = r.int(big ? 40 : 20, big ? 90 : 50) * (big ? 1 : 2), f = big ? r.pick([1.5, 2.5]) : 2; return { story: `Bank Tower is ${A} m tall. The new Grand Hotel will be ${f} times as tall.`, steps: [{ q: `How tall will the Grand Hotel be?`, answer: A * f, unit: "m", hint: `${A} × ${f}.` }, { q: `How much taller than Bank Tower is that?`, answer: A * f - A, unit: "m", hint: "Take Bank Tower's height away." }] }; }),
   // ---------------- HIMALAYA (12) ----------------
@@ -6188,7 +6189,7 @@ class Npc {
 
 // ===== src/engine/city.js =====
 /* ============================================================
-   city.js — NAVA DELHI, the big city beyond the hills.
+   city.js — SURYANAGAR, the big city beyond the hills.
 
    South of the town a ridge of hills rises; the main road cuts
    through a pass and comes out in a grid of wide avenues, glass
@@ -6197,16 +6198,16 @@ class Npc {
    lights change; the metro glides along its track.
    ============================================================ */
 
-const CITY = { x1: -150, z1: 178, x2: 150, z2: 292, name: "Nava Delhi" };
+const CITY = { x1: -150, z1: 178, x2: 150, z2: 292, name: "Suryanagar" };
 
 // Auto rickshaw stands: talk to the driver to ride to another district.
 const AUTO_STANDS = [
-  { name: "Village Square", hint: "the bridge, the jobs, the school", x: 5, z: 21 },
+  { name: "Setugram Square", hint: "the bridge, the jobs, the school", x: 5, z: 21 },
   { name: "Town Station", hint: "shops, the railway, the playground", x: 8, z: 78 },
   { name: "The Farms", hint: "fields, barns, cows and goats", x: 105, z: 44 },
   { name: "Lake Shore", hint: "boats, huts and the fish market", x: -58, z: 30 },
   { name: "Temple Hill", hint: "the temple and the great banyan", x: 7, z: -96 },
-  { name: "Nava Delhi", hint: "the city: towers, metro and mall", x: 8, z: 193 },
+  { name: "Suryanagar", hint: "the city: towers, metro and mall", x: 8, z: 193 },
   { name: "Himalaya Valley", hint: "meditation centre, dhams, Kailash view", x: 10, z: -204 },
 ];
 
@@ -6843,7 +6844,7 @@ class Minimap {
     // District names.
     g.font = "bold 9px system-ui, sans-serif"; g.textAlign = "center"; g.fillStyle = "#2c2417";
     g.strokeStyle = "rgba(255,253,246,0.9)"; g.lineWidth = 2.5;
-    for (const [name, x, z] of [["Village", 0, 36], ["Town", 0, 112], ["Farms", 105, -2], ["Lake", -108, 46], ["Temple", 0, -134], ["NAVA DELHI", 0, 262], ["Himalaya", 0, -276], ["Kailash", 0, -320]]) {
+    for (const [name, x, z] of [["Setugram", 0, 36], ["Town", 0, 112], ["Farms", 105, -2], ["Lake", -108, 46], ["Temple", 0, -134], ["SURYANAGAR", 0, 262], ["Himalaya", 0, -276], ["Kailash", 0, -320]]) {
       g.strokeText(name, this.px(x), this.pz(z)); g.fillText(name, this.px(x), this.pz(z));
     }
     this.static = off;
@@ -7022,7 +7023,7 @@ class Game {
     for (let i = 0; i < 8; i++) add(swimmer(makeDuck(), { cx: LAKE.cx + (i % 2 ? 8 : -8), cz: LAKE.cz + (i % 3) * 4 - 4, r: 4 + i * 1.5, y: 0.02 }));
     // Butterflies over flower patches all across the land.
     for (const [x, z] of [[-8, 18], [10, 10], [-16, -12], [14, -20], [5, -6], [-20, 92], [26, 116], [90, 40], [76, -36], [-76, 60], [8, -112], [-60, 26]]) add(flutterer(makeButterfly(), x, z));
-    // City: pigeons in the park, stray dogs, and cows that sit on the road like in Delhi.
+    // City: pigeons in the park, stray dogs, and cows that sit on the road, as in any Indian city.
     for (let i = 0; i < 8; i++) add(pecker(makePigeon(), (i < 4 ? -21 : 21), 210, 10));
     for (let i = 0; i < 3; i++) add(grazer(makeDog(), -40 + i * 40, 262, 10, 2.0));
     for (let i = 0; i < 2; i++) add(grazer(makeCow(), 4, 250 + i * 12, 6, 0.4));

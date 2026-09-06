@@ -1,0 +1,82 @@
+stage: B03-ardeep
+company: "CYIENTDLM"
+run_date: "2026-09-06"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "prospectus ABSENT (priority HIGH) - no pre-IPO restated FY21-FY23 financials in corpus; FY21-FY23 figures cited in this stage are the company's own IR chart data (AR FY2024-25, p.68-69), not independently anchored audited statements"
+  - "results ABSENT"
+  - "rating ABSENT"
+  - "shareholding filing ABSENT - partly substituted via the AR corporate governance section (ownership table 31-Mar-2026, AR FY2025-26 p.100-101; over-1% holders p.101)"
+  - "announcements ABSENT"
+  - "research ABSENT"
+  - "screening PARTIAL (screener-Data_Sheet.csv only, FY2023-FY2026 plus ten quarters)"
+  - "segment-wise revenue-mix pie chart percentages (AR FY2025-26, p.53) not reliably extractable from the text layer; narrative-only figures used instead"
+flags:
+  - "FLAG-CASH: phase 3 CFO quality checks confirm structural deterioration. Cumulative FY23-26 CFO -Rs25.07cr against PAT +Rs234.29cr; the FY26 positive CFO print is a receivable and payable timing artefact, not a structural improvement."
+  - "FLAG-PROMOTER-PRELIM: no pledge, no selling, holding stable at 52.12%. But the promoter's two senior executives (Bodanapu, Mohan Reddy) sit on the Board and on the Audit Committee that oversees a new, unbenchmarked Rs537.56mn related-party flow to that same promoter. The full B08 promoter verdict (TRUSTWORTHY) stands; this stage adds the RPT-oversight structural point for B08 and Role 1 to weigh."
+contradicts_upstream:
+  - claim: "DSCR fell from 1.67x (FY25) to 0.62x (FY26)"
+    asserted_in: ["B01-gate0", "B02-notes (red_flags, top_findings rank 7)"]
+    finding: "The 1.67x comparator is NOT RELIABLE. DSCR for the identical FY25 year is disclosed as 1.67x in AR FY2025-26 Note 35 and as 0.15x in AR FY2024-25 Note 35, using an identically worded formula. The two ARs are not comparable on this ratio."
+    disposition: "Do not carry the 1.67x-to-0.62x fall forward as evidence of a sudden covenant-coverage collapse. The underlying facts it stood in for are independently sound and DO carry forward: negative CFO in two of the last three years, and sub-1.0x DSCR in FY26 on either report's own numbers."
+    routed_to: ["verifier-a-numerical", "stage-13-synthesis"]
+phase_verdicts:
+  p1: "Watch - clean unmodified opinions both years, no qualification, going-concern or fraud, but three consecutive years of the same three Key Audit Matters unresolved, a first-time-disclosed GST dispute not cross-referenced in contingent liabilities, and no independent local audit on the material US subsidiary driving all consolidated profit growth"
+  p2: "Red Flag - concurs with the stage 2 accounting quality score of 4 of 10; extends it with a new finding that DSCR (1.67x to 0.62x) is not comparable across the two ARs for the identical FY25 year, plus a cross-border parent corporate guarantee (Rs1,188.60mn) backing the US subsidiary Citibank loan"
+  p3: "Red Flag - primary financial statements independently confirm the Gate 0 cash-conversion deal-breaker with exact figures; other income exceeds 20% of PBT in both years; the apparent gross-margin expansion is mechanically an inventory-accounting artefact; the ROE decline is operating-driven, not a leverage optical effect"
+  p4: "Watch, tilting Red - the MD&A is unusually well sourced and largely internally consistent with the primary financials, but omits NWC, cash conversion and DSCR from its own named risk table despite disclosing the deterioration of both metrics elsewhere in the same report; two of three trackable prior-year guidance items (NWC improvement, ROCE improvement) were missed"
+  p5: "Watch - clean on pledge, selling, fraud, SEBI and auditor-fee grounds; set against a promoter-family board and Audit Committee overlap reviewing a new RPT flow to that promoter, one director at 50% attendance, full CEO, CFO and two independent director turnover within one year, and no independent audit on the material subsidiary"
+  p6: "Red Flag on narrative against reality specifically - the MD and CEO letter cites the worst NWC figure in the company's own four-year series as evidence of balance-sheet strength; the MD&A Shareholder Value Creation section claims meaningful value creation in the same paragraph that discloses a 34.8% YoY share price decline; the CEO and CFO transitions are not mentioned in either letter. Genuine tone-honesty (6D) and real SET-framework execution evidence are the offsetting positives."
+  p7_best_fit: "Turnaround - WATCHLIST (genuine deleveraging, margin improvement and order momentum, but the two metrics a turnaround must show improving, NWC days and cash conversion, are moving the wrong way, and the India core business is still shrinking on revenue and profit)"
+overall_quality: 4
+quality_components: {governance: 6, accounting: 4, balance_sheet: 4, earnings: 3}
+kill_switch_notes:
+  - "Phase 1: a reviewer would not stop on the clean audit opinion alone, but would want the Audit Committee's own record on the two-year-unresolved inventory and investment/goodwill Key Audit Matters"
+  - "Phase 2: a reviewer would pause on the combination of unlabelled non-recurring P&L items, the unbenchmarked new RPT flow to the parent, and the DSCR disclosure inconsistency"
+  - "Phase 3: a reviewer would stop and require a direct management explanation on cash conversion before any valuation work proceeds, given three of the last four fiscal years show CFO well below or negative against PAT"
+  - "Phase 4: a reviewer would want management to explain in writing why NWC and DSCR are not named risks given their own disclosed deterioration"
+  - "Phase 5: a reviewer would not stop on shareholding or pledge grounds (clean) but would want the Audit Committee's specific benchmarking review of the new parent subcontracting flow, given who sits on that committee"
+triple_pass_verification:
+  verified: 15
+  discrepancies: []
+missing_risks:
+  - {risk: "Cash conversion and working capital deterioration", evidence_anchor: "Board's Report NWC chart 48/79/127/145 days, AR FY2025-26 p.27; CFO negative FY24 and FY25, statement of cash flow AR FY2025-26 p.112 and p.145"}
+  - {risk: "Related-party dependency on the promoter", evidence_anchor: "Note 30, new Rs537.56mn subcontracting flow to Cyient Limited plus Rs1,188.60mn corporate guarantee, AR FY2025-26 p.132-133"}
+  - {risk: "Acquisition integration and earn-out underperformance (Altek)", evidence_anchor: "Note 15/21/33.1.4, earn-out liability marked down from Rs352.82mn to Rs179.89mn, AR FY2025-26 p.156, p.159-160, p.170"}
+  - {risk: "Leadership transition and key-person risk", evidence_anchor: "Board's Report, CEO change Jul-2025, CFO change Oct-2025, AR FY2025-26 p.43"}
+  - {risk: "Debt service coverage", evidence_anchor: "Note 35 standalone, DSCR 0.62x FY26, AR FY2025-26 p.136"}
+guidance_table:
+  - {claim: "Momentum on margins to continue into FY26", number: "EBITDA margin target about 10%", timeframe: "FY26", credibility: "kept - margin rose 9.0% to 10.1%"}
+  - {claim: "NWC expected to improve with efficiency in capital utilisation", number: "NWC days", timeframe: "FY26", credibility: "missed - NWC worsened 127 to 145 days"}
+  - {claim: "ROCE expected to improve", number: "ROCE %", timeframe: "FY26", credibility: "marginal - ROCE rose only 11% to 11.4%, essentially flat"}
+  - {claim: "Order backlog highest level in over two years", number: "Rs24,166mn", timeframe: "FY26 year-end", credibility: "technically true but selectively framed - the FY23 order book of Rs24,325mn was higher and is not disclosed in the same sentence"}
+  - {claim: "Book-to-bill closing at 1.46 (letters) against 1.5x (MD&A)", number: "1.46 / 1.5x", timeframe: "FY26", credibility: "minor internal inconsistency within the same report"}
+  - {claim: "Four anchor customers next-generation programmes to contribute revenue from FY28", number: "not quantified", timeframe: "FY28", credibility: "not yet testable"}
+monitorables:
+  - {metric: "Net working capital days", threshold: "further rise above 145 days, or failure to fall materially by Q2-Q3 FY27", where: "Board's Report and MD&A key ratios each quarter", why: "four-year worst level; the FY25 MD&A promised improvement that did not happen; B05 shows it already worsened to 161 days by Q1 FY27"}
+  - {metric: "Consolidated against standalone (India) revenue and PAT", threshold: "standalone revenue or PAT decline continuing or accelerating", where: "quarterly standalone against consolidated results", why: "consolidated headline growth is a mix-shift artefact; the India core business is the actual asset a transition thesis is pricing"}
+  - {metric: "Altek earn-out remeasurement direction", threshold: "any further downward remeasurement, meaning a further fair-value gain booked", where: "Note 21 and 33.1.4 each reporting period", why: "each further gain is further evidence the acquisition is missing its case; goodwill of Rs718.77mn sits on this same CGU with no separate local audit"}
+  - {metric: "Debt Service Coverage Ratio, on a consistently defined basis", threshold: "sub-1.0x persistence", where: "Note 35 each year, cross-checked against the actual cash flow statement rather than the ratio note alone, given the comparability break found here", why: "the two ARs disclose FY25 DSCR two different ways (1.67x against 0.15x); only a primary cash-flow-based recalculation each period will be trustworthy"}
+  - {metric: "Related-party subcontracting flow to Cyient Limited", threshold: "any further growth, or continued absence of arm's-length benchmarking disclosure", where: "Note 30 each year", why: "appeared from zero to about 4.3-8.7% of revenue in one year with no benchmarking disclosed; reviewed by an Audit Committee that includes the parent's own senior executives"}
+  - {metric: "B2S (Build-to-Spec) revenue as a percentage of total turnover", threshold: "progress toward the stated double-digit in FY27 target", where: "BRSR business-activity table and MD&A each year", why: "this is the central re-rating and quality-ladder thesis for the name; currently 25% of turnover per the FY26 BRSR disclosure"}
+  - {metric: "CEO and CFO tenure stability", threshold: "any further KMP turnover", where: "Board's Report and stock exchange filings", why: "both CEO and CFO changed within FY26; a third change within 18 months would be a serious execution-continuity flag"}
+ar_new_downstream_entities:
+  - {name: "Deutsche Aircraft (B2S programme)", where_in_ar: "MD&A, Aerospace and Defence vertical, AR FY2025-26 p.51", entity_type: "customer (new logo)"}
+  - {name: "Unnamed Japanese eVTOL company (9-year programme, mass production from FY29)", where_in_ar: "MD&A, Aerospace and Defence vertical, AR FY2025-26 p.51", entity_type: "customer (new logo, unnamed)"}
+  - {name: "Cyient GmbH and Cyient Inc as revenue-generating RPT counterparties (Rs NIL in FY25 to Rs63.47mn and Rs39.27mn in FY26)", where_in_ar: "Note 30, AR FY2025-26 p.132", entity_type: "RPT counterparty (new revenue flow)"}
+  - {name: "Cyient Limited, new sub-contracting charges flow (Rs537.56mn, from Rs NIL)", where_in_ar: "Note 30 and Board's Report AOC-2, AR FY2025-26 p.90 and p.132", entity_type: "RPT counterparty (new transaction type)"}
+  - {name: "Unnamed Q3 FY26 logo, high-precision electrical motor controls", where_in_ar: "MD&A, Industrial vertical, AR FY2025-26 p.51", entity_type: "customer (new logo, unnamed)"}
+  - {name: "Unnamed Q3 FY26 logo, battery management systems (medical)", where_in_ar: "MD&A, Med Tech vertical, AR FY2025-26 p.51", entity_type: "customer (new logo, unnamed)"}
+  - {name: "Unnamed India-based, globally backed EV charging infrastructure client", where_in_ar: "MD&A, Automotive vertical, AR FY2025-26 p.52", entity_type: "customer (new logo, unnamed)"}
+strengths_top3:
+  - "Clean unmodified audit opinions two years running, no going concern, fraud, covenant breach or SEBI action, zero promoter pledge, stable promoter holding"
+  - "Real operational momentum: order backlog Rs24,166mn, book-to-bill sustained above 1x every quarter, order intake up 90% YoY, EBITDA margin genuinely improved 9.0% to 10.1%"
+  - "Genuine standalone deleveraging to zero borrowings, interest coverage improved to 4.43x, Rs4,172.60mn unutilised credit lines as a real liquidity cushion"
+red_flags_top3:
+  - "Cash conversion structurally broken and confirmed at primary-source level: cumulative FY23-26 CFO -Rs25.07cr against PAT +Rs234.29cr; NWC days at a four-year worst of 145"
+  - "Headline consolidated growth and profit is a mix-shift and non-recurring-item artefact: standalone India PAT -26.6%, three unlabelled non-recurring items exceed the entire YoY PBT move, Altek earn-out already marked down by over half"
+  - "Narrative framing overstates unfavourable facts: worst-ever NWC cited as balance-sheet strength; meaningful value creation claimed alongside a 34.8% share price decline; the CEO and CFO transitions and the new Rs537.56mn parent RPT flow are absent from the front-matter narrative"
+best_fit_strategy: "Turnaround (WATCHLIST)"
+one_line_verdict: "Turnaround signals real but unproven; cash conversion decides Re-Rating Live versus Priced Narrative Trap."
+analyst_note: "The single highest-value new finding from reading both ARs side by side rather than one AR alone: DSCR for the identical FY25 year is disclosed as 1.67x in AR FY2025-26 and as 0.15x in the AR FY2024-25 Note 35, using an identically worded formula. Gate 0 and stage 2 both cite the 1.67x-to-0.62x DSCR fall as evidence of a sudden covenant-coverage collapse; that specific comparator is not reliable. The underlying facts it was standing in for, negative CFO in two of three years and sub-1x DSCR this year on either report's own numbers, are independently sound and should carry forward instead of the 1.67x figure specifically."

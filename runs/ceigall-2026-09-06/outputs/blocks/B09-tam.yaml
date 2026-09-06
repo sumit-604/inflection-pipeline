@@ -1,0 +1,54 @@
+stage: B09-tam
+company: "CEIGALL"
+run_date: "2026-09-06"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - {area: prospectus, severity: HIGH, note: "company listed August 2024, no prospectus in corpus"}
+  - {area: results, severity: MEDIUM, note: "no standalone results filing PDF beyond investor presentation extracts"}
+  - {area: rating, severity: MEDIUM, note: "no dedicated rating rationale document in corpus"}
+  - {area: shareholding, severity: HIGH, note: "no shareholding corpus"}
+  - {area: research, severity: LOW, note: "no third-party research in corpus"}
+  - {area: announcements-substantive, severity: MEDIUM, note: "no substantive announcements corpus beyond concalls/presentation/AR"}
+flags:
+  - {type: FLAG-TAM-SCOPE-NARROW, reason: "Conservative TAM (Rs 1.22 lakh cr) is scoped to NHAI's 'Roads & Bridges' national-highway budget line only; state-highway, metro-rail, and tunnel capex Ceigall also bids into is NOT FOUND as a consolidated figure and is excluded, so true TAM for Ceigall's declared scope is understated."}
+  - {type: FLAG-SOM-CAGR-SHORTFALL, reason: "SOM-implied revenue CAGR (~10% at yr3 and yr5) is below management's own FY27 guidance of minimum 15% revenue growth and far below the strategy's 25% CAGR hurdle; gap is either an understated TAM/SAM, outsized share gains beyond the 'normal' 1-2pp band, or growth sourced from renewables/T&D which sits outside this TAM's scope (mgmt disclosed ~35% of FY26 order inflow came from renewables)."}
+  - {type: FLAG-AWARD-SLOWDOWN, reason: "FY26 NHAI new awards fell ~22% YoY to ~3,100-3,124km in the same year Ceigall's own order inflow beat its Rs5,000cr guidance more than 2x (Rs11,332cr); this divergence is unexplained by Ceigall and needs its own scrutiny rather than assuming a buoyant award market underlies the growth."}
+  - {type: FLAG-CAPACITY-FINANCING, reason: "capex_embedded_growth_pct=0 (B07): equipment is rented, so SOM is not physically capex-constrained, but B04 already flags stretched working capital (Contract Assets+RUSCA ~71% of FY26 revenue) and rising leverage as the real binding constraint on scaling execution to the SOM revenue path."}
+market_definition: "Indian NHAI/MoRTH/state-PWD-awarded EPC and HAM-concession construction of national highways, expressways, elevated corridors, bridges, tunnels and metro-rail structures; renewables/T&D and international ops excluded as pre-revenue."
+tam_cr: {conservative: 121999, realistic: 244000}
+sam_cr: 40565
+sam_pct_of_tam: 33.3
+som_3yr_cr: 5353
+som_5yr_cr: 6421
+som_implied_revenue_cagr: {yr3: 10.0, yr5: 9.8}
+current_sam_share_pct: 9.9
+revenue_headroom_x: 10.1
+tam_growth_pct: 5
+runway_class: "GOOD"
+mgmt_claim_cr: 200000
+mgmt_claim_ratio: 1.64
+mgmt_claim_read: "reasonable"
+capacity_check: "sufficient on physical/capex basis (rented equipment, capex_embedded_growth_pct=0 by asset-light design); financing capacity (working capital, bonding) is the real binding constraint per B04 flags, not physical capacity - SOM is the optimistic side if financing does not scale with order inflow"
+methods_used: ["top-down (NHAI/MoRTH budget line)", "bottom-up (lane-km unit economics)", "peer revenue aggregation"]
+stale_data_flags:
+  - {datapoint: "NIP original launch target (Rs 111 lakh crore)", source: "AR sheet 30, printed p.56", year: 2020}
+searches_performed:
+  - "India road EPC construction market size crore 2026 CRISIL ICRA report"
+  - "NHAI road construction awarding FY26 km value crore data"
+  - "India solar EPC market size crore 2026 2030 report"
+  - "NHAI FY26 awarding km value crore actual vs target 7500 km land acquisition delay"
+  - "HG Infra KNR Constructions PNC Infratech FY26 annual revenue crore"
+  - "IRB Infrastructure Dilip Buildcon GR Infraprojects Ashoka Buildcon FY26 revenue crore road EPC"
+  - "KNR Constructions FY26 annual revenue crore results March 2026"
+searches_skipped: []
+downstream_candidates:
+  - {signal: "NHAI monthly award/construction-km bulletin", entity_type: "regulatory", demand_link: "Direct determinant of new order-inflow into the TAM Ceigall bids into", likely_source: "NHAI official website / PIB press releases", cadence: "monthly", shared: true}
+  - {signal: "Union Budget MoRTH/NHAI allocation", entity_type: "macro", demand_link: "Sets the annual capex ceiling that anchors this TAM's top-down estimate", likely_source: "Union Budget documents / PIB", cadence: "event-driven", shared: true}
+  - {signal: "Bharatmala Pariyojana Phase II / NIP 2.0 progress updates", entity_type: "regulatory", demand_link: "Multi-year pipeline visibility for future NHAI/MoRTH tendering", likely_source: "MoRTH / NITI Aayog progress reports", cadence: "quarterly", shared: true}
+  - {signal: "State PWD / road development corporations (Punjab, Bihar, MPRDCL)", entity_type: "counterparty", demand_link: "Awards the state-highway/item-rate slice of order book outside NHAI scope", likely_source: "State PWD/RDC tender portals", cadence: "event-driven", shared: false}
+  - {signal: "Metro rail corporations (UPMRC, JMRC)", entity_type: "counterparty", demand_link: "Awards metro-EPC item-rate contracts, a distinct in-scope demand line", likely_source: "Metro corporation tender announcements / exchange filings", cadence: "event-driven", shared: true}
+  - {signal: "Crude oil / bitumen price index", entity_type: "macro", demand_link: "Input-cost pass-through drives realised margin on fixed-price EPC contracts sector-wide", likely_source: "PPAC bitumen/crude price bulletin", cadence: "monthly", shared: true}
+  - {signal: "NHAI InvIT/TOT monetisation transaction announcements", entity_type: "macro", demand_link: "Funding-cycle indicator; proceeds recycle into fresh tendering capacity sector-wide", likely_source: "NHAI press releases / InvIT exchange filings", cadence: "event-driven", shared: true}
+demand_externally_verifiable: true
+analyst_note: "The single most consequential number in this stage is the ~10% SOM-implied revenue CAGR, which sits below management's own 15% FY27 guidance and well below the 25% strategy hurdle, even after crediting Ceigall with real share gains (15.2% FY24-26 CAGR vs ~5% TAM growth). Three explanations are non-exclusive: the TAM/SAM used is a conservative national-highway-only floor excluding unquantified state-highway/metro spend; FY26's order-inflow beat (2.3x guidance) already exceeded the 'normal' share-gain band used here and may repeat; or growth increasingly depends on renewables/T&D, which is correctly excluded from this TAM as pre-revenue but which management itself credits with ~35% of FY26 inflow. Stage 11 should treat the 10% figure as a floor cross-check on revenue assumptions, not a ceiling, given the excluded segments."

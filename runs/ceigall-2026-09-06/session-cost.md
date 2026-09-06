@@ -16,6 +16,7 @@ with its own stage. A stage that loops or retries gets one line per run.
 | 8 | promoter check (web) | claude-sonnet-5 | default | — | — | 143,350 | 10m33s | 1 |
 | 6 | peer concall verification | claude-sonnet-5 | default | — | — | 166,182 | 10m43s | 1 |
 | 7 | emerging moat 22-cat scan | claude-sonnet-5 | default | — | — | 239,049 | 9m46s | 1 |
+| 9 | TAM/SAM/SOM (web) | claude-sonnet-5 | default | — | — | 142,716 | 10m41s | 1 |
 
 Stage 0 ran in the orchestrator session, not as a subagent, so it has no
 subagent metadata. Its wall time is dominated by a rejected OCR attempt on

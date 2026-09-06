@@ -1,0 +1,67 @@
+stage: B00-inputs
+company: ORCHPHARMA
+run_date: 2026-09-06
+model: orchestrator-inline
+status: complete
+input_gaps:
+  - results (0 files; no quarterly or annual results filings)
+  - rating (0 files; no credit rating report or rationale)
+  - announcements (0 files; no Reg 30 / exchange filings, so no documented-ACTION record)
+  - shareholding (0 files; FII+DII and pledge trend unresolved, UA qualifier cannot be affirmed)
+  - research (0 files; no effect on anchored evidence)
+  - prospectus (0 files; long-listed company, CIN L24222TN1992PLC022994, so the prospectus is not expected and its absence is NOT a gap)
+inventory:
+  prospectus: 0
+  annual_report: 2      # Annual_Report_2025.pdf (primary, FY2025), Annual_Report_2024.pdf (prior-year support)
+  results: 0
+  rating: 0
+  concalls: 4           # Nov 2025 (Q2FY26), Feb 2026 (Q3FY26), Jun 2026 (Q4FY26 + FY26), Aug 2026 (Q1FY27); the 3 most recent go to stage 5
+  peer_concalls: 11     # NEULANDLAB x4, GRANULES x4, KOPRAN x3
+  announcements: 0
+  shareholding: 0
+  research: 0
+  screening: 24
+  presentation: 1
+  other: 0
+no_concall_mode: false
+freshness_pairs:
+  - pair: 1 RESULTS to CONCALL
+    trigger_doc: none (results/ empty, so no newest results filing to pair)
+    mate_expected: same-quarter concall transcript
+    status: NOT_TRIGGERED
+    missing_doc: ""
+  - pair: 2 RATING BULLETIN to RATIONALE
+    trigger_doc: none (rating/ empty)
+    mate_expected: full rating rationale
+    status: NOT_TRIGGERED
+    missing_doc: ""
+  - pair: 3 SEBI ORDER to ORDER TEXT
+    trigger_doc: none
+    mate_expected: SEBI order text
+    status: NOT_TRIGGERED
+    missing_doc: ""
+    note: the only SEBI-order mentions in the corpus are the boilerplate director-eligibility certificate in AR FY2025 and AR FY2024 ("not debarred by virtue of any SEBI Order"); no order against the company is referenced
+  - pair: 4 AR to LATEST AUDITED ANNUAL RESULTS
+    trigger_doc: Jun 2026 concall (June 01, 2026) reports Q4 FY26 and the FY2026 full year; the Aug 2026 concall reports Q1 FY27
+    mate_expected: FY2026 Annual Report
+    status: FAIL
+    missing_doc: FY2026 Annual Report (Orchid Pharma Ltd), expected source BSE/NSE filings or orchidpharma.com/investors
+    note: manifest records the FY2026 AR as not yet filed at run date; the pair still fails, because an audited FY2026 annual period exists with no matching-year AR in corpus
+freshness_verdict: CORPUS GAPPED-FRESHNESS
+spear_gate:
+  status: SATISFIED_BY_OVERRIDE
+  line: "Spear: OVERRIDE 2026-09-06 (operator)"
+  source: companies/ORCHPHARMA.md
+  load_bearing_facts:
+    - Sector cap row Pharma / CDMO confirmed by hand at collection
+    - Latest AR in corpus is FY2025 against an audited FY2026 annual period (freshness pair 4 FAIL)
+    - Peers are API-led and backward-integrated: NEULANDLAB, GRANULES, KOPRAN
+operator_decisions:
+  empty_folder_confirmation: "Not paused. Operator instruction 2026-09-06 this session: run the batch and do not stop. Standing answer taken as proceed with the gaps."
+corpus_preparation:
+  method: every inputs/ PDF pre-extracted to page-marked text at work/text/ (pypdf 6.17.0), per LESSONS.md
+  files_extracted: 18
+  unreadable: []
+  note: stages read work/text/*.txt; page anchors are the [[PAGE n]] markers and match the source PDF pages. Company transcripts carry a Reg 30 cover letter on page 1, so transcript page 1 is the cover and the call text starts on page 2.
+flags: []
+analyst_note: "Company transcripts run to Q1 FY27 while the newest annual report is FY2025, so the notes-level evidence trails the narrative evidence by a full year. Every FY2026 balance-sheet and notes question in this run resolves only against the missing FY2026 AR. KOPRAN contributes three transcripts, all FY2025-dated (Nov 2024, Feb 2025, Mar 2025), so peer evidence for that name is a year stale relative to the other two peers."

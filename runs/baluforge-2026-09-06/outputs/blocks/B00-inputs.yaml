@@ -1,0 +1,68 @@
+stage: B00-inputs
+company: BALUFORGE
+run_date: 2026-09-06
+model: orchestrator-inline
+status: complete
+input_gaps:
+  - prospectus (0 files; listed_date blank and no IPO evidence in corpus; long-listed assumed, NOT a HIGH gap)
+  - results (0 files; no quarterly or annual results filings in corpus)
+  - rating (0 files; no credit rating report or rationale)
+  - announcements (0 files; no Reg 30 / exchange filings, so no documented-ACTION record)
+  - shareholding (0 files; FII+DII and pledge trend unresolved, UA qualifier cannot be affirmed)
+  - research (0 files; no effect on anchored evidence)
+  - concalls (0 files; DECLARED, concalls_available false, NO-CONCALL MODE)
+inventory:
+  prospectus: 0
+  annual_report: 2      # Annual_Report_2025.pdf (primary), Annual_Report_2024.pdf (prior-year support)
+  results: 0
+  rating: 0
+  concalls: 0
+  peer_concalls: 12     # HAPPYFORGE x4, MMFL x4, RKFORGE x4
+  announcements: 0
+  shareholding: 0
+  research: 0
+  screening: 24         # screener + 3 peers, 6 CSVs each
+  presentation: 4       # Concall PPTs Nov 2025, Feb 2026, May 2026, Jun 2026
+  other: 0
+no_concall_mode: true
+freshness_pairs:
+  - pair: 1 RESULTS to CONCALL
+    trigger_doc: none (results/ empty)
+    mate_expected: same-quarter concall transcript
+    status: SKIPPED
+    missing_doc: ""
+    note: concalls_available is false; absence is declared, not a gap
+  - pair: 2 RATING BULLETIN to RATIONALE
+    trigger_doc: none (rating/ empty)
+    mate_expected: full rating rationale
+    status: NOT_TRIGGERED
+    missing_doc: ""
+  - pair: 3 SEBI ORDER to ORDER TEXT
+    trigger_doc: none
+    mate_expected: SEBI order text
+    status: NOT_TRIGGERED
+    missing_doc: ""
+    note: grep over all extracted corpus text found no reference to a SEBI order or adjudicating officer
+  - pair: 4 AR to LATEST AUDITED ANNUAL RESULTS
+    trigger_doc: Concall_PPT_May_2026.pdf and Concall_PPT_Jun_2026.pdf report Q4 FY26 and FY26 full-year figures
+    mate_expected: FY2026 Annual Report
+    status: FAIL
+    missing_doc: FY2026 Annual Report (Balu Forge Industries Ltd), expected source BSE/NSE filings or the company investor page
+freshness_verdict: CORPUS GAPPED-FRESHNESS
+spear_gate:
+  status: SATISFIED_BY_OVERRIDE
+  line: "Spear: OVERRIDE 2026-09-06 (operator)"
+  source: companies/BALUFORGE.md
+  load_bearing_facts:
+    - Sector cap row set by hand to Recycling / Manufacturing (25x); collector auto-picked Pharma / CDMO; confirm at Phase 3
+    - NO-CONCALL MODE; concall PPTs stand in for transcripts; credibility grade caps at B
+    - Latest AR in corpus is FY2025 against an FY2026 audited annual period (freshness pair 4 FAIL)
+operator_decisions:
+  empty_folder_confirmation: "Not paused. Operator instruction 2026-09-06 this session: run the batch and do not stop. Standing answer taken as proceed with the gaps."
+corpus_preparation:
+  method: every inputs/ PDF pre-extracted to page-marked text at work/text/ (pypdf 6.17.0), per LESSONS.md
+  files_extracted: 18
+  unreadable: []
+  note: stages read work/text/*.txt; page anchors are the [[PAGE n]] markers and match the source PDF pages
+flags: []
+analyst_note: "Corpus is annual-report and peer-transcript heavy with no company transcripts, no results filings, no rating and no shareholding. Company-side current-period evidence rests on four concall PPTs. Freshness pair 4 fails, so the gate caps at PROCEED WITH CAVEATS and the FY2026 AR is the first line of the gate recommendation."

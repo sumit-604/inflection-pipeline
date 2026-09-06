@@ -1,0 +1,35 @@
+stage: B01-gate0
+company: "BALUFORGE"
+run_date: "2026-09-06"
+model: claude-sonnet-5
+status: complete
+input_gaps: [prospectus, results filings, rating report, shareholding pattern filings, announcements, research reports, concalls, FY2026 Annual Report]
+flags:
+  - {type: FLAG-GATE0, reason: "Classification capped at AVERAGE by deal-breaker (cumulative CFO/PAT = 0.21x, <0.50 threshold; reinforced by Block B = 5/20, <8 threshold) despite Core score 63/80 and FORTRESS moat count (7 of 12 tests scored) that would otherwise imply GOOD+."}
+data_years: 6
+fy_range: "FY2021 to FY2026"
+blocks: {A: 19, B: 5, C: 20, D: 19, E: 9}
+core_score: 63
+moat_score: 27
+grand_total: 99
+moats_confirmed: 7
+moat_class: "FORTRESS"
+classification: "AVERAGE"
+deal_breakers: ["Block B <8 (actual 5) -> caps max GOOD", "Cumulative CFO/PAT <0.50 (actual 0.21) -> caps max AVERAGE (binding cap)"]
+history_downgrade: false
+data_notes:
+  - "Change-in-Inventory sign convention in screener Data_Sheet must be SUBTRACTED (not added) to reconcile to reported PBT; verified across all 6 years."
+  - "ROCE Capital Employed basis differs by year: AR-precise (Total Assets - Total Current Liabilities) for FY2023-2025; proxy (Net Worth + Total Borrowings) for FY2021/2022/2026 since no AR exists for those years in this corpus."
+  - "Trade Payables (for WC Days, B4, M12) available only via AR for FY2023-2025; B4 and M12 use a 3-year window, not the full 6-year history."
+  - "Capex proxy = total Cash from Investing Activity for FY2021/2022/2026 (no AR to isolate PPE-purchase line); confirmed near-exact for FY2023-2025 against AR."
+  - "S&A expense blank in screener-data for FY2026; M11 selling-expense-ratio trend computed through FY2025 only."
+  - "E1/E2 promoter holding data all dated 31 March 2025 or earlier (18 months stale vs run date); no newer shareholding filing in corpus."
+  - "E2's decline (65.40%->55.25%, FY2023-FY2025) is dilutive-equity-raise driven per AR2025 p.132, not promoter selling; promoters' absolute share count rose. Scored per mechanical rule regardless."
+  - "E3 promoter pledge: no disclosure located in either AR; marked N/A, scored 0."
+  - "D4 Current Ratio uses FY2025 (AR, 3.12x) not FY2026, because screener-data lacks a current/non-current split and no FY2026 AR exists; D1-D3 use true latest year FY2026. Period mismatch flagged."
+  - "M2/M5/M9 peer comparisons use only 3 named peers (Happy Forgings, MM Forgings, Ramkrishna Forgings), supplied context-only; labelled PEER DATA LIMITED not PEER DATA NEEDED."
+  - "M6 Technology/R&D: no R&D/Revenue % disclosed anywhere in corpus; scored 0, N/A."
+  - "M9 Brand: gross-margin proxy 34.75% vs 3-peer median 56.60%, below peers; likely product-mix (material intensity) driven, not a clean brand-power read; interpretive caveat only."
+  - "No loss-to-profit swing in FY2021-2026 window; PAT positive every year."
+block_b_trend: "deteriorating - CFO/PAT cash-conversion fell from 72.7% (FY2025, 148.24/203.86) to 12.2% (FY2026, 31.70/258.89) even as PAT grew 27%; FY2026 receivable and inventory days both rose vs FY2025 with no AR available to independently verify."
+analyst_note: "The classification tension is real, not a scoring artifact. Growth (20/20) and moat count (7, FORTRESS) are exceptional, but cash has not followed profit: cumulative CFO is 21% of cumulative PAT over 6 years, and FCF was negative in 4 of 6 years against a large capex program. The deal-breaker rule (cumulative CFO/PAT<0.50) correctly overrides the matrix-implied GOOD+ to AVERAGE. The freshest data point (FY2026, screener-only, no AR) shows this gap widening, not closing: cash conversion collapsed from 72.7% to 12.2% in the one year this pipeline cannot independently verify against an annual report. Downstream stages should treat FY2026 cash figures as provisional and re-check against the FY2026 AR once filed. Promoter holding decline is dilution from growth-capital raises, not an exit signal, though it scores 0 per rule."

@@ -469,7 +469,7 @@ kbd { display: inline-block; border: 1px solid #d8cdb2; border-bottom-width: 3px
       <div class="hardhat">⛑️</div>
       <h1>Engineer's Village</h1>
       <p class="subtitle">You are the new Junior Engineer of Setugram village. The village needs your help.</p>
-      <p class="tiny-note" style="margin:-10px 0 16px">Setugram sits by the river, below Temple Hill. Beyond the southern hills lies the city of Suryanagar. To the north, the Himalaya.</p>
+      <p class="tiny-note" style="margin:-10px 0 16px">Setugram sits by the river, below Temple Hill. Beyond the southern hills lies the city of Suryanagar. To the north, Shanti Valley and Mount Devshikhar.</p>
       <p class="pick-label">Who is playing today?</p>
       <div class="profile-buttons">
         <button class="profile-btn" data-profile="class3">
@@ -571,7 +571,7 @@ kbd { display: inline-block; border: 1px solid #d8cdb2; border-bottom-width: 3px
         <button class="find-btn" data-find="constable">👮 Constable</button>
         <button class="find-btn" data-find="jobs">⭐ Open job</button>
         <button class="find-btn" data-find="home">🏠 Home</button>
-        <button class="find-btn" data-find="kailash">🏔️ Kailash</button>
+        <button class="find-btn" data-find="kailash">🏔️ Devshikhar</button>
       </div>
       <canvas id="bigmap-canvas" width="720" height="720"></canvas>
       <p class="tiny-note">Tap anywhere on the map to plant a flag. The white arrow is you. Orange dots are villagers, yellow dots are open jobs, the dark blue dot is Constable Verma. Press M to open or close this map.</p>
@@ -846,7 +846,7 @@ function playQuack() {
   const t = c.currentTime;
   for (let i = 0; i < 2; i++) tone(300 + Math.random() * 60, t + i * 0.16, 0.12, "sawtooth", 0.2);
 }
-// A soft chant drone that fades in as you enter the Himalaya valley.
+// A soft chant drone that fades in as you enter the Shanti Valley.
 let chantNode = null;
 function startChant() {
   const c = getCtx();
@@ -1799,7 +1799,7 @@ const FLAT_ZONES = [
   { x1: -152, z1: 12, x2: -58, z2: 84, pad: 16 },    // lake shore, south west
   { x1: -150, z1: 178, x2: 150, z2: 292, pad: 14 },  // the city, beyond the hills
   { x1: -12, z1: 146, x2: 12, z2: 184, pad: 7 },     // the road pass through the ridge
-  { x1: -90, z1: -268, x2: 90, z2: -192, pad: 18 },  // the Himalaya valley, north of the temple hill
+  { x1: -90, z1: -268, x2: 90, z2: -192, pad: 18 },  // the Shanti Valley, north of the temple hill
 ];
 const HIMALAYA = { x1: -90, z1: -268, x2: 90, z2: -192 };
 // Mansarovar, the sacred lake in the valley.
@@ -1862,7 +1862,7 @@ function heightAt(x, z) {
     h += t * t * 45 * (0.8 + 0.4 * Math.sin(x * 0.11) * Math.cos(z * 0.13));
   }
 
-  // Kailash Parvat: the real shape, a four-faced pyramid with a rounded
+  // Mount Devshikhar: the real shape, a four-faced pyramid with a rounded
   // crown, steep faces and layered snow shelves (see the terrain colours).
   const kx = Math.abs(x), kz = Math.abs(z + 342);
   const cheb = Math.max(kx, kz);            // square distance: gives four flat faces
@@ -3328,8 +3328,10 @@ class World {
       const auto = makeAuto();
       auto.position.set(st.x, heightAt(st.x, st.z), st.z);
       auto.rotation.y = Math.PI / 2;
+      auto.userData.seat = { x: 0, y: 0.62, z: 0.55 };
+      auto.userData.dynamic = true;
       this.scene.add(auto);
-      this.addBox(st.x, st.z, 2.4, 1.5);
+      st.auto = auto;
       const pole = new THREE.Mesh(new THREE.CylinderGeometry(0.06, 0.08, 2.8, 6), mat(0x333333));
       pole.position.set(st.x - 2, heightAt(st.x, st.z) + 1.4, st.z); this.scene.add(pole);
       const sign = makeTextSprite("Auto Stand", { size: 50, color: "#2c2417", bg: "#ffd21e", scale: 0.9 });
@@ -3418,10 +3420,10 @@ class World {
     const H = HIMALAYA;
     // The road from the temple down the north slope into the valley.
     this._addRoad([[0, -118], [-16, -140], [-12, -170], [0, -192], [0, -240], [0, -266]], 3.5, 0xcfc7b8);
-    this._addSign(5, -196, ["↑ Himalaya Valley", "↓ Temple, Setugram"]);
-    this._addSign(5, -262, ["↑ Kailash Darshan (steps)", "← Mansarovar Lake"]);
+    this._addSign(5, -196, ["↑ Shanti Valley", "↓ Temple, Setugram"]);
+    this._addSign(5, -262, ["↑ Devshikhar Darshan (steps)", "← Amrit Sarovar"]);
 
-    // Mansarovar: a deep blue sacred lake.
+    // Amrit Sarovar: a deep blue sacred lake.
     const lake = makeWaterSheet(MANSAROVAR.r * 2, MANSAROVAR.r * 2, 30, 30, 0x2f6fa8);
     const lp = lake.geo.attributes.position;
     for (let i = 0; i < lp.count; i++) { const x = lp.getX(i) / MANSAROVAR.r, z = lp.getZ(i) / MANSAROVAR.r; const r = Math.hypot(x, z); if (r > 1) { lp.setX(i, lp.getX(i) / r); lp.setZ(i, lp.getZ(i) / r); } }
@@ -3430,7 +3432,7 @@ class World {
     this.scene.add(lake.mesh);
     this.waters.push(lake);
     this.mapItems.water.push({ type: "ellipse", cx: MANSAROVAR.cx, cz: MANSAROVAR.cz, rx: MANSAROVAR.r, rz: MANSAROVAR.r });
-    const lakeSign = makeTextSprite("Mansarovar Lake", { size: 46, scale: 1.3 }); lakeSign.position.set(MANSAROVAR.cx, 3, MANSAROVAR.cz + MANSAROVAR.r + 3); this.scene.add(lakeSign);
+    const lakeSign = makeTextSprite("Amrit Sarovar", { size: 46, scale: 1.3 }); lakeSign.position.set(MANSAROVAR.cx, 3, MANSAROVAR.cz + MANSAROVAR.r + 3); this.scene.add(lakeSign);
     // Stone parikrama path round the lake.
     for (let a = 0; a < Math.PI * 2; a += 0.12) {
       const rr = MANSAROVAR.r + 3.5;
@@ -3440,10 +3442,10 @@ class World {
 
     // Meditation Centre: a white hall with a saffron dome.
     this._place(makeBuilding({ w: 16, d: 16, h: 5, roof: "dome", wall: 0xfff8ec, roofColor: 0xf77f00, sign: "Meditation Centre" }), 0, -232, 0, "Meditation Centre");
-    // Himalaya Ashram.
-    this._place(makeBuilding({ w: 22, d: 8, h: 3.4, roof: "gable", wall: 0xf3d9c8, roofColor: 0x8a5626, sign: "Himalaya Ashram" }), 44, -212, Math.PI, "Himalaya Ashram");
+    // Shanti Ashram.
+    this._place(makeBuilding({ w: 22, d: 8, h: 3.4, roof: "gable", wall: 0xf3d9c8, roofColor: 0x8a5626, sign: "Shanti Ashram" }), 44, -212, Math.PI, "Shanti Ashram");
     // Four dhams: small shrines with golden domes and flags.
-    const dhams = [["Badri Dham", -22, -256], ["Kedar Dham", 22, -256], ["Gangotri Dham", 64, -240], ["Yamunotri Dham", -74, -210]];
+    const dhams = [["Surya Dham", -22, -256], ["Chandra Dham", 22, -256], ["Vayu Dham", 64, -240], ["Jal Dham", -74, -210]];
     for (const [name, x, z] of dhams) {
       this._place(makeBuilding({ w: 5, d: 5, h: 3.2, roof: "dome", wall: 0xfff1d6, roofColor: 0xffc93c, sign: name }), x, z, 0, name);
       const spire = new THREE.Mesh(new THREE.ConeGeometry(0.4, 1.4, 8), mat(0xffc93c)); spire.position.set(x, heightAt(x, z) + 3.2 + 2.75 + 0.7, z); this.scene.add(spire);
@@ -3487,7 +3489,7 @@ class World {
     // Bells at the valley entrance.
     for (const x of [-3.5, 3.5]) { const post = new THREE.Mesh(new THREE.BoxGeometry(0.3, 3.2, 0.3), mat(COLORS.woodDark)); post.position.set(x, heightAt(x, -194) + 1.6, -194); this.scene.add(post); const bell = new THREE.Mesh(new THREE.CylinderGeometry(0.32, 0.45, 0.7, 8), mat(0xffc93c)); bell.position.set(x, heightAt(x, -194) + 2.6, -194); this.scene.add(bell); this.addBox(x, -194, 0.3, 0.3); }
 
-    // Stone steps up toward Kailash and a viewpoint platform.
+    // Stone steps up toward Devshikhar and a viewpoint platform.
     for (let i = 0; i < 14; i++) {
       const z = -268 - i * 0.6, h = heightAt(0, z);
       const step = new THREE.Mesh(new THREE.BoxGeometry(4, 0.3, 1.5), mat(COLORS.stone)); step.position.set(0, h + 0.15, z); this.scene.add(step);
@@ -3495,9 +3497,9 @@ class World {
     const vp = heightAt(0, -277);
     const platform = new THREE.Mesh(new THREE.CylinderGeometry(4, 4.4, 0.5, 14), mat(COLORS.stone)); platform.position.set(0, vp + 0.25, -277); this.scene.add(platform);
     const rail = new THREE.Mesh(new THREE.TorusGeometry(3.8, 0.08, 6, 20), mat(COLORS.woodDark)); rail.rotation.x = Math.PI / 2; rail.position.set(0, vp + 1.2, -277); this.scene.add(rail);
-    const darshan = makeTextSprite("Kailash Darshan", { size: 50, scale: 1.4 }); darshan.position.set(0, vp + 3.5, -277); this.scene.add(darshan);
+    const darshan = makeTextSprite("Devshikhar Darshan", { size: 50, scale: 1.4 }); darshan.position.set(0, vp + 3.5, -277); this.scene.add(darshan);
     const om = makeTextSprite("ॐ", { size: 90, color: "#f77f00", bg: "rgba(255,248,236,0.95)", scale: 1.0 }); om.position.set(0, vp + 2.2, -280); this.scene.add(om);
-    const peakSign = makeTextSprite("Kailash Parvat", { size: 50, color: "#ffffff", bg: "rgba(29,53,87,0.9)", scale: 3 }); peakSign.position.set(0, heightAt(0, -320) + 14, -320); this.scene.add(peakSign);
+    const peakSign = makeTextSprite("Mount Devshikhar", { size: 50, color: "#ffffff", bg: "rgba(29,53,87,0.9)", scale: 3 }); peakSign.position.set(0, heightAt(0, -320) + 14, -320); this.scene.add(peakSign);
 
     // Pine trees on the valley slopes.
     const nPine = 180;
@@ -3558,7 +3560,7 @@ class World {
     this.scene.add(sadhu); this.yogis.push(sadhu);
     const caveSign = makeTextSprite("Sadhu Baba's Cave", { size: 44, scale: 1.0 }); caveSign.position.set(-30, heightAt(-30, -272) + 5, -270); this.scene.add(caveSign);
 
-    // ---- Aarti ghat at Mansarovar: steps down to the water, floating lamps ----
+    // ---- Aarti ghat at Amrit Sarovar: steps down to the water, floating lamps ----
     const gx = MANSAROVAR.cx, gz = MANSAROVAR.cz + MANSAROVAR.r + 1;
     for (let i = 0; i < 4; i++) { const step = new THREE.Mesh(new THREE.BoxGeometry(10 - i, 0.3, 1.2), mat(COLORS.stone)); step.position.set(gx, heightAt(gx, gz) + 0.9 - i * 0.3, gz + 3.6 - i * 1.2); this.scene.add(step); }
     this.diyas = [];
@@ -4300,11 +4302,15 @@ class Player {
     }
 
     if (this.riding) {
-      sitPose(this.group, this.riding.kind);
-      // Blink and breathe still.
+      // Blink and breathe, then hold the riding pose (pedalling on the bicycle).
       animateHuman(this.group, dt, false, 1);
-      sitPose(this.group, this.riding.kind);
-      if (this.riding.kind !== "metro") { for (const c of body.children) if (c.geometry && c.geometry.type === "CylinderGeometry" && walking) c.rotation.x += dt * speed; }
+      if (walking && controlled) this.pedal = (this.pedal || 0) + dt * speed * 0.9;
+      sitPose(this.group, this.riding.kind, this.pedal || 0);
+      if (this.riding.kind !== "metro" && walking) for (const c of body.children) {
+        const t = c.geometry && c.geometry.type;
+        if (t === "CylinderGeometry" && c.rotation.z !== 0) c.rotation.x += dt * speed;      // wheels on their axles
+        if (t === "TorusGeometry") c.rotation.x += dt * speed * 1.4;                          // bicycle wheels
+      }
     } else {
       animateHuman(this.group, dt, walking, Math.min(mag, 1) * (running ? 1.6 : 1));
     }
@@ -5739,7 +5745,7 @@ const CATEGORY_NAMES = {
   logic: "Logic, patterns and data",
   city: "City life",
   city_hard: "Suryanagar challenges",
-  himalaya: "Himalaya wisdom",
+  himalaya: "Shanti Valley wisdom",
 };
 
 // A short helper to build a situation entry.
@@ -5898,17 +5904,17 @@ const SITUATIONS = [
   S("hrd18", "city_hard", "Two towers", (r, big) => { const A = r.int(big ? 40 : 20, big ? 90 : 50) * (big ? 1 : 2), f = big ? r.pick([1.5, 2.5]) : 2; return { story: `Bank Tower is ${A} m tall. The new Grand Hotel will be ${f} times as tall.`, steps: [{ q: `How tall will the Grand Hotel be?`, answer: A * f, unit: "m", hint: `${A} × ${f}.` }, { q: `How much taller than Bank Tower is that?`, answer: A * f - A, unit: "m", hint: "Take Bank Tower's height away." }] }; }),
   // ---------------- HIMALAYA (12) ----------------
   S("him01", "himalaya", "Colder up high", (r, big) => { const start = r.int(10, 18), per = big ? 150 : 100, climb = per * r.int(3, big ? 12 : 8); return { story: `At the valley it is ${start}°C. The air gets 1 degree colder for every ${per} m you climb. The Darshan point is ${climb} m higher.`, steps: [{ q: `How many degrees colder is it at the Darshan point?`, answer: climb / per, unit: "degrees", hint: `${climb} ÷ ${per}.` }, { q: `What is the temperature there?`, answer: start - climb / per, unit: "°C", hint: "Take the drop away from the valley temperature." }] }; }),
-  S("him02", "himalaya", "Parikrama", (r, big) => { const perDay = r.pick(big ? [13, 16] : [10, 12]), days = r.int(3, 5); return { story: `The walk all round Kailash is ${perDay * days} km. Pilgrim Ramesh walks ${perDay} km each day.`, q: `How many days does the parikrama take?`, answer: days, unit: "days", hint: "Distance ÷ km per day.", example: "48 km at 12 km a day is 4 days." }; }),
+  S("him02", "himalaya", "Parikrama", (r, big) => { const perDay = r.pick(big ? [13, 16] : [10, 12]), days = r.int(3, 5); return { story: `The walk all round Mount Devshikhar is ${perDay * days} km. Pilgrim Ramesh walks ${perDay} km each day.`, q: `How many days does the parikrama take?`, answer: days, unit: "days", hint: "Distance ÷ km per day.", example: "48 km at 12 km a day is 4 days." }; }),
   S("him03", "himalaya", "Prayer flags", (r) => { const n = r.int(11, 40); const colors = ["blue", "white", "red", "green", "yellow"]; const ans = colors[(n - 1) % 5]; return { story: `Prayer flags hang in a repeating pattern: blue, white, red, green, yellow, blue, white, red, green, yellow...`, q: `What colour is flag number ${n}?`, choices: colors.slice(), answer: ans, hint: `The pattern repeats every 5. Divide ${n - 1} by 5 and look at the remainder: 0 is blue, 1 white, 2 red, 3 green, 4 yellow.` }; }),
   S("him04", "himalaya", "Pilgrim buses", (r, big) => { const buses = r.int(3, big ? 9 : 6), seats = r.pick(big ? [42, 48, 54] : [20, 30]); return { story: `${buses} buses of pilgrims arrived this morning, each with ${seats} seats, all full.`, q: `How many pilgrims came?`, answer: buses * seats, unit: "pilgrims", hint: "Buses × seats." }; }),
   S("him05", "himalaya", "Meditation hours", (r, big) => { const sess = r.int(3, 4), m = r.pick(big ? [25, 35, 45] : [20, 30]); return { story: `Swami Anand holds ${sess} meditation sessions a day, each ${m} minutes long.`, steps: [{ q: `How many minutes of meditation is that a day?`, answer: sess * m, unit: "minutes", hint: "Sessions × minutes." }, { q: `How many minutes short of, or over, two hours is that? Type the difference.`, answer: Math.abs(sess * m - 120), unit: "minutes", hint: "Two hours is 120 minutes. Find the gap." }] }; }),
-  S("him06", "himalaya", "Steps to the shrine", (r, big) => { if (big) { const H = r.pick([6600, 5000, 4500]); return { story: `Kailash Parvat is about ${H} m tall.`, q: `How many kilometres is that? (Type a decimal.)`, answer: H / 1000, unit: "km", hint: "1000 m make 1 km. Divide by 1000." }; } const steps = r.pick([108, 120, 150]), cm = r.pick([15, 20]); return { story: `The stone stairway has ${steps} steps. Each step is ${cm} cm high.`, steps: [{ q: `How many centimetres do you climb?`, answer: steps * cm, unit: "cm", hint: "Steps × height." }, { q: `How many metres is that?`, answer: (steps * cm) / 100, unit: "m", hint: "100 cm make 1 m." }] }; }),
+  S("him06", "himalaya", "Steps to the shrine", (r, big) => { if (big) { const H = r.pick([6600, 5000, 4500]); return { story: `Mount Devshikhar is about ${H} m tall.`, q: `How many kilometres is that? (Type a decimal.)`, answer: H / 1000, unit: "km", hint: "1000 m make 1 km. Divide by 1000." }; } const steps = r.pick([108, 120, 150]), cm = r.pick([15, 20]); return { story: `The stone stairway has ${steps} steps. Each step is ${cm} cm high.`, steps: [{ q: `How many centimetres do you climb?`, answer: steps * cm, unit: "cm", hint: "Steps × height." }, { q: `How many metres is that?`, answer: (steps * cm) / 100, unit: "m", hint: "100 cm make 1 m." }] }; }),
   S("him07", "himalaya", "Yak milk", (r, big) => { const l = r.pick(big ? [4.5, 6] : [3, 5]), yaks = r.int(2, 5), days = r.int(2, big ? 7 : 4); return { story: `Each yak gives ${l} litres of milk a day. The ashram keeps ${yaks} yaks.`, steps: [{ q: `How much milk a day?`, answer: l * yaks, unit: "litres", hint: "Litres × yaks." }, { q: `How much in ${days} days?`, answer: l * yaks * days, unit: "litres", hint: `Daily milk × ${days}.` }] }; }),
   S("him08", "himalaya", "Thin air", (r, big) => { const alt = r.int(2, big ? 6 : 4) * 1000; return { story: `At sea level the air has all its oxygen, 100%. Monk Tenzin says you lose about 10% for every 1000 m you climb.`, q: `Roughly what percent is left at ${alt} m?`, answer: 100 - (alt / 1000) * 10, unit: "%", hint: `${alt / 1000} thousand metres means ${alt / 1000} × 10% lost.` }; }),
   S("him09", "himalaya", "Ashram beds", (r, big) => { const rooms = r.int(4, big ? 12 : 8), beds = r.int(3, 6), guests = r.int(rooms, rooms * beds - 2); return { story: `The ashram has ${rooms} rooms with ${beds} beds each. Tonight ${guests} pilgrims are staying.`, steps: [{ q: `How many beds are there?`, answer: rooms * beds, unit: "beds", hint: "Rooms × beds." }, { q: `How many beds are free?`, answer: rooms * beds - guests, unit: "beds", hint: "Beds minus guests." }] }; }),
   S("him10", "himalaya", "Temple bells", (r) => { const m = r.pick([10, 12, 15, 20]); return { story: `The valley bells ring every ${m} minutes, starting at 5:00 and ending with the 6:00 bell.`, q: `How many times do they ring from 5:00 to 6:00, counting both?`, answer: 60 / m + 1, unit: "times", hint: `60 ÷ ${m} gaps, plus one for the first bell at 5:00.` }; }),
   S("him11", "himalaya", "Mala beads", (r, big) => { const rounds = r.int(2, big ? 9 : 3); return { story: `A mala has 108 beads. Pilgrim Ramesh chants one name on each bead and goes round the mala ${rounds} times.`, q: `How many names does he chant?`, answer: 108 * rounds, unit: "names", hint: `108 × ${rounds}. Try 100 × ${rounds} plus 8 × ${rounds}.` }; }),
-  S("him12", "himalaya", "Snow line", (r, big) => { const peak = 6638, snow = r.pick([5000, 5200]), camp = r.pick([4400, 4600]); if (!big) return { story: `Snow starts at ${snow} m. The trekkers' camp is at ${camp} m.`, q: `How many metres above the camp does the snow begin?`, answer: snow - camp, unit: "m", hint: "Snow line minus camp height." }; return { story: `Kailash Parvat's peak is ${peak} m. Snow begins at ${snow} m. Base camp sits at ${camp} m.`, steps: [{ q: `How high is the climb from base camp to the peak?`, answer: peak - camp, unit: "m", hint: "Peak minus camp." }, { q: `How much of that climb is in snow?`, answer: peak - snow, unit: "m", hint: "Peak minus the snow line." }] }; }),
+  S("him12", "himalaya", "Snow line", (r, big) => { const peak = 6638, snow = r.pick([5000, 5200]), camp = r.pick([4400, 4600]); if (!big) return { story: `Snow starts at ${snow} m. The trekkers' camp is at ${camp} m.`, q: `How many metres above the camp does the snow begin?`, answer: snow - camp, unit: "m", hint: "Snow line minus camp height." }; return { story: `Mount Devshikhar's peak is ${peak} m. Snow begins at ${snow} m. Base camp sits at ${camp} m.`, steps: [{ q: `How high is the climb from base camp to the peak?`, answer: peak - camp, unit: "m", hint: "Peak minus camp." }, { q: `How much of that climb is in snow?`, answer: peak - snow, unit: "m", hint: "Peak minus the snow line." }] }; }),
   S("log10", "logic", "Magic row", (r, big) => { const T = r.pick(big ? [30, 45, 60] : [15, 18, 20]), a = r.int(1, Math.floor(T / 3)), b = r.int(1, Math.floor(T / 3)); return { story: `Every row of Dr. Iyer's magic square adds up to ${T}. One row shows ${a}, ${b} and a blank.`, q: `What goes in the blank?`, answer: T - a - b, unit: "", hint: `Take both known numbers away from ${T}.`, example: "If a row adds to 15 and shows 8 and 1, the blank is 6." }; }),
 ];
 
@@ -6280,13 +6286,13 @@ const NPC_DEFS = [
   { id: "x18", name: "Pilgrim Gopal", look: { shirt: 0xf77f00, trousers: 0xffffff }, zone: "himalaya", cats: ["himalaya", "travel"], greet: "The mountain air clears the head. Try this." },
   { id: "x19", name: "Pilgrim Radha", look: { shirt: 0xc94848, dress: true }, zone: "himalaya", cats: ["himalaya", "fractions"], greet: "Om. One question on the way round the lake." },
   { id: "x20", name: "Nun Pema", look: { shirt: 0xc1121f, trousers: 0xf77f00 }, zone: "himalaya", cats: ["himalaya", "logic"], greet: "Peace. A riddle from the monastery." },
-  { id: "x21", name: "Trekker Sam", look: { shirt: 0x3a86ff, trousers: 0x333333, hat: 0x333333 }, zone: "himalaya", cats: ["himalaya", "science"], greet: "Hey! Altitude question for you." },
+  { id: "x21", name: "Trekker Sameer", look: { shirt: 0x3a86ff, trousers: 0x333333, hat: 0x333333 }, zone: "himalaya", cats: ["himalaya", "science"], greet: "Hey! Altitude question for you." },
   { id: "x22", name: "Priya", look: { shirt: 0x9b5de5, trousers: 0x222831 }, zone: "city", cats: ["city_hard", "money"], greet: "Running late! One quick one?" },
   { id: "x23", name: "Rahul", look: { shirt: 0xffffff, trousers: 0x1d3557 }, zone: "city", cats: ["city_hard", "logic"], greet: "Metro's late. Help me pass the time." },
   { id: "x24", name: "Zoya", look: { shirt: 0x06d6a0, dress: true }, zone: "city", child: true, cats: ["city", "science"], greet: "I can count all the floors! Can you?" },
   { id: "x25", name: "Guard Bahadur", look: { shirt: 0x1d3557, trousers: 0x111111, hat: 0x1d3557 }, zone: "city", cats: ["city_hard", "time"], greet: "Halt! Just joking. A question." },
   { id: "x26", name: "Vendor Kaka", look: { shirt: 0x8d6e63, trousers: 0x4e342e, hair: 0xbdbdbd }, zone: "city", cats: ["city", "money"], greet: "Fresh bhutta! Solve this and it's yours." },
-  // Himalaya valley.
+  // Shanti Valley.
   { id: "devika", name: "Yoga Teacher Devika", look: { shirt: 0xf77f00, trousers: 0xffffff, hair: 0x1d1410 }, zone: "himalaya", cats: ["himalaya", "science"], greet: "Breathe. Good. Now stretch your mind a little." },
   { id: "ramesh", name: "Pilgrim Ramesh", look: { shirt: 0xffffff, trousers: 0xffd21e, hair: 0x888888 }, zone: "himalaya", cats: ["himalaya", "travel"], greet: "Har Har Mahadev! Long walk. Help an old pilgrim count?" },
   { id: "tenzin", name: "Monk Tenzin", look: { shirt: 0xc1121f, trousers: 0xf77f00, hair: 0x333333 }, zone: "himalaya", cats: ["himalaya", "logic"], greet: "Peace, young engineer. A riddle from the mountains." },
@@ -6464,7 +6470,7 @@ const AUTO_STANDS = [
   { name: "Lake Shore", hint: "boats, huts and the fish market", x: -58, z: 30 },
   { name: "Temple Hill", hint: "the temple and the great banyan", x: 7, z: -96 },
   { name: "Suryanagar", hint: "the city: towers, metro and mall", x: 8, z: 193 },
-  { name: "Himalaya Valley", hint: "meditation centre, dhams, Kailash view", x: 10, z: -204 },
+  { name: "Shanti Valley", hint: "meditation centre, dhams, Devshikhar view", x: 10, z: -204 },
 ];
 
 // A window texture for towers: dark glass with lit windows. One image,
@@ -6750,7 +6756,7 @@ function makeScooty(color = 0xd62828) {
   const bars = new THREE.Mesh(new THREE.BoxGeometry(0.7, 0.06, 0.06), mat(0x222222)); bars.position.set(0, 1.05, 0.62); g.add(bars);
   const lamp = new THREE.Mesh(new THREE.SphereGeometry(0.1, 8, 6), new THREE.MeshStandardMaterial({ color: 0xffffcc, emissive: 0xffffaa, emissiveIntensity: 0.6 })); lamp.position.set(0, 0.9, 0.75); g.add(lamp);
   for (const z of [0.7, -0.6]) { const w = new THREE.Mesh(new THREE.CylinderGeometry(0.22, 0.22, 0.12, 10), mat(0x222222)); w.rotation.z = Math.PI / 2; w.position.set(0, 0.22, z); g.add(w); }
-  g.userData.seat = { x: 0, y: 0.78, z: -0.3 };
+  g.userData.seat = { x: 0, y: 0.72 - 0.72 + 0.12, z: -0.3 };
   g.userData.dynamic = true;
   return g;
 }
@@ -6760,9 +6766,12 @@ function makeBicycle(color = 0x2a9d8f) {
   const frame2 = new THREE.Mesh(new THREE.BoxGeometry(0.06, 0.6, 0.06), mat(color)); frame2.position.set(0, 0.6, -0.35); g.add(frame2);
   const frame3 = new THREE.Mesh(new THREE.BoxGeometry(0.06, 0.65, 0.06), mat(color)); frame3.position.set(0, 0.62, 0.45); frame3.rotation.x = -0.25; g.add(frame3);
   const seat = new THREE.Mesh(new THREE.BoxGeometry(0.25, 0.08, 0.35), mat(0x222222)); seat.position.set(0, 0.92, -0.35); g.add(seat);
-  const bars = new THREE.Mesh(new THREE.BoxGeometry(0.6, 0.05, 0.05), mat(0x222222)); bars.position.set(0, 0.98, 0.5); g.add(bars);
-  for (const z of [0.55, -0.55]) { const w = new THREE.Mesh(new THREE.TorusGeometry(0.32, 0.04, 6, 14), mat(0x222222)); w.rotation.y = Math.PI / 2; w.position.set(0, 0.32, z); g.add(w); }
-  g.userData.seat = { x: 0, y: 0.95, z: -0.3 };
+  const bars = new THREE.Mesh(new THREE.BoxGeometry(0.6, 0.05, 0.05), mat(0x222222)); bars.position.set(0, 1.0, 0.55); g.add(bars);
+  const crank = new THREE.Mesh(new THREE.CylinderGeometry(0.06, 0.06, 0.3, 8), mat(0x555555)); crank.rotation.z = Math.PI / 2; crank.position.set(0, 0.32, 0); g.add(crank);
+  for (const side of [-1, 1]) { const pedal = new THREE.Mesh(new THREE.BoxGeometry(0.1, 0.03, 0.16), mat(0x222222)); pedal.position.set(side * 0.18, 0.32 + side * 0.1, side * 0.1); g.add(pedal); }
+  for (const z of [0.55, -0.55]) { const w = new THREE.Mesh(new THREE.TorusGeometry(0.32, 0.04, 6, 14), mat(0x222222)); w.rotation.y = Math.PI / 2; w.position.set(0, 0.32, z); g.add(w); for (let k = 0; k < 3; k++) { const spoke = new THREE.Mesh(new THREE.BoxGeometry(0.02, 0.6, 0.02), mat(0x9aa6ad)); spoke.rotation.x = k * Math.PI / 3; spoke.position.set(0, 0.32, z); g.add(spoke); } }
+  // The rider's hips sit on the saddle: feet hang 0.72 below the hips.
+  g.userData.seat = { x: 0, y: 0.92 - 0.72 + 0.1, z: -0.32 };
   g.userData.dynamic = true;
   return g;
 }
@@ -6771,25 +6780,51 @@ function makeRideCar(color = 0xf77f00) {
   // See-through cabin so the rider is visible.
   const cabin = g.children[1];
   cabin.material = new THREE.MeshStandardMaterial({ color: 0x9fd3ea, transparent: true, opacity: 0.45, roughness: 0.2 });
-  g.userData.seat = { x: -0.4, y: 0.75, z: 0.1 };
+  g.userData.seat = { x: -0.4, y: 0.75 - 0.72 + 0.05, z: 0.1 };
   g.userData.dynamic = true;
   return g;
 }
 
-// Sit the rider on a vehicle: legs forward, hands on the bars.
-function sitPose(group, kind) {
+// Sit the rider on a vehicle so it looks right for each kind:
+//   bicycle: leaning forward, hands on the bars, legs pedalling round;
+//   scooty:  upright, feet on the board, hands on the bars;
+//   auto:    upright behind the handle, feet down;
+//   car:     seated, legs stretched, hands on the wheel.
+// `pedal` is the pedalling phase in radians (advances while moving).
+function sitPose(group, kind, pedal = 0) {
   const p = group.userData.parts;
   if (!p) return;
-  const legs = kind === "car" ? -1.4 : -0.9;
-  p.legL.rotation.x = legs; p.legR.rotation.x = legs;
-  p.armL.rotation.x = -1.0; p.armR.rotation.x = -1.0;
-  p.armL.rotation.z = 0.25; p.armR.rotation.z = -0.25;
+  if (kind === "bike") {
+    group.rotation.x = 0.28;                                   // lean into the ride
+    p.legL.rotation.x = -0.75 + Math.sin(pedal) * 0.45;        // pedalling, opposite legs
+    p.legR.rotation.x = -0.75 - Math.sin(pedal) * 0.45;
+    p.legL.rotation.z = 0.08; p.legR.rotation.z = -0.08;
+    p.armL.rotation.x = -1.25; p.armR.rotation.x = -1.25;      // reach forward to the bars
+    p.armL.rotation.z = 0.35; p.armR.rotation.z = -0.35;
+    p.head.rotation.x = -0.25;                                 // look up the road
+  } else if (kind === "scooty" || kind === "auto") {
+    group.rotation.x = 0.06;
+    p.legL.rotation.x = -0.95; p.legR.rotation.x = -0.95;      // feet on the board
+    p.legL.rotation.z = 0.12; p.legR.rotation.z = -0.12;
+    p.armL.rotation.x = -0.95; p.armR.rotation.x = -0.95;
+    p.armL.rotation.z = 0.3; p.armR.rotation.z = -0.3;
+    p.head.rotation.x = -0.05;
+  } else { // car
+    group.rotation.x = 0;
+    p.legL.rotation.x = -1.4; p.legR.rotation.x = -1.4;
+    p.legL.rotation.z = 0.1; p.legR.rotation.z = -0.1;
+    p.armL.rotation.x = -1.05; p.armR.rotation.x = -1.05;
+    p.armL.rotation.z = 0.2; p.armR.rotation.z = -0.2;
+    p.head.rotation.x = 0;
+  }
 }
 // Back to a normal stance after riding.
 function standPose(group) {
   const p = group.userData.parts;
   if (!p) return;
+  group.rotation.x = 0;
   for (const k of ["legL", "legR", "armL", "armR"]) { p[k].rotation.x = 0; p[k].rotation.z = 0; }
+  if (p.head) p.head.rotation.x = 0;
 }
 
 // ===== src/engine/rooms.js =====
@@ -7207,7 +7242,7 @@ class Minimap {
     // District names.
     g.font = "bold 9px system-ui, sans-serif"; g.textAlign = "center"; g.fillStyle = "#2c2417";
     g.strokeStyle = "rgba(255,253,246,0.9)"; g.lineWidth = 2.5;
-    for (const [name, x, z] of [["Setugram", 0, 36], ["Town", 0, 112], ["Farms", 105, -2], ["Lake", -108, 46], ["Temple", 0, -134], ["SURYANAGAR", 0, 262], ["Himalaya", 0, -276], ["Kailash", 0, -320]]) {
+    for (const [name, x, z] of [["Setugram", 0, 36], ["Town", 0, 112], ["Farms", 105, -2], ["Lake", -108, 46], ["Temple", 0, -134], ["SURYANAGAR", 0, 262], ["Shanti Valley", 0, -276], ["Devshikhar", 0, -320]]) {
       g.strokeText(name, this.px(x), this.pz(z)); g.fillText(name, this.px(x), this.pz(z));
     }
     this.static = off;
@@ -7293,13 +7328,13 @@ class BigMap {
     // District names.
     g.textAlign = "center"; g.lineWidth = 4; g.strokeStyle = "rgba(255,253,246,0.9)"; g.fillStyle = "#2c2417";
     g.font = "bold 18px system-ui, sans-serif";
-    for (const [name, x, z] of [["SETUGRAM", 0, 40], ["Town", 0, 100], ["Farms", 105, -6], ["Lake", -108, 46], ["Temple Hill", 0, -140], ["SURYANAGAR", 0, 262], ["Himalaya Valley", 0, -282], ["KAILASH PARVAT", 0, -322]]) {
+    for (const [name, x, z] of [["SETUGRAM", 0, 40], ["Town", 0, 100], ["Farms", 105, -6], ["Lake", -108, 46], ["Temple Hill", 0, -140], ["SURYANAGAR", 0, 262], ["Shanti Valley", 0, -282], ["MOUNT DEVSHIKHAR", 0, -322]]) {
       g.strokeText(name, this.px(x), this.pz(z)); g.fillText(name, this.px(x), this.pz(z));
     }
     // Named places from their doors, plus a few landmarks without doors.
     g.font = "bold 10px system-ui, sans-serif"; g.lineWidth = 3;
     const places = this.world.doors.filter((d) => !NOTABLE_SKIP.includes(d.label)).map((d) => [d.label, d.x, d.z]);
-    places.push(["Windmill", 15, -14], ["Water Tank", -14, -14], ["Market", 0, -22], ["Kailash Darshan", 0, -277], ["Aarti Ghat", MANSAROVAR.cx, MANSAROVAR.cz + MANSAROVAR.r + 4], ["Stadium", -100, 250], ["Petrol Pump", 140, 250], ["Pool", 140, 278], ["Central Park", 21, 214], ["Victory Gate", 0, 250], ["Railway Gate", 0, 150], ["Playground", -30, 76]);
+    places.push(["Windmill", 15, -14], ["Water Tank", -14, -14], ["Market", 0, -22], ["Devshikhar Darshan", 0, -277], ["Aarti Ghat", MANSAROVAR.cx, MANSAROVAR.cz + MANSAROVAR.r + 4], ["Stadium", -100, 250], ["Petrol Pump", 140, 250], ["Pool", 140, 278], ["Central Park", 21, 214], ["Victory Gate", 0, 250], ["Railway Gate", 0, 150], ["Playground", -30, 76]);
     for (const [name, x, z] of places) { g.strokeText(name, this.px(x), this.pz(z) - 5); g.fillText(name, this.px(x), this.pz(z) - 5); }
     this.static = off;
   }
@@ -7328,7 +7363,7 @@ class BigMap {
     if (kind === "home") list = [{ x: -26, z: 14, label: "The Engineer's Home" }];
     if (kind === "metro") list = [{ x: -52, z: 226, label: "Metro Station" }, { x: 68, z: 226, label: "Metro Station" }];
     if (kind === "jobs") list = g.jobs.filter((j) => !g.progress.jobsDone.includes(j.id)).map((j) => ({ x: j._pos.x, z: j._pos.z, label: j.title + " (" + j.villagerName + ")" }));
-    if (kind === "kailash") list = [{ x: 0, z: -277, label: "Kailash Darshan" }];
+    if (kind === "kailash") list = [{ x: 0, z: -277, label: "Devshikhar Darshan" }];
     if (!list.length) { showToast("Nothing of that kind to find right now.", 2200); return; }
     list.sort((a, b) => Math.hypot(a.x - pp.x, a.z - pp.z) - Math.hypot(b.x - pp.x, b.z - pp.z));
     this.setWaypoint(list[0].x, list[0].z, list[0].label);
@@ -7917,12 +7952,21 @@ class Game {
         <h2>Auto Stand: ${from.name}</h2>
         <button class="ghost-btn" id="travel-close">Walk instead</button>
       </div>
-      <p class="job-brief">Driver: "Where to, Engineer? Hop in, no charge for the village engineer!"</p>
+      <p class="job-brief">Driver: "Where to, Engineer? Hop in, no charge for the village engineer! Or take the wheel yourself, if you have your licence."</p>
       <div class="travel-grid">
+        <button class="travel-btn" id="travel-drive" style="background:#2f9e44;color:#fff;box-shadow:0 4px 0 #1e6b2e">🛺 Drive this auto myself<small>${this.hasLicence() ? "you have your licence" : "licence needed: Constable Verma"}</small></button>
         ${others.map((s, i) => `<button class="travel-btn" data-i="${i}">🛺 ${s.name}<small>${s.hint}</small></button>`).join("")}
       </div>
     `);
     card.querySelector("#travel-close").addEventListener("click", () => closePanel());
+    card.querySelector("#travel-drive").addEventListener("click", () => {
+      closePanel();
+      if (!this.hasLicence()) { Audio.playRetry(); showToast("No licence yet! Pass Constable Verma's five lessons in Suryanagar first.", 3600, "bad"); return; }
+      if (!from.auto) return;
+      this.player.mount({ group: from.auto, speed: 12, kind: "auto", label: "Auto", controlled: true });
+      playHorn();
+      showToast("You're driving the auto. Speed limit in the city is 50 km/h.", 3000, "good");
+    });
     card.querySelectorAll(".travel-btn").forEach((b) => b.addEventListener("click", () => {
       const dest = others[Number(b.dataset.i)];
       closePanel();
@@ -8131,7 +8175,7 @@ class Game {
     ambientTick(0.5 + Math.sin(elapsed * 0.35) * 0.5);
     const amb = this._ambient;
     amb.chirp -= dt; amb.moo -= dt; amb.quack -= dt; amb.horn -= dt; amb.bell -= dt;
-    // The chant grows as you go deeper into the Himalaya valley.
+    // The chant grows as you go deeper into the Shanti Valley.
     const inValley = pp.z < -180 && !this.world.currentRoom;
     chantTick(inValley ? Math.min(1, (-180 - pp.z) / 40) : 0);
     if (amb.bell <= 0) { amb.bell = 14 + Math.random() * 12; if (inValley) playBell(); }

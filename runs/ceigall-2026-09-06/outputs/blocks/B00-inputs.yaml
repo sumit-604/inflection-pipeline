@@ -1,0 +1,97 @@
+stage: B00-inputs
+company: CEIGALL
+run_date: 2026-09-06
+model: orchestrator
+status: complete
+input_gaps:
+  - type: prospectus
+    priority: HIGH
+    reason: "Company listed August 2024, within ~3 years of run_date. RECENTLY-LISTED PRIORITY applies. Promoter/group history, group-company map and restated pre-IPO financials are unavailable."
+  - type: results
+    priority: MEDIUM
+    reason: "inputs/results/ empty. Gate 0 runs from screener Data_Sheet alone. No quarterly/annual filing PDF to anchor latest-period figures."
+  - type: rating
+    priority: HIGH
+    reason: "inputs/rating/ empty. No rating rationale. This is the usual evidence separating STRUCTURAL from GROWTH-INDUCED cash conversion. Bears on FLAG-CASH."
+  - type: shareholding
+    priority: MEDIUM
+    reason: "inputs/shareholding/ empty. FII+DII unresolved; UA institutional-absence qualifier cannot be affirmed; promoter pledge trend falls back to AR."
+  - type: research
+    priority: LOW
+    reason: "inputs/research/ empty. Never anchored evidence. Lead-generation and management-intent cross-check lost only."
+  - type: announcements-substantive
+    priority: MEDIUM
+    reason: "Only filing held is a routine Reg 30 AGM dispatch letter (3pp, 2026-09-05). No order wins, acquisitions, capital raises or divestments in the corpus. Documented-ACTION record unavailable to stages 5, 7, 8."
+corpus_defects:
+  - defect: "annual-report-no-text-layer"
+    detail: "Annual_Report_2026.pdf is scanned. 150 of 151 pages have zero extractable text. Tesseract OCR was attempted and rejected: >3 min/page and numeric tables came through mangled or empty. Mitigation is direct page rendering (Read the PDF with a page range, max 20 sheets per call), guided by the section-6 page map. There is NO AR text file. Every AR figure is read off the rendered page and cited by PDF sheet; NOT FOUND is the only other fill."
+  - defect: "screener-csvs-empty"
+    detail: "screener-Profit_Loss.csv, -Balance_Sheet.csv, -Cash_Flow.csv, -Quarters.csv are header-only. Known collect_to_repo v3 defect. screener-Data_Sheet.csv IS populated: FY2021-FY2026 P&L/BS/CF plus 10 quarters Q4FY24-Q1FY27. Gate 0 uses Data_Sheet."
+  - defect: "announcement-broken-font"
+    detail: "Reg30_AGM_notice_dispatch_2026-09-05.pdf text layer decodes to garbage (same broken encoding as AR cover letter). OCR'd."
+  - defect: "sector-cap-row-hand-set"
+    detail: "manifest sector_cap_row set by hand to 'EPC / Civil construction' after the auto-picker chose 'Cables / Industrial products'. Confirm at phase 3."
+spear_gate:
+  status: OVERRIDE
+  date: 2026-09-06
+  load_bearing_facts: []
+  note: "Operator override. No spear pass run. No spear-derived verification priority exists for this run."
+freshness_pairs:
+  - pair: "results-to-concall"
+    trigger_doc: "NONE (inputs/results/ empty)"
+    mate_expected: "n/a"
+    status: PASS
+    missing_doc: null
+  - pair: "rating-bulletin-to-rationale"
+    trigger_doc: "NONE (inputs/rating/ empty)"
+    mate_expected: "n/a"
+    status: PASS
+    missing_doc: null
+  - pair: "sebi-order-to-order-text"
+    trigger_doc: "NONE (no SEBI order referenced in searchable corpus)"
+    mate_expected: "n/a"
+    status: PASS
+    missing_doc: null
+  - pair: "ar-to-latest-audited-annual-results"
+    trigger_doc: "Audited FY2026 annual results (year ended 2026-03-31, screener Data_Sheet)"
+    mate_expected: "Annual report for FY2025-26"
+    status: PASS
+    missing_doc: null
+freshness_verdict: FRESHNESS PAIRS OK
+corpus_verdict: CORPUS GAPPED
+manifest:
+  company: "Ceigall India Ltd"
+  ticker: CEIGALL
+  cmp: 356.0
+  market_cap_cr: 6198.0
+  run_type: full
+  concalls_available: true
+  sector_cap_row: "EPC / Civil construction"
+  listed_date_declared: ""
+  listed_date_inferred: "2024-08 (manifest notes; confirm at stage 8)"
+inventory:
+  prospectus: 0
+  annual_report: 1
+  results: 0
+  rating: 0
+  concalls: 4
+  peer_concalls: 12
+  announcements: 1
+  shareholding: 0
+  research: 0
+  screening: 24
+  presentation: 1
+  other: 0
+concall_quarter_map:
+  - {order: 1, file: "Concall_Nov_2025_Transcript.pdf", quarter: "Q2 & H1 FY26", date: "2025-11-17", used_by_stage5: false}
+  - {order: 2, file: "Concall_Feb_2026_Transcript.pdf", quarter: "Q3 & 9M FY26", date: "2026-02-13", used_by_stage5: true}
+  - {order: 3, file: "Concall_May_2026_Transcript.pdf", quarter: "Q4 & FY26", date: "2026-05-12", used_by_stage5: true}
+  - {order: 4, file: "Concall_Aug_2026_Transcript.pdf", quarter: "Q1 FY27", date: "2026-08-14", used_by_stage5: true}
+peer_set: [HGINFRA, KNRCON, PNCINFRA]
+peer_transcripts_count: 12
+no_concall_mode: false
+company_memory_present: true
+company_memory_note: "companies/CEIGALL.md created this run to carry the operator spear override. It holds no prior thesis, no prior decision status, no prior operator rulings and no prior run links. There is no COMPANY MEMORY to weigh."
+prior_run_context: none
+flags: []
+analyst_note: "Two gaps dominate this corpus and both bear on the same question. The annual report has no text layer, so its financial schedules must be read off the page image rather than searched; and there is no rating rationale, no results filing and no shareholding pattern. The screener Data_Sheet shows operating cash flow negative in five of six years while reported profit rises, so the cash-conversion determination is likely to be the run's load-bearing question, and the single document that usually settles it (the rating rationale) is the one that is missing."

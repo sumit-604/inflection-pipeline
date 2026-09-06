@@ -21,6 +21,7 @@ with its own stage. A stage that loops or retries gets one line per run.
 | 12c | verifier C framework (phase 1) | claude-opus-4-8 | default | — | — | 101,498 | 7m31s | 1 |
 | 12d | verifier D peer coverage | claude-sonnet-5 | default | — | — | 127,194 | 8m02s | 1 |
 | 12a | verifier A numerical (coverage addendum) | claude-haiku-4-5 | default | — | — | 118,845 | 6m57s | 2 |
+| 12b | verifier B red flags | claude-opus-4-8 | default | — | — | 275,560 | 14m53s | 1 |
 
 Stage 0 ran in the orchestrator session, not as a subagent, so it has no
 subagent metadata. Its wall time is dominated by a rejected OCR attempt on

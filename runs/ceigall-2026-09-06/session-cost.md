@@ -12,6 +12,7 @@ with its own stage. A stage that loops or retries gets one line per run.
 | 2 | notes triple-pass (pass 3, final) | claude-sonnet-5 | default | — | — | 133,457 | 5m09s | 3 |
 | 3 | AR deep dive (8 phases) | claude-sonnet-5 | default | — | — | 233,649 | 13m19s | 1 |
 | 4 | business model decoder | claude-sonnet-5 | default | — | — | 131,038 | 7m02s | 1 |
+| 5 | concall analysis (3 transcripts) | claude-sonnet-5 | default | — | — | 126,037 | 7m11s | 1 |
 
 Stage 0 ran in the orchestrator session, not as a subagent, so it has no
 subagent metadata. Its wall time is dominated by a rejected OCR attempt on

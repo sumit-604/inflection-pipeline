@@ -1,0 +1,112 @@
+stage: B05-concall
+company: "INA"
+run_date: "2026-09-06"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "prospectus (HIGH)"
+  - "results (HIGH)"
+  - "annual-report-notes-1-3-absent (HIGH)"
+  - "rating (MEDIUM)"
+  - "shareholding (MEDIUM)"
+  - "screening-csv-shells (MEDIUM)"
+  - "sector_cap_row-mismatch (MEDIUM)"
+  - "announcements-thin (MEDIUM)"
+  - "research (LOW)"
+  - "peer-concalls-partial (LOW)"
+  - "share-count-blank-FY26 (LOW)"
+flags:
+  - "Newest call (Q4 FY26, 27-May-2026) predates Q1 FY27 results showing PAT roughly halving QoQ (Rs70.07cr to Rs37.04cr); no FY27 management commentary can be tested against this"
+  - "Corporate guarantees and SPV structure never mentioned on any of the three calls despite material growth per prior stages"
+  - "Named customer Solarworld Energy Solutions Ltd (12.4% of FY26 revenue) never discussed by management or analysts"
+  - "FY26 'cash accruals ~Rs220cr' claim (Q3 FY26 call) directly contradicted by actual negative Rs73.13cr operating cash flow, never reconciled on any call"
+quarters_analysed:
+  - "H2 FY25 / FY25 full year (Jun 2025 call)"
+  - "Q3 FY26 / 9M FY26 (Feb 2026 call)"
+  - "Q4 FY26 / FY26 full year (Jun 2026 call)"
+triggers:
+  - {priority: 1, name: "Narmadapuram 4.5GW TOPCon cell backward integration", type: "margin", timeframe: "medium", conviction: "M", confirm_signal: "Cell line reaches commercial production and EBITDA margin visibly moves toward 20%+ in FY28 filings", kill_signal: "Further COD slippage past FY27 or margin stuck near 14-15% through FY28"}
+  - {priority: 2, name: "FY27 revenue growth at or above FY26's pace", type: "revenue", timeframe: "near", conviction: "L", confirm_signal: "Quarterly revenue tracks at or above ~60% YoY as management describes", kill_signal: "Repeat of FY26 pattern: soft quarter followed by quiet downward revision; Q1 FY27 profit halving (outside this corpus) is an early warning not yet explained by management"}
+  - {priority: 3, name: "IPP KUSUM 400MW portfolio commissioning", type: "revenue", timeframe: "near-medium", conviction: "L", confirm_signal: "Commissioning pace visibly accelerates in H1 FY27 filings from the ~40MW done by Q4 FY26 call", kill_signal: "Further slippage past the already-missed internal pace with no revised date"}
+  - {priority: 4, name: "Aluminium frame facility COD Q1 FY27", type: "cost", timeframe: "near", conviction: "M", confirm_signal: "Facility commissions on schedule and feeds the cell line", kill_signal: "Slippage similar to the cell-line COD pattern"}
+  - {priority: 5, name: "Wafer/Ingot expansion (4.5GW, Narmadapuram)", type: "both", timeframe: "long", conviction: "L", confirm_signal: "Firm capex figure, named technology partner, DPR finalized and announced", kill_signal: "Continued 'under evaluation' status past FY27"}
+  - {priority: 6, name: "ALMM/ALCM/ALMM Part 2 & 3 regulatory enforcement", type: "regulatory-policy", timeframe: "medium", conviction: "M", confirm_signal: "Enforcement visibly restricts non-ALMM-compliant supply as management predicts", kill_signal: "Enforcement delay or persistence of the ~30GW non-ALMM overhang cited by management itself"}
+  - {priority: 7, name: "Main Board migration", type: "sectoral", timeframe: "realized", conviction: "H", confirm_signal: "Already delivered 9-Mar-2026 (~3 months later than originally implied)", kill_signal: "n/a, already realized"}
+  - {priority: 8, name: "BESS assembly entry", type: "volume", timeframe: "long", conviction: "L", confirm_signal: "A firm capex commitment and policy trigger cited by management", kill_signal: "Continued 'evaluating' status, unchanged across all three calls to date"}
+  - {priority: 9, name: "US export market entry", type: "volume", timeframe: "long", conviction: "L", confirm_signal: "A named order or certification milestone from the US market", kill_signal: "No progress past the 'quality certification' step named in the Q3 FY26 call"}
+guidance:
+  - {item: "FY26 revenue", number: "Rs3,300cr", timeframe: "FY26", stated_in: "FY25 call (Jun 2025)"}
+  - {item: "FY27 revenue", number: "Rs5,500cr+", timeframe: "FY27", stated_in: "FY25 call (Jun 2025)"}
+  - {item: "FY28 revenue", number: "Rs8,500cr+", timeframe: "FY28", stated_in: "FY25 call (Jun 2025)"}
+  - {item: "FY26 PAT", number: "Rs300cr+, ~11.1% PAT margin", timeframe: "FY26", stated_in: "FY25 call (Jun 2025)"}
+  - {item: "FY27 PAT", number: "Rs700cr+", timeframe: "FY27", stated_in: "FY25 call (Jun 2025)"}
+  - {item: "FY28 PAT", number: "Rs1,300cr+, 16% PAT margin", timeframe: "FY28", stated_in: "FY25 call (Jun 2025)"}
+  - {item: "Cell line capex and commissioning", number: "~Rs1,300cr, 3GW, production start Jan '27", timeframe: "FY27", stated_in: "FY25 call (Jun 2025)"}
+  - {item: "Module production volume FY26", number: "2,000-2,100MW", timeframe: "FY26", stated_in: "FY25 call (Jun 2025)"}
+  - {item: "SME-to-mainboard migration", number: "45-60 working days from 11-Oct-2025", timeframe: "~Dec 2025", stated_in: "FY25 call (Jun 2025)"}
+  - {item: "Medium-term revenue growth CAGR", number: "40-45%", timeframe: "medium term", stated_in: "Q3 FY26 call (Feb 2026)"}
+  - {item: "Revised FY26 revenue", number: "~Rs2,000cr (cut from Rs3,300cr)", timeframe: "FY26", stated_in: "Q3 FY26 call (Feb 2026)"}
+  - {item: "Sustained EBITDA margin FY26", number: "14.5-15%", timeframe: "FY26", stated_in: "Q3 FY26 call (Feb 2026)"}
+  - {item: "Cell EBITDA impact", number: "+400-500bps, closer to 20%", timeframe: "from Q4 FY27", stated_in: "Q3 FY26 call (Feb 2026)"}
+  - {item: "FY26 cash accruals", number: "~Rs220cr (FY27: >Rs400cr)", timeframe: "FY26/FY27", stated_in: "Q3 FY26 call (Feb 2026)"}
+  - {item: "FY27 monthly production", number: "300MW/month, implying >3.5GW annual", timeframe: "FY27", stated_in: "Q3 FY26 call (Feb 2026)"}
+  - {item: "IPP 400MW KUSUM completion pace", number: "~400MW, timeline 'up to Sept 26'", timeframe: "by ~Sept 2026", stated_in: "Q3 FY26 call (Feb 2026)"}
+  - {item: "FY26 actuals", number: "revenue Rs2,146cr, EBITDA Rs305cr, PAT Rs201cr, EBITDA margin 14%, PAT margin 9.3%, ROCE 19%, ROE 25%", timeframe: "FY26", stated_in: "Q4 FY26 call (Jun 2026)"}
+  - {item: "Revised FY27 module production/sales", number: "~2GW non-DCR, DCR extra (cut from >3.5GW)", timeframe: "FY27", stated_in: "Q4 FY26 call (Jun 2026)"}
+  - {item: "Cell COD", number: "Q3 FY27 (opening remarks) vs Q4 FY27 (Q&A, same call)", timeframe: "FY27", stated_in: "Q4 FY26 call (Jun 2026)"}
+  - {item: "Aluminium frame facility COD", number: "Q1 FY27", timeframe: "FY27", stated_in: "Q4 FY26 call (Jun 2026)"}
+  - {item: "Revised cell capex", number: "Rs1,500cr (up from Rs1,300cr)", timeframe: "FY27", stated_in: "Q4 FY26 call (Jun 2026)"}
+  - {item: "Peak debt", number: "~Rs1,500cr", timeframe: "FY26-27", stated_in: "Q4 FY26 call (Jun 2026)"}
+  - {item: "Revised FY28 vision", number: "revenue >Rs5,000cr, EBITDA margin 20%+ (down from Rs8,500cr FY28)", timeframe: "FY28", stated_in: "Q4 FY26 call (Jun 2026)"}
+  - {item: "Wafer/Ingot capex", number: "~Rs1,000-1,200cr, 4.5GW", timeframe: "not yet fixed, DPR in progress", stated_in: "Q4 FY26 call (Jun 2026)"}
+promise_delivery:
+  delivered: 1
+  partial: 5
+  missed: 5
+  rows:
+    - {promised_in: "FY25 call", promise: "FY26 revenue Rs3,300cr", outcome: "Missed", explanation: "Monsoon-delayed capacity ramp, 'beyond our control' (Q3 FY26 call, Ravi Dusad); actual Rs2,146cr, ~35% below"}
+    - {promised_in: "FY25 call", promise: "FY26 PAT margin 11.1%", outcome: "Missed", explanation: "Actual 9.3%; never separately reconciled, only the revenue shortfall was addressed"}
+    - {promised_in: "FY25 call", promise: "FY26 PAT Rs300cr+", outcome: "Missed", explanation: "Actual ~Rs201cr"}
+    - {promised_in: "FY25 call", promise: "Unit 3 Jaipur operational in 4-6 weeks", outcome: "Missed", explanation: "Still ramping ~7 months later per Q3 FY26 call, no reason given for the slip"}
+    - {promised_in: "FY25 call", promise: "Cell production start Jan '27", outcome: "Partial", explanation: "Revised to Q3 FY27 (Q3 FY26 call), then stated as both Q3 and Q4 FY27 within the Q4 FY26 call itself"}
+    - {promised_in: "FY25 call", promise: "Mainboard migration ~Dec 2025", outcome: "Partial", explanation: "Actual completion 9-Mar-2026; the revised interim timeline given in Q3 FY26 call was met"}
+    - {promised_in: "FY25 call", promise: "Module capacity 4GW by FY26-end", outcome: "Delivered", explanation: "Exceeded: 5.5GW installed by 31-Dec-2025 per Q3 FY26 call"}
+    - {promised_in: "Q3 FY26 call", promise: "FY27 monthly production 300MW, implying >3.5GW annual", outcome: "Missed", explanation: "Cut to ~2-2.5GW annual in Q4 FY26 call, reframed via DCR/non-DCR split rather than acknowledged as a cut"}
+    - {promised_in: "Q3 FY26 call", promise: "FY26 cash accruals ~Rs220cr, self-funds IPP", outcome: "Missed", explanation: "Actual FY26 consolidated operating cash flow was NEGATIVE Rs73.13cr; never reconciled on any call"}
+    - {promised_in: "Q3 FY26 call", promise: "IPP 400MW KUSUM, pace implying completion ~Sept 2026", outcome: "Partial", explanation: "Only ~38-40MW commissioned as of Q4 FY26 call, rest 'in process', no revised date given"}
+    - {promised_in: "Q3 FY26 call", promise: "Sustained EBITDA margin 14.5-15% FY26", outcome: "Partial", explanation: "Actual FY26 EBITDA margin 14%, close to but below the guided range"}
+excuse_pattern: "external-blame-heavy"
+repeated_evasions:
+  - {question: "Unit-wise capacity utilization percentages", quarters_asked: ["FY25 call", "Q3 FY26 call"], classification: "deflected every time"}
+  - {question: "$1bn / Rs8,000cr+ FY28 revenue and 10% PAT margin vision, when will investors see it", quarters_asked: ["FY25 call", "Q3 FY26 call", "Q4 FY26 call"], classification: "answer changed between quarters"}
+credibility_grade: "D"
+credibility_basis: "Of 11 tracked promises with an evaluable outcome, 5 were missed and 5 partial against only 1 delivered; every miss was attributed to external factors with no self-attributed error found, and the single most consequential claim (FY26 cash accruals ~Rs220cr) was directly contradicted by an actual negative Rs73.13cr operating cash flow that management never addressed on any call, alongside proactive non-disclosure of corporate guarantees, the SPV structure, and a 12.4%-of-revenue customer."
+peer_questions:
+  - {question: "Does INA's no-overcapacity argument (142GW ALMM cell capacity, ~70-75GW effective, vs ~65-70GW DC demand from government tenders) match what Waaree/Premier/Websol describe for the same period?", why: "This is the load-bearing justification for INA's continued capacity expansion and margin guidance", check_peers: ["Waaree Energies", "Premier Energies", "Websol Solar"]}
+  - {question: "Do peer realizations for non-DCR (~Rs13-14/watt) and DCR (~Rs20-22/watt) match INA's stated Q4 FY26 figures?", why: "Tests whether INA's pricing and DCR premium are market-wide or INA-specific", check_peers: ["Waaree Energies", "Premier Energies", "Websol Solar"]}
+  - {question: "What per-GW capex and commissioning timeline have Premier Energies or Websol Solar disclosed for their own cell lines of similar scale/technology?", why: "Tests plausibility of INA's own cost/timeline assumptions, given INA's own internal inconsistency on the COD quarter", check_peers: ["Premier Energies", "Websol Solar"]}
+  - {question: "Do Waaree/Premier concalls confirm a cell-driven PAT margin premium of the magnitude INA's CFO described, and do they guide toward margin compression on a similar 4-5 year timeline?", why: "Underpins INA's own margin bridge from 9-10% today to 14-16% with cell integration", check_peers: ["Waaree Energies", "Premier Energies"]}
+  - {question: "What effective date do peers cite for ALCM and ALMM Part 2/3?", why: "INA itself has given two different dates (1 June 2026 vs January 2026) for the same regulation; the date underpins the entire backward-integration thesis", check_peers: ["Waaree Energies", "Premier Energies", "Websol Solar"]}
+  - {question: "How do peers report order book (value vs capacity terms), and is a declining order book (INA: 2.1-2.2GW to 1.6-1.8GW across two quarters) a normal feature of sector order-book churn or a company-specific demand signal?", why: "INA's order book is reported on three non-comparable bases across three calls with an apparent decline unreconciled by management", check_peers: ["Waaree Energies", "Premier Energies"]}
+  - {question: "Do peers report a similar shift from advance payment to 45-day LC terms driving receivables growth, at similar magnitude to INA's?", why: "Tests whether INA's negative operating cash flow and receivables buildup is a sector-wide financing-terms shift or an INA-specific collections issue", check_peers: ["Waaree Energies", "Premier Energies", "Websol Solar"]}
+  - {question: "Do peers report similar raw-material (polysilicon/cell) price volatility and similarly short (6-9 month) fixed-price order book duration over the same window?", why: "Tests whether this is genuine sector-wide input volatility or an INA-specific hedging/procurement weakness", check_peers: ["Waaree Energies", "Premier Energies", "Websol Solar"]}
+red_flags:
+  - {severity: "HIGH", flag: "Corporate guarantees (Rs99.68cr to Rs1,654.01cr) and ~76 step-down SPV structure never mentioned or asked about on any call"}
+  - {severity: "HIGH", flag: "Solarworld Energy Solutions Ltd, 12.4% of FY26 revenue, never named by management or asked about by any analyst"}
+  - {severity: "HIGH", flag: "FY26 'cash accruals ~Rs220cr' claim directly contradicted by actual negative Rs73.13cr operating cash flow, never reconciled on any call"}
+  - {severity: "MEDIUM-HIGH", flag: "Direct question on current/target debtor days and collection plan answered only with a rationale, no number given"}
+  - {severity: "MEDIUM", flag: "Cell plant COD stated as both Q3 FY27 and Q4 FY27 within the same call"}
+  - {severity: "MEDIUM", flag: "FY27 production target cut from implied >3.5GW annual to ~2-2.5GW within 3 months, reframed rather than acknowledged"}
+  - {severity: "MEDIUM", flag: "FY28 revenue vision effectively cut from Rs8,500cr+ to 'more than Rs5,000cr' without explicit acknowledgement"}
+  - {severity: "MEDIUM", flag: "Order book reported on three non-comparable bases across three calls, apparent decline unreconciled"}
+  - {severity: "LOW-MEDIUM", flag: "ALCM effective date stated inconsistently (1-Jun-2026 vs January 2026) across calls"}
+  - {severity: "LOW", flag: "Unit-wise capacity utilization percentages requested twice in one call, refused both times"}
+dropped_triggers:
+  - "Green hydrogen (mentioned as an opportunity in the FY25 call macro remarks, explicitly 'no plan' by the Q3 FY26 call)"
+timeline_slippages:
+  - "Cell line commissioning: Jan '27 (FY25 call) -> Q3 FY27 (Q3 FY26 call) -> stated as both Q3 and Q4 FY27 within the Q4 FY26 call itself"
+  - "Unit 3 Jaipur module line: promised operational in 4-6 weeks from the FY25 call (~mid-Jul-2025); still ramping as of the Q3 FY26 call (Feb-2026), ~7 months later"
+  - "Mainboard migration: implied completion ~Dec-2025 from the FY25 call; actual completion 9-Mar-2026, ~3 months later"
+  - "IPP KUSUM 400MW: implied substantial completion by ~Sept-2026 (Q3 FY26 call); only ~38-40MW commissioned as of the Q4 FY26 call"
+  - "FY27 monthly/annual production target: >3.5GW annual (Q3 FY26 call) cut to ~2-2.5GW annual (Q4 FY26 call) within three months"
+analyst_note: "The corpus ends at the Q4 FY26 call (27-May-2026). Q1 FY27 results (sales Rs740.70cr, PAT Rs37.04cr, against Q4 FY26 sales Rs793.93cr, PAT Rs70.07cr) were reported after this corpus closes and are not covered by any call here. Every FY27 growth and margin claim in this report is therefore untested against the one quarter of results that have since emerged, in which profit roughly halved. Grade D reflects the promise-delivery record through Q4 FY26 alone; it does not and cannot incorporate Q1 FY27."

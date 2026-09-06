@@ -1,3 +1,11 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Engineer's Village</title>
+</head>
+<body>
 <title>Engineer's Village</title>
 <style>
 /* ============================================================
@@ -344,6 +352,8 @@ kbd { display: inline-block; border: 1px solid #d8cdb2; border-bottom-width: 3px
   font-weight: 700; font-size: 14px; box-shadow: 0 3px 8px rgba(0,0,0,0.15);
 }
 #money-badge { top: 138px; }
+#money-badge.debt { color: #b3261e; background: #ffe3e0; }
+#debt-badge { position: absolute; left: 12px; top: 214px; background: #1d3557; color: #fff; border-radius: 999px; padding: 5px 12px; font-weight: 700; font-size: 12px; box-shadow: 0 3px 8px rgba(0,0,0,0.2); }
 #energy-badge { top: 176px; }
 .energy-bar { width: 70px; height: 10px; background: #e7ddc6; border-radius: 6px; overflow: hidden; }
 #energy-fill { height: 100%; width: 100%; background: #7cae59; transition: width .3s ease; }
@@ -524,7 +534,8 @@ kbd { display: inline-block; border: 1px solid #d8cdb2; border-bottom-width: 3px
     <!-- Road safety points and licence -->
     <div id="safety-badge" title="Road Safety points"><span class="rank-icon">🚦</span><span id="safety-text">0</span><span id="licence-icon" hidden>🪪</span></div>
     <!-- Money earned by solving problems -->
-    <div id="money-badge" title="Money: solve problems to earn it"><span class="rank-icon">💰</span><span id="money-text">₹0</span></div>
+    <div id="money-badge" title="Money: solve problems to earn it. A challan can push it into minus."><span class="rank-icon">💰</span><span id="money-text">₹0</span></div>
+    <div id="debt-badge" hidden title="Help people (solve their problems) to refund the challan"><span id="debt-text"></span></div>
     <!-- Energy: eat and drink to keep it up -->
     <div id="energy-badge" title="Energy: food and drink restore it"><span class="rank-icon">⚡</span><div class="energy-bar"><div id="energy-fill"></div></div></div>
     <!-- Petrol bought with money, burned by riding -->
@@ -651,6 +662,7 @@ kbd { display: inline-block; border: 1px solid #d8cdb2; border-bottom-width: 3px
         <tr><td>⚡</td><td>Energy. Walking uses it; food and drink restore it. Below 25 you walk slowly.</td></tr>
         <tr><td>⛽</td><td>Petrol, ₹100 a litre at a pump, 1½ minutes of riding per litre. Bicycles need none.</td></tr>
         <tr><td>🪪</td><td>Driving licence from the RTO Office (20 questions, 16 to pass). Two challans cancel it.</td></tr>
+        <tr><td>🚔</td><td>Break a rule and the traffic police stop you and order you off. The fine goes into your wallet as minus money. Refund it by community work: solve villagers' problems, ₹200 back each. No vehicle until it is cleared.</td></tr>
       </table>
     </div>
   </div>
@@ -1013,7 +1025,7 @@ const KEY = (profile) => `engineers-village.v1.${profile}`;
 
 // A fresh, empty progress record.
 function emptyProgress() {
-  return { jobsDone: [], attempts: {}, situationsDone: [], replays: {}, safety: { points: 0, lessons: [], licence: { valid: false, challans: 0, tests: 0 }, fines: 0 }, fuel: 0, money: 0, energy: 100, items: [], hints: 0, outfit: {} };
+  return { jobsDone: [], attempts: {}, situationsDone: [], replays: {}, safety: { points: 0, lessons: [], licence: { valid: false, challans: 0, tests: 0 }, fines: 0, debt: 0 }, fuel: 0, money: 0, energy: 100, items: [], hints: 0, outfit: {} };
 }
 
 // Read the saved progress for a profile. Always returns a valid object,
@@ -1032,10 +1044,12 @@ function loadProgress(profile) {
       safety: data.safety && typeof data.safety === "object"
         ? { points: Number(data.safety.points) || 0, lessons: Array.isArray(data.safety.lessons) ? data.safety.lessons : [],
             licence: data.safety.licence && typeof data.safety.licence === "object" ? { valid: !!data.safety.licence.valid, challans: Number(data.safety.licence.challans) || 0, tests: Number(data.safety.licence.tests) || 0 } : { valid: false, challans: 0, tests: 0 },
+            debt: Number(data.safety.debt) || 0,
             fines: Number(data.safety.fines) || 0 }
-        : { points: 0, lessons: [], licence: { valid: false, challans: 0, tests: 0 }, fines: 0 },
+        : { points: 0, lessons: [], licence: { valid: false, challans: 0, tests: 0 }, fines: 0, debt: 0 },
       fuel: Number(data.fuel) || 0,
       money: Number(data.money) || 0,
+
       energy: data.energy == null ? 100 : Math.max(0, Math.min(100, Number(data.energy))),
       items: Array.isArray(data.items) ? data.items : [],
       hints: Number(data.hints) || 0,
@@ -1620,6 +1634,8 @@ const RANKS = [
 ];
 
 // Petrol in litres with the riding time it gives (90 seconds a litre).
+const COMMUNITY_REFUND = 200; // rupees of challan refunded per problem solved for a villager
+function fmtMoney(n) { return (n < 0 ? "−₹" : "₹") + Math.abs(Math.round(n)); }
 function fmtFuel(l) { return `${(Math.max(0, l)).toFixed(1)} L (${fmtTime(Math.max(0, l) * 90)})`; }
 
 // Seconds as m:ss.
@@ -1724,7 +1740,11 @@ class UI {
     document.getElementById("safety-text").textContent = String(sf.points);
     document.getElementById("licence-icon").hidden = !sf.licence.valid;
     document.getElementById("fuel-text").textContent = fmtFuel(this.game.progress.fuel);
-    document.getElementById("money-text").textContent = "₹" + this.game.progress.money;
+    document.getElementById("money-text").textContent = fmtMoney(this.game.progress.money);
+    document.getElementById("money-badge").classList.toggle("debt", this.game.progress.money < 0);
+    const debt = this.game.progress.safety.debt || 0;
+    const db = document.getElementById("debt-badge");
+    if (db) { db.hidden = debt <= 0; if (debt > 0) document.getElementById("debt-text").textContent = `Community work: ₹${debt} to refund`; }
     const ef = document.getElementById("energy-fill");
     ef.style.width = Math.round(this.game.progress.energy) + "%";
     ef.classList.toggle("low", this.game.progress.energy < 25);
@@ -1830,7 +1850,7 @@ class UI {
     }
     html += `</ul>`;
     html += `<div class="section-label">Road safety</div>`;
-    html += `<p>Wallet ₹${prog.money}, energy ${Math.round(prog.energy)}, hint tokens ${prog.hints}, backpack: ${prog.items.join(", ") || "empty"}.</p><p>Licence ${prog.safety.licence.valid ? "valid" : "not held"}, tests taken ${prog.safety.licence.tests}, challans on this licence ${prog.safety.licence.challans}, fines ₹${prog.safety.fines}, petrol ${fmtFuel(prog.fuel)}.</p><p>${prog.safety.points} points. Lessons passed: ${SAFETY_LESSONS.filter((l) => prog.safety.lessons.includes(l.id)).map((l) => l.title.replace(/Lesson \d: /, "")).join(", ") || "none yet"}. ${prog.safety.lessons.length >= SAFETY_LESSONS.length ? "Licence earned." : "No licence yet."}</p>`;
+    html += `<p>Wallet ${fmtMoney(prog.money)}, energy ${Math.round(prog.energy)}, hint tokens ${prog.hints}, backpack: ${prog.items.join(", ") || "empty"}.</p><p>Licence ${prog.safety.licence.valid ? "valid" : "not held"}, tests taken ${prog.safety.licence.tests}, challans on this licence ${prog.safety.licence.challans}, fines ₹${prog.safety.fines}, challan still to refund ₹${prog.safety.debt || 0}, petrol ${fmtFuel(prog.fuel)}.</p><p>${prog.safety.points} points. Lessons passed: ${SAFETY_LESSONS.filter((l) => prog.safety.lessons.includes(l.id)).map((l) => l.title.replace(/Lesson \d: /, "")).join(", ") || "none yet"}. ${prog.safety.lessons.length >= SAFETY_LESSONS.length ? "Licence earned." : "No licence yet."}</p>`;
     html += `<div class="section-label">Village situations</div>`;
     html += `<p>${prog.situationsDone.length} of ${SITUATIONS.length} solved. Replays with new numbers: ${Object.values(prog.replays).reduce((a, b) => a + b, 0)}.</p>`;
     html += `<ul class="job-list">`;
@@ -8270,7 +8290,7 @@ class Game {
 
     // Outdoor shopping: carts, the village sabzi stall, petrol pumps, the sports shop.
     for (const sp of this.world.shopSpots || []) {
-      this.interactables.push({ pos: { x: sp.x, z: sp.z }, radius: 2.2, prompt: () => `${sp.label} (₹${this.progress.money})`, activate: () => this._openShop(sp.name, sp.cat, sp.keeper) });
+      this.interactables.push({ pos: { x: sp.x, z: sp.z }, radius: 2.2, prompt: () => `${sp.label} (${fmtMoney(this.progress.money)})`, activate: () => this._openShop(sp.name, sp.cat, sp.keeper) });
     }
 
     // Auto stands: press E to ride to another district.
@@ -8312,11 +8332,11 @@ class Game {
 
   // Money: earned by solving, spent in shops and on fines.
   addMoney(n, why) {
-    this.progress.money = Math.max(0, this.progress.money + n);
+    this.progress.money = this.progress.money + n;
     saveProgress(this.profile, this.progress);
     this.ui.refreshRank();
-    if (why && n > 0) { playCoin(); showToast(`💰 +₹${n}: ${why}. Wallet ₹${this.progress.money}`, 2800, "good"); }
-    else if (why) showToast(`💰 −₹${-n}: ${why}. Wallet ₹${this.progress.money}`, 2800, "bad");
+    if (why && n > 0) { playCoin(); showToast(`💰 +₹${n}: ${why}. Wallet ${fmtMoney(this.progress.money)}`, 2800, "good"); }
+    else if (why) showToast(`💰 −₹${-n}: ${why}. Wallet ${fmtMoney(this.progress.money)}`, 2800, "bad");
   }
   addEnergy(n) {
     this.progress.energy = Math.max(0, Math.min(100, this.progress.energy + n));
@@ -8346,7 +8366,7 @@ class Game {
       const money = this.progress.money;
       const card = openPanel(`
         <div class="job-title-row"><h2>${name}</h2><button class="ghost-btn" id="shop-close">Leave</button></div>
-        <p class="job-brief">${keeper}: "Welcome! You have <b>₹${money}</b>. Earn more by solving the village's problems."</p>
+        <p class="job-brief">${keeper}: "Welcome! You have <b>${fmtMoney(money)}</b>. Earn more by solving the village's problems."</p>
         <div class="shop-list">${items.map((it, i) => `<div class="shop-item"><div>${it.name}<small>${effectText(it)}</small></div><span class="price">₹${it.price}</span><button class="buy-btn" data-i="${i}" ${money < it.price ? "disabled" : ""}>Buy</button></div>`).join("")}</div>
         <p class="tiny-note">⚡ Energy keeps you walking fast. 🧢 Clothes change how you look. 📘 Hint tokens reveal a worked example in any puzzle. ⛽ Petrol is needed to ride motor vehicles.</p>
       `);
@@ -8449,6 +8469,8 @@ class Game {
   // Everything that must be true before a ride begins.
   _tryMount(ride) {
     const lic = this.progress.safety.licence;
+    if (this._policeStop) { Audio.playRetry(); return; }
+    if (this.progress.safety.debt > 0) { Audio.playRetry(); showToast(`👮 Police order: no vehicle until your challan is refunded. ₹${this.progress.safety.debt} to go. Help people with their problems (talk to villagers).`, 4500, "bad"); return; }
     if (ride.kind !== "bike" && !lic.valid) { Audio.playRetry(); showToast("No licence. Take the 20 question test at the RTO Office in Suryanagar.", 3800, "bad"); return; }
     if (ride.kind !== "bike" && this.progress.fuel <= 0) { Audio.playRetry(); showToast("Empty tank! Buy petrol at a pump (₹100 a litre). Earn money by solving problems.", 4200, "bad"); return; }
     this._preRide(ride, () => {
@@ -8460,21 +8482,100 @@ class Game {
 
   // A challan from the police: a fine, a point, and a strike on the licence.
   _challan(reason, fine) {
-    const lic = this.progress.safety.licence;
+    if (this._policeStop) return; // one officer at a time
+    const sf = this.progress.safety, lic = sf.licence;
     playWhistle();
-    this.progress.safety.fines += fine;
-    this.progress.money = Math.max(0, this.progress.money - fine);
+    sf.fines += fine;
+    this.progress.money -= fine; // the wallet can go into minus
+    sf.debt = (sf.debt || 0) + fine;
     this.addSafety(-1);
+    let licenceLine = null;
     if (lic.valid && this.player.riding && this.player.riding.kind !== "bike") {
       lic.challans++;
-      if (lic.challans >= 2) {
-        lic.valid = false;
-        showToast(`🚔 CHALLAN ₹${fine}: ${reason}. Second mistake: LICENCE CANCELLED. Take the test again at the RTO.`, 6000, "bad");
-        this.player.dismount();
-      } else showToast(`🚔 CHALLAN ₹${fine}: ${reason}. Licence mistakes: 1 of 2.`, 4200, "bad");
-    } else showToast(`🚔 CHALLAN ₹${fine}: ${reason}.`, 3600, "bad");
+      if (lic.challans >= 2) { lic.valid = false; licenceLine = "Second mistake on this licence. LICENCE CANCELLED. Take the test again at the RTO."; }
+      else licenceLine = "Licence mistakes: 1 of 2. One more and it is cancelled.";
+    }
+    showToast(`🚔 CHALLAN ₹${fine}: ${reason}. Wallet ${fmtMoney(this.progress.money)}. Stop! The police are coming.`, 4000, "bad");
     saveProgress(this.profile, this.progress);
     this.ui.refreshRank();
+    this._startPoliceStop(reason, fine, licenceLine);
+  }
+
+  // A traffic police officer runs up, stops the vehicle and orders you off.
+  // The fine is refunded by community work: helping people with their problems.
+  _startPoliceStop(reason, fine, licenceLine) {
+    const w = this.world, pp = this.player.position;
+    if (!this._patrol) {
+      this._patrol = makeVillager({ shirt: 0xffffff, trousers: 0x1d3557, hat: 0xffffff });
+      this._patrol.userData.dynamic = true;
+      const label = makeTextSprite("Traffic Police", { size: 52, scale: 0.55 });
+      label.position.y = 2.25;
+      this._patrol.add(label);
+      w.scene.add(this._patrol);
+    }
+    // Appear about 12 m ahead of the vehicle, on the road if possible.
+    const f = this.player.facing;
+    let sx = pp.x + Math.sin(f) * 12, sz = pp.z + Math.cos(f) * 12;
+    if (!w.isWalkable(sx, sz)) { sx = pp.x + Math.cos(f) * 8; sz = pp.z - Math.sin(f) * 8; }
+    if (!w.isWalkable(sx, sz)) { sx = pp.x; sz = pp.z + 4; }
+    this._patrol.position.set(sx, w.groundAt(sx, sz), sz);
+    this._patrol.visible = true;
+    standPose(this._patrol);
+    this._policeStop = { phase: "run", reason, fine, licenceLine, t: 0 };
+    playHorn();
+  }
+
+  _updatePoliceStop(dt) {
+    const ps = this._policeStop; if (!ps) return;
+    const cop = this._patrol, w = this.world, pp = this.player.position;
+    ps.t += dt;
+    const dx = pp.x - cop.position.x, dz = pp.z - cop.position.z, d = Math.hypot(dx, dz);
+    const want = Math.atan2(dx, dz);
+    let diff = want - cop.rotation.y;
+    while (diff > Math.PI) diff -= Math.PI * 2;
+    while (diff < -Math.PI) diff += Math.PI * 2;
+    cop.rotation.y += diff * Math.min(1, dt * 8);
+    if (ps.phase === "run") {
+      const step = Math.min(d - 2.2, 5.5 * dt);
+      if (step > 0) { cop.position.x += Math.sin(want) * step; cop.position.z += Math.cos(want) * step; }
+      cop.position.y = w.groundAt(cop.position.x, cop.position.z);
+      animateHuman(cop, dt, step > 0, 2.2);
+      if (d <= 2.3 || ps.t > 6) {
+        ps.phase = "talk";
+        const ride = this.player.riding;
+        const vname = ride ? VEHICLE_NAMES[ride.kind] || ride.label || "vehicle" : "vehicle";
+        const sf = this.progress.safety;
+        const lines = [`Stop! Engineer, off the ${vname}. Now.`];
+        if (ride) this.player.dismount();
+        lines.push(`Challan ₹${ps.fine}. Reason: ${ps.reason}. Your wallet shows ${fmtMoney(this.progress.money)}.`);
+        if (ps.licenceLine) lines.push(ps.licenceLine);
+        lines.push(`Community work for you. Help people with their problems. Each problem you solve refunds ₹${COMMUNITY_REFUND} of the challan.`);
+        lines.push(`₹${sf.debt} to refund. Until it is cleared, no vehicle for you. Walk, and think.`);
+        this.dialogue.say("Traffic Police", lines, () => { ps.phase = "leave"; ps.t = 0; ps.away = cop.rotation.y + Math.PI; }, { pitch: 380, speaker: "patrol" });
+      }
+    } else if (ps.phase === "talk") {
+      animateHuman(cop, dt, false, 1, this.dialogue.talkingFor("patrol"));
+    } else if (ps.phase === "leave") {
+      cop.rotation.y = ps.away;
+      cop.position.x += Math.sin(ps.away) * 2.2 * dt; cop.position.z += Math.cos(ps.away) * 2.2 * dt;
+      cop.position.y = w.groundAt(cop.position.x, cop.position.z);
+      animateHuman(cop, dt, true, 1);
+      if (ps.t > 5) { cop.visible = false; this._policeStop = null; }
+    }
+  }
+
+  // Community work: each problem solved for a villager refunds part of the challan.
+  _communityWork() {
+    const sf = this.progress.safety;
+    if (!(sf.debt > 0)) return;
+    const back = Math.min(COMMUNITY_REFUND, sf.debt);
+    sf.debt -= back;
+    this.progress.money += back;
+    saveProgress(this.profile, this.progress);
+    this.ui.refreshRank();
+    playCoin();
+    if (sf.debt > 0) showToast(`👮 Community work: ₹${back} of the challan refunded. ₹${sf.debt} still to refund. Wallet ${fmtMoney(this.progress.money)}.`, 4000, "good");
+    else showToast(`👮 Community work done! Challan fully refunded. Wallet ${fmtMoney(this.progress.money)}. You may ride again. Ride carefully.`, 5000, "good");
   }
 
   // ---- Road Safety School ----
@@ -8748,7 +8849,7 @@ class Game {
         <h2>Auto Stand: ${from.name}</h2>
         <button class="ghost-btn" id="travel-close">Walk instead</button>
       </div>
-      <p class="job-brief">Driver: "Where to, Engineer? Meter is ₹20 to start, then ₹3 for every 10 metres. You have <b>₹${money}</b>. Or take the wheel yourself, if you have your licence."</p>
+      <p class="job-brief">Driver: "Where to, Engineer? Meter is ₹20 to start, then ₹3 for every 10 metres. You have <b>${fmtMoney(money)}</b>. Or take the wheel yourself, if you have your licence."</p>
       <div class="travel-grid">
         <button class="travel-btn" id="travel-drive" style="background:#2f9e44;color:#fff;box-shadow:0 4px 0 #1e6b2e">🛺 Drive this auto myself<small>${this.hasLicence() ? "licence valid · 3 questions first" : "licence needed: RTO Office, Suryanagar"}</small></button>
         ${others.map((s, i) => { const f = this._fare(from, s), d = Math.round(Math.hypot(s.x - from.x, s.z - from.z)); return `<button class="travel-btn" data-i="${i}" ${money < f ? 'style="opacity:.55"' : ""}>🛺 ${s.name} · ₹${f}<small>${d} m · ${s.hint}</small></button>`; }).join("")}
@@ -8764,7 +8865,7 @@ class Game {
     card.querySelectorAll(".travel-btn").forEach((b) => b.addEventListener("click", () => {
       const dest = others[Number(b.dataset.i)];
       const fare = this._fare(from, dest);
-      if (this.progress.money < fare) { Audio.playRetry(); showToast(`The fare is ₹${fare} and you have ₹${this.progress.money}. Solve a problem or two, or walk.`, 3600, "bad"); return; }
+      if (this.progress.money < fare) { Audio.playRetry(); showToast(`The fare is ₹${fare} and you have ${fmtMoney(this.progress.money)}. Solve a problem or two, or walk.`, 3600, "bad"); return; }
       closePanel();
       this.addMoney(-fare, `auto fare to ${dest.name}`);
       playHorn();
@@ -8816,7 +8917,7 @@ class Game {
     // A counter to buy things in shops, eateries and the mall.
     const cat = catalogFor(door.label, room.type);
     if (cat && ["shop", "eatery", "mall", "clinic"].includes(room.type)) {
-      this.roomInteractables.push({ pos: { x: room.x0, z: room.z0 - 0.3 }, radius: 2.0, prompt: () => `Buy at the counter (₹${this.progress.money})`, activate: () => this._openShop(door.label, cat, room.occupant.name) });
+      this.roomInteractables.push({ pos: { x: room.x0, z: room.z0 - 0.3 }, radius: 2.0, prompt: () => `Buy at the counter (${fmtMoney(this.progress.money)})`, activate: () => this._openShop(door.label, cat, room.occupant.name) });
     }
     if (room.hasLift) {
       this.roomInteractables.push({
@@ -8855,6 +8956,7 @@ class Game {
       onSolve: () => {
         markSituationDone(this.profile, this.progress, sit.id);
         this.addMoney(payFor(sit.cat), "situation solved");
+        this._communityWork();
         this.ui.refreshRank();
         this._assignSituation(npc);
         this._engagedNpc = null;
@@ -8922,9 +9024,10 @@ class Game {
     const dt = Math.min(this.clock.getDelta(), 0.05); // clamp big gaps (tab switch)
     const elapsed = this.clock.elapsedTime;
 
-    const blocked = this._uiBlocking();
+    const blocked = this._uiBlocking() || !!this._policeStop;
+    this._updatePoliceStop(dt);
 
-    // Move the player only when no menu is up.
+    // Move the player only when no menu is up (or the police have stopped you).
     this.player.update(dt, blocked ? { x: 0, y: 0 } : this.input.move, this.input.running, blocked ? 0 : this.input.cameraDelta(dt), this.input.cameraIdleFor());
     this.world.update(dt, elapsed, this.player.position);
 
@@ -9110,3 +9213,6 @@ function boot() {
 boot();
 
 </script>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+stage: B12d
+company: "BALUFORGE"
+run_date: "2026-09-06"
+model: claude-sonnet-5
+status: complete
+peers_audited: 12
+substantive_confirmed: 12
+substantive_unsupported: []
+unused_but_relevant:
+  - {peer: "RKFORGE Jul 2026", missed_item: "p.21-22 (Bharat C. Shah/Lalit Khetan): West Asia crisis tied to working-capital-day elevation (shipping/transit time) - a third channel of the same event, uncited, reinforces rather than changes B06's conclusion", anchor: "p.21-22"}
+claims_all_addressed: true
+verdict_discipline_fails:
+  - {claim: "Claim 5 (raw-material pass-through)", issue: "MMFL Feb 2026 p.10 citation is fabricated/misattributed - the quoted material ('steel is a pass-through... 85% of the business... lag') does not exist in any MMFL transcript; it is verbatim from HAPPYFORGE Feb 2026 p.9. Genuine independent support drops from 3 peers to 2 (HAPPYFORGE + RKFORGE), still sufficient for PARTIALLY VERIFIED, but the citation must be corrected, not carried forward."}
+findings:
+  - {severity: "MAJOR", location: "B06 Claim 5, 'MMFL Feb 2026 p.10'", claimed: "steel pass-through quote attributed to MMFL", source_truth: "quote does not exist in MMFL transcripts; verbatim match is HAPPYFORGE Feb 2026 p.9", note: "misattribution across companies"}
+  - {severity: "MAJOR", location: "B06 Claim 2, 'HAPPYFORGE Nov 2025 p.5-6'", claimed: "p.5-6", source_truth: "content genuine but located p.3 (summary) and p.12 (detail)", note: "neither actual page matches cited range"}
+  - {severity: "MAJOR", location: "B06 Claim 2, 'MMFL Nov 2025 p.3-4'", claimed: "p.3-4", source_truth: "content genuine, located p.9", note: "anchor materially wrong"}
+  - {severity: "MINOR", location: "B06 Claim 1, 'RKFORGE May 2026 p.19'", claimed: "p.19", source_truth: "p.17", note: "2-page drift, quote genuine"}
+  - {severity: "MINOR", location: "B06 Claim 1, 'HAPPYFORGE Aug 2026 p.7'", claimed: "p.7", source_truth: "p.8", note: "1-page drift, quote genuine"}
+  - {severity: "MINOR", location: "B06 Claim 5/2B, 'MMFL Aug 2026 p.12'", claimed: "p.12", source_truth: "p.13", note: "1-page drift, quote genuine"}
+  - {severity: "MINOR", location: "B06 Claim 2, 'MMFL Aug 2026 p.3' (350bps figure)", claimed: "p.3", source_truth: "p.4", note: "bundled figure one page later than the rest of the citation"}
+  - {severity: "MINOR", location: "RKFORGE Jul 2026, uncited", claimed: "n/a", source_truth: "p.21-22 WC-elevation quote available, not used", note: "completeness gap, reinforces not changes existing conclusion"}
+critical_count: 0
+major_count: 3
+minor_count: 5
+acceptance_rate: 75
+peer_utilisation: 100
+orchestrator_note: "The Claim 5 misattribution is a source-fidelity failure and is handled per the orchestrator's SOURCE FIDELITY rule: the citation is corrected in B06 with the correct anchor shown (HAPPYFORGE Feb 2026 p.9, not MMFL Feb 2026 p.10) and the peer count for that claim is reduced from three to two. It is NOT carried forward as written. The claim's classification stays PARTIALLY VERIFIED, which two independent peers still support. B06's load-bearing conclusion, the CONTRADICTED verdict on the Q4 FY26 Middle East explanation, rests on Claims 1 and 2 and is unaffected by this correction; verifier D separately confirms all twelve peers were used substantively and every upstream peer question was addressed. The remaining findings are page-anchor drift on quotes verifier D confirms are genuine. Acceptance 75% is above the 60% REWORK floor."

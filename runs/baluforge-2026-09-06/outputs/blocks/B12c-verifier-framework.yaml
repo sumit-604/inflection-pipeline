@@ -1,0 +1,42 @@
+stage: B12c
+company: "BALUFORGE"
+run_date: "2026-09-06"
+model: claude-opus-4-8
+status: complete
+scope: "PHASE 1 PARTIAL. Gate 0 (B01) and Emerging Moat (B07) compliance only. The valuation-adherence audit is deferred to Phase 3, when B10 and B11 exist."
+gate0:
+  rules_checked: 28
+  fails:
+    - {rule: "G19 core score derivation", severity: "MAJOR", detail: "core computed as A+B+C+D=63; correct basis A+B+C+D+E=72. Report's own grand total 99 does not reconcile with 63+27=90. Band 60-79 and final classification AVERAGE unchanged."}
+    - {rule: "G5 ROCE 'computed' label", severity: "MINOR", detail: "screener supplies no ROCE so computing was mandatory and correct; the literal word 'computed' is never stated. Formula and per-year basis are shown."}
+    - {rule: "G17 PEER DATA NEEDED vocabulary", severity: "MINOR", detail: "maker substituted the non-prompt label 'PEER DATA LIMITED'. Peer data existed, so the zero-and-flag branch correctly did not apply. No score impact."}
+    - {rule: "G28 receivable-days series completeness", severity: "MINOR", detail: "five values printed for six years; FY2022 (164.5 days) omitted. Re-scored with FY22 included, M4 stays 3 and M10 stays 5."}
+emoat:
+  rules_checked: 24
+  fails:
+    - {rule: "E6 completionist guard consistency", severity: "MAJOR", detail: "block evidence_mix documented:18 contradicts the completionist recount of 6 documented items, unreconciled in report or block. Recount itself performed correctly. No score impact."}
+    - {rule: "E9 Section 2C prescribed capex x FAT method", severity: "MINOR", detail: "prescribed method computed then discarded for a self-designed capacity proxy; FAT basis 10.8x (FY25 avg net PPE) unreconciled with B01 M3 2.03x (FY26 net block). Recomputed on the B01-consistent basis: 277.31 x 2.03 = 563 Cr = +50.8% vs the reported 50. Reported figure survives."}
+    - {rule: "E12 Section 3 summary count line", severity: "MINOR", detail: "published self-contradiction 'Weak: 6 ... 7 actually'; E2 labelled 'Weak-Moderate' straddles the bar governing active_categories. Counts reconcile to 23."}
+    - {rule: "E22 F2 leg coverage", severity: "MINOR", detail: "no-concall capex substitution itself fully compliant; but ramp speed and revenue-per-employee legs untested and unmarked. Both are positive-direction legs; score 0 unchanged."}
+    - {rule: "E2 evidence taxonomy coverage", severity: "MINOR", detail: "several evidence items untagged (2A Mercedes row, 2A capacity column, parts of 1C)."}
+    - {rule: "E3 source anchor precision", severity: "MINOR", detail: "approx 15 approximate page markers ('p.[[PAGE ~n]]'); one implausible deck anchor (Nov 2025 p.559-561) carries the load-bearing MOOWR item. Fidelity referred to Verifier A."}
+valuation: {rules_checked: 0, fails: []}   # PENDING PHASE 3 - stages 10 and 11 not executed; B10/B11 do not exist
+business_understanding_narrative: {present: false, five_questions_answered: false, prose_only: false, section6_candidates_named: 0, valuation_vocab_leak: false, fails: ["NOT APPLICABLE IN PHASE 1 - stage 13 not executed; false values are placeholders, NOT failures, and must not trigger REWORK"]}
+recomputed_destination_pe: ""
+recomputed_decision: ""
+findings:
+  - {severity: "MAJOR", location: "B01 CLASSIFICATION section / B01 block core_score", claimed: "core_score 63/80 (A+B+C+D)", recomputed: "core_score 72/100 (A+B+C+D+E)", note: "Decision-neutral: both values sit in the 60-79 band; matrix GOOD+ then deal-breaker #4 caps at AVERAGE either way. Flagged because a downstream stage may consume the field."}
+  - {severity: "MAJOR", location: "B07 block evidence_mix vs completionist_recount", claimed: "documented: 18", recomputed: "recount states 6 documented items across 4 scored categories", note: "Unreconciled. Defeats the completionist guard the prompt mandates. Clearable by stating the scope difference. em_score 10.5 unaffected."}
+  - {severity: "MINOR", location: "B01 Block A / basis note 4", claimed: "ROCE table", recomputed: "all six years re-derived and matching", note: "Rule requires stating 'computed' when the source supplies no ROCE. Screener export supplies none (Balance_Sheet.csv is a header-only template), so computing was correct; only the label is missing."}
+  - {severity: "MINOR", location: "B01 Block F header / data note 11", claimed: "PEER DATA LIMITED", recomputed: "n/a", note: "Non-prompt vocabulary in a field the prompt defines as 'PEER DATA NEEDED items'. Substantive rule (never guess peer figures) was honoured."}
+  - {severity: "MINOR", location: "B01 M4 / M10", claimed: "156->235->142->129->140", recomputed: "156.0 / 164.5 / 235.2 / 142.5 / 129.3 / 140.1", note: "FY2022 omitted from a six-year series that carries two moat tests. Neither score changes."}
+  - {severity: "MINOR", location: "B07 Section 2C / capex_embedded_growth_pct", claimed: "50 (capacity-ratio proxy, prescribed method declared unusable)", recomputed: "+50.8% via the prescribed method on the B01-consistent asset basis and FY26 CWIP (277.31 x 2.03 = 563 Cr)", note: "Route non-compliant, answer sound. Cross-stage FAT basis split (10.8x vs 2.03x) should be reconciled before stage 11 consumes either."}
+  - {severity: "MINOR", location: "B07 Section 3 summary count line", claimed: "Weak: 6 ... 7 actually", recomputed: "Weak 7, Moderate 2, None 14, total 23", note: "Uncorrected self-contradiction shipped; E2 'Weak-Moderate' straddles the bar governing active_categories."}
+  - {severity: "MINOR", location: "B07 F2", claimed: "capex-completion substitution, scored 0", recomputed: "0 confirmed", note: "Substitution itself fully compliant and correctly declared. Ramp speed and revenue-per-employee legs untested and unmarked; both positive-direction, so no inflation possible."}
+  - {severity: "MINOR", location: "B07 Sections 1C and 2A", claimed: "various evidence items", recomputed: "n/a", note: "Evidence taxonomy tag missing on several items where the prompt requires one on every piece of evidence."}
+  - {severity: "MINOR", location: "B07 throughout", claimed: "p.[[PAGE ~n]] anchors; Concall PPT Nov 2025 p.559-561", recomputed: "n/a", note: "Approximate page markers are not pages. The MOOWR anchor is implausible as a deck slide and carries the only company-specific documented item behind R1. Fidelity is Verifier A's call."}
+critical_count: 0
+major_count: 2
+minor_count: 8
+acceptance_rate: 81            # 42 of 52 phase-1 rules passed (Gate 0 24/28 + Emerging Moat 18/24)
+orchestrator_note: "The G19 finding is arithmetically right and worth carrying: blocks A-E are 19+5+20+19+9 = 72, and 72 + moat 27 = the 99 grand total B01 already reports, so the grand total was correct and only the core_score field was mislabelled as 63. Classification AVERAGE is unchanged on either basis because deal-breaker #4 binds. Phase 3 stage 10 should consume core_score 72, not 63. The business_understanding_narrative false values are Phase 1 placeholders and must NOT be read as failures: stage 13 runs in lite mode here and the narrative gate applies in Phase 3."

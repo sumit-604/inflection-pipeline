@@ -11,7 +11,7 @@ peers_provided: 12
 verified: []
 partially_verified:
   - {claim: "Margin resilience via value-added product mix offsetting falling raw material costs (crankshaft/machined-forging realisation, FY26 Q3-Q4)", peers: ["HAPPYFORGE", "MMFL", "RKFORGE"]}
-  - {claim: "Full raw-material (steel) pass-through with a lag, flat raw-material cost ratio through the slowdown", peers: ["HAPPYFORGE", "MMFL", "RKFORGE"]}
+  - {claim: "Full raw-material (steel) pass-through with a lag, flat raw-material cost ratio through the slowdown", peers: ["HAPPYFORGE", "RKFORGE"], correction: "CORRECTED after verifier D (B12d). The report originally cited three peers, resting one leg on 'MMFL Feb 2026 p.10'. That quote does not exist in any MMFL transcript; it is verbatim from HAPPYFORGE Feb 2026 p.9. The misattributed citation is removed and MMFL is struck from this claim's peer list. Two independent peers still support it, so the PARTIALLY VERIFIED classification stands."}
   - {claim: "Plausibility of un-bridged capacity/tonnage claims (Mercedes Benz unit, aggregate 100,000+ TPA)", peers: ["HAPPYFORGE", "MMFL", "RKFORGE"]}
 contradicted:
   - {claim: "Q4 FY26 revenue decline caused by Middle East geopolitical disruption to India-UAE logistics", contradicting_peer: "RKFORGE, MMFL, HAPPYFORGE", quote_anchor: "RKFORGE May 2026 concall p.3-4 (+28% YoY same quarter, zero West Asia exposure p.19); MMFL Mar 2026 investor conf p.3 (Hormuz risk named, Q4 'seems strong'); HAPPYFORGE May 2026 concall p.4/p.6 ('U.S. Iran issue' cost-only, best-ever +20.4% YoY quarter)"}

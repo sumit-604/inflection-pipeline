@@ -18,4 +18,4 @@ deferred to the end of the run.
 | 4 | business model decoder | claude-sonnet-5 | default | n/a | n/a | 117,544 | 9m60s | 1 |
 | 8 | promoter background check (web) | claude-sonnet-5 + web | default | n/a | n/a | 178,847 | 10m15s | 1 |
 | 6 | peer concall verification (11) | claude-sonnet-5 | default | n/a | n/a | 327,257 | 10m57s | 1 |
-| 7 | emerging moat 22-category scan | claude-sonnet-5 | default | n/a | n/a | pending | pending | 1 |
+| 7 | emerging moat 22-category scan | claude-sonnet-5 | default | n/a | n/a | 195,140 | 11m45s | 1 |

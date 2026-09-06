@@ -349,15 +349,13 @@ p.14). So the disruption was real, and the -13.8% YoY outcome was not.
 | P1 | Avalon's 50%→18% (5-Feb) vs CDLM "no clarity" (21-Apr) | B06 Q3 cites the Avalon quote but never uses it against the April statement | MISSED |
 | P3 | Avalon's "nothing critical" on the same Middle East material disruption | B06 2A does the growth comparison; the Avalon quote is unused | PARTIALLY CAUGHT |
 
-A18, A19 and A21 are folded into the counts as caught. P1 and P3 are counted
-in place of A20's peer leg to avoid double counting; A20 is counted once.
+The table lists 26 rows; A18, A19 and A21 are variants inside the same three
+narrative-drop and vagueness families already counted in the 24-item base
+list, and P1 and P3 replace the peer legs of A20 and A15 so nothing is
+double-counted. Scored on the 24-item base list:
 
-**Counts.** Independent flags found: 24. CAUGHT: 8 of the 24 headline items
-plus A18, A19, A21 → 11. PARTIALLY CAUGHT: 5 (A6, A12, A15, A24, P3).
-MISSED: 8 (A7, A8, A9, A10, A11, A14, A17, A20, A22, A23, P1 → 11).
-
-Recomputed cleanly on the 24-item list as tabled: CAUGHT 8, PARTIALLY CAUGHT
-5, MISSED 11.
+**Counts.** Independent flags found: 24. CAUGHT: 8. PARTIALLY CAUGHT: 5.
+MISSED: 11.
 
 - `redflag_coverage` (carried at all = caught + partially caught): 13/24 = **54%**
 - `acceptance_rate` (strict caught ÷ independent found): 8/24 = **33%**
@@ -500,6 +498,7 @@ status: complete
 independent_flags_found: 24
 caught: 8
 partially_caught: 5
+redflag_coverage: 54   # carried at all (caught 8 + partially caught 5) / 24, %
 missed:
   - {severity: "CRITICAL", item: "Gross-margin compression: deflected Q4 FY26, answered with a mechanically impossible cause (opex 'investments') in Q1 FY27, and the industry-wide component/PCB cost shock disclosed in detail by both peers in the same window is absent from the 21-Jul-2026 call entirely", anchor: "Apr-2026 call p.19 (Praveen Sahay/RMS); Jul-2026 call p.14 (Sameet Sinha/Rajendra); Kaynes Aug-2026 call p.15 and p.19; Syrma Aug-2026 call p.4 and p.9"}
   - {severity: "MAJOR", item: "Order-book bridge does not reconcile in any FY26 quarter (~INR30cr Q2, ~INR26cr Q3, ~INR120cr full year vs the claimed 1.5x book-to-bill); no cancellation, de-scope or FX disclosure anywhere", anchor: "Oct-2025 call p.6; Jan-2026 call p.5 and p.7; Apr-2026 call p.5 and p.7"}

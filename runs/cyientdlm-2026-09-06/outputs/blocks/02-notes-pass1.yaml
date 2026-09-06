@@ -1,0 +1,11 @@
+stage: B02-notes
+pass: 1
+company: "CYIENTDLM"
+run_date: "2026-09-06"
+model: claude-sonnet-5
+status: complete
+output_file: "runs/cyientdlm-2026-09-06/outputs/reports/02-notes-pass1.md"
+notes_covered: "STANDALONE Notes 1-36 (pp.111-137) and CONSOLIDATED Notes 1-36 (pp.146-172), AR FY2025-26"
+top_finding_preview: "Standalone (core India EMS) revenue down 29.9% YoY, India-geography revenue down 84.4%; consolidated decline (-17.0%) is cushioned by the newly acquired Altek Electronics Inc subsidiary."
+next: "pass_2_what_was_missed"
+orchestrator_note: "Pass 1 of the triple pass emits no schema-defined block; the instruction file defines the consolidated B02 block at pass 3 only. This file is a completion marker, not the B02 handoff."

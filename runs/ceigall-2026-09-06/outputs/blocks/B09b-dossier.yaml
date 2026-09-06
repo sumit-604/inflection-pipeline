@@ -1,0 +1,53 @@
+stage: B09b-dossier
+company: "CEIGALL"
+run_date: "2026-09-06"
+model: claude-sonnet-5
+status: complete
+corpus_verdict: "CORPUS GAPPED"
+corpus_gaps:
+  - {document: "Prospectus / RHP", expected_source: "BSE", kind: "findable-missing"}
+  - {document: "Rating rationale", expected_source: "rating agency site", kind: "findable-missing"}
+  - {document: "Shareholding pattern", expected_source: "BSE", kind: "findable-missing"}
+  - {document: "Results filings (quarterly/annual)", expected_source: "BSE", kind: "findable-missing"}
+  - {document: "Substantive announcements (order wins, JVs, capex, raises)", expected_source: "BSE", kind: "findable-missing"}
+  - {document: "Third-party research / broker notes", expected_source: "company IR page", kind: "findable-missing"}
+archetypes:
+  - {line: "EPC (57.86% of FY26 revenue)", archetype: "Order-book business (EPC/defence/capital goods)"}
+  - {line: "HAM (41.68% of FY26 revenue)", archetype: "Licence/scarcity business"}
+transition:
+  - line: "EPC"
+    from_tier: "R1 COMMODITY PRICE-TAKER"
+    to_tier: "R3 VALUE-ADDED / SPEC'D SUPPLIER"
+    engine: "Specialised-structure execution (tunnels, elevated corridors, hilly terrain) narrowing the qualified bidder pool, funded by an asset-light rented-equipment model"
+    proof_gate: "EBITDA margin holds within/above 11-12.5% band like-for-like ex-bonus/royalty for 2 consecutive quarters AND management answers yes/no on whether the margin beat is a one-off"
+    recognition_gap: "OPEN - whether the market already prices an EPC specialisation premium; resolved at Stage 11 via the PE gap"
+    ugliness: "INDETERMINATE - evidence supports both readings; unresolved as of Halt 1 (see FLAG-CASH)"
+    transition_falsifier: "Specialised-structure execution edge fails to hold against well-capitalised peers (declining win rate or a peer matching the capability)"
+  - line: "HAM"
+    from_tier: "R1 COMMODITY PRICE-TAKER"
+    to_tier: "R3 VALUE-ADDED / SPEC'D SUPPLIER (ceiling only, per-asset, not confirmed portfolio-wide)"
+    engine: "Converting EPC-contracting activity into owned long-duration NHAI annuity equity, then recycling that equity via value-accretive sale to fund fresh HAM equity"
+    proof_gate: "Disclosed sale consideration and realised equity IRR on a second and third completed HAM divestment"
+    recognition_gap: "OPEN - whether developer/annuity-style re-rating is already priced; resolved at Stage 11 via the PE gap"
+    ugliness: "INDETERMINATE - evidence supports both readings; unresolved as of Halt 1 (see FLAG-CASH)"
+    transition_falsifier: "A disclosed sale consideration on the 2nd/3rd HAM divestment showing value destruction vs equity invested"
+dominant_variables:
+  - "EBITDA margin sustainability in the 11-12.5% guided band, like-for-like ex-bonus/royalty"
+  - "HAM capital-recycling repeatability (disclosed consideration/IRR on 2nd/3rd divestment)"
+  - "Consolidated operating cash flow trajectory vs Contract Assets + RUSCA as % of revenue"
+  - "Order-book-to-revenue conversion at guided growth (roll-forward closing)"
+business_falsifier: "A second SPV-level NHAI termination or going-concern-adjacent EoM showing the terminated-project SPV is not isolated, falsifying the underlying EPC-execution competence itself, not merely the HAM transition"
+mental_model_status: "DRAFT - PENDING OPERATOR SIGN-OFF"
+fragility:
+  variable_count: 5
+  verifiability_ratio: "2 of 5 externally observable independent of company disclosure"
+  single_point_failure: "Consolidated operating cash flow prints more negative than FY26's Rs -912.83m while Contract Assets + RUSCA rise above ~71% of revenue"
+  fragility_verdict: "FRAGILE"
+candidate_count: 7
+research_brief_items: 12
+plain_summary_points: 15
+annex:
+  present: true
+  questions_answered: 10
+  corpus_commit_hash: "06ba3f7bdfb59f3e0899679130b0d4c70032ba69"
+orchestrator_check_note: "MECHANICAL DOSSIER CHECK and ANNEX CHECK both PASS. Six section headers present in order (lines 19, 92, 275, 330, 475, 529). Exactly one corpus verdict line (line 67, CORPUS GAPPED). DRAFT - PENDING OPERATOR SIGN-OFF marker present in the Section 2 heading and restated at line 94. Section 6 answers all ten numbered questions in order (UNITS, SEGMENT CAPITAL AND DEBT, GUIDANCE VERSUS ASPIRATION, CONCENTRATION, PROMISE LEDGER, RESTATED BASES, CORPORATE-ACTION CLAUSES, RELATED-PARTY PERIMETER, PLEDGE AND SHAREHOLDING, VERIFICATION) and ends at line 724 with the corpus commit hash. The freshness cap does not apply: B00.freshness_verdict is FRESHNESS PAIRS OK, so the missing-mate first-line requirement on gate-recommendation.md is not triggered. No re-run needed."

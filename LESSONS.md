@@ -116,6 +116,16 @@ _Written into a prompt/framework file so it cannot recur._
   a peer input; Step 1C now bars it. Sector caps reviewed annually vs live peer
   medians.
 
+- Stage 0 downshift conflict (CEIGALL 2026-09-06): DISPATCH routes stage 0 to
+  haiku, but /run-pipeline instructs the orchestrator to run stage 0 itself,
+  so it always executes at the session model. Every run logs a DOWNSHIFT
+  FAILURE that no agent-file edit can fix. Needs a prompt reconciliation.
+- Input-contract concall cap (CEIGALL 2026-09-06): the contract caps
+  inputs/concalls/ at 3 while collectors now routinely deliver 4. Stage 5 was
+  given 3, and verifier B traced 7 missed findings to the transcript withheld.
+  Remediation cost 3 stage-5 runs and 2 stage-6 runs, 41% of the run's tokens.
+  Where a fourth transcript exists it should be passed as primary.
+
 ## OPEN ACTIONS
 _Pending framework edits Keerti maintains._
 - Add a Steel / Integrated Metals row to the Section 1B cap table

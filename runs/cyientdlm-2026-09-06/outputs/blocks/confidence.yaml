@@ -1,0 +1,26 @@
+stage: confidence-delta
+company: "CYIENTDLM"
+run_date: "2026-09-06"
+phase: 1
+computed_by: orchestrator
+confidence_delta:
+  numerical_acceptance: 100      # B12a run 2: 67 of 67 numbers matched source, zero findings
+  redflag_coverage: 54           # B12b: 13 of 24 independently found red flags carried upstream (8 caught + 5 partial)
+  framework_adherence: 87        # B12c: phase-1 scope only (Gate 0 94%, Emerging Moat 77%)
+  peer_utilisation: 100          # B12d: 3 of 3 peers and 12 of 12 transcripts substantive
+  overall: 54                    # the MINIMUM of the four, per orchestrator Section 5
+band: "below 60"
+band_consequence: "FORCED REWORK"
+verdict_forced: "REWORK"
+rework_triggers:
+  - trigger: "B12b acceptance_rate 33% is below the 60% floor"
+    rule: "orchestrator Section 4, REWORK is about the analysis, not the company"
+  - trigger: "confidence_delta.overall of 54 is below 60"
+    rule: "orchestrator Section 5 interpretation bands: below 60 is forced REWORK"
+not_a_rework_trigger:
+  - "Verifier A found ZERO source-fidelity findings across 67 numbers on its re-run. No CRITICAL numerical finding exists. Source fidelity is clean."
+  - "Verifier C found no CRITICAL and set rework_trigger false; both headline classifications concur."
+  - "Verifier D returned 100% acceptance with zero CRITICAL and zero MAJOR."
+  - "Company quality plays NO part in this verdict. Nothing halts or downgrades on company quality; only the analysis is judged here."
+framework_adherence_note: "The 87% covers the Gate 0 and Emerging Moat scope only. The valuation-adherence component is PENDING phase 3, because stages 10 and 11 have not run."
+what_rework_means_here: "The concall stage (B05) is the single weak artifact. Verifier B found 24 red flags independently before reading the upstream reports and carried 13 of them; 11 were missed, one at CRITICAL severity. Every other verified component of the run is strong: source fidelity 100%, peer utilisation 100%, framework adherence 87%. The remedy is a re-run of stage 5 against verifier B's finding list, followed by re-running stage 6 and stage 7, which both consumed B05. That is an operator decision at Halt 1, not an automatic action."

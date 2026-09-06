@@ -16,3 +16,4 @@ deferred to the end of the run.
 | 5 | concall analysis (3 transcripts) | claude-sonnet-5 | default | n/a | n/a | 132,368 | 8m58s | 1 |
 | 3 | AR deep dive: add monitorables[] | claude-sonnet-5 | default | n/a | n/a | 353,331 | 10m43s | 3 |
 | 4 | business model decoder | claude-sonnet-5 | default | n/a | n/a | 117,544 | 9m60s | 1 |
+| 8 | promoter background check (web) | claude-sonnet-5 + web | default | n/a | n/a | 178,847 | 10m15s | 1 |

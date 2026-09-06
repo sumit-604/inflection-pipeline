@@ -1,0 +1,32 @@
+stage: B12d
+company: "CEIGALL"
+run_date: "2026-09-06"
+model: claude-sonnet-5
+status: complete
+peers_provided: 3
+peers_audited: 3
+substantive_confirmed: 3
+substantive_unsupported: []
+peer_utilisation: 100          # 3 of 3 peers used substantively, stage's own count agreed
+transcripts_provided: 12
+transcripts_used_substantively: 12
+unused_but_relevant:
+  - {peer: "HGINFRA", missed_item: "FY26 order-inflow guidance of Rs10,000cr vs only Rs1,300cr actually secured (87% miss), stated on the same page as HAM-equity content B06 already cites; directly relevant to B06's own cross-read flagging that Ceigall's FY26 order-inflow beat needs its own explanation in a soft-award year", anchor: "HGINFRA-Concall_May_2026_Transcript.txt, p.6"}
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "MAJOR", location: "B06 Part 2B", claimed_anchor: "HGINFRA-Concall_May_2026_Transcript.txt, p.17", issue: "quote real, wrong page (actual p.11)", note: "war situation quote resolving B05 open item"}
+  - {severity: "MAJOR", location: "B06 Part 1 Q1/Part 2C", claimed_anchor: "HGINFRA-Concall_Aug_2025_Transcript.txt, p.14", issue: "quote real, wrong page (actual p.10)", note: "Ganga Expressway Rs43cr margin item"}
+  - {severity: "MAJOR", location: "B06 Part 1 Q4", claimed_anchor: "PNCINFRA-Concall_Feb_2026_Transcript.txt, p.13 (defended as printed page 13 of 18)", issue: "figures real, wrong page (actual p.5); cited page contains unrelated content", note: "HAM equity Rs1,744cr/Rs1,110cr/Rs634cr reconciliation"}
+  - {severity: "MAJOR", location: "B06 Part 1 Q4/Part 2C", claimed_anchor: "PNCINFRA-Concall_May_2026_Transcript.txt, p.9", issue: "quote real, wrong page (actual p.11)", note: "diversification will pressure margins quote"}
+  - {severity: "MAJOR", location: "B06 industry_cross_read 2A (omission)", claimed_anchor: "n/a - not used", issue: "HGINFRA's 87% FY26 order-inflow guidance miss (Rs10,000cr guided vs Rs1,300cr secured) not surfaced despite direct relevance and proximity to cited material", note: "HGINFRA-Concall_May_2026_Transcript.txt, p.6"}
+  - {severity: "MINOR", location: "B06 Part 1 Q1", claimed_anchor: "HGINFRA-Concall_May_2026_Transcript.txt, p.6", issue: "quote real, wrong page (actual p.5)", note: "temporarily increasing overall leverage"}
+  - {severity: "MINOR", location: "B06 Part 1 Q7", claimed_anchor: "HGINFRA-Concall_Feb_2026_Transcript.txt, p.7", issue: "quote real, wrong page (actual p.8)", note: "no additional exceptional item margin denial"}
+  - {severity: "MINOR", location: "B06 Part 1 Q6", claimed_anchor: "KNRCON-Concall_Aug_2025_Transcript.txt, p.8", issue: "figures real, wrong page (actual p.7)", note: "irrigation/HAM debtor figures"}
+  - {severity: "MINOR", location: "B06 Part 1 Q2", claimed_anchor: "PNCINFRA-Concall_Feb_2026_Transcript.txt, p.3", issue: "quote real, wrong page (actual p.4)", note: "377km vs 504km"}
+  - {severity: "MINOR", location: "B06 Part 1 Q2", claimed_anchor: "PNCINFRA-Concall_Aug_2026_Transcript.txt, p.2", issue: "quote real, wrong page (actual p.3)", note: "107km awarded"}
+critical_count: 0
+major_count: 5
+minor_count: 5
+acceptance_rate: 100
+orchestrator_disposition_note: "Coverage is clean: all three peers confirmed SUBSTANTIVE on audit, the stage's own count agreed, every claim was addressed and no verdict-discipline fail was found. Peer utilisation is therefore 100%. Nine of the ten findings are ANCHOR-OFFSET defects: in every case the verifier confirms the quote or figure is real and the substance correct, but the cited page does not locate it. The cause is a mixed citation basis, since these transcripts carry their own printed 'Page N of M' header that runs one behind the PDF page, and at least one citation (PNCINFRA Feb-2026) used the printed number against an 8-page gap. No B06 conclusion changes: the war-situation resolution, the HAM-equity reconciliations, the one-off margin attributions and the NHAI km figures all stand on the evidence, only the page numbers are wrong. The tenth finding is a genuine omission, HGINFRA's own 87% FY26 order-inflow guidance miss, which bears directly on B06's flag that Ceigall's inflow beat in a soft-award year needs its own explanation; it is carried to Halt 1 as an open item rather than re-running the stage."

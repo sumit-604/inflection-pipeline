@@ -19,6 +19,7 @@ with its own stage. A stage that loops or retries gets one line per run.
 | 9 | TAM/SAM/SOM (web) | claude-sonnet-5 | default | — | — | 142,716 | 10m41s | 1 |
 | 12a | verifier A numerical | claude-haiku-4-5 | default | — | — | 101,771 | 3m11s | 1 |
 | 12c | verifier C framework (phase 1) | claude-opus-4-8 | default | — | — | 101,498 | 7m31s | 1 |
+| 12d | verifier D peer coverage | claude-sonnet-5 | default | — | — | 127,194 | 8m02s | 1 |
 
 Stage 0 ran in the orchestrator session, not as a subagent, so it has no
 subagent metadata. Its wall time is dominated by a rejected OCR attempt on

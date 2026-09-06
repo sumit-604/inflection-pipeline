@@ -11,3 +11,4 @@ deferred to the end of the run.
 | 2a | notes pass 1 of 3 | claude-sonnet-5 | default | n/a | n/a | 212,865 | 14m14s | 1 |
 | 2b | notes pass 2 of 3 | claude-sonnet-5 | default | n/a | n/a | 171,711 | 12m54s | 1 |
 | 2c | notes pass 3 of 3 (consolidation) | claude-sonnet-5 | default | n/a | n/a | 78,204 | 4m42s | 1 |
+| 3 | AR deep dive (8 phases) | claude-sonnet-5 | default | n/a | n/a | 239,778 | 15m43s | 1 |

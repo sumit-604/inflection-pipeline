@@ -1,0 +1,99 @@
+stage: B09-tam
+company: "INA"
+run_date: "2026-09-06"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - prospectus (HIGH)
+  - results (HIGH)
+  - annual-report-notes-1-3-absent (HIGH)
+  - rating (MEDIUM)
+  - shareholding (MEDIUM)
+  - screening-csv-shells (MEDIUM)
+  - sector_cap_row-mismatch (MEDIUM)
+  - announcements-thin (MEDIUM)
+  - research (LOW)
+  - peer-concalls-partial (LOW)
+  - share-count-blank-FY26 (LOW)
+flags:
+  - "Management's headline no-overcapacity claim (142GW ALMM 'cell' capacity) implies a Rs170,400cr cell-market claim vs this stage's conservative Rs36,000cr cell-market estimate: ratio 4.73x, read inflated. Corroborates B06 Q1's independent finding that the figure is very likely mislabeled module capacity."
+  - "SOM_5yr (Rs8,800cr) exceeds the physical revenue ceiling of INA's currently committed capacity (5.5GW module at 100% utilisation, ~Rs7,700cr at current blended ASP) by ~Rs1,100cr; closing this gap depends entirely on the committed cell facility commissioning on schedule and lifting DCR mix/ASP, a schedule Stage 5/6 already flag as internally inconsistent (Q3 vs Q4 FY27 COD guidance)."
+  - "FY26 KUSUM electricity revenue (Rs4.22cr actual) is only 19-25% of this stage's modelled full-year run-rate for the ~38-40MW already commissioned (Rs17-22cr expected); most likely explained by late-FY26 commissioning but not confirmed in the injected corpus."
+  - "Management's own FY28 revenue vision was cut from Rs8,500cr+ (Jun-2025 call) to Rs5,000cr+ (Jun-2026 call) without acknowledgement; even the CUT target implies ~52.7% 2-year CAGR, faster than this stage's SOM-implied 32.6-34.8% CAGR, meaning management's own target still runs ahead of an independent, capacity-triangulated market-capture estimate."
+market_definition: "Indian solar PV module manufacturing (DCR + non-DCR, domestic-only), plus PM-KUSUM-linked IPP electricity sale as a separate additive market; solar cell manufacturing sized separately as a non-additive margin-capture note."
+tam_cr: {conservative: 110880, realistic: 128120}
+sam_cr: 78730
+sam_pct_of_tam: 61.4
+som_3yr_cr: 5260
+som_5yr_cr: 8800
+som_implied_revenue_cagr: {yr3: 34.8, yr5: 32.6}
+current_sam_share_pct: 2.7
+revenue_headroom_x: 36.7
+tam_growth_pct: 16
+runway_class: "MASSIVE"
+mgmt_claim_cr: 170400
+mgmt_claim_ratio: 4.73
+mgmt_claim_read: "inflated"
+capacity_check: "gap of ~Rs1,100cr at year 5 vs existing committed module capacity at 100% utilisation; the SOM side is the optimistic one, resolvable only if the committed cell facility commissions on guided schedule and lifts DCR-compliant mix/ASP."
+methods_used:
+  - "top-down (industry value benchmark, Mordor/IMI market reports)"
+  - "bottom-up (units x realized price, AR + peer concalls)"
+  - "peer revenue aggregation (partial, 4 of ~11 named top-10 peers disclosed)"
+  - "capacity cross-check (installed + committed capacity vs SOM revenue)"
+stale_data_flags: []
+searches_performed:
+  - "India solar PV module manufacturing market size 2026 crore Mercom Bridge to India"
+  - "India solar cell manufacturing capacity GW 2026 ALMM list 2 demand"
+  - "PM-KUSUM scheme total outlay crore component A B C target capacity 2026"
+  - "India solar installations 2026 GW forecast annual capacity addition Mercom Q2"
+  - "India DCR domestic content requirement module demand GW government tenders SECI NTPC 2026"
+  - "India solar module price per watt non-DCR oversupply crash 2026"
+  - "Waaree Energies Premier Energies Websol FY26 annual revenue crore full year results"
+  - "India solar module manufacturers market share top players Adani Waaree Premier Vikram Solar 2026"
+  - "Websol Energy System FY26 annual revenue crore full year"
+searches_skipped: []
+downstream_candidates:
+  - signal: "SECI/NTPC solar tender awards and cancellations"
+    entity_type: "counterparty"
+    demand_link: "Direct order-book driver for INA's institutional/DCR channel"
+    likely_source: "SECI/NTPC e-tender portals, PIB press releases"
+    cadence: "event-driven"
+    shared: false
+  - signal: "MNRE ALMM List I/II updates and effective-date notifications"
+    entity_type: "regulatory"
+    demand_link: "ALMM-II status is the load-bearing trigger for the cell-integration margin thesis"
+    likely_source: "MNRE circulars, mnre.gov.in ALMM portal"
+    cadence: "event-driven"
+    shared: true
+  - signal: "PM-KUSUM state nodal agency tender/PPA awards"
+    entity_type: "counterparty"
+    demand_link: "Sizes INA's KUSUM IPP pipeline progress against its 400MW target"
+    likely_source: "State nodal agency press releases / MNRE PM-KUSUM dashboard"
+    cadence: "quarterly"
+    shared: false
+  - signal: "Module/cell ASP benchmark trackers (DCR vs non-DCR, Rs/watt)"
+    entity_type: "macro"
+    demand_link: "Cross-checks INA's realizations and margin trajectory independent of company disclosure"
+    likely_source: "Mercom India / JMK Research monthly price bulletins"
+    cadence: "monthly"
+    shared: true
+  - signal: "Silver and polysilicon commodity price indices"
+    entity_type: "macro"
+    demand_link: "Primary input-cost driver sector-wide; INA does not disclose hedging"
+    likely_source: "LME/commodity exchange data, trade press"
+    cadence: "monthly"
+    shared: true
+  - signal: "US anti-dumping/countervailing duty rulings on Indian solar imports"
+    entity_type: "regulatory"
+    demand_link: "Governs export channel reopening and redirected-volume pressure on domestic non-DCR pricing"
+    likely_source: "US Department of Commerce / USITC filings"
+    cadence: "event-driven"
+    shared: true
+  - signal: "Solarworld Energy Solutions Ltd order flow and receivables signals"
+    entity_type: "end-customer"
+    demand_link: "12.4% customer concentration is the leading hypothesis for INA's cash-conversion collapse"
+    likely_source: "Solarworld's own exchange filings if listed, else MCA filings"
+    cadence: "quarterly"
+    shared: false
+demand_externally_verifiable: true
+analyst_note: "Three markets, not one: module manufacturing (~99% of current revenue), cell manufacturing (a margin-capture entry, explicitly NOT added to headline TAM to avoid double-crediting the same revenue), and KUSUM IPP (genuinely additive, currently 0.2% of revenue). The two strongest findings this stage: (1) management's own capacity-based no-overcapacity claim reads as inflated by 4.73x against an independently triangulated cell-market estimate, corroborating B06's cell/module conflation finding from a different angle; (2) the SOM_5yr figure this stage computes from bottom-up market-share mechanics slightly exceeds the physical revenue ceiling of INA's currently committed capacity, meaning Stage 11 should treat the upper end of the SOM-implied CAGR range as conditional on the cell facility's COD holding, not as a market-size-guaranteed outcome. Runway classification (MASSIVE) describes the size of the opportunity only; it does not offset the execution-credibility flags carried from Stages 5 and 6."

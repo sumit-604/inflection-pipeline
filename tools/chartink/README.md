@@ -79,6 +79,14 @@ thousands of rows.
 Paste `PROJECT_INSTRUCTIONS.md` into the project's instructions. Keep the repo
 copy and the project copy in sync by hand.
 
+## Notes
+
+`data/chartink/analysis/NOTES.md` is the operator's notebook: one dated entry
+per finding, newest first, each naming the trade date it came from. It goes to
+GitHub with the nightly push and is synced into the claude.ai project, so past
+findings are in view at the start of every brainstorm. Add to it by hand, or
+tell Claude Code "note: ..." and it appends the entry with the date.
+
 ## The facts sheet
 
 `facts.py` reads the 34 files and writes one dense markdown sheet of

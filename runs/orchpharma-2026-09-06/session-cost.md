@@ -8,3 +8,4 @@ its own stage. Loops and retries each get their own line with a run counter.
 | 0 | input validation + corpus audit | opus-5 (orchestrator, inline) | default | n/a | n/a | n/a | n/a | 1 |
 | 1 | gate 0 scorecard | sonnet-5 | default | n/a | n/a | 131,843 | 12m26s | 1 |
 | 2 | notes triple-pass, pass 1 | sonnet-5 | default | n/a | n/a | 164,215 | 12m15s | 1 |
+| 5 | concall analysis (4 calls) | sonnet-5 | default | n/a | n/a | 149,182 | 9m41s | 1 |

@@ -1,0 +1,58 @@
+stage: B06-peers
+company: "ORCHPHARMA"
+run_date: "2026-09-06"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "results: no quarterly or annual results filing in corpus"
+  - "rating: no credit rating bulletin or rationale in corpus"
+  - "announcements: no exchange / Reg 30 filings in corpus"
+  - "shareholding: no quarterly shareholding pattern in corpus"
+  - "research: no broker notes in corpus (non-anchored; no evidence effect)"
+  - "screening: Profit_Loss, Balance_Sheet, Cash_Flow, Quarters CSVs are empty templates (collect_to_repo v3 defect); Data_Sheet used in their place"
+  - "presentation: image-based, 3124 chars over 14 pages; treated as near-absent"
+  - "FY2026 primary filings absent: no FY2026 annual report and no FY2026 audited annual results filing"
+  - "annual report PDFs carry a corrupt OCR text layer across the financial statements"
+  - "KOPRAN peer concalls all predate Apr-2025, roughly 18 months staler than the GRANULES and NEULANDLAB sets"
+  - "no peer in the corpus manufactures cephalosporins or 7-ACA; questions 3, 4, 6 and 8 have no direct peer analogue in any of the 11 transcripts"
+flags:
+  - "Q1 CONTRADICTED on breadth: both current peers grew revenue every quarter of FY26 while Orchid declined ~12%; the 'industry-wide' framing of Orchid's decline is not supported by the peer set, though product-specific magnitude cannot be tested (no peer sells cephalosporins)"
+  - "Q2 UNVERIFIABLE for CY2025-26: only stale Kopran (pre-Apr-2025) evidence supports Chinese antibiotic dumping; both current peers are silent on antibiotic-specific China pricing in the FY26 window"
+  - "Q4 falsification test returns no contradicting capacity disclosure across 3 peers, but this is weak evidence of absence, not confirmation of Orchid's 'nobody else is building' claim"
+  - "KOPRAN-Concall_Mar_2025 is a merger-scheme investor meet, not an earnings call; contributes nothing to any of the 8 questions"
+peers_provided: 3
+verified: []
+partially_verified:
+  - {claim: "Independent evidence of demand recovery or pricing improvement beginning around January-April 2026", peers: ["GRANULES"]}
+contradicted:
+  - {claim: "Broad, industry-wide Cephalosporin/oral-API volume and price decline of the magnitude Orchid reports for FY26", contradicting_peer: "NEULANDLAB, GRANULES", quote_anchor: "NEULANDLAB-Concall_May_2026_Transcript.pdf p.3 (FY26 revenue +37.1% YoY); GRANULES-Concall_May_2026_Transcript.pdf p.6 ('FY26 has been a landmark year...crossed the landmark number of INR50,000 million in revenue, posted 6 straight quarters of sequential growth')"}
+unverifiable:
+  - {claim: "Chinese suppliers dumping antibiotic API internationally in CY2025-26 due to weak Chinese domestic demand", peers_checked: ["NEULANDLAB", "GRANULES", "KOPRAN"]}
+  - {claim: "~$60/kg long-term average 7-ACA price and 3-4 dominant Chinese 7-ACA export suppliers to India", peers_checked: ["NEULANDLAB", "GRANULES", "KOPRAN"]}
+  - {claim: "Competing 7-ACA or key-starting-material capacity addition in India contradicting Orchid's 'nobody else is building' claim", peers_checked: ["NEULANDLAB", "GRANULES", "KOPRAN"]}
+  - {claim: "Similar Russia/CIS-driven disruption to regulated-market mix or revenue over FY26", peers_checked: ["NEULANDLAB", "GRANULES"]}
+  - {claim: "Similar US FDA observations or refiling requirements on Ceftazidime-Avibactam-class ANDA submissions", peers_checked: ["NEULANDLAB", "GRANULES"]}
+  - {claim: "US Ceftazidime-Avibactam market size growing from about $200 million to over $300-350 million", peers_checked: ["NEULANDLAB", "GRANULES"]}
+peer_coverage_map:
+  - {peer: "NEULANDLAB", quarter: "Q2 FY26 (Nov 2025)", usage: "SUBSTANTIVE", contribution: "+63.7% YoY revenue; informative silence on China/price erosion"}
+  - {peer: "NEULANDLAB", quarter: "Q3 FY26 (Feb 2026)", usage: "SUBSTANTIVE", contribution: "+11.4% YoY revenue; working-capital scrutiny exchange feeds risk cross-read"}
+  - {peer: "NEULANDLAB", quarter: "Q4 FY26 / FY26 full year (May 2026)", usage: "SUBSTANTIVE", contribution: "FY26 +37.1% YoY revenue; key data point for Q1 contradiction; peptide capex context"}
+  - {peer: "NEULANDLAB", quarter: "Q1 FY27 (Aug 2026)", usage: "SUBSTANTIVE", contribution: "+16.3% YoY revenue; confirms growth continued past FY26"}
+  - {peer: "GRANULES", quarter: "Q2 FY26 (Nov 2025)", usage: "SUBSTANTIVE", contribution: "+34% YoY revenue (part low-base effect); FDA remediation risk context"}
+  - {peer: "GRANULES", quarter: "Q3 FY26 (Jan 2026)", usage: "SUBSTANTIVE", contribution: "+22% YoY revenue; paracetamol demand-recovers/price-still-erodes is key Q7 evidence"}
+  - {peer: "GRANULES", quarter: "Q4 FY26 / FY26 full year (May 2026)", usage: "SUBSTANTIVE", contribution: "FY26 crossed Rs 50,000 mn revenue, 6 straight quarters sequential growth; DCDA China-dumping quote; no paracetamol/metformin price recovery yet"}
+  - {peer: "GRANULES", quarter: "Q1 FY27 (Jul 2026)", usage: "SUBSTANTIVE", contribution: "+22% YoY revenue, +37% EBITDA, +41% PBT; West Asia input-cost risk"}
+  - {peer: "KOPRAN", quarter: "Q2 FY25 (Nov 2024)", usage: "SUBSTANTIVE, STALE", contribution: "Penems -25% price/6mo on Chinese competition, volumes up rupee revenue muted; FY25, out of FY26 window"}
+  - {peer: "KOPRAN", quarter: "Q3 FY25 (Feb 2025)", usage: "SUBSTANTIVE, STALE", contribution: "'Gradual recovery in the API business' language, industry-wide China price pressure; FY25, out of window"}
+  - {peer: "KOPRAN", quarter: "Merger scheme investor meet (Mar 2025)", usage: "UNUSED", contribution: "Entirely about the Kopran Laboratories merger and diagnostics entry; no content relevant to any of the 8 questions"}
+industry_cross_read:
+  demand: "Both current peers describe a strong-to-improving demand environment through FY26 driven by company-specific execution (CDMO ramp-ups, FDA remediation unlocks, controlled-substance and complex-generic launches), not a shared macro recovery narrative; neither frames FY26 as recovery-from-trough the way Orchid does"
+  pricing_inputs: "Where visible (Granules paracetamol/metformin/DCDA, stale Kopran Penems/amoxicillin), commodity-line pricing is under continuing pressure from Chinese competition with rising raw material costs into Q1 FY27; this matches Orchid's mechanism in kind but not in scale, since group-level peer revenue still grew"
+  capex_cycle: "Industry-wide capacity race, not a lone expander: Neuland (peptide facility, ~Rs 1,000cr+ extrapolated, plus new R&D campus), Granules (Genome Valley +40% capacity, Vizag peptide facility, DCDA pilot-to-commercial), and Kopran (stale: Panoli R&D, Meropenem vial-filling line) are all expanding capex through the window; no peer discloses a 7-ACA-specific capacity move"
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "FDA warning-letter and multi-quarter remediation risk at manufacturing sites (GRANULES, Gagillapur/Genome Valley, all four calls) — a risk category not surfaced in comparable detail in Orchid's own concalls per the stage 5 handoff"
+  - "Working-capital/inventory-ramp scrutiny from analysts, including explicit pushback on whether reported profit growth is really an inventory-valuation artifact (NEULANDLAB-Concall_Feb_2026_Transcript.pdf, p.8-9, Aanchal Jalan exchange) — relevant lens for Orchid's own balance sheet quality given Correction 1/4 in this run"
+  - "Raw-material and logistics cost inflation tied to West Asia geopolitical tensions (GRANULES-Concall_Jul_2026_Transcript.pdf, p.5) — a macro input-cost risk not raised in Orchid's own narrative per the stage 5 handoff"
+net_narrative_effect: "complicates"
+analyst_note: "The most load-bearing finding here is negative: both current, contemporaneous peers grew revenue through every quarter of FY26 while Orchid declined about 12% on every basis management stated. That is not proof the decline is company-specific — neither peer sells cephalosporins, so the product-level mechanism (7-ACA price, Chinese dumping in that specific molecule) is untestable against this corpus — but it removes the 'this was just a bad year for everyone in Indian API exports' reading as a default explanation. Synthesis should treat the FY26 decline as needing a company-specific or product-specific explanation until cephalosporin-specific primary evidence says otherwise, and should not lean on this peer set to either confirm or dismiss the 7-ACA/Chinese-dumping thesis, since it is structurally silent on that molecule."

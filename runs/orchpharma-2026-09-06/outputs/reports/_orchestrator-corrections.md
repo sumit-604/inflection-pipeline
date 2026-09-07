@@ -97,3 +97,36 @@ post-merger issued and paid-up share count, the current promoter and public
 holding, and the status and terms of the OCDs. The documents that settle it are
 the FY2026 annual report, the post-allotment shareholding pattern, and the
 merger scheme with any fairness opinion. None is in this corpus.
+
+## CORRECTION 5 (from stage 6) — THE PEER SET DOES NOT COVER THIS COMPANY'S PRODUCT
+
+Stage 6 established that none of the three peers in this corpus makes
+cephalosporins or 7-ACA. NEULANDLAB is a CDMO moving into peptides, GRANULES
+is paracetamol, metformin and complex generics, KOPRAN is penems and its three
+calls all predate April 2025. Four of the eight peer questions stage 5 set
+(7-ACA pricing and supplier concentration, competing 7-ACA capacity,
+Ceftazidime-Avibactam FDA conditions, and the US Ceftazidime-Avibactam market
+size) have NO analogue anywhere in the eleven peer transcripts and came back
+unverifiable for that structural reason, not because the peers disagreed.
+
+CONSEQUENCE. This peer set can test whether Indian API exporters in general had
+a bad FY2026. It cannot test anything specific to the cephalosporin chain,
+which is where Orchid's whole thesis sits. Verifier D should judge peer
+utilisation against that limit rather than against the raw question count, and
+the 09b dossier must carry it as a corpus gap.
+
+HALT 1 ITEM FOR THE OPERATOR. A cephalosporin-relevant peer set would materially
+change what stage 6 can do on a re-run. The peer selection is recorded in the
+manifest as "API-led, backward-integrated pharma", which is true of these three
+and still misses the product chain that matters here.
+
+WHAT STAGE 6 DID SETTLE, and it is load-bearing. Both contemporaneous peers grew
+revenue in every quarter of FY2026 while Orchid declined about 12%:
+NEULANDLAB FY2026 revenue +37.1% year on year, GRANULES crossed Rs 5,000 cr with
+six straight quarters of sequential growth. Management's "industry-wide
+slowdown" framing is therefore NOT supported at the group level by this peer
+set. That is not proof the decline is company-specific, because the product-level
+mechanism is untestable here, but it removes "a bad year for everyone" as the
+default reading. Later stages must treat the FY2026 decline as requiring a
+company-specific or cephalosporin-specific explanation until such evidence
+appears.

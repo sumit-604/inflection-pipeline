@@ -10,3 +10,4 @@ its own stage. Loops and retries each get their own line with a run counter.
 | 2 | notes triple-pass, pass 1 | sonnet-5 | default | n/a | n/a | 164,215 | 12m15s | 1 |
 | 5 | concall analysis (4 calls) | sonnet-5 | default | n/a | n/a | 149,182 | 9m41s | 1 |
 | 8 | promoter check (web) | sonnet-5 | default | n/a | n/a | 161,595 | 12m03s | 1 |
+| 6 | peer concall verification | sonnet-5 | default | n/a | n/a | 141,996 | 6m58s | 1 |

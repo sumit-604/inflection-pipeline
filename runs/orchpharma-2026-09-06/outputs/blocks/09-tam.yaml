@@ -1,0 +1,116 @@
+stage: B09-tam
+company: "ORCHPHARMA"
+run_date: "2026-09-06"
+model: claude-sonnet-5
+status: partial
+input_gaps:
+  - "results: no quarterly or annual results filing in corpus"
+  - "rating: no credit rating bulletin or rationale in corpus"
+  - "announcements: no exchange / Reg 30 filings in corpus"
+  - "shareholding: no quarterly shareholding pattern in corpus"
+  - "research: no broker notes in corpus (non-anchored; no evidence effect)"
+  - "screening: Profit_Loss, Balance_Sheet, Cash_Flow, Quarters CSVs are empty templates (collect_to_repo v3 defect); Data_Sheet used in their place"
+  - "presentation: image-based, 3124 chars over 14 pages; unusable, treated as not provided"
+  - "FY2026 primary filings absent: no FY2026 annual report and no FY2026 audited annual results filing"
+  - "annual report PDFs carry a corrupt OCR text layer across the financial statements"
+  - "no peer in the corpus makes cephalosporins or 7-ACA; management's 7-ACA price and supplier-concentration claims are uncorroborated by the peer set"
+flags:
+  - "Global 'Cephalosporin API market' paid-research figures diverge ~6x on the same 2025 base year ($1.9bn vs $11.8bn); the split is very likely API-only vs finished-drug-inclusive market definitions, not a real range; the API-specific cluster (~$1.9-2.0bn) is used, larger figures excluded"
+  - "Management's $60/kg 7-ACA price claim (Concall_Aug_2026) is UNCORROBORATED by any independent source found; every web result repeating it traces back to a summary of the same Orchid concall (circular), not independent pricing data"
+  - "Management's 'three to four Chinese suppliers' concentration claim is directionally corroborated (two named suppliers independently confirmed as real 7-ACA producers; global top-3 share ~42% cited independently) but the exact count and full supplier list are not independently pinned down"
+  - "Enmetazobactam's USD1-2bn LIFETIME sales claim (unchanged since 2021) is ~8.4x the only signed, quantified comparator (Russia, ~Rs1,685cr/10yr) and is reinforced as likely INFLATED by three independent comparables: a Lancet-cited US$169-439m/yr TOTAL US market for the whole competing drug class, Shionogi's own Fetroja/cefiderocol showing only ~$40m/yr incremental growth years post-launch, and Achaogen's 2019 bankruptcy from a comparable drug's commercial failure"
+  - "Dhanuka Laboratories Limited's own product/business composition is not described anywhere in this corpus; the combined-basis FY26 revenue figure (Rs1,233cr) therefore cannot be confirmed as 100% cephalosporin-related, which is why this report holds the standalone basis (Rs811cr FY26) as the SOM base throughout"
+  - "Aurobindo Pharma is reported (web-derived, not independently verified beyond a search snippet) to have its own, larger (2,000 MT/yr) 7-ACA project under construction, also delayed; this caps how much of Market B's import-substitution opportunity Orchid alone can realistically take even after its own plant commissions"
+  - "No per-share value, market cap, EV, or multiple of any kind is stated anywhere in this report per Correction 4; the Section 5E valuation-implication line is adapted to state revenue/margin math only and defers the P/E call to Stage 11"
+market_definition: "Four separate markets: (A) global Cephalosporin API bulk-export market, price-taker, revenue declining; (B) India 7-ACA import-substitution market, capacity-bound; (C) Enmetazobactam novel-antibiotic licensing market, deal-dependent, reported separately; (D) Cephalosporin FDF, immaterial, folded into A"
+tam_cr: {conservative: 20768, realistic: 21429}
+sam_cr: 1768
+sam_pct_of_tam: 8.5
+som_3yr_cr: 1091
+som_5yr_cr: 1314
+som_implied_revenue_cagr: {yr3: 10.4, yr5: 10.1}
+current_sam_share_pct: 45.9
+revenue_headroom_x: 2.18
+tam_growth_pct: 6.0
+runway_class: "MODERATE"
+mgmt_claim_cr: 14199
+mgmt_claim_ratio: 8.4
+mgmt_claim_read: "inflated"
+capacity_check: "sufficient — Market A SOM (Rs1,200cr 5yr) sits exactly at management's own disclosed no-further-capex ceiling; Market B's 1,000 MT/yr PLI-approved capacity comfortably covers the SOM's modest third-party-sale slice (Rs91-114cr/yr); capacity is not the optimistic side of this thesis, commissioning-date reliability and execution are (two prior slips on record, Correction 6)"
+methods_used:
+  - "Method 1 top-down (Markets A and B)"
+  - "Method 2 bottom-up (Market A, terminated NOT FOUND at addressable-unit volume)"
+  - "Method 3 peer revenue aggregation (Market A)"
+  - "Method 4 import substitution (Market B, operative method)"
+  - "Method 5 global benchmark (attempted, NOT FOUND, both markets)"
+stale_data_flags:
+  - {datapoint: "Global Cephalosporin API market, $1.9bn/2025 and $1.97bn/2026 API-specific cluster", source: "paid market-research aggregators, publisher-to-figure mapping unconfirmed (WebFetch blocked)", year: "2025-2026 base year, publish date unverified"}
+  - {datapoint: "Global 7-ACA market, $625.7m base year", source: "Valuates Reports (reports.valuates.com), via WebSearch", year: "2022"}
+  - {datapoint: "Covalent Laboratories revenue Rs2,916.1cr, +31.5% YoY", source: "ICRA rating rationale (icra.in), via WebSearch, page fetch blocked", year: "FY2024"}
+  - {datapoint: "US annual addressable market for novel Gram-negative antibiotics, $169-439m", source: "The Lancet Infectious Diseases, via PMC/NCBI, via WebSearch", year: "publish year not confirmed by direct fetch"}
+searches_performed:
+  - "global cephalosporin API market size 2025 2026 report"
+  - "7-ACA price per kg China export India import 2025 2026"
+  - "\"7-ACA\" manufacturers China \"Zhuhai United\" OR \"Sinopharm Weiqida\" OR \"Yili Pharmaceutical\" OR \"Livzon\""
+  - "7-ACA market size India PLI scheme cephalosporin intermediate import dependence"
+  - "India 7-ACA import volume tonnes per year China dependency Aurobindo backward integration"
+  - "\"cephalosporin\" API exports India CRISIL ICRA IBEF pharmaceutical export data 2025"
+  - "7-ACA price per kg 2025 echemi OR procurementresource OR chemanalyst"
+  - "Enmetazobactam Exblifep sales revenue 2025 2026 Advanz Pharma Europe"
+  - "India 7-Aminocephalosporanic Acid 7-ACA market size India specific valuates OR researchandmarkets"
+  - "China cephalosporin API intermediate exports to India 2024 value $294 million tonnes"
+  - "USD INR exchange rate September 2026"
+  - "Fetroja cefiderocol peak sales OR Avycaz ceftazidime avibactam peak annual sales Shionogi Pfizer"
+  - "novel antibiotic launch peak sales analog carbapenem-resistant gram-negative hospital antibiotic market size global"
+  - "Achaogen bankruptcy plazomicin sales failure novel antibiotic commercial market broken 2019"
+  - "Fetroja cefiderocol annual sales 2023 2024 revenue million Shionogi"
+  - "Aurobindo Pharma cephalosporin API segment revenue OR Covalent Laboratories cephalosporin revenue India market share"
+searches_skipped:
+  - "WebFetch https://www.bloominglobal.com/media/detail/chinas-cephalosporin-api-and-intermediate-exports-demonstrate-strong-momentum-in-2024 — EGRESS_BLOCKED, relied on WebSearch snippet instead"
+  - "WebFetch https://www.towardshealthcare.com/insights/7-aminocephalosporanic-acid-aca-market-sizing — EGRESS_BLOCKED, relied on WebSearch snippet instead"
+  - "India-specific 7-ACA-only import volume/value (excluding GCLE and other intermediates) — searched repeatedly, NOT FOUND, no source isolates this figure"
+downstream_candidates:
+  - signal: "China cephalosporin API/7-ACA intermediate export volume and value to India"
+    entity_type: "macro"
+    demand_link: "Direct read on Market A input-cost trend and Market B's import-substitution TAM shrinking or growing"
+    likely_source: "India DGFT/DGCI&S trade statistics, or China customs export data"
+    cadence: "quarterly"
+    shared: false
+  - signal: "India antibiotic export quantity and value, all-India ex-Orchid"
+    entity_type: "macro"
+    demand_link: "Tests whether Orchid's FY26 decline is company-specific or sector-wide, per Correction 5"
+    likely_source: "DGFT / Pharmexcil export bulletins"
+    cadence: "monthly"
+    shared: false
+  - signal: "Otsuka Chemicals (India) Pvt Ltd, related-party GCLE supplier"
+    entity_type: "counterparty"
+    demand_link: "Sole approved source of a key Market A input; concentration/pricing trend hits Market A margin directly"
+    likely_source: "AR related-party transaction note / MCA filings"
+    cadence: "annual"
+    shared: false
+  - signal: "Aurobindo Pharma's competing 7-ACA project (reported 2,000 MT/yr)"
+    entity_type: "counterparty"
+    demand_link: "Named domestic Cephalosporin API peer AND competing backward-integration capacity that caps Orchid's Market B share"
+    likely_source: "Aurobindo Pharma quarterly investor presentations and concalls"
+    cadence: "quarterly"
+    shared: true
+  - signal: "Cipla Ltd, India Enmetazobactam/Orblicef marketing partner"
+    entity_type: "counterparty"
+    demand_link: "Drives Market C India revenue realization and patient-volume growth"
+    likely_source: "Cipla quarterly results / investor commentary"
+    cadence: "quarterly"
+    shared: false
+  - signal: "Advanz Pharma, Europe Enmetazobactam licensee"
+    entity_type: "counterparty"
+    demand_link: "Drives Market C Europe royalty revenue via commercial execution across the five largest EU markets"
+    likely_source: "Advanz Pharma company news/press releases"
+    cadence: "event-driven"
+    shared: false
+  - signal: "USFDA / DCGI regulatory approval and inspection status"
+    entity_type: "regulatory"
+    demand_link: "Drives Market C launch timing (US filing, Cefiderocol DCGI waiver) and underpins Market A's '1 of 3 USFDA-approved facility' claim"
+    likely_source: "USFDA Orange Book / inspection database; DCGI approval records"
+    cadence: "event-driven"
+    shared: false
+demand_externally_verifiable: true
+analyst_note: "Two structural findings not fully captured in the fields above. First, the global Cephalosporin API market-size divergence (~6x on the same base year) is very likely a definitional artifact (API-only vs finished-drug-inclusive), not a true range; treating the API-specific cluster (~$1.9-2.0bn) as TAM is a judgment call, not a certainty, since no publisher's methodology could be verified (all WebFetch blocked). Second, the mgmt_claim_ratio (8.4x) compares a multi-geography lifetime figure against a single signed deal, which understates fairness to management's five-year build-out plan even as it is reinforced by three independent commercial comparables; Stage 13 should present both the ratio and this caveat together, not the ratio alone. Third, Market B's SOM revenue (Rs91-114cr/yr) deliberately excludes the much larger captive-use value (Rs363-454cr/yr) to avoid double-counting against Market A's margin; Stage 11 should book the captive value as a Market A margin uplift, never as separate Market B revenue."

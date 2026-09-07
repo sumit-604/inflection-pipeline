@@ -153,3 +153,44 @@ appears.
    aggressive September 2026. The Q4 FY26 call revised out to about March 2027,
    reaffirmed on the Q1 FY27 call. Flagged, not resolved. Use March 2027 as
    current and carry the conflict.
+
+## CORRECTION 7 (from stage 9) — TWO LOAD-BEARING MANAGEMENT CLAIMS DO NOT SURVIVE OUTSIDE TESTING
+
+Stage 6 could not test the cephalosporin-specific claims because no peer in the
+corpus makes cephalosporins. Stage 9 tested them on live web. Two results bind
+every later stage.
+
+1. "NOBODY ELSE IS BUILDING 7-ACA CAPACITY" IS CONTRADICTED. Aurobindo Pharma is
+   reported to have its own 7-ACA project under construction at about 2,000 MT
+   per year, roughly twice Orchid's PLI-approved 1,000 MT per year, also delayed.
+   Web-derived and not confirmed against an Aurobindo filing, so it is a weaker
+   tier than a filing and must be labelled that way. It is nonetheless a direct
+   contradiction of the first-mover framing that supports a Rs 750 cr capex, and
+   it caps how much of the import-substitution opportunity Orchid alone can take.
+   Aurobindo's project is now a standing monitorable.
+
+2. THE $60/KG 7-ACA PRICE IS UNCORROBORATED AND THE EVIDENCE IS CIRCULAR. Every
+   web result repeating that price traces back to a summary of the same Orchid
+   concall. No independent pricing source was found. The economics of the Jammu
+   plant rest on a price only the company asserts. Treat it as MANAGEMENT-STATED,
+   never as a market price, and do not let it enter a valuation as an input
+   without that label.
+
+3. THE ENMETAZOBACTAM OPPORTUNITY IS SIZED AT 8.4x THE ONLY SIGNED COMPARATOR.
+   Management's $1-2bn lifetime sales framing, unchanged since 2021, sits against
+   one signed deal, Russia at about Rs 1,685 cr over ten years. Stage 9 rules it
+   INFLATED on three independent comparables: a Lancet-cited US$169-439m per year
+   TOTAL US market for the whole competing drug class; Shionogi's cefiderocol
+   showing only about $40m per year of incremental growth years after launch; and
+   Achaogen's 2019 bankruptcy after a comparable drug failed commercially.
+   Stage 13 must present the 8.4x ratio together with stage 9's own caveat that it
+   compares a multi-geography lifetime figure against a single signed deal.
+
+4. BOOKING RULE FOR STAGE 11. The 7-ACA captive-use value of about Rs 363-454 cr
+   per year is a MARGIN UPLIFT to the base API business, never separate revenue.
+   Booking it as revenue double-counts. Stage 9's SOM deliberately excludes it for
+   this reason.
+
+RUNWAY. Stage 9 classes the runway MODERATE: revenue headroom about 2.18x on the
+standalone basis, SOM-implied revenue CAGR about 10% at both three and five
+years, against a base year that declined about 12%.

@@ -93,7 +93,7 @@ phase 3), then:
    the deliberation record. Collect B10 into outputs/blocks/.
 
 2. STAGE 11 — VALUATION. Invoke stage-11-valuation exactly per the
-   existing wrapper: pass the SIX framework file paths from frameworks/
+   existing wrapper: pass the EIGHT framework file paths from frameworks/
    as its stable prefix plus B10, in this order —
    Master_Project_Prompt_v3_6.md (resolves
    {{MASTER_PROJECT_PROMPT_V36_ROLE1_SECTIONS}}),
@@ -110,7 +110,7 @@ phase 3), then:
    ({{SECTION_1B_V39_AMENDMENTS}}, relative-valuation cross-check and
    forward-expectation exit framework), and FTTCP_v2_1_Consolidated.md
    ({{FTTCP_V21_CONSOLIDATED}}). If frameworks/ is missing
-   any of the seven files, STOP and tell the user which to add. The FTTCP ROCE
+   any of the eight files, STOP and tell the user which to add. The FTTCP ROCE
    forward verdict and structural/growth determination it consumes are
    the deliberation-confirmed ones carried on B10. ENTITY-COUNT GATE: when
    B10.entity_count is greater than one, stage 11 values PER ENTITY on each

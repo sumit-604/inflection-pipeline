@@ -1,0 +1,73 @@
+stage: B08-promoter
+company: "ORCHPHARMA"
+run_date: "2026-09-06"
+model: claude-sonnet-5
+status: partial
+input_gaps:
+  - "results: no quarterly or annual results filing in corpus"
+  - "rating: no credit rating bulletin or rationale in corpus"
+  - "announcements: no exchange / Reg 30 filings in corpus"
+  - "shareholding: no quarterly shareholding pattern in corpus"
+  - "research: no broker notes in corpus (non-anchored; no evidence effect)"
+  - "screening: Profit_Loss, Balance_Sheet, Cash_Flow, Quarters CSVs are empty templates (collect_to_repo v3 defect); Data_Sheet used in their place"
+  - "presentation: image-based, 3124 chars over 14 pages; treated as near-absent"
+  - "FY2026 primary filings absent: no FY2026 annual report and no FY2026 audited annual results filing"
+  - "annual report PDFs carry a corrupt OCR text layer; FY2024 AR is corrupt on almost every page and FY2025 AR across its financial statements"
+  - "promoter shareholding pattern and pledge: no SAST/shareholding-pattern XBRL filings in corpus; pledge status sourced only to a web-derived, undated-primary-source claim of 'no pledge reported'"
+  - "FY2024 AR was not text-extracted in this run's corpus (work/text/ has no FY2024 file); reviewed via direct PDF page-image spot check only, not exhaustively"
+  - "Dhanuka Laboratories merger scheme document / fairness opinion / swap-ratio valuation not in corpus and not reachable via WebFetch (egress-blocked on all sources carrying it); swap ratio and post-merger shareholding are web-derived from secondary news aggregators, not the scheme document itself"
+flags: []
+verdict: "CAUTION"
+scorecard: {clean: 5, caution: 5, red: 0}
+deal_breakers: []
+adverse_findings:
+  - {finding: "Minimum Public Shareholding breach 2021-2023: public float fell to 10% post-2021 OFS, stock exchanges froze promoter shareholding (20-Apr-2023) under SEBI Circular CFD/CMD/CIR/P/2017/115 and barred new directorships elsewhere; fines of Rs 5,000+GST and Rs 5,19,200 paid; cured via Rs 391.80 cr QIP on 27-Jun-2023 (promoter 89.96%->72.40%, public 10%->27.60%)", evidence_tier: "VERIFIED", source: "FY2025 Annual Report, Corporate Governance Report", date: "31-Mar-2025 (events 2021-2023)"}
+  - {finding: "Related-party dependency on Otsuka Chemical (India) Pvt Ltd, sole approved GCLE supplier, in which MD Manish Dhanuka is Director & Member and WTD Mridul Dhanuka is a Member; FY24-25 transaction value Rs 230.72 cr (~28% of prior-year turnover); FY25-26 shareholder approval sought up to Rs 400 cr (~43% of turnover); no external valuation/benchmarking report disclosed", evidence_tier: "VERIFIED", source: "FY2025 Annual Report, Form AOC-2 and AGM Notice Item 9", date: "FY2024-25 / AGM 32nd (2025)"}
+  - {finding: "14,300 Zero Coupon Optionally Convertible Debentures (Rs 143 crore) held by promoter Dhanuka Laboratories Ltd, convertible at any time over a 10-year tenor into equity at par value (Rs 10/share, ~14.3 crore shares if fully converted vs ~5.07 crore shares outstanding pre-merger), with no market-price linkage", evidence_tier: "VERIFIED", source: "FY2025 Annual Report, Corporate Governance Report and financial statement notes", date: "31-Mar-2025"}
+  - {finding: "Reg 17(1A) shareholder-approval delay (22 days) for Non-Executive Director Ram Gopal Agarwal's continuation past age 75; RPT-report filing delay under Reg 23(9); both fined by BSE and NSE and paid; separate exchange warning letter for delayed intimation of an erstwhile Company Secretary's resignation and an investor-meet schedule", evidence_tier: "VERIFIED", source: "FY2025 Annual Report, Secretarial Audit Report (MR-3) and Directors' Report", date: "FY2024-25"}
+  - {finding: "One independent director (Mudit Tandon) resigned mid-term citing personal reasons, effective 12-Apr-2024; one business-vertical CEO (Orchid AMS) resigned during FY24-25", evidence_tier: "VERIFIED", source: "FY2025 Annual Report, Directors' Report and Corporate Governance Report", date: "FY2024-25"}
+  - {finding: "Pre-2020 promoter (Company A) holding vehicle Orchid Healthcare Pvt Ltd held ~22.64% of the pre-resolution company with 99.99% pledged to lenders, and was later dissolved by NCLT as an asset-less shell; no fraud/SFIO/SEBI/ED record found against founder K Raghavendra Rao despite dedicated search; insolvency reads as debt-driven (RBI 28-large-defaulters list, Aug-2017), not a documented fraud", evidence_tier: "MEDIA REPORTED", source: "Business Standard (31-Dec-2019); multiple web sources on CIRP history", date: "2017-2020 (web search performed 2026-09-06)"}
+  - {finding: "Merger of holding company Dhanuka Laboratories Ltd into Orchid Pharma became effective 10-Jul-2026 (share exchange ratio 161 Orchid shares per 5 Dhanuka Labs shares); 4,45,86,052 new shares allotted 1-Aug-2026; post-scheme promoter/promoter group holding reported at 74.45%, public at 25.55%, again close to the regulatory MPS floor", evidence_tier: "MEDIA REPORTED", source: "multiple financial news aggregators (TipRanks, Whalesbook, ScanX, Trade Brains, BusinessUpturn) — scheme document itself not accessible in this run", date: "Jul-Aug 2026 (web search performed 2026-09-06)"}
+transition_evidence:
+  - "Full change of control 31-Mar-2020 via NCLT/Supreme-Court-sanctioned CIRP resolution plan, replacing the debt-distressed founder-promoter with a 30-45 year operating agrochemicals family group (Dhanuka) -- FY2025 AR + web-derived court record"
+  - "Rs 391.80 crore QIP to Qualified Institutional Buyers, 27-Jun-2023, curing the MPS breach and lifting public holding to 27.60%; mutual funds now hold 18.79% of the company as of 31-Mar-2025 -- FY2025 AR"
+  - "Governance upgrade vs pre-2020 era: 4 of 8 board seats independent (2 women), each with named verifiable credentials, versus a pre-2020 promoter vehicle with 99.99% of its stake pledged -- FY2025 AR + web-derived OHPL pledge data"
+  - "No promoter share pledge currently evidenced (web-derived, weaker tier, dated to search date 2026-09-06), contrasting with the pre-2020 promoter era's heavy pledge"
+  - "Structural simplification underway: pending/completed merger of holding company Dhanuka Laboratories Ltd into Orchid Pharma removes an intermediate unlisted ownership layer, effective 10-Jul-2026 -- FY2025 AR (in progress as of report date) + web-derived completion detail"
+pledge_pct_latest: "NOT FOUND"
+pledge_trend: "NOT FOUND -- no SAST/shareholding-pattern filing in corpus; web search (2026-09-06) found a secondary-source claim of 'no pledge reported' for Dhanuka Laboratories against Orchid Pharma shares, but this is web-derived and not confirmed against a primary BSE/NSE pledge disclosure"
+searches_performed:
+  - "Orchid Pharma insolvency resolution plan Dhanuka Laboratories acquisition 2020 pre-resolution promoters K Raghavendra Rao"
+  - "Dhanuka Laboratories R G Agarwal Manish Dhanuka Mridul Dhanuka Arjun Dhanuka family relationship"
+  - "K Raghavendra Rao Orchid Chemicals Pharmaceuticals insolvency fraud SEBI SFIO CBI case"
+  - "Orchid Pharma promoter shareholding pledge Dhanuka Laboratories 2025 2026"
+  - "Orchid Pharma Dhanuka Laboratories sells 13 lakh shares 571.28 stake sale date"
+  - "Orchid Pharma promoter pledge encumbrance shares BSE NSE trendlyne shareholding pattern latest quarter"
+  - "NCLT dissolves Orchid Pharma promoter firm no gain shareholders"
+  - "Orchid Pharma K Raghavendra Rao Enforcement Directorate PMLA case"
+  - "Dhanuka Group SEBI order adjudication insider trading Manish Dhanuka R G Agarwal"
+  - "Dhanuka Agritech IiAS SES proxy advisory governance concerns"
+  - "Orchid Pharma Glassdoor AmbitionBox employee reviews rating"
+  - "Manish Dhanuka son of R G Agarwal OR M K Dhanuka Dhanuka Group"
+  - "Dhanuka Laboratories Limited CIN private company Gurugram promoter group entities Orchid Pharma other directorships"
+  - "Mridul Dhanuka son father Dhanuka Group Orchid Pharma Ram Gopal Agarwal"
+  - "Otsuka Chemicals India Private Limited ownership Dhanuka GCLE supplier Delhi"
+  - "Orchid Pharma Dhanuka Laboratories merger effective date swap ratio record date 2026"
+  - "Orchid Pharma Dhanuka Laboratories merger promoter shareholding percentage after allotment August 2026"
+  - "Orchid Pharma promoter stake sale freezes 10% down circuit 2026"
+  - "Orchid Pharma short seller report activist investor campaign"
+searches_skipped:
+  - "WebFetch tipranks.com (2 merger-detail articles) -- EGRESS_BLOCKED by network proxy"
+  - "WebFetch bigul.co (Dhanuka Labs stake-sale article) -- EGRESS_BLOCKED"
+  - "WebFetch scanx.trade (share-allotment article) -- EGRESS_BLOCKED"
+  - "WebFetch multibagg.ai (swap-ratio article) -- EGRESS_BLOCKED"
+  - "WebFetch whalesbook.com (3 amalgamation-stage articles) -- EGRESS_BLOCKED"
+  - "WebFetch investywise.com (2 scheme/allotment articles) -- EGRESS_BLOCKED"
+  - "WebFetch trendlyne.com (shareholding/pledge page) -- EGRESS_BLOCKED, could not confirm pledge % at a semi-primary source"
+  - "WebFetch screener.in (shareholding trend page) -- EGRESS_BLOCKED"
+  - "WebFetch business-standard.com (OHPL/NCLT dissolution full article) -- EGRESS_BLOCKED"
+  - "WebFetch en.wikipedia.org (K Raghavendra Rao biography) -- EGRESS_BLOCKED"
+  - "WebFetch careratings.com (CARE Ratings rationale PDF, Mar-2025) -- EGRESS_BLOCKED; would have given an independent credit-agency view on promoter/RPT risk"
+  - "No MCA/RoC, SEBI order database, or NSE/BSE pledge-disclosure database query -- no direct access from this container"
+verdict_basis: "No deal-breaker anywhere and no evidence of fraud/misappropriation by the current (Dhanuka) promoter; but a confirmed, disclosed, cured MPS breach, a large and growing family-linked RPT (Otsuka Chemical, 28%->43% of turnover) with no external pricing validation, and a Rs 143 cr promoter OCD block convertible at par value together outweigh the genuine positives (clean change of control, institutional QIP entry, restrained pay, independent board majority-of-independents-among-non-family seats) enough to place this at CAUTION rather than TRUSTWORTHY."
+analyst_note: "Two promoters exist for this ticker, pre- and post-2020; every finding above is scoped to the post-2020 (Dhanuka) promoter unless explicitly marked as Company A/pre-2020 context. The live holding-company merger (effective 10-Jul-2026, swap ratio 161:5, promoter stake to ~74.45%) is the single most consequential open item: its scheme document and any fairness opinion were not reachable in this run (corpus absent, WebFetch egress-blocked on every source carrying it), so the swap-ratio fairness and post-merger free-float durability are unverified at source and should be Halt-1 priorities. The Rs 143 cr promoter OCD conversion right (at par, no market linkage) is a standing dilution risk independent of the merger and should be tracked for any conversion announcement."

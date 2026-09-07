@@ -61,3 +61,39 @@ repeating the ratio unqualified.
 The annual report text layer is corrupt across the financial statements. A
 figure anchored to a page tagged [OCR:embedded-CORRUPT] is ANCHOR NOT FOUND
 unless Verifier A finds it in the source PDF.
+
+## CORRECTION 4 (from stage 8, plus orchestrator arithmetic) — THE SHARE COUNT DOES NOT RECONCILE, AND DILUTION IS UNDERSTATED
+
+Stage 8 established that the Dhanuka Laboratories merger allotted 4,45,86,052
+new equity shares on 1-Aug-2026 at a swap ratio of 161 Orchid shares per 5
+Dhanuka Labs shares (web-derived; the scheme document is not in the corpus and
+was not reachable). Set against the corpus share counts, nothing reconciles:
+
+| Basis | Shares | Implied market cap at Rs 954.65 |
+|---|---|---|
+| screener Data_Sheet, adjusted, FY2026 | 5.07 cr | Rs 4,840 cr |
+| screener market cap / price (5716.94 / 954.65) | 5.99 cr | Rs 5,717 cr (the manifest figure) |
+| 5.07 cr pre-merger + 4.459 cr merger allotment | 9.53 cr | Rs 9,096 cr |
+
+The manifest market cap of Rs 5,717 cr and the post-merger share count differ
+by about 59%. A per-share fair value built on the wrong count is wrong by that
+much. This is not a rounding question.
+
+ON TOP OF THAT, an undiluted overhang: 14,300 Zero Coupon Optionally
+Convertible Debentures of Rs 143 cr are held by the promoter, convertible at
+any time across a ten-year tenor into equity AT PAR VALUE of Rs 10 per share,
+with no market-price linkage (FY2025 AR, corporate governance report and notes;
+stage 8 evidence tier VERIFIED). At par that is up to about 14.3 crore further
+shares, more than the entire current equity base, at a price roughly 99% below
+the market price.
+
+BINDING RULE. No stage in this run may state a per-share value, a market cap or
+a per-share multiple until the share count is resolved against a primary
+filing. Where a per-share figure is unavoidable, state the count used and its
+source, and state the OCD overhang alongside it.
+
+HALT 1 PRIORITY. The operator must resolve, from primary sources: the
+post-merger issued and paid-up share count, the current promoter and public
+holding, and the status and terms of the OCDs. The documents that settle it are
+the FY2026 annual report, the post-allotment shareholding pattern, and the
+merger scheme with any fairness opinion. None is in this corpus.

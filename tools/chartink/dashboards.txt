@@ -1,0 +1,7 @@
+# Chartink dashboards to collect daily.
+# Format: <dashboard_id>  <folder name>
+# The dashboard must be public. Widget definitions are read from the live page
+# on every run, so edits made on chartink.com are picked up automatically.
+
+133280   mbm-swing-ka-sultan
+148889   market-breadth-analysis

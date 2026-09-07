@@ -40,7 +40,7 @@ C use it. If web is unavailable at run time, degrade: build the business read
 from the collected annual report and presentation, and fall back to screener's
 own Peers list for candidates, and say so in the brief. The collector and git
 run locally:
-- Collector: `tools/collector/` inside the repo. Scripts versioned; secrets (.env, credentials.json, token.json) gitignored, placed on disk per tools/collector/README.md. Run the collector from that folder; if the three secret files are missing, STOP and tell the operator.
+- Collector: `tools/collector/` inside the repo. Scripts versioned; the screener login `.env` is gitignored and placed on disk per tools/collector/README.md. The repo path runs `--no-drive`, so no Google credentials are needed. Run the collector from that folder; if `.env` is missing, STOP and tell the operator.
 - Repo root:        `C:\Users\SUMIT SHARMA\repos\inflection-pipeline`
 Run every Python invocation with `PYTHONUTF8=1` (the collector prints the rupee
 sign and dies under Windows cp1252 when its output is redirected).

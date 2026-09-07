@@ -1,0 +1,9 @@
+company: Visaka Industries Ltd
+ticker: VISAKAIND
+cmp: 93.4
+market_cap_cr: 807.0
+run_date: 2026-09-05
+run_type: full
+concalls_available: true
+sector_cap_row: "Building materials"
+notes: "Collected from screener.in by collect_to_repo.py v3. Sector row corrected from auto-picked 'EPC / Civil construction' to 'Building materials' (22x) per framework Sector Cap Table (fibre-cement roofing sheets, boards/panels + synthetic yarn + ATUM solar). Main concalls on screener are stale (2022-2023); ATUM solar is growth optionality. Peers: BirlaNu/HIL (509675), Everest, Ramco Industries."

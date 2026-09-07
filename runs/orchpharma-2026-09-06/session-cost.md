@@ -12,3 +12,4 @@ its own stage. Loops and retries each get their own line with a run counter.
 | 8 | promoter check (web) | sonnet-5 | default | n/a | n/a | 161,595 | 12m03s | 1 |
 | 6 | peer concall verification | sonnet-5 | default | n/a | n/a | 141,996 | 6m58s | 1 |
 | 4 | business model decoder | sonnet-5 | default | n/a | n/a | 145,220 | 10m17s | 1 |
+| 7 | emerging moat scan | sonnet-5 | default | n/a | n/a | 152,541 | 11m14s | 1 |

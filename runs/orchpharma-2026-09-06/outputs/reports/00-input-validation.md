@@ -311,6 +311,87 @@ rulings. It is passed to stages as COMPANY MEMORY with that stated, so no
 stage mistakes it for prior-run evidence. `run_type` is `full`, not
 `refresh`, so no PRIOR RUN CONTEXT applies.
 
+
+## 0.12 AMENDMENT (post-stage-2): CORRUPT OCR TEXT LAYER IN BOTH ANNUAL REPORTS
+
+Raised by stage 2 pass 1, which reported that numeric tables in both annual
+reports were unreadable. Investigated at orchestration. Stage 2's report was
+right and the cause is worse than table flattening.
+
+FINDING. Both annual report PDFs are scanned images carrying an OCR text layer
+produced by some earlier tool, and that layer is corrupt. Characters are
+substituted and digits are dropped or merged. Verbatim from the FY2025 AR
+text layer: "AI! amounts are INR lakhs, except sllare data", "Ordlid
+BioPllarma Ltd", "val~ of 0,aJ595 USD pershare", "Ll?Ss. Provision for
+diminu~on". No number from such a page can be trusted.
+
+SPREAD, measured page by page:
+
+| Document | Corrupt pages | Share |
+|---|---|---|
+| Annual_Report_2024.pdf | 305 of 318 | 96% |
+| Annual_Report_2025.pdf | 112 of 300 | 37% |
+| Investor_Presentation_1.pdf | 14 of 14 | 100% (image-only) |
+| 15 concall transcripts | 0 | 0% |
+
+The FY2025 corruption is not spread evenly. It concentrates in pages 174-224
+(standalone financial statements and notes) and 232-300 (consolidated
+financial statements and notes). The clean 188 pages are the narrative
+sections: chairman's letter, management discussion, business description,
+directors' report and most of the corporate governance report.
+
+WHAT THIS COSTS THE RUN. The audited financial statements and the notes to
+accounts are the part of the annual report a valuation depends on. The
+narrative is readable; the numbers behind it are not. Combined with the
+absent FY2026 filings already recorded at 0.7, the corpus supports a strong
+qualitative read and a weak filing-anchored quantitative one.
+
+WHAT IS STILL SOUND, and what this run's numbers therefore rest on:
+- All 15 concall transcripts, including the four own-company calls that are
+  the only primary FY2026 narrative coverage.
+- 188 narrative pages of the FY2025 annual report.
+- inputs/screening/screener-Data_Sheet.csv: audited annual figures FY2017 to
+  FY2026 and quarterly figures Mar-2024 to Jun-2026, in clean CSV. These are
+  screener aggregates, a weaker tier than a filing, but they are not corrupt.
+
+REPAIR ATTEMPTED. poppler-utils and tesseract were installed and the corrupt
+pages re-rendered at 200 dpi and re-OCR'd. On a test page the repair is
+decisive: a page that yielded no figures at all returned "Loans to
+Subsidiaries 10,824.32", "Less: Provision for diminution in fair value of
+investments (12,470.10)" and "Total non-current investments 6,934.61
+6,939.79". That page also CORROBORATES stage 2 pass 1's finding of a Rs
+108.24 cr intercompany loan to Orchid Bio-Pharma, which stage 2 had read off
+the corrupt layer. Where checked, the corrupt layer's digits were right; the
+point is that they cannot be relied on without checking.
+
+REPAIR NOT COMPLETED. OCR throughput on this container is throttled and highly
+variable: the same page OCR'd in 2.9 seconds in one measurement and timed out
+past 300 seconds in another, with sustained rates near 100 seconds per page.
+At that rate the FY2025 repair alone is about three hours and FY2024 about
+eight. Full repair was abandoned. A resumable, priority-ordered repair now
+runs opportunistically against the financial-statement pages; whatever it
+completes is cached and folded into the text extracts.
+
+HOW EVERY STAGE MUST TREAT THIS. Each page in work/text/ carries an OCR tag
+on the line after its page marker:
+- [OCR:embedded] the PDF's own text layer is sound. Trust it.
+- [OCR:tesseract] re-OCR'd successfully. Usable; verify critical figures.
+- [OCR:embedded-CORRUPT] corrupt and not yet repaired. NO NUMBER may be taken
+  from the page. Narrative wording may still indicate that a topic is
+  discussed; every figure on it is NOT FOUND.
+
+CONSEQUENCE FOR VERIFIER A. Verifier A is the sole authority on whether a
+number exists in the source. It must check every AR-sourced figure against the
+source PDF page, and must record which OCR tag the page carried. A figure
+anchored to an [OCR:embedded-CORRUPT] page is an ANCHOR NOT FOUND unless the
+source PDF itself shows it.
+
+CONSEQUENCE FOR THE GATE. This does not change the freshness verdict, which
+already reads CORPUS GAPPED-FRESHNESS on the absent FY2026 filings. It adds a
+second, independent reason the gate cannot be better than PROCEED WITH
+CAVEATS, and it belongs in the 09b dossier corpus audit alongside the missing
+FY2026 documents.
+
 ```yaml
 stage: B00-inputs
 company: ORCHPHARMA
@@ -363,6 +444,7 @@ input_gaps:
   - "FY2026 primary filings absent: no FY2026 annual report and no FY2026 audited annual results filing; FY2026 figures available only as screener aggregates"
   - "FY2026 cost breakdown (Power and Fuel, Other Mfr. Exp, Selling and admin) blank in Data_Sheet with Other Expenses at 237.10 vs 11.40 prior year; FY2026 cost split is NOT FOUND"
   - "KOPRAN peer concalls all predate Apr-2025, roughly 18 months staler than the GRANULES and NEULANDLAB sets"
+  - "annual report PDFs carry a CORRUPT OCR text layer: Annual_Report_2024.pdf 305 of 318 pages, Annual_Report_2025.pdf 112 of 300 pages concentrated in the financial statements (174-224 standalone, 232-300 consolidated). Digits are dropped and merged. No number may be taken from a page tagged [OCR:embedded-CORRUPT]. See section 0.12."
 not_gaps:
   - "prospectus: company long listed (FY2017-FY2026 price history); IPO prospectus not expected"
 freshness_pairs:
@@ -403,7 +485,18 @@ text_extracts:
   path: "work/text/"
   files: 18
   page_markers: "===== PAGE n ====="
+  ocr_tags: "each page carries [OCR:embedded] (sound), [OCR:tesseract] (repaired, verify critical figures), or [OCR:embedded-CORRUPT] (unreliable, no number may be taken)"
   note: "convenience layer; verifier A audits against the source PDFs"
+ocr_audit:
+  corrupt_text_layer: true
+  annual_report_2024: {pages: 318, corrupt: 305, share: "96%"}
+  annual_report_2025: {pages: 300, corrupt: 112, share: "37%", concentration: "174-224 standalone FS, 232-300 consolidated FS"}
+  investor_presentation: {pages: 14, corrupt: 14, share: "100%", note: "image-only"}
+  transcripts_all_15: {corrupt: 0, note: "clean; stage 5 and 6 evidence is sound"}
+  repair_tool: "tools/ocr_repair.py, tesseract 5.3.4 at 200dpi, resumable and priority-ordered"
+  repair_status: "partial and opportunistic; container OCR throughput throttled to roughly 100s per page with high variance, so full repair was abandoned"
+  repair_corroboration: "a repaired page confirmed stage 2 pass 1's Rs 108.24 cr intercompany loan to Orchid Bio-Pharma, read off the corrupt layer"
+  binding_rule: "a figure anchored to an [OCR:embedded-CORRUPT] page is ANCHOR NOT FOUND unless verifier A finds it in the source PDF"
 degradation_applied:
   - "Gate 0 runs from screener Data_Sheet (no results PDFs)"
   - "stage 4 builds from annual reports and concalls (presentation near-absent)"
@@ -415,5 +508,5 @@ operator_rulings_this_run:
   - "2026-09-06: empty-folder confirmation answered in advance; proceed with declared gaps, do not pause"
 halt: false
 flags: []
-analyst_note: "Corpus is strong on narrative and weak on FY2026 primary filings. Two annual reports and four own concalls cover the business well through FY2025 and give management's FY2026 account, but no audited FY2026 statement exists anywhere in the corpus while the screener shows FY2026 as the year of largest change. Pair 4 fails on that basis and caps the gate. The empty screener P&L/BS/CF/Quarters files are a known collector defect, not missing data: Data_Sheet holds the same series and every stage reads it instead. The investor presentation is image-based and cannot be relied on for figures."
+analyst_note: "AMENDED at 0.12 for a corrupt OCR text layer in both annual reports. Corpus is strong on narrative and weak on FY2026 primary filings. Two annual reports and four own concalls cover the business well through FY2025 and give management's FY2026 account, but no audited FY2026 statement exists anywhere in the corpus while the screener shows FY2026 as the year of largest change. Pair 4 fails on that basis and caps the gate. The empty screener P&L/BS/CF/Quarters files are a known collector defect, not missing data: Data_Sheet holds the same series and every stage reads it instead. The investor presentation is image-based and cannot be relied on for figures. Second and independent problem: both annual report PDFs carry a corrupt OCR text layer, 96% of FY2024 and 37% of FY2025 concentrated exactly in the financial statements, so filing-anchored numbers are scarce even for the years the corpus does cover. The 15 transcripts are clean and carry this run."
 ```

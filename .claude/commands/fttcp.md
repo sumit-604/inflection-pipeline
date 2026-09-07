@@ -124,7 +124,7 @@ Read, in this order:
    frameworks/Section_1B_v3_5_1_Reconciliation.md, then
    frameworks/Section_1B_v3_6_Amendments.md, then
    frameworks/Section_1B_v3_7_Amendments.md, then
-   frameworks/Section_1B_v3_8_Amendments.md — read ALL FIVE layers in this
+   frameworks/Section_1B_v3_8_Amendments.md — read ALL SIX layers in this
    order; together they are the sole exit-multiple and Pillar authority the
    FTTCP verdict hands off to, and the source of truth for the sector cap
    table. Where they overlap, v3.8 governs the items it names, then v3.7,

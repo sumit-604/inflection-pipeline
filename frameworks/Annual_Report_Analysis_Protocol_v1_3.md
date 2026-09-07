@@ -1008,7 +1008,7 @@ Walk the four transitions (or the lender transition set) against the AR evidence
 
 This is the synthesis step that ties everything back to the investment decision.
 
-### 11A. Four-Pillar Destination PE re-validation (synced to Section 1B v3.3)
+### 11A. Four-Pillar Destination PE re-validation (synced to Section 1B v3.9)
 
 Walk through each pillar with the audited full-year data:
 

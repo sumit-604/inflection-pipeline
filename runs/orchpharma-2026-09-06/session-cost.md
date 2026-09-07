@@ -11,3 +11,4 @@ its own stage. Loops and retries each get their own line with a run counter.
 | 5 | concall analysis (4 calls) | sonnet-5 | default | n/a | n/a | 149,182 | 9m41s | 1 |
 | 8 | promoter check (web) | sonnet-5 | default | n/a | n/a | 161,595 | 12m03s | 1 |
 | 6 | peer concall verification | sonnet-5 | default | n/a | n/a | 141,996 | 6m58s | 1 |
+| 4 | business model decoder | sonnet-5 | default | n/a | n/a | 145,220 | 10m17s | 1 |

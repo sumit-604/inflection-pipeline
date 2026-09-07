@@ -130,3 +130,26 @@ mechanism is untestable here, but it removes "a bad year for everyone" as the
 default reading. Later stages must treat the FY2026 decline as requiring a
 company-specific or cephalosporin-specific explanation until such evidence
 appears.
+
+## CORRECTION 6 (from stage 4) — THREE STRUCTURAL FACTS LATER STAGES MUST NOT MISS
+
+1. 7-ACA CAPEX ROSE 25% ON THE COMPANY'S OWN NUMBERS. The FY2025 annual report
+   states total 7-ACA capex of Rs 600 cr (Annual_Report_2025.pdf, p.20). The
+   Q1 FY27 concall of Aug-2026 states Rs 750 cr. Neither source reconciles the
+   change and no stage before stage 4 had caught it. Treat Rs 750 cr as current
+   and the Rs 150 cr increase as an unexplained overrun on a pre-revenue project.
+
+2. ONE OPERATING SEGMENT. Orchid reports a SINGLE operating segment under Ind AS
+   108. No filed number anywhere in this corpus separates the capital employed or
+   ROCE of the earning base business from the pre-revenue growth engine. Every
+   ROCE figure in this run, stage 1's included, is necessarily a blended
+   whole-company number. Stage 11 must not present a base-business ROCE as if it
+   were disclosed, and the Section 1B route selection must account for the fact
+   that the denominator carries Rs 341 cr of capital work in progress that earns
+   nothing yet.
+
+3. THE COMMISSIONING DATE CONFLICTS ACROSS SOURCES. The FY2025 AR states
+   December 2026 mechanical completion (p.15). The Q3 FY26 call stated a more
+   aggressive September 2026. The Q4 FY26 call revised out to about March 2027,
+   reaffirmed on the Q1 FY27 call. Flagged, not resolved. Use March 2027 as
+   current and carry the conflict.

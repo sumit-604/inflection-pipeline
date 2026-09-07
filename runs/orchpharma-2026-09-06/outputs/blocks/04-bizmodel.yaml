@@ -1,0 +1,80 @@
+stage: B04-bizmodel
+company: "ORCHPHARMA"
+run_date: "2026-09-06"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "results: no quarterly or annual results filing in corpus"
+  - "rating: no credit rating bulletin or rationale in corpus"
+  - "announcements: no exchange / Reg 30 filings in corpus"
+  - "shareholding: no quarterly shareholding pattern in corpus"
+  - "research: no broker notes in corpus (non-anchored; no evidence effect)"
+  - "screening: Profit_Loss, Balance_Sheet, Cash_Flow, Quarters CSVs are empty templates (collect_to_repo v3 defect); Data_Sheet used in their place"
+  - "presentation: image-based, 3124 chars over 14 pages; unusable, treated as not provided"
+  - "FY2026 primary filings absent: no FY2026 annual report and no FY2026 audited annual results filing"
+  - "annual report PDFs carry a corrupt OCR text layer across the financial statements"
+flags:
+  - "Base business and growth engine are structurally different and must not be valued on one blended multiple; Section 4B gives the sum-of-the-parts handoff"
+  - "Stage 1 Gate 0 moat test M8 is written for FMCG store distribution; Orchid has no store/dealer network at all, it is a purchase-order B2B exporter (Section 3A)"
+  - "Otsuka Chemicals (India) Pvt Ltd is a RELATED PARTY and the sole approved source of GCLE, a key raw material, Rs 230.72 cr FY25 (AR p.148); a direct analyst question on this trend was deflected on the Q1 FY27 concall (Stage 5)"
+  - "7-ACA disclosed total capex rose from Rs 600 cr (AR p.20) to Rs 750 cr (Q1 FY27 concall), a ~25% increase on the company's own numbers"
+  - "7-ACA mechanical-completion date is internally inconsistent across sources: AR states December 2026 (AR p.15), Q3 FY26 concall stated a more aggressive September 2026, Q4 FY26 concall revised back out to ~March 2027"
+  - "Orchid reports a SINGLE operating segment under Ind AS 108; no filed split of capital employed or ROCE exists between the earning base business and the pre-revenue growth engine"
+  - "No per-share value, market cap or per-share multiple is used anywhere in this report; where FY25 AR-stated EPS (Rs 20.99) is cited, the share count (5.07 cr, AR p.23, pre-merger standalone) and the OCD overhang are stated alongside it per Correction 4"
+business_type: "manufacturing"
+revenue_streams:
+  - {name: "Cephalosporin API", type: "B2B bulk manufacturing, purchase-order", pct_of_revenue: 98.3, predictability: "M"}
+  - {name: "Cephalosporin FDF", type: "B2B finished-dose manufacturing", pct_of_revenue: 1.7, predictability: "L"}
+  - {name: "Enmetazobactam / Orblicef (India + ex-India licensing)", type: "Branded pharma + IP licensing", pct_of_revenue: 0, predictability: "L"}
+  - {name: "Orchid AMS (hospital stewardship)", type: "Services/products, hospital channel", pct_of_revenue: 0, predictability: "L"}
+asset_intensity: "heavy"
+wc_intensity: "high"
+pricing_power: "price-taker"
+cyclicality: "cyclical"
+moats_present:
+  - {moat: "Regulatory dossier depth (48 US DMFs, 15 COS, 8 JDMFs, 6 ANDAs)", durability: "moderate-high"}
+  - {moat: "Enmetazobactam NCE patent, USFDA/EMA/DCGI approved", durability: "high on the molecule, narrow relative to total revenue"}
+  - {moat: "Claimed 1-of-3-worldwide USFDA-approved sterile Cephalosporin facility status", durability: "high if independently verified, unverified in this corpus"}
+  - {moat: "7-ACA backward-integration cost advantage", durability: "unproven, pre-commissioning"}
+valuation_methods:
+  primary: {method: "Sum-of-the-parts: converter-multiple EV/EBITDA or P/E (Section 1B destination multiple) for the base business, plus DCF/NPV and risked-option value for the growth engine", why: "The two engines have fundamentally different earnings bases, one operating and cyclical, one pre-revenue and deal-dependent; blending them misprices both, and Amendment 17 forbids feeding spot-year converter metrics into a blended read"}
+  secondary: {method: "Replacement/build-cost cross-check on the disclosed Rs 750 cr 7-ACA capex", why: "A hard, management-disclosed capital figure gives a sanity check on what the market should pay for the backward-integration project alone"}
+  tertiary: {method: "Peer EV/EBITDA (Aurobindo Pharma, Covalent Labs domestically; NEULANDLAB, GRANULES, KOPRAN pipeline peer set), base business only", why: "Market cross-check only; peers differ materially in scale, ROCE and mix so this stays tertiary"}
+  not_applicable:
+    - "Dividend Discount Model: no dividend recommended FY25 or FY24, profits retained for capex (AR p.32)"
+    - "Any per-share (P/E, EPS-multiple) method until the post-merger share count and OCD overhang are resolved against a primary filing (Correction 4)"
+    - "A single blended EV/EBITDA multiple across both engines: conflates an operating cyclical business with pre-revenue project capex"
+irrelevant_ratios:
+  - {ratio: "Same-store-sales growth / dealer network size", why: "Orchid has no store or dealer distribution; it sells B2B on purchase order (direct correction to Stage 1's FMCG-framed M8 test)"}
+  - {ratio: "Brand recall / consumer NPS / advertising-spend ratio", why: "No consumer ever sees the Orchid brand on the core API/FDF product; the customer is a pharma manufacturer"}
+  - {ratio: "Inventory turnover vs retail/FMCG norms (8-12x)", why: "Bulk regulated API manufacturing structurally carries ~194 days inventory (1.88x turns, AR p.63); this is intrinsic to the archetype, not mismanagement"}
+  - {ratio: "Receivable days vs cash-and-carry retail norms", why: "~114 days (AR p.62) is ordinary for export purchase-order B2B pharma, not a red flag by retail standards"}
+  - {ratio: "Gross margin vs branded/generic formulation companies (60-70%+)", why: "Orchid is a bulk converter with material cost 63.5% of revenue (AR p.61); a lower gross margin is structurally correct for this archetype"}
+  - {ratio: "FY2026 YoY revenue growth taken from the screener aggregate at face value", why: "Mixes a standalone FY25 base against a merger-restated combined FY26 figure; organic FY26 revenue actually fell ~12% on every basis management stated"}
+must_track_metrics:
+  - {metric: "Material cost, % of revenue", healthy: "below ~65% (FY25 63.5%, AR p.61)", red_flag: "sustained above ~68-70%"}
+  - {metric: "Net debt / EBITDA, comparable basis", healthy: "below ~2x", red_flag: "above ~4x (Stage 1's 4.46x is unverified, scope-mixed per Correction 2)"}
+  - {metric: "7-ACA commissioning-date adherence", healthy: "March 2027 met or beaten", red_flag: "any further slip"}
+  - {metric: "Regulated-market mix, % of revenue", healthy: "above ~30%", red_flag: "sustained below ~25%"}
+  - {metric: "PBT/PAT quarterly disclosure", healthy: "given each quarter with a capex/interest bridge from EBITDA", red_flag: "continued non-disclosure, as on all four calls to date"}
+unit_economics:
+  unit: "1 kilogram of Cephalosporin API sold"
+  revenue_per_unit: "~Rs 1,536/kg oral, ~Rs 1,588/kg sterile, FY25 blended (computed from AR p.55 volume-and-value data; both realizations FELL from FY24 despite volume growth)"
+  margin_per_unit: "NOT FOUND at segment level; company-wide material cost is 63.50% of revenue FY25 (AR p.61)"
+  key_lever: "Capacity utilization on a largely fixed base-business plant: management states >Rs 1,200 cr turnover is achievable without further capex against ~Rs 811-922 cr actually achieved, implying high operating leverage on any volume recovery, before the 7-ACA capacity even comes online"
+first_deterioration_signals:
+  - {risk: "China oversupply/dumping depresses generic Cephalosporin pricing further", first_signal: "Oral segment price-erosion %, and material cost as % of revenue rising above the FY25/FY24 band"}
+  - {risk: "Concentrated raw material supply (China + sole related-party Otsuka GCLE source)", first_signal: "Material cost % of revenue rising above the FY25/FY24 baseline"}
+  - {risk: "7-ACA/Cefiderocol capex overrun or further timeline slip while pre-revenue", first_signal: "CWIP growth outpacing the disclosed Rs 750 cr schedule, or continued non-disclosure of total debt/cash"}
+  - {risk: "Repeated commissioning-date slips", first_signal: "Any further slip past the newly reaffirmed March 2027 (7-ACA) / Q3 FY28 (Cefiderocol) dates"}
+  - {risk: "No segment-level capital-employed/ROCE split under single-segment reporting", first_signal: "Continued absence of a base-business-only ROCE disclosure in the next annual report"}
+mgmt_questions:
+  - "What is PBT/PAT for the quarter, and how much of the EBITDA-to-PBT gap is interest/depreciation from pre-revenue 7-ACA/Cefiderocol capex versus the base business?"
+  - "What is total debt and cash as of this quarter-end, and net debt/EBITDA on a comparable basis?"
+  - "What is the five-year trend in Otsuka Chemicals (India) GCLE purchases as a % of material cost, and what alternate sources exist?"
+  - "Beyond Russia, is there a second signed Enmetazobactam ex-India licensing deal, and if not, why has the timeline slipped four consecutive quarters?"
+  - "Has the 7-ACA total capex figure of Rs 750 crore changed since first disclosed, and is the March 2027 commercial-production date still firm?"
+  - "What is the post-merger issued and paid-up share count, and what are the conversion terms and current holder intent for the Rs 143 crore Zero Coupon OCDs?"
+  - "What capital employed and ROCE apply to the base API/FDF business alone, given the company reports only one operating segment?"
+one_line_verdict: "A price-taking API exporter is funding an unproven premium bet, and neither is visible alone in the filings."
+analyst_note: "Two internal inconsistencies are worth carrying into Stage 11 and 13. First, 7-ACA capex rose from Rs 600 cr (AR p.20, mid-2025) to Rs 750 cr (Q1 FY27 concall, Aug-2026), a ~25% overrun on the company's own numbers, not previously flagged elsewhere in this pipeline. Second, the AR's own December-2026 mechanical-completion target (AR p.15) was briefly superseded by a MORE aggressive September-2026 target on the Q3 FY26 call before slipping back out to March 2027, an internal chronology conflict across AR and concall sources that is flagged, not resolved. Third, Orchid reports a single operating segment under Ind AS 108, so no filed number anywhere in this corpus separates the earning base business's capital employed and ROCE from the pre-revenue growth engine's; every ROCE figure Stage 1 or Stage 11 uses is necessarily a blended, whole-company number until management volunteers a split. Unit economics computed in 3D (Rs/kg realization) are MY OWN calculation from AR-stated MT and value figures on a clean page, not a company-stated per-kg price, flagged as computed throughout."

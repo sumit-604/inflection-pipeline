@@ -1,0 +1,106 @@
+stage: confidence-delta
+company: IEX
+run_date: "2026-09-08"
+phase: 1
+model: orchestrator-inline
+
+confidence_delta:
+  numerical_acceptance: 98.9     # B12a, verifier A (haiku), 92 numbers checked
+  redflag_coverage: 65           # B12b run 3, verifier B (opus), strict; 88 including partial catches
+  framework_adherence: 84        # B12c, verifier C (opus), Gate 0 + Emerging Moat scope only
+  peer_utilisation: 100          # B12d run 2, verifier D (sonnet), 12 of 12 peers used substantively
+  overall: 65                    # min of the four
+  band: "60-74 — PROCEED verdicts downgrade one level"
+
+valuation_framework_adherence:
+  status: pending
+  note: >
+    Verifier C's valuation-adherence audit (B11, B10) is deferred to phase 3.
+    It ran in phase-1 scope only, on Gate 0 and the Emerging Moat scan, and its
+    84 percent covers only those. The valuation framework documents were
+    deliberately withheld as dead context in this phase.
+
+verifier_summary:
+  B12a:
+    verifier: "A, numerical audit vs sources"
+    model: claude-haiku-4-5
+    acceptance_rate: 98.9
+    critical: 0
+    major: 0
+    minor: 1
+    source_fidelity_findings: 1
+    note: >
+      92 numerical claims audited across all eleven stage reports. One MINOR
+      presentational point in the business-model report; no verdict-card or
+      pillar input affected. Source fidelity is clean, which is the finding
+      that matters most: no number in this evidence pack was fabricated or
+      materially misread.
+  B12b:
+    verifier: "B, independent concall red-flag audit"
+    model: claude-opus-4-8
+    run_number: 3
+    post_remediation: true
+    acceptance_rate: 65
+    acceptance_rate_including_partials: 88
+    critical: 0
+    major: 6
+    minor: 7
+    measurement_history: "run 1 measured stage 5 run 1 at 38; run 2 measured stage 5 run 2 at 36 strict / 68 with partials; run 3 measures stage 5 run 3 at 65 strict / 88 with partials"
+    note: >
+      NOT a clean first-pass score and must not be read as one. Stage 5 was
+      reworked twice against this verifier's own earlier findings, so run 3
+      measures what an independent reader still out-lists against a much
+      harder residual set. Zero pipeline flags unsupported; every load-bearing
+      monthly-filing number re-derived matched exactly; all five
+      promise-delivery directions tested held. Its own materiality read: the
+      residual gap would not change an investment decision.
+  B12c:
+    verifier: "C, framework adherence (phase-1 scope)"
+    model: claude-opus-4-8
+    acceptance_rate: 84
+    critical: 0
+    major: 2
+    minor: 11
+    rework_triggered: false
+    note: >
+      Re-derived Gate 0 at 115/160 and the emerging-moat score at 28.4 against
+      28 reported. Both MAJORs were recomputed and neither changes a
+      classification: an unauthorised 0.85 evidence multiplier in the moat scan
+      (recompute band 26.3 to 29.9, STRENGTHENING holds throughout, the EM
+      greater-than-25 UA qualifier holds), and a Gate 0 promoter metric scored
+      on a one-year window where the rule requires zero (recompute core 82,
+      EXCELLENT holds).
+  B12d:
+    verifier: "D, peer coverage audit"
+    model: claude-sonnet-5
+    run_number: 2
+    acceptance_rate: 90
+    peer_utilisation: 100
+    critical: 0
+    major: 1
+    minor: 1
+    note: >
+      All twelve peer transcripts used substantively after the re-pointing.
+      The single MAJOR is an open coverage gap, not an error: stage 5 run 3
+      raised a seventh peer question and stage 6 answered six.
+
+rework_gate:
+  triggered: false
+  reasoning: >
+    The hard REWORK triggers are (a) any Verifier A CRITICAL numerical finding
+    and (b) any verifier acceptance_rate below 60 percent. Verifier A reports
+    zero CRITICAL at 98.9 percent. All four current acceptance rates sit at or
+    above 65 percent. The gate DID fire twice during the run and was answered
+    by rework rather than by declaring the verdict: verifier B measured 38
+    percent on stage 5 run 1 and 36 percent strict on run 2. Stage 5 was rerun
+    in full and then amended in a targeted way against those findings, and the
+    rate cleared on run 3. This history is disclosed in full and the run's
+    honest confidence is the 65 percent overall, not the 98.9 percent
+    headline.
+
+open_items_carried_to_halt_1:
+  - "B12d MAJOR: stage 5 run 3's seventh peer question, whether disclosure precision degrades at peers under competitive or regulatory threat, has no verdict. Stage 6 gathered adjacent evidence and did not synthesise it."
+  - "B12b MAJOR: citation anchor drift of one to three marker pages across roughly a third of sampled anchors in the stage 5 report, plus two quotes attributed to the wrong call. Every quote exists in the file named and in the substance claimed. Fix before the record is cited downstream."
+  - "B12b MAJOR: two findings stage 5 itself calls MAJOR sit in its prose but not in its red_flags list, so they would not reach stage 11 or 13 unaided: the April 2026 CERC REC amendment framed as inventory-enhancing one quarter before sell bids fell 86.1 percent, and the unqualified no-additional-costs answer on coupling-operator integration."
+  - "B12b calibration inputs for stage 11: July 2026 was the first month IEX volume grew slower than national demand (7.7 against 10.9 percent) while August cleared volume was sell-side capped; and management's own admitted failure of all three 2023 product launches is the right base rate for discounting the pending-product optionality."
+  - "B12c MAJOR (recomputed, no classification change): the 0.85 evidence multiplier in the moat scan is not an authorised value, and the Gate 0 promoter metric E2 should score zero on the rule as written."

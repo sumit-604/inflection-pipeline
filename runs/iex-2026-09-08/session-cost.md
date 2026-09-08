@@ -23,3 +23,5 @@
 | 12b | verifier B (post-remediation) | claude-opus-4-8 | default | n/a | n/a | 253,209 | 13m01s | 2 |
 | 5 | concall analysis (targeted amendment) | claude-sonnet-5 | default | n/a | n/a | 197,847 | 14m26s | 3 |
 | 6 | peer verification (re-pointed) | claude-sonnet-5 | default | n/a | n/a | 166,143 | 9m28s | 2 |
+| 12b | verifier B (final, post-remediation) | claude-opus-4-8 | default | n/a | n/a | 276,426 | 14m24s | 3 |
+| 12d | verifier D peer coverage (rerun) | claude-sonnet-5 | default | n/a | n/a | 107,437 | 5m13s | 2 |

@@ -403,3 +403,44 @@ Company memory written for both with the standing-ruling spear OVERRIDE.
   "synced to Section 1B v3.9" and rechecks the Hurdle Ratio on an "audited
   EPS base". A21 replaced that base with the forward run-rate. Not touched
   here (out of A26 scope); needs its own amendment pass.
+
+## 2026-09-07 — FRATELLI (Fratelli Vineyards Ltd), /run-pipeline phase 1
+
+Verdict REWORK on a confidence delta of 31. Judges the analysis, not the company.
+
+- Verifier A first pass raised two CRITICALs that were screener-vs-AR basis
+  differences on figures the Gate 0 report had labelled as screener-sourced, the
+  category its own severity rules exclude. The known LESSONS remedy worked: one
+  re-invocation, verifier A re-decided both on source itself and reclassified
+  them MAJOR. Acceptance rose 47 to 61 numbers checked, 89% to 87%. The
+  orchestrator cleared nothing; three rows logged in the disagreement log.
+- Stages 5 and 6 were reran once on operator instruction after verifier B
+  coverage came in at 39%. The rerun was briefed with a harder METHOD and
+  deliberately NOT with the verifier's findings, so the re-measure stayed
+  independent. Result was split and worth recording: substance improved
+  materially (stage 6 moved the duopoly claim from unverifiable to contradicted
+  by arithmetic, and that verdict survived independent re-derivation; stage 5
+  found four unkept promises the first pass never tracked), but coverage fell to
+  31% and citation acceptance fell 60% to 50%. Two reruns did not clear the gate.
+- NEW PATTERN, candidate for /compost promotion: these stages improve on
+  substance when given a harder method and fail on CITATION MECHANICS regardless.
+  Stage 6 was given an explicit rule to confirm every page against the extraction
+  page marker before writing, and still produced eight MAJOR anchor errors
+  including a load-bearing figure cited to the wrong document. Verifier B
+  separately found stage 5 mixing PDF page numbers with the transcripts' printed
+  footer numbers. This looks like a prompt-level fix, not a rerun-level one.
+- Rerun cost: stages 5, 6 and the two verifiers that re-measured them were about
+  1.59 mn tokens, roughly 39% of a 4.04 mn token run, for a gate that stayed shut.
+  Ordering a rerun should carry an expected-value check first.
+- A stage's headline finding can be wrong in a way its own other findings expose.
+  The reran stage 5 led with an EBITDA sign-flip built by applying a consolidated
+  recomputation to figures management reports on the wine-subsidiary basis, which
+  is the exact mismatch the same stage flagged under UNDISCLOSED-BASIS-CHANGE.
+  Verifier B caught it and validated the split by additivity. Recorded as a
+  supersession on the B05 block rather than silently edited.
+- Corpus: the pre-extraction of all 52 input PDFs to page-marked .txt up front
+  (the standing LESSONS default) worked cleanly, no failures, and made the
+  verifiers' page checks mechanical.
+- CORPUS GAPPED-FRESHNESS on the Q1FY27 concall transcript, which was never
+  published while the Q1FY27 results and deck were filed. Independently caps at
+  PROCEED WITH CAVEATS.

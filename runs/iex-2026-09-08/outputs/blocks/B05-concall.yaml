@@ -3,16 +3,52 @@ company: "IEX"
 run_date: "2026-09-08"
 model: claude-sonnet-5
 status: complete
-run_number: 2
+run_number: 3
 rework_note: >
-  Run 1 scored 38% coverage against an independent verifier's flag list. This
-  run re-read all four transcripts in full plus five delivery documents at
-  segment level, independently reproduced the paisa-per-unit realization and
-  non-operating-PBT-share figures by calculation from the filed results
-  rather than copying them, verified every item on the verifier's checklist
-  against source text with its own page anchor, and reached credibility
-  grade C independently on the fuller evidence base rather than by deference
-  to run 1's prior grade.
+  Targeted amendment. Built a segment-by-segment volume table (new Section
+  1D) from the four Power Market Update filings (day-ahead incl. HP-DAM,
+  real-time, term-ahead, green, REC; FY26, Q1FY27, Jun/Jul/Aug 2026 with
+  YoY) and differenced it against the nearest call's narrative, segment by
+  segment, which run 2 had not done. That procedure surfaced five MAJOR
+  items: (1) the REC "confusion" explanation (Jul-2026 call) names the
+  demand side, but the company's own Power Market Update filed three weeks
+  earlier shows sell bids -86.1% YoY with clearing prices RISING, a supply
+  failure, not a demand failure; severity raised LOW-MEDIUM to HIGH. (2) The
+  Apr-2026 CERC REC-amendment (captive plants barred from trading to the
+  extent of self-consumption) was framed as inventory-enhancing one quarter
+  before REC sell bids collapsed. (3) Green market growth decelerated +23%
+  FY26 -> +6.3% Q1FY27 -> -1.2% June, filed before the 24-Jul call, which
+  called green "substantial" without naming the deceleration. (4)
+  Market-share disclosure precision degrades every quarter as the coupling
+  threat rises: 84% full split -> 83% with TAM restated 35% to 45-50%,
+  unexplained -> no figure -> bare 80-85% range. (5) Day-ahead volume is in
+  outright decline in June (-6.6%) and July (-7.7%), the exact segment
+  coupling threatens, previously used only as realization-gap background.
+  Two evasion/falsification corrections: the fee-competition question was
+  evaded twice, not once (Nov-2025 "let us talk about peace"; the pricing
+  half of the identical Jul-2026 question was never answered by anyone);
+  and "things will definitely go in our favour" (Q3FY26) was falsified 14
+  days later by APTEL's dismissal of IEX's own appeal for want of standing
+  plus CERC's subsequent draft coupling regulations — the prior promise
+  table booked only the timing half as delivered and never scored the
+  substantive half, flattering the tally by one row; both legs now booked.
+  Three classification corrections: "market coupling by January 2026"
+  removed from the MANAGEMENT promise tally (a CERC regulatory deadline, not
+  a company promise); "no significant margin impact" removed from the
+  missed-promise tally (a post-coupling hypothetical answer, not a forward
+  promise; the realization decline stands on its own); the M-Junction/MSTC
+  exclusion claim downgraded from "regulatory fact sourced to notified
+  rules" to management's own characterization, since the Coal Rules text is
+  not in the corpus. ROE finding kept but tempered: average-standalone-
+  equity ROE computes to 39.4% (vs 36.3% on closing equity), narrowing but
+  not closing the gap to the stated 42-44%. One kept promise added: the
+  CFO's Apr-2026 treasury-income recovery commitment, verified delivered
+  from the filed results (Rs22.11cr Q4FY26 to Rs44.92cr Q1FY27, standalone).
+  Every citation re-verified by grep against the "=== PAGE n ===" marker;
+  several of run 2's citations were off by one page and are corrected (the
+  margin-hypothetical quote is Q4FY26 marker-page 15 not 14; Q3FY26 market
+  share is marker-page 16 not 9; the other-income admission is marker-page
+  10 not 9). Independent credibility grade this run: D, down from run 2's C.
 input_gaps:
   - type: rating
     severity: NOT_A_GAP
@@ -31,10 +67,12 @@ input_gaps:
       The CERC market coupling order, the APTEL judgment of 13-Feb-2026 and the
       two Supreme Court orders (11-May-2026 admission, 27-Jul-2026 stay refusal)
       are referenced throughout the concalls but their texts are absent from the
-      corpus. Stage 5 relied on management's own characterization of these orders
-      (including the APTEL "arbitrary" gloss flagged in red flags / analyst_note);
-      the order texts should be pulled before valuation weight is placed on the
-      coupling outcome.
+      corpus. This run additionally found the Coal Rules text (Ministry of Coal
+      notification barring e-auction platforms from operating six months after
+      the coal exchange launches) is ALSO absent from the corpus; management's
+      repeated characterization of both the APTEL outcome and the Coal Rules
+      is downgraded accordingly in this report. Both order/rule texts should be
+      pulled before valuation weight is placed on either outcome.
   - type: screening_csv
     severity: MEDIUM
     detail: >
@@ -60,111 +98,143 @@ input_gaps:
       inputs/announcements/SAST_Reg29_2_Disclosure_2026-06-10.pdf yield no
       extractable text. Scanned filings. OCR needed if a stage must read them.
 flags:
-  - "Fee/realization compression unreconciled across three quarters of direct analyst questioning (HIGH, see red_flags)"
-  - "RTM 25-30% forward growth guidance falsified within weeks by the company's own monthly data (HIGH, see red_flags)"
-  - "Coal exchange opportunity size revised ~50% upward with no bridge, internally inconsistent within the same session (MEDIUM)"
-  - "CFO's stated 42-44% ROE does not reconcile with computed ROE on the company's own FY26 reported net worth and PAT (MEDIUM)"
-  - "Customer concentration (50-60% buyer / ~40% top-10 seller) disclosed only at the final question of a two-hour meet (MEDIUM)"
+  - "REC decline explanation names the wrong side of the market: buyer-side 'confusion' story contradicts the company's own filed seller-side collapse (HIGH, see red_flags)"
+  - "Market-share disclosure precision degrades every quarter as the coupling threat rises, 84% full split to a bare 80-85% range with no product detail (HIGH)"
+  - "Day-ahead volume outright decline in June (-6.6%) and July (-7.7%), the exact segment market coupling threatens (HIGH)"
+  - "Fee-competition/price-war question evaded twice across two quarters, the pricing half of the question never answered in Q1FY27 (HIGH)"
+  - "'Things will definitely go in our favour' (Q3FY26) falsified 14 days later by APTEL's dismissal of IEX's own appeal (HIGH)"
+  - "Fee/realization compression unreconciled across three quarters of direct analyst questioning, mechanical driver quantified but never named by management (HIGH)"
+  - "RTM 25-30% forward growth guidance falsified within weeks by the company's own monthly data (HIGH)"
 quarters_analysed: ["Q2 FY26 (guidance trail only)", "Q3 FY26", "Q4 FY26", "Q1 FY27"]
 triggers:
   - {priority: 1, name: "Market coupling resolution (Supreme Court appeal)", type: "REGULATORY-POLICY", timeframe: "near/medium", conviction: "M",
      confirm_signal: "SC ruling favorable to IEX, or coupling implemented on margin-preserving terms", kill_signal: "Adverse SC ruling combined with unfavorable coupling implementation terms"}
-  - {priority: 2, name: "Fee/realization stabilization", type: "PRICE-MIX", timeframe: "near", conviction: "L",
+  - {priority: 2, name: "Day-ahead volume stabilization", type: "VOLUME", timeframe: "near", conviction: "L",
+     confirm_signal: "DAM YoY growth returns and holds above total-volume growth for two consecutive months", kill_signal: "Continued or resumed DAM outright decline while RTM/TAM keep growing"}
+  - {priority: 3, name: "Fee/realization stabilization", type: "PRICE-MIX", timeframe: "near", conviction: "L",
      confirm_signal: "Paisa/unit stabilizes above 4.2 with a named, quantified reason", kill_signal: "Continued drift toward the TAM blended rate of 3.6-3.7 paise"}
-  - {priority: 3, name: "RTM volume growth sustaining", type: "VOLUME", timeframe: "near", conviction: "L",
-     confirm_signal: "RTM growth returns to 20%+ in a subsequent monthly print", kill_signal: "Sub-15% RTM growth persists for two or more consecutive months"}
-  - {priority: 4, name: "Coal exchange monetization", type: "INORGANIC/REGULATORY-POLICY", timeframe: "medium", conviction: "L",
-     confirm_signal: "License awarded to IEX subsidiary with credible volume ramp toward the 100mn-tonne initial target", kill_signal: "Delayed regulations, shared/denied license, or opportunity proving closer to the 70-80mn-tonne incumbent figure"}
-  - {priority: 5, name: "BESS arbitrage-driven volume", type: "VOLUME", timeframe: "near/medium", conviction: "M",
-     confirm_signal: "Continued merchant BESS capacity additions at the observed 4-5 rupee/cycle arbitrage", kill_signal: "Arbitrage compresses faster than management's stated 3-5 year window"}
-  - {priority: 6, name: "IGX IPO monetization", type: "INORGANIC", timeframe: "near", conviction: "M",
-     confirm_signal: "Successful listing at a reasonable valuation, cash realized on the 22.3% sell-down", kill_signal: "IPO delayed materially or priced at a steep discount to carrying value"}
-  - {priority: 7, name: "Green RTM / Peak DAM-RTM / 11-month TAM approvals", type: "REGULATORY-POLICY", timeframe: "near/medium", conviction: "L",
+  - {priority: 4, name: "RTM volume growth sustaining", type: "VOLUME", timeframe: "near", conviction: "L",
+     confirm_signal: "RTM growth returns to 20%+ in a subsequent monthly print", kill_signal: "Sub-15% RTM growth persists for two or more consecutive months (already the case: Jul +10.2%, Aug +10.6%)"}
+  - {priority: 5, name: "REC market recovery on the seller side", type: "VOLUME", timeframe: "near", conviction: "L",
+     confirm_signal: "Sell bids recover materially and clearing prices normalize in a subsequent monthly session", kill_signal: "Sell-bid collapse persists another two monthly sessions with rising clearing prices"}
+  - {priority: 6, name: "Coal exchange monetization", type: "INORGANIC/REGULATORY-POLICY", timeframe: "medium", conviction: "L",
+     confirm_signal: "License awarded to IEX subsidiary with credible volume ramp toward the 100mn-tonne initial target, and the incumbent-exclusion rule text becomes independently verifiable", kill_signal: "Delayed regulations, shared/denied license, or opportunity proving closer to the 70-80mn-tonne incumbent figure"}
+  - {priority: 7, name: "BESS arbitrage-driven volume", type: "VOLUME", timeframe: "near/medium", conviction: "M",
+     confirm_signal: "Continued merchant BESS capacity additions at the observed 4-5 rupee/cycle arbitrage", kill_signal: "Arbitrage compresses faster than the stated 3-5 year window, or FY26's own admitted 'outlier year' proves the high-water mark"}
+  - {priority: 8, name: "IGX IPO monetization", type: "INORGANIC", timeframe: "near", conviction: "L",
+     confirm_signal: "Successful listing at a reasonable valuation ahead of the 31-Dec-2026 PNGRB deadline, cash realized on the 22.3% sell-down", kill_signal: "IPO delayed past the PNGRB deadline or priced at a steep discount to carrying value"}
+  - {priority: 9, name: "Green RTM / Peak DAM-RTM / 11-month TAM approvals", type: "REGULATORY-POLICY", timeframe: "near/medium", conviction: "L",
      confirm_signal: "CERC issues an approval order on any of the four pending petitions", kill_signal: "Continued multi-year delay with no new order"}
-  - {priority: 8, name: "Structural volume growth (GDP/electrification/EV/data centers)", type: "SECTORAL", timeframe: "long", conviction: "M",
+  - {priority: 10, name: "Structural volume growth (GDP/electrification/EV/data centers)", type: "SECTORAL", timeframe: "long", conviction: "M",
      confirm_signal: "Sustained 15%+ volume growth over multiple quarters", kill_signal: "Sub-10% volume growth for two or more consecutive quarters"}
 guidance:
-  - {item: "Electricity volume growth", number: "15-20% every year", timeframe: "ongoing", stated_in: "Q2FY26 p.7, Q3FY26 p.11, Q4FY26 p.13"}
+  - {item: "Electricity volume growth", number: "15-20% every year", timeframe: "ongoing", stated_in: "Q2FY26 p.6, Q3FY26 p.11, Q4FY26 p.13"}
   - {item: "RTM forward growth", number: "25-30%", timeframe: "medium-term", stated_in: "Q1FY27 p.29"}
-  - {item: "IGX gas exchange volume growth", number: "25-30%", timeframe: "next 4-5 years", stated_in: "Q3FY26 p.11"}
-  - {item: "TAM long-duration product market size", number: "additional 15-20 billion units", timeframe: "medium-term", stated_in: "Q3FY26 p.11"}
-  - {item: "Coal exchange opportunity size (first figure)", number: "~80 million tonnes", timeframe: "current", stated_in: "Q4FY26 p.8, p.17"}
-  - {item: "Coal exchange opportunity size (revised figure)", number: "~120 million tonnes", timeframe: "current", stated_in: "Q1FY27 p.6, p.31"}
+  - {item: "IGX gas exchange volume growth", number: "25-30%", timeframe: "next 4-5 years", stated_in: "Q3FY26 p.13"}
+  - {item: "TAM long-duration product market size", number: "additional 15-20 billion units", timeframe: "medium-term", stated_in: "Q3FY26 p.13"}
+  - {item: "Coal exchange opportunity size (first figure)", number: "~80 million tonnes", timeframe: "current", stated_in: "Q4FY26 p.5-6"}
+  - {item: "Coal exchange opportunity size (revised figure)", number: "~120 million tonnes", timeframe: "current", stated_in: "Q1FY27 p.5, p.31"}
   - {item: "Coal exchange opportunity by 2035", number: "250-300 million tonnes", timeframe: "2035", stated_in: "Q1FY27 p.31"}
-  - {item: "Total exchange share of national generation", number: "~25% (from 8-9% today)", timeframe: "5-6 years", stated_in: "Q1FY27 p.32"}
+  - {item: "Total exchange share of national generation", number: "~25% (from 8-9% today)", timeframe: "5-6 years", stated_in: "Q1FY27 p.31-32"}
   - {item: "API-driven cleared volume (unqualified base)", number: ">70% of cleared volume", timeframe: "current", stated_in: "Q4FY26 p.9"}
   - {item: "API-driven cleared volume (I-DAM only, basis shift)", number: ">70% of I-DAM; >50% via back-office API", timeframe: "current", stated_in: "Q1FY27 p.23"}
-  - {item: "Term Ahead Market blended margin", number: "Rs0.036-0.037 vs Rs0.04 standard", timeframe: "current", stated_in: "Q4FY26 p.14"}
+  - {item: "Term Ahead Market blended margin", number: "Rs0.036-0.037 vs Rs0.04 standard", timeframe: "current", stated_in: "Q4FY26 p.15, answer to a post-coupling hypothetical"}
   - {item: "PNGRB IGX equity-reduction deadline extension", number: "extended to 31-Dec-2026 (12-month grant against an 18-month request)", timeframe: "-", stated_in: "Q4FY26 p.11, original deadline Dec-2025 per Q2FY26 p.11"}
-  - {item: "Dividend policy", number: "Interim Rs1.5/share, final Rs2/share, ~50-65% payout", timeframe: "FY26 ongoing", stated_in: "Q3FY26 p.4-5, Q4FY26 p.6, Q1FY27 p.26"}
-  - {item: "Net worth / EPS / ROE", number: "Net worth ~Rs1,400cr, EPS Rs5.33, ROE 42-44%", timeframe: "ongoing, 4-5 years", stated_in: "Q1FY27 p.26, does not reconcile, see red_flags"}
+  - {item: "Dividend policy", number: "Interim Rs1.5/share, final Rs2/share, ~50-65% payout", timeframe: "FY26 ongoing", stated_in: "Q3FY26 p.4-5, Q4FY26 p.6, Q1FY27 p.27"}
+  - {item: "Net worth / EPS / ROE", number: "Net worth ~Rs1,400cr, EPS Rs5.33, ROE 42-44%", timeframe: "ongoing, 4-5 years", stated_in: "Q1FY27 p.27, does not fully reconcile even on average equity, see red_flags"}
   - {item: "Coal exchange initial-year target", number: "at least 100 million tonnes onto the platform", timeframe: "FY27 initial year", stated_in: "Q1FY27 p.27"}
 promise_delivery:
-  delivered: 3
+  delivered: 4
   partial: 2
-  missed: 5
+  missed: 4
   rows:
-    - {promised_in: "Q3FY26 p.7", promise: "APTEL verdict within a month", outcome: "delivered", explanation: "APTEL order issued 13-Feb-2026, roughly two weeks after the call"}
+    - {promised_in: "Q3FY26 p.7", promise: "APTEL verdict within a month (timing half)", outcome: "delivered", explanation: "APTEL order issued 13-Feb-2026, roughly two weeks after the call"}
+    - {promised_in: "Q3FY26 p.7", promise: "'Things will definitely go in our favour' (substantive half of the same answer)", outcome: "missed", explanation: "APTEL dismissed IEX's appeal for want of standing 13-Feb-2026; CERC then issued draft coupling regulations naming Grid India as MCO on 17-Apr-2026. Not scored in run 2's tally; added this run"}
     - {promised_in: "Q4FY26 p.13", promise: "15-20% volume growth for FY27", outcome: "delivered", explanation: "Q1FY27 volume landed +15.9%, inside the band, though revenue again trailed volume"}
     - {promised_in: "Q3FY26 p.4-5 / Q4FY26 p.6", promise: "Dividend policy, interim then final, ~50-65% payout", outcome: "delivered", explanation: "Rs1.5 interim and Rs2 final declared as stated"}
-    - {promised_in: "Q3FY26 p.12", promise: "IGX IPO within the year", outcome: "partial", explanation: "DRHP filed 14-Jul-2026; not yet listed"}
-    - {promised_in: "Q3FY26 p.8", promise: "REC volume to end FY26 better than FY25", outcome: "partial", explanation: "FY26 REC volume +5% YoY, barely ahead"}
-    - {promised_in: "CERC order, cited since Q2FY26", promise: "Market coupling of DAM implemented by January 2026", outcome: "missed", explanation: "Still in draft-regulation/stakeholder-comment stage as of Q1FY27; Grid India raising new objections"}
+    - {promised_in: "Q4FY26 p.10", promise: "CFO treasury-income recovery ('numbers going back to the earlier numbers')", outcome: "delivered", explanation: "Standalone other income Rs22.11cr (Q4FY26) to Rs44.92cr (Q1FY27), verified from filed standalone results. Omitted from run 2's tally; added this run"}
+    - {promised_in: "Q3FY26 p.12", promise: "IGX IPO within the year", outcome: "partial", explanation: "DRHP filed 14-Jul-2026; not yet listed; CMD stated on the intervening call he was 'not really fully aware about the exact status' of the process (Q4FY26 p.12)"}
+    - {promised_in: "Q3FY26 p.7-8", promise: "REC volume to end FY26 better than FY25", outcome: "partial", explanation: "FY26 REC volume +5% YoY, barely ahead"}
     - {promised_in: "Q1FY27 p.29", promise: "RTM growth of 25-30% going forward", outcome: "missed", explanation: "Jul-2026 RTM +10.2% YoY, Aug-2026 +10.6% YoY, against FY26's own +41%; not revisited"}
-    - {promised_in: "Q4FY26 p.14", promise: "No significant margin impact (TAM benchmark 3.6-3.7 paise)", outcome: "missed", explanation: "Q1FY27 realization computed at 4.16 paise/unit vs 4.33 paise/unit Q1FY26, continuing a decline unaddressed across three quarters"}
-    - {promised_in: "Q3FY26 p.8, reasserted Q1FY27 p.41", promise: "REC volume weakness is transitory", outcome: "missed", explanation: "Q1FY27 -81.4% YoY, Aug-2026 -86.6% YoY; same 'confusion' excuse recycled against a worsening trend"}
-    - {promised_in: "Q4FY26 p.11", promise: "Buyback under active consideration", outcome: "missed", explanation: "Q1FY27 restates 'will consider it in future', p.29, no decision across two quarters"}
-excuse_pattern: "external-blame-heavy, with one deflection pattern (fee realization) and one genuine honest-admission exception (other income miss, Q4FY26)"
+    - {promised_in: "Q3FY26 p.8, reasserted Q1FY27 p.41", promise: "REC volume weakness is transitory ('confusion will clear')", outcome: "missed", explanation: "Q1FY27 -81.4% YoY, Aug-2026 -86.6% YoY; the buyer-side 'confusion' excuse is contradicted by the company's own filed data showing a seller-side collapse (sell bids -86.1% YoY, rising clearing prices)"}
+    - {promised_in: "Q4FY26 p.11", promise: "Buyback under active consideration", outcome: "missed", explanation: "Q1FY27 restates 'will consider it in future', p.30, no decision across two quarters"}
+excuse_pattern: "external-blame-heavy, with a deflection pattern on fee realization, a factual misdiagnosis on REC (buyer-side excuse contradicted by the company's own seller-side filed data), a twice-repeated evasion on the price-war question, and one genuine honest-admission exception (other income miss, Q4FY26, independently verified delivered this run)"
 repeated_evasions:
   - {question: "Why does revenue growth trail volume growth (fee/realization per unit)?", quarters_asked: ["Q2 FY26", "Q3 FY26", "Q1 FY27"], classification: "deflected every time, answer changed between quarters, never reconciled to a number"}
   - {question: "When will market coupling actually be implemented?", quarters_asked: ["Q2 FY26", "Q3 FY26", "Q4 FY26", "Q1 FY27"], classification: "deflected every time"}
-  - {question: "Why is REC volume falling and when will it recover?", quarters_asked: ["Q3 FY26", "Q1 FY27"], classification: "answered eventually in form, but the same excuse is recycled while the underlying trend worsens"}
+  - {question: "Would IEX compete on price / go into a price war if coupling happens?", quarters_asked: ["Q2 FY26", "Q1 FY27"], classification: "deflected every time; the pricing half of the Q1FY27 question was never answered by anyone in the session"}
+  - {question: "Why is REC volume falling and when will it recover?", quarters_asked: ["Q3 FY26", "Q1 FY27"], classification: "answered eventually in form, but the answer is contradicted by the company's own filed data and the underlying trend worsens"}
   - {question: "What is the coal exchange opportunity size?", quarters_asked: ["Q4 FY26", "Q1 FY27"], classification: "answer changed between quarters, and within the same session, with no explanation"}
-credibility_grade: "C"
+  - {question: "What is IEX's product-level market share?", quarters_asked: ["Q2 FY26", "Q3 FY26", "Q4 FY26", "Q1 FY27"], classification: "precision degrades every quarter as the coupling threat rises: full product split, to a restated TAM figure, to no figure, to a bare unattributed range"}
+credibility_grade: "D"
 credibility_basis: >
-  Volume guidance and dividend policy delivered consistently, and one miss
-  (other income) was explained candidly; but the single most financially
-  material recurring question (fee realization trailing volume) drew three
-  unreconciled answers across three quarters, a specific RTM growth
-  statement was falsified by the company's own data within weeks, the
-  CFO's stated 42-44% ROE does not reconcile with the company's own
-  reported net worth and PAT (computed 35.2% consolidated / 36.3%
-  standalone), a coal opportunity figure moved ~50% unexplained, and
-  customer concentration surfaced only at the last question of a two-hour
-  meet with a stability claim asserted then partly withdrawn.
+  Revised down from run 2's C. Volume guidance and dividend policy delivered
+  consistently, and the CFO's other-income recovery promise is independently
+  verified delivered this run. Against that, the segment-by-segment
+  differencing procedure surfaced a materially worse qualitative pattern than
+  run 2 found: the REC decline explanation names the wrong side of the
+  market, directly contradicted by the company's own filed seller-side data
+  (sell bids -86.1% YoY, clearing prices rising) available three weeks before
+  the excuse was repeated; market-share disclosure precision degrades every
+  quarter in lockstep with the coupling threat becoming more concrete, with
+  no acknowledgment; day-ahead volume, the exact segment coupling threatens,
+  was in outright decline for two of the three most recent months and was
+  never named as its own risk; the price-war/fee-competition question has
+  been evaded twice across two quarters, the second time by simply not
+  answering the pricing half of the question; a confident prediction
+  ("things will definitely go in our favour" on APTEL) was falsified within
+  fourteen days, credited only on its timing half in the record before this
+  run; and two different revenue figures for the same two periods appear
+  side by side inside one presentation. This is not fraud and the raw
+  promise/delivery ratio (4/2/4) is not dramatically worse than run 2's
+  (3/2/5), but the pattern of disclosure precision falling exactly where
+  risk is rising, an excuse that inverts supply and demand on the company's
+  own numbers, and a repeated refusal to answer the one pricing question
+  central to the thesis is a POOR record on the promise-delivery evidence.
 peer_questions:
   - {question: "Do MCX, BSE, and CDSL show a similar pattern of fee realization trailing volume/activity growth, and how do they explain it?", why: "tests whether IEX's unreconciled realization decline is sector-wide or IEX-specific", check_peers: ["MCX", "BSE", "CDSL"]}
-  - {question: "Does MCX's electricity derivatives commentary corroborate IEX's claim that power exchanges collectively grew 18% in FY26 against 1% demand growth?", why: "cross-checks a headline sectoral growth-rate claim against an independent source", check_peers: ["MCX"]}
+  - {question: "Does MCX's electricity derivatives commentary corroborate IEX's claim that power exchanges collectively grew 18% in FY26 against 1.1% demand growth?", why: "cross-checks a headline sectoral growth-rate claim against an independent source", check_peers: ["MCX"]}
   - {question: "Do BSE, CDSL, or MCX make comparably long-dated TAM claims for their own core segments, and how have prior such claims held up?", why: "tests whether IEX's ~25%-of-generation long-horizon claim is sector-standard framing or specific overreach", check_peers: ["BSE", "CDSL", "MCX"]}
-  - {question: "Has MCX, which has also filed for a coal-market play, sized the same coal-exchange opportunity consistently?", why: "an unreconciled ~50% market-size revision in IEX's own disclosures needs an independent sizing check", check_peers: ["MCX"]}
+  - {question: "Has MCX, which has also filed for a coal-market play, sized the same coal-exchange opportunity consistently, and does it characterize the incumbent-exclusion mechanism the same way IEX does?", why: "an unreconciled ~50% market-size revision, resting on rules not in this corpus, is a specificity and verification red flag", check_peers: ["MCX"]}
   - {question: "Do BSE, CDSL, or MCX disclose customer/counterparty concentration more proactively, and how does their concentration compare?", why: "calibrates whether IEX's 50-60%/40% concentration and its reactive-only disclosure pattern are unusual for the sector", check_peers: ["BSE", "CDSL", "MCX"]}
   - {question: "Does BSE's own concall record address its market-share trajectory versus NSE, the comparator IEX repeatedly invokes to argue coupling will not erode its position?", why: "the NSE/BSE analogy is asserted without supporting data in this corpus", check_peers: ["BSE"]}
+  - {question: "Do any of the three peers disclose product-level or segment-level market share with degrading precision when a competitive or regulatory threat becomes more concrete, the way IEX's disclosure narrowed between Q2FY26 and Q1FY27?", why: "independent pattern-check on whether reduced disclosure precision under threat is a sector norm or IEX-specific", check_peers: ["BSE", "CDSL", "MCX"]}
 red_flags:
-  - "HIGH: Fee realization compression (4.16 paise/unit Q1FY27 vs 4.33 paise/unit Q1FY26, computed from filed standalone revenue and volume) unreconciled across three quarters of direct questioning"
+  - "HIGH: REC decline explanation names the wrong side of the market: buyer-side 'confusion' story (Q3FY26 p.8, Q1FY27 p.41) directly contradicts the company's own filed Power Market Update three weeks earlier ('Sell bids declined by 86.1% YoY, leading to a rise in clearing prices,' Q1FY27/Jun'26 filing p.3)"
+  - "HIGH: Market-share disclosure precision degrades every quarter as the coupling threat rises: 84% full product split (Q2FY26 p.17) to 83% with an unexplained TAM restatement 35% to 45-50% (Q3FY26 p.16) to no figure (Q4FY26) to a bare 80-85% range (Q1FY27 p.6)"
+  - "HIGH: Day-ahead volume, the segment market coupling directly threatens, in outright YoY decline in two of the three most recent months (June -6.6%, July -7.7%), growing at less than half the company average even in the quarter that did grow"
+  - "HIGH: Fee-competition/price-war question evaded twice across two quarters: 'Let us talk about peace' (Q2FY26 p.18) with no substantive answer; the pricing half of the identical question left unaddressed entirely (Q1FY27 p.34-35)"
+  - "HIGH: 'Things will definitely go in our favour' (Q3FY26 p.7) falsified 14 days later when APTEL dismissed IEX's appeal for want of standing and CERC then issued draft coupling regulations naming Grid India as MCO; the record before this run credited only the timing half of the same answer"
+  - "HIGH: Fee realization compression (4.16 paise/unit Q1FY27 vs 4.33 paise/unit Q1FY26, computed from filed standalone revenue and volume) unreconciled across three quarters of direct questioning; mechanical driver (TAM's faster growth at a lower per-unit fee) quantified this run but never named by management"
   - "HIGH: RTM growth guidance (25-30%, Q1FY27 p.29) falsified within weeks by the company's own July (+10.2%) and August (+10.6%) Power Market Updates"
-  - "MEDIUM: Coal exchange opportunity size revised ~50% upward (80mn to 120mn tonnes) within six months with no bridge, internally inconsistent within the same Q1FY27 session"
-  - "MEDIUM: CFO's ROE claim (42-44%) does not reconcile with computed ROE on FY26 reported numbers: 35.2% consolidated (PAT Rs492.9cr / stated net worth Rs1,400cr), 36.3% standalone (PAT Rs473.7cr / filed equity Rs1,306.7cr); EPS Rs5.33 quoted is standalone, cited beside consolidated PAT, consolidated EPS computes to approximately Rs5.53"
-  - "MEDIUM: Customer concentration (50-60% buyer, ~40% top-10 seller) disclosed only at the final question of a two-hour analyst meet, paired with a stability claim asserted then partly withdrawn in the same answer, and a seasonal-churn admission that cuts against the customer-loyalty defense used elsewhere"
+  - "MEDIUM: Coal exchange opportunity size revised ~50% upward (80mn to 120mn tonnes) within six months with no bridge, internally inconsistent within the same Q1FY27 session, and the incumbent-exclusion rule rests only on management's characterization of a text not in this corpus"
+  - "MEDIUM: CFO's ROE claim (42-44%) does not fully reconcile even on average standalone equity: 39.4% (PAT Rs473.71cr / avg of Rs1,098cr and Rs1,307cr) vs 36.3% on closing equity; EPS Rs5.33 quoted is standalone, cited beside consolidated PAT figures"
+  - "MEDIUM: Two different revenue figures for the same FY26 and Q1FY27 periods inside one presentation: CMD cites Rs747cr/Rs202.8cr (matching filed consolidated total income of Rs746.95cr/Rs202.81cr); CFO and the investor presentation slide cite Rs745cr/'almost around Rs201cr' for the same two periods"
+  - "MEDIUM: Customer concentration (50-60% buyer, ~40% top-10 seller) disclosed only at the final question of a two-hour analyst meet, paired with a stability claim asserted then partly withdrawn in the same answer"
   - "MEDIUM: DAM coupling worst-case impact (20-40% of DAM share) volunteered once in opening remarks, not repeated or effectively denied ('I don't see any loss') when asked directly later in the same session; appears in no audited filing"
-  - "LOW-MEDIUM: REC 'confusion will clear' excuse recycled across two quarters against a worsening trend (-81.4% Q1FY27, -86.6% Aug-2026); adjacent I-REC product also turned negative YoY in Q1FY27 (-4.5%) despite '200% growth' marketing"
+  - "MEDIUM: Green market growth decelerated from +23% (FY26) to +6.3% (Q1FY27) to -1.2% (June, filed three weeks before the call), and the 24-Jul-2026 call describes green as 'again become substantial' without naming the deceleration visible in the company's own most recent filing"
   - "LOW: Non-operating share of consolidated PBT rose from 23.4% (FY26) to 29.8% (Q1FY27), computed from filed results, never raised by management or any analyst"
+  - "LOW: Admitted-but-unquantified fee incentives on TAM and REC contracts sit beside 'asset light high-margin platform business' framing in the same call, without reconciliation"
   - "LOW: Three 2023 product launches (HP-DAM, HP-TAM, Ancillary Market) are management-admitted failures for want of liquidity, never connected by management to the credibility of three further pending product launches"
 dropped_triggers:
-  - "REC market as a forward growth trigger: framed positively through Q2FY26-Q4FY26 (even cited as a size comparable to the future carbon-credit market); by Q1FY27, with volume down 81.4% YoY, framing shifts to 'too early to make any comments' and the trigger disappears from the growth narrative rather than being explained"
+  - "REC market as a forward growth trigger: framed positively through Q2FY26-Q4FY26; by Q1FY27, with volume down 81.4% YoY and the company's own filings showing a seller-side collapse, framing shifts to a buyer-side 'confusion' story that contradicts that filed evidence, and the trigger disappears from the growth narrative rather than being explained"
+  - "Carbon-market materiality caveat dropped: Q2FY26 named the caveat that actually sizes the opportunity ('If everybody is complying, then there's no trading,' p.19); this caveat is not repeated in Q3FY26, Q4FY26, or Q1FY27 even as the stated start date is pulled forward by roughly a year (FY27/28 to 1-Oct-2026)"
 timeline_slippages:
-  - "Term Ahead Market extension to 11 months: pending 'more than two years' as of Q1FY27 with no new timeline given (Q1FY27 p.40)"
+  - "Term Ahead Market extension to 11 months: pending 'more than two years' as of Q1FY27 with no new timeline given (Q1FY27 p.41)"
   - "Green RTM / Peak DAM / Peak RTM petitions: identical 'order reserved' language repeated across all four transcripts with no resolution"
-  - "Market coupling implementation: ordered 'by January 2026', still in draft-regulation/stakeholder-comment stage as of Q1FY27, with Grid India itself raising fresh operational objections in both the April and July 2026 sessions"
-  - "Carbon exchange trading start: '1-1.5 years' (Q2FY26) moved to 'FY27 or FY28' (Q3FY26) moved to 'within this calendar year, BEE wants 1-Oct-2026' (Q1FY27)"
-  - "Buyback: 'definitely considering it' (Q4FY26) restated as 'will consider it in future' (Q1FY27) with no new information across two quarters"
+  - "Market coupling implementation: ordered 'by January 2026' by CERC (an external regulatory timeline, not a management promise), still in draft-regulation/stakeholder-comment stage as of Q1FY27, with Grid India itself raising fresh operational objections in both the April and July 2026 sessions"
+  - "Buyback: 'definitely considering it' (Q4FY26 p.11) restated as 'will consider it in future' (Q1FY27 p.30) with no new information across two quarters"
 analyst_note: >
-  Two computed figures in this report (paisa/unit realization, non-operating
-  PBT share) were independently reproduced from the filed standalone and
-  consolidated results rather than taken on the verifier's word, and both
-  matched closely. The APTEL order itself is characterized in this report
-  only through Rohit Bajaj's own gloss ("went to the extent of saying that
-  all those things in the order is arbitrary", Q1FY27 p.20-21); the order
-  dismissed IEX for want of standing and did not rule on the merits, so this
-  characterization should be treated as management's framing, not as an
-  independent finding, pending collection of the order text itself
-  (input_gaps: regulatory_order_text, HIGH).
+  Carbon timeline moved the opposite direction from every other slippage
+  tracked in this report: it ACCELERATED (Q2FY26 '1-1.5 years' -> Q3FY26
+  'FY27 or FY28' -> Q1FY27 'within this calendar year... BEE wants
+  1-Oct-2026'), while the one caveat that actually sizes the opportunity
+  ('if everybody is complying, then there's no trading') was dropped after
+  Q2FY26. An accelerating timeline with a shrinking caveat is itself worth
+  flagging to Stage 6/11, not just the more familiar slipping-timeline
+  pattern. Separately, this run downgrades two claims from "regulatory fact"
+  to "management characterization" (the APTEL gloss, carried over from run 2,
+  and newly the Coal Rules exclusion mechanism) because neither underlying
+  text is in the corpus (input_gaps: regulatory_order_text, HIGH). Both
+  should be pulled before valuation weight rests on either the coupling
+  outcome or the coal-exchange opportunity size.

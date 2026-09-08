@@ -3,6 +3,18 @@ company: "IEX"
 run_date: "2026-09-08"
 model: claude-sonnet-5
 status: complete
+run_number: 2
+rework_note: >
+  Re-pointing run, not a quality rework. Run 1's four claim verdicts (against
+  Stage 5 run 1's peer_questions) were sound and are carried forward intact
+  as Part 1B. Stage 5 was independently reworked and its peer_questions[]
+  list changed to six different questions; this run answers all six current
+  questions from a fresh read of the same twelve transcripts. Two coverage
+  corrections folded in: CDSL Nov-2025 already shows incremental demat share
+  down from 93% to 82% (one quarter earlier than run 1 credited), and BSE
+  Feb-2026 already carries the smart-order-routing bottleneck explanation
+  run 1 dated only from May-2026. Both move CITED-ONLY to SUBSTANTIVE. Run
+  1's Part 3 summary line (8/4, against a table listing 9/3) is corrected.
 input_gaps:
   - type: rating
     severity: NOT_A_GAP
@@ -12,7 +24,7 @@ input_gaps:
     detail: "inputs/research/ empty. Broker notes non-anchored, leads only. Carried from B00."
   - type: regulatory_order_text
     severity: HIGH
-    detail: "CERC market coupling order, APTEL judgment (13-Feb-2026) and both Supreme Court orders (11-May-2026 admission, 27-Jul-2026 stay refusal) absent from corpus. Carried from B00/B05. Stage 6 note: no peer transcript in this corpus discusses a directly comparable coupling/interoperability event that has actually been implemented, so the gap cannot be closed by peer triangulation either."
+    detail: "CERC market coupling order, APTEL judgment (13-Feb-2026) and both Supreme Court orders (11-May-2026 admission, 27-Jul-2026 stay refusal) absent from corpus. Carried from B00/B05. No peer transcript in this corpus discusses a directly comparable coupling/interoperability event that has actually been implemented, so the gap cannot be closed by peer triangulation either."
   - type: screening_csv
     severity: MEDIUM
     detail: "screener-Profit_Loss/Balance_Sheet/Cash_Flow/Quarters.csv hold row labels and no values, for IEX and all three peers. Not used by this stage. Carried from B00."
@@ -27,37 +39,47 @@ input_gaps:
     detail: "Two SAST Reg29(2) disclosures are scanned, no extractable text. Not consulted by this stage. Carried from B00."
   - type: peer_precedent_gap
     severity: MEDIUM
-    detail: "No BSE or CDSL transcript in this corpus discusses an associate-entity stake sale, subsidiary IPO, or OFS with a valuation/proceeds dimension. B05 peer_question 3 (IGX OFS valuation-disclosure practice) is UNVERIFIABLE from this peer set for lack of a comparable event, not for lack of reading."
+    detail: "No BSE or CDSL transcript in this corpus discusses an associate-entity stake sale, subsidiary IPO, or OFS with a valuation/proceeds dimension. IGX OFS valuation-disclosure practice (Part 1B, carried-forward C) is UNVERIFIABLE from this peer set for lack of a comparable event, not for lack of reading. Carried from B06 run 1."
+  - type: peer_sizing_gap
+    severity: LOW
+    detail: "MCX discloses no tonnage or market-size figure for its own coal exchange across any of its four transcripts (Nov-2025 to Aug-2026), so B05 peer_question 4 (coal-opportunity-sizing consistency check) has no peer figure to compare IEX's 80mn/120mn/70-80mn tonnes against. New this run."
 flags:
-  - "Claim 4 (customer stickiness/NSE-vs-BSE analogy) is CONTRADICTED: CDSL's own May-2026 'loyalty' claim for its ~85%+ new-account market share was followed one quarter later (Aug-2026) by a disclosed 420bps incremental-share loss to a named fintech-onboarding competitor; management's response repeated unquantified value-proposition language rather than engaging the number. Priority item for synthesis."
-  - "Claim 1 (fee-compression precedent) is only PARTIALLY VERIFIED: the one real peer precedent for a regulator-driven market-structure change in this corpus (BSE's SEBI-mandated weekly-expiry-day reallocation to Thursday) had an EXPANSIONARY outcome for BSE's share and revenue, not a compressive one -- the opposite direction from IEX's implicit worst case. Not the same mechanism as DAM coupling, so this should not be read as a reassurance either, only as a complication of the worst-case framing."
-  - "Independent, unprompted third-party corroboration of coupling risk severity: two separate MCX-side investors (Feb-2026 and May-2026 calls), discussing a different company, name IEX directly and describe the market coupling issue as having 'derailed the situation' -- external confirmation the risk is taken seriously outside IEX's own investor base."
+  - "Q6 (BSE market-share trajectory vs NSE, current B05 question, subsumes and strengthens run 1's customer-loyalty finding) is CONTRADICTED: CDSL's own loyalty claim (May-2026) now sits in the MIDDLE of a four-quarter documented erosion arc (93% incremental share peak Q3FY25, down to 82% by Nov-2025, downplayed Feb-2026, loyalty claimed May-2026, further 420bps loss disclosed Aug-2026); BSE's own cash-segment stagnation (7-8%) is explained by BSE itself as a structural smart-order-routing bottleneck, not loyalty, repeated identically in Feb-2026 and May-2026, with the segment now 'creeping up' toward a double-digit aspiration by early 2027 (Aug-2026); an MCX investor cites the options segment of the same NSE-vs-BSE rivalry for the opposite lesson (dramatic share reallocation). Priority item for synthesis."
+  - "Q5 (customer/counterparty concentration disclosure, current B05 question) is CONTRADICTED against its implicit premise: CDSL and MCX both refuse outright when asked comparably direct concentration questions ('we don't give any client-specific information'; 'I cannot name any specific member by name'), across four separate instances in this corpus; BSE is never asked and discloses nothing. IEX, despite late and reactive disclosure, is the only one of the four names to have produced an actual quantified concentration figure on the record."
+  - "Q1 (fee realisation trailing volume, current B05 question, most important of the six) is PARTIALLY VERIFIED: the topic is sector-wide (all three peers face direct realisation/margin-compression questions), but IEX's specific failure mode -- three different, unreconciled, unquantified internal explanations across three quarters -- is not matched by any peer. MCX gives the most rigorous single answer in the corpus (a quantified, named external cause with alternatives explicitly tested and ruled out); BSE names one consistent external cause without quantifying it; CDSL flatly refuses to discuss net realisation after client discounts, the closest peer analogue to IEX's own unresolved question."
+  - "Q2, Q3, Q4 (current B05 questions) are all UNVERIFIABLE for want of comparable peer data: MCX's electricity-derivatives business cannot corroborate the 18%/1% power-exchange-vs-demand growth claim (structurally different product; only an adjacent baseline-penetration figure of 8-10% partially corroborates IEX's separate 'current 8-9%' figure); no peer makes a comparably specific long-dated, quantified TAM claim for its own core segment; MCX discloses no coal-exchange size figure at all across four transcripts, so its coal sizing cannot be checked for consistency."
+  - "Independent, unprompted third-party corroboration of coupling risk severity carried forward: two separate MCX-side investors (Feb-2026 and May-2026 calls), discussing a different company, name IEX directly and describe the market coupling issue as having 'derailed the situation' -- external confirmation the risk is taken seriously outside IEX's own investor base."
 quarters_analysed: ["Q2 FY26 (Nov 2025)", "Q3 FY26 (Feb 2026)", "Q4 FY26 (May 2026)", "Q1 FY27 (Aug 2026)"]
 verified:
   - {claim: "IEX's rising non-operating share of PBT (23.4% FY26 to 29.8% Q1FY27), never raised by any analyst or by management, is a sector-wide analyst-attention gap rather than an IEX-specific disclosure failure", peers: ["MCX", "BSE", "CDSL"], anchor_count: 6}
 partially_verified:
+  - {claim: "Do MCX, BSE, and CDSL show a similar pattern of fee realization trailing volume/activity growth, and how do they explain it?", peers: ["MCX", "BSE", "CDSL"]}
   - {claim: "IEX's TAM-market margin-resilience precedent and 20-40% DAM impact range should hold given how comparable regulator-driven market-structure changes played out at peers", peers: ["BSE"]}
 contradicted:
-  - {claim: "Goel's NSE-vs-BSE analogy and general customer-loyalty/integration defence protect IEX's market share against a regulatory or competitive change", contradicting_peer: "CDSL (own words, one quarter apart); BSE (own cash-segment history); MCX investor (independent counter-precedent citing IEX by name)", quote_anchor: "CDSL Concall May 2026 Transcript p.7/p.9-10 (loyalty claim) vs CDSL Concall Aug 2026 Transcript p.6 (420bps incremental share loss); BSE Concall May 2026 Transcript p.16 (7-8% cash share, attributed to smart-order-routing friction, not loyalty); MCX Concall May 2026 Transcript p.13 (Bharat Shah, BSE options share 'next to nothing' to '37%, 38%' in 3-3.5 years)"}
+  - {claim: "Do BSE, CDSL, or MCX disclose customer/counterparty concentration more proactively, and how does their concentration compare?", contradicting_peer: "CDSL (refuses client-specific information, twice, Nov-2025 and Aug-2026); MCX (refuses to name members, gives only a vague qualitative confirmation, Nov-2025); BSE (silent, never asked, never discloses)", quote_anchor: "CDSL Concall Nov 2025 Transcript p.10 ('We don't give any client-specific information'); CDSL Concall Aug 2026 Transcript p.8 ('We do not discuss this in our investor calls'); MCX Concall Nov 2025 Transcript p.16-17 ('I cannot name any specific member by name... More or less, it would be similar')"}
+  - {claim: "Does BSE's own concall record address its market-share trajectory versus NSE, the comparator IEX repeatedly invokes to argue coupling will not erode its position?", contradicting_peer: "BSE (own cash-segment history, structural not loyalty explanation); CDSL (own loyalty claim, own words, contradicted one quarter later, with the underlying erosion visible a further quarter earlier still); MCX investor (independent counter-precedent citing IEX by name)", quote_anchor: "BSE Concall May 2026 Transcript p.16 (7-8% cash share, SOR bottleneck explanation); BSE Concall Feb 2026 Transcript p.13 (same SOR explanation, one quarter earlier); BSE Concall Aug 2026 Transcript p.14 (cash share 'creeping up', double-digit aspiration by 2027); BSE Concall Nov 2025 Transcript p.10-11 ('market share is 100% because our product is unique... never been tracking'); CDSL Concall Nov 2025 Transcript p.9-10 (incremental share 93% to 82%); CDSL Concall Feb 2026 Transcript p.10 ('no significant drop'); CDSL Concall May 2026 Transcript p.7/p.9-10 (loyalty claim); CDSL Concall Aug 2026 Transcript p.6 (420bps incremental share loss); MCX Concall May 2026 Transcript p.13 (Bharat Shah, BSE options share 'next to nothing' to '37%, 38%' in 3-3.5 years)"}
 unverifiable:
+  - {claim: "Does MCX's electricity derivatives commentary corroborate IEX's claim that power exchanges collectively grew 18% in FY26 against 1% demand growth?", peers_checked: ["MCX"]}
+  - {claim: "Do BSE, CDSL, or MCX make comparably long-dated addressable-market claims for their own core segments, and how have prior such claims held up?", peers_checked: ["BSE", "CDSL", "MCX"]}
+  - {claim: "Has MCX, which has also filed for a coal-market play, sized the same coal-exchange opportunity consistently?", peers_checked: ["MCX"]}
   - {claim: "IEX's total silence on IGX OFS valuation/proceeds, including the call held 10 days after the DRHP filing, is standard market-infrastructure practice", peers_checked: ["BSE", "CDSL"]}
 peer_coverage_map:
-  - {peer: "MCX", quarter: "Q2 FY26 (Nov 2025)", usage: "CITED-ONLY", contribution: "Transaction-charge/float-income bookkeeping only, no decisive contribution"}
-  - {peer: "MCX", quarter: "Q3 FY26 (Feb 2026)", usage: "SUBSTANTIVE", contribution: "Investor names IEX directly re: market coupling as monopoly-risk precedent (2D)"}
-  - {peer: "MCX", quarter: "Q4 FY26 (May 2026)", usage: "SUBSTANTIVE", contribution: "'Sticky liquidity' interoperability defence (Claim 1); Bharat Shah's IEX-named BSE-options counter-precedent to NSE-vs-BSE analogy (Claim 4, 2D)"}
-  - {peer: "MCX", quarter: "Q1 FY27 (Aug 2026)", usage: "SUBSTANTIVE", contribution: "'Moat' claim vs competitive expiry-date actions (Claim 4); other-income growth question (Claim 2); SEBI commodity-department restructuring (2E)"}
-  - {peer: "BSE", quarter: "Q2 FY26 (Nov 2025)", usage: "SUBSTANTIVE", contribution: "Treasury income decline disclosure (Claim 2); lot-size/same-day-expiry competitive question (Claim 1 context); SGF policy volatility (2E); early optimistic SOR read (Claim 4 arc)"}
-  - {peer: "BSE", quarter: "Q3 FY26 (Feb 2026)", usage: "CITED-ONLY", contribution: "Clearing-corp market-share convergence discussion, general context only"}
-  - {peer: "BSE", quarter: "Q4 FY26 (May 2026)", usage: "SUBSTANTIVE", contribution: "Thursday-expiry-day transition and expansionary outcome (Claim 1); cash-equity market-share stagnation, structural not loyalty explanation (Claim 4)"}
-  - {peer: "BSE", quarter: "Q1 FY27 (Aug 2026)", usage: "SUBSTANTIVE", contribution: "Other-income/technology-expense bookkeeping pattern (Claim 2); bank-guarantee/RBI regulation uncertainty (2E)"}
-  - {peer: "CDSL", quarter: "Q2 FY26 (Nov 2025)", usage: "CITED-ONLY", contribution: "Other-income line-item breakdown, bookkeeping only"}
-  - {peer: "CDSL", quarter: "Q3 FY26 (Feb 2026)", usage: "SUBSTANTIVE", contribution: "Early, downplayed incremental market-share softness, first leg of Claim 4 arc"}
-  - {peer: "CDSL", quarter: "Q4 FY26 (May 2026)", usage: "SUBSTANTIVE", contribution: "Explicit 'loyalty'/'commitment' claim underpinning ~85%+ new-account market share (Claim 4, foundational)"}
-  - {peer: "CDSL", quarter: "Q1 FY27 (Aug 2026)", usage: "SUBSTANTIVE", contribution: "Confirmed 420bps incremental market-share erosion contradicting prior quarter's loyalty claim (Claim 4); other-income breakdown (Claim 2)"}
+  - {peer: "MCX", quarter: "Q2 FY26 (Nov 2025)", usage: "SUBSTANTIVE", contribution: "Concentration refusal re: top-10 NSE brokers (p.16-17); electricity-derivative-vs-NSE market-share question frames the Q2 context (p.14-15)"}
+  - {peer: "MCX", quarter: "Q3 FY26 (Feb 2026)", usage: "SUBSTANTIVE", contribution: "Investor names IEX directly re: market coupling as monopoly-risk precedent (p.18)"}
+  - {peer: "MCX", quarter: "Q4 FY26 (May 2026)", usage: "SUBSTANTIVE", contribution: "Coal-exchange qualitative framing, no size figure (p.17); 'sticky liquidity' interoperability defence; Bharat Shah's IEX-named BSE-options counter-precedent to the NSE-vs-BSE analogy (p.13)"}
+  - {peer: "MCX", quarter: "Q1 FY27 (Aug 2026)", usage: "SUBSTANTIVE", contribution: "68% yield-compression decomposition, single quantified external cause (p.11-12); electricity futures 55% market share and 8-10% spot-exchange penetration (p.16-17); coal exchange incorporated, still no size figure (p.6); SEBI restructuring (p.19)"}
+  - {peer: "BSE", quarter: "Q2 FY26 (Nov 2025)", usage: "SUBSTANTIVE", contribution: "Premium-realization-per-contract compression, single named external cause, unquantified (p.10-11); '100% market share because unique', derivatives not tracked (p.10-11); treasury income decline disclosure (p.6); SGF policy volatility (p.13)"}
+  - {peer: "BSE", quarter: "Q3 FY26 (Feb 2026)", usage: "SUBSTANTIVE", contribution: "Smart-order-routing bottleneck explanation for stuck cash-segment share, one quarter earlier than run 1 credited (p.13)"}
+  - {peer: "BSE", quarter: "Q4 FY26 (May 2026)", usage: "SUBSTANTIVE", contribution: "Thursday-expiry-day transition and its expansionary outcome; cash-equity market-share stagnation (7-8%) and its structural, non-loyalty explanation (p.16)"}
+  - {peer: "BSE", quarter: "Q1 FY27 (Aug 2026)", usage: "SUBSTANTIVE", contribution: "Cash market share 'creeping up', double-digit aspiration by early 2027 (p.14); other-income/technology-expense bookkeeping pattern; bank-guarantee/RBI regulation uncertainty"}
+  - {peer: "CDSL", quarter: "Q2 FY26 (Nov 2025)", usage: "SUBSTANTIVE", contribution: "Incremental demat market share already down from 93% (3Q FY25 peak) to 82%, with a deflecting response, one quarter earlier than run 1 credited (p.9-10); 'we don't give any client-specific information' concentration refusal (p.10)"}
+  - {peer: "CDSL", quarter: "Q3 FY26 (Feb 2026)", usage: "SUBSTANTIVE", contribution: "Softening incremental market share downplayed ('no significant drop'), second leg of the market-share arc (p.10)"}
+  - {peer: "CDSL", quarter: "Q4 FY26 (May 2026)", usage: "SUBSTANTIVE", contribution: "Explicit 'loyalty'/'commitment' claim underpinning ~85%+ new-account market share, made in the middle of an already-visible decline (p.7, p.9-10)"}
+  - {peer: "CDSL", quarter: "Q1 FY27 (Aug 2026)", usage: "SUBSTANTIVE", contribution: "Confirmed 420bps incremental market-share erosion (p.6); flat refusal to discuss net realisation after client discounts (p.7-8); SEBI-mandated fee cuts, quantified and named 'industry-wide' (p.7-8)"}
 industry_cross_read:
   demand: "All three peers report a strongly positive demand backdrop (record revenue/profit quarters) across the same window IEX ran below its own volume guidance in June and July 2026, making IEX's misses read as more company/segment-specific than macro-driven."
-  pricing_inputs: "BSE explicitly documents premium/margin compression from volatility swings; all three peers show volatile, weather-like treasury/other-income lines -- a structurally common mechanism across the peer group, not an IEX quirk, though no peer discloses the PBT-share trend to compare directly against IEX's own."
-  capex_cycle: "Industry-wide capacity race, not a lone expander: BSE ~Rs300cr+ capex in six months plus rising tech spend, CDSL tech cost 4x in three years now exceeding employee cost, MCX continuous product/risk-system investment across all four calls."
+  pricing_inputs: "BSE explicitly documents premium/margin compression from volatility swings; all three peers show volatile, weather-like treasury/other-income lines -- a structurally common mechanism across the peer group, not an IEX quirk. On fee realisation specifically, peers split into three distinct response types (quantify-and-decompose: MCX; name-one-cause-unquantified: BSE; refuse-to-discuss: CDSL), none of which matches IEX's own three-different-unreconciled-answers pattern."
+  capex_cycle: "Industry-wide capacity race, not a lone expander: BSE ~Rs300cr+ capex in six months plus rising tech spend, CDSL tech cost 4x in three years now exceeding employee cost, MCX continuous product/risk-system investment across all four calls, including its newly-incorporated coal exchange subsidiary."
 peer_mentions_of_company:
   - "MCX Concall Feb 2026 Transcript, p.18, investor Parikshit Gupta: 'We all know what is happening with IEX, although we are governed by a different regulatory body. But do you anticipate any similar risks...'"
   - "MCX Concall May 2026 Transcript, p.13, investor Bharat Shah: 'if you look at IEX, the energy Exchange, out of the blue, the market coupling issue has come. And that is very clearly derailed the situation... we are seeing how IEX is struggling with that issue.'"
@@ -66,6 +88,24 @@ risks_peers_raise:
   - "SEBI restructuring its own internal commodity-derivatives oversight (independent MRD teams), uncertain effect on open regulatory items -- MCX Concall Aug 2026 Transcript, p.19. No IEX-side equivalent disclosed."
   - "RBI regulation on bank-guarantee funding of clearing-corporation margin money, acknowledged as not-yet-fully-realised -- BSE Concall Aug 2026 Transcript, p.16-17; MCX Concall May 2026 Transcript, p.18. No IEX-side equivalent disclosed."
   - "Fintech-onboarding-friction competitive erosion, quantified in real time (420bps incremental share loss) -- CDSL Concall Aug 2026 Transcript, p.6. IEX discloses no equivalent numbered monthly competitor-share metric."
-  - "Settlement Guarantee Fund core-contribution policy as a source of quarterly earnings volatility, addressed via a new 5%-of-revenue smoothing policy -- BSE Concall Nov 2025 Transcript, p.10-11. No IEX-side equivalent capital-buffer mechanic described in this corpus."
+  - "Settlement Guarantee Fund core-contribution policy as a source of quarterly earnings volatility, addressed via a new 5%-of-revenue smoothing policy -- BSE Concall Nov 2025 Transcript, p.13. No IEX-side equivalent capital-buffer mechanic described in this corpus."
 net_narrative_effect: "complicates"
-analyst_note: "The peer set does not cleanly support or undercut IEX. It VERIFIES the non-operating-income silence as a sector-wide analyst blind spot, not an IEX failure. It CONTRADICTS the customer-loyalty defence via CDSL's own claim failing one quarter later, plus BSE's structural (not loyalty) explanation for its own stuck cash-segment share, plus an MCX investor's counter-reading of the same NSE-vs-BSE precedent Goel invokes. The IGX-OFS silence question is genuinely untestable, no comparable peer event exists in this corpus. The one real peer precedent for a regulator-driven market redesign (BSE's expiry-day reallocation) was expansionary, not compressive, which complicates IEX's implicit worst case without being the same mechanism as coupling, so it should not be read as reassurance. Two independent MCX-side investors naming IEX unprompted, calling coupling a 'derailed' risk, is real external corroboration of Stage 5's top flag."
+analyst_note: >
+  This run answers all six current B05 peer_questions and carries forward
+  run 1's three non-overlapping findings (non-operating income verified,
+  fee-compression precedent partially verified, IGX OFS unverifiable) as
+  Part 1B. Old Claim 4 (customer loyalty) is not listed separately; it is
+  superseded by and folded into the current Q6 verdict, which subsumes and
+  strengthens it with two additional quarters of evidence (CDSL's Nov-2025
+  93-to-82% first leg, BSE's Feb-2026 SOR explanation, and BSE's Aug-2026
+  share-recovery update). The nine listed claims across
+  verified/partially_verified/contradicted/unverifiable therefore total: 1
+  verified, 2 partially verified, 2 contradicted, 4 unverifiable. Two
+  findings are genuinely counterintuitive and should carry weight in
+  synthesis: (1) peers are LESS forthcoming than IEX on concentration
+  disclosure, not more, which reframes IEX's late, reactive disclosure
+  practice as comparatively transparent rather than comparatively opaque;
+  (2) MCX, IEX's own coal-market rival, discloses no size figure at all
+  for the opportunity IEX has revised ~50% unbridged, so the coal-sizing
+  question has no independent peer anchor to check IEX's figures against
+  in either direction.

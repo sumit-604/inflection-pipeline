@@ -21,3 +21,5 @@
 | 12a | verifier A numerical audit | claude-haiku-4-5 | default | n/a | n/a | 83,719 | 4m28s | 1 |
 | 12c | verifier C framework (phase 1 scope) | claude-opus-4-8 | default | n/a | n/a | 132,933 | 9m46s | 1 |
 | 12b | verifier B (post-remediation) | claude-opus-4-8 | default | n/a | n/a | 253,209 | 13m01s | 2 |
+| 5 | concall analysis (targeted amendment) | claude-sonnet-5 | default | n/a | n/a | 197,847 | 14m26s | 3 |
+| 6 | peer verification (re-pointed) | claude-sonnet-5 | default | n/a | n/a | 166,143 | 9m28s | 2 |

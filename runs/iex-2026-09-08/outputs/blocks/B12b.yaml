@@ -3,135 +3,81 @@ company: "IEX"
 run_date: "2026-09-08"
 model: claude-opus-4-8
 status: complete
-run_number: 2
+run_number: 3
 post_remediation: true
-post_remediation_note: >
-  Stage 5 (B05) is run 2, a REWORK. An earlier verifier-B pass measured run 1 at
-  38 percent and the orchestrator fed those findings into a full re-run before
-  handing the result to this pass. My flag list was built independently from the
-  raw transcripts before any stage output was opened, but the denominator is not
-  run 1's denominator: 36 percent here and 38 percent there are NOT comparable
-  and must not be reported as a trend. Stage 6 (B06) is unchanged and has not
-  been reworked, so the B06 reading in this block IS a first-pass measurement.
-independent_flags_found: 22
-caught: 8
-partially_caught: 7
-missed_count: 7
+measurement_note: >
+  POST-REMEDIATION measurement, NOT comparable to the two earlier verifier-B
+  figures for this run. Stage 5 is run 3 (run 1 measured 38%; run 2 measured
+  36% strict / 68% with partials; run 3 is a targeted amendment against that
+  second pass). Stage 6 is run 2, re-pointed after stage 5's peer_questions
+  changed. Both artifacts have already absorbed two rounds of adversarial
+  findings, so this rate measures what an independent reader still out-lists
+  against a much harder residual set. It is not a quality score. The
+  controlling result is that ZERO pipeline flags are unsupported and every
+  load-bearing filing number re-derived matched exactly.
+independent_flags_found: 26
+caught: 17
+partially_caught: 6
 missed:
-  - {severity: "MAJOR", item: "REC collapse explanation contradicted by IEX's own filing: Goel gives a demand-side answer (buyer confusion over the RPO buyout provision) while the Power Market Update filed three weeks earlier states sell bids fell 86.1% YoY with clearing prices RISING, i.e. a supply failure", anchor: "concalls__Concall_Jul_2026_Transcript.txt p.41 vs announcements__Power_Market_Update_Q1FY27_Jun2026.txt p.2"}
-  - {severity: "MAJOR", item: "CERC first amendment to REC Regulations 2026, which bars captive plants from trading RECs to the extent of self-consumption, was framed by management as inventory-enhancing one quarter before REC sell bids collapsed 86%", anchor: "concalls__Concall_Apr_2026_Transcript.txt p.4"}
-  - {severity: "MAJOR", item: "Green market growth collapsed from +23% in FY26 to +6.3% in Q1FY27 with June 2026 at -1.2% YoY, and the 24-Jul analyst meet describes green as substantial without mentioning the deceleration", anchor: "announcements__Power_Market_Update_Q1FY27_Jun2026.txt p.2 vs concalls__Concall_Jul_2026_Transcript.txt p.11"}
-  - {severity: "MAJOR", item: "Market-share disclosure precision degrades as the coupling threat rises: 84% with full product split (Q2FY26) to 83% with TAM restated 35% to 45-50% unexplained (Q3FY26) to no figure at all (Q4FY26) to a bare 80-85% range (Q1FY27)", anchor: "other__Concall_Nov_2025_Q2FY26_Transcript.txt p.17; concalls__Concall_Feb_2026_Transcript.txt p.15; concalls__Concall_Jul_2026_Transcript.txt p.7"}
-  - {severity: "MINOR", item: "Unqualified 'No additional costs' answer on the software re-engineering MCO integration would force, given in the same call where Grid India's equivalent build is called an additional cost", anchor: "concalls__Concall_Apr_2026_Transcript.txt p.14"}
-  - {severity: "MINOR", item: "RTM and DAM share of mix stated three different ways across and within calls (RTM 40%, 39%, 34%; DAM 39% and 40% in one session) with no denominator given", anchor: "concalls__Concall_Feb_2026_Transcript.txt p.5; concalls__Concall_Apr_2026_Transcript.txt p.6; concalls__Concall_Jul_2026_Transcript.txt p.4 and p.11"}
-  - {severity: "MINOR", item: "Two revenue figures for the same quarter and the same year inside one presentation: FY26 Rs 747cr vs Rs 745cr, Q1FY27 Rs 202.8cr vs 'almost around Rs 201 crores'", anchor: "concalls__Concall_Jul_2026_Transcript.txt p.5 vs p.26"}
-partially_caught_items:
-  - {severity: "MAJOR", item: "Fee-competition evasion across two sessions not booked as a repeated evasion: Nov-2025 'Why should we talk about war? Let us talk about peace' is quoted in B05 2C as defensiveness, but the Jul-2026 leg, where the pricing half of the question is answered by nobody, is not identified and the pair is absent from repeated_evasions", anchor: "other__Concall_Nov_2025_Q2FY26_Transcript.txt p.17; concalls__Concall_Jul_2026_Transcript.txt p.34"}
-  - {severity: "MAJOR", item: "DAM in absolute decline (June -6.6%, July -7.7% YoY) is cited in B05 only as mix evidence for the realisation gap, never raised as its own flag, though it is the exact segment market coupling threatens", anchor: "announcements__Power_Market_Update_Q1FY27_Jun2026.txt p.2; announcements__Power_Market_Update_Jul2026.txt p.2"}
-  - {severity: "MAJOR", item: "'Things will definitely go in our favour' was falsified by the APTEL order 14 days later; B05 flags it as over-promotion in 2B but the promise table books only the TIMING leg of the same answer, as DELIVERED, and books the substantive prediction nowhere", anchor: "concalls__Concall_Feb_2026_Transcript.txt p.7 vs concalls__Concall_Apr_2026_Transcript.txt p.5"}
-  - {severity: "MINOR", item: "Management's admitted but unquantified fee incentives to buyers and sellers are folded into the realisation deflection pattern rather than raised as a standalone pricing-power finding contradicting the 'margins are intact' claim", anchor: "concalls__Concall_Feb_2026_Transcript.txt p.9; concalls__Concall_Jul_2026_Transcript.txt p.41; vs concalls__Concall_Apr_2026_Transcript.txt p.14"}
-  - {severity: "MINOR", item: "CMD states he is 'not really fully aware about the exact status' of the IGX IPO, the process that discharges a hard PNGRB deadline of 31-Dec-2026; B05 records the 18-vs-12 month extension gap but not the unawareness", anchor: "concalls__Concall_Apr_2026_Transcript.txt p.11"}
-  - {severity: "MINOR", item: "Carbon timeline pulled in by roughly a year while the Nov-2025 materiality caveat ('If everybody is complying, then there's no trading') was dropped from later calls; B05 catches the timeline shift but not the dropped caveat", anchor: "other__Concall_Nov_2025_Q2FY26_Transcript.txt p.13 vs concalls__Concall_Jul_2026_Transcript.txt p.5"}
-  - {severity: "MINOR", item: "Management explicitly labels FY26 an outlier year that will not repeat; B05 covers the adjacent cheap-power point but does not carry the outlier label forward as a base-rate warning for downstream projection", anchor: "concalls__Concall_Jul_2026_Transcript.txt p.15"}
+  - {severity: "MAJOR", item: "Nov-2025 'we are not aware about any developments which have taken place so far' on market coupling, versus Jul-2026 'For the four months period they (Grid India) have run this pilot'; and IEX's own unpublished simulation asserted as established fact ('we have done our own simulation and precisely this is what is happening today... the price increase has been much more than 0.3%') in support of a live Supreme Court petition, while complaining the regulator's studies were never published", anchor: "other__Concall_Nov_2025_Q2FY26_Transcript.txt p.8; concalls__Concall_Jul_2026_Transcript.txt p.20"}
+  - {severity: "MINOR", item: "Outright refusal on the coupling-mitigation question: Faisal Hawa asks what technology changes IEX can make so it does not lose volume under coupling; Goel answers 'I do not think on this call, it will be possible to elaborate on those things.' Distinct from the price-war evasion already tracked, and answered properly only nine months later", anchor: "other__Concall_Nov_2025_Q2FY26_Transcript.txt p.15"}
+  - {severity: "MINOR", item: "FY26 results call held without the JMD or the Head of Market Operations ('Mr. Rohit Bajaj, JMD and Mr. Amit Kumar... are not available to join us today due to other official meetings'), on the quarter carrying the APTEL dismissal and the CERC draft coupling regulations. Soft signal only; both returned in July and Amit Kumar had been promoted to Executive Director", anchor: "concalls__Concall_Apr_2026_Transcript.txt p.3"}
 pipeline_flags_not_supported: []
-pipeline_flags_overstated:
-  - {flag: "Market coupling 'ordered by January 2026' carried as a MISSED row in the management promise-delivery tally", note: "Fact is true and the promiser is honestly attributed to the CERC order, but B05's own 2B calls the delay genuinely external; counting it as a management miss inflates the missed count with an item management neither promised nor controlled", severity: "MINOR"}
-  - {flag: "'No significant margin impact' scored as a missed promise against the realisation decline", note: "Goel was answering a post-coupling hypothetical, not making a present-tense margin commitment, and coupling has not happened; arithmetic on both legs is correct but the promise-to-outcome link is a classification stretch", severity: "MINOR"}
-  - {flag: "M-Junction/MSTC exclusion described as 'a regulatory fact... credible, sourced to the notified rules'", note: "Rests entirely on management's characterisation; the Coal Rules text is not in the corpus. B05's own analyst_note applies the opposite and correct standard to the APTEL order", severity: "MINOR"}
-  - {flag: "CFO 42-44% ROE non-reconciliation", note: "SUPPORTED and arithmetically correct on the stated numbers, but does not address that ROE is conventionally computed on average rather than closing equity, which with a 50-65% payout would narrow the gap; force slightly overstated", severity: "MINOR"}
 promise_delivery_spot_checks: {checked: 5, confirmed: 5, wrong: 0}
-promise_delivery_spot_check_note: >
-  Direction correct on all five and no promise fabricated. Two rows carry
-  classification rather than factual problems (the conditional post-coupling
-  margin statement scored as a present-tense miss; the APTEL row booking the
-  timing leg as delivered while the substantive prediction on the same page
-  failed and is booked nowhere). One kept promise is missing from the table
-  entirely: the CFO's Apr-2026 treasury-income recovery commitment, delivered
-  as standalone other income moved from Rs 22.11cr in Q4FY26 to Rs 44.92cr in
-  Q1FY27. Its omission works against management, not for it.
-credibility_grade_concur: "concur — C is right, at the bottom of the band; every item I add cuts the same way (selective framing of segment deterioration already public in IEX's own monthly filings), which argues for the low end rather than a different grade"
-missed_cluster_diagnosis: >
-  Five of the seven full misses are one gap with one name: stage 5 read the
-  monthly Power Market Updates for the two metrics it already suspected (RTM
-  growth, REC headline) and never differenced the filings against the call
-  narrative segment by segment. Green, DAM, the REC sell-side mechanism and the
-  market-share series would all have surfaced from documents already in the
-  corpus. Run 1's problem was breadth; run 2's residue is one cheap mechanical
-  procedure not performed. A targeted amendment (perform the segment-level
-  difference; book the REC-mechanism contradiction and upgrade that flag from
-  LOW-MEDIUM to HIGH; add the green, DAM and market-share items) would close
-  most of the gap. Whether that or a third full re-run is the right instrument
-  is the orchestrator's call.
-new_peer_question_tested: true
-new_peer_question: "Is fee realisation trailing volume growth sector-wide or company-specific?"
-new_peer_question_verdict: "PARTIALLY ANSWERED by the peer transcripts — the phenomenon is sector-wide, the cause is not"
-new_peer_question_evidence:
-  - "MCX Aug 2026 p.11-12: analyst puts a 68% yield compression (bullion options premium-to-notional 1.03% to 0.35%); management decomposes it, moves the metric from ADT to ADV to strip price, attributes it predominantly to volatility normalisation and explicitly rules out contract mix and participation shift"
-  - "CDSL Aug 2026 p.7: Sanketh Godha puts IEX's identical structural question to CDSL — folio count +17% YoY against annual charges revenue +12%; management's answer is a single line, so thin answers to this question are not IEX-specific"
-  - "CDSL Aug 2026 p.7: CDSL's compression is a SEBI-mandated industry-wide fee cut quantified exactly on the call — KYC fetch Rs35 to Rs28 (-20%), creation Rs20 to Rs5 (-75%)"
-  - "CDSL Aug 2026 p.7: asked whether the realisable rate net of volume discounts fell as far as the rack rate, management refuses outright — 'We do not discuss this in our investor calls'; opacity on net realisation is a sector norm"
-  - "BSE Nov 2025 p.11: margin compression attributed to premium realisation per contract moving with volatility, 'uncontrollable and unpredictable'"
-  - "BSE May 2026 p.11: asked directly about pricing strategy, management gives a generic answer ('appropriate amounts at appropriate points of time')"
-new_peer_question_read: >
-  Peers' compression has external, named causes (a mandated fee cut at CDSL,
-  volatility at MCX and BSE). No regulator cut IEX's fees; its stated causes are
-  voluntary incentives and mix, unquantified across three quarters. Downstream
-  read: soften the DISCLOSURE criticism, since refusing to quantify net
-  realisation has clear peer precedent, and keep the ECONOMIC finding at full
-  weight — an unexplained, self-inflicted, unquantified realisation decline at a
-  claimed 99%-share monopoly.
-stage6_coverage_gap:
-  note: >
-    B06 answers stage 5 run 1's peer questions. Only 1 of B05 run 2's 6 questions
-    (question 6, BSE-versus-NSE trajectory, via Claim 4) is addressed. Not a
-    defect in B06's own work — the inputs changed underneath it — but a live
-    pipeline state. Verifier D rule 5 (every injected peer_question receives a
-    verdict) will fail against the current B05 unless B06 is re-pointed.
-  questions_untested: ["Q1 fee realisation sector-wide (discharged by this verifier in Part 5)", "Q2 MCX corroboration of 18% sector volume growth against 1% demand", "Q3 long-dated TAM claims at peers", "Q4 MCX coal-exchange sizing", "Q5 concentration disclosure practice at peers"]
+promise_delivery_note: >
+  All five directions held. SC-1 volume 15-20% (Nov-2025 p.9) delivered at
+  FY26 +17% (Apr-2026 p.5). SC-2 'things will definitely go in our favour'
+  (Feb-2026 p.8, grep-verified) falsified by APTEL as recited at Apr-2026 p.5.
+  SC-3 REC to beat FY25 (Feb-2026 p.9) delivered at +5% (Apr-2026 p.5); B05
+  scores 'partial', marginally harsh but not an error. SC-4 IGX Q1FY27 'may
+  not get any growth' (Apr-2026 p.10) was BEATEN at +11.9% volume, +15.5% PAT
+  (Q1FY27 press release p.2) - this row is absent from B05's promise table and
+  its absence runs against management. SC-5 treasury recovery (Apr-2026 p.10)
+  confirmed on the transcript half; the statement half was not re-verified.
+credibility_grade_concur: "concur | D is correct at the lower boundary of the band: management deflects and over-promotes, but every figure it gave that I could trace to a filing traced exactly (Rs747cr / Rs202.8cr match filed consolidated total income), headline volume guidance was delivered every period shown, and one candid admission and its forward promise were both kept. I would place it D or a low C and would not disturb D."
 findings:
-  - {severity: "MAJOR", location: "B05 red_flags / 2B / 2E (REC)", description: "MISSED: management's REC explanation names the wrong side of the market and is contradicted by IEX's own filing (sell bids -86.1%, prices rising). B05 flags only the recycled excuse at LOW-MEDIUM; the flag warrants upgrade to HIGH"}
-  - {severity: "MAJOR", location: "B05 Section 1A / red_flags", description: "MISSED: Apr-2026 CERC REC amendment restricting captive-plant REC trading was framed by management as inventory-enhancing one quarter before an 86% sell-bid collapse"}
-  - {severity: "MAJOR", location: "B05 Section 1A / 2D / red_flags", description: "MISSED: green market growth fell from +23% FY26 to +6.3% Q1FY27 with June at -1.2% YoY, undisclosed at the 24-Jul analyst meet; green is a stated growth pillar"}
-  - {severity: "MAJOR", location: "B05 Section 3 / red_flags", description: "MISSED: market-share disclosure precision degrades across four calls (84% with product split, to 83% with TAM restated 35% to 45-50% unexplained, to no figure, to a bare 80-85% range) as the coupling threat rises"}
-  - {severity: "MAJOR", location: "B05 2E repeated_evasions", description: "PARTIALLY CAUGHT: the fee-competition/price-war question was dodged in Nov-2025 and again in Jul-2026, where the pricing half is answered by nobody. B05 quotes the first leg as defensiveness but does not identify the second or book the pair as a repeated evasion"}
-  - {severity: "MAJOR", location: "B05 2B / red_flags", description: "PARTIALLY CAUGHT: DAM, the segment coupling threatens, is in absolute decline for two consecutive months; B05 uses this only as mix evidence for the realisation gap and never raises it as its own flag"}
-  - {severity: "MAJOR", location: "B05 2A promise_delivery", description: "PARTIALLY CAUGHT: 'Things will definitely go in our favour' was falsified by APTEL in 14 days. The table books the timing leg of the same answer as DELIVERED and books the substantive prediction nowhere, flattering the tally by one row"}
-  - {severity: "MAJOR", location: "B06 Parts 1 and 4 / pipeline state", description: "B06 tests stage 5 run 1's peer questions; 5 of the 6 run-2 questions are untested. Verifier D rule 5 will fail against the current B05 unless B06 is re-pointed. Question 1 is discharged by this verifier in Part 5"}
-  - {severity: "MINOR", location: "B05 red_flags", description: "MISSED: unqualified 'No additional costs' answer on MCO integration re-engineering, given in the same call where Grid India's equivalent build is called an additional cost"}
-  - {severity: "MINOR", location: "B05 Section 1 / 3", description: "MISSED: RTM and DAM share of mix stated three different ways across and within calls, with no denominator given"}
-  - {severity: "MINOR", location: "B05 Section 1B guidance", description: "MISSED: two revenue figures for the same quarter and the same year inside one presentation (FY26 Rs 747cr vs Rs 745cr; Q1FY27 Rs 202.8cr vs Rs 201cr)"}
-  - {severity: "MINOR", location: "B05 2B / 2E", description: "PARTIALLY CAUGHT: admitted but unquantified fee incentives are folded into the realisation deflection pattern rather than raised as a standalone pricing-power finding contradicting the 'margins are intact' claim"}
-  - {severity: "MINOR", location: "B05 2A / guidance", description: "PARTIALLY CAUGHT: CMD unaware of the status of the IGX IPO, the process discharging a hard 31-Dec-2026 PNGRB deadline"}
-  - {severity: "MINOR", location: "B05 timeline_slippages", description: "PARTIALLY CAUGHT: carbon timeline pulled in by a year while the materiality caveat that governs the opportunity's size was dropped"}
-  - {severity: "MINOR", location: "B05 2D", description: "PARTIALLY CAUGHT: management's explicit 'FY26 was an outlier year' self-label is not carried forward as a base-rate warning for downstream projection"}
-  - {severity: "MINOR", location: "B05 2A promise_delivery", description: "OVERSTATED: coupling's 'by January 2026' date carried as a MISSED row in a management promise tally, though B05's own 2B calls the delay genuinely external"}
-  - {severity: "MINOR", location: "B05 2A promise_delivery", description: "OVERSTATED: a conditional post-coupling statement ('no significant impact on the margin part') scored as a missed present-tense margin promise against a realisation decline from an unrelated cause; both legs' arithmetic is nonetheless correct"}
-  - {severity: "MINOR", location: "B05 Section 3A", description: "OVERSTATED: M-Junction/MSTC exclusion accepted as 'a regulatory fact... sourced to the notified rules' on management's characterisation alone, against the standard B05's own analyst_note applies to the APTEL order"}
-  - {severity: "MINOR", location: "B05 red_flags (ROE)", description: "SUPPORTED but force slightly overstated: does not address that ROE is conventionally computed on average rather than closing equity, which with a 50-65% payout narrows the computed gap"}
-  - {severity: "MINOR", location: "B05 2A promise_delivery", description: "OMISSION: the CFO's Apr-2026 treasury-income recovery commitment was KEPT (standalone other income Rs 22.11cr to Rs 44.92cr) and is not booked; the table is incomplete, though the omission works against management"}
-  - {severity: "MINOR", location: "B05 header / citations throughout", description: "Anchor convention inconsistent: B05 states it uses PAGE-marker numbers but many citations are printed-page numbers and at least three are off by two. Every traced item exists at or near the cited page. Locatability defect, not a fidelity call — source fidelity is Verifier A's sole authority"}
+  - {severity: "MAJOR", location: "B05 - missed", description: "Nov-2025 p.8 'we are not aware about any developments' versus Jul-2026 p.20 'for the four months period they have run this pilot', plus IEX's own unpublished simulation asserted as established fact in support of a live Supreme Court petition. Absent from B05 entirely. Caveat in fairness: Grid India's own comments describe the pilot software as post-facto and unaudited (Jul-2026 p.21), so the pilot may post-date Nov-2025 and the contradiction is not certain; the own-simulation-as-fact half stands regardless"}
+  - {severity: "MAJOR", location: "B05 report 1D and 2D; B05 red_flags", description: "IF-09 partially caught. B05 holds the DAM decline, the +61.7% August buy bids and the 'no revisiting of the cheap-power thesis' observation, but never states that July-2026 IEX volume grew SLOWER than national consumption (+7.7% vs +10.9%, Power Market Update Jul'26 p.2) - the first such month in the corpus - nor that August's cleared volume was sell-side capped (buy bids +61.7% against DAM cleared +15.0%, price +22%). Together these directly falsify Bajaj's 'whatever incremental growth was there, majority of that came to exchanges' (Jul-2026 p.13), the load-bearing claim under the 8%-to-25% penetration thesis (Jul-2026 p.33). Hand to stage 11 explicitly"}
+  - {severity: "MAJOR", location: "B05 red_flags, filed LOW", description: "IF-11 under-weighted. Bajaj volunteers that all three 2023 launches (HP-DAM, HP-TAM, Ancillary Market) are 'not doing very well because liquidity is not there' (Jul-2026 p.12), with ESCerts separately described as illiquid. That is the observed base rate for IEX product launches, and the growth case rests on three further pending launches (Green RTM, peak DAM/RTM, 11-month TAM). Filed at LOW; should be MAJOR - it is the cleanest available discount on the entire optionality stack"}
+  - {severity: "MAJOR", location: "B05 guidance row + timeline_slippages", description: "IF-12 connection not drawn. The 'market size can be another 15 billion, 20 billion units' sizing for the 11-month TAM contract (Feb-2026 p.12) is contradicted by Goel's own admission in the July meet that 'transactions in the contracts which are beyond three months, those are not significant' (Jul-2026 p.40), alongside 'It's been more than two years since we have applied'. Both facts are recorded in separate B05 rows; neither references the other"}
+  - {severity: "MAJOR", location: "B05 YAML red_flags[]", description: "Two findings B05 itself declares MAJOR never reach the handoff flag list and so will not reach stage 11 or 13: (a) the Apr-2026 CERC REC amendment framed as inventory-enhancing ('source-based REC multipliers... should help increase REC inventory going forward', Apr-2026 p.5) one quarter before sell bids fell 86.1% - named MAJOR in B05's own rework_note, absent from red_flags[] and from report 4D; (b) the 'No additional costs' asymmetry - stated in report 1B guidance only. A finding recorded in prose but omitted from red_flags[] is functionally missed downstream"}
+  - {severity: "MAJOR", location: "B05 report, ~1/3 of ~35 sampled anchors; B06, MCX Aug-2026 transcript", description: "Citation-anchor drift of one to three marker pages, plus two cross-call quote mis-attributions. B05 examples with true marker in brackets: Nov-2025 volume guidance cited p.6 [p.9]; Feb-2026 'definitely go in our favour' cited p.7 [p.8]; Feb-2026 REC buyout cited p.8 [p.9]; Feb-2026 volume guidance cited p.11 [p.13]; Apr-2026 FY27 guidance cited p.13 [p.14]; Apr-2026 coal 80mn cited p.5-6 [p.8]; Jul-2026 '80-85% market share' cited p.6 [p.7]; Jul-2026 coal 120mn cited p.5 [p.6]; Jul-2026 '70-80 million tonnes' cited p.7 [p.8]; Jul-2026 Rs747cr cited p.4 [p.5]; Jul-2026 Grid India objections cited p.18-20 [p.21-22]; Jul-2026 '18% vs 1%' cited p.12 [p.13]. Mis-attributions: 'we had no expertise when we started' cited Q4FY26 p.12-13, actually Q1FY27 p.39; '5,000+ industrial consumers' cited Q1FY27 p.17-18, actually Q4FY26 p.17. B06 examples: MCX Aug-2026 '55% market share standpoint' cited p.16 [p.14]; '8% to 10% of electricity needs' cited p.17 [p.14]; 'not a derivatives initiative' cited p.6 [p.10]. B05 asserts every citation was grep-verified against the marker index; that claim is not sustained. EVERY quote and number traced exists in the file named, in the substance claimed - this is a precision and process-claim defect, not an evidence defect"}
+  - {severity: "MINOR", location: "B05 promise_delivery", description: "Missing row that favours management: Apr-2026 p.10 guided IGX Q1FY27 to 'not get any growth with respect to the last year's first quarter'; actual was +11.9% volume and +15.5% PAT (Q1FY27 press release p.2). Omitted from a 4/2/4 tally, the mirror image of the tally-flattering omission run 3 corrected"}
+  - {severity: "MINOR", location: "B05 red_flags + promise_delivery", description: "Internal tension: the CFO's treasury-income recovery is booked as a DELIVERED promise while the rising non-operating share of consolidated PBT (23.4% to 29.8%) that recovery mechanically produces is booked as a red flag. Same event, two rows, neither notes the other"}
+  - {severity: "MINOR", location: "B05 report 1D", description: "Mild overstatement: 'four consecutive months of Power Market Updates before and after the call show an unbroken pattern of collapsing sell bids and rising clearing prices'. The Aug-2026 update reports no sell-bid figure, attributes the fall to 'lower participation', and shows clearing prices of Rs370/Rs350, DOWN from Rs400/Rs395 in June. The Q1FY27 and July filings do support the claim; August does not"}
+  - {severity: "MINOR", location: "B05 red_flags, filed MEDIUM", description: "IF-01 severity understated. The same-call contradiction - '20, 30, 40%' DAM impact volunteered in opening remarks (Jul-2026 p.5) versus 'I don't see any loss in market share. after the coupling' in Q&A (Jul-2026 p.35) - is the only sizing of the thesis's largest risk anywhere in the corpus, given and withdrawn inside one session. Should be HIGH"}
+  - {severity: "MINOR", location: "B05 - missed", description: "Outright refusal on the coupling-mitigation question (Nov-2025 p.15), distinct from the price-war evasion B05 already tracks"}
+  - {severity: "MINOR", location: "B05 - missed", description: "FY26 results call held without the JMD or the Head of Market Operations (Apr-2026 p.3), on the quarter carrying the APTEL dismissal and the CERC draft regulations"}
+  - {severity: "MINOR", location: "B05 red_flags, filed MEDIUM", description: "IF-24 half-caught. The Rs747cr/Rs745cr and Rs202.8cr/Rs201cr discrepancy is captured; the additive presentation 'IEX standalone was around 474 crores, IGX 42 crores and ICX' against Rs493cr consolidated PAT, with IGX a 47.3% equity-accounted associate, is not (Jul-2026 p.27)"}
 critical_count: 0
-major_count: 8
-minor_count: 13
-acceptance_rate: 36
+major_count: 6
+minor_count: 7
+acceptance_rate: 65
+acceptance_rate_including_partials: 88
 acceptance_rate_note: >
-  36% = 8 caught / 22 independent flags, applying the rubric formula strictly
-  (full catches only). Caught plus partially caught is 15/22 = 68%. Both are
-  recorded because the strict figure alone misdescribes an artifact whose
-  principal weakness is under-weighting evidence it had already found rather
-  than failing to find it. POST-REMEDIATION for stage 5 and not comparable to
-  run 1's 38%; first-pass for stage 6.
-no_critical_note: >
-  The rule that would fire a CRITICAL (a MISSED repeated evasion across 2+
-  quarters) does not fire. The only candidate is the fee-competition evasion,
-  and B05 saw and quoted its Nov-2025 leg, making it PARTIALLY CAUGHT. The
-  classification failure is real and graded MAJOR.
-verifier_positive_finding: >
-  No pipeline flag in either artifact was NOT SUPPORTED; no signal was invented.
-  Three independent arithmetic reconstructions reproduced B05's computed figures:
-  paisa/unit realisation (4.154 and 4.323 against B05's 4.16 and 4.33), the
-  associate-profit legs (IGX FY26 PAT Rs 41.9cr x 47.3% = Rs 19.8cr; Q1FY27
-  Rs 16.3cr x 47.3% = Rs 7.71cr against B05's Rs 7.72cr) and consolidated other
-  income (Rs 131.30cr FY26, Rs 44.93cr Q1FY27). B06's load-bearing peer anchor
-  was verified verbatim (CDSL Aug 2026, 420bps incremental share loss to 81.4%
-  in June 2026).
+  17 caught / 26 independently derived flags = 65% strict; 23/26 = 88% with
+  partials. No CRITICAL: the rubric's CRITICAL trigger is a MISSED repeated
+  evasion across 2+ quarters, and all six evasion patterns I identified are in
+  B05's repeated_evasions[]. The one candidate seventh (pending-product
+  approval timeline, deflected Feb-2026 p.12 and Jul-2026 p.40) is recorded by
+  B05 under timeline_slippages and 1C - reclassified, not missed. The 65% is
+  above the 60% REWORK line and should not be read as a quality score; see
+  measurement_note and materiality_read.
+materiality_read: >
+  No, the residual gap would not change an investment decision. Three of my 26
+  items are absent from the pipeline and two of those three are texture rather
+  than thesis; the third sits inside a coupling risk the pipeline already
+  flags at its highest severity across seven separate rows. Zero pipeline
+  flags are unsupported, every load-bearing monthly-filing number I re-derived
+  matched exactly, and all five promise-delivery directions I tested held, so
+  the residual is overwhelmingly the residue of an adversarial reader
+  out-listing a single-pass stage after two rounds of remediation already
+  stripped the easy findings. The two things I would still hand stage 11
+  explicitly are calibration inputs, not new red flags: that July 2026 was the
+  first month IEX volume grew slower than national demand while August's
+  cleared volume was sell-side capped (which tests how much growth to
+  underwrite), and that management's own admitted failure of all three 2023
+  product launches is the right base rate to discount the pending-product
+  optionality; and I would fix the anchor drift in Part 5 before this record is
+  cited downstream, because B05 claims a grep verification it did not complete
+  and two quotes are attributed to the wrong call.

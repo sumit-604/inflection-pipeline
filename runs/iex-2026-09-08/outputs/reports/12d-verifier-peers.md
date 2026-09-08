@@ -1,154 +1,207 @@
-# Verifier D — Peer Coverage Audit of B06
-IEX | Run date 2026-09-08 | Model: claude-sonnet-5 | Fresh context, artifact paths only
+# Verifier D — Peer Coverage Audit (B06 run 2)
+IEX | Run date 2026-09-08 | Model: claude-sonnet-5 | Fresh context, artifacts only
 
-Inputs: 12 peer transcripts (runs/iex-2026-09-08/work/peer-concalls__*.txt), B06 report
-(outputs/reports/06-peers.md), B06 block (outputs/blocks/B06-peers.yaml), B05 peer_questions
-(outputs/blocks/B05-concall.yaml lines 74-78).
-
-Method: verified the four B05 peer_questions all received a verdict in B06; spot-checked every
-quote B06 cites as SUBSTANTIVE evidence against the actual transcript text and page; read the
-three transcripts B06 marked CITED-ONLY in full for material the claim list should have used;
-checked B06's own coverage-map table against its own summary counts.
+Inputs read: 12 peer transcripts (MCX/BSE/CDSL x 4 quarters, work/ folder,
+page-marker `=== PAGE n ===`), B05-concall.yaml (peer_questions[]),
+B06-peers.yaml, outputs/reports/06-peers.md.
 
 ---
 
-## 1. Claims-addressed check
+## 0. Process note: did run 2 close the three prior findings?
 
-All four B05 `peer_questions[]` (fee-compression precedent, non-operating income share, IGX
-OFS disclosure practice, customer-stickiness defence) received an explicit verdict in B06:
-VERIFIED, PARTIALLY VERIFIED, UNVERIFIABLE, CONTRADICTED respectively. No skipped claim.
-Rule 5: PASS.
+The prior verifier-D pass on B06 run 1 found one MAJOR (CDSL Nov-2025
+marked CITED-ONLY despite carrying Claim-4-relevant evidence) and two
+MINOR (BSE Feb-2026 likewise; a miscounted coverage summary line).
 
-## 2. Citation-fidelity spot checks (SUBSTANTIVE peers)
+- **MAJOR (CDSL Nov-2025) — CLOSED.** Run 2's rework_note and Part 3 move
+  this transcript to SUBSTANTIVE, citing the 93%-to-82% incremental
+  demat-share figure. Verified against the transcript directly: the 93%
+  figure sits on marker page 9, the 82% figure on marker page 10
+  (`peer-concalls__CDSL-Concall_Nov_2025_Transcript.txt`, lines 367-373),
+  matching B06's "p.9-10" citation exactly.
+- **MINOR (BSE Feb-2026) — CLOSED.** Run 2 moves this transcript to
+  SUBSTANTIVE, citing the algo/SOR-approval-bottleneck explanation.
+  Verified: the SOR/"exchange agnostic" passage sits on marker page 13
+  (`peer-concalls__BSE-Concall_Feb_2026_Transcript.txt`, lines 417-427),
+  matching B06's "p.13" citation exactly.
+- **MINOR (miscounted summary line) — CLOSED.** Run 2 states "12
+  SUBSTANTIVE, 0 CITED-ONLY, 0 UNUSED" and the Part 3 table lists 12 rows,
+  all SUBSTANTIVE. Arithmetic is now internally consistent.
 
-Checked 14 of B06's cited quotes/figures against the named transcript and page. Every one
-matched exactly, including speaker attribution and page location:
+All three prior findings are closed with real evidence, not just asserted.
 
-| # | Claim | Cited anchor | Verified against transcript |
+---
+
+## 1. Coverage audit: did B06 use the peers it claims to have used?
+
+All 12 peer transcripts are marked SUBSTANTIVE in the Part 3 coverage map.
+Rule 2 requires locating the cited material in Parts 1-2 and confirming it
+exists in the transcript. Spot-checked citations across all three peers
+and all four quarters (page-marker verified against the source file in
+each case):
+
+| Citation checked | B06 anchor | Transcript location (marker page) | Result |
 |---|---|---|---|
-| 1 | 1 | BSE May 2026 p.18-19, Devesh Agarwal, "eight months" since Thursday expiry | MATCH (line 578: "it has been eight months that we have to Thursday") |
-| 2 | 1 | BSE Nov 2025 p.9, Mohit Mangal, "seen the market share increase in the option derivative segment" | MATCH exactly |
-| 3 | 1 | BSE May 2026 p.5-6, Rs.19,523cr vs Rs.8,978cr, +118% YoY, Thursday-transition liquidity broadening | MATCH exactly (verbatim) |
-| 4 | 1 | MCX May 2026 p.18, Rishi Nathany, "sticky liquidity" / "does not just go away" | MATCH, correct page (falls between page markers 18-19) |
-| 5 | 4 | MCX May 2026 p.13, Bharat Shah, IEX named, "derailed the situation" / BSE options "next to nothing" to "37%, 38%" | MATCH exactly, correct page |
-| 6 | 2D | MCX Feb 2026 p.18, Parikshit Gupta, "We all know what is happening with IEX" | MATCH exactly |
-| 7 | 4 | CDSL May 2026 p.7/p.9-10, Nehal Vora, "loyalty," "commitment," intangible-moat language | MATCH exactly, both citations |
-| 8 | 4 | CDSL Aug 2026 p.6, Hiral Parekh, 420bps incremental-share loss to 81.4% since March | MATCH exactly |
-| 9 | 4 | CDSL Aug 2026 p.6, Nehal Vora's non-response, "infrastructure company... not a quarter-on-quarter growth" | MATCH exactly, same page |
-| 10 | 4 | CDSL Feb 2026 p.10, Nehal Vora, "no significant drop as I would see it as of now," answering Sanketh Godha | MATCH exactly, correct page |
-| 11 | 2 | BSE Nov 2025 p.6, treasury income -32% to Rs.42cr from Rs.63cr | MATCH exactly |
-| 12 | 2 | BSE Aug 2026 p.17, Madhukar (JP Morgan), "other income has also picked up quite significantly" | MATCH exactly, correct page |
-| 13 | 2 | MCX Aug 2026 p.16, Bunty Chawla, "drastic growth" in other income, magnitude/driver framing only | MATCH exactly |
-| 14 | 2D | BSE May 2026 p.19, Rushabh Doshi, payout ratio vs "IEX or NSE" | MATCH exactly |
+| CDSL "We don't give any client-specific information" | Nov-2025 p.10 | p.10 (line 391, after PAGE 10 marker at 368) | MATCH |
+| CDSL "We do not discuss this in our investor calls" | Aug-2026 p.8 | p.8 (line 322, before PAGE 9 marker at 337) | MATCH |
+| MCX "I cannot name any specific member... More or less, it would be similar" | Nov-2025 p.16-17 | p.16 (line 608) / p.17 (line 620) | MATCH |
+| MCX coal exchange, no size figure, all 4 transcripts | Nov-2025/Feb-2026 silent; May-2026 p.17; Aug-2026 p.6 | grep confirms zero "coal" hits in Nov-2025 and Feb-2026; May-2026 and Aug-2026 discuss coal qualitatively with no tonnage/rupee figure anywhere | MATCH |
+| BSE "7% to 8%... far away from what we wanted... SOR... pending for more than six months" | May-2026 p.16 | p.16 (lines 511-522, before PAGE 17 marker at 523) | MATCH |
+| BSE "creeping up... double-digit market share... calendar year 2027" | Aug-2026 p.14 | p.14 (lines 438-445, before PAGE 15 marker at 446) | MATCH |
+| CDSL loyalty/commitment claim | May-2026 p.7, p.9-10 | p.7 (lines 313-317, before PAGE 8 marker at 318) confirmed; p.9-10 not separately re-verified | MATCH (partial spot-check) |
+| CDSL 420bps incremental-share loss | Aug-2026 p.6 | line 234-235, consistent with p.6 region | MATCH |
+| MCX Bharat Shah "derailed the situation" / BSE options "37%, 38%" | May-2026 p.13 | lines 494-502 | MATCH |
+| MCX "68% yield compression" decomposition | Aug-2026 p.11-12 | lines 391-397 | MATCH |
+| CDSL SEBI fetch/creation charge cuts (Rs35→28, Rs20→5) | Aug-2026 p.7-8 | lines 284-287 | MATCH |
+| BSE/CDSL: no associate-entity IPO/OFS/stake-sale disclosure (Carried-forward C) | — | grepped "IPO/OFS/stake sale/divest" across all 8 BSE+CDSL transcripts: every hit is about third-party issuer IPO activity or CDSL's own IPO-linked corporate-action fee revenue, none about a BSE/CDSL associate entity's own stake sale or listing | CONFIRMED absence, correctly classified UNVERIFIABLE |
 
-Zero mismatches, zero anchor-not-found, zero fabricated or paraphrase-drifted quotes across the
-sample. Every SUBSTANTIVE citation checked is a real, findable statement in the named peer's
-transcript at (or immediately adjacent to) the cited page. Rule 2: PASS on every peer sampled.
+**Every citation spot-checked is real, correctly page-anchored, and
+accurately quoted.** No fabricated or misattributed material found across
+11 independent spot-checks spanning all three peers and all four quarters.
+substantive_unsupported = **none**.
 
-## 3. Unused-but-relevant check (CITED-ONLY peers)
+One partial exception on depth, not accuracy: the MCX May-2026
+"interoperability" exchange (lines 678-701, marker p.18-19) — management's
+argument that interoperability requires "100% similar product" (same
+ISIN) and therefore liquidity would not migrate between structurally
+different products — is real, accurately findable, and directly on-topic
+for the coupling/interoperability theme central to this run. It is
+name-checked in B06's Part 3 coverage-map contribution line ("'sticky
+liquidity' interoperability defence") but never actually discussed,
+quoted, or weighed anywhere in Parts 1, 1B, or 2 of the report. It is a
+citation without an analysis attached to it — a small piece of cited-only
+material sitting inside an otherwise-substantive transcript. This is not
+a rebuttal to any specific claim IEX itself has made (no IEX transcript in
+this corpus uses "sticky liquidity" language re coupling, confirmed by
+grep), so it is industry-context depth, not a missed direct claim
+contradiction; the coupling-severity theme is otherwise well covered by
+the Q6 verdict and the 2D independent-mention section. MINOR.
 
-B06 marks three transcripts CITED-ONLY: MCX Nov 2025, BSE Feb 2026, CDSL Nov 2025. Read each
-in full.
+---
 
-**MCX Nov 2025** — grepped for IEX, market coupling, interoperability, loyalty, other income,
-treasury, market share: the only hit is a single analyst request for "transaction charges,
-membership fees and float income" bookkeeping figures (line 525-526), no follow-through
-discussion. B06's "no decisive contribution" label is accurate. Correctly handled.
+## 2. Testing the two counterintuitive findings
 
-**CDSL Nov 2025 (Q2 FY26)** — MAJOR MISS. This transcript already contains the opening move of
-the Claim 4 arc, one full quarter earlier than B06's account. Devish Agarwal notes CDSL's
-incremental demat-account market share fell from a 93% peak (3Q FY25) to 82% in this quarter
-(CDSL Concall Nov 2025 Transcript, p.9-10). Nehal Vora's response pre-figures, almost verbatim,
-the deflections B06 later cites from Feb-2026 and Aug-2026: "We've not been losing market...
-percentage is basically a relative number... this company is finally a market infrastructure
-company, like a road, you have to look at a little more medium-term and long-term perspective"
-(same page). B06's Part 3/4 narrative calls the Feb-2026 CDSL call "the first leg of the Claim 4
-arc" and treats the May-2026 loyalty claim as an apparently clean, unqualified statement later
-contradicted by the Aug-2026 420bps admission. In fact CDSL was already fielding and downplaying
-the identical erosion question TWO quarters before making that loyalty claim, not one. This
-strengthens, rather than weakens, B06's own CONTRADICTED verdict on Claim 4 — but B06 did not
-find it, filed the transcript as bookkeeping-only, and so understated both how early the warning
-signs were and how much CDSL management had already been asked (and had already deflected) before
-repeating the loyalty framing. Directly claim-relevant, left unused: MAJOR (Rule 3).
+**Finding 1 — peers are LESS forthcoming than IEX on concentration
+disclosure (Q5, CONTRADICTED).** Independently verified against all three
+cited quotes (CDSL Nov-2025 p.10, CDSL Aug-2026 p.8, MCX Nov-2025
+p.16-17) — all three are genuine flat refusals or non-answers when asked
+comparably direct concentration questions, none softened or
+mischaracterized in the report. BSE was independently checked (grep for
+member/broker/client-concentration language across all four BSE
+transcripts) and found silent, consistent with B06's claim. The
+counterintuitive framing holds up: this is a real, well-evidenced finding,
+not an artifact of selective quoting.
 
-**BSE Feb 2026 (Q3 FY26)** — MINOR MISS. Amit Chandra's question and S. Ramamurthy's answer
-(BSE Concall Feb 2026 Transcript, p.12-13) already describe the same mechanism B06 cites only
-from the May-2026 call for Claim 4: cash-segment share stuck because algo/SOR approvals for
-best-price execution face "quite a few bottlenecks," not because of customer loyalty to the
-incumbent. This is a real, directly claim-relevant statement left unused, but it is duplicative
-of material B06 already uses from a later quarter and does not change the verdict — it only
-shows the "structural friction, not loyalty" explanation is older than B06's account suggests.
-Graded MINOR: it corroborates rather than adds new information to an already-correct verdict.
+**Finding 2 — MCX discloses no coal-exchange size figure across its four
+transcripts.** Independently re-verified with a direct grep for "coal"
+across all four MCX transcripts. Nov-2025 and Feb-2026: zero mentions.
+May-2026 and Aug-2026: coal is discussed at length (subsidiary
+incorporation, SEBI approval process, "transparent, efficient
+technology-driven national coal trading ecosystem") but not one tonnage,
+rupee, or percentage figure appears anywhere near any of the four "coal"
+passages in either transcript. This finding is fully supported and stated
+with appropriate caution in the report (treats silence as a different
+failure mode from IEX's unreconciled revision, not a verdict either way).
 
-## 4. Verdict-discipline audit
+Both counterintuitive findings survive independent re-verification.
 
-- Claim 2 (VERIFIED) rests on 3 independent peers (MCX, BSE, CDSL), anchor_count 6 — clears the
-  ≥2-independent-peer-anchor bar for a VERIFIED verdict. PASS.
-- Claim 4 (CONTRADICTED) rests on CDSL (own words, two quarters), BSE (own history), and an MCX
-  investor (independent third party) — well above the bar, and arguably under-credited given the
-  missed CDSL Nov-2025 anchor (section 3 above), which would have made the contradiction stronger
-  still, not weaker. No fail.
-- Claim 1 (PARTIALLY VERIFIED) and Claim 3 (UNVERIFIABLE) are not VERIFIED verdicts, so the
-  ≥2-anchor rule for VERIFIED does not bind; both verdicts are conservative given the corpus (no
-  peer precedent exists for Claim 3; only one directly comparable event exists for Claim 1), and
-  neither reads as an upgrade from silence.
-- No verdict in B06 is upgraded from silence (a "VERIFIED" resting on peer silence). No fail.
+---
+
+## 3. Verdict discipline (Rule 4)
+
+- The one VERIFIED claim (Carried-forward B, non-operating income
+  blind spot) rests on three independent peers (MCX, BSE, CDSL,
+  anchor_count 6) — clears the ≥2-anchor bar comfortably.
+- No verdict is upgraded from silence. UNVERIFIABLE verdicts (Q2, Q3, Q4,
+  Carried-forward C) are all explicitly built on documented absence and
+  are labeled UNVERIFIABLE, not VERIFIED or CONTRADICTED — the report is
+  careful to caveat these ("a finding by absence rather than a tested and
+  failed precedent," Q3; "not a finding about IEX's disclosure practice,"
+  Carried-forward C). No CRITICAL verdict-discipline failure found.
+- CONTRADICTED verdicts (Q5, Q6) rest on multiple, quoted, page-anchored
+  peer statements each, not on inference from silence.
 
 verdict_discipline_fails: none found.
 
-## 5. Internal-consistency check on B06's own coverage map
+---
 
-B06's Part 3 table lists 9 rows as SUBSTANTIVE (MCX Feb, MCX May, MCX Aug, BSE Nov, BSE May, BSE
-Aug, CDSL Feb, CDSL May, CDSL Aug) and 3 rows as CITED-ONLY (MCX Nov, BSE Feb, CDSL Nov). The
-summary line immediately below the table, and echoed in B06-peers.yaml's implicit count, states
-"8 SUBSTANTIVE, 4 CITED-ONLY, 0 UNUSED" — this does not match the table it summarises (9 and 3,
-not 8 and 4). Total is right (12), the split is wrong. Cosmetic, does not change any verdict, but
-it is a factual inconsistency inside the stage's own deliverable. MINOR.
+## 4. Claims-all-addressed check (Rule 5) — the central finding of this audit
 
-## 6. Peer utilisation and acceptance
+B05-concall.yaml `peer_questions[]` (lines 195-201) contains **seven**
+entries, not six:
 
-- Peers provided: 12 (peer-quarter transcripts).
-- Peers actually used substantively, per this audit's read of the table (not the miscounted
-  summary line): 9 of 12 = 75%.
-- Peers "correctly handled" (accurate classification with a supportable citation, or accurately
-  and completely assessed as having nothing decisive): MCX Nov (correct), MCX Feb/May/Aug
-  (correct), BSE Nov/May/Aug (correct), CDSL Feb/May/Aug (correct) = 10 of 12. BSE Feb and CDSL
-  Nov are classified CITED-ONLY but each holds a directly claim-relevant statement that should
-  have been surfaced — not correctly handled, one MAJOR (CDSL Nov) and one MINOR (BSE Feb).
-  10/12 = 83%.
+1. Fee realization trailing volume (MCX/BSE/CDSL) — answered, Q1 PARTIALLY VERIFIED
+2. MCX electricity derivatives vs. 18%/1% growth claim — answered, Q2 UNVERIFIABLE
+3. Long-dated TAM claims, sector-standard or overreach — answered, Q3 UNVERIFIABLE
+4. MCX coal-exchange sizing consistency — answered, Q4 UNVERIFIABLE
+5. Customer/counterparty concentration disclosure — answered, Q5 CONTRADICTED
+6. BSE market-share trajectory vs. NSE — answered, Q6 CONTRADICTED
+7. **"Do any of the three peers disclose product-level or segment-level
+   market share with degrading precision when a competitive or
+   regulatory threat becomes more concrete, the way IEX's disclosure
+   narrowed between Q2FY26 and Q1FY27?"** — **NOT ANSWERED.**
 
-No fabricated citations found. No SUBSTANTIVE claim resting on an unsupported anchor. No
-CRITICAL finding.
+B06's rework_note, its report header, and Part 4's triangulation summary
+all state the run answers "all six current B05 peer_questions" / "the six
+current questions." This miscounts B05's actual list by one. Question 7
+receives no verdict anywhere in B06-peers.yaml or 06-peers.md — it is
+absent from `verified`, `partially_verified`, `contradicted`, and
+`unverifiable`, and absent from the prose. This is a skipped claim per
+Rule 5: **MAJOR**.
+
+This is not a trivial omission. The raw material to answer Q7 substantially
+overlaps evidence B06 already gathered for Q6: CDSL's disclosure precision
+across the four quarters actually SHARPENS under pressure, not degrades
+(93% → 82% round-number → "no significant drop" qualitative downplay →
+explicit percentage figures → a named 420bps figure in Aug-2026, the most
+precise disclosure of the whole arc, given at the point of maximum
+pressure); BSE similarly moves from round "7-8%" language toward a named
+double-digit target with a dated milestone as pressure persists. Both
+data points point toward a third counterintuitive finding in the same
+family as Q5 and Q6 — peers' disclosure precision does not degrade under
+competitive threat the way IEX's does, and in CDSL's case arguably
+improves — but this synthesis step was never taken because the question
+was dropped from the run's working list entirely, not because the
+evidence was unavailable.
+
+claims_all_addressed = **false**.
 
 ---
 
-## Findings
+## 5. Coverage and cross-read spot checks
 
-1. MAJOR — CDSL Q2 FY26 (Nov-2025) transcript marked CITED-ONLY in B06's coverage map, but
-   contains a directly Claim-4-relevant peer statement left unused: CDSL's incremental
-   demat-account market share already down from 93% (3Q FY25) to 82% this quarter, with
-   management's deflection ("look at absolute numbers... market infrastructure company, like a
-   road...") pre-figuring the identical language used again in Feb-2026 and Aug-2026. This
-   antedates B06's own "first leg of the Claim 4 arc" (which it places at Feb-2026) by one
-   quarter and shows CDSL's May-2026 loyalty claim followed two, not one, prior quarters of
-   downplayed erosion questions. Strengthens B06's CONTRADICTED verdict but was not found.
-   Location: outputs/reports/06-peers.md Part 3 (CDSL Q2 FY26 row) / outputs/blocks/B06-peers.yaml
-   peer_coverage_map. Source: peer-concalls__CDSL-Concall_Nov_2025_Transcript.txt, p.9-10.
+- Re-grepped the full 12-transcript set for "interoperability", "market
+  coupling", "REC"/"renewable energy certificate": confirms B06's implicit
+  premise that no peer discusses a comparable coupling event that has
+  actually been implemented (input_gap `regulatory_order_text`/
+  `peer_precedent_gap` framing holds), with the one exception (MCX's
+  interoperability mechanics passage) noted in Section 1 above.
+- Re-grepped BSE and CDSL transcripts for IPO/OFS/stake-sale language to
+  confirm Carried-forward C's "no comparable event" claim: holds, all
+  hits are third-party issuer activity, not an associate-entity
+  transaction.
+- No additional directly claim-relevant peer statement bearing on IEX's
+  claims was found unused in this pass, beyond the MCX interoperability
+  item (Section 1, MINOR) and the Q7 gap (Section 4, MAJOR).
 
-2. MINOR — BSE Q3 FY26 (Feb-2026) transcript marked CITED-ONLY, but contains an earlier instance
-   of the same "SOR/algo-approval bottleneck, not customer loyalty" explanation for BSE's stuck
-   cash-segment share that B06 cites only from the May-2026 call for Claim 4. Duplicative of
-   already-used material; does not change the verdict. Location: outputs/reports/06-peers.md
-   Part 3 (BSE Q3 FY26 row). Source: peer-concalls__BSE-Concall_Feb_2026_Transcript.txt, p.12-13.
+---
 
-3. MINOR — Internal arithmetic inconsistency: B06's Part 3 summary line reads "8 SUBSTANTIVE, 4
-   CITED-ONLY, 0 UNUSED," but the coverage-map table immediately above it lists 9 SUBSTANTIVE
-   rows and 3 CITED-ONLY rows. The total (12) is right; the split is miscounted. Cosmetic, no
-   verdict impact. Location: outputs/reports/06-peers.md line 368.
+## Summary
 
-No CRITICAL findings. No substantive citation was unsupported; every SUBSTANTIVE-marked claim
-sampled (14 of the report's cited anchors) was independently confirmed against the source
-transcript at the stated page.
+Citation fidelity in this report is excellent: every spot-checked
+quote, page anchor, and both flagship counterintuitive findings hold up
+against the raw transcripts, and all three prior verifier-D findings from
+run 1 are genuinely closed with verifiable fixes. The material defect is
+coverage completeness, not accuracy: B06 miscounted B05's current
+peer_questions list as six when it is seven, and question 7 (disclosure
+precision under threat, peer-wide) was dropped without a verdict, despite
+overlapping evidence already sitting in the report's own Q6 material.
+
+peer_utilisation: 12/12 peer-quarters used substantively = 100%.
+acceptance_rate: of 10 distinct claims this audit could check (7 current
+B05 questions + 3 carried-forward findings), 9 were rendered and verified
+clean on independent re-read of the transcripts; 1 (Q7) was never
+rendered = 90%.
 
 ---
 
@@ -158,20 +211,20 @@ company: "IEX"
 run_date: "2026-09-08"
 model: claude-sonnet-5
 status: complete
+run_number: 2
 peers_audited: 12
-substantive_confirmed: 9
+substantive_confirmed: 12
 substantive_unsupported: []
 unused_but_relevant:
-  - {peer: "CDSL Q2 FY26 (Nov 2025)", missed_item: "Incremental demat-account market share already down from 93% (3Q FY25) to 82% this quarter; management deflection pre-figures the identical language repeated in Feb-2026 and Aug-2026, one quarter earlier than B06's stated 'first leg' of the Claim 4 arc", anchor: "CDSL-Concall_Nov_2025_Transcript.txt p.9-10"}
-  - {peer: "BSE Q3 FY26 (Feb 2026)", missed_item: "Same SOR/algo-approval-bottleneck, not-loyalty explanation for BSE's stuck cash-segment share that B06 cites only from the May-2026 call for Claim 4, present one quarter earlier", anchor: "BSE-Concall_Feb_2026_Transcript.txt p.12-13"}
-claims_all_addressed: true
+  - {peer: "MCX (May-2026)", missed_item: "Interoperability mechanics defence: 'interoperability is only possible when there is a 100% similar product... in commodities may be different' -- cited in the Part 3 coverage-map contribution line as 'sticky liquidity interoperability defence' but never discussed, quoted, or weighed in Parts 1, 1B, or 2. No IEX transcript in this corpus uses comparable 'sticky liquidity' language, so this is industry-context depth left on the table, not a missed direct rebuttal to a stated IEX claim.", anchor: "MCX Concall May 2026 Transcript, p.18-19"}
+claims_all_addressed: false
 verdict_discipline_fails: []
 findings:
-  - {severity: "MAJOR", location: "outputs/reports/06-peers.md Part 3 (CDSL Q2 FY26 row); B06-peers.yaml peer_coverage_map", description: "CDSL Nov-2025 transcript marked CITED-ONLY but contains a directly Claim-4-relevant statement left unused: incremental demat market share already down 93%->82% this quarter, with a deflection pre-figuring later quarters' language. Antedates B06's stated 'first leg' of the Claim 4 arc by one quarter; strengthens the CONTRADICTED verdict but was not surfaced. Source: CDSL-Concall_Nov_2025_Transcript.txt p.9-10."}
-  - {severity: "MINOR", location: "outputs/reports/06-peers.md Part 3 (BSE Q3 FY26 row)", description: "BSE Feb-2026 transcript marked CITED-ONLY but contains an earlier instance of the same SOR-bottleneck-not-loyalty explanation B06 cites only from May-2026 for Claim 4. Duplicative, no verdict change. Source: BSE-Concall_Feb_2026_Transcript.txt p.12-13."}
-  - {severity: "MINOR", location: "outputs/reports/06-peers.md line 368 (Part 3 summary line)", description: "Summary line states '8 SUBSTANTIVE, 4 CITED-ONLY, 0 UNUSED' but the coverage-map table it summarises lists 9 SUBSTANTIVE and 3 CITED-ONLY rows. Total of 12 is correct; the split is miscounted. No verdict impact."}
+  - {severity: "MAJOR", location: "B06-peers.yaml / 06-peers.md, entire document (absent); B05-concall.yaml lines 195-201 (source list)", description: "B05-concall.yaml peer_questions[] contains seven questions, not six. B06's rework_note, report header, and Part 4 triangulation summary all state the run answers 'all six current B05 peer_questions.' Question 7 ('Do any of the three peers disclose product-level or segment-level market share with degrading precision when a competitive or regulatory threat becomes more concrete...') receives no verdict anywhere in B06 -- absent from verified/partially_verified/contradicted/unverifiable and from the prose. A skipped claim per Rule 5. Evidence B06 already gathered for Q6 (CDSL's disclosure precision sharpening, not degrading, across the pressure arc; BSE's move toward a named dated target) substantially overlaps what Q7 needed and points toward a third counterintuitive finding never synthesized."}
+  - {severity: "MINOR", location: "B06-peers.yaml peer_coverage_map entry for MCX Q4 FY26 (May 2026); 06-peers.md Part 3 table, same row", description: "MCX's interoperability-mechanics passage ('100% similar product' argument for why liquidity would not migrate under interoperability) is name-checked as a SUBSTANTIVE contribution but never actually analyzed in Parts 1, 1B, or 2. Real, accurately quotable, and on-topic for the coupling theme, but functionally cited-only within an otherwise well-used transcript. Not a rebuttal to any stated IEX claim (no 'sticky liquidity' language found in IEX's own corpus), so treated as an industry-context miss rather than a direct-claim miss."}
 critical_count: 0
 major_count: 1
-minor_count: 2
-acceptance_rate: 83
-peer_utilisation: 75
+minor_count: 1
+acceptance_rate: 90
+peer_utilisation: 100
+```

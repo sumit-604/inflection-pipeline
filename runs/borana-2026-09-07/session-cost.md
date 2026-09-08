@@ -10,3 +10,4 @@ with its own stage. Loop or retry runs get their own line with a run counter.
 | 2 | Notes triple-pass, pass 2 | claude-sonnet-5 | default | 118500 | 6907 | 125407 | 7m22s | 2 |
 | 2 | Notes triple-pass, pass 3 (consolidation) | claude-sonnet-5 | default | 108100 | 5089 | 113189 | 5m59s | 3 |
 | 3 | AR backward deep dive | claude-sonnet-5 | default | 218400 | 11509 | 229909 | 12m60s | 1 |
+| 5 | Concall analysis (NO-CONCALL MODE) | claude-sonnet-5 | default | 117200 | 6727 | 123927 | 8m36s | 1 |

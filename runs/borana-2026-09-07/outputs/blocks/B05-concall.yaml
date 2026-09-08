@@ -1,0 +1,80 @@
+stage: B05-concall
+company: "BORANA"
+run_date: "2026-09-07"
+model: claude-sonnet-5
+status: complete
+no_concall_mode: true
+input_gaps:
+  - "inputs/research/ empty (carried from B00)"
+  - "NO-CONCALL MODE: only one earnings-call transcript exists in the company's listed life (Q3 FY26, 27-Jan-2026); Section 2E repeated-question tracker and cross-quarter tone drift cannot be tested"
+  - "Missing Brickwork rating rationale for the 11-May-2026 upgrade (carried from B00)"
+  - "Missing SEBI Section 11C(9) order text; only the bare Reg 30 intimation is in the corpus, no violation detail"
+  - "No standalone Q1FY27 results filing, only the board-meeting outcome PDF (carried from B00)"
+  - "Four scanned PDFs OCR'd (carried from B00), plus 2026-08-11_change-in-management OCR of low quality"
+  - "Screener CSV export defect (carried from B00)"
+  - "No document in the five-year corpus explains the FY24-FY26 EBITDA margin swing (~27.2% Q4FY24 to ~16.5% Q2FY25 to ~25.4% Q4FY26); confirmed absent, not merely unfound"
+flags:
+  - "Communication vacuum: 4 decks and 1 call in 15 months as a listed company, including ~4 months of total investor-communication silence immediately after listing"
+  - "Hybrid power (19.79MW) commissioning slipped 4 documented times across 7 months, still uncommissioned at run date"
+  - "Margin driver explained live on the one call (BIS-restriction removal, cheaper Chinese POY) is absent from the FY2026 Annual Report MD&A"
+  - "Unit 4B's original 160-loom tranche never confirmed complete; silently redefined as a new 192-loom+3-texturiser tranche with no reconciliation"
+  - "Material governance events (SEBI 11C9 search, CARE ISSUER NOT COOPERATING, back-to-back secretarial-auditor resignations, unexplained Rs 5cr third-party loan) never addressed in investor communications, only at bare regulatory-filing minimum"
+quarters_analysed: ["FY25/RHP baseline", "Q2 FY26", "Q3 FY26", "Q4 FY26 / FY26", "Q1 FY27"]
+triggers:
+  - {priority: 1, name: "Unit 4 Expansion: +192 water-jet looms, +3 texturising machines", type: "volume", timeframe: "near, Dec-2026 target", conviction: "M", confirm_signal: "Commercial production confirmed in a subsequent deck/results filing with revenue contribution consistent with the earlier ~Rs60-75cr/160-loom rate of thumb", kill_signal: "Another Reg 30 slippage announcement, or the target moves again without reconciling the earlier 160-loom promise"}
+  - {priority: 2, name: "BIS/China-import margin driver durability", type: "cost", timeframe: "near, already realised in Q4FY26", conviction: "M", confirm_signal: "Peer yarn producers confirm the Dec-2025 policy change and a sustained POY price benefit through FY27; Borana margin holds above ~24% for two more quarters", kill_signal: "Duty regime reverses or Chinese POY price advantage narrows, and Borana margin reverts toward the FY25 low without explanation"}
+  - {priority: 3, name: "Hybrid power project (19.79 MW)", type: "cost", timeframe: "near, phased Sep/Oct-2026 per latest Reg30", conviction: "L", confirm_signal: "Actual commissioning confirmed via Reg30 or next deck close to the stated Sep/Oct-2026 dates", kill_signal: "A fifth slippage announcement"}
+  - {priority: 4, name: "Capacity doubling to 2,000 looms, Rs350-400cr, no equity dilution", type: "volume", timeframe: "medium, to March-2028", conviction: "L", confirm_signal: "Later decks restate the same rupee figure and loom count with phased milestones", kill_signal: "The figure is never repeated with the same specificity again (as already happened once)"}
+  - {priority: 5, name: "PLI Scheme Round 3 participation", type: "regulatory-policy", timeframe: "new, unquantified", conviction: "L", confirm_signal: "A subsequent filing quantifies the incentive amount and required milestones", kill_signal: "Approval lapses or milestones disclosed as unmet"}
+  - {priority: 6, name: "Value-added/technical-textiles mix expansion", type: "price-mix", timeframe: "medium", conviction: "L", confirm_signal: "A future deck discloses a rising, quantified value-added mix share", kill_signal: "Mix share described as flat or shrinking"}
+guidance:
+  - {item: "Unit 4 (grey/technical fabric) capex and commissioning", number: "Rs 71.35cr, 100% from Net Proceeds", timeframe: "Commercial production Dec-2025", stated_in: "RHP p.108-110"}
+  - {item: "Incremental working capital funding", number: "Rs 26.50cr (Rs 8cr FY26 + Rs 18.5cr FY27)", timeframe: "FY26-FY27", stated_in: "RHP p.109"}
+  - {item: "Q4 FY26 margin guidance", number: "Better than Q3 FY26's 24.32%", timeframe: "Q4 FY26", stated_in: "Q3FY26 call p.6"}
+  - {item: "Unit 4B loom capex/revenue", number: "~Rs35cr for 160 looms; +Rs60-75cr incremental annual revenue", timeframe: "Full utilisation by next year", stated_in: "Q3FY26 call p.6-7"}
+  - {item: "Unit 4B balance loom commissioning", number: "96 of 160 remaining", timeframe: "February 2026", stated_in: "Q3FY26 call p.15"}
+  - {item: "Capacity doubling", number: "Rs350-400cr, 1,000 to 2,000 looms, no equity dilution", timeframe: "By March 2028; ~1,500 looms exit FY27", stated_in: "Q3FY26 call p.9-16"}
+  - {item: "Rooftop solar commissioning", number: "3.55 MW", timeframe: "Feb-2026", stated_in: "Q3FY26 deck p.33"}
+  - {item: "Hybrid solar-wind commissioning", number: "19.79 MW", timeframe: "May-2026 (see timeline_slippages for full chain)", stated_in: "Q3FY26 call p.5 / Q3FY26 deck p.33"}
+  - {item: "Renewable power savings", number: "~Rs18-20cr/yr on ~Rs125cr invested", timeframe: "Ongoing once commissioned", stated_in: "Q3FY26 call p.10-11"}
+  - {item: "Unit 4 Expansion (new tranche)", number: "+192 looms, +3 texturisers", timeframe: "Dec-2026", stated_in: "Q1FY27 deck p.19"}
+promise_delivery:
+  delivered: 4
+  partial: 1
+  missed: 1
+  rows:
+    - {promised_in: "RHP, May-2025", promise: "Unit 4: Rs71.35cr, commercial production Dec-2025, 100% Net Proceeds", outcome: "delivered", explanation: "None needed; IPO Monitoring Agency report (31-Dec-2025) shows fully utilised, nil delay"}
+    - {promised_in: "RHP, May-2025", promise: "Incremental WC funding, Rs26.50cr", outcome: "delivered", explanation: "None needed; fully utilised per same report"}
+    - {promised_in: "Q3FY26 call, 27-Jan-2026", promise: "Q4FY26 margin better than Q3FY26's 24.32%, driven by BIS/China POY cost change", outcome: "delivered", explanation: "Driver named on call, then dropped from the FY2026 AR that covers the delivering quarter"}
+    - {promised_in: "Q3FY26 deck, Dec-2025", promise: "Rooftop solar 3.55MW commissioning Feb-2026", outcome: "partial", explanation: "No interim date confirmation; Q1FY27 deck shows it operational by Jun-2026, substance delivered, exact date unconfirmed"}
+    - {promised_in: "Q3FY26 call/deck, Jan/Dec", promise: "Unit 4B balance of 160 looms to start commissioning Feb-2026", outcome: "missed", explanation: "Q4FY26 deck still shows only 64/160 looms; Q1FY27 deck replaces the figure with a new 192-loom tranche, no reconciliation given"}
+    - {promised_in: "Q3FY26 deck/call, Dec-2025/Jan-2026", promise: "Hybrid solar-wind 19.79MW commissioning May-2026", outcome: "missed", explanation: "External factors cited (wind, monsoon, DISCOM shutdown scheduling); slipped 4 times to phased Sep/Oct-2026, still uncommissioned at run date"}
+excuse_pattern: "external-blame-heavy"
+repeated_evasions: []
+credibility_grade: "C"
+credibility_basis: "One specific, testable call guidance item (Q4FY26 margin improvement) was delivered per audited results, and the RHP's Unit 4 capex/date and working-capital objects were fully delivered per an independent IPO monitoring agency. Against that: the hybrid power project slipped four documented times over seven months; the Unit 4B 160-loom commitment was never confirmed complete and was silently redefined; the one live margin explanation was dropped from the audited Annual Report; and material governance events go unaddressed in every investor communication. Mixed record keeps the grade at the NO-CONCALL default; it does not clear the bar to rise to B."
+peer_questions:
+  - {question: "Is a ~23-25% EBITDA margin achievable and durable in greige/grey-fabric weaving, given the FY26 progression Borana reports (22.89% 9M, 24.32% Q3, ~25.43% Q4), or is it dependent on a temporary raw-material cost advantage?", why: "This margin range is the core of Borana's re-rating case", check_peers: ["FILATEX", "SANATHAN", "SANGAMIND"]}
+  - {question: "What did POY prices and polyester-chain spreads (PTA-MEG-POY) do, quarter by quarter, across FY25 and FY26?", why: "Tests management's own claim that cheaper Chinese POY drove the Q3-to-Q4 FY26 margin jump", check_peers: ["FILATEX", "SANATHAN"]}
+  - {question: "What did the December 2025 removal of the BIS-certification import restriction on Chinese polyester textured/partially-oriented yarn do to imported yarn availability and price for Indian converters?", why: "This is the exact driver Borana's CFO cited on the one available call, and one that then vanished from the FY2026 Annual Report", check_peers: ["FILATEX", "SANATHAN"]}
+  - {question: "What changes has the anti-dumping duty regime on imported polyester textured yarn/PTY undergone in FY26, and how does that reconcile with a simultaneous BIS-restriction removal Borana describes as making Chinese imports cheaper?", why: "Borana's own call contains two statements on ADD/import policy that read as being in tension", check_peers: ["FILATEX", "SANATHAN", "SANGAMIND"]}
+  - {question: "What is a realistic revenue-per-rupee-of-capex ratio for new water-jet-loom or texturising capacity, and does it match Borana's own stated 2x-3x figure?", why: "Tests the plausibility of the capex-to-revenue assumptions behind the Rs350-400cr doubling plan and the 192-loom Unit 4 Expansion", check_peers: ["SANGAMIND", "SANATHAN"]}
+  - {question: "What growth rate is the domestic man-made/synthetic fabric and technical-textiles segment actually seeing through FY26, and does it support a capacity doubling by March 2028?", why: "Borana cites an unsourced ~80% share and 'structurally strong' outlook without a specific growth number", check_peers: ["SANGAMIND", "SANATHAN", "FILATEX"]}
+  - {question: "Has any peer observed Borana Weaves gaining share, or new greige/grey-fabric weaving capacity entering Surat at a pace comparable to Borana's stated doubling plan?", why: "Tests Borana's unquantified claim that peer fragmentation does not materially affect it", check_peers: ["SANGAMIND"]}
+  - {question: "What share of production does a typical integrated weaver run as value-added (coated/technical-use) fabric or yarn, versus Borana's stated 20-25%?", why: "Cross-checks a management figure given only after repeated analyst prompting, with no capex or margin detail attached", check_peers: ["SANGAMIND", "SANATHAN"]}
+red_flags:
+  - "[HIGH] Communication vacuum: zero investor decks/transcripts across 23 BSE filings in the first ~4 months as a listed company; 4 decks and 1 call total across 15 months"
+  - "[HIGH] Hybrid power (19.79MW) commissioning slipped 4 documented times across 7 months, still uncommissioned at run date"
+  - "[MEDIUM] Unit 4B's original 160-loom tranche never confirmed complete, silently redefined as a new 192-loom+3-texturiser tranche with no reconciliation"
+  - "[MEDIUM] Margin driver explained live on the one call (BIS-restriction removal, cheaper Chinese POY) absent from the FY2026 Annual Report MD&A"
+  - "[MEDIUM] No document in the five-year corpus explains the FY24-FY26 EBITDA margin swing"
+  - "[MEDIUM] Material governance events (SEBI 11C9 search, CARE ISSUER NOT COOPERATING, back-to-back secretarial-auditor resignations) unaddressed beyond bare regulatory-filing minimum"
+  - "[LOW-MEDIUM] Unexplained Rs5cr unsecured 12% loan to unrelated party Win Star Industries Pvt Ltd (05-Sep-2026), no investor communication or rationale, against a background of negative 5-year cumulative FCF"
+dropped_triggers:
+  - "160-water-jet-loom Unit 4B tranche (Q3FY26 deck/call): never confirmed complete, silently replaced by a fresh 192-loom+3-texturiser tranche in the Q1FY27 deck with no reconciliation"
+  - "Explicit 'no equity dilution, internal accruals + debt' funding statement for the Rs350-400cr doubling plan (Q3FY26 call): not repeated or reaffirmed in any subsequent deck"
+  - "BIS/ADD margin-driver explanation itself (Q3FY26 call): dropped from the FY2026 AR MD&A despite the AR covering the delivering quarter"
+timeline_slippages:
+  - "Hybrid solar-wind 19.79MW: May-2026 (Q3FY26 deck/call) -> June-2026 (Q4FY26 deck) -> 'during 2026' undated (Q1FY27 deck) -> 31-Aug-2026 (Reg30 letter dated 18-Jun-2026, referenced in later filing) -> 30-Sep/end-Oct-2026 phased (Reg30, 29-Aug-2026). Four documented slips across ~7 months, still uncommissioned at run date."
+  - "Unit 4B loom commissioning: balance 'will start in February' 2026 (Q3FY26 call) -> Q4FY26 deck (31-Mar-2026) still shows only 64/160 operational, no completion confirmed -> Q1FY27 deck (30-Jun-2026) replaces the figure entirely with a new 192-loom + 3-texturiser tranche dated Dec-2026, no reconciliation of the original 160-loom commitment."
+analyst_note: "The single strongest credibility data point in this corpus is also the one this stage was specifically asked to find: the Q4FY26 margin guidance given live on the 27-Jan-2026 call was delivered per audited results. But the driver behind that delivery (BIS-restriction removal, cheaper Chinese POY) never appears in writing again, including in the Annual Report covering the delivering quarter. Treat the margin improvement as real but read the durability question (peer_questions above) as the single highest-value verification the peer stage can perform, since it determines whether Borana's FY26 margin band is structural or an import-cost-cycle artifact that could reverse as easily as it appeared."

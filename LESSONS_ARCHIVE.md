@@ -280,6 +280,101 @@ Leveraged C&I renewable IPP, IPO Feb-2026. Verdict on evidence PROCEED WITH CAVE
 - EVIDENCE WIN: verifier B resolved B06's self-declared "single most consequential" open question. Bikaner 525 MW is on TGNA (not GNA), so its ~70% curtailment is NOT revenue-protected (~Rs170 Cr real hit) — disclosed in CleanMax's OWN Q3/Q4 concalls but missed by B05. The verifier layer earned its keep.
 - THESIS TENSION carried to Halt 1: FY26 operating-profit crossover coincides with three same-year accounting choices (useful-life 25->30yr, impairment discount-rate change, interest capitalisation ~Rs312-329 Cr making true all-in interest ~Rs1,100 Cr vs Rs786 Cr P&L). Crossover treated UNPROVEN pending a rebuilt PBT; single-point falsifier = Q2 FY27 operating PBT ex-other-income < 0 (late Oct-2026). Section 3 framework exception (IPP EV/EBITDA vs PE cap) remains UNSIGNED; blocks Section 1B in Phase 3.
 
+## 2026-09-05 — AEQUS (runs/aequs-2026-09-05) /step1 intake — HALTED (environmental)
+Aequs Ltd, commercial-aerospace precision-components + loss-making consumer-plastics; IPO 10-Dec-2025, CMP Rs242, mcap ~Rs16,242cr. Steps A-E done (identity resolved, business brief written with 4 load-bearing facts, peers AZAD/DYNAMATECH/UNIMECH verified, sector row corrected to Defence/strategic 38x, companies/AEQUS.md written with spear OVERRIDE). Phase 1 NOT run; nothing committed or pushed.
+- HALT CAUSE (mechanical/environmental, not corpus/company): machine out of memory. 150 MB free physical RAM of 6 GB total; collect_to_repo subprocesses died with WinError 1455 / "ImportError: DLL load failed importing _socket: paging file too small". AEQUS main corpus failed to download three times (peers partially landed when memory eased). Running 13 memory-heavy Phase-1 subagents + PDF extraction on 150 MB free would thrash and fail mid-pipeline, so per Step-1 contract ("entire corpus fails to download -> STOP, do not guess around it") the run halted before stage 0.
+- REMEDIATION for operator: close other apps / raise the page file / re-run on a machine with more free RAM, then re-run /step1 Aequs Ltd. Recently listed -> prospectus (RHP) is a HIGH-priority collect; screener had no AEQUS AR/results/concalls/presentation, so the FY26 AR (dispatched 14-Aug-2026), Q1FY27 concall + Q1FY27 investor presentation (aequs.com), and shareholding (BSE) likely need manual drop-in even after a clean collector run.
+- NOTE: operator was queuing PITTIENG and SHHARICH intakes in parallel (companies.txt changed to PITTIENG mid-run; runs/pittieng- and runs/shharich- folders present), which adds to memory pressure. companies.txt was restored to the operator's PITTIENG content at close.
+
+## 2026-09-07 — FRATELLI + BORANA corpus collection (runs/fratelli-2026-09-07, runs/borana-2026-09-07)
+Manual Step-1 steps A to F on two names, side by side. Peers picked, corpus
+collected, repaired, verified. Phase 1 NOT run; nothing committed or pushed.
+Company memory written for both with the standing-ruling spear OVERRIDE.
+
+- **NEW / SILENT FAILURE — BSE announcements API returns EMPTY, not an error,
+  when strToDate is a future date.** The peer-deck sweep used
+  `strToDate=20260908` on 07-Sep-2026. Every one of six peers came back with
+  zero filings after Feb-2026, which read as "they all stopped publishing
+  presentations in the same month". Same query with `strToDate=20260907`
+  returns 50 rows and the Aug-2026 decks. Endpoint:
+  `api.bseindia.com/BseIndiaAPI/api/AnnSubCategoryGetData/w`, needs
+  `Origin`/`Referer: https://www.bseindia.com/` headers, caps at 50 rows per
+  page, so window the range and paginate. RULE: clamp the end date to today,
+  and treat an empty announcements result as suspect, never as a finding. Only
+  caught because six independent companies going silent in one month is
+  implausible. PROMOTION CANDIDATE for /compost.
+
+- **NEW — collect_to_repo silently degrades on a /consolidated/ URL for a
+  company that has no consolidated statements.** BORANA's consolidated page
+  exists but is empty, so the Playwright pass found no Export-to-Excel button
+  and no price: manifest came back `cmp: 0.0`, `market_cap_cr: 0.0`, no
+  Financials.xlsx, no main-company screening CSVs, only the peers'. No error
+  was raised. Re-run on the standalone `/company/BORANA/` fixed all four. RULE:
+  a manifest with cmp 0 or an empty screening set for the MAIN company means
+  the wrong URL variant, not a screener outage. Check before repairing
+  anything else. PROMOTION CANDIDATE.
+
+- **NEW — screener's "Annual Report YYYY" link can resolve to a 2-page
+  covering letter.** Hit on BOTH names in the same session. Fratelli's
+  "Annual Report 2025" was a Reg 30/36 shareholder letter dated 07-Sep-2026;
+  Borana's "Annual Report 2026" was a 2-page weblink intimation. The real ARs
+  (201p, 130p) came from BSE and the company IR site. RULE: page-count every
+  file in annual-report/ before trusting the classification; under ~30 pages is
+  not an annual report. PROMOTION CANDIDATE (this is the collector's
+  "mislabeled AR year" defect in a sharper form).
+
+- **NEW — a screener concall ROW does not mean a transcript exists.** Rows
+  render from any of PPT / Transcript / AI Summary / REC. Borana's Aug-2026,
+  Jun-2026 and Nov-2025 rows link decks only; the company has published exactly
+  ONE transcript ever (Q3FY26). Fratelli's Aug-2026 row has a deck and audio,
+  no transcript. RULE: count transcript hrefs, not concall rows, and confirm
+  absence against the BSE announcements API before recording a freshness pair
+  break. Both names verified this way, not on screener alone.
+
+- **NEW — peer selection must check concall FRESHNESS, not just that the URL
+  returns 200.** AYM Syntex passed every /step1 step-C test and was picked as
+  Borana's third peer; the collector then pulled four transcripts dated
+  Sep-2020 to May-2021. The company stopped holding calls in 2021, so it could
+  not serve stage-06 peer verification at all. Swapped for SANATHAN and the run
+  re-collected. RULE for step1 step C: verify each candidate has a transcript
+  within the last two quarters before writing companies.txt. PROMOTION
+  CANDIDATE (cheap prompt fix, wasted a full collector pass).
+
+- **NEW — the collector fetches no peer presentations.** Twelve peer decks
+  (Q4FY26 + Q1FY27 for all six peers) were pulled by hand from BSE into a new
+  `inputs/peer-presentation/` folder. That folder is NOT in the input contract
+  and no stage prompt references it, so its path must be passed explicitly in
+  the stage-06 task message or the decks go unread. Recorded in both manifests.
+  Candidate: add peer-presentation/ to the input contract and to the collector.
+
+- RECURRED (3rd+ time) — sector_cap_row auto-pick wrong on both names:
+  "Agri processing" for a wine company (matched the legacy Tinna Trade agri
+  text), "Pharma / CDMO" for a Surat weaver (the default). Corrected by hand.
+  AND two more missing cap rows found: no alcoholic-beverage row (Fratelli
+  ruled Branded apparel / FMCG 35x ad hoc) and no commodity-textile row
+  (Borana ruled Recycling / Manufacturing 25x ad hoc). Adds to the standing
+  OPEN ACTIONS list beside steel, sugar and distribution.
+
+- RECURRED — screener formula-sheet CSVs (Profit_Loss, Balance_Sheet,
+  Cash_Flow, Quarters) export header-only for all eight companies in both
+  runs. NOT a data gap: Data_Sheet.csv carries every number. `xlsx_to_csvs`
+  uses `data_only=True`, which reads cached formula values that screener's
+  export never writes. Recorded in both manifests so no stage reports it as a
+  gap.
+
+- CORPUS FINDING carried into companies/BORANA.md — INVESTOR SILENCE AFTER
+  LISTING. Borana listed 27-May-2025 and filed no presentation, transcript or
+  analyst-meet intimation until Nov-2025 (BSE API, 23 filings in the window,
+  none investor communication). Combined with the Apr-2026 SEBI 11C(9) search
+  at promoter-group entity R&B Denims and two secretarial-auditor resignations
+  in six days, this is a governance cluster, not three separate gaps.
+
+- CORPUS FINDING carried into companies/FRATELLI.md — the FY24 "revenue peak"
+  is partly a basis change. Consolidated FY24 Rs 421.35 cr still carried the
+  Tinna Trade agri-trading book; the wine business alone was Rs 215.6 cr. FY26
+  Rs 181.29 cr is wine-only. Any trend line drawn across FY24 to FY26 without
+  that reconciliation is fiction.
+
 ## 2026-09-05 — PITTIENG (runs/pittieng-2026-09-05) /run-pipeline phase 1
 Pitti Engineering, electrical steel laminations turned integrated component maker. Verdict on evidence REWORK (rule 1: verifier B red-flag coverage 30, overall 30); the company evidence alone would read PROCEED WITH CAVEATS (INDETERMINATE cash cap, rating rationale absent). Flags FLAG-CASH, FLAG-GATE0; B08 CAUTION (FLAG-PROMOTER not fired). Gate 0 AVERAGE 69/160. Credibility C. Fragility FRAGILE. Corpus GAPPED (results, rating, announcements, shareholding absent). Mental model DRAFT, unsigned.
 - BROKE: API 429 session limit (reset 17:30 UTC) killed three subagents in flight: stage 7 after it had written its full report and block (accepted from disk; its token metadata is lost from the ledger), verifier B after its independent read, verifier D at launch. B and D re-ran clean after the reset. Ledger carries one line per attempt.

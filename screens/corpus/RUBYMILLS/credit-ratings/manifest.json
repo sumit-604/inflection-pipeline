@@ -1,0 +1,54 @@
+[
+  {
+    "index": 1,
+    "agency": "Acuite",
+    "kind": "html+txt",
+    "link_text": "Rating update 20 Feb from smera",
+    "url": "https://connect.acuite.in/fcompany-details/THE_RUBY_MILLS_LIMITED/20th_Feb_26",
+    "file": "01-Acuite.html",
+    "status": 200,
+    "bytes": 100516
+  },
+  {
+    "index": 2,
+    "agency": "IndiaRatings",
+    "url": "https://www.indiaratings.co.in/pressrelease/81487",
+    "link_text": "Rating update 16 Feb from fitch",
+    "kind": "shell",
+    "status": 200
+  },
+  {
+    "index": 3,
+    "agency": "IndiaRatings",
+    "url": "https://www.indiaratings.co.in/pressrelease/81286",
+    "link_text": "Rating update 29 Jan from fitch",
+    "kind": "shell",
+    "status": 200
+  },
+  {
+    "index": 4,
+    "agency": "IndiaRatings",
+    "url": "https://www.indiaratings.co.in/pressrelease/78095",
+    "link_text": "Rating update 30 Jul 2025 from fitch",
+    "kind": "shell",
+    "status": 200
+  },
+  {
+    "index": 5,
+    "agency": "Acuite",
+    "kind": "pdf",
+    "link_text": "Rating update 25 Nov 2024 from smera",
+    "url": "https://www.acuite.in/documents/ratings/revised/29111-RR-20241125.pdf",
+    "file": "05-Acuite.pdf",
+    "status": 200,
+    "bytes": 218688
+  },
+  {
+    "index": 6,
+    "agency": "Acuite",
+    "url": "https://www.acuite.in/documents/ratings/revised/29111-RR-20241022.pdf",
+    "link_text": "Rating update 22 Oct 2024 from smera",
+    "kind": "shell",
+    "status": 404
+  }
+]

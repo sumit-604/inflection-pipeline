@@ -1,0 +1,10 @@
+company: Kirloskar Electric Company Ltd
+ticker: KECL
+cmp: 126.0
+market_cap_cr: 840.0
+run_date: 2026-09-06
+run_type: full
+concalls_available: false
+sector_cap_row: "Cables / Industrial products"
+listed_date: ""
+notes: "Collected from screener.in by collect_to_repo.py v3 on 2026-09-06. Sector row set by hand: rotating machines, transformers, switchgear and DG sets; Cables / Industrial products (25x). Peers: TDPOWERSYS, CGPOWER, BBL (rotating machines and transformers; CGPOWER is the completed-turnaround comparator). BBL downloads only from its standalone screener URL. CORPUS THIN: one company concall only (Sep 2024), so concalls_available is false and the run goes to NO-CONCALL MODE; no investor presentation on screener; no CGPOWER or BBL transcripts on screener. Gaps: results, rating, prospectus, announcements, shareholding, research, presentation."

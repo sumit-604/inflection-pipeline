@@ -7,3 +7,4 @@ with its own stage. Loop or retry runs get their own line with a run counter.
 |---|-------|-------|--------|--------|---------|-----------|------|------|
 | 1 | Gate 0 scorecard | claude-sonnet-5 | default | 152183 | 10940 | 163123 | 8m40s | 1 |
 | 2 | Notes triple-pass, pass 1 | claude-sonnet-5 | default | 193900 | 9895 | 203795 | 9m39s | 1 |
+| 2 | Notes triple-pass, pass 2 | claude-sonnet-5 | default | 118500 | 6907 | 125407 | 7m22s | 2 |

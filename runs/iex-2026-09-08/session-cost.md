@@ -6,3 +6,5 @@
 | 2 | notes pass 1 (rerun on extracted text) | claude-sonnet-5 | default | n/a | n/a | 198,798 | 6m30s | 2 |
 | 1 | gate 0 scorecard (rerun, complete sources) | claude-sonnet-5 | default | n/a | n/a | 143,957 | 9m05s | 2 |
 | 2 | notes pass 2 | claude-sonnet-5 | default | n/a | n/a | 171,948 | 8m32s | 1 |
+| 2 | notes pass 3 (consolidation, pass1 absent) | claude-sonnet-5 | default | n/a | n/a | 130,357 | 8m18s | 1 |
+| 2 | notes pass 3 (rerun, all 3 passes present) | claude-sonnet-5 | default | n/a | n/a | 123,372 | 6m12s | 2 |

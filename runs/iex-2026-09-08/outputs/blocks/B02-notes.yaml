@@ -1,0 +1,96 @@
+stage: B02-notes
+company: "IEX"
+run_date: "2026-09-08"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - type: rating
+    severity: NOT_A_GAP
+    detail: >
+      inputs/rating/ empty. IEX has no listed debt (confirmed by Note 42/43,
+      "does not have any debt outstanding," and IEX told BSE it does not qualify
+      as a Large Corporate). Unrateable by absence of rated debt, not by missed
+      collection.
+  - type: research
+    severity: LOW
+    detail: "inputs/research/ empty. Broker notes are non-anchored, leads only."
+  - type: regulatory_order_text
+    severity: HIGH
+    detail: >
+      The CERC market-coupling order, the APTEL judgment, and the two Supreme
+      Court orders are referenced in the corpus (and in Note 47, p.224) but their
+      full texts are absent. Note 47 itself gives no financial quantification of
+      this exposure, sharpening the need for the order texts.
+  - type: screening_csv
+    severity: MEDIUM
+    detail: >
+      screener-Profit_Loss.csv, screener-Balance_Sheet.csv, screener-Cash_Flow.csv
+      and screener-Quarters.csv hold row labels and no values. Data_Sheet CSVs
+      are populated and were not needed by this stage, which read the AR directly.
+  - type: sector_cap_row
+    severity: MEDIUM
+    detail: >
+      The Section 1B cap table has no Market Infrastructure/Exchange row.
+      Not consumed by this stage; carried forward for Stage 11.
+  - type: prospectus_own
+    severity: NOT_A_GAP
+    detail: "IEX listed in 2017; its own IPO prospectus is not foundational for this run."
+  - type: image_only_pdfs
+    severity: LOW
+    detail: "Two SAST Reg 29(2) disclosures are scanned, non-extractable. Not needed by this stage."
+flags: []
+accounting_quality: 6        # /10
+pass_2_empty: false
+pass_3_empty: false
+top_findings:
+  - {rank: 1, finding: "Whistleblower investigation status conflict: Board's Report (p.80) says concluded with findings and remedial action; Notes 46/49 (p.224/p.291) say still ongoing; both signed 23-Apr-2026. CARO corroborates the Notes' framing, making the Board's Report the outlier document.", note_ref: "Note 46 (standalone p.224) / Note 49 (consolidated p.291)", rating: "RED FLAG", why: "Governs whether 'no material impact' was reached before or after the investigation's substantive findings were known."}
+  - {rank: 2, finding: "Market-coupling regulatory exposure (Note 47) carries zero financial quantification or contingent-liability classification, while the far smaller Rs5.04cr GST dispute (Note 39) receives a full management assessment.", note_ref: "Note 47 vs Note 39, p.224 vs p.217", rating: "RED FLAG", why: "The single largest structural risk to the DAM franchise is the least-quantified item in the financial statements."}
+  - {rank: 3, finding: "MSME dues contradiction: Note 23/22 shows dues rising 462% to Rs38.03L; Note 52/48 shows dues falling 42% to Rs44.41L for the same balance sheet date; unreconciled; repeats in consolidated.", note_ref: "Note 23 (p.209) / Note 52 (p.230); consol Note 22 (p.271) / Note 48 (p.290)", rating: "RED FLAG", why: "Genuine internal-consistency gap between two notes serving the same disclosure purpose; immaterial in rupees but a disclosure-control weakness."}
+  - {rank: 4, finding: "RTM FY26 volume share stated inconsistently across the AR: 34% (p.17/25/62) vs approximately 39-40% (p.33/36-37); no revenue-basis segment split exists to arbitrate.", note_ref: "MD&A, cross-checked against Note 28 (p.211)", rating: "RED FLAG", why: "Third internal inconsistency in the same annual report; blocks verification of the market-coupling exposure's actual revenue base."}
+  - {rank: 5, finding: "Other income Rs131.30cr plus IGX equity pickup Rs19.80cr equals Rs151.10cr of Rs645.56cr consolidated PBT (23.4%) non-operating; reconciles exactly to the screener's Rs151.10cr 'other income' figure, resolving the spear-gate load-bearing fact with an exact rupee bridge.", note_ref: "Note 28 consol (p.273) / Note 54 (p.291) / P&L (p.238)", rating: "LOAD-BEARING", why: "Caps how much of PBT should carry an operating multiple; directly answers the spear-gate 'operating vs treasury earnings' fact."}
+  - {rank: 6, finding: "IGX carrying value Rs90.25cr (equity method, 47.28% stake, up 19.2% YoY on retained pickup alone); the PNGRB-mandated OFS/dilution to 25% is disclosed nowhere in the financial statement notes.", note_ref: "Note 54, p.291", rating: "WATCH", why: "Material forward-looking event, a spear-gate load-bearing fact, with zero financial-statement footprint."}
+  - {rank: 7, finding: "Settlement/margin float swung the cash flow statement by approximately Rs244cr YoY (Rs256.2cr inflow FY25 vs Rs12.0cr FY26), driven by member balances of Rs951.27cr, larger than net worth, that are not IEX's own capital.", note_ref: "Cash Flow Statement p.183/p.244; Note 41, p.219", rating: "WATCH", why: "Explains float-driven CFO volatility independent of earnings quality; must not be read as a working-capital red flag."}
+  - {rank: 8, finding: "Revenue disaggregation exists but is coarser than assumed: two-way Electricity vs Certificates split only; Certificates revenue fell 27.7% YoY while Electricity grew 16.8%, a mix shift the headline P&L does not show.", note_ref: "Note 28, p.211", rating: "WATCH", why: "Corrects the assumption of 'no split anywhere'; a real product-mix signal with no DAM/RTM/TAM/Green breakout underneath it."}
+  - {rank: 9, finding: "Single customer contributes 16.2% of FY26 revenue from operations (Rs98.62cr), up from 15.65% (Rs83.79cr) FY25; identity not disclosed.", note_ref: "Note 28, p.211", rating: "WATCH", why: "Real concentration risk in a nominally atomised multilateral exchange model; durability and identity unknown."}
+  - {rank: 10, finding: "Trade receivables trivial and clean: Rs1.22cr FY26 (down from Rs2.01cr), 100% under 6 months, zero disputed, credit-impaired, not-due, or unbilled.", note_ref: "Note 11, p.202-203", rating: "CLEAN", why: "Confirms the pre-funded settlement model carries near-zero credit risk on members."}
+  - {rank: 11, finding: "ESOP charge nearly halved YoY (Rs80.59L vs Rs164.65L, -51%) despite a fresh 1,00,000-option grant on 29-Jul-2025; total options outstanding fell to 8,93,760 from 9,98,175 as forfeitures and exercises outpaced the new grant.", note_ref: "Note 51, p.224-225", rating: "WATCH", why: "Plausible mechanical explanation (largest historical tranche nearing end of vesting) but not stated by the company."}
+  - {rank: 12, finding: "Investment fair-value hierarchy shows sharp within-year reallocation: Level-1 target-maturity/fixed-maturity plans cut 96.7%, market-linked debentures fully exited, equity-index mutual fund exposure up 280%; no stated rationale.", note_ref: "Note 41, p.214-215", rating: "WATCH", why: "Genuine, unexplained change in treasury risk posture on a Rs1,900+cr book."}
+  - {rank: 13, finding: "Contingent liabilities: single GST dispute, Rs5.0376cr total (tax Rs260.71L + interest Rs216.97L + penalty Rs26.08L), 0.37% of net worth, management assesses not tenable; no guarantees for subsidiaries.", note_ref: "Note 39, p.217", rating: "CLEAN", why: "Small, well-characterised, fully assessed; the contrast case for finding 2."}
+  - {rank: 14, finding: "Standalone net CFO Rs424.64cr vs PAT Rs473.71cr, 89.6% conversion; the gap is explained by treasury income sitting under investing rather than operating cash flow, not by working-capital drag or accrual quality.", note_ref: "Cash Flow Statement, p.183-184", rating: "CLEAN", why: "Core transaction-fee business converts cleanly to cash; treasury income is real cash, one line removed from CFO."}
+  - {rank: 15, finding: "Consolidated auditor's report carries a Rule 11(g) audit-trail exception specific to IGX's third-party accounting software (no visibility on database-level edit logs); standalone audit trail is fully clean; not disclosed in the Notes themselves.", note_ref: "Consolidated Auditor's Report p.234-236, outside the Notes", rating: "WATCH", why: "Layers on top of the Notes' complete silence on IGX's OFS/dilution, a spear-gate load-bearing fact."}
+red_flags:
+  - "Whistleblower investigation status conflict between the Board's Report (p.80, concluded) and Notes 46/49 (p.224/p.291, still ongoing), both signed 23-Apr-2026."
+  - "MSME dues contradiction between Note 23/22 (p.209/p.271, rising) and Note 52/48 (p.230/p.290, falling), same balance sheet dates, unreconciled."
+  - "RTM FY26 volume share stated inconsistently across the annual report (34% vs approximately 39-40%), no revenue-basis split available to arbitrate."
+  - "Market-coupling regulatory exposure (Note 47, p.224), the company's largest structural risk, carries zero financial quantification or contingent-liability treatment, unlike the much smaller GST matter (Note 39)."
+questions_for_mgmt:
+  - "Which is accurate as of the 23-Apr-2026 Board approval: the Board's Report's 'concluded with findings and remedial action' characterisation of the whistleblower investigation, or the Notes' 'still ongoing' characterisation? What were the findings and what remedial action was taken?"
+  - "What accounts for the divergence between Note 23/22 (Rs38.03L, up 462%) and Note 52/48 (Rs44.41L, down 42%) on MSME dues for the same balance sheet date, and will FY27 reconcile the two schedules?"
+  - "What is management's probability and financial-impact assessment of the CERC market-coupling litigation (Note 47), and why does it carry no contingent-liability entry while the much smaller GST dispute does?"
+  - "Who is the single customer contributing 16.2% of FY26 revenue from operations (Rs98.62cr, up from 15.65%), and what is the durability of that relationship?"
+  - "What drove the FY26 treasury reallocation out of target-maturity/fixed-maturity plans and market-linked debentures into arbitrage/liquid and equity-index funds, and does it reflect a deliberate change in risk appetite for the Rs1,900+cr treasury book?"
+receivables_trend: "improving: standalone trade receivables Rs1.22cr FY26 vs Rs2.01cr FY25 (Note 11, p.202), entirely in the under-6-months bucket both years, zero disputed/credit-impaired/not-due/unbilled; reflects the pre-funded settlement model, not a working-capital risk indicator for this business."
+restatements_found: []
+going_concern_language: "NONE beyond standard boilerplate ('accrual and going concern basis,' p.185; capital-management going-concern objective language, p.220/p.285 area); no material uncertainty, no adverse opinion, no emphasis-of-matter paragraph in either the standalone or consolidated auditor's report."
+analyst_note: >
+  This run redid the consolidation with all three real passes in hand; Pass 1's
+  file, missing in Run 1, is now present and its Run-1 reconstruction held up
+  against it with no substantive contradiction. This pass's own direct-page
+  verification corrected four citations (Note 49 and Note 53 consolidated to
+  p.291 from p.290; Note 52 standalone to p.230 from p.226; Note 22 consolidated
+  refined to p.271), all citation-only, no figures changed. The single most
+  important read-across finding stands: three internal numeric or status
+  contradictions (RTM volume share, whistleblower status, MSME dues) sit inside
+  one board-approved annual report, all traceable to disagreement BETWEEN
+  sections of the AR rather than errors WITHIN any one note. A fourth item, the
+  unquantified market-coupling exposure against the fully-quantified trivial GST
+  matter, is a materiality-judgement gap of the same character. Separately, this
+  pass produced an exact rupee-for-rupee bridge (Rs131.30cr other income + Rs19.80cr
+  IGX equity pickup = Rs151.10cr, 23.4% of consolidated PBT) that directly answers
+  a spear-gate load-bearing fact and should carry forward unmodified into Stage 11.
+  None of this touches audited totals: the audit opinion is unqualified both
+  statements, the fraud-focused KAM found nothing, and core operating cash
+  conversion is clean at 89.6%. The accounting quality score of 6/10 reflects a
+  report that is numerically trustworthy but cross-document-inconsistent on
+  qualitative status and materiality calls, a disclosure-discipline flag, not an
+  earnings-quality flag.

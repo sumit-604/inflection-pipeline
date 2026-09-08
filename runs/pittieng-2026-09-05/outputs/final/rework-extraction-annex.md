@@ -257,3 +257,121 @@ Scope: the three pipeline calls (Q3 FY26, Q4 FY26, Q1 FY27), the Q2 FY26 call he
 
 ### Block F verification
 Documents quoted: Concall_Nov_2025_Transcript.pdf (Q2 FY26, call 10-Nov-2025, filed 15-Nov-2025); Concall_Feb_2026_Transcript.pdf (Q3 FY26, call 6-Feb-2026, filed 11-Feb-2026); Concall_May_2026_Transcript.pdf (Q4 and FY26, call 18-May-2026, filed 22-May-2026); Concall_Aug_2026_Transcript.pdf (Q1 FY27, call 11-Aug-2026, filed 17-Aug-2026); Annual_Report_2026_2.pdf (FY2025-26, filed 24-Aug-2026), PDF p.4, p.5, p.8, p.12, p.14, p.22, p.83, p.96, p.114; Investor_Presentation_1.pdf (Q1 FY27, filed 10-Aug-2026), PDF p.11, p.14, p.18, p.19; screener-Data_Sheet.csv (screener.in export in the run's screening/ folder, aggregator tier, used only for the Q3 and Q4 FY26 quarterly revenue bases).
+
+---
+
+## BLOCK G: FIGURE RECONCILIATION (added 2026-09-08)
+
+Documents searched: Annual_Report_2026_2.pdf, Investor_Presentation_1.pdf, and all four transcripts (Nov-2025, Feb-2026, May-2026, Aug-2026). No non-filed source consulted. Derived figures are labelled and their inputs quoted.
+
+### MISMATCH 1: MACHINING HOURS CAPACITY
+
+**a. Every statement, with its as-of date.**
+- 7,20,000, as at 31-Mar-2026, Directors' Report: "As on 31st March 2026, the Company's consolidated installed manufacturing capacities stood at 90,000 MT of sheet metal, 7,20,000 machining hours, and 18,600 MT of castings." (Annual_Report_2026_2.pdf, PDF p.25).
+- 7,20,000, labelled "Capacity (2025-26)": "Business Capacity (2025-26) Utilisation (2025-26) Post-Expansion Capacity / Sheet Metal (MT) 90,000 76% 1,08,000 by H1 2026-27 / Machining (Hours) 7,20,000 81% 10,80,000 by Q1 2029-30 / Castings (MT) 18,600 71% 24,600 by H1 2026-27; 36,000 by Q1 2029-30" (Annual_Report_2026_2.pdf, PDF p.14).
+- 7,20,000, described as "current" on 18-May-2026: "Additionally, machine hour capacity will also increase from current 7,20,000 machine hours towards 10.8 lakh machine hours." (Concall_May_2026_Transcript.pdf, PDF p.5).
+- 6,40,800 and 7,56,000, as at Q1 FY26 and Q1 FY27: "Sheet Metals (MTs) Machining (Hours) Castings (MTs) ... Annual Capacity / 90,000 MTs Q1 FY26 / 1,08,000 MTs Q1 FY27 / 6,40,800 Hours Q1 FY26 / 7,56,000 Hours Q1 FY27 / 18,600 MTs Q1 FY26 / 18,600 MTs Q1 FY27" with the footnote "As on 10th August 2026, Castings Capacity was enhanced from 18,600 MTs to 24,600 MTs" (Investor_Presentation_1.pdf, PDF p.5).
+- Nov-2025 and Feb-2026 calls: no machining-hours capacity figure. NOT DISCLOSED. Feb-2026 gives only a utilisation expectation: "And in terms of machine hours, I think it will be closer to 85% to 90%." (Concall_Feb_2026_Transcript.pdf, PDF p.12). Aug-2026 gives no current figure, only the post-expansion target (item d).
+- Comment: the two values carry different as-of dates and different bases. 7,20,000 is stated three times as the 31-Mar-2026 / FY26 installed capacity. 7,56,000 is stated once, as the Q1 FY27 (quarter ended 30-Jun-2026) annual capacity, alongside a Q1 FY26 figure of 6,40,800 that appears nowhere else in the corpus. No document reconciles 7,20,000 with 7,56,000 or explains the gap of 36,000 hours. On its face this is a dating difference, not a contradiction, but the corpus does not say so: NOT DISCLOSED.
+
+**b. Before or after the Rs 150 Cr programme.**
+- 7,20,000 is presented as BEFORE completion. The AR pairs it with a post-expansion column: "Machining (Hours) 7,20,000 81% 10,80,000 by Q1 2029-30" (PDF p.14), and the management message describes the Rs 150 Cr programme as still to become operational: "capacity from 90,000 tonnes to 1,08,000 tonnes. It will also increase casting capacity from 18,600 tonnes to 24,600 tonnes, with additional machining hours already installed. The capacities will be operational by the first half of 2026-27." (PDF p.4). Comment: the AR states the machining hours were "already installed" while the capacities as a whole become operational in H1 FY27; the AR's own capacity table still carries 7,20,000.
+- 7,56,000 is presented as AFTER, or at least during, commissioning: it is dated Q1 FY27, and the Q1 FY27 call states "We have recently commenced operations of the previously announced ₹ 150 crores Capex, which was announced last year, increasing our sheet metal capacity to 108,000 tons and augmenting our Casting and Machining capacity." (Concall_Aug_2026_Transcript.pdf, PDF p.4). The presentation does not label 7,56,000 as pre- or post-programme: NOT DISCLOSED in those words.
+
+**c. Q1 FY27 machining utilisation and its denominator.**
+- "Machining utilization also improved to 86% compared to 82%." (Concall_Aug_2026_Transcript.pdf, PDF p.5). "Q1FY26 Q1FY27 82% 86%" under "Machining (Hours)" (Investor_Presentation_1.pdf, PDF p.5). A third, more precise figure appears later on the same call: "the current capacity utilization on Machining is almost 86.33%." (Concall_Aug_2026_Transcript.pdf, PDF p.9).
+- Denominator: the presentation places the 86% and the "Annual Capacity ... 7,56,000 Hours Q1 FY27" on the same slide (PDF p.5), but no document states the arithmetic or names the denominator: NOT DISCLOSED. The company does not disclose absolute machine hours consumed in the quarter: NOT DISCLOSED.
+
+**d. Post-Rs 290 Cr target and its stated base.**
+- "Upon completion the expansion will nearly double the casting capacity to 36,000 tonnes and increase the machining capacity by 50% to 10,80,000 hours." (Annual_Report_2026_2.pdf, PDF p.4).
+- "Planned for commissioning by Q1 2029-30, the expansion will increase casting capacity to 36,000 MT and machining capacity to 10.8 Lakh machine hours." (PDF p.14). "infrastructure to reach 10.8 Lakh machine hours by Q1" (PDF p.11).
+- "machine hour capacity will also increase from current 7,20,000 machine hours towards 10.8 lakh machine hours" (Concall_May_2026_Transcript.pdf, PDF p.5).
+- "part of the Capex that we have announced, ₹ 290 crores, taking the Machining capacity to 1,080,000 machine hours will be progressively implemented over the next few quarters." (Concall_Aug_2026_Transcript.pdf, PDF p.9).
+- Comment: the stated base is 7,20,000, named explicitly on the Q4 FY26 call and implied by the AR's "by 50%" (derived: 7,20,000 x 1.5 = 10,80,000 exactly; against 7,56,000 the same target would be a 42.9% increase, which no document states).
+
+### MISMATCH 2: Q1 FY27 VALUE-ADDED VOLUME LINE ITEMS
+
+**a. The Q1 FY27 volume table, verbatim, every line (Investor_Presentation_1.pdf, PDF p.6, headed "Sales Breakup – Volume", column headers "Sales in MT Q1FY27 Q1FY26 YoY Q4FY26 QoQ"):**
+```
+Stator & Rotor Assemblies (Laminations)
+- High value-added assemblies – Laminations 4,143 3,021 37.1% 3,574 15.9%
+- Stator frame or Rotor shaft integrated assemblies – Laminations 1,212 996 21.7% 1233 -1.7%
+- Loose Laminations and low value - added assemblies 12,920 11,135 16.0% 12,638 2.2%
+Total Laminations 18,275 15,152 20.6% 17,445 4.8%
+- Other Machined components going into laminations & assemblies 965 1,041 -7.3% 991 -2.6%
+Total Lamination & Assemblies 19,240 16,193 18.8% 18,436 4.4%
+Raw Castings & Machined Components
+- Machined castings going into laminations & assemblies 279 420 -33.6% 408 -31.6%
+- Machined Components 1,562 1,236 26.4% 1,031 51.5%
+- Raw Castings 1,350 1,405 -3.9% 1,344 0.4%
+Total Castings & Machined Components 3,191 3,061 4.2% 2,783 14.7%
+By products & Scrap 15,574 11,428 36.3% 11,987 29.9%
+```
+The slide also carries the section labels "Value added products", "Volume based products" and "By Products & Scrap".
+- Comment: on the filed presentation, 4,143 MT at +37.1% is "High value-added assemblies – Laminations" and 1,212 MT at +21.7% is "Stator frame or Rotor shaft integrated assemblies – Laminations". They are two distinct printed line items, listed separately under one heading, "Stator & Rotor Assemblies (Laminations)".
+
+**b. The Q1 FY27 concall opening remarks, as spoken:** "Moving to volumes: Total Lamination and assembly volumes stood at approximately 19,200 tons, registering a healthy 19% year-on-year growth. Importantly, within Lamination, Higher Value-Added Assemblies, including Integrated Rotor Shaft and Stator Assemblies, grew faster than loose Lamination. This reflects a continued improvement in the product mix and increasing contribution from value-added offerings. Total Casting and Machine Components volume stood at 3,191 (miss read as 13,191 on call)tons during the quarter, a growth of 4.2% YOY basis." (Concall_Aug_2026_Transcript.pdf, PDF p.5).
+- Comment: the call gives no tier-level tonnage and no tier-level growth rate: NOT DISCLOSED there. It also treats the integrated tier as contained within the value-added tier ("Higher Value-Added Assemblies, including Integrated Rotor Shaft and Stator Assemblies"), where the presentation of the same date lists them as two separate lines. The two Q1 FY27 documents differ in how they nest the categories. The call's 19,200 tons and 19% also differ from the presentation's 19,240 and 18.8% for the same aggregate; both are filed, and neither reconciles to the other.
+
+**c. FY26 full-year figures for the same categories.**
+- Annual report: "Consolidated lamination and assembly volumes grew 10.3% to 69,517 tonnes, while high value-added assemblies grew 21.8%, and shaft and stator-frame integrated assemblies by 31.9%, well ahead of loose laminations, reflecting a steadily improving mix. Casting and machined component volumes rose 15.4% to 12,012 tonnes." (Annual_Report_2026_2.pdf, PDF p.4).
+- Q4 FY26 call: "On the volume side, in Q4 FY29, total lamination and assemblies volumes stood at 18,400 tons, a growth of 7.3% on Y-o-Y basis. For FY26, lamination volume increased to 69,500 tons, up by 10% compared to FY25. Within lamination, higher value-added assemblies, integrated shaft and stator rotor assemblies grew faster than loose lamination, reflecting an improving mix. Total raw casting and machine components volumes for Q4 FY26 stood at 2,783 tons, there was a temporary softness in the year-end. For the full year, FY26 volumes grew by 15.4% to 12,012 tons." (Concall_May_2026_Transcript.pdf, PDF p.4; the transcript prints "Q4 FY29", evidently for Q4 FY26).
+- The tonnages 13,362 MT and 4,385 MT: these do not appear anywhere in the corpus. A search of every input file returns no match. NOT DISCLOSED. The growth rates you cite are correct and are the AR's: high value-added +21.8%, shaft and stator-frame integrated +31.9%, both FY26 over FY25.
+- Comment: the FY26 tier growth rates exist; the FY26 tier tonnages do not. Only the FY26 aggregates are disclosed (69,517 t lamination and assemblies; 12,012 t castings and machined components).
+
+**d. Per-tonne realisation by tier, for matching (Concall_Nov_2025_Transcript.pdf, PDF p.10):** "So if you have to correlate this to revenue of the company, you can probably value it in such a way, and this, of course, is just a thumb rule and management estimate, loose lamination and low value-added assemblies would be about INR170,000 per ton. High value-added assemblies would typically yield about INR250,000 a ton. Stator frame and rotor shaft integrated assemblies would yield at INR675,000 a ton. The shafts which are going into the assembly, child parts, which are going into the assembly and stator frames, which are going into the assemblies, we are not going to value because we have already valued it in the per ton realizations of the main product above. The raw castings typically yield about INR2 lakh a ton. And the machine components typically sell at about INR350,000 a ton. The byproduct and scrap at are about INR50,000 a ton."
+- The AR's own tier ladder: "The portfolio spans three tiers. The first is engineering commodities such as loose laminations. The second tier includes high value-added assemblies for niche, complex applications including data centres, railways, and wind turbine generators. The third is integrated assemblies, in which laminated cores are combined with machined shafts, frames, and other child parts, and supplied in near-ready condition. Only the final winding is left to the customer. Each step up this ladder increases engineering content, deepens customer integration, and improves realisation per tonne." (Annual_Report_2026_2.pdf, PDF p.11).
+- Comment on the matching: the top tier by realisation and by the AR's own ladder is the integrated tier (stator frame or rotor shaft integrated assemblies, about Rs 675,000 per tonne), not the high value-added tier (about Rs 250,000 per tonne). On the filed labels, that top tier is the 1,212 MT line growing 21.7% in Q1 FY27, and it is the tier the AR reports growing 31.9% in FY26. The second tier is the 4,143 MT line growing 37.1% in Q1 FY27, against 21.8% in FY26. So the corpus supports both readings at once: the top tier decelerated from 31.9% to 21.7% and turned negative sequentially (-1.7% against Q4 FY26), while the second tier accelerated from 21.8% to 37.1%. No document comments on the deceleration: NOT DISCLOSED.
+
+### MISMATCH 3: ALSTOM
+
+**a. Every occurrence of "Alstom", per document.**
+- Annual_Report_2026_2.pdf: NOT DISCLOSED. Zero occurrences, case-insensitive, whole file.
+- Investor_Presentation_1.pdf: NOT DISCLOSED. Zero occurrences.
+- Concall_Nov_2025_Transcript.pdf: one occurrence. "On the locomotive traction motor side of the business, we have a combination of three. The business with the Indian Railways is on a tendering basis. The business with Alstom, Wabtec, Siemens India, these are multiyear contracts, which they had won back-to-back with Indian Railways and therefore extended." (PDF p.11).
+- Concall_Feb_2026_Transcript.pdf: NOT DISCLOSED. Zero occurrences.
+- Concall_May_2026_Transcript.pdf: one occurrence. "Obviously, Progress Rail has been added as a new customer. And Alstom is already a customer in India." (PDF p.13).
+- Concall_Aug_2026_Transcript.pdf: NOT DISCLOSED. Zero occurrences.
+
+**b. Qualified, approved, homologated by both, or sole/only Indian supplier qualified by both.** NOT DISCLOSED in every document. A search of all six files for "homologat", "qualified by", "approved supplier", "sole supplier", "only Indian", "only supplier", "sole source" and "single source" returns no match in any of them. The nearest statement is a coverage claim, not a qualification claim: "If you take into account these 3 -- sorry, these 4 customers, including Wabtec, I think you cover majority of the railway, locomotive, metro client customers globally X of China. I mean your Japanese, Mitsubishi and Toshiba are the only ones left." (Concall_May_2026_Transcript.pdf, PDF p.13).
+
+**c. Every occurrence of "Wabtec", per document, for comparison.**
+- Annual_Report_2026_2.pdf, one: "Best Supplier Awards from Wabtec Corporation (2019 and 2022)" (PDF p.19, Awards and Recognition).
+- Investor_Presentation_1.pdf, two: "✓ Inked a multi-year deal worth Rs. 500 crore with Wabtec for supplying engineered products" (PDF p.11, "Our Journey", under 2017); "2 Best Supplier from Wabtec Corporation 2019 & 2022" (PDF p.23, Awards & Certifications).
+- Concall_Nov_2025_Transcript.pdf, two: "Akshay Pitti: Yes, I think you're referring specifically to Wabtec Enterprises and their statement. Am I correct?" (PDF p.5); the multiyear-contract sentence quoted in (a) (PDF p.11).
+- Concall_May_2026_Transcript.pdf, four: "Several of our global marquee clients such as Progress Rail, Siemens Mobility, Caterpillar, Voith and Wabtec, among others, are witnessing strong growth in their own" (PDF p.5); "So I was just checking on that Wabtec was described as a consistent and growing customer of ours" (analyst Mohit Jain, PDF p.12); "that is mostly an entirely for our export market, which is largely traction motor and railway components, both to Wabtec and Siemens Mobility." (PDF p.12); "these 4 customers, including Wabtec" (PDF p.13).
+- Concall_Feb_2026_Transcript.pdf and Concall_Aug_2026_Transcript.pdf: NOT DISCLOSED. Zero occurrences in each.
+- Comment on footing: Wabtec appears in five contexts across four documents, including an award in the AR and a historical contract value in the presentation. Alstom appears twice in the whole corpus, both on calls, never in the AR or the presentation, and never with a figure. The two are not on equal disclosure footing.
+
+**d. Customer contract values anywhere in the corpus.**
+- One only: "2017 ... ✓ Inked a multi-year deal worth Rs. 500 crore with Wabtec for supplying engineered products" (Investor_Presentation_1.pdf, PDF p.11).
+- A Rs 700 Cr Wabtec contract: NOT DISCLOSED. The figure does not appear in any corpus document. The only "700" in the corpus in a rupee context is capex, spoken by an analyst: "₹ 2,500 crores and this goes to, let's say, ₹ 3,500 crores, ₹ 1,000 crores by incremental ₹ 700 crores of Capex, which you talked about." (Pulkit Singhal, Concall_Aug_2026_Transcript.pdf, PDF p.15), answered by management as "By incremental ₹ 700, but then that's not the full potential because you are investing in land and building in Bangalore as well as the foundry" (same page). That is the Bangalore-plus-equipment capex, not a customer contract.
+- No contract value is disclosed for any other named customer (Alstom, Siemens Mobility, Progress Rail, Voith, Medha Servo, Caterpillar, Cummins): NOT DISCLOSED.
+
+### MISMATCH 4: FY25 RAILWAY SHARE
+
+**a. Every statement of the traction motor and railway share for FY25 and FY24.**
+- Management, FY25: NOT DISCLOSED in every corpus document. Management, FY24: NOT DISCLOSED in every corpus document.
+- Analyst, period unstated: "Mohit Jain: ... So traction railway segmental revenue dropped from 38% as a percentage of revenue to 33%, especially in Q4. In absolute terms, I guess, we have done around INR165-odd crores versus INR178 crores last year same quarter." (Concall_May_2026_Transcript.pdf, PDF p.12). Comment: spoken by the analyst, not by management; the 38% carries no stated period, and management's reply neither confirms nor corrects it.
+- The 34% figure: it does appear in the corpus, but not as a railway share. It is the export share for FY2023-24: "Exports Share (% of Total Revenue) 33% 34% 29% ... FY23 371 FY24 434 FY25 500 ... FY26 531 27%" (Investor_Presentation_1.pdf, PDF p.18) and "2025-26 27 / 2024-25 / 34 2023-24 / 33 2022-23" under "Exports (` crores)" (Annual_Report_2026_2.pdf, PDF p.14). A 34% railway share for FY25: NOT DISCLOSED.
+
+**b. The FY26 AR revenue-mix page in full (Annual_Report_2026_2.pdf, PDF p.8, headed "Industries We Serve / Revenue Breakup by Industry", the percentage block printed under the heading "2025-26 Share (%)"):**
+
+| Vertical, as labelled | Share (%) |
+|---|---|
+| Traction Motor and Railway Components | 33 |
+| Power Generation | 15 |
+| Industrial and Commercial | 13 |
+| Special Purpose Motors | 7 |
+| Mining, Oil and Gas | 6 |
+| Renewable Energy / Pump Motors | 4 |
+| Data Centres | 3 |
+| Others (Home Appliances, Automotive, Scrap Sales and Other Income) | 19 |
+
+The page label states the period: "2025-26 Share (%)". Comment: the table covers ONE year, FY2025-26. It carries no prior-year column, so no FY25 or FY24 comparison is possible from it. The percentages sum to 100.
+
+**c. End-user industry revenue in absolute rupees, any year.** NOT DISCLOSED. No corpus document gives it. The AR reports a single operating segment with a geography split only: "The operating segment of the Group is identified to be manufacturing of "Engineering Products of Iron and Steel" and the CODM reviews business performance at an overall Group level as one segment. Hence no separate disclosure is provided. ... a) India 1,38,149.74 / 1,20,417.27; b) Outside India 53,130.62 / 50,039.44; TOTAL 1,91,280.36 / 1,70,456.71" (Annual_Report_2026_2.pdf, PDF p.114). The presentation's industry split is percentages only (PDF p.14). No call gives a railway rupee figure from management.
+
+### Block G verification
+Documents quoted: Annual_Report_2026_2.pdf (FY2025-26, filed 24-Aug-2026), PDF p.4, p.8, p.11, p.14, p.19, p.25, p.114; Investor_Presentation_1.pdf (Q1 FY27, filed 10-Aug-2026), PDF p.5, p.6, p.11, p.18, p.23; Concall_Nov_2025_Transcript.pdf (Q2 FY26, call 10-Nov-2025, filed 15-Nov-2025), PDF p.5, p.10, p.11; Concall_Feb_2026_Transcript.pdf (Q3 FY26, call 6-Feb-2026, filed 11-Feb-2026), PDF p.12; Concall_May_2026_Transcript.pdf (Q4 and FY26, call 18-May-2026, filed 22-May-2026), PDF p.4, p.5, p.12, p.13; Concall_Aug_2026_Transcript.pdf (Q1 FY27, call 11-Aug-2026, filed 17-Aug-2026), PDF p.4, p.5, p.9, p.15.
+Documents searched that returned no match: Concall_Feb_2026_Transcript.pdf and Concall_Aug_2026_Transcript.pdf for "Alstom" and "Wabtec" (zero occurrences each); Annual_Report_2026_2.pdf and Investor_Presentation_1.pdf for "Alstom" (zero occurrences each); all six documents for "homologated", "qualified by", "sole supplier", "only Indian supplier" (zero); all six documents for the tonnages 13,362 and 4,385 (zero); all six documents for a Rs 700 Cr customer contract (zero); all six documents for an FY25 or FY24 railway share stated by management (zero).

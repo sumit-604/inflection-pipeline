@@ -25,3 +25,4 @@
 | 6 | peer verification (re-pointed) | claude-sonnet-5 | default | n/a | n/a | 166,143 | 9m28s | 2 |
 | 12b | verifier B (final, post-remediation) | claude-opus-4-8 | default | n/a | n/a | 276,426 | 14m24s | 3 |
 | 12d | verifier D peer coverage (rerun) | claude-sonnet-5 | default | n/a | n/a | 107,437 | 5m13s | 2 |
+| 13 | synthesis-lite (3 files) | claude-opus-5 | default | n/a | n/a | 158,118 | 6m43s | 1 |

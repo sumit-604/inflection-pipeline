@@ -17,3 +17,4 @@
 | 9 | TAM/SAM/SOM (web search) | claude-sonnet-5 | default | n/a | n/a | 150,040 | 13m40s | 1 |
 | 12b | verifier B concall red flags | claude-opus-4-8 | default | n/a | n/a | 242,024 | 12m02s | 1 |
 | 12d | verifier D peer coverage | claude-sonnet-5 | default | n/a | n/a | 85,637 | 3m55s | 1 |
+| 5 | concall analysis (REWORK) | claude-sonnet-5 | default | n/a | n/a | 227,811 | 10m44s | 2 |

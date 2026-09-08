@@ -1,0 +1,78 @@
+stage: B08-promoter
+company: "BORANA"
+run_date: "2026-09-07"
+model: claude-sonnet-5
+status: partial               # searches all executed; several primary-source URLs blocked by network egress, findings rest on WebSearch snippets for those items (see search log)
+input_gaps:
+  - "R&B Denims Reg-30 SEBI-search BSE filing not independently fetchable this run (bseindia.com blocked) - relayed via WebSearch snippet only"
+  - "R&B Denims own board/directors page not independently fetchable (rnbdenims.com blocked) - Radhika Arun Kanodiya directorship and R&B Denims board composition relayed via WebSearch snippet only"
+  - "Original Oct-2024 CARE non-cooperation press release not independently fetchable (careratings.com blocked)"
+  - "Whalesbook and scanx.trade articles on SEBI sweep, NSE fine waiver, and CS/auditor churn not independently fetchable (domains blocked) - relayed via WebSearch snippets, tiered MEDIA/UNVERIFIED"
+  - "SEBI 11C(9) order text and subject matter NOT FOUND anywhere (not in corpus, not in web search) - authority has not disclosed the violation as of run date"
+  - "Missing Brickwork rating rationale narrative for the 11-May-2026 upgrade (only the ratings letter was available)"
+  - "Relationship between Radhika Arun Kanodiya (R&B Denims independent director) and Arun Kanodiya (Borana Weaves statutory auditor signing partner) UNVERIFIED - name-match only, not confirmed"
+  - "Connection (if any) between loan counterparty 'Nirmit Dalmia' and the Dalmia family that co-promotes R&B Denims UNVERIFIED"
+flags:
+  - type: FLAG-PROMOTER
+    verdict: "CONCERN"
+    top_findings:
+      - "Unresolved SEBI Section 11C(9) search at R&B Denims Limited (promoter-group listed entity) and at premises of certain promoters and its CFO, 22-23 Apr 2026; subject/violation still undisclosed by the authority 4.5 months later"
+      - "5 of 6 Borana Weaves board seats, including all 3 Independent Directors, also sit on the R&B Denims board - no independent check exists on Borana-R&B Denims dealings"
+      - "Secretarial Auditor resigned within ~15 months of a 5-year mandate (Jul-2026); incoming secretarial auditor had a prior FY26 engagement (director non-disqualification cert) before appointment as auditor"
+      - "Possible family link (name-match, unverified) between Borana Weaves' statutory auditor signing partner Arun Kanodiya and R&B Denims independent director Radhika Arun Kanodiya"
+      - "Rs 10.6-15.6 cr unsecured on-demand loan book to five/six largely unconnected counterparties in a no-dividend year, one counterparty (Nirmit Dalmia) with an unresolved possible name-link to R&B Denims' promoter family"
+      - "CS and Secretarial Auditor both turned over within a six-week window (Jun-Jul 2026); internal audit reports withheld from statutory auditor; exchange correspondence withheld from incoming secretarial auditor"
+verdict: "CONCERN"
+scorecard: {clean: 2, caution: 4, red: 4}
+deal_breakers:
+  - "Auditor resignation within 3 years: Secretarial Auditor Jitendrakumar Rawal resigned 24-Jul-2026, ~15 months into a 5-year mandate commencing Apr-2025 (recorded, not enforced)"
+adverse_findings:
+  - {finding: "SEBI Section 11C(9) search at R&B Denims Limited and at premises of certain promoters and its CFO, 22-23 Apr 2026, subject undisclosed", evidence_tier: "VERIFIED", source: "2026-04-25_Reg30_SEBI-11C9-search-RandB-Denims.pdf", date: "2026-04-25"}
+  - {finding: "2017 SEBI Takeover Regulations settlement, Rs 2 lakh, re R&B Denims shareholding disclosure lapse, against Mangilal/Rajkumar/Ankur/Dhwani Borana + 3 HUFs + 2 relatives", evidence_tier: "VERIFIED", source: "RHP_Borana_Weaves_2025.pdf p.48-49", date: "settlement order 2017-10-30"}
+  - {finding: "Secretarial Auditor resigned within first year of 5-year mandate; second resignation-noting filing 5 days later; replacement appointed same day", evidence_tier: "VERIFIED", source: "2026-07-24 and 2026-07-29 Reg30 filings", date: "2026-07-24 / 2026-07-29"}
+  - {finding: "Incoming Secretarial Auditor K. Dalal & Co. had prior FY26 engagement issuing director non-disqualification certificate (Annexure-11) before appointment as Secretarial Auditor", evidence_tier: "VERIFIED", source: "Annual_Report_FY2026.pdf Annexure-11 and Secretarial Audit Report", date: "FY26"}
+  - {finding: "Possible family link between statutory auditor signing partner Arun Kanodiya (KSA & Co.) and R&B Denims independent director Radhika Arun Kanodiya (appointed 15-May-2025)", evidence_tier: "UNVERIFIED", source: "web search, name-match only; R&B Denims board page not independently fetched", date: "2026-09-08 search date"}
+  - {finding: "Internal audit reports not made available to statutory auditor for FY26 examination", evidence_tier: "VERIFIED", source: "Annual_Report_FY2026.pdf CARO Annexure A clause xiv(b)", date: "FY26"}
+  - {finding: "Exchange correspondence (6 NSE/BSE observation/clarification letters) not furnished to incoming Secretarial Auditor", evidence_tier: "VERIFIED", source: "Annual_Report_FY2026.pdf Secretarial Audit Report", date: "2026-08-10"}
+  - {finding: "Factory building (net block Rs 26.65 cr) sits on land owned by directors and a relative, no separate title deed in Company's name, rent charged", evidence_tier: "VERIFIED", source: "Annual_Report_FY2026.pdf CARO Annexure A", date: "FY26"}
+  - {finding: "Rs 10.6-15.6 cr third-party loan book (Khwaish Exim, Nirmit Dalmia, Whitelotus, Nakoda, Win Star) at 12% unsecured on-demand, largely unconnected counterparties, no-dividend year", evidence_tier: "VERIFIED (amounts) / UNVERIFIED (connection questions)", source: "Annual_Report_FY2026.pdf CARO Annexure A; 2026-09-05_Reg30_loan-agreement.pdf", date: "FY26 / 2026-09-05"}
+  - {finding: "CS Seema Luniya resigned 01-Jun-2026, ~2-month casual vacancy before replacement appointed 29-Jul-2026, coinciding with an NSE Reg 33 compliance fine", evidence_tier: "MEDIA", source: "web search (scanx.trade snippet, not independently fetched)", date: "2026-06-01 / 2026-07-29"}
+  - {finding: "Jobwork expense to Borana Industries LLP doubled YoY to Rs 898.81 lakh (2.31% of revenue), no disclosed price/rate basis", evidence_tier: "VERIFIED", source: "Annual_Report_FY2026.pdf Note 34", date: "FY26"}
+  - {finding: "SEBI search at R&B Denims sits inside a wider April 2026 SME-sector sweep (parallel search at R M Drip and Sprinklers Systems same dates); no SEBI order/charge naming R&B Denims or Borana promoters located", evidence_tier: "MEDIA", source: "web search (TipRanks, Globe and Mail, scanx.trade snippets)", date: "2026-04-22/23"}
+transition_evidence:
+  - "New non-family Company Secretary appointed: Ishant Jain, effective 29-Jul-2026, replacing Seema Luniya"
+  - "New Secretarial Auditor with stated three-decades' experience and peer review certificate engaged (Kunjal Dalal / K. Dalal & Co.), 29-Jul-2026 - offset by the independence question raised (prior engagement; possible family link to R&B Denims)"
+pledge_pct_latest: 0
+pledge_trend: "stable - 0% pledge across all quarters reviewed through 30-Jun-2026, no encumbrance, no NDU"
+searches_performed:
+  - "R&B Denims Limited SEBI order 2026"
+  - "\"R&B Denims\" SEBI search April 2026"
+  - "\"R & B Denims\" SEBI 11C"
+  - "R&B Denims Limited news 2026"
+  - "\"R&B Denims\" \"Amit Dalmia\" chairman promoter"
+  - "\"Nirmit Dalmia\" Surat"
+  - "\"R & B Denims\" board of directors \"Dalmia\""
+  - "\"Radhika Arun Kanodiya\" R&B Denims director"
+  - "\"Arun Kanodiya\" KSA & Co Surat chartered accountant"
+  - "\"Kanav\" \"Arora\" independent director Surat textile company boards"
+  - "\"Arvind Kumar Rathi\" independent director Surat"
+  - "\"Nitika Abhishek Soni\" independent director"
+  - "\"Whitelotus Industries\" Surat company"
+  - "\"Khwaish Exim\" LLP Surat"
+  - "\"Nakoda Developers\" Surat"
+  - "\"Win Star Industries Private Limited\" Surat"
+  - "Borana Weaves independent director resignation OR appointment 2026"
+  - "Borana Weaves CARE rating issuer not cooperating Brickwork upgrade"
+  - "SEBI interim order R&B Denims 2026 manipulation"
+  - "SEBI \"pump and dump\" SME stocks 2026 Surat textile investigation"
+  - "\"R M Drip\" SEBI raid 2026"
+  - "Borana Weaves NSE fine waiver compliance officer vacancy"
+  - "Borana Weaves fine SEBI LODR non-compliance 2026"
+  - "Borana Weaves Seema Luniya company secretary resignation 2026"
+  - "\"Borana Weaves\" \"Jain\" company secretary appointed 2026"
+  - "\"Borana Weaves\" Glassdoor OR AmbitionBox reviews"
+  - "\"Mangilal Borana\" OR \"Ankur Borana\" OR \"Rajkumar Borana\" controversy fraud"
+  - "Borana Weaves IiAS proxy advisory OR SES governance"
+searches_skipped: []
+verdict_basis: "Unresolved SEBI 11C(9) search of R&B Denims (promoters/CFO also searched, subject undisclosed) coincides with a board where 5 of 6 seats, all 3 independent directors included, sit on that same searched entity, plus an auditor-independence question surfacing in the same window - accumulation of red flags, not any single item, drives CONCERN over CAUTION."
+analyst_note: "The single highest-value follow-up for the operator before Halt 1 is direct confirmation of two unverified name-matches this run could not close given blocked domains: (1) whether R&B Denims independent director Radhika Arun Kanodiya is related to Borana Weaves statutory auditor Arun Kanodiya, and (2) whether loan counterparty Nirmit Dalmia connects to the Dalmia family that co-promotes R&B Denims. Neither is confirmed; both would materially harden this verdict if confirmed. Shareholding conduct itself (65.24%, zero pledge, no selling) is genuinely clean and should not be lost inside the CONCERN verdict."

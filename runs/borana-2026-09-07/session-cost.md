@@ -21,3 +21,4 @@ with its own stage. Loop or retry runs get their own line with a run counter.
 | 12c | Verifier C framework (phase-1 scope) | claude-opus-4-8 | default | 103400 | 4920 | 108320 | 7m48s | 1 |
 | 12d | Verifier D peer coverage | claude-sonnet-5 | default | 355800 | 11405 | 367205 | 6m44s | 1 |
 | 12b | Verifier B red flags | claude-opus-4-8 | default | 251100 | 12067 | 263167 | 18m48s | 1 |
+| 13 | Synthesis-lite (phase 1) | claude-opus-5 | default | 136700 | 6601 | 143301 | 7m51s | 1 |

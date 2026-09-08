@@ -284,3 +284,82 @@ TOP RISK TO WATCH:        Power/interest subsidy runoff (2026 on) vs.
 - Cost of imported POY yarn on a per-metre or per-kg basis not disclosed (only aggregate purchase values and % of total expenses); a clean spread (realisation minus input cost, per metre) could not be built because in-house-texturised yarn is shared between the fabric and yarn revenue streams without disclosed internal transfer pricing.
 - Named competitor set (SAAM Textiles, Paramount Textile Mills, Madhav Fashion, Jaincotex Mills) sourced from a single third-party industry report (D&B) cited in the RHP; not independently verified against screener/other public data within this stage's scope.
 - Peer (FILATEX/SANGAMIND/SANATHAN) margin figures used in this stage's business-model framing were spot-checked against one peer investor deck (FILATEX Q4FY26: 7.01%-8.91% EBITDA margin, consistent with the brief's range) but a full year-aligned reconciliation against the screening Data_Sheets was not performed here — that remains stage 2's/screening's responsibility.
+
+---
+
+```yaml
+stage: B04-bizmodel
+company: "BORANA"
+run_date: "2026-09-07"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "inputs/research/ empty; NO-CONCALL MODE, only one Borana transcript (Q3FY26, Jan-2026) available (carried from B00)"
+  - "No top-customer revenue concentration disclosed in FY26 AR; RHP concentration data (FY22-9MFY25 only) used instead, dated (carried from B00)"
+  - "FY25/FY26 fabric-only production volume (metres) not separately disclosed; only management's blended total-revenue-over-fabric-metres realisation metric available for those years"
+  - "Product-level revenue disaggregation note for FY25 not found in extracted FY2025 AR text; FY24 grey-fabric figure sourced from RHP instead, possibly a different product grouping than AR's Note 21"
+  - "No AR/MD&A narrative explaining the Q2FY25 EBITDA margin trough (16.49%); reconstructed from quarterly filings only"
+  - "Clean per-metre input cost (yarn cost attributable to fabric alone, excluding yarn sold as PTY) not disclosed; no internal transfer price given"
+  - "Named competitors (SAAM Textiles, Paramount, Madhav Fashion, Jaincotex) sourced from a single third-party D&B report cited in the RHP, not independently verified"
+  - "Full year-aligned reconciliation of FILATEX/SANGAMIND/SANATHAN margins against screening Data_Sheets not performed in this stage; spot-checked against one FILATEX deck only"
+flags:
+  - "Borana Industries LLP (Promoter Group) has been the single largest customer of grey fabric in every disclosed period FY22-9MFY25 (5.54% to 8.34% of grey-fabric revenue, RHP p.175), with no disclosed price basis for any related-party transaction (B02 finding) - distinct from, and additive to, the 2.31%-of-revenue jobwork RPT already flagged"
+  - "Management's 'net debt free' framing (Concall Q3FY26) held at the Q3FY26 balance-sheet date (debt ~Rs60cr vs cash Rs40-55cr) but not at FY26 close (gross debt Rs69.51cr vs cash Rs1.68cr, Q1FY27 deck p.16) - cash position weakened materially as FY26 capex accelerated"
+  - "Power (~20-22% of power cost) and interest (~30-40% of interest cost) subsidies under Gujarat Textile Policy 2024 run 5 years per unit from commissioning and start lapsing with Unit 1 in 2026, ahead of the 19.79MW hybrid renewable project meant to replace them, which has already slipped twice (B03)"
+  - "Quarterly EBITDA margin swung 27.18% (Q4FY24) to 16.49% (Q2FY25) back to 25.63% (Q1FY27) - the December-2025 BIS-restriction removal explains at most the last 1-2 quarters of margin gain, not the underlying 38-41% gross-margin band that predates it by 3+ years; a single-cause policy story does not fit the full record"
+  - "Margin gap vs FILATEX/SANGAMIND/SANATHAN is best read as a product-mix difference (fabric weaving vs upstream POY/PFY polymerisation), not a like-for-like anomaly - flagged so downstream valuation does not over-read the comparison"
+business_type: "manufacturing"
+revenue_streams:
+  - {name: "Grey (greige) fabric", type: "manufactured commodity input sold to processors", pct_of_revenue: 90.95, predictability: "M"}
+  - {name: "PTY (texturised) yarn", type: "by-product of spare texturising capacity", pct_of_revenue: 4.56, predictability: "L"}
+  - {name: "Beam/downgrade/wastage sales", type: "residual/scrap value", pct_of_revenue: 4.49, predictability: "L"}
+asset_intensity: "heavy"
+wc_intensity: "medium"
+pricing_power: "weak"
+cyclicality: "cyclical"
+moats_present:
+  - {moat: "Cost advantage (Gujarat Textile Policy 2024 power + interest subsidy)", durability: "low-medium, time-limited, lapsing per-unit 2026-2028"}
+  - {moat: "Modern-vintage, higher-speed machinery vs partly outdated competitor base", durability: "low-medium, capital is purchasable by any funded entrant"}
+  - {moat: "Efficient scale (claimed 'unmatched scale among similar product-focus companies')", durability: "unverified, no named comparator or market-share figure found"}
+valuation_methods:
+  primary: {method: "EV/EBITDA on a normalised/mid-cycle margin", why: "Standard converter/manufacturing lens; captures the capex-heavy capital structure better than P/E; must use a normalised margin given quarterly EBITDA margin has swung 16.49%-27.18% over the last two years on causes unrelated to any single policy event"}
+  secondary: {method: "EV per installed loom / capacity replacement cost", why: "Clean anchors exist (~Rs8.17 lakh/loom bare import cost, ~Rs21-22 lakh/loom fully-loaded project cost); useful independent cross-check for a capacity-driven converter mid-expansion"}
+  tertiary: {method: "P/E, only once earnings normalise", why: "Current EPS distorted by Other Income subsidy timing and by depreciation lag - only Rs8.24 lakh of Rs80.94cr FY26 CWIP was capitalised (B03)"}
+  not_applicable:
+    - "DCF - cumulative FCF minus Rs194.8cr over FY22-FY26 (B01), heavy committed capex through FY28 makes near-term FCF unreliable"
+    - "Dividend yield/DDM - no established meaningful payout policy evidenced"
+    - "SOTP/NAV - single integrated operating business, not a holding company or multi-segment conglomerate"
+irrelevant_ratios:
+  - {ratio: "Spot-year ROCE", why: "Barred from Section 1B/FTTCP for this CONVERTER (Amendment 17); also flattered by FY26's mostly-uncapitalised CWIP understating the true asset base"}
+  - {ratio: "Rupee-denominated working-capital trend", why: "Barred from Section 1B/FTTCP for this CONVERTER (Amendment 17); also mechanically inflated by FY26 revenue near-doubling since FY24"}
+  - {ratio: "Headline revenue growth %", why: "Driven almost entirely by loom/capacity additions (700 to 1,212 looms in ~20 months), not price or share gain"}
+  - {ratio: "Net fixed asset turnover, standalone", why: "Distorted mid-expansion as CWIP (Rs80.94cr, FY26) converts to PPE in lumps"}
+  - {ratio: "Quarter-to-quarter PAT margin", why: "Distorted by Other Income timing - interest subsidy alone Rs3.35-3.69cr in FY26/FY25 plus one-off items"}
+must_track_metrics:
+  - {metric: "Blended capacity utilisation %", healthy: "80%+ and rising, ceiling ~90% per management", red_flag: "falling while capacity keeps growing"}
+  - {metric: "Gross margin % (spread proxy)", healthy: "38%+ (stable band since FY24)", red_flag: "reverting toward the Q2FY25 trough of 31.7%"}
+  - {metric: "Loom/capacity additions vs guided schedule", healthy: "on-time commissioning", red_flag: "further slippage after two prior renewable-project delays (B03)"}
+  - {metric: "Power/interest subsidy runoff vs renewable commissioning date", healthy: "renewable online before each unit's 5-year subsidy window lapses", red_flag: "Unit 1's 2026 lapse arriving before the hybrid project is live"}
+  - {metric: "Cash & cash equivalents vs gross debt", healthy: "cash rebuilding post-capex", red_flag: "cash near zero against Rs55-70cr gross debt, as at FY26 close (Rs1.68cr cash)"}
+unit_economics:
+  unit: "1 metre of grey (greige) fabric"
+  revenue_per_unit: "Rs11.27/m clean grey-fabric realisation FY24 (RHP-anchored); Rs15.80-17.50/m FY25-9MFY26 on management's blended all-product/fabric-metres metric (not a clean per-unit price)"
+  margin_per_unit: "NOT FOUND at the clean per-metre level - POY cost is shared across fabric and yarn output with no disclosed internal transfer price; gross margin % (38.5%-44.8% FY24-Q4FY26) is the best available spread proxy"
+  key_lever: "Capacity utilisation and loom-count growth, not price; realisation gains trace mostly to product mix and to the Dec-2025 BIS-restriction removal on Chinese POY, not to demonstrated pricing power"
+first_deterioration_signals:
+  - {risk: "Power/interest subsidy runoff without renewable backfill", first_signal: "Other Expenses (power cost) rising as % of revenue or gross margin compression from the quarter Unit 1's subsidy window closes (2026) if the hybrid project is still not commissioned"}
+  - {risk: "Related-party customer dependency with no disclosed pricing basis (Borana Industries LLP)", first_signal: "widening related-party revenue share in the AR RPT note"}
+  - {risk: "Capacity execution risk (192-loom Unit 4 expansion, Dec-2026 target; renewable project twice delayed)", first_signal: "further slippage disclosed in Reg-30 filings"}
+  - {risk: "Unhedged import/FX exposure (~Rs120cr book, 0% to 32.7% of RM in FY26)", first_signal: "forex loss line appearing in Other Expenses/Finance cost, or gross margin reversing"}
+  - {risk: "Utilisation ceiling (management states ~90% max, already 82-83% blended)", first_signal: "revenue growth decoupling from loom-count growth, or utilisation declining QoQ while capacity grows"}
+mgmt_questions:
+  - "What is the arm's-length pricing policy for grey-fabric sales to Borana Industries LLP, the largest customer in every disclosed period since FY22?"
+  - "What exactly drove the Q2FY25 EBITDA margin trough to 16.49%, and could it recur?"
+  - "With Unit 1's power subsidy window closing in 2026 and the hybrid renewable project on its third commissioning date, what is the contingency if renewable power is not live before the subsidy lapses?"
+  - "Of the Rs60-75cr incremental annual revenue guided for the Unit 4B looms, how much has materialised since commissioning?"
+  - "How much of the FY26 gross-margin gain (38.80% to 41.37%, 44.82% in Q4FY26) is durable once competitors also access cheaper post-restriction Chinese POY?"
+  - "Is the ~32.7%-of-raw-material FY26 import book now hedged, and to what extent?"
+  - "What is the realistic funding plan for the Rs350-400cr capacity-doubling plan by March-2028, given equity dilution is ruled out and cash fell to Rs1.68cr at FY26 close?"
+one_line_verdict: "Thin-moat converter whose margin edge is mostly product-mix plus two subsidies now starting to lapse."
+analyst_note: "The margin gap vs FILATEX/SANGAMIND/SANATHAN is largely a value-chain-step artefact (weaving vs upstream POY/PFY polymerisation), not evidence of superior converter economics per se - do not let Section 1B or FTTCP treat it as a like-for-like comparison. The quarterly margin record (27.18% to 16.49% back to 25.63% across nine quarters) rules out a single-cause (Dec-2025 policy) story; the policy plausibly explains only the last 1-2 quarters' incremental gain on top of a pre-existing 38-41% gross-margin band. Two structural watch items compound into one thesis-relevant risk: the power/interest subsidy runoff (2026-2028) racing against a twice-delayed renewable project, and a related-party customer (Borana Industries LLP) that has been the top buyer of grey fabric in every disclosed period with no disclosed pricing basis. Loom-level capex and capacity arithmetic (Rs8.17 lakh/loom bare, ~3.1-3.24 lakh m/loom/year) is internally consistent across two independent sources (RHP objects-of-issue and Q3FY26 concall), which is the most load-bearing cross-check in this report."
+```

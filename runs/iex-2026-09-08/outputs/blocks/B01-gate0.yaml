@@ -1,0 +1,112 @@
+stage: B01-gate0
+company: "IEX"
+run_date: "2026-09-08"
+model: claude-sonnet-5
+status: complete
+run_number: 2
+run_note: >
+  Run 1 completed at grand 99/160 (core 75, moat 24, GOOD+) with two source
+  gaps: the annual report could not be page-rendered, leaving E4 NOT FOUND,
+  and peer screener files were not supplied, leaving M2/M5/M9 unscored. Both
+  sources were supplied and the scorecard was rescored in full. This block
+  supersedes run 1.
+input_gaps:
+  - type: annual_report_unreadable
+    severity: CLOSED
+    detail: >
+      RUN 1 gap, not a formal B00 entry: Annual_Report_2026.pdf could not be
+      page-rendered in that environment, leaving E4 (contingent liabilities)
+      NOT FOUND. CLOSED this run: page-marked plain text supplied for both
+      Annual_Report_2026.txt and Annual_Report_2025.txt. E4 now scored 5
+      (Rs5.0376cr, 0.369% of net worth, one GST matter, AR p.217 standalone
+      Note 39 / p.279 consolidated Note 38). The FY24 comparative balance
+      sheet and cash flow in Annual_Report_2025.txt also extended the
+      ROCE/FCF/WC-days window from 2 to 3 years, fixing A4 and enabling B4.
+  - type: peer_screener_data
+    severity: CLOSED
+    detail: >
+      RUN 1 gap, not a formal B00 entry: no MCX/BSE/CDSL screener files
+      were supplied, so M2/M5/M9 scored 0 "PEER DATA NEEDED". CLOSED this
+      run: MCX-Data_Sheet.csv, BSE-Data_Sheet.csv, CDSL-Data_Sheet.csv
+      supplied. M2 now scored 5 (+16.55pp EBITDA margin above peer median).
+      M5 now scored 1 (IEX is smallest-by-mcap of the four, flagged as a
+      small-n artifact). M9 remains 0 but for a structural reason now
+      confirmed with peer data present: no Material/COGS line exists for
+      IEX or any of the three peers.
+  - type: rating
+    severity: NOT_A_GAP
+    detail: >
+      Unchanged from B00. IEX carries Rs11.16cr lease liabilities only, no
+      rated debt, no CRISIL/ICRA/CARE rating exists to collect.
+  - type: research
+    severity: LOW
+    detail: "Unchanged from B00. inputs/research/ empty, non-anchored leads only, no effect on Gate 0."
+  - type: regulatory_order_text
+    severity: HIGH
+    detail: >
+      Unchanged from B00, still open. CERC market coupling order (Jul-2025),
+      APTEL judgment (13-Feb-2026) and the Supreme Court order texts remain
+      absent from the corpus. This run's AR read (p.61-62) adds dates and a
+      one-paragraph mitigation summary but not the order texts themselves.
+      Not a Gate 0 scoring input but load-bearing for later stages.
+  - type: screening_csv
+    severity: MEDIUM
+    detail: >
+      Unchanged from B00, not closed, successfully worked around.
+      screener-Profit_Loss.csv, screener-Balance_Sheet.csv,
+      screener-Cash_Flow.csv and screener-Quarters.csv hold row labels and
+      no values for IEX and all three peers; this run confirmed the same
+      defect in the newly-supplied MCX/BSE/CDSL files. All scoring in this
+      report used the fully-populated Data_Sheet CSVs instead.
+  - type: sector_cap_row
+    severity: MEDIUM
+    detail: "Unchanged from B00, still open. Not a Gate 0 input; carried for stage 11."
+  - type: prospectus_own
+    severity: NOT_A_GAP
+    detail: "Unchanged from B00. IEX listed 2017, outside the 3-year prospectus window."
+  - type: image_only_pdfs
+    severity: LOW
+    detail: "Unchanged from B00. Two SAST disclosures are scanned/non-extractable, not Gate 0 inputs."
+  - type: igx_ofs_proceeds
+    severity: MEDIUM
+    detail: >
+      Cash proceeds from IGX's 22.28% OFS sell-down remain NOT FOUND after
+      reading the full annual report this run. No price band or valuation
+      appears in the AR, concalls, or results filings. Not a Gate 0 scoring
+      input; load-bearing for FTTCP/Role 1.
+flags: []
+data_years: 8
+fy_range: "FY19 to FY26"
+blocks: {A: 20, B: 18, C: 15, D: 19, E: 13}
+core_score: 85
+moat_score: 30
+grand_total: 115
+moats_confirmed: 7
+moat_class: "FORTRESS"
+classification: "EXCELLENT"
+deal_breakers: []
+history_downgrade: false
+data_notes:
+  - "ROCE/FCF/WC-days window extended FY25-FY26 (run 1) to FY24-FY26 (run 2) using Annual_Report_2025.txt's FY24 comparative balance sheet/cash flow."
+  - "Revenue-basis segment split: a two-way split exists (Electricity bundle vs Certificates, AR Note 28), correcting run 1's 'no revenue-basis split anywhere' finding. No split within the Electricity bundle (DAM/RTM/TAM/Green) exists on a revenue basis anywhere."
+  - "RTM FY26 volume share: the annual report itself is internally inconsistent - 34% at p.17/p.25 (chart sums to exactly 100%)/p.62, vs 'nearly 40%'/'approximately 39%' at p.33/p.36-37. Better-evidenced figure: DAM 39%, RTM 34%. Flagged, not fully resolved by the AR's own drafting."
+  - "IGX FY26 PAT growth resolved at 35% (35.29%), two independent AR passages (p.24, p.34) against the Jul-2026 Analyst Meet's isolated 28% figure."
+  - "E4 now found: Rs5.0376cr contingent liability (one GST matter), 0.369% of net worth, AR p.217/p.279, verifying the prior-stage pointer exactly."
+  - "M9 unscored (0) for a structural reason confirmed with peer data present: no Material/COGS line exists for IEX or any of MCX/BSE/CDSL."
+  - "M5 scored 1: IEX is smallest-by-market-cap of the four (BSE>MCX>CDSL>IEX) despite having the highest EBITDA margin of all four - flagged as a small-n comparison-set artifact, not a true segment-wide ranking."
+block_b_trend: "stable - cumulative FCF/PAT 0.8804 across FY24-FY26, all three years FCF-positive, WC days consistently near-zero and slightly negative (-1.46 to -1.61 days)"
+analyst_note: >
+  Core score rose 75 to 85 (GOOD+ to EXCELLENT) driven entirely by the two
+  gaps this run closed: AR text extended ROCE/FCF/WC-days from a 2-year to
+  a 3-year window (fixing A4, enabling B4) and gave E4 a verified 0.37%
+  ratio; peer data resolved M2 to 5. Read EXCELLENT against two carried
+  substance flags, not scoring noise: the FY26 AR itself has an
+  unreconciled three-way RTM volume-share figure (34% at the
+  internally-consistent chart/risk section vs ~39-40% at two narrative
+  passages; better-evidenced figure is DAM 39%/RTM 34%); and IGX FY26 PAT
+  growth is now resolved at 35% (two AR passages) against the Jul-2026
+  call's outlier 28%. E1's mechanical zero (no promoter) remains the sole
+  reason Block E trails A/B/D - structural, not a governance concern. IGX
+  OFS cash proceeds remain entirely absent from this corpus even after the
+  full AR read. M9 is unscored for a structural reason (no COGS line
+  exists for IEX or any of the three peers), not a data gap.

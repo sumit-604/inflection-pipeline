@@ -125,11 +125,13 @@ Read, in this order:
    frameworks/Section_1B_v3_6_Amendments.md, then
    frameworks/Section_1B_v3_7_Amendments.md, then
    frameworks/Section_1B_v3_8_Amendments.md, then
-   frameworks/Section_1B_v3_9_Amendments.md — read ALL SIX layers in this
+   frameworks/Section_1B_v3_9_Amendments.md, then
+   frameworks/Section_1B_v3_10_Amendments.md — read ALL SEVEN layers in this
    order; together they are the sole exit-multiple and Pillar authority the
    FTTCP verdict hands off to, and the source of truth for the sector cap
-   table. Where they overlap, v3.9 governs the items it names, then v3.8, then v3.7,
-   then v3.6, then v3.5.1, then v3.3. For CONVERTER-classified names, the Cash
+   table. Where they overlap, v3.10 governs the items it names (growth
+   symmetry in projections and weighting, Amendment 26), then v3.9, then
+   v3.8, then v3.7, then v3.6, then v3.5.1, then v3.3. For CONVERTER-classified names, the Cash
    transition verdict uses volume-denominated WC per v3.7 17.2.
 3. CLAUDE.md — the operating rules (NEVER list, dispatch, words, STYLE).
 4. LESSONS.md — the lean ACTIVE operational memory read at every session

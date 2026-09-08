@@ -374,3 +374,32 @@ Company memory written for both with the standing-ruling spear OVERRIDE.
   Tinna Trade agri-trading book; the wine business alone was Rs 215.6 cr. FY26
   Rs 181.29 cr is wine-only. Any trend line drawn across FY24 to FY26 without
   that reconciliation is fiction.
+
+## 2026-09-08 — FRAMEWORK AMENDMENT (Section 1B v3.10, Amendment 26)
+
+- Sep-2026 batch: base cases anchored to audited history screened out
+  transition names by construction. Corrected by A26.
+
+- The four rules that compounded: base revenue capped at the lower of
+  discounted guidance or historical CAGR; base margin fixed at the trailing
+  3-year average; a per-input "conservative bias" operating rule; and 4D
+  probability weights keyed to whole-company history. Together they priced
+  the audited past, failed the Hurdle Ratio, and landed WATCHLIST on the
+  operation's own setups. Same failure class as Amendment 9 (trough-anchored
+  ROCE in Pillar 1), now corrected in Section 2.
+
+- A21-A25 (v3.9, 07-Sep) moved the exit multiple and the verdict to the
+  probability-weighted future but left the projections that feed them
+  anchored to history. A26 closes that asymmetry. Conservatism now lives in
+  position size (A25) alone.
+
+- OPEN ACTION carried out of this amendment — 26.2 cites a "Second-Order
+  Section (Master Prompt Amendment, Rule F)" that exists nowhere in
+  frameworks/. Flagged inline in Master Prompt 2B and in the v3.10 file; a
+  margin bridge above 400 bps names its mechanism inline until the operator
+  lands Rule F. No session may reconstruct it.
+
+- OPEN ACTION — Annual_Report_Analysis_Protocol_v1_3.md Step 11A still says
+  "synced to Section 1B v3.9" and rechecks the Hurdle Ratio on an "audited
+  EPS base". A21 replaced that base with the forward run-rate. Not touched
+  here (out of A26 scope); needs its own amendment pass.

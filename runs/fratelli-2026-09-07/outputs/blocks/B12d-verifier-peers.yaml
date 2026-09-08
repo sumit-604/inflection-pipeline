@@ -3,24 +3,30 @@ company: "FRATELLI"
 run_date: "2026-09-07"
 model: claude-sonnet-5
 status: complete
+run: 2
+run_note: "Re-measure of the rerun stage 6 (B06 run 2). Run-1 audit archived in git history. Two of these anchor findings were independently spot-checked by the orchestrator against the page markers and both confirmed: the grape-price fragment is on p.9 of SULA-Concall_Aug_2026_Transcript, and the 350-400bps figure is in SULA-Concall_May_2026_Transcript, not the Q1FY27 presentation. There is no page-numbering convention mismatch; the citations are wrong."
 peers_audited: 12
-substantive_confirmed: 12
-substantive_unsupported: []
-unused_but_relevant: []
+substantive_confirmed: 8
+peer_utilisation: 67
+substantive_unsupported: ["SDBL Q4 FY26 (Jun 2026) — SUBSTANTIVE classification with no page/quote anchor given anywhere in the report for its specific claimed contribution (UP-brewery commissioning/capacity); content independently confirmed present in the transcript but not cited"]
+unused_but_relevant:
+  - {peer: "Tilaknagar Industries (TI)", missed_item: "TI-Investor_Presentation_Q1FY27_2026-07-27.txt (one of the six mandated peer presentations) is never mentioned anywhere in B06 -- not SUBSTANTIVE, not CITED-ONLY, not UNUSED-with-reason. Page 12 states 'Customs: Reduction in custom under India-UK FTA from 150% to 75% for scotch import' with 'Cost savings will result in 250-400 bps in margin expansion,' directly relevant to Question 6 (EU-FTA duty schedule) and more precise than the 60-100bps figure B06 actually used.", anchor: "TI-Investor_Presentation_Q1FY27_2026-07-27.txt p.12"}
 claims_all_addressed: true
 verdict_discipline_fails: []
-peer_utilisation: 100
 findings:
-  - {severity: "MINOR", location: "Claim 1, Sula presentation 'above-50% share in domestic premium wines'", claimed_anchor: "SULA-Investor_Presentation_Q4FY26 p.13 / Q1FY27 p.13", actual_anchor: "PDF page 12 in both decks", note: "Off by one page in both presentations; quote itself accurate"}
-  - {severity: "MAJOR", location: "Claim 1, Keshav Garg '60% market share' analyst quote", claimed_anchor: "SULA-Concall_Nov_2025_Transcript.pdf p.11", actual_anchor: "PDF page 13", note: "Off by two pages"}
-  - {severity: "MAJOR", location: "Claim 3, '350 to 400 basis points' gross margin figure", claimed_anchor: "SULA-Concall_May_2026_Transcript.pdf p.5-6", actual_anchor: "PDF page 8", note: "The single most material quantified figure behind the CONTRADICTED grape-cost verdict sits outside the cited range; composite quote splices p.6 text with a p.8 number"}
-  - {severity: "MINOR", location: "Bonus/EU FTA, 'a further +5%' Euro appreciation", claimed_anchor: "SULA-Concall_May_2026_Transcript.pdf p.10", actual_anchor: "PDF page 11", note: "Off by one page"}
-  - {severity: "MAJOR", location: "Bonus/EU FTA, '+20% by Feb-2026' Euro appreciation figure", claimed_anchor: "Folded into SULA-Concall_May_2026_Transcript.pdf p.10 citation", actual_anchor: "SULA-Concall_Feb_2026_Transcript.pdf, PDF page 7", note: "Real figure, credited to the wrong transcript entirely and left uncited at true source"}
-  - {severity: "MAJOR", location: "Part 2E, 'casualties among the industry' risk quote", claimed_anchor: "SULA-Concall_Feb_2026_Transcript.pdf p.13", actual_anchor: "SULA-Concall_May_2026_Transcript.pdf, PDF page 10", note: "Wrong transcript, not just wrong page; keyword search finds exactly one hit for 'casualties' across all 12 peer transcripts, in the May-2026 call"}
-  - {severity: "MAJOR", location: "Part 2B, SDBL barley/glass cost inflation quote", claimed_anchor: "SDBL-Concall_Feb_2026_Transcript.pdf p.7", actual_anchor: "PDF page 9", note: "Off by two pages"}
-  - {severity: "MAJOR", location: "Claim 5 / Part 2C, SDBL UP-brewery composite quote (Rs570cr total / Rs300cr invested / 3-4yr to peak)", claimed_anchor: "SDBL-Concall_Aug_2026_Transcript.pdf p.7 (single citation for compound claim)", actual_anchor: "Rs570cr figure is in SDBL-Concall_Feb_2026_Transcript.pdf (uncited); Rs300cr invested is Aug-2026 PDF p.4; '3-4 years to peak' is Aug-2026 PDF p.11", note: "Compound quote assembles two different quarterly calls under one wrong-page citation; headline Rs570cr figure's true source transcript is never named"}
+  - {severity: "MAJOR", location: "Part 2B narrative + GRAPE-COST-SILENCE flag (report + YAML)", claimed: "~350-400bps FY26 gross-margin impact cited to SULA-Investor_Presentation_Q1FY27_2026-08-06.txt p.10-11", source_truth: "Figure is genuine but located in SULA-Concall_May_2026_Transcript.txt p.8, a different document entirely", note: "wrong-transcript citation on a load-bearing flag figure"}
+  - {severity: "MAJOR", location: "Part 2B narrative + GRAPE-COST-SILENCE flag (report + YAML)", claimed: "'Rs15-16/kg' and 'Rs35/kg' cited to SULA-Concall_Aug_2026_Transcript.txt p.8 (as part of a compound quote)", source_truth: "These two fragments are on p.9; only the 'more than doubling' fragment is genuinely on p.8", note: "compound claim, one citation, mixed-page components"}
+  - {severity: "MAJOR", location: "Part 1 Question 2 evidence table", claimed: "Sula WIPS receivable Rs85cr (Dec-25) cited to SULA-Concall_Feb_2026_Transcript.txt p.9", source_truth: "p.11", note: "two pages off"}
+  - {severity: "MAJOR", location: "Peer coverage map, SULA Q2 FY26 row", claimed: "WIPS accrual/payout detail cited p.10-11", source_truth: "SULA-Concall_Nov_2025_Transcript.txt p.9", note: "wrong page"}
+  - {severity: "MAJOR", location: "Part 2C narrative + coverage map, SDBL Q3 FY26 row", claimed: "Rs570cr Phase 1 quote cited SDBL-Concall_Feb_2026_Transcript.txt p.4", source_truth: "p.3", note: "wrong page"}
+  - {severity: "MAJOR", location: "Part 2A/2E narrative + coverage map, SDBL Q1 FY27 row", claimed: "Madhya Pradesh disruption quote cited SDBL-Concall_Aug_2026_Transcript.txt p.4", source_truth: "p.3", note: "wrong page"}
+  - {severity: "MAJOR", location: "Coverage map, SDBL Q4 FY26 row", claimed: "SUBSTANTIVE, 'UP greenfield brewery commissioning and capacity detail'", source_truth: "no page/quote anchor given anywhere in the report body for this specific quarter", note: "content genuine but unanchored; Rule 2 violation"}
+  - {severity: "MAJOR", location: "Part 3 peer-presentation summary", claimed: "peer presentations used substantively throughout / SDBL two presentations CITED-ONLY", source_truth: "TI-Investor_Presentation_Q1FY27_2026-07-27.txt never mentioned; contains claim-relevant FTA duty-schedule corroboration for Question 6", note: "Rule 3 violation, unused-but-relevant"}
+  - {severity: "MINOR", location: "Part 1 Question 3 net read", claimed: "market-leader EBITDA benchmark understated by 5-15 points", source_truth: "re-derived range is 0.9 to 15.3 points depending on comparator quarter", note: "verdict unaffected, range imprecise"}
+  - {severity: "MINOR", location: "flags YAML, MARKET-SHARE-ARITHMETIC-CONTRADICTED", claimed: "implies 7.5-9.5% share", source_truth: "re-derived range is 7.81%-9.46%", note: "low end rounded down beyond the actual figure; immaterial"}
+  - {severity: "MINOR", location: "Part 2C narrative", claimed: "Sula's CFO did not dispute the [12% ROE] framing, attributing it instead to harvest seasonality of tanks and barrels, same page", source_truth: "the harvest-seasonality explanation (SULA-Concall_Nov_2025_Transcript.txt p.12-13) was given in response to an earlier asset-turnover question; the CFO's direct response to the 12%-ROE follow-up instead cited a base-year comparability issue and a forward 17-18% ROE target (p.13)", note: "same speaker, same general exchange, but the two explanations are conflated as one response"}
 critical_count: 0
-major_count: 6
-minor_count: 2
-acceptance_rate: 60
-coverage_note: "acceptance_rate computed on the 20 individual citations spot-checked against source page markers (12 correct / 20 = 60%), not on peer-level usage, which is 12/12 confirmed substantive. No fabricated quotes found; all mismatches are wrong-page or wrong-transcript anchors on real quoted material. All 5 B05 peer_questions received a verdict; no VERIFIED claim rests on fewer than the two-peer bar the report itself declines to claim; no unused-but-relevant peer material found on independent re-search."
+major_count: 8
+minor_count: 3
+acceptance_rate: 50
+arithmetic_verdicts_note: "The arithmetic-based CONTRADICTED verdicts were re-derived independently and HELD. The market-share calculation re-derives to 7.81-9.46% against the stage's stated 7.5-9.5%, and the EBITDA-benchmark gap to 0.9-15.3 points against the stated 5-15. Both are MINOR imprecision, not verdict failures. The substance of the rerun stands; the citation layer does not."

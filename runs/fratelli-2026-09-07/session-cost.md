@@ -25,3 +25,4 @@ its own stage. Phase 1 (evidence) only; phases 2 and 3 append their own lines.
 | 13 | synthesis-lite (phase 1, three files) | claude-opus-5 | default | n/a | n/a | 132686 | 6m49s | 1 |
 | 5 | concall analysis (5 transcripts) | claude-sonnet-5 | default | n/a | n/a | 310453 | 13m46s | 2 |
 | 6 | peer concall verification | claude-sonnet-5 | default | n/a | n/a | 202894 | 15m09s | 2 |
+| 12d | verifier D peer coverage (re-measure of stage 6 run 2) | claude-sonnet-5 | default | n/a | n/a | 140532 | 10m11s | 2 |

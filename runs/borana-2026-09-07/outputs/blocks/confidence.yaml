@@ -1,0 +1,22 @@
+stage: confidence-delta
+company: "BORANA"
+run_date: "2026-09-07"
+phase: 1
+confidence_delta:
+  numerical_acceptance: 89        # B12a, after orchestrator severity review (47 figures checked across all nine reports)
+  redflag_coverage: 33            # B12b, share of verifier-found flags already caught upstream: 8 full + 6 partial at half credit = 11 of 33
+  framework_adherence: 92         # B12c, Gate 0 + Emerging Moat portion only; the valuation half is deferred to phase 3
+  peer_utilisation: 100           # B12d, 12 of 12 peer transcripts substantively engaged
+  overall: 33                     # min of the four
+band: "FORCED REWORK"
+band_rule: "Orchestrator Section 5: overall >= 90 high confidence; 75-89 normal; 60-74 PROCEED verdicts downgrade one level; < 60 forced REWORK."
+rework_triggered: true
+rework_paths:
+  - "Confidence delta overall 33, below the 60 floor. Forced REWORK per Section 5."
+  - "B12b acceptance_rate 24, below the 60 threshold. Forced REWORK per the Section 4 rule that any verifier's acceptance_rate below 60% makes the verdict REWORK."
+rework_scope: "THE ANALYSIS, NOT THE COMPANY. Per orchestrator Section 4, this gate judges the pipeline, not the stock. It carries no view on whether Borana Weaves is a good or bad investment, and it does not halt the run."
+rework_locus: "Stage 5 (B05) BREADTH in no-concall mode. Verifier B found 33 independently-derived flags; 8 were fully caught upstream and 6 partially. Every CRITICAL it raised sits in a document B05 lists among its own sources, three of them in documents B05 quotes from for other purposes. B05's METHOD is sound: its promise-delivery discipline passed 5 of 5 spot checks and its hybrid-power slip-chain work was called the best single piece of analysis in either report. What was not done, in a degraded mode whose source set was explicitly widened to the annual report, the results and the announcements, was a disclosure-integrity pass reading those documents against each other and against the one call."
+verifier_notes:
+  b12a_field_note: "B12a acceptance_rate 89 is the schema's own definition, the share of upstream claims verified clean. One proposed CRITICAL was downgraded to MAJOR and one MINOR cleared on orchestrator source re-check; both logged as verifier disagreements."
+  b12b_field_note: "B12b placed its coverage figure (caught / found) in the acceptance_rate field. On the schema's definition of acceptance_rate, the share of upstream claims verified clean, B12b's own pipeline_flags analysis gives roughly 80%: of about 15 upstream flags it checked, 12 were supported, 2 not supported and 1 overstated. This note does not rescue the verdict and is not offered to: the confidence delta consumes redflag_coverage for B12b, which is 33 on the verifier's own arithmetic, so forced REWORK fires by the Section 5 path regardless of how the acceptance_rate field is read."
+  no_rerun_of_b05: "Stage 5 was NOT re-run against verifier B's findings. Feeding a verifier's own catch list back into the stage it audited would produce a falsely high coverage score on any re-measurement and destroy the standing evidence about whether the verification layer earns its cost. The 33 flags are preserved in outputs/reports/12b-verifier-redflags.md and carried into the Halt 1 dossier and the gate recommendation, so the operator loses no evidence. A scope re-run of stage 5 remains available on the operator's instruction."

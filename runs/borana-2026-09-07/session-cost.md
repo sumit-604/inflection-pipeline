@@ -20,3 +20,4 @@ with its own stage. Loop or retry runs get their own line with a run counter.
 | 12a | Verifier A numerical (coverage addendum) | claude-haiku-4-5 | default | 121500 | 4828 | 126328 | 3m38s | 2 |
 | 12c | Verifier C framework (phase-1 scope) | claude-opus-4-8 | default | 103400 | 4920 | 108320 | 7m48s | 1 |
 | 12d | Verifier D peer coverage | claude-sonnet-5 | default | 355800 | 11405 | 367205 | 6m44s | 1 |
+| 12b | Verifier B red flags | claude-opus-4-8 | default | 251100 | 12067 | 263167 | 18m48s | 1 |

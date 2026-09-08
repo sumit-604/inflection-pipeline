@@ -1,0 +1,38 @@
+stage: orchestrator-corrections
+company: "BORANA"
+run_date: "2026-09-07"
+note: "Source-fidelity corrections the orchestrator confirmed against the filings after a verifier raised them. Every downstream artifact, the Halt 1 dossier included, must carry the corrected fact, not the corpus's original framing. Two of the three originate in the operator-written manifest.yaml and companies/BORANA.md and propagated from there into B00 and several stage blocks."
+corrections:
+  - id: C1
+    subject: "Secretarial auditor churn, July 2026"
+    corpus_said: "manifest.yaml and companies/BORANA.md: 'Secretarial auditor resigned 24-Jul-2026 with no reason stated. A second resignation notice 29-Jul-2026, and a new secretarial auditor appointed the same day. Three filings in six days.' Carried into B00 input_gaps, B03, B05 (red_flags and flags, cited three times) and B08."
+    source_says: "There was ONE resignation, not two. The 24-Jul-2026 filing intimates the resignation of Mr Jitendrakumar Rewashankar Rawal with immediate effect. The 29-Jul-2026 filing opens 'In continuation of our intimation dated 24/07/2026 regarding resignation of Mr. Jitendrakumar Rewashankar Rawal' and reports that 'the Board of Director's at their meeting held Today, 29/07/2026 have noted the Resignation'. It is the Board minuting the same resignation, filed the same day as the successor's appointment. A routine two-step."
+    anchor: "announcements/2026-07-24_Reg30_resignation-secretarial-auditor.pdf p.1; announcements/2026-07-29_Reg30_resignation-secretarial-auditor-2.pdf p.1"
+    raised_by: "Verifier B (B12b, pipeline_flags_not_supported, severity MAJOR)"
+    confirmed_by: "Orchestrator re-read of both filings"
+    disposition: "GATE HELD - claim corrected at source. The 'two resignations' signal is withdrawn."
+  - id: C2
+    subject: "Reason for the secretarial auditor's resignation"
+    corpus_said: "'with no reason stated' (manifest.yaml, companies/BORANA.md, B00, and repeated downstream)"
+    source_says: "A reason IS stated, in the resignation letter enclosed with the 24-Jul-2026 filing: 'Due to pre-occupation with professional assignments and unavoidable professional commitments, I regret my inability to continue as the Secretarial Auditor of the Company.' The letter adds: 'I further confirm that there are no disputes, differences, or pending issues between me/us and the Company which have led to this resignation.'"
+    anchor: "announcements/2026-07-24_Reg30_resignation-secretarial-auditor.pdf p.3 (letter of resignation, dated 24.07.2026, C.P. No. 20283, Mem. No. A54651)"
+    raised_by: "Orchestrator, while verifying C1"
+    confirmed_by: "Orchestrator re-read of the enclosed letter"
+    disposition: "GATE HELD - claim corrected at source. 'No reason stated' is withdrawn."
+  - id: C3
+    subject: "Length of the secretarial auditor's mandate"
+    corpus_said: "B08 deal_breakers: 'Secretarial Auditor Jitendrakumar Rawal resigned 24-Jul-2026, ~15 months into a 5-year mandate commencing Apr-2025'. B12b repeated 'mid-term exit'."
+    source_says: "The resignation letter states the appointment was 'as the Secretarial Auditor of BORANA WEAVES LIMITED for the financial year 2025-26 and 2026-27', a TWO-year term, not five. The resignation falls in the second year of a two-year term."
+    anchor: "announcements/2026-07-24_Reg30_resignation-secretarial-auditor.pdf p.3"
+    raised_by: "Orchestrator, while verifying C1"
+    confirmed_by: "Orchestrator re-read of the enclosed letter"
+    disposition: "GATE HELD - figure corrected at source. B08's deal-breaker rests on a five-year mandate that the source does not support. The resignation is still an auditor resignation inside three years, so the deal-breaker is not withdrawn, but its stated basis is corrected and its weight is for the operator to reset at Halt 1."
+  - id: C4
+    subject: "FY26 annual report approval date"
+    corpus_said: "B05 sections 1C and 2D: AR approved 14-Aug-2026, 'seven months after the call'."
+    source_says: "'The financial statements for the year ended 31st March, 2026 were approved by the Board of Directors on 14th May, 2026' (stated twice in the AR). The interval from the 27-Jan-2026 call is 3.5 months, not seven."
+    anchor: "annual-report/Annual_Report_FY2026.pdf p.126"
+    raised_by: "Verifier B (B12b, pipeline_flags_not_supported, severity MINOR)"
+    confirmed_by: "Orchestrator re-read of the AR"
+    disposition: "GATE HELD - figure corrected at source. The underlying finding, that the margin driver management gave on the call is absent from the AR, is unaffected and stands."
+net_effect: "The July 2026 secretarial-auditor sequence is materially less alarming than the corpus record framed it: one resignation, a reason given, an explicit no-disputes confirmation, a two-year rather than five-year term, and a successor appointed within five days. That framing entered the run from the operator's own manifest and company memory and propagated into four stage blocks before a verifier caught it. It should be corrected in companies/BORANA.md and manifest.yaml as well as here. The correction does not touch the SEBI Section 11C(9) search, the board-overlap finding, the withheld internal audit reports, or the six unfurnished exchange letters, which are separately anchored and stand."

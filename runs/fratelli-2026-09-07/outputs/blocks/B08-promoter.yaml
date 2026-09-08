@@ -1,0 +1,53 @@
+stage: B08-promoter
+company: "FRATELLI"
+run_date: "2026-09-07"
+model: claude-sonnet-5
+status: partial
+input_gaps:
+  - "inputs/prospectus/ empty. Not a gap in the ordinary sense: wine business entered via Tinna Trade share-swap, no IPO. Pre-2024 group/family history is web/media-derived, not filing-anchored."
+  - "inputs/shareholding/ empty. Read directly from FY25/FY26 AR Corporate Governance distribution tables and SAST filings."
+  - "inputs/rating/ empty. inputs/research/ empty."
+  - "Q1FY27 concall transcript not published. CORPUS GAPPED-FRESHNESS; could not check if management addressed the Aug-2026 ownership consolidation on any call."
+  - "Fratelli Wines Pvt Ltd's own board composition (includes Mayank Singhal per external search) is not disclosed anywhere in the FY26 AR text; a primary-source disclosure gap, not a collection gap."
+  - "'Puja Sekhri is the widow of Kapil Sekhri' is a circumstantial inference (surname, son named Keshav Sekhri, 2024 board-appointment timing), not stated as fact by any single source found."
+flags:
+  - {type: FLAG-PROMOTER, verdict: "CAUTION", top_findings: ["Aug-2026 gift-transfer of 20.79% consolidates control into Bhupinder Kumar Sekhri, a non-board family patriarch, separating economic from operational control, with no stated business rationale beyond 'gift'", "Rs 663.03 lakh Section 270 misreporting-of-income penalty order, AY 2018-19, on appeal to CIT(Appeals)", "Directors' Report KMP remuneration table shows Rs 0.00 for two sitting Executive Directors (Puja Sekhri, Aditya Brij Sekhri) whom Note 33 shows were paid Rs 115.96 lakh and Rs 64.60 lakh respectively", "13+ promoter-group entities including unbenchmarked related-party land leases and an unresolved FY25 Rs 322.26 lakh Alessio Secci receivable that disappears from the FY26 note without explanation", "Second-largest shareholder Mayank Singhal (9.48%) is a Fratelli Wines Pvt Ltd subsidiary director and Gaurav Sekhri's co-director in TP Buildtech Pvt Ltd, undisclosed in the AR", "Independent director Sanjit Singh Randhawa held an unusual one-year term and resigned with a resignation letter stating no reason at all"]}
+verdict: "CAUTION"
+scorecard: {clean: 4, caution: 5, red: 1}
+deal_breakers: []
+adverse_findings:
+  - {finding: "Section 270 penalty order for misreporting of income, Rs 663.03 lakh, AY 2018-19, on appeal", evidence_tier: "VERIFIED", source: "Annual_Report_FY2026.pdf, Note 39(A)(iii) consolidated / Note 35(A)(iii) standalone", date: "AY2018-19; ITAT order 19-Sep-2025"}
+  - {finding: "KMP remuneration table (Directors' Report) shows Rs 0.00 for Puja Sekhri and Aditya Brij Sekhri, contradicted by Note 33 RPT actual payments of Rs 115.96 lakh and Rs 64.60 lakh", evidence_tier: "VERIFIED", source: "Annual_Report_FY2026.pdf, p.~66 Directors' Report table vs Note 33 consolidated p.181-183", date: "FY2025-26"}
+  - {finding: "Aug-2026 inter-se gift transfers move 20.79% of the company from Gaurav Sekhri (MD), Aarti Sekhri, Shobha Sekhri and Puja Sekhri to Bhupinder Kumar Sekhri, a promoter with no board seat, with zero stated rationale beyond 'gift'", evidence_tier: "VERIFIED", source: "2026-08-14 and 2026-08-21 inter-se-transfer-promoter-group.pdf; 2026-08-21_SAST-reg29-3-intimation.pdf", date: "14-Aug-2026 / 21-Aug-2026"}
+  - {finding: "Independent director Sanjit Singh Randhawa's appointment ran an unusual one-year term (13-Nov-2024 to 13-Nov-2025) versus every other independent director's 5-year term, and his resignation letter states no reason at all despite a filing certifying no other material reasons exist", evidence_tier: "VERIFIED", source: "2025-11-14_resignation-of-director.pdf; Corporate Governance Report, Annual_Report_FY2026.txt line 3942"}
+  - {finding: "Second-largest shareholder Mayank Singhal (9.48%) sits on the Fratelli Wines Pvt Ltd subsidiary board and is Gaurav Sekhri's co-director in TP Buildtech Private Limited, registered at Fratelli's own registered address; not disclosed in the AR", evidence_tier: "MEDIA/REGISTRY REPORTED", source: "Web search (MarketScreener, company-registry aggregators); cross-checked address against AR letterhead", date: "2026-09-08 search"}
+  - {finding: "13+ promoter-group entities (land, shipping, developer, trust vehicles) disproportionate to company size; four agro-entity landlords receive recurring unbenchmarked lease payments", evidence_tier: "VERIFIED", source: "Note 33 consolidated, Annual_Report_FY2026.txt lines 11034-11044"}
+  - {finding: "FY25 Alessio Secci 'Advance Given' Rs 294.58 lakh / 'Other receivables' Rs 322.26 lakh disappears from the FY26 balance column with no narrative explanation", evidence_tier: "VERIFIED", source: "Note 33 consolidated/standalone, lines 11058, 11127, 8126, 11888"}
+transition_evidence:
+  - "Zero promoter share pledge across both AR years on file; MD Gaurav Sekhri is a net lender to the Company at a market-adjacent ~10% rate (Note 33, FY25-26)"
+  - "Promoter-side Aug-2024 warrant allottees converted 100% of their allotment; the 65.1% forfeiture belongs entirely to 14 unrelated retail-scale allottees, not the family (2026-02-28_lapse-of-warrants.pdf)"
+  - "Three credentialed, independently-checkable non-family independent directors sit on the board: Adhiraj Amar Sarin (ex-MD Bunge India, ex-CEO Louis Dreyfus Commodities India), Rahul Rama Narang (listed-company board experience), Nakul Nitin Zaveri (Partner, LeapFrog Investments)"
+  - "Second-largest shareholder Mayank Singhal, Vice Chairman and MD of PI Industries Ltd, holds 9.48% and an operating board seat on the wine subsidiary -- a reputable outside industrialist's real economic and operating commitment, though undisclosed as such in the AR"
+  - "Promoter-group vehicle Sekhri Family Annuity Trust's on-market holding rose from 100 to 15,502 shares FY25 to FY26, consistent with accumulation, not distribution"
+pledge_pct_latest: 0
+pledge_trend: "stable at 0% across FY25 and FY26; no promoter share pledge found in either Annual Report (only routine fixed-deposit pledges against bank borrowings, unrelated to promoter shares)"
+searches_performed:
+  - "Bhupinder Kumar Sekhri Tinna Group promoter Fratelli Vineyards"
+  - "\"Tinna Rubber and Infrastructure\" SEBI order OR penalty OR fraud"
+  - "Kapil Sekhri Fratelli Wines founder Tinna"
+  - "Gaurav Sekhri Fratelli Vineyards SEBI OR insider trading OR fraud"
+  - "Fratelli Vineyards promoter stake transfer Bhupinder Sekhri rationale reason succession"
+  - "Fratelli Wines Glassdoor AmbitionBox employee reviews"
+  - "\"Tinna Trade\" NCLT OR default OR CIBIL OR loan default OR SEBI"
+  - "IiAS OR InGovern OR proxy advisory \"Fratelli Vineyards\" OR \"Tinna Trade\""
+  - "\"TP Buildtech Private Limited\" Sekhri"
+  - "Mayank Singhal Gaurav Sekhri director companies"
+  - "WebFetch zaubacorp.com TP Buildtech director detail (blocked by egress proxy)"
+searches_skipped:
+  - "Direct SCORES (SEBI complaints redressal) database query -- no tool access to that portal from this container"
+  - "Direct SEBI order-search / SAT order-search database query -- same constraint; general web search substituted, weaker negative evidence"
+  - "Dedicated news-archive search restricted to ET/Mint/Business Standard for investigative coverage -- triaged out after general searches returned no controversy signal"
+  - "Industry peer reputation (4E) -- out of scope for a time-boxed promoter check"
+  - "Direct Zauba/Tofler pages for TP Buildtech and Mayank Singhal -- blocked by network egress proxy; relied on search-engine synthesis instead"
+verdict_basis: "No SEBI/criminal/tax-fraud finding, zero pledge, zero promoter selling, and promoter-side warrants fully converted argue against CONCERN; but the unexplained Aug-2026 consolidation of 20.79% into a non-board patriarch, the Rs 663.03 lakh Section 270 misreporting penalty, the KMP remuneration disclosure defect, and an oversized, partly unbenchmarked promoter-group entity map together exceed a routine small-cap governance profile, landing at CAUTION."
+analyst_note: "The single highest-value finding this stage adds is the family map itself: Bhupinder Kumar Sekhri is Gaurav Sekhri's father and the late Kapil Sekhri's father (Kapil, Fratelli's founding MD, died in 2020); Puja Sekhri is inferred to be Kapil's widow. None of this is stated in the AR and required web reconstruction, which is why it is media-tier, not filing-tier. This reframes the Aug-2026 20.79% gift transfer from an opaque red flag into a plausible, but still unexplained and unmonitored, intra-family succession/estate move: shares flow from the operating generation up to the non-operating patriarch, not sideways or out of the family. Separately, correct the injected brief: Gaurav Sekhri's AR profile does not mention Bunge; the Bunge/Louis Dreyfus credential belongs to independent director Adhiraj Amar Sarin. Downstream stages should carry the corrected attribution and should treat the Mayank Singhal/TP Buildtech/Fratelli Wines board-seat finding as an open disclosure question for Halt 1, not a resolved fact either way."

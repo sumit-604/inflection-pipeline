@@ -1,0 +1,55 @@
+stage: B06-peers
+company: "BORANA"
+run_date: "2026-09-07"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "SANGAMIND transcript set has a ~15-month gap (Aug-2024 to Nov-2025); limits any read on Surat competitive dynamics or SANGAM's own margin trajectory across that stretch, though it does not block the FY26 policy-event questions (bracketed by the Nov-2025 and Apr-2026 calls)"
+  - "FILATEX-Data_Sheet.csv FY2020-24 gap did not block this stage; every margin figure used is sourced from a transcript or presentation, not the CSV"
+  - "No peer discloses a fabric-only or per-loom EBITDA margin (not even SANGAM, the one integrated yarn+fabric weaver), so Q1's core magnitude claim (23-25% margin) stays fundamentally untestable against this peer set"
+  - "No peer gives a capex-to-revenue ratio for water-jet looms or texturising machines specifically; the only quantified peer capex-efficiency benchmark (SANATHAN, Aug-2026) is for cotton-yarn spindles, a different machine class"
+flags:
+  - "[HIGH] BIS/QCO date discrepancy: Borana's CFO states the restriction was 'removed in December' (Q3FY26 call, 27-Jan-2026, p.5-6); FILATEX (Feb-2026 call, p.6), SANATHAN (Feb-2026 call, p.3) and a CRISIL analyst on FILATEX's Aug-2026 call all independently date the same event to November 2025"
+  - "[MEDIUM] Borana's CFO conflates anti-dumping duty and BIS/QCO certification as one action; peer evidence (FILATEX, SANATHAN, Feb-2026 calls) shows these are two separate, differently-timed regulatory instruments, and the PTY anti-dumping investigation was still open/unresolved as of Feb-2026"
+  - "[MEDIUM] Peer capex-efficiency benchmark (SANATHAN: Rs400cr capex for an 0.8-0.85x asset turn, i.e. ~1x) runs materially against Borana's claimed 2x-3x revenue-per-capex ratio for the capacity-doubling plan; cross-machine-class caveat applies (spindles vs. looms/texturisers)"
+  - "[MEDIUM] No peer margin, including the integrated fabric weaver SANGAM (blended ceiling ~13% FY29 aspiration), comes within half of Borana's 23-25% band; not a contradiction (no fabric-only comparable exists) but a real plausibility concern for the operator to weigh"
+  - "[LOW-MEDIUM] The larger FY26 industry shock (40-45% crude/feedstock spike from the Iran-Israel-US conflict, per FILATEX and SANATHAN) is absent from the Borana corpus entirely, which predates it; Borana's one-call margin narrative covers only the smaller, earlier of two FY26 industry shocks"
+peers_provided: 12
+verified:
+  - {claim: "POY prices and polyester-chain spreads moved as management described, quarter by quarter across FY25-FY26", peers: ["FILATEX", "SANATHAN"], anchor_count: 6}
+partially_verified:
+  - {claim: "Anti-dumping duty regime changes reconcile with the simultaneous BIS-restriction removal", peers: ["FILATEX", "SANATHAN"]}
+  - {claim: "Value-added production share versus Borana's stated 20-25%", peers: ["SANGAMIND", "SANATHAN"]}
+contradicted:
+  - {claim: "The BIS-certification import restriction on Chinese polyester yarn was removed in December 2025", contradicting_peer: "FILATEX, SANATHAN", quote_anchor: "FILATEX-Concall_Feb_2026 p.6 ('government had lifted BIS on November 12 or 13'); SANATHAN-Concall_Feb_2026 p.3 ('sudden removal of the BIS QCO requirements in November')"}
+  - {claim: "Realistic revenue-per-rupee-of-capex for new loom/texturising capacity is 2x-3x", contradicting_peer: "SANATHAN", quote_anchor: "SANATHAN-Concall_Aug_2026 p.9 ('an asset turn of about 0.8, 0.85')"}
+unverifiable:
+  - {claim: "23-25% EBITDA margin is achievable and durable in greige/grey-fabric weaving", peers_checked: ["FILATEX", "SANATHAN", "SANGAMIND"]}
+  - {claim: "Domestic man-made/synthetic fabric and technical-textiles segment growth rate supports a capacity doubling by March 2028", peers_checked: ["SANGAMIND", "SANATHAN", "FILATEX"]}
+  - {claim: "Peer observation of Borana Weaves gaining share or comparable new Surat weaving capacity", peers_checked: ["SANGAMIND"]}
+peer_coverage_map:
+  - {peer: "FILATEX", quarter: "Q2 FY26", usage: "SUBSTANTIVE", contribution: "Pre-shock baseline margin (H1 7.84%), MEG anti-dumping context"}
+  - {peer: "FILATEX", quarter: "Q3 & 9M FY26", usage: "SUBSTANTIVE", contribution: "Dates BIS/QCO lift to Nov 12-13 2025; textured-yarn ADD still under DGTR investigation"}
+  - {peer: "FILATEX", quarter: "Q4 & FY26", usage: "SUBSTANTIVE", contribution: "FY26 margin 8.33%; separates QCO shock from crude/Iran-Israel shock"}
+  - {peer: "FILATEX", quarter: "Q1 FY27", usage: "SUBSTANTIVE", contribution: "Analyst independently confirms 'QCO revocation in November'; margin recovery"}
+  - {peer: "SANATHAN", quarter: "Q2/H1 FY26", usage: "SUBSTANTIVE", contribution: "Pre-shock double-digit FY26 margin guidance (later narrowly missed at 9.1%)"}
+  - {peer: "SANATHAN", quarter: "Q3/9M FY26", usage: "SUBSTANTIVE", contribution: "Richest single source: BIS QCO removal dated November; FDY -10-12%, DTY unaffected"}
+  - {peer: "SANATHAN", quarter: "Q4/FY26", usage: "SUBSTANTIVE", contribution: "Margin recovery to 11.0%/8.1%, confirming Q3 dip was temporary"}
+  - {peer: "SANATHAN", quarter: "Q1 FY27", usage: "SUBSTANTIVE", contribution: "Margin sustained at 11.67%; asset-turn 0.8-0.85 capex benchmark"}
+  - {peer: "SANGAMIND", quarter: "Q4 FY24", usage: "SUBSTANTIVE", contribution: "53% value-added mix, ~10% blended margin baseline (distant from event window)"}
+  - {peer: "SANGAMIND", quarter: "Q1 FY25", usage: "SUBSTANTIVE", contribution: "60% value-added target confirmed (distant from event window)"}
+  - {peer: "SANGAMIND", quarter: "Q2 FY26", usage: "SUBSTANTIVE", contribution: "Confirms blended margin ceiling ~10%; silent on BIS/QCO despite timing"}
+  - {peer: "SANGAMIND", quarter: "Q4 FY26", usage: "SUBSTANTIVE", contribution: "FY29 target >13% blended margin; 304 weaving looms disclosed; silent on Borana/Surat"}
+industry_cross_read:
+  demand: "Consistently cautious/need-based/selective through FY26-Q1FY27 across all three peers; no peer describes a demand boom, but none contradicts Borana's unquantified 'structurally strong' framing either"
+  pricing_inputs: "Two distinct FY26 shocks: Nov-2025 BIS/QCO removal (10-12% price compression, partially reversing) and a March-2026 crude/Iran-Israel spike (40-45% feedstock cost jump); only the first appears anywhere in the Borana corpus"
+  capex_cycle: "Industry-wide moderate expansion (all three peers investing), not a lone expander situation, but Borana's proportional capacity-doubling plan is the most aggressive expansion in the peer set by a wide margin"
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "Crude/geopolitical (Iran-Israel-US, Strait of Hormuz) feedstock cost shock, absent from the Borana corpus which predates it (FILATEX-Concall_May_2026 p.4-5)"
+  - "MEG anti-dumping duty proposal as a live cost overhang through FY26 (FILATEX-Concall_Nov_2025 p.4; FILATEX-Concall_Feb_2026 p.4)"
+  - "Migrant-labour shortages disrupting production, linked to an LPG price spike (FILATEX-Concall_May_2026 p.7-8)"
+  - "Inventory/write-down risk during the QCO transition even for beneficiaries (SANATHAN-Concall_Feb_2026 p.6)"
+  - "USD-denominated PTA/MEG import hedging cost, ~Rs17.5-20cr/year at FILATEX's scale (FILATEX-Concall_May_2026 p.7)"
+net_narrative_effect: "complicates"
+analyst_note: "The single highest-value finding is that the BIS/QCO mechanism is real and industry-wide but Borana's own account of it (December, conflated with anti-dumping duty) does not match how two independent peers and a third-party analyst describe the same event (November, two separate policy tracks). This is a credibility ding on the explanation, not evidence the margin gain itself is fake - the direction and rough magnitude of the underlying price move are corroborated. The capex-efficiency contradiction (Q5) is the more consequential one for forward valuation since it bears directly on the doubling plan's revenue assumptions, though the machine-class mismatch (spindles vs. looms) means it is suggestive rather than dispositive."

@@ -8,3 +8,4 @@
 | 2 | notes pass 2 | claude-sonnet-5 | default | n/a | n/a | 171,948 | 8m32s | 1 |
 | 2 | notes pass 3 (consolidation, pass1 absent) | claude-sonnet-5 | default | n/a | n/a | 130,357 | 8m18s | 1 |
 | 2 | notes pass 3 (rerun, all 3 passes present) | claude-sonnet-5 | default | n/a | n/a | 123,372 | 6m12s | 2 |
+| 3 | AR backward deep dive | claude-sonnet-5 | default | n/a | n/a | 291,043 | 13m12s | 1 |

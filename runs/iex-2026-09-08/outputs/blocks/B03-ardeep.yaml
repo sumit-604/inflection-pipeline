@@ -1,0 +1,107 @@
+stage: B03-ardeep
+company: "IEX"
+run_date: "2026-09-08"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - type: rating
+    severity: NOT_A_GAP
+    detail: >
+      inputs/rating/ empty. IEX has no listed debt (Note 42/43 standalone/consol,
+      "does not have any debt outstanding," BSE Large Corporate non-qualification
+      13-Apr-2026). Unrateable by absence of rated debt, not by missed collection.
+  - type: research
+    severity: LOW
+    detail: "inputs/research/ empty. Broker notes are non-anchored, leads only."
+  - type: regulatory_order_text
+    severity: HIGH
+    detail: >
+      The CERC market-coupling order (23-Jul-2025), the APTEL judgment
+      (13-Feb-2026), and the two Supreme Court orders (11-May-2026, 27-Jul-2026)
+      remain absent from this corpus. The AR itself (Note 47/53, p.224/p.291)
+      narrates the timeline in full but gives zero rupee quantification; the
+      Chairman's letter and risk section assert "minimal impact" with nothing in
+      the audited Notes to support that assertion (Phase 6E finding). This is the
+      single highest-priority gap for Stage 11/FTTCP.
+  - type: screening_csv
+    severity: MEDIUM
+    detail: >
+      screener-Profit_Loss.csv, screener-Balance_Sheet.csv, screener-Cash_Flow.csv
+      and screener-Quarters.csv hold row labels and no values. Data_Sheet CSVs are
+      populated and were not needed by this stage, which read the AR directly.
+  - type: sector_cap_row
+    severity: MEDIUM
+    detail: >
+      The Section 1B cap table has no Market Infrastructure/Exchange row. Not
+      consumed by this stage; carried forward for Stage 11.
+  - type: prospectus_own
+    severity: NOT_A_GAP
+    detail: "IEX listed in 2017; its own IPO prospectus is not foundational for this run."
+  - type: image_only_pdfs
+    severity: LOW
+    detail: "Two SAST Reg 29(2) disclosures are scanned, non-extractable. Not needed by this stage."
+flags:
+  - "FLAG-REGULATORY-UNQUANTIFIED: market coupling, the single largest disclosed business risk, carries zero financial quantification anywhere in the audited Notes (Note 47/53), while a much smaller GST dispute (Note 39/38, Rs5.04cr) is fully quantified and assessed."
+  - "FLAG-GOVERNANCE-DISCLOSURE-CONFLICT: whistleblower investigation status stated as CONCLUDED with findings and remedial action (Board's Report, p.80) vs STILL ONGOING (Notes 46/49, CARO xi(c)), both approved by the same Board on the same date, 23-Apr-2026."
+phase_verdicts: {p1: "Clean", p2: "Watch", p3: "Watch", p4: "Red Flag", p5: "Clean", p6: "Watch", p7_best_fit: "GARP"}
+overall_quality: 7.5
+quality_components: {governance: 7, accounting: 7, balance_sheet: 9, earnings: 7}
+triple_pass_verification:
+  verified: 15
+  discrepancies:
+    - finding_rank: 4
+      triple_pass_value: "RTM volume share flagged as a third internal inconsistency / red flag (34% vs approximately 39-40%)"
+      ar_value: >
+        RESOLVED, not a discrepancy: two correctly labelled statistics on
+        different denominators (34%/39% of total volume including certificates,
+        AR p.25/p.62; 39%/44% of electricity-only volume, AR p.33/p.48), both
+        verified by arithmetic against the AR's own underlying BU figures.
+      note_ref: "AR p.17, p.25, p.33, p.48-49, p.62"
+missing_risks:
+  - {risk: "Single-customer revenue concentration (16.2% of FY26 revenue, Rs98.62cr, up from 15.65%, Note 28/27)", evidence_anchor: "Note 28 standalone p.211 / Note 27 consolidated p.273; absent from the Risks and Compliances section, AR p.61-64"}
+  - {risk: "REC/Certificates segment structural design risk (buyout-option draft cited by CMD as a possible driver of the FY27 collapse)", evidence_anchor: "Certificates revenue -27.7% YoY in FY26 itself (Note 28, p.211); no risk-section coverage anywhere in AR p.61-64; CMD comment, Concall_Jul_2026_Transcript p.41"}
+  - {risk: "Unexplained treasury-book reallocation (Level-1 TMF/FMP cut 96.7%, MLD fully exited, equity-index MF up 280%) on a book above Rs1,900cr", evidence_anchor: "Note 41 standalone p.214-215 / Note 40 consolidated p.280-281; not addressed in MD&A or risk section"}
+  - {risk: "Whistleblower governance matter entirely absent from the Risks and Compliances section despite being open at sign-off", evidence_anchor: "Note 46 standalone p.224 / Note 49 consolidated p.291; Risks section AR p.61-64 silent on it"}
+guidance_table:
+  - {claim: "Volume growth 15-20% every year", number: "15-20%", timeframe: "FY27, ongoing", credibility: "Mixed: Q1FY27 +15.9% (low end), June +12.5% (below band), July +7.7% (well below band), August +20.2% (top of band); Concall_Apr_2026_Transcript p.9"}
+  - {claim: "Market coupling DAM impact estimate", number: "20-40% (verbal, off-AR only)", timeframe: "Undated, contingent on final CERC regulations", credibility: "Never quantified in rupees or in the audited Notes; given once verbally under direct analyst questioning, Concall_Jul_2026_Transcript p.4-5"}
+  - {claim: "REC market confusion will clear, volumes will pick up", number: "Qualitative only", timeframe: "By end of FY27", credibility: "Not yet borne out: August 2026 print still -86.6% YoY, three months after the 'too early to comment' answer"}
+  - {claim: "Coal Exchange opportunity about 100 million tonnes in first year", number: "about 100 million tonnes", timeframe: "Contingent on operationalisation", credibility: "Too early to assess; incorporation (01-Jun-2026) ran faster than typical regulatory pace, a positive process signal only"}
+  - {claim: "IGX IPO", number: "22.28% OFS by IEX, no price band set", timeframe: "December 2026 target (company memory)", credibility: "DRHP filed 14-Jul-2026 on schedule procedurally; proceeds and valuation NOT FOUND anywhere in corpus"}
+monitorables:
+  - {metric: "Monthly electricity volume YoY growth", threshold: "Below 15% for 2 or more consecutive months", where: "Monthly Power Market Update filings (BSE/NSE Reg 30)", why: "Tests the 15-20% FY27 guidance after July's 7.7% miss and August's 20.2% recovery"}
+  - {metric: "REC volume YoY growth", threshold: "Continued decline beyond August's -86.6%", where: "Same monthly filings", why: "Tests whether management's 'confusion will clear' explanation materialises or is structural"}
+  - {metric: "Non-operating share of consolidated PBT", threshold: "Sustained above 25-30%", where: "Quarterly results, Other Income plus associate-pickup lines", why: "Tests continuation of the 23.4% (FY26) to 29.8% (Q1FY27) rise; caps the operating-multiple-eligible earnings base"}
+  - {metric: "Supreme Court hearing outcome / CERC final coupling regulations", threshold: "Any ruling or final regulation issued", where: "BSE/NSE announcements, CERC website (outside this corpus)", why: "The single event the entire risk narrative turns on; unresolved by this corpus"}
+  - {metric: "Whistleblower investigation resolution", threshold: "Any FY27 disclosure of findings or closure", where: "Next quarterly notes or FY27 AR", why: "Resolves the Board's Report vs Notes/CARO status conflict directly"}
+  - {metric: "Named/unnamed single-customer revenue share", threshold: "Continued rise beyond 16.2%", where: "Revenue note in FY27 results/AR", why: "Tests concentration risk in a nominally atomised exchange model"}
+ar_new_downstream_entities:
+  - name: "Indian Coal Exchange Limited"
+    where_in_ar: "Board's Report / Diversification narrative, front matter, AR p.34"
+    entity_type: "wholly owned subsidiary, newly incorporated 01-Jun-2026 (post FY26 close), first mention in an AR"
+strengths_top3:
+  - "Financially immaculate balance sheet and cash conversion: net cash about Rs2,087cr, zero conventional debt, 89.6% standalone CFO/PAT conversion, contingent liabilities 0.37% of net worth, a revenue-recognition KAM independently cross-checked against NLDC/RLDC/CERC volume data with no exceptions."
+  - "Clean, well-attended, professionally structured board with no promoter-extraction channel: no director below 85.71% attendance, zero pledge, POSH clean, CSR exactly matched to obligation, related-party dealings limited to KMP compensation governance."
+  - "Optionality (IGX IPO, ICX, Coal Exchange) is procedurally real and structured as low-capital equity or subsidiary bets consistent with the asset-light balance sheet, not debt-funded diversification."
+red_flags_top3:
+  - "The single largest business risk (market coupling, before the Supreme Court) carries zero financial quantification anywhere in the audited filing; the Chairman's letter and risk section assert 'minimal impact' with nothing in the Notes to support it (Phase 6E silent-drop finding)."
+  - "Three genuine cross-document contradictions inside one board-signed annual report: whistleblower status (Board's Report 'concluded' vs Notes/CARO 'ongoing'), MSME dues (Note 23/22 rising 462% vs Note 52/48 falling 42%, same balance sheet date), and a materiality asymmetry (Rs5.04cr GST dispute fully quantified vs the far larger coupling exposure entirely unquantified)."
+  - "A persistent, worsening, thinly-addressed REC volume collapse across every disclosed FY27 month (-81.4% Q1, -92.3% June, -56.3% July, -86.6% August, all YoY), layered on Certificates revenue already down 27.7% in FY26 itself."
+kill_switch_notes:
+  - "Informational only, never halts. The coupling case before the Supreme Court is the one external event that could reset the DAM franchise; the corpus holds no order text and the company has quantified nothing in writing."
+best_fit_strategy: "GARP"
+one_line_verdict: "Financially immaculate GARP compounder whose largest risk is confidently narrated but never priced in writing."
+analyst_note: >
+  Most consequential finding: the RTM/DAM volume-share "contradiction" B01/B02
+  flagged as unreconciled is RESOLVED this stage as two correctly labelled
+  statistics on different denominators, both verified by arithmetic against the
+  AR's own BU figures. Do not carry it forward as a red flag. What DOES carry
+  forward unmodified: the whistleblower status conflict, the MSME dues
+  contradiction, the wholly unquantified market-coupling exposure, the rising
+  non-operating share of PBT (23.4% to 29.8%), the persistent REC collapse across
+  four straight FY27 months, and the 6E finding that the Chairman's "minimal
+  impact" assurance has no counterpart anywhere in the audited Notes. None of
+  this touches the audit opinion or any audited total. All of it bears directly
+  on how much weight Stage 11/FTTCP should give management's own framing when
+  setting the exit multiple and entry zone. The regulatory_order_text gap (HIGH)
+  is this run's single highest-priority unresolved input.

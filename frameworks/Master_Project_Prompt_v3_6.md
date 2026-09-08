@@ -1094,6 +1094,13 @@ Position size rules (v3.5 — Conviction Outlier tier added):
 - The Conviction Outlier tier requires explicit written justification in the Role 2 output including: which four gating conditions are met and how, which fifth-book (or more) Sector Literacy entries qualify, and why the position size is 12-15% rather than 10% (i.e., why Large is not sufficient).
 - The Role 1 dispersion sizing cap (v3.5, Section 4H-pre) also binds: fair value range width 40-80% caps at Medium, above 80% caps at Small, regardless of conviction. **The dispersion cap binds the Conviction Outlier tier too: a fair value range width above 80% bars Conviction Outlier sizing regardless of the gating conditions.** The tightest cap wins.
 
+**Fast-growth carve-out (Section 1B v3.9 Amendment 25).** A name is FAST-GROWTH when its Amendment 21 run-rate growth is ≥ 40% YoY OR its FTTCP Revenue Transition verdict is ACCELERATING (state the flag and its basis in the Role 2 output). For a fast-growth name the margin of safety is expressed as POSITION SIZE, not as a price haircut below fair value, and the size follows the Role 1 price-decomposition tiers (Amendment 24: T1 confirmed, T2 high-probability, T3 speculative, residual):
+- **Starter (2-3%):** when T1 + T2 ≥ 75% of CMP and the residual ≤ 25% of CMP. The "pay a small price to be in" entry; no add until Expectation Ledger items confirm.
+- **Add ladder:** +1 to +2% on each ledger item that CONFIRMS (moves T2/T3 → T1), up to Medium (4-6%) when T1 alone ≥ 60% of CMP, and Large (7-10%) only when T1 ≥ 80% of CMP AND Gate 0 EXCELLENT AND Promoter TRUSTWORTHY or better.
+- **Trim ladder:** trim 25% of the position for each ledger item that DECAYS (Amendment 23); trim 50% if the residual exceeds 40% of CMP after a decay.
+- **Residual cap:** a residual above 25% of CMP caps the verdict at Starter regardless of conviction. Exit (thesis-broken) triggers are unchanged and absolute.
+- Non-fast-growth names keep the price-based margin of safety and the tiers above unchanged. This carve-out corrects the sizing for inflection names only; it does not weaken the framework for steady compounders. The dispersion cap, the Promoter cap, and the Sector Literacy gate continue to bind the fast-growth ladder's ceiling; the tightest cap wins.
+
 ## SECTION 8: QUARTERLY MONITORING CHECKLIST
 
 | # | What to Check | Where to Find It | Green Signal | Red Signal |

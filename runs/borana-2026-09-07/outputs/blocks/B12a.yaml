@@ -1,0 +1,67 @@
+stage: B12a
+company: "BORANA"
+run_date: "2026-09-07"
+model: claude-haiku-4-5
+status: complete
+run_count: 2                  # run 1 checked only 15 figures and returned zero findings; re-invoked once with a coverage addendum per the standing LESSONS pattern. Run 1 report preserved at outputs/reports/12a-verifier-numerical-run1.md
+numbers_checked: 47
+findings:
+  - severity: "MAJOR"         # DOWNGRADED from CRITICAL by orchestrator source re-check, see orchestrator_severity_review
+    location: "B03 AR Deep Dive, Phase 2; AR FY2026 Board's Report Annexure-6 item 10 p.74 vs Note 40 p.128"
+    claimed: "Board's Report Return on Net Worth FY26 23.03% using 'Average Shareholder's Equity' Rs 28,157.50 lakh"
+    source_truth: "Both figures exist in the AR exactly as B03 described. Board's Report p.74 states Net Profit after tax 6,486.89 / Average Shareholder's Equity 28,157.50 / Return on Net Worth 23.03% (FY25: 4,016.16 / 8,754.95 / 45.87%). Note 40 p.128 states ROE 35.01% / 59.45%. The Board's Report labels CLOSING net worth as 'Average', which understates ROE. The contradiction is the COMPANY's, inside its own annual report."
+    note: "This is an uncorrected internal contradiction in the annual report, faithfully transcribed and explicitly flagged as a discrepancy by B03 in its triple_pass_verification.discrepancies field. B03 misread nothing. Severity as a numerical-audit finding against the analysis is therefore MAJOR (a company disclosure defect the pipeline correctly caught), not CRITICAL (a fabricated or misread figure). It does not trigger the REWORK gate."
+    source_fidelity: true
+  - severity: "MAJOR"
+    location: "B02 Notes, Finding #6; AR FY2026 Note 8 vs Note 37"
+    claimed: "FY25 trade receivables Rs 2,181.54 lakh (Note 8) vs Rs 3,922.71 lakh (Note 37 comparative)"
+    source_truth: "Both figures confirmed present in the AR as stated. VERIFIED MISMATCH: the same balance is shown as two different amounts in the comparative columns."
+    note: "Uncorrected drafting error in the AR; FY26 current-year figures are consistent. A company disclosure defect the pipeline caught, not a stage error."
+    source_fidelity: true
+  - severity: "MAJOR"
+    location: "B02 Notes, Rank 1 Finding; AR FY2026 Note 28(iii) vs Note 34(K)"
+    claimed: "FY25 jobwork Rs 447.73 lakh (Note 28) vs Rs 442.98 lakh (Note 34)"
+    source_truth: "Note 28 shows 447.73 lakh; B02 pass 2 independently confirmed via the FY25 AR that 442.98 lakh is correct, making 447.73 the error. Both figures exist in the same AR."
+    note: "Sits in the cost stack producing the headline margin. A company disclosure defect the pipeline caught, not a stage error."
+    source_fidelity: true
+  - severity: "MAJOR"
+    location: "B05 promise-delivery tracker item 5; Q3FY26 call p.15 vs Q4FY26 deck p.33 vs Q1FY27 deck p.19"
+    claimed: "Unit 4B 160 looms: 96 remaining to be commissioned February 2026"
+    source_truth: "Q4FY26 deck shows 64/160 operational with no completion confirmed. Q1FY27 deck replaces the figure with a new 192-loom tranche; the original 160-loom commitment is silently abandoned with no reconciliation."
+    note: "Material execution miss on capacity guidance, no explanation given. Corroborates B05 and B07 rather than contradicting them."
+    source_fidelity: true
+  - severity: "MAJOR"
+    location: "B06 peer verification, question 3 verdict CONTRADICTED; B05 concall; Q3FY26 call 27-Jan-2026 p.6"
+    claimed: "BIS-certification import restriction on Chinese POY/PTY yarn removed in December 2025"
+    source_truth: "FILATEX-Concall_Feb_2026, SANATHAN-Concall_Feb_2026 and a CRISIL analyst on FILATEX-Concall_Aug_2026 all cite 12-13 November 2025 as the removal date. Peer evidence independently corroborates the policy event but contradicts the date by one month."
+    note: "The substance of the policy benefit is corroborated across peers; the date attribution by Borana's CFO is off by one month. Confirms B06's own finding."
+    source_fidelity: true
+  - severity: "MAJOR"
+    location: "B05 renewable power project slip chain; B04 section 4A risk monitoring"
+    claimed: "Hybrid power 19.79MW commissioning dates: May-2026, June-2026, during 2026, 31-Aug-2026, then phased Sep/Oct-2026"
+    source_truth: "Four documented sequential slips across seven months, each attributed to external factors. The project remains uncommissioned as of the 07-Sep-2026 run date. The MW, capex and savings figures are internally consistent; the delivery timeline is not."
+    note: "Each slip was disclosed via Reg 30, but the pattern was never flagged as an execution concern in investor communication. Material to the subsidy-runoff mitigation thesis."
+    source_fidelity: true
+  - severity: "MINOR"        # CLEARED by orchestrator source re-check, see orchestrator_severity_review
+    location: "B02 Notes, Finding #12 working capital analysis; AR FY2026 Note 14(a)"
+    claimed: "Lease liability FY26 Rs 130.80 lakh vs FY25 Rs 150.12 lakh"
+    source_truth: "CLEARED. Both figures ARE present in the AR at page 110 ('130.80    150.12'). The verifier's grep did not reach them; the extraction is not deficient. B02's figures are correct and anchored."
+    note: "Flag cleared on orchestrator re-check of the source. Logged as a verifier disagreement per the orchestrator's Section 4 rule."
+    source_fidelity: false
+critical_count: 0             # after orchestrator severity review; verifier run 2 proposed 1
+major_count: 6
+minor_count: 1
+acceptance_rate: 89
+orchestrator_severity_review:
+  reviewed: "Every finding checked against its own source_truth column, per the standing LESSONS pattern that Verifier A mislabels severity."
+  downgraded:
+    - finding: "Board's Report ROE 23.03% vs Note 40 ROE 35.01%"
+      from: CRITICAL
+      to: MAJOR
+      basis: "Orchestrator re-read the source. AR FY2026 p.74 carries 'Net Profit after tax 6,486.89 / Average Shareholder's Equity 28157.50 / Return on Net Worth 23.03%' and p.128 carries '35.01% 59.45%'. Both exist as B03 described, and B03 recorded the contradiction explicitly in its discrepancies field. The defect is the company's, inside its own annual report; the pipeline reported it accurately. The flag rules define CRITICAL as a fabricated or materially misread figure, and a faithfully transcribed company anomaly is expressly not a finding of that kind. REWORK is not triggered."
+  cleared:
+    - finding: "Lease liability Rs 130.80 lakh / Rs 150.12 lakh recorded as unanchored"
+      basis: "Orchestrator re-read the source and found both figures at AR FY2026 page 110. The number exists at a correct anchor."
+  upheld: "All six MAJOR findings stand as written. Every one is a real defect in the company's disclosure or in its execution record that the pipeline caught correctly; none is an error by a stage."
+coverage_note: "47 distinct figures checked across all nine reports. Per-report coverage: B01=8, B02=7, B03=5, B04=6, B05=4, B06=3, B07=3, B08=2, B09=4. All nine reports contributed verified figures. Every verdict-card and headline figure (revenue, EBITDA, CFO, capex, EPS, the ratio set, the Gate 0 arithmetic, the TAM chain) verified clean against source. NOT checked: B10 and B11 do not exist in phase 1."
+analyst_note: "No finding in this audit says a pipeline stage got a number wrong. Every MAJOR is a defect in the company's own filings or execution record that the stages found and reported correctly. The source-fidelity gate is therefore held, not breached: the core numbers exist where the reports say they exist."

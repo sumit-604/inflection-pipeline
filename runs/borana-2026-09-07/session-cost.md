@@ -16,3 +16,5 @@ with its own stage. Loop or retry runs get their own line with a run counter.
 | 6 | Peer concall verification | claude-sonnet-5 | default | 150500 | 9160 | 159660 | 11m01s | 1 |
 | 7 | Emerging moat scan (22 categories) | claude-sonnet-5 | default | 137100 | 8724 | 145824 | 8m48s | 1 |
 | 9 | TAM SAM SOM (web search) | claude-sonnet-5 | default | 220800 | 10866 | 231666 | 17m59s | 1 |
+| 12a | Verifier A numerical | claude-haiku-4-5 | default | 101800 | 3870 | 105670 | 2m18s | 1 |
+| 12a | Verifier A numerical (coverage addendum) | claude-haiku-4-5 | default | 121500 | 4828 | 126328 | 3m38s | 2 |

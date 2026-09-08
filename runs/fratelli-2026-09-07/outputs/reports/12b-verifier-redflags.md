@@ -1,565 +1,649 @@
-# STAGE 12B — VERIFIER B: INDEPENDENT CONCALL RED-FLAG AUDIT
+# VERIFIER B — INDEPENDENT CONCALL RED-FLAG AUDIT
 
-Company: FRATELLI VINEYARDS LIMITED (BSE 541741)
-Run: runs/fratelli-2026-09-07
-Verifier: B (concall red flags), Opus, fresh context
-Date: 2026-09-08
+Company: FRATELLI VINEYARDS LTD. Run: runs/fratelli-2026-09-07. Date: 2026-09-08.
+Model: opus. Emits B12b.
 
-Method. I read all five Fratelli transcripts and the twelve peer transcripts first
-and built the list below with no sight of B05 or B06. I then read the two upstream
-blocks and scored coverage. Every claim on a call that could be tested was tested
-against the filed results in the corpus. Page numbers are PDF pages.
+METHOD. I read the five company transcripts and the four SULA transcripts in full, and
+grepped the eight TI/SDBL transcripts for wine, RTD and market-share content (TI carries
+zero wine or RTD references; SDBL carries two). I built the red-flag list below from the
+raw transcripts and the six results filings ALONE, before opening any upstream artifact.
+Only after that list was closed did I read B05-concall (md + yaml) and B06-peers (md +
+yaml), both run-2 files. I did not read the archived -run1 artifacts.
+
+ANCHOR CONVENTION. Every page number below is the PDF page, meaning the content that
+FOLLOWS a `===== PAGE N =====` marker in the work/text mirror. B05 mixes this convention
+with the transcripts' own printed footer numbers (which run one page low); B06 uses PDF
+pages throughout and had already corrected two B05 anchors on that basis. See MINOR
+finding M6.
+
+SOURCE ACCESS NOTE. B06 cites six peer INVESTOR PRESENTATIONS (SULA Q4FY26/Q1FY27, TI,
+SDBL) that were not in my input set. Where a B06 finding rests only on a presentation
+(Sula Own Brands revenue Rs511.1cr, Sula FY26 PBT Rs35.4cr, Sula EBITDA margins, Sula FY26
+WIPS accrual Rs48cr), I could not re-verify it and say so explicitly rather than judging it.
 
 ---
 
-## PART 1 — INDEPENDENT RED-FLAG LIST
+## PART 1: INDEPENDENT RED-FLAG LIST
 
-### 1A. The FY26 EBITDA claim does not survive the audited accounts
+Twenty-nine red-flag-grade items, grouped at roughly the granularity a stage report uses.
+Every item is anchored to a PDF filename and page, or to a results filing.
 
-**I-1. CRITICAL-GRADE. FY26 "operating breakeven" is not reconcilable to the
-audited consolidated P&L.**
+### A. Guidance and forecasting
 
-Gaurav Sekhri, Q4FY26 call, 02-Jun-2026, p.3:
-> "I am pleased to share that we closed FY '26 on a strong note with a growth of
-> 13% year-on-year in quarter 4. We achieved breakeven at the operating profit
-> level, reporting a positive EBITDA of INR1.06 crores."
+**R1. FY26 revenue guidance walked down four times inside one fiscal year, then missed
+even the final walk-down.**
+- Q4FY25 p.12: "we are fairly confident that we will achieve this year about 20% to 25%
+  growth... my revenue guidance for this financial year is about INR 250 crores."
+- Q1FY26 p.11: "we are firm this year that we will deliver 15% to 20% top line growth."
+- Q2FY26 p.9: "we are confident of achieving between 12% to 15% growth."
+- Q3FY26 p.14: "the outlook for the year will be to end at roughly 7% revenue growth."
+- Delivered: FY26 audited consolidated revenue Rs18,128.65 lakh = Rs181.29cr
+  (Results_Q4FY26_and_FY26_2026-05-30, p.16). Management's own characterisation: "growth
+  of approximately 1%" (Q4FY26 p.6).
 
-Repeated by him at p.12: "we are at INR185 crores in this financial year, we have
-achieved an operating breakeven with INR1 crores EBITDA profit."
-Aditya Sekhri, same call, p.6: "EBITDA improved marginally to INR1 crores in FY26."
+**R2. Two different FY26 guidance numbers on the SAME call, five pages apart.**
+Q2FY26 p.9 "between 12% to 15% growth" versus Q2FY26 p.14 "about 10% to 15% this year
+versus last year." Different analysts, same call, different answer.
 
-Audited consolidated FY26 (Results_Q4FY26_and_FY26_2026-05-30.pdf p.16):
-loss before tax Rs (2,666.30) lakh; finance cost Rs 1,326.44 lakh; depreciation
-Rs 883.73 lakh; other income Rs 321.62 lakh.
-- FY26 EBITDA including other income = **-Rs 4.56 cr**
-- FY26 EBITDA excluding other income = **-Rs 7.78 cr**
-- Claimed: **+Rs 1.06 cr**. Gap of Rs 5.6 cr to Rs 8.8 cr.
+**R3. The Rs250cr guide explicitly EXCLUDED Shotgun; FY26 was then carried entirely BY
+Shotgun while the core shrank.**
+Q4FY25 p.12: "this is not including the Shotgun product launch. That will be on top. So my
+revenue guidance for this financial year is about INR 250 crores." Outcome: bottles volume
+"a flat number" for H1 (Q2FY26 p.17); premium portfolio, "more than 40% of our revenue,"
+declined 15-16% for FY26 (Q4FY26 p.4 and p.12); Shotgun contributed Rs18cr (Q4FY26 p.8).
+An ex-Shotgun target of Rs250cr was met by a company whose ex-Shotgun revenue FELL.
 
-The claim reconciles only by (a) excluding the holdco segment, which carried a
-FY26 segment result of -Rs 5.21 cr (Results_Q1FY27_2026-08-11.pdf p.9, "All other
-reportable segments"), and (b) adding back Rs 3.22 cr of unallocable other income.
-Neither adjustment is stated on the call. Direction of travel is also reversed:
-consolidated FY25 EBITDA was -Rs 1.82 cr (LBT -2,269.40 + finance 1,357.69 +
-depreciation 729.96), so consolidated EBITDA **deteriorated** by Rs 2.7 cr in the
-year management described as "improved marginally."
+**R4. FY27 30% growth guidance was already missing in its first quarter, and that quarter's
+transcript was never published.**
+Q4FY26 p.7: "our guidance for this financial year of FY27 is to deliver a growth of
+approximately 30%"; p.12: "You will, I hope, begin to see this growth even from Q1 onwards."
+Filed Q1FY27 (Results_Q1FY27_2026-08-11, p.7): revenue Rs4,471.51 lakh vs Rs3,650.67 lakh =
++22.5%, with a loss before tax of Rs495.98 lakh still. The Q1FY27 call was held 14-Aug-2026;
+no transcript was filed, breaking a practice honoured for all five prior quarters
+(transcripts filed 6-Jun-2025, 18-Aug-2025, 26-Nov-2025, 20-Feb-2026, 4-Jun-2026). The
+disclosure practice broke in the exact quarter the new guidance first went against
+management. All three peers published their Q1FY27 transcripts.
 
-**I-2. A full-year figure was presented as a Q4 achievement, and the Director
-gave the opposite sign for the same quarter minutes later.**
+**R5. Breakeven revenue threshold is a moving target.**
+Q2FY26 p.9: "for Fratelli, that number is around INR 210 crores, INR 215 crores of top
+line." Q3FY26 p.8: "it will reach a net-net breakeven within the coming year." Q4FY26 p.12:
+"we achieve a net-net breakeven at around INR240 crores."
 
-The CMD's sentence places "positive EBITDA of INR1.06 crores" immediately after
-"13% year-on-year in quarter 4," which reads as a Q4 result. Aditya Sekhri, same
-call, p.5: "At the operating level, EBITDA loss reduced significantly to INR3.7
-crores, compared to a loss of INR7 crores in Q4 FY25." Q4FY26 was an EBITDA
-**loss**. Audited Q4FY26 consolidated: LBT -948.69, finance 332.88, depreciation
-211.80 → EBITDA -Rs 4.04 cr. Every analyst on the call then congratulated
-management "on getting the EBITDA profitability" (Deepesh Sancheti, p.6). No one
-noticed the two figures were opposite in sign.
+**R6. The FY27 EBITDA margin guide was dropped without a word, and an analyst's 20% target
+was neither confirmed nor corrected.**
+Q3FY26 p.8: "around 10% to 12% EBITDA margin can be expected in the immediate future" —
+confirmed for FY27 on the next line; p.14 "targeting about 10% EBITDA for next financial
+year." On the Q4FY26 call the 10-12% figure is never repeated. Instead Gaurav frames FY27 as
+"net-net breakeven at around INR240 crores" (p.12), which implies materially less. When
+Chetan opens with "on EBITDA, it is still lower than our target of around 20%" (Q4FY26 p.10),
+Gaurav answers "it is just a function of scale" and neither adopts nor disowns the 20%.
 
-**I-3. FY26 revenue quoted above the audited number, on a basis change never
-disclosed.** Call p.6: "INR184 crores in FY26 compared to INR181 crores in FY25,
-representing growth of approximately 1%"; p.12: "we are at INR185 crores." Audited
-consolidated FY26 revenue from operations = Rs 181.29 cr; the wine subsidiary's own
-audited revenue = Rs 181.20 cr (auditor's Other Matters, p.15). Audited consolidated
-FY25 = Rs 302.10 cr, so the group top line **fell 40%**. The Rs 181 cr FY25
-comparator is wine-only. Growth on a like-for-like wine basis is +0.1%, not 1%.
+### B. Evasion and question handling
 
-### 1B. Guidance
+**R7. Repeated evasion on the cost structure, the single input the whole margin thesis
+rests on. Two quarters, verbatim the same excuse.**
+Q1FY26 p.9, asked to quantify the cost-optimisation benefit: "I think it is a little
+sensitive. We consider that information to divulge in that kind of detail."
+Q4FY26 p.15, asked for the components of the Rs35-36cr employee cost and Rs85-86cr other
+expenses: "Ma'am, many of the things we consider sensitive. So, we will not go into too
+much detail on a call like this."
+Same thread also deflected at Q2FY26 p.11, Q3FY26 p.7, Q4FY26 p.10.
 
-**I-4. CRITICAL-GRADE. Five downward revisions of FY26 guidance across four calls,
-none acknowledged as a revision.**
+**R8. Repeated evasion on Shotgun unit economics, including a disclosure promise that came
+due and was not kept.**
+Q1FY26 p.9, asked how many RTD cases had been sold: "I will not be commenting on that as of
+now." Q3FY26 p.11: "The monthly run rate and some of the statistics exactly of the progress,
+I'd be happy to share once the financial year has ended." The financial year ended; the
+Q4FY26 call gave a case count and a revenue figure and no run rate, no margin, no repeat
+rate. Separately, the Q3FY26 p.11 promise of "a revenue contribution of... INR20 crores by
+year-end" delivered Rs18cr (Q4FY26 p.8), unremarked.
 
-| Date | Call | Guidance | Anchor |
+**R9. "Your audio is not clear" used to sidestep the only balance-sheet-strength question
+asked in five calls.**
+Q2FY26 p.12, Smith Gala: "the balance sheet at this point in time does not show that kind
+of strength." Gaurav, twice: "Your voice sort of comes and goes. So, I didn't fully
+understand your question" and then "Again, your audio is not very clear. But I think when
+it comes to innovation, I think you were sort of talking about how one company can
+innovate to have more reach." He answers a question about innovation. The balance-sheet
+question is never answered, on that call or any other. The same participant's first
+question, about being more proactive on regulatory events, drew the same "your voice sort
+of comes and goes" opener.
+
+### C. Claims that do not survive the company's own numbers
+
+**R10. The headline market-share claim is not reconcilable with the market size management
+itself gave on the same transcript set.**
+Share claimed: "approximately 30%" (Q4FY25 p.3), "roughly one-third" (Q1FY26 p.5),
+"Fratelli Wines now is 1/3 of the Indian wine market" (Q2FY26 p.3), "roughly 31% for the
+9-month period" (Q3FY26 p.14). Market size given by the same management: "the current market
+size for the Indian wine industry, not inclusive of RTDs, is roughly Rs.1,000 crores for the
+domestic market" (Q1FY26 p.7). Fratelli's own FY26 revenue of Rs181.29cr against its own
+Rs1,000cr denominator is 18%, not 31-33%. No external TAM is needed to expose this; both
+numbers come from management.
+
+**R11. The "85% or 90%... duopoly" claim (Q1FY26 p.14) is asserted with no source on any
+call, and does not survive the revenue ratio.**
+Sula's 9M FY26 revenue was Rs454cr (SULA Feb 2026 p.9) against Fratelli's 9M Rs145.98cr
+(Results_Q3FY26_2026-02-12, p.10) — 3.1x. An analyst put "our industry leader with 60%
+market share" to Sula's management, who moved past it without dispute (SULA Nov 2025 p.13).
+60% plus Fratelli's claimed 31% would be 91%, but the revenue ratio between the two is
+about 76:24.
+
+**R12. The RTD market-size, case-count, share and revenue figures management gives are
+mutually incompatible, all on one call.**
+Q4FY26 p.8: the market is "over 1 million cases"; the market size "is already INR500 crores";
+Shotgun sold "approximately 100,000 cases"; Shotgun revenue "roughly about INR18 crores."
+That is 10% share by cases, 3.6% by value, against a separately claimed 6% share (Q2FY26
+p.3). Rs500cr over 1m cases is Rs5,000 a case; Fratelli's own realisation is Rs1,800 a case.
+At Fratelli's realisation the 1m-case market would be Rs180cr, not Rs500cr. Three
+incompatible share readings and a 2.8x realisation gap, in one answer, unchallenged.
+
+**R13. RTD TAM and growth rate drift across five calls with no consistent basis, and the
+authority cited is a newspaper.**
+TAM: "$150 million" (Q4FY25 p.5) → "Rs.400 crores addressable market in wine RTD" (Q1FY26
+p.4) → Rs500cr accepted uncorrected from two analysts (Q2FY26 p.6, p.12) → "approximately
+between INR500 crores to INR600 crores" (Q4FY26 p.7).
+Growth: "poised to grow at 20%" (Q2FY26 p.3) → "15% to 20%" (Q2FY26 p.6) → "growing at a
+speed of almost 30% quarter-on-quarter" for two years (Q3FY26 p.13) → "about 25% year-on-
+year" (Q4FY26 p.7). 30% QoQ compounds to roughly 186% a year and contradicts the company's
+own 15-25% YoY figures.
+Source: Q2FY26 p.3 and p.6 both attribute the market growth rate to "a recent article
+published in the newspaper."
+
+**R14. Segment definitions and denominators shift call to call, and the premium-decline
+figure moves inside single calls.**
+Luxury contribution: 6% of top line (Q1FY26 p.4) → "Luxury and Super, total contribution is
+13%" (Q2FY26 p.14) → "the luxury category are only roughly 7% of our overall revenue"
+(Q3FY26 p.9). Luxury share: "more than 50%" (Q2FY26 p.4) → "more than 55%" and "north of
+55%" (Q3FY26 p.12, p.15) → back to "more than 50%" (Q4FY26 p.8). Premium & above base
+switches between "our revenue" and "our bottle business revenue" (Q3FY26 p.3 vs Q4FY26 p.3).
+Premium decline: "roughly approximately around 10% for the year" (Q3FY26 p.7) then "down
+about 13% to 14%" (Q3FY26 p.15) on the same call; "declined 16% year-on-year" (Q4FY26 p.4)
+then "a decline of roughly 15%" (Q4FY26 p.12) on the same call.
+
+**R15. Q4FY26 headline growth rate overstated by rounding, and three different FY26 revenue
+figures given on one call.**
+Claim: "increasing to INR36 crores in Q4 FY26 from INR32 crores in Q4 FY25, representing a
+growth of approximately 13%" (Q4FY26 p.5). Filed: Rs3,530.31 lakh vs Rs3,192.12 lakh =
++10.6% (Results_Q4FY26_and_FY26, p.16). FY26 revenue is given as "INR184 crores" (p.6) by
+Aditya and "we are at INR185 crores in this financial year" (p.12) by Gaurav, against a
+filed Rs181.29cr.
+
+**R16. "Our business has turned EBITDA positive in Q2" when the prior-year quarter was
+already positive.**
+Q2FY26 p.4 makes the claim; p.5 of the same call gives "Q2 EBITDA stood at INR 1.47 crores,
+compared to INR 1.32 crores in Q2 FY '25." The year-on-year gain was Rs0.15cr.
+
+**R17. The Q4FY26 opening remarks place a full-year EBITDA figure immediately after a Q4
+sentence, so it reads as a positive quarter. The quarter was a loss.**
+Gaurav, Q4FY26 p.3: "we closed FY '26 on a strong note with a growth of 13% year-on-year in
+quarter 4. We achieved breakeven at the operating profit level, reporting a positive EBITDA
+of INR1.06 crores." Aditya, same call p.5: "At the operating level, EBITDA loss reduced
+significantly to INR3.7 crores." The Rs1.06cr is the FY figure; Q4 was a Rs3.7cr loss. The
+CMD's framing inverts the quarter.
+
+### D. Balance sheet, capital and disclosure silence
+
+**R18. Debt rose about 20% while management said the capex cycle was done and it would not
+take more debt; no debt figure was given at all on the last two calls.**
+Q4FY25 p.14: "borrowings of around INR100 crore." Q1FY26 p.16: "Rs.30 to 35-odd crores term
+debt... approximately Rs.70-odd crores of working capital." Q2FY26 p.8: "approximately INR
+120 crores of total debt" and, on the same page, "We are not intending to take any more
+substantial debt on our balance sheet." Filed 31-Mar-2026 consolidated: long-term borrowings
+Rs3,013.65 lakh plus current borrowings Rs8,959.92 lakh = Rs119.7cr, plus Rs1,785.51 lakh of
+lease liabilities (Results_Q4FY26_and_FY26, p.17). Neither the Q3FY26 nor the Q4FY26 call
+gives a debt number.
+
+**R19. Working capital is never discussed on any of the five calls, and no analyst asks.**
+Filed 31-Mar-2026 consolidated: trade receivables Rs10,511.14 lakh (Rs105.1cr) and
+inventories Rs9,514.75 lakh (Rs95.1cr) against FY26 revenue of Rs181.29cr
+(Results_Q4FY26_and_FY26, p.17). Receivables alone are about 212 days of sales. Sula, by
+contrast, quantifies receivables, WIPS outstanding, net debt and channel inventory on every
+one of its four calls (SULA Nov 2025 p.8; Feb 2026 p.10; May 2026 p.10; Aug 2026 p.7).
+
+**R20. Equity fundraise signalled, then dropped; and the material fact that existing warrant
+holders walked away was never disclosed on any call.**
+Q4FY25 p.14 "I cannot tell you of any definitive plans today of raising money" → Q1FY26 p.17
+"I will not rule it out" → Q2FY26 p.8 "We are thinking along the lines of doing a fundraise"
+and p.15 "via equity and not by debt" → Q4FY26 p.15, in answer to a direct question on
+raising external capital, no fundraise mentioned, only "we have many tools available to us."
+Filed note (Results_Q4FY26_and_FY26, p.11): 5,57,650 warrants allotted 23-Aug-2024 lapsed on
+23-Feb-2026 because "the warrant holders did not exercise their conversion rights," and the
+25% upfront was forfeited. Never mentioned on any call.
+
+**R21. The CFO's deferred-tax guidance was falsified by the audited accounts and never
+revisited.**
+Q4FY25 p.10, Rajesh Garg: "it will be 25% actually. The effective tax rate will be 25%," on
+the basis that "in the current year, when we will get profit, it will be reversed."
+Filed note (Results_Q4FY26_and_FY26, p.11): "due to continued uncertainty regarding the
+availability of sufficient future taxable profits to recover accumulated losses and unused
+tax credits, no deferred tax asset has been recognised... deferred tax assets recognised up
+to September 30, 2025 amounting to Rs361.12 lakhs have been charged to the Statement of
+Profit and Loss." The asset was written off, not reversed against profit.
+
+**R22. The holdco receivable clean-up promise was not delivered.**
+Q3FY26 p.5: "total receivables remaining are only approximately INR50 lakhs in the holdco
+and the same will be recovered within FY '26." Filed 31-Mar-2026 standalone balance sheet
+(Results_Q4FY26_and_FY26, p.8): trade receivables Rs46.72 lakh, still outstanding. The
+write-off half of that statement was disclosed proactively and is to management's credit;
+the recovery half failed.
+
+**R23. WIPS: management ratified an inflated figure an analyst put to it.**
+Q1FY26 p.8, Rajesh Garg: "last year, we booked around Rs.8 crores of VAT subsidy."
+Q2FY26 p.9, Manan Pamani: "that number was somewhere around INR 8 crores to INR 12 crores,
+what you had said on the last call." Rajesh Garg: "Yes, yes, yes, that's correct." The
+Rs12cr upper bound was never said on the prior call. Material because a Rs8-12cr subsidy
+sits against a claimed FY26 EBITDA of about Rs1cr.
+
+**R24. A related-party postal ballot approved the same day as the FY26 results was never
+mentioned on the call three days later.**
+Results_Q4FY26_and_FY26, p.2, board item 4: "Approved the Postal Ballot Notice for seeking
+approval of the Members of the Company by way of Ordinary Resolution for 'Approval of
+Sponsorship of Higher Education of Mr. Keshav Sekhri under Employee Learning & Development
+Programme as a Related Party Transaction'." Promoter-family benefit at a loss-making
+company, absent from the 2-Jun-2026 call.
+
+**R25. A promised A&P reduction never happened, and the destination was quietly raised.**
+Q4FY25 p.11: "Our brand investments in FY '25 went to about 8% of our top line from 6% in
+the previous year... in percentage, some of these numbers should come down to, hopefully, by
+at least 1 percentage point, maybe 100 bps." Q4FY25 p.20: "as you approach 2028 or 2030, this
+will ultimately stabilize around 5% to 6%." A year later, Q3FY26 p.7: "We are at around 8%
+of our top line" — unmoved — and p.9: "we see it normalizing between 7% to 8% over the next
+years," the 5-6% destination raised without comment. Q4FY26 p.11: "usually 7%... however, as
+Shotgun was launched last financial year, it was a little more than 10% in year 1. And we
+expect this year as well for Shotgun to be a little more than 10%." On a company whose entire
+thesis is operating leverage, the one cost lever with a stated target did not move.
+
+### E. Peer contradictions
+
+**R26. The discount-discipline claim is contradicted by the market leader on four
+consecutive calls, and by Fratelli itself one quarter earlier.**
+Fratelli, Q4FY26 p.14: "Our schemes and discounts, as we call them, have remained fairly
+consistent year-on-year over the last 2 to 3 years. In fact, now we are making a strong
+initiative to see how we can bring it down. it has not gone up over the last 2 to 3 years,
+showing strength in brand love and our distribution ability."
+Fratelli, one quarter earlier, Q3FY26 p.8: "some of the promotions that we do to trade also
+are a little bit on the higher side, higher than where we wish to see them."
+Sula, on all four of its calls, escalating:
+- Nov 2025 p.15: "our competition continues to give much higher and unsustainable discounts,
+  we are still gaining market share even by giving lower discounts."
+- Feb 2026 p.14: "the pain point today is, I would say, almost unscrupulous, and I always use
+  the term unsustainable discounting by other domestic wine players... it is very clear that
+  some of these players are continuously having to pump in more funds into their companies."
+- May 2026 p.10: "we continue to run far lower discounts nationally... than our competition,
+  specifically other domestic wine producers... I would not be surprised if there were some,
+  I would say, casualties among the industry."
+- Aug 2026 p.4 and p.6: "continued unsustainable discounts by competitors in the market."
+By Fratelli's own duopoly framing there are only two meaningful domestic branded wine
+producers. This bears directly on whether the 79% gross margin and the operating-leverage
+story survive the trade spend needed to hold shelf.
+
+**R27. Management's only specific factual claim about the competitor's business is wrong.**
+Q1FY26 p.14-15, Kshitij Verma asks why Fratelli is going capex-heavy on hospitality when
+"our competitors are going on a more asset light model, where they are paying a fixed rental."
+Gaurav: "firstly, I think there is need for you to just revalidate I think some of your
+assumptions. Our nearest competition here in the business has also invested in hospitality.
+In fact, they have about 100 key inventory of their own, which is owned by them."
+Sula, Nov 2025 p.8, on The Haven: "This new property... follows an asset-light model. Land and
+capital investments are provided by a third party while Sula manages the property and pays a
+fixed rental." Sula, Aug 2026 p.11: "out of our 150 keys, 70 keys are ours, but we have not
+constructed anything since the last at least 3 or 4 financial years. All the keys that have
+been added in the last 3 or 4 financial years have all been constructed by other parties."
+The analyst was right and was told to revalidate his assumptions.
+
+**R28. The Q2FY26 FTA assurance was already wrong, and the peer says the industry had been
+told a year earlier.**
+Fratelli, Q2FY26 p.3 (18-Nov-2025): "We expect Indian government to not make any further
+concessions beyond what has been made to Australia, and we are already preparing our business
+ahead of time for this."
+Sula, Feb 2026 p.7: "I hark back to a year ago when we were summoned by the Commerce Ministry
+and informed that duties would come down significantly in our FTA with the EU. Just to put in
+perspective, it's come down around 40% when you convert the currency compared to the Australia
+FTA."
+Fratelli itself, one quarter after the assurance (Q3FY26 p.3): duty falling to 75% then to
+20-30%, with the floor at EUR2.5 CIF, well below Australia's $5. And Fratelli claims a seat at
+that table: "We do have a very effective association, and via that association, we are in
+constant dialogue with the government, and we did get a chance to present our case to Ministry
+of Commerce... we have an effective association which has a seat on the table" (Q3FY26 p.15).
+Either it was not told what Sula was told, or it told investors otherwise.
+
+**R29. Harvest 2026 was called encouraging one week after the market leader described damage
+and a short crop, and Fratelli later conceded higher cost.**
+Fratelli, Q3FY26 p.4 (16-Feb-2026): "Harvest 2026 has been encouraging for us. Despite heavy
+rains during the season, the vineyard performance will be strong, and it has delivered good
+yields and more importantly, very good quality grapes."
+Sula, Feb 2026 p.14 (9-Feb-2026, one week earlier): "This year, the grape harvest is looking
+quite a bit less than in years past... a lot of damage to especially in plots that were pruned
+early... that damage is much more in table grapes where the price has soared. It's double or
+triple of what it was a year ago."
+Fratelli, Q4FY26 p.9, four months later: "last year, the excessive rainfall we had, we dealt
+with it quite effectively... Of course, it had some impact on higher cost and better management
+for disease management." Related: Fratelli reported gross margin RISING to 79% from 73% in Q4
+(Q4FY26 p.5) in the year Sula puts table grapes at Rs35/kg against a normal Rs15-16/kg (SULA
+Aug 2026 p.9), and the 73% comparator conflicts with the 79-80% FY25 figures Fratelli itself
+gave on earlier calls (Q4FY25 p.19; Q2FY26 p.5).
+
+---
+
+## PART 2: COMPARISON AGAINST B05 AND B06
+
+Verdicts: CAUGHT | PARTIALLY CAUGHT (found but under-weighted or misclassified) | MISSED.
+
+| # | My flag | Verdict | Where upstream caught it, or what is missing |
 |---|---|---|---|
-| 30-May-25 | Q4FY25 | "20% to 25% growth"; "revenue guidance for this financial year is about INR 250 crores", Shotgun on top | p.12 |
-| 30-May-25 | Q4FY25 | Aditya, same call: "grow at a CAGR of 15% to 20%" | p.6 |
-| 13-Aug-25 | Q1FY26 | "we are firm this year that we will deliver 15% to 20% top line growth" | p.11 |
-| 18-Nov-25 | Q2FY26 | "we are confident of achieving between 12% to 15% growth" | p.9 |
-| 18-Nov-25 | Q2FY26 | same call, later: "We are looking to grow about 10% to 15% this year" | p.14 |
-| 16-Feb-26 | Q3FY26 | "the outlook for the year will be to end at roughly 7% revenue growth and with a far better Q4" | p.14 |
-| 02-Jun-26 | Q4FY26 | Delivered: +1% (audited +0.1% like-for-like) | p.6 |
+| R1 | Four-step FY26 guidance walk-down | CAUGHT | B05 1B table, 2A rows 1-4, timeline_slippages, red_flag MEDIUM. Fully and accurately covered. |
+| R2 | Two guidance numbers, same call | CAUGHT | B05 1B: "also stated as '10% to 15%' later the SAME call." |
+| R3 | Rs250cr guide excluded Shotgun; core shrank | PARTIALLY CAUGHT | B05 records the "excl. Shotgun" parenthetical in 1B and records premium weakness separately, but never joins them. The joined finding is materially harsher than either half. |
+| R4 | FY27 30% already missed; transcript unpublished | PARTIALLY CAUGHT | Both stages record the +22.5% and the missing transcript, and B06's input_gaps sharply notes all three peers published theirs. Neither treats non-publication as a management-conduct red flag; both file it under corpus gaps. |
+| R5 | Breakeven threshold Rs210-215cr → Rs240cr | CAUGHT | B05 1B and guidance YAML. |
+| R6 | FY27 10-12% EBITDA guide silently dropped | PARTIALLY CAUGHT | B05 lists 10-12% and the Rs240cr threshold as separate guidance rows; it does not identify that the margin guide was abandoned at Q4FY26, nor the unanswered 20% exchange (Q4FY26 p.10). |
+| R7 | Repeated cost-structure evasion, "sensitive" twice | CAUGHT | B05 2E, repeated_evasions, red_flag MEDIUM. Well done, three quarters tracked. |
+| R8 | Shotgun disclosure evasion + broken promise + Rs20cr miss | PARTIALLY CAUGHT | B05 3C notes the RTD-vs-wine split is never disclosed. It does not track the Q1FY26 refusal, the "happy to share once the financial year has ended" promise that came due, or the Rs20cr → Rs18cr revenue miss. |
+| R9 | "Audio not clear" on the only balance-sheet question | MISSED | Not mentioned. B05 2C scores Defensiveness 3/5 as "generally calm and willing to engage tough questions," citing Kaustav Bubna. The Smith Gala exchange (Q2FY26 p.12) is the counter-example and it is absent. |
+| R10 | Share claim vs management's OWN Rs1,000cr TAM (18%) | PARTIALLY CAUGHT | B06 Q1 runs the arithmetic and reaches CONTRADICTED, which I concur with — but against a Rs1,917-2,320cr AR/IMARC TAM giving 7.5-9.5%. The in-transcript Rs1,000cr figure (Q1FY26 p.7) is never used. That route needs no external TAM and is the tighter self-contradiction. |
+| R11 | "85-90% duopoly" unsupported | CAUGHT | B05 3A and B06 Q1 headline. B06's treatment is thorough and correctly disciplined about the analyst-sourced 60% figure. |
+| R12 | RTD arithmetic internally incompatible | MISSED | Neither stage does this arithmetic. All four numbers sit on one page (Q4FY26 p.8) plus one earlier share claim. This is the internal-consistency test of the second growth engine. |
+| R13 | RTD TAM and growth-rate drift; newspaper source | CAUGHT | B05 3B tracks the TAM movement and flags the 30% QoQ claim as "never-sourced"; B06 Q5 reaches CONTRADICTED with an honestly stated mapping caveat. |
+| R14 | Segment/denominator drift, within-call inconsistencies | PARTIALLY CAUGHT | B05 1C handles the 13% vs 7% luxury salience precisely and fairly. It does not catch the shifting premium-and-above denominator, the 50→55→50 luxury-share drift, or the two within-call premium-decline inconsistencies. |
+| R15 | Q4 growth rounded up; three FY26 revenue figures | CAUGHT | B05 reconciliation table catches both the 13% vs 10.6% and Rs184cr vs Rs181.29cr. It misses Gaurav's Rs185cr on p.12 of the same call. |
+| R16 | "Turned EBITDA positive" spin | MISSED | Not mentioned. B05 scores this promise DELIVERED (2A row 5) without noting the prior-year quarter was already positive. |
+| R17 | Q4FY26 FY-vs-quarter EBITDA conflation | PARTIALLY CAUGHT | B05 observes "the two claims on the SAME call (breakeven vs Rs3.7cr loss) are not even consistent with each other," which is the right observation. It then attributes both to understatement of recomputed consolidated losses rather than identifying the conflation, which is the actual and more damaging mechanism. |
+| R18 | Debt +20% against "no more substantial debt" | PARTIALLY CAUGHT | B05 notes debt was never quantified on the last two calls, but scores the earlier reconciliations as "a genuine credibility positive" and 4C "Balance-sheet disclosure consistency: Good." It never sets Rs100cr → Rs120cr against the Q2FY26 p.8 statement or the repeated "capex cycle is behind us." Scored as a positive where it is at best mixed. |
+| R19 | Working capital never discussed; 212-day receivables | PARTIALLY CAUGHT | B05's silence check is strong and names cash, the guarantee, the EOM, MSME payables and the penalty — but not receivables or inventory, the two largest balance-sheet items. B06 catches only the WIPS-receivable asymmetry. |
+| R20 | Fundraise dropped; warrant forfeiture never disclosed | CAUGHT | B05 1C and the silence check, correctly dated relative to the calls. |
+| R21 | CFO deferred-tax guidance falsified | MISSED | Absent from B05's promise-delivery table, silence check and reconciliation. A named CFO forward statement, contradicted by the audited accounts, never revisited on a call. |
+| R22 | Holdco receivable recovery promise not delivered | MISSED | B05 correctly credits the write-off disclosure as a positive (1D, 2B) but does not test the delivery half of the same sentence, which failed. Filed evidence sits on p.8 of the file B05 already mined. |
+| R23 | WIPS: management ratified an inflated Rs8-12cr | PARTIALLY CAUGHT | B05 and B06 both do strong work on WIPS scale and non-disclosure. Neither catches the Q2FY26 p.9 exchange in which management confirms a number it never gave. |
+| R24 | Related-party postal ballot never mentioned | MISSED | B05's silence check catches five filed items from this same package and not this one, which sits on p.2 of it. |
+| R25 | A&P reduction promised, never delivered | MISSED | B05's guidance table records "A&P spend normalisation 7-8%" as a single stable figure. The Q4FY25 statements (8% from 6%, "come down by at least 1 percentage point," "stabilize around 5% to 6%") are not carried, so the non-delivery is invisible. |
+| R26 | Discounting: peer contradiction x4 + self-contradiction | MISSED | Neither report mentions discounting. B06's 2E lists five peer-raised risks; discounting is not among them despite Sula raising it on all four calls in escalating terms. Fratelli's own Q3FY26 p.8 admission against its Q4FY26 p.14 claim is also unnoted. |
+| R27 | Wrong factual rebuttal on the competitor's hospitality model | MISSED | B06 2C discusses the capex split and Sula's tourism reallocation but never tests Fratelli's specific factual claim. Two Sula quotes settle it. |
+| R28 | FTA assurance vs peer's Commerce Ministry disclosure | MISSED | B05 1C notes the FTA narrative "materially evolved, never reconciled to itself," and B06 Q6 corroborates the terms — both good. Neither confronts the Nov-2025 assurance against Sula's Feb-2026 statement that the industry had been told a year earlier, which converts an evolving-narrative finding into a credibility finding. |
+| R29 | Harvest claim vs peer's same-week assessment | PARTIALLY CAUGHT | B06's 2B is the strongest single piece of work in either report on the grape-cost silence, and reaches the right open question. It uses Sula's Aug-2026 price data rather than Sula's 9-Feb-2026 crop assessment, which sits one week before Fratelli's claim and is far tighter. Neither report uses Fratelli's own Q4FY26 p.9 "higher cost" admission. |
 
-Each restatement is delivered as fresh confidence ("we are firm", "we are
-confident"). No analyst in five calls asked why the number kept moving.
+**Coverage tally: 29 independent flags. CAUGHT 9. PARTIALLY CAUGHT 10. MISSED 10.
+redflag_coverage = 9/29 = 31%.**
 
-**I-5. The Q3FY26 guidance was issued with six weeks of the year left and still
-missed by 25%.** 9M FY26 revenue was Rs 147 cr (Q3FY26 p.6). "Roughly 7% revenue
-growth" on Rs 182 cr requires Q4 ≈ Rs 48 cr. Actual Q4FY26 = Rs 35.30 cr audited
-(Rs 36 cr per call). A six-week-horizon forecast missed by a quarter is direct
-evidence on forecasting quality and is stronger than the walkback itself.
-
-**I-6. The FY27 30% guidance is arithmetically unsupported.** Q4FY26 p.7, Aditya:
-"our guidance for this financial year of FY27 is to deliver a growth of
-approximately 30%." Gaurav, p.12: "At 30% growth from previous year, we get to
-approximately INR240 crores." That needs +Rs 55 cr. The named bridge is RTD
-doubling (Rs 18 cr → Rs 36 cr, so +Rs 18 cr, p.8) plus "some normal growth" in
-wine. The residual Rs 37 cr must come from a bottles business that declined 15-16%
-in FY26 (p.4, p.12) and was flat in volume in FY25 (Q2FY26 p.17). Q1FY27 actual is
-+22.5% (Rs 44.72 cr vs Rs 36.51 cr, Results_Q1FY27 p.7). No analyst ran the bridge.
-
-**I-7. The operating-leverage breakeven threshold moved Rs 25-30 cr with no
-explanation.** Q2FY26 p.9: "every business reaches an inflection point... for
-Fratelli, that number is around INR 210 crores, INR 215 crores of top line."
-Q4FY26 p.12: "we achieve a net-net breakeven at around INR240 crores." The same
-management stated FY24 revenue was Rs 215 cr (Q4FY25 p.8), i.e. the business had
-already been through the claimed inflection point.
-
-**I-8. FY27 EBITDA margin guidance of 10-12% was silently dropped one quarter
-after being explicitly confirmed.** Q3FY26 p.9: "you can expect Fratelli to
-operate at around... maybe around 10% to 12% EBITDA margin"; asked "So can we
-expect that in FY '27?" Gaurav: "Yes, that's right." Q3FY26 p.14: "We will be
-targeting about 10% EBITDA for next financial year." On the Q4FY26 call the number
-never appears; Chetan asks about the 20% target and Gaurav answers only "it is
-just a function of scale" (p.10). Q1FY27 actual EBITDA is Rs 0.30 cr ex other
-income on Rs 44.72 cr revenue, 0.7% (Results_Q1FY27 p.7).
-
-### 1C. Repeated evasions (2+ quarters)
-
-**I-9. CRITICAL. Shotgun unit economics refused across two calls, then answered
-with a number below the promise.**
-- Q1FY26 p.9, Shyam Garg: "how many RTD cases have been sold to date?" Aditya:
-  "I will not be commenting on that as of now" — while volunteering a 5% market
-  share in the same breath.
-- Q3FY26 p.11, Harshita Maheshwari: Aditya: "The monthly run rate and some of the
-  statistics exactly of the progress, I'd be happy to share once the financial
-  year has ended. But... we are on track to hit 100,000 cases with a revenue
-  contribution of more than INR20 crores by -- of INR20 crores by year-end."
-- Q4FY26 p.8: "The RTD segment was roughly about INR18 crores." No run rate, no
-  per-case economics, and Rs 18 cr against Rs 20 cr promised.
-
-**I-10. CRITICAL. Cost structure refused as "sensitive" in two separate years.**
-- Q1FY26 p.9, Shyam Garg asks for the margin-expansion bridge: "I think it is a
-  little sensitive. We consider that information to divulge in that kind of detail."
-- Q4FY26 p.15, Ishita Mitra asks for the components of Rs 35-36 cr employee cost
-  and Rs 85-86 cr other expenses: "Ma'am, many of the things we consider sensitive.
-  So, we will not go into too much detail on a call like this." Other expenses are
-  47% of FY26 revenue (Rs 85.69 cr on Rs 181.29 cr, audited p.16).
-
-**I-11. Hospitality revenue potential deflected three consecutive quarters,
-including a broken promise to answer.** Q1FY26 p.8 "a bit premature"; Q2FY26 p.8
-"a little premature... we can give you more clarity of this in our next earnings
-call"; Q3FY26 p.11 "I would prefer to wait and tell you the timelines in the next
-1 or 2 quarters." Q4FY26 p.9 then deferred the project by a year.
-
-### 1D. Peer contradictions (Sula is the only true wine comparator)
-
-**I-12. Maharashtra. The excuse for the worst quarter is contradicted by the
-category leader.** Fratelli, Q1FY26 p.5, on a 16% sales decline: "In Maharashtra,
-a key market for Fratelli, the revision in spirit prices following excise duty
-changes caused a temporary disruption that affected wine sales."
-Rajeev Samant, SULA Aug-2026 call, p.10: "**There is no change in terms of wine
-duty, not a single rupee.** This policy in Maharashtra is very much targeted at
-spirits. MML is a purely spirit category. It has not to do with wine or beer."
-And SULA Nov-2025 p.15, on the same state and period: "our market intelligence
-says that we are gaining market share, especially in Premium & Elite. And we have
-probably, at this point, reached an all-time high in terms of our market share
-there." The leader gained share to a record in the state and quarter Fratelli says
-was disrupted. That reframes the decline from regulatory to competitive.
-
-**I-13. Discounting. Fratelli claims discipline; the leader describes the opposite
-three times, and Fratelli itself conceded the point in between.**
-- SULA Nov-2025 p.15: "notwithstanding the fact that **our competition continues
-  to give much higher and unsustainable discounts**, we are still gaining market
-  share even by giving lower discounts."
-- SULA Feb-2026 p.14: "the pain point today is... almost unscrupulous, and I always
-  use the term unsustainable discounting by other domestic wine players...
-  it is very clear that some of these players are continuously having to pump in
-  more funds into their companies."
-- SULA May-2026 p.10: "the level of discounting is... unsustainably high for the
-  industry. At this kind of level of discounts, I would not be surprised if there
-  were some... **casualties among the industry**... and that will not be us."
-- Fratelli, Q3FY26 p.8, Gaurav concedes: "some of the promotions that we do to
-  trade also are a little bit on the higher side, higher than where we wish to see
-  them."
-- Fratelli, Q4FY26 p.14, Gaurav then claims the opposite: "Our schemes and
-  discounts... have remained fairly consistent year-on-year over the last 2 to 3
-  years... it has not gone up over the last 2 to 3 years, **showing strength in
-  brand love** and our distribution ability."
-
-In a two-player premium wine market, Sula's "other domestic wine players... pumping
-in more funds" describes an entity that in FY26 borrowed Rs 18 cr more short-term,
-took a Rs 9.33 cr loan from its holdco, and carries an auditor going-concern
-paragraph at the parent.
-
-**I-14. H2 FY26 "normalization" is contradicted for a core state.** Fratelli
-Q4FY26 p.3: "market conditions began to normalize during the second half of the
-year." SULA Aug-2026 p.10-11: "we are being hit by the entire wine industry having
-seen degrowth in Q1 in Karnataka as well as **in second half of FY26, we have seen
-degrowth. So, the entire wine category, unfortunately, has degrown in this
-all-important market.**"
-
-**I-15. Industry growth. Fratelli guides 15-20%; the leader, citing IWSR, says
-flat.** Fratelli Q1FY26 p.7: "we, as Fratelli, are expecting the industry to grow
-at about 15% to 20% for the next three to four years and we remain firm on that."
-SULA Aug-2026 p.8: "The last 2 years have not seen much growth in the overall wine
-industry, neither in domestic nor in imports as per IWSR... There has been maybe
-low single-digit growth in the overall industry... it has been a period of
-consolidation."
-
-**I-16. Market-leadership arithmetic fails against management's own numbers and
-against the peer's revenue.** Fratelli claims "roughly one-third share" (Q1FY26
-p.5), "1/3 of the Indian wine market" (Q2FY26 p.4), "roughly 31% for the 9-month
-period" (Q3FY26 p.14). Same management sizes the domestic wine market at Rs 1,000
-cr (Q1FY26 p.7) and endorses it again in Q3FY26 p.12 ("around INR1,600 crores is
-the overall TAM for the wine and our RTD is INR500 crores... Yes, that's correct").
-Rs 181 cr on Rs 1,000 cr is **18%**, not 31-33%. Sula's own revenue is "almost flat
-broadly in that INR 600 crore range" (SULA Aug-2026 p.8) and an analyst calls Sula
-"our industry leader with 60% market share" unchallenged (SULA Nov-2025 p.13).
-Fratelli never states whether its share is by value or volume, at MRP or net
-revenue. The basis is never given and the number never ties.
-
-**I-17. Grape cost. A category input shock the company never acknowledged.**
-SULA Feb-2026 p.14: harvest "quite a bit less than in years past... a lot of
-damage... much more in table grapes where the price has soared. **It's double or
-triple of what it was a year ago.**" SULA Aug-2026 p.9: "typically procured table
-grapes for less than INR 15-16 a kilo. Last year, grape prices shot up to INR 35 a
-kilo." Fratelli, one week after the Sula Feb call, Q3FY26 p.4: "Harvest 2026 has
-been encouraging for us... it has delivered good yields." Q1FY26 p.7: "no major
-changes in the price of even grapes that we procure from outside... there are no
-major changes in the gross margin profile." Fratelli's Q3FY26 gross margin fell to
-76% from 79-80% and was attributed solely to "product mix dynamics" (p.6).
-
-**I-18. FTA exposure boundary. Fratelli draws the line at Rs 2,000; the peer draws
-its own at Rs 1,200.** Fratelli, Q3FY26 p.10 and Q4FY26 p.7: only wines above
-Rs 2,000 are exposed, "roughly 7% of our overall revenue", "more than 90% of our
-revenues are comprised of products which are less than INR2,000 MRP."
-SULA May-2026 p.10: "we would **probably hold our hand on wines that cost more
-than INR 1,200 a bottle** because we are very mindful of the fact that pretty soon,
-there is going to be duty reduction on those EU wines." Rs 1,200 sits inside
-Fratelli's super-premium band (Rs 1,050-2,000, Q3FY26 p.15) where it had just
-launched Fratelli Brut at Rs 1,500.
-
-**I-19. The exposure question was asked precisely and dodged.** Q3FY26 p.15,
-Kaustav Bubna: "Don't you think that there's also a possibility for the super
-premium segment to shift to European wines when they become cheaper just because
-of the aspirational thought in people's minds?" Aditya answers about "the market
-above INR2,000" and closes with "we're already north of 55% market share in that
-segment" — a different segment from the one asked about.
-
-**I-20. Hospitality model. Management told an analyst to revalidate an assumption
-that the peer's own disclosure supports.** Q1FY26 p.14-15, Kshitij Verma asks why
-Fratelli is going capex-heavy when "our competitors are going on a more asset light
-model." Gaurav: "firstly, I think there is need for you to just revalidate I think
-some of your assumptions." SULA Aug-2026 p.11: "our Wine Tourism Strategy and spend
-has been very asset-light over the last couple of years. The new resorts... were
-not constructed by us. We have partners who construct the resorts, hand over to us
-on a management contract." Gaurav did partially concede the point later in the same
-answer, which is why I grade this MINOR, but a Rs 70-80 cr owned-capex plan rested
-on the comparison and has since been deferred.
-
-**I-21. RTD category data has no external corroboration anywhere in the corpus.**
-A keyword search for RTD / ready-to-drink / Bro Code across all twelve peer
-transcripts returns **zero matches**. Fratelli's own figures are mutually
-inconsistent: "$150 million" (Q4FY25 p.12), "Rs.400 crores addressable market in
-wine RTD" (Q1FY26 p.4), "INR 500 crores" (Q2FY26 p.6), "INR500 crores to INR600
-crores" (Q4FY26 p.7); growth quoted as "20%" (Q2FY26 p.3), "15% to 20%" (Q2FY26
-p.6), "almost 30% quarter-on-quarter" (Q3FY26 p.13) and "about 25% year-on-year"
-(Q4FY26 p.7), sourced to "a very recent article published in the newspaper."
-
-### 1E. Disclosure and governance
-
-**I-22. The auditor's Emphasis of Matter and going-concern paragraph were never
-mentioned on the call held three days later.** Results_Q4FY26 p.4 (standalone) and
-p.13 (consolidated): "We draw attention to Note No. 5... regarding decline in
-revenue from operations... The Management is exploring new business opportunities
-for revival of operations... prepared on a going concern basis." Also unmentioned:
-the derecognition of the parent's deferred tax asset, with Rs 361.12 lakh
-recognised up to 30-Sep-2025 charged back to the P&L "due to continued uncertainty
-regarding the availability of sufficient future taxable profits" (p.11, note 5).
-This directly falsifies the CFO's Q4FY25 p.11 answer to Smith Gala that the
-deferred tax asset would simply reverse at a 25% effective rate.
-
-**I-23. The warrant lapse was disclosed in the filing and omitted from the call.**
-Results_Q4FY26 p.11: 5,57,650 warrants allotted 23-Aug-2024; "As the warrant
-holders did not exercise their conversion rights on or before 22nd February, 2026,
-the warrants have lapsed... the upfront amount, being 25% of the issue price
-received at the time of allotment, stands forfeited." Filed 30-May-2026. The
-Q4FY26 call was 02-Jun-2026. Not mentioned by management, not asked by any analyst.
-
-**I-24. A promoter-family related-party transaction was approved at the same board
-meeting and never mentioned.** Results_Q4FY26 p.2, item 4: postal ballot for
-"Approval of Sponsorship of Higher Education of Mr. Keshav Sekhri under Employee
-Learning & Development Programme as a Related Party Transaction."
-
-**I-25. The Rs 5 cr holdco write-off was disclosed in one sentence and drew zero
-follow-up.** Q3FY26 p.5: "In the holdco level... we have taken a onetime write-off
-of approximately INR5 crores to settle a long overdue receivable by realizing
-approximately INR4 crores. Post this, total receivables remaining are only
-approximately INR50 lakhs." Confirmed in the cash flow as "Balance Write off
-512.82" lakh (Results_Q4FY26 p.9). The write-off exceeds the entire 9M FY26 EBITDA
-of Rs 4.7 cr. Counterparty never named; no analyst asked.
-
-**I-26. Balance sheet deterioration was never disclosed on either H2 FY26 call and
-never asked.** Last debt figure given was Rs 120 cr (Q2FY26 p.8, up from Rs 100 cr
-in Q4FY25 p.14). Audited FY26 (Results_Q4FY26 p.17): current borrowings Rs 71.62 cr
-→ Rs 89.60 cr (+25%); total borrowings Rs 119.74 cr; inventories Rs 82.50 cr →
-Rs 95.15 cr (+15%) on flat revenue; trade receivables Rs 105.11 cr = 212 days of
-revenue; cash Rs 0.08 cr; total equity Rs 156.32 cr → Rs 135.96 cr. FY26 finance
-cost of Rs 13.26 cr against a claimed EBITDA of Rs 1.06 cr, and an actual
-consolidated EBITDA of -Rs 4.56 cr. Q4FY26 p.6 introduces, in passing, the phrase
-"borrowings undertaken for capacity expansion **and working capital requirements**"
-— the first admission of borrowing for working capital.
-
-**I-27. The equity fundraise was announced, then dropped without explanation.**
-Q1FY26 p.17: "In regards to our existing core business, we are adequately funded...
-I do not see any need for that to come to the capital market." Q2FY26 p.8: "We are
-thinking along the lines of doing a fundraise... We are looking to do it via equity
-and not by debt" (p.16), with 30% of the Rs 100 cr going "towards brand building,
-just strengthening the balance sheet with some cash and liquidity" (p.6). Q3FY26:
-silent. Q4FY26 p.15, asked directly by Preeti Shah: "we have many tools available
-to us, which we will explore at that point of time."
-
-**I-28. WIPS subsidy: the CFO confirmed a range he never gave, and the receivable
-has never been disclosed.** Q1FY26 p.8, Rajesh Garg: "last year, we booked around
-Rs.8 crores of VAT subsidy." Q2FY26 p.9, Manan Pamani: "that number was somewhere
-around INR 8 crores to INR 12 crores, what you had said on the last call." Garg:
-"Yes, yes, yes, that's correct." The subsidy exceeds the claimed FY26 EBITDA. Sula
-discloses its WIPS position every quarter ("WIPS outstanding receivable stood at
-INR 88 crores as on June 26", SULA Aug-2026 p.8); Fratelli has never disclosed its
-WIPS receivable, and never discussed the scheme's March-2028 expiry (Q2FY26 p.9) as
-a risk.
-
-**I-29. The Q1FY27 transcript was never published, breaking a five-quarter run.**
-The Q1FY27 filing (11-Aug-2026) shows revenue +22.5% against 30% guidance, a
-pre-tax loss of Rs 4.96 cr, and — p.8, note 2 — "the Board of Directors reassessed
-the previously reported operating segments... resulting in operating segments that
-differ from those reported in the previous period." A segment redefinition in the
-one quarter with no transcript.
-
-### 1F. Metric instability
-
-**I-30. The premium-segment decline was stated at four different values.**
--10% ("moderate decline... roughly approximately around 10% for the year", Q3FY26
-p.8); -13 to -14% ("the whole premium category has been down about 13% to 14%",
-Q3FY26 p.15, same call, same speaker); -16% (Q4FY26 p.4, Gaurav); -15% (Q4FY26
-p.12, Aditya, same call).
-
-**I-31. Luxury metrics oscillate, and the FY26 exit was a deceleration presented
-as strength.** Share: ">50%" (Q2FY26 p.3) → ">55%" and "north of 55%" (Q3FY26 p.12,
-p.15) → "more than 50%" (Q4FY26 p.8). Contribution: 6% of top line (Q1FY26 p.4) →
-"Luxury and Super, total contribution is 13%" (Q2FY26 p.14) → "roughly 7%" (Q3FY26
-p.10). Growth: 18% in Q2 (Q2FY26 p.3), 20% for 9M (Q3FY26 p.3), 15% for FY26
-(Q4FY26 p.4) — a 9M-to-FY step down that implies Q4 luxury growth near zero, in the
-quarter presented as the recovery. J'NOON: 53% YTD (Q3FY26 p.3) → "almost 50%"
-(Q3FY26 p.16) → 44% (Q4FY26 p.4) → "40% plus" (Q4FY26 p.7). Against a category
-Gaurav himself sizes at "about INR 50 crores for wines which are above the INR
-2,000" (Q2FY26 p.14), a ">50% share" implies ~Rs 25 cr of luxury revenue against a
-6-7% contribution on Rs 181 cr, i.e. ~Rs 12 cr. The claims do not close.
-
-**I-32. TiLT stagnation was admitted only in Q2FY26, after three calls of growth
-framing, and the share question was answered circularly.** Q4FY25 p.6: "we've
-launched TiLT about 3 years ago, which has scaled up well. And it's the largest
-player now in the wine RTD segment." Q1FY26 p.4: "TILT continues to build relevance
-across emerging urban markets." Q2FY26 p.7, Gaurav, unprompted: "the sales for the
-wine in a can business or can sales are stable. **They have not yet grown in any
-remarkable fashion. I must share that with you**... we are, I think, a little ahead
-in time with the cans category for Indian market." Asked the actual market share
-seconds earlier, Hemant Arora answered: "in wine category, we are present in almost
-17 states, and we are a market leader **because we have presence in more than 17
-states now**" (p.7). Q4FY26 p.13 nonetheless returns to "approximately more than
-90% market share in the Wine-in-a-Can segment."
-
-**I-33. RTD realisation per case fell while distribution expanded.** H1 FY26: Rs 10
-cr on ~50,000 cases (Q2FY26 p.16, p.16) = ~Rs 2,000/case. FY26: Rs 18 cr on
-~100,000 cases (Q4FY26 p.3, p.8) = ~Rs 1,800/case, a ~10% decline, while states
-went 11 → 18 (Q2FY26 p.5; Q4FY26 p.4). The one growth engine is scaling on falling
-realisation, and delivered Rs 18 cr against Rs 20 cr promised.
-
-**I-34. Exports reversed characterisation in one quarter.** Q3FY26 p.8, Gaurav:
-"the export of our wines is a very small part of our overall business. And for the
-foreseeable future, I think it will remain so... **not enough to matter, frankly**."
-Q4FY26 p.4, Gaurav: "we doubled our export revenue during FY '26. We expect 5% of
-total revenue to come from exports from FY '27 onwards," and Aditya lists exports
-among the FY27 growth drivers (p.12).
-
-**I-35. FTA position stated three incompatible ways, and a confident forecast was
-falsified in one quarter.** Q4FY25 p.10, Gaurav: "I don't see any impact of the FTA
-at this point of time"; Aditya: "wine has not been covered as part of the spirits,
-in U.K. at least." Q2FY26 p.3: "We expect Indian government to **not make any
-further concessions beyond what has been made to Australia**"; p.8: "in the U.K.
-FTA, Government of India has not made any concession for wine." Q3FY26 p.4, three
-months later: "India's prevailing import duties on European wines are expected to
-reduce in a phased manner. The initial reduction is likely to bring duties down to
-around 75% with rates gradually easing over a period of time to **20% for premium
-wines and 30% for mid-range wines**." A move from 150% to 20-30% is far beyond the
-Australia template management said would not be exceeded. The reversal is presented
-as routine industry news, never as a corrected forecast.
-
-**I-36 to I-38. Minor drift (grouped).**
-- Solar restated down: "520 kw... meeting 50% of our electricity needs" (Q1FY26
-  p.6) → "45% of our energy requirements" (Q2FY26 p.5).
-- Touch points static at 25,000 across Q4FY25 p.15, Q1FY26 p.13 and Q2FY26 p.11,
-  then "more than 30,000" one quarter later (Q3FY26 p.6) while revenue grew 8%.
-- Q4FY25 volume answered "It's almost same" (~13%, p.8) then "about 10% for Q4"
-  (p.19) on the same call.
-- Shotgun's 15-state target given two deadlines on one call: "by end of FY '26"
-  (Q2FY26 p.5) and "by end of Q3" (Q2FY26 p.15).
-- "Gross margins remained healthy at 79%... and also with the ongoing war"
-  (Q4FY26 p.6). A macro risk named once, never explained, never asked about.
-- Gross margin described as stable while ranging 76% to 80% across FY26.
-- Holdco merger "We are evaluating it" (Q4FY25 p.11) never mentioned again.
-
-**Independent flags found: 38** (I-36 to I-38 counted as one composite minor).
+Counting partially-caught items at half weight would give 48%; counting them in full would
+give 66%. The rubric's measure is caught over found, so 31% is the reported figure. I checked
+whether my granularity was inflating the denominator by re-running the count at stage-report
+granularity (29 themes rather than the 37 discrete items my raw notes held); the ratio is the
+same either way.
 
 ---
 
-## PART 2 — COMPARISON AGAINST B05 AND B06
+## PART 3: PIPELINE FLAGS I DID NOT INDEPENDENTLY FIND
 
-### CAUGHT (15)
+Per rule 3, each assessed as SUPPORTED / OVERSTATED / NOT SUPPORTED.
 
-| # | Item | Where the pipeline has it |
-|---|---|---|
-| I-4 | Serial FY26 guidance walkback | B05 flags FLAG-GUIDANCE-WALKDOWN; guidance table rows |
-| I-3 | Q4FY26 undisclosed basis change, true -40% consolidated | B05 FLAG-CONCALL-BASIS, red_flags HIGH; ties to B02 |
-| I-11 | Hospitality revenue potential deflected 3 quarters | B05 repeated_evasions row 1 |
-| — | Hospitality timeline slippage 2027→2028→CY27-28 | B05 timeline_slippages |
-| — | Hospitality capex oscillation Rs 100→65-75→100→70-80 cr | B05 timeline_slippages, guidance rows |
-| I-25 | Rs 5 cr holdco write-off | B05 flag 1 (as the Q3 reconciliation lever) |
-| I-23 | Warrant forfeiture never raised on any call | B05 red_flags MEDIUM |
-| I-29 | Q1FY27 transcript not published | B05 + B06 input_gaps, explicit |
-| I-17 | Grape/input cost contradiction vs Sula | B06 FLAG-PEER-CONTRADICTION; contradicted list; quantified to 350-400bps |
-| I-21 | RTD growth claim uncorroborated; zero RTD mentions in 12 peer calls | B06 FLAG-PEER-CONTRADICTION + FLAG-PEER-SILENCE |
-| I-15 | Industry flat / low single digit per Sula-IWSR | B06 industry_cross_read; SULA Q1FY27 coverage row |
-| I-26 (part) | 212-day DSO never raised on any call while peers disclose | B06 risks_peers_raise row 1; B05 red_flags MEDIUM |
-| — | Rotating external-blame excuse pattern | B05 excuse_pattern, promise_delivery explanations |
-| — | Sula never names Fratelli; duopoly framing is self-characterised | B06 FLAG-PEER-SILENCE, analyst_note |
-| I-6 (part) | FY27 30% guidance low conviction, Q1FY27 at 22.5% | B05 trigger 2 |
+### P1. B05 "EBITDA-SIGN-FLIP" (HIGH) — **OVERSTATED**, with one **NOT SUPPORTED** sub-claim.
 
-### PARTIALLY CAUGHT — found but under-weighted or misclassified (7)
+This is B05's headline finding. It states that "the SIGN of management's own claimed EBITDA
+is wrong in three of the last four quarters," drives three of the ten MISSED promise-delivery
+rows, is the first clause of the credibility_basis for the D grade, and produces an explicit
+downstream instruction: "downstream stages should treat every EBITDA, PBT, or PAT figure
+quoted on a Fratelli earnings call as unverified until independently recomputed."
 
-**P-1 (MAJOR). I-1 / I-2, the FY26 EBITDA claim.** B05 red_flags carries only:
-"LOW — Minor EBITDA reconciliation variances in Q2FY26 and Q4FY26 (within
-plausible rounding/other-income range)." The variance is Rs 5.6 cr against a
-claimed figure of Rs 1.06 cr — five times the claim, not rounding. It requires
-excluding a Rs 5.21 cr segment loss and adding Rs 3.22 cr of other income, both
-undisclosed, and consolidated EBITDA moved the opposite way from the claimed
-direction. This is the same class of finding as B05's own two HIGH flags and its
-own FLAG-CONCALL-BASIS framework should have caught it. B05's input_gaps confirms
-Q4FY26 was reconciled, so this is a grading error, not a coverage gap. The
-Gaurav-versus-Aditya sign contradiction within the same call is not mentioned at
-all.
+The problem is a basis mismatch B05 itself created. B05's OTHER headline finding
+(UNDISCLOSED-BASIS-CHANGE) correctly establishes that management reports on the
+wine-subsidiary basis, and B05 applies that understanding when reconciling revenue: "the
+Rs46.4cr comparator is the wine-segment figure." It then abandons that basis for EBITDA and
+PBT, recomputing from CONSOLIDATED figures only, and reads the difference as management
+misstatement.
 
-**P-2 (MAJOR). I-16, market share.** B06 files the ~30-33% claim under
-`partially_verified` and the luxury >50% claim under `unverifiable`, with the note
-that no independent market-research source exists in the corpus. Correct as far as
-it goes, but the claim does not need an external source to fail: management's own
-Rs 1,000 cr market size against Rs 181 cr of revenue gives 18%, and Sula alone is
-~Rs 600 cr. This is internally falsifiable from the transcripts, not merely
-unverified.
+On the wine-business basis management actually uses, the figures reconcile. The additivity is
+exact: consolidated FY26 net loss Rs2,491.19 lakh minus subsidiary net loss Rs1,583.47 lakh
+(Results_Q4FY26_and_FY26, auditor's Other Matters, p.15) equals Rs907.72 lakh, against the
+parent's standalone net loss of Rs907.64 lakh (same file, p.7). So parent and subsidiary add.
 
-**P-3 (MAJOR). I-13, discounting.** B06 logs it under `risks_peers_raise` as
-"a competitive-intensity risk not named as such in Fratelli's own calls." Fratelli
-does not merely fail to name it; it asserts the opposite on the record (Q4FY26
-p.14, discounts flat "showing strength in brand love") four weeks after Sula
-predicted "casualties," and had conceded high trade promotions itself in Q3FY26.
-That is a contradiction of an affirmative claim, and belongs in `contradicted`
-alongside grape costs.
+- **Q3 FY26 PBT.** Consolidated LBT Rs-495.42 lakh (Results_Q3FY26_2026-02-12, p.10); parent
+  standalone LBT Rs-507.21 lakh (Results_Q4FY26_and_FY26, p.7, Dec-31-2025 column).
+  Subsidiary PBT = **+Rs11.79 lakh = +Rs0.12cr**. Management claimed "a positive PBT of
+  roughly INR0.1 crores" (Q3FY26 p.6). That is an exact match. B05 calls this "the single
+  starkest reconciliation failure in the entire five-call sample" and "OPPOSITE SIGN on both
+  PBT and PAT." **NOT SUPPORTED.**
+- **Q3 FY26 EBITDA.** Subsidiary PBT +11.79 + subsidiary finance ~317.51 + subsidiary
+  depreciation ~212.69 = Rs541.99 lakh = **Rs5.42cr**, on revenue of Rs63.60cr = **8.5%**.
+  Management claimed Rs5.5cr and 8.6%. B05 says the claim "overstates the recomputed figure
+  by ~14x." **NOT SUPPORTED.**
+- **FY26 EBITDA.** Consolidated Rs-456.13 lakh; parent's own contribution
+  (-545.45 + 19.68 + 4.72) = Rs-521.05 lakh; subsidiary ≈ **+Rs64.92 lakh, positive**, against
+  a claim of +Rs1.06cr. A magnitude gap of about Rs0.4cr, not a sign flip. **OVERSTATED.**
+- **Q4 FY26 EBITDA.** Consolidated Rs-404.01 lakh; parent contribution Rs-6.62 lakh;
+  subsidiary ≈ **-Rs3.97cr**, against Aditya's stated "EBITDA loss... INR3.7 crores"
+  (Q4FY26 p.5). Match. **OVERSTATED.**
 
-**P-4 (MAJOR). I-26, balance sheet.** Only the DSO leg is carried. The FY26
-increase in current borrowings, the inventory build on flat revenue, near-zero
-cash, the Rs 20 cr fall in equity, the interest-to-EBITDA relationship, and the
-total absence of any debt disclosure on the Q3FY26 and Q4FY26 calls are not
-surfaced as concall red flags.
+The entire reconciling item is the holdco's one-off Rs512.82 lakh "Balance Write off"
+(Results_Q4FY26_and_FY26, standalone cash flow, p.9) — the very write-off B05 elsewhere
+credits management for disclosing proactively and unprompted on the Q3 call.
 
-**P-5 (MINOR). I-8, FY27 EBITDA margin guidance.** B05 lists "FY27 EBITDA margin
-10-12%, stated_in Q3 FY26 call" in the guidance table but does not flag that the
-number silently disappeared from the very next call.
+What survives, and what I would put in its place: management quotes an ADJUSTED, wine-only
+EBITDA without labelling it adjusted or naming the excluded item at the moment it quotes the
+number (Q4FY26 p.3 and p.6). That is a real presentation flag at MEDIUM, and it compounds
+B05's separate and correct UNDISCLOSED-BASIS-CHANGE flag. It is not evidence that management
+stated positive figures while the underlying business was negative. Note also that this is a
+judgment call about basis, not an existence-of-a-number call: I am not disturbing any Verifier
+A source-fidelity verdict, and if Verifier A has flagged any of these figures, that flag stands.
 
-**P-6 (MINOR). I-27, fundraise.** B05 has it as an evasion "deflected, then mooted
-by project deferral." It is more than that: a definite plan ("we are thinking along
-the lines of doing a fundraise... via equity") was stated and then withdrawn
-without acknowledgement, having been preceded by "we are adequately funded."
+### P2. B05 promise_delivery counts (delivered 3 / partial 1 / missed 10) — **OVERSTATED**,
+as a direct consequence of P1. Rows 7, 8 and 9 are all artefacts of the basis mismatch and
+should not be scored as missed promises. Correcting them moves the tally to roughly
+delivered 5 / partial 1 / missed 7, before adding the four unkept promises I found that B05
+does not track (R8 Shotgun disclosure, R21 deferred tax, R22 holdco receivable, R25 A&P). A
+corrected table would land near delivered 5 / partial 2 / missed 10 — a similar count, but
+composed of entirely different rows and resting on management conduct rather than on an
+arithmetic artefact. The prose above the table is also internally muddled: "delivered = 2
+(rows 5, 13, 14 — call it 3 clearly delivered)... missed = 9" against a YAML of 3/1/10.
 
-**P-7 (MINOR). I-6, the FY27 30% bridge.** Flagged as low conviction, but the
-arithmetic showing the residual Rs 37 cr must come from a declining bottles
-business is not performed.
+### P3. B06 "MARKET-SHARE-ARITHMETIC-CONTRADICTED" — **SUPPORTED** as to direction,
+**OVERSTATED** as to precision. I reach CONTRADICTED independently and by a different route.
+But the specific 7.5-9.5% figure depends on a Rs1,917-2,320cr TAM that B06 itself says has no
+independent third-party source in-corpus, and it sits oddly beside management's own in-
+transcript Rs1,000cr domestic figure (giving 18%) and beside Sula's own scale. B06's careful
+input_gaps note already concedes this. The finding would be stronger, not weaker, on the
+in-transcript denominator.
 
-### MISSED (16)
+### P4. B06 "EBITDA-BENCHMARK-CONTRADICTED" — **SUPPORTED**. B06 is explicit that the 25-30%
+figure was an analyst's assertion rather than a management claim, and its net read is careful.
+I could not re-verify the Sula margin figures (presentation-only source, outside my inputs).
 
-| Sev | Item | Anchor |
-|---|---|---|
-| CRITICAL | I-9 Shotgun unit economics refused Q1FY26 and Q3FY26 (repeated evasion, 2+ quarters) | Q1FY26 p.9; Q3FY26 p.11; Q4FY26 p.8 |
-| CRITICAL | I-10 Cost structure refused as "sensitive" Q1FY26 and Q4FY26 (repeated evasion) | Q1FY26 p.9; Q4FY26 p.15 |
-| MAJOR | I-12 Sula: Maharashtra wine duty unchanged "not a single rupee"; Sula gained share to a record there | SULA Aug-2026 p.10; SULA Nov-2025 p.15 vs Q1FY26 p.5 |
-| MAJOR | I-14 Sula: entire wine category degrew in Karnataka in H2 FY26, against Fratelli's "normalization" | SULA Aug-2026 p.10-11 vs Q4FY26 p.3 |
-| MAJOR | I-18 Sula holds pricing above Rs 1,200 for EU FTA; Fratelli claims exposure starts at Rs 2,000 | SULA May-2026 p.10 vs Q4FY26 p.7 |
-| MAJOR | I-19 Super-premium FTA exposure question dodged | Q3FY26 p.15 |
-| MAJOR | I-35 FTA position stated three ways; Nov-2025 forecast falsified by Feb-2026 | Q4FY25 p.10; Q2FY26 p.3, p.8; Q3FY26 p.4 |
-| MAJOR | I-22 Auditor Emphasis of Matter / going concern at parent; DTA derecognition; never mentioned on the call three days later | Results_Q4FY26 p.4, p.11, p.13 vs Q4FY26 call |
-| MAJOR | I-5 Q3FY26 guidance issued with six weeks left, missed 25% | Q3FY26 p.14 vs Results_Q4FY26 p.16 |
-| MAJOR | I-7 Breakeven threshold moved Rs 210-215 cr → Rs 240 cr | Q2FY26 p.9 vs Q4FY26 p.12 |
-| MAJOR | I-30 Premium decline stated at four values | Q3FY26 p.8, p.15; Q4FY26 p.4, p.12 |
-| MAJOR | I-31 Luxury share/contribution/growth oscillate; Q4 deceleration sold as strength | Q1FY26 p.4; Q2FY26 p.3, p.14; Q3FY26 p.12; Q4FY26 p.4, p.8 |
-| MAJOR | I-32 TiLT stagnation admitted only in Q2FY26; circular market-leader answer | Q2FY26 p.7 vs Q4FY25 p.6, Q4FY26 p.13 |
-| MAJOR | I-33 RTD realisation per case down ~10%; Rs 18 cr vs Rs 20 cr promised | Q2FY26 p.16 vs Q4FY26 p.3, p.8 |
-| MAJOR | I-28 WIPS: CFO affirmed a range he never gave; receivable never disclosed; Mar-2028 expiry | Q1FY26 p.8; Q2FY26 p.9; SULA Aug-2026 p.8 |
-| MINOR | I-20 Sula asset-light hospitality vs Gaurav's correction of the analyst; I-24 promoter-family RPT; I-34 exports reversal; I-36/37/38 drift set | as cited in Part 1 |
+### P5. B06 Q5 RTD growth CONTRADICTED — **SUPPORTED**, weakly, with the mapping caveat B06
+states honestly and repeats in its analyst_note. The stronger in-corpus contradiction is
+Fratelli's own incoherent RTD arithmetic (my R12) and its own three different growth rates.
 
-Note on B05's Shotgun assessment. B05's analyst_note calls the Shotgun record
-"the one genuinely clean positive in this dataset." The case target was met
-(~100,000 cases). The revenue promise was not (Rs 18 cr against Rs 20 cr, Q3FY26
-p.11 vs Q4FY26 p.8), realisation per case fell ~10% as states went 11 to 18, and
-unit economics were refused twice. I would soften "clean" to "delivered on volume,
-missed on value, and still undisclosed on economics."
+### P6. B06 "ZERO-PEER-RECOGNITION" and "GRAPE-COST-SILENCE-DURING-DISCLOSED-PEER-SPIKE" —
+both **SUPPORTED**. I independently confirm zero "Fratelli" hits across the twelve peer
+transcripts, and the grape-cost silence finding is the best single piece of cross-read work
+in either report.
 
-### PIPELINE FLAGS I DID NOT FIND INDEPENDENTLY — assessment
-
-| Pipeline flag | Verdict | Basis |
-|---|---|---|
-| B05 flag 1: Q3FY26 "positive PBT of roughly INR0.1 crores... PAT also turned positive" does not reconcile | **SUPPORTED — strongest single finding in the stage** | Call text confirmed at Q3FY26 p.6. Filed consolidated Dec-2025 quarter shows LBT Rs (495.42) lakh and net loss Rs (872.14) lakh (Results_Q4FY26 p.16). The PBT claim reconciles only with the Rs 512.82 lakh write-off added back; the PAT claim fails even then, given the Rs 367.99 lakh deferred-tax charge. I under-weighted this in my own pass and endorse it without reservation. |
-| B05 flag 2 / red flag 2: Q4FY26 basis change, true -40% | SUPPORTED | Independently derived: audited FY25 consolidated Rs 302.10 cr vs FY26 Rs 181.29 cr (Results_Q4FY26 p.16). |
-| B05 red flag: Rs 114.50 cr parent guarantee, Section 270 misreporting penalty, MSME payables +235% never raised on calls | SUPPORTED, partly out of my scope | The "never raised on any of five calls" half is directly verifiable and true; I searched all five transcripts. The underlying AR figures originate in B02/B03, outside my inputs. |
-| B06: Sula reports "slow traction" on canned wine | SUPPORTED (consistent) | Consistent with Fratelli's own Q2FY26 p.7 admission. I did not locate the exact Sula anchor and do not dispute it. |
-| B06 FLAG-PEER-SILENCE: zero mentions of Shotgun / RTD across 12 peer transcripts | SUPPORTED — independently reproduced | My keyword search across peer-concalls for RTD / ready-to-drink / Bro Code returned no matches. |
-| B06 grape-cost contradiction quantified at 350-400bps, not normalising until Q1 FY28 | SUPPORTED | Consistent with SULA Feb-2026 p.14 and Aug-2026 p.9, which I read directly. |
-
-**pipeline_flags_not_supported: none.** Every assertion in B05 and B06 that I could
-test held. The upstream weakness is breadth and severity calibration, not invention.
+### P7. B05 2C tone score "Defensiveness 3/5 — generally calm and willing to engage tough
+questions" — **NOT SUPPORTED as written**, because it omits the Q2FY26 p.12 audio deflection
+of the only balance-sheet-strength question in the sample (my R9). Folded into that finding
+rather than counted twice.
 
 ---
 
-## PART 3 — PROMISE-DELIVERY SPOT CHECKS
+## PART 4: PROMISE-DELIVERY SPOT CHECKS
 
-Rule 4 requires 3-5; I ran 6, checking both legs each time.
+Six checks of B05's 2A table: did the earlier call actually contain the promise, and does the
+later call or filing actually show that outcome.
 
-| # | Promise (earlier call, verified present) | Outcome (later call or filing, verified present) | Direction |
-|---|---|---|---|
-| 1 | Q4FY25 p.12, Gaurav: "my revenue guidance for this financial year is about INR 250 crores" + "20% to 25% growth" | FY26 audited consolidated revenue Rs 181.29 cr (Results_Q4FY26 p.16) | **CONFIRMED.** Missed by 27%. |
-| 2 | Q1FY26 p.9, Aditya: "endeavor is to do more than 1 lakh cases by the end of this financial year"; Q3FY26 p.11: "100,000 cases with a revenue contribution of... INR20 crores" | Q4FY26 p.3: "sold approximately 100,000 cases"; p.8: "roughly about INR18 crores" | **CONFIRMED with qualification.** Volume met, revenue 10% short. |
-| 3 | Q2FY26 p.9, Gaurav: "we are confident of achieving between 12% to 15% growth over the previous year" | Q4FY26 p.6: FY26 growth "approximately 1%"; audited +0.1% like-for-like | **CONFIRMED.** |
-| 4 | Q3FY26 p.14, Aditya: "roughly 7% revenue growth and with a far better Q4" — implies Q4 ≈ Rs 48 cr against 9M of Rs 147 cr | Audited Q4FY26 consolidated Rs 35.30 cr (Results_Q4FY26 p.16) | **CONFIRMED.** New finding: six-week-horizon guidance missed 25%. |
-| 5 | Q3FY26 p.9, Gaurav: "around 10% to 12% EBITDA margin"; asked "can we expect that in FY '27?" — "Yes, that's right" | Q1FY27 EBITDA Rs 0.30 cr ex other income on Rs 44.72 cr revenue = 0.7% (Results_Q1FY27 p.7); target never repeated on the Q4FY26 call | **CONFIRMED.** Walkback in progress. |
-| 6 | Reverse check on B05's headline flag: Q3FY26 p.6, Aditya: "positive PBT of roughly INR0.1 crores... PAT also turned positive" | Filed Dec-2025 quarter: LBT Rs (495.42) lakh, net loss Rs (872.14) lakh (Results_Q4FY26 p.16) | **CONFIRMED.** B05's direction is right. |
+**SC1 — Row 1, FY26 revenue ~Rs250cr. CONFIRMED.**
+Promise present: Q4FY25 p.12, "we are fairly confident that we will achieve this year about
+20% to 25% growth... my revenue guidance for this financial year is about INR 250 crores."
+Outcome present: FY26 audited consolidated revenue Rs18,128.65 lakh = Rs181.29cr
+(Results_Q4FY26_and_FY26, p.16). Direction correct. One omission: the same passage says "this
+is not including the Shotgun product launch. That will be on top," so the target was an
+ex-Shotgun number, which makes the miss worse than B05 scores it (my R3).
 
-Checked 6, confirmed 6, wrong 0. The promise-delivery table in B05 is directionally
-sound throughout. Its `delivered: 1 / partial: 3 / missed: 8` counters do not tie to
-the six rows presented; presentational only.
+**SC2 — Row 13, Shotgun in 10-15 states. CONFIRMED.**
+Promise present: Q4FY25 p.18, "available in 10-plus states by end of this FY"; Q1FY26 p.4,
+"targeting presence across 15 states for Shotgun by the end of FY26." Outcome present:
+Q4FY26 p.4, "established its presence across 18 states." DELIVERED is correct.
+
+**SC3 — Row 14, Shotgun ~1,00,000 cases. CONFIRMED on cases, incomplete.**
+Promise present: Q1FY26 p.9, "Our endeavor is to do more than 1 lakh cases by the end of this
+financial year"; Q3FY26 p.4, "confident of reaching close to 100,000 cases by the year-end."
+Outcome present: Q4FY26 p.4, "the brand has sold approximately 100,000 cases." DELIVERED is
+correct. But the rupee half of the same promise was missed and is untracked: Q3FY26 p.11
+promised "a revenue contribution of... INR20 crores by year-end"; delivered Rs18cr
+(Q4FY26 p.8).
+
+**SC4 — Row 7, "9M FY26 EBITDA Rs4.7cr; Q3 PBT/PAT positive," scored MISSED / opposite sign.
+WRONG.** The promise text exists (Q3FY26 p.6). The outcome is misjudged: on the wine-business
+basis management uses, Q3 subsidiary PBT is +Rs0.12cr against a claim of "roughly INR0.1
+crores," and subsidiary EBITDA is Rs5.42cr / 8.5% against a claim of Rs5.5cr / 8.6%. The
+consolidated loss B05 cites is the holdco's, driven by the Rs5.13cr write-off management
+disclosed on that same call. See P1.
+
+**SC5 — Row 9, "FY26 EBITDA +Rs1cr," scored MISSED / opposite sign at -Rs4.56cr. WRONG.**
+Promise text exists (Q4FY26 p.6). Wine-subsidiary EBITDA is approximately +Rs0.65cr, positive.
+The claim overstates by about Rs0.4cr and is unlabelled as adjusted; it does not carry the
+opposite sign. See P1.
+
+**SC6 — Row 10, hospitality. CONFIRMED.**
+Promise present: Q2FY26 p.4, "We hope we can begin work in early 2026, and we hope that we
+will be able to open the resort in 2028." Outcome present: Q3FY26 p.13, "the actual capex has
+not begun. We have not broken ground"; Q4FY26 p.9, "we have, for the time being, just deferred
+the hospitality plan by about a year... initiate it in calendar year '27-'28." Direction and
+budget history both correct.
+
+**Spot checks: 6 checked, 4 confirmed, 2 wrong.** Both wrong rows trace to the same root
+cause (P1), not to two independent errors.
 
 ---
 
-## PART 4 — CREDIBILITY GRADE
+## PART 5: CREDIBILITY GRADE
 
-B05 grades D. **I concur and would not grade higher.** My independent pass adds a
-second unreconciled headline claim (FY26 "operating breakeven" at +Rs 1.06 cr
-against an audited consolidated -Rs 4.56 cr), a same-call sign contradiction between
-the CMD and the Director on Q4 EBITDA, two repeated evasions on disclosure that
-B05 did not catch, and three peer contradictions on the causal excuses that carry
-the whole FY26 narrative. Nothing I found argues for a higher grade; a scale with a
-rung below D would justify it.
+B05 grades management **D**. **I concur with D**, on different grounds.
 
-## PART 5 — WHAT THE ORCHESTRATOR SHOULD DO
+B05's stated basis leads with the EBITDA sign-flip, which does not survive a like-for-like
+basis check. Strip that out and the D still stands comfortably on: guidance walked down four
+times in one year and missed anyway (R1), a headline target that excluded the only segment
+that grew (R3), the same cost-structure question refused as "sensitive" across three quarters
+(R7), a disclosure promise that came due and was not kept (R8), an audio excuse deployed on
+the only balance-sheet question asked in five calls (R9), a market-share claim that fails
+against management's own market-size number (R10), an RTD story whose four headline numbers
+are mutually incompatible (R12), a warrant forfeiture and a related-party promoter-family
+resolution never mentioned (R20, R24), a CFO tax forecast falsified by the accounts (R21), a
+receivable-recovery promise not delivered (R22), a discount-discipline claim contradicted by
+the market leader on four consecutive calls and by the company itself one quarter earlier
+(R26), a factually wrong rebuttal of an analyst about the competitor (R27), and an FTA
+assurance the peer says the industry already knew to be wrong (R28).
 
-1. The acceptance rate of 39% trips the sub-60% REWORK trigger for stage 05/06.
-   The rework should be **additive**. B05's two HIGH flags and B06's two
-   CONTRADICTED items are sound, independently reproduced here, and must survive
-   any re-run untouched.
-2. The single highest-value correction is P-1: re-grade the FY26 EBITDA claim from
-   LOW "rounding" to HIGH, on the same basis-disclosure logic B05 already applies to
-   the revenue figure. As it stands, the report tells a reader that FY26 reached
-   operating breakeven with only a minor caveat.
-3. The peer stage should re-read SULA Aug-2026 p.10-11 and May-2026 p.10. Three
-   claim-relevant statements sit there unused: Maharashtra wine duty unchanged,
-   Karnataka category degrowth in H2 FY26, and the Rs 1,200 EU-FTA pricing line.
-   Each contradicts a load-bearing Fratelli claim.
-4. Two repeated evasions (Shotgun unit economics; cost structure "sensitive") should
-   be added to `repeated_evasions` in B05. Under the stage-12 rubric a missed
-   repeated evasion is CRITICAL.
+What should NOT be in the basis: any claim that management stated positive EBITDA, PBT or PAT
+while the underlying wine business was negative. It did not. It stated adjusted, wine-only
+figures without labelling them, which is a presentation failure of a different and lesser kind.
+
+---
+
+## PART 6: MINOR OBSERVATIONS
+
+- **M1.** Solar contribution revised down without comment: "520 kw of solar capacity, meeting
+  50% of our electricity needs" (Q1FY26 p.6) → "45% of our energy requirements are now met
+  through solar power" (Q2FY26 p.4). Neither stage notes it.
+- **M2.** An unexplained "ongoing war" is cited as a margin factor and never followed up:
+  "Gross margins remained healthy at 79% despite changes in product mix and also with the
+  ongoing war" (Q4FY26 p.6). No analyst asks; management never explains.
+- **M3.** Q3FY26 revenue and growth both misstated relative to the filing: "INR65 crores...
+  8% growth" (Q3FY26 p.5) against a filed Rs63.60cr and 9.8% (Results_Q3FY26, p.10). B05
+  caught the revenue overstatement; neither caught that the growth rate was understated.
+- **M4.** Volume disclosure was disorderly on the Q4FY25 call: Gaurav could not give the
+  variance, Hemant gave "volume dropped by 13% in FY basis" and "It's almost same" for Q4
+  (p.8), and Aditya returned later with "about 10% for Q4" (p.18).
+- **M5.** Q1FY26 gives "Net sales declined 16%" in the opening (p.5) and "about a 15% dip"
+  in Q&A (p.11).
+- **M6.** Anchor precision: B05 mixes PDF page numbers with the transcripts' printed footer
+  numbers (one page low). Examples: FY25 revenue quote cited at p.4 (PDF p.5); Luxury+Super
+  13% at p.13 (PDF p.14); Rs5cr write-off at p.4 (PDF p.5); "we consider sensitive" at p.14
+  (PDF p.15). B06 uses PDF pages consistently and had already corrected two B05 anchors on
+  this basis. Source fidelity is Verifier A's call; I note the convention clash only so the
+  orchestrator does not read it as fabrication. B06 has one small drift of its own: the table-
+  grape price quote is cited at SULA Aug 2026 p.8, PDF p.9.
+
+---
+
+## PART 7: WHAT THIS AUDIT SAYS ABOUT THE STAGE PAIR
+
+B05 and B06 are serious, well-anchored reports. B05's reconciliation discipline, its
+exhaustive silence check, its repeated-question tracker and its guidance-walkdown table are
+all strong, and B06's grape-cost cross-read, its zero-peer-recognition search and its honest
+mapping caveats are better than the brief required.
+
+The 31% coverage figure reflects one structural blind spot rather than carelessness. Both
+stages worked the numbers-versus-filings axis extremely hard and the words-versus-words axis
+much less: peer statements that contradict the company in plain language (R26, R27, R28, R29),
+the company contradicting itself across quarters in prose rather than in figures (R14, R25,
+R26), verbal promises that came due and were not kept (R8, R21, R22, R25), and the technique
+of evasion as distinct from its topic (R9). Ten of my eleven MISSED items sit on that axis.
+The one exception, R12, is an arithmetic miss that sits inside a single answer rather than
+across a filing boundary.
+
+The single most consequential correction is P1: the report's headline flag is an artefact of
+applying a consolidated recomputation to figures management reports on a subsidiary basis
+that the same report had already identified. It should not be carried into synthesis in its
+current form, and the downstream instruction it generates ("treat every EBITDA, PBT, or PAT
+figure quoted on a Fratelli earnings call as unverified") would mis-price management
+credibility if acted on as written.
+
+---
+
+```yaml
+stage: B12b
+company: "FRATELLI"
+run_date: "2026-09-07"
+model: claude-opus-4-8
+status: complete
+independent_flags_found: 29
+caught: 9
+partially_caught: 10
+missed:
+  - {severity: "CRITICAL", item: "Discount-discipline claim contradicted by the market leader on four consecutive calls AND by Fratelli itself one quarter earlier; neither B05 nor B06 mentions discounting at all", anchor: "Concall_Q4FY26_Jun2026_Transcript.pdf p.14 ('remained fairly consistent year-on-year over the last 2 to 3 years... showing strength in brand love') vs Concall_Q3FY26_Feb2026_Transcript.pdf p.8 ('promotions that we do to trade also are a little bit on the higher side, higher than where we wish to see them') vs SULA-Concall_Nov_2025 p.15, SULA-Concall_Feb_2026 p.14, SULA-Concall_May_2026 p.10, SULA-Concall_Aug_2026 p.4 and p.6"}
+  - {severity: "MAJOR", item: "RTD market-size, case-count, share and revenue figures are mutually incompatible within one answer: 10% share by cases, 3.6% by value, 6% claimed elsewhere, and Rs5,000/case market vs Rs1,800/case own realisation", anchor: "Concall_Q4FY26_Jun2026_Transcript.pdf p.8 ('over 1 million cases', 'already INR500 crores', '100,000 cases', 'roughly about INR18 crores'); 6% share at Concall_Q2FY26_Nov2025_Transcript.pdf p.3"}
+  - {severity: "MAJOR", item: "Q2FY26 FTA assurance that the government would concede nothing beyond Australia, against the peer's statement that the industry was summoned by the Commerce Ministry a year earlier and told duties would fall significantly; Fratelli claims a seat at that table", anchor: "Concall_Q2FY26_Nov2025_Transcript.pdf p.3 vs SULA-Concall_Feb_2026_Transcript.pdf p.7; Fratelli's association claim at Concall_Q3FY26_Feb2026_Transcript.pdf p.15"}
+  - {severity: "MAJOR", item: "CFO's Q4FY25 deferred-tax guidance (25% ETR, DTA to reverse against profit) falsified by the FY26 write-off of the entire DTA for want of future taxable profit; never revisited on any call", anchor: "Concall_Q4FY25_Jun2025_Transcript.pdf p.10 vs Results_Q4FY26_and_FY26_2026-05-30 p.11 (note: Rs361.12 lakh charged to P&L)"}
+  - {severity: "MAJOR", item: "Holdco receivable promise 'the same will be recovered within FY26' not delivered; Rs46.72 lakh still on the balance sheet at 31-Mar-2026. B05 credits the write-off half as a positive but does not test the delivery half", anchor: "Concall_Q3FY26_Feb2026_Transcript.pdf p.5 vs Results_Q4FY26_and_FY26_2026-05-30 p.8"}
+  - {severity: "MAJOR", item: "A&P reduction promised in FY25 (100bps down, 5-6% destination by 2028-30) never delivered; still 8% a year later and destination quietly raised to 7-8%, with Shotgun spend above 10%", anchor: "Concall_Q4FY25_Jun2025_Transcript.pdf p.11 and p.20 vs Concall_Q3FY26_Feb2026_Transcript.pdf p.7 and p.9 vs Concall_Q4FY26_Jun2026_Transcript.pdf p.11"}
+  - {severity: "MAJOR", item: "Management's only specific factual claim about the competitor's hospitality model is wrong; it told an accurate analyst to 'revalidate some of your assumptions'", anchor: "Concall_Q1FY26_Aug2025_Transcript.pdf p.14-15 vs SULA-Concall_Nov_2025_Transcript.pdf p.8 and SULA-Concall_Aug_2026_Transcript.pdf p.11"}
+  - {severity: "MAJOR", item: "'Your audio is not clear' used twice to sidestep the only balance-sheet-strength question asked across five calls; B05 instead scores Defensiveness 3/5 as willing to engage tough questions", anchor: "Concall_Q2FY26_Nov2025_Transcript.pdf p.12 (Smith Gala)"}
+  - {severity: "MAJOR", item: "Related-party postal ballot approved the same day as the FY26 results (sponsorship of Mr. Keshav Sekhri's higher education) never mentioned on the call three days later; B05's silence check catches five other items from the same filing package", anchor: "Results_Q4FY26_and_FY26_2026-05-30 p.2, board item 4"}
+  - {severity: "MINOR", item: "'Our business has turned EBITDA positive in Q2' when Q2FY25 was already positive; B05 scores this promise DELIVERED without the qualifier", anchor: "Concall_Q2FY26_Nov2025_Transcript.pdf p.4 vs p.5 (Rs1.47cr vs Rs1.32cr prior year)"}
+pipeline_flags_not_supported:
+  - "B05 red_flag 'EBITDA/PBT/PAT sign-flip against filed results in 3-4 of last 4 checked periods' (HIGH) and YAML flag EBITDA-SIGN-FLIP: OVERSTATED. Applies a consolidated recomputation to figures management reports on the wine-subsidiary basis that B05's own UNDISCLOSED-BASIS-CHANGE flag identified. On the subsidiary basis, Q3FY26 subsidiary PBT is +Rs11.79 lakh vs a claim of 'roughly INR0.1 crores' (exact match); Q3FY26 subsidiary EBITDA Rs5.42cr/8.5% vs a claim of Rs5.5cr/8.6% (match); FY26 subsidiary EBITDA approximately +Rs0.65cr, positive, vs a claim of +Rs1.06cr; Q4FY26 subsidiary EBITDA -Rs3.97cr vs Aditya's stated -Rs3.7cr (match). The sole reconciling item is the holdco's one-off Rs512.82 lakh write-off that B05 elsewhere credits management for disclosing proactively. Derivation validated by exact additivity: consolidated FY26 net loss Rs2,491.19 lakh minus subsidiary Rs1,583.47 lakh = Rs907.72 lakh vs parent standalone Rs907.64 lakh."
+  - "B05 sub-claim 'Q3 FY26 PBT/PAT... the single starkest reconciliation failure in the entire five-call sample... OPPOSITE SIGN on both PBT and PAT' (Section 2A, prose): NOT SUPPORTED. Subsidiary PBT +Rs0.12cr against a claim of roughly Rs0.1cr."
+  - "B05 sub-claim 'Q3 FY26 EBITDA claim overstates the recomputed figure by ~14x' (promise_delivery row 6, scored partial): NOT SUPPORTED. Subsidiary-basis recompute is Rs5.42cr against a claim of Rs5.5cr."
+  - "B05 promise_delivery rows 7, 8 and 9 (all scored missed / opposite sign) and the resulting tally delivered 3 / partial 1 / missed 10: OVERSTATED, consequential on the above. Corrected tally is approximately delivered 5 / partial 1 / missed 7 before adding the four untracked unkept promises this audit found (Shotgun run-rate disclosure, deferred tax, holdco receivable, A&P)."
+  - "B05 2C tone score 'Defensiveness 3/5 - generally calm and willing to engage tough questions': NOT SUPPORTED as written; omits the Q2FY26 p.12 audio deflection of the only balance-sheet-strength question in the sample."
+promise_delivery_spot_checks: {checked: 6, confirmed: 4, wrong: 2}
+credibility_grade_concur: "concur with D, different basis. The D is well earned on guidance discipline, repeated evasion, undisclosed filed items and peer-contradicted claims; it is NOT earned on the EBITDA sign-flip B05 leads with, which does not survive a like-for-like subsidiary-basis check."
+findings:
+  - {severity: "CRITICAL", location: "B05 4D / red_flags / credibility_basis / analyst_note", item: "EBITDA-SIGN-FLIP is the report's headline flag, drives the D grade, three promise-delivery rows and an explicit downstream instruction to treat every call EBITDA/PBT/PAT figure as unverified. It rests on a basis mismatch B05 itself created. Decision-changing if carried into synthesis as written.", note: "Rule 5 sets NOT SUPPORTED at MAJOR; graded CRITICAL here on decision impact per the severity scale. This is a judgment call on basis, not an existence-of-a-number call; any Verifier A source-fidelity verdict on these figures stands untouched."}
+  - {severity: "CRITICAL", location: "B05 + B06, both absent", item: "MISSED repeated peer contradiction on discounting across four consecutive SULA calls, compounded by Fratelli self-contradiction between Q3FY26 and Q4FY26. Thesis-relevant: it bears on whether the 79% gross margin and the operating-leverage story survive the trade spend needed to hold shelf.", note: "Rule 5: a missed repeated evasion or contradiction spanning 2+ quarters is CRITICAL."}
+  - {severity: "MAJOR", location: "B05 Section 2A prose + promise_delivery row 7", item: "Q3FY26 PBT/PAT 'opposite sign' claim NOT SUPPORTED", note: "Subsidiary PBT +Rs11.79 lakh vs claim of roughly Rs0.1cr"}
+  - {severity: "MAJOR", location: "B05 promise_delivery row 6", item: "Q3FY26 EBITDA '~14x overstated' NOT SUPPORTED", note: "Subsidiary EBITDA Rs5.42cr / 8.5% vs claim Rs5.5cr / 8.6%"}
+  - {severity: "MAJOR", location: "B05 promise_delivery tally", item: "delivered 3 / partial 1 / missed 10 is wrong in composition; corrected ~delivered 5 / partial 1 / missed 7 before adding four untracked unkept promises", note: "Consequential on the basis mismatch"}
+  - {severity: "MAJOR", location: "missed", item: "FTA assurance vs peer's Commerce Ministry disclosure a year earlier", note: "Q2FY26 p.3 vs SULA Feb 2026 p.7"}
+  - {severity: "MAJOR", location: "missed", item: "CFO deferred-tax guidance falsified by the FY26 DTA write-off", note: "Q4FY25 p.10 vs FY26 results p.11"}
+  - {severity: "MAJOR", location: "missed", item: "Holdco receivable recovery promise not delivered", note: "Q3FY26 p.5 vs FY26 standalone balance sheet p.8, Rs46.72 lakh"}
+  - {severity: "MAJOR", location: "missed", item: "A&P reduction promised and never delivered; destination raised from 5-6% to 7-8%", note: "Q4FY25 p.11/p.20 vs Q3FY26 p.7/p.9"}
+  - {severity: "MAJOR", location: "missed", item: "RTD headline numbers mutually incompatible within one answer", note: "Q4FY26 p.8"}
+  - {severity: "MAJOR", location: "missed", item: "Management's factual rebuttal about Sula's asset-light hospitality model is wrong", note: "Q1FY26 p.14-15 vs SULA Nov 2025 p.8, SULA Aug 2026 p.11"}
+  - {severity: "MAJOR", location: "missed", item: "Audio-excuse deflection of the only balance-sheet-strength question in five calls", note: "Q2FY26 p.12"}
+  - {severity: "MAJOR", location: "missed", item: "Related-party postal ballot (promoter-family education sponsorship) absent from the silence check", note: "FY26 results p.2"}
+  - {severity: "MAJOR", location: "B05 1D silence check", item: "PARTIAL: working capital never discussed on any call; receivables Rs105.1cr (about 212 days) and inventory Rs95.1cr against Rs181.29cr revenue are absent from the silence check", note: "FY26 consolidated balance sheet p.17; peer quantifies these every quarter"}
+  - {severity: "MAJOR", location: "B05 2A / 4C", item: "PARTIAL: debt Rs100cr to Rs120cr against 'not intending to take any more substantial debt' is scored as a credibility positive", note: "Q4FY25 p.14, Q2FY26 p.8, FY26 consolidated balance sheet p.17"}
+  - {severity: "MAJOR", location: "B06 Q5 / B05 3A", item: "PARTIAL: Fratelli's 'more than 90% market share in the Wine-in-a-Can segment' is never tested against Sula's direct counter-claim to leadership on the same question", note: "Q4FY26 p.13 vs SULA Nov 2025 p.10"}
+  - {severity: "MAJOR", location: "B05 1B / 1C", item: "PARTIAL: FY27 10-12% EBITDA guidance silently dropped at Q4FY26 and replaced by a Rs240cr net-net breakeven framing implying materially less; the analyst's 20% target is neither confirmed nor corrected", note: "Q3FY26 p.8/p.14 vs Q4FY26 p.10/p.12"}
+  - {severity: "MINOR", location: "B05 Section 2A / headline", item: "PARTIAL: Q4FY26 opening conflates the FY EBITDA figure with the Q4 sentence preceding it; B05 spots the internal inconsistency but not the mechanism", note: "Q4FY26 p.3 vs p.5"}
+  - {severity: "MINOR", location: "B06 2B", item: "PARTIAL: harvest contradiction anchored to SULA Aug 2026 price data rather than the tighter SULA 9-Feb-2026 crop assessment one week before Fratelli's claim; Fratelli's own Q4FY26 p.9 'higher cost' admission unused", note: "SULA Feb 2026 p.14 vs Concall_Q3FY26 p.4"}
+  - {severity: "MINOR", location: "B06 Q1", item: "SUPPORTED but OVERSTATED as to precision: 7.5-9.5% share rests on a TAM with no in-corpus third-party source; management's own in-transcript Rs1,000cr denominator gives 18% and needs no external TAM", note: "Concall_Q1FY26 p.7"}
+  - {severity: "MINOR", location: "B05 1C", item: "PARTIAL: segment/denominator drift only half caught (luxury salience caught; premium-and-above base switch, 50-55-50 luxury share drift, and two within-call premium-decline inconsistencies missed)", note: "Q3FY26 p.3/p.7/p.15; Q4FY26 p.3/p.4/p.12"}
+  - {severity: "MINOR", location: "B05 + B06 WIPS treatment", item: "PARTIAL: neither catches management ratifying an Rs8-12cr figure an analyst put to it after saying Rs8cr the prior quarter", note: "Q1FY26 p.8 vs Q2FY26 p.9"}
+  - {severity: "MINOR", location: "B05 + B06 input_gaps", item: "PARTIAL: Q1FY27 transcript non-publication filed as a corpus gap rather than a management-conduct signal, in the quarter the 30% guidance first went against management", note: "Five prior transcripts filed on schedule; all three peers published Q1FY27"}
+  - {severity: "MINOR", location: "B05 Section 2A prose", item: "Promise-delivery counts internally muddled: 'delivered = 2... call it 3' and 'missed = 9' against a YAML of 3/1/10", note: "Presentational"}
+  - {severity: "MINOR", location: "B05 anchors", item: "Mixes PDF page numbers with the transcripts' printed footer numbers (one page low) in at least four places; B06 uses PDF pages and had already corrected two B05 anchors. B06 has one drift of its own (SULA Aug 2026 table-grape quote cited p.8, PDF p.9).", note: "Source fidelity is Verifier A's call; noted so the convention clash is not read as fabrication"}
+critical_count: 2
+major_count: 15
+minor_count: 8
+acceptance_rate: 31
+```

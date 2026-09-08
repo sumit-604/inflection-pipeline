@@ -3,23 +3,30 @@ company: "FRATELLI"
 run_date: "2026-09-07"
 phase: 1
 computed_by: orchestrator
+revision: 2
+revision_note: "Recomputed after the operator-ordered rerun of stages 5 and 6 and the fresh re-measure by verifiers B and D. Revision 1 (delta 39) is in git history at commit 9ddb6e0."
 confidence_delta:
-  numerical_acceptance: 87      # B12a run 2: 61 numbers audited, 0 CRITICAL, 7 MAJOR, 1 MINOR
-  redflag_coverage: 39          # B12b: 15 of 38 independently found flags caught upstream (7 more partially)
-  framework_adherence: 82       # B12c: 47 of 57 rule checks passed. GATE 0 + EMERGING MOAT SCOPE ONLY
-  peer_utilisation: 100         # B12d: 12 of 12 peers used substantively
-  overall: 39                   # minimum of the four, per orchestrator Section 5
+  numerical_acceptance: 87      # B12a run 2, unchanged: stages 5 and 6 were not re-audited numerically
+  redflag_coverage: 31          # B12b run 2: 9 of 29 independently found flags caught, 10 partially
+  framework_adherence: 82       # B12c, unchanged. GATE 0 + EMERGING MOAT SCOPE ONLY
+  peer_utilisation: 67          # B12d run 2: 8 of 12 peers substantively confirmed, down from 12
+  overall: 31                   # minimum of the four
 band: "FORCED REWORK (overall below 60)"
-framework_adherence_scope: "PARTIAL. Covers Gate 0 (B01) 93% and Emerging Moat (B07) 72% only. The valuation-adherence component is PENDING PHASE 3: B10 and B11 do not exist yet, so verifier C's valuation audit did not run."
+movement_vs_revision_1:
+  redflag_coverage: "39 to 31. The two verifier passes are not the same list (38 flags found in run 1, 29 in run 2), so the ratio moved but the counts are not directly comparable. Partially-caught rose from 7 to 10."
+  peer_utilisation: "100 to 67. One of the six mandated peer presentations was never mentioned in the reran stage 6, and one peer-quarter marked substantive carries no anchor."
+  numerical_acceptance: "unchanged at 87; verifier A was not re-run against the reran stages."
+  framework_adherence: "unchanged at 82; verifier C audits Gate 0 and Emerging Moat, neither of which was reran."
 rework_triggers:
   - trigger: "Any verifier acceptance_rate below 60%"
     fired: true
-    detail: "B12b redflag coverage is 39%. An independent read of the same five company transcripts and twelve peer transcripts found 38 red flags; the upstream analysis had caught 15 and partially caught 7. Two of the misses are CRITICAL: repeated multi-quarter evasions on Shotgun unit economics and on cost structure, both of which the concall prompt requires to be surfaced."
+    detail: "TWO verifiers now fire it. B12b redflag coverage 31%. B12d citation acceptance 50%, down from 60% and now below the floor rather than at it."
   - trigger: "Verifier A CRITICAL numerical finding"
     fired: false
-    detail: "B12a run 2 returned zero CRITICAL. Both run-1 CRITICALs were re-decided by Verifier A itself on source and reclassified MAJOR; see outputs/final/verifier-disagreement-log.md."
-  - trigger: "Verifier D acceptance_rate below 60%"
-    fired: false
-    detail: "B12d citation acceptance is exactly 60%, at the floor and not below it. Six MAJOR anchor errors stand: real peer quotes cited to the wrong page or the wrong transcript, including the 350-400bps grape-cost figure carrying B06's contradicted verdict."
-verdict_effect: "The phase-1 gate recommendation is REWORK. This judges the ANALYSIS, not the company: nothing here is a statement about FRATELLI's quality. The evidence stages that must be reworked are stage 5 (concall analysis) and stage 6 (peer verification), plus stage 6's citation anchors."
-also_capping: "B00.freshness_verdict is CORPUS GAPPED-FRESHNESS (Q1FY27 concall transcript absent while Q1FY27 results are in corpus), which independently caps the gate at PROCEED WITH CAVEATS. REWORK is the more severe verdict and stands on its own grounds."
+    detail: "B12a run 2 returned zero CRITICAL."
+outstanding_after_rerun:
+  - "B12b raises a CRITICAL finding that the reran stage 5's HEADLINE flag, EBITDA-SIGN-FLIP, is OVERSTATED: it applies a consolidated recomputation to figures reported on the wine-subsidiary basis. Recorded as a supersession on the B05 block. Not adjudicated by the orchestrator."
+  - "B12b raises a second CRITICAL: a discounting contradiction spanning four consecutive peer calls and a Fratelli self-contradiction between two quarters, missed by both reran stages."
+  - "B12d finds the citation layer did not improve despite an explicit rule: eight MAJOR anchor errors, including a load-bearing figure cited to the wrong document. Two were independently spot-checked by the orchestrator against the page markers and confirmed."
+  - "B12b notes stage 5 mixes PDF page numbers with the transcripts' printed footer numbers in at least four places, a convention clash distinct from the wrong-page errors."
+verdict_effect: "The phase-1 gate recommendation remains REWORK, now confirmed on a second pass and by two independent verifiers rather than one. This judges the ANALYSIS, not the company. Two reruns of stages 5 and 6 have not cleared it."

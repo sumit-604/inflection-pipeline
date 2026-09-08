@@ -1,0 +1,92 @@
+company: Indian Energy Exchange Ltd
+ticker: IEX
+bse_code: "540750"
+nse_symbol: IEX
+isin: INE022Q01020
+cmp: 116.54
+market_cap_cr: 10396.21
+run_date: 2026-09-08
+listed_date: "2017"   # IPO year. Exact listing date NOT VERIFIED from a filing at intake. Well outside the ~3-year recently-listed window.
+run_type: full
+concalls_available: true
+sector_cap_row: "Platform / SaaS / IT services"
+sector_cap_status: FLAGGED
+peers:
+  - {ticker: MCX,  url: "https://www.screener.in/company/MCX/consolidated/",  why: "commodity derivatives exchange; take-rate on volume, SEBI fee-cap exposure, survived a regulator-forced product reset"}
+  - {ticker: BSE,  url: "https://www.screener.in/company/BSE/consolidated/",  why: "stock exchange; shows exchange economics when the regulator changes product design"}
+  - {ticker: CDSL, url: "https://www.screener.in/company/CDSL/consolidated/", why: "depository; regulated infrastructure, price-capped per-transaction fee, duopoly"}
+notes: >
+  Collected 2026-09-08 by tools/collector/collect_to_repo.py v3 (--dry-run) plus
+  manual BSE, NSE and SEBI retrieval. Collector defects corrected at intake, all
+  listed under input_gaps below.
+input_gaps:
+  - field: sector_cap_row
+    detail: >
+      Collector auto-picked "Pharma / CDMO". Corrected to
+      "Platform / SaaS / IT services" (45x), the closest structural row for an
+      asset-light take-rate platform. The Section 1B cap table carries NO Market
+      Infrastructure / Exchange row. Live peer multiples 08-Sep-2026: MCX 55.3x,
+      CDSL 62.1x, BSE 48.9x. Operator ruling wanted before Stage 11.
+  - field: screening_csv
+    detail: >
+      screener-Profit_Loss.csv, screener-Balance_Sheet.csv, screener-Cash_Flow.csv
+      and screener-Quarters.csv contain row labels and no values, for IEX and for
+      all three peers. Only *-Data_Sheet.csv is populated; it carries the full
+      FY19-FY26 P&L, balance sheet, cash flow and 10-quarter series. Known
+      recurring collector defect. Use Data_Sheet.
+  - field: peer_download
+    detail: >
+      CDSL returned zero files on the collector pass (screener login hit
+      net::ERR_INSUFFICIENT_RESOURCES). Re-run manually with screener_collect.py;
+      4 concalls and 6 CSVs recovered. Peer corpus is complete.
+  - field: rating
+    detail: >
+      inputs/rating/ is EMPTY and this is not a gap. IEX carries borrowings of
+      Rs11.16cr (FY26) and told BSE on 13-Apr-2026 that it does not qualify as a
+      Large Corporate, i.e. it has no listed debt. No CRISIL, ICRA or CARE rating
+      for IEX was found. Stage 10 rating_wc_quote is unresolvable by absence of
+      rated debt, not by missing collection. DEGRADATION MAP "no rating" applies.
+  - field: research
+    detail: "inputs/research/ empty. No broker notes collected; non-anchored tier anyway."
+  - field: prospectus
+    detail: >
+      IEX listed 2017, outside the ~3-year recently-listed window, so its own IPO
+      prospectus is not foundational. inputs/prospectus/ instead holds the IGX
+      draft abridged prospectus (12pp, SEBI, Jul-2026). The full IGX DRHP sits
+      with the book-running lead managers and was NOT collected.
+  - field: concalls_count
+    detail: >
+      IEX held NO separate Q1FY27 earnings call. The 15-Jul-2026 BSE filing is
+      titled "Schedule of Annual Analyst Meet and Quarterly Earnings Call Q1FY27"
+      and the single event on 24-Jul-2026 served both. The Jul-2026 transcript in
+      inputs/concalls/ IS the Q1FY27 interaction (42pp, the longest of the four).
+      Stage 5 must read it as the Q1FY27 call, not as a separate investor day.
+      The Q2FY26 call (Nov-2025) sits in inputs/other/ to hold concalls/ at 3.
+  - field: image_only_pdfs
+    detail: >
+      inputs/announcements/SAST_Reg29_2_Disclosure_2026-04-21.pdf and
+      ..._2026-06-10.pdf return no extractable text on page 1. Scanned filings.
+      OCR needed if a stage must read them.
+freshness_pairs:
+  - pair: "newest results filing to its same-quarter concall"
+    status: SATISFIED
+    detail: >
+      Newest results filing is Q1FY27, board-approved 23-Jul-2026, in
+      inputs/results/. Its companion interaction is the 24-Jul-2026 Analyst Meet
+      transcript in inputs/concalls/, filed 31-Jul-2026. No separate Q1FY27 call
+      exists (see concalls_count above).
+  - pair: "annual report must not trail the latest audited annual results"
+    status: SATISFIED
+    detail: "FY26 audited results 23-Apr-2026; FY26 annual report filed 14-Aug-2026, in inputs/annual-report/."
+  - pair: "rating bulletin to full rationale"
+    status: NOT_APPLICABLE
+    detail: "No rated debt. See input_gaps.rating."
+  - pair: "referenced regulatory order to its text"
+    status: OPEN
+    detail: >
+      The CERC market-coupling order (Jul-2025), the APTEL judgment
+      (13-Feb-2026) and the Supreme Court orders (11-May-2026, 27-Jul-2026) are
+      referenced across the corpus but their texts were NOT collected. This is
+      the load-bearing regulatory fact for the whole thesis. Claude web should
+      pull them at Phase 2, or the operator should place them in
+      inputs/announcements/ before Stage 11.

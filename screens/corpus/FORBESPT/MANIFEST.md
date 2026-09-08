@@ -15,16 +15,17 @@ the proxy denies the CONNECT. No PDF is held.
 
 | File | Source | Coverage | Bull AI document_ids |
 |---|---|---|---|
-| filings/FORBESPT-search-extracts.md | one search_company_documents pass over filings | 19 page-cited passages, FY2025 to FY2026 | various, each named in the file |
+| filings/FORBESPT-search-extracts.md | one search_company_documents pass over filings, plus an addendum of full page extracts | 19 page-cited passages FY2025-FY2026, plus the FY2026 audited P&L, balance sheet and cash flow (pages 3-7) | various, each named in the file; the addendum is b1136151-0f44-42b5-bc13-9e333c73e4cc |
 
 ## Coverage gaps
 - **No earnings call transcript and no investor presentation exist.** Bull AI lists neither
   under any period. There is no management commentary on the business anywhere in the
   corpus beyond a macro-economic MD&A passage.
-- **The FY2026 annual results figures are not held.** The board approved them on 7 May 2026
-  with an unmodified audit opinion, and the corpus confirms that, but the profit and loss
-  numbers were not returned. The card therefore runs on FY2025 audited plus H1FY26. That is
-  a freshness gap of two published quarters.
+- The FY2026 annual results are NOW HELD (addendum to the extract file): profit and loss,
+  balance sheet and cash flow, pages 3-7 of the Financial Results filed 2026-05-07. The
+  earlier gap on this line is closed. The board approved them on 7 May 2026
+  with an unmodified audit opinion, and the full statements were subsequently retrieved in
+  the same session and are held in the addendum. The card runs on FY2026 audited.
 - The Reg. 29(2) SAST disclosure gives the promoter's holding before the transaction
   (72.56%, unencumbered) but the direction and size of the transaction were cut off. Bull
   AI lists five such disclosures plus one Reg. 29(1). Whether Shapoorji Pallonji has been
@@ -37,6 +38,8 @@ the proxy denies the CONNECT. No PDF is held.
 - No market cap or CMP. Verify live.
 
 ## Derivation note
-Q2FY26 and H1 profit before tax are derived by arithmetic from printed line items, because
-the total expense and profit lines were cut off in the retrieved snippet. The derivation is
-shown in the extract file and the card marks every use of it as derived.
+Q2FY26 profit before tax is derived by arithmetic from printed line items, because the
+half-year total expense and profit lines were cut off in the search snippet. The FY2026
+annual figures are printed and audited, and the card uses those. Every derived figure on
+the card is marked as derived, including EBITDA, free cash flow, net cash and the return
+ratios, none of which the company reports itself.

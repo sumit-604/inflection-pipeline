@@ -129,3 +129,141 @@ Company, with effect from August 1, 2025. This appointment is made following the
 of the HR."
 Both are stated as not related to any director, KMP, promoter or promoter group.
 (Change in Management, Bull AI label FY2026 Q2, pages 2 and 3.)
+
+---
+
+# ADDENDUM, same session: FY2026 audited accounts
+
+RETRIEVED 2026-09-08 via get_document_chunks on document_id
+b1136151-0f44-42b5-bc13-9e333c73e4cc (Financial Results filed 2026-05-07), pages 3-7.
+This closes the gap named above: the FY2026 profit and loss, balance sheet and cash flow
+are now held.
+
+## Auditor's report, pages 3-4
+Sharp & Tannan Associates, Firm's Reg. No. 109983W, by the hand of Parthiv S Desai,
+Partner, Membership No. (F) 042624, UDIN 26042624HTRMKM4136, Mumbai, May 07, 2026.
+Other Matters: "The Statement includes the figures of Standalone Financial Results for the
+quarter ended March 31, 2026 and March 31, 2025, are the balancing figures between audited
+figures in respect of the full financial year ended March 31, 2026 and March 31, 2025,
+respectively, and the unaudited published year-to-date figures up to December 31, 2025 and
+December 31, 2024, respectively, which have been subjected to limited review by us.
+Our opinion is not modified in respect of these other matters."
+
+## PAGE 5 — Statement of Profit & Loss, Rs lakh
+| Particulars | Q4FY26 31.03.26 unaud | Q3FY26 31.12.25 unaud | Q4FY25 31.03.25 unaud | FY26 audited | FY25 audited |
+|---|---:|---:|---:|---:|---:|
+| Revenue from operations | 7,096 | 6,437 | 6,594 | 25,101 | 23,266 |
+| Other income | 142 | 72 | 164 | 373 | 438 |
+| Total Income | 7,238 | 6,509 | 6,758 | 25,474 | 23,704 |
+| Cost of materials consumed | 2,656 | 2,446 | 2,130 | 9,332 | 7,446 |
+| Purchases of stock-in-trade | - | - | (5) | - | 32 |
+| Changes in inventories | (375) | (371) | 315 | (1,252) | 504 |
+| Employee benefits expense | 1,277 | 1,553 | 1,032 | 5,044 | 4,403 |
+| Finance costs | 40 | 44 | 47 | 166 | 113 |
+| Depreciation and amortisation | 392 | 397 | 339 | 1,551 | 1,350 |
+| Other expenses | 1,715 | 1,636 | 1,462 | 6,683 | 5,768 |
+| Total expenses | 5,705 | 5,705 | 5,320 | 21,524 | 19,616 |
+| Profit before exceptional items and tax | 1,533 | 804 | 1,438 | 3,950 | 4,088 |
+| Exceptional items (Net) | - | - | - | - | - |
+| Profit before tax | 1,533 | 804 | 1,438 | 3,950 | 4,088 |
+| Current tax | 411 | 294 | 306 | 1,116 | 948 |
+| (Excess)/short provision for tax of earlier years | - | 23 | - | 23 | 22 |
+| Deferred tax | 16 | (72) | 220 | (66) | 243 |
+| Total tax expense | 427 | 245 | 526 | 1,073 | 1,213 |
+| Profit after tax | 1,106 | 559 | 912 | 2,877 | 2,875 |
+| Other Comprehensive Income (net of tax) | (69) | 11 | 10 | (64) | (26) |
+| Total Comprehensive Income | 1,037 | 570 | 922 | 2,813 | 2,849 |
+| Paid-up equity share capital (FV Rs 10) | 5,159 | 5,159 | 5,159 | 5,159 | 5,159 |
+| Other equity (excl. Revaluation Reserve) | | | | 11,699 | 11,465 |
+| Basic and diluted EPS (Rs) | 2.14 | 1.08 | 1.77 | 5.58 | 5.57 |
+NOTE: the Q4FY26 and Q3FY26 total expense lines both print 5,705, which cannot both be
+right against different expense components. Extraction or filing artefact; the annual
+columns foot correctly and are the ones used.
+Paid-up capital of Rs 5,159 lakh at Rs 10 face value confirms 5.159 crore shares
+outstanding.
+
+## PAGE 6 — Statement of Assets and Liabilities, Rs lakh
+| Particulars | Mar 31 2026 audited | Mar 31 2025 audited |
+|---|---:|---:|
+| Property, Plant and Equipment | 10,064 | 9,946 |
+| Right-of-use assets | 890 | 1,015 |
+| Capital work-in-progress | 356 | 820 |
+| Other Intangible assets | 30 | 40 |
+| Investments (non-current) | 125 | 115 |
+| Income tax assets (net) | 1,221 | 1,027 |
+| Other non-current assets | 191 | 50 |
+| **Total Non-current assets** | **12,877** | **13,013** |
+| Inventories | 5,642 | 3,193 |
+| Investments (current) | 2,322 | 4,396 |
+| Trade receivables | 3,020 | 3,304 |
+| Cash and cash equivalents | 575 | 748 |
+| Bank balances other | 54 | - |
+| Loans & Advances | 450 | - |
+| Other current assets | 181 | 349 |
+| **Total Current assets** | **12,256** | **11,990** |
+| **Total Assets** | **25,133** | **25,003** |
+| Equity share capital | 5,159 | 5,159 |
+| Other equity | 11,699 | 11,465 |
+| **Total Equity** | **16,858** | **16,624** |
+| Borrowings (non-current) | 1,072 | 1,487 |
+| Lease Liabilities (non-current) | 15 | 139 |
+| Deferred tax liabilities (net) | 384 | 471 |
+| **Total Non-current liabilities** | **1,610** | **2,224** |
+| Borrowings (current) | 415 | 481 |
+| Lease Liabilities (current) | 161 | 141 |
+| Trade payables, micro and small enterprises | 1,432 | 741 |
+| Trade payables, others | 1,809 | 1,601 |
+| Other current liabilities | 4,247 | 4,043 |
+| Provisions | 1,210 | 1,165 |
+| **Total Current Liabilities** | **6,666** | **6,155** |
+READER RECONCILIATION: the extracted liabilities side prints several duplicated and
+mislabelled subtotal rows and does not foot as printed. It reconciles as follows:
+Total Equity 16,858 + Total Non-current liabilities 1,610 + Total Current Liabilities
+6,666 = 25,134, against Total Assets of 25,133 (one lakh of rounding). The FY25 column
+reconciles the same way: 16,624 + 2,224 + 6,155 = 25,003 = Total Assets. So the line
+labelled "Total Liabilities 6,666" in the extraction is the current-liabilities total, not
+all liabilities. Treated accordingly and flagged.
+Derived from the above: total borrowings Mar-26 = 1,072 + 415 = 1,487 lakh. Cash,
+bank and current investments = 575 + 54 + 2,322 = 2,951 lakh. Net cash position about
++1,464 lakh.
+
+## PAGE 7 — Statement of Cash Flows, Rs lakh
+| | FY26 | FY25 |
+|---|---:|---:|
+| Profit before tax | 3,950 | 4,088 |
+| Depreciation and amortisation | 1,551 | 1,350 |
+| Finance costs | 166 | 113 |
+| Dividend / income from mutual fund | (180) | (22) |
+| Gain on fair value of current investments | (41) | (113) |
+| Other adjustments (net) | 36 | (114) |
+| **Total adjustments** | **1,532** | **1,214** |
+| **Operating profit before working capital changes** | **5,482** | **5,302** |
+| (Increase)/decrease in trade and other receivables | (163) | 765 |
+| (Increase)/decrease in inventories | (2,449) | 654 |
+| (Increase)/decrease in other assets | 136 | (292) |
+| Increase in trade and other payables | 861 | 224 |
+| (Decrease)/increase in provisions | 8 | (721) |
+| Increase in other liabilities | 45 | 410 |
+| **Working capital movement (net)** | **(1,562)** | **1,040** |
+| Income taxes paid (net) | (1,165) | (1,209) |
+| **Net cash from operating activities** | **2,755** | **5,133** |
+| Payments for property, plant and equipment | (1,839) | (2,826) |
+| Investment in mutual funds | (2,450) | (4,282) |
+| Proceeds from sale of mutual funds | 4,523 | - |
+| Dividend/interest received from mutual fund | 180 | 22 |
+| Other investing (net) | (4) | 9 |
+| **Net cash from investing activities** | **410** | **(7,077)** |
+| Proceeds from long-term borrowings | - | 1,700 |
+| Repayment of long-term borrowings | (481) | (274) |
+| Finance costs paid | (164) | (166) |
+| **Dividend paid** | **(2,531)** | **-** |
+| Payment of lease liabilities | (162) | (163) |
+| **Net cash from financing activities** | **(3,338)** | **1,097** |
+| Net decrease in cash and cash equivalents | (173) | (848) |
+| Cash and cash equivalents at start of year | 748 | 1,596 |
+| Cash and cash equivalents at end of year | 575 | 748 |
+The row printed as "Cash generated from operations (1,562)" in the filing is the net
+working capital movement, not cash from operations; the arithmetic confirms it
+(5,482 - 1,562 - 1,165 = 2,755). Flagged as a labelling artefact.
+Cash and cash equivalents at 31 March 2026 comprise current accounts 481, EEFC accounts
+54, cheques on hand 40.

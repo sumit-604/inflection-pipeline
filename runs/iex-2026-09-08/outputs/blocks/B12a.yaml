@@ -1,0 +1,18 @@
+stage: B12a
+company: IEX
+run_date: "2026-09-08"
+model: claude-haiku-4-5
+status: complete
+numbers_checked: 92
+findings:
+  - severity: MINOR
+    location: "04-bizmodel.md, p.88"
+    claimed: "technology expense ₹13.65cr"
+    source_truth: "₹13.65cr exists in AR as consolidated Other Income (13,130.47L standalone Note 29), not as discrete technology capex line. Report correctly flags R&D as folded into employee/tech cost per AR p.402."
+    note: "Presentational imprecision: figure labeled as technology expense in report context, but sourced from consolidated Other Income line in AR, not a separate tech spend disclosure. Arithmetic correct, but semantics potentially misleading. Does not affect verdict-card or decision figures."
+    source_fidelity: true
+critical_count: 0
+major_count: 0
+minor_count: 1
+acceptance_rate: 98.9
+coverage_note: "92 numerical claims audited across all 11 stage reports (01-09). Priority order: verdict-card figures (ROCE, FCF, contingent liabilities, shareholding) first; then scorecard inputs (capital, growth, margins); then operating metrics and market-size figures. All ROCE/FCF/capital-employed three-year series verified against consolidated AR balance sheets and cash flow statements. Revenue/margin/growth figures cross-checked against Data_Sheet.csv and AR Notes 27-28. TAM market figures verified against AR p.47 (generation/STM volumes) and concall transcripts. Shareholding and IGX figures verified against AR Notes 54, balance sheet, and Note 54 reconciliation. All unit bases (standalone/consolidated, FY/TTM/Q, gross/net) confirmed. 91 of 92 checked figures verified clean; 1 minor presentation gap identified (not material to decision)."

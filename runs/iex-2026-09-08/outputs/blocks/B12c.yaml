@@ -1,0 +1,93 @@
+stage: B12c
+company: "IEX"
+run_date: "2026-09-08"
+model: claude-opus-4-8
+status: complete
+scope: phase-1 (Gate 0 + Emerging Moat only; B10/B11 not run, valuation framework docs deliberately not loaded)
+gate0:
+  rules_checked: 53
+  blocks_rederived: {A: 20, B: 18, C: 15, D: 19, E: 13}
+  core_rederived: 85
+  moat_rederived: 30
+  grand_rederived: 115
+  moats_confirmed_rederived: 7
+  moat_class_concur: "FORTRESS"
+  classification_concur: "EXCELLENT"
+  deal_breakers_retested: 9
+  deal_breakers_triggered: 0
+  cagr_edge_rules_honoured: true
+  na_treatments_ruled:
+    - {metric: "E1", treatment: "0, no promoter (0.00%)", verdict: PERMITTED, basis: "rubric band <30 = 0; professionally-managed carve-out tested and correctly failed at FII+DII 44.10% < 50%"}
+    - {metric: "M9", treatment: "0, no Material/COGS line for IEX or any of MCX/BSE/CDSL", verdict: PERMITTED, basis: "GM proxy not computable; literal rubric also lands at 0 via the at/below-peers band; proxy stated, nothing guessed"}
+    - {metric: "M2/M5", treatment: "PEER DATA NEEDED markers removed, scored on supplied peers", verdict: PERMITTED, basis: "Block F rule scores 0 only where peer data is not provided; it is provided this run"}
+  fails:
+    - "E2 scored 3 on a 1-year window after the report states the required 3-year comparison is NOT FOUND; operating rule 5 requires score 0 (MAJOR)"
+    - "A4 scored 5 where the band condition 'latest >= earliest' is literally false (0.16pp decline, undefined gap below the 1-3pp band) (MINOR)"
+    - "ROCE computed without the prompt's required 'computed' statement; compute branch itself verified correct, source ROCE rows are label-only (MINOR)"
+    - "M5 market-cap figures carry no per-figure source anchor (operating rule 4) (MINOR)"
+    - "01-gate0.md does not end with the fenced YAML block the OUTPUT section requires (MINOR)"
+    - "B01 YAML schema extras: run_number, run_note, typed input_gaps objects (MINOR)"
+emoat:
+  rules_checked: 29
+  em_score_rederived: 28.4
+  em_score_reported: 28
+  arithmetic_ties: true
+  classification_concur: "STRENGTHENING"
+  categories_addressed: 23
+  cat21_present: true
+  cat21_score: 0
+  cat21_both_legs_rule_respected: true
+  cat22_present: true
+  cat22_score: 0
+  cat22_named_sacrifice_rule_respected: true
+  i1_i2_contribution_stated: true
+  completionist_recount_performed: true
+  f2_negative_finding: {treatment: "scored 0 as a deliberate negative finding, not missing data", verdict: PERMITTED, basis: "prompt's F2 definition mandates the B05 promise-delivery cross-reference; scoring scale floors at 0; adverse finding preserved in the summary-row label, flags[], top_moat_risks and as a global weight on management claims"}
+  recomputed_range: "26.3 to 29.9 under every justifiable multiplier correction; band 25-39 STRENGTHENING holds throughout; EM >= 25 UA qualifier holds"
+  fails:
+    - "Evidence multiplier 0.85 ('Blend') applied to B3, D2, H1; prompt authorises only 1.0x / 0.7x / 0.5x and defines no blend rule (MAJOR)"
+    - "C2 scored at 1.0x while the report concedes the scored proposition (base diversifying) rests on claim/implicit evidence (MINOR)"
+    - "Completionist recount states 21 documented items across 8 categories; itemisation sums to 20 unique across 9 named categories, double-counting the R1/A4 VPPA item it claims not to double-count; evidence_mix.documented inherits it (MINOR)"
+    - "Section 3 guard paragraph says '10 score None/0' then lists 11 categories; as written it sums to 22 of 23 (MINOR)"
+    - "Section 5 scoring table shows 14 scored rows plus one collapsed zero row; prompt requires all 23 rows (MINOR)"
+    - "Anchors given as extracted-text line numbers (AR line 11332 / 4363 / 4678-4711) rather than the page form the prompt specifies (MINOR)"
+    - "C2 likelihood-impact label written 'H x L/M' but bracketed '(MM)' (MINOR)"
+valuation:
+  status: "pending phase 3"
+  rules_checked: 0
+  fails: []
+  note: "Not run. Stages 10 and 11 have not executed and the valuation framework documents (Master v3.7 Role 1, Section 1B layer set, FTTCP) were deliberately not supplied to this phase-1 invocation as dead context."
+expectation_ledger:
+  status: "pending phase 3"
+  present: false
+  note: "Rules 13-14 key to stage 11 output; not run."
+business_understanding_narrative:
+  status: "pending phase 3"
+  present: false
+  note: "Keys to stage 13 synthesis; not run."
+recomputed_destination_pe: ""
+recomputed_decision: ""
+findings:
+  - {severity: MAJOR, location: "B07 Section 5 scoring table / B07 YAML em_score", description: "Unauthorised evidence multiplier 0.85 applied to B3, D2, H1; framework grants only 1.0x, 0.7x, 0.5x and defines no blend. Recomputed 26.9 (all 0.7x) to 29.9 (all 1.0x) vs 28; STRENGTHENING band and EM>=25 UA qualifier hold across the range."}
+  - {severity: MAJOR, location: "B01 report Block E metric E2", description: "Promoter-holding change scored 3 on a 1-year window after the report itself states the required 3-year comparison is NOT FOUND; operating rule 5 requires N/A to score 0. Recomputed E2=0, Block E=10, core=82, still >=80, classification EXCELLENT unchanged."}
+  - {severity: MINOR, location: "B07 category C2", description: "Evidence-tier mismatch. The scored proposition (customer base diversifying) is conceded in the report's own text to rest on management claim and implication, while the row is scored at documented 1.0x. At 0.7x, C2 = 1.4; combined worst case em_score 26.3, band still STRENGTHENING."}
+  - {severity: MINOR, location: "B01 report Block A metric A4", description: "Scored 5 where the band's stated condition 'latest >= earliest' is false; the 0.16pp decline falls in an undefined gap below the smallest 1-3pp band. Stage disclosed it and invited rescoring. Recomputed A4=3, Block A=18, core=83, classification unchanged."}
+  - {severity: MINOR, location: "B07 completionist_recount and evidence_mix.documented", description: "Recount states 21 documented items across 8 categories; the itemisation sums to 20 unique across 9 named categories and double-counts the R1/A4 VPPA notification the clause says is counted once. Defect sits inside a framework-mandated control; no score depends on it."}
+  - {severity: MINOR, location: "B07 Section 3 completionist guard paragraph", description: "States '10 score None/0' then lists 11 categories (A1, A2, B1, B2, E2, F1, F2, G2, H3, I1, I2). As written the paragraph sums to 22 of 23; the correct split is 9 active + 3 weak + 11 zero."}
+  - {severity: MINOR, location: "B07 Section 5 scoring table", description: "Prompt requires a full 23-row scoring table; the table carries 14 scored rows plus one collapsed 'All other categories' row. All 23 are addressed in the Section 3 summary, so the substantive requirement is met and the total is unaffected."}
+  - {severity: MINOR, location: "B07 Section 3 categories A2, F1 and Section 2", description: "Source anchors given as extracted-text line numbers (AR line 11332, AR line 4363, AR lines 4678-4711) rather than the (AR p.__) form the prompt specifies. All three sit in NO-EVIDENCE categories; a reader cannot resolve a line number to a page."}
+  - {severity: MINOR, location: "B07 Section 5 category C2 row", description: "Likelihood-impact label written 'H x L/M' but bracketed '(MM)'. The two disagree; the assigned raw score of 2 is correct under either reading, so no score moves."}
+  - {severity: MINOR, location: "B01 report formula-notes section", description: "ROCE computed without the prompt's required 'computed' statement. I verified the branch is correct: screener-Balance_Sheet.csv rows 18-19 carry Return on Equity and Return on Capital Emp as label-only rows with no values, and screener-Data_Sheet.csv has no ROCE row and no Total Assets row, so the source figure is genuinely absent."}
+  - {severity: MINOR, location: "B01 report M5", description: "Four market-cap figures quoted with no per-figure source anchor, against operating rule 4 which requires an anchor on every extracted number."}
+  - {severity: MINOR, location: "runs/iex-2026-09-08/outputs/reports/01-gate0.md", description: "Report does not end with the fenced YAML block the prompt's OUTPUT section requires; the block exists only as blocks/B01-gate0.yaml. 07-emoat.md does carry its block, so the run is internally inconsistent on this point."}
+  - {severity: MINOR, location: "runs/iex-2026-09-08/outputs/blocks/B01-gate0.yaml", description: "Schema extras beyond the prompt's block: run_number, run_note, and input_gaps as a list of typed objects where the schema shows a bare list. Additive and useful for a rescore, but not the block as specified."}
+observations:
+  - "M5 = 1 is the literal and conservative reading of a four-name comparison set. Read against the narrower power-exchange segment where management claims 80-85% share, M5 = 5, moat = 34, moats_confirmed = 8, grand = 119, still FORTRESS / EXCELLENT. The conservative choice is disclosed and costs nothing."
+  - "Gate 0 data confidence reads 8 years off the P&L window while ROCE, FCF and WC-days rest on a 3-year sub-window. Had 3 years governed the whole run, the prompt's LIMITED tier would have downgraded EXCELLENT one tier. I do not read the prompt that way; recorded for operator sensitivity."
+  - "B07 scopes its two highest-scoring rows to exclude the live threat (D2 ex-DAM, R1 ex-coupling), together 7.4 of 28.4. Disclosed throughout the prose and in top_moat_risks, but em_score itself is a gross number, not net of the coupling headwind."
+  - "Run-2 supersession is clean: every score delta versus run 1 traces to a named new source (FY24 AR comparative, full AR text, peer Data_Sheets), not to a re-reading of the same evidence. No stale run-1 figure survives in the run-2 artifact."
+critical_count: 0
+major_count: 2
+minor_count: 11
+acceptance_rate: 84
+rework_triggered: false

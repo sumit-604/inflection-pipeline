@@ -18,3 +18,6 @@
 | 12b | verifier B concall red flags | claude-opus-4-8 | default | n/a | n/a | 242,024 | 12m02s | 1 |
 | 12d | verifier D peer coverage | claude-sonnet-5 | default | n/a | n/a | 85,637 | 3m55s | 1 |
 | 5 | concall analysis (REWORK) | claude-sonnet-5 | default | n/a | n/a | 227,811 | 10m44s | 2 |
+| 12a | verifier A numerical audit | claude-haiku-4-5 | default | n/a | n/a | 83,719 | 4m28s | 1 |
+| 12c | verifier C framework (phase 1 scope) | claude-opus-4-8 | default | n/a | n/a | 132,933 | 9m46s | 1 |
+| 12b | verifier B (post-remediation) | claude-opus-4-8 | default | n/a | n/a | 253,209 | 13m01s | 2 |

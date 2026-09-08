@@ -1,0 +1,92 @@
+stage: B09-tam
+company: "FRATELLI"
+run_date: "2026-09-07"
+model: claude-sonnet-5
+status: partial
+input_gaps:
+  - "inputs/prospectus/ empty. inputs/rating/ empty. inputs/shareholding/ empty. inputs/research/ empty (no broker note, so no third-party market sizing in corpus)."
+  - "Q1FY27 concall transcript not published. CORPUS GAPPED-FRESHNESS."
+  - "FY2022 and FY2023 absent from every source."
+  - "Winery utilisation % NOT FOUND anywhere in corpus; blocks a direct litres-to-revenue physical capacity calc (B07's 10% capex-embedded-growth figure used as best-available proxy instead)."
+  - "Bottom-up unit-economics method (Method 2) abandoned: IWSR case-volume figure and Method-1 market value do not reconcile to a plausible per-case realization; NOT FOUND rather than forced."
+  - "No independent, non-company-affiliated, non-web-search source quantifies the above-Rs2,000 luxury wine segment size; that claim stays UNVERIFIABLE (carried from B06)."
+  - "Grover Zampa share/capacity figures sourced from general web search only, not from this corpus or a primary filing; moderate confidence."
+  - "WebFetch blocked: intelsense.substack.com and indianwineacademy.com (EGRESS_BLOCKED by proxy); substitute search snippets used at lower confidence."
+flags:
+  - {type: FLAG-MGMT-SHARE-INFLATED, reason: "Applying management's own AR-cited total wine market size (Rs1,917-2,320cr) to management's own audited FY26 revenue (Rs181.29cr) implies a 9.4% share, not the '1/3' claimed on two investor deck slides (Investor_Presentation_Q4FY26_May2026.pdf p.9/p.23; Investor_Presentation_Q1FY27_Aug2026.pdf p.9). The TAM-level citation itself is accurate (matches independent IMARC data); only the share claim built on top of it is inflated."}
+  - {type: FLAG-DUOPOLY-UNSUPPORTED, reason: "Web search identifies a real third named organized competitor, Grover Zampa, at a reported 12-15% share, inconsistent with Fratelli's '85-90% two-player duopoly' and 'vast lead over the next in line' framing (Investor_Presentation_Q4FY26_May2026.pdf p.23); Sula never names Fratelli as a competitor across four quarters of calls (B06, carried forward)."}
+  - {type: FLAG-VISION2030-GAP, reason: "Vision 2030 (Rs500cr revenue, FY30, Investor_Presentation_Q4FY26_May2026.pdf p.20; reaffirmed on concall p.14 of 14) requires a 28.9% FY26-FY30 CAGR. This stage's SOM supports ~9.1-9.2% CAGR at the matched horizon, and B07's 10% capex-embedded-growth ceiling supports only ~Rs265cr by FY30 -- a ~Rs235cr, ~90% shortfall, with no incremental winery capacity committed in the corpus."}
+  - {type: FLAG-EU-FTA-LUXURY-EXPOSURE, reason: "Sula's own EU FTA math puts post-duty-cut EU wine landed MRP around Rs2,000 in Maharashtra -- exactly the boundary Fratelli uses to define its 'insulated' above-90% sub-Rs2,000 book (Concall_Q4FY26_Jun2026_Transcript.pdf internal p.7). The FTA threatens precisely the above-Rs2,000 luxury tier Fratelli claims above-50% share of and calls its fastest-growing engine, contrary to management's 'no impact anticipated' framing on the same call."}
+  - {type: FLAG-CATEGORY-GROWTH-CONTESTED, reason: "AR/deck cite a ~16% forward wine-market CAGR (2024/25-2032/34), but Sula's Aug-2026 concall discloses the category has shown 'low single-digit growth' at best over the last 2 years, with Sula's own revenue 'almost flat' near Rs600cr for 3-4 years (SULA-Concall_Aug_2026_Transcript.txt p.7-9). This stage used the realized (~4%), not the projected (~16%), rate for SOM arithmetic."}
+market_definition: "Domestic Indian branded wine (all price tiers, still + sparkling) plus wine-based RTD/canned formats (Shotgun/TiLT); imports excluded from SAM since Fratelli does not import; beer/IMFL/spirits excluded entirely."
+tam_cr: {conservative: 2417, realistic: 2920}
+sam_cr: 1919
+sam_pct_of_tam: 79
+som_3yr_cr: 236
+som_5yr_cr: 279
+som_implied_revenue_cagr: {yr3: 9.2, yr5: 9.0}
+current_sam_share_pct: 9.4
+revenue_headroom_x: 10.6
+tam_growth_pct: 4
+runway_class: "GOOD"
+mgmt_claim_cr: 500
+mgmt_claim_ratio: 1.9
+mgmt_claim_read: "inflated"
+capacity_check: "sufficient for this stage's own SOM (Rs236-279cr sits within B07's 10% capex-embedded growth ceiling of Rs241-292cr, yr3-yr5); gap of ~Rs235cr (~90%) surfaces only against management's own Vision 2030 Rs500cr FY30 target, with no incremental winery capacity committed -- the Vision 2030 target, not this stage's SOM, is the optimistic side"
+methods_used: ["top-down industry report (IMARC/Ken Research, AR-corroborated)", "peer revenue aggregation and share cross-check (Sula-anchored)", "management-disclosed segment data direct cross-check", "import-substitution / EU FTA impact", "global per-capita benchmark (directional only)"]
+stale_data_flags:
+  - {datapoint: "Grover Zampa market-share trend series", source: "Statista (web search)", year: "2016-2022"}
+  - {datapoint: "Fratelli 14 lakh litre capacity / Sula 167 lakh litre capacity comparison", source: "web search aggregator", year: "FY23"}
+searches_performed:
+  - "India wine market size 2024 USD million Mordor Intelligence IMARC"
+  - "USD to INR average exchange rate 2024 2025 RBI reference rate"
+  - "India-EU FTA wine import duty reduction 2026 CIF threshold EUR 2.50"
+  - "Sula Vineyards market share Indian wine industry Fratelli Vineyards"
+  - "Indian wine market size Rs crore 2024 IWSR consumption"
+  - "wine in a can OR canned wine India market size crore RTD alcobev"
+  - "average USD INR exchange rate 2024 actual full year"
+  - "average USD INR exchange rate 2025 actual full year"
+  - "global average per capita wine consumption liters India China comparison OIV"
+  - "Grover Zampa wine India market share capacity third largest producer"
+searches_skipped:
+  - "WebFetch intelsense.substack.com/p/stock-story-sula-vineyards-and-the -- EGRESS_BLOCKED by proxy"
+  - "WebFetch indianwineacademy.com/articles/item_4_953 -- EGRESS_BLOCKED by proxy"
+downstream_candidates:
+  - signal: "Maharashtra (and other state) excise duty/licensing notifications"
+    entity_type: "regulatory"
+    demand_link: "Controls market access, MRP structure and volume in Fratelli's core states"
+    likely_source: "State excise department gazette notifications/circulars"
+    cadence: "event-driven"
+    shared: false
+  - signal: "CSD (Canteen Stores Department) wine empanelment and procurement disclosures"
+    entity_type: "counterparty"
+    demand_link: "Direct assured-demand government channel; Fratelli claims ~45% CSD share"
+    likely_source: "Ministry of Defence / CSD annual procurement data"
+    cadence: "quarterly"
+    shared: true
+  - signal: "India-EU FTA wine tariff implementation schedule (CIF thresholds, phased duty cuts)"
+    entity_type: "regulatory"
+    demand_link: "Resets competitive price gap exactly at Fratelli's claimed above-Rs2,000 luxury boundary"
+    likely_source: "DGFT / Ministry of Commerce FTA notifications"
+    cadence: "event-driven"
+    shared: true
+  - signal: "USD/INR exchange rate"
+    entity_type: "macro"
+    demand_link: "Sets landed CIF cost of imported wine post-FTA and export realization economics"
+    likely_source: "RBI reference rate"
+    cadence: "monthly"
+    shared: true
+  - signal: "Nashik/Akluj table grape price index (harvest cost)"
+    entity_type: "counterparty"
+    demand_link: "Key raw material cost; already shown volatile, contradicts Fratelli's 'no major changes' claim"
+    likely_source: "APMC Nashik market price bulletins / state agri-marketing board"
+    cadence: "event-driven"
+    shared: true
+  - signal: "Sula Vineyards and Grover Zampa quarterly/annual disclosures"
+    entity_type: "counterparty"
+    demand_link: "Only independent read on whether Fratelli's '1/3 share'/duopoly claims hold up over time"
+    likely_source: "Company investor presentations, exchange filings"
+    cadence: "quarterly"
+    shared: true
+demand_externally_verifiable: true
+analyst_note: "Management's macro TAM citations (Rs1,917-2,320cr total wine, Rs500-600cr RTD) are accurate; independent search corroborates the total-wine figure almost exactly. The inflation sits one level down, in the SHARE claim built on top: applying management's own market-size source to its own audited revenue gives 9.4%, not '1/3.' Vision 2030 (Rs500cr FY30) requires 28.9% CAGR against a SOM-supported ~9%, a ~Rs265cr capacity ceiling, and a same-belt peer (Sula) disclosing a flat, not accelerating, 2-year category trend. mgmt_claim_ratio (1.9x) understates the gap; the required-CAGR-multiple (~3.2x) is the more decision-relevant read for Stage 11."

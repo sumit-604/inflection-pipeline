@@ -1,0 +1,61 @@
+stage: B03-ardeep
+company: "FRATELLI"
+run_date: "2026-09-07"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "inputs/prospectus/ empty. Not a gap: listed through the Tinna Trade shell."
+  - "inputs/rating/ empty. No credit rating covers the wine entity."
+  - "inputs/shareholding/ empty. The FY25 and FY26 ARs carry the pattern (read directly from CG Report distribution-of-shareholding tables)."
+  - "inputs/research/ empty."
+  - "Q1FY27 concall transcript not published. Corpus verdict CORPUS GAPPED-FRESHNESS."
+  - "FY2022 and FY2023 data absent from every provided source (genuine gap)."
+  - "Subsidiary Fratelli Wines Pvt Ltd's own standalone CARO report text (source of its adverse clause 3(xiv)(b) and 3(xvii) remarks) is not reproduced in the consolidated AR and was not separately provided; only the summary Annexure A table (p.140) is on record."
+  - "Numeric FY27 guidance (30% growth, PAT breakeven) is not stated anywhere in the FY26 AR text; it exists only in concalls outside this stage's corpus."
+  - "Ind AS 116 lease discount rate not disclosed in the sections reviewed."
+flags:
+  - {type: FLAG-CASH, reason: "Standalone cash fell 90.5% YoY to Rs 0.88 lakh (not Rs 9.24 lakh as B02 stated, which was the FY25 comparative mislabelled); consolidated cash fell 84.5% to Rs 7.78 lakh against Rs 119.74 cr borrowings and a Rs 114.50 cr guarantee; negative interest coverage; the one positive-CFO year (FY26, Rs 4.996 cr) was driven by a near-doubling of rebate/payables accruals (Note 20, Rs 840.81 lakh to Rs 1,598.00 lakh) not by profitability, while operating profit before WC changes fell to Rs -3.65 cr; FCF remains negative (Rs -7.31 cr)."}
+  - {type: FLAG-DISCLOSURE, reason: "The FY26 AR's own self-reported summary figures fail to reconcile to its own audited notes in at least five places: Directors' Report revenue comparator (already known), Directors' Report cash balance (both standalone and consolidated, vs Note 10/11), Directors' Report auditor-fee table (vs Note 27), MD&A EBITDA/Turnover ratio table (vs audited P&L, which computes negative EBITDA both years), and Directors' Report KMP remuneration table showing Rs 0.00 for two sitting Executive Directors whom Note 33 (RPT) shows were paid Rs 115.96 lakh and Rs 64.60 lakh respectively."}
+  - {type: FLAG-PROMOTER-PRELIM, reason: "No selling or pledge found (positive); but Aug-2026 inter-se gift transfers (post-AR, correctly absent from it) consolidate 20.79% into Bhupinder Kumar Sekhri, an already-disclosed promoter-group member who does NOT hold a board seat, raising his stake from 0.53% to 21.32% -- now larger than MD Gaurav Sekhri's residual 1.00% stake. Aggregate promoter-group holding unchanged; full promoter verdict deferred to B08."}
+phase_verdicts: {p1: "WATCH", p2: "RED FLAG", p3: "RED FLAG", p4: "RED FLAG", p5: "WATCH", p6: "RED FLAG", p7_best_fit: "Turnaround (WATCHLIST, proof gate not fired)"}
+overall_quality: 3
+quality_components: {governance: 4, accounting: 3, balance_sheet: 2, earnings: 3}
+kill_switch_notes:
+  - "Phase 1: would want direct engagement-partner confirmation on the duplicated EOM/KAM drafting error and the subsidiary's clause 3(xiv)(b) adverse remark before treating the audit as full evidence of control quality."
+  - "Phase 2: would want every self-reported ratio/highlight table in this AR independently re-derived from primary notes before relying on it."
+  - "Phase 3: would want a rebate-accrual roll-forward and lender covenant summary before treating FY26 as any kind of financial inflection."
+  - "Phase 4: would treat every MD&A/Chairman narrative claim as requiring independent verification against primary statements before use in valuation."
+  - "Phase 5: would want the KMP remuneration contradiction (Directors' Report vs Note 33) explained directly by the CFO/Company Secretary."
+triple_pass_verification:
+  verified: 14
+  discrepancies:
+    - {finding_rank: 4, triple_pass_value: "standalone cash balance of Rs 9.24 lakh cited as the FY26 figure the going-concern note is silent against, described as 'flat YoY'", ar_value: "Rs 9.24 lakh is the FY25 comparative (Note 10, Standalone Balance Sheet p.87; Standalone Cash Flow Statement p.88-89). Actual FY26 standalone closing cash is Rs 0.88 lakh, down 90.5% YoY, not flat.", note_ref: "Note 10, standalone Balance Sheet and Cash Flow Statement, Annual_Report_FY2026.pdf p.87-89"}
+missing_risks:
+  - {risk: "Liquidity / going concern given near-zero cash vs the Rs 114.50cr guarantee", evidence_anchor: "Note 38 consolidated p.189 (cash Rs 7.78 lakh); Note 10 standalone p.87 (cash Rs 0.88 lakh); CARO iii(a) p.81-82 (guarantee Rs 114.50cr)"}
+  - {risk: "Guarantee/related-party credit concentration (100% of Group credit risk in one instrument, from a near-zero-cash shell parent)", evidence_anchor: "CARO Annexure A clause iii(a), standalone, p.81-82; Note 42(a) standalone"}
+  - {risk: "Receivables/customer concentration and credit risk (212-day DSO, Rs 483.09 lakh unprovisioned write-off)", evidence_anchor: "Note 10(a) consolidated ageing schedule p.165-166; Note 30 p.176"}
+  - {risk: "Litigation/tax contingency escalation, including a formal Section 270 misreporting penalty", evidence_anchor: "Note 39(A)(iii) consolidated p.189-190 (Rs 663.03 lakh penalty)"}
+  - {risk: "MSME payment discipline deterioration (+235% YoY)", evidence_anchor: "Balance Sheet trade payables line p.140 (Rs 93.27 lakh vs Rs 27.81 lakh)"}
+  - {risk: "Internal audit/auditor transition risk (in-house internal auditor since Aug-2025; subsidiary's own adverse CARO remark on internal audit)", evidence_anchor: "Directors' Report Item 8C p.44; Annexure A consolidated table p.140"}
+guidance_table: []
+monitorables:
+  - {metric: "Consolidated EBITDA (recomputed from PBT+Finance cost+Depreciation, not the AR's self-reported ratio)", threshold: "Sustained positive for 2+ consecutive quarters", where: "Quarterly BSE results P&L", why: "Tests whether the AR's 'breakeven' claim becomes true rather than asserted"}
+  - {metric: "Bearer-plant pre-operative pool and capitalisation amount", threshold: "Pool stabilises or capitalisation to completed assets resumes above zero", where: "FY27 AR, Note 45 equivalent", why: "Tests whether 'capex cycle behind us' becomes true"}
+  - {metric: "Rebate/other-financial-liabilities balance", threshold: "Reverts toward FY25 ratio-to-revenue without a matching cash-outflow shock", where: "FY27 AR Note 20 equivalent and cash flow statement", why: "Tests whether FY26's positive CFO was sustainable or one-time payables-timing"}
+  - {metric: "Rs 114.50cr guarantee status and standalone/consolidated cash balance", threshold: "Guarantee called, or cash cushion rebuilt materially above token level", where: "Standalone Note 6/42(a); Reg 30 filings", why: "Tests the going-concern note's silence directly"}
+  - {metric: "Bhupinder Kumar Sekhri board status and rationale for Aug-2026 consolidation", threshold: "Any board appointment (or continued absence) within 2 quarters", where: "Reg 30 filings, next AGM notice", why: "Clarifies whether economic and operational control are converging or diverging within the promoter family"}
+  - {metric: "Section 270 misreporting penalty (Rs 663.03 lakh, AY 2018-19)", threshold: "CIT(Appeals) ruling", where: "Contingent liability note, Reg 30 filings", why: "A formal misreporting finding is qualitatively worse than an ordinary quantum dispute if upheld"}
+ar_new_downstream_entities:
+  - {name: "TP Buildtech Private Limited", where_in_ar: "Note 33(A)(ii) consolidated RPT note, list of enterprises in which directors/relatives are interested, p.181; not found anywhere in the FY25 AR text", entity_type: "RPT counterparty (promoter/director-linked enterprise)"}
+  - {name: "Sekhri Family Annuity Trust", where_in_ar: "Note 33(B)(i) consolidated RPT note, first active transactions (capital advance taken Rs 125.00 lakh, paid Rs 2.75 lakh) in FY26, p.184", entity_type: "RPT counterparty (family trust); name appears in FY25 AR only in an unrelated shareholding-pattern line, not as an active RPT counterparty"}
+strengths_top3:
+  - "Verified 78.1% gross margin and a specific, checkable early-traction story for the Shotgun RTD platform (~Rs 18cr revenue, ~9,000 outlets in its debut year)."
+  - "No promoter selling, no promoter pledge; the MD is a net lender to the Company at a market-adjacent ~10% rate, genuine skin in the game."
+  - "The audited notes themselves are internally consistent (contingent liabilities, DTA components, share capital roll-forward, Note 30 cost structure all tie out), distinct from the unreliable narrative wrapped around them."
+red_flags_top3:
+  - "The AR's own narrative/summary layers fail to reconcile to its own audited figures in at least five places (Directors' Report revenue, cash, auditor fees, KMP remuneration; MD&A EBITDA ratio table)."
+  - "Negative EBITDA and negative interest coverage in a second consecutive loss year, funded by a Rs 114.50cr related-party guarantee from a near-zero-cash shell parent, against a going-concern note that never names or stress-tests that guarantee."
+  - "Cash-conversion quality is poor: FY26's positive CFO was manufactured from a near-doubling of rebate/payables accruals, not profitability, and Rs 483.09 lakh of bad debt was written off with zero prior ECL provisioning."
+best_fit_strategy: "Turnaround (WATCHLIST) -- proof gate not yet fired on FY26 evidence"
+one_line_verdict: "Turnaround-shaped brand story sits on an Annual Report whose own numbers contradict its own narrative in five separate places."
+analyst_note: "The single highest-value finding this stage adds beyond Stage 2 is structural, not incremental: the AR's disclosure LAYER (Directors' Report, MD&A ratio table, Chairman's letter) systematically fails to reconcile to its own audited notes, and every failure direction makes the year look better than the audited numbers show (stale FY25 figures relabelled as FY26; a positive EBITDA ratio where the audited P&L computes negative; a zero remuneration figure where the RPT note shows real payments). The underlying audited notes remain sound. Downstream stages (FTTCP, Role 1) should treat every AR narrative or summary-table number as unverified until traced to its primary note, and should use this stage's recomputed EBITDA (-2.5% margin FY26, not the AR's claimed +0.57%) rather than the AR's own ratio table."

@@ -1,0 +1,43 @@
+stage: B12c
+company: "FRATELLI"
+run_date: "2026-09-07"
+model: claude-opus-4-8
+status: complete
+scope_note: "PHASE 1 ONLY — Gate 0 (B01) and Emerging Moat (B07) adherence. Valuation audit (B11/B10), business understanding narrative, Halt 1 dossier, downstream candidates and method plurality are NOT covered; deferred to phase 3. Valuation framework docs not loaded."
+gate0:
+  rules_checked: 28
+  fails:
+    - {rule: "Block F M8 band assignment", severity: MINOR, detail: "Quantified, growing 31,000-touchpoint network scored 0 through a band gap; M8 has no else-clause and band 0 reads 'none or purely digital'", recomputed: "M8=1, moat_score 1/60, moat_class NONE and AVOID unchanged"}
+    - {rule: "YAML data_notes must carry proxy bases used", severity: MINOR, detail: "FY17-21 Current Liabilities proxy for capital employed, and WC-days Sales basis, disclosed in report body but absent from the block payload", recomputed: ""}
+emoat:
+  rules_checked: 29
+  fails:
+    - {rule: "Section 5 likelihood x impact matrix", severity: MAJOR, detail: "B2 scored 'Medium-High x Medium (raw 3)'; Medium-High is not a defined level. Raw 3 requires High; at MM raw is 2", recomputed: "em_score 11.7 vs 12.7; lands on the 12.0 MODEST/NONE boundary. AVOID and EM below 25 unchanged"}
+    - {rule: "Evidence quality multiplier", severity: MINOR, detail: "H2 given 0.7x where the report's own load-bearing item is media/registry tier per B08", recomputed: "H2=0.5, total 12.5 rounding to 13, classification unchanged"}
+    - {rule: "Completionist recount internal consistency", severity: MINOR, detail: "'14 documented items across 6 categories' — the 14th item sits in A2, a seventh category", recomputed: "13 items / 6 categories, or 14 / 7"}
+    - {rule: "Section 2C historical fixed asset turnover basis", severity: MINOR, detail: "B07 uses net PP&E 81.56 (FAT 2.22x); B01 M3 uses net block 96.41 (FAT 1.88x). Unreconciled across stages; which base is correct referred to Verifier A", recomputed: "capex_embedded_growth_pct 8 not 10 on the B01 basis"}
+    - {rule: "catalysts_12m window discipline", severity: MINOR, detail: "Hospitality decision point windowed CY27-28, 15-28 months out; report's own 6A places it in the 12-24m bucket. Feeds Pillar 3 catalyst proximity", recomputed: "4 compliant catalysts, not 5"}
+    - {rule: "Block payload consistency: evidence_mix vs completionist_recount", severity: MINOR, detail: "documented: 15 against a stated recount of 14; populations undefined and unreconciled", recomputed: ""}
+    - {rule: "Stage input scope (AR + 3 concalls + presentation + B01)", severity: MINOR, detail: "Section 6E peer cross-check read a SULA deck the stage itself names as outside its injected inputs; disclosed, marked supplementary, changed no score", recomputed: ""}
+    - {rule: "Accurate restatement of the Gate 0 deal-breaker framework", severity: MINOR, detail: "6D and combined_reasoning say 'seven of eight deal-breakers'; the Gate 0 rubric lists nine (7 fired, 1 unevaluable, 1 not fired)", recomputed: "7 of 9"}
+valuation: {rules_checked: 0, fails: [], status: "PENDING PHASE 3 — B10/B11 do not exist; not audited"}
+business_understanding_narrative: {present: false, five_questions_answered: false, prose_only: false, section6_candidates_named: 0, valuation_vocab_leak: false, fails: ["PENDING PHASE 3 — stage 13 has not executed; not audited, this is not a fail"]}
+recomputed_destination_pe: ""
+recomputed_decision: ""
+findings:
+  - {severity: MAJOR, location: "B07 Section 3 B2 / Section 5 row B2", claimed: "Likelihood Medium-High x Impact Medium, raw 3, adjusted 3.0", rule: "Section 5 matrix defines only H/M/L per axis; HM/MH=3, MM=2", note: "Undefined likelihood level; one-point swing lands em_score on the 12.0 MODEST/NONE boundary where the label depends on an unstated rounding convention. No decision moves: EM stays far below the EM>=25 UA qualifier and combined_assessment stays AVOID"}
+  - {severity: MINOR, location: "B01 Block F, M8", claimed: "M8 = 0", rule: "M8 ladder: 'mentioned unquantified = 1', 'none or purely digital = 0', no else-clause", note: "Network is quantified and growing, so band 1's condition ('unquantified') and band 0's condition ('none') are both false. Gap resolved downward. M8=1 gives moat_score 1/60; moats_confirmed still 0, class still NONE, AVOID unchanged. Disclosed and flagged by the stage, hence MINOR"}
+  - {severity: MINOR, location: "B01-gate0.yaml data_notes", claimed: "data_notes omits both proxy bases", rule: "Field comment: data_notes carries 'proxy bases used'", note: "FY17-21 'Other Liabilities' proxy for Current Liabilities in capital employed, and the Sales (not COGS) basis for WC-days, are in the report body only. Downstream stages read the block"}
+  - {severity: MINOR, location: "B07 Section 5 row H2", claimed: "blended spoken/registry tier weighted 0.7x", rule: "documented 1.0x / spoken 0.7x / registry 0.5x, plus rule 4 skepticism", note: "Load-bearing item is the Singhal/PI relationship, which the report itself puts at media-registry tier. At 0.5x, H2=0.5 and total 12.5 rounding to 13"}
+  - {severity: MINOR, location: "B07 Section 3 guard line and YAML completionist_recount", claimed: "14 documented items across 6 categories", rule: "Completionist guard recount line", note: "A4 5 + B1 3 + B2 2 + C2 1 + F1 1 + H3 1 = 13 across 6; the 14th (A2 R&D=NIL anti-evidence) is a seventh category"}
+  - {severity: MINOR, location: "B07 Section 2C vs B01 Block F M3", claimed: "FAT 2.22x (B07) vs 1.88x (B01), same company same year", rule: "2C uses 'historical fixed asset turnover'", note: "Net PP&E 81.56 vs net block 96.41. Which figure is correct is a source question referred to Verifier A. On the B01 basis capex_embedded_growth_pct is 8, not 10. Feeds valuation"}
+  - {severity: MINOR, location: "B07-emoat.yaml catalysts_12m", claimed: "Hospitality venture decision point, window CY27-28", rule: "catalysts_12m = next 12 months; feeds Pillar 3 catalyst proximity", note: "15-28 months from the 2026-09-07 run date. The report's own 6A timeline places it in the 12-24m bucket, so block and narrative disagree"}
+  - {severity: MINOR, location: "B07-emoat.yaml evidence_mix", claimed: "documented: 15", rule: "Block payload internal consistency with the stated documented-item recount of 14", note: "Populations may legitimately differ but are never stated; 15 vs 14 reads as one population miscounted"}
+  - {severity: MINOR, location: "B07 Section 6E peer cross-check", claimed: "SULA Q1FY27 deck read", rule: "Stage consumes AR + 3 main concalls + investor presentation + B01", note: "Stage itself names the file as outside its injected inputs. Disclosed in input_gaps, marked supplementary, changed no score (E1 stayed 0, hospitality stayed in the register); output was a flag, not a number"}
+  - {severity: MINOR, location: "B07 6D and YAML combined_reasoning", claimed: "'seven of eight deal-breakers fired' / '7 of 8'", rule: "Gate 0 lists nine deal-breakers", note: "Seven fired, deal-breaker 5 (pledge) unevaluable NOT FOUND, deal-breaker 9 (history under 3y) did not fire. Wrong denominator in both report and block"}
+critical_count: 0
+major_count: 1
+minor_count: 9
+acceptance_rate: 82
+framework_adherence: 82
+framework_adherence_note: "82% over 57 checks. COVERS GATE 0 (B01) AND EMERGING MOAT (B07) SCOPE ONLY. Gate 0: 26/28 = 93%. Emerging Moat: 21/29 = 72%. No CRITICAL; no REWORK trigger fires (no Verifier A-grade finding here, acceptance_rate well above the 60% floor). Categories 21 and 22 are both present in B07 and both correctly scored 0 against their two-leg and named-sacrifice tests, so the stage-7 REWORK condition does not fire. Gate 0 AVOID and B07 MODEST/AVOID survive every recomputation run."

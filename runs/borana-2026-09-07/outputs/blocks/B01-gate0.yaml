@@ -1,0 +1,37 @@
+stage: B01-gate0
+company: "BORANA"
+run_date: "2026-09-07"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "inputs/research/ empty, no broker note"
+  - "NO-CONCALL MODE: one transcript only (Q3FY26)"
+  - "Missing Brickwork rating rationale for 11-May-2026 upgrade to BWR BBB+/Stable"
+  - "Missing text of SEBI Section 11C(9) search order (25-Apr-2026 Reg 30 filing)"
+  - "No standalone Q1FY27 results filing, only board-meeting outcome"
+  - "Screener CSV export defect (Profit_Loss/Balance_Sheet/Cash_Flow/Quarters header-only) - not a data gap, Data_Sheet.csv carries full series"
+  - "FILATEX-Data_Sheet.csv exports only FY2015-19 then FY25-26; FILATEX FY24 EBITDA margin unavailable"
+  - "AR FY2026 related-party purchase note does not itemise by material type or disclose price basis; spear fact 2 only partially resolved"
+flags: []
+data_years: 5
+fy_range: "FY22 to FY26"
+blocks: {A: 20, B: 6, C: 20, D: 18, E: 15}
+core_score: 79
+moat_score: 27
+grand_total: 106
+moats_confirmed: 6
+moat_class: "FORTRESS"
+classification: "GOOD"
+deal_breakers:
+  - "Rule 2: Block B (Cash Generation Quality) = 6, below the 8-point floor -> caps classification at max GOOD, overriding the GOOD+ the raw Core/Moat matrix lookup would otherwise assign"
+history_downgrade: false
+data_notes:
+  - "No loss-to-profit swings; PAT positive every year FY22-FY26"
+  - "M9 Brand test uses GM proxy (Revenue - Material Cost) / Revenue, stated per rule"
+  - "Working Capital Days computed on Revenue basis throughout (not COGS), stated per rule"
+  - "M5 Scale & Dominance: PEER DATA NEEDED for full segment mcap ranking beyond 3 named peers"
+  - "FY26 CFO: audited Rs 36.96cr used over screener-data Rs 44.4cr (Rs 7.44cr gap traces to IPO-expense write-off classification, Results_Q4FY26 p.4)"
+  - "FY26/FY24 Revenue and FY23 Interest: minor audited-vs-screener deltas, all immaterial, audited figure used per sourcing rule"
+  - "E2 (promoter holding 3-yr change) marked N/A: company listed only 13 months, no 3-year window exists in any provided source"
+block_b_trend: "deteriorating - WC days bottomed at 39.4 (FY24), risen to 66.5 (FY26), +27 days in two years, driven by inventory build and payables collapsing toward zero (24.4 to 0.2 days); B4's endpoint score (FY22 90.1 vs FY26 66.5, net improvement) masks this recent reversal"
+analyst_note: "Classification GOOD, capped down from a raw GOOD+ (Core 79, FORTRESS moat) solely by the Block B deal-breaker: cumulative FCF is -Rs194.8cr over 5 years and only 1 of 5 years produced positive FCF, because FY26 capex (Rs178.98cr, mostly still CWIP) outran operating cash generation (CFO Rs36.96cr). Blocks A and C both score 20/20 but are inflated by a near-zero FY22 base (Revenue Rs42cr, PAT Rs1.8cr, opening equity ~Rs1.8cr) - FY24-26 CAGRs are materially lower (Revenue 39.7%, PAT 65.4%) and still strong but not headline-strong. FY26 ROCE (24.2%) is a spot figure depressed by mid-year equity raise plus idle CWIP per the run brief; FY23-25 ROCE ran 33-48%, the more representative range. Moat is narrow-and-deep (pricing power, cost advantage, brand-proxy margin, switching costs all score 5) with zero contribution from scale, regulation, distribution or float (M5-M8, M12 all 0) - six figures short of a broad moat. Cumulative CFO/PAT (0.548) clears the 0.50 deal-breaker by only 0.048, a near miss worth carrying into Stage 2. Quarterly margin history (27.2% Q4FY24 to 16.5% Q2FY25 to 25.4% Q4FY26) shows real volatility the smooth annual series hides."

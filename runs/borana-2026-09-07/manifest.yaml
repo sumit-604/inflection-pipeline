@@ -1,0 +1,122 @@
+company: Borana Weaves Ltd
+ticker: BORANA
+bse_code: 544404
+nse_symbol: BORANA
+isin: INE16SF01016
+listed_date: 2025-05-27
+statements: standalone only (no consolidated statements exist; the screener
+  /consolidated/ page is empty, which is why the first collector pass returned
+  cmp 0 and no Excel export)
+cmp: 325.25
+market_cap_cr: 870.03
+run_date: 2026-09-07
+run_type: full
+concalls_available: false
+sector_cap_row: "Recycling / Manufacturing"
+sector_cap_x: 25
+sector_cap_note: >
+  Auto-picker chose "Pharma / CDMO" (its default). Corrected by hand. No
+  commodity-textile row exists in the Section 1B Sector Cap Table. The
+  "Branded apparel / FMCG" row (35x) is wrong: Borana sells unbleached greige
+  fabric with no brand and no pricing power. "Recycling / Manufacturing" (25x)
+  is the closest generic converter row. FLAG for operator ruling and add a
+  commodity-textile row to LESSONS.md OPEN ACTIONS (precedent: SHYAMMETL steel,
+  KCPSUGIND sugar, ENTERO distribution).
+classification_flag: >
+  CONVERTER candidate. Section 1B v3.7 Amendment 17 binds if confirmed: no
+  spot-year ROCE and no rupee-denominated working-capital trend may enter
+  Section 1B or FTTCP. FY26 spot ROCE is badly distorted anyway. Equity rose
+  from Rs 87.6 cr to Rs 281.6 cr on the May-2025 IPO and Rs 80.94 cr sits in
+  capital work in progress earning nothing.
+peers:
+  - ticker: FILATEX
+    name: Filatex India Ltd
+    why: Polyester yarn maker (POY/FDY/PTY). This is Borana's input. Its
+         concalls carry polyester-chain spreads and the Chinese import-duty
+         story, so it is the direct test of whether Borana's margin is a
+         yarn-price windfall. Four fresh transcripts to Aug-2026.
+  - ticker: SANGAMIND
+    name: Sangam (India) Ltd
+    why: The only listed integrated synthetic yarn plus FABRIC weaver of
+         comparable structure. Benchmarks what a synthetic fabric maker
+         actually earns on looms.
+  - ticker: SANATHAN
+    name: Sanathan Textiles Ltd
+    why: Polyester yarn including texturising (POY to PTY), the same step
+         Borana runs in-house for its 8% yarn revenue. Recently listed
+         (Dec-2024), so disclosure vintage matches. Four fresh transcripts.
+peer_selection_note: >
+  Borana's own DRHP states it has no comparable listed peer. The street's
+  ad-hoc basket (Vardhman, Arvind, R&B Denims, Filatex) is a generic textile
+  list; Vardhman and Arvind are cotton-integrated and R&B Denims is denim, so
+  neither mirrors the engine. Peers were picked on the economic engine per
+  /step1 step C. AYM Syntex was considered and REJECTED: it has published no
+  concall since 2021, so it cannot serve stage-06 peer verification.
+peer_margin_context: >
+  EBITDA margin across the last three reported years, computed from
+  inputs/screening/<TICKER>-Data_Sheet.csv: FILATEX 6.0-8.7%, SANGAMIND
+  6.4-13.7%, SANATHAN 3.4-9.3%. Borana FY26 is 23.6%. Year alignment must be
+  verified against the filings before this comparison is used in any output.
+input_gaps:
+  - "CONCALL TRANSCRIPTS: only ONE exists, Q3FY26 (call held 27-Jan-2026).
+     Screener's Aug-2026, Jun-2026 and Nov-2025 concall rows link investor
+     presentations, not transcripts. The company IR site publishes no
+     transcript page and only one earnings-call audio file (Q3FY26). Verified
+     against boranagroup.in/investor-presentation, /outcome,
+     /updates-and-announcements and /other-disclosures on 07-Sep-2026.
+     Consequence: no-concall mode. Stage 05 cannot run its three-transcript
+     chronological read. Substitute source is the four investor presentations
+     in inputs/presentation/, which are management claims without a Q&A."
+  - "FRESHNESS PAIR BREAK: Q1FY27 results are in the corpus (board-meeting
+     outcome, 11-Aug-2026) but no Q1FY27 transcript and no standalone Q1FY27
+     results filing on the IR results page. Caps the Halt 1 gate at PROCEED
+     WITH CAVEATS."
+  - "Screener CSV export defect (known, LESSONS.md): screener-Profit_Loss.csv,
+     -Balance_Sheet.csv, -Cash_Flow.csv and -Quarters.csv export header-only
+     because they are formula sheets. NOT a data gap. Every number is in
+     screener-Data_Sheet.csv, fully populated FY22-FY26 plus 10 quarters to
+     Jun-2026. Same for all three peers."
+  - "inputs/research/ empty. No broker note collected."
+governance_flags_in_corpus:
+  - "SEBI SEARCH, 22-23 April 2026. A search under Section 11C(9) of the SEBI
+     Act, on an order of the Special Judge (SEBI), executed at the premises of
+     R&B Denims Ltd (a promoter-group entity named in Borana's own RHP) and at
+     the premises of certain promoters and the CFO of R&B Denims. Not at
+     Borana's registered office. Filed at
+     inputs/announcements/2026-04-25_Reg30_SEBI-11C9-search-RandB-Denims.pdf.
+     NOTE: the company's IR site files this under the filename 'it-search';
+     the document itself says SEBI, not income tax."
+  - "Secretarial auditor resigned 24-Jul-2026 with no reason stated. A second
+     resignation notice 29-Jul-2026, and a new secretarial auditor appointed
+     the same day. Three filings in six days."
+  - "Change in management filed 11-Aug-2026."
+collector_repairs:
+  - "First pass ran on /consolidated/, which does not exist for this company:
+     cmp 0, market cap 0, no Financials.xlsx, no screening CSVs. Re-run on the
+     standalone URL fixed all four."
+  - "Third peer changed from AYMSYNTEX to SANATHAN (no AYM concall since 2021)."
+  - "Screener's 'Annual Report 2026' link resolved to a 2-page shareholder
+     letter. Replaced with the real FY2025-26 integrated annual report (130
+     pages) from the company IR site. FY2025 and FY2024 ARs added."
+  - "Added from boranagroup.in, none of which the collector fetches: RHP, DRHP
+     and Prospectus; six quarterly results filings; three credit-rating
+     rationales; six shareholding patterns; nine Regulation 30 announcements;
+     four investor presentations."
+  - "sector_cap_row corrected from 'Pharma / CDMO'."
+notes: "Collected by tools/collector/collect_to_repo.py v3 --dry-run, then repaired and extended by hand. Nothing pushed."
+peer_presentations:
+  folder: inputs/peer-presentation/
+  contract_note: >
+    NEW folder, not part of the standard input contract. No stage prompt
+    references it. Pass the path explicitly in the stage-06 task message, or
+    the decks will not be read.
+  contents: >
+    The latest two investor presentations for each peer, Q4FY26 and Q1FY27,
+    pulled from the BSE announcements API on 07-Sep-2026. Every file opened and
+    its quarter confirmed from the deck cover, not from the filing date.
+  collector_note: >
+    The collector does not fetch peer presentations. Added by hand.
+  files: >
+    FILATEX Q1FY27 30-Jul-2026 (31p) and Q4FY26 01-May-2026 (31p);
+    SANGAMIND Q1FY27 18-Jul-2026 (22p) and Q4&FY26 22-Apr-2026 (38p);
+    SANATHAN Q1FY27 04-Aug-2026 (19p) and Q4&FY26 18-May-2026 (25p).

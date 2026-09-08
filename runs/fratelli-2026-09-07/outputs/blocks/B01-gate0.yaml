@@ -1,0 +1,38 @@
+stage: B01-gate0
+company: "FRATELLI"
+run_date: "2026-09-07"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "inputs/prospectus/ empty — not a gap, listed via Tinna Trade shell, no IPO"
+  - "inputs/rating/ empty — no credit rating covers the wine entity"
+  - "inputs/shareholding/ empty — pattern read from the two ARs instead; pledge (E3) and 3-year promoter change (E2) NOT FOUND as a result"
+  - "Q1FY27 concall transcript not published — CORPUS GAPPED-FRESHNESS"
+  - "screener CSV export defect (P&L/BS/CF/Quarters formula sheets header-only) — not used; screener-Data_Sheet.csv used instead, fully populated"
+  - "FY2022 and FY2023 data absent from every provided source (screener and both ARs) — genuine gap, not filled"
+  - "task brief's cited FY24 'wine business Rs 215.6 cr' figure not located in provided corpus text; nearest anchored analogs are AOC-1 standalone turnover Rs 178.44 cr (FY25) and Rs 181.20 cr (FY26)"
+flags:
+  - {type: FLAG-GATE0, reason: "Classification AVOID (Core 10/100, moat NONE). Driven by a documented FY2024-FY2026 business-model pivot (agri-trading exit to wine, Ind AS 103 Appendix C restatement) layered under genuine negative ROCE/ROE/FCF in the comparable window; deal-breakers 1,2,3,4,6,7,8 all fire. Flagged for Halt 1 review of whether the transition thesis can be assessed on its own terms."}
+data_years: 8
+fy_range: "FY2017 to FY2026 (non-contiguous: FY2022-FY2023 absent from all sources; basis break at FY2024 — see data_notes)"
+blocks: {A: 0, B: 0, C: 0, D: 5, E: 5}
+core_score: 10
+moat_score: 0
+grand_total: 10
+moats_confirmed: 0
+moat_class: "NONE"
+classification: "AVOID"
+deal_breakers: [1, 2, 3, 4, 6, 7, 8]
+history_downgrade: true
+data_notes:
+  - "FY2017-FY2021 = legacy Tinna Trade agri-commodity trading; different business, excluded from Block C growth scoring per explicit basis-break rule."
+  - "FY2024 consolidated (Rs 421.35 cr) is Ind AS 103 Appendix C pooling-restated from 1-Apr-2023, mixing wine (full year) with legacy agri-trading (full year, before exit); FY2025 is a transition year; FY2026 confirmed wine-only via AOC-1 (Rs 181.20 cr subsidiary turnover vs Rs 181.29 cr consolidated, parent standalone revenue collapsed to Rs 0.68 cr)."
+  - "C1 revenue CAGR computed FY24-FY26 only (-34.4%); FY17-FY26 CAGR (-8.8%) shown as memo only, marked N/M for scoring (basis break)."
+  - "C2 PAT CAGR N/M (negative endpoints both years, FY24 -0.15 cr, FY26 -24.91 cr) — not a loss-to-profit swing, a loss-to-loss deepening."
+  - "B1 and B3: cumulative PAT is negative in every window tested (all 8 years and FY24-26); ratios that would mechanically map to a positive/high band on two negative inputs were overridden to 0, since substance (cash burn exceeding accounting loss) is the opposite of what the metric rewards."
+  - "77-80% management gross-margin claim does not reconcile: material-cost-only GM computes to 69.7% (FY26) and 54.2% (FY25, matches task brief); FY26 'Selling and admin' line is blank while 'Other Expenses' jumped to Rs 114.14 cr from Rs 7.53 cr (FY25) — a reclassification, not a cost explosion; no A&P rupee figure named in any provided filing."
+  - "E3 promoter pledge: PEER/DATA NEEDED equivalent — NOT FOUND in either AR; only fixed-deposit-against-borrowings pledges located, not promoter share pledges."
+  - "M2, M5, M7, M9 all scored 0 and marked PEER DATA NEEDED — no peer (SULA or other) financial or market data in this run's corpus."
+  - "M8 distribution reach IS quantified (31,000 touch points; Shotgun ~9,000 outlets, +2,000 in FY26) but scored 0 per strict rule since revenue-growth precondition fails; flagged as likely understating a real network given the basis-break-driven revenue decline."
+block_b_trend: "deteriorating — cumulative FCF (Rs -66.7 cr, FY24-26) burns faster than cumulative accounting loss (Rs -39.0 cr) over the same window; WC days rose from 149 (FY24) to 349 (FY26)"
+analyst_note: "Every Block A/B/C metric sits at the scoring floor, but the window that matters (FY24-26) is only 3 points long and the FY24 anchor itself is a pooling-restated blend of wine and the exited agri-trading book. Deal-breaker 6 (ND/EBITDA + IC) independently confirms AVOID on FY26 alone: EBITDA is negative for the second year running against Rs 119.66 cr of net debt, meaning operations cannot service the debt at all, not merely slowly. Receivable days near-doubling to 212 (matches the load-bearing fact) is the cleanest single number in this run, since it is least contaminated by the revenue-basis break. The mechanical AVOID is correct as computed; whether it should be overridden for a documented legacy-cleanup transition is a Halt 1 judgment call, not a Gate 0 one."

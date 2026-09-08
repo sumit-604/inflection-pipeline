@@ -1,0 +1,51 @@
+stage: B06-peers
+company: "FRATELLI"
+run_date: "2026-09-07"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "inputs/prospectus/ empty. Not a gap: listed through the Tinna Trade shell."
+  - "inputs/rating/ empty. No credit rating covers the wine entity."
+  - "inputs/shareholding/ empty. The FY25 and FY26 ARs carry the pattern."
+  - "inputs/research/ empty."
+  - "Q1FY27 concall transcript for FRATELLI NOT PUBLISHED (call held 14-Aug-2026). CORPUS GAPPED-FRESHNESS, carried from B00-B05. All three peers' Q1FY27 transcripts ARE available and used in this stage, sharpening the asymmetry: peer commentary on the same quarter exists where Fratelli's own does not."
+  - "No independent, non-company-affiliated market-research source for Indian wine market share exists in the corpus; the above-Rs2,000 luxury-segment share claim (Claim 4) is genuinely unverifiable, not merely under-evidenced, given available sources."
+flags:
+  - {type: FLAG-PEER-CONTRADICTION, reason: "Sula (same Nashik/Akluj grape belt) reports material, quantified grape/input cost pressure across three consecutive quarters (Feb-2026, May-2026, Aug-2026 calls: table grape prices more than doubling, 350-400bps gross margin impact, not normalizing until Q1 FY28) directly contradicting Fratelli's Q1FY26 call claim of 'no major changes' in grape/input costs for the same harvest cycle."}
+  - {type: FLAG-PEER-CONTRADICTION, reason: "The one peer with an adjacent wine-based canned/RTD product (Sula) describes 'slow traction' and growth 'not as fast as we would have expected' for canned wine across the period, the opposite character from Fratelli's claimed 30% quarter-on-quarter RTD-wine category growth 'for roughly two years'; no peer corroborates any RTD-wine category growth rate approaching that figure."}
+  - {type: FLAG-PEER-SILENCE, reason: "Zero mentions of 'Fratelli,' 'duopoly,' 'Shotgun,' or 'RTD' across all 12 peer transcripts (keyword search). Sula never names Fratelli as a competitor across four quarters and roughly 60 analyst questions, despite Fratelli's own repeated framing of an 85-90% two-player duopoly with Sula."}
+peers_provided: 12
+verified: []
+partially_verified:
+  - {claim: "Wine market share ~30-33% and 85-90% Fratelli/Sula duopoly framing", peers: ["SULA"]}
+  - {claim: "Capex cycle 'largely behind us' supporting operating-leverage margin story", peers: ["SULA", "TI", "SDBL"]}
+  - {claim: "EU FTA duty-cut risk manageable due to price gap above Rs2,000 (task-brief bonus item)", peers: ["SULA"]}
+contradicted:
+  - {claim: "Grape/input cost stability, 'no major changes' for the 2025-26 harvest (Q1FY26 call)", contradicting_peer: "SULA", quote_anchor: "SULA-Concall_Feb_2026_Transcript.pdf p.13-14; SULA-Concall_May_2026_Transcript.pdf p.5-6; SULA-Concall_Aug_2026_Transcript.pdf p.4-5,9"}
+  - {claim: "RTD wine category growth of 30% quarter-on-quarter for roughly two years (Q3FY26 call)", contradicting_peer: "SULA", quote_anchor: "SULA-Concall_Nov_2025_Transcript.pdf p.10"}
+unverifiable:
+  - {claim: "Above-50% share of the above-Rs2,000 luxury wine segment", peers_checked: ["SULA"]}
+peer_coverage_map:
+  - {peer: "SULA", quarter: "Q2 FY26 (Nov-2025 call)", usage: "SUBSTANTIVE", contribution: "Capex-behind-us baseline; canned-wine slow-traction counter-signal; Telangana disruption parallel"}
+  - {peer: "SULA", quarter: "Q3 FY26 (Feb-2026 call)", usage: "SUBSTANTIVE", contribution: "Grape harvest damage/cost spike; detailed EU FTA CIF/MRP math; above-Rs1,600 portfolio disclosure"}
+  - {peer: "SULA", quarter: "Q4 FY26 (May-2026 call)", usage: "SUBSTANTIVE", contribution: "Grape-mix margin impact quantified (350-400bps); capex trajectory quantified; Chandon hospitality acquisition"}
+  - {peer: "SULA", quarter: "Q1 FY27 (Aug-2026 call)", usage: "SUBSTANTIVE", contribution: "Continuing grape cost impact; unchallenged analyst market-share figures 50-60%; wine industry flat-2-years confirmation"}
+  - {peer: "TI", quarter: "Q2 FY26 (Nov-2025 call)", usage: "SUBSTANTIVE", contribution: "Base-rate: already-profitable premiumisation story; pre-inflation input-cost baseline"}
+  - {peer: "TI", quarter: "Q3 FY26 (Feb-2026 call)", usage: "SUBSTANTIVE", contribution: "Imperial Blue acquisition close; incremental margin-guidance discipline base rate"}
+  - {peer: "TI", quarter: "Q4 FY26 / FY26 (Jun-2026 call)", usage: "SUBSTANTIVE", contribution: "Full-year margin guidance 16-18% over 24-36 months; proactive disclosure-basis-change practice"}
+  - {peer: "TI", quarter: "Q1 FY27 (Aug-2026 call)", usage: "SUBSTANTIVE", contribution: "Packaging/geopolitical input inflation; Spaceman RTD-adjacent brand growth as closest available data point"}
+  - {peer: "SDBL", quarter: "Q2 FY26 (Nov-2025 call)", usage: "SUBSTANTIVE", contribution: "Confirms zero RTD/wine-adjacent product discussion; regulatory-excuse pattern parallel"}
+  - {peer: "SDBL", quarter: "Q3 FY26 (Feb-2026 call)", usage: "SUBSTANTIVE", contribution: "Telangana government receivables risk named; IMFL-specific FTA read; weather-driven volume miss"}
+  - {peer: "SDBL", quarter: "Q4 FY26 / FY26 (Jun-2026 call)", usage: "SUBSTANTIVE", contribution: "UP greenfield capacity-race evidence anchoring the capex-cycle split finding"}
+  - {peer: "SDBL", quarter: "Q1 FY27 (Aug-2026 call)", usage: "SUBSTANTIVE", contribution: "Confirms capacity-race framing continuing; governance/disclosure contrast"}
+industry_cross_read:
+  demand: "Broadly soft FY26 across peers (Sula, SDBL), each citing rotating state-level regulatory/weather disruption similar to Fratelli's own pattern; Sula confirms the wine category itself grew low-single-digit or less over the last 2 years; TI's strong growth is M&A-driven, not category tailwind."
+  pricing_inputs: "Convergent, sector-wide input cost inflation late in the period (packaging/glass/barley, tied to geopolitical/West Asia conflict) reported independently by all three peers, complicating any 'stable cost environment' framing; grape costs specifically spiked hard for Sula on the same belt Fratelli sources from."
+  capex_cycle: "Mixed, mapped to sub-segment maturity, not industry-wide: wine (Sula) and branded IMFL (TI) are past-peak-organic-capex/redirecting-to-adjacency; beer (SDBL) is a genuine multi-year capacity race (~Rs570cr UP brewery, 3-4 years to peak utilisation, explicitly benchmarked against a competing UBL project). Fratelli's 'behind us' claim sits closest to the Sula/TI pattern, with the caveat that Sula's own version of that claim coincides with a large new hospitality capex commitment."
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "Government-corporation receivables/DSO risk, discussed proactively and repeatedly by Sula (Telangana ~250-day cycle) and TI (Telangana dues), a topic never once raised on any of Fratelli's five calls despite a 212-day DSO."
+  - "Structural, possibly unsustainable competitor discounting compressing category margins (Sula: 'casualties among the industry' possible), a competitive-intensity risk not named as such in Fratelli's own calls."
+  - "Governance/licensing/regulatory-action risk discussed directly, if evasively, by SDBL (manufacturing licence suspension, promoter litigation question, auditor resignation) and disclosed proactively by TI (accounting presentation change) — a level of direct engagement with governance-adjacent questions not evidenced in Fratelli's five clean calls despite comparable AR-flagged items (Section 270 penalty, Rs114.50cr guarantee, warrant forfeiture)."
+net_narrative_effect: "complicates"
+analyst_note: "The two CONTRADICTED items (grape costs, RTD growth) are the highest-value findings here: both rest on the one peer (Sula) close enough to speak to Fratelli's actual inputs and category, both are anchored across multiple quarters, and both point toward Fratelli's outward claims being more optimistic than what a same-belt, same-era peer independently discloses. Treat the grape-cost contradiction as a genuine margin-durability risk for FTTCP, not just a concall-credibility footnote: it compounds Stage 5's existing reconciliation findings by suggesting the input side of the margin story, not only the reported output numbers, may be overstated. The market-share and FTA items are softer: peer evidence is compatible with Fratelli's framing but never confirms it, and the near-total silence on Fratelli's existence across Sula's calls should temper how much weight the 'named duopoly' framing carries versus how much of it is Fratelli's own characterization of its position."

@@ -18,3 +18,4 @@ its own stage. Phase 1 (evidence) only; phases 2 and 3 append their own lines.
 | 7 | emerging moat 22-category scan | claude-sonnet-5 | default | n/a | n/a | 184820 | 11m44s | 1 |
 | 9 | TAM SAM SOM market sizing | claude-sonnet-5 | default | n/a | n/a | 138438 | 13m36s | 1 |
 | 12a | verifier A numerical (run 1, severity re-check ordered) | claude-haiku-4-5 | default | n/a | n/a | 88559 | 3m46s | 1 |
+| 12d | verifier D peer coverage | claude-sonnet-5 | default | n/a | n/a | 107025 | 7m26s | 1 |

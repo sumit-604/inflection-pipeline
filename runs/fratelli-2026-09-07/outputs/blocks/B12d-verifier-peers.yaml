@@ -1,0 +1,26 @@
+stage: B12d
+company: "FRATELLI"
+run_date: "2026-09-07"
+model: claude-sonnet-5
+status: complete
+peers_audited: 12
+substantive_confirmed: 12
+substantive_unsupported: []
+unused_but_relevant: []
+claims_all_addressed: true
+verdict_discipline_fails: []
+peer_utilisation: 100
+findings:
+  - {severity: "MINOR", location: "Claim 1, Sula presentation 'above-50% share in domestic premium wines'", claimed_anchor: "SULA-Investor_Presentation_Q4FY26 p.13 / Q1FY27 p.13", actual_anchor: "PDF page 12 in both decks", note: "Off by one page in both presentations; quote itself accurate"}
+  - {severity: "MAJOR", location: "Claim 1, Keshav Garg '60% market share' analyst quote", claimed_anchor: "SULA-Concall_Nov_2025_Transcript.pdf p.11", actual_anchor: "PDF page 13", note: "Off by two pages"}
+  - {severity: "MAJOR", location: "Claim 3, '350 to 400 basis points' gross margin figure", claimed_anchor: "SULA-Concall_May_2026_Transcript.pdf p.5-6", actual_anchor: "PDF page 8", note: "The single most material quantified figure behind the CONTRADICTED grape-cost verdict sits outside the cited range; composite quote splices p.6 text with a p.8 number"}
+  - {severity: "MINOR", location: "Bonus/EU FTA, 'a further +5%' Euro appreciation", claimed_anchor: "SULA-Concall_May_2026_Transcript.pdf p.10", actual_anchor: "PDF page 11", note: "Off by one page"}
+  - {severity: "MAJOR", location: "Bonus/EU FTA, '+20% by Feb-2026' Euro appreciation figure", claimed_anchor: "Folded into SULA-Concall_May_2026_Transcript.pdf p.10 citation", actual_anchor: "SULA-Concall_Feb_2026_Transcript.pdf, PDF page 7", note: "Real figure, credited to the wrong transcript entirely and left uncited at true source"}
+  - {severity: "MAJOR", location: "Part 2E, 'casualties among the industry' risk quote", claimed_anchor: "SULA-Concall_Feb_2026_Transcript.pdf p.13", actual_anchor: "SULA-Concall_May_2026_Transcript.pdf, PDF page 10", note: "Wrong transcript, not just wrong page; keyword search finds exactly one hit for 'casualties' across all 12 peer transcripts, in the May-2026 call"}
+  - {severity: "MAJOR", location: "Part 2B, SDBL barley/glass cost inflation quote", claimed_anchor: "SDBL-Concall_Feb_2026_Transcript.pdf p.7", actual_anchor: "PDF page 9", note: "Off by two pages"}
+  - {severity: "MAJOR", location: "Claim 5 / Part 2C, SDBL UP-brewery composite quote (Rs570cr total / Rs300cr invested / 3-4yr to peak)", claimed_anchor: "SDBL-Concall_Aug_2026_Transcript.pdf p.7 (single citation for compound claim)", actual_anchor: "Rs570cr figure is in SDBL-Concall_Feb_2026_Transcript.pdf (uncited); Rs300cr invested is Aug-2026 PDF p.4; '3-4 years to peak' is Aug-2026 PDF p.11", note: "Compound quote assembles two different quarterly calls under one wrong-page citation; headline Rs570cr figure's true source transcript is never named"}
+critical_count: 0
+major_count: 6
+minor_count: 2
+acceptance_rate: 60
+coverage_note: "acceptance_rate computed on the 20 individual citations spot-checked against source page markers (12 correct / 20 = 60%), not on peer-level usage, which is 12/12 confirmed substantive. No fabricated quotes found; all mismatches are wrong-page or wrong-transcript anchors on real quoted material. All 5 B05 peer_questions received a verdict; no VERIFIED claim rests on fewer than the two-peer bar the report itself declines to claim; no unused-but-relevant peer material found on independent re-search."

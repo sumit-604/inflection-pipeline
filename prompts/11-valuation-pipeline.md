@@ -139,7 +139,12 @@ mode:
    (Correction 6 guard; never fabricate peer multiples). A residual above 25%
    of CMP caps the verdict at STARTER size (Amendment 25, applied in Role 2);
    carry the residual % onto the verdict card. Emit price_decomposition in
-   the YAML.
+   the YAML. WRITE the Expectation Ledger to outputs/expectation-ledger.md in
+   the Section 1B v3.9 Appendix A schema (template:
+   runs/_template/outputs/expectation-ledger.md): one row per credited
+   catalyst plus the mandatory downside row, each with probability, evidence
+   basis, confirming metric-and-threshold, and confirm-by date. The quarterly
+   review reads and refreshes this file (Amendments 22-23).
 
 ## FRAMEWORK ELEMENTS THE WRAPPER ENFORCES (per the injected layers, non-negotiable)
 

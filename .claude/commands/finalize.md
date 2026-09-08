@@ -93,7 +93,7 @@ phase 3), then:
    the deliberation record. Collect B10 into outputs/blocks/.
 
 2. STAGE 11 — VALUATION. Invoke stage-11-valuation exactly per the
-   existing wrapper: pass the EIGHT framework file paths from frameworks/
+   existing wrapper: pass the NINE framework file paths from frameworks/
    as its stable prefix plus B10, in this order —
    Master_Project_Prompt_v3_6.md (resolves
    {{MASTER_PROJECT_PROMPT_V36_ROLE1_SECTIONS}}),
@@ -108,9 +108,11 @@ phase 3), then:
    later layers govern the items they name where
    the layers overlap), Section_1B_v3_9_Amendments.md
    ({{SECTION_1B_V39_AMENDMENTS}}, relative-valuation cross-check and
-   forward-expectation exit framework), and FTTCP_v2_1_Consolidated.md
+   forward-expectation exit framework), Section_1B_v3_10_Amendments.md
+   ({{SECTION_1B_V310_AMENDMENTS}}, growth symmetry in projections and
+   weighting), and FTTCP_v2_1_Consolidated.md
    ({{FTTCP_V21_CONSOLIDATED}}). If frameworks/ is missing
-   any of the eight files, STOP and tell the user which to add. The FTTCP ROCE
+   any of the nine files, STOP and tell the user which to add. The FTTCP ROCE
    forward verdict and structural/growth determination it consumes are
    the deliberation-confirmed ones carried on B10. ENTITY-COUNT GATE: when
    B10.entity_count is greater than one, stage 11 values PER ENTITY on each
@@ -260,7 +262,7 @@ answered from the blocks, write "the run did not establish this" rather than fil
      produced_at: <run date>
      framework_git_commit: <output of `git rev-parse HEAD`>
      framework_tag: <output of `git describe --tags --always`>
-     framework_versions: "Master v3.6 / Section 1B v3.3+v3.5.1+v3.6+v3.7+v3.8+v3.9 / FTTCP v2.1"
+     framework_versions: "Master v3.6 / Section 1B v3.3+v3.5.1+v3.6+v3.7+v3.8+v3.9+v3.10 / FTTCP v2.1"
    This is a plain record, not a decision. It gets committed with the rest.
 
 9. COMMIT all outputs and the updated companies/<TICKER>.md with message

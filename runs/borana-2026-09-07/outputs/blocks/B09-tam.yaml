@@ -1,0 +1,93 @@
+stage: B09-tam
+company: "BORANA"
+run_date: "2026-09-07"
+model: claude-sonnet-5
+status: partial
+input_gaps:
+  - "inputs/research/ empty; no independent broker market-sizing model for this niche (carried from B00)"
+  - "NO-CONCALL MODE for Borana; one Q3FY26 transcript only (carried from B00)"
+  - "No corpus or web source gives a clean organised/unorganised or captive-vs-merchant split for Surat's water-jet weaving output; both would sharpen the Section 3A SAM filter and are NOT FOUND rather than estimated"
+  - "Missing Brickwork rating rationale and SEBI Section 11C(9) order text (not TAM-relevant, carried for completeness)"
+flags:
+  - "TAM Method 1 (AR MD&A, unsourced: 12.1bn to 18.5bn water-jet metres, India) diverges ~2x from Method 2 bottom-up (Surat loom count x nameplate x utilisation, ~23.6-25.8bn metres for Surat ALONE) - unresolved corpus data-quality problem; AR figure treated as a likely floor, not a precise estimate"
+  - "Management has never stated a Rupee-crore TAM for its actual product across the RHP, AR, four investor decks and the one concall; the two claims it does quantify (PFY ~80% of MMF fabric production, unsourced; polyester-yarn and Home-Textile-export volumes) are either unsourced or scoped to markets Borana does not sell into (zero export revenue)"
+  - "SOM-implied revenue CAGR runs 20.6%-26.2% depending on conservative vs realistic TAM/SAM chain - straddles, does not clearly clear, the strategy's 25% CAGR hurdle"
+  - "3yr SOM is capacity-sufficient only if the announced Rs350-400cr/2000-loom doubling capex (target Mar-2028) is funded; unfunded as of FY26 close (cash Rs1.68cr vs gross debt Rs69.51cr, no equity dilution planned per B07) - the capex plan, not market absorption, is the optimistic side of the 3yr figure"
+  - "5yr SOM requires loom capacity beyond even the announced 2000-loom ceiling (~207 further looms, undisclosed) - here the SOM assumption is the optimistic side, not the capex plan"
+  - "BIS QCO removal on polyester yarn imports (12-Nov-2025, not December 2025 as commonly cited) was subsequently stayed by a High Court, which ordered the QCO to remain in force until further orders - live reversal risk to the input-cost tailwind behind recent margin gains, corroborated independently via FILATEX/SANATHAN peer transcripts"
+  - "RHP states explicitly it has no listed industry peer in India or abroad (RHP p.129); RHP's own peer-benchmarking table (p.168) fails an independent sanity check (Jindal Worldwide entry does not reconcile to independently web-sourced FY24 revenue) - Method 3 (peer aggregation) abandoned as unreliable"
+  - "RHP's D&B-commissioned industry report carried an unchanged 2025 polyester-demand projection (4mt to 6.7mt) from its October-2024 DRHP base version into the April-2025 RHP refresh despite the target year having nearly arrived - sign of recycled, not re-verified, figures in a report the issuer paid for"
+market_definition: "India, weaving step only: unbleached/undyed synthetic (polyester-dominant) woven fabric sold to traders and processing houses; excludes fibre/yarn, dyeing/finishing, and garmenting steps"
+tam_cr: {conservative: 13637, realistic: 19965}
+sam_cr: 5455
+sam_pct_of_tam: 40
+som_3yr_cr: 681
+som_5yr_cr: 940
+som_implied_revenue_cagr: {yr3: 20.6, yr5: 19.3}
+current_sam_share_pct: 7.1
+revenue_headroom_x: 14.0
+tam_growth_pct: 7.3
+runway_class: "STRONG"
+mgmt_claim_cr: "NOT FOUND"
+mgmt_claim_ratio: "NOT FOUND"
+mgmt_claim_read: "inflated"
+capacity_check: "3yr sufficient with margin IF the Rs350-400cr/2000-loom doubling capex (Mar-2028) is funded - currently unfunded; 5yr insufficient even at the full 2000-loom plan, needs ~207 further looms beyond the announced ceiling, a third undisclosed expansion phase"
+methods_used:
+  - "Method 1: top-down (AR FY2026 MD&A water-jet loom fabric-production volume x Borana's own realisation)"
+  - "Method 2: bottom-up (Surat water-jet loom count x nameplate capacity x utilisation) - used as a cross-check, not the primary anchor"
+  - "Method 3: peer revenue aggregation - attempted, abandoned (RHP states no listed peer exists; RHP's own comparison table fails a sanity check)"
+  - "Method 4: import substitution - not applicable (India is a net fabric exporter; import exposure is upstream, at yarn/feedstock level)"
+  - "Method 5: global per-capita fibre-consumption benchmark - directional growth-driver only, not converted to Rs Cr"
+stale_data_flags:
+  - {datapoint: "India polyester demand 4mt (current) to 6.7mt (2025 target)", source: "RHP/DRHP D&B Report", year: "base report Oct-2024, unchanged in Apr-2025 RHP refresh"}
+  - {datapoint: "Production of Synthetic Fabric, '000 run mt chart (FY2023-24: 123,343)", source: "RHP p.157, CMIE", year: "FY2023-24, unit ambiguous - not used in TAM math"}
+searches_performed:
+  - "water jet loom market India fabric production billion meters 2025 2031"
+  - "India synthetic grey fabric weaving market size Surat cluster crore"
+  - "Surat power loom water jet loom installed base number of looms India"
+  - "Surat textile number of looms lakh looms weaving cluster 2025 2026"
+  - "Jindal Worldwide Limited revenue FY2024 crore annual"
+  - "PLI scheme textiles Round 3 MMF fabrics outlay crore approved companies 2026"
+  - "National Technical Textiles Mission India budget outlay crore target market size"
+  - "BIS quality control order polyester yarn China withdrawn November 2025 QCO textile import"
+searches_skipped:
+  - "WebFetch of texfash.com (On the Edge: Can India's Synthetic Hub Weave Scale with Sustainability) - blocked by network egress proxy (EGRESS_BLOCKED); relied on search-snippet tier from the same query's other results instead (fibre2fashion, clothtextiles.in, apparelresources.com)"
+downstream_candidates:
+  - signal: "Borana Industries LLP grey-fabric offtake"
+    entity_type: "counterparty"
+    demand_link: "Largest customer of grey fabric every period FY22-9MFY25; related party, no disclosed pricing basis"
+    likely_source: "Company RPT disclosures (AR notes, RHP related-party section)"
+    cadence: "quarterly"
+    shared: true
+  - signal: "Ministry of Textiles PLI Scheme (MMF Fabrics segment) disbursement/progress"
+    entity_type: "regulatory"
+    demand_link: "Borana is an approved Round-3 participant; scheme trajectory signals policy tailwind materialising or stalling"
+    likely_source: "Ministry of Textiles / PIB releases"
+    cadence: "event-driven"
+    shared: false
+  - signal: "BIS QCO litigation status on polyester yarn imports"
+    entity_type: "regulatory"
+    demand_link: "Determines whether the input-cost tailwind behind recent margin gains persists or reverses"
+    likely_source: "Ministry of Chemicals & Fertilisers notifications; court filings; CRISIL/press"
+    cadence: "event-driven"
+    shared: false
+  - signal: "China POY/PFY/PTA import volumes and pricing into India"
+    entity_type: "macro"
+    demand_link: "Sets input-cost floor for all Surat weavers and proxies competitive intensity from cheaper Chinese fabric"
+    likely_source: "DGCI&S trade data; Ministry of Textiles"
+    cadence: "monthly"
+    shared: false
+  - signal: "Gujarat Textile Policy 2024 subsidy notifications (power/interest, 5yr window)"
+    entity_type: "regulatory"
+    demand_link: "Subsidy runoff timing affects the margin base this SOM/CAGR estimate assumes continues"
+    likely_source: "Gujarat Industries Commissionerate / Govt of Gujarat notifications"
+    cadence: "event-driven"
+    shared: false
+  - signal: "Surat cluster weaving-machinery import volumes (HS-code level)"
+    entity_type: "macro"
+    demand_link: "Proxy for whether the whole cluster is racing to add capacity into the same demand window Borana is betting on"
+    likely_source: "DGFT import data (weaving-machinery HS codes)"
+    cadence: "quarterly"
+    shared: false
+demand_externally_verifiable: true
+analyst_note: "The single biggest judgment call in this stage: which TAM scenario to trust. Method 1 (AR, unsourced) and Method 2 (bottom-up loom count) disagree by roughly 2x, and the RHP admits no listed peer exists to triangulate against. Conservative-bias convention picks the lower (AR) figure throughout, which pushes SOM-implied CAGR to 20.6%/19.3% (3yr/5yr) - below the 25% hurdle - while the realistic chain clears it at 26.2%/23.7%. Stage 11 should treat 20-26% as a band, weighted low, not a point estimate. Capacity is not the binding constraint at 3 years (sufficient with margin if funded) but funding is unresolved, and at 5 years capacity itself falls short of even the announced plan. The BIS-QCO court stay is a live, undated risk to the cost tailwind this whole margin base assumes continues."

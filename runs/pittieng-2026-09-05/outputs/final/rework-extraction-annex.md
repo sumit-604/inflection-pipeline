@@ -1,6 +1,6 @@
 # PITTIENG rework extraction annex (corpus only)
 
-Run: runs/pittieng-2026-09-05 | Prepared 2026-09-05 by Claude Code for the Claude web rework of stages 5, 6, 1 and 7.
+Run: runs/pittieng-2026-09-05 | Prepared 2026-09-08 by Claude Code for the Claude web rework of stages 5, 6, 1 and 7.
 Conventions: PDF page = page index of the filed PDF (the page-marked sidecar's "PAGE N"). Quotes are verbatim from the filed transcript text with line breaks joined. Speaker labels as printed. NOT DISCLOSED = not in the corpus. Nothing is estimated; a derived figure is labelled "derived" and its inputs are quoted.
 
 ---

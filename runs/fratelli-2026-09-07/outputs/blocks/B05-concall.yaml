@@ -1,0 +1,93 @@
+stage: B05-concall
+company: "FRATELLI"
+run_date: "2026-09-07"
+model: claude-sonnet-5
+status: complete
+run: 2
+run_note: "Rerun ordered under the REWORK verdict. Run 1 is archived at outputs/reports/05-concall-run1.md and outputs/blocks/B05-concall-run1.yaml. The rerun was given a strengthened eight-check method and was NOT given verifier B's findings, so verifier B's re-measure of coverage stays independent."
+input_gaps:
+  - "prospectus/, rating/, shareholding/, research/ folders empty (carried forward from Stage 1-4); no concall-specific new gap here."
+  - "Q1FY27 concall transcript not published; only Results_Q1FY27_2026-08-11.txt available. CORPUS GAPPED-FRESHNESS. A Q1FY27 call would settle: whether the 30% FY27 growth guidance is being reaffirmed or walked down again (Q1FY27 actual delivered only +22.5% YoY, below the 30% run-rate); how management addresses the going-concern EOM and Rs114.50cr guarantee if asked; whether the EBITDA claim-vs-recompute gap persists (Q1FY27 recomputed EBITDA is the first genuinely positive quarter in this sample, +Rs0.95cr/2.1% margin); and the fate of the dropped Karnataka winery and equity-fundraise plans."
+  - "FY2022 and FY2023 absent from every source in this corpus (carried forward, not concall-specific)."
+flags:
+  - {type: "EBITDA-SIGN-FLIP", reason: "Recomputed EBITDA (PBT+finance cost+depreciation) is negative against management's claimed positive figure in three of the last four periods checked live on calls: 9M FY26 (claimed +Rs4.7cr, recomputed -Rs0.52cr), Q4 FY26 quarter (claimed +Rs1.06cr/breakeven, recomputed -Rs4.04cr), and FY26 full year (claimed +Rs1cr, recomputed -Rs4.56cr, -2.5% margin, matching the standing AR correction to the decimal). Q3 FY26 PBT/PAT were also claimed positive on the call when the filed P&L shows a loss before tax of Rs4.95cr and net loss of Rs8.72cr."}
+  - {type: "UNDISCLOSED-BASIS-CHANGE", reason: "Management used the wine-subsidiary-only revenue figure as 'the company's revenue' on the Q4FY25 and Q1/Q2FY26 calls without ever naming the legacy agro-commodity/steel-abrasives trading business that was still material to the audited consolidated FY24/FY25/Q1FY25/Q2FY25 comparators (e.g. claimed FY25 revenue of Rs182cr vs audited consolidated Rs302.10cr; claimed Q1 FY25 comparator understating a true ~76% consolidated YoY decline that an analyst flagged and was deflected without a number)."}
+  - {type: "SILENCE-ON-MATERIAL-FILED-ITEMS", reason: "Zero mentions across all five transcripts (confirmed by exhaustive keyword search) of the Rs114.50cr related-party guarantee, the FY26 auditor's going-concern Emphasis of Matter, the promoter warrant forfeiture (65.1% lapsed), the Section 270 misreporting penalty, or MSME payables deterioration -- all filed at or before the calls where they should have been live topics, none raised by management or asked by any analyst."}
+  - {type: "NON-OPERATING-DEPENDENCY-UNQUANTIFIED", reason: "The Rs8cr Maharashtra WIPS subsidy cited once (Q1FY26 call) exceeds the entire audited FY25 'Other Income' line (Rs4.25cr) and exceeds Fratelli's own claimed FY26 EBITDA (Rs1cr), implying the subsidy is embedded within revenue/cost-of-sales rather than shown as separate other income; its FY26/FY27 quantum was never re-disclosed on any later call despite EBITDA breakeven being the central topic from Q2FY26 onward."}
+quarters_analysed: ["Q4 FY25", "Q1 FY26", "Q2 FY26", "Q3 FY26", "Q4 FY26"]
+triggers:
+  - {priority: 1, name: "Shotgun RTD scale-up to 2,00,000 cases FY27", type: "VOLUME", timeframe: "near", conviction: "M", confirm_signal: "Case volume and outlet counts continue at the 15-18k+ outlet, ~1.5-2x case-growth cadence management has delivered to date", kill_signal: "Case growth stalls below ~1.5x YoY or RTD's lower gross margin (65-70% vs wine 70%+) drags the blended margin as mix shifts"}
+  - {priority: 2, name: "Recomputed EBITDA turning and staying genuinely positive", type: "MARGIN", timeframe: "near", conviction: "L", confirm_signal: "An independently recomputable (PBT+finance+depreciation) EBITDA that is positive for 2+ consecutive quarters, not merely a claim on the call", kill_signal: "Any further quarter where claimed and recomputed EBITDA carry opposite signs, repeating the Q3-Q4 FY26 pattern"}
+  - {priority: 3, name: "FY27 revenue growth of 30% (guided June 2026)", type: "VOLUME", timeframe: "near", conviction: "L", confirm_signal: "Sustained quarterly delivery at or above the 22.5% run-rate seen in Q1 FY27", kill_signal: "A further guidance walk-down repeating the FY26 pattern (25% to 15-20% to 12-15% to 7% to ~1% actual)"}
+  - {priority: 4, name: "Luxury segment (J'NOON/Sette, above Rs2,000 MRP) growth", type: "PRICE-MIX", timeframe: "near-medium", conviction: "M", confirm_signal: "Continued double-digit luxury segment growth as reported each quarter", kill_signal: "EU FTA duty-phasing narrows the price gap faster than management's stated schedule, compressing luxury growth"}
+  - {priority: 5, name: "CSD channel scale-up", type: "VOLUME", timeframe: "medium", conviction: "M", confirm_signal: "CSD share of revenue rising above the current ~8%", kill_signal: "CSD approval delay for newly-registered SKUs (Merlot, NOI, Shotgun)"}
+  - {priority: 6, name: "Hospitality/wine-tourism diversification", type: "INORGANIC", timeframe: "long", conviction: "L", confirm_signal: "Ground actually broken and a funding source confirmed", kill_signal: "Further deferral beyond the already-stated CY27-28 target, following the Rs100cr to Rs70-75cr to Rs100cr to Rs70-80cr budget instability"}
+guidance:
+  - {item: "FY26 revenue guidance (original)", number: "~Rs250cr / 20-25% growth", timeframe: "FY26", stated_in: "Q4 FY25 call"}
+  - {item: "FY26 revenue guidance (1st revision)", number: "15-20% growth", timeframe: "FY26", stated_in: "Q1 FY26 call"}
+  - {item: "FY26 revenue guidance (2nd revision)", number: "12-15% (also 10-15% same call)", timeframe: "FY26", stated_in: "Q2 FY26 call"}
+  - {item: "FY26 revenue guidance (3rd revision)", number: "~7% growth", timeframe: "FY26", stated_in: "Q3 FY26 call"}
+  - {item: "FY26 revenue actual", number: "~1% growth (Rs184cr vs Rs181cr)", timeframe: "FY26", stated_in: "Q4 FY26 call"}
+  - {item: "FY27 revenue guidance", number: "~30% growth, PAT breakeven", timeframe: "FY27", stated_in: "Q4 FY26 call"}
+  - {item: "Net-net breakeven revenue threshold (1st)", number: "~Rs210-215cr", timeframe: "stated", stated_in: "Q2 FY26 call"}
+  - {item: "Net-net breakeven revenue threshold (revised)", number: "~Rs240cr", timeframe: "stated", stated_in: "Q3 FY26 / Q4 FY26 calls"}
+  - {item: "FY27 EBITDA margin target", number: "10-12%", timeframe: "FY27", stated_in: "Q3 FY26 call"}
+  - {item: "FY26 capex guidance (original)", number: "under Rs15cr", timeframe: "FY26", stated_in: "Q4 FY25 call"}
+  - {item: "FY26 capex guidance (revised)", number: "~Rs12cr", timeframe: "FY26", stated_in: "Q1 FY26 call"}
+  - {item: "FY26 capex actual", number: "~Rs10cr", timeframe: "FY26", stated_in: "Q3 FY26 / Q4 FY26 calls"}
+  - {item: "Hospitality capex", number: "Rs100cr, self-corrected same call to Rs70-75cr, later restated Rs100cr, then Rs70-80cr", timeframe: "2-3 years, now deferred", stated_in: "Q1 FY26 call (self-correction); Q2 FY26 call; Q4 FY26 call"}
+  - {item: "Hospitality construction start", number: "Early 2026, then deferred ~1 year to CY27-28", timeframe: "slipped", stated_in: "Q2 FY26 call; Q4 FY26 call"}
+  - {item: "Shotgun state rollout target", number: "10-15 states by FY26-end, 18 achieved", timeframe: "FY26", stated_in: "Q4 FY25 / Q1 FY26 calls; delivered per Q3/Q4 FY26 calls"}
+  - {item: "Shotgun case volume target", number: "1,00,000 cases FY26, achieved; 2,00,000 cases FY27 target", timeframe: "FY26/FY27", stated_in: "Q1 FY26 / Q3 FY26 calls; Q4 FY26 call"}
+promise_delivery:
+  delivered: 3
+  partial: 1
+  missed: 10
+  rows:
+    - {promised_in: "Q4 FY25 call", promise: "FY26 revenue ~Rs250cr (20-25% growth)", outcome: "missed", explanation: "Regulatory disruptions in Maharashtra, Telangana, Uttarakhand cited progressively across the year"}
+    - {promised_in: "Q1 FY26 call", promise: "FY26 growth 15-20%", outcome: "missed", explanation: "Same regulatory disruptions; guidance reaffirmed even after Maharashtra excise change was already known"}
+    - {promised_in: "Q2 FY26 call", promise: "FY26 growth 12-15% (also 10-15% same call)", outcome: "missed", explanation: "Telangana licence-transition disruption"}
+    - {promised_in: "Q3 FY26 call", promise: "FY26 growth ~7%", outcome: "missed", explanation: "No new explanation given for further shortfall to ~1% actual"}
+    - {promised_in: "Q2 FY26 call", promise: "Q2 FY26 EBITDA positive, Rs1.47cr", outcome: "delivered", explanation: "Recomputes to genuinely positive Rs1.32cr, close to claim"}
+    - {promised_in: "Q3 FY26 call", promise: "Q3 FY26 EBITDA Rs5.5cr / 8.6% margin", outcome: "partial", explanation: "Recomputes to Rs0.38cr / 0.6%, same sign but ~14x overstated"}
+    - {promised_in: "Q3 FY26 call", promise: "9M FY26 EBITDA Rs4.7cr; Q3 PBT/PAT positive", outcome: "missed", explanation: "Opposite sign: recomputed 9M EBITDA -Rs0.52cr; recomputed Q3 PBT -Rs4.95cr, net loss -Rs8.72cr; no explanation offered, not caught live by any analyst"}
+    - {promised_in: "Q4 FY26 call", promise: "Q4 FY26 breakeven, EBITDA +Rs1.06cr", outcome: "missed", explanation: "Opposite sign: recomputed -Rs4.04cr"}
+    - {promised_in: "Q4 FY26 call", promise: "FY26 EBITDA +Rs1cr, improved marginally", outcome: "missed", explanation: "Opposite sign: recomputed -Rs4.56cr, -2.5% margin, matches standing AR correction"}
+    - {promised_in: "Q1 FY26 / Q2 FY26 calls", promise: "Hospitality construction early 2026, open 2028, budget Rs100cr", outcome: "missed", explanation: "Ground not broken by Q4 FY26 call; deferred ~1 year to CY27-28; budget revised to Rs70-80cr; opening date never restated"}
+    - {promised_in: "Q1 FY26 call", promise: "Karnataka greenfield winery", outcome: "missed", explanation: "Dropped; never mentioned in the four subsequent calls, no explanation"}
+    - {promised_in: "Q2 FY26 call", promise: "Equity fundraise for Rs100cr capex programme", outcome: "missed", explanation: "Dropped; not mentioned Q3 or Q4 FY26 calls as the capex programme itself shrank"}
+    - {promised_in: "Q4 FY25 / Q1 FY26 calls", promise: "Shotgun in 10-15 states by FY26-end", outcome: "delivered", explanation: "18 states achieved, exceeding target"}
+    - {promised_in: "Q3 FY26 call", promise: "Shotgun ~1,00,000 cases by FY26-end", outcome: "delivered", explanation: "~1,00,000 cases confirmed on Q4 FY26 call"}
+excuse_pattern: "external-blame-heavy"
+repeated_evasions:
+  - {question: "Why is EBITDA margin so far below gross margin, and which cost lines will show operating leverage?", quarters_asked: ["Q2 FY26", "Q3 FY26", "Q4 FY26"], classification: "deflected every time"}
+  - {question: "What revenue/margin will the hospitality project generate?", quarters_asked: ["Q1 FY26", "Q2 FY26", "Q3 FY26"], classification: "deflected every time"}
+  - {question: "Are you planning an equity raise / how will you fund the capex programme?", quarters_asked: ["Q1 FY26", "Q2 FY26"], classification: "deflected every time"}
+credibility_grade: "D"
+credibility_basis: "Recomputed EBITDA/PBT/PAT carry the opposite sign to management's live-call claims in 3-4 of the last 4 checked periods (9M FY26, Q3 FY26 PBT/PAT, Q4 FY26 quarter, FY26 full year), on the metric central to the transition thesis; revenue guidance was walked down four times within FY26 and still missed the final restatement; five calls carry total silence on the Rs114.50cr guarantee, the going-concern EOM, and the warrant forfeiture, all filed at or before the relevant call; offset only partially by consistently accurate gross-margin/debt disclosure and one genuine proactive bad-news disclosure (the Rs5cr write-off)."
+peer_questions:
+  - {question: "Is Fratelli's claimed ~30-33% domestic wine market share, and Sula's implied counter-share, corroborated by any third-party industry data?", why: "Cited on every call with no external source; foundational to the 'duopoly' and pricing-power narrative", check_peers: ["Sula Vineyards"]}
+  - {question: "Does Sula (or another wine peer) disclose a comparable state-level VAT/promotion subsidy (e.g. Maharashtra WIPS), and at what scale relative to its own EBITDA?", why: "Fratelli's cited ~Rs8cr FY25 WIPS subsidy exceeds its own claimed FY26 EBITDA and the entire audited FY25 Other Income line, implying it sits inside revenue/cost lines rather than as separate other income; peer disclosure would test whether margin improvement is structural or subsidy-dependent", check_peers: ["Sula Vineyards", "any other Maharashtra-based winery"]}
+  - {question: "What EBITDA margin does the implied 'market leader' actually report, versus the unchallenged 25-30% figure an analyst cited on Fratelli's Q1 FY26 call?", why: "Anchors Fratelli's own 15-20% long-term aspiration; never sourced or disputed by Fratelli management", check_peers: ["Sula Vineyards"]}
+  - {question: "Is 'Bro Code' genuinely 100% wine-based as Fratelli claims, and what is its actual RTD category share?", why: "Management declined to confirm the competitor's formulation while asserting its own product's superiority", check_peers: ["Bro Code manufacturer (if identifiable)", "any RTD alcobev tracker"]}
+  - {question: "Does the wine RTD category genuinely grow at ~25-30% quarter-on-quarter as claimed, or is this an extrapolation from a very small base?", why: "The single highest, least-sourced growth-rate claim across all five calls", check_peers: ["Sula Vineyards (Dia brand)", "any RTD alcobev tracker"]}
+  - {question: "Does any peer disclose an EU-FTA duty-phasing schedule consistent with Fratelli's stated terms (75% initial, easing to 20%/30%, EUR2.5 CIF floor)?", why: "A load-bearing regulatory assumption behind the luxury-segment growth thesis, introduced only from Q3 FY26 onward with no cited source", check_peers: ["Sula Vineyards", "wine industry association filings if available"]}
+red_flags:
+  - {flag: "EBITDA/PBT/PAT sign-flip against filed results in 3-4 of last 4 checked periods", severity: "HIGH"}
+  - {flag: "Rs8cr WIPS subsidy exceeds claimed FY26 EBITDA and entire FY25 Other Income line; never re-quantified after one mention", severity: "HIGH"}
+  - {flag: "Total silence on Rs114.50cr related-party guarantee and FY26 going-concern Emphasis of Matter, filed days before the Q4 FY26 call", severity: "HIGH"}
+  - {flag: "Undisclosed change of revenue basis (wine-only vs consolidated-with-legacy-trading) across FY24/FY25 comparators", severity: "MEDIUM"}
+  - {flag: "Revenue guidance walked down four times within FY26, missing even the final restatement", severity: "MEDIUM"}
+  - {flag: "Repeated non-answer on the gross-margin-to-EBITDA gap across three quarters", severity: "MEDIUM"}
+  - {flag: "Hospitality project budget/timeline instability, including a same-call self-correction", severity: "LOW-MEDIUM"}
+  - {flag: "Dropped Karnataka greenfield winery and equity-fundraise plans with no explanation", severity: "LOW"}
+dropped_triggers:
+  - "Karnataka greenfield winery (stated once, Q1 FY26 call, never mentioned again)"
+  - "Equity fundraise for the Rs100cr capex programme (stated Q2 FY26 call, dropped by Q3/Q4 FY26 calls)"
+  - "TiLT wine-in-a-can as an active growth driver (management itself calls it 'stable,' 'not grown in any remarkable fashion' by Q2 FY26 call, after being framed as a leadership category in Q4 FY25 call)"
+timeline_slippages:
+  - "Hospitality construction start: 'early 2026' (Q2 FY26 call) slipped to 'deferred ~1 year, CY27-28' (Q4 FY26 call)"
+  - "Hospitality opening: '2028' stated once (Q2 FY26 call), never reaffirmed after the 1-year deferral was announced"
+  - "FY26 revenue guidance walked down on a roughly quarterly cadence across the entire fiscal year: 25% (Q4FY25 call) to 15-20% (Q1FY26) to 12-15%/10-15% (Q2FY26) to 7% (Q3FY26) to ~1% actual (Q4FY26)"
+no_concall_mode: false
+analyst_note: "The most consequential finding this stage adds is that the EBITDA/PBT/PAT reconciliation failure already established at the AR level (standing correction: -2.5% recomputed vs +0.57% claimed FY26 margin) is not an annual-report drafting artefact. The identical recomputation method, applied to the Q3 FY26 and Q4 FY26 concalls using the SAME-DAY filed unaudited/audited P&L, shows management stating positive EBITDA, PBT, and PAT figures live on calls when the filed numbers were already negative, meaning the miscommunication originates in how results are presented to the market in real time, months before any AR is drafted. Combined with the undisclosed WIPS-subsidy dependency (which exceeds the entire claimed FY26 EBITDA) and the total five-call silence on the guarantee and going-concern language, downstream stages should treat every EBITDA, PBT, or PAT figure quoted on a Fratelli earnings call as unverified until independently recomputed from the same-period filed P&L, and should not treat the 'breakeven'/'inflection point' narrative repeated since Q2 FY26 as evidence of an improving trend without that recomputation."

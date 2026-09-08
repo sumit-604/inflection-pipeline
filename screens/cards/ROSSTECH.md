@@ -1,234 +1,261 @@
 # Rossell Techsys Ltd — shallow analysis
 
-- Ticker ROSSTECH (NSE), BSE 544294. ISIN INE0OJW01016. Sector aerospace and defence
-  electrical systems, plus semiconductor and space.
+- Ticker ROSSTECH (NSE), BSE 544294. ISIN INE0OJW01016. Face value Rs 2. Sector aerospace
+  and defence electrical systems, plus semiconductor and space.
 - Analysed 2026-09-08 per `screens/SHALLOW_ANALYSIS_FRAMEWORK.md`, from the corpus in
   `screens/corpus/ROSSTECH/`. Every number cites a file and page. No forensics, no
-  valuation, no price.
-- Corpus caveat: page-marked Bull AI text of two filed PDFs. No annual report, no
-  balance sheet, no cash flow statement, no rating report, no shareholding pattern.
-  Market cap and CMP NOT FOUND; verify live.
+  valuation, no target price.
+- **Revised the same day after a deep Bull AI sweep.** The first pass held two documents and
+  recorded debt, cash flow, customer concentration, promoter holding, related party and the
+  credit rating as NOT FOUND. All six are now held. The verdict changed from PROCEED to
+  WATCH as a result. What changed is not the business; it is the price and the cash.
+- **Observed price: Rs 900 a share on 31 July 2026**, the price at which the promoters sold
+  Rs 166 crore of stock to Kotak Mahindra Mutual Fund. That is a block trade price on one
+  date, not a CMP on the analysis date. Verify live before acting.
 
 ## Business Understanding Narrative
 
-Rossell Techsys builds the electrical nervous system of aircraft. It makes wire
-harnesses and interconnect systems, electrical panel assemblies, electronic systems,
-and automatic test equipment (IP Q1FY27 p.14). A harness is the bundle of wiring that
-carries power and signal through an airframe. The company started in 2011 with one
-customer and now sells to more than 30, including Boeing, Lockheed Martin, Honeywell
-and BAE Systems, each of which has given it supplier awards (IP Q1FY27 p.13, p.17).
-It demerged from Rossell India and relisted in December 2024 (IP Q1FY27 p.13). It
-makes money by winning a place on an aircraft programme, passing multi-year
-qualification, then shipping the same part for the life of that programme. Aerospace
-and defence gave about 93% of historical revenue (IP Q1FY27 p.15).
+Rossell Techsys builds the electrical nervous system of aircraft: wire harnesses and
+interconnect systems, electrical panel assemblies, electronic systems and automatic test
+equipment (IP Q1FY27 p.14). It began in 2013 fulfilling Boeing's Indian defence offset
+obligations and has grown its customer base from fewer than 10 in FY22 to 26-30 active
+customers by 1HFY26 (Rating p.3). Those customers are the best names in the industry:
+Boeing, Lockheed Martin, BAE Systems, Honeywell, Thales, Airbus, HAL, BEL and DRDO in
+aerospace and defence; SpaceX and Blue Origin in space; LAM Research, Jabil and ICHOR in
+semiconductor equipment (Ownership file s.6). It demerged from Rossell India in August 2024
+and relisted that December (Ownership file s.6; IP Q1FY27 p.13).
 
-What is changing is scale and mix. Revenue went from Rs 259 cr in FY25 to Rs 485 cr in
-FY26, up 87% (Concall Q4FY26 p.4). Q1FY27 revenue was Rs 154.7 cr, up 78% year on year,
-with EBITDA Rs 23.3 cr and profit before tax Rs 9.6 cr (IP Q1FY27 p.10). Two new
-end-markets arrived at once. Semiconductor cleared customer qualification in Q2FY26 and
-volumes ramped immediately; space moved from qualification to volume, with a
-multi-year contract of about Rs 400 cr (Concall Q4FY26 p.4). Management guides FY27
-revenue to split 50% aerospace and defence, 50% everything else (Concall Q4FY26 p.7).
+What is changing is real and large. Revenue went from Rs 259 crore in FY25 to Rs 485 crore
+in FY26, up 87%, and 1HFY26 consolidated revenue rose 122% year on year (Concall Q4FY26
+p.4; Rating p.3). Q1FY27 revenue was Rs 154.7 crore, up 78%, with profit before tax up 139%
+(IP Q1FY27 p.10). The order book is over Rs 7,000 million at 30 September 2025, executable
+over three to four years (Rating p.3). Semiconductor and space cleared qualification in one
+year, and management targets cutting defence from 93% of revenue to about 50% (Rating p.3).
 
-Why now: the order book is Rs 800 cr and strategic agreements total about Rs 3,000 cr
-(IP Q1FY27 p.13). A new 210,000 sq ft leased unit opens in H2FY27 for space and
-semiconductor work (IP Q1FY27 p.20). A QIP of up to Rs 300 cr is proposed (IP Q1FY27
-p.8).
+Why now: the qualification barrier is genuine, the customers are Fortune 500, and India
+Ratings assigned IND BBB with a Positive Outlook in November 2025 (Rating p.1).
 
-What must be true: the company must convert qualification wins into repeat volume,
-lift EBITDA margin toward the guided 17% to 22% from 13.6% in FY26, and stop consuming
-cash as it grows.
+What must be true: the working capital must unwind, the cash must turn positive, and the
+customer base must actually broaden.
 
-What breaks it: working capital. Growth is funded by debt and inventory. Finance cost
-was Rs 9.78 cr in Q1FY27 against EBITDA of Rs 23.3 cr (IP Q1FY27 p.11). Interest eats
-42% of EBITDA. If the QIP is delayed or priced badly, growth stalls or shareholders pay
-for it.
+What breaks it, and this is what the sweep found: **the company does not generate cash, and
+the price already assumes it will.** Consolidated cash flow from operations was negative
+Rs 482 million in FY25 and negative Rs 108 million in FY24. Free cash flow was negative
+Rs 699 million in FY25 (Rating p.4). The net working capital cycle was 607 days in FY25.
+Total debt was Rs 409.41 crore at 31 March 2026 against Rs 485 crore of revenue (Ownership
+file s.3). And at the Rs 900 the promoters sold at, the company was valued at about
+Rs 3,393 crore, or 164 times FY26 earnings (Ownership file s.8).
 
 ## 1. Corpus ledger
-Held: the Q1FY27 investor presentation in full (22 pages), and pages 1 to 14 of the
-19-page Q4FY26 earnings call. Those give the profit and loss, quarterly trend, order
-book, segment mix, board, facilities, and management guidance.
-Missing: annual report (Bull AI lists none for this company), balance sheet, cash flow
-statement, shareholding pattern, promoter holding and pledge, related-party schedule,
-auditor report, any credit-rating rationale, concall pages 15 to 19, and any Q1FY27
-transcript (the indexed record returns zero chunks). The gaps weaken step 4
-(promoters), step 5 (leverage and cash conversion), step 9 (flags), and step 10
-entirely.
+Held: the Q1FY27 investor presentation (22 pages, complete); the Q4FY26 earnings call (pages
+1-14 of 19); **the full India Ratings rationale of 20 November 2025 (pages 1-5)**; the
+promoter shareholding table pre and post the July 2026 sale; the total debt and related
+party disclosure as at 31 March 2026; the auditor's Other Matter paragraph; corporate
+actions; the disclosed customer list; and management guidance with deliveries.
+Missing: the annual report (Bull AI lists none for this company), the balance sheet and cash
+flow statement in the company's own format, concall pages 15-19, any Q1FY27 transcript (the
+indexed record returns zero chunks), and a live CMP.
 
 ## 2. Business model and archetype
-Rossell sells engineered electrical assemblies to global aerospace and defence OEMs,
-and now to semiconductor and space customers. Revenue is programme volume times price
-per shipset. Margin comes from the difference between a qualified, hard-to-replace
-part and a commodity wiring job. Archetype: build-to-spec component maker, with
-outsourcing-partner traits. Customer capex cycles and design wins drive it; client
-concentration and capacity fill decide the economics. The one economic engine is
-qualification. ITAR, AS9100D and NADCAP across 40 processes take years to earn, and
-they gate every order (IP Q1FY27 p.16). Once through, the part ships for the life of
-the platform. Contracts are long-term in aerospace, and not long-term in semiconductor
-or space (Concall Q4FY26 p.13).
+Archetype: build-to-spec component maker with outsourcing-partner traits, confirmed by the
+rating agency's own words: "The company conducts business in two primary models: build to
+specification and build to print" (Rating p.5).
+The one economic engine is qualification. ITAR, AS9100D and NADCAP across 40 processes gate
+every order (IP Q1FY27 p.16), and contracts are "renewed every four-to-five years and
+perpetual in nature" (Rating p.4).
+The engine's cost is inventory. Rossell buys raw material years ahead to protect fixed-price
+contracts: "RTL's strategy of procuring raw materials in advance to mitigate price
+volatility risks, especially under long-tenure fixed-price contracts spanning three-to-five
+years... over 80% of the raw materials are imported" (Rating p.3). Raw material is 50% to
+60% of revenue. That is why the model consumes cash while it grows.
 
 ## 3. Competitive advantages
-Real, and narrow. The barrier is regulatory and procedural, not technological. ITAR,
-AS9100D, NADCAP and a defence production licence take multi-year cycles, and the
-OEM relationships run 8 to 12 years (IP Q1FY27 p.16). Boeing agreed to level load
-future schedules after on-time delivery performance, which is a customer choosing to
-smooth a supplier's factory (Concall Q4FY26 p.4). Switching costs are high once a part
-is qualified onto an airframe. Against that, this is still a build-to-print business
-with limited pricing power. Price escalation is passed through only sometimes, and
-some customers refuse the clause (Concall Q4FY26 p.14). One order was loss-making and
-is still being worked off (Concall Q4FY26 p.8). Moat: present, qualification-based,
-and thin on price.
+Real, and narrower than the customer list suggests.
+The barrier is regulatory and procedural, and the agency confirms the stickiness: long-term
+programme contracts, repeat orders, and a relationship with Boeing running since 2013
+(Rating p.3). Gross margins of 45% to 55% are not commodity margins (Rating p.4).
+Three limits, all newly documented. **Top five customers were about 91% of consolidated
+revenue in FY25**, with Boeing alone at 41%, down from about 90% in FY22 (Rating p.4). **The
+United States accounts for over 90% of revenue** (Rating p.3). And the company "largely
+operates on fixed-price contracts, giving it limited flexibility to pass on any sharp
+increase in raw material prices" (Rating p.4), which is why one Boeing programme's input
+cost dented the FY26 margin.
+Moat: present, qualification-based, and resting on very few customers in one country.
 
 ## 4. The promoters
-The Gupta family. Harsh Mohan Gupta is Promoter Director and Executive Chairman, with
-about five decades in international trade. Rishab Mohan Gupta is promoter, founding
-member and Managing Director, and runs the OEM relationships (IP Q1FY27 p.18). The
-independent bench is unusually strong for a company this size: Shobhana Joshi was
-Secretary (Defense Finance) in the Government of India, and Talari Suvarna Raju was
-Chairman and Managing Director of Hindustan Aeronautics (IP Q1FY27 p.18). That helps
-in a licensed sector.
-One group linkage to check. Digant Parikh sits on this board as a Non-Executive
-Director while serving as Senior Vice President, Finance at Rossell India Ltd, the
-former parent (IP Q1FY27 p.18). Promoter holding, pledge, and any related-party
-dealing with Rossell India are NOT FOUND in the held corpus.
+The Gupta family held 74.80% before July 2026: Harsh Mohan Gupta 39.49%, Rishab Mohan Gupta
+17.68%, Vinita Gupta 9.66%, Harsh Mohan Gupta & Son HUF 7.63% (Ownership file s.2). Rossell
+India Limited, the former parent, holds zero.
+**On 31 July 2026 the promoters sold Rs 166 crore of stock at Rs 900 a share to Kotak
+Mahindra Mutual Fund.** Harsh Mohan Gupta & Son HUF sold 15,07,859 shares for Rs 135.71
+crore; Rishab Mohan Gupta, the Managing Director, sold 3,39,258 shares for Rs 30.53 crore.
+The trades are recorded as bulk, block and insider on both exchanges (Ownership file s.1).
+Promoter holding fell from 74.80% to a derived 69.90%.
+This is not a governance failure. Selling 5% to a large domestic mutual fund adds a quality
+institutional holder and improves the float. But it is the single most informative act by
+anyone connected to this company in the corpus: the people who know it best took Rs 166
+crore off the table at 164 times earnings, in the same year the company is asking outside
+investors for Rs 300 crore through a QIP (Rating p.4).
+One structural item: the demerger is not fully unwound. The auditor records that "agreements
+for supply of goods and services to some customers are yet to be transferred to the company
+from the demerged entity. Accordingly, supplies... have been routed through the demerged
+entity" (Ownership file s.4). Revenue is still passing through Rossell India for some
+customers.
 
 ## 5. Financial trajectory
-Revenue Rs 259 cr (FY25) to Rs 485 cr (FY26), up 87% (Concall Q4FY26 p.4). Standalone
-FY26 audited revenue was Rs 485.23 cr and profit before tax Rs 27.45 cr (IP Q1FY27
-p.11). EBITDA rose from Rs 38 cr to Rs 66 cr; profit before tax from Rs 10 cr to Rs 28
-cr (Concall Q4FY26 p.4). Quarterly: revenue Rs 86.9 cr (Q1FY26), Rs 142.4 cr (Q4FY26),
-Rs 154.7 cr (Q1FY27); EBITDA Rs 11.9 cr, Rs 20.9 cr, Rs 23.3 cr; profit before tax
-Rs 4.0 cr, Rs 9.5 cr, Rs 9.6 cr (IP Q1FY27 p.10).
-Two things stand out. First, EBITDA margin is 13.6% for FY26 and 15.1% in Q1FY27,
-below the 17% to 22% management repeats as its range (Concall Q4FY26 p.7). Second,
-profit before tax was flat sequentially, Rs 9.5 cr to Rs 9.6 cr, while revenue rose
-Rs 12 cr. Finance cost climbed to Rs 9.78 cr in the quarter from Rs 7.68 cr a year
-earlier (IP Q1FY27 p.11). Interest is absorbing the operating gain.
-Inventory coverage improved from about 10 months to 7.67 months, with a stated target
-of 4 months (Concall Q4FY26 p.5, p.8). Asked when cash flow turns positive, the CFO
-said "you should be able to see much improvisation in that" in coming years, and gave
-no date (Concall Q4FY26 p.13). ROCE, debt, and cash from operations are NOT FOUND.
-Inflection classification: earnings-led, driven by volume, and funded by working
-capital and debt. It is not a one-off and not an asset event.
+Consolidated, from the rating agency (Rating p.5):
+| | FY24 | FY25 | 1HFY26 |
+|---|---:|---:|---:|
+| Revenue (Rs mn) | 2,170 | 2,597 | 2,124 |
+| EBITDA (Rs mn) | 321 | 351 | 273 |
+| EBITDA margin | 14.8% | 13.5% | 12.8% |
+| Interest coverage | 2.7x | 2.2x | 2.8x |
+| Net leverage | 5.2x | 6.7x | 4.8x |
+
+Company-reported: FY26 revenue Rs 485 crore, up 87%; EBITDA Rs 66 crore from Rs 38 crore;
+profit before tax Rs 28 crore from Rs 10 crore (Concall Q4FY26 p.4). FY26 EPS Rs 5.50
+against Rs 1.96 in FY25 on a Rs 2 face value (Ownership file s.7). Q1FY27 revenue Rs 154.7
+crore, EBITDA Rs 23.3 crore at 15.1%, profit before tax Rs 9.6 crore (IP Q1FY27 p.10).
+The cash statement is the part the first pass missed, and it reverses the reading:
+- **Cash flow from operations: negative Rs 482 million in FY25, negative Rs 108 million in
+  FY24** (Rating p.4). Two consecutive years of negative operating cash.
+- **Free cash flow negative Rs 699 million in FY25.**
+- **Net working capital cycle 607 days in FY25**, inventory days 566, improving to 387 days
+  and 398 inventory days in 1HFY26 (Rating p.3).
+- **Total debt Rs 409.41 crore at 31 March 2026**, all working capital loans, no default
+  (Ownership file s.3).
+- Consolidated cash Rs 48 million at 1HFY26; working capital limits utilised 89.2% on
+  average over 12 months (Rating p.4).
+- Capex Rs 353 million FY26 and Rs 674 million planned FY27, "funded through a mix of debt
+  and internal accruals" (Rating p.4).
+Derived: debt of Rs 409 crore equals 84% of one year's revenue. Interest cost of Rs 9.78
+crore in Q1FY27 is 42% of that quarter's EBITDA (IP Q1FY27 p.11).
+Inflection classification: **earnings-led on revenue, cash-negative on delivery.** The
+profit and loss is inflecting. The cash flow statement has not started to.
 
 ## 6. The transition and the quality ladder
-FROM R3, value-added and spec'd supplier. Rossell already has spec-in, switching costs
-and qualification barriers, which is the R3 definition. TO R4, franchise and
-share-of-wallet leader, on management's own telling: it wants to raise content per
-aircraft from 2% toward 15% and then 25% (IP Q1FY27 p.13), and to move from harnesses
-to integrated electromechanical assemblies and subsystem integration.
-Management's claim, quoted once: "in our current competencies we're looking at
-anywhere from 17% to 22%... when we go to our phase two expansion, which I mentioned
-about electromechanical integrated systems and assemblies, then our profit margin from
-17% to 21% can go anywhere from 21% to 30%" (Concall Q4FY26 p.11).
-Note the timing. Management dates phase two to 2028-2029 (Concall Q4FY26 p.12). So the
-rung climb is a two-to-three year claim, which matches the one-rung-per-2-to-3-years
-base rate. That is a well-behaved claim, not a multi-rung leap. But the climb has not
-started. The company has not yet reached the low end of its own current-competency
-margin range, let alone the phase-two range. ROCE evidence for either rung is absent
-from the corpus.
+Management's claim, quoted once: "when we go to our phase two expansion, which I mentioned
+about electromechanical integrated systems and assemblies, then our profit margin from 17%
+to 21% can go anywhere from 21% to 30%" (Concall Q4FY26 p.11), dated to 2028-2029.
+FROM R3, value-added spec'd supplier. Spec-in, switching costs, qualification barriers.
+TO R4, franchise and share-of-wallet leader, raising content per aircraft from 2% toward 15%
+then 25% (IP Q1FY27 p.13).
+One rung over two to three years respects the base rate. But the ladder's second test is
+ROCE durability, and the sweep now supplies the answer: net leverage of 4.8x to 6.7x,
+negative operating cash flow, 89% utilisation of working capital limits and a 607-day cycle
+are not R4 characteristics. They are the characteristics of a business that has not yet
+earned its current rung's returns in cash. The climb is real in revenue and unproven in
+capital.
 
 ## 7. Growth-trigger register
 - FY27 revenue growth "similar" to FY26's 87%. Source Concall Q4FY26 p.13. Status: stated.
-- FY27 revenue mix 50% A&D, 50% non-A&D. Source Concall Q4FY26 p.7. Status: stated.
-- Space revenue growth 300% to 400% in FY27. Source Concall Q4FY26 p.8. Status: stated.
-- Semiconductor revenue growth 300% to 400% in FY27. Source Concall Q4FY26 p.8. Status: stated.
-- New global semiconductor OEM onboarded, execution from Q2FY27. Source IP Q1FY27 p.8. Status: underway.
-- Space contract about Rs 400 cr, multi-year. Source Concall Q4FY26 p.4. Status: delivered (won); execution underway.
-- T-7 programme, strategic agreements about USD 200 mn; ramp from later FY27. Source Concall Q4FY26 p.10. Status: underway.
-- New 210,000 sq ft leased unit, operational H2FY27. Source IP Q1FY27 p.8, p.20. Status: underway (lease secured).
-- QIP up to Rs 300 cr. Source IP Q1FY27 p.7, p.8. Status: stated (proposed).
-- Additional Rs 75 cr working capital facility. Source IP Q1FY27 p.8. Status: delivered.
-- Defence MRO entry, DPL licence and AS9110 held; engagement with an Indian defence player. Source IP Q1FY27 p.8; Concall Q4FY26 p.5. Status: underway, no revenue named.
-- Commercial aerospace: shortlisted, RFPs hoped for Q2FY27. Source Concall Q4FY26 p.9. Status: stated.
-- Inventory coverage to 4 months from 7.67. Source Concall Q4FY26 p.8. Status: stated.
-- Headcount 1,281, plan 2,000 by 2027 and 2,500 by 2029. Source IP Q1FY27 p.8, p.20. Status: underway.
+- Space and semiconductor revenue growth 300-400% in FY27. Source Concall Q4FY26 p.8. Status: stated.
+- Semiconductor long-term target "up to even US$200 million in three years or four years". Source Ownership file s.7. Status: stated.
+- Order book over Rs 7,000 mn at 30 Sep 2025, executable over 3-4 years. Source Rating p.3. Status: delivered (won).
+- Rs 240 cr new purchase orders in Q1FY27 against Rs 350 cr bids submitted. Source IP Q1FY27 p.6. Status: delivered.
+- Defence share of revenue from 93% (FY25) to about 50% over the medium term. Source Rating p.3. Status: stated.
+- QIP up to Rs 300 cr, board approved, expected complete by end-FY26; part to repay debt. Source Rating p.4; IP Q1FY27 p.8. Status: **stated, not completed as at the rating date.**
+- New 210,000 sq ft leased unit operational H2FY27. Source IP Q1FY27 p.8, p.20. Status: underway.
+- Inventory cycle to 4 months from 7.67; Ind-Ra records 387 days at 1HFY26. Source Concall Q4FY26 p.8; Rating p.3. Status: improving, far from target.
+- EBITDA margin 15.5%-16.5% in FY26 per management to Ind-Ra; 17%-22% per the concall. Source Rating p.3; Concall Q4FY26 p.7. Status: **the two guidance figures do not match.**
+- Capex Rs 35.3 cr FY26, Rs 67.4 cr FY27. Source Rating p.4. Status: stated.
+- Additional Rs 40 cr working capital limit secured; Rs 40-60 cr more under discussion. Source Rating p.4. Status: underway.
+- Promoters sold Rs 166 cr at Rs 900 on 31 July 2026. Source Ownership file s.1. Status: **delivered.**
 
 ## 8. Proof check
-The growth triggers are firing. The margin trigger is not.
-What fired: revenue up 78% in Q1FY27, EBITDA up 95%, profit before tax up 139%, and a
-new semiconductor OEM qualified with execution from Q2FY27 (IP Q1FY27 p.8, p.10).
-Rs 240 cr of new purchase orders came in during the quarter against Rs 350 cr of bids
-submitted (IP Q1FY27 p.6). Order book Rs 800 cr at 30 June 2026 against Rs 715 cr in
-May (IP Q1FY27 p.13; Concall Q4FY26 p.4). The scale-up is real and it is documented.
-What has not fired: profitability per rupee. EBITDA margin is 15.1% against a 17% to
-22% guide. Profit before tax was flat quarter on quarter despite Rs 12 cr more revenue,
-because finance cost rose (IP Q1FY27 p.11). The two proof points that would confirm the
-ladder climb, a margin above 17% and positive operating cash flow, are both absent.
-Named proof point to watch: Q2FY27 and Q3FY27 EBITDA margin, with the loss-making
-Boeing order's remaining Rs 70 cr worked off in the first two quarters (Concall Q4FY26
-p.8). If margin does not lift once that order clears, the drag is structural.
+Revenue proof has fired. Cash proof has not.
+What fired: 87% then 78% revenue growth, 122% in 1HFY26, order book over Rs 700 crore,
+customers from under 10 to 26-30, semiconductor and space qualified, and an investment-grade
+rating with a Positive Outlook. Working capital improved from 607 to 387 days in six months,
+which is real progress on the central problem.
+What has not fired: operating cash flow, negative for two consecutive years and not yet
+reported positive in any period held. EBITDA margin fell across FY24 to 1HFY26, from 14.8%
+to 12.8%, against guidance of 15.5%-16.5%. Net leverage remains 4.8x. And the QIP that is
+meant to repay debt had not completed as at the rating date.
+Named proof point: a single quarter or half-year of positive operating cash flow. Second:
+the QIP closing, at what price and what dilution. Third: EBITDA margin above 15.5% with the
+loss-making Boeing programme worked off in H1FY27.
 
 ## 9. Flags from the documents
-- A loss-making Boeing order. About Rs 75 cr executed in FY26 and Rs 70 cr remaining,
-  mostly in H1FY27 (Concall Q4FY26 p.8). Management called it out; the size is
-  material against Rs 485 cr of FY26 revenue.
-- Finance cost is Rs 9.78 cr a quarter against Rs 23.3 cr EBITDA, and rising (IP
-  Q1FY27 p.11). Growth is debt-funded.
-- Operating cash flow is not stated and the CFO would not give a date for it turning
-  positive (Concall Q4FY26 p.13).
-- Inventory at 7.67 months of coverage, target 4 (Concall Q4FY26 p.8). An analyst
-  raised debt and working capital directly.
-- Dilution ahead: QIP up to Rs 300 cr, unpriced (IP Q1FY27 p.8).
-- Guidance repeatedly above delivery. The 17% to 22% margin band has been "always"
-  stated (Concall Q4FY26 p.7) while actual is 13.6% to 15.1%.
-- An earlier guide of Rs 1,300 cr revenue in two years was put to management by an
-  analyst; the answer restated growth rather than confirming the number (Concall
-  Q4FY26 p.13).
-- Semiconductor and space contracts are not long-term, unlike aerospace (Concall
-  Q4FY26 p.13). The FY27 mix moves half the revenue into shorter contracts.
-- Group linkage: a non-executive director is SVP Finance at the former parent, Rossell
-  India (IP Q1FY27 p.18).
-- Presentation language is promotional. "Yet another record-breaking quarter",
-  "multi-decade scale phase", "the moat" (IP Q1FY27 p.2, p.6, p.16).
-Not seen: promoter holding and pledge, related-party detail, debt quantum, auditor
-opinion, contingent liabilities, customer concentration percentages.
+- **Cash flow from operations negative two years running**, Rs 482 mn in FY25 and Rs 108 mn
+  in FY24; free cash flow negative Rs 699 mn in FY25 (Rating p.4).
+- **Top five customers 91% of revenue; Boeing 41%; United States over 90% of revenue**
+  (Rating p.3, p.4). Single-country, single-customer and single-currency exposure at once.
+- **Working capital cycle 607 days in FY25**, inventory 566 days (Rating p.3).
+- **Total debt Rs 409.41 crore at 31 March 2026** on Rs 485 crore of revenue (Ownership file
+  s.3); working capital limits 89.2% utilised; consolidated cash Rs 48 million (Rating p.4).
+- **Promoters sold Rs 166 crore at Rs 900 on 31 July 2026**, the Managing Director included
+  (Ownership file s.1), while the company seeks Rs 300 crore from outside investors.
+- **Derived valuation of about 164x FY26 earnings at that price** (Ownership file s.8).
+- Fixed-price contracts with limited pass-through and 80% imported raw material (Rating p.4).
+- A loss-making Boeing order, about Rs 75 cr executed and Rs 70 cr remaining into H1FY27
+  (Concall Q4FY26 p.8).
+- Guidance inconsistency: 15.5%-16.5% FY26 EBITDA margin told to the rating agency against
+  "17% to 22%" told to analysts (Rating p.3; Concall Q4FY26 p.7).
+- The demerger is incomplete: some customer supplies still route through Rossell India
+  (Ownership file s.4).
+- Related party: purchases of Rs 17.22 crore from the wholly owned US subsidiary against
+  sales of Rs 0.23 crore (Ownership file s.3).
+- Ind-Ra's own negative sensitivity is interest coverage below 2.5x; FY25 was 2.2x
+  (Rating p.4, p.5).
+- Presentation language is promotional throughout (IP Q1FY27 p.2, p.6, p.16).
+Not seen: annual report, company-format cash flow statement, pledge disclosure, contingent
+liabilities, live CMP.
 
-## 10. Independent check: the credit rating
-NOT FOUND. Looked for in Bull AI, which carries no rating document for this company,
-and on the agency sites (CRISIL, ICRA, CARE, India Ratings), which this session cannot
-reach. The network policy denies the connection.
-This gap matters more here than usual. The card's central open question is leverage
-and cash conversion, and a rating rationale is exactly the document that answers it.
-Fetch one before any deeper work.
+## 10. Independent check: the credit rating — FOUND
+**India Ratings and Research, 20 November 2025: IND BBB / Positive / IND A2 on Rs 3,200
+million of bank loan facilities, assigned** (Rating p.1, p.2).
+Ind-Ra's summary is the fairest one-paragraph description of this company available: strong
+order book, sticky defence relationships and healthy operating performance, "constrained by
+the consolidated stretched credit metrics, largely due to an elongated working capital
+cycle, resulting from significant raw material inventory holdings." The Positive Outlook
+rests specifically on the working capital cycle improving.
+BBB is the lowest investment grade. The agency's negative trigger, interest coverage below
+2.5x, was breached in FY25 at 2.2x and recovered to 2.8x in 1HFY26. This is a company whose
+credit sits one notch above speculative grade while its equity is priced at 164 times
+earnings.
 
 ## 11. Posture: Transition Decision Matrix
-- Proof gate: SPLIT. The scale gate has fired: 87% then 78% revenue growth, order book
-  and qualifications documented. The ladder gate has NOT fired: no margin above 17%,
-  no ROCE evidence, no positive operating cash flow.
-- Ugliness: ARTIFACT-OF-CLIMB, provisionally. Inventory, debt and thin margin are what
-  a qualification-heavy supplier looks like while it triples. Coverage improving from
-  10 months to 7.67 supports the reading. The reading fails if margin stays below 17%
-  after the loss-making Boeing order clears in H1FY27.
-- Recognition gap: INDETERMINATE. The corpus holds no market cap, no CMP and no
-  multiple. Management says "a significant part of the company's underlying potential
-  remains to be reflected" (Concall Q4FY26 p.6), which is a claim, not evidence.
-Reading the matrix on the ladder gate, which is the gate the transition thesis rests
-on: proof NOT FIRED plus ARTIFACT ugliness plus an unresolved gap maps to RESEARCH /
-WATCH. If the gap proves open on live prices and the margin lifts in H1FY27, the same
-name moves to RE-RATING LIVE. The pairing to fear is the closed gap: a market that has
-already paid for phase two while the company is still at 15% EBITDA.
+- Proof gate: **SPLIT, and now measurable.** The scale gate has fired. The cash gate has
+  not: two years of negative operating cash flow, 607-day working capital, 4.8x net
+  leverage.
+- Ugliness: **ARTIFACT-OF-CLIMB, and Ind-Ra agrees**, which is the strongest external
+  support available for that reading. Inventory is high because the company pre-buys imported
+  material for fixed-price defence contracts. The cycle improved from 607 to 387 days in six
+  months. The reading fails if the cycle stops improving or the QIP is needed to survive
+  rather than to grow.
+- Recognition gap: **CLOSED, on the evidence now held.** At Rs 900 the company was valued
+  near Rs 3,393 crore, about 164 times FY26 earnings, and the promoters were sellers at that
+  level. Even on FY27 earnings growing at the guided 87%, the multiple stays near 90 times.
+Proof-not-fired on the cash gate, plus artifact ugliness, plus a closed gap, is the
+**PRICED NARRATIVE (TRAP)** cell. The framework's warning fits this name exactly: "no
+ugliness warns you off, and the downside is double." The operating story is genuinely
+excellent, the agency's outlook is Positive, and that is precisely why the price has run
+ahead of the cash.
 
 ## 12. Verdict card
-**PROCEED to `/step1`.** This is the strongest of the nine on evidence of a real
-change. A demerged, recently relisted supplier nearly doubled revenue, cleared
-qualification in two new end-markets in one year, and holds an Rs 800 cr order book
-against Rs 3,000 cr of strategic agreements. The qualification barrier is genuine and
-the customer list is Fortune 500. It is the right size and the right shape for the
-transition-alpha mandate.
-Load-bearing facts a deep run must verify first:
-1. Operating cash flow and net debt for FY26, and the working capital cycle. The
-   corpus has neither, and the whole thesis rests on them.
-2. The loss-making Boeing order: size, remaining Rs 70 cr, and the margin drag through
-   H1FY27.
-3. The QIP: size, price, dilution, and whether it funds growth or refinances working
-   capital.
-4. Consolidated versus standalone. Every held number is standalone. The US subsidiary
-   RTI is described as a growth pillar; its numbers are absent.
-5. Promoter holding, pledge, and every related-party dealing with Rossell India Ltd.
-6. Whether EBITDA margin clears 17% in Q2FY27 or Q3FY27.
-What would change the view: a quarter at 17%-plus EBITDA margin with positive
-operating cash flow would move this to a strong PROCEED and make the ladder climb
-credible. A second year of 80%-plus growth at sub-15% margin with rising interest would
-make the ugliness structural, and the name a working-capital treadmill rather than a
-transition. No price here. Run the spear pass on live web before `/step1`.
+**WATCH. Downgraded from PROCEED after the deep sweep.** The business is the best of the
+nine screened, and nothing found today weakens it: qualification barriers that take years,
+customers from Boeing to SpaceX to LAM Research, 87% then 78% revenue growth, an order book
+over Rs 700 crore, and an investment-grade rating with a Positive Outlook.
+The downgrade is about entry, not quality. Three facts together make a full `/step1` premature
+rather than urgent. The company has not generated positive operating cash flow in either of
+the two years for which data exists. It carries Rs 409 crore of working capital debt against
+Rs 485 crore of revenue, with limits 89% drawn. And at the only observed price, Rs 900 on 31
+July 2026, it was valued at roughly 164 times earnings, at which level the promoters and the
+Managing Director sold Rs 166 crore of stock.
+Load-bearing facts a deep run must verify first, in this order:
+1. The live CMP, and the multiple against FY26 and consensus FY27 earnings. Everything else
+   is secondary to whether the gap is open at all.
+2. Operating cash flow for FY26 and Q1FY27, in the company's own statement. Ind-Ra's FY25
+   figure is negative Rs 482 million; the FY26 number is the whole thesis.
+3. The QIP: whether it completed, at what price, what dilution, and how much repaid debt.
+4. Customer concentration today against the FY25 figures of 91% top five and 41% Boeing, and
+   the US share against "over 90%".
+5. Whether the working capital cycle kept improving past 387 days.
+6. The unwinding of the demerger, and how much revenue still routes through Rossell India.
+What would change the view back to PROCEED: a materially lower price, or a quarter of
+positive operating cash flow with the cycle below 300 days and the QIP closed. What would
+move it to PASS: another year of negative operating cash with leverage rising and the QIP
+priced at a discount. No target price here, and note that the Rs 900 is one day's block
+trade, not a quote.

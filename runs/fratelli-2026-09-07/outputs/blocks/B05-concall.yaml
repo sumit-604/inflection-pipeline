@@ -1,0 +1,74 @@
+stage: B05-concall
+company: "FRATELLI"
+run_date: "2026-09-07"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "inputs/prospectus/ empty. Not a gap: listed through the Tinna Trade shell."
+  - "inputs/rating/ empty. No credit rating covers the wine entity."
+  - "inputs/shareholding/ empty. The FY25 and FY26 ARs carry the pattern."
+  - "inputs/research/ empty."
+  - "Q1FY27 concall transcript NOT PUBLISHED (call held 14-Aug-2026). CORPUS GAPPED-FRESHNESS. It would have settled whether management acknowledged the 22.5%-vs-30% FY27 growth shortfall already visible in the Q1FY27 print, whether the PAT-breakeven framing survived a loss-making Q1, and whether the Rs114.50cr guarantee, 212-day DSO, or warrant-forfeiture (never once raised in five calls) finally came up."
+  - "FY2022 and FY2023 absent from every source."
+  - "Q1FY26 and Q4FY25 quarterly EBITDA claims were not independently line-by-line reconciled to filed P&L (only Q2/Q3/Q4 FY26 were, since those quarters carry the load-bearing PBT/PAT/EBITDA discrepancies); taken at face value absent a reconciliation-breaking signal."
+flags:
+  - {type: FLAG-CONCALL-MISSTATEMENT, reason: "Q3FY26 call (16-Feb-2026): Aditya Sekhri stated 'positive PBT of roughly INR0.1 crores... PAT also turned positive.' Filed consolidated results for the same quarter (published 12-Feb-2026) show Loss before tax Rs(495.42) lakh and Net loss Rs(872.14) lakh. The PBT figure reconciles only if a Rs512.82 lakh one-time holdco write-off (disclosed separately, undisclosed as an adjustment in this sentence) is added back; the PAT claim fails even after that adjustment, given a further Rs367.99 lakh deferred-tax charge never mentioned."}
+  - {type: FLAG-CONCALL-BASIS, reason: "Q4FY26 call (02-Jun-2026): management framed FY26 revenue as 'growth of approximately 1% year-on-year' vs FY25. The company's own audited CONSOLIDATED FY25 print was Rs302.10cr, making the true group-level movement a 40.0% decline (matching B02's finding). The cited Rs181cr FY25 comparator reconciles only to the wine-segment/subsidiary-standalone figure already found mislabeled 'Consolidated FY24-25' in the AR Directors' Report (B02). The call repeats the same undisclosed basis change live to analysts."}
+  - {type: FLAG-GUIDANCE-WALKDOWN, reason: "FY26 revenue growth guidance was cut in four consecutive quarterly calls: 20-25%/~Rs250cr (Q4FY25) to 15-20% (Q1FY26) to 12-15% (Q2FY26) to ~7% (Q3FY26); actual print ~Rs181cr, roughly flat to +2% on a wine-only basis. Rs250cr original target missed by ~27%."}
+quarters_analysed: ["Q4 FY25", "Q1 FY26", "Q2 FY26", "Q3 FY26", "Q4 FY26"]
+triggers:
+  - {priority: 1, name: "Shotgun RTD scale-up", type: "volume", timeframe: "near-term", conviction: "M", confirm_signal: "Cases/outlets/revenue track toward FY27 double-to-200,000-cases target", kill_signal: "Outlet count stalls below 15,000 or repeat-purchase weakens"}
+  - {priority: 2, name: "FY27 30% growth / PAT breakeven guidance", type: "volume+cost", timeframe: "near-term", conviction: "L", confirm_signal: "Quarterly prints track toward ~Rs240cr on a clearly disclosed like-for-like basis", kill_signal: "Q1FY27 print already trails at +22.5% YoY vs the 30% full-year target"}
+  - {priority: 3, name: "Luxury segment premiumization (J'NOON, Sette)", type: "price-mix", timeframe: "medium-term", conviction: "M-H", confirm_signal: "Continued 25%+ luxury segment growth", kill_signal: "EU FTA duty cuts narrow the >Rs2,000 price gap faster than guided"}
+  - {priority: 4, name: "Operating leverage / EBITDA margin path to 10-12% FY27", type: "cost", timeframe: "medium-term", conviction: "L", confirm_signal: "AUDITED (not call-stated) EBITDA margin positive for 2+ consecutive quarters", kill_signal: "Further unreconciled positive EBITDA/PBT claims on calls"}
+  - {priority: 5, name: "Hospitality / wine tourism vertical", type: "inorganic", timeframe: "long-term", conviction: "L", confirm_signal: "Definitive agreement signed and ground broken", kill_signal: "Further deferral beyond the stated CY27-28 window"}
+guidance:
+  - {item: "FY26 revenue growth", number: "20-25%, ~Rs250cr", timeframe: "FY26", stated_in: "Q4 FY25 call"}
+  - {item: "FY26 revenue growth (revised)", number: "15-20%", timeframe: "FY26", stated_in: "Q1 FY26 call"}
+  - {item: "FY26 revenue growth (revised again)", number: "12-15%", timeframe: "FY26", stated_in: "Q2 FY26 call"}
+  - {item: "FY26 revenue growth (revised again)", number: "~7%", timeframe: "FY26", stated_in: "Q3 FY26 call"}
+  - {item: "FY27 revenue growth and PAT breakeven", number: "30%, ~Rs240cr revenue, net-net breakeven", timeframe: "FY27", stated_in: "Q4 FY26 call"}
+  - {item: "FY27 EBITDA margin", number: "10-12%", timeframe: "FY27", stated_in: "Q3 FY26 call"}
+  - {item: "Long-term EBITDA margin / Vision 2030", number: "15-20%; Rs500cr revenue at 20% margin", timeframe: "2028-2030", stated_in: "Q4 FY25 and Q3 FY26 calls"}
+  - {item: "Hospitality capex", number: "Rs100cr, revised to Rs65-75cr same call", timeframe: "2-3 years", stated_in: "Q1 FY26 call"}
+  - {item: "Hospitality capex (revised)", number: "Rs100cr (70% capex/30% brand)", timeframe: "2-3 years", stated_in: "Q2 FY26 call"}
+  - {item: "Hospitality capex (revised again, deferred)", number: "Rs70-80cr, deferred ~1 year to CY27-28", timeframe: "long-term", stated_in: "Q4 FY26 call"}
+  - {item: "FY26 core capex", number: "under Rs15cr, later Rs12cr, actual ~Rs10cr", timeframe: "FY26", stated_in: "Q4 FY25 / Q1 FY26 calls"}
+  - {item: "Shotgun FY26 target", number: "15 states, 100,000+ cases", timeframe: "FY26", stated_in: "Q1 FY26 call"}
+promise_delivery:
+  delivered: 1
+  partial: 3
+  missed: 8
+  rows:
+    - {promised_in: "Q4 FY25 call", promise: "FY26 revenue growth 20-25%, ~Rs250cr", outcome: "FY26 actual Rs181.29cr consolidated; ~27% short of target, growth rate ~1-2% on wine-only basis vs 20-25% guided", explanation: "Rotating regulatory-disruption causes (Maharashtra/AP/Delhi excise, elections) cited at every subsequent quarter"}
+    - {promised_in: "Q4 FY25 call", promise: "FY26 capex under Rs15cr", outcome: "Actual ~Rs10cr", explanation: "n/a - delivered"}
+    - {promised_in: "Q1 FY26 call", promise: "15-20% FY26 top-line growth, recovery from Q2 onward", outcome: "Q2FY26 revenue flat YoY; guidance cut again next quarter to 12-15%", explanation: "Telangana/Karnataka retail-license transition (new cause)"}
+    - {promised_in: "Q3 FY26 call", promise: "Positive PBT ~Rs0.1cr and PAT turned positive in Q3 FY26", outcome: "Filed consolidated Q3FY26 results show Loss before tax Rs-4.95cr, Net loss Rs-8.72cr; PBT claim reconciles only via an undisclosed one-time write-off add-back, PAT claim fails even then", explanation: "Not explained; presented as unadjusted GAAP figures"}
+    - {promised_in: "Q4 FY26 call", promise: "FY26 revenue growth ~1% YoY", outcome: "True audited consolidated FY25 print was Rs302.10cr, making the real group-level movement a 40.0% decline; ~1% figure uses an undisclosed wine-only FY25 comparator, repeating the AR's already-flagged basis error", explanation: "No basis caveat given on the call"}
+    - {promised_in: "Q4 FY26 call", promise: "FY27 revenue growth 30%, PAT breakeven", outcome: "Q1FY27 print +22.5% YoY (below 30% pace); net loss narrowed but still a loss", explanation: "No commentary available - Q1FY27 call transcript not published"}
+excuse_pattern: "external-blame-heavy"
+repeated_evasions:
+  - {question: "What is the revenue potential / timeline for the hospitality/wine tourism business?", quarters_asked: ["Q1 FY26", "Q2 FY26", "Q3 FY26"], classification: "deflected every time"}
+  - {question: "When will EBITDA margin reach a meaningful target / what is the margin trajectory?", quarters_asked: ["Q1 FY26", "Q3 FY26"], classification: "answer changed between quarters (vague to specific)"}
+  - {question: "How will hospitality capex be funded - debt or equity?", quarters_asked: ["Q1 FY26", "Q2 FY26"], classification: "deflected, then mooted by project deferral in Q4 FY26"}
+credibility_grade: "D"
+credibility_basis: "FY26 growth guidance (20-25%/Rs250cr) walked down four consecutive quarters before landing near-flat; the Q3FY26 call's PBT/PAT-turned-positive claim does not reconcile to filed consolidated results even after the most generous adjustment; the Q4FY26 call repeats, without disclosure, the same wine-only-vs-blended growth framing Stage 2 already proved false in the Annual Report."
+peer_questions:
+  - {question: "Does Sula corroborate Fratelli's ~30-33% wine market share and the '85-90% duopoly' framing?", why: "Internally consistent across five Fratelli calls but unverified against the market leader's own disclosures", check_peers: ["SULA"]}
+  - {question: "Do peers confirm RTD wine category growth of '30% quarter-on-quarter for roughly two years' (Q3FY26 call), versus the more commonly cited 15-20% annual figure used elsewhere?", why: "QoQ framing, if literal, implies implausible compounding; may be a transcription or speaker error", check_peers: ["SULA", "TI", "SDBL"]}
+  - {question: "Do peers report grape/input cost pressure from the 2025-26 harvest, contradicting Fratelli's 'no major changes' claim (Q1FY26 call)?", why: "Raw material trend claim testable against peer commentary on the same harvest", check_peers: ["SULA"]}
+  - {question: "Is Fratelli's claimed above-50% share of the above-Rs2,000 luxury wine segment corroborated by independent data or peer disclosure?", why: "Central to the EU-FTA risk discussion and repeated across all five calls", check_peers: ["SULA"]}
+  - {question: "Does peer capex trajectory corroborate Fratelli's claim that its capex cycle is 'largely behind us' after Rs70cr (FY23-25) plus Rs10cr (FY26)?", why: "Tests plausibility of the operating-leverage margin story against peer capacity-expansion patterns", check_peers: ["SULA"]}
+red_flags:
+  - {severity: "HIGH", flag: "Q3FY26 call PBT/PAT-turned-positive claim does not reconcile to filed consolidated results (loss of Rs4.95cr PBT / Rs8.72cr PAT) even after the most generous adjustment"}
+  - {severity: "HIGH", flag: "Q4FY26 call repeats, undisclosed, the AR's already-flagged wine-only-vs-blended-consolidated growth basis; true group-level FY26 movement is a 40.0% decline, not +1% growth"}
+  - {severity: "HIGH", flag: "FY26 revenue growth guidance cut in four consecutive quarters; original Rs250cr target missed by ~27%"}
+  - {severity: "MEDIUM", flag: "Hospitality/wine-tourism timeline and capex estimate changed materially at nearly every call across all five quarters; three consecutive quarters of analyst questions on it deflected as premature"}
+  - {severity: "MEDIUM", flag: "Rs114.50cr parent guarantee, Section 270 misreporting penalty, 212-day DSO, MSME payables +235%, and 65.1% promoter warrant forfeiture were never raised on any of five earnings calls"}
+  - {severity: "LOW", flag: "Minor EBITDA reconciliation variances in Q2FY26 and Q4FY26 (within plausible rounding/other-income range)"}
+dropped_triggers:
+  - "Holdco-merger-into-Fratelli cost-saving idea (raised, 'evaluating it,' Q4 FY25 call) never mentioned again in the subsequent four calls"
+timeline_slippages:
+  - "Hospitality/wine tourism: target opening year moved from 2027 (Q4FY25 call) to 2028 (Q2FY26 call) to an indefinite CY27-28 'review and possibly action' (Q4FY26 call); capex estimate oscillated Rs100cr to Rs65-75cr to Rs100cr to Rs70-80cr across the same five calls with zero ground broken as of the newest transcript"
+analyst_note: "The two flagship findings (Q3FY26 PBT/PAT claim; Q4FY26 basis-undisclosed +1% growth framing) are both precisely triangulated to the rupee against filed, dated consolidated results and should be treated as settled, not provisional. They independently corroborate B02/B03's findings that AR narrative layers systematically overstate performance versus audited primary numbers; this stage shows the same pattern recurring live, on calls, not only in print. The Shotgun RTD delivery record is the one genuinely clean positive in this dataset and should be weighted accordingly in FTTCP without being allowed to offset the credibility grade, which rests on the financial-reporting reconciliation failures, not on operational execution."
+no_concall_mode: false

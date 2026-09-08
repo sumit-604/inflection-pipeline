@@ -7,8 +7,11 @@
 # Section 1B v3.6 Amendments (Damodaran integration), Section 1B v3.7
 # Amendments (commodity converter cycle integration), Section 1B v3.8
 # Amendments (exit-basis symmetry and option resolution), Section 1B v3.9
-# Amendments (relative valuation cross-check, step 1C; later layers govern
-# the items they name where the layers overlap), FTTCP v2.1 Consolidated. The
+# Amendments (relative valuation cross-check step 1C [A20]; forward run-rate
+# earnings base [A21]; probabilistic catalyst credit [A22]; expectation
+# ledger with expiry [A23]; three-tier price decomposition [A24];
+# margin-of-safety-as-size [A25]; later layers govern the items they name
+# where the layers overlap), FTTCP v2.2 Consolidated. The
 # framework is deliberately NOT copied into this file, so that Keerti's
 # amendments propagate to the pipeline the moment the project files
 # change, with no pipeline edit. If the injected framework and anything
@@ -37,7 +40,7 @@ mode:
    because [rule]." Never pull a number from general knowledge.
 4. SOURCE ANCHORS: carry the B10 anchors through into your tables the
    first time each input is used.
-5. FTTCP v2.1 Signal Gate: every Step 2 forward catalyst must cite a
+5. FTTCP v2.2 Signal Gate: every Step 2 forward catalyst must cite a
    downstream candidate from B10 (B10.downstream_candidates) where one
    applies. A catalyst with no candidate anchor is graded evidence-thin
    and its magnitude caps at
@@ -103,6 +106,41 @@ mode:
    read). Resolve the gap plainly as part of the destination-PE / market-
    implied work; do not restructure the valuation math around it.
 
+14. A21 FORWARD RUN-RATE EARNINGS BASE (v3.9 Amendment 21). The earnings
+   base for every Section 1B pillar and all Role 1 fair values is the
+   Amendment 21 run-rate base: the latest reported quarter annualised, with
+   known one-offs stated and adjusted (treasury income on a depleting cash
+   pile, exceptional items, seasonal distortions). For seasonal or lumpy
+   businesses (project cargo, agri, capital goods; B10.seasonal true) use a
+   trailing-4-quarter base instead of single-quarter annualisation. Declare
+   the basis in the worksheet. The annual/AR model on B10 is the cross-check
+   and FLOOR, not the anchor; where run-rate and annual model diverge >25%,
+   state which is used and why. This base replaces the annual-model anchor
+   everywhere a multiple is applied; entry-exit basis symmetry (18.1) still
+   binds. Emit run_rate_base in the YAML.
+15. PRICE DECOMPOSITION AND STEP 1C CROSS-CHECK (v3.9 Amendments 24, 20).
+   Decompose the market cap at CMP into three supported tiers plus a
+   residual, each shown in ₹ Cr, ₹/share, AND % of CMP:
+   - T1 Confirmed = Amendment 21 run-rate base × destination PE.
+   - T2 High-probability = Σ(increment × p) for p ≥ 0.50, NET of the
+     mandatory downside term (FTTCP Section C.2 / B10 expectation ledger),
+     × destination PE.
+   - T3 Speculative = Σ(increment × p) for p < 0.50, × destination PE.
+   - Residual = CMP − (T1 + T2 + T3), the unsupported premium.
+   State the verdict as the four percentages, never a single over/under-valued
+   line. The destination PE applied in each tier is the governing Section 1B
+   destination (operator-approved base). STEP 1C CROSS-CHECK: where a live
+   peer table is injected (Amendment 20), the Step 1C adjusted peer base is
+   the cross-check on that tier multiple — print pillar destination, adjusted
+   peer base, the % gap, and which governs (relative governs ONLY where the
+   pillar sits >30% below the adjusted peer base, bounded by the sector cap,
+   20.6). In pipeline mode with no live peer table, the tier multiple is the
+   pillar destination and the cross-check is marked PENDING LIVE PEER TABLE
+   (Correction 6 guard; never fabricate peer multiples). A residual above 25%
+   of CMP caps the verdict at STARTER size (Amendment 25, applied in Role 2);
+   carry the residual % onto the verdict card. Emit price_decomposition in
+   the YAML.
+
 ## FRAMEWORK ELEMENTS THE WRAPPER ENFORCES (per the injected layers, non-negotiable)
 
 - The Section 1B layer set (v3.3 Amendments + v3.5.1 + v3.6 + v3.7 + v3.8 + v3.9;
@@ -156,6 +194,13 @@ mode:
   and let the verdict card say AVOID-on-valuation. Bull EPS CAGR is
   usable in the HR check only if B10.credibility_grade is A or B;
   otherwise Bull uses Base + 5% maximum.
+- HURDLE EPS CAGR BASIS (v3.9 A21/A22): the EPS CAGR entering the Hurdle
+  Ratio is the PROBABILITY-WEIGHTED EPS CAGR built on the Amendment 21
+  run-rate base from the FTTCP Section C.2 credit (Σ increment × probability,
+  net of the mandatory downside term; B10 expectation ledger), NOT a
+  single-point forecast. Recompute HR on it and carry it to
+  expected_cagr_prob_weighted. The bull-EPS-CAGR credibility gate is
+  unchanged.
 - 4D probability weights come ONLY from B10.credibility_grade
   (A 20/50/30, B 25/50/25, C 35/45/20, D 45/40/15).
 - Cross-check: compare your base revenue CAGR against B10's SOM-implied
@@ -186,7 +231,7 @@ entity_count: 1                # from B10.entity_count (dossier Section 1); emit
 input_gaps: []
 flags: []                      # FLAG-CASH carried forward with the
                                # multiplier actually applied
-framework_versions: "Master v3.6 / Section 1B v3.3+v3.5.1+v3.6+v3.7+v3.8+v3.9 / FTTCP v2.1"
+framework_versions: "Master v3.6 / Section 1B v3.3+v3.5.1+v3.6+v3.7+v3.8+v3.9 / FTTCP v2.2"
 pe_basis: ""                   # forward | trailing (operator-approved at the FTTCP gate)
 exit_pe_base_approved: ""      # the operator-approved destination PE base carried from the deliberation
 destination_pe:
@@ -207,7 +252,19 @@ pillar_detail:
   shared_catalyst_flag: false
   ua_applied: false
   sector_cap_used: 0
-hurdle_ratio: {base: 0, bull_used: false, verdict: ""}  # PASS|CONDITIONAL|STOP
+hurdle_ratio: {base: 0, bull_used: false, verdict: ""}  # PASS|CONDITIONAL|STOP; computed on the prob-weighted EPS CAGR (A21 base)
+run_rate_base:                 # v3.9 Amendment 21
+  basis: ""                    # single-quarter-annualised | trailing-4q
+  pat_run_rate_cr: 0
+  one_offs_adjusted: ""        # what was stripped and why
+  annual_model_divergence_pct: 0
+price_decomposition:           # v3.9 Amendment 24; each tier in Rs Cr, Rs/share, % of CMP
+  t1_confirmed: {rs_cr: 0, rs_per_share: 0, pct_cmp: 0}
+  t2_high_prob: {rs_cr: 0, rs_per_share: 0, pct_cmp: 0}
+  t3_speculative: {rs_cr: 0, rs_per_share: 0, pct_cmp: 0}
+  residual: {rs_cr: 0, rs_per_share: 0, pct_cmp: 0}
+  step1c_peer_base_crosscheck: ""   # adjusted peer base, or PENDING LIVE PEER TABLE
+  governing_multiple: ""            # pillar | relative (relative only if pillar >30% below peer base, capped)
 fair_values:
   track1: {bear: 0, base: 0, bull: 0}
   track2: {bear: 0, base: 0, bull: 0}
@@ -239,7 +296,7 @@ names (relative valuation cross-check, step 1C, operator directive 26-Aug-2026),
 then v3.8 (exit-basis symmetry and option resolution, operator directive
 23-Aug-2026), then v3.7 (commodity converter integration, operator directive
 20-Aug-2026), then v3.6 (Damodaran integration, operator directive 13-Aug-2026), then
-v3.5.1 (Pillar 1 normalization), then v3.3. FTTCP v2.1 ROCE forward verdict is sole
+v3.5.1 (Pillar 1 normalization), then v3.3. FTTCP v2.2 ROCE forward verdict is sole
 Pillar 1 authority. Within the v3.5.1 layer: its consolidated Amendment 9
 supersedes the standalone Amendment 4.5 (v3.5) that appears in the
 amendments file above; Amendment 4.5 is RETIRED as a number and survives

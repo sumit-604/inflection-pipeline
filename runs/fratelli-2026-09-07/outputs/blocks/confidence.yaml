@@ -1,0 +1,25 @@
+stage: confidence-delta
+company: "FRATELLI"
+run_date: "2026-09-07"
+phase: 1
+computed_by: orchestrator
+confidence_delta:
+  numerical_acceptance: 87      # B12a run 2: 61 numbers audited, 0 CRITICAL, 7 MAJOR, 1 MINOR
+  redflag_coverage: 39          # B12b: 15 of 38 independently found flags caught upstream (7 more partially)
+  framework_adherence: 82       # B12c: 47 of 57 rule checks passed. GATE 0 + EMERGING MOAT SCOPE ONLY
+  peer_utilisation: 100         # B12d: 12 of 12 peers used substantively
+  overall: 39                   # minimum of the four, per orchestrator Section 5
+band: "FORCED REWORK (overall below 60)"
+framework_adherence_scope: "PARTIAL. Covers Gate 0 (B01) 93% and Emerging Moat (B07) 72% only. The valuation-adherence component is PENDING PHASE 3: B10 and B11 do not exist yet, so verifier C's valuation audit did not run."
+rework_triggers:
+  - trigger: "Any verifier acceptance_rate below 60%"
+    fired: true
+    detail: "B12b redflag coverage is 39%. An independent read of the same five company transcripts and twelve peer transcripts found 38 red flags; the upstream analysis had caught 15 and partially caught 7. Two of the misses are CRITICAL: repeated multi-quarter evasions on Shotgun unit economics and on cost structure, both of which the concall prompt requires to be surfaced."
+  - trigger: "Verifier A CRITICAL numerical finding"
+    fired: false
+    detail: "B12a run 2 returned zero CRITICAL. Both run-1 CRITICALs were re-decided by Verifier A itself on source and reclassified MAJOR; see outputs/final/verifier-disagreement-log.md."
+  - trigger: "Verifier D acceptance_rate below 60%"
+    fired: false
+    detail: "B12d citation acceptance is exactly 60%, at the floor and not below it. Six MAJOR anchor errors stand: real peer quotes cited to the wrong page or the wrong transcript, including the 350-400bps grape-cost figure carrying B06's contradicted verdict."
+verdict_effect: "The phase-1 gate recommendation is REWORK. This judges the ANALYSIS, not the company: nothing here is a statement about FRATELLI's quality. The evidence stages that must be reworked are stage 5 (concall analysis) and stage 6 (peer verification), plus stage 6's citation anchors."
+also_capping: "B00.freshness_verdict is CORPUS GAPPED-FRESHNESS (Q1FY27 concall transcript absent while Q1FY27 results are in corpus), which independently caps the gate at PROCEED WITH CAVEATS. REWORK is the more severe verdict and stands on its own grounds."

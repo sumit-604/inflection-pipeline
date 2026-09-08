@@ -21,3 +21,4 @@ its own stage. Phase 1 (evidence) only; phases 2 and 3 append their own lines.
 | 12d | verifier D peer coverage | claude-sonnet-5 | default | n/a | n/a | 107025 | 7m26s | 1 |
 | 12c | verifier C framework (phase 1 scope) | claude-opus-4-8 | default | n/a | n/a | 107398 | 8m29s | 1 |
 | 12a | verifier A numerical (run 2, re-decided + widened) | claude-haiku-4-5 | default | n/a | n/a | 85402 | 5m06s | 2 |
+| 12b | verifier B concall red flags | claude-opus-4-8 | default | n/a | n/a | 255696 | 17m54s | 1 |

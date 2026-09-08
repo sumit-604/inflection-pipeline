@@ -48,7 +48,7 @@ Rupees. EPS in rupees per share. Price is the dated transaction price described 
 
 | Name | FY27E revenue (Base A) | FY27E PAT (Base A) | FY27E EPS (Base A) | Last FY EPS (Base B) | Price | Price date | Fwd PE on A | PE on B | Price for 20x on A |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| Bhansali Eng Polymers | 1,889 cr | 262 cr | 10.54 | 7.23 (FY25) | 121.46 | 22-Jul-26 | **11.5x** | 16.8x | 211 |
+| Bhansali Eng Polymers | 1,889 cr | 262 cr | 10.54 | 7.24 (FY26) | 121.46 | 22-Jul-26 | **11.5x** | 16.8x | 211 |
 | Laxmi Organic | 3,873 cr | 271 cr | 9.76 | 2.87 (FY26) | 169.50 | 03-Jun-26 | **17.4x** | 59.1x | 195 |
 | Goodluck India | 5,150 cr | 269 cr | 6.38/qtr x4 = 25.51 | 18.31 (FY26) | 473.33 | 01-Jul-26 | **18.6x** | 25.9x | 510 |
 | Manorama Industries | 1,616 cr | 315 cr | 52.68 | 37.67 (FY26) | 1,780.85 | 14-Aug-26 | 33.8x | 47.3x | 1,054 |
@@ -86,8 +86,15 @@ None of the other six is near 20x on any basis in the corpus.
 - Q1FY27 EPS = 65.6 / 24.8858 = **Rs 2.636**. Annualised = **Rs 10.54**.
 - Price Rs 121.45 buy and Rs 121.47 sell, Junomoneta Finsol, NSE bulk, 22 July 2026.
 - Forward PE = 121.46 / 10.54 = **11.5x**.
-- Base B: FY25 basic and diluted EPS Rs 7.23 on PAT Rs 179.82 crore (Annual Report FY2025,
-  p.155). FY24 EPS Rs 7.22. PE on FY25 = 16.8x.
+- Base B, updated by the 2026-09-08 sweep: **FY26 PAT Rs 180.2 crore**, giving EPS
+  **Rs 7.24** (Q4FY26 presentation, p.7). FY25 was Rs 179.82 crore and Rs 7.23; FY24 Rs 7.22.
+  Earnings are flat across three years. PE on FY26 = **16.8x**.
+- **The sweep also found that FY26 revenue FELL 8.7% to Rs 1,276.0 crore** while Q1FY27 rose
+  53.3%. FY26 EBITDA margin was 20.0%, ABOVE the Q1FY27 margin of 19.2%. So the June quarter
+  is a revenue event, not a margin event, and the swing is violent: Q4FY26 Rs 341.6 crore to
+  Q1FY27 Rs 472.2 crore, up 38% in one quarter on unchanged capacity.
+- FY26 operating cash flow Rs 168.1 crore, up 54.6%, against PAT of Rs 180.2 crore. Cash
+  conversion 93%. Gross debt to equity 0.0x.
 
 **Amendment 17 warning.** BEPL is a CONVERTER without qualification. Revenue is an ABS
 price over an imported styrene and acrylonitrile cost. Installed capacity has been 75,000
@@ -299,3 +306,66 @@ arrives.
 5. IKIO FY26 EPS reconciliation. The deck's own figures conflict.
 6. Forbes Precision Q1FY27 result, when filed.
 7. Elantas CY2026 quarterly results, when filed.
+
+## Sweep addendum, 2026-09-08
+
+A deep Bull AI sweep run after this sheet was first written produced full-year FY26 actuals
+and management guidance that the cards did not hold. None of it moves a forward multiple.
+All of it changes how much weight each multiple carries. Evidence sits in
+`screens/corpus/<TICKER>/filings/`.
+
+**Bhansali, 11.5x on A.** FY26 revenue fell 8.7%. The Q1FY27 spike is off a down year, on
+capacity unchanged since 2015, and FY26's margin was higher than Q1FY27's. Base A is a
+peak-spread number sitting on a trough base. Trust 16.8x more than 11.5x. Bull AI holds only
+two guidance records and no transcript ever, so this company's promise record cannot be
+tested at all.
+
+**Laxmi Organic, 17.4x on A.** The FY28 plan is now on record and it is the yardstick: revenue
+2x, EBITDA 2.7x, ROCE 20% by FY28, stated unchanged since FY25. DERIVED progress two years
+in: FY26 revenue of Rs 28,467 Mn is flat on the FY24 base, and FY26 EBITDA of Rs 1,714 Mn is
+below it, against a target to triple. Q1FY27 EBITDA of Rs 1,143 Mn is **67% of the whole of
+FY26 in one quarter**. That ratio is the clearest statement of how far this quarter sits
+outside the run-rate. Three execution slips are documented: Lote delivered the bottom of its
+guided range, the Hitachi contract is about four quarters late, and Dahej chemical charging
+moved from Q1FY27 to Q2FY27 within three months. Offsetting all of it: top 10 customers are
+20% of revenue, down from 34% in FY23.
+
+**Goodluck, 18.6x on A.** Unchanged. The guidance-based 21.5x remains the honest upper bound,
+and Ind-Ra's warning that net leverage peaks across FY27 and FY28 is the reason to prefer it.
+
+**Manorama, 33.8x on A.** The sweep is favourable and does not make it cheap. Debt fell from
+Rs 481 crore to Rs 354 crore in FY26. Operating cash flow was Rs 259 crore against PAT of
+Rs 233 crore, a 111% conversion. Working capital improved to 125 days from 151. CARE upgraded
+the facilities to A from A-. And the guidance record is beaten twice: FY26 revenue guided at
+Rs 1,050 crore, raised mid-year to Rs 1,150 crore, delivered Rs 1,357 crore. FY27 guidance is
+25% to 30% growth at a 25% to 27% EBITDA margin. The QIP dilution is still NOT FOUND and will
+lower every per-share figure here.
+
+**IKIO, 40.6x on A.** Management guides FY27 revenue up 20% to 22% off Rs 595 crore, so
+Rs 714 to 726 crore, against the Rs 677 crore this sheet annualised. Margins are guided flat
+near 16%. Against that, Block II has slipped about six quarters, from "complete by March
+2025" in two successive decks to "partially commercialized in Q2FY27" now. A USD 8 million
+assured order announced in Q3FY25 has no delivery statement anywhere in the record. And three
+counterparties recorded as customers carry the group's own name. Do not pay 40x forward into
+that list of open questions.
+
+**Quadrant, no multiple.** The sweep found the profit figure the card said did not exist:
+Q4FY26 PAT of **positive Rs 11 million, after a Rs 125 million tax credit**, implying a
+pre-tax loss near Rs 114 million. Any screen showing Quadrant's PAT turning positive is
+showing a deferred tax entry. Two facts cut the other way: the TCAS order book is Rs 805
+crore, about 4.6 times annual revenue, and RDSO has approved passenger trials for KAVACH 4.0
+with management calling live field validation "the final regulatory milestone before
+full-scale commercial deployment". This remains unpriceable on earnings and is now a dated
+binary on one approval.
+
+**Rossell, 121.6x on A.** Unchanged.
+
+**Elantas and Forbes.** Both sweeps returned zero guidance records: no call, no deck, no
+promises. Elantas has no usable price at all and runs a January to December year, so FY27
+does not apply to it. Forbes has no Q1FY27 print, so no forward basis exists, and its last
+recorded transaction is an intra-group transfer at Rs 203.20, sixteen months old and 41%
+below the last genuine third-party trade of Rs 343.97 in September 2024.
+
+Nothing above changes the answer to the original question. Bhansali, Laxmi Organic and
+Goodluck are the three at or below 20x on Base A. Two of the three are converters annualising
+a spread, and the sweep makes that harder to ignore, not easier.

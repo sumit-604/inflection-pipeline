@@ -1,0 +1,72 @@
+stage: B00-inputs
+company: FRATELLI
+run_date: 2026-09-07
+model: orchestrator-inline
+status: complete
+spear_gate: "OVERRIDE 2026-09-07 (operator standing ruling 2026-09-05: Step-1 intake replaces the web spear)"
+load_bearing_facts:
+  - "1. Revenue basis. Reconcile FY24 consolidated Rs 421.35 cr to the wine business Rs 215.6 cr. Establish which years are wine-only (Tinna Trade agri-trading book still in FY24; FY26 Rs 181 cr is wine-only). Every growth or decline claim depends on this."
+  - "2. Gross margin and A&P. The 77-80% gross margin claim does not reconcile: FY26 raw material Rs 54.98 cr on Rs 181.29 cr sales is 70% before the Rs 15.26 cr inventory change; FY25 is 54%. FY26 Other Expenses Rs 114.14 cr vs Rs 7.53 cr FY25 while Selling and admin (Rs 77.12 cr FY25) is blank. Reclassification. Name the real advertising line."
+  - "3. Guidance versus delivery. 30% growth and PAT breakeven guided for FY27 after two loss years. Score five concalls Q4FY25 to Q4FY26 chronologically against what printed."
+  - "4. Receivables 212 days. Rs 105 cr against Rs 181 cr sales. Check ageing and related-party balances in the FY26 AR; compare with SULA."
+  - "5. Promoter stake consolidation. Inter-se gift transfers 14-Aug-2026 and 21-Aug-2026 consolidate 20.79%. Read the SAST notices alongside the FY26 related-party note."
+inventory:
+  prospectus: 0
+  annual_report: 2
+  results: 6
+  rating: 0
+  concalls: 5
+  peer_concalls: 12
+  peer_presentation: 6
+  announcements: 15
+  shareholding: 0
+  research: 0
+  screening: 24
+  presentation: 6
+  other: 0
+input_gaps:
+  - "inputs/prospectus/ EMPTY. Not a gap by the recently-listed rule: FRATELLI listed through the Tinna Trade shell, no IPO, so no prospectus exists. Backward baseline runs on AR FY25 and FY26 plus results filings."
+  - "inputs/rating/ EMPTY. No credit rating covers the wine entity. Newest known rating is Infomerics 26-Sep-2023 to Tinna Trade, pre-pivot, and is not in the corpus. Stage 10 marks rating_wc_quote unresolved; Pillar 2 proceeds without rating evidence, conservative default."
+  - "inputs/shareholding/ EMPTY. BSE files shareholding on a separate endpoint not scraped. FY25 and FY26 ARs carry the pattern; SAST and inter-se notices in inputs/announcements/ carry the Aug-2026 promoter changes. FII+DII must be read off the AR before the Amendment 3 UA multiplier is applied; UA is withheld until all three qualifiers are evidenced."
+  - "inputs/research/ EMPTY. No broker note. No effect on anchored evidence."
+  - "Q1FY27 concall transcript NOT PUBLISHED. Call held 14-Aug-2026; BSE carries the Q1FY27 results and deck, no transcript. FRESHNESS PAIR BREAK."
+  - "Screener CSV export defect (known, LESSONS.md): screener-Profit_Loss.csv, -Balance_Sheet.csv, -Cash_Flow.csv, -Quarters.csv export header-only for FRATELLI and all three peers. NOT a data gap: every number lives in the -Data_Sheet.csv files, fully populated."
+  - "manifest.sector_cap_row corrected by hand to Branded apparel / FMCG (35x). No alcoholic-beverage row exists in the Section 1B Sector Cap Table. FLAG for operator ruling at Phase 3; OPEN ACTION for LESSONS.md."
+freshness_pairs:
+  - pair: "RESULTS to CONCALL"
+    trigger_doc: "inputs/results/Results_Q1FY27_2026-08-11.pdf"
+    mate_expected: "Q1FY27 concall transcript (call held 14-Aug-2026)"
+    status: FAIL
+    missing_doc: "Q1FY27 concall transcript. Expected source: BSE announcements / company investor page. Not published as at 07-Sep-2026."
+  - pair: "RATING BULLETIN to RATIONALE"
+    trigger_doc: "NONE. inputs/rating/ empty, no bulletin in corpus."
+    mate_expected: "n/a, pair not triggered"
+    status: PASS
+    missing_doc: ""
+  - pair: "SEBI ORDER to ORDER TEXT"
+    trigger_doc: "NONE. Only boilerplate director declarations ('not debarred pursuant to any SEBI Order') in Results_Q3FY26 and the 03-Apr-2026 change-in-management filing. No order referenced."
+    mate_expected: "n/a, pair not triggered"
+    status: PASS
+    missing_doc: ""
+  - pair: "AR to LATEST AUDITED ANNUAL RESULTS"
+    trigger_doc: "inputs/results/Results_Q4FY26_and_FY26_2026-05-30.pdf (audited FY26)"
+    mate_expected: "FY2026 annual report"
+    status: PASS
+    missing_doc: ""
+freshness_verdict: "CORPUS GAPPED-FRESHNESS"
+concall_quarter_map:
+  - "Concall_Q4FY25_Jun2025_Transcript.pdf = Q4 FY25"
+  - "Concall_Q1FY26_Aug2025_Transcript.pdf = Q1 FY26"
+  - "Concall_Q2FY26_Nov2025_Transcript.pdf = Q2 FY26"
+  - "Concall_Q3FY26_Feb2026_Transcript.pdf = Q3 FY26 (cover: quarter and nine months ended 31-Dec-2025)"
+  - "Concall_Q4FY26_Jun2026_Transcript.pdf = Q4 FY26 (cover: quarter and year ended 31-Mar-2026)"
+text_extraction:
+  method: "pypdf page-marked extraction of all 52 input PDFs to work/text/<same relative path>.txt"
+  page_markers: "===== PAGE N ====="
+  failures: "none. All 52 PDFs carry a real text layer; no scanned-image file."
+operator_answers:
+  - "2026-09-07 empty-folder confirmation: operator answered PROCEED WITH THESE GAPS."
+flags:
+  - name: FLAG-CORPUS-FRESHNESS
+    detail: "Q1FY27 concall transcript absent while Q1FY27 results are in corpus. Gate recommendation capped at PROCEED WITH CAVEATS."
+analyst_note: "Two corpus notes matter downstream. First, results/ holds six filings, not three: Q4FY25 through Q1FY27. The full set is passed because the FY25-to-FY26 revenue-basis reconciliation (load-bearing fact 1) needs both audited annual filings. Second, concalls/ holds five, not three; stage 5 receives all five in chronological order because load-bearing fact 3 scores guidance against delivery across the whole run of calls."

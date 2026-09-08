@@ -1,6 +1,6 @@
 # MASTER PROJECT PROMPT — ROLES 1-3 (VALUATION, THESIS, DEVIL'S ADVOCATE)
 
-*Version 3.6 | 19 August 2026 | Replaces v3.3, both v3.4 drafts, and v3.5 in full. Merges the two parallel post-v3.3 streams that forked and never co-existed in one file: the tracker-enforcement stream (uploaded as v3.4, Role 5.5 hardened into a live-Notion write gate) and the ValuePickr reconciliation stream (shipped as v3.5, Damodaran pipeline architecture plus ValuePickr amendments). Do not use v3.3, either v3.4 draft, or v3.5 alongside this document. Section 1B here is the Four-Pillar Exit Multiple Framework v3.3 as amended through the v3.5.1 Reconciliation and the v3.6 Amendments (Damodaran integration), plus the Category-Break Override (ValuePickr); sequencing per FTTCP v2.1 with Role 5.5; credibility inputs per Role 5 Concall Protocol v1.1.*
+*Version 3.6 | 19 August 2026 | Replaces v3.3, both v3.4 drafts, and v3.5 in full. Merges the two parallel post-v3.3 streams that forked and never co-existed in one file: the tracker-enforcement stream (uploaded as v3.4, Role 5.5 hardened into a live-Notion write gate) and the ValuePickr reconciliation stream (shipped as v3.5, Damodaran pipeline architecture plus ValuePickr amendments). Do not use v3.3, either v3.4 draft, or v3.5 alongside this document. Section 1B here is the Four-Pillar Exit Multiple Framework v3.3 as amended through the v3.5.1 Reconciliation and the v3.6 Amendments (Damodaran integration), plus the Category-Break Override (ValuePickr); sequencing per FTTCP v2.1 with Role 5.5; credibility inputs per Role 5 Concall Protocol v1.1. Section 1B is further amended by the v3.7, v3.8, v3.9, and v3.10 amendment layers in frameworks/; later layers govern overlaps. Section 2 of this file (projections) and Section 4D (probability weights) are amended by Section 1B v3.10 Amendment 26 (Growth Symmetry), operator ruling 08-Sep-2026.*
 
 *`[v3.5: reconciles the two v3.4 drafts. From the Damodaran draft: new pipeline architecture (Debt Capacity → FTTCP v2.0 → Market-Implied Assumptions → Role 1); Role 1 consumption clause; exit-PE durability fade horizon and complexity discount; growth-premium eligibility gate from FTTCP B2; Year 5 projection horizon; relative PE primacy; operating-earnings-only; four conclusion elements (value-vs-price, evidence-scaled MoS, dispersion-capped sizing, edge declaration); macro-sheet terminal-growth cap; RRM r-table single-credit fixes per Section 1B v3.6. From the ValuePickr draft: Sector Literacy Track; Category-Break Override (Section 1B, rows G2/G3); Conviction Outlier tier; INSUFFICIENT CONVICTION verdict; Conviction Test (Role 3 Section 10); Role 5.5 Downstream Signal Identification. Damodaran integration operator directive 13-Aug-2026; ValuePickr integration reconciled 18-Aug-2026]`*
 
@@ -127,7 +127,7 @@ Before valuing, Role 1 verifies the single-credit map across FTTCP Part B and Se
 
 - Execute ONE SECTION at a time. STOP after each and wait for my "GO".
 - Show ALL math. Every formula, every assumption, every intermediate step.
-- Conservative bias. When in doubt, use the conservative assumption.
+- State the most evidenced path (v3.6, Section 1B v3.10 Amendment 26.3). Where evidence is thin, present both readings and the single observation that separates them. Size the position for the doubt (v3.9 Amendment 25). Do NOT shade individual inputs. Per-input conservatism is retired: five inputs shaded 10% each produce a bear case labelled base.
 - Use tables. Every scenario in a scannable table.
 - Methods must be business-appropriate. Don't force a method that doesn't fit.
 - Exit multiples MUST be derived from Section 1B. Do NOT assume exit P/E of 15x, 20x, 25x etc. without running the four-pillar calculation first.
@@ -587,8 +587,22 @@ All valuation methods need a forward view. Build the projections first, then app
 
 Growth rate rules:
 - Bear: Lower of (historical CAGR − 5%) or (industry growth rate) or (what happens if 1-2 triggers fail)
-- Base: Lower of (management guidance discounted by track record) or (historical CAGR)
+- Base: the BASE-CASE REVENUE BASIS below (v3.6, Section 1B v3.10 Amendment 26.1). The old rule, lower of (management guidance discounted by track record) or (historical CAGR), is RETIRED: it made historical CAGR a ceiling and barred a transition name from earning a base case that credits the transition.
 - Bull: Management guidance at face value (only if Role 5 credibility grade is A or B)
+
+**Base-case revenue basis (v3.6, Section 1B v3.10 Amendment 26.1).** Base-case revenue uses whichever basis below rests on harder evidence. The worksheet declares which:
+
+| Basis | Definition | Evidence tier required |
+| --- | --- | --- |
+| RUN-RATE | Exit-quarter revenue annualised, adjusted for stated seasonality | filed quarterly results |
+| ORDER-BOOK | Executable order book at disclosed execution cycle, plus disclosed pipeline at historical conversion | filing, or concall with Role 5 grade A/B |
+| CAPACITY | Commissioned or dated capacity at guided utilisation ramp and realisation | capex commissioning filing plus utilisation guidance on the concall |
+| GUIDANCE-DISCOUNTED | Management guidance discounted by the trailing-4-quarter Role 5 credibility ratio | concall with Role 5 history |
+| HISTORICAL | Historical CAGR | fallback ONLY when none of the above exists |
+
+Historical CAGR is ALWAYS computed as a cross-check and shown beside the chosen basis. It governs only when no forward evidence exists. Where the chosen basis diverges from historical CAGR by more than 10 percentage points, name the observation that will confirm or refute the divergence and its confirm-by date; it feeds the Expectation Ledger (Section 1B v3.9 Amendment 23).
+
+Single credit (v3.6 Amendment 4): a catalyst credited into revenue here at its probability is NOT credited again in Pillar 3 at full weight. State the split in the Section 2 worksheet line.
 
 **Durability of growth fade horizon (v3.5, Section 1B v3.6 Amendment 14).** Flat CAGR lines through the projection are retired. The Emerging Moat classification sets how fast growth fades toward industry growth, and the projection must show the step-down year by year:
 
@@ -614,9 +628,24 @@ Growth rate rules:
 | Share dilution assumed | ___% over 3yr | ___% | ___% |
 
 Margin rules:
-- Bear: Lowest margin from last 5 years (excluding one-off year) or current − 200bps
-- Base: 3-year average margin or current if near average
-- Bull: Highest sustainable margin from last 5 years, or guided margin if credible
+- Bear: Lowest margin from last 5 years (excluding one-off year), or current − 200bps, or the trailing 3-year average margin — whichever the evidence supports. The trailing 3-year average is a BEAR input (v3.6, Section 1B v3.10 Amendment 26.2), no longer the base.
+- Base: the MARGIN BRIDGE below (v3.6, Section 1B v3.10 Amendment 26.2). The old rule, 3-year average margin or current if near average, is RETIRED: it barred destination mix and operating leverage from appearing at all.
+- Bull: Highest sustainable margin from last 5 years, or guided margin at face value where Role 5 grade is A or B
+
+**Base-case margin bridge (v3.6, Section 1B v3.10 Amendment 26.2).** Base margin is the margin implied by destination mix and operating leverage, shown as a bridge:
+
+| Lever | bps contribution | Evidence | Confirm-by |
+| --- | --- | --- | --- |
+| Current margin | ___% | latest FY filing | n/a |
+| Mix shift (name the product/segment) | +/- ___ bps |  |  |
+| Operating leverage on fixed cost base | +/- ___ bps |  |  |
+| Input cost / pricing pass-through | +/- ___ bps |  |  |
+| **Base-case margin Year 3** | ___% |  |  |
+
+Bridge rules:
+- A lever with no evidence line is not a lever. Drop it.
+- Every confirm-by date here feeds the Expectation Ledger (Section 1B v3.9 Amendment 23).
+- If the bridge lifts margin more than 400 bps in three years, the Second-Order Section (Master Prompt Amendment, Rule F) must show the customer-side or cost-side mechanism that pays for it. **OPEN ITEM (08-Sep-2026):** no Second-Order Section / Rule F exists in this file or anywhere in frameworks/. Until the operator lands it, a bridge above 400 bps must name the customer-side or cost-side mechanism, with its evidence line, inline in 2B, and flag "Second-Order Section absent, mechanism stated inline".
 
 **Cyclical override (v3.5, FTTCP v2.1 cyclical margin rule).** For any sector flagged cyclical, the rules above are replaced: base = full-cycle average margin, bear = cycle trough margin, bull = cycle peak margin. The three-year-average convention is retired for flagged sectors, because a three-year window straddling a peak or a trough misreads it as normal. State the cycle years defining the peak, trough, and full-cycle average, consistent with the FTTCP Part B output sheet.
 
@@ -636,6 +665,12 @@ Margin rules:
 | Est. ROCE | ___% |  |  |  |  |
 | Est. ROE | ___% |  |  |  |  |
 
+### 2C-w. Section 2 Worksheet Line (v3.6, Section 1B v3.10 Amendment 26)
+
+State this line in full, every run:
+
+"Base-case basis: [RUN-RATE / ORDER-BOOK / CAPACITY / GUIDANCE-DISCOUNTED / HISTORICAL]. Evidence: [filing, section, date]. Historical CAGR cross-check: ___% (divergence ___ pp, confirm-by observation: ___, date: ___). Margin bridge: current ___% -> Year 3 ___% via [lever: bps, evidence] x N. Track-record period for weighting: trailing ___ quarters, Role 5 grade ___. Catalyst credit split: revenue ___% / Pillar 3 ___%."
+
 ### 2D. Projection Sanity Checks
 
 | Check | Result | Pass? |
@@ -648,6 +683,9 @@ Margin rules:
 | Implied market share gain realistic? |  |  |
 | Does CFO/PAT trajectory improve or stay consistent with Pillar 2 assumption? |  |  |
 | Is the Year 3 ROCE consistent with the FTTCP ROCE forward verdict used in Pillar 1? |  |  |
+| **Did the base case credit the transition, or price the audited past?** (Section 1B v3.10 Amendment 26 standing check) |  |  |
+
+**Standing check (v3.6, Section 1B v3.10 Amendment 26).** "Did the base case credit the transition, or price the audited past? If base revenue equals historical CAGR at trailing-average margins for a name with run-rate, order-book, or capacity evidence, the projection is wrong. Rebuild."
 
 🛑 STOP. Ask: "Section 2 complete. Projections built. Ready for Section 3: Apply Each Valuation Method? Type GO."
 
@@ -804,6 +842,8 @@ Produce this table for BOTH tracks (additive and RRM). The more conservative tra
 - Good: Bear 25% / Base 50% / Bull 25%
 - Mixed: Bear 35% / Base 45% / Bull 20%
 - Poor: Bear 45% / Base 40% / Bull 15%
+
+**Relevant-period track record (v3.6, Section 1B v3.10 Amendment 26.4).** The weights above and the guidance discount in 2A are keyed to the TRAILING FOUR QUARTERS of delivery (the Role 5 credibility ratio), NOT whole-company history. Mixed history plus four quarters of delivery = Good weighting. Where Role 5 history is shorter than four quarters, use what exists and state the period. A transition name has a thin record for the reason it is interesting; it is not penalised for the years before the transition.
 
 **Probability re-weighting rule (from Role 4 v1.2):** if actuals landed below bear on 2+ key metrics for 2 consecutive quarters, shift one notch toward the Poor weights regardless of the credibility grade.
 

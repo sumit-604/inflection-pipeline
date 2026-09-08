@@ -6,9 +6,21 @@ target, 3-5 year holds.
 
 ## NEVER
 - Never use any exit PE from outside Section 1B (v3.3 base + v3.5.1 +
-  v3.6 + v3.7 + v3.8 + v3.9 amendment layers in frameworks/; later layers
-  govern overlaps). It is
-  the sole exit multiple authority. No round-number defaults, ever.
+  v3.6 + v3.7 + v3.8 + v3.9 + v3.10 amendment layers in frameworks/; later
+  layers govern overlaps). It is the sole exit multiple authority. No
+  round-number defaults, ever. There is no numeric ceiling but the sector
+  cap; "never above 20x" language is void (v3.10 Amendment 26.5).
+- Never anchor a base case to the audited past (v3.10 Amendment 26). Base
+  revenue runs off the 26.1 basis hierarchy, with historical CAGR shown as
+  the cross-check and used as the base only when no forward evidence
+  exists. Base margin runs off the 26.2 destination-mix bridge; the
+  trailing 3-year average is the BEAR input. Weights key to the trailing
+  four quarters of Role 5 delivery, never whole-company history.
+- Never shade an input to be safe. State the most evidenced path, name the
+  two readings and the one observation that separates them, and put the
+  conservatism in position size (v3.9 Amendment 25). This binds Role 1
+  projections; it does not touch the document-reading protocols, where
+  conservative interpretation of filed evidence still stands.
 - Never construct a Year-N exit price on a different earnings basis than
   the entry, and never carry a within-hold option slice into the exit as
   an unresolved probability (v3.8 Amendment 18).
@@ -114,7 +126,8 @@ weigh, never anchored evidence.
 
 ## STRUCTURE
 - prompts/       stage instructions, single source of truth
-- frameworks/    Master v3.6, Section 1B layer set (v3.3/v3.5.1/v3.6/v3.7/v3.8/v3.9),
+- frameworks/    Master v3.6, Section 1B layer set
+                 (v3.3/v3.5.1/v3.6/v3.7/v3.8/v3.9/v3.10),
                  FTTCP v2.1, Quarterly v1.4, AR v1.3 (Keerti
                  maintains; stage 11 reads at run time; amendments here
                  propagate with zero pipeline edits), plus

@@ -1,0 +1,89 @@
+stage: B00-inputs
+company: BORANA
+run_date: 2026-09-07
+model: orchestrator-inline
+status: complete
+spear_gate:
+  line: "Spear: OVERRIDE 2026-09-07 (operator standing ruling 2026-09-05: Step-1 intake replaces the web spear)"
+  form: OVERRIDE
+  source: companies/BORANA.md
+  load_bearing_facts:
+    - "1. The 23.6% FY26 EBITDA margin and where it comes from. Reconcile the FY26 cost stack (raw material Rs 227.78 cr, power and fuel Rs 23.47 cr, employee Rs 28.14 cr, other manufacturing Rs 15.56 cr) against screener. Fabric price commanded, or yarn bought well? Margin was already 27.2% in Q4FY24, before the duty change, and fell to 16.5% in one quarter."
+    - "2. Related-party yarn purchases. Rupee value, counterparty, price basis vs arm's-length yarn, from the FY26 AR and RHP related-party notes. If yarn comes from a related party the margin is a transfer-pricing outcome until proved otherwise."
+    - "3. SEBI search on the promoter group, 22-23 April 2026, at R&B Denims Ltd and at certain promoters and R&B's CFO, under Section 11C(9) on an order of the Special Judge (SEBI). Not at Borana's registered office."
+    - "4. Secretarial auditor churn. Resignation 24-Jul-2026 with no reason, second resignation notice 29-Jul-2026, new appointment the same day."
+    - "5. The capex landing into the spread. Rs 80.94 cr capital work in progress at FY26 close vs Rs 147.61 cr net block; FY26 investing outflow Rs 178.69 cr. Looms added, commissioning date, against three flat revenue quarters."
+manifest:
+  company: Borana Weaves Ltd
+  ticker: BORANA
+  cmp: 325.25
+  market_cap_cr: 870.03
+  run_type: full
+  listed_date: 2025-05-27
+  recently_listed: true
+  concalls_available: false
+  sector_cap_row: "Recycling / Manufacturing"
+  sector_cap_x: 25
+  sector_cap_status: "OPERATOR-CORRECTED by hand; no commodity-textile row exists in the Section 1B cap table. FLAG for phase-3 confirmation."
+  classification_flag: "CONVERTER candidate. Section 1B v3.7 Amendment 17 binds if confirmed."
+  statements: "standalone only; no consolidated statements exist"
+inventory:
+  prospectus: 3        # DRHP, RHP, Prospectus. Contract says 0-2; 3 held, all passed.
+  annual-report: 3     # FY2024 (scanned, OCR), FY2025, FY2026. Contract says 0-1; FY2026 is primary, FY2025/FY2024 carry the backward baseline.
+  results: 6           # 3 most recent passed per contract, plus Q4FY25_and_FY25 as the FY25 audited annual anchor.
+  rating: 3
+  concalls: 1          # Q3FY26 only (call held 27-Jan-2026)
+  peer-concalls: 12    # FILATEX 4, SANATHAN 4, SANGAMIND 4
+  peer-presentation: 6 # NON-STANDARD folder; path passed explicitly to stage 6
+  announcements: 9
+  shareholding: 6
+  research: 0
+  screening: 24        # screener + 3 peers, 6 CSVs each
+  presentation: 4
+  other: 0             # folder absent; never consumed, not a gap
+input_gaps:
+  - "inputs/research/ EMPTY. No broker note collected. No effect on anchored evidence (research is never anchored); the intent-and-action cross-check and synthesis lose a lead-generation source only. Operator confirmed proceed 2026-09-07."
+  - "NO-CONCALL MODE (manifest concalls_available: false). ONE transcript exists in total: Q3FY26, call held 27-Jan-2026. Screener's Aug-2026, Jun-2026 and Nov-2025 concall rows link investor presentations, not transcripts; the IR site publishes no transcript page. Stage 5 runs degraded: it reads the single Q3FY26 transcript, the four investor presentations, the AR MD&A and the results commentary. credibility_grade defaults to C, may rise to B only on documented AR-guidance-vs-results delivery evidence, never to A."
+  - "MISSING RATING RATIONALE (freshness pair 2 FAIL). The newest rating action is the Brickwork letter of 11-May-2026 upgrading to BWR BBB+/Stable on Rs 122.32 cr of facilities. Its full rating rationale is absent. Corpus holds the Feb-2025 rationale for the superseded BBB rating and a CARE press release of 26-Dec-2025 continuing the company under ISSUER NOT COOPERATING at CARE BB+ since 08-Oct-2024. Consequence: no current rating-agency read on working capital, receivables ageing or debt-service cover. Bears directly on the FLAG-CASH determination."
+  - "MISSING SEBI ORDER TEXT (freshness pair 3 FAIL). The Reg 30 filing of 25-Apr-2026 cites a search order of the Special Judge (SEBI) under Section 11C(9) of the SEBI Act. The order text is not in the corpus and may not be public. Stages read the Reg 30 filing and the RHP group-company and related-party sections; the scope and subject matter of the search stay unknown."
+  - "NO STANDALONE Q1FY27 RESULTS FILING. The corpus holds the board-meeting outcome of 11-Aug-2026 (Results_Q1FY27_outcome-of-BM_2026-08-11.pdf, 9 pages, 7 with extractable text), not a separate results filing on the IR results page. Operator-declared freshness break."
+  - "FOUR SCANNED PDFs, NO EMBEDDED TEXT: results/Results_Q4FY26_and_FY26_2026-03-31.pdf (4p), results/Results_Q3FY26_2025-12-31.pdf (2p), annual-report/Annual_Report_FY2024.pdf (38p), announcements/2026-08-11_change-in-management.pdf (5p). OCR'd at 300 dpi into work/extracted/ and marked OCR in the file header. Line items read cleanly; several table TOTAL rows are garbled. For these four documents the OCR text is an index, and the rendered PDF is the authoritative read for any figure entering a block."
+  - "SCREENER CSV EXPORT DEFECT (known, LESSONS.md): screener-Profit_Loss.csv, -Balance_Sheet.csv, -Cash_Flow.csv and -Quarters.csv export header-only because they are formula sheets. NOT a data gap. Every number is in screener-Data_Sheet.csv, populated FY22-FY26 plus 10 quarters to Jun-2026. Same for all three peers."
+  - "SECTOR CAP ROW is an operator hand-correction, not a table row. No commodity-textile row exists in the Section 1B Sector Cap Table. Added to LESSONS.md OPEN ACTIONS. Confirm at phase 3."
+freshness_pairs:
+  - pair: "RESULTS to CONCALL"
+    trigger_doc: "inputs/results/Results_Q1FY27_outcome-of-BM_2026-08-11.pdf"
+    mate_expected: "Q1FY27 concall transcript"
+    status: SKIPPED
+    missing_doc: "n/a"
+    note: "Skipped per orchestrator rule: manifest.concalls_available is false, so the absence is declared, not accidental. The operator separately declared this a freshness break in manifest.yaml and companies/BORANA.md. Recorded as a named gap above rather than as a pair failure."
+  - pair: "RATING BULLETIN to RATIONALE"
+    trigger_doc: "inputs/rating/Credit_Rating_2026-05-11.pdf (Brickwork upgrade letter, BWR BBB+/Stable, Rs 122.32 cr)"
+    mate_expected: "Brickwork full rating rationale for the 11-May-2026 upgrade"
+    status: FAIL
+    missing_doc: "Brickwork Ratings press release / rating rationale dated on or about 11-May-2026 for Borana Weaves Ltd"
+  - pair: "SEBI ORDER to ORDER TEXT"
+    trigger_doc: "inputs/announcements/2026-04-25_Reg30_SEBI-11C9-search-RandB-Denims.pdf"
+    mate_expected: "Text of the search order of the Special Judge (SEBI) under Section 11C(9)"
+    status: FAIL
+    missing_doc: "Order of the Special Judge (SEBI) authorising the 22-23 April 2026 search under Section 11C(9) of the SEBI Act, 1992. May not be public."
+  - pair: "AR to LATEST AUDITED ANNUAL RESULTS"
+    trigger_doc: "inputs/results/Results_Q4FY26_and_FY26_2026-03-31.pdf (audited FY26, approved 14-May-2026)"
+    mate_expected: "FY2025-26 annual report"
+    status: PASS
+    missing_doc: "none"
+freshness_verdict: CORPUS GAPPED-FRESHNESS
+concall_quarter_map:
+  - file: "inputs/concalls/Concall_Q3FY26_Jan2026_Transcript.pdf"
+    quarter: Q3FY26
+    call_date: 2026-01-27
+peer_concall_quarter_source: "filenames carry month and year; stage 6 confirms each from the transcript first page"
+extraction:
+  method: "pypdf 6.x text extraction, page-marked, into work/extracted/<subfolder>__<basename>.txt"
+  ocr: "tesseract 5.3.4 at 300 dpi for the four scanned PDFs named in input_gaps"
+  tooling_repairs: "pypdf installed; cffi force-reinstalled (broken _cffi_backend, known LESSONS pattern); poppler-utils and tesseract-ocr installed"
+  unreadable_pdfs: none
+flags:
+  - id: FLAG-CORPUS-FRESHNESS
+    detail: "CORPUS GAPPED-FRESHNESS. Gate recommendation caps at PROCEED WITH CAVEATS. Missing mates named as the first line of gate-recommendation.md."
+analyst_note: "Every input PDF now reads. The two freshness failures are both governance-adjacent, not financial: the newest rating action arrives without its reasoning, and the SEBI search arrives without its order. Both sit on top of the run's load-bearing facts 2, 3 and 4. Stages should treat the CARE ISSUER NOT COOPERATING status (since 08-Oct-2024, continued 26-Dec-2025) as a documented fact of the corpus, not an inference."

@@ -1,0 +1,84 @@
+stage: B12c
+company: "BORANA"
+run_date: "2026-09-07"
+model: claude-opus-4-8
+status: complete
+scope: "phase-1 (B01 + B07); valuation audit deferred to phase 3"
+gate0:
+  rules_checked: 30
+  rules_passed: 28
+  fails:
+    - "F-04: data-confidence flag 'may not have seen full cycle' (5-6 year band) stated in report body but not carried in the block - flags[] empty, no data_notes entry"
+    - "F-05: deal_breakers[] entry does not name WHICH years drive the Block B deal-breaker as the prompt instructs; years appear in report prose and analyst_note only"
+  blocks_rederived: {A: 20, B: 6, C: 20, D: 18, E: 15}
+  core_rederived: 79
+  moat_score_rederived: 27
+  moats_confirmed_rederived: 6
+  moat_class_rederived: "FORTRESS"
+  grand_total_rederived: 106
+  raw_matrix_lookup: "GOOD+ (Core 79 in 60-79 band + FORTRESS)"
+  deal_breaker_cap: "rule 2 (Block B 6 < 8) caps at max GOOD; applied as a ceiling per the prompt's wording, binds because raw GOOD+ exceeds it"
+  classification_rederived: "GOOD"
+  classification_concur: true
+  history_downgrade_correct: true
+  history_downgrade_note: "5 years lands in the 5-6 'lower confidence, flag' band; the one-tier downgrade applies only at 3-4 years, so history_downgrade=false is correct"
+  e2_na_correct: true
+  e2_na_note: "prompt rule 5 mandates N/A + score 0 for unavailable data; no 3-year window exists on 13 months of listed history. Stage took the harsher route: scoring flat 65.24% as '+/-1% = 3' would have put Core at 82 and the raw lookup at EXCELLENT. Final classification insensitive either way - the Block B cap dominates both paths to GOOD."
+  cagr_edge_rules_honoured: true
+  arithmetic_errors_found: 0
+emoat:
+  rules_checked: 30
+  rules_passed: 27
+  fails:
+    - "F-01: H3 raw score labelled HM (=3) but described as 'medium likelihood... medium impact' = MM (=2); on the stage's own description em_score is 2.4 not 3.1. Flattering direction, no gate moves."
+    - "F-02: evidence_mix inference:2 unsupported - [INF] tag never applied to any item in the report; documented:11 (whole-report) sits beside completionist_recount's 5 (Section 3 scope) with no stated scope difference"
+    - "F-03: Section 6D 'standard matrix' is not reproduced in prompts/07; stage substituted the EM>=25 UA qualifier as the combination rule and declared it. Prompt gap as much as stage defect; outcome robust."
+  categories_present: 23           # 22 categories + R1, none skipped
+  family_i_present: true
+  i1_scored: 0
+  i2_scored: 0
+  i1_i2_contribution_stated: true
+  em_score_reported: 3.1
+  em_score_rederived: 3.1          # from the stage's own raw scores; 2.4 on its own written description of H3, see F-01
+  em_classification_concur: true   # NONE either way, <12 band
+  active_categories_empty_correct: true
+  active_categories_note: "every row is None or Weak; H3 Weak, R1 Weak; no row reaches Strong/Moderate, so the Strong/Moderate-only field is correctly empty"
+  evidence_tiering_correct: true
+  evidence_tiering_note: "no claim-only category scored as documented; H3 took the conservative 0.7x on a row whose capex leg could have argued 1.0x"
+  completionist_recount_performed: true
+  no_concall_f2_substitution:
+    declared: true
+    declared_in: "dedicated pre-scoring section, the F2 row label, and block input_gaps[]"
+    substitution_correct: true
+    note: "capex-on-time-and-budget is native to F2's own definition, so the degradation drops only the promise-delivery cross-reference leg - the minimal possible substitution, not a reinvented test"
+    f2_not_credited_correct: true
+    f2_note: "net 0-for-2 on live commitments; scored 0 and routed to flags[] and top_moat_risks[] rather than erased by the zero"
+  combined_assessment_concur: true
+  combined_assessment_note: "GOOD stands unchanged; EM 3.1 (or 2.4) sits far below EM>=25 and in the lowest of four bands. No plausible matrix lifts GOOD-backward + NONE-forward above GOOD."
+valuation:
+  status: "PENDING PHASE 3"
+  rules_checked: 0
+  fails: []
+  note: "NOT RUN. Stages 10 and 11 have not executed; B10 and B11 do not exist. Rubric rules 4, 7, 11 and 12 deferred. Master Prompt, Section 1B layer set and FTTCP v2.1 deliberately not loaded per the phase-1 scope rule. No valuation judgment is offered or implied."
+business_understanding_narrative:
+  present: false
+  five_questions_answered: false
+  prose_only: false
+  section6_candidates_named: 0
+  valuation_vocab_leak: false
+  fails: []
+  note: "NOT APPLICABLE IN PHASE 1 - rubric rule 9 governs stage 13, which has not run and is not among this verifier's inputs. The false values above are 'not assessed', not 'assessed and failed'."
+recomputed_destination_pe: ""      # out of scope, no valuation audit in phase 1
+recomputed_decision: ""            # blank, concur: Gate 0 GOOD and emoat NONE both re-derive
+findings:
+  - {severity: "MINOR", location: "07-emoat.md Section 5, H3 scorecard row", description: "Likelihood x impact label contradicts its own description: cell labelled HM (=3) while describing medium likelihood and medium impact, which is MM (=2). On the stage's own words H3 raw = 2, adjusted = 1.4, em_score = 2.4 not 3.1. Flattering direction, magnitude 0.7 on a scale whose nearest threshold is 9 points away. Classification, active_categories and combined assessment all unchanged."}
+  - {severity: "MINOR", location: "B07-emoat.yaml evidence_mix", description: "inference:2 is unsupported by the report - the [INF] tag appears only in the taxonomy definition on line 7 and never tags an evidence item. Separately documented:11 (whole-report count) sits beside completionist_recount's 5 (Section 3 scan scope) with no stated scope difference. Both counts are defensible on enumeration but neither is reproducible from the artifact as written. No scored row rests on inference, so no output changes."}
+  - {severity: "MINOR", location: "07-emoat.md Section 6D and prompts/07-emerging-moat-pipeline.md", description: "6D instructs the stage to apply 'the standard matrix' but prompts/07 never reproduces that matrix. The stage substituted the EM>=25 UA qualifier as its combination rule and declared the substitution openly. Outcome robust and the substitution can only refuse an uplift, never grant one. This is a rule gap in the prompt as much as a defect in the stage; recommend printing the combined matrix in prompts/07."}
+  - {severity: "MINOR", location: "B01-gate0.yaml flags[] / data_notes[]", description: "The data-confidence rule for the 5-6 year band requires the flag 'may not have seen full cycle'. It is stated in the report body but carried nowhere in the block: flags[] is empty and no data_notes entry mentions it. The flags[] field's own documented trigger (classification <= AVERAGE) does not fire at GOOD, so the confidence flag has no carrier and a downstream stage reading only the block loses it."}
+  - {severity: "MINOR", location: "B01-gate0.yaml deal_breakers[]", description: "The prompt's deal-breaker instruction requires stating WHICH years drive any deal-breaker. The deal_breakers[] entry names the block and the score but not the years. The driving years (FY26 capex Rs 178.98cr against CFO Rs 36.96cr; 1 of 5 years FCF-positive) do appear in the report body and in analyst_note, so the information propagates, but not in the field the instruction points at."}
+critical_count: 0
+major_count: 0
+minor_count: 5
+acceptance_rate: 92                # 55 of 60 rules passed
+rework_triggered: false
+honesty_assessment: "Both stages reached unflattering conclusions honestly. Every discretionary call ran against the stage's own headline: Gate 0 scored E2 at zero rather than crediting flat promoter holding (the generous route gave Core 82 and a raw EXCELLENT), invoked PEER DATA NEEDED on M5 with three usable peers in the file, disclosed that its CFO/PAT deal-breaker clears by 0.048, attached distortion notes to both 20/20 blocks, and applied the Block B cap that cost it a tier. The Emerging Moat scan applied the 0.7x claim multiplier to its only meaningful scored row when the documented capex leg could have argued 1.0x, declined to credit F2 on a 1-for-3 execution record while routing the negatives into flags and risks, and declined the transition-setup uplift 6D explicitly dangles while holding a GOOD backward score. The single flattering-direction error found is worth 0.7 points on a 9-point margin. No method bending detected."

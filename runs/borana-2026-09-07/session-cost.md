@@ -18,3 +18,4 @@ with its own stage. Loop or retry runs get their own line with a run counter.
 | 9 | TAM SAM SOM (web search) | claude-sonnet-5 | default | 220800 | 10866 | 231666 | 17m59s | 1 |
 | 12a | Verifier A numerical | claude-haiku-4-5 | default | 101800 | 3870 | 105670 | 2m18s | 1 |
 | 12a | Verifier A numerical (coverage addendum) | claude-haiku-4-5 | default | 121500 | 4828 | 126328 | 3m38s | 2 |
+| 12c | Verifier C framework (phase-1 scope) | claude-opus-4-8 | default | 103400 | 4920 | 108320 | 7m48s | 1 |

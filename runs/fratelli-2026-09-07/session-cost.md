@@ -12,3 +12,4 @@ its own stage. Phase 1 (evidence) only; phases 2 and 3 append their own lines.
 | 2 | notes triple-pass, pass 3 (consolidated) | claude-sonnet-5 | default | n/a | n/a | 112538 | 6m21s | 3 |
 | 3 | AR deep dive (8 phases) | claude-sonnet-5 | default | n/a | n/a | 234959 | 15m09s | 1 |
 | 8 | promoter background check | claude-sonnet-5 | default | n/a | n/a | 173554 | 8m05s | 1 |
+| 4 | business model decoder | claude-sonnet-5 | default | n/a | n/a | 141903 | 9m07s | 1 |

@@ -1,0 +1,63 @@
+stage: B04-bizmodel
+company: "FRATELLI"
+run_date: "2026-09-07"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "No named competitor (domestic or international) appears anywhere in the ARs or six decks; competitive positioning map (2B) not buildable against named rivals."
+  - "No per-case/per-unit ASP or margin disclosed for still wine or Shotgun RTD; unit economics filled at blended/segment level only."
+  - "Winery utilisation rate (%) not disclosed; only capacity (5.4mn litres)."
+  - "No peer (SULA or other) financial/market data in this corpus (carried from Stage 1 M2/M5/M7/M9); blocks tertiary peer EV/Sales cross-check."
+  - "Q1FY27 concall transcript not published — CORPUS GAPPED-FRESHNESS (carried forward)."
+flags:
+  - {type: FLAG-QUALITY-LADDER, reason: "Company fits no clean rung. Claimed positioning (luxury brand, 1/3rd market share narrative, distribution scale) matches R4/R5 language, but demonstrated performance (wine-segment Ind AS 108 result swung from +Rs18.92cr FY24 to -Rs10.49cr FY25 to -Rs10.61cr FY26; moat_score 0/NONE per Stage 1) sits at or below R1. A claimed multi-rung leap from an unstable R0/R1 base is itself a red flag per the CLAUDE.md ladder rule."}
+  - {type: FLAG-SECTOR-CAP, reason: "Alcobev has no row in the Section 1B Sector Cap Table. This stage's evidence (78.1% GM structurally driven by excise pass-through convention, not FMCG-comparable; distribution/A&P-heavy cost structure; two-engine averaging problem) is the input the Halt 1 operator ruling on the hand-assigned Branded apparel/FMCG 35x row should weigh."}
+business_type: "manufacturing"
+revenue_streams:
+  - {name: "Still wine (bottles, all price tiers)", type: "branded consumer manufacturing, domestic retail/HoReCa", pct_of_revenue: 90, predictability: "M"}
+  - {name: "Shotgun RTD + TiLT wine-in-a-can", type: "branded consumer manufacturing, new format", pct_of_revenue: 10, predictability: "L"}
+asset_intensity: "heavy"
+wc_intensity: "high"
+pricing_power: "moderate"
+cyclicality: "secular-growth"
+moats_present:
+  - {moat: "Distribution reach (31,000 touch points, 29 states/UTs, CSD channel)", durability: "moderate — best-evidenced by count, but no active/reorder rate disclosed"}
+  - {moat: "Proprietary grape-clone IP (15 years, imported varietals grafted onto Indian rootstock)", durability: "moderate — genuine multi-year head start, no patent registration, rests on tacit know-how"}
+valuation_methods:
+  primary: {method: "EV/Sales", why: "Only method usable against a real, audited, growing revenue base while earnings remain negative (EPS -Rs10.92 FY26, EBITDA -2.5% recomputed margin)"}
+  secondary: {method: "Asset/replacement cost (vineyard + winery)", why: "Floor value independent of the unproven profitability story, given multi-year bearer-plant gestation and physical 5.4mn litre winery scale"}
+  tertiary: {method: "Peer EV/Sales multiple (vs listed wine/RTD comparable)", why: "Currently blocked — no peer financial data exists in this run's corpus; highest-value next step for live-web verification"}
+  not_applicable: ["DCF (no positive FCF track record)", "P/E (negative EPS both years)", "EV/EBITDA (near-zero/negative EBITDA)", "DDM (no dividend, loss-making)", "Residual income/EVA (negative ROE)", "SOTP (no longer applicable now FY26 is wine-only)"]
+irrelevant_ratios:
+  - {ratio: "Net profit margin alone", why: "FY26 positive CFO was manufactured from rebate/payables accrual timing, not profitability"}
+  - {ratio: "Blended consolidated ROE/ROCE", why: "Wine segment alone swung from +Rs18.92cr profit (FY24) to two years of loss; a blended number averages a legacy engine with a one-year-old new engine"}
+  - {ratio: "Blended inventory days (DIO)", why: "Still wine carries multi-year vintage-dated stock by design; Shotgun should turn in weeks — one DIO number conflates a structural feature with an operational problem"}
+  - {ratio: "DSO level in isolation", why: "212 days is high, but the government-corporation-vs-private-party receivables mix matters more than the headline number"}
+  - {ratio: "EV/EBITDA", why: "Recomputed EBITDA margin is -2.5% FY26; a near-zero/negative denominator makes the multiple meaningless"}
+  - {ratio: "Gross margin vs generic FMCG benchmarks", why: "Alcobev structurally runs 70-80% GM due to excise-duty pass-through convention; comparing the level alone overstates quality without also comparing the heavier distribution/A&P cost below it"}
+must_track_metrics:
+  - {metric: "Recomputed EBITDA margin (PBT+finance cost+depreciation)", healthy: "sustained positive, 2+ consecutive quarters", red_flag: "any negative quarter after a breakeven claim"}
+  - {metric: "Wine-segment Ind AS 108 result (Note 37)", healthy: "positive, approaching FY24's +Rs18.92cr", red_flag: "negative for a third consecutive year"}
+  - {metric: "Selling/distribution/marketing % of wine revenue", healthy: "declining below FY26's 23.3%", red_flag: "reverses toward FY25's 25.7%+"}
+  - {metric: "DSO and receivables ageing mix", healthy: "DSO trending below 212 days, >6-month bucket below 24.3%", red_flag: "DSO re-widens or bucket reverses upward"}
+  - {metric: "Consolidated cash vs Rs114.50cr guarantee", healthy: "cash rebuilt materially above Rs7.78 lakh", red_flag: "guarantee called or cash falls further"}
+unit_economics:
+  unit: "case of wine (9-litre standard) / case of RTD"
+  revenue_per_unit: "NOT FOUND — only SKU-level MRPs disclosed (retail ceiling, not company realisation)"
+  margin_per_unit: "NOT FOUND at case level; only blended consolidated gross margin (78.1% FY26) disclosed, wine-vs-RTD split not broken out"
+  key_lever: "Premiumisation mix shift (luxury/super-premium share of bottle revenue) for still wine; outlet-count and case-volume growth for Shotgun, riding shared manufacturing/distribution infrastructure"
+first_deterioration_signals:
+  - {risk: "Revenue model — state excise/licensing shock removes market access", first_signal: "state-level sales commentary flags a state-specific volume drop"}
+  - {risk: "Margin — A&P spend fails to de-lever as Shotgun scales", first_signal: "Selling/distribution/marketing % of wine revenue flattens or rises"}
+  - {risk: "Balance sheet — near-zero cash vs Rs114.50cr guarantee", first_signal: "cash and bank balance note falls further or gearing crosses 88.0%"}
+  - {risk: "Execution — AR narrative fails to reconcile to audited notes", first_signal: "FY27 AR Directors' Report figures again fail to tie to audited P&L/notes"}
+  - {risk: "Structural — wine segment stays loss-making despite added RTD engine", first_signal: "Note 37-equivalent wine segment result negative a third consecutive year"}
+mgmt_questions:
+  - "What is the standalone revenue/margin for Shotgun RTD versus still wine, given the audited segment note reports them as one line?"
+  - "Why did the wine segment swing from a Rs18.92cr operating profit (FY24) to losses of Rs10.49cr (FY25) and Rs10.61cr (FY26) on broadly flat revenue?"
+  - "Which states route sales through a government beverage corporation, and what is the average payment cycle for corporation versus private-party customers?"
+  - "Is the Rs114.50cr corporate guarantee from the near-zero-cash holding company likely to be called, and what is the contingency if it is?"
+  - "How much of the 78% gross margin is structural (brand-priced) versus a function of current winery-capacity utilisation, and what is that utilisation rate today?"
+  - "What proportion of the 31,000 touch points and 9,000 Shotgun outlets are active/reordering versus one-time stocking, and what is same-outlet revenue growth?"
+one_line_verdict: "A claimed luxury-brand franchise running on commodity-grade, currently negative, returns."
+analyst_note: "Two findings should govern the Halt 1 sector-cap ruling. First, the two engines cannot be ratio-averaged: still wine (heavy asset, multi-year vintage inventory, claimed brand pricing power) and Shotgun RTD (light, fast-turning, one year of data, low entry barriers) sit inside a single Ind AS 108 segment with no disclosed split, so blended gross margin, DSO and DIO are not diagnostic of either business alone. Second, the quality-ladder exercise itself is the headline finding: management's own language (luxury leadership, a third of the market, largest distribution network) claims an R4 franchise position, but the only segment-level profit and loss data in the corpus show the wine business swinging from a real operating profit (FY24) to two years of loss (FY25, FY26) with zero confirmed moats (Stage 1). That gap between claimed rung and demonstrated rung, not the absence of an alcobev row in the Sector Cap Table, is the load-bearing fact for whatever destination multiple Stage 11 eventually assigns."

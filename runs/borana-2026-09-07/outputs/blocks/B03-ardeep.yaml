@@ -1,0 +1,68 @@
+stage: B03-ardeep
+company: "BORANA"
+run_date: "2026-09-07"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "inputs/research/ empty"
+  - "NO-CONCALL MODE (one Q3FY26 transcript only)"
+  - "missing Brickwork rating rationale for the 11-May-2026 upgrade to BWR BBB+/Stable (letter present, underlying rationale document not in corpus)"
+  - "missing SEBI Section 11C(9) order text (subject/violation not stated by the authority as of the 25-Apr-2026 filing)"
+  - "no standalone Q1FY27 results filing, only the board-meeting outcome (11-Aug-2026)"
+  - "four scanned PDFs OCR'd; 2026-08-11_change-in-management.pdf OCR quality poor, effective-date field resolved independently via Results_Q1FY27_outcome-of-BM cross-check (29-Sep-2026, the 6th AGM date)"
+  - "no rupee split disclosed anywhere in the corpus between Unit 4 and the renewable hybrid project inside the Rs 80.94 cr CWIP balance"
+  - "no management explanation anywhere in the five-year corpus for the Q4FY24 (27.2%) to Q2FY25 (16.5%) EBITDA margin swing"
+  - "no dated disclosure of the Company Secretary transition from Seema Manish Luniya (KMP table, as at 31-Mar-2026) to Ishant Jain (signs FY26-era Reg 30 filings and the AGM notice)"
+  - "no FY25 Chairman's letter in a comparable format identified within this stage's scope for a like-for-like Phase 6D tone comparison"
+flags:
+  - {type: FLAG-CASH, reason: "Carried from B02: working capital days 39.4 (FY24) to 66.5 (FY26); this stage adds that a ~Rs 10.7-15.7 cr third-party loan book and a mutual-fund/equity trading book are growing in the same period as negative cumulative free cash flow (minus Rs 194.8 cr, B01) and an incomplete Rs 80.94 cr CWIP programme, with a sixth loan counterparty added 05-Sep-2026, two days before this run date."}
+  - {type: FLAG-PROMOTER-PRELIM, reason: "All three Borana Weaves independent directors, plus both non-Chairman executive directors, also serve on the board of R&B Denims Limited, the promoter-group related-party entity with a live Rs 3 cr loan from Borana, a historical yarn-supply relationship, and an April-2026 SEBI Section 11C(9) search at its premises; a 2017 SEBI Takeover Regulations settlement (Rs 2 lakh) also involved the same promoter family and the same entity. Promoter shareholding itself is clean (65.24% stable, fully locked in, no pledge, no selling) -- this flag is about board independence and RPT-approval integrity, not about promoter selling. Full promoter verdict deferred to B08 per pipeline design; this is preliminary."}
+phase_verdicts: {p1: "clean opinion, new related-party land finding, non-audit fee exceeds audit fee both years", p2: "reconciles with B02 5/10, third internal numeric inconsistency found (Board's Report vs Note 40)", p3: "cash-generation weakness carried from B01 confirmed; ROCE/ROE decay capital-base-driven not operating", p4: "margin driver undisclosed in AR despite being public on the concall; risk section downgraded vs RHP", p5: "board-independence conflict with R&B Denims is the sharpest finding of this stage; shareholding otherwise clean", p6: "one high-materiality quiet abandonment (margin driver), two lower-materiality ones", p7_best_fit: "WATCHLIST -- GARP and Capex-Led Growth contingent on Section 1B converter multiple and margin durability; FAIL on Cash Flow Compounder"}
+overall_quality: 4            # /10 with the four 25% components
+quality_components: {governance: 3, accounting: 5, balance_sheet: 4, earnings: 5}
+kill_switch_notes:
+  - "Phase 1: would not halt; would escalate the factory-on-family-land finding and the non-audit-fee pattern into the related-party review."
+  - "Phase 2: would not halt; would add 'verify every Board's Report ratio table against Note 40' to standing monitorables, third numeric slip found in one AR cycle."
+  - "Phase 3: would not halt; would flag the widening side-loan-book pattern as an escalating capital-discipline question for Halt 1."
+  - "Phase 4: would not halt; would treat the undisclosed margin driver and the RHP-to-AR risk-section specificity downgrade as standing questions for management."
+  - "Phase 5: would not halt on shareholding/compensation (clean); would hard-escalate the board-overlap-with-R&B-Denims finding, since it undermines every RPT approval already on record."
+  - "Phase 6: would not halt; would name the margin-driver silent drop specifically in the Halt-1 dossier."
+triple_pass_verification:
+  verified: 6                 # of 15 sampled directly against source pages in this deep dive (ranks 1, 3, 4, 7, 8, 14 checked explicitly above; remainder accepted from B02 as consistent with the primary document read in this stage)
+  discrepancies:
+    - {finding_rank: 4, triple_pass_value: "AR alone omits CARE's ISSUER NOT COOPERATING status", ar_value: "confirmed omitted from the AR, but Brickwork's own Feb-2025 rating rationale (a document the Company received) already disclosed CARE's status in a standard non-cooperation table", note_ref: "AR p.55 vs rating__Credit_Rating_2025-02-11.pdf p.3"}
+    - {finding_rank: 14, triple_pass_value: "ROE 35.01% FY26 / 59.45% FY25 (Note 40)", ar_value: "Board's Report MD&A 'Return on Net Worth' table shows 23.03% FY26 / 45.87% FY25, using closing net worth mislabelled as 'Average Shareholder's Equity' and a slightly different PAT figure (Rs 6,486.89 lakh vs Rs 6,461.20 lakh)", note_ref: "Note 40 items 4/10 (AR pp.128-129) vs Board's Report MD&A item 10 (AR p.74)"}
+missing_risks:
+  - {risk: "Related-party dependency across yarn purchases, jobwork, third-party loans, AND factory land/rent (a fourth unpriced channel found in this stage)", evidence_anchor: "CARO clause i(c), AR p.86; B02 Note 34 findings"}
+  - {risk: "SEBI Section 11C(9) search at R&B Denims Limited", evidence_anchor: "2026-04-25_Reg30_SEBI-11C9-search-RandB-Denims.pdf; predates 14-May-2026 AR approval by ~3 weeks"}
+  - {risk: "Import/FX exposure specifics (0% to 32.7% of raw material now imported, ~Rs 120 cr unhedged CIF book)", evidence_anchor: "B02 Note 39(c)/(d)/(e); AR risk section (pp.72-73) carries only a generic FX paragraph"}
+  - {risk: "Grey-fabric revenue concentration, quantified at 84.24% in the RHP, unquantified in the AR", evidence_anchor: "RHP p.49 vs AR Annexure-6 item 5 (pp.72-73)"}
+  - {risk: "Board independence overlap with R&B Denims Limited (all 3 independent directors, 2 of 3 executive directors)", evidence_anchor: "AR pp.41-42, Corporate Governance Report directorship table"}
+  - {risk: "Growing third-party loan book as a capital-discipline concern in a negative-FCF year", evidence_anchor: "CARO Annexure A(iii), AR p.87; 2026-09-05_Reg30_loan-agreement.pdf"}
+guidance_table:
+  - {claim: "Unit 4 expansion +192 looms +3 texturisers", number: "192 WJ looms, 3 texturisers", timeframe: "commercial production Dec-2026", credibility: "consistent across AR and Aug-2026 filing, funding source clarified as internal accruals in the later filing"}
+  - {claim: "Hybrid renewable power 9.9MW wind+solar, 70-80% of power needs", number: "9.9MW wind + 9.89MW solar", timeframe: "originally Jun-2026 per Q4FY26 presentation, revised to Aug-2026, then Sep/Oct-2026", credibility: "LOW on near-term dates; missed twice in three months"}
+  - {claim: "Medium-term: double production capacity", number: "2x capacity", timeframe: "next 24 months from Q4FY26 presentation", credibility: "not yet testable, no interim milestones disclosed"}
+  - {claim: "Q4FY26 gross margin improvement (Jan-2026 concall)", number: "qualitative, 'may be better'", timeframe: "Q4 FY26", credibility: "DELIVERED -- Q4FY26 EBITDA margin 25.43% vs Q3FY26 24.32%"}
+monitorables:
+  - {metric: "EBITDA margin ex-BIS-tailwind", threshold: "sustained >20% without further import-cost relief", where: "quarterly results, BSE investor presentation", why: "tests margin durability beyond the Dec-2025 policy event"}
+  - {metric: "Hybrid power commissioning date", threshold: "actual vs the twice-revised Sep/Oct-2026 target", where: "Reg 30 filings", why: "a third slip would materially damage capex-execution credibility"}
+  - {metric: "Third-party loan book size and counterparty count", threshold: "any growth beyond ~Rs 15.7 cr / 6 counterparties as of 05-Sep-2026", where: "Reg 30 loan-agreement filings, next AR's CARO Annexure A(iii)", why: "capital-discipline signal tied directly to the Block B cash concern"}
+  - {metric: "SEBI 11C(9) order/outcome at R&B Denims", threshold: "any order text, penalty, or further action", where: "Reg 30 filings", why: "the single largest unresolved fact in this deep dive"}
+  - {metric: "CWIP-to-revenue conversion", threshold: "material capitalisation beyond the Rs 8.24 lakh converted in FY26", where: "next PPE/CWIP note or results filing", why: "near-zero conversion needs to reverse for the capex thesis to pay off"}
+  - {metric: "Independent directors' R&B Denims board roles", threshold: "any resignation/change", where: "next Corporate Governance Report or Reg 30 disclosure", why: "directly addresses the Phase 5A independence finding"}
+ar_new_downstream_entities:
+  - {name: "Win Star Industries Private Limited", where_in_ar: "not in the AR itself -- disclosed in 2026-09-05_Reg30_loan-agreement.pdf, post-AR", entity_type: "loan counterparty, confirmed non-related-party, up to Rs 5 cr unsecured at 12% p.a."}
+  - {name: "Clean Max Enviro Energy Solutions Limited", where_in_ar: "not named in the AR; disclosed in 2026-08-29_Reg30_hybrid-power-update.pdf as the hybrid power project developer", entity_type: "EPC/project-developer counterparty for the 9.9MW hybrid renewable project"}
+  - {name: "K. Dalal & Co. (Kunjal Dalal)", where_in_ar: "AR Annexure-11 (director non-disqualification certificate), p.80; newly the Secretarial Auditor from 29-Jul-2026 per post-AR filings", entity_type: "professional-services counterparty, expanded role (certification -> statutory secretarial audit) after the AR date"}
+strengths_top3:
+  - "Core financial numbers reconcile cleanly across cash flow, PPE/CWIP notes and audited P&L; no numbers-level fabrication found in this deep dive"
+  - "Promoter shareholding stable at 65.24% through FY26, fully locked in, no pledge, no selling"
+  - "The one specific, testable forward guidance item in the corpus (Q4FY26 gross-margin improvement) was delivered, and the underlying mechanism (BIS import-restriction removal, Dec-2025) is a real, verifiable, named policy event"
+red_flags_top3:
+  - "All three Borana Weaves independent directors, plus both non-Chairman executive directors, also serve on the board of R&B Denims Limited -- the related-party loan/supplier counterparty currently under SEBI Section 11C(9) search -- undermining the independence of every RPT approval on record"
+  - "The FY26 margin driver is undisclosed in the Annual Report itself despite being public on the Q3FY26 concall two months before AR approval; the Q4FY24-to-Q2FY25 margin swing (27.2% to 16.5%) has no disclosed explanation anywhere in the five-year corpus"
+  - "Two SEBI matters nine years apart tied to the same related-party entity (R&B Denims) and the same promoter family, alongside a third-party loan book that grew to a sixth counterparty two days before this run date, in a year of negative free cash flow"
+best_fit_strategy: "Capex-Led Growth / GARP (WATCHLIST), contingent on Section 1B's converter-capped destination multiple and on the board-independence and margin-durability findings resolving favourably before Halt 1"
+one_line_verdict: "Clean numbers, unexplained margin history, undisclosed board conflict with a SEBI-searched related party"
+analyst_note: "The single highest-value finding of this deep dive is structural, not numeric: every RPT approval Borana Weaves has ever made with R&B Denims Limited was voted on by directors -- including all three independents -- who are simultaneously R&B Denims's own fiduciaries. This sits underneath, and partly explains, why B02 found no price-basis methodology anywhere for any related-party transaction: the approval mechanism itself was never independent in the ordinary sense. Combined with a second SEBI matter tied to the same entity and family (2017, settled) preceding the 2026 search, and a margin story the AR itself declines to explain despite management explaining it live two months earlier, the picture is of a company whose NUMBERS are clean but whose DISCLOSURE and GOVERNANCE architecture has not yet caught up with being listed. Section 1B/FTTCP should treat the Converter classification as settled (Amendment 17 binds) and should weight the board-independence finding heavily at Halt 1, alongside B02's RPT-pricing gap, since the two findings compound rather than stand apart."

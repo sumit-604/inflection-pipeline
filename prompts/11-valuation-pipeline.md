@@ -7,6 +7,10 @@
 # Section 1B v3.6 Amendments (Damodaran integration), Section 1B v3.7
 # Amendments (commodity converter cycle integration), Section 1B v3.8
 # Amendments (exit-basis symmetry and option resolution), Section 1B v3.9
+# Amendments (relative valuation cross-check step 1C, and the
+# forward-expectation exit framework), Section 1B v3.10 Amendments (growth
+# symmetry in projections and weighting; later layers govern the items they
+# name where the layers overlap), FTTCP v2.1 Consolidated. The
 # Amendments (relative valuation cross-check step 1C [A20]; forward run-rate
 # earnings base [A21]; probabilistic catalyst credit [A22]; expectation
 # ledger with expiry [A23]; three-tier price decomposition [A24];
@@ -32,12 +36,19 @@ mode:
    WRITE that interim state line (it is a useful checkpoint for the
    verifier), then continue immediately.
 2. Show ALL math, every formula, every intermediate step, exactly as the
-   framework demands. Conservative bias throughout.
+   framework demands. State the MOST EVIDENCED path, not a shaded one
+   (Section 1B v3.10 Amendment 26.3). Per-input conservatism is retired in
+   the projections: do not shade five inputs 10% each and label the result
+   base. Where evidence is thin, present both readings and the single
+   observation that separates them, then size for the doubt (v3.9
+   Amendment 25).
 3. INPUT DISCIPLINE: use ONLY the injected B10 table for every input
-   value. If a needed value sits in B10.unresolved, follow the
-   framework's conservative-assumption rule and state explicitly:
-   "INPUT UNRESOLVED: [field]. Conservative assumption used: [value],
-   because [rule]." Never pull a number from general knowledge.
+   value. If a needed value sits in B10.unresolved, state explicitly:
+   "INPUT UNRESOLVED: [field]. Assumption used: [value], because [rule].
+   Both readings: [reading A] / [reading B]. Separating observation:
+   [observation], confirm-by [date]." Never pull a number from general
+   knowledge. This applies to unresolved INPUTS. It never licenses shading
+   a base-case projection line, which is barred by Amendment 26.3.
 4. SOURCE ANCHORS: carry the B10 anchors through into your tables the
    first time each input is used.
 5. FTTCP v2.2 Signal Gate: every Step 2 forward catalyst must cite a
@@ -148,9 +159,21 @@ mode:
 
 ## FRAMEWORK ELEMENTS THE WRAPPER ENFORCES (per the injected layers, non-negotiable)
 
-- The Section 1B layer set (v3.3 Amendments + v3.5.1 + v3.6 + v3.7 + v3.8 + v3.9;
-  later layers govern the items they name) is the SOLE exit multiple authority.
-  No exit PE from any other source, no round-number defaults.
+- The Section 1B layer set (v3.3 Amendments + v3.5.1 + v3.6 + v3.7 + v3.8 +
+  v3.9 + v3.10; later layers govern the items they name) is the SOLE exit
+  multiple authority. No exit PE from any other source, no round-number
+  defaults. There is no numeric exit-PE ceiling other than the sector cap
+  (v3.10 Amendment 26.5).
+- GROWTH SYMMETRY (v3.10 Amendment 26) binds Section 2. Base-case revenue
+  runs off the 26.1 basis hierarchy (RUN-RATE / ORDER-BOOK / CAPACITY /
+  GUIDANCE-DISCOUNTED / HISTORICAL), with historical CAGR shown only as the
+  cross-check and used as the base only when no forward evidence exists.
+  Base-case margin runs off the 26.2 destination-mix bridge; the trailing
+  3-year average is the BEAR input. Probability weights in 4D and the
+  guidance discount are keyed to the trailing four quarters of Role 5
+  delivery, not whole-company history (26.4). Emit the 2C-w worksheet line
+  in full, and answer the 2D standing check: did the base case credit the
+  transition, or price the audited past?
 - OPERATOR-APPROVED BASE (from the deliberation record via B10, authoritative):
   the destination (exit) PE base and the earnings basis (FORWARD or TRAILING)
   were approved by the operator at the FTTCP pillar-approval gate. Use that
@@ -236,6 +259,7 @@ entity_count: 1                # from B10.entity_count (dossier Section 1); emit
 input_gaps: []
 flags: []                      # FLAG-CASH carried forward with the
                                # multiplier actually applied
+framework_versions: "Master v3.6 / Section 1B v3.3+v3.5.1+v3.6+v3.7+v3.8+v3.9+v3.10 / FTTCP v2.1"
 framework_versions: "Master v3.6 / Section 1B v3.3+v3.5.1+v3.6+v3.7+v3.8+v3.9 / FTTCP v2.2"
 pe_basis: ""                   # forward | trailing (operator-approved at the FTTCP gate)
 exit_pe_base_approved: ""      # the operator-approved destination PE base carried from the deliberation
@@ -294,11 +318,14 @@ FRAMEWORK (verbatim from project knowledge):
 {{SECTION_1B_V37_AMENDMENTS}}
 {{SECTION_1B_V38_AMENDMENTS}}
 {{SECTION_1B_V39_AMENDMENTS}}
+{{SECTION_1B_V310_AMENDMENTS}}
 {{FTTCP_V21_CONSOLIDATED}}
 
-PRECEDENCE: where the Section 1B layers overlap, v3.9 governs the items it
-names (relative valuation cross-check, step 1C, operator directive 26-Aug-2026),
-then v3.8 (exit-basis symmetry and option resolution, operator directive
+PRECEDENCE: where the Section 1B layers overlap, v3.10 governs the items it
+names (growth symmetry in projections and weighting, Amendment 26, operator
+ruling 08-Sep-2026), then v3.9 (relative valuation cross-check step 1C,
+operator directive 26-Aug-2026, and the forward-expectation exit framework,
+Amendments 21-25, 07-Sep-2026), then v3.8 (exit-basis symmetry and option resolution, operator directive
 23-Aug-2026), then v3.7 (commodity converter integration, operator directive
 20-Aug-2026), then v3.6 (Damodaran integration, operator directive 13-Aug-2026), then
 v3.5.1 (Pillar 1 normalization), then v3.3. FTTCP v2.2 ROCE forward verdict is sole

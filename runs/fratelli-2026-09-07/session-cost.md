@@ -24,3 +24,4 @@ its own stage. Phase 1 (evidence) only; phases 2 and 3 append their own lines.
 | 12b | verifier B concall red flags | claude-opus-4-8 | default | n/a | n/a | 255696 | 17m54s | 1 |
 | 13 | synthesis-lite (phase 1, three files) | claude-opus-5 | default | n/a | n/a | 132686 | 6m49s | 1 |
 | 5 | concall analysis (5 transcripts) | claude-sonnet-5 | default | n/a | n/a | 310453 | 13m46s | 2 |
+| 6 | peer concall verification | claude-sonnet-5 | default | n/a | n/a | 202894 | 15m09s | 2 |

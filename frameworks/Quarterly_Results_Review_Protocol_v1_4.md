@@ -4,6 +4,8 @@
 
 *Version 1.4 | Updated 19 August 2026 | Replaces v1.2 and v1.3 in full. Do not use v1.2, v1.3, or earlier alongside this document.*
 
+*Amended 08 September 2026: Step 6.5 (Expectation Ledger review and A21 base refresh) added ahead of Step 7, wiring Section 1B v3.9 Amendments 21-25 into the quarterly cycle. See Step 6.5 and the version history.*
+
 ## PIPELINE POSITION
 
 The enforced sequence for any full workup or quarterly refresh is:
@@ -406,6 +408,28 @@ Updated Status options: FIRED, ON TRACK, DELAYED, WEAKENED, DEAD
 
 🛑 **STOP. Present 6A through 6D in full.**
 
+## STEP 6.5 — EXPECTATION LEDGER REVIEW AND A21 BASE REFRESH (v3.9 Amendments 21-25)
+
+Run this before Step 7. It refreshes the forward run-rate base and ages every credited expectation. Both feed Step 7's destination-PE recompute and Step 8's sizing.
+
+### 6.5A. A21 run-rate base refresh
+- Recompute the Amendment 21 run-rate base from THIS quarter: latest reported quarter annualised, with known one-offs stated and adjusted (treasury income on a depleting cash pile, exceptional items, seasonal distortions). For seasonal or lumpy businesses use a trailing-4-quarter base instead of single-quarter annualisation; declare which.
+- Compare the refreshed base against the base carried in Notion. Where they diverge >25%, state which is used and why. The refreshed base is the anchor for Step 7's fair-value recompute and for the T1/T2/T3 decomposition. The annual/AR model stays the cross-check and floor, not the anchor.
+
+### 6.5B. Expectation Ledger review (outputs/expectation-ledger.md / Notion ledger)
+For every OPEN row, check whether the confirming metric hit its threshold by the confirm-by date:
+- **CONFIRMED** (metric hit by the date): mark Status CONFIRMED and FOLD the increment into the confirmed run-rate base (T1) at this refresh; it leaves the ledger.
+- **MISSED** (confirm-by date passed, metric not hit): decay the credit by a fixed step of 25% of the ORIGINAL credit per missed review (Status OPEN → DECAYED-1 → DECAYED-2), and TRIM the position in proportion (Amendment 25: 25% per decayed item).
+- **TWO consecutive missed confirm-by dates** on the same item: RETIRE the item to zero (Status RETIRED) and register a DROPPED commitment in the Role 5 promise-vs-delivery tracker (governance flag).
+- After ageing, re-tier the remaining rows (p ≥ 0.50 T2, < 0.50 T3) and recompute T2 net (less the downside term) and T3.
+- The downside row is re-assessed each quarter like any other row; it is never dropped for being negative.
+- Save the refreshed ledger to Notion with this review (Amendment 22). An expectation not on the ledger may not be credited in the price.
+
+### 6.5C. Feed forward
+The refreshed A21 base and the re-tiered T1/T2/T3 feed Step 7 (destination-PE re-validation and fair-value recompute) and Step 8 (position decision: the trim ladder from decays, the add ladder from confirmations).
+
+🛑 **STOP. Present 6.5A and 6.5B before Step 7.**
+
 ## STEP 7 — FOUR-PILLAR DESTINATION PE RE-VALIDATION
 
 The destination PE in Notion was set under Section 1B v3.3. Each results review must check whether the pillars still hold. Walk through:
@@ -422,7 +446,7 @@ The destination PE in Notion was set under Section 1B v3.3. Each results review 
 
 **Recompute destination PE if any pillar changes.** Destination PE range = calculated value ±7.5%, rounded to nearest 0.5x.
 
-If destination PE compresses or expands materially (>10% change), recompute Bear/Base/Bull fair values for Y3 and update the entry/MoS prices. Don't leave stale fair values in Notion.
+If destination PE compresses or expands materially (>10% change), recompute Bear/Base/Bull fair values for Y3 and update the entry/MoS prices. Don't leave stale fair values in Notion. Recompute on the Step 6.5A refreshed A21 run-rate base (per v3.9 Amendment 21), not on the annual model.
 
 🛑 **STOP. Show the pillar re-validation and any revised fair values.**
 
@@ -651,3 +675,5 @@ These rules apply to every quarterly review without exception:
 *Version 1.3 | Updated August 2026 — Step 5.5 refactored to reference the consolidated Downstream Signal Tracker (Notion database peer to COMPANIES MASTER) established at initial workup via Master Project Prompt v3.4 Role 5.5. Quarterly Step 5.5 is signal RECONCILIATION not signal creation: pull tracker rows relevant to this company (5.5A), reconcile target-company reported numbers against signal trajectory using the four-outcome matrix (5.5B), add newly-surfaced dependencies to the tracker via Role 5.5 procedure without waiting for the next month-end (5.5C), and feed Step 6 with a signal-reconciled forward view where consistent multi-month signal trajectories outweigh single-quarter target prints (5.5D). Consolidated tracker is refreshed portfolio-wide at each month-end via the Role 5.5 Monthly Refresh Workflow, not per-company here. Step 7 reference synced to Master Project Prompt v3.4 (Category-Break Override state). Notion save format updated to append Step 5.5 reconciliation alongside existing extractions. v1.2 (Jul 2026) codified Role 4 before Role 5 sub-order, added lender variant, half-yearly cash flow rule, Step 8A-W branch, and probability re-weighting rule; v1.1 (May 2026) added structured Notes Extraction and Step 8.5 Questions for Management.*
 
 *Version 1.4 | 19 August 2026 — reconciliation of the parallel framework streams. The v1.3 base already carried Step 5.5 DOWNSTREAM SIGNAL RECONCILIATION with the four-outcome matrix (5.5A-5.5D) and, from the tracker-enforcement upload, the live tracker coordinates (Database URL plus data source ID 926b65ce-ddd2-4d8b-8eae-05e66b6f6c9f) and the "new dependencies written immediately via the Role 5.5 Step 4 gate procedure with row URL as proof" clause; all of that is preserved unchanged. v1.4 only re-points cross-references to the merged canonical documents: Role 5.5 now cited as Master Project Prompt v3.6 (was v3.4), and the Pillar 1 ROCE mapping table now cited as FTTCP v2.1 (was v1.2). No step logic, matrix, or math changed.*
+
+*Amended 08 September 2026 (Section 1B v3.9 A21-A25): adds Step 6.5 EXPECTATION LEDGER REVIEW AND A21 BASE REFRESH before Step 7. 6.5A refreshes the Amendment 21 run-rate base each quarter (latest quarter annualised, one-offs stated; trailing-4Q for seasonal names; annual model stays cross-check and floor). 6.5B ages every credited expectation: CONFIRMED rows fold into the T1 base; a missed confirm-by date decays the credit by 25% of the original per miss and trims the position in proportion; two consecutive misses RETIRE the item and register a DROPPED commitment in the Role 5 tracker. Step 7 recomputes fair values on the refreshed base. No prior step logic, matrix, or math changed.*

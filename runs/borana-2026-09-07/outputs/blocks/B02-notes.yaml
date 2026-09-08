@@ -1,0 +1,57 @@
+stage: B02-notes
+company: "BORANA"
+run_date: "2026-09-07"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "inputs/research/ empty"
+  - "NO-CONCALL MODE (one Q3FY26 transcript only)"
+  - "missing Brickwork rating rationale for the 11-May-2026 upgrade"
+  - "missing SEBI 11C(9) order text"
+  - "no standalone Q1FY27 results filing"
+  - "four scanned PDFs OCR'd"
+  - "screener CSV export defect (Data_Sheet is the populated file, the rest are header-only formula sheets, not a data gap)"
+  - "no discount rate disclosed for Ind AS 116 lease liability measurement (Note 3/14(a))"
+  - "no top-customer revenue concentration disclosed anywhere in the FY26 AR"
+  - "no explicit single-segment reporting statement (Ind AS 108) despite operating as one implicit segment"
+  - "no subsequent monitoring-agency report in corpus beyond the Q3FY26 (31-Dec-2025) filing to confirm Q4FY26 GCP/Renewable Hybrid Project reconciliation"
+flags:
+  - {type: FLAG-CASH, reason: "Working capital days lengthened 39.4 (FY24) to 66.5 (FY26) per run context, driven by an 86.2% raw-material inventory build and a 93.8% trade-payables collapse (best-supported driver: shift to LC-settled imports, 0% to 32.7% of raw material), not by receivables (which remain clean); compounds the Stage 1 Block B cash-generation deal-breaker (cumulative FCF minus Rs 194.8 cr over five years, CFO/PAT 0.548)."}
+accounting_quality: 5        # /10
+pass_2_empty: false
+pass_3_empty: false
+top_findings:
+  - {rank: 1, finding: "RPT jobwork to Borana Industries LLP more than doubled FY25->FY26 (Rs 442.98 lakh -> Rs 898.81 lakh, +102.9%; PASS 2 corrected FY25 figure), no disclosed price basis", note_ref: "Note 34(K), Note 28(iii); AR pp.114, 117", rating: "RED"}
+  - {rank: 2, finding: "Related-party yarn purchases collapsed to 0.04% of purchases FY26 from 8.83% FY25 (up to 11.85% of POY yarn at 9M-IPO mark); FY26 margin clear of input-side RPT artefact but FY24-25 track record rests on a bare self-certified attestation, no independent valuer or methodology", note_ref: "Note 34; RHP pp.34-36, 45-46; AR pp.116-118", rating: "WATCH"}
+  - {rank: 3, finding: "No capital-commitments disclosure anywhere against active Rs 80.94 cr CWIP programme, confirmed absent by exhaustive full-text search", note_ref: "Note 39(i); absent throughout", rating: "RED"}
+  - {rank: 4, finding: "Credit-rating section names only Brickwork; silent on CARE Ratings' ISSUER NOT COOPERATING status", note_ref: "Board's Report, AR p.55", rating: "RED"}
+  - {rank: 5, finding: "Corporate Governance Report states commodity/FX hedging Nil/Not Applicable twice against a first-year ~Rs 120 cr unhedged import book", note_ref: "AR pp.54-55; Note 37 p.123; Note 39(c)/(d) p.126", rating: "RED"}
+  - {rank: 6, finding: "Note 37 FY25 trade-receivables comparative (Rs 3,922.71 lakh) confirmed wrong vs independently-filed FY25 AR (Rs 2,181.54 lakh); no reconciling source", note_ref: "Notes 8, 34, 37; AR pp.107, 118, 124", rating: "RED"}
+  - {rank: 7, finding: "EPS weighted-average share count uses full post-IPO count for a partial-year cash issuance, inconsistent with Ind AS 33; illustrative recompute implies EPS understated ~3-4%, identically applied in exchange-filed results", note_ref: "Note 32 p.115; Note 39(g)/40(g) pp.126-127", rating: "RED"}
+  - {rank: 8, finding: "SEBI Section 11C(9) search at related party R&B Denims Ltd (22-23 Apr-2026) absent from FY26 AR notes (approved 14-May-2026) across contingent liabilities, RPT, and subsequent events", note_ref: "absent throughout; company memory", rating: "RED"}
+  - {rank: 9, finding: "~Rs 10.7 cr post-IPO loan book to five counterparties, three not on the RPT list and wholly new in FY26; IPO monitoring-agency report shows 100% proceeds utilised by Dec-2025 with No Deviation, so this book is funded from non-IPO-tracked cash in a weak-CFO year", note_ref: "CARO Annexure A(iii) p.87; Note 11 p.107; 2025-12-31_IPO-monitoring-agency-report.pdf pp.4-8", rating: "WATCH"}
+  - {rank: 10, finding: "GCP allocation deployed 76% (Rs 24.99 cr of Rs 32.89 cr) into a Renewable Hybrid Project - Solar + Wind not named as a distinct offer-document object; does not cleanly reconcile to the Rs 868.43 lakh Solar Roof Top PPE addition", note_ref: "2025-12-31_IPO-monitoring-agency-report.pdf p.8; Note 3 AR p.106", rating: "WATCH"}
+  - {rank: 11, finding: "Related-party envelope FY22-FY26 rotates in form (financing FY23-24 -> purchases FY25 -> jobwork FY26) rather than shrinking", note_ref: "Note 34; RHP pp.34-36; FY25 AR", rating: "WATCH"}
+  - {rank: 12, finding: "Trade payables turnover jumped 21.00x -> 36.49x (PASS 2 corrected); raw balance collapsed 93.8% against 39.2% purchase growth; best-supported driver is the shift to LC-settled imports", note_ref: "Note 17/17.1 p.111; Note 40 item 7 pp.128-129", rating: "WATCH"}
+  - {rank: 13, finding: "At least seven distinct secretarial/exchange compliance lapses across the first listed AGM cycle", note_ref: "Board's Report Secretarial Audit qualifications, AR pp.33-34", rating: "WATCH"}
+  - {rank: 14, finding: "ROE fell 59.45%->35.01%, ROCE 42.82%->24.17%, wholly explained by IPO capital-base growth outpacing an as-yet-unearning CWIP, no operating-margin deterioration", note_ref: "Note 40 items 4, 10; AR pp.128-129", rating: "CLEAN"}
+  - {rank: 15, finding: "Zero Key Audit Matters in an unqualified opinion despite IPO, tripled capex, and material RPT/sourcing-mix change in the same year", note_ref: "Auditor's Report, AR p.82", rating: "WATCH"}
+red_flags:
+  - "Note 37 FY25 trade receivables comparative (Rs 3,922.71 lakh) confirmed wrong vs independently-filed FY25 AR (Rs 2,181.54 lakh); no traceable source"
+  - "No capital-commitments disclosure against active Rs 80.94 cr CWIP programme (Ind AS 16 para 74(c))"
+  - "Credit-rating section omits CARE ISSUER NOT COOPERATING status, names only Brickwork"
+  - "Hedging disclosed Nil/Not Applicable twice against ~Rs 120 cr first-year unhedged import book"
+  - "SEBI Section 11C(9) search at related party R&B Denims Ltd absent from notes despite predating AR approval by ~3 weeks"
+  - "EPS weighted-average share count uses full post-IPO count for a partial-year cash issuance, inconsistent with Ind AS 33 (understates EPS ~3-4% per illustrative recompute)"
+  - "RPT jobwork to Borana Industries LLP doubled in FY26 with no disclosed price basis"
+  - "At least seven distinct secretarial/exchange compliance lapses in first listed AGM cycle"
+questions_for_mgmt:
+  - "What is the price-basis methodology for related-party yarn purchases (FY22-FY25) and jobwork paid to Borana Industries LLP (FY25-FY26)? Is any independent, non-statutory-auditor benchmarking available?"
+  - "Can management reconcile Note 8's FY25 trade receivables (Rs 2,181.54 lakh) against Note 37's Rs 3,922.71 lakh for the identical balance, and confirm no other FY26 AR note carries the same error risk?"
+  - "What is the estimated remaining capital commitment to complete the Rs 80.94 cr CWIP programme, and can management reconcile the Rs 24.99 cr Renewable Hybrid Project GCP spend against the Rs 868.43 lakh Solar Roof Top PPE addition?"
+  - "Does FY26 Basic EPS reflect Ind AS 33 time-weighting for the 27-May-2025 cash IPO issuance, or the full post-issue share count for the whole year? What is the basis for calling this an Adjusting Event rather than a fresh cash issue requiring time-weighting?"
+  - "Why does the credit-rating section omit CARE's ISSUER NOT COOPERATING status, and was the SEBI Section 11C(9) search at R&B Denims Ltd considered for subsequent-events disclosure ahead of the 14-May-2026 approval date?"
+receivables_trend: "improving — FY26 receivables Rs 2,364.19 lakh vs FY25 Rs 2,181.54 lakh, +8.4% against 33.9% revenue growth; ageing >6 months only 0.32% (FY26) vs 0% (FY25); receivable turnover 17.10x (FY26) vs 17.67x (FY25), ~21.3 vs ~20.7 days (Notes 8, 8.1, 40; AR pp.107-108, 128). Receivables themselves are clean; overall working capital days lengthened 39.4 (FY24) to 66.5 (FY26) per run context, driven by inventory build (+86.2%) and payables collapse (-93.8%), not by receivables — see FLAG-CASH."
+restatements_found: []
+going_concern_language: "NONE"
+analyst_note: "Pass 2 governs over Pass 1 for two Note 40 ratio citations: true Inventory Turnover is 6.26x/7.23x (down, resolving Pass 1's self-flagged contradiction against the inventory build) and true Trade Payables Turnover is 36.49x/21.00x (up sharply). Pass 1's 6.42x/3.96x was actually Interest Coverage; its 5.58x/9.63x was actually Net Capital Turnover. All figures in this report and the YAML use the corrected values. The IPO monitoring-agency report (read in full for Pass 3) shows 100% of net proceeds utilised by Dec-2025 with no deviation, which reframes the ~Rs 10.7 cr third-party loan book and GCP/Renewable Hybrid Project spend as a capital-discipline question about non-IPO-tracked cash, not a proceeds-monitoring violation. The related-party envelope, traced FY22-FY26, rotates in form each year rather than shrinking; FY26's near-nil purchase-side RPT does not extend to the jobwork line, which is the fastest-growing and least-priced related-party cost in the cost stack that produces the headline margin."

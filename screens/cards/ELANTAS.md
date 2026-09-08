@@ -12,6 +12,14 @@
 - **Calendar year warning: this company's financial year ends 31 December.** Bull AI
   labels its filings with Indian April-March years. Every figure below is stated by the
   period printed in the document.
+- **UPDATED 2026-09-08 after a deep Bull AI sweep. NULL RESULT.** `get_company_guidance`
+  returns zero records for this company in any period: no earnings call, no investor
+  presentation, no management promises to test. `get_company_market_transactions` returns
+  six records in total, the most recent a bulk deal on **7 December 2022**, so there is no
+  usable price. No CY2026 quarterly result exists. Recorded in
+  `screens/corpus/ELANTAS/filings/ELANTAS-sweep-null-result.md` so a later run does not
+  repeat the search. The silence is itself the finding: this pipeline cannot track the
+  company between annual results.
 
 ## Business Understanding Narrative
 

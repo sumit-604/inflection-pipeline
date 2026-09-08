@@ -10,6 +10,13 @@
   audited profit and loss, balance sheet and cash flow** (Financial Results filed
   2026-05-07, pages 3-7). **No earnings call and no investor presentation exist.** Market
   cap and CMP NOT FOUND; verify live.
+- **UPDATED 2026-09-08 after a deep Bull AI sweep. NULL RESULT.** `get_company_guidance`
+  returns zero records: no call, no deck, no promises to test. **No Q1FY27 result exists**,
+  so no forward earnings basis can be built. The most recent market transaction is
+  Rs 203.20 on 29 April 2025, and it is an **intra-group transfer** from Shapoorji Pallonji
+  & Company to Forbes Campbell Finance, not an open-market print. The last genuine
+  third-party trade was Rs 343.97 in September 2024, so the price fell 41% between the two.
+  Recorded in `screens/corpus/FORBESPT/filings/FORBESPT-sweep-null-result.md`.
 
 ## Business Understanding Narrative
 

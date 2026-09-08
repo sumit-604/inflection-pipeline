@@ -10,6 +10,10 @@
   Market cap and CMP NOT FOUND; verify live.
 - Two arithmetic errors in the filed deck are recorded in the manifest and used
   corrected here.
+- **UPDATED 2026-09-08 after a deep Bull AI sweep.** The sweep produced FY27 guidance, a
+  six-quarter capacity slip traced across four decks, an untested US order, and a
+  counterparty list that raises a related-party question. Evidence in
+  `screens/corpus/IKIO/filings/IKIO-guidance-slippage-counterparties.md`.
 
 ## Business Understanding Narrative
 
@@ -116,9 +120,24 @@ Derived from those disclosures, not stated by the company: FY26 EBIT is Rs 466 M
 borrowings 412 less cash 576). Return on capital employed is about 7.9% pre-tax. Return
 on equity is about 7.1% on average equity of Rs 5,857 Mn. Excluding the Rs 956 Mn of
 capital work in progress that earns nothing yet, ROCE is about 9.4%.
-Inflection classification: earnings-led on mix, with margin help. It is not an asset
-event and not a one-off. But the returns are below any reasonable cost of capital, and
-that is the defining fact about this business today.
+**The sweep explains why the assets did not move: the capacity is late.** Block II of about
+2 lakh square feet was guided "Completion expected by Mar'25" in the Q2FY25 deck and again,
+word for word, in the Q3FY25 deck. The Q4FY25 deck says "nearing completion" with no date.
+The Q4FY26 deck says "expected to be commercialized by end of Q1FY27". The Q1FY27 deck says
+"**partially commercialized in Q2FY27**" (sweep file s.1). That is a slip of about six
+quarters, and the latest wording adds "partially". Block III is still "construction
+progressing as planned", the identical phrase used twenty months earlier.
+**FY27 guidance, the first this card has.** Revenue "somewhere close to around a 20% to 22%
+jump from this year to the next one", so Rs 714 to 726 crore off FY26's Rs 595 crore.
+Margins "expect them to stay in line to what we have achieved right now", about 16%. Longer
+term the target is 18% to 20%. Non-lighting mix from 25% to 30-32%. Rs 35 to 36 crore of IPO
+capex left to spend this year. And the size of the prize: "somewhere around INR1,500 crores
+top line we would be able to achieve... post the commissioning of this CapEx at full
+utilization" (sweep file s.2).
+Inflection classification: earnings-led on mix, with margin help. It is not an asset event
+and not a one-off. But the returns are below any reasonable cost of capital, and the capacity
+that is meant to fix that is six quarters late. Those two facts together are the defining
+statement about this business today.
 
 ## 6. The transition and the quality ladder
 Management's claim, quoted once: "IKIO transitioning from lighting to integrated
@@ -151,6 +170,16 @@ end-markets, not a move out of lighting.
 - Exports 18% of FY26 revenue, up from 15%. Source IP Q1FY27 p.9, p.12. Status: delivered.
 - Solar inverters and batteries, new. Source Concall Q4FY26 p.11. Status: stated.
 
+- Block II ~2 lakh sq ft: guided "complete by Mar'25" in two successive decks. Sweep file s.1. **SLIPPED about six quarters, now "partially commercialized in Q2FY27".**
+- Block III ~1 lakh sq ft: "construction progressing as planned", the same phrase for twenty months. Sweep file s.1. No date ever given.
+- FY27 revenue up 20-22% off Rs 595 cr, so Rs 714-726 cr; margins held near 16%. Sweep file s.2. Stated.
+- Post-capex revenue capacity about Rs 1,500 cr at full utilisation on 4.5-5x asset turns. Sweep file s.2. Stated.
+- Metco Engineering MOU, **USD 8 mn of business assured within 6 months**, announced Q3FY25. Sweep file s.4. **No delivery statement exists anywhere in the record.**
+- FY26 revenue Rs 595 cr up 23%; EBITDA Rs 78 cr up 29%. Sweep file s.3. Delivered.
+- FY26 revenue from outside India Rs 110 cr, up 53%. Sweep file s.3. Delivered.
+- IPO proceeds: Rs 500 mn debt repayment completed; Rs 1,120 mn deployed into the new facility. Sweep file s.3. Delivered.
+- Hearables and Wearables move directly under the parent from end Q1FY27; margin "higher single digits", intention double digits. Sweep file s.2. Stated.
+
 ## 8. Proof check
 Mixed, and the direction of the last quarter is the wrong way.
 What fired: Other Business grew 53% in FY26 to Rs 4,255 Mn, and 53% again in Q1FY27
@@ -168,6 +197,21 @@ and III come on stream and ROCE does not move off 8%, the capacity is ahead of t
 demand.
 
 ## 9. Flags from the documents
+- **Three counterparties recorded as CUSTOMERS carry the group's own name.** Bull AI's
+  counterparty record holds 12 entries, marked complete. It names Royalux (customer, LED
+  lighting), Znergy ("referred to as 'major customer'... alongside Royalux") and IKIO World
+  ("explicitly confirmed as customer by Hardeep Singh"). It separately records **Royalux
+  Lighting Private Limited** and **Royalux Export Private Limited** as IKIO subsidiaries,
+  alongside IKIO Solutions and Ritech Holdings (sweep file s.5). A deep run must establish
+  whether revenue described as customer revenue is booked to entities inside the group. This
+  corpus cannot settle it. It is a question, not an accusation, and it is now the first item
+  on this name's verification list.
+- **An assured USD 8 million US order with no follow-up.** The Q3FY25 deck announced that
+  Metco Engineering "assures business of 8 Mn USD in the next 6 months". That is about
+  Rs 70 crore, roughly 12% of FY26 revenue. No delivery statement against it appears
+  anywhere in four subsequent filings (sweep file s.4). The silence is the finding.
+- **Block II is about six quarters late** against a date the company published twice
+  (sweep file s.1).
 - Return on capital employed of about 7.9% (derived from IP Q1FY27 p.7 and p.24). The
   business earns less on capital than it plausibly costs.
 - Plant, property and equipment unchanged at Rs 1,482 Mn while capital work in progress

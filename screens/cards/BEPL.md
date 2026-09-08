@@ -12,6 +12,12 @@
 - **Section 1B note for `/step1`: classify CONVERTER, without qualification.** Revenue is
   an ABS price over an imported styrene and acrylonitrile cost. Amendment 17 binds: no
   spot-year ROCE and no rupee working capital trend into Section 1B or FTTCP.
+- **UPDATED 2026-09-08 after a deep Bull AI sweep.** The sweep produced the FY26 full year,
+  which reverses the reading of Q1FY27, plus operating cash flow and an FY27 commissioning
+  date. Evidence in `screens/corpus/BEPL/filings/BEPL-fy26-actuals-and-guidance.md`. It also
+  confirmed the two absences: no earnings call transcript exists under any period, and Bull
+  AI holds only two guidance records in total, so this company's promise record cannot be
+  tested at all.
 
 ## Business Understanding Narrative
 
@@ -117,10 +123,19 @@ FY2024 p.34, AR FY2025 p.28).
 Working capital ratios are stable and healthy: inventory turnover 7.79x in FY25 against
 5.43x in FY24; trade receivable ratio 5.76x against 5.22x; debtors 18.28% of sales against
 18.82% (search extracts, AR FY2025 p.28).
-Read the Q1FY27 quarter against the capacity line and it resolves. Installed capacity has
-been 75,000 MTPA since 2015 (IP p.7). A 53.3% revenue increase on unchanged capacity is
-realisation and mix, not tonnes. And EBITDA margin fell while revenue rose, which is what
-pass-through of a higher monomer price looks like.
+**FY26 full year, from the sweep, and it reverses the reading of Q1FY27.** Revenue
+Rs 1,276.0 crore, **down 8.7%**. Q4FY26 revenue Rs 341.6 crore, down 1.0%. EBITDA Rs 255.2
+crore, up 1.3%, **margin 20.0%**. PAT Rs 180.2 crore, up 0.1%, margin 14.1%. Operating cash
+flow Rs 168.1 crore, up 54.6%. Gross debt to equity 0.0x (sweep file s.1).
+DERIVED: FY26 EPS is Rs 7.24 on 24,88,58,460 shares, against Rs 7.23 in FY25 and Rs 7.22 in
+FY24. **Earnings are flat across three years.** Cash conversion is 168.1 over 180.2, or 93%,
+so cash conversion is not INDETERMINATE for this name.
+Read the Q1FY27 quarter against those two facts and it resolves hard. Installed capacity has
+been 75,000 MTPA since 2015 (IP p.7). FY26 revenue FELL 8.7%; Q1FY27 rose 53.3%. The
+sequential path is Q4FY26 Rs 341.6 crore to Q1FY27 Rs 472.2 crore, **up 38% in one quarter
+on a plant that cannot make more tonnes**. And the FY26 EBITDA margin of 20.0% is ABOVE the
+Q1FY27 margin of 19.2%. So the June quarter is a revenue event, not a margin event: it is a
+spread, off a trough year. Amendment 17 binds any multiple built on it.
 Inflection classification: **cycle and price, not a transition.** The FY26 return ratios
 are excellent and stable, but they sit on a plant last expanded eleven years ago and are
 therefore a statement about a small capital base, not about a change in the business.
@@ -154,6 +169,14 @@ the corpus, in any period. So the transition cannot be measured, only asserted.
 - Global ABS demand 9.1 Mt (FY23) to 11.4 Mt (FY28E). Source IP FY27 Q1 p.23. Status: third-party forecast.
 - Dividend: 3rd interim dividend of Re 1 per share declared for FY26; Rs 24.9 crore paid in Q1FY27. Source Financial Results FY2026 Q3 p.1; IP p.8. Status: delivered.
 - Abandoned: 200,000 TPA expansion (FY2022 board note) and 145,000 TPA expansion (FY2024 board note), both superseded by the 100,000 TPA plan. Source Financial Results FY2022 Q2 p.14, FY2024 Q2 p.14; General filing FY2026 Q2 p.2. Status: **withdrawn.**
+
+- FY26 full year: revenue Rs 1,276.0 cr **down 8.7%**, EBITDA Rs 255.2 cr at 20.0%, PAT Rs 180.2 cr flat. Sweep file s.1. Delivered, negatively.
+- FY26 operating cash flow Rs 168.1 cr, up 54.6%; gross debt to equity 0.0x. Sweep file s.1. Delivered.
+- Capacity 75,000 to 100,000 MTPA, **commissioning targeted September 2026**. Sweep file s.3. The nearest testable claim on this card.
+- Optimal utilisation of the expanded capacity expected by end FY28. Sweep file s.3. Stated.
+- Dividend payout about 50%+, stated policy. Sweep file s.3. Delivered since FY22.
+- 18 new colour grades commercialised FY25; 17 new grades plus 12 enhanced FY26. Sweep file s.4. Delivered.
+- No guidance record exists before FY26 Q4. Sweep file s.5. **This company's promise record cannot be tested.**
 
 ## 8. Proof check
 The quarter proves cash generation and refutes nothing, because there is almost nothing

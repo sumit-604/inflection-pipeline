@@ -9,6 +9,10 @@
   Bull AI labels that transcript FY26 Q3 but serves the Q1FY26 call of 31 July 2025. No
   annual report, no balance sheet, no PAT figure, no rating report. Market cap and CMP
   NOT FOUND; verify live.
+- **UPDATED 2026-09-08 after a deep Bull AI sweep.** The sweep found the profit figure this
+  card said did not exist, and it is not good news. It also produced the order book, the
+  capacity, and the regulatory gate management calls the last one. Evidence in
+  `screens/corpus/QUADFUTURE/filings/QUADFUTURE-pat-orderbook-rdso.md`.
 
 ## Business Understanding Narrative
 
@@ -115,8 +119,20 @@ charges" (Concall p.5).
 As at July 2025 the company held about Rs 52 crore of KAVACH material, Rs 16 crore in
 purchases and Rs 36 crore in work in progress, plus advances already released to
 off-the-shelf suppliers (Concall p.8, p.9).
-No profit after tax figure, no balance sheet, no debt and no cash flow appear in the held
-corpus.
+**A profit after tax figure now exists, and reading it carefully is the point.** Q4FY26 PAT
+was **positive Rs 11 million** (Q4FY26 deck p.30). The same page records a **Rs 125 million
+tax expense credit** in the quarter, with the stated reason "Tax credit offset operational
+losses". DERIVED: a PAT of plus Rs 11 million after a Rs 125 million credit implies a
+**pre-tax loss of about Rs 114 million**. The company's first positive profit line is
+entirely an accounting entry. Any screen showing Quadrant's PAT turning positive in Q4FY26
+is showing a deferred tax credit, not trading profit.
+Two anchored figures the first pass lacked: **the TCAS order book is Rs 8,054 million**, or
+Rs 805 crore, about 4.6 times the whole company's annual revenue (Q4FY26 deck p.4); and
+Specialty Cables installed capacity is **about 1,900 MT a year**, backward integrated at
+Basma (p.28). IPO proceeds repaid Rs 236 million of working capital term loan in FY26
+(p.34), and Rs 244 million is earmarked for Electronic Interlocking development, to begin
+only after KAVACH approval (p.24, p.28).
+Full-year FY26 PAT, the balance sheet, total debt and cash flow are still NOT FOUND.
 Inflection classification: **none has occurred.** There is no inflection to classify. The
 cable business is flat, the signalling business has no revenue, and the group loses money
 at the EBITDA line. What the corpus shows is a narrowing loss, not an inflection.
@@ -153,6 +169,16 @@ Every KAVACH line below is dated July 2025 unless marked, and its outcome is now
 - Cable order book Rs 40 cr (July 2025) to Rs 407 Mn, about Rs 41 cr (August 2026). Source Concall p.7; IP p.14. Status: flat.
 - Q1FY27 cable revenue up 41.3% YoY; cable EBITDA up 59% YoY. Source IP p.7. Status: delivered.
 - Mandates named from CLW, ICF, BLW, PLW plus RailTel. Source IP p.4. Status: stated.
+
+- **RDSO approval to commence passenger trials for KAVACH v4.0**, with a dedicated train and route allocated. Sweep file s.3. Delivered Q4FY26.
+- Live field validation underway, called by management "the final regulatory milestone before full-scale commercial deployment". Sweep file s.3. **The proof gate, now named and dated.**
+- TCAS order book Rs 8,054 mn, about 4.6x annual revenue. Sweep file s.2. Delivered (won).
+- Q4FY26 PAT positive Rs 11 mn, **after a Rs 125 mn tax credit masking a pre-tax loss near Rs 114 mn**. Sweep file s.1. Not a proof point.
+- Q4FY26 revenue Rs 566 mn, up 70% sequentially; Specialty Cables EBITDA Rs 52 mn, up 94%. Sweep file s.4. Delivered.
+- Specialty Cables capacity about 1,900 MT a year, backward integrated at Basma. Sweep file s.4. Delivered.
+- Rs 236 mn of working capital term loan repaid from IPO proceeds in FY26. Sweep file s.4. Delivered.
+- Rs 244 mn earmarked for Electronic Interlocking, development to begin only post-KAVACH approval. Sweep file s.4. Gated.
+- BIS approval for solar cables; EV and submarine applications planned. Sweep file s.4. Approval delivered, applications stated.
 
 ## 8. Proof check
 The last quarters prove the cable recovery and refute the KAVACH timeline.

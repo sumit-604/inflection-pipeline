@@ -11,6 +11,12 @@
 - **Section 1B note for `/step1`: classify the Essentials slice CONVERTER.** Management
   itself frames it on spreads over a cycle (Concall p.8). Amendment 17 binds on that
   slice: no spot-year ROCE, no rupee working capital trend.
+- **UPDATED 2026-09-08 after a deep Bull AI sweep.** The sweep produced the yardstick this
+  card lacked: the FY28 plan, stated unchanged since FY25. It also produced FY26 full-year
+  actuals, customer concentration, and three documented execution slips. Evidence in
+  `screens/corpus/LXCHEM/filings/LXCHEM-fy28plan-fy26actuals-concentration.md`. Step 10 is
+  confirmed NOT FOUND on a checked basis: Bull AI holds no rating document for this company
+  under any period, and the query result is marked complete, not truncated.
 
 ## Business Understanding Narrative
 
@@ -69,6 +75,10 @@ specialty build. "upcycle benefits larger players who certainly have economies o
 (Concall p.5).
 
 ## 3. Competitive advantages
+**Customer concentration halved, and this is the strongest advantage evidence in the
+corpus.** Revenue from the top 10 customers was 20% in FY26, down from 34% in FY23 (sweep
+file s.4). A commodity converter that has cut its dependence on its largest buyers by half
+in three years has done something real, whatever the spread is doing.
 Different in each business, and stronger than the current mix suggests.
 In Specialty the advantage is structural: number three globally in diketene derivatives,
 with Site 2 at Mahad fully utilised before Dahej was built (Concall p.7). Full
@@ -110,7 +120,27 @@ to equity about 0.3x (Concall p.5). FY27 capex Rs 125 to 150 crore, all in. Incr
 depreciation of Rs 7 to 7.5 crore a quarter from Q2FY27 as Dahej Phase 2 capitalises.
 Debt repayment starts FY28 and runs five years (Concall p.6, p.12). Net working capital
 rose in the quarter to secure raw material availability (Concall p.5).
-No PAT figure was given. ROCE, ROE and cash flow are NOT FOUND.
+**PAT is now FOUND.** Q1FY27 consolidated PAT is Rs 677.16 million on basic and diluted
+EPS of Rs 2.44, and FY26 consolidated PAT is Rs 793.62 million on EPS of Rs 2.87 (board
+meeting filing FY2027 Q1, p.9). ROCE, ROE and cash flow remain NOT FOUND.
+**The FY28 plan gives the yardstick, and two years in the company is behind it.** Since FY25
+the company has said, unchanged across three presentations: "On Consolidated basis the
+company plans to achieve RoCE: 20%, Revenue: ~2x and EBITDA: ~2.7x by FY 28", with Essentials
+at 8-12% EBITDA margin and Specialties at 20-25%, on Rs 11,000 million of capex (sweep file
+s.1).
+Progress, arithmetic shown. FY25 revenue was Rs 29,854 million, up 5%, on EBITDA of Rs 2,796
+million. FY26 revenue was Rs 28,467 million, which management calls a 6% degrowth. FY26
+EBITDA derives to Rs 1,713.89 million (PBT 879.71 plus finance 220.88 plus depreciation
+766.35 less other income 153.05), **down 38.7% on FY25**. The FY24 base the plan was set
+against implies about Rs 28,432 million of revenue. So **FY26 revenue is flat on FY24 after
+two of the plan's four years, against a target to double, and FY26 EBITDA is below the FY24
+base against a target to triple** (sweep file s.2).
+Read Q1FY27 against that. **Q1FY27 EBITDA of Rs 1,143 million is 67% of the whole of FY26,
+in one quarter.** That single ratio states how far outside the run-rate this quarter sits.
+One more caution on the PAT line: the holding company moved to a 25.17% tax rate in Q1FY27
+after reverting to 34.94% in Q4FY26, and the filing states the tax expense "is not
+comparable" with either comparative (board filing p.10, note 5). Part of the PAT jump is a
+tax-regime change.
 Inflection classification: **one-off, cycle-driven.** This is not an earnings-led
 transition and not yet a margin-led one. Essentials printed 11% to 12% EBITDA against a
 mid-single-digit through-cycle expectation stated by management, on 75% of revenue, in a
@@ -148,6 +178,15 @@ leaving one. `/step1` should value it as two businesses, not one blended convert
 - Specialty margin ambition to return to the 20-25% range, "not in the short term". Source Concall p.11, p.12. Status: stated.
 - Bottom-sliced specialty products to return via Dahej capacity. Source Concall p.11. Status: stated.
 - Acetic anhydride demand from pharma "positive momentum" after a muted period. Source Concall p.9. Status: stated.
+
+- FY28 plan: revenue 2x, EBITDA 2.7x, ROCE 20%, off an FY24 base. Sweep file s.1. **BEHIND: FY26 revenue flat on FY24, FY26 EBITDA below it.**
+- Lote fluorination FY26 guided at 40-60% of peak revenue. Sweep file s.5. **Delivered 40-45%, the bottom of the range.**
+- Hitachi Energy contract guided to conclude Q2FY26. Sweep file s.5. **About four quarters late, now Q3FY27.**
+- Dahej Phase 2 chemical charging guided Q1FY27 at the Q4FY26 call. Sweep file s.5. **Slipped to Q2FY27 within three months.**
+- Top 10 customers 20% of revenue in FY26, from 34% in FY23. Sweep file s.4. Delivered.
+- Fluoro assets started delivering revenue in FY26; Dahej phase one CTO received, commercial delivery started Q3FY26. Sweep file s.6. Delivered.
+- World-scale ethyl acetate line at Lote started and dispatching Q4FY26. Sweep file s.6. Delivered.
+- Standing target: minimum 20% of sales from new products. Sweep file s.6. Stated since FY25.
 
 ## 8. Proof check
 The last quarter does not prove the transition. It proves the cycle.

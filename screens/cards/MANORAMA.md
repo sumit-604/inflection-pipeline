@@ -8,6 +8,13 @@
 - Corpus caveat: page-marked Bull AI text of the Q1FY27 deck (pages 1-16) and the Q1FY27
   call (pages 1-12). No annual report, no balance sheet, no cash flow statement, no
   shareholding pattern. Market cap and CMP NOT FOUND; verify live.
+- **UPDATED 2026-09-08 after a deep Bull AI sweep.** The sweep closed four gaps this card
+  had recorded as NOT FOUND: total debt, operating cash flow, the working capital cycle,
+  and the first of two CARE upgrades. It also produced a four-year guidance record in which
+  management has BEATEN its own target twice. Evidence in
+  `screens/corpus/MANORAMA/filings/MANORAMA-guidance-debt-cashflow-rating.md`. One gap
+  stayed open and it matters: the QIP share count and issue price are still NOT FOUND, so
+  the dilution is unquantified.
 
 ## Business Understanding Narrative
 
@@ -117,7 +124,21 @@ together with EBITDA margin rather than in isolation" (Concall p.10).
 Consolidated subsidiaries lost Rs 3 crore in the quarter against Rs 8 crore the prior
 quarter, on essentially no revenue: "West African entities are mostly for cost
 procurement vehicles with no standalone revenue" (Concall p.11).
-Debt, cash flow and the working capital cycle are NOT FOUND.
+**Debt, cash flow and the working capital cycle are now FOUND.** The 2026-09-08 Bull AI
+sweep produced all three from management's own filings (sweep file s.2):
+- **Debt fell from Rs 480.9 crore in FY25 to Rs 354.3 crore in FY26**, a reduction of
+  Rs 126.6 crore in a year in which capex was running.
+- **Operating cash flow was Rs 259 crore for FY26.** Against standalone PAT of Rs 233.2
+  crore that is a **cash conversion of 111%**. Cash conversion is not INDETERMINATE for
+  this name; it is proven positive.
+- **The working capital cycle improved to about 125 days in FY26 from 151 days in FY25.**
+  It was 97 days at H1FY26, so it lengthened again in the second half. That reversal is
+  worth a question, not a flag.
+- Cash profit of Rs 258.77 crore exceeded the gross block of Rs 250.85 crore in FY26.
+- ROCE 49.9% and ROE 36.9% at H1FY26.
+FY26 standalone, for completeness: revenue Rs 1,357 crore up 76.1%, EBITDA Rs 367.7 crore
+at a 27.1% margin, PAT Rs 233.2 crore at 17.2%. Consolidated PAT was Rs 224.92 crore, lower
+than standalone because the West African and Brazilian entities lose money.
 Inflection classification: earnings-led and volume-led, sustained over four years. This
 is the cleanest trajectory of the nine names screened.
 
@@ -154,6 +175,13 @@ raises value capture. It does not move a rung.
 - FY27 capex Rs 225-250 cr of the Rs 460 cr programme. Source IP p.14; Concall p.12. Status: underway.
 - FY27 utilisation guided 80-85%; execution priority 85-90% of the expanded 52,000 TPA. Source IP p.14; Concall p.8. Status: stated.
 - Employee cost run rate Rs 14-15 cr per quarter. Source Concall p.9. Status: stated.
+
+- FY26 revenue guided Rs 1,050+ cr, raised mid-year to Rs 1,150+ cr. Sweep file s.4. **BEAT: Rs 1,357 cr.**
+- FY25 revenue guidance. Sweep file s.4. **BEAT: "We have surpassed our financial guidance for FY25".**
+- CARE upgrades: A- to A (FY25), then A to A+ (FY26). Sweep file s.1; IP p.7. Delivered, twice.
+- FY26 debt Rs 481 cr to Rs 354 cr; working capital 151 to 125 days. Sweep file s.2. Delivered.
+- FY27 growth 25-30%, EBITDA margin held 25-27%; FY30 revenue above Rs 3,500 cr. Sweep file s.5. Stated.
+- CBE about 30% of the top line at Q4FY26 against 10% two years earlier. Sweep file s.3. Delivered.
 
 ## 8. Proof check
 The quarters move exactly the way the triggers claim, which is unusual.
@@ -199,10 +227,13 @@ larger.
 Not seen: promoter holding and pledge, board composition, related-party schedule, debt,
 cash flow, working capital cycle, customer concentration, auditor opinion.
 
-## 10. Independent check: the credit rating — PARTIAL
+## 10. Independent check: the credit rating — PARTIAL, and it is TWO upgrades
 The deck states "CARE Ratings upgrades the Company's bank facilities from 'A' to 'A+'"
-(IP p.7). That is an agency conclusion, and it is the right direction: an upgrade during a
-large capex programme says CARE is comfortable with leverage and cash generation.
+(IP p.7). **The sweep found the step before it.** The FY25 Q4 deck records "CARE Ratings
+upgrades the Company's bank facilities to 'A' from 'A -'" (sweep file s.1). So CARE has
+moved this company **twice in two years, A- to A to A+**, through the largest capex
+programme in its history. That is a stronger statement than one upgrade, and it is the
+best independent evidence on this card.
 The rationale itself is NOT FOUND. Looked for in Bull AI, which carries no rating
 document, and on the CARE site, which this session cannot reach because the network policy
 denies the connection. So the card has the verdict without the reasoning, and none of what
@@ -211,9 +242,11 @@ sourcing peak, or CARE's own view on the Rs 460 crore programme. Fetch the ratio
 before `/step1`; it is the single highest-value missing document for this name.
 
 ## 11. Posture: Transition Decision Matrix
-- Proof gate: FIRED. Four years of 48.5% revenue CAGR, capacity 15,000 to 47,500 TPA
-  filled to 80%, asset turnover up from 5.0x to 7.4x, ROCE 46.2%, and an external credit
-  upgrade. This is as clean a proof set as a shallow read can produce.
+- Proof gate: FIRED, and the sweep hardened it. Four years of 48.5% revenue CAGR, capacity
+  15,000 to 47,500 TPA filled to 80%, asset turnover up from 5.0x to 7.4x, ROCE 46.2%, two
+  successive CARE upgrades, operating cash flow of Rs 259 crore against PAT of Rs 233 crore,
+  debt down Rs 127 crore, and a guidance record management has BEATEN twice. This is the
+  cleanest proof set of the nine names screened.
 - Ugliness: ABSENT. There is no ugly optic to classify. Margins are high, growth is
   volume-led, the balance sheet was just strengthened by a QIP, and the credit was
   upgraded. The matrix assumes a transition thesis carries an ugly number; this one does

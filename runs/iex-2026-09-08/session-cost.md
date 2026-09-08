@@ -14,3 +14,6 @@
 | 8 | board/KMP check (web search) | claude-sonnet-5 | default | n/a | n/a | 146,912 | 8m21s | 1 |
 | 6 | peer concall verification | claude-sonnet-5 | default | n/a | n/a | 196,845 | 10m33s | 1 |
 | 7 | emerging moat 22-category scan | claude-sonnet-5 | default | n/a | n/a | 132,790 | 9m50s | 1 |
+| 9 | TAM/SAM/SOM (web search) | claude-sonnet-5 | default | n/a | n/a | 150,040 | 13m40s | 1 |
+| 12b | verifier B concall red flags | claude-opus-4-8 | default | n/a | n/a | 242,024 | 12m02s | 1 |
+| 12d | verifier D peer coverage | claude-sonnet-5 | default | n/a | n/a | 85,637 | 3m55s | 1 |

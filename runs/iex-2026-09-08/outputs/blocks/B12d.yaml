@@ -1,0 +1,22 @@
+stage: B12d
+company: "IEX"
+run_date: "2026-09-08"
+model: claude-sonnet-5
+status: complete
+peers_audited: 12
+substantive_confirmed: 9
+substantive_unsupported: []
+unused_but_relevant:
+  - {peer: "CDSL Q2 FY26 (Nov 2025)", missed_item: "Incremental demat-account market share already down from 93% (3Q FY25) to 82% this quarter; management deflection pre-figures the identical language repeated in Feb-2026 and Aug-2026, one quarter earlier than B06's stated 'first leg' of the Claim 4 arc", anchor: "CDSL-Concall_Nov_2025_Transcript.txt p.9-10"}
+  - {peer: "BSE Q3 FY26 (Feb 2026)", missed_item: "Same SOR/algo-approval-bottleneck, not-loyalty explanation for BSE's stuck cash-segment share that B06 cites only from the May-2026 call for Claim 4, present one quarter earlier", anchor: "BSE-Concall_Feb_2026_Transcript.txt p.12-13"}
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "MAJOR", location: "outputs/reports/06-peers.md Part 3 (CDSL Q2 FY26 row); B06-peers.yaml peer_coverage_map", description: "CDSL Nov-2025 transcript marked CITED-ONLY but contains a directly Claim-4-relevant statement left unused: incremental demat market share already down 93%->82% this quarter, with a deflection pre-figuring later quarters' language. Antedates B06's stated 'first leg' of the Claim 4 arc by one quarter; strengthens the CONTRADICTED verdict but was not surfaced. Source: CDSL-Concall_Nov_2025_Transcript.txt p.9-10."}
+  - {severity: "MINOR", location: "outputs/reports/06-peers.md Part 3 (BSE Q3 FY26 row)", description: "BSE Feb-2026 transcript marked CITED-ONLY but contains an earlier instance of the same SOR-bottleneck-not-loyalty explanation B06 cites only from May-2026 for Claim 4. Duplicative, no verdict change. Source: BSE-Concall_Feb_2026_Transcript.txt p.12-13."}
+  - {severity: "MINOR", location: "outputs/reports/06-peers.md line 368 (Part 3 summary line)", description: "Summary line states '8 SUBSTANTIVE, 4 CITED-ONLY, 0 UNUSED' but the coverage-map table it summarises lists 9 SUBSTANTIVE and 3 CITED-ONLY rows. Total of 12 is correct; the split is miscounted. No verdict impact."}
+critical_count: 0
+major_count: 1
+minor_count: 2
+acceptance_rate: 83
+peer_utilisation: 75

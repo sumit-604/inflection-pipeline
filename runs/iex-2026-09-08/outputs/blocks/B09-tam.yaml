@@ -1,0 +1,108 @@
+stage: B09-tam
+company: "IEX"
+run_date: "2026-09-08"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "carried forward (B00/B04/B07): regulatory_order_text HIGH - CERC market coupling order, APTEL judgment 13-Feb-2026, Supreme Court orders 11-May-2026 and 27-Jul-2026 referenced but full texts absent from corpus; this stage relied on the AR's own summary and management's verbal account"
+  - "carried forward (B00/B04/B07): sector_cap_row MEDIUM - no Market Infrastructure/Exchange row in the Section 1B cap table, operator ruling wanted before Stage 11"
+  - "carried forward (B04/B07): revenue_basis_segment_split MEDIUM - no DAM/RTM/TAM/Green REVENUE split exists anywhere in the corpus, only volume shares; this stage's DAM-coupling-downside revenue proxy (Rs217.8cr) is DERIVED by applying the 39% DAM VOLUME share to total electricity revenue, an approximation, not a disclosed figure"
+  - "carried forward (B07): coal_exchange_licence_status MEDIUM - the Coal Exchange licence has not yet been awarded to IEX specifically; the 100-120 MT / 250-300 MT by 2035 volume opportunity is real (corroborated against Coal India's own e-auction run-rate) but IEX's capture of it is management claim only, and no per-tonne fee is disclosed so the coal option pool could not be converted to a Rs Cr figure"
+  - "NOT FOUND (new, this stage): full text of CERC's staff paper 'Review of Transaction Fee charged by the Power Exchanges' (Dec-2025); found only via independent web search, absent from the corpus entirely; proposes a fixed 1.5 paise/unit fee for most segments (1.25p for TAM) against the current ~2 paise ceiling, a second and coupling-independent threat to the per-unit fee this whole sizing depends on"
+  - "NOT FOUND (new, this stage): PXIL and HPX individual FY26 volume/revenue disclosures; Method 3 peer aggregation is estimated via IEX's residual share (78-85% of exchange volume), not sourced peer filings"
+  - "NOT FOUND (new, this stage): any per-tonne Coal Exchange transaction fee, or any Carbon Credit Trading Scheme per-tonne exchange fee; both option pools are reported in volume terms only, per the no-estimation rule"
+flags:
+  - "CERC fee review (staff paper, Dec-2025, found via independent web search, ABSENT from corpus): proposes fixed 1.5 paise/unit for most segments (1.25p for TAM) vs current ~2 paise ceiling per side; a second, coupling-independent threat to the per-unit fee this entire sizing depends on"
+  - "Management's 25%-of-total-generation TAM claim (Concall Jul-2026 p.32) requires the short-term market itself to grow faster than its own 15-year 8.9% CAGR trend (AR p.47); mgmt_claim_ratio of 1.47x reads 'reasonable' only because both sides are compared at the same FY32 horizon under this aggressive STM-growth assumption"
+  - "AR's own short-term-market-share-of-generation arithmetic is internally inconsistent: 302 BU / 1,848 BU computes to 16.3%, but AR p.47 states 13%"
+  - "SOM's coupling-downside case implies only 2.9%-5.3% revenue CAGR at year 3/5, far below both the pipeline's 25% CAGR hurdle and IEX's own 8-year historical revenue CAGR of 13.5% (Data_Sheet); the base case (9.2%-9.5%) still falls short"
+  - "Gas (IGX), coal (ICX) and carbon exchange option pools are NOT included in tam_cr/sam_cr/som figures; IEX's own core electricity fee-pool math alone does not support a MASSIVE or STRONG runway class"
+market_definition: "Fee pool on India's short-term (non-PPA) electricity market traded via power exchanges, i.e. IEX's transaction-fee revenue at up to 100% exchange-channel capture of the CERC-defined short-term power market; gas/coal/carbon are sized separately as option pools"
+tam_cr: {conservative: 1087, realistic: 1196}
+sam_cr: 924
+sam_pct_of_tam: 85
+som_3yr_cr: 609
+som_5yr_cr: 722
+som_implied_revenue_cagr: {yr3: 2.9, yr5: 5.3}
+current_sam_share_pct: 60
+revenue_headroom_x: 1.65
+tam_growth_pct: 8.9
+runway_class: "LIMITED"
+mgmt_claim_cr: 2673
+mgmt_claim_ratio: 1.47
+mgmt_claim_read: "reasonable"
+capacity_check: "sufficient - platform throughput is not the constraint (no disclosed outage or capacity breach; clears record single-day volumes); capex_embedded_growth_pct=0 correctly reflects no physical capacity plan exists because none is needed; the actual gate on SOM delivery is CERC product approval timing (Green RTM, Peak DAM/RTM, 11-month TAM all order-reserved 2+ years) and the coupling/fee-review outcomes, not capacity"
+methods_used:
+  - "top-down (total generation minus non-tradable PPA slice, STM x fee)"
+  - "bottom-up (unit economics: addressable unit x total units x penetration x fee)"
+  - "peer/channel aggregation (implied PXIL+HPX residual, cross-checked against exchange-of-STM revenue)"
+  - "import substitution: not applicable"
+  - "global benchmark (Europe EPEX/Nord Pool, China market-based share) - directional only"
+stale_data_flags:
+  - {datapoint: "EPEX ~39% Germany/Austria day-ahead load share; Nord Pool >85% day-ahead load share", source: "Monopolkommission Germany competition-between-exchanges report", year: "2013"}
+searches_performed:
+  - "CERC short term power market report FY26 India volume billion units 2026"
+  - "India power exchange market share IEX PXIL HPX volume 2026"
+  - "India electricity generation growth forecast CEA 2032 billion units National Resource Adequacy Plan"
+  - "CERC power exchange transaction fee cap paise per unit regulation"
+  - "CERC transaction fee power exchange draft regulation 2026 status IEX"
+  - "India Coal Exchange market size e-auction coal volume 2026 million tonnes"
+  - "Carbon Credit Trading Scheme India market size compliance mechanism 2026 CCTS volume"
+  - "European power exchange EPEX Nordpool share of electricity generation traded percentage"
+  - "China power spot market electricity trading share of generation percentage 2025 2026"
+searches_skipped:
+  - "PXIL and HPX individual FY26 volume/revenue disclosures - exchange-specific filings not pursued beyond the general market-share search"
+  - "Indian Carbon Exchange / CCTS per-tonne trading fee schedule - only USD asset-value market-size figures found, wrong basis for a fee pool; no fee-pool figure exists pre-launch"
+  - "Coal Exchange per-tonne transaction fee schedule - not yet finalised or disclosed anywhere found"
+downstream_candidates:
+  - signal: "CERC Short-Term Power Market report (monthly + annual)"
+    entity_type: "regulatory"
+    demand_link: "Directly reports STM volume and exchange/bilateral/DSM split, the load-bearing input to the addressable pool"
+    likely_source: "CERC Market Monitoring Division official reports"
+    cadence: "monthly"
+    shared: true
+  - signal: "CEA generation and demand-met data"
+    entity_type: "macro"
+    demand_link: "Sets the total-generation denominator and forward growth trajectory every SAM/SOM figure scales against"
+    likely_source: "Central Electricity Authority (CEA) monthly/annual reports"
+    cadence: "monthly"
+    shared: true
+  - signal: "CERC market-coupling final regulation / Supreme Court case status"
+    entity_type: "regulatory"
+    demand_link: "Resolves the 20-40% DAM volume-impact range that sets the SOM downside scenario"
+    likely_source: "CERC official notifications; Supreme Court of India cause list"
+    cadence: "event-driven"
+    shared: false
+  - signal: "CERC transaction-fee review final order"
+    entity_type: "regulatory"
+    demand_link: "Sets the per-unit fee multiplied into every revenue figure in this report"
+    likely_source: "CERC official notifications"
+    cadence: "event-driven"
+    shared: true
+  - signal: "Coal India Ltd monthly e-auction/SWMA allocation data"
+    entity_type: "counterparty"
+    demand_link: "Anchors the Indian Coal Exchange option-pool volume base (management's 100-120 MT claim)"
+    likely_source: "Coal India Ltd investor disclosures"
+    cadence: "monthly"
+    shared: false
+  - signal: "Ministry of Coal / Coal Controller Organization licence award"
+    entity_type: "regulatory"
+    demand_link: "Converts the Coal Exchange optionality into an IEX-specific volume base; not yet awarded"
+    likely_source: "Ministry of Coal / CCO official notification"
+    cadence: "event-driven"
+    shared: false
+demand_externally_verifiable: true
+analyst_note: >
+  This stage's core discipline is refusing to size IEX off the rupee value
+  of electricity traded. Revenue (Rs Cr) = Volume (BU) x Fee (paise/kWh)
+  held exactly against FY26 actuals, which is the check that matters most.
+  Two findings should travel to Stage 11 undiluted. First, the CERC
+  transaction-fee review is a genuinely new, corpus-absent risk found only
+  by web search: it threatens the FEE side of the equation independent of
+  coupling's threat to the VOLUME side, and nothing in this run's corpus
+  mentions it. Second, the honest fee-pool math produces a LIMITED runway
+  on the core electricity business alone (2.9%-9.5% implied CAGR against a
+  25% strategy hurdle and a 27.5x operating P/E); the bull case, if one
+  exists, has to be built on the gas/coal/carbon option pools sized
+  separately here, not on the core business re-accelerating past its own
+  addressable pool's growth rate.

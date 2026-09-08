@@ -1,6 +1,6 @@
 ---
 name: stage-14-thesis
-description: Role 2 investment thesis builder per Master v3.6 Role 2 section
+description: Role 2 investment thesis builder per Master v3.7 Role 2 section
 tools: Read, Write, Grep
 model: opus
 ---
@@ -59,3 +59,20 @@ position_size_override: ""  # documented operator override, or ""
 thesis_broken_if: ""        # specific measurable condition
 monitoring_checklist: []    # quarterly items, each specific and measurable
 ```
+
+Master v3.7 (Rules F, G, J) makes two Role 2 sections MANDATORY. The stage is
+not done without both:
+- Section 3G, Entrepreneur Ledger. Every row filled or marked NOT FOUND. State
+  the Pillar 3 line: "Entrepreneur Ledger supports / does not support the
+  premium because ___." The ledger never lifts a position cap the promoter
+  verdict imposes.
+- Section 3.5, Second-Order Section. FIVE linkage chains minimum, in the Rule F
+  block format, each with at least one labelled [INFERENCE]. Chains 1 and 2 are
+  seeded from the Halt 1 dossier Section 4e; extend to the floor. Live-web links
+  this container cannot reach are marked PENDING LIVE VERIFICATION and named,
+  never fabricated. Every confirm-by observation must be measurable; they feed
+  the Expectation Ledger and the Role 5.5 tracker.
+
+Depth is the default (Rule J). Do not be a cheerleader and do not be a coroner:
+a bull claim and a bear claim carry the identical bar, tier the evidence, trace
+the chain, name the confirming observation.

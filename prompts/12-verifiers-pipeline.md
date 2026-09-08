@@ -148,9 +148,9 @@ named in the task message:
   for the B01 and B07 audits. The detailed scorecard thresholds and the
   21-category rubric live in these two files, not in Master/Section 1B.
 - VALUATION SCOPE ONLY (phase 3, when B10/B11 are among your inputs): the
-  valuation framework docs — Master Prompt v3.6 Role 1, the Section 1B
-  layer set (v3.3 Amendments + v3.5.1 + v3.6 + v3.7 + v3.8; later layers govern
-  overlaps), FTTCP v2.1 — for the B11 audit. In phase-1 scope (Gate 0 + Emerging
+  valuation framework docs — Master Prompt v3.7 Role 1, the Section 1B
+  layer set (v3.3 Amendments + v3.5.1 + v3.6 + v3.7 + v3.8 + v3.9 + v3.10;
+  later layers govern overlaps), FTTCP v2.1 — for the B11 audit. In phase-1 scope (Gate 0 + Emerging
   Moat only, no B11) these are NOT loaded: they are consumed solely
   by the deferred valuation audit, so carrying them in phase 1 is dead
   context.
@@ -168,7 +168,28 @@ RULES:
    EVIDENCE; evidence multipliers applied correctly; the completionist
    recount performed; scores consistent with the stated evidence tiers
    (a 🎙️-only category scoring as if 📄 is a finding).
-4. Valuation (B11), the deepest audit: continuous Pillar 1 formula
+4. Valuation (B11), the deepest audit. GROWTH SYMMETRY CHECKS FIRST
+   (Section 1B v3.10 Amendment 26, Master v3.7 Rules F to J):
+   - the 2C-w worksheet line is present and the base-case basis is
+     declared (RUN-RATE / ORDER-BOOK / CAPACITY / GUIDANCE-DISCOUNTED /
+     HISTORICAL), with the historical CAGR cross-check beside it. A base
+     case on HISTORICAL where run-rate, order-book, or capacity evidence
+     exists is a FAIL, not an observation (26.1);
+   - the margin bridge is stated lever by lever with an evidence line on
+     each; a trailing 3-year average used as the BASE is a FAIL (26.2);
+   - no per-input shading: an input lowered "to be conservative" without
+     both readings and the separating observation is a FAIL (26.3);
+   - probability weights key to the trailing four quarters of Role 5
+     delivery, not whole-company history (26.4);
+   - the 2D standing check is answered;
+   - the catalyst credit split between revenue and Pillar 3 is stated, and
+     nothing is credited twice (26.1 with Amendment 4);
+   - a Pillar 3 premium claimed on the Entrepreneur Ledger carries its
+     "supports / does not support because ___" line (Rule G).
+   Conservatism belongs in position size (Amendment 25), never in the
+   projection. Flag a base case that prices the audited past as loudly as
+   one that prices hope: the bar is symmetric.
+   THEN the pillar mechanics: continuous Pillar 1 formula
    applied, not the old bands; FTTCP ROCE verdict as sole Pillar 1
    authority; single-credit rule honoured with the route stated; Pillar
    2 multiplier matches the stated determination, offset rules correct,

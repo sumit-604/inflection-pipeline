@@ -11,7 +11,11 @@ Bookmarks are named by date: `fw-YYYY-MM-DD` (for example `fw-2026-07-18`).
 
 ## The rules right now (08 September 2026)
 
-- Master Project Prompt: **v3.6**
+- Master Project Prompt: **v3.7** (Growth Symmetry companion, Rules F to J:
+  mandatory Second-Order Section, Entrepreneur Ledger, steelman ordering,
+  paired success catalogue, depth by default). The file is still named
+  `Master_Project_Prompt_v3_6.md`; the path is a stable injection target,
+  the version is in the banner.
 - Section 1B (exit multiple): the **seven-layer set** — v3.3 Amendments +
   v3.5.1 Reconciliation + v3.6 Amendments + v3.7 Amendments (commodity
   converters, 20-Aug) + v3.8 Amendments (exit-basis symmetry and option
@@ -27,6 +31,8 @@ Bookmarks are named by date: `fw-YYYY-MM-DD` (for example `fw-2026-07-18`).
 - Debt Capacity Assessment: **v1.0**
 - Market-Implied Assumptions: **v1.0**
 - Downstream Source Discovery Protocol: **v1.0**
+- Success catalogue: created 08-Sep-2026, **0 of 4 names**; Rule I is not
+  enforced in Role 3 until it holds four
 - macro-sheet.md: referenced by the v3.6 stage 11 reads, NOT yet committed
   (open action; Amendment 15 relative PE is not computable until it lands)
 

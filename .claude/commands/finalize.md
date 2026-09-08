@@ -262,7 +262,7 @@ answered from the blocks, write "the run did not establish this" rather than fil
      produced_at: <run date>
      framework_git_commit: <output of `git rev-parse HEAD`>
      framework_tag: <output of `git describe --tags --always`>
-     framework_versions: "Master v3.6 / Section 1B v3.3+v3.5.1+v3.6+v3.7+v3.8+v3.9+v3.10 / FTTCP v2.1"
+     framework_versions: "Master v3.7 / Section 1B v3.3+v3.5.1+v3.6+v3.7+v3.8+v3.9+v3.10 / FTTCP v2.1"
    This is a plain record, not a decision. It gets committed with the rest.
 
 9. COMMIT all outputs and the updated companies/<TICKER>.md with message

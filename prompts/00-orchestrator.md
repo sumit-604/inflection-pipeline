@@ -2,7 +2,7 @@
 ## Sonnet 5 Primary Pipeline with Claude Verification Layer
 
 Replaces the Gemini (Jaimini) upstream pipeline. One model family end to end.
-Valuation authority: Master Project Prompt v3.6, Section 1B layer set (v3.3
+Valuation authority: Master Project Prompt v3.7, Section 1B layer set (v3.3
 Amendments + v3.5.1 + v3.6 + v3.7 + v3.8; later layers govern the items they name) (Four-Pillar
 Framework, RRM dual-track, Hurdle Ratio), FTTCP v2.1. No other exit PE source
 is permitted anywhere in the pipeline.

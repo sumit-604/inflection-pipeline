@@ -51,7 +51,7 @@ Rules:
 - Trailing 3-year average margin is the BEAR case, not the base.
 - Bull = guided margin at face value where Role 5 grade is A or B.
 - A lever with no evidence line is not a lever. Drop it.
-- If the bridge lifts margin more than 400 bps in three years, the Second-Order Section (Master Prompt Amendment, Rule F) must show the customer-side or cost-side mechanism that pays for it. **OPEN ITEM (08-Sep-2026):** the Second-Order Section / Rule F is not in the repo copy of the Master Prompt, and no session may reconstruct it. Until the operator lands it, the mechanism is named inline in 2B with its evidence line, flagged "Second-Order Section absent, mechanism stated inline".
+- If the bridge lifts margin more than 400 bps in three years, the Second-Order Section must carry a chain showing the customer-side or cost-side mechanism that pays for it, and the bridge names that chain by number. **RESOLVED 08-Sep-2026:** Rule F landed the same day with the Growth Symmetry companion amendment (Master Prompt v3.7). The Second-Order Section is Role 2 Section 3.5, mirrored into Annual Report Analysis Protocol Step 6.5 and FTTCP Step 4.5. The earlier "Second-Order Section absent, mechanism stated inline" workaround is retired.
 
 The v3.5 cyclical override is unchanged and still supersedes this bridge for any sector flagged cyclical: base = full-cycle average margin, bear = cycle trough, bull = cycle peak.
 

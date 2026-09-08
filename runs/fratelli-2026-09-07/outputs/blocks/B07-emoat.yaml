@@ -1,0 +1,47 @@
+stage: B07-emoat
+company: "FRATELLI"
+run_date: "2026-09-07"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "inputs/prospectus/ empty — not a gap, listed via Tinna Trade shell, no IPO"
+  - "inputs/rating/ empty. inputs/shareholding/ empty. inputs/research/ empty"
+  - "Q1FY27 concall transcript not published — CORPUS GAPPED-FRESHNESS"
+  - "FY2022 and FY2023 absent from every source"
+  - "No winery utilisation % disclosed anywhere in the corpus (Section 2B)"
+  - "No case-level ASP/margin split between still wine and Shotgun RTD disclosed"
+  - "No named competitor in Annual Report or Fratelli decks; peer cross-check used peer-presentation files present in the run folder but not originally listed among this stage's injected inputs"
+flags:
+  - {type: FLAG-EMOAT-CONFIRMS-GATE0, reason: "Forward scan finds real but modest motion (distribution/vineyard backward integration, CSD channel access, shared-infrastructure product cadence) that does not translate into wine-segment profitability (Ind AS 108 result -Rs10.49cr FY25, -Rs10.61cr FY26). em_score 13 sits far below the EM>=25 UA qualifier; Gate 0's NONE/AVOID is not overturned."}
+  - {type: FLAG-PEER-CONFLICT, reason: "Sula Vineyards (market leader) discloses above-50% share in domestic premium wines and ~25,000 POS touchpoints across 23 states/7 UTs, plus 3 operating vineyard resorts (154+ keys, +21% YoY room revenue). Fratelli's repeated '1/3 market share' claim and its 31,000-touchpoint claim (which numerically exceeds Sula's own count) are not reconciled against this; Fratelli's hospitality vertical is a catch-up move, not a first-mover position."}
+em_score: 13
+em_classification: "MODEST"
+active_categories:
+  - {id: "A4", name: "Product platform / modular architecture", strength: "Moderate", evidence_type: "documented", time_to_materialise: "near-term, already occurring"}
+  - {id: "B1", name: "Backward integration and RM security", strength: "Moderate", evidence_type: "documented", time_to_materialise: "ongoing, already built"}
+  - {id: "B2", name: "Qualification lock-in (CSD channel)", strength: "Moderate", evidence_type: "documented", time_to_materialise: "near-term (H1-H2 FY27)"}
+evidence_mix: {documented: 15, claim: 8, inference: 4}
+completionist_recount: "documented-item recount performed: 14 documented items across 6 categories (A4, B1, B2, C2, F1, H3)"
+catalysts_12m:
+  - {catalyst: "CSD sales commencement for Merlot/Noi Sparkling/Shotgun-Strong", window: "H1-H2 FY27", evidence_type: "documented", anchor: "Investor_Presentation_Q4FY26_May2026.pdf p.16; Q4 FY26 call"}
+  - {catalyst: "Shotgun RTD scale to 200,000 cases FY27 target (double FY26)", window: "FY27", evidence_type: "management claim", anchor: "Investor_Presentation_Q1FY27_Aug2026.pdf p.13"}
+  - {catalyst: "ESOP Scheme 2026 first grant allocations", window: "FY27", evidence_type: "documented", anchor: "Annual_Report_FY2026.pdf p.31/36 (AGM notice)"}
+  - {catalyst: "Hospitality venture decision point (review and possibly action)", window: "CY27-28", evidence_type: "management claim", anchor: "Q4 FY26 call"}
+  - {catalyst: "FY27 quarterly prints tracking toward 30% growth / PAT breakeven vs Q1FY27 actual +22.5% and continuing net loss", window: "FY27, each quarter", evidence_type: "documented", anchor: "Results_Q1FY27_2026-08-11.txt; Q4 FY26 call"}
+capex_embedded_growth_pct: 10
+optionality_register:
+  - {optionality: "WOD/touchpoint activity rate (reorder vs one-time stocking) never disclosed", converting_evidence: "Same-outlet/reorder-rate metric disclosed by management", first_appears: "Investor presentation or concall", window: "2-4 quarters, no signal it will happen"}
+  - {optionality: "Hospitality/wine-tourism venture stuck in planning stage, zero ground broken", converting_evidence: "Definitive agreement signed and capex committed", first_appears: "Reg 30 filing", window: "CY27-28, already deferred twice"}
+  - {optionality: "CSD channel scale-up not yet reflected beyond 8% of revenue", converting_evidence: "Two consecutive quarters of disclosed CSD revenue growth", first_appears: "Quarterly results/investor presentation", window: "H1-H2 FY27"}
+  - {optionality: "Grape-clone tacit know-how never filed as IP", converting_evidence: "Filed plant-variety registration or formal trade-secret disclosure", first_appears: "Exchange filing or AR IP note", window: "NOT FOUND, no signal of filing intent"}
+  - {optionality: "ESOP Scheme 2026 grants not yet allocated to any named role class", converting_evidence: "Grant disclosure naming technical/vineyard/winemaking roles at above-sector value", first_appears: "FY27 AR remuneration annexure", window: "~mid-2027"}
+  - {optionality: "Export scale (17 countries) never quantified as % of revenue", converting_evidence: "Export revenue disclosed as % of total", first_appears: "AR or concall", window: "FY27-28"}
+  - {optionality: "Mayank Singhal/PI Industries relationship never formalised as strategic", converting_evidence: "Named commercial agreement, JV, or AR disclosure calling it strategic", first_appears: "Reg 30 filing / AR RPT note", window: "NOT FOUND"}
+  - {optionality: "'1/3 market share' claim never corroborated against a named peer or third party", converting_evidence: "Independent third-party market-share estimate naming Fratelli's share", first_appears: "Research report or industry-body publication", window: "NOT FOUND; peer cross-check in this stage cuts against the claim as framed"}
+combined_assessment: "AVOID"
+combined_reasoning: "em_score 13 is far below the EM>=25 UA qualifier and does not offset Gate 0's mechanical AVOID (7 of 8 deal-breakers fired, moat NONE); the wine segment itself has posted two consecutive years of loss despite the assets this scan found."
+top_moat_risks:
+  - "A4 product-platform SKU proliferation without disclosed unit economics could mask margin dilution rather than reveal leverage"
+  - "B1 backward integration exposed to climate/harvest variability, already flagged as a challenging 2026 harvest"
+  - "B2 CSD channel access is not shown to be exclusive; competitors can apply, and the ~45% CSD-share claim is unverified"
+analyst_note: "The three Moderate categories (A4, B1, B2) are the most defensible forward signals in this scan, but none has been shown to convert into segment profit: the wine-segment Ind AS 108 result was -Rs10.49cr (FY25) and -Rs10.61cr (FY26) against +Rs18.92cr (FY24). Credibility grade D (B05) means every spoken claim in this report, including '1/3 market share' and 'capex cycle behind us,' should be read as unproven narrative, not as evidence of an emerging moat, until a filed number backs it."

@@ -15,3 +15,4 @@ its own stage. Phase 1 (evidence) only; phases 2 and 3 append their own lines.
 | 4 | business model decoder | claude-sonnet-5 | default | n/a | n/a | 141903 | 9m07s | 1 |
 | 5 | concall analysis (5 transcripts) | claude-sonnet-5 | default | n/a | n/a | 215133 | 10m42s | 1 |
 | 6 | peer concall verification | claude-sonnet-5 | default | n/a | n/a | 258306 | 7m37s | 1 |
+| 7 | emerging moat 22-category scan | claude-sonnet-5 | default | n/a | n/a | 184820 | 11m44s | 1 |

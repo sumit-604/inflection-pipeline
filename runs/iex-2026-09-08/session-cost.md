@@ -12,3 +12,5 @@
 | 4 | business model decoder | claude-sonnet-5 | default | n/a | n/a | 129,636 | 8m11s | 1 |
 | 5 | concall analysis (4 calls) | claude-sonnet-5 | default | n/a | n/a | 211,929 | 9m03s | 1 |
 | 8 | board/KMP check (web search) | claude-sonnet-5 | default | n/a | n/a | 146,912 | 8m21s | 1 |
+| 6 | peer concall verification | claude-sonnet-5 | default | n/a | n/a | 196,845 | 10m33s | 1 |
+| 7 | emerging moat 22-category scan | claude-sonnet-5 | default | n/a | n/a | 132,790 | 9m50s | 1 |

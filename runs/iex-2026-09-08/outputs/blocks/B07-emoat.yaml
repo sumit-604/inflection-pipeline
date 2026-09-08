@@ -1,0 +1,74 @@
+stage: B07-emoat
+company: "IEX"
+run_date: "2026-09-08"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - type: rating
+    severity: NOT_A_GAP
+    detail: "No rated debt (borrowings Rs11.16cr, not a Large Corporate). Unrateable by absence, not by missed collection. Carried from B00/B01/B05."
+  - type: research
+    severity: LOW
+    detail: "inputs/research/ empty. Broker notes non-anchored, leads only. Carried from B00."
+  - type: regulatory_order_text
+    severity: HIGH
+    detail: "CERC market coupling order, APTEL judgment (13-Feb-2026) and both Supreme Court orders remain absent from the corpus. This stage relied on the AR's own summary (p.61-62) and management's verbal account across four calls. Carried from B00/B01/B05."
+  - type: screening_csv
+    severity: MEDIUM
+    detail: "screener-Profit_Loss/Balance_Sheet/Cash_Flow/Quarters.csv hold row labels and no values. Not used by this stage; Data_Sheet figures cited via B01/step1 brief instead. Carried from B00."
+  - type: sector_cap_row
+    severity: MEDIUM
+    detail: "Section 1B cap table has no Market Infrastructure/Exchange row; not this stage's concern but carried forward for Stage 11. Carried from B00."
+  - type: prospectus_own
+    severity: NOT_A_GAP
+    detail: "IEX listed 2017, outside 3-year window; IGX's own DRHP abridged prospectus (Jul-2026) was read for this stage instead. Carried from B00."
+  - type: image_only_pdfs
+    severity: LOW
+    detail: "Two SAST Reg29(2) disclosures are scanned, no extractable text. Not consulted by this stage. Carried from B00."
+  - type: revenue_basis_segment_split
+    severity: MEDIUM
+    detail: "No revenue-basis DAM/RTM/TAM/Green split exists anywhere in the corpus; every product-mix percentage in this report is volume share, not revenue share (AR Note 28 gives only a two-way Electricity-bundle vs Certificates revenue split). Load-bearing for Stage 11 EPS/multiple work if the DAM slice is priced separately."
+  - type: coal_exchange_licence_status
+    severity: MEDIUM
+    detail: "The Coal Exchange licence has not yet been awarded to IEX specifically as of this corpus; H1/B3 scoring in this stage treats the regulatory mechanism as documented and IEX's capture of it as a management claim. NOT FOUND: any CCO licence grant naming IEX."
+flags:
+  - "F2 (execution moat) scored 0 as a NEGATIVE finding, not an absence: B05 credibility grade C, 3 of 8 promises missed, the single load-bearing coupling-impact number (20-40%) given once in prepared remarks and not defended under direct questioning in the same call. Every management-claim item in this scan should be weighted against that record."
+  - "The FY26 AR itself carries an unreconciled RTM volume-share figure (34% at the internally consistent chart/risk section vs ~39-40% at two narrative passages), inherited from B01 data_notes and unresolved by this stage's own reading."
+em_score: 28
+em_classification: "STRENGTHENING"
+active_categories:
+  - {id: "A4", name: "Product platform / modular architecture", strength: "Moderate", evidence_type: "documented", time_to_materialise: "delivered (VPPA/Green Contracts); pending tranche in optionality register"}
+  - {id: "B3", name: "Supply chain network effect (Coal Exchange aggregation)", strength: "Moderate", evidence_type: "documented+claim", time_to_materialise: "12-24m"}
+  - {id: "C1", name: "Customer ecosystem / embedded relationships", strength: "Strong", evidence_type: "documented", time_to_materialise: "ongoing/already active"}
+  - {id: "C2", name: "Customer base diversification", strength: "Moderate", evidence_type: "documented", time_to_materialise: "ongoing"}
+  - {id: "D2", name: "Digital platform (RTM/BESS/API lock-in, ex-DAM)", strength: "Strong", evidence_type: "documented+claim", time_to_materialise: "ongoing, DAM slice threatened by coupling"}
+  - {id: "E1", name: "Geographic and regulatory first-mover", strength: "Strong", evidence_type: "documented", time_to_materialise: "ongoing/already active"}
+  - {id: "G1", name: "War chest", strength: "Strong", evidence_type: "documented", time_to_materialise: "ongoing"}
+  - {id: "H1", name: "Industry consolidation beneficiary (Coal Exchange forced e-auction sunset)", strength: "Strong", evidence_type: "documented+claim", time_to_materialise: "12-24m"}
+  - {id: "R1", name: "Regulatory and policy tailwinds (ex-coupling)", strength: "Strong", evidence_type: "documented", time_to_materialise: "ongoing/12-24m"}
+evidence_mix: {documented: 21, claim: 10, inference: 3}
+completionist_recount: "9 categories scored Strong/Moderate against a 3-6 typical base rate; recount performed: 21 documented items across 8 categories (A4, B3, C1, C2, D2, E1, G1, H1) plus R1's VPPA Gazette notification counted once against A4 to avoid double-counting; every active row carries at least one genuine 📄 anchor, none rests on 🎙️/🔍 alone; F2 scored 0 as a negative finding, not force-fit positive credit."
+catalysts_12m:
+  - {catalyst: "Supreme Court proceedings and/or final CERC market coupling regulations (draft issued 17-Apr-2026, hearing scheduled 03-Aug-2026)", window: "0-12m, no firm date; CERC's own Jan-2026 target already missed 7+ months", evidence_type: "documented", anchor: "AR p.61-62; B05 trigger 1"}
+  - {catalyst: "IGX IPO/OFS completion against the PNGRB 31-Dec-2026 deadline (DRHP filed 14-Jul-2026)", window: "0-4m to deadline", evidence_type: "documented", anchor: "IGX DRHP abridged prospectus Jul-2026; AR p.33-34; B05 trigger 6"}
+  - {catalyst: "Coal Exchange licence outcome (application portal launched 15-Jul-2026, management FY27 operational target)", window: "0-12m", evidence_type: "documented+claim", anchor: "AR p.52-53; Inv. Pres. slide 34; B05 trigger 5"}
+  - {catalyst: "CERC rulings on the three pending petitions: 11-month TAM (2+ years pending), Green RTM, Peak DAM/RTM (all 'order reserved')", window: "no firm date, several already 2+ years overdue", evidence_type: "claim", anchor: "B05 trigger 8; Q1FY27 Analyst Meet transcript, 24-Jul-2026"}
+capex_embedded_growth_pct: 0
+optionality_register:
+  - {optionality: "Green RTM CERC approval", converting_evidence: "Final CERC order", first_appears: "CERC order / exchange filing", window: "pending, no date; order reserved 4 consecutive quarters"}
+  - {optionality: "Peak DAM/RTM (BESS) CERC approval", converting_evidence: "Final CERC order", first_appears: "CERC order / exchange filing", window: "pending, no date; order reserved 4 consecutive quarters"}
+  - {optionality: "11-month TAM contract CERC approval (15-20 BU additional market)", converting_evidence: "Final CERC order", first_appears: "CERC order / exchange filing", window: "pending 2+ years, no date given"}
+  - {optionality: "Minerals Exchange", converting_evidence: "Board approval, subsidiary incorporation, then licence", first_appears: "exchange filing / AR next cycle", window: "earliest-stage item, unclear"}
+  - {optionality: "Coal Exchange licence award to IEX specifically", converting_evidence: "CCO licence grant naming IEX", first_appears: "exchange filing / MCA filing", window: "FY27 management target, unconfirmed"}
+  - {optionality: "CCTS carbon credit trading designated-exchange determination", converting_evidence: "BEE/CERC order naming the trading venue", first_appears: "CERC notification", window: "trading target Oct-2026; designation not yet IEX-confirmed"}
+  - {optionality: "BESS merchant-flow ~80%-via-exchange claim", converting_evidence: "Disclosed BESS volume/revenue split with counterparty granularity", first_appears: "AR next cycle or a monthly power market update", window: "12-24m, unaudited today"}
+  - {optionality: "JEPX / PJM Technologies / Powerledger Australia MoUs", converting_evidence: "Any named product, pilot, or revenue link resulting from the MoU", first_appears: "AR next cycle / exchange filing", window: "unclear; two of three MoUs show no evidence of ongoing activity"}
+  - {optionality: "AI-driven bidding recommendations / predictive analytics", converting_evidence: "Disclosed product launch with adoption or revenue metric", first_appears: "AR next cycle", window: "unclear, concept stage"}
+combined_assessment: "EXCELLENT+"
+combined_reasoning: "Gate 0 EXCELLENT/FORTRESS (core 85, moat 30, grand 115) meets a MOAT STRENGTHENING emerging picture (28/92, 9 of 22 categories, 21 documented items, zero I1/I2 points): real new-market wins (Coal Exchange, ICX, IGX, VPPA, LPSC) extend an already-fortress position rather than transform it, while one documented, adjudicated-in-progress threat (DAM coupling) attacks the segment that built the historical moat."
+top_moat_risks:
+  - "RTM coupling risk: CERC has deferred RTM coupling to 'a later stage,' but every genuinely-new moat this scan finds (D2's RTM/BESS reinforcement) depends on that deferral holding; a shift to scheduled RTM coupling would flip the STRENGTHENING read."
+  - "Coal Exchange licence may not be awarded to IEX specifically; the regulatory mechanism (forced e-auction sunset) is documented, IEX's capture of it is management claim only."
+  - "Management credibility (B05 grade C): the load-bearing 20-40% DAM impact figure was given once, unaudited, and not defended under direct questioning; every management-claim item in this scan (BESS 80% flow, 'well positioned' framing) should be read against that record."
+  - "REC market active decline (-86.6% YoY Aug-2026) with a recycled, unresolved excuse across two quarters undermines confidence in the broader 'diversified new products' narrative even though REC is not itself scored in this scan."
+analyst_note: "No revenue-basis DAM/RTM/TAM/Green split exists anywhere in the corpus; every product-mix figure in this report is volume, not revenue. This bounds every category tied to segment mix (A4, D2, R1) and is load-bearing for Stage 11 if the DAM slice needs separate pricing. The AR's own unreconciled RTM share (34% vs ~39-40%, inherited from B01) was not resolved by this stage's reading either."

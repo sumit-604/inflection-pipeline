@@ -1,0 +1,123 @@
+stage: B08-promoter
+company: "IEX"
+run_date: "2026-09-08"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - type: rating
+    severity: NOT_A_GAP
+    detail: "Carried from B00. No rated debt; not relevant to this stage."
+  - type: research
+    severity: LOW
+    detail: "Carried from B00. inputs/research/ empty, non-anchored anyway."
+  - type: regulatory_order_text
+    severity: HIGH
+    detail: >
+      Carried from B00. CERC market coupling order, APTEL judgment, two Supreme
+      Court order texts absent from corpus. Load-bearing for stage 11/13
+      business-risk analysis, not for this stage's conduct findings.
+  - type: screening_csv
+    severity: MEDIUM
+    detail: "Carried from B00. Not relevant to this stage."
+  - type: sector_cap_row
+    severity: MEDIUM
+    detail: "Carried from B00. Not relevant to this stage."
+  - type: prospectus_own
+    severity: NOT_A_GAP
+    detail: "Carried from B00."
+  - type: image_only_pdfs
+    severity: MEDIUM
+    detail: >
+      Elevated from LOW (B00) to MEDIUM in this stage's own context. The two
+      SAST Regulation 29(2) disclosures (2026-04-21, 2026-06-10) are scanned
+      images with no extractable text. Web search could not identify the
+      acquirer or the direction/threshold of either disclosure. This is a
+      genuine gap in the institutional-control transition picture this stage
+      was specifically asked to establish.
+  - type: shareholding_xml_shareholder_names
+    severity: LOW
+    detail: >
+      The >1% named-shareholder table inside the shareholding pattern XML
+      files could not be extracted with the tools available this run (single
+      unbroken line, no tag-level grep match). Institutional holder names
+      (SBI MF, ICICI Prudential MF, Kotak, Invesco) are sourced from web
+      search (Trendlyne) instead of the corpus XML, cross-checked only at
+      the aggregate FII/DII percentage level against B00/screener.
+flags:
+  - type: FLAG-PROMOTER
+    verdict: "TRUSTWORTHY"
+    top_findings:
+      - "No promoter exists (0.00% promoter/promoter-group holding, shareholding pattern 30-Jun-2026); this is a board/KMP/institutional-control check, not a family check."
+      - "Whistleblower complaint (conflict of interest, potential business diversion, unnamed 'certain officials') carries an unresolved status conflict inside the same FY26 Annual Report: Notes 46/49 and CARO xi(c) (dated 23-Apr-2026) say investigation ONGOING; the Board's Report (23-Jul-2026) and BRSR (14-Aug-2026) describe it as CONCLUDED with findings and remedial action. No official named, no allegation quantified, no note updated to reconcile the two statuses."
+      - "SEBI barred 8 individuals and impounded ~Rs173cr for insider trading in IEX shares/derivatives around the Jul-2025 CERC coupling announcement (order 15-Oct-2025); the leak traces to a CERC Economics Division official and unrelated family/social contacts. NO IEX director, KMP, or promoter-group entity is named or implicated."
+      - "IEX's promoter-less structure traces to a 2014 regulator-forced divestment of its original promoter, Financial Technologies (India) Ltd (FTIL/Jignesh Shah), following FTIL group company NSEL's Rs5,574cr payment default and a 'not fit and proper' ruling; current board/KMP have no connection to that episode."
+      - "Two SAST Regulation 29(2) disclosures (21-Apr-2026, 10-Jun-2026) are unreadable scanned images; acquirer identity and direction of the 2%+ shareholding move unresolved."
+verdict: "TRUSTWORTHY"
+scorecard: {clean: 6, caution: 4, red: 0}
+deal_breakers: []
+adverse_findings:
+  - finding: "Whistleblower complaint alleging conflict of interest and potential business diversion by unnamed 'certain officials'; internally inconsistent status (ongoing per Notes 46/49 and CARO xi(c), concluded per Board's Report and BRSR) within the same filed Annual Report."
+    evidence_tier: "VERIFIED"
+    source: "Annual_Report_2026.pdf, Note 46 p.224, Note 49 p.291, CARO xi(c) p.177, Board's Report p.83 (signed 23-Jul-2026), BRSR filing 2026-08-14"
+    date: "2026-04-23 (financial statements) / 2026-07-23 (Board's Report) / 2026-08-14 (filing)"
+  - finding: "SEBI interim order barred 8 individuals, impounded ~Rs173cr, for insider trading in IEX securities using leaked CERC information; leak originated from a CERC official, not from IEX. No IEX person implicated."
+    evidence_tier: "MEDIA REPORTED"
+    source: "sebi.gov.in/sebi_data/attachdocs/oct-2025/interim_order_ie1.pdf; corroborated by Business Standard, finshots.in summary"
+    date: "2025-10-15"
+  - finding: "Original IEX promoter FTIL (Jignesh Shah) forced to fully divest its ~26% IEX stake by CERC order following FTIL group company NSEL's Rs5,574cr payment default and a SEBI/FMC 'not fit and proper' finding; Shah resigned from IEX board 2014."
+    evidence_tier: "MEDIA REPORTED"
+    source: "Business Standard, DNA India, multiple 2014-2015 reports (web search)"
+    date: "2014"
+  - finding: "Two SAST Regulation 29(2) disclosures are unreadable scanned images; acquirer and direction of a 2%+ shareholding change on each date not established."
+    evidence_tier: "UNVERIFIED"
+    source: "inputs/announcements/SAST_Reg29_2_Disclosure_2026-04-21.pdf, ..._2026-06-10.pdf (image-only, no extractable text)"
+    date: "2026-04-21 / 2026-06-10"
+transition_evidence:
+  - "2014 forced exit of original promoter FTIL following NSEL group-company default and SEBI/FMC 'not fit and proper' ruling; IEX has run as a professional, non-promoter-controlled board since, well before this run's evidence window (companies house filings, multiple 2014-2015 press reports)."
+  - "Rohit Bajaj elevated from internal non-board Executive Director to Joint Managing Director, effective 10-Aug-2024, read as internal succession planning rather than an outside-hire governance upgrade."
+  - "No fresh (within this run's evidence window) auditor upgrade, no fresh institutional entry beyond routine quarter-to-quarter FII/DII churn (FII 12.63%, DII ~31.47% at 30-Jun-2026, broadly stable per B00), and no fresh independent-director appointment beyond the routine Aug-2024/Mar-2025 refresh already reflected in FY25."
+pledge_pct_latest: 0
+pledge_trend: "NOT APPLICABLE - no promoter/promoter-group shareholding exists to pledge (0.00% at all five quarters Jun-2025 through Jun-2026)"
+searches_performed:
+  - "IEX Indian Energy Exchange whistleblower complaint conflict of interest officials 2026"
+  - "Indian Energy Exchange insider trading allegation market coupling January 2026"
+  - "Satyanarayan Goel IEX Chairman Managing Director background career"
+  - "Indian Energy Exchange SEBI order CERC proceedings directors 2026"
+  - "WebFetch: finshots.in CERC-IEX insider trading saga explained (SEBI interim order detail extraction)"
+  - "Indian Energy Exchange largest institutional shareholders FII DII 2026 SBI Mutual Fund LIC stake"
+  - "IEX Regulation 29(2) SAST disclosure April 2026 June 2026 acquirer shares"
+  - "Rohit Bajaj IEX Joint Managing Director background career"
+  - "Vineet Harlalka IEX CFO Company Secretary background"
+  - "Indian Energy Exchange SAST Regulation 29 disclosure BSE 540750 2026 crossed 2%"
+  - "IEX Indian Energy Exchange proxy advisory IiAS governance rating 2026"
+  - "Gautam Dalmia Amit Garg IEX independent director Dalmia Bharat background"
+  - "Dalmia Bharat IEX stake sale 2026 Gautam Dalmia sold shares"
+  - "Indian Energy Exchange bulk deal block deal stake sale April 2026 June 2026"
+  - "FTIL Financial Technologies IEX promoter fit and proper NSEL divest exit history"
+  - "IEX history founder promoter Jignesh Shah 63 Moons exit shareholding"
+  - "Indian Energy Exchange director OR CFO OR Satyanarayan Goel lawsuit court case named"
+  - "IEX power exchange rumour verification reply April 2026 CERC market coupling clarification"
+searches_skipped:
+  - "Glassdoor / AmbitionBox employee-reputation search for IEX (Section 4B) - not run this session, time-budgeted against the higher-priority whistleblower and SEBI-order verification."
+  - "IiAS/SES/InGovern proxy-advisory scorecard specific to IEX - attempted once (see performed list), returned no usable result; not retried with alternate query phrasing."
+  - "Named >1% shareholder register from the shareholding-pattern XML files themselves (tool-level extraction failure, not a search skip, but recorded here since it forced reliance on secondary web sources for institutional-holder names)."
+  - "Exact acquirer identity for the two unreadable SAST Reg 29(2) filings (2026-04-21, 2026-06-10) - multiple search phrasings tried, none returned IEX-specific results; OCR of the source PDFs was out of scope for this stage's tools."
+verdict_basis: >
+  Every current director and KMP has a clean regulatory, criminal, civil-
+  litigation, RPT and pledge record; the company carries zero debt and zero
+  promoter pledge because it has zero promoter holding. The verdict is held at
+  TRUSTWORTHY rather than EXEMPLARY solely because of one internally
+  inconsistent, unresolved governance disclosure (the whistleblower complaint's
+  status conflict between Notes 46/49/CARO and the Board's Report/BRSR within
+  the same filed Annual Report) plus two unreadable SAST filings, both open
+  evidentiary gaps rather than adverse conduct findings.
+analyst_note: >
+  The SEBI Rs173cr insider-trading order and the CERC market-coupling
+  litigation dominate IEX's recent news flow but belong to the business/
+  regulatory-risk analysis (stage 1/11/13), not to this conduct check: no IEX
+  person is implicated in the SEBI order, and IEX is the appellant, not the
+  respondent, in the coupling litigation. Keep these two threads out of the
+  promoter/governance flag line downstream; only the whistleblower-status
+  inconsistency and the unreadable SAST filings belong there. The 2014 FTIL
+  forced-divestment history is offered as context for why no promoter exists
+  today, not as a live risk; no current officer has any connection to it.

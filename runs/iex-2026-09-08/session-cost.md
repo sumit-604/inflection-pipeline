@@ -9,3 +9,6 @@
 | 2 | notes pass 3 (consolidation, pass1 absent) | claude-sonnet-5 | default | n/a | n/a | 130,357 | 8m18s | 1 |
 | 2 | notes pass 3 (rerun, all 3 passes present) | claude-sonnet-5 | default | n/a | n/a | 123,372 | 6m12s | 2 |
 | 3 | AR backward deep dive | claude-sonnet-5 | default | n/a | n/a | 291,043 | 13m12s | 1 |
+| 4 | business model decoder | claude-sonnet-5 | default | n/a | n/a | 129,636 | 8m11s | 1 |
+| 5 | concall analysis (4 calls) | claude-sonnet-5 | default | n/a | n/a | 211,929 | 9m03s | 1 |
+| 8 | board/KMP check (web search) | claude-sonnet-5 | default | n/a | n/a | 146,912 | 8m21s | 1 |

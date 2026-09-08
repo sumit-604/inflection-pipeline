@@ -1,0 +1,92 @@
+stage: B04-bizmodel
+company: "IEX"
+run_date: "2026-09-08"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "carried forward (B00): regulatory_order_text HIGH - CERC market coupling order, APTEL judgment 13-Feb-2026, Supreme Court orders 11-May-2026 and 27-Jul-2026 referenced but full texts absent from corpus"
+  - "carried forward (B00): rating NOT_A_GAP - no rated debt, IEX not a Large Corporate per its own 13-Apr-2026 filing"
+  - "carried forward (B00): sector_cap_row MEDIUM - Section 1B cap table has no Market Infrastructure/Exchange row, manifest carries Platform/SaaS/IT services at 45x FLAGGED, operator ruling wanted before Stage 11"
+  - "revenue is disaggregated in the audited notes only into Electricity bundle (RTM+DAM+TAM+Green) vs Certificates bundle (REC+ESCerts); no DAM/RTM/TAM/Green revenue split exists anywhere, only volume splits (AR p.211, p.58, Inv. Pres. slide 12)"
+  - "NOT FOUND: named competitor identities (e.g. PXIL, HPX) and their individual market shares or fee schedules; only an aggregate 80-85% IEX share is disclosed (Concall Jul-2026 p.4)"
+  - "NOT FOUND: standalone ESCert volume (bundled with REC in the certificates revenue and volume disclosures)"
+flags:
+  - "Treasury Income (company's own MD&A label) is 20.4% of standalone total revenue and 17.6% of consolidated total revenue FY26 (AR p.64); operating EPS must strip it before any multiple is applied"
+  - "Market coupling (CERC order Jul-2025, draft regulations Apr-2026, Supreme Court appeal pending) attacks the network-effect/liquidity moat specifically behind DAM price discovery; DAM is already down to 39% of FY26 volume from 95% in FY16, and RTM (34%, uncoupled) is close to overtaking it"
+  - "REC volumes collapsed 56.3%-92.3% YoY in every disclosed FY27 month (Jun/Jul/Aug 2026 Power Market Updates); certificates revenue is only 4.2% of total revenue but the trend is severe"
+  - "Single unnamed customer is 16.2% of FY26 standalone revenue (AR p.211, note 28)"
+  - "IGX offer for sale of 1.671cr shares cuts IEX's 47.28% stake to the PNGRB 25% ceiling (announcements__IGX_DRHP_Filing_Intimation; Concall Jul-2026 p.2-3); this converts part of the associate stake to cash/listed value and should enter valuation as an SOTP overlay, not the primary method"
+business_type: "platform"
+revenue_streams:
+  - {name: "Electricity transaction fees (DAM+RTM+TAM+Green)", type: "volume-based take rate", pct_of_revenue: 91.7, predictability: "M"}
+  - {name: "Certificate transaction fees (REC+ESCerts)", type: "volume-based take rate", pct_of_revenue: 4.2, predictability: "L"}
+  - {name: "Annual subscription + membership/processing/transfer fees", type: "recurring subscription", pct_of_revenue: 3.9, predictability: "H"}
+  - {name: "Treasury income (interest/dividend/MTM on investment book)", type: "non-operating, investment return", pct_of_revenue: 20.4, predictability: "M"}
+asset_intensity: "light"
+wc_intensity: "low"
+pricing_power: "moderate"
+cyclicality: "secular-growth"
+moats_present:
+  - {moat: "Network effect (liquidity pool)", durability: "MODERATE, narrowing in DAM under market coupling"}
+  - {moat: "Switching costs (API/back-office integration)", durability: "HIGH for existing large members"}
+  - {moat: "Cost advantage (near-zero marginal cost per trade)", durability: "HIGH"}
+  - {moat: "Brand (default reference price for Indian power)", durability: "MODERATE"}
+  - {moat: "Efficient scale (one liquidity pool serves the market)", durability: "MODERATE"}
+  - {moat: "Data/process advantage (two decades of bidding data, audited algorithm)", durability: "MODERATE"}
+valuation_methods:
+  primary: {method: "P/E on operating EPS, treasury income stripped", why: "asset-light, high-margin, cash-generative platform; Treasury Income is 20.4% of standalone / 17.6% of consolidated total revenue (AR p.64) and must not be credited inside an operating multiple; sector-cap row for Market Infrastructure/Exchange still needs an operator ruling before Stage 11 finalises the multiple"}
+  secondary: {method: "EV/EBITDA", why: "neutralises the large net-cash and investment book (Rs1,993.10cr) so the operating engine compares cleanly against peers MCX/BSE/CDSL"}
+  tertiary: {method: "DCF (scenario-based, not point estimate)", why: "cash conversion is predictable (CFO/PAT 0.88) but terminal value is highly sensitive to unresolved DAM fee durability post-coupling; use as a bracket, not a single number"}
+  not_applicable:
+    - "Asset-based/book value - net block Rs96.68cr against Rs10,396.21cr market cap bears no relation to earnings power"
+    - "Replacement cost - the moat is the liquidity pool and customer base, not the technology, which management says it can re-engineer in-house at no added cost for coupling compliance"
+    - "SOTP as PRIMARY - relevant as an overlay once IGX lists (47.28% stake being cut to the PNGRB 25% ceiling via OFS), not a substitute for the core P/E"
+irrelevant_ratios:
+  - {ratio: "Inventory turnover", why: "IEX carries no inventory; it trades nothing on its own book"}
+  - {ratio: "Gross margin (COGS-based)", why: "there is no cost of goods sold, the product is a matched trade not a manufactured good"}
+  - {ratio: "Raw material cost", why: "no raw material line exists in the P&L beyond a de minimis facility power-and-fuel cost"}
+  - {ratio: "Capacity utilisation (plant-style)", why: "no physical production capacity; any constraint is software/engine throughput"}
+  - {ratio: "Fixed asset turnover", why: "net block Rs96.68cr against Rs608.39cr standalone revenue would produce a misleadingly high ratio that says nothing about the real driver, member liquidity"}
+  - {ratio: "Debt-to-equity / interest coverage", why: "borrowings are Rs11.16cr, entirely an Ind AS 116 lease liability; IEX carries no rated debt and is not credit-risk relevant"}
+must_track_metrics:
+  - {metric: "DAM % of total traded volume", healthy: "continuing to shrink or stabilise near 39%", red_flag: "DAM share growing again, which would concentrate market-coupling exposure"}
+  - {metric: "Electricity traded volume (BU), YoY", healthy: "double-digit YoY growth (FY26 +16.9%)", red_flag: "flat or negative YoY volume without a clear demand-side cause"}
+  - {metric: "Treasury Income as % of total revenue/PBT", healthy: "broadly stable proportion near current 20% standalone/17.6% consolidated", red_flag: "rising share of PBT from treasury while operating revenue growth slows"}
+  - {metric: "REC volume traded (lakh certificates), YoY", healthy: "stabilising", red_flag: "continued 50%+ YoY declines (56.3%-92.3% seen in every disclosed FY27 month)"}
+  - {metric: "Single-customer revenue concentration", healthy: "stable or falling from 16.2% FY26", red_flag: "rising percentage or a new named >10% customer"}
+unit_economics:
+  unit: "1 unit of electricity (1 MWh / 1000 kWh, quoted in Billion Units BU); separately 1 REC or 1 ESCert for certificates"
+  revenue_per_unit: "~Rs0.0396/kWh (3.96 paise) blended electricity fee, DERIVED from Rs558.51cr transaction-fee revenue over 141 BU FY26 (AR p.211, p.4); management's own TAM reference point is Rs0.04 gross / Rs0.036-0.037 net per unit, held steady 4 years (Concall Apr-2026 p.14-15)"
+  margin_per_unit: "near-blended-fee-rate, since marginal cost per trade is close to zero; standalone operating margin ~86-87% (AR p.64-65)"
+  key_lever: "traded volume, not price - per-unit fee is largely fixed by product and has held steady even under multi-exchange competition in TAM; the physics reward volume growth almost 1:1 into profit"
+first_deterioration_signals:
+  - {risk: "Market coupling erodes DAM liquidity moat and opens fee competition", first_signal: "electricity transaction-fee revenue growth decelerating below electricity volume growth"}
+  - {risk: "REC certificate revenue continues its collapse", first_signal: "certificates revenue line in the annual revenue note shrinking further toward negligible"}
+  - {risk: "Treasury income increasingly flatters headline EPS", first_signal: "operating revenue growth falling below total/consolidated revenue growth; Treasury Income % of PBT rising past 20-23%"}
+  - {risk: "Member settlement/margin float mismanagement or platform failure", first_signal: "a spike in Other financial liabilities without a matching spike in trading volume, or any disclosed settlement/cyber incident"}
+  - {risk: "Coupling litigation cost escalation", first_signal: "Other operating expenses / legal and professional expense line in the MD&A expense table continuing to rise sharply"}
+  - {risk: "Governance/related-party concern", first_signal: "the ongoing whistle-blower investigation (AR p.287, note 49) escalating or producing a material finding"}
+mgmt_questions:
+  - "What share of FY26 and Q1FY27 transaction-fee REVENUE, not just volume, came from DAM specifically?"
+  - "If coupling proceeds, does IEX expect to compete on fee rate for DAM order flow, the way rates have held steady in TAM?"
+  - "What is driving the 56%-92% YoY collapse in REC volumes every month this fiscal year, and is it structural or temporary?"
+  - "Who is the single customer that is 16.2% of FY26 revenue, and what is the retention risk if that customer's procurement strategy changes?"
+  - "What is the current book carrying value of the IGX stake and how will IEX deploy the OFS proceeds?"
+  - "Does IEX expect the whistle-blower investigation (note 49) to produce any disclosure beyond the current no-material-impact statement?"
+  - "What operating cost, if any, will IEX bear once bids must be forwarded to Grid India as Market Coupling Operator?"
+one_line_verdict: "Asset-light near-monopoly take-rate platform; DAM's liquidity moat is under direct regulatory attack but RTM/TAM diversification and a TAM-segment fee-durability precedent cushion the arithmetic."
+analyst_note: >
+  Two non-obvious points a downstream stage should not lose. First, the
+  coupling arithmetic: DAM is 39% of FY26 volume and shrinking, RTM (34%,
+  uncoupled, growing 41% YoY) is close to overtaking it, and the one segment
+  where IEX already shares liquidity three ways (TAM, four years) shows a
+  stable ~3.6-3.7 paise net fee, management's own precedent that fragmented
+  liquidity does not force fee cuts. This does not neutralise coupling risk,
+  it bounds it. Second, the company's own MD&A KPI table names its non-
+  operating income "Treasury Income" (AR p.64), a self-disclosed admission
+  that roughly a fifth of total revenue is a bond-fund return, not a second
+  product line; any operating multiple must strip it. Third, the IGX OFS
+  (1.671cr shares, cutting the stake from 47.28% to the PNGRB 25% ceiling)
+  is a monetisation event for an equity-method asset, not new operating
+  earnings, and belongs in an SOTP overlay once IGX lists, not inside the
+  core P/E.

@@ -1,0 +1,26 @@
+stage: B12d
+company: "BORANA"
+run_date: "2026-09-07"
+model: claude-sonnet-5
+status: complete
+peers_audited: 12
+substantive_confirmed: 12
+substantive_unsupported: []
+unused_but_relevant:
+  - {peer: "SANGAMIND", missed_item: "Aug-2024 (Q1FY25) call gives quantified segment-margin color directly relevant to Q1's 23-25% claim: yarn margin ~10% long-run average (range 3-20%), fabric value-addition adds an incremental 4-5 points over the yarn base, garmenting margin 15-20% at full utilisation. Never surfaced in Part 1 Q1, input_gaps, or the analyst_note, despite the report stating in four places that no peer discloses any fabric-margin figure.", anchor: "SANGAMIND-Concall_Aug_2024_Transcript, p.17 (printed p.16 of 18)"}
+  - {peer: "SANGAMIND", missed_item: "Apr-2026 call is claimed 'silent on BIS/QCO by name'; in fact an analyst names 'the quality control order' twice and management answers that its removal made no material difference to SANGAM's raw-material costs (limited Reliance sourcing). This is itself a usable data point complicating the 'cheap Chinese POY' mechanism.", anchor: "SANGAMIND-Concall_Apr_2026_Transcript, p.12 (printed p.11 of 18)"}
+claims_all_addressed: true
+verdict_discipline_fails:
+  - "Q5 (capex ratio): CONTRADICTED verdict rests on a single peer (SANATHAN) with an acknowledged cross-machine-class mismatch (spindles vs. looms/texturisers); caveat is stated in prose every time but the bare YAML verdict tag carries no qualifier"
+findings:
+  - {severity: "MAJOR", location: "B06 Part 1 Q3 + Part 3 coverage map, FILATEX Q1 FY27 row", description: "CRISIL-analyst quote cited as 'FILATEX-Concall_Aug_2026, p.9-10' does not appear in that transcript. It is verbatim in FILATEX-Concall_May_2026 (extraction p.10, printed p.9), a different call by a different analyst context. Substance (a third party dates QCO removal to November) survives, but the source-file and call-quarter attribution is wrong; the Q3 CONTRADICTED verdict still stands on its two correctly-anchored peers (FILATEX Feb-2026, SANATHAN Feb-2026)."}
+  - {severity: "MAJOR", location: "B06 Part 1 Q1 (central UNVERIFIABLE verdict) + input_gaps + analyst_note", description: "SANGAMIND-Concall_Aug_2024_Transcript (p.17, marked SUBSTANTIVE for a different reason) contains quantified, management-sourced fabric/garment margin color (yarn ~10% avg, fabric value-add +4-5pts, garmenting 15-20% at full utilisation) directly relevant to Q1's 23-25% claim. B06 states in four separate places that no peer, including SANGAM, discloses any such figure. UNVERIFIABLE likely remains the correct overall verdict given definitional mismatches, but the absence claim is overstated and the figure should have been engaged with explicitly."}
+  - {severity: "MAJOR", location: "B06 Part 1 Q4 'Peers silent' line + Part 3 coverage map, SANGAMIND Q4 FY26 row", description: "B06 states SANGAMIND 'does not discuss anti-dumping duty, QCO or BIS in any of its four transcripts' and is 'silent on... BIS/QCO by name.' False: SANGAMIND-Concall_Apr_2026_Transcript (p.12) has an analyst naming 'the quality control order' twice, with management answering on the record that its removal had no material cost effect for SANGAM. Borana/Surat-silence half of the same claim is accurate; only the BIS/QCO-silence half is wrong."}
+  - {severity: "MINOR", location: "B06 report opening paragraph", description: "Claims all six peer investor presentations were 'read in full,' but only 3 of 6 (FILATEX Q1FY27, SANGAMIND Q1FY27, SANGAMIND Q4FY26) are ever cited. Both SANATHAN presentations and the FILATEX Q4FY26 presentation are never drawn on. Direct read of both SANATHAN presentations confirms no unique content was lost (SANATHAN has no fabric segment; content duplicates the call transcripts), so this is a coverage-claim overstatement rather than a missed finding."}
+  - {severity: "MINOR", location: "B06 Part 1 Q1, SANGAMIND quote attribution", description: "'SANGAMIND Q4FY26 call, close to 10% for Q2FY26, p.9' misattributes the quote to the Q4FY26 (Apr-2026) call. The quote (and the 8-12% divisional-margin range beside it) is actually spoken during the Nov-2025 (Q2FY26) call itself, at the same page number cited. Content and page anchor are correct; the source-call label is wrong."}
+  - {severity: "MINOR", location: "B06 Part 2 / Q6 area, FILATEX presentation citation", description: "Anchor 'FILATEX-Investor_Presentation_Q1FY27, p.slide on trade' is not a valid page reference (correct location is extraction p.12, printed p.11). Underlying claim (~20-25% CAGR EU export growth to ~USD100bn by 2030) is accurately quoted at that location."}
+critical_count: 0
+major_count: 3
+minor_count: 4
+acceptance_rate: 83    # 10 of 12 peer-transcript entries free of a materially wrong sub-claim
+peer_utilisation: 100  # 12 of 12 transcripts show genuine substantive engagement with real, on-topic content

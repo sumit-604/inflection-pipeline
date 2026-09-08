@@ -1,21 +1,18 @@
 # STAGE 11: ROLE 1 MULTI-MODAL VALUATION (PIPELINE MODE)
 # Model: Opus 4.8 | Emits: B11-valuation
 # DESIGN: this file is a THIN WRAPPER. The framework itself is injected
-# from project knowledge at run time: Master Project Prompt v3.6 (Role 1
+# from project knowledge at run time: Master Project Prompt v3.7 (Role 1
 # sections), Section 1B v3.3 Amendments, Section 1B v3.5.1 Reconciliation
 # (Pillar 1 normalization authority, supersedes standalone Amendment 4.5),
 # Section 1B v3.6 Amendments (Damodaran integration), Section 1B v3.7
 # Amendments (commodity converter cycle integration), Section 1B v3.8
 # Amendments (exit-basis symmetry and option resolution), Section 1B v3.9
-# Amendments (relative valuation cross-check step 1C, and the
-# forward-expectation exit framework), Section 1B v3.10 Amendments (growth
-# symmetry in projections and weighting; later layers govern the items they
-# name where the layers overlap), FTTCP v2.1 Consolidated. The
 # Amendments (relative valuation cross-check step 1C [A20]; forward run-rate
 # earnings base [A21]; probabilistic catalyst credit [A22]; expectation
 # ledger with expiry [A23]; three-tier price decomposition [A24];
-# margin-of-safety-as-size [A25]; later layers govern the items they name
-# where the layers overlap), FTTCP v2.2 Consolidated. The
+# margin-of-safety-as-size [A25]), Section 1B v3.10 Amendments (growth
+# symmetry in projections and weighting [A26]; later layers govern the items
+# they name where the layers overlap), FTTCP v2.3 Consolidated. The
 # framework is deliberately NOT copied into this file, so that Keerti's
 # amendments propagate to the pipeline the moment the project files
 # change, with no pipeline edit. If the injected framework and anything
@@ -51,7 +48,7 @@ mode:
    a base-case projection line, which is barred by Amendment 26.3.
 4. SOURCE ANCHORS: carry the B10 anchors through into your tables the
    first time each input is used.
-5. FTTCP v2.2 Signal Gate: every Step 2 forward catalyst must cite a
+5. FTTCP v2.3 Signal Gate: every Step 2 forward catalyst must cite a
    downstream candidate from B10 (B10.downstream_candidates) where one
    applies. A catalyst with no candidate anchor is graded evidence-thin
    and its magnitude caps at
@@ -259,8 +256,7 @@ entity_count: 1                # from B10.entity_count (dossier Section 1); emit
 input_gaps: []
 flags: []                      # FLAG-CASH carried forward with the
                                # multiplier actually applied
-framework_versions: "Master v3.6 / Section 1B v3.3+v3.5.1+v3.6+v3.7+v3.8+v3.9+v3.10 / FTTCP v2.1"
-framework_versions: "Master v3.6 / Section 1B v3.3+v3.5.1+v3.6+v3.7+v3.8+v3.9 / FTTCP v2.2"
+framework_versions: "Master v3.7 / Section 1B v3.3+v3.5.1+v3.6+v3.7+v3.8+v3.9+v3.10 / FTTCP v2.3"
 pe_basis: ""                   # forward | trailing (operator-approved at the FTTCP gate)
 exit_pe_base_approved: ""      # the operator-approved destination PE base carried from the deliberation
 destination_pe:
@@ -328,7 +324,7 @@ operator directive 26-Aug-2026, and the forward-expectation exit framework,
 Amendments 21-25, 07-Sep-2026), then v3.8 (exit-basis symmetry and option resolution, operator directive
 23-Aug-2026), then v3.7 (commodity converter integration, operator directive
 20-Aug-2026), then v3.6 (Damodaran integration, operator directive 13-Aug-2026), then
-v3.5.1 (Pillar 1 normalization), then v3.3. FTTCP v2.2 ROCE forward verdict is sole
+v3.5.1 (Pillar 1 normalization), then v3.3. FTTCP v2.3 ROCE forward verdict is sole
 Pillar 1 authority. Within the v3.5.1 layer: its consolidated Amendment 9
 supersedes the standalone Amendment 4.5 (v3.5) that appears in the
 amendments file above; Amendment 4.5 is RETIRED as a number and survives

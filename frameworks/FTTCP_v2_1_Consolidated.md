@@ -377,6 +377,43 @@ CFO/PAT, debtor days, and ROCE are meaningless for lending businesses. The four 
 - Catalyst categories for lender Transition 3: provisioning cycle completion, restructured book runoff, state-specific stress normalisation (MFI), collection infrastructure investment, portfolio mix shift toward secured.
 - Data source: Role 4 v1.2 Steps 1L and 5L. Pillar interaction: the Role 1 Asset-Quality Multiplier (Section 1B v3.3 Pillar 2L) must be consistent with this transition's verdict; Pillar 1 for lenders uses ROE.
 
+## STEP 4.5 — SECOND-ORDER SECTION (Master Prompt v3.7, Rule F — MANDATORY)
+
+Runs after the transition verdicts (Step 4, and the lender set where it applies) and BEFORE the monitoring triggers and the payload. The verdicts say which transitions are firing. Step 4.5 traces what happens downstream of each one that is.
+
+**What it is.** Minimum FIVE linkage chains. Each chain starts at one growth trigger or one stated fact and traces at least two links out. A chain with no [INFERENCE] in it is a summary, not a chain. Inference is REQUIRED here, labelled, never avoided. The "NOT DISCLOSED" discipline applies to the filed facts at the START of a chain, not to the reasoning that follows them: a chain may not invent a fact, and it must reason from the facts it has.
+
+**Each chain answers four questions.**
+
+| Question | What to look for | Where it comes from |
+| --- | --- | --- |
+| Who pays, and why now | Named customer or customer class. What their own filings, capex plans, tender pipelines, or results commentary say about demand for this input | Live web (Claude web): counterparty filings, sector dashboards, policy status |
+| What binds | The constraint that decides whether the trigger converts: capacity, working capital, approvals, key hires, a licence, a single supplier | Corpus (Claude Code): capex schedule, WC days, contingent liabilities, related-party notes |
+| What moves if it works | Working capital days, margin mix, competitor response, pricing, supplier terms, dilution need | [INFERENCE] from the first two links |
+| What was not said | Guidance given on revenue but not on margin. Capex booked with no stated purpose. Hiring or subsidiary formation with no concall mention. Footnotes that imply expected demand (advances received, capacity contracted, forward covers) | Corpus footnotes plus Claude web cross-check |
+
+**Output format, one block per chain.**
+
+```
+CHAIN n: [trigger or fact]
+Link 1 [tier]: ...
+Link 2 [tier]: ...
+Link 3 [INFERENCE]: ...
+Binding constraint: ...
+Unsaid: ...
+Observation that confirms or breaks this chain, and confirm-by date: ...
+```
+
+Every confirm-by line feeds the Expectation Ledger (Section 1B v3.9 Amendment 23) and the Role 5.5 Downstream Signal Tracker.
+
+**Depth rule.** Five chains is the FLOOR, not the target. Stop when the next chain would repeat a mechanism already traced, not when five is reached.
+
+**Team-workflow split.** The "who pays, and why now" link needs live web and belongs to Claude web. Claude Code drafts every chain from corpus, marks each live-web link PENDING LIVE VERIFICATION, and never fabricates a counterparty fact or pulls one from memory. A chain whose first link is pending is still a chain; it is not deleted, it is marked.
+
+**FTTCP-specific sourcing.** Each chain starts at a Step 2 forward catalyst or a Step 1 backward transition that is firing. The "what binds" link is answered from the Step 2E Management Intent-and-Action Ledger and from the Part B normalisation sheet (working capital, capex, funding). Where a catalyst already carries a probability under Section 1B v3.9 Amendment 22, the chain uses that probability and does not restate it as certainty.
+
+**Feed to Step 5.** Every "observation that confirms or breaks this chain" line becomes a candidate monitoring trigger in Step 5. A chain whose confirming observation is not measurable is not finished; sharpen it until it is.
+
 ## STEP 5 — MONITORING TRIGGERS (90-180 DAYS)
 
 | # | Trigger | Threshold | Time Horizon | What it would change in FTTCP |
@@ -750,3 +787,4 @@ FTTCP is the discipline that catches the cases where everything looks good but n
 | 2.1 | 19 August 2026 | Merge of the parallel post-v3.3 streams. Unions the tracker-enforcement v1.3 lineage (uploaded via web) into v2.0: the Signal Gate rule is hardened so Role 5.5's Step 4 HARD GATE must have passed — Downstream Signals physically written to the live tracker (data source `926b65ce-ddd2-4d8b-8eae-05e66b6f6c9f`) with row URLs as proof of write, and FTTCP no longer accepts described-but-unwritten signals. Master Project Prompt cross-references updated from v3.5 to v3.6. No content from v2.0 removed: PART A (including Step 2E Management Intent-and-Action Ledger), PART B Modules B1-B8, the cyclical margin rule, and the Category-Break Override all carried forward unchanged. |
 | 2.1a | 20 August 2026 | Survivorship guard added to the preamble (before Step 0): scorn, cheapness, and long incubation are admissible as price arguments only AFTER the fundamentals gate passes; never a substitute for it. Operator directive 20-Aug-2026. |
 | 2.2 | 08 September 2026 | Wires Section 1B v3.9 Amendments 21-22 into the catalyst table. Adds Section C.2, the Probabilistic Catalyst Credit and Expectation Ledger feed: each catalyst carries an explicit probability (0.00-1.00) and a ₹ Cr PAT increment, credited at increment × probability, with the evidence basis (📄/🎙️/🔍) feeding the probability rather than gating the credit. At least one downside row (negative increment, own probability) is MANDATORY; a catalyst table with no downside row is REJECTED and FTTCP does not proceed to the Step 3 scorecard or hand a credit to Role 1. Probability ≥ 0.50 tiers as T2, < 0.50 as T3, matching Amendment 24; every row carries a confirming metric and confirm-by date, feeding the Expectation Ledger (v3.9 Appendix A, Amendment 23). Section C band probabilities, the composite-probability formula, and the Section D forward verdict are unchanged. Filename retains the v2_1 stem for pipeline-pointer stability; content is v2.2. |
+| 2.3 | 08 September 2026 | Step 4.5 Second-Order Section added between the transition verdicts and the monitoring triggers, per Master Project Prompt v3.7 Rule F (Growth Symmetry companion to Section 1B Amendment 26, operator ruling 08-Sep-2026). Five linkage chains minimum, each starting at a firing Step 1 transition or a Step 2 forward catalyst and tracing at least two links out; four questions per chain (who pays and why now / what binds / what moves if it works / what was not said); a labelled [INFERENCE] is required in every chain, and a chain without one is a summary, not a chain. Chains source "what binds" from the Step 2E Intent-and-Action Ledger and the Part B normalization sheet, and use the Section 1B v3.9 Amendment 22 catalyst probability where one exists rather than restating it as certainty. Every confirm-by observation becomes a candidate Step 5 monitoring trigger and feeds the Amendment 23 Expectation Ledger. Live-web links are marked PENDING LIVE VERIFICATION and named for Claude web, never fabricated. Follows v2.2 the same day; the two amendments are independent and both stand. Nothing in Part A or Part B changed; Step 4.5 adds an analysis section, no scoring, verdict, pillar, or cap mechanics. |

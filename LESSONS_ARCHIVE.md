@@ -403,3 +403,68 @@ Company memory written for both with the standing-ruling spear OVERRIDE.
   "synced to Section 1B v3.9" and rechecks the Hurdle Ratio on an "audited
   EPS base". A21 replaced that base with the forward run-rate. Not touched
   here (out of A26 scope); needs its own amendment pass.
+
+## 2026-09-08 — FRAMEWORK AMENDMENT (Master Prompt v3.7, Rules F to J)
+
+- Sep-2026: analysis ran risk-only by default; second-order linkage and
+  entrepreneur credit required operator push. Corrected by Rules F to J.
+
+- Companion to Section 1B Amendment 26, same day. A26 fixed the numbers.
+  v3.7 fixes the analysis around the numbers. A26 alone would have produced a
+  base case that can credit a transition, sitting under a bull case that never
+  traced who pays for it.
+
+- The pattern behind all five rules: the framework had a rich vocabulary for
+  what goes wrong and a thin one for what goes right. Failure catalogue but no
+  success catalogue. "Do NOT be a cheerleader" with no matching bar on the bear
+  side. Promoter section that only asked whether he could be trusted, never what
+  he had built. Depth delivered on request instead of by default.
+
+- CLOSED — the open action from the A26 adoption. Rule F is the Second-Order
+  Section that A26.2 cited and that existed nowhere in frameworks/. It landed
+  the same day, as Role 2 Section 3.5, AR Protocol Step 6.5, and FTTCP Step 4.5.
+  The "Second-Order Section absent, mechanism stated inline" workaround is
+  retired from both the Master Prompt and the v3.10 file.
+
+- Master Prompt version bumped to v3.7. The FILE stays at
+  Master_Project_Prompt_v3_6.md. The path is a stable injection target named by
+  prompts, agents, commands, and past run provenance; renaming it would either
+  break those or force rewriting company memory and the v3.8 amendment file,
+  both of which record v3.6 as the version that governed at the time. Same
+  pattern as Section 1B, whose base file is still Section_1B_v3.3_Amendments.md
+  at framework v3.10. Cite the version, read the path. Noted in the file banner,
+  frameworks/README.txt, VERSIONING.md, and CLAUDE.md.
+
+- OPEN ACTION — frameworks/success_catalogue.md is created and EMPTY, 0 of 4
+  names. Rule I is not enforced in Role 3 until Keerti fills four. Until then
+  every value-trap test prints "success catalogue pending". No agent may add a
+  name: the catalogue's value is that she watched these companies at the ugly
+  stage. A name read about later teaches nothing about what was observable then.
+
+- OPEN ACTION — Rule H as ruled reads "Rules B, C, F, and G". F and G are now
+  defined. Rules B and C are labels from the claude.ai project-instruction copy
+  and exist nowhere in this repo; A26.4 calls one "the Rule B discount", the
+  guidance discount by track record. Not reconstructed. Rule H's four-row
+  precondition table is written to be self-sufficient, with a note telling Role 3
+  not to halt hunting for a repo definition. Add their preconditions if the
+  operator lands the rules here.
+
+- MERGE NOTE — main was merged into this branch mid-session, bringing PR #158
+  (Section 1B v3.9 consumption wiring), which bumped FTTCP to v2.2 with Section
+  C.2. Three conflicts, all additive, all resolved by keeping both sides. My
+  FTTCP row renumbered 2.1b to 2.3, following their 2.2 the same day; the two
+  amendments are independent. Git's auto-merge also spliced the stage-11 prompt
+  header into a broken duplicate sentence and left two contradictory
+  framework_versions lines; both repaired by hand. Lesson: an auto-merge that
+  reports success on a prose file still needs the merged region read.
+
+- OPEN ACTION — FTTCP version drift. PR #158 bumped the protocol to v2.2 but
+  updated few of the ~15 "FTTCP v2.1" prose cross-references across prompts/,
+  .claude/, frameworks/ and verifiers/. This session bumped the pointers that
+  state the version IN FORCE (VERSIONING, CLAUDE.md, orchestrator, stage-11,
+  finalize, Master banner) to v2.3 and left the prose names alone rather than
+  balloon an amendment diff into a rename sweep. Worth one cleanup pass.
+
+- OPEN ACTION carried forward, unchanged — AR Protocol v1.3 Step 11A still
+  rechecks the Hurdle Ratio on an "audited EPS base" after A21 replaced that
+  base with the forward run-rate. Out of scope for both amendments this session.

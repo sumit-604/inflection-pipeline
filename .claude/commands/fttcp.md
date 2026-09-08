@@ -119,7 +119,11 @@ Read, in this order:
 1. frameworks/FTTCP_v2_1_Consolidated.md — the protocol you run end to end
    (Step 0 pre-flight, Step 1 backward baseline 1A-1E, Step 2 forward
    catalysts per transition Sections A-D, Step 3 scorecard, Step 4 scored
-   verdict, Step 5 monitoring triggers, Pillar 1 integration).
+   verdict, Step 4.5 Second-Order Section, Step 5 monitoring triggers,
+   Pillar 1 integration). Step 4.5 (Master v3.7 Rule F) is MANDATORY: five
+   linkage chains minimum, each with a labelled [INFERENCE], live-web links
+   marked PENDING LIVE VERIFICATION and named, never fabricated. Its
+   confirm-by observations feed Step 5 and the Expectation Ledger.
 2. frameworks/Section_1B_v3.3_Amendments.md, then
    frameworks/Section_1B_v3_5_1_Reconciliation.md, then
    frameworks/Section_1B_v3_6_Amendments.md, then

@@ -150,7 +150,7 @@ weigh, never anchored evidence.
 - frameworks/    Master v3.7 (file Master_Project_Prompt_v3_6.md; the path
                  is stable, the version is in the banner), Section 1B layer set
                  (v3.3/v3.5.1/v3.6/v3.7/v3.8/v3.9/v3.10),
-                 FTTCP v2.1, Quarterly v1.4, AR v1.3, plus
+                 FTTCP v2.3, Quarterly v1.4, AR v1.3, plus
                  success_catalogue.md (Rule I; operator fills, 0 of 4
                  names, not yet enforced) (Keerti
                  maintains; stage 11 reads at run time; amendments here

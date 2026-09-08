@@ -449,6 +449,22 @@ Company memory written for both with the standing-ruling spear OVERRIDE.
   not to halt hunting for a repo definition. Add their preconditions if the
   operator lands the rules here.
 
+- MERGE NOTE — main was merged into this branch mid-session, bringing PR #158
+  (Section 1B v3.9 consumption wiring), which bumped FTTCP to v2.2 with Section
+  C.2. Three conflicts, all additive, all resolved by keeping both sides. My
+  FTTCP row renumbered 2.1b to 2.3, following their 2.2 the same day; the two
+  amendments are independent. Git's auto-merge also spliced the stage-11 prompt
+  header into a broken duplicate sentence and left two contradictory
+  framework_versions lines; both repaired by hand. Lesson: an auto-merge that
+  reports success on a prose file still needs the merged region read.
+
+- OPEN ACTION — FTTCP version drift. PR #158 bumped the protocol to v2.2 but
+  updated few of the ~15 "FTTCP v2.1" prose cross-references across prompts/,
+  .claude/, frameworks/ and verifiers/. This session bumped the pointers that
+  state the version IN FORCE (VERSIONING, CLAUDE.md, orchestrator, stage-11,
+  finalize, Master banner) to v2.3 and left the prose names alone rather than
+  balloon an amendment diff into a rename sweep. Worth one cleanup pass.
+
 - OPEN ACTION carried forward, unchanged — AR Protocol v1.3 Step 11A still
   rechecks the Hurdle Ratio on an "audited EPS base" after A21 replaced that
   base with the forward run-rate. Out of scope for both amendments this session.

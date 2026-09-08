@@ -25,7 +25,9 @@ Bookmarks are named by date: `fw-YYYY-MM-DD` (for example `fw-2026-07-18`).
   weighting, Amendment 26, 08-Sep). Where they overlap, v3.10 governs the
   items it names, then v3.9, then v3.8, then v3.7, then v3.6, then
   v3.5.1, then v3.3.
-- FTTCP: **v2.1** Consolidated
+- FTTCP: **v2.3** Consolidated (v2.2 probabilistic catalyst credit and
+  Section C.2; v2.3 Step 4.5 Second-Order Section). File keeps the
+  `FTTCP_v2_1_Consolidated.md` stem for pipeline-pointer stability.
 - Quarterly Results Review Protocol: **v1.4** (Concall protocol: v1.1)
 - Annual Report Analysis Protocol: **v1.3**
 - Debt Capacity Assessment: **v1.0**

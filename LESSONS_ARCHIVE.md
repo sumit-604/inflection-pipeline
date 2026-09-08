@@ -374,3 +374,57 @@ Company memory written for both with the standing-ruling spear OVERRIDE.
   Tinna Trade agri-trading book; the wine business alone was Rs 215.6 cr. FY26
   Rs 181.29 cr is wine-only. Any trend line drawn across FY24 to FY26 without
   that reconciliation is fiction.
+
+## 2026-09-07 — BORANA (Borana Weaves Ltd), /run-pipeline phase 1
+
+- PDF tooling absent again at session start, the standing recurring pattern.
+  pypdf missing, `_cffi_backend` broken, poppler and tesseract absent. Fixed
+  by pip install pypdf, pip install --force-reinstall cffi, apt-get
+  poppler-utils and tesseract-ocr. FOUR input PDFs were scanned images with
+  zero embedded text, including the audited FY26 results, the single most
+  load-bearing financial document in the corpus. OCR'd at 300 dpi into
+  work/extracted/ with an OCR header line; line items read cleanly, several
+  table TOTAL rows garble, so stages were told to confirm any figure from
+  those four against the rendered PDF.
+- CORPUS-INTAKE FAILURE MODE, NEW AND UNGUARDED. Three governance claims
+  entered the run through the operator-written manifest.yaml and
+  companies/BORANA.md, not through any stage: "two secretarial-auditor
+  resignations six days apart", "no reason stated", and a "5-year mandate".
+  All three are wrong against the filings. There was ONE resignation (the
+  29-Jul filing is the Board noting the 24-Jul one), a reason WAS given with
+  an explicit written no-disputes confirmation, and the mandate was two
+  years. The stages carried the framing faithfully into B00, B03, B05 and
+  B08, and B08 built its sole named deal-breaker on the five-year figure.
+  Verifier B caught it only because it read the underlying filings for a
+  different purpose. NO VERIFIER IN THE CURRENT DESIGN AUDITS THE MANIFEST.
+  Written up in outputs/blocks/corrections.yaml and the disagreement log.
+- Verifier A first pass was the OPPOSITE of the catalogued failure. The
+  catalogue warns about invented CRITICALs; run 1 instead did a shallow pass,
+  15 figures across nine reports, zero findings, 100% acceptance, in 2.3
+  minutes. Re-invoked once with a coverage addendum; run 2 checked 47. It
+  then DID propose one false CRITICAL (a company anomaly B03 had faithfully
+  transcribed and logged), downgraded to MAJOR on orchestrator source
+  re-check. Both failure directions in one run.
+- REWORK fired on the analysis. Confidence delta overall 33 (redflag
+  coverage is the binding component) and verifier B acceptance 24, both
+  below 60. Locus is stage 5 BREADTH in no-concall mode: its method passed
+  5 of 5 promise-delivery spot checks, but nobody read the annual report,
+  the four decks and the IPO monitoring report against each other. Verifier
+  B found 33 flags; 8 fully caught upstream. Its three CRITICALs all sat in
+  documents stage 5 lists among its own sources.
+- Stage 5 was deliberately NOT re-run against verifier B's catch list.
+  Feeding a verifier's findings back into the stage it audited would produce
+  a falsely high coverage score on re-measurement and destroy the standing
+  evidence on whether the verification layer earns its cost. Recorded in
+  confidence.yaml so the choice is auditable rather than implicit.
+- NO-CONCALL MODE carried a heavier load than usual and mostly held. One
+  transcript exists in the company's entire listed life. The degradation map
+  worked for stage 5 and for stage 7's F2 substitution, both declared. The
+  gap it left is the one REWORK names: the widened source set was read for
+  content but never cross-audited.
+- Subagents frequently returned the YAML block in the response only, without
+  appending it to the report file, so the orchestrator wrote 6 of 14 blocks
+  by hand from the notification. Costs nothing but is worth a prompt fix.
+- Peer set chosen on the economic engine paid off. All 12 transcripts
+  substantive, and the peers both corroborated the yarn price move and
+  contradicted the company's account of its date and mechanism.

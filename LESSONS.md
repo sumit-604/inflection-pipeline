@@ -34,12 +34,13 @@ LESSONS_ARCHIVE.md for 2+ occurrences and promotes qualifying patterns here._
   with a real Read. Reliable default: pre-extract every input PDF to
   page-marked .txt up front and point every stage/verifier at the .txt, so
   no stage hits the ~20-32MB image-render wall.
-- Verifier A (haiku) first pass mislabels severity, inventing false
-  CRITICALs that would force REWORK (a matched figure, a faithfully
-  transcribed company anomaly, or a screener-vs-AR basis difference is not a
-  finding). Orchestrator sanity-checks every Verifier A CRITICAL against its
-  own source_truth column, then re-invokes once with the severity-semantics
-  plus coverage addendum.
+- Verifier A (haiku) fails in BOTH directions. It invents false CRITICALs
+  that would force REWORK (a matched figure, a faithfully transcribed
+  company anomaly, or a screener-vs-AR basis difference is not a finding),
+  AND it returns shallow zero-finding passes (BORANA: 15 figures, 9 reports,
+  2.3 min). Orchestrator checks BOTH: every CRITICAL against its own
+  source_truth column, and coverage breadth against the figure count the run
+  turns on. Re-invoke once with the severity-semantics plus coverage addendum.
 - collect_to_repo v3 defects recur: wrong sector_cap_row (defaults to
   "Pharma/CDMO"), mislabeled AR year, empty screener P&L/BS/CF/Quarters CSVs
   (only Data_Sheet populated), broker notes misfiled as company
@@ -128,9 +129,24 @@ _Pending framework edits Keerti maintains._
   derived: Distribution-commodity (pure fulfilment) 18-19x; Distribution-
   value-added (agency/commercial) 25-26x; blended by revenue-share of each
   mode. Applies to any distributor.
+- Add a Commodity-textile / greige-weaving row to the Section 1B cap table
+  (BORANA 2026-09-07 ruled Recycling / Manufacturing 25x ad hoc by the
+  operator; Branded apparel / FMCG 35x is wrong for unbranded greige fabric
+  with no pricing power). Confirm at phase 3.
+- prompts/07-emerging-moat-pipeline.md Section 6D instructs the stage to
+  apply "the standard matrix" for the combined backward-plus-forward
+  assessment, but the file never reproduces that matrix (verifier C, BORANA
+  2026-09-07). Stage substituted the EM>=25 UA qualifier and declared it.
+  Print the combined matrix in prompts/07.
 - Amendment 14 fade guard (ENTERO 2026-08-30): the automatic revenue fade-to-10%
   on MODEST EM can contradict a consolidation thesis the same run relies on.
   Where the TAM stage's SOM-implied growth is materially above the faded
   projection (Entero: fade 10% vs SOM-implied 26.4%), flag the fade for operator
   ruling rather than applying it silently. For /compost to promote into a
   prompt/framework fix.
+- MANIFEST AND COMPANY-MEMORY CLAIMS ARE UNAUDITED (BORANA 2026-09-07).
+  Three wrong governance facts entered the run through operator-written
+  manifest.yaml and companies/<TICKER>.md, propagated into four stage
+  blocks, and one became a stage-8 deal-breaker. No verifier audits the
+  manifest. Until a guard exists, stage 0 treats every manifest governance
+  assertion as a CLAIM to verify against the filing, not as evidence.

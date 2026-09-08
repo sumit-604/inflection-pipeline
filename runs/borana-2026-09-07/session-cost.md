@@ -22,3 +22,63 @@ with its own stage. Loop or retry runs get their own line with a run counter.
 | 12d | Verifier D peer coverage | claude-sonnet-5 | default | 355800 | 11405 | 367205 | 6m44s | 1 |
 | 12b | Verifier B red flags | claude-opus-4-8 | default | 251100 | 12067 | 263167 | 18m48s | 1 |
 | 13 | Synthesis-lite (phase 1) | claude-opus-5 | default | 136700 | 6601 | 143301 | 7m51s | 1 |
+| 09b | Halt 1 understanding dossier | claude-sonnet-5 | default | 187600 | 6450 | 194050 | 6m01s | 1 |
+
+---
+
+## SESSION CLOSE-OUT SUMMARY
+
+Run total: 3,154,546 tokens across 18 subagent runs (stages 1-9, four
+verifiers, synthesis-lite, Halt 1 dossier). Stage 0 ran inline in the
+orchestrator and has no ledger row.
+
+### (a) TOP FIVE BY TOKENS
+
+| rank | stage | model | total_tok | share of run |
+|---|---|---|---|---|
+| 1 | 2 Notes triple-pass (3 runs summed) | claude-sonnet-5 | 442,391 | 14.0% |
+| 2 | 12d Verifier D peer coverage | claude-sonnet-5 | 367,205 | 11.6% |
+| 3 | 12b Verifier B red flags | claude-opus-4-8 | 263,167 | 8.3% |
+| 4 | 12a Verifier A numerical (2 runs summed) | claude-haiku-4-5 | 231,998 | 7.4% |
+| 5 | 9 TAM SAM SOM | claude-sonnet-5 | 231,666 | 7.3% |
+
+The verification layer is three of the top five and 27.3% of the run. It
+earned that this run: verifier B produced the three CRITICAL findings no
+stage reached, verifier D overturned stage 6's central absence claim, and
+verifier A's second pass held the source-fidelity gate. On a quieter name
+the same spend would look heavy.
+
+Stage 2 tops the table because the triple pass is three sequential reads of
+a 130-page annual report plus a 417-page prospectus. Pass 2 and pass 3 cost
+less than pass 1 (125k and 113k against 204k), so the sequence is working
+as designed: each pass narrows.
+
+### (b) DOWNSHIFT FAILURES
+
+**none.** The mechanical stages DISPATCH routes to haiku are stage 0
+validation, stage 10 assembly and verifier A. Stage 0 ran inline in the
+orchestrator. Stage 10 does not run in phase 1. Verifier A ran on
+claude-haiku-4-5 on both its runs. No mechanical stage ran on Opus.
+
+### (c) COST SPIKES
+
+**none.** No prior runs/borana-*/session-cost.md ledger exists; this is the
+first BORANA run, so there is no baseline to measure 1.5x against. The next
+BORANA run measures against this one.
+
+One item for that future comparison, so it is not misread as a spike:
+verifier A ran TWICE by design. Run 1 checked 15 figures and returned zero
+findings, which was too thin for the sole source-fidelity authority, so it
+was re-invoked once with a coverage addendum per the standing LESSONS
+pattern. Run 2 checked 47. Treat 231,998 as the honest verifier A cost of a
+run that needed the addendum, not as a baseline for one that does not.
+
+### (d) OPERATOR SNAPSHOT
+
+Keerti: run `/cost` and `/usage` now and paste the cache hit ratio and the
+loop totals below. The orchestrator cannot read those interactive commands,
+so this section stays empty until you fill it.
+
+#### Operator snapshot
+
+_(paste /cost and /usage output here)_

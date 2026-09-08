@@ -476,3 +476,61 @@ stages should not read the em_score of 3.1 as an input gap or an
 incomplete scan; it is the honest output of applying the 22-category test
 to a company whose forward evidence, on the documents available, mostly
 either does not exist or points the wrong way.
+
+---
+
+```yaml
+stage: B07-emoat
+company: "BORANA"
+run_date: "2026-09-07"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "inputs/research/ empty, no broker note"
+  - "NO-CONCALL MODE: one transcript only (Q3FY26); F2 substituted CAPEX-COMPLETION EVIDENCE per orchestrator degradation map; Section 2E repeated-question/tone-drift testing not possible"
+  - "Missing Brickwork rating rationale for the 11-May-2026 upgrade"
+  - "Missing SEBI Section 11C(9) order text"
+  - "No standalone Q1FY27 results filing, only board-meeting outcome"
+  - "Four scanned PDFs OCR'd"
+  - "Screener CSV export defect (not a data gap)"
+  - "No top-customer revenue concentration disclosed in FY26 AR; RHP concentration data (FY22-9MFY25) used as dated substitute, feeds C2 directly"
+  - "FY26 fixed asset turnover NOT FOUND as a named ratio in either AR; 2C proxy uses stale FY24 (2.68x, RHP p.176)"
+  - "No rupee figure disclosed anywhere in corpus for the 192-loom Unit 4 Expansion tranche"
+  - "No rupee split disclosed between Unit 4B and hybrid-power spend inside the Rs 80.94cr FY26 CWIP (carried from B03)"
+flags:
+  - "F2 execution test (capex-completion substitute) came back NET NEGATIVE: 1 clean delivery (Unit 4 base tranche) vs 2 documented failures (Unit 4B 160-loom tranche silently redefined; 19.79MW hybrid power slipped 4x, still uncommissioned) - not credited as a positive category, carried to top_moat_risks instead"
+  - "C2 test found customer concentration WORSENING, not improving: grey-fabric top-10 share rose 30.82% (FY22) to 40.27% (9MFY25), driven substantially by promoter-group entity Borana Industries LLP with no disclosed pricing basis"
+  - "RHP explicitly discloses no long-term agreements with either customers or suppliers (RHP p.1535, p.3485) - controlling evidence against B2 and C1"
+  - "G1/G2 tested opposite to a war chest: cash fell to Rs1.68cr at FY26 close vs gross debt Rs69.51cr; WC days lengthened 39.4 to 66.5 (FY24-FY26)"
+  - "Gujarat Textile Policy subsidy stack (interest + power) is DECAYING, not emerging - Unit 1 window closes 2026 ahead of the repeatedly-delayed renewable substitute; excluded from R1's forward score and treated as risk"
+  - "PLI Scheme Textiles Round 3: Letter of Approval documented (Reg30, 01-Jul-2026) but incentive amount and milestones unquantified anywhere in corpus"
+em_score: 3.1                  # adjusted total, ~0-90 scale (ceiling 92 with I1/I2)
+em_classification: "NONE"      # <12 band = NO MEANINGFUL EMERGING MOAT
+active_categories: []          # no row reached Strong/Moderate strength; H3 (Weak, 2.1) and R1 (Weak, 1.0) are the only rows scoring above zero, both below the Moderate bar
+evidence_mix: {documented: 11, claim: 9, inference: 2}
+completionist_recount: "5 documented items across 3 categories (F2: Unit 4 base-tranche delivery + Unit 4B redefinition + hybrid-power slippage chain, net negative; H3: hybrid-power CWIP/EPC commitment + rooftop-solar PPE addition, weak; R1: PLI Round 3 Letter of Approval, unquantified). Active-category count (Strong/Moderate) is 0, below the 3-6 base rate - the honest floor given B04's 'thin-moat converter' verdict and B01's narrow FORTRESS moat (4 of 12 M-metrics scoring 5, rest at zero)."
+catalysts_12m:
+  - {catalyst: "19.79MW hybrid power project 5th commissioning attempt (1 WTG+solar by 30-Sep-2026, remaining 2 WTG by end-Oct-2026)", window: "Sep-Oct 2026", evidence_type: "documented", anchor: "2026-08-29_Reg30_hybrid-power-update.pdf"}
+  - {catalyst: "Unit 4 Expansion (192 water-jet looms + 3 texturisers) commercial production", window: "Dec-2026", evidence_type: "documented", anchor: "AR FY2026 p.6; Investor_Presentation_Q1FY27 p.18"}
+  - {catalyst: "PLI Scheme Textiles Round 3 incentive quantification", window: "unquantified, watch next Reg30/AR", evidence_type: "documented (approval only)", anchor: "2026-07-01_Reg30_PLI-scheme.pdf"}
+  - {catalyst: "Gujarat Textile Policy 2024 subsidy runoff for Unit 1", window: "2026 (already begun)", evidence_type: "claim (rate)/documented (Other Income line)", anchor: "Concall Q3FY26 p.7-8; AR FY2026 Other Income note pp.122-123"}
+  - {catalyst: "Capacity doubling to 2,000 looms, Rs350-400cr, no-dilution funding statement reaffirmed or dropped", window: "medium, to Mar-2028, first 12m checkpoint", evidence_type: "claim", anchor: "Concall Q3FY26 p.9-16"}
+capex_embedded_growth_pct: 56  # rough proxy: Rs80.94cr CWIP (AR FY2026 Note 3) x 2.68x FY24 fixed-asset turnover (RHP p.176) / Rs388.59cr FY26 revenue; two-year-stale multiplier, CWIP composition unsplit - order-of-magnitude only
+optionality_register:
+  - {optionality: "PLI Textiles Round 3 incentive quantification", converting_evidence: "Reg30/AR disclosure of incentive amount and milestones", first_appears: "Reg30 filing or next AR government-grants note", window: "6-18 months"}
+  - {optionality: "19.79MW hybrid power full commissioning", converting_evidence: "Reg30 commissioning confirmation, all 3 WTG + solar", first_appears: "Reg30 filing", window: "immediate to 2-3 months per 5th target, 4 prior targets already missed"}
+  - {optionality: "Unit 4 Expansion (192 looms + 3 texturisers)", converting_evidence: "Commercial production confirmation with revenue consistent with ~Rs60-75cr/160-loom rate of thumb", first_appears: "deck or results filing", window: "near, Dec-2026 target"}
+  - {optionality: "Capacity doubling to 2,000 looms, Rs350-400cr, March-2028", converting_evidence: "Later deck restating rupee figure/loom count with phased dated milestones, reaffirming no-dilution funding", first_appears: "investor deck", window: "medium, to Mar-2028"}
+  - {optionality: "Technical textiles/value-added mix expansion (targeted 20-25% share)", converting_evidence: "Deck disclosing rising, quantified value-added mix share with margin detail", first_appears: "investor deck", window: "medium, unquantified base case"}
+  - {optionality: "RPU-jacketing product", converting_evidence: "In-house production plus disclosed customer/order", first_appears: "AR or deck", window: "long, no timeline given"}
+  - {optionality: "Export market entry (\"export optionality\")", converting_evidence: "Named export customer, order, or export-targeted capex", first_appears: "deck, Reg30 filing, or AR export-revenue disclosure", window: "long, first mention only Aug-2026 deck, no track record"}
+combined_assessment: "GOOD"
+combined_reasoning: "Backward FORTRESS moat (Gate 0 GOOD, narrow: 4 of 12 M-metrics score 5) finds no emerging expansion; EM score 3.1 sits far below the EM>=25 UA qualifier, so the combined verdict stays at Gate 0's own GOOD, unchanged."
+top_moat_risks:
+  - "Net-negative F2 execution record (1 clean delivery vs 2 documented failures/redefinitions on live commitments) discounts every forward capacity claim in this corpus, including the 192-loom tranche and the doubling plan"
+  - "Gujarat Textile Policy subsidy runoff (Unit 1, 2026) races a hybrid renewable substitute that has already slipped 4 times and remains uncommissioned"
+  - "Customer concentration worsening, not improving, driven by an unpriced promoter-group related party (Borana Industries LLP) under the shadow of an unresolved SEBI 11C(9) search at its own group entity"
+  - "No long-term contracts with customers or suppliers (RHP-disclosed) removes the structural floor under any qualification-lock-in or ecosystem-style moat claim"
+  - "PLI Round 3 approval is documented but financially unquantified; treating it as upside risks anchoring on a number that does not yet exist"
+analyst_note: "18 of 22 categories plus both Family I rows returned NO EVIDENCE FOUND; C2 and the G1/G2/B1/B2 group returned evidence running OPPOSITE to what an emerging moat requires. This is consistent with, not contradictory to, B04's 'thin-moat converter' verdict and B01's narrow FORTRESS moat. The only row scoring above zero on its own account (H3, ESG/renewable) rests on capex that is genuinely committed but has already slipped 4 times - a timing bet, not a durability claim. Downstream stages should read em_score 3.1 as the honest output of the test, not an incomplete scan."
+```

@@ -1,0 +1,76 @@
+stage: B09b-dossier
+company: "IEX"
+run_date: "2026-09-08"
+model: claude-sonnet-5
+status: complete
+corpus_verdict: "CORPUS GAPPED-FRESHNESS"
+corpus_gaps:
+  - document: "CERC market coupling order text; APTEL judgment 13-Feb-2026; Supreme Court orders 11-May-2026 and 27-Jul-2026"
+    expected_source: "CERC official notifications; Supreme Court of India cause list and order record"
+    kind: "freshness-pair"
+  - document: "CERC staff paper 'Review of Transaction Fee charged by the Power Exchanges' (Dec-2025)"
+    expected_source: "CERC official notifications"
+    kind: "findable-missing"
+  - document: "Coal Rules text (Ministry of Coal notification barring e-auction platforms after coal exchange launch)"
+    expected_source: "Ministry of Coal / Coal Controller Organization"
+    kind: "findable-missing"
+  - document: "CCO licence grant naming IEX for the Coal Exchange"
+    expected_source: "Ministry of Coal / Coal Controller Organization"
+    kind: "findable-missing"
+  - document: "Full IGX Draft Red Herring Prospectus (OFS price band, proceeds, effective dates)"
+    expected_source: "SEBI public filing system / book-running lead managers"
+    kind: "findable-missing"
+  - document: "PXIL and HPX individual FY26 volume/revenue disclosures"
+    expected_source: "company IR pages, if published"
+    kind: "plausibly-nonexistent"
+  - document: "Named >1% shareholder register inside the held shareholding-pattern XML files"
+    expected_source: "already in corpus; tool-level extraction failure, not a collection gap"
+    kind: "findable-missing"
+  - document: "Two SAST Regulation 29(2) disclosures, 21-Apr-2026 and 10-Jun-2026 (OCR text)"
+    expected_source: "already in corpus as scanned PDFs; OCR needed"
+    kind: "findable-missing"
+archetypes:
+  - line: "Electricity exchange (DAM+RTM+TAM+Green), 91.7% of standalone revenue"
+    archetype: "Platform/network, licence/scarcity overlay"
+  - line: "Certificates (REC/ESCerts), 4.2% of standalone revenue"
+    archetype: "Platform/network, licence/scarcity overlay (weakening, no franchise ever fully built)"
+transition:
+  - line: "Electricity exchange (DAM+RTM+TAM+Green)"
+    from_tier: "R4 FRANCHISE / SHARE-OF-WALLET LEADER (historical DAM near-monopoly, switching-cost lock-in)"
+    to_tier: "Unresolved between R3 VALUE-ADDED / SPEC'D SUPPLIER and R2 COST-ADVANTAGED CONVERTER on the DAM slice; RTM/TAM not yet coupled and closer to holding R4"
+    engine: "Grid India replacing IEX as day-ahead price-discovery point under CERC coupling order; volume mix shifting from DAM (95% FY16 to 39% FY26) toward RTM/TAM (34%, +41% YoY FY26)"
+    proof_gate: "Two consecutive quarters where electricity transaction-fee revenue growth equals or exceeds electricity traded-volume growth; not fired as of the most recent evidence"
+    recognition_gap: "Open question, resolved at Stage 11: whether the market has already priced in the coupling threat to DAM, a full RTM/TAM offset, or a blend of the two"
+    ugliness: "STRUCTURAL-FEATURE (DAM volume/fee pressure reads as the ordered, mechanical consequence of a regulator reassigning the price-discovery function, not a temporary cost of an ascent)"
+    transition_falsifier: "Two consecutive quarters of DAM volume decline concurrent with fee realisation below 4.10 paise/unit, with no offsetting acceleration in RTM/TAM revenue growth"
+  - line: "Certificates (REC/ESCerts)"
+    from_tier: "Thin R2/R3 slice, no franchise ever built (4.2% of revenue, historically volatile)"
+    to_tier: "Fits no rung cleanly; volume collapse (-56% to -92% YoY every disclosed FY27 month) reads as contraction, not a tier transition"
+    engine: "None identified; no engine evidenced for a climb on this line"
+    proof_gate: "Not applicable; no transition thesis is evidenced for this line"
+    recognition_gap: "Not applicable; this line carries no transition claim to test at Stage 11"
+    ugliness: "STRUCTURAL-FEATURE (plain deterioration; management's buyer-side explanation is contradicted by the company's own filed seller-side data)"
+    transition_falsifier: "Not applicable; see business falsifier discussion instead"
+dominant_variables:
+  - "Day-ahead volume, YoY (monthly Power Market Update): down 6.6% June 2026, 7.7% July 2026"
+  - "Blended electricity fee realisation, derived: 4.16 paise/unit Q1FY27 vs 4.33 a year earlier"
+  - "RTM/TAM offsetting volume growth: RTM guided 25-30%, printed 10.2% July and 10.6% August 2026"
+  - "Supreme Court / final CERC coupling regulation outcome: appeal admitted 11-May-2026, stay refused 27-Jul-2026, no final ruling or regulation yet"
+business_falsifier: "A final CERC coupling regulation or Supreme Court ruling that extends coupling beyond DAM to RTM and TAM, removing IEX's price-discovery role across the entire electricity franchise rather than one slice of it; CERC has so far deferred RTM coupling 'to a later stage' but this deferral is not guaranteed to hold"
+mental_model_status: "DRAFT - PENDING OPERATOR SIGN-OFF"
+fragility:
+  variable_count: 4
+  verifiability_ratio: "3 of 4 externally observable via monthly filings and official notifications; the fourth (fee realisation) is company-filing-derived, not independently sourced"
+  single_point_failure: "Supreme Court / final CERC coupling regulation outcome - can break both the transition thesis and, in its most adverse form (coupling extended to RTM/TAM), the FROM business itself"
+  fragility_verdict: "FRAGILE"
+candidate_count: 6
+second_order:
+  chains_drafted: 2
+  pending_live_links: 2
+  confirm_by_observations: 2
+research_brief_items: 13
+plain_summary_points: 15
+annex:
+  present: true
+  questions_answered: 10
+  corpus_commit_hash: "e6a917153d8657ebf0395371149e8a091c79f429"

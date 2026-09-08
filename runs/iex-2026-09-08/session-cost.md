@@ -26,3 +26,61 @@
 | 12b | verifier B (final, post-remediation) | claude-opus-4-8 | default | n/a | n/a | 276,426 | 14m24s | 3 |
 | 12d | verifier D peer coverage (rerun) | claude-sonnet-5 | default | n/a | n/a | 107,437 | 5m13s | 2 |
 | 13 | synthesis-lite (3 files) | claude-opus-5 | default | n/a | n/a | 158,118 | 6m43s | 1 |
+| 09b | Halt 1 understanding dossier | claude-sonnet-5 | default | n/a | n/a | 164,087 | 6m11s | 1 |
+
+---
+
+## SESSION CLOSE-OUT
+
+Run total across every ledger row: **4,565,753 tokens**, 25 subagent runs.
+No per-stage input/output split is available: the harness reports a single
+subagent_tokens figure per run, so in_tok and out_tok are recorded n/a
+throughout and total_tok is the reported figure.
+
+### (a) Top five by tokens
+
+| # | Stage | Runs | Total tokens | Share of run |
+|---|-------|------|--------------|--------------|
+| 1 | 12b verifier B, concall red flags | 3 | 771,659 | 16.9% |
+| 2 | 2 notes triple-pass | 5 | 700,815 | 15.3% |
+| 3 | 5 concall analysis | 3 | 637,587 | 14.0% |
+| 4 | 1 Gate 0 scorecard | 2 | 510,352 | 11.2% |
+| 5 | 6 peer concall verification | 2 | 362,988 | 8.0% |
+
+The top five are 65.4% of the run. Four of the five are there because they
+ran more than once. Only stage 2, at five runs, was a planned multi-pass
+stage; the other three repeats were remediation.
+
+### (b) Downshift failures
+
+**None.** The mechanical stages DISPATCH routes to haiku are stage 0
+validation, stage 10 assembly and verifier A. Stage 0 ran inline in the
+orchestrator at no subagent cost. Stage 10 does not run in phase 1.
+Verifier A ran on claude-haiku-4-5 as specified, at 83,719 tokens, the
+cheapest subagent in the run. No mechanical stage ran on Opus.
+
+### (c) Cost spikes
+
+**None measurable.** This is the first run for IEX, so no prior
+runs/iex-<date>/session-cost.md ledger exists to compare against. The 1.5x
+test cannot be applied. Recorded so the next IEX run has a baseline.
+
+Two observations the next run should carry, neither a spike by the rule:
+- Verifier B (opus) cost 771,659 tokens across three passes, more than any
+  stage. An adversarial opus verifier reading sixteen transcripts will
+  out-list a single-pass sonnet stage every time, which drove two rounds of
+  stage-5 rework. The strict acceptance metric moved 38, then 36, then 65.
+- The PDF page-render failure cost one wasted stage-2 run (76,340 tokens)
+  before the standing LESSONS.md fix was applied. Pre-extracting every input
+  PDF to page-marked text should be done at stage 0, before any stage runs,
+  not after the first stage fails.
+
+### (d) Operator snapshot
+
+Keerti: run `/cost` and `/usage` now and paste the cache hit ratio and the
+loop totals below. The orchestrator cannot read those interactive commands.
+
+#### Operator snapshot
+
+_(paste /cost and /usage output here)_
+

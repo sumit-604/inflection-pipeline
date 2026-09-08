@@ -468,3 +468,30 @@ Company memory written for both with the standing-ruling spear OVERRIDE.
 - OPEN ACTION carried forward, unchanged — AR Protocol v1.3 Step 11A still
   rechecks the Hurdle Ratio on an "audited EPS base" after A21 replaced that
   base with the forward run-rate. Out of scope for both amendments this session.
+
+## 2026-09-08 — IEX (Indian Energy Exchange), phase 1 evidence run
+
+- Corpus intake and Phase 1 in one session. Gate verdict PROCEED WITH CAVEATS,
+  overall confidence 65.
+- PDF page-render tooling absent again (the standing pattern). Cost one wasted
+  stage-2 run before the fix. FIX SHOULD MOVE TO STAGE 0: pre-extract every
+  input PDF to page-marked text before any stage runs, not after one fails.
+- An external process (the nightly Chartink scheduler) committed to the run
+  branch mid-run and ran `git pull --rebase --autostash`, leaving the repo in
+  detached HEAD mid-rebase and dropping the stage-1 commit from the replayed
+  line. Two stage reports vanished from the working tree. Everything was
+  recovered from the autostash entry and rescue refs. A run branch is not safe
+  from the operator's own schedulers; consider having the collector skip
+  branches matching `run/*`.
+- Verifier B (opus) out-listed stage 5 (sonnet) twice: 38 percent, then 36
+  percent strict after a full rework, then 65 percent after a targeted
+  amendment. Verifier B cost 771,659 tokens across three passes, the largest
+  single line in the run. The strict acceptance metric may be structurally
+  unable to clear 60 percent on a first pass with this model pairing. Worth a
+  /compost look at whether the metric or the pairing needs changing.
+- Verifier B's rework was worth it on substance: it found fee realisation
+  compressing from 4.33 to 4.16 paise per unit, day-ahead volume in outright
+  decline, and a REC explanation that names the wrong side of the market
+  against the company's own filed data. Management credibility moved C to D.
+- The Section 1B cap table has no Market Infrastructure / Exchange row. Third
+  such gap in the open-actions list after steel, sugar and distribution.

@@ -9,3 +9,4 @@ its own stage. Phase 1 (evidence) only; phases 2 and 3 append their own lines.
 | 2 | notes triple-pass, pass 1 | claude-sonnet-5 | default | n/a | n/a | 179264 | 9m45s | 1 |
 | 1 | Gate 0 scorecard | claude-sonnet-5 | default | n/a | n/a | 119552 | 11m52s | 1 |
 | 2 | notes triple-pass, pass 2 | claude-sonnet-5 | default | n/a | n/a | 133505 | 9m45s | 2 |
+| 2 | notes triple-pass, pass 3 (consolidated) | claude-sonnet-5 | default | n/a | n/a | 112538 | 6m21s | 3 |

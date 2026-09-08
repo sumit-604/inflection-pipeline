@@ -27,3 +27,4 @@ its own stage. Phase 1 (evidence) only; phases 2 and 3 append their own lines.
 | 6 | peer concall verification | claude-sonnet-5 | default | n/a | n/a | 202894 | 15m09s | 2 |
 | 12d | verifier D peer coverage (re-measure of stage 6 run 2) | claude-sonnet-5 | default | n/a | n/a | 140532 | 10m11s | 2 |
 | 12b | verifier B concall red flags (re-measure) | claude-opus-4-8 | default | n/a | n/a | 345247 | 19m34s | 2 |
+| 13 | synthesis-lite (regenerated on rerun blocks) | claude-opus-5 | default | n/a | n/a | 148059 | 7m32s | 2 |

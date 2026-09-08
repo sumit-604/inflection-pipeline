@@ -1,0 +1,163 @@
+stage: B00-inputs
+company: IEX
+run_date: 2026-09-08
+model: orchestrator-inline
+status: complete
+flags: []
+
+spear_gate:
+  status: SATISFIED
+  line: "Spear: OVERRIDE 2026-09-08 (operator standing ruling 2026-09-05: Step-1 intake replaces the web spear)"
+  source: companies/IEX.md
+  load_bearing_facts:
+    - "Market coupling exposure: share of FY26 and Q1FY27 revenue in DAM vs RTM/TAM/green/certificates, and management stated coupling revenue impact."
+    - "Operating vs treasury earnings: other income Rs151.10cr of Rs645.56cr FY26 PBT; Rs52.65cr in Q1FY27 alone. Confirm from audited statements before any multiple touches EPS."
+    - "Guidance vs delivery: Q4FY26 call guidance (24-Apr-2026) against the Q1FY27 print and the monthly power market updates for Jun/Jul/Aug 2026."
+    - "IGX carrying value and OFS: book carrying value of the 47.3 percent stake, cash from the 22.3 percent sell-down to the PNGRB 25 percent ceiling, consolidated or equity-accounted."
+
+manifest:
+  parses: true
+  company: "Indian Energy Exchange Ltd"
+  ticker: IEX
+  bse_code: "540750"
+  isin: INE022Q01020
+  cmp: 116.54
+  market_cap_cr: 10396.21
+  run_type: full
+  concalls_available: true
+  listed_date: "2017"
+  recently_listed: false
+  sector_cap_row: "Platform / SaaS / IT services"
+  sector_cap_status: FLAGGED
+
+inventory:
+  prospectus:      {count: 1,  files: ["IGX_Draft_Abridged_Prospectus_2026-07.pdf"]}
+  annual-report:   {count: 2,  primary: "Annual_Report_2026.pdf", comparative: "Annual_Report_2025.pdf"}
+  results:         {count: 3,  files: ["Q1FY27_Results_Unaudited_2026-07-23.pdf", "Q1FY27_Press_Release_2026-07-23.pdf", "FY26_Q4_Audited_Results_2026-04-23.pdf"]}
+  rating:          {count: 0}
+  concalls:        {count: 3}
+  peer-concalls:   {count: 12}
+  announcements:   {count: 13}
+  shareholding:    {count: 5}
+  research:        {count: 0}
+  screening:       {count: 24}
+  presentation:    {count: 2}
+  other:           {count: 1,  files: ["Concall_Nov_2025_Q2FY26_Transcript.pdf"], note: "preserved, never consumed"}
+
+concall_quarter_map:
+  order: oldest-first
+  1: {file: "inputs/concalls/Concall_Feb_2026_Transcript.pdf", filed: "2026-02-05", quarter: "Q3FY26"}
+  2: {file: "inputs/concalls/Concall_Apr_2026_Transcript.pdf", filed: "2026-04-30", quarter: "Q4FY26 and FY26, call held 24-Apr-2026"}
+  3: {file: "inputs/concalls/Concall_Jul_2026_Transcript.pdf", filed: "2026-07-31", quarter: "Q1FY27, IEX Analyst Meet 2026 held 24-Jul-2026"}
+  note: >
+    IEX held NO separate Q1FY27 earnings call. The BSE filing of 15-Jul-2026 is
+    titled "Schedule of Annual Analyst Meet and Quarterly Earnings Call Q1FY27";
+    the single 24-Jul-2026 event served both. Entry 3 IS the Q1FY27 interaction.
+    Q2FY26 (Nov-2025) sits in inputs/other/ to hold concalls/ at the 0-3 contract.
+
+peer_concall_map:
+  MCX:  ["Nov_2025", "Feb_2026", "May_2026", "Aug_2026"]
+  BSE:  ["Nov_2025", "Feb_2026", "May_2026", "Aug_2026"]
+  CDSL: ["Nov_2025", "Feb_2026", "May_2026", "Aug_2026"]
+
+input_gaps:
+  - type: rating
+    severity: NOT_A_GAP
+    detail: >
+      inputs/rating/ empty. IEX carries borrowings of Rs11.16cr (FY26 Data_Sheet)
+      and told BSE on 13-Apr-2026 that it does not qualify as a Large Corporate,
+      meaning it has no listed debt. No CRISIL, ICRA or CARE rating for IEX was
+      found at intake. Unrateable by absence of rated debt, not by missed
+      collection. DEGRADATION MAP "no rating" applies: stage 10 marks
+      rating_wc_quote unresolved; stage 11 Pillar 2 proceeds without rating
+      evidence.
+  - type: research
+    severity: LOW
+    detail: "inputs/research/ empty. Broker notes are NON-ANCHORED, leads only. No effect on anchored evidence."
+  - type: regulatory_order_text
+    severity: HIGH
+    detail: >
+      The CERC market coupling order, the APTEL judgment of 13-Feb-2026 and the
+      two Supreme Court orders (11-May-2026 admission, 27-Jul-2026 stay refusal)
+      are referenced in the corpus but their texts are absent. See freshness
+      pair 3.
+  - type: screening_csv
+    severity: MEDIUM
+    detail: >
+      screener-Profit_Loss.csv, screener-Balance_Sheet.csv, screener-Cash_Flow.csv
+      and screener-Quarters.csv hold row labels and no values, for IEX and for all
+      three peers. Only the Data_Sheet CSVs are populated; each carries the full
+      FY19 to FY26 P&L, balance sheet and cash flow plus a 10-quarter series.
+      Known recurring collector defect. Stage 1 must use Data_Sheet.
+  - type: sector_cap_row
+    severity: MEDIUM
+    detail: >
+      The Section 1B cap table has NO Market Infrastructure or Exchange row.
+      Manifest carries "Platform / SaaS / IT services" at 45x, FLAGGED, as the
+      closest structural row for an asset-light take-rate platform. Live peer
+      multiples 08-Sep-2026: MCX 55.3x, CDSL 62.1x, BSE 48.9x. Operator ruling
+      wanted before stage 11 in phase 3.
+  - type: prospectus_own
+    severity: NOT_A_GAP
+    detail: >
+      IEX listed in 2017, well outside the three-year window, so its own IPO
+      prospectus is not foundational. inputs/prospectus/ holds the IGX draft
+      abridged prospectus instead, 12pp, SEBI, Jul-2026. The full IGX DRHP sits
+      with the book-running lead managers and was NOT collected.
+  - type: image_only_pdfs
+    severity: LOW
+    detail: >
+      inputs/announcements/SAST_Reg29_2_Disclosure_2026-04-21.pdf and
+      inputs/announcements/SAST_Reg29_2_Disclosure_2026-06-10.pdf yield no
+      extractable text. Scanned filings. OCR needed if a stage must read them.
+
+freshness_pairs:
+  - pair: "RESULTS to CONCALL"
+    trigger_doc: "inputs/results/Q1FY27_Results_Unaudited_2026-07-23.pdf, Q1FY27, board-approved 23-Jul-2026"
+    mate_expected: "Q1FY27 concall transcript"
+    status: PASS
+    missing_doc: null
+    detail: >
+      Mate present as inputs/concalls/Concall_Jul_2026_Transcript.pdf, the
+      24-Jul-2026 Analyst Meet transcript filed 31-Jul-2026, which the company
+      scheduled as the Q1FY27 earnings call. No separate call exists.
+  - pair: "RATING BULLETIN to RATIONALE"
+    trigger_doc: null
+    mate_expected: null
+    status: NOT_APPLICABLE
+    missing_doc: null
+    detail: "No rating bulletin in the corpus and no rated debt. The pair has no trigger."
+  - pair: "REFERENCED REGULATORY ORDER to ORDER TEXT"
+    trigger_doc: "inputs/announcements/Rumour_Verification_Reply_2026-04-20.pdf, which cites the said CERC Order on market coupling and a CERC draft notification"
+    mate_expected: "CERC market coupling order text; APTEL judgment 13-Feb-2026; Supreme Court orders 11-May-2026 and 27-Jul-2026"
+    status: FAIL
+    missing_doc: "CERC market coupling order (Jul-2025) and the APTEL and Supreme Court order texts"
+    detail: >
+      SCOPE NOTE. As written the pair names a SEBI order. No SEBI adjudication
+      order is referenced anywhere in this corpus; the only SEBI references are
+      LODR compliance citations. A regulatory ORDER of the same character IS
+      referenced: the CERC market coupling order, named in the company own
+      20-Apr-2026 rumour verification reply, plus the APTEL judgment and the two
+      Supreme Court orders that follow it. Their texts are absent. The pair is
+      recorded FAIL on the purpose of the check, a referenced regulatory order
+      whose text the corpus does not hold, because this order is the single
+      load-bearing document for the thesis. The operator may rule the pair
+      NOT_APPLICABLE on the literal SEBI wording and lift the cap.
+  - pair: "AR to LATEST AUDITED ANNUAL RESULTS"
+    trigger_doc: "inputs/results/FY26_Q4_Audited_Results_2026-04-23.pdf, FY26 audited"
+    mate_expected: "FY26 annual report"
+    status: PASS
+    missing_doc: null
+    detail: "inputs/annual-report/Annual_Report_2026.pdf, filed 14-Aug-2026. The AR does not trail the latest audited annual results."
+
+freshness_verdict: CORPUS GAPPED-FRESHNESS
+
+corpus_verdict: CORPUS GAPPED
+
+analyst_note: >
+  Two structural facts change how later stages must run. Promoter holding is
+  0.00 percent with public at 99.73 percent and employee trusts at 0.27 percent
+  (shareholding pattern 30-Jun-2026), so stage 8 is a board and management check,
+  not a promoter background check. FII 12.63 percent plus DII 31.47 percent sits
+  far above the 3 percent ceiling, so the Undiscovered Alpha 1.25x qualifier
+  fails on institutional absence.

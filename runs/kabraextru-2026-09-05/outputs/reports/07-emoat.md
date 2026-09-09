@@ -367,7 +367,7 @@ relationship immune to capex is named anywhere in this corpus. Honest answer for
 (A4: RESS launch + high-voltage e-bus pack development = 2 items; C2: two-year customer-
 concentration disclosure = 2 items across FY25/FY26; F2: CWIP build-and-capitalisation +
 new capital commitment = 2 items; R1: JJM 2.0 + PM E-DRIVE + PLI ACC scheme amounts = 3 items).
-Only A4 and C2 clear the Moderate bar; F2 and R1 stay Weak/Low once the countervailing evidence
+Only A4 and C2 clear the Moderate bar. F2 and R1 stay Weak/Low once the countervailing evidence
 (revenue-per-employee -12%, widening segment losses, and the fact the R1 tailwinds are shared
 industry-wide) is weighed. Of the roughly 25 total 📄-documented items surfaced across this whole
 scan, the large majority (credit downgrade, WC deterioration, dividend cut to zero, an insolvent
@@ -574,19 +574,211 @@ everything continues to shrink (segment result Rs 70.14 Cr FY25 → Rs 50.75 Cr 
 transition just as GEON needs more of it.
 
 ---
+## REWORK ADDENDUM (2026-09-09)
+
+Rework ordered 2026-09-09 on Verifier C phase-1 findings E-13, E-32, E-33, E-35, carried as
+fix-list Class D item 13 in `outputs/final/run1/gate-recommendation.md`. Run date of record
+stays 2026-09-05. Per the launching agent's instruction, the 22-category scan itself is not
+re-run. Everything above this heading is the original report, unchanged. This addendum closes
+the four named items and states the resulting B07 block. Sources re-read to confirm each fix:
+`Annual_Report_2026.txt` p.28 (Annexure-4, high-voltage e-bus pack description, line 1509-1564
+page marker), p.110 (Note 41(b), capital commitment table, line 6375-6431 page marker), p.83
+(Note 2B, CWIP ageing schedule); `outputs/final/run1/gate-recommendation.md` fix-list item 13.
+
+### Item 1 — E-35: A4 time_to_materialise overstates a date that is NOT FOUND
+
+Section 1A of this same report already records the high-voltage e-bus pack launch/scale as
+"NOT FOUND (no date given)" (row 2 of the 1A table). Re-checking AR26 p.28 (Annexure-4) directly
+confirms this: the passage describing the packs ("developed high-voltage, liquid-cooled battery
+packs tailored specifically for e-buses and commercial transport... backed by in-house
+multi-physics simulation and deep cell characterization") carries no date, no fiscal-year target,
+and no launch window anywhere in that paragraph or the surrounding Annexure-4 text. The Section 3
+summary table and the B07 YAML block both stated a "12-24m" window for this element that the
+report itself never anchored to any source. NOT FOUND is the only valid fill for a missing date
+(CLAUDE.md NEVER list).
+
+BEFORE (Section 3 summary table, row A4, and B07 `active_categories[0].time_to_materialise`):
+"ongoing (RESS live now; HV e-bus packs 12-24m)"
+
+AFTER (superseding both the Section 3 summary table row and the YAML field, per this addendum):
+"ongoing (RESS live now; HV e-bus packs NOT FOUND)"
+
+The RESS half of the field is unaffected: RESS is 📄-documented as LAUNCHED-recent in FY26 (AR26
+p.5, p.29), so "RESS live now" stands. Only the HV e-bus pack half changes, from an unanchored
+12-24m estimate to NOT FOUND. This is a wording correction only; it does not change A4's strength
+(Moderate) or its 📄 evidence type, since the underlying RESS launch and HV pack *development*
+evidence (both 📄-documented) are unaffected. It also does not change em_score, because the
+Section 5 scoring table scores A4 on likelihood/impact and evidence type, not on a materialise
+date. em_score BEFORE this item = 9. em_score AFTER this item = 9 (unchanged).
+
+### Item 2 — E-33: catalysts_12m entry 4 mixed a 0-12m field with a 12-24m event
+
+The original catalysts_12m entry 4 read: "Commissioning of the new Rs 31.77 Cr capital commitment
+and whether it shows as revenue, not just assets," with window "12-24m (per past CWIP 1-2yr
+cycle)." A 12-24 month window inside a field the B07 schema defines as the 12-month catalyst list
+is an internal contradiction, and it drifts from Section 6A, which already places the
+commissioning-and-monetisation test correctly in its own 12-24m bucket ("Whether the new capex
+commissions on the same ~1-2-year cycle the FY25→FY26 CWIP data shows, and... whether GEON's
+segment result stops widening and revenue per employee reverses its FY26 decline").
+
+Resolution chosen: BOTH of the two options the launching agent offered, applied together.
+(a) Section 6A's existing 12-24m bucket already carries the full commissioning-to-revenue test
+and needs no new entry; this addendum does not duplicate it into the optionality register.
+(b) catalysts_12m entry 4 is restated to the narrower, genuinely 0-12-month observable proxy: not
+full commissioning (12-24m, unproven), but whether the Rs 31.77 Cr commitment (Note 41b) begins
+appearing as a CWIP addition/transfer in the next Annual Report's Note 2B, the disclosure vehicle
+this company has used in every prior year. The FY2026-27 AR is due for signing around May 2027,
+roughly 8 months from this run's 5-Sep-2026 date of record and well inside a 12-month window; the
+prior three years of Note 2B disclosure (FY24, FY25, FY26, all confirmed above) show the company
+does report CWIP movement on this cadence, every year, without exception, which is why this is a
+reasonable 0-12m observable proxy and not a repeat of the same estimating error being corrected.
+
+BEFORE (catalysts_12m[4]):
+{catalyst: "Commissioning of the new Rs 31.77 Cr capital commitment and whether it shows as
+revenue, not just assets", window: "12-24m (per past CWIP 1-2yr cycle)", evidence_type:
+"documented", anchor: "AR FY26 p.110, Note 41(b) and p.83, Note 2B"}
+
+AFTER (catalysts_12m[3] in the rebuilt list, see YAML below):
+{catalyst: "Rs 31.77 Cr capital commitment (Note 41b) appears as a CWIP addition/transfer in the
+FY2026-27 Annual Report's Note 2B, confirming spend has begun (full commissioning and any
+revenue conversion is a separate, later test, tracked in Section 6A's 12-24m bucket, not here)",
+window: "0-12m (FY27 AR due ~May-2027)", evidence_type: "documented (base commitment); the
+appearance-in-next-filing proxy itself is inference from three years' unbroken Note 2B disclosure
+cadence", anchor: "AR FY26 p.110, Note 41(b); p.83, Note 2B (three-year disclosure pattern)"}
+
+No score changes. em_score BEFORE this item = 9. em_score AFTER this item = 9 (unchanged); this
+field feeds Pillar 3 catalyst proximity downstream, not the em_score arithmetic.
+
+### Item 3 — E-13: a fourth "media-reported" evidence tier is not part of the three-tier taxonomy
+
+The pipeline's evidence taxonomy (this prompt's Operating Rule 2) defines exactly three tiers:
+📄 DOCUMENTED, 🎙️ MANAGEMENT CLAIM, 🔍 ANALYST INFERENCE. The original report introduced a fourth,
+"📰 MEDIA-REPORTED," for the reported 2026 preferential issue to Singularity Large Value Fund III
+and Nitish Mittersain, and used it in catalysts_12m entry 1, in Section 3's H2 discussion, in the
+report's own header framing paragraph, and in the optionality register. Carrying a fourth tier
+inside catalysts_12m presents non-corpus, web-reported information as if it were graded pipeline
+evidence, which it is not: this item is outside the document corpus entirely (the AR was signed
+28-May-2026, before the reported 2-Sep-2026 EGM) and was sourced only via Company Memory /
+web-reported claims, never verified against a filing this stage read.
+
+Resolution: the item is removed from catalysts_12m entirely (it is not corpus evidence and does
+not belong in a field that feeds Pillar 3 catalyst proximity on corpus-anchored events). It is
+carried only in the optionality register, and its label is corrected to state explicitly that it
+is NON-CORPUS and unscored, not assigned to any of the three tiers, awaiting the BSE/NSE
+Regulation 30 and Form PAS-3 filings that would first bring it into the document corpus.
+
+BEFORE (catalysts_12m[1]):
+{catalyst: "2026 preferential issue outcome (Singularity Large Value Fund III, Nitish Mittersain,
+~Rs 120-141 Cr for Geon capacity, EGM reportedly 2-Sep-2026)", window: "0-3m (filing
+confirmation)", evidence_type: "media-reported (unconfirmed in corpus)", anchor: "Company Memory
+/ not in AR26 (signed 28-May-2026, pre-dates EGM)"}
+
+AFTER: removed from catalysts_12m. The optionality_register entry for this item (already present
+in the original report) is restated:
+
+BEFORE (optionality_register[2]):
+{optionality: "2026 preferential issue to Singularity Large Value Fund III and Nitish Mittersain
+(~Rs 120-141 Cr, reportedly to fund Geon EV-battery capacity; EGM 2-Sep-2026 per Company Memory)",
+converting_evidence: "An EGM special-resolution outcome filed with BSE/NSE, a Form PAS-3
+allotment, and the 'utilisation of preferential-issue proceeds' note in the FY27 AR...", ...}
+
+AFTER (optionality_register, restated, see YAML below): explicitly labelled "NON-CORPUS,
+unscored" in the optionality line itself, with the same converting-evidence and window fields
+(these were already correctly BSE/NSE-filing-anchored and do not need to change). No tier symbol
+(📄/🎙️/🔍) is assigned to this item anywhere in the corrected block. This is a labelling and
+placement fix only; it carries no scoring weight before or after, so it does not touch em_score
+or any category strength.
+
+### Item 4 — E-32: evidence_mix {documented: 25, claim: 10, inference: 6} was not auditable
+
+The original report's evidence_mix field asserted whole-scan counts that the report body itself
+only ever described as approximate ("Of the roughly 25 total 📄-documented items surfaced across
+this whole scan..."). An unenumerated "roughly 25" is not an auditable count.
+
+Resolution chosen: replace the counts with the auditable basis this report already computes and
+defends line by line, namely the 9-item 📄 completionist recount of items that carry ANY scoring
+weight (feed a non-zero raw score in Section 5), enumerated here per category and anchor, and
+state the claim/inference counts for that same scoring-relevant scope rather than the whole scan.
+
+Enumerated 📄 documented items carrying scoring weight (9 total, matching Section 3's recount
+line and Section 5's scoring table, where all four scored categories use the 1.0x/📄 multiplier):
+1. A4-1: RESS launch, LAUNCHED-recent FY26 — AR26 p.5, p.29 (Annexure-4)
+2. A4-2: high-voltage liquid-cooled e-bus/commercial battery pack development — AR26 p.28-29
+3. C2-1: FY25 customer concentration disclosure (2 customers, 26.94%) — AR26 p.106, Note 38
+4. C2-2: FY26 customer concentration disclosure (1 customer, 19.11%) — AR26 p.106, Note 38
+5. F2-1: CWIP build-and-capitalisation, Rs 44.12 Cr transferred FY26, no ageing >3yr — AR25 p.83
+   and AR26 p.83, Note 2B
+6. F2-2: new capital commitment, Rs 31.77 Cr — AR26 p.110, Note 41(b)
+7. R1-1: Jal Jeevan Mission 2.0 outlay — AR26 p.32-35 MD&A
+8. R1-2: PM E-DRIVE Scheme, Rs 10,900 Cr — AR26 p.32-35 MD&A
+9. R1-3: PLI Scheme for Advanced Chemistry Cell (ACC) Battery Storage — AR26 p.32-35 MD&A
+
+Claim (🎙️) items carrying scoring weight: 0. Every one of the four scored categories (A4, C2, F2,
+R1) is scored in Section 5 at the 1.0x/📄 multiplier, meaning none of their raw scores rests on a
+🎙️ or 🔍 item. Broader 🎙️ evidence exists elsewhere in the report (BESS/telecom/C&I aspiration,
+AR26 p.36-38; the GEON ~7 GWh/Rs 250 Cr cumulative-investment claim, AR26 p.4-5; the stale
+Dec-2023 deck claims) but none of it feeds a non-zero score, so the auditable scoring-relevant
+claim count is 0.
+
+Inference (🔍) items carrying scoring weight: 0, for the same reason. The 🔍 items in the report
+(the <10% utilisation inference in Section 2B; the -12% revenue-per-employee arithmetic in F2)
+support the qualitative F2 narrative but F2's Section 5 score uses the 📄 CWIP evidence as its
+qualifying tier, at the 1.0x multiplier, not a 🔍 multiplier.
+
+evidence_mix BEFORE: {documented: 25, claim: 10, inference: 6} (whole-scan, unenumerated,
+described in the report body only as "roughly 25")
+
+evidence_mix AFTER: {documented: 9, claim: 0, inference: 0} (scoped explicitly to items carrying
+scoring weight, i.e. items feeding a non-zero raw score in Section 5; fully enumerated above,
+each with a category id and a page anchor)
+
+This changes the evidence_mix field's scope and definition, not the underlying facts: the
+broader whole-scan tally of ~25 documented / ~10 claim / ~6 inference items (most of which are
+negative findings, such as the credit downgrade, WC deterioration, dividend cut, insolvent
+customer, and dropped claims, none of which feed a category score) still exists in the report
+body and is unaffected by this correction. It is simply no longer carried in the evidence_mix
+YAML field, because that field must be auditable and the whole-scan tally, as originally stated,
+was not. No category score changes. em_score BEFORE = 9. em_score AFTER = 9 (unchanged; no
+arithmetic in Section 5 is touched by this item).
+
+### Item 5 — completionist_recount and combined_assessment: confirmed unaffected
+
+The completionist_recount field's text ("9 documented items across 4 categories carrying scoring
+weight...") is unchanged by this addendum; if anything, Item 4 above reinforces it by using the
+identical 9-item basis for the corrected evidence_mix field, so the two fields are now internally
+consistent with each other, which they were not before (the old evidence_mix implied a much
+larger, unenumerated pool alongside the 9-item recount, without stating how the two related).
+
+combined_assessment ("AVOID") and combined_reasoning are unchanged. Neither the Gate 0 core score
+(22/100) nor the Stage 7 em_score (9/92, unchanged by any item above) moved, so Section 6D's
+combined classification and reasoning stand exactly as in the original report.
+
+### Net effect on the B07 block
+
+Three fields change: `active_categories[0].time_to_materialise` (Item 1), `catalysts_12m` (Items 2
+and 3: one entry restated, one entry removed), and `evidence_mix` (Item 4). One field gains a
+label correction: `optionality_register` (Item 3, NON-CORPUS labelling on the preferential-issue
+row). `rework_addendum: "2026-09-09"` is added. Every other field, including em_score (9),
+em_classification ("NONE"), completionist_recount, combined_assessment ("AVOID"),
+combined_reasoning, top_moat_risks, capex_embedded_growth_pct (16.6), input_gaps, flags, and
+analyst_note, is unchanged and carried forward as-is from the original report.
+
+---
 ```yaml
 stage: B07-emoat
 company: "KABRAEXTRU"
 run_date: "2026-09-05"
 model: claude-sonnet-5
+rework_addendum: "2026-09-09"
 status: complete
 input_gaps:
   - "NO-CONCALL MODE: no concall transcripts exist; F2 uses AR-to-AR capex-completion evidence (CWIP/PPE notes) in place of a promise-delivery record, per orchestrator substitution rule"
   - "presentation-stale: only investor deck available is Q3 FY24 (dated 31-Dec-2023), 2.5 years stale; used for structure/framing context only, every figure dated"
   - "no segment-level capex/capacity breakdown (Extrusion vs Geon) disclosed in either AR; the FY26 gross PP&E addition of Rs 68.12 Cr and the new Rs 31.77 Cr capital commitment cannot be attributed to a specific division"
   - "GEON's ~7 GWh / Rs 250 Cr cumulative-investment claim (AR26 p.4-5) has no FY25 baseline to check growth or promise-delivery against; first appears in the FY26 AR only"
-  - "2026 preferential issue (Singularity Large Value Fund III, Nitish Mittersain, ~Rs 120-141 Cr, EGM reportedly 2-Sep-2026) is entirely outside this document corpus (AR signed 28-May-2026, pre-dates the reported EGM); carried as 📰 media-reported, unscored, per Company Memory"
+  - "2026 preferential issue (Singularity Large Value Fund III, Nitish Mittersain, ~Rs 120-141 Cr, EGM reportedly 2-Sep-2026) is entirely outside this document corpus (AR signed 28-May-2026, pre-dates the reported EGM); NON-CORPUS, unscored, carried only in the optionality register per the 2026-09-09 rework addendum (was previously mislabelled with a fourth 'media-reported' evidence tier outside the three-tier taxonomy)"
   - "no announcements/Reg-30 filings in corpus to corroborate the AR-stated '~150 Cr order secured for FY27 execution' claim (AR26 p.37)"
+  - "high-voltage e-bus/commercial battery pack launch date is NOT FOUND in either AR; no date, fiscal-year target, or launch window is disclosed anywhere in Annexure-4 (2026-09-09 rework addendum, item 1)"
 flags:
   - type: FLAG-EMOAT
     reason: "em_score 9/92, well under the 12-point floor (NO MEANINGFUL EMERGING MOAT), consistent with Gate 0's independent AVOID/NONE finding. The two Moderate-strength signals found (A4 GEON product-platform expansion; C2 improving customer concentration) are each undercut by countervailing evidence: the Battery/Geon segment loss widened for a second straight year (-25.53 Cr FY25 to -43.35 Cr FY26, AR26 p.105-106) even as the product range broadens, and the customer-concentration improvement coincides with the insolvency of the company's largest disclosed customer relationship (Hero Electric, Rs 30.39 Cr receivable under NCLT CIRP, AR26 p.87-88), not confirmed new-customer wins."
@@ -595,20 +787,19 @@ flags:
 em_score: 9
 em_classification: "NONE"
 active_categories:
-  - {id: "A4", name: "Product platform / modular architecture", strength: "Moderate", evidence_type: "documented", time_to_materialise: "ongoing (RESS live now; HV e-bus packs 12-24m)"}
+  - {id: "A4", name: "Product platform / modular architecture", strength: "Moderate", evidence_type: "documented", time_to_materialise: "ongoing (RESS live now; HV e-bus packs NOT FOUND)"}
   - {id: "C2", name: "Customer concentration improving", strength: "Moderate", evidence_type: "documented", time_to_materialise: "already happening (2-year trend, FY25-FY26)"}
-evidence_mix: {documented: 25, claim: 10, inference: 6}
-completionist_recount: "9 documented items across 4 categories carrying scoring weight (A4, C2, F2, R1); only A4 and C2 clear the Moderate bar. Of ~25 total documented items across the full scan, the majority (credit downgrade, WC deterioration to 244 days, dividend cut to zero, insolvent anchor customer, dropped market-share and certification claims, loss-making data subsidiary) are evidence against an emerging moat, not for one. 2 Moderate-strength categories is well under the 3-6 base rate, appropriate given Gate 0's independent AVOID/NONE finding."
+evidence_mix: {documented: 9, claim: 0, inference: 0}
+completionist_recount: "9 documented items across 4 categories carrying scoring weight (A4, C2, F2, R1); only A4 and C2 clear the Moderate bar. This is also, as of the 2026-09-09 rework addendum, the auditable basis for evidence_mix (see enumerated list, addendum item 4): A4-1 RESS launch (AR26 p.5/p.29), A4-2 HV e-bus pack development (AR26 p.28-29), C2-1/C2-2 FY25/FY26 concentration disclosure (AR26 p.106), F2-1 CWIP build-and-capitalisation (AR25/AR26 p.83), F2-2 new capital commitment (AR26 p.110), R1-1/R1-2/R1-3 JJM 2.0 / PM E-DRIVE / PLI ACC (AR26 p.32-35). Of the broader, non-scoring-weight-bearing evidence pool surfaced across the full scan (credit downgrade, WC deterioration to 244 days, dividend cut to zero, insolvent anchor customer, dropped market-share and certification claims, loss-making data subsidiary), the majority is evidence against an emerging moat, not for one. 2 Moderate-strength categories is well under the 3-6 base rate, appropriate given Gate 0's independent AVOID/NONE finding."
 catalysts_12m:
-  - {catalyst: "2026 preferential issue outcome (Singularity Large Value Fund III, Nitish Mittersain, ~Rs 120-141 Cr for Geon capacity, EGM reportedly 2-Sep-2026)", window: "0-3m (filing confirmation)", evidence_type: "media-reported (unconfirmed in corpus)", anchor: "Company Memory / not in AR26 (signed 28-May-2026, pre-dates EGM)"}
   - {catalyst: "Delivery of the ~INR 150 Crore FY27 order into recognised Battery-segment revenue", window: "0-12m (FY27)", evidence_type: "management claim", anchor: "AR FY26 p.37, MD&A Key Strengths item 8"}
   - {catalyst: "Further CRISIL rating action following FY27 quarterly results", window: "0-12m", evidence_type: "documented (rating history) + inference (trend)", anchor: "AR FY26 p.51, Corporate Governance Report"}
-  - {catalyst: "Commissioning of the new Rs 31.77 Cr capital commitment and whether it shows as revenue, not just assets", window: "12-24m (per past CWIP 1-2yr cycle)", evidence_type: "documented", anchor: "AR FY26 p.110, Note 41(b) and p.83, Note 2B"}
+  - {catalyst: "Rs 31.77 Cr capital commitment (Note 41b) appears as a CWIP addition/transfer in the FY2026-27 Annual Report's Note 2B, confirming spend has begun; full commissioning and revenue conversion is a separate 12-24m test tracked in Section 6A, not here (restated 2026-09-09, was previously a 12-24m item misplaced in this 0-12m field)", window: "0-12m (FY27 AR due ~May-2027)", evidence_type: "documented (base commitment); inference (appearance-in-next-filing proxy, from three years' unbroken Note 2B disclosure cadence)", anchor: "AR FY26 p.110, Note 41(b); p.83, Note 2B"}
 capex_embedded_growth_pct: 16.6
 optionality_register:
   - {optionality: "GEON reaching its own claimed 'optimal' Rs 1,500+ Cr revenue scale on the existing facility", converting_evidence: "Disclosed utilisation % or sustained Battery-segment revenue run-rate materially above Rs 136 Cr/yr", first_appears: "Future AR MD&A / Note 38 segment revenue, or a Reg-30 capacity filing", window: "3-5 years"}
   - {optionality: "The ~INR 150 Cr order secured for FY27 execution", converting_evidence: "Revenue recognised in FY27 segment note, or a named-counterparty Reg-30 order-win filing", first_appears: "FY2026-27 AR Note 38, or exchange announcement", window: "12 months"}
-  - {optionality: "2026 preferential issue to Singularity Large Value Fund III / Nitish Mittersain for Geon capacity", converting_evidence: "EGM special-resolution outcome, Form PAS-3 allotment, and preferential-issue utilisation note in FY27 AR", first_appears: "BSE/NSE Reg-30 filing; FY2026-27 AR", window: "0-3m filing; 12-24m capacity delivery"}
+  - {optionality: "NON-CORPUS, unscored (2026-09-09 addendum: no evidence tier assigned): 2026 preferential issue to Singularity Large Value Fund III / Nitish Mittersain for Geon capacity, reported via Company Memory / web sources only, entirely outside the document corpus this stage read", converting_evidence: "EGM special-resolution outcome, Form PAS-3 allotment, and preferential-issue utilisation note in FY27 AR", first_appears: "BSE/NSE Reg-30 filing; FY2026-27 AR", window: "0-3m filing; 12-24m capacity delivery if confirmed"}
   - {optionality: "ARAI/AIS-156 accreditation, IATF-approved facility, 90%+ design-win rate/data network effect claims (Dec-2023 deck)", converting_evidence: "Re-statement/update with current data in a future AR, or independent certification-body listing", first_appears: "AR Annexure-4 or Key Strengths section", window: "uncertain; already dropped for 2 consecutive ARs"}
   - {optionality: "R&D headcount growth beyond the '100+ engineers' plateau", converting_evidence: "Disclosed headcount figure exceeding 100+ with growth trajectory, or named premium-paid technical hires in Annexure-5", first_appears: "MD&A Human Capital section or Annexure-5", window: "12-24 months"}
   - {optionality: "Varos Technology subsidiary becoming a real monetised data asset", converting_evidence: "Disclosed Varos revenue growth / path to profitability", first_appears: "Future AOC-1 Annexure-1", window: "3-5 years; currently trending the wrong direction"}
@@ -620,5 +811,5 @@ top_moat_risks:
   - "Every flagship differentiator claim in the Dec-2023 investor deck (first ARAI/AIS-156 accreditation, IATF-approved facility, 90%+ design-win rate, data network effect) is absent from both the FY25 and FY26 Annual Reports; claims that vanish across filing cycles should not be relied on until re-verified."
   - "The one hard, quantified forward capex commitment (Rs 31.77 Cr, AR FY26 Note 41b p.110) implies only ~16.6% incremental revenue at the company's own historical fixed-asset turnover, a small fraction of management's stated 'Rs 1,500+ Cr optimal' GEON revenue potential (AR FY26 p.37), which has no capex or capacity plan anchoring it in this corpus."
   - "Revenue per employee fell 12% FY25 to FY26 (Rs 77.0 lakh to Rs 67.8 lakh, computed from AR FY26 p.17/p.30) in the same year capex was being commissioned (Rs 44.12 Cr transferred from CWIP, AR FY26 p.83); capacity is being built faster than it is being monetised."
-analyst_note: "No-concall substitution for F2 relied on CWIP/PPE ageing schedules (AR25 p.83, AR26 p.83) as the best available capex-completion proxy; this shows on-schedule execution but cannot attribute spend to Extrusion vs Geon, since neither AR splits capex by segment. Separately, the 2026 preferential issue's EGM (reportedly 2-Sep-2026 per Company Memory) falls 3 days before this run's date (5-Sep-2026) and entirely outside the AR corpus (signed 28-May-2026); its outcome may already be public via an exchange filing not yet collected into this repo, and is the single highest-value item for the next collector refresh before Halt 1."
+analyst_note: "No-concall substitution for F2 relied on CWIP/PPE ageing schedules (AR25 p.83, AR26 p.83) as the best available capex-completion proxy; this shows on-schedule execution but cannot attribute spend to Extrusion vs Geon, since neither AR splits capex by segment. 2026-09-09 rework addendum closed four verifier-C items: A4's HV e-bus pack date restated NOT FOUND (was an unanchored 12-24m estimate); catalysts_12m's capital-commitment entry restated to the observable 0-12m CWIP-appearance proxy, with the full commissioning test left in Section 6A's existing 12-24m bucket; the preferential-issue item dropped from catalysts_12m and relabelled NON-CORPUS/unscored in the optionality register, removing the non-taxonomy 'media-reported' tier; evidence_mix replaced with the auditable 9-item scoring-weight enumeration. No category score or em_score changed. The preferential issue's EGM (reportedly 2-Sep-2026) remains the single highest-value item for the next collector refresh before Halt 1."
 ```

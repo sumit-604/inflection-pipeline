@@ -65,3 +65,4 @@ aborted). Same ledger row shape.
 
 | # | stage | model | effort | in_tok | out_tok | total_tok | wall | run# |
 |---|-------|-------|--------|--------|---------|-----------|------|------|
+| 7 | emerging moat scan (rework addendum, Class D) | claude-sonnet-5 | default | n/a | n/a | 104880 | 457s | 2 |

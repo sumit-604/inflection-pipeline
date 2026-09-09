@@ -468,3 +468,50 @@ Company memory written for both with the standing-ruling spear OVERRIDE.
 - OPEN ACTION carried forward, unchanged — AR Protocol v1.3 Step 11A still
   rechecks the Hurdle Ratio on an "audited EPS base" after A21 replaced that
   base with the forward run-rate. Out of scope for both amendments this session.
+
+## 2026-09-09 — TOTEM (Forbes Precision Tools & Machine Parts) — /step1 intake, phase 1 to Halt 1
+
+- Screener resolves this name ONLY by BSE code (`/company/544186/`). Both
+  `/company/TOTEM/` and the `/consolidated/` path 404. The company is BSE-listed
+  only; its shareholding filings record "NSE Symbol NOTLISTED".
+- The collector's sector auto-picker failed as usual, choosing "Pharma / CDMO" for a
+  cutting-tool maker: its keyword map hits "capital" from screener's Capital Goods
+  label. Corrected to "Cables / Industrial products", 25x.
+- The empty-CSV defect IS present: Profit_Loss, Balance_Sheet, Cash_Flow, Quarters
+  and Customization export as empty formula shells for the subject AND every peer.
+  Only `<TICKER>-Data_Sheet.csv` carries data. Stage 1 read the shells, concluded
+  peer data was missing, and scored every peer-dependent moat test zero. Cost one
+  full stage re-run. The stage-0 inventory must check CSV CONTENT, not row counts;
+  my first B00 said "all six populated" on a `wc -l` alone and was wrong.
+- The collector deletes its `_download/` staging area on exit. Peer annual reports
+  and peer investor presentations it downloaded were gone before they could be
+  staged. Anything wanted from `_download/` must be copied during the run.
+- A demerger listing has no DRHP. The prospectus-equivalents are the Information
+  Memorandum and the NCLT scheme order, both on the company IR site. Staged into
+  `inputs/prospectus/`, so the RECENTLY-LISTED HIGH gap did not fire.
+- The single most decision-relevant filing, the Q1 FY27 result carrying the margin
+  bridge, was a SCANNED image with zero extractable text. `pdftoppm` is absent so
+  the Read tool cannot render PDFs at all. Fix that worked: `pip install pypdfium2`,
+  render the pages to PNG at 200 dpi, point stages at the PNGs. Subagents read them
+  cleanly. Worth making the standing fallback for any zero-text PDF.
+- Verifier A (haiku) run 1 raised a MAJOR that was its own reading error, and
+  WITHDREW it unprompted on run 2. The known severity-mislabel pattern, but
+  self-correcting this time.
+- The verifier loop did not converge and the reason matters. Verifier B found 19,
+  then 33, then 47 red-flag items across three cycles while stage 5's catch count
+  went 4, 16, 15, so acceptance moved 21%, 48%, 32%. The denominator grew because
+  each fresh Opus read mined deeper into genuinely defect-rich filings, not because
+  the work degraded. Chasing the 60% threshold would loop indefinitely. Stopped at
+  three cycles and let the framework's own answer stand: REWORK, with the verifier
+  finding lists as the rework instruction. Open question for /compost: should the
+  orchestrator cap correction cycles explicitly, say at two, and treat a still-low
+  acceptance rate as a finding about the corpus rather than a loop trigger?
+- The two extra cycles paid for themselves. They reversed a materials-cost
+  pass-through finding that was a gross-versus-net basis error (gross margin
+  actually IMPROVED about 212bp), withdrew the external support for the
+  raw-material half of the inventory question (the +60.2% CIF figure is a rebound
+  off a depressed FY25; FY26 is only 1.2% above FY24), and withdrew a false peer
+  claim that Wendt had its worst quarter on record. All three would have shipped.
+- Roughly 5.58M tokens over 25 subagent runs; about 52% went to cycles two and
+  three. Stage 5, stage 6 and the two verifiers that audit them are 60.6% of the run.
+- Not a clean run.

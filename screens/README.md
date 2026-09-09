@@ -104,3 +104,69 @@ Known limits of this run, all recorded in the per-company manifests:
   it. Its manifest carries a calendar-year warning.
 - Cards ran 2,600 to 3,800 words against the framework's 1,400 to 1,900. Longer than
   specified, and flagged rather than trimmed.
+
+## Third run, 2026-09-09
+
+Eight operator picks, screened in one session: India Nippon Electricals, Graphite India,
+Molbio Diagnostics, TAAL Tech, Delton Cables, Mangalore Refinery, Titan Bio-Tech,
+Corona Remedies.
+
+Verdicts: PROCEED to `/step1` on TAALTECH and DELTON. WATCH on CORONA, INDNIPPON, MOLBIO
+and TITANBIO. PASS on GRAPHITE and MRPL.
+
+**The corpus rule was bent a second time, and further than on 2026-09-08.** That run had
+no egress but could still read filed PDFs through Bull AI's chunk reader. This run could
+not. `get_document_chunks` and `search_company_documents` timed out on every call, at
+every page range, in both collections, for the whole session. Egress was GitHub only:
+the proxy answered 403 to the CONNECT for docs.bull-ai.in, screener.in, bseindia.com and
+every rating agency host, and WebFetch returned EGRESS_BLOCKED. No page of any filed
+document was read by anyone this session.
+
+On the operator's ruling of 2026-09-09 the cards were written anyway, from Bull AI's
+structured endpoints, which stayed up: `list_document_availability`, `get_company_guidance`,
+`get_company_counterparties`, `get_company_market_transactions`,
+`get_company_corporate_actions` and `get_company_classification`. Each returns a document
+code and a page, so a cite still opens. Every card carries **TIER: DEGRADED** at the top
+and the whole method is written up once at `screens/corpus/_METHOD-2026-09-09.md`.
+
+The epistemic step down is real and is stated on every card. On 2026-09-08 a quote was
+text the session read. On 2026-09-09 a quote is a quote Bull AI reports, at a page Bull AI
+names. Everything on these eight cards is PENDING SOURCE VERIFICATION.
+
+What no card in this run could do:
+- Step 5, financial trajectory: no balance sheet, no cash flow, no cash conversion, on any
+  of the eight. Only the fragments management chose to state.
+- Step 8, proof check: the last two quarters are not held for any name. NOT FOUND on all eight.
+- Step 10, credit rating: NOT FOUND on all eight, agency sites named as where it was looked for.
+- Step 4, promoters: no shareholding pattern or pledge for any name. Covered only where group
+  companies and insider dealing surfaced, which was INDNIPPON, GRAPHITE and TITANBIO.
+
+Per-name limits, all recorded in the manifests:
+- MOLBIO listed in August 2026 and has filed only a DRHP, an RHP, a Prospectus and one board
+  meeting outcome. Guidance and counterparties both returned zero. Its card carries no business
+  numbers at all and says so; the next action is to fetch the RHP, not to run `/step1`.
+- TITANBIO has no annual report, no presentation and no transcript indexed in any year, and
+  returned zero guidance and zero counterparties. Same shape of verdict: fetch from BSE first.
+- MRPL and TAALTECH returned zero guidance records. For MRPL that is notable because its
+  transcripts are indexed through FY2026; Bull AI derived no guidance from documents it holds.
+- GRAPHITE and DELTON were screened without a `list_document_availability` call, so their
+  corpus ledgers are incomplete and step 1 says so on both cards.
+- TAAL Tech resolves to ISIN INE524T01011, the entity formerly named TAAL Enterprises, which
+  filed a change of name on 2025-11-04. One company, renamed.
+- Bull AI's classification for TITANBIO ("Seeds and Biotechnology Products", "Agriculture")
+  could not be confirmed against any document and is flagged as possibly miscoded.
+
+Two findings worth carrying forward regardless of tier:
+- DELTON book value per share went from Rs 105 to Rs 397 in FY26 on a land revaluation under
+  Ind AS. Nothing was earned. It is the first thing a deep run must open.
+- INDNIPPON FY26 net profit was Rs 1,112 Mn against EBITDA of Rs 1,222 Mn. Profit at 91% of
+  EBITDA is not reachable from operations after depreciation and tax, so non operating income
+  is material and unquantified.
+
+Bull AI budget: 923 calls remaining at the start against a 1,000 call cycle to 2026-10-08.
+About 40 calls were used. Timed-out calls consumed no quota, so the two dead endpoints cost
+nothing but the corpus.
+
+Cards ran 1,362 to 2,876 words against the framework's 1,400 to 1,900. MOLBIO came in short
+because there was nothing to say. The rest ran long. Flagged rather than trimmed, as in the
+2026-09-08 run.

@@ -31,3 +31,4 @@
 | 12a | verifier A numerical (final) | claude-haiku-4-5 | default | n/a | n/a | 109706 | 5m57s | 3 |
 | 12b | verifier B red flags (final) | claude-opus-4-8 | default | n/a | n/a | 395319 | 20m55s | 3 |
 | 12d | verifier D peer coverage (final) | claude-sonnet-5 | default | n/a | n/a | 190875 | 9m40s | 3 |
+| 13 | synthesis-lite (phase 1, three files) | claude-opus-4-8 | default | n/a | n/a | 108990 | 4m55s | 1 |

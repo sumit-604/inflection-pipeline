@@ -558,7 +558,7 @@ Registered options are watched, never scored.
 | | Gate 0 (B01) | Emerging Moat (B07) |
 | --- | --- | --- |
 | Core / adjusted score | Core 58 (AVERAGE band before deal-breakers) | 9.7 / 92 |
-| Existing moat count / active categories | 5 of 12 confirmed, moat block 22/60, class STRONG | 3 of 23 Strong/Moderate (A3, B2, F2) |
+| Existing moat count / active categories | 4 of 12 confirmed, moat block 20/60, class STRONG (B01 run 3; run-2 figures 5 of 12 and 22/60 superseded after M5 was re-scored 0, PEER DATA NEEDED) | 3 of 23 Strong/Moderate (A3, B2, F2) |
 | Classification | AVOID (mechanical: pledge deal-breaker + 3-year history downgrade) | NO MEANINGFUL EMERGING MOAT (<12) |
 
 ### 6D. Combined classification
@@ -575,14 +575,14 @@ NONE-forward, so it does not fit that setup. HIGH POTENTIAL and TURNAROUND
 were both considered and rejected: HIGH POTENTIAL requires an EXPANSION-
 tier forward score this scan does not find, and TURNAROUND requires a
 distressed-to-recovering backward profile that Gate 0's own STRONG existing
-moat block (22/60) does not describe; TOTEM was never distressed, it is a
+moat block (20/60) does not describe; TOTEM was never distressed, it is a
 steady, low-disclosure single-plant business with a real but small
 reinvestment cycle.
 
 ### 6E. Final output card
 
 **Moat evolution map (existing to emerging, by family):**
-- Existing (Gate 0 moat block, STRONG, 5/12 confirmed): includes a
+- Existing (Gate 0 moat block, STRONG, 4/12 confirmed per B01 run 3): includes a
   newly-scorable Cost Advantage (subject EBITDA margin +7.37pp above peer
   median) and a Brand/GM proxy (+6.58pp above peer median, capped by
   sub-8% revenue CAGR) — see B01-gate0 for detail; not re-derived here.
@@ -622,3 +622,19 @@ of a climb.
   Rs 3.01 cr) are individually quantified.
 - No utilisation % is published for the single plant in any year (blocks
   2B entirely).
+
+
+---
+
+## ALIGNMENT NOTE (orchestrator, 2026-09-09)
+
+Sections 6C, 6D and 6E originally carried the Gate 0 moat figures from
+B01 run 2 (5 of 12 confirmed, moat block 22/60). Gate 0 run 3 re-scored
+M5 Scale and Dominance to 0 with PEER DATA NEEDED, because three listed
+peers cannot rank a segment dominated by unlisted and imported supply.
+The governing figures are 4 of 12 confirmed and 20/60, grand total
+78/160. Moat class stays STRONG, Gate 0 classification stays AVOID, and
+this scan's own em_score 9.7 and classification NONE are unaffected.
+Mechanical figure alignment only, applied by the orchestrator per the
+CLAUDE.md dependency-alignment rule; no analytical content changed.
+Raised as a MAJOR by verifier C, cycle 2.

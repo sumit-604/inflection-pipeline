@@ -1,433 +1,398 @@
-# VERIFIER B: INDEPENDENT RED-FLAG AUDIT (NO-CONCALL MODE)
-Forbes Precision Tools and Machine Parts Ltd (TOTEM) | Run: totem-2026-09-09 | Audit date: 2026-09-09
-Emits: B12b | Model: Opus | Audits: outputs/reports/05-concall.md, outputs/reports/06-peers.md
-
-## METHOD AND SCOPE
-
-This company holds no earnings calls and publishes no investor presentation. There are ZERO
-subject-company transcripts. I read the substitute record myself, fresh, before opening either
-pipeline report: three annual reports (Board's Report, MD&A, MD's Message), four results filings,
-five Regulation 30 announcements, three shareholding-pattern filings, and the FY2024-25
-Corrigendum. I then read the five peer transcripts (four Kennametal, one Wendt, the last misnamed
-"Jul_2026" and correctly dated 21-Jul-2025). Only after that did I open B05 and B06.
-
-Page anchors are real PDF pages, derived from the `===== [PAGE n of N] =====` markers in
-work/text/. The scanned Q1 FY27 filing was read from the PNG renders.
-
-The structural absence of any Q&A record is itself weighed, not treated as a clean bill. It is
-also not an accident: the Corporate Governance Report states it as standing policy — "The Company
-does not have a practice of making presentation to institutional investors and analysts"
-(AR2026 PDF p.52; identical sentence AR2025 PDF p.41). Four fiscal years listed, no outside party
-has ever put a question to this management on the record.
-
-═══════════════════════════════════════════════════════════════
-PART 1: MY INDEPENDENT RED-FLAG LIST (formed before reading B05/B06)
-═══════════════════════════════════════════════════════════════
-
-## IF-1. The FY25 export claim was false at the moment it was made — HIGH
-
-FY25 AR MD&A: "The business has also seen an improving trend in the export business performance"
-(AR2025 PDF p.19). The same annual report's Annexure IV reports export of goods on FOB basis at
-₹3,791.05 lakh (AR2025 PDF p.33) against ₹3,834.10 lakh the prior year (AR2024 PDF p.29). Exports
-fell 1.1%. This is not a promise later missed; it is a positive characterisation contradicted by a
-number printed 14 pages later in the same document.
-
-FY26 continues down: FOB exports ₹3,189.46 lakh (AR2026 PDF p.42), −15.9%. Export share of revenue
-fell 16.3% to 12.7%.
-
-## IF-2. Three consecutive FY25 MD&A paragraphs are lifted verbatim from FY24 — MAJOR
-
-In the year revenue growth collapsed from 12% to 2% (AR2024 PDF p.15; AR2025 PDF p.19), the FY25
-"Performance and outlook" section reuses the FY24 text without re-underwriting it:
-
-- "particularly evident in the doubling of our High-Speed Drills portfolio in the last fiscal year.
-  Centre drill manufacturing set up was installed successfully with substantial capacity... the
-  acquisition of international accounts in the Far East and Americas contributed significantly to the
-  revenue" — AR2024 PDF p.15-16, repeated AR2025 PDF p.19. "In the last fiscal year" now points at a
-  different year than when it was written.
-- The whole flagship-HSS-Taps paragraph — AR2024 PDF p.16, repeated AR2025 PDF p.19.
-- "Our commitment to advancing technology and fortifying the supply chain ensures that we meet the
-  evolving quality and supply demands of our customers" — AR2024 PDF p.16, repeated AR2025 PDF p.19.
-
-## IF-3. A forward promise re-made verbatim for a second year, then deleted with no outcome — HIGH
-
-FY24 AR: "Investments in new technology, which will become operational in current financial year
-will further broaden our Carbide Taps portfolio, drawing increased market interest in this segment"
-(AR2024 PDF p.16).
-
-FY25 AR: the identical sentence, word for word (AR2025 PDF p.19). The promise was not delivered and
-reported; it was re-dated by copy-paste.
-
-FY26 AR: the surrounding sentence survives but the carbide-taps clause is cut — "allowed us to offer
-innovative technological solutions for emerging applications, drawing increased market interest in
-this segment" (AR2026 PDF p.26). No outcome is ever stated, in any year.
-
-Separately, the FY25 Annexure IV does record installation ("Installation of few High precision Tap
-XCells, 7 Axis CNC Machines... were done during the year", AR2025 PDF p.32). So within the FY25 AR,
-the Annexure says installed while the MD&A says still to come.
-
-## IF-4. "The overall export market has not been very encouraging" is three-year boilerplate — MAJOR
-
-The sentence appears verbatim in all three annual reports: AR2024 PDF p.16, AR2025 PDF p.19,
-AR2026 PDF p.25. In the FY25 AR it sits on the SAME PDF page as the "improving trend" claim (p.19).
-The FY26 wording is therefore not a fresh admission or a walk-back; it is a constant. What changed
-in FY26 is only the attached cause ("Tariffs imposed by USA and Mexico on India led to a drop in
-sales", AR2026 PDF p.25).
-
-## IF-5. 100% of the controlling shareholder's stake is pledged, and the annual report never says so — HIGH
-
-Shapoorji Pallonji And Company Private Limited holds 35,967,172 shares (69.71% of equity) and has
-pledged 35,967,172 of them — "As a % of total Shares held: 100" (SHP_30Jun2026 PDF p.10). Promoter
-group encumbrance is 94.4% of its 73.85% holding (SHP_30Jun2026 PDF p.8). The position is unchanged
-across SHP_30Jun2025 (PDF p.10), SHP_31Mar2026 (PDF p.10) and SHP_30Jun2026.
-
-Full-text search of AR2026 returns "pledge" only at Note 37, assets pledged as security for the
-company's own borrowings (AR2026 PDF p.121). Never once for promoter shares, in any of the three
-annual reports.
-
-## IF-6. An 89.7%-of-PAT dividend, 73.8% of it to the promoter group, funded by liquidating treasury — MAJOR
-
-- Interim dividend ₹5/share, cash outflow ₹2,579.72 lakh, declared 24-Apr-2025, paid 8-Jun-2025
-  (AR2026 PDF p.29; FY26 audited results Note 3).
-- FY26 PAT ₹2,877.30 lakh (AR2026 PDF p.70). Payout 89.7%.
-- Of the outflow, ₹1,798.36 lakh went to Shapoorji Pallonji and ₹106.50 lakh to Forbes Campbell
-  Finance — ₹1,904.86 lakh, 73.8% of the total, to related parties (Note 30, AR2026 PDF p.108).
-- FY26 cash from operations fell 46%, ₹5,131.62 lakh to ₹2,755.29 lakh (AR2026 PDF p.71). Net capex
-  ₹1,839.18 lakh. Free cash flow ~₹916 lakh against a ₹2,579.72 lakh dividend.
-- The gap was closed by net mutual-fund liquidation: current investments ₹4,395.86 lakh to
-  ₹2,322.59 lakh (AR2026 PDF p.68), proceeds from sale of mutual funds ₹4,522.62 lakh.
-- The Board recommended NO final dividend for FY26 (AR2026 PDF p.29) and no dividend was declared
-  with the Q1 FY27 results on 12-Aug-2026 (FY27-Q1 page-04.png).
-- The MD's Message calls the payment "an important milestone" reflecting "consistent performance,
-  financial discipline, and commitment to delivering shareholder value" (AR2026 PDF p.7).
-
-A one-off, 90%-of-earnings distribution routed three-quarters to a promoter that has pledged its
-entire stake, funded by selling the investment book, is not a dividend policy. It is presented as one.
-
-## IF-7. Two incompatible explanations of borrowing in one MD&A, one of them recycled onto a decrease — MAJOR
-
-AR2026 PDF p.26, ratio table: interest coverage fell 33.46%, "mainly due to the Company availed
-borrowing facilities to meet its working capital requirements."
-
-AR2026 PDF p.27, Borrowing paragraph: "Total outstanding borrowing is ₹1,487.07 Lakhs (previous year
-₹1,968.29 Lakhs) as a result of borrowings resulting due to capital investments during the year."
-
-Borrowings FELL 24.5%. The causal clause is copied from the FY25 AR, where it described an increase
-from ₹542.40 lakh to ₹1,968.29 lakh (AR2025 PDF p.20). Text recycled unchanged when the facts
-reversed, and the two explanations (working capital / capital investment) contradict each other.
-
-## IF-8. The year's only quantified one-off was restated +52% between Q3 and the audit, with no note — MAJOR
-
-- Q3 FY26 filing (results for 31-Dec-2025), Note 5: Labour Codes past-service cost "resulting in an
-  incremental impact of ₹387 lakhs... recognized as an employee benefit expense in the current
-  reporting period" (FY26-Q3 results, PDF p.5).
-- FY26 audited results (7-May-2026), Note 5: the same paragraph, same wording, "₹590 Lakhs"
-  (FY26 audited results, PDF p.8). Repeated at AR2026 PDF p.27.
-
-A ₹203 lakh increase, 52% higher, with no disclosure that the estimate changed. Q4 employee benefits
-expense was ₹1,277 lakh against ₹1,083 lakh in Q2 and ₹1,131 lakh in Q1.
-
-## IF-9. Basis trap in the margin story (this one runs against the pipeline, not the company) — MAJOR
-
-Cost of materials consumed rose 25.3% (₹7,446.42 lakh to ₹9,331.99 lakh) but the change in FG/WIP
-inventories swung from +₹503.96 lakh to −₹1,252.37 lakh (AR2026 PDF p.70). On a consumption-matched
-basis:
-
-- FY25 material cost = 7,446.42 + 31.90 + 503.96 = ₹7,982.28 lakh / revenue ₹23,266.17 lakh = 34.3%
-- FY26 material cost = 9,331.99 − 1,252.37 = ₹8,079.62 lakh / revenue ₹25,101.13 lakh = 32.2%
-
-Gross margin IMPROVED about 210bp. The FY26 EBITDA squeeze came from employee benefits (+14.6%,
-including the ₹590 lakh code charge) and other expenses (+15.9%), not from unrecovered material cost.
-
-## IF-10. R&D expenditure declared Nil on the page after a page of described R&D — MEDIUM
-
-AR2026 Annexure IV describes thread-mill software development, advanced carbide machining solutions
-for aerospace titanium and high-performance alloys, Simufact forming simulation and CAE benchmarking
-(PDF p.41-42), then states: "the expenditure incurred on Research and Development: Nil" (PDF p.42).
-
-## IF-11. Internal control described in the future tense two years running — MEDIUM
-
-AR2024 PDF p.17 and AR2025 PDF p.21, verbatim identical: "The Company has already initiated to
-install an internal control system... The findings of such internal audits WILL BE periodically
-reviewed by the management... The Audit Committee of the Board WILL MEET at regular intervals."
-Rewritten as an established, operating system only in AR2026 (PDF p.28). A listed company's second
-and third annual reports describe its internal control framework as not yet installed.
-
-## IF-12. The FY25 annual report's auditor's report was corrected the day after filing — MEDIUM-HIGH
-
-Corrigendum dated 3-Jun-2025, one day after the AR was forwarded on 2-Jun-2025: "certain inadvertent
-typographical errors were identified in the Independent Auditors Report on Page no. 42, 43 and 46"
-(Corrigendum PDF p.1). Comparing the filed AR against the corrected version, the changes are not
-cosmetic:
-
-- Opinion paragraph: "its profit, other comprehensive income" corrected to "its profit, total
-  comprehensive income" (AR2025 PDF p.47 line vs Corrigendum PDF p.47).
-- "Other information" section: the filed version put "We have nothing to report in this regard" at
-  the end of the FIRST paragraph, before the misstatement consideration; the corrected version
-  restores the standard-form ordering (AR2025 PDF p.48 vs Corrigendum PDF p.48).
-- CARO clause (i)(a)(A): rewritten to add right-of-use assets; CARO clause (v): the filed text mixed
-  deposits with Company Law Board orders and was replaced with the standard deposits wording
-  (AR2025 PDF p.51 vs Corrigendum PDF p.51).
-
-The corrected text itself introduces new errors ("The Company is maintained proper records",
-"relevent details"). This is a document-control failure inside the audit report of a listed company.
-
-## IF-13. EPS presentation defects carried across two annual reports — MINOR
-
-Board's Report financial-results table shows "Earnings Per Share... (Discontinued operations)"
-identical to the continuing-operations figure in both years — ₹110.63 / ₹110.63 (AR2024 PDF p.14)
-and ₹5.57 / ₹5.57 (AR2025 PDF p.18). The company has no discontinued operations. The FY25 table also
-sets FY23-24 EPS of ₹110.63 beside FY24-25 EPS of ₹5.57 with no basis note; the FY24 figure rests on
-weighted-average shares in a year the shares were issued on 1-Mar-2024, so the table implies a 95%
-EPS collapse that did not occur.
-
-## IF-14. The MD's Message gives the one number that needs no comparison, without one — MEDIUM
-
-"the Company achieved a year-on-year revenue growth of around 8% and reported a Profit After Tax of
-₹2,877 Lakhs" (AR2026 PDF p.7). PAT is the only P&L figure in the message and the only one given
-with no prior-year comparative. FY25 PAT was ₹2,874.57 lakh: growth of 0.09%. PBT fell 3.4%.
-Operating profit margin fell 18% to 16.39% (AR2026 PDF p.26).
-
-## IF-15. FY26 was back-loaded and the weak start is never mentioned — MEDIUM
-
-Derived from the filed quarterly P&Ls: Q1 FY26 PBT ₹508 lakh against Q1 FY25 ₹652 lakh (H1 FY25
-₹1,648 lakh minus Q2 FY25 ₹996 lakh), −22%. H1 FY26 PBT ₹1,613 lakh vs ₹1,648 lakh, −2.1%
-(BM_Outcome_30Oct2025 PDF p.4). Nine-month FY26 PBT ₹2,417 lakh vs ₹2,650 lakh, −8.8%. Q4 FY26 PBT
-₹1,533 lakh rescued the year (FY26 audited results PDF p.5). Neither the MD's Message nor the MD&A
-mentions that three of four quarters were behind.
-
-## IF-16. A ₹2,161.08 lakh related-party receipt with no description — MEDIUM
-
-Note 30, previous year column: "Other Reimbursements (Receipt)" from Forbes & Company Limited,
-₹2,161.08 lakh in FY25, falling to ₹34.28 lakh in FY26 (AR2026 PDF p.109 and p.108). The FY25 amount
-is 9.1% of that year's revenue. Its nature is never described anywhere.
-
-## IF-17. Two HR-leadership exits in nine months, one never separately announced — MEDIUM
-
-The 1-Aug-2025 intimation designates Ravindra Kadam as Senior Management Personnel and states the
-appointment "is made following the recent exit of the HR" (Senior_Management_Personnel_01Aug2025
-PDF p.2). No standalone Regulation 30 filing for that earlier exit exists in the corpus. Kadam then
-resigns effective 22-Apr-2026 (Resignation_Senior_Managerial_Personnel_Apr2026 PDF p.1). Across the
-same window attrition rose from 17.24% "some of it at critical positions" (AR2025 PDF p.22) to
-"close to 25%" (AR2026 PDF p.28). The FY26 AR claims the company "strengthened its human resource
-processes through implementation of an integrated HRMS" (PDF p.28) and never mentions either exit.
-
-## IF-18. The inventory build, its composition, and the one number that would explain it — HIGH
-
-Inventories ₹3,193.07 lakh to ₹5,642.15 lakh, +76.7% (Note 8, AR2026 PDF p.92). Composition:
-raw materials ₹738.71 to ₹1,993.71 lakh (+170%), WIP ₹693.91 to ₹1,277.50 lakh (+84%), finished
-goods ₹1,541.74 to ₹2,210.52 lakh (+43%). The build is concentrated in raw material, not finished
-goods.
-
-The corroborating number nobody connects: CIF imports of raw material rose from ₹1,823.74 lakh
-(AR2025 PDF p.33) to ₹2,921.18 lakh (AR2026 PDF p.42), +60.2%, in the year management says
-"commodity prices (namely Solid Carbide, Steel and other related commodities) increased abnormally
-in very high proportion" (AR2026 PDF p.25). A raw-material-led build alongside a 60% jump in
-imported input purchases reads as forward buying of imported carbide and steel, not unsold stock.
-That is exactly the distinction B05 Section 3C says it cannot make, and the evidence for it is
-inside the same annual report.
-
-Against that, the Board's Report Finance section repeats "Relentless focus on receivables,
-inventories, strict cost control" unchanged (AR2026 PDF p.29; AR2025 PDF p.22, which additionally
-carried "and the sale of assets").
-
-## IF-19. Non-disclosure is structural, and stated as policy — MEDIUM-HIGH
-
-"The Company does not have a practice of making presentation to institutional investors and
-analysts" (AR2026 PDF p.52; AR2025 PDF p.41). No quarterly filing in the corpus carries any
-management commentary. The annual report is the only channel, once a year.
-
-## IF-20. Peer statement that contradicts the subject's FY25 export claim
-
-Wendt (India), 43rd AGM, meeting 21-Jul-2025 (transcript PDF p.3), Mr Bhagya Chandra Rao: "Exports
-were at Rs 43.63 crores during the year, lower by 12% over the previous year due to reduced offtake
-from key customers from a few countries." Same fiscal year (FY25) in which TOTEM's AR claimed an
-"improving trend in the export business performance" while its own FOB number fell.
-
-## Context item, not scored as a flag
-
-SP&Co's holding moved 37,437,172 (72.56%) to 35,967,172 (69.71%) while Forbes Campbell Finance moved
-665,592 (1.29%) to 2,135,592 (4.14%) — exactly 1,470,000 shares, group total unchanged at 38,102,764
-(73.85%) (AR2026 Note 11 sub-notes 1-3, PDF p.94-95). An intra-group transfer completed between
-31-Mar-2025 and 30-Jun-2025, not a sale to the market. Worth noting only because the transferred
-block is unpledged while SP&Co's residual is 100% pledged.
-
-═══════════════════════════════════════════════════════════════
-PART 2: COMPARISON AGAINST B05 AND B06
-═══════════════════════════════════════════════════════════════
-
-| # | My flag | Pipeline treatment | Verdict | Severity |
-|---|---|---|---|---|
-| IF-1 | FY25 "improving trend" false when made (own Annexure IV shows exports −1.1%) | B05 2A row 3 treats it as a promise later reversed by tariffs; export FOB numbers never used | MISSED | MAJOR |
-| IF-2 | Three FY25 MD&A paragraphs verbatim from FY24 | B05 2C/4D catch one paragraph, graded LOW-MEDIUM, "a specificity/QC flag, not a deception flag" | PARTIALLY CAUGHT (under-weighted, and two of three paragraphs not identified) | MAJOR |
-| IF-3 | Carbide-taps promise re-made verbatim FY25, deleted FY26 | B05 2A row 1: "PARTIAL — FY25 AR Annexure IV records Tap XCells... installed"; the verbatim re-make and the FY26 deletion are absent | MISSED | CRITICAL |
-| IF-4 | "Not very encouraging" verbatim in all three ARs; FY25 AR carries both sentences on one page | B05 1C catches the FY24 instance, calls FY25 "the only year this trigger reads positively", frames FY26 as a hard reversal | PARTIALLY CAUGHT | MAJOR |
-| IF-5 | 100% of SP&Co stake pledged; never named in any AR | B05 2A row 8, 2D, 4D — caught, correctly quantified at 94.4% of promoter group, correctly anchored | CAUGHT | — |
-| IF-6 | Dividend 89.7% of PAT, 73.8% to related parties, funded by treasury sale | B05 1B records the payout ratio as a number only; the related-party routing, the funding source and the no-final-dividend contrast are absent | MISSED | MAJOR |
-| IF-7 | Two incompatible borrowing explanations; recycled clause on a decrease | Absent from B05 | MISSED | MAJOR |
-| IF-8 | Labour Code one-off restated ₹387 lakh → ₹590 lakh | B05 1B lists ₹5.90cr and notes it was not tagged exceptional; the Q3 figure is never compared | MISSED | MAJOR |
-| IF-10 | R&D "Nil" beside a page of described R&D | B05 1A uses "R&D spend NIL" only as evidence against the SAP claim; the internal contradiction is not named | PARTIALLY CAUGHT | MINOR |
-| IF-11 | Future-tense internal control, FY24 and FY25, verbatim | Absent from B05 | MISSED | MINOR |
-| IF-12 | FY25 AR auditor's report corrected one day after filing | The Corrigendum is not in B05's source list and is never mentioned | MISSED | MAJOR |
-| IF-13 | Discontinued-ops EPS duplication; incomparable EPS basis | Absent from B05 | MISSED | MINOR |
-| IF-14 | MD's Message gives PAT with no comparative | B05 2C over-promotion row gestures at "flat 3-year PAT"; the selective-comparative point is not made | PARTIALLY CAUGHT | MINOR |
-| IF-15 | 9M FY26 PBT −8.8%, never mentioned | B05 4A uses Q1 FY26 as a low base for the Q1 FY27 caveat, which is correct, but never reads the year's shape as a disclosure gap | PARTIALLY CAUGHT | MINOR |
-| IF-16 | ₹2,161.08 lakh related-party reimbursement receipt, undescribed | Absent from B05 | MISSED | MINOR |
-| IF-17 | Two HR exits in nine months | B05 4D — caught, correctly anchored to both announcements | CAUGHT | — |
-| IF-18 | Inventory build (flag) | B05 2A row 5, 2D, 4D — caught, well anchored, correctly graded HIGH | CAUGHT | — |
-| IF-18 | Inventory build (composition + 60% import jump as the resolving evidence) | B05 3C says the evidence to separate ramp stock from unsold buildup does not exist; it does, in Note 8 and Annexure IV of the same AR | MISSED extension | MAJOR (folded into IF-18 CAUGHT for the tally) |
-| IF-19 | No-concall stance is stated policy in the CG report | B05 4D catches the structural fact and grades it correctly; it does not quote the CG-report sentence that makes it declared policy | CAUGHT | — |
-| IF-20 | Wendt FY25 exports −12% contradicts TOTEM's FY25 export claim | B06 Part 2A quotes the Wendt −12% figure but never applies it to TOTEM's FY25 claim; B06 Part 4 records "Claims contradicted: 0" | MISSED linkage | MAJOR |
-
-**Tally: 19 independent flags. CAUGHT 4. PARTIALLY CAUGHT 5. MISSED 10.**
-Mechanical acceptance rate 4/19 = 21%. Severity-weighted (half credit for partial) 6.5/19 = 34%.
-
-Read this correctly. B05 is a strong report on the items it found: the pledge, the inventory
-contradiction, the HR churn, the MD pay gap and the structural silence are all real, all well
-anchored, and all point the same way my own findings do. The low rate reflects breadth of source
-coverage, not a wrong verdict. Six of the ten misses trace to two sources B05 did not mine: the
-Corrigendum (not in its source list at all) and the Annexure IV foreign-exchange tables, which are
-the only quantified export and import data the company publishes.
-
-## Pipeline flags I did NOT find, assessed
-
-| Pipeline claim | Assessment |
+# VERIFIER B — INDEPENDENT RED-FLAG AUDIT
+Forbes Precision Tools and Machine Parts Ltd (TOTEM) | Run: totem-2026-09-09 | Run date: 2026-09-09
+Model: claude-opus-4-8 | Emits: B12b
+
+## HOW THIS AUDIT WAS RUN
+
+No subject transcripts exist. This company holds no earnings calls and publishes no investor presentation.
+It says so itself, in the document I read first and which neither pipeline report cites:
+
+> "The Company does not have a practice of making presentation to institutional investors and analysts."
+> — AR FY2025-26, Corporate Governance Report, Means of Communication, PDF p.52
+
+So my substitute source set is the one the brief names: three Board's Reports and MD&A sections (FY2023-24,
+FY2024-25, FY2025-26), the FY2025-26 MD's Message, the FY2024-25 corrigendum, four results filings, five
+Regulation 30 announcements, one secretarial compliance report, and three shareholding patterns. Plus five
+peer transcripts (four Kennametal India, one Wendt India AGM). I read all of them before opening either
+pipeline report. Every anchor below is a real PDF page, checked against the `[PAGE n of N]` marker.
+
+I looked for the same species of flag a concall auditor looks for: claims quietly reversed between years,
+text recycled unchanged when the facts changed, guidance walked back, negatives disclosed only where a
+regulation forces them, material facts absent altogether, estimates restated without explanation.
+
+---
+
+# PART 1: MY INDEPENDENT RED-FLAG LIST
+
+## 1.1 Governance and ownership structure
+
+### IF-1. Promoter's entire residual stake is pledged. 69.71% of the share capital.
+- SHP 30-Jun-2026, p.2: "Whether any shares held by promoters are encumbered under 'Pledged'? Yes"
+- SHP 30-Jun-2026, p.5: total encumbered 35,967,172 shares = 69.71% of capital; 94.4% of the 38,102,764
+  promoter-group holding
+- SHP 30-Jun-2026, p.10: the promoter is Shapoorji Pallonji And Company Private Limited, holding
+  35,967,172 shares; Forbes Campbell Finance Limited holds 2,135,592
+- Identical numbers at SHP 31-Mar-2026 (p.5) and SHP 30-Jun-2025 (p.5). Stable across all three snapshots.
+- Never named in any Board's Report, Corporate Governance Report, or Note across three annual reports.
+
+**The reading neither pipeline report reaches:** 35,967,172 is not 94.4% of the parent's stake. It is
+**100.0% of it**. Every share Shapoorji Pallonji and Company Private Limited still owns in this company is
+pledged.
+
+### IF-2. During FY26 the parent moved its only unpledged block out, to a fellow promoter entity.
+- AR2026 p.94: "Shapoorji Pallonji and Company Private Limited, the holding company  35,967,172  37,437,172"
+  and "Forbes Campbell Finance Limited  2,135,592  665,592"
+- AR2026 p.95: SP&Co 69.71% (FY26) vs 72.56% (FY25), change **-3.93%**; Forbes Campbell 4.14% vs 1.29%,
+  change **+220.86%**. Total promoter group unchanged at 73.85%.
+
+Exactly 1,470,000 shares moved from the parent to a fellow promoter company. The pledged block
+(35,967,172) did not change. So the transfer emptied the parent's unpledged bucket and left its residual
+holding fully encumbered. The Board's Report does not mention the transfer.
+
+**Chain neither report assembles:** in the same fiscal year, the company paid its first-ever dividend,
+Rs 2,579.72 lakh, 89.7% of PAT, of which roughly Rs 1,798 lakh went to a parent whose entire remaining
+stake is pledged, funded by liquidating the company's own mutual-fund cushion. B05 has the dividend
+(HIGH) and the pledge (HIGH) as two separate flags. They are one flag.
+
+## 1.2 Negatives that appear only where a regulation forces them
+
+### IF-3. CSR: the current-year obligation was 100% unspent, two years running. The Board's Report says "spent".
+- AR2026 Board's Report, p.30: "The total amount spent during the financial year 2025-2026 was Rs 39.78 Lakhs."
+- AR2026 Annexure I, p.35: FY26 CSR obligation **Rs 53.83 lakh**; amount spent Rs 39.78 lakh;
+  "Unspent 53.83  March 31, 2026" transferred to the Unspent CSR Account.
+- AR2026 Note 1 to Other Expenses, p.105: the FY25 row shows Rs 39.78 lakh accrued unspent at 31-Mar-2025
+  and spent in FY26. The FY26 row shows Rs 53.83 lakh accrued unspent at 31-Mar-2026.
+- AR2025 Board's Report, p.22, used the careful phrasing "The total amount **to be spent** during the
+  financial year 2024-25 was Rs 39.78 Lakhs." It was not spent that year.
+
+So: FY25 obligation, nil deployed in-year. FY26 obligation, nil deployed in-year. The FY26 Board's Report
+converts "to be spent" into "spent" and quotes the prior year's carry-forward figure. Literally true,
+materially misleading. The real explanation (a municipal school building held up on approvals) sits in the
+annexure, p.36, where the Section 135(6) rules force it.
+
+### IF-4. The mandatory ratio explanation that explains nothing.
+- AR2025, p.20: Debtors Turnover 49.01 days (FY25) vs 23.51 days (FY24). "Change is 108% - # Refer Note below"
+- The note: "The figure is not comparable and do not offer a correct representation of the variances as the
+  figures for **31-03-2023** were with no operation and hence either zero of minimal."
+
+31-03-2023 is not in the table. The comparison is FY24 against FY25, both full operating years. Receivable
+days more than doubled and the disclosure the regulation compels was answered with a sentence about a
+different year. Nobody ever returned to it: the FY26 ratio table (AR2026 p.26) shows 46 days with the
+explanation column marked "NA", still roughly double the FY24 level.
+
+Contrast the peer. Wendt's CFO, asked the same question by a shareholder on the record, gave a real answer:
+receivables Rs 52cr to Rs 65cr, DSO 80 to 101 days, "majority of this belongs to the machine tool segment
+which is some portion is always linked to the prove out installation commissioning and all this outstanding
+has been collected in Q1" (Wendt AGM 21-Jul-2025, Mukesh Kumar Hamirwasia, p.23).
+
+### IF-5. Directors' sitting fees and commission up 676% in a flat-profit year.
+- AR2026 Other Expenses note, p.104: "Directors sitting Fees and commission  143.50  18.50"
+
+Rs 18.50 lakh to Rs 143.50 lakh, +675.7%, in a year PAT rose 0.1% and the entire CSR obligation went
+unspent. Not mentioned in the Board's Report, the MD's Message, or the NRC disclosure.
+
+## 1.3 Presentation that distorts the headline
+
+### IF-6. FY24 headline EPS of Rs 110.63 is roughly 19x the per-share earnings on the actual share count.
+- AR2024 Board's Report summary table, p.14: "Earnings Per Share - Basic and Diluted (Rs) (Continuing
+  operation) Rs 110.63". No caveat.
+- AR2024 Note 26, p.79: weighted average shares **26,85,739**, because the 5,15,94,464 shares were allotted
+  on 13-Mar-2024 and IND AS 33 counts from the acquisition date. Then, in the note only: "if the appointed
+  date, which is April 01, 2023, is considered as the acquisition date, then the EPS calculated is
+  **Rs 5.76 per share**."
+
+PAT Rs 2,971.11 lakh over 5,15,94,464 shares is Rs 5.76. The Board's Report prints Rs 110.63.
+
+The consequence lands a year later. AR2025's summary table, p.18, puts FY24 EPS Rs 110.63 beside FY25
+EPS Rs 5.57 — an apparent 95% EPS collapse that did not happen. Neither Board's Report explains it. Any
+screener or reader working from the AR summary tables inherits the distortion.
+
+### IF-7. Return on Net Worth for FY2023-24 restated between annual reports.
+- AR2024, p.16, ratio table: Return on Net Worth **23%** for FY 23-24.
+- AR2025, p.20, comparative column: Return on Net Worth **22%** for the same FY 23-24.
+
+One percentage point, no explanation, no note. Small in itself. It belongs to the same pattern as IF-6.
+
+### IF-8. The FY24 "12% year-on-year growth" claim has no filed base anywhere.
+- AR2024 MD&A, p.15: "Precision Tools business achieved a reasonable 12% year-on-year growth"
+- AR2024 summary table, p.14: FY22-23 Revenue and Other Income = **nil**, with the footnote "The results are
+  not comparable because your Company has been incorporated on August 30, 2022 and had little or no
+  operations till March 1, 2024."
+
+The 12% must be a carve-out comparison against Forbes & Company Limited's precision-tool division. That base
+is disclosed nowhere in this corpus. It is the number the whole FY24 growth narrative rests on and it is
+unanchored.
+
+## 1.4 Claims quietly reversed, and text recycled when the facts changed
+
+### IF-9. The Carbide Taps promise was surgically excised from the FY26 text.
+- AR2024, p.16: "Investments in new technology, which will become operational in current financial year will
+  further broaden our Carbide Taps portfolio, drawing increased market interest in this segment."
+- AR2025, p.19: the identical sentence, word for word, a full year after the technology was to be operational.
+- AR2026, p.26: "...allowed us to offer innovative technological solutions for emerging applications,
+  drawing increased market interest in this segment."
+
+The Carbide Taps clause is deleted and its tail, "drawing increased market interest in this segment", is
+spliced onto the end of the preceding sentence. This is not an omission. It is edited-out text. No outcome
+is ever stated.
+
+### IF-10. Pricing power: stated as a capability in FY24, reduced to an attempt in FY26.
+- AR2024, p.16: "In response to inflated input costs, we implemented price increases across our portfolio,
+  **which we were able to successfully pass on to our customers**."
+- AR2026, p.25: "In the Solid Carbide Tools space, the business faced margin pressure due to global raw
+  material price escalation to which your company responded by **trying to pass on as much cost increase as
+  possible** to the consumers / customers."
+
+The peer shows what full pass-through sounds like. Kennametal, Mar-2023, Suresh Reddy, p.9: "No, we have
+recovered the price increase". Vijaykrishnan Venkatesan, same call, p.10: "yes, we did transfer that price
+increase because we are well positioned as a technology player in the market."
+
+### IF-11. "Relentless focus on... inventories" restated in the year it stopped being true.
+- AR2025, p.22 and AR2026, p.29, Finance section, near-identical: "Relentless focus on receivables,
+  inventories, strict cost control... has helped in keeping the borrowings and effective interest cost under
+  control."
+- AR2026 Note 8, p.92: inventories Rs 3,193.07 lakh to Rs 5,642.15 lakh, **+76.7%**, against revenue +7.9%.
+- FY26 audited results, p.5: finance costs Rs 166 lakh vs Rs 113 lakh, **+47%**.
+
+Both halves of the sentence are contradicted by the same year's audited numbers. B05 uses the inventory
+half. The interest-cost half is equally available and unused.
+
+### IF-12. Two incompatible borrowing explanations inside one MD&A.
+- AR2026 ratio table, p.26: Interest Coverage 24.78 vs 37.24, -33.46%, "decreased mainly due to the Company
+  availed borrowing facilities to meet its **working capital** requirements"
+- AR2026 Borrowing paragraph, p.27: "Total outstanding borrowing is Rs 1,487.07 Lakhs (previous year
+  Rs 1,968.29 Lakhs) as a result of borrowings resulting due to **capital investments** during the year."
+- AR2025, p.20: the identical clause, describing a rise from Rs 542.40 lakh to Rs 1,968.29 lakh.
+
+A 24.5% fall in borrowings is explained with a phrase written to describe a 263% rise.
+
+### IF-13. Export "improving trend" claimed in the year the company's own FOB figure fell.
+- AR2025, p.19: "The business has also seen an improving trend in the export business performance."
+- AR2025 Annexure IV, p.33: FOB exports **Rs 3,791.05 lakh**
+- AR2024 Annexure III, p.29: FOB exports **Rs 3,834.10 lakh**. A 1.12% decline.
+- AR2026 Annexure IV, p.42: FOB exports **Rs 3,189.46 lakh**. Three straight annual declines, never stated
+  plainly in any MD&A.
+
+### IF-14. Three paragraphs of FY24 MD&A reproduced verbatim in FY25.
+The "capital investment strategies yielded substantial returns... doubling of our High-Speed Drills portfolio
+in the last fiscal year... Centre drill manufacturing set up was installed successfully" block (AR2024
+p.15-16) reappears word for word in AR2025 p.19, still saying "in the last fiscal year", in the year revenue
+growth fell from a claimed 12% to 2%. So do the Defence/Railways/channel paragraph and the technology
+commitment paragraph.
+
+## 1.5 Estimates restated without explanation
+
+### IF-15. Labour Codes charge restated 52% higher between two filings.
+- Q3 FY26 results, 22-Jan-2026, Note 5, p.5: "an incremental impact of **Rs 387 lakhs** (comprising gratuity
+  and compensated absences) which has been recognized as an employee benefit expense in the current
+  reporting period."
+- AR2026 Board's Report, p.24: "the Company has recognized an estimated impact of **Rs 590 Lakhs** in the
+  financial statements for the year under review."
+
+Same paragraph structure, number swapped, no change-in-estimate note. Corroborated in the quarterly
+employee-cost line: Q3 FY26 Rs 1,553 lakh vs Q3 FY25 Rs 1,086 lakh (+43%), Q4 FY26 Rs 1,277 lakh vs
+Q4 FY25 Rs 1,032 lakh (+24%), consistent with roughly Rs 203 lakh landing in Q4.
+
+### IF-16. The Labour Codes note then disappears with no closure.
+Q3 FY26 undertook to "account for any further impact... in the period in which such developments occur."
+The Q1 FY27 results (30-Jun-2026, notes 1-4, page-04.png) carry no labour-code note at all. The undertaking
+is neither discharged nor repeated.
+
+### IF-17. The "abnormal" commodity escalation claim does not survive a three-year look.
+- AR2026, p.25: "commodity prices (namely Solid Carbide, Steel and other related commodities) increased
+  **abnormally in very high proportion** in the Financial Year in consideration."
+- CIF raw-material imports: AR2024 p.29 **Rs 2,885.65 lakh** → AR2025 p.33 **Rs 1,823.74 lakh** →
+  AR2026 p.42 **Rs 2,921.18 lakh**.
+
+FY26 is only 1.2% above FY24. FY25 was the outlier low year. The one-year +60.2% jump the pipeline leans on
+is a rebound off a trough, not evidence of abnormal escalation. The nearest peer datapoint inside the window
+points the other way: Wendt's chairman on calendar 2024, "Commodity prices stayed largely stable, though
+risks of renewed price increase persist" (Wendt AGM 21-Jul-2025, p.3).
+
+## 1.6 People
+
+### IF-18. Three HR transitions in about nine months. The first was never separately disclosed.
+- 1-Aug-2025 Reg 30 filing, Annexure A, p.2: Kadam designated Senior Management Personnel — "This
+  appointment is made following the **recent exit of the HR**."
+- No standalone announcement of that earlier HR exit exists anywhere in this corpus. It surfaces only as a
+  clause inside somebody else's appointment notice.
+- 22-Apr-2026 Reg 30 filing, p.2: Kadam himself resigns. Reason field: "Resignation". Brief Profile: "N.A."
+
+### IF-19. The attrition basis changed between years; the two figures are not comparable.
+- AR2025, p.22: "the attrition was a higher than normal **@ 17.24%**, some of it at critical positions, due
+  to which, there were some delays in some the planned operations of the company." Company-wide.
+- AR2026, p.28: "we saw a substantial attrition **in the lower executive cadre** of the Company. This
+  attrition rate was **close to 25%**." Cadre-specific.
+
+The FY26 company-wide number is never given. A reader is invited to read 17.24% → 25% as a like-for-like
+worsening; it is not one, and the more alarming reading (a company-wide figure that could sit anywhere) is
+unavailable.
+
+### IF-20. A senior commercial hire absent from the annual report.
+1-Aug-2025 Reg 30 filing, p.2: Mr P. Shetty appointed Senior Vice President, "over three decades of diverse
+experience in P&L management, B2B sales... proven expertise in turnaround strategies." The FY26 AR's Human
+Resources section (p.28) does not mention him.
+
+## 1.7 Disclosure control
+
+### IF-21. Two corrigenda in fourteen months.
+- 3-Jun-2025: corrigendum to the FY2024-25 annual report, filed one day after the report, for "certain
+  inadvertent typographical errors... in the Independent Auditors Report on Page no. 42, 43 and 46."
+  The p.43 correction is substantive, not typographical: the original mis-scoped "other information" as only
+  the Board's Report and put "We have nothing to report in this regard" in the wrong paragraph; the corrected
+  text restores standard SA 720 wording. The corrected p.46 clause introduces its own errors ("is maintained
+  proper records", "relevent").
+- 12-Aug-2026: corrigendum to the board meeting outcome of the same day, because "the date 'April 12, 2026'
+  was mentioned in the said intimation due to an inadvertent typographical error."
+
+One is an incident. Two, fourteen months apart, one on the auditor's report of the first annual report after
+listing, is a pattern.
+
+### IF-22. Stale unlisted-prefix CIN on the results template.
+BM Outcome 30-Oct-2025 p.4 and FY26 audited results p.5 both carry "CIN: U29256MH2022PLC389649" in the
+P&L footer while the covering letter and auditor's report on the same PDFs carry L29256MH2022PLC389649.
+*Sub-threshold; recorded, not counted.*
+
+## 1.8 The structural finding
+
+### IF-23. There is no forum, and the peers have almost none either.
+TOTEM: no earnings call, no investor presentation, no qualitative commentary on any of four results filings,
+four fiscal years into listed life. Its own words, AR2026 p.52: "The Company does not have a practice of
+making presentation to institutional investors and analysts."
+
+But the peer set qualifies this, and neither pipeline report says so:
+- Wendt India, asked directly by an institutional investor to start quarterly or half-yearly calls, refused
+  on the record: "we are not considered any kind of a quarterly investor meet or other things at this point
+  of time" (Wendt AGM 21-Jul-2025, Bhagya Chandra Rao, p.22). Wendt's only forum is its AGM, and at that AGM
+  most substantive questions were deferred to email unanswered.
+- Kennametal opens its analyst meeting with "We will not be making any forward-looking statements on this
+  call, and we would be restricting our talk to publicly available information only" (Mar-2024, Aditya Jain,
+  p.3), and refuses market-share questions repeatedly ("That's a question I can't answer for sure. And this
+  is a question we have not answered for years now", p.24).
+
+The absence of a Q&A record is still a finding. But it is a sector-wide reticence with a company-specific
+extreme, not a TOTEM-specific choice standing alone. That distinction belongs in the grade.
+
+### IF-24. The peer set does not cover TOTEM's core products at all.
+Kennametal's MD scopes his own company out of TOTEM's largest families, in his own words:
+
+> "I am talking only tungsten carbide **not high-speed steel, not the taps** and all that"
+> — Kennametal, Mar-2023, Vijaykrishnan Venkatesan, p.7
+
+Wendt makes super-abrasives, grinding machines and precision components. It makes no round cutting tools at
+all. TOTEM's HSS taps, HSS drills, carbon steel taps and spring lock washers therefore have **zero** peer
+coverage in this corpus. Every peer read available is on an adjacent product market (solid carbide, grinding
+consumables), not an overlapping one.
+
+---
+
+# PART 2: COMPARISON AGAINST B05 AND B06
+
+| # | My independent flag | Pipeline status | Note |
+|---|---|---|---|
+| IF-1 | Promoter pledge 69.71% of capital, never in any AR | **CAUGHT** (B05 4D HIGH) | B05 carries it from B03 without re-derivation. I confirm 35,967,172 / 38,102,764 = 94.4%. B05 misses that it is 100% of the parent's own stake. |
+| IF-2 | 1.47m-share intra-promoter transfer emptying the parent's unpledged block; dividend flows to a fully pledged parent | **MISSED** | AR2026 p.94-95. The single most consequential miss. |
+| IF-3 | CSR obligation 100% unspent two years running; FY26 Board's Report says "spent" | **MISSED** | AR2026 p.30 vs Annexure I p.35-36 and Note 1 p.105. |
+| IF-4 | FY25 debtor days +108%; mandatory explanation cites a year absent from the table | **MISSED** | AR2025 p.20. |
+| IF-5 | Directors' sitting fees and commission +676% | **MISSED** | AR2026 p.104. B05 carries an unrelated MD-remuneration item from B03. |
+| IF-6 | FY24 headline EPS Rs 110.63 vs Rs 5.76 economic; false FY25 "collapse" optic | **MISSED** | B05 catches the adjacent discontinued-ops EPS oddity (LOW-MEDIUM) and misses the larger one on the same line. |
+| IF-7 | FY23-24 RONW restated 23% → 22% between ARs | **MISSED** | AR2024 p.16 vs AR2025 p.20. |
+| IF-8 | FY24 "12% growth" unanchored | **MISSED** | B05 repeats it as an established base ("growth fell from 12% to 2%"). |
+| IF-9 | Carbide Taps promise excised from the FY26 MD&A sentence | **CAUGHT** (B05 4D HIGH) | B05 anchors the absence to Annexure IV p.41-42. The MD&A sentence splice at AR2026 p.26 is the sharper evidence and is unused. |
+| IF-10 | Pricing-power claim reversed FY24 → FY26 | **PARTIALLY CAUGHT** | B05 lists the language shift, then downgrades the whole item to "Correction, not a management-quality finding either way" after withdrawing its numeric support. The qualitative reversal stands on its own. |
+| IF-11 | "Relentless focus on inventories" vs +76.7% build | **CAUGHT** (B05 4D HIGH) | The interest-cost half of the same sentence (+47%) is unused. |
+| IF-12 | Two incompatible borrowing explanations | **CAUGHT** (B05 4D HIGH) | Anchors verified correct. |
+| IF-13 | FY25 export "improving trend" vs own FOB; three-year FOB decline | **CAUGHT** (B05 4D HIGH, B06 Part 2A) | All three FOB figures verified at the cited pages. Best-evidenced finding in either report. |
+| IF-14 | Three verbatim FY24→FY25 MD&A paragraphs | **CAUGHT** (B05 4D MEDIUM) | Confirmed on side-by-side read. |
+| IF-15 | Labour Codes 387 → 590, no change-in-estimate note | **CAUGHT** (B05 4D MEDIUM-HIGH) | Confirmed. |
+| IF-16 | Labour Codes note dropped from Q1 FY27 with no closure | **MISSED** | |
+| IF-17 | "Abnormal" commodity escalation weak on the three-year CIF series | **MISSED**, and B05's use of the one-year +60.2% to part-resolve LBF-2 is **OVERSTATED** | B05 cites AR2024 p.29 for the FOB figure; the FY24 CIF figure is on the same page and was not used. |
+| IF-18 | Three HR transitions; first disclosed only obliquely | **PARTIALLY CAUGHT** (B05 4D MEDIUM, "two HR leadership departures") | The undisclosed first exit and the oblique-disclosure mechanism are missed. |
+| IF-19 | Attrition basis shift makes 17.24% and ~25% non-comparable | **PARTIALLY CAUGHT** | B05 reads the pair as a clean worsening and credits management with honesty on that basis (2A row 6, 2B, 2C). |
+| IF-20 | SVP appointment absent from the FY26 AR HR section | **MISSED** | |
+| IF-21 | Two corrigenda in fourteen months | **PARTIALLY CAUGHT** | B05 covers the FY25 AR corrigendum well, including the new errors it introduced. The 12-Aug-2026 corrigendum is missed, so a pattern reads as an incident. |
+| IF-23 | No Q&A forum; peers also decline quarterly engagement | **PARTIALLY CAUGHT** | B05 states the fact from "own read of all filings" without the direct filed anchor (AR2026 p.52). B06 Part 2E uses Wendt's Q&A as a contrast that makes TOTEM look worse and never records Wendt's own on-record refusal to hold quarterly calls. |
+| IF-24 | Peer set has zero coverage of TOTEM's core HSS/taps/washer families | **PARTIALLY CAUGHT** | B06 quotes the Kennametal exclusion under Q2, then still benchmarks TOTEM's total revenue growth against Kennametal domestic hard-metal growth (Q1) and grades PARTIALLY VERIFIED. The limitation is stated, not applied. |
+
+Also independently confirmed as CAUGHT and correctly weighted, from my own read: the back-loaded FY26
+(Q1 PBT -22%, 9M -8.8%, Q4 rescue) narrated nowhere; the MD's Message contradicting its own MD&A on exports;
+the MD's Message giving PAT with no comparative in a flat-PAT, OPM-down year (18% → 16.39%, AR2026 p.26);
+zero forward-quantified guidance anywhere; R&D expenditure Nil all three years (AR2026 p.42 confirmed);
+discontinued-operations EPS printed identical to continuing EPS all three years with no discontinued
+operations (AR2026 p.24 confirmed).
+
+## 2.1 Pipeline flags I did NOT find, assessed
+
+| Pipeline flag | Assessment |
 |---|---|
-| B05 1C and 2B: "materials cost/revenue rose from 32.0% to 37.2% FY25→FY26... i.e. pass-through was materially incomplete in FY26" | **NOT SUPPORTED.** Gross-basis ratio, ignoring the change-in-inventory line. Matched basis: 34.3% → 32.2%, gross margin improved ~210bp (AR2026 PDF p.70). The FY26 squeeze is a cost-line story (employee +14.6%, other expenses +15.9%), not a pricing-power story. This is the sole numeric support B05 offers for its "pass-through quietly weakening" finding, and it reverses. |
-| B05 2A row 5 attribution: "FY24 AR + FY25 AR (identical Board's Report Finance section, both years)" | **NOT SUPPORTED on the FY24 leg.** Full-text search returns the "Relentless focus on receivables, inventories" sentence only in AR2025 (PDF p.22) and AR2026 (PDF p.29). It is not in the FY24 AR. The row's own body text correctly describes it as FY25→FY26, so the header contradicts the row. |
-| B05 4D anchor: "Board's Report Finance section, both years (FY25 AR PDF p.29; FY26 AR PDF p.29)" | **Anchor wrong on FY25.** The FY25 instance is at AR2025 PDF p.22, not p.29. B05 also cites the "improving trend" sentence at p.19 in 2A row 3 and at p.20 in 1C; it is on PDF p.19. |
-| B05 2A row 8: "94.4% of the 73.85% promoter (Shapoorji Pallonji) holding is pledged" | **SUPPORTED exactly.** 35,967,172 / 38,102,764 = 94.4% (SHP_30Jun2026 PDF p.8, p.10). |
-| B05 1B: Austempering +90 MT, HSS drill CNC +~350,000 units, R&D expenditure Nil | **SUPPORTED**, all three at AR2026 PDF p.41-42. |
-| B05 2D: MD remuneration +74.7% | **SUPPORTED.** ₹464.00 lakh vs ₹265.52 lakh, Note 30 (AR2026 PDF p.108 and p.109). Total KMP remuneration ₹566.11 lakh vs ₹361.34 lakh, +56.7% (PDF p.110), against flat PAT. |
-| B05 2A row 9: Q1 FY27 operating margin 22.9% vs Q1 FY26 16.05% | **SUPPORTED**, recomputed independently from FY27-Q1 page-03.png: (6,755 − (5,644 − 37 − 400)) / 6,755 = 22.9%; (5,241 − (4,820 − 45 − 375)) / 5,241 = 16.05%. |
-| B06 Q1/2A: Wendt domestic +7% FY25, exports −12% FY25, PBT −5% | **SUPPORTED**, WENDT transcript PDF p.3. |
-| B06 Q5/2C: Wendt FY25 capex ₹58.29cr vs ₹11.15cr, brand buyout ₹35.08cr; Q1 machine tools −18%, PBT −34% | **SUPPORTED**, WENDT transcript PDF p.3-4 and p.11. |
-| B06 Q2 "single most consequential finding": Kennametal single-point-to-CNC migration read as an HSS-to-carbide structural shift | **SUPPORTED**, and stronger than B06 states — the analyst's question that prompts it is explicitly about conversion from high-speed steel to tungsten carbide (KENNAMET Mar-2023 transcript PDF p.11). |
-| B06 Part 1 Q1: "Wendt's same calendar quarter (Q1 FY26 per its own fiscal calendar, Apr-Jun 2026)" | **Label error.** Wendt's FY ends March; Apr-Jun 2026 is its Q1 FY27, which B06's own Coverage Notice and Part 5 state correctly. The intended quarter is stated in parentheses, so the substance holds. MINOR. |
+| B06 Part 2C and Part 5: Wendt's Q1 FY26 was "its single worst quarter on record" | **NOT SUPPORTED.** Nothing in the transcript says this. Wendt reported Q1 FY26 total sales Rs 46.49cr, +6% YoY, PAT Rs 4.95cr positive, domestic super-abrasives +11% (p.6, p.11). The characterisation is the report's own and Part 5's hypothesis leans on it. |
+| B06 Q6 net read: "full raw-material pass-through is a structurally imperfect, competitively-constrained mechanism across this industry, not a TOTEM-specific pricing-power failure" | **OVERSTATED.** Built on two hedged Kennametal quotes (Jun-2023 p.15 "wherever possible"; Mar-2024 p.19 symmetric pass-through) while the same peer's unhedged full-recovery claim is omitted: Mar-2023 p.9 "No, we have recovered the price increase" and p.10 "we did transfer that price increase because we are well positioned as a technology player in the market." Selecting the hedged half exonerates TOTEM on a claim TOTEM itself downgraded. |
+| B05 1C: the raw-material half of the inventory build has "external, evidenced support" as commodity-price stockpiling | **OVERSTATED.** See IF-17. On the three-year CIF series the support largely dissolves. |
+| B05: "the year growth fell from 12% to 2%" | **NOT SUPPORTED as to the 12%.** See IF-8. |
+| B06 Q6: "everybody buys at the same price" cited as Mar-2024 p.19, "same page" as the tungsten answer | **CITATION DEFECT.** The quote is on p.20; the PAGE 20 marker falls between the two. |
+| B06 Part 2E: import-competition intensity "roughly 1.5% of revenue", cited p.20-21 | **CITATION DEFECT and UNDERSTATED.** The exchange runs p.21-22. The same answer re-quantifies the affected slice at 5% ("90 to 95% of our product lines have not seen an impact... 5% is what I would say"). The smaller of two figures in one answer was used. |
+| B06 Part 2A: Wendt domestic super-abrasives "accelerating from +9% to +11%", corroborating TOTEM's domestic growth | **PARTIALLY SUPPORTED.** Both figures verified (p.10, p.11). But Wendt's total FY24-25 was +3% sales, -3% PAT (p.3), and its Q1 FY26 was +6% sales, -34% PAT (p.6). The one accelerating line is quoted without the flat-to-down whole. |
+| B06 Q1: "both peers show domestic demand growth in a 6-11% band" | **SUPPORTED.** Verified: Kennametal May-2023 p.3-4 "hard metals are growing at around 9%"; Mar-2024 p.28 "The industry grew at probably 10% and 11%" and "6 to 7% growth... mid-single digit to a high single digit"; Wendt p.3 domestic +7%, p.10 +9%, p.11 +11%. |
+| B06 Q5: Kennametal's 12-15 month capex-to-demand lag, cited Jun-2023 p.5 and p.10 | **SUPPORTED.** Verified at p.5 ("a face lag of 12 to 15 months") and again later in the same call ("from capital cycle being approved to installation it's 12 to 15 months"). |
+| B06 Q4: Wendt shareholder's tariff question asked at p.20 and never answered | **SUPPORTED.** Verified. Yashpal Chopra asks at p.20; the consolidated answer session at pp.21-23 works through every other queued topic and never returns to it. Good catch. |
+| B06 Part 2A: Wendt FY24-25 exports "lower by 12%", contradicting TOTEM's "improving trend" in the same fiscal window | **SUPPORTED.** Verified at Wendt p.3 and AR2025 p.19. |
+| B05: promoter pledge 94.4% | **SUPPORTED.** Independently re-derived: 35,967,172 / 38,102,764 = 94.4%. |
+| B05: FY26 gross margin improved ~212bp on a consumption-matched basis, withdrawing run 1's pass-through finding | **SUPPORTED.** Independently re-run: FY25 (7,446.42 + 31.90 + 503.96) / 23,266.17 = 34.31%; FY26 (9,331.99 + 0 − 1,252.37) / 25,101.13 = 32.19%. The withdrawal is correct and creditable. |
+| B05: inventory category split (RM +169.9%, WIP +84.1%, FG +43.4%) | **SUPPORTED.** Verified at AR2026 Note 8, p.92, exactly as stated. |
 
-═══════════════════════════════════════════════════════════════
-PART 3: PROMISE-DELIVERY SPOT CHECKS (6 checked)
-═══════════════════════════════════════════════════════════════
+---
 
-**SC-1. DELIVERED: FY25 AR guided to high drills growth after capacity investment; FY26 AR confirms
-substantial drill-segment growth. — CONFIRMED, with a caveat B05 states.**
+# PART 3: PROMISE-DELIVERY SPOT CHECKS
 
-Earlier document: "High Speed Steel Drills are recent introduction to our portfolio... Consequent to
-the above, we have made substantial capacity investments in this segment and we expect high rate of
-growth in this segment" (AR2025 PDF p.19). Present.
-Later document: "our actions of the past to increase the capacities in Drill segments of our business
-has paid off and we are seeing substantial growth in those segments" (AR2026 PDF p.25). Present.
-Direction correct. The delivery is management's own unquantified self-assessment; no segment
-revenue exists anywhere. B05 says so.
+Six rows checked for direction. Did the earlier document actually contain the claim, and does the later
+document actually show the outcome.
 
-**SC-2. MISSED: FY25 AR guided to an improving export trend; FY26 AR calls exports not very
-encouraging, tariff-driven. — WRONG in direction.**
+| # | B05 row | Earlier document contains the claim? | Later document shows the outcome? | Verdict |
+|---|---|---|---|---|
+| SC-1 | Row 1, Carbide Taps | **YES.** AR2024 p.16 and AR2025 p.19, word for word identical. | **YES, and sharper than B05 states.** AR2026 p.26 shows the clause deleted and its tail spliced onto the preceding sentence. B05 anchors the absence to Annexure IV p.41-42; the MD&A splice is the stronger evidence. | **CONFIRMED** |
+| SC-2 | Row 3, FY25 export "improving trend" | **YES.** AR2025 p.19. | **YES.** AR2025 Annexure IV p.33 Rs 3,791.05 lakh vs AR2024 Annexure III p.29 Rs 3,834.10 lakh = -1.12%. Both figures verified at the cited pages. | **CONFIRMED** |
+| SC-3 | Row 5, "relentless focus on inventories" | **YES.** AR2025 p.22 and AR2026 p.29, near-identical. | **YES.** AR2026 Note 8 p.92, +76.7%. I add the second half B05 does not use: finance costs Rs 113 → Rs 166 lakh, +47%, against the same sentence's "effective interest cost under control". | **CONFIRMED** |
+| SC-4 | Row 9, borrowing explanations | **YES.** AR2025 p.20 carries the clause describing a 263% rise (Rs 542.40 → Rs 1,968.29 lakh). | **YES.** AR2026 p.27 reuses it unchanged for a 24.5% fall (Rs 1,968.29 → Rs 1,487.07 lakh), while p.26 blames working-capital borrowing for weaker interest coverage. | **CONFIRMED** |
+| SC-5 | Row 10, Labour Codes restatement | **YES.** Q3 FY26 results Note 5, p.5, Rs 387 lakh. | **YES.** AR2026 p.24, Rs 590 lakh, +52.4%, no change-in-estimate note. Corroborated in the quarterly employee-cost line. | **CONFIRMED** |
+| SC-6 | Row 8, dividend framing | **YES.** AR2026 p.7 (MD's Message) and p.30 (Dividend section). | **YES.** Rs 2,579.72 lakh / PAT Rs 2,877.30 lakh = 89.66%. FY26 cash flow (results p.7): CFO Rs 2,755 lakh vs FY25 Rs 5,133 lakh, **-46.3%**; capex Rs 1,839 lakh; net mutual-fund liquidation Rs 4,523 − Rs 2,450 = **Rs 2,073 lakh**; dividend paid Rs 2,531 lakh. I add a figure B05 does not compute: free cash flow was Rs 916 lakh, so the dividend was **2.8x FCF**. | **CONFIRMED** |
 
-Earlier document: contains the "improving trend" sentence (AR2025 PDF p.19) — but on the SAME page
-also contains "The overall export market has not been very encouraging" (AR2025 PDF p.19), which is
-itself verbatim from AR2024 PDF p.16 and reappears verbatim in AR2026 PDF p.25.
-Later document: the FY26 sentence is therefore not a reversal, it is the standing text. What is new
-is only the tariff attribution.
-The stronger and correct finding: the FY25 "improving trend" claim was contradicted by that same
-report's own Annexure IV, which shows export FOB down 1.1% (₹3,834.10 lakh to ₹3,791.05 lakh,
-AR2024 PDF p.29 / AR2025 PDF p.33). False when made, not missed later.
+**Spot checks: 6 checked, 6 confirmed, 0 wrong.** B05's promise-delivery table directions are sound and its
+anchors are accurate. That is a genuine strength of this version.
 
-**SC-3. MISSED: the receivables/inventories/cost-control sentence was TRUE in FY25 (inventory
-−17.0%, ₹38.47cr → ₹31.93cr) and carried unchanged into FY26 (inventory +76.7% to ₹56.42cr).
-— CONFIRMED. All four numbers verified.**
+---
 
-FY24 inventory ₹3,846.87 lakh, FY25 ₹3,193.07 lakh (AR2025 Note 8, PDF p.75) = −17.0%. FY26
-₹5,642.15 lakh (AR2026 Note 8, PDF p.92) = +76.7%. The sentence is present at AR2025 PDF p.22 and
-AR2026 PDF p.29, near-identical ("and the sale of assets" dropped in FY26). Two defects in B05's
-row: it attributes the sentence to the FY24 AR, where it does not appear, and anchors the FY25
-instance at p.29 instead of p.22.
+# PART 4: CREDIBILITY GRADE
 
-**SC-4. PARTIAL: taps will grow substantially over time, repeated across the FY25 and FY26 annual
-reports with no number attached either time. — WRONG in subject.**
+**Concur with C.** Under NO-CONCALL MODE the grade defaults to C and may rise to B only on documented
+annual-report-guidance-versus-results delivery evidence; that evidence exists in exactly one chain (Drills
+capacity guidance made in AR2025 p.19, confirmed delivered in AR2026 p.25), and it is outweighed by a
+surgically excised forward promise, a claim contradicted by the filer's own contemporaneous export figure,
+two same-document numeric contradictions, a 52% unexplained restatement, and four disclosure defects this
+audit adds that the pipeline did not find (CSR presented as spent when unspent, a non-responsive mandatory
+ratio explanation, a 19x-distorted headline EPS, and a fully pledged parent taking 70% of a maiden dividend).
+C, and no serious case for B.
 
-Earlier document: the FY25 sentence is "High Speed Steel Drills are recent introduction to our
-portfolio and we have received sufficient acceptance on the quality and performance of our Drills
-portfolio. We are confident, this portfolio will grow substantially over time. Consequent to the
-above, we have made substantial capacity investments in this segment..." (AR2025 PDF p.19). The
-subject is DRILLS, not Taps.
-Later document: "Our Taps segment recorded steady growth... We are confident, this portfolio will
-further grow substantially over time. Consequent to the above, we have made substantial investments
-in this segment and we expect high rate of growth in this segment" (AR2026 PDF p.26).
-The FY26 paragraph is the FY25 drills paragraph with the product name swapped. That is a sharper
-finding than the one B05 records — the same template being reapplied to whichever line is currently
-being promoted — but it is not "the same taps claim repeated". B05 also notes a stronger FY26 tone
-without noticing the swap that produced it. FY26 capex additions actually FELL, ₹2,612.20 lakh to
-₹1,498.65 lakh (AR2026 PDF p.27), which sits awkwardly beside "we have made substantial investments
-in this segment".
+---
 
-**SC-5. MISSED: the FY26 MD's Message claims international outreach positions the company well for
-growth, contradicted by the same document's MD&A on exports. — CONFIRMED.**
+# PART 5: WHAT THE ORCHESTRATOR SHOULD CARRY FORWARD
 
-Earlier text: "Our channel expansion and targeted international outreach position us well for
-growth" (AR2026 PDF p.7). Present.
-Later text, same document: "The overall export market has not been very encouraging... Tariffs
-imposed by USA and Mexico on India led to a drop in sales" (AR2026 PDF p.25). Present.
-Direction correct. Strengthened by the Annexure IV number the report never cites: exports −15.9%
-(AR2026 PDF p.42).
+1. **The pledge and the dividend are one chain, not two flags.** Parent's residual stake 100% pledged; parent
+   moved its only unpledged block out during FY26; 70% of a maiden dividend equal to 89.7% of PAT and 2.8x
+   FCF flowed to that parent, funded by liquidating the company's mutual-fund cushion. Assemble it.
+2. **Neither report read the annexures systematically.** The CSR annexure, the FY25 ratio table, the FY24
+   EPS note and the shareholding notes each contained a red-flag-grade item. All four were missed. The
+   pattern is that regulation-forced disclosures sit in the annexures and the narrative front matter does not
+   match them.
+3. **B06's peer verdicts rest on a product market TOTEM does not compete in.** Kennametal excludes HSS and
+   taps in its own words. Wendt makes no round cutting tools. Treat Q1, Q5 and Q6 as adjacent-market reads,
+   not verifications.
+4. **The no-concall structure is partly sector norm.** Wendt refused quarterly calls on the record;
+   Kennametal restricts its own analyst meetings to historical, publicly available information. TOTEM is the
+   extreme, not the outlier. B06 Part 2E overstates the contrast.
+5. **Two corrigenda in fourteen months, one on the auditor's report of the first annual report after
+   listing, and the correction itself introduced new errors.** Read as a disclosure-control pattern.
 
-**SC-6. PARTIAL: FY24 AR said new technology operational in FY25 broadens the carbide taps
-portfolio; the FY25 AR confirms installation but attaches no revenue. — CONFIRMED as written, but
-materially incomplete.**
-
-Earlier document: "Investments in new technology, which will become operational in current financial
-year will further broaden our Carbide Taps portfolio" (AR2024 PDF p.16). Present.
-Later document: "Installation of few High precision Tap XCells, 7 Axis CNC Machines, including
-tooling developed indigenously for capacity augmentation of high-performance tooling were done
-during the year" (AR2025 Annexure IV, PDF p.32). Present, no revenue attached. Both legs check out.
-What B05 does not record is that the FY25 MD&A simultaneously repeats the FY24 promise VERBATIM
-(AR2025 PDF p.19), so the same annual report says installed in one section and still-to-come in
-another; and the FY26 AR deletes the carbide-taps clause with no outcome ever stated (AR2026
-PDF p.26). That is the CRITICAL item above.
-
-**Spot-check result: 6 checked, 4 confirmed, 2 wrong (SC-2 direction, SC-4 subject).**
-
-═══════════════════════════════════════════════════════════════
-PART 4: CREDIBILITY GRADE
-═══════════════════════════════════════════════════════════════
-
-**I concur with credibility_grade C, and my read makes the case for B weaker than B05 allows: the
-one B-supporting item (the drills guidance-to-delivery chain) rests entirely on management's own
-unquantified self-assessment, while seven MAJOR items I found independently all cut the other way,
-including an export claim that was false in the same document that made it, a forward promise
-re-made verbatim then deleted, and an auditor's report corrected the day after filing.**
-
-C is also the NO-CONCALL floor, so no downgrade is available. If the framework permitted one, the
-evidence would support it.
-
-═══════════════════════════════════════════════════════════════
-PART 5: CONSOLIDATED FINDINGS
-═══════════════════════════════════════════════════════════════
-
-| Sev | Finding | Anchor |
-|---|---|---|
-| CRITICAL | B05 MISSED a forward promise re-made verbatim across two consecutive annual cycles and then deleted with no outcome: the Carbide Taps technology claim. Recorded as PARTIAL / installation-confirmed | AR2024 PDF p.16; AR2025 PDF p.19 (verbatim); AR2026 PDF p.26 (clause deleted) |
-| MAJOR | B05 MISSED that the FY25 export claim was false when made; the same AR's Annexure IV shows exports −1.1% | AR2025 PDF p.19 vs PDF p.33; AR2024 PDF p.29 |
-| MAJOR | B05 MISSED the dividend chain: 89.7% of PAT, 73.8% to related parties, funded by ₹2,073 lakh of treasury liquidation while CFO fell 46%, no final dividend since | AR2026 PDF p.29, p.68, p.70, p.71, p.108 |
-| MAJOR | B05 MISSED two incompatible borrowing explanations in one MD&A, one a clause recycled from FY25 onto a year borrowings fell 24.5% | AR2026 PDF p.26 and p.27; AR2025 PDF p.20 |
-| MAJOR | B05 MISSED the ₹387 lakh → ₹590 lakh restatement of the Labour Code past-service cost between Q3 and the audit, undisclosed as a change in estimate | FY26-Q3 results PDF p.5; FY26 audited results PDF p.8 |
-| MAJOR | B05 did not read the FY2024-25 Corrigendum; the FY25 auditor's report was corrected one day after filing on three pages including the Opinion paragraph and two CARO clauses | Corrigendum PDF p.1; diff vs AR2025 at PDF p.47, p.48, p.51 |
-| MAJOR | B06 MISSED a directly claim-relevant peer contradiction: Wendt reported FY25 exports −12% in the same year TOTEM claimed an improving export trend. B06 quotes the figure in Part 2A and records "Claims contradicted: 0" | WENDT transcript PDF p.3; AR2025 PDF p.19 |
-| MAJOR | B05 UNDER-WEIGHTED text recycling: three consecutive FY25 MD&A paragraphs are verbatim from FY24, in the year growth fell 12%→2%. B05 found one and graded it LOW-MEDIUM "QC flag" | AR2024 PDF p.15-16; AR2025 PDF p.19 |
-| MAJOR | B05 flag NOT SUPPORTED: "+517bp materials/revenue ⇒ pass-through materially incomplete". On a consumption-matched basis 34.3% → 32.2%; gross margin improved ~210bp | AR2026 PDF p.70 |
-| MAJOR | B05 promise-delivery row 4 subject error: the FY25 "will grow substantially over time" sentence attaches to HSS Drills, not Taps; FY26 reuses the template with the product swapped | AR2025 PDF p.19; AR2026 PDF p.26 |
-| MAJOR | B05 3C states the evidence to separate ramp stock from unsold buildup does not exist. It does: the build is raw-material-led (+170%) and CIF raw-material imports rose 60.2% in the stated commodity-spike year | AR2026 PDF p.92 and PDF p.42; AR2025 PDF p.33 |
-| MINOR | B05 MISSED the future-tense internal-control paragraph, verbatim across FY24 and FY25 ARs | AR2024 PDF p.17; AR2025 PDF p.21 |
-| MINOR | B05 MISSED the discontinued-operations EPS duplication and the incomparable EPS basis in two Board's Report tables | AR2024 PDF p.14; AR2025 PDF p.18 |
-| MINOR | B05 MISSED the ₹2,161.08 lakh FY25 related-party reimbursement receipt with no stated nature | AR2026 PDF p.109 |
-| MINOR | B05 PARTIALLY CAUGHT the R&D "Nil" declaration beside a page describing R&D work | AR2026 PDF p.41-42 |
-| MINOR | B05 PARTIALLY CAUGHT the MD's Message giving PAT with no comparative on a flat-PAT year | AR2026 PDF p.7 vs PDF p.70 |
-| MINOR | B05 PARTIALLY CAUGHT the back-loaded year; 9M FY26 PBT −8.8% is never surfaced as a disclosure gap | BM_Outcome_30Oct2025 PDF p.4; FY26 audited results PDF p.5 |
-| MINOR | B05 anchor defects: "Relentless focus" attributed to the FY24 AR where it does not appear, and cited at AR2025 p.29 instead of p.22; "improving trend" cited at p.19 and p.20 in the same report | AR2025 PDF p.19, p.22; AR2026 PDF p.29 |
-| MINOR | B06 Part 1 Q1 labels Apr-Jun 2026 as Wendt "Q1 FY26"; its own Coverage Notice and Part 5 use Q1 FY27 for the same quarter | B06 Part 1 Q1 vs Coverage Notice and Part 5 |
-
-═══════════════════════════════════════════════════════════════
-END OF VERIFIER B REPORT
-═══════════════════════════════════════════════════════════════
+---
 
 ```yaml
 stage: B12b
@@ -435,47 +400,57 @@ company: "TOTEM"
 run_date: "2026-09-09"
 model: claude-opus-4-8
 status: complete
-independent_flags_found: 19
-caught: 4
+independent_flags_found: 33
+caught: 16
 partially_caught: 5
 missed:
-  - {severity: "CRITICAL", item: "Carbide Taps technology promise re-made VERBATIM in the FY25 AR after being made in the FY24 AR, then deleted from the FY26 AR with no outcome ever stated. B05 records it as PARTIAL with installation confirmed. A forward claim carried across two consecutive annual cycles and silently abandoned.", anchor: "AR2024 PDF p.16; AR2025 PDF p.19 (identical sentence); AR2026 PDF p.26 (clause removed)"}
-  - {severity: "MAJOR", item: "FY25 AR claim of an 'improving trend in the export business performance' was false when made: the same AR's Annexure IV shows export FOB fell 1.1% (Rs 3,834.10 lakh to Rs 3,791.05 lakh). B05 treats it as a promise later reversed by tariffs and never uses the FOB numbers.", anchor: "AR2025 PDF p.19 vs AR2025 PDF p.33; AR2024 PDF p.29"}
-  - {severity: "MAJOR", item: "Interim dividend Rs 2,579.72 lakh = 89.7% of FY26 PAT, of which Rs 1,904.86 lakh (73.8%) went to Shapoorji Pallonji and Forbes Campbell Finance, funded by Rs 2,073 lakh net mutual-fund liquidation in a year CFO fell 46%; no final dividend for FY26 and none through 12-Aug-2026, while the MD's Message frames it as a commitment to shareholder value. B05 records only the payout ratio.", anchor: "AR2026 PDF p.7, p.29, p.68, p.70, p.71, p.108"}
-  - {severity: "MAJOR", item: "FY26 MD&A gives two incompatible borrowing explanations: the ratio table blames working-capital borrowing for a 33.46% fall in interest coverage while the Borrowing paragraph attributes a 24.5% DECREASE in borrowings to 'borrowings resulting due to capital investments', a clause recycled verbatim from the FY25 AR where borrowings rose 263%.", anchor: "AR2026 PDF p.26 and p.27; AR2025 PDF p.20"}
-  - {severity: "MAJOR", item: "The year's only quantified one-off was restated upward 52% without a change-in-estimate note: Labour Code past-service cost disclosed as Rs 387 lakh in the Q3 FY26 filing and Rs 590 lakh in the FY26 audited results, same paragraph, same wording.", anchor: "FY26-Q3 results PDF p.5; FY26 audited results PDF p.8; AR2026 PDF p.27"}
-  - {severity: "MAJOR", item: "The FY2024-25 Corrigendum is absent from B05's source list and never mentioned. The FY25 annual report's Independent Auditor's Report was corrected one day after filing on printed pages 42, 43 and 46, including the Opinion paragraph ('other' to 'total' comprehensive income), a garbled 'other information' section, and CARO clauses (i)(a)(A) and (v). The corrected text itself introduces new errors.", anchor: "Corrigendum PDF p.1; diff vs AR2025 at PDF p.47, p.48, p.51"}
-  - {severity: "MAJOR", item: "B06 missed the one available peer contradiction. Wendt reported FY25 exports at Rs 43.63 cr, 'lower by 12% over the previous year due to reduced offtake from key customers' in the same fiscal year TOTEM claimed an improving export trend. B06 quotes the figure in Part 2A and reports 'Claims contradicted: 0'.", anchor: "WENDT-Concall_Jul_2026 (meeting 21-Jul-2025) PDF p.3; AR2025 PDF p.19"}
-  - {severity: "MINOR", item: "Internal control described in the future tense, verbatim identical across two annual reports: 'The Company has already initiated to install an internal control system... The Audit Committee of the Board will meet at regular intervals'. Rewritten as established only in the FY26 AR.", anchor: "AR2024 PDF p.17; AR2025 PDF p.21; AR2026 PDF p.28"}
-  - {severity: "MINOR", item: "Board's Report financial tables report 'Discontinued operations' EPS identical to continuing-operations EPS in both FY24 and FY25 for a company with no discontinued operations, and set FY24 EPS of Rs 110.63 (weighted-average basis) beside FY25 EPS of Rs 5.57 with no basis note.", anchor: "AR2024 PDF p.14; AR2025 PDF p.18"}
-  - {severity: "MINOR", item: "Related-party 'Other Reimbursements (Receipt)' from Forbes & Company Limited of Rs 2,161.08 lakh in FY25 (9.1% of that year's revenue), falling to Rs 34.28 lakh in FY26, with the nature of the transaction never described.", anchor: "AR2026 Note 30 PDF p.109 and p.108"}
+  - {severity: "CRITICAL", item: "Parent's residual stake is 100% pledged (35,967,172 sh = 69.71% of capital); during FY26 the parent moved its only unpledged block (1,470,000 sh) to Forbes Campbell Finance Ltd, and ~Rs 1,798 lakh of the maiden dividend flowed to that fully pledged parent. B05 has pledge and dividend as two separate HIGH flags; they are one chain.", anchor: "AR2026 p.94-95 (SP&Co 35,967,172 / 69.71% vs 37,437,172 / 72.56%, -3.93%; Forbes Campbell 2,135,592 / 4.14% vs 665,592 / 1.29%, +220.86%); SHP_30Jun2026 p.2 (pledge flag) and p.5 (35,967,172 encumbered = 69.71%); AR2026 p.30 (dividend Rs 2,579.72 lakh)"}
+  - {severity: "MAJOR", item: "CSR: the current-year obligation was 100% unspent in BOTH FY25 and FY26; the FY26 Board's Report says Rs 39.78 lakh was 'spent' (that was the FY25 carry-forward) and never states that the FY26 obligation of Rs 53.83 lakh went entirely to the Unspent CSR Account.", anchor: "AR2026 p.30 (Board's Report) vs Annexure I p.35 ('Unspent 53.83  March 31, 2026') and p.36 (reason) and Note 1 to Other Expenses p.105; AR2025 p.22 used 'to be spent'"}
+  - {severity: "MAJOR", item: "FY25 debtor days rose 108% (23.51 to 49.01) and the mandatory >25%-change explanation is a non-sequitur citing 31-03-2023, a year not in the table and not part of the comparison.", anchor: "AR2025 p.20 ratio table and its note; contrast Wendt AGM 21-Jul-2025 p.23 where the same question got a real answer"}
+  - {severity: "MAJOR", item: "FY24 headline EPS printed as Rs 110.63 in the Board's Report with no caveat, against Rs 5.76 on the actual 5,15,94,464 shares; the Rs 5.76 figure exists only in Note 26. The FY25 comparative column then shows Rs 110.63 beside Rs 5.57, implying a 95% EPS collapse that did not occur.", anchor: "AR2024 p.14 (summary table) and p.79 (Note 26: weighted average 26,85,739 shares; 'the EPS calculated is Rs. 5.76 per share'); AR2025 p.18"}
+  - {severity: "MAJOR", item: "Directors' sitting fees and commission rose 676% (Rs 18.50 lakh to Rs 143.50 lakh) in a year PAT rose 0.1% and the entire CSR obligation went unspent. Not mentioned in the Board's Report or MD's Message.", anchor: "AR2026 Other Expenses note, p.104"}
+  - {severity: "MAJOR", item: "The FY26 'commodity prices increased abnormally in very high proportion' claim does not survive a three-year look: CIF raw-material imports Rs 2,885.65 lakh (FY24) to Rs 1,823.74 lakh (FY25) to Rs 2,921.18 lakh (FY26), i.e. FY26 is only +1.2% over FY24. B05 uses the one-year +60.2% to give the raw-material half of LBF-2 'external, evidenced support'.", anchor: "AR2024 p.29, AR2025 p.33, AR2026 p.42; AR2026 p.25 for the claim; nearest in-window peer datapoint Wendt AGM 21-Jul-2025 p.3 'Commodity prices stayed largely stable'"}
+  - {severity: "MAJOR", item: "B06 uses Wendt's Q&A forum as the contrast that makes TOTEM look worse, and omits that Wendt refused on the record to hold quarterly investor calls and that Kennametal restricts its analyst meetings to historical publicly available information. Material mitigating context for the structural transparency floor.", anchor: "Wendt AGM 21-Jul-2025 p.22 (Bhagya Chandra Rao: 'we are not considered any kind of a quarterly investor meet or other things at this point of time'); Kennametal Mar-2024 p.3 (disclaimer) and p.24 (market-share refusal)"}
+  - {severity: "MEDIUM", item: "The FY24 MD&A's '12% year-on-year growth' claim has no filed base anywhere in the corpus; the same report shows FY22-23 revenue as nil and states results are not comparable. B05 repeats the 12% as an established base.", anchor: "AR2024 p.15 (claim) vs p.14 (nil comparative and the not-comparable footnote)"}
+  - {severity: "MINOR", item: "Second corrigendum, 12-Aug-2026, correcting the board meeting date from 'April 12, 2026' to 'August 12, 2026'. Two corrigenda in fourteen months makes the FY25 AR corrigendum a pattern, not an incident.", anchor: "announcements__BM_Outcome_12Aug2026_Q1FY27.pdf p.1"}
+  - {severity: "MINOR", item: "Return on Net Worth for FY2023-24 restated from 23% to 22% between annual reports, with no explanation.", anchor: "AR2024 p.16 vs AR2025 p.20 comparative column"}
+  - {severity: "MINOR", item: "The Labour Codes note, which undertook at Q3 FY26 to 'account for any further impact in the period in which such developments occur', disappears entirely from the Q1 FY27 results with no closure statement.", anchor: "Q3 FY26 results p.5 Note 5 vs FY27-Q1 results page-04.png notes 1-4"}
+  - {severity: "MINOR", item: "Mr P. Shetty appointed Senior Vice President 1-Aug-2025, a senior commercial hire with stated turnaround expertise, is absent from the FY26 AR's Human Resources section and Board's Report.", anchor: "announcements__Senior_Management_Personnel_01Aug2025.pdf p.2 vs AR2026 p.28"}
 pipeline_flags_not_supported:
-  - {severity: "MAJOR", item: "B05 1C and 2B: 'materials cost/revenue rose from 32.0% to 37.2% FY25-FY26, i.e. pass-through was materially incomplete in FY26'. Gross-basis ratio ignoring the change-in-inventory line. Consumption-matched basis: 34.3% to 32.2%; gross margin improved about 210bp. The FY26 EBITDA squeeze came from employee benefits (+14.6%) and other expenses (+15.9%). This is the only numeric support B05 offers for its 'pass-through quietly weakening' finding, and it reverses.", anchor: "AR2026 PDF p.70"}
-  - {severity: "MINOR", item: "B05 2A row 5 header: 'FY24 AR + FY25 AR (identical Board's Report Finance section, both years)'. The 'Relentless focus on receivables, inventories' sentence does not appear in the FY24 AR; it exists only in AR2025 PDF p.22 and AR2026 PDF p.29. The row's own body text correctly describes it as FY25 to FY26, contradicting its header. B05 4D additionally anchors the FY25 instance at p.29 instead of p.22.", anchor: "AR2025 PDF p.22; AR2026 PDF p.29"}
-promise_delivery_spot_checks: {checked: 6, confirmed: 4, wrong: 2}
-credibility_grade_concur: "concur with C; my independent read adds seven MAJOR items that all cut against management, while the single B-supporting item (the drills guidance-to-delivery chain) rests on management's own unquantified self-assessment, so the case for B is weaker than B05 allows and C is also the NO-CONCALL floor"
+  - {severity: "MAJOR", report: "B06", claim: "Wendt's Q1 FY26 was 'its single worst quarter on record'; Part 5's cross-peer hypothesis leans on it", truth: "Transcript says nothing of the kind. Q1 FY26 total sales Rs 46.49cr +6% YoY, PAT Rs 4.95cr positive, domestic super-abrasives +11%", anchor: "Wendt AGM 21-Jul-2025 p.6 and p.11"}
+  - {severity: "MAJOR", report: "B06", claim: "Q6 net read: full pass-through is structurally imperfect across this industry, not a TOTEM-specific pricing-power failure", truth: "Built only on hedged Kennametal quotes; the same peer's unhedged full-recovery claim is omitted, and it points the other way", anchor: "Kennametal Mar-2023 p.9 ('No, we have recovered the price increase') and p.10 ('we did transfer that price increase because we are well positioned as a technology player in the market')"}
+  - {severity: "MAJOR", report: "B05", claim: "1C: the raw-material half of the FY26 inventory build has external, evidenced support as commodity-price-driven stockpiling (CIF +60.2%)", truth: "Overstated on the three-year CIF series; FY26 is only +1.2% above FY24. The FY24 CIF figure sits on AR2024 p.29, the page B05 itself cites for the FOB figure", anchor: "AR2024 p.29 / AR2025 p.33 / AR2026 p.42"}
+  - {severity: "MINOR", report: "B05", claim: "'the year growth fell from 12% to 2%' treats the FY24 12% as established", truth: "The 12% has no filed base anywhere in the corpus", anchor: "AR2024 p.15 vs p.14"}
+  - {severity: "MINOR", report: "B06", claim: "Q6 cites 'everybody buys at the same price' as Mar-2024 p.19, 'same page' as the tungsten answer", truth: "The quote is on p.20; the PAGE 20 marker falls between the two", anchor: "Kennametal Mar-2024 p.19 (Suresh Reddy) and p.20 (Vijaykrishnan)"}
+  - {severity: "MINOR", report: "B06", claim: "Part 2E cites import-competition intensity as 'roughly 1.5% of revenue', p.20-21", truth: "Exchange runs p.21-22, and the same answer re-quantifies the affected slice at 5% ('90 to 95% of our product lines have not seen an impact... 5% is what I would say'). The smaller of two figures in one answer was used", anchor: "Kennametal Mar-2024 p.21-22"}
+  - {severity: "MINOR", report: "B06", claim: "Part 2A: Wendt domestic super-abrasives 'accelerating from +9% to +11%', corroborating TOTEM's domestic growth story", truth: "Both figures correct, but Wendt's total FY24-25 was +3% sales / -3% PAT and Q1 FY26 was +6% sales / -34% PAT. One accelerating line quoted without the flat-to-down whole", anchor: "Wendt AGM 21-Jul-2025 p.3, p.6, p.10, p.11"}
+promise_delivery_spot_checks: {checked: 6, confirmed: 6, wrong: 0}
+credibility_grade_concur: "Concur with C. The one clean delivered chain (Drills capacity, AR2025 p.19 to AR2026 p.25) is real, but it sits beside an excised forward promise, a claim contradicted by the filer's own export figure, two same-document contradictions, an unexplained 52% restatement, and four disclosure defects this audit adds that the pipeline missed; B is not defensible."
 findings:
-  - {severity: "CRITICAL", location: "B05 Section 2A row 1 / Section 1C 'Taps'", note: "Missed repeated forward promise across two consecutive annual cycles, then silent abandonment (Carbide Taps technology)", anchor: "AR2024 PDF p.16; AR2025 PDF p.19; AR2026 PDF p.26"}
-  - {severity: "MAJOR", location: "B05 Section 2A row 3 / Section 1C 'Export'", note: "FY25 export claim was false when made; Annexure IV FOB numbers never used; 'not very encouraging' is verbatim three-year boilerplate, not an FY26 reversal", anchor: "AR2024 PDF p.16, p.29; AR2025 PDF p.19, p.33; AR2026 PDF p.25, p.42"}
-  - {severity: "MAJOR", location: "B05 Section 1B / Section 2D", note: "Dividend chain missed: 89.7% of PAT, 73.8% to related parties, funded by treasury liquidation, no dividend since", anchor: "AR2026 PDF p.7, p.29, p.68, p.71, p.108"}
-  - {severity: "MAJOR", location: "B05 Section 2B / 4D", note: "Two incompatible borrowing explanations in one MD&A; recycled causal clause applied to a 24.5% decrease", anchor: "AR2026 PDF p.26, p.27; AR2025 PDF p.20"}
-  - {severity: "MAJOR", location: "B05 Section 1B (Labour Codes row)", note: "Rs 387 lakh (Q3) to Rs 590 lakh (audited) restatement of the year's only quantified one-off, undisclosed as a change in estimate", anchor: "FY26-Q3 results PDF p.5; FY26 audited results PDF p.8"}
-  - {severity: "MAJOR", location: "B05 source list", note: "FY2024-25 Corrigendum not read; FY25 auditor's report corrected one day after filing on three pages including the Opinion paragraph and two CARO clauses", anchor: "Corrigendum PDF p.1; AR2025 PDF p.47, p.48, p.51"}
-  - {severity: "MAJOR", location: "B06 Part 1 Q4 / Part 2A / Part 4", note: "Wendt FY25 exports -12% quoted but never applied to TOTEM's FY25 export claim; B06 reports 'Claims contradicted: 0'", anchor: "WENDT transcript PDF p.3; AR2025 PDF p.19"}
-  - {severity: "MAJOR", location: "B05 Section 2C 'Consistency' / 4D text-recycling row", note: "Three consecutive FY25 MD&A paragraphs verbatim from FY24 in the year growth fell 12% to 2%; B05 found one and graded it LOW-MEDIUM QC flag", anchor: "AR2024 PDF p.15-16; AR2025 PDF p.19"}
-  - {severity: "MAJOR", location: "B05 Section 1C / 2B (pass-through)", note: "NOT SUPPORTED: +517bp materials/revenue is a gross-vs-net basis trap; matched basis shows gross margin improved ~210bp", anchor: "AR2026 PDF p.70"}
-  - {severity: "MAJOR", location: "B05 Section 2A row 4 (Taps PARTIAL)", note: "Subject error: the FY25 'will grow substantially over time' sentence attaches to HSS Drills, not Taps; FY26 reuses the template with the product swapped, while capex additions fell Rs 2,612.20 lakh to Rs 1,498.65 lakh", anchor: "AR2025 PDF p.19; AR2026 PDF p.26, p.27"}
-  - {severity: "MAJOR", location: "B05 Section 3C", note: "States the evidence to separate ramp stock from unsold buildup does not exist; it does. Build is raw-material-led (+170%) and CIF raw-material imports rose 60.2% in the stated commodity-spike year", anchor: "AR2026 PDF p.92, p.42; AR2025 PDF p.33"}
-  - {severity: "MINOR", location: "B05 Section 2D / 4D", note: "Missed: future-tense internal-control paragraph verbatim across FY24 and FY25 ARs", anchor: "AR2024 PDF p.17; AR2025 PDF p.21"}
-  - {severity: "MINOR", location: "B05 Section 2A", note: "Missed: discontinued-operations EPS duplication and incomparable EPS basis in two Board's Report tables", anchor: "AR2024 PDF p.14; AR2025 PDF p.18"}
-  - {severity: "MINOR", location: "B05 Section 2D", note: "Missed: Rs 2,161.08 lakh FY25 related-party reimbursement receipt with no stated nature", anchor: "AR2026 PDF p.109"}
-  - {severity: "MINOR", location: "B05 Section 1A (SAP row)", note: "Partially caught: R&D expenditure declared Nil on the page after a page describing R&D work; used only as evidence against the SAP claim, not named as an internal contradiction", anchor: "AR2026 PDF p.41-42"}
-  - {severity: "MINOR", location: "B05 Section 2C over-promotion row", note: "Partially caught: the MD's Message gives PAT with no prior-year comparative in a year PAT was flat at +0.09% and PBT fell 3.4%", anchor: "AR2026 PDF p.7; AR2026 PDF p.70"}
-  - {severity: "MINOR", location: "B05 Section 4A priority 3", note: "Partially caught: FY26 was back-loaded (Q1 PBT -22%, 9M PBT -8.8%, rescued by Q4) and no annual-report section mentions it", anchor: "BM_Outcome_30Oct2025 PDF p.4; FY26 audited results PDF p.5"}
-  - {severity: "MINOR", location: "B05 Section 2A row 5 / 4D row 1 / Section 1C", note: "Anchor defects: 'Relentless focus' attributed to the FY24 AR where it does not appear and cited at AR2025 p.29 instead of p.22; 'improving trend' cited at p.19 in one place and p.20 in another", anchor: "AR2025 PDF p.19, p.22; AR2026 PDF p.29"}
-  - {severity: "MINOR", location: "B06 Part 1 Q1", note: "Fiscal-label error: Apr-Jun 2026 called Wendt 'Q1 FY26'; B06's own Coverage Notice and Part 5 correctly call it Q1 FY27", anchor: "B06 Part 1 Q1 vs Coverage Notice and Part 5"}
+  - {severity: "CRITICAL", type: "MISSED", location: "B05 4D / B06", item: "Pledge-and-dividend chain: parent's residual stake 100% pledged, parent moved its only unpledged block out during FY26, 70% of a maiden dividend worth 89.7% of PAT and 2.8x FCF flowed to it", anchor: "AR2026 p.94-95; SHP_30Jun2026 p.2, p.5, p.10; AR2026 p.30; FY26 audited results p.7"}
+  - {severity: "MAJOR", type: "MISSED", location: "B05", item: "CSR obligation 100% unspent two years running; FY26 Board's Report says 'spent'", anchor: "AR2026 p.30 vs p.35, p.36, p.105"}
+  - {severity: "MAJOR", type: "MISSED", location: "B05", item: "FY25 debtor days +108% with a non-responsive mandatory explanation", anchor: "AR2025 p.20"}
+  - {severity: "MAJOR", type: "MISSED", location: "B05", item: "FY24 headline EPS Rs 110.63 vs Rs 5.76 economic; false FY25 EPS-collapse optic", anchor: "AR2024 p.14, p.79; AR2025 p.18"}
+  - {severity: "MAJOR", type: "MISSED", location: "B05", item: "Directors' sitting fees and commission +676% in a flat-PAT year", anchor: "AR2026 p.104"}
+  - {severity: "MAJOR", type: "MISSED", location: "B05", item: "'Abnormal' commodity escalation claim fails on the three-year CIF series", anchor: "AR2024 p.29, AR2025 p.33, AR2026 p.42, AR2026 p.25"}
+  - {severity: "MAJOR", type: "MISSED", location: "B06", item: "Peers also decline quarterly investor engagement; Wendt refused on the record. Mitigating context absent", anchor: "Wendt AGM p.22; Kennametal Mar-2024 p.3, p.24"}
+  - {severity: "MAJOR", type: "NOT SUPPORTED", location: "B06 Part 2C, Part 5", item: "'Wendt's single worst quarter on record'", anchor: "Wendt AGM p.6, p.11"}
+  - {severity: "MAJOR", type: "NOT SUPPORTED", location: "B06 Q6", item: "Pass-through verdict built on hedged quotes; the same peer's unhedged full-recovery claim omitted", anchor: "Kennametal Mar-2023 p.9, p.10"}
+  - {severity: "MAJOR", type: "PARTIALLY CAUGHT", location: "B06 Q1/Q5/Q6", item: "Peer set has zero coverage of TOTEM's core HSS/taps/washer families; the Kennametal exclusion is quoted under Q2 but not applied to the verdicts", anchor: "Kennametal Mar-2023 p.7"}
+  - {severity: "MAJOR", type: "PARTIALLY CAUGHT", location: "B05 4D", item: "Three HR transitions in ~9 months, not two; the first exit was never separately announced and surfaces only inside somebody else's appointment annexure", anchor: "Reg 30 filing 01-Aug-2025 p.2; Reg 30 filing 22-Apr-2026 p.2"}
+  - {severity: "MAJOR", type: "PARTIALLY CAUGHT", location: "B05 2A row 6, 2B, 2C", item: "Attrition basis shifted (company-wide 17.24% vs lower-executive-cadre ~25%); B05 credits management with honesty on a non-comparable pair", anchor: "AR2025 p.22; AR2026 p.28"}
+  - {severity: "MEDIUM", type: "MISSED", location: "B05", item: "FY24 '12% growth' unanchored; B05 repeats it as fact", anchor: "AR2024 p.15 vs p.14"}
+  - {severity: "MINOR", type: "PARTIALLY CAUGHT", location: "B05 4D", item: "Second corrigendum (12-Aug-2026) missed; a pattern reads as an incident", anchor: "BM_Outcome_12Aug2026 p.1"}
+  - {severity: "MINOR", type: "MISSED", location: "B05", item: "FY23-24 RONW restated 23% to 22% between ARs", anchor: "AR2024 p.16 vs AR2025 p.20"}
+  - {severity: "MINOR", type: "MISSED", location: "B05", item: "Labour Codes note dropped from Q1 FY27 with no closure", anchor: "Q3 FY26 results p.5 vs FY27-Q1 page-04.png"}
+  - {severity: "MINOR", type: "MISSED", location: "B05", item: "SVP appointment 01-Aug-2025 absent from the FY26 AR HR section", anchor: "Reg 30 filing 01-Aug-2025 p.2 vs AR2026 p.28"}
+  - {severity: "MINOR", type: "PARTIALLY CAUGHT", location: "B05 4D", item: "The direct filed anchor for the no-analyst-presentation policy exists and is unused", anchor: "AR2026 p.52: 'The Company does not have a practice of making presentation to institutional investors and analysts.'"}
+  - {severity: "MINOR", type: "NOT SUPPORTED", location: "B06 Q6", item: "Citation defect: 'everybody buys at the same price' is p.20, not p.19", anchor: "Kennametal Mar-2024 p.20"}
+  - {severity: "MINOR", type: "NOT SUPPORTED", location: "B06 Part 2E", item: "Citation defect p.20-21 should be p.21-22; the same answer's 5% re-quantification omitted", anchor: "Kennametal Mar-2024 p.21-22"}
+  - {severity: "MINOR", type: "NOT SUPPORTED", location: "B06 Part 2A", item: "Wendt acceleration quoted without Wendt's flat-to-down total (+3% sales / -3% PAT FY25; +6% sales / -34% PAT Q1 FY26)", anchor: "Wendt AGM p.3, p.6"}
+  - {severity: "MINOR", type: "MISSED", location: "B05", item: "Sub-threshold, recorded not counted: stale unlisted-prefix CIN (U29256MH2022PLC389649) on the results P&L template while the covering letter and auditor report use L29256MH2022PLC389649", anchor: "BM_Outcome_30Oct2025 p.4; FY26 audited results p.5"}
 critical_count: 1
-major_count: 10
-minor_count: 8
-acceptance_rate: 21
+major_count: 11
+minor_count: 10
+acceptance_rate: 48
 ```

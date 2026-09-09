@@ -2,513 +2,686 @@
 
 Run: runs/totem-2026-09-09/ | Stage 12c (B12c) | Model: claude-opus-4-8 | 2026-09-09
 
-**Scope.** Phase 1 only. Rules 2 (Gate 0), 3 (Emerging Moat), 6 (B09
-downstream_candidates block requirement) and 8 (categories 21/22). Rules 4,
-7, 9 to 14 are out of scope: B10 and B11 do not exist yet and stage 13 has
-not run. The valuation framework documents were not loaded and were not
-audited.
+Scope: Gate 0 (B01) rules 2 and 3, Emerging Moat (B07) rules 3 and 8,
+downstream signal candidates (B09) rule 6. The valuation audit (rules 4, 7),
+the stage 13 narrative check (rule 9) and the Halt 1 dossier check (rule 10)
+are OUT OF SCOPE this phase. B10 and B11 do not exist yet.
 
-**Rule sources used.** prompts/01-gate-0-pipeline.md and
-prompts/07-emerging-moat-pipeline.md only.
+Rule sources loaded: prompts/01-gate-0-pipeline.md, prompts/07-emerging-moat-pipeline.md.
+No valuation framework document was read.
 
-**Artifacts audited.** outputs/reports/01-gate0.md, outputs/blocks/B01-gate0.yaml,
-outputs/reports/07-emoat.md, outputs/blocks/B07-emoat.yaml, and
-outputs/blocks/B09-tam.yaml (rule 6 block-presence check only).
+Artifacts audited: outputs/reports/01-gate0.md, outputs/blocks/B01-gate0.yaml,
+outputs/reports/07-emoat.md, outputs/blocks/B07-emoat.yaml,
+outputs/blocks/B09-tam.yaml (rule 6 only).
 
-**Re-derivation basis.** All Gate 0 block scores were recomputed from
-inputs/screening/screener-Data_Sheet.csv, KENNAMET-, WENDT- and
-BIRLAPREC-Data_Sheet.csv, plus trade-payable figures read directly from
-work/text/annual-report__Annual_Report_2026.txt and __2025.txt. I did not
-take the report's word on any score-driving number that the CSVs could
-settle.
+Underlying data re-read for independent re-derivation:
+inputs/screening/screener-Data_Sheet.csv, KENNAMET-Data_Sheet.csv,
+WENDT-Data_Sheet.csv, BIRLAPREC-Data_Sheet.csv.
 
-**Headline.** The Gate 0 classification (AVOID) and the Emerging Moat
-classification (NONE) both survive re-derivation. No CRITICAL. Two MAJOR
-findings, both score-level, neither flips a classification. Ten MINOR
-findings. Acceptance rate 96.8%.
+I audit rule application. Verifier A owns whether a number exists in a source.
 
 ---
 
-## PART 1 — GATE 0 (B01), RULE-BY-RULE
+## HEADLINE
 
-### 1.1 Operating rules and formula definitions
+Concur with the Gate 0 classification. **AVOID stands.**
+Concur with the moat classification. **STRONG (4 of 12) stands.**
+Concur with the Emerging Moat classification. **NONE (9.7 / 92) stands.**
 
-| # | Rule (prompt 01) | Verdict | Note |
-|---|---|---|---|
-| 1 | "Open with: Data available: [X] years..." | PASS (minor) | Line present verbatim in substance at line 30, behind a "WHY THIS IS RUN 2" preamble. Not literally the opening line. MINOR-1. |
-| 2 | Minimum 3 years, maximum whatever exists | PASS | FY23 in the CSV is a shell stub (Total assets Rs 0.05 cr, PBT Rs -0.01 cr, Sales blank). Excluding it is correct and disclosed; including it would still land in the 3-4 LIMITED band and would force N/M on every CAGR under the edge rule. |
-| 3 | ROCE: use source's own figure and anchor it | PASS | AR-disclosed ratio note used (FY25 AR p.100, FY26 AR p.118), not computed. Correct precedence. |
-| 4 | ROE definition / opening net worth caveat | PASS | AR-disclosed ratio used. FY24's 43% base-effect artifact named, flagged, not silently dropped. |
-| 5 | WC Days = Rec + Inv − Pay, revenue basis, basis stated | PASS | Basis stated explicitly ("COGS is not a single explicit P&L line so revenue basis is used and stated"). Re-derived below. |
-| 6 | FCF = CFO − Capex | PASS | FY24 9.46−97.26, FY25 51.32−28.26, FY26 27.55−18.39. CFO ties to Data_Sheet CASH FLOW rows. |
-| 7 | CAGR = (End/Start)^(1/years) − 1 | PASS | 2-year exponent correctly used on a 3-point series. |
-| 8 | CAGR edge rule, negative/zero endpoint → N/M, score 0 | PASS | Both endpoints positive on the FY24-FY26 window. Rule not engaged because FY23 is correctly excluded. |
-| 9 | CAGR edge rule, C4 when PAT CAGR is N/M → 0 | N/A PASS | PAT CAGR is negative but computable (−1.60%), not N/M. C4 correctly scored on the band, not zeroed. |
-| 10 | Anchors mandatory on every extracted number | PASS | Blocks A-E anchored per line. Block F anchored in bulk (file + P&L rows 11-18 + column dates) rather than per figure; acceptable, and the rows resolve. |
-| 11 | Never estimate; NOT FOUND is the only fill | PASS | LBF-2 (146→255 inventory days) and LBF-4 (Rs 5.9 cr Labour Codes charge) both recorded as unverified and excluded from scoring rather than approximated. Correct behaviour. |
-| 12 | YAML schema, exactly the prompt's fields | PASS | All 19 fields present, correct names, flags in {type, reason} form. |
+Every block score re-derives to the reported value. All 12 moat tests
+re-derive. All 23 emerging-moat rows are present and scored. The four
+peer EBITDA margins and the peer median re-derive exactly from the CSVs.
 
-### 1.2 Block A — re-derived
+One MAJOR finding: the B07 report carries **run 2's** Gate 0 moat figures
+(5 of 12, 22/60) in Sections 6C, 6D and 6E. B01 run 3 says 4 of 12, 20/60.
 
-ROCE 28 / 22 / 22, ROE 43 / 19 / 17 (AR-disclosed).
-
-| Item | Rule band | Re-derived | Report | Verdict |
-|---|---|---|---|---|
-| A1 | median ROCE 20-24.9 = 4 | median(28,22,22) = 22 → 4 | 4 | PASS |
-| A2 | min single-year ROCE ≥15 = 5 | min = 22 → 5 | 5 | PASS |
-| A3 | median ROE 15-19.9 = 4 | median(43,19,17) = 19 → 4 | 4 | PASS |
-| A4 | latest vs earliest, decline >5pp = 0 | 22 − 28 = −6pp → 0 | 0 | PASS |
-
-**Block A = 13/20. CONCUR.**
-
-### 1.3 Block B — re-derived
-
-CFO 9.46 / 51.32 / 27.55; PAT 29.71 / 28.75 / 28.77; FCF −87.80 / 23.06 / 9.16.
-
-Working capital days, recomputed independently on the prescribed formula
-(revenue basis), using Data_Sheet receivables and inventory and trade
-payables read from the ARs (FY24 Rs 2,169.42 lakh, AR FY25 p.102; FY25
-Rs 2,341.59 lakh, same page; FY26 Rs 3,240.15 lakh, AR FY26 maturity table):
-
-| Year | Rec days | Inv days | Pay days | WC days |
-|---|---|---|---|---|
-| FY24 | 47.02 | 61.45 | 34.65 | **73.82** |
-| FY25 | 51.83 | 50.09 | 36.74 | **65.18** |
-| FY26 | 43.92 | 82.04 | 47.13 | **78.83** |
-
-My figures reproduce the report's 73.8 / 65.2 / 78.9 to one decimal. The
-formula was applied as written.
-
-| Item | Rule band | Re-derived | Report | Verdict |
-|---|---|---|---|---|
-| B1 | cum CFO/PAT ≥1.00 = 5 | 88.33/87.23 = 1.0126 → 5 | 5 | PASS |
-| B2 | FCF-positive 50-74% = 2 | 2/3 = 66.7% → 2 | 2 | PASS |
-| B3 | cum FCF/PAT negative = 0 | −55.58/87.23 = −0.637 → 0 | 0 | PASS |
-| B4 | ±5 days = 3 \| increased 5-15 = 1 | delta = 78.83 − 73.82 = **+5.01 days** | 1, on a stated delta of "+5.0" | **FAIL, MAJOR** |
-
-**FINDING G0-1 (MAJOR). B4 sits exactly on the band boundary and the
-report's own stated delta contradicts the band it applied.** The report
-writes "78.9 − 73.8 = +5.0 days" and then scores the "increased 5-15" band
-(1). On its own displayed value of +5.0 the correct band is "±5 days" = 3.
-On my exact recomputation the delta is +5.01 days, which does fall outside
-±5 and does support a score of 1 — but by 0.01 of a day, on figures whose
-inputs are rounded to two decimals of a crore. The rule bands overlap at
-exactly +5 and the prompt gives no tie-break, so the boundary call needed
-to be stated and defended. It was not; the arithmetic shown is simply wrong
-by 0.01 and the score silently takes the other side of it.
-
-Impact, traced through: B4 = 3 gives Block B = 10 and Core = 60. Core 60-79
-with a STRONG moat block reads GOOD+ on the matrix rather than AVERAGE. The
-pledge deal-breaker then caps at max AVERAGE, and the LIMITED-history
-downgrade takes one further tier: **AVOID either way**. The final
-classification is insensitive to this finding, which is why it is MAJOR and
-not CRITICAL. It is not cosmetic, because the intermediate core score
-crosses a matrix band and the report's own narrative ("Core score 58 falls
-in the 40-59 band") is what stage 13 and the operator will read.
-
-**Block B = 8/20 as scored; 10/20 on the report's own displayed delta.**
-
-block_b_trend "deteriorating" with the CFO 51.32 → 27.55 number attached:
-correct per the field definition. PASS.
-
-Deal-breaker 2 (Block B <8 → max GOOD): Block B = 8 exactly, not below 8.
-Correctly not triggered. Note this is a second knife-edge: had B4 been
-scored 0, Block B = 7 would have fired deal-breaker 2.
-
-### 1.4 Block C — re-derived
-
-Revenue 228.50 / 232.66 / 251.01; PAT 29.71 / 28.75 / 28.77.
-
-| Item | Rule band | Re-derived | Report | Verdict |
-|---|---|---|---|---|
-| C1 | rev CAGR <5% = 0 | (251.01/228.50)^0.5 − 1 = 4.81% → 0 | 0 | PASS |
-| C2 | PAT CAGR negative = 0 | (28.77/29.71)^0.5 − 1 = −1.60% → 0 | 0 | PASS |
-| C3 | positive YoY years 100% = 5 | 2 of 2 YoY steps positive → 5 | 5 | PASS |
-| C4 | −3 to −8pp = 1 | −1.60 − 4.81 = −6.41pp → 1 | 1 | PASS |
-
-**Block C = 6/20. CONCUR.** C3 correctly runs on 2 YoY comparisons from 3
-data years rather than inventing a third.
-
-### 1.5 Block D — re-derived
-
-| Item | Rule band | Re-derived | Report | Verdict |
-|---|---|---|---|---|
-| D1 | 0-1.0x = 4 | (16.64 − 6.28)/52.62 = 0.197x → 4 | 4 | PASS (minor) |
-| D2 | ≥10x = 5 | (39.50 + 1.66)/1.66 = 24.8x → 5 | 5 | PASS |
-| D3 | <0.1 = 5 | 16.64/168.58 = 0.0987 → 5 | 5 | PASS (minor) |
-| D4 | 1.5-1.99 = 4 | 1.84 AR-disclosed → 4 | 4 | PASS |
-
-**Block D = 18/20. CONCUR.**
-
-MINOR-2: D1 excludes Rs 23.23 cr of mutual-fund investments from cash.
-Including them flips the company to net cash and scores 5. The report
-states the exclusion and its consequence, so this is a disclosed
-conservative judgment, not a concealed one. Core would move 58 → 59, still
-inside 40-59.
-
-MINOR-3: two EBITDA bases coexist in the same report. D1 uses Rs 52.62 cr
-(from the FY26 audited results); the Block F margin table implies Rs 52.94
-cr (21.09% of 251.01), which is what the Data_Sheet formula and the
-four-quarter Operating Profit sum both give (8.41 + 14.58 + 11.73 + 18.23 =
-52.95). The gap is immaterial to both scores but the report should have
-said which basis governs where.
-
-MINOR-4: D3 at 0.0987 against a 0.1 threshold is a knife-edge, and the
-report itself notes the AR's own narrower D/E is exactly 10%, which scores
-4. Disclosed. Core would move 58 → 57, still inside 40-59.
-
-### 1.6 Block E — re-derived
-
-| Item | Rule band | Re-derived | Report | Verdict |
-|---|---|---|---|---|
-| E1 | ≥60% = 5 | 73.85% → 5 | 5 | PASS |
-| E2 | ±1% = 3 | unchanged over the ~12 months held → 3 | 3 | PASS (minor) |
-| E3 | >15% = 0 | 94.4% of promoter holding (69.7% of total shares) → 0 | 0 | PASS |
-| E4 | <5% = 5 | 0.1681/168.58 = 0.0997% → 5 | 5 | PASS |
-
-**Block E = 13/20. CONCUR.**
-
-MINOR-5: E2 asks for the change "over 3 years". Only Jun-2025, Mar-2026 and
-Jun-2026 shareholding filings exist, and the company listed 11-Jun-2024, so
-a 3-year window cannot exist. Prompt rule 5 ("if a data point is not
-available, mark N/A and score it 0") and prompt rule 6 ("use whatever
-history is available") point in opposite directions here. The report chose
-rule 6, scored 3, and flagged the window as provisional in both the report
-and input_gaps. I accept that as the better reading of a genuinely
-conflicting pair of rules. Had E2 been zeroed, Core = 55, still AVERAGE.
-
-**CORE SCORE = 13 + 8 + 6 + 18 + 13 = 58/100. CONCUR.**
-
-### 1.7 Block F — the 12 moat tests, re-derived
-
-I recomputed every peer margin myself from the four Data_Sheet.csv files
-using the report's stated formula, and independently cross-checked each
-against the four-quarter Operating Profit sums in each file's Quarters
-block. The report's claim that this cross-check reconciles is true:
-
-| Company | FY26 EBITDA margin, P&L rows | FY26 via 4-quarter Operating Profit | Agree? |
-|---|---|---|---|
-| TOTEM | 52.94/251.01 = 21.09% | 52.95/251.01 = 21.10% | yes |
-| Kennametal (Jun-26) | 303.7/1510.7 = 20.10% | 303.5/1510.7 = 20.09% | yes |
-| Wendt (Mar-26) | 32.43/236.32 = 13.72% | — | yes |
-| Birla (Mar-26) | 17.17/247.13 = 6.95% | — | yes |
-
-Peer median FY26 = 13.72%. Kennametal FY25 (Jul-24 to Jun-25) recomputes to
-172.2/1170.4 = 14.71%, and substituting it leaves the median at 13.72%. The
-sensitivity claim is true as stated.
-
-| Test | Rule band | Re-derived | Report | Verdict |
-|---|---|---|---|---|
-| M1 | else = 0 | margin −1.40pp (within ±2pp) but rev CAGR 4.8% < 10%; no band fits | 0 | PASS |
-| M2 | ≥5pp above peer median = 5 | 21.09 − 13.72 = +7.37pp → 5 | 5 | PASS (minor) |
-| M3 | FAT>2x AND ROCE>15% = 3 | 251.01/113.40 = 2.21x, ROCE 22% → 3 | 3 | PASS |
-| M4 | zero decline years AND rec days ±10 = 5 | 0 decline years; 47.0 → 43.9 → 5 | 5 | PASS |
-| M5 | top 3 mcap AND margin top 2 = 3 | see finding G0-2 | 3 | **FAIL, MAJOR** |
-| M6 | else = 0 | no R&D line in any of the four exports; FY26 R&D Nil per AR | 0 | PASS |
-| M7 | unregulated = 0 | cutting tools not a licensed segment | 0 | PASS |
-| M8 | none = 0 \| mentioned unquantified = 1 | not in this stage's inputs → 0 | 0 | PASS (minor) |
-| M9 | above peers but growth below = 1 | GM 62.82% vs median 56.25% = +6.57pp; CAGR 4.81% < 8% → 1 | 1 | PASS |
-| M10 | grew every year AND rec days rose ≤10 = 5 | grew every year; rec days fell 3.1 → 5 | 5 | PASS |
-| M11 | <6 years, score conservatively and state so | stated, 0 | 0 | PASS |
-| M12 | >45 days = 0 | 73.8 / 65.2 / 78.9, all >45 → 0 | 0 | PASS |
-
-**FINDING G0-2 (MAJOR). M5 was scored 3 on a comparison set the report
-itself says is not the segment, against the block's explicit
-peer-data-missing instruction.** The Block F header rule is unambiguous:
-"If a test needs peer data that is not provided, score 0 and mark PEER DATA
-NEEDED (never guess peer figures)." M5's bands are written against a
-segment ("largest mcap in segment", "top 3 mcap", "top 5 mcap"). What this
-run holds is three named peers. "Top 3 of 4" is close to vacuous: only
-Birla Precision sits below the subject, and the report's own caveat
-concedes the ranking is "relative to this 4-company set, not a verified
-full-segment ranking". The rule's escape hatch for exactly this situation
-is score 0 / PEER DATA NEEDED, and it was not taken. To the report's
-credit, no peer figure was invented and the limitation is stated plainly;
-the defect is that the limitation should have produced a 0, not a flagged 3.
-
-Recomputed: Block F = 19/60, moats present = 4 (M2, M3, M4, M10). Moat
-class = **STRONG** (the 4-5 band), unchanged. Grand total = 77/160. Core
-score unchanged at 58, so the classification is unchanged. MAJOR, not
-CRITICAL.
-
-MINOR-6: M2 is the single largest mover between run 1 and run 2 (0 → 5),
-and with exactly three peers the "peer median" is one peer's number, Wendt's
-13.72%. Wendt's own margin fell from 22.73% (FY25) to 13.72% (FY26) — a
-single-year collapse. The sensitivity the report ran tests the Kennametal
-year-end alignment; it does not test the fragility of resting a +7.37pp
-"cost advantage" on one peer's one bad year. The rule was applied
-correctly. The robustness note is missing.
-
-MINOR-7: M8 scored 0 as "not disclosed in any filed source read this run".
-That is correct for this stage's inputs. It is inconsistent with B07, which
-records "200+ distributors" and "12 divisional sales offices" from the 2024
-Information Memorandum (B07 Section 3, C1). Under M8's "mentioned
-unquantified = 1" band that evidence would score 1. Impact: moat 22 → 23,
-moats present unchanged at 5, no class change. Flagged as a corpus-scope
-mismatch between stages, not as a Gate 0 rule breach.
-
-**Block F as scored = 22/60, 5 moats, STRONG. Arithmetic re-added:
-0+5+3+5+3+0+0+0+1+5+0+0 = 22. CONCUR on the arithmetic; see G0-2 on M5.**
-
-**GRAND TOTAL = 58 + 22 = 80/160. CONCUR.**
-
-### 1.8 The June-versus-March peer year-end question
-
-**Verdict: defensible application, not a basis error.**
-
-Kennametal India's FY26 column ends 30-Jun-2026 and overlaps 9 of the
-subject's 12 FY26 months. The prompt's Block F says nothing about period
-alignment for peer comparisons, so no rule is broken on its face. What
-makes it defensible rather than merely undisclosed is that the report did
-three things the framework's spirit requires: it named the misalignment
-explicitly, it ran the alternative (Kennametal FY25, ended 30-Jun-2025) as
-a sensitivity on every peer-dependent test, and it stated why the choice
-does not bind. I verified that last claim independently and it holds:
-
-- M2: median is 13.72% under both alignments, because Birla (6.95%) and
-  Wendt (13.72%) bracket Kennametal on either choice. Score 5 either way.
-- M9: median is 56.25% under both alignments (Kennametal's GM is 32.61% at
-  FY26 and 44.61% at FY25, below Wendt either way). Score 1 either way.
-- M5: mcap is a live snapshot, not year-end dependent; margin rank 1 for the
-  subject holds under both. Score unaffected by the alignment (it is
-  affected by G0-2, which is a different problem).
-
-The one thing left unsaid: a 3-month lag matters most when the lagged
-period is anomalous, and Kennametal's Jun-2026 year is exactly that — its
-margin jumps 14.71% to 20.09% on a Change-in-Inventory line of Rs 225.0 cr
-against Rs 21.5 cr the prior year. That did not change any score here, but
-it should have been named alongside the alignment note. MINOR-8.
-
-### 1.9 Classification, deal-breakers, confidence adjustment
-
-| Check | Rule | Verdict |
-|---|---|---|
-| Matrix band | Core 40-59 = AVERAGE, flat, no moat branch | PASS. Report states the flatness correctly and notes Block F would only matter at Core 60-79 or ≥80. |
-| Data confidence | 3-4 years = LIMITED, downgrade one tier | PASS. 3 years → LIMITED → one tier. |
-| Deal-breaker 1 | Block A <8 → max GOOD | PASS, not triggered (13). |
-| Deal-breaker 2 | Block B <8 → max GOOD | PASS, not triggered (8, at the line, correctly read as not-below). |
-| Deal-breaker 3 | median ROCE <10% → max AVERAGE | PASS, not triggered (22%). |
-| Deal-breaker 4 | cum CFO/PAT <0.50 → max AVERAGE | PASS, not triggered (1.01). |
-| Deal-breaker 5 | pledge >15% → max AVERAGE | PASS, triggered and applied. 94.4% of promoter holding; 69.7% of total shares. Over the threshold on either denominator. |
-| Deal-breaker 6 | ND/EBITDA >3x AND IC <3x → AVOID | PASS, not triggered. |
-| Deal-breaker 7 | revenue declined in majority of years | PASS, not triggered. |
-| Deal-breaker 8 | PAT negative in any of last 3 years | PASS, not triggered. |
-| Deal-breaker 9 | history <3 years → AVERAGE | PASS, correctly NOT triggered at exactly 3 years, and correctly distinguished from the confidence downgrade. |
-| "State WHICH years drive any deal-breaker" | prompt requirement | PASS. Jun-2025, Mar-2026, Jun-2026 named for the pledge. |
-| Sequencing | matrix → cap → downgrade | PASS, stated explicitly. |
-
-**Is the pledge deal-breaker double-counting the history downgrade?**
-No. They key to different facts (a pledged controlling stake versus the
-length of the audited record), they come from different sections of the
-prompt (Deal-breaker overrides versus Data confidence), and they do
-different work here. The pledge cap is non-binding on these numbers: the
-matrix already produces AVERAGE, so "max AVERAGE" changes nothing. All of
-the movement from AVERAGE to AVOID comes from the one-tier LIMITED-history
-downgrade. The report says this in as many words ("Absent that downgrade,
-the mechanical floor here is AVERAGE"), which is the correct and honest
-statement of what each rule contributed. No double-count.
-
-**Does the matrix produce AVOID from these inputs?** Yes.
-Core 58 → 40-59 band → AVERAGE → pledge cap (max AVERAGE, non-binding) →
-LIMITED-history downgrade one tier on the EXCELLENT / GOOD+ / GOOD /
-AVERAGE / AVOID ladder → **AVOID**. Order of operations does not matter
-here: capping first or downgrading first both land on AVOID.
-
-**Robustness of AVOID against my own two MAJOR findings.** Taken together
-and in the worst case (B4 → 3 and M5 → 0): Core = 60, moats = 4, class
-STRONG. Matrix reads Core 60-79 + STRONG = GOOD+. Pledge cap → AVERAGE.
-History downgrade → **AVOID**. The verdict is unchanged under every
-combination of my findings. This is why neither finding is CRITICAL.
-
-**recomputed_decision: none. I concur with AVOID.**
+Nine findings total: 0 CRITICAL, 1 MAJOR, 8 MINOR.
 
 ---
 
-## PART 2 — EMERGING MOAT (B07), RULE-BY-RULE
+## PART 1 — GATE 0 (B01), RULE 2
 
-### 2.1 Category completeness (verifier rule 3, all 23 addressed)
+### 1.1 Block A — Return on Capital
 
-Counted from the Section 3 summary table: A1 A2 A3 A4 (4) + B1 B2 B3 (3) +
-C1 C2 (2) + D1 D2 (2) + E1 E2 (2) + F1 F2 (2) + G1 G2 (2) + H1 H2 H3 (3) +
-I1 I2 (2) = 22, plus R1 = **23 rows. All present.** Every zero-scored row
-carries either "NO EVIDENCE FOUND" or an explicitly negative finding
-(B1, E2, G1, G2 are recorded as evidence pointing the other way, which is
-stronger than a bare NO EVIDENCE and is the correct treatment under prompt
-rule 5's "never force-fit"). The Section 5 scoring table repeats all 23
-rows. **PASS.**
+Source basis check first. The stage rule says use the source's own ROCE
+where the source provides it. The screener export holds no ratio block, so
+the report used AR-disclosed ROCE and ROE. I re-derived both against the
+stage's own fixed formulas to test whether the AR figures are the same
+animal:
 
-### 2.2 Evidence multipliers against stated tiers
-
-| Row | Body's evidence tier | Multiplier applied | Correct? |
-|---|---|---|---|
-| A3 | 📄 (5 named installed items across FY24-FY26 AR Annexures) | 1.0 | yes |
-| B2 | 📄 (5 certifications named and scoped, FY25 AR p.28; ISO 26000 FY26 AR p.40) | 1.0 | yes |
-| C1 | 📄 + 🎙️ mixed, 🎙️ in the majority | 0.7 | yes, and conservative |
-| F2 | 📄 for the capex-completion leg (AR Annexures + CWIP no-overdue note) | 1.0 | yes |
-| H3 | 📄 (solar kWh disclosed, FY26 AR p.40) | 1.0 | yes |
-
-No row scores a 🎙️-only or 🔍-only category at 📄 weight. C1 is the only
-mixed row and it takes the lower multiplier. **PASS on verifier rule 3's
-specific test.**
-
-Likelihood x impact values: A3 HM = 3 ✓, B2 HM = 3 ✓, C1 ML = 1 ✓,
-F2 MM = 2 ✓, H3 = 1 ✓.
-
-MINOR-9: H3's matrix label reads "1 (LM)" while the same row states
-Likelihood Medium and Impact Low, which is ML. ML and LM both map to 1, so
-the value is right and the label is wrong. Presentational only.
-
-Adjusted total re-added: 3.0 + 3.0 + 0.7 + 2.0 + 1.0 = **9.7**. CONCUR.
-
-Classification: 9.7 < 12 → **NO MEANINGFUL EMERGING MOAT**. The bands were
-applied absolutely per the 20-Aug-2026 operator ruling, with no rescale
-against the 92 ceiling, which is what the ruling requires. **PASS.**
-
-### 2.3 Completionist guard
-
-The mandated line is present and in the mandated form: "📄 recount
-performed: 15 documented items across 5 categories", itemised per category
-(A3: 5, B2: 6, F2: 2, C1: 1, H3: 1 = 15, which re-adds correctly). The
-guard's base rate (3 to 6 categories with genuine evidence) is quoted and
-the result checked against it. The recount was performed even though the
-guard's trigger condition (12+ active categories) never fired, which is
-what the Section 3 summary instruction separately requires. **PASS.**
-
-A sparse scan is not itself a finding. This one is sparse *and* complete:
-every one of the 23 rows was visited, five carry evidence, three clear the
-bar. Nothing was skipped.
-
-### 2.4 Categories 21 and 22 (verifier rule 8)
-
-**I1 TALENT ASYMMETRY — present, scored 0, gate correctly applied.** The
-rule permits a score above 0 only when both legs are evidenced and the (b)
-leg carries at least one 📄 source. The report finds neither leg: no named
-inventor (no patents exist, per A2), no verifiable ex-DRDO / ex-HAL /
-ex-global-major concentration, and no remuneration annexure showing
-technical staff paid above sector norms. It scores 0 and states the reason
-in the category's own terms ("a hiring/organisation story with no
-structural-economics leg, exactly the pattern the category is built to
-exclude"). **PASS.**
-
-**I2 CANNIBALIZATION BARRIER — present, scored 0, gate correctly applied.**
-The rule requires the score to be 0 when the honest answer is "nothing must
-be destroyed". The report runs the test against its own findings (A3 and
-B2), concludes both need only capital and calendar time to replicate
-because Kennametal already holds equivalent certifications and process
-technology, and scores 0. It also correctly excludes F2 from I2 credit,
-citing the category's own rule that an execution lead is configuration-free
-and closes. **PASS.**
-
-**I1/I2 contribution stated separately: 0.0, with the operator's review
-checkpoint named.** Required by the Section 5 ruling. **PASS.** No
-threshold was crossed via I1/I2 points on this name, which is the fact the
-checkpoint wants recorded.
-
-### 2.5 Section completeness and remaining rules
-
-| Rule | Verdict | Note |
-|---|---|---|
-| All six sections executed in one response | PASS | Sections 1-6 all present, plus the Optionality Register. |
-| 1A status taxonomy, 1B direction, 1C mix table | PASS | 1C correctly returns NOT FOUND at the numeric level with the one-segment AR note anchored (FY26 AR Note 38, p.126), rather than fabricating a mix. |
-| 2A capex table with all seven columns | PASS | Undisclosed cells carry NOT FOUND, not estimates. |
-| 2B utilisation | PASS | NOT FOUND, with the reason (no utilisation % published, single plant). |
-| 2C arithmetic shown | PASS | Rs 3.56 cr CWIP x 2.32x / Rs 251.01 cr = 3.3%. The choice to use CWIP only ("capex still under execution") is the literal reading of the rule and the report explains why the commissioned Rs 14.99 cr is realised, not embedded, growth. Correct and unusually well reasoned. |
-| 2D new geography | PASS | Correctly classified as re-entry, not first entry, and scored as such. |
-| Section 4 / R1 4A-4C | PASS | R1 = 0 on the "whether competitors share the benefit" test, which is the rule's own criterion. |
-| Section 3 summary: 23 rows, evidence?, type, strength, time | PASS | All four columns populated. |
-| Count with Strong/Moderate stated | PASS | 3 (A3, B2, F2). |
-| Optionality register: 4 columns, only 0-scored or 🎙️/🔍-only rows | PASS | 5 rows (A4, G1, I1, H1, E2), all zero-scored. C1 and H3 correctly excluded, since both carry a 📄 item. |
-| Section 6, 6A-6E, incl. HIGH POTENTIAL / TURNAROUND reasoning | PASS | Both were explicitly considered and rejected with reasons, which the rule requires. 6C correctly quotes the injected B01 block (Core 58, 5/12, 22/60, STRONG). |
-| Emerging-Moat / FTTCP separation (CLAUDE.md) | PASS | Stated at the head of the report. |
-| YAML schema | PASS (minor) | All mandated fields present and correctly typed. |
-
-MINOR-10: two fields not in the prompt's schema were added to B07-emoat.yaml
-(`em_score_scale`, `capex_embedded_growth_basis`). The prompt says "exactly
-this fenced YAML block". Both additions are useful and neither displaces a
-mandated field; recorded so the schema drift is visible.
-
-MINOR-11: `evidence_mix: {documented: 15, claim: 1, inference: 0}` is scoped
-to the five evidenced categories only, and matches the completionist
-recount on that scope. The report body carries at least eight further 🎙️
-items (1A tapping geometries, 1B geographic and vertical, four 1C
-directional reads, 2D re-entry) and at least six labelled 🔍 inferences (A3,
-B2, F2, 2C, the 1C export-share computation, the 2A ~6.7% capacity
-arithmetic). `inference: 0` is therefore true of the scored rows and false
-of the document. The scoping is defensible; it is not stated.
-
-### 2.6 Consistency between the B07 report and the B07 block
-
-em_score 9.7 ✓, em_classification NONE ✓, three active_categories matching
-the three Strong/Moderate rows ✓, capex_embedded_growth_pct 3.3 matching
-2C ✓, five optionality rows matching the register ✓, combined_assessment
-AVOID matching 6D ✓, completionist_recount line carried ✓. No drift.
-
-**recomputed em_score: none. I concur with 9.7 and NONE.**
-
----
-
-## PART 3 — RULE 6, B09 DOWNSTREAM CANDIDATES (BLOCK REQUIREMENT ONLY)
-
-The rule: B09 contains `downstream_candidates` with ≥3 items, OR
-`demand_externally_verifiable: false` with the exact sentence present.
-Missing block = REWORK for stage 9.
-
-B09-tam.yaml contains `downstream_candidates` with **6 items** (IMTMA
-machine-tool data, SIAM automotive volumes, Kennametal India quarterly
-results, US/Mexico tariff policy, HSS/tungsten-carbide import prices,
-defence and aerospace procurement). Each carries signal, entity_type,
-demand_link, likely_source, cadence and shared. `demand_externally_verifiable`
-is true, consistent with a populated candidate list.
-
-**PASS. No REWORK trigger for stage 9.** The second half of rule 6 (stage 11
-catalysts each citing a candidate or carrying the MODERATE cap) is phase 3
-and was not assessed.
-
----
-
-## FINDINGS SUMMARY
-
-| # | Severity | Location | Finding | Recomputed |
+| Year | AR ROCE | My EBIT / (Total − Other Liabilities) | AR ROE | My PAT / avg NW |
 |---|---|---|---|---|
-| G0-1 | MAJOR | 01-gate0.md, Block B, B4 | Stated delta "+5.0 days" scores the "increased 5-15" band (1); on the report's own displayed value the ±5 band gives 3. Exact recomputation is +5.01 days, so the score survives by 0.01 of a day. Boundary call not stated or defended. | B4 = 1 or 3; Block B = 8 or 10; Core = 58 or 60. Classification AVOID either way. |
-| G0-2 | MAJOR | 01-gate0.md, Block F, M5 | Scored 3 for "top 3 mcap" on a 4-company set the report itself says is not the segment. Block F's own rule for missing peer data is score 0 / PEER DATA NEEDED. | M5 = 0; Block F = 19/60; moats = 4; class STRONG unchanged; grand total 77/160; classification AVOID unchanged. |
-| G0-3 | MINOR | 01-gate0.md line 30 | "Data available" opening line placed behind a run-2 preamble rather than opening the report. | — |
-| G0-4 | MINOR | 01-gate0.md, D1 | Rs 23.23 cr mutual funds excluded from cash; including them scores 5 (net cash). Disclosed. | Core 59, band unchanged. |
-| G0-5 | MINOR | 01-gate0.md, D1 vs Block F | Two FY26 EBITDA bases coexist, Rs 52.62 cr and Rs 52.94 cr; governing basis not declared. | Immaterial to both scores. |
-| G0-6 | MINOR | 01-gate0.md, D3 | 0.0987 against a 0.1 threshold; the AR's own 10% would score 4. Disclosed. | Core 57, band unchanged. |
-| G0-7 | MINOR | 01-gate0.md, E2 | 3-year rule scored on a ~12-month window. Prompt rules 5 and 6 conflict; rule 6 chosen and flagged provisional. Accepted. | Core 55, band unchanged. |
-| G0-8 | MINOR | 01-gate0.md, Block F, M2 | Peer median with three peers is one peer's number (Wendt 13.72%), and Wendt's margin collapsed from 22.73% in one year. Alignment sensitivity was run; single-peer fragility was not. | No score change. |
-| G0-9 | MINOR | 01-gate0.md, Block F, M8 | Scored 0 as not disclosed; B07 records 200+ distributors and 12 sales offices from the 2024 IM, which would score 1 under "mentioned unquantified". Corpus-scope mismatch between stages. | Moat 23/60, moats present unchanged. |
-| G0-10 | MINOR | 01-gate0.md, peer alignment note | Kennametal's Jun-2026 year is itself anomalous (Change in Inventory Rs 225.0 cr vs Rs 21.5 cr prior). Not named beside the alignment disclosure. | No score change. |
-| EM-1 | MINOR | 07-emoat.md, Section 5, H3 | Matrix label "(LM)" against a stated Medium likelihood / Low impact (ML). Both map to 1. | No score change. |
-| EM-2 | MINOR | B07-emoat.yaml | Two non-schema fields added (em_score_scale, capex_embedded_growth_basis). | — |
-| EM-3 | MINOR | B07-emoat.yaml | evidence_mix scoped to the five evidenced rows; `inference: 0` is false of the document, which carries ≥6 labelled 🔍 items. Scoping defensible, unstated. | — |
+| FY24 | 28% | (39.83+1.16)/(202.60−56.02) = 27.96% | 43% | 29.71/68.90 = 43.1% |
+| FY25 | 22% | (40.88+1.13)/(250.03−61.31) = 22.26% | 19% | 28.75/152.00 = 18.9% |
+| FY26 | 22% | (39.50+1.66)/(251.32−66.10) = 22.22% | 17% | 28.77/167.41 = 17.2% |
 
-CRITICAL: 0. MAJOR: 2. MINOR: 11.
+(inputs/screening/screener-Data_Sheet.csv, P&L and Balance Sheet blocks)
 
-## COVERAGE AND ACCEPTANCE
+The AR figures reconcile to the stage formula to within 0.3pp. Basis is sound.
 
-Rules checked: 42 Gate 0, 19 Emerging Moat, 1 B09 block requirement = 62.
-A rule is counted failed when it produced a MAJOR or CRITICAL finding.
-Passed 60 of 62 = **96.8%**. On the stricter convention where any finding
-(including MINOR) counts against the rule, 51 of 62 = 82.3%. Both are well
-clear of the 60% REWORK threshold.
+| Test | Rule band | Report input | Report score | My re-derivation | Verdict |
+|---|---|---|---|---|---|
+| A1 | median ROCE 20-24.9 = 4 | median(28,22,22)=22 | 4 | 22 → 4 | PASS |
+| A2 | min ROCE ≥15 = 5 | 22 | 5 | 22 → 5 | PASS |
+| A3 | median ROE 15-19.9 = 4 | median(43,19,17)=19 | 4 | 19 → 4 | PASS |
+| A4 | decline >5pp = 0 | 22 vs 28 = −6pp | 0 | −6pp → 0 | PASS |
+| **Block A** | | | **13** | **13** | **PASS** |
 
-No REWORK trigger fires from this verifier. Stage 7 categories 21 and 22
-are present and correctly gated (no stage 7 REWORK). B09's
-downstream_candidates block is present with 6 items (no stage 9 REWORK).
+The FY24 43% ROE is a demerger base artifact and the report says so. It is
+still the disclosed ratio and the rule gives no exclusion route. Keeping it
+is correct. Note it does not bind: A3's median is 19% either way.
 
-## WHAT I DID NOT AUDIT
+### 1.2 Block B — Cash Generation Quality
 
-Valuation adherence (verifier rule 4), method plurality in B11 (rule 7),
-the stage 13 Business Understanding Narrative (rule 9), the Expectation
-Ledger and decomposition gates (rules 13-14), and Role 1 exit construction
-(rules 11-12): all deferred to phase 3, when B10 and B11 exist. The Halt 1
-dossier structural check (rule 10) is run mechanically by the orchestrator
-at step 6b and is outside this invocation. Whether a cited number exists in
-its source PDF is Verifier A's non-overridable call, not mine; where I
-re-derived figures above, I did so from the CSVs and page-marked text to
-test rule application, not to adjudicate source fidelity.
+| Test | Rule band | Report | My re-derivation | Verdict |
+|---|---|---|---|---|
+| B1 | ≥1.00 = 5 | 88.33/87.23 = 1.013 | 1.0126 → 5 | PASS |
+| B2 | 50-74% = 2 | 2 of 3 = 66.7% | 66.7% → 2 | PASS |
+| B3 | negative = 0 | −55.58/87.23 = −0.637 | −0.637 → 0 | PASS |
+| B4 | increased 5-15 = 1 | +5.0072 days | see below | PASS |
+| **Block B** | | **8** | **8** | **PASS** |
+
+**B4, the recomputation claim, tested line by line.** Rebuilt from the
+stated primary balance-sheet inputs using the stage's fixed formula
+(revenue basis, stated):
+
+FY24: 2,944.40/22,849.66×365 = 47.034 ; 3,846.87/22,849.66×365 = 61.450 ;
+2,169.42/22,849.66×365 = 34.654. WC = 47.034 + 61.450 − 34.654 = **73.830**.
+Report: 73.8291.
+
+FY26: 3,019.59/25,101.13×365 = 43.909 ; 5,642.15/25,101.13×365 = 82.044 ;
+3,240.15/25,101.13×365 = 47.116. WC = 43.909 + 82.044 − 47.116 = **78.837**.
+Report: 78.8363.
+
+Delta = **+5.007 days**. Report: +5.0072. Reproduced.
+
+Band application: "±5 days = 3 | increased 5-15 = 1". +5.007 exceeds 5.00,
+so the ±5 band closes and "increased 5-15" opens. Score 1 is the rule as
+written. The report states the boundary explicitly, which is what run 2
+failed to do. **PASS.**
+
+Knife-edge sensitivity, because 0.007 days is not a margin: if B4 were 3,
+Block B = 10 and Core = 60, which crosses into the 60-79 band → GOOD+ on
+STRONG moat. The pledge deal-breaker then caps at AVERAGE and the LIMITED
+history downgrade pulls to **AVOID**. Same final answer. The classification
+does not turn on this boundary. Recorded so no one has to re-run it.
+
+### 1.3 Block C — Growth
+
+| Test | Rule band | Report | My re-derivation | Verdict |
+|---|---|---|---|---|
+| C1 | <5% = 0 | (251.01/228.50)^0.5−1 = 4.81% | 4.810% → 0 | PASS |
+| C2 | negative = 0 | (28.77/29.71)^0.5−1 = −1.60% | −1.595% → 0 | PASS |
+| C3 | 100% = 5 | 2 of 2 | 2 of 2 → 5 | PASS |
+| C4 | −3 to −8pp = 1 | −6.41pp | −6.41pp → 1 | PASS |
+| **Block C** | | **6** | **6** | **PASS** |
+
+CAGR edge rules honoured. Both endpoints of both CAGRs are positive, so
+"N/M (negative endpoint)" does not fire and a real CAGR is required, not
+suppressed. No loss-to-profit swing in the FY24-FY26 window, so no
+data_notes entry is owed. C4's own edge rule ("when PAT CAGR is N/M, score
+C4 = 0") does not fire because PAT CAGR is computable at −1.60%; C4 = 1 is
+correct, not a missed zero. **PASS.**
+
+### 1.4 Block D — Balance Sheet Strength
+
+| Test | Rule band | Report | My re-derivation | Verdict |
+|---|---|---|---|---|
+| D1 | 0-1.0x = 4 | (16.64−6.28)/52.62 = 0.197x | 0.1969 → 4 | PASS |
+| D2 | ≥10x = 5 | (39.50+1.66)/1.66 = 24.8x | 24.79 → 5 | PASS |
+| D3 | <0.1 = 5 | 16.64/168.58 = 0.099 | 0.0987 → 5 | PASS |
+| D4 | 1.5-1.99 = 4 | 1.84 | 1.84 → 4 | PASS |
+| **Block D** | | **18** | **18** | **PASS** |
+
+D3 is a second knife edge (0.0987 vs a 0.1 boundary; the AR's own narrower
+D/E prints 10%). If D3 = 4, Core = 57, still the 40-59 AVERAGE band, still
+AVOID. No flip. The report discloses the two bases and names the one used.
+
+D1's mutual-fund exclusion: the stage's fixed formula defines net debt but
+gives no cash-equivalent instruction. Excluding a separate Investments line
+from cash is the literal reading. The report names the alternative, names
+its consequence (D1 = 5, net cash) and leaves it to the operator. That is
+the correct handling of an unresolved input under the stage's own rules.
+**PASS.**
+
+**EBITDA basis governance claim, tested.** The rule that matters is
+within-test consistency, since the framework fixes no EBITDA definition.
+Checked all four affected tests:
+- D1, D2: filed-audited basis, single entity, one basis. Consistent.
+- M1: filed basis on BOTH endpoints (FY24 51.38, FY26 52.62). Consistent.
+- M2, M9: Data_Sheet basis on subject AND all three peers. Consistent.
+
+No test mixes bases across its own inputs. The declared governance rule is
+followed, not merely asserted. **PASS.**
+
+Materiality of the split: FY26 EBITDA 52.62 vs 52.94 is 0.32 cr, 0.13pp of
+margin. D1 = 0.197x on one basis and 0.196x on the other. No score anywhere
+is sensitive to the choice. The report's claim that the M1 basis correction
+does not move the tier is confirmed: −1.52pp on the filed basis, −1.40pp on
+the Data_Sheet basis, and M1's only sub-10%-CAGR tier requires a 2-5pp
+decline, which neither reaches.
+
+I also re-derived the subject's Data_Sheet EBITDA independently from the
+stated formula: 251.01 − 93.32 − 7.94 − 41.04 − 51.88 − 12.45 − 3.96 +
+12.52 = **52.94** (21.09%). Cross-checks against the Quarters block
+Operating Profit sum (8.41+14.58+11.73+18.23 = 52.95). Reconciles.
+
+### 1.5 Block E — Shareholder Alignment
+
+| Test | Rule band | Report | My re-derivation | Verdict |
+|---|---|---|---|---|
+| E1 | ≥60% = 5 | 73.85% | → 5 | PASS |
+| E2 | ±1% = 3 | unchanged over 12 months | see below | MINOR |
+| E3 | >15% = 0 | 94.4% | → 0 | PASS |
+| E4 | <5% = 5 | 0.1681/168.58 = 0.0997% | → 5 | PASS |
+| **Block E** | | **13** | **13** | **PASS on total** |
+
+**E2 finding (MINOR).** The rule reads "Promoter holding change over 3
+years". The corpus holds three shareholding filings spanning 12 months and
+the company listed 11-Jun-2024, so the 3-year window does not exist. Two
+stage rules pull opposite ways: rule 5 says an unavailable data point is
+"N/A (not in provided data)" and scores 0; rule 6 says use whatever history
+exists and adapt the scoring. The report took rule 6, scored 3 on a
+12-month proxy, and flagged the window as provisional in both the report
+and the block. That is defensible and disclosed, but the deviation from the
+rule's literal window is not named as a deviation.
+
+Sensitivity: E2 = 0 gives Block E = 10, Core = 55, still 40-59 AVERAGE,
+still AVOID. No flip. MINOR.
+
+### 1.6 Core score
+
+13 + 8 + 6 + 18 + 13 = **58**. Reported 58. **PASS.**
+
+### 1.7 Block F — the 12 moat tests
+
+Peer EBITDA margins re-derived by me from the CSVs, using the report's own
+stated formula (Sales − RM − P&F − OtherMfr − Employee − S&A − OtherExp +
+Change in Inventory):
+
+| Company | My FY26 computation | Margin | Report | Verdict |
+|---|---|---|---|---|
+| TOTEM | 52.94 / 251.01 | 21.089% | 21.09% | MATCH |
+| Kennametal (Jun-26) | 303.7 / 1510.7 | 20.103% | 20.09% | MATCH |
+| Birla (Mar-26) | 17.17 / 247.13 | 6.948% | 6.95% | MATCH |
+| Wendt (Mar-26) | 32.43 / 236.32 | 13.723% | 13.72% | MATCH |
+
+Peer median of {20.09, 6.95, 13.72} = **13.72%**. Confirmed.
+
+| Test | Rule | Report | My re-derivation | Verdict |
+|---|---|---|---|---|
+| M1 | pricing power | 0 | −1.52pp margin, 4.81% CAGR: fails ≥10%-CAGR tiers, decline <2pp so fails the 2-5pp tier → 0 | PASS |
+| M2 | ≥5pp above peer median = 5 | 5 | 21.09 − 13.72 = +7.37pp → 5 | PASS |
+| M3 | FAT>2x AND ROCE>15% = 3 | 3 | 251.01/113.40 = 2.21x, ROCE 22%; FAT <3x so top tier fails → 3 | PASS |
+| M4 | zero decline yrs + recv ±10 = 5 | 5 | 0 decline years; 47.03→43.91 = −3.12 days → 5 | PASS |
+| M5 | segment rank | 0, PEER DATA NEEDED | see below | PASS |
+| M6 | R&D tiers | 0 | no R&D line in any of the four exports, none disclosed → else = 0 | PASS |
+| M7 | unregulated = 0 | 0 | cutting tools is not a licensed segment → 0 | PASS |
+| M8 | mentioned unquantified = 1 | 1 | see below | PASS |
+| M9 | above peers, growth below = 1 | 1 | +6.57pp GM, CAGR 4.81% < 8% → 1 | PASS |
+| M10 | grew every yr + recv rose ≤10 = 5 | 5 | grew every year; receivable days FELL 3.12 → 5 | PASS |
+| M11 | <6yr conservative rule | 0 | 3 years, rule invoked and stated, 4.8% CAGR → else = 0 | PASS |
+| M12 | >45 days = 0 | 0 | 73.83, 65.2, 78.84 all >45 → 0 | PASS |
+
+**Moat score** = 0+5+3+5+0+0+0+1+1+5+0+0 = **20 / 60**. Reported 20. PASS.
+**Moats present (≥3)** = M2, M3, M4, M10 = **4**. Reported 4. PASS.
+**Moat class**: rule "4-5 = STRONG". 4 → **STRONG**. Reported STRONG. PASS.
+**Grand total** = 58 + 20 = **78 / 160**. Reported 78. PASS.
+
+M9 gross-margin proxy re-derived: subject (251.01−93.32)/251.01 = 62.82%;
+Kennametal 492.7/1510.7 = 32.61%; Birla 150.26/247.13 = 60.80%; Wendt
+132.94/236.32 = 56.25%. Median 56.25%. Delta +6.57pp. The proxy basis is
+stated and applied identically to all four companies, as the rule requires.
+PASS.
+
+**M5, the PEER DATA NEEDED ruling — tested.** The Block F preamble is
+explicit: "If a test needs peer data that is not provided, score 0 and mark
+PEER DATA NEEDED (never guess peer figures)." M5's own language is
+segment-scoped ("largest mcap **in segment**"). The report's position is
+that three listed peers do not constitute a segment dominated by unlisted
+and imported supply, so a within-4-company rank would be a guess at a
+segment rank. That reading is available on the rule text and it is the
+conservative one. **PASS.**
+
+Score consequence, stated for the record: run 2's M5 = 3 gave 5 moats and
+23 points on the current M8; run 3 gives 4 moats and 20 points. Both land
+in the same 4-5 STRONG band. The re-score does not move moat_class and
+does not touch Core. It is a correctness fix, not a verdict change.
+
+One precision gap (MINOR, listed below): the phrase "this run holds market
+cap and margin data for exactly 3 listed peers" is true, but each of the
+four Data_Sheet.csv files DOES carry a Market Capitalization line in its
+META block (TOTEM 856.27, Kennametal 10,356.69, Wendt 1,640.07, Birla
+385.64). The missing input is a segment definition, not a market-cap
+figure. A downstream reader could take "PEER DATA NEEDED" to mean no
+market-cap data exists in the run. It should say segment-completeness data.
+
+**M8, the Information Memorandum scope ruling — tested.** The stage prompt
+places no restriction on which corpus document may be cited; it requires
+only that the figure exist in the provided data with an anchor. The
+Information Memorandum is a filed corpus document listed in the run's
+sources. Ruling it in scope is correct. The band landing is also correct:
+tier 5 needs reach quantified AND growing AND revenue-per-outlet, and no
+growth or per-outlet metric exists; tier 3 needs revenue CAGR ≥15% against
+an actual 4.8%; the business is neither "none" nor "purely digital", so the
+only remaining rung is 1. **PASS.** Worth one line for the operator: the
+disclosure is 2024-vintage prospectus data used in a FY26 test with no
+refresh in either later AR, and the prospectus carries its own
+reliance disclaimer. Score effect nil (1 point, below the ≥3 moat bar).
+
+**Kennametal June year-end handling — tested, defensible, not a basis
+error.** Kennametal's FY26 column covers Jul-2025 to Jun-2026 against the
+subject's Apr-2025 to Mar-2026, a 3-month offset. The tests it feeds (M2,
+M9) are ratios, not levels, which limits the damage, and the report
+discloses the offset and runs a substitution check. I ran three treatments:
+
+| Kennametal treatment | Its margin | Peer set | Median | M2 delta | M2 score |
+|---|---|---|---|---|---|
+| FY26 as filed (Jun-26) | 20.09% | {20.09, 6.95, 13.72} | 13.72% | +7.37pp | 5 |
+| FY25 substituted (report's own check) | 14.71% | {14.71, 6.95, 13.72} | 13.72% | +7.37pp | 5 |
+| March-aligned, built from the Quarters block (Jun25+Sep25+Dec25+Mar26: OP 223.9 / Sales 1356.5) | 16.51% | {16.51, 6.95, 13.72} | 13.72% | +7.37pp | 5 |
+
+The median is Wendt's 13.72% under every treatment, because Kennametal sits
+above the median and Birla below it in all three. The year-end mismatch has
+literally zero effect on M2. Same result on M9: substituting Kennametal
+FY25 GM (44.61%) leaves the median at Wendt's 56.25%. **Defensible.**
+
+**The Kennametal re-bucketing reconciliation claim — tested, it holds.**
+The artifact is real: the 2026-06-30 column blanks Power & Fuel, Other Mfr.
+Exp and Selling & Admin, and shows Change in Inventory Rs 225.0 cr (prior
+Rs 21.5 cr) and Other Expenses Rs 226.8 cr (prior Rs 7.8 cr).
+
+Annual computation from the raw column:
+1510.7 − 1018.0 − 187.2 − 226.8 + 225.0 = **303.7**, margin **20.10%**.
+
+Quarters-block cross-check for the same Jul-2025 to Jun-2026 window:
+Operating Profit 52.7 + 44.8 + 77.0 + 129.0 = **303.5**; Sales 296.0 +
+334.0 + 403.1 + 477.6 = **1510.7** (an exact match to the annual Sales
+line), margin **20.09%**.
+
+Difference Rs 0.2 cr, 0.01pp of margin. **The claim is TRUE.** The blanked
+lines were folded into the surviving buckets and the aggregate nets out.
+M2 and M9 are unaffected by the artifact at the EBITDA level.
+
+One qualification (MINOR, listed below). The report writes: "Any test that
+read Change in Inventory or Other Expenses as standalone lines for
+Kennametal FY26 (this run's tests do not) would be unreliable." M9 reads
+**Raw Material Cost** standalone for Kennametal FY26, and that line moved
+with the same event: RM/Sales jumped from 55.4% (FY25) to 67.4% (FY26)
+while inventory rose Rs 313.9 cr. On an inventory-netted basis Kennametal's
+GM would read 47.5%, not 32.61%. The named-anomaly list is one line short.
+
+Score effect: none. Peer set {47.5, 60.81, 56.25} still medians at Wendt's
+56.25%, so M9 = 1 either way. Flagged for basis honesty, not for the score.
+
+### 1.8 Classification, deal-breakers, confidence adjustment
+
+**Matrix.** Core 58 → the 40-59 row → AVERAGE. That row does not branch on
+moat tier, so Block F's STRONG is correctly non-operative here. The report
+says exactly this. **PASS.**
+
+**Deal-breakers.** All nine checked and each given a verdict. Only #5
+(pledge >15%) fires, and the report names the driving fact and the window
+(94.4% of the 73.85% stake, Shapoorji Pallonji, stable across Jun-2025,
+Mar-2026, Jun-2026), which satisfies the "state WHICH years drive any
+deal-breaker" instruction. **PASS.**
+
+Deal-breaker #9 ("history <3 years → AVERAGE") correctly NOT triggered at
+exactly 3 years, and correctly distinguished from the data-confidence
+downgrade, which is a separate rule. **PASS.**
+
+**Confidence adjustment.** 3 years → the "3-4 LIMITED, downgrade
+classification one tier" rule. AVERAGE → AVOID. The tier ladder in the
+matrix runs EXCELLENT > GOOD+ > GOOD > AVERAGE > AVOID, so one tier below
+AVERAGE is AVOID. **PASS.**
+
+**Double-counting test, as tasked.** The pledge deal-breaker and the
+LIMITED-history downgrade rest on two different facts: a Shapoorji Pallonji
+promoter-financing pledge, and a Mar-2024 demerger with a Jun-2024 listing.
+They are not the same fact. **No double-count.**
+
+Stronger point the operator should have: the two are not even additive
+here. At Core 58 the baseline is ALREADY AVERAGE, so the pledge cap
+("max AVERAGE") does no work at all. The **only** rule moving the
+classification from AVERAGE to AVOID is the 3-year history downgrade.
+
+- Remove the pledge deal-breaker → still AVOID.
+- Remove the history downgrade → AVERAGE.
+
+The report states this correctly ("Absent that downgrade, the mechanical
+floor here is AVERAGE"). I confirm it. The AVOID is a data-depth artifact
+sitting on top of a governance flag that is currently non-binding on the
+score. **PASS, and I concur with AVOID.**
+
+**Flags.** The flags rule requires a FLAG-GATE0 entry when classification
+≤ AVERAGE with historical depressors identified. Present, with the
+depressors named. FLAG-CASH and FLAG-RESTATEMENT are extra, permitted, and
+each carries its number. **PASS.**
+
+**Grounded-claims rule (never estimate).** M5 and M6 gaps are marked, not
+filled. LBF-2's unreproducible 146/255-day magnitude is marked unverified
+and explicitly excluded from scoring rather than approximated. The
+Rs 590 lakh Labour Codes correction is anchored to three filings. No
+estimate substitutes for a missing figure anywhere in the report.
+**PASS.** (Whether each cited figure sits at its cited anchor is Verifier
+A's call, not mine.)
+
+**LBF-4 correction — tested for rule compliance, not for source
+fidelity.** The correction replaces a NOT FOUND with three anchors and
+records the direction of the error. The 52% Q3-to-FY26 revision is
+correctly flagged and correctly NOT scored: Gate 0 has no formula slot for
+a past-service-cost estimate revision, and inventing one would breach the
+"no qualitative judgments, only the scoring rules provided" rule.
+**PASS.**
+
+### 1.9 Gate 0 presentational and YAML checks
+
+- Rule 6 opening line. The rule says "Open with: Data available: [X]
+  years...". The report opens with a 55-line "WHY THIS IS RUN 3" section
+  and reaches the mandated sentence at line 59. **MINOR.**
+- Dashboard. Blocks, line items, classification box, strongest and weakest
+  block, decision line all present. "Moat profile bars" are not rendered
+  per moat (moats present are listed as text), and the block bar lengths do
+  not share a scale (Block A 13/20 draws 12 characters, Block E 13/20 draws
+  14). **MINOR, cosmetic.**
+- Anchors. Rule 4 requires an anchor on every extracted number. One
+  exception: FY25 WC days of 65.2 is carried as "prior-run figure,
+  unchanged this run" into both M12 and block_b_trend, while its FY24 and
+  FY26 siblings were rebuilt to four decimals. No score effect (M12 needs
+  only >45). **MINOR.**
+- YAML schema. All required keys present. blocks match the report
+  (A13 B8 C6 D18 E13), core 58, moat 20, grand 78, moats_confirmed 4,
+  moat_class STRONG, classification AVOID, history_downgrade true,
+  deal_breakers populated, data_notes populated, block_b_trend carries its
+  one number. analyst_note is inside the 200-word cap. **PASS.**
+
+### Gate 0 tally
+
+58 rule checks. 53 PASS, 5 MINOR fails, 0 MAJOR, 0 CRITICAL.
+No recomputed score differs from the reported score anywhere in Blocks A
+through F. **Classification concur: AVOID.**
+
+---
+
+## PART 2 — EMERGING MOAT (B07), RULES 3 AND 8
+
+### 2.1 Category completeness
+
+All 23 rows (22 categories + R1) are addressed in narrative AND in the
+Section 3 summary table AND in the Section 5 scoring table. I checked each
+of the three lists against the prompt's family roster:
+
+A1 A2 A3 A4 | B1 B2 B3 | C1 C2 | D1 D2 | E1 E2 | F1 F2 | G1 G2 | H1 H2 H3 |
+I1 I2 | R1 = **23**. None missing, none duplicated. **PASS.**
+
+Eighteen rows carry an explicit "NO EVIDENCE FOUND", several with the
+finding stated as negative rather than absent (B1, E2, G1, G2), which is
+the correct handling under rule 5 (state it and move on, never force-fit).
+No category is silently skipped. **PASS — no REWORK trigger.**
+
+### 2.2 Rule 8 — categories 21 and 22
+
+**I1 TALENT ASYMMETRY (Category 21). Present. Scored 0.** The gate in my
+rubric bites only above 0, so a 0 clears it automatically. But I checked
+the reasoning is the category's, not a shrug: the report runs the (a) leg
+(no named inventor on any patent, none exist per A2; no ex-DRDO/ex-HAL
+concentration verifiable from the corpus; the AR remuneration annexure
+shows sitting fees and standard managerial ratios, not a class of
+above-norm technical pay) and then names the exclusion pattern the category
+is built for ("a hiring/organisation story with no structural-economics
+leg"). The (b) leg is never asserted. **PASS.**
+
+**I2 CANNIBALIZATION BARRIER (Category 22). Present. Scored 0.** The
+category requires testing every moat claimed anywhere in the scan. The
+report does that: A3 and B2 are tested and both answer "capital and
+calendar time only", and the report reaches the category's own zero
+condition verbatim ("nothing must be destroyed"). It then applies the
+category's exclusion rule to F2 by name: an execution lead is not a
+configuration moat. No unnamed or vague sacrifice is credited. **PASS.**
+
+**I1/I2 contribution stated separately**, as the operator's 20-Aug-2026
+ruling requires for the review checkpoint: "I1/I2 contribution to the
+total: 0.0 ... no threshold crossing was achieved via I1/I2 points".
+**PASS.**
+
+### 2.3 Evidence multipliers and scoring consistency
+
+Matrix: HH=4, HM/MH=3, HL/MM/LH=2, ML/LM=1, LL=1, none=0. Multipliers:
+📄 1.0, 🎙️ 0.7, 🔍 0.5.
+
+| Row | Likelihood x Impact | Raw claimed | Raw correct? | Evidence in narrative | Multiplier | Adjusted | Verdict |
+|---|---|---|---|---|---|---|---|
+| A3 | High x Medium = HM | 3 | yes | 📄, 5 documented items across 3 ARs | 1.0 | 3.0 | PASS |
+| B2 | High x Medium = HM | 3 | yes | 📄, 6 named certifications | 1.0 | 3.0 | PASS |
+| C1 | Medium x Low = ML | 1 | yes | 📄 (thread mill software) + 🎙️ (IM sales engineers) | 0.7 | 0.7 | PASS |
+| F2 | Medium x Medium = MM | 2 | yes | 📄 capex-completion chain | 1.0 | 2.0 | PASS |
+| H3 | Medium x Low = ML | 1 | yes | 📄 solar kWh disclosure | 1.0 | 1.0 | PASS on value |
+
+Adjusted total = 3.0 + 3.0 + 0.7 + 2.0 + 1.0 = **9.7**. Reported 9.7.
+Band "<12 = NO MEANINGFUL EMERGING MOAT". 9.7 → **NONE**. **PASS.**
+
+The specific trap my rubric names — "a 🎙️-only category scoring as if 📄"
+— does not occur. C1 runs the opposite way: it is a MIXED row whose lead
+item is 📄 (the thread mill software is a shipped, AR-disclosed artifact),
+and the scorer applied the LOWER 0.7 multiplier on a stated
+"🎙️ (majority)" judgment. Downward, conservative, and consistent with the
+prompt's rule 4 skepticism instruction. **PASS.**
+
+The two 📄 rows that could have been inflated were both capped by explicit
+inference notes instead. A3's impact is held at MEDIUM because the Q1 FY27
+margin bridge (verified in B01 LBF-1) traces to opex compression on volume,
+not yield. B2's impact is held at MEDIUM because the certifications are
+table stakes a global major already holds. Both caps cost the scan a point
+each and both are argued, not asserted. This is the correct direction of
+discipline for this stage.
+
+**H3 label (MINOR).** The scoring table writes H3's pair as "1 (LM)" while
+its own Likelihood and Impact columns read Medium and Low, which is ML. The
+matrix values ML and LM are both 1, so the score is right and the total is
+unaffected. Transposed letters only. **MINOR, presentational.**
+
+### 2.4 Completionist recount
+
+Prompt form required: "📄 recount performed: [n] documented items across
+[m] categories."
+
+Report line: "📄 recount performed: 15 documented items across 5 categories
+(A3: 5 items ... B2: 6 items ... F2: 2 items ... C1: 1 item ... H3: 1
+item)." Arithmetic: 5+6+2+1+1 = **15 across 5**. Internally consistent.
+Mirrored into the YAML completionist_recount field. **PASS.**
+
+Guard threshold: the guard fires at 12 or more active categories. This scan
+has 5 rows with any evidence and 3 clearing Strong/Moderate, well inside
+the stated 3-6 base rate. The guard was not needed, and the recount was
+performed anyway because the prompt asks for the line explicitly. **PASS.**
+
+A sparse scan that skipped categories would be a finding. This one did not
+skip: 23 of 23 addressed, 18 explicitly negative or empty with reasons and
+anchors. The sparseness is a result, not a gap.
+
+### 2.5 Section completeness and the 2C arithmetic
+
+Sections 1A, 1B, 1C, 2A, 2B, 2C, 2D, 3, 4A, 4B, 4C, 5, Optionality
+Register, 6A, 6B, 6C, 6D, 6E all present in one response. **PASS.**
+
+2C requires the arithmetic shown. Re-derived from the CSV:
+FAT FY24 228.50/89.32 = 2.558; FY25 232.66/110.01 = 2.115; FY26
+251.01/109.84 = 2.285; average = **2.319 ≈ 2.32x**. CWIP Rs 3.56 cr ×
+2.32 = **Rs 8.26 cr**; / Rs 251.01 cr = **3.29% ≈ 3.3%**. Matches the
+report and the YAML field. **PASS.**
+
+The narrowing of "capex under execution" to CWIP only, excluding
+commissioned capex already inside the actuals, is the correct reading of
+"under execution" and is argued in place rather than left implicit.
+**PASS.**
+
+Optionality Register: 5 rows, all four mandated columns populated
+(optionality, converting 📄 evidence, where it first appears, conversion
+window), and the "registered options are watched, never scored" line is
+present. None of the five appears in the scoring table. **PASS.**
+
+6D: combined classification AVOID, with HIGH POTENTIAL and TURNAROUND both
+considered and rejected with reasons, as the prompt specifically demands.
+**PASS.**
+
+### 2.6 MAJOR — B07 carries run 2's Gate 0 figures
+
+Section 6C's combined table states the Gate 0 existing-moat cell as
+"5 of 12 confirmed, moat block 22/60, class STRONG". Section 6D repeats
+"Gate 0's own STRONG existing moat block (22/60)". Section 6E repeats
+"Existing (Gate 0 moat block, STRONG, 5/12 confirmed)".
+
+B01-gate0 run 3 states **4 of 12 confirmed, 20/60**.
+
+Those are run 2's numbers. B07 consumed a superseded B01 block. Three
+places in the report carry it.
+
+The stage prompt says 6C uses "the INJECTED Gate 0 block", so if run 2's
+block was what the orchestrator injected, stage 7 complied with its input
+and the defect is an orchestration sequencing one. That does not change
+what the artifact now says. As it stands the B07 report contradicts the
+run's own B01 on a number a downstream reader will lift.
+
+Scope of the damage, bounded:
+- Core 58 in 6C is current-correct.
+- Gate 0 classification AVOID in 6C is current-correct.
+- Moat class STRONG is correct under BOTH versions (4 and 5 both sit in
+  the 4-5 STRONG band), so 6D's reasoning does not break.
+- em_score 9.7, em_classification NONE, combined_assessment AVOID and
+  combined_reasoning are all unaffected. The B07 YAML carries none of the
+  stale figures.
+
+So no classification flips and no B07 score moves. But two stated scores
+inside a mandated deliverable table are wrong by 2 points and 1 moat.
+**MAJOR.** Fix is a three-line alignment edit to 6C, 6D and 6E, in the same
+commit, per the dependency-alignment rule.
+
+### 2.7 Two further MINOR findings
+
+**evidence_mix scope undeclared.** The block reports
+`{documented: 15, claim: 1, inference: 0}`. The report body carries
+materially more than one 🎙️ item (1A upgraded tapping geometries; 1B
+geographic and vertical rows; 1C's four qualitative direction reads; 2D
+Far East/GCC re-entry; C1's IM sales-engineer claim) and more than zero 🔍
+items (the 1C export-percentage computation, the 2A capacity-percentage
+arithmetic, the 2C capex inference, and the A3, B2 and F2 impact-capping
+inferences are each labelled 🔍 in the text). If the field is scoped to the
+Section 3 scan only, the counts are defensible; the field never states its
+scope. No score effect, since multipliers were applied per category from
+the narrative evidence, not from this tally. **MINOR.**
+
+**catalysts_12m evidence_type.** All five catalysts are labelled
+"DOCUMENTED" (one as "DOCUMENTED (future filing)") while describing events
+that have not happened yet. Under the stage's own taxonomy, 📄 DOCUMENTED
+means capex committed, contract signed, product launched. A future filing
+is not documented evidence. The anchors point to the existing baseline
+documents, which is the sensible intent, but the label as written mis-tiers
+future events. This field feeds Pillar 3 catalyst proximity in phase 3, so
+the tier should be right before stage 11 reads it. All five windows do fall
+inside 12 months of the run date. **MINOR.**
+
+### Emerging Moat tally
+
+33 rule checks. 29 PASS, 1 MAJOR fail, 3 MINOR fails, 0 CRITICAL.
+**Classification concur: NONE (9.7 / 92).**
+
+---
+
+## PART 3 — RULE 6, DOWNSTREAM SIGNAL CANDIDATES (B09)
+
+Rule: B09 contains downstream_candidates with ≥3 items, OR
+demand_externally_verifiable = false with the exact sentence present.
+
+B09-tam.yaml carries **6** downstream_candidates (IMTMA machine-tool data;
+SIAM automotive volumes; Kennametal India quarterly results; US/Mexico
+tariff policy; HSS/tungsten-carbide import prices; defence and aerospace
+procurement budget). Each carries signal, entity_type, demand_link,
+likely_source, cadence and shared. `demand_externally_verifiable: true`, so
+the NOT EXTERNALLY VERIFIABLE branch does not apply and the exact sentence
+is correctly absent.
+
+**PASS. No REWORK for stage 9.**
+
+The second half of rule 6 (stage 11 catalysts each citing a candidate or
+carrying the MODERATE cap) cannot be tested. B11 does not exist. Deferred
+to phase 3.
+
+---
+
+## FINDINGS TABLE
+
+| # | Sev | Location | Finding | Recomputed value | Score effect |
+|---|---|---|---|---|---|
+| 1 | MAJOR | 07-emoat.md 6C, 6D, 6E | Gate 0 existing-moat figures are run 2's (5 of 12, 22/60); B01 run 3 says 4 of 12, 20/60 | 4 of 12, 20/60 | none on B07; corrupts the combined table a downstream stage lifts |
+| 2 | MINOR | 01-gate0.md, E2 | 3-year promoter-holding window does not exist; scored 3 on a 12-month proxy under rule 6, deviation from the rule's literal window not named as such | E2 = 0 gives Core 55, still AVOID | none on classification |
+| 3 | MINOR | 01-gate0.md, opening | Mandated "Data available: X years" sentence sits at line 59 behind a 55-line run-3 preamble; rule 6 says open with it | n/a | none |
+| 4 | MINOR | 01-gate0.md, M12 and block_b_trend | FY25 WC days 65.2 carried unanchored from a prior run while FY24 and FY26 were rebuilt to four decimals | n/a (M12 needs only >45) | none |
+| 5 | MINOR | 01-gate0.md, Block F anomaly note | Anomaly list names Change in Inventory and Other Expenses; Kennametal FY26 Raw Material Cost moved with the same event (RM/Sales 55.4% to 67.4%) and M9 reads it standalone | Kennametal GM 47.5% on an inventory-netted basis vs 32.61% used | none: peer median stays 56.25% (Wendt), M9 = 1 either way |
+| 6 | MINOR | 01-gate0.md, M5 wording | "PEER DATA NEEDED" reads as if no market-cap data exists; all four Data_Sheet.csv META blocks carry Market Capitalization. The missing input is a segment definition | n/a | none |
+| 7 | MINOR | 01-gate0.md, dashboard | Moat profile bars not rendered per moat; block bar lengths not on a common scale | n/a | none |
+| 8 | MINOR | B07-emoat.yaml, evidence_mix | `{documented: 15, claim: 1, inference: 0}` scope undeclared; report body carries more 🎙️ and 🔍 items than the tally | n/a | none: multipliers applied per category from the narrative |
+| 9 | MINOR | B07-emoat.yaml, catalysts_12m | All five future events tiered "DOCUMENTED"; a not-yet-existing filing is not 📄 evidence. Field feeds Pillar 3 catalyst proximity in phase 3 | n/a | none in phase 1 |
+
+---
+
+## WHAT I TESTED THAT PASSED, STATED PLAINLY
+
+The five claims the run makes about itself were each tested against the
+rules and the data, not taken on the report's word:
+
+1. **M5 = 0, PEER DATA NEEDED.** Correct application of the "never guess
+   peer figures" rule against segment-scoped test language. Moves moats
+   from 5 to 4 and points from 23 to 20; both sit in the 4-5 STRONG band,
+   so nothing downstream flips.
+2. **B4 = +5.0072 days.** Reproduced from the primary inputs at +5.007.
+   Band call correct as written. Sensitivity run: the alternative call
+   still ends at AVOID.
+3. **M8 = 1 on the Information Memorandum.** IM is in scope; the band
+   landing is forced by the failure of tiers 5 and 3 and the business being
+   neither absent from distribution nor purely digital.
+4. **EBITDA basis governance.** No test mixes bases across its own inputs.
+   The split is immaterial to every score it touches.
+5. **LBF-4 correction.** Anchored three times, correctly flagged and
+   correctly not scored.
+
+And the two the task named:
+
+6. **Kennametal June year end.** Defensible, not a basis error. The peer
+   median is Wendt's 13.72% under the as-filed, the FY25-substituted, and a
+   March-aligned quarters-built treatment. Zero effect on M2 or M9.
+7. **The re-bucketing reconciliation claim.** True. Annual 303.7 (20.10%)
+   against quarters-summed 303.5 (20.09%), on an exactly matching Sales
+   line of 1510.7. One line short in the anomaly list (finding 5), with no
+   score consequence.
+
+And the classification structure:
+
+8. **Pledge deal-breaker and LIMITED-history downgrade are not double
+   counting.** Different facts, and not additive here: at Core 58 the
+   baseline is already AVERAGE, so the pledge cap does no work. The history
+   downgrade alone produces AVOID.
+
+---
+
+## VERDICT
+
+**Gate 0: concur. AVOID.** 58 / 100 core, 20 / 60 moat, 78 / 160 grand
+total, 4 moats confirmed, STRONG. Every figure re-derives.
+
+**Emerging Moat: concur. NONE, 9.7 / 92.** All 23 categories addressed,
+multipliers correct, recount performed, categories 21 and 22 present and
+correctly gated at 0.
+
+**Rule 6: PASS.** Six downstream candidates in B09.
+
+No CRITICAL. No REWORK trigger from this verifier. One MAJOR requiring a
+three-line alignment edit to 07-emoat.md Sections 6C, 6D and 6E.
+
+92 rule checks, 83 passed, acceptance rate 90.2%.
+
+Valuation adherence (rules 4, 7, 11 to 14), the stage 13 Business
+Understanding Narrative (rule 9) and the Halt 1 dossier (rule 10) are
+deferred to phase 3.
 
 ---
 
@@ -518,48 +691,69 @@ company: "TOTEM"
 run_date: "2026-09-09"
 model: claude-opus-4-8
 status: complete
-scope: "phase-1 (Gate 0 + Emerging Moat + B09 block requirement); valuation audit deferred to phase 3"
+scope: "phase-1 (Gate 0 + Emerging Moat + B09 rule 6); valuation audit deferred to phase 3"
 gate0:
-  rules_checked: 42
+  rules_checked: 58
   fails:
-    - {rule: "Block B / B4 change in WC days", severity: "MAJOR", detail: "Stated delta '+5.0 days' scored under the 'increased 5-15' band (1); the ±5 band gives 3 on that same displayed value. Exact recomputation from Data_Sheet receivables/inventory and AR trade payables is +5.01 days (FY24 73.82, FY26 78.83), so the score survives by 0.01 of a day. Boundary call neither stated nor defended.", recomputed: "B4 = 1 or 3; Block B = 8 or 10; Core = 58 or 60; classification AVOID either way"}
-    - {rule: "Block F / M5 Scale & Dominance + the 'peer data not provided -> score 0, mark PEER DATA NEEDED' rule", severity: "MAJOR", detail: "Scored 3 for 'top 3 mcap AND margin top 2' on a 4-company set the report itself concedes is not the segment. M5's bands are written against a segment ranking that this run does not hold.", recomputed: "M5 = 0; Block F = 19/60; moats present = 4; moat class STRONG unchanged; grand total 77/160; classification AVOID unchanged"}
+    - {severity: MINOR, rule: "E2 promoter-holding change over 3 years", detail: "3-year window does not exist (listed Jun-2024); scored 3 on a 12-month proxy under stage rule 6 without naming the deviation from the rule's literal window", recomputed: "E2=0 gives Block E 10, Core 55, still 40-59 AVERAGE, still AVOID"}
+    - {severity: MINOR, rule: "stage rule 6 opening statement", detail: "mandated 'Data available: X years' line appears at line 59 behind a 55-line run-3 preamble instead of opening the report", recomputed: "n/a"}
+    - {severity: MINOR, rule: "stage rule 4 source anchors", detail: "FY25 WC days 65.2 carried unanchored as a prior-run figure into M12 and block_b_trend while FY24/FY26 were rebuilt to four decimals", recomputed: "no effect; M12 band needs only >45 days"}
+    - {severity: MINOR, rule: "Block F peer-data integrity note", detail: "Kennametal FY26 anomaly list names Change in Inventory and Other Expenses only; Raw Material Cost moved with the same event (RM/Sales 55.4% to 67.4%) and M9 reads it standalone", recomputed: "Kennametal GM 47.5% inventory-netted vs 32.61% used; peer median stays 56.25% (Wendt), M9=1 either way"}
+    - {severity: MINOR, rule: "M5 PEER DATA NEEDED wording", detail: "reads as if no market-cap data exists; all four Data_Sheet.csv META blocks carry Market Capitalization (TOTEM 856.27, KENNAMET 10356.69, WENDT 1640.07, BIRLAPREC 385.64). Missing input is a segment definition, not a peer figure", recomputed: "n/a; M5=0 ruling itself is correct"}
+    - {severity: MINOR, rule: "dashboard format", detail: "moat profile bars not rendered per moat; block bar lengths not on a common scale", recomputed: "n/a"}
+  blocks_rederived: {A: 13, B: 8, C: 6, D: 18, E: 13}
+  core_rederived: 58
+  moat_rederived: 20
+  moats_confirmed_rederived: 4
+  moat_class_rederived: "STRONG"
+  grand_total_rederived: 78
+  classification_rederived: "AVOID"
+  concur: true
+  deal_breaker_double_count: false
+  deal_breaker_note: "pledge cap and LIMITED-history downgrade rest on different facts and are not additive here; at Core 58 the baseline is already AVERAGE so the pledge cap is non-operative, and the history downgrade alone produces AVOID"
+  cagr_edge_rules_honoured: true
+  peer_year_end_handling: "defensible; peer median is Wendt 13.72% under as-filed Jun-FYE, FY25-substituted, and March-aligned quarters-built treatments; zero effect on M2 or M9"
+  kennametal_rebucketing_claim: "VERIFIED TRUE; annual 303.7 (20.10%) vs quarters-summed 303.5 (20.09%) on an exactly matching Sales line of 1510.7"
 emoat:
-  rules_checked: 19
-  fails: []
-b09_downstream_candidates: {present: true, item_count: 6, demand_externally_verifiable: true, rework_stage9: false}
-categories_21_22: {i1_present: true, i1_score: 0, i1_gate_ok: true, i2_present: true, i2_score: 0, i2_gate_ok: true, rework_stage7: false}
-valuation: {rules_checked: 0, fails: [], status: "PENDING PHASE 3 - B10/B11 do not exist yet"}
-expectation_ledger: {status: "PENDING PHASE 3"}
-business_understanding_narrative: {status: "PENDING PHASE 3 - stage 13 has not run"}
-recomputed_destination_pe: ""
-recomputed_decision: ""
-recomputed_gate0_classification: "AVOID (concur)"
-recomputed_gate0_core: 58
-recomputed_gate0_moat_class: "STRONG (concur; holds at 4 moats if M5 is corrected to 0)"
-recomputed_em_score: 9.7
-recomputed_em_classification: "NONE (concur)"
+  rules_checked: 33
+  fails:
+    - {severity: MAJOR, rule: "6C/6D/6E use the injected Gate 0 block", detail: "B07 carries run 2 Gate 0 moat figures (5 of 12 confirmed, 22/60) in Sections 6C, 6D and 6E; B01 run 3 states 4 of 12, 20/60", recomputed: "4 of 12, 20/60; moat class STRONG under both, em_score/classification/combined_assessment unaffected; B07 YAML carries no stale figure", fix: "three-line alignment edit to 07-emoat.md 6C, 6D, 6E in the same commit"}
+    - {severity: MINOR, rule: "likelihood x impact matrix labelling", detail: "H3 pair written '1 (LM)' while its own columns read Medium likelihood x Low impact (ML)", recomputed: "ML=1 and LM=1; value and total correct"}
+    - {severity: MINOR, rule: "evidence_mix counts", detail: "{documented:15, claim:1, inference:0} scope undeclared; report body carries more labelled MANAGEMENT CLAIM and ANALYST INFERENCE items than the tally", recomputed: "no score effect; multipliers were applied per category from the narrative evidence"}
+    - {severity: MINOR, rule: "evidence taxonomy on catalysts_12m", detail: "all five future events tiered DOCUMENTED; a not-yet-existing filing is not documented evidence. Field feeds Pillar 3 catalyst proximity in phase 3", recomputed: "n/a in phase 1; all five windows do fall inside 12 months"}
+  categories_addressed: 23
+  categories_expected: 23
+  cat21_present: true
+  cat21_score: 0
+  cat21_gate_ok: true
+  cat22_present: true
+  cat22_score: 0
+  cat22_gate_ok: true
+  multipliers_correct: true
+  completionist_recount_performed: true
+  completionist_recount_line: "documented recount performed: 15 documented items across 5 categories (A3 5, B2 6, F2 2, C1 1, H3 1); arithmetic reproduced"
+  em_score_rederived: 9.7
+  em_classification_rederived: "NONE"
+  capex_embedded_growth_rederived: 3.3
+  concur: true
+downstream_candidates_b09: {present: true, count: 6, demand_externally_verifiable: true, exact_sentence_required: false, pass: true, stage11_catalyst_citation_check: "deferred to phase 3"}
+valuation: {rules_checked: 0, fails: [], status: "PENDING PHASE 3 - B10 and B11 do not exist yet; valuation framework documents not loaded in phase-1 scope"}
+expectation_ledger: {present: false, downside_row: false, all_rows_confirm_by: false, all_rows_metric_threshold: false, prob_in_range: false, decay_status_valid: false, off_ledger_credit: false, residual_pct_cmp: 0, residual_starter_cap_ok: true, fails: [], status: "PENDING PHASE 3"}
+business_understanding_narrative: {present: false, five_questions_answered: false, prose_only: false, section6_candidates_named: 0, valuation_vocab_leak: false, fails: [], status: "PENDING PHASE 3 - stage 13 has not run"}
+recomputed_destination_pe: ""   # out of scope phase 1
+recomputed_decision: ""         # blank: concur with AVOID
 findings:
-  - {severity: "MAJOR", location: "01-gate0.md Block B, B4", note: "Displayed delta +5.0 contradicts the band applied (1). True delta +5.01 days. Core crosses a matrix band if scored 3; final classification unchanged."}
-  - {severity: "MAJOR", location: "01-gate0.md Block F, M5", note: "Segment ranking scored on a 3-peer set; Block F's missing-peer-data rule requires 0 / PEER DATA NEEDED. Moat class and classification unchanged."}
-  - {severity: "MINOR", location: "01-gate0.md line 30", note: "'Data available' line not the opening line; sits behind the run-2 preamble."}
-  - {severity: "MINOR", location: "01-gate0.md D1", note: "Rs 23.23 cr mutual funds excluded from cash; including them scores 5. Disclosed judgment."}
-  - {severity: "MINOR", location: "01-gate0.md D1 vs Block F", note: "Two FY26 EBITDA bases coexist (52.62 and 52.94); governing basis not declared."}
-  - {severity: "MINOR", location: "01-gate0.md D3", note: "D/E 0.0987 against a 0.1 threshold; AR's own 10% scores 4. Disclosed."}
-  - {severity: "MINOR", location: "01-gate0.md E2", note: "3-year promoter-holding-change rule scored on a ~12-month window. Prompt rules 5 and 6 conflict; rule 6 chosen and flagged provisional. Accepted."}
-  - {severity: "MINOR", location: "01-gate0.md Block F, M2", note: "With 3 peers the median is Wendt alone (13.72%), whose margin fell from 22.73% in one year. Year-end sensitivity run; single-peer fragility not tested."}
-  - {severity: "MINOR", location: "01-gate0.md Block F, M8", note: "Scored 0 as not disclosed; B07 records 200+ distributors and 12 sales offices from the 2024 IM, which scores 1 under 'mentioned unquantified'. Cross-stage corpus-scope mismatch."}
-  - {severity: "MINOR", location: "01-gate0.md peer-alignment note", note: "Kennametal's Jun-2026 year carries a Rs 225.0 cr Change in Inventory vs Rs 21.5 cr prior; the anomaly is not named beside the year-end alignment disclosure."}
-  - {severity: "MINOR", location: "07-emoat.md Section 5, H3", note: "Matrix label '(LM)' against stated Medium likelihood / Low impact (ML). Both map to 1; value correct."}
-  - {severity: "MINOR", location: "B07-emoat.yaml", note: "Two non-schema fields added (em_score_scale, capex_embedded_growth_basis)."}
-  - {severity: "MINOR", location: "B07-emoat.yaml evidence_mix", note: "Scoped to the five evidenced rows only; inference: 0 is false of the document, which carries at least six labelled analyst inferences. Scoping defensible, unstated."}
+  - {severity: MAJOR, location: "outputs/reports/07-emoat.md Sections 6C, 6D, 6E", note: "stale run-2 Gate 0 moat figures (5 of 12, 22/60) against B01 run 3 (4 of 12, 20/60); no classification flips, alignment edit required"}
+  - {severity: MINOR, location: "outputs/reports/01-gate0.md Block E, E2", note: "12-month proxy for a 3-year window, disclosed but not named as a rule deviation"}
+  - {severity: MINOR, location: "outputs/reports/01-gate0.md opening", note: "mandated data-availability sentence not at the open"}
+  - {severity: MINOR, location: "outputs/reports/01-gate0.md M12 / block_b_trend", note: "FY25 WC days 65.2 carried unanchored from a prior run"}
+  - {severity: MINOR, location: "outputs/reports/01-gate0.md Block F anomaly note", note: "Kennametal FY26 Raw Material Cost also distorted by the re-bucketing event and is read standalone by M9; score unaffected"}
+  - {severity: MINOR, location: "outputs/reports/01-gate0.md M5", note: "PEER DATA NEEDED wording implies absent market-cap data; the gap is a segment definition"}
+  - {severity: MINOR, location: "outputs/reports/01-gate0.md dashboard", note: "moat profile bars absent, block bars not on a common scale"}
+  - {severity: MINOR, location: "outputs/blocks/B07-emoat.yaml evidence_mix", note: "scope of the item counts undeclared and inconsistent with the report body"}
+  - {severity: MINOR, location: "outputs/blocks/B07-emoat.yaml catalysts_12m", note: "future events tiered DOCUMENTED; mis-tiers evidence that feeds Pillar 3 in phase 3"}
 critical_count: 0
-major_count: 2
-minor_count: 11
-acceptance_rate: 97
-acceptance_note: "60 of 62 rules passed (96.8%), counting a rule failed only on a MAJOR or CRITICAL finding. On the stricter convention where any finding counts against the rule, 51 of 62 = 82.3%. Both clear the 60% REWORK threshold."
-peer_year_end_verdict: "DEFENSIBLE, not a basis error. Kennametal's Jun-FYE misalignment was named, a FY25 sensitivity was run on every peer-dependent test, and I independently confirmed the peer median is 13.72% (M2) and 56.25% (M9) under both alignments, so no score moves."
-deal_breaker_double_count_verdict: "NO DOUBLE-COUNT. Pledge cap (max AVERAGE) and LIMITED-history downgrade (one tier) key to different facts and different prompt sections. The pledge cap is non-binding on a Core of 58; all movement from AVERAGE to AVOID comes from the history downgrade, and the report states this."
-classification_matrix_verdict: "CONFIRMED. Core 58 -> 40-59 AVERAGE (flat band, no moat branch) -> pledge cap (non-binding) -> one-tier LIMITED-history downgrade -> AVOID. Robust to both MAJOR findings applied together (Core 60 + STRONG = GOOD+ -> cap AVERAGE -> downgrade -> AVOID)."
-emoat_completeness_verdict: "CONFIRMED. All 23 rows addressed, 18 as NO EVIDENCE FOUND or explicitly negative. 5 rows carry evidence, 3 clear Strong/Moderate. Completionist recount performed and itemised (15 documented items across 5 categories). No category skipped. Sparse and complete."
+major_count: 1
+minor_count: 8
+acceptance_rate: 90.2          # 83 of 92 rule checks passed (58 gate0 + 33 emoat + 1 B09 rule 6)
 ```

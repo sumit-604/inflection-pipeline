@@ -1,212 +1,246 @@
-# VERIFIER D: PEER COVERAGE AUDIT
-Forbes Precision Tools and Machine Parts Ltd (TOTEM) | Run: totem-2026-09-09
-Model: claude-sonnet-5 | Audits: outputs/reports/06-peers.md + outputs/blocks/B06-peers.yaml
-Inputs read: all 5 peer transcripts in work/text/ (4 KENNAMET, 1 WENDT), B05-concall.yaml
-peer_questions (Q1-Q6, check_peers lists), B06 report and YAML. No other stage report or
-verifier output was read, per structural isolation rule.
+# VERIFIER D: PEER COVERAGE AUDIT — TOTEM (Forbes Precision Tools & Machine Parts Ltd)
+Run: totem-2026-09-09 | Verifier run date: 2026-09-09 | Model: claude-sonnet-5
+
+Scope per prompts/12-verifiers-pipeline.md, VERIFIER D section: the peer transcripts (5 provided —
+4 Kennametal, 1 Wendt; Birla Precision has zero), the peer verification report (outputs/reports/06-peers.md
+and outputs/blocks/B06-peers.yaml), and B05's injected peer_questions (outputs/blocks/B05-concall.yaml).
+No other stage report or verifier output was read. Every citation below was checked against the
+`[PAGE n of N]` markers in work/text/ directly, not assumed from B06's own claims.
 
 ═══════════════════════════════════════════════════════════════
-PART 1: COVERAGE MAP AUDIT — WAS EVERY SUBSTANTIVE CITATION REAL?
+HEADLINE
 ═══════════════════════════════════════════════════════════════
 
-Method: for every peer/call marked SUBSTANTIVE in B06 Part 3, I re-read the raw transcript
-(page-marked .txt) and located each cited quote at its claimed page. BIRLAPREC is marked
-UNUSED with zero transcripts in the corpus — confirmed: no peer-concalls__BIRLAPREC file
-exists in work/text/, so UNUSED is the only honest tag and there is nothing to spot-read.
+B06 is a careful, well-organised report with a genuinely strong core finding (the tariff non-answer) and
+an honest, conservative verdict discipline (zero VERIFIED, nothing upgraded from silence). But the citation
+layer — which the report explicitly claims was "re-derived from the [PAGE n of N] markers... not carried
+over from Run 1" — still contains real defects: one quote is anchored to the WRONG CALL entirely (not just
+the wrong page), several page numbers are off by one page in a repeating pattern, one page citation is off
+by four pages onto an unrelated topic, and two peer statements directly relevant to the injected questions
+were available in a SUBSTANTIVE-marked transcript and never surfaced — one of which cuts against the
+report's own Q6 conclusion, and one of which contradicts the report's own "peers silent" claim under Q1.
 
-| Peer / call | B06 tag | Citations checked | Result |
+═══════════════════════════════════════════════════════════════
+PART 1: PEER-BY-PEER COVERAGE AUDIT
+═══════════════════════════════════════════════════════════════
+
+## KENNAMETAL INDIA (4 calls, all marked SUBSTANTIVE)
+
+### Call 07-Mar-2023 (30 pages)
+| B06 claim | Cited anchor | Verified location | Verdict |
 |---|---|---|---|
-| KENNAMET Mar-2023 | SUBSTANTIVE | China export ~5%/75-80% impact (p.3); "physical infrastructure...double the capacity" (p.5); single-point-to-CNC migration (p.11); railways "3 to 4 decades" strength (p.23); raw-material pass-through "we did transfer that price increase" (p.10) | All 5 spot-checked quotes FOUND verbatim at the cited page. CONFIRMED. |
-| KENNAMET May-2023 | SUBSTANTIVE | "domestic market is strong, stable...9%" (p.4); own-inventory build during plant transition (p.5-6); capacity lead-time "around 10 months maximum" (p.13) | All 3 FOUND at cited page. CONFIRMED. |
-| KENNAMET Jun-2023 | SUBSTANTIVE | "20% of the business is on Capex...12 to 15 months" (p.5); "80 to 84% of our sales...240 channel partners" (Part 3, no page given); tungsten/cobalt stability (p.11 region) | FOUND. CONFIRMED. |
-| KENNAMET Mar-2024 | SUBSTANTIVE | "domestic growth on CNC machines was 46%" (p.5-6, actual p.6); "our best performing and the fastest growing segment" (p.7-8, actual p.8 — within cited range, OK); "auto dependence probably now is...less than 50%" (p.14-15, actual p.15 — within range, OK); royalty 4.75%→4.0% (p.19, actual p.19, CONFIRMED exact); "we don't see...any new or major capex" (p.17, CONFIRMED exact); import competitive intensity "~1.5% of our revenue" (p.21-22, CONFIRMED); tungsten fall 8-9% + "we don't make a list price change" (p.19-20, CONFIRMED) | 6 of 7 spot-checked citations land exactly or within the cited page range. ONE finding: "sequential improvement in our PBT" / four-quarter capex-to-PBT lag, cited as (Vijaykrishnan, KENNAMET Mar-2024, p.5-6) — the quote is actually on **page 7** (transcript line 341, inside the page-7 block lines 297-348), not p.5-6. Genuine quote, correct speaker, wrong page by ~1-2 pages. MINOR anchor mismatch. |
-| WENDT AGM (21-Jul-2025) | SUBSTANTIVE | Domestic +7%/export -12% (p.3, CONFIRMED exact); Q1 FY26 domestic +3% (p.6, CONFIRMED); capex 11.15cr→58.29cr "critical for future growth" + Rs35.08cr brand buyout (p.4, CONFIRMED exact); one-time-cost reconciliation "would have made PBT of Rs.5146 lakhs" (p.4, CONFIRMED); DSO 80→101 days, "prove-out installation" explanation (p.24, CONFIRMED exact); tariff question asked by Yashpal Chopra (p.19-20, CONFIRMED exact, spans the page boundary correctly) | Two anchor findings, both detailed in Part 2 below: the Q5 capex-payback citation (p.19, WRONG — MAJOR) and the 2E CEO-departure citation (p.2, WRONG — MINOR). |
+| "I am talking only tungsten carbide, not high-speed steel, not the taps" | p.7 | p.7, confirmed verbatim | MATCH |
+| CNC migration ("people have been migrating to CNC machines... the whole industry itself is migrated") | p.11 | p.11, confirmed verbatim | MATCH |
+| "70% of the business coming from the distributors and dealers" | **p.4** | **p.8** (Yogesh Patil's market-share question) | **MISMATCH — wrong page, off by 4 pages, p.4 covers an unrelated topic (the ₹34m machinery-movement cost)** |
+| Own-book inventory build, COVID safety stocking + facility move, not demand ("we increased the safe inventory levels... it was a huge crisis") | p.17 | Begins p.17, the "huge crisis" sentence itself lands on p.18 (topic spans the page break) | MINOR — defensible, quote spans a page boundary |
 
-Coverage-map verdict: KENNAMET and WENDT were both genuinely, substantively used — the
-underlying evidence is real in every case checked, not fabricated or paraphrased beyond
-recognition. Three citations carry wrong page numbers (one MAJOR, two MINOR, detailed
-below); everything else checked (roughly 20 citations spot-read against source) lands
-correctly. BIRLAPREC's UNUSED tag is the only honest classification given zero transcripts.
+### Call 22-May-2023 (16 pages)
+| B06 claim | Cited anchor | Verified location | Verdict |
+|---|---|---|---|
+| "hard metals are growing at around 9%" | p.3 | p.3, confirmed | MATCH |
+| "domestic market is strong, stable... hard metal business as shown a growth of 9%" | p.3-4 | p.4, confirmed | MATCH |
+| MSG "almost 25% over previous quarter" degrowth | p.3 | p.3, confirmed | MATCH |
+| Own-book inventory correction, facility-linked, not channel-driven | p.4-5 (report) / p.4-5, p.10-11 (Part 3 table) | The underutilisation-from-China sentence is p.5; the explicit "we had built up some inventory" sentence is **p.6**; the exchange continues on **p.8** and **p.13** ("there was so many corrections going on... impact was primarily on the manufacturing under absorption... due to the inventory corrections"); p.10-11 content is about facility/machinery consolidation generally and does not carry the inventory-correction language specifically | MINOR-MODERATE — core claim is well supported by the transcript, but the specific page set cited (p.4-5, p.10-11) is imprecise; p.6, p.8 and p.13 carry the strongest language and are not cited |
 
-═══════════════════════════════════════════════════════════════
-PART 2: ANCHOR FINDINGS (citations whose page does not hold up)
-═══════════════════════════════════════════════════════════════
+### Call 09-Jun-2023 (22 pages)
+| B06 claim | Cited anchor | Verified location | Verdict |
+|---|---|---|---|
+| "capacity expansion happens with a face lag of 12 to 15 months" | p.5 | p.5, confirmed | MATCH |
+| "capital cycle being approved to installation it's 12 to 15 months" | p.10 | p.10, confirmed | MATCH |
+| "crazy high... broken the record of 2018-2019" | p.7 | p.7, confirmed | MATCH |
+| "wherever possible we try to pass on through the pricing increases" | p.15 | p.15, confirmed | MATCH |
+| "we have room to continue to support the Indian growth story... we just add machines" | p.12 | p.12, confirmed | MATCH |
+| **"private sector capex expansion staying the course"... "robustness in the order book"** | **p.5-6, this call** | **Does not exist anywhere in this transcript** (confirmed via full-text search, zero matches). The exact phrase is spoken by Vijaykrishnan Venkatesan in the **11-Mar-2024 call, p.5-6** | **CRITICAL-ADJACENT / MAJOR — wrong call entirely, not a page slip.** The words are real (they exist in the corpus) but this run attributes them to a call 12 months earlier than where they were actually said. This directly affects the run's own staleness argument: the freshest, least-stale Kennametal evidence on capex conviction was misdated to the second-oldest call, and it is never credited in the Mar-2024 coverage-map row at all |
 
-**FINDING 1 — MAJOR. Wendt capex-payback citation conflates two speakers and cites the
-wrong page.**
-B06 Part 1 Q5 writes: "Wendt gives a genuinely complicating counter-data-point...it made
-its largest-ever capex...and the very next reported quarter (Q1 FY26) shows its MACHINE
-TOOLS segment DOWN 18% YoY, with total PBT down 34% ('decrease in profit is due to lower
-order...and amortisation of Wendt brand', **Ninad Gadgil, WENDT AGM, p.19**)."
-Transcript check: the phrase "decrease in profit is due to lower order permission sales
-from steel products and the amortisation of Wendt brand" is spoken by **Bhagya Chandra
-Rao** (the Chairman), not Ninad Gadgil, in his opening remarks, on transcript **page 6**
-(line 288, inside the page-6 block lines 248-296, before Ninad Gadgil is even introduced at
-line 329 on page 7). The specific "-18% machine tool business" / "-18% EBITDA and -34%
-PBT" figures ARE spoken by Ninad Gadgil, but in his own Q1 summary on **page 10** (lines
-541-546), not page 19. Page 19 of the transcript (lines 902-953) contains an unrelated
-shareholder question (Rahul Kumar Paliwal on Capex-ROE justification and DSO) — nothing
-resembling this quote exists there. The underlying claim is TRUE and well-evidenced (both
-the -18%/-34% figures and the causal explanation are genuinely in the transcript), but the
-citation as printed would send a reader checking p.19 to the wrong place and attributes a
-Chairman's remark to the CEO. This is the single most consequential Wendt-sourced finding
-in the whole report (it tempers the capex-payback read for TOTEM's own Q1 FY27 margin
-jump), which raises the stakes of getting its anchor right.
+### Call 11-Mar-2024 (42 pages, newest, 2.5yr stale)
+| B06 claim | Cited anchor | Verified location | Verdict |
+|---|---|---|---|
+| "Sequential improvement in our PBT" over four quarters | p.7 (corrected from p.5-6 per the run's own disposition note) | p.7, confirmed — the correction HOLDS | MATCH |
+| Domestic CNC machine growth 46% | p.6 | p.6, confirmed | MATCH |
+| Industry 10-11%, domestic hard-metal 6-7% net after export drag | p.28-29 | p.28, confirmed (both sub-quotes) | MATCH |
+| Tungsten stabilisation, symmetric pass-through, "it's not that one will edge out the other because everybody buys at the same price" | p.19 ("same page" as the price-escalation quote) | The price-escalation/price-reduction quote is p.19 (confirmed); the "edge out the other" quote is **p.20** | MINOR — one-page slip, "same page" framing is wrong |
+| Import competition ~1.5% of revenue, "products being pushed from one country into India" | p.20-21 | p.21 (the whole exchange, question and answer, sits on p.21) | MINOR — range is generous but not wrong; real content is p.21 only |
 
-**FINDING 2 — MINOR. Wendt CEO-departure citation cites the wrong page.**
-B06 Part 2E writes: "Wendt's CEO/Executive Director 'will be stepping down from the Board
-effective 15th September 2025 to pursue opportunities outside the Company' (Bhagya
-Chandra Rao, WENDT AGM, **p.2**)."
-Transcript check: this sentence is on **page 7** (line 317, inside the page-7 block lines
-297-348), correctly spoken by Bhagya Chandra Rao as part of his continuous opening remarks.
-Speaker attribution is correct; only the page number is wrong (off by 5 pages — page 2 of
-this transcript covers e-voting/KFin mechanics, nothing about leadership).
+## WENDT INDIA (1 call, AGM meeting 21-Jul-2025, marked SUBSTANTIVE)
 
-**FINDING 3 — MINOR. Kennametal "sequential PBT improvement" citation is one page off.**
-B06 Part 1 Q5 writes: "...describes roughly a four-quarter (~12-month) realised lag between
-the Nov-2022 new-plant completion and 'a sequential improvement in our PBT' becoming
-visible (Vijaykrishnan, KENNAMET Mar-2024, **p.5-6**)."
-Transcript check: "You have seen a sequential improvement in our PBT, right?" is on **page
-7** (line 341, inside the page-7 block lines 297-348). Genuine quote, correct speaker,
-wrong page.
+| B06 claim | Cited anchor | Verified location | Verdict |
+|---|---|---|---|
+| Exports "lower by 12%... due to reduced offtake from key customers" | p.3 | p.3, confirmed verbatim | MATCH — this is the CONTRADICTED-verdict anchor, see Part 2 below |
+| Domestic sales +7%, "auto, auto ancillaries, bearing steel, cutting tools, resellers" | p.3 | p.3, confirmed | MATCH |
+| "Domestic Super Abrasives business grow close to about 9%" | p.10 | p.10, confirmed | MATCH |
+| Q1 FY26 domestic super abrasives +11%, machine tools -18%, PBT -34% | p.11 (corrected from p.10 per the run's own disposition note) | p.11, confirmed — the correction HOLDS | MATCH |
+| CEO departure, named and dated | p.7 (corrected from p.2) | p.7, confirmed — the correction HOLDS | MATCH |
+| One-time expenses Rs1.77cr, ex-items PBT Rs5146 lakh | p.4 | p.4, confirmed | MATCH |
+| Capex +422% (Rs11.15cr to Rs58.29cr) | p.4/p.10 | Rs58.29cr/Rs11.15cr figures are on **p.4 only**; p.10 discusses a different capex line item (the ~Rs25cr FY24-25 plan, ~Rs23cr executed, Rs35cr brand) without repeating the headline 58.29/11.15 numbers | MINOR — p.10 is topically adjacent but doesn't carry the cited figures |
+| Shareholder tariff question, unanswered on the record | p.20 (question) | p.20, confirmed. Full-transcript search confirms "tariff"/"Trump"/"Mexico" appear exactly once, in the question itself — **genuinely never answered anywhere in the 25-page transcript** | MATCH — this is the strongest, best-evidenced finding in the whole report |
+| Capex ROE/payback question (+420%, "what kind of expected ROE timeline") | p.18-19 | p.18-19, confirmed (spans the page break) | MATCH |
+| Capex answer ("Rs35cr... towards the brand... something for the future"), no timeline/ROE given | **p.23** | **p.24** | **MAJOR — repeated page-anchor error.** The entire Mukesh Kumar Hamirwasia answer block (capex explanation AND the receivables/DSO explanation immediately following it) sits on transcript p.24, not p.23. This is cited as p.23 in three separate places: Part 1 Q5, Part 2E, and the YAML `risks_peers_raise` list |
+| Receivables Rs52cr→Rs65cr, DSO 80→101 days, "collected in Q1" | p.19 (question), **p.23** (answer) | p.19 confirmed for the question; answer is on **p.24**, same error as above | **MAJOR — same repeated page-anchor error** |
 
-═══════════════════════════════════════════════════════════════
-PART 3: UNUSED-BUT-RELEVANT SPOT-READ
-═══════════════════════════════════════════════════════════════
+## BIRLA PRECISION TECHNOLOGIES
 
-Spot-reading the four SUBSTANTIVE Kennametal calls and the one Wendt call for material
-directly relevant to the six check_peers questions that B06 did NOT cite:
-
-- **KENNAMET Jun-2023, p.6-7 (MINOR, industry-context)**: "if you look at the growth of
-  machine industry today in the last 12 months...if you track the imported machine coming,
-  which has come into the country in the last six months, it's crazy high. It is even
-  broken the record of 2018-2019" (Vijaykrishnan). This is additional, vivid corroboration
-  of a genuine India capex upcycle in 2023 — directly relevant to Q1 (demand acceleration).
-  B06 does not cite it, relying instead on the more specific Mar-2024 "CNC +46%" figure to
-  make the same directional point. Not citing this is an industry-context miss, not a gap
-  in the underlying conclusion — MINOR, the point is otherwise made with better evidence.
-
-No other unused material of claim-relevant weight was found. The four Kennametal
-transcripts and the single Wendt transcript were read closely by B06; the overwhelming
-majority of usable content (raw-material pass-through, capacity/capex lag, channel
-structure, single-point-to-CNC migration, export concentration, royalty rate, competitive
-intensity, DSO/receivables, CEO departure, tariff-question silence) was correctly surfaced
-and correctly triangulated against TOTEM's own claims.
+Confirmed zero transcript files exist anywhere in work/text/ for this ticker (grep across the whole
+directory returns no matches). UNUSED is the only honest classification and the report gives it correctly,
+with no inference drawn on Birla's behalf anywhere in the report. Nothing to spot-read; Rule 3 is moot here.
 
 ═══════════════════════════════════════════════════════════════
-PART 4: VERDICT-DISCIPLINE AUDIT
+PART 2: UNUSED-BUT-RELEVANT MATERIAL (Rule 3)
 ═══════════════════════════════════════════════════════════════
 
-- **VERIFIED claims**: zero (B06 states "0 of 6" verified). Rule 4's ">=2 independent
-  peer anchors for VERIFIED" therefore cannot be violated — there is nothing to check.
-  This is itself the correct, conservative call: with a 2.5-year-stale Kennametal corpus
-  and a single Wendt call, no claim in this run legitimately clears a VERIFIED bar. B06's
-  restraint here is a POSITIVE finding, not a gap.
-- **PARTIALLY VERIFIED (4 claims)**: Q1 rests on KENNAMET (stale, structural) + WENDT
-  (in-window, but shows Wendt growth BELOW TOTEM's, a complication not a confirmation) +
-  CSV (explicitly non-citable). Q2 rests on KENNAMET alone (correctly scoped — Wendt is
-  silent on HSS/carbide mix). Q5 rests on both peers. Q6 rests on KENNAMET alone (matches
-  B05's check_peers list, which named KENNAMETAL INDIA only for Q6). None of these are
-  mislabeled VERIFIED-on-one-peer; the PARTIALLY VERIFIED grade is appropriate to the
-  thinness of evidence in every case. No verdict-discipline fail.
-- **UNVERIFIABLE (2 claims)**: Q3 (channel inventory) and Q4 (tariff impact) are correctly
-  graded — neither peer transcript speaks to channel-level 2025-2026 destocking, and the
-  Wendt tariff question is asked but never answered (confirmed independently, see Part 5).
-  No claim is upgraded from silence anywhere in the report — CRITICAL trigger not present.
-- **Claims all addressed**: confirmed. B05-concall.yaml's peer_questions block lists
-  exactly six questions (Q1-Q6) with check_peers scoping; B06 Part 1 addresses all six in
-  order, and B06 YAML's partially_verified + unverifiable lists sum to 6. No skipped claim.
+Two items of real weight were available in a SUBSTANTIVE-marked transcript and never surfaced. Both are
+inside the Kennametal 07-Mar-2023 call, the same call the report already mines for other Q1/Q2 content —
+so this is not a coverage gap from an unread transcript, it is material read past inside a transcript that
+was otherwise read closely.
+
+**1. A direct, on-topic answer to Q6 (raw-material pass-through) that CUTS AGAINST the report's own
+conclusion.** p.9-10: Sanjay Kumar Chandak asks why raw material cost rose 28% against a 10% rise in raw
+material prices, hitting PBT by ~Rs15cr, and states plainly "So ultimately, we fail to pass on the price
+increase." Vijaykrishnan Venkatesan replies: "Sanjay, You're absolutely right. If you look at our input raw
+material cost, the price increases, yes, we did transfer that price increase because we are well positioned
+as a technology player in the market." This is an unambiguous, confident claim of FULL pass-through — the
+opposite register from the "wherever possible" hedge the report pulls from the later Jun-2023 and Mar-2024
+calls to build its "sector-wide imperfect pass-through, not TOTEM-specific" reading under Q6. Including the
+Mar-2023 statement would not simply add a third data point — it complicates the story in a genuinely
+interesting way (full pass-through claimed in Mar-2023, hedged language by Jun-2023 and Mar-2024, a
+possible weakening trend inside Kennametal's own pricing power over time) that the report never had the
+chance to consider because this quote was never surfaced. MAJOR.
+
+**2. Peer commentary on defence/railway demand that directly contradicts the report's own "peers silent"
+claim under Q1.** Q1's peer-evidence field states: "Peers silent: Neither peer speaks to defence or railway
+demand specifically at any quantified level; both speak only to automotive/auto-ancillary/general
+engineering." This is not accurate. The same Mar-2023 call contains, at p.13-14 and p.23: "Railways has
+been a strength for us for probably I would say 3 to 4 decades... Defence, yes, again is a sector where we
+are very well positioned in the country" and "over the years, what's going to happen is that percentage of
+share of output from these sectors is increasing, right? Railways is increasing, defence is going to increase
+in terms of volume thereby the demand for tooling those sectors is also going to grow at a higher pace than
+the traditional segments." No percentage figure is given (so the report's claim about the absence of a
+"quantified" number is technically defensible), but the blanket "peers silent" framing overstates the actual
+silence — Kennametal speaks directly and repeatedly to defence and railway demand direction, just not in a
+number. Given that TOTEM's Q1 peer_question specifically names "aerospace/defence/railway customers,"
+this qualitative commentary belongs in the record either way. MAJOR.
 
 ═══════════════════════════════════════════════════════════════
-PART 5: THE TARIFF-SILENCE CLAIM — INDEPENDENTLY VERIFIED
+PART 3: THE CONTRADICTED VERDICT — CLOSE READ
 ═══════════════════════════════════════════════════════════════
 
-B06's claim that a shareholder asked Wendt management directly about US tariffs and the
-recorded answer never addresses it was checked against the full transcript, not just the
-cited pages. Yashpal Chopra's question (transcript p.19-20, lines 933-970) ends with:
-"finally, finally, which is a very, very important resolution...does Trump's those policies
-of tariffs and all that have any kind of effect on our company's performance that I would
-like to find out." The full management response sequence that follows — Bhagya Chandra Rao
-(p.21, video-conferencing mechanics, gifts, bonus, stock split, CUMI merger, "most valuable
-company," CEO resignation, quarterly-meet request), Ninad Gadgil (p.22-23, TAM, CUMI
-overlap, segment share, customisation %), and Mukesh Kumar (p.23-24, ESG rating, solar
-panels, Capex, trade receivables/DSO) — was read in full through to the meeting's close
-(p.25). The word "tariff" and any reference to Trump, US trade policy, or export-market
-duty risk does not recur anywhere in the response. CONFIRMED: this is a genuine, informative
-silence, not a caught-and-answered exchange the pipeline mislabeled. B06's framing (an
-"informative silence...the same kind of communication gap flagged for TOTEM" per B05) is
-well-supported and not overstated.
+The quote is confirmed exactly as cited: WENDT AGM p.3, "Exports were at Rs 43.63 crores during the year,
+lower by 12% over the previous year due to reduced offtake from key customers from a few countries" —
+verbatim, correct page, correct fiscal year (FY24-25, both companies use an April-March year).
+
+Two qualifications on the CONTRADICTED grade itself, both already partially acknowledged in the report's
+own prose but not reflected in the verdict severity:
+
+1. **This rests on a single peer.** No second peer transcript reaches TOTEM's FY24-25 export window
+   (Kennametal's newest call is 11-Mar-2024, reporting on the year one earlier). The report's own Rule-4-style
+   discipline elsewhere (nothing graded VERIFIED off one peer) is not applied symmetrically here: a CONTRADICTED
+   verdict — the single most consequential finding in the report, carried into `flags`, `contradicted[]`, and
+   the `analyst_note` as "the highest-value finding this stage adds" — is built on exactly the same one-peer
+   evidentiary base the rubric treats as insufficient for a positive VERIFIED grade.
+2. **A peer's aggregate export decline does not, strictly, contradict a different company's claim about its
+   own export trend.** Wendt's stated cause (customer-specific offtake loss in specific countries) is a
+   company-specific fact about Wendt, not a market-wide indicator TOTEM's claim must be consistent with.
+   The report's own text half-concedes this ("This does not prove TOTEM's claim was knowingly false"), but
+   the verdict label chosen is the strongest one available (CONTRADICTED) rather than a softer one
+   ("undermined by an adjacent peer data point" or similar). Note separately that B05 already carries a
+   stronger, more direct contradiction of the same TOTEM claim using TOTEM's own FOB data (-1.1% the same
+   year) — the Wendt finding is corroborating, not the primary evidence, and reads better as reinforcement of
+   an existing finding than as a freestanding CONTRADICTED verdict in its own right.
+
+This is not a reason to discard the finding — the underlying observation (a close peer's exports fell in the
+same year TOTEM claimed an improving trend) is real, well-anchored, and worth flagging. But the verdict
+label overstates what one peer, on one company-specific cause, can actually prove about a different
+company's unrelated claim. MAJOR (verdict-discipline).
 
 ═══════════════════════════════════════════════════════════════
-PART 6: STALENESS DISCIPLINE — DID STALE EVIDENCE MANUFACTURE CURRENT-PERIOD PROOF?
+PART 4: THE TARIFF UNVERIFIABLE VERDICT — CLOSE READ (this one holds up cleanly)
 ═══════════════════════════════════════════════════════════════
 
-Checked whether any of the four 2023-2024 Kennametal calls were used to support a
-current-cycle (FY26-FY27) TOTEM claim without the staleness caveat attached. In every
-instance checked (Q1, Q2, Q5, Q6, and the Part 2 cross-read), B06 explicitly labels
-Kennametal evidence as "structural, non-decaying" when used for current-period questions,
-and separately notes the specific staleness gap (e.g., "Kennametal's newest call (Mar-2024)
-predates the US/Mexico tariff action," "no Kennametal call falls inside TOTEM's specific
-FY26 spike window"). No instance was found where four-call Kennametal corroboration was
-silently treated as equivalent to a current-period confirmation. The CSV/concall separation
-is also consistently honoured — every CSV-derived number (Kennametal +47.7%, Wendt +36.6%,
-Birlaprec +1.4%, the inventory-build comparison, the raw-material-cost-ratio comparison) is
-explicitly labelled "not a concall citation" or "not citable as verification" at first use
-and in the YAML analyst_note. This discipline holds throughout — no finding here.
+Full-text search of the Wendt transcript for "tariff", "Trump", and "Mexico" returns exactly ONE hit across
+all 25 pages: Yashpal Chopra's question at p.20, "does Trump's those policies of tariffs and all that have
+any kind of effect on our company's performance." Management's subsequent consolidated answer (Bhagya
+Chandra Rao p.21-22, Ninad Gadgil p.22-23, Mukesh Kumar Hamirwasia p.23-24) works through AGM format,
+physical annual report, gifts, bonus, stock split, CUMI merger speculation, "most valuable company"
+question, CEO transition, quarterly investor meet request, TAM, market share, competitors, ESG rating,
+capex, and receivables/DSO — and never returns to tariffs. This is a genuine, checked silence, not an
+inference. The UNVERIFIABLE verdict with the "recorded non-answer" framing is the best-supported claim in
+the entire report.
 
 ═══════════════════════════════════════════════════════════════
-PART 7: MISFILED-DATE HANDLING
+PART 5: QUANTITATIVE CROSS-CHECK (screener CSVs) — RECOMPUTED
 ═══════════════════════════════════════════════════════════════
 
-Confirmed against the transcript header (repeated on every page: "WENDT (INDIA) LIMITED
-21-07-2025"): the file is misnamed "Jul_2026" by the data source, and the actual meeting
-date is 21-Jul-2025 (the 43rd AGM, Q1 FY26 results reported live). B06 catches this,
-states it plainly in the Coverage Notice and the peer coverage map, and anchors every
-Wendt citation to the correct 21-Jul-2025 date throughout Part 1, Part 2, and the YAML.
-No instance of the wrong year leaking into the analysis was found.
+Recomputed independently from inputs/screening/*-Data_Sheet.csv, Apr-Jun 2026 quarter vs Apr-Jun 2025:
+- KENNAMETAL: 477.6 / 323.4 - 1 = +47.68% ≈ **47.7%** — MATCHES
+- WENDT: 71.28 / 52.17 - 1 = +36.63% ≈ **36.6%** — MATCHES
+- BIRLAPREC: 60.45 / 59.62 - 1 = +1.39% ≈ **1.4%** — MATCHES
+
+All three figures are exact matches on independent recomputation. The report correctly labels this a
+screener cross-check, not a concall citation, and keeps it out of the peer_coverage_map's transcript-based
+usage classification. Clean.
 
 ═══════════════════════════════════════════════════════════════
-PART 8: SUMMARY
+PART 6: PROCESS-NOTE ITEMS (Run 1 → Run 2 corrections) — CLOSE READ
 ═══════════════════════════════════════════════════════════════
 
-Both peers with transcripts (KENNAMET, WENDT) were substantively and honestly used; the
-underlying evidence behind every checked citation is real. BIRLAPREC's UNUSED tag is
-correct — it has no transcript. The report's central discipline moves (staleness caveats,
-CSV/concall separation, conservative 0-VERIFIED grading, the tariff-silence framing) all
-hold up under independent re-read. The findings that survive are citation-anchor
-imprecision, not fabrication: one MAJOR (a citation that conflates two different speakers
-under one wrong page number, on the report's single most consequential Wendt finding) and
-two MINOR (page numbers off by one page and five pages respectively, both otherwise
-correct in content and speaker). One MINOR unused-but-relevant industry-context item.
+All four corrections claimed in the "VERIFIER-FINDING DISPOSITION" section were independently re-checked
+against the page markers and HOLD:
+1. Export contradiction (Wendt p.3) — confirmed real and correctly anchored.
+2. Ninad Gadgil -18%/-34% figures moved from p.10 to **p.11** — confirmed correct at p.11, the correction
+   was right to make.
+3. CEO-departure quote moved from p.2 to **p.7** — confirmed correct at p.7.
+4. "Sequential improvement in our PBT" quote moved from p.5-6 to **p.7** — confirmed correct at p.7.
 
-peer_utilisation (peers PROVIDED with transcripts, i.e. KENNAMET + WENDT): both were used
-substantively = 2/2 = 100%.
+So the corrections this run made were all genuine improvements. The problem is that the same "re-derived
+from page markers" pass that caught and fixed these four did not catch the wrong-call misattribution (Q1),
+the p.4→p.8 distributor citation, or the repeated p.23→p.24 Wendt CFO-answer citation — all of which a
+page-marker check should have caught with the same method used to fix items 2-4 above.
+
+═══════════════════════════════════════════════════════════════
+PART 7: HEADER/COUNT NOTE (minor, presentational)
+═══════════════════════════════════════════════════════════════
+
+Part 1 of the report is headed "CLAIM-BY-CLAIM VERIFICATION (the six B05 peer_questions)." B05 actually
+lists SEVEN peer_questions (`outputs/blocks/B05-concall.yaml`, `peer_questions:`). The second one — "Did
+Wendt India report FY25 exports down about 12%... while its own FOB fell 1.1%?" — is not given a numbered
+Part-1 entry; it is instead answered inside Part 2A (the CONTRADICTED finding) and carried into Part 4 and
+the YAML. Substantively every question received a verdict (Rule 5 is satisfied), but the "six" framing
+undercounts B05's own injected list by one. MINOR, presentational only.
+
+═══════════════════════════════════════════════════════════════
+PART 8: VERDICT-DISCIPLINE SUMMARY (Rule 4)
+═══════════════════════════════════════════════════════════════
+
+- No claim is graded VERIFIED, so the ">=2-peer bar for VERIFIED" rule is never tested in the direction the
+  rubric anticipates.
+- No verdict is upgraded from silence.
+- The one place the discipline should have applied symmetrically — CONTRADICTED, the strongest verdict the
+  report issues, built on a single peer and a company-specific (not industry-wide) cause — did not get the
+  same scrutiny a VERIFIED claim would have. See Part 3.
+
+═══════════════════════════════════════════════════════════════
+FINDINGS TABLE
+═══════════════════════════════════════════════════════════════
+
+| # | Severity | Location | Finding |
+|---|---|---|---|
+| 1 | MAJOR | Part 1 Q1 evidence field | "Private sector capex expansion staying the course... robustness in the order book" attributed to Jun-2023 call p.5-6; the phrase does not exist anywhere in that transcript. It is real but belongs to the Mar-2024 call, p.5-6 |
+| 2 | MAJOR | Part 3 coverage map, Mar-2023 row | "70% of the business coming from... distributors and dealers" cited at p.4; actual location is p.8 (off by 4 pages, wrong topic on p.4) |
+| 3 | MAJOR | Part 1 Q5, Part 2E, YAML risks_peers_raise | Wendt CFO's capex-explanation and receivables/DSO-explanation answers cited at p.23 in three places; actual location is p.24 |
+| 4 | MAJOR | Part 1 Q6 / Part 2 of this audit | Kennametal Mar-2023 p.9-10 raw-material pass-through exchange (explicit "we did transfer that price increase") left unused; it cuts against the "hedged, sector-wide imperfect pass-through" reading Q6 built from later calls only |
+| 5 | MAJOR | Part 1 Q1 / Part 2 of this audit | Q1's "peers silent" claim on defence/railway demand overstated; Kennametal Mar-2023 p.13-14, p.23 speaks directly to defence/railway demand direction (not quantified, but not silent) |
+| 6 | MAJOR | Part 2A/4 contradicted[] | CONTRADICTED verdict rests on a single peer with a company-specific (not industry-wide) cause; same evidentiary weakness the rubric flags for single-peer VERIFIED claims, not applied symmetrically |
+| 7 | MINOR | Part 1 Q3 / Part 3 coverage map, May-2023 row | Inventory-correction citation "p.4-5, p.10-11" imprecise; core language is on p.6, p.8, p.13 |
+| 8 | MINOR | Part 1 Q6, Mar-2024 row | "Same page" framing for the "edge out the other" quote; actual page is p.20, not p.19 |
+| 9 | MINOR | Part 1 header | "the six B05 peer_questions" undercounts; B05 lists seven, all ultimately addressed |
+
+═══════════════════════════════════════════════════════════════
+COVERAGE STATEMENT
+═══════════════════════════════════════════════════════════════
+
+All 5 transcripts (4 Kennametal + 1 Wendt) were read in full against their page markers. Every citation in
+B06 Part 1, Part 2, and Part 3 tied to a specific quote and page was checked; the four screener-CSV growth
+figures were independently recomputed from source. Nothing in B06 was taken on trust.
 
 ═══════════════════════════════════════════════════════════════
 END OF VERIFIER D REPORT
 ═══════════════════════════════════════════════════════════════
-
-```yaml
-stage: B12d
-company: "TOTEM"
-run_date: "2026-09-09"
-model: claude-sonnet-5
-status: complete
-peers_audited: 3
-substantive_confirmed: 2
-substantive_unsupported: []
-unused_but_relevant:
-  - {peer: "KENNAMET", missed_item: "Jun-2023 quote on imported-machine surge ('crazy high...broken the record of 2018-2019') as further corroboration of the India capex upcycle relevant to Q1; not cited, though the same directional point is made elsewhere with better (Mar-2024) evidence", anchor: "Vijaykrishnan Venkatesan, KENNAMET Jun-2023, p.6-7"}
-claims_all_addressed: true
-verdict_discipline_fails: []
-findings:
-  - {severity: "MAJOR", location: "06-peers.md Part 1 Q5", claimed: "Ninad Gadgil, WENDT AGM, p.19 -- '-18% machine tools, -34% PBT, decrease in profit is due to lower order...and amortisation of Wendt brand'", source_truth: "quote is Bhagya Chandra Rao (Chairman), transcript p.6 (line 288); the -18%/-34% figures are Ninad Gadgil, transcript p.10 (lines 541-546); p.19 contains unrelated shareholder Q&A", note: "genuine, well-evidenced claim; citation conflates two speakers and cites a page containing neither statement -- would mislead a reader checking the anchor"}
-  - {severity: "MINOR", location: "06-peers.md Part 2E", claimed: "Bhagya Chandra Rao, WENDT AGM, p.2 -- CEO stepping down 15-Sep-2025 quote", source_truth: "correct speaker and quote, actual page 7 (line 317)", note: "page off by 5; speaker and content correct"}
-  - {severity: "MINOR", location: "06-peers.md Part 1 Q5", claimed: "Vijaykrishnan, KENNAMET Mar-2024, p.5-6 -- 'sequential improvement in our PBT'", source_truth: "correct speaker and quote, actual page 7 (line 341)", note: "page off by 1-2; speaker and content correct"}
-  - {severity: "MINOR", location: "06-peers.md Part 5 (cross-peer hypothesis / Q1)", claimed: "no citation given for Jun-2023 imported-machine-surge corroboration", source_truth: "material exists at KENNAMET Jun-2023 p.6-7 and was not used", note: "industry-context miss; same directional point already made with stronger Mar-2024 evidence, so no conclusion is affected"}
-critical_count: 0
-major_count: 1
-minor_count: 3
-acceptance_rate: 100
-peer_utilisation_pct: 100
-```

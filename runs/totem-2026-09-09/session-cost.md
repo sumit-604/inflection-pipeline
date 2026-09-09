@@ -22,3 +22,9 @@
 | 1 | gate 0 scorecard (verifier corrections) | claude-sonnet-5 | default | n/a | n/a | 120757 | 8m26s | 3 |
 | 5 | management/guidance analysis (verifier corrections) | claude-sonnet-5 | default | n/a | n/a | 233523 | 12m34s | 2 |
 | 6 | peer concall verification (verifier corrections) | claude-sonnet-5 | default | n/a | n/a | 195260 | 7m36s | 2 |
+| 12a | verifier A numerical | claude-haiku-4-5 | default | n/a | n/a | 114957 | 5m11s | 2 |
+| 12b | verifier B red flags | claude-opus-4-8 | default | n/a | n/a | 391615 | 18m45s | 2 |
+| 12c | verifier C framework (phase-1 scope) | claude-opus-4-8 | default | n/a | n/a | 139778 | 9m06s | 2 |
+| 12d | verifier D peer coverage | claude-sonnet-5 | default | n/a | n/a | 216060 | 9m25s | 2 |
+| 5 | management/guidance analysis (audit cycle 2) | claude-sonnet-5 | default | n/a | n/a | 176881 | 10m13s | 3 |
+| 6 | peer concall verification (audit cycle 2) | claude-sonnet-5 | default | n/a | n/a | 223393 | 7m28s | 3 |

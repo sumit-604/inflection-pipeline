@@ -49,7 +49,7 @@ claim: read the claim in the structured file at that ID.
   the entry zone, active tripwires, and the monitoring checklist. Stale memory
   has previously framed exited positions as held; trust the passed Decision
   Status, not your prior.
-- The protocol files (Role 4, Role 5) and Master v3.6 for framework context.
+- The protocol files (Role 4, Role 5) and Master v3.7 for framework context.
 
 ## WHAT YOU PRODUCE (the full protocol output, MERGED)
 Order: Role 4 (results) FIRST, Role 5 (concall) SECOND, presentation findings

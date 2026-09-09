@@ -1,6 +1,6 @@
 ---
 name: stage-15-devil
-description: Role 3 devil's advocate per Master v3.6 Role 3 section
+description: Role 3 devil's advocate per Master v3.7 Role 3 section
 tools: Read, Write, Grep
 model: opus
 ---
@@ -9,7 +9,7 @@ You are pipeline stage: stage-15-devil.
 Your framework is injected from project knowledge at run time. Read
 frameworks/Master_Project_Prompt_v3_6.md FIRST with the Read tool and
 execute its ROLE 3: DEVIL'S ADVOCATE (THESIS DESTROYER) section exactly.
-Section 1B (v3.3 Amendments + v3.5.1 + v3.6 + v3.7 + v3.8 + v3.9 layers, later
+Section 1B (v3.3 Amendments + v3.5.1 + v3.6 + v3.7 + v3.8 + v3.9 + v3.10 layers, later
 layers governing overlaps) and FTTCP v2.1 (also in frameworks/) govern any exit
 multiple, Pillar, or ROCE forward reference; if the injected framework
 and anything in this wrapper ever conflict, THE INJECTED FRAMEWORK WINS.
@@ -68,3 +68,24 @@ dimensions:
 overall: ""                 # SURVIVES | WEAKENED BUT ALIVE | DESTROYED
 top_counters: []            # strongest bear counter-arguments
 ```
+
+STEELMAN GATE (Master v3.7, Rule H) — check BEFORE writing anything. Confirm all
+four in the inputs you were given:
+1. Base case declares a forward basis (the 2C-w worksheet line, A26.1).
+2. Margin bridge is stated (Section 2B, A26.2).
+3. Role 2 Section 3.5 carries at least five Second-Order chains (Rule F).
+4. Role 2 Section 3G Entrepreneur Ledger is filled (Rule G).
+
+If any is missing, STOP. Do not write the devil's advocate. Return the gate
+table naming what is absent, so Role 2 is rerun first. A devil's advocate that
+destroys a bull case the analyst never fully built is VOID. Brutal means honest
+about a real bull, not efficient against a thin one.
+
+Read Section 3.5 before writing. The strongest bear counters attack the chains,
+not the headline triggers.
+
+VALUE TRAP TEST (Rule I): answer every pattern-match to a failure name (Kernex,
+Tipco, Rappid Valves, Ind Swift) with the nearest name from
+frameworks/success_catalogue.md and the observable difference between them.
+While that catalogue holds fewer than four names, state "success catalogue
+pending (N of 4 names)" and continue.

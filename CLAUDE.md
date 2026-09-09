@@ -6,15 +6,48 @@ target, 3-5 year holds.
 
 ## NEVER
 - Never use any exit PE from outside Section 1B (v3.3 base + v3.5.1 +
-  v3.6 + v3.7 + v3.8 + v3.9 amendment layers in frameworks/; later layers
-  govern overlaps). It is
-  the sole exit multiple authority. No round-number defaults, ever.
+  v3.6 + v3.7 + v3.8 + v3.9 + v3.10 amendment layers in frameworks/; later
+  layers govern overlaps). It is the sole exit multiple authority. No
+  round-number defaults, ever. There is no numeric ceiling but the sector
+  cap; "never above 20x" language is void (v3.10 Amendment 26.5).
+- Never anchor a base case to the audited past (v3.10 Amendment 26). Base
+  revenue runs off the 26.1 basis hierarchy, with historical CAGR shown as
+  the cross-check and used as the base only when no forward evidence
+  exists. Base margin runs off the 26.2 destination-mix bridge; the
+  trailing 3-year average is the BEAR input. Weights key to the trailing
+  four quarters of Role 5 delivery, never whole-company history.
+- Never shade an input to be safe. State the most evidenced path, name the
+  two readings and the one observation that separates them, and put the
+  conservatism in position size (v3.9 Amendment 25). This binds Role 1
+  projections; it does not touch the document-reading protocols, where
+  conservative interpretation of filed evidence still stands.
 - Never construct a Year-N exit price on a different earnings basis than
   the entry, and never carry a within-hold option slice into the exit as
   an unresolved probability (v3.8 Amendment 18).
 - Never present an entry zone without the Amendment 19 FV CAGR and
   return-source classification; an entry discount is only interpretable
   against how fast fair value itself grows.
+- Never deliver a Role 2, Role 6, or FTTCP output without the
+  Second-Order Section (Master v3.7 Rule F). Five linkage chains minimum,
+  each with a labelled [INFERENCE]. A chain with no inference is a
+  summary. Live-web links this container cannot reach are marked PENDING
+  LIVE VERIFICATION and named, never fabricated.
+- Never run Role 3 against a bull case that was not built to depth
+  (Master v3.7 Rule H). Confirm the forward basis, the margin bridge, five
+  chains, and a filled Entrepreneur Ledger first. If one is missing, STOP
+  and return to Role 2. A devil's advocate against a thin bull is void.
+- Never treat building as a footnote to governance (Master v3.7 Rule G).
+  Role 2 Section 3G ledgers what the promoter built, raised, deployed, and
+  delivered under constraint, and states its Pillar 3 line. The ledger
+  never lifts a position cap the promoter verdict imposes.
+- Never answer a failure-catalogue pattern-match without the nearest
+  success name and the observable difference (Master v3.7 Rule I). While
+  frameworks/success_catalogue.md holds fewer than four names, say
+  "success catalogue pending" and continue.
+- Never be a cheerleader, and never be a coroner (Master v3.7 Rule J). A
+  bull claim and a bear claim carry the identical bar: tier the evidence,
+  trace the chain, name the confirming observation. Depth is the default;
+  if the operator has to say "go deeper", the output failed.
 - Never produce a Role 1 valuation without the Section 1A Method
   Suitability Matrix and method triangulation; the Section 1B destination
   PE governs the exit multiple, it does not replace method selection.
@@ -114,8 +147,12 @@ weigh, never anchored evidence.
 
 ## STRUCTURE
 - prompts/       stage instructions, single source of truth
-- frameworks/    Master v3.6, Section 1B layer set (v3.3/v3.5.1/v3.6/v3.7/v3.8/v3.9),
-                 FTTCP v2.1, Quarterly v1.4, AR v1.3 (Keerti
+- frameworks/    Master v3.7 (file Master_Project_Prompt_v3_6.md; the path
+                 is stable, the version is in the banner), Section 1B layer set
+                 (v3.3/v3.5.1/v3.6/v3.7/v3.8/v3.9/v3.10),
+                 FTTCP v2.3, Quarterly v1.4, AR v1.3, plus
+                 success_catalogue.md (Rule I; operator fills, 0 of 4
+                 names, not yet enforced) (Keerti
                  maintains; stage 11 reads at run time; amendments here
                  propagate with zero pipeline edits), plus
                  Downstream_Source_Discovery_Protocol_v1_0.md (source

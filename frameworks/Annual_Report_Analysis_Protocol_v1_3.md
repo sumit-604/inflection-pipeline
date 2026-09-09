@@ -2,7 +2,9 @@
 
 *Companion to Role 1 (Valuation), Role 2 (Investment Thesis), Role 3 (Devil's Advocate), Role 4 (Quarterly Results Review), Role 5 (Concall Analysis), and Role 7 (FTTCP). Use this protocol every time an Annual Report is released for any company in the active portfolio or watchlist. The AR is the only document of the year where financial, governance, legal, ESG, strategic, and audited disclosures are stitched together. It is also the only document where the Notice of AGM (shareholder resolutions, RPT caps, ESOP grants, special business) is on the record. The AR is therefore the single most important annual artefact for testing — and updating — the investment thesis, and the richest audited evidence feed into the FTTCP catalyst tables.*
 
-*Version 1.3 | Updated 19 August 2026 | Replaces v1.1 and v1.2 in full. Do not use v1.1, v1.2, or earlier alongside this document.*
+*Version 1.3 | Updated 19 August 2026, amended 08 September 2026 | Replaces v1.1 and v1.2 in full. Do not use v1.1, v1.2, or earlier alongside this document.*
+
+*`[08-Sep-2026 amendment: Step 6.5 Second-Order Section added immediately after the Notes triple-pass, per Master Project Prompt v3.7 Rule F (Growth Symmetry companion to Section 1B Amendment 26, operator ruling 08-Sep-2026). Five linkage chains minimum, four questions each, labelled [INFERENCE] required. It sits where it sits because the triple-pass is where the raw material surfaces: the footnote implying demand nobody mentioned, the capex with no stated purpose, the advance from an unnamed customer. Steps 6 and 10 now cross-reference each other on "what was not said". No other step changed.]`*
 
 ## INVOCATION
 
@@ -649,6 +651,43 @@ After completing Pass 1–3, build this synthesis:
 | --- | --- | --- |
 
 🛑 **STOP. Present Pass 1 list, Pass 2 cross-reference matrix, Pass 3 deep-dives, and synthesis. This is the heart of the AR analysis.**
+
+## STEP 6.5 — SECOND-ORDER SECTION (Master Prompt v3.7, Rule F — MANDATORY)
+
+Runs immediately after the Notes triple-pass, because the triple-pass is where the raw material for the chains surfaces: the footnote that implies expected demand, the capex with no stated purpose, the advance received from a customer not named in the concall.
+
+**What it is.** Minimum FIVE linkage chains. Each chain starts at one growth trigger or one stated fact and traces at least two links out. A chain with no [INFERENCE] in it is a summary, not a chain. Inference is REQUIRED here, labelled, never avoided. The "NOT DISCLOSED" discipline applies to the filed facts at the START of a chain, not to the reasoning that follows them: a chain may not invent a fact, and it must reason from the facts it has.
+
+**Each chain answers four questions.**
+
+| Question | What to look for | Where it comes from |
+| --- | --- | --- |
+| Who pays, and why now | Named customer or customer class. What their own filings, capex plans, tender pipelines, or results commentary say about demand for this input | Live web (Claude web): counterparty filings, sector dashboards, policy status |
+| What binds | The constraint that decides whether the trigger converts: capacity, working capital, approvals, key hires, a licence, a single supplier | Corpus (Claude Code): capex schedule, WC days, contingent liabilities, related-party notes |
+| What moves if it works | Working capital days, margin mix, competitor response, pricing, supplier terms, dilution need | [INFERENCE] from the first two links |
+| What was not said | Guidance given on revenue but not on margin. Capex booked with no stated purpose. Hiring or subsidiary formation with no concall mention. Footnotes that imply expected demand (advances received, capacity contracted, forward covers) | Corpus footnotes plus Claude web cross-check |
+
+**Output format, one block per chain.**
+
+```
+CHAIN n: [trigger or fact]
+Link 1 [tier]: ...
+Link 2 [tier]: ...
+Link 3 [INFERENCE]: ...
+Binding constraint: ...
+Unsaid: ...
+Observation that confirms or breaks this chain, and confirm-by date: ...
+```
+
+Every confirm-by line feeds the Expectation Ledger (Section 1B v3.9 Amendment 23) and the Role 5.5 Downstream Signal Tracker.
+
+**Depth rule.** Five chains is the FLOOR, not the target. Stop when the next chain would repeat a mechanism already traced, not when five is reached.
+
+**Team-workflow split.** The "who pays, and why now" link needs live web and belongs to Claude web. Claude Code drafts every chain from corpus, marks each live-web link PENDING LIVE VERIFICATION, and never fabricates a counterparty fact or pulls one from memory. A chain whose first link is pending is still a chain; it is not deleted, it is marked.
+
+**AR-specific sourcing.** The "what binds" link is answered from this AR: the capex schedule, working-capital days from Step 5, contingent liabilities and related-party notes from Step 6, the auditor's KAMs from Step 7 where they are already read. The "what was not said" link is answered from Step 6 (footnotes) and Step 10 ("what was not discussed"), which now cross-reference each other.
+
+🛑 **STOP. Present the chains. State the count and the reason you stopped (mechanism repetition, not a count).**
 
 ## STEP 7 — AUDITOR'S REPORT — KAMs, CARO & OPINION ANALYSIS
 

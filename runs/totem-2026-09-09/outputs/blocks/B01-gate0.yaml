@@ -1,0 +1,42 @@
+stage: B01-gate0
+company: "TOTEM"
+run_date: "2026-09-09"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "rating/ EMPTY: no credit rating report or rationale in corpus"
+  - "presentation/ EMPTY: no investor presentation published"
+  - "concalls/ EMPTY BY DECLARATION: concalls_available false, NO-CONCALL MODE"
+  - "peer-concalls PARTIAL: KENNAMET 4 (newest Mar-2024), WENDT 1 (Q1 FY26), BIRLAPREC 0"
+  - "research/ EMPTY"
+  - "screening: 5 of 6 CSVs per company (incl. peers) are empty formula shells; Data_Sheet.csv holds all populated data and was used for this run's peer scoring"
+  - "Q1 FY27 results filing is a scanned image; figures sourced from rendered PNGs"
+  - "shareholding filings held are Jun-2025, Mar-2026, Jun-2026 only; promoter-holding-change test (E2) runs on ~12 months, not 3 years"
+  - "LBF-2 146-to-255 inventory-day and 91-to-152 CCC figures not reproducible from this run's own filed data on any basis tried; direction confirmed, magnitude unverified"
+  - "LBF-4 claimed Rs 5.9 cr Labour Codes exceptional charge not found in any filed source; FY26 exceptional items are NIL"
+flags:
+  - type: FLAG-GATE0
+    reason: "Classification AVOID driven by two distinct, non-quality depressors: (1) pledge deal-breaker, 94.4% of the 73.85% promoter stake pledged, stable Jun-2025 to Jun-2026, caps at max AVERAGE; (2) 3-year LIMITED-history downgrade, structural artifact of Mar-2024 demerger / Jun-2024 listing, pulls one tier further to AVOID. Absent the history downgrade, mechanical floor is AVERAGE. Underlying fundamentals (22% ROCE, near-net-cash balance sheet, positive cumulative CFO/PAT) and, with corrected peer data, a STRONG moat block (5/12, 22/60 vs run 1's MODERATE 3/12, 13/60) sit underneath this AVOID."
+data_years: 3
+fy_range: "FY24 to FY26"
+blocks: {A: 13, B: 8, C: 6, D: 18, E: 13}
+core_score: 58
+moat_score: 22
+grand_total: 80
+moats_confirmed: 5
+moat_class: "STRONG"
+classification: "AVOID"
+deal_breakers:
+  - "Pledge >15%: 94.4% of promoter stake pledged (Shapoorji Pallonji & Co.), stable across Jun-2025/Mar-2026/Jun-2026 filings, caps classification at max AVERAGE"
+history_downgrade: true
+data_notes:
+  - "Peer data now sourced from KENNAMET-/BIRLAPREC-/WENDT-Data_Sheet.csv (populated), correcting run 1's false 'peer data empty' finding; run 1's 5-CSV empty-shell issue is a known collector defect, logged in B00"
+  - "Kennametal India reports to a JUNE year end; subject and Birla Precision report to MARCH. Latest-year peer tests (M2, M5, M9) compared subject FY26 (Mar-2026) against Kennametal's FY26 column (Jun-2026, 3-month lag) and Birla/Wendt FY26 (exact Mar-2026 match); sensitivity check substituting Kennametal FY25 (Jun-2025) left the peer median unchanged in both M2 and M9"
+  - "EBITDA margin computed on one formula applied identically to all 4 companies: Sales - RM - Power&Fuel - OtherMfrExp - Employee - Selling&Admin - OtherExp + ChangeInInventory (screener's additive sign convention), verified against each company's own Quarters-block Operating Profit sums"
+  - "M9 gross-margin proxy used: (Revenue - Raw Material Cost) / Revenue, not netted for inventory change, stated and applied identically across subject and all 3 peers"
+  - "M5 Scale & Dominance scored against a 3-peer comparison set only (Kennametal, Birla Precision, Wendt), not the full listed precision-tooling segment; 'top 3'/mcap ranking is relative to this 4-company set and flagged as directional, not a verified full-segment ranking"
+  - "M6 (R&D), M7 (Regulatory), M8 (Distribution) remain NOT FOUND / not applicable for subject and peers alike; not peer-data gaps, no line item exists in any Data_Sheet.csv or filed AR"
+  - "M1, M3, M4, M10, M11, M12 are not peer-dependent and are carried unchanged from run 1"
+  - "Blocks A-E, all 4 load-bearing facts, the pledge deal-breaker, and the 3-year history reality are unchanged from run 1; only Block F and the totals/classification arithmetic flowing from it were re-scored"
+block_b_trend: "deteriorating"
+analyst_note: "Run 2 corrects run 1's peer-data error: all peer figures now come from populated Data_Sheet.csv files, not the empty shell CSVs. Moat block strengthens materially, MODERATE (3/12, 13/60) to STRONG (5/12, 22/60), on two newly-scorable tests: Cost Advantage (subject EBITDA margin +7.37pp above peer median) and Brand/GM proxy (+6.58pp above peer median, but capped at score 1 by sub-8% revenue CAGR). Scale & Dominance also newly scores 3, though on a 3-peer set only, flagged as directional. Final mechanical classification stays AVOID because Core score (58, unaffected by Block F) sits in the flat 40-59 AVERAGE band before the pledge deal-breaker and LIMITED-history downgrade pull it down one tier each. The moat re-read matters for the operator's read of company quality even though it does not move the mechanical gate."

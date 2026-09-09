@@ -10,6 +10,14 @@ execute the fix list in `runs/kabraextru-2026-09-05/outputs/final/run1/gate-reco
 Every peer transcript was re-read from source against its "===== PAGE n =====" markers; every
 anchor below reflects that re-read, not the prior draft's page numbers.
 
+**VERDICT-DISCIPLINE CORRECTION NOTICE.** This file was corrected again on 2026-09-09, same day,
+after an independent coverage audit of this rerun found one verdict-discipline violation (Claim
+10) and three page-anchor errors. See the "## VERDICT-DISCIPLINE CORRECTION (2026-09-09)" section
+near the end of this report for the full BEFORE/AFTER record. The corrections are also folded
+into the Part 1 table, Summary Table, Part 4 summary, Part 2 cross-read, Part 3 coverage map,
+Sources Re-Read list, and the YAML block below, so a reader working through the report in order
+sees the corrected state throughout, not only in the dedicated section.
+
 **STALENESS NOTICE (unchanged from run 2, re-verified).** Four RAJOOENG transcripts are in
 corpus; the newest is the Q2 FY25 call, held 22-Oct-2024 (half year ended 30-Sep-2024).
 KABRAEXTRU's claims under test mostly concern FY26 (year ended 31-Mar-2026). The gap between the
@@ -45,9 +53,9 @@ of what it can and cannot show. Coverage map usage changes from UNUSED to CITED-
 |---|---|
 | Claim | KABRAEXTRU's FY26 extrusion segment revenue fell 13.2%; management attributes this to Jal Jeevan Mission (JJM) disbursement delays and state infra spending delays (external causes). |
 | Verdict | **CONTRADICTED** — framing plausibility only, tested against the closest observable peer window (through Oct-2024); **not** a test of the FY26 magnitude itself, which no transcript reaches. |
-| Peer evidence | RAJOOENG never mentions JJM, Jal Jeevan Mission, or state infrastructure spending in any of its four calls (16-May-2023, 6-Nov-2023, 18-Apr-2024, 22-Oct-2024). Across the same span its own revenue accelerated: FY23 Rs159.79 Cr (RAJOOENG, Q4 FY23, 16-May-2023, PDF p.3) → FY24 Rs197.35 Cr, +23.51% YoY (RAJOOENG, Q4 FY24, 18-Apr-2024, PDF p.5) → H1 FY25 Rs107.68 Cr, +27.07% YoY (RAJOOENG, Q2 FY25, 22-Oct-2024, PDF p.4). Order book: Rs140 Cr (Q4 FY24, 18-Apr-2024, PDF p.8) → Rs200+ Cr (Q2 FY25, 22-Oct-2024, PDF p.13/15), with a cited Rs1,000 Cr enquiry pipeline (same call, PDF p.15). Additional, unanchored corroboration: WINDMACHIN (Windsor Machines) screener data shows FY26 (year ended 31-Mar-2026) consolidated sales of Rs566.52 Cr against Rs327.6 Cr in FY25, +72.9% (screener WINDMACHIN-Data_Sheet, row 11, Sales, annual P&L, columns 2025-03-31 / 2026-03-31). This is screener data only: no notes, no segment split, no management commentary, and (see Claim 6) the growth coincides with a large FY25 capital raise and an "Investments" spike that looks more consistent with an inorganic (acquisition/stake) event than organic extrusion-machinery demand. It cannot show that Windsor's growth was extrusion-machinery-demand-driven, still less that it was JJM-linked. It can only show that a second named domestic competitor (see Part 2D) was not contracting through FY26 while KABRAEXTRU's extrusion segment fell 13.2%. |
+| Peer evidence | RAJOOENG never mentions JJM, Jal Jeevan Mission, or state infrastructure spending in any of its four calls (16-May-2023, 6-Nov-2023, 18-Apr-2024, 22-Oct-2024). Across the same span its own revenue accelerated: FY23 Rs159.79 Cr (RAJOOENG, Q4 FY23, 16-May-2023, PDF p.3) → FY24 Rs197.35 Cr, +23.51% YoY (RAJOOENG, Q4 FY24, 18-Apr-2024, PDF p.5) → H1 FY25 Rs107.68 Cr, +27.07% YoY (RAJOOENG, Q2 FY25, 22-Oct-2024, PDF p.4). Order book: Rs140 Cr (Q4 FY24, 18-Apr-2024, PDF p.8) → Rs200+ Cr (Q2 FY25, 22-Oct-2024, PDF p.13/15), with a cited Rs1,000 Cr enquiry pipeline (same call, PDF p.15). Additional, unanchored corroboration: WINDMACHIN (Windsor Machines) screener data shows FY26 (year ended 31-Mar-2026) consolidated sales of Rs566.52 Cr against Rs327.6 Cr in FY25, +72.9% (screener WINDMACHIN-Data_Sheet, row 11, Sales, annual P&L, columns 2025-03-31 / 2026-03-31). This is screener data only: no notes, no segment split, no management commentary, and (see Claim 6) the growth coincides with a large FY25 capital raise and an "Investments" spike that looks more consistent with an inorganic (acquisition/stake) event than organic extrusion-machinery demand. A further qualifier on the same growth figure, added in the 2026-09-09 discipline correction: WINDMACHIN's cash from operating activity was negative in both years shown, -Rs2.4 Cr (FY25) and -Rs59.09 Cr (FY26), and its borrowings rose from Rs34.86 Cr (FY25) to Rs86.04 Cr (FY26) (screener WINDMACHIN-Data_Sheet, row 57, Cash from Operating Activity, and row 41, Borrowings, columns 2025-03-31 / 2026-03-31) — the +72.9% sales growth was not accompanied by positive operating cash generation and coincided with rising debt, a further reason to treat it as weak, non-corroborating context rather than a clean demand signal. It cannot show that Windsor's growth was extrusion-machinery-demand-driven, still less that it was JJM-linked. It can only show that a second named domestic competitor (see Part 2D) was not contracting through FY26 while KABRAEXTRU's extrusion segment fell 13.2%. |
 | Peers silent | HBLENGINE (different sub-industry, not asked). WINDMACHIN has no transcript; only unanchored screener figures are available, and they are silent on cause. |
-| Net read | Rajoo is only a partial segment match (packaging/agri/solar-weighted; its PVC-pipe exposure runs through a 49%-owned JV, Rajoo Bausano, on which almost nothing is disclosed beyond a Rs30 Cr FY23 top line — RAJOOENG, Q4 FY23, 16-May-2023, PDF p.16). With that caveat, the closest available peer shows an accelerating, not a decelerating, extrusion-machinery business through the last observable data point (Oct-2024), with zero mention of the specific policy-delay mechanism KABRAEXTRU cites, and a second, differently-shaped (inorganic-flavoured) growth signal from Windsor Machines through FY26 itself. That undercuts the plausibility of an unqualified "industry-wide" framing. It cannot rule out a genuine, later (FY26-specific) JJM disbursement shock, since no earnings-call transcript reaches that period, and the Windsor evidence is too thin (unanchored, no cause shown) to do more than add weak weight in the same direction. |
+| Net read | Rajoo is only a partial segment match (packaging/agri/solar-weighted; its PVC-pipe exposure runs through a 49%-owned JV, Rajoo Bausano, on which almost nothing is disclosed beyond a Rs30 Cr FY23 top line — RAJOOENG, Q4 FY23, 16-May-2023, PDF p.16). With that caveat, the closest available peer shows an accelerating, not a decelerating, extrusion-machinery business through the last observable data point (Oct-2024), with zero mention of the specific policy-delay mechanism KABRAEXTRU cites, and a second, differently-shaped (inorganic-flavoured, and now also cash-flow-negative and more indebted) growth signal from Windsor Machines through FY26 itself. That undercuts the plausibility of an unqualified "industry-wide" framing. It cannot rule out a genuine, later (FY26-specific) JJM disbursement shock, since no earnings-call transcript reaches that period, and the Windsor evidence is too thin (unanchored, no cause shown) to do more than add weak weight in the same direction. |
 
 ### Claim 2 — Extrusion machinery industry CAGR / market size
 
@@ -85,9 +93,9 @@ of what it can and cannot show. Coverage map usage changes from UNUSED to CITED-
 |---|---|
 | Claim | KABRAEXTRU's FY26 export revenue fell 11.6%; question is whether this is sector-wide (geopolitical/currency) or customer-specific. |
 | Verdict | **CONTRADICTED** — framing plausibility only, tested against the closest observable peer window (through Oct-2024); **not** a test of the FY26-specific magnitude, which no transcript reaches. |
-| Peer evidence | RAJOOENG's own FY23 export dispatches WERE hit by a currency shock — "tremendous shortage of USD currency in financial system in some of the African countries... customers... not able to open the LCs" (RAJOOENG, Q4 FY23, 16-May-2023, PDF p.3) — and by geopolitical disruption in Pakistan and Russia/Ukraine-adjacent markets (RAJOOENG, Q4 FY23, 16-May-2023, PDF p.9-10). But from FY24 onward the trend reverses sharply: export share of revenue rose from 35% (FY23, PDF p.11) to 45-46% (H1 FY24, RAJOOENG, Q2 FY24, 6-Nov-2023, PDF p.6) to 45% (FY24 full year, RAJOOENG, Q4 FY24, 18-Apr-2024, PDF p.12 — corrected from run 2's p.11) to 73-74% of H1 FY25 revenue (RAJOOENG, Q2 FY25, 22-Oct-2024, PDF p.12 — corrected from run 2's p.11), with management stating "domestic is not really encouraging margin, the margin comes from the export business" in the same call and page. No currency or geopolitical export weakness is cited in the Apr-2024 or Oct-2024 calls; the only friction named in that period is Red Sea shipping/logistics lead time, which affects imports, not export demand. WINDMACHIN's screener data has no revenue-by-geography split of any kind (only total consolidated sales); it cannot confirm or deny export-specific weakness or strength and is not usable for this claim beyond the general, already-noted fact that total company revenue grew rather than declined through FY26. |
+| Peer evidence | RAJOOENG's own FY23 export dispatches WERE hit by a currency shock — "tremendous shortage of USD currency in financial system in some of the African countries... customers... not able to open the LCs" (RAJOOENG, Q4 FY23, 16-May-2023, PDF p.3) — and by geopolitical disruption in Pakistan and Russia/Ukraine-adjacent markets (RAJOOENG, Q4 FY23, 16-May-2023, PDF p.9-10). But from FY24 onward the trend reverses sharply: export share of revenue rose from 35% (FY23, PDF p.11) to 45-46% (H1 FY24, RAJOOENG, Q2 FY24, 6-Nov-2023, PDF p.6) to 45% (FY24 full year, RAJOOENG, Q4 FY24, 18-Apr-2024, PDF p.12 — corrected from run 2's p.11). In the Q2 FY25 call (22-Oct-2024), two separate figures appear on two separate pages and must be cited separately, per the 2026-09-09 discipline correction: asked directly for the current revenue split, management states "the current quarter and in the last quarter we did around 74% revenue coming from the export market" (RAJOOENG, Q2 FY25, 22-Oct-2024, PDF p.10 — a quarterly-only figure, a different Q&A exchange with a different questioner); separately, asked about H1 export performance and margin, management states "we have done this year 73% as far as export is concerned" together with "domestic is not really encouraging margin, the margin comes from the export business" (RAJOOENG, Q2 FY25, 22-Oct-2024, PDF p.12 — corrected from run 2's p.11). No currency or geopolitical export weakness is cited in the Apr-2024 or Oct-2024 calls; the only friction named in that period is Red Sea shipping/logistics lead time, which affects imports, not export demand. WINDMACHIN's screener data has no revenue-by-geography split of any kind (only total consolidated sales); it cannot confirm or deny export-specific weakness or strength and is not usable for this claim beyond the general, already-noted fact that total company revenue grew rather than declined through FY26. |
 | Peers silent | HBLENGINE, WINDMACHIN not applicable/no usable disclosure. |
-| Net read | The peer's export book was accelerating hard through the last observable quarter (Oct-2024), the opposite of a sector under geopolitical or currency export pressure. The specific currency shock RAJOOENG did report (FY23, African LCs) is a different episode, a different geography, and outside the FY26 window. As with Claim 1, this contradicts the plausibility of an unqualified sector-wide framing as of late 2024 without being able to test the FY26-specific 11.6% figure directly. |
+| Net read | The peer's export book was accelerating hard through the last observable quarter (Oct-2024), the opposite of a sector under geopolitical or currency export pressure, whether read at the 74% (current-quarter, p.10) or 73% (H1, p.12) figure. The specific currency shock RAJOOENG did report (FY23, African LCs) is a different episode, a different geography, and outside the FY26 window. As with Claim 1, this contradicts the plausibility of an unqualified sector-wide framing as of late 2024 without being able to test the FY26-specific 11.6% figure directly. |
 
 ### Claim 6 — Capex cycle and capacity-addition signal
 
@@ -95,9 +103,9 @@ of what it can and cannot show. Coverage map usage changes from UNUSED to CITED-
 |---|---|
 | Claim | KABRAEXTRU's own capex nearly halved (Rs61.81 Cr → Rs29.51 Cr) even as its AR reiterates a long-term extrusion growth trajectory. |
 | Verdict | **CONTRADICTED** in direction (peer was expanding through the last observable window) — framing plausibility only; staleness caveat applies to the FY26-specific comparison. |
-| Peer evidence | RAJOOENG is a continuous, deliberate capacity expander across all four calls: Rs20-25 Cr capex plan announced when nearing its then-ceiling of ~Rs200 Cr revenue (RAJOOENG, Q4 FY23, 16-May-2023, PDF p.5); acquisition of three industrial plots at Rajkot lifting capacity toward Rs300-325 Cr (RAJOOENG, Q2 FY24, 6-Nov-2023, PDF p.5); Rs9.33 Cr FY24 capex on land/building (RAJOOENG, Q4 FY24, 18-Apr-2024, PDF p.6 — corrected from run 2's p.5) plus a further Rs10-15 Cr FY25 tooling capex guided (same call, PDF p.9), new facility inaugurated Apr-2024 (PDF p.2-3); a further ~30% capacity addition completed by Oct-2024, with management stating "probably FY '26 we would be able to fill up all the capacity" (RAJOOENG, Q2 FY25, 22-Oct-2024, PDF p.15). WINDMACHIN screener data offers a second, differently-shaped signal, used here with an explicit caveat on what it can and cannot show: equity share capital rose from Rs12.99 Cr (FY24) to Rs16.90 Cr (FY25) to Rs17.70 Cr (FY26); reserves jumped from Rs282.99 Cr (FY24) to Rs712.55 Cr (FY25) before falling back to Rs470.52 Cr (FY26); "Investments" on the balance sheet spiked from Rs9.19 Cr (FY24) to Rs343.11 Cr (FY25) before falling to Rs42.0 Cr (FY26); cash from financing activity was +Rs428.78 Cr in FY25; and cash from investing activity was -Rs348.74 Cr in FY25 and -Rs121.67 Cr in FY26 (screener WINDMACHIN-Data_Sheet, rows 39, 40, 46, 58-59, Balance Sheet and Cash Flow sections, columns 2024-03-31 to 2026-03-31). Net Block (fixed assets) did NOT rise over the same period — it fell from Rs321.76 Cr (FY24) to Rs331.79 Cr (FY25, roughly flat) to Rs212.71 Cr (FY26), and Capital Work in Progress stayed small (Rs20.91 Cr FY25, Rs16.05 Cr FY26) (same source, row 44-45). |
+| Peer evidence | RAJOOENG is a continuous, deliberate capacity expander across all four calls: Rs20-25 Cr capex plan announced when nearing its then-ceiling of ~Rs200 Cr revenue (RAJOOENG, Q4 FY23, 16-May-2023, PDF p.5); acquisition of three industrial plots at Rajkot lifting capacity toward Rs300-325 Cr (RAJOOENG, Q2 FY24, 6-Nov-2023, PDF p.5); Rs9.33 Cr FY24 capex on land/building (RAJOOENG, Q4 FY24, 18-Apr-2024, PDF p.6 — corrected from run 2's p.5) plus a further Rs10-15 Cr FY25 tooling capex guided (same call, PDF p.9), new facility inaugurated Apr-2024 (RAJOOENG, Q4 FY24, 18-Apr-2024, PDF p.3 — corrected 2026-09-09 from p.2-3; the full sentence, "Moreover, on April 16th 2024 we celebrated the inauguration of our new facility marking the significant expansion in our operational capacity," sits entirely on PDF p.3); a further ~30% capacity addition completed by Oct-2024, with management stating "probably FY '26 we would be able to fill up all the capacity" (RAJOOENG, Q2 FY25, 22-Oct-2024, PDF p.15). WINDMACHIN screener data offers a second, differently-shaped signal, used here with an explicit caveat on what it can and cannot show: equity share capital rose from Rs12.99 Cr (FY24) to Rs16.90 Cr (FY25) to Rs17.70 Cr (FY26); reserves jumped from Rs282.99 Cr (FY24) to Rs712.55 Cr (FY25) before falling back to Rs470.52 Cr (FY26); "Investments" on the balance sheet spiked from Rs9.19 Cr (FY24) to Rs343.11 Cr (FY25) before falling to Rs42.0 Cr (FY26); cash from financing activity was +Rs428.78 Cr in FY25; and cash from investing activity was -Rs348.74 Cr in FY25 and -Rs121.67 Cr in FY26 (screener WINDMACHIN-Data_Sheet, rows 39, 40, 46, 58-59, Balance Sheet and Cash Flow sections, columns 2024-03-31 to 2026-03-31). Net Block (fixed assets) did NOT rise over the same period — it fell from Rs321.76 Cr (FY24) to Rs331.79 Cr (FY25, roughly flat) to Rs212.71 Cr (FY26), and Capital Work in Progress stayed small (Rs20.91 Cr FY25, Rs16.05 Cr FY26) (same source, row 44-45). A further qualifier, added in the 2026-09-09 discipline correction: cash from operating activity was negative across both years shown, -Rs2.4 Cr (FY25) and -Rs59.09 Cr (FY26), and borrowings rose from Rs34.86 Cr (FY25) to Rs86.04 Cr (FY26) (same source, row 57 and row 41) — reinforcing that the FY25-26 growth signal was not organically cash-generative and was accompanied by rising, not falling, leverage, the opposite of what a genuine capex-led capacity build funded by internal accruals would show. |
 | Peers silent | HBLENGINE's own capex commentary concerns Navy lithium-ion cells (~Rs200 Cr invested to date), an unrelated defence niche, explicitly framed as an AVOIDANCE of the general lithium-ion capex race (HBLENGINE AGM, 25-Sep-2025, PDF p.4) — see Part 2E and Claims 7-8 below. |
-| Net read | Only one directly comparable peer has a transcript, so this still cannot be classified industry-wide capacity race versus lone expander with full confidence (Part 2C). What is clear from RAJOOENG: it was actively adding capacity in every call through Oct-2024, guided by strong order momentum, the opposite of KABRAEXTRU's near-halved FY26 capex. WINDMACHIN adds a second data point that the peer set was not contracting through FY26, but its shape argues against reading it as a clean second confirmation of an "organic capacity race": the large FY25 equity raise and Investments spike, against a flat-to-falling Net Block, reads more like an inorganic (stake or acquisition) event than fixed-asset capex, and the CSV carries no notes to confirm or explain this. The honest statement is: two named domestic peers were both growing through the FY26 window, by different and not fully explained mechanisms, while KABRAEXTRU's core extrusion segment shrank and its capex nearly halved. The 18-month gap on RAJOOENG, and the total absence of narrative context on WINDMACHIN, mean this cannot directly confirm or deny what happened specifically inside KABRAEXTRU in FY26, but it removes comfort from an unexamined "the whole sector is being cautious" reading. |
+| Net read | Only one directly comparable peer has a transcript, so this still cannot be classified industry-wide capacity race versus lone expander with full confidence (Part 2C). What is clear from RAJOOENG: it was actively adding capacity in every call through Oct-2024, guided by strong order momentum, the opposite of KABRAEXTRU's near-halved FY26 capex. WINDMACHIN adds a second data point that the peer set was not contracting through FY26, but its shape argues against reading it as a clean second confirmation of an "organic capacity race": the large FY25 equity raise and Investments spike, against a flat-to-falling Net Block, negative operating cash flow, and rising borrowings, reads more like an inorganic (stake or acquisition) event funded by financing and debt than fixed-asset capex, and the CSV carries no notes to confirm or explain this. The honest statement is: two named domestic peers were both growing through the FY26 window, by different and not fully explained mechanisms, while KABRAEXTRU's core extrusion segment shrank and its capex nearly halved. The 18-month gap on RAJOOENG, and the total absence of narrative context on WINDMACHIN, mean this cannot directly confirm or deny what happened specifically inside KABRAEXTRU in FY26, but it removes comfort from an unexamined "the whole sector is being cautious" reading. |
 
 ### Claim 7 — HBL Engineering: EV-OEM customer credit quality (distressed 2W/3W OEMs)
 
@@ -134,10 +142,10 @@ of what it can and cannot show. Coverage map usage changes from UNUSED to CITED-
 | Field | Content |
 |---|---|
 | Claim | What working-capital terms does Rajoo Engineers describe for extrusion machinery orders (advance on order finalisation, payment before dispatch, receivable days), and how does that compare with KABRAEXTRU's receivable profile (48.9% of gross receivables more than one year overdue, AR FY26 Note 9 p.88)? |
-| Verdict | **VERIFIED** as a peer disclosure (Rajoo's own stated terms are directly and clearly quoted, from three separate points in the same call); the comparison itself is not a claim-verification in the usual sense — KABRAEXTRU makes no claim about its own working-capital terms for this question to test — so this is logged as a verified peer finding that surfaces a stark contrast, per the operator's fix-list framing. |
+| Verdict | **PARTIALLY VERIFIED** as a peer disclosure (relabelled 2026-09-09 from VERIFIED; see VERDICT-DISCIPLINE CORRECTION below). Rajoo's own stated terms are directly and clearly quoted, from three separate points in the same call, but all three anchors trace to ONE peer (RAJOOENG) in a single call. Per the verdict-discipline rule (two or more independent peers required for VERIFIED; one peer corroborating is PARTIALLY VERIFIED, regardless of how many quotes that one peer supplies), this cannot be VERIFIED. The comparison itself is not a claim-verification in the usual sense — KABRAEXTRU makes no claim about its own working-capital terms for this question to test — so this is logged as a partially verified peer finding that surfaces a stark contrast, per the operator's fix-list framing. |
 | Peer evidence | Advance on order finalisation: "Working capital means see in our case we normally receive 35% to 40% advance whenever we finalize any order for exports or domestic" (RAJOOENG, Q2 FY24, 6-Nov-2023, PDF p.10). Payment before dispatch: "Yes, the payment comes before the delivery. So, in 95% cases there are always 100% payment before we dispatch and in some cases there are LCs" (RAJOOENG, Q2 FY24, 6-Nov-2023, PDF p.12). Receivable days: "the receivable days like that have decreased from 71 days in FY23 to 22 days in H1 FY24" (RAJOOENG, Q2 FY24, 6-Nov-2023, PDF p.11), confirmed unchanged terms in the same exchange: "the terms has not changed for the suppliers and the customers, right?... Yes. It has been the same." (same page). |
 | Peers silent | HBLENGINE, WINDMACHIN not applicable (different business model; no comparable order-linked-advance disclosure). |
-| Net read | Rajoo's stated business model runs on 35-40% advance at order finalisation and full (or near-full) payment before dispatch in 95% of cases, producing receivable days as low as 22. This is a structural, order-linked-cash-collection model for capital-goods machinery, not a stale, aged-book model. Against this benchmark, KABRAEXTRU's 48.9% of gross receivables more than one year overdue (AR FY26 Note 9 p.88) is a stark outlier, not explained by any disclosed change in KABRAEXTRU's own payment terms. This does not prove KABRAEXTRU's terms are structured differently from Rajoo's (no direct disclosure of KABRAEXTRU's own advance/payment-before-dispatch policy exists in corpus to compare against), but it does establish that industry practice, at least at this one peer, does not require the kind of aged, past-due receivable book KABRAEXTRU is carrying; the burden falls on KABRAEXTRU's own disclosures (silent on this) to explain why its collection experience differs so sharply. This is the strongest, least stale finding in this rerun: unlike Claims 1, 5 and 6, these are structural business-model terms, not period-specific performance figures, so they are far less exposed to the 18-month peer-data staleness gap that caps every other contradiction in this report. |
+| Net read | Rajoo's stated business model runs on 35-40% advance at order finalisation and full (or near-full) payment before dispatch in 95% of cases, producing receivable days as low as 22. This is a structural, order-linked-cash-collection model for capital-goods machinery, not a stale, aged-book model. Against this benchmark, KABRAEXTRU's 48.9% of gross receivables more than one year overdue (AR FY26 Note 9 p.88) is a stark outlier, not explained by any disclosed change in KABRAEXTRU's own payment terms. This does not prove KABRAEXTRU's terms are structured differently from Rajoo's (no direct disclosure of KABRAEXTRU's own advance/payment-before-dispatch policy exists in corpus to compare against), but it does establish that industry practice, at least at this one peer, does not require the kind of aged, past-due receivable book KABRAEXTRU is carrying; the burden falls on KABRAEXTRU's own disclosures (silent on this) to explain why its collection experience differs so sharply. This remains a low-staleness, structural finding, unlike Claims 1, 5 and 6 (period-specific performance figures far more exposed to the 18-month peer-data gap), but it is single-peer sourced, which is why its verdict is PARTIALLY VERIFIED, not VERIFIED. |
 
 ---
 
@@ -154,7 +162,7 @@ of what it can and cannot show. Coverage map usage changes from UNUSED to CITED-
 | 7 | HBL EV-OEM credit quality (2W/3W distress) | UNVERIFIABLE — segment mismatch; capital-scale contrast noted, does not resolve the question asked |
 | 8 | HBL lithium-ion pack utilisation/margin | UNVERIFIABLE — segment mismatch; capital-scale contrast noted as context only |
 | 9 | HBL India EV battery pack market-size figure | UNVERIFIABLE — no figure cited by peer |
-| 10 | (NEW) Rajoo working-capital terms vs KABRAEXTRU receivable ageing | VERIFIED (peer disclosure) — least stale finding in this report; structural terms, not period figures |
+| 10 | (NEW) Rajoo working-capital terms vs KABRAEXTRU receivable ageing | PARTIALLY VERIFIED (single-peer disclosure; relabelled from VERIFIED 2026-09-09) — least stale finding in this report; structural terms, not period figures |
 
 ---
 
@@ -168,7 +176,10 @@ clear divergence from KABRAEXTRU's FY26 extrusion segment framing, subject to th
 staleness caveat repeated throughout Part 1. WINDMACHIN's FY26 screener revenue growth (+72.9%)
 adds a second, later (FY26-contemporaneous) growth signal from a named domestic competitor, with
 the caveat that its cause (organic demand vs. inorganic event) is not disclosed anywhere in the
-screener. HBLENGINE's AGM describes an unrelated demand story (Kavach railway signalling order
+screener; the same screener shows negative operating cash flow (-Rs2.4 Cr FY25, -Rs59.09 Cr FY26)
+and rising borrowings (Rs34.86 Cr to Rs86.04 Cr) over the same two years, a further reason (added
+2026-09-09) to read the +72.9% figure as a weak, non-organic-demand signal rather than confirming
+evidence. HBLENGINE's AGM describes an unrelated demand story (Kavach railway signalling order
 flood, defence fuse demand surge) with no read-across to extrusion machinery or EV batteries.
 
 **2B. Pricing and input costs.** RAJOOENG reports broadly stable raw material prices through
@@ -184,12 +195,16 @@ is inapplicable here.
 **2C. Capex cycle.** RAJOOENG is an active, continuous capacity expander in every one of its four
 calls (see Claim 6). WINDMACHIN's screener balance sheet shows a large FY25 equity raise and
 Investments spike against a flat-to-falling Net Block, a pattern more consistent with an
-inorganic capital event than fixed-asset capacity build. With one transcript-based comparable
-peer plus one unexplained screener-only signal, this still falls short of a clean classification
-between industry-wide capacity race and lone expander (that classification needs at least two
-comparable, explained peers). What can be said: neither named domestic peer was retrenching
-through the period each covers, the opposite of KABRAEXTRU's FY26 capex trajectory, though the
-two peers' growth is not shown to share a common (organic, extrusion-demand-driven) cause.
+inorganic capital event than fixed-asset capacity build. That reading is reinforced (added
+2026-09-09) by negative operating cash flow (-Rs2.4 Cr FY25, -Rs59.09 Cr FY26) and rising
+borrowings (Rs34.86 Cr to Rs86.04 Cr) over the same two years (WINDMACHIN-Data_Sheet, rows 57 and
+41): a genuine internally-funded capex build would not typically show negative operating cash
+generation alongside rising debt. With one transcript-based comparable peer plus one unexplained
+screener-only signal, this still falls short of a clean classification between industry-wide
+capacity race and lone expander (that classification needs at least two comparable, explained
+peers). What can be said: neither named domestic peer was retrenching through the period each
+covers, the opposite of KABRAEXTRU's FY26 capex trajectory, though the two peers' growth is not
+shown to share a common (organic, extrusion-demand-driven) cause.
 
 **2D. Competitive mentions.** RAJOOENG never names KABRAEXTRU explicitly. One tentative,
 unmistakable-only-if-corrected finding: asked directly "who are our main peers in our segment,"
@@ -207,23 +222,25 @@ corroborating that WINDMACHIN's inclusion in the manifest, and its use in this r
 data, is a materially relevant comparison, not a formality.
 
 **2E. Risks peers discuss that KABRAEXTRU does not.** (i) Red Sea shipping crisis: import
-lead-time and inventory/payable-day distortion (RAJOOENG, Q4 FY24, 18-Apr-2024, PDF p.6-7) — not
-discussed in KABRAEXTRU's own AR MD&A per the Stage 5 handoff. (ii) Shortening machine replacement
-cycle (20 years to 10 years) creating a refurbishment/replacement demand stream (RAJOOENG, Q4
-FY24, 18-Apr-2024, PDF p.8) — a possible read-across for KABRAEXTRU's installed base, undisclosed
-by KABRAEXTRU. (iii) Late-dispatch/space-occupation risk: large custom machines held in the
-assembly bay delay other orders and cost 2-3% of margin (RAJOOENG, Q4 FY23, 16-May-2023, PDF
-p.8-9) — an operational risk specific to large custom capital-goods manufacturing that
-KABRAEXTRU's disclosures do not address. (iv) Conglomerate/portfolio discount risk: HBL's chairman
-discusses investment bankers applying a "consortium discount" and a "conglomerate discount... 20
-percent" to diversified companies and argues instead for a "portfolio premium" (HBLENGINE AGM,
-25-Sep-2025, PDF p.5) — a live debate directly relevant to KABRAEXTRU's own two-segment
-(extrusion + battery) structure but never addressed in KABRAEXTRU's own disclosures. (v)
-Structural lithium-ion cell economics: HBL's explicit statement that lithium-ion cell production
-is unprofitable outside China, and its citation of failed large-scale bets by Reliance, Exide,
-Amara Raja, and Northvolt (HBLENGINE AGM, 25-Sep-2025, PDF p.4) — a structural industry risk in
-the broader lithium-ion value chain that KABRAEXTRU's AR discussion of Geon never raises, even as
-a risk factor to be distinguished from. (vi) NEW: working-capital discipline as a named,
+lead-time and inventory/payable-day distortion (RAJOOENG, Q4 FY24, 18-Apr-2024, PDF p.7 —
+corrected 2026-09-09 from p.6-7; the quote, "due to this Red Sea crisis the important components
+what we are importing from Europe and other countries the lead time has increased," sits entirely
+on PDF p.7) — not discussed in KABRAEXTRU's own AR MD&A per the Stage 5 handoff. (ii) Shortening
+machine replacement cycle (20 years to 10 years) creating a refurbishment/replacement demand
+stream (RAJOOENG, Q4 FY24, 18-Apr-2024, PDF p.8) — a possible read-across for KABRAEXTRU's
+installed base, undisclosed by KABRAEXTRU. (iii) Late-dispatch/space-occupation risk: large custom
+machines held in the assembly bay delay other orders and cost 2-3% of margin (RAJOOENG, Q4 FY23,
+16-May-2023, PDF p.8-9) — an operational risk specific to large custom capital-goods manufacturing
+that KABRAEXTRU's disclosures do not address. (iv) Conglomerate/portfolio discount risk: HBL's
+chairman discusses investment bankers applying a "consortium discount" and a "conglomerate
+discount... 20 percent" to diversified companies and argues instead for a "portfolio premium"
+(HBLENGINE AGM, 25-Sep-2025, PDF p.5) — a live debate directly relevant to KABRAEXTRU's own
+two-segment (extrusion + battery) structure but never addressed in KABRAEXTRU's own disclosures.
+(v) Structural lithium-ion cell economics: HBL's explicit statement that lithium-ion cell
+production is unprofitable outside China, and its citation of failed large-scale bets by Reliance,
+Exide, Amara Raja, and Northvolt (HBLENGINE AGM, 25-Sep-2025, PDF p.4) — a structural industry
+risk in the broader lithium-ion value chain that KABRAEXTRU's AR discussion of Geon never raises,
+even as a risk factor to be distinguished from. (vi) NEW: working-capital discipline as a named,
 explicitly-maintained policy at a direct peer (35-40% advance, payment before dispatch in 95% of
 cases — RAJOOENG, Q2 FY24, 6-Nov-2023, PDF p.10 and p.12) — KABRAEXTRU's own disclosures are
 silent on its advance/payment-before-dispatch policy, if any, leaving the 48.9% aged-receivable
@@ -236,19 +253,21 @@ finding (AR FY26 Note 9 p.88) with no stated policy context at all.
 | Peer | Quarter | Used how | Key contribution |
 |---|---|---|---|
 | RAJOOENG | Q4 FY23 (16-May-2023) | SUBSTANTIVE | Baseline export/currency shock (African LCs), initial capex/order-book/margin data; establishes the "before" state of an accelerating peer; JV (Rajoo Bausano) turnover disclosure. |
-| RAJOOENG | Q2 FY24 (6-Nov-2023) | SUBSTANTIVE | Global CAGR citation (4.6%/4.2%), export-mix-driven EBITDA jump (+99.5%), capacity expansion (3 plots), RM commentary, and the three working-capital quotes (advance %, payment-before-dispatch %, receivable days) that anchor new Claim 10. |
-| RAJOOENG | Q4 FY24 (18-Apr-2024) | SUBSTANTIVE | Second CAGR citation, narrow-category domestic market shares (80%/60%), domestic market sizing (Rs1,500 Cr) used in the Claim 3 arithmetic, named domestic competitors ("Windsor machines and carbon extrusion"), RM stability, Red Sea WC distortion. |
-| RAJOOENG | Q2 FY25 (22-Oct-2024) | SUBSTANTIVE | Newest and most decision-relevant data point: 73-74% export share, continued capacity expansion, order book/pipeline, "fill up all the capacity" FY26 guidance, stable RM, PVC (33%) and blown-film (55-60%) category shares, and the Rs2,000 Cr total-market-size figure (with its own scope caveat) used in Claim 3. Anchors the staleness caveat (last data point 18 months before KABRAEXTRU's FY26 close). |
+| RAJOOENG | Q2 FY24 (6-Nov-2023) | SUBSTANTIVE | Global CAGR citation (4.6%/4.2%), export-mix-driven EBITDA jump (+99.5%), capacity expansion (3 plots), RM commentary, and the three working-capital quotes (advance %, payment-before-dispatch %, receivable days) that anchor Claim 10. |
+| RAJOOENG | Q4 FY24 (18-Apr-2024) | SUBSTANTIVE | Second CAGR citation, narrow-category domestic market shares (80%/60%), domestic market sizing (Rs1,500 Cr) used in the Claim 3 arithmetic, named domestic competitors ("Windsor machines and carbon extrusion"), RM stability, Red Sea WC distortion (PDF p.7), facility-inauguration quote (PDF p.3). |
+| RAJOOENG | Q2 FY25 (22-Oct-2024) | SUBSTANTIVE | Newest and most decision-relevant data point: 74% (p.10, current-quarter-only) and 73% (p.12, H1) export-share figures, cited separately per the 2026-09-09 discipline correction; continued capacity expansion, order book/pipeline, "fill up all the capacity" FY26 guidance, stable RM, PVC (33%) and blown-film (55-60%) category shares, and the Rs2,000 Cr total-market-size figure (with its own scope caveat) used in Claim 3. Anchors the staleness caveat (last data point 18 months before KABRAEXTRU's FY26 close). |
 | HBLENGINE | FY25 AGM (25-Sep-2025) | SUBSTANTIVE | Establishes that HBL is a genuine segment mismatch for Geon (Navy-only lithium-ion, explicit avoidance of EV/mass lithium-ion); supplies the structural lithium-ion-economics and conglomerate-discount risk points in Part 2E; new this rerun, supplies the ~Rs200 Cr investment / "profit from year one" capital-scale contrast used in Claims 7-8, and the corrected p.17 quote ("import sales," not "import cells"). Not a source of positive confirmation for any claim. |
-| WINDMACHIN | FY26 + Q1 FY27 (screener only; no transcript) | **CITED-ONLY** (changed from run 2's UNUSED) | No transcript in corpus. Screener data (`WINDMACHIN-Data_Sheet.csv`) used, with explicit caveats, against Claims 1 and 6: FY26 sales +72.9% to Rs566.52 Cr, net profit still negative, a large FY25 equity raise and Investments spike against a flat-to-falling Net Block (possible inorganic event, not confirmed). Inapplicable to Claim 5 (no export/domestic split in the data). Independently named by RAJOOENG's own MD as one of only two domestic competitors it tracks (RAJOOENG, Q4 FY24, 18-Apr-2024, PDF p.9), which is why this gap is treated as material rather than incidental, per Part 2D. |
+| WINDMACHIN | FY26 + Q1 FY27 (screener only; no transcript) | **CITED-ONLY** (changed from run 2's UNUSED) | No transcript in corpus. Screener data (`WINDMACHIN-Data_Sheet.csv`) used, with explicit caveats, against Claims 1 and 6: FY26 sales +72.9% to Rs566.52 Cr, net profit still negative, a large FY25 equity raise and Investments spike against a flat-to-falling Net Block (possible inorganic event, not confirmed), plus (added 2026-09-09) negative operating cash flow (-Rs2.4 Cr FY25, -Rs59.09 Cr FY26) and rising borrowings (Rs34.86 Cr to Rs86.04 Cr), both qualifying the sales-growth signal. Inapplicable to Claim 5 (no export/domestic split in the data). Independently named by RAJOOENG's own MD as one of only two domestic competitors it tracks (RAJOOENG, Q4 FY24, 18-Apr-2024, PDF p.9), which is why this gap is treated as material rather than incidental, per Part 2D. |
 
 ---
 
 ## PART 4: TRIANGULATION SUMMARY
 
-- **Claims verified:** 1 of 10 (Claim 10, working-capital contrast — a peer disclosure verified
-  directly, not a KABRAEXTRU claim under test; see Claim 10's own caveat on classification).
-- **Claims partially verified:** 1 of 10 (Claim 2, CAGR — direction only).
+- **Claims verified:** 0 of 10 (relabelled 2026-09-09: Claim 10's VERIFIED verdict was
+  single-peer-sourced and does not meet the two-independent-peer VERIFIED bar; it now sits in
+  partially verified below — see VERDICT-DISCIPLINE CORRECTION).
+- **Claims partially verified:** 2 of 10 (Claim 2, CAGR — direction only; Claim 10, working-capital
+  contrast — single-peer disclosure, relabelled from VERIFIED 2026-09-09).
 - **Claims partially contradicted:** 1 of 10 (Claim 3, market share — changed from UNVERIFIABLE
   in run 2; see RERUN DELTA).
 - **Claims contradicted:** 3 of 10 (Claim 1, external-blame framing; Claim 5, export weakness;
@@ -272,30 +291,35 @@ KABRAEXTRU's FY26 account, but it removes the comfort of an unexamined "this is 
 whole industry is going through" reading on demand, exports and capex, and now adds a direct,
 quantified challenge to the market-share claim itself.
 
-**Single strongest independent confirmation.** New this rerun: Claim 10's three RAJOOENG
-quotations (35-40% advance, 95% payment before dispatch, 22 receivable days) are the least
-stale, most directly quotable finding in this report, because they describe a structural
-business practice rather than a period performance figure. They do not directly prove
-KABRAEXTRU's collection terms are worse by design, but they establish that the aged-receivable
+**Single strongest independent confirmation.** Claim 10's three RAJOOENG quotations (35-40%
+advance, 95% payment before dispatch, 22 receivable days) remain the least stale, most directly
+quotable finding in this report, because they describe a structural business practice rather than
+a period performance figure. Note (added 2026-09-09): this finding is single-peer sourced, which
+is why its own verdict is PARTIALLY VERIFIED, not VERIFIED; "strongest" here describes staleness
+resistance and specificity, not the number of corroborating peers. It does not directly prove
+KABRAEXTRU's collection terms are worse by design, but it establishes that the aged-receivable
 book KABRAEXTRU carries is not an unavoidable feature of this industry's order-linked cash cycle.
 (The previous run's strongest confirmation, RAJOOENG's stable 4.2%-4.6% CAGR citation sitting
 closer to KABRAEXTRU's FY25 figure than its FY26 figure, still stands as the strongest confirmation
-on the specific Claim 2 question.)
+on the specific Claim 2 question, and is itself only PARTIALLY VERIFIED for the same single-peer
+reason.)
 
 **Overall.** The peer set complicates more than it flatly refutes KABRAEXTRU's FY26 narrative,
 and this rerun adds two further, more concrete challenges beyond run 2's framing-plausibility
 findings: a quantified market-share arithmetic check (Claim 3) and a structural working-capital
 benchmark (Claim 10), neither of which is capped by the 18-month staleness gap in the same way as
 Claims 1, 5 and 6. Every CONTRADICTED and PARTIALLY CONTRADICTED verdict in this report carries
-its specific caveat inline (see summary table), not only in a footnote. Within that structure,
-the pattern remains one-sided: on demand, exports, raw materials, capex, market share and now
-working capital, the peer evidence available — imperfect, partly stale, and in WINDMACHIN's case
-unanchored screener data only — points in a direction that KABRAEXTRU's own FY26 disclosures do
-not corroborate or explain. The battery-side questions (Claims 7-9) still cannot be tested
-directly against HBL Engineering, a genuine segment mismatch, though the capital-scale contrast
-added this rerun sharpens rather than resolves that gap. On balance: **undercuts** the
-external-blame framing and the market-share and working-capital claims as currently stated,
-pending fresher, FY26-contemporaneous peer data that this corpus does not contain.
+its specific caveat inline (see summary table), not only in a footnote, and (per the 2026-09-09
+correction) no verdict in this report is now labelled VERIFIED on single-peer evidence. Within
+that structure, the pattern remains one-sided: on demand, exports, raw materials, capex, market
+share and now working capital, the peer evidence available — imperfect, partly stale, single-peer
+in every substantive case, and in WINDMACHIN's case unanchored screener data only — points in a
+direction that KABRAEXTRU's own FY26 disclosures do not corroborate or explain. The battery-side
+questions (Claims 7-9) still cannot be tested directly against HBL Engineering, a genuine segment
+mismatch, though the capital-scale contrast added this rerun sharpens rather than resolves that
+gap. On balance: **undercuts** the external-blame framing and the market-share and working-capital
+claims as currently stated, pending fresher, FY26-contemporaneous peer data that this corpus does
+not contain.
 
 ---
 
@@ -307,18 +331,19 @@ capital-goods small-caps tracks EXPORT/PREMIUM-NICHE ORIENTATION far more tightl
 the domestic capex cycle — a specific, testable pattern that no single peer states directly.
 
 RAJOOENG's EBITDA margin rose in lockstep with its export revenue share across the four calls:
-export share 35% (FY23) → 45-46% (FY24) → 73-74% (H1 FY25), while EBITDA margin rose 8.76% →
-13.52% → 15.10% over the same span, with management explicitly stating that "domestic is not
-really encouraging margin, the margin comes from the export business" (RAJOOENG, Q2 FY25,
-22-Oct-2024, PDF p.12) and that export margins run "nearly 30% to 35% more" than domestic
-(RAJOOENG, Q4 FY23, 16-May-2023, PDF p.20). Independently, HBL Engineering's chairman frames the
-company's entire strategy around deliberately AVOIDING commoditised, price-competed,
-import-exposed segments (mass lithium-ion cells, mass artillery-shell ammunition) in favor of
-premium, defence-grade niches specifically because "when everybody jumps on [a commoditised
-segment] and everybody can import [it], there is no margin in it" (HBLENGINE AGM, 25-Sep-2025,
-PDF p.17, quoting "sales" verbatim — see Claim 8 correction), citing failed large-scale domestic
-bets (Reliance, Exide, Amara Raja, Northvolt) as evidence of what happens when a company chases
-the commoditised end instead.
+export share 35% (FY23) → 45-46% (FY24) → 73% of H1 top line by the Q2 FY25 call (RAJOOENG,
+22-Oct-2024, PDF p.12; a related but separately-anchored 74% current-quarter figure appears at
+PDF p.10 of the same call), while EBITDA margin rose 8.76% → 13.52% → 15.10% over the same span,
+with management explicitly stating that "domestic is not really encouraging margin, the margin
+comes from the export business" (RAJOOENG, Q2 FY25, 22-Oct-2024, PDF p.12) and that export margins
+run "nearly 30% to 35% more" than domestic (RAJOOENG, Q4 FY23, 16-May-2023, PDF p.20).
+Independently, HBL Engineering's chairman frames the company's entire strategy around deliberately
+AVOIDING commoditised, price-competed, import-exposed segments (mass lithium-ion cells, mass
+artillery-shell ammunition) in favor of premium, defence-grade niches specifically because "when
+everybody jumps on [a commoditised segment] and everybody can import [it], there is no margin in
+it" (HBLENGINE AGM, 25-Sep-2025, PDF p.17, quoting "sales" verbatim — see Claim 8 correction),
+citing failed large-scale domestic bets (Reliance, Exide, Amara Raja, Northvolt) as evidence of
+what happens when a company chases the commoditised end instead.
 
 No single peer states the general rule. But juxtaposed, RAJOOENG's revealed
 margin-versus-export-mix correlation and HBL's explicit commoditised-versus-niche strategic logic
@@ -345,7 +370,9 @@ accompanying export-share recovery should be treated with added skepticism.
 ## RERUN DELTA (2026-09-09)
 
 This section lists each fix-list item this rerun was assigned, what changed, and every verdict
-change with its BEFORE / AFTER state.
+change with its BEFORE / AFTER state. This section is a historical record of the run2-to-rerun3
+delta; a further, same-day discipline correction made on top of this rerun is recorded separately
+in the "## VERDICT-DISCIPLINE CORRECTION (2026-09-09)" section below.
 
 **Item 5 (working-capital contrast never tested).** Added Claim 10 in full: Rajoo's 35-40%
 advance-on-order-finalisation, "95% cases... 100% payment before we dispatch," and 22
@@ -356,7 +383,9 @@ figure (AR FY26 Note 9 p.88).
   from Class A, "pipeline wide misses," not caught by any prior stage or run).
 - AFTER: Claim 10, verdict VERIFIED (as a peer disclosure; see Claim 10 for the classification
   caveat), logged as the least stale finding in the report and named the new strongest
-  independent confirmation candidate in Part 4.
+  independent confirmation candidate in Part 4. [This verdict was itself relabelled PARTIALLY
+  VERIFIED on 2026-09-09, same day, per the verdict-discipline rule — all three anchors are
+  single-peer (RAJOOENG). See VERDICT-DISCIPLINE CORRECTION below.]
 
 **Item 11 (Claim 3 re-ruled).** Added the domestic market-sizing arithmetic: RAJOOENG's Rs1,500 Cr
 domestic extrusion-and-thermoforming sizing (Q4 FY24, 18-Apr-2024, PDF p.11) and Rs2,000 Cr total
@@ -382,7 +411,9 @@ row 35: -Rs1.08 Cr net profit).
   screener file never mentioned or used, even to caveat it out.
 - AFTER: WINDMACHIN listed CITED-ONLY in the Part 3 coverage map; used explicitly (with stated
   limits) in Claims 1 and 6, explicitly stated as inapplicable to Claim 5, and folded into Part 2A
-  and 2C's cross-read.
+  and 2C's cross-read. [Extended 2026-09-09: negative operating cash flow and rising borrowings
+  added as further qualifying context on the same +72.9% growth figure — see VERDICT-DISCIPLINE
+  CORRECTION below.]
 
 **Item 14 (seven page offsets, plus HBL p.17 quote).** All seven corrected, each shown inline
 above with "(corrected from run 2's p.X)" where the anchor moved:
@@ -434,26 +465,109 @@ only in the staleness-notice paragraph at the top of the report as in run 2.
 - `RAJOOENG-Concall_May_2023_Transcript.txt` — Q4 FY23 call, 16-May-2023 (21pp). Pages re-verified
   against markers: p.3, p.5, p.6-16, p.20 (all citations above traced to their printed page
   marker; two corrections found: JV turnover figure moved from run 2's p.17 to the verified p.16).
-- `RAJOOENG-Concall_Nov_2023_Transcript.txt` — Q2 FY24 call, 6-Nov-2023 (11pp). Pages re-verified:
-  p.3, p.6, p.7, p.10, p.11, p.12 (back-to-back procurement moved from run 2's p.9 to the verified
-  p.10; the three new Claim 10 quotes anchored to p.10, p.11, p.12).
-- `RAJOOENG-Concall_Apr_2024_Transcript.txt` — Q4 FY24 call, 18-Apr-2024 (15pp). Pages
-  re-verified: p.2, p.5, p.6, p.7, p.8, p.9, p.11, p.12, p.13, p.14 (Windsor/carbon-extrusion quote
-  moved from run 2's p.8 to the verified p.9; FY24 capex figure moved from run 2's p.5 to the
-  verified p.6; 45% export share moved from run 2's p.11 to the verified p.12; RM-stability quote
-  moved from run 2's p.12 to the verified p.14).
+- `RAJOOENG-Concall_Nov_2023_Transcript.txt` — Q2 FY24 call, 6-Nov-2023 (12pp; corrected
+  2026-09-09 from this rerun's draft, which stated 11pp — the text twin carries 12 "===== PAGE n
+  =====" markers, PAGE 1 through PAGE 12). Pages re-verified: p.3, p.6, p.7, p.10, p.11, p.12
+  (back-to-back procurement moved from run 2's p.9 to the verified p.10; the three new Claim 10
+  quotes anchored to p.10, p.11, p.12).
+- `RAJOOENG-Concall_Apr_2024_Transcript.txt` — Q4 FY24 call, 18-Apr-2024 (16pp; corrected
+  2026-09-09 from this rerun's draft, which stated 15pp — the text twin carries 16 "===== PAGE n
+  =====" markers, PAGE 1 through PAGE 16). Pages re-verified: p.2, p.3, p.5, p.6, p.7, p.8, p.9,
+  p.11, p.12, p.13, p.14 (Windsor/carbon-extrusion quote moved from run 2's p.8 to the verified
+  p.9; FY24 capex figure moved from run 2's p.5 to the verified p.6; 45% export share moved from
+  run 2's p.11 to the verified p.12; RM-stability quote moved from run 2's p.12 to the verified
+  p.14; per the 2026-09-09 discipline correction, the facility-inauguration quote moved from
+  p.2-3 to the verified p.3, and the Red Sea shipping-crisis quote used in Part 2E(i) moved from
+  p.6-7 to the verified p.7).
 - `RAJOOENG-Concall_Nov_2025_Transcript.txt` (filename mislabeled by the collector) — actually the
   Q2 FY25 call, 22-Oct-2024 (16pp). Pages re-verified: p.4, p.6, p.10, p.11, p.12, p.13, p.15 (the
   33% PVC and 55-60% blown-film quotes moved from run 2's p.9-10 to the verified p.11 and p.12
   respectively; the 73-74% export / "domestic is not really encouraging margin" quote moved from
-  run 2's p.11 to the verified p.12).
+  run 2's p.11 to the verified p.12 in this rerun's draft; the 2026-09-09 discipline correction
+  further split this composite figure into 74% — a separate, current-quarter-only exchange with
+  Aditya Shah — on the verified p.10, and 73% plus the "domestic is not really encouraging margin"
+  quote — a separate, H1-framed exchange with Ravi Teja — on the verified p.12).
 - `HBLENGINE-Concall_Sep_2025_Transcript.txt` — FY25 AGM, 25-Sep-2025, not an earnings call
   (18pp). Pages re-verified: p.2, p.3, p.4, p.5, p.15-16, p.17 (p.17 quote corrected from run 2's
   "everybody can import cells" to the verbatim "everybody can import sales").
 - `WINDMACHIN-Data_Sheet.csv` — screening data, no transcript. Rows re-read and used: 10-11
   (annual Sales), 22-24 (annual PBT/Tax/Net profit), 27-28 and 33-35 (quarterly PBT/Tax/Net
-  profit, including the June-2026 quarter), 39-40 (Equity Share Capital, Reserves), 44-46 (Net
-  Block, CWIP, Investments), 58-59 (Cash from Investing/Financing Activity).
+  profit, including the June-2026 quarter), 39-41 (Equity Share Capital, Reserves, Borrowings),
+  44-46 (Net Block, CWIP, Investments), 57-59 (Cash from Operating/Investing/Financing Activity;
+  row 57, Cash from Operating Activity, added 2026-09-09).
+
+---
+
+## VERDICT-DISCIPLINE CORRECTION (2026-09-09)
+
+An independent coverage audit of this rerun found one verdict-discipline violation and three
+page-anchor errors in the RAJOOENG citations. Corrected here per the rule in
+`prompts/06-peer-concall-pipeline.md` Part 1 ("VERIFIED: two or more independent peers corroborate
+the direction and rough magnitude... PARTIALLY VERIFIED: one peer corroborates, or peers
+corroborate direction but not magnitude"). No claim substance, quote wording, or underlying
+evidence changes below; only verdict labels and page anchors move, and one qualifying data point
+(WINDMACHIN cash flow / borrowings) is added where the audit found it should already have been
+present.
+
+**1. Claim 10 verdict-discipline violation.** All three anchors behind Claim 10 (35-40% advance
+quote, 95%-payment-before-dispatch quote, 22-receivable-days quote) come from ONE peer, RAJOOENG,
+in a single call (Q2 FY24, 6-Nov-2023). A claim resting on one peer, however many quotes that peer
+supplies, is PARTIALLY VERIFIED, not VERIFIED; VERIFIED requires two or more independent peers.
+- BEFORE: Claim 10 verdict VERIFIED, in the Part 1 table, the Summary Table, Part 4's
+  triangulation summary (both the "Claims verified" count and the "single strongest independent
+  confirmation" paragraph), the RERUN DELTA record, and the YAML `verified:` list
+  (anchor_count: 3).
+- AFTER: Claim 10 verdict PARTIALLY VERIFIED everywhere listed above. The three anchors and the
+  anchor_count are kept, moved to the YAML `partially_verified:` list; `verified:` is now an empty
+  list. No other claim in this report was mislabeled on this rule: Claim 2 was already correctly
+  labelled PARTIALLY VERIFIED on the same single-peer basis, and every CONTRADICTED / PARTIALLY
+  CONTRADICTED verdict in the report (Claims 1, 3, 5, 6) already carries language proportionate to
+  single-peer, framing-plausibility-only evidence rather than claiming a VERIFIED-grade multi-peer
+  standard.
+
+**2. Page-anchor corrections (re-verified against the "===== PAGE n =====" markers in the text
+twins before changing, per instruction).**
+- Claim 5: the composite "73-74% of H1 FY25 revenue" figure previously cited PDF p.12 for both
+  numbers. Re-verified in `RAJOOENG-Concall_Nov_2025_Transcript.txt` (Q2 FY25, 22-Oct-2024): the
+  74% figure ("the current quarter and in the last quarter we did around 74% revenue coming from
+  the export market," Khushboo Doshi to Aditya Shah) sits in a separate, current-quarter-only Q&A
+  exchange on PDF p.10 (page marker at line 525, quote at line 554). The 73% figure and the
+  "domestic is not really encouraging margin, the margin comes from the export business" quote sit
+  together in a later, H1-framed exchange with Ravi Teja on PDF p.12 (page marker at line 648,
+  quote at lines 686-688). Each number now cites its own page in Claim 5's peer evidence field,
+  Part 5's cross-peer hypothesis, and the YAML `contradicted:` quote_anchor.
+- Claim 6: the facility-inauguration sentence ("Moreover, on April 16th 2024 we celebrated the
+  inauguration of our new facility marking the significant expansion in our operational
+  capacity") previously cited PDF p.2-3. Re-verified in `RAJOOENG-Concall_Apr_2024_Transcript.txt`:
+  the entire sentence sits on PDF p.3 (page marker at line 98, quote at line 144). Corrected to
+  PDF p.3.
+- Claim 4 / Part 2E(i): the Red Sea shipping-crisis quote ("due to this Red Sea crisis the
+  important components what we are importing from Europe and other countries the lead time has
+  increased," Prakash Daga) previously cited PDF p.6-7. Re-verified in
+  `RAJOOENG-Concall_Apr_2024_Transcript.txt`: the quote sits entirely on PDF p.7 (page marker at
+  line 323, quote at lines 354-357). Corrected to PDF p.7 in Part 2E(i) and in the YAML
+  `risks_peers_raise` list.
+
+**3. Sources Re-Read page counts corrected to the marker count.**
+- `RAJOOENG-Concall_Nov_2023_Transcript.txt` (Q2 FY24, 6-Nov-2023): the text twin carries 12
+  "===== PAGE n =====" markers (PAGE 1 through PAGE 12), not 11 as this rerun's draft stated.
+  Corrected to 12pp.
+- `RAJOOENG-Concall_Apr_2024_Transcript.txt` (Q4 FY24, 18-Apr-2024): the text twin carries 16
+  markers (PAGE 1 through PAGE 16), not 15 as this rerun's draft stated. Corrected to 16pp.
+
+**4. WINDMACHIN screener context added (audit observation, not previously in the report).**
+`WINDMACHIN-Data_Sheet.csv` also shows cash from operating activity of -Rs2.4 Cr (FY25, column
+2025-03-31) and -Rs59.09 Cr (FY26, column 2026-03-31) (row 57), and borrowings rising from
+Rs34.86 Cr (FY25) to Rs86.04 Cr (FY26) (row 41). Added as screener-only qualifying context to
+Claims 1 and 6, Part 2A and 2C, the Part 3 coverage map, the YAML WINDMACHIN flag, and Sources
+Re-Read, alongside the already-noted equity raise / Investments spike: the +72.9% FY26 sales
+growth was not operating-cash-generative and coincided with rising, not falling, borrowings, a
+further reason to treat it as weak, unconfirmed context rather than a clean organic-demand or
+organic-capex signal.
+
+No other claim, verdict, quote, or anchor in this report changed. All corrections above are also
+reflected in the Part 1 table, Summary Table, Part 4 summary, Part 2 cross-read, Part 3 coverage
+map, Sources Re-Read list, and the YAML block below.
 
 ```yaml
 stage: B06-peers
@@ -462,6 +576,7 @@ run_date: "2026-09-05"
 model: claude-sonnet-5
 status: complete
 rerun: 3
+discipline_correction: "2026-09-09"
 input_gaps:
   - "results (HIGH): no results PDFs in corpus; FY26 audited AR used as delivery record"
   - "rating (HIGH): CRISIL two-step downgrade disclosed AR FY26 p.51, only generic reason given, no rationale document in corpus"
@@ -481,20 +596,21 @@ flags:
   - {type: "FLAG-POSSIBLE-PEER-MENTION-CARBON-EXTRUSION-KABRA-MISTRANSCRIPTION", reason: "RAJOOENG Q4 FY24 (18-Apr-2024, PDF p.9) names 'Windsor machines and carbon extrusion' as its two domestic peers; 'carbon extrusion' matches no known Indian extrusion-machinery maker and is very likely a mistranscription of 'Kabra Extrusion'; treat as unconfirmed inference"}
   - {type: "FLAG-EXPORT-MIX-MARGIN-HYPOTHESIS-UNTESTED-BY-KABRAEXTRU-DISCLOSURE", reason: "Cross-peer hypothesis (Part 5) predicts KABRAEXTRU segment margin should correlate with its own export share; FY26 export revenue fell 11.6% against the pattern; KABRAEXTRU's own disclosures do not address this"}
   - {type: "FLAG-MARKET-SHARE-CLAIM-PARTIALLY-CONTRADICTED-BY-PEER-SIZING", reason: "Peer domestic market sizing (Rs1,500-2,000 Cr) against KABRAEXTRU's own FY26 extrusion revenue (Rs314.89 Cr, AR FY26 Note 38) implies ~16-21% domestic share, not the ~40% claimed in AR FY25 and silently dropped in AR FY26; Claim 3 upgraded from UNVERIFIABLE (run 2) to PARTIALLY CONTRADICTED this rerun"}
-  - {type: "FLAG-WORKING-CAPITAL-CONTRAST-KABRAEXTRU-VS-RAJOOENG", reason: "RAJOOENG's stated order-linked terms (35-40% advance, 95% payment before dispatch, 22 receivable days) contrast sharply with KABRAEXTRU's 48.9% of gross receivables over one year overdue (AR FY26 Note 9 p.88); new Claim 10, added per operator fix-list item 5"}
-  - {type: "FLAG-WINDMACHIN-SCREENER-INORGANIC-GROWTH-SIGNAL", reason: "WINDMACHIN's FY25 equity raise and Investments spike (Rs9.19 Cr to Rs343.11 Cr) against a flat-to-falling Net Block suggests a possibly inorganic (not organic capex-driven) growth event; screener data only, no notes, cannot be confirmed from this corpus"}
+  - {type: "FLAG-WORKING-CAPITAL-CONTRAST-KABRAEXTRU-VS-RAJOOENG", reason: "RAJOOENG's stated order-linked terms (35-40% advance, 95% payment before dispatch, 22 receivable days) contrast sharply with KABRAEXTRU's 48.9% of gross receivables over one year overdue (AR FY26 Note 9 p.88); new Claim 10, added per operator fix-list item 5; single-peer sourced, verdict PARTIALLY VERIFIED as of the 2026-09-09 discipline correction"}
+  - {type: "FLAG-WINDMACHIN-SCREENER-INORGANIC-GROWTH-SIGNAL", reason: "WINDMACHIN's FY25 equity raise and Investments spike (Rs9.19 Cr to Rs343.11 Cr) against a flat-to-falling Net Block suggests a possibly inorganic (not organic capex-driven) growth event; screener data only, no notes, cannot be confirmed from this corpus; also negative operating cash flow (-Rs2.4 Cr FY25, -Rs59.09 Cr FY26) and rising borrowings (Rs34.86 Cr to Rs86.04 Cr) over the same two years, added 2026-09-09, both from WINDMACHIN-Data_Sheet.csv"}
+  - {type: "FLAG-VERDICT-DISCIPLINE-CORRECTION-2026-09-09", reason: "Claim 10 relabelled from VERIFIED to PARTIALLY VERIFIED (all three anchors are single-peer, RAJOOENG); three page anchors corrected (Claim 5's 74%/73% figures split to p.10/p.12, Claim 6's facility-inauguration quote to p.3, Part 2E(i)'s Red Sea quote to p.7); two Sources Re-Read page counts aligned to marker counts (12pp, 16pp); WINDMACHIN negative operating cash flow and rising borrowings added as qualifying context on Claims 1 and 6 -- see VERDICT-DISCIPLINE CORRECTION section"}
 peers_provided: 5
 peers_provided_note: "4 RAJOOENG transcripts + 1 HBLENGINE transcript = 5 transcript-based peer-quarters; WINDMACHIN has no transcript and is tracked separately as a screener-only source"
-verified:
-  - {claim: "Rajoo Engineers' working-capital terms for extrusion machinery orders (35-40% advance on order finalisation; 95% cases full payment before dispatch; 22 receivable days H1 FY24), tested against KABRAEXTRU's 48.9% gross-receivables-over-one-year-overdue profile", peers: ["RAJOOENG"], anchor_count: 3}
+verified: []
 partially_verified:
   - {claim: "Extrusion machinery industry CAGR cited by KABRAEXTRU (3.9% AR FY25 vs 6.7% AR FY26)", peers: ["RAJOOENG"]}
+  - {claim: "Rajoo Engineers' working-capital terms for extrusion machinery orders (35-40% advance on order finalisation; 95% cases full payment before dispatch; 22 receivable days H1 FY24), tested against KABRAEXTRU's 48.9% gross-receivables-over-one-year-overdue profile", peers: ["RAJOOENG"], anchor_count: 3}
 partially_contradicted:
   - {claim: "~40% extrusion machinery market share (AR FY25, silently dropped in AR FY26): peer domestic market sizing (Rs1,500-2,000 Cr) against KABRAEXTRU's own FY26 extrusion revenue (Rs314.89 Cr) implies ~16-21%, not ~40% -- market-definition and vintage plausibility test, not an audited share verification", peers: ["RAJOOENG"]}
 contradicted:                  # priority items for synthesis; all three carry the "framing plausibility, not FY26 figures" caveat inline
-  - {claim: "External-blame framing (JJM/state infra disbursement delays) for 13.2% extrusion segment revenue decline -- framing plausibility only, peer data through Oct-2024, not a test of FY26 figures", contradicting_peer: "RAJOOENG", quote_anchor: "RAJOOENG Q2 FY25, 22-Oct-2024, PDF p.13/15: order book Rs200+ Cr, Rs1,000 Cr pipeline, no JJM mention across 4 calls (16-May-2023 to 22-Oct-2024); weak additional corroboration from WINDMACHIN screener FY26 sales +72.9%"}
-  - {claim: "11.6% export revenue decline framed as sector-wide geopolitical/currency weakness -- framing plausibility only, peer data through Oct-2024, not a test of FY26 figures", contradicting_peer: "RAJOOENG", quote_anchor: "RAJOOENG Q2 FY25, 22-Oct-2024, PDF p.12: export share rose to 73-74% of H1 FY25 revenue, 'domestic is not really encouraging margin, the margin comes from the export business' (corrected page from run 2's p.11)"}
-  - {claim: "Capex nearly halved (Rs61.81 Cr to Rs29.51 Cr) alongside reiterated long-term extrusion growth trajectory -- framing plausibility only, peer data through Oct-2024, not a test of FY26 figures", contradicting_peer: "RAJOOENG", quote_anchor: "RAJOOENG Q2 FY25, 22-Oct-2024, PDF p.15: 'probably FY 26 we would be able to fill up all the capacity which we have installed'; WINDMACHIN screener shows a FY25 equity/Investments spike against a flat-to-falling Net Block, an unexplained, possibly inorganic second growth signal"}
+  - {claim: "External-blame framing (JJM/state infra disbursement delays) for 13.2% extrusion segment revenue decline -- framing plausibility only, peer data through Oct-2024, not a test of FY26 figures", contradicting_peer: "RAJOOENG", quote_anchor: "RAJOOENG Q2 FY25, 22-Oct-2024, PDF p.13/15: order book Rs200+ Cr, Rs1,000 Cr pipeline, no JJM mention across 4 calls (16-May-2023 to 22-Oct-2024); weak additional corroboration from WINDMACHIN screener FY26 sales +72.9% (though negative operating cash flow and rising borrowings qualify this signal)"}
+  - {claim: "11.6% export revenue decline framed as sector-wide geopolitical/currency weakness -- framing plausibility only, peer data through Oct-2024, not a test of FY26 figures", contradicting_peer: "RAJOOENG", quote_anchor: "RAJOOENG Q2 FY25, 22-Oct-2024, PDF p.12: export share rose to 73% of H1 FY25 revenue, 'domestic is not really encouraging margin, the margin comes from the export business' (corrected page from run 2's p.11); a separate 74% current-quarter-only figure appears at PDF p.10, same call (split corrected 2026-09-09)"}
+  - {claim: "Capex nearly halved (Rs61.81 Cr to Rs29.51 Cr) alongside reiterated long-term extrusion growth trajectory -- framing plausibility only, peer data through Oct-2024, not a test of FY26 figures", contradicting_peer: "RAJOOENG", quote_anchor: "RAJOOENG Q2 FY25, 22-Oct-2024, PDF p.15: 'probably FY 26 we would be able to fill up all the capacity which we have installed'; WINDMACHIN screener shows a FY25 equity/Investments spike against a flat-to-falling Net Block, plus negative operating cash flow and rising borrowings, an unexplained, possibly inorganic second growth signal"}
 unverifiable:
   - {claim: "Raw-material cost trend / pass-through behind 326 bps FY25-26 gross margin decline", peers_checked: ["RAJOOENG"]}
   - {claim: "HBL Engineering EV-OEM customer credit quality, distressed 2W/3W OEM exposure", peers_checked: ["HBLENGINE"]}
@@ -503,23 +619,23 @@ unverifiable:
 peer_coverage_map:
   - {peer: "RAJOOENG", quarter: "Q4 FY23 (16-May-2023)", usage: "SUBSTANTIVE", contribution: "Baseline FY23 currency/export shock, initial capex and margin data, Rajoo Bausano JV turnover (PDF p.16, corrected from run 2's p.17)"}
   - {peer: "RAJOOENG", quarter: "Q2 FY24 (6-Nov-2023)", usage: "SUBSTANTIVE", contribution: "Global CAGR citation, export-mix-driven EBITDA jump, capacity expansion, RM commentary, and the three new Claim 10 working-capital quotes (PDF p.10, p.11, p.12)"}
-  - {peer: "RAJOOENG", quarter: "Q4 FY24 (18-Apr-2024)", usage: "SUBSTANTIVE", contribution: "Second CAGR citation, narrow-category domestic market shares, domestic market sizing (Rs1,500 Cr, PDF p.11) used in Claim 3 arithmetic, named domestic competitors (PDF p.9, corrected from run 2's p.8), RM stability"}
-  - {peer: "RAJOOENG", quarter: "Q2 FY25 (22-Oct-2024)", usage: "SUBSTANTIVE", contribution: "Newest data point: 73-74% export share (PDF p.12, corrected), continued capacity expansion, FY26 capacity-fill guidance, PVC/blown-film category shares and Rs2,000 Cr total market-size figure used in Claim 3; anchors the staleness caveat"}
+  - {peer: "RAJOOENG", quarter: "Q4 FY24 (18-Apr-2024)", usage: "SUBSTANTIVE", contribution: "Second CAGR citation, narrow-category domestic market shares, domestic market sizing (Rs1,500 Cr, PDF p.11) used in Claim 3 arithmetic, named domestic competitors (PDF p.9, corrected from run 2's p.8), RM stability, facility-inauguration quote (PDF p.3, corrected 2026-09-09 from p.2-3), Red Sea quote (PDF p.7, corrected 2026-09-09 from p.6-7)"}
+  - {peer: "RAJOOENG", quarter: "Q2 FY25 (22-Oct-2024)", usage: "SUBSTANTIVE", contribution: "Newest data point: 73% H1 export share (PDF p.12) and a separate 74% current-quarter figure (PDF p.10), split corrected 2026-09-09; continued capacity expansion, FY26 capacity-fill guidance, PVC/blown-film category shares and Rs2,000 Cr total market-size figure used in Claim 3; anchors the staleness caveat"}
   - {peer: "HBLENGINE", quarter: "FY25 AGM (25-Sep-2025)", usage: "SUBSTANTIVE", contribution: "Segment mismatch for Geon confirmed; supplies structural risk points; new this rerun, the ~Rs200 Cr investment / profit-from-year-one capital-scale contrast for Claims 7-8, and the corrected p.17 quote ('import sales', not 'import cells')"}
-  - {peer: "WINDMACHIN", quarter: "FY26 + Q1 FY27 (screener only, no transcript)", usage: "CITED-ONLY", contribution: "No transcript; screener data used with explicit caveats against Claims 1 and 6 only (inapplicable to Claim 5); FY26 sales +72.9%, unexplained equity/Investments spike suggesting a possibly inorganic growth event; independently named by RAJOOENG's MD as a tracked domestic competitor, making this gap material"}
+  - {peer: "WINDMACHIN", quarter: "FY26 + Q1 FY27 (screener only, no transcript)", usage: "CITED-ONLY", contribution: "No transcript; screener data used with explicit caveats against Claims 1 and 6 only (inapplicable to Claim 5); FY26 sales +72.9%, unexplained equity/Investments spike suggesting a possibly inorganic growth event, plus negative operating cash flow and rising borrowings (added 2026-09-09), both qualifying the sales-growth signal; independently named by RAJOOENG's MD as a tracked domestic competitor, making this gap material"}
 industry_cross_read:
-  demand: "RAJOOENG shows accelerating revenue and order book through Oct-2024; WINDMACHIN screener shows FY26 sales +72.9% (cause undisclosed); both the opposite of an industry bracing for JJM/infra-driven weakness, though neither directly confirms or denies KABRAEXTRU's own FY26 figures"
+  demand: "RAJOOENG shows accelerating revenue and order book through Oct-2024; WINDMACHIN screener shows FY26 sales +72.9% (cause undisclosed) alongside negative operating cash flow and rising borrowings, added 2026-09-09; both the opposite of an industry bracing for JJM/infra-driven weakness, though neither directly confirms or denies KABRAEXTRU's own FY26 figures"
   pricing_inputs: "RAJOOENG reports raw material broadly stable through Oct-2024, with margin expansion driven by capacity utilisation and export mix rather than commodity relief; WINDMACHIN's screener data has no pricing/input-cost commentary"
-  capex_cycle: "RAJOOENG is a continuous capacity expander in all four calls; WINDMACHIN shows a large FY25 equity/Investments spike against a flat-to-falling Net Block, a differently-shaped (possibly inorganic) growth signal; together these are two growing peers of different character against KABRAEXTRU's near-halved FY26 capex, still short of a clean lone-expander-vs-race classification"
+  capex_cycle: "RAJOOENG is a continuous capacity expander in all four calls; WINDMACHIN shows a large FY25 equity/Investments spike against a flat-to-falling Net Block, reinforced by negative operating cash flow and rising borrowings (added 2026-09-09), a differently-shaped (possibly inorganic) growth signal; together these are two growing peers of different character against KABRAEXTRU's near-halved FY26 capex, still short of a clean lone-expander-vs-race classification"
 peer_mentions_of_company:
   - "RAJOOENG, Q4 FY24 (18-Apr-2024), PDF p.9 (corrected from run 2's p.8): MD named two domestic competitors as 'Windsor machines and carbon extrusion' when asked directly who Rajoo's main peers are. 'Carbon extrusion' does not match any known Indian extrusion-machinery maker and is very likely a mistranscription of 'Kabra Extrusion.' Treated as a tentative, unconfirmed inference, not a certain company mention. The same answer's naming of Windsor Machines corroborates that WINDMACHIN's inclusion in this rerun's Claim 1/6 analysis is material, not a formality."
 risks_peers_raise:
-  - "Red Sea shipping crisis: import lead-time and working-capital distortion (RAJOOENG, Q4 FY24, 18-Apr-2024, PDF p.6-7)"
+  - "Red Sea shipping crisis: import lead-time and working-capital distortion (RAJOOENG, Q4 FY24, 18-Apr-2024, PDF p.7, corrected 2026-09-09 from p.6-7)"
   - "Shortening machine replacement cycle (20yr to 10yr) creating a refurbishment/replacement demand stream (RAJOOENG, Q4 FY24, 18-Apr-2024, PDF p.8)"
   - "Late-dispatch/space-occupation risk in large custom machine manufacturing, costing 2-3% margin (RAJOOENG, Q4 FY23, 16-May-2023, PDF p.8-9)"
   - "Conglomerate/portfolio discount risk for multi-segment companies (HBLENGINE AGM, 25-Sep-2025, PDF p.5), directly relevant to KABRAEXTRU's own extrusion-plus-battery structure but never addressed in KABRAEXTRU's own disclosures"
   - "Structural unprofitability of lithium-ion cell production outside China, and cautionary large-scale domestic failures (Reliance, Exide, Amara Raja, Northvolt) (HBLENGINE AGM, 25-Sep-2025, PDF p.4)"
   - "Explicit order-linked working-capital discipline (35-40% advance, payment before dispatch in 95% of cases) as a named peer policy that KABRAEXTRU's own disclosures never describe for itself (RAJOOENG, Q2 FY24, 6-Nov-2023, PDF p.10 and p.12)"
 net_narrative_effect: "undercuts"
-analyst_note: "This rerun executes fix-list items 5, 11, 12 and 14 from runs/kabraextru-2026-09-05/outputs/final/run1/gate-recommendation.md in full, plus the Claims 7-8 HBL investment-scale contrast noted in that same document's contradicted-claims list (item 8's underlying figures). Every CONTRADICTED and PARTIALLY CONTRADICTED verdict carries its specific caveat inline in both Part 1 and the Summary Table, not only in the top-of-report staleness notice. Claim 3's upgrade to PARTIALLY CONTRADICTED and Claim 10's addition are the two most consequential changes: both rest on peer evidence that is NOT capped by the 18-month staleness gap that limits Claims 1, 5 and 6 (Claim 3 because the market-sizing and the ~40% claim are roughly contemporaneous vintages; Claim 10 because it tests a structural business practice, not a period performance figure). WINDMACHIN remains screener-only; treat its FY26 growth and its FY25 equity/Investments spike as directional context, never as a confirmed, anchored fact, since no filing note or management commentary exists in this corpus to explain it. The 'carbon extrusion' finding remains flagged at moderate confidence only; synthesis should not treat it as a confirmed peer mention of KABRAEXTRU without independent corroboration. Two additional page-offset corrections beyond the seven named (Rs9.33 Cr FY24 capex figure to PDF p.6; Rajoo Bausano JV turnover to PDF p.16) were found and fixed during the required full re-verification against markers."
+analyst_note: "This rerun executes fix-list items 5, 11, 12 and 14 from runs/kabraextru-2026-09-05/outputs/final/run1/gate-recommendation.md in full, plus the Claims 7-8 HBL investment-scale contrast noted in that same document's contradicted-claims list. Every CONTRADICTED and PARTIALLY CONTRADICTED verdict carries its specific caveat inline in both Part 1 and the Summary Table, not only in the top-of-report staleness notice. Claim 3's upgrade to PARTIALLY CONTRADICTED and Claim 10's addition are the two most consequential changes: both rest on peer evidence that is NOT capped by the 18-month staleness gap that limits Claims 1, 5 and 6. WINDMACHIN remains screener-only; treat its FY26 growth as directional context, never as a confirmed, anchored fact. The 'carbon extrusion' finding remains flagged at moderate confidence only. SAME-DAY DISCIPLINE CORRECTION (2026-09-09): Claim 10 relabelled PARTIALLY VERIFIED, not VERIFIED -- all three anchors are single-peer (RAJOOENG); no claim in this report is now labelled VERIFIED on single-peer evidence. Three page anchors fixed (Claim 5's 74%/73% figures split to p.10/p.12; Claim 6's inauguration quote to p.3; Part 2E(i)'s Red Sea quote to p.7). Two Sources-Re-Read page counts aligned to marker counts (12pp, 16pp). WINDMACHIN's negative operating cash flow and rising borrowings added as further qualifying context on Claims 1 and 6. See the VERDICT-DISCIPLINE CORRECTION section for the full BEFORE/AFTER record."
 ```

@@ -9,3 +9,6 @@
 | 2 | notes triple-pass, pass 2 | claude-sonnet-5 | default | n/a | n/a | 171774 | 7m56s | 2 |
 | 2 | notes triple-pass, pass 3 (consolidated) | claude-sonnet-5 | default | n/a | n/a | 81282 | 3m58s | 3 |
 | 3 | AR backward deep dive (8 phases) | claude-sonnet-5 | default | n/a | n/a | 266678 | 15m55s | 1 |
+| 4 | business model decoder | claude-sonnet-5 | default | n/a | n/a | 141064 | 8m14s | 1 |
+| 5 | management/guidance analysis (no-concall mode) | claude-sonnet-5 | default | n/a | n/a | 189078 | 7m30s | 1 |
+| 8 | promoter background check (web) | claude-sonnet-5 | default | n/a | n/a | 200094 | 12m51s | 1 |

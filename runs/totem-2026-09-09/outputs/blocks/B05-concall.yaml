@@ -1,0 +1,87 @@
+stage: B05-concall
+company: "TOTEM"
+run_date: "2026-09-09"
+model: claude-sonnet-5
+status: complete
+no_concall_mode: true
+input_gaps:
+  - "concalls/ EMPTY BY DECLARATION: no earnings calls exist for TOTEM (NO-CONCALL MODE)"
+  - "presentation/ EMPTY: no investor presentation ever published"
+  - "rating/ EMPTY, research/ EMPTY: no analyst coverage found in corpus"
+  - "peer-concalls PARTIAL: KENNAMETAL INDIA 4 calls (newest Mar-2024, 2.5yr stale), WENDT INDIA 1 call (Q1 FY26), BIRLAPREC 0"
+  - "Q1 FY27 results filing is a scanned image, read from rendered PNGs, not text"
+  - "No Q&A record exists anywhere in the corpus for TOTEM (Sections 2E and 3C structurally N/A)"
+flags:
+  - "relentless-focus-on-inventories claim (FY26 AR) contradicted by same-year 76.7% inventory build; identical claim was TRUE in FY25 AR (inventory -17.0%)"
+  - "94.4% promoter pledge never named across three annual reports"
+  - "zero qualitative commentary on any quarterly results filing (Q3 FY26, FY26 audited, Q1 FY27)"
+  - "MD's Message (new FY26 section) contradicted by same document's MD&A on exports within pages"
+  - "no forward-quantified guidance (revenue/margin/capex/return target) exists in any of 3 ARs"
+quarters_analysed: []
+quarters_analysed_note: >
+  NO-CONCALL MODE: no quarterly transcripts exist. Analysis built from three annual
+  reports (FY24, FY25, FY26) and four results filings (Q3 FY26, FY26 audited,
+  Q1 FY27, plus the H1 FY26 board outcome).
+triggers:
+  - {priority: 1, name: "Drills segment capacity ramp (CNC +~350,000 units)", type: "VOLUME", timeframe: "near, already live", conviction: "H", confirm_signal: "FY27 AR confirms continued Drills growth; Q2-Q4 FY27 margin holds above ~20%", kill_signal: "Q2/Q3 FY27 margin reverts to FY26's 16-18% band"}
+  - {priority: 2, name: "Taps segment substantial growth (two AR cycles unquantified)", type: "VOLUME", timeframe: "medium, over time", conviction: "M", confirm_signal: "FY27 AR finally attaches a number to the Taps claim, or a segment split appears", kill_signal: "third consecutive cycle of the same unquantified claim"}
+  - {priority: 3, name: "Q1 FY27 margin jump (16.1%->22.9%) persistence", type: "MARGIN", timeframe: "near, live now", conviction: "M", confirm_signal: "sustained >20% operating margin through FY27 (note Q1 FY26 was itself the 10-quarter low)", kill_signal: "margin falls back to mid-teens in Q2/Q3/Q4 FY27"}
+  - {priority: 4, name: "Export recovery (Far East, GCC) vs US/Mexico tariff drag", type: "VOLUME", timeframe: "near-medium", conviction: "L-M", confirm_signal: "forex earnings grow as % of FY27 revenue vs FY26's 12.7%", kill_signal: "tariff drag persists or widens"}
+  - {priority: 5, name: "Digital transformation (SAP S/4HANA)", type: "COST", timeframe: "medium, untested", conviction: "L", confirm_signal: "any quantified operational metric appears in FY27 AR", kill_signal: "claim repeats with zero metric a second year"}
+guidance:
+  - {item: "Austempering furnace capacity augmentation", number: "+90 MT", timeframe: "delivered FY26", stated_in: "FY26 AR Annexure IV, PDF p.41"}
+  - {item: "HSS drill CNC capacity addition", number: "+~350,000 units", timeframe: "delivered FY26", stated_in: "FY26 AR Annexure IV, PDF p.41"}
+  - {item: "Interim dividend", number: "Rs 5/share, Rs 25.80cr, 89.7% of PAT", timeframe: "paid Jun-2025", stated_in: "FY26 AR Board's Report PDF p.29"}
+  - {item: "Labour Codes one-time past-service cost", number: "Rs 5.90cr", timeframe: "recognised FY26", stated_in: "FY26 audited results filing / FY26 AR Note 39"}
+  - {item: "Forward revenue/margin/capex/return target (any period)", number: "NOT FOUND IN DOCUMENT", timeframe: "N/A", stated_in: "searched all 3 ARs and all 4 results filings"}
+promise_delivery:
+  delivered: 1
+  partial: 2
+  missed: 3
+  rows:
+    - {promised_in: "FY25 AR", promise: "high rate of growth in Drills after capacity investment", outcome: "DELIVERED", explanation: "confirmed FY26 AR + corroborated by quarterly sales acceleration"}
+    - {promised_in: "FY25 AR", promise: "export business improving trend", outcome: "MISSED / REVERSED", explanation: "external-blame, US/Mexico tariffs, independently plausible"}
+    - {promised_in: "FY24 AR + FY25 AR", promise: "relentless focus on receivables, inventories, strict cost control", outcome: "MISSED", explanation: "true in FY25 (inventory -17.0%), unchanged claim repeated FY26 AR the exact year inventory grew +76.7%, no acknowledgement"}
+    - {promised_in: "FY25 AR", promise: "Taps portfolio will grow substantially over time", outcome: "PARTIAL / PENDING", explanation: "repeated near-verbatim in FY26 AR, still zero number attached either cycle"}
+    - {promised_in: "FY26 AR MD's Message", promise: "channel expansion and international outreach position us well for growth", outcome: "MISSED", explanation: "same document's MD&A states export market not encouraging, tariff-driven drop, pages later"}
+    - {promised_in: "FY24 AR", promise: "new technology operational in FY25 broadens Carbide Taps portfolio", outcome: "PARTIAL", explanation: "FY25 AR Annexure IV confirms Tap XCells/CNC installed, no revenue figure attached"}
+promise_delivery_score: "1 delivered, 2 partial, 3 missed out of 6 tested claims"
+excuse_pattern: "balanced"
+excuse_pattern_note: >
+  Honest admission on the growth miss and on attrition (unforced, no external blame);
+  external blame on export tariffs (independently plausible); pure SILENCE, not even an
+  excuse, on the two highest-value items: the promoter pledge and the inventory-claim
+  contradiction.
+repeated_evasions: []
+repeated_evasions_note: >
+  NO REPEATED UNANSWERED QUESTIONS FOUND. No Q&A record exists for this company: no
+  concalls and no investor presentation, ever. Sections 2E and 3C are structurally not
+  applicable, which is different from a search that came up empty.
+credibility_grade: "C"
+credibility_basis: "Drills capacity guidance (FY25 AR) was made and demonstrably delivered (FY26 AR, corroborated by recomputed quarterly margins), but the identical 'relentless focus on inventories' claim was true in FY25 and left unchanged into FY26 the exact year inventory grew 76.7%, and the 94.4% promoter pledge is never named across three full annual-report cycles; genuine delivery evidence sits beside one directly falsified operational claim and one persistent material non-disclosure, capped further by zero qualitative commentary on any quarterly filing -- C is the evidenced grade under the NO-CONCALL rule, not a default."
+peer_questions:
+  - {question: "Is cutting-tool demand from automotive/aerospace/defence/railway customers in India accelerating through FY25-FY26, or is TOTEM's 7.8-7.9% FY26 growth company-specific?", why: "TOTEM's growth narrative rests entirely on its own capacity additions with no industry benchmark cited anywhere", check_peers: ["KENNAMETAL INDIA", "WENDT INDIA"]}
+  - {question: "What is the HSS-versus-carbide demand and pricing mix trend industry-wide?", why: "TOTEM spans both HSS and carbide with zero segment split disclosed; a peer mix-shift read reframes which TOTEM growth story is riding a tailwind", check_peers: ["KENNAMETAL INDIA", "WENDT INDIA"]}
+  - {question: "How are cutting-tool distributors/channel partners behaving on inventory through 2025-2026, stocking up or destocking?", why: "TOTEM's own inventory built 76.7% in FY26 with zero management explanation (LBF-2); peer channel commentary is the closest external read available", check_peers: ["KENNAMETAL INDIA", "WENDT INDIA"]}
+  - {question: "What do peers say about US/Mexico tariff impact on Indian cutting-tool exports, widening or stabilising into 2026?", why: "TOTEM blames a specific dated external cause for its FY26 export reversal; peer corroboration tests whether this is industry-wide or company-specific", check_peers: ["KENNAMETAL INDIA", "WENDT INDIA"]}
+  - {question: "What capex-to-margin payback timeline do peers describe for their own capacity expansions?", why: "TOTEM's Drills capacity-to-margin claim has no stated payback timeline anywhere in three annual reports", check_peers: ["KENNAMETAL INDIA", "WENDT INDIA"]}
+  - {question: "How much of steel/carbide raw-material cost inflation could peers pass through to customers in 2023-2025?", why: "TOTEM's own pass-through language weakened from 'successfully passed on' (FY24 AR) to 'trying to pass on as much as possible' (FY26 AR) while materials cost/revenue rose 517bp", check_peers: ["KENNAMETAL INDIA"]}
+red_flags:
+  - {flag: "relentless-focus-on-inventories claim contradicted by same-year 76.7% inventory build, claim previously true", severity: "HIGH"}
+  - {flag: "94.4% promoter pledge never named across three annual reports", severity: "HIGH"}
+  - {flag: "zero qualitative commentary on any quarterly results filing (Q3 FY26, FY26 audited, Q1 FY27)", severity: "MEDIUM-HIGH"}
+  - {flag: "MD's Message (new FY26 section) contradicted by same document's MD&A on exports", severity: "MEDIUM"}
+  - {flag: "zero forward-quantified guidance across all 3 ARs and 4 results filings", severity: "MEDIUM"}
+  - {flag: "MD remuneration +74.7% vs stated average 7.5% KMP increase, unreconciled", severity: "MEDIUM"}
+  - {flag: "two HR leadership departures inside ~8 months during a self-admitted attrition-concern year", severity: "MEDIUM"}
+  - {flag: "text-recycling: FY24/FY25 AR reuse near-identical Drills paragraph describing same prior event", severity: "LOW-MEDIUM"}
+  - {flag: "structural: no earnings calls, no investor presentation, four fiscal years listed", severity: "MEDIUM, STRUCTURAL"}
+dropped_triggers: []
+dropped_triggers_note: >
+  No trigger was quietly abandoned; every FY24 AR trigger reappears in some form by the
+  FY26 AR. The abandonment pattern in this corpus runs on operational CLAIMS, not on
+  growth triggers. See red_flags.
+timeline_slippages:
+  - "Taps portfolio 'will grow substantially over time' repeated near-verbatim across FY25 AR and FY26 AR with no number attached either cycle -- not a slipping deadline, since no deadline was ever set"
+  - "export 'improving trend' (FY25 AR) reversed to 'not been very encouraging' one cycle later (FY26 AR)"
+analyst_note: "The single most load-bearing finding this stage adds beyond upstream stages: the FY26 AR's 'relentless focus on receivables, inventories, strict cost control' sentence is not boilerplate management could not have known was wrong -- the identical sentence appeared in the FY25 AR describing a year inventory actually fell 17.0% (Rs 38.47cr to Rs 31.93cr, Note 8). Carried unchanged into FY26, the same sentence now sits beside a 76.7% build. That is a claim proven true once, then falsified once, by the company's own numbers, with no edit and no acknowledgement in between. Separately: Q1 FY27's operating margin swing (16.1% to 22.9%, own recomputation from the filed P&L, ties exactly to LBF-1) is real, but Q1 FY26 was itself the low point of the entire ten-quarter series (range otherwise 18-26%), so part of the 'jump' is base effect, not pure new structural improvement -- worth flagging to Stage 11 before it prices the Q1 FY27 number as a clean step-change."

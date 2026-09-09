@@ -1,0 +1,84 @@
+stage: B05-concall
+company: "KABRAEXTRU"
+run_date: "2026-09-05"
+model: claude-sonnet-5
+status: complete
+no_concall_mode: true
+input_gaps:
+  - "results (HIGH): no results PDFs in corpus; FY26 audited AR used as delivery record"
+  - "rating (HIGH): CRISIL two-step downgrade disclosed AR FY26 p.51, only generic reason given, no rationale document in corpus"
+  - "announcements: no Reg 30 record; ~Rs150 Cr order and web-reported 2026 preferential issue uncorroborated by filings"
+  - "shareholding: not in corpus"
+  - "research: not in corpus"
+  - "prospectus: not expected"
+  - "presentation-stale: only investor presentation in corpus is Dec-2023 deck, 2.5 years stale"
+  - "peer-concall-windsor: Windsor Machines has no transcript, excluded from peer verification"
+  - "peer-concall-mislabel-stale: carried forward per orchestrator, not independently investigated"
+  - "screener-csv-defect: carried forward per orchestrator; no defect observed in rows used here"
+  - "sector_cap_row: carried forward per orchestrator, not applicable to this stage"
+flags:
+  - "FLAG-RATING-DOWNGRADE-UNDISCUSSED"
+  - "FLAG-RD-SPEND-CUT-VS-ACCELERATED-CLAIM"
+  - "FLAG-MARKET-SHARE-CLAIM-DROPPED"
+  - "FLAG-BATTERY-SEGMENT-NEGATIVE-LEVERAGE-UNRECONCILED"
+  - "FLAG-STALE-DISCLOSURE-HEVPL-NCLT"
+  - "FLAG-EBITDA-FIGURE-INCONSISTENCY-SAME-DOCUMENT"
+  - "FLAG-KMP-CHURN-UNDISCLOSED-NARRATIVELY"
+  - "FLAG-NO-ORDER-BOOK-TOTAL-DISCLOSED"
+quarters_analysed: ["AR FY25 (year ended 31-Mar-2025)", "AR FY26 (year ended 31-Mar-2026)"]
+triggers:
+  - {priority: 1, name: "Rs 150 Cr Geon order executes into FY27 revenue", type: "revenue", timeframe: "near (FY27)", conviction: "M", confirm_signal: "FY27 battery segment revenue step-up correlated with order; counterparty/Reg 30 corroboration surfaces", kill_signal: "FY27 battery revenue flat/down or order deferred/uncorroborated"}
+  - {priority: 2, name: "Battery segment reaches profitability", type: "margin", timeframe: "medium, undated", conviction: "L", confirm_signal: "Segment loss narrows materially or turns positive in FY27/FY28 AR", kill_signal: "Segment loss stays above ~Rs40 Cr or widens further; Q1 FY27 screener data already shows continued net loss"}
+  - {priority: 3, name: "Geon facility scales toward Rs1,500+ Cr revenue ceiling", type: "revenue", timeframe: "long, undated", conviction: "L", confirm_signal: "Company discloses utilisation rate and stepped revenue growth path", kill_signal: "No utilisation disclosure given; battery revenue stays near Rs136 Cr for multiple years"}
+  - {priority: 4, name: "Extrusion recovery on JJM 2.0 / state infra capex revival", type: "revenue", timeframe: "near-medium", conviction: "M", confirm_signal: "Extrusion segment revenue growth resumes in FY27 AR", kill_signal: "JJM 2.0 disbursement delays persist, as already flagged by the company for FY26"}
+  - {priority: 5, name: "Geon diversification into BESS/telecom/solar/inverter D2C", type: "revenue", timeframe: "medium-long", conviction: "L", confirm_signal: "Future AR discloses quantified non-mobility Geon revenue share growing", kill_signal: "No quantified non-mobility revenue disclosed after two further AR cycles"}
+  - {priority: 6, name: "Credit rating stabilises post two-step downgrade", type: "cost", timeframe: "near", conviction: "L", confirm_signal: "No further CRISIL downgrade at next review", kill_signal: "Further downgrade or return to Negative outlook"}
+guidance:
+  - {item: "Geon new-segment entry (E-LCV, E-4W)", number: "not quantified", timeframe: "upcoming fiscal year (FY26)", stated_in: "AR FY25 p.36/38"}
+  - {item: "Geon secured order", number: "~Rs 150 Crore", timeframe: "execution in upcoming year (FY27)", stated_in: "AR FY26 p.37"}
+  - {item: "Geon facility revenue ceiling at optimal utilisation", number: "Rs 1,500+ Crore", timeframe: "undated / long-term", stated_in: "AR FY26 p.37"}
+  - {item: "Capital commitment (contracted capex not yet executed)", number: "Rs 31.77 Cr (Rs 3,177.38 lakh)", timeframe: "near-term (next FY)", stated_in: "AR FY26 Note 41(b), p.110"}
+  - {item: "FY26 dividend", number: "Nil", timeframe: "FY26", stated_in: "AR FY26 Director's Report p.18"}
+promise_delivery:
+  delivered: 0
+  partial: 2
+  missed: 3
+  rows:
+    - {promised_in: "AR FY25 p.36/38", promise: "Geon to enter E-Low Commercial Vehicles and E-4 Wheelers in FY26", outcome: "Not confirmed by name in AR FY26; different new segments (RESS, inverter D2C) substituted instead", explanation: "None given"}
+    - {promised_in: "AR FY25 p.37", promise: "~40% extrusion market share maintained", outcome: "Claim dropped entirely from AR FY26; extrusion segment revenue fell 13.2% and segment result fell 27.6%", explanation: "None given"}
+    - {promised_in: "AR FY25 p.37 outlook", promise: "Well-positioned to capitalize on anticipated growth across both divisions", outcome: "Revenue -5.45%, EBITDA -74.88%, PAT swung to a loss, dividend cut to Nil", explanation: "External causes cited for extrusion only (JJM disbursement delays, state infra spending delays, export geopolitical/currency weakness); no explanation for battery segment"}
+    - {promised_in: "AR FY25 p.38", promise: "Geon to become a key player in BESS", outcome: "RESS/BESS/inverter D2C products launched (real progress), but battery segment loss widened 69.8% despite 7.2% revenue growth", explanation: "None given for the loss widening"}
+    - {promised_in: "AR FY25 p.30-31, p.36-37", promise: "Continued R&D investment across both divisions", outcome: "R&D spend cut 67.1% (Extrusion) and 78.6% (Geon), while AR FY26 narrative claims Geon 'accelerated its R&D'", explanation: "None given; contradiction not addressed"}
+excuse_pattern: "external-blame-heavy"
+repeated_evasions: []
+credibility_grade: "D"
+credibility_basis: "0/5 testable AR-guidance-vs-delivery promises fully delivered (2 partial, 3 missed), including a direct contradiction (R&D spend cut 67-79% against a claimed R&D acceleration), a silently dropped headline market-share claim, an undiscussed two-step credit downgrade, and a stale unrefreshed material receivable disclosure; base-framework 4C rubric supports D over the degraded-mode default of C."
+peer_questions:
+  - {question: "Does Rajoo Engineers' order book/demand commentary for FY25-26 support or contradict KABRAEXTRU's external-blame framing (JJM disbursement delays, state infra spending delays) for its 13.2% extrusion segment revenue decline?", why: "Tests whether the decline is industry-wide or KABRAEXTRU-specific share loss", check_peers: ["RAJOOENG"]}
+  - {question: "What CAGR/market-size does Rajoo cite for the extrusion machinery industry across its FY24-25 calls?", why: "KABRAEXTRU's own cited CAGR nearly doubled between AR FY25 (3.9%) and AR FY26 (6.7%) with no source reconciliation", check_peers: ["RAJOOENG"]}
+  - {question: "Does Rajoo's market-positioning commentary corroborate or dispute KABRAEXTRU's claimed ~40% extrusion machinery market share, dropped without explanation from AR FY26?", why: "Tests whether the original leadership claim was ever accurate", check_peers: ["RAJOOENG"]}
+  - {question: "What raw-material cost trend and pass-through experience does Rajoo report for FY25-26?", why: "KABRAEXTRU's AR MD&A never discusses raw-material trends despite gross margin falling 326 bps FY25-FY26", check_peers: ["RAJOOENG"]}
+  - {question: "Does Rajoo report export-market weakness from geopolitical/currency factors in the same FY26 window KABRAEXTRU cites?", why: "Tests whether KABRAEXTRU's 11.6% export revenue decline is sector-wide or customer-specific", check_peers: ["RAJOOENG"]}
+  - {question: "What capex-cycle and capacity-addition signal does Rajoo describe for FY25-26 new order intake?", why: "KABRAEXTRU's own capex nearly halved (Rs61.81 Cr to Rs29.51 Cr) even as its AR reiterates a long-term extrusion growth trajectory", check_peers: ["RAJOOENG"]}
+  - {question: "What EV-OEM customer credit quality does HBL Engineering report for its battery vertical, particularly exposure to distressed two/three-wheeler OEMs?", why: "KABRAEXTRU carries a stale, unrefreshed Rs30.39 Cr Hero Electric (HEVPL) receivable tied to an OEM now under NCLT insolvency", check_peers: ["HBLENGINE"]}
+  - {question: "What capacity-utilisation and margin trend does HBL Engineering report in its own lithium-ion battery pack business?", why: "Tests whether KABRAEXTRU's negative operating leverage in Geon (loss +69.8% on +7.2% revenue) is structural/industry-wide or company-specific execution", check_peers: ["HBLENGINE"]}
+  - {question: "What India EV battery pack market-size figure, if any, does HBL Engineering cite?", why: "KABRAEXTRU's own two ARs cite India EV battery pack market sizes roughly 100x apart", check_peers: ["HBLENGINE"]}
+red_flags:
+  - "HIGH: CRISIL two-step downgrade (A+/Negative -> A/Negative -> A-/Stable; A1 -> A2+) undiscussed in chairman's letter or MD&A, only in Corporate Governance table with generic reason (AR FY26 p.51)"
+  - "HIGH: R&D spend cut 67-79% across both divisions while AR FY26 narrative claims Geon 'accelerated its R&D' (AR FY26 p.28-29; AR FY25 p.30-31)"
+  - "MEDIUM-HIGH: ~40% extrusion market share claim silently dropped between AR FY25 and AR FY26, alongside a 13.2% segment revenue decline"
+  - "HIGH: Battery segment loss widened 69.8% (Rs43.35 Cr FY26 vs Rs25.53 Cr FY25) despite 7.2% revenue growth, unreconciled against a same-document 'moving towards profitability' claim"
+  - "MEDIUM: HEVPL/NCLT Rs30.39 Cr receivable disclosure repeated verbatim, unrefreshed, in AR FY26 (still dated 'as at March 31, 2025')"
+  - "MEDIUM: Same-document EBITDA figure inconsistency in AR FY26 (chairman's letter Rs10 Cr vs MD&A table Rs13.05 Cr)"
+  - "MEDIUM: Senior-management churn (COO-Geon in/out within 6.5 months, CFO resigned post FY26 close, Extrusion CEO turned over at FY26 start) disclosed only in mandatory tables, never narratively"
+  - "MEDIUM: No order-book total disclosed; single ~Rs150 Cr order lacks counterparty, terms, or Reg 30 corroboration"
+  - "LOW-MEDIUM: Extrusion machinery and India EV battery pack market-size/CAGR citations swing materially year to year with no source reconciliation"
+dropped_triggers:
+  - "~40% extrusion market share claim (AR FY25 p.37) - absent from AR FY26 entirely, no explanation"
+  - "ARAI AIS-156 certification and IATF-approved facility claims (Dec-2023 deck p.16, p.22) - never repeated in AR FY25 or AR FY26"
+  - "~18% li-ion battery segment market share claim (Dec-2023 deck p.12, p.21) - never repeated or updated in AR FY25 or AR FY26"
+timeline_slippages:
+  - "E-3 Wheeler entry promised 'Q4FY24' (Dec-2023 deck p.16); AR FY25 states entry only 'in FY25', roughly a year later than the deck's timeline"
+  - "E-Low Commercial Vehicle and E-4 Wheeler entry promised 'in the upcoming fiscal year' (FY26) per AR FY25 p.36/38; AR FY26 does not confirm entry into either segment by name, replaced by undated 'medium to long term' framing"
+  - "Geon path to profitability: framed as 'moving towards profitability as volumes scale up' in AR FY26 p.38 with no date; battery segment loss instead widened, and Q1 FY27 screener data shows the company-wide net loss has not yet reversed"
+analyst_note: "Interpretive flag: the no-concall degraded-mode rule states credibility_grade 'DEFAULTS TO C... may rise to B only on delivery evidence... never rises to A.' That language addresses the upside ceiling given missing analyst-Q&A verification. It does not explicitly address downside. Given 0/5 promises fully delivered, a direct R&D-spend contradiction, and an undiscussed rating downgrade, this report grades D per the base-framework 4C instruction to grade on delivery evidence. If the orchestrator reads the degraded-mode rule as also flooring the grade at C regardless of evidence, override to C and treat the D-level evidence bundle above as the basis for capping at PROCEED WITH CAVEATS or worse via other gates. B03's characterization that 'moving towards profitability' appeared 'in AR FY25 and again in AR FY26' could not be corroborated: a full-text search of AR FY25 for 'profitab*' returns zero matches; the claim is confirmed only in AR FY26. B08's claim of a Company Secretary exit among FY26 KMP changes is also not corroborated by the AR FY26 senior-management table, which records Ms. Shilpa Rathi as unchanged."

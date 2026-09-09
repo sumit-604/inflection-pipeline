@@ -56,3 +56,12 @@ interactive commands.
   outputs/reports/06-peers-run1-aborted.md for the record.
 - Stages 8 and 9 status partial: WebSearch worked, WebFetch to sebi.gov.in,
   crisil.com, bseindia.com and research-report hosts was egress-blocked.
+
+## REWORK COVERAGE RERUN (ordered 2026-09-09)
+
+Run-1 reports and blocks preserved under *-run1.md, outputs/final/run1/ and
+outputs/blocks/run1/. Rows below carry run# 2 (or 3 for stage 6, whose run 1
+aborted). Same ledger row shape.
+
+| # | stage | model | effort | in_tok | out_tok | total_tok | wall | run# |
+|---|-------|-------|--------|--------|---------|-----------|------|------|

@@ -1,0 +1,24 @@
+stage: B12d
+company: "TOTEM"
+run_date: "2026-09-09"
+model: claude-sonnet-5
+status: complete
+verification_cycle: 1
+peers_audited: 3
+substantive_confirmed: 2
+substantive_unsupported: []
+unused_but_relevant:
+  - {peer: "KENNAMET", missed_item: "Jun-2023 quote on the imported-machine surge ('crazy high...broken the record of 2018-2019') as further corroboration of the India capex upcycle relevant to Q1; not cited, though the same directional point is made elsewhere with better Mar-2024 evidence", anchor: "Vijaykrishnan Venkatesan, KENNAMET Jun-2023, p.6-7"}
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "MAJOR", location: "06-peers.md Part 1 Q5", claimed: "Ninad Gadgil, WENDT AGM, p.19 -- '-18% machine tools, -34% PBT, decrease in profit is due to lower order...and amortisation of Wendt brand'", source_truth: "the quote is Bhagya Chandra Rao (Chairman), transcript p.6; the -18% and -34% figures are Ninad Gadgil, transcript p.10; p.19 contains unrelated shareholder Q&A", note: "genuine, well-evidenced claim; the citation conflates two speakers and cites a page containing neither statement, which would mislead a reader checking the anchor"}
+  - {severity: "MINOR", location: "06-peers.md Part 2E", claimed: "Bhagya Chandra Rao, WENDT AGM, p.2 -- CEO stepping down 15-Sep-2025", source_truth: "correct speaker and quote, actual page 7", note: "page off by 5; speaker and content correct"}
+  - {severity: "MINOR", location: "06-peers.md Part 1 Q5", claimed: "Vijaykrishnan, KENNAMET Mar-2024, p.5-6 -- 'sequential improvement in our PBT'", source_truth: "correct speaker and quote, actual page 7", note: "page off by 1-2; speaker and content correct"}
+  - {severity: "MINOR", location: "06-peers.md Part 5 (cross-peer hypothesis)", claimed: "no citation given for the Jun-2023 imported-machine-surge corroboration", source_truth: "material exists at KENNAMET Jun-2023 p.6-7 and was not used", note: "industry-context miss; the same directional point is already made with stronger Mar-2024 evidence, so no conclusion is affected"}
+critical_count: 0
+major_count: 1
+minor_count: 3
+acceptance_rate: 100
+peer_utilisation_pct: 100
+peer_utilisation_basis: "computed on peers PROVIDED with transcripts (KENNAMET, WENDT); BIRLAPREC was selected but no transcript exists in the corpus, which is an input gap, not an analytical failure"

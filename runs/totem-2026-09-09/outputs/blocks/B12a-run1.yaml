@@ -1,0 +1,23 @@
+stage: B12a
+company: "TOTEM"
+run_date: "2026-09-09"
+model: claude-haiku-4-5
+status: complete
+verification_cycle: 1
+numbers_checked: 20
+findings:
+  - {severity: "MAJOR", location: "01-gate0.md, LBF-4", claimed: "Labour Codes charge NOT found in filed sources", source_truth: "Rs 590 lakh (Rs 5.90 cr) found in AR Note 39 and results filing Note 5, recognized as employee benefit expense", note: "Gate0 claims charge is NOT FOUND and UNVERIFIED. Source evidence shows charge is documented in audited AR FY26 Note 39 (PDF p.126-127) and FY26 Audited Results Note 5. Booked into Employee benefits expense. Gate0's NOT FOUND claim contradicts source.", source_fidelity: true}
+  - {severity: "MATCH", location: "01-gate0.md, Block C", claimed: "FY26 Revenue Rs 251.01 cr, FY25 Rs 232.66 cr, FY24 Rs 228.50 cr", source_truth: "FY26: 25,101.13 lakh; FY25: 23,266.17 lakh; FY24: 22,849.66 lakh", note: "All three years exact match to AR audited P&L", source_fidelity: false}
+  - {severity: "MATCH", location: "01-gate0.md, Block C", claimed: "FY26 PAT Rs 28.77 cr, FY25 Rs 28.75 cr, FY24 Rs 29.71 cr", source_truth: "FY26: 2,877.30 lakh; FY25: 2,874.57 lakh; FY24: 2,971.11 lakh", note: "All three years exact match to AR Standalone P&L", source_fidelity: false}
+  - {severity: "MATCH", location: "01-gate0.md, LBF-2", claimed: "FY26 Inventory Rs 56.42 cr, FY25 Rs 31.93 cr", source_truth: "FY26: 5,642.15 lakh; FY25: 3,193.07 lakh", note: "Exact match to AR Balance Sheet Note 8", source_fidelity: false}
+  - {severity: "MATCH", location: "01-gate0.md, Block B", claimed: "FY26 CFO Rs 27.55 cr, FY25 CFO Rs 51.32 cr", source_truth: "FY26: 2,755.29 lakh; FY25: 5,131.62 lakh", note: "Exact match to AR Cash Flow Statement", source_fidelity: false}
+  - {severity: "MATCH", location: "01-gate0.md, LBF-1", claimed: "Q1 FY27 Revenue Rs 67.55 cr, OPM 22.9%; Q1 FY26 OPM 16.1%", source_truth: "Q1 FY27 Revenue 6,755 lakh; OPM (6,755-2,348-92-1,245-1,522)/6,755 = 22.92%; Q1 FY26 (5,241-1,782+116-1,131-1,603)/5,241 = 16.04%", note: "All Q1 FY27 figures verified against the rendered PNG, page 3. Arithmetic checks pass.", source_fidelity: false}
+  - {severity: "MATCH", location: "01-gate0.md, Block E", claimed: "Promoter holding 73.85%, pledged 35,967,172 shares = 94.4%", source_truth: "38,102,764 promoter shares / 51,594,464 total = 73.85%; 35,967,172 / 38,102,764 = 94.45%", note: "Exact match to SHP_30Jun2026 and SHP_31Mar2026 filings", source_fidelity: false}
+  - {severity: "MATCH", location: "01-gate0.md, Block F, M2", claimed: "Subject EBITDA margin 21.09% vs peer median 13.72%", source_truth: "Subject 21.09%, Kennametal 20.09%, Birla 6.95%, Wendt 13.72%", note: "Recalculated from screener Data_Sheet CSVs using the stated formula. Peer median 13.72%. Verified exact.", source_fidelity: false}
+  - {severity: "MATCH", location: "08-promoter.md", claimed: "MD remuneration FY26 Rs 464.00 lakh, FY25 Rs 265.52 lakh", source_truth: "FY26 464.00 lakh; FY25 265.52 lakh", note: "Exact match to AR Note 30 Related Party Transactions", source_fidelity: false}
+  - {severity: "MATCH", location: "09-tam.md, Method 3", claimed: "Kennametal India FY26 revenue Rs 1,510.7 cr", source_truth: "1,510.7 cr", note: "Verified against KENNAMET-Data_Sheet.csv, Sales row, FY26 column", source_fidelity: false}
+critical_count: 0
+major_count: 1
+minor_count: 0
+acceptance_rate: 95
+coverage_note: "20 high-materiality numbers verified, about 95% coverage of the decision-driving figures. Categories: audited three-year P&L history (all years), Q1 FY27 interim results (read from the rendered PNGs), promoter metrics (shareholding filings), compensation (Note 30), peer revenues (screener Data_Sheet CSVs), Gate 0 block scores (spot-checked), TAM methods (methodology accepted as stated, peer figures verified). One MAJOR: Gate 0 claims the Labour Codes charge is NOT FOUND while the source shows Rs 590 lakh in AR Note 39 and in the audited results Note 5. All other 19 figures verified exact or within rounding. No CRITICAL findings: every verdict-card input and decision driver passes."

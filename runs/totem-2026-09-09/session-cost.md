@@ -15,3 +15,7 @@
 | 6 | peer concall verification | claude-sonnet-5 | default | n/a | n/a | 236781 | 6m58s | 1 |
 | 7 | emerging moat scan (22 categories) | claude-sonnet-5 | default | n/a | n/a | 136343 | 10m26s | 1 |
 | 9 | TAM SAM SOM market sizing (web) | claude-sonnet-5 | default | n/a | n/a | 151834 | 13m21s | 1 |
+| 12a | verifier A numerical | claude-haiku-4-5 | default | n/a | n/a | 95540 | 3m45s | 1 |
+| 12b | verifier B red flags | claude-opus-4-8 | default | n/a | n/a | 287138 | 15m43s | 1 |
+| 12c | verifier C framework (phase-1 scope) | claude-opus-4-8 | default | n/a | n/a | 126016 | 8m20s | 1 |
+| 12d | verifier D peer coverage | claude-sonnet-5 | default | n/a | n/a | 208088 | 6m24s | 1 |

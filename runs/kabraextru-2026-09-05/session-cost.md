@@ -71,3 +71,4 @@ aborted). Same ledger row shape.
 | 3 | AR deep dive (rework addendum, Class A) | claude-sonnet-5 | default | n/a | n/a | 193641 | 1000s | 2 |
 | 12c | verifier C framework (phase-1 scope, rerun) | claude-opus-4-8 | default | n/a | n/a | 137943 | 577s | 2 |
 | 12d | verifier D peer coverage (rerun) | claude-sonnet-5 | default | n/a | n/a | 204717 | 494s | 2 |
+| 2 | notes triple-pass (rework addendum, Class A + traceability) | claude-sonnet-5 | default | n/a | n/a | 229390 | 1370s | 4 |

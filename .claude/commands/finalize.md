@@ -93,7 +93,7 @@ phase 3), then:
    the deliberation record. Collect B10 into outputs/blocks/.
 
 2. STAGE 11 — VALUATION. Invoke stage-11-valuation exactly per the
-   existing wrapper: pass the SIX framework file paths from frameworks/
+   existing wrapper: pass the NINE framework file paths from frameworks/
    as its stable prefix plus B10, in this order —
    Master_Project_Prompt_v3_6.md (resolves
    {{MASTER_PROJECT_PROMPT_V36_ROLE1_SECTIONS}}),
@@ -106,9 +106,13 @@ phase 3), then:
    converter integration), Section_1B_v3_8_Amendments.md
    ({{SECTION_1B_V38_AMENDMENTS}}, exit-basis symmetry and option resolution;
    later layers govern the items they name where
-   the layers overlap), and FTTCP_v2_1_Consolidated.md
+   the layers overlap), Section_1B_v3_9_Amendments.md
+   ({{SECTION_1B_V39_AMENDMENTS}}, relative-valuation cross-check and
+   forward-expectation exit framework), Section_1B_v3_10_Amendments.md
+   ({{SECTION_1B_V310_AMENDMENTS}}, growth symmetry in projections and
+   weighting), and FTTCP_v2_1_Consolidated.md
    ({{FTTCP_V21_CONSOLIDATED}}). If frameworks/ is missing
-   any of the seven files, STOP and tell the user which to add. The FTTCP ROCE
+   any of the nine files, STOP and tell the user which to add. The FTTCP ROCE
    forward verdict and structural/growth determination it consumes are
    the deliberation-confirmed ones carried on B10. ENTITY-COUNT GATE: when
    B10.entity_count is greater than one, stage 11 values PER ENTITY on each
@@ -209,7 +213,11 @@ answered from the blocks, write "the run did not establish this" rather than fil
    full save content structured per Notion_Save_Instructions conventions:
    page title, THEN the BUSINESS UNDERSTANDING NARRATIVE (the same section
    defined in step 6, positioned before the verdict card so the operator
-   reads the understanding first), then run summary, verdict, entry zones,
+   reads the understanding first), then run summary, verdict, the PRICE
+   DECOMPOSITION (T1 confirmed / T2 high-probability / T3 speculative /
+   residual, each in ₹/share and % of CMP, from B11.price_decomposition),
+   the FAST-GROWTH flag and the Amendment 25 position-size ladder state
+   (starter / add / trim) where it applies (from B14), entry zones,
    thesis-broken triggers, monitoring checklist, and links (Drive folder,
    run folder). Mark the file explicitly at the top:
 
@@ -228,6 +236,18 @@ answered from the blocks, write "the run did not establish this" rather than fil
    Then the AR first-disclosure rows (B03.ar_new_downstream_entities via
    B10), one per entity: name | entity type | where in AR — the Step
    10.5B feed for the AR annual cross-check at Role 5.5.
+
+   The notion-payload also carries the EXPECTATION LEDGER block (Section 1B
+   v3.9 Appendix A), copied from outputs/expectation-ledger.md:
+
+   ## EXPECTATION LEDGER (Amendments 22-24)
+   One row per credited catalyst plus the mandatory downside row: catalyst |
+   ₹ Cr PAT increment | probability | evidence basis | confirming metric +
+   threshold | confirm-by | tier (T2/T3) | status. Then the decomposition
+   summary line: T1 / T2 / T3 / residual as % of CMP, the fast-growth flag,
+   and the Amendment 25 size state (starter / add / trim). The ledger saves to
+   Notion with every Role 1 / Role 4 / Role 6 output; an expectation not on
+   the ledger may not be credited in the price.
 
    This file is a payload, not an action. Do not write to Notion from this
    session; the pipeline never writes to the tracker, Role 5.5 does after
@@ -258,7 +278,7 @@ answered from the blocks, write "the run did not establish this" rather than fil
      produced_at: <run date>
      framework_git_commit: <output of `git rev-parse HEAD`>
      framework_tag: <output of `git describe --tags --always`>
-     framework_versions: "Master v3.6 / Section 1B v3.3+v3.5.1+v3.6+v3.7+v3.8 / FTTCP v2.1"
+     framework_versions: "Master v3.7 / Section 1B v3.3+v3.5.1+v3.6+v3.7+v3.8+v3.9+v3.10 / FTTCP v2.3"
    This is a plain record, not a decision. It gets committed with the rest.
 
 9. COMMIT all outputs and the updated companies/<TICKER>.md with message

@@ -6,9 +6,9 @@ from the run's own filings, verified against the source PDFs.
 ## THESIS (one line)
 Promoter-funded expansion (Rs 40.24 cr warrants + SDPL capex) tries to grow a
 cyclical ~Rs 180 cr H-Acid dye-intermediate converter into a larger, steadier
-chemicals base; a climb only if new volume, not the H-Acid spread cycle, drives it.
-Under Phase 2b review: the transition may instead be participation in an H-Acid
-regime flip, which FY26 is too early to show.
+chemicals base. Restated at Phase 2b (2026-09-09): a near-full ~270 tonnes/month
+plant captures a China-driven H-Acid regime flip through realisation now, and can
+only add tonnes when SDPL commissions. FY26 is the pre-flip baseline, not the test.
 
 ## DECISION STATUS AND ENTRY ZONE
 DRAFT — no decision, no entry zone. Phase 1 evidence closed 2026-09-05; Halt 1
@@ -32,9 +32,19 @@ runs/shharich-2026-09-05/step1-business-brief.md):
 
 ## MENTAL MODEL DECLARATION
 DRAFT — unsigned. The operator signs at Halt 1. Do not run /fttcp or /finalize
-on an unsigned model. Phase 1 draft: runs/shharich-2026-09-05/outputs/reports/
-09b-understanding-dossier.md, Section 2. Phase 2b rebuild in progress
-(2026-09-09), ordered by the operator after the Amendment 26 standing check.
+on an unsigned model.
+- CURRENT DRAFT (v2, 2026-09-09): runs/shharich-2026-09-05/outputs/final/
+  mental-model-declaration-v2.md. Rebuilt bull-case-first under Master v3.7
+  Rule H after the Section 1B v3.10 Amendment 26 standing check failed on the
+  Phase 1 draft. FROM R1 commodity price-taker TO R2 cost-advantaged converter
+  on the manufactured H-Acid line. Engine: realisation captured from China's
+  H-Acid supply withdrawal, then tonnes from SDPL commissioning. Superseded
+  Phase 1 draft: outputs/reports/09b-understanding-dossier.md, Section 2.
+- Open at signature: the ugliness verdict splits on the evidence and is the
+  operator's call; the proof gate must be the price-adjusted form, because the
+  Phase 1 gate (double-digit organic manufactured growth) is cleared by price
+  alone on a full plant and would confirm the model on spread-cycle evidence.
+- Transition posture: NOT ASSIGNED. Deferred to Stage 11 (recognition gap).
 
 ## HALT 1 GATE
 Reached 2026-09-05, open. Phase 1 evidence verdict on the ANALYSIS was REWORK

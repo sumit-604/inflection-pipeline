@@ -1,0 +1,51 @@
+stage: B07-emoat
+company: "TOTEM"
+run_date: "2026-09-09"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "concalls/ EMPTY BY DECLARATION, presentation/ EMPTY, rating/ EMPTY, research/ EMPTY"
+  - "No product-line, customer-tier, or geography revenue disaggregation published anywhere (blocks Section 1C, C2)"
+  - "FY26 R&D expenditure disclosed as Nil (blocks A1, A2, F1 entirely)"
+  - "No inventory ageing or slow-moving/obsolete disclosure in FY26 AR despite 76.7% inventory increase (blocks a clean G2 read)"
+  - "Per-project Rs Cr breakdown of FY25 (Rs 26.12 cr) and FY26 (Rs 14.99 cr) capex additions not disclosed; only FY24 items (Rs 1.50 cr, Rs 3.01 cr) individually quantified"
+  - "No utilisation % published for the single plant in any year (blocks 2B entirely)"
+flags:
+  - type: FLAG-EMOAT-THIN
+    reason: "Only 5 of 23 rows carry any evidence at all and only 3 (A3, B2, F2) clear the Strong/Moderate bar; adjusted total 9.7/92 falls in the <12 NO MEANINGFUL EMERGING MOAT band. Consistent with completionist guard base rate; not a search failure."
+  - type: FLAG-BASE-EFFECT
+    reason: "The Q1 FY27 margin proof point most often attributed to the FY26 capex (A3) is, on the already-verified B01-gate0 LBF-1 bridge, an employee-cost/other-expense compression story on volume, not a material-cost or yield story; Q1 FY26 was the low point of the ten-quarter OPM series (Stage 5 finding)."
+  - type: FLAG-CLAIM-RECORD
+    reason: "F2 execution moat splits: capex-completion leg is Strong/documented (3 consecutive ARs, no overdue CWIP), but the qualitative claim record cross-referenced from B05 is Grade C (1 delivered, 2 partial, 3 missed), including a MISSED reversal on exports and on inventory discipline."
+em_score: 9.7
+em_score_scale: "adjusted total on a ~0-90 scale, ceiling 92 with I1/I2"
+em_classification: "NONE"
+active_categories:
+  - {id: "A3", name: "Process innovation", strength: "Strong", evidence_type: "DOCUMENTED", time_to_materialise: "Already installed FY26; durability TBD"}
+  - {id: "B2", name: "Qualification lock-in", strength: "Strong", evidence_type: "DOCUMENTED", time_to_materialise: "Obtained FY25-26; revenue-linkage TBD"}
+  - {id: "F2", name: "Execution moat (capex leg)", strength: "Moderate", evidence_type: "DOCUMENTED", time_to_materialise: "Ongoing; claims leg weaker"}
+evidence_mix: {documented: 15, claim: 1, inference: 0}
+completionist_recount: "documented recount performed: 15 documented items across 5 categories (A3, B2, F2, C1, H3); only 3 of those 5 (A3, B2, F2) cleared the Strong/Moderate threshold."
+catalysts_12m:
+  - {catalyst: "OPM sustains above ~20% for a second consecutive quarter, confirming mix/capacity gain over base effect", window: "Q2 FY27 results, due ~Nov 2026", evidence_type: "DOCUMENTED (future filing)", anchor: "cf. Q1 FY26 base 16.05% and Q1 FY27 22.9%, screener Data_Sheet.csv Quarters block"}
+  - {catalyst: "FY27 AR Annexure IV names further capacity investment or names drill/aerospace-carbide revenue a second year", window: "FY27 AR, due ~May-Aug 2027", evidence_type: "DOCUMENTED", anchor: "cf. FY26 AR Annexure IV, p.40-41; MD&A p.24"}
+  - {catalyst: "Inventory days normalise toward FY25 levels with CFO recovery", window: "FY27 AR / Q2-Q3 FY27 results", evidence_type: "DOCUMENTED", anchor: "FY26 AR Note 8 Inventories, p.91 (Rs 56.42 cr vs Rs 31.93 cr FY25)"}
+  - {catalyst: "Promoter pledge % declines from 94.4% in next shareholding filing", window: "Sep/Dec 2026 quarterly shareholding filing", evidence_type: "DOCUMENTED", anchor: "SHP Jun-2026 filing, 94.4% of 73.85%"}
+  - {catalyst: "FY27 AR MD&A reverses the 'not very encouraging' export characterisation to a stated improving trend", window: "FY27 AR, due ~May-Aug 2027", evidence_type: "DOCUMENTED", anchor: "FY26 AR MD&A p.24"}
+capex_embedded_growth_pct: 3.3
+capex_embedded_growth_basis: "CWIP Rs 3.56cr x 3yr avg fixed-asset turnover 2.32x / FY26 revenue Rs 251.01cr"
+optionality_register:
+  - {optionality: "Thread-mill/Simufact software matures into a tracked product platform (A4)", converting_evidence: "AR discloses SKU count, launch cadence, or revenue tied to the software-enabled line", first_appears: "FY27+ AR MD&A or R&D section", window: "2-3 years"}
+  - {optionality: "Cash and investments rebuild once FY26 capex cycle and inventory build unwind (G1)", converting_evidence: "Net cash plus investments rises YoY in FY27 AR while CFO also recovers", first_appears: "FY27 AR Balance Sheet and Cash Flow notes", window: "1-2 years"}
+  - {optionality: "Named technical specialists evidence I1 talent asymmetry", converting_evidence: "AR remuneration annexure names technical KMP pay above sector norm, or a patent filing names an inventor", first_appears: "FY27+ AR remuneration annexure; ipindia.gov.in/Espacenet", window: "3-5 years, low probability given Nil FY26 R&D spend"}
+  - {optionality: "Company-specific consolidation event names TOTEM as beneficiary (H1)", converting_evidence: "Exchange announcement or AR names a specific anti-dumping order or competitor plant closure", first_appears: "Exchange announcement or AR Board's Report", window: "2-3 years"}
+  - {optionality: "New-country export win reverses FY26 export trend (E2)", converting_evidence: "AR or exchange filing names a specific new country/customer export win with a figure", first_appears: "FY27 AR MD&A / Annexure IV forex-earnings note", window: "1-3 years"}
+combined_assessment: "AVOID"
+combined_reasoning: "Gate 0 AVOID is mechanical (pledge deal-breaker + history downgrade, floor otherwise AVERAGE); this scan's forward read is NO MEANINGFUL EMERGING MOAT (9.7/92), not EXPANSION, so there is no forward-moat case to argue an override."
+top_moat_risks:
+  - "Q1 FY27 margin proof point is largely base effect / opex compression on volume, not the process-tech (A3) story it is usually attributed to"
+  - "Certifications (B2) close a gap to global majors rather than open one; no aerospace revenue linkage disclosed yet"
+  - "F2 capex-completion record is strong but the qualitative promise record (B05, Grade C) is weak on exports, inventory discipline, and Taps growth"
+  - "Inventory up 76.7% with no ageing disclosure; CFO nearly halved; could be ramp stock or unsold stock, indistinguishable from filed evidence"
+  - "Promoter pledge 94.4% and group refinancing exposure sit outside this scan but can override any moat quality finding"
+analyst_note: "Scan intentionally lands sparse: 5 of 23 rows have any evidence, 3 clear Strong/Moderate. The two Strong rows (A3 process tech, B2 qualification lock-in) are genuinely documented across 2-3 consecutive ARs, not force-fit claims. But both are catch-up moves (matching what Kennametal and other global majors already hold), and the headline Q1 FY27 margin proof most people would cite for A3 is, per the already-verified B01 LBF-1 bridge, an opex-compression-on-volume story, not a yield/quality story. F2 is split deliberately: capex completes on time, but the surrounding growth claims (B05, Grade C) do not have a comparable record. Recommend the operator treat this as a single-plant reinvestment cycle worth monitoring via the FY27 AR, not yet a re-rating case."

@@ -1,0 +1,45 @@
+stage: confidence-delta
+company: "TOTEM"
+run_date: "2026-09-09"
+phase: 1
+computed_by: orchestrator
+verification_cycle_governing: 3
+confidence_delta:
+  numerical_acceptance: 100
+  redflag_coverage: 32
+  framework_adherence: 90.2
+  peer_utilisation: 65
+  overall: 32
+band: "below 60 - forced REWORK"
+band_rule: "prompts/00-orchestrator.md Section 5: overall 90 or above high confidence; 75-89 normal; 60-74 downgrades PROCEED verdicts one level; below 60 forced REWORK."
+components:
+  numerical_acceptance:
+    value: 100
+    source: B12a.yaml (verifier A, cycle 3, claude-haiku-4-5)
+    basis: "87 material numbers checked across all nine stage reports; zero MISMATCH, zero ANCHOR NOT FOUND, zero material UNANCHORED; zero source-fidelity findings; zero CRITICAL. The three MAJOR and two MINOR rows are presentation and methodology-transparency observations, each explicitly carrying source_fidelity: false."
+    caveat: "Verifier B raised NS-5, a figure of about Rs 290 cr used to size the subject in 06-peers.md against filed revenue of Rs 251.01 cr. Verifier A did not check that cell, so under the source-fidelity rule it is unadjudicated, not cleared. It sits on the rework list."
+  redflag_coverage:
+    value: 32
+    source: B12b.yaml (verifier B, cycle 3, claude-opus-4-8)
+    basis: "47 red-flag-grade items found on an independent read of the same filings; 15 caught outright by stage 5 and stage 6, 8 partially caught. One CRITICAL miss, 18 MAJOR, 20 MINOR, and five NOT SUPPORTED claims the reports currently make."
+    trend: "cycle 1: 19 found, 4 caught, 21%. cycle 2: 33 found, 16 caught, 48%. cycle 3: 47 found, 15 caught, 32%."
+    reading: "Not converging, because the denominator grows each cycle. Each fresh out-of-family read mines deeper into a genuinely defect-rich set of filings. Stage 5's absolute catch count rose from 4 to 15 across the cycles; the ratio fell because the universe of findable defects kept expanding. This is a statement about the company's disclosure quality as much as about the analysis."
+  framework_adherence:
+    value: 90.2
+    source: B12c-run1.yaml superseded by the cycle-2 verifier C result recorded in this run
+    basis: "83 of 92 rule checks passed across 58 Gate 0 rules, 33 emerging-moat rules and the stage 9 downstream-candidates rule. Zero CRITICAL. One MAJOR, the stale Gate 0 moat figures inside the emerging-moat report, which was fixed by a mechanical figure alignment recorded in 07-emoat.md and in the commit that carried it."
+    scope: "Gate 0 and Emerging Moat only. The valuation-adherence audit is deferred to phase 3 because B10 and B11 do not exist yet."
+    note: "Verifier C was not re-run in cycle 3. Neither B01 nor B07 changed after its cycle-2 audit except the mechanical alignment that resolved its single MAJOR."
+  peer_utilisation:
+    value: 65
+    source: B12d.yaml (verifier D, cycle 3, claude-sonnet-5)
+    basis: "Citation fidelity high, about 28 of 30 spot checks clean. Coverage and verdict-discipline completeness gapped: one of stage 5's five peer questions never received a verdict, two were answered only as narrative, one quote is attributed to a 22-page transcript at p.27-28, and a quantified peer market-share gain of 250-300 basis points was quoted only for its refusal clause."
+    denominator: "peers PROVIDED with transcripts (KENNAMETAL, WENDT). BIRLA PRECISION was selected but has zero transcripts in the corpus, which is an input gap, not an analytical failure."
+verdict_consequence: >
+  overall 32 is below 60, so the phase-1 gate recommendation is REWORK regardless of
+  company quality. REWORK judges the analysis, not the business: stages 5 and 6 must
+  be reworked against the B12b and B12d finding lists before any deliberation runs.
+  Verifier A's clean numerical result means the FIGURES in this pack are sound; what
+  is incomplete is the reading of management communication and the peer verdict
+  discipline built on top of them.
+valuation_component: "PENDING PHASE 3 (verifier C valuation-adherence half)"

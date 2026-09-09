@@ -28,3 +28,6 @@
 | 12d | verifier D peer coverage | claude-sonnet-5 | default | n/a | n/a | 216060 | 9m25s | 2 |
 | 5 | management/guidance analysis (audit cycle 2) | claude-sonnet-5 | default | n/a | n/a | 176881 | 10m13s | 3 |
 | 6 | peer concall verification (audit cycle 2) | claude-sonnet-5 | default | n/a | n/a | 223393 | 7m28s | 3 |
+| 12a | verifier A numerical (final) | claude-haiku-4-5 | default | n/a | n/a | 109706 | 5m57s | 3 |
+| 12b | verifier B red flags (final) | claude-opus-4-8 | default | n/a | n/a | 395319 | 20m55s | 3 |
+| 12d | verifier D peer coverage (final) | claude-sonnet-5 | default | n/a | n/a | 190875 | 9m40s | 3 |

@@ -327,3 +327,29 @@ What would change the view to WATCH or PROCEED:
   would change what the market is actually buying.
 
 No valuation, no target price and no position is set here.
+
+## PENDING FETCH
+
+Added 2026-09-09 after the corpus review. Document existence only. No number
+below comes from a web source, and none has been added to any step above.
+
+**Recorded for the file, not for a run.** The verdict is PASS and nothing here
+is expected to change it. The PASS rests on two things that no unread document
+is likely to reverse: no rung migration is claimed, and realisations stayed flat
+while utilisation went from 81% to 104%.
+
+Known gap in this card's own method: `list_document_availability` was not called
+for this name, so the corpus ledger at step 1 is incomplete. Run it first if the
+name is ever revisited.
+
+Proven to exist by Bull AI's index, unreadable this session:
+- Bull AI document MSTZX2 beyond pages 4, 6 and 8.
+- Bull AI document ul3lMB, an annual report, beyond pages 41, 172, 197, 198 and
+  208.
+
+What would need fetching if the view were ever reopened: realisation per tonne
+and volume in tonnes for FY24 to FY26, the cost curve position, the size of the
+electrode capacity expansion in tonnes, and the General Graphene Corporation
+accounts. These are load-bearing facts 1 to 4 at step 12.
+
+Where: `https://www.screener.in/company/GRAPHITE/`.

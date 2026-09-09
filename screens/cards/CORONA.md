@@ -279,3 +279,31 @@ What would change the view:
 
 No valuation, no target price and no position is set here. The verdict decides
 only whether a full `/step1` is worth spending now. It is not.
+
+## PENDING FETCH
+
+Added 2026-09-09 after the corpus review. Document existence only. No number
+below comes from a web source, and none has been added to any step above.
+
+Proven to exist by Bull AI's index, unreadable this session:
+- Investor presentation, FY2027 Q1, uploaded 2026-07-31.
+- Earnings call transcript, FY2027 Q1, uploaded 2026-08-10. **Both are the
+  highest priority.** Together they carry the Q1FY27 revenue, PAT and chronic
+  mix that step 8 needs to test the FY27 guidance of 17% revenue and 20% PAT.
+- Investor presentations and transcripts for FY2026 Q4, Q3 and Q2.
+- Eight "Change in Management" filings, all dated 2026-05-11, with a Change in
+  Directorate and a statutory auditor appointment of the same date. These are
+  the open flag at step 9.
+- Four SAST Reg. 29(1) disclosures, FY2027 Q1, latest 2026-06-19.
+- Commencement of commercial production filing, 2026-06-30.
+
+Not indexed at all: no annual report. The record begins at FY2026 Q2, because
+the company listed recently. The reported against adjusted PAT question at
+load-bearing fact 1 may therefore need the offer document or the FY26 result
+filing rather than an annual report.
+
+What these unblock: step 8, which is NOT FOUND, and load-bearing facts 1, 2 and
+4 at step 12.
+
+Where: `https://www.screener.in/company/CORONA/`, falling back to
+`https://www.screener.in/company/544644/`.

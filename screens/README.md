@@ -170,3 +170,54 @@ nothing but the corpus.
 Cards ran 1,362 to 2,876 words against the framework's 1,400 to 1,900. MOLBIO came in short
 because there was nothing to say. The rest ran long. Flagged rather than trimmed, as in the
 2026-09-08 run.
+
+### 2026-09-09, later the same session: PENDING FETCH sections added
+
+Bull AI's document readers were retried six times across the session, spread over
+roughly an hour. Still down at close. One retry was informative: passing an ambiguous
+identifier to `search_company_documents` returned "Multiple companies match the supplied
+identifier" immediately, so identifier resolution is fast and healthy. Passing a unique
+identifier then timed out. The fault is in document retrieval, not in company lookup.
+Timed-out calls consumed no quota.
+
+The collection route was checked and is empty. `collect_to_repo.py` pushes into this repo
+at `runs/<ticker>-<date>/inputs/`, and run folders are not gitignored, so 1,780 PDFs are
+already tracked. None belongs to any of the eight names. The cable runs were checked
+specifically, in case Delton had been collected as a peer: `fincables-2026-08-12` used KEI,
+RR Kabel and Paracables, and `birlacable-2026-08-20` used HFCL, STL and Paracables. The
+collector cannot run in session; it needs screener.in egress and `tools/collector/.env`,
+and its REPO_ROOT is a Windows path.
+
+Open web search does work, through Firecrawl and WebSearch, because both run remotely.
+WebFetch is egress blocked and no scrape tool exists, so search returns snippets and never
+a page. **The post 2026-09-06 rule was applied strictly: search was used to establish which
+documents exist, never as a source of a card number.** That rule earned its keep. A single
+search for India Nippon's Q1FY27 returned three sources saying revenue was about Rs 304 cr
+and one saying Rs 3,045 cr, a tenfold units error. A Delton search returned one headline
+saying FY26 profit rose 28% and another saying it fell 28%.
+
+On the operator's instruction, a **PENDING FETCH** section was appended to all eight cards.
+Each names the documents proven to exist and unreadable, marks anything web indicated as
+unverified, says which step it unblocks, and gives the fetch address. No web derived number
+was written into any step. A grep for the specific figures search returned confirms none
+appears on any card.
+
+One correction surfaced by the check, recorded on the TAALTECH card: Bull AI reported a
+market cap of Rs 1,410 cr and screener.in showed a materially lower figure the same day.
+One is wrong. The card now carries a market capitalisation warning. No step depended on it,
+because no valuation was performed.
+
+Fetch block for `tools/collector/companies.txt`, ordered by value, PASS names omitted:
+
+```
+TAALTECH:https://www.screener.in/company/539956/
+DELTON:https://www.screener.in/company/504240/
+INDNIPPON:https://www.screener.in/company/INDNIPPON/
+CORONA:https://www.screener.in/company/CORONA/
+MOLBIO:https://www.screener.in/company/MOLBIO/
+TITANBIO:https://www.screener.in/company/524717/
+```
+
+TAALTECH, DELTON and TITANBIO use BSE codes. TAAL Tech needs the code because the company
+was renamed in November 2025. Titan Bio-Tech's annual report is not indexed by Bull AI in
+any year and must come from BSE scrip 524717 directly.

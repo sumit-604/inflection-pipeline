@@ -193,3 +193,31 @@ What would change the view:
   number nobody wrote to sell shares.
 
 No valuation, no target price and no position is set here.
+
+## PENDING FETCH
+
+Added 2026-09-09 after the corpus review. Document existence only. No number
+below comes from a web source, and none has been added to any step above.
+
+This card has no business numbers at all, so everything here is priority.
+
+Proven to exist by Bull AI's index, unreadable this session. This is the
+complete indexed record, untruncated:
+- **RHP, two records, uploaded 2026-08-10. Highest priority.**
+- Prospectus, uploaded 2026-08-17.
+- DRHP, uploaded 2026-08-10.
+- Outcome of Board Meeting, 2026-08-27.
+
+Indicated by web search, existence only, unverified:
+- A screener.in page exists at `https://www.screener.in/company/MOLBIO/`.
+
+What these unblock: steps 2 through 11, all of which are NOT FOUND. The RHP
+alone answers the archetype question at step 2, the promoter question at step 4,
+the three year financial trajectory at step 5, and the risk factors that feed
+step 9.
+
+Where: the RHP and Prospectus from the exchange filing archive or the merchant
+banker, and `https://www.screener.in/company/MOLBIO/` for the financial history.
+
+Restating the verdict so it is not misread: the next action is this fetch,
+followed by a re-run of this shallow card. It is not a `/step1`.

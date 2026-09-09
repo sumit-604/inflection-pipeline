@@ -312,3 +312,41 @@ What would change the view:
 - An unexplained third CFO exit would end it.
 
 No valuation, no target price and no position is set here.
+
+## PENDING FETCH
+
+Added 2026-09-09 after the corpus review. Document existence only. No number
+below comes from a web source, and none has been added to any step above.
+
+**Market capitalisation warning.** The header of this card carries Rs 1,410 cr
+from Bull AI. A web check of screener.in returned a materially lower figure for
+the same company on the same day. One of the two is wrong and this session could
+not settle which. Treat the market cap on this card as unreliable until it is
+verified from an exchange source. Nothing in steps 1 to 12 depends on it,
+because no valuation was performed.
+
+Proven to exist by Bull AI's index, unreadable this session:
+- **Annual report FY2026, Reg. 34(1), uploaded 2026-08-07. Highest priority
+  document of the entire eight name run.** It carries the post amalgamation
+  profit and loss, the segment note, the client concentration disclosure, the
+  share capital movement and the related party schedule. Every NOT FOUND on this
+  card except the credit rating is answered by this one file.
+- Annual report FY2025, Reg. 34(1).
+- Quarterly financial results, FY2023 through FY2026 Q4, latest 2026-05-27.
+- Change of Name filing, 2025-11-04.
+- Integrated Filing (Financial), FY2025, 2025-02-14. Likely carries the
+  amalgamation accounting.
+- Two Resignation of CFO filings, 2022-07-01 and 2023-05-30. These name the
+  flag at step 4 and step 9 and may state a reason.
+- Postal ballot, FY2026, latest 2025-10-13. A postal ballot near the
+  reorganisation may carry the scheme resolution and the swap ratio.
+
+Not indexed at all, so do not look for it here: no investor presentation and no
+earnings call transcript exists in any year.
+
+What these unblock: steps 2, 3, 5, 7 and 8, all of which are NOT FOUND or thin,
+and every one of the five load-bearing facts at step 12.
+
+Where: `https://www.screener.in/company/539956/`. Use the BSE code. The company
+was renamed from TAAL Enterprises in November 2025 and the symbol may not
+resolve.

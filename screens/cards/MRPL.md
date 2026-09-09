@@ -259,3 +259,32 @@ What would change the view:
   better year at the same rung.
 
 No valuation, no target price and no position is set here.
+
+## PENDING FETCH
+
+Added 2026-09-09 after the corpus review. Document existence only. No number
+below comes from a web source, and none has been added to any step above.
+
+**Recorded for the file, not for a run.** The verdict is PASS on two independent
+grounds, and the mandate ground does not depend on any document: Rs 30,329 cr is
+outside a small and micro cap brief.
+
+The other ground is weaker and should be stated as such. "No transition claimed"
+rests on Bull AI having derived zero guidance records from documents it holds,
+including earnings call transcripts through FY2026. That is suggestive, not
+proven. A refiner building out branded retail or petrochemicals would be a real
+ladder story and this card cannot rule it out.
+
+Proven to exist by Bull AI's index, unreadable this session:
+- Annual reports, Reg. 34(1), two records for FY2026 with the latest uploaded
+  2026-07-23, plus FY2021, FY2023, FY2024 and FY2025.
+- Earnings call transcripts across FY2024, FY2025 and FY2026, latest at
+  FY2026 Q4 uploaded 2026-01-01 and FY2026 Q3 uploaded 2026-01-23. **These are
+  the documents that would overturn the "no transition claimed" finding, if
+  anything does.**
+
+What these unblock: step 5, which is entirely NOT FOUND, step 7, which is empty,
+and the promoter identity at step 4, which is the most surprising gap on the
+card given the size of the company.
+
+Where: `https://www.screener.in/company/MRPL/`.

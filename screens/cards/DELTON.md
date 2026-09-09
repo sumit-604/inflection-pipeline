@@ -305,3 +305,28 @@ What would change the view:
   qualifications do not go to price takers.
 
 No valuation, no target price and no position is set here.
+
+## PENDING FETCH
+
+Added 2026-09-09 after the corpus review. Document existence only. No number
+below comes from a web source, and none has been added to any step above.
+
+Proven to exist by Bull AI's index, unreadable this session:
+- Bull AI document 31Ffa6 beyond the six pages extracted. The card used pages
+  12, 16, 18, 19, 25 and 26 only.
+
+Indicated by web search, existence only, unverified:
+- A Q1FY27 result exists and carries an order book figure. The order book was
+  recorded as NOT FOUND at step 7 and is a load-bearing number for an EPC facing
+  cable maker.
+- The FY26 land revaluation has a stated quantum, and the treatment is described
+  as the Ind AS 16 revaluation model with the surplus taken to other
+  comprehensive income rather than through profit. **Both figures and the
+  treatment are unverified and are deliberately not written into step 5 or step
+  9.** Confirm them in the annual report, not from a news source.
+
+What these unblock: step 5, step 8 and step 9, plus load-bearing facts 1 and 3
+in step 12.
+
+Where: `https://www.screener.in/company/504240/`. This is a BSE only name, so
+use the code, not a symbol.

@@ -336,3 +336,27 @@ What would change the view to PROCEED:
   customer concentration.
 
 No valuation, no target price and no position is set here.
+
+## PENDING FETCH
+
+Added 2026-09-09 after the corpus review. Document existence only. No number
+below comes from a web source, and none has been added to any step above.
+
+**This is the card whose verdict is most likely to be wrong.** The WATCH rests
+on there being no evidence of EFI conversion. Two investor presentations exist
+that this session could not open, and either could contain it.
+
+Proven to exist by Bull AI's index, unreadable this session:
+- Investor presentation, FY2027 Q2, uploaded 2026-08-21. **Highest priority.**
+- Investor presentation, FY2027 Q1, uploaded 2026-08-21.
+- Board meeting outcome, 2026-08-01.
+- Annual reports FY2021 to FY2025, Reg. 34(1). No FY2026 annual report is
+  indexed.
+
+Indicated by web search, existence only, unverified:
+- A Q1FY27 result was declared on 7 August 2026.
+
+What these unblock: step 8, which is NOT FOUND on this card, and the EFI proof
+gate named in step 12 as the single item that flips the verdict to PROCEED.
+
+Where: `https://www.screener.in/company/INDNIPPON/`

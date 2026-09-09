@@ -228,3 +228,42 @@ What would change the view:
   every later step possible.
 
 No valuation, no target price and no position is set here.
+
+## PENDING FETCH
+
+Added 2026-09-09 after the corpus review. Document existence only. No number
+below comes from a web source, and none has been added to any step above.
+
+This card has no business numbers at all, so everything here is priority.
+
+Proven to exist by Bull AI's index, unreadable this session:
+- Three press releases, FY2027 Q1, latest 2026-05-06, and a revised press
+  release of 2026-06-25. **Highest priority among the indexed items.** Four
+  releases in two months from a company that publishes nothing else usually
+  means a specific announcement, and the growth trigger register at step 7 is
+  empty without them.
+- Quarterly financial results to FY2026 Q4, uploaded 2026-05-30, and the three
+  quarters before it.
+- Postal ballot, FY2026 Q3, 2025-12-31. It will state what shareholders were
+  asked to approve.
+- Board meeting outcome, FY2027 Q2, 2026-08-05.
+- A "General" company update series that is unusually busy, ten filings in
+  FY2026 Q2 and seven in FY2026 Q4.
+
+**Not indexed by Bull AI in any year: the annual report.** Do not look for it
+through Bull AI. Go to the BSE filings page for scrip code 524717 directly. Its
+absence is why step 4, promoters, and step 9, flags, are almost empty.
+
+Also absent from the index in any year: investor presentation, earnings call
+transcript.
+
+What these unblock: steps 2 through 11, all of which are NOT FOUND or cannot be
+applied, and all five load-bearing facts at step 12, including whether the Bull
+AI sector classification is correct.
+
+Where: BSE scrip code 524717 for the annual report and the press releases, and
+`https://www.screener.in/company/524717/` for the financial history. This is a
+BSE only name, so use the code, not a symbol.
+
+Restating the verdict so it is not misread: the next action is this fetch,
+followed by a re-run of this shallow card. It is not a `/step1`.

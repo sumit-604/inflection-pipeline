@@ -5,11 +5,14 @@ on NSE. Memory to weigh, never anchored evidence: every number a stage
 reports comes from that run's own inputs, verified against the source PDFs.
 
 ## THESIS (one line)
-Not yet set. Step-1 intake only; no thesis until the operator signs the
-Mental Model at Halt 1.
+DRAFT, unsigned: capacity installed in FY26 is meant to carry a branded
+consumable tooling maker from cost-advantaged converter to spec'd supplier,
+but profit has not grown in three years and the proof gate has not fired.
 
 ## DECISION STATUS AND ENTRY ZONE
-Not set. No valuation has run. Phase 3 sets this.
+Not set. No valuation has run; stages 10 and 11 are phase 3.
+Phase 1 gate recommendation 2026-09-09: REWORK, on a confidence delta of 32
+against a threshold of 60. REWORK judges the analysis, not the business.
 
 ## SPEAR
 Spear: OVERRIDE 2026-09-09 (operator standing ruling 2026-09-05: Step-1 intake replaces the web spear)
@@ -43,12 +46,35 @@ runs/totem-2026-09-09/step1-business-brief.md
    margin in the run depends on which number is right.
 
 ## MENTAL MODEL DECLARATION
-DRAFT — NOT SIGNED. Written by stage 09b at Halt 1, signed by the operator
-in claude.ai. Nothing after Halt 1 runs on an unsigned model.
+DRAFT - NOT SIGNED. Drafted by stage 09b at Halt 1 in
+runs/totem-2026-09-09/outputs/reports/09b-understanding-dossier.md Section 2,
+to be signed by the operator in claude.ai. Nothing after Halt 1 runs on an
+unsigned model. The draft, for the operator to accept or reject:
+  - FROM rung -> TO rung: R2 COST-ADVANTAGED CONVERTER shading to R3 ->
+    R3 VALUE-ADDED / SPEC'D SUPPLIER
+  - Archetype: branded industrial consumable (Brand/franchise consumer applied
+    to an industrial buyer), distributor reach plus repeat wear-replacement
+  - Engine: FY26 capacity investment, an austempering furnace adding 90 MT and
+    CNC lines adding about 350,000 HSS drill units a year, paired with AS9100D
+    and IATF certifications opening spec-in accounts
+  - Proof gate: operating margin sustaining above 20% for two consecutive
+    quarters beyond Q1 FY27. NOT FIRED. Q1 FY27 PBT margin 17.6% sits below
+    Q4 FY26's 21.6%, and the gain over the FY26 full year recomputes to 1.8
+    points, not the headline 6.8
+  - Ugliness verdict: UNRESOLVED. The FY26 inventory build and the 46% CFO
+    fall carry no ageing, write-down or obsolescence-provision disclosure, so
+    ARTIFACT-OF-CLIMB and STRUCTURAL-FEATURE cannot be separated from filings
+  - Transition falsifier: operating margin reverts below 17% for two
+    consecutive quarters after Q1 FY27, with continued zero product-line
+    disclosure separating carbide from HSS revenue
+  - Business falsifier: a single-plant disruption at Chhatrapati Sambhajinagar,
+    or enforcement of the 94.4% pledged promoter block
 
 ## HALT 1 GATE
 - Mental Model signed: NOT SIGNED
 - Halt 1 decision (KILL/SHALLOW/PROCEED): pending
+- Phase 1 completed 2026-09-09. Corpus verdict CORPUS CURRENT, freshness pairs
+  OK. Fragility verdict FRAGILE. Gate recommendation REWORK.
 
 ## OPERATOR RULINGS
 - 2026-09-09: Step-1 intake run; peers auto-selected; empty folders accepted
@@ -56,12 +82,41 @@ in claude.ai. Nothing after Halt 1 runs on an unsigned model.
   (consumable precision tooling), not the generic capital-goods basket.
   Sector cap row set to Cables / Industrial products, 25x, overriding the
   collector's Pharma / CDMO auto-pick.
+- 2026-09-09: verifier loop stopped at three cycles by orchestrator ruling.
+  Verifier B found 19, then 33, then 47 red-flag items while stage 5's catch
+  count went 4, 16, 15, so acceptance moved 21%, 48%, 32%. The denominator
+  grew because each fresh independent read mined deeper into defect-rich
+  filings, not because the work degraded. Chasing the 60% threshold would
+  loop without end. The framework's own answer stands: REWORK, with the
+  B12b and B12d finding lists as the rework instruction.
 
 ## ACTIVE TRIPWIRES
-None set. Tripwires are set at /finalize.
+Not yet set; tripwires are set at /finalize. Carried from phase 1 as the
+metrics to watch:
+- Operating margin above 20% for two consecutive quarters beyond Q1 FY27
+  (the proof gate). Falls below 17% for two quarters and the transition
+  thesis is dead.
+- Promoter pledge percentage. 94.4% at Jun-2026, unchanged for three
+  quarters. Any rise is a hard flag; a fall is the single best positive.
+- Inventory ageing or net-realisable-value disclosure appearing in the FY27
+  annual report. It is the only disclosure that can settle the cash question.
+- Export FOB value. Fell two years running; the annual report described the
+  direction wrongly both times.
 
 ## OPTIONALITY REGISTER (summary)
-Empty until stage 7 runs.
+From B07 (emerging moat score 9.7, classification NONE, five of 23 rows
+carry any evidence):
+- Thread-mill and Simufact software matures into a tracked platform ->
+  converts on an AR disclosure of SKU count, launch cadence or linked
+  revenue, first appears FY27+ AR, window 2-3 years
+- Cash and investments rebuild as the capex cycle and inventory build unwind
+  -> converts on net cash plus investments rising with CFO recovery, FY27 AR
+- New-country export win reverses the FY26 export decline -> converts on a
+  named country or customer with a figure, FY27 AR Annexure IV, 1-3 years
+- Consolidation event names the company a beneficiary -> converts on an
+  exchange announcement naming an anti-dumping order or a competitor closure
+- Talent asymmetry -> low probability; FY26 R&D expenditure is disclosed Nil
 
 ## RUN FOLDERS
-- runs/totem-2026-09-09/
+- runs/totem-2026-09-09/  (phase 1 evidence, Halt 1 reached 2026-09-09;
+  corpus commit 01a871f993b54818f5ea51e161ad3581f8baca7e)

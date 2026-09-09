@@ -1,0 +1,10 @@
+company: Balu Forge Industries Ltd
+ticker: BALUFORGE
+cmp: 574.0
+market_cap_cr: 6969.0
+run_date: 2026-09-06
+run_type: full
+concalls_available: false
+sector_cap_row: "Recycling / Manufacturing"
+listed_date: ""
+notes: "Collected from screener.in by collect_to_repo.py v3 on 2026-09-06. Sector row set by hand: forging and precision machining; Recycling / Manufacturing (25x) is the matching row (the auto-picker chose Pharma / CDMO). Peers: HAPPYFORGE, MMFL, RKFORGE (crankshaft and machined-forging makers, export-led). CORPUS GAP: screener hosts NO concall transcripts for BALUFORGE, only concall PPTs, so concalls_available is false and the run goes to NO-CONCALL MODE. The four most recent concall PPTs (Jun 2026, May 2026, Feb 2026, Nov 2025) were fetched from BSE by hand into presentation/; the Jun 2026 PPT is the same file screener served as the investor presentation, kept once. Other gaps: results, rating, prospectus, announcements, shareholding, research. Concall PPTs fetched by hand carry the Regulation 30 filing date on BSE, not a screener classification. Latest AR on screener is FY2025."

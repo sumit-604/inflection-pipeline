@@ -148,9 +148,9 @@ named in the task message:
   for the B01 and B07 audits. The detailed scorecard thresholds and the
   21-category rubric live in these two files, not in Master/Section 1B.
 - VALUATION SCOPE ONLY (phase 3, when B10/B11 are among your inputs): the
-  valuation framework docs — Master Prompt v3.6 Role 1, the Section 1B
-  layer set (v3.3 Amendments + v3.5.1 + v3.6 + v3.7 + v3.8; later layers govern
-  overlaps), FTTCP v2.1 — for the B11 audit. In phase-1 scope (Gate 0 + Emerging
+  valuation framework docs — Master Prompt v3.7 Role 1, the Section 1B
+  layer set (v3.3 Amendments + v3.5.1 + v3.6 + v3.7 + v3.8 + v3.9 + v3.10;
+  later layers govern overlaps), FTTCP v2.3 — for the B11 audit. In phase-1 scope (Gate 0 + Emerging
   Moat only, no B11) these are NOT loaded: they are consumed solely
   by the deferred valuation audit, so carrying them in phase 1 is dead
   context.
@@ -168,7 +168,28 @@ RULES:
    EVIDENCE; evidence multipliers applied correctly; the completionist
    recount performed; scores consistent with the stated evidence tiers
    (a 🎙️-only category scoring as if 📄 is a finding).
-4. Valuation (B11), the deepest audit: continuous Pillar 1 formula
+4. Valuation (B11), the deepest audit. GROWTH SYMMETRY CHECKS FIRST
+   (Section 1B v3.10 Amendment 26, Master v3.7 Rules F to J):
+   - the 2C-w worksheet line is present and the base-case basis is
+     declared (RUN-RATE / ORDER-BOOK / CAPACITY / GUIDANCE-DISCOUNTED /
+     HISTORICAL), with the historical CAGR cross-check beside it. A base
+     case on HISTORICAL where run-rate, order-book, or capacity evidence
+     exists is a FAIL, not an observation (26.1);
+   - the margin bridge is stated lever by lever with an evidence line on
+     each; a trailing 3-year average used as the BASE is a FAIL (26.2);
+   - no per-input shading: an input lowered "to be conservative" without
+     both readings and the separating observation is a FAIL (26.3);
+   - probability weights key to the trailing four quarters of Role 5
+     delivery, not whole-company history (26.4);
+   - the 2D standing check is answered;
+   - the catalyst credit split between revenue and Pillar 3 is stated, and
+     nothing is credited twice (26.1 with Amendment 4);
+   - a Pillar 3 premium claimed on the Entrepreneur Ledger carries its
+     "supports / does not support because ___" line (Rule G).
+   Conservatism belongs in position size (Amendment 25), never in the
+   projection. Flag a base case that prices the audited past as loudly as
+   one that prices hope: the bar is symmetric.
+   THEN the pillar mechanics: continuous Pillar 1 formula
    applied, not the old bands; FTTCP ROCE verdict as sole Pillar 1
    authority; single-credit rule honoured with the route stated; Pillar
    2 multiplier matches the stated determination, offset rules correct,
@@ -233,6 +254,26 @@ RULES:
    events — the FV-step lines. Label present on the verdict card. Missing any
    element = REWORK for stage 11.
 
+13. Expectation Ledger (B11 / outputs/expectation-ledger.md), v3.9 A21-A24:
+   the ledger exists in the Appendix A schema; at least ONE downside row
+   (negative increment) is present; EVERY row carries a confirm-by date AND a
+   confirming metric-and-threshold; each probability is in [0.00, 1.00] and
+   the tier matches (p ≥ 0.50 = T2, < 0.50 = T3); each Status is one of
+   OPEN / CONFIRMED / DECAYED-1 / DECAYED-2 / RETIRED, and any decayed row
+   shows the 25%-step credit reduction. A missing downside row, a row missing
+   confirm-by or metric-threshold, an out-of-range probability, or an invalid
+   decay/status = REWORK for stage 11.
+14. Ledger and decomposition GATES (v3.9 A22/A24), both hard:
+   (a) NO CREDIT OFF-LEDGER — every catalyst credited in
+   price_decomposition T2 or T3 has a matching ledger row. A catalyst
+   credited in the price with no ledger row HALTS stage 11 (an expectation
+   not on the ledger may not be credited, Amendment 22): CRITICAL, REWORK
+   for stage 11.
+   (b) RESIDUAL STARTER CAP — where price_decomposition.residual.pct_cmp
+   exceeds 25%, the verdict/position size is capped at STARTER. A decision
+   above starter size with residual > 25% of CMP is CRITICAL (Amendments
+   24-25).
+
 OUTPUT: per-framework compliance tables with rule-by-rule PASS/FAIL and
 the recomputed value beside any FAIL; then:
 
@@ -245,6 +286,7 @@ status: complete
 gate0: {rules_checked: 0, fails: []}
 emoat: {rules_checked: 0, fails: []}
 valuation: {rules_checked: 0, fails: []}
+expectation_ledger: {present: false, downside_row: false, all_rows_confirm_by: false, all_rows_metric_threshold: false, prob_in_range: false, decay_status_valid: false, off_ledger_credit: false, residual_pct_cmp: 0, residual_starter_cap_ok: true, fails: []}  # rules 13-14; any fail = REWORK stage 11
 business_understanding_narrative: {present: false, five_questions_answered: false, prose_only: false, section6_candidates_named: 0, valuation_vocab_leak: false, fails: []}  # rule 7; any fail = REWORK stage 13
 recomputed_destination_pe: ""  # blank if concur; else both values
 recomputed_decision: ""        # blank if concur
@@ -256,7 +298,7 @@ acceptance_rate: 0             # rules passed ÷ rules checked, %
 ```
 
 INPUTS (phase-1 scope): prompts/01-gate-0-pipeline.md + prompts/07-emerging-moat-pipeline.md + {{B01_REPORT}} + {{B07_REPORT}}
-INPUTS (phase-3 valuation scope): the phase-1 sources above, PLUS the valuation framework docs (Master_Project_Prompt_v3_6.md Role 1 + Section_1B_v3.3_Amendments.md + Section_1B_v3_5_1_Reconciliation.md + Section_1B_v3_6_Amendments.md + Section_1B_v3_7_Amendments.md + Section_1B_v3_8_Amendments.md + FTTCP_v2_1_Consolidated.md) + {{B10_REPORT}} + {{B11_REPORT}}
+INPUTS (phase-3 valuation scope): the phase-1 sources above, PLUS the valuation framework docs (Master_Project_Prompt_v3_6.md Role 1 + Section_1B_v3.3_Amendments.md + Section_1B_v3_5_1_Reconciliation.md + Section_1B_v3_6_Amendments.md + Section_1B_v3_7_Amendments.md + Section_1B_v3_8_Amendments.md + Section_1B_v3_9_Amendments.md + Section_1B_v3_10_Amendments.md + FTTCP_v2_1_Consolidated.md) + {{B10_REPORT}} + {{B11_REPORT}}
 
 ═══════════════════════════════════════════════════════════════════
 ## VERIFIER D: PEER COVERAGE

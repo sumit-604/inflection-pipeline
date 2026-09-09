@@ -74,3 +74,4 @@ aborted). Same ledger row shape.
 | 2 | notes triple-pass (rework addendum, Class A + traceability) | claude-sonnet-5 | default | n/a | n/a | 229390 | 1370s | 4 |
 | 6 | peer concall verification (verdict-discipline correction) | claude-sonnet-5 | default | n/a | n/a | 133610 | 700s | 4 |
 | 12b | verifier B red-flags (rerun, NO-CONCALL: AR sources) | claude-opus-4-8 | default | n/a | n/a | 421040 | 1342s | 2 |
+| 12a | verifier A numerical (targeted rerun) | claude-haiku-4-5 | default | n/a | n/a | 122664 | 258s | 2 |

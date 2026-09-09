@@ -1,23 +1,32 @@
-# Phase-1 confidence delta, computed by the orchestrator per prompts/00-orchestrator.md Section 5
+# Phase-1 confidence delta after the REWORK COVERAGE RERUN (2026-09-09), computed by the orchestrator per prompts/00-orchestrator.md Section 5
 stage: confidence-delta
 company: KABRAEXTRU
 run_date: 2026-09-05
 phase: 1
+rerun: 2
 confidence_delta:
-  numerical_acceptance: 93.3      # B12a (haiku): 45 figures checked, 0 CRITICAL, 0 MAJOR, 3 MINOR, 0 source_fidelity findings
-  redflag_coverage: 23.0          # B12b (opus, NO-CONCALL: AR sources): 30 independent flags found, 7 caught, 9 partially caught, 15 missed; caught / found
-  framework_adherence: 93.8        # B12c (opus, PHASE-1 SCOPE: Gate 0 + Emerging Moat only): 58 + 38 rules checked, 0 CRITICAL, 0 MAJOR, 6 MINOR
-  peer_utilisation: 83.0         # B12d (sonnet): 6 peers audited, 5 substantive confirmed, 0 CRITICAL, 1 MAJOR, 7 MINOR
-  overall: 23.0               # min of the four
+  numerical_acceptance: 95.6      # B12a combined: run 1 45 figures at 93.3 (3 MINOR traceability items, closed by the 2026-09-09 stage 2 addendum) + targeted rerun 23 figures at 100 (0 findings); 65 of 68 clean; 0 MISMATCH / ANCHOR NOT FOUND in either pass
+  redflag_coverage: 46.0          # B12b rerun (opus, NO-CONCALL: AR sources, scope B05+B06): 52 independent flags found, 24 caught, 7 partially caught, 21 missed; caught / found. Run 1: 30 found, 7 caught, 23.0
+  framework_adherence: 97.0        # B12c rerun (opus, PHASE-1 SCOPE): 66 + 49 rules, 0 CRITICAL, 0 MAJOR, 3 MINOR. Run 1: 93.8
+  peer_utilisation: 100.0         # B12d rerun (sonnet): 6 peers, 5 substantive confirmed, 1 MAJOR (claim 10 single-peer VERIFIED, since relabelled PARTIALLY VERIFIED), 7 MINOR. Run 1: 83.0
+  overall: 46.0               # min of the four
   band: "FORCED REWORK (<60)"
   valuation_framework_adherence: "pending phase 3 (B10/B11 do not exist; verifier C valuation half deferred)"
+run1_vs_rerun:
+  numerical_acceptance: {run1: 93.3, rerun: 95.6}
+  redflag_coverage: {run1: 23.0, rerun: 46.0}
+  framework_adherence: {run1: 93.8, rerun: 97.0}
+  peer_utilisation: {run1: 83.0, rerun: 100.0}
+  overall: {run1: 23.0, rerun: 46.0}
 rework_triggers:
-  b12a_critical: False
+  b12a_critical: false
   any_verifier_acceptance_below_60: True
-  which: "B12b redflag_coverage 23.0"
+  which: "B12b redflag_coverage 46.0"
   overall_below_60: True
-verifier_a_coverage_scope: "45 material figures across 01-gate0, 02-notes (all passes), 03-ardeep and the AR internal-consistency items; sources opened: screener Data_Sheet, AR FY26, AR FY25. Peer-transcript page anchors of 06-peers were audited by verifier D (seven page-offset MINORs). Figures in 07, 08, 09 were not separately enumerated by verifier A."
-verifier_disagreements: "none this run (B12a carries no source_fidelity finding)"
+verifier_disagreements: "none this run (no B12a source_fidelity MISMATCH / ANCHOR NOT FOUND in either pass; the CLEAN rows in the rerun B12a carry source_fidelity: true as verifications, not findings)"
 notes:
-  - "B12b compared its fresh AR read against the concall-analysis stages (B05, B06) only, per its section scope. Several items it lists as MISSED were found by the AR-reading stages (B02 rank 3 Other income Rs 16.68 Cr; B02 rank 6 receivables ageing; B02 rank 2 Varos negative net worth; B04 battery-segment capital intensity). The synthesis names this when it applies the rule; the orchestrator does not recompute the rate."
-  - "B12b lists one CRITICAL (missed Other-income line); the orchestrator REWORK rule names B12a CRITICALs, so this item binds through the acceptance rate, not the CRITICAL count."
+  - "The rerun executed the committed fix list (Classes A-D). Verifier B's second fresh read enlarged the flag universe from 30 to 52 items; the pipeline now catches 24 outright (7 partially) against 7 in run 1. The 21 still-missed items include one new CRITICAL no stage caught (battery segment revenue fell 52.3% FY24 to FY25, Rs 26,616 to Rs 12,698 lakh, unnarrated, AR FY25 Note 38 p.104) and a segment-revenue basis change between the two ARs that makes the 13.2% / 7.2% FY26 segment moves not like-for-like (AR FY26 Note 38 p.105 vs P&L p.67)."
+  - "Verifier B also records 9 pipeline flags NOT SUPPORTED or OVERSTATED (3 MAJOR: B05's FADA 'internally consistent' line; B06's 73-74% H1 export share, which is the quarterly figure, H1 was 50-52%; B06's Windsor corroboration omitting negative operating cash flow). These are corrections for the next round."
+  - "Verifier D's MAJOR (claim 10 labelled VERIFIED on one peer) was corrected in B06 after the audit (relabelled PARTIALLY VERIFIED, commit 1afcb56); the B12d block records the pre-correction state."
+  - "Verifier C's remaining MINOR on B07 (the 'media-reported' wording left in three body locations after the block was aligned) is open; no score effect."
+  - "The 09b Halt 1 dossier (commit c446c24) predates this rerun and was not re-issued; its Section 4 vertical 1 cites the +7.2% battery revenue figure that verifier B shows is not like-for-like. Re-issue 09b when the rework cycle closes."

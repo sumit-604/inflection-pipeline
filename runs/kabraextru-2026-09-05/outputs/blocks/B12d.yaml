@@ -2,24 +2,25 @@ stage: B12d
 company: "KABRAEXTRU"
 run_date: "2026-09-05"
 model: claude-sonnet-5
+rerun: 2
 status: complete
 peers_audited: 6
 substantive_confirmed: 5
 substantive_unsupported: []
 unused_but_relevant:
-  - {peer: "WINDMACHIN", missed_item: "Screening CSV (inputs/screening/WINDMACHIN-Data_Sheet.csv) shows FY26 sales +72.9% YoY (Rs566.52 Cr vs Rs327.6 Cr FY25) with quarterly data reaching Q1 FY27 (quarter ended Jun-2026) -- the only peer data source in this corpus that actually reaches KABRAEXTRU's FY26 window, which every RAJOOENG transcript misses by ~17 months. Net profit stayed negative and an equity-capital/investments spike suggests the growth may be M&A-driven rather than organic, so it is not clean confirmation, but B06 never mentions the CSV exists, even to caveat it out of scope. Directly bears on Claims 1, 5, and 6 and on the report's own central staleness limitation.", anchor: "inputs/screening/WINDMACHIN-Data_Sheet.csv, rows 10-11 (FY26 column) and rows 27-28 (quarterly columns through 2026-06-30)"}
+  - {peer: "WINDMACHIN", missed_item: "Cash from Operating Activity sharply negative and worsening (FY25 -Rs2.4 Cr, FY26 -Rs59.09 Cr) despite the +72.9% FY26 sales growth cited as a corroborating signal in Claims 1 and 6", anchor: "WINDMACHIN-Data_Sheet.csv, row 57, columns 2025-03-31/2026-03-31"}
+  - {peer: "WINDMACHIN", missed_item: "Borrowings rose Rs34.86 Cr (FY25) to Rs86.04 Cr (FY26), +147%, an additional financing-mix data point for the Claim 6 organic-vs-inorganic capex question", anchor: "WINDMACHIN-Data_Sheet.csv, row 41, columns 2025-03-31/2026-03-31"}
+  - {peer: "RAJOOENG", missed_item: "Second, later corroboration of order-linked advance working-capital model ('these are the advance against order booking', re: Rs127 Cr reserve/surplus), duplicative of Claim 10's existing Q2 FY24 anchors so immaterial to the verdict", anchor: "RAJOOENG Q2 FY25, 22-Oct-2024, PDF p.8-9"}
 claims_all_addressed: true
-verdict_discipline_fails: []
+verdict_discipline_fails:
+  - {claim: "Claim 10 (Rajoo working-capital terms vs KABRAEXTRU receivable ageing)", issue: "Verdict recorded as VERIFIED resting on a single peer (RAJOOENG), three anchors all from that one peer; per Verifier D Rule 4 a VERIFIED resting on one peer is MAJOR and should be PARTIALLY VERIFIED. B06's own text notes the classification is atypical but does not relabel the verdict field.", severity: "MAJOR"}
 findings:
-  - {severity: "MAJOR", location: "Part 3 coverage map / WINDMACHIN row", claimed: "WINDMACHIN listed UNUSED, no transcript in corpus", note: "True but incomplete: the WINDMACHIN screening CSV in corpus reaches KABRAEXTRU's FY26 window and was never mentioned, unlike every RAJOOENG transcript which stops 17 months short; a material, available, claim-relevant data source went unacknowledged"}
-  - {severity: "MINOR", location: "Claim 4, RAJOOENG Q2 FY24 back-to-back procurement quote", claimed: "cited p.9", note: "quote is real and accurately transcribed but sits on PDF page 10"}
-  - {severity: "MINOR", location: "Claim 3 / Part 2D, RAJOOENG Q4 FY24 'Windsor machines and carbon extrusion' quote", claimed: "cited p.8", note: "quote is real and accurately transcribed but sits on PDF page 9"}
-  - {severity: "MINOR", location: "Claim 5, RAJOOENG Q4 FY24 45% FY24 export share", claimed: "cited p.11", note: "figure is real but sits on PDF page 12"}
-  - {severity: "MINOR", location: "Claim 3, RAJOOENG Q2 FY25 33% PVC / 55-60% blown-films market share quotes", claimed: "cited p.9-10", note: "quotes are real and accurately transcribed but sit on PDF pages 11 and 12 respectively"}
-  - {severity: "MINOR", location: "Claim 1 net read, RAJOOENG Q2 FY25 'domestic is not really encouraging margin' / 73% export quote", claimed: "cited p.11", note: "quote is real but sits on PDF page 12"}
-  - {severity: "MINOR", location: "Claim 8, HBLENGINE p.17 nickel-cadmium quote", claimed: "'everybody can import cells'", note: "transcript literally reads 'everybody can import sales'; substance intact, wording not verbatim"}
-  - {severity: "MINOR", location: "Part 4 Triangulation Summary, CONTRADICTED verdict labels", claimed: "CONTRADICTED", note: "label alone (outside its caveat) risks reading stronger than the framing-only scope the report consistently states; presentational note, not a discipline failure"}
+  - {severity: "MAJOR", location: "Claim 10 verdict (B06 report + B06 YAML verified: block)", claimed: "VERIFIED", note: "Single-peer VERIFIED violates Rule 4; should be PARTIALLY VERIFIED", source_fidelity: false}
+  - {severity: "MINOR", location: "Claim 5, '73-74% of H1 FY25 revenue' composite figure", claimed: "PDF p.12 for both 73% and 74%", note: "74% is actually stated on PDF p.10 (a different, quarterly-only Q&A exchange); 73% and the accompanying quote are correctly on p.12", source_fidelity: false}
+  - {severity: "MINOR", location: "Claim 6, facility-inauguration anchor", claimed: "PDF p.2-3", note: "Quote is located entirely on PDF p.3; p.2 does not contain it", source_fidelity: false}
+  - {severity: "MINOR", location: "Claim 4 / Part 2E(i), Red Sea shipping crisis anchor", claimed: "PDF p.6-7", note: "Quoted material is located entirely on PDF p.7", source_fidelity: false}
+  - {severity: "MINOR", location: "B06 'Sources Re-Read' page-count metadata for Nov-2023 and Apr-2024 transcripts", claimed: "11pp and 15pp respectively", note: "Actual PDF-page-marker counts run one higher (12pp, 16pp); appears to be an internal-footer vs total-PDF-page counting convention difference; no anchor affected", source_fidelity: false}
 critical_count: 0
 major_count: 1
 minor_count: 7
-acceptance_rate: 83
+acceptance_rate: 100

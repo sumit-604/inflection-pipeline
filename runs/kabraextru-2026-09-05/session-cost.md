@@ -75,3 +75,23 @@ aborted). Same ledger row shape.
 | 6 | peer concall verification (verdict-discipline correction) | claude-sonnet-5 | default | n/a | n/a | 133610 | 700s | 4 |
 | 12b | verifier B red-flags (rerun, NO-CONCALL: AR sources) | claude-opus-4-8 | default | n/a | n/a | 421040 | 1342s | 2 |
 | 12a | verifier A numerical (targeted rerun) | claude-haiku-4-5 | default | n/a | n/a | 122664 | 258s | 2 |
+| 13 | synthesis-lite (phase 1, rerun) | claude-opus-4-8 | default | n/a | n/a | 247423 | 1108s | 2 |
+
+### RERUN CLOSE-OUT (2026-09-09)
+
+Rerun subagent tokens across the rows above: ~2,240,460. Run-1 phase-1 total was ~3,439,882; cumulative for the run folder ~5,680,342.
+
+(a) TOP FIVE BY TOKENS, rerun rows only (loop/retry summed)
+1. Stage 12b verifier B red-flags = 421,040 — 18.8%
+2. Stage 6 peer concall verification (2 runs: 208,810 + 133,610) = 342,420 — 15.3%
+3. Stage 13 synthesis-lite = 247,423 — 11.0%
+4. Stage 5 concall NO-CONCALL = 236,342 — 10.5%
+5. Stage 2 notes triple-pass = 229,390 — 10.2%
+
+(b) DOWNSHIFT FAILURES: none. Verifier A (mechanical) ran on haiku as dispatched; stage 0 and stage 10 did not run in the rerun.
+
+(c) COST SPIKES: no prior runs/kabraextru-*/ ledger exists, so the 1.5x rule has no prior-run comparator and nothing is written to LESSONS.md. For the record, within this run folder the rerun rows exceeded 1.5x the same stage's run-1 total for: Stage 6 peer concall verification (342,420 vs run-1 168,103, 2.0x). Stage 6's excess is the verdict-discipline correction pass on top of the rerun; verifier B's second fresh read enlarged its flag universe from 30 to 52 items.
+
+(d) OPERATOR SNAPSHOT: operator runs /cost and /usage now and pastes the cache hit ratio and loop totals under an "Operator snapshot" heading below.
+
+Rerun notes: all five wave-1 agents completed without a rate-limit abort; stage 6 received a second small pass to relabel a single-peer VERIFIED as PARTIALLY VERIFIED after verifier D's audit; the 09b dossier was not re-issued (rework cycle still open).

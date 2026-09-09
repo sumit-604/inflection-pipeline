@@ -54,7 +54,11 @@ rerun was ordered 2026-09-09 (see run folder). Upload list: CRISIL rationale
 - 2026-09-09: operator ordered a COVERAGE rerun of the REWORK (stages 5 and 6
   rerun; Class A items added to stages 2 and 3; Class D minors closed); the
   CRISIL rationale fetch runs on the web side; FLAG-CASH stays INDETERMINATE
-  pending that document.
+  pending that document. Outcome: all 15 fix-list items executed; delta
+  overall 23 -> 46; verdict REWORK stands (verifier B found 52 items vs 30,
+  new CRITICAL: battery segment revenue fell 52.3% FY24 -> FY25, unnarrated).
+  Second-round fix list is in outputs/final/gate-recommendation.md. The 09b
+  dossier predates the rerun and awaits re-issue.
 
 ## ACTIVE TRIPWIRES
 Set at Halt 1 / FTTCP.

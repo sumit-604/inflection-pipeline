@@ -3,44 +3,43 @@ company: "TOTEM"
 run_date: "2026-09-09"
 model: claude-sonnet-5
 status: complete
+stage_run: 2
 input_gaps:
-  - "peer-concalls PARTIAL: 2 of 3 selected peers covered; BIRLAPREC has zero transcripts in corpus"
-  - "newest KENNAMET call (15-Mar-2024) is ~2.5 years stale relative to run date; only structural, non-decaying claims can lean on it"
-  - "only ONE peer call (WENDT, 21-Jul-2025) falls inside a defensible window for the current FY26-FY27 cycle"
-  - "concalls/ EMPTY BY DECLARATION for the subject (TOTEM): no subject transcripts exist to compare against"
+  - "peer-concalls PARTIAL: 2 of 3 selected peers covered (KENNAMETAL INDIA 4 calls, WENDT INDIA 1 call); BIRLAPREC has zero transcripts, never inferred"
+  - "KENNAMETAL newest call (11-Mar-2024) is 2.5 years stale vs run date; usable only for structural (non-decaying) questions"
+  - "no peer transcript reaches TOTEM's own FY26/FY27 fiscal window directly; all peer evidence is adjacent-period"
 flags:
-  - "Kennametal's structural single-point-to-CNC/carbide migration commentary (Mar-2023) cuts against TOTEM's one clean delivered trigger (HSS Drills capacity ramp), not for it"
-  - "Wendt shareholder asked directly about Trump/US tariffs on the record; management's recorded answer sequence never addresses it -- an informative silence, not a confirmation or denial of TOTEM's tariff claim"
-  - "Wendt's own large FY25 capex was followed by a WORSE near-term result (Q1 FY26 machine tools -18%, PBT -34%) before any payback showed, tempering a clean read of TOTEM's Q1 FY27 margin jump as an obvious on-schedule capex payoff"
-  - "CSV cross-check (not a concall citation): Kennametal (+47.7%) and Wendt (+36.6%) both accelerated sharply in the identical Apr-Jun 2026 quarter as TOTEM's Q1 FY27 (+28.9%); Birlaprec (no transcript) was flat (+1.4%) in the same quarter"
-  - "Wendt's transparent one-time-cost reconciliation and DSO explanation is a positive sector contrast that sharpens, not excuses, TOTEM's own zero-commentary quarterly filings (B05 flag)"
+  - "CONTRADICTED: TOTEM FY24-25 AR export claim ('improving trend') vs Wendt's own FY24-25 export result (-12%), same fiscal year"
+  - "Q4 (US/Mexico tariff impact) UNVERIFIABLE not by peer silence but by a recorded non-answer: a Wendt shareholder asked the exact tariff question on the AGM record and management never returned to it"
+  - "Q3 (distributor/channel inventory 2025-26) UNVERIFIABLE: the only inventory commentary in the corpus is peers' own-book, 2023-dated, non-demand-driven (COVID and a facility move)"
 peers_provided: 5
 verified: []
 partially_verified:
-  - {claim: "Cutting-tool demand from automotive/aerospace/defence/railway customers accelerating through FY25-FY26", peers: ["KENNAMETAL INDIA", "WENDT INDIA"]}
-  - {claim: "HSS-versus-carbide demand and pricing mix trend industry-wide", peers: ["KENNAMETAL INDIA"]}
-  - {claim: "Capex-to-margin payback timeline for capacity expansions", peers: ["KENNAMETAL INDIA", "WENDT INDIA"]}
-  - {claim: "Steel/carbide raw-material cost pass-through 2023-2025", peers: ["KENNAMETAL INDIA"]}
-contradicted: []
+  - {claim: "Cutting-tool/precision-tooling demand from automotive/general-engineering customers in India is accelerating industry-wide, not company-specific to TOTEM's 7.8-7.9% FY26 growth", peers: ["KENNAMETAL INDIA", "WENDT INDIA"]}
+  - {claim: "HSS-versus-carbide demand mix is shifting industry-wide (structural migration from single-point/HSS toward CNC-driven, predominantly carbide tooling)", peers: ["KENNAMETAL INDIA"]}
+  - {claim: "Capex-to-margin payback timeline for capacity expansions (TOTEM discloses none across 3 ARs)", peers: ["KENNAMETAL INDIA", "WENDT INDIA"]}
+  - {claim: "Raw-material (steel/carbide) cost pass-through was only partially achievable 2023-2025, matching TOTEM's own weakened pass-through language", peers: ["KENNAMETAL INDIA"]}
+contradicted:
+  - {claim: "TOTEM FY24-25 AR (Precision Tools section): 'The business has also seen an improving trend in the export business performance'", contradicting_peer: "WENDT INDIA", quote_anchor: "WENDT AGM transcript, meeting 21-Jul-2025, p.3: 'Exports were at Rs 43.63 crores during the year, lower by 12% over the previous year due to reduced offtake from key customers from a few countries.' Subject-side anchor: work/text/annual-report__Annual_Report_2025.txt, PDF p.19"}
 unverifiable:
-  - {claim: "Distributor/channel partner inventory behaviour through 2025-2026", peers_checked: ["KENNAMETAL INDIA", "WENDT INDIA"]}
+  - {claim: "Distributor/channel-partner inventory behaviour (stocking vs destocking) through 2025-2026", peers_checked: ["KENNAMETAL INDIA", "WENDT INDIA"]}
   - {claim: "US/Mexico tariff impact on Indian cutting-tool exports, widening or stabilising into 2026", peers_checked: ["KENNAMETAL INDIA", "WENDT INDIA"]}
 peer_coverage_map:
-  - {peer: "KENNAMET", quarter: "Meeting 02-Mar-2023 (filed 07-Mar-2023)", usage: "SUBSTANTIVE", contribution: "raw-material pass-through mechanics; single-point-to-CNC/carbide structural migration; China export concentration risk"}
-  - {peer: "KENNAMET", quarter: "Meeting 19-May-2023 (filed 22-May-2023)", usage: "SUBSTANTIVE", contribution: "domestic hard-metals growth ~9% vs China-driven export weakness; own-inventory build during plant transition; capacity lead-time ~10 months"}
-  - {peer: "KENNAMET", quarter: "Meeting 06-Jun-2023 (filed 09-Jun-2023)", usage: "SUBSTANTIVE", contribution: "explicit 12-15 month capex-to-consumable-demand lag; channel structure; tungsten/cobalt price stability"}
-  - {peer: "KENNAMET", quarter: "Meeting 11-Mar-2024 (filed 15-Mar-2024, newest in corpus)", usage: "SUBSTANTIVE", contribution: "domestic-vs-export split, CNC +46% domestic; auto dependence <50%; capacity adequacy/modular capex; tungsten price fall and negotiated pass-through; royalty rate to parent"}
-  - {peer: "WENDT", quarter: "Meeting 21-Jul-2025 (43rd AGM, Q1 FY26 results; misfiled as Jul_2026)", usage: "SUBSTANTIVE", contribution: "domestic/export split; segment EBIT margins; FY25 capex jump plus brand buyout; tariff question asked and left unanswered; transparent DSO explanation; CEO departure mid-cycle"}
-  - {peer: "BIRLAPREC", quarter: "n/a", usage: "UNUSED", contribution: "no transcript in corpus; CSV financials only, used as non-concall quantitative cross-check, never as a citation"}
+  - {peer: "KENNAMETAL INDIA", quarter: "Call 07-Mar-2023", usage: "SUBSTANTIVE", contribution: "HSS-vs-carbide product distinction (p.7); HSS/single-point-to-CNC migration finding (p.11); distributor channel mix ~70% (p.4); own-book COVID/facility-move inventory build (p.17)"}
+  - {peer: "KENNAMETAL INDIA", quarter: "Call 22-May-2023", usage: "SUBSTANTIVE", contribution: "Domestic hard-metal growth ~9% (p.3-4); China-driven MSG machine-order weakness quantified (p.3); own-book inventory correction, facility-linked (p.4-5)"}
+  - {peer: "KENNAMETAL INDIA", quarter: "Call 09-Jun-2023", usage: "SUBSTANTIVE", contribution: "Explicit 12-15 month capex-to-consumable-demand lag (p.5, p.10); imported-machine surge 'crazy high...broken the record of 2018-2019' (p.7); hedged raw-material pass-through language (p.15)"}
+  - {peer: "KENNAMETAL INDIA", quarter: "Call 11-Mar-2024 (newest, 2.5yr stale)", usage: "SUBSTANTIVE", contribution: "'Sequential improvement in our PBT' over 4 quarters (p.7); domestic CNC growth 46% (p.6); domestic hard-metal growth mid-to-high single digit after export drag (p.28-29); symmetric tungsten pass-through commentary (p.19)"}
+  - {peer: "WENDT INDIA", quarter: "AGM meeting 21-Jul-2025 (Wendt's own Q1 FY26 results within)", usage: "SUBSTANTIVE", contribution: "FY24-25 export decline -12% contradicting TOTEM's own FY24-25 export claim (p.3); CEO departure named and dated (p.7); Q1 FY26 PBT -34% after a capex spike (p.6, p.11); capex +422% with no payback timeline given even under direct questioning (p.18-19, p.23); tariff question asked, left unanswered (p.20)"}
+  - {peer: "BIRLA PRECISION", quarter: "N/A", usage: "UNUSED", contribution: "Zero transcripts in corpus; never inferred"}
 industry_cross_read:
-  demand: "Domestic strong, export weak is consensus across both peers in every call; CSV shows Kennametal and Wendt both accelerating sharply in the identical Apr-Jun 2026 quarter as TOTEM, but Birlaprec is flat the same quarter -- a real, unresolved split"
-  pricing_inputs: "Kennametal has and exercises structural pass-through power across 2023-2024 (stale relative to TOTEM's FY26 spike); no peer call covers TOTEM's specific FY26 commodity-spike window"
-  capex_cycle: "Industry-wide capacity race, not a lone TOTEM expander: Kennametal and Wendt both ran large capex programs inside the same FY24-26 window TOTEM did"
+  demand: "Both peers show domestic demand growth in a 6-11% band (peer fiscal years) bracketing TOTEM's 7.8-7.9% FY26 growth; directionally corroborated, not TOTEM-specific, but no peer figure sits inside TOTEM's own FY26 window"
+  pricing_inputs: "Kennametal's own raw-material pass-through language is hedged ('wherever possible'), matching TOTEM's own softened claim; tungsten pricing is described as transparent and symmetric market-wide, cutting both ways"
+  capex_cycle: "INDUSTRY-WIDE CAPACITY RACE, not a lone expander: both peers with transcripts are also expanding capacity in overlapping windows on demand-led terms; caution flag: Wendt's own capex spike (FY24-25) was immediately followed by its worst quarter on record (Q1 FY26, PBT -34%)"
 peer_mentions_of_company: []
 risks_peers_raise:
-  - "China/single-market export concentration risk (Kennametal) -- TOTEM never frames its export book by concentration"
-  - "quantified import-competition intensity on specific product lines (Kennametal, ~1.5% of revenue) -- TOTEM's AR names competition only in boilerplate"
-  - "senior leadership turnover during a growth ramp (Wendt CEO departure mid-cycle) -- echoes TOTEM's own two HR-leadership departures in ~8 months"
-  - "capex not guaranteeing near-term payback (Wendt Q1 FY26 machine tools -18% right after its largest-ever capex)"
+  - {risk: "Quantified import-competition intensity in a specific product slice (~1.5% of revenue)", anchor: "KENNAMETAL, Mar-2024, p.20-21"}
+  - {risk: "Leadership transition named and dated in real time at the AGM itself", anchor: "WENDT AGM p.7"}
+  - {risk: "Receivables/DSO deterioration interrogated and explained on the record", anchor: "WENDT AGM p.19, p.23"}
+  - {risk: "One-time costs named and reconciled against an ex-items PBT figure in the narrative", anchor: "WENDT AGM p.4"}
 net_narrative_effect: "complicates"
-analyst_note: "The strongest single finding is the CSV-only same-quarter acceleration (Kennametal +47.7%, Wendt +36.6%, TOTEM +28.9%, Birlaprec +1.4%) feeding a testable Part 5 hypothesis: the cycle looks concentrated among recent-capex holders, not a uniform industry boom. This is quantitative, not a concall citation, and should not be cited downstream as peer-verified. Separately, Kennametal's structural HSS-to-carbide migration commentary cuts against TOTEM's one clean delivered trigger (Drills/HSS), a complication Stage 11/13 should carry forward rather than resolve away."
+analyst_note: "The export contradiction (TOTEM FY24-25 AR 'improving trend' against Wendt's own -12% export result in the same fiscal year) is the highest-value finding this stage adds; it was visible in run 1's own Part 2A text but never reached the contradicted[] tally, which is now fixed. One verifier page citation (Ninad Gadgil's -18%/-34% figures) is corrected here to p.11 on this run's own read of the page markers, not p.10 as the verifier's finding stated; the verifier is a second analyst opinion, not authoritative on that page number. Q3 and Q4 stay UNVERIFIABLE on a genuine corpus gap, not peer denial: Kennametal is 2.5 years stale and Wendt's own shareholder asked the tariff question directly and got no recorded answer."

@@ -19,3 +19,6 @@
 | 12b | verifier B red flags | claude-opus-4-8 | default | n/a | n/a | 287138 | 15m43s | 1 |
 | 12c | verifier C framework (phase-1 scope) | claude-opus-4-8 | default | n/a | n/a | 126016 | 8m20s | 1 |
 | 12d | verifier D peer coverage | claude-sonnet-5 | default | n/a | n/a | 208088 | 6m24s | 1 |
+| 1 | gate 0 scorecard (verifier corrections) | claude-sonnet-5 | default | n/a | n/a | 120757 | 8m26s | 3 |
+| 5 | management/guidance analysis (verifier corrections) | claude-sonnet-5 | default | n/a | n/a | 233523 | 12m34s | 2 |
+| 6 | peer concall verification (verifier corrections) | claude-sonnet-5 | default | n/a | n/a | 195260 | 7m36s | 2 |

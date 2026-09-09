@@ -795,35 +795,273 @@ ahead of Halt 1 is the Chairman's-Letter-vs-MD&A EBITDA discrepancy (Rs10 Cr vs 
 sits in the most-read, least-scrutinised part of the document and would otherwise be taken at face value by a
 reader who does not cross the whole AR the way this stage did.
 
+---
+
+## REWORK ADDENDUM (2026-09-09)
+
+Coverage rerun ordered 2026-09-09 (run date of record stays 2026-09-05). Scope per the committed fix list
+(`outputs/final/run1/gate-recommendation.md`, "What a rerun must fix," Class A items 1-4): these are pipeline-wide
+misses no stage caught, to be added here and to Stage 2/Stage 6. The eight phases above are NOT re-run; this
+section adds four evidenced findings and states, item by item, what changes and what does not.
+
+### A1. Three different FY25 PAT figures inside AR FY25 (Class A item 3)
+
+Quote 1, MD&A table, same page as Quote 2: "PAT | 32 | 34 | 6.9%" [columns F24 / F25 / Change] (AR FY25 p.38,
+Financial Performance table).
+Quote 2, MD&A prose, immediately below the table, same page: "KET's PAT stood at ₹ 32 crores. PAT margin stood
+at 6.8% during FY25." (AR FY25 p.38).
+Quote 3, Chairman's Letter: "KET's profit after tax (PAT) stood at ₹33.9 crores, with a PAT margin of 7.2% during
+FY25." (AR FY25 p.4).
+
+Reconciliation against the audited FY25 P&L. The Directors' Report table (AR FY25 p.19, "Key highlights of the
+financial results... prepared as per... Ind AS," reproducing the audited figures) and the standalone Statement of
+Profit and Loss itself (AR FY25 p.67, Line IX) both show: **standalone Profit/(Loss) for the period Rs3,387.20 Lakh
+(Rs33.87 Cr)**. The consolidated Statement of Profit and Loss (AR FY25 p.121, Line XI, "Profit for the year") shows:
+**consolidated Rs3,220.20 Lakh (Rs32.20 Cr)**, also reproduced in the Directors' Report table (AR FY25 p.19).
+
+- The MD&A **table** (Rs34 Cr, rounds from 33.87) and the **Chairman's Letter** (Rs33.9 Cr) both reconcile to the
+  audited **STANDALONE** PAT. Their stated margin (7.2%) is close to but not an exact match to 3,387.20 /
+  47,684.69 = 7.10% computed off standalone revenue from operations (AR FY25 p.19/p.67); the 0.1pp gap is a
+  minor rounding-basis difference, not a separate contradiction.
+- The MD&A **prose sentence two lines below the same table** (Rs32 Cr, 6.8% margin) does NOT match the
+  standalone figure. It matches the audited **CONSOLIDATED** PAT (Rs32.20 Cr) almost exactly, and its margin
+  reconciles cleanly: 3,220.20 / 47,684.75 = 6.75%, which rounds to the printed 6.8% (AR FY25 p.19/p.121).
+
+Reading: the MD&A section is titled and otherwise entirely populated with **standalone** figures (its own revenue
+line, "₹477 crores," is the standalone/consolidated-common revenue-from-operations figure). The prose sentence
+switches, without any label change, to the **consolidated** PAT basis for one sentence only, immediately under a
+table that uses the standalone basis for the identical metric and year. A reader cannot tell from the text which of
+the three printed PAT figures is "the" FY25 PAT; two are internally traceable (standalone: table + letter;
+consolidated: prose), the third figure a reader might reasonably default to (whichever they read first) is simply the
+wrong basis for the other two.
+
+Fold-in: this extends Phase 6A (narrative vs reality, front matter vs statements) with a PRIOR-YEAR instance of the
+same failure mode Phase 6 already found in AR FY26 (Chairman's-Letter EBITDA Rs10 Cr vs MD&A EBITDA Rs13.05
+Cr) — establishing this is not a one-year drafting slip but a **recurring, two-year pattern** of the front matter and
+the MD&A disagreeing with each other on the year's own headline profit metric. It also extends the Phase 4C
+guidance_table credibility read (new row added below): a reader relying on the Chairman's Letter or the MD&A
+table alone in AR FY25 would have taken away a PAT figure roughly 5-6% higher than a reader relying on the
+prose two lines away, a full year before AR FY26's own EBITDA mismatch was found.
+
+### A2. AR FY26 Key Financial Ratios table: Interest Coverage Ratio +39.20% and ROCE -86.50% (Class A item 4)
+
+Quote, MD&A Section C, "Key Financial Ratios" (AR FY26 p.37): "Interest Coverage Ratio | 39.20% | [blank]" and
+"Return on Capital Employed | (86.50%) | [blank]". Both cells under "Reasons for Variation" ARE blank as printed;
+the table's own header states the SEBI LODR requirement to give reasons for "change of 25% or more."  By
+contrast, Inventory Turnover, Operating Profit Margin, and Net Profit Margin — also past 25% — DO carry printed
+reasons ("Due to increase in inventory and Lower sale," "Due to lower sale" x2) on the same table.
+
+Quote, standalone Note 43, "Following Ratios to be disclosed" (AR FY26 p.112): row (c), "Debt Service Coverage
+Ratio (X) | Earning available for debt service | Debt Service | 14.36 | 10.32 | 39.2% | Due to generate lower net
+operating income"; row (j), "Return on Capital employed (%) | Earning before interest and taxes | Capital Employed
+| 1.20% | 8.90% | -86.5% | Due to generate negative profit after tax."
+
+Reconciliation against the report's own EBIT (PBT plus finance cost) and finance cost. MD&A Table B (AR FY26
+p.37) states EBIT Rs7.16 Cr FY26 and Rs45 Cr FY25; the Directors' Report table (AR FY26 p.17) and standalone
+P&L (AR FY26 p.67) state finance cost Rs1,139.25 Lakh (Rs11.3925 Cr) FY26, up from Rs1,117.31 Lakh (Rs11.1731
+Cr) FY25. A true interest coverage ratio (EBIT / finance cost) on these figures: FY26 = 7.16 / 11.3925 = **0.629x**;
+FY25 = 45 / 11.1731 = **4.03x**. Change = (0.629 - 4.03) / 4.03 = **approximately -84%**, a large DECLINE, not the
++39.20% INCREASE the MD&A table prints under "Interest Coverage Ratio."
+
+The 39.2% figure is not invented: it is numerically identical to Note 43's own **Debt Service Coverage Ratio**
+variance (14.36 vs 10.32 = +39.2%), a different ratio (earnings available for debt service, divided by total debt
+service — interest plus scheduled principal repayment — not simple EBIT over interest expense). The MD&A
+summary table appears to have carried the Debt Service Coverage Ratio's variance number into a row it mislabels
+"Interest Coverage Ratio," and in doing so dropped the Reason for Variation text Note 43 supplies for the ratio it
+actually measures ("Due to generate lower net operating income" — itself an incomplete reason, since the DSCR
+rose mainly because the near-extinguished term loan (Phase 2F: only Rs0.11 Cr of long-term debt remained
+current, AR FY26 p.64) collapsed the denominator, not because operating health improved). Whichever ratio the
+39.20% actually belongs to, the row printed as "Interest Coverage Ratio" in the MD&A does not reconcile, in either
+magnitude or direction, to interest coverage computed from the same report's own EBIT and finance cost lines.
+
+ROCE (-86.50%) DOES reconcile exactly to Note 43 and to the primary statements (1.20% vs 8.90%, Phase 3B,
+already confirmed). Its number is correct. What is missing is only the Reason for Variation cell in the MD&A
+summary table (blank), even though Note 43, printed elsewhere in the SAME audited financial statements, supplies
+one for the identical percentage. Both the mislabeled Interest Coverage Ratio row and the un-reasoned ROCE row
+sit past the 25% disclosure trigger the table's own header names.
+
+Sub-finding, self-discovered in this reconciliation: MD&A Table B's own EBIT figures are not computed on a
+consistent basis year to year. FY25's printed EBIT (45 Cr) equals PBT BEFORE exceptional items plus finance cost
+(33.4328 + 11.1731 = 44.61, rounds to 45), i.e. EXCLUDES that year's Rs8.49 Cr exceptional gain. FY26's printed
+EBIT (7.16 Cr) equals PBT AFTER exceptional items plus finance cost (-4.2321 + 11.3925 = 7.1604), i.e. INCLUDES
+that year's -Rs0.24 Cr exceptional charge. The two years in the same "EBIT" row of the same table are not built on
+the same earnings basis. The FY26 effect is small in Rupee terms (~Rs0.24 Cr) but the definitional inconsistency
+is the same failure mode the Section 1B framework's exit-basis rule exists to guard against, here inside a single
+MD&A table rather than an entry-versus-exit valuation.
+
+Fold-in: extends Phase 3B (interest coverage / ROCE ratio table) and Phase 4C/4D (MD&A credibility; "Reasons for
+Variation" already criticised there as generic — now also shown to be, in the interest coverage case, attached to
+the wrong ratio entirely).
+
+### A3. FY25 Rs848.98 Lakh exceptional gain, Penta Auto Feeding JV divestment, and its absence from the FY25
+Chairman's Letter and from FY26's own YoY comparison sentences (Class A item 2)
+
+Quote, AR FY25 p.19 (Directors' Report table, standalone column): "Proﬁt / (Loss) before share in Proﬁt (Loss) of
+Joint Ventures / subsidiaries, exceptional items & tax (A - B) | 3,343.28 | 4,221.88" then "Exceptional items |
+848.98 | -" then "Profit / (Loss) before including exceptional item | 4,192.26 | 4,221.88" [FY24-25 / FY23-24
+columns as printed].
+Quote, AR FY25 p.4 (Chairman's Letter): "KET's profit after tax (PAT) stood at ₹33.9 crores, with a PAT margin of
+7.2% during FY25." No mention anywhere in the letter of an exceptional item, a one-off gain, or a divestment.
+
+The exceptional gain (Rs848.98 Lakh = Rs8.49 Cr) is **25.4% of FY25 PBT before exceptional items** (Rs3,343.28
+Lakh) and **20.2% of FY25 reported PBT after exceptional items** (Rs4,192.26 Lakh) — a materially sized, one-time
+addition to the year's pre-tax profit that the Chairman's Letter's headline PAT/margin sentence gives no hint of.
+
+AR FY26 sentences that compare FY26 to FY25 without naming this base effect: MD&A Table B and prose (AR FY26
+p.37): "KET reported an EBIT of INR 7.16 crores in FY26 as compared to INR 45 crores in FY25... The Company
+recorded a net loss, with PAT standing at INR (2.44) crores in FY26 against a profit of INR 34 crores in FY25."
+Directors' Report (AR FY26 p.17): "The net loss for the year stood at Rs. (244.28) Lakhs against net profit of Rs.
+3,387.21 Lakhs in the previous year." Neither sentence, nor any other located by full-document search, names the
+Penta Auto Feeding gain when drawing the FY26-vs-FY25 comparison. As noted above (A2 sub-finding), the MD&A's
+own EBIT row DOES implicitly strip the FY25 exceptional item (uses PBT-before-exceptional for FY25's "45"), so the
+EBIT comparison is inadvertently like-for-like; the PAT comparison is not, since PAT is the reported bottom line
+inclusive of the one-off in the FY25 base.
+
+This does not overturn the existing Phase 3C conclusion. Phase 3C already computed FY25 standalone PBT
+excluding the exceptional gain as **Rs33.43 Cr** (the table's own "PBT before exceptional items" row, this same
+report) and correctly concluded the FY25-to-FY26 collapse is genuine, not an artefact of the exceptional-item swing.
+**Self-correction to this stage's own prior text:** Phase 3C's prose sentence stating "excluding the FY25
+exceptional gain, FY25 standalone PBT would have been Rs35.43 Cr" contains an arithmetic typo; the correct figure,
+matching the table two lines above it in this same report, is **Rs33.43 Cr** (Rs41.92 Cr reported PBT minus Rs8.49
+Cr exceptional gain = Rs33.43 Cr). Rs35.43 Cr appears nowhere in the primary sources and originated in this
+stage's own drafting, not in the company's disclosure. The qualitative conclusion (genuine deterioration, not an
+exceptional-item artefact) is unaffected by this correction.
+
+Fold-in: extends Phase 2H (exceptional items) and Phase 6A (front matter vs statements) with a PRIOR-YEAR
+instance — the FY25 Chairman's Letter omitting a one-off worth a fifth to a quarter of that year's pre-tax profit —
+and adds a missing_risks item (below) for FY26's own comparison sentences not naming the base effect.
+
+### A4. Rs421.14 Lakh silent reclassification of FY25 comparatives, employee benefits expense vs other expenses
+(Class A item 1)
+
+Quote, AR FY25 (as originally reported), Directors' Report table and standalone Notes 26/29 (AR FY25 p.19):
+"Employee beneﬁts expense | 5,907.53" and "Other Expenses | 7,473.91" [FY 24-25 standalone column].
+Quote, AR FY26's OWN restated FY25 comparative, Directors' Report table (AR FY26 p.17) and standalone Notes
+26/29 (AR FY26 p.95): "Employee beneﬁts expense | 7,617.46 | 6,328.67" and "Other Expenses | 8,114.64 |
+7,052.77" [FY 2025-26 / FY 2024-25 columns as printed].
+Quote, standalone Note 47 (AR FY26 p.112), the ONLY disclosure offered for the change: "Previous year's figures
+have been regrouped wherever considered necessary to make them comparable with those of the current year." No
+amount, no reason, and no cross-reference to Notes 26/29 accompanies this sentence.
+
+The two FY25 employee-benefits figures differ by exactly Rs421.14 Lakh (6,328.67 - 5,907.53), and the two FY25
+other-expenses figures differ by exactly the same Rs421.14 Lakh in the OPPOSITE direction (7,473.91 - 7,052.77).
+The swap is exact and fully offsetting: FY25 Total Expenses (B) is IDENTICAL in both reports at Rs45,639.87 Lakh
+(AR FY25 p.19; AR FY26 p.17), and FY25 PAT is identical in both reports (Rs3,387.20/3,387.21 Lakh, rounding only).
+The reclassification changes nothing at the P&L subtotal or bottom line; it only moves Rs421.14 Lakh between two
+named cost lines, disclosed solely by generic regrouping boilerplate that names neither the amount nor which lines
+moved.
+
+Effect on Phase 3C's earnings bridge, BEFORE / AFTER. Phase 3C's existing P&L walk table used AR FY26's
+RESTATED FY25 comparative (6,328.67 / 7,052.77 Lakh) as its "FY25" column, so its printed YoY growth rates
+(Employee benefits +20.4%, Other expenses +15.1%) are internally consistent with AR FY26 as printed. Computed
+instead against what AR FY25 itself originally reported for the identical fiscal year:
+
+| Line (Rs Lakh) | FY26 | FY25 as ORIGINALLY reported (AR FY25 p.19) | YoY, original basis | FY25 as RESTATED (AR FY26 p.17/95) | YoY, restated basis (Phase 3C, as printed above) |
+|---|---|---|---|---|---|
+| Employee benefits expense | 7,617.46 | 5,907.53 | **+28.9%** | 6,328.67 | +20.4% |
+| Other expenses | 8,114.64 | 7,473.91 | **+8.6%** | 7,052.77 | +15.1% |
+| Combined (both lines) | 15,732.10 | 13,381.44 | +17.6% (unchanged either basis) | 13,381.44 | +17.6% (unchanged either basis) |
+
+Before this addendum, a reader of Phase 3C alone would take away "employee costs rose 20.4%, other expenses
+rose 15.1%" as the FY26 cost story. Measured against what the company's own PRIOR annual report actually
+printed for FY25, employee costs rose a materially faster 28.9%, and other expenses rose a materially slower 8.6%
+— an 8.5 percentage-point swing on employee costs and a 6.5 percentage-point swing on other expenses, in
+opposite directions, though the combined two-line total and the P&L bottom line are unaffected either way. The
+existing Phase 3C figures are not "wrong" (they are self-consistent with AR FY26 as printed) but they mask how
+much the individual cost-line narrative shifted between the two annual reports for the SAME historical year.
+
+Fold-in: this is the item the addendum's item 5 (below) records as missed by all three B02 notes passes AND by
+this stage's own original Phase 2A verification pass — a fourth, independent miss, now corrected.
+
+### A5. Consequential updates, BEFORE / AFTER
+
+**Phase verdicts.** No phase verdict changes. Phase 1 (WATCH) is unaffected — none of A1-A4 are auditor's-report
+or CARO matters. Phases 2, 3, 4, 5, 6 were already 🔴 RED FLAG before this addendum; A1-A4 add four further
+independently anchored instances to an already-red-flagged pattern in each of Phase 2 (A4, the reclassification),
+Phase 3 (A2, A3), Phase 4 (A2 guidance-table extension), and Phase 6 (A1, A3, prior-year front-matter/statement
+contradictions) but do not change any phase's color, since each was already at the pipeline's ceiling rating.
+BEFORE: {p1: WATCH, p2: RED FLAG, p3: RED FLAG, p4: RED FLAG, p5: RED FLAG, p6: RED FLAG}. AFTER: unchanged,
+identical to BEFORE.
+
+**Overall quality and components.** BEFORE: governance 3, accounting 4, balance_sheet 3, earnings 3 (average
+3.25, rounds to 3/10). AFTER: accounting quality is revised DOWN from 4 to **3**, because A1-A4 show the
+inconsistency pattern this stage already scored at 4/10 is not confined to FY26 or to Notes-level arithmetic: it now
+spans a SECOND consecutive annual report (A1, A3), a silently reclassified P&L comparative not caught by three
+notes passes (A4), and a ratio mislabeled with a different ratio's ENTIRE numerator/denominator definition, not
+merely a rounding gap (A2). This is a chronic financial-statement-close-process and disclosure-drafting weakness
+across years, not an isolated FY26 cluster, and 3/10 ("concerning, approaching alarming") reads more accurately
+than 4/10 ("concerning, not alarming"). Governance, balance sheet, and earnings components are unchanged (A1-A4
+are accounting-disclosure findings, not new governance, liquidity, or earnings-quality facts beyond what A3 already
+confirms was correctly handled in Phase 3C). AFTER: governance 3, accounting 3, balance_sheet 3, earnings 3
+(average 3.0, rounds to 3/10). **The headline overall_quality figure is unchanged at 3/10 after rounding**; the
+accounting_quality subcomponent changes from 4 to 3, and the average changes from 3.25 to 3.0.
+
+**triple_pass_verification discrepancies.** BEFORE: one discrepancy (rank 9, D&A comparative mismatch). AFTER:
+a second discrepancy is added, the Rs421.14 Lakh reclassification (A4). This item was **missed by all three of B02's
+notes-extraction passes AND by this stage's own original Phase 2A verification pass** — a fourth independent miss,
+now closed by this addendum. It is recorded in the YAML `discrepancies` list below as a new entry, not renumbered
+into the original Top 15 ranking.
+
+**guidance_table.** Two rows added (A1's three-PAT-figure finding; A2's mislabeled Interest Coverage Ratio
+finding). See YAML below.
+
+**missing_risks.** One row added: FY26's own YoY comparison sentences (MD&A p.37, Directors' Report p.17) do not
+name the FY25 Penta Auto Feeding exceptional gain (Rs8.49 Cr, 20-25% of FY25 pre-tax profit) as a base-year
+one-off when drawing the FY26-vs-FY25 comparison (A3). See YAML below.
+
+**monitorables.** Two rows added: whether the MD&A's "Interest Coverage Ratio" row is corrected or relabeled in
+the FY27 AR, and whether a further silent expense-line reclassification occurs in the FY27 comparative column. See
+YAML below.
+
+**red_flags_top3.** Item 3's wording is extended in the YAML below to name the reclassification, the mislabeled
+ratio, and the FY25 three-PAT-figure finding explicitly, and the instance count is updated from "seven-plus" to
+"at least nine."
+
+### Sources re-read for this addendum
+- `runs/kabraextru-2026-09-05/inputs/annual-report/Annual_Report_2025.txt`: p.4 (Chairman's Letter), p.19
+  (Directors' Report financial-highlights table, standalone and consolidated, Notes 26/29 basis), p.38 (MD&A
+  Financial Performance table and prose, Key Financial Ratios), p.67 (standalone Statement of Profit and Loss,
+  Line IX), p.121 (consolidated Statement of Profit and Loss, Line XI).
+- `runs/kabraextru-2026-09-05/inputs/annual-report/Annual_Report_2026.txt`: p.4 (Chairman's Letter), p.17
+  (Directors' Report financial-highlights table, standalone and consolidated), p.37 (MD&A Financial Performance
+  Snapshot Table B and Key Financial Ratios Section C), p.64 (standalone Balance Sheet, borrowings), p.67
+  (standalone Statement of Profit and Loss), p.95 (standalone Notes 26, 27, 28, 29), p.112 (standalone Note 43,
+  "Following Ratios to be disclosed," and Note 47 regrouping note).
+- `runs/kabraextru-2026-09-05/outputs/final/run1/gate-recommendation.md` (committed fix list, Class A items 1-4,
+  read in full for scope).
+
 ```yaml
 stage: B03-ardeep
 company: "KABRAEXTRU"
 run_date: "2026-09-05"
 model: claude-sonnet-5
+rework_addendum: "2026-09-09"
 status: complete
 input_gaps: [results, rating, announcements, shareholding, research, prospectus, presentation-stale, peer-concall-windsor, peer-concall-mislabel-stale, screener-csv-defect, sector_cap_row, "promoter-pledge-disclosure-not-found-in-AR", "subsidiary-auditor-names-not-disclosed-in-AR", "ND/EBITDA-basis-reconciliation-vs-B01-4.19x-figure"]
 flags:
-  - {type: FLAG-CASH, reason: "Confirmed and extended from B02 directly against the primary financial statements: standalone cash Rs1.97 Cr (Note 10/Balance Sheet) vs Rs140.92 Cr on-demand secured short-term borrowings (Note 17/Balance Sheet); standalone FCF negative in both FY25 (Rs-17.02 Cr) and FY26 (Rs-24.68 Cr) computed from the primary Cash Flow Statement; standalone CFO fell 71.7% YoY (Rs45.32 Cr to Rs12.82 Cr) and consolidated CFO fell 79.4% YoY to Rs8.96 Cr (confirms company memory's carried ~Rs9 Cr figure exactly); net new secured borrowing of Rs15.30 Cr (financing activities) was raised in FY26 partly funding a Rs8.74 Cr dividend paid on the PRIOR year's profit in a year the current year itself made a loss; quick ratio computed at 0.61x; interest coverage sub-1x on every EBIT basis computed (0.629x standalone MD&A basis, 0.339x consolidated primary-statement basis), consistent in direction with Gate 0's flagged 0.317x figure though not exactly reconciled (see input_gaps)."}
+  - {type: FLAG-CASH, reason: "Confirmed and extended from B02 directly against the primary financial statements: standalone cash Rs1.97 Cr (Note 10/Balance Sheet) vs Rs140.92 Cr on-demand secured short-term borrowings (Note 17/Balance Sheet); standalone FCF negative in both FY25 (Rs-17.02 Cr) and FY26 (Rs-24.68 Cr) computed from the primary Cash Flow Statement; standalone CFO fell 71.7% YoY (Rs45.32 Cr to Rs12.82 Cr) and consolidated CFO fell 79.4% YoY to Rs8.96 Cr (confirms company memory's carried ~Rs9 Cr figure exactly); net new secured borrowing of Rs15.30 Cr (financing activities) was raised in FY26 partly funding a Rs8.74 Cr dividend paid on the PRIOR year's profit in a year the current year itself made a loss; quick ratio computed at 0.61x; interest coverage sub-1x on every EBIT basis computed (0.629x standalone MD&A basis, 0.339x consolidated primary-statement basis), consistent in direction with Gate 0's flagged 0.317x figure though not exactly reconciled (see input_gaps). REWORK ADDENDUM 2026-09-09: the MD&A's own 'Interest Coverage Ratio' row (+39.20% change, AR FY26 p.37) does not reconcile to this 0.629x figure in either magnitude or direction; it is numerically identical to standalone Note 43's Debt Service Coverage Ratio variance (14.36 vs 10.32, AR FY26 p.112), a different ratio that rose mainly because the near-extinguished term loan collapsed the debt-service denominator, not because liquidity improved. The apparently improving printed ratio is mislabeled, not evidence against FLAG-CASH."}
 phase_verdicts: {p1: "WATCH", p2: "RED FLAG", p3: "RED FLAG", p4: "RED FLAG", p5: "RED FLAG", p6: "RED FLAG", p7_best_fit: "Turnaround (WATCHLIST)"}
 overall_quality: 3
-quality_components: {governance: 3, accounting: 4, balance_sheet: 3, earnings: 3}
+quality_components: {governance: 3, accounting: 3, balance_sheet: 3, earnings: 3}
 kill_switch_notes:
   - "Phase 1: a human reviewer would not stop the run -- clean unmodified opinion, no fraud (CARO xi), no default (CARO ix) -- but would flag the KAM-coverage gap (Battery loss, HEVPL, Varos all uncovered by KAMs) and the new FY26 GST 'Excess Stock Discrepancy' dispute (Rs165.72 Lakh, CARO vii(b)) for follow-up."
-  - "Phase 2: a human reviewer would not halt -- no self-dealing or manipulation evidence found across three extraction passes plus this verification pass -- but would direct a named audit-committee question about financial-statement close-process controls, citing the running tally of seven-plus independently anchored numeric/label inconsistencies."
+  - "Phase 2: a human reviewer would not halt -- no self-dealing or manipulation evidence found across three extraction passes plus this verification pass -- but would direct a named audit-committee question about financial-statement close-process controls, citing the running tally of independently anchored numeric/label inconsistencies, now at least nine including the REWORK ADDENDUM 2026-09-09 items (a silent Rs421.14 Lakh comparative reclassification missed by all three notes passes, and a mislabeled interest-coverage ratio)."
   - "Phase 3: a human reviewer would have real reason to pause on the FCF/CFO/borrowing-to-fund-dividend combination specifically, and would require management explanation of the Other Income composition and the FY27 plan for funding on-demand secured debt from operations rather than fresh borrowing, before any capital commitment -- but would not stop the pipeline itself (no fraud, no default, no going-concern qualification)."
-  - "Phase 4: a human reviewer would not halt -- no fraud or manipulation evidence -- but would treat the MD&A and Chairman's Letter as a low-reliability narrative layer requiring every claim to be independently re-derived from primary statements before use in valuation."
+  - "Phase 4: a human reviewer would not halt -- no fraud or manipulation evidence -- but would treat the MD&A and Chairman's Letter as a low-reliability narrative layer requiring every claim to be independently re-derived from primary statements before use in valuation, a reading reinforced by REWORK ADDENDUM 2026-09-09's finding that the prior year's AR (FY25) shows the identical failure mode (three different PAT figures on/near one page)."
   - "Phase 5: a human reviewer would not halt (nothing rises to fraud or a disqualifying SEBI action against the Company itself in FY26) but would treat governance as an active FY26-specific concern given the attendance and remuneration-disclosure findings are new this year, not carried forward."
-  - "Phase 6: a human reviewer would not halt but would note that the front matter's two most load-bearing claims (Geon profitability trajectory, balance sheet strength) are directly contradicted by the operational sections with zero acknowledgement, and would weight the Chairman's Letter accordingly in any subsequent synthesis."
+  - "Phase 6: a human reviewer would not halt but would note that the front matter's two most load-bearing claims (Geon profitability trajectory, balance sheet strength) are directly contradicted by the operational sections with zero acknowledgement, and would weight the Chairman's Letter accordingly in any subsequent synthesis -- a pattern REWORK ADDENDUM 2026-09-09 shows already existed in the prior year's Chairman's Letter (the unnamed Rs8.49 Cr exceptional gain behind the FY25 PAT figure)."
 triple_pass_verification:
   verified: 15
   discrepancies:
     - {finding_rank: 9, triple_pass_value: "D&A +89.9% YoY (Note 28 own FY25 sub-total basis, Rs1,557.18 Lakh to Rs2,956.87 Lakh)", ar_value: "D&A +45.9% YoY using the standalone P&L's own FY25 comparative line (Rs2,027.04 Lakh to Rs2,956.87 Lakh) -- the P&L's own summary D&A line for FY25 does not match Note 28's own FY25 sub-total for the same year, a further independently anchored inconsistency not previously catalogued", note_ref: "Note 28 (standalone p.94) vs Standalone P&L (p.65), FY25 comparative column in each"}
+    - {finding_rank: "REWORK-ADDENDUM-2026-09-09", triple_pass_value: "B02's three notes passes and this stage's own original Phase 2A verification pass all used, or implicitly accepted, AR FY26's FY25 comparative for employee benefits expense (Rs6,328.67 Lakh) and other expenses (Rs7,052.77 Lakh) without checking them against AR FY25's own originally reported FY25 figures", ar_value: "AR FY25 itself originally reported FY25 employee benefits expense as Rs5,907.53 Lakh and other expenses as Rs7,473.91 Lakh (AR FY25 p.19) -- a Rs421.14 Lakh silent, fully offsetting reclassification between the two lines occurred between the two annual reports for the identical fiscal year, disclosed only by the generic regrouping boilerplate at standalone Note 47 (AR FY26 p.112), with no amount and no reason named; missed by all three B02 passes and by this stage's original Phase 2/3 text, corrected in the REWORK ADDENDUM 2026-09-09", note_ref: "AR FY25 p.19 (Directors' Report table) vs AR FY26 p.17 (Directors' Report table) and p.95 (standalone Notes 26/29), Note 47 p.112"}
 missing_risks:
   - {risk: "Liquidity/on-demand secured debt concentration (Rs140.92 Cr repayable on demand vs Rs1.97 Cr cash) never named in the MD&A Risks and Challenges section", evidence: "Balance Sheet p.64, Note 17, vs MD&A Section E p.38 (silent on this)"}
   - {risk: "CRISIL two-step credit rating downgrade never named in the MD&A risk section (appears only in the Corporate Governance Report)", evidence: "Corporate Governance Report p.51, vs MD&A Section E p.38 (silent on this)"}
   - {risk: "HEVPL Rs30.39 Cr NCLT/CIRP counterparty exposure never named in the MD&A risk section", evidence: "Note 9 (standalone p.87-88), vs MD&A Section E p.38 (silent on this)"}
   - {risk: "Continuing related-party funding of a subsidiary (Varos) with negative net worth, not flagged as a capital-allocation risk", evidence: "Note 3/39D(iii), AOC-1 p.23, vs MD&A/Directors Report (silent on this as a risk)"}
   - {risk: "Non-recurrence of the FY25 Rs17.07 Cr Maharashtra government incentive not flagged as a forward earnings-comparability risk", evidence: "Note 23 footnote + Note 2A/2C, vs MD&A (silent on this)"}
+  - {risk: "REWORK ADDENDUM 2026-09-09: the FY25 Rs8.49 Cr (Rs848.98 Lakh) Penta Auto Feeding JV divestment exceptional gain, 20-25% of FY25 pre-tax profit, is not named as a base-year one-off in any AR FY26 sentence that compares FY26 results to FY25 (MD&A EBIT/PAT comparison p.37; Directors' Report PAT comparison p.17), nor was it named in the FY25 Chairman's Letter's own PAT/margin framing", evidence: "AR FY25 p.19 (exceptional item line), p.4 (Chairman's Letter, silent on it); AR FY26 p.37 and p.17 (YoY comparison sentences, silent on it)"}
 guidance_table:
   - {claim: "KET enjoys market leadership status in the extrusion market with ~40% market share in its product category", number: "~40%", timeframe: "as on FY25 (AR FY25 p.37)", credibility: "LOW -- silently dropped from AR FY26 entirely, no replacement figure, no acknowledgement (confirmed by full-text search of AR FY26)"}
   - {claim: "Geon actively pursuing E-LCV, E-4W segments in the upcoming fiscal year", number: "qualitative", timeframe: "AR FY25 p.38, for FY26", credibility: "LOW-PARTIAL -- battery revenue grew +7.2% but segment loss widened +69.8% in the same year; sub-segment traction not separately disclosed to verify"}
@@ -831,6 +1069,8 @@ guidance_table:
   - {claim: "Secured a ~INR 150 Crore order for execution in the upcoming year", number: "Rs150 Cr", timeframe: "AR FY26 p.34, for FY27", credibility: "UNVERIFIED THIS STAGE -- monitorable; customer advances (order-book proxy) fell 18.9% YoY in the same year this order is described as secured, not corroborating but not necessarily contradictory either"}
   - {claim: "At optimal levels the existing Geon facility can generate INR 1,500+ crore revenue", number: "Rs1,500+ Cr", timeframe: "AR FY26 p.34, no date", credibility: "THEORETICAL CEILING -- FY26 actual battery revenue (Rs136.11 Cr) is ~9% of this figure; not a near-term target"}
   - {claim: "EBITDA stood at Rs10 crores (Chairman's Letter)", number: "Rs10 Cr", timeframe: "FY26, stated in the same document as the contradicting figure", credibility: "UNRELIABLE ON ITS FACE -- contradicts the MD&A's own Table B figure of Rs13.05 Cr for the identical metric and year, a ~23% internal gap"}
+  - {claim: "REWORK ADDENDUM 2026-09-09: AR FY25 MD&A table PAT Rs34 Cr/7.2% margin, same-page prose PAT Rs32 Cr/6.8% margin, Chairman's Letter PAT Rs33.9 Cr/7.2% margin", number: "three figures for one metric: Rs34 Cr / Rs32 Cr / Rs33.9 Cr", timeframe: "FY25, all three printed in AR FY25 (p.38 table+prose; p.4 letter)", credibility: "LOW -- table and letter reconcile to audited STANDALONE PAT (Rs33.87 Cr, AR FY25 p.19/p.67); the same-page prose sentence instead matches audited CONSOLIDATED PAT (Rs32.20 Cr, AR FY25 p.19/p.121) with no basis label; establishes this front-matter/MD&A PAT-figure confusion predates FY26's EBITDA mismatch by one year"}
+  - {claim: "REWORK ADDENDUM 2026-09-09: AR FY26 MD&A Key Financial Ratios table, Interest Coverage Ratio, 39.20% change, no reason given", number: "39.20%", timeframe: "FY26 vs FY25, AR FY26 p.37", credibility: "MISLABELED -- matches standalone Note 43's Debt Service Coverage Ratio variance exactly (14.36 vs 10.32, AR FY26 p.112), a different ratio improved mainly by a near-extinguished term loan shrinking the debt-service denominator; a true EBIT/finance-cost interest coverage computed from the report's own figures falls approximately 84% (0.629x FY26 vs 4.03x FY25), the opposite direction; Reasons for Variation blank in the MD&A table though Note 43 supplies one for the ratio it actually measures"}
 monitorables:
   - {metric: "Battery/Geon segment result (Note 38 equivalent)", threshold: "any narrowing vs the FY26 Rs-43.35 Cr loss, or further widening", where: "next AR's segment note / any quarterly disclosure once results filings resume", why: "directly tests whether the re-rating thesis (Geon as growth optionality) or the value-trap read (losses structurally scaling with revenue) is correct"}
   - {metric: "Standalone cash and cash equivalents / on-demand secured borrowings", threshold: "cash below Rs2 Cr sustained, or secured short-term debt beyond Rs141 Cr, without a CFO recovery", where: "Balance Sheet, Note 10/17 equivalent in next filing", why: "tests whether FLAG-CASH resolves or deteriorates further"}
@@ -838,6 +1078,8 @@ monitorables:
   - {metric: "HEVPL/NCLT resolution", threshold: "any write-off, recovery, or CIRP resolution-plan disclosure", where: "next AR's Note 9 equivalent, or an NCLT order", why: "Rs30.39 Cr at-risk exposure, currently frozen at FY25-dated disclosure language"}
   - {metric: "Customer advances / order-book proxy (Note 20 equivalent)", threshold: "recovery from the FY26 -18.9% decline, or confirmation of the claimed ~Rs150 Cr order converting to advances/revenue", where: "next AR's Note 20 equivalent", why: "tests the MD&A's forward order-book claim against the one order-book proxy this AR discloses"}
   - {metric: "Market-share claim reappearance", threshold: "any restated figure, with evidentiary basis, for KET's extrusion market position", where: "next AR's MD&A Key Strengths section", why: "tests whether the FY26 silent drop (Phase 6E) was a one-off omission or a durable retraction"}
+  - {metric: "REWORK ADDENDUM 2026-09-09: MD&A 'Interest Coverage Ratio' row label and basis", threshold: "FY27 AR either renames the row to Debt Service Coverage Ratio consistent with Note 43, or discloses a true EBIT/finance-cost interest coverage figure with a filled Reasons for Variation cell", where: "next AR's MD&A Section C / standalone Note 43 equivalent", why: "tests whether the mislabeling was a one-off drafting error or a recurring disclosure-quality pattern, and whether the SEBI LODR 25%-threshold reasons requirement is complied with going forward"}
+  - {metric: "REWORK ADDENDUM 2026-09-09: silent comparative reclassification recurrence", threshold: "any further silent swap between expense (or other) line items in the FY27 AR's FY26 comparative column, without a quantified regrouping note naming the amount and the lines affected", where: "next AR's expense notes and Board's Report highlights table", why: "a second silent reclassification would convert this from an isolated FY25-restatement instance into a demonstrated pattern of masking line-level cost trends"}
 ar_new_downstream_entities:
   - name: "Munjal Nikunj Kapadia"
     where_in_ar: "Board's Report point 7 / Corporate Governance Report, appointed Independent Director w.e.f. 07-Aug-2025"
@@ -852,8 +1094,8 @@ strengths_top3:
 red_flags_top3:
   - "Liquidity/capital-allocation stress: Rs1.97 Cr cash vs Rs140.92 Cr on-demand secured debt, negative FCF two years running, net new borrowing partly funding a dividend paid on the prior year's profit, a two-step CRISIL downgrade never referenced as a subsequent event"
   - "Battery Division loss widening 69.8% YoY while the Chairman's Letter and MD&A Business Outlook both narrate a 'moving towards profitability' trajectory with zero acknowledgement of the contradiction (Phase 6E quiet abandonment, HIGH materiality)"
-  - "Seven-plus independently anchored numeric/label inconsistencies spanning the standalone and consolidated Notes, the primary Cash Flow Statement, the Chairman's Letter-vs-MD&A EBITDA figure, and the Annexure-5 CMD remuneration-increase disclosure (stated as 0%, actually +6.64%)"
+  - "A recurring, multi-location, now MULTI-YEAR pattern of internally inconsistent or mislabeled audited/AR-level figures -- at least nine independent instances: the standalone and consolidated Notes, the primary Cash Flow Statement, the Chairman's Letter-vs-MD&A EBITDA figure, the Annexure-5 CMD remuneration disclosure (stated 0%, actually +6.64%), a silently reclassified Rs421.14 Lakh between FY25 comparative expense lines missed by three notes passes, a 'Interest Coverage Ratio' row that is actually Note 43's Debt Service Coverage Ratio, and three different FY25 PAT figures printed in the prior year's own annual report -- which does not itself signal fraud but materially discounts confidence in any single unverified number in this document family and argues for independently re-deriving any figure used in valuation"
 best_fit_strategy: "Turnaround (WATCHLIST) -- capex cycle past its peak and clean audit opinions argue for watching, not yet acting; GARP fails outright on FY26's negative growth and unproven Battery unit economics"
 one_line_verdict: "Turnaround watchlist: capex past peak, Battery losses still widening against management's own claim"
-analyst_note: "The single highest-value finding from independently reading the primary AR text (beyond verifying B02) is Phase 6E finding 1: the MD&A's own words say the battery business is 'expected to move towards profitability as volumes scale up,' printed in the same annual report whose own segment note shows that business's loss widening 69.8% YoY. This is not an inference or a judgment call; it is two sentences in the same document that cannot both be read as consistent with each other, and it goes to the exact heart of the transition thesis this pipeline exists to test. The Chairman's-Letter-vs-MD&A EBITDA mismatch (Rs10 Cr vs Rs13.05 Cr) is the second-highest-value finding because it sits in the most-read page of the document and would pass unnoticed by a reader who does not cross-check the whole AR. Recommend both items as explicit Halt 1 verification-priority lines, ahead of the CRISIL/HEVPL items already carried from company memory."
+analyst_note: "REWORK ADDENDUM 2026-09-09 highest-value addition: the MD&A's printed 'Interest Coverage Ratio' change of +39.20% (AR FY26 p.37) is not a rounding gap, it is a different ratio. It matches standalone Note 43's Debt Service Coverage Ratio variance exactly (14.36 vs 10.32, p.112), which improved mainly because the near-extinguished term loan shrank the debt-service denominator. A true EBIT/finance-cost interest coverage falls about 84% (0.629x vs 4.03x FY25), the opposite direction. Second: a Rs421.14 Lakh reclassification between FY25 employee benefits and other expenses, exact and fully offsetting, missed by all three B02 notes passes and by this stage's own original verification, shows the running inconsistency tally understates the pattern even after three independent checking passes. Third: AR FY25 itself shows the identical front-matter-vs-MD&A PAT confusion (three figures, one page) that this stage flagged in AR FY26's EBITDA line -- the failure mode is at least two years old, not new to FY26."
 ```

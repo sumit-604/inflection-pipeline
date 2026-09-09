@@ -1,0 +1,71 @@
+stage: B09-tam
+company: "TOTEM"
+run_date: "2026-09-09"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "No product-line, customer-industry, or geography revenue disaggregation published anywhere for TOTEM; blocks a finer SAM cut than the product filter applied here."
+  - "The only in-corpus market-size/share estimates are 2024 IM management estimates and 2023-2024 Kennametal concall management color, both STALE; no syndicated India round-tools-specific market size found in corpus or web search."
+  - "Per-unit price/cost for TOTEM's tools NOT FOUND anywhere in the corpus; blocks a full physical-unit capacity-to-revenue cross-check in 3C."
+  - "No India-specific round-tools-vs-indexable-inserts split found; a global benchmark ratio (44% round tools) is applied as a stated, flagged assumption, not a sourced India figure."
+  - "peer-concalls PARTIAL: KENNAMET 3 usable, WENDT 1 (different product segment, not used as core TAM evidence), BIRLAPREC 0."
+flags:
+  - "Management gives no quantified TAM anywhere filed; only qualitative 'this India opportunity is vast' (AR2026 MD&A p.25); mgmt_claim_ratio NOT COMPUTABLE."
+  - "IMARC's two own India cutting-tools pages are internally inconsistent by ~17x (USD 3.1bn vs USD 171.8mn); the low figure excluded as unreliable vendor data."
+  - "SOM-implied revenue CAGR (20.7-22.1%) sits below the strategy's 25% CAGR hurdle on the most evidenced path."
+  - "3C capacity cross-check: ~Rs 180 Cr gap by yr3 between SOM and the capex-embedded organic signal (3.3% pa); SOM side is the optimistic one absent further disclosed capacity."
+  - "Historical FY24-26 company revenue CAGR (4.8%) ran slightly below the TAM structural growth rate (5.8%); Q1 FY27's 28.9% jump would flip this reading but B07 flags it as largely base-effect, not proven mix/yield."
+market_definition: "India domestic round metal-cutting tools (HSS + carbide taps, dies, drills, thread mills, end mills, burrs; excludes indexable inserts, machines, tool holders)."
+tam_cr: {conservative: 6650, realistic: 11594}
+sam_cr: 6650
+sam_pct_of_tam: 44.0
+som_3yr_cr: 457
+som_5yr_cr: 644
+som_implied_revenue_cagr: {yr3: 22.1, yr5: 20.7}
+current_sam_share_pct: 3.8
+revenue_headroom_x: 26.5
+tam_growth_pct: 5.8
+runway_class: "STRONG"
+mgmt_claim_cr: 0
+mgmt_claim_ratio: 0
+mgmt_claim_read: "not computable - no quantified management TAM or growth claim exists in any filed document"
+capacity_check: "gap of ~Rs 180 Cr by yr3 vs the capex-embedded organic signal (3.3% pa, B07); SOM side is optimistic absent further disclosed capacity; per-unit price NOT FOUND so a full physical-unit cross-check is not possible"
+methods_used:
+  - "top-down (IMARC industry report)"
+  - "bottom-up (IMTMA machine-tool consumption x Kennametal-derived consumables ratio)"
+  - "peer revenue aggregation (listed floor)"
+  - "global benchmark (round-tools share of cutting tools; direction-only China/India scale comparison)"
+stale_data_flags:
+  - {datapoint: "Cutting-tool TAM ~$1bn / machines market ~Rs20,000cr (ratio input to Method 2)", source: "KENNAMET Concall Mar-2024 Transcript, p.20-21", year: 2024}
+  - {datapoint: "Hard-metal (carbide) addressable market Rs2,500-2,600cr analyst estimate / 1.8-2x management view", source: "KENNAMET Concall Mar-2023 Transcript, p.7", year: 2023}
+  - {datapoint: "12-15 month capex-to-consumable demand lag", source: "KENNAMET Concall Jun-2023 Transcript, p.6", year: 2023}
+  - {datapoint: "Product segment estimated market share and installed capacity table", source: "Information Memorandum 2024, p.57-58", year: 2024}
+  - {datapoint: "Machine tools industry production/import/export FY2016-17 to FY2021-22", source: "Information Memorandum 2024 citing Ministry of Heavy Industries AR 2022-23, p.52-54", year: 2022}
+  - {datapoint: "Automobile industry $222bn to $300bn by 2026; Die & Mould Rs15,000cr to Rs20,000cr by 2024; Tooling/Die 9% CAGR", source: "Information Memorandum 2024, p.51-52", year: 2024}
+searches_performed:
+  - "India cutting tools market size 2025 2026 IMTMA"
+  - "India metal cutting tools market size crore report"
+  - "IMTMA India machine tool consumption 2025 crore production import export"
+  - "cutting tools India market Mordor Intelligence OR TechSci OR CRISIL 2025"
+  - "USD INR exchange rate September 2026"
+  - "cutting tools market split indexable inserts versus round tools solid percentage share"
+  - "India cutting tools consumption per capita versus China global comparison manufacturing"
+  - "IMTMA machine tool industry FY26 production consumption imports exports crore full year"
+  - "WebFetch imarcgroup.com/india-metal-cutting-tools-market"
+  - "WebFetch imarcgroup.com/india-cutting-tools-market"
+  - "WebFetch 6wresearch.com/industry-report/india-cutting-tools-market-2020-2026"
+  - "WebFetch mordorintelligence.com/industry-reports/high-speed-steel-cutting-tools-market"
+  - "WebFetch mmindia.co.in/article/3641/indian-manufacturing-on-an-upward-trajectory"
+searches_skipped:
+  - "Direct CRISIL/ICRA/CARE rating-agency cutting-tools sector reports: general search surfaced only commercial market-research vendors; IMTMA trade-body route judged stronger."
+  - "IBEF general engineering/capital-goods sector page: IMTMA current FY26 data judged a stronger, more current primary source."
+  - "China cutting-tool-specific (not machine-tool) market size for a clean per-capita benchmark: attempted, returned only machine-tool figures; Method 5 informs direction only."
+downstream_candidates:
+  - {signal: "IMTMA machine-tool production/consumption/import data", entity_type: "macro", demand_link: "Leading indicator of round-tool consumable demand, 12-15 month lag per Kennametal concall", likely_source: "IMTMA press releases / Ministry of Heavy Industries Annual Report", cadence: "quarterly", shared: false}
+  - {signal: "SIAM automotive production/sales volumes", entity_type: "end-customer", demand_link: "Automotive/auto-components is TOTEM's largest named end-market", likely_source: "SIAM monthly production/sales data", cadence: "monthly", shared: false}
+  - {signal: "Kennametal India quarterly results", entity_type: "counterparty", demand_link: "Closest listed peer, same end-markets; proxy for sector-wide consumable demand cycle", likely_source: "Kennametal India BSE/NSE quarterly filings", cadence: "quarterly", shared: false}
+  - {signal: "US and Mexico tariff policy on Indian exports", entity_type: "macro", demand_link: "Directly named in FY26 MD&A as cause of TOTEM's export sales drop", likely_source: "USTR / Indian Ministry of Commerce trade notifications, financial press", cadence: "event-driven", shared: false}
+  - {signal: "HSS/tungsten-carbide raw-material import prices (Europe/China)", entity_type: "counterparty", demand_link: "31% of FY26 material cost imported; drives TOTEM's margin, the biggest FY26 flag", likely_source: "Steel/tungsten price indices, Ministry of Commerce import data", cadence: "monthly", shared: false}
+  - {signal: "Defence and Aerospace procurement budget / Make in India tooling initiatives", entity_type: "regulatory", demand_link: "Named growth driver; AS9100D certification held but no disclosed revenue linkage yet", likely_source: "Ministry of Defence / PIB Union Budget documents", cadence: "event-driven", shared: false}
+demand_externally_verifiable: true
+analyst_note: "Two compounding assumptions carry real weight: (1) FX ~Rs85/USD for the 2025-vintage IMARC figure, an estimate not a sourced rate; (2) a GLOBAL 44% round-tools-vs-inserts split applied to India, since no India-specific split exists anywhere searched. Conservative TAM (Rs6,650cr) is Method-2-derived per rule 6; realistic (Rs11,594cr) is Method-1-derived. The listed-peer floor (Rs1,761.71cr) sits well below both, consistent with a market dominated by unlisted/import supply, which is the expected relationship for a floor, not a contradiction. SOM's 20.7-22.1% implied CAGR and the ~Rs180cr yr3 capacity gap are the two numbers stage 11 should weigh hardest against the 25% CAGR hurdle."

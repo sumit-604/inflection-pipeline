@@ -14,3 +14,4 @@
 | 8 | promoter background check (web) | claude-sonnet-5 | default | n/a | n/a | 200094 | 12m51s | 1 |
 | 6 | peer concall verification | claude-sonnet-5 | default | n/a | n/a | 236781 | 6m58s | 1 |
 | 7 | emerging moat scan (22 categories) | claude-sonnet-5 | default | n/a | n/a | 136343 | 10m26s | 1 |
+| 9 | TAM SAM SOM market sizing (web) | claude-sonnet-5 | default | n/a | n/a | 151834 | 13m21s | 1 |

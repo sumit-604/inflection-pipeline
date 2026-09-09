@@ -69,3 +69,4 @@ aborted). Same ledger row shape.
 | 6 | peer concall verification (rerun: Class C + item 5) | claude-sonnet-5 | default | n/a | n/a | 208810 | 641s | 3 |
 | 5 | concall NO-CONCALL (rerun: Class B, C item 10, Class A read) | claude-sonnet-5 | default | n/a | n/a | 236342 | 815s | 2 |
 | 3 | AR deep dive (rework addendum, Class A) | claude-sonnet-5 | default | n/a | n/a | 193641 | 1000s | 2 |
+| 12c | verifier C framework (phase-1 scope, rerun) | claude-opus-4-8 | default | n/a | n/a | 137943 | 577s | 2 |

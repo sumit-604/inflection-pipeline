@@ -3,31 +3,26 @@ company: "KABRAEXTRU"
 run_date: "2026-09-05"
 model: claude-opus-4-8
 status: partial-phase1
+rerun: 2
 gate0:
-  rules_checked: 58
+  rules_checked: 66
   fails:
-    - "G-06 ROCE denominator substituted (NW+Borrowings) for the fixed Total Assets - Current Liabilities; literal denominator not computable from the source; proxy cross-validated to AR Note 43 within 0.05pp; A1 unchanged at 10.31% -> 1; MINOR"
-    - "G-41 M8 scored 1 under the 'mentioned unquantified' band though the report states reach is quantified but static; strict alternative 0 -> moat 3 to 2, grand total 25 to 24, class NONE and AVOID unchanged; MINOR"
+    - "G2 operating rule 2: decision line recommends a run-level REWORK / INSUFFICIENT EVIDENCE posture; Gate 0 owns a classification and a flag, not the verdict set. No score effect."
+    - "G7 ROCE formula: capital employed computed as Net Worth + Borrowings against a 'fixed, do not substitute' definition of Total Assets - Current Liabilities. Disclosed and cross-validated to AR Note 43 for FY25-FY26 only; literal basis NOT COMPUTABLE from the stated inputs."
 emoat:
-  rules_checked: 38
+  rules_checked: 49
   fails:
-    - "E-13 fourth evidence tier (media-reported) introduced outside the three-tier taxonomy; item unscored so em_score unaffected; leaks into catalysts_12m evidence_type; MINOR"
-    - "E-32 evidence_mix counts {25,10,6} not enumerated in the report body ('roughly 25'); only the 9-item recount is auditable; MINOR"
-    - "E-33 catalysts_12m entry 4 carries a 12-24m window inside a 12-month field and drifts from Section 6A; overstates Pillar 3 catalyst proximity; MINOR"
-    - "E-35 A4 time_to_materialise '12-24m' for HV e-bus packs contradicts Section 1A 'NOT FOUND (no date given)'; recomputed 'NOT FOUND'; MINOR"
+    - "E2 operating rule 2: fourth evidence tier 'media-reported' still declared in the report body framing paragraph and used at Section 3 H2 and Section 6A. Rework item E-13 closed at block level only. em_score unaffected at 9."
 valuation: {rules_checked: 0, fails: []}
+expectation_ledger: {present: false, downside_row: false, all_rows_confirm_by: false, all_rows_metric_threshold: false, prob_in_range: false, decay_status_valid: false, off_ledger_credit: false, residual_pct_cmp: 0, residual_starter_cap_ok: true, fails: []}
 business_understanding_narrative: {present: false, five_questions_answered: false, prose_only: false, section6_candidates_named: 0, valuation_vocab_leak: false, fails: []}
 recomputed_destination_pe: "pending phase 3"
 recomputed_decision: "pending phase 3"
 findings:
-  - {severity: "MINOR", location: "B01 Formula Notes / Block A", item: "ROCE denominator substituted for the fixed formula", claimed: "median ROCE 10.31% -> A1 = 1, Block A = 1, core 22", recomputed: "literal denominator not computable from screener-Data_Sheet.csv (no ROCE row, no current/non-current split); strict N/A reading gives A1 = 0, Block A = 0, core 21, grand total 24; classification AVOID under both", note: "Disclosed twice by the maker and cross-validated against AR Note 43 (FY26 0.62% vs 0.61%; FY25 8.63% vs 8.67%). Deal-breaker 3 sits 0.31pp away and depends on this basis, but it caps at AVERAGE and cannot bind an AVOID."}
-  - {severity: "MINOR", location: "B01 Block F, M8", item: "Band language does not describe the evidence", claimed: "M8 = 1 under 'mentioned unquantified'", recomputed: "no band fits; strict alternative M8 = 0 -> moat 3 to 2, grand total 25 to 24", note: "Rubric gap for quantified-but-static reach. Conservative in-band choice, reasoning shown. No change to moats_confirmed, moat class, or classification."}
-  - {severity: "MINOR", location: "B07 mode note / catalysts_12m", item: "Evidence tier outside the three-tier taxonomy", claimed: "media-reported tier for the 2026 preferential issue", recomputed: "em_score unaffected (item scores 0, held in the optionality register)", note: "Phase-3 guard: stage 11 must exclude this catalyst from Pillar 3 or carry the MODERATE cap. It is not pipeline-verified evidence."}
-  - {severity: "MINOR", location: "B07 block, evidence_mix", item: "Item counts not substantiated in the report body", claimed: "{documented: 25, claim: 10, inference: 6}", recomputed: "not verifiable; only the recount line (9 documented items across 4 categories) is auditable", note: "A hedged 'roughly 25' in prose became an exact integer in a structured field. No score impact."}
-  - {severity: "MINOR", location: "B07 block, catalysts_12m entry 4", item: "Window exceeds the field scope and contradicts Section 6A", claimed: "window 12-24m inside catalysts_12m", recomputed: "0-12m for the CWIP appearance, or move the commissioning test out of the field", note: "Pillar 3 scores catalyst proximity; a 12-24m item inside a 12m field overstates proximity."}
-  - {severity: "MINOR", location: "B07 Section 3 summary and active_categories", item: "Time to materialise contradicts the stated evidence", claimed: "A4 'HV e-bus packs 12-24m'", recomputed: "'ongoing (RESS live now; HV e-bus packs NOT FOUND)'", note: "Section 1A records the same product's expected launch as NOT FOUND. NOT FOUND is the only valid fill for a missing date. No score impact."}
-  - {severity: "INFO", location: "scope", item: "Phase-1 scope note, not a defect", claimed: "n/a", recomputed: "n/a", note: "Valuation adherence (B10/B11) and the Business Understanding Narrative (stage 13) are pending phase 3; neither artifact exists yet, so no rule was failed against them. Both must be audited in the phase-3 pass."}
+  - {severity: "MINOR", location: "01-gate0.md, DECISION LINE, final sentence", rule: "prompts/01-gate-0-pipeline.md operating rule 2", issue: "Recommends a run-level REWORK / INSUFFICIENT EVIDENCE posture, which is orchestrator vocabulary, not a Gate 0 output.", recomputed: "No change. Classification AVOID stands; core 22/100 re-derived identical."}
+  - {severity: "MINOR", location: "01-gate0.md, FORMULA NOTES 'Capital Employed'; propagates to A1, A2, A4, M3, deal-breaker 3", rule: "prompts/01-gate-0-pipeline.md FORMULA DEFINITIONS, ROCE", issue: "Net Worth + Borrowings substituted for Total Assets - Current Liabilities under a 'do not substitute' instruction; cross-validated for FY25-FY26 only, eight years unchecked.", recomputed: "Literal-basis median ROCE NOT FOUND (not computable from stated inputs, not estimated). Proxy median 10.31% -> A1 = 1. Proxy includes current borrowings so it understates ROCE. Bounded effect: M3 could move 0 -> 1, moat_score 3 -> 4, moat class stays NONE; core 22 and AVOID unchanged; deal-breaker 3 stays unfired."}
+  - {severity: "MINOR", location: "07-emoat.md lines 13-15 (taxonomy framing paragraph), Section 3 H2, Section 6A bullet 1", rule: "prompts/07-emerging-moat-pipeline.md operating rule 2 (three-tier taxonomy); CLAUDE.md dependency alignment", issue: "Fourth tier 'media-reported' survives in the report body after the 2026-09-09 addendum closed E-13 in the block only. The addendum named these three locations and did not align them.", recomputed: "em_score 9 unchanged; the item carries no scoring weight. Block-level catalysts_12m and optionality_register are correct."}
 critical_count: 0
 major_count: 0
-minor_count: 6
-acceptance_rate: 93.8
+minor_count: 3
+acceptance_rate: 97

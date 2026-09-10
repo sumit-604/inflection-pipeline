@@ -1,0 +1,50 @@
+stage: B06-peers
+company: "INDNIPPON"
+run_date: "2026-09-10"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - {type: "FLAG-RECEIVABLES-COMPANY-SPECIFIC", reason: "Varroc explicitly denied any change in receivable days from OEM customers in Q1FY27 (VARROC Aug2026, page 17), attributing its own WC increase to inventory build and invoice timing. No peer reports a comparable overdue-receivables deterioration. This weakens the benign, industry-wide payment-cycle reading of INEL's 152.4% overdue-bucket spike and points toward a company-specific explanation."}
+  - {type: "FLAG-DISCLOSURE-GAP", reason: "All three peers give routine quarterly disclosure of (a) magnet/commodity pass-through mechanism and lag (1 quarter to 6 months, quantified), (b) rupee-value content-per-vehicle and order-book figures, and (c) named-project capex detail. INEL discloses none of these across five decks, a materially thinner practice than sector norm, not evidence the underlying processes differ."}
+peers_provided: 12
+verified:
+  - {claim: "2W industry growth comparator tracks peer-reported trajectory for 3 of 4 quarters (Q2-Q4 FY26); no peer names a source either, so the attribution gap is industry-wide not INEL-specific", peers: ["Varroc", "Minda Corp"], anchor_count: 6}
+  - {claim: "Rare-earth/commodity cost pass-through operates via indexed contracts with a lag of 1 quarter to 6 months, quantified by every peer that discloses it, exposing INEL's 'effectively managed' framing as materially thinner than sector standard", peers: ["Varroc", "Pricol", "Minda Corp"], anchor_count: 7}
+  - {claim: "Peers routinely quantify content-per-vehicle gains in Rs terms and give SOP-to-peak timelines, a disclosure INEL never provides across 5 decks", peers: ["Varroc", "Minda Corp", "Pricol"], anchor_count: 6}
+  - {claim: "No peer selling to overlapping 2W OEMs reports a receivables/ageing deterioration in FY26/Q1FY27; the one peer asked directly (Varroc) denied any change in receivable days", peers: ["Varroc", "Pricol"], anchor_count: 3}
+  - {claim: "EV content expands total addressable spend per vehicle (5-7x ICE per Varroc) but accrues to EV-native product lines peers built specifically for EV, not to legacy ICE parts, implying content-destruction risk for a magneto-led ICE supplier absent a comparable pivot", peers: ["Varroc", "Minda Corp"], anchor_count: 4}
+  - {claim: "Peers give named-project, division-level capex detail every quarter as routine practice, contrasting with INEL's undisclosed Rs42.15cr FY26 capex", peers: ["Varroc", "Pricol", "Minda Corp"], anchor_count: 8}
+partially_verified:
+  - {claim: "INEL's Q1FY27 industry comparator (20%) is directionally correct but understates the ~22-23% peer-reported 2W growth for the same quarter, meaning INEL's claimed +35.5%-vs-+20% outperformance likely overstates its true edge over industry", peers: ["Varroc", "Minda Corp", "Pricol"]}
+contradicted:
+  - {claim: "INEL's receivables overdue-bucket build reflects an industry-wide OEM payment-cycle effect rather than a company-specific issue", contradicting_peer: "Varroc", quote_anchor: "VARROC Aug2026, page 17: 'there is no change [in] receivable days... it's a temporary increase' [due to inventory/invoice timing, not receivables]"}
+unverifiable:
+  - {claim: "Any peer has disclosed a BorgWarner or comparable global Tier-1 EFI-ECU licensing arrangement with named milestones", peers_checked: ["Varroc", "Minda Corp"]}
+  - {claim: "Any peer attributes a working-capital build specifically to strategic magnet stockpiling, as INEL did for Q3FY26", peers_checked: ["Varroc", "Pricol", "Minda Corp"]}
+  - {claim: "Peers report US tariff-driven price-reduction pressure FROM CUSTOMERS matching INEL's Q2FY26 disclosure", peers_checked: ["Varroc", "Pricol"]}
+peer_coverage_map:
+  - {peer: "Varroc (VARROC)", quarter: "Q2 FY26 (Nov 2025)", usage: "SUBSTANTIVE", contribution: "2W growth baseline 10.6% YoY, rare-earth revenue impact Rs750mn, EV content 5-7x ICE multiple"}
+  - {peer: "Varroc (VARROC)", quarter: "Q3 FY26 (Feb 2026)", usage: "SUBSTANTIVE", contribution: "2W growth 15%/9M 8.8%, rare-earth resolution timeline, commodity pass-through confirmed"}
+  - {peer: "Varroc (VARROC)", quarter: "Q4 FY26 (Jun 2026)", usage: "SUBSTANTIVE", contribution: "2W growth 20.7%, explicit 1-quarter inflation-recovery lag, geography-split capex detail"}
+  - {peer: "Varroc (VARROC)", quarter: "Q1 FY27 (Aug 2026)", usage: "SUBSTANTIVE", contribution: "2W growth 22.8% (crux comparator gap), receivable-days 'no change' statement (crux finding), quantified under-recovery mechanics"}
+  - {peer: "Pricol (PRICOLLTD)", quarter: "Q2 FY26 (Nov 2025)", usage: "SUBSTANTIVE", contribution: "Nexperia semiconductor crisis (risk peer set adds), capex Rs250-300cr guidance, new-product revenue-visibility caveats"}
+  - {peer: "Pricol (PRICOLLTD)", quarter: "Q3 FY26 (Feb 2026)", usage: "SUBSTANTIVE", contribution: "Explicit 3-6 month recovery lag with 100% indexation, WC increase attributed to sales growth not receivables, explicit tariff-not-affected statement"}
+  - {peer: "Pricol (PRICOLLTD)", quarter: "Q4 FY26 (May 2026)", usage: "SUBSTANTIVE", contribution: "Named-project capex detail, content-per-vehicle Rs bands by vehicle tier, 6-month FOREX lag, tripartite cost-absorption framing"}
+  - {peer: "Pricol (PRICOLLTD)", quarter: "Q1 FY27 (Aug 2026)", usage: "SUBSTANTIVE", contribution: "Industry-vs-company growth quantified (22% vs 26-28%), demerger capex breakdown, TFT penetration trajectory, names Varroc as own peer"}
+  - {peer: "Minda Corp (MINDACORP)", quarter: "Q2 FY26 (Nov 2025)", usage: "SUBSTANTIVE", contribution: "Overall industry growth 10.1%, rare-earth engineering fix (ferrite/magnet-less motors), wiring-harness market share >30%"}
+  - {peer: "Minda Corp (MINDACORP)", quarter: "Q3 FY26 (Feb 2026)", usage: "SUBSTANTIVE", contribution: "Overall industry growth 16.8-17%, quarterly commodity true-up mechanism, capex Rs400cr guidance"}
+  - {peer: "Minda Corp (MINDACORP)", quarter: "Q4 FY26 (May 2026)", usage: "SUBSTANTIVE", contribution: "2W growth 21%/overall 20%, commodity escalation 30-40% quantified, kit-value Rs50,000-100,000 4W EV, BorgWarner/Sevcon-lineage JV (Turntide)"}
+  - {peer: "Minda Corp (MINDACORP)", quarter: "Q1 FY27 (Aug 2026)", usage: "SUBSTANTIVE", contribution: "2W growth 23%/overall 22%, EV revenue growth (Flash +90% YoY), no receivable/ageing discussion (silence noted)"}
+industry_cross_read:
+  demand: "All three peers report a consistent, strengthening 2W/3W/PV/CV growth trajectory across Q2FY26-Q1FY27 driven by GST 2.0, festive demand and EV adoption; corroborates INEL's framing though peer Q1FY27 pace (22-23%) runs ahead of INEL's own 20% comparator."
+  pricing_inputs: "All peers converge on indexed, contractually recoverable commodity/rare-earth cost pass-through with a 1-quarter to 6-month lag and a quantified temporary EBITDA drag even at full eventual recovery; INEL's 'effectively managed' framing engages with none of this mechanism."
+  capex_cycle: "Industry-wide capacity race, not a lone expander: all three peers run their heaviest-ever capex programmes simultaneously (Varroc Rs450-550cr FY27, Pricol Rs680-700cr FY26 plus more FY27-28, Minda Rs400-450cr FY27), funded mostly by internal accruals with net debt/EBITDA held below 0.6x; INEL's Rs42.15cr FY26 capex is a fraction of peer absolute spend with no comparable content-expansion narrative."
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "Nexperia semiconductor shortage, a distinct industry-wide chip crisis layered atop the rare-earth issue (PRICOLLTD Nov2025 p.4; Feb2026 p.3) -- absent from INEL's disclosures"
+  - "New labour-code/minimum-wage cost inflation, quantified by all three peers (VARROC Feb2026 p.4; MINDACORP Feb2026 p.6; PRICOLLTD Aug2026 p.6) -- not referenced in INEL's corpus"
+  - "One-time tooling-sale margin dilution disclosed with precise EBITDA-point quantification (VARROC Aug2026 p.16) -- a granularity absent from INEL's decks"
+  - "Named litigation/arbitration exposure with quantified amount (VARROC Feb2026 p.17, OPmobility arbitration EUR66mn) -- transparency standard not matched by INEL"
+net_narrative_effect: "complicates"
+analyst_note: "The receivables finding (Q4) is the load-bearing result of this stage: Varroc's direct denial of any receivable-days change in the same quarter INEL's overdue bucket spiked 152.4% is the closest thing this pipeline has to cross-examined evidence on INEL's single most decision-relevant number. It does not prove INEL's build is company-specific -- Varroc's customer mix (Bajaj-heavy) differs from INEL's (TVS/Hero/Bajaj) -- but it removes the industry-wide-effect explanation as the default benign reading. Combine this with the disclosure-gap pattern (Q2, Q3, Q9 all verified peers-quantify/INEL-doesn't) and Part 5's content-share-gap hypothesis: the picture that emerges is not that INEL is lying about anything peers can check, but that INEL's disclosure practice is thin enough, on exactly the topics that matter most for a transition thesis (content wins, capex detail, receivables), that this pipeline cannot independently corroborate the bull case the decks imply."

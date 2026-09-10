@@ -12,3 +12,4 @@
 | 5 | management commentary (NO-CONCALL degraded) | claude-sonnet-5 | default | - | - | 172120 | 479s | 1 |
 | 4 | business model decoder | claude-sonnet-5 | default | - | - | 135165 | 561s | 1 |
 | 8 | promoter background check | claude-sonnet-5 | default | - | - | 151791 | 714s | 1 (status partial: WebSearch unavailable all attempts) |
+| 6 | peer concall verification (12 transcripts) | claude-sonnet-5 | default | - | - | 271100 | 318s | 1 |

@@ -17,3 +17,4 @@
 | 12a | verifier A numerical (pass 1) | claude-haiku-4-5 | default | - | - | 110489 | 223s | 1 |
 | 12c | verifier C framework (phase-1 scope) | claude-opus-4-8 | default | - | - | 134264 | 520s | 1 |
 | 12d | verifier D peer coverage | claude-sonnet-5 | default | - | - | 154972 | 498s | 1 |
+| 12a | verifier A numerical (re-invocation, 180 claims) | claude-haiku-4-5 | default | - | - | 86209 | 320s | 2 |

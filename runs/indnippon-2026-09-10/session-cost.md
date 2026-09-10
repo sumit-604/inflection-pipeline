@@ -8,3 +8,4 @@
 | 2 | notes triple-pass (pass 2 gap-hunt) | claude-sonnet-5 | default | - | - | 135261 | 623s | 2 |
 | 2 | notes triple-pass (pass 3 consolidation + B02) | claude-sonnet-5 | default | - | - | 82693 | 199s | 3 |
 | 7 | emerging moat 22-category scan | claude-sonnet-5 | default | - | - | 146687 | 673s | 1 |
+| 3 | AR backward deep dive (8 phases) | claude-sonnet-5 | default | - | - | 312251 | 1321s | 1 |

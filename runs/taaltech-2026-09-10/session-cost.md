@@ -24,3 +24,4 @@ its own stage. Loops and retries each get their own line with a run counter.
 | 12b | Verifier B red flags | opus | default | - | - | 319,065 | 1239s | 1 |
 | 12c | Verifier C framework (phase 1 scope) | opus | default | - | - | 120,742 | 577s | 1 |
 | 12d | Verifier D peer coverage | sonnet | default | - | - | 154,809 | 549s | 1 |
+| 13 | Synthesis-lite (phase 1 lite, 4 final files) | opus | default | - | - | 181,815 | 782s | 1 |

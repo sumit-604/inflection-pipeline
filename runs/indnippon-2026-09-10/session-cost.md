@@ -5,3 +5,4 @@
 | 0 | input validation + freshness pair check | orchestrator-inline | n/a | n/a | n/a | n/a | n/a | 1 |
 | 2 | notes triple-pass (pass 1 extraction) | claude-sonnet-5 | default | - | - | 152316 | 471s | 1 |
 | 1 | gate 0 scorecard | claude-sonnet-5 | default | - | - | 146812 | 956s | 1 |
+| 2 | notes triple-pass (pass 2 gap-hunt) | claude-sonnet-5 | default | - | - | 135261 | 623s | 2 |

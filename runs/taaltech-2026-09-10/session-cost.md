@@ -16,3 +16,6 @@ its own stage. Loops and retries each get their own line with a run counter.
 | 4 | Business model decoder | sonnet | default | - | - | 83,082 | 280s | 1 |
 | 5 | Communication and guidance (NO-CONCALL MODE) | sonnet | default | - | - | 140,466 | 302s | 1 |
 | 8 | Promoter and governance check (web) | sonnet | default | - | - | 146,025 | 950s | 1 |
+| 6 | Peer concall verification (11 transcripts, 3 peers) | sonnet | default | - | - | 278,875 | 514s | 1 |
+| 7 | Emerging moat 22-category scan | sonnet | default | - | - | 119,149 | 541s | 1 |
+| 9 | TAM SAM SOM (web; WebSearch 20/20 failed) | sonnet | default | - | - | 105,881 | 757s | 1 |

@@ -114,6 +114,16 @@ Corona Remedies.
 Verdicts: PROCEED to `/step1` on TAALTECH and DELTON. WATCH on CORONA, INDNIPPON, MOLBIO
 and TITANBIO. PASS on GRAPHITE and MRPL.
 
+**Revised 2026-09-10: GRAPHITE moved from PASS to WATCH.** The operator supplied
+GrafTech's announcement of a minimum 30% electrode price rise for all open commercial
+negotiations, confirmed by web search and following a March 2026 rise of USD 600 to
+USD 1,200 per tonne. Graphite India rose as much as 18% to a 52-week high. The card had
+named realisation per tonne rising at full utilisation as the single observation that
+would change the view, and it fired. Steps 7, 8, 11, 12 and the PENDING FETCH section
+were realigned in one edit; the archetype, the moat finding and the R1 rung were left
+unchanged, because an industry price rise changes earnings and not the ladder. Source
+tier is operator supplied and web confirmed, not corpus.
+
 **The corpus rule was bent a second time, and further than on 2026-09-08.** That run had
 no egress but could still read filed PDFs through Bull AI's chunk reader. This run could
 not. `get_document_chunks` and `search_company_documents` timed out on every call, at

@@ -4,6 +4,10 @@
   (Bull AI, 2026-09-09). Sectors materials and steel; industry graphite and
   carbon.
 - Analysed 2026-09-09 per `screens/SHALLOW_ANALYSIS_FRAMEWORK.md`.
+- **REVISED 2026-09-10. Verdict changed from PASS to WATCH.** An industry price
+  rise fired the exact observation this card named as the one thing that would
+  change the view. Steps 7, 8, 11 and 12 were realigned together. See UPDATE
+  2026-09-10 at the end.
 - **TIER: DEGRADED.** No document was readable this session. Every number below
   is a Bull AI extraction carrying a document code and a page, not text this
   session read. Treat all of it as PENDING SOURCE VERIFICATION. See
@@ -221,10 +225,15 @@ it as an unpriced option of unknown size, and as a possible cash drain.
 | Global steel demand up 2.2% to 1,762 Mn tonnes | 2027 | doc MSTZX2 p.8 | STATED, WSA forecast |
 | Capacity utilisation to 104% | Q4FY26 | doc MSTZX2 p.6 | DELIVERED |
 | General Graphene, 51.806% held | ongoing | doc ul3lMB p.208 | HELD, status NOT FOUND |
+| GrafTech announces minimum 30% electrode price rise, all open negotiations | Sep 2026 | operator supplied, web confirmed, NOT corpus | EXTERNAL, FIRING |
 
 Note the shape of this register. One company trigger is delivered, one is
 stated, and three are somebody else's forecast of the steel market. A register
 that leans on industry forecasts is describing a cycle, not a plan.
+
+The last row was added on 2026-09-10 and it is the one that matters. It is not
+this company's trigger and it is not from the corpus. It is a competitor's
+pricing action, and in a commodity that is how price arrives for everyone.
 
 ## 8. Proof check
 
@@ -239,6 +248,19 @@ appear.
 
 The proof point to demand: realisation per tonne rising, disclosed. Volume is
 already proven and it did not produce a good margin. Only price will.
+
+**2026-09-10: that proof point is now firing, from outside the company.**
+GrafTech announced a minimum 30% electrode price rise for all open commercial
+negotiations, following its March 2026 rise of USD 600 to USD 1,200 per tonne.
+Reported read-through for Indian producers is roughly USD 1,500 per tonne of
+additional realisation. Graphite India is already at 104% utilisation, so a
+price rise lands on volume that is already sold.
+
+Two things this is not. It is not realised pricing: electrode contracts settle
+over quarters and an announcement is an intention. It is not company pricing
+power: an industry wide rise lifts every producer and creates no advantage for
+this one. The demand stands unchanged, and it is now specific. Realisation per
+tonne, disclosed by this company, in a quarterly number.
 
 ## 9. Flags from the documents
 
@@ -273,70 +295,136 @@ little that the balance sheet does not.
 - **Ugliness: STRUCTURAL-FEATURE.** A 13.2% EBITDA margin and a 6.0% net margin
   are what a price taking converter earns. Nothing about them is temporary and
   nothing is caused by climbing.
-- **Recognition gap: CLOSED, PROVISIONAL.** Enterprise value of about
-  Rs 10,582 cr sits against FY26 EBITDA of Rs 375 cr [DERIVED], with plants
-  already at 104% utilisation. The market is not failing to notice this company.
-  Stage 11 resolves this properly; shallow only names it.
+- **Recognition gap: REOPENED, PROVISIONAL, revised 2026-09-10.** The original
+  read was CLOSED: enterprise value of about Rs 10,582 cr against FY26 EBITDA of
+  Rs 375 cr [DERIVED], with plants at 104%. That rested on FY26 earnings being
+  a fair guide to FY27. A 30% industry price rise on full plants breaks that
+  assumption, because almost all of a price gain drops through on volume already
+  sold. The gap is against a forward earnings base this card cannot compute.
+  Stage 11 resolves it; shallow only names it.
 
-**Posture: AVOID, on the matrix's own overlay.** Gap closed plus structural
-ugliness is the dominating cell, and it reads AVOID. For a transition alpha
-strategy that is the correct answer and it is not a judgement on the company.
+**Posture: revised from AVOID to CYCLE WATCH.** The matrix is built to judge a
+claimed transition, and it still returns the same answer on that question: no
+rung is being climbed. What the matrix does not price is a cycle turning under
+a converter at full utilisation, and that is what changed. AVOID was right about
+the ladder and wrong about the moment.
 
 ## 12. Verdict card
 
-**PASS.** Do not spend a full `/step1`.
+**WATCH.** Revised 2026-09-10 from PASS. Still do not spend a full `/step1`.
 
-Graphite India fails the strategy at the first question rather than the last.
-The framework hunts a business climbing the quality ladder while the market has
-not repriced it. This business is not climbing. It is a global commodity
-converter adding capacity in the same product, at the same rung, into a price it
-does not control. The corpus contains no claim otherwise, and the absence of
-such a claim is the cleanest possible finding.
+Read the change precisely, because only half of the original verdict moved.
 
-The facts that would tempt a different reader are real. Rs 3,767 cr of net cash
-gives a floor. Utilisation at 104% with expansion coming gives operating
-leverage if price ever turns. Promoters own about 64% and bought at the 2020
-low. The industry has genuine entry barriers.
+**What has not changed.** Graphite India is not climbing the quality ladder. It
+is a global commodity converter selling into a price it does not set, and no
+rung migration is claimed anywhere in the corpus. On the strategy's own first
+question this name still fails, and a 30% price rise does not alter that. An
+industry wide price rise lifts every producer at once. It creates earnings; it
+creates no advantage.
 
-None of that is transition alpha. It is a cyclical with a strong balance sheet,
-and it belongs to a different mandate. Buying it well is a question of cycle
-timing and entry price, which this framework is not built to answer and which
-the 25% CAGR target over a three to five year hold does not suit.
+**What has changed.** The original PASS leaned on one observation: realisations
+stayed flat while utilisation went from 81% to 104%, which I read as proof that
+no pricing power existed. That reading was wrong in an important way. Flat
+pricing at full plants was not evidence of a structurally weak business. It was
+a cycle at its bottom. The card itself named the disproof, and the disproof has
+arrived from outside the company.
 
-Two things also argue against it on its own terms. Realisations stayed flat
-while utilisation went from 81% to 104%, which is the wrong response from a
-tight market. And a material part of the Rs 171 cr net profit is investment
-income on the cash pile rather than earnings from furnaces.
+The mechanics are worth stating plainly. At 104% utilisation there is no spare
+volume, so a price rise flows to profit with very little cost against it. That
+is why electrode earnings move in multiples rather than percentages, in both
+directions. FY26 EBITDA of Rs 375 cr on Rs 2,852 cr of sales is a 13.2% margin
+carrying a large fixed cost base. Price is the whole operating leverage.
 
-Load-bearing facts, recorded for the file rather than for a run:
-1. Realisation per tonne and volume in tonnes, FY24 through FY26.
-2. Position on the global electrode cost curve, and whether needle coke supply
-   is contracted or spot.
-3. The size of the electrode capacity expansion in tonnes and its cost.
-4. General Graphene Corporation. Revenue, losses and funding commitment.
-5. Treasury income as a stated line, separated from operating profit.
+**Why WATCH and not PROCEED.** Three reasons, and they are about timing, not
+about the business.
 
-What would change the view to WATCH or PROCEED:
-- Realisation per tonne rising alongside full utilisation. This is the one
-  observation that would show pricing power appearing where none exists now.
+First, the price rise is announced, not realised. Electrode contracts settle
+over quarters. Nothing in any filed document yet shows this company's
+realisation per tonne rising.
+
+Second, the market has already moved. The stock rose as much as 18% on the news
+to a 52-week high. Buying a cyclical after the sector has repriced is the
+opposite of the recognition gap this framework hunts.
+
+Third, and unchanged from the original verdict, this is a cycle trade. It needs
+entry price and cycle timing, which this framework is not built to answer, and
+it does not suit a 25% CAGR target held over three to five years. A converter
+bought at a cycle turn can double and can also give it all back.
+
+Load-bearing facts, now for a run rather than for the file:
+1. Realisation per tonne, disclosed, quarter by quarter. This is the whole thing.
+2. Volume in tonnes, and how much of the book is contracted versus spot. A
+   producer locked into old contracts captures the rise late.
+3. Needle coke cost and whether supply is contracted or spot. A price rise
+   driven by input inflation is worth far less than one driven by shortage.
+4. Position on the global electrode cost curve.
+5. Treasury income as a stated line, separated from operating profit. A material
+   part of the Rs 171 cr FY26 net profit is investment income on the cash pile.
+6. General Graphene Corporation. Revenue, losses and funding commitment.
+
+What would change the view to PROCEED:
+- Realisation per tonne rising in this company's own disclosure, with the
+  contracted share of the book stated. That converts an industry announcement
+  into this company's earnings.
 - A disclosed cost curve position in the lowest quartile, which would move the
-  name from R1 to R2 and make it a genuine cost advantaged converter.
-- General Graphene reaching commercial revenue with disclosed economics, which
-  would create a real second rung the market has not priced.
-- A large capital return that shrinks the cash pile into the share count, which
-  would change what the market is actually buying.
+  name from R1 to R2 and make the climb real rather than cyclical.
+- A price that reopens a gap. The name got more expensive on the day the news
+  broke, and the framework buys gaps, not headlines.
+
+What would return it to PASS:
+- Evidence that the announced rise is not converting into Indian realisations,
+  or that it is being consumed by needle coke and energy inflation.
 
 No valuation, no target price and no position is set here.
+
+## UPDATE 2026-09-10
+
+**Trigger.** The operator supplied the GrafTech announcement of a minimum 30%
+electrode price rise, effective immediately for all open commercial
+negotiations. It was confirmed by web search and follows a March 2026 rise of
+USD 600 to USD 1,200 per tonne. Graphite India rose as much as 18% to a 52-week
+high of Rs 839.95. Reported read-through for Indian producers is about USD 1,500
+per tonne.
+
+**Source tier.** Operator supplied and web confirmed. **Not corpus.** No filed
+document was read for any of it. The market cap in this card's header predates
+the move and is stale.
+
+**What was realigned, in this one edit.**
+- Header: revision line added.
+- Step 7: the price rise added as an EXTERNAL, FIRING trigger, with a note that
+  it is a competitor's action and not this company's.
+- Step 8: the proof point recorded as firing from outside the company, with the
+  two things it is not.
+- Step 11: recognition gap moved from CLOSED to REOPENED; posture moved from
+  AVOID to CYCLE WATCH.
+- Step 12: verdict moved from PASS to WATCH; load-bearing facts reordered around
+  realisation and contract mix.
+- `screens/README.md`: the third run verdict list updated.
+
+**What was deliberately not changed.** Step 2, step 3 and step 6. The archetype
+is still commodity converter, the company level moat is still absent, and the
+rung is still R1. An industry price rise changes earnings, not the ladder.
+Section 1B v3.7 Amendment 17 still binds this name as a CONVERTER, and a cycle
+peak realisation must not be carried into a destination multiple.
+
+**Analyst note on the original error.** The card treated flat realisation at
+104% utilisation as settled evidence of no pricing power. It was better read as
+a cycle at its bottom. The failure was of interpretation, not of evidence: the
+card had correctly named the exact disproof at step 12, and the disproof then
+arrived. That is the register working as intended.
 
 ## PENDING FETCH
 
 Added 2026-09-09 after the corpus review. Document existence only. No number
 below comes from a web source, and none has been added to any step above.
 
-**Recorded for the file, not for a run.** The verdict is PASS and nothing here
-is expected to change it. The PASS rests on two things that no unread document
-is likely to reverse: no rung migration is claimed, and realisations stayed flat
-while utilisation went from 81% to 104%.
+**Revised 2026-09-10. This is now a fetch list for a run, not for the file.**
+The original text said the verdict was PASS and nothing here would change it,
+resting on two things: no rung migration is claimed, and realisations stayed
+flat while utilisation went from 81% to 104%. The first still holds. The second
+has been overtaken by the GrafTech price rise, so realisation is now the number
+to fetch rather than a settled finding.
 
 Known gap in this card's own method: `list_document_availability` was not called
 for this name, so the corpus ledger at step 1 is incomplete. Run it first if the
@@ -347,9 +435,13 @@ Proven to exist by Bull AI's index, unreadable this session:
 - Bull AI document ul3lMB, an annual report, beyond pages 41, 172, 197, 198 and
   208.
 
-What would need fetching if the view were ever reopened: realisation per tonne
-and volume in tonnes for FY24 to FY26, the cost curve position, the size of the
-electrode capacity expansion in tonnes, and the General Graphene Corporation
-accounts. These are load-bearing facts 1 to 4 at step 12.
+What to fetch, in priority order: realisation per tonne and volume in tonnes for
+FY24 to FY26 and every quarter since, the contracted versus spot split of the
+order book, needle coke cost and supply terms, the cost curve position, the size
+of the electrode capacity expansion in tonnes, and the General Graphene
+Corporation accounts. These are load-bearing facts 1 to 6 at step 12.
+
+Add one document that was not on the original list: the Q1FY27 result and any
+Q2FY27 disclosure, which are where a realisation change would first appear.
 
 Where: `https://www.screener.in/company/GRAPHITE/`.

@@ -19,3 +19,8 @@ its own stage. Loops and retries each get their own line with a run counter.
 | 6 | Peer concall verification (11 transcripts, 3 peers) | sonnet | default | - | - | 278,875 | 514s | 1 |
 | 7 | Emerging moat 22-category scan | sonnet | default | - | - | 119,149 | 541s | 1 |
 | 9 | TAM SAM SOM (web; WebSearch 20/20 failed) | sonnet | default | - | - | 105,881 | 757s | 1 |
+| 12a | Verifier A numerical (FAILED: wrong checkout, 7 false CRITICALs) | haiku | default | - | - | 43,277 | 154s | 1 |
+| 12a | Verifier A numerical (re-invoked, absolute paths) | haiku | default | - | - | 108,214 | 246s | 2 |
+| 12b | Verifier B red flags | opus | default | - | - | 319,065 | 1239s | 1 |
+| 12c | Verifier C framework (phase 1 scope) | opus | default | - | - | 120,742 | 577s | 1 |
+| 12d | Verifier D peer coverage | sonnet | default | - | - | 154,809 | 549s | 1 |

@@ -39,6 +39,32 @@ verified ground rather than on an unchecked third-party number.
 false source-fidelity flag raised and withdrawn. No upstream figure was corrected,
 because none was wrong.
 
+## CROSS-VERIFIER CONFLICT, OPEN AT HALT 1 (added 2026-09-10)
+
+This entry is not a Verifier A source-fidelity disagreement. It is recorded here
+because the log is the run's standing place for verifier conflicts that must not
+be resolved silently, and because this one is the most decision-relevant item the
+run produced.
+
+| Item | B12b (Verifier B, Opus) position | Verifier A position | Disposition |
+|---|---|---|---|
+| FY26 audited-basis EBITDA margin | CRITICAL. Audited-basis margin was 11.11% (FY25) → 11.10% (FY26), flat to down, against the deck's 11.27% → 11.44%. The deck nets FX gains (Rs 372L FY26 vs Rs 102L FY25) into operating expenses, while Note 29 classifies them inside Other Income. Anchored to the Reg 33 results filing p.4 (FY26: revenue 1,06,848; expenses 96,828; finance 52; depreciation 1,792) and AR2026 Note 29 / Note 35. | SILENT. The deck-versus-audited margin reconciliation was outside Verifier A's task scope on both passes, and its single permitted re-invocation is spent. | OPEN — referred to Halt 1 as the first verification item |
+| FY26 ROCE | CRITICAL. Deck ROCE 34.97% is 2.06x the audited Note 51 ROCE of 17%, on an undisclosed definition that appears to strip the entire Rs 531.5 cr investment book out of capital employed. Implies a QUALITY LADDER move from R2 to R5. | SILENT, same scope reason. | OPEN — referred to Halt 1 |
+| credibility_grade | Would grade **D**, not the **C** B05 filed. | Not in scope. | UNRESOLVED, both grades carried to the operator. The orchestrator does not adjudicate a credibility grade; that is analysis. |
+
+**Why this is left open rather than settled here.** Under Section 4, Verifier A is
+the sole final authority on whether a number exists in a source, and Verifier C's
+re-derivations and the synthesis narrative are subordinate to it on that question.
+The margin claim is exactly such a question. Verifier A has not examined it, and
+the orchestrator may not substitute its own reading for a verifier's on a matter
+of analysis. So the honest disposition is to carry the conflict forward, name it
+as the first thing to verify, and bar any Phase 3 valuation from using an FY26
+margin until it is resolved.
+
+**What rides on it.** If B12b is right, the mix-shift margin thesis that stages 4,
+5 and 7 all lean on loses its only quantitative support. That is a thesis-level
+consequence, not a footnote.
+
 ## STANDING NOTE FOR THIS RUN
 
 Verifier A is the sole final authority on whether a number exists in a source,

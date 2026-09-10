@@ -1,0 +1,96 @@
+stage: confidence-delta
+company: INDNIPPON
+run_date: 2026-09-10
+phase: 1
+derived_by: orchestrator
+derivation: >
+  MECHANICAL. Computed per prompts/00-orchestrator.md Section 5 from the four
+  committed verifier blocks. No judgement added; each component is lifted from
+  its block and the overall is the minimum of the four, exactly as the rule
+  specifies.
+
+confidence_delta:
+  numerical_acceptance: 97.2      # B12a (re-invocation, 180 claims, 175 clean)
+  redflag_coverage: 29            # B12b (7 caught of 24 independent red-flag-grade items)
+  framework_adherence: 82         # B12c (phase-1 scope: gate0 23/29, emoat 24/28)
+  peer_utilisation: 100           # B12d (12 of 12 peers substantive, none reclassified)
+  overall: 29                     # minimum of the four, per the rule
+
+interpretation_band: "BELOW 60 — FORCED REWORK"
+band_rule_quoted: "prompts/00-orchestrator.md Section 5: 'overall >= 90 high confidence; 75-89 normal, note specifics; 60-74 PROCEED verdicts downgrade one level; < 60 forced REWORK.'"
+
+rework_triggered: true
+rework_triggers:
+  - trigger: "Verifier acceptance_rate below 60%"
+    rule: "prompts/00-orchestrator.md Section 4: 'If Verifier A finds any CRITICAL numerical finding ..., or any verifier's acceptance_rate falls below 60%, the synthesis verdict is REWORK regardless of company quality: the analysis cannot be trusted. This gate stays hard because it judges the pipeline, not the stock.'"
+    fired_on: "B12b redflag_coverage 29%"
+  - trigger: "Confidence delta overall below 60"
+    rule: "Section 5 interpretation band, quoted above."
+    fired_on: "overall 29"
+  - trigger: "Verifier B CRITICAL findings"
+    rule: "Two CRITICAL findings raised by B12b. Note the Section 4 CRITICAL clause names Verifier A specifically; these are Verifier B CRITICALs, so they do not fire that particular clause on its literal wording. They are recorded here because they are the substance behind the acceptance-rate trigger that DID fire, and because a CRITICAL from any verifier is material to the operator's decision."
+    fired_on: "B12b critical_count 2"
+
+rework_is_about_the_analysis_not_the_company: >
+  Stated explicitly because the distinction governs what the operator does next.
+  REWORK here does NOT mean the business is bad, and it does not halt the run
+  (only mechanical failures halt). It means one analytical OPERATION was never
+  performed by any stage, so the evidence pack is incomplete. Every other
+  verifier came back strong: numerical acceptance 97.2% over 180 claims with
+  zero CRITICAL, peer utilisation 100%, framework adherence 82% with one real
+  and already-corrected scoring breach. Verifier B itself records
+  pipeline_flags_not_supported: [] — meaning every flag B05 and B06 raised
+  survived its independent check. The problem is not wrong work; it is missing
+  work.
+
+the_missing_operation: >
+  Reconciling the investor decks and the MD&A against the AUDITED NOTES and the
+  Regulation 33 results filing. B05 read the decks and the AR narrative. B01,
+  B02 and B03 read the audited statements. No stage was tasked with putting the
+  two side by side, so twelve red-flag-grade items in that seam went unfound
+  until Verifier B performed the operation itself.
+
+orchestrator_cross_check_of_the_two_criticals: >
+  Verifier B asked the orchestrator to check B01/B02/B03/B07 before routing
+  rework, since those blocks were not in its input set. That check was run
+  mechanically (grep across all committed reports and blocks) and CONFIRMS both
+  CRITICALs are substantially new:
+  (1) Deck ROCE 34.97% versus audited Note 51 ROCE 17%. B04-bizmodel DID notice
+      the deck series (21.66 / 26.37 / 34.97% for FY24-26) and described it as
+      "computed on a different but directionally consistent basis", which
+      accepts rather than interrogates it. B02 pass 1 SEPARATELY recorded that
+      Note 51's own footnote flags ROCE 17% and ROE 15% as exceptional-item
+      inflated. Both halves of the contradiction were in the run; no stage
+      joined them, and no stage quantified the 2.06x gap or the undisclosed
+      definition.
+  (2) FY26 EBITDA margin expansion as an FX artefact. NOT FOUND anywhere in any
+      stage report or block. Genuinely new. B04's FLAG-MARGIN-DEFINITION is
+      adjacent (it names three coexisting margin figures: 13.97%, 11.44%, 9.4%)
+      but does not establish that the 11.27% to 11.44% expansion itself
+      disappears on an audited basis.
+
+cross_verifier_conflict_open:
+  item: "B12b CRITICAL 2, the audited-basis EBITDA margin"
+  claim: "FY26 audited-basis margin was 11.11% (FY25) to 11.10% (FY26), flat to down, against the deck's 11.27% to 11.44%; the deck figure nets FX gains (Rs 372L FY26 vs Rs 102L FY25) into operating expenses while Note 29 classifies them inside Other Income."
+  status: "NOT INDEPENDENTLY VERIFIED"
+  why_it_matters: >
+    This is the single most thesis-relevant numerical claim produced by the
+    entire run. If it holds, it removes the only quantitative support for the
+    mix-shift margin thesis that stages 4, 5 and 7 all lean on. It is a
+    numerical existence-and-basis question, which is Verifier A's exclusive
+    authority under the Section 4 source-fidelity rule, and Verifier A did not
+    examine it: the deck-versus-audited margin reconciliation was outside its
+    task scope on both passes, and its single permitted re-invocation is spent.
+  disposition: "Referred to Halt 1 as the FIRST verification item. Must be resolved before any Phase 3 valuation uses an FY26 margin. Recorded in outputs/final/verifier-disagreement-log.md."
+
+credibility_grade_dispute:
+  b05_filed: "C"
+  b12b_would_grade: "D"
+  b12b_reason: "The two headline quality metrics an investor lifts straight off the deck, ROCE and EBITDA margin, are both undefined non-GAAP constructions differing from the company's own audited notes by 18 percentage points and by the DIRECTION of the margin trend."
+  disposition: "UNRESOLVED, surfaced not silently reconciled. The orchestrator does not adjudicate a credibility grade; that is analysis. Both grades and both bases go to the operator at Halt 1."
+
+what_this_does_not_change: >
+  Nothing here halts the run and nothing here is a company-quality judgement.
+  The corpus audit verdict (CORPUS GAPPED), the freshness verdict (FRESHNESS
+  PAIRS OK), the UA withholding, the Gate 0 AVERAGE classification and the EM
+  MODEST classification all stand unaffected.

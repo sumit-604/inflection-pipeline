@@ -3,3 +3,4 @@
 | # | stage | model | effort | in_tok | out_tok | total_tok | wall | run# |
 |---|---|---|---|---|---|---|---|---|
 | 0 | input validation + freshness pair check | orchestrator-inline | n/a | n/a | n/a | n/a | n/a | 1 |
+| 2 | notes triple-pass (pass 1 extraction) | claude-sonnet-5 | default | - | - | 152316 | 471s | 1 |

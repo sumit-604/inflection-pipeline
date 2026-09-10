@@ -1,0 +1,61 @@
+stage: B04-bizmodel
+company: "TAALTECH"
+run_date: "2026-09-10"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["No investor presentation exists (company holds no earnings calls, publishes no investor deck; company's own disclosure posture, not a collection miss)", "Utilisation rate, attrition rate, onsite/offshore delivery mix: NOT FOUND anywhere in the AR", "Rate-card / realised bill-rate data: NOT FOUND, blocks direct confirmation of pricing power beyond tenure aggregate", "Mechanism behind the ~27.8% genuine EBIT margin versus peer margins of ~12-13%: not disclosed or explained anywhere in the AR"]
+flags:
+  - {type: FLAG-MARGIN-SOURCE, reason: "Genuine EBIT margin (Other Income excluded) computes to approximately 27.8%, roughly double the margin earned by listed ER&D peers of comparable or larger scale (Onward Technologies ~13% at Rs544cr revenue, Cyient ~12% at Rs7,268cr). No offshore-mix, pricing, utilisation, or overhead disclosure in the AR explains the spread. This is the single most important unresolved question in the run."}
+  - {type: FLAG-CASH, reason: "Consolidated CFO/PAT fell from 0.84x (FY25) to 0.33x (FY26), driven by unbilled revenue nearly tripling (Rs4.64cr to Rs13.75cr) and decoupling from 6.6% revenue growth; the business model's normal WC cycle (T&M billed pro-rata) should not produce this pattern absent a billing-cycle or collections change not explained in the AR."}
+  - {type: FLAG-CONCENTRATION, reason: "Top customer at 24.05% of FY26 revenue, up from 20.55% in FY25, in a business whose only confirmed moat is client relationship tenure."}
+  - {type: FLAG-DISCLOSURE, reason: "No investor presentation, no earnings calls, no utilisation/attrition/pricing metrics disclosed anywhere; MD&A itself states AI's impact on the sector is unassessed. This limits how far Section 3 KPI tracking and pricing-power classification can go on filed evidence alone."}
+business_type: "services"
+revenue_streams:
+  - {name: "Time & material engineering services", type: "labour-hour services", pct_of_revenue: 95.5, predictability: "M"}
+  - {name: "Fixed-price, fixed-timeframe contracts", type: "milestone project services", pct_of_revenue: 4.5, predictability: "L"}
+  - {name: "Sale of goods", type: "incidental, immaterial", pct_of_revenue: 0.01, predictability: "L"}
+asset_intensity: "light"
+wc_intensity: "high"
+pricing_power: "moderate"
+cyclicality: "cyclical"
+moats_present:
+  - {moat: "switching costs / client relationship tenure", durability: "moderate"}
+valuation_methods:
+  primary: {method: "DCF on the operating ER&D business, treasury book valued separately", why: "Asset-light services engine whose cash flows should be modelled on their own; blending in the Rs143.89cr investment book would conflate operating and financial value"}
+  secondary: {method: "Sum-of-the-parts: operating DCF plus discounted treasury book", why: "Investment book is roughly 9% of market cap and 85.5% unquoted Level-3 paper (AR p.81); material enough to separate and haircut for credit/liquidity risk"}
+  tertiary: {method: "P/E on rebuilt genuine operating EPS (Other Income excluded)", why: "Useful cross-check only if EPS is rebuilt off the 27.8% genuine EBIT margin, not the company's own Other-Income-inclusive reported EPS of Rs181.99"}
+  not_applicable: ["EV/EBITDA on reported EBITDA (MTM-gain-inflated, Total-Income-based per company's own Key Financial Ratios table)", "Asset-based / book value / P/B (balance sheet dominated by financial investments, not operating assets)", "Replacement cost (no physical plant or manufacturing capacity)", "Dividend discount model (no stated payout policy found in this AR)"]
+irrelevant_ratios:
+  - {ratio: "Gross margin / COGS-based margin", why: "No COGS or inventory line exists; this is a people-cost business, not a manufacturing one"}
+  - {ratio: "Inventory turnover", why: "Company's own Key Financial Ratios table reports this as NA (AR p.37)"}
+  - {ratio: "Debt-equity / interest coverage", why: "Company carries no borrowings; both reported NA by the company itself (AR p.37)"}
+  - {ratio: "Company's own reported Operating Profit Margin / RONW / ROE", why: "All computed off Total Income including Other Income, 63.3% of which is an unrealised mark-to-market gain (AR p.37, p.144)"}
+  - {ratio: "Current ratio as standalone liquidity comfort", why: "9.49x is inflated by an 85.5%-unquoted investment book, not true liquid cash (AR p.37, p.81)"}
+must_track_metrics:
+  - {metric: "Genuine EBIT margin (Other Income excluded)", healthy: "peer-explainable spread over 12-13% comparable-scale peers", red_flag: "widening gap with no disclosed mechanism"}
+  - {metric: "CFO / PAT ratio", healthy: "above 0.7-0.8x", red_flag: "below 0.5x for two consecutive years (already at 0.33x)"}
+  - {metric: "Unbilled revenue as % of exit-quarter revenue", healthy: "stable low-teens", red_flag: "sustained above 20-25% (already at 24.1%)"}
+  - {metric: "Largest-customer revenue share", healthy: "below 15-20%", red_flag: "above 25-30% and rising (already at 24.05%, rising)"}
+  - {metric: "Employee benefits expense as % of revenue", healthy: "55-65% band stable", red_flag: "sharp unexplained drop or spike"}
+unit_economics:
+  unit: "one billable engineer, priced by hour/month under T&M contracts (95.5% of revenue)"
+  revenue_per_unit: "approximately Rs36.5 lakh per employee per year (standalone revenue Rs190.10cr / 521 employees, AR p.90, p.24) - a proxy only, no direct billable-rate disclosure exists"
+  margin_per_unit: "NOT FOUND - no bill-rate or per-engineer cost bridge disclosed; median remuneration Rs9.40 lakh p.a. (AR p.24) is the only per-head cost anchor"
+  key_lever: "Headcount growth and rate realisation within the 70%+ long-tenure client base; neither utilisation nor pricing data is disclosed to confirm which lever is driving the current acceleration"
+first_deterioration_signals:
+  - {risk: "Top-customer concentration/loss", first_signal: "Revenue from operations decline, quarter over quarter; next AR Note 42 major-customer share"}
+  - {risk: "AI-driven T&M substitution", first_signal: "Sale of services (T&M sub-line), Note 24"}
+  - {risk: "Unexplained margin premium reverting to peer norms", first_signal: "Employee benefits expense as % of revenue and genuine EBIT margin, each quarter"}
+  - {risk: "Currency exposure on 99.8%-export book with shrinking hedge", first_signal: "Net gain/loss on foreign currency transactions, Other Income note"}
+  - {risk: "Cash conversion / unbilled revenue build", first_signal: "Cash flow from operating activities; Unbilled revenue, Note 14"}
+  - {risk: "Treasury book credit event", first_signal: "Impairment or fair-value-loss line inside Other Income, or a redemption-gate disclosure"}
+mgmt_questions:
+  - "What offshore-cost ratio, delivery-pyramid structure, or pricing mechanism explains a genuine EBIT margin of approximately 27.8%, roughly double comparable-scale listed ER&D peers?"
+  - "What is driving the unbilled revenue build and the CFO/PAT fall from 0.84x to 0.33x, and when will it normalise?"
+  - "What caused the Q1 FY27 revenue jump to Rs64.81cr (up 41.6% YoY) after three years near 7% CAGR: new client, scope expansion, or something else?"
+  - "What is the company's utilisation rate and bench cost, and how does headcount growth track the recent revenue acceleration?"
+  - "Why does the company hold 85.5% of its Rs143.89cr investment book in unquoted, subordinated NBFC/fintech NCDs and alternative-credit AIFs?"
+  - "What are the contractual rate, tenure, security, and board-approval date for the Rs10cr loan to Vishkul Enterprises Pvt Ltd, given CARO and AOC-2 contradict each other?"
+  - "Does the company plan to begin an investor presentation cadence or earnings calls, given the scale of the recent quarterly acceleration?"
+one_line_verdict: "Sticky client relationships fund a margin no filed evidence explains, on cash that is not converting."
+analyst_note: "This business tests as a genuine outsourcing-partner archetype: no product, no licence, no platform, revenue traces entirely to billed engineer time (95.5% T&M) or milestone deliverables (4.5% fixed-price). The archetype fits cleanly. What breaks is the margin: at ~27.8% genuine EBIT margin the company sits far above every comparable-scale listed ER&D peer, and this AR discloses no utilisation, offshore-mix, rate-card, or delivery-pyramid data that could explain the gap. Pricing power is asserted only via a tenure statistic (70%+ of business, ten-plus years), never via realised price or margin-per-account data, so pricing_power is called moderate rather than strong. WC intensity is called high, not medium, because the direction of travel (CFO/PAT 0.84x to 0.33x in one year, unbilled revenue +196%) is the more decision-relevant read for a business whose normal T&M billing cycle should not produce this pattern. No investor presentation or concall exists to cross-check any of it, which is itself the year's most important disclosure-posture finding."

@@ -13,3 +13,6 @@ its own stage. Loops and retries each get their own line with a run counter.
 | 2 | Notes triple-pass, pass 2 of 3 (re-run in isolated worktree) | sonnet | default | - | - | 153,066 | 625s | 2 |
 | 2 | Notes triple-pass, pass 3 of 3 (synthesis) | sonnet | default | - | - | 87,142 | 269s | 1 |
 | 3 | AR backward deep dive | sonnet | default | - | - | 237,484 | 669s | 1 |
+| 4 | Business model decoder | sonnet | default | - | - | 83,082 | 280s | 1 |
+| 5 | Communication and guidance (NO-CONCALL MODE) | sonnet | default | - | - | 140,466 | 302s | 1 |
+| 8 | Promoter and governance check (web) | sonnet | default | - | - | 146,025 | 950s | 1 |

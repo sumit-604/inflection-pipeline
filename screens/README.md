@@ -231,3 +231,26 @@ TITANBIO:https://www.screener.in/company/524717/
 TAALTECH, DELTON and TITANBIO use BSE codes. TAAL Tech needs the code because the company
 was renamed in November 2025. Titan Bio-Tech's annual report is not indexed by Bull AI in
 any year and must come from BSE scrip 524717 directly.
+
+### 2026-09-10: comparison and Claude web hand-off
+
+`screens/COMPARISON-2026-09-10.md` compares the eight on valuation, transition and growth
+together, and carries the hand-off brief for the deep dig in claude.ai.
+
+**It sits outside `SHALLOW_ANALYSIS_FRAMEWORK.md` by operator instruction.** That framework
+bars valuation on a shallow card. The comparison file carries FY27 forward earnings and
+forward P/E; no card does. Not one forward multiple was written onto any of the eight cards.
+
+Source tiers are separated in the file. Market caps and trailing financials are screener,
+via web search, not corpus. Every FY27 forward number is an estimate, mine, except Corona's
+20% PAT growth which is company guidance. The two assumptions most likely to be wrong are
+named: TAAL Tech's 27.9% net margin and Delton's move from 1.7% to 2.5%.
+
+Result of the operator's filter, cheap plus strong transition plus strong growth: TAALTECH
+and DELTON pass, the same two the shallow run gave PROCEED. MRPL and GRAPHITE fail on
+transition, CORONA on price, INDNIPPON on an unfired gate, MOLBIO and TITANBIO on
+knowability.
+
+The hand-off section records the binding constraint for the next step: none of the eight has
+a `companies/<TICKER>.md` file, so no spear line exists for any of them, and the SPEAR GATE
+blocks `/run-pipeline` and `/fttcp` on all eight until Claude web runs a spear pass.

@@ -1,0 +1,51 @@
+stage: B02-notes
+company: "TAALTECH"
+run_date: "2026-09-10"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - {type: FLAG-CASH, reason: "Consolidated CFO/Net Profit fell from 84.1% (FY25) to 33.0% (FY26); unbilled revenue (Note 14, Consolidated, p.137) nearly tripled (Rs4.64cr to Rs13.75cr, +196%) and rose from 10.4% to 24.1% of exit-quarter revenue, decoupled from 6.6% revenue growth; combined receivables plus unbilled working capital rose 55.7% YoY against 6.6% revenue growth."}
+accounting_quality: 4
+pass_2_empty: false
+pass_3_empty: true
+top_findings:
+  - {rank: 1, finding: "Unbilled revenue nearly tripled (Rs4.64cr to Rs13.75cr, +196%); unbilled-to-exit-quarter-revenue ratio doubled (10.4% to 24.1%), decoupled from 6.6% revenue and 34.8% receivables growth.", note_ref: "Note 14, Consolidated, p.137; Note 24, p.132", rating: "RED FLAG"}
+  - {rank: 2, finding: "Mark-to-market gain on investments = Rs1,204.05 lakh, 63.3% of Other Income and 16.2% of PBT; genuine EBIT margin (Revenue less Total Expenses, Other Income excluded) is 27.8%, below any PBT-based margin reading.", note_ref: "Note 25, Consolidated, p.143", rating: "RED FLAG"}
+  - {rank: 3, finding: "Rs10cr unsecured inter-corporate loan to 50.74% holding company Vishkul Enterprises Pvt Ltd, new this year, ~9.85% derived rate, no disclosed contractual rate, tenure, or security.", note_ref: "Note 36(B) Consolidated p.151; Note 13 Standalone p.85", rating: "RED FLAG"}
+  - {rank: 4, finding: "85.5% (Rs122.96cr) of the Rs143.89cr treasury book is unquoted Level-3 paper, concentrated in subordinated/high-yield NCDs of small, largely unrated NBFC and fintech lenders plus alternative-credit AIFs.", note_ref: "Note 7, Consolidated, p.132-134", rating: "RED FLAG"}
+  - {rank: 5, finding: "Single customer at 24.05% of FY26 revenue, up from ~20-21% in FY25, and rising.", note_ref: "Note 42, both sets, p.103/p.157", rating: "RED FLAG"}
+  - {rank: 6, finding: "Note 41(b)-(d) 'Summarised Consolidated' P&L/BS/CF inside the audited Consolidated Financial Statements is the Standalone financials with one expense line deleted; overstates PBT 57%, CFO 54%, understates Total Assets 5.9% vs the true audited Consolidated figures.", note_ref: "Note 41, Consolidated, p.155-156", rating: "RED FLAG"}
+  - {rank: 7, finding: "Rs371.05 lakh customer-claim provision reversed via Exceptional Items with no disclosure of the original claim's date, customer, or nature.", note_ref: "Note 31 Standalone p.92 / Note 30 Consolidated p.144", rating: "RED FLAG"}
+  - {rank: 8, finding: "Rs91.78 lakh credited directly to Retained Earnings with no explanatory note, folded into a row captioned 'Other comprehensive income' on the face of both Statements of Changes in Equity, overstating apparent OCI more than 14x (98.56 shown vs 6.78 actual).", note_ref: "Note 17(d) Consolidated p.139 / Note 16(c) Standalone p.83; SOCE p.117/p.68", rating: "RED FLAG"}
+  - {rank: 9, finding: "CARO Annexure A clause 3(iii)(a) discloses the Rs10cr loan granted during the year; clause 3(iii)(d), four lines later, states no loan was given during the year.", note_ref: "Annexure A to Independent Auditor's Report, p.60", rating: "RED FLAG"}
+  - {rank: 10, finding: "Rs51.71 lakh 'Receivable from related parties' (Mar26; Nil Mar25) does not reconcile under either the standalone or the consolidated definition of related party, and is identical in both note sets.", note_ref: "Note 10, both sets, p.83/p.135", rating: "RED FLAG"}
+  - {rank: 11, finding: "KMP remuneration FY25 comparatives differ between the standalone and consolidated related-party notes on four separate lines, in inconsistent directions.", note_ref: "Note 37 Standalone p.98 vs Note 36 Consolidated p.151", rating: "RED FLAG"}
+  - {rank: 12, finding: "No board-approval date, audit-committee minute, or Section 186(4) purpose/rate disclosure found anywhere in the AR for the Vishkul loan; AOC-2 records the transaction as 'NA', below the company's own material-RPT threshold.", note_ref: "Directors' Report p.34; AOC-2 Annexure E p.56; Note 13 p.85", rating: "WATCH"}
+  - {rank: 13, finding: "Contract liabilities (Deferred revenue) are Nil both years despite a policy that defines them; the working-capital build in this note set runs one-directionally, contract assets only.", note_ref: "Note 21, both sets", rating: "WATCH"}
+  - {rank: 14, finding: "Consolidated investment current/non-current classification was filed wrong on 26-May-2026 and corrected one day later via BSE corrigendum.", note_ref: "other__Revised_Consolidated_Assets_Liabilities_Mar_2026.txt", rating: "WATCH"}
+  - {rank: 15, finding: "Fair value hierarchy note's boilerplate still references 'borrowings' and 'convertible preference shares' the company does not have, and gives no counterparty-credit-risk commentary for the new, material Loans line, unlike security deposits.", note_ref: "Note 39 Standalone p.99-100 / Note 38 Consolidated p.152", rating: "WATCH"}
+red_flags:
+  - "MTM gain (Rs1,204.05 lakh) is 63.3% of Other Income, 16.2% of PBT: genuine EBIT margin is 27.8%, not the PBT-implied ~38%"
+  - "Unbilled revenue tripled and decoupled from revenue growth: primary driver of CFO/PAT collapse to 33%"
+  - "Rs10cr unsecured, unbenchmarked ICD to the 50.74% holding company Vishkul Enterprises Pvt Ltd"
+  - "85.5% of the Rs143.89cr treasury book is unquoted, concentrated in subordinated NBFC/fintech NCDs and alt-credit AIFs"
+  - "Rising single-customer concentration: 24.05% of FY26 revenue"
+  - "Note 41 'Summarised Consolidated' table inside the audited Consolidated Financial Statements overstates PBT 57% and CFO 54% vs the true audited figures"
+  - "Rs371.05 lakh opaque customer-claim provision reversal via Exceptional Items, 6.6% of PBT"
+  - "Rs91.78 lakh direct credit to Retained Earnings mislabeled as Other Comprehensive Income on the face of both Statements of Changes in Equity"
+  - "CARO Annexure A clause 3(iii)(a) and 3(iii)(d) directly contradict each other on whether a loan was given during the year"
+  - "Rs51.71 lakh related-party receivable unreconcilable under either the standalone or consolidated definition of related party"
+  - "KMP remuneration FY25 comparatives differ on four lines between standalone and consolidated notes, in inconsistent directions"
+questions_for_mgmt:
+  - "What are the contractual rate, tenure, security, and purpose of the Rs10cr unsecured loan to Vishkul Enterprises Pvt Ltd, and why does it show as 'NA' in AOC-2 while CARO discloses it as a loan granted during the year?"
+  - "What is driving the unbilled revenue build (Rs4.64cr to Rs13.75cr, 10.4% to 24.1% of exit-quarter revenue), and what steps are planned to bring CFO/PAT back toward the FY25 level of 84%?"
+  - "What is the nature and origin of the Rs371.05 lakh customer-claim provision reversed this year as an Exceptional Item: which customer, which contract, and when was it first provided?"
+  - "What is the nature of the Rs91.78 lakh direct credit to Retained Earnings, and will the Statement of Changes in Equity be corrected so it is not folded into Other Comprehensive Income?"
+  - "Will the company reissue a corrected Note 41(b)-(d) 'Summarised Consolidated' table, and what review step will prevent a recurrence of an error inside audited financial statements?"
+  - "Given CARO clause 3(iii)(a) discloses a loan granted during the year while clause 3(iii)(d) states no loan was given, which statement is correct, and what is the annexure review process?"
+receivables_trend: "deteriorating - trade receivables Rs38.61cr (Mar25) to Rs52.04cr (Mar26), +34.8%; >6mo tail 1.5% to 2.0% of gross; but the sharper deterioration is unbilled revenue (contract asset), Rs4.64cr to Rs13.75cr (+196%), rising from 10.4% to 24.1% of exit-quarter revenue; combined receivables plus unbilled +55.7% YoY vs 6.6% revenue growth"
+restatements_found:
+  - "NCLT order dated 21-May-2025 merged TAAL Tech India Pvt Ltd into the listed parent (TAAL Enterprises Ltd, renamed TAAL Tech Ltd) with retrospective appointed date 1-Apr-2023, pooling-of-interest accounting; FY25 comparatives in this AR are already the merged/restated entity (Note 48, both sets, p.104-105/159-160)"
+going_concern_language: "NONE - both Independent Auditor's Reports carry the standard unmodified going-concern paragraph with no material uncertainty identified; CARO clause (xix), both sets, p.60, states no material uncertainty exists as to meeting liabilities within one year of balance sheet date"
+analyst_note: "Score is driven roughly evenly by economic and presentation defects, but the presentation defects are more decision-relevant: Note 41's wrong 'consolidated' summary and the CARO 3(iii)(a)/(d) self-contradiction sit inside the audited financial statements and signed audit report themselves, not voluntary MD&A. A reader who trusts Note 41 in isolation would compute CFO/PAT near 51% instead of the true 33%, reversing this run's FLAG-CASH. The economic defects (cash conversion, MTM-driven margin, treasury credit concentration, customer concentration) are real but each is individually traceable; none is disguised. Genuine EBIT margin (Revenue less Total Expenses, Other Income excluded) is 27.8%, the figure to carry forward, not any Other-Income-inclusive reading."

@@ -1,0 +1,63 @@
+company: India Nippon Electricals Ltd
+ticker: INDNIPPON
+cmp: 1344.0
+market_cap_cr: 3041.0
+run_date: 2026-09-10
+run_type: full
+concalls_available: false
+sector_cap_row: "Cables / Industrial products"
+listed_date: ""
+notes: >
+  Collected from screener.in by collect_to_repo.py v3, then repaired by /step1.
+  REPAIR 1 (sector_cap_row): the collector auto-picked "Cables / Industrial
+  products" on the "electrical" keyword. CONFIRMED CORRECT by reading the
+  Section 1B Sector Reality Cap table (frameworks/Master_Project_Prompt_v3_6.md
+  line 429), not trusted. Cap 25x. The table has NO Auto Components / Auto
+  Ancillary row. INEL is an electrical and electronic component maker with
+  moderate capital intensity and OEM-linked cyclicality, so the industrial-
+  products row is the closest structural match; the adjacent Recycling /
+  Manufacturing row also reads 25x, so the cap is 25x either way. Ad hoc mapping
+  on the SHYAMMETL, KCPSUGIND and ENTERO precedents. FLAG FOR PHASE 3: operator
+  should confirm the row before stage 11 uses it. Logged as an OPEN ACTION (the
+  cap table needs a dedicated Auto Components row).
+  REPAIR 2 (results): the collector found no results PDFs on screener. The
+  Q1 FY27 board outcome and unaudited results (7 pages, INEL/SE/2026-27/23,
+  07-Aug-2026) was downloaded from BSE and placed in inputs/results/. BSE
+  attaches ONE combined document to five separate announcements of that date
+  (results, board outcome, two change-in-management, cessation); four byte-
+  identical duplicates were downloaded, detected by md5 and deleted.
+  REPAIR 3 (annual reports): inputs/annual-report/ holds Annual_Report_2026.pdf
+  (FY2025-26, filed 08-Jul-2026, 301pp) and Annual_Report_2025.pdf (FY2024-25,
+  301pp). The latest year IS present. No repair needed.
+  REPAIR 4 (screening CSVs): NOT defective this run. All six INDNIPPON CSVs are
+  populated (Profit_Loss 21 lines, Balance_Sheet 19, Cash_Flow 6, Quarters 12,
+  Data_Sheet 63, Customization 11). The same holds for all three peers. The
+  known empty-CSV defect did not fire.
+  REPAIR 5 (folders): inputs/prospectus, concalls, other, rating, shareholding
+  and research were absent or empty; created with .gitkeep.
+  REPAIR 6 (announcements): four Reg-30 filings downloaded from BSE into
+  inputs/announcements/: clarification on volume movement (10-Sep-2026, dated
+  the run date), analyst/investor meet intimation (31-Aug-2026), change in
+  directorate (31-Jul-2026), AGM outcome (30-Jul-2026).
+  NO-CONCALL MODE: INEL publishes NO earnings-call transcripts. Verified against
+  the BSE announcement history for scrip 532240 across 01-Jul-2025 to
+  10-Sep-2026; zero transcript filings, but seven investor presentations. The
+  absence is declared, not a collection gap. SUBSTITUTE: all seven quarterly
+  investor presentations (20-Aug-2025, 22-Sep-2025, 25-Nov-2025, 19-Feb-2026,
+  17-Mar-2026 institutional meet, 01-Jun-2026, 21-Aug-2026 Q1FY27) were
+  downloaded from BSE into inputs/presentation/. Stage 5 runs against this
+  chronological deck series in place of transcripts, and must label the evidence
+  tier accordingly: a prepared deck is management assertion with no analyst
+  cross-examination. The twelve peer transcripts carry the Q&A evidence.
+  RATING: the company is debt free (no borrowings, FY26 balance sheet). No rated
+  bank facilities and no rating rationale were found. inputs/rating/ is empty by
+  fact, not by collection failure.
+  LISTING: listed since the 1990s (BSE 532240). Long-listed, so an IPO
+  prospectus is not expected and its absence is not a gap.
+  BASIS CHANGE: PT Automotive Systems Indonesia, the sole subsidiary, was
+  dissolved 25-Jun-2025. From 01-Apr-2026 the company has no subsidiaries and
+  has discontinued consolidated statements. FY27 onward is standalone only.
+  Section 1B v3.8 Amendment 18 binds: entry and exit earnings bases must match.
+  EXTRACTION: all 26 input PDFs are pre-extracted to page-marked text under
+  extracted/. Zero extraction failures, zero scanned/image-only files. Stages
+  read the .txt for text and the PDF for anchor confirmation.

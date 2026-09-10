@@ -5,27 +5,30 @@ BSE 539895. No NSE listing. ISIN INE631E01024.
 Bull AI market cap field: Rs 2,083.70 cr (undated, verify live).
 Operator: Keerti Kaushik.
 
-## Collection status: BLOCKED (no document text held)
+## Collection status: PARTIAL (page-cited text held, no PDF on disk)
 
-Two collection routes both failed this session.
+Collection failed first, then partly recovered on 2026-09-10.
 
-1. Direct download. The container has no egress. The proxy answered 403 to
-   CONNECT for docs.bull-ai.in, www.bseindia.com and www.screener.in.
-   Verified 2026-09-10 10:22 UTC via `/__agentproxy/status`.
-2. Bull AI text readers. `search_company_documents` returned
-   "tool temporarily unavailable" on every attempt. `get_document_chunks`
-   returned "did not complete before its deadline" on every attempt, by
-   identifier+subcategory and by document_id alike.
+1. Direct download stayed blocked all session. This container has no egress.
+   The proxy answered 403 to CONNECT for docs.bull-ai.in, www.bseindia.com and
+   www.screener.in, verified 10:22 UTC via `/__agentproxy/status`. WebFetch
+   uses the same proxy and was blocked too. No PDF is held on disk.
+2. Bull AI's `search_company_documents` was down for the whole session. It
+   returned "tool temporarily unavailable" on every attempt.
+3. Bull AI's `get_document_chunks` timed out for about 40 minutes, then
+   recovered. With search still down, documents were reached by identifier plus
+   subcategory plus fiscal year and quarter. The extracts in this folder come
+   from that route.
 
-Working Bull AI tools this session: `search_companies`,
-`list_document_availability`, `get_company_guidance`,
-`get_company_corporate_actions`, `get_company_counterparties`,
-`get_mcp_usage`. These give metadata and management quotes, not document text.
+The operator ruling of 2026-09-08 governs. With no egress, Bull AI's
+page-numbered chunk text stands in for the PDF. Page numbers are the source
+PDF's own, so every cite can be opened later. What is absent is the PDF itself.
 
-`get_company_guidance` returned zero records for SPICELOUNGE.
-`get_company_corporate_actions` returned zero records. Bull AI holds no
-extracted management guidance and no recorded corporate action for this
-company, although the filing index shows a Change of Name in FY26 Q2.
+CORPUS QUALITY WARNING. Bull AI's extractor fabricates generic content for
+image-heavy presentation slides. It invented a dollar-denominated financial
+table and North America / Europe / Asia-Pacific geography splits for page 4 of
+the Kross Q1 FY27 deck. Any chunk carrying round placeholder values or
+non-Indian geographies is extraction noise, not disclosure.
 
 ## What Bull AI indexes (availability map, free call, 2026-09-10)
 

@@ -104,3 +104,73 @@ Known limits of this run, all recorded in the per-company manifests:
   it. Its manifest carries a calendar-year warning.
 - Cards ran 2,600 to 3,800 words against the framework's 1,400 to 1,900. Longer than
   specified, and flagged rather than trimmed.
+
+## Third run, 2026-09-10
+
+Six operator picks, screened in one session: Kross, Panorama Studios
+International, Mercury EV-Tech, Electronics Mart India, Wendt India, Spice
+Lounge Food Works.
+
+Verdicts: PROCEED to `/step1` on KROSS and EMIL. WATCH on PANORAMA. PASS on
+WENDT, MERCURYEV and SPICELOUNGE.
+
+**Both collection routes failed at the start, and only one came back.** The
+network policy again denied CONNECT to docs.bull-ai.in, BSE and screener.in, so
+no PDF could be downloaded and the collector could not run. WebFetch uses the
+same proxy and was blocked too. On top of that, both Bull AI text readers were
+down: `search_company_documents` returned "tool temporarily unavailable" for
+the entire session, and `get_document_chunks` returned deadline-exceeded for
+about 40 minutes before recovering.
+
+The session ran in two halves. In the first, only metadata tools worked, and
+six corpus ledgers were committed with no cards (commit `15afff8`). In the
+second, `get_document_chunks` recovered and documents were reached by
+identifier plus subcategory plus fiscal year and quarter, since search was
+still down. That identifier route is the workaround to remember: it resolves a
+document without needing a document_id from search.
+
+**Bull AI's extractor fabricates content for image-heavy slides.** Page 4 of
+the Kross Q1 FY27 deck came back as a "Key Financial Metrics" table of
+"$X.XX billion" values with North America, Europe and Asia-Pacific geography
+splits. Kross reports one segment and sells mainly in India. Page 2 of the same
+deck returned image descriptions and the token "NO_CONTENT". Rule: treat any
+chunk carrying round placeholder values or non-Indian geographies as extraction
+noise, not disclosure, and say so on the card.
+
+**`get_company_guidance` is the tool worth the subscription, and it only covers
+companies that talk.** It returned a full page-cited guidance-and-delivery
+ledger for KROSS (five period blocks, Q2 FY25 to Q1 FY27) and EMIL (four
+blocks). It returned zero records for WENDT, PANORAMA, MERCURYEV and
+SPICELOUNGE. Three of those four have no transcript and no presentation indexed
+at any period. Bull AI adds nothing on a microcap that runs no investor
+relations, which is exactly where a screener needs the most help.
+
+Bull AI budget: about 30 calls used. Availability maps and usage checks cost
+nothing and were used freely. The metered counter did not move during the
+session, so it appears to lag; check the dashboard rather than trusting it.
+
+Known limits of this run:
+- No credit rating for five of six names. Only EMIL has one indexed: India
+  Ratings, 11 December 2025, IND A affirmed with the outlook cut from Positive
+  to Stable. Agency sites were unreachable.
+- Promoter holding and pledge are NOT FOUND on all six. Bull AI indexes no
+  shareholding-pattern subcategory for any of them, and the search tool that
+  would have found the pages in annual reports was down.
+- Freshness gaps: WENDT has no Q1 FY27 result (newest is Q4 FY26, April 2026),
+  and MERCURYEV has none either (newest is Q4 FY26, May 2026). SPICELOUNGE is
+  missing FY26 Q2 and Q4 results from the index entirely, and its Q1 FY27
+  filing carries no FY26 full-year comparative.
+- No balance sheet or cash-flow statement for KROSS, PANORAMA or SPICELOUNGE.
+  Cash conversion is INDETERMINATE on those three, which caps any downstream
+  verdict per the CLAUDE.md rule.
+- MERCURYEV's audited FY26 results fail an internal arithmetic check: revenue
+  plus other income does not equal the printed total revenue, in three separate
+  columns. The card recommends an operator ruling on whether that becomes a
+  named failure-catalogue pattern.
+- Two framework gaps surfaced. The archetype library has no retail entry (EMIL)
+  and no media or content entry (PANORAMA). The Section 1B cap table has no
+  consumer-retail row; the nearest precedent is the open ENTERO action on
+  distribution rows.
+- Cards ran 2,244 to 2,594 words against the framework's 1,400 to 1,900.
+  Shorter than the second run's 2,600 to 3,800, still long, and flagged rather
+  than trimmed.

@@ -81,8 +81,10 @@ inventory_detail:
     - "PRICOLLTD x4 (Nov-2025, Feb-2026, May-2026, Aug-2026)"
     - "MINDACORP x4 (Nov-2025, Feb-2026, May-2026, Aug-2026)"
   screening:
-    - "screener-Data_Sheet, Profit_Loss, Balance_Sheet, Cash_Flow, Quarters, Customization .csv for INDNIPPON, ALL POPULATED. The known empty-CSV defect did NOT fire this run."
-    - "VARROC, PRICOLLTD, MINDACORP x6 each, all populated."
+    - "CORRECTED 2026-09-10 after stage 1 contradicted the original inventory. screener-Data_Sheet.csv IS fully populated (FY2017-FY2026 P&L, balance sheet, cash flow, and the last ten quarters; 3,823 non-delimiter characters). Stage 1 verified it runs CONSOLIDATED across all ten years."
+    - "screener-Profit_Loss.csv, screener-Balance_Sheet.csv, screener-Cash_Flow.csv, screener-Quarters.csv are HEADER-ONLY TEMPLATES carrying no data. The known collect_to_repo v3 empty-CSV defect DID fire. The original B00 inventory wrongly recorded these as populated because it counted lines rather than data; row labels are lines. Proof: the five non-Data_Sheet files are byte-identical in size across all four companies (222 / 106 / 254 / 109 / 482 non-delimiter characters), which is the template signature."
+    - "The same defect applies to ALL THREE PEERS. VARROC, PRICOLLTD and MINDACORP each have a populated Data_Sheet.csv (4,233 / 3,939 / 3,846 chars) and five header-only templates."
+    - "CONSEQUENCE: every stage takes screening figures from Data_Sheet.csv only. The other five carry no evidence and must not be cited."
 no_concall_mode: true
 no_concall_substitute: >
   Seven quarterly investor presentations (Aug-2025 to Aug-2026) form a

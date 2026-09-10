@@ -29,10 +29,16 @@ notes: >
   REPAIR 3 (annual reports): inputs/annual-report/ holds Annual_Report_2026.pdf
   (FY2025-26, filed 08-Jul-2026, 301pp) and Annual_Report_2025.pdf (FY2024-25,
   301pp). The latest year IS present. No repair needed.
-  REPAIR 4 (screening CSVs): NOT defective this run. All six INDNIPPON CSVs are
-  populated (Profit_Loss 21 lines, Balance_Sheet 19, Cash_Flow 6, Quarters 12,
-  Data_Sheet 63, Customization 11). The same holds for all three peers. The
-  known empty-CSV defect did not fire.
+  REPAIR 4 (screening CSVs) [CORRECTED after stage 1 contradicted the first
+  reading]: the known collect_to_repo v3 empty-CSV defect DID fire, for the main
+  company and all three peers. Only Data_Sheet.csv carries data (INDNIPPON 3,823
+  non-delimiter chars, FY2017-FY2026 P&L, balance sheet, cash flow and the last
+  ten quarters; stage 1 verified it is CONSOLIDATED across all ten years).
+  Profit_Loss, Balance_Sheet, Cash_Flow and Quarters are header-only templates,
+  byte-identical in size across all four companies (254 / 222 / 106 / 109 chars),
+  which is the template signature. The first inventory recorded them as populated
+  because it counted lines, and row labels are lines. Every stage takes screening
+  figures from Data_Sheet.csv only; the other five carry no evidence.
   REPAIR 5 (folders): inputs/prospectus, concalls, other, rating, shareholding
   and research were absent or empty; created with .gitkeep.
   REPAIR 6 (announcements): four Reg-30 filings downloaded from BSE into

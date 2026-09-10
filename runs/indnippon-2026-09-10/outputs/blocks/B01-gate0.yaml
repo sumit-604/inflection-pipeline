@@ -1,0 +1,39 @@
+stage: B01-gate0
+company: "INDNIPPON"
+run_date: "2026-09-10"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "screener-Balance_Sheet.csv, screener-Profit_Loss.csv, screener-Cash_Flow.csv, screener-Quarters.csv: blank templates, no data populated; screener-Data_Sheet.csv used as sole screener source"
+  - "Current Liabilities / Trade Payables split: NOT FOUND for FY2017-FY2023 (no AR older than FY2025 supplied); ROCE and WC Days scored on FY2024-FY2026 only"
+  - "Capex (Purchase of PPE) breakdown: NOT FOUND for FY2017-FY2024; FCF scored on FY2025-FY2026 only"
+  - "Promoter holding as at FY2023 (3-years-back total Promoter+Group %): NOT FOUND"
+  - "Promoter pledge disclosure: NOT FOUND anywhere in AR2026 text"
+  - "Export revenue rupee figure and 2W-industry growth comparator (LB4): NOT FOUND in files reviewed"
+  - "Peer data for M2, M5, M9 moat tests: NOT SUPPLIED"
+flags:
+  - {type: FLAG-GATE0, reason: "Classification AVERAGE (core 56/100). Two named depressors: Block B cash-generation quality 5/20 (cumulative CFO/PAT 70.5%, FY26 FCF turns negative, WC days +10.8d FY24-FY26); Block A3 median ROE 11.5% over 10yr, largely a function of a Rs 531.5cr treasury book diluting the return denominator (LB3) rather than weak core-business economics (operating ROCE 22-30% and rising)."}
+  - {type: FLAG-CASH, reason: "Block B trend deteriorating: standalone CFO/PAT fell to ~36% in FY26 (Rs40.47cr/Rs111.26cr) from a 10yr cumulative 70.5%; WC days rose from 40.6 (FY24) to 51.5 (FY26), +10.8 days, driven by receivables+inventory build outpacing payables growth. This is the LB1 signal, confirmed against AR2026 p.182."}
+  - {type: FLAG-DATA-GAP, reason: "E2 (promoter holding 3yr change) and E3 (promoter pledge) both NOT FOUND in files supplied; both scored 0 per rule 5, conservative default, not evidence of an actual decline or pledge. Needs live-web/BSE shareholding-pattern verification in a later stage."}
+data_years: 10
+fy_range: "FY2017 to FY2026"
+blocks: {A: 9, B: 5, C: 12, D: 20, E: 10}
+core_score: 56
+moat_score: 19
+grand_total: 75
+grand: 75   # schema alias for grand_total (orchestrator Section 3 names this field grand)
+moats_confirmed: 5
+moat_class: "STRONG"
+classification: "AVERAGE"
+deal_breakers:
+  - "Block B <8 -> max GOOD (triggered, non-binding: AVERAGE already below GOOD cap)"
+history_downgrade: false
+data_notes:
+  - "screener-Data_Sheet.csv is CONSOLIDATED for all FY2017-FY2026 (verified against Investor Presentation Aug-2026 consolidated statements and AR2026 consolidated notes p.244-249); FY2026 consolidated = standalone since the sole subsidiary (PT Automotive Systems Indonesia) was dissolved 25-Jun-2025; FY2027 onward is standalone-only per company disclosure."
+  - "FY26 PAT/PBT include a Rs15.21cr pre-tax exceptional gain (HSVP Gurugram land-acquisition compensation, AR2026 Note 38). C2 (PAT CAGR) scored on an ex-exceptional adjusted basis (adjusted FY26 PAT Rs99.58cr vs reported Rs111.17cr, effective tax rate 23.81% applied). A1/A2/A4 (ROCE) also computed ex-exceptional. Reported (unadjusted) figures shown alongside for transparency."
+  - "LB3: operating ROCE (net of the Rs531.5cr investment book, ex-other-income) computed as 21.9%/26.4%/30.5% for FY24/FY25/FY26, materially above the formula-mandated ROCE (11.4%/13.7%/15.0%) used for the official Block A score. Not substituted into the score, per the fixed-formula rule; carried forward as an explicit flag for downstream stages."
+  - "M3 (Capital Efficiency) scored using the formula-mandated ROCE (15.02%, band score 3) for internal consistency with Block A; using the LB3 operating ROCE (30.5%) would score 5."
+  - "GM proxy used for M9 (Revenue minus Material Cost)/Revenue = 30.92% FY26; no peer median available to complete the test."
+  - "WC-days discrepancy: this stage computed FY26=51.48d vs FY24=40.64d (+10.84d, Revenue basis, Trade Payables from Investor Presentation p.16); could not reproduce the operator-cited screener figures of 46d(FY26)/29d(FY23) from files supplied — same direction (deteriorating), different magnitude/window."
+block_b_trend: "deteriorating - standalone CFO/PAT fell from a 10yr cumulative 70.5% to ~36% in FY26 alone (CFO Rs40.47cr / PAT Rs111.26cr, AR2026 p.182); WC days rose 40.64 (FY24) -> 51.48 (FY26), +10.84 days"
+analyst_note: "Block A's 9/20 and the AVERAGE classification are formula-correct but understate the core business. LB3 shows the Rs531.5cr treasury book (65% of net worth) sits inside both the ROCE denominator and (via other income) inflates nothing in FY26 PBT beyond the already-stripped exceptional item — the operating business alone runs 22-30% ROCE and is improving each of the 3 verifiable years. Block B's 5/20 is the real, un-diluted concern: FY26 standalone FCF turned negative for the first time in the 2-year window this stage can verify, driven by WC absorption (+10.8 days), not by capex discipline failing. Both threads (treasury-diluted returns, cash-conversion break) point to the same underlying fact: FY26 revenue grew 26.5% faster than the balance sheet could fund it internally. Next stage should independently source FY17-FY23 Balance Sheet/Cash Flow detail (older ARs) to extend the ROCE/WC-days/FCF verification window beyond 2-3 years, and verify promoter pledge/3yr holding change via BSE shareholding-pattern filings."

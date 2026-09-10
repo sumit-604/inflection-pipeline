@@ -1,0 +1,19 @@
+company: Titan Biotech Ltd
+ticker: TITANBIO
+cmp: 437.0
+market_cap_cr: 1806.0
+run_date: 2026-09-10
+run_type: full
+concalls_available: false
+sector_cap_row: "Specialty chemicals"
+listed_date: "NOT FOUND (long-listed BSE-only scrip 524717; incorporated 1992)"
+notes: >
+  Collected by collect_to_repo.py v3 (dry-run) then repaired by hand.
+  Repairs: sector_cap_row corrected from the collector default "Pharma / CDMO"
+  to "Specialty chemicals" (35x) per Step D; FY2025 and FY2024 annual reports
+  fetched from BSE (collector staged only FY2026); four results filings and ten
+  Reg 30 announcements fetched from the BSE announcements API (collector staged
+  none); a 3-page Reg 30 intimation misfiled as an annual report was moved to
+  announcements/. NO-CONCALL MODE: Titan Biotech holds no earnings calls, so
+  stage 5 reads AR MD&A and results commentary and the credibility grade caps
+  at B. Sector row to be re-confirmed at Phase 3 against the FY26 segment mix.

@@ -9,3 +9,4 @@
 | 2 | notes triple-pass (pass 3 consolidation + B02) | claude-sonnet-5 | default | - | - | 82693 | 199s | 3 |
 | 7 | emerging moat 22-category scan | claude-sonnet-5 | default | - | - | 146687 | 673s | 1 |
 | 3 | AR backward deep dive (8 phases) | claude-sonnet-5 | default | - | - | 312251 | 1321s | 1 |
+| 5 | management commentary (NO-CONCALL degraded) | claude-sonnet-5 | default | - | - | 172120 | 479s | 1 |

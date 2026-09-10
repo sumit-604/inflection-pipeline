@@ -1,0 +1,73 @@
+stage: B05-concall
+company: "INDNIPPON"
+run_date: "2026-09-10"
+model: claude-sonnet-5
+status: complete
+no_concall_mode: true
+input_gaps:
+  - "No concall transcripts exist for INDNIPPON in any period (verified: zero transcript filings, seven investor presentations, BSE scrip 532240, 01-Jul-2025 to 10-Sep-2026). Three most recent quarterly decks and two supplementary decks used as management-commentary substitute per NO-CONCALL MODE."
+  - "Section 2E (repeated question tracker) and analyst-tone-under-cross-examination: NOT AVAILABLE, no Q&A content anywhere in the corpus. AGM Outcome filing (30-Jul-2026) confirms shareholder queries occurred but discloses zero content."
+  - "3C toughest analyst questions: NOT AVAILABLE, same reason."
+  - "3A competitor commentary: NOT FOUND anywhere in the deck series or AR MD&A; only a generic, unnamed 'Competition Risk' line exists (AR2026 p.125)."
+  - "2W EV Products page item-level delivery status (Under Development vs In Mass Production) not extractable from the decks; colour-coding lost in PDF text extraction."
+  - "Whether the Q4FY26 'high-end motorcycle segment' SoP and the Q1FY27 'Super-Premium 2-wheeler segment' SoP are the same programme or two separate launches: NOT FOUND."
+flags:
+  - {type: FLAG-CASH, reason: "AR2026 chairman/MD letter (p.9) claims working capital days were reduced from 42 to 40 in FY26; the company's own Q4FY26 (p.19) and Q1FY27 (p.18) investor decks both show FY26 WC days = 42, up from FY25's 40, the opposite direction. No reconciliation given anywhere. CFO/PAT deterioration to 0.36x (B01/B03) is never mentioned in any narrative document across the whole corpus."}
+  - {type: FLAG-MESSAGING-STALE, reason: "BorgWarner EFI-ECU technical-licensing slide repeated verbatim across 5 consecutive quarterly decks (Aug-2025 to Aug-2026) while AR2026's Technology Absorption section reports a pivot to in-house EFI controller development (per B03), undisclosed to investors in any deck."}
+  - {type: FLAG-NO-CROSSEXAM, reason: "This company has zero cross-examined evidence anywhere in this pipeline's corpus. Every finding in this B05 report rests on document-vs-document consistency checks (AR vs deck, deck vs deck), not on management behaviour under analyst pressure. credibility_grade is capped at C for this reason among others; peer transcripts (stage 6) are this pipeline's only route to seeing comparable managements answer under pressure."}
+quarters_analysed: ["Q1 FY26", "Q2 FY26", "Q3 FY26", "Q4 FY26", "Q1 FY27"]
+triggers:
+  - {priority: 1, name: "GST 2.0 demand tailwind sustaining 2W volume outperformance", type: "VOLUME", timeframe: "near", conviction: "M", confirm_signal: "Company growth stays materially above 2W-industry growth in Q2 FY27 deck", kill_signal: "Growth gap narrows to single digits vs industry for two straight quarters"}
+  - {priority: 2, name: "Premium/super-premium 2W mix shift (Hosur / Super-Premium SoP)", type: "PRICE-MIX", timeframe: "near-medium", conviction: "M", confirm_signal: "EBITDA margin sustains above FY26's 11.44% with a named revenue contribution", kill_signal: "No revenue-mix disclosure follows the 'commenced SoP' claims for two more quarters"}
+  - {priority: 3, name: "Rare-earth/NdFeB magnet supply risk resolution or escalation", type: "SECTORAL", timeframe: "near", conviction: "L", confirm_signal: "A quantified ferrite-substitution % or named alternate-sourcing deal appears", kill_signal: "An unwarned gross-margin compression event lands"}
+  - {priority: 4, name: "EFI-ECU commercialisation path (BorgWarner licence vs in-house pivot)", type: "REGULATORY-POLICY", timeframe: "medium", conviction: "L", confirm_signal: "A named commercial launch or licence-status disclosure resolves the AR-vs-deck ambiguity", kill_signal: "The slide keeps repeating unchanged for two more quarters"}
+  - {priority: 5, name: "Cash-conversion recovery (CFO/PAT back toward 0.7x+)", type: "COST", timeframe: "near", conviction: "L", confirm_signal: "FY27 H1 results or next AR show CFO/PAT recovering and a genuine WC-days decline", kill_signal: "A second consecutive year of CFO/PAT below 0.5x"}
+  - {priority: 6, name: "Customer-concentration trend reversal or continued decline", type: "SECTORAL", timeframe: "near", conviction: "L", confirm_signal: "Next AR's Note 28e-equivalent shows two-customer share genuinely below 70%", kill_signal: "Concentration rises further while 'progressively reduced' language repeats a third year"}
+  - {priority: 7, name: "Unnamed ECU-development MoU", type: "REGULATORY-POLICY", timeframe: "medium", conviction: "L", confirm_signal: "A named partner or product surfaces", kill_signal: "MoU never reappears in the next 2 quarters"}
+guidance:
+  - {item: "FY26 revenue milestone", number: "Rs 1,000 Cr crossed", timeframe: "FY26", stated_in: "Q4FY26 deck p.14"}
+  - {item: "FY26 revenue growth", number: "+26.5% YoY", timeframe: "FY26 vs FY25", stated_in: "Q4FY26 deck p.16"}
+  - {item: "Q1FY27 revenue growth vs 2W industry", number: "company +35.5%, industry +20%", timeframe: "Q1 FY27", stated_in: "Q1FY27 deck p.14-15; cross-checked against filed results, matches exactly"}
+  - {item: "Fly Wheel Magneto production volume", number: "~2 million units", timeframe: "Q1 FY27", stated_in: "Q1FY27 deck p.14"}
+  - {item: "Dividend per share", number: "Rs 15.50 (FY26), up from Rs 12.50 (FY25)", timeframe: "FY26", stated_in: "Q4FY26/Q1FY27 decks; AR2026 p.9"}
+  - {item: "Working capital days", number: "claimed 42 to 40 (AR letter); deck chart shows 42, up from 40", timeframe: "FY26", stated_in: "AR2026 p.9 vs Q4FY26 deck p.19 / Q1FY27 deck p.18 -- CONTRADICTION, see flags"}
+  - {item: "EV penetration (2W industry)", number: "7%", timeframe: "Q2 FY26", stated_in: "Q2FY26 deck p.14, single mention, never repeated"}
+promise_delivery:
+  delivered: 0
+  partial: 2
+  missed: 4
+  rows:
+    - {promised_in: "FY25 AR", promise: "Two new controller launches in 2025 with drive-assist functionality", outcome: "missed", explanation: "Silent drop; zero mentions of 'drive assist' in FY26 AR (B03) or any of 5 quarterly decks"}
+    - {promised_in: "FY25 AR", promise: "3kW motor/controller commercial rollout by end-CY2026", outcome: "partial", explanation: "Trials completed, controller still under development per FY26 AR Technology Absorption Annexure (B03); deck item-level status not extractable"}
+    - {promised_in: "FY24-25 AR / repeated in all 5 investor decks", promise: "EFI-ECU extension to scooters via BorgWarner technical licensing partnership", outcome: "missed", explanation: "AR2026 reports in-house EFI controller software development initiated instead (B03); decks never disclose this pivot, repeat identical BorgWarner language for a full year"}
+    - {promised_in: "FY25 AR", promise: "GST IMS integration with SAP, FY2025-26", outcome: "partial", explanation: "No follow-up statement either way in FY26 AR or any deck; unconfirmed"}
+    - {promised_in: "FY25 AR and FY26 AR, identical language both years", promise: "Progressively reduced dependency on key customers over the years", outcome: "missed", explanation: "Note 28e shows two-customer concentration up 21.1% in absolute rupees, still above 70% of revenue both years (B03); language repeated unchanged"}
+    - {promised_in: "AR2026 chairman/MD letter, p.9", promise: "Working capital days reduced from 42 to 40 in FY26", outcome: "missed", explanation: "Company's own Q4FY26 and Q1FY27 investor decks both show FY26 WC days = 42, up from FY25's 40, the opposite direction; no reconciliation given"}
+excuse_pattern: "external-blame-heavy for named headwinds (magnets, tariffs, Middle East, all real/verifiable events); but the more serious pattern is silent, unacknowledged contradiction on the two most decision-relevant claims tested (customer concentration, working-capital days) rather than deflection under pressure -- no pressure exists in this corpus for management to deflect"
+repeated_evasions: []
+credibility_grade: "C"
+credibility_basis: "Default C per NO-CONCALL MODE, not raised to B: genuine capacity/execution delivery exists (Rewari 3rd-phase FWM line, Hosur/Super-Premium SoP both confirmed delivered after being flagged 'underway'), but is outweighed by a documented internal contradiction (AR letter's WC-days claim vs the company's own investor-deck chart), total silence on the FY26 CFO/PAT collapse in every narrative document, and a stale BorgWarner slide contradicted by the AR's own technology-absorption disclosure. Never A per NO-CONCALL MODE rule."
+peer_questions:
+  - {question: "What 2W-industry growth rate do peer managements cite for quarters matching INEL's Q2-Q4 FY26 and Q1 FY27 (11%, 14%, 19%, 20% per INEL's own decks), and does it match a named industry-body source peers reference on their own calls?", why: "INEL's decks never name a source for the industry-growth comparator", check_peers: ["Varroc", "Pricol", "Minda Corp"]}
+  - {question: "How are peer 2W-component makers pricing NdFeB rare-earth magnet cost pass-through to OEM customers, and what lag exists between a China export-licensing shock and contractual cost recovery?", why: "INEL describes cost recovery as 'effectively managed' with no mechanism or lag disclosed", check_peers: ["Varroc", "Pricol", "Minda Corp"]}
+  - {question: "Do peer managements quantify content-per-vehicle gains from ISG, DC-DC converter, sensor, or EFI-ECU product additions in Rs terms, and what design-win-to-revenue timeline do they cite?", why: "INEL claims 'new business' across these exact product lines every quarter with zero Rs value or timeline", check_peers: ["Varroc", "Minda Corp"]}
+  - {question: "What OEM payment terms and receivable-day trends do peers report for 2W OEM customers (TVS Motor, Hero MotoCorp, Bajaj Auto), and have any flagged a similar near-term-overdue receivables build in FY26?", why: "INEL's own receivables ageing worsened to a 3-year high (22.3% overdue share) with zero ECL and no MD&A discussion", check_peers: ["Varroc", "Pricol", "Minda Corp"]}
+  - {question: "Do any peers describe EV component (motor, controller, DC-DC converter) unit economics versus ICE ignition-system equivalents, and how mature is commercial (not pilot) volume industry-wide?", why: "INEL's EV product page item-level status has been unextractable across 5 decks", check_peers: ["Varroc", "Minda Corp", "Pricol"]}
+  - {question: "Has any peer disclosed a BorgWarner (or comparable global Tier-1) EFI-ECU technology licensing arrangement, and what commercial milestones/timelines were disclosed?", why: "INEL's BorgWarner slide is static for a full year while its own AR reports an in-house pivot", check_peers: ["Varroc", "Minda Corp"]}
+  - {question: "What working-capital-day trend do peers report for FY26, and do any attribute a build specifically to strategic magnet stockpiling as INEL did for Q3FY26 only?", why: "INEL named a WC build once and never revisited it, even as its own chart contradicts its AR letter's claimed decline", check_peers: ["Varroc", "Pricol", "Minda Corp"]}
+  - {question: "Do peers report US tariff-driven price-reduction pressure from customers, matching INEL's Q2FY26 disclosure, and how are they responding commercially?", why: "Tests whether INEL's tariff/pricing-power claim is industry-wide or specific to its concentrated OEM base", check_peers: ["Varroc", "Pricol"]}
+  - {question: "What capex-cycle guidance (Rs figure, capacity % addition, commissioning date) do peers give for FY27, versus INEL's undisclosed FY26 capex acceleration (Rs 42.15 Cr, +81.3% YoY, no named project)?", why: "INEL gives zero project-level capex detail anywhere in this corpus", check_peers: ["Varroc", "Pricol", "Minda Corp"]}
+red_flags:
+  - "[HIGH] Working-capital-days contradiction: AR2026 letter claims 42-to-40 decrease, company's own Q4FY26/Q1FY27 decks show 40-to-42 increase, unreconciled"
+  - "[HIGH] Total silence on FY26 CFO/PAT collapse (0.60x to 0.36x) across every narrative document (MD&A, chairman letter, all 5 decks)"
+  - "[MEDIUM-HIGH] BorgWarner EFI-ECU slide unchanged for 5 consecutive quarters, contradicted by AR2026's own in-house-pivot disclosure"
+  - "[MEDIUM] Unnamed ECU-development MoU announced once (Q4FY26), never followed up (absent Q1FY27)"
+  - "[MEDIUM] Systematic unquantification of market-share, new-business, and SoP claims across the deck series"
+  - "[STRUCTURAL] Zero cross-examined evidence exists anywhere in this pipeline's corpus for INDNIPPON; all findings rest on document-vs-document consistency, not on management behaviour under analyst pressure"
+dropped_triggers:
+  - "Drive-assist controller launches (FY25 AR promise): silent drop, confirmed absent from FY26 AR and all 5 quarterly decks"
+  - "Unnamed ECU-development technology-partner MoU (Q4FY26 deck): dropped by Q1FY27 deck, never named"
+timeline_slippages:
+  - "3kW motor/controller commercial rollout, end-CY2026 target: trials completed, controller still under development per FY26 AR, window not yet closed as of this run date"
+  - "Working capital days: AR letter claims improvement (42 to 40) that the company's own investor-deck chart contradicts (40 to 42)"
+analyst_note: "The single most load-bearing finding this stage adds beyond B01-B03/B07 is the working-capital-days contradiction: the AR2026 chairman/MD letter's claimed improvement (42 to 40 days) is the opposite direction of the company's own Q4FY26 and Q1FY27 investor-deck charts (40 to 42 days). This is not an inference or an estimate; it is two management-authored documents disagreeing on the same metric for the same year, and it is the closest thing this NO-CONCALL corpus offers to a genuine credibility test, since no analyst ever asked about it. Combined with the BorgWarner-vs-in-house-pivot contradiction and the total absence of any CFO/PAT or receivables-ageing discussion in any narrative document, these findings answer LB1 more sharply than 'silence': management affirmatively addressed the topic and the number given does not match its own other document. Stage 6's twelve peer transcripts remain this pipeline's only source of genuine cross-examined evidence for this name."

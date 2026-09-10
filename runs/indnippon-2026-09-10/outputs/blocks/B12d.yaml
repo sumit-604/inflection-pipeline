@@ -1,0 +1,22 @@
+stage: B12d
+company: "INDNIPPON"
+run_date: "2026-09-10"
+model: claude-sonnet-5
+status: complete
+peers_audited: 12
+substantive_confirmed: 12
+substantive_unsupported: []
+unused_but_relevant:
+  - {peer: "Varroc (VARROC Nov2025)", missed_item: "Receivables-discounting facility (~Rs700-750cr at ~7%) disclosed as a working-capital/interest-cost mechanism; adjacent to but not used in the Q4 receivables analysis", anchor: "VARROC Nov2025, physical page 13 (Ankur Poddar Q&A, Mahendra Kumar)"}
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "MAJOR", location: "06-peers.md Part 1 Q2 section; YAML verified[1]", description: "Quote 'there could be... a lag of at least a quarter, but we are expecting to be compensated in full despite this lag' is real, verbatim, and correctly attributed to Tarang Jain answering Naman Maheshwari, but it is in VARROC Jun2026 (Q4 FY26) physical page 8, not VARROC Aug2026 (Q1 FY27) as cited. B06's own Peer Coverage Map correctly places this disclosure under Q4 FY26, creating an internal contradiction with the Part 1 narrative's Aug2026 citation. Substantive claim (peers quantify pass-through lag) remains true; the printed citation is not verifiable at its stated source."}
+  - {severity: "MAJOR", location: "06-peers.md Part 1 Q3 section; Peer Coverage Map MINDACORP Q4 FY26 row", description: "Kit-value figure ('Rs50,000-100,000 for a combined 4W EV power-electronics kit,' attributed to Dhananjay Mishra Q&A) does not appear in MINDACORP May2026 as cited (zero matches for 'Dhananjay', '50,000', or 'kit value' band in that file). The real exchange, verbatim and correctly speaker-attributed, is in MINDACORP Feb2026 (Q3 FY26): 'INR 50,000 to INR 60,000... could even go up to INR 90,000 or INR 1 lakh.' Rest of the May2026 row's content (Turntide/BorgWarner lineage, growth figures) independently confirmed accurate for that transcript."}
+  - {severity: "MINOR", location: "06-peers.md Part 1 Q4 section; YAML contradicted[0]; flags[0]", description: "Crux quote (Varroc's 'no change in receivable days' denial, Mahendra Kumar to Neha Garg) is real and verbatim but cited as 'VARROC Aug2026, page 17'; actual location is extraction-page 16 / document-printed 'Page 15 of 18'. Neither numbering convention used elsewhere in the same report supports page 17. Content, speaker, and questioner are all correctly identified; only the page number is wrong. Named MINOR rather than cosmetic given this is the report's stated single most consequential finding."}
+  - {severity: "MINOR", location: "06-peers.md Part 2A / Part 1 Q4 cross-read", description: "Varroc's receivables-discounting facility (Nov2025, ~Rs700-750cr at ~7%) is genuinely relevant context (a peer financing mechanism tied to receivables) that B06 did not surface anywhere, though its omission does not change any verdict."}
+critical_count: 0
+major_count: 2
+minor_count: 2
+acceptance_rate: 92
+peer_utilisation: 100   # schema alias required by orchestrator Section 5 confidence delta. Derived mechanically, not a new judgement: B12d audited all 12 peer transcripts (peers_audited: 12) and states no peer should be reclassified from SUBSTANTIVE, so peers-used-substantively / peers-provided = 12/12.

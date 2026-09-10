@@ -18,7 +18,19 @@ qualifiers:
   - id: q2
     test: "Gate 0 core >= 60/100 OR Emerging Moat >= 25/100"
     result: FAIL
-    evidence: "B01-gate0.core_score = 56 (below 60). B07-emoat.em_score = 24 (below 25). BOTH limbs fail."
+    evidence: "B01-gate0.core_score = 56 AS FILED (below 60). B07-emoat.em_score = 24 (below 25). BOTH limbs fail."
+    verifier_c_correction: >
+      UPDATED 2026-09-10 after B12c. Verifier C raised a MAJOR framework
+      finding (F-GATE0-01) confirmed at source: A1 median ROCE of 13.68% was
+      scored 3, but the prompts/01-gate-0-pipeline.md line 56 band table reads
+      "15-19.9 = 3 | 10-14.9 = 1", so the correct A1 score is 1. Block A moves
+      9 to 7, core_score 56 to 54, grand_total 75 to 73. Classification AVERAGE
+      is UNCHANGED (both 56 and 54 sit inside the 40-59 band), and Verifier C
+      concurs that Gate 0 AVERAGE and EM MODEST stand.
+      EFFECT ON THIS CHECK: NONE. The corrected core score of 54 is FURTHER
+      below the 60 threshold, not closer to it, so q2 still fails and the UA
+      verdict is unchanged. Phase 3 must use 54, not 56, wherever the Gate 0
+      core score enters a computation.
     note: >
       BOUNDARY CASE ON BOTH LIMBS. Gate 0 core misses by 4 points of 100;
       Emerging Moat misses by 1 point of 100. Stage 7 flagged its own 24.4

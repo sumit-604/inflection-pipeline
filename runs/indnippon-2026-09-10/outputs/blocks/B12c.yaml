@@ -1,0 +1,45 @@
+stage: B12c
+company: "INDNIPPON"
+run_date: "2026-09-10"
+model: claude-opus-4-8
+status: complete
+scope: "phase-1 (Gate 0 + Emerging Moat only); valuation audit deferred to phase 3"
+gate0:
+  rules_checked: 29
+  fails:
+    - "F-GATE0-01 (MAJOR): A1 median ROCE 13.68% scored 3; prompt band 10-14.9 = 1. Block A 9 -> 7, core 56 -> 54, grand 75 -> 73, deal-breaker 1 flips to triggered-non-binding. Classification AVERAGE unchanged."
+    - "F-GATE0-02 (MINOR): ex-exceptional restatement of FY26 PAT/EBIT is outside the fixed formula set; disclosed and conservative. On the literal formula C2 = 4, Block C = 13."
+    - "F-GATE0-03 (MINOR): B2 scored on a 2-year FCF window, below the prompt's 3-year minimum; strict rule-5 reading gives B2 = 0, Block B = 3."
+    - "F-GATE0-04 (MINOR): deal_breakers[] entry omits the driving years the prompt requires; years appear only in flags and narrative."
+    - "F-GATE0-05 (MINOR): PEER DATA NEEDED items for M2/M5 recorded in input_gaps, not data_notes as the schema directs."
+    - "F-GATE0-06 (MINOR): six approximate tilde page anchors (p.~13, p.~30, p.~108, p.~122, p.~208, p.~232) against the prompt's exact-page anchor form."
+emoat:
+  rules_checked: 28
+  fails:
+    - "F-EMOAT-01 (MINOR): Section 3 strength tally states 9 Weak; actual 11. Tally sums to 21-22 against 23 rows. Correct: 4 Moderate / 11 Weak / 8 None (G2 inside the 8). No score effect."
+    - "F-EMOAT-02 (MINOR): recount line hedged ('approximately 34') and labels 13 as non-zero-scored categories; non-zero rows are 15, 13 being the 📄-carrying subset. Guard remedy was nonetheless performed."
+    - "F-EMOAT-03 (MINOR): evidence_mix.claim = 4 against 5 distinct 🎙️ items in the report (TFT, LCD, BorgWarner, ECU MoU, 4W showcase)."
+    - "F-EMOAT-04 (MINOR): three anchors use extraction line offsets or an out-of-range page (p.1306-1311, L14968, L10410-10411) instead of the mandated (AR p.__) form."
+valuation:
+  rules_checked: 0
+  status: "PENDING PHASE 3 - stages 10 and 11 do not exist for this run; no valuation framework document loaded"
+  fails: []
+expectation_ledger: {present: false, downside_row: false, all_rows_confirm_by: false, all_rows_metric_threshold: false, prob_in_range: false, decay_status_valid: false, off_ledger_credit: false, residual_pct_cmp: 0, residual_starter_cap_ok: true, fails: ["PENDING PHASE 3 - stage 11 not run"]}
+business_understanding_narrative: {present: false, five_questions_answered: false, prose_only: false, section6_candidates_named: 0, valuation_vocab_leak: false, fails: ["PENDING PHASE 3 - stage 13 not run"]}
+recomputed_destination_pe: ""
+recomputed_decision: ""     # concur: Gate 0 AVERAGE and EM MODEST stand; core score recomputes 56 -> 54, same 40-59 band
+findings:
+  - {severity: "MAJOR", location: "B01 reports/01-gate0.md L60; blocks/B01-gate0.yaml blocks.A, core_score, grand_total", description: "A1 median ROCE 13.68% scored 3. prompts/01-gate-0-pipeline.md [BLOCK A] band table: '15-19.9 = 3 | 10-14.9 = 1'. Correct score 1. Block A 9 -> 7, core 56 -> 54, grand total 75 -> 73. Deal-breaker 1 (Block A <8 -> max GOOD) flips from NOT TRIGGERED to TRIGGERED, non-binding at AVERAGE. Classification AVERAGE unchanged."}
+  - {severity: "MINOR", location: "B01 reports/01-gate0.md L41-44, L207-218; data_notes[1]", description: "prompts/01 rule 2 ('No qualitative judgments. Only numbers and the scoring rules provided') and 'FORMULA DEFINITIONS (fixed, do not substitute alternatives)'. FY26 PAT/EBIT restated ex the Rs 15.21cr exceptional gain, which the prompt does not define. Cited operator instruction NOT FOUND in the artifacts held. Disclosed, both bases printed, and it lowers the score: on the literal formula C2 = 4 and Block C = 13."}
+  - {severity: "MINOR", location: "B01 reports/01-gate0.md L142-155", description: "prompts/01 rule 6 ('minimum 3 years') with rule 5 ('mark N/A and score it 0'). B2 scored 2 on a 2-year FCF window. Strict reading gives B2 = 0 and Block B = 3. Window disclosed and flagged LIMITED."}
+  - {severity: "MINOR", location: "B01 blocks/B01-gate0.yaml deal_breakers[0]", description: "prompts/01 'CLASSIFICATION AND OVERRIDES' requires 'state WHICH years drive any deal-breaker'. The deal-breaker entry names no years; FY26 and FY24-FY26 appear only in flags, block_b_trend and narrative."}
+  - {severity: "MINOR", location: "B01 blocks/B01-gate0.yaml data_notes vs input_gaps[6]", description: "prompts/01 YAML schema comment: 'data_notes: [] # ... PEER DATA NEEDED items'. M2 and M5 PEER DATA NEEDED recorded under input_gaps instead. No scoring effect; both scored 0 correctly."}
+  - {severity: "MINOR", location: "B01 reports/01-gate0.md L72, L241, L259, L263, L345", description: "prompts/01 rule 4 mandates an exact page/note anchor form. Six anchors use approximate tilde pages, including E1 promoter holding and E4 net worth."}
+  - {severity: "MINOR", location: "B07 reports/07-emoat.md L459-460; blocks/B07-emoat.yaml completionist_recount", description: "prompts/07 Section 3 requires the summary table's strength counts. Filed '4 Moderate, 9 Weak, 8 None/0, plus one explicit negative (G2)' sums to 21-22 against 23 rows. Recount: 4 Moderate, 11 Weak, 8 None with G2 inside the 8. Scorecard total computed from the table, so no score moves."}
+  - {severity: "MINOR", location: "B07 reports/07-emoat.md L462-471", description: "prompts/07 rule 6 mandates '📄 recount performed: [n] documented items across [m] categories'. Filed count hedged as 'approximately 34' and [m] labelled '13 non-zero-scored categories' where non-zero rows number 15 (13 being the 📄-carrying subset). The guard trigger ('12 or more categories as active') arguably fired on 15 non-zero rows; the required 📄 recount was performed and no tier inflation was found on independent row-by-row check."}
+  - {severity: "MINOR", location: "B07 blocks/B07-emoat.yaml evidence_mix", description: "prompts/07 YAML schema 'evidence_mix ... # item counts'. claim = 4 against 5 distinct 🎙️ items in the report (TFT cluster, coloured LCD cluster, BorgWarner licence, unnamed ECU MoU, 4W tech showcase). inference = 1 correct. No score effect: multipliers are applied per row."}
+  - {severity: "MINOR", location: "B07 reports/07-emoat.md L79, L326, L390", description: "prompts/07 rule 3 mandates '(AR p.__), (Q_ FY__ call), (Inv. Pres. slide __)'. Three items anchor to extraction line offsets or an out-of-range page: p.1306-1311 (mid-pressure sensors), extracted L14968 (attrition, F1), extracted L10410-10411 (ZLD, H3)."}
+critical_count: 0
+major_count: 1
+minor_count: 9
+acceptance_rate: 82            # 47 of 57 phase-1 rules passed; gate0 79% (23/29), emoat 86% (24/28)

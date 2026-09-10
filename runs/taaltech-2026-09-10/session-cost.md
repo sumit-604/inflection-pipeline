@@ -12,3 +12,4 @@ its own stage. Loops and retries each get their own line with a run counter.
 | 2 | Notes triple-pass, pass 2 of 3 (FAILED, branch switched out by a concurrent session) | sonnet | default | - | - | 106,763 | 392s | 1 |
 | 2 | Notes triple-pass, pass 2 of 3 (re-run in isolated worktree) | sonnet | default | - | - | 153,066 | 625s | 2 |
 | 2 | Notes triple-pass, pass 3 of 3 (synthesis) | sonnet | default | - | - | 87,142 | 269s | 1 |
+| 3 | AR backward deep dive | sonnet | default | - | - | 237,484 | 669s | 1 |

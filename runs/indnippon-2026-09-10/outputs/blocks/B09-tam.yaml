@@ -1,0 +1,111 @@
+stage: B09-tam
+company: "INDNIPPON"
+run_date: "2026-09-10"
+model: claude-sonnet-5
+status: partial
+input_gaps:
+  - "B04 business model decoder not available at run time (stage 4 running in parallel per orchestrator dependency table); used injected product/mix facts instead"
+  - "INEL product-line revenue split (FWM vs CDI vs ECU vs sensors vs EV items) not disclosed anywhere in corpus; true SKU-level content-per-vehicle not computable, only a blended full-stack proxy built from company totals"
+  - "EV motor controller / DC-DC converter / traction motor Rs-per-vehicle content NOT FOUND; WebSearch tool unavailable for the entire session (14+ failed attempts), could not source external EV powertrain-electronics ASP benchmarks -- this is the single most important unresolved number in the report"
+  - "TVS Motor and Bajaj Auto individual 2W production volumes not sourced this session (WebSearch down); precluded computing INEL's exact customer-relationship coverage % of the Indian 2W population independent of the FWM national-share proxy"
+  - "India-specific (vs global) market size for automotive sensors, ignition systems, and general purpose engines NOT FOUND; management cites only global, all-vehicle-class figures"
+  - "Electric three-wheeler penetration percentage specifically (distinct from overall/2W EV penetration) NOT FOUND this session"
+  - "ACMA product-category (electricals/electronics vs engine parts vs drive-transmission etc.) revenue split for the Indian auto component industry NOT FOUND this session, precluding a cleaner top-down Method 1 decomposition"
+  - "3-wheeler export unit volume NOT FOUND; TAM population understates true 3W addressable base by this amount"
+flags:
+  - {type: "FLAG-SOM-BELOW-DELIVERED-GROWTH", reason: "SOM-implied CAGR (5.3%) is far below FY26 actual growth (26.5%) and Q1FY27 actual growth (35.5%). Two honest readings named in Section 3B (SAM too narrow vs FY26/Q1FY27 a GST-2.0 base-effect spike); flagged for operator ruling per the Amendment 14 fade-guard discipline, run in the opposite direction from its usual trigger."}
+  - {type: "FLAG-EV-CONTENT-UNQUANTIFIED", reason: "Whether INEL's EV product stack earns more or less Rs/vehicle than the ICE stack it would displace could not be determined this session (no INEL EV pricing disclosed, WebSearch down for external benchmarks). This is the single most important open question named in the task brief and remains open."}
+  - {type: "FLAG-RARE-EARTH-SUPPLY-RISK", reason: "NdFeB/rare-earth magnet supply constraint (China export restrictions, April 2025, ~90% global processing share) threatens both the core flywheel-magneto franchise and the EV motor/ISG stack simultaneously -- a single point of failure across two revenue lines, not a diversifiable risk. Ferrite substitution real but partial/unquantified."}
+  - {type: "FLAG-MGMT-TAM-BROAD", reason: "Every management-cited market figure across all decks and the AR is global and all-vehicle-class; none is India-specific or INEL-scoped. mgmt_claim_cr reported as 0/not-comparable rather than a fabricated ratio."}
+  - {type: "FLAG-GST-ONEOFF-BASE-YEAR", reason: "FY26's 36.1% YoY jump in industry 2W volume and INEL's own 26.5% revenue growth both coincide with the September 2025 GST 2.0 rollout, per the AR's own narrative. Forward growth built off this base risks being optimistic if the effect does not repeat."}
+  - {type: "FLAG-WEBSEARCH-TOOL-OUTAGE", reason: "WebSearch tool returned 'unavailable' on every one of ~14 attempts across this session. All external data below was sourced via WebFetch against named URLs instead; several planned searches (peer competitor detail, India-specific category splits, EV component pricing) could not be substituted this way and are logged as input_gaps/searches_skipped."}
+market_definition: "OEM-channel electricals, electronics and mechatronics content sold into India-built two- and three-wheelers"
+tam_cr: {conservative: 2600, realistic: 3300}
+sam_cr: 1122
+sam_pct_of_tam: 34.0
+som_3yr_cr: 1248
+som_5yr_cr: 1384
+som_implied_revenue_cagr: {yr3: 5.3, yr5: 5.3}
+current_sam_share_pct: 86.7
+revenue_headroom_x: 1.14
+tam_growth_pct: 5.0
+runway_class: "LIMITED"
+mgmt_claim_cr: 0
+mgmt_claim_ratio: 0
+mgmt_claim_read: "not comparable -- management cites only global, all-vehicle-class category markets (ignition, sensors, GPE); no India-specific or 2W/3W-specific TAM figure exists anywhere in the corpus to ratio against"
+capacity_check: "gap of ~Rs 40-70 Cr by Year 3-5 (SOM 3.2%-5.2% above the B07 capex-embedded growth rate of 4.2%); SOM is mildly the optimistic side, not the capex plan"
+methods_used: ["bottom-up (primary)", "peer revenue aggregation (floor only)", "top-down (sanity ceiling only, not usable to scope)", "global benchmark (sanity check only, not usable to scope)", "import substitution (not applicable in standard direction)"]
+stale_data_flags: []
+searches_performed:
+  - "WebFetch: SIAM statistics page (stale 2008-2014 data returned, superseded by AR2026's own SIAM table)"
+  - "WebFetch: mordorintelligence.com/industry-reports/india-two-wheeler-market (confirmed E2W 11.85%/88.15% ICE split, 2025; 5.02% overall / 7.02% EV CAGR through 2031)"
+  - "WebFetch: motorindiaonline.in ACMA H1FY26 auto component industry article (turnover, OEM/aftermarket split, export/import figures, EV share of OEM supply)"
+  - "WebFetch: en.wikipedia.org/wiki/China-United_States_trade_war (April 2025 rare-earth/magnet export restrictions)"
+  - "WebFetch: en.wikipedia.org/wiki/Rare-earth_element (China ~90% global processing share, 2025 restriction context)"
+  - "WebFetch: screener.in/company/UCAL (peer revenue FY23-26)"
+  - "WebFetch: screener.in/company/MINDACORP (peer revenue FY23-26)"
+  - "WebFetch: imarcgroup.com/india-automotive-electronics-market (India automotive electronics market size/CAGR)"
+searches_skipped:
+  - "WebSearch: India two-wheeler EV penetration 2026 forecast -- tool unavailable"
+  - "WebSearch: India two wheeler production volume forecast 2027-2030 SIAM -- tool unavailable"
+  - "WebSearch: NdFeB rare earth magnet supply shortage 2026 China export restrictions automotive -- tool unavailable"
+  - "WebSearch: India two wheeler ignition system market size crore India Nippon UCAL Minda -- tool unavailable"
+  - "WebSearch: China rare earth magnet export licensing automotive impact 2025-2026 -- tool unavailable"
+  - "WebSearch: rare earth magnets India -- tool unavailable"
+  - "WebSearch: India electric three wheeler penetration percentage 2026 -- tool unavailable"
+  - "WebSearch: UCAL Fuel Systems revenue FY26 -- tool unavailable (substituted via WebFetch)"
+  - "WebSearch: electric two wheeler motor controller cost BLDC India price -- tool unavailable, no substitute found (crux EV-content gap)"
+  - "WebFetch: siamindia.com/statistics.aspx -- connection refused"
+  - "WebFetch: grandviewresearch.com automotive-ignition-system-market -- 403 Forbidden"
+  - "WebFetch: evreporter.com category ev-sales -- 404 Not Found"
+downstream_candidates:
+  - signal: "TVS Motor Company 2W/3W volumes and model mix"
+    entity_type: "end-customer"
+    demand_link: "One of INEL's 2 largest named customers (70.66% combined revenue); directly drives INEL's core revenue"
+    likely_source: "BSE/NSE corporate announcements + concall transcripts + AR segment note"
+    cadence: "quarterly"
+    shared: false
+  - signal: "Bajaj Auto 2W/3W volumes and model mix"
+    entity_type: "end-customer"
+    demand_link: "Same top-2-customer concentration logic as TVS Motor"
+    likely_source: "BSE/NSE corporate announcements + concall transcripts"
+    cadence: "quarterly"
+    shared: false
+  - signal: "Hero MotoCorp 2W volumes and model mix"
+    entity_type: "end-customer"
+    demand_link: "Named customer (BRSR Q19c); volume trend is a direct demand signal for the ICE ignition stack"
+    likely_source: "BSE/NSE corporate announcements + concall transcripts"
+    cadence: "quarterly"
+    shared: false
+  - signal: "SIAM monthly 2W/3W wholesale production and sales data"
+    entity_type: "macro"
+    demand_link: "Industry volume base for the entire TAM; resolves the GST-2.0 base-effect question first"
+    likely_source: "SIAM website monthly statistics release"
+    cadence: "monthly"
+    shared: true
+  - signal: "China MOFCOM rare-earth/NdFeB magnet export licensing status"
+    entity_type: "macro"
+    demand_link: "Threatens both the ICE flywheel-magneto franchise and the EV motor/ISG stack simultaneously"
+    likely_source: "MOFCOM export-control announcements, cross-checked against DGCI&S India import data"
+    cadence: "event-driven"
+    shared: true
+  - signal: "Vahan/FADA electric two-wheeler registration data"
+    entity_type: "macro"
+    demand_link: "Direct tracker for E2W penetration, which scopes the unquantified EV-content SAM lever"
+    likely_source: "Vahan Parivahan dashboard / FADA monthly release"
+    cadence: "monthly"
+    shared: false
+  - signal: "BorgWarner EFI ECU technical licensing partnership status"
+    entity_type: "counterparty"
+    demand_link: "Named new-product-segment entry, currently a deck-only claim with no AR corroboration"
+    likely_source: "BorgWarner SEC EDGAR filings / investor relations"
+    cadence: "event-driven"
+    shared: false
+  - signal: "GST Council / CBIC GST 2.0 rate-slab stability"
+    entity_type: "regulatory"
+    demand_link: "The policy event behind the FY26 volume spike this report treats as a possible base-effect risk"
+    likely_source: "PIB / CBIC notifications"
+    cadence: "event-driven"
+    shared: true
+demand_externally_verifiable: true
+analyst_note: "The bottom-up TAM/SAM/SOM here is deliberately built from INEL's own disclosed numbers because no third-party India-2W content-per-vehicle report could be sourced (WebSearch down all session). The two most important findings are linked: current SAM share is already ~87% (near-saturated within today's customer/product base), and SOM-implied CAGR (5.3%) sits far below FY26/Q1FY27 delivered growth (26.5%/35.5%). Both point the same way -- either the SAM definition is too narrow (new OEMs, EV stack, faster exports would widen it) or FY26's growth is a GST-2.0 base effect that will not repeat. The EV content-per-vehicle question (does the EV stack earn more or less than the flywheel magneto it displaces) could not be resolved with tools available this session and is the single highest-priority live-web verification item for Halt 1."

@@ -13,3 +13,4 @@
 | 4 | business model decoder | claude-sonnet-5 | default | - | - | 135165 | 561s | 1 |
 | 8 | promoter background check | claude-sonnet-5 | default | - | - | 151791 | 714s | 1 (status partial: WebSearch unavailable all attempts) |
 | 6 | peer concall verification (12 transcripts) | claude-sonnet-5 | default | - | - | 271100 | 318s | 1 |
+| 9 | TAM SAM SOM market sizing | claude-sonnet-5 | default | - | - | 158793 | 907s | 1 (status partial: WebSearch unavailable) |

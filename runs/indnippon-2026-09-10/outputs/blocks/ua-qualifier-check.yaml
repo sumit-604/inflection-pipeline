@@ -1,0 +1,46 @@
+check: UA-qualifier
+company: INDNIPPON
+run_date: 2026-09-10
+derived_by: orchestrator
+derivation: >
+  MECHANICAL, NOT ANALYTICAL. This file only reads two committed blocks
+  (B01-gate0, B07-emoat) plus the B00 shareholding evidence and applies the
+  Amendment 3 qualifier test verbatim. It makes no judgement and creates no
+  new evidence. Stage 11 in PHASE 3 owns the actual UA decision; this exists
+  so the Halt 1 dossier and the gate recommendation carry the finding rather
+  than discovering it after the operator has signed a model.
+rule: "Master v3.7 / Section 1B Amendment 3. Qualifiers, ALL THREE must hold: listed >=12 months; Gate 0 core >=60/100 OR Emerging Moat >=25/100; FII+DII combined <3%. Ordering: Final Destination PE = min(Raw PE x 1.25, Sector Cap)."
+qualifiers:
+  - id: q1
+    test: "listed >= 12 months"
+    result: PASS
+    evidence: "Long-listed. BSE scrip 532240, listed since the 1990s. B00 records the company as outside the ~3-year recently-listed window."
+  - id: q2
+    test: "Gate 0 core >= 60/100 OR Emerging Moat >= 25/100"
+    result: FAIL
+    evidence: "B01-gate0.core_score = 56 (below 60). B07-emoat.em_score = 24 (below 25). BOTH limbs fail."
+    note: >
+      BOUNDARY CASE ON BOTH LIMBS. Gate 0 core misses by 4 points of 100;
+      Emerging Moat misses by 1 point of 100. Stage 7 flagged its own 24.4
+      raw score as a genuine boundary case and confirmed the near-crossing is
+      NOT driven by the two soft categories (I1 talent asymmetry and I2
+      cannibalization barrier contribute only 1.0 point combined, and I1
+      scored 0). A single additional Moderate category, or one further
+      documented item in an already-active category, would cross EM to 25 and
+      flip this qualifier to PASS. The operator should treat the UA question
+      as live, not settled, at Halt 1.
+  - id: q3
+    test: "FII + DII combined < 3%"
+    result: PASS
+    evidence: "FY26 Report on Corporate Governance shareholder category table as at 31-Mar-2026 (extracted/annual-report__Annual_Report_2026.txt L6981-6989): Foreign Portfolio Investor 0.41%, no separate DII or mutual-fund line. Filing-anchored. Screener corroborates at Jun-2026: FII 0.33% + DII 0.22% = 0.55% (non-anchored, screener-derived)."
+verdict: "UA MULTIPLIER WITHHELD"
+verdict_reason: "The all-three-qualifier rule fails at q2. The 1.25x Undiscovered Alpha multiplier is NOT available on current evidence, so the destination PE runs at min(Raw PE, Sector Cap) with no UA uplift."
+consequence_for_phase_3: >
+  Stage 11 must NOT apply the 1.25x uplift unless q2 is re-crossed on fresh
+  evidence. Note the direction of the error if this is got wrong: applying UA
+  here would inflate the destination PE by 25% on a name whose Gate 0 is
+  AVERAGE and whose moat is MODEST, which is precisely the combination the
+  qualifier exists to exclude. Equally, because both limbs miss narrowly, a
+  reflexive "UA withheld, move on" would understate the case if Halt 1
+  live-verification adds documented moat evidence. Resolve it, do not default it.
+sector_cap_unchanged: "Cables / Industrial products, 25x. Ad hoc mapping, flagged for Phase 3 confirmation. The cap binds regardless of UA."

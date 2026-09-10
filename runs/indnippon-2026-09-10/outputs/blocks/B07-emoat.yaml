@@ -1,0 +1,50 @@
+stage: B07-emoat
+company: "INDNIPPON"
+run_date: "2026-09-10"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "B05 promise-delivery record not available (no concalls published); F2 built from capex-completion evidence across 5 quarterly investor-deck filings instead, per NO-CONCALL MODE"
+  - "No project-level capex table (₹Cr, % capacity addition, funding source) disclosed anywhere in the corpus; Section 2A populated from qualitative milestone bullets only"
+  - "No manufacturing capacity-utilisation % disclosed for any of the 3 plants (Section 2B)"
+  - "No product-category (ignition vs electronics) revenue-mix split disclosed for any year, current or forward (Section 1C)"
+  - "BorgWarner technical licensing deal and the Q4FY26 unnamed ECU MoU appear only in investor decks, not corroborated in AR2026 text"
+  - "I1/I2: no named-inventor patent search or competitor-filing cross-check performed (no live web access in this container); both items carried to the optionality register"
+flags:
+  - {type: FLAG-EM-BELOW-UA, reason: "EM score 24 (24.4 raw) sits one point below the 25-39 MOAT STRENGTHENING band and one point below the EM>=25 UA qualifier threshold. Not an I1/I2-driven crossing either way (I1/I2 contribute only 1.0 point total)."}
+  - {type: FLAG-CONCENTRATION-VS-MOAT, reason: "C1/C2 (customer ecosystem/concentration) and I2 (TVS Motor relationship) all touch the same underlying fact, LB2's 70.66% two-customer concentration. Scored Weak throughout, not Moderate, per explicit instruction not to credit switching costs/customer capture without confronting concentration."}
+  - {type: FLAG-RARE-EARTH-RISK, reason: "NdFeB/rare-earth magnet supply constraint named as a live, unresolved risk in 5 consecutive quarterly decks (Q1FY26-Q1FY27) and in AR2026's own risk table (p.125). Sits under both the core flywheel-magneto franchise and several emerging EV/ISG product lines that use permanent magnets. Ferrite substitution is real but explicitly partial and unquantified."}
+  - {type: FLAG-CASH-CONTRADICTS-G1, reason: "G1 (war chest) scored Weak because FY26 FCF turned approximately negative Rs 1.7cr (LB1), contradicting the 'growing while investing' test in the most recent year despite the company remaining debt-free."}
+em_score: 24
+em_classification: "MODEST"
+active_categories:
+  - {id: "A2", name: "Patent & IP pipeline", strength: "Moderate", evidence_type: "documented", time_to_materialise: "Ongoing"}
+  - {id: "B2", name: "Qualification lock-in", strength: "Moderate", evidence_type: "documented", time_to_materialise: "Ongoing"}
+  - {id: "E2", name: "China+1 beneficiary", strength: "Moderate", evidence_type: "documented", time_to_materialise: "Ongoing"}
+  - {id: "F2", name: "Execution moat (capex-completion)", strength: "Moderate", evidence_type: "documented", time_to_materialise: "Ongoing"}
+evidence_mix: {documented: 34, claim: 4, inference: 1}
+completionist_recount: "34 documented items counted across 13 non-zero-scored categories out of 23; 4 rise to Moderate (A2, B2, E2, F2), 9 stay Weak, 8 score zero/NO EVIDENCE FOUND, 1 explicit negative finding (G2) — within the realistic 3-6 base rate, no re-examination triggered."
+catalysts_12m:
+  - {catalyst: "NdFeB/rare-earth magnet supply constraint resolution or worsening", window: "12m", evidence_type: "documented", anchor: "AR2026 p.125; 5 consecutive decks Q1FY26-Q1FY27"}
+  - {catalyst: "Super-premium 2W SoP scaling into a disclosed revenue line", window: "6-12m", evidence_type: "documented", anchor: "Q4FY26 deck p.14; Q1FY27 deck p.14"}
+  - {catalyst: "Customer concentration trend: second consecutive year of decline below 70%, or reversal", window: "12m", evidence_type: "documented", anchor: "AR2026 Note 28(e), p.218"}
+  - {catalyst: "EFI ECU in-house software commercialisation", window: "12m", evidence_type: "documented", anchor: "AR2026 p.24"}
+  - {catalyst: "4W customer tech-showcase conversion to a named design win", window: "12-24m", evidence_type: "claim", anchor: "Q2FY26 deck p.14"}
+capex_embedded_growth_pct: 4.2
+optionality_register:
+  - {optionality: "BorgWarner EFI ECU technical licensing deal", converting_evidence: "Signed licence agreement disclosure or AR corroboration", first_appears: "Exchange filing or next Annual Report", window: "12m"}
+  - {optionality: "MoU with unnamed technology partner for ECU development", converting_evidence: "Named-partner disclosure or resulting product launch", first_appears: "Quarterly deck or exchange filing", window: "12-24m"}
+  - {optionality: "Four-wheeler segment entry via customer tech showcases", converting_evidence: "Named 4W design win/nomination or disclosed 4W revenue line", first_appears: "Quarterly deck or AR customer note", window: "24-36m"}
+  - {optionality: "I1 talent asymmetry (named inventors, ex-major-OEM hire concentration)", converting_evidence: "Patent-inventor search tying named individuals to INEL, or AR remuneration annexure singling out a technical hire above sector norms", first_appears: "Patent database or a future Annual Report", window: "Open-ended"}
+  - {optionality: "I2 cannibalization barrier (TVS Motor relationship implausibility)", converting_evidence: "Competitor's own filing/pricing disclosure/org-structure document confirming structural non-replicability", first_appears: "A competitor's Annual Report or analyst report", window: "Open-ended"}
+  - {optionality: "NdFeB alternate-sourcing / ferrite-substitution completeness", converting_evidence: "Disclosed % of magnet requirement now ferrite-substituted or ex-China sourced", first_appears: "AR technology-absorption note or exchange filing", window: "12-24m"}
+  - {optionality: "Customer-concentration decline continuing", converting_evidence: "Second consecutive year of falling top-2 share, or a third customer crossing 10%", first_appears: "Next Annual Report, Note 28(e)-equivalent", window: "12m"}
+combined_assessment: "AVERAGE"
+combined_reasoning: "Gate 0 core AVERAGE (56/100) unchanged; Stage 7 forward score is MODEST (24), not STRENGTHENING or EXPANSION, so the AVERAGE+EXPANSION transition setup this operation hunts does not fire here."
+top_moat_risks:
+  - "Customer concentration (70.66% from 2 customers, LB2) undercuts C1/C2/I2 credit; a single relationship shift is a structural single point of failure, not only a moat"
+  - "NdFeB/rare-earth magnet supply risk threatens both the core flywheel-magneto franchise and several emerging EV/ISG product lines simultaneously; ferrite substitution is real but partial and unquantified"
+  - "FY26 cash-conversion break (LB1) means the debt-free/internally-funded transition story is not currently being replenished by operations"
+  - "F2 execution-moat credit is a completion record with no original committed date/budget anywhere to verify 'on time, on budget' against"
+  - "H2 partnerships (BorgWarner, unnamed ECU MoU) rest entirely on deck-tier claims with zero Annual Report corroboration"
+analyst_note: "EM score of 24 is one point below both the MOAT STRENGTHENING band and the EM>=25 UA qualifier. This is a genuine boundary case, not a rounding artifact hidden by presentation: raw total is 24.4, and even removing every I1/I2 point (only 1.0 of the 24.4 total) leaves 23.4, still inside MODEST. The 4 Moderate categories (A2 patents, B2 qualification/TISAX, E2 exports, F2 execution timeline) are the most-evidenced forward story; none carries a quantified revenue or margin linkage yet. Recommend downstream stages treat the mix-shift-drives-margin narrative (AR2026 p.124) as unproven until a product-category revenue split is disclosed."

@@ -1,0 +1,24 @@
+stage: B01-gate0
+company: "TAALTECH"
+run_date: "2026-09-10"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["Trade Payables FY2017-2024 not in Data_Sheet.csv (only FY2025/FY2026 from Q4FY26 B/S)", "Promoter pledge % not disclosed anywhere in corpus", "Promoter holding 3-yr-ago (FY2023) comparator not in corpus", "Peer financial data (EBITDA margin, mcap, R&D%, gross margin) not provided this run, blocking M2/M5/M9", "Capex FY2017-2024 not separately filed; computed via delta Net Block + Depreciation proxy; FY2017 and FY2021 FCF excluded as unreliable", "Pre-FY2022 annual reports not in corpus; cannot confirm FY2017-2021 revenue mix (engineering vs air-charter residue)"]
+flags:
+  - {type: FLAG-GATE0, reason: "Classification GOOD depends on a FY2017-base-sensitive Block C read; C2/C4 and moat M1 use a 35.0% PAT CAGR and +26.15pp spread driven by the FY2017 low base, versus ~15-16% PAT CAGR and +4.3pp spread on the FY2022-2026 window. Unresolved pre-FY2022 business-mix question (air-charter demerger history) also attaches to this flag."}
+  - {type: FLAG-CASH, reason: "Consolidated CFO/PAT fell from 0.84x (FY2025) to 0.33x (FY2026); working-capital build is broader than trade receivables alone (Other Financial Assets + Other Current Assets roughly doubled), coinciding with the unexplained Q4FY26/Q1FY27 revenue acceleration."}
+  - {type: FLAG-RPT, reason: "FY2026 Rs10cr loan to holding company Vishkul Enterprises Pvt Ltd (9.85% effective rate); actual holding company is Vishkul, not Taneja Aerospace, which shows only a trivial FY26 transaction."}
+data_years: 10
+fy_range: "FY2017 to FY2026"
+blocks: {A: 15, B: 14, C: 12, D: 20, E: 9}
+core_score: 70
+moat_score: 11
+grand_total: 81
+moats_confirmed: 2
+moat_class: "MODERATE"
+classification: "GOOD"
+deal_breakers: []
+history_downgrade: true
+data_notes: ["EBIT for ROCE computed as Operating Profit minus Depreciation, excluding Other Income", "Capital Employed = Total Assets minus 'Other Liabilities' row (Data_Sheet.csv), retaining Borrowings/lease inside capital employed per standard ROCE convention; validated exactly against audited FY2025/FY2026 B/S", "FY2017 ROE uses closing Net Worth only, no FY2016 opening balance available", "FCF FY2018-2024 computed via delta Net Block + Depreciation proxy in absence of a filed capex line; FY2025/FY2026 use filed capex directly; FY2017 and FY2021 excluded from B2/B3", "No loss-to-profit PAT swing in the window; CAGR N/M edge rules do not apply", "M2, M5, M9 scored 0, PEER DATA NEEDED", "FY2021 Net Block fell more than that year's depreciation charge (disposal/write-off ~Rs2.3cr) - unexplained, could be Ind AS 116 lease reclass or asset disposal, not confirmed either way"]
+block_b_trend: "deteriorating - CFO/PAT fell from 0.84x (FY2025) to 0.33x (FY2026), consolidated"
+analyst_note: "GOOD rests on a strong balance sheet (20/20) and solid median returns, but three depressors need attention. First, C1/C2/C4 anchor to FY2017 (PAT Rs3.81cr, thin post-demerger capital base), inflating long-run PAT CAGR to 35% and the C4 spread to 26pp; the FY2022-2026 window shows revenue CAGR ~11% and PAT CAGR ~15-16%, a more decision-relevant picture. Second, TTL received BOTH the air-charter business and TAAL Tech India (engineering) in the Oct-2014 demerger from Taneja Aerospace; no pre-FY2022 annual report in this corpus confirms when charter revenue dropped out of the consolidated series, so FY2017-2021 rows carry an unresolved comparability flag. Third, cash conversion is deteriorating, not just cumulatively adequate: CFO/PAT fell 0.84x to 0.33x in one year on a receivables and other-current-asset build, coinciding with the Q4FY26/Q1FY27 revenue acceleration (Rs45.79cr to Rs57.04cr to Rs64.81cr across three quarters) that filings do not explain. Growth is real and two-quarter-deep, not a single blip, but it is not yet cash-backed."

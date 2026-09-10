@@ -7,3 +7,5 @@ its own stage. Loops and retries each get their own line with a run counter.
 |---|-------|-------|--------|--------|---------|-----------|------|------|
 | pre | corpus: transcribe scanned results filings | sonnet | default | - | - | 150,132 | 182s | 1 |
 | 0 | input validation (orchestrator inline) | opus (orchestrator) | default | - | - | - | - | 1 |
+| 1 | Gate 0 scorecard | sonnet | default | - | - | 151,373 | 685s | 1 |
+| 2 | Notes triple-pass, pass 1 of 3 | sonnet | default | - | - | 205,300 | 562s | 1 |

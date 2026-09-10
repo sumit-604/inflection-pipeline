@@ -1,0 +1,129 @@
+stage: B00-inputs
+company: INDNIPPON
+run_date: 2026-09-10
+model: orchestrator-inline
+status: complete
+input_gaps:
+  - "prospectus/: EMPTY. NOT A GAP. Long-listed company (BSE 532240, listed 1990s). Outside the ~3-year recently-listed window, so an IPO prospectus is not expected."
+  - "concalls/: EMPTY. DECLARED, NOT A GAP. manifest.concalls_available=false. INEL publishes no earnings-call transcripts; verified against BSE announcement history for scrip 532240 across 01-Jul-2025 to 10-Sep-2026 (zero transcript filings, seven investor presentations). NO-CONCALL MODE is active."
+  - "rating/: EMPTY. DECLARED, NOT A COLLECTION FAILURE. The company is debt free (no borrowings on the FY26 balance sheet). No rated bank facilities and no rating rationale exist. Stage 10 will mark rating_wc_quote unresolved; stage 11 Pillar 2 proceeds without rating evidence per DEGRADATION MAP."
+  - "shareholding/: EMPTY. REAL GAP, PARTIALLY MITIGATED. BSE shareholding-pattern endpoints were unreachable from this container. MITIGATION: the FY26 annual report carries the shareholding pattern (extracted L705) and the promoter pledge statement (L6952), both filing-anchored, as at 31-Mar-2026. Screener additionally shows FII 0.33% plus DII 0.22% equals 0.55% at Jun-2026 (non-anchored, screener-derived). Stage 11 must decide the UA institutional-absence qualifier on the AR figure and note the one-quarter staleness."
+  - "research/: EMPTY. NO EFFECT on anchored evidence (research is never anchored). Loses a lead-generation and management-intent cross-check source only. .gitkeep planted."
+  - "other/: EMPTY. Never consumed."
+freshness_pairs:
+  - pair: "RESULTS to CONCALL"
+    trigger_doc: "inputs/results/Q1FY27_Board_Outcome_and_Results_2026-08-07.pdf (Q1 FY27, quarter ended 30-Jun-2026)"
+    mate_expected: "same-quarter concall transcript in inputs/concalls/"
+    status: SKIPPED
+    missing_doc: null
+    note: "Skipped per the orchestrator rule: manifest.concalls_available is false, so the absence is declared, not a gap."
+  - pair: "RATING BULLETIN to RATIONALE"
+    trigger_doc: null
+    mate_expected: "full rating rationale"
+    status: PASS
+    missing_doc: null
+    note: "Pair not triggered. No rating bulletin is present because the company is debt free and holds no rated facilities."
+  - pair: "SEBI ORDER to ORDER TEXT"
+    trigger_doc: null
+    mate_expected: "SEBI order text"
+    status: PASS
+    missing_doc: null
+    note: "Pair not triggered. Grep of the FY26 AR, the results filing and all announcements found only boilerplate director declarations (not debarred by virtue of any SEBI order), at extracted/announcements__Change_in_Directorate_2026-07-31.txt L245 and L250. No order against the company is referenced."
+  - pair: "AR to LATEST AUDITED ANNUAL RESULTS"
+    trigger_doc: "latest audited annual (full-year) results = FY2025-26, year ended 31-Mar-2026"
+    mate_expected: "annual report for the same year"
+    status: PASS
+    missing_doc: null
+    note: "inputs/annual-report/Annual_Report_2026.pdf is the FY2025-26 annual report, filed 08-Jul-2026 (INEL/SE/2026-27/12), 301 pages. Same year. The AR is not older than the latest audited annual result."
+freshness_verdict: "FRESHNESS PAIRS OK"
+corpus_audit_verdict: "CORPUS GAPPED"
+corpus_audit_note: >
+  Not GAPPED-FRESHNESS: all four freshness pairs pass or are correctly skipped,
+  so the phase-1 gate is NOT capped on freshness grounds. CORPUS GAPPED stands
+  on the shareholding-pattern filing alone, which is the only absent document
+  type that is a real gap rather than a declared absence. Every other empty
+  folder is empty by fact (no concalls held, no rated debt, long-listed) or
+  carries no anchored-evidence consequence (research, other).
+inventory:
+  prospectus: 0
+  annual-report: 2
+  results: 1
+  rating: 0
+  concalls: 0
+  peer-concalls: 12
+  announcements: 4
+  shareholding: 0
+  research: 0
+  screening: 24
+  presentation: 7
+  other: 0
+inventory_detail:
+  annual_report:
+    - "inputs/annual-report/Annual_Report_2026.pdf - FY2025-26, filed 08-Jul-2026, 301pp. PRIMARY."
+    - "inputs/annual-report/Annual_Report_2025.pdf - FY2024-25, filed 28-Aug-2025, 301pp. Backward comparison. Contract says 0-1; two are held and both are used, the newer as primary."
+  results:
+    - "inputs/results/Q1FY27_Board_Outcome_and_Results_2026-08-07.pdf - INEL/SE/2026-27/23, 7pp. Combined board outcome plus Q1 FY27 unaudited results. BSE attached this ONE document to five separate announcements of 07-Aug-2026; four byte-identical duplicates were detected by md5 and deleted."
+  presentation:
+    - "Investor_Presentation_2026-08-21_Q1FY27.pdf (21pp)"
+    - "Investor_Presentation_2026-06-01_Q4FY26.pdf (22pp)"
+    - "Investor_Presentation_2026-03-17_InstitutionalMeet.pdf (35pp)"
+    - "Investor_Presentation_2026-02-19_Q3FY26.pdf (22pp)"
+    - "Investor_Presentation_2025-11-25_Q2FY26.pdf (22pp)"
+    - "Investor_Presentation_2025-09-22.pdf (35pp)"
+    - "Investor_Presentation_2025-08-20_Q1FY26.pdf (21pp)"
+  announcements:
+    - "Clarification_Volume_Spike_2026-09-10.pdf - clarification on volume movement, dated the run date"
+    - "Analyst_Investor_Meet_Intimation_2026-08-31.pdf"
+    - "Change_in_Directorate_2026-07-31.pdf"
+    - "AGM_Outcome_2026-07-30.pdf"
+  peer_concalls:
+    - "VARROC x4 (Nov-2025, Feb-2026, Jun-2026, Aug-2026)"
+    - "PRICOLLTD x4 (Nov-2025, Feb-2026, May-2026, Aug-2026)"
+    - "MINDACORP x4 (Nov-2025, Feb-2026, May-2026, Aug-2026)"
+  screening:
+    - "screener-Data_Sheet, Profit_Loss, Balance_Sheet, Cash_Flow, Quarters, Customization .csv for INDNIPPON, ALL POPULATED. The known empty-CSV defect did NOT fire this run."
+    - "VARROC, PRICOLLTD, MINDACORP x6 each, all populated."
+no_concall_mode: true
+no_concall_substitute: >
+  Seven quarterly investor presentations (Aug-2025 to Aug-2026) form a
+  chronological management-commentary series that stage 5 reads in place of
+  transcripts. EVIDENCE TIER: a prepared deck is management assertion with no
+  analyst cross-examination, strictly below a transcript. credibility_grade
+  defaults to C and may rise to B only on documented guidance-vs-delivery
+  evidence, never to A. The twelve peer transcripts carry the Q&A evidence on
+  2W demand, OEM pricing and rare-earth magnet supply.
+extraction:
+  files: 26
+  failures: 0
+  scanned_or_image_only: 0
+  note: "Every input PDF is pre-extracted to page-marked text under extracted/. Stages read the .txt for text and the PDF for anchor confirmation."
+basis_change_warning: >
+  PT Automotive Systems Indonesia, the sole subsidiary, was dissolved
+  25-Jun-2025. From 01-Apr-2026 the company has no subsidiaries and has
+  discontinued consolidated statements. FY24-FY26 figures quoted from the
+  investor decks are CONSOLIDATED; FY27 onward is STANDALONE only. Section 1B
+  v3.8 Amendment 18 binds: entry and exit earnings bases must match. Every
+  stage must state which basis it is on.
+spear_gate:
+  status: SATISFIED
+  line: "Spear: OVERRIDE 2026-09-10 (operator standing ruling 2026-09-05: Step-1 intake replaces the web spear)"
+  source: "companies/INDNIPPON.md"
+  load_bearing_facts:
+    - "LB1 - Cash conversion broke while profit rose. FY26 CFO Rs 40.47 cr against FY25 Rs 49.40 cr, while operating profit before WC changes rose Rs 94.62 cr to Rs 121.53 cr. Capex Rs 42.15 cr, FCF about negative Rs 1.7 cr. WC absorbed Rs 54.2 cr. Screener CFO/OP 60% against 128% in FY23. TRIGGERS THE KERNEX/TIPCO CASH-CONVERSION GUARD."
+    - "LB2 - Two customers are 71% of revenue (Rs 754.91 cr of Rs 1,068.48 cr FY26), yet BRSR reports related-party sales at 5.38%. Name the two; reconcile the TVS Motor relationship; establish arm's-length pricing."
+    - "LB3 - Investments in related parties are 49.36% of total investments (FY25 47.15%). Investment book Rs 531.6 cr equals 65% of net worth. Other income Rs 30.6 cr against EBITDA Rs 122.2 cr. Separable non-operating asset or governance flag? Compute operating ROCE net of it."
+    - "LB4 - Growth split unproven. FY26 plus 26.5%, Q1FY27 plus 35.5% against 2W industry plus 20%. Exports plus 162% to Rs 87.3 cr. Split into industry volume, share gain, new-product content, exports, input-cost pass-through. Verify NdFeB magnet exposure; China export controls are named as a live constraint."
+  note: "Every later stage checks these four before its own work."
+empty_folder_confirmation:
+  asked: false
+  reason: "SUPPRESSED by the /step1 AUTONOMY CONTRACT. Standing answer: proceed with the gaps. Every absent document type is recorded above and the run degrades per the orchestrator DEGRADATION MAP."
+company_memory: "companies/INDNIPPON.md (created this run) plus runs/indnippon-2026-09-10/step1-business-brief.md. Both are MEMORY, never anchored evidence."
+flags: []
+analyst_note: >
+  Two things a downstream stage cannot reconstruct. First, the results folder
+  holds ONE document that is simultaneously the board outcome, the Q1 FY27
+  results, two change-in-management notices and a cessation notice; a stage
+  looking for four separate filings will not find them. Second, the
+  no-concall substitute is a deck series, not transcripts, so every
+  management claim in stage 5 carries assertion tier, not Q&A tier. The peer
+  transcripts are the only cross-examined commentary in this corpus.

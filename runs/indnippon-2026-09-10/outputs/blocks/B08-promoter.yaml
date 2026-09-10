@@ -1,0 +1,69 @@
+stage: B08-promoter
+company: "INDNIPPON"
+run_date: "2026-09-10"
+model: claude-sonnet-5
+status: partial
+input_gaps:
+  - "INEL's percentage ownership of Lucas TVS Limited's total issued share capital: NOT FOUND (AR silent; no independent MCA/web source reachable this session)"
+  - "Lucas TVS Limited's own total EBITDA and net debt/cash position: NOT FOUND (only an attributable-share EBITDA of ~Rs 33 cr can be inferred from Note 47(g)'s sensitivity disclosure, and only because the ownership percentage is unknown this cannot be grossed to a company total)"
+  - "Price paid by Lucas Indian Service Ltd for MAHLE's entire inter-se stake transfer on 26-Jun-2023: NOT FOUND (AR states the transaction occurred and the resulting stake rose from 50.80% to 70.32%; no consideration disclosed anywhere)"
+  - "SB TVS Industrial Ventures Private Limited's ownership of Lucas Indian Service Limited and its own structure: NOT FOUND (no independent web trace located)"
+  - "Promoter pledge/encumbrance trend: NOT FOUND from a primary source (quarterly SHP filing absent from corpus and AR; a non-primary aggregator, screener.in, shows no pledge line across 8 quarters, not treated as proof of zero per the stage brief)"
+  - "Audit Committee chairmanship and designated financial expert: NOT FOUND (committee-membership matrix did not survive PDF extraction cleanly)"
+  - "Employee reputation (Glassdoor/AmbitionBox): NOT FOUND / SKIPPED (403 blocked)"
+  - "Rationale for TVS Educational Society apprentice-stipend scale (Rs 30.59 cr, +26.7% YoY, +128.6% over two years): NOT FOUND in either AR"
+flags:
+  - {type: FLAG-PROMOTER, verdict: "CAUTION", top_findings: ["Dual-MD interlock: Arvind Balaji is simultaneously MD of INEL and MD of Lucas TVS Limited, INEL's largest single investment (Rs 264.12 cr, 32.2% of net worth, sole FY26 Key Audit Matter); INEL's % ownership of Lucas TVS and Lucas TVS's own EBITDA/net debt are undisclosed anywhere, making the stake's book value unverifiable independent of INEL's own model", "MAHLE's entire founding-JV stake was bought out by Lucas Indian Service via an undisclosed-price inter-se transfer on 26-Jun-2023, taking the promoter stake from 50.80% to 70.32%, with no residual technology/licence agreement disclosed", "TVS Educational Society apprentice stipend of Rs 30.59 cr in FY26 (26.7% of INEL's PAT) is unexplained in scale and growth despite the recipient being a real, traceable TVS Group training body", "Promoter pledge trend remains unresolved: no primary-source shareholding-pattern filing in the corpus or AR; a non-primary aggregator shows no pledge across 8 quarters but this is not treated as confirmation"]}
+verdict: "CAUTION"
+scorecard: {clean: 7, caution: 3, red: 0}
+deal_breakers:
+  - {check: "SEBI market ban", status: "not triggered"}
+  - {check: "Economic offence conviction", status: "not triggered"}
+  - {check: "Live SFIO", status: "not triggered"}
+  - {check: "PMLA with attached assets", status: "not triggered"}
+  - {check: "Auditor resignation within 3 years", status: "not triggered"}
+  - {check: "Pledge >40%", status: "UNRESOLVED - primary data absent"}
+  - {check: "Multiple mid-term independent director exits within 3 years", status: "not triggered - zero exits, two full-term renewals"}
+  - {check: "Restatement cutting past profits >10%", status: "not triggered"}
+adverse_findings:
+  - {finding: "Lucas TVS stake (Rs 264.12 cr, 32.2% of net worth, sole FY26 KAM) valued via undisclosed EBITDA input at a flat 8x EV/EBITDA multiple for two straight years, while INEL's MD simultaneously serves as Lucas TVS's MD", evidence_tier: "VERIFIED", source: "FY26 AR standalone Note 47(f)-(g), p.228 PDF; Note 42.1, p.223 PDF", date: "2026-09-10 (data as of FY26 AR, published 2026)"}
+  - {finding: "MAHLE Holding India and MAHLE Electric Drives Japan sold their entire INEL stake to Lucas Indian Service via inter-se transfer on 26-Jun-2023, taking Lucas Indian Service from 50.80% to 70.32%; no consideration/price disclosed in either AR", evidence_tier: "VERIFIED", source: "FY25 AR, Shareholding Pattern note, p.8 PDF", date: "2023-06-26 (transaction date); disclosed in FY25 AR"}
+  - {finding: "Stipend to apprentices paid to TVS Educational Society: Rs 30.59 cr FY26, up 26.7% YoY, up 128.6% over two years, against INEL FY26 PAT of Rs 111.26 cr; no headcount, scheme, or driver named", evidence_tier: "VERIFIED", source: "FY26 AR standalone Note 42.2, p.223-224 PDF; B03 two-year comparison", date: "FY26 AR"}
+  - {finding: "Promoter pledge trend unresolved: no primary shareholding-pattern filing in corpus; non-primary aggregator shows no pledge across 8 quarters, not treated as confirmed", evidence_tier: "UNVERIFIED", source: "screener.in (aggregator, non-primary)", date: "2026-09-10 snapshot"}
+  - {finding: "No SEBI, criminal, tax, or civil adverse finding located for INEL, Lucas TVS, Lucas Indian Service, SB TVS Industrial Ventures, or named individuals", evidence_tier: "UNVERIFIED (clean-by-absence, search depth tool-limited this session)", source: "Bing News search; FY26 AR CG Report self-declaration, p.107 PDF", date: "2026-09-10"}
+transition_evidence:
+  - {item: "External, credentialed CFO hire (Saravana Kumar M, CA, 25+ years, ex-Bosch/SEG Automotive) with clean non-disruptive handover; outgoing CFO redesignated internally rather than exited", source: "Q1FY27 Board Outcome filing, 07-Aug-2026, Annexures C-D"}
+  - {item: "Both Independent Directors due for renewal (Hajarnavis, Chakraverti) renewed in full for a second 5-year term rather than allowed to lapse; zero mid-term ID exits in the period", source: "Change in Directorate filing, 31-Jul-2026; AGM Outcome, 30-Jul-2026"}
+pledge_pct_latest: "NOT FOUND"
+pledge_trend: "NOT FOUND - primary quarterly shareholding-pattern filing absent from corpus and from the AR; a non-primary aggregator (screener.in) shows no pledge line across 8 quarters (Mar-2024 to Dec-2025) but this is explicitly not treated as proof of zero pledge per the stage brief"
+searches_performed:
+  - "WebSearch: 'Lucas TVS Limited annual report FY2025 revenue net profit shareholding' - tool unavailable"
+  - "WebSearch: multiple further Lucas TVS / MAHLE / pledge / SEBI queries - tool unavailable on every attempt (~12 total)"
+  - "WebFetch screener.in/company/INDNIPPON/ - shareholding, red flags, pledge status"
+  - "WebFetch screener.in/company/INDNIPPON/consolidated/ - 8-quarter promoter % and pledge footnote check"
+  - "WebFetch en.wikipedia.org/wiki/TVS_Group - group structure, holding companies, family members"
+  - "WebFetch lucas-tvs.com about-us content (via Bing-routed fetch) - Lucas TVS founding, size, workforce"
+  - "WebFetch bing.com/search - Lucas TVS ownership/shareholders"
+  - "WebFetch bing.com/search - MAHLE India Nippon Electricals stake sale price"
+  - "WebFetch bing.com/search - TVS Educational Society"
+  - "WebFetch bing.com/search - India Nippon Electricals SEBI/penalty/NCLT/fraud"
+  - "WebFetch bing.com/search - SB TVS Industrial Ventures"
+  - "WebFetch bing.com/search - Arvind Balaji Lucas TVS managing director profile"
+  - "WebFetch bing.com/news/search - India Nippon Electricals news"
+  - "WebFetch bing.com/news/search - India Nippon MAHLE stake"
+  - "WebFetch bing.com/news/search - Lucas TVS/Lucas Indian Service SEBI/fraud/penalty/dispute (returned: no results found)"
+  - "WebFetch bseindia.com shareholding pattern page - 403 blocked"
+  - "WebFetch moneycontrol.com - fetch error, could not reach"
+  - "WebFetch zaubacorp.com (two attempts) - 403/404"
+  - "WebFetch tofler.in - 404"
+  - "WebFetch tijorifinance.com - no company-specific data returned"
+  - "WebFetch ambitionbox.com - 403 blocked"
+  - "WebFetch duckduckgo.com/html and html.duckduckgo.com - CAPTCHA wall"
+searches_skipped:
+  - "SEBI adjudication order database - not directly reachable with available tools"
+  - "MCA/RoC direct filing search for Lucas TVS Limited and SB TVS Industrial Ventures - no working mirror site reachable"
+  - "Glassdoor / AmbitionBox employee reviews - blocked"
+  - "IiAS / SES / InGovern proxy advisory reports - not attempted after repeated search-engine degradation; would need targeted follow-up"
+  - "Court record search (NCLT/SAT/High Court) for named individuals and entities - not directly reachable"
+verdict_basis: "The dual-MD interlock (Arvind Balaji, MD of both INEL and Lucas TVS) sits atop a Rs 264.12 cr stake, 32.2% of net worth and the sole FY26 Key Audit Matter, valued on an undisclosed EBITDA input at a flat 8x multiple two years running, with INEL's ownership percentage of Lucas TVS never disclosed anywhere; this single unresolved verification gap, not any adverse finding, is what caps the verdict at CAUTION rather than TRUSTWORTHY."
+analyst_note: "WebSearch was unavailable for this entire session; findings lean more heavily on WebFetch and the corpus than a normal Stage 8 run would. Two positives worth surfacing: Wikipedia's TVS Group page independently names Southern Roadways Private Ltd as one of the group's three holding companies, matching Note 42.1's related-party list exactly, which corroborates that INEL's RPT universe sits inside the real TVS Group structure rather than an invented one. And Note 47(g)'s sensitivity disclosure lets one anchored inference through: INEL's attributable share of Lucas TVS's EBITDA is roughly Rs 33 cr (Rs 16.51 cr / 0.5x), though this cannot be grossed to a company-wide figure since INEL's ownership percentage is itself undisclosed. Neither closes the central gap. A future run with working search tools should prioritise: SEBI order search directly, MCA filing pull for Lucas TVS and SB TVS Industrial Ventures, and the primary BSE/NSE shareholding-pattern filing for pledge data."

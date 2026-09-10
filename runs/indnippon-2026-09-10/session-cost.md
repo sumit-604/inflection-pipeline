@@ -11,3 +11,4 @@
 | 3 | AR backward deep dive (8 phases) | claude-sonnet-5 | default | - | - | 312251 | 1321s | 1 |
 | 5 | management commentary (NO-CONCALL degraded) | claude-sonnet-5 | default | - | - | 172120 | 479s | 1 |
 | 4 | business model decoder | claude-sonnet-5 | default | - | - | 135165 | 561s | 1 |
+| 8 | promoter background check | claude-sonnet-5 | default | - | - | 151791 | 714s | 1 (status partial: WebSearch unavailable all attempts) |

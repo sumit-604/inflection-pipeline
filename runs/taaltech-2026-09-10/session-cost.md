@@ -25,3 +25,56 @@ its own stage. Loops and retries each get their own line with a run counter.
 | 12c | Verifier C framework (phase 1 scope) | opus | default | - | - | 120,742 | 577s | 1 |
 | 12d | Verifier D peer coverage | sonnet | default | - | - | 154,809 | 549s | 1 |
 | 13 | Synthesis-lite (phase 1 lite, 4 final files) | opus | default | - | - | 181,815 | 782s | 1 |
+| 09b | Halt 1 understanding dossier | sonnet | default | - | - | 191,065 | 609s | 1 |
+
+---
+
+## SESSION CLOSE-OUT — TAALTECH 2026-09-10 (Phase 1 complete, Halt 1 reached)
+
+Run total across every subagent invocation: **3,083,725 tokens** over 20 runs
+(18 stage/verifier runs, 2 of them re-runs after a mechanical failure, plus the
+pre-stage scanned-filing transcription).
+
+### (a) TOP FIVE BY TOKENS
+Loop and retry runs are summed into one stage total for the ranking.
+
+| Rank | Stage | Total tokens | Share of run |
+|---|---|---|---|
+| 1 | Stage 2, notes triple-pass (4 runs: p1, failed p2, re-run p2, p3) | 552,271 | 17.9% |
+| 2 | Verifier B, red flags | 319,065 | 10.3% |
+| 3 | Stage 6, peer concall verification (11 transcripts) | 278,875 | 9.0% |
+| 4 | Stage 3, AR backward deep dive | 237,484 | 7.7% |
+| 5 | Stage 09b, Halt 1 understanding dossier | 191,065 | 6.2% |
+
+Stage 2 leads because the 164-page annual report is the only management-authored
+document in this corpus. With no earnings call and no investor presentation, the
+notes carry the whole disclosure burden and the triple pass had to work them
+harder than usual.
+
+### (b) DOWNSHIFT FAILURES
+**none.** Verifier A ran on haiku, both invocations. Stage 10 assembly does not
+run in phase 1. Stage 0 validation ran inline in the orchestrator session, as
+run-pipeline.md step 1 requires, so it is not a dispatched mechanical stage.
+
+### (c) COST SPIKES
+**none.** No prior run exists for this ticker, so there is no 1.5x comparator.
+
+Two re-runs cost the run 150,040 tokens and neither was a model or prompt
+defect:
+- Stage 2 pass 2 (106,763 tokens) failed mechanically. A concurrent Claude Code
+  session checked out run/indnippon-2026-09-10 in the shared working tree and
+  deleted every TAALTECH working file mid-pass. No commit was lost. The run
+  moved to an isolated git worktree at .claude/worktrees/taaltech.
+- Verifier A invocation 1 (43,277 tokens) resolved relative paths against the
+  main checkout, reached one stale leftover file, and returned seven false
+  CRITICAL ANCHOR NOT FOUND findings. Re-invoked once with absolute paths per
+  the orchestrator's standing Verifier A rule. Both events are in
+  outputs/final/verifier-disagreement-log.md.
+
+### (d) OPERATOR SNAPSHOT
+Keerti: run /cost and /usage now and paste the cache hit ratio and the loop
+totals below. The orchestrator cannot read those interactive commands.
+
+**Operator snapshot**
+
+_(paste /cost and /usage output here)_

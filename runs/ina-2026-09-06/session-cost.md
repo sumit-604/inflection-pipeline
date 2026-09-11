@@ -78,3 +78,24 @@ totals below. The orchestrator cannot read those interactive commands.
 #### Operator snapshot
 
 (paste /cost and /usage output here)
+
+---
+
+## EXTRACTION LEDGER — operator ferry prompts, 2026-09-11
+
+Eight extraction subagents run against the corpus for the claude.ai live-web
+half. Not pipeline stages; recorded here so the run's total cost stays visible.
+
+| # | extraction | model | in_tok | out_tok | total_tok | wall | run# |
+|---|-----------|-------|--------|---------|-----------|------|------|
+| E1 | receivables ageing and provisioning | claude-sonnet-5 | n/a | n/a | 178,756 | 10m11s | 1 |
+| E2 | FY2026 cash flow reconciliation | claude-sonnet-5 | n/a | n/a | 132,024 | 7m09s | 1 |
+| E3 | debt, guarantees, commitments | claude-sonnet-5 | n/a | n/a | 196,590 | 12m19s | 1 |
+| E4 | cell plant dates and contracts | claude-sonnet-5 | n/a | n/a | 198,375 | 11m33s | 1 |
+| E5 | governance, integrity vs structure | claude-sonnet-5 | n/a | n/a | 196,020 | 10m16s | 1 |
+| E6 | volumes, realisation, order book | claude-sonnet-5 | n/a | n/a | 178,294 | 9m00s | 1 |
+| E7 | share count, depreciation, tax | claude-sonnet-5 | n/a | n/a | not reported | n/a | 1 |
+| E8 | Q1FY27 addendum (new filing) | claude-sonnet-5 | n/a | n/a | 129,115 | 9m35s | 1 |
+
+E7's agent completed its file but did not return a usage summary, so its row is
+marked not reported rather than estimated.

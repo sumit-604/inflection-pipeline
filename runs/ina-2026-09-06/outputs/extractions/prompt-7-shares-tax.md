@@ -560,7 +560,8 @@ statement. No reconciliation is attempted here and neither figure is preferred.
 The same two-line pattern exists in the standalone set, for the operator's note:
 standalone PPE note additions FY2026 = Rs 2,812.36 lakh (PAGE 162);
 standalone cash flow "Purchase of Property, Plant & Equipment" FY2026 =
-Rs (2,842.62) lakh, FY2025 Rs (334.50) lakh (standalone Cash Flow Statement).
+Rs (2,842.62) lakh, FY2025 Rs (334.50) lakh (Standalone Cash Flow Statement,
+PAGE 160).
 Difference Rs 30.26 lakh. Both quoted, not reconciled.
 
 ## 2.5 Capital work in progress at 31-Mar-2026
@@ -606,7 +607,7 @@ Projects in progress, less than 1 year: 75.14 (as at 31st March, 26); 20.21 (as 
 31st March, 25); 42.50 (as at 1st April, 24). Projects temporarily suspended: nil
 in all three years.
 
-Capital commitments, QUOTE, standalone "(b) Capital Commitments":
+Capital commitments, QUOTE, standalone Note 41 "(b) Capital Commitments":
 "Estimated amount of contracts remaining to be executed on capital account (net of
 advances)" As at 31st March 2026: - ; As at 31st March 2025: 8,135.00.
 
@@ -649,8 +650,8 @@ FY2025: 2,747.04 / 15,305.84 = 17.9477 percent
 
 ## 3.2 Effective tax rate, standalone
 
-QUOTE, PAGE 175 region, standalone Note No. 35 Ind AS 12 'Income Tax', "(a) Income
-Tax Expense / (i) Income Tax recognised in the statement of profit & loss account":
+QUOTE, PAGE 174, standalone Note No. 35:- Disclosure as per Ind AS 12 'Income Tax',
+"(a) Income Tax Expense / (i) Income Tax recognised in the statement of profit & loss account":
 
 | Particulars | For the Year ended 31st March 2026 | For the Year ended 31st March 2025 |
 |---|---|---|
@@ -698,8 +699,8 @@ accounting profit multiplied by India's domestic rate (Rs in Lakh)":
 
 (Label spellings "Depriciation", "1962" and "Disallownace" are the AR's own.)
 
-QUOTE, standalone Note 35 "(iii) Reconciliation of tax expense and accounting profit
-multiplied by India's domestic rate":
+QUOTE, PAGE 174, standalone Note 35 "(iii) Reconciliation of tax expense and
+accounting profit multiplied by India's domestic rate":
 
 | Particulars | For the year ended 31 March 26 | For the year ended 31 March 25 |
 |---|---|---|
@@ -735,7 +736,7 @@ NOT DISCLOSED. A search of the full annual report extraction for the strings
 "115BAB", "115BAA" and "115BA" returns zero hits. The place where such an election
 is normally disclosed is the Material Accounting Policies note on income taxes
 (Notes 1 to 3), whose text the AR omits, and the Ind AS 12 Income Tax note
-(consolidated Note 36, page 133; standalone Note 35). Neither Ind AS 12 note names
+(consolidated Note 36, page 133; standalone Note 35, page 174). Neither Ind AS 12 note names
 a section election. The reconciliation notes name only a rate, "Tax Rate 25.17%",
 without citing the statutory section that produces it.
 
@@ -748,9 +749,9 @@ alternate", "concessional" return zero hits.
 The only government incentive disclosed is a state capital subsidy taken through
 other income, not through tax:
 
-QUOTE, PAGE 130, consolidated Note No. 30 Other Income, line "RIPS Subsidy":
+QUOTE, PAGE 130, consolidated Note No. 26-: Other Income, line "RIPS Subsidy":
 FY2026 37.59; FY2025 45.53 (Rs in Lakh).
-QUOTE, PAGE 122, consolidated Note 13 Other Current Assets, line:
+QUOTE, PAGE 122, consolidated Note No. 11B :-Other Current Assets, line:
 "RIPS Subsidy Receivable  45.14  42.31" (Rs in Lakh, 31-Mar-2026 and 31-Mar-2025).
 
 COMMENT. RIPS is named only by its acronym. The AR does not expand it or state the
@@ -805,8 +806,8 @@ comprehensive income (OCI)":
 (expense)/Benefit 3.43  Net of Tax (16.01)" for 31st March 2026, and
 "18.02 / 4.42 / 22.44" for 31st March 2025.
 
-QUOTE, PAGE 141, consolidated Note 42 Ind AS 101 transition, sub note "(d) Deferred
-Tax":
+QUOTE, PAGE 141, consolidated Note No. 43. Disclosure as per Ind AS 101 'First Time
+Adoption of Ind AS' (note begins PAGE 138), sub note "(d) Deferred Tax":
 "Previous GAAP required deferred tax accounting using the income statement approach,
 which focuses on differences between taxable profits and accounting profits for the
 period. Ind AS 12 requires entities to account for deferred taxes using the balance
@@ -814,8 +815,8 @@ sheet approach ... The application of Ind AS 12 approach has resulted in recogni
 of deferred tax on new temporary differences which was not required under Previous
 GAAP."
 
-QUOTE, standalone Note 35 "(a)(i)" and the standalone deferred tax movement note,
-comparison figures only: standalone deferred tax expense FY2026 190.31, FY2025 16.59;
+QUOTE, PAGE 174, standalone Note 35 "(a)(i)" and the standalone deferred tax movement
+note, comparison figures only: standalone deferred tax expense FY2026 190.31, FY2025 16.59;
 standalone OCI tax FY2026 0.21 on a before-tax (0.85), FY2025 4.19 on a before-tax
 16.64.
 
@@ -878,10 +879,12 @@ QUOTE, PAGE 124, consolidated Note 16 c) Retained Earnings movement line:
 QUOTE, PAGE 118, Consolidated Cash Flow Statement, financing activities:
 "Dividend Paid  (220.34)  -"
 
-QUOTE, standalone Cash Flow Statement, financing activities:
+QUOTE, PAGE 161, Standalone Cash Flow Statement, financing activities:
 "Dividend Paid  (220.34)  -"
 
-QUOTE, Consolidated Statement of Changes in Equity:
+QUOTE, PAGE 119, Consolidated Statement of Changes in Equity (the page header there
+also misreads "STANDALONE STATEMENT OF CHANGES IN EQUITY", the same printing error
+flagged for page 123):
 "Dividend Paid  -  (220.34)  -  (220.34)"
 
 COMMENT. Rs 0.10 per share on 22,03,43,000 shares gives Rs 2,20,34,300, that is
@@ -1092,12 +1095,12 @@ is stated for the Company, not the Group.
 | Depreciation for Q1 FY2027 | NOT IN CORPUS (Q1 FY2027 results filing absent); screener shows 16.92 Rs crore AS SCREENER DATA | Q1 FY2027 results filing |
 | Tax for Q1 FY2027 | NOT IN CORPUS (Q1 FY2027 results filing absent); screener shows tax 9.48 Rs crore on PBT 47.50 Rs crore AS SCREENER DATA | Q1 FY2027 results filing |
 | CWIP split by project at 31-Mar-2026 | NOT DISCLOSED | Consolidated Note 5, page 120, and its ageing schedule. One undifferentiated line only |
-| Section 115BAB or 115BAA election | NOT DISCLOSED. Zero hits for "115BA" in the whole AR | Income tax accounting policy in Notes 1 to 3 (omitted), and Ind AS 12 note, consolidated Note 36 page 133 |
+| Section 115BAB or 115BAA election | NOT DISCLOSED. Zero hits for "115BA" in the whole AR | Income tax accounting policy in Notes 1 to 3 (omitted), and the Ind AS 12 notes, consolidated Note 36 page 133 and standalone Note 35 page 174 |
 | Any income tax incentive, holiday or MAT credit | NOT DISCLOSED. Zero hits | Same as above |
 | RIPS scheme terms | NOT DISCLOSED (the amounts ARE disclosed: other income 37.59 FY2026, receivable 45.14) | Government grants accounting policy in Notes 1 to 3 (omitted) |
 | Board resolution number for the FY2026 dividend decision | NOT DISCLOSED (the decision itself IS disclosed: no dividend) | Directors Report DIVIDEND section, page 54, carries the recommendation but no resolution number |
 | A single AR line labelled "total managerial remuneration" under Section 197 with the limit computation | NOT DISCLOSED | Directors Report or the auditor's report managerial-remuneration paragraph. Four separate scoped totals exist instead, all quoted in section 4.3 |
-| Individual FY2025 effect lines in the STANDALONE tax reconciliation | NOT DISCLOSED IN THIS EXTRACTION (column alignment lost). FY2025 total 192.41, rate 25.17%, tax-at-rate 168.03 are certain | Standalone Note 35 (iii) |
+| Individual FY2025 effect lines in the STANDALONE tax reconciliation | NOT DISCLOSED IN THIS EXTRACTION (column alignment lost). FY2025 total 192.41, rate 25.17%, tax-at-rate 168.03 are certain | Standalone Note 35 (iii), page 174 |
 
 ---
 

@@ -104,3 +104,56 @@ Known limits of this run, all recorded in the per-company manifests:
   it. Its manifest carries a calendar-year warning.
 - Cards ran 2,600 to 3,800 words against the framework's 1,400 to 1,900. Longer than
   specified, and flagged rather than trimmed.
+
+## Third run, 2026-09-11
+
+Four operator picks, screened in one session: Awfis Space Solutions, The Ugar Sugar Works,
+Venky's (India), KRM Ayurveda.
+
+Verdicts: PROCEED to a spear pass on AWFIS. WATCH on UGARSUGAR. PASS on VENKEYS as a
+transition alpha name, WATCH as a sum of the parts situation. PASS on KRMAYURVED.
+
+**Two constraints, not one.** As on 2026-09-08 the network policy denied the CONNECT to
+docs.bull-ai.in, BSE, screener.in and every rating agency site, so no PDF could be
+downloaded and the collector could not run. The corpus was again built from Bull AI's chunk
+reader on the operator's standing ruling; every card cites a file and a page, and the page
+numbers are the source PDF's own.
+
+New this run: Bull AI's `search_company_documents` tool returned "temporarily unavailable"
+on every call, for the whole session. Documents could be reached only by category and
+period, never by query. That is why no annual report appears in any of the four manifests:
+a 250 page report cannot be targeted without search, and blind paging is not affordable.
+The cost is concentrated and identical on all four cards: promoter holding, pledge, and the
+related party schedule are NOT FOUND everywhere. `list_document_availability`,
+`get_document_chunks` and `get_company_market_transactions` all worked normally.
+
+`get_company_market_transactions` partly filled the promoter gap and earns a place in the
+standard kit. It gave the Peak XV exit on AWFIS, promoter family buying on UGARSUGAR and
+KRMAYURVED, and confirmed that the only Venky's insider records are 2023 inter-promoter
+transfers.
+
+Bull AI budget: 840 calls remained at the start of the run on the 1,000 a month plan; about
+40 were used. The constraint is not binding.
+
+Known limits of this run, all recorded in the per-company manifests:
+- UGARSUGAR is the thinnest corpus the funnel has produced. Bull AI carries no results
+  filing, no transcript and no presentation for the company, in any year. The card runs
+  almost entirely on one CareEdge rating rationale, which happens to be an unusually good
+  document, and has no management voice at all.
+- VENKEYS has a freshness gap at the load-bearing point. The newest document is dated May
+  2026 and the June 2026 quarter is absent, in a name whose May call describes prices
+  falling as it speaks.
+- KRMAYURVED's earnings call transcript and its 31-Aug-2026 "Change in Management" filing
+  are both indexed and both return zero chunks. The same empty-document defect as last run.
+- The Bull AI reader returned invented content for two pages of the KRM presentation: a
+  Nairobi-headquartered agriculture profile on page 4 and an unrelated Bangalore contact
+  block on page 12. Recorded in the manifest, quoted nowhere. Read every reader page for
+  plausibility before citing it.
+- Cards ran 2,100 to 2,600 words against the framework's 1,400 to 1,900. Shorter than the
+  2,600 to 3,800 of the last run, still long, and flagged rather than trimmed.
+
+One framework note for the operator. AWFIS has no archetype in the CLAUDE.md library. The
+closest entry is the outsourcing partner, but the engine is a spread between a nine year
+rent commitment and a 26 month customer lock-in, which is nearer the LEVERED ANNUITY
+BUILDER archetype the operator declared for CLEANMAX. A ruling is needed before any Section
+1B work on flexible workspace.

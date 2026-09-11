@@ -1,0 +1,199 @@
+stage: B00-inputs
+company: TOTEM
+run_date: 2026-09-09
+model: orchestrator (stage 0 run inline by the orchestrator session)
+status: complete
+input_gaps:
+  - "rating: EMPTY. No credit rating report or rationale in the corpus. No public CRISIL/ICRA/CARE rationale was found for this name at intake. Pillar 2 cash conversion loses its rating-rationale evidence; the FLAG-CASH determination must rely on the AR inventory note, receivables ageing and the cash flow statement alone."
+  - "presentation: EMPTY. The company publishes no investor presentation. Stage 4 runs from the annual report alone; stage 7 loses the slide-anchored capex and utilisation evidence."
+  - "concalls: EMPTY BY DECLARATION, not a gap. manifest.concalls_available is false. The company holds no earnings calls. NO-CONCALL MODE applies: stage 5 runs degraded on AR MD&A, the Board's Report and the results filings, with credibility_grade defaulting to C."
+  - "peer-concalls: PARTIAL. 5 transcripts covering 2 of the 3 selected peers. KENNAMET has 4 (Mar-2023, May-2023, Jun-2023, Mar-2024; screener's list is stale, no FY26 or FY27 call). WENDT has 1. BIRLAPREC has ZERO transcripts. Stage 6 peer coverage is capped at 2 of 3 peers, and the newest KENNAMET call is 2.5 years older than the run date, so peer evidence on the current cycle rests on the single WENDT call."
+  - "research: EMPTY. No broker notes. No effect on anchored evidence (research is never anchored); the intent-and-action cross-check loses one lead source."
+  - "other: EMPTY."
+  - "peer annual reports and peer investor presentations were downloaded by the collector and then removed with its _download staging area. They were not staged into inputs/: the input contract has no peer-reports folder and inputs/other/ is preserved-never-consumed. Recorded so the operator can push them at Halt 1 if stage 6 coverage needs lifting."
+  - "inputs/results/FY27-Q1_Unaudited_Results_30Jun2026.pdf is a SCANNED image with zero extractable text. Its 4 pages are rendered to PNG at work/pages/FY27-Q1_Unaudited_Results_30Jun2026/page-0N.png. Any stage needing Q1 FY27 figures must Read those PNGs. This is a container limitation, not a filing defect."
+  - "pdftoppm is absent in this container, so the Read tool cannot render PDF pages. Every input PDF is pre-extracted to page-marked text under work/text/. Stages and verifiers read the .txt files; page markers carry the PDF page number so every anchor stays traceable to the source PDF."
+  - "screening: the collect_to_repo v3 empty-CSV defect IS present this run. Profit_Loss.csv, Balance_Sheet.csv, Cash_Flow.csv and Quarters.csv are empty formula shells for the subject and for all three peers. All usable screening data is in <TICKER>-Data_Sheet.csv, which is fully populated. Stage 1 initially read the empty shells, scored every peer-dependent moat test zero, and was re-invoked with the corrected pointer."
+  - "WENDT-Concall_Jul_2026_Transcript.pdf is misnamed by screener. The meeting date on page 1 is 21-07-2025, so it is the Q1 FY26 call. Anchor it as Q1 FY26, never as a July 2026 call."
+inventory:
+  prospectus:
+    count: 2
+    status: PRESENT
+    note: >
+      Demerger listing, not an IPO, so no DRHP/RHP exists. The
+      prospectus-equivalent foundational filings are staged: the Information
+      Memorandum dated 03-Jun-2024 (182 pages) and the NCLT Mumbai order
+      approving the Scheme of Arrangement (48 pages). listed_date 2024-06-11 is
+      within ~3 years of run_date, so the RECENTLY-LISTED PRIORITY applies and
+      these carry the promoter/group history and the restated pre-demerger
+      financials. NOT a HIGH gap: the documents are present.
+    files:
+      - inputs/prospectus/Information_Memorandum_2024.pdf
+      - inputs/prospectus/Court_Order_Scheme_of_Arrangement.pdf
+  annual-report:
+    count: 3
+    status: PRESENT
+    note: >
+      Three years held, one more than the contract 0-1. FY26 (Fourth Annual
+      Report 2025-26, 129p, filed 02-Jul-2026) is the PRIMARY document. FY25
+      (111p) and FY24 (105p, the first annual report, covering the demerger
+      accounting) carry the backward baseline. The full financial history is
+      only three years long: the company was incorporated in 2022 and the Scheme
+      took effect 01-Mar-2024, so pre-FY24 history exists only in the
+      Information Memorandum restated statements.
+    files:
+      - inputs/annual-report/Annual_Report_2026.pdf
+      - inputs/annual-report/Annual_Report_2025.pdf
+      - inputs/annual-report/Annual_Report_2024.pdf
+  results:
+    count: 3
+    status: PRESENT
+    files:
+      - inputs/results/FY27-Q1_Unaudited_Results_30Jun2026.pdf
+      - inputs/results/FY26_Audited_Results_31Mar2026.pdf
+      - inputs/results/FY26-Q3_Unaudited_Results_31Dec2025.pdf
+  rating:
+    count: 0
+    status: ABSENT
+  concalls:
+    count: 0
+    status: DECLARED ABSENT (concalls_available false)
+  peer-concalls:
+    count: 5
+    status: PARTIAL
+    coverage:
+      KENNAMET: 4
+      WENDT: 1
+      BIRLAPREC: 0
+  announcements:
+    count: 7
+    status: PRESENT
+    files:
+      - inputs/announcements/BM_Outcome_12Aug2026_Q1FY27.pdf
+      - inputs/announcements/BM_Outcome_30Oct2025_H1FY26.pdf
+      - inputs/announcements/Corrigendum_AR_FY2024-25.pdf
+      - inputs/announcements/Notice_of_EGM_09Jan2025.pdf
+      - inputs/announcements/Resignation_Senior_Managerial_Personnel_Apr2026.pdf
+      - inputs/announcements/Secretarial_Compliance_Report_FY2026.pdf
+      - inputs/announcements/Senior_Management_Personnel_01Aug2025.pdf
+  shareholding:
+    count: 3
+    status: PRESENT
+    note: >
+      Jun-2026 (latest), Mar-2026, Jun-2025. Closes the FII+DII UA qualifier and
+      gives the promoter pledge trend. Page 1 of each records NSE Symbol
+      NOTLISTED: the company is BSE-listed only.
+    files:
+      - inputs/shareholding/SHP_30Jun2026.pdf
+      - inputs/shareholding/SHP_31Mar2026.pdf
+      - inputs/shareholding/SHP_30Jun2025.pdf
+  research:
+    count: 0
+    status: ABSENT
+  screening:
+    count: 24
+    status: PRESENT
+    note: >
+      6 CSVs each for the subject (screener-*) and the three peers. CORRECTED
+      2026-09-09 after stage 1 reported peer data missing: the known collector
+      defect IS present. Profit_Loss.csv, Balance_Sheet.csv, Cash_Flow.csv and
+      Quarters.csv are EMPTY formula shells for the subject AND for all three
+      peers (screener's xlsx carries formulas that reference the data sheet;
+      CSV export drops them). The DATA_SHEET.csv files ARE fully populated and
+      are the only usable screening source: subject FY23-FY26 P&L, balance
+      sheet, cash flow and ten quarters to Jun-2026; KENNAMET FY17-FY26;
+      BIRLAPREC FY20-FY26; WENDT likewise. Every stage that needs screening
+      data must read <TICKER>-Data_Sheet.csv, never the other five.
+  presentation:
+    count: 0
+    status: ABSENT
+  other:
+    count: 0
+    status: ABSENT
+pdf_readability:
+  total_pdfs: 23
+  unreadable: 0
+  scanned_zero_text: 1
+  scanned_file: inputs/results/FY27-Q1_Unaudited_Results_30Jun2026.pdf
+  pre_extracted_text_dir: work/text/
+  rendered_page_dir: work/pages/
+freshness_pairs:
+  - pair: RESULTS to CONCALL
+    trigger_doc: inputs/results/FY27-Q1_Unaudited_Results_30Jun2026.pdf (Q1 FY27)
+    mate_expected: Q1 FY27 concall transcript
+    status: SKIPPED
+    missing_doc: ""
+    note: >
+      Skipped per the orchestrator rule: manifest.concalls_available is false.
+      The company holds no earnings calls, so the absence is declared, not a gap.
+  - pair: RATING BULLETIN to RATIONALE
+    trigger_doc: NONE - no rating bulletin in the corpus
+    mate_expected: full rating rationale
+    status: PASS
+    missing_doc: ""
+    note: >
+      No trigger document, so the pair cannot fail. The empty rating folder is
+      recorded separately as an input gap, not as a freshness failure.
+  - pair: SEBI ORDER to ORDER TEXT
+    trigger_doc: NONE - no SEBI order is referenced in any staged filing
+    mate_expected: SEBI order text
+    status: PASS
+    missing_doc: ""
+    note: >
+      Searched every pre-extracted text for adjudicating officer, show cause
+      notice, SEBI order and penalty imposed. No hits.
+  - pair: AR to LATEST AUDITED ANNUAL RESULTS
+    trigger_doc: inputs/results/FY26_Audited_Results_31Mar2026.pdf (year ended 31-Mar-2026)
+    mate_expected: annual report for FY2025-26
+    status: PASS
+    missing_doc: ""
+    note: >
+      inputs/annual-report/Annual_Report_2026.pdf is the Fourth Annual Report
+      2025-26 (p.1). Same year. The AR does not trail the latest audited annual
+      results.
+freshness_verdict: FRESHNESS PAIRS OK
+spear_gate:
+  status: SATISFIED
+  line: "Spear: OVERRIDE 2026-09-09 (operator standing ruling 2026-09-05: Step-1 intake replaces the web spear)"
+  source: companies/TOTEM.md
+load_bearing_facts:
+  - id: LBF-1
+    name: Q1 FY27 margin bridge
+    claim: >
+      Operating margin moved 16.1% to 22.9% year on year while raw-material cost
+      reportedly worsened 4.3 percentage points, employee cost fell 21.6% to
+      18.4% of sales and other expenses fell 30.6% to 22.5%.
+    verify_against: work/pages/FY27-Q1_Unaudited_Results_30Jun2026/page-0N.png
+  - id: LBF-2
+    name: The FY26 inventory build
+    claim: >
+      Inventory rose Rs 31.9 cr to Rs 56.4 cr in FY26; inventory days 146 to 255;
+      cash conversion cycle 91 to 152 days; CFO Rs 51 cr to Rs 28 cr.
+    verify_against: inputs/annual-report/Annual_Report_2026.pdf inventory note, ageing and cash flow statement
+  - id: LBF-3
+    name: Promoter pledge
+    claim: >
+      94.4% of the 73.85% promoter holding pledged as at June 2026; promoter is
+      Shapoorji Pallonji and Co. Identify the pledgee, the obligation secured,
+      and any guarantee or related-party exposure from the operating company.
+    verify_against: inputs/shareholding/ (3 filings) and the AR related-party note
+  - id: LBF-4
+    name: FY26 revenue basis and exceptional item
+    claim: >
+      Screener shows FY26 revenue Rs 251 cr; a third-party read shows Rs 241 cr
+      up 7.9%, with a Rs 5.9 cr pre-tax Labour Codes charge inside FY26 profit.
+    verify_against: inputs/results/FY26_Audited_Results_31Mar2026.pdf and inputs/annual-report/Annual_Report_2026.pdf
+company_memory: companies/TOTEM.md
+step1_brief: runs/totem-2026-09-09/step1-business-brief.md
+corpus_verdict: CORPUS CURRENT
+flags: []
+analyst_note: >
+  Three structural facts shape every downstream stage. First, the company holds
+  no earnings calls and publishes no investor presentation, so management intent
+  is only visible in the Board's Report and the MD&A: NO-CONCALL MODE is the
+  run's normal state, not a one-off degradation. Second, the operating history is
+  three years long because the demerger took effect 01-Mar-2024; the Information
+  Memorandum restated statements are the only route to a longer backward
+  baseline. Third, the single most decision-relevant filing in the corpus, the
+  Q1 FY27 result carrying the margin bridge, is a scanned image readable only
+  from the rendered PNGs.

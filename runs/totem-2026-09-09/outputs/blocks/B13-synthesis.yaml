@@ -1,0 +1,28 @@
+stage: B13-synthesis
+company: "TOTEM"
+run_date: "2026-09-09"
+model: claude-opus-4-8
+status: complete
+mode: PHASE 1 LITE
+verdict: "REWORK"
+verdict_rule_applied: 1
+verdict_basis: "phase-1 confidence delta overall 32, below the 60 threshold; orchestrator Section 5 and the Section 4 REWORK rule force REWORK regardless of company quality"
+flags_active: ["FLAG-PROMOTER", "FLAG-CASH", "FLAG-GATE0", "FLAG-RESTATEMENT", "FLAG-EMOAT-THIN", "FLAG-BASE-EFFECT", "FLAG-CLAIM-RECORD"]
+confidence_delta: {numerical: 100, redflag: 32, framework: 90.2, peer: 65, overall: 32}
+valuation_decision: ""
+entry_range: {low: 0, high: 0}
+headline: "Flat profit three years, capacity now installed"
+falsification_metric: "Q2 FY27 operating margin printing back near 16% on single digit revenue growth"
+monitorables_count: 8
+publish_candidate: false
+publish_candidate_summary: "No publish candidate this analysis."
+files_written:
+  - runs/totem-2026-09-09/outputs/final/business-narrative.md
+  - runs/totem-2026-09-09/outputs/final/gate-recommendation.md
+  - runs/totem-2026-09-09/outputs/final/verifier-summary.md
+notion_save:
+  page_title: ""
+  summary: ""
+  drive_link: ""
+  mode: append-never-overwrite-status
+  note: "Notion save is a phase-3 action; nothing is written from phase 1."

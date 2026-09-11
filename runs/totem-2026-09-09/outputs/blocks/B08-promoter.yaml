@@ -1,0 +1,57 @@
+stage: B08-promoter
+company: "TOTEM"
+run_date: "2026-09-09"
+model: claude-sonnet-5
+status: partial
+input_gaps:
+  - "Shareholding filings held cover only Jun-2025, Mar-2026, Jun-2026 (12-month pledge trend window)"
+  - "60+ zero-holding SP Group promoter-group entities named in shareholding filings not individually verified for struck-off/dormant status"
+  - "No SCORES portal access in this container; direct complaint-level search not run"
+  - "Employee-reputation search (Glassdoor/AmbitionBox) inconclusive, company-specific data not surfaced"
+  - "Individual director background/litigation searches beyond AR disclosure not run for Shroff, Jadhav, Mavani"
+flags:
+  - type: FLAG-PROMOTER
+    verdict: "CONCERN"
+    top_findings:
+      - "94.4% of the 73.85% promoter holding pledged (100% of SPCPL's own 69.71% direct stake), stable across all three filings held (Jun-2025, Mar-2026, Jun-2026); deal-breaker threshold (pledge >40%) triggered"
+      - "Pledge absent from all three annual reports (FY24, FY25, FY26) despite being named as a risk factor in the Jun-2024 Information Memorandum; not a clear technical LODR/AR-format violation, but a real disclosure-completeness gap"
+      - "Promoter group (SPCPL) under live, currently-downgraded (CareEdge B+, May-2026) group refinancing distress with slipping repayment deadlines through Jun-2026; pledgee identified as Catalyst Trusteeship Limited, part of a recurring group-wide collateral pattern (also used for Afcons Infrastructure share pledges)"
+      - "MD remuneration +74.7% FY25 to FY26 (Rs 265.52 lakh to Rs 464.00 lakh) against roughly flat PAT, unreconciled against the Board's Report's own 'average 7.5% KMP increase' and 'no exceptional circumstances' language"
+      - "Operating company (TOTEM) itself has a clean RPT book (no loans/ICDs/guarantees to promoter group), clean auditor record, and clean secretarial compliance"
+verdict: "CONCERN"
+scorecard: {clean: 2, caution: 7, red: 1}
+deal_breakers:
+  - "Pledge >40%: TRIGGERED (94.4% of promoter holding pledged, stable 3 quarters)"
+adverse_findings:
+  - {finding: "94.4% of promoter holding pledged, 100% of SPCPL's direct 69.71% stake, stable 3 quarters", evidence_tier: "VERIFIED", source: "shareholding__SHP_30Jun2026.txt / 31Mar2026.txt / 30Jun2025.txt, Table II", date: "2025-06-30 to 2026-06-30"}
+  - {finding: "Pledge disclosed as IPO risk factor but absent from all 3 annual reports", evidence_tier: "VERIFIED", source: "prospectus__Information_Memorandum_2024.txt p.16; Annual_Report_2024/2025/2026.txt (silent)", date: "2024-06 IM vs FY24-FY26 ARs"}
+  - {finding: "SEBI adjudication order against SPCPL, Rs 7 lakh penalty for LODR non-compliance on own NCDs", evidence_tier: "VERIFIED", source: "prospectus__Information_Memorandum_2024.txt p.90", date: "2023-08-30"}
+  - {finding: "SPCPL disputed tax exposure ~Rs 172 cr (direct + indirect) as of mid-2024", evidence_tier: "VERIFIED", source: "prospectus__Information_Memorandum_2024.txt p.152", date: "2024-06"}
+  - {finding: "3 operational-creditor NCLT petitions pending against SPCPL", evidence_tier: "VERIFIED", source: "prospectus__Information_Memorandum_2024.txt p.153", date: "2024-06"}
+  - {finding: "MD remuneration +74.7%, unreconciled against Board Report's stated 7.5% average KMP increase", evidence_tier: "VERIFIED", source: "Annual_Report_2026.txt Note 30 and Annexure II", date: "FY2025-26"}
+  - {finding: "Goswami Infratech (SP Group unit) NCD downgraded BB- to B+, repayment deadline slipping April to June 2026", evidence_tier: "MEDIA REPORTED", source: "Business Standard/MarketScreener/CareEdge via web search", date: "2026-05"}
+  - {finding: "PMLA case against SPCPL (2006-09 Nilesh Thakur matter) quashed by Supreme Court, resolved in SPCPL's favour", evidence_tier: "MEDIA REPORTED", source: "moneylife.in", date: "2026-08"}
+transition_evidence:
+  - "PARTIAL: SP Group executing group-level deleveraging via SWREL stake divestment, Afcons Infrastructure 2024 IPO monetisation, and planned Tata Sons stake monetisation post-listing — but no reduction in the TOTEM-specific pledge to date (stable 94.4% through Jun-2026)"
+pledge_pct_latest: 94.4
+pledge_trend: "stable - 35,967,172 shares pledged (94.4% of 73.85% promoter holding) unchanged across Jun-2025, Mar-2026, Jun-2026; 100% of SPCPL's own direct 69.71% stake pledged throughout, FCFL's 4.14% stake unpledged throughout"
+searches_performed:
+  - "Shapoorji Pallonji Company shares pledged Catalyst Trusteeship Forbes Precision Tools 2024 2025"
+  - "Shapoorji Pallonji Group debt refinancing 2024 2025 pledge shares Tata Sons"
+  - "SEBI LODR annual report disclosure promoter share pledge requirement regulation"
+  - "Shapoorji Pallonji Goswami Infratech bond default rating downgrade 2026"
+  - "Forbes Precision Tools Machine Parts TOTEM promoter pledge news"
+  - "Forbes and Company Limited demerger Precision Tools business rest of company 2024"
+  - "Forbes & Company Limited stock decline March 2025 real estate Vicinia news"
+  - "Shapoorji Pallonji Mistry family SEBI order PMLA ED enforcement directorate 2025 2026 (plus 2 refinements)"
+  - "'Forbes Precision' Glassdoor OR AmbitionBox employee reviews"
+  - "Shapoorji Pallonji Company Private Limited net worth debt FY2025 FY2026 losses"
+  - "WebFetch: moneylife.in SC/ED case article"
+searches_skipped:
+  - "Individual verification of 60+ zero-holding SP Group promoter-group entities (struck-off/dormant check) - time budget"
+  - "Direct SCORES complaint database query - no portal tool in this container"
+  - "Individual background/litigation search per non-executive director (Shroff, Jadhav, Mavani) - time budget"
+  - "Dedicated confirmation of D. Sivanandhan's former-Police-Commissioner background - inferred from AR skill-tags only"
+  - "Live 2026 check of Forbes & Company Limited's own current pledge status post-demerger"
+verdict_basis: "Operating company (TOTEM) has a clean RPT/auditor/secretarial record; verdict is driven by the promoter's near-total share pledge (94.4%, deal-breaker threshold triggered) against a live, currently-downgraded group refinancing crisis, compounded by an unreconciled 74.7% MD pay rise and the pledge's absence from 3 consecutive annual reports."
+analyst_note: "The pledge is a group-financing fact (Catalyst Trusteeship Limited, same trustee used for SP Group's Afcons Infrastructure pledges), not evidence of TOTEM-level misconduct - TOTEM sends zero loans/guarantees to the group. But it is the single largest overhang on the 73.85% controlling block, and the group crisis (CareEdge B+, slipping June-2026 deadlines) is live, not historical. The MD pay reconciliation gap is independently real: Note 30 lists the MD as a KMP, so Annexure II's '7.5% average, no exceptional circumstances' language sits awkwardly next to his own 74.7% rise. Treat both as position-size inputs, not kill triggers."

@@ -1,0 +1,57 @@
+company: Forbes Precision Tools & Machine Parts Ltd
+ticker: TOTEM
+cmp: 166.0
+market_cap_cr: 856.0
+run_date: 2026-09-09
+run_type: full
+concalls_available: false
+sector_cap_row: "Cables / Industrial products"
+listed_date: "2024-06-11"
+notes: >
+  Collected from screener.in by collect_to_repo.py v3 (--dry-run), then
+  repaired by the Step-1 intake per CLAUDE.md and LESSONS.md.
+  REPAIRS APPLIED 2026-09-09:
+  (1) sector_cap_row corrected from the collector's auto-pick
+      "Pharma / CDMO" to "Cables / Industrial products" (25x). Screener
+      classifies the name Industrials / Capital Goods / Industrial
+      Manufacturing / Industrial Products; the business is a branded
+      industrial consumable. The collector keyword map hit "capital" from
+      the Capital Goods label. Confirm the row in phase 3.
+  (2) listed_date added: 2024-06-11 (FY25 AR, Listing of Securities and
+      the Corporate Governance Report). Within ~3 years of run_date, so the
+      RECENTLY-LISTED PRIORITY applies. This was a demerger listing, not an
+      IPO: there is no DRHP/RHP. The prospectus-equivalent foundational
+      filings, the Information Memorandum dated 03-Jun-2024 and the NCLT
+      Court Order approving the Scheme of Arrangement, are staged in
+      inputs/prospectus/. inputs/prospectus/ is therefore NOT a gap.
+  (3) The collector staged only the main company's annual reports and the
+      peer concall transcripts. Primary filings it cannot reach were
+      downloaded by hand from the company IR site (forbesprecision.co.in)
+      into inputs/results/ (3), inputs/shareholding/ (3),
+      inputs/announcements/ (7), inputs/prospectus/ (2), plus the FY24
+      annual report.
+  (4) Peer annual reports and peer investor presentations downloaded by the
+      collector were left in _download/peers/ and NOT staged into inputs/.
+      The input contract has no peer-reports folder and inputs/other/ is
+      "preserved, never consumed". BIRLAPREC therefore has no transcript
+      and stage 6 peer coverage is 2 of 3 peers. Recorded as an input gap.
+  (5) inputs/results/FY27-Q1_Unaudited_Results_30Jun2026.pdf is a SCANNED
+      image with zero extractable text. Its 4 pages are rendered to PNG at
+      work/pages/FY27-Q1_Unaudited_Results_30Jun2026/page-0N.png. Stages
+      that need Q1 FY27 figures must Read those PNGs; the text pre-extract
+      for that file is empty by construction.
+  (6) Every input PDF is pre-extracted to page-marked text under work/text/
+      (LESSONS.md standing default: pdftoppm is absent in this container, so
+      the Read tool cannot render PDFs; stages read the .txt or the PNGs).
+  (7) inputs/rating/ is empty. No public credit rating rationale was found
+      for this name. This is a real gap for Pillar 2 cash-conversion
+      evidence and for the FLAG-CASH determination.
+  (8) WENDT-Concall_Jul_2026_Transcript.pdf is misnamed by screener: the
+      meeting date on page 1 is 21-07-2025, so it is the Q1 FY26 call, not
+      a July 2026 call. Stage 6 must anchor it as Q1 FY26.
+  PEERS: KENNAMET (carbide round tools, the destination comp),
+  WENDT (super-abrasives and precision grinding, size-matched consumable
+  tooling), BIRLAPREC (machine-tool accessories and tool holders, the low
+  end of the quality ladder). Rationale in step1-business-brief.md.
+  SPEAR: OVERRIDE 2026-09-09 recorded in companies/TOTEM.md per the
+  operator standing ruling of 2026-09-05.

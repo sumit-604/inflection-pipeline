@@ -28,6 +28,9 @@ input_gaps:
   - type: announcements-thin
     severity: MEDIUM
     note: "1 file, a 2-page Reg 30 AR-weblink letter with no material-event content. Documented-ACTION record effectively absent."
+  - type: presentation-misdated-at-stage-0
+    severity: MEDIUM
+    note: "CORRECTED 2026-09-11. Stage 0 dated the investor presentation Jul-2026 from an internal order-book table. Its Reg 30 covering letter is dated 21-Aug-2026 and it is the Q1 FY2027 deck for the quarter ended 30-Jun-2026, carrying a Q1FY27 results table on page 12. The error propagated to stages 4, 7, 9, the 09b dossier and the 2026-09-11 extraction task messages."
   - type: peer-concalls-partial
     severity: LOW
     note: "11 of 12. WEBELSOLAR has 3 (no Nov-2025 call); WAAREEENER and PREMIERENE have 4 each."

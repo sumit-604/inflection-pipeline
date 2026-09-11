@@ -279,6 +279,49 @@ from Rs 70.07cr to Rs 38.02cr and the parent posted a loss would then have gone
 undiscussed with analysts entirely. This is a question for the exchange filings,
 not for this container.
 
+## 0.11 CORRECTION — 2026-09-11: THE INVESTOR PRESENTATION IS THE Q1 FY2027 DECK
+
+Stage 0 mis-dated the investor presentation and the error propagated through the
+run, including into the 09b Halt 1 dossier and into several extraction task
+messages. Corrected here.
+
+**What stage 0 recorded:** "One presentation held, dated Jul-2026 per its own
+slide 25 order-book table."
+
+**What the document actually is:** `inputs/presentation/Investor_Presentation_1.pdf`
+opens with a SEBI Regulation 30 covering letter dated **21st August 2026**
+enclosing "the Investor Presentation on Un-Audited Financial Results (Standalone
+and Consolidated) of the Company for the quarter ended 30th June, 2026"
+(extraction page 1). Its running header reads "Investor Presentation | August
+2026". It is the **Q1 FY2027 investor presentation**.
+
+**Why the error happened:** stage 0 took the date from an order-book table deep
+in the deck rather than from the covering letter on page 1.
+
+**What it changes.** The corpus was never blind to Q1 FY2027 management
+commentary. It held the Q1 FY2027 deck the whole time. Page 12 carries a Q1
+FY2027 results table: total revenue Rs 745.40cr against Rs 362.94cr, up 105.37
+percent; EBITDA Rs 76.87cr against Rs 57.81cr; EBITDA margin 10.31 percent
+against 15.93 percent, down 562 basis points; depreciation Rs 16.92cr against
+Rs 2.79cr; finance cost Rs 12.44cr against Rs 2.97cr.
+
+The Rs 745.40cr total revenue reconciles to the Q1 FY2027 filing added on
+2026-09-11: total income there is Rs 74,540.41 lakh. Revenue from operations
+alone is Rs 74,069.83 lakh, Rs 740.70cr, which is the screener figure. The two
+are consistent and measure different lines.
+
+**What it does NOT change.** The freshness verdict stands at CORPUS
+GAPPED-FRESHNESS. An investor presentation is not an earnings call transcript,
+and the concall mate of the results filing is still absent. The deck also
+carries no MW volumes, no realisation per watt and no DCR split, so the
+operating-detail gap the run flagged is real.
+
+**Downstream effect to watch.** Stages 4, 7 and 9 and the 09b dossier were each
+told the presentation was dated Jul-2026. Any citation of theirs that leans on
+that date is mis-dated by about six weeks. The content they quoted is unchanged.
+Extraction prompts 1 through 7 issued on 2026-09-11 carried the same wrong date
+in their task messages.
+
 ```yaml
 stage: B00-inputs
 company: INA
@@ -310,6 +353,9 @@ input_gaps:
   - type: announcements-thin
     severity: MEDIUM
     note: "1 file, a 2-page Reg 30 AR-weblink letter with no material-event content. Documented-ACTION record effectively absent."
+  - type: presentation-misdated-at-stage-0
+    severity: MEDIUM
+    note: "CORRECTED 2026-09-11. Stage 0 dated the investor presentation Jul-2026 from an internal order-book table. Its Reg 30 covering letter is dated 21-Aug-2026 and it is the Q1 FY2027 deck for the quarter ended 30-Jun-2026, carrying a Q1FY27 results table on page 12. The error propagated to stages 4, 7, 9, the 09b dossier and the 2026-09-11 extraction task messages."
   - type: peer-concalls-partial
     severity: LOW
     note: "11 of 12. WEBELSOLAR has 3 (no Nov-2025 call); WAAREEENER and PREMIERENE have 4 each."

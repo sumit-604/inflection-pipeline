@@ -8,8 +8,8 @@ input_gaps:
     severity: HIGH
     note: "IPO FY2022-23 on BSE SME; main-board listing 09-Mar-2026. Pre-IPO restated financials and full promoter/group map unavailable elsewhere. Backward series starts FY2022."
   - type: results
-    severity: HIGH
-    note: "0 of 2-3 PDFs. Q1FY27 print (QE 30-Jun-2026) exists per screener but no filing in corpus."
+    severity: MEDIUM
+    note: "RESOLVED 2026-09-11: Q1FY27 results filing (board outcome 12-Aug-2026, QE 30-Jun-2026) added by operator. 1 of 2-3 PDFs. Scanned/OCR document; digits need arithmetic cross-check. Q2FY27 and earlier quarterly filings still absent."
   - type: rating
     severity: MEDIUM
     note: "0 PDFs. No rating rationale for the FY26 borrowing step-up (Rs 108cr to Rs 888cr)."
@@ -41,8 +41,8 @@ freshness_pairs:
   - pair: "results-to-concall"
     trigger_doc: "Q1FY27 print (QE 30-Jun-2026) evidenced in screener-Data_Sheet.csv"
     mate_expected: "Q1FY27 results filing and Q1FY27 earnings call transcript"
-    status: FAIL
-    missing_doc: "Q1FY27 results filing (QE 30-Jun-2026) and its concall transcript"
+    status: PARTIAL
+    missing_doc: "Q1FY27 earnings call transcript (the results filing was added 2026-09-11; the concall mate is still absent)"
   - pair: "rating-bulletin-to-rationale"
     trigger_doc: "none"
     mate_expected: "n/a"

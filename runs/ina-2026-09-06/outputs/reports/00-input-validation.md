@@ -215,6 +215,70 @@ carries no prior thesis, no decision status, no tripwires and no prior run. Ther
 is no prior-run context: this is the first pipeline run on INA. Nothing in it is
 evidence.
 
+---
+
+## 0.10 CORPUS ADDENDUM — 2026-09-11: Q1FY27 RESULTS FILING ADDED
+
+The operator supplied the Q1 FY2027 results filing on 2026-09-11. It is now in
+the corpus at `inputs/results/Q1FY27_Results_BoardOutcome_2026-08-12.pdf` and
+extracted to `work/extracted/results__Q1FY27_Results_BoardOutcome_2026-08-12.txt`.
+
+**What it is.** A 14-page Regulation 30 board-meeting outcome letter dated
+12-August-2026, covering the quarter ended 30-June-2026. It carries the
+consolidated statement of financial results, the standalone statement, the
+limited review reports of ARS & Co., and an annexure on a director appointment.
+Auditor named: ARS & Co.
+
+**READABILITY WARNING, carried on every downstream use.** This is a SCANNED
+document with an OCR text layer, unlike every other PDF in this corpus. Digits
+are misread in places: the consolidated profit-before-tax line reads as both
+"374997" and "174997" at two points in the same table where the true figure is
+Rs 4,749.97 lakh. Any figure taken from this document must be cross-checked by
+internal arithmetic before use. `tesseract` is not available in this container,
+so the embedded OCR layer cannot be improved. Two extractions exist: the
+page-marked pypdf text above, and a layout-preserving `pdftotext` pass at
+`/tmp/.../scratchpad/q1fy27_layout.txt`, which resolves the tables better.
+
+**Two figures verified by arithmetic at stage 0, because both were open questions.**
+
+1. Q1FY27 consolidated profit. Profit for the period is Rs 3,802.46 lakh
+   (Rs 38.02cr). Profit attributable to owners of the Company is Rs 3,703.64
+   lakh (Rs 37.04cr). Non-controlling interests take Rs 98.82 lakh. The
+   screener figure of Rs 37.04cr this run carried is therefore the OWNERS line,
+   not total profit. Both are correct; they are different lines. PBT
+   Rs 4,749.97 lakh less total tax Rs 947.51 lakh equals Rs 3,802.46 lakh,
+   which closes the arithmetic.
+2. Q1FY27 standalone result. The standalone statement shows a LOSS of
+   Rs (291.05) lakh for the quarter, against Rs (180.60) lakh in the quarter
+   ended 31-March-2026. The listed parent is loss-making for a second
+   consecutive quarter while the group reports a profit.
+
+### Freshness pair re-check
+
+Pair 1 (results-to-concall) moves from FAIL to PARTIAL. The trigger document,
+the Q1FY27 results filing, is now IN the corpus. Its mate, the Q1FY27 earnings
+call transcript, is still absent.
+
+`freshness_verdict` stays **CORPUS GAPPED-FRESHNESS**. The pair is not closed
+until both halves are held. The gate recommendation's cap at PROCEED WITH
+CAVEATS therefore stands, and the missing mate named first in
+`outputs/final/gate-recommendation.md` changes from two documents to one: the
+Q1FY27 earnings call transcript alone.
+
+### Open question the operator should settle on the exchanges
+
+Bull AI returned a complete, untruncated Earnings Call map for INA on
+2026-09-11. It lists exactly one Earnings Call Transcript in the company's
+entire history: FY2026 Q4, uploaded 01-June-2026. It also lists two Q1 FY2027
+"Earnings Call Intimation/Outcome" filings dated 11-June-2026, which are
+intimations rather than transcripts. No Q1FY27 transcript appears.
+
+Either the transcript is not yet indexed, or **no Q1 FY2027 earnings call was
+held**. The second reading would matter: the quarter in which group profit fell
+from Rs 70.07cr to Rs 38.02cr and the parent posted a loss would then have gone
+undiscussed with analysts entirely. This is a question for the exchange filings,
+not for this container.
+
 ```yaml
 stage: B00-inputs
 company: INA
@@ -226,8 +290,8 @@ input_gaps:
     severity: HIGH
     note: "IPO FY2022-23 on BSE SME; main-board listing 09-Mar-2026. Pre-IPO restated financials and full promoter/group map unavailable elsewhere. Backward series starts FY2022."
   - type: results
-    severity: HIGH
-    note: "0 of 2-3 PDFs. Q1FY27 print (QE 30-Jun-2026) exists per screener but no filing in corpus."
+    severity: MEDIUM
+    note: "RESOLVED 2026-09-11: Q1FY27 results filing (board outcome 12-Aug-2026, QE 30-Jun-2026) added by operator. 1 of 2-3 PDFs. Scanned/OCR document; digits need arithmetic cross-check. Q2FY27 and earlier quarterly filings still absent."
   - type: rating
     severity: MEDIUM
     note: "0 PDFs. No rating rationale for the FY26 borrowing step-up (Rs 108cr to Rs 888cr)."
@@ -259,8 +323,8 @@ freshness_pairs:
   - pair: "results-to-concall"
     trigger_doc: "Q1FY27 print (QE 30-Jun-2026) evidenced in screener-Data_Sheet.csv"
     mate_expected: "Q1FY27 results filing and Q1FY27 earnings call transcript"
-    status: FAIL
-    missing_doc: "Q1FY27 results filing (QE 30-Jun-2026) and its concall transcript"
+    status: PARTIAL
+    missing_doc: "Q1FY27 earnings call transcript (the results filing was added 2026-09-11; the concall mate is still absent)"
   - pair: "rating-bulletin-to-rationale"
     trigger_doc: "none"
     mate_expected: "n/a"

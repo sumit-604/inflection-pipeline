@@ -157,3 +157,32 @@ closest entry is the outsourcing partner, but the engine is a spread between a n
 rent commitment and a 26 month customer lock-in, which is nearer the LEVERED ANNUITY
 BUILDER archetype the operator declared for CLEANMAX. A ruling is needed before any Section
 1B work on flexible workspace.
+
+### Third run, addendum: AUROIMPEX attempted and blocked
+
+The operator added Auro Impex & Chemicals Ltd to the same batch. No card was written,
+because no document could be reached.
+
+Identity resolved: NSE symbol AUROIMPEX, series SM on the Emerge SME platform, ISIN
+INE0NUL01018, no BSE listing, incorporated 1994 at Kolkata, part of the Auro Group.
+
+Both collection routes were closed. Bull AI does not index the scrip: `search_companies`
+finds nothing for the name, the symbol or the ISIN, and `list_document_availability` returns
+"No listed company was found". Bull AI does carry other SME names, including KRMAYURVED in
+this same run, so this is a per-scrip coverage gap rather than a blanket SME exclusion. The
+second route, a direct fetch, fails on the same 403 that blocks every other data host in
+this environment.
+
+Cloud search was used for the one thing the funnel rule allows, finding which documents
+exist and where. It found a complete document set on the company's own investor site,
+including annual reports for FY2023 through FY2026 and the 2023 Red Herring Prospectus, plus
+three filings in the NSE archive. Every URL is recorded in
+`screens/corpus/AUROIMPEX/MANIFEST.md` as a lead, unfetched and unread. No number from a
+search snippet entered the repository.
+
+`screens/corpus/AUROIMPEX/` therefore holds a collection ledger and nothing else, and
+`screens/cards/` deliberately has no AUROIMPEX entry. A card means a company was read.
+
+One constraint the ledger flags for whoever collects it: this company reports half-yearly,
+not quarterly, under the SME regime. Two observation points a year, not four. The trailing
+four quarters weighting in CLAUDE.md needs an operator decision before the read starts.

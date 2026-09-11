@@ -1,0 +1,68 @@
+[
+  {
+    "index": 1,
+    "agency": "IndiaRatings",
+    "url": "https://www.indiaratings.co.in/pressrelease/85089",
+    "link_text": "Rating update 3 Sep from fitch",
+    "kind": "shell",
+    "status": 200
+  },
+  {
+    "index": 2,
+    "agency": "CRISIL",
+    "kind": "html+txt",
+    "link_text": "Rating update 30 Jun from crisil",
+    "url": "https://www.crisil.com/mnt/winshare/Ratings/RatingList/RatingDocs/ValiantLaboratoriesLimited_June 30_ 2026_RR_396321.html",
+    "file": "02-CRISIL.html",
+    "status": 200,
+    "bytes": 102531
+  },
+  {
+    "index": 3,
+    "agency": "CRISIL",
+    "kind": "html+txt",
+    "link_text": "Rating update 18 Nov 2025 from crisil",
+    "url": "https://www.crisil.com/mnt/winshare/Ratings/RatingList/RatingDocs/ValiantLaboratoriesLimited_November 18_ 2025_RR_382661.html",
+    "file": "03-CRISIL.html",
+    "status": 200,
+    "bytes": 60670
+  },
+  {
+    "index": 4,
+    "agency": "CRISIL",
+    "kind": "pdf",
+    "link_text": "Rating update 10 Oct 2025 from crisil",
+    "url": "https://www.crisil.com/mnt/winshare/Ratings/RatingList/RatingDocs/Valiant Laboratories Limited-RU-10-10-2025.pdf",
+    "file": "04-CRISIL.pdf",
+    "status": 200,
+    "bytes": 518271
+  },
+  {
+    "index": 5,
+    "agency": "IndiaRatings",
+    "url": "https://www.indiaratings.co.in/pressrelease/77370",
+    "link_text": "Rating update 25 Jun 2025 from fitch",
+    "kind": "shell",
+    "status": 200
+  },
+  {
+    "index": 6,
+    "agency": "CRISIL",
+    "kind": "html+txt",
+    "link_text": "Rating update 18 Feb 2025 from crisil",
+    "url": "https://www.crisil.com/mnt/winshare/Ratings/RatingList/RatingDocs/ValiantLaboratoriesLimited_February 18_ 2025_RR_363373.html",
+    "file": "06-CRISIL.html",
+    "status": 200,
+    "bytes": 81283
+  },
+  {
+    "index": 7,
+    "agency": "BSE-announcement",
+    "kind": "pdf",
+    "link_text": "Announcement under Regulation 30 (LODR)-Credit Rating 3 Sep - Ind-Ra assigned IND BBB/Stable and IND A2 ratings to INR 560 million bank loan facilities.",
+    "url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=ba23aaf9-ba4b-4e8f-9499-9f3d8cfa0cf7.pdf",
+    "file": "07-BSE-announcement.pdf",
+    "status": 200,
+    "bytes": 334678
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "index": 1,
+    "agency": "CRISIL",
+    "kind": "html+txt",
+    "link_text": "Rating update 16 Apr from crisil",
+    "url": "https://www.crisil.com/mnt/winshare/Ratings/RatingList/RatingDocs/ASMTechnologiesLimited_April 16_ 2026_RR_388449.html",
+    "file": "01-CRISIL.html",
+    "status": 200,
+    "bytes": 141199
+  },
+  {
+    "index": 2,
+    "agency": "CRISIL",
+    "kind": "html+txt",
+    "link_text": "Rating update 28 Jul 2025 from crisil",
+    "url": "https://www.crisil.com/mnt/winshare/Ratings/RatingList/RatingDocs/ASMTechnologiesLimited_July 28_ 2025_RR_361603.html",
+    "file": "02-CRISIL.html",
+    "status": 200,
+    "bytes": 117832
+  },
+  {
+    "index": 3,
+    "agency": "CRISIL",
+    "kind": "html+txt",
+    "link_text": "Rating update 8 Jul 2024 from crisil",
+    "url": "https://www.crisil.com/mnt/winshare/Ratings/RatingList/RatingDocs/ASMTechnologiesLimited_July 08_ 2024_RR_346652.html",
+    "file": "03-CRISIL.html",
+    "status": 200,
+    "bytes": 117683
+  },
+  {
+    "index": 4,
+    "agency": "ICRA",
+    "kind": "html+txt",
+    "link_text": "Rating update 3 Apr 2024 from icra",
+    "url": "https://www.icra.in/Rationale/ShowRationaleReport/?Id=126786",
+    "file": "04-ICRA.html",
+    "status": 200,
+    "bytes": 166077
+  },
+  {
+    "index": 5,
+    "agency": "ICRA",
+    "kind": "html+txt",
+    "link_text": "Rating update 23 Feb 2024 from icra",
+    "url": "https://www.icra.in/Rationale/ShowRationaleReport/?Id=125716",
+    "file": "05-ICRA.html",
+    "status": 200,
+    "bytes": 166078
+  },
+  {
+    "index": 6,
+    "agency": "ICRA",
+    "kind": "html+txt",
+    "link_text": "Rating update 27 Jul 2023 from icra",
+    "url": "https://www.icra.in/Rationale/ShowRationaleReport/?Id=121217",
+    "file": "06-ICRA.html",
+    "status": 200,
+    "bytes": 166078
+  }
+]

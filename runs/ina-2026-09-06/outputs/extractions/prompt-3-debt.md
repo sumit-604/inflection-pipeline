@@ -68,8 +68,10 @@ Current Borrowings (standalone):
 > 1,824.37  1,726.35 ... Total (A+B)  1,761.31  2,422.01  2,786.65"
 
 Comment. Standalone gross borrowing at 31-Mar-2026 = 3,425.07 + 1,761.31 =
-5,186.38 lakh. Cross-check quote, same file, PAGE 178 area, standalone
-financial instruments row: "Borrowings 3,430.76-2,422.01-5,186.38-".
+5,186.38 lakh. Cross-check quote, same file, PAGE 185, standalone financial
+instruments category table: "Borrowings 3,430.76-2,422.01-5,186.38-". The
+AR prints these three in reverse date order too: 3,430.76 (1-Apr-2024),
+2,422.01 (31-Mar-2025), 5,186.38 (31-Mar-2026).
 
 ---
 
@@ -845,10 +847,10 @@ Label. This is a passing mention inside the Corporate Governance Report of
 the FY2026 annual report. It is not a rating rationale. It carries no rating
 date, no rated instrument detail beyond the facility class, no key rating
 drivers, no outlook commentary and no rated-amount reconciliation to the
-borrowings notes. The rated amounts (Rs 16.00 crore and Rs 24.00 crore, Rs
-40.00 crore in total) cover a small fraction of the Rs 834.80 crore of
-consolidated borrowing filed at 31-Mar-2026. The AR does not explain that
-gap.
+borrowings notes. The rated amounts are Rs 16.00 crore and Rs 24.00 crore, Rs
+40.00 crore in total. Consolidated borrowing filed at 31-Mar-2026 is Rs
+83,479.67 lakh. The rated amount covers a small fraction of it. The AR does
+not explain that gap.
 
 Passing mention 2. Quote, same file, PAGE 54, Directors' Report, "CREDIT
 RATING":

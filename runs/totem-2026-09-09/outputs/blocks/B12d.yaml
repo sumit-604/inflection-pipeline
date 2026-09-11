@@ -1,0 +1,33 @@
+stage: B12d
+company: "TOTEM"
+run_date: "2026-09-09"
+model: claude-sonnet-5
+status: complete
+verification_cycle: 3
+peers_audited: 3
+peers_provided_with_transcripts: 2
+peer_utilisation: 65
+peer_utilisation_note: "citation fidelity is high, about 28 of 30 spot checks clean, but coverage and verdict-discipline completeness has real, repeated gaps; blended judgment, methodology stated in the report"
+substantive_confirmed: 2
+substantive_unsupported: []
+unused_but_relevant:
+  - {peer: "KENNAMETAL INDIA", missed_item: "the Mar-2024 p.24 market-share answer is quoted only for its opening refusal; the same answer discloses a quantified 250-300 basis point market-share gain over three years, never surfaced anywhere and never used to answer stage 5's market-share peer question", anchor: "Mar-2024 call, p.24"}
+  - {peer: "KENNAMETAL INDIA", missed_item: "tungsten prices fell 8-9% (Mar-2024), relevant to stage 5's raw-material-spike question, quoted inside another answer but never read back against that claim", anchor: "Mar-2024 call, p.19"}
+  - {peer: "WENDT INDIA", missed_item: "market share disclosed as ranging from low single digit to 68% by segment, and defence and aerospace revenue mix disclosed as low single digits of total sales; both unused, and the second directly contradicts stage 6's own claim that peers never quantify defence demand with a percentage", anchor: "AGM p.23"}
+claims_all_addressed: false
+claims_all_addressed_note: "stage 5's market-share peer question receives no verdict anywhere; two more of its five questions are answered only as narrative, not as Part 1 verdict rows; stage 6's own count of seven questions does not match the five in the current B05"
+verdict_discipline_fails:
+  - {claim: "the export claim graded CONTRADICTED", issue: "rests on one peer with a company-specific, TOTEM-unrelated cause. The report's defence is coherent in the abstract but does not address that TOTEM's own FOB data already establishes the same direction more directly, nor that this single-peer finding is repeatedly billed as the run's single most consequential result"}
+findings:
+  - {severity: "MAJOR", location: "06-peers.md Part 2E and the Mar-2024 coverage-map row", finding: "the Kennametal market-share answer at p.24 is quoted only for its refusal; the 250-300 basis point gain figure in the same answer is dropped"}
+  - {severity: "MAJOR", location: "Wendt AGM p.23, unused", finding: "the market-share range and the defence and aerospace revenue-mix quantification are never surfaced, and the second contradicts stage 6's own claim that peers never quantify defence demand"}
+  - {severity: "MAJOR", location: "06-peers.md against B05-concall.yaml peer_questions", finding: "stage 6 claims seven peer questions; the current B05 carries five. One, on market share, is unverdicted; two are answered only as narrative"}
+  - {severity: "MAJOR", location: "06-peers.md coverage map, Jun-2023 row, and B06-peers.yaml", finding: "the investor-presentation-decline quote is attributed to the Jun-2023 call at p.27-28; that transcript has only 22 pages. The same quote is correctly anchored at Mar-2023 p.27-28 elsewhere in the same report"}
+  - {severity: "MAJOR", location: "06-peers.md Part 4 and analyst note", finding: "the CONTRADICTED verdict-discipline defence is incomplete; see verdict_discipline_fails"}
+  - {severity: "MINOR", location: "06-peers.md Q7 evidence field", finding: "the tungsten price-fall datapoint at Mar-2024 p.19 is not read back against stage 5's raw-material-spike question"}
+  - {severity: "MINOR", location: "B06-peers.yaml partially_verified", finding: "Wendt is listed as a supporting peer for the capex-payback benchmark despite supplying no payback figure of its own"}
+  - {severity: "MINOR", location: "06-peers.md Part 2C", finding: "the product-coverage caveat is not restated when the austempering-furnace capex is folded into the Kennametal-based industry-wide capex-race read"}
+critical_count: 0
+major_count: 5
+minor_count: 3
+acceptance_rate: 65

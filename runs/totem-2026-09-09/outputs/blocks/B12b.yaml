@@ -1,0 +1,59 @@
+stage: B12b
+company: "TOTEM"
+run_date: "2026-09-09"
+model: claude-opus-4-8
+status: complete
+verification_cycle: 3
+independent_flags_found: 47
+caught: 15
+partially_caught: 8
+missed:
+  - {severity: "CRITICAL", item: "FY26 MD&A calls exports a 'stable trend' while FOB exports fell 15.9% (Rs 3,791.05L to Rs 3,189.46L); with the FY25 'improving trend' claim this is the export direction stated backwards in two consecutive reporting periods, disclosed correctly only in the s.134(3)(m) annexure", anchor: "AR2026 p.25 vs p.42; AR2025 p.19 vs p.33; AR2024 p.29"}
+  - {severity: "MAJOR", item: "MD&A blames the 33.46% interest-coverage fall on 'availed borrowing facilities to meet its working capital requirements'; CARO Annexure A (ii)(b) in the same AR states 'the company has not been sanctioned a working capital facility', and total borrowings FELL Rs 1,968.29L to Rs 1,487.07L", anchor: "AR2026 p.26 vs p.63 vs p.27"}
+  - {severity: "MAJOR", item: "Annexure II s.197(12) states KMP remuneration rose 'average 7.5%'; note 30 shows KMP Rs 361.34L to Rs 566.11L (+56.7%) and MD Rs 265.52L to Rs 464.00L (+74.7%), 105.65x median, 16.1% of PAT, in a year PAT rose 0.1%", anchor: "AR2026 p.37 vs p.110 and p.108"}
+  - {severity: "MAJOR", item: "Permanent headcount fell 481 to 420 (-12.7%, -61 people); the HR narrative says relations were 'very cordial' and never states the number, which appears only where the Act forces it", anchor: "AR2026 p.37 and p.28; AR2025 Annexure II"}
+  - {severity: "MAJOR", item: "R&D expenditure disclosed as Nil directly beneath two paragraphs of R&D narrative; Wendt discloses R&D at 2.6% of sales with a DSIR-recognised centre", anchor: "AR2026 p.42 and p.41; WENDT p.10, p.21"}
+  - {severity: "MAJOR", item: "Inventory turnover, current ratio, debt-equity and net profit margin all omitted from the SEBI Schedule V ratio table; inventory turnover is the one ratio that would have forced a 25%-plus explanation of the FY26 build, and the CG certificate and Secretarial Compliance Report certify clean over the gap", anchor: "AR2026 p.26; AR2025 p.20; AR2026 p.56"}
+  - {severity: "MAJOR", item: "MSME trade payables rose 93.1% (Rs 741.30L to Rs 1,431.62L), MSME share of trade payables 31.7% to 44.2%, in the same year inventories rose Rs 2,449L; filed evidence bearing on the inventory-funding question stage 5 declares unresolved", anchor: "AR2026 p.69; MSMED note p.100"}
+  - {severity: "MAJOR", item: "CFO fell 46.3% (Rs 5,131.62L to Rs 2,755.29L); FCF about Rs 917L against Rs 2,531.03L dividend paid, that is 2.8x, bridged by Rs 4,522.62L of mutual-fund sales; CFO/PAT 1.79x to 0.96x. Stage 5 said it could not reconstruct FCF from the results-filing extraction; the clean statement is in the annual report it read", anchor: "AR2026 p.71-72, p.68"}
+  - {severity: "MAJOR", item: "About Rs 724L of FY26 expense flowed to promoter-group entities, roughly 18% of PBT, including Rs 122.95L repairs and maintenance and Rs 93.04L legal and professional to the holding company, against the Board's Report statement that there were no material related-party transactions", anchor: "AR2026 note 30 p.108 vs p.29"}
+  - {severity: "MAJOR", item: "Capex payoff walked back from 'yielded substantial returns and reduced our dependencies on third parties supplies' to 'benefits on the quality front... we expect the market to reward us with larger volumes in the near future'; the dependency claim is falsified by processing charges +24.8% against revenue +7.9%", anchor: "AR2025 p.19 vs AR2026 p.26 and note 27 p.104"}
+  - {severity: "MAJOR", item: "No geographic revenue split and no major-customer disclosure; note 38 says the principal geographical area is India while FOB exports are 12.7% of revenue. Both peers disclose revenue and margin by vertical", anchor: "AR2026 p.126, note 21 p.101; WENDT p.9"}
+  - {severity: "MAJOR", item: "The Q1 FY27 margin gain is a soft-base artifact: Q1 FY26 PBT margin 9.7% was FY26's trough (Q2 17.5%, Q3 12.5%, Q4 21.6%), and Q1 FY27's 17.6% is four points BELOW Q4 FY26. On a consistent basis the gain over the FY26 full year is 1.8pp, not 6.8pp", anchor: "Q1 FY27 rendered p.3; Q3 FY26 filing p.4; H1 FY26 filing p.4"}
+  - {severity: "MAJOR", item: "Q1 FY27 net material cost 36.1% of revenue against 32.2% in FY26 (+430bp) while other expenses FELL 5% in absolute terms on revenue +28.9%; that line is the arithmetic driver of the year-on-year margin gain and is covered only by a boilerplate regrouping note", anchor: "Q1 FY27 rendered p.3 and p.4"}
+  - {severity: "MAJOR", item: "Wendt's exports GREW 19% year on year in Q1 FY26 (Apr-Jun 2025), the only in-window peer export datapoint, opposite in direction to TOTEM's FY26 -15.9%; stage 6 cites the figure elsewhere but never deploys it in the tariff question it rules UNVERIFIABLE", anchor: "WENDT p.6"}
+  - {severity: "MINOR", item: "CSR Annexure I item 7 (unspent CSR of the preceding three years) filled 'Not Applicable' when FY25 had Rs 39.78L unspent and spent in FY26", anchor: "AR2026 p.35 vs note 27 Note 1 p.105"}
+  - {severity: "MINOR", item: "Three inconsistent counts of years of full operation: MD's Message 'second full year', MD&A 'third year full operations', AR2025 'first year of full operations'", anchor: "AR2026 p.7 vs p.25; AR2025 p.19"}
+  - {severity: "MINOR", item: "EPS reported identically on the continuing-operation and discontinued-operations lines for three consecutive years; the company has no discontinued operations", anchor: "AR2024 p.14; AR2025 p.18; AR2026 p.24"}
+  - {severity: "MINOR", item: "Resignation effective date filed two ways: 22-Apr-2026 in the Reg 30 announcement, 23-Apr-2026 in the AR senior-management table", anchor: "Resignation announcement p.1-2; AR2026 p.45"}
+  - {severity: "MINOR", item: "17.46% of polled public non-institutional votes went AGAINST the postal-ballot resolution authorising non-executive director commission, the only pay item minorities could vote on", anchor: "AR2026 p.50"}
+  - {severity: "MINOR", item: "Credit rating IVR BBB/Stable assigned 05-Dec-2024, unreviewed for about 17 months", anchor: "AR2026 p.54"}
+  - {severity: "MINOR", item: "Net foreign-currency loss rose 498% (Rs 20.71L to Rs 123.87L) against a corporate-governance statement that FX risk was hedged in compliance with policy", anchor: "AR2026 note 27 p.104 vs p.54"}
+  - {severity: "MINOR", item: "A Kennametal quote stating the exact gross-versus-net point behind stage 5's own withdrawal is absent from stage 6", anchor: "KENNAMET Mar-2023, Suresh Reddy"}
+  - {severity: "MINOR", item: "Kennametal's qualifier that the Indian aerospace base is 'very, very, very small in the country' is not used against TOTEM's three-year aerospace and defence narrative", anchor: "KENNAMET Mar-2024"}
+  - {severity: "MINOR", item: "Wendt spent its full CSR obligation with no unspent amount, a ready peer benchmark for stage 5's CSR flag, absent from stage 6", anchor: "WENDT p.6"}
+pipeline_flags_not_supported:
+  - {severity: "MAJOR", id: "NS-1", location: "05-concall.md, pledge-and-dividend chain", claim: "Reading A (transfer after the record date) is 'the more likely reading'; SP and Co collected Rs 1,871.86 lakh", source_truth: "AR2026 note 30 p.108 states dividend paid: SP and Co Rs 1,798.36L, Forbes Campbell Rs 106.50L. Rs 106.50L at Rs 5 is 2,130,000 shares; Forbes Campbell held 665,592 at 31-Mar-2025, so the 1,470,000-share transfer completed BEFORE the 02-May-2025 record date. Reading B is confirmed and Reading A excluded. Stage 5 quotes the resolving figure without recognising it."}
+  - {severity: "MAJOR", id: "NS-2", location: "05-concall.md, the correction section", claim: "The Wendt AGM line 'Commodity prices stayed largely stable' is the nearest in-window peer datapoint against TOTEM's FY26 abnormal-commodity claim", source_truth: "WENDT p.3: the sentence sits in the Chairman's calendar-2024 global-economy scene-setter, covers CY2024 which is TOTEM's FY25 not FY26, and is a global macro remark, not a carbide or steel price statement. Stage 5 states it did not read the transcript. Wrong period, wrong subject, unread, and used to support a HIGH flag."}
+  - {severity: "MAJOR", id: "NS-3", location: "06-peers.md Part 5; 05-concall.md trigger 1", claim: "The Q1 FY27 margin jump follows directly from the company's own capex delivery, confirmed in the FY26 annual report", source_truth: "Nothing in the corpus links them. The Q1 FY27 filing carries four boilerplate notes, no commentary, no segment or utilisation data. Three untested alternatives exist: Q1 FY26 was FY26's trough quarter, headcount fell 61 during FY26, and other expenses fell 5% absolutely on revenue up 29% under a bare regrouping note."}
+  - {severity: "MAJOR", id: "NS-4", location: "05-concall.md ruling on the commodity claim", claim: "The FY26 abnormal-commodity-prices sentence does not survive the three-year CIF series (+1.23% FY26 against FY24)", source_truth: "OVERSTATED. CIF is an import VALUE, price times quantity. In the same year raw-material inventory nearly tripled (Rs 738.71L to Rs 1,993.71L, note 8 p.92) and consumption rose 25.3%. Flat value against FY24 is consistent with higher prices on lower volumes. The series REMOVES support; it cannot refute. The correct ruling is UNEVIDENCED, not refuted. Stage 5 promotes it to a HIGH flag and a hard delivery-tracker fail."}
+  - {severity: "MAJOR", id: "NS-5", location: "06-peers.md Part 2D", claim: "TOTEM about Rs 290 cr FY26 revenue", source_truth: "AR2026 p.70: revenue from operations Rs 25,101.13 lakh (Rs 251.0 cr); total income Rs 25,473.95 lakh (Rs 254.7 cr). Rs 290 cr appears in no source read. It is used to size TOTEM against peers. Verifier A is the binding authority on this and has not adjudicated it."}
+  - {severity: "MINOR", id: "NS-6", location: "05-concall.md vs 06-peers.md", claim: "Stage 5 says three HR leadership transitions in about nine months; stage 6 says two exits inside roughly eight months", source_truth: "The same two exits and one appointment in the same corpus, counted two ways across the two reports"}
+  - {severity: "MINOR", id: "NS-7", location: "05-concall.md working-capital row", claim: "FY25 debtor days used both as partial support for and as evidence against the same claim", source_truth: "The row cites debtor days still low and debtor days worsening 108% in the same cell, and never states that FY26 debtor days IMPROVED to 46 (AR2026 p.26), the one part of the 'relentless focus' sentence that held"}
+promise_delivery_spot_checks: {checked: 5, confirmed: 5, wrong: 0}
+credibility_grade_concur: "Concur with C, and note C is the floor of the stated scale. B is unreachable on its own terms because three annual reports contain no forward numeric guidance at all, while a false s.197(12) remuneration percentage, an MD&A explanation contradicted by the company's own CARO annexure, and the export direction stated backwards two years running would push below C if a lower rung existed."
+critical_count: 1
+major_count: 18
+minor_count: 20
+acceptance_rate: 32
+orchestrator_note: >
+  Three verification cycles ran. Verifier B found 19, then 33, then 47 independent
+  red-flag-grade items, and stage 5 caught 4, then 16, then 15 outright. The
+  acceptance rate moved 21, 48, 32 percent. It is not converging because the
+  denominator keeps growing: each fresh out-of-family read mines deeper into a
+  genuinely defect-rich set of filings, not because the analysis is degrading.
+  The pipeline specifies ONE verifier pass; three ran. The loop stops here and the
+  verdict stands at REWORK, which is the framework's own instruction: the findings
+  above ARE the rework list for stages 5 and 6, to be worked before any
+  deliberation. The five NOT SUPPORTED items are the first priority, because they
+  are claims the reports currently make that the sources do not carry.

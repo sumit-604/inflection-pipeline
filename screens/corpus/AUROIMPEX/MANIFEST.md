@@ -69,3 +69,36 @@ ended 30-Sep-2025 and for the half year and year ended 31-Mar-2026. That is the 
 reporting regime. It gives two observation points a year, not four, so the Role 5 delivery
 test and the trailing-four-quarters weighting in CLAUDE.md cannot be run in their normal
 form. Decide how to handle that before the read, not during it.
+
+## Retry, 2026-09-12: still blocked. Four routes tested, four closed.
+
+The operator asked for a retry the next day. Nothing had changed. Recorded here so the
+next session does not spend the same effort again.
+
+| Route | Test | Result |
+|---|---|---|
+| Direct fetch, curl | auroimpex.com, nsearchives.nseindia.com, www.nseindia.com, www.screener.in, docs.bull-ai.in | All fail. Proxy denies the CONNECT. |
+| WebFetch tool | auroimpex.com/financial-statement/, and the FY23 annual report PDF in the NSE archive | Both return EGRESS_BLOCKED. WebFetch uses the same egress proxy as curl, so it is not an alternative path. |
+| Bull AI | search_companies on the name, on AUROIMPEX, and on ISIN INE0NUL01018; list_document_availability on AUROIMPEX | Still no such company. Coverage has not changed. |
+| Firecrawl MCP | web search, and search with categories ["pdf"] and highlights | Reaches the web, but returns titles, URLs and descriptions only. There is no scrape, crawl or extract tool in this session's Firecrawl toolset, so no document text can be retrieved. |
+
+Conclusion: no filed document of this company can be read from inside this container by any
+means available. This is an environment limit, not a research judgement. It will not resolve
+by retrying. It resolves when the operator collects the corpus, or when auroimpex.com and
+nsearchives.nseindia.com are added to the environment's network allowlist.
+
+### One further document located, still unfetched
+| Document | URL |
+|---|---|
+| Outcome filing, six months ended 30-Sep-2025, filed 16-Dec-2025 | https://nsearchives.nseindia.com/corporate/AUROIMPEX_16122025175603_outcome.pdf |
+
+Note the filing date. An H1 FY26 outcome filed on 16-Dec-2025 is late against the usual
+half-yearly timetable. Worth a look when the document can be opened. Stated as an
+observation about a date, not a conclusion about the company.
+
+### Why no number from cloud search is recorded here
+Three third-party sources give three different revenue figures for the same company: about
+Rs 147 crore, about Rs 216 crore consolidated, and about Rs 252 crore. They cannot all be
+right. The likely cause is standalone against consolidated, or a mislabelled year. That
+disagreement is the reason the funnel rule exists, and it is why this ledger carries no
+figures at all. NOT FOUND means not in the corpus.

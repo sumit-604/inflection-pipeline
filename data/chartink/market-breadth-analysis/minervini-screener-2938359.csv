@@ -1200,7 +1200,7 @@ date,time,group,sector,market cap,1 week %,vol > yr avg
 2026-09-11,15:29,DATAPATTNS,aerospace & defence,largecap,5.3261,0.6363
 2026-09-11,15:29,DCBBANK,bank,midcap,2.5505,0.5232
 2026-09-11,15:29,DCMNVL,textiles,smallcap,-3.3467,1.0058
-2026-09-11,15:29,DEEPINDS,energy,midcap,-1.5322,1.3521
+2026-09-11,15:29,DEEPINDS,energy,smallcap,-1.5322,1.3521
 2026-09-11,15:29,DIACABS,industrials,largecap,11.2266,0.3976
 2026-09-11,15:29,DIFFNKG,industrials,smallcap,-5.3485,0.6377
 2026-09-11,15:29,DIVGIITTS,auto,smallcap,-3.8437,1.3852
@@ -1243,7 +1243,7 @@ date,time,group,sector,market cap,1 week %,vol > yr avg
 2026-09-11,15:29,IRISDOREME,consumer discretionary,smallcap,-3.3187,0.8019
 2026-09-11,15:29,IVP,chemicals,smallcap,5.4736,0.9863
 2026-09-11,15:29,JGCHEM,chemicals,smallcap,-1.0198,1.4293
-2026-09-11,15:29,JINDALSAW,industrials,largecap,2.1782,0.4413
+2026-09-11,15:29,JINDALSAW,industrials,midcap,2.1782,0.4413
 2026-09-11,15:29,JINDWORLD,textiles,midcap,-8.0508,2.1619
 2026-09-11,15:29,JTLIND,metals & mining,smallcap,-3.2617,0.5296
 2026-09-11,15:29,KABRAEXTRU,industrials,smallcap,24.864,4.3273
@@ -1288,7 +1288,7 @@ date,time,group,sector,market cap,1 week %,vol > yr avg
 2026-09-11,15:29,NILKAMAL,plastic products,smallcap,-3.1042,0.6754
 2026-09-11,15:29,NITINSPIN,textiles,smallcap,1.8778,0.2214
 2026-09-11,15:29,NOVARTIND,healthcare,midcap,45.2177,9.7822
-2026-09-11,15:29,NRBBEARING,industrials,midcap,15.1342,1.4987
+2026-09-11,15:29,NRBBEARING,industrials,smallcap,15.1342,1.4987
 2026-09-11,15:29,NRL,services,smallcap,4.8377,0.5095
 2026-09-11,15:29,OAL,chemicals,smallcap,2.3466,1.3357
 2026-09-11,15:29,OCCLLTD,chemicals,smallcap,-2.7573,0.4267
@@ -1307,7 +1307,7 @@ date,time,group,sector,market cap,1 week %,vol > yr avg
 2026-09-11,15:29,QUESS,miscellaneous,midcap,-1.9027,0.5513
 2026-09-11,15:29,RACLGEAR,auto,smallcap,11.4587,13.7043
 2026-09-11,15:29,RAIN,miscellaneous,midcap,0.1159,0.9762
-2026-09-11,15:29,RAMRAT,metals & mining,midcap,-5.0388,0.5335
+2026-09-11,15:29,RAMRAT,metals & mining,smallcap,-5.0388,0.5335
 2026-09-11,15:29,RATNAVEER,metals & mining,smallcap,-5.3979,1.6741
 2026-09-11,15:29,RAYMOND,transportation,midcap,35.358,21.6369
 2026-09-11,15:29,RISHABH,industrials,smallcap,12.3434,1.4111
@@ -1379,5 +1379,5 @@ date,time,group,sector,market cap,1 week %,vol > yr avg
 2026-09-11,15:29,WHEELS,auto,midcap,29.2887,2.1045
 2026-09-11,15:29,WOCKPHARMA,healthcare,largecap,4.3424,0.8792
 2026-09-11,15:29,WSTCSTPAPR,building materials,smallcap,9.7732,2.0168
-2026-09-11,15:29,YASHO,chemicals,smallcap,1.2917,2.9168
+2026-09-11,15:29,YASHO,chemicals,midcap,1.2917,2.9168
 2026-09-11,15:29,ZIMLAB,healthcare,smallcap,10.9323,1.17

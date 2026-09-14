@@ -22,7 +22,7 @@ Date,Symbol,Sector,Market cap,1 week %,Vol > yr avg
 2026-09-11 15:29,VENUSPIPES,metals & mining,smallcap,23.8565,3.4206
 2026-09-11 15:29,GCSL,financials,smallcap,0.9325,3.1442
 2026-09-11 15:29,VALIANTLAB,healthcare,smallcap,20.704,3.0158
-2026-09-11 15:29,YASHO,chemicals,smallcap,1.2917,2.9168
+2026-09-11 15:29,YASHO,chemicals,midcap,1.2917,2.9168
 2026-09-11 15:29,KANORICHEM,chemicals,smallcap,9.0512,2.7787
 2026-09-11 15:29,CALSOFT,i.t,smallcap,-5.4661,2.6386
 2026-09-11 15:29,SPECTRUM,industrials,smallcap,27.6178,2.6274
@@ -63,14 +63,14 @@ Date,Symbol,Sector,Market cap,1 week %,Vol > yr avg
 2026-09-11 15:29,GLOBAL,services,smallcap,5.3632,1.5528
 2026-09-11 15:29,MANALIPETC,energy,smallcap,-2.1093,1.532
 2026-09-11 15:29,AKUMS,healthcare,midcap,1.3843,1.5146
-2026-09-11 15:29,NRBBEARING,industrials,midcap,15.1342,1.4987
+2026-09-11 15:29,NRBBEARING,industrials,smallcap,15.1342,1.4987
 2026-09-11 15:29,IOLCP,healthcare,midcap,-2.8207,1.4585
 2026-09-11 15:29,SOTL,energy,smallcap,-3.3075,1.4381
 2026-09-11 15:29,JGCHEM,chemicals,smallcap,-1.0198,1.4293
 2026-09-11 15:29,RISHABH,industrials,smallcap,12.3434,1.4111
 2026-09-11 15:29,APARINDS,industrials,largecap,0.4535,1.4053
 2026-09-11 15:29,DIVGIITTS,auto,smallcap,-3.8437,1.3852
-2026-09-11 15:29,DEEPINDS,energy,midcap,-1.5322,1.3521
+2026-09-11 15:29,DEEPINDS,energy,smallcap,-1.5322,1.3521
 2026-09-11 15:29,RML,auto,smallcap,4.9464,1.3449
 2026-09-11 15:29,OAL,chemicals,smallcap,2.3466,1.3357
 2026-09-11 15:29,SIGMAADV,aerospace & defence,midcap,9.1881,1.2866
@@ -171,7 +171,7 @@ Date,Symbol,Sector,Market cap,1 week %,Vol > yr avg
 2026-09-11 15:29,QUESS,miscellaneous,midcap,-1.9027,0.5513
 2026-09-11 15:29,ICIL,textiles,midcap,-1.4562,0.539
 2026-09-11 15:29,PRECWIRE,metals & mining,midcap,-2.1679,0.5363
-2026-09-11 15:29,RAMRAT,metals & mining,midcap,-5.0388,0.5335
+2026-09-11 15:29,RAMRAT,metals & mining,smallcap,-5.0388,0.5335
 2026-09-11 15:29,GANDHAR,energy,smallcap,1.9058,0.5335
 2026-09-11 15:29,JTLIND,metals & mining,smallcap,-3.2617,0.5296
 2026-09-11 15:29,KMEW,transportation,midcap,-5.4131,0.5244
@@ -190,7 +190,7 @@ Date,Symbol,Sector,Market cap,1 week %,Vol > yr avg
 2026-09-11 15:29,CHEMBONDCH,chemicals,smallcap,3.0458,0.4503
 2026-09-11 15:29,E2E,i.t,midcap,1.4629,0.4495
 2026-09-11 15:29,HONASA,services,midcap,0.0212,0.4445
-2026-09-11 15:29,JINDALSAW,industrials,largecap,2.1782,0.4413
+2026-09-11 15:29,JINDALSAW,industrials,midcap,2.1782,0.4413
 2026-09-11 15:29,MMFL,industrials,smallcap,0.2539,0.4365
 2026-09-11 15:29,SENORES,healthcare,midcap,2.7233,0.4317
 2026-09-11 15:29,CENTUM,aerospace & defence,midcap,11.2733,0.4287

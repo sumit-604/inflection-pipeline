@@ -15,14 +15,14 @@ Percentile is this reading's rank against that metric's own history. 50 means mi
 
 | Metric | Value | 1d | 5d | 20d | Percentile | History |
 |---|---:|---:|---:|---:|---:|---:|
-| % above 10 EMA | 33.39 | -3.57 | -12.75 | -7.74 | 31 | 380 |
-| % above 20 EMA | 36.46 | -2.52 | -7.74 | -8.02 | 36 | 380 |
-| % above 50 EMA | 42.23 | -1.64 | -5.72 | -7.00 | 50 | 380 |
-| % above 200 EMA | 46.95 | -0.50 | -1.89 | -2.42 | 73 | 380 |
+| % above 10 EMA | 33.40 | -3.57 | -12.76 | -7.74 | 31 | 380 |
+| % above 20 EMA | 36.48 | -2.52 | -7.75 | -7.98 | 36 | 380 |
+| % above 50 EMA | 42.25 | -1.64 | -5.73 | -6.96 | 50 | 380 |
+| % above 200 EMA | 46.97 | -0.50 | -1.89 | -2.42 | 73 | 380 |
 | Net breadth (4% adv minus dec) | 0.93 | -1.56 | -4.93 | +0.59 | 34 | 380 |
-| 4% advancers | 4.42 | -1.65 | -3.71 | -0.71 | 35 | 380 |
-| 4% decliners | 3.49 | -0.09 | +1.22 | -1.30 | 63 | 380 |
-| Net new highs minus lows | -2.32 | -2.19 | -4.84 | -3.80 | 21 | 380 |
+| 4% advancers | 4.42 | -1.65 | -3.71 | -0.72 | 35 | 380 |
+| 4% decliners | 3.50 | -0.09 | +1.22 | -1.30 | 63 | 380 |
+| Net new highs minus lows | -2.32 | -2.19 | -4.85 | -3.80 | 21 | 380 |
 | Net within 15% of 52wk H/L | 3.16 | -1.69 | -4.09 | -3.97 | 62 | 380 |
 | Volume expansion ratio | 0.49 | +0.03 | +0.02 | -0.01 | 53 | 380 |
 | Overbought count (weekly RSI>70) (as of 2026-09-07) | 244.00 | -14.00 | -20.00 | +147.00 | 72 | 376 |
@@ -48,8 +48,8 @@ Percentile is this reading's rank against that metric's own history. 50 means mi
 Top decile of history:
 
 - `52_wk_high_low__new_52_wk_low` at 3.54 (percentile 100, range 0.18 to 3.54)
-- `mbm_2_0_velocity_advanced__15_52wh` at 26.15 (percentile 93, range 2.78 to 28.49)
-- `mbm_2_0_velocity_advanced__30_52wh` at 52.97 (percentile 92, range 16.60 to 55.70)
+- `mbm_2_0_velocity_advanced__15_52wh` at 26.12 (percentile 93, range 2.78 to 28.46)
+- `mbm_2_0_velocity_advanced__30_52wh` at 52.95 (percentile 92, range 16.60 to 55.68)
 - `breadth_above_500_trend_reversal__down_20_in_5d` at 6.00 (percentile 91, range 0.00 to 36.00)
 
 Bottom decile of history:
@@ -67,7 +67,7 @@ Bottom decile of history:
 | Metric | Value | 1d | 5d | 20d | Percentile |
 |---|---:|---:|---:|---:|---:|
 | `10_from_10dema__10_10ema` | 0.76 | +0.08 | +0.04 | +0.21 | 89 |
-| `15_up_10_down__10_in_5d` | 2.11 | +0.38 | +0.38 | -1.54 | 71 |
+| `15_up_10_down__10_in_5d` | 2.11 | +0.38 | +0.38 | -1.55 | 71 |
 | `15_up_10_down__15_in_5d` | 2.82 | -0.21 | +0.46 | +0.10 | 65 |
 | `3_above_200_ema__pct` | 48.46 | -0.37 | -3.37 | -5.39 | 64 |
 | `4_advance_decline__4_advance` | 105.00 | -39.00 | -88.00 | -16.00 | 25 |
@@ -104,34 +104,34 @@ Bottom decile of history:
 | `drawdowns_peaks__blw_3` | 201.00 | -5.00 | +78.00 | -7.00 | 73 |
 | `gold_etfs_nifty_1_month_chg__gold` | 6.73 | -0.72 | -1.14 | +2.81 | 77 |
 | `gold_etfs_nifty_1_month_chg__nifty` | -2.60 | -0.28 | -3.47 | -2.41 | 12 |
-| `mbm_2_0_magnitude__abv_10ma` | 33.39 | -3.57 | -12.75 | -7.74 | 31 |
-| `mbm_2_0_magnitude__abv_200ma` | 46.95 | -0.50 | -1.89 | -2.42 | 73 |
-| `mbm_2_0_magnitude__abv_20ma` | 36.46 | -2.52 | -7.74 | -8.02 | 36 |
-| `mbm_2_0_magnitude__abv_50ma` | 42.23 | -1.64 | -5.72 | -7.00 | 50 |
-| `mbm_2_0_velocity_advanced__15_52wh` | 26.15 | -0.82 | -1.96 | +0.51 | 93 |
-| `mbm_2_0_velocity_advanced__15_52wl` | 22.99 | +0.87 | +2.13 | +4.48 | 56 |
-| `mbm_2_0_velocity_advanced__30_52_wl` | 41.89 | +0.18 | +1.48 | +2.85 | 34 |
-| `mbm_2_0_velocity_advanced__30_52wh` | 52.97 | -0.68 | -1.73 | -1.96 | 92 |
-| `mbm_2_0_velocity_advanced__breakdowns` | 14.53 | +4.33 | +7.36 | +2.22 | 79 |
-| `mbm_2_0_velocity_advanced__breakouts` | 10.99 | -4.05 | -7.51 | -4.80 | 21 |
+| `mbm_2_0_magnitude__abv_10ma` | 33.40 | -3.57 | -12.76 | -7.74 | 31 |
+| `mbm_2_0_magnitude__abv_200ma` | 46.97 | -0.50 | -1.89 | -2.42 | 73 |
+| `mbm_2_0_magnitude__abv_20ma` | 36.48 | -2.52 | -7.75 | -7.98 | 36 |
+| `mbm_2_0_magnitude__abv_50ma` | 42.25 | -1.64 | -5.73 | -6.96 | 50 |
+| `mbm_2_0_velocity_advanced__15_52wh` | 26.12 | -0.82 | -1.96 | +0.51 | 93 |
+| `mbm_2_0_velocity_advanced__15_52wl` | 22.96 | +0.87 | +2.13 | +4.49 | 56 |
+| `mbm_2_0_velocity_advanced__30_52_wl` | 41.87 | +0.18 | +1.48 | +2.85 | 34 |
+| `mbm_2_0_velocity_advanced__30_52wh` | 52.95 | -0.68 | -1.73 | -1.96 | 92 |
+| `mbm_2_0_velocity_advanced__breakdowns` | 14.53 | +4.33 | +7.37 | +2.22 | 79 |
+| `mbm_2_0_velocity_advanced__breakouts` | 10.99 | -4.06 | -7.51 | -4.80 | 21 |
 | `mbm_2_0_velocity_advanced__down_close` | 24.06 | -11.07 | -7.71 | -14.91 | 10 |
 | `mbm_2_0_velocity_advanced__net_15_h_l` | 3.16 | -1.69 | -4.09 | -3.97 | 62 |
-| `mbm_2_0_velocity_advanced__net_30_h_l` | 11.07 | -0.85 | -3.21 | -4.80 | 79 |
-| `mbm_2_0_velocity_advanced__net_nh_nl` | -2.32 | -2.19 | -4.84 | -3.80 | 21 |
+| `mbm_2_0_velocity_advanced__net_30_h_l` | 11.08 | -0.85 | -3.21 | -4.80 | 79 |
+| `mbm_2_0_velocity_advanced__net_nh_nl` | -2.32 | -2.19 | -4.85 | -3.80 | 21 |
 | `mbm_2_0_velocity_advanced__new_52_wk_high` | 1.77 | -0.89 | -1.81 | -0.99 | 57 |
-| `mbm_2_0_velocity_advanced__new_52_wk_low` | 4.08 | +1.30 | +3.03 | +2.81 | 82 |
+| `mbm_2_0_velocity_advanced__new_52_wk_low` | 4.09 | +1.30 | +3.03 | +2.81 | 82 |
 | `mbm_2_0_velocity_advanced__up_close` | 40.23 | -0.11 | -3.73 | +7.70 | 64 |
 | `mbm_2_0_velocity_basic__10_10ema` | 0.76 | +0.08 | +0.04 | +0.21 | 76 |
-| `mbm_2_0_velocity_basic__10_in_5d` | 2.11 | +0.38 | +0.38 | -1.54 | 58 |
+| `mbm_2_0_velocity_basic__10_in_5d` | 2.11 | +0.38 | +0.38 | -1.55 | 58 |
 | `mbm_2_0_velocity_basic__15_in_5d` | 2.82 | -0.21 | +0.46 | +0.10 | 73 |
-| `mbm_2_0_velocity_basic__3_range` | 42.23 | -1.68 | -3.70 | -0.72 | 54 |
-| `mbm_2_0_velocity_basic__4_advance` | 4.42 | -1.65 | -3.71 | -0.71 | 35 |
-| `mbm_2_0_velocity_basic__4_decline` | 3.49 | -0.09 | +1.22 | -1.30 | 63 |
-| `mbm_2_0_velocity_basic__5d_range` | 6.53 | -2.74 | -0.85 | -2.39 | 56 |
+| `mbm_2_0_velocity_basic__3_range` | 42.21 | -1.68 | -3.70 | -0.72 | 54 |
+| `mbm_2_0_velocity_basic__4_advance` | 4.42 | -1.65 | -3.71 | -0.72 | 35 |
+| `mbm_2_0_velocity_basic__4_decline` | 3.50 | -0.09 | +1.22 | -1.30 | 63 |
+| `mbm_2_0_velocity_basic__5d_range` | 6.49 | -2.75 | -0.85 | -2.39 | 56 |
 | `mbm_2_0_velocity_basic__net_breadth` | 0.93 | -1.56 | -4.93 | +0.59 | 34 |
 | `mbm_2_0_velocity_basic__volume` | 0.49 | +0.03 | +0.02 | -0.01 | 53 |
 | `net_breadth__net_breadth` | 0.93 | -1.56 | -4.93 | +0.59 | 26 |
-| `net_nh_nl__net_nh_nl` | -2.32 | -2.19 | -4.84 | -3.80 | 2 |
+| `net_nh_nl__net_nh_nl` | -2.32 | -2.19 | -4.85 | -3.80 | 2 |
 | `new_high_low_bearishness_bullishness__high` | 45.00 | -21.00 | -47.00 | -42.00 | 50 |
 | `new_high_low_bearishness_bullishness__low` | 106.00 | +37.00 | +75.00 | +70.00 | 85 |
 | `volume__volume` | 0.49 | +0.03 | +0.02 | -0.01 | 62 |
@@ -149,3 +149,9 @@ These are weekly or slower series. The date shown is their last reading.
 
 
 <!-- market-read -->
+
+## Market read
+
+The market kept leaking for two more sessions, and the yearly lows came back. On Friday about one stock in twenty-five made a fresh one-year low. That is the largest share since 30 March, in the middle of the March crash. Only about one stock in three now sits above its twenty-day line, the fewest since late July. The long-term floor still holds above the next level the last brief named. It stands at 1,168 stocks against a line near 1,150. There was still no panic. Hard risers beat hard fallers seventy to thirty-eight. Most stocks that fell hard during the day recovered before the close. The fast tail cooled, with twenty-seven stocks up twenty percent in five days against forty-two on Wednesday. Healthcare, defence and a short list of cable, pharma and textile names still lead. The Nifty lost only a third of a percent on Friday. The average stock lost far more ground than the index shows. This is a slow bleed under a quiet index.
+
+Full brief: briefs/2026-09-11.html

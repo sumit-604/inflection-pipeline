@@ -93,26 +93,13 @@ phase 3), then:
    the deliberation record. Collect B10 into outputs/blocks/.
 
 2. STAGE 11 — VALUATION. Invoke stage-11-valuation exactly per the
-   existing wrapper: pass the NINE framework file paths from frameworks/
-   as its stable prefix plus B10, in this order —
-   Master_Project_Prompt_v3_6.md (resolves
-   {{MASTER_PROJECT_PROMPT_V36_ROLE1_SECTIONS}}),
-   Section_1B_v3.3_Amendments.md ({{SECTION_1B_V33_AMENDMENTS}}),
-   Section_1B_v3_5_1_Reconciliation.md ({{SECTION_1B_V351_RECONCILIATION}},
-   the Pillar 1 normalization authority, which supersedes the standalone
-   Amendment 4.5), Section_1B_v3_6_Amendments.md
-   ({{SECTION_1B_V36_AMENDMENTS}}, Damodaran integration),
-   Section_1B_v3_7_Amendments.md ({{SECTION_1B_V37_AMENDMENTS}}, commodity
-   converter integration), Section_1B_v3_8_Amendments.md
-   ({{SECTION_1B_V38_AMENDMENTS}}, exit-basis symmetry and option resolution;
-   later layers govern the items they name where
-   the layers overlap), Section_1B_v3_9_Amendments.md
-   ({{SECTION_1B_V39_AMENDMENTS}}, relative-valuation cross-check and
-   forward-expectation exit framework), Section_1B_v3_10_Amendments.md
-   ({{SECTION_1B_V310_AMENDMENTS}}, growth symmetry in projections and
-   weighting), and FTTCP_v2_1_Consolidated.md
-   ({{FTTCP_V21_CONSOLIDATED}}). If frameworks/ is missing
-   any of the nine files, STOP and tell the user which to add. The FTTCP ROCE
+   existing wrapper. Its frontmatter preloads the section-1b skill (the
+   resolved Section 1B v3.3-v3.10 and FTTCP v2.3 rulebook), so do NOT pass
+   the Section 1B or FTTCP framework files. Pass
+   frameworks/Master_Project_Prompt_v3_6.md (resolves
+   {{MASTER_PROJECT_PROMPT_V36_ROLE1_SECTIONS}}) as its stable prefix plus
+   B10. If .claude/skills/section-1b/SKILL.md or the Master Prompt file is
+   missing, STOP and tell the user which to add. The FTTCP ROCE
    forward verdict and structural/growth determination it consumes are
    the deliberation-confirmed ones carried on B10. ENTITY-COUNT GATE: when
    B10.entity_count is greater than one, stage 11 values PER ENTITY on each

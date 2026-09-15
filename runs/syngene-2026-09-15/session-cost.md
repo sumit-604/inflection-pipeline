@@ -27,3 +27,4 @@
 | 12c | verifier C framework (phase-1 scope, run 2) | claude-opus (frontmatter) | default | n/a | n/a | 143828 | 8m29s | 2 |
 | 12b | verifier B red flags (run 2) | claude-opus (frontmatter) | default | n/a | n/a | 346691 | 14m04s | 2 |
 | 12d | verifier D peer coverage (run 2) | claude-sonnet-5 | default | n/a | n/a | 209704 | 4m19s | 2 |
+| 13 | synthesis-lite (phase 1, three files) | claude-opus (frontmatter) | default | n/a | n/a | 205997 | 11m24s | 1 |

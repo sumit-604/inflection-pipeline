@@ -157,7 +157,7 @@ handoff schemas, flag rules, and error handling. Then:
        sources those checks need — prompts/01-gate-0-pipeline.md and
        prompts/07-emerging-moat-pipeline.md — alongside B01 and B07. Do
        NOT pass the valuation framework docs (Master Prompt v3.6, Section
-       1B layers, FTTCP v2.1): they are consumed only by the B11 valuation
+       1B layers, FTTCP v2.3): they are consumed only by the B11 valuation
        audit, which is deferred to PHASE 3, so in phase 1 they are dead
        context. Its valuation-adherence audit (B11, B10) must NOT run
        here; it emits the gate0 and emoat sections of B12c with valuation

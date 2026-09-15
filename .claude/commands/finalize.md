@@ -318,7 +318,7 @@ Rules for you, the orchestrator session:
 - Deliberation conclusions supersede earlier pipeline determinations
   wherever they conflict; this is the phase-3 authority rule.
 - Never let any exit PE enter from outside the Section 1B layer set (v3.3
-  Amendments + v3.5.1 + v3.6 + v3.7 + v3.8; later layers govern the items they name).
+  Amendments + v3.5.1 + v3.6 + v3.7 + v3.8 + v3.9 + v3.10; later layers govern the items they name).
 - Never paste full PDFs into subagent task messages; pass file PATHS.
 - Verifier independence is absolute.
 - Nothing halts on company quality; only mechanical failures halt.

@@ -1,7 +1,7 @@
 # STAGE 11: ROLE 1 MULTI-MODAL VALUATION (PIPELINE MODE)
-# Model: Opus 4.8 | Emits: B11-valuation
-# DESIGN: this file is a THIN WRAPPER. The framework itself is injected
-# from project knowledge at run time: Master Project Prompt v3.7 (Role 1
+# Model: Opus (agent alias) | Emits: B11-valuation
+# DESIGN: this file is a THIN WRAPPER. The framework itself lives in
+# frameworks/ and is read at run time: Master Project Prompt v3.7 (Role 1
 # sections), Section 1B v3.3 Amendments, Section 1B v3.5.1 Reconciliation
 # (Pillar 1 normalization authority, supersedes standalone Amendment 4.5),
 # Section 1B v3.6 Amendments (Damodaran integration), Section 1B v3.7
@@ -249,7 +249,7 @@ consolidated valuation:
 stage: B11-valuation
 company: "{{TICKER}}"
 run_date: "{{RUN_DATE}}"
-model: claude-opus-4-8
+model: ""  # your exact model ID; the agent alias decides it
 status: complete
 entity: ""                     # entity name; "" or "consolidated single-entity" when entity_count is 1
 entity_count: 1                # from B10.entity_count (dossier Section 1); emit one block per entity when >1

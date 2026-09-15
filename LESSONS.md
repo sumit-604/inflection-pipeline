@@ -134,3 +134,6 @@ _Pending framework edits Keerti maintains._
   projection (Entero: fade 10% vs SOM-implied 26.4%), flag the fade for operator
   ruling rather than applying it silently. For /compost to promote into a
   prompt/framework fix.
+- CLOSED 2026-09-15: the FTTCP v2.1 pointer pass left open by commit 17a57973.
+  Nine pointers now read v2.3, and the FTTCP file banner carries a v2.3 note
+  (branch prompt-audit-fixes).

@@ -3,7 +3,7 @@
 
 Replaces the Gemini (Jaimini) upstream pipeline. One model family end to end.
 Valuation authority: Master Project Prompt v3.7, Section 1B layer set (v3.3
-Amendments + v3.5.1 + v3.6 + v3.7 + v3.8; later layers govern the items they name) (Four-Pillar
+Amendments + v3.5.1 + v3.6 + v3.7 + v3.8 + v3.9 + v3.10; later layers govern the items they name) (Four-Pillar
 Framework, RRM dual-track, Hurdle Ratio), FTTCP v2.3. No other exit PE source
 is permitted anywhere in the pipeline.
 
@@ -322,12 +322,12 @@ support this override?" and leaves the answer to Keerti.
 | 8 | Promoter check | 08-promoter-pipeline.md | Sonnet 5 + web search | web + AR governance | `B08-promoter` |
 | 9 | TAM/SAM/SOM | 09-tam-pipeline.md | Sonnet 5 + web search | web + AR + B04 | `B09-tam` |
 | 10 | Valuation input assembly | 10-input-assembly-pipeline.md | Haiku 4.5 | B01..B09 + results PDFs | `B10-valinputs` |
-| 11 | Role 1 valuation (v3.7) | 11-valuation-pipeline.md | Opus 4.8 | B10 + Master Prompt v3.7 + Section 1B layers + FTTCP v2.3 | `B11-valuation` |
+| 11 | Role 1 valuation (v3.7) | 11-valuation-pipeline.md | Opus (agent alias) | B10 + Master Prompt v3.7 + Section 1B layers + FTTCP v2.3 | `B11-valuation` |
 | 12a | Verifier A: numerical | verifier-a-numerical.md | Haiku 4.5 | all source PDFs + all reports | `B12a` |
-| 12b | Verifier B: concall red flags | verifier-b-redflags.md | Opus 4.8 | 15 transcripts + B05 + B06 | `B12b` |
-| 12c | Verifier C: framework adherence | verifier-c-framework.md | Opus 4.8 | B01, B07, B11 + framework docs | `B12c` |
+| 12b | Verifier B: concall red flags | verifier-b-redflags.md | Opus (agent alias) | 15 transcripts + B05 + B06 | `B12b` |
+| 12c | Verifier C: framework adherence | verifier-c-framework.md | Opus (agent alias) | B01, B07, B11 + framework docs | `B12c` |
 | 12d | Verifier D: peer coverage | verifier-d-peers.md | Sonnet 5 | peer transcripts + B06 | `B12d` |
-| 13 | Synthesis | 13-synthesis-pipeline.md | Opus 4.8 | everything | final outputs |
+| 13 | Synthesis | 13-synthesis-pipeline.md | Opus (agent alias) | everything | final outputs |
 
 Stages 1 and 2 may run in parallel. Stages 4, 5, 8, 9 may run in parallel
 after stage 3. Stage 6 requires stage 5. Stage 7 requires stage 1. Stages
@@ -578,7 +578,7 @@ roughly ₹700-1,000. Web search adds ~$0.30-0.60 on stages 8-9.
 - Never lets any stage assume a number from conversation memory: stage 10
   is the only assembler of valuation inputs, and it must anchor every value.
 - Never lets any exit PE enter from outside the Section 1B layer set (v3.3
-  Amendments + v3.5.1 + v3.6 + v3.7 + v3.8; later layers govern the items they name).
+  Amendments + v3.5.1 + v3.6 + v3.7 + v3.8 + v3.9 + v3.10; later layers govern the items they name).
 - Never conflates the Emerging Moat scan (stage 7) with FTTCP: FTTCP runs
   inside stage 11's framework inputs as final synthesis, per project
   taxonomy.

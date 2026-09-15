@@ -307,3 +307,69 @@ TWO OTHER VERIFIER D FINDINGS, both carried:
 - About half of stage 6's GRANULES page anchors cite the transcript's internal
   running footer rather than the PDF page, so they sit one page behind. Content and
   speaker were correct in every case Verifier D checked.
+
+## CORRECTION 9 (from Verifier B round 2) — THE DHANUKA LOSS IS REAL IN DIRECTION, NOT IN MAGNITUDE
+
+Stage 5 run 2 built its centrepiece on arithmetic over management's own disclosed
+inputs, and put Dhanuka Laboratories' FY26 EBITDA contribution at about minus
+Rs 59 cr. Verifier B challenged the magnitude. The orchestrator tested the
+challenge and it holds.
+
+THE FLAW IN THE CROSS-CHECK. Stage 5 validated its method by applying it to FY25,
+getting minus Rs 4.7 cr, calling that roughly neutral, and treating the near-match
+with standalone FY25 EBITDA as proof the method works. But management stated on the
+Q3 FY26 call that Dhanuka runs a 5% to 8% EBITDA margin. Dhanuka's FY25 revenue was
+about Rs 476 cr, so its FY25 EBITDA should have been about Rs 24 cr to Rs 38 cr, not
+zero. The method therefore understates Dhanuka's EBITDA by roughly Rs 29 cr to
+Rs 43 cr. The FY25 result is not a validation, it is a measurement of the method's
+own bias.
+
+BIAS-ADJUSTED, the FY26 Dhanuka EBITDA contribution is about MINUS Rs 17 cr to
+MINUS Rs 31 cr, not minus Rs 59 cr.
+
+THE METHOD IS ALSO FRAGILE. Management gave the combined gross margin only as
+"approximately 32%", moderating by "approximately 4%". One percentage point of
+gross margin on Rs 1,233 cr of revenue is Rs 12.3 cr of EBITDA. A rounding of half
+a point either way moves the answer by Rs 6 cr, and the same fragility applies to
+the FY25 control.
+
+WHAT TO CARRY, per Amendment 25. State the most evidenced path, name both readings,
+and name the one observation that separates them.
+- MOST EVIDENCED PATH: Dhanuka Laboratories made a NEGATIVE EBITDA contribution in
+  FY26. Every reconstruction, at every assumption tested, gives a negative number,
+  and the direction is further supported by the Q1 FY26 combined figure sitting
+  below the Q1 FY26 standalone figure.
+- READING ONE: a loss near Rs 17 cr to Rs 31 cr, taking management's own 5% to 8%
+  Dhanuka margin as the FY25 baseline and treating the residual as method bias.
+- READING TWO: a loss near Rs 50 cr to Rs 60 cr, taking the disclosed inputs at face
+  value with no bias adjustment.
+- THE SEPARATING OBSERVATION: the audited combined FY26 EBITDA, or Dhanuka
+  Laboratories' own filed accounts at the MCA. Neither is in this corpus. This is a
+  Halt 1 item.
+
+BINDING ON PHASE 3. No stage may state a single-point Dhanuka loss figure. State the
+range, the two readings and the separating observation. The merger-synergy question
+is unresolved either way: management asserted on the Q4 FY26 call that Dhanuka
+"will add incremental EBITDA to the overall EBITDA of Orchid" while conceding it
+carries a lower EBITDA percentage, which cannot both be true as stated. That
+contradiction, found by Verifier B, is stronger evidence than any reconstruction.
+
+## CORRECTION 10 (from Verifier B round 2) — ONE CRITICAL DISCLOSURE CHAIN IS STILL UNTRACKED
+
+The US ANDA pipeline, the Teflaro generic and Ceftazidime-Avibactam, carries a
+promise chain that slipped about twelve months across three consecutive calls with
+decreasing specificity and was never acknowledged as a miss. A 180-day exclusivity
+window is named as at risk. Neither stage 5 run recorded it, in either the promise
+tracker or the slippage list. It is material because stage 9 carries the US
+Ceftazidime-Avibactam market, at $300m to $350m, as a value driver.
+
+Also untracked: the most specific licensing commitment in the corpus, that "50%
+will be signed in for sure" within six months across five named markets, dated to
+about November 2026 and inside the valuation horizon, with only Russia signed as of
+the last call.
+
+Also material: the only total-debt figure in the corpus, Rs 47 cr, is unreliable. It
+was produced to rebut an analyst's claim that debt had risen by Rs 1,000 cr, came
+with a promise to follow up with numbers that was never kept, states no basis, and
+was never restated. Stage 5 used it as a clean anchor in the funding-gap arithmetic,
+so that arithmetic inherits the weakness.

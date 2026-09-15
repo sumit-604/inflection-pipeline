@@ -75,9 +75,7 @@ Load only the chunks the current step needs. Paths are relative to this skill fo
 - OR-3. Pillar 3 evidence gates against Amendment 22. 3a and 3c pay on 📄 evidence only, and the 3b table keys on evidence mix. Amendment 22 says evidence symbols feed the probability and no longer unlock a premium tier by themselves. No rule converts probability into 3a/3b/3c turns. Chunks 03, 04.
 - OR-4. Raising the sector cap. The Master calls the Category-Break Override the only mechanism that raises a cap, and also carries a routine ×1.25 quality uplift on UA-qualified names; the v3.5 reconciliation note treats both as live. Section 1B v3.9 Appendix C R1 (a blended infra-plus-platform cap row) is also pending. Chunk 05.
 - OR-5. Pillar 2 with an INDETERMINATE or Mixed structural/growth determination. No Section 1B layer sets a multiplier for it. CLAUDE.md caps the run verdict at PROCEED WITH CAVEATS with the missing evidence named. Chunk 02.
-- OR-6. Amendment 17.0 default for ambiguous classification. The text reads "Ambiguous cases classify CONVERTER (conservative default)". It is a classification rule, not a projection input, so Amendment 26.3 does not reach it. Chunk 11.
 - OR-7. Macro sheet regime note. The August 2026 sheet tells destination PEs where to sit inside their bands and suggests a regime stress on BUY verdicts. Section 1B places H inside its range through Amendment 15 and FTTCP B8 only. The note is not carried into this skill. Chunk 15.
-- OR-8. Entry divisor under Tier B. Amendment 18.5 writes entry = exit-consistent fair value ÷ 1.25^N. Amendment 4.3 sets Tier B at a 20% hurdle (divisor 1.728 over three years). This skill reads the divisor as (1 + tier hurdle)^N. Chunk 06.
 
 ## NOT FOUND in frameworks/
 

@@ -1,0 +1,30 @@
+stage: B12a
+company: "TOTEM"
+run_date: "2026-09-09"
+model: claude-haiku-4-5
+status: complete
+verification_cycle: 3
+numbers_checked: 87
+findings:
+  - {severity: "MAJOR", location: "01-gate0.md, B4 section", claimed: "WC Days FY24 = 47.03 + 61.45 - 34.65 = 73.83", source_truth: "Calculation arithmetically correct; the formula is stage-defined, not company-disclosed", note: "Formula correctly applied but rests on a stage-fixed rule that diverges from the company's own turnover-ratio basis. Presentation clarity, not source fidelity.", source_fidelity: false}
+  - {severity: "MAJOR", location: "03-ardeep.md, Extension 1", claimed: "MD remuneration +74.7% FY25 to FY26 against a Board-stated average KMP increase of 7.5%", source_truth: "Both figures verified exact from Note 30 and Board's Report Annexure II", note: "Both numbers accurate but unreconciled inside the same annual report. A governance and disclosure gap, not a numerical error.", source_fidelity: false}
+  - {severity: "MAJOR", location: "01-gate0.md, Block F, M5", claimed: "M5 score 0, PEER DATA NEEDED", source_truth: "Scoring decision correct per the framework rule; the override of the prior run is documented", note: "Framework application correct. Not a fidelity issue.", source_fidelity: false}
+  - {severity: "MINOR", location: "02-notes.md, top finding 2", claimed: "CFO fell Rs 51.32cr to Rs 27.55cr, driven almost entirely by the inventory swing", source_truth: "CFO figures exact; the inventory swing is the largest single line but MSME payables are a second-order lever", note: "Compression of a two-factor story into a single-largest-line summary. Not an error.", source_fidelity: false}
+  - {severity: "MINOR", location: "03-ardeep.md, Phase 3B", claimed: "Quick ratio 0.99, own computation from the balance sheet", source_truth: "(12,255.52 - 5,642.15) / 6,664.98 = 0.992, confirmed", note: "Calculation correct; ratio stage-computed from accurate source figures.", source_fidelity: false}
+critical_count: 0
+major_count: 3
+minor_count: 2
+source_fidelity_findings: 0
+acceptance_rate: 100
+coverage_note: "87 material numbers across all nine stage reports verified against primary sources: annual reports FY26, FY25 and FY24, the audited and quarterly results filings, the three shareholding filings, the peer transcripts, and the Q1 FY27 figures read from the rendered PNGs. Every checked figure matched its source exactly or within rounding and disclosed basis tolerance. ZERO source-fidelity findings and zero CRITICAL findings. The three MAJOR and two MINOR rows are presentation, methodology-transparency and reconciliation observations, explicitly not source-fidelity failures; each carries source_fidelity: false."
+orchestrator_note: >
+  Verifier A run 1 raised one MAJOR against Gate 0 for stating the Labour Codes
+  charge was NOT FOUND. Gate 0 run 3 corrected that statement at source. Verifier
+  A run 2 independently withdrew its own run-1 finding as a reading error. Run 3,
+  on the final artifacts, finds zero source-fidelity failures across 87 numbers.
+  Note that verifier B run 3 raised NS-5, a figure of about Rs 290 cr used to size
+  the subject in 06-peers.md against filed revenue of Rs 251.01 cr and total income
+  of Rs 254.74 cr. Verifier A did not check that particular cell. Under the
+  source-fidelity rule Verifier A is the binding authority on whether a number
+  exists in a source, and it has not adjudicated this one, so the item stands open
+  on the rework list rather than cleared.

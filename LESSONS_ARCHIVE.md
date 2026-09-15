@@ -279,3 +279,239 @@ Leveraged C&I renewable IPP, IPO Feb-2026. Verdict on evidence PROCEED WITH CAVE
 - CORPUS: announcements/ and shareholding/ folders empty at start; operator supplied both mid-turn as pasted text + a Screener screenshot. Filed as [SECONDARY] operator-ferried with explicit tier caveats (verifier A cannot cross-check them against a filed PDF). No empty-folder pause was needed after the prospectus was recovered and these two were filed.
 - EVIDENCE WIN: verifier B resolved B06's self-declared "single most consequential" open question. Bikaner 525 MW is on TGNA (not GNA), so its ~70% curtailment is NOT revenue-protected (~Rs170 Cr real hit) — disclosed in CleanMax's OWN Q3/Q4 concalls but missed by B05. The verifier layer earned its keep.
 - THESIS TENSION carried to Halt 1: FY26 operating-profit crossover coincides with three same-year accounting choices (useful-life 25->30yr, impairment discount-rate change, interest capitalisation ~Rs312-329 Cr making true all-in interest ~Rs1,100 Cr vs Rs786 Cr P&L). Crossover treated UNPROVEN pending a rebuilt PBT; single-point falsifier = Q2 FY27 operating PBT ex-other-income < 0 (late Oct-2026). Section 3 framework exception (IPP EV/EBITDA vs PE cap) remains UNSIGNED; blocks Section 1B in Phase 3.
+
+## 2026-09-05 — AEQUS (runs/aequs-2026-09-05) /step1 intake — HALTED (environmental)
+Aequs Ltd, commercial-aerospace precision-components + loss-making consumer-plastics; IPO 10-Dec-2025, CMP Rs242, mcap ~Rs16,242cr. Steps A-E done (identity resolved, business brief written with 4 load-bearing facts, peers AZAD/DYNAMATECH/UNIMECH verified, sector row corrected to Defence/strategic 38x, companies/AEQUS.md written with spear OVERRIDE). Phase 1 NOT run; nothing committed or pushed.
+- HALT CAUSE (mechanical/environmental, not corpus/company): machine out of memory. 150 MB free physical RAM of 6 GB total; collect_to_repo subprocesses died with WinError 1455 / "ImportError: DLL load failed importing _socket: paging file too small". AEQUS main corpus failed to download three times (peers partially landed when memory eased). Running 13 memory-heavy Phase-1 subagents + PDF extraction on 150 MB free would thrash and fail mid-pipeline, so per Step-1 contract ("entire corpus fails to download -> STOP, do not guess around it") the run halted before stage 0.
+- REMEDIATION for operator: close other apps / raise the page file / re-run on a machine with more free RAM, then re-run /step1 Aequs Ltd. Recently listed -> prospectus (RHP) is a HIGH-priority collect; screener had no AEQUS AR/results/concalls/presentation, so the FY26 AR (dispatched 14-Aug-2026), Q1FY27 concall + Q1FY27 investor presentation (aequs.com), and shareholding (BSE) likely need manual drop-in even after a clean collector run.
+- NOTE: operator was queuing PITTIENG and SHHARICH intakes in parallel (companies.txt changed to PITTIENG mid-run; runs/pittieng- and runs/shharich- folders present), which adds to memory pressure. companies.txt was restored to the operator's PITTIENG content at close.
+
+## 2026-09-07 — FRATELLI + BORANA corpus collection (runs/fratelli-2026-09-07, runs/borana-2026-09-07)
+Manual Step-1 steps A to F on two names, side by side. Peers picked, corpus
+collected, repaired, verified. Phase 1 NOT run; nothing committed or pushed.
+Company memory written for both with the standing-ruling spear OVERRIDE.
+
+- **NEW / SILENT FAILURE — BSE announcements API returns EMPTY, not an error,
+  when strToDate is a future date.** The peer-deck sweep used
+  `strToDate=20260908` on 07-Sep-2026. Every one of six peers came back with
+  zero filings after Feb-2026, which read as "they all stopped publishing
+  presentations in the same month". Same query with `strToDate=20260907`
+  returns 50 rows and the Aug-2026 decks. Endpoint:
+  `api.bseindia.com/BseIndiaAPI/api/AnnSubCategoryGetData/w`, needs
+  `Origin`/`Referer: https://www.bseindia.com/` headers, caps at 50 rows per
+  page, so window the range and paginate. RULE: clamp the end date to today,
+  and treat an empty announcements result as suspect, never as a finding. Only
+  caught because six independent companies going silent in one month is
+  implausible. PROMOTION CANDIDATE for /compost.
+
+- **NEW — collect_to_repo silently degrades on a /consolidated/ URL for a
+  company that has no consolidated statements.** BORANA's consolidated page
+  exists but is empty, so the Playwright pass found no Export-to-Excel button
+  and no price: manifest came back `cmp: 0.0`, `market_cap_cr: 0.0`, no
+  Financials.xlsx, no main-company screening CSVs, only the peers'. No error
+  was raised. Re-run on the standalone `/company/BORANA/` fixed all four. RULE:
+  a manifest with cmp 0 or an empty screening set for the MAIN company means
+  the wrong URL variant, not a screener outage. Check before repairing
+  anything else. PROMOTION CANDIDATE.
+
+- **NEW — screener's "Annual Report YYYY" link can resolve to a 2-page
+  covering letter.** Hit on BOTH names in the same session. Fratelli's
+  "Annual Report 2025" was a Reg 30/36 shareholder letter dated 07-Sep-2026;
+  Borana's "Annual Report 2026" was a 2-page weblink intimation. The real ARs
+  (201p, 130p) came from BSE and the company IR site. RULE: page-count every
+  file in annual-report/ before trusting the classification; under ~30 pages is
+  not an annual report. PROMOTION CANDIDATE (this is the collector's
+  "mislabeled AR year" defect in a sharper form).
+
+- **NEW — a screener concall ROW does not mean a transcript exists.** Rows
+  render from any of PPT / Transcript / AI Summary / REC. Borana's Aug-2026,
+  Jun-2026 and Nov-2025 rows link decks only; the company has published exactly
+  ONE transcript ever (Q3FY26). Fratelli's Aug-2026 row has a deck and audio,
+  no transcript. RULE: count transcript hrefs, not concall rows, and confirm
+  absence against the BSE announcements API before recording a freshness pair
+  break. Both names verified this way, not on screener alone.
+
+- **NEW — peer selection must check concall FRESHNESS, not just that the URL
+  returns 200.** AYM Syntex passed every /step1 step-C test and was picked as
+  Borana's third peer; the collector then pulled four transcripts dated
+  Sep-2020 to May-2021. The company stopped holding calls in 2021, so it could
+  not serve stage-06 peer verification at all. Swapped for SANATHAN and the run
+  re-collected. RULE for step1 step C: verify each candidate has a transcript
+  within the last two quarters before writing companies.txt. PROMOTION
+  CANDIDATE (cheap prompt fix, wasted a full collector pass).
+
+- **NEW — the collector fetches no peer presentations.** Twelve peer decks
+  (Q4FY26 + Q1FY27 for all six peers) were pulled by hand from BSE into a new
+  `inputs/peer-presentation/` folder. That folder is NOT in the input contract
+  and no stage prompt references it, so its path must be passed explicitly in
+  the stage-06 task message or the decks go unread. Recorded in both manifests.
+  Candidate: add peer-presentation/ to the input contract and to the collector.
+
+- RECURRED (3rd+ time) — sector_cap_row auto-pick wrong on both names:
+  "Agri processing" for a wine company (matched the legacy Tinna Trade agri
+  text), "Pharma / CDMO" for a Surat weaver (the default). Corrected by hand.
+  AND two more missing cap rows found: no alcoholic-beverage row (Fratelli
+  ruled Branded apparel / FMCG 35x ad hoc) and no commodity-textile row
+  (Borana ruled Recycling / Manufacturing 25x ad hoc). Adds to the standing
+  OPEN ACTIONS list beside steel, sugar and distribution.
+
+- RECURRED — screener formula-sheet CSVs (Profit_Loss, Balance_Sheet,
+  Cash_Flow, Quarters) export header-only for all eight companies in both
+  runs. NOT a data gap: Data_Sheet.csv carries every number. `xlsx_to_csvs`
+  uses `data_only=True`, which reads cached formula values that screener's
+  export never writes. Recorded in both manifests so no stage reports it as a
+  gap.
+
+- CORPUS FINDING carried into companies/BORANA.md — INVESTOR SILENCE AFTER
+  LISTING. Borana listed 27-May-2025 and filed no presentation, transcript or
+  analyst-meet intimation until Nov-2025 (BSE API, 23 filings in the window,
+  none investor communication). Combined with the Apr-2026 SEBI 11C(9) search
+  at promoter-group entity R&B Denims and two secretarial-auditor resignations
+  in six days, this is a governance cluster, not three separate gaps.
+
+- CORPUS FINDING carried into companies/FRATELLI.md — the FY24 "revenue peak"
+  is partly a basis change. Consolidated FY24 Rs 421.35 cr still carried the
+  Tinna Trade agri-trading book; the wine business alone was Rs 215.6 cr. FY26
+  Rs 181.29 cr is wine-only. Any trend line drawn across FY24 to FY26 without
+  that reconciliation is fiction.
+
+## 2026-09-08 — FRAMEWORK AMENDMENT (Section 1B v3.10, Amendment 26)
+
+- Sep-2026 batch: base cases anchored to audited history screened out
+  transition names by construction. Corrected by A26.
+
+- The four rules that compounded: base revenue capped at the lower of
+  discounted guidance or historical CAGR; base margin fixed at the trailing
+  3-year average; a per-input "conservative bias" operating rule; and 4D
+  probability weights keyed to whole-company history. Together they priced
+  the audited past, failed the Hurdle Ratio, and landed WATCHLIST on the
+  operation's own setups. Same failure class as Amendment 9 (trough-anchored
+  ROCE in Pillar 1), now corrected in Section 2.
+
+- A21-A25 (v3.9, 07-Sep) moved the exit multiple and the verdict to the
+  probability-weighted future but left the projections that feed them
+  anchored to history. A26 closes that asymmetry. Conservatism now lives in
+  position size (A25) alone.
+
+- OPEN ACTION carried out of this amendment — 26.2 cites a "Second-Order
+  Section (Master Prompt Amendment, Rule F)" that exists nowhere in
+  frameworks/. Flagged inline in Master Prompt 2B and in the v3.10 file; a
+  margin bridge above 400 bps names its mechanism inline until the operator
+  lands Rule F. No session may reconstruct it.
+
+- OPEN ACTION — Annual_Report_Analysis_Protocol_v1_3.md Step 11A still says
+  "synced to Section 1B v3.9" and rechecks the Hurdle Ratio on an "audited
+  EPS base". A21 replaced that base with the forward run-rate. Not touched
+  here (out of A26 scope); needs its own amendment pass.
+
+## 2026-09-08 — FRAMEWORK AMENDMENT (Master Prompt v3.7, Rules F to J)
+
+- Sep-2026: analysis ran risk-only by default; second-order linkage and
+  entrepreneur credit required operator push. Corrected by Rules F to J.
+
+- Companion to Section 1B Amendment 26, same day. A26 fixed the numbers.
+  v3.7 fixes the analysis around the numbers. A26 alone would have produced a
+  base case that can credit a transition, sitting under a bull case that never
+  traced who pays for it.
+
+- The pattern behind all five rules: the framework had a rich vocabulary for
+  what goes wrong and a thin one for what goes right. Failure catalogue but no
+  success catalogue. "Do NOT be a cheerleader" with no matching bar on the bear
+  side. Promoter section that only asked whether he could be trusted, never what
+  he had built. Depth delivered on request instead of by default.
+
+- CLOSED — the open action from the A26 adoption. Rule F is the Second-Order
+  Section that A26.2 cited and that existed nowhere in frameworks/. It landed
+  the same day, as Role 2 Section 3.5, AR Protocol Step 6.5, and FTTCP Step 4.5.
+  The "Second-Order Section absent, mechanism stated inline" workaround is
+  retired from both the Master Prompt and the v3.10 file.
+
+- Master Prompt version bumped to v3.7. The FILE stays at
+  Master_Project_Prompt_v3_6.md. The path is a stable injection target named by
+  prompts, agents, commands, and past run provenance; renaming it would either
+  break those or force rewriting company memory and the v3.8 amendment file,
+  both of which record v3.6 as the version that governed at the time. Same
+  pattern as Section 1B, whose base file is still Section_1B_v3.3_Amendments.md
+  at framework v3.10. Cite the version, read the path. Noted in the file banner,
+  frameworks/README.txt, VERSIONING.md, and CLAUDE.md.
+
+- OPEN ACTION — frameworks/success_catalogue.md is created and EMPTY, 0 of 4
+  names. Rule I is not enforced in Role 3 until Keerti fills four. Until then
+  every value-trap test prints "success catalogue pending". No agent may add a
+  name: the catalogue's value is that she watched these companies at the ugly
+  stage. A name read about later teaches nothing about what was observable then.
+
+- OPEN ACTION — Rule H as ruled reads "Rules B, C, F, and G". F and G are now
+  defined. Rules B and C are labels from the claude.ai project-instruction copy
+  and exist nowhere in this repo; A26.4 calls one "the Rule B discount", the
+  guidance discount by track record. Not reconstructed. Rule H's four-row
+  precondition table is written to be self-sufficient, with a note telling Role 3
+  not to halt hunting for a repo definition. Add their preconditions if the
+  operator lands the rules here.
+
+- MERGE NOTE — main was merged into this branch mid-session, bringing PR #158
+  (Section 1B v3.9 consumption wiring), which bumped FTTCP to v2.2 with Section
+  C.2. Three conflicts, all additive, all resolved by keeping both sides. My
+  FTTCP row renumbered 2.1b to 2.3, following their 2.2 the same day; the two
+  amendments are independent. Git's auto-merge also spliced the stage-11 prompt
+  header into a broken duplicate sentence and left two contradictory
+  framework_versions lines; both repaired by hand. Lesson: an auto-merge that
+  reports success on a prose file still needs the merged region read.
+
+- OPEN ACTION — FTTCP version drift. PR #158 bumped the protocol to v2.2 but
+  updated few of the ~15 "FTTCP v2.1" prose cross-references across prompts/,
+  .claude/, frameworks/ and verifiers/. This session bumped the pointers that
+  state the version IN FORCE (VERSIONING, CLAUDE.md, orchestrator, stage-11,
+  finalize, Master banner) to v2.3 and left the prose names alone rather than
+  balloon an amendment diff into a rename sweep. Worth one cleanup pass.
+
+- OPEN ACTION carried forward, unchanged — AR Protocol v1.3 Step 11A still
+  rechecks the Hurdle Ratio on an "audited EPS base" after A21 replaced that
+  base with the forward run-rate. Out of scope for both amendments this session.
+
+## 2026-09-09 — TOTEM (Forbes Precision Tools & Machine Parts) — /step1 intake, phase 1 to Halt 1
+
+- Screener resolves this name ONLY by BSE code (`/company/544186/`). Both
+  `/company/TOTEM/` and the `/consolidated/` path 404. The company is BSE-listed
+  only; its shareholding filings record "NSE Symbol NOTLISTED".
+- The collector's sector auto-picker failed as usual, choosing "Pharma / CDMO" for a
+  cutting-tool maker: its keyword map hits "capital" from screener's Capital Goods
+  label. Corrected to "Cables / Industrial products", 25x.
+- The empty-CSV defect IS present: Profit_Loss, Balance_Sheet, Cash_Flow, Quarters
+  and Customization export as empty formula shells for the subject AND every peer.
+  Only `<TICKER>-Data_Sheet.csv` carries data. Stage 1 read the shells, concluded
+  peer data was missing, and scored every peer-dependent moat test zero. Cost one
+  full stage re-run. The stage-0 inventory must check CSV CONTENT, not row counts;
+  my first B00 said "all six populated" on a `wc -l` alone and was wrong.
+- The collector deletes its `_download/` staging area on exit. Peer annual reports
+  and peer investor presentations it downloaded were gone before they could be
+  staged. Anything wanted from `_download/` must be copied during the run.
+- A demerger listing has no DRHP. The prospectus-equivalents are the Information
+  Memorandum and the NCLT scheme order, both on the company IR site. Staged into
+  `inputs/prospectus/`, so the RECENTLY-LISTED HIGH gap did not fire.
+- The single most decision-relevant filing, the Q1 FY27 result carrying the margin
+  bridge, was a SCANNED image with zero extractable text. `pdftoppm` is absent so
+  the Read tool cannot render PDFs at all. Fix that worked: `pip install pypdfium2`,
+  render the pages to PNG at 200 dpi, point stages at the PNGs. Subagents read them
+  cleanly. Worth making the standing fallback for any zero-text PDF.
+- Verifier A (haiku) run 1 raised a MAJOR that was its own reading error, and
+  WITHDREW it unprompted on run 2. The known severity-mislabel pattern, but
+  self-correcting this time.
+- The verifier loop did not converge and the reason matters. Verifier B found 19,
+  then 33, then 47 red-flag items across three cycles while stage 5's catch count
+  went 4, 16, 15, so acceptance moved 21%, 48%, 32%. The denominator grew because
+  each fresh Opus read mined deeper into genuinely defect-rich filings, not because
+  the work degraded. Chasing the 60% threshold would loop indefinitely. Stopped at
+  three cycles and let the framework's own answer stand: REWORK, with the verifier
+  finding lists as the rework instruction. Open question for /compost: should the
+  orchestrator cap correction cycles explicitly, say at two, and treat a still-low
+  acceptance rate as a finding about the corpus rather than a loop trigger?
+- The two extra cycles paid for themselves. They reversed a materials-cost
+  pass-through finding that was a gross-versus-net basis error (gross margin
+  actually IMPROVED about 212bp), withdrew the external support for the
+  raw-material half of the inventory question (the +60.2% CIF figure is a rebound
+  off a depressed FY25; FY26 is only 1.2% above FY24), and withdrew a false peer
+  claim that Wendt had its worst quarter on record. All three would have shipped.
+- Roughly 5.58M tokens over 25 subagent runs; about 52% went to cycles two and
+  three. Stage 5, stage 6 and the two verifiers that audit them are 60.6% of the run.
+- Not a clean run.

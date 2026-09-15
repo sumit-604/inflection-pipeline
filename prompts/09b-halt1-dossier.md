@@ -35,6 +35,13 @@ not recommend an action. You assemble what the pipeline already found.
    Section 6; sections 1-5 stay assembly-only. Where a stage report already
    carries the anchored quote, reuse it rather than re-reading. The annex
    carries no valuation, price, or verdict language either (rule 4 holds).
+   CHAIN EXCEPTION (Section 4e only): the Second-Order stub REQUIRES
+   labelled inference, because a chain with no [INFERENCE] is a summary,
+   not a chain (Master Prompt v3.7, Rule F). Inside 4e you MAY reason
+   forward from block-cited facts, provided every inference carries the
+   [INFERENCE] label and every FACT a chain starts from carries its block
+   cite. This exception licenses reasoning, never a new number and never a
+   new fact. It is limited to Section 4e.
 3. Every number carries its block cite, e.g. (B04) or (B09.som_5yr_cr).
    A figure with no block trace is not written.
 4. NO VALUATION, PRICE, OR VERDICT VOCABULARY, anywhere in the output.
@@ -190,7 +197,45 @@ c. FRAGILITY READ (structured; the same fields go in the B09b YAML):
 d. RESEARCH BRIEF: the numbered list of live-web work the corpus cannot do
    (customer-health reads from counterparty filings, rating rationales,
    forum archaeology, policy status, source URL verification). This is the
-   claude.ai work order.
+   claude.ai work order. It carries, as its own numbered items, every
+   PENDING LIVE VERIFICATION link raised by the Section 4e chains and the
+   three-to-five chains still to be built.
+
+e. SECOND-ORDER STUB (Master Prompt v3.7, Rule F). Rule F sets a floor of
+   FIVE chains for Role 2, Role 6, and FTTCP. Halt 1 is earlier than all
+   three and has no live web, so it carries a STUB: the first TWO chains,
+   drafted from corpus, for Claude web to extend to the Rule F floor with
+   live-web links. The stub is not the section; it is the seed.
+
+   Draft the two chains off the two dominant variables from Section 2 that
+   the evidence base can actually carry. Use the Rule F block format
+   exactly:
+
+   ```
+   CHAIN n: [trigger or fact, with block cite]
+   Link 1 [tier]: ...
+   Link 2 [tier]: ...
+   Link 3 [INFERENCE]: ...
+   Binding constraint: ...
+   Unsaid: ...
+   Observation that confirms or breaks this chain, and confirm-by date: ...
+   ```
+
+   Four rules bind the stub:
+   - The "who pays, and why now" link needs counterparty evidence this
+     container cannot reach. Write it as PENDING LIVE VERIFICATION and name
+     the specific document Claude web should open. Never fabricate a
+     counterparty fact, never pull one from memory.
+   - "What binds" and "what was not said" ARE answerable from corpus. Answer
+     them: capex schedule, working-capital days, contingent liabilities,
+     related-party notes, and the footnote that implies demand nobody
+     mentioned on the concall. These two links are the stub's real value.
+   - Every confirm-by observation drafted here feeds the Expectation Ledger
+     and the Role 5.5 tracker. It must be measurable.
+   - No valuation, price, or verdict vocabulary (rule 4 holds here too).
+
+   State plainly at the end of 4e: "Stub carries 2 of the Rule F floor of 5.
+   Chains 3 to 5 are built in claude.ai with live web, before Role 2."
 
 ## SECTION 5: PLAIN-LANGUAGE SUMMARY (14-15 points)
 
@@ -294,6 +339,10 @@ fragility:
   single_point_failure: ""     # named variable, or "none - failure requires conjunction"
   fragility_verdict: ""        # ROBUST | MODERATE | FRAGILE
 candidate_count: 0             # B09 candidates carried into Section 4b
+second_order:                  # Section 4e, Rule F stub (floor of 5 is reached in claude.ai)
+  chains_drafted: 0            # must be 2
+  pending_live_links: 0        # count of PENDING LIVE VERIFICATION links handed to claude.ai
+  confirm_by_observations: 0   # drafted confirm-by lines, feed the A23 ledger and Role 5.5
 research_brief_items: 0        # count of live-web work items for claude.ai
 plain_summary_points: 0        # must be 14 or 15
 annex:

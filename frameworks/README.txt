@@ -1,26 +1,41 @@
-COPY THESE EIGHT FILES HERE FROM YOUR CLAUDE.AI PROJECT BEFORE THE
+COPY THESE NINE FILES HERE FROM YOUR CLAUDE.AI PROJECT BEFORE THE
 FIRST RUN (stage 11 halts without them):
-  Master_Project_Prompt_v3_6.md
+  Master_Project_Prompt_v3_6.md   (CONTENT IS v3.7 - see below)
   Section_1B_v3.3_Amendments.md
   Section_1B_v3_5_1_Reconciliation.md
   Section_1B_v3_6_Amendments.md
   Section_1B_v3_7_Amendments.md
   Section_1B_v3_8_Amendments.md
   Section_1B_v3_9_Amendments.md
+  Section_1B_v3_10_Amendments.md
   FTTCP_v2_1_Consolidated.md
 Section_1B_v3_5_1_Reconciliation.md is the Pillar 1 normalization
 authority for capital-cycle names. Its consolidated Amendment 9
 SUPERSEDES the standalone Amendment 4.5 that still appears in
 Section_1B_v3.3_Amendments.md (kept for history, banner-marked as
-retired). Stage 11 injects all six Section 1B layers; where they
-overlap, v3.9 governs the items it names (relative valuation
-cross-check, step 1C), then v3.8, then v3.7, then v3.6,
-then v3.5.1, then v3.3.
+retired). Stage 11 injects all seven Section 1B layers; where they
+overlap, v3.10 governs the items it names (growth symmetry in
+projections and weighting, Amendment 26), then v3.9 (relative
+valuation cross-check step 1C, and the forward-expectation exit
+framework), then v3.8, then v3.7, then v3.6, then v3.5.1, then v3.3.
+FILENAME NOTE. Two files carry a version number in the path that is
+older than the version inside them. Master_Project_Prompt_v3_6.md is at
+v3.7. Section_1B_v3.3_Amendments.md is the base of a set that runs at
+v3.10. The paths are stable injection targets referenced by prompts,
+agents, commands, and past run provenance; the version lives in each
+file's banner. Cite the version, read the path.
+
 When you amend a framework, update the copy here. Stage 11 reads these
 at run time, so amendments propagate with no pipeline edits.
 
 ALSO MAINTAINED HERE (keep synced with the claude.ai project):
-  Annual_Report_Analysis_Protocol_v1_3.md     (Role 6 AR review; Step 10.5
+  success_catalogue.md                        (Master v3.7 Rule I; the
+    operator's own names that looked ugly on trailing numbers and
+    compounded. Paired with the failure catalogue. Rule I is enforced in
+    Role 3 once this file holds FOUR names; the operator fills it, no
+    agent adds a name.)
+  Annual_Report_Analysis_Protocol_v1_3.md     (Role 6 AR review; Step 6.5
+    Second-Order Section per Master v3.7 Rule F; Step 10.5
     tracker cross-check runs at Role 5.5, fed by the pipeline's
     ar_new_downstream_entities field)
   Downstream_Source_Discovery_Protocol_v1_0.md (source registry for

@@ -1,0 +1,101 @@
+company: Fratelli Vineyards Ltd
+ticker: FRATELLI
+bse_code: 541741
+listing: BSE only (no NSE line)
+cmp: 135.0
+market_cap_cr: 589.0
+run_date: 2026-09-07
+run_type: full
+concalls_available: true
+sector_cap_row: "Branded apparel / FMCG"
+sector_cap_x: 35
+sector_cap_note: >
+  Auto-picker chose "Agri processing" from the legacy Tinna Trade agri-trading
+  text. Corrected by hand. No alcoholic-beverage row exists in the Section 1B
+  Sector Cap Table. Branded apparel / FMCG (35x) is the closest economic match:
+  branded consumer, pricing power, brand spend, low capital intensity per rupee
+  of sale. FLAG for operator ruling at Phase 3, and add to LESSONS.md OPEN
+  ACTIONS as a missing cap row (precedent: SHYAMMETL steel, KCPSUGIND sugar,
+  ENTERO distribution).
+peers:
+  - ticker: SULA
+    name: Sula Vineyards Ltd
+    why: Only listed pure-play Indian wine maker. Same engine, same excise
+         route-to-market, same wine-tourism revenue line. Shows what a scaled
+         Indian premium-wine P&L looks like.
+  - ticker: TI
+    name: Tilaknagar Industries Ltd
+    why: Small-cap alco-bev that actually completed the climb. Loss-making to
+         profitable on premiumisation and brand spend. The transition-proof comp.
+  - ticker: SDBL
+    name: Som Distilleries & Breweries Ltd
+    why: Beer and RTD adjacency for the Shotgun line. Brand-spend heavy,
+         capacity-ramp driven, closest size and category to Fratelli's RTD bet.
+input_gaps:
+  - "Q1FY27 concall transcript (call held 14-Aug-2026) NOT published. Screener
+     lists the row with PPT and audio only. FRESHNESS PAIR BREAK: the Jun-2026
+     quarter results and its investor deck are in the corpus, the matching
+     transcript is not. Caps the Halt 1 gate at PROCEED WITH CAVEATS unless the
+     transcript appears."
+  - "RESOLVED after the collector pass: six quarterly results filings pulled
+     directly from BSE into inputs/results/ (Q4FY25 through Q1FY27). Screener
+     hosts none; the BSE announcements API does."
+  - "No current credit rating. Newest rating on file is 26-Sep-2023 from
+     Infomerics, issued to Tinna Trade before the wine pivot. Nothing rates the
+     wine entity. inputs/rating/ is empty."
+  - "Screener CSV export defect (known, LESSONS.md): screener-Profit_Loss.csv,
+     -Balance_Sheet.csv, -Cash_Flow.csv and -Quarters.csv are formula sheets and
+     export header-only. NOT a data gap. Every number lives in
+     screener-Data_Sheet.csv, which is fully populated. Same for all three peers."
+  - "inputs/prospectus/ empty and will stay empty. Not an IPO name; the listing
+     came through the Tinna Trade shell, so no prospectus exists."
+  - "inputs/shareholding/ empty. BSE files shareholding patterns on a separate
+     endpoint that was not scraped. The FY25 and FY26 annual reports carry the
+     pattern, and the SAST and inter-se transfer notices in
+     inputs/announcements/ carry the 2026 promoter changes. Confirm the
+     FII+DII figure from the AR before applying the Amendment 3 UA multiplier."
+  - "inputs/research/ empty. No broker note collected."
+collector_repairs:
+  - "Screener's 'Annual Report 2025' link resolved to a 2-page Reg 30/36
+     shareholder letter dated 07-Sep-2026, not an annual report. Replaced with
+     the real FY2024-25 AR (201 pages) pulled from BSE
+     (xml-data/corpfiling/AttachHis/2496bddf-a207-4007-b3bc-c123b4a7fd60.pdf).
+     The letter moved to inputs/announcements/."
+  - "Added the Q4FY26 investor deck (May 2026, 47 pages) from BSE. The collector
+     had taken only the Q1FY27 deck."
+  - "Concall files renamed by the quarter they cover, not the month posted."
+  - "Added from the BSE announcements API, none of which the collector fetches:
+     six quarterly results filings; four more investor presentations, so every
+     quarter from Q4FY25 to Q1FY27 has one; the Q4FY25 concall transcript, making
+     five; and fourteen Regulation 30 / SAST announcements covering the promoter
+     inter-se transfers of Aug-2026, company-secretary and director churn, two
+     allotments, the Feb-2026 warrant lapse, the Calcutta Stock Exchange
+     delisting, and the Sep-2025 price-movement clarification."
+  - "sector_cap_row corrected from 'Agri processing'."
+notes: "Collected by tools/collector/collect_to_repo.py v3 --dry-run, then repaired by hand. Nothing pushed."
+governance_items_in_corpus:
+  - "Promoter inter-se share transfers by gift, 14-Aug-2026 and 21-Aug-2026,
+     with the SAST Reg 29(3) intimation. Consolidates 20.79% in one promoter.
+     Read alongside the FY26 related-party note."
+  - "Company Secretary resigned and a replacement was appointed on the same day,
+     03-Apr-2026, with a change-in-management filing the same day. A director
+     resigned 14-Nov-2025."
+  - "Warrants lapsed 28-Feb-2026, after allotments in Oct-2025 and Nov-2025.
+     Reconcile the share count: 4.33 cr shares at FY25 close, 4.35 cr at FY26."
+  - "BSE sought a price-movement clarification on 11-Sep-2025."
+peer_presentations:
+  folder: inputs/peer-presentation/
+  contract_note: >
+    NEW folder, not part of the standard input contract. No stage prompt
+    references it. Pass the path explicitly in the stage-06 task message, or
+    the decks will not be read.
+  contents: >
+    The latest two investor presentations for each peer, Q4FY26 and Q1FY27,
+    pulled from the BSE announcements API on 07-Sep-2026. Every file opened and
+    its quarter confirmed from the deck cover, not from the filing date.
+  collector_note: >
+    The collector does not fetch peer presentations. Added by hand.
+  files: >
+    SULA Q1FY27 06-Aug-2026 (21p) and Q4&FY26 06-May-2026 (21p);
+    TI Q1FY27 27-Jul-2026 (47p) and Q4&FY26 29-May-2026 (51p);
+    SDBL Q1FY27 12-Aug-2026 (28p) and Q4FY26 01-Jun-2026 (34p).

@@ -15,7 +15,14 @@ in your task message (as file paths to read, or inline content).
 Non-negotiables:
 - Assembly only: build from the committed blocks and stage reports given to
   you. No web search, no new numbers, no re-analysis. A claim with no block
-  trace is not written.
+  trace is not written. ONE SCOPED EXCEPTION, Section 4e (the Rule F
+  Second-Order stub): labelled forward reasoning is REQUIRED there, because a
+  chain with no [INFERENCE] is a summary. Every fact a chain starts from still
+  carries its block cite; the exception licenses reasoning, never a new number
+  and never a new fact.
+- Section 4e carries exactly TWO drafted chains in the Rule F block format,
+  with live-web links marked PENDING LIVE VERIFICATION and named for claude.ai.
+  Never fabricate a counterparty fact.
 - No valuation, price, or verdict vocabulary anywhere in the output.
 - The Mental Model Declaration is a DRAFT; never mark it signed.
 - Complete the entire stage in one run. Never stop to ask for confirmation.

@@ -1,0 +1,59 @@
+stage: B12c
+company: "TOTEM"
+run_date: "2026-09-09"
+model: claude-opus-4-8
+status: complete
+verification_cycle: 2
+scope: "phase-1 (Gate 0 + Emerging Moat + B09 block requirement); valuation audit deferred to phase 3"
+gate0:
+  rules_checked: 42
+  fails:
+    - {rule: "Block B / B4 change in WC days", severity: "MAJOR", detail: "Stated delta '+5.0 days' scored under the 'increased 5-15' band (1); the plus-or-minus-5 band gives 3 on that same displayed value. Exact recomputation from Data_Sheet receivables/inventory and AR trade payables is +5.01 days (FY24 73.82, FY26 78.83), so the score survives by 0.01 of a day. Boundary call neither stated nor defended.", recomputed: "B4 = 1 or 3; Block B = 8 or 10; Core = 58 or 60; classification AVOID either way"}
+    - {rule: "Block F / M5 Scale and Dominance, plus the 'peer data not provided -> score 0, mark PEER DATA NEEDED' rule", severity: "MAJOR", detail: "Scored 3 for 'top 3 mcap AND margin top 2' on a 4-company set the report itself concedes is not the segment. M5's bands are written against a segment ranking this run does not hold.", recomputed: "M5 = 0; Block F = 19/60; moats present = 4; moat class STRONG unchanged; grand total 77/160; classification AVOID unchanged"}
+emoat:
+  rules_checked: 19
+  fails: []
+b09_downstream_candidates: {present: true, item_count: 6, demand_externally_verifiable: true, rework_stage9: false}
+categories_21_22: {i1_present: true, i1_score: 0, i1_gate_ok: true, i2_present: true, i2_score: 0, i2_gate_ok: true, rework_stage7: false}
+valuation: {rules_checked: 0, fails: [], status: "PENDING PHASE 3 - B10/B11 do not exist yet"}
+expectation_ledger: {status: "PENDING PHASE 3"}
+business_understanding_narrative: {status: "PENDING PHASE 3 - stage 13 has not run"}
+recomputed_destination_pe: ""
+recomputed_decision: ""
+recomputed_gate0_classification: "AVOID (concur)"
+recomputed_gate0_core: 58
+recomputed_gate0_moat_class: "STRONG (concur; holds at 4 moats if M5 is corrected to 0)"
+recomputed_em_score: 9.7
+recomputed_em_classification: "NONE (concur)"
+findings:
+  - {severity: "MAJOR", location: "01-gate0.md Block B, B4", note: "Displayed delta +5.0 contradicts the band applied (1). True delta +5.01 days. Core crosses a matrix band if scored 3; final classification unchanged."}
+  - {severity: "MAJOR", location: "01-gate0.md Block F, M5", note: "Segment ranking scored on a 3-peer set; Block F's missing-peer-data rule requires 0 and PEER DATA NEEDED. Moat class and classification unchanged."}
+  - {severity: "MINOR", location: "01-gate0.md", note: "'Data available' line is not the opening line; it sits behind the run-2 preamble."}
+  - {severity: "MINOR", location: "01-gate0.md D1", note: "Rs 23.23 cr mutual funds excluded from cash; including them scores 5. Disclosed judgment."}
+  - {severity: "MINOR", location: "01-gate0.md D1 vs Block F", note: "Two FY26 EBITDA bases coexist (52.62 and 52.94); the governing basis is not declared."}
+  - {severity: "MINOR", location: "01-gate0.md D3", note: "D/E 0.0987 against a 0.1 threshold; the AR's own 10% scores 4. Disclosed."}
+  - {severity: "MINOR", location: "01-gate0.md E2", note: "Three-year promoter-holding-change rule scored on a ~12-month window. Prompt rules 5 and 6 conflict; rule 6 chosen and flagged provisional. Accepted."}
+  - {severity: "MINOR", location: "01-gate0.md Block F, M2", note: "With 3 peers the median is Wendt alone (13.72%), whose margin fell from 22.73% in one year. Year-end sensitivity run; single-peer fragility not tested."}
+  - {severity: "MINOR", location: "01-gate0.md Block F, M8", note: "Scored 0 as not disclosed; B07 records 200+ distributors and 12 sales offices from the 2024 Information Memorandum, which scores 1 under 'mentioned unquantified'. Cross-stage corpus-scope mismatch."}
+  - {severity: "MINOR", location: "01-gate0.md peer-alignment note", note: "Kennametal's Jun-2026 year carries a Rs 225.0 cr Change in Inventory against Rs 21.5 cr prior; the anomaly is not named beside the year-end alignment disclosure."}
+  - {severity: "MINOR", location: "07-emoat.md Section 5, H3", note: "Matrix label '(LM)' against a stated Medium likelihood / Low impact (ML). Both map to 1; value correct."}
+  - {severity: "MINOR", location: "B07-emoat.yaml", note: "Two non-schema fields added (em_score_scale, capex_embedded_growth_basis)."}
+  - {severity: "MINOR", location: "B07-emoat.yaml evidence_mix", note: "Scoped to the five evidenced rows only; inference 0 is false of the document, which carries at least six labelled analyst inferences. Scoping defensible, unstated."}
+critical_count: 0
+major_count: 2
+minor_count: 11
+acceptance_rate: 97
+acceptance_note: "60 of 62 rules passed (96.8%), counting a rule failed only on a MAJOR or CRITICAL finding. On the stricter convention where any finding counts against the rule, 51 of 62 = 82.3%. Both clear the 60% REWORK threshold."
+peer_year_end_verdict: "DEFENSIBLE, not a basis error. Kennametal's June year end was named, a FY25 sensitivity was run on every peer-dependent test, and the peer median was independently confirmed at 13.72% (M2) and 56.25% (M9) under both alignments, so no score moves."
+deal_breaker_double_count_verdict: "NO DOUBLE-COUNT. The pledge cap (max AVERAGE) and the LIMITED-history downgrade (one tier) key to different facts and different prompt sections. The pledge cap is non-binding on a Core of 58; all movement from AVERAGE to AVOID comes from the history downgrade, and the report states this."
+classification_matrix_verdict: "CONFIRMED. Core 58 -> 40-59 AVERAGE (flat band, no moat branch) -> pledge cap (non-binding) -> one-tier LIMITED-history downgrade -> AVOID. Robust to both MAJOR findings applied together (Core 60 + STRONG = GOOD+ -> cap AVERAGE -> downgrade -> AVOID)."
+emoat_completeness_verdict: "CONFIRMED. All 23 rows addressed, 18 as NO EVIDENCE FOUND or explicitly negative. 5 rows carry evidence, 3 clear Strong/Moderate. Completionist recount performed and itemised (15 documented items across 5 categories). No category skipped. Sparse and complete."
+
+orchestrator_note: >
+  This block records verifier C cycle 2, which is the governing framework-adherence
+  audit for phase 1. Its single MAJOR, stale Gate 0 run-2 moat figures inside
+  Sections 6C, 6D and 6E of 07-emoat.md, was resolved by a mechanical figure
+  alignment to 4 of 12 and 20/60, recorded inside 07-emoat.md under an ALIGNMENT
+  NOTE and in the commit that carried it. No analytical content changed and no
+  classification moved. Verifier C was not re-run in cycle 3 because neither B01
+  nor B07 changed after its audit apart from that alignment.

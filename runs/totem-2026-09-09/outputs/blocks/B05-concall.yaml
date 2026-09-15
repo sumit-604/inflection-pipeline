@@ -1,0 +1,87 @@
+stage: B05-concall
+company: "TOTEM"
+run_date: "2026-09-09"
+model: claude-sonnet-5
+status: complete
+stage_run: 3
+no_concall_mode: true
+input_gaps:
+  - "concalls/ EMPTY BY DECLARATION; presentation/ EMPTY; rating/ EMPTY; research/ EMPTY"
+  - "peer-concalls PARTIAL: KENNAMETAL 4 (newest Mar-2024), WENDT 1, BIRLAPREC 0"
+  - "Q1 FY27 results filing is a scanned image; read via rendered PNG pages, not extracted text"
+  - "FY26 audited results cash-flow statement is a single-token-per-line OCR dump; FCF could not be independently reconstructed, so the dividend-to-FCF multiple is not verified here"
+  - "screening: five of six CSVs per company are empty formula shells; not needed for this stage"
+flags:
+  - "HIGH: pledge-and-dividend chain (SP and Co 100% of residual stake pledged; about Rs 1.8-1.9 cr of the FY26 maiden dividend to that pledged parent) is ONE chain, not two"
+  - "HIGH: the FY26 MD&A claim that commodity prices increased abnormally does not survive the company's own three-year CIF raw-material series (FY26 only +1.2% against FY24); LBF-2's raw-material explanation loses external support"
+  - "MEDIUM: CSR obligation 100% unspent in both FY25 and FY26; the FY26 Board's Report frames carry-forward spend as current-year compliance"
+  - "MEDIUM: Directors' sitting fees and commission +676% in a year PAT rose 0.1% and CSR went unspent, unexplained"
+  - "MEDIUM: three HR leadership transitions in about nine months; the first exit was never separately announced"
+  - "MEDIUM: FY25 debtor days +108%; the mandatory explanation cites a year not in the table"
+  - "MEDIUM: the Q3 FY26 Labour Codes note is dropped from Q1 FY27 with no closure statement"
+quarters_analysed: ["FY2023-24", "FY2024-25", "FY2025-26", "Q1 FY2026-27"]
+triggers:
+  - {priority: 1, name: "Drill-capacity capex converts to volume (CNC lines, robotic flute grinding, spring-washer furnace)", type: "volume", timeframe: "near", conviction: "M", confirm_signal: "sustained double-digit revenue growth with OPM expansion beyond Q1 FY27", kill_signal: "growth fades to single digits or the OPM gain reverses once easy comps end"}
+  - {priority: 2, name: "Price-mix shift toward carbide and high-performance tools", type: "price-mix", timeframe: "medium", conviction: "L", confirm_signal: "any segment-level margin or mix disclosure, never yet given", kill_signal: "continued zero segment disclosure"}
+  - {priority: 3, name: "Export recovery in Far East and GCC after the tariff-driven drop", type: "sectoral", timeframe: "medium", conviction: "L", confirm_signal: "FOB export figure rising above the FY24 baseline of Rs 3,834.10 lakh in the FY27 AR", kill_signal: "FOB stays below the FY24 level for a third consecutive year"}
+  - {priority: 4, name: "Channel-partner and India defence/railways/electronics opportunity", type: "sectoral", timeframe: "long", conviction: "L", confirm_signal: "any named order, customer or geographic disclosure", kill_signal: "continued absence of concrete disclosure after three annual cycles of identical language"}
+guidance:
+  - {item: "Labour settlement agreement", number: "valid to end of 2028", timeframe: "multi-year", stated_in: "AR2025 p.22, reconfirmed AR2026 p.28"}
+  - {item: "Interim dividend (FY26, first ever)", number: "Rs 5/share, Rs 2,579.72 lakh total", timeframe: "declared 24-Apr-2025", stated_in: "AR2025 p.22; AR2026 p.94, p.52"}
+  - {item: "No final dividend FY26", number: "Rs 0", timeframe: "FY25-26", stated_in: "AR2026 p.52"}
+  - {item: "CSR obligation FY26", number: "Rs 53.83 lakh", timeframe: "annual", stated_in: "AR2026 Annexure I p.35"}
+  - {item: "Forward revenue/margin/capex/return target", number: "NOT FOUND IN DOCUMENT", timeframe: "-", stated_in: "searched all three ARs and all four results filings"}
+promise_delivery:
+  delivered: 1
+  partial: 2
+  missed: 7
+  rows:
+    - {promised_in: "AR2024 MD&A", promise: "full price pass-through protects margin", outcome: "delivered", explanation: "consumption-matched gross margin +about 212bp in FY26; the FY26 EBITDA drag traces to employee cost and other expenses, not materials"}
+    - {promised_in: "AR2024/AR2025 MD&A", promise: "Carbide Taps portfolio broadening via new technology", outcome: "missed", explanation: "carried two annual cycles then silently dropped from AR2026, no delivery statement"}
+    - {promised_in: "AR2025 MD&A", promise: "improving trend in export business performance", outcome: "missed", explanation: "false when made; AR2025's own FOB figure (Rs 3,791.05 lakh) is below AR2024's (Rs 3,834.10 lakh)"}
+    - {promised_in: "AR2025 Finance section", promise: "relentless focus on inventories and receivables keeps borrowing low", outcome: "partial", explanation: "true in FY25; the inventory build and a 108% debtor-days rise arrive in the same or next cycle"}
+    - {promised_in: "AR2026 MD&A", promise: "commodity prices increased abnormally, justifying margin pressure", outcome: "missed", explanation: "the three-year CIF series shows FY26 only 1.2% above FY24, the last normal year"}
+    - {promised_in: "AR2026 Board's Report p.30", promise: "Rs 39.78 lakh CSR amount spent, FY26", outcome: "missed", explanation: "that was the FY25 carry-forward; FY26's own Rs 53.83 lakh obligation was 100% unspent and transferred to the Unspent CSR Account"}
+    - {promised_in: "AR2025 Board's Report", promise: "Rs 39.78 lakh CSR to be spent, FY25", outcome: "missed", explanation: "100% unspent, confirmed in the annexure detail"}
+    - {promised_in: "AR2024 Board's Report p.14", promise: "headline EPS Rs 110.63, no caveat", outcome: "missed", explanation: "technically compliant but buries the more decision-useful Rs 5.76 figure in a note; the AR2025 comparative implies a false 95% EPS collapse"}
+    - {promised_in: "AR2024 p.15", promise: "Precision Tools business achieved 12% year-on-year growth", outcome: "missed", explanation: "no filed comparable base exists; AR2024's own table shows FY22-23 as nil and not comparable"}
+    - {promised_in: "AR2025 debtor-days table", promise: "the mandatory explanation for a change above 25%", outcome: "missed", explanation: "a non-sequitur citing 31-03-2023, a year not in the two-year comparison table"}
+promise_delivery_score: "1 delivered, 2 partial, 7 missed across 10 tested claims"
+excuse_pattern: "external-blame-heavy"
+repeated_evasions: []
+repeated_evasions_note: >
+  No Q&A record has ever existed. The FY26 annual report states at p.52 that the
+  company does not have a practice of making presentations to institutional
+  investors and analysts. The repeated-evasion test is structurally not
+  applicable, which is different from a search that came up empty.
+credibility_grade: "C"
+credibility_basis: "The annual-report guidance-versus-results record shows one genuine delivery (price pass-through and margin) against seven misses, including a now-disproven commodity-price claim and a misleading CSR spend framing, with disclosure completeness poor across CSR, director fees, HR churn and the dropped Labour Codes note. No basis found to upgrade toward B."
+peer_questions:
+  - {question: "Did Kennametal India, Wendt India or Birla Precision report an abnormal FY26 spike in carbide, steel or tooling raw-material costs matching TOTEM's MD&A claim?", why: "TOTEM's own three-year CIF series does not support the claim; peer confirmation or denial separates an industry-wide event from a company-specific overstatement", check_peers: ["KENNAMETAL", "WENDT", "BIRLAPREC"]}
+  - {question: "Does Kennametal and Wendt FY25-FY26 commentary on price pass-through corroborate or contradict TOTEM's downgrade from unhedged full pass-through (FY24) to trying to pass on as much as possible (FY26)?", why: "Kennametal's Mar-2023 call already contains an unhedged full-pass-through claim, arguing against a sector-wide imperfect-pass-through reading", check_peers: ["KENNAMETAL", "WENDT"]}
+  - {question: "Has any peer disclosed a specific domestic market-share gain figure, against TOTEM's undated repeated claim of enhancing market share domestically?", why: "TOTEM has made this claim three consecutive years with no number and no competitor named", check_peers: ["KENNAMETAL", "WENDT", "BIRLAPREC"]}
+  - {question: "What capex-cycle commentary do Kennametal and Wendt give for FY25-FY26, and does it read as an industry-wide capacity build or as company-specific?", why: "resolves whether TOTEM's FY26 capex and Q1 FY27 growth is cycle-driven or share-gain-driven", check_peers: ["KENNAMETAL", "WENDT"]}
+  - {question: "Wendt India refused quarterly investor calls on the record (AGM 21-Jul-2025); how unusual is TOTEM's structural silence against this specific peer set?", why: "Kennametal restricts analyst meetings to historical public information too, which is mitigating context for how unusual TOTEM's silence really is", check_peers: ["KENNAMETAL", "WENDT"]}
+red_flags:
+  - {severity: "HIGH", flag: "Pledge-and-dividend chain: 100% of SP and Co's residual holding pledged; about Rs 1.8-1.9 cr of the FY26 maiden dividend flowed to that pledged parent the same year its only unpledged block moved to a group finance vehicle"}
+  - {severity: "HIGH", flag: "The FY26 abnormal-commodity-prices MD&A claim does not survive the company's own three-year CIF series; LBF-2's raw-material explanation loses external support, leaving the FY26 inventory build's driver unresolved"}
+  - {severity: "MEDIUM", flag: "CSR obligation 100% unspent in FY25 and FY26; the FY26 Board's Report frames carry-forward spend as current-year compliance"}
+  - {severity: "MEDIUM", flag: "Directors' sitting fees and commission +676% in a year PAT rose 0.1% and CSR went unspent, unexplained"}
+  - {severity: "MEDIUM", flag: "Three HR leadership transitions in about nine months; the first exit was never separately announced"}
+  - {severity: "MEDIUM", flag: "FY25 debtor days +108%; the mandatory explanation cites 31-03-2023, a year not in the comparison table"}
+  - {severity: "MEDIUM", flag: "The Labour Codes note is dropped from Q1 FY27 with no closure statement, despite the Q3 FY26 commitment to account for further impact"}
+  - {severity: "LOW", flag: "The FY24 claim of 12% year-on-year growth has no filed comparable base"}
+  - {severity: "LOW", flag: "Return on net worth for FY23-24 restated 23% to 22% between AR2024 and AR2025, unexplained"}
+  - {severity: "LOW", flag: "FY24 headline EPS Rs 110.63 presented without caveat; the decision-useful Rs 5.76 and Rs 5.57 figures are buried in a note"}
+  - {severity: "LOW", flag: "Two corrigenda in fourteen months (03-Jun-2025 and 12-Aug-2026)"}
+  - {severity: "LOW", flag: "Attrition cited on a shifted, non-comparable basis: company-wide 17.24% (AR2025) against lower-executive-cadre about 25% (AR2026)"}
+  - {severity: "LOW", flag: "Mr P. Shetty, SVP with stated turnaround expertise, is absent from the AR2026 HR narrative and Board's Report, though listed in the corporate governance senior-management table"}
+  - {severity: "SUB-THRESHOLD", flag: "Stale unlisted-prefix CIN (U29256MH2022PLC389649) on the FY26 audited results P&L template page against the correct L-prefix elsewhere in the same filing"}
+dropped_triggers:
+  - "Carbide Taps portfolio broadening via new technology (named in AR2024 and AR2025; absent from AR2026)"
+timeline_slippages:
+  - "International account acquisition in the Far East and Americas: claimed delivered in FY24, still promised as upside in FY25 and FY26 with near-identical wording"
+withdrawn_from_earlier_runs:
+  - "The materials-cost pass-through finding (32.0% to 37.2% of revenue, implying incomplete pass-through) is WITHDRAWN. It was a gross-versus-net basis error ignoring the change-in-inventory line. On a consumption-matched basis the ratio moved 34.3% to 32.2% and gross margin IMPROVED about 212 basis points. Do not carry the 32.0-to-37.2 figure into valuation as margin pressure."
+  - "The external support for the raw-material half of LBF-2 is WITHDRAWN. The +60.2% CIF import figure is a rebound off a depressed FY25; on the three-year series FY26 is only 1.2% above FY24 (Rs 2,885.65 lakh FY24, Rs 1,823.74 lakh FY25, Rs 2,921.18 lakh FY26). LBF-2 is MORE open, not less."
+analyst_note: "The single most consequential finding this run is negative confirmation: the external support run 2 gave the FY26 raw-material explanation does not hold on a three-year CIF series (FY26 only +1.2% against FY24, not the +60.2% year-on-year headline off a depressed FY25). This REOPENS LBF-2 rather than closing it. The pledge and the maiden dividend are one chain, not two flags; the exact transfer date of the SP-and-Co block to Forbes Campbell is undisclosed, so the rupee amount reaching the pledged parent is a range (Rs 1.8-1.9 cr), not a point estimate. The dividend-to-free-cash-flow multiple could not be verified from the garbled cash-flow extraction; the payout ratio of 89.7% of PAT was verified independently instead."

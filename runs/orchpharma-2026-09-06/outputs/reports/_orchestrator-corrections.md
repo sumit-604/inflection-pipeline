@@ -273,3 +273,37 @@ Rs 99.66 cr. The gap is about 10% and it is unresolved in this corpus. It does n
 overturn the Gate 0 AVOID, which rests on four straight years of ROCE below 8.33%.
 It does mean the run's only ROCE figure is built on the screener series, because the
 annual report does not disclose ROCE anywhere.
+
+## CORRECTION 5, AMENDED (by Verifier D) — THE "NO MENTION ANYWHERE" FRAMING WAS TOO ABSOLUTE
+
+Correction 5 recorded that four of stage 5's eight peer questions had NO analogue
+anywhere in the eleven peer transcripts. Verifier D read all eleven independently
+and found that framing factually wrong, and the orchestrator has confirmed the
+quote at source.
+
+KOPRAN-Concall_Feb_2025_Transcript.pdf, p.7-8, Surendra Somani names cephalosporins
+explicitly, inside the same fermentation and key-starting-material passage stage 6
+already quoted for its competing-capacity question: "whether it is Penicillins or
+Cephalosporins or others, Tetracycline, Azithromycin, these are all..." with a five
+to seven year India time cycle.
+
+WHAT STANDS. The substance of correction 5 holds. No peer in this corpus
+manufactures cephalosporin API at a scale that can test Orchid's economics, none
+discusses 7-ACA pricing, and the peer set cannot corroborate the $60/kg claim or
+the supplier-concentration claim. Stage 9 had to go to live web for those, and the
+peer-selection gap remains a Halt 1 item.
+
+WHAT IS CORRECTED. It is wrong to say the corpus is silent on cephalosporins. One
+peer names them, in the passage most relevant to the falsification test, and that
+sentence should have been quoted. Stage 13 and the 09b dossier must not repeat the
+absolute framing. Verifier D did not flip either verdict; both remain UNVERIFIABLE.
+
+TWO OTHER VERIFIER D FINDINGS, both carried:
+- Stage 6's working-capital risk line conflates two distinct NEULANDLAB metrics.
+  Inventory days to sales rose 94 to 124. Working capital days of sales FELL 155 to
+  145. Stage 6 merged them into one apparently rising range. The underlying
+  qualitative point, analyst scrutiny of inventory against reported profit, is
+  accurately quoted elsewhere and is not in dispute.
+- About half of stage 6's GRANULES page anchors cite the transcript's internal
+  running footer rather than the PDF page, so they sit one page behind. Content and
+  speaker were correct in every case Verifier D checked.

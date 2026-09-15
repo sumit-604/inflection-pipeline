@@ -1,0 +1,19 @@
+stage: B12d
+company: "ORCHPHARMA"
+run_date: "2026-09-06"
+model: claude-sonnet-5
+status: complete
+peers_audited: 11
+substantive_confirmed: 10
+substantive_unsupported: []
+unused_but_relevant: []
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "MAJOR", location: "B06 Part 1 Q3 net read; Q4 net read; reading note", claimed: "No peer transcript in the corpus mentions 7-ACA, cephalosporin key starting materials... at any point / All three peers silent on 7-ACA specifically / no direct peer analogue in any of the 11 transcripts", source_truth: "KOPRAN-Concall_Feb_2025_Transcript.pdf, p.7-8, Surendra Somani names \"Cephalosporins\" explicitly inside the same fermentation-KSM passage B06 already cites for Q4, inside a call B06 marks SUBSTANTIVE", note: "Completeness miss, not fabrication; does not flip either UNVERIFIABLE verdict but the absolute 'no mention anywhere' framing is factually wrong"}
+  - {severity: "MINOR", location: "B06 Part 1, multiple citations (Q1 NEULANDLAB Feb 2026 p.2, GRANULES Nov 2025 p.5, GRANULES Jan 2026 p.12, GRANULES May 2026 p.7, GRANULES Jul 2026 p.5)", claimed: "page numbers per B06's own anchors", source_truth: "each is one PDF page behind the actual PDF page marker (matches the transcript's internal running-footer number instead); content and speaker confirmed correct at the true page in every case", note: "Systemic anchor-convention inconsistency, all content independently confirmed present and accurately quoted"}
+  - {severity: "MAJOR", location: "B06 Part 2E / risks_peers_raise, working-capital line", claimed: "inventory days rising from ~94 to ~145-155 days across FY26", source_truth: "94->124 days is a distinct 'inventory days to sales' metric (rising); 155->145 days is the separate quarterly 'working capital days of sales' disclosure (falling); B06 conflates the two into one apparently-rising range", note: "Underlying qualitative finding (analyst scrutiny on inventory-vs-PAT correlation) is accurately quoted elsewhere in the same section and not in dispute"}
+critical_count: 0
+major_count: 2
+minor_count: 1
+acceptance_rate: 91   # 10 of 11 peer-quarter entries correctly and completely handled

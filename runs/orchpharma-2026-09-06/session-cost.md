@@ -17,3 +17,4 @@ its own stage. Loops and retries each get their own line with a run counter.
 | 2 | notes triple-pass, pass 2 | sonnet-5 | default | n/a | n/a | 182,321 | 7m33s | 1 |
 | 3 | AR backward deep dive | sonnet-5 | default | n/a | n/a | 287,774 | 11m31s | 1 |
 | 2 | notes triple-pass, pass 3 | sonnet-5 | default | n/a | n/a | n/a | n/a | 1 |
+| 12d | verifier D peer coverage | sonnet-5 | default | n/a | n/a | 122,156 | 5m56s | 1 |

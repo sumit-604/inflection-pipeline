@@ -6,7 +6,8 @@ Durable company memory. Memory to weigh, never anchored evidence.
 Not yet formed. Step-1 intake only. Working question: can CDMO refill (Bayview and Unit 3 biologics, Mangalore small molecules) replace the Zoetis Librela loss and restore double-digit growth from FY28, while research services stop losing clients on price?
 
 ## DECISION STATUS AND ENTRY ZONE
-None. Phase 1 evidence run 2026-09-15; no valuation.
+None. Phase 1 evidence run 2026-09-15 complete; no valuation. Awaiting Halt 1.
+Phase 1 outcomes (run 2026-09-15, not a decision): gate recommendation PROCEED WITH FLAGS (FLAG-PROMOTER CONCERN, FLAG-CASH GROWTH-INDUCED, FLAG-GATE0 AVERAGE 66/160); corpus CORPUS GAPPED; fragility FRAGILE; credibility grade D; emerging moat 19 MODEST; phase-1 confidence 67. One open Verifier B CRITICAL: Bayview/Unit 3 cost drag unquantified while the FY27 margin guide rests on Bayview capitalisation timing. Dossier: runs/syngene-2026-09-15/outputs/reports/09b-understanding-dossier.md
 
 ## SPEAR
 Spear: OVERRIDE 2026-09-15 (operator standing ruling 2026-09-05: Step-1 intake replaces the web spear)

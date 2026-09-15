@@ -515,3 +515,36 @@ Company memory written for both with the standing-ruling spear OVERRIDE.
 - Roughly 5.58M tokens over 25 subagent runs; about 52% went to cycles two and
   three. Stage 5, stage 6 and the two verifiers that audit them are 60.6% of the run.
 - Not a clean run.
+
+## 2026-09-15 — SYNGENE (Syngene International) /step1 intake + phase 1
+
+- NEW / MECHANICAL: another session switched the SHARED working copy to branch
+  prompt-audit-fixes at 07:00:18 IST mid-run and committed prompt edits there. The
+  run's committed work was safe on run/syngene-2026-09-15, but stage 2 pass 3 ran
+  against a tree where its inputs did not exist, reported them "absent" and was
+  voided (104k tokens). Fix used: git worktree add .claude/worktrees/syngene and
+  absolute worktree paths in every task message. RULE candidate for /compost: every
+  /step1 and /run-pipeline starts in its own worktree, never the shared checkout.
+- Peer transcripts: SAILIFE and PPLPHARMA yielded one transcript each. Their BSE
+  "Earnings Call Transcript" filings are 1-page covering letters, and the
+  company-site links on screener return 404 to curl and WebFetch alike. Anthem (4)
+  was fine. Stage 6 ran on 6 transcripts.
+- collect_to_repo empty-CSV defect recurred (Data_Sheet only). Sector row auto-pick
+  was correct this time (Pharma / CDMO). The screener AR_2026 matched the BSE Reg 34
+  copy byte for byte. The collector's presentation equalled the BSE Q1FY27 deck.
+- BSE announcements API: rejects a window over 12 months with a JSON message
+  ("Date range cannot exceed 12 months"), not an empty table. One BSE attachment
+  (auditor appointment) was byte-identical to the results filing; dropped.
+- Verifier A (haiku) false CRITICAL again: read 5,470mn as Rs 54.7 cr. Cleared on
+  its own source_truth arithmetic; re-invoked with the severity/units addendum;
+  run 2 had 0 CRITICAL and its two MAJORs were management-basis figures cleared on
+  source re-read (logged in verifier-disagreements-phase1.md).
+- Verifier B run 1 acceptance 38% forced one correction cycle (stages 1, 5, 6, 7
+  re-run with findings inline, all four verifiers re-run). Run 2: A 96.6, B 67,
+  C 85, D 83. Stopped at one cycle; B's new CRITICAL carried to Halt 1.
+- Stage agents are inconsistent about writing their own block file: stages 5 and 7
+  overwrote outputs/blocks/*.yaml themselves, stages 1 and 6 only returned the
+  YAML. The orchestrator must check the block file after every return.
+- A Bash heredoc followed by python -c with nested quotes failed to parse; the
+  Write tool is safer for YAML blocks.
+- About 4.58M subagent tokens over 28 runs. Not a clean run.

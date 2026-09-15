@@ -21,3 +21,4 @@ its own stage. Loops and retries each get their own line with a run counter.
 | 12c | verifier C framework (phase 1 scope) | opus-4.8 | default | n/a | n/a | n/a | n/a | 1 |
 | 12a | verifier A numerical | haiku-4.5 | default | n/a | n/a | 116,842 | 2m53s | 1 |
 | 12a | verifier A numerical, re-run with coverage addendum | haiku-4.5 | default | n/a | n/a | 117,347 | 6m13s | 2 |
+| 12b | verifier B concall red flags | opus-4.8 | default | n/a | n/a | 372,409 | 15m43s | 1 |

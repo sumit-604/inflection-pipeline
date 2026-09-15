@@ -148,6 +148,17 @@ mode:
    catalyst plus the mandatory downside row, each with probability, evidence
    basis, confirming metric-and-threshold, and confirm-by date. The quarterly
    review reads and refreshes this file (Amendments 22-23).
+16. CHUNK CITATIONS (feeds Verifier C check 15). Beside every pillar row
+   (A to H, including F2, G2 and G3), every multiplier (cash or
+   asset-quality, UA, RRM, Category-Break override), every cap (sector cap,
+   quality uplift, 45x ceiling, Pillar 3 +6x) and every operator ruling you
+   apply, cite the section-1b chunk that supplied it in the form
+   (section-1b chunk NN), for example "Cash Multiplier 1.15x (section-1b
+   chunk 02)" or "Hurdle Ratio band shown, caps no verdict (section-1b
+   chunk 06, OR-2)". Where a chunk was silent or diverged and you applied
+   a frameworks/ source file instead, cite that file and line. A pillar
+   row, multiplier, cap or ruling with no citation is incomplete, and
+   Verifier C treats it as unanchored.
 
 ## FRAMEWORK ELEMENTS THE WRAPPER ENFORCES (per the section-1b skill, non-negotiable)
 

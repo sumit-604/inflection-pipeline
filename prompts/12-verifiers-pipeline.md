@@ -273,6 +273,19 @@ RULES:
    exceeds 25%, the verdict/position size is capped at STARTER. A decision
    above starter size with residual > 25% of CMP is CRITICAL (Amendments
    24-25).
+15. Skill-to-source fidelity (section-1b, valuation scope only). Wherever B11
+   or the Role 1 report cites a section-1b chunk (a path under
+   .claude/skills/section-1b/references/, or "chunk NN"), read that chunk and
+   the source file or files its "Sources in force" line names in frameworks/.
+   For each rule B11 applied from that chunk, compare the chunk's statement
+   with the source text, honouring the layer precedence (a later layer
+   governs the items it names). Flag every point where they diverge, quoting
+   both texts with the chunk path and the source file line. Grade on the
+   severity scale above: CRITICAL where the divergence would change a
+   decision, MAJOR where a B11 value is wrong but the decision likely
+   survives, MINOR where no B11 value changes. The source file is the legal
+   text: a divergence is a finding against the chunk, reported for an
+   operator fix, and B11 is re-checked against the source reading.
 
 OUTPUT: per-framework compliance tables with rule-by-rule PASS/FAIL and
 the recomputed value beside any FAIL; then:
@@ -298,7 +311,7 @@ acceptance_rate: 0             # rules passed ÷ rules checked, %
 ```
 
 INPUTS (phase-1 scope): prompts/01-gate-0-pipeline.md + prompts/07-emerging-moat-pipeline.md + {{B01_REPORT}} + {{B07_REPORT}}
-INPUTS (phase-3 valuation scope): the phase-1 sources above, PLUS the valuation framework docs (Master_Project_Prompt_v3_6.md Role 1 + Section_1B_v3.3_Amendments.md + Section_1B_v3_5_1_Reconciliation.md + Section_1B_v3_6_Amendments.md + Section_1B_v3_7_Amendments.md + Section_1B_v3_8_Amendments.md + Section_1B_v3_9_Amendments.md + Section_1B_v3_10_Amendments.md + FTTCP_v2_1_Consolidated.md) + {{B10_REPORT}} + {{B11_REPORT}}
+INPUTS (phase-3 valuation scope): the phase-1 sources above, PLUS the valuation framework docs (Master_Project_Prompt_v3_6.md Role 1 + Section_1B_v3.3_Amendments.md + Section_1B_v3_5_1_Reconciliation.md + Section_1B_v3_6_Amendments.md + Section_1B_v3_7_Amendments.md + Section_1B_v3_8_Amendments.md + Section_1B_v3_9_Amendments.md + Section_1B_v3_10_Amendments.md + FTTCP_v2_1_Consolidated.md) + the section-1b chunk files B11 cites (.claude/skills/section-1b/references/, for check 15) + {{B10_REPORT}} + {{B11_REPORT}}
 
 ═══════════════════════════════════════════════════════════════════
 ## VERIFIER D: PEER COVERAGE

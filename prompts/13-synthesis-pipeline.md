@@ -1,5 +1,5 @@
 # STAGE 13: SYNTHESIS (PIPELINE MODE)
-# Model: Opus 4.8 | Emits: the four final files + Notion save payload
+# Model: Opus (agent alias) | Emits: the four final files + Notion save payload
 # Consumes: everything. This is the only stage that reads all blocks,
 # all reports, and the confidence delta.
 # Cache boundary: rules above INJECTED INPUTS are stable.
@@ -202,7 +202,7 @@ time; it is the standing data on whether Haiku catches what Opus misses.
 
 ## DELIVERABLE 4: fttcp-handoff.md
 
-Purpose: a self-sufficient input package for manual FTTCP v2.1
+Purpose: a self-sufficient input package for manual FTTCP v2.3
 deliberation in a separate Opus session that will NOT have the source
 PDFs. That session sees only this file, so it must carry every figure,
 quote, and finding the deliberation needs. Density over brevity: this
@@ -329,7 +329,7 @@ line, then exactly this fenced YAML block:
 stage: B13-synthesis
 company: "{{TICKER}}"
 run_date: "{{RUN_DATE}}"
-model: claude-opus-4-8
+model: ""  # your exact model ID; the agent alias decides it
 status: complete
 verdict: ""                    # the five-verdict set only
 verdict_rule_applied: 0        # which selection rule fired, 1-5
@@ -351,9 +351,11 @@ notion_save:
 
 ## STYLE EXEMPLAR
 
-DELIVERABLE 1 must match the register and rhythm of the narrative below.
-This is the target: plain sentences an operator would say aloud, numbers
-rounded for reading, no block references, one theme per paragraph.
+The narrative below illustrates the register for DELIVERABLE 1: plain
+sentences an operator would say aloud, numbers rounded for reading, no
+block references, one theme per paragraph. Match that register and
+rhythm. Do not copy its facts, its length, or its sector framing; the
+company in front of you sets those.
 
 Smruthi Organics in ten lines
 Smruthi is a thirty seven year old bulk drug maker in Solapur, run by the Eaga family, producing generic APIs like Metformin, Diloxanide Furoate, Amlodipine and Telmisartan for pharmaceutical companies in India and abroad. Two products make up 54% of sales, ten customers make up 65% of sales, and the plants source 40% of raw material from China. FY26 revenue was ₹102 Cr, PAT ₹3.4 Cr, and the shares trade at 40 times earnings.

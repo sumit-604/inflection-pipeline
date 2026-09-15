@@ -82,7 +82,7 @@ INPUTS: {{ALL_STAGE_REPORTS}} + {{ALL_SOURCE_PDFS}}
 
 ═══════════════════════════════════════════════════════════════════
 ## VERIFIER B: CONCALL RED FLAGS
-# Model: Opus 4.8 | Emits: B12b
+# Model: Opus (agent alias) | Emits: B12b
 ═══════════════════════════════════════════════════════════════════
 
 You are an independent concall auditor. You receive 15 raw transcripts
@@ -116,7 +116,7 @@ promise-delivery spot checks; then:
 stage: B12b
 company: "{{TICKER}}"
 run_date: "{{RUN_DATE}}"
-model: claude-opus-4-8
+model: ""  # your exact model ID; the agent alias decides it
 status: complete
 independent_flags_found: 0
 caught: 0
@@ -137,7 +137,7 @@ INPUTS: {{ALL_15_TRANSCRIPTS}} + {{B05_REPORT}} + {{B06_REPORT}}
 
 ═══════════════════════════════════════════════════════════════════
 ## VERIFIER C: FRAMEWORK ADHERENCE
-# Model: Opus 4.8 | Emits: B12c
+# Model: Opus (agent alias) | Emits: B12c
 ═══════════════════════════════════════════════════════════════════
 
 You are a framework compliance auditor. Was each framework applied AS
@@ -281,7 +281,7 @@ the recomputed value beside any FAIL; then:
 stage: B12c
 company: "{{TICKER}}"
 run_date: "{{RUN_DATE}}"
-model: claude-opus-4-8
+model: ""  # your exact model ID; the agent alias decides it
 status: complete
 gate0: {rules_checked: 0, fails: []}
 emoat: {rules_checked: 0, fails: []}

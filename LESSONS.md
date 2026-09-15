@@ -141,3 +141,9 @@ _Pending framework edits Keerti maintains._
   None is configured, so the canary has never run (checked 2026-09-15).
   OPEN ACTION: rewrite the canary to call Claude Code headless (`claude -p`)
   instead of the API, so it runs on the Max subscription.
+- OPEN ACTION (2026-09-15): prompts/11-valuation-pipeline.md lines 185, 205 and 301
+  and prompts/10-input-assembly-pipeline.md rule 3 (lines 19 to 22; the word is on
+  line 22) still carry "conservative" (track choice, INDETERMINATE multiplier,
+  unresolved inputs, conflicting values). Needs a prompt fix on a separate branch.
+- CORRECTION (2026-09-15): Section 1B v3.6 holds six amendments (11 to 16), not 56.
+  This corrects the August chat summary.

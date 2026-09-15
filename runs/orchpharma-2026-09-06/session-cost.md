@@ -19,3 +19,5 @@ its own stage. Loops and retries each get their own line with a run counter.
 | 2 | notes triple-pass, pass 3 | sonnet-5 | default | n/a | n/a | n/a | n/a | 1 |
 | 12d | verifier D peer coverage | sonnet-5 | default | n/a | n/a | 122,156 | 5m56s | 1 |
 | 12c | verifier C framework (phase 1 scope) | opus-4.8 | default | n/a | n/a | n/a | n/a | 1 |
+| 12a | verifier A numerical | haiku-4.5 | default | n/a | n/a | 116,842 | 2m53s | 1 |
+| 12a | verifier A numerical, re-run with coverage addendum | haiku-4.5 | default | n/a | n/a | 117,347 | 6m13s | 2 |

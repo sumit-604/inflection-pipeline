@@ -1,0 +1,62 @@
+[
+  {
+    "index": 1,
+    "agency": "CRISIL",
+    "kind": "html+txt",
+    "link_text": "Rating update 11 Sep from crisil",
+    "url": "https://www.crisil.com/mnt/winshare/Ratings/RatingList/RatingDocs/SyngeneInternationalLimited_September 11_ 2026_RR_402937.html",
+    "file": "01-CRISIL.html",
+    "status": 200,
+    "bytes": 147544
+  },
+  {
+    "index": 2,
+    "agency": "ICRA",
+    "kind": "html+txt",
+    "link_text": "Rating update 20 Nov 2025 from icra",
+    "url": "https://www.icra.in/Rationale/ShowRationaleReport/?Id=139091",
+    "file": "02-ICRA.html",
+    "status": 200,
+    "bytes": 164745
+  },
+  {
+    "index": 3,
+    "agency": "ICRA",
+    "kind": "html+txt",
+    "link_text": "Rating update 30 Oct 2025 from icra",
+    "url": "https://www.icra.in/Rationale/ShowRationaleReport/?Id=138713",
+    "file": "03-ICRA.html",
+    "status": 200,
+    "bytes": 164747
+  },
+  {
+    "index": 4,
+    "agency": "CRISIL",
+    "kind": "html+txt",
+    "link_text": "Rating update 17 Jun 2025 from crisil",
+    "url": "https://www.crisil.com/mnt/winshare/Ratings/RatingList/RatingDocs/SyngeneInternationalLimited_June 17_ 2025_RR_370549.html",
+    "file": "04-CRISIL.html",
+    "status": 200,
+    "bytes": 114445
+  },
+  {
+    "index": 5,
+    "agency": "CRISIL",
+    "kind": "html+txt",
+    "link_text": "Rating update 25 Nov 2024 from crisil",
+    "url": "https://www.crisil.com/mnt/winshare/Ratings/RatingList/RatingDocs/SyngeneInternationalLimited_November 25_ 2024_RR_348099.html",
+    "file": "05-CRISIL.html",
+    "status": 200,
+    "bytes": 122670
+  },
+  {
+    "index": 6,
+    "agency": "ICRA",
+    "kind": "html+txt",
+    "link_text": "Rating update 30 Aug 2024 from icra",
+    "url": "https://www.icra.in/Rationale/ShowRationaleReport/?Id=129718",
+    "file": "06-ICRA.html",
+    "status": 200,
+    "bytes": 164747
+  }
+]

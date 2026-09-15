@@ -1,0 +1,21 @@
+stage: confidence
+company: SYNGENE
+run_date: 2026-09-15
+phase: 1
+basis: "final verifier run (run 2) after one correction cycle"
+confidence_delta:
+  numerical_acceptance: 96.6     # B12a run 2
+  redflag_coverage: 67           # B12b run 2: 26 caught of 39 independent flags (10 more partially caught)
+  framework_adherence: 85        # B12c run 2, PHASE 1 PORTION ONLY (Gate 0 43/48 + Emerging Moat 25/32); valuation-adherence component PENDING PHASE 3
+  peer_utilisation: 83           # B12d run 2: 5 of 6 peer transcripts confirmed substantive
+  overall: 67                    # min of the four
+band: "60-74: PROCEED verdicts downgrade one level (orchestrator Section 5)"
+rework_gate:
+  verifier_a_critical_final_run: 0
+  any_acceptance_below_60_final_run: false
+  status: "NOT TRIGGERED. Run 1 had Verifier B acceptance 38 (below 60) and one Verifier A CRITICAL; the CRITICAL was cleared on arithmetic and stages 1, 5, 6, 7 were re-run with the findings."
+open_critical_findings_final_run:
+  - "B12b CRITICAL: Bayview/Unit 3 cost drag never quantified across Q2FY26 and Q4FY26 asks; Bayview capitalisation deferred through FY27 keeps its cost off the FY27 P&L while the mid-20s margin guide rests on that timing (Q2FY26 p.8; Q4FY26 p.5, p.7; Q1FY27 p.13). Not corrected upstream; carried to the gate recommendation and Halt 1 dossier."
+run_history:
+  run1: {numerical_acceptance: 89, redflag_coverage: 38, framework_adherence: 80, peer_utilisation: 100, overall: 38}
+  run2: {numerical_acceptance: 96.6, redflag_coverage: 67, framework_adherence: 85, peer_utilisation: 83, overall: 67}

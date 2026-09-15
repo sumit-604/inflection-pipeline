@@ -23,3 +23,7 @@
 | 5 | concall analysis (verifier corrections) | claude-sonnet-5 | default | n/a | n/a | 185460 | 10m16s | 2 |
 | 6 | peer concall verification (verifier corrections) | claude-sonnet-5 | default | n/a | n/a | 261848 | 12m12s | 2 |
 | 7 | emerging moat scan (verifier corrections) | claude-sonnet-5 | default | n/a | n/a | 245708 | 18m17s | 2 |
+| 12a | verifier A numerical (run 2, severity addendum) | claude-haiku-4-5 | default | n/a | n/a | 100853 | 4m17s | 2 |
+| 12c | verifier C framework (phase-1 scope, run 2) | claude-opus (frontmatter) | default | n/a | n/a | 143828 | 8m29s | 2 |
+| 12b | verifier B red flags (run 2) | claude-opus (frontmatter) | default | n/a | n/a | 346691 | 14m04s | 2 |
+| 12d | verifier D peer coverage (run 2) | claude-sonnet-5 | default | n/a | n/a | 209704 | 4m19s | 2 |

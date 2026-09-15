@@ -1,0 +1,22 @@
+stage: B12d
+company: "SYNGENE"
+run_date: "2026-09-15"
+model: claude-sonnet-5
+status: complete
+run: 2
+peers_audited: 6
+substantive_confirmed: 5
+substantive_unsupported: []
+unused_but_relevant:
+  - {peer: "SAILIFE", missed_item: "Boston overseas-subsidiary now 'a bit accretive to the business' with ~30-35% discovery-revenue CAGR since ~2020 -- a favorable comparator to Bayview's slower ramp, alongside the negative Piramal overseas-tax-loss comparator B06 already uses", anchor: "SAILIFE-Concall_Aug_2026_Transcript.txt p.15"}
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "MAJOR", location: "B06 Part 1 item 5 / 06-peers.md line ~95", claimed: "'won't be in the profitable zone' + '15% utilization in FY26' both cited to (Ajay Bhardwaj, ANTHEM-Nov-2025, p.4)", source_truth: "The quote is on marker PAGE 5 of ANTHEM-Nov-2025, not p.4; the '15% utilization in FY26' figure does not appear anywhere in ANTHEM-Nov-2025 at all -- it is disclosed retrospectively in ANTHEM-Jul-2026 p.4 ('ramp-up from what we had about 15% odd of utilization in FY26')", note: "Residual instance of the anchor-drift/cross-call-attribution defect the correction run's CORRECTIONS LOG item 3 claims to have eliminated; does not flip any verdict since the same fact is independently and correctly anchored via the Jul-2026 p.4 citation in the same sentence"}
+  - {severity: "MINOR", location: "B06 Part 2E / risks_peers_raise", claimed: "Only the negative Piramal overseas-subsidiary tax-loss comparator is used against Bayview", source_truth: "SAILIFE-Aug-2026 p.15 discloses a positive overseas-subsidiary comparator (Boston, accretive, ~30-35% CAGR since ~2020) that was not incorporated", note: "Industry-context miss per Rule 3, not a claim-verdict miss; would sharpen but not change the analysis"}
+critical_count: 0
+major_count: 1
+minor_count: 1
+acceptance_rate: 83
+citation_spot_check: "33 of 34 citations land on the cited page marker"
+run1_summary: "Run 1 (report 12d-verifier-peers-run1.md): acceptance 100, MAJOR 3 (misattributed SAILIFE 4-5% figure; spurious ANTHEM Nov-2025 anchor; systemic anchor drift on ~13 of 24 citations). Stage 6 run 2 addressed them."

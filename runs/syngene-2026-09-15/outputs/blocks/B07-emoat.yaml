@@ -1,0 +1,52 @@
+stage: B07-emoat
+company: "SYNGENE"
+run_date: "2026-09-15"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Amgen and Baxter dedicated-centre status: SECONDARY/CRISIL-sourced only, not confirmed at AR note level (PENDING LIVE VERIFICATION)"
+  - "Facility-level utilisation % for Unit 3, Bayview, Mangalore: NOT FOUND IN DOCUMENT"
+  - "Quantified CRO/CDMO revenue-mix target FY28-29: NOT FOUND IN DOCUMENT"
+  - "Bayview total committed capex (beyond the $36.5mn acquisition price): NOT FOUND IN DOCUMENT at note level"
+  - "Syngene-specific PLI/SHAKTI/BioE3 enrolment or incentive amount: NOT FOUND IN DOCUMENT"
+  - "I1 talent-asymmetry evidence (named inventors, remuneration-vs-sector-norm): NOT FOUND IN DOCUMENT"
+flags:
+  - type: FLAG-EMOAT-SEGMENT-MISMATCH
+    reason: "The two strongest emerging-moat scores (B2 qualification lock-in, C1 customer ecosystem) sit almost entirely in the BMS Research Services relationship, the segment management itself says is losing clients on price (78% of Q1FY27 revenue, 'drifted towards commoditized research services'). The segment that lost its anchor customer (CDMO/Zoetis) and carries the new capex (Bayview, Unit 3, ADC suite) has no evidenced replacement customer. No scanned emerging moat demonstrates CDMO capacity survives the Zoetis loss (LBF2)."
+  - type: FLAG-EMOAT-AR-CONTRADICTION
+    reason: "AR26 contains two internally contradictory statements on the same BIOSECURE Act, in different sections: outgoing CEO's letter says it 'eliminated any short-term China+1 tailwinds' while a separate Industry Trends section says 'China+1 is accelerating... reinforced by... BIOSECURE Act momentum,' with India positioned to benefit. Unresolved this pass."
+em_score: 23
+em_classification: "MODEST"
+active_categories:
+  - {id: "A1", name: "Rare manufacturing capability", strength: "Moderate", evidence_type: "documented+claim", time_to_materialise: "Bayview FY27"}
+  - {id: "B2", name: "Qualification lock-in", strength: "Strong", evidence_type: "documented", time_to_materialise: "already active (BMS to 2035)"}
+  - {id: "C1", name: "Customer ecosystem / embedded relationships", strength: "Strong", evidence_type: "documented", time_to_materialise: "already active"}
+  - {id: "F1", name: "Talent density", strength: "Moderate", evidence_type: "documented", time_to_materialise: "ongoing"}
+  - {id: "H2", name: "Strategic partnerships", strength: "Moderate", evidence_type: "documented", time_to_materialise: "already active (BMS); Zoetis leg already failed"}
+  - {id: "H3", name: "ESG moat", strength: "Moderate", evidence_type: "documented", time_to_materialise: "already active, electricity leg only"}
+evidence_mix: {documented: 14, claim: 6, inference: 3}
+completionist_recount: "recount performed: 14 documented items across 9 categories (A1, B2, C1, C2, E1, F1, G1[negative], G2, H2, H3); 6 categories scored Strong/Moderate (A1, B2, C1, F1, H2, H3), within the 3-6 realistic base rate; no claims found mis-scored as documented on recount."
+catalysts_12m:
+  - {catalyst: "Bayview capitalisation / FDA pre-check outcome", window: "FY27", evidence_type: "documented (application filed)", anchor: "AR26 p.42-43; company memory Board's Report p.69"}
+  - {catalyst: "Named non-Zoetis CDMO customer signed at Unit 3/Bayview", window: "FY27-FY28", evidence_type: "management claim, unresolved", anchor: "Concall Jul-2026 p.9, 'double-digit growth starting FY28'"}
+  - {catalyst: "Mangalore small-molecule lock-ins converting to disclosed contracts", window: "FY27", evidence_type: "management claim", anchor: "Concall Jul-2026 p.6-7"}
+  - {catalyst: "ADC bioconjugation suite commissioning at Unit 3", window: "FY27-FY28", evidence_type: "documented, in progress", anchor: "AR26 p.192; Reg 30 clarification 23-Oct-2025"}
+  - {catalyst: "H2FY27 revenue/margin vs guidance (single-digit decline, mid-20s margin)", window: "H2 FY27", evidence_type: "management claim, credibility grade C", anchor: "Concall Jul-2026 p.3; B05 promise-delivery record"}
+one_line_note_placeholder: ""
+capex_embedded_growth_pct: 34.5
+optionality_register:
+  - {optionality: "Bayview reaches full US regulatory standing and signs a named non-Zoetis customer", converting_evidence: "FDA facility approval/clearance plus a signed CDMO contract with disclosed revenue linkage", first_appears: "Reg 30 filing; next AR Note 3(a); concall", window: "FY27-FY28"}
+  - {optionality: "Mangalore small-molecule lock-ins convert to disclosed contracts", converting_evidence: "Named customer or contract value disclosed", first_appears: "quarterly results/concall", window: "FY27"}
+  - {optionality: "ADC bioconjugation suite commissions and books first program revenue", converting_evidence: "Commissioning announcement plus first client program named", first_appears: "AR/concall/Reg 30", window: "FY27-FY28"}
+  - {optionality: "China+1/BIOSECURE tailwind produces a named new international win", converting_evidence: "Specific new client win attributed to supply-chain diversification", first_appears: "concall/press release", window: "FY27-FY29, currently internally contradicted"}
+  - {optionality: "Syn.AI becomes a disclosed productivity or revenue driver", converting_evidence: "Quantified productivity metric or client-facing digital-revenue line", first_appears: "AR/investor presentation", window: "undated, 3-5yr"}
+  - {optionality: "Biopharma SHAKTI/BioE3/PLI produces a Syngene-specific grant or incentive", converting_evidence: "Named scheme enrolment with disclosed amount", first_appears: "Reg 30 filing/AR", window: "FY27-FY29"}
+  - {optionality: "Talent asymmetry (I1) established with a named inventor/hire trail", converting_evidence: "AR remuneration annexure or traceable patent-inventor employment history plus competitor pay-scale constraint evidence", first_appears: "AR/concall", window: "undated"}
+combined_assessment: "AVERAGE"
+combined_reasoning: "Gate 0 AVERAGE (core 57, 2 confirmed moats) pairs with a MODEST (not EXPANSION) emerging-moat score of 23; the strongest forward scores sit in the BMS relationship, which is in the Research Services segment already suffering price attrition, not in the CDMO segment the refill thesis needs to prove."
+top_moat_risks:
+  - "BMS/Zoetis pattern repeat: two-customer concentration already >35% FY26; a single marquee relationship failing again would remove both top-scoring categories at once"
+  - "Bayview/Unit 3 capacity remains substantially unfilled with no disclosed utilisation % and no CGU impairment test despite ~Rs 504cr non-standalone CWIP and a loss-making Syngene USA subsidiary"
+  - "H3 ESG moat is shared by all CRDMO peers pursuing SBTi/ZLD standards and its total-energy renewable share is declining (79.7% to 76.7%) as new-facility fuel use grows"
+  - "F2 execution moat scores 0: guidance credibility grade C, FY27 guidance cut from 'broadly flat' to 'single-digit decline' within one quarter"
+analyst_note: "The scan's central finding is a segment mismatch, not a missing-evidence problem: the two Strong-scoring categories (B2, C1) both anchor to BMS, which lives in Research Services, the segment management admits is losing clients on price. The new capex (Bayview, Unit 3, ADC suite) sits in CDMO, the segment that lost its Zoetis anchor, and carries no named replacement customer anywhere in the corpus. I1 and I2 both score 0 by design (no named-inventor/pay-scale evidence for I1; the BMS relationship is an execution lead, not a configuration a competitor is structurally blocked from copying, for I2) - this run does not contribute to the I1/I2 threshold-crossing review list. The AR's internal BIOSECURE/China+1 contradiction (E2) is carried as a flag for Second-Order resolution, not resolved here."

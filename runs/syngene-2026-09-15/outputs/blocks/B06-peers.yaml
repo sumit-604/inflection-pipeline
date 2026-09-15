@@ -1,0 +1,39 @@
+stage: B06-peers
+company: "SYNGENE"
+run_date: "2026-09-15"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "SAILIFE and PPLPHARMA each have only one retrievable transcript (Q1 FY27 window); their Nov-25/Feb-26/May-26 calls were not retrievable (BSE copies are 1-page covering letters, company links 404). Verdicts resting only on these two peers are treated as directional, not settled."
+  - "PPLPHARMA operates a broader, less-comparable business mix (CDMO + complex hospital generics + consumer healthcare) than Syngene's pure CRDMO/research-services model, weakening its evidentiary weight on Q2 (commoditization) specifically."
+flags:
+  - "MEDIUM: Q2 verdict (CONTRADICTED) rests on two peers reporting growth/retention against Syngene's disclosed attrition in the identical quarter -- a material input to the B05 credibility grade, should be weighted at Halt 1."
+  - "LOW: Bayview's undated slippage is not abnormal in duration versus peer capacity-gestation timelines, but is abnormal in disclosure practice -- every peer names a concrete (even if revised) commissioning date; Bayview has none."
+  - "LOW: genuine FX-policy divergence found (Anthem unhedged, forex gain this period; Syngene hedged, Rs50cr hedge loss same period) -- not a verification of any peer_question but worth carrying forward as an analyst observation."
+peers_provided: 6
+verified:
+  - {claim: "Biotech VC funding recovery is real and converts into discovery/CRO revenue growth in the same window Syngene's research services weakened", peers: ["ANTHEM", "SAILIFE"], anchor_count: 3}
+partially_verified:
+  - {claim: "Advanced modalities (peptides/ADC/oligonucleotides) exceed 40% of clinical pipelines and grow faster than small molecules", peers: ["ANTHEM", "SAILIFE", "PPLPHARMA"]}
+  - {claim: "Section 232 tariffs/Biosecure Act drive RFP/demand benefit consistent with Syngene's claimed advantage", peers: ["SAILIFE", "PPLPHARMA"]}
+  - {claim: "New CDMO biologics capacity gestation timeline benchmark (Unit3 18 months, undated Bayview)", peers: ["ANTHEM", "SAILIFE", "PPLPHARMA"]}
+contradicted:
+  - {claim: "Discovery/research-services pricing is commoditized sector-wide with client attrition to lower-cost rivals", contradicting_peer: "SAILIFE (also ANTHEM by omission of any comparable pressure)", quote_anchor: "SAILIFE-Concall_Aug_2026_Transcript p.2, p.6 (CRO +26% YoY; >90% repeat revenue FY25-FY26)"}
+unverifiable: []
+peer_coverage_map:
+  - {peer: "ANTHEM (Nov-25)", quarter: "Q2/H1 FY26", usage: "SUBSTANTIVE", contribution: "Baseline modality/peptide narrative; funding 'mixed voices'; capacity-race framing"}
+  - {peer: "ANTHEM (Feb-26)", quarter: "Q3/9M FY26", usage: "SUBSTANTIVE", contribution: "Destocking explanation; backward-integration margin story; Labour Code exceptional item; no-hedge FX policy"}
+  - {peer: "ANTHEM (May-26)", quarter: "Q4/FY26", usage: "SUBSTANTIVE", contribution: "Quantified funding recovery (+50% YoY); 'destocking behind us'; Unit-IV timeline firmed; tariff-risk dismissal"}
+  - {peer: "ANTHEM (Jul-26)", quarter: "Q1 FY27", usage: "SUBSTANTIVE", contribution: "Q1 FY27 softness (-25% YoY per analyst, unchallenged); unit utilization data; AI commentary"}
+  - {peer: "SAILIFE (Aug-26)", quarter: "Q1 FY27", usage: "SUBSTANTIVE", contribution: "CRO +26% YoY in Syngene's weak quarter; diversification tailwind claim; new-modality revenue mix; concrete capacity dates"}
+  - {peer: "PPLPHARMA (Jul-26)", quarter: "Q1 FY27", usage: "SUBSTANTIVE", contribution: "CDMO +19% YoY; explicit pushback on tariff/near-shoring as primary RFP driver; ADC capacity detail; overseas tax-loss disclosure"}
+industry_cross_read:
+  demand: "Broadly positive-to-recovering across peers (Piramal CDMO +19% YoY, Sai Life +12%/CRO +26% YoY, Anthem record Q4 FY26); one peer (Anthem) also saw a soft Q1 FY27 attributed to delivery timing, not demand loss, and had already declared its own destocking issue resolved by May-2026, earlier than Syngene's continuing softness."
+  pricing_inputs: "No peer reports pricing erosion or discovery-services commoditization; Anthem and Piramal both describe pricing/cost discipline as a margin tailwind. Genuine divergence found on FX: Anthem unhedged (forex gain), Syngene hedged (Rs50cr hedge loss), same period."
+  capex_cycle: "Industry-wide capacity race, not a lone expander -- Anthem, Sai Life and Piramal Pharma are all committing large, overlapping advanced-modality capacity on FY27-FY28 timelines, each justified individually as forward-looking; none frames the synchronized timing as a sector risk (see Part 5 hypothesis)."
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "New Indian Labour Code compliance cost (exceptional charge) -- Anthem took a Rs25.4cr exceptional item; no equivalent disclosure found in Syngene's calls per B05 (ANTHEM-Concall_Feb_2026_Transcript p.2)"
+  - "Overseas-subsidiary loss / deferred-tax-asset drag during a new site's ramp to profitable scale -- Piramal's North American/UK/European sites carry significant unrecognized tax losses; structurally analogous to Bayview, not yet framed this way in Syngene's disclosures (PPLPHARMA-Concall_Jul_2026_Transcript p.18-19)"
+net_narrative_effect: "undercuts"
+analyst_note: "The two claims that matter most to the B05 credibility grade (Q2 sector-wide commoditization defense, Q4 VC-funding-recovery timing) both resolve against Syngene: peers show growth and retention where Syngene shows attrition, and peers show funding recovery converting to revenue where Syngene shows decline in the identical quarter. This strengthens the case that Q1 FY27's research-services problem is company-specific execution, not sector-wide pricing collapse -- the harder, more decision-relevant reading. The three PARTIALLY VERIFIED items (modality mix, tariff tailwind, capacity timeline) are genuinely mixed, not soft VERIFIED calls padded down; none should be upgraded on inference from the STRUCTURAL evidence available."

@@ -1,0 +1,79 @@
+stage: B05-concall
+company: "SYNGENE"
+run_date: "2026-09-15"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Peer transcripts partial (SAILIFE 1 transcript, PPLPHARMA 1 transcript) -- peer_questions below are formal handoffs to Stage 6, not yet checked"
+  - "Shareholding data used for company-level context is SECONDARY tier only, not concall-sourced"
+  - "No independent research notes available to cross-check the uncited '40% of clinical pipelines' modality statistic or the VC-funding claims"
+  - "Filed Q1FY27 P&L carries no discrete EBITDA line (non-GAAP measure); the Rs91cr/12% margin figure is verified against the Q1FY27 press release, not the raw Ind AS P&L format"
+flags:
+  - "Four sequential guidance revisions across four quarters (growth -> decline 3-5% -> broadly flat -> decline again), each announced after the miss had begun, not ahead of it"
+  - "Research-services client attrition (price competition) disclosed for the first time only in Q1FY27, a second undisclosed demand problem layered onto the known Zoetis loss"
+  - "Bayview operationalization has slipped 12+ months from its original H2FY26 target with no firm date ever given"
+  - "Peter Bains's 'interim CEO' status disclosed only retroactively in the Q4FY26 call, never flagged during the Q2/Q3FY26 calls he presided over"
+  - "FY27 mid-20s margin guidance implies a computed ~28-29% blended margin for Q2-Q4FY27 against a 12% Q1 actual, not quantified by management to that scale"
+quarters_analysed: ["Q2 FY26", "Q3 FY26", "Q4 FY26", "Q1 FY27"]
+triggers:
+  - {priority: 1, name: "Zoetis/Librela phase-out completing on schedule and replaced by new business", type: "VOLUME/CUSTOMER", timeframe: "FY27-28", conviction: "M", confirm_signal: "Revenue stabilizes near/above the mid-single-digit-decline guide; Zoetis FY28 forecast (due by year-end) non-trivial", kill_signal: "Further downward guidance revision in Q2FY27; Zoetis forecast trends toward zero"}
+  - {priority: 2, name: "Bayview US biologics facility operationalization and first commercial contract", type: "INORGANIC/VOLUME", timeframe: "FY27 (date undisclosed)", conviction: "L", confirm_signal: "Named customer, firm operational date, or first commercial revenue disclosed", kill_signal: "Another quarter of 'later this year' language with no date"}
+  - {priority: 3, name: "BMS 2035 extension revenue realization", type: "VOLUME", timeframe: "multi-year", conviction: "H", confirm_signal: "Steady low/mid-single-digit growth in the relationship as guided", kill_signal: "Any disclosed scope reduction"}
+  - {priority: 4, name: "Research-services repositioning from commoditized to value-added/AI-led work", type: "PRICE-MIX", timeframe: "FY27-28", conviction: "L", confirm_signal: "Quantified margin/growth improvement in research services, or a named illustrative example", kill_signal: "Continued unquantified client attrition with no reversal shown"}
+  - {priority: 5, name: "Unit 3/Mangalore biologics + small-molecule CDMO utilization ramp", type: "VOLUME", timeframe: "FY27-28", conviction: "M", confirm_signal: "First large-volume commercial molecule named at Unit3/Stelis", kill_signal: "Utilization language stays qualitative for 2+ more quarters"}
+  - {priority: 6, name: "Clinical trials/translational sciences scale-up", type: "VOLUME", timeframe: "FY28+", conviction: "L", confirm_signal: "Revenue base disclosed as % of total for the first time", kill_signal: "Base remains too small to quantify through FY28"}
+  - {priority: 7, name: "Section 232/Biosecure Act-driven China+1 CDMO share shift", type: "REGULATORY-POLICY", timeframe: "FY28+", conviction: "L", confirm_signal: "A named client win attributed to the policy shift", kill_signal: "No named wins after 2+ more quarters of the claim"}
+guidance:
+  - {item: "FY26 revenue growth (CC)", number: "mid-single-digit growth", timeframe: "FY26", stated_in: "Q2 FY26 call"}
+  - {item: "FY26 EBITDA margin", number: "mid-20s, declining path", timeframe: "FY26", stated_in: "Q2 FY26 call"}
+  - {item: "FY26 capex", number: "$45mn incl. $10mn Bayview", timeframe: "FY26", stated_in: "Q2 FY26 call"}
+  - {item: "FY26 revenue growth (CC) revised", number: "decline of 3-5%", timeframe: "FY26", stated_in: "Q3 FY26 call"}
+  - {item: "FY26 EBITDA margin revised", number: "22-23%", timeframe: "FY26", stated_in: "Q3 FY26 call"}
+  - {item: "FY26 actual delivered", number: "+3% reported revenue; 25% EBITDA margin; PAT before exceptional Rs380cr (-20% YoY)", timeframe: "FY26", stated_in: "Q4 FY26 call"}
+  - {item: "FY27 revenue growth", number: "broadly flat", timeframe: "FY27", stated_in: "Q4 FY26 call"}
+  - {item: "FY27 EBITDA margin", number: "mid-20s", timeframe: "FY27", stated_in: "Q4 FY26 call"}
+  - {item: "Librela FY27 phase-out schedule", number: "almost none Q1-Q2, minor amount at year-end", timeframe: "FY27", stated_in: "Q4 FY26 call"}
+  - {item: "Q1FY27 actual", number: "revenue Rs736cr (-16% YoY); EBITDA Rs91cr, margin 12%; PAT before exceptional Rs1cr", timeframe: "Q1 FY27", stated_in: "Q1 FY27 call, verified against Q1FY27 press release and filed standalone P&L"}
+  - {item: "FY27 revenue growth revised again", number: "single-digit decline (rupee terms) / mid-single-digit decline / low single digits (three characterizations within one call)", timeframe: "FY27", stated_in: "Q1 FY27 call"}
+  - {item: "FY27 EBITDA margin held", number: "mid-20s", timeframe: "FY27", stated_in: "Q1 FY27 call"}
+  - {item: "Zoetis/Librela beyond FY27", number: "not zero even in FY28; FY28 forecast due by year-end", timeframe: "FY28", stated_in: "Q1 FY27 call"}
+promise_delivery:
+  delivered: 2
+  partial: 2
+  missed: 4
+  rows:
+    - {promised_in: "Q2 FY26", promise: "FY26 mid-single-digit CC revenue growth, mid-20s EBITDA margin", outcome: "missed", explanation: "Single large-molecule biologics customer (Zoetis/Librela) impact worse than modeled"}
+    - {promised_in: "Q3 FY26", promise: "FY26 revenue decline 3-5% CC, EBITDA margin 22-23%", outcome: "delivered", explanation: "FY26 actual +3% reported revenue, 25% margin -- beat the revised guide"}
+    - {promised_in: "Q2 FY26", promise: "Bayview to begin operations H2 FY26", outcome: "missed", explanation: "No slip explicitly acknowledged in any call; still not operational as of Q1FY27, now 'later this year' (FY27)"}
+    - {promised_in: "Q3 FY26", promise: "BMS relationship extended to 2035", outcome: "delivered", explanation: "Signed, detailed, scope reiterated at Q4FY26"}
+    - {promised_in: "Q4 FY26", promise: "FY27 broadly flat revenue, mid-20s margin, H2 stronger than H1", outcome: "missed", explanation: "Cut within 3 months to single/mid-single-digit decline; margin held nominally but unproven given 12% Q1 actual"}
+    - {promised_in: "Q3/Q4 FY26", promise: "Unit3/Bayview early encouraging capacity utilization traction", outcome: "partial", explanation: "Customers signed and batches taken by Q1FY27, but no large-volume commercial molecule at Unit3 yet, Bayview still pre-revenue"}
+    - {promised_in: "Q3/Q4 FY26", promise: "Underlying business robust, high-single/low-double-digit growth ex-Librela", outcome: "missed", explanation: "Q1FY27 revenue -16% YoY overall with a newly disclosed second problem (research-services client attrition), never flagged in prior calls; Kiran Mazumdar-Shaw admits prior 'complacency'"}
+    - {promised_in: "Q4 FY26", promise: "Librela FY27 phase-out: almost none Q1-Q2, minor at year-end", outcome: "partial", explanation: "Consistent so far per Q1FY27 call ('delivery obligations' H2FY27, not zero in FY28); too early to fully verify"}
+excuse_pattern: "balanced"
+repeated_evasions:
+  - {question: "What is the CRO/CDMO growth rate (not just revenue mix), stripping out the Librela one-off?", quarters_asked: ["Q2 FY26", "Q3 FY26", "Q4 FY26"], classification: "deflected every time"}
+  - {question: "What is the medium/long-term revenue growth outlook once the current guidance year ends?", quarters_asked: ["Q3 FY26", "Q4 FY26", "Q1 FY27"], classification: "deflected every time"}
+  - {question: "Can you quantify the dollar/percentage impact of the Zoetis/Librela product?", quarters_asked: ["Q3 FY26", "Q4 FY26", "Q1 FY27"], classification: "answered eventually"}
+credibility_grade: "C"
+credibility_basis: "8 promise-delivery pairs: 2 delivered (BMS 2035 extension; Q3-to-Q4FY26 guidance beat), 2 partial (Unit3/Bayview utilization ramp; Zoetis FY27 phase-out tracking), 4 missed (Nov-25 FY26 growth guide; Bayview H2FY26 target now 12+ months slipped; Apr-26 'broadly flat' FY27 guide cut within 3 months; the 'robust underlying growth ex-Librela' claim, undercut by Q1FY27's newly disclosed client attrition and management's own complacency admission)."
+peer_questions:
+  - {question: "Is the claim that advanced modalities (peptides, ADCs, oligonucleotides) exceed 40% of clinical pipelines and grow materially faster than small molecules corroborated in peer commentary?", why: "Syngene cites this uncited industry statistic to justify its ADC/peptide capex; unverified against Syngene's own source.", check_peers: ["ANTHEM", "SAILIFE", "PPLPHARMA"]}
+  - {question: "Do peer CROs/CDMOs also describe discovery/research-services pricing as commoditized with client attrition to lower-cost rivals, or is this specific to Syngene's execution?", why: "Distinguishes a sector-wide margin-compression story from a company-specific mismanagement story; bears directly on the credibility grade.", check_peers: ["ANTHEM", "SAILIFE", "PPLPHARMA"]}
+  - {question: "Are peers reporting RFP or demand benefit from Section 232 tariffs or the Biosecure Act (China exclusion), consistent with Syngene's claimed advantage and continued post-tariff RFP flow?", why: "Tests whether Syngene's CDMO-pipeline optimism is sector-wide evidence or an unverified company-specific claim.", check_peers: ["ANTHEM", "SAILIFE", "PPLPHARMA"]}
+  - {question: "Do peers report improving biotech VC funding translating into discovery-services revenue growth over the same period Syngene's research-services growth weakened (Q1FY27, -16% YoY with new attrition)?", why: "Tests whether the VC-funding-recovery narrative Syngene cited in Q2-Q3FY26 was real, and if so why Syngene underperformed it.", check_peers: ["ANTHEM", "SAILIFE"]}
+  - {question: "What gestation/capitalization timeline do peers report for new CDMO biologics capacity, benchmarked against Syngene's Unit3 (18 months) and the still-undated Bayview site?", why: "Benchmarks whether Bayview's slippage is industry-normal or Syngene-specific execution risk.", check_peers: ["ANTHEM", "SAILIFE", "PPLPHARMA"]}
+red_flags:
+  - "HIGH: four sequential guidance revisions across four quarters, each announced after the underlying miss had begun, not ahead of it"
+  - "HIGH: research-services client attrition to price competition disclosed for the first time only in Q1FY27, a second undisclosed demand problem layered onto the known Zoetis loss, contributing to a 16% YoY revenue decline"
+  - "MEDIUM: Bayview operationalization slipped 12+ months from its H2FY26 target with no firm date ever given"
+  - "MEDIUM: Peter Bains's 'interim CEO' status disclosed only retroactively in the Q4FY26 call, never flagged during the two calls he presided over"
+  - "MEDIUM: FY27 mid-20s margin guidance implies a computed ~28-29% blended margin for Q2-Q4FY27 against a 12% Q1 actual, not quantified by management to that scale"
+  - "LOW: direct analyst request for commoditized-vs-value-added service examples deferred to an offline conversation rather than answered publicly (Q1FY27)"
+dropped_triggers:
+  - "China+1 as a driver, explicitly denied by Peter Bains for clinical trials in Q2FY26, re-emerged as a 'Biosecure Act' China+1 tailwind for CDMO in Q1FY27 without reconciling the earlier denial"
+  - "VC/biotech funding recovery as the lead research-services growth driver (Q2-Q3FY26) quietly dropped once Q1FY27 revealed client attrition and pricing pressure as the dominant research-services story"
+timeline_slippages:
+  - "Bayview US biologics facility: 'second half of FY26' (Q2FY26 call) -> 'coming quarter or so' (Q3FY26) -> 'this year' i.e. FY27 (Q4FY26) -> 'later this year' FY27, still not operational (Q1FY27) -- at least a 12-month slip, no firm date ever given"
+  - "FY27 full-year revenue guidance: 'broadly flat' (Q4FY26, Apr-26) revised to 'single-digit decline'/'mid-single-digit decline' (Q1FY27, Jul-26) within 3 months"
+analyst_note: "The excuse-pattern shift from external-blame (Peter Bains era, Q2-Q4FY26) to explicit self-criticism ('we were complacent,' Kiran Mazumdar-Shaw, Q1FY27) is genuine and unusual, but it arrives exactly at the leadership change and cannot yet be distinguished from a new team resetting expectations before its own numbers are tested. Grade C reflects the promise-delivery record (4 missed of 8), not the tone of the newest call. The two research-services and CDMO problems (client attrition, Zoetis loss) were disclosed sequentially rather than together, each only after it had already shown up in results -- worth testing at Halt 1 whether any further undisclosed demand problem remains."

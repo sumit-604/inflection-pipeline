@@ -7,3 +7,10 @@
 | 2 | notes triple-pass, pass 1 | claude-sonnet-5 | default | n/a | n/a | 193887 | 8m35s | 1 |
 | 2 | notes triple-pass, pass 2 | claude-sonnet-5 | default | n/a | n/a | 103205 | 5m49s | 2 |
 | 2 | notes triple-pass, pass 3 (VOID: shared working copy switched to branch prompt-audit-fixes by another session at 07:00:18 IST; inputs absent during the pass; output discarded) | claude-sonnet-5 | default | n/a | n/a | 104402 | 7m44s | 3 |
+| 2 | notes triple-pass, pass 3 (consolidated, re-run in worktree) | claude-sonnet-5 | default | n/a | n/a | 81907 | 3m58s | 4 |
+| 3 | AR backward deep dive (8 phases) | claude-sonnet-5 | default | n/a | n/a | 268914 | 13m36s | 1 |
+| 4 | business model decoder | claude-sonnet-5 | default | n/a | n/a | 159864 | 6m15s | 1 |
+| 5 | concall analysis (4 transcripts) | claude-sonnet-5 | default | n/a | n/a | 155072 | 8m17s | 1 |
+| 8 | promoter background check (web) | claude-sonnet-5 | default | n/a | n/a | 235906 | 9m02s | 1 |
+| 6 | peer concall verification (6 transcripts) | claude-sonnet-5 | default | n/a | n/a | 184349 | 5m36s | 1 |
+| 7 | emerging moat scan (22 categories) | claude-sonnet-5 | default | n/a | n/a | 148077 | 9m57s | 1 |

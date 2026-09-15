@@ -141,10 +141,19 @@ _Pending framework edits Keerti maintains._
   None is configured, so the canary has never run (checked 2026-09-15).
   OPEN ACTION: rewrite the canary to call Claude Code headless (`claude -p`)
   instead of the API, so it runs on the Max subscription.
-- IN PROGRESS (2026-09-15): prompts/11-valuation-pipeline.md lines 185, 205 and 301
+- CLOSED (2026-09-15): prompts/11-valuation-pipeline.md lines 185, 205 and 301
   ("conservative" wording) and lines 213 to 221 (Hurdle Ratio as a verdict cap, now a
-  feasibility check per Amendment 24 and OR-2) are fixed on branch
-  prompt/stage11-skill-preload. Still open: prompts/10-input-assembly-pipeline.md
-  rule 3, line 22 ("put the more conservative one in the table").
+  feasibility check per Amendment 24 and OR-2) fixed by PR #164 (branch
+  prompt/stage11-skill-preload).
+- PENDING FOR THE NEXT PROMPT BRANCH (2026-09-15):
+  1. prompts/10-input-assembly-pipeline.md rule 3, line 22 still says "put the more
+     conservative one in the table".
+  2. Amendment 6 range rounding: the rule says nearest 0.5x, but its own example
+     37x -> 34-39.5x rounds the top down (39.775 -> 39.5). section-1b chunk 06 copies
+     both. Needs an operator ruling on which governs, then align chunk 06.
+  3. OR-9 (proposed): Amendment 24 caps size at starter when the residual exceeds 25%
+     of CMP, but Amendment 25 permits a starter only when the residual is 25% or less.
+     Reading A: size zero. Reading B: a 2-3% starter is allowed. Needs an operator
+     ruling, then record it in the section-1b Ruled or Open list.
 - CORRECTION (2026-09-15): Section 1B v3.6 holds six amendments (11 to 16), not 56.
   This corrects the August chat summary.

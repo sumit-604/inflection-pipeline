@@ -1,0 +1,25 @@
+stage: B02-notes
+company: "ORCHPHARMA"
+run_date: "2026-09-06"
+model: claude-sonnet-5
+pass: 2
+pass_status: complete
+pass_2_empty: false
+report_path: "/home/user/inflection-pipeline/runs/orchpharma-2026-09-06/outputs/reports/02-notes-pass2.md"
+verification_method: "Direct source-PDF read (Read tool, pages parameter) for every page underlying a Pass 1 finding that carried an [OCR:embedded-CORRUPT] tag, per mandatory orchestrator instruction; page anchors below are PDF page-index numbers, which run one higher than the printed footer number on every page checked in this pass (internally consistent, not an error)."
+new_findings_count: 8
+corrections_to_pass1_count: 6
+major_correction:
+  finding: "Pass 1 Rank 9 misattributed a Rs.230.72 Cr FY2025 related-party transaction as a SALE of goods to Orchid Pharma Inc (US subsidiary). Verified at source (Note 50(e), Annual_Report_2025.pdf p.213-214): it is a PURCHASE of GCLE (sole-sourced key raw material) from Otsuka Chemical (India) Pvt Ltd, an entity where MD Manish Dhanuka and WTD Mridul Dhanuka hold director/member positions. Sale of goods to Orchid Pharma Inc is Rs.NIL both years. The associated Rs.5,782.78 lakhs / Rs.6,212.93 lakhs trade payable Pass 1 attributed to Dhanuka Laboratories Ltd also belongs to Otsuka; Dhanuka Labs' actual trade payable is Rs.264.36 lakhs FY2025."
+  rating: "RED FLAG, corrected"
+carried_forward_items_status:
+  - {item: "Consolidated capital commitments", pass1_figure: "Rs.296.43 Cr", verified_figure: "Rs.298.43 Cr (Rs.29,842.89 lakhs)", status: "corrected, digit-level OCR error"}
+  - {item: "Corporate guarantee Rs.447.22 Cr for subsidiary borrowings", pass1_figure: "given", verified_figure: "Rs.NIL FY2024 to Rs.44,722.00 lakhs FY2025 -- confirmed brand new this year", status: "confirmed, sharpened"}
+  - {item: "Intercompany loan to Orchid Bio-Pharma Ltd, Rs.NIL to Rs.108.24 Cr", pass1_figure: "no interest rate disclosed", verified_figure: "rate still not stated, but interest RECEIVED Rs.466.35 lakhs FY2025 (Rs.13.33 lakhs FY2024) and guarantee commission Rs.527.72 lakhs FY2025 are both disclosed", status: "confirmed, qualified"}
+  - {item: "QIP proceeds Rs.145.30 Cr still undeployed at FY2025 close", pass1_figure: "total confirmed, component split partly illegible", verified_figure: "total confirmed correct; Alathur API-block bucket (Rs.99.46 Cr of the Rs.145.30 Cr) barely touched at 0.36% utilised, not ~83% utilised as Pass 1's misread implied", status: "total confirmed, composition corrected"}
+  - {item: "NCLT petition to amalgamate Dhanuka Laboratories into Orchid Pharma", pass1_figure: "confirmed", verified_figure: "confirmed unchanged", status: "confirmed"}
+  - {item: "Qualified audit opinion on consolidated statements over unaudited foreign subsidiaries", pass1_figure: "confirmed", verified_figure: "confirmed; new B6 finding computes a Rs.612.71 lakh standalone-vs-consolidated PAT gap that plausibly bridges to the Rs.634.35 lakh combined loss of the unaudited entities [INFERENCE, not a filed reconciliation]", status: "confirmed, extended"}
+  - {item: "Receivables and finished goods growing ahead of revenue, ECL coverage 30.2% to 22.1%", pass1_figure: "confirmed at source in this pass (Note 13, Note 11 both directly re-read)", verified_figure: "unchanged", status: "confirmed"}
+regulatory_extension: "A FY2023 Minimum Public Shareholding non-compliance drove a stock-exchange freeze on promoter shareholding and a Rs.5,19,200 penalty (plus Rs.5,000+GST), materially larger than the two FY2024-25 fines Pass 1 found; historical and resolved, not a live gap. Separately, the annual report's own BRSR Penalty/Fine table states Nil, inconsistent with the Corporate Governance Report's own disclosure of Rs.88,000+Rs.10,000 FY2024-25 fines in the same filing. Still NOT FOUND IN DOCUMENT: any SEBI adjudication-order text itself."
+receivables_trend: "deteriorating - unchanged from Pass 1, re-confirmed at source: net trade receivables +27.7% YoY vs revenue +12.5% YoY; ECL coverage fell from 30.2% to 22.1% of gross receivables (Note 13, Annual_Report_2025.pdf PDF p.199, printed footer 198)"
+going_concern_language: "NONE found in either annual report's notes to financial statements or auditor's reports, re-confirmed by direct read of the standalone auditor's-responsibilities paragraphs and the Director's Report 'Significant and Material Orders' section (both boilerplate, no qualification, no emphasis of matter)"

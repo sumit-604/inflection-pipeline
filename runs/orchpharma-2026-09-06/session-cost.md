@@ -14,3 +14,5 @@ its own stage. Loops and retries each get their own line with a run counter.
 | 4 | business model decoder | sonnet-5 | default | n/a | n/a | 145,220 | 10m17s | 1 |
 | 7 | emerging moat scan | sonnet-5 | default | n/a | n/a | 152,541 | 11m14s | 1 |
 | 9 | TAM SAM SOM (web) | sonnet-5 | default | n/a | n/a | 180,888 | 15m53s | 1 |
+| 2 | notes triple-pass, pass 2 | sonnet-5 | default | n/a | n/a | 182,321 | 7m33s | 1 |
+| 3 | AR backward deep dive | sonnet-5 | default | n/a | n/a | 287,774 | 11m31s | 1 |

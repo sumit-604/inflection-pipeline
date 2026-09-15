@@ -194,3 +194,82 @@ every later stage.
 RUNWAY. Stage 9 classes the runway MODERATE: revenue headroom about 2.18x on the
 standalone basis, SOM-implied revenue CAGR about 10% at both three and five
 years, against a base year that declined about 12%.
+
+## CORRECTION 8 (from stage 2 pass 2 and stage 3, independently) — PASS 1 MISREAD THE RELATED-PARTY NOTE, AND FIVE OTHER FIGURES
+
+Stage 2 pass 1 read the notes off the corrupt OCR layer. Two later stages read the
+same pages directly from the source PDF and agree with each other against pass 1.
+Where they differ from pass 1, THE SOURCE-VERIFIED READING GOVERNS.
+
+### 8.1 The largest related-party item is a PURCHASE, not a sale
+
+PASS 1 SAID: sale of goods to Orchid Pharma Inc, an unaudited US subsidiary, about
+25% of standalone revenue.
+
+SOURCE SAYS (Annual_Report_2025.pdf p.213-214, Note 50, read directly by stage 2
+pass 2 and again by stage 3): sale of goods to Orchid Pharma Inc is NIL in both
+years. The Rs 230.72 cr is a PURCHASE of GCLE from Otsuka Chemical (India) Pvt Ltd,
+up 35.8% year on year. Total related-party SALES are 1.46% of FY2025 revenue.
+
+The concern is therefore not revenue quality. It is COST-SIDE DEPENDENCE on a
+supplier whose board includes the Managing Director and a Whole-Time Director, for
+an input the company itself calls sole-sourced. Stage 3 sizes the combined Otsuka
+and Dhanuka Laboratories purchase concentration at 27.3% of revenue and 43.0% of
+material cost. The Rs 57.83 cr trade payable pass 1 attributed to Dhanuka
+Laboratories is Otsuka's; Dhanuka Laboratories' own payable is Rs 2.64 cr.
+
+There is no revenue-concentration red flag. There is a material input-concentration
+red flag. Stage 13, the 09b dossier and Verifier A use the corrected reading.
+
+### 8.2 Five further figure corrections, all source-verified by stage 2 pass 2
+
+| Item | Pass 1 | Source-verified |
+|---|---|---|
+| Consolidated capital commitments | Rs 296.43 cr | Rs 298.43 cr (Rs 29,842.89 lakhs) |
+| Note 55, Alathur API block, QIP utilisation | about 83% utilised | 0.36% utilised, Rs 99.46 cr of the Rs 145.30 cr unutilised |
+| OCD redemption premium cap | 16% IRR | 18% IRR |
+| Note 45 geography, Rest of World | flagged as an arithmetic inconsistency | Rs 72,823.17 lakhs; the table reconciles, RETRACT the red flag |
+| Rs 145.30 cr QIP unutilised total | Rs 145.30 cr | confirmed correct |
+
+The Rs 296.43 figure was a single-digit OCR error and the orchestrator repeated it
+in a stage task message. It is corrected here.
+
+### 8.3 New findings the earlier stages did not carry
+
+- CONTINGENT LIABILITIES are 34.0% of net worth and 451% of PAT. Both thresholds
+  fire. 99.4% of the total is the Rs 447.22 cr corporate guarantee for the
+  borrowings of Orchid Bio-Pharma Ltd, a pre-revenue subsidiary. That guarantee is
+  the legal mechanism tying the earning business to the pre-revenue engine that
+  stage 4 described only in economic terms. Stage 2 pass 2 found no visible Ind AS
+  109 fair-value treatment of it.
+- The guarantee went from zero to Rs 447.22 cr in one year, and standalone capital
+  commitments rose about 797% within FY2025.
+- BOARD ATTENDANCE. Non-Executive Chairman Ram Gopal Agarwal attended 1 of 5 board
+  meetings and missed the AGM (Annual_Report_2025.pdf p.68, source-verified). Stage
+  8 did not carry this. It is ADDITIVE to stage 8's CAUTION verdict, not a
+  supersession.
+- A Rs 38.72 cr standalone contingent claim was REMOVED from disclosure in FY2025 on
+  management's own legal opinion about the resolution plan, while the counterparty
+  still disputes the pre-CIRP portion. Rs 7.62 cr was paid.
+- The FY2025 BRSR table states nil penalties while the corporate governance report in
+  the same annual report discloses two FY2024-25 exchange fines. An internal
+  inconsistency in one filing.
+- AMS GUIDANCE DIVERGENCE. The FY2025 AR guides Rs 250-300 cr of AMS revenue over
+  three years (p.20). The first AMS disclosure on a call, Q1 FY27, shows Rs 5 cr in
+  the quarter, about Rs 20 cr annualised. Stage 3 calls this the clearest
+  quiet-abandonment finding in the filing record.
+- AUDITOR RECORD IS CLEAN on the standalone statements: unqualified opinion, no
+  fraud reported, no default, no adverse CARO clause. The consolidated qualification
+  is recurring and confined to unaudited foreign shells. The CSR shortfall pass 1
+  raised is RESOLVED: the transfer to the PM National Relief Fund was made on
+  11-Aug-2025, within the statutory window.
+
+### 8.4 An unresolved reconciliation the operator should see
+
+FY2025 standalone PBT and PAT computed from the annual report's own EPS of Rs 20.99
+times 5.07 cr shares gives about Rs 106.48 cr, matching the AR's own management
+discussion. The screener Data_Sheet that Gate 0 used shows PBT Rs 95.56 cr and PAT
+Rs 99.66 cr. The gap is about 10% and it is unresolved in this corpus. It does not
+overturn the Gate 0 AVOID, which rests on four straight years of ROCE below 8.33%.
+It does mean the run's only ROCE figure is built on the screener series, because the
+annual report does not disclose ROCE anywhere.

@@ -177,7 +177,8 @@ mode:
 - DUAL TRACK, both carried through ALL fair values, entry prices, and
   the verdict card: Track 1 (RRM) and Track 2 (additive Four-Pillar).
   Where they diverge >15%, state which track fits this company and why;
-  the more conservative track sets the entry zone.
+  the track that sets the entry zone follows section-1b chunk 06 (open
+  ruling OR-1).
 - Continuous Pillar 1 formula (0.5 × ROCE% + 7.5, floor 9x; above 33%
   ROCE the elite extension per v3.6 Amendment 11, Base PE = 24 + 0.3 ×
   (ROCE% − 33), cap 30x; the old 24x cap is superseded),
@@ -196,8 +197,14 @@ mode:
 - Pillar 2 structural vs growth-induced determination comes from the
   B10 table (which carries the rating agency verbatim quote). Do not
   re-litigate it; apply the multiplier and offset rules to the
-  determination as given. If B10 marks it INDETERMINATE, use the more
-  conservative multiplier and say so.
+  determination as given. If B10 marks it INDETERMINATE, treat it as an
+  unresolved input under override 3: show the Pillar 2 result under both
+  readings (structural 0.65x, no offset; growth-induced 0.80x with its
+  offset), name the observation that separates them and its confirm-by
+  date, state which reading you value on and why (section-1b open ruling
+  OR-5), and cap the run at PROCEED WITH CAVEATS with the missing evidence
+  named. State the most evidenced reading, not a shaded one (the
+  Amendment 26.3 principle).
 - Pillar 3 uses B10's EM score, catalyst proximity, and evidence mix.
 - UA multiplier: apply ONLY if B10.ua_qualifiers.all_met is true, and
   strictly in Amendment 3 order: Final = min(Raw × 1.25, Sector Cap).
@@ -205,15 +212,16 @@ mode:
   absolute.
 - Lender carve-out where applicable per v3.3 (Pillar 2L, ROE-based
   Pillar 1, P/B primary, 18x cap).
-- HURDLE RATIO replaces any binary stop: HR = (1 + EPS CAGR)³ ×
-  (Destination PE mid ÷ Current PE), pass ≥1.953. PASS proceed;
-  CONDITIONAL (base fails, bull passes) cap verdict at
-  WATCHLIST/BUY-ON-DIPS and flag "growth-dependent with de-rating
-  headwind"; STOP (bull fails) the stock fails the 25% hurdle at
-  current price, complete the remaining sections anyway for the record
-  and let the verdict card say AVOID-on-valuation. Bull EPS CAGR is
+- HURDLE RATIO is a feasibility check, not a verdict cap (v3.9 Amendment 24;
+  operator ruling 2026-09-15, OR-2): HR = (1 + EPS CAGR)³ ×
+  (Destination PE mid ÷ Current PE), threshold 1.953 for Tier A, 1.728 for
+  Tier B. Compute the band and show it on the verdict card: PASS (the tier
+  hurdle is feasible on base-case earnings); CONDITIONAL (base fails, bull
+  passes) flag "growth-dependent with de-rating headwind"; STOP band (bull
+  fails) the tier hurdle is infeasible even on bull-case earnings. No band
+  caps the verdict; complete every section. Bull EPS CAGR is
   usable in the HR check only if B10.credibility_grade is A or B;
-  otherwise Bull uses Base + 5% maximum.
+  otherwise Bull uses Base + 5 percentage points maximum.
 - HURDLE EPS CAGR BASIS (v3.9 A21/A22): the EPS CAGR entering the Hurdle
   Ratio is the PROBABILITY-WEIGHTED EPS CAGR built on the Amendment 21
   run-rate base from the FTTCP Section C.2 credit (Σ increment × probability,
@@ -293,7 +301,7 @@ entry_range: {low: 0, high: 0}
 mos_price: 0
 upside_downside_ratio: 0
 decision: ""                   # BUY | WATCHLIST | AVOID (+on-valuation note)
-unresolved_inputs_used: []     # each with the conservative assumption taken
+unresolved_inputs_used: []     # each with the assumption used, both readings, and the separating observation (override 3)
 som_cagr_crosscheck: ""        # consistent | assumption cut | justified excess
 one_line_thesis: ""
 ```

@@ -21,3 +21,5 @@
 | 12c | verifier C framework (phase-1 scope) | claude-opus (frontmatter) | default | n/a | n/a | 125408 | 8m53s | 1 |
 | 1 | gate 0 scorecard (verifier corrections) | claude-sonnet-5 | default | n/a | n/a | 104662 | 6m33s | 2 |
 | 5 | concall analysis (verifier corrections) | claude-sonnet-5 | default | n/a | n/a | 185460 | 10m16s | 2 |
+| 6 | peer concall verification (verifier corrections) | claude-sonnet-5 | default | n/a | n/a | 261848 | 12m12s | 2 |
+| 7 | emerging moat scan (verifier corrections) | claude-sonnet-5 | default | n/a | n/a | 245708 | 18m17s | 2 |

@@ -4,35 +4,33 @@ run_date: "2026-09-15"
 model: claude-sonnet-5
 status: complete
 input_gaps:
-  - "Amgen and Baxter dedicated-centre status: SECONDARY/CRISIL-sourced only, not confirmed at AR note level (PENDING LIVE VERIFICATION)"
+  - "Amgen dedicated-centre status: SECONDARY/CRISIL-sourced only (CRISIL rationale, 11-Sep-2026, p.1), not found in AR26 text (PENDING LIVE VERIFICATION); Baxter now DOC-confirmed at AR26 p.43"
   - "Facility-level utilisation % for Unit 3, Bayview, Mangalore: NOT FOUND IN DOCUMENT"
   - "Quantified CRO/CDMO revenue-mix target FY28-29: NOT FOUND IN DOCUMENT"
-  - "Bayview total committed capex (beyond the $36.5mn acquisition price): NOT FOUND IN DOCUMENT at note level"
+  - "Bayview total committed capex (beyond the $36.5mn acquisition price) and its USD-INR conversion rate: NOT FOUND IN DOCUMENT; $36.5mn itself is EXTERNAL, not in this run's corpus, kept in USD only"
   - "Syngene-specific PLI/SHAKTI/BioE3 enrolment or incentive amount: NOT FOUND IN DOCUMENT"
   - "I1 talent-asymmetry evidence (named inventors, remuneration-vs-sector-norm): NOT FOUND IN DOCUMENT"
+  - "Bayview seller identity and acquisition date: NOT FOUND IN DOCUMENT (run-1 company-memory assertions removed)"
+  - "BSE XBRL shareholding filing not independently collected; SECONDARY screener table used for the Amendment 3 UA check"
 flags:
-  - type: FLAG-EMOAT-SEGMENT-MISMATCH
-    reason: "The two strongest emerging-moat scores (B2 qualification lock-in, C1 customer ecosystem) sit almost entirely in the BMS Research Services relationship, the segment management itself says is losing clients on price (78% of Q1FY27 revenue, 'drifted towards commoditized research services'). The segment that lost its anchor customer (CDMO/Zoetis) and carries the new capex (Bayview, Unit 3, ADC suite) has no evidenced replacement customer. No scanned emerging moat demonstrates CDMO capacity survives the Zoetis loss (LBF2)."
+  - type: FLAG-EMOAT-SEGMENT-SPLIT
+    reason: "Corrected scorecard: the two Moderate categories tied at the top (A1 rare manufacturing capability, H2 strategic partnerships) split one per segment. A1 (Bayview/Unit 3 capability, AR26 p.46-47/p.192) sits in CDMO, the segment that lost its Zoetis anchor and carries the new capex, but its evidence is entirely supply-side (facility exists, FDA application filed) with zero demonstrated customer traction: no named customer, no disclosed utilisation, no revenue linkage. H2 (BMS extended to 2035, Reg 30 press release 19-Jan-2026 p.2) sits in Research Services, the segment management itself says is losing clients on price (78% of Q1FY27 revenue vs 22% CDMO, Concall Jul-2026 p.5, 'drifted towards commoditized research services'). No scanned emerging moat, in either segment, demonstrates that Syngene's rebuilt CDMO capacity can attract paying customers to replace Zoetis (LBF2). Corrected from run 1's flag, which understated A1 (mis-tiered as CLAIM) and overstated B2/C1 (BMS triple-counted)."
   - type: FLAG-EMOAT-AR-CONTRADICTION
-    reason: "AR26 contains two internally contradictory statements on the same BIOSECURE Act, in different sections: outgoing CEO's letter says it 'eliminated any short-term China+1 tailwinds' while a separate Industry Trends section says 'China+1 is accelerating... reinforced by... BIOSECURE Act momentum,' with India positioned to benefit. Unresolved this pass."
-em_score: 23
+    reason: "AR26 contains two internally contradictory statements on the same BIOSECURE Act, in different sections: outgoing CEO's letter (AR26 p.14) says it 'eliminated any short-term China+1 tailwinds' while a separate Industry Trends section (AR26 p.33) says 'China+1 is accelerating... reinforced by... BIOSECURE Act momentum,' with India positioned to benefit. Unresolved this pass. Page citations corrected from run 1's approximate p.~5/p.~15-16 to exact p.14/p.33."
+em_score: 19
 em_classification: "MODEST"
 active_categories:
-  - {id: "A1", name: "Rare manufacturing capability", strength: "Moderate", evidence_type: "documented+claim", time_to_materialise: "Bayview FY27"}
-  - {id: "B2", name: "Qualification lock-in", strength: "Strong", evidence_type: "documented", time_to_materialise: "already active (BMS to 2035)"}
-  - {id: "C1", name: "Customer ecosystem / embedded relationships", strength: "Strong", evidence_type: "documented", time_to_materialise: "already active"}
+  - {id: "A1", name: "Rare manufacturing capability", strength: "Moderate", evidence_type: "documented", time_to_materialise: "Bayview FY27"}
   - {id: "F1", name: "Talent density", strength: "Moderate", evidence_type: "documented", time_to_materialise: "ongoing"}
   - {id: "H2", name: "Strategic partnerships", strength: "Moderate", evidence_type: "documented", time_to_materialise: "already active (BMS); Zoetis leg already failed"}
   - {id: "H3", name: "ESG moat", strength: "Moderate", evidence_type: "documented", time_to_materialise: "already active, electricity leg only"}
-evidence_mix: {documented: 14, claim: 6, inference: 3}
-completionist_recount: "recount performed: 14 documented items across 9 categories (A1, B2, C1, C2, E1, F1, G1[negative], G2, H2, H3); 6 categories scored Strong/Moderate (A1, B2, C1, F1, H2, H3), within the 3-6 realistic base rate; no claims found mis-scored as documented on recount."
+evidence_mix: {documented: 18, claim: 3, inference: 2}
+completionist_recount: "18 documented items across 10 categories (A1, B2, C1, C2, E1, F1, G1[negative], G2, H2, H3); total Section 3 evidence rows across all 22 categories + R1 = 23 (18 DOC, 3 CLAIM, 2 INFER); 4 categories score Strong/Moderate (A1, F1, H2, H3), within the 3-6 realistic base rate, 0 Strong after the BMS de-duplication fix"
 catalysts_12m:
-  - {catalyst: "Bayview capitalisation / FDA pre-check outcome", window: "FY27", evidence_type: "documented (application filed)", anchor: "AR26 p.42-43; company memory Board's Report p.69"}
-  - {catalyst: "Named non-Zoetis CDMO customer signed at Unit 3/Bayview", window: "FY27-FY28", evidence_type: "management claim, unresolved", anchor: "Concall Jul-2026 p.9, 'double-digit growth starting FY28'"}
+  - {catalyst: "S20B Infra warm-shell capitalisation", window: "Sep-2026", evidence_type: "documented, in progress", anchor: "AR26 Note 3(a), p.242 standalone"}
+  - {catalyst: "Bayview capitalisation / FDA pre-check outcome", window: "FY27", evidence_type: "documented (application filed)", anchor: "AR26 p.46-47, p.69"}
   - {catalyst: "Mangalore small-molecule lock-ins converting to disclosed contracts", window: "FY27", evidence_type: "management claim", anchor: "Concall Jul-2026 p.6-7"}
-  - {catalyst: "ADC bioconjugation suite commissioning at Unit 3", window: "FY27-FY28", evidence_type: "documented, in progress", anchor: "AR26 p.192; Reg 30 clarification 23-Oct-2025"}
-  - {catalyst: "H2FY27 revenue/margin vs guidance (single-digit decline, mid-20s margin)", window: "H2 FY27", evidence_type: "management claim, credibility grade C", anchor: "Concall Jul-2026 p.3; B05 promise-delivery record"}
-one_line_note_placeholder: ""
+  - {catalyst: "H2FY27 revenue/margin vs guidance (single-digit decline, mid-20s margin)", window: "H2 FY27", evidence_type: "management claim, credibility grade D", anchor: "Concall Jul-2026 p.3; B05 promise-delivery record"}
 capex_embedded_growth_pct: 34.5
 optionality_register:
   - {optionality: "Bayview reaches full US regulatory standing and signs a named non-Zoetis customer", converting_evidence: "FDA facility approval/clearance plus a signed CDMO contract with disclosed revenue linkage", first_appears: "Reg 30 filing; next AR Note 3(a); concall", window: "FY27-FY28"}
@@ -42,11 +40,12 @@ optionality_register:
   - {optionality: "Syn.AI becomes a disclosed productivity or revenue driver", converting_evidence: "Quantified productivity metric or client-facing digital-revenue line", first_appears: "AR/investor presentation", window: "undated, 3-5yr"}
   - {optionality: "Biopharma SHAKTI/BioE3/PLI produces a Syngene-specific grant or incentive", converting_evidence: "Named scheme enrolment with disclosed amount", first_appears: "Reg 30 filing/AR", window: "FY27-FY29"}
   - {optionality: "Talent asymmetry (I1) established with a named inventor/hire trail", converting_evidence: "AR remuneration annexure or traceable patent-inventor employment history plus competitor pay-scale constraint evidence", first_appears: "AR/concall", window: "undated"}
+  - {optionality: "Amgen dedicated-centre relationship confirmed at AR/note level", converting_evidence: "Direct AR or exchange-filing naming of Amgen as a dedicated-centre client", first_appears: "next AR / Reg 30 filing", window: "undated"}
 combined_assessment: "AVERAGE"
-combined_reasoning: "Gate 0 AVERAGE (core 57, 2 confirmed moats) pairs with a MODEST (not EXPANSION) emerging-moat score of 23; the strongest forward scores sit in the BMS relationship, which is in the Research Services segment already suffering price attrition, not in the CDMO segment the refill thesis needs to prove."
+combined_reasoning: "Gate 0 AVERAGE (core 56, 2 confirmed moats) pairs with a corrected MODEST emerging-moat score of 19 (down from run 1's 23 after removing a triple-counted BMS credit); the two Moderate categories tied at the top (A1, H2) split one per segment, but A1's Bayview/Unit 3 evidence is supply-side capability only, with no named customer or disclosed utilisation in the CDMO segment the refill thesis needs to prove."
 top_moat_risks:
-  - "BMS/Zoetis pattern repeat: two-customer concentration already >35% FY26; a single marquee relationship failing again would remove both top-scoring categories at once"
+  - "A1/H2 tied at the top of the corrected scorecard but neither resolves CDMO customer fill: A1 is facility/application status only (no named customer, no utilisation disclosed); H2's BMS relationship sits in Research Services, the segment already under price pressure, and Zoetis's collapse shows even a marquee partnership does not survive a demand-side shock"
   - "Bayview/Unit 3 capacity remains substantially unfilled with no disclosed utilisation % and no CGU impairment test despite ~Rs 504cr non-standalone CWIP and a loss-making Syngene USA subsidiary"
-  - "H3 ESG moat is shared by all CRDMO peers pursuing SBTi/ZLD standards and its total-energy renewable share is declining (79.7% to 76.7%) as new-facility fuel use grows"
-  - "F2 execution moat scores 0: guidance credibility grade C, FY27 guidance cut from 'broadly flat' to 'single-digit decline' within one quarter"
-analyst_note: "The scan's central finding is a segment mismatch, not a missing-evidence problem: the two Strong-scoring categories (B2, C1) both anchor to BMS, which lives in Research Services, the segment management admits is losing clients on price. The new capex (Bayview, Unit 3, ADC suite) sits in CDMO, the segment that lost its Zoetis anchor, and carries no named replacement customer anywhere in the corpus. I1 and I2 both score 0 by design (no named-inventor/pay-scale evidence for I1; the BMS relationship is an execution lead, not a configuration a competitor is structurally blocked from copying, for I2) - this run does not contribute to the I1/I2 threshold-crossing review list. The AR's internal BIOSECURE/China+1 contradiction (E2) is carried as a flag for Second-Order resolution, not resolved here."
+  - "H3 ESG moat is shared by all CRDMO peers pursuing SBTi/ZLD standards (I2 = 0) and its total-energy renewable share is declining (79.7% to 76.7%) as new-facility fuel use grows"
+  - "F2 execution moat scores 0: promise-delivery credibility grade D (1 delivered/4 partial/3 missed), FY27 guidance cut from 'broadly flat' to 'single-digit decline' within one quarter"
+analyst_note: "Correction run collapses a triple-counted BMS-2035 credit (B2 4.0 + C1 4.0 + H2 3.0) to a single mechanism (H2 only, 3.0), per the 4C existing-moat exclusion and the no-double-credit rule; B2 and C1 are rescored on their own remaining evidence, including a newly found DOC fact (Baxter renewed through March 2028, AR26 p.43) not credited anywhere in run 1. Net effect: em_score falls from 23 to 19, still MODEST, but composition shifts from 2 Strong + 4 Moderate to 0 Strong + 4 Moderate, a more cautious picture. I2 (cannibalization barrier) is now tested against all five claimed-moat locations (A1, B2/C1/H2, F1, H3) per audit item 7 and scores 0 in every case: none is a structural barrier, all are execution leads. A citation error was independently found and fixed: run-1's 'AR26 p.12384-12388' for the BMS passage was a text-file line number, not a page number (correct page: p.189); Bayview claims were mis-cited to p.42-43 (correct: p.46-47). The Amendment 3 UA qualifier fails on two of three legs (Gate 0 core 56<60, EM 19<25; FII+DII 39.83% vs required <3%), recorded per the operator's explicit request, with no effect on em_score itself."

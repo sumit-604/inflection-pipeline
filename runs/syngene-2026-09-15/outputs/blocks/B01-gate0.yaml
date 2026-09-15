@@ -3,31 +3,36 @@ company: "SYNGENE"
 run_date: "2026-09-15"
 model: claude-sonnet-5
 status: complete
+run: 2
 input_gaps:
   - "Data_Sheet.csv has no Current Liabilities split FY2018-FY2023: ROCE NOT FOUND those years; Block A A1/A2/A4 use computed FY2024-FY2026 window only"
-  - "Data_Sheet.csv has no Trade Payables row any year: WC Days (B4, M12) computed for FY2025-FY2026 only, from filed results BS"
-  - "Data_Sheet.csv 'Cash from Investing Activity' mixes capex with treasury deposit/MF flows: FCF (B2, B3) computed for FY2025-FY2026 only, from filed CF statement"
+  - "Data_Sheet.csv has no Trade Payables row any year: WC Days (B4, M12) computed for FY2024-FY2026 using AR2025 FY2024 comparative plus FY2025-FY2026 filed results BS; FY2018-FY2023 still NOT FOUND"
+  - "Data_Sheet.csv 'Cash from Investing Activity' mixes capex with treasury deposit/MF flows: FCF (B2, B3) computed for FY2024-FY2026 using AR2025 FY2024 comparative plus FY2025-FY2026 filed CF statement; FY2018-FY2023 still NOT FOUND"
   - "Promoter pledge % not found in shareholding table or AR text: E3 scored 0 as N/A"
-  - "Promoter shareholding table (SECONDARY tier) starts Jun-2024: E2 uses 2-year change, not 3-year"
+  - "Promoter shareholding table (SECONDARY tier) starts Jun-2024: Jun-2023 data point NOT FOUND, so E2 scored 0 (N/A) per rule 5 rather than a 2-year proxy"
   - "Sector-wide listed-peer universe beyond ANTHEM/SAILIFE/PPLPHARMA not evidenced: M5, M7 flagged PEER DATA NEEDED"
+  - "Net-of-tax figure for FY26 exceptional items (notes 11, 12) not separately disclosed: NOT FOUND"
 flags:
   - type: FLAG-GATE0
-    reason: "Classification AVERAGE with named historical depressors: FY26 ROCE fell 13.34% (FY24) to 8.35% (FY26, computed) and PAT fell -36% YoY (Rs 496.2cr to Rs 316.7cr, screener-data), driven by exceptional items (labour-code gratuity re-measurement and termination benefits, net Rs 462mn consolidated FY26, results FY26 audited p.9-10) and depreciation step-up from newly capitalised biologics capacity (CWIP 34.9% of net block at Mar-2026, LBF3); Q1FY27 carried a further Rs 50 cr forex hedge loss (results Q1FY27 p.3). Distinguish capacity-expansion drag from a structural moat failure before any position-size decision."
+    reason: "Classification AVERAGE with named historical depressors: FY26 ROCE fell 13.34% (FY24) to 8.35% (FY26, computed) and PAT fell -36% YoY (Rs 496.2cr to Rs 316.7cr, screener-data), driven by a Rs 766 million consolidated pre-tax exceptional items charge (Rs 462mn labour-code gratuity re-measurement, note 11, plus Rs 304mn termination benefits, note 12; results FY26 audited p.4 and p.9-10) and depreciation step-up from the newly capitalised ex-Stelis Unit 3 Bengaluru biologics facility (CWIP 34.9% of net block at Mar-2026, LBF3; Bayview USA remains uncapitalised in CWIP separately); Q1FY27 carried a further Rs 50 cr forex hedge loss (results Q1FY27 p.3). Distinguish capacity-expansion drag from a structural moat failure before any position-size decision."
 data_years: 9
 fy_range: "FY2018 to FY2026"
-blocks: {A: 7, B: 18, C: 8, D: 16, E: 8}
-core_score: 57
+blocks: {A: 5, B: 20, C: 8, D: 16, E: 7}
+core_score: 56
 moat_score: 10
-grand_total: 67
+grand_total: 66
 moats_confirmed: 2
 moat_class: "MODERATE"
 classification: "AVERAGE"
 deal_breakers:
-  - "1: Block A = 7 (<8) -> caps max GOOD (non-binding; Core score already AVERAGE)"
+  - "1: Block A = 5 (<8) -> caps max GOOD (non-binding; Core score already AVERAGE)"
 history_downgrade: false
 data_notes:
   - "AR Note 38 (standalone) discloses its own ROE/ROCE definitions differing from the fixed formula (ROCE denominator = Tangible Net Worth + Borrowings - DTA): ROCE 14%/13.24%/10.78% and ROE 12%/10%/8% for FY24/FY25/FY26 (AR2025 p.252, AR2026 p.286-287); cited as cross-check only, not scored, and on a standalone basis vs consolidated Data_Sheet basis used elsewhere"
   - "PAT-before-exceptional figure in LBF1 claim (Rs 1 cr) could not be exactly reproduced from the two disclosed filed subtotals (PBT before exceptional and exceptional items, net); directionally consistent (near-breakeven) but not an exact filed line item (results Q1FY27 p.2-3)"
-  - "M6 (R&D) and M8 (Distribution) scored 0 as archetype-inapplicable (CRO/CDMO business model), not as pure data gaps"
-block_b_trend: "deteriorating - CFO fell to Rs 915.2 cr in FY26 from Rs 1,167.6 cr in FY25 (screener-data), -21.6% YoY, despite +2.6% revenue growth and lower capex"
-analyst_note: "FY26 weakness is concentrated and datable, not diffuse: exceptional items (gratuity re-measurement, termination benefits) and depreciation from the newly capitalised Stelis/Baltimore biologics licence (CWIP fell Rs1,266cr to Rs1,046cr as it moved to PP&E) explain most of the ROCE and PAT decline. Block B's strong cumulative ratios (CFO/PAT 1.92x over 9yr) mask that CFO itself fell 21.6% YoY in FY26 - the trailing multi-year average is doing the scoring work, not the current trajectory. Moat score of 10/60 is driven down by peer-relative margin tests (M1, M2) failing against ANTHEM and SAILIFE's higher and more stable EBITDA margins, while stickiness tests (M4, M10) pass because receivable days improved, not because pricing power exists. Treat the Block A/moat weakness as evidence to verify at Halt 1 (is FY26 capacity a one-off drag or a durable margin reset), not as a standalone AVOID signal."
+  - "M6 (R&D) scored 0 as NOT FOUND: AR Annexure R&D-expenditure line has no rupee figure filled in (AR2026 p.78); this is a data gap, not an archetype exclusion. M8 (Distribution) scored 0 as archetype-inapplicable (CRO/CDMO business model has no distribution network) - a distinct reason, corrected from a prior-run label conflict"
+  - "M9 gross-margin test used a proxy: GM = (Revenue - Raw Material Cost +/- Change in Inventory) / Revenue, since no explicit COGS or gross-margin line is disclosed; peer figures (ANTHEM 71.06%, SAILIFE 73.30%, PPLPHARMA 59.24%) computed on the same proxy basis from screener-data FY26 column"
+  - "M5 (Scale & Dominance) and M7 (Regulatory/License) both flagged PEER DATA NEEDED: full listed-CDMO/CRO universe ranking and regulated-player count not evidenced beyond the 3 supplied peers (ANTHEM, SAILIFE, PPLPHARMA)"
+  - "FY26 consolidated exceptional items, net loss, pre-tax = Rs 766 million (results FY26 audited p.4, line 4) = Rs 462 million labour-code gratuity re-measurement (note 11, consolidated) + Rs 304 million termination benefits (note 12); standalone equivalent = Rs 732-733 million (p.3, line 4) = Rs 429 million (note 11, standalone) + Rs 304 million (note 12). Net-of-tax figure for these two items is NOT FOUND in the provided results"
+block_b_trend: "deteriorating - CFO fell to Rs 915.2 cr in FY26 from Rs 1,167.6 cr in FY25 (screener-data), -21.6% YoY, despite +2.6% revenue growth and lower capex; re-confirmed against the filed FY26 audited consolidated cash flow statement (p.8): CFO Rs 9,152mn less capex Rs 3,682mn = Rs 5,470mn (Rs 547.0cr) FY26, and Rs 11,676mn less Rs 7,701mn = Rs 3,975mn (Rs 397.5cr) FY25 - both figures confirmed unchanged"
+analyst_note: "FY26 weakness is concentrated and datable, not diffuse: a Rs 766mn consolidated pre-tax exceptional charge (gratuity re-measurement plus termination benefits) and depreciation from the newly capitalised ex-Stelis Unit 3 Bengaluru biologics facility (CWIP fell Rs1,266cr to Rs1,046cr as it moved to PP&E) explain most of the ROCE and PAT decline; the separate Bayview, USA site remained uncapitalised in CWIP through FY26. Block B's ratios now score a perfect 20/20 on the corrected 3-year (FY24-26) window, but CFO itself still fell 21.6% YoY in FY26 - the trailing multi-year average is doing the scoring work, not the current trajectory. Moat score of 10/60 is driven down by peer-relative margin tests (M1, M2) failing against ANTHEM and SAILIFE's higher and more stable EBITDA margins, while stickiness tests (M4, M10) pass because receivable days improved, not because pricing power exists. Treat the Block A/moat weakness as evidence to verify at Halt 1 (is FY26 capacity a one-off drag or a durable margin reset), not as a standalone AVOID signal."

@@ -9,3 +9,4 @@ Run: runs/titanbio-2026-09-10 | Phase 1 executed 2026-09-16
 | 2 | Notes triple-pass, pass 1 | sonnet | - | n/r | n/r | 206658 | 8m47s | 1 |
 | 2 | Notes triple-pass, pass 2 | sonnet | - | n/r | n/r | 109917 | 6m51s | 2 |
 | 2 | Notes triple-pass, pass 3 | sonnet | - | n/r | n/r | 81134 | 4m39s | 3 |
+| 3 | AR deep dive, 8 phases | sonnet | - | n/r | n/r | 281584 | 11m25s | 1 |

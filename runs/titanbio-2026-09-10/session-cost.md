@@ -10,3 +10,6 @@ Run: runs/titanbio-2026-09-10 | Phase 1 executed 2026-09-16
 | 2 | Notes triple-pass, pass 2 | sonnet | - | n/r | n/r | 109917 | 6m51s | 2 |
 | 2 | Notes triple-pass, pass 3 | sonnet | - | n/r | n/r | 81134 | 4m39s | 3 |
 | 3 | AR deep dive, 8 phases | sonnet | - | n/r | n/r | 281584 | 11m25s | 1 |
+| 4 | Business model decoder | sonnet | - | n/r | n/r | 125461 | 9m05s | 1 |
+| 5 | Concall analysis (NO-CONCALL MODE) | sonnet | - | n/r | n/r | 176832 | 9m03s | 1 |
+| 8 | Promoter check (web) | sonnet | - | n/r | n/r | 156610 | 9m53s | 1 |

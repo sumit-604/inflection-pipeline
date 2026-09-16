@@ -1,0 +1,56 @@
+stage: B08-promoter
+company: "TITANBIO"
+run_date: "2026-09-16"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Phoenix Bio Sciences Private Ltd: full director/shareholder list not independently verified via MCA/RoC; only a public aggregator (Tracxn-style) director list obtained, which could not be reconciled with the AR's own disclosure of Raja Singla and Shivom Singla sitting on its board"
+  - "BSE ASM/GSM surveillance status for scrip 524717 not confirmed or ruled out (search returned only generic framework pages, no company-specific snapshot)"
+  - "Ravinder Gupta / HUF FY26 exit: exact per-transaction prices and quantities sourced from a third-party aggregator show internal inconsistencies (a same-day price jump from ~Rs 934-955 to ~Rs 106) not reconcilable against the known corporate-action calendar; BSE's own SAST PDF could not be fetched (HTTP 403)"
+  - "Director professional-background/education detail: the AR's own Brief-Profile-of-Directors PDF is linked, not text-extracted in this corpus, and was not independently re-fetched this stage"
+  - "Full Dr Vijay Malik fundamental-analysis article on Titan Biotech: primary page blocked at fetch (HTTP 403); only search-engine-snippet content recovered"
+flags:
+  - {type: FLAG-PROMOTER, verdict: "CAUTION", top_findings: ["37.1% of FY26 Cost of Materials Consumed from related parties (Phoenix Bio Sciences alone 26.0%, +73.6% YoY), no arm's-length pricing benchmark disclosed in three years of ARs", "Two Executive Directors (Raja Singla, Shivom Singla) sit on the board of Phoenix Bio Sciences, the largest RPT raw-material supplier", "Independent Chairman and Audit Committee Chairman Rohit Jain sits on the board of Peptech Biosciences, an equity-method associate and related party his own committee reviews (corrects the run brief: he does NOT sit on Phoenix Bio Sciences, Titan Media, Titan Securities, or Connoisseur Management boards)", "21 named related entities in Note 41, a large group structure relative to a single-segment manufacturer's scale", "Majority of the 55.78% promoter stake (49.86 pts) sits inside three corporate holding vehicles (Titan Securities Ltd, Tanita Leasing & Finance Ltd, Connoisseur Management Services), an opacity layer though not itself adverse"]}
+verdict: "CAUTION"
+scorecard: {clean: 7, caution: 1, red: 2}
+deal_breakers: []
+adverse_findings:
+  - {finding: "37.1% of FY26 Cost of Materials Consumed from related parties, led by Phoenix Bio Sciences Private Ltd at 26.0% (+73.6% YoY), with no arm's-length pricing benchmark disclosed anywhere in three years of Annual Reports", evidence_tier: "VERIFIED", source: "AR_FY2026.txt Note 41B, standalone p.144-146 (primary document)", date: "FY2025-26 AR"}
+  - {finding: "Two serving Executive Directors (Raja Singla, Shivom Singla) sit on the board of Phoenix Bio Sciences Private Ltd, the company's single largest related-party raw-material supplier", evidence_tier: "VERIFIED", source: "AR_FY2026.txt Corporate Governance Report p.43-44 (primary document)", date: "as at 31-Mar-2026"}
+  - {finding: "Independent Chairman and Audit Committee Chairman Rohit Jain sits on the board of Peptech Biosciences Ltd, an equity-method associate and related party reviewed by his own Audit Committee", evidence_tier: "VERIFIED", source: "AR_FY2026.txt Corporate Governance Report p.42 (primary document)", date: "as at 31-Mar-2026"}
+  - {finding: "Titan Biotech's own CFO, Prem Shankar Gupta, sits on the board of Titan Media Limited, a 48.44% associate and related party", evidence_tier: "MEDIA REPORTED", source: "ZaubaCorp company registry aggregator (web search)", date: "accessed 2026-09-16"}
+  - {finding: "21 named related entities in Note 41 (2 associates, 1 significant-influence entity, 18 other related parties), a large entity count relative to a single-segment, single-site-cluster manufacturer", evidence_tier: "VERIFIED", source: "AR_FY2026.txt Note 41A, standalone p.142-144 (primary document)", date: "FY2025-26 AR"}
+  - {finding: "Titan Securities Ltd (33.59% shareholder), Tanita Leasing & Finance Ltd (9.49%) and Connoisseur Management Services Pvt Ltd (6.78%) together hold 49.86 of the 55.78 promoter percentage points; Titan Securities Ltd is itself a separately BSE-listed NBFC on whose board both Managing Directors sit", evidence_tier: "VERIFIED", source: "AR_FY2026.txt p.130-131 (shareholding note) cross-checked against Bloomberg/ValueResearch/Yahoo Finance TITANSEC.BO listings (web search)", date: "shareholding as at 31-Mar-2026; listing status confirmed 2026-09-16"}
+  - {finding: "Growing cash pile (FY26 investing outflow Rs 34.41 cr) is 77% a quoted-debt FVTPL financial-asset purchase at a falling return (RoI 7.04%->3.64%), framed in the MD&A as capacity-building capex", evidence_tier: "VERIFIED", source: "carried from B03-ardeep, independently re-confirmed against AR_FY2026.txt Note 5/Note 2 and MD&A p.104", date: "FY2025-26 AR"}
+transition_evidence:
+  - {item: "Independent board expanded from 4 to 5 members with the addition of Debendra Kumar Sabat, a senior legal professional (Supreme Court/Delhi High Court practice, former Central Government Counsel), not a replacement for an exiting member", evidence_tier: "VERIFIED", source: "2025-09-27_change-in-management.txt Annexure-A; AR_FY2026.txt CG Report p.41-42", date: "13-Aug-2025 appointment, regularised 26-Sep-2025 AGM"}
+  - {item: "One individual promoter (Ravinder Gupta and HUF) fully exited via transparently disclosed open-market sales, with no pledge or opacity involved, and the exit preceded rather than rode the stock's 2026 rally", evidence_tier: "VERIFIED (exit fact) / UNVERIFIED (transaction-level detail)", source: "AR_FY2026.txt p.130-131; insiderscreener.com aggregator; marketsmojo.com price-history search", date: "exit completed by 31-Mar-2026"}
+  - {item: "CFO and Company Secretary continuity across all three years held, no resignation-driven churn", evidence_tier: "VERIFIED", source: "AR_FY2024.txt, AR_FY2025.txt, AR_FY2026.txt, direct cross-year confirmation", date: "FY2023-24 through FY2025-26"}
+pledge_pct_latest: 0
+pledge_trend: "stable at 0% across all three Annual Reports held (FY24, FY25, FY26); no pledge disclosed at any point"
+searches_performed:
+  - "Phoenix Bio Sciences Private Limited Bhiwadi Rajasthan MCA directors"
+  - "Peptech Biosciences Limited Titan Biotech associate company"
+  - "Titan Securities Limited Titan Biotech promoter holding company"
+  - "Titan Biotech Limited SEBI order OR penalty OR adjudication"
+  - "\"Titan Biotech\" promoter pledge OR \"insider trading\" OR \"SEBI\" OR \"SAT\" order"
+  - "\"Connoisseur Management Services\" Titan Biotech Singla"
+  - "Naresh Kumar Singla Suresh Chand Singla director disqualified companies"
+  - "Titan Biotech Glassdoor AmbitionBox employee reviews"
+  - "Titan Biotech AmbitionBox reviews rating"
+  - "Titan Biotech IiAS OR SES OR InGovern proxy advisory"
+  - "\"Titan Media Limited\" company culture media OR Delhi ROC"
+  - "\"Titan Biotech\" NCLT OR court case OR fraud OR GST notice OR income tax raid"
+  - "Titan Biotech Limited news 2026 stock rally"
+  - "Titan Biotech ASM GSM stage BSE surveillance"
+  - "\"Titan Biotech\" short seller OR \"operator stock\" OR \"pump and dump\""
+  - "Titan Biotech Limited electoral bond political donation CSR"
+  - "Titan Biotech screener.in red flags warnings"
+searches_skipped:
+  - "Direct MCA/RoC portal pull for Phoenix Bio Sciences Private Limited full director/shareholder list (login-gated, unreachable this environment)"
+  - "BSE's own ASM/GSM list snapshot for scrip 524717"
+  - "BSE's own raw SAST disclosure PDFs for Ravinder Gupta FY26 transactions (fetch blocked, HTTP 403)"
+  - "Full Dr Vijay Malik fundamental-analysis article (fetch blocked, HTTP 403)"
+  - "AmbitionBox company-specific page for Titan Biotech (not surfaced distinct from the AmbitionBox platform's own listing)"
+verdict_basis: "37.1% of FY26 Cost of Materials Consumed sourced from related parties with no arm's-length benchmark in three years of filings, reinforced by two Executive Directors on the largest supplier's board and the Independent/Audit Committee Chairman on the board of the associate his committee reviews -- against an otherwise clean SEBI, criminal, tax, pledge, auditor, and CXO-turnover record."
+analyst_note: "Two corrections to the run brief's framing, both established directly from the primary Corporate Governance Report table (p.42-44), matter for how the flag should be weighted downstream. First, Independent Chairman Rohit Jain sits on only ONE of the five named counterparty boards (Peptech Biosciences), not all five; Phoenix Bio Sciences' board overlap runs through two Executive Directors (Raja and Shivom Singla), a generation removed from the two Managing Directors. Second, Peptech Biosciences is not an outside RPT counterparty acquired at arm's length -- it was demerged from Titan Biotech itself in FY2012 (99.88% subsidiary diluted over a decade to today's 36.87% associate), which reframes the independence question for that specific entity even though it does not resolve the Phoenix Bio Sciences pricing question, which remains the load-bearing unresolved item. Phoenix Bio Sciences itself remains the least transparent entity in the group: no independently verifiable MCA director/shareholder record was obtained this run, despite it being the single largest related-party cost line by rupee value. The Ravinder Gupta exit, on the timing evidence available, is a clean read (preceded, did not ride, the 2026 rally) and should not be carried forward as an insider-confidence red flag."

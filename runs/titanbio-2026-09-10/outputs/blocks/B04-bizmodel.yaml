@@ -1,0 +1,67 @@
+stage: B04-bizmodel
+company: "TITANBIO"
+run_date: "2026-09-16"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "No investor presentation exists; company publishes none (results filings used instead for latest-period read)"
+  - "No product-wise or plant-wise revenue split anywhere in three years of annual reports (single reported segment, Ind AS 108)"
+  - "No capacity, utilisation, or commissioning-date disclosure for any of the four plants or the FY26 PPE additions"
+  - "No competitor named anywhere in the filings; competitive positioning map (2B) built from company memory only, not anchored"
+  - "No physical unit (kg/tonne/litre) of production or sale disclosed; unit economics (3D) is cost-ratio-based, not true per-unit"
+  - "No customer concentration numbers despite the risk being named"
+  - "No certification/accreditation (ISO, GMP, FSSC, export-market registrations) named in the extracted AR text"
+flags:
+  - "37.1% of FY26 cost of materials consumed bought from related parties, led by Phoenix Bio Sciences at 26.0% (up 73.6% YoY), no arm's-length benchmark disclosed (AR FY26 p.145)"
+  - "77% of FY26 investing outflow (Rs 25.16cr of Rs 34.41cr net investing spend, computed from Note 5) went into a quoted-debt FVTPL portfolio, not plant, while MD&A frames the whole outflow as capacity building (AR FY26 p.104, p.128)"
+  - "Gross material margin flat FY25 to FY26 (48.3% to 48.1% cost ratio) despite 31.8% reported revenue growth; no evidence of operating leverage on the cost-of-goods line"
+  - "Consolidated vs standalone PAT gap (Rs 2.44cr) does not visibly reconcile against Peptech Biosciences' Rs 6.51cr FY26 profit considered in consolidation per Form AOC-1 (prior-stage figure); needs a fresh extraction pass"
+  - "Reported FY26 revenue growth (31.8%) is not like-for-like; unrestated freight gross-up inflates it versus FY25 (~28% like-for-like)"
+business_type: "manufacturing"
+revenue_streams:
+  - {name: "Domestic sale of biological products", type: "Manufacturing B2B sale of goods", pct_of_revenue: 61.0, predictability: "M"}
+  - {name: "Export sale of biological products", type: "Manufacturing B2B sale of goods", pct_of_revenue: 39.0, predictability: "M"}
+asset_intensity: "medium"
+wc_intensity: "high"
+pricing_power: "weak"
+cyclicality: "cyclical"
+moats_present: []
+valuation_methods:
+  primary: {method: "Relative valuation (P/E, EV/EBITDA vs listed peer set)", why: "Profitable going concern with a comparable listed peer set sharing the fermentation/extraction B2B-ingredient economic engine"}
+  secondary: {method: "Discounted cash flow", why: "Cross-check only; FY25 trough to FY26 recovery makes the growth-rate base year a live judgment call that must be stated explicitly"}
+  tertiary: {method: "Sum-of-the-parts / NAV on the investment and associate book", why: "Rs 49.66cr now sits in a quoted-debt FVTPL portfolio and associate stakes carried below attributable net worth, outside the core operating engine"}
+  not_applicable:
+    - "Dividend discount model (7% payout ratio, too small a value-creation slice)"
+    - "EV/Sales (company is solidly profitable, an earnings multiple is available)"
+    - "Replacement-cost/asset-heavy industrial valuation (gross block only 37% of revenue)"
+irrelevant_ratios:
+  - {ratio: "Headline reported revenue growth (31.8% FY26)", why: "Includes an unrestated freight gross-up; like-for-like growth is closer to 28%"}
+  - {ratio: "Standalone/consolidated ROCE (24.09%/22.76% FY26)", why: "Capital employed includes a Rs 49.66cr investment book earning only 3.64% return on investment, overstating the operating engine's true return"}
+  - {ratio: "Debt-equity ratio (0.03)", why: "Company is near debt-free; leverage is not the risk driver here"}
+must_track_metrics:
+  - {metric: "Cost of materials consumed / revenue", healthy: "flat or falling", red_flag: "rising quarter over quarter"}
+  - {metric: "Related-party % of cost of materials consumed", healthy: "falling, or flat with a disclosed arm's-length benchmark", red_flag: "rising past 37.1% with no benchmark"}
+  - {metric: "Cash conversion cycle (days)", healthy: "stable or falling", red_flag: "rising past 220 days"}
+  - {metric: "Net PPE additions vs net Investments additions", healthy: "PPE-led when capex is claimed", red_flag: "Investments-led while MD&A frames spend as capacity building"}
+  - {metric: "Net profit ratio", healthy: "rising or stable (13.31% FY26)", red_flag: "falling despite rising revenue"}
+unit_economics:
+  unit: "NOT FOUND — no kg/tonne/litre volume disclosed in any filing"
+  revenue_per_unit: "NOT FOUND"
+  margin_per_unit: "NOT FOUND"
+  key_lever: "Raw-material price pass-through (company's own named top risk); cost of materials consumed is 48.1% of FY26 revenue and has been flat as a ratio year over year"
+first_deterioration_signals:
+  - {risk: "Reported growth overstates real growth (freight gross-up)", first_signal: "Growing gap between Sale of Products note growth and the freight-neutralisation other-expenses line"}
+  - {risk: "Raw-material price pass-through failure", first_signal: "Cost of materials consumed as % of revenue rising quarter over quarter"}
+  - {risk: "Working capital build without matching sales", first_signal: "Finished-goods inventory and ECL allowance rising faster than revenue"}
+  - {risk: "Capex framed as capacity building but diverted to financial assets", first_signal: "Net Investments additions exceeding net PPE additions"}
+  - {risk: "Related-party raw-material concentration", first_signal: "Related-party % of cost of materials consumed rising past 37.1% with no benchmark disclosed"}
+mgmt_questions:
+  - "What is the arm's-length pricing benchmark for raw material bought from Phoenix Bio Sciences (26.0% of FY26 cost of materials consumed, up 73.6% YoY)?"
+  - "What specific product and capacity did the Rs 7.40cr of FY26 PPE additions create, and when?"
+  - "Why did 77% of the FY26 investing outflow go into a quoted-debt FVTPL portfolio when MD&A frames the whole outflow as capacity building?"
+  - "What is the operating relationship with Peptech Biosciences (a bio-fertilizer/bio-pesticide associate), and why is the stake carried well below its attributable net worth?"
+  - "What drove finished-goods inventory up 53.2% against 31.8% reported revenue growth, and the first-ever ECL provision?"
+  - "Is a product-wise or plant-wise revenue and margin split available internally even if not publicly disclosed?"
+  - "What is customer concentration (top-5/top-10 as % of revenue), given the risk is named with no supporting numbers?"
+one_line_verdict: "Commodity converter with a flat cost margin, a related-party-heavy supply chain, and a FY26/FY27 rebound not yet proven to be a durable value-added climb rather than a post-trough restock."
+analyst_note: "Two corpus findings from this stage materially update the prior brief. First, the company runs FOUR manufacturing plants (Bhiwadi Phase-III, two at Chopanki, one at Kaharani; AR FY26 p.12, p.119), not three as the step-1 brief stated. Second, the step-1 load-bearing question about Peptech Biosciences and Titan Media Ltd is resolved: Peptech's principal activity is bio-fertilizers, bio-pesticides and bio-insecticides, and Titan Media Ltd's principal activity is laboratory chemicals (AR FY26 p.164, consolidated Note 1.1) — neither is the same business as Titan Biotech's own 'TM Media' culture-media brand (AR FY26 p.100), so no part of the core culture-media engine appears to sit outside the consolidated P&L on this evidence, though the associate relationship's commercial logic remains unexplained (see mgmt question 4)."

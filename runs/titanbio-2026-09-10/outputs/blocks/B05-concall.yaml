@@ -1,0 +1,64 @@
+stage: B05-concall
+company: "TITANBIO"
+run_date: "2026-09-16"
+model: claude-sonnet-5
+status: complete
+no_concall_mode: true
+input_gaps:
+  - "No earnings call transcripts exist for this company (concalls_available: false); analysis substitutes three annual reports (FY24, FY25, FY26) and four results filings per the NO-CONCALL MODE protocol"
+  - "Section 2E (repeated analyst question tracker), Section 3C (toughest analyst questions), and live Q&A tone/evasion signals are NOT AVAILABLE IN NO-CONCALL MODE; substitute cross-annual-report claim tracking used instead"
+flags:
+  - "FY26 investing-outflow narrative contradicted by its own notes: 77% of Rs 32.55cr (consol.) outflow is a quoted-debt/equity FVTPL portfolio, not capacity building as stated"
+  - "Domestic/export revenue split disclosure dropped after FY24 AR, the one year it told a favourable story"
+  - "FY26 MD&A cautionary statement claims consolidated basis while quoting standalone figures"
+quarters_analysed: []
+periods_analysed: ["AR FY2023-24", "AR FY2024-25", "AR FY2025-26"]
+triggers:
+  - {priority: 1, name: "FY26 revenue re-acceleration sustains into FY27", type: "VOLUME", timeframe: "near-term", conviction: "L", confirm_signal: "Q2/Q3 FY27 like-for-like growth (ex freight) stays above high-single digits", kill_signal: "Growth reverts to FY25 flat/declining pattern once freight gross-up base effect laps"}
+  - {priority: 2, name: "Health supplement product launches with disclosed revenue", type: "INORGANIC", timeframe: "unknown, 3 years overdue", conviction: "L", confirm_signal: "AR or results filing names the product and shows revenue", kill_signal: "AR FY27 repeats identical sentence a fourth time with no product named"}
+  - {priority: 3, name: "FVTPL investment portfolio proven to be treasury holding, not related-party vehicle", type: "COST", timeframe: "FY27 AR", conviction: "L", confirm_signal: "FY27 AR discloses portfolio composition and any related-party linkage", kill_signal: "Portfolio grows further while capex stays flat and build-capacity sentence unchanged"}
+  - {priority: 4, name: "Peptech/Titan Media associate economics reconcile to consolidation gap", type: "REGULATORY-POLICY", timeframe: "ongoing", conviction: "L", confirm_signal: "Company or auditor discloses related-party sales through associates", kill_signal: "Gap persists unexplained into another annual cycle"}
+guidance:
+  - {item: "Final dividend FY24", number: "Rs 2.00/share (20%, face value Rs 10)", timeframe: "payable after AGM", stated_in: "AR FY24 Directors' Report"}
+  - {item: "Final dividend FY25", number: "Rs 2.00/share (20%, face value Rs 10)", timeframe: "payable after AGM", stated_in: "AR FY25 Directors' Report"}
+  - {item: "Final dividend FY26", number: "Rs 0.50/share (25%, face value Rs 2)", timeframe: "payable after AGM 29-Sep-2026", stated_in: "AR FY26 Directors' Report / board outcome 30-May-2026"}
+  - {item: "Bonus issue", number: "1:4 (1,03,29,625 shares)", timeframe: "credited on/before 03-Nov-2026", stated_in: "Reg 30, 03-Sep-2026"}
+  - {item: "Share split", number: "1:5, face value Rs 10 to Rs 2", timeframe: "effective 20-Feb-2026", stated_in: "Reg 30, 29-Nov-2025"}
+promise_delivery:
+  delivered: 3
+  partial: 1
+  missed: 3
+  rows:
+    - {promised_in: "AR FY24", promise: "Dividend Rs 2.00/share for FY24", outcome: "delivered", explanation: "n/a - mechanical, confirmed paid in AR FY25"}
+    - {promised_in: "AR FY25", promise: "Dividend Rs 2.00/share for FY25", outcome: "delivered", explanation: "n/a - mechanical, confirmed paid in FY26 audited cash flow"}
+    - {promised_in: "AR FY24 and AR FY25", promise: "Investing outflow builds capacity and capabilities for future business growth", outcome: "missed / contradicted in FY26", explanation: "none offered; FY26 outflow 77% into quoted-debt/equity FVTPL portfolio, same sentence reused unchanged"}
+    - {promised_in: "AR FY24", promise: "Developing product for health supplement", outcome: "missed", explanation: "none; no product, launch, or revenue evidence after 3 annual reports"}
+    - {promised_in: "AR FY24", promise: "Aggressive marketing/exhibitions grow domestic and export revenue", outcome: "partial", explanation: "FY25 decline blamed on external economic slowdown; FY26 rebound explained with no named mechanism"}
+    - {promised_in: "Reg 30 29-Nov-2025", promise: "Share split 1:5 to enhance liquidity and retail participation", outcome: "delivered", explanation: "n/a - mechanical, completed 20-Feb-2026"}
+    - {promised_in: "Reg 30 24-Jul-2025", promise: "Arbitration status updates will be provided in due course", outcome: "missed", explanation: "no follow-up filing found in the record reviewed through 05-Sep-2026"}
+excuse_pattern: "external-blame-heavy for the one miss explained (FY25 revenue decline); silence for the two misses not explained (health supplement, investing-outflow contradiction)"
+repeated_evasions:
+  - {question: "What is the health supplement product and when does it launch?", quarters_asked: ["AR FY24", "AR FY25", "AR FY26"], classification: "deflected every time"}
+  - {question: "What does the growing investing outflow actually fund?", quarters_asked: ["AR FY24", "AR FY25", "AR FY26"], classification: "answer changed between periods"}
+  - {question: "Did the company gain or lose market share?", quarters_asked: ["AR FY24", "AR FY25", "AR FY26"], classification: "deflected every time"}
+credibility_grade: "C"
+credibility_basis: "Mechanical promises (dividend, split) delivered, but the two substantive recurring claims (health supplement, investing-outflow purpose) show zero delivery evidence or a documented contradiction with the FY26 notes, plus a dropped favourable disclosure (export split); stays at the no-concall mode default, does not rise to B"
+peer_questions:
+  - {question: "Is fermentation-ingredient end-market demand genuinely re-accelerating industry-wide in FY26, or is Titan's growth idiosyncratic (freight gross-up, restocking)?", why: "Titan gives no demand narrative of its own; the FY26 rebound's cause is unstated", check_peers: ["Advanced Enzyme Technologies", "Fermenta Biotech", "Vidhi Specialty Chemical"]}
+  - {question: "What raw-material cost trend have peers cited for fermentation/peptone feedstock inputs?", why: "Titan names raw-material price risk every year without quantifying it", check_peers: ["Advanced Enzyme Technologies", "Fermenta Biotech"]}
+  - {question: "Do peers gross up freight in revenue, and what freight cost trends do they report?", why: "Tests whether Titan's undisclosed freight-in-revenue policy is peer-comparable or a Titan-specific inflator of headline growth", check_peers: ["Advanced Enzyme Technologies", "Fermenta Biotech", "Vidhi Specialty Chemical"]}
+  - {question: "What is a realistic customer-qualification cycle for a new culture-media or peptone export customer?", why: "Sanity-checks whether Titan's FY24 new-country export claim could plausibly scale into FY26 growth", check_peers: ["Advanced Enzyme Technologies", "Fermenta Biotech"]}
+  - {question: "Have peers entered nutraceutical/health-supplement adjacent categories, and what was their R&D-to-launch timeline?", why: "Benchmarks whether Titan's 3-year undelivered health-supplement claim is a normal gestation period or an outlier", check_peers: ["Fermenta Biotech", "Advanced Enzyme Technologies"]}
+  - {question: "What capacity-utilisation and capex-cycle commentary have peers given for FY25-FY26?", why: "Tests whether Titan's contradicted build-capacity claim matches an industry-wide capex upcycle", check_peers: ["Advanced Enzyme Technologies", "Fermenta Biotech", "Vidhi Specialty Chemical"]}
+red_flags:
+  - {flag: "Build-capacity investing-outflow sentence reused unchanged in FY26 despite 77% going into a quoted-debt/equity FVTPL portfolio", severity: "HIGH"}
+  - {flag: "Domestic/export revenue-split disclosure dropped after FY24, the one year overseas growth was the story", severity: "MEDIUM"}
+  - {flag: "FY26 MD&A cautionary statement claims consolidated basis while quoting standalone figures", severity: "MEDIUM"}
+  - {flag: "Health-supplement product claim repeated verbatim/near-verbatim for 3 years with zero delivery evidence", severity: "MEDIUM"}
+  - {flag: "Undisclosed quiet restatement of FY24 revenue comparative and employee-cost ratio between AR FY24 and AR FY25", severity: "MEDIUM"}
+  - {flag: "No follow-up disclosure on NGenious Solutions arbitration despite stated commitment to update", severity: "LOW"}
+dropped_triggers:
+  - "Domestic vs. export revenue split (present in AR FY24 MD&A only, dropped in AR FY25 and AR FY26)"
+timeline_slippages:
+  - "Health supplement product: identical or near-identical stated intent for 3 consecutive annual reports (FY24, FY25, FY26) with no product named, no launch date, and no revenue evidence"
+analyst_note: "Mode substitution works because Titan's MD&A prose is thin enough that its own repetition is evidence: identical sentences recur for 3 years regardless of what the numbers do, collapsing AR-guidance-vs-results into two clear tests (health supplement, investing-outflow purpose) that both fail. Dividend delivery is real but mechanical and does not offset the two failed substantive tests plus the dropped export-split disclosure. Grade stays at mode default C. Freight gross-up and Peptech/Titan Media gaps are carried forward from Stages 2-3, not re-derived here."

@@ -7,8 +7,17 @@
 # Severity scale, all verifiers: CRITICAL (fabricated/materially wrong,
 # would change a decision) | MAJOR (wrong but decision likely survives)
 # | MINOR (imprecision, weak anchor, cosmetic).
-# REWORK trigger (orchestrator enforces): any CRITICAL from Verifier A,
-# or any verifier acceptance_rate below 60%.
+# REWORK trigger (orchestrator enforces): any CONFIRMED CRITICAL from
+# Verifier A, or any verifier acceptance_rate below 60% where that rate is
+# computed on a denominator of 4 or more (below that the rate is NOT
+# APPLICABLE and never triggers REWORK).
+# CONFIRMED means the finding survives the identity check: its `claimed` and
+# `source_truth` values are genuinely different numbers. A row whose two
+# columns hold the same value is a clerical error in the finding, not a
+# source-fidelity finding, and it is struck. Striking it is not an override
+# of the gate below: the gate binds on whether a number is in the source, and
+# a row that agrees with itself makes no claim about the source at all. No
+# other reason may strike a Verifier A finding.
 # HARD SOURCE-FIDELITY GATE: Verifier A (Haiku) is the SOLE and FINAL
 # authority on source fidelity — whether a specific number actually appears
 # in the source PDF at the cited anchor. Its per-number source-fidelity
@@ -47,6 +56,31 @@ RULES:
    CRITICAL. A MISMATCH elsewhere is MAJOR. ANCHOR NOT FOUND on a
    material figure is MAJOR. UNANCHORED is MINOR unless material, then
    MAJOR.
+5a. WHAT IS NOT A FINDING. Three things have repeatedly been written up as
+   CRITICAL and each one forced a needless REWORK. None is a finding:
+   - A MATCHED FIGURE. If the report's value and the source value are the
+     same number, there is nothing to report, whatever the formatting
+     differs by. "1,240" and "1240.0" and "Rs 1,240 Cr" are one value.
+   - A FAITHFULLY TRANSCRIBED ANOMALY. If the source prints an odd number
+     and the report copies it correctly, the report is right. The oddity
+     belongs to the company. Verifier C and the analyst stages judge whether
+     a number is strange; you judge only whether it was copied correctly.
+   - A BASIS DIFFERENCE, correctly labelled. Screener and the AR routinely
+     differ because one is standalone and one consolidated, or because
+     screener derives a ratio its own way. Where the report names its basis
+     and the figure is right on that basis, it is correct. An UNLABELLED
+     basis difference IS a finding: report it as UNANCHORED.
+5b. SELF-CHECK BEFORE YOU EMIT (mandatory). Read back every CRITICAL and
+   MAJOR row you wrote and test it against your own table:
+   - Is `claimed` genuinely a different number from `source_truth`? If they
+     are the same value, strike the row.
+   - Does the row fall into one of the three classes in 5a? If so, strike it.
+   - Does the severity match rule 5, or did you reach for CRITICAL because
+     the figure looked important? Only a verdict-card or Section 1B pillar
+     input MISMATCH is CRITICAL.
+   Report the count of rows struck in `false_positives_struck`. Striking a
+   genuine finding is the worse error of the two: strike only on the three
+   tests above, never because a number "looks right".
 6. Do not assess judgment calls (classifications, premiums,
    determinations); numbers only. Judgment belongs to Verifier C.
 7. Your source-fidelity verdicts are a HARD, NON-OVERRIDABLE GATE. Every
@@ -59,8 +93,11 @@ RULES:
    what you flag here — so flag precisely and anchor every call.
 
 OUTPUT: findings table (severity, report location, claimed value +
-anchor, source truth + location, note), coverage statement (what share
-of material numbers was checked), then:
+anchor, source truth + location, note), then a coverage statement as two
+COUNTS and the rule you used, not as a bare percentage: how many material
+numbers exist in the reports (your count, and how you decided what counted
+as material), and how many of them you checked. A percentage with no
+denominator cannot be audited. Then:
 
 ```yaml
 stage: B12a
@@ -74,6 +111,8 @@ findings:
 critical_count: 0
 major_count: 0
 minor_count: 0
+false_positives_struck: 0   # rows removed by the rule 5b self-check
+material_universe: 0        # material numbers you counted in the reports
 acceptance_rate: 0    # checked numbers verified clean ÷ checked, %
 coverage_note: ""
 ```
@@ -108,6 +147,23 @@ RULES:
 5. MISSED items of thesis-relevant weight are MAJOR; a MISSED repeated
    evasion (2+ quarters) is CRITICAL. NOT SUPPORTED pipeline flags are
    MAJOR (the analysis invented a signal).
+6. GRADE YOUR OWN LIST BEFORE YOU SCORE IT. Every item on your independent
+   list carries a severity by the same scale the other verifiers use:
+   CRITICAL, MAJOR or MINOR. A tone shift the pipeline did not mention is
+   usually MINOR; a repeated evasion it did not mention is CRITICAL.
+   This matters because `acceptance_rate` is computed on the MATERIAL items
+   only (CRITICAL + MAJOR), not on your whole list. Scoring on the whole
+   list punished thoroughness: the more minor observations you listed, the
+   lower the pipeline's confidence score fell, so a long careful audit
+   scored worse than a short shallow one. Never shorten your list to
+   protect the score. List everything you find, grade it honestly, and let
+   the arithmetic use the material subset.
+7. WHEN YOUR MATERIAL LIST IS SHORT, SAY SO INSTEAD OF SCORING. If you found
+   fewer than 4 material (CRITICAL + MAJOR) items, a percentage off that
+   denominator is noise: one item moves it 25 points or more. Set
+   `acceptance_rate: null` and put the two counts in
+   `coverage_basis`. The orchestrator then drops this component from the
+   confidence delta rather than letting a 2-item denominator set it.
 
 OUTPUT: independent red-flag list with anchors; comparison table;
 promise-delivery spot checks; then:
@@ -130,7 +186,11 @@ findings: []                   # consolidated, standard severity rows
 critical_count: 0
 major_count: 0
 minor_count: 0
-acceptance_rate: 0             # caught ÷ independent flags found, %
+material_found: 0              # your CRITICAL + MAJOR independent items
+material_caught: 0             # of those, ones the pipeline already had
+acceptance_rate: 0             # material_caught ÷ material_found, %.
+                               # null when material_found < 4 (rule 7)
+coverage_basis: ""             # "6 material of 14 listed; 5 caught" etc
 ```
 
 INPUTS: {{ALL_15_TRANSCRIPTS}} + {{B05_REPORT}} + {{B06_REPORT}}

@@ -74,9 +74,33 @@ EXECUTION DISCIPLINE: invoke every stage as a foreground subagent call
 that blocks until the subagent returns. Never use background task
 launching with passive waiting. Achieve parallelism only by invoking
 multiple foreground subagents in a single message where the dependency
-table allows. After each stage returns, validate its YAML block and commit
-before proceeding. At that same moment, before moving to the next stage,
-append one line to the per-stage token ledger in
+table allows.
+
+PROVE COMPLETION, DO NOT ASSUME IT. Stages have repeatedly been dispatched
+to the background despite the rule above, and the run carried on against
+reports that did not exist yet, because "the call returned" was treated as
+"the stage finished". The two are different events. Before you treat any
+stage as done, and before any later stage reads its output:
+
+- Confirm the report file exists at the output path you gave it and is not
+  empty. A missing or empty file means the stage did not run to completion,
+  whatever the reply said.
+- Confirm the block file exists at the block path you gave it and parses.
+  The stage writes that file before it replies, so a missing block file with
+  a block sitting in the reply means the reply arrived without the work
+  behind it.
+- Confirm the YAML block you have came from that invocation, not from a
+  template or an earlier stage.
+- If either check fails, the stage was backgrounded or it died. Re-invoke it
+  in the foreground. Do not proceed on a partial result, and do not wait
+  passively for a background task to land.
+- A stage that cannot be made to run in the foreground after one re-invoke
+  halts the run with the stage named. Note it in the run log and in
+  LESSONS_ARCHIVE.md at close.
+
+After each stage returns AND passes the completion check, validate its YAML
+block and commit before proceeding. At that same moment, before moving to
+the next stage, append one line to the per-stage token ledger in
 runs/<ticker>-<date>/session-cost.md, taken from the subagent result
 metadata: stage number, stage name, model, effort, input tokens, output
 tokens, total tokens, and wall time. Create the ledger with its header row
@@ -264,6 +288,12 @@ handoff schemas, flag rules, and error handling. Then:
        context. Its valuation-adherence audit (B11, B10) must NOT run
        here; it emits the gate0 and emoat sections of B12c with valuation
        left blank/pending.
+   The verifiers run as parallel FOREGROUND calls in one message. Apply the
+   completion check in EXECUTION DISCIPLINE to each one separately before
+   reading any of them: four verifiers in one message is the place a
+   background dispatch hides best, because three good results make the
+   fourth look present. A verifier whose report file is missing or empty did
+   not run; re-invoke that one alone, in the foreground.
    Collect B12a, B12b, B12c (partial), B12d into outputs/blocks/.
 
 5. COMPUTE the phase-1 confidence delta from the available verifier blocks
@@ -271,6 +301,18 @@ handoff schemas, flag rules, and error handling. Then:
    coverage, peer_utilisation, and the Gate 0 + EM portion of framework_
    adherence), write it to outputs/blocks/confidence.yaml. The valuation
    framework-adherence component is marked pending phase 3.
+   Apply the denominator floor: any component computed on fewer than 4 items
+   is NOT APPLICABLE, is dropped from overall, and is listed in
+   not_applicable with its counts. Record overall_set_by. Where B12b returns
+   acceptance_rate: null, redflag_coverage is not applicable; do not
+   substitute a number for it.
+   Before computing numerical_acceptance, run the Verifier A identity check:
+   for every CRITICAL row in B12a, confirm `claimed` and `source_truth` hold
+   genuinely different values. A row where they hold the same value is a
+   clerical error in the finding and is struck, with the strike recorded in
+   the run log. This is the ONLY permitted reason to strike a Verifier A
+   finding: the source-fidelity gate is otherwise absolute, and a CRITICAL
+   that survives the identity check triggers REWORK exactly as written.
 
 6. SYNTHESIS-LITE. Invoke stage-13-synthesis, instructing it in the task
    message to run in PHASE 1 LITE mode: produce exactly three files, no

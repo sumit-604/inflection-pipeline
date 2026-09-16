@@ -5,14 +5,18 @@ on NSE. Memory to weigh, never anchored evidence: every number a stage
 reports comes from that run's own inputs, verified against the source PDFs.
 
 ## THESIS (one line)
-DRAFT, unsigned: capacity installed in FY26 is meant to carry a branded
-consumable tooling maker from cost-advantaged converter to spec'd supplier,
-but profit has not grown in three years and the proof gate has not fired.
+SIGNED 2026-09-16: a branded industrial consumable with a distribution moat in
+HSS taps, where the durable asset (300+ multi-brand dealers, about 30% tap
+share, about 23% tooling margin against Birla's about 5%) and the growth
+ambition (carbide and aerospace) point in different directions.
 
 ## DECISION STATUS AND ENTRY ZONE
-Not set. No valuation has run; stages 10 and 11 are phase 3.
+Not set; the operator ruling is pending. No valuation has run; stages 10 and
+11 are phase 3. The web session records that the framework's rules point at
+WATCHLIST with two re-engage triggers now sitting as tracker rows.
 Phase 1 gate recommendation 2026-09-09: REWORK, on a confidence delta of 32
 against a threshold of 60. REWORK judges the analysis, not the business.
+Price Rs 161.20, BSE close 11-Sep-2026, market cap Rs 832 cr (web session).
 
 ## SPEAR
 Spear: OVERRIDE 2026-09-09 (operator standing ruling 2026-09-05: Step-1 intake replaces the web spear)
@@ -71,10 +75,53 @@ unsigned model. The draft, for the operator to accept or reject:
     or enforcement of the 94.4% pledged promoter block
 
 ## HALT 1 GATE
-- Mental Model signed: NOT SIGNED
-- Halt 1 decision (KILL/SHALLOW/PROCEED): pending
+- Mental Model signed: 2026-09-16 (operator, in claude.ai). Signed-model block:
+  - Archetype: branded industrial consumable with a DISTRIBUTION moat. Not a
+    technology company, not an aerospace supplier, not a carbide play.
+  - Engine: the channel. 300+ multi-brand dealers, the largest network in the
+    country, holding about 30% of the Indian tap market on a shelf that also
+    carries Addison, YG, JK Files and Ceratizit. Behavioural proof, not a
+    company claim: TOTEM earns about 23% in tooling against Birla Precision's
+    about 5% at segment level on the same products at the same size.
+  - Dominant variables, four: Indian manufacturing and capital-goods
+    utilisation; carbide versus HSS mix; share in taps against Birla,
+    Kennametal and imports; working capital and cash conversion. The promoter
+    pledge sits over all four as a structural overhang, not a driver.
+  - Proof gate: the signed model restates no numeric gate, so the 09b Part B3
+    gate governs. Operating margin sustaining above 20% for two consecutive
+    quarters beyond Q1 FY27. NOT FIRED at signing.
+  - Ugliness verdict: UNRESOLVED at signing. The FY26 inventory build and the
+    46% CFO fall carry no ageing, write-down or obsolescence movement.
+  - Transition falsifier (signed model's own): growth comes mainly from
+    low-moat drills and spring washers while the premium mix stays flat. The
+    company discloses one segment only, so this is checkable only indirectly.
+  - Business falsifier: a single-plant disruption at Chhatrapati Sambhajinagar,
+    or enforcement of the 94.4% pledged promoter block.
+- Halt 1 decision (KILL/SHALLOW/PROCEED): 2026-09-16 **PROCEED** (operator),
+  taken over a phase-1 gate recommendation of REWORK on a confidence delta of
+  32 against a threshold of 60.
 - Phase 1 completed 2026-09-09. Corpus verdict CORPUS CURRENT, freshness pairs
   OK. Fragility verdict FRAGILE. Gate recommendation REWORK.
+
+## ROLE 5.5 TRACKER PROOF (gate: SATISFIED)
+Six rows written to DOWNSTREAM SIGNAL TRACKER on 2026-09-16, all linked to
+COMPANIES MASTER page 3d6bb2b9-d3ab-81c9-956f-cf3a79435cdf.
+
+| Row ID | Signal | Tier | Next check |
+|---|---|---|---|
+| 3ddbb2b9-d3ab-8199-ada3-c273eebc660b | materials ratio vs APT | T1 | 15-Nov-2026 |
+| 3ddbb2b9-d3ab-8191-a258-d87b6cc5f04d | inventory conversion H1 FY27 | T1 | 15-Nov-2026 |
+| 3ddbb2b9-d3ab-810d-9340-e71162bd61c7 | promoter pledge % | T1 | 21-Oct-2026 |
+| 3ddbb2b9-d3ab-8197-9a10-ea2dcd786a81 | SP Group 2028 maturity wall | T1 | 31-Mar-2027 |
+| 3ddbb2b9-d3ab-81a1-89c8-e31a19147b04 | attrition / app-eng headcount | T2 | 15-Jul-2027 |
+| 3ddbb2b9-d3ab-819c-b454-cb35484e0dc0 | premium-mix / AS9100D | T2 | 15-Jul-2027 |
+
+COMPANIES MASTER properties updated the same day: Current Market Price 144 to
+161.2, Analysis Date Sep-26, Key Notes prepended with the 16-Sep-26 entry.
+Decision Status left blank for the operator ruling.
+
+Web handover dossier (the claude.ai live-verification layer) committed at
+runs/totem-2026-09-09/inputs/research/web-handover-dossier.md.
 
 ## OPERATOR RULINGS
 - 2026-09-09: Step-1 intake run; peers auto-selected; empty folders accepted
@@ -89,6 +136,19 @@ unsigned model. The draft, for the operator to accept or reject:
   filings, not because the work degraded. Chasing the 60% threshold would
   loop without end. The framework's own answer stands: REWORK, with the
   B12b and B12d finding lists as the rework instruction.
+
+- 2026-09-16: HALT 1 PROCEED over a REWORK gate recommendation. Mental model
+  signed as a branded industrial consumable with a distribution moat. The
+  pledge is resolved as SP Group-level debt: 94.4% of the promoter holding,
+  69.71% of total equity, to Catalyst Trusteeship and SBICAP Trustee. SP
+  cleared the April to June 2026 wall with a Rs 25,500 cr raise in July 2026 at
+  about 18.95%, up from 18.75%, so the cost rose. About Rs 13,500 cr is
+  repayable within 24 months, putting the next wall about mid-2028, inside a
+  three-year hold.
+- 2026-09-16: FY27 projection set by the operator at revenue about Rs 300 cr
+  and PAT about Rs 40 cr, EPS about Rs 7.75, about 20.8x at Rs 161.20. Against
+  ADJUSTED FY26 PAT of about Rs 33 cr (ex the Rs 5.9 cr Labour Codes charge)
+  like-for-like growth is about 21%, not the 39% headline.
 
 ## ACTIVE TRIPWIRES
 Not yet set; tripwires are set at /finalize. Carried from phase 1 as the

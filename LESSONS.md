@@ -111,7 +111,7 @@ _Pending framework edits Keerti maintains._
 - fetch_bse_announcements in tools/collector/collect_to_repo.py is UNTESTED
   against the live BSE API. This container has no web access, so the first
   run that uses it is the first test. Check announcements/ after that run,
-  then confirm and close this action.
+  then confirm and close this action. PR #167.
 - PENDING FOR THE NEXT PROMPT BRANCH (2026-09-15):
   1. prompts/10-input-assembly-pipeline.md rule 3, line 22 still says "put the
      more conservative one in the table".

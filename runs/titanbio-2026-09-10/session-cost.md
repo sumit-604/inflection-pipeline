@@ -15,3 +15,4 @@ Run: runs/titanbio-2026-09-10 | Phase 1 executed 2026-09-16
 | 8 | Promoter check (web) | sonnet | - | n/r | n/r | 156610 | 9m53s | 1 |
 | 6 | Peer concall verification | sonnet | - | n/r | n/r | 303652 | 5m53s | 1 |
 | 7 | Emerging moat scan | sonnet | - | n/r | n/r | 127498 | 7m43s | 1 |
+| 9 | TAM SAM SOM (web) | sonnet | - | n/r | n/r | 119510 | 11m30s | 1 |

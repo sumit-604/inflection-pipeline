@@ -1,0 +1,104 @@
+stage: B09-tam
+company: "TITANBIO"
+run_date: "2026-09-16"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "No product-wise or plant-wise revenue split in three years of filings; current_sam_share_pct uses total company revenue as a proxy numerator, likely overstating true culture-media-line share given HiMedia's scale"
+  - "No physical unit (kg/tonne/litre) disclosed for any product; true bottom-up TAM (Method 2, units x price) could not be built, peer-share inference substituted for the culture-media line only"
+  - "No capacity, utilisation, or commissioning-date disclosure for any of four plants; 3C capacity cross-check uses an asset-turn proxy instead of a stated capacity ceiling"
+  - "No certification/accreditation (GMP, ISO, USFDA etc.) or export customer/country disclosure; SAM geography filter on peptone and ox bile used a 50% judgment-call haircut, not an evidenced figure"
+  - "No Titan-specific tariff exposure disclosed despite exports at 39% of revenue and growing 49% YoY; peers quantify material US tariff impact"
+  - "Ox bile extract market-size estimates diverge nearly 10x across three sources found; carried at the lowest (2022-based, stale) figure in both conservative and realistic TAM"
+  - "Global peptone market-size estimates diverge roughly 3x across sources found"
+  - "HiMedia Laboratories (unlisted) revenue figures diverge between two trade-press citations (Rs 1,060 Cr FY25 vs Rs 1,201 Cr FY21-22) with no public audited accounts found"
+flags:
+  - "SOM-implied revenue CAGR (18.9-19.7%) materially exceeds the automatic revenue fade a NONE emerging-moat classification (B07 em_score 3.0/92) would trigger (low single digit); Amendment 14 fade-guard conflict named for operator ruling, not silently resolved"
+  - "Management's own MD&A market claims sit far above Titan's actual addressable scope: mgmt_claim_ratio 12.5x (culture media global claim vs conservative TAM), read INFLATED"
+  - "3C capacity gap: SOM Year 5 requires ~Rs 85 Cr cumulative incremental PPE investment vs a FY26 run-rate of Rs 7.4 Cr/year that has fallen three years running and is 77% diverted to a quoted-debt FVTPL portfolio (AR FY26 Note 5); the SOM, not the capex plan, is the optimistic side"
+  - "Titan discloses no export customer, country, certification, or tariff exposure despite a large, growing export book; peers in the same space (Advanced Enzyme, Vidhi) quantify material US tariff risk, leaving an unquantified exposure inside this stage's geography-scoped SAM lines"
+  - "Peer-set evidence (stage 6) shows industry-wide demand deceleration/flatness in FY26/Q1FY27 (Advanced Enzyme, Vidhi), in tension with the double-digit SOM-implied CAGR built here"
+market_definition: "B2B supplier of fermentation- and extraction-derived biological ingredients (peptones, culture media, collagen peptides, ox bile extract, animal-nutrition inputs) to pharma, biotech, diagnostics, nutraceutical, food, cosmetics, veterinary and agri-input customers, 61% domestic India / 39% export FY26"
+tam_cr: {conservative: 5040, realistic: 6660}
+sam_cr: 4338.5
+sam_pct_of_tam: 71.3
+som_3yr_cr: 343.9
+som_5yr_cr: 475.5
+som_implied_revenue_cagr: {yr3: 19.7, yr5: 18.9}
+current_sam_share_pct: 4.62
+revenue_headroom_x: 21.65
+tam_growth_pct: 9.0
+runway_class: "GOOD"
+mgmt_claim_cr: 63168
+mgmt_claim_ratio: 12.5
+mgmt_claim_read: "inflated"
+capacity_check: "gap of ~Rs 85 Cr cumulative PPE investment needed through 5yr SOM horizon vs FY26 run-rate of Rs 7.4 Cr/year, falling three years running and 77% diverted to FVTPL; SOM is the optimistic side, not the capex plan"
+methods_used:
+  - "Method 1: top-down sum-of-parts across four product-market slices"
+  - "Method 2: peer-share-inferred bottom-up cross-check (culture media only, via HiMedia revenue)"
+  - "Method 3: peer revenue aggregation with unorganised-sector estimate"
+stale_data_flags:
+  - {datapoint: "Global ox bile extract market, US$85m base", source: "Verified Market Research / DataHorizzon Research", year: 2022}
+  - {datapoint: "HiMedia BioSuppliers market leadership revenue, Rs 1,201 Cr", source: "BioSpectrum India", year: 2022}
+  - {datapoint: "India microbiology culture market (broader scope), US$317.1m base", source: "Grand View Research", year: 2024}
+  - {datapoint: "India microbiology reagents market, US$368.30m base", source: "IMARC Group", year: 2024}
+searches_performed:
+  - "India microbiological culture media market size 2026 IMARC Mordor"
+  - "global peptones market size 2026 IMARC"
+  - "HiMedia Laboratories revenue India culture media market share"
+  - "collagen peptides market size India 2026"
+  - "India culture media market size crore rupees Precedence Research (returned irrelevant media & entertainment results, unusable)"
+  - "Advanced Enzyme Technologies FY26 annual revenue crore"
+  - "Fermenta Biotech FY26 revenue crore vitamin D3"
+  - "India nutraceutical ingredients market size 2026 crore"
+  - "Vidhi Specialty Food Ingredients FY26 revenue crore"
+  - "Nitta Gelatin India revenue crore FY26 collagen"
+  - "ox bile extract market size global"
+  - "animal nutrition feed additives market India size 2026"
+  - "USD to INR exchange rate September 2026"
+searches_skipped: []
+downstream_candidates:
+  - signal: "HiMedia Laboratories revenue/growth disclosures"
+    entity_type: "counterparty"
+    demand_link: "Dominant peer's growth signals whether India culture media segment is expanding or shrinking"
+    likely_source: "CRISIL rating report / BioSpectrum India trade press"
+    cadence: "event-driven"
+    shared: false
+  - signal: "Precedence Research / Grand View Research culture media market updates"
+    entity_type: "macro"
+    demand_link: "Direct TAM input for largest SAM component"
+    likely_source: "Published Precedence Research / Grand View Research reports"
+    cadence: "event-driven"
+    shared: false
+  - signal: "US tariff / HS-code notifications on biological ingredients"
+    entity_type: "macro"
+    demand_link: "Peers quantify material US tariff exposure; Titan's growing export book is unquantified for this risk"
+    likely_source: "USTR notifications; Indian Ministry of Commerce trade circulars"
+    cadence: "event-driven"
+    shared: false
+  - signal: "Peer quarterly results (Advanced Enzyme, Fermenta, Vidhi, Nitta Gelatin)"
+    entity_type: "counterparty"
+    demand_link: "Signals whether Titan's FY26/Q1FY27 acceleration is sector-wide or company-specific"
+    likely_source: "BSE/NSE quarterly filings, investor communications"
+    cadence: "quarterly"
+    shared: true
+  - signal: "India export trade data (HS-code) for peptones, culture media, collagen"
+    entity_type: "macro"
+    demand_link: "Measures export SAM directly, surfaces country/tariff concentration Titan does not disclose"
+    likely_source: "DGCIS (Directorate General of Commercial Intelligence and Statistics)"
+    cadence: "monthly"
+    shared: true
+  - signal: "Nutraceutical/collagen ingredient demand trackers"
+    entity_type: "end-customer"
+    demand_link: "Downstream nutraceutical/cosmetic formulator demand feeds Titan's collagen-peptide line"
+    likely_source: "Trade publications (Nutraceuticals World); IMARC/GVR updates"
+    cadence: "quarterly"
+    shared: false
+  - signal: "Department of Biotechnology / BIRAC BioEconomy policy announcements"
+    entity_type: "regulatory"
+    demand_link: "Tests company's own government-support claim against an independently observable tailwind"
+    likely_source: "Department of Biotechnology (India), BIRAC publications"
+    cadence: "event-driven"
+    shared: false
+demand_externally_verifiable: true
+analyst_note: "Two things a downstream stage cannot reconstruct from the fields alone. First, the corrected FX-adjusted TAM (Rs 5,040-6,660 Cr) is roughly 10x the size a naive first-pass currency conversion would suggest, and two independent methods (top-down sum-of-parts and peer aggregation) landed in the same order of magnitude, which is the main reason confidence is Medium rather than Low despite noisy peptone/ox-bile source data. Second, the SOM-implied 18.9-19.7% CAGR is a mechanical output of conservative-per-line assumptions (blended 9.0% market growth plus only the 'normal' 1-2pp share-gain case); it is NOT an endorsement that Titan will achieve it, given EM NONE, falling capex, and peer-wide demand deceleration. Stage 11 should treat this handoff number and the Amendment 14 fade-guard conflict as linked open items for the same operator ruling."

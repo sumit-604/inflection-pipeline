@@ -1,0 +1,54 @@
+stage: B02-notes
+company: "TITANBIO"
+run_date: "2026-09-16"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Capitalisation threshold for PPE/intangibles: NOT FOUND IN DOCUMENT"
+  - "Top customer revenue concentration %: NOT FOUND IN DOCUMENT"
+  - "Product-wise revenue split (peptones/culture media/collagen): NOT FOUND IN DOCUMENT, one reportable segment only"
+  - "Capacity, production-line description, or commissioning date for FY26 PPE/CWIP additions (Rs 740.08 lakh gross): NOT FOUND IN DOCUMENT"
+  - "Capital commitments (contracts remaining to be executed on capital account) under Note 36(II): NOT FOUND IN DOCUMENT"
+  - "Quantified ECL matrix/rate by ageing bucket for the performing receivables book: NOT FOUND IN DOCUMENT"
+  - "Build-up/components of 'Average Shareholder's Equity' and 'Capital Employed' used in the Ratios note: NOT FOUND IN DOCUMENT, mechanism behind the FY25 ROE/ROCE cross-AR restatement cannot be reconstructed"
+  - "Arm's-length pricing benchmark or cost-plus basis for related-party raw-material purchases: NOT FOUND IN DOCUMENT"
+flags:
+  - {type: FLAG-CASH, reason: "Finished-goods inventory +53.2% vs revenue +31.8%; first-ever ECL provision Rs 36.26 lakh (Nil FY25/FY24); receivables >6-months ageing 7.6% -> 8.4%; MSME trade payables +291% (all not due); advance from customers +149% -- combined working-capital signals warrant Halt 1 tripwire on H1 FY27 conversion"}
+  - {type: FLAG-RPT-CONCENTRATION, reason: "Related-party raw-material purchases 37.1% of FY26 Cost of Materials Consumed (Phoenix Bio Sciences 26.0%, +73.6% YoY), no arm's-length pricing benchmark disclosed"}
+  - {type: FLAG-DISCLOSURE-GAP, reason: "Freight gross-up in FY26 revenue disclosed only in the exchange results filing, absent from all AR notes; Rs 186.90 lakh unreconciled MD&A vs Cash Flow Statement gap"}
+  - {type: FLAG-RESTATEMENT, reason: "Rs 243.87 lakh cross-AR reclassification (FY25) and FY25 ROE/ROCE restatement across AR_FY2025 vs AR_FY2026, both undisclosed and unreconciled, on two different mechanisms"}
+accounting_quality: 5
+pass_2_empty: false
+pass_3_empty: false
+top_findings:
+  - {rank: 1, finding: "Related-party raw-material dependency 37.1% of FY26 Cost of Materials Consumed (Rs 3,683.61 lakh of Rs 9,916.35 lakh), led by Phoenix Bio Sciences Pvt Ltd at 26.0% (+73.6% YoY); no arm's-length pricing benchmark disclosed", note_ref: "Note 41, standalone p.144, consolidated p.189", rating: "RED"}
+  - {rank: 2, finding: "Freight gross-up applied to FY26 revenue and neutralised in other expenses, disclosed only in the exchange results filing, absent from every relevant AR note; ~28.0% like-for-like growth vs 31.8% reported", note_ref: "Note 23, Note 1.2.2(f), Note 30, p.135/136", rating: "RED"}
+  - {rank: 3, finding: "Rs 243.87 lakh reclassification of FY25 balances (Other Financial Liabilities into Trade Payables plus new Employee Payables line) between AR_FY2025 and AR_FY2026, undisclosed, moves FY25 Trade Payables Turnover 18.06x -> 25.52x and Net Capital Turnover 1.08x -> 2.73x", note_ref: "Note 20/21 (AR_FY2026 p.135); Note 19/20 (AR_FY2025 p.113/124)", rating: "RED"}
+  - {rank: 4, finding: "FY25 ROE and ROCE restated across the two Annual Reports on both standalone and consolidated bases although FY25 PAT, Total Equity, and Total Debt are identical in both; standalone moved DOWN, consolidated moved UP, reversing which entity view looks stronger for the same year", note_ref: "Note 44 (AR_FY2025 p.146); Note 45 (AR_FY2026 p.150/196)", rating: "RED"}
+  - {rank: 5, finding: "Rs 186.90 lakh gap between the MD&A's stated FY26 investing outflow (Rs 3,441.49 lakh) and the audited Cash Flow Statement's actual figure (Rs 3,254.59 lakh), both in the same Annual Report", note_ref: "MD&A p.104 vs Cash Flow Statement p.117/162", rating: "RED"}
+  - {rank: 6, finding: "77% of the FY26 investing outflow (Rs 25.16 cr of Rs 32.55 cr) went into a quoted-debt FVTPL portfolio, not plant; Return on Investment fell 7.04% -> 3.64% even as the portfolio nearly quadrupled; no capacity/commissioning disclosure for the remaining PPE/CWIP additions", note_ref: "Note 5, Note 45, p.128/150", rating: "WATCH"}
+  - {rank: 7, finding: "AOC-1's Rs 651.12 lakh Peptech figure is the associate's own full profit, not TBL's share; actual consolidated pickup Rs 243.80 lakh, down 25.2% YoY even as standalone PAT rose 50.2% -- resolved arithmetically but a real earnings-quality nuance", note_ref: "Note 5 p.171, consolidated P&L p.161, AOC-1 p.80", rating: "WATCH"}
+  - {rank: 8, finding: "Finished-goods inventory +53.2% vs revenue +31.8%; first-ever ECL provision Rs 36.26 lakh (Nil FY25/FY24); receivables >6-months ageing 7.6% -> 8.4%", note_ref: "Notes 8, 9, p.129-130", rating: "WATCH"}
+  - {rank: 9, finding: "Trade payables turnover fell 25.52x -> 17.26x on the restated base; MSME payables rose 291% (Rs 55.03 lakh -> Rs 215.11 lakh), all technically not due", note_ref: "Notes 20, 45, p.135/150", rating: "WATCH"}
+  - {rank: 10, finding: "Gratuity salary-inflation assumption cut sharply (11.50% -> 8.00%) alongside an unexplained Rs 35.70 lakh past-service cost with no narrative", note_ref: "Note 34, p.137-140", rating: "WATCH"}
+  - {rank: 11, finding: "Unexplained 'Others (net)' Rs 95.42 lakh residual in the effective-tax-rate reconciliation, ~2.5% of PBT, not individually explained", note_ref: "Note 19/31, p.134/137", rating: "WATCH"}
+  - {rank: 12, finding: "'Security & Man Power suppliers charges' rose 507% (Rs 21.45 lakh -> Rs 130.22 lakh), the largest percentage mover in Other Expenses, unexplained anywhere", note_ref: "Note 30, p.136", rating: "WATCH"}
+  - {rank: 13, finding: "Advance from customers more than doubled (Rs 246.62 lakh -> Rs 615.12 lakh, +149%); forward-order positive but a conversion tripwire for H1 FY27", note_ref: "Note 22, p.135", rating: "WATCH"}
+  - {rank: 14, finding: "1:4 bonus issue recommended 03-Sep-2026 gets full Directors' Report/AGM Notice treatment but no subsequent-events note in the audited financial statements", note_ref: "Note 49; Directors' Report/AGM Notice", rating: "WATCH"}
+  - {rank: 15, finding: "Titan Media Ltd associate confirmed operationally and financially immaterial (0.11% of revenue); the 'TM Media' MD&A brand name is TBL's own internal product line, not a related-party diversion", note_ref: "Note 41, p.100/144", rating: "CLEAN"}
+red_flags:
+  - "Freight gross-up presentation inflates reported FY26 revenue growth optics (31.8% vs ~28.0% like-for-like) via a choice disclosed only outside the audited AR notes"
+  - "Undisclosed comparator instability across successive Annual Reports (Rs 243.87 lakh reclassification; FY25 ROE/ROCE restatement) both happen to make FY26's own trend commentary read more favourably against the restated base than against the originally-reported base -- earnings-management-adjacent risk indicator, intent not established from the documents"
+  - "Related-party raw-material dependency (37.1% of Cost of Materials Consumed) growing with no arm's-length pricing benchmark disclosed"
+questions_for_mgmt:
+  - "Why was the freight gross-up applied to FY26 revenue and other expenses without disclosure in any AR note, and why was the FY25 comparative not restated on the same basis?"
+  - "What is the pricing mechanism and arm's-length benchmark for raw-material purchases from Phoenix Bio Sciences Pvt Ltd and other related entities, now 37.1% of Cost of Materials Consumed?"
+  - "What explains the Rs 186.90 lakh gap between the MD&A's stated FY26 investing outflow and the audited Cash Flow Statement's figure in the same Annual Report?"
+  - "What drove the Rs 243.87 lakh FY25 reclassification between Other Financial Liabilities and Trade Payables, and why is its ratio impact undisclosed in the Ratios note?"
+  - "What is the build-up of 'Average Shareholder's Equity' and 'Capital Employed' used in the Ratios note, given FY25 ROE/ROCE differ across the two Annual Reports on identical PAT, equity, and debt figures?"
+receivables_trend: "deteriorating (mild, mixed with a positive): total receivables grew 21.3% (Rs 1,881.63 lakh -> Rs 2,282.86 lakh net), slower than revenue's 31.8%, a genuine positive; but ageing quality within the book worsened at the margin, >6-months-past-due share rising 7.6% -> 8.4% of gross receivables (Rs 142.81 lakh/Rs 1,881.63 lakh FY25 -> Rs 194.44 lakh/Rs 2,319.12 lakh FY26), and the company recognised its first-ever ECL/credit-impaired provision of Rs 36.26 lakh in FY26 (Nil in FY25 and FY24)"
+restatements_found:
+  - "Rs 243.87 lakh reclassified from Other Financial Liabilities (Expenses Payable + Creditors for exp.) into Trade Payables plus a new Employee Payables line, for the identical FY25 year, between AR_FY2025 (Note 20, p.124) and AR_FY2026 (Note 21, p.135); balance-sheet grand total unaffected; not disclosed as a reclassification anywhere in either AR"
+  - "FY25 ROE and ROCE restated across AR_FY2025 (Note 44, p.146) and AR_FY2026 (Note 45, p.150 standalone / p.196 consolidated) on both standalone and consolidated bases, despite identical FY25 PAT, Total Equity, and Total Debt in both documents; mechanism (Average Shareholder's Equity / Capital Employed build-up) not disclosed in either AR"
+going_concern_language: "NONE -- standard Ind AS basis-of-preparation and Directors' Responsibility Statement boilerplate only; both auditors' reports (standalone and consolidated) conclude no material uncertainty exists; Directors' Report Item 21 confirms no significant/material order impacting going concern was passed in FY26"
+analyst_note: "The single most useful pattern from this run: two mechanically distinct, undisclosed changes to the identical FY25 year's ratios sit inside the same Note 45 that then narrates FY26's own trend against that shifted base. Neither the trade-payables reclassification nor the ROE/ROCE restatement is individually large enough to call fraud, and both may have innocent causes (a genuine presentation improvement, a ratio-methodology refinement), but the AR discloses neither cause nor the fact of change in either document. Combined with the freight gross-up and the MD&A/cash-flow gap, the load-bearing lesson for Role 2/6 is structural: do not trust any FY26-AR-stated trend, ratio, or growth rate against its own FY25 comparator without an independent tie-out to the FY25 AR's original figures. The RPT concentration (Rank 1) is the separate, higher-severity question for live verification: it is a real dependency, not a disclosure artifact."

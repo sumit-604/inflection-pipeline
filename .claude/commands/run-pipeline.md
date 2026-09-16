@@ -47,6 +47,29 @@ Verifiers must never skip source verification because rendering is
 unavailable; if a PDF is genuinely unreadable by both routes, name it in the
 run log and in the confidence delta note.
 
+OPERATOR CONTEXT MID-RUN (provenance, hard rule). The operator sometimes
+supplies a fact, a correction or a document in chat while the run is going:
+a figure from a filing not in the corpus, a ruling, a company detail. It is
+useful and it must not vanish into conversation, where the next stage cannot
+see it and the verifiers cannot audit it.
+
+On every such input, before using it:
+- Write it to runs/<ticker>-<date>/inputs/operator-notes.md, appending one
+  dated entry: what was said, verbatim, and the date and time.
+- Classify it. A DOCUMENT the operator pushes is ordinary anchored evidence
+  once it is in an inputs/ folder. A FIGURE or claim typed in chat is
+  OPERATOR CONTEXT: it is memory to weigh, the same tier as COMPANY MEMORY,
+  and it is never anchored evidence. A RULING is an operator ruling, recorded
+  with its date, and it binds.
+- Cite it as (operator, YYYY-MM-DD) wherever it is used, so Verifier A reads
+  it as unanchored rather than as a number with a missing source.
+- Pass it into every later stage's task message as OPERATOR CONTEXT, and name
+  it in B00.input_gaps if it fills a gap the corpus should have filled.
+
+Never let an operator figure enter a table with a document anchor it does not
+have. The rule is provenance, not distrust: an unattributed number cannot be
+verified by anyone later, including the operator.
+
 EXECUTION DISCIPLINE: invoke every stage as a foreground subagent call
 that blocks until the subagent returns. Never use background task
 launching with passive waiting. Achieve parallelism only by invoking
@@ -113,6 +136,24 @@ handoff schemas, flag rules, and error handling. Then:
    inputs/ tree is empty. In every other case proceed, writing B00 with
    input_gaps naming each absent document type; degraded stages run per
    the orchestrator's DEGRADATION MAP. There is no count-based halting.
+
+   SECTOR CAP ROW: the manifest ships sector_cap_row empty and a
+   sector_cap_row_guess beside it. Resolve the real row now, per the
+   orchestrator's SECTOR CAP ROW RESOLUTION section: read the cap table
+   (section-1b chunk 05), pick the row the business sits in, write it into
+   manifest.yaml and B00 with its evidence and the chunk cite. The guess is a
+   hint to check. "NOT FOUND" is a valid answer and a HIGH gap; it blocks
+   stage 11 in phase 3, not the evidence stages here.
+
+   DOCUMENT IDENTITY: run the orchestrator's DOCUMENT IDENTITY CHECK over
+   every PDF in inputs/ and write B00.corpus_manifest[]. Read the first page
+   of each document and take its issuer, type and period from the page, never
+   from the filename. Move a misfiled document and record both paths. A
+   broker note is research/ whatever it is called.
+
+   UNITS: read the reporting unit off the face of the latest results filing
+   and the AR and write B00.reporting_units. Name the unit in every stage
+   task message (step 2).
 
    COLLECTOR DEFECT GATE: the collector records what it already knows it got
    wrong. Read manifest.collector_warnings and carry every entry into
@@ -186,15 +227,24 @@ handoff schemas, flag rules, and error handling. Then:
    after 5; 7 after 1). For each invocation, pass in the task message:
    the exact input file paths the stage needs, the injected content the
    prompt's {{...}} markers expect (prior YAML blocks inline, since
-   blocks are small), and the output path outputs/reports/<stage>.md.
+   blocks are small), the output path outputs/reports/<stage>.md, the BLOCK
+   path outputs/blocks/<stage>.yaml, and the units line: "All figures in
+   ₹ Cr unless the source says otherwise; the source unit is on the face of
+   the document, not in the filename."
+   Every stage writes its own block file to the block path before replying;
+   the reply is a copy, not the only copy.
    Stage 2 is THREE sequential invocations of stage-02-notes-pass (pass
    1, then pass 2 with pass 1's report path, then pass 3 with both).
    Stages 10 and 11 do NOT run in this phase.
 
-3. COLLECT each stage's YAML block into outputs/blocks/<stage>.yaml.
-   Malformed or missing block: re-invoke once with the retry addendum
-   from the orchestrator; second failure halts the run with the stage
-   named.
+3. COLLECT each stage's block by READING outputs/blocks/<stage>.yaml, the
+   file the stage wrote. Compare it with the block in the stage's reply; if
+   they differ, the file governs and the difference is noted in the run log.
+   If the file is absent, write it from the reply before doing anything else,
+   so the block is never carried only in conversation.
+   Malformed block, or absent from both file and reply: re-invoke once with
+   the retry addendum from the orchestrator; second failure halts the run
+   with the stage named.
 
 4. VERIFY (after stages 1-9). Invoke the phase-1 verifiers in parallel,
    each with only the artifact paths its section names, never other

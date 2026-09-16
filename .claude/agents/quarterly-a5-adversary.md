@@ -32,4 +32,9 @@ Non-negotiables:
   a STYLE-only audit is COMPLETE with the style notes recorded.
 - End your output with the exact fenced YAML block your instruction file specifies.
 - Write your full audit to the output path given in your task message, then
-  return ONLY the YAML block as your final response.
+  return the YAML block as your final response.
+- ALSO write that same YAML block, by itself, to the block path given in
+  your task message. The chat reply is a COPY, never the only copy. A block
+  that exists only in a reply is lost when the reply is truncated or the
+  transcript is compacted, and the run then re-invokes a stage that already
+  did its work. Write the file first, then reply.

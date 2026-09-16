@@ -288,10 +288,19 @@ def scrape_company_facts(url):
         return name, cmp_v, mcap, "", bse
 
 def pick_sector(name, page_text):
+    """Best keyword guess at the Section 1B cap row, or "" when nothing hits.
+
+    This is a GUESS and it is written to the manifest as one. A keyword map
+    cannot read the Section 1B cap table, and the wrong row was carried into
+    roughly twenty runs because the guess was written into the field the
+    pipeline consumes. The old no-hit fallback returned a real row name
+    ("Recycling / Manufacturing"), so a total miss was indistinguishable from
+    a confident match. It now returns nothing and stage 0 resolves the row.
+    """
     hay = ((name or "") + " " + page_text[:4000]).lower()
     for keys, row in SECTOR_MAP:
         if any(k in hay for k in keys): return row
-    return "Recycling / Manufacturing"   # conservative fallback, flagged
+    return ""
 
 # ---------------- git ----------------
 def git(*args):
@@ -362,7 +371,7 @@ def main():
     name = name or ticker.title()
     sector = pick_sector(name, page_text)
     print(f"  name:   {name}\n  cmp:    ₹{cmp_v}\n  mcap:   ₹{mcap} Cr"
-          f"\n  sector: {sector}  (edit manifest.yaml if wrong)")
+          f"\n  sector: {sector or '(no keyword hit)'}  (a guess, not the manifest value)")
 
     gi = REPO_ROOT / ".gitignore"
     gi_text = gi.read_text(encoding="utf-8") if gi.exists() else ""
@@ -495,16 +504,19 @@ market_cap_cr: {mcap}
 run_date: {today}
 run_type: full
 concalls_available: {str(concalls_available).lower()}
-sector_cap_row: "{sector}"
+sector_cap_row: ""      # stage 0 fills this from the Section 1B cap table
+sector_cap_row_guess: "{sector}"   # keyword guess only, never consumed
 {warn_yaml}
-notes: "Collected from screener.in by collect_to_repo.py v3. Sector row auto-picked; verify."
+notes: "Collected from screener.in by collect_to_repo.py v3. sector_cap_row is deliberately empty: resolve it at stage 0 against the Section 1B cap table."
 """, encoding="utf-8")
 
     print("\n================ SUMMARY ================")
     for k, v in counts.items():
         if v: print(f"  {k:15s} {v}")
     print(f"  concalls_available: {concalls_available}")
-    print(f"  sector_cap_row:     {sector}")
+    print(f"  sector guess:       {sector or '(no keyword hit)'}  "
+          f"-> manifest sector_cap_row is EMPTY on purpose; stage 0 resolves "
+          f"it against the Section 1B cap table")
     for w in warnings: print(f"  ⚠ {w}")
     print(f"  run folder: {run}")
     print("=========================================")

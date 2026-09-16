@@ -1,0 +1,67 @@
+stage: B12c
+company: "TITANBIO"
+run_date: "2026-09-16"
+model: claude-opus-5
+status: complete
+scope: "phase-1 (Gate 0 + Emerging Moat only); valuation audit deferred to phase 3"
+gate0:
+  rules_checked: 46
+  fails:
+    - {rule: "B4 Change in WC Days", detail: "Payable Days formula applied with a 10x lakh/crore unit error in all five rows; recomputed WC days FY23 130.85 and FY26 127.67 (adjusted basis) give a 3.18-day decrease, band +/-5", reported: 5, recomputed: 3, severity: CRITICAL}
+    - {rule: "M12 Negative WC / Float", detail: "inherits the same unit error; corrected series 130.85 / 135.39 / 150.05 / 127.67 is >45 days in every year", reported: 1, recomputed: 0, severity: MAJOR}
+    - {rule: "block_b_trend field accuracy", detail: "asserts a WC-days swing from +4.26 to -12.40 and a working-capital release that the corrected series does not show; propagated into the B01 analyst_note and into B07 category G2", severity: MAJOR}
+    - {rule: "Data confidence tier vs stated window", detail: "block reports data_years 10 while Block A and B2-B4 rest on FY23-FY26 only; effect of excluding FY17-FY20 on A1/A2 never tested or flagged", severity: MINOR}
+    - {rule: "Block F 'PEER DATA NEEDED' marking", detail: "M7 and the segment-census leg of M5 scored 0 on absent peer data without the required marker; substance captured in input_gaps", severity: MINOR}
+  recomputed: {block_b: 15, core_score: 79, moat_score: 14, grand_total: 93, moats_confirmed: 2, moat_class: "MODERATE", classification: "GOOD"}
+  passed: 41
+  rate_pct: 89
+emoat:
+  rules_checked: 40
+  fails:
+    - {rule: "6D combined classification from the eight-label matrix", detail: "combined_assessment returns the coined label 'GOOD, NOT TRANSITIONING' instead of one of EXCEPTIONAL / EXCELLENT+ / HIGH POTENTIAL / GOOD+ / GOOD / TURNAROUND / AVERAGE / AVOID; re-derived value is GOOD. Mitigation: the prompt names the eight labels but omits the mapping table", severity: MAJOR}
+    - {rule: "active_categories = Strong/Moderate rows only", detail: "G2 is graded Weak in the body and still listed; the body states 'Count with Strong/Moderate evidence: 1 (E2)'. B2 is also Weak and correctly excluded, so the treatment is internally inconsistent. No score effect", severity: MAJOR}
+    - {rule: "Optionality register scope", detail: "B2 qualification lock-in rests only on inference and is not registered; two registered rows (FVTPL composition, Peptech PAT reconciliation) are verification items, not forward advantages", severity: MINOR}
+    - {rule: "Block schema conformance", detail: "data_years and fy_range are emitted but are not in the prompt's block schema", severity: MINOR}
+    - {rule: "evidence_mix item counts", detail: "{documented: 2, claim: 1, inference: 1} counts only scored-active rows; the body anchors documented evidence in five categories (E2, G2, A3, F2, G1)", severity: MINOR}
+    - {rule: "catalysts_12m evidence taxonomy", detail: "two rows carry evidence_type 'DOCUMENTED (pending)' for events that have not occurred; this field feeds Pillar 3 catalyst proximity at stage 11 and must not be read as documented", severity: MINOR}
+    - {rule: "Completionist recount prose consistency", detail: "body sentence says '2 categories carry documented ADVERSE evidence (A3, F2, G1 - three categories)'; the emitted block states 3 correctly", severity: MINOR}
+    - {rule: "2C fixed-asset turnover basis", detail: "4.02x standalone (206.19/51.34) against B01 M3's 3.25x consolidated (200.35/61.61) for the same ratio; implied embedded growth 3.4% vs 2.7%. Conclusion unaffected", severity: MINOR}
+  passes_of_note:
+    - "All 23 categories addressed or explicitly NO EVIDENCE FOUND; anchors on every evidence item"
+    - "Multipliers re-derived exactly: B2 LL x 0.5 = 0.5, E2 MH x 0.5 = 1.5, G2 LM x 1.0 = 1.0, total 3.0, band <12 NONE"
+    - "Categories 21 and 22 present; I1 scored 0 on the failed (a) leg, I2 scored 0 on 'nothing must be destroyed', both per rubric; I1/I2 contribution stated separately as 0.0"
+    - "Completionist recount performed and stated in the required format"
+    - "NO-CONCALL F2 substitution matches prompts/00-orchestrator.md lines 339-340: AR capex-completion timeline used in place of the transcript promise-delivery record"
+    - "Adverse evidence kept distinct from absent evidence at A3, F2, G1, H3 and B2; F2 states it explicitly"
+    - "No FTTCP content: no verdict card, pillar, destination PE, price or entry zone anywhere"
+    - "Single-credit rule honoured: export improvement scored once at E2, declined again at C2"
+  passed: 32
+  rate_pct: 80
+valuation: {rules_checked: 0, fails: []}   # NOT RUN. Phase-1 scope; B10/B11 do not exist. Deferred to phase 3.
+expectation_ledger: {present: false, downside_row: false, all_rows_confirm_by: false, all_rows_metric_threshold: false, prob_in_range: false, decay_status_valid: false, off_ledger_credit: false, residual_pct_cmp: 0, residual_starter_cap_ok: true, fails: []}   # NOT ASSESSED in phase 1; stage 11 artifact. Deferred to phase 3.
+business_understanding_narrative: {present: false, five_questions_answered: false, prose_only: false, section6_candidates_named: 0, valuation_vocab_leak: false, fails: []}   # NOT ASSESSED in phase 1; stage 13 artifact. Deferred to phase 3.
+ua_qualifier_check: {b01_imported_valuation_arithmetic: false, b07_imported_valuation_arithmetic: false, low_institutional_ownership_treated_as_risk: false, em_score_emitted_for_stage11: 3, note: "Neither stage imports Amendment 3 arithmetic, which is correct: stage 11 owns it. Neither states in words that em_score 3 fails the absolute EM >=25 UA qualifier; the number is carried faithfully so nothing is lost."}
+emoat_is_not_fttcp: true
+disclosure_absent_vs_adverse_handled: true   # B01 E3 pledge NOT FOUND scored 0 as a gap, deal-breaker 5 correctly not triggered; B07 A3/F2/G1/H3 scored 0 as adverse and said so
+recomputed_destination_pe: ""   # out of scope in phase 1
+recomputed_decision: "B01 classification GOOD+ -> GOOD (core 81 -> 79, moat 15 -> 14, grand total 96 -> 93) on correction of the B4 payable-days unit error; B07 combined_assessment -> GOOD"
+findings:
+  - {id: C-01, severity: CRITICAL, location: "B01 Block B, B4 and the WC-days table", detail: "Payable Days = Trade Payables / Revenue x 365 applied with revenue scaled by 10 instead of 100; all five rows are 10x too high. FY25's 121.68 days implies payables of Rs 52.15 cr against the report's own FY25 Total Current Liabilities of Rs 17.74 cr. B4 5 -> 3, core 81 -> 79, classification GOOD+ -> GOOD. Basis-sensitive: the reported-revenue row would hold B4 at 5, and the report declared the adjusted basis"}
+  - {id: C-02, severity: MAJOR, location: "B01 Block F, M12", detail: "same unit error; corrected WC days exceed 45 in all four years, M12 1 -> 0, moat score 15 -> 14, moat class MODERATE unchanged"}
+  - {id: C-03, severity: MAJOR, location: "B01 block_b_trend and analyst_note", detail: "asserts a working-capital release from the erroneous series; propagated into B07 category G2"}
+  - {id: C-04, severity: MAJOR, location: "B07 Section 6D and combined_assessment", detail: "coined label instead of one of the eight matrix values; re-derived value GOOD"}
+  - {id: C-05, severity: MAJOR, location: "B07 block active_categories", detail: "Weak row G2 listed in a Strong/Moderate-only field, contradicting the body's own count of 1"}
+  - {id: C-06, severity: MINOR, location: "B01 M12", detail: "band reached via a median-of-four-years test the rubric does not contain"}
+  - {id: C-07, severity: MINOR, location: "B01 M5, M7", detail: "'PEER DATA NEEDED' marker required by the Block F instruction not used"}
+  - {id: C-08, severity: MINOR, location: "B01 Block A and data_years", detail: "return blocks run on FY23-FY26 while the block reports data_years 10; the exclusion of FY17-FY20 from A1/A2 is not tested or flagged. Not recomputable: the corpus has no FY17-FY22 balance-sheet detail"}
+  - {id: C-09, severity: MINOR, location: "B07 Optionality Register", detail: "B2 omitted though inference-only; two rows are verification items rather than forward advantages"}
+  - {id: C-10, severity: MINOR, location: "B07 block", detail: "data_years and fy_range emitted outside the prompt's schema"}
+  - {id: C-11, severity: MINOR, location: "B07 block evidence_mix", detail: "counts only scored-active rows; body anchors documented evidence in five categories"}
+  - {id: C-12, severity: MINOR, location: "B07 block catalysts_12m", detail: "'DOCUMENTED (pending)' evidence_type on two future events; feeds Pillar 3 proximity at stage 11"}
+  - {id: C-13, severity: MINOR, location: "B07 Section 3 recount prose", detail: "'2 categories ... three categories' in one sentence; the block states 3 correctly"}
+  - {id: C-14, severity: MINOR, location: "B07 Section 2C", detail: "fixed-asset turnover 4.02x standalone against B01 M3's 3.25x consolidated for the same ratio"}
+critical_count: 1
+major_count: 4
+minor_count: 9
+acceptance_rate: 85   # 73 of 86 rules passed; gate0 41/46, emoat 32/40
+rework_recommendation: "Stage 1 correction of B4 and M12 and re-emission of B01 (core 79, moat 14, classification GOOD), then re-feed to B07 6C, combined_assessment and active_categories. Not a mechanical halt; the acceptance rate clears 60% and a Verifier C critical is not itself the REWORK trigger."

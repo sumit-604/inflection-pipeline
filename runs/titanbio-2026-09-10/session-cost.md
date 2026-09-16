@@ -21,3 +21,5 @@ Run: runs/titanbio-2026-09-10 | Phase 1 executed 2026-09-16
 | 12c | Verifier C framework (phase-1 scope) | opus | - | n/r | n/r | 131426 | 10m09s | 1 |
 | 12d | Verifier D peer coverage | sonnet | - | n/r | n/r | 319829 | 7m07s | 1 |
 | 1 | Gate 0 scorecard, CORRECTION run | sonnet | - | n/r | n/r | 87446 | 6m35s | 2 |
+| 7 | Emerging moat scan, CORRECTION run | sonnet | - | n/r | n/r | 129645 | 11m33s | 2 |
+| 12a | Verifier A numerical, RE-RUN with addendum | haiku | - | n/r | n/r | 138111 | 4m35s | 2 |

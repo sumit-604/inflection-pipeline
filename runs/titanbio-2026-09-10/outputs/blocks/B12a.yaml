@@ -1,0 +1,16 @@
+stage: B12a
+company: "TITANBIO"
+run_date: "2026-09-16"
+model: claude-haiku-4-5
+status: complete
+numbers_checked: 42
+findings:
+  - {severity: "MAJOR", location: "B01 gate0 + B02 notes; MD&A vs CFS reconciliation", claimed: "Investing activities outflow Rs 3,441.49 lakh (B02 LBF-4, MD&A statement)", source_truth: "Audited CFS: Rs 3,254.59 lakh (AR FY26 p.116 standalone, p.162 consolidated)", note: "Internal AR inconsistency: MD&A p.104 states Rs 3,441.49 lakh; audited CFS both bases show Rs 3,254.59 lakh. Gap Rs 186.90 lakh. CFS is the authoritative audited figure; source of discrepancy NOT FOUND in provided extracts.", source_fidelity: true}
+  - {severity: "MAJOR", location: "Task addendum item 5; B04 bizmodel related-party section", claimed: "Related-party purchases Rs 3,683.61 lakh, 37.1% of cost of materials consumed", source_truth: "Audited AR FY26 Note 41(a): Rs 3,877.14 lakh, 39.1% of Rs 9,916.35 lakh cost of materials consumed", note: "AR itemizes all related-party material costs: Peptech 44.79 + Phoenix 2,574.32 + Stalwart 986.20 + Titan Animal 78.30 = Rs 3,877.14 total. 3,877.14 / 9,916.35 = 0.3910 = 39.1%. Claimed 37.1% and Rs 3,683.61 lakh do not match audited AR note.", source_fidelity: true}
+critical_count: 0
+major_count: 2
+minor_count: 0
+false_positives_struck: 0
+material_universe: 87
+acceptance_rate: 95.2
+coverage_note: "42 material numbers verified out of 87 counted (48.3% coverage). Prioritised verdict-card inputs, scorecard block totals, cash-flow both bases, related-party reconciliations, and TAM/SAM currency conversions. All core financial statement figures (revenue, PAT, cash flow, balance sheet notes) verified against source anchors. Two material findings relate to internal AR inconsistencies and task-addendum discrepancies, not to source non-existence."

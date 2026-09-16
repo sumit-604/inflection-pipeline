@@ -1,0 +1,88 @@
+stage: confidence-delta
+company: TITANBIO
+run_date: 2026-09-16
+phase: 1
+model: orchestrator
+
+confidence_delta:
+  numerical_acceptance: 95.2      # B12a, re-run pass: 40 of 42 checked clean, 0 CRITICAL
+  redflag_coverage: 50            # B12b: 7 of 14 material flags caught upstream (4 partials counted as caught)
+  framework_adherence: 85         # B12c: 73 of 86 rules passed (gate0 41/46, emoat 32/40). MEASURED PRE-CORRECTION, see note
+  peer_utilisation: 100           # B12d: 11 of 11 peer transcripts confirmed SUBSTANTIVE
+  overall: 50                     # min of the four
+  valuation_framework_adherence: pending-phase-3
+
+band: "below 60 — forced REWORK per prompts/00-orchestrator.md Section 5"
+
+verdict_driver: >
+  The overall figure is the redflag_coverage component and nothing else. Every other
+  component sits at or above 85. Stage 5 ran in NO-CONCALL MODE and read the annual
+  report PROSE well: Verifier B spot-tested five of its promise-and-delivery rows,
+  confirmed three, and every finding it tested in the MD&A narrative held. What stage
+  5 did not work through were the MD&A NUMERIC TABLES and the Directors' Report
+  ANNEXURES, where seven of Verifier B's material items sit. The gap is a stage-5
+  coverage gap in one specific place, not a general failure of the evidence pack.
+
+remedy_named:
+  stage: 5
+  what: >
+    Re-run stage 5 against the FY24, FY25 and FY26 MD&A cash-flow and key-ratio
+    tables and the Directors' Report annexures (foreign exchange earned, headcount,
+    selling and distribution), fold in the seven items Verifier B lists with anchors,
+    then re-verify. Verifier B's report carries each item with its page anchor, so the
+    re-run has a defined scope rather than an open re-read.
+  why_not_done_in_this_run: >
+    Two corrections WERE applied in this run, to stages 1 and 7, because Verifier C
+    proved an arithmetic error that would have carried a wrong Gate 0 classification
+    into Halt 1 and phase 3. Verifier B's items are different in kind: they are
+    material the stage did not reach, not numbers the stage got wrong. Correcting a
+    stage to a verifier's own list and then having that same verifier re-measure its
+    coverage would be circular, and it would destroy the independent measurement the
+    number exists to provide. The measured 50 stands, the remedy is named, and the
+    decision to spend on it is the operator's.
+
+corrections_applied_this_run:
+  - stage: 1
+    trigger: "B12c finding C-01, CRITICAL"
+    what: >
+      Gate 0 Block B payable-days computed with revenue converted lakh-to-crore at 10x
+      instead of 100x. Stage 1 re-ran, recomputed independently, confirmed the error
+      and re-emitted. Corrected WC days 130.85 / 135.39 / 150.05 / 127.67, a net 3.18
+      day decrease, not a working-capital release. B4 5 to 3, M12 1 to 0, core 81 to
+      79, moat 15 to 14, grand total 96 to 93, classification GOOD+ to GOOD.
+      Stage 1 REJECTED one leg of the finding (M5 scored 1, not 0) with arithmetic.
+    closes: [C-01, C-02, C-03, C-07, C-08]
+  - stage: 7
+    trigger: "B12c findings C-04, C-05 MAJOR, plus the corrected stage 1 input"
+    what: >
+      Category G2 (working-capital improvement) rested on the erroneous series and now
+      scores 0, leaving the active list. em_score 3.0 to 2.0, classification NONE
+      unchanged. combined_assessment corrected from a coined compound label to GOOD,
+      one of the eight permitted matrix labels, with the prompt's missing mapping
+      table named as a gap rather than bridged. Five MINOR schema and count findings
+      corrected. Stage 7 confirmed all nine findings, rejecting none.
+    closes: [C-04, C-05, C-06, C-09, C-10, C-11, C-12, C-13, C-14]
+  - stage: "12a (verifier A itself)"
+    trigger: "orchestrator sanity check of the first pass, per the standing LESSONS pattern"
+    what: >
+      The first Verifier A pass raised one MAJOR against the market-sizing report,
+      claiming USD 194.4 million converts to Rs 18.66 crore at Rs 96 per dollar. The
+      correct conversion is Rs 1,866 crore, so the finding was itself a
+      million-versus-crore scaling error and the stage report was right. The verifier
+      was re-invoked once with the severity-semantics and coverage addendum. Its
+      re-run withdrew that finding, verified the market-sizing conversions clean, and
+      raised two different MAJORs, both real.
+
+framework_adherence_note: >
+  The 85 figure was measured against the PRE-correction B01 and B07. All fourteen of
+  Verifier C's findings have since been closed by the two correction runs above. The
+  figure is NOT re-measured here: re-running Verifier C against reports corrected to
+  its own findings would be circular, and it would not change the overall figure,
+  which is set by redflag_coverage at 50. A phase-3 Verifier C run will measure the
+  corrected stages afresh alongside the valuation audit.
+
+verifier_disagreements_logged: 3
+  # 1. B12d MINOR corpus-duplication flag, STRUCK on corpus evidence by the orchestrator.
+  # 2. B12b's consolidated investing-outflow dispute, RESOLVED by B12a re-run in B12b's disfavour.
+  # 3. B12b's "exports NOT FOUND" dispute, RESOLVED by B12a re-run in B12b's disfavour.
+  # Full rows in outputs/final/verifier-disagreement-log.md

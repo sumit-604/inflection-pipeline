@@ -1,0 +1,29 @@
+stage: B12d
+company: "TITANBIO"
+run_date: "2026-09-16"
+model: claude-sonnet-5
+status: complete
+peers_audited: 11
+substantive_confirmed: 11
+substantive_unsupported: []
+unused_but_relevant:
+  - {peer: "VIDHIING", missed_item: "'26 of 50 US states in recession' macro color (Mihir Manek, May-14-2026 call) corroborating Claim 1 demand-weakness finding", anchor: "VIDHIING Q4/FY26 call, May-14-2026, Mihir Manek"}
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "MAJOR", location: "B06 peer_coverage_map row: ADVENZYMES Feb-04-2026 (Q3/9M FY26)", claimed: "row credits this call with 'EFSA approval timelines'", source_truth: "Feb-04-2026 transcript contains no EFSA content at all; the EFSA/'2014' quote is in the Aug-12-2026 transcript", note: "coverage-map per-call attribution error, not a fabrication; peer overall still SUBSTANTIVE on other genuine content from this call"}
+  - {severity: "MAJOR", location: "B06 peer_coverage_map row: ADVENZYMES May-12-2026 (Q4/FY26)", claimed: "row credits this call with 'Nutrazyme/Wellfa disclosed small revenue'", source_truth: "'Nutrazyme'/'Wellfa' do not appear anywhere in the May-12-2026 transcript; content is genuinely in the Nov-13-2025 transcript (also anomalously duplicated into the Feb-04-2026 file, see Finding 11)", note: "coverage-map per-call attribution error"}
+  - {severity: "MAJOR", location: "B06 peer_coverage_map row: FERMENTA Aug-17-2021 (Q1 FY22)", claimed: "row credits this call with the 'formula-priced input contract'", source_truth: "no 'formula' pricing language in the Aug-17-2021 transcript; the formula-based wool-grease pricing quote is in the Nov-17-2021 transcript", note: "coverage-map per-call attribution error"}
+  - {severity: "MAJOR", location: "B06 peer_coverage_map row: FERMENTA Jun-01-2022 (Q4/FY22)", claimed: "row credits this call with 'key-account margin trade-off pattern'", source_truth: "'key account' does not appear anywhere in the Jun-01-2022 transcript; content is genuinely in the Nov-17-2021 transcript", note: "coverage-map per-call attribution error"}
+  - {severity: "MAJOR", location: "B06 report, Part 2A (cross-read on demand environment)", claimed: "'let's not get into the QoQ... some quarters here and there' quote cited to Mukund Kabra, Feb-04-2026 call", source_truth: "quote is verbatim in the Aug-12-2026 transcript, not the Feb-04-2026 transcript", note: "underlying point (management avoids QoQ characterisation) independently supported elsewhere; citation date is wrong"}
+  - {severity: "MAJOR", location: "B06 report, Part 1 Claim 4", claimed: "'still waiting from 2014' EFSA quote cited to Mukund Kabra, Feb-04-2026 call", source_truth: "quote is verbatim in the Aug-12-2026 transcript; Feb-04-2026 transcript has no EFSA content", note: "same underlying misattribution as coverage-map finding 1 above"}
+  - {severity: "MAJOR", location: "B06 report, Part 1 Claim 2", claimed: "naphthalene raw-material substitution quote attributed to Mihir Manek, Jun-12-2024 call", source_truth: "spoken by Mitesh Manek (CFO) in the transcript; Mihir Manek only asks the preceding question", note: "call and content correct, speaker wrong"}
+  - {severity: "MAJOR", location: "B06 report, Part 1 Claim 2", claimed: "'inflationary trends and volatile freight markets' attributed to Bipin Manek, May-14-2026 call", source_truth: "spoken by Mitesh Manek in his financial-highlights section, not Bipin Manek", note: "call correct, speaker wrong"}
+  - {severity: "MAJOR", location: "B06 report, Part 2B", claimed: "'we have not reduced a penny on our pricing' attributed to Mihir Manek, Nov-13-2025 call", source_truth: "spoken by Mitesh Manek answering Lala Ram's question, not Mihir Manek", note: "call correct, speaker wrong"}
+  - {severity: "MAJOR", location: "B06-peers.yaml, contradicted[1].quote_anchor", claimed: "18-month commissioning + Rs75-85cr capex/Rs125-150cr revenue both attributed to 'Mihir Manek, May-14-2026 call' as one statement", source_truth: "18-month commissioning answered by Bipin Manek/Mitesh Manek in one exchange; Rs75-85cr/Rs125-150cr figures given by Mihir Manek in a separate, later exchange", note: "figures correct, two distinct speakers/exchanges merged into one attribution"}
+  - {severity: "MINOR", location: "Corpus: ADVENZYMES-Concall_Nov_2025_Transcript.txt and ADVENZYMES-Concall_Feb_2026_Transcript.txt", claimed: "n/a - data integrity flag, not a B06 finding", source_truth: "identical Ravi Purohit/Nutrazyme/Wellfa Q&A block, including 'Vasant Rathi' speaking despite not being on the Nov-13-2025 call's stated management roster, appears verbatim in both extracted files", note: "likely extraction/page-duplication artifact; recommend re-checking against source PDFs before further downstream reliance; explains part of the misattribution pattern above"}
+  - {severity: "MINOR", location: "B06 report, Part 1 Claim 1", claimed: "'mixed... some flat' quote attributed to 'Beni Rauka/Mukund Kabra, Feb-04-2026 call'", source_truth: "quote is solely Mukund Kabra's scripted opening remarks; Beni Rauka does not speak this line", note: "imprecise joint attribution, cosmetic"}
+critical_count: 0
+major_count: 10
+minor_count: 2
+acceptance_rate: 64

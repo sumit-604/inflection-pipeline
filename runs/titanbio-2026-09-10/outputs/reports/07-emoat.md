@@ -1,14 +1,155 @@
 # STAGE 7: EMERGING MOAT SCAN — Titan Biotech Ltd (TITANBIO)
-Run date: 2026-09-16 | Model: claude-sonnet-5
+## CORRECTION RUN (supersedes the 2026-09-16 original in place)
+
+Run date: 2026-09-16 (correction pass) | Model: claude-sonnet-5
 Taxonomy note: this is the Emerging Competitive Advantages scan (22 categories
 + R1). It is NOT FTTCP. FTTCP is a separate, later synthesis inside valuation.
 
-Inputs consumed: B01-gate0 (moat 15/60 MODERATE, classification GOOD+),
-B05-concall (NO-CONCALL MODE, credibility grade C, promise-delivery 3/1/3),
-AR FY2024/FY2025/FY2026 (full text), Q1FY27 unaudited results (13-Aug-2026),
-FY26 audited results (30-May-2026), Q2/Q3 FY26 results, 8 Reg 30 announcements.
-No investor presentation exists (company publishes none). No concall
-transcripts exist for this company.
+---
+
+## CORRECTION LOG
+
+Nine findings were tested against this stage's own rubric, the corrected
+Stage 1 (Gate 0) output, and the underlying filings. Nothing was accepted on
+trust; each was independently re-derived before acceptance or rejection.
+
+**FINDING 1 (upstream input, category G2). CONFIRMED, corrected.**
+Stage 1's corrected WC-days series (130.85 FY23, 135.39 FY24, 150.05 FY25,
+127.67 FY26 adjusted) is a net decrease of only 3.18 days across four years
+(130.85 − 127.67), non-monotonic — it rose 19.2 days from FY23 to FY25 before
+easing — and Stage 1 itself now calls the trend "stable," stating explicitly
+that no working-capital release occurred. That does not meet the category's
+own test (a genuine multi-year declining trajectory): a 2.4% net change
+inside a path that gave back most of a prior rise is noise, not a trend.
+Independently, AR FY26's MD&A Key Financial Ratios table (p.103, a
+company-disclosed ratio unaffected by Stage 1's payable-days computation)
+shows Inventory Turnover improving 1.85x to 2.21x (+19.46%) and Trade
+Receivables Turnover improving 8.35x to 9.90x (+18.56%) — genuine, documented,
+single-year facts. But the same table shows Trade Payables Turnover Ratio
+collapsing 25.52x to 17.26x (-32.37%), and the AR's own Note 45 variance
+disclosure states this is "mainly due to a substantial increase in average
+trade payables compared with the growth in purchases" (AR FY26 p.153
+standalone / p.196 consolidated, variance note (g)). The one day-count
+improvement that did occur (FY25's 150.05 down to FY26's 127.67) is therefore
+a payables-stretch event — the pattern this category is meant to screen OUT,
+not customer advances rising or a prepaid/subscription shift. Verdict: the
+corrected series does not evidence a working-capital improvement trajectory.
+**G2 rescored 0, removed from active_categories.** Arithmetic: prior raw 1
+(LM) x 1.0 documented = 1.0; corrected raw 0 = 0.0. em_score recomputed:
+0.5 (B2) + 1.5 (E2) + 0.0 (G2, was 1.0) = **2.0, down from 3.0.**
+Classification band unaffected (<12, NO MEANINGFUL EMERGING MOAT / NONE).
+
+**FINDING 2 (Section 6D combined_assessment). CONFIRMED, corrected.**
+The prior label ("GOOD+ (backward) / NO MEANINGFUL EMERGING MOAT (forward) —
+GOOD, NOT TRANSITIONING") is not one of the prompt's eight permitted labels
+(EXCEPTIONAL, EXCELLENT+, HIGH POTENTIAL, GOOD+, GOOD, TURNAROUND, AVERAGE,
+AVOID); it is a coined compound. Re-read prompts/07-emerging-moat-pipeline.md
+Section 6D in full: it names the eight labels and gives qualitative guidance
+for two cells only (a GOOD/AVERAGE backward score paired with an EXPANSION
+forward score is "exactly the transition setup this operation hunts";
+HIGH POTENTIAL/TURNAROUND rows need full reasoning). It does NOT supply a
+complete state-to-label mapping table. That gap is real and is named here
+rather than silently bridged. Using the corrected Gate 0 inputs
+(classification GOOD, core 79/100, moat 14/60 MODERATE, grand total 93/160)
+against the corrected em_classification (NONE, 2.0/92 — no EXPANSION or even
+STRENGTHENING signal): the prompt ties elevation above the backward label
+specifically to a forward EXPANSION signal, which does not exist here.
+Nothing in the prompt supports moving off the backward label in either
+direction (GOOD is not weak enough to invoke TURNAROUND/AVOID either).
+**Corrected to GOOD** — one of the eight permitted labels, equal to the
+(corrected) backward classification alone.
+
+**FINDING 3 (active_categories). CONFIRMED, corrected.**
+The field's own definition ("only Strong/Moderate rows") and the body's own
+count ("Count with Strong/Moderate evidence: 1 (E2)") both exclude G2
+(graded Weak), yet the YAML listed both E2 and G2 — the body was already
+right, the block was not. Combined with Finding 1's rescoring of G2 to
+None, active_categories now correctly contains only E2.
+
+**FINDING 4 (optionality register scope). CONFIRMED, corrected.**
+Two prior rows (FVTPL portfolio composition/related-party linkage; Peptech
+PAT reconciliation) are verification items already carried in B01's own
+FLAG-ASSOCIATE-RECON and input_gaps, not forward advantages — the register
+is defined for advantages scored 0 or resting only on claim/inference
+evidence, not for balance-sheet reconciliation questions. Both moved to this
+stage's input_gaps. B2 (qualification lock-in), which rests only on 🔍
+industry-structural inference and was never registered, is added.
+
+**FINDING 5 (block schema conformance). CONFIRMED, corrected.**
+Re-checked the prompt's block schema: the field list is stage, company,
+run_date, model, status, input_gaps, flags, em_score, em_classification,
+active_categories, evidence_mix, completionist_recount, catalysts_12m,
+capex_embedded_growth_pct, optionality_register, combined_assessment,
+combined_reasoning, top_moat_risks, analyst_note. data_years and fy_range
+are not present. Both removed; the data-window fact (3 annual reports,
+FY2024-FY2026, plus Q1FY27 for corroboration) is stated in prose only.
+
+**FINDING 6 (evidence_mix counts). CONFIRMED, corrected.**
+The prior {documented: 2, claim: 1, inference: 1} counted only the two
+scored-active rows on an undisclosed basis. Corrected basis, stated
+explicitly: one item per category, at the primary evidence tier assigned in
+the Section 3 summary table, excluding categories marked NO EVIDENCE FOUND
+with no evidence of any kind. On this basis: documented (📄) = 5 categories
+(E2, G2, A3, F2, G1 — matching the five the body anchors documented evidence
+in); claim (🎙️) = 0 (no one of the 22 category rows scores purely on a
+management claim; the health-supplement claim is a Section 1A/F2 narrative
+fact, not a category row); inference (🔍) = 1 (B2). Corrected:
+{documented: 5, claim: 0, inference: 1}.
+
+**FINDING 7 (catalysts_12m evidence taxonomy). CONFIRMED, corrected.**
+Two rows carried "DOCUMENTED (pending)" for events that have not occurred
+(AR FY27 naming the health-supplement product; AR FY27 disclosing FVTPL
+portfolio composition). Corrected label: "SCHEDULED, NOT YET DOCUMENTED" —
+plain that the event is an announced/expected filing date, not evidence that
+exists today.
+
+**FINDING 8 (Section 3 recount prose). CONFIRMED, corrected.**
+The recount sentence read "...2 categories carry documented ADVERSE evidence
+(A3, F2, G1 — three categories)", an internal contradiction against its own
+parenthetical and against the block, which correctly said three. Corrected
+to state three consistently, and folded into the Finding-1 rewrite of the
+same paragraph (G2 is now a fourth, separately-labelled non-qualifying
+category, not a fourth "adverse" one).
+
+**FINDING 9 (Section 2C fixed-asset-turnover basis). CONFIRMED, corrected.**
+Section 2C used 206.19/51.34 = 4.02x, both standalone reported figures (the
+206.19 numerator carries the ~Rs 5.84 cr freight gross-up per B01's
+FLAG-REVENUE-BASIS). Gate 0's own M3 test (01-gate0.md, "M3 Capital
+Efficiency": FAT = Sales/Net Block = 200.35/61.61 = 3.25x) uses 200.35, the
+like-for-like (ex-gross-up) figure B01 established as the basis for "all
+growth/margin scores in this scorecard," over 61.61, the consolidated net
+block (screener-data). Reconciled: adopted Gate 0's 3.25x for cross-stage
+consistency, applied to the only capex figure disclosed (Rs 1.73 cr CWIP,
+standalone, Note 2(b) p.124 — no consolidated CWIP breakdown exists in the
+corpus; a minor entity-basis mismatch, noted not resolved). Implied
+incremental revenue = 1.73 x 3.2517 = Rs 5.63 cr. As % of like-for-like
+current revenue (200.35 cr, the ratio's own numerator basis): 5.63/200.35 =
+2.8%. (Applying the same ratio against the reported revenue base of 206.19
+cr instead gives 5.63/206.19 = 2.7% — the two bases differ by 0.1pp,
+immaterial.) **capex_embedded_growth_pct corrected 3.4 → 2.8.** The
+conclusion is UNAFFECTED: both 3.4% and the corrected 2.7-2.8% are trivial
+against a multi-year re-rating case and both read as evidence AGAINST a
+capacity-led emerging moat.
+
+**Unchanged, carried forward exactly as before (not questioned by this audit
+and not contradicted by any recomputation):** the 22-category scan
+structure and scope, the E2 export finding (both the fact and its
+inference-capped strength), the identification of A3/F2/G1 as documented-
+adverse categories, the absent-certification finding at B2, the I1/I2 scores
+(both 0 by design), Sections 1, 2A, 2B, 2D, Section 4 in full, and every
+anchor not named above.
+
+---
+
+Inputs consumed: B01-gate0 (corrected 2026-09-16 pass: core 79/100, moat
+14/60 MODERATE, grand total 93/160, classification GOOD), B05-concall
+(NO-CONCALL MODE, credibility grade C, promise-delivery 3/1/3), AR
+FY2024/FY2025/FY2026 (full text), Q1FY27 unaudited results (13-Aug-2026),
+FY26 audited results (30-May-2026), Q2/Q3 FY26 results, 8 Reg 30
+announcements. No investor presentation exists (company publishes none). No
+concall transcripts exist for this company. Data window: 3 annual reports
+(FY2024-FY2026), plus the Q1FY27 results filing for corroboration; per
+Finding 5 this window is stated here in prose only, not as a block field.
 
 ---
 
@@ -119,21 +260,36 @@ utilisation percentage for any facility in any of the three years. Gate 0's
 finding stands: no capacity, line description or commissioning date is
 disclosed anywhere for any of the four plants.
 
-### 2C Growth embedded in capex
+### 2C Growth embedded in capex (CORRECTED, Finding 9 of this pass)
 
-Arithmetic: total capex under execution (CWIP, undescribed) = Rs 1.73 cr.
-Historical fixed-asset turnover (standalone revenue Rs 206.19 cr / net PPE
-Rs 51.34 cr, FY26, AR FY26 Note 2(a) p.124 and MD&A revenue figure, p.100)
-≈ 4.02x. Implied incremental revenue from the CWIP alone = Rs 1.73 cr × 4.02
-≈ Rs 6.95 cr, or 3.4% above current standalone revenue (Rs 206.19 cr).
+Total capex under execution (CWIP, undescribed) = Rs 1.73 cr (standalone,
+Note 2(b), p.124 — no consolidated CWIP breakdown exists in the corpus).
 
-This is a trivial number precisely because there is no committed expansion
-programme to size. **capex_embedded_growth_pct ≈ 3.4%**, and it should be read
-as evidence AGAINST an emerging capacity-led moat, not for one: the arithmetic
-confirms there is no capex pipeline of a size that could plausibly explain a
-multi-year re-rating case. If the FY26/Q1FY27 growth (31.8% and 27.2% YoY
-respectively) continues, it is running off existing capacity and mix, not a
-funded expansion.
+Fixed-asset turnover basis reconciled: the prior version of this section used
+206.19/51.34 = 4.02x, both standalone REPORTED figures, where the 206.19
+numerator carries a ~Rs 5.84 cr freight gross-up not present in the FY25
+comparator (B01 FLAG-REVENUE-BASIS). Gate 0's own M3 test uses 200.35/61.61 =
+3.25x, where 200.35 is B01's like-for-like (ex-gross-up) revenue figure — the
+basis B01 establishes for "all growth/margin scores in this scorecard" — over
+61.61, the consolidated net block (screener-data). Adopting Gate 0's 3.25x for
+cross-stage consistency (noting, not resolving, the minor entity-basis
+mismatch between the standalone CWIP numerator and the consolidated turnover
+ratio, since no consolidated CWIP figure exists):
+
+Implied incremental revenue = Rs 1.73 cr × 3.2517 ≈ Rs 5.63 cr.
+As % of like-for-like current revenue (Rs 200.35 cr, the ratio's own
+numerator basis): 5.63 / 200.35 ≈ **2.8%**.
+(Applying the same 3.25x ratio against the reported revenue base of Rs 206.19
+cr instead gives 5.63 / 206.19 ≈ 2.7% — the two bases differ by 0.1pp,
+immaterial to the conclusion.)
+
+**capex_embedded_growth_pct ≈ 2.8%** (corrected from 3.4%; the prior figure
+used a freight-gross-up-inflated turnover ratio). The conclusion is
+UNAFFECTED: this is still a trivial number precisely because there is no
+committed expansion programme to size, and it should still be read as
+evidence AGAINST an emerging capacity-led moat, not for one. If the
+FY26/Q1FY27 growth (31.8% and 27.2% YoY respectively) continues, it is
+running off existing capacity and mix, not a funded expansion.
 
 ### 2D New geography or market entries
 
@@ -313,19 +469,35 @@ exists at all, per B01/company memory). **NO EVIDENCE FOUND for a positive
 G1 moat; the FVTPL buildup is flagged as evidence against reinvestment
 capacity, consistent with B01's analyst_note, not credited as a war chest.**
 
-**G2 — WC improvement trajectory.** Multiple metrics point the same way in
-FY26: WC days per B01 swung from +4.26 (FY23) to -12.40 (FY26, adjusted), FCF
-grew from Rs 18.11 cr (FY23) to Rs 22.99 cr (FY26); inventory turnover
-improved to 2.21x from 1.85x (+19.46%) and trade receivables turnover
-improved to 9.90x from 8.35x (+18.56%) (both AR FY26 MD&A Key Financial
-Ratios table, p.103). 📄 DOCUMENTED. However, B01's own note attributes the
-FY26 WC-days swing chiefly to "a jump in FY26 trade payables" — a payables
-stretch, not a structural improvement like rising customer advances or a
-subscription/prepaid shift. **Strength: Weak.** The inventory- and
-receivable-turn improvements are genuine and worth tracking, but the headline
-WC-days move looks like a one-year payables event rather than a durable
-process change; time to materialise as a genuine moat (if it is one) is
-unclear given the single-year base.
+**G2 — WC improvement trajectory (CORRECTED, Finding 1 of this pass).**
+B01's corrected WC-days series (130.85 FY23, 135.39 FY24, 150.05 FY25, 127.67
+FY26 adjusted; corrected from a lakh-to-crore unit error, B01 CORRECTION LOG
+item 1) is a net decrease of only 3.18 days across four years (130.85 −
+127.67), non-monotonic — it ROSE 19.2 days from FY23 to FY25 before easing —
+and B01's own corrected block_b_trend now reads "stable," explicitly stating
+"no working-capital release occurred." This is not a WC-days improvement
+trajectory; it is noise inside a range that has run above 45 days (the
+negative-WC/float moat threshold) in all four years.
+FCF still grew from Rs 18.11 cr (FY23) to Rs 22.99 cr (FY26) — a fact the
+correction does not touch. Inventory turnover improved 1.85x to 2.21x
+(+19.46%) and trade receivables turnover improved 8.35x to 9.90x (+18.56%),
+both 📄 DOCUMENTED (AR FY26 MD&A Key Financial Ratios table, p.103), genuine
+single-year facts unaffected by the payable-days computation (they are
+company-disclosed ratios, not stage-computed). But the SAME table shows Trade
+Payables Turnover Ratio collapsing 25.52x to 17.26x (-32.37%), and the AR's
+own Note 45 variance disclosure states this is "mainly due to a substantial
+increase in average trade payables compared with the growth in purchases"
+(AR FY26 p.153 standalone / p.196 consolidated, variance note (g)). The one
+day-count improvement that did occur (FY25's 150.05 down to FY26's 127.67) is
+therefore a payables-stretch event — the pattern this category is meant to
+screen OUT (customer advances rising or a prepaid/subscription shift would
+count; leaning harder on suppliers does not) — not a structural change.
+**Re-scored: NONE, not Weak.** The genuine turnover-ratio gains are real but
+are single-year data points, not a "trajectory" (the category's own word),
+and the metric that would establish a trajectory (WC days) is flat across the
+window once corrected. G2 leaves the active list; carried instead as a
+documented, non-qualifying finding alongside A3/F2/G1 in the completionist
+recount below.
 
 ### FAMILY H — ECOSYSTEM & EXTERNAL
 
@@ -386,7 +558,7 @@ barrier, and execution leads close. **Score 0. NO EVIDENCE FOUND.**
 | F1 | Talent density | No | — | None | — |
 | F2 | Execution moat | Adverse (documented non-delivery) | 📄 | None (deficit, not moat) | — |
 | G1 | War chest | Adverse (capex declining, treasury rising) | 📄 | None | — |
-| G2 | WC improvement trajectory | Yes, mixed durability | 📄 | Weak | 12-24m to prove durable |
+| G2 | WC improvement trajectory | Documented facts exist (turnover ratios); no genuine multi-year trajectory once WC-days corrected — net -3.18 days over 4 years, non-monotonic, "stable" per B01 (CORRECTED, was Weak) | 📄 (non-qualifying) | None | — |
 | H1 | Industry consolidation beneficiary | No | — | None | — |
 | H2 | Strategic partnerships | No (related-party only) | — | None | — |
 | H3 | ESG moat | No (zero capex admitted) | — | None | — |
@@ -397,12 +569,19 @@ barrier, and execution leads close. **Score 0. NO EVIDENCE FOUND.**
 **Count with Strong/Moderate evidence: 1** (E2, Moderate). No category scores
 Strong.
 
-**Completionist guard check:** 📄 recount performed: 2 documented items
-across 2 categories score as genuinely active (E2 growth fact; G2 WC-ratio
-improvement), plus 2 categories carry documented ADVERSE evidence (A3, F2,
-G1 — three categories, all scored None/0 because the evidence cuts against a
-moat forming, not for one). This is well inside the 3-6 realistic base rate
-and confirms no over-crediting of 🎙️ claims as 📄 documented.
+**Completionist guard check (CORRECTED, Findings 1 and 8):** 📄 recount
+performed: documented evidence exists in 5 categories (E2, G2, A3, F2, G1 —
+the same five this report's body anchors documented evidence in). Of these,
+only E2 scores as an active moat (Moderate); G2, A3, F2 and G1 carry
+documented evidence that is neutral-to-adverse to a moat claim, not blank
+absence, and none scores above 0 — 3 of these 4 (A3, F2, G1) are actively
+ADVERSE, and 1 (G2, corrected this pass from a prior Weak score) is
+non-qualifying, not adverse, because it lacks a genuine trajectory rather
+than pointing the wrong way. One further category (B2) carries evidence at
+the 🔍 inference tier only. Total categories carrying any evidence = 6 (E2,
+G2, A3, F2, G1, B2), at the top edge of the 3-6 realistic base rate but still
+inside it, and no over-crediting of 🎙️ claims as 📄 documented occurred
+anywhere in the recount.
 
 ---
 
@@ -431,7 +610,7 @@ record. **R1 scores 0.**
 ## SECTION 5: EMERGING MOAT SCORECARD
 
 Raw score = likelihood × impact (HH=4, HM/MH=3, HL/MM/LH=2, ML/LM=1, LL=1, no
-evidence=0), then × evidence-quality multiplier (📄 1.0x, 🎙️ 0.7x, 🔍ẞ 0.5x).
+evidence=0), then × evidence-quality multiplier (📄 1.0x, 🎙️ 0.7x, 🔍 0.5x).
 
 | # | Category | Likelihood/Impact | Raw | Evidence type | Multiplier | Adjusted |
 |---|---|---|---|---|---|---|
@@ -451,7 +630,7 @@ evidence=0), then × evidence-quality multiplier (📄 1.0x, 🎙️ 0.7x, 🔍�
 | F1 | Talent density | — | 0 | — | — | 0.0 |
 | F2 | Execution moat | — (adverse, scored 0 per rubric) | 0 | 📄 (adverse) | — | 0.0 |
 | G1 | War chest | — (adverse, scored 0 per rubric) | 0 | 📄 (adverse) | — | 0.0 |
-| G2 | WC improvement trajectory | LM | 1 | 📄 | 1.0 | 1.0 |
+| G2 | WC improvement trajectory | — (CORRECTED: no genuine trajectory, Finding 1) | 0 | 📄 (non-qualifying) | — | 0.0 |
 | H1 | Industry consolidation beneficiary | — | 0 | — | — | 0.0 |
 | H2 | Strategic partnerships | — | 0 | — | — | 0.0 |
 | H3 | ESG moat | — | 0 | — | — | 0.0 |
@@ -459,39 +638,50 @@ evidence=0), then × evidence-quality multiplier (📄 1.0x, 🎙️ 0.7x, 🔍�
 | I2 | Cannibalization barrier | — | 0 (by design) | — | — | 0.0 |
 | R1 | Regulatory/policy tailwind | — | 0 | — | — | 0.0 |
 
-**Adjusted total: 3.0** (out of a ceiling of 92, I1/I2 included).
-**I1/I2 contribution: 0.0** — no threshold crossing occurs via I1/I2 for
-this name; both score 0 on the standard evidence bar, as the framework
-expects for most companies. Nothing here needs flagging for the operator's
-10-15-scan I1/I2 review checkpoint.
+**Adjusted total: 2.0** (out of a ceiling of 92, I1/I2 included). Corrected
+this pass (Finding 1): G2's WC-improvement claim rested on a WC-days swing
+Stage 1 has since corrected from a lakh-to-crore unit error; the corrected
+series shows no genuine trajectory, so G2's prior 1.0 contribution is
+removed (0.5 B2 + 1.5 E2 + 0.0 G2 = 2.0, down from 3.0).
+**I1/I2 contribution: 0.0** (unchanged) — no threshold crossing occurs via
+I1/I2 for this name; both score 0 on the standard evidence bar, as the
+framework expects for most companies. Nothing here needs flagging for the
+operator's 10-15-scan I1/I2 review checkpoint.
 
-**Classification: <12 → NO MEANINGFUL EMERGING MOAT.**
+**Classification: <12 → NO MEANINGFUL EMERGING MOAT.** (Unaffected by the
+correction; both 2.0 and the prior 3.0 sit far inside this band.)
 
 This result is not a disclosure artefact to be second-guessed upward. Where
-Gate 0's 15/60 MODERATE existing-moat score was substantially a function of
-missing disclosure (seven of twelve tests scored 0 on absent data, not
-adverse findings), this Emerging Moat scan found active, documented ADVERSE
-evidence in three categories (A3 process innovation, F2 execution moat, G1
-war chest) on top of the near-total absence of forward evidence elsewhere.
-The one Moderate-strength item (E2 export growth) is real and worth watching,
-but a single category at Moderate strength, evidence-capped by an unproven
-causal story, does not clear even the 12-point MODEST band on its own.
+Gate 0's corrected 14/60 MODERATE existing-moat score was substantially a
+function of missing disclosure (six of twelve tests scored 0 on absent data,
+not adverse findings), this Emerging Moat scan found active, documented
+ADVERSE evidence in three categories (A3 process innovation, F2 execution
+moat, G1 war chest), and — corrected this pass — a fourth category, G2,
+whose apparent WC-days improvement dissolves under the corrected unit
+calculation into a flat, non-qualifying trend, on top of the near-total
+absence of forward evidence elsewhere. The one Moderate-strength item (E2
+export growth) is real and worth watching, but a single category at
+Moderate strength, evidence-capped by an unproven causal story, does not
+clear even the 12-point MODEST band on its own.
 
 ---
 
-## OPTIONALITY REGISTER
+## OPTIONALITY REGISTER (revised scope, Finding 4 of this pass)
 
 | Optionality (one line) | Converting 📄 evidence | Where it first appears | Conversion window |
 | --- | --- | --- | --- |
 | Health supplement product launch | A named product, launch date, and disclosed revenue line | AR FY27 Future Plans / a Reg 30 product-launch filing | Overdue 3 years already; realistic window unknown, watch AR FY27 (due ~Sep 2027) |
-| FVTPL quoted-debt portfolio proves to be a pure treasury holding, not a related-party funding vehicle | AR FY27 discloses portfolio composition (issuer names) and confirms no related-party linkage | AR FY27 Note 5 (Investments) | AR FY27, ~Sep 2027 |
 | Export growth (E2) reflects genuine customer-qualification stickiness rather than a lumpy/restocking order pattern | A filing names a specific new export customer, country, or certification tied to the export line, or Q2/Q3 FY27 sustains high-single-digit-plus like-for-like growth ex freight gross-up | Results filings (quarterly) or AR FY27 MD&A | 2-4 quarters (by Q3/Q4 FY27) |
 | Titagen/Unstergen/OXIBIL collagen-peptide brands (named only on the company website per company memory, absent from all three filed annual reports) | The brand names appear in a filed AR, results filing, or Reg 30 announcement with a revenue or volume figure attached | AR FY27, or an interim results filing | Unknown; needs Halt-1 verification of whether these are even current products |
-| Peptech Biosciences / Titan Media associate economics reconcile to the standalone-consolidated PAT gap | AR FY27 AOC-1 and consolidated P&L note reconcile the Rs 415.03 lakh gap, or disclose related-party sales through the associates | AR FY27, Form AOC-1 and consolidated notes | AR FY27 |
 | Committed forward capex programme (any named project, capacity figure, or commissioning date) | A capital-commitment note or Reg 30 capex announcement | AR FY27 Note (capital commitments) or a Reg 30 filing | Unknown; none exists today after 3 years of review |
+| Customer-qualification lock-in (B2) exists structurally in a pharma/biotech/diagnostic supply chain but rests only on industry inference, not Titan's own disclosure (added this pass, Finding 4) | AR or exchange filing names a specific certification (cGMP/ISO/NABL/WHO-GMP/USFDA/pharmacopoeia) held by Titan, or discloses sole-source/multi-year post-qualification customer language | AR FY27 Annexure 2 (Technology Absorption) or a customer-contract disclosure | Unknown; zero certification disclosure in 3 years reviewed, no near-term trigger identified |
 
-Registered options are watched, never scored. None of the above converted to
-📄 documented status within the evidence reviewed.
+Registered options are watched, never scored. Two rows previously carried
+here (FVTPL portfolio composition/related-party linkage; Peptech
+PAT-reconciliation gap) are verification items, not forward advantages, and
+are moved to input_gaps this pass (Finding 4) — both remain tracked, via
+B01's FLAG-ASSOCIATE-RECON and this stage's input_gaps list below. None of
+the above converted to 📄 documented status within the evidence reviewed.
 
 ---
 
@@ -519,53 +709,73 @@ Registered options are watched, never scored. None of the above converted to
 
 ### 6B Risks to each top-scoring emerging moat
 
-- **E2 (export growth, the only Moderate-strength item):** Early warning
-  signs the trend is lumpy rather than structural — a single-quarter export
-  order pattern, a reversion to FY25's flat/declining pattern once the FY26
-  base effect laps (B05 trigger 1, kill signal), or a freight-gross-up
-  base-effect distortion masking real deceleration. The filings give no
-  demand narrative to lean on if growth reverses.
-- **G2 (WC improvement, Weak):** Early warning sign is a reversal of the FY26
-  trade-payables stretch (a working-capital release funded by leaning on
-  suppliers tends to reverse), which would show up as WC days moving back
-  toward the FY23 range.
+- **E2 (export growth, the only Moderate-strength item, and now the only
+  category scoring above zero):** Early warning signs the trend is lumpy
+  rather than structural — a single-quarter export order pattern, a
+  reversion to FY25's flat/declining pattern once the FY26 base effect laps
+  (B05 trigger 1, kill signal), or a freight-gross-up base-effect distortion
+  masking real deceleration. The filings give no demand narrative to lean on
+  if growth reverses.
 
-### 6C Combined Gate 0 + Emerging Moat table
+**Note on G2 (removed from scoring, Finding 1 of this pass):** the corrected
+WC-days series shows no genuine multi-year improvement (net -3.18 days over
+four years, non-monotonic, Stage 1's own "stable" read). The single-year
+inventory/receivables turnover gains are real and documented, but the one
+day-count improvement they coincide with (FY25 to FY26) is a documented
+payables-stretch event (Trade Payables Turnover Ratio 25.52x to 17.26x, AR
+FY26 Note 45 variance note (g)), a pattern that tends to reverse, not a
+structural change. G2 carries no forward risk discussion here because it no
+longer scores; watch only whether FY27's turnover ratios hold up against a
+normalising payables cycle.
+
+### 6C Combined Gate 0 + Emerging Moat table (CORRECTED)
 
 | | Score | Classification |
 |---|---|---|
-| Gate 0 core score | 81/100 | — |
-| Gate 0 existing moat count | 2 confirmed, moat_score 15/60 | MODERATE |
-| Gate 0 grand total | 96/160 | GOOD+ |
-| Emerging Moat adjusted score | 3.0 / 92 | NO MEANINGFUL EMERGING MOAT |
+| Gate 0 core score | 79/100 | — |
+| Gate 0 existing moat count | 2 confirmed, moat_score 14/60 | MODERATE |
+| Gate 0 grand total | 93/160 | GOOD |
+| Emerging Moat adjusted score | 2.0 / 92 | NO MEANINGFUL EMERGING MOAT |
 
-### 6D Combined classification
+### 6D Combined classification (CORRECTED, Finding 2 of this pass)
 
-Applying the standard matrix (EXCEPTIONAL / EXCELLENT+ / HIGH POTENTIAL /
-GOOD+ / GOOD / TURNAROUND / AVERAGE / AVOID) to a GOOD+ backward score paired
-with a NO MEANINGFUL EMERGING MOAT forward score:
+The prompt names eight labels (EXCEPTIONAL, EXCELLENT+, HIGH POTENTIAL,
+GOOD+, GOOD, TURNAROUND, AVERAGE, AVOID) but does not supply a complete
+state-to-label mapping table; it gives qualitative guidance for two cells
+only — a GOOD/AVERAGE backward score paired with an EXPANSION forward score
+is "exactly the transition setup this operation hunts," and HIGH
+POTENTIAL/TURNAROUND rows need full reasoning. That gap is named here rather
+than bridged silently.
 
-**Combined assessment: GOOD+ (backward) / NO EXPANSION (forward) — reads as
-"GOOD, NOT TRANSITIONING."** This is explicitly one of the two non-obvious
-matrix cells worth full reasoning (the operator's TURNAROUND / HIGH POTENTIAL
-instruction extends by symmetry to its inverse: a solid backward score with a
-flat forward score deserves the same depth, because it is the pattern most
-likely to be mistaken for a transition setup by pattern-matching on the
-GOOD+ label alone). Titan Biotech clears Gate 0 on core financial quality
-(clean balance sheet, positive FCF, four-year data window, no deal breakers)
-but the evidence built in Stages 4-7 stacks the other way on the transition
-question specifically: pricing power WEAK (Stage 4), moat 15/60 MODERATE with
-most of that thinness a disclosure gap rather than a decisive pass (Gate 0),
+Applying the corrected Gate 0 inputs (core 79/100, moat 14/60 MODERATE,
+grand total 93/160, classification GOOD) against the corrected Emerging Moat
+score (2.0/92, classification NONE — no EXPANSION or even STRENGTHENING
+signal): the prompt ties any elevation above the backward label specifically
+to a forward EXPANSION signal, which does not exist here. Nothing in the
+prompt supports moving off the backward classification in either direction —
+GOOD is not itself weak enough to invoke the TURNAROUND/AVOID branch either.
+
+**Combined assessment: GOOD.** Titan Biotech clears Gate 0 on core financial
+quality (clean balance sheet, positive FCF, four-year data window, no deal
+breakers), but its corrected classification sits at GOOD, not GOOD+ — the
+working-capital-days unit error that had been the swing factor between the
+two bands is now fixed, and it fixes toward the weaker reading. The evidence
+built in Stages 4-7 stacks the same direction as before on the transition
+question: pricing power WEAK (Stage 4), moat 14/60 MODERATE with much of
+that thinness a disclosure gap rather than a decisive pass (Gate 0),
 credibility grade C on the two claims that would evidence a forward story
-(Stage 5/B05), and now a 3.0/92 Emerging Moat score with three categories
-showing documented ADVERSE evidence (declining capex, a contradicted
-capacity claim, a three-year undelivered product claim) rather than mere
-absence. The one live forward signal (export growth, E2) is real but
-unexplained by the company's own disclosure and evidence-capped as a result.
-This is not a company caught mid-climb on the Quality Ladder with the market
-not yet noticing; on the filed record, it is a company sitting where it has
-sat for three years, with one financial metric (exports) moving in a
-direction that could matter later if a filing ever explains why.
+(Stage 5/B05), and a corrected 2.0/92 Emerging Moat score with three
+categories (A3, F2, G1) showing documented ADVERSE evidence (declining
+capex, a contradicted capacity claim, treasury drift) and a fourth (G2)
+showing documented evidence that does not rise to a genuine multi-year
+improvement once the payable-days error is corrected. The one live forward
+signal (export growth, E2) is real but unexplained by the company's own
+disclosure and evidence-capped as a result. This is not a company caught
+mid-climb on the Quality Ladder with the market not yet noticing; on the
+corrected filed record, it is a company sitting where it has sat for three
+years, on a slightly lower backward rung than previously read, with one
+financial metric (exports) moving in a direction that could matter later if
+a filing ever explains why.
 
 ### 6E Final output card
 
@@ -576,7 +786,7 @@ direction that could matter later if a filing ever explains why.
 - Family D (Data/Digital): none existing, none emerging
 - Family E (Geographic): none existing, E2 export growth Moderate/inference-capped — the one live item
 - Family F (Talent/Org): none existing, F2 shows a documented execution deficit, not a moat
-- Family G (Financial/Structural): existing balance-sheet cleanliness (Gate 0 core), G1 shows adverse reinvestment signal, G2 Weak and possibly one-off
+- Family G (Financial/Structural): existing balance-sheet cleanliness (Gate 0 core), G1 shows adverse reinvestment signal; G2 shows genuine single-year turnover-ratio gains (inventory, receivables) but no multi-year WC-days trajectory once the payable-days unit error is corrected — the one FY25-to-FY26 day-count improvement that did occur is a documented payables-stretch event, not a structural change; scored None, not Weak (corrected this pass)
 - Family H (Ecosystem/External): none existing, none emerging
 - Family I (Structural asymmetries): none, by design for this company
 
@@ -608,36 +818,35 @@ input_gaps:
   - "Titagen/Unstergen/OXIBIL collagen-peptide brand names (from company memory / website) do not appear in any of the three filed annual reports; cannot be verified as current, revenue-generating products from the filed evidence base"
   - "No top-5/10 customer disclosure exists in any filing; C2 customer-concentration-improving cannot be tested"
   - "No R&D headcount, PhD count, or ESOP-to-technical-staff scheme detail disclosed; F1 talent density cannot be tested beyond the immaterial R&D spend figure"
+  - "FVTPL quoted-debt portfolio composition (issuer names) and any related-party linkage is undisclosed (AR FY26 Note 5, p.127) -- a verification item for Halt 1, cross-references B01's FLAG-ASSOCIATE-RECON; moved here this pass from the optionality register, where it did not belong (Finding 4)"
+  - "Peptech Biosciences associate PAT-reconciliation gap (Rs 415.03 lakh, per B01 FLAG-ASSOCIATE-RECON) is a verification item for Halt 1, not a forward optionality; moved here this pass from the optionality register (Finding 4)"
 flags:
   - {type: FLAG-CAPEX-CLAIM-CONTRADICTED, reason: "MD&A 'build capacity and capabilities for future business growth' sentence reused near-verbatim AR FY24 to AR FY26 while gross PPE additions fell three years running (Rs 1,948.49 lakh FY24 to Rs 936.88 lakh FY25 to Rs 740.08 lakh FY26, AR FY24/FY25/FY26 Note 2(a)) and 77% of the FY26 investing outflow went into a quoted-debt FVTPL portfolio (AR FY26 Note 5, p.127) whose own return fell from 7.04% to 3.64% (AR FY26 MD&A Key Ratios, p.103)."}
   - {type: FLAG-HEALTH-SUPPLEMENT-STALE, reason: "Identical or near-identical 'developing product for health supplement' claim repeated in AR FY2024, AR FY2025 and AR FY2026 Directors' Reports with zero product name, launch date, or revenue evidence in any year."}
   - {type: FLAG-NO-CAUSAL-EXPORT-STORY, reason: "Export revenue +49.0% FY26 (AR FY26 Note 38, p.141-142) is the scan's one Moderate-strength item, but no filing names a customer, country, or certification driving it; durability unproven from the filed record."}
-data_years: 3
-fy_range: "FY2024 to FY2026 (annual reports); Q1FY27 results filing for corroboration"
-em_score: 3
+em_score: 2
 em_classification: "NONE"
 active_categories:
   - {id: "E2", name: "China+1 beneficiary (export growth)", strength: "Moderate", evidence_type: "documented fact / inference on cause", time_to_materialise: "0-12m, ongoing"}
-  - {id: "G2", name: "WC improvement trajectory", strength: "Weak", evidence_type: "documented", time_to_materialise: "12-24m to prove durable, likely one-off"}
-evidence_mix: {documented: 2, claim: 1, inference: 1}
-completionist_recount: "recount performed: 2 documented items across 2 categories score as genuinely active (E2, G2); 3 additional categories (A3, F2, G1) carry documented ADVERSE evidence scored 0, not blank NO EVIDENCE FOUND; total active-plus-adverse-documented categories = 5, inside the 3-6 realistic base rate, no over-crediting of management claims as documented."
+evidence_mix: {documented: 5, claim: 0, inference: 1}
+completionist_recount: "recount performed at the 22-category level, one item per category at its primary evidence tier, excluding NO EVIDENCE FOUND categories (basis stated per Finding 6 of the correction log): documented (E2, G2, A3, F2, G1) = 5 categories, of which only E2 scores as an active moat (Moderate) and 3 (A3, F2, G1) carry documented ADVERSE evidence while 1 (G2, corrected this pass) is documented but non-qualifying, not adverse; inference (B2) = 1 category; claim = 0 categories (no category row rests solely on a management claim). Total categories with any evidence = 6, at the top edge of the 3-6 realistic base rate, no over-crediting of management claims as documented."
 catalysts_12m:
   - {catalyst: "Q2/Q3 FY27 like-for-like revenue growth (ex freight gross-up) vs high-single-digit bar", window: "0-9m", evidence_type: "MGMT CLAIM pending confirmation", anchor: "B05 trigger 1; results filings"}
-  - {catalyst: "AR FY27 names health-supplement product or repeats claim a 4th year", window: "~12m (AR FY27 due ~Sep 2027)", evidence_type: "DOCUMENTED (pending)", anchor: "AR FY24/FY25/FY26 Directors' Report Future Plans"}
-  - {catalyst: "AR FY27 discloses FVTPL portfolio composition / related-party linkage", window: "~12m", evidence_type: "DOCUMENTED (pending)", anchor: "AR FY26 Note 5, p.127"}
-capex_embedded_growth_pct: 3.4
+  - {catalyst: "AR FY27 names health-supplement product or repeats claim a 4th year", window: "~12m (AR FY27 due ~Sep 2027)", evidence_type: "SCHEDULED, NOT YET DOCUMENTED", anchor: "AR FY24/FY25/FY26 Directors' Report Future Plans"}
+  - {catalyst: "AR FY27 discloses FVTPL portfolio composition / related-party linkage", window: "~12m", evidence_type: "SCHEDULED, NOT YET DOCUMENTED", anchor: "AR FY26 Note 5, p.127"}
+capex_embedded_growth_pct: 2.8
 optionality_register:
   - {optionality: "Health supplement product launch", converting_evidence: "Named product, launch date, disclosed revenue", first_appears: "AR FY27 or a Reg 30 product filing", window: "Overdue 3 years; window unknown"}
-  - {optionality: "FVTPL portfolio proven pure treasury, not related-party vehicle", converting_evidence: "AR FY27 Note 5 discloses composition and related-party linkage status", first_appears: "AR FY27 Note 5", window: "~12m"}
   - {optionality: "Export growth (E2) proven structural, not lumpy/restocking", converting_evidence: "A filing names a specific new customer/country/certification, or growth sustains 2-4 quarters ex freight gross-up", first_appears: "Quarterly results or AR FY27 MD&A", window: "2-4 quarters"}
   - {optionality: "Titagen/Unstergen/OXIBIL brands confirmed as filed, revenue-generating products", converting_evidence: "Brand names appear in a filed AR or results filing with a figure attached", first_appears: "AR FY27 or interim results", window: "Unknown; needs Halt-1 verification"}
-  - {optionality: "Peptech/Titan Media associate PAT-reconciliation gap explained", converting_evidence: "AOC-1 and consolidated notes reconcile the Rs 415.03 lakh gap or disclose related-party sales through associates", first_appears: "AR FY27 Form AOC-1", window: "~12m"}
   - {optionality: "Named forward capex project with capacity/commissioning date", converting_evidence: "A capital-commitment note or Reg 30 capex announcement", first_appears: "AR FY27 or Reg 30 filing", window: "Unknown; none disclosed in 3 years reviewed"}
-combined_assessment: "GOOD+ (backward) / NO MEANINGFUL EMERGING MOAT (forward) — GOOD, NOT TRANSITIONING"
-combined_reasoning: "Gate 0's GOOD+ clears on core financial quality, but three Emerging Moat categories (A3, F2, G1) carry documented adverse evidence of declining capex, a contradicted capacity claim, and treasury drift rather than mere disclosure gaps, leaving only one Moderate, causally-unexplained item (E2 export growth) against a 92-point ceiling."
+  - {optionality: "Customer-qualification lock-in (B2) confirmed by Titan's own disclosure, not only industry inference", converting_evidence: "AR or exchange filing names a specific certification (cGMP/ISO/NABL/WHO-GMP/USFDA/pharmacopoeia) or discloses sole-source/multi-year post-qualification customer language", first_appears: "AR FY27 Annexure 2 or a customer-contract disclosure", window: "Unknown; zero certification disclosure in 3 years reviewed"}
+combined_assessment: "GOOD"
+combined_reasoning: "Gate 0's corrected GOOD score (core 79/100, moat 14/60 MODERATE, grand total 93/160) pairs with a corrected 2.0/92 Emerging Moat score with three categories (A3, F2, G1) carrying documented adverse evidence and no genuine multi-year WC-improvement trajectory once the payable-days unit error is fixed (G2 now scores 0); no forward EXPANSION signal exists to elevate the backward classification, so GOOD stands unmodified as the combined assessment (one of the prompt's eight labels; the prompt supplies no full mapping table for this cell, a gap named rather than bridged)."
 top_moat_risks:
   - "E2 export growth is the scan's only live category and has no causal explanation in the company's own filings; a reversion to FY25's flat pattern once the FY26 base laps would zero out the scan entirely"
   - "The capex-claim contradiction (F2/G1) is a credibility problem, not just an absence: management restated an unchanged sentence over a year in which the underlying spend pattern changed materially"
   - "Health-supplement claim has run three full annual cycles with zero delivery evidence; treating it as pending optionality rather than a dead claim requires AR FY27 to break the pattern"
-analyst_note: "This scan found materially less than Gate 0's moat_score (15/60) might suggest a forward reader should expect. Gate 0's thinness was mostly missing disclosure; this scan's thinness is mostly documented absence plus three categories of documented adverse evidence (declining capex, a stale/contradicted capacity claim, treasury drift into FVTPL). The single live item, export growth, is real and audited but structurally unexplained by the company itself. Recommend Halt 1 treat the optionality register (especially the capex-claim contradiction and the Titagen/Unstergen/OXIBIL brand-name gap) as the priority verification list, not the export growth story, which the filings already evidence as far as they go."
+  - "G2 (WC-days) no longer scores after Stage 1's unit-error correction; the only genuine year-on-year gains (inventory/receivables turnover) coincide with a documented payables stretch (AR FY26 Note 45 variance note (g)), a pattern that carries its own reversal risk"
+analyst_note: "This correction pass fixes an upstream unit error (B01's payable-days lakh-to-crore conversion) that had inflated the appearance of a working-capital release. The corrected WC-days series (130.85 to 135.39 to 150.05 to 127.67, a net -3.18-day change over four years) is stable, not improving; G2 now scores 0 and leaves the active list, cutting em_score from 3.0 to 2.0. Gate 0's own corrected numbers (core 79/100, moat 14/60 MODERATE, grand total 93/160, classification GOOD) replace the pre-correction GOOD+ inputs throughout Section 6. The combined_assessment field is corrected from a coined compound label to GOOD, the closest of the prompt's eight labels: no forward expansion signal exists to elevate a GOOD backward score, and the prompt itself supplies no full mapping table for this cell, a gap named rather than bridged. The one live emerging-moat category remains E2 (export growth), real but causally unexplained by the company's own filings. Recommend Halt 1 still prioritise the optionality register (capex-claim contradiction, Titagen/Unstergen/OXIBIL brand-name gap, and now also B2 qualification-lock-in) over the export story, which the filings already evidence as far as they go."
 ```

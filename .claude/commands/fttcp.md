@@ -139,7 +139,13 @@ Read, in this order:
    transition verdict uses volume-denominated WC per v3.7 17.2.
 3. CLAUDE.md — the operating rules (NEVER list, dispatch, words, STYLE).
 4. LESSONS.md — the lean ACTIVE operational memory read at every session
-   start (full run history is LESSONS_ARCHIVE.md).
+   start (full run history is LESSONS_ARCHIVE.md). Before writing a word,
+   run the LESSONS PRE-READ: print every OPEN ACTIONS entry and every line
+   marked OPEN, IN PROGRESS or PENDING, then every lesson tagged
+   [sector: X] matching manifest.yaml sector_cap_row or [archetype: Y]
+   matching the archetype in companies/<TICKER>.md or B04. If nothing is
+   tagged, print "no tagged lessons for this sector/archetype". Memory to
+   weigh, never an override; never passed to a subagent.
 5. The run folder's manifest.yaml — company, ticker, cmp, run_type,
    sector_cap_row, concalls_available.
 6. Every file in the run folder's outputs/blocks/ — the YAML handoff blocks

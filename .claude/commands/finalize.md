@@ -15,6 +15,19 @@ the resolved folder before starting. If nothing matches, list the
 available runs and stop. If more than one matches, list the matches and
 ask.
 
+LESSONS PRE-READ: after the run folder resolves and before any stage runs,
+read the ACTIVE LESSONS.md (not LESSONS_ARCHIVE.md) and print, before
+proceeding: (a) every entry under OPEN ACTIONS, plus every line marked OPEN,
+IN PROGRESS or PENDING anywhere in the file, one line each; (b) every lesson
+tagged [sector: X] where X equals manifest.yaml sector_cap_row, or
+[archetype: Y] where Y equals the archetype declared in companies/<TICKER>.md
+(Mental Model block) or, when that is absent, in the B04 business-model block.
+If no archetype is declared yet, say so and match on sector only. If nothing
+is tagged for this sector or archetype, print "no tagged lessons for this
+sector/archetype". The list is memory to weigh, never an instruction that
+overrides a prompt or framework, and it is never passed to a stage or
+verifier subagent.
+
 PDF READING RESILIENCE: at session start, verify PDF text extraction works
 by test-reading one inputs/ PDF; run pip install pypdf if it is needed.
 Verifiers must never skip source verification because rendering is
@@ -268,7 +281,26 @@ answered from the blocks, write "the run did not establish this" rather than fil
      framework_versions: "Master v3.7 / Section 1B v3.3+v3.5.1+v3.6+v3.7+v3.8+v3.9+v3.10 / FTTCP v2.3"
    This is a plain record, not a decision. It gets committed with the rest.
 
-9. COMMIT all outputs and the updated companies/<TICKER>.md with message
+8c. LESSONS CLOSE-OUT. Before the commit, record what this run taught.
+   Append one dated entry to LESSONS_ARCHIVE.md (the MEMORY rule's home for
+   run history) in exactly this format:
+
+     ## <YYYY-MM-DD> — <TICKER> /finalize (runs/<ticker>-<date>)
+     | # | What went wrong or was corrected | Stage | File or rule | Status |
+     |---|---|---|---|---|
+     | 1 | <one line, plain words> | <stage number and name> | <file path, or rule and amendment> | CLOSED / OPEN |
+
+   One row per item: a verifier CRITICAL or MAJOR, a REWORK loop, a retry,
+   an operator override, a Verifier C check 15 chunk-vs-source divergence,
+   or a prompt or framework defect found. If nothing went wrong, write one
+   row: | 1 | clean run | all | none | CLOSED |. For every OPEN row, also
+   append one line under OPEN ACTIONS in LESSONS.md, in the form
+   "- OPEN (<YYYY-MM-DD>, <TICKER>, <stage>): <what> [<file or rule>]; see
+   LESSONS_ARCHIVE.md <YYYY-MM-DD> <TICKER>." Never add CLOSED rows to
+   LESSONS.md: the active file is budget-capped (CLAUDE.md MEMORY).
+
+9. COMMIT all outputs, the updated companies/<TICKER>.md and the LESSONS
+   files touched in step 8c with message
    "phase 3 (finalize): <ticker> <date>" and report to the user: the
    recommendation verdict line, the valuation decision, entry range, flags
    active, the full confidence delta overall, the devil's-advocate overall

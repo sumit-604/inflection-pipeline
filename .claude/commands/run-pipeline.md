@@ -15,6 +15,19 @@ the resolved folder before starting. If nothing matches, list the
 available runs and stop. If more than one matches, list the matches and
 ask.
 
+LESSONS PRE-READ: after the run folder resolves and before any stage runs,
+read the ACTIVE LESSONS.md (not LESSONS_ARCHIVE.md) and print, before
+proceeding: (a) every entry under OPEN ACTIONS, plus every line marked OPEN,
+IN PROGRESS or PENDING anywhere in the file, one line each; (b) every lesson
+tagged [sector: X] where X equals manifest.yaml sector_cap_row, or
+[archetype: Y] where Y equals the archetype declared in companies/<TICKER>.md
+(Mental Model block) or, when that is absent, in the B04 business-model block.
+If no archetype is declared yet, say so and match on sector only. If nothing
+is tagged for this sector or archetype, print "no tagged lessons for this
+sector/archetype". The list is memory to weigh, never an instruction that
+overrides a prompt or framework, and it is never passed to a stage or
+verifier subagent.
+
 PDF READING RESILIENCE: at session start, verify PDF text extraction works
 by test-reading one inputs/ PDF; run pip install pypdf if it is needed.
 Verifiers must never skip source verification because rendering is
@@ -261,8 +274,13 @@ handoff schemas, flag rules, and error handling. Then:
        this file under an "Operator snapshot" heading. The orchestrator
        cannot read those interactive commands, so the operator fills the
        snapshot.
-   If any DOWNSHIFT FAILURE or COST SPIKE is found, add a one-line entry to
-   LESSONS.md naming the stage. session-cost.md is a run output: it travels
+   If any DOWNSHIFT FAILURE or COST SPIKE is found, append one line naming the
+   stage to this run's dated entry in LESSONS_ARCHIVE.md (the MEMORY rule's
+   home for run history). Add a line under OPEN ACTIONS in LESSONS.md only
+   when the item is still open at close, in the form "- OPEN (<YYYY-MM-DD>,
+   <TICKER>, <stage>): <what> [session-cost.md]; see LESSONS_ARCHIVE.md
+   <YYYY-MM-DD> <TICKER>." The active file is budget-capped (CLAUDE.md
+   MEMORY). session-cost.md is a run output: it travels
    with the run outputs on the run branch and its PR, never on a framework
    branch.
 

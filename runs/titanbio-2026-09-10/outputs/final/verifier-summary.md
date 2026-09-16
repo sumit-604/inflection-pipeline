@@ -1,4 +1,4 @@
-# VERIFIER SUMMARY — TITANBIO, phase 1, 2026-09-16
+# VERIFIER SUMMARY: TITANBIO, phase 1, 2026-09-16
 
 Run: runs/titanbio-2026-09-10. Scope: phase 1 verifiers A, B, D in full, and the
 Gate 0 and Emerging Moat portion of C. Verifier C's valuation, expectation ledger and

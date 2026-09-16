@@ -1,0 +1,63 @@
+stage: B09b-dossier
+company: "TITANBIO"
+run_date: "2026-09-16"
+model: claude-sonnet-5
+status: complete
+corpus_verdict: "CORPUS GAPPED"
+corpus_gaps:
+  - document: "Investor presentation"
+    expected_source: "company IR page"
+    kind: "plausibly-nonexistent"
+  - document: "Credit rating / rating rationale"
+    expected_source: "rating agency site"
+    kind: "plausibly-nonexistent"
+  - document: "Broker / research note"
+    expected_source: "BSE / broker research site"
+    kind: "plausibly-nonexistent"
+  - document: "BSE shareholding-pattern (XBRL) filing, 12-quarter series"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "Product-wise or plant-wise segment revenue split"
+    expected_source: "company filing"
+    kind: "plausibly-nonexistent"
+  - document: "Capacity, utilisation, or commissioning-date disclosure, any of four plants"
+    expected_source: "company filing / investor presentation"
+    kind: "plausibly-nonexistent"
+  - document: "Earnings call transcripts"
+    expected_source: "company IR page / BSE"
+    kind: "plausibly-nonexistent"
+archetypes:
+  - line: "Biological ingredients (single reportable segment)"
+    archetype: "Commodity converter"
+transition:
+  - line: "Biological ingredients (single reportable segment)"
+    from_tier: "R1 COMMODITY PRICE-TAKER"
+    to_tier: "R3 VALUE-ADDED / SPEC'D SUPPLIER (claimed, not delivered)"
+    engine: "Export customer mix shifting from commodity-grade to qualified regulated buyers, which should show up as cost of materials consumed falling as a share of revenue"
+    proof_gate: "Cost of materials consumed / revenue falls below the FY26 floor of 48.1% for two consecutive quarters while like-for-like revenue growth (ex freight gross-up) holds at or above high single digits"
+    recognition_gap: "OPEN: whether an assumed export-led value-add climb is already priced into Titan's current multiple is unresolved here; Stage 11 resolves it via the PE gap under the Amendment 17 converter cap"
+    ugliness: "STRUCTURAL-FEATURE"
+    transition_falsifier: "Cost-of-materials ratio holds flat or rises for two more quarters while like-for-like growth reverts to the FY25 flat/declining pattern, or the FY26 export growth proves to be a single-customer restock rather than a broadening qualified base"
+dominant_variables:
+  - "Cost of materials consumed / revenue (flat 48.1% FY26 vs 48.3% FY25)"
+  - "Export revenue share and its cause (39% of revenue, +49.0% YoY, no customer/country/certification named)"
+  - "Related-party share of raw-material cost (39.1% audited, Phoenix Bio Sciences 26.0%, +73.6% YoY)"
+  - "Net PPE additions vs net FVTPL/financial-asset additions (PPE falling 3 years running, 77% of FY26 outflow into FVTPL)"
+business_falsifier: "Cost of materials consumed rising past roughly 50% of revenue for two consecutive years, combined with a disruption or evidenced above-market pricing at Phoenix Bio Sciences (26.0% of the FY26 raw-material bill, no arm's-length benchmark disclosed, two serving Executive Directors on its board)"
+mental_model_status: "DRAFT - PENDING OPERATOR SIGN-OFF"
+fragility:
+  variable_count: 4
+  verifiability_ratio: "4 of 4 externally observable as audited numbers; 0 of 4 have a company-stated causal explanation"
+  single_point_failure: "Cost of materials consumed / revenue ratio failing to fall while growth continues"
+  fragility_verdict: "FRAGILE"
+candidate_count: 7
+second_order:
+  chains_drafted: 2
+  pending_live_links: 2
+  confirm_by_observations: 2
+research_brief_items: 11
+plain_summary_points: 15
+annex:
+  present: true
+  questions_answered: 10
+  corpus_commit_hash: "c74cdb3befa949fbdccf2eed6c15dbebc08dc1a7"

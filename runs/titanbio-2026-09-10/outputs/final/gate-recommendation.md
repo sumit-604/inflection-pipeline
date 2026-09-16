@@ -1,6 +1,6 @@
 # REWORK
 
-TITANBIO — Titan Biotech Ltd | runs/titanbio-2026-09-10 | Phase 1 | 2026-09-16
+TITANBIO: Titan Biotech Ltd | runs/titanbio-2026-09-10 | Phase 1 | 2026-09-16
 Verdict rule applied: 1 (confidence delta forces it). Verdict set: PROCEED /
 PROCEED WITH CAVEATS / PROCEED WITH FLAGS / REWORK / INSUFFICIENT EVIDENCE.
 
@@ -96,7 +96,7 @@ Freshness pair check: PASS. No freshness cap applies.
 
 ## Active flags
 
-### FLAG-PROMOTER — CAUTION
+### FLAG-PROMOTER: CAUTION
 
 Verdict: CAUTION. Scorecard 7 clean, 1 caution, 2 red. No deal breakers. Pledge 0
 percent across all three annual reports held.
@@ -134,7 +134,7 @@ Transition evidence (not NONE FOUND, three items, all VERIFIED):
 Clean record alongside: no SEBI order, adjudication or settlement found; no criminal,
 tax or other regulatory action found; auditor clean and unchanged; no fraud reported.
 
-### FLAG-CASH — STRUCTURAL
+### FLAG-CASH: STRUCTURAL
 
 Determination: STRUCTURAL.
 
@@ -190,7 +190,7 @@ with the H1 FY27 filing.
 | FLAG-CAPEX-CLAIM-CONTRADICTED | B07 | Capacity building sentence reused near verbatim FY24 to FY26 while gross plant additions fell Rs 1,948.49 to Rs 936.88 to Rs 740.08 lakh and 77 percent of the FY26 outflow went into a quoted debt portfolio |
 | FLAG-HEALTH-SUPPLEMENT-STALE | B07 | Identical health supplement development claim in the FY24, FY25 and FY26 Directors' Reports with no product, date or revenue in any year |
 | FLAG-NO-CAUSAL-EXPORT-STORY | B07 | Exports up 49.0 percent to Rs 80.33 cr (AR FY26 Note 38, p.141-142) with no customer, country or certification named anywhere |
-| FLAG-GATE0 | — | Not active. Gate 0 classifies GOOD, core 79/100, moat 14/60, grand 93/160, no deal breakers |
+| FLAG-GATE0 | n/a | Not active. Gate 0 classifies GOOD, core 79/100, moat 14/60, grand 93/160, no deal breakers |
 
 ## Contradicted claims from the peer stage
 

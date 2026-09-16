@@ -1,4 +1,4 @@
-# TITANBIO — Titan Biotech Ltd
+# TITANBIO: Titan Biotech Ltd
 Run: runs/titanbio-2026-09-10 | Phase 1 (evidence stages only) | 2026-09-16
 
 Phase 1 covers the evidence pack. Stages 10 and 11 have not run. This file carries

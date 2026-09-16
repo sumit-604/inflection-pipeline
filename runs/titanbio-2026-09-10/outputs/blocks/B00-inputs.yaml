@@ -35,6 +35,7 @@ input_gaps:
   - "screening CSV defect (collect_to_repo v3, known): only Data_Sheet.csv is populated for the company and each peer; Profit_Loss / Balance_Sheet / Cash_Flow / Quarters CSVs are empty header shells. Data_Sheet carries the FY17-FY26 series, so the gap is cosmetic."
   - "segment mix NOT DISCLOSED. The company reports ONE segment (AR FY26 p.100) with no product-wise or geography-wise revenue split beyond the export total."
   - "sector_cap_row corrected by hand from the collector default 'Pharma / CDMO' to 'Specialty chemicals' (35x). No Section 1B row exists for biological ingredients or fermentation inputs. Flagged for phase-3 confirmation."
+  - "FILENAME DEFECT, found at stage 09b: inputs/announcements/2025-02-28_arbitration-update.pdf is mislabeled. Its actual content is a Titan Media Limited voting-rights and call-money intimation (the stake rising to 48.44% from 32.29%), not an update on the arbitration matter. The file is genuine and correctly dated; only the name is wrong. Left in place because every citation in this run's reports uses that filename. Rename at the next collection for this ticker."
 freshness_pairs:
   - pair: "RESULTS to CONCALL"
     trigger_doc: "inputs/results/2026-08-13_Q1FY27_unaudited_results.pdf"

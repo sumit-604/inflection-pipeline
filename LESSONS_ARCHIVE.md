@@ -598,3 +598,90 @@ Verifier C check 15 (PR #163, PR #164), and the LESSONS discipline changes
 (PR #165).
 
 Size: LESSONS.md 164 lines / 1555 words before, 119 lines / 1062 words after.
+
+## 2026-09-16 — TITANBIO / Titan Biotech Ltd (runs/titanbio-2026-09-10), /run-pipeline phase 1 to Halt 1
+
+Corpus collected 2026-09-10 on a /step1-style intake; phase 1 executed 2026-09-16 on
+branch run/titanbio-phase1-2026-09-16. BSE-only scrip 524717, NO-CONCALL MODE.
+Gate recommendation REWORK on the ANALYSIS. Confidence delta overall 50.
+Run total 3,362,707 tokens across 20 subagent runs. No downshift failure, no cost
+spike (no prior run for this ticker; this run is the baseline).
+
+What broke or dragged, one line each.
+
+- VERIFIER A FALSE MAJOR, NEW FORM OF A KNOWN PATTERN. The first pass raised a MAJOR
+  claiming USD 194.4 million converts to Rs 18.66 crore at Rs 96 per dollar; the
+  correct figure is Rs 1,866 crore, and its own cross-check ("USD 6.03 bn approx
+  Rs 57.9 cr") carried the same slip. The active-LESSONS pattern predicts a false
+  CRITICAL from severity mislabelling; this was a false MAJOR from an Indian-unit
+  conversion error inside the verifier's own `source_truth` column. The orchestrator
+  check that caught it was re-deriving that column, exactly as the pattern prescribes.
+  The re-run with the severity plus coverage addendum withdrew the false finding AND
+  surfaced two real MAJORs the first pass had missed. SECOND OCCURRENCE of the
+  verifier-A-first-pass pattern in a new form: worth /compost considering whether the
+  addendum should carry a standing lakh/crore/million conversion table.
+
+- THE CROSS-FAMILY GATE WORKED IN BOTH DIRECTIONS, FIRST TIME OBSERVED. The
+  orchestrator overturned a Haiku finding on arithmetic, and the Haiku re-run then
+  overturned TWO Opus findings on source: Verifier B's claim that the consolidated
+  FY26 investing outflow is Rs 3,441.49 lakh (the audited statement shows Rs 3,254.59
+  lakh on both bases, AR FY26 p.116 and p.162) and its claim that the Rs 80.33 cr
+  export figure was NOT FOUND. Both resolved against Verifier B. Three disagreements
+  logged in outputs/final/verifier-disagreement-log.md.
+
+- A CRITICAL UNIT ERROR CHANGED THE HEADLINE CLASSIFICATION. Verifier C found Gate 0's
+  payable-days computed with revenue converted lakh-to-crore at 10x instead of 100x.
+  Its internal proof was elegant and reusable: the FY25 reading of 121.68 days implies
+  trade payables of Rs 52.15 cr against total current liabilities of Rs 17.74 cr.
+  Stage 1 re-ran, confirmed independently, and re-emitted: core 81 to 79, moat 15 to
+  14, grand 96 to 93, GOOD+ to GOOD. Stage 7's G2 category rested on the same
+  erroneous series and fell to 0, cutting em_score 3.0 to 2.0. A unit error two stages
+  deep moved both headline scores.
+
+- REWORK CAME FROM ONE COMPONENT AND ONE STAGE. Redflag coverage 50 against numerical
+  95.2, framework 85, peer 100. Stage 5 read the annual report PROSE well (Verifier B
+  spot-tested five promise-and-delivery rows, three confirmed, every narrative finding
+  it tested held) and did not work through the MD&A NUMERIC TABLES or the Directors'
+  Report ANNEXURES, where seven material items sit, including a disclosed foreign
+  exchange earned series that answers stage 5's own open question about what drove
+  FY26 growth. NOTE FOR A FUTURE NO-CONCALL RUN: when stage 5 substitutes annual
+  reports for transcripts, the prose is the easy half; the MD&A tables and the
+  Directors' Report annexures need naming explicitly in the task message.
+
+- DELIBERATE NON-CORRECTION, RECORDED. Stages 1 and 7 were corrected because a
+  verifier proved numbers WRONG. Stage 5 was not corrected because its items are
+  material it did not REACH, and correcting a stage to a verifier's own list before
+  that verifier measures coverage is circular and destroys the independent
+  measurement. The measured 50 stands; the remedy is scoped in
+  outputs/blocks/confidence.yaml; the spend decision is the operator's.
+
+- AMENDMENT 14 FADE GUARD, SECOND OCCURRENCE. Stage 9's SOM-implied revenue CAGR is
+  18.9% to 19.7% against the automatic low-single-digit fade that an EM NONE score
+  (2.0/92) triggers. Stage 9 flagged the conflict for an operator ruling rather than
+  resolving it silently, as the OPEN ACTION requires. First occurrence ENTERO
+  2026-08-30 (fade 10% vs SOM-implied 26.4%). TWO OCCURRENCES NOW: this clears the
+  /compost bar for promotion into a prompt or framework fix.
+
+- COLLECTOR DEFECTS, ALL FOUR RECURRED, plus a fifth. Wrong sector_cap_row (defaulted
+  to Pharma/CDMO, corrected to Specialty chemicals 35x), only FY2026 staged from three
+  available annual reports, zero results filings and zero announcements staged (all
+  fetched by hand from the BSE announcements API), and the empty screener
+  P&L/BS/CF/Quarters CSV shells. NEW: a 3-page Reg 30 intimation was classified into
+  annual-report/. A sixth, found at the dossier stage: the announcement file named
+  2025-02-28_arbitration-update.pdf is actually a Titan Media Limited voting-rights
+  and call-money intimation, not an arbitration update. The filename is wrong; the
+  file is genuine and every citation of it in this run's reports uses that filename,
+  so it was left in place and recorded in B00 rather than renamed mid-run.
+
+- NO-CONCALL MODE IS EXPENSIVE ON PEERS. Stage 6 and Verifier D read the same eleven
+  peer transcripts and cost 623,481 tokens between them, 18.5% of the run. On a
+  company with no calls of its own, the peer set is the only current management voice,
+  so it gets paid for twice. Worth knowing before picking peers for a no-concall name:
+  transcript count drives the bill.
+
+- PEER SELECTION EARNED ITS KEEP. The peer read CONTRADICTED the subject's implied
+  demand story (Advanced Enzyme growth swinging 26/2/22/2 per cent, Vidhi flat to down
+  with sector-wide slowdown language) and CONTRADICTED the idea that the subject's
+  capacity non-disclosure is peer-normal (all three peers disclose a utilisation
+  percentage and tie capex to it). On a no-concall name the peers are not colour, they
+  are the control group.

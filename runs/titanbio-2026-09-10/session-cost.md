@@ -16,3 +16,8 @@ Run: runs/titanbio-2026-09-10 | Phase 1 executed 2026-09-16
 | 6 | Peer concall verification | sonnet | - | n/r | n/r | 303652 | 5m53s | 1 |
 | 7 | Emerging moat scan | sonnet | - | n/r | n/r | 127498 | 7m43s | 1 |
 | 9 | TAM SAM SOM (web) | sonnet | - | n/r | n/r | 119510 | 11m30s | 1 |
+| 12a | Verifier A numerical | haiku | - | n/r | n/r | 118822 | 2m04s | 1 |
+| 12b | Verifier B red flags | opus | - | n/r | n/r | 230239 | 11m04s | 1 |
+| 12c | Verifier C framework (phase-1 scope) | opus | - | n/r | n/r | 131426 | 10m09s | 1 |
+| 12d | Verifier D peer coverage | sonnet | - | n/r | n/r | 319829 | 7m07s | 1 |
+| 1 | Gate 0 scorecard, CORRECTION run | sonnet | - | n/r | n/r | 87446 | 6m35s | 2 |

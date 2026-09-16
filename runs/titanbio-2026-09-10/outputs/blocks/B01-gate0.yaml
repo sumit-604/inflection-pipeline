@@ -6,30 +6,32 @@ status: complete
 input_gaps:
   - "Promoter pledge disclosure not found in any of the three annual reports (E3 scored 0)"
   - "R&D expenditure disclosed but immaterial (Rs 27.47 lakh FY26); no product-wise or segment revenue split available (single reportable segment)"
-  - "Distribution reach, segment player count, and a wider peer set beyond the 3 auto-selected comparables not found (M5, M7, M8)"
+  - "Distribution reach, segment player count, and a wider peer set beyond the 3 auto-selected comparables not found (M5, M7 marked PEER DATA NEEDED; M8 also 0 on absent company-level distribution disclosure)"
   - "Residual Rs 1.86 cr variance between AR-CFS investing outflow (Rs 32.55 cr) and screener-data aggregate (Rs 34.41 cr) for FY26, source not found"
   - "Rs 415.03 lakh gap between AOC-1 associate profit-considered (Rs 658.83 lakh) and actual consolidated P&L pickup (Rs 243.80 lakh) not itemized in notes"
+  - "FY17-FY22 balance-sheet/capex granularity not in corpus; effect of a longer window on A1/A2 (median/minimum ROCE) not tested, not estimated"
 flags:
   - {type: FLAG-REVENUE-BASIS, reason: "FY26 revenue includes an estimated Rs 5.84 cr freight gross-up absent from the FY25 comparator (AR FY26 p.138, cross-checked against AR FY25); reported FY26 growth 31.79% vs like-for-like 28.06%. All growth/margin scores in this scorecard use the like-for-like Rs 200.35 cr FY26 revenue figure."}
   - {type: FLAG-ASSOCIATE-RECON, reason: "AOC-1 profit-considered for Peptech + Titan Media (Rs 658.83 lakh, AR FY26 p.80) exceeds the actual 'Share in profit of associate' P&L pickup (Rs 243.80 lakh, AR FY26 p.161) by Rs 415.03 lakh; plausible Ind AS 28 unrealised-profit elimination on Rs 389.38 lakh of FY26 related-party sales to Peptech, mechanism not disclosed."}
 data_years: 10
 fy_range: "FY17 to FY26"
-blocks: {A: 16, B: 17, C: 17, D: 19, E: 12}
-core_score: 81
-moat_score: 15
-grand_total: 96
+blocks: {A: 16, B: 15, C: 17, D: 19, E: 12}
+core_score: 79
+moat_score: 14
+grand_total: 93
 moats_confirmed: 2
 moat_class: "MODERATE"
-classification: "GOOD+"
+classification: "GOOD"
 deal_breakers: []
 history_downgrade: false
 data_notes:
+  - "CORRECTION (2026-09-16, this pass): Payable Days originally divided Trade Payables by Revenue converted lakh-to-crore at a factor of 10 instead of 100, overstating every Payable Days figure 10x (e.g. FY25: 121.68 vs corrected 12.17). Proof: the erroneous FY25 reading implies Trade Payables of ~Rs 52.15 cr, which exceeds FY25 Total Current Liabilities of Rs 17.74 cr, an impossibility. Corrected WC Days: FY23 130.85, FY24 135.39, FY25 150.05, FY26 (adjusted) 127.67 -- a net decrease of only 3.18 days FY23-to-FY26, not the prior +4.26-to--12.40 swing. Effect: B4 5->3, Block B 17->15, Core 81->79, M12 1->0, moat 15->14, grand total 96->93, classification GOOD+->GOOD. Recv/Inv days and all other blocks/tests unaffected and unchanged."
   - "Screener Data_Sheet CSV confirmed CONSOLIDATED basis (FY26 PAT 29.89 cr matches consol Rs 2,988.52 lakh, AR FY26 p.161, not standalone Rs 2,744.72 lakh)"
-  - "Block A (ROCE/ROE) and B2/B3/B4/WC-days restricted to 4-year AR-anchored window (FY23-FY26); full 10-year screener-data window used for B1, C1-C4"
+  - "data_years=10 / fy_range=FY17-FY26 describes the window used by B1 and C1-C4 (growth/cash-flow) only. Block A (A1-A4, ROCE/ROE) and Block B's B2-B4 (capex, FCF, WC-days) use the FY23-FY26 AR-anchored 4-year window because no FY17-FY22 balance-sheet or capex detail exists in the corpus (only 3 annual reports on file, each a 2-year comparative). The effect of the longer window on A1/A2 was not tested and is NOT FOUND -- not estimated."
   - "PAT non-monotonic FY17-FY26: spiked to Rs 30.34 cr in FY21 (revenue jump to Rs 142.24 cr), dipped FY22-23, recovered by FY26; no loss-to-profit swing (all years positive)"
   - "ROCE/ROE restatement discrepancies found between consecutive ARs for FY25 (ROCE 16.11% own-report vs 17.18% restated in AR FY26; ROE 11.91% own-report vs 15.28% restated) — own-year figures used throughout for consistency"
   - "Trade Payables FY25 sub-line reclassified between AR FY25 (Rs 521.65 lakh) and AR FY26 comparative (Rs 765.52 lakh) though the Total Current Liabilities figure (Rs 1,773.64 lakh) is identical in both — a presentational reclass, not a restatement of the total; own-year figure used"
   - "Gross margin proxy used for M9 per rubric fallback: (Revenue - Material Cost)/Revenue, stated as proxy"
   - "1:5 stock split (effective 20-Feb-2026) and pending 1:4 bonus (recommended 03-Sep-2026, not yet approved) do not affect any metric in this scorecard, which works in absolute Rs crore terms (revenue, PAT, net worth, debt), not per-share figures; EPS/CAGR-per-share was out of scope for this framework"
-block_b_trend: "improving — FCF grew from Rs 18.11 cr (FY23) to Rs 22.99 cr (FY26) despite a FY24 dip to Rs 1.67 cr on a capex spike; WC days swung from +4.26 (FY23) to -12.40 (FY26, adjusted basis), driven by a jump in FY26 trade payables"
-analyst_note: "Classification (GOOD+) is carried almost entirely by Blocks A, C and D; the moat score (15/60, MODERATE) is thin largely because disclosure is thin, not because tests were decisively failed — seven of twelve moat tests scored 0 on missing data (R&D immaterial, no distribution/segment/wider-peer data), not on adverse evidence. The one clean adverse moat finding is M9 (gross margin 12.7pp below peer median) and M11 (deceleration: latest 3yr revenue CAGR 11.65% vs prior 3yr 21.92%), both suggesting Titan is a margin-taker, not a margin-setter, in a segment where three-times-larger ADVENZYMES sits at nearly 2x its EBITDA margin. The FY26 investing spike (Rs 25.16 cr into quoted investments) reads as a treasury deployment of the cash the working-capital release (WC days -12.4) and strong FCF (Rs 22.99 cr) freed up, not fresh capacity; this should be tested at Halt 1 for whether it signals a lack of organic reinvestment opportunity."
+block_b_trend: "stable — FCF grew from Rs 18.11 cr (FY23) to Rs 22.99 cr (FY26) despite a FY24 dip to Rs 1.67 cr on a capex spike; corrected WC days ran high throughout (130.85 FY23 -> 135.39 FY24 -> 150.05 FY25 -> 127.67 FY26 adjusted), a net decrease of only 3.18 days, not the swing to negative reported before correction — no working-capital release occurred"
+analyst_note: "Classification (GOOD, corrected from GOOD+) is carried mainly by Blocks A, C and D. A unit error in Payable Days (revenue converted lakh-to-crore at 10x instead of 100x) had overstated a >5-day WC improvement that was actually a 3.18-day, inside-band change; corrected, Block B falls to 15/20 and Core to 79/100, below the 80 threshold for GOOD+. The moat score (14/60, MODERATE) is thin largely because disclosure is thin, not because tests were decisively failed — six of twelve moat tests scored 0, five on missing data (R&D immaterial, no distribution/segment/wider-peer data; M5 and M7 now marked PEER DATA NEEDED) and one (M12) now a clean data-based 0 since corrected WC days sit above 45 days in all four years. The two clean adverse moat findings are M9 (gross margin 12.7pp below peer median) and M11 (deceleration: latest 3yr revenue CAGR 11.65% vs prior 3yr 21.92%), both suggesting Titan is a margin-taker, not a margin-setter, in a segment where three-times-larger ADVENZYMES sits at nearly 2x its EBITDA margin. The FY26 investing spike (Rs 25.16 cr into quoted investments) is funded by strong operating FCF (Rs 22.99 cr), not a working-capital release as previously read; it should be tested at Halt 1 for whether it signals a lack of organic reinvestment opportunity."

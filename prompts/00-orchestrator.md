@@ -133,6 +133,10 @@ run_type: full         # full | refresh | valuation-only
 sector_cap_row: "Specialty chemicals"   # from Section 1B cap table
 listed_date: ""        # optional YYYY-MM-DD; if within ~3y of run_date the
                        # IPO prospectus is a MANDATORY collect + HIGH gap
+collector_warnings: [] # written by collect_to_repo.py: defects the collector
+                       # already detected (empty screener sheets, an empty
+                       # announcements/, a standalone fallback). Stage 0 copies
+                       # every entry into B00.input_gaps verbatim.
 notes: ""              # free text, passed to synthesis
 ```
 
@@ -208,6 +212,43 @@ This is a corpus-completeness gate, not a company-quality flag: it caps the
 gate on missing evidence, never on the business. It does not halt the run
 (no mechanical failure); the run proceeds degraded per the DEGRADATION MAP,
 and the named document goes on the operator's upload list at Halt 1.
+
+### COLLECTOR DEFECT GATE (stage 0 corpus audit, hard rule)
+
+A present file is not a present document. The collector ships known defects,
+and each one used to be rediscovered mid-run by the stage that needed the
+data. Stage 0 runs these checks with the folder inventory and records every
+result in `B00.input_gaps`.
+
+1. **manifest.collector_warnings.** The collector records the defects it
+   detected during collection. Copy every entry into `B00.input_gaps`
+   verbatim. An empty list is a clean collection, not a missing field.
+2. **Screening CSV content, never existence.** Open every file in
+   `inputs/screening/`. Screener's export holds raw values on Data Sheet and
+   formulas on Profit & Loss, Balance Sheet, Cash Flow and Quarters; when the
+   workbook carries no cached formula results, those sheets export with their
+   row labels intact and every figure blank. A CSV whose labels are present
+   with no numbers beside them is an ABSENT document. Record it as absent and
+   name the sheet. Never report a row count as evidence that a CSV is
+   populated.
+3. **Empty `announcements/` or `shareholding/` is a collector gap.** Neither
+   folder is evidence about the company. An empty `announcements/` means the
+   Reg 30 fetch found nothing or did not run, and it must never be read as "no
+   material events were filed"; the intent-and-action cross-check in stages 5,
+   7 and 8 degrades and says so. An empty `shareholding/` leaves the FII+DII
+   UA qualifier and the promoter pledge trend open, and the UA multiplier
+   (Amendment 3) cannot be applied on an unevidenced qualifier.
+4. **`cmp` or `market_cap_cr` of 0 is a MECHANICAL FAILURE, not a gap.** It
+   means the wrong screener URL variant was collected: a `/consolidated/` page
+   on a company that files no consolidated statements returns no price, no
+   market cap and no Financials export, and the main-company CSVs are missing
+   with it. This HALTS the run under MECHANICAL HALT AND RETRY RULES. Tell the
+   operator to re-collect from the standalone `/company/<TICKER>/` page. Every
+   valuation stage reads `cmp`; a run carrying zero there produces a verdict
+   against a price that does not exist.
+
+Checks 1 to 3 do not halt: they degrade per the DEGRADATION MAP with the gap
+named. Check 4 halts, because it is a collection failure, not a thin corpus.
 
 ### NO-CONCALL MODE
 

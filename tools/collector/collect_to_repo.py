@@ -101,8 +101,14 @@ MARKS = {
                  "limited review report"],
     "presentation": ["investor presentation", "earnings presentation",
                      "corporate presentation"],
-    "other":    ["press release", "media release", "intimation under",
-                 "disclosure under regulation 30", "outcome of board meeting"],
+    # Reg 30 material events are the documented-ACTION record the
+    # intent-and-action cross-check runs on (stages 5, 7 and 8). They used to
+    # land in other/, which the input contract preserves and never consumes.
+    "announcements": ["intimation under", "disclosure under regulation 30",
+                      "intimation under regulation 30", "regulation 30 of sebi",
+                      "outcome of board meeting", "allotment of equity",
+                      "receipt of order", "letter of intent"],
+    "other":    ["press release", "media release"],
 }
 AR_MARKS = ["annual report", "board's report", "boards' report",
             "directors' report", "notice of annual general meeting",
@@ -121,24 +127,117 @@ def classify(p):
     return "_unclassified"
 
 def xlsx_to_csvs(x, dest, prefix):
+    """Write one CSV per sheet. Returns (sheets_written, empty_sheet_names).
+
+    Screener's export holds raw values on Data Sheet and FORMULAS on Profit &
+    Loss, Balance Sheet, Cash Flow and Quarters. When the workbook carries no
+    cached formula results, data_only reads every one of those cells as None
+    and the four CSVs are written empty. That shipped silently on eleven runs:
+    the file existed, the numbers did not, and the gap surfaced several stages
+    later as "screener CSV empty". An empty sheet is now deleted rather than
+    written, and its name is returned so the manifest and stage 0 both see it.
+    """
     from openpyxl import load_workbook
+    written, empty = 0, []
     wb = load_workbook(str(x), data_only=True, read_only=True)
-    n = 0
     try:
         for ws in wb.worksheets:
             safe = re.sub(r"[^A-Za-z0-9._-]+", "_", ws.title).strip("_") or "sheet"
-            with open(dest / f"{prefix}-{safe}.csv", "w", newline="",
-                      encoding="utf-8") as f:
+            out, rows, nums = dest / f"{prefix}-{safe}.csv", 0, 0
+            with open(out, "w", newline="", encoding="utf-8") as f:
                 w = csv.writer(f)
                 for row in ws.iter_rows(values_only=True):
                     if any(c is not None for c in row):
                         w.writerow(["" if c is None else c for c in row])
-            n += 1
+                        rows += 1
+                        nums += sum(1 for c in row if isinstance(c, (int, float)))
+            # Row labels survive an unevaluated workbook; the numbers do not.
+            # So a row count proves nothing and the test is on numeric cells.
+            # This is the exact shape of the shipped defect: "Sales", "Expenses",
+            # "Net Profit" present, every figure beside them blank.
+            if rows >= 2 and nums >= 3:
+                written += 1
+            else:
+                out.unlink(missing_ok=True)
+                empty.append(f"{prefix}:{ws.title}")
     finally:
         wb.close()   # Windows: unclosed handles make files undeletable
-    return n
+    return written, empty
 
 def sanitize(s): return re.sub(r"[^A-Za-z0-9._-]+", "-", s).strip("-")
+
+# ---------------- BSE announcements (Reg 30 material events) ----------------
+# Screener carries no exchange filings, so announcements/ was empty on every
+# run. The documented-ACTION record that stages 5, 7 and 8 cross-check intent
+# against comes from BSE directly.
+BSE_ANN = "https://api.bseindia.com/BseIndiaAPI/api/AnnSubCategoryGetData/w"
+BSE_ATTACH = "https://www.bseindia.com/xml-data/corpfiling/AttachLive/"
+BSE_HEADERS = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
+    # The endpoint 403s without both of these.
+    "Origin":  "https://www.bseindia.com",
+    "Referer": "https://www.bseindia.com/",
+    "Accept":  "application/json, text/plain, */*",
+}
+
+def fetch_bse_announcements(scrip, dest, months=12, max_files=25):
+    """Download the last `months` of Reg 30 filings for one BSE scrip.
+
+    Returns (files_written, warning_text). Never raises: an unreachable
+    exchange must not stop a collection.
+
+    Two traps this function exists to close:
+    - A FUTURE strToDate returns an empty list, not an error. A sweep on
+      07-Sep-2026 asked for strToDate=20260908 and read back zero rows for
+      six companies in a row, which looked like "none of them file
+      anything". Both dates are clamped to today.
+    - An empty result is SUSPECT, never a fact. A live listing files
+      something inside twelve months. Zero rows is returned as a warning for
+      the manifest, not as a clean zero.
+    """
+    import requests
+    today = datetime.date.today()                      # clamp: never a future date
+    frm   = today - datetime.timedelta(days=int(months * 30.44))
+    rows, page = [], 1
+    try:
+        while page <= 6:                               # 50 rows a page, hard stop
+            r = requests.get(BSE_ANN, timeout=30, headers=BSE_HEADERS, params={
+                "pageno": page, "strCat": "-1", "strType": "C",
+                "strPrevDate": frm.strftime("%Y%m%d"),
+                "strToDate":   today.strftime("%Y%m%d"),
+                "strScrip": scrip, "strSearch": "P", "subcategory": "-1"})
+            batch = (r.json() or {}).get("Table") or []
+            rows += batch
+            if len(batch) < 50:
+                break
+            page += 1
+    except Exception as e:
+        return 0, (f"BSE announcements fetch FAILED ({str(e)[:60]}); "
+                   f"announcements/ left empty, fill it by hand")
+    if not rows:
+        return 0, (f"BSE returned ZERO announcements for scrip {scrip} over "
+                   f"{months} months. Treat this as SUSPECT, not as 'the "
+                   f"company files nothing': check the scrip code and the date "
+                   f"window by hand before accepting an empty announcements/.")
+    n = 0
+    for row in rows[:max_files]:
+        att = (row.get("ATTACHMENTNAME") or "").strip()
+        if not att:
+            continue
+        try:
+            body = requests.get(BSE_ATTACH + att, timeout=60,
+                                headers=BSE_HEADERS).content
+        except Exception:
+            continue
+        if not body.startswith(b"%PDF"):
+            continue
+        day = (row.get("News_submission_dt") or "")[:10].replace("-", "")
+        (dest / sanitize(f"{day}-{att}")).write_bytes(body)
+        n += 1
+    if not n:
+        return 0, (f"{len(rows)} BSE announcement rows found for scrip {scrip} "
+                   f"but no attachment downloaded; announcements/ is empty")
+    return n, ""
 
 # ---------------- companies.txt ----------------
 def parse_companies():
@@ -164,9 +263,9 @@ def parse_companies():
 
 # ---------------- scrape name / cmp / mcap from screener page ----------------
 def scrape_company_facts(url):
-    """Return (name, cmp, mcap_cr) from the public screener page."""
+    """Return (name, cmp, mcap_cr, page_text, bse_scrip) from screener."""
     import requests
-    name, cmp_v, mcap = None, 0.0, 0.0
+    name, cmp_v, mcap, bse = None, 0.0, 0.0, ""
     try:
         html = requests.get(url, timeout=30, headers={
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}).text
@@ -178,11 +277,15 @@ def scrape_company_facts(url):
         if m: cmp_v = float(m.group(1).replace(",", ""))
         m = re.search(r"Market Cap\s*₹?\s*([\d,]+(?:\.\d+)?)\s*Cr", flat)
         if m: mcap = float(m.group(1).replace(",", ""))
-        return name, cmp_v, mcap, flat.lower()
+        # Screener links the BSE quote page, whose last path part is the
+        # 6-digit scrip code the BSE announcements API keys on.
+        m = re.search(r"bseindia\.com/[^\"'\s]*?/(\d{6})/?", html)
+        if m: bse = m.group(1)
+        return name, cmp_v, mcap, flat.lower(), bse
     except Exception as e:
         print(f"  ⚠ could not scrape screener page ({str(e)[:60]}); "
               f"manifest gets zeros, fix by editing manifest.yaml")
-        return name, cmp_v, mcap, ""
+        return name, cmp_v, mcap, "", bse
 
 def pick_sector(name, page_text):
     hay = ((name or "") + " " + page_text[:4000]).lower()
@@ -235,7 +338,27 @@ def main():
     for u in peer_urls: print(f"Peer:  {u}")
 
     print("\nFetching company facts from screener page...")
-    name, cmp_v, mcap, page_text = scrape_company_facts(url)
+    warnings = []
+    name, cmp_v, mcap, page_text, bse_code = scrape_company_facts(url)
+    # A /consolidated/ URL on a company that files no consolidated statements
+    # returns a page with no price, no market cap and no Financials export.
+    # The run then carries cmp 0.0 and no main-company CSVs, and the cause is
+    # invisible from the run folder. Fall back to the standalone page once.
+    if (cmp_v == 0.0 or mcap == 0.0) and "/consolidated/" in url:
+        alt = url.replace("/consolidated/", "/")
+        print(f"  ⚠ no price on the consolidated page; retrying standalone: {alt}")
+        a_name, a_cmp, a_mcap, a_text, a_bse = scrape_company_facts(alt)
+        if a_cmp > 0.0:
+            url, name, cmp_v, mcap, page_text, bse_code = (
+                alt, a_name, a_cmp, a_mcap, a_text, a_bse)
+            warnings.append("consolidated page had no price, standalone page "
+                            "used: this company files no consolidated "
+                            "statements. Every stage reads standalone.")
+    if cmp_v == 0.0:
+        warnings.append("cmp is 0.0: the screener page returned no price, so "
+                        "the URL variant is probably wrong. Fix manifest.yaml "
+                        "before the run. A manifest cmp of 0 breaks every "
+                        "valuation stage downstream.")
     name = name or ticker.title()
     sector = pick_sector(name, page_text)
     print(f"  name:   {name}\n  cmp:    ₹{cmp_v}\n  mcap:   ₹{mcap} Cr"
@@ -267,14 +390,22 @@ def main():
 
     # classify
     print("\nClassifying...")
-    kinds = ["annual-report", "results", "rating", "concalls",
-             "peer-concalls", "screening", "presentation", "other",
-             "_unclassified"]
+    # Every folder in the orchestrator input contract is created, even when
+    # nothing lands in it. prospectus, announcements, shareholding and
+    # research were never created at all, so six runs recorded them as
+    # collector failures when the collector had simply never looked.
+    kinds = ["prospectus", "annual-report", "results", "rating", "concalls",
+             "peer-concalls", "announcements", "shareholding", "research",
+             "screening", "presentation", "other", "_unclassified"]
     inp  = run / "inputs"
     dirs = {k: inp / k for k in kinds}
     for d in dirs.values(): d.mkdir(parents=True, exist_ok=True)
+    # git does not track an empty directory, so an absent folder and an empty
+    # folder look identical to stage 0. Plant a keeper in each.
+    for k, d in dirs.items():
+        if not k.startswith("_"): (d / ".gitkeep").touch()
     counts = {k: 0 for k in kinds}
-    seen, warnings, ar_cand = set(), [], []
+    seen, ar_cand, empty_sheets = set(), [], []
 
     def place(pdf, kind, prefix=""):
         key = (kind, pdf.stat().st_size, pdf_pages(pdf))
@@ -291,7 +422,9 @@ def main():
                 k = classify(f)
                 ar_cand.append(f) if k == "annual-report" else place(f, k)
             elif f.suffix.lower() in {".xlsx", ".xlsm", ".xls"}:
-                counts["screening"] += xlsx_to_csvs(f, dirs["screening"], "screener")
+                n_csv, n_empty = xlsx_to_csvs(f, dirs["screening"], "screener")
+                counts["screening"] += n_csv
+                empty_sheets += n_empty
     if ar_cand:
         # keep the two most recent years (year taken from the filename), using
         # page count only as a tie-break / fallback when no year is present.
@@ -308,7 +441,32 @@ def main():
             if f.suffix.lower() == ".pdf" and classify(f) == "concalls":
                 place(f, "peer-concalls", pt)
             elif f.suffix.lower() in {".xlsx", ".xlsm", ".xls"}:
-                counts["screening"] += xlsx_to_csvs(f, dirs["screening"], pt)
+                n_csv, n_empty = xlsx_to_csvs(f, dirs["screening"], pt)
+                counts["screening"] += n_csv
+                empty_sheets += n_empty
+
+    # Reg 30 filings: screener has none, BSE does.
+    if bse_code:
+        print(f"\nFetching BSE announcements (scrip {bse_code})...")
+        n_ann, ann_warn = fetch_bse_announcements(bse_code, dirs["announcements"])
+        counts["announcements"] += n_ann
+        print(f"  {n_ann} filing(s) -> announcements/")
+        if ann_warn: warnings.append(ann_warn)
+    else:
+        warnings.append("BSE scrip code not found on the screener page, so "
+                        "announcements/ is empty. This is a collector gap, "
+                        "not evidence that the company files nothing.")
+    if counts["shareholding"] == 0:
+        warnings.append("shareholding/ is empty: no source is automated yet. "
+                        "Push the latest quarterly shareholding pattern by "
+                        "hand; it closes the FII+DII UA qualifier and the "
+                        "promoter pledge trend.")
+    if empty_sheets:
+        warnings.append("screener export sheets came out EMPTY (formulas with "
+                        "no cached values), so no CSV was written for them: "
+                        + ", ".join(empty_sheets) + ". Open Financials.xlsx "
+                        "once in Excel or LibreOffice, save it, then run "
+                        "--push-again.")
 
     concalls_available = counts["concalls"] >= 3
     if counts["annual-report"] == 0:
@@ -324,6 +482,11 @@ def main():
     for k in ("other", "_unclassified"):
         if counts[k] == 0: shutil.rmtree(dirs[k], ignore_errors=True)
 
+    # Stage 0 reads these. A defect the collector already knows about must
+    # not have to be rediscovered mid-run.
+    warn_yaml = ("collector_warnings:\n" +
+                 "\n".join('  - "' + w.replace('"', "'") + '"' for w in warnings)
+                 ) if warnings else "collector_warnings: []"
     (run / "manifest.yaml").write_text(
 f"""company: {name}
 ticker: {ticker}
@@ -333,6 +496,7 @@ run_date: {today}
 run_type: full
 concalls_available: {str(concalls_available).lower()}
 sector_cap_row: "{sector}"
+{warn_yaml}
 notes: "Collected from screener.in by collect_to_repo.py v3. Sector row auto-picked; verify."
 """, encoding="utf-8")
 

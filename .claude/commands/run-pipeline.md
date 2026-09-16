@@ -28,11 +28,24 @@ sector/archetype". The list is memory to weigh, never an instruction that
 overrides a prompt or framework, and it is never passed to a stage or
 verifier subagent.
 
-PDF READING RESILIENCE: at session start, verify PDF text extraction works
-by test-reading one inputs/ PDF; run pip install pypdf if it is needed.
+TOOLING GATE (before stage 0, not after the first failure). The
+session-start hook runs a PDF tooling preflight and reports its result in
+session context. Read that line first. Then confirm it yourself: test-read
+one inputs/ PDF end to end. Tooling that the hook could not install is
+installed here (apt-get install -y -qq poppler-utils; pip install -q pypdf;
+pip install -q --force-reinstall cffi when pypdf imports but fails on a real
+file).
+
+If a real Read still fails, do not start the stages on broken tooling. Switch
+the whole run to pre-extracted text FIRST: extract every inputs/ PDF to a
+page-marked .txt beside it (one "[page N]" marker per page), and pass the
+.txt path to every stage and every verifier in place of the PDF. Pre-extracted
+text is the reliable default on any large corpus in any case, because it also
+avoids the ~20-32MB image-render wall. Record the switch in B00.
+
 Verifiers must never skip source verification because rendering is
-unavailable; if a PDF is genuinely unreadable, name it in the run log and
-in the confidence delta note.
+unavailable; if a PDF is genuinely unreadable by both routes, name it in the
+run log and in the confidence delta note.
 
 EXECUTION DISCIPLINE: invoke every stage as a foreground subagent call
 that blocks until the subagent returns. Never use background task
@@ -101,6 +114,22 @@ handoff schemas, flag rules, and error handling. Then:
    input_gaps naming each absent document type; degraded stages run per
    the orchestrator's DEGRADATION MAP. There is no count-based halting.
 
+   COLLECTOR DEFECT GATE: the collector records what it already knows it got
+   wrong. Read manifest.collector_warnings and carry every entry into
+   B00.input_gaps verbatim. Then run the three checks the collector cannot
+   make for itself, per the orchestrator's COLLECTOR DEFECT GATE section:
+     - A screening CSV is checked for CONTENT, never for existence. Open each
+       one. A file whose row labels are present with no figures beside them is
+       an EMPTY export, and counts as an absent document, not a present one.
+     - An empty inputs/announcements/ or inputs/shareholding/ is a COLLECTOR
+       gap, never evidence that the company files nothing. Record it as a gap
+       and say which one it is.
+     - manifest.cmp of 0, or a market_cap_cr of 0, means the wrong screener URL
+       variant was collected (a /consolidated/ page on a company that files no
+       consolidated statements). HALT and tell the operator to re-collect from
+       the standalone /company/<TICKER>/ page. Every valuation stage downstream
+       reads cmp; a zero there is a mechanical failure, not a gap.
+
    FRESHNESS PAIR CHECK: after the inventory, run the four-pair freshness
    check per the orchestrator's FRESHNESS PAIR CHECK section and write
    freshness_pairs[] and freshness_verdict into B00. The pairs: newest
@@ -121,9 +150,19 @@ handoff schemas, flag rules, and error handling. Then:
    message, and calling out an empty prospectus/ as HIGH priority when the
    company listed within ~3 years: "These input folders are empty: [list].
    Proceed with these gaps, or push the documents (py
-   collect_to_repo.py --push-again) and tell me to continue?" Proceed
-   only on the operator's explicit answer, then never ask again for the
-   rest of the run. If the manifest has concalls_available: false, do
+   collect_to_repo.py --push-again) and tell me to continue?"
+
+   Ask ONCE and do not block on the answer. The question is delivered through
+   AskUserQuestion, whose stream sometimes closes in a remote session; the run
+   used to stop there waiting for a reply that could never arrive. If the
+   question delivers, proceed on the operator's answer. If it does not deliver,
+   or it returns no answer, proceed on the documented evidence-maximizing
+   default for each empty folder (run degraded per the DEGRADATION MAP, never
+   substitute a guess for a document), record in B00 both the defaults taken
+   and the fact that the question was undeliverable, and repeat the full list
+   of empty folders in the Halt 1 dossier so the operator sees it there. Either
+   way the question is asked once and never again for the rest of the run.
+   If the manifest has concalls_available: false, do
    not list concalls or peer-concalls as gaps: their absence is
    declared, not accidental. This is the single permitted question in
    the pipeline.

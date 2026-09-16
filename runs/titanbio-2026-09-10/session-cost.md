@@ -23,3 +23,4 @@ Run: runs/titanbio-2026-09-10 | Phase 1 executed 2026-09-16
 | 1 | Gate 0 scorecard, CORRECTION run | sonnet | - | n/r | n/r | 87446 | 6m35s | 2 |
 | 7 | Emerging moat scan, CORRECTION run | sonnet | - | n/r | n/r | 129645 | 11m33s | 2 |
 | 12a | Verifier A numerical, RE-RUN with addendum | haiku | - | n/r | n/r | 138111 | 4m35s | 2 |
+| 13 | Synthesis-lite (3 files) | opus | - | n/r | n/r | 130981 | 6m51s | 1 |

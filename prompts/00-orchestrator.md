@@ -633,15 +633,36 @@ Before synthesis, the orchestrator computes from B12a-d:
 ```
 confidence_delta:
   numerical_acceptance: %      # from B12a
-  redflag_coverage: %          # B12b: share of verifier-found flags already caught upstream
+  redflag_coverage: %          # B12b.acceptance_rate: MATERIAL verifier-found
+                               # flags already caught upstream. null when
+                               # B12b.material_found < 4
   framework_adherence: %       # B12c
   peer_utilisation: %          # B12d: peers used substantively / peers provided
-  overall: min of the four
+  overall: min of the APPLICABLE components
+  overall_set_by: ""           # which component produced overall
+  not_applicable: []           # components dropped, each with its reason
 ```
+
+EVERY RATIO NEEDS A DENOMINATOR THAT CAN CARRY IT. A component computed on
+fewer than 4 items is NOT APPLICABLE: it is dropped from `overall`, listed in
+`not_applicable` with its counts, and reported to the operator as a count
+rather than a percentage. One item must not move a confidence score by 25
+points, and `overall: min of the four` let exactly that decide a verdict.
+
+`redflag_coverage` runs on Verifier B's MATERIAL findings (CRITICAL + MAJOR),
+never on the length of its list. Verifier B is asked for a thorough
+independent read, and scoring it on every minor observation made
+thoroughness lower the pipeline's confidence: an auditor who listed fifteen
+items and missed none scored below one who listed three. A MISSED item still
+binds through its own severity, which is the correct channel for it: a missed
+repeated evasion is CRITICAL and carries the weight of a CRITICAL.
 
 Interpretation bands for synthesis: overall ≥ 90 high confidence; 75-89
 normal, note specifics; 60-74 PROCEED verdicts downgrade one level; < 60
-forced REWORK.
+forced REWORK. Name `overall_set_by` wherever the band is quoted, so the
+reader sees which audit set the number. If fewer than two components are
+applicable, `overall` is NOT COMPUTED and the synthesis reports the component
+counts instead of a confidence band; it never fills the gap with a guess.
 
 ---
 

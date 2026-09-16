@@ -274,8 +274,13 @@ handoff schemas, flag rules, and error handling. Then:
        this file under an "Operator snapshot" heading. The orchestrator
        cannot read those interactive commands, so the operator fills the
        snapshot.
-   If any DOWNSHIFT FAILURE or COST SPIKE is found, add a one-line entry to
-   LESSONS.md naming the stage. session-cost.md is a run output: it travels
+   If any DOWNSHIFT FAILURE or COST SPIKE is found, append one line naming the
+   stage to this run's dated entry in LESSONS_ARCHIVE.md (the MEMORY rule's
+   home for run history). Add a line under OPEN ACTIONS in LESSONS.md only
+   when the item is still open at close, in the form "- OPEN (<YYYY-MM-DD>,
+   <TICKER>, <stage>): <what> [session-cost.md]; see LESSONS_ARCHIVE.md
+   <YYYY-MM-DD> <TICKER>." The active file is budget-capped (CLAUDE.md
+   MEMORY). session-cost.md is a run output: it travels
    with the run outputs on the run branch and its PR, never on a framework
    branch.
 

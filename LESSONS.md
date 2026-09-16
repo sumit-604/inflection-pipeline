@@ -141,11 +141,11 @@ _Pending framework edits Keerti maintains._
   prompt/framework fix.
 - CLOSED 2026-09-15: the FTTCP v2.1 pointer pass left open by commit 17a57973.
   Nine pointers now read v2.3, and the FTTCP file banner carries a v2.3 note
-  (branch prompt-audit-fixes).
+  (PR #162, branch prompt-audit-fixes).
 - Canary (canary/verifier.py) needs an Anthropic API key (ANTHROPIC_API_KEY).
   None is configured, so the canary has never run (checked 2026-09-15).
   OPEN ACTION: rewrite the canary to call Claude Code headless (`claude -p`)
-  instead of the API, so it runs on the Max subscription.
+  instead of the API, so it runs on the Max subscription. Recorded in PR #162.
 - CLOSED (2026-09-15): prompts/11-valuation-pipeline.md lines 185, 205 and 301
   ("conservative" wording) and lines 213 to 221 (Hurdle Ratio as a verdict cap, now a
   feasibility check per Amendment 24 and OR-2) fixed by PR #164 (branch
@@ -161,4 +161,4 @@ _Pending framework edits Keerti maintains._
      Reading A: size zero. Reading B: a 2-3% starter is allowed. Needs an operator
      ruling, then record it in the section-1b Ruled or Open list.
 - CORRECTION (2026-09-15): Section 1B v3.6 holds six amendments (11 to 16), not 56.
-  This corrects the August chat summary.
+  This corrects the August chat summary. Recorded in PR #163.

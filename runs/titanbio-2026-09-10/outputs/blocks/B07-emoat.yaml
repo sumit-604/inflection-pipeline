@@ -1,0 +1,43 @@
+stage: B07-emoat
+company: "TITANBIO"
+run_date: "2026-09-16"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "No capital-commitment note (contracts remaining to be executed on capital account) disclosed in AR FY2026; no named capex project, capacity figure, or commissioning date exists for any of the four plants in any of the three annual reports"
+  - "No quality/manufacturing certification (cGMP, ISO, NABL, WHO-GMP, USFDA, pharmacopoeia compliance) disclosed anywhere despite a pharma/biotech/diagnostic customer base; B2 qualification-lock-in cannot be tested beyond structural industry inference"
+  - "Titagen/Unstergen/OXIBIL collagen-peptide brand names (from company memory / website) do not appear in any of the three filed annual reports; cannot be verified as current, revenue-generating products from the filed evidence base"
+  - "No top-5/10 customer disclosure exists in any filing; C2 customer-concentration-improving cannot be tested"
+  - "No R&D headcount, PhD count, or ESOP-to-technical-staff scheme detail disclosed; F1 talent density cannot be tested beyond the immaterial R&D spend figure"
+flags:
+  - {type: FLAG-CAPEX-CLAIM-CONTRADICTED, reason: "MD&A 'build capacity and capabilities for future business growth' sentence reused near-verbatim AR FY24 to AR FY26 while gross PPE additions fell three years running (Rs 1,948.49 lakh FY24 to Rs 936.88 lakh FY25 to Rs 740.08 lakh FY26, AR FY24/FY25/FY26 Note 2(a)) and 77% of the FY26 investing outflow went into a quoted-debt FVTPL portfolio (AR FY26 Note 5, p.127) whose own return fell from 7.04% to 3.64% (AR FY26 MD&A Key Ratios, p.103)."}
+  - {type: FLAG-HEALTH-SUPPLEMENT-STALE, reason: "Identical or near-identical 'developing product for health supplement' claim repeated in AR FY2024, AR FY2025 and AR FY2026 Directors' Reports with zero product name, launch date, or revenue evidence in any year."}
+  - {type: FLAG-NO-CAUSAL-EXPORT-STORY, reason: "Export revenue +49.0% FY26 (AR FY26 Note 38, p.141-142) is the scan's one Moderate-strength item, but no filing names a customer, country, or certification driving it; durability unproven from the filed record."}
+data_years: 3
+fy_range: "FY2024 to FY2026 (annual reports); Q1FY27 results filing for corroboration"
+em_score: 3
+em_classification: "NONE"
+active_categories:
+  - {id: "E2", name: "China+1 beneficiary (export growth)", strength: "Moderate", evidence_type: "documented fact / inference on cause", time_to_materialise: "0-12m, ongoing"}
+  - {id: "G2", name: "WC improvement trajectory", strength: "Weak", evidence_type: "documented", time_to_materialise: "12-24m to prove durable, likely one-off"}
+evidence_mix: {documented: 2, claim: 1, inference: 1}
+completionist_recount: "recount performed: 2 documented items across 2 categories score as genuinely active (E2, G2); 3 additional categories (A3, F2, G1) carry documented ADVERSE evidence scored 0, not blank NO EVIDENCE FOUND; total active-plus-adverse-documented categories = 5, inside the 3-6 realistic base rate, no over-crediting of management claims as documented."
+catalysts_12m:
+  - {catalyst: "Q2/Q3 FY27 like-for-like revenue growth (ex freight gross-up) vs high-single-digit bar", window: "0-9m", evidence_type: "MGMT CLAIM pending confirmation", anchor: "B05 trigger 1; results filings"}
+  - {catalyst: "AR FY27 names health-supplement product or repeats claim a 4th year", window: "~12m (AR FY27 due ~Sep 2027)", evidence_type: "DOCUMENTED (pending)", anchor: "AR FY24/FY25/FY26 Directors' Report Future Plans"}
+  - {catalyst: "AR FY27 discloses FVTPL portfolio composition / related-party linkage", window: "~12m", evidence_type: "DOCUMENTED (pending)", anchor: "AR FY26 Note 5, p.127"}
+capex_embedded_growth_pct: 3.4
+optionality_register:
+  - {optionality: "Health supplement product launch", converting_evidence: "Named product, launch date, disclosed revenue", first_appears: "AR FY27 or a Reg 30 product filing", window: "Overdue 3 years; window unknown"}
+  - {optionality: "FVTPL portfolio proven pure treasury, not related-party vehicle", converting_evidence: "AR FY27 Note 5 discloses composition and related-party linkage status", first_appears: "AR FY27 Note 5", window: "~12m"}
+  - {optionality: "Export growth (E2) proven structural, not lumpy/restocking", converting_evidence: "A filing names a specific new customer/country/certification, or growth sustains 2-4 quarters ex freight gross-up", first_appears: "Quarterly results or AR FY27 MD&A", window: "2-4 quarters"}
+  - {optionality: "Titagen/Unstergen/OXIBIL brands confirmed as filed, revenue-generating products", converting_evidence: "Brand names appear in a filed AR or results filing with a figure attached", first_appears: "AR FY27 or interim results", window: "Unknown; needs Halt-1 verification"}
+  - {optionality: "Peptech/Titan Media associate PAT-reconciliation gap explained", converting_evidence: "AOC-1 and consolidated notes reconcile the Rs 415.03 lakh gap or disclose related-party sales through associates", first_appears: "AR FY27 Form AOC-1", window: "~12m"}
+  - {optionality: "Named forward capex project with capacity/commissioning date", converting_evidence: "A capital-commitment note or Reg 30 capex announcement", first_appears: "AR FY27 or Reg 30 filing", window: "Unknown; none disclosed in 3 years reviewed"}
+combined_assessment: "GOOD+ (backward) / NO MEANINGFUL EMERGING MOAT (forward) — GOOD, NOT TRANSITIONING"
+combined_reasoning: "Gate 0's GOOD+ clears on core financial quality, but three Emerging Moat categories (A3, F2, G1) carry documented adverse evidence of declining capex, a contradicted capacity claim, and treasury drift rather than mere disclosure gaps, leaving only one Moderate, causally-unexplained item (E2 export growth) against a 92-point ceiling."
+top_moat_risks:
+  - "E2 export growth is the scan's only live category and has no causal explanation in the company's own filings; a reversion to FY25's flat pattern once the FY26 base laps would zero out the scan entirely"
+  - "The capex-claim contradiction (F2/G1) is a credibility problem, not just an absence: management restated an unchanged sentence over a year in which the underlying spend pattern changed materially"
+  - "Health-supplement claim has run three full annual cycles with zero delivery evidence; treating it as pending optionality rather than a dead claim requires AR FY27 to break the pattern"
+analyst_note: "This scan found materially less than Gate 0's moat_score (15/60) might suggest a forward reader should expect. Gate 0's thinness was mostly missing disclosure; this scan's thinness is mostly documented absence plus three categories of documented adverse evidence (declining capex, a stale/contradicted capacity claim, treasury drift into FVTPL). The single live item, export growth, is real and audited but structurally unexplained by the company itself. Recommend Halt 1 treat the optionality register (especially the capex-claim contradiction and the Titagen/Unstergen/OXIBIL brand-name gap) as the priority verification list, not the export growth story, which the filings already evidence as far as they go."

@@ -1,0 +1,47 @@
+stage: B06-peers
+company: "TITANBIO"
+run_date: "2026-09-16"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - "FERMENTA's four transcripts are four years stale (Aug-21 to Jun-22, no calls held since); used only for structural/mechanism evidence, never for current-cycle demand"
+  - "No peer overlaps Titan's exact niche (peptones/culture media); ADVENZYMES (enzymes), FERMENTA (vitamin D3), VIDHIING (food colors) are adjacent, not identical, segments"
+peers_provided: 11
+verified:
+  - {claim: "Realistic customer-qualification cycle for a new export customer in a comparable regulated B2B ingredient business", peers: ["VIDHIING", "ADVENZYMES"], anchor_count: 4}
+partially_verified:
+  - {claim: "Raw-material/input cost trend direction (energy, freight, packaging rising; peptone/protein feedstock specifically not addressed by any peer)", peers: ["ADVENZYMES", "VIDHIING"]}
+  - {claim: "Nutraceutical/health-supplement adjacency R&D-to-launch timeline (multi-year delay is normal; zero product-naming for 3 years is not, on peer precedent)", peers: ["ADVENZYMES", "FERMENTA"]}
+contradicted:
+  - {claim: "Fermentation-ingredient demand is re-accelerating industry-wide in FY26/FY27", contradicting_peer: "ADVENZYMES and VIDHIING", quote_anchor: "ADVENZYMES Q1FY27 call (Aug-12-2026, Mukund Kabra): 'a softer, more muted start to the fiscal year'; VIDHIING Q4FY26 call (May-14-2026, Bipin Manek): 'a noticeable slowdown in demand across several international markets'"}
+  - {claim: "Titan's non-disclosure of capacity utilisation and capex-to-revenue logic is industry-normal", contradicting_peer: "ADVENZYMES and VIDHIING (and FERMENTA structurally)", quote_anchor: "ADVENZYMES Q1FY27 call (Aug-12-2026, Mukund Kabra): utilisation 'close to 70-75%' tied explicitly to next capex decision; VIDHIING Q4FY26 call (May-14-2026, Mihir Manek): Rs 75-85cr capex with stated 18-month commissioning and Rs 125-150cr expected revenue"}
+unverifiable:
+  - {claim: "Do peers gross freight into reported revenue, and what freight cost trends do they report", peers_checked: ["ADVENZYMES", "FERMENTA", "VIDHIING"]}
+peer_coverage_map:
+  - {peer: "ADVENZYMES", quarter: "Q2/H1 FY26 (Nov-2025)", usage: "SUBSTANTIVE", contribution: "Demand growth 26% YoY, registration timelines, tariff/inquiry-count quantification"}
+  - {peer: "ADVENZYMES", quarter: "Q3/9M FY26 (Feb-2026)", usage: "SUBSTANTIVE", contribution: "Demand deceleration to 2% YoY, capacity utilisation 55-60%, R&D capex plan"}
+  - {peer: "ADVENZYMES", quarter: "Q4/FY26 (May-2026)", usage: "SUBSTANTIVE", contribution: "FY26 full-year +17%, Nutrazyme/Wellfa disclosed revenue, mix-vs-margin discussion"}
+  - {peer: "ADVENZYMES", quarter: "Q1 FY27 (Aug-2026)", usage: "SUBSTANTIVE", contribution: "Demand back down to 2% YoY, utilisation 70-75%, Rs123cr capex breakdown, active pricing"}
+  - {peer: "FERMENTA", quarter: "Q1 FY22 (Aug-2021, STALE)", usage: "SUBSTANTIVE", contribution: "Structural: formula-priced input contract, near-100% utilisation, capex-to-revenue rule of thumb"}
+  - {peer: "FERMENTA", quarter: "Q2 FY22 (Nov-2021, STALE)", usage: "SUBSTANTIVE", contribution: "Structural: utilisation by segment, premix capex, regulatory pathway discussion"}
+  - {peer: "FERMENTA", quarter: "Q3 FY22 (Feb-2022, STALE)", usage: "SUBSTANTIVE", contribution: "New-product delay pattern (vegan D3/K1), shareholder capital-allocation challenge"}
+  - {peer: "FERMENTA", quarter: "Q4/FY22 (Jun-2022, STALE)", usage: "SUBSTANTIVE", contribution: "Repeated timeline slippage, key-account margin trade-off pattern"}
+  - {peer: "VIDHIING", quarter: "Q4 FY24 (Jun-2024)", usage: "SUBSTANTIVE", contribution: "4-10 year customer approval cycle (first statement), capacity ramp baseline"}
+  - {peer: "VIDHIING", quarter: "Q2/H1 FY26 (Nov-2025)", usage: "SUBSTANTIVE", contribution: "Revenue -17.8% YoY, sector-wide 30-35% utilisation commentary, pricing power on tariff"}
+  - {peer: "VIDHIING", quarter: "Q4/FY26 (May-2026)", usage: "SUBSTANTIVE", contribution: "FY26 revenue flat/down, CoatIcon adjacency, high-value mix target slippage 50%->5%"}
+industry_cross_read:
+  demand: "Mixed to weak, not a broad re-acceleration; ADVENZYMES growth swung 26%->2%->22%->2% QoQ, VIDHIING FY26 revenue flat/down with explicit sector-wide slowdown commentary"
+  pricing_inputs: "Energy/freight/packaging cost inflation confirmed industry-wide; peptone/protein feedstock specifically never addressed by any peer; peers show more active, quantified pricing/tariff management than Titan discloses"
+  capex_cycle: "Moderate, utilisation-triggered expansion across the peer set, not a capacity race; every peer discloses a utilisation percentage and ties capex to it plus an expected revenue outcome; Titan is the outlier in non-disclosure, not in expansion pace"
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "Quantified US tariff/EBITDA exposure (ADVENZYMES Rs10-11cr EBITDA hit; VIDHIING 10-20% quarterly revenue impact) -- Titan names no tariff exposure despite a growing export book"
+  - "Currency/FX sensitivity as a named factor (VIDHIING) -- Titan is a large net FX earner and discloses none"
+  - "Customer concentration and key-account margin trade-offs (FERMENTA, structural) -- Titan discloses no concentration data"
+  - "Quantified regulatory/customer-approval-cycle pipeline risk (VIDHIING 4-10 years) -- Titan never frames its export pipeline this way"
+  - "Named competitor counts and market-share percentages (ADVENZYMES) -- Titan's market-share language stays permanently hedged and unquantified"
+  - "Freight/logistics cost volatility as a named risk category (VIDHIING) -- Titan never names freight/logistics as a risk despite its own freight gross-up practice"
+  - "Live, adversarial shareholder scrutiny of non-core capital allocation (FERMENTA real-estate deal challenged directly on a call) -- a discipline mechanism Titan's FVTPL portfolio has never faced, having no calls"
+net_narrative_effect: "complicates"
+analyst_note: "The peer set cannot directly test Titan's associate-reconciliation or FVTPL-portfolio claims (no structural analogue exists among the three peers), so Triggers 3 and 4 stay outside this stage's reach; FERMENTA's real-estate shareholder pushback is offered only as a structural illustration of what a concall disciplines, not as evidence on Titan's portfolio itself. The cross-peer hypothesis (Part 5) gives Stage 11/FTTCP a concrete, sourced test: Titan's flat 48% raw-material ratio alongside rising OPM does not match the mix-driven margin signature (declining raw-material ratio) this peer set shows when margin expands, which favours a volume/base-effect or accounting reading of Titan's FY26 margin gain over a value-add mix-climb reading."

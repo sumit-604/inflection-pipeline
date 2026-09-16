@@ -1,0 +1,35 @@
+stage: B01-gate0
+company: "TITANBIO"
+run_date: "2026-09-16"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Promoter pledge disclosure not found in any of the three annual reports (E3 scored 0)"
+  - "R&D expenditure disclosed but immaterial (Rs 27.47 lakh FY26); no product-wise or segment revenue split available (single reportable segment)"
+  - "Distribution reach, segment player count, and a wider peer set beyond the 3 auto-selected comparables not found (M5, M7, M8)"
+  - "Residual Rs 1.86 cr variance between AR-CFS investing outflow (Rs 32.55 cr) and screener-data aggregate (Rs 34.41 cr) for FY26, source not found"
+  - "Rs 415.03 lakh gap between AOC-1 associate profit-considered (Rs 658.83 lakh) and actual consolidated P&L pickup (Rs 243.80 lakh) not itemized in notes"
+flags:
+  - {type: FLAG-REVENUE-BASIS, reason: "FY26 revenue includes an estimated Rs 5.84 cr freight gross-up absent from the FY25 comparator (AR FY26 p.138, cross-checked against AR FY25); reported FY26 growth 31.79% vs like-for-like 28.06%. All growth/margin scores in this scorecard use the like-for-like Rs 200.35 cr FY26 revenue figure."}
+  - {type: FLAG-ASSOCIATE-RECON, reason: "AOC-1 profit-considered for Peptech + Titan Media (Rs 658.83 lakh, AR FY26 p.80) exceeds the actual 'Share in profit of associate' P&L pickup (Rs 243.80 lakh, AR FY26 p.161) by Rs 415.03 lakh; plausible Ind AS 28 unrealised-profit elimination on Rs 389.38 lakh of FY26 related-party sales to Peptech, mechanism not disclosed."}
+data_years: 10
+fy_range: "FY17 to FY26"
+blocks: {A: 16, B: 17, C: 17, D: 19, E: 12}
+core_score: 81
+moat_score: 15
+grand_total: 96
+moats_confirmed: 2
+moat_class: "MODERATE"
+classification: "GOOD+"
+deal_breakers: []
+history_downgrade: false
+data_notes:
+  - "Screener Data_Sheet CSV confirmed CONSOLIDATED basis (FY26 PAT 29.89 cr matches consol Rs 2,988.52 lakh, AR FY26 p.161, not standalone Rs 2,744.72 lakh)"
+  - "Block A (ROCE/ROE) and B2/B3/B4/WC-days restricted to 4-year AR-anchored window (FY23-FY26); full 10-year screener-data window used for B1, C1-C4"
+  - "PAT non-monotonic FY17-FY26: spiked to Rs 30.34 cr in FY21 (revenue jump to Rs 142.24 cr), dipped FY22-23, recovered by FY26; no loss-to-profit swing (all years positive)"
+  - "ROCE/ROE restatement discrepancies found between consecutive ARs for FY25 (ROCE 16.11% own-report vs 17.18% restated in AR FY26; ROE 11.91% own-report vs 15.28% restated) — own-year figures used throughout for consistency"
+  - "Trade Payables FY25 sub-line reclassified between AR FY25 (Rs 521.65 lakh) and AR FY26 comparative (Rs 765.52 lakh) though the Total Current Liabilities figure (Rs 1,773.64 lakh) is identical in both — a presentational reclass, not a restatement of the total; own-year figure used"
+  - "Gross margin proxy used for M9 per rubric fallback: (Revenue - Material Cost)/Revenue, stated as proxy"
+  - "1:5 stock split (effective 20-Feb-2026) and pending 1:4 bonus (recommended 03-Sep-2026, not yet approved) do not affect any metric in this scorecard, which works in absolute Rs crore terms (revenue, PAT, net worth, debt), not per-share figures; EPS/CAGR-per-share was out of scope for this framework"
+block_b_trend: "improving — FCF grew from Rs 18.11 cr (FY23) to Rs 22.99 cr (FY26) despite a FY24 dip to Rs 1.67 cr on a capex spike; WC days swung from +4.26 (FY23) to -12.40 (FY26, adjusted basis), driven by a jump in FY26 trade payables"
+analyst_note: "Classification (GOOD+) is carried almost entirely by Blocks A, C and D; the moat score (15/60, MODERATE) is thin largely because disclosure is thin, not because tests were decisively failed — seven of twelve moat tests scored 0 on missing data (R&D immaterial, no distribution/segment/wider-peer data), not on adverse evidence. The one clean adverse moat finding is M9 (gross margin 12.7pp below peer median) and M11 (deceleration: latest 3yr revenue CAGR 11.65% vs prior 3yr 21.92%), both suggesting Titan is a margin-taker, not a margin-setter, in a segment where three-times-larger ADVENZYMES sits at nearly 2x its EBITDA margin. The FY26 investing spike (Rs 25.16 cr into quoted investments) reads as a treasury deployment of the cash the working-capital release (WC days -12.4) and strong FCF (Rs 22.99 cr) freed up, not fresh capacity; this should be tested at Halt 1 for whether it signals a lack of organic reinvestment opportunity."

@@ -24,6 +24,7 @@ where it was looked for.
 |---|---|---|
 | Annual reports, concall transcripts, presentations, Financials.xlsx | screener.in, with the operator's login | `tools/collector/screener_collect.py <url> --output-dir <folder> --no-drive` |
 | Credit-rating rationales | Agency pages linked from screener.in's Credit ratings block, no login | `tools/collector/fetch_ratings.py <url> --output-dir <folder>` |
+| Credit-rating rationales, when the agency site is blocked | Bull AI indexes the exchange-filed press release under doc type `Credit Rating` | `search_company_documents` then `get_document_chunks` on the returned document_id |
 | Credit-rating letters filed with the exchange | BSE announcement PDFs, no login | same script |
 | Quarterly results, filings, and any document Bull AI indexes | `https://docs.bull-ai.in/d/<code>` serves the original PDF, no call cost | plain download; codes come from Bull AI search or chunk results |
 | Quarterly results and filings Bull AI lacks | BSE announcements API (`AnnSubCategoryGetData/w`, `strCat=Result` or `-1`, with a bseindia Referer header) | plain download of `xml-data/corpfiling/AttachLive/<attachment>`; if that returns an 8 KB error page, the same name under `AttachHis/` serves it |
@@ -39,8 +40,8 @@ Screener.in address quirk: ASM Technologies lives at its BSE code,
 | File on disk | no | no, but its links serve the PDF | yes |
 | Page numbers | no | yes | yes |
 | Knows what it holds | no | yes, free to ask | n/a |
-| Credit ratings | no | no | yes |
-| Budget | 400 calls/day | 100 calls/month on the current plan; searches and page reads count, availability and usage do not | your login and tokens |
+| Credit ratings | no | yes, where the company filed the agency press release or letter with the exchange (third run got all three) | yes |
+| Budget | 400 calls/day | 1,000 calls/month since the second run (was 100); searches, guidance pulls and page reads count, availability and usage do not | your login and tokens |
 
 Coverage seen on small caps: both services lagged on annual reports (FY25
 only for Valiant and Ruby on Bull AI; screener.in had FY26 for all three),
@@ -104,3 +105,83 @@ Known limits of this run, all recorded in the per-company manifests:
   it. Its manifest carries a calendar-year warning.
 - Cards ran 2,600 to 3,800 words against the framework's 1,400 to 1,900. Longer than
   specified, and flagged rather than trimmed.
+
+## Third run, 2026-09-16
+
+Three operator picks, named in one message: Antelopus Selan Energy, IOL Chemicals and
+Pharmaceuticals, RACL Geartech.
+
+Verdicts: PROCEED to `/step1` on IOLCP. WATCH on RACLGEAR. PASS on ANTELOPUS.
+
+The one-line reason per name:
+- **IOLCP** is a commodity converter with a six-year documented mix shift out of ibuprofen,
+  a single-rung R2 to R3 claim, no debt, and two quarters of margin ahead of guidance.
+- **RACLGEAR** is the best operator of the three and the most fully priced: proof gate
+  fired, ugliness an artifact of KTM's insolvency, and roughly 44 times FY26 standalone
+  earnings against a nearest sector ceiling of 25x with FY27 guided at about 10 percent
+  growth. EARNINGS-ONLY posture.
+- **ANTELOPUS** has no quality-ladder climb on offer. It is an R1 commodity price-taker
+  getting bigger. Q1 FY27 profit rose 42 percent on a falling sales volume, which is price
+  doing the work. PRICED NARRATIVE posture.
+
+**Name resolution note.** The operator's "antelopus selan enegy" resolves to Antelopus Selan
+Energy Ltd, BSE 530075, NSE ANTELOPUS, ISIN INE818A01017, formerly Selan Exploration
+Technology Ltd. Bull AI's `search_companies` does not match on "Selan Exploration
+Technology"; searching "Selan" alone returns it.
+
+**The corpus rule was bent again, under the same condition as 2026-09-08.** This session had
+no egress: the proxy denied the CONNECT to docs.bull-ai.in, BSE, screener.in and
+indiaratings.co.in with a gateway 403, logged in the proxy status at 2026-09-16T12:38Z. No
+PDF could be downloaded and the collector could not run. The corpus was built from Bull AI's
+chunk reader and its page-cited search, following the operator ruling recorded for the
+second run. Every card cites a file and a page, and the page numbers are the source PDF's
+own.
+
+**Credit ratings were reachable this time, through Bull AI rather than the agency sites.**
+Step 10 is populated on all three cards, against eight of nine NOT FOUND last run:
+- ANTELOPUS: India Ratings press release, 09-Jun-2026, IND A/Stable/IND A1, full rationale
+  read. It supplied the single most important fact of the run, that the PSCs for Bakrol,
+  Karjisan and Lohar expire in 2030 and Cambay in 2029, and that 2P reserve reporting is
+  clipped to those dates. Those assets carry 91 percent of production.
+- RACLGEAR: CARE press release, 10-Oct-2025, CARE A-; Positive / CARE A2+, rationale read.
+- IOLCP: PARTIAL. Only the company's reaffirmation letters are held (CARE A+; Stable and
+  CARE A1+, reaffirmed 30-Jun-2026). The rationale press release is not indexed.
+
+Bull AI budget: 21 calls used of 789 remaining on the 1,000-a-month plan. Breakdown: 5
+company searches, 3 availability maps, 10 document searches, 3 guidance pulls, 1 chunk read
+(the India Ratings rationale, pages 1 to 4). Availability maps and usage checks cost
+nothing against the metered tools and were used freely.
+
+Known limits of this run, all recorded in the per-company manifests:
+- **No earnings call transcript exists for ANTELOPUS at any date.** Bull AI indexes an
+  intimation record and no transcript. For a name whose thesis is a drilling schedule, the
+  normal place to test the schedule is missing. Step 5 does not run on that card.
+- No Q1 FY27 transcript for RACLGEAR. The call was held 25-Aug-2026 and is not indexed. Its
+  FY27 guidance is read from the Q4 FY26 call, and the card names closing this gap as
+  load-bearing fact 1.
+- FY2026 annual reports are indexed for IOLCP (uploaded 2026-08-07) and RACLGEAR (uploaded
+  2026-08-21) but neither surfaced in page-cited search, so FY2025 is the latest annual
+  report in both corpora. ANTELOPUS has no FY2024 or FY2026 annual report indexed at all.
+- **ROCE is NOT FOUND for RACLGEAR in every year**; the company's key-ratio note does not
+  report it. NOT FOUND for IOLCP in FY25 and FY26. Disclosed for ANTELOPUS only to FY25
+  (18.25 percent). Not estimated on any card.
+- Promoter holding is filed and clean for RACLGEAR (42.68 percent, nil encumbrance) and for
+  ANTELOPUS (69.94 percent for the acquirer and PACs, via the merger SAST disclosure). NOT
+  FOUND for IOLCP.
+- No market cap or CMP carries an as-of date. Bull AI's company record has none. Every
+  recognition-gap line on every card says to verify the price live, and no card states a
+  fair value or a target.
+- Two document defects are carried rather than silently corrected. The ANTELOPUS Q1 FY27
+  deck prints a crude inventory build as "6,500 bopd", a rate where a stock is meant, and
+  the India Ratings working-capital figures are inconsistent in magnitude with revenue. The
+  RACLGEAR Q4 FY26 transcript states FY26 EBITDA as "229.16 crores" where Rs 129.16 cr is
+  correct.
+- Sector cap rows do not fit any of the three. Oil and gas exploration and production has
+  no row; the nearest for ANTELOPUS is Mining and mineral exploration at 20x. Auto
+  components has no row; the nearest for RACLGEAR is Cables and industrial products at 25x.
+  For IOLCP neither Pharma and CDMO at 38x nor Specialty chemicals at 35x describes a
+  bulk-API converter with a 40 percent solvents leg. **Three operator rulings are needed
+  before any of these names reaches Stage 11.**
+- Cards ran 2,550 to 3,450 words against the framework's 1,400 to 1,900. Longer than
+  specified, and flagged rather than trimmed, as in the second run. The framework's word
+  budget has now been missed on two consecutive runs and is worth revisiting.

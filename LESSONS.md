@@ -10,6 +10,11 @@ entries append to LESSONS_ARCHIVE.md, never here. When /compost promotes a
 pattern into this file, one old active lesson is reviewed for archiving: the
 budget is fixed, not an unlimited append.
 
+Tags. A lesson that applies to one sector or archetype ends with
+[sector: <exact Section 1B sector cap row>] or [archetype: <CLAUDE.md
+ARCHETYPE LIBRARY name>], or both. Untagged lessons apply to every run. The
+LESSONS PRE-READ in /run-pipeline, /fttcp and /finalize matches on these tags.
+
 ## NAMED FAILURE CATALOGUE
 _Companies whose failure mode is a standing pattern-match on every new name.
 The rule is codified in prompts/00-orchestrator.md FLAG-CASH (the

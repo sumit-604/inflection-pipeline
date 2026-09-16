@@ -15,6 +15,19 @@ the resolved folder before starting. If nothing matches, list the
 available runs and stop. If more than one matches, list the matches and
 ask.
 
+LESSONS PRE-READ: after the run folder resolves and before any stage runs,
+read the ACTIVE LESSONS.md (not LESSONS_ARCHIVE.md) and print, before
+proceeding: (a) every entry under OPEN ACTIONS, plus every line marked OPEN,
+IN PROGRESS or PENDING anywhere in the file, one line each; (b) every lesson
+tagged [sector: X] where X equals manifest.yaml sector_cap_row, or
+[archetype: Y] where Y equals the archetype declared in companies/<TICKER>.md
+(Mental Model block) or, when that is absent, in the B04 business-model block.
+If no archetype is declared yet, say so and match on sector only. If nothing
+is tagged for this sector or archetype, print "no tagged lessons for this
+sector/archetype". The list is memory to weigh, never an instruction that
+overrides a prompt or framework, and it is never passed to a stage or
+verifier subagent.
+
 PDF READING RESILIENCE: at session start, verify PDF text extraction works
 by test-reading one inputs/ PDF; run pip install pypdf if it is needed.
 Verifiers must never skip source verification because rendering is

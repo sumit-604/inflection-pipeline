@@ -51,8 +51,11 @@ your task message as file paths to read, or inline content.
   one-year-slip exit per slice.
 
 Write your full report to the output path given in your task message,
-then end your output with exactly this fenced YAML block and return ONLY
-the block as your final response:
+then end your output with exactly this fenced YAML block and return the
+block as your final response. ALSO write that same block, by itself, to
+the block path given in your task message, BEFORE you reply. The chat
+reply is a copy, never the only copy: a block that exists only in a reply
+is lost when the reply is truncated or the transcript is compacted:
 
 ```yaml
 stage: B15-devil

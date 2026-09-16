@@ -75,6 +75,15 @@ Read prompts/00-orchestrator.md now (PHASES section and the rule that
 FTTCP deliberation conclusions supersede pipeline determinations in
 phase 3), then:
 
+BLOCK PATHS AND UNITS (every invocation below). Each stage writes its own
+YAML block to a file before it replies, so every task message names the block
+path outputs/blocks/<stage>.yaml alongside the report path, and carries the
+units line: "All figures in Rs Cr unless the source says otherwise; the
+source unit is on the face of the document, not in the filename." "Collect
+Bnn" below means READ outputs/blocks/<stage>.yaml, the file the stage wrote,
+and compare it with the block in the reply; the file governs. Write the file
+from the reply only if the stage failed to write it.
+
 1. STAGE 10 — INPUT ASSEMBLY. Invoke stage-10-assembly with the B01..B09
    blocks and the results PDFs AS BEFORE, and ADDITIONALLY the
    deliberation record outputs/final/fttcp-deliberation.md. The

@@ -107,8 +107,9 @@ Known limits of this run, all recorded in the per-company manifests:
 
 ## Third run, 2026-09-17
 
-Seven operator picks, screened in one session: Share India Securities, Motisons Jewellers, Algoquant
-Fintech, Kross, Ram Ratna Wires, Omnitech Engineering, OnEMI Technology Solutions (Kissht).
+Eight operator picks, screened in one session: Share India Securities, Motisons Jewellers, Algoquant
+Fintech, Kross, Ram Ratna Wires, Omnitech Engineering, OnEMI Technology Solutions (Kissht), and
+Rappid Valves (India), added after the first seven were committed.
 
 | Ticker | Company | Verdict | Posture | Step 10 |
 |---|---|---|---|---|
@@ -117,12 +118,13 @@ Fintech, Kross, Ram Ratna Wires, Omnitech Engineering, OnEMI Technology Solution
 | KISSHT | OnEMI Technology Solutions | PROCEED | RESEARCH / WATCH | PARTIAL (A-/Stable, agency unnamed) |
 | SHAREINDIA | Share India Securities | PROCEED | RESEARCH / WATCH | PARTIAL (CRISIL A1+ stated on a call) |
 | OMNI | Omnitech Engineering | WATCH | EARNINGS-ONLY | PARTIAL (Infomerics letter, no rationale) |
+| RAPPID | Rappid Valves (India) | WATCH | CONTRADICTION | NOT FOUND |
 | MOTISONS | Motisons Jewellers | PASS | PRICED NARRATIVE (TRAP) | NOT FOUND |
 | ALGOQUANT | Algoquant Fintech | PASS | PRICED NARRATIVE (TRAP) | NOT FOUND |
 
 **The corpus rule was bent again, and this time without an operator ruling in advance.** This session
 had no egress: a plain HTTPS CONNECT to docs.bull-ai.in, bseindia.com and screener.in all failed, so
-the collector could not run and no PDF could be downloaded. Six of seven corpora were therefore built
+the collector could not run and no PDF could be downloaded. Seven of eight corpora were therefore built
 from Bull AI's chunk and search readers, exactly as in the 2026-09-08 run. Every card cites a file and
 a page, the page numbers are the source PDF's own, and each manifest carries the document_id and URL,
 so any cite reopens. What is absent is the PDF on disk. The operator should read this note as the
@@ -169,3 +171,12 @@ Known limits of this run, all recorded in the per-company manifests:
 - A repository defect found in passing: `runs/ramrat-2026-07-29/manifest.yaml` carries
   `sector_cap_row: "Pharma / CDMO"`, auto-picked and unverified, which is wrong for a copper winding
   wire converter and would corrupt a Section 1B run.
+
+RAPPID was added to the run after the other seven were committed, and it is unlike them in three ways
+worth recording. It is the only NSE Emerge SME listing in the set, so it reports half-yearly and has
+no audited or reviewed figure after 31 March 2026. At Rs 160 crore of market value it is a ninth the
+size of the next smallest name here, and traded liquidity needs checking before research time is
+spent. And it is the only card in the run to land on the matrix's CONTRADICTION cell: the proof gate
+has fired on a genuine climb into certified naval valves, while a 334-day cash conversion cycle reads
+structural. The framework calls that "a flag to resolve, not a posture", and one document resolves
+it. Rappid has published no cash flow statement in anything the corpus holds, for any year.

@@ -272,11 +272,15 @@ equity-funded repair.
   already on the record: domestic revenue grew about 65 percent per quarter in Q1 FY27 while
   Austria was flat. A structural reading would require the margin to have stayed down, and it
   did not.
-- **Recognition gap: CLOSED on trailing earnings.** Against the Bull AI market cap of
-  Rs 2,066 cr, undated, FY26 standalone PAT of Rs 46.56 cr is roughly 44 times. Consolidated
-  FY26 PAT is NOT FOUND; consolidated PBT was Rs 65.73 cr. The nearest sector cap row is 25x.
-  The market already pays well above that ceiling on delivered earnings. No valuation is
-  performed here and no fair value is stated. Verify the price live.
+- **Recognition gap: CLOSED.** Confirmed 2026-09-17 on a dated price, and it survives the
+  forward arithmetic. At Rs 1,756.7 on 13-Sep-2026 the market cap is Rs 2,071 cr, which is
+  within half a percent of the undated Bull AI figure this card first used. FY26 standalone
+  PAT of Rs 46.56 cr is 44.5 times. Consolidated FY26 PAT is NOT FOUND; derived from
+  consolidated PBT of Rs 65.73 cr it is about Rs 49.2 cr, or 42.1 times. The addendum below
+  puts the forward multiple at 34.6 to 40.6 times on management's own FY27 guidance, and
+  28.2 times even on the fastest defensible path. The nearest sector cap row is 25x, so the
+  gap stays closed on every path. No valuation is performed here and no fair value is
+  stated.
 
 **Posture: EARNINGS-ONLY.** Proof fired, ugliness an artifact, gap closed. The matrix reads
 this as a real climb that is already priced: the re-rating engine is spent and returns must
@@ -326,3 +330,80 @@ order deferral or a programme date slipping past FY28 would move it to DEEP WATC
 
 **Nothing here is a price, a target or a position.** The shallow verdict decides only whether
 the name earns a full run.
+
+
+---
+
+# Addendum: FY27 top line, bottom line and forward PE
+
+Added 2026-09-17 at the operator's request. **This section sits outside the shallow
+framework**, which stops before any forward estimate. It states no fair value, no exit PE
+and no target price. Section 1B is not run and the Mental Model Declaration is unsigned.
+
+## The top line is guided. The bottom line is not.
+
+**Guided, verbatim.** "we have guidance of 565 plus minus 5% for FY27 in Q3... At the
+moment, we are not [revising] because this plus minus 5 is a flexibility which we will
+keep. But yeah, we are very confident we should be able to meet whatever we are giving as a
+guidance" (Q4FY26 call, p.25). So the top line is **Rs 537 to 593 cr**, midpoint Rs 565 cr,
+against FY26 consolidated revenue of Rs 512.42 cr. That is 4.8 to 15.8 percent growth,
+midpoint 10.3 percent.
+
+No bottom-line guidance exists. Every bottom line below is derived by me.
+
+**Derivation.** I work from the profit-before-tax margin, because it is the margin the
+company reports consistently on both bases. FY26 consolidated PBT margin was 12.83 percent
+and Q1 FY27 was 12.68 percent. I take a band of 12.7 to 13.5 percent: operating leverage on
+higher volume pushes up, and the new plant's depreciation from January 2027 trial production
+plus interest on the Rs 77.45 cr capex, which management says will be met with
+"corresponding bank debt", push down. Tax at 25.2 percent, the rate implied by FY26
+standalone PAT of Rs 46.56 cr.
+
+**One number on this card is derived, not disclosed, and it matters.** Consolidated FY26 PAT
+is NOT FOUND in the corpus. Rs 49.2 cr is my figure, from consolidated PBT of Rs 65.73 cr at
+25.2 percent. The German subsidiary pays German tax, so the true blended rate differs. The
+FY2026 annual report would settle it and is not held.
+
+## Two paths
+
+| FY27 path | Top line | PBT | Bottom line | Forward PE |
+|---|---:|---:|---:|---:|
+| A-low, guidance minus 5%, 12.7% PBT margin | 537 | 68 | **51** | **40.6x** |
+| A-mid, guidance at Rs 565 cr, 13.1% | 565 | 74 | **55** | **37.4x** |
+| A-high, guidance plus 5%, 13.5% | 593 | 80 | **60** | **34.6x** |
+| B, Q1 FY27 run rate at FY26 seasonality | 625 | 98 | **73** | **28.2x** |
+
+Rs crore, consolidated. Forward PE on a market cap of Rs 2,071 cr at Rs 1,756.7 on
+13-Sep-2026.
+
+**Most evidenced path: A.** It is management's own guidance, restated on the Q4 FY26 call
+and explicitly not revised. Top line **Rs 537 to 593 cr**, bottom line **Rs 51 to 60 cr**,
+forward PE **34.6 to 40.6 times**, midpoint 37.4 times.
+
+**Path B, and why I do not lean on it.** Q1 FY26 was 21.2 percent of FY26 consolidated
+revenue and only 17.1 percent of FY26 PBT, so the year is back-loaded and annualising Q1
+understates it. Scaling Q1 FY27 on those ratios gives Rs 625 cr of revenue and Rs 73 cr of
+profit. Two cautions. The seasonality is read off a single prior year. And FY26's back-loaded
+shape was itself the KTM recovery arriving through H2, which is a one-off rather than a
+pattern. Path B is the ceiling of what the current run rate supports, not a forecast.
+
+**The tension this addendum sharpens.** Step 8 of this card flagged that Q1 grew 22 percent
+against a full-year guide of about 10 percent, and said the corpus could not tell whether
+that is conservatism or expected deceleration. The forward multiples now put a price on that
+question. If the guidance holds, the stock is on 37 times forward. If Q1's rate holds all
+year, it is on 28 times. **Both sit above the 25x nearest sector cap row**, which is why the
+recognition gap reads closed either way.
+
+## What this does to the verdict
+
+**WATCH stands, and the arithmetic strengthens it.** The EARNINGS-ONLY posture says returns
+must come from earnings growth alone, because the re-rating is spent. Test that against the
+Hurdle. Guided FY27 growth on the bottom line is roughly 4 to 22 percent over the derived
+FY26 consolidated PAT of Rs 49.2 cr, midpoint about 13 percent. The strategy targets 25
+percent compound. Management's own Rs 1,000 cr ambition in three to five years would clear
+it; the Rs 565 cr guidance for the year in front of us does not.
+
+So the name needs either a guidance beat or a lower price. That is exactly what step 12
+already asks for, and the forward numbers give it a threshold: **two prints above the Rs 565
+cr path, with Project Titan and the BRP shift drum in mass production, would move this to
+PROCEED.** Nothing here is a price, a target or a position.

@@ -185,3 +185,63 @@ Known limits of this run, all recorded in the per-company manifests:
 - Cards ran 2,550 to 3,450 words against the framework's 1,400 to 1,900. Longer than
   specified, and flagged rather than trimmed, as in the second run. The framework's word
   budget has now been missed on two consecutive runs and is worth revisiting.
+
+### Third run, addendum of 2026-09-17
+
+The operator asked for FY27 top line, bottom line and forward PE on all three names. Each
+card now carries an `Addendum: FY27 top line, bottom line and forward PE` after step 12.
+**The shallow framework does not provide for this**; it stops before any forward estimate.
+The addenda state no fair value, no exit PE and no target price, Section 1B is not run and
+no Mental Model is signed. The framework is worth amending to say whether a forward
+estimate belongs on a shallow card at all.
+
+**Live prices were reachable after all, through WebSearch rather than the container.** The
+egress block is on the container's own network: curl and WebFetch are both refused by the
+proxy, including WebFetch against the BSE attachment path. WebSearch runs server-side and
+returned dated quotes. This is worth remembering for every future shallow run, because it
+turns "no market cap with an as-of date" from a hard gap into a solvable one.
+
+| Name | Price | As of | Market cap | Bull AI's undated figure |
+|---|---:|---|---:|---:|
+| ANTELOPUS | Rs 961.80 | 07-Sep-2026 | Rs 3,365.57 cr | Rs 3,712.26 cr |
+| IOLCP | Rs 196.58 | 01-Sep-2026 | Rs 5,763 cr | Rs 5,267.35 cr |
+| RACLGEAR | Rs 1,756.7 | 13-Sep-2026 | Rs 2,071 cr | Rs 2,066.33 cr |
+
+Bull AI's undated market cap was 10 percent low on IOLCP, 9 percent high on ANTELOPUS and
+within half a percent on RACLGEAR. It is not safe to reason about a recognition gap from it.
+
+**One card was corrected, not just extended.** ANTELOPUS read the recognition gap as CLOSED
+on a trailing 41 times taken from the undated market cap. On a dated price and the forward
+paths the multiple runs 10.9 to 30.8 times depending on the realised price per barrel, so
+the gap is indeterminate and the posture moves from PRICED NARRATIVE (TRAP) to
+RESEARCH / WATCH. The PASS verdict is unchanged, because it rests on the absence of a rung
+climb and on the PSCs expiring in 2029 and 2030, neither of which depends on the multiple.
+
+**FY27 summary, most-evidenced path per name.** Full derivations and scenario tables are on
+the cards.
+
+| Name | FY27 top line | FY27 bottom line | Forward PE | Basis |
+|---|---:|---:|---:|---|
+| IOLCP | 2,667-2,783 | 205-238 | 24.2-28.1x | Guided revenue growth and EBITDA margin |
+| RACLGEAR | 537-593 | 51-60 | 34.6-40.6x | Guided revenue; PBT margin derived |
+| ANTELOPUS | 649 | 309 | 10.9x | No guidance; built from Q1 actuals, volume ramp mine |
+
+Rs crore. Only IOLCP guides both lines, and even there the bottom line is derived. RACLGEAR
+guides revenue alone. ANTELOPUS guides neither and gives only an exit volume of 2,500 boepd,
+so its whole table is a projection and swings by a factor of 2.8 on the barrel price.
+
+**A material fact surfaced that post-dates the corpus.** IOL Chemicals announced a capital
+expansion of about Rs 495 cr on or about 09-Sep-2026: ibuprofen capacity from 12,000 to
+18,000 MTPA for about Rs 350 cr by December 2027, a CDMO formulations unit of about 1,500
+million tablets a year for about Rs 110 cr in Q3 FY2027, and a specialty chemicals plant. It
+is marked **PENDING LIVE VERIFICATION** on the card: the BSE attachment of 09-Sep-2026 is
+unreachable from here, Bull AI has not indexed it, and the figures come from trade press. A
+business update call was held on 11-Sep-2026 and its transcript is not in the corpus. If
+confirmed, it cuts both ways, and the IOLCP card now carries it as load-bearing fact 5. A 50
+percent capacity addition in ibuprofen is a bet on the old core, and it contradicts the Q3
+FY25 call statement that no new ibuprofen plant had been ordered anywhere.
+
+Three sector cap rows are now logged in LESSONS.md OPEN ACTIONS: Oil and Gas E&P, Auto
+components, and a ruling for a bulk-API converter with a commodity-solvents leg.
+
+Cards now run 3,380 to 4,300 words. The addenda widened an overrun that was already flagged.

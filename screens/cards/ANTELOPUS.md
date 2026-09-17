@@ -203,16 +203,21 @@ does not claim one.
 - **Ugliness: none to classify.** Optics are clean. A 70 percent EBITDA margin, no debt,
   217x interest cover. Nothing ugly is warning anyone off. Treated as ARTIFACT by default,
   because there is no structural defect to disprove.
-- **Recognition gap: CLOSED.** Against the Bull AI market cap of Rs 3,712 cr, undated, FY26
-  PAT of Rs 89.6 cr is roughly 41 times. Annualising the price-powered Q1 FY27 gives
-  roughly 17 times. Either way the market already pays a full multiple for an R1
-  price-taker whose nearest sector ceiling is 20x. No valuation is performed here and no
-  fair value is stated. Verify the price live before relying on this line.
+- **Recognition gap: INDETERMINATE, and it moves with crude.** Corrected 2026-09-17 on a
+  dated price. At Rs 961.80 on 07-Sep-2026 the market cap is Rs 3,365.57 cr. FY26 PAT of
+  Rs 89.6 cr is 37.6 times trailing. On the FY27 paths in the addendum below the forward
+  multiple runs from 10.9 to 30.8 times, depending almost entirely on the realised price
+  per barrel. **An earlier version of this card read the gap as CLOSED on a trailing
+  multiple of roughly 41 times, taken from an undated market cap. That read does not
+  survive the forward arithmetic.** The gap cannot be called at shallow depth on a
+  price-taker. No valuation is performed here and no fair value is stated.
 
-**Posture: PRICED NARRATIVE (TRAP).** Proof not fired, artifact reading, gap closed. The
-matrix calls this the most seductive cell. No ugliness warns you off, the transition is
-narrated rather than proven, and the destination is already in the price. The downside is
-double: the ramp disappoints and the multiple compresses.
+**Posture: RESEARCH / WATCH, not PRICED NARRATIVE.** Corrected 2026-09-17. Proof not
+fired plus artifact plus gap OPEN or indeterminate maps to RESEARCH / WATCH, not to the
+trap cell. The earlier card put this in PRICED NARRATIVE (TRAP) on the strength of a
+closed-gap read that the forward arithmetic does not support. The correction changes the
+cell. **It does not change the verdict**, because the verdict below rests on the absence
+of a rung climb and on the contract clock, and neither depends on the multiple.
 
 ## 12. Verdict card
 
@@ -250,3 +255,72 @@ reason.
 
 **Nothing here is a price, a target or a position.** The shallow verdict decides only
 whether the name earns a full run.
+
+
+---
+
+# Addendum: FY27 top line, bottom line and forward PE
+
+Added 2026-09-17 at the operator's request. **This section sits outside the shallow
+framework**, which stops before any forward estimate. It states no fair value, no exit PE
+and no target price. Section 1B is not run and the Mental Model Declaration is unsigned.
+
+## Why this name has no single forward number
+
+The company publishes **no revenue or profit guidance**. The only forward figure it gives
+is a volume, 2,500 boepd, and both the company and India Ratings frame it as a year-end
+exit rate rather than a full-year average: "The company expects production to increase to
+around 2,500boepd by FYE27" (India Ratings, p.3). So a top line has to be built from a
+volume path and a price, and the price is the one input the business does not control.
+
+**Realised price per barrel of oil equivalent, derived from filed figures.** FY26 total
+income of Rs 288 cr over 1,355 boepd for 365 days is **Rs 5,823 per boe**. Q1 FY27 total
+income of Rs 132 cr over 1,705 boepd for 91 days is **Rs 8,508 per boe**, which is 1.46
+times the FY26 level. This is a rupee-denominated comparison and needs no exchange-rate
+assumption. Both figures are derived by me from filed numbers and are not disclosed as
+such.
+
+**Volume path, mine and stated as mine.** Q1 actual 1,705 boepd. The frac campaign starts
+early August, which is mid-Q2. Taking Q2 at 1,950, Q3 at 2,250 and Q4 at 2,450 to reach
+the guided 2,500 exit gives an **FY27 average of 2,089 boepd**.
+
+**Cost base, from Q1 actuals.** Q1 operating cost was Rs 38.8 cr, so Rs 155.2 cr
+annualised at Q1 volume. India Ratings puts fixed costs at 80 to 85 percent of total, so
+only about a fifth of that scales with volume. Depreciation is unit-of-production
+depletion, so it scales with volume; FY26 depletion is derived at about Rs 48 cr. Tax at
+25 percent. Interest is immaterial at Rs 0.73 cr in FY26.
+
+## The four scenarios
+
+| FY27 scenario | Avg volume | Rs/boe | Top line | EBITDA | Bottom line | Forward PE |
+|---|---:|---:|---:|---:|---:|---:|
+| S1 ramp delivers, price holds at Q1 | 2,089 | 8,508 | 649 | 487 (75%) | **309** | **10.9x** |
+| S2 ramp delivers, price reverts to FY26 | 2,089 | 5,823 | 444 | 283 (64%) | **156** | **21.6x** |
+| S3 ramp stalls, price holds at Q1 | 1,705 | 8,508 | 530 | 374 (71%) | **235** | **14.3x** |
+| S4 ramp stalls, price reverts to FY26 | 1,705 | 5,823 | 362 | 207 (57%) | **109** | **30.8x** |
+
+Rs crore. Forward PE on a market cap of Rs 3,365.57 cr at Rs 961.80 on 07-Sep-2026.
+
+**Most evidenced single path: S1.** India Ratings expects crude "to remain elevated at
+about USD 90-100/bbl in the short term due to the ongoing West Asia conflict" (p.4), and
+management says the frac lands in Q2. On the framework's instruction to state the most
+evidenced path rather than shade inputs, S1 is it: top line about **Rs 649 cr**, bottom
+line about **Rs 309 cr**, forward PE about **10.9 times**.
+
+## What that number is, and is not
+
+An 11 times forward multiple looks cheap and is not a margin of safety. Read the table
+across, not down. The bottom line swings from Rs 109 cr to Rs 309 cr, a factor of 2.8,
+and the single largest driver is a barrel price that no filing forecasts. The EBITDA
+margin swings 57 to 75 percent on the same volumes, because 82 percent of the cost base
+is fixed. That is operating leverage running in both directions.
+
+So the honest statement is not "this is cheap at 11 times". It is: **at Rs 961.80 the
+market is priced for crude staying near current levels, and the multiple re-rates to the
+high twenties if crude returns to where it sat twelve months ago.** Buying this is taking
+a view on crude, with a drilling ramp as a second-order kicker.
+
+**The verdict does not change.** PASS stands, and for the reasons in step 12 rather than
+for the multiple: no quality-ladder climb is on offer, and the PSCs carrying 91 percent of
+production expire in 2029 and 2030, inside a three to five year hold. A cheap forward
+multiple on a commodity does not make a transition thesis.

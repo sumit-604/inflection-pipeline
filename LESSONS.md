@@ -98,6 +98,15 @@ _Pending framework edits Keerti maintains._
 - Add a Sugar / Agri-commodity cyclical row to the Section 1B cap table
   (KCPSUGIND ruled Agri-processing 20x ad hoc; no dedicated row exists).
   [sector: Agri processing] [archetype: Commodity converter]
+- Add an Oil & Gas E&P row to the Section 1B cap table (ANTELOPUS shallow
+  screen 2026-09-16; no row exists, nearest is Mining/mineral exploration 20x).
+  Note PSC/RSC validity bounds the reserve base and so the terminal value.
+- Add an Auto components row to the Section 1B cap table (RACLGEAR shallow
+  screen 2026-09-16; no row exists, nearest is Cables/Industrial products 25x).
+  [archetype: Build-to-spec component maker]
+- Rule the cap row for a bulk-API converter with a commodity-solvents leg
+  (IOLCP shallow screen 2026-09-16; neither Pharma/CDMO 38x nor Specialty
+  chemicals 35x describes it). [archetype: Commodity converter]
 - Add Distribution rows to the Section 1B cap table (ENTERO 2026-08-30, ruled
   18-20x ad hoc). Operator proposal: Distribution-commodity 18-19x;
   Distribution-value-added 25-26x; blended by revenue share. Any distributor.

@@ -231,10 +231,14 @@ corpus. Today's filings win over the older rating in any case.
   chemicals segment holds EBIT above 6 percent for two more quarters while paracetamol
   utilisation reaches 70 to 75 percent. If both hold, the optic was an artifact. If
   chemicals falls back toward 3 percent, it is structural.
-- **Recognition gap: INDETERMINATE at shallow depth.** Against the Bull AI market cap of
-  Rs 5,267 cr, undated, FY26 PAT of Rs 137.7 cr is roughly 38 times, while annualised Q1
-  FY27 PAT is roughly 20 times. That spread is the whole question and shallow cannot close
-  it. Stage 11 resolves it. No valuation is performed here and no fair value is stated.
+- **Recognition gap: INDETERMINATE at shallow depth.** Restated 2026-09-17 on a dated
+  price. At Rs 196.58 on 01-Sep-2026 the market cap is Rs 5,763 cr, not the Rs 5,267 cr
+  undated figure the first version of this card used. FY26 PAT of Rs 137.7 cr is 41.9
+  times; the trailing twelve months to Q1 FY27, at Rs 168.2 cr, is 34.3 times. The
+  addendum below puts the forward multiple at 24.2 to 28.1 times on management's own FY27
+  guidance. The gap is narrower than the trailing number suggests and wider than the Q1 run
+  rate suggests. Shallow cannot close it; Stage 11 resolves it. No valuation is performed
+  here and no fair value is stated.
 
 **Posture: provisionally RE-RATING LIVE, falling to EARNINGS-ONLY if the gap reads closed.**
 Proof fired and the ugliness reads artifact on the current evidence, which puts this in the
@@ -273,3 +277,100 @@ the volume split coming back volume-heavy would strengthen the proof gate materi
 
 **Nothing here is a price, a target or a position.** The shallow verdict decides only
 whether the name earns a full run.
+
+
+---
+
+# Addendum: FY27 top line, bottom line and forward PE
+
+Added 2026-09-17 at the operator's request. **This section sits outside the shallow
+framework**, which stops before any forward estimate. It states no fair value, no exit PE
+and no target price. Section 1B is not run and the Mental Model Declaration is unsigned.
+
+## The top line is guided. The bottom line is not.
+
+Management quantifies revenue and EBITDA margin for FY27 and stops there. So the top line
+below is management's, and every bottom line is derived by me from it.
+
+**Guided, verbatim.** "Revenue Growth 15%-20%", "EBITDA Margin 14%-15%" (Q1FY27 deck,
+p.31), repeated on the call as "we remain confident of delivering 15% to 20% revenue growth
+with an EBITDA margin in the range of 14% to 15%" (Q1FY27 call, p.5). A rupee target sits
+beside it: "we are targeting around INR2,700 crores in the next FY 2027" (Q4FY26 call,
+p.14).
+
+**Derivation, from Q1 FY27 actuals.** Depreciation Rs 21.3 cr in the quarter, taken at
+Rs 88 cr for the year against guided capex of Rs 200 to 250 cr. Finance cost Rs 3.6 cr in
+the quarter, taken at Rs 14 cr. Other income Rs 8.2 cr in the quarter, taken at Rs 30 cr;
+note the company's EBITDA margin is struck on total revenue including other income, which
+its own P&L confirms. Effective tax 25.5 percent, against 25.7 percent actual in Q1 FY27
+and 25.3 percent in FY26.
+
+## Three paths, all of them management's own numbers
+
+| FY27 path | Top line | EBITDA | Bottom line | Forward PE |
+|---|---:|---:|---:|---:|
+| A-low, +15% revenue and 14% EBITDA margin | 2,667 | 378 | **205** | **28.1x** |
+| A-mid, +17.5% and 14.5% | 2,725 | 400 | **222** | **26.0x** |
+| A-high, +20% and 15% | 2,783 | 422 | **238** | **24.2x** |
+| B, Q1 FY27 run rate at FY26 seasonality | 3,179 | | **261** | **22.1x** |
+| C, the Feb-2026 guide of +15-20% on the bottom line | | | **158-165** | **34.9-36.4x** |
+
+Rs crore. Forward PE on a market cap of Rs 5,763 cr at Rs 196.58 on 01-Sep-2026.
+
+Path B scales Q1 FY27 by FY26's seasonality: Q1 was 23.8 percent of FY26 revenue and 24.7
+percent of FY26 PAT. Path C is the CFO on the Q3 FY26 call of 12-Feb-2026: "in the coming
+year, we expect minimum 10% to 15% growth in the top line and 15% to 20% in the bottom
+line" (Q3FY26 call, p.7).
+
+**Most evidenced path: A.** It is the most recent management statement, it is quantified on
+both lines, and it is reaffirmed in two documents a quarter apart. Top line **Rs 2,667 to
+2,783 cr**, bottom line **Rs 205 to 238 cr**, forward PE **24.2 to 28.1 times**, midpoint
+26.0 times.
+
+**The two readings, and the observation that separates them.** Path C says Rs 158 to 165 cr
+and Path B says Rs 261 cr, a spread of 1.65 times on the same company. Q1 FY27 alone
+delivered Rs 64.5 cr, which is already 39 to 41 percent of the whole Path C year, so the
+February guide is stale and can be set aside. That leaves A against B. **The single
+observation that separates them is the Q2 FY27 EBITDA margin.** Q1 came in at 14.6 percent,
+at the top of the guided band. If Q2 holds above 14.5 percent the company is tracking B and
+the guidance is deliberate conservatism. If Q2 falls back toward 13 percent, A is right and
+Q1 carried a price benefit that did not repeat. The Q2 print is due around November 2026.
+
+A cross-check validates the price and the earnings base together. Trailing twelve-month PAT
+of Rs 168.2 cr on a market cap of Rs 5,763 cr is 34.3 times, and the market data for
+01-Sep-2026 showed a trailing PE of 33.82. The two agree, so the share count, the price and
+the earnings used here are consistent.
+
+## A material fact that post-dates this corpus
+
+On or about **09-September-2026**, one month after the Q1 FY27 call, IOL announced a capital
+expansion of about **Rs 495 cr**, funded from internal accruals:
+
+- Ibuprofen capacity from **12,000 to 18,000 MTPA**, about Rs 350 cr, commercialisation
+  expected by **December 2027**.
+- A **CDMO pharmaceutical formulation unit**, about 1,500 million tablets a year, about
+  Rs 110 cr, commercialisation in **Q3 FY2027**.
+- A specialty chemicals plant.
+
+**PENDING LIVE VERIFICATION.** The primary filing is a BSE attachment dated 09-Sep-2026
+which this container cannot reach; Bull AI has not indexed it, and the figures above come
+from secondary trade and business press reports. The company also held a business update
+call on 11-Sep-2026 whose transcript is not in the corpus. Verify the filing and the
+transcript before relying on any of it.
+
+**Why it matters to this card, if confirmed.** It cuts two ways and the operator should see
+both. Against the thesis: this card's step 6 reads the transition as a shift away from
+ibuprofen, and a 50 percent capacity addition in ibuprofen is a bet on the old core, not the
+new one. Adding 6,000 tonnes to a global market the company itself sizes at about 35,000
+tonnes is a 17 percent addition to world capacity by the player already holding 35 percent
+share, which is how price wars start. It also contradicts the Q3 FY25 call, where management
+said "we have not ordered any new plant for ibuprofen in Europe or US or any other
+geography". For the thesis: the CDMO formulation unit is a genuine move up the ladder,
+because formulations sit above bulk API, and it commercialises inside FY27. Neither the
+Rs 495 cr nor the CDMO revenue is in any path above, because neither is in the guidance.
+
+**The verdict does not change.** PROCEED to /step1 stands, and this addendum adds a fifth
+load-bearing fact to step 12: **get the 09-Sep-2026 filing and the 11-Sep-2026 business
+update transcript, and establish whether the ibuprofen expansion is pre-contracted or
+speculative.** A speculative 50 percent capacity addition in a commodity the company
+already dominates would weaken the R2-to-R3 climb rather than fund it.

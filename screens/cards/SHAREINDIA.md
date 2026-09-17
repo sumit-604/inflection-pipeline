@@ -252,5 +252,9 @@ showing prop above 60% of profit. To a stronger PROCEED: two more quarters where
 falls below 90% of segment revenue while absolute profit holds, plus MTF past Rs 700 crore and PMS
 past Rs 250 crore. That combination would fire the proof gate.
 
+**Gate note.** `companies/SHAREINDIA.md` does not exist, so there is no Spear line and no company memory.
+Under the SPEAR GATE in CLAUDE.md, `/run-pipeline` and `/fttcp` on this name must STOP until a spear
+pass runs on live web with Claude web and a HIT or an operator OVERRIDE line is written.
+
 **This is not a position.** No valuation, no target price, no entry zone. The shallow read decides
 only that a full `/step1` is worth running.

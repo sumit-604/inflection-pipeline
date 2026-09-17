@@ -332,5 +332,9 @@ price. To WATCH: two more quarters at 12% to 13% with the extrusion line commerc
 confirm the agency's read and demote the thesis to a cycle trade. To PASS: an M&HCV downturn arriving
 before the seamless tube plant earns, with debt drawn and depreciation running.
 
+**Gate note.** `companies/KROSS.md` does not exist, so there is no Spear line and no company memory.
+Under the SPEAR GATE in CLAUDE.md, `/run-pipeline` and `/fttcp` on this name must STOP until a spear
+pass runs on live web with Claude web and a HIT or an operator OVERRIDE line is written.
+
 **This is not a position.** No valuation, no target price, no entry zone. The shallow read decides only
 that a full `/step1` is worth running on this name.

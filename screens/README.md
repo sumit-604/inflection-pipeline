@@ -104,3 +104,68 @@ Known limits of this run, all recorded in the per-company manifests:
   it. Its manifest carries a calendar-year warning.
 - Cards ran 2,600 to 3,800 words against the framework's 1,400 to 1,900. Longer than
   specified, and flagged rather than trimmed.
+
+## Third run, 2026-09-17
+
+Seven operator picks, screened in one session: Share India Securities, Motisons Jewellers, Algoquant
+Fintech, Kross, Ram Ratna Wires, Omnitech Engineering, OnEMI Technology Solutions (Kissht).
+
+| Ticker | Company | Verdict | Posture | Step 10 |
+|---|---|---|---|---|
+| KROSS | Kross Ltd | PROCEED | RESEARCH / WATCH | COMPLETE (India Ratings, 1 Jun 2026) |
+| RAMRAT | Ram Ratna Wires | PROCEED | EARNINGS-ONLY | COMPLETE BUT STALE (CARE, 30 Sep 2025) |
+| KISSHT | OnEMI Technology Solutions | PROCEED | RESEARCH / WATCH | PARTIAL (A-/Stable, agency unnamed) |
+| SHAREINDIA | Share India Securities | PROCEED | RESEARCH / WATCH | PARTIAL (CRISIL A1+ stated on a call) |
+| OMNI | Omnitech Engineering | WATCH | EARNINGS-ONLY | PARTIAL (Infomerics letter, no rationale) |
+| MOTISONS | Motisons Jewellers | PASS | PRICED NARRATIVE (TRAP) | NOT FOUND |
+| ALGOQUANT | Algoquant Fintech | PASS | PRICED NARRATIVE (TRAP) | NOT FOUND |
+
+**The corpus rule was bent again, and this time without an operator ruling in advance.** This session
+had no egress: a plain HTTPS CONNECT to docs.bull-ai.in, bseindia.com and screener.in all failed, so
+the collector could not run and no PDF could be downloaded. Six of seven corpora were therefore built
+from Bull AI's chunk and search readers, exactly as in the 2026-09-08 run. Every card cites a file and
+a page, the page numbers are the source PDF's own, and each manifest carries the document_id and URL,
+so any cite reopens. What is absent is the PDF on disk. The operator should read this note as the
+deviation it is and rule on it.
+
+**RAMRAT is the exception and the better pattern.** Its corpus was read from PDFs the operator already
+holds, tracked in this repository at `runs/ramrat-2026-07-29/inputs/` from the July `/run-pipeline`
+collection: a 315-page annual report, the Q4 FY26 deck, the CARE rating and five peer transcripts.
+The rating and the deck were extracted locally with `pdftotext -layout`. Where a prior run folder
+exists, the shallow read should start there.
+
+Bull AI budget: 770 calls were available at the start of the run against a 1,000-call monthly cycle
+ending 2026-10-08. About 55 were used, split between searches, chunk reads and document-selector
+reads. Availability maps and company searches cost nothing and were used freely.
+
+Two structural findings worth carrying forward:
+- **Step 10 is the weakest step in the funnel.** Complete on one card of seven, partial on four, not
+  found on two. Bull AI holds credit rating documents for some companies under a "Credit Rating"
+  subcategory that does not always surface in a plain search; `get_document_chunks` with
+  `identifier` plus `subcategory: "Credit Rating"` found the Omnitech rating when a keyword search had
+  not. Use that call before recording NOT FOUND.
+- **Cards ran 3,000 to 4,900 words against the framework's 1,400 to 1,900.** Longer than specified
+  again, and flagged rather than trimmed, as in the 2026-09-08 run. Two runs overrunning by the same
+  margin suggests the specification, not the cards, is what needs revisiting. That is an operator
+  ruling, not a drafting choice.
+
+Known limits of this run, all recorded in the per-company manifests:
+- No PDF is held for six of seven companies.
+- Promoter holding is NOT FOUND on six of seven cards. Only Kross has a filed promoter number, and
+  even there the post-IPO group total is missing; what is held is one promoter's 18.45% with nil
+  encumbrance.
+- Annual reports were not opened for KROSS, RAMRAT, OMNI or KISSHT even where Bull AI or the repository
+  holds them. Each card names this against the steps it weakens.
+- Several cards carry internal inconsistencies found inside the filings themselves. The largest are
+  Omnitech stating FY26 revenue as both Rs 3,429.1 million and Rs 5,113.0 million in one deck, and
+  Algoquant naming three different auditor identities across two filings. Both are flagged, not
+  resolved.
+- Some apparent table errors may be chunk-reader artefacts rather than filing errors. Each manifest
+  says which, and the operator should verify against the source PDF before holding any of them against
+  a company.
+- No `companies/<TICKER>.md` exists for any of the seven, so none carries a Spear line. Under the
+  SPEAR GATE, every PROCEED verdict here needs a spear pass on live web with Claude web, or an operator
+  override, before `/step1` can run.
+- A repository defect found in passing: `runs/ramrat-2026-07-29/manifest.yaml` carries
+  `sector_cap_row: "Pharma / CDMO"`, auto-picked and unverified, which is wrong for a copper winding
+  wire converter and would corrupt a Section 1B run.

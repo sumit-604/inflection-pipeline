@@ -4,25 +4,23 @@ run_date: "2026-09-18"
 model: claude-sonnet-5
 status: complete
 peers_audited: 12
-substantive_confirmed: 10
-substantive_unsupported: []
+substantive_confirmed: 7
+substantive_unsupported:
+  - "GULPOLY Q4 FY26/FY26 (May_2026) -- PLI Rs30cr/annum cited p.15, actual p.8"
+  - "BALRAMCHIN Q4 FY26 (filed Jun_2026) -- overcapacity quote and 27cr L/34-35cr L nameplate cited p.10, actual extraction marker [page 11]"
+  - "TRIVENI Q4 FY26 (Jun_2026) -- Sir Shadi Lal no-ethanol/Shamli-molasses quote cited to this call at p.14, actually in TRIVENI Aug_2026 (Q1 FY27) call p.13"
 unused_but_relevant: []
 claims_all_addressed: true
-verdict_discipline_fails:
-  - {claim: "Q6 FCI-rice ethanol realisation price point", verdict_given: "VERIFIED", basis: "1 independent peer anchor (TRIVENI only; GULPOLY confirms mandate mechanics, not the litre price)", should_be: "PARTIALLY VERIFIED"}
+verdict_discipline_fails: []
 findings:
-  - {severity: "MINOR", location: "B06 Q6, GULPOLY-Concall_May_2026_Transcript.pdf FCI-abundance quote", claimed_anchor: "p.6", source_truth_anchor: "p.7", note: "one-page anchor drift; quote verbatim and genuine"}
-  - {severity: "MINOR", location: "B06 Q1, GULPOLY-Concall_May_2026_Transcript.pdf own bid-vs-award", claimed_anchor: "p.13", source_truth_anchor: "p.14", note: "one-page anchor drift; 23cr applied / 18cr received / 78% figures confirmed exact"}
-  - {severity: "MINOR", location: "B06 Q6, TRIVENI-Concall_Nov_2025_Transcript.pdf FCI-ethanol price quote", claimed_anchor: "p.5", source_truth_anchor: "p.6", note: "one-page anchor drift; quote verbatim, near-exact match to TruAlt claimed range"}
-  - {severity: "MINOR", location: "B06 Q5, TRIVENI-Concall_Nov_2025_Transcript.pdf term-loan subvention", claimed_anchor: "p.2", source_truth_anchor: "p.3", note: "one-page anchor drift"}
-  - {severity: "MAJOR", location: "B06 Q4, TRIVENI-Concall_Feb_2026_Transcript.pdf massive-overcapacity quote", claimed_anchor: "p.16", source_truth_anchor: "p.8", note: "anchor wrong by 8 pages, not findable at cited location; content genuine, only occurrence in file"}
-  - {severity: "MINOR", location: "B06 Q4/Part 2C, BALRAMCHIN-Concall_Jun_2026_Transcript.pdf overcapacity quote", claimed_anchor: "p.11, attributed to Vivek Saraogi", source_truth_anchor: "p.10, spoken by Pramod Patwari", note: "speaker misattribution plus one-page anchor drift; 27cr/34-35cr L production figures confirmed exact"}
-  - {severity: "MAJOR", location: "B06 Part 4, Q6 verdict", claimed_anchor: "n/a (verdict discipline)", source_truth_anchor: "n/a", note: "VERIFIED price-point verdict rests on a single peer anchor (TRIVENI); rule 4 requires PARTIALLY VERIFIED"}
-  - {severity: "MINOR", location: "B06 Q3, GULPOLY-Concall_Aug_2026_Transcript.pdf Q1FY27 margin", claimed_anchor: "computed 19% (Rs81cr/Rs426cr)", source_truth_anchor: "management states 18% in the transcript", note: "arithmetic correct but diverges from company's own stated figure; does not change the substantive contradiction"}
+  - {severity: "MAJOR", location: "B06 Q1 net_read / peer_coverage_map, GULPOLY Q4 FY26/FY26 row", claimed: "PLI ~INR30cr/annum, GULPOLY-Concall_May_2026 p.15", source_truth: "same quote at p.8", note: "off by 7 pages; p.15 has unrelated content"}
+  - {severity: "MAJOR", location: "B06 peer_coverage_map, BALRAMCHIN Q4 FY26 (Jun_2026) row", claimed: "overcapacity quote + 27cr L/34-35cr L nameplate at p.10", source_truth: "extraction marker [page 11]", note: "rework regressed this citation from p.11 (first run) to p.10 (this run); p.11 is correct under the [page N]=PDF page N rule; speaker correction (Pramod Patwari) is independently confirmed right"}
+  - {severity: "MAJOR", location: "B06 peer_coverage_map / Q5 discussion, TRIVENI Q4 FY26 (Jun_2026) row", claimed: "Sir Shadi Lal no-ethanol/Shamli-molasses quote, TRIVENI Jun_2026 p.14", source_truth: "TRIVENI Aug_2026 (Q1 FY27) call, p.13 -- different transcript entirely", note: "quote itself verbatim-correct; filed under the wrong quarter's call"}
+  - {severity: "MINOR", location: "B06 Q3 net_read, GULPOLY Q1 FY27 (Aug_2026) row", claimed: "FY27 10%-11% guide, p.4 and p.8", source_truth: "p.5 and p.8", note: "secondary citation one page off; primary p.8 citation and the p.4 pressure quote are both correct"}
 critical_count: 0
-major_count: 2
-minor_count: 6
-acceptance_rate: 92
+major_count: 3
+minor_count: 1
+acceptance_rate: 75
 input_gaps:
 - 'carried from B00 by orchestrator: collector_warning (verbatim): sector_cap_row_guess Pharma / CDMO is the collector
   default and is wrong; Step 1 set Sugar / agri-commodity.'

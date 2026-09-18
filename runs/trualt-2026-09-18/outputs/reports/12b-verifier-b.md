@@ -1,125 +1,240 @@
-# Stage 12 Verifier B: Concall Red Flags. TRUALT, run 2026-09-18
+# Stage 12 Verifier B: Concall Red Flags, TRUALT
+Run date: 2026-09-18. Model: claude-opus-5. Fresh context.
 
-Model: claude-opus-5. Fresh read of 16 transcripts: 4 main-company (Nov-2025 Q2FY26, Feb-2026 Q3FY26, May-2026 Q4FY26, Aug-2026 Q1FY27) and 12 peer transcripts (GULPOLY, BALRAMCHIN, TRIVENI). The instruction file expects 3 main-company transcripts. This run has 4, and all 4 were read. Page anchors use the PDF page number, shown as "[page N]" in each .txt file. "L" = line in the .txt, given so each quote can be found fast. I read B05 and B06 only after the independent list was complete.
+Inputs read: 4 main-company transcripts (Q2 FY26 Nov-2025, Q3 FY26 Feb-2026,
+Q4 FY26 May-2026, Q1 FY27 Aug-2026), 12 peer transcripts (GULPOLY x4,
+BALRAMCHIN x4, TRIVENI x4), B05 report and block, B06 report and block. No
+other output file opened. Anchors use the "[page N]" marker in each .txt,
+which is the PDF page. Where the transcript prints a different "Page X of Y",
+the PDF page governs.
 
-Speakers: MD = Vijaykumar Murugesh Nirani; CFO = Anand Kishore.
+Method. I read all four TruAlt transcripts end to end before opening B05 or
+B06. I read GULPOLY x4, TRIVENI Aug and BALRAMCHIN Jun end to end, and read
+the other peer transcripts by targeted search (allocation, tender, court,
+private OMC, overcapacity, subvention, SAF, CBG, DDGS, maize, standalone,
+diversion) with context. Then I compared.
 
-## PART 1: INDEPENDENT RED-FLAG LIST (from the raw transcripts alone)
+Scope note. B05 cites three numbers from non-transcript artifacts (36.85%
+pledge from the Jun-2026 SHP, 72.6% related-party purchases from the AR,
+FY26 CFO of -Rs 296.15cr). These are outside my inputs. I do not assess them.
 
-Severity scale: CRITICAL / MAJOR / MINOR. Status vs pipeline (B05 + B06): CAUGHT / PARTIALLY CAUGHT / MISSED.
+---
 
-### Material items (CRITICAL + MAJOR)
+## PART 1: INDEPENDENT RED-FLAG LIST (from the transcripts alone)
 
-| # | Sev | Item | Anchor(s) | Pipeline status |
+Severity is graded before comparison. "MD" = Vijaykumar Nirani, "CFO" = Anand
+Kishore.
+
+### 1A. Main company (TruAlt), material items
+
+| ID | Sev | Item | Anchor (call, speaker, page) |
+|---|---|---|---|
+| M1 | CRITICAL | Allocation "done deal" that was already cut. Nov: "47 is a done deal", built from "34 crores liters from the government OMCs" plus 4 + 1.8 private plus "potential to make up to 8 crores liters of extra neutral alcohol". The 47 included uncontracted ENA potential. May: PSU award "about 26 crore litres against a bid of 72". May, same call, a third figure: "30 crore litres was given to us". The MD dates the cut himself: "in November, they came around and decreased the allocation". So the Nov 13 claim and the Feb reaffirmation of 36-37 cr L both came after the cut. Asked in May why investors were not told: "Even now, the mechanism hasn't changed." Non-answer. Pattern spans three calls. | Nov, MD, [page 10], [page 15]; May, MD, [page 4], [page 10], [page 11], [page 26] |
+| M2 | MAJOR | Shutdown cause told two ways. Nov: "intentional shutdown", "we have intentionally shut down three out of the four". Feb, to explain the court extension: "beyond our control... force majeure... extreme rainfall". Feb also: "unfortunately we delayed the setting up of the grain plants". | Nov, MD, [page 10], [page 24]; Feb, MD, [page 11] |
+| M3 | MAJOR | FY26 volume guidance collapse with internal contradictions. Nov: target cut 41 to 36-37; same call, MD says Q3+Q4 "26 to 28 crores liters" while CFO says Q3+Q4 "around 22 crores". Feb: 36-37 held; when Deepak Poddar shows the math does not close, MD cites stock of "4 and a half 4.2, around 5 crores liters 5.2" and CFO adds "sale in transit". Actual: 24 (MD) or 26 (CFO). | Nov, MD/CFO, [page 18], [page 19], [page 22]; Feb, MD/CFO, [page 18]; May, MD [page 10], CFO [page 25] |
+| M4 | MAJOR | Feb run-rate stated as present fact ("all ethanol plants are now fully operational with a monthly revenue run rate of approximately INR350 crores to INR400 crores"), after the allocation cut. May actual: "run rate of 2.2 crore litres... capacity utilization to less than 35%". Challenged by Vedant Sarda, MD recasts it as "potential". Closing apology: "could not... demonstrate the growth that we had already promised". | Feb, MD, [page 4]; May, MD, [page 5], [page 26]-[page 27], [page 29] |
+| M5 | MAJOR | Private-OMC price told two ways, and contracts not honoured. Feb: private OMCs "give a little higher than the government pricing". May: TruAlt offered "INR60 point change"; OMCs "went back on the already executed purchase orders"; 1.6 of 8 cr L lifted; "almost become like an oligarchy". Aug: "about INR60.50". | Feb, MD, [page 21]; May, MD, [page 4], [page 12], [page 25]-[page 26]; Aug, MD, [page 22] |
+| M6 | CRITICAL | 15 cr L court quantity, repeated slippage across four calls. Nov: "not... easily... work in progress". Feb: "I'm sure they will come through"; CFO "timeline will be difficult to tell". May: 90-day window lapsed, OMCs "in contempt", now "within September or H1". Aug: "not able to give a timeline". | Nov [page 10]; Feb [page 11]-[page 12]; May [page 11]-[page 12]; Aug [page 9], [page 21] |
+| M7 | MAJOR | Retail rollout: the same near-term addition promised every call. Nov: 7 open, "six more are ready to commence shortly". Feb: "four additional stations underway", 75 by "31st March", CFO corrects to calendar year. May: 4 more "in the next three months". Aug: "another four to be commissioned hopefully by the end of this quarter". Still 7. | Nov [page 4]; Feb [page 5], [page 17]; May [page 7], [page 18]; Aug [page 4] |
+| M8 | MAJOR | CBG timeline and count drift, including a construction-start contradiction. Nov: "construction has begun on three plants". Feb: "four more plants which began construction in December". Commission date: "end of Q2 FY'27" (Nov p.3), "July of 2026" (Nov p.19), "June 2026" (Feb p.19), Q3/Q4 FY27 (May, Aug). Counts: 17 more (Nov), 24 (Feb), 10 plus 4 (May). Sumitomo plants: 16 (Nov), 12 (Feb), 4 then 3 (May). Plant size: "20 tons each" vs "four plants of 80 TPD each" (Nov); GAIL 12 TPD (Feb, May) vs "10 TPDs each" (Aug). | Nov, MD, [page 3], [page 12], [page 19]; Feb, MD, [page 4], [page 9], [page 18]-[page 19]; May [page 6], [page 12]; Aug [page 7] |
+| M9 | MAJOR | SAF slip and FID condition reversed. Feb: "investment strategy is structured based on offtake guarantees before we commit on ground investments". May: FID "as soon as we achieve a long-term offtake agreement"; commission "24 to 30 months... That's FY29". Aug: capex to "begin as early as... next two or three months", offtake still "in the working groups", land still to be procured. | Feb, MD, [page 15]; May, MD, [page 7], [page 29]; Aug, MD, [page 4], [page 7], [page 9] |
+| M10 | MAJOR | Government incentives inside revenue and EBITDA. May CFO: "the operating income also included the production link incentive... add the PLI and interest subvention". Aug CFO: "interest subventions and PLI all together around INR22 crores"; core ethanol margin "about 9% to 9.5%". Nov: grant receivable "INR 107 crores... PLI and interest subvention to be receivable from the NABARD". | Nov, CFO, [page 9]; May, CFO, [page 13]; Aug, CFO, [page 18] |
+| M11 | MAJOR | Q1 FY27 margin is an inventory gain. At current maize ~Rs 25.50, "margins come down drastically... INR6 to INR7 a litre" vs Rs 15-16 on stock bought at Rs 17-22. "Since we are still sitting on a lot of volumes... next quarter and hopefully Q3". Volunteered. | Aug, MD, [page 8], [page 18] |
+| M12 | MAJOR | Prior-period restatement. Rs 10.5cr Rule 43 GST reversal under Ind AS 8, "an oversight from our the tax consultants". MD frames the cost as a lost gain ("could have increased our PAT margin by INR4 crores... INR89 crores... INR93 crores"). Prompted by Shubh Gala. | Aug, CFO/MD, [page 20] |
+| M13 | MAJOR | Unsold inventory. "Inventory of almost about INR460 close to INR500 crores"; "having the inventory we're unable to sell". Set against "more than INR1,100 crores of capital in hand to secure feedstock". | May, MD, [page 11], [page 15], [page 27] |
+| M14 | MAJOR | Stock-in-trade question dodged. Pratham Modi asks about "the recent increase in purchase of stock in trade" (an accounting line). MD answers as if about share price: "I should have to ask the investor community". The trading-purchase question stays open. | Feb, MD, [page 12] |
+| M15 | MAJOR | Group sourcing told two ways, with long group payables. May: group "less than 55%", falling; payables to group "may go to two, three months". Aug: group "can assure us 100% of the required raw material". | May, MD/CFO, [page 18]-[page 19]; Aug, MD, [page 24] |
+| M16 | MAJOR | Q1 FY27 utilisation promise missed; maintenance plan reversed. Feb: "80% capacity use for Q1"; "Q2 usually is our downtime. So 2 months is scheduled maintenance". Aug: "only operate at about 60%"; "we don't have plans to stop for maintenance". | Feb, MD, [page 13]; Aug, MD, [page 3], [page 23] |
+| M17 | MAJOR | FY27 volume walk-down. Feb: "performance litmus test... 55 crores liters". May: "at least minimum 40 crore litres. And a bonus... 55"; CFO: "We cannot tell you the figure of FY 2027". Aug: "44 crores litres of orders on hand", said to include OMC, private, ENA, and to exclude the 15. 26 + 8 + 6 = 40, not 44. | Feb [page 19]; May [page 19], [page 23]; Aug [page 8], [page 9] |
+| M18 | MAJOR | CBG ownership. GAIL took 49% of Leafiniti, which holds the one profitable plant. TGPL called "a wholly-owned subsidiary" in the same call Sumitomo is "a 49% JV partner". Aug: TruAlt will report "51%" of gross revenue. | May, MD, [page 6], [page 20]; Aug, MD, [page 16] |
+| M19 | MAJOR | Promoter pledge. Nov: 26% re-pledged as a sanction term. Aug: CFO answer is circular ("this loan is not against the pledged share, that is collateralized... this share is given as a collateral against the loan"); release "hopefully in this quarter". | Nov, CFO, [page 17]-[page 18]; Aug, CFO/MD, [page 14]-[page 15] |
+| M20 | MAJOR | De-leveraging promised without content. Finance cost ~Rs 180cr/yr raised by Parth Shah; MD: plan "in the next call or maybe in the next few days", repeated. Shareholder: "share price are not going anywhere from the listing day". No form (equity, asset sale) named. | Aug, MD, [page 22]-[page 23] |
+| M33 | MAJOR | Feedstock split deferred twice to the same analyst. Nov (allocation split): "Allow me to have that sent to you over mail". May (volume split): "We'll share it with you offline"; CFO "I don't have right now". Given in Aug to Sanjay Manyal. | Nov, MD, [page 15]; May, MD/CFO, [page 25]; Aug, CFO, [page 8] |
+
+Why M33 is MAJOR, not CRITICAL. The deferral is real and repeated. But the
+data was given in Aug, and a peer withholds the same split as policy (TRIVENI
+Nov, Tarun Sawhney: "I'm afraid we don't give a breakup of what we've got,
+maize v/s rice", [page 10]). Thesis weight is lower than M1 or M6.
+
+### 1B. Main company, minor items
+
+| ID | Sev | Item | Anchor |
+|---|---|---|---|
+| M21 | MINOR | Mid-call number corrections: H1 volume "9 crores" then "5.7"; DDGS "78 crores" then "INR28 crores"; Q3 volume 7.6 vs 7.8; Q1 8.5 vs 8.29. | Nov [page 22]; May [page 15]; Feb [page 8], [page 16]; Aug [page 3], [page 23] |
+| M22 | MINOR | CBG margin figures inconsistent in one call: 68.29% EBITDA (CFO), "60% to 65% minimum" (CFO), "40% to 45%" (MD), "55% to 60%" (CFO). | Nov [page 6], [page 21]-[page 22] |
+| M23 | MINOR | Revenue-mix answer flips mid-answer: "70%-odd... 20%-odd to 25%" then "No, sorry. 85 and 15". | Nov, MD, [page 24] |
+| M24 | MINOR | Nov CFO: shut plants "already operational from Q3... we have already completed the COD". Feb: Unit 5 CTO only on 17-Dec-2025, 58 operating days, "almost about 30 days we lost during the start of Q3". | Nov [page 7]; Feb [page 3]-[page 4], [page 11] |
+| M25 | MINOR | Disclosure policy used selectively. "I've been advised... we are not allowed to project... My company secretary sitting next to me is nudging me", after and before giving detailed volume, margin and capex numbers. | Feb, MD, [page 18]; May, CFO, [page 19] |
+| M26 | MINOR | Demand-supply framing reversed on the same numbers: "already an oversupply" (Nov) vs "almost at par" (Aug). | Nov [page 22]; Aug [page 24] |
+| M27 | MINOR | Retail PAT-margin question answered with CBG hiring and finance cost. Retail margin 2% (Feb CFO) vs "EBITDA of about 5%" (May MD). | Aug [page 10]; Feb [page 17]; May [page 7] |
+| M28 | MINOR | CBG utilisation "85% plus" (May) to "about 78%" (Aug). EBITDA dip: CFO "there is nothing driving this", then employee cost and a one-time R&M. | May [page 5]; Aug [page 6], [page 10] |
+| M29 | MINOR | May promises of more investor interaction and marketing; Aug follow-up shows advertising not started ("certain delays"). | May [page 20], [page 23]; Aug [page 22] |
+| M30 | MINOR | ENA plan 6 cr L at Rs 62-63; price fell to Rs 55-56; actual about 3 cr L. | May [page 4], [page 14]-[page 15] |
+| M31 | MINOR | DDGS Q4 guide Rs 70-80cr (softened same call) vs about Rs 28cr. | Feb [page 10], [page 16]; May [page 23] |
+
+### 1C. Peer statements that bear on the main company
+
+| ID | Sev | Item | Anchor |
+|---|---|---|---|
+| P1 | MAJOR | The ESY 25-26 allocation shortfall was public before TruAlt's Nov 13 "done deal". TRIVENI: "1,776 that was tendered for the OMCs against the 1,048" and pressure on "standalone distillers, especially processing maize". GULPOLY (11-Nov): 17.5 cr L received vs 23 cr L capacity. | TRIVENI Nov, Tarun Sawhney, [page 5]-[page 6]; GULPOLY Nov, Aditi Pasari, [page 8]-[page 9] |
+| P2 | MAJOR | Peers keep incentives out of EBITDA or book them only on receipt. BALRAMCHIN CFO: "incentives are largely in the form of capital subsidy and interest subvention. So, both these items are below EBITDA". GULPOLY: subsidies booked "on receipt basis only", none in Q1 FY27 P&L; ISS "not received... more than one and a half years", provision reversed. TruAlt carries about Rs 22cr of subvention plus PLI in Q1 FY27 ethanol EBITDA and a Rs 107cr grant receivable. TruAlt's 20-23% EBITDA is not like-for-like with peers, and accrual collectability is a live risk. | BALRAMCHIN Jun, Pramod Patwari, [page 10]; GULPOLY Aug, Rajiv Gupta, [page 14]; GULPOLY Feb, Aditi Pasari, [page 13]; TruAlt Aug [page 18], Nov [page 9] |
+| P3 | MAJOR | Sugary-feedstock diversion may be restricted in ESY 26-27. BALRAMCHIN: "it is reasonable to assume that there will be no diversion allowed towards B and juice". TRIVENI: allocation of sugary feedstocks as "one additional lever", grain to sugar "3:1" next year. TruAlt Q1 FY27: 4.37 of 8.29 cr L sugar-based, 3.35 cr L B-molasses; two monofeed units; plan to run all five plants "on syrup for 100 days". TruAlt never raises this risk and guides 44 cr L plus. | BALRAMCHIN Aug, Vivek Saraogi, [page 4]; TRIVENI Aug, Tarun Sawhney, [page 5]-[page 7]; TruAlt Aug [page 8], May [page 16] |
+| P6 | MAJOR | Standalone distilleries at 20-50% utilisation face solvency stress as interest moratoriums expire. TruAlt runs a standalone distillery model at 35-60% utilisation and never applies this to itself. | TRIVENI Aug, Tarun Sawhney, [page 11]; BALRAMCHIN Feb analyst, [page 6] |
+| P4 | MINOR | GULPOLY: private refiners "always are looking at getting the cheapest ethanol". This contradicts TruAlt's Feb claim that private OMCs pay above government price and supports its May/Aug Rs 60-60.50. | GULPOLY Nov, Aditi Pasari, [page 8] |
+| P7 | MINOR | Maize rise magnitude disputed: TRIVENI "not been even double-digit... medium, single digit"; GULPOLY Rs 23-25 now; TruAlt Rs 17-22 to 25.50. | TRIVENI Aug [page 12]; GULPOLY Aug [page 9]; TruAlt Aug [page 8] |
+| P8 | MINOR | GULPOLY can hold only 30-45 days of grain at 3,000 t/day. TruAlt claims cheap grain bought Oct-Feb will carry margins into Q2-Q3 FY27. The claimed stock depth is unusual and ties to the Rs 460-500cr inventory. | GULPOLY Aug [page 8]-[page 9]; TruAlt Aug [page 18] |
+| P9 | MINOR | Peer view split on SAF readiness: GULPOLY "technology for SAF... has yet not been established"; TRIVENI notes ATF norms now include ethanol-to-jet. | GULPOLY Feb [page 11]-[page 12]; TRIVENI Jun [page 7] |
+| P10 | MINOR | GULPOLY says its dedicated-ethanol status gives "priority allocation" and got 78%. TruAlt claims LTOA status ("already under a long-term offtake engagement") yet got 26 of a 72 cr L bid. TruAlt's bid used 365-day capacity; its own operating capacity is 55-60. The 34% hit rate is not like-for-like with peers. | GULPOLY May [page 3], [page 14]; TruAlt May [page 4], Aug [page 12] |
+| P11 | MINOR | The Karnataka litigation stalled national tender cycles 2-4 (TRIVENI Feb, Jun). TruAlt frames the year as "unfair allocation" only; the same litigation also blocked the extra cycles that could have lifted its volume. | TRIVENI Feb [page 5]; TRIVENI Jun [page 4] |
+
+Totals: 42 items. Material (CRITICAL + MAJOR): 25 (2 CRITICAL, 23 MAJOR).
+Minor: 17.
+
+---
+
+## PART 2: COMPARISON AGAINST B05 AND B06
+
+### 2A. My items vs the pipeline
+
+| ID | Sev | Status | Pipeline location / gap |
+|---|---|---|---|
+| M1 | CRITICAL | PARTIALLY CAUGHT | B05 4D [HIGH], 2B, 1C. Under-weighted: rated HIGH, not CRITICAL. Misses the MD's own May statement that the cut came "in November" (so the done-deal claim post-dated the cut), the third allocation figure (30 cr L), and that the 47 included 8 cr L of uncontracted ENA potential. |
+| M2 | MAJOR | CAUGHT | B05 4D [HIGH], 2B. |
+| M3 | MAJOR | CAUGHT | B05 2A rows, 4D [LOW-MEDIUM] 24 vs 26, 3C Deepak Poddar. The Nov CFO 22 vs MD 26-28 contradiction is not named, but the miss and the stock-math answer are. |
+| M4 | MAJOR | CAUGHT | B05 3C (Vedant Sarda). |
+| M5 | MAJOR | CAUGHT | B05 4D [HIGH], 3C, 3D. |
+| M6 | CRITICAL | CAUGHT | B05 2E, 2A, timeline_slippages, trigger 1 kill signal. |
+| M7 | MAJOR | CAUGHT | B05 2E, 2A. |
+| M8 | MAJOR | PARTIALLY CAUGHT | B05 1B, 1C, 2A cover date slip, count drift and TPD drift. Missing: Nov "construction has begun on three plants" vs Feb "began construction in December". |
+| M9 | MAJOR | CAUGHT | B05 4D [HIGH]. B05 anchors the offtake-first condition to May only; Feb [page 15] states it first. |
+| M10 | MAJOR | CAUGHT | B05 4D [MEDIUM], 1B. |
+| M11 | MAJOR | CAUGHT | B05 4D [MEDIUM], analyst note. |
+| M12 | MAJOR | CAUGHT | B05 4D [MEDIUM]. |
+| M13 | MAJOR | CAUGHT | B05 4D [MEDIUM]. |
+| M14 | MAJOR | PARTIALLY CAUGHT | B05 2C, 3C, 4C name the deflection but it is absent from the 4D red-flag list and the YAML red_flags. |
+| M15 | MAJOR | CAUGHT | B05 4D [MEDIUM]. |
+| M16 | MAJOR | CAUGHT | B05 4D [MEDIUM], 2A. |
+| M17 | MAJOR | CAUGHT | B05 4D [MEDIUM], dropped_triggers. |
+| M18 | MAJOR | CAUGHT | B05 4D [MEDIUM-HIGH]. |
+| M19 | MAJOR | CAUGHT | B05 4D [MEDIUM]. |
+| M20 | MAJOR | CAUGHT | B05 1A, 1C. |
+| M33 | MAJOR | CAUGHT | B05 4D [CRITICAL], 2E. |
+| P1 | MAJOR | CAUGHT | B06 Q1 net read (TRIVENI Nov data before TruAlt's done deal). |
+| P2 | MAJOR | PARTIALLY CAUGHT | B06 Q6 treats schemes as a sector-wide dependency. It never states that BALRAMCHIN classifies subvention below EBITDA or that GULPOLY books on receipt, so the EBITDA comparability and accrual-risk contrast is missing. B06 also attributes GULPOLY's "below 5%" ISS line to BALRAMCHIN (see 2C). |
+| P3 | MAJOR | MISSED | Not in B05 or B06. |
+| P6 | MAJOR | CAUGHT | B06 2E, risks_peers_raise. |
+| M21 | MINOR | CAUGHT | B05 4D [LOW]. |
+| M22 | MINOR | MISSED | |
+| M23 | MINOR | MISSED | |
+| M24 | MINOR | MISSED | |
+| M25 | MINOR | MISSED | |
+| M26 | MINOR | CAUGHT | B05 4D [LOW]; B06 Q4. |
+| M27 | MINOR | MISSED | |
+| M28 | MINOR | MISSED | |
+| M29 | MINOR | MISSED | |
+| M30 | MINOR | MISSED | B05 3D gives ENA 3 cr L at Rs 62 as data but not the plan miss or price fall. |
+| M31 | MINOR | CAUGHT | B05 2A, 4D. |
+| P4 | MINOR | PARTIALLY CAUGHT | B06 Q2 quotes GULPOLY but keeps UNVERIFIABLE. The line contradicts TruAlt's Feb claim directly. |
+| P7 | MINOR | CAUGHT | B06 2B. |
+| P8 | MINOR | MISSED | |
+| P9 | MINOR | MISSED | |
+| P10 | MINOR | MISSED | B06 Q1 compares hit rates without noting TruAlt's 365-day bid denominator or its LTOA claim. |
+| P11 | MINOR | CAUGHT | B06 2A, 2E. |
+
+Counts. All 42 items: 25 caught, 5 partially caught, 12 missed. Material
+25: 20 caught, 4 partially caught, 1 missed.
+
+### 2B. Pipeline red flags I assessed against the transcripts
+
+All B05 4D flags appear in my list except the utilisation-denominator item,
+which I assessed separately.
+
+| Pipeline flag | Assessment |
+|---|---|
+| B05 [CRITICAL] grain/sugar split evasion | SUPPORTED on facts. Severity OVERSTATED: data given in Aug; TRIVENI withholds the same split as policy. MAJOR fits. |
+| B05 [LOW] utilisation on three bases | SUPPORTED. The 95%/60% pair is reconciled in the same Feb passage ([page 4]); the <35% is the May run-rate ([page 5]). |
+| B05 [MEDIUM-HIGH] 51% revenue consolidation | SUPPORTED. The analyst said "report 51% of the gross revenue" and the MD confirmed "51%" ([page 16]). B05's Ind AS reading is an inference; the MD may mean attributable share. Keep it as a question to resolve. |
+| B05 1C "162 TPD vs 142 TPD" | SUPPORTED. 10 + 3x20 + 6x12 = 142 for the 10 plants named; 162 needs the disputed 4th Sumitomo plant. |
+| B06 Q4 demand-supply CONTRADICTED | SUPPORTED. TRIVENI Aug [page 10]-[page 11], TRIVENI Nov [page 6], BALRAMCHIN Jun [page 11], and GULPOLY May [page 15] ("more than 2,000 crore liters") all describe excess capacity. |
+| B06 Q1, Q3 PARTIALLY VERIFIED | SUPPORTED. |
+| B06 Q2, Q5 UNVERIFIABLE | Q5 SUPPORTED. Q2 is conservative; see P4. |
+| B05 36.85% pledge, 72.6% RPT, CFO -296cr | Outside transcript scope. Not assessed. |
+
+No pipeline red flag is NOT SUPPORTED as an invented signal. Two supporting
+attributions are wrong (2C).
+
+### 2C. Anchor and attribution errors found during the comparison
+
+- B06 Q6: "BALRAMCHIN references NABARD-linked interest subvention as the
+  reason its long-term debt carries an effective rate below 5%". The line is
+  GULPOLY's CFO Rajiv Gupta (GULPOLY May [page 6]). No BALRAMCHIN transcript
+  says "below 5%". The relevant BALRAMCHIN statement (subvention below EBITDA,
+  Jun [page 10]) is not used.
+- B06 "corrects" the BALRAMCHIN overcapacity quote from p.11 to p.10. The
+  quote sits under the [page 11] marker (printed "Page 10 of 12"). By the
+  pipeline's PDF-page rule, p.11 was right.
+- B06 Q3 cites GULPOLY Aug "p.4 and p.8" for the 10-11% guide. The first
+  instance is at [page 5].
+- B05 1C: "Raised only after an analyst push (Tanmay Javeri)" for
+  de-leveraging in May. Tanmay Javeri asked about CBG funding mix and
+  one-on-one meetings (May [page 20]). De-leveraging was raised by Parth Shah
+  in Aug only.
+- B05 page anchors one page off: Feb 36-37 cr L exchange is [page 11], not
+  p.10; May "49% JV partner" and GAIL "as of March 2026" are [page 6], not
+  p.5; Nov 80-85% utilisation is [page 18], not p.17.
+
+---
+
+## PART 3: PROMISE-DELIVERY SPOT CHECKS (B05 section 2A)
+
+| # | B05 row | Earlier call contains promise? | Later call shows outcome? | Verdict |
 |---|---|---|---|---|
-| 1 | CRITICAL | Repeated evasion over 2 quarters. The same analyst (Nitin Awasthi, InCred) asked for the feedstock split of volumes (grain vs sugar) twice. Management deferred both times: "allow me to have that sent to you over mail... I don't have that figure in hand" (Nov) and "We'll share it with you offline... I don't have right now" (May). A different analyst got the split in Aug (sugar 4.37 cr L, grain 3.92 cr L). The data point was given later, which reduces the harm. The 2-quarter deferral still meets the rule-5 definition. | Nov p15 L599-603; May p25 L962-966; resolved Aug p8 L284-287 | MISSED (B05 2E lists only the 15 cr L and retail questions) |
-| 2 | MAJOR | Allocation figures contradict between calls. Nov: "34 crores liters from the government OMCs, about 4 crores... 1.8 crores... 8 crores ENA... total to 47"; "47 is a done deal". May: the PSU award was 26 cr L against a 72 cr L bid, and "in November they came around and decreased the allocation". The cut was known by Nov. Feb still said "fully stabilised platform... 5.5-6 crore litres per month" and kept the 36-37 cr L target. When pressed in May ("as an investor, it was not informed to us"), the MD answered "Even now, the mechanism hasn't changed". That answer is a dodge. | Nov p10 L403-404, p15 L595-598; Feb p4 L124-127, p11 L423-427; May p3-4 L129-138, p10-11 L396-407, p26 L1023 | PARTIALLY CAUGHT. B05 flags the 34% hit rate as disclosed only after the miss. It never notes that the Nov call stated 34 cr L of PSU allocation as a "done deal", or the May dodge. |
-| 3 | MAJOR | Management told analysts different things about private-OMC pricing. Feb: private OMCs "usually... give a little higher than the government pricing... this year also... they have given us better realization." May: "INR60 point change was the price that we have offered to them"; analyst: "substantially discounted price to start with". Aug: "about INR60.50". PSU prices are Rs 64-71 for the relevant feedstocks. | Feb p21 L832-835; May p4 L140-142, p25-26 L984-999; Aug p22 L841; PSU prices May p28 L1079-1082 | MISSED |
-| 4 | MAJOR | The stated cause of the shutdown changes, and the 15 cr L claim depends on it. Nov: "we had an intentional shutdown wherein about 14 odd crores litres... is pending"; "we have intentionally shut down three out of the four operating plants". Feb (court claim): "the reasons of delay were beyond our control and this falls under the force majeure condition... extreme rainfall". May and Aug go back to a planned shutdown for integration. The Rs 1,062-1,075 cr court claim rests on force majeure, but management's own investor calls call the shutdown intentional. | Nov p10 L396-398, p24 L946-947; Feb p11 L438-444; May p4-5 L150-159; Aug p23 L895-896 | MISSED |
-| 5 | MAJOR | The SAF timeline slipped by about 1 year, and the FID condition was reversed. Nov: "revenue should start by FY 2028". Feb: complete "July to October of 2027... FY '28 we should start seeing revenues". May: "24 to 30 months is the target we hold to commission the plant. That's FY29." May: "As soon as we achieve a long-term offtake agreement along with the price, we make our final investment decision". Aug: capex will "begin as early as... the next two or three months", revenue "by end of 2028, that's in FY29". Aug also shows no offtake signed: "still in the working groups". | Nov p19 L762-764; Feb p9 L343-348; May p7 L258-259, p29 L1116-1122; Aug p7 L260-264, p9 L342-349 | MISSED. B05 states the opposite: "Aug-Oct 2027, revenue FY28 ... repeated Q4 FY26 and Q1 FY27 calls, unchanged"; 1C calls SAF "Strengthening"; the B05 kill signal ("FID delay beyond the FY28 revenue date") has already fired. |
-| 6 | MAJOR | Margin quality. Headline Q1FY27 EBITDA was 23.5%. The CFO's breakdown: DDGS Rs 47.34 cr + CO2 Rs 1.89 cr + other Rs 8.73 cr + PLI/interest subvention "around INR22 crores". Core ethanol margin: "It should be about 9% to 9.5%". The Q1 margin came from maize stock bought at Rs 17-22/kg. "At INR25.50... It comes down to almost INR6 to INR7 a litre." That is a negative the CFO gave under questioning. | Aug p5 L175, p8 L294-301, p18 L692-704 | PARTIALLY CAUGHT. B05 scores Q1 EBITDA "Delivered/beat" and calls margin "Strengthening, delivered". The Rs 6-7/L figure appears only as a peer question. The 9-9.5% core margin is absent. |
-| 7 | MAJOR | CBG economics attribution. The only operating CBG plant sits in Leafiniti Bioenergy (CFO: Leafiniti revenue Rs 42.84 cr, PAT Rs 18.07 cr). GAIL "holds 49% stake in Leafiniti" from March 2026. So the showcase plant is now 51% attributable. In May, the MD calls TGPL "a wholly-owned subsidiary", but the same call says Sumitomo is "a 49% JV partner" of TruAlt Gas. In Aug, the MD agrees "we will only report 51% of the gross revenue". That is wrong for a 51% subsidiary, which consolidates 100% with a minority interest. | May p6 L203-212, p9 L341-351, p20 L786-787; Aug p16 L605-607 | MISSED |
-| 8 | MAJOR | Promoter pledge. In Nov, 26% of shares were "re-pledged" to the SBI/IREDA consortium as a sanction term just after listing. In Aug, the analyst asks when the pledge loan is repaid. The CFO gives a confused answer ("this loan is not against the pledged share, that is collateralized"). Release is "hopefully in this quarter". | Nov p17-18 L683-703; Aug p14-15 L555-569 | MISSED (no mention in B05) |
-| 9 | MAJOR | Ind AS 8 prior-period restatement. The analyst (Shubh Gala) asked; the disclosure was prompted. Rs 10.5 cr GST Rule 43 reversal "supposed to be in the P&L account in the March quarter", booked to other equity. The MD calls it "an oversight from our the tax consultants" and says "We could have increased our PAT margin by INR4 crores... instead of INR89 crores... INR93 crores". A GST reversal is a cost, not a lost gain. The Rs 89 cr base matches neither FY26 PAT given in May (standalone Rs 80.26 cr, consolidated Rs 96.86 cr). | Aug p20 L761-775; May p9 L326-327, L370-372 | PARTIALLY CAUGHT (misclassified). B05 calls it an "unprompted" admission and the "clearest instance of unprompted accountability". It uses the item to keep the grade at C instead of D. It is a prompted, incoherent explanation of a prior-period error. |
-| 10 | MAJOR | Related-party sourcing statements disagree, and the pipeline did not test them against the AR. May: group sourcing "less than 55%" and falling. Group-company payables "may go to two, three months". Aug: "access to our group company that can assure us 100% of the required raw material at a stable price". Spent wash and press mud for the Sumitomo JV come from TruAlt and the group sugar company. Bagasse for power also comes from a group company (Nov). B05 cites the AR's RPT purchases at 72.6% of FY26 purchases, and the May "<55%" figure needs to be checked against that. | Nov p16 L642-649; May p18-19 L708-729, p20-21 L785-797; Aug p24 L935-937 | MISSED. B05 says the reverse: "zero mention... of related-party feedstock concentration" and "none of these topics were asked by any analyst". Vinit Thakur asked in May. |
-| 11 | MAJOR | The FY27 "44 cr L orders on hand" is in fact an assumption. In the same call the MD says "we have 44 crores litres of orders on hand" and "we are taking the base case. Whatever we got last year to be a base case". In May the book was 26 + 8 + 6 = 40. No reason is given for the 4 cr L rise. The MD also says the 44 excludes the 15 cr L. A peer (TRIVENI, Aug) says the Supreme Court status quo "has prevented the tender for allocation". | Aug p8 L306-309, p9 L335, L352-355; May p20 L757-759; TRIVENI Aug p6 L307-312 | MISSED and misreported. B05 3D says the 44 is "26 public OMC + 8 private OMC + 6 ENA + 15 court-ordered, netted against non-delivery of the 15 cr L tranche". The transcripts do not support that make-up. |
-| 12 | MAJOR | Unsold inventory built up. At Dec there were 5.2 cr L of ethanol stock plus sales in transit. In May, "INR460 close to INR500 crores of inventory"; "the inventory we're unable to sell". In Aug, grain stocks were bought at Rs 18,000-21,000/t and carry a holding cost. The MD says Q1 margin rested on this stock. | Feb p18 L705-717; May p11 L408-410, p27 L1043-1053; Aug p18 L701-708 | PARTIALLY CAUGHT. B05 3C calls the inventory answer "coherent". It is not linked to the cash-conversion flag or listed as a red flag. |
-| 13 | MAJOR | The 15 cr L court order slipped over 4 calls: Nov "work in progress", Feb "fight has just begun", May "by September / H1", Aug "not able to give a timeline". Aug also says "anytime now". TRIVENI reports a Supreme Court status quo on allocations. | Nov p10 L396-404; Feb p11-12 L445-457; May p11-12 L419-446; Aug p9 L335-338, p21 L799-801 | CAUGHT (B05 flag + repeated_evasions; B06 2E) |
-| 14 | MAJOR | Retail stall: Nov "13 shortly", Feb "75 by calendar year", May "11 in three months, 76 taken slow", Aug still 7 open with "4 by end of quarter". | Nov p5 L128-131; Feb p5 L166-169; May p7 L263-268; Aug p4 L140-148 | CAUGHT |
-| 15 | MAJOR | CBG commissioning slips on both JVs. Sumitomo: Nov "end of Q2 FY27"/"July 2026", Feb "June 2026", May "3 of 4, Q3/Q4 FY27", Aug "near commissioning, revenue Q4". GAIL: Feb "5 plants, Jan-Feb '27", May "6 plants, Q4 FY27", Aug "construction... August onwards, revenues Q1 next FY". | Nov p3 L103-104, p19 L752-754; Feb p18-19 L727-756; May p6 L205-219, p12 L469-485; Aug p3-4 L106-123 | CAUGHT (B05, GAIL leg partially) |
-| 16 | MAJOR | FY26 volume missed: 36-37 cr L guided, 24 cr L delivered. | Feb p11 L423-427; May p10 L388-395 | CAUGHT |
-| 17 | MAJOR | TruAlt's demand-supply view reversed between calls. Nov: "supply of close to... 1,800... demand of close to 1250... already an oversupply". Aug: "almost at par" with "no further capacity additions". Peers describe structural overcapacity. | Nov p22 L873-876; Aug p24 L918-932; TRIVENI Aug p10 L544-572 | CAUGHT (B06 Q4; the self-contradiction with Nov is not noted) |
-| 18 | MAJOR | Peer: the Supreme Court status quo blocks all new allocations (BPCL challenge to the Karnataka HC ruling; AG proposal of 100 cr L). This conflicts with TruAlt's Aug confidence that the 15 cr L comes "anytime now". | TRIVENI Aug p6 L307-318; Aug p9 L335-338 | CAUGHT (B06 2E) |
+| 1 | FY26 volume 36-37 cr L, Missed | Yes. Feb, MD, [page 11] ("revised production of about 36 to 37"); also Nov [page 22]. | Yes. May: 24 (MD [page 10]), 26 (CFO [page 25]). | Direction CONFIRMED. Anchor p.10 should be p.11. |
+| 2 | Q4 DDGS Rs 70-80cr, Missed | Yes. Feb, MD, [page 10]. | Yes. May, MD, [page 23]: "about INR28 crores" (asked for FY26 and Q4). With Q3 at Rs 18cr (Feb [page 10]), Q4 is about Rs 10cr if 28 is the full year. | CONFIRMED. |
+| 3 | Q1 FY27 utilisation 80%, Missed | Yes. Feb, MD, [page 13]. | Yes. Aug, MD, [page 3]: "about 60%". | CONFIRMED. |
+| 4 | 4 Sumitomo plants by June 2026, Missed | Yes. Feb, MD, [page 19]. | Yes. May [page 12] 3 of 4; Aug [page 3]-[page 4] "near commissioning". | CONFIRMED. |
+| 5 | GAIL infusion in February, Partial | Yes. Feb, MD, [page 4]. | Yes. May, MD, [page 6]: "as of March 2026". | CONFIRMED. Anchor p.5 should be p.6. |
+| 6 | Q3+Q4 26-28 cr L, Missed, "actual roughly 18-20" | Yes. Nov, MD, [page 18]. | Q3 7.6-7.8 (Feb [page 8], [page 16]); Q4 "around 6 crore litres" (May CFO [page 25]). Sum about 13.6-13.8. | Direction CONFIRMED. Magnitude WRONG: 18-20 comes from subtracting H1 from a disputed full-year figure and does not match the quarterly figures. Also the promise was production and the outcomes are sales. |
 
-### Minor items
+Checked 6, direction confirmed 6, direction wrong 0. One magnitude error and
+two page-anchor errors.
 
-| # | Item | Anchor(s) | Status |
-|---|---|---|---|
-| 19 | Refusal to give revenue or CBG outlook on every call ("not supposed to give", "company secretary... nudging me", "We cannot tell you the figure of FY2027"). Volume and price are then given with "do the math". This looks like a consistent policy, not a hidden fact. | Nov p19 L747-751; Feb p18 L720-723; May p19 L750; Aug p20 L783-785 | MISSED |
-| 20 | FY26 volume totals do not reconcile: MD says 24 cr L, CFO says "26 crore litres" with Q4 about 6 cr L. The quarter sum is about 3.0-3.3 + 2.4 + 7.6/7.8 + 6, roughly 19-20 cr L. Q1FY27 is also given as 8.5 and 8.29 cr L. | May p10 L388-390, p25 L960-961; Nov p24 L936-944; Feb p8 L321, p14 L635; Aug p3 L85, p23 L890-891 | PARTIALLY CAUGHT (B05 LOW self-corrections) |
-| 21 | Q1FY27 guidance missed and Q2 plan reversed. Feb: "80% capacity use for Q1"; "Q2 usually is our downtime. So 2 months is scheduled maintenance". Aug: "only operate at about 60%"; "we don't have plans to stop for maintenance". | Feb p13 L518-521; Aug p3 L91, p23 L889-892 | MISSED (not in the promise table) |
-| 22 | Stock-in-trade question deflected ("I should have to ask the investor community"). | Feb p12 L458-464 | CAUGHT |
-| 23 | DDGS Q4 guide of Rs 70-80 cr missed at Rs 28 cr. The Feb call had already softened it ("I may have missed out... would not be able to give the exact quantity"). The May figure was first stated as "78 crores", then corrected to 28. | Feb p10 L399-401, p16 L648-654; May p15 L607-609 | CAUGHT |
-| 24 | Tone shift from triumphant (Nov "done deal", Feb "fully stabilized platform") to apologetic and hostile in May ("apologies... could not... demonstrate the growth that we had already promised"; "management has not been active"; "hanky-panky"; "oligarchy"). | May p15 L573, p20 L775-779, p25 L981, p29 L1128-1130 | PARTIALLY CAUGHT (B05 external-blame pattern) |
-| 25 | Unusual analyst insistence: Deepak Poddar on volume math (Feb, May), Vedant Sarda on run-rate (May), Parth Shah on deleveraging and a share price "not going anywhere from the listing day" (Aug). | Feb p18 L699-718; May p26-27 L1016-1053; Aug p22-23 L853-880 | CAUGHT (B05 3C) |
-| 26 | Deleveraging plan promised "in the next call or maybe in the next few days", with no numbers. | Aug p22 L856-857, p23 L878-880 | CAUGHT |
-| 27 | Advertising was promised in May and had not started by Aug ("empanelled... media strategist... delays"). | May p23 L894-897; Aug p22 L862-866 | MISSED |
-| 28 | Peer contradiction on blending. TruAlt May: "increasing the blending targets from 20% to 21%. The notification is already in"; "already increased by 1%". GULPOLY Aug: "blending beyond 20% may be delayed by 6 months to 1 year". TRIVENI Jun: talk of "slightly more than 20%... cannot certify". A live notification check is needed (PENDING LIVE VERIFICATION). | May p5 L177-178, p22 L858; GULPOLY Aug p7 L267-270; TRIVENI Jun p4 L192-195 | MISSED |
-| 29 | CBG margin figures drift: Q2FY26 EBITDA 68.29% / PAT 49.85%, then 9M 63%/43%, then FY ">55%... 45%", then Q1FY27 PAT about 40%. The Q1 dip is first explained as "nothing driving this", then as employees plus one-time R&M. | Nov p6 L220-226; Feb p4 L129-131; May p5 L193-194; Aug p3 L103-105, p6 L227-233 | MISSED |
-| 30 | Operating days in Q3FY26: MD says 58, CFO says 48-50. Three reasons are given: mid-Nov crushing start, farmer protests, and "30 days we lost". | Feb p3 L110, p5 L185, p8 L321-325, p11 L425 | MISSED |
-| 31 | Nov: "we have already completed the COD, and all these plants have commenced". Feb: Unit 5 got its consent to operate only on 17-Dec-2025. | Nov p7 L263-265; Feb p4 L119-120 | MISSED |
-| 32 | CFO calls higher depreciation and finance cost "a one-time fact" while CBG and SAF capex is ongoing. | May p9 L337-340 | MISSED |
-| 33 | The SAF "IRR" answer mixes payback and IRR ("3.5 to 4 years... IRR will be close to 19%"). | Nov p21 L838-840 | MISSED |
-| 34 | CBG plant sizes and capex drift: "four CBG plants of 20 tons each" vs "four plants of 80 TPD each" (Nov). May gives 162 TPD, but the plant counts add to 142. Aug gives 132 TPD additional. GAIL cost: Rs 60-65 cr per 12 TPD (Feb), then Rs 425 cr for 6 x 10 TPD (Aug). | Nov p12 L473-474, p19 L752-754; Feb p10 L381-386; May p6 L217-220; Aug p7 L254-256, p15 L594-595 | CAUGHT (B05 count inconsistency) |
-
-Totals: 34 items listed. 18 material (1 CRITICAL, 17 MAJOR) and 16 MINOR.
-
-## PART 2: COMPARISON AGAINST PIPELINE FLAGS
-
-### 2A. Pipeline flags I did not raise in the same form
-
-| Pipeline flag | Source | Assessment | Basis |
-|---|---|---|---|
-| [HIGH] Utilisation on three denominators "describing the same operating period", "never reconciled" | B05 4D, YAML flags | OVERSTATED | The MD gives both the 95%-on-operating-days and the ~60% gross figures in the same Feb opening (Feb p4 L123-124), so they were reconciled. The "<35%" is the Apr-May 2026 sales run-rate (May p5 L172-174), which is a different period. |
-| [HIGH] "Zero mention across all four calls of standalone CFO, DSCR, or related-party purchase concentration"; "none of these topics were asked by any analyst" | B05 2D, 4D, YAML | PARTLY NOT SUPPORTED | DSCR is stated: 1.36 (Aug p5 L191) and Leafiniti 4.25 (May p9 L356). Group sourcing and group payables were asked by Vinit Thakur and answered (May p18-19 L708-729). Aug p24 L935-937 also covers it. Only the operating-cash-flow silence holds. |
-| SAF date "unchanged", SAF trigger "Strengthening" | B05 1B, 1C | NOT SUPPORTED | Item 5. The date moved from FY28 to FY29 (May p29, Aug p7). |
-| GST restatement as "unprompted accountability", "PAT understatement" | B05 2B, 3C, 4C, credibility_basis | NOT SUPPORTED | Item 9. An analyst prompted it, and the explanation does not add up. |
-| FY27 order book "44 cr L = 26+8+6+15 netted" | B05 3D | NOT SUPPORTED | Item 11. The 44 excludes the 15 (Aug p9 L335). The make-up is not in any transcript. |
-| Q1FY27 EBITDA "Delivered/beat vs 15-22% range guided" | B05 2A | NOT SUPPORTED as a promise row | No Q1FY27 margin promise exists. The real Q1FY27 promise (80% utilisation, Feb p13) was missed. See Part 3. |
-| Q3: maize-margin claim "CONTRADICTED", "the single most consequential finding" | B06 Q3, Part 4 | NOT SUPPORTED | B06 restates TruAlt's claim as compression "through FY26". TruAlt made a point-in-time sensitivity: Q1 used stock bought at Rs 17-22/kg, and at today's Rs 25.50 the contribution falls to Rs 6-7/L (Aug p8 L294-301). GULPOLY supports the direction. Q1 was "exceptional" because "raw material prices were very conducive". It sees "temporary pressure on margins... owing to higher grain prices". It can stock only 30-45 days and guides 10-11% consolidated (GULPOLY Aug p4 L124-128, p6 L235-245, p8 L310-321). GULPOLY's Rs 9 per litre is tied to "ease off on the raw material prices" (GULPOLY Feb p10). No peer gives a per-litre figure at Rs 23-25/kg maize. The magnitude cannot be verified; the direction is corroborated. |
-| TruAlt "never describe the Supreme Court stay mechanism" | B06 2E | OVERSTATED | May p11 L426-429: "the Supreme Court has directed the OMCs that unless that matter is fully heard and disposed of, not to do any new allocation." TruAlt did not name BPCL or the AG proposal; that part holds. |
-| FY26 volume miss; 15 cr L slippage; retail stall; CBG count drift; DDGS miss; self-corrections | B05 | SUPPORTED | Items 13-16, 20, 23, 34 |
-| Q1 allocation shortfall sector-wide; Q4 overcapacity framing; Q5 scheme dependency; Q6 FCI price | B06 | SUPPORTED | Peer quotes check out at the cited pages (GULPOLY Feb p10; TRIVENI Aug p6, p10-11) |
-
-### 2B. Scoring summary
-
-- Material items (CRITICAL + MAJOR): 18. CAUGHT 6 (items 13, 14, 15, 16, 17, 18). PARTIALLY CAUGHT 4 (items 2, 6, 9, 12). MISSED 8 (items 1, 3, 4, 5, 7, 8, 10, 11).
-- Minor items: 16. CAUGHT 5 (items 22, 23, 25, 26, 34). PARTIALLY CAUGHT 2 (items 20, 24). MISSED 9 (items 19, 21, 27, 28, 29, 30, 31, 32, 33).
-- Whole list: CAUGHT 11, PARTIALLY CAUGHT 6, MISSED 17. Total 34.
-- acceptance_rate uses the material subset. The pipeline "had" CAUGHT + PARTIALLY CAUGHT = 10 of 18 = 55.6%. On CAUGHT alone the rate is 6 of 18 = 33.3%. Both are below 60%. The denominator is 18, so rule 7 does not apply.
-
-## PART 3: PROMISE-DELIVERY SPOT CHECKS (B05 2A)
-
-| Row | Earlier call contains promise? | Later call shows outcome? | Verdict |
-|---|---|---|---|
-| 80-85% utilisation Q3/Q4 FY26 | Yes, Nov p18 L705-706 | Yes, ~60% gross Q3 (Feb p4 L123) | CONFIRMED |
-| 26-28 cr L Q3+Q4 FY26 | Yes, Nov p18 L722-723 | Yes. Q3 was 7.6 (Feb p8 L321). FY is 24 (May p10) or 26 (May p25). Q3+Q4 comes to about 18-20. | CONFIRMED (the size depends on which unreconciled FY total is used; item 20) |
-| FY26 36-37 cr L | Yes, Feb p11 L426-427 | Yes, 24 (May p10 L388-390) | CONFIRMED |
-| Q4 DDGS Rs 70-80 cr | Yes, Feb p10 L399-401 | Yes, Rs 28 cr (May p23 L904-907) | CONFIRMED. The Feb call softened this in the same call (p16 L648-654). |
-| 4 Sumitomo plants by June 2026 | Yes, Feb p18-19 L729-738 | Yes, 3 of 4 (May p12 L473-485) | CONFIRMED |
-| SAF VGF Rs 150 cr delivered | Yes, Feb p4 L154-155 | Yes, "successfully achieve" (Aug p4 L128-129) | CONFIRMED |
-| Q1FY27 EBITDA "delivered/beat vs 15-22% guided" | No. No Q1FY27 margin promise exists. The 15-16% was an ethanol "trend" (Nov p23 L921-923) and 20-22% was a Q4FY26 target (Feb p11 L429). The Q1FY27 promise that does exist is 80% utilisation (Feb p13 L518-519). | That promise was missed: ~60% (Aug p3 L91). The 23.5% print was helped by inventory (item 6). | WRONG |
-
-Checked 7, confirmed 6, wrong 1.
+---
 
 ## PART 4: CREDIBILITY GRADE
 
-B05 grade: C. My grade would be lower (D). The one positive holding the grade at C (GST restatement "unprompted accountability") does not survive the transcript. Four material contradictions between calls are unscored: allocation "done deal" vs 26 cr L, private-OMC "higher than government" vs Rs 60, "intentional shutdown" vs force majeure, and the SAF FID/date reversal. The capex-execution positives B05 credits are real: multi-feed capex delivered, CBG plant #1 economics, VGF secured.
+B05 grade: D. I concur. On my check, 8 of 11 tracked promises were missed and
+2 were partial. The MD dates the allocation cut to November while the Nov and
+Feb calls sold a settled volume. The same shutdown was "intentional" to
+investors and "force majeure" to a court. The positives are operational
+(multi-feed delivered, CBG plant economics, VGF secured, a straight answer on
+the 9-9.5% core margin). They do not offset the disclosure record.
+
+---
 
 ## PART 5: CONSOLIDATED FINDINGS
 
 | Sev | Finding |
 |---|---|
-| CRITICAL | F1. Missed repeated evasion (item 1): feedstock-split data deferred in Nov and May to the same analyst. Resolved in Aug, which reduces the harm. Rule 5 still classes it CRITICAL. |
-| MAJOR | F2. Allocation contradiction (Nov 34 cr L PSU "done deal" vs May 26 cr L; May dodge) is under-weighted (item 2). |
-| MAJOR | F3. Private-OMC pricing contradiction missed (item 3). |
-| MAJOR | F4. Shutdown cause missed: "intentional" on calls vs force majeure in court (item 4). Legal risk to the Rs 1,062 cr claim. |
-| MAJOR | F5. SAF FY28 to FY29 slip and FID-condition reversal missed. B05 states the date is unchanged (item 5). |
-| MAJOR | F6. Core ethanol margin 9-9.5% and inventory-driven Q1 margin under-weighted (item 6). |
-| MAJOR | F7. CBG attribution (Leafiniti 49% GAIL; TGPL "wholly-owned"; "report 51% of revenue") missed (item 7). |
-| MAJOR | F8. 26% promoter pledge and the confused release answer missed (item 8). |
-| MAJOR | F9. GST prior-period restatement misclassified as an unprompted accountability positive. It props the C grade (item 9). |
-| MAJOR | F10. B05 "zero mention of DSCR/RPT, never asked" is not supported. The group-sourcing figures (<55% vs "100%" vs AR 72.6%) were never tested (item 10). |
-| MAJOR | F11. The "44 cr L orders on hand" is really a base-case assumption. B05's make-up of it has no transcript support (item 11). |
-| MAJOR | F12. Rs 460-500 cr unsold inventory not linked to the cash-conversion flag (item 12). |
-| MAJOR | F13. B06 Q3 "CONTRADICTED" is not supported. It misframes TruAlt's claim, and GULPOLY supports the direction. It is carried to Halt 1 as the top priority and would misdirect verification. |
-| MINOR | F14. B05 utilisation-denominator HIGH flag overstated. |
-| MINOR | F15. B06 2E "never describe the SC stay mechanism" overstated (May p11 L426-429). |
-| MINOR | F16. Q1FY27 80% utilisation promise missed and Q2 maintenance plan reversed; neither is in the promise table (item 21). |
-| MINOR | F17. FY26 volume totals do not reconcile: 24 vs 26 vs a quarter sum of about 19-20 (item 20). |
-| MINOR | F18. Blending: TruAlt says "E21 notification already in", peers say beyond-E20 is delayed (item 28). PENDING LIVE VERIFICATION of the notification. |
-| MINOR | F19. Other minor misses: CBG margin drift, operating-days conflict, Unit 5 CTO vs "COD complete", "one-time" depreciation, SAF IRR/payback mix-up, advertising promise, outlook refusals (items 19, 27, 29-33). |
-| MINOR | F20. B05 promise row "Q1FY27 EBITDA delivered" is not a promise-delivery item (Part 3). |
+| MAJOR | MISSED: sugary-feedstock diversion restriction risk for ESY 26-27 (BALRAMCHIN Aug [page 4]; TRIVENI Aug [page 5]-[page 7]). About 53% of TruAlt Q1 FY27 volume was sugar-based, two units are monofeed, and FY27 guidance assumes 100 syrup days. Neither B05 nor B06 carries it. |
+| MAJOR | M1 under-weighted: "done deal" allocation rated HIGH, should be CRITICAL. Add the MD's own May [page 26] dating of the cut to November, the 30 cr L third figure (May [page 10]), and the 8 cr L ENA potential inside the 47. |
+| MAJOR | P2 partially caught: peers keep subvention below EBITDA (BALRAMCHIN) or book incentives on receipt (GULPOLY). TruAlt's EBITDA includes about Rs 22cr/quarter of subvention plus PLI. Peer EBITDA comparisons in later stages must adjust. The Rs 107cr accrued receivable carries the collection risk GULPOLY describes. |
+| MINOR | M8 partial: Nov "construction has begun on three plants" vs Feb "began construction in December" not named. |
+| MINOR | M14 partial: stock-in-trade deflection named in B05 prose but missing from the red-flag list and YAML. |
+| MINOR | P4 partial: GULPOLY's private-refiner statement contradicts TruAlt's Feb pricing claim; B06 leaves Q2 UNVERIFIABLE. |
+| MINOR | B05 severity overstated: grain/sugar split evasion rated CRITICAL; MAJOR fits (data given in Aug; peer TRIVENI withholds the same split). |
+| MINOR | B06 Q6 attributes GULPOLY's "below 5%" ISS statement to BALRAMCHIN. |
+| MINOR | B05 1C attributes a May de-leveraging push to Tanmay Javeri; not in the transcript. |
+| MINOR | B05 2A row "26-28 cr L... actual roughly 18-20" does not match the quarterly figures (about 13.6-13.8). |
+| MINOR | Page-anchor errors: B05 Feb p.10 to p.11, May p.5 to p.6 (twice), Nov p.17 to p.18; B06 BALRAMCHIN overcapacity p.10 to p.11, GULPOLY Aug 10-11% p.4 to p.5. |
+| MINOR | 11 minor items missed: M22, M23, M24, M25, M27, M28, M29, M30, P8, P9, P10. |
+
+critical 0, major 3, minor 9.
+
+Acceptance: material_found 25, material_caught 24 (20 caught plus 4 partial,
+same convention as run r1, which counted 10 of 18 with partials). Rate 96.0%.
+Strict rate on outright catches only: 20 of 25 = 80.0%. Both clear the 60%
+floor.
 
 ```yaml
 stage: B12b
@@ -127,62 +242,43 @@ company: "TRUALT"
 run_date: "2026-09-18"
 model: "claude-opus-5"
 status: complete
-independent_flags_found: 34
-caught: 11
-partially_caught: 6
+independent_flags_found: 42
+caught: 25
+partially_caught: 5
 missed:
-  - {severity: "CRITICAL", item: "Repeated evasion over 2 quarters: feedstock (grain vs sugar) volume split deferred to the same analyst in Nov and May, given only in Aug to another analyst", anchor: "Nov p15 L599-603; May p25 L962-966; Aug p8 L284-287"}
-  - {severity: "MAJOR", item: "Private-OMC pricing told two ways: higher than government pricing (Feb) vs Rs 60-60.50 discounted contract (May, Aug)", anchor: "Feb p21 L832-835; May p4 L140-142, p26 L992-999; Aug p22 L841"}
-  - {severity: "MAJOR", item: "Shutdown called intentional on investor calls but force majeure (rainfall) in the court claim behind the 15 cr L / Rs 1,062 cr order", anchor: "Nov p10 L396-398, p24 L946-947; Feb p11 L438-444; Aug p23 L895-896"}
-  - {severity: "MAJOR", item: "SAF revenue slipped FY28 to FY29 and FID moved from after signed offtake (May) to capex in 2-3 months with no offtake (Aug); B05 says date unchanged", anchor: "Feb p9 L343-348; May p7 L258-259, p29 L1116-1122; Aug p7 L260-264, p9 L342-349"}
-  - {severity: "MAJOR", item: "CBG attribution: showcase plant sits in Leafiniti, now 49% GAIL; TGPL called wholly-owned though Sumitomo holds 49%; MD says only 51% of revenue is reported", anchor: "May p6 L203-212, p9 L341-351, p20 L786-787; Aug p16 L605-607"}
-  - {severity: "MAJOR", item: "26% promoter shares re-pledged to SBI/IREDA after listing; confused CFO answer on release in Aug", anchor: "Nov p17-18 L683-703; Aug p14-15 L555-569"}
-  - {severity: "MAJOR", item: "Group sourcing stated as under 55% (May) and as 100% assured (Aug), group payables stretched to 2-3 months; never tested against the AR 72.6% RPT purchase share", anchor: "May p18-19 L708-729; Aug p24 L935-937; Nov p16 L642-649"}
-  - {severity: "MAJOR", item: "FY27 44 cr L called orders on hand and also a base-case repeat of last year; up from 40 in May with no reason given; peer says the Supreme Court status quo blocks tenders", anchor: "Aug p8 L306-309, p9 L335, L352-355; May p20 L757-759; TRIVENI Aug p6 L307-312"}
-  - {severity: "MINOR", item: "Revenue and CBG outlook refused on every call while volume and price are given with do-the-math", anchor: "Nov p19 L747-751; Feb p18 L720-723; May p19 L750; Aug p20 L783-785"}
-  - {severity: "MINOR", item: "Q1FY27 80% utilisation promise missed (about 60%); Q2 two-month maintenance plan reversed", anchor: "Feb p13 L518-521; Aug p3 L91, p23 L889-892"}
-  - {severity: "MINOR", item: "Advertising promised in May, not started by Aug", anchor: "May p23 L894-897; Aug p22 L862-866"}
-  - {severity: "MINOR", item: "TruAlt says E21 notification is in; GULPOLY and TRIVENI say beyond-E20 is delayed or uncertified; PENDING LIVE VERIFICATION", anchor: "May p5 L177-178; GULPOLY Aug p7 L267-270; TRIVENI Jun p4 L192-195"}
-  - {severity: "MINOR", item: "CBG margin figures drift across calls; Q1 dip explained as nothing, then as one-time costs", anchor: "Nov p6 L220-226; Feb p4 L129-131; May p5 L193-194; Aug p6 L227-233"}
-  - {severity: "MINOR", item: "Q3FY26 operating days 58 (MD) vs 48-50 (CFO), three different causes given", anchor: "Feb p3 L110, p5 L185, p8 L321-325, p11 L425"}
-  - {severity: "MINOR", item: "Nov says all plants commenced with COD complete; Unit 5 consent to operate only on 17-Dec-2025", anchor: "Nov p7 L263-265; Feb p4 L119-120"}
-  - {severity: "MINOR", item: "CFO calls higher depreciation and finance cost a one-time effect", anchor: "May p9 L337-340"}
-  - {severity: "MINOR", item: "SAF IRR answer mixes payback years and IRR", anchor: "Nov p21 L838-840"}
-pipeline_flags_not_supported:
-  - "B05 HIGH flag: zero mention of DSCR or related-party concentration and never asked; DSCR stated Aug p5 L191 and May p9 L356, group sourcing asked and answered May p18-19 L708-729 (only the cash-flow silence holds)"
-  - "B05 1B/1C: SAF commissioning Aug-Oct 2027 and FY28 revenue unchanged across Q4 FY26 and Q1 FY27; transcripts say FY29 (May p29 L1116-1122, Aug p7 L260-264)"
-  - "B05 2B/3C/credibility_basis: GST restatement as an unprompted accountability admission and PAT understatement; it was analyst-prompted and the explanation does not add up (Aug p20 L761-775)"
-  - "B05 3D: 44 cr L order book composed as 26+8+6+15 netted; Aug p9 L335 says the 44 excludes the 15 cr L"
-  - "B06 Q3: TruAlt maize-margin claim CONTRADICTED by peers; misframes a point-in-time sensitivity as FY26 compression, and GULPOLY Aug p4 L124-128, p6 L235-245 supports the direction"
-  - "OVERSTATED, not scored as unsupported: B05 HIGH utilisation-denominator flag (Feb p4 L123-124 gives both figures; under 35% is a different period, May p5 L172-174); B06 2E that TruAlt never described the Supreme Court stay (May p11 L426-429)"
-promise_delivery_spot_checks: {checked: 7, confirmed: 6, wrong: 1}
-credibility_grade_concur: "lower; would grade D, because the GST positive that holds B05 at C does not survive the transcript and four material cross-call contradictions (allocation, private-OMC price, shutdown cause, SAF FID/date) are unscored"
+  - {severity: "MAJOR", item: "Sugary-feedstock (B-heavy and juice) diversion may be restricted in ESY 26-27; TruAlt Q1 FY27 volume about 53 percent sugar-based, two monofeed units, 100 syrup days planned; never raised by TruAlt, B05 or B06", anchor: "BALRAMCHIN Aug Vivek Saraogi [page 4]; TRIVENI Aug Tarun Sawhney [page 5]-[page 7]; TRUALT Aug [page 8], May [page 16]"}
+  - {severity: "MINOR", item: "CBG margin figures inconsistent within one call (68.29, 60-65, 40-45, 55-60 percent)", anchor: "TRUALT Nov MD/CFO [page 6], [page 21]-[page 22]"}
+  - {severity: "MINOR", item: "Revenue-mix answer flips mid-answer from 70/20-25 to 85/15", anchor: "TRUALT Nov MD [page 24]"}
+  - {severity: "MINOR", item: "Nov CFO says shut plants operational from Q3 with COD done; Feb shows Unit 5 CTO 17-Dec-2025, 58 operating days, 30 days lost", anchor: "TRUALT Nov CFO [page 7]; Feb MD [page 3]-[page 4], [page 11]"}
+  - {severity: "MINOR", item: "Not-allowed-to-project line used selectively while detailed numbers are given", anchor: "TRUALT Feb MD [page 18]; May CFO [page 19]"}
+  - {severity: "MINOR", item: "Retail PAT-margin question answered with CBG and finance-cost reasons; retail margin 2 percent (Feb) vs 5 percent (May)", anchor: "TRUALT Aug MD [page 10]; Feb CFO [page 17]; May MD [page 7]"}
+  - {severity: "MINOR", item: "CBG utilisation 85 percent plus to 78 percent; CFO says nothing driving the EBITDA dip, then cites employee cost and one-time R&M", anchor: "TRUALT May [page 5]; Aug [page 6], [page 10]"}
+  - {severity: "MINOR", item: "Investor-engagement and advertising promises from May not delivered by Aug", anchor: "TRUALT May [page 20], [page 23]; Aug [page 22]"}
+  - {severity: "MINOR", item: "ENA plan 6 cr L at Rs 62-63; price fell to Rs 55-56; actual about 3 cr L", anchor: "TRUALT May MD [page 4], [page 14]-[page 15]"}
+  - {severity: "MINOR", item: "Peer can hold only 30-45 days of grain; TruAlt claims months of cheap grain stock carrying margin into Q2-Q3 FY27", anchor: "GULPOLY Aug [page 8]-[page 9]; TRUALT Aug [page 18]"}
+  - {severity: "MINOR", item: "Peer view split on SAF technology readiness (GULPOLY not established; TRIVENI ATF norms include ethanol-to-jet)", anchor: "GULPOLY Feb [page 11]-[page 12]; TRIVENI Jun [page 7]"}
+  - {severity: "MINOR", item: "TruAlt claims LTOA status yet got 26 of a 72 cr L bid sized on 365-day capacity; GULPOLY gets priority allocation at 78 percent; hit rates not like-for-like", anchor: "GULPOLY May [page 3], [page 14]; TRUALT May [page 4], Aug [page 12]"}
+pipeline_flags_not_supported: []
+promise_delivery_spot_checks: {checked: 6, confirmed: 6, wrong: 0}
+credibility_grade_concur: "concur - D; 8 of 11 promises missed, allocation done-deal claim post-dated the cut by the MD's own May words, same shutdown told as intentional and as force majeure; positives are operational only"
 findings:
-  - {severity: "CRITICAL", finding: "Missed repeated evasion: feedstock split deferred in Nov and May to the same analyst", anchor: "Nov p15 L599-603; May p25 L962-966"}
-  - {severity: "MAJOR", finding: "Allocation contradiction under-weighted: Nov 34 cr L PSU called a done deal vs May 26 cr L award; May dodge on why investors were not informed", anchor: "Nov p10 L403-404, p15 L595-598; May p10-11 L396-407, p26 L1023"}
-  - {severity: "MAJOR", finding: "Private-OMC pricing contradiction missed", anchor: "Feb p21 L832-835; May p26 L992-999"}
-  - {severity: "MAJOR", finding: "Intentional shutdown vs force majeure court claim missed", anchor: "Nov p10 L396-398; Feb p11 L438-444"}
-  - {severity: "MAJOR", finding: "SAF FY28 to FY29 slip and FID reversal missed; B05 states the date unchanged", anchor: "May p29 L1116-1122; Aug p7 L260-264"}
-  - {severity: "MAJOR", finding: "Core ethanol EBITDA about 9-9.5% ex co-products and subsidies, Q1 margin from cheap stock; under-weighted as delivered", anchor: "Aug p8 L294-301, p18 L692-697"}
-  - {severity: "MAJOR", finding: "CBG attribution to minority partners and wrong consolidation statements missed", anchor: "May p6 L203-212, p20 L786-787; Aug p16 L605-607"}
-  - {severity: "MAJOR", finding: "26% promoter pledge missed", anchor: "Nov p17-18 L683-703; Aug p14-15 L555-569"}
-  - {severity: "MAJOR", finding: "GST prior-period restatement misclassified as an accountability positive that holds the C grade", anchor: "Aug p20 L761-775"}
-  - {severity: "MAJOR", finding: "B05 zero-mention DSCR and RPT flag not supported; group-sourcing inconsistency untested", anchor: "Aug p5 L191; May p18-19 L708-729; Aug p24 L935-937"}
-  - {severity: "MAJOR", finding: "44 cr L order book is an assumption; B05 composition has no transcript support", anchor: "Aug p8 L306-309, p9 L335, L352-355"}
-  - {severity: "MAJOR", finding: "Rs 460-500 cr unsold inventory not linked to the cash-conversion flag", anchor: "Feb p18 L705-717; May p11 L408-410, p27 L1043-1053"}
-  - {severity: "MAJOR", finding: "B06 Q3 CONTRADICTED verdict on maize margin not supported; carried to Halt 1 as the top priority", anchor: "Aug p8 L294-301; GULPOLY Aug p4 L124-128, p6 L235-245, p8 L310-321"}
-  - {severity: "MINOR", finding: "B05 utilisation-denominator HIGH flag overstated", anchor: "Feb p4 L123-124; May p5 L172-174"}
-  - {severity: "MINOR", finding: "B06 2E overstated; TruAlt did describe the Supreme Court no-new-allocation direction", anchor: "May p11 L426-429"}
-  - {severity: "MINOR", finding: "Q1FY27 80% utilisation promise and Q2 maintenance reversal missing from the promise table", anchor: "Feb p13 L518-521; Aug p3 L91, p23 L889-892"}
-  - {severity: "MINOR", finding: "FY26 volume totals do not reconcile (24 vs 26 vs quarter sum about 19-20)", anchor: "May p10 L388-390, p25 L960-961"}
-  - {severity: "MINOR", finding: "E21 notification claim contradicted by peers; PENDING LIVE VERIFICATION", anchor: "May p5 L177-178; GULPOLY Aug p7 L267-270"}
-  - {severity: "MINOR", finding: "Other minor misses: CBG margin drift, operating-days conflict, Unit 5 CTO, one-time depreciation, SAF IRR, advertising, outlook refusals", anchor: "see report Part 1 items 19, 27, 29-33"}
-  - {severity: "MINOR", finding: "B05 promise row Q1FY27 EBITDA delivered is not a promise-delivery item", anchor: "Nov p23 L921-923; Feb p11 L429; Feb p13 L518-519"}
-critical_count: 1
-major_count: 12
-minor_count: 7
-material_found: 18
-material_caught: 10
-acceptance_rate: 55.6
-coverage_basis: "18 material (1 CRITICAL, 17 MAJOR) of 34 listed; 6 caught plus 4 partially caught = 10 counted as caught; 8 missed; on fully caught alone the rate is 33.3%"
+  - {severity: "MAJOR", location: "B05 and B06 (absent)", finding: "Missed peer-flagged risk that B-heavy and juice diversion is restricted in ESY 26-27; about half of TruAlt volume and two monofeed units exposed", anchor: "BALRAMCHIN Aug [page 4]; TRIVENI Aug [page 5]-[page 7]; TRUALT Aug [page 8]"}
+  - {severity: "MAJOR", location: "B05 4D HIGH allocation done-deal", finding: "Under-weighted; should be CRITICAL. Missing the MD's own dating of the cut to November, the 30 cr L third figure, and 8 cr L ENA potential inside the 47", anchor: "TRUALT May [page 10], [page 26]; Nov [page 15]"}
+  - {severity: "MAJOR", location: "B06 Q6", finding: "Peer accounting contrast not drawn: BALRAMCHIN keeps subvention below EBITDA, GULPOLY books incentives on receipt; TruAlt EBITDA includes about Rs 22cr per quarter of subvention plus PLI and a Rs 107cr accrued receivable", anchor: "BALRAMCHIN Jun [page 10]; GULPOLY Aug [page 14], Feb [page 13]; TRUALT Aug [page 18], Nov [page 9]"}
+  - {severity: "MINOR", location: "B05 1B/1C/2A CBG", finding: "Construction-start contradiction not named (Nov three plants begun vs Feb began in December)", anchor: "TRUALT Nov [page 3]; Feb [page 18]-[page 19]"}
+  - {severity: "MINOR", location: "B05 4D and YAML red_flags", finding: "Stock-in-trade purchase question deflection named in prose but absent from the red-flag list", anchor: "TRUALT Feb [page 12]"}
+  - {severity: "MINOR", location: "B06 Q2", finding: "GULPOLY private-refiner statement contradicts TruAlt Feb pricing claim; verdict left UNVERIFIABLE", anchor: "GULPOLY Nov [page 8]; TRUALT Feb [page 21]"}
+  - {severity: "MINOR", location: "B05 4D CRITICAL grain/sugar split", finding: "Supported on facts, severity overstated; data given in Aug and peer TRIVENI withholds the same split; MAJOR fits", anchor: "TRUALT Nov [page 15], May [page 25], Aug [page 8]; TRIVENI Nov [page 10]"}
+  - {severity: "MINOR", location: "B06 Q6", finding: "Below-5 percent ISS debt-cost statement attributed to BALRAMCHIN; it is GULPOLY CFO Rajiv Gupta", anchor: "GULPOLY May [page 6]"}
+  - {severity: "MINOR", location: "B05 1C de-leveraging row", finding: "May de-leveraging push attributed to Tanmay Javeri; he asked about CBG funding and one-on-ones", anchor: "TRUALT May [page 20]"}
+  - {severity: "MINOR", location: "B05 2A row Q3+Q4 26-28 cr L", finding: "Actual stated as roughly 18-20 cr L; quarterly figures sum to about 13.6-13.8 cr L; promise was production, outcome sales", anchor: "TRUALT Feb [page 8], [page 16]; May [page 25]"}
+  - {severity: "MINOR", location: "B05 and B06 anchors", finding: "Page anchors off by one: B05 Feb p.10 to p.11, May p.5 to p.6, Nov p.17 to p.18; B06 BALRAMCHIN Jun overcapacity p.10 to p.11, GULPOLY Aug guide p.4 to p.5", anchor: "PDF page markers in each .txt"}
+  - {severity: "MINOR", location: "B05 and B06 (absent)", finding: "Eleven minor items missed (M22, M23, M24, M25, M27, M28, M29, M30, P8, P9, P10); see missed list", anchor: "see missed list"}
+critical_count: 0
+major_count: 3
+minor_count: 9
+material_found: 25
+material_caught: 24
+acceptance_rate: 96.0
+coverage_basis: "25 material of 42 listed (2 CRITICAL, 23 MAJOR); 20 caught outright, 4 partially caught, 1 missed; rate counts partial catches as caught, same convention as run r1; strict outright rate 20 of 25 = 80.0 percent"
 ```

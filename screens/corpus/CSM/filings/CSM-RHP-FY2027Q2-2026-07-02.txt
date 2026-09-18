@@ -1,0 +1,368 @@
+SOURCE: CSM Technologies Ltd — Red Herring Prospectus (RHP), filed 2 July 2026 for the
+IPO listing (2026). Bull AI document_id a2268144-316f-4e64-a195-7b3eba93bada
+(doc_type RHP, FY2027 Q2 label per Bull AI's filing-date convention). This is the
+richest single document in the corpus. Financial data below is drawn from the
+Restated Consolidated Financial Information, periods: nine months ended 31 Dec 2025,
+and Fiscal 2025, 2024, 2023 (year ended 31 March).
+RETRIEVED: 2026-09-18. Pages marked [CHUNK] were read in full via
+get_document_chunks. Pages marked [SNIPPET] are partial text as returned by
+search_company_documents (the chunk reader hit a response-size limit on a broader
+pull, so these pages were captured only as search snippets; they are shorter than a
+full page read but still the tool's own retrieved text, not a paraphrase).
+GAP: many RHP pages (business detail 34-83, 91-107, 116-145 except as noted below,
+154-237, 246-374 except as noted, 376-420, 427+) were not read at all within the call
+budget. This is one RHP of roughly 500 pages; only headline sections were pulled.
+
+===== PAGE 29 [CHUNK] =====
+FORWARD-LOOKING STATEMENTS. This Red Herring Prospectus contains certain statements
+which are not statements of historical fact and may be described as "forward-looking
+statements"... [standard SEBI forward-looking-statement boilerplate; risk factors
+cross-referenced to pages 24, "Our Business" 227, "MD&A" 378].
+
+===== PAGE 30 [CHUNK] =====
+SECTION II: RISK FACTORS. "An investment in Equity Shares involves a high degree of
+risk..." Unless the context otherwise requires, in this section, references to "our
+Company" refer to CSM Technologies Limited on a standalone basis, and "we"/"us"/"our"
+refer to CSM Technologies Limited on a consolidated basis. Industry and market data
+used in the RHP is derived from the report titled "Research Report on IT/ITes
+Industry" dated 18 May 2026 ("CARE Report") prepared by CARE, commissioned and paid
+for by the Company in connection with the Issue. CARE is stated to be independent and
+unrelated to the Company, its Promoters, Directors or the BRLM.
+Internal Risk Factor 1: "Our business is heavily dependent on tenders from government
+authorities, accounting for approximately 63.45%, 74.15%, 69.17% and 77.13% of our
+revenue from operations for the nine months period ended December 31, 2025, Fiscal
+2025, Fiscal 2024 and Fiscal 2023, respectively. However, delays or a lack of tenders
+from government entities, along with adverse changes in government policies, could
+materially impact our business through contract foreclosures, terminations,
+restructurings, or renegotiations, affecting our operations and financial
+performance."
+
+===== PAGE 31 [CHUNK] =====
+Business Overview and Revenue Analysis. "We work extensively with central and state
+government departments, public sector undertakings, and agencies across sectors such
+as mining, infrastructure, and public administration in India and abroad. In
+addition, we collaborate with donor and development agencies active in key areas like
+rural development, healthcare, and education..."
+Revenue from Operations by Customer Type (Rs lakh / % of revenue):
+| Type | 9M Dec-25 | % | FY25 | % | FY24 | % | FY23 | % |
+| Government | 10,502.55 | 63.45 | 14,774.34 | 74.15 | 13,606.84 | 69.17 | 12,373.87 | 77.13 |
+| Enterprise | 4,005.86 | 24.20 | 3,314.50 | 16.64 | 4,052.88 | 20.60 | 2,832.33 | 17.65 |
+| PSU | 1,968.43 | 11.89 | 1,435.99 | 7.21 | 1,763.80 | 8.97 | 635.87 | 3.96 |
+| Development agencies | 75.52 | 0.46 | 370.11 | 1.86 | 143.02 | 0.73 | 102.05 | 0.64 |
+| Others* | - | - | 29.48 | 0.14 | 104.51 | 0.53 | 99.75 | 0.62 |
+| Total | 16,552.36 | 100.00 | 19,924.42 | 100.00 | 19,671.05 | 100.00 | 16,043.87 | 100.00 |
+*Others comprises a political party, to which the Company has provided social media
+management and promotional services.
+Order Book Contribution by Customer Type (Rs lakh / % of order book):
+| Type | 9M Dec-25 | % | FY25 | % | FY24 | % | FY23 | % |
+| Government | 15,881.18 | 42.19 | 15,568.39 | 57.18 | 20,278.62 | 62.13 | 14,722.92 | 74.08 |
+| Enterprise | 12,484.25 | 33.17 | 8,643.56 | 31.75 | 10,055.60 | 30.81 | 3,424.64 | 17.23 |
+| PSU | 9,157.40 | 24.33 | 2,694.63 | 9.90 | 2,203.39 | 6.75 | 1,554.74 | 7.82 |
+| Development agencies | 117.14 | 0.31 | 319.91 | 1.17 | 12.86 | 0.04 | 107.18 | 0.54 |
+| Others* | - | - | - | - | 90.00 | 0.28 | 64.00 | 0.32 |
+| Total | 37,639.97 | 100.00 | 27,226.49 | 100.00 | 32,640.47 | 100.00 | 19,873.48 | 100.00 |
+Risk Factors continuation: "During recessions, governments often reduce IT spending
+as part of broader budget cuts... (Source: CARE Report.)"
+
+===== PAGE 32 [CHUNK] =====
+Increase in time gap and regulatory scrutiny; termination and compensation clauses;
+risk of disqualification, suspension, or blacklisting by government authorities;
+"Our Order Book may not be indicative of our future operating performance or
+financial results, as projects in our Order Book are subject to cancellations,
+modifications, delays, premature terminations and other uncertainties beyond our
+control." Project awards and competitive bidding: "Out of the total projects awarded
+to us, 70.59%, 100.00%, 91.67% and 91.30% of such projects in the nine months period
+ended December 31, 2025, Fiscal 2025, 2024 and 2023, respectively were secured
+through competitive bidding process from government entities."
+Number of bids awarded:
+| Particulars | 9M Dec-25 | FY25 | FY24 | FY23 |
+| Government | 12 | 28 | 22 | 21 |
+| Others | 5 | - | 2 | 2 |
+
+===== PAGE 33 [CHUNK] =====
+% of bids awarded and value of projects awarded:
+| | 9M Dec-25 Govt | 9M Dec-25 Others | FY25 Govt | FY25 Others | FY24 Govt | FY24 Others | FY23 Govt | FY23 Others |
+| % of bids awarded | 70.59 | 29.51 | 100.00 | - | 91.67 | 8.33 | 91.30 | 8.70 |
+| Value of Projects awarded (Rs lakh) | 7,769.23 | 8,934.95 | 14,272.44 | - | 11,700.25 | 7,350.00 | 20,214.23 | 648.27 |
+Risk Factor 3: "Our operations are geographically concentrated in the eastern region
+of India, particularly in the State of Odisha which contributed to 62.56%, 72.97%,
+76.76% and 83.95% of our revenue from operations for the nine months period ended
+December 31, 2025, Fiscal 2025, Fiscal 2024 and Fiscal 2023, respectively." Revenue
+from Odisha: Rs 10,354.78 lakh (9M), Rs 14,539.75 lakh (FY25), Rs 15,099.45 lakh
+(FY24), Rs 13,469.85 lakh (FY23). Revenue from Africa: Rs 919.82 lakh (5.56%, 9M), Rs
+2,389.97 lakh (12.00%, FY25), Rs 1,908.42 lakh (9.70%, FY24), Rs 486.17 lakh (3.03%,
+FY23).
+
+===== PAGE 40-44 [SNIPPET, order book / risk factor detail] =====
+"A significant portion of our Order Book value and our revenue are generated from
+projects in mining & allied services, government and public services, agriculture and
+allied services, industry and trade facilitation, education, healthcare and tourism."
+Order Book by industry segment (Government sub-table, Rs lakh / % of order book):
+| Segment | 9M Dec-25 | % | FY25 | % | FY24 | % | FY23 | % |
+| Mining and Allied Services | 5,295.29 | 14.07 | 3,564.28 | 13.09 | 3,272.48 | 10.03 | 4,375.88 | 22.02 |
+| Government and Public Services | 5,446.42 | 14.47 | 6,762.47 | 24.84 | 7,540.64 | 23.10 | 6,144.55 | 30.92 |
+| Agriculture and Allied Services | 1,148.47 | 3.05 | 1,008.34 | 3.70 | 947.53 | 2.90 | 775.69 | 3.90 |
+| Education | 1,392.47 | 3.70 | 2,103.02 | 7.72 | 3,264.87 | 10.00 | 723.17 | 3.64 |
+| Industry & Trade Facilitation | 1,785.76 | 4.74 | 720.72 | 2.65 | 2,187.85 | 6.70 | 186.65 | 0.94 |
+| Healthcare | 812.78 | 2.16 | 1,409.56 | 5.18 | 3,065.26 | 9.39 | 2,516.98 | 12.67 |
+| Tourism | - | - | - | - | - | - | - | - |
+| Total Government (A) | 15,881.19 | 42.19 | 15,568.39 | 57.18 | 20,278.62 | 62.13 | 14,722.92 | 74.08 |
+[Non-Government/PSU sub-table not fully captured in snippet.]
+Order Book (page 44): "As on March 31, 2026, we had an Order Book of Rs 35,763.17
+lakhs, comprising awarded contracts, letters of award, and work orders for projects
+that are yet to be executed, either in full or in part. While our Order Book provides
+an indication of our current business pipeline and revenue visibility, it may not be
+representative of our future operating results, revenues, or profitability." Note:
+this Rs 357.63 crore figure (as at 31 March 2026) is the same figure the Q4 FY26
+concall gives (see CSM-Concall-Q4FY26-2026-07-28.txt page 6); it is lower than the
+Rs 376.40 crore order book stated as at 31 December 2025 above, implying some order
+book run-down or execution between Dec-25 and Mar-26 not offset by fresh wins in that
+window. Inclusion in the Order Book occurs on issuance of a letter of award, contract
+signing, or formal confirmation, including L1 (lowest bidder) status pending formal
+award. Projects awarded via government tenders are the norm; contracts typically
+permit client termination for delay, failure to meet obligations, changed
+requirements, or policy changes.
+
+===== PAGE 60-65 [SNIPPET, litigation risk factor summary] =====
+Risk Factor 45: "There are certain outstanding legal proceeding involving our Company,
+Directors, and Promoters. Any adverse outcome in such proceeding may have an adverse
+impact on our reputation, business, results of operations, cash flows and financial
+condition." Summary table of litigation (Company):
+| | Criminal | Tax | Statutory/regulatory | SEBI/Exchange disciplinary | Other material | Aggregate amount (Rs lakh) |
+| By Company | Nil | Nil | Nil | NA | 1 | Nil |
+| Against Company | Nil | 22 | Nil | NA | Nil | 1,101.25 |
+[Directors/Promoters rows and full detail not captured in snippet; see page 421-426
+below for the Outstanding Litigations section.]
+
+===== PAGE 70 [SNIPPET] =====
+"CARE has advised that while it has taken reasonable care to ensure the accuracy and
+completeness of the CARE Report, it believes that the CARE Report presents a true and
+fair view of the industry within the limitations of... secondary statistics and
+primary research... the CARE Report is not a recommendation to invest/disinvest in
+any company covered in the CARE Report." (Industry data source disclosure, not the
+Company's own credit rating; see page 135 below for the Company's credit ratings.)
+
+===== PAGE 84 [CHUNK] =====
+SUMMARY OF FINANCIAL INFORMATION. "The following tables set forth summary financial
+information derived from the Restated Consolidated Financial Information..." (table
+continues on subsequent pages; page 84 itself is a section-break page).
+
+===== PAGE 85-86 [CHUNK] — RESTATED CONSOLIDATED BALANCE SHEET (Rs lakh) =====
+| Particulars | 9M Dec-25 | FY25 | FY24 | FY23 |
+| Total Non-Current Assets | 7,205.40 | 6,500.92 | 5,697.70 | 3,341.71 |
+| Trade Receivables (current) | 8,489.44 | 6,193.39 | 3,543.39 | 2,244.19 |
+| Cash and Cash Equivalents | 163.85 | 105.45 | 114.42 | 476.96 |
+| Total Current Assets | 13,380.04 | 8,938.57 | 6,732.49 | 4,644.96 |
+| TOTAL ASSETS | 20,600.49 | 15,454.54 | 12,445.24 | 8,001.72 |
+| Equity Share Capital | 3,870.25 | 641.62 | 629.77 | 629.77 |
+| Other Equity | 5,309.78 | 7,056.79 | 5,344.93 | 4,401.60 |
+| Non-Controlling Interest | 50.03 | - | - | - |
+| Total Equity | 9,230.06 | 7,698.41 | 5,974.70 | 5,031.37 |
+| Non-Current Borrowings | 2,153.39 | 2,130.62 | 1,648.12 | 340.75 |
+| Total Non-Current Liabilities | 3,070.13 | 3,024.20 | 2,574.11 | 1,096.66 |
+| Current Borrowings | 5,296.22 | 1,086.62 | 1,355.76 | 214.18 |
+| Trade Payables (MSME) | 237.22 | 774.49 | 632.42 | 94.62 |
+| Trade Payables (other) | 251.39 | 772.78 | 767.08 | 387.85 |
+| Total Current Liabilities | 8,274.30 | 4,705.93 | 3,880.43 | 1,857.69 |
+| TOTAL EQUITY AND LIABILITIES | 20,600.49 | 15,454.54 | 12,445.24 | 8,001.72 |
+Note: current borrowings jumped from Rs 1,086.62 lakh (FY25) to Rs 5,296.22 lakh (9M
+Dec-25), roughly a 4.9x increase in nine months, alongside the receivables build
+described below.
+
+===== PAGE 87-88 [CHUNK] — RESTATED CONSOLIDATED STATEMENT OF PROFIT AND LOSS (Rs lakh) =====
+| Particulars | 9M Dec-25 | FY25 | FY24 | FY23 |
+| Revenue from Operations | 16,552.36 | 19,924.42 | 19,671.05 | 16,043.87 |
+| Other Income | 152.63 | 138.31 | 194.00 | 106.62 |
+| Total Income | 16,704.99 | 20,062.73 | 19,865.05 | 16,150.49 |
+| Employee Benefits Expenses | 8,003.21 | 9,345.08 | 8,347.89 | 5,998.01 |
+| Finance Costs | 619.71 | 410.55 | 236.62 | 212.24 |
+| Depreciation and Amortization | 479.84 | 611.09 | 545.82 | 418.81 |
+| Total Expenses | 14,645.24 | 18,019.06 | 18,082.55 | 13,887.69 |
+| Profit Before Tax | 2,059.74 | 2,043.67 | 1,782.50 | 2,262.80 |
+| Total Tax Expenses | 589.61 | 635.02 | 527.57 | 680.39 |
+| Profit for the Year (consolidated) | 1,470.14 | 1,408.65 | 1,254.93 | 1,582.40 |
+| Profit attributable to Shareholders of the Company | 1,425.23 | 1,408.64 | 1,254.93 | 1,582.40 |
+| Profit attributable to Non-controlling interests | 44.91 | - | - | - |
+| Basic & Diluted EPS (Rs) | 3.80 | 3.72 | 3.32 | 4.19 |
+Note: consolidated PAT fell from Rs 1,582.40 lakh (FY23) to Rs 1,254.93 lakh (FY24),
+a decline, before recovering to Rs 1,408.65 lakh (FY25). This restated table predates
+FY26 (which the concall and press release separately report at Rs 24 crore PAT, i.e.
+Rs 2,400 lakh, a 70% YoY jump over FY25's Rs 1,408.65 lakh - consistent).
+
+===== PAGE 89-90 [CHUNK] — RESTATED CONSOLIDATED STATEMENT OF CASH FLOWS (Rs lakh) =====
+| Particulars | 9M Dec-25 | FY25 | FY24 | FY23 |
+| Profit before tax | 2,059.74 | 2,043.67 | 1,782.50 | 2,262.80 |
+| Operating profit before working capital changes | 3,119.99 | 3,041.45 | 2,565.87 | 2,871.95 |
+| Increase/(Decrease) in Trade Payables | (1,078.77) | 147.78 | 917.02 | (570.31) |
+| Decrease/(Increase) in Trade Receivables | (2,183.86) | (2,732.08) | (1,388.20) | 335.67 |
+| Decrease/(Increase) in Other Current Assets | (2,226.01) | (112.60) | (682.83) | (585.13) |
+| Cash generated from Operations | (1,872.28) | 1,417.19 | 1,479.11 | 2,208.32 |
+| Payment of Taxes (Net) | (548.00) | (545.58) | (519.85) | (466.08) |
+| Net cash from/(used in) Operating Activities | (2,420.28) | 871.61 | 959.26 | 1,742.24 |
+| Net cash from/(used in) Investing Activities | (930.33) | (895.54) | (3,187.05) | (823.13) |
+| Proceeds from Long-Term Borrowings | 4,687.27 | 395.19 | 2,659.83 | 130.27 |
+| Net cash from/(used in) Financing Activities | 3,476.48 | 31.22 | 1,879.11 | (606.20) |
+| Net Increase/(Decrease) in Cash | 125.88 | 7.29 | (348.68) | 312.92 |
+| Closing Cash and Cash Equivalents | 163.85 | 105.45 | 114.42 | 476.96 |
+Note: operating cash flow went NEGATIVE Rs 2,420.28 lakh (Rs -24.20 crore) in the nine
+months to Dec-25, against positive operating cash flow in FY23 (Rs 17.42 crore), FY24
+(Rs 9.59 crore) and FY25 (Rs 8.72 crore). Driven by a large swing in trade receivables
+and other current assets. The gap was plugged by a surge in long-term borrowings (Rs
+46.87 crore raised in 9M Dec-25 vs Rs 3.95 crore in all of FY25) and, per the press
+release, the IPO fresh issue proceeds in Q1 FY27.
+
+===== PAGE 108-115 [CHUNK] — SHAREHOLDING AND PROMOTER DETAIL =====
+Page 108-109: build-up of pre-IPO allottees; bonus issue history: 20 Equity Shares
+for every 1 held (record date 21 March 2023, allotted 29 March 2023); 5 Equity Shares
+for every 1 held (record date 20 June 2025, allotted 25 June 2025). No employee stock
+option scheme exists as of the RHP date.
+Page 110: Shareholding Pattern as on RHP date:
+| Category | Shareholders | Shares held | % |
+| (A) Promoter & Promoter Group | 2 | 3,67,30,332 | 94.90 |
+| (B) Public | 35 | 19,72,140 | 5.10 |
+| Total | 37 | 3,87,02,472 | 100.00 |
+Page 111: Major shareholders holding 1%+ as on RHP date: Priyadarshi Pany 3,62,26,332
+shares (93.60%); Parichay Das 12,61,260 (3.26%); Sushama Pany 5,04,000 (1.30%). One
+year prior to RHP filing, Priyadarshi Pany held 60,03,522 shares (15.51%) - i.e. his
+stake grew from 15.51% to 93.60% within the year almost entirely through bonus issues
+(no cash paid), consistent with the bonus-issue history above.
+Page 112-113: Pre-Issue shareholding: Promoters (Priyadarshi Pany 93.60%, Lagna Panda
+Nil) + Promoter Group (Sushama Pany 1.30%) = 94.90% pre-issue combined. "As on the
+date of this Red Herring Prospectus, none of the Equity Shares held by our Promoters
+are pledged or are otherwise encumbered." All promoter shares are dematerialised.
+Page 113-114: Build-up of Priyadarshi Pany's shareholding since incorporation (15 July
+1998): initial subscription 10 shares; preferential allotments in 2002 and 2009
+(conversion of unsecured loan to equity); 29 March 2023 bonus issue +57,17,640 shares
+(20:1 ratio); 24 May 2025 private placement +34,200 shares (share swap, non-cash,
+acquiring Kvantify Solutions Private Limited shares from the Promoter at implied fair
+value of Rs 438/share for CSM); 25 June 2025 bonus issue +3,01,88,610 shares (5:1
+ratio). Total 3,62,26,332 shares, 93.60% pre-issue.
+Page 115: Weighted average cost of acquisition (Promoters, last 3 years/18
+months/1 year): Rs 0.50 per share (near-zero, reflecting the bonus-issue-driven
+build-up). No special rights or director-nomination rights held by any shareholder.
+
+===== PAGE 133-137 [SNIPPET, mostly page 135] — CREDIT RATINGS AND OBJECTS OF ISSUE =====
+"Our Company has received the following credit ratings:
+| Agency | Instrument | Rating |
+| CARE Ratings Limited (2026) | Long Term Bank Facilities | CARE BBB; Stable |
+| | Long Term / Short Term Bank Facilities | CARE BBB; Stable / CARE A3+ |
+| CARE Ratings Limited (2025) | Long Term Bank Facilities | CARE BBB; Stable |
+| | Long Term / Short Term Bank Facilities | CARE BBB; Stable / CARE A3+ |"
+The rating is UNCHANGED between the 2025 and 2026 CARE assessments: CARE BBB; Stable
+(long term) and CARE A3+ (short term) both years. CARE BBB is a mid investment-grade
+long-term rating; A3+ is a moderate short-term rating. Contact: CARE Ratings Limited,
+4th Floor, Godrej Coliseum, Somaiya Hospital Road, Sion (East), Mumbai. The Company
+intends to use IPO Net Proceeds partly for "prepayment/repayment of any such
+refinanced facilities or repayment of any additional facilities/disbursements
+obtained by our Company" (page 135). This is the CARE Ratings Limited appointed as
+the RHP's Appraising Agency contact (page 100); the same CARE also authored the
+commissioned industry "CARE Report" used for market-sizing disclosures elsewhere in
+the RHP (page 30, 70). The bank-facility rating rationale itself (the underlying CARE
+rationale document) was not found in Bull AI or reachable from this session; only the
+rating grade table above, as reproduced in the RHP, was retrieved.
+
+===== PAGE 146 [SNIPPET] — RETURN ON NET WORTH (RoNW) =====
+| Fiscal/Period Ended | RoNW (%) | Weight |
+| March 31, 2025 | 18.49 | 3 |
+| March 31, 2024 | 21.00 | 2 |
+| March 31, 2023 | 31.45 | 1 |
+| Weighted Average | 21.49 | - |
+| December 31, 2025* | 16.54 | - |
+*Not annualised. RoNW = Net Profit after tax attributable to owners of the Company,
+as restated / restated net worth at the end of the year/period. Three-year trend is a
+steady decline: 31.45% (FY23) -> 21.00% (FY24) -> 18.49% (FY25), continuing lower on
+the 9-month non-annualised Dec-25 figure of 16.54%.
+
+===== PAGE 149-153 [SNIPPET] — KPI SUMMARY (segment mix, geography, clientele; see
+also page 243 below, same table repeated later in the RHP) =====
+[Table content duplicated at page 243; see that entry for the full reproduced table.]
+
+===== PAGE 155 [SNIPPET] — LISTED PEER COMPARISON =====
+The RHP names listed IT-services peers for comparison purposes: Silver Touch
+Technologies Limited and Dev Information Technology Limited. Per the retrieved
+snippet, both peers show "NA" for the specific KPI line items being compared (revenue
+mix by clientele), i.e. that detailed operational KPI disclosure is not available for
+the peer set, only for CSM itself. Peer financial multiples (P/E, EV/EBITDA etc.) were
+not read within budget.
+
+===== PAGE 238-245 [SNIPPET] — SERVICES, CUSTOMER AND ORDER BOOK DATA (mostly duplicates 31, 40-44) =====
+Page 238: "Services and Customer Revenue Analysis. We provide services to a diverse
+range of end-user industries and customers, comprising: Government... PSUs...
+Enterprises... (Source: CARE Report)." Top-customer concentration table:
+| Contribution from top Customer | 9M Dec-25 | FY25 | FY24 | FY23 |
+| Top 3 | Rs 6,721.81 lakh, 40.62% | Rs 10,099.87 lakh, 50.69% | Rs 11,282.14 lakh, 57.35% | Rs 9,369.85 lakh, 58.40% |
+| Top 5 | Rs 8,624.[...] | Rs 12,696.58 lakh, 63.72% | Rs 13,408.59 lakh, 68.16% | Rs 11,193.08 lakh, 69.77% |
+| Top 10 | [not captured] | Rs 15,452.96 lakh, 77.56% | Rs 15,933.38 lakh, 81.00% | Rs 13,127.65 lakh, 81.82% |
+Top 10 customers named (where consented): Spatial Planning & Analysis Research Centre
+Private Limited and Odisha Bridge and Construction Corporation Limited; remaining
+names withheld for confidentiality or lack of consent. Customer concentration trend is
+DECLINING across the three-plus years shown (top 3 from 58.40% in FY23 to 40.62% in
+9M Dec-25), which the RHP itself frames as diversification: "Over the past three
+Fiscal years, our reliance on a concentrated customer base has gradually reduced,
+reflecting our efforts to diversify revenue streams."
+Page 243/150 [KPI table, industry mix]:
+| KPI | 9M Dec-25 | FY25 | FY24 | FY23 |
+| Government and Public Services | 31.51% | 25.75% | 39.84% | 32.23% |
+| Agriculture and Allied Services | 14.56% | 16.1% | 18.46% | 18.61% |
+| Industry and Trade Facilitation | 12.99% | 11.13% | 9.23% | 2.15% |
+| Education | 9.75% | 14.82% | 7.00% | 6.03% |
+| Health Care | 6.07% | 7.32% | 8.55% | 12.83% |
+| Tourism | 0.47% | 0.14% | 0.29% | 1.41% |
+| Within India (geography) | 93.93% | 87.42% | 88.70% | 96.29% |
+| Outside India (geography) | 6.07% | 12.58% | 11.30% | 3.71% |
+| Government (clientele) | 63.45% | 74.15% | 69.17% | 77.13% |
+| Enterprise (clientele) | 24.2% | 16.64% | 20.6% | 17.65% |
+| PSU (clientele) | 11.89% | 7.21% | 8.97% | 3.96% |
+| Development agencies (clientele) | 0.46% | 1.86% | 0.73% | 0.64% |
+Definitions note: EBITDA = Profit/(loss) before exceptional items plus depreciation &
+amortization plus finance costs minus other income. PAT Margin % = PAT / Total
+Income. Both ROE and ROCE stated in this KPI table have been annualised (the specific
+ROE/ROCE numeric values in this table were not captured within the snippet limit; see
+page 375 below for the separately disclosed Note 48/49 ratio table, which does give
+exact ROE figures).
+
+===== PAGE 375 [SNIPPET] — NOTE 48: RATIOS (Restated Consolidated Financial Statements) =====
+As at 31 December 2025:
+| Particulars | 9M Dec-25 | FY25 | Variance % | Reason for variance above 25% |
+| Current Ratio | 1.62 | 1.90 | (14.87%) | NA |
+| Debt Equity Ratio (Total Debts/Total Equity) | 0.86 | 0.46 | 86.89% | "Increase in Short-term loans from banks and issue of equity shares" |
+| Debt Service Coverage Ratio | 2.19 | 3.47 | (36.83%) | "Increase in interest cost due to increase in short term loans" |
+| Return on Equity Ratio | 17.81% | 20.73% | (14.06%) | NA |
+| Trade Receivables Turnover Ratio | 2.25 | 4.09 | (44.91%) | "Decrease is due to delay in realisation of debtors" |
+(Companion table, FY25 vs FY24, from the DRHP Note 49, same ratios a year earlier):
+| Particulars | FY25 | FY24 | Variance % |
+| Current Ratio | 1.90 | 1.73 | 9.48% |
+| Debt Equity Ratio | 0.46 | 0.57 | (19.13%) |
+| Return on Equity Ratio | 20.73% | 22.80% | (9.11%) |
+| Trade Receivables Turnover Ratio | 4.09 | 6.80 | (39.79%) |
+| Trade Payables Turnover Ratio | 4.30 | 7.93 | (45.78%) |, reason: "Decrease is due
+to delay in repayment of creditors."
+Combined three-period ROE trend, company's own disclosure: 22.80% (FY24) -> 20.73%
+(FY25) -> 17.81% (9M Dec-25, not fully annualised). Debt-equity trend: 0.57 (FY24) ->
+0.46 (FY25) -> 0.86 (9M Dec-25). Receivables turnover trend: 6.80x (FY24) -> 4.09x
+(FY25) -> 2.25x (9M Dec-25). All three ratios move the same direction across three
+consecutive periods: returns compressing, leverage rising, and collections slowing,
+even as revenue and EBITDA margin were expanding over the same window per the
+concall/press release figures.
+
+===== PAGE 421 [SNIPPET] — SECTION VI: LEGAL AND OTHER INFORMATION =====
+"OUTSTANDING LITIGATIONS AND MATERIAL DEVELOPMENTS. Except as stated below there are
+no outstanding (i) criminal proceedings; (ii) actions by regulatory authorities...;
+(iii) claims relating to direct and indirect taxes; and (iv) other material
+outstanding proceedings... There are no disciplinary actions including penalties
+imposed by SEBI or stock exchanges against our Promoters in the last five Fiscal...
+our Company does not have any Group Company as on the date of this Red Herring
+Prospectus." Materiality Policy adopted by Board resolution dated 6 May 2026 sets the
+quantitative/qualitative thresholds for what counts as "material" litigation.
+
+===== PAGE 425 [SNIPPET] — LITIGATION FILED BY SMPs; OUTSTANDING DUES TO CREDITORS =====
+"B. Litigation filed by our SMPs. b. Criminal proceedings: Nil."
+Outstanding dues (trade payables) as at 31 December 2025:
+| Types of creditors | Number | Amount (Rs lakh) |
+| Material creditors - Other than MSME | 4 | 140.69 |
+| Material creditors - MSME | 4 | 175.28 |
+| Dues to MSME - Other than material creditors | 16 | 61.93 |
+| Other Creditors | 37 | 110.72 |
+| Total | 61 | 488.62 |
+"Material Developments since the date of the last balance sheet": none stated beyond
+the MD&A section (page 378), referenced but not read within budget.

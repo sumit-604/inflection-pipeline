@@ -1,0 +1,88 @@
+stage: B01-gate0
+company: "TRUALT"
+run_date: "2026-09-18"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+- "carried from B00: screener export sheets (Profit and Loss/Quarters/Balance Sheet/Cash Flow/Customization) exported
+  EMPTY for TRUALT and all three peers; only Data_Sheet.csv is populated for each. Cosmetic (Data_Sheet carries
+  annual P and L, balance sheet, cash flow and quarters for every company involved)."
+- "carried from B00: TRUALT screener history starts FY23 (company incorporated March 2021); Gate 0 data_years is
+  4 audited years (FY23-FY26), LIMITED confidence band, one-tier downgrade per the classification rules."
+- "carried from B00: Q4FY26 audited results PDF is a scan (OCR); not used directly in Gate 0 since AR (text-native)
+  and screener carried every figure needed and all three tie out exactly (see report cross-check section)."
+- "carried from B00: sector_cap_row (Sugar / agri-commodity, 18x) is PROVISIONAL, on an unmerged framework branch;
+  does not affect Gate 0 scoring, only later Section 1B stages."
+- "Gate-0-specific: prospectus restated FY25 CFO (Rs329.23cr) differs from the FY26 AR's FY25 comparative CFO
+  (Rs342.03cr) due to differing consolidation scope between the two filings; screener matches the AR figure, which
+  this stage used for FY25 wherever FY25 sits next to FY26 in a calculation."
+- "Gate-0-specific: no clean 3-year promoter-holding series exists because the company listed 03-Oct-2025; E2 was
+  scored on the only comparable actual post-listing window (SHP Mar-2026 to Jun-2026, both 70.55%) rather than
+  against the pre-IPO 88.20% or the prospectus's illustrative post-Offer 52.75% figure."
+- "Orchestrator correction, resolved: peer screener data (GULPOLY, BALRAMCHIN, TRIVENI Data_Sheet.csv) was initially
+  omitted from DATA_SOURCES and has now been read and used for M2, M5, M9. GULPOLY's screener export stops at FY25
+  (no FY26 row), so its peer-comparison figures use FY25 while TRUALT, BALRAMCHIN and TRIVENI use FY26; noted as a
+  minor year-alignment limitation, not treated as missing data."
+flags:
+- type: FLAG-GATE0
+  reason: "Classification AVOID, driven by deal-breaker 6: FY26 Net Debt/EBITDA 5.20x (>3x) AND Interest Coverage
+    1.81x (<3x), both true simultaneously (screener Data_Sheet; AR p.244-246, consolidated). Deal-breaker 2 (Block
+    B cash quality 5/20, <8 floor) and deal-breaker 5 (promoter pledge 36.85%, >15% floor) independently cap at
+    GOOD and AVERAGE; deal-breaker 6 is the most restrictive and governs. Core score 46/100 (AVERAGE band) before
+    any deal-breaker. History is 4 audited years (FY23-FY26, post-IPO), LIMITED confidence. Unaffected by the peer-
+    data correction below, since deal-breaker 6 is a Block D test and Block D did not change."
+- type: FLAG-CASH
+  reason: "Block B cash quality deteriorating year over year: FY26 CFO -Rs295.63cr versus FY25 +Rs342.03cr (screener
+    Data_Sheet; AR p.247 consolidated). Working capital days swung from -32.9 (FY23) to +140.0 (FY26), a 172.8-day
+    increase, driven by inventory build from Rs210.21cr to Rs528.43cr (screener Data_Sheet; AR p.244)."
+data_years: 4
+fy_range: "FY23 to FY26"
+blocks: {A: 8, B: 5, C: 16, D: 4, E: 13}
+core_score: 46
+moat_score: 15
+grand_total: 61
+moats_confirmed: 3
+moat_class: "MODERATE"
+classification: "AVOID"
+deal_breakers:
+- "DB2 Block B <8 (actual 5) -> caps at max GOOD (superseded)"
+- "DB5 promoter pledge 36.85% >15% -> caps at max AVERAGE (superseded)"
+- "DB6 Net Debt/EBITDA 5.20x >3x AND Interest Coverage 1.81x <3x (FY26) -> AVOID (binding, most restrictive)"
+history_downgrade: true
+data_notes:
+- "No loss-to-profit swing at the annual level: PAT is positive in all four years (FY23 35.46, FY24 31.81, FY25
+  146.64, FY26 95.95, screener Data_Sheet). Within FY26, Q2FY26 (Sep-2025) posted a standalone quarterly loss of
+  -Rs37.94cr and Q1FY26 (Jun-2025) was near-breakeven at Rs4.73cr (screener quarters), before recovering to Rs69.33cr
+  (Q3FY26) and Rs67.87cr (Q4FY26); this quarterly volatility does not change the annual CAGR inputs."
+- "Inventory Days and Receivable/Payable Days computed on a revenue basis throughout (no single explicit COGS line
+  exists in any source), per the formula rule."
+- "ROCE and Capital Employed computed on a year-end (not average) Total Assets minus Total Current Liabilities
+  basis; no FY22 balance sheet exists to average against for FY23."
+- "EBIT = PBT + Finance costs (interest) in every year; this ties exactly across screener, AR and prospectus for
+  all four years (see report cross-check section)."
+- "EBITDA (Block D, latest year) cross-checked two ways: sum of screener quarterly Operating Profit = Rs300.29cr;
+  annual PBT+Interest+Depreciation-Other Income = Rs289.75cr. Used the quarterly-summed figure as primary; either
+  figure keeps ND/EBITDA above the 3x deal-breaker floor."
+- "Promoter pledge SHP disclosure carries two ratios: 36.85% of promoter holding pledged (used for E3, the standard
+  convention and the framing SPEAR fact 3 uses) and 26.00% of total company shares outstanding pledged (not used)."
+- "Fresh issue proceeds per AR note 60 (p.358): Rs75,000 lakh = Rs750cr gross. Company memory (companies/TRUALT.md)
+  cites 'Rs751cr' as an estimate; the filed figure is Rs750cr."
+- "Peer moat tests (M2, M5, M9) now scored against GULPOLY, BALRAMCHIN, TRIVENI screener Data_Sheet.csv (Rs Cr).
+  EBITDA margin method: (PBT+Interest+Depreciation-Other Income)/Sales, latest FY per peer. TRUALT 16.77% (FY26)
+  vs peer median 8.72% (BALRAMCHIN 11.90% FY26, TRIVENI 8.72% FY26, GULPOLY 4.80% FY25) -> M2 +8.05pp above,
+  score 5. Market cap ranking (screener, current price basis): BALRAMCHIN Rs14,297.64cr > TRIVENI Rs5,122.34cr >
+  TRUALT Rs3,635.48cr > GULPOLY Rs1,066.85cr; TRUALT is top-3 mcap and top-1 margin among the four -> M5 score 3
+  (not top band, since TRUALT is not the largest mcap). Gross margin proxy (Revenue-Raw Material Cost)/Revenue:
+  TRUALT 27.23% vs peer median 25.99% (GULPOLY 27.71% FY25, BALRAMCHIN 25.99% FY26, TRIVENI 25.08% FY26) -> M9
+  +1.24pp above, below the 5pp floor for the middle band, scored in the 'above peers' catch-all, score 1."
+block_b_trend: "deteriorating - FY26 CFO -Rs295.63cr vs FY25 +Rs342.03cr (screener Data_Sheet; AR p.247)"
+analyst_note: "Growth (Block C, 16/20) and shareholder alignment ex-pledge (Block E, 13/20: 70.55% promoter holding,
+  zero contingent liabilities) are real and filed. Peer verification (this correction) confirms the moat read is
+  real too: TRUALT runs the highest EBITDA margin and the highest gross-margin proxy of the four-company set,
+  moving moat class from THIN to MODERATE (3 of 12 tests, grand total 61/160). None of this changes the binding
+  constraint. Block D still forces the floor: net debt ran to 5.20x a FY26 EBITDA that itself fell (EBITDA base
+  shrank because revenue fell 9.4% FY25 to FY26 while inventory absorbed cash), and interest coverage at 1.81x
+  leaves little room before covenant stress. This coincides exactly with SPEAR fact 2 (FY26 CFO -Rs296cr in the
+  year of the fresh issue) and fact 3 (36.85% pledge) already flagged at Stage 0. Treat the AVOID classification
+  as the framework's numeric read of FY26 leverage against a genuinely strong margin business, not a verdict on
+  the multi-feed transition thesis itself, which stages 2+ still need to test to depth."

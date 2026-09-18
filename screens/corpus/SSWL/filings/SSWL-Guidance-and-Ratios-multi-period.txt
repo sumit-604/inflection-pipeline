@@ -1,0 +1,78 @@
+SOURCE A: Bull AI get_company_guidance tool output for SSWL (management guidance and
+self-reported delivery statements, multiple periods, underlying documents are SSWL's
+own annual results press releases and concall transcripts already indexed by Bull AI).
+Guardrail per Bull AI: "Deliveries are self-reported statements by company management
+describing what they say was achieved. They are not independently verified and must
+not be used to confirm, verify, or corroborate whether earlier guidance targets were
+met." Cited in the card as "(guidance)".
+RETRIEVED: 2026-09-18.
+
+FY26 full-year deliveries (from FY26 annual results press release, document_id
+5a3ffce9-63d0-47d0-91e2-3b8f5e56a3e9, cited pages as noted):
+- "Highest Ever Yearly Net Revenues Rs 5,183 Cr. (+17% YoY)" (guidance p.6)
+- "Highest Ever Yearly EBITDA Rs 511 Cr (+5% YoY)" (guidance p.6)
+- "Highest Ever Total Sales Volume 199.52 Lakhs (+4% YoY)" (guidance p.6)
+- "Net Total Long term and short term debt stands at Rs 826 Cr. For FY 26" versus
+  Rs 827 Cr in FY25 (guidance p.6)
+- "Net Capex of INR 196 Crs. was incurred through FY26 towards incremental capacity
+  expansion" (guidance p.19)
+- "In FY26 we sold ~2.5 lac Knuckles which generated revenue of Rs. 68.5 Crores"
+  (guidance p.14)
+- "Highest Ever Alloy Wheel Volume 39.47 Lakhs (+19% YoY)" (guidance p.6)
+- "Alloy Wheel Mehsana Plant Capacity increased to 5Mn p.a." (guidance p.6)
+
+FY27 guidance (stated in the same FY26 annual release):
+- "Expected ~1.2 million capacity addition in Alloy Wheels aiming to ramp up the total
+  capacity up to ~6.2 million for FY27" (guidance p.10)
+- "Steel Wheel Market to grow at 4% p.a. whereas Alloy Wheel Market to grow at 12% p.a.
+  over next 5 years" (guidance p.17)
+- "scaling up capacity for Aluminium Knuckles... 11.0 Lakh Units for FY27E"
+  (guidance p.14)
+- "currently expanding our Aluminum wheels and knuckles capacity by 1.2 million and 0.6
+  million respectively" at the Bhuj (AMW) plant (guidance p.11)
+
+Earlier-period guidance and deliveries held by Bull AI (not the current quarter, kept
+for the trigger register / proof-check trail):
+- FY24 delivery: "Logged Highest ever Turnover in FY24 of INR 4,357 Cr with ~190 Lakh
+  units Sold" (guidance, FY25-period doc, p.6). H1FY25 delivery: revenue Rs 2,120.4 cr,
+  PAT Rs 96.4 cr, long-term debt reduced to Rs 433 cr.
+- FY25E guidance (from FY25-period doc): "Phased addition of 70 lakh steel wheel
+  operational capacity"; "Alloy Wheels Capacity to be expanded by 33% i.e. 12 Lakh
+  Wheels to 48 Lakh Wheels in Phased manner at Mehsana Plant, Gujarat."
+- Q1FY25 delivery (concall, doc df4998dc...): Revenue Rs 1,025 cr vs Rs 1,044 cr Q1FY24
+  (down YoY); EBITDA Rs 118 cr vs Rs 117 cr; PAT Rs 46.20 cr; EBITDA/wheel Rs 257 vs
+  Rs 253; alloy volume 7.25 lakh wheels (+1% YoY); steel volume 38.67 lakh wheels
+  (flat YoY); overall debt Rs 965 cr vs Rs 1,047 cr Q4FY24.
+- Q1FY25 guidance: export target Rs 675-700 cr for FY25; domestic steel wheel growth
+  6-7%; EV two-wheeler growth 15-17%; PV growth 7-10%; tractor growth 10%+; aluminium
+  wheel growth 12-15%; FY25 capex Rs 210-220 cr; FY25 volume target 20 million units;
+  EBITDA/wheel benchmark Rs 255-260; debt peak of Rs 1,050 cr already reached, reduction
+  expected thereafter.
+- Q3FY23 delivery: quarter EBITDA Rs 110 cr vs Rs 108 cr prior year; 9MFY23 normalised
+  EBITDA Rs 351 cr vs Rs 289 cr (+21%); alloy turnover ~Rs 1,000 cr for 9 months
+  (+~120% YoY); term loans reduced to Rs 226 cr from Rs 375 cr (start of year).
+- FY23/FY24 guidance (from Q3FY23 call): FY23 turnover target ~Rs 4,100 cr; export
+  doubling target to US/Europe; alloy capacity to 4.5 million wheels by June 2023
+  (+50%); FY24 capex ~Rs 150 cr plus AMW acquisition; FY24 revenue guide "Rs 5,000 cr
+  plus"; EBITDA margin guide "plus 12%"; ROC guidance 25%, internal target 30%.
+  [Several of these FY23-24 targets (Rs 5,000cr revenue, 12%+ EBITDA margin, 25-30% ROC)
+  were not met per the historical P&L held in this corpus: FY24 revenue was Rs 4,357 cr,
+  not Rs 5,000 cr; FY24 EBITDA margin was 10.7%, not 12%+.]
+
+SOURCE B: search_company_documents snippet, Investor Presentation FY2026 Q3 (document_id
+4a5a7187-94bc-4c36-b56e-30ea58744971), page 24, "Performance Ratios" (also repeated
+identically in the FY2026 Q2 presentation, document_id f2a8d21f-ec1a-4bc4-9e84-
+7e04feb085fb, page 26). Snippet only, full page not separately chunk-read within budget.
+
+Return on Equity (RoE): FY22 23%, FY23 18%, FY24 17%, FY25 14%, H1FY26 11%.
+Return on Capital Employed (RoCE): FY22 26%, FY23 24%, FY24 20%, FY25 20%, H1FY26 18%.
+Fixed Asset Turnover Ratio: FY22 2.6, FY23 3.0, FY24 3.0, FY25 2.7, H1FY26 3.1.
+Debt/EBITDA: FY22 1.55, FY23 1.31, FY24 2.11, FY25 1.65, H1FY26 1.87.
+Debt/Equity: FY22 0.76, FY23 0.52, FY24 0.79, FY25 0.55, H1FY26 0.57.
+Current Ratio: FY22 1.00, FY23 0.97, FY24 1.01, FY25 1.03, H1FY26 1.01.
+
+Note: RoE and RoCE both decline every year shown, FY22 through H1FY26 (RoE 23%->11%,
+RoCE 26%->18%). This is the company's own reported RoCE and does not match Ind-Ra's own
+calculation of RoCE at 15.8% for FY25 in the credit-rating filing held in this corpus
+(SSWL-CreditRating-IndiaRatings-2026-02-18.txt); the two RoCE figures are not
+reconciled within this corpus.

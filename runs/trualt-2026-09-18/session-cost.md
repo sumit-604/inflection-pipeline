@@ -17,3 +17,4 @@ Run: runs/trualt-2026-09-18 | Phase 1 executed 2026-09-18 via /step1
 | 8 | promoter | sonnet | agent default | - | - | 224877 | 9m02s | 1 |
 | 6 | peer concalls | sonnet | agent default | - | - | 294683 | 5m26s | 1 |
 | 7 | emerging moat | sonnet | agent default | - | - | 196444 | 10m09s | 1 |
+| 9 | TAM | sonnet | agent default | - | - | 197434 | 9m10s | 1 |

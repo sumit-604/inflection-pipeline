@@ -1,0 +1,121 @@
+stage: B09-tam
+company: "TRUALT"
+run_date: "2026-09-18"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "post-ESY2024-25 government ethanol procurement price schedule by feedstock type is NOT FOUND in this corpus
+    (prospectus carries the schedule only through ESY 2024-25, p.235); PENDING LIVE VERIFICATION."
+  - "SAF Rs/litre price for the Indian market is NOT FOUND in this corpus; Section 2 uses a derived range (ATF
+    price x AR's own 2-5x multiplier), not a filed anchor; PENDING LIVE VERIFICATION."
+  - "CBG plant capacity/count figures do not reconcile across the AR (152 TPD spec) and the Aug-2026 concall
+    (132 TPD), carried from B07; affects the CBG adjacent-TAM bottom-up calc precision."
+  - "Exact top-3 national ethanol concentration percentage is NOT FOUND in this corpus; only TRUALT's own 3.6%
+    FY25 leader share is anchored (prospectus p.232)."
+  - "Current P/E multiple and CMP are NOT FOUND in this stage's corpus; the Section 5E valuation-implication
+    sentence is left incomplete at the multiple/EPS-CAGR step and handed to Stage 11."
+flags:
+  - type: FLAG-TAM-MGMT-CBG-CLAIM
+    reason: "Management's ~USD 30 billion CBG 'investment opportunity' claim (Investor Presentation Q1FY27, filed
+      28-Jul-2026, p.31) is roughly 750-1,900x larger than the only independent CBG revenue-market-size estimate
+      found this stage (marketsandata.com via WebSearch: USD 15.64mn FY24 to USD 40.14mn FY32). Likely conflates
+      national capex opportunity with revenue TAM; read as promotional framing, not a sizing input."
+  - type: FLAG-TAM-OVERCAPACITY
+    reason: "Stage 6 peer evidence (TRIVENI, BALRAMCHIN concalls) confirms structural national ethanol
+      overcapacity: installed capacity ~1,995-2,300 cr L vs national offtake only ~1,100-1,350 cr L. This caps
+      realistic SOM utilisation below management's own 80-85% target and is the dominant TAM risk (Section 4B)."
+  - type: FLAG-DATA-STALE-CBG-PRICING
+    reason: "Prospectus CBG SATAT procurement price table (undated IOCL Notice, cited in the Oct-2025 prospectus,
+      p.253, top slab Rs78.01/kg incl. GST) is contradicted by TRUALT's own Aug-2026 concall, which cites CBG
+      priced at Rs84-85/kg under the current SATAT scheme. Unreconciled in this corpus."
+market_definition: "India's fuel ethanol/ENA market (EBP blending + industrial/potable use) that TRUALT sells
+  into today (97.6% of FY26 revenue); CBG and SAF sized separately as pre-scale adjacencies, not folded into
+  the core funnel."
+tam_cr: {conservative: 58900, realistic: 86100}
+sam_cr: 4900
+sam_pct_of_tam: 5.7
+som_3yr_cr: 2940
+som_5yr_cr: 3430
+som_implied_revenue_cagr: {yr3: 20.4, yr5: 15.3}
+current_sam_share_pct: 34.4
+revenue_headroom_x: 2.91
+tam_growth_pct: 17.7
+runway_class: "MODERATE"
+mgmt_claim_cr: 50000
+mgmt_claim_ratio: 0.85
+mgmt_claim_read: "reasonable"
+capacity_check: "sufficient - installed nameplate (~2,000 KLPD, ~70 cr L/year) can physically produce the 5-year
+  SOM at only ~70% utilisation, well within management's 80-85% target, with zero further capex (B07
+  capex_embedded_growth_pct 7.7% is not needed to hit this SOM). The optimistic side of this funnel is the
+  demand/OMC-allocation assumption, not the capacity or capex plan: national industry offtake runs at only
+  ~50-57% of installed capacity per Stage 6 peer evidence."
+methods_used:
+  - "Method 1: top-down, national ethanol demand x weighted feedstock realisation"
+  - "Method 2: bottom-up, installed capacity x realisation (full-penetration ceiling)"
+  - "Method 3: peer/market-structure cross-check (fragmentation, no unorganised segment)"
+  - "Method 4: import-substitution growth-driver read (largely already achieved)"
+  - "Method 5: global benchmark (directional only, management's own '3rd largest by 2026' claim)"
+stale_data_flags:
+  - {datapoint: "CBG SATAT procurement price slabs (top slab ~Rs78.01/kg incl. GST)", source: "TRUALT-Prospectus-01OCT2025.txt
+      p.253, undated IOCL Notice cited in an Oct-2025 filing", year: "undated, pre-Oct-2025"}
+searches_performed:
+  - "India ethanol blending program market size 2026 crore litres CRISIL ICRA report"
+  - "India compressed biogas CBG market size 2026 plants commissioned SATAT progress"
+  - "sustainable aviation fuel price per litre India ATF premium 2026"
+searches_skipped:
+  - "independent sell-side/broker TAM estimates specific to TRUALT: none found; B00-inputs.yaml records
+    'research: NONE. No broker notes collected', consistent with this gap"
+  - "a dedicated search for a filed India SAF procurement price: none found; carried forward as NOT FOUND /
+    PENDING LIVE VERIFICATION rather than estimated"
+downstream_candidates:
+  - signal: "OMC ethanol tender allocation volumes (public sector bid vs award)"
+    entity_type: "counterparty"
+    demand_link: "Allocation volume directly sets TRUALT's contracted litres and revenue each Ethanol Supply Year"
+    likely_source: "Ministry of Petroleum and Natural Gas / OMC (IOCL, BPCL, HPCL) tender and allocation bulletins"
+    cadence: "quarterly"
+    shared: true
+  - signal: "Maize and FCI rice feedstock price (Rs/kg)"
+    entity_type: "macro"
+    demand_link: "Feedstock cost sets the grain-route margin per litre and the production mix TRUALT runs"
+    likely_source: "Agmarknet / Department of Food and Public Distribution price bulletins"
+    cadence: "monthly"
+    shared: true
+  - signal: "Karnataka HC / Supreme Court BPCL ethanol-allocation litigation status"
+    entity_type: "regulatory"
+    demand_link: "Resolution decides whether the 15 cr L court-ordered allocation converts to revenue"
+    likely_source: "Supreme Court of India cause list / exchange Reg 30 filings"
+    cadence: "event-driven"
+    shared: true
+  - signal: "National ethanol blending percentage achieved (MoPNG monthly bulletin)"
+    entity_type: "macro"
+    demand_link: "Sets the national demand ceiling that bounds TRUALT's TAM growth"
+    likely_source: "Ministry of Petroleum and Natural Gas / PPAC monthly bulletin"
+    cadence: "monthly"
+    shared: true
+  - signal: "Sumitomo (TGPL) and GAIL (Leafiniti) CBG plant commissioning/COD"
+    entity_type: "counterparty"
+    demand_link: "COD converts CBG optionality into contracted, priced revenue"
+    likely_source: "Company Reg 30 board-outcome filings; GAIL investor disclosures"
+    cadence: "event-driven"
+    shared: false
+  - signal: "FCI surplus rice allocation for ethanol (LMT sanctioned per ESY)"
+    entity_type: "regulatory"
+    demand_link: "Sets the volume ceiling and cost of TRUALT's FCI-rice feedstock route"
+    likely_source: "Food Corporation of India / Department of Food and Public Distribution notification"
+    cadence: "event-driven"
+    shared: true
+  - signal: "India SAF blending mandate notification and CORSIA international timeline"
+    entity_type: "regulatory"
+    demand_link: "Notification date and volume decide whether the 10 cr L SAF plant has a national buyer base"
+    likely_source: "Ministry of Civil Aviation / DGCA notification"
+    cadence: "event-driven"
+    shared: false
+demand_externally_verifiable: true
+analyst_note: "Capacity is not TRUALT's TAM constraint; OMC allocation is. The already-built 2,000 KLPD multi-feed
+  platform can physically produce the full 5-year SOM at only ~70% utilisation, with no further capex (3C). Stage
+  6 peer evidence shows the national market clearing allocation at only ~50-57% of installed capacity, a
+  structural, not TRUALT-specific, ceiling. Management's two headline market-opportunity claims diverge sharply
+  in credibility: the ethanol claim (Rs50,000cr, prospectus) is reasonable and holds up against independent
+  cross-checks; the CBG claim ('~USD 30 billion opportunity') is off by roughly three orders of magnitude against
+  the one independent market-size estimate found and should be read as promotional framing at Stage 11/13, not a
+  sizing input."

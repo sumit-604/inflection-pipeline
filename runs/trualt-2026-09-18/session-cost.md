@@ -22,3 +22,4 @@ Run: runs/trualt-2026-09-18 | Phase 1 executed 2026-09-18 via /step1
 | 12b | verifier B | opus | agent default | - | - | 272401 | 9m51s | 1 |
 | 12c | verifier C (phase 1 scope) | opus | agent default | - | - | 127033 | 5m40s | 1 |
 | 12d | verifier D | sonnet | agent default | - | - | 134544 | 5m41s | 1 |
+| 5 | concall (REWORK) | sonnet | agent default | - | - | 245814 | 8m28s | 2 |

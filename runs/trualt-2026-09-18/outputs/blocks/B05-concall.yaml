@@ -3,79 +3,145 @@ company: "TRUALT"
 run_date: "2026-09-18"
 model: claude-sonnet-5
 status: complete
+rework: true
+rework_basis: "Verifier B (B12b-r1) found 55.6% coverage (10/18 material red flags caught or partially caught, 6/18 fully caught) on the first run, below the 60% REWORK floor. This block replaces B05-concall-r1 after a full fresh read of all four transcripts."
 input_gaps:
-- "carried from B00/B02/B03 by orchestrator: sector_cap_row provisional (Sugar / agri-commodity, 18x) on branch framework/group-3-promotions, not on main; not this stage's decision."
-- "this stage: the Q2 FY26 (Nov-2025) call was read as the promise baseline only, per orchestrator instruction; it is not one of the three scored quarters and does not enter quarters_analysed."
-- "this stage: Q4 FY26 DDGS revenue answer (~Rs 28cr) given by management in the Q4 FY26 call is ambiguously scoped between 'Q4 only' and 'full FY26'; both readings still represent a large miss against the Rs 70-80cr Q4 guidance, but the exact Q4-only figure is NOT FOUND in the transcripts."
-- "this stage: full-year FY26 EBITDA margin (19.81% standalone / 20.98% consolidated) is disclosed; the Q4-only EBITDA margin figure that the 20-22% guidance targeted is NOT FOUND separately disclosed in any transcript."
+- 'carried from B00 by orchestrator: collector_warning (verbatim): sector_cap_row_guess Pharma / CDMO is the collector
+  default and is wrong; Step 1 set Sugar / agri-commodity.'
+- 'carried from B00 by orchestrator: collector_warning (verbatim): peer RENUKA (Shree Renuka Sugars) collected but
+  has held no concall since Jun-2022; replaced by TRIVENI, collected separately with screener_collect.py. RENUKA
+  Data_Sheet removed.'
+- 'carried from B00 by orchestrator: collector_warning (verbatim): announcements: collector downloaded 5 of 102
+  BSE rows; Step 1 fetched the material Reg 30 filings by hand (41 files, 6 duplicates of other folders removed).
+  Routine filings (trading window, Reg 74(5), newspaper ads, SDD) skipped.'
+- 'carried from B00 by orchestrator: collector_warning (verbatim): results, rating, prospectus and shareholding
+  were empty after the collector; Step 1 filled them from BSE (results Q3FY26, Q4FY26, Q1FY27; Ind-Ra rating with
+  full rationale), the NSE archive (final prospectus 01-Oct-2025) and the BSE XBRL SHP (Mar and Jun 2026, converted
+  to text).'
+- 'carried from B00 by orchestrator: collector_warning (verbatim): Q4FY26 audited results PDF is a scan (16 of 20
+  pages image-only); the .txt beside it carries RapidOCR text marked per page. OCR also filled 4 image pages in
+  each deck and 10 in the prospectus.'
+- 'carried from B00 by orchestrator: collector_warning (verbatim): concall filenames: collector names by month;
+  BALRAMCHIN May_2026 is dated 30-Apr-2026 and Jun_2026 is dated 22-May-2026 on page 1.'
+- 'carried from B00 by orchestrator: collector_warning (verbatim): screener export sheets came out EMPTY (formulas
+  with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance
+  Sheet, screener:Cash Flow, screener:Customization, GULPOLY:Profit & Loss, GULPOLY:Quarters, GULPOLY:Balance Sheet,
+  GULPOLY:Cash Flow, GULPOLY:Customization, BALRAMCHIN:Profit & Loss, BALRAMCHIN:Quarters, BALRAMCHIN:Balance Sheet,
+  BALRAMCHIN:Cash Flow, BALRAMCHIN:Customization, TRIVENI:Profit & Loss, TRIVENI:Quarters, TRIVENI:Balance Sheet,
+  TRIVENI:Cash Flow, TRIVENI:Customization (every Data_Sheet.csv is populated and carries P&L, quarters, balance
+  sheet and cash flow). Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again.'
+- 'carried from B00 by orchestrator: research: NONE. No broker notes collected. No effect on anchored evidence.'
+- 'carried from B00 by orchestrator: other: NONE (folder empty, never consumed).'
+- 'carried from B00 by orchestrator: screening: only <TICKER>-Data_Sheet.csv exists for TRUALT and each peer; the
+  Profit & Loss / Balance Sheet / Cash Flow / Quarters sheets exported empty and were not written. Data_Sheet carries
+  FY23-FY26 annual P&L, balance sheet, cash flow and nine quarters (Jun-2024 to Jun-2026), so the gap is cosmetic.
+  TRUALT screener history starts FY23 (company incorporated 2021): Gate 0 data_years is at most 4 audited years;
+  the prospectus restated FY23-FY25 is the backward baseline.'
+- 'carried from B00 by orchestrator: concalls: FOUR transcripts present (Q2FY26 to Q1FY27). The contract uses the
+  3 most recent (Q3FY26, Q4FY26, Q1FY27); the Q2FY26 (Nov-2025) transcript is passed to stage 5 as the promise baseline
+  for the multi-feed shutdown, because the load-bearing guidance-vs-delivery fact needs the first post-listing promise.
+  Deliberate deviation, recorded here.'
+- 'carried from B00 by orchestrator: prospectus: PRESENT (final prospectus 01-Oct-2025). Listed 03-Oct-2025, inside
+  the ~3 year window, so it is foundational: promoter/group history, group-company map, restated FY23-FY25.'
+- 'carried from B00 by orchestrator: results: the Q4FY26 audited results PDF is a scan; its financial tables come
+  from OCR text (RapidOCR). Stages cross-check any OCR figure against the FY26 AR (text-native) and anchor to the
+  AR where both carry the figure.'
+- 'carried from B00 by orchestrator: results: Q2FY26 and Q1FY26 results are not in results/ (contract keeps 3 most
+  recent). The Q2FY26 results sit inside inputs/announcements/20251111-d6d62c30-*.pdf (board outcome); Q1FY26 (BSE,
+  19-Oct-2025) was not downloaded.'
+- 'carried from B00 by orchestrator: sector_cap_row: Step 1 set ''Sugar / agri-commodity'' (18x). That row is Section
+  1B v3.11 Amendment 27.4 (16-Sep-2026), present on branch framework/group-3-promotions and NOT yet merged to main;
+  this run branch is cut from main, whose cap table lacks the row. Nearest row on main: ''Agri processing'' 20x.
+  Flagged for phase-3 operator confirmation before stage 11.'
 flags:
-  - {type: FLAG-DISCLOSURE, reason: "Capacity utilisation reported on three different denominators across calls for the same operating period: 95% on operating days, ~60% gross-quarter, <35% run-rate (Q3-Q4 FY26 calls), never reconciled"}
-  - {type: FLAG-SILENCE, reason: "Zero mention across all four transcripts of standalone CFO, DSCR, or related-party feedstock concentration, the top-rated red flags in B02/B03's AR read; opening remarks in every call assert general balance-sheet strength instead"}
-  - {type: FLAG-VOLUME-MISS, reason: "FY26 ethanol volume guided 36-37cr litres (Q3 FY26 call), delivered 24cr litres (Q4 FY26 call), a ~35% miss; explanatory 72cr litre bid vs 26cr litre award (34% hit rate) disclosed only after the miss printed"}
-  - {type: FLAG-TIMELINE, reason: "15cr litre Karnataka HC court-ordered ethanol allocation (04-Feb-2026 order, 90-day compliance clause) remains unimplemented through three consecutive calls (Q3 FY26, Q4 FY26, Q1 FY27) with a shifting informal timeline"}
-quarters_analysed: ["Q3 FY26", "Q4 FY26", "Q1 FY27"]
+  - "sector_cap_row PROVISIONAL: row exists only on branch framework/group-3-promotions, not yet merged to main (carried from B00-inputs.yaml, does not affect this stage's read)"
+quarters_analysed: ["Q2 FY26", "Q3 FY26", "Q4 FY26", "Q1 FY27"]
 triggers:
-  - {priority: 1, name: "Ethanol capacity utilisation recovery toward 55cr litre annual peak", type: "VOLUME", timeframe: "medium", conviction: "L", confirm_signal: "FY27 delivered volume prints above the 44cr litre base case order book", kill_signal: "15cr litre court order remains unimplemented through FY27 or a new allocation shock recurs"}
-  - {priority: 2, name: "CBG scale-up to 10+ plants under Sumitomo/GAIL JVs", type: "REVENUE+MARGIN", timeframe: "medium", conviction: "M", confirm_signal: "3 Sumitomo plants actually commissioned in Q3 FY27 as now guided", kill_signal: "another quarter of 'near commissioning' with no COD, or further land/legal disputes"}
-  - {priority: 3, name: "SAF Andhra Pradesh plant (Rs 2,000-2,250cr capex, Honeywell UOP)", type: "REVENUE", timeframe: "long", conviction: "M", confirm_signal: "signed long-term offtake agreement with a named airline, OEM or oil major", kill_signal: "FID delay beyond the already-guided FY28 revenue date"}
-  - {priority: 4, name: "Retail fuel network re-acceleration", type: "REVENUE", timeframe: "medium", conviction: "L", confirm_signal: "outlet count actually moves past 11 operational stations", kill_signal: "continued zero net addition for another quarter"}
-  - {priority: 5, name: "Blending mandate escalation (E20 to E27, E85/E100 adoption)", type: "SECTORAL", timeframe: "medium", conviction: "M", confirm_signal: "an actual increase in TruAlt's OMC allocation volume tied to a higher blending target", kill_signal: "another OMC allocation methodology change that again caps volume below installed capacity"}
+  - {priority: 1, name: "Ethanol capacity utilisation recovery toward 55 cr L annual peak", type: "VOLUME", timeframe: "medium", conviction: "L",
+     confirm_signal: "FY27 delivered volume prints above the 44 cr L base case management itself named, on an all-days basis",
+     kill_signal: "another court/OMC allocation shock, or the 15 cr L order remaining unimplemented through FY27"}
+  - {priority: 2, name: "CBG scale-up to 10+ plants under Sumitomo/GAIL JVs", type: "REVENUE+MARGIN", timeframe: "medium", conviction: "L",
+     confirm_signal: "3 Sumitomo plants actually commissioned in Q3 FY27 as guided, and a reconciled statement of how JV revenue is consolidated",
+     kill_signal: "further land/legal disputes, another quarter of near-commissioning with no COD, or no correction to the 51%-of-gross-revenue consolidation framing"}
+  - {priority: 3, name: "SAF Andhra Pradesh plant (Honeywell UOP)", type: "REVENUE", timeframe: "long", conviction: "L",
+     confirm_signal: "a signed long-term offtake with a named airline, aircraft manufacturer, or oil and gas counterparty",
+     kill_signal: "further slippage of the FY29 revenue date, or capex proceeding with no offtake signed at ground mobilisation (already partly fired: capex timeline given in Aug with offtake still in working groups)"}
+  - {priority: 4, name: "Retail fuel franchisee network re-acceleration", type: "REVENUE", timeframe: "medium", conviction: "L",
+     confirm_signal: "outlet count actually moves past 11",
+     kill_signal: "a third consecutive quarter of zero net addition"}
+  - {priority: 5, name: "Blending mandate escalation (E20 to E21 delivered, E27/E85/E100 aspirational)", type: "SECTORAL", timeframe: "medium", conviction: "M",
+     confirm_signal: "an actual increase in TruAlt's OMC allocation volume tied to the higher blending target",
+     kill_signal: "another allocation methodology change that again caps volume below installed capacity"}
 guidance:
-  - {item: "FY26 ethanol volume target", number: "36-37cr litres", timeframe: "FY26", stated_in: "Q3 FY26 call"}
-  - {item: "Q3+Q4 FY26 combined ethanol production", number: "26-28cr litres", timeframe: "Q3-Q4 FY26", stated_in: "Q2 FY26 baseline call"}
-  - {item: "Q3/Q4 FY26 capacity utilisation", number: "80-85%", timeframe: "Q3-Q4 FY26", stated_in: "Q2 FY26 baseline call"}
+  - {item: "FY26 ethanol volume", number: "36-37 cr L", timeframe: "FY26", stated_in: "Q3 FY26 call"}
+  - {item: "Q3/Q4 FY26 capacity utilisation", number: "80-85%", timeframe: "H2 FY26", stated_in: "Q2 FY26 baseline call"}
   - {item: "Q4 FY26 ethanol EBITDA margin", number: "20-22%", timeframe: "Q4 FY26", stated_in: "Q3 FY26 call"}
   - {item: "Q4 FY26 DDGS revenue", number: "Rs 70-80cr", timeframe: "Q4 FY26", stated_in: "Q3 FY26 call"}
-  - {item: "4 Sumitomo CBG plants commissioning", number: "4 plants, 20 TPD each", timeframe: "June 2026", stated_in: "Q3 FY26 call"}
-  - {item: "GAIL equity infusion into Leafiniti JV", number: "n/a", timeframe: "February 2026", stated_in: "Q3 FY26 call"}
-  - {item: "SAF plant commissioning and revenue start", number: "10cr litre/annum SAF capacity, Rs 2,000-2,250cr capex", timeframe: "commission Aug-Oct 2027, revenue FY28", stated_in: "Q3 FY26 call"}
-  - {item: "Retail outlet network scale", number: "13 stations then 75-90 outlets", timeframe: "shortly, then CY2026/FY27", stated_in: "Q2 FY26 baseline call and Q3 FY26 call"}
-  - {item: "FY27 ethanol volume aspiration", number: "55cr litres (later 44cr litres base case)", timeframe: "FY27", stated_in: "Q3 FY26 call, revised in Q1 FY27 call"}
-  - {item: "15cr litre court-ordered allocation implementation", number: "15cr litres, ~Rs 1,062-1,065cr value", timeframe: "within 90 days of 04-Feb-2026 order", stated_in: "Q3 FY26 call"}
+  - {item: "Q1 FY27 capacity utilisation", number: "80%", timeframe: "Q1 FY27", stated_in: "Q3 FY26 call"}
+  - {item: "4 Sumitomo CBG plants commissioned", number: "4 plants", timeframe: "June 2026", stated_in: "Q3 FY26 call"}
+  - {item: "GAIL equity infusion", number: "n/a", timeframe: "February 2026", stated_in: "Q3 FY26 call"}
+  - {item: "15 cr L court-ordered ethanol allocation implemented", number: "15 cr L", timeframe: "~90 days from 04-Feb-2026 order", stated_in: "Q4 FY26 call"}
+  - {item: "Retail outlets", number: "75-90 outlets", timeframe: "CY2026/FY27", stated_in: "Q3 FY26 and Q4 FY26 calls"}
+  - {item: "SAF plant commissioning and revenue start", number: "Aug-Oct 2027 commission, FY29 revenue (revised from FY28)", timeframe: "long", stated_in: "Q3 FY26 call (FY28), revised Q4 FY26 call (FY29)"}
+  - {item: "FY27 ethanol volume", number: "55 cr L litmus test, walked back to 44 cr L base case", timeframe: "FY27", stated_in: "Q3 FY26 call, revised Q1 FY27 call"}
+  - {item: "Core ethanol EBITDA margin ex co-products and subsidies", number: "9-9.5%", timeframe: "Q1 FY27", stated_in: "Q1 FY27 call"}
 promise_delivery:
-  delivered: 2
+  delivered: 1
   partial: 2
-  missed: 6
+  missed: 8
   rows:
-    - {promised_in: "Q2 FY26 baseline call", promise: "80-85% capacity utilisation Q3/Q4 FY26", outcome: "missed", explanation: "Q3 FY26 call reframes to 95% on operating days (58 operating days only) vs ~60% gross-quarter; farmer protests blocked roads"}
-    - {promised_in: "Q2 FY26 baseline call", promise: "26-28cr litres combined Q3+Q4 FY26 production", outcome: "missed", explanation: "actual approx 18.3cr litres (FY26 total 24cr litres minus H1 5.7cr litres minus Q3's own 7.6cr litres); no reconciling explanation given"}
-    - {promised_in: "Q3 FY26 call", promise: "FY26 ethanol volume 36-37cr litres", outcome: "missed", explanation: "actual 24cr litres (Q4 FY26 call); new OMC waterfall allocation methodology, 72cr litre bid vs 26cr litre award (34% hit rate), disclosed only at delivery"}
-    - {promised_in: "Q3 FY26 call", promise: "Q4 FY26 DDGS revenue Rs 70-80cr", outcome: "missed", explanation: "actual approx Rs 28cr for the period asked (Q4 FY26 call); majority of operations ran on syrup, not the grain mix the guidance assumed"}
-    - {promised_in: "Q3 FY26 call", promise: "4 Sumitomo CBG plants commissioned by June 2026", outcome: "missed", explanation: "Q4 FY26 call: only 3 of 4 confirmed, 1 dropped on a seller-side land dispute, target pushed to Q3 FY27; still near commissioning as of Q1 FY27 call"}
-    - {promised_in: "Q3 FY26 call (court deadline ~04-May-2026)", promise: "15cr litre court-ordered ethanol allocation implemented", outcome: "missed", explanation: "Q4 FY26 call pushes to September or H1 FY27; Q1 FY27 call: still trying, no new timeline, blames a parallel LTOA-vs-OMC Supreme Court case"}
-    - {promised_in: "Q2 FY26 baseline call", promise: "Retail network to 13 stations shortly, scaling to 75-90 by FY26/27", outcome: "missed", explanation: "still 7 operational by Q1 FY27 call, 10 months later; blamed on licensing complexity then Middle East crude volatility"}
-    - {promised_in: "Q3 FY26 call", promise: "GAIL equity infusion within the month of February 2026", outcome: "partial", explanation: "actually completed March 2026 per Q4 FY26 call, a modest self-disclosed slip"}
-    - {promised_in: "Q3 FY26 call", promise: "Q4 FY26 EBITDA margin 20-22%", outcome: "partial", explanation: "FY26 full-year print 19.81% standalone / 20.98% consolidated (Q4 FY26 call); Q4-only figure not separately disclosed, full year lands near the lower end of the range"}
-    - {promised_in: "Q3-Q4 FY26 calls", promise: "SAF PM JI-VAN viability gap funding Rs 150cr", outcome: "delivered", explanation: "slipped through 'advanced stage' and a postponed Secretary-level committee before landing 'successfully achieved' by the Q1 FY27 call"}
-excuse_pattern: "external-blame-heavy"
+    - {promised_in: "Q2 FY26 baseline call", promise: "80-85% capacity utilisation Q3/Q4 FY26", outcome: "Missed", explanation: "Reframed to 95% on operating days vs ~60% gross-quarter (reconciled in the same call); farmer protests cited"}
+    - {promised_in: "Q2 FY26 baseline call", promise: "26-28 cr L combined Q3+Q4 FY26 production", outcome: "Missed", explanation: "Actual roughly 18-20 cr L; no single reconciling explanation given"}
+    - {promised_in: "Q3 FY26 call", promise: "FY26 ethanol volume 36-37 cr L", outcome: "Missed", explanation: "Actual 24 cr L (MD) or 26 cr L (CFO), same call, unreconciled; OMC waterfall cut PSU award to 26 cr L vs 72 cr L bid, disclosed only at the point of the miss"}
+    - {promised_in: "Q3 FY26 call", promise: "Q4 FY26 DDGS revenue Rs 70-80cr", outcome: "Missed", explanation: "Actual ~Rs 28cr; operations ran mostly on syrup, not the assumed grain mix; guidance softened within the same Q3 call it was given"}
+    - {promised_in: "Q3 FY26 call", promise: "4 Sumitomo CBG plants commissioned by June 2026", outcome: "Missed", explanation: "Only 3 of 4 confirmed by Q4 FY26 call (seller-side land dispute), pushed to Q3 FY27; still near-commissioning at Q1 FY27 call"}
+    - {promised_in: "Q4 FY26 call (per 04-Feb-2026 HC order, ~90-day clause)", promise: "15 cr L court-ordered allocation implemented", outcome: "Missed", explanation: "Still not implemented at Q1 FY27 call; blamed on a parallel LTOA-vs-OMC Supreme Court matter across all four calls"}
+    - {promised_in: "Q2 FY26 baseline call", promise: "Retail network to 13 stations shortly, 75-90 by FY26/27", outcome: "Missed", explanation: "Still 7 operational (11 counting the repeatedly promised 4 more) after 9+ months; blamed on licensing then Middle East crude volatility"}
+    - {promised_in: "Q3 FY26 call", promise: "GAIL equity infusion within February 2026", outcome: "Partial", explanation: "Completed March 2026, self-disclosed modest slip"}
+    - {promised_in: "Q3 FY26 call", promise: "Q4 FY26 EBITDA margin 20-22%", outcome: "Partial", explanation: "FY26 full-year print 19.81% standalone / 20.98% consolidated, near the low end of the range"}
+    - {promised_in: "Q3 FY26 call", promise: "Q1 FY27 capacity utilisation 80%", outcome: "Missed", explanation: "Actual ~60% (Q1 FY27 call)"}
+    - {promised_in: "Q3/Q4 FY26 calls", promise: "SAF PM JI-VAN VGF Rs 150cr", outcome: "Delivered", explanation: "Landed successfully achieve only at the Q1 FY27 call, after two quarters of advanced stage / Secretary tied up"}
+excuse_pattern: "external-blame-heavy, bordering on narrative-inconsistent (same shutdown described as intentional to investors and force majeure to the court)"
 repeated_evasions:
-  - {question: "When will the 14-15cr litre pending/court-ordered ethanol allocation be supplied or implemented?", quarters_asked: ["Q2 FY26 baseline", "Q3 FY26", "Q4 FY26", "Q1 FY27"], classification: "answer changed between quarters"}
-  - {question: "When will the retail outlet network scale beyond the approximately 7 operational stations?", quarters_asked: ["Q2 FY26 baseline", "Q3 FY26", "Q4 FY26", "Q1 FY27"], classification: "deflected every time"}
-credibility_grade: "C"
-credibility_basis: "Capex and unit-economics execution (multi-feed conversion, CBG plant #1) delivered broadly on plan, but every quantified volume, revenue, and commissioning-date promise across the three scored quarters missed (FY26 volume ~35% short, DDGS revenue guidance missed, CBG commissioning slipped, 15cr litre court order unimplemented through 3 quarters, retail rollout stalled 10 months), with a persistent external-blame pattern and total silence on the AR's own top-rated cash-conversion and RPT red flags, offset by one genuine unprompted accountability admission (GST restatement)."
+  - {question: "Can you give the feedstock (grain vs sugar) split of the ethanol volumes booked?", quarters_asked: ["Q2 FY26", "Q4 FY26"], classification: "deflected twice to the same analyst, answered eventually to a different analyst in Q1 FY27"}
+  - {question: "When will the 14-15 cr L pending/court-ordered ethanol allocation be supplied/implemented?", quarters_asked: ["Q2 FY26", "Q3 FY26", "Q4 FY26", "Q1 FY27"], classification: "answer changed between quarters, never delivered inside the four-call window"}
+  - {question: "When will the retail outlet network scale beyond the ~7 operational stations?", quarters_asked: ["Q2 FY26", "Q3 FY26", "Q4 FY26", "Q1 FY27"], classification: "deflected every time, the promised near-term addition never resolves across three consecutive calls"}
+credibility_grade: "D"
+credibility_basis: "8 of 11 tracked promises missed outright, only 1 delivered; the GST-restatement positive that held the first run at C is prompted, not unprompted, and does not reconcile to the FY26 PAT figures given in the same window; six new material contradictions found on a fresh read (allocation done-deal vs 26 cr L award, private-OMC price told three ways, intentional shutdown vs force-majeure court claim, SAF FID condition reversed with a one-year revenue slip, CBG JV ownership described two ways in one call, a two-quarter evasion of a basic volume question to the same analyst)."
 peer_questions:
-  - {question: "Did GULPOLY, BALRAMCHIN or TRIVENI also see their FY26/ESY 25-26 OMC ethanol allocation fall materially short of their bid (TruAlt discloses a 72cr litre bid vs 26cr litre award, a 34% hit rate)?", why: "Tests whether the allocation shock TruAlt blames for its FY26 volume miss was industry-wide or specific to TruAlt's Karnataka/southern concentration", check_peers: ["GULPOLY", "BALRAMCHIN", "TRIVENI"]}
-  - {question: "Did private OMCs (Jio-bp, Nayara, Reliance) renege on already-issued ethanol purchase orders or demand price cuts from these peers in FY26, at the levels TruAlt describes (approx Rs 60-62/litre contracted, mid-contract price-revision request)?", why: "Tests whether the private-OMC commercial-power risk is systemic to the sector or specific to TruAlt's contract terms", check_peers: ["GULPOLY", "BALRAMCHIN", "TRIVENI"]}
-  - {question: "What maize-based ethanol margin per litre did GULPOLY report as maize prices moved from approx Rs 18-19/kg to approx Rs 25.50/kg through FY26 (TruAlt states its own margin compressed from approx Rs 15-16/litre to approx Rs 6-7/litre over the same window)?", why: "Cross-checks TruAlt's claimed feedstock-cost sensitivity and whether its dual-feed flexibility is a real hedge or a narrative", check_peers: ["GULPOLY"]}
-  - {question: "Do BALRAMCHIN and TRIVENI corroborate TruAlt's claim that India ethanol demand-supply is roughly balanced at current 20% blending (installed capacity approx 1,800-1,900cr litres, operating capacity approx 1,500-1,550cr litres, demand approx 1,200-1,300cr litres) and that no material new ethanol capacity is being added industry-wide beyond 8-10cr litres/annum?", why: "Tests a specific, checkable industry-capacity claim management uses to argue against future oversupply risk", check_peers: ["BALRAMCHIN", "TRIVENI"]}
-  - {question: "What interest-subvention (NABARD, 50% of interest up to a 6% cap) and state PLI (1.75% of turnover, Karnataka-specific) proportions of PBT do these peers report, and do any show the same government-scheme dependency B02/B03 flag for TruAlt (73.2% of standalone FY26 PBT)?", why: "Tests whether TruAlt's earnings-quality dependency on government schemes is a sector-wide subsidy-structure feature or a company-specific concentration", check_peers: ["GULPOLY", "BALRAMCHIN", "TRIVENI"]}
-  - {question: "Do any of these peers report FCI rice-based ethanol realisation near TruAlt's stated Rs 58/litre, and is FCI rice availability a constraint any of them have flagged?", why: "Cross-checks a feedstock-pricing data point in TruAlt's realisation blend and tests availability risk on a grain input TruAlt increasingly depends on", check_peers: ["GULPOLY", "TRIVENI"]}
+  - {question: "Did GULPOLY, BALRAMCHIN or TRIVENI also see their FY26/ESY 25-26 OMC ethanol allocation fall materially short of their bid, and did they disclose any shortfall earlier than TruAlt did (TruAlt: 72 cr L bid vs 26 cr L award, disclosed only at the point of the miss)?", why: "Tests whether the allocation shock was industry-wide or TruAlt-specific, and whether TruAlt's disclosure timing lagged peers", check_peers: ["GULPOLY", "BALRAMCHIN", "TRIVENI"]}
+  - {question: "Did private OMCs renege on already-issued purchase orders or demand price cuts from these peers at prices near Rs 60-60.50/litre, and did any peer describe the same contract two different ways across quarters the way TruAlt did?", why: "Tests whether the private-OMC commercial-power risk and the pricing-narrative shift are sector-wide or TruAlt-specific", check_peers: ["GULPOLY", "BALRAMCHIN", "TRIVENI"]}
+  - {question: "What maize-based ethanol margin per litre did GULPOLY report as maize prices moved from ~Rs 17-22/kg to ~Rs 25.50/kg (TruAlt's Rs 15-16 to Rs 6-7/litre figure is a point-in-time sensitivity on a specific stock-purchase window, not a full-period guided number)?", why: "Cross-checks TruAlt's feedstock-cost sensitivity and whether dual-feed flexibility is a real hedge", check_peers: ["GULPOLY"]}
+  - {question: "Do BALRAMCHIN and TRIVENI corroborate a roughly balanced ethanol demand-supply picture at current blending, given TruAlt itself called the same absolute figures already an oversupply nine months earlier?", why: "Tests a specific industry-capacity claim TruAlt now uses to argue against new-entrant risk, after reversing its own framing of the same numbers", check_peers: ["BALRAMCHIN", "TRIVENI"]}
+  - {question: "What related-party feedstock purchase share do these peers disclose, and does any show a gap between a concall-stated sourcing percentage and their own AR related-party note the way TruAlt does (May: less than 55% falling; Aug: 100% assured; AR: 72.6% of standalone FY26 purchases)?", why: "Tests whether the concall-vs-AR reconciliation gap is TruAlt-specific or a sector disclosure norm", check_peers: ["GULPOLY", "BALRAMCHIN", "TRIVENI"]}
+  - {question: "What interest-subvention and state PLI proportions of PBT do these peers report, and do any show the same government-scheme dependency flagged for TruAlt (73.2% of standalone FY26 PBT)?", why: "Tests whether TruAlt's earnings-quality problem is sector-wide or company-specific", check_peers: ["GULPOLY", "BALRAMCHIN", "TRIVENI"]}
 red_flags:
-  - "[HIGH] Capacity-utilisation metric reframed across quarters (95% on operating days vs approx 60% gross-quarter vs under 35% run-rate) describing the same period, never reconciled (Q3-Q4 FY26 calls)"
-  - "[HIGH] FY26 ethanol volume guided 36-37cr litres, delivered 24cr litres, a approx 35% miss, with the explanatory 34% bid-hit-rate figure disclosed only after the miss printed"
-  - "[HIGH] Zero mention across all four calls of standalone CFO, DSCR, or related-party purchase concentration, the AR's own top-rated red flags per B02/B03, while opening remarks assert general balance-sheet strength"
-  - "[MEDIUM] 15cr litre court-ordered ethanol allocation remains unimplemented through three consecutive calls with a shifting informal timeline"
-  - "[MEDIUM] Retail outlet count stalled at 7 operational stations for 10 months against publicly stated targets of 13/75/87-90 outlets, each quietly dropped without formal revision"
-  - "[MEDIUM] CBG plant counts under the Sumitomo and GAIL JVs are internally inconsistent across calls (16 total to 24 to 3-of-4 Sumitomo/5-or-6 GAIL) without reconciliation"
-  - "[LOW-MEDIUM] Q4 FY26 DDGS revenue guided Rs 70-80cr, delivered approx Rs 28cr for an ambiguously scoped period"
-  - "[LOW] Recurring mid-call numerical self-corrections by MD/CFO on basic volume and revenue figures"
+  - "[CRITICAL] Two-quarter evasion of the grain/sugar volume split to the same analyst (Nov, May), given only in Aug to a different analyst"
+  - "[HIGH] Allocation done-deal claim (Nov, 47 cr L built on a 34 cr L PSU allocation) did not hold; actual PSU award 26 cr L vs 72 cr L bid, disclosed only at the point of the miss; MD non-answer when asked why investors were not told"
+  - "[HIGH] Shutdown cause described as intentional to investors (Nov) and force majeure to the court (Feb) for the same underlying fact"
+  - "[HIGH] SAF revenue slipped FY28 to FY29 and the FID condition reversed (offtake-first in May, capex-first with no offtake in Aug)"
+  - "[HIGH] Private-OMC ethanol pricing described three ways across three calls (higher than government pricing / INR60 point change / about INR60.50)"
+  - "[MEDIUM-HIGH] CBG JV ownership and revenue-consolidation basis inconsistently described: TGPL called wholly-owned in the same call Sumitomo is named a 49% JV partner; MD confirms TruAlt reports only 51% of gross revenue from a majority-owned subsidiary"
+  - "[MEDIUM] Core ethanol EBITDA margin ex co-products and subsidies is 9-9.5% against a 23.5% headline, itself supported by grain stock bought before a subsequent price rise"
+  - "[MEDIUM] GST prior-period restatement is prompted by a direct analyst question, not volunteered, and its own explanation does not reconcile to the FY26 PAT figures given earlier in the same window"
+  - "[MEDIUM] Group-company feedstock sourcing described two ways (less than 55% falling vs 100% assured), neither reconciled to the AR's 72.6% related-party purchase share"
+  - "[MEDIUM] Rs 460-500cr unsold ethanol inventory, confirmed as a driver of Q1 FY27's margin, not connected on any call to cash-conversion findings elsewhere in the corpus"
+  - "[MEDIUM] 26% promoter pledge (Nov) with a confused CFO answer on release timing (Aug); Jun-2026 shareholding pattern shows 36.85% pledged, never named or reconciled on any call"
+  - "[MEDIUM] FY27 44 cr L order book stated as both a present-tense orders-in-hand figure and a forward base-case assumption in the same answer; litre-by-litre composition not disclosed and does not reconcile to the 40 cr L figure given the prior quarter"
+  - "[MEDIUM] Q1 FY27 80% utilisation promise missed at ~60%; the Q2 FY27 scheduled-maintenance plan is reversed without acknowledgment"
+  - "[LOW-MEDIUM] Q4 FY26 DDGS revenue guided Rs 70-80cr, delivered ~Rs 28cr, ambiguously scoped in management's own answer"
+  - "[LOW-MEDIUM] FY26 volume totals do not reconcile: MD states 24 cr L, CFO states 26 cr L, same call"
+  - "[LOW] Recurring mid-call numerical self-corrections across all four calls"
+  - "[LOW] Demand-supply framing of the same absolute figures reverses between already an oversupply (Nov) and almost at par (Aug)"
+  - "[LOW] Capacity-utilisation described on three bases; the 95%/60% pair is explicitly reconciled in the same call, the 35% figure is a different period, downgraded from the first run's HIGH rating"
 dropped_triggers:
-  - "Visolis MOU (MVL/isoprene speciality chemical), detailed only in the Q2 FY26 baseline call, never mentioned again in the three scored calls"
-  - "Green hydrogen / advanced biofuels (IISc tie-up): detailed in Q2 FY26 baseline call, brief in Q3 FY26 call, absent in Q4 FY26 call, and honestly marked as not progressed in the Q1 FY27 call (no market or supply chain)"
+  - "Retail network target quietly cut every call without formal revision (13 to 75 to 87-90 to still 7-11)"
+  - "Green hydrogen / Visolis MVL speciality-chemical MOU, honestly admitted as not progressed (Q1 FY27 call)"
+  - "FY27 55 cr L litmus test quietly walked back to a 44 cr L base case without being named as a guidance cut"
 timeline_slippages:
-  - "4 Sumitomo CBG plants commissioning: June 2026 (Q3 FY26 call) slipped to 3 of 4 plants targeted for Q3 FY27 (Q4 FY26 and Q1 FY27 calls)"
-  - "GAIL equity infusion: promised February 2026 (Q3 FY26 call), actually completed March 2026 (Q4 FY26 call)"
-  - "15cr litre court order implementation: due within 90 days of the 04-Feb-2026 order (~04-May-2026), pushed to September/H1 FY27 by the Q4 FY26 call, still unresolved with no timeline by the Q1 FY27 call"
-  - "Retail outlet count: 13 stations shortly (Q2 FY26 baseline call) never reached; still 7 operational plus 4 promised by quarter-end, repeated verbatim across Q4 FY26 and Q1 FY27 calls"
-  - "FY27 ethanol volume aspiration: 55cr litres litmus test (Q3 FY26 call, repeated Q4 FY26 call) walked back to a 44cr litre base case order-book number by the Q1 FY27 call"
-analyst_note: "The load-bearing finding for Role 5 weighting is the asymmetry between operational delivery (multi-feed capex, CBG unit economics: broadly on plan) and commercial delivery (volume, revenue, and commissioning-date guidance: missed in 6 of 10 scored promises), combined with a capacity-utilisation metric that changes its own denominator every quarter in the direction that flatters the current print. Equally load-bearing: across four calls and roughly 20 analyst questions, management never once raises CFO, DSCR, or related-party concentration, the three items B02 and B03 independently rate as the audited financials' most severe problems; the analyst base on these calls is retail/volume-focused and never pressed on them either. One clear unprompted accountability admission (the GST-restatement PAT understatement) keeps the grade at C rather than D. Treat every FY27 volume, CBG-commissioning, and retail-rollout figure from this management as the top of a range, not a base case, until the 15cr litre court order and the CBG COD dates actually resolve."
+  - "SAF revenue FY28 to FY29, FID condition reversed"
+  - "CBG Sumitomo commissioning June 2026 to Q3/Q4 FY27"
+  - "15 cr L court order: ~90-day clause to still open after 9+ months and four calls"
+  - "Retail rollout: 13 to 75 to 87-90 target, actual still 7-11 operational"
+  - "GAIL equity infusion: February 2026 target to actual March 2026"
+analyst_note: "The corrected record includes at least one instance of the same underlying fact (the plant shutdown) described in opposite causal terms to investors and to a court, and a done-deal allocation claim management never revisited when it unwound. The core-margin exchange (9-9.5% ex co-products against a 23.5% headline, Q1 FY27 call) is the single most informative data point in the corpus and should be read together with the fact that the quarter's margin rode grain stock bought before a subsequent price rise, not a repeatable structural gain. The 15 cr L court order, the CBG JV ownership/consolidation description, and the group-sourcing-vs-AR reconciliation are the three items most likely to move the thesis over the next two quarters; none was resolved inside this four-call window."

@@ -11,3 +11,4 @@ Run: runs/trualt-2026-09-18 | Phase 1 executed 2026-09-18 via /step1
 | 1 | gate 0 (peer rescore) | sonnet | agent default | - | - | 200373 | 3m09s | 2 |
 | 2.2 | notes pass 2 | sonnet | agent default | - | - | 177464 | 7m03s | 1 |
 | 2.3 | notes pass 3 | sonnet | agent default | - | - | 106851 | 3m51s | 1 |
+| 3 | AR deep dive | sonnet | agent default | - | - | 247023 | 12m01s | 1 |

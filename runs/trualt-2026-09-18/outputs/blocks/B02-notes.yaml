@@ -1,0 +1,98 @@
+stage: B02-notes
+company: "TRUALT"
+run_date: "2026-09-18"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+- 'carried from B00 by orchestrator: collector_warning (verbatim): sector_cap_row_guess Pharma / CDMO is the collector
+  default and is wrong; Step 1 set Sugar / agri-commodity.'
+- 'carried from B00 by orchestrator: collector_warning (verbatim): peer RENUKA (Shree Renuka Sugars) collected but
+  has held no concall since Jun-2022; replaced by TRIVENI, collected separately with screener_collect.py. RENUKA
+  Data_Sheet removed.'
+- 'carried from B00 by orchestrator: collector_warning (verbatim): announcements: collector downloaded 5 of 102
+  BSE rows; Step 1 fetched the material Reg 30 filings by hand (41 files, 6 duplicates of other folders removed).
+  Routine filings (trading window, Reg 74(5), newspaper ads, SDD) skipped.'
+- 'carried from B00 by orchestrator: collector_warning (verbatim): results, rating, prospectus and shareholding
+  were empty after the collector; Step 1 filled them from BSE (results Q3FY26, Q4FY26, Q1FY27; Ind-Ra rating with
+  full rationale), the NSE archive (final prospectus 01-Oct-2025) and the BSE XBRL SHP (Mar and Jun 2026, converted
+  to text).'
+- 'carried from B00 by orchestrator: collector_warning (verbatim): Q4FY26 audited results PDF is a scan (16 of 20
+  pages image-only); the .txt beside it carries RapidOCR text marked per page. OCR also filled 4 image pages in
+  each deck and 10 in the prospectus.'
+- 'carried from B00 by orchestrator: collector_warning (verbatim): concall filenames: collector names by month;
+  BALRAMCHIN May_2026 is dated 30-Apr-2026 and Jun_2026 is dated 22-May-2026 on page 1.'
+- 'carried from B00 by orchestrator: collector_warning (verbatim): screener export sheets came out EMPTY (formulas
+  with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance
+  Sheet, screener:Cash Flow, screener:Customization, GULPOLY:Profit & Loss, GULPOLY:Quarters, GULPOLY:Balance Sheet,
+  GULPOLY:Cash Flow, GULPOLY:Customization, BALRAMCHIN:Profit & Loss, BALRAMCHIN:Quarters, BALRAMCHIN:Balance Sheet,
+  BALRAMCHIN:Cash Flow, BALRAMCHIN:Customization, TRIVENI:Profit & Loss, TRIVENI:Quarters, TRIVENI:Balance Sheet,
+  TRIVENI:Cash Flow, TRIVENI:Customization (every Data_Sheet.csv is populated and carries P&L, quarters, balance
+  sheet and cash flow). Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again.'
+- 'carried from B00 by orchestrator: research: NONE. No broker notes collected. No effect on anchored evidence.'
+- 'carried from B00 by orchestrator: other: NONE (folder empty, never consumed).'
+- 'carried from B00 by orchestrator: screening: only <TICKER>-Data_Sheet.csv exists for TRUALT and each peer; the
+  Profit & Loss / Balance Sheet / Cash Flow / Quarters sheets exported empty and were not written. Data_Sheet carries
+  FY23-FY26 annual P&L, balance sheet, cash flow and nine quarters (Jun-2024 to Jun-2026), so the gap is cosmetic.
+  TRUALT screener history starts FY23 (company incorporated 2021): Gate 0 data_years is at most 4 audited years;
+  the prospectus restated FY23-FY25 is the backward baseline.'
+- 'carried from B00 by orchestrator: concalls: FOUR transcripts present (Q2FY26 to Q1FY27). The contract uses the
+  3 most recent (Q3FY26, Q4FY26, Q1FY27); the Q2FY26 (Nov-2025) transcript is passed to stage 5 as the promise baseline
+  for the multi-feed shutdown, because the load-bearing guidance-vs-delivery fact needs the first post-listing promise.
+  Deliberate deviation, recorded here.'
+- 'carried from B00 by orchestrator: prospectus: PRESENT (final prospectus 01-Oct-2025). Listed 03-Oct-2025, inside
+  the ~3 year window, so it is foundational: promoter/group history, group-company map, restated FY23-FY25.'
+- 'carried from B00 by orchestrator: results: the Q4FY26 audited results PDF is a scan; its financial tables come
+  from OCR text (RapidOCR). Stages cross-check any OCR figure against the FY26 AR (text-native) and anchor to the
+  AR where both carry the figure.'
+- 'carried from B00 by orchestrator: results: Q2FY26 and Q1FY26 results are not in results/ (contract keeps 3 most
+  recent). The Q2FY26 results sit inside inputs/announcements/20251111-d6d62c30-*.pdf (board outcome); Q1FY26 (BSE,
+  19-Oct-2025) was not downloaded.'
+- 'carried from B00 by orchestrator: sector_cap_row: Step 1 set ''Sugar / agri-commodity'' (18x). That row is Section
+  1B v3.11 Amendment 27.4 (16-Sep-2026), present on branch framework/group-3-promotions and NOT yet merged to main;
+  this run branch is cut from main, whose cap table lacks the row. Nearest row on main: ''Agri processing'' 20x.
+  Flagged for phase-3 operator confirmation before stage 11.'
+flags:
+  - {type: FLAG-CASH, reason: "FY26 standalone CFO -Rs 296.15cr, net debt rose despite Rs 750cr IPO, short-term financial obligations 8-15x cash on hand, DSCR fell to 0.99x, receivables short-cycle ageing deteriorated"}
+  - {type: FLAG-RPT, reason: "Related-party feedstock purchases 72.6% of FY26 total purchases and exceed 100% of FY25 total purchases (unreconciled); related-party trade payables funded 63.9-73.5% of total payables; corporate guarantee for subsidiary contradicts NIL contingent liability note"}
+  - {type: FLAG-EARNINGS-QUALITY, reason: "Government-scheme income (interest subvention plus PLI) is 73.2% of standalone PBT FY26; PLI revenue booked ahead of formal claim filing"}
+  - {type: FLAG-GOVERNANCE, reason: "Two ~14-week Company Secretary vacancies spanning the IPO listing window plus a ~6-week CFO vacancy, per KMP tenure dates in the related-party note"}
+accounting_quality: 4
+pass_2_empty: false
+pass_3_empty: false
+top_findings:
+  - {rank: 1, finding: "Government-scheme income (interest subvention plus PLI) is 73.2% of standalone PBT FY26 (Rs 8,018.19 lakh of Rs 10,947.48 lakh)", note_ref: "Note 27/28, both sets", rating: "red", why: "Core operating profitability is a minority of reported PBT; both schemes are policy-contingent and time-bound with no discontinuation sensitivity disclosed"}
+  - {rank: 2, finding: "Related-party feedstock purchases from the Nirani group are 72.6% of total raw-material purchases FY26 and exceed 100% of disclosed total purchases FY25", note_ref: "Notes 28 and 38 standalone; 29 and 39 consolidated", rating: "red", why: "Single-counterparty-group dependency for the core input, with an unreconciled arithmetic gap between two notes in the same filing"}
+  - {rank: 3, finding: "Net debt rose (standalone +10.7%, consolidated +11.3%) despite a Rs 750cr gross IPO; gearing improved only because the equity denominator grew", note_ref: "Note 53, both sets", rating: "red", why: "The deleveraging narrative implied by the IPO did not happen; equity dilution, not debt reduction, drove the ratio"}
+  - {rank: 4, finding: "Short-term contractual financial obligations (Rs 750.4cr consolidated) are 8-15x cash on hand (Rs 88.3cr consolidated / Rs 48.1cr standalone)", note_ref: "Note 42(D)/41(D), both sets", rating: "red", why: "Company-disclosed hard evidence of rollover dependency on short-term debt and receivable or grant collection, not a cash cushion"}
+  - {rank: 5, finding: "DSCR fell to 0.99x (FY26) from 1.28x (FY25), the company's own mandatory ratio, with no explanation given", note_ref: "Note 52 standalone, p.355", rating: "red", why: "Net operating income did not fully cover debt service in the year; the covenant threshold is undisclosed so breach cannot be ruled in or out"}
+  - {rank: 6, finding: "Standalone inventory grew 155.6% (Rs 204.2cr to Rs 521.8cr) while revenue fell 9.3%; finished goods alone grew 136.2% with no write-down or composition narrative", note_ref: "Note 11 standalone", rating: "red", why: "Inventory build sharply outpaced and diverged from revenue direction with no management explanation of composition"}
+  - {rank: 7, finding: "Corporate guarantee for TGPL's NABARD loan contradicts the NIL contingent liability note and the no-guarantees RPT statement", note_ref: "Notes 8, 57, 38(D)(4)/39(D)(4)", rating: "red", why: "Three-way internal inconsistency within the same standalone financial statements on a contingent liability disclosure"}
+  - {rank: 8, finding: "Related-party trade payables funded 63.9% (FY26) and 73.5% (FY25) of total payables; FY25 working capital was negative Rs 183.1cr, turning positive only after the IPO", note_ref: "Notes 24, 38, 52", rating: "red", why: "Pre-IPO working capital was structurally financed by promoter-family trade credit"}
+  - {rank: 9, finding: "Consolidated capital commitments (Rs 163.7cr) are about 20x the standalone figure (Rs 7.9cr); TGPL carries an estimated Rs 155.8cr forward CBG capex invisible in a standalone-only read", note_ref: "Note 56, consolidated vs standalone", rating: "red", why: "Corrects a capex-winding-down reading built from the standalone note only; a large new capital programme is ramping up inside the subsidiary"}
+  - {rank: 10, finding: "Two separate ~14-week Company Secretary vacancies (immediately pre- and post-IPO listing) plus a ~6-week CFO vacancy (Jan-Feb 2025)", note_ref: "Note 39/38, KMP tenure dates, both sets", rating: "red", why: "Governance-continuity gap at the two most SEBI LODR compliance-sensitive moments in the company's listed history"}
+  - {rank: 11, finding: "Trade receivables not-due share collapsed 69.1% to 34.7%, overdue-under-6-months jumped 20.2% to 57.6%, against a 7-27 or 21-27 day stated credit term; turnover fell 21%", note_ref: "Note 12, Note 42(C)/41(C), Note 52", rating: "yellow", why: "Short-cycle receivables are running several multiples of the stated credit term past due, though the long tail beyond 6 months actually improved slightly"}
+  - {rank: 12, finding: "FY26 standalone CFO was -Rs 296.15cr; the Rs 425cr IPO working-capital tranche was fully utilised per the utilisation table but absorbed by cash burn and inventory build, not retained as liquidity", note_ref: "Notes 18, 19, 60/61, cash flow statement", rating: "yellow", why: "IPO proceeds functioned as a cash-burn backstop rather than a war chest; net cash actually received was Rs 665.71cr, below the Rs 750cr headline"}
+  - {rank: 13, finding: "PLI revenue booked ahead of formal claim filing; total government-scheme receivables grew 31.7% to Rs 129.5cr even as revenue fell 9.4%", note_ref: "Notes 15/16, 26/27", rating: "yellow", why: "Judgement-based accrual of government income ahead of realisation, with the receivable growing even as current-year recognised income shrank"}
+  - {rank: 14, finding: "Nirani Holdings sold TGPL shares to Sumitomo Corporation at Rs 30.90/share, a 29% premium to the Company's own Rs 24/share entry price 8 months earlier, no pricing rationale disclosed, named only in consolidated notes", note_ref: "Note 36 standalone / Note 59 consolidated", rating: "yellow", why: "A related-party entity captured a pricing uplift the Company itself did not, on a subsidiary the Company controls"}
+  - {rank: 15, finding: "NIL or full-compliance assertions recur at least three times against harder numbers disclosed elsewhere in the same note set (guarantee versus NIL contingent liabilities, covenant compliance versus 0.99x DSCR, credit terms differing between note sets)", note_ref: "Notes 57 vs 8/39(D)(4); Note 53 vs Note 52; Note 42(C) consolidated vs standalone", rating: "yellow", why: "A recurring disclosure-consistency weakness across the standalone and consolidated note sets, not three isolated slips"}
+red_flags:
+  - "PLI revenue recognised ahead of formal claim filing (judgement-based accrual, Note 27/26)"
+  - "Government-scheme income (interest subvention plus PLI) is 73.2% of standalone PBT, masking the scale of core operating profitability (Note 27/28)"
+  - "Related-party raw-material purchases exceed disclosed total purchases in FY25, unreconciled across two notes in the same filing (Note 28/38)"
+  - "Corporate guarantee for a subsidiary's borrowing omitted from the contingent liabilities note, contradicted twice more within the same standalone notes (Note 8, 57, 38(D)(4))"
+  - "DSCR fell below 1.0x with no management explanation despite exceeding the company's own 25% variance-disclosure trigger (Note 52)"
+  - "Net debt increased despite a Rs 750cr gross equity raise; the gearing improvement is a dilution effect, not deleveraging (Note 53)"
+  - "Consolidated capital commitments are about 20x the standalone figure, hiding a Rs 155.8cr subsidiary capex programme from a standalone-only read (Note 56)"
+  - "Short-term financial obligations are 8-15x cash on hand per the company's own liquidity risk table (Note 42(D)/41(D))"
+  - "Two ~14-week Company Secretary vacancies spanning the IPO window, plus a ~6-week CFO vacancy (Note 39/38, KMP tenure dates)"
+  - "Unexplained Miscellaneous income ~8-10x jump and a volatile, unitemised provision-written-back revenue line recurring in both years (Note 27/28)"
+questions_for_mgmt:
+  - "Why did related-party raw-material purchases from the Nirani group exceed 100% of disclosed total purchases in FY25, and what reconciles Note 38 against Note 28?"
+  - "Why was no contingent liability recorded for the corporate guarantee given for TruAlt Gas Pvt Ltd's NABARD facility (Note 8), and what is the guarantee amount?"
+  - "What is the lender-defined DSCR calculation and covenant threshold, and does the Schedule III-calculated 0.99x FY26 DSCR sit inside or outside it?"
+  - "What is driving the shift of trade receivables into the under-6-months-overdue bucket (57.6% of book) against a stated 7-27/21-27 day credit term?"
+  - "What is the nature and purpose of the Rs 40.3cr advance to Accutrade Global LLP, the Rs 15.08cr secondary-sale-of-shares expense paid to Nirani Holdings in FY25, and the reimbursement-of-expenses RPT line that grew 172% in FY26?"
+receivables_trend: "deteriorating (short-cycle): not-due share fell from 69.1% to 34.7% of book FY25 to FY26 while under-6-months-overdue rose from 20.2% to 57.6%; receivables turnover fell from 5.68x to 4.51x (-21%, Note 52 standalone); the long tail beyond 6 months improved slightly, from 10.6% to 7.7% of book (Note 12 standalone)"
+restatements_found: []
+going_concern_language: "NONE"
+analyst_note: "The single highest-value read of this stage is that TRUALT's reported FY26 profitability and cash position are both substantially propped up: 73.2% of standalone PBT traces to two government schemes rather than core ethanol economics, and the Rs 750cr IPO raise coincided with a rise, not a fall, in net debt because the working-capital tranche was consumed by cash burn and inventory build. Layered on top is a related-party feedstock dependency that the company's own notes cannot arithmetically reconcile in FY25, and a corporate guarantee the company itself discloses in one note while denying in two others. None of this is evidence of fraud on its own; each item has a plausible benign explanation (OMC customer base, ethanol-price administration, first-year listed-company disclosure growing pains). But the volume and clustering of unresolved contradictions, all concentrated in the RPT and cash-conversion areas that matter most for a transition-alpha thesis, argues for treating every subsequent stage's use of FY26 margin, cash conversion, and RPT-adjusted revenue with active scepticism until claude.ai live verification closes the gaps named in the five questions above."

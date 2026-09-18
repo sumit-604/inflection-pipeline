@@ -41,6 +41,9 @@ before using any of it.
 
 ## The table
 
+**Corrected 2026-09-18.** The Omnitech row below was revised after the Q4 FY26 deck resolved the FY26
+base. See the note under the table.
+
 All figures Rs crore. "TTM adj" is trailing four quarters adjusted for the one-offs named in the
 notes. "Basis" is the Amendment 21 declaration.
 
@@ -53,7 +56,7 @@ notes. "Basis" is the Amendment 21 declaration.
 | MOTISONS | 1,909 | 63.7 | 66.7 | 44.2 | TTM (seasonal: Q3 is the year) | **28.6x** | 30.0x | +38% |
 | RAMRAT | 4,922 | 108.6 | 127.9 | 140.8 | TTM (lumpy: copper, amalgamation) | **38.5x** | 45.3x | +121% |
 | ALGOQUANT | 1,837 | 32.7 | 37.6 | 66.1 | TTM adj (lumpy: 89% trading gains) | **48.8x** | 56.1x | +263% |
-| OMNI | 6,672 | 43.9 | 65.2 | 106.2 | UNRELIABLE, see note | **62.8x** | 152.1x | +469% |
+| OMNI | 6,672 | 79.3 | 103.8 | 118.9 | RUN-RATE (corrected 18-Sep) | **56.1x** | 84.1x | +1.4% QoQ |
 
 ## Growth: what is actually guided, versus what is merely recent
 
@@ -114,15 +117,14 @@ that the desk repeats. The TTM figure is adjusted down by Rs 7.06 crore for the 
 credit recognised in Q4 FY26, which was a one-off and took that quarter's total tax to Rs 0.34 crore
 on Rs 16.22 crore of pre-tax profit. Unadjusted TTM gives 41.1x.
 
-**OMNI, 62.8x, and the base cannot be fixed.** Two problems compound. First, the Q1 FY27 profit
-before tax includes an unquantified benefit from changing depreciation method from written-down value
-to straight line: the charge fell from Rs 105.0 million and Rs 134.7 million in the two prior quarters
-to Rs 62.7 million. Normalising to the year-earlier charge cuts Q1 PAT from Rs 29.73 crore to about
-Rs 26.6 crore, which is the 62.8x above; unadjusted it is 56.1x. Second, and worse, the deck states
-FY26 revenue as both Rs 3,429.1 million (page 7) and Rs 5,113.0 million (page 12), so the FY26 profit
-of Rs 43.87 million may belong to a different year than labelled. That makes the TTM base, shown as
-102.3x normalised, unreliable rather than merely uncertain. **No multiple for this company should be
-relied on until the audited FY26 results are read.**
+**OMNI, 56.1x. CORRECTED 2026-09-18.** This worksheet first marked the base unreliable because the
+Q1 FY27 deck states FY26 revenue two ways. The Q4 FY26 deck, already in the corpus, resolves it: FY26
+revenue Rs 5,113.0 million and FY26 profit after tax Rs 793.4 million, against FY25 of Rs 3,429.1
+million and Rs 438.7 million (Q4 FY26 deck, p.5, p.7). The Q1 deck's "FY26" column is FY25 mislabelled.
+Trailing P/E is therefore 84.1x, not 152.1x, and FY26 profit grew 80.9%. The depreciation point stands
+and can now be sized: FY26 depreciation was Rs 481.6 million, about Rs 120 million a quarter, against
+Rs 62.7 million in Q1 FY27, so roughly Rs 17 crore a year of pre-tax benefit flows into FY27 reported
+profit. Read the growth as about 28% underlying rather than the 50% the reported numbers will show.
 
 ## What this does not answer
 

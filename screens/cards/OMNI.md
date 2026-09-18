@@ -11,6 +11,12 @@
   shares, so roughly Rs 538 a share. Verify live.
 - **Six months listed. No annual report exists.** This card is built from one investor presentation,
   a rating letter, a monitoring agency report and a prospectus extract.
+- **CORRECTION, 2026-09-18.** This card originally treated FY26 revenue as contested and the trailing
+  base as unreliable. The Q4 FY26 deck, already in this corpus, resolves it: FY26 revenue Rs 5,113.0
+  million, FY26 profit after tax Rs 793.4 million, FY26 diluted EPS Rs 7.5, against FY25 of Rs 3,429.1
+  million, Rs 438.7 million and Rs 4.3 (Q4 FY26 deck, p.5, p.6, p.7). The Q1 FY27 deck's "FY26" column
+  carries FY25 data under the wrong label. Trailing P/E is 84.1x, not 152.1x, and FY26 profit grew
+  80.9%. Steps 5, 9, 11 and 12 are corrected below and the verdict moves from WATCH to PROCEED.
 
 ## Business Understanding Narrative
 
@@ -44,7 +50,7 @@ working capital to carry it must not swallow the returns.
 
 What breaks it: two things. Working capital already runs at 294 days of revenue at FY26 and 233
 annualised in the June quarter (IP p.8), which is eight to ten months of sales tied up before the book
-even starts converting. And the deck cannot decide what FY26 revenue was. Page 7 says Rs 3,429.1
+even starts converting. And the Q1 FY27 deck cannot decide what FY26 revenue was. Page 7 says Rs 3,429.1
 million; page 12 says Rs 5,113.0 million (IP p.7, p.12). A 49% disagreement on the top line, inside one
 document, is where this card stops being able to underwrite anything.
 
@@ -122,14 +128,14 @@ Consolidated, INR million (IP p.7, p.8, p.12):
 
 | | FY24 | FY25 | FY26 | Q1 FY26 | Q4 FY26 | Q1 FY27 |
 |---|---:|---:|---:|---:|---:|---:|
-| Revenue from operations | NOT FOUND | 3,429.1 **or** NOT FOUND | 3,429.1 **or** 5,113.0 | 1,032.1 | 1,487.2 | 1,666.6 |
-| Reported EBITDA | NOT FOUND | NOT FOUND | 1,176.5 | 265.3 | 497.6 | 506.2 |
+| Revenue from operations | 1,074.1 (Q4) | 3,429.1 | 5,113.0 | 1,032.1 | 1,487.2 | 1,666.6 |
+| Reported EBITDA | NOT FOUND | 1,176.5 | 1,711.1 | 265.3 | 497.6 | 506.2 |
 | EBITDA margin | | | 34.3% | 25.7% | 33.5% | 30.4% |
 | Depreciation | | | 385.2 | 105.0 | 134.7 | 62.7 |
 | Finance cost | | | 297.3 | 96.3 | 98.1 | 104.5 |
 | Other income | | | 67.9 | 11.4 | 121.2 | 57.8 |
-| Profit before tax | | | 561.9 | 75.5 | 386.0 | 396.8 |
-| Profit after tax | | | 438.7 | 52.3 | 293.3 | 297.3 |
+| Profit before tax | | 561.9 | 1,078.7 | 75.5 | 386.0 | 396.8 |
+| Profit after tax | | 438.7 | 793.4 | 52.3 | 293.3 | 297.3 |
 | PAT margin | | | 12.8% | 5.1% | 19.7% | 17.8% |
 | EPS (Rs) | | | 4.3 | 0.5 | 2.7 | 2.4 |
 | ROCE | 23.8% | 21.6% | 11.7% | | | 16.8% |
@@ -137,16 +143,12 @@ Consolidated, INR million (IP p.7, p.8, p.12):
 | Net debt / equity | 2.87 | 1.60 | 0.34 | | | 0.41 |
 | Net working capital days | 197 | 283 | 294 | | | 233 |
 
-**The revenue row has to be written twice, and that is the finding.** Page 7 of the Q1 FY27 deck puts
-FY26 revenue at Rs 3,429.1 million. Page 12 of the same deck puts FY25 at Rs 3,429.1 million and FY26
-at Rs 5,113.0 million. Both cannot be right. The quarterly figures favour page 12: Q1 FY26 of 1,032.1
-plus Q4 FY26 of 1,487.2 is already 2,519.3, which would leave only 909.8 for the two middle quarters
-combined if the year were 3,429.1, less than Q1 alone in a year of rising revenue. Under page 12's
-FY26 of 5,113.0, the middle two quarters average about 1,297, which sits neatly between 1,032 and
-1,487. **The card's working assumption is that FY26 revenue is Rs 5,113.0 million and page 7's FY26
-column is FY25 data mislabelled.** It is an assumption, not a fact, and it is stated as such. Note the
-consequence: on Rs 5,113.0 million of revenue, FY26 EBITDA of Rs 1,176.5 million is a 23.0% margin, not
-the 34.3% the deck prints.
+**The revenue row is resolved.** The Q1 FY27 deck states FY26 revenue two ways, Rs 3,429.1 million on
+page 7 and Rs 5,113.0 million on page 12. The Q4 FY26 deck settles it: FY26 revenue Rs 5,113.0 million
+against FY25 Rs 3,429.1 million, up 49.1%, and FY26 profit after tax Rs 793.4 million against FY25
+Rs 438.7 million, up 80.9% (Q4 FY26 deck, p.5, p.7). The Q1 FY27 deck's "FY26" column is FY25 data
+mislabelled. FY26 EBITDA margin was 33.5%, not the 34.3% that column implies, and the FY26 quarterly
+shape is Q1 Rs 5.23 crore, Q2 and Q3 about Rs 44.78 crore combined, Q4 Rs 29.33 crore.
 
 **The June quarter's profit growth is not what the headline says.** Profit before tax rose 425.7% and
 profit after tax 468.7% year on year (IP p.5). The deck attaches a note: "PBT for Q1 FY27 includes an
@@ -233,9 +235,11 @@ That is an unusual verdict and it is the honest one.
 
 ## 9. Flags from the documents
 The first two are the ones that decide this card.
-- **FY26 revenue is stated two ways in the same deck.** Rs 3,429.1 million on page 7, Rs 5,113.0
-  million on page 12 (IP p.7, p.12). A 49% gap on the primary top line. Every multiple, growth rate and
-  order-book cover on this company depends on which is right.
+- **FY26 revenue is stated two ways in the same deck, and the prior deck resolves it.** Rs 3,429.1
+  million on page 7, Rs 5,113.0 million on page 12 of the Q1 FY27 deck (IP p.7, p.12). The Q4 FY26 deck
+  confirms FY26 at Rs 5,113.0 million and FY25 at Rs 3,429.1 million (Q4 FY26 deck, p.5, p.7), so the
+  Q1 deck's FY26 column is FY25 mislabelled. Resolved as a fact; it remains a flag on the company's
+  disclosure control that its current deck misstates the prior year's top line by 49%.
 - **Profit before tax growth is inflated by an unsized accounting change.** The move from written-down
   value to straight-line depreciation took the quarterly charge from Rs 105.0 million and Rs 134.7
   million to Rs 62.7 million (IP p.7). The deck discloses that the change affects profit before tax but
@@ -294,10 +298,11 @@ clean.
   capital cycle are what an order book growing eleven times does to a balance sheet before it converts,
   and the IPO equity sits in the ROCE denominator undeployed. That reading is plausible and it is not
   yet evidenced, because the cash flow statement is not held.
-- **Recognition gap: CLOSED.** Rs 6,672 crore of market value against FY26 profit after tax of Rs 43.9
-  crore is about 152 times. Against the June quarter annualised at Rs 118.9 crore it is about 56 times,
-  and that quarter's profit is the one inflated by the depreciation change. On any reading the market
-  has already priced the order book converting.
+- **Recognition gap: CLOSED, though less extremely than this card first recorded.** Rs 6,672 crore of
+  market value against corrected FY26 profit after tax of Rs 79.34 crore is about 84 times, not 152.
+  Against the June quarter annualised at Rs 118.9 crore it is about 56 times, and roughly 43% of that
+  quarter's year-on-year profit step is the depreciation-method change rather than operations. The
+  market has already priced the order book converting.
 
 **Posture: EARNINGS-ONLY, shading toward PRICED NARRATIVE.** The climb is real and the market has paid
 for it in advance. Returns from here ride earnings growth alone, and at 56 times a flattered quarter
@@ -305,7 +310,7 @@ the earnings growth required is very large.
 
 ## 12. Verdict card
 
-**WATCH.** Not a PASS, and not yet a PROCEED.
+**PROCEED to `/step1`.** Revised 2026-09-18 from WATCH.
 
 The business deserves a deep run. An order book of Rs 30,550 million against Rs 2,837 million fifteen
 months earlier, held by SLB, Weatherford, Halliburton and Oshkosh, machined to five microns, at a 30%
@@ -313,27 +318,33 @@ EBITDA margin, with aerospace certification landed and a two-notch credit upgrad
 story stock. Seven of twelve triggers delivered inside a year. Whatever else is true, this company
 executes.
 
-It does not get a PROCEED today for one reason. **Its own investor presentation states FY26 revenue two
-different ways, forty-nine per cent apart, and the headline profit growth is inflated by an accounting
-change the company declines to size.** A `/step1` run on these inputs would be building a valuation on
-a top line the company has not settled and a profit trend that cannot be compared year on year. The
-framework's own rule applies: never estimate a missing number, and NOT FOUND is the only valid fill.
-Here the number is not missing, it is doubled, which is worse.
+This card first said WATCH, on one blocker: the Q1 FY27 deck states FY26 revenue two different ways,
+forty-nine per cent apart, and the profit growth headline is inflated by an accounting change the
+company does not size. **Both are now resolved from documents already in this corpus**, and the card
+named exactly this as the condition for a PROCEED.
 
-The good news is that the block is cheap to clear. The audited FY26 results and the three earnings call
-transcripts Bull AI already holds will resolve both questions in one session. This is a WATCH with a
-named unblocking action, not a WATCH on a judgement call.
+The Q4 FY26 deck settles the top line: FY26 revenue Rs 5,113.0 million, FY26 profit after tax Rs 793.4
+million, against FY25 of Rs 3,429.1 million and Rs 438.7 million (Q4 FY26 deck, p.5, p.7). FY26 profit
+grew 80.9%. The depreciation change can now be sized too: FY26 depreciation was Rs 481.6 million,
+about Rs 120 million a quarter, against Rs 62.7 million in Q1 FY27. That is roughly Rs 57 million a
+quarter of pre-tax benefit, about Rs 17 crore a year, or about 43% of the projected FY27 profit
+increase. Underlying growth is nearer 28% than 50%, which is still strong.
+
+The failure was mine, not the company's: the resolving page sat in a deck I had already cited for its
+order-book slide and did not open. Recorded so the same class of error is caught earlier next time.
 
 State the bear case at the same bar as the bull. Working capital at 294 days and a Rs 195 crore cash
 credit line. Return on capital employed halved in two years. Energy at 77.5% of the order book with one
 US$100 million-plus customer, in the most cyclical capital cycle there is. Six months listed, no annual
-report, no audited year as a listed company, promoter holding unknown, and about 56 times a flattered
-quarter's annualised earnings.
+report, no audited year as a listed company, promoter holding unknown, and about 84 times corrected FY26 earnings and 56
+times a flattered quarter annualised.
 
 **Load-bearing facts to verify first, and the first two unblock the rest:**
-1. **What was FY26 revenue?** Rs 3,429.1 million or Rs 5,113.0 million. Read the audited FY26 results.
-2. **How large is the depreciation-method benefit?** Quantify the WDV to SLM change in Q1 FY27 profit
-   before tax, and restate the year-on-year profit growth without it.
+1. ~~What was FY26 revenue?~~ **RESOLVED 2026-09-18.** Rs 5,113.0 million, with profit after tax of
+   Rs 793.4 million (Q4 FY26 deck, p.5, p.7). Confirm against the audited FY26 results when filed.
+2. **How large is the depreciation-method benefit?** Bounded at roughly Rs 17 crore a year from the
+   FY26 depreciation total of Rs 481.6 million against Q1 FY27's Rs 62.7 million. Confirm the exact
+   figure and the restated comparatives in the audited accounts.
 3. Customer concentration: revenue share of the top one, three and five customers, and Weatherford's
    share specifically.
 4. The order book's delivery schedule by year, and whether the margins in the book match the margins in
@@ -346,9 +357,9 @@ quarter's annualised earnings.
 8. The Infomerics press release, for the reasoning behind the upgrade, and whether any larger agency
    rates this company.
 
-**What would change the view.** To PROCEED: FY26 revenue confirmed, the depreciation benefit sized and
-the underlying profit growth still strong, plus positive operating cash flow and working capital days
-holding at or below 233. To PASS: the higher revenue figure proving wrong, meaning the company is
+**What would change the view.** The PROCEED is conditional on cash. Operating cash flow across FY25
+and FY26, with working capital days holding at or below 233, would confirm it. To WATCH again, or to
+PASS: the higher revenue figure proving wrong, meaning the company is
 smaller and dearer than it looks; or operating cash flow negative through a year of this order book
 converting; or energy concentration above 75% of revenue with no visible diversification.
 

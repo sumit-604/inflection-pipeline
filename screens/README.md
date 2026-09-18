@@ -117,7 +117,7 @@ Rappid Valves (India), added after the first seven were committed.
 | RAMRAT | Ram Ratna Wires | PROCEED | EARNINGS-ONLY | COMPLETE BUT STALE (CARE, 30 Sep 2025) |
 | KISSHT | OnEMI Technology Solutions | PROCEED | RESEARCH / WATCH | PARTIAL (A-/Stable, agency unnamed) |
 | SHAREINDIA | Share India Securities | PROCEED | RESEARCH / WATCH | PARTIAL (CRISIL A1+ stated on a call) |
-| OMNI | Omnitech Engineering | WATCH | EARNINGS-ONLY | PARTIAL (Infomerics letter, no rationale) |
+| OMNI | Omnitech Engineering | PROCEED (revised 18-Sep from WATCH) | EARNINGS-ONLY | PARTIAL (Infomerics letter, no rationale) |
 | RAPPID | Rappid Valves (India) | WATCH | CONTRADICTION | NOT FOUND |
 | MOTISONS | Motisons Jewellers | PASS | PRICED NARRATIVE (TRAP) | NOT FOUND |
 | ALGOQUANT | Algoquant Fintech | PASS | PRICED NARRATIVE (TRAP) | NOT FOUND |
@@ -180,3 +180,22 @@ spent. And it is the only card in the run to land on the matrix's CONTRADICTION 
 has fired on a genuine climb into certified naval valves, while a 334-day cash conversion cycle reads
 structural. The framework calls that "a flag to resolve, not a posture", and one document resolves
 it. Rappid has published no cash flow statement in anything the corpus holds, for any year.
+
+
+### Correction to the third run, 2026-09-18
+
+Omnitech's card was revised from WATCH to PROCEED. The card's blocker was that the Q1 FY27 deck states
+FY26 revenue as both Rs 3,429.1 million and Rs 5,113.0 million. The Q4 FY26 deck resolves it (FY26
+revenue Rs 5,113.0 million, profit after tax Rs 793.4 million; FY25 Rs 3,429.1 million and Rs 438.7
+million), and that deck was already cited in the Omnitech manifest for its order-book slide. Trailing
+P/E is 84.1x, not the 152.1x first recorded, and FY26 profit grew 80.9%.
+
+**The process lesson, for `/compost`:** where a card flags a contradiction between two pages of one
+deck, check the prior period's deck before recording the base as unreliable. The prior deck states the
+same year as a comparative and usually settles it. Cost here was one wrong verdict and one wrong
+multiple, both caught one day later only because the operator asked for forward earnings.
+
+Two worksheets were added on operator instruction, both outside the shallow cards, which carry no
+valuation by framework rule: `screens/forward-base-2026-09-18.md` (Amendment 21 run-rate base and
+forward P/E) and `screens/fy27-projection-2026-09-18.md` (FY27 bear/base/bull bottom-line projection on
+the Amendment 26.1 basis hierarchy, with a repeatability assessment per name).

@@ -52,7 +52,7 @@ after tax. Growth is against FY26 actual.
 | SHAREINDIA | 324.4 | 364.4 | **412.4** | 477.2 | +12% | **+27%** | +47% | **10.4x** | GUIDANCE |
 | KROSS | 55.2 | 57.8 | **68.5** | 75.6 | +5% | **+24%** | +37% | **21.2x** | CAPACITY |
 | ALGOQUANT | 32.7 | \- | **NOT PROJECTABLE** | \- | \- | \- | \- | 27.8x to 71.5x | \- |
-| RAPPID | 6.48 | 7.2 | **7.9** | 9.4 | +12% | **+22%** | +45% | 20.3x, margin ASSUMED | ORDER-BOOK |
+| RAPPID | 6.48 | 6.4 | **7.7** | 9.5 | -1% | **+18%** | +47% | **20.9x**, margin assumed | ORDER-BOOK |
 
 Growth against price, base case:
 
@@ -79,11 +79,22 @@ share of average AUM: funding 5.2% to 4.3%, operating expenses 20.0% to 18.0%, i
 6.8%. Capital adequacy is 40.19%, roughly twice what the book needs, so there is funded headroom.
 **Why it could worsen.** Yield fell 5.2 points of AUM year on year while costs fell 4.9, so the
 return has been flat, not rising. Impairment at 6.8% of AUM is exactly the size of pre-tax profit at
-6.8%, so a credit cycle that lifts losses by half halves the profit. Provision coverage fell 653 basis
-points year on year while impairment cost fell, which is consistent with better assets and equally
-consistent with lighter provisioning. And 46.4% of AUM sits off-book with no asset quality disclosed,
-while the company retains up to 5% first loss on it.
-**Verdict: the most mechanically supported growth in the set, carrying the single fattest tail.**
+6.8%, so a credit cycle that lifts losses by half halves the profit.
+**On provisioning, I was wrong and the company was right.** I flagged that Stage 3 coverage fell 653
+basis points while impairment cost fell, and said the corpus could not separate better assets from
+lighter provisioning. Deck page 31 separates them, and I had not read it. Stage 2 ECL coverage rose
+from 59.1% to 80.4% over the same five quarters, the management overlay rose from Rs 122 crore to
+Rs 136 crore, and combined provision coverage plus overlay on Stage 2 and Stage 3 assets rose from
+137% to 150%. Total provisioning went up, not down. The Stage 3 coverage fall is a mix effect as the
+Stage 3 stock shrank from 3.6% to 2.2% of the book.
+**And the underwriting evidence is better than I credited.** First-EMI-to-DPD-90, the cleanest read on
+new origination quality, fell from 1.6% to 0.7% and held there, and page 29 states that series is for
+**overall AUM**, not just on-book. So the off-book half is covered on that metric, on bounce rate and
+on collection efficiency.
+**What genuinely stays unverified.** Stage 3 and net NPA for the off-book 46.4% specifically, the
+rupee FLDG exposure outstanding, and vintage or static-pool loss curves by cohort.
+**Verdict: the most mechanically supported growth in the set, and better evidenced than I first
+recorded.**
 
 ### OMNI — repeatable, and two fifths of the step is accounting
 Q1 PAT Rs 29.73 crore, up 468% year on year and 1.4% sequentially. **Ignore the 468%.** Q1 FY26 was
@@ -178,23 +189,59 @@ to FY26's clean level, FY27 is Rs 25.7 crore and the multiple is 71.5x. A 2.6 ti
 forecast.
 **Verdict: NOT PROJECTABLE. Do not put a growth number on this one.**
 
-### RAPPID — no profit figure exists for FY27
-Q1 FY27 revenue Rs 14.87 crore, up about 28%. **There is no profit line.** As an NSE Emerge SME
-listing it reports half-yearly, and the Q1 number is an unaudited Regulation 30 business update that
-the company revised one day after filing.
-**Why it could improve.** The executable order book is Rs 40 crore, up 60% year on year, plus Rs 11
-crore confirmed awaiting purchase orders. Three Fleet Support Ship orders worth Rs 29.85 crore were
-won in Q1 alone, and a further Rs 2.84 crore from L&T in August, against FY26 revenue of Rs 53.23
-crore.
-**Why it could worsen.** The promoter volunteers that order books convert at only 65% to 70%: "if you
-have a booking of 100 crore, I don't expect 100 crore execution, because I won't have the clearances
-for it." H2 FY26 revenue fell 25% year on year on a deliberate bidding pause. The plant is single-site
-at 85% utilisation. And the company has never published a cash flow statement for any year, while FY26
-working capital absorbed about Rs 17.5 crore against Rs 6.48 crore of profit.
-**The figures in the table assume FY26's 12.17% net margin holds.** That assumption is mine, not the
-company's, and Amendment 26.3 does not license inventing a margin. Treat the Rs 7.9 crore base and the
-20.3x as illustrative only.
-**Verdict: PAT NOT FOUND. The next real number is H1 FY27, around November 2026.**
+### RAPPID — projected on the order book, with the margin assumed
+Revised 2026-09-18 after the operator asked for a number. The earlier entry said NOT PROJECTABLE. That
+was too cautious: Rappid is the only name in the set with a **disclosed order book and a disclosed
+conversion rate**, which is the ORDER-BOOK tier of Amendment 26.1 and harder evidence than a run-rate.
+What is genuinely absent is a profit line, so the margin is assumed and labelled.
+
+**Top line, Rs crore.**
+
+| Case | Revenue | vs FY26 | Method |
+|---|---:|---:|---|
+| Bear | 59.5 | +12% | Q1 annualised, no improvement |
+| **Base** | **67.3** | **+26%** | Order book converted, built below |
+| Bull | 79.0 | +48% | H1 doubled at FY25's H2/H1 shape of 1.66x |
+
+The base is built, not guessed:
+
+| Component | Rs crore |
+|---|---:|
+| Q1 FY27 revenue, delivered | 14.87 |
+| Order book at 30 June, Rs 40 cr executable plus Rs 11 cr confirmed, at 67.5% conversion | 34.43 |
+| New Q2 to Q4 bookings executing in-year | 18.00 |
+| **Total** | **67.30** |
+
+The conversion rate is the promoter's own: "if you have a booking of 100 crore, I don't expect 100
+crore execution, because I won't have the clearances for it", agreeing with 65% to 70% (Concall p.19).
+The Rs 18 crore of new bookings assumes Q2 to Q4 book at half Q1's Rs 29.85 crore pace, with 40%
+executing in-year because later orders have less runway. **That assumption is mine and it is the
+softest number on this page.**
+
+**Bottom line.** No FY27 profit line exists, so the margin is applied, per Amendment 26.2: bear is the
+trailing three-year average of 11.68%, base is the current 12.17%, bull is H2 FY26's 12.70%. No margin
+lever is credited, because no lever has a quantified evidence line and 26.2 says to drop those. Each
+case carries a Rs 0.52 crore after-tax finance-cost drag: short-term borrowings went from Rs 8.41 crore
+to Rs 17.84 crore, so the FY26 charge of Rs 1.33 crore should rise toward Rs 2.0 crore.
+
+| Case | Revenue | Margin | PAT | vs FY26 | Fwd PE |
+|---|---:|---:|---:|---:|---:|
+| Bear | 59.5 | 11.68% | 6.43 | -1% | 24.9x |
+| **Base** | **67.3** | **12.17%** | **7.67** | **+18%** | **20.9x** |
+| Bull | 79.0 | 12.70% | 9.52 | +47% | 16.9x |
+
+**Why the top line should grow and the bottom line lags it.** Revenue grows 26% in the base and profit
+only 18%, because the finance cost rises with the working capital that funds the order book. That is
+the same tension the card flagged: FY26 working capital absorbed about Rs 17.5 crore against Rs 6.48
+crore of profit, and the company has never published a cash flow statement.
+
+**What would move it.** H2 is the swing. FY25 ran H2 at 1.66 times H1; FY26 ran it at 0.85 times
+because of the deliberate bidding pause during the copper spike and the LPG casting shortage. If the
+FY25 shape returns, the bull case is live. If the pause repeats, the bear case is.
+
+**Confidence: lowest of the eight.** The revenue base is an unaudited business update that the company
+revised one day after filing. The margin is assumed. The next real number is H1 FY27, around November
+2026.
 
 ## Answering the question directly
 
@@ -212,6 +259,7 @@ the earnings come from a trading desk no filing will let you see.
 year-on-year headline is a ramp artefact, and its real number is +30%.
 
 **Do not read this table as a ranking to buy from.** Growth per turn of multiple is a screen, not a
-verdict. The two best-scoring names are also the two whose earnings quality this shallow read could
-not verify. None of the eight has passed the spear gate, none has a `companies/<TICKER>.md`, and no
+verdict. On earnings quality the two top scorers now separate: Kissht's provisioning and underwriting
+hold up on evidence I had not read, while Share India's prop-versus-client split is genuinely absent
+from every filing and remains the open question on this table. None of the eight has passed the spear gate, none has a `companies/<TICKER>.md`, and no
 Amendment 20 peer table exists because that requires live web this session does not have.

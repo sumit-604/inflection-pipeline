@@ -12,7 +12,7 @@ AI chunk and search readers. No PDF is held.
 
 | File | Source | Pages held | document_id | URL |
 |---|---|---|---|---|
-| presentations/KISSHT-InvestorPresentation-Q1FY27-2026-07-29.txt | Investor Presentation Q1 FY27, filed 2026-07-29 | 4, 5, 7, 9, 10, 11, 12, 33, 41 | 898b816c-38bf-413d-a94e-d978432a1a04 | https://docs.bull-ai.in/d/w5ArA2 |
+| presentations/KISSHT-InvestorPresentation-Q1FY27-2026-07-29.txt | Investor Presentation Q1 FY27, filed 2026-07-29 | 4, 5, 7, 9, 10, 11, 12, 27, 29, 30, 31, 33, 41 | 898b816c-38bf-413d-a94e-d978432a1a04 | https://docs.bull-ai.in/d/w5ArA2 |
 | presentations/KISSHT-InvestorPresentation-Q1FY27-2026-07-29.txt | Investor Presentation Q4 FY26 | 7, 34, 44 | df62bf04-5a1d-406f-871d-bc464edd062d | https://docs.bull-ai.in/d/L5CaV0 |
 | annual-reports/KISSHT-Prospectus-extracts.txt | Red Herring Prospectus | 171, 175, 321 | f9c3b8ec-bf7d-4b04-85dd-4d1a9ff2250c | https://docs.bull-ai.in/d/DFTEMw |
 | annual-reports/KISSHT-Prospectus-extracts.txt | Prospectus | 175, 321, 352 | 9ec2ab2a-2714-4abf-9e61-6c100489f510 | https://docs.bull-ai.in/d/OXSKol |
@@ -38,8 +38,8 @@ conclusion without its reasoning and without its name.
 - Two earnings call transcripts exist (FY26 Q4 filed 2026-06-04, FY27 Q1 filed 2026-08-04) and
   neither was pulled. That leaves step 7 without management's spoken guidance beyond the CEO's
   written letter.
-- Deck pages 20 to 30, the Risk Management Framework and the Portfolio Performance and Asset Quality
-  sections, were not read. Eleven pages on precisely the question this card says matters most.
+- Deck pages 27 to 31 were read on 2026-09-18 and added to the held corpus. Pages 20 to 26, the Risk
+  Management Framework section, remain unread.
 - No asset-quality disclosure for the off-book portfolio, which is 46.4% of AUM.
 - No quantification of the FLDG amount outstanding. The policy caps it at 5% of the disbursed
   portfolio; the rupee exposure at a balance-sheet date is not in the held corpus.

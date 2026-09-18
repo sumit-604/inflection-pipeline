@@ -129,3 +129,49 @@ DA)."
 "PCR = Provision Coverage Ratio = ECL Stage 3 Provisions / Stage 3 Gross Exposure."
 "RoAAUM = PAT / Avg AUM." "RoAE = PAT / Avg Net worth."
 "FLDG = First Loss Default Guarantee = Guaranteed Amount / Total Loan Portfolio x 100."
+
+===== PAGE 27: Automated Collections System (added 2026-09-18) =====
+"Collections infrastructure built on our proprietary ACS."
+7,000+ agents using it | 17k+ pin codes covered | 10+ repayment options | 50k+ SMS library in 10+
+languages | 100+ flows for personalized campaigns | 7M messages sent monthly (pre + post delinquency)
+| Daily tracking of 7,000+ field staff | 50+ different MIS generated.
+Collections portal/app inputs: 60+ underwriting & bureau variables; 50+ repayment variables, on-us &
+off-us; 30+ previous dispositions' variables. Modules: skip tracing, self-cure & high-risk, agency
+management, tele calling, dialer integration, underwriting feedback. Allocation engine: calling daily,
+field every 5 days, allocation takes <10 mins. Legal: digital dunning letters, automated loan recall
+notices, system-driven tracking of legal timelines.
+
+===== PAGE 29: Portfolio performance (added 2026-09-18) =====
+Bounce rate (%):                 Jun-25 13.5 | Sep-25 13.3 | Dec-25 14.0 | Mar-26 13.1 | Jun-26 13.6
+1st EMI - DPD 90 (%):            Jun-25  1.6 | Sep-25  1.2 | Dec-25  0.8 | Mar-26  0.7 | Jun-26  0.7
+Collection efficiency, DPD 30 (%): Jun-25 97.2 | Sep-25 96.7 | Dec-25 97.0 | Mar-26 97.1 | Jun-26 96.8
+"The above information is for overall AUM."
+"Collection efficiency ratio refers to total amount collected up to DPD 30 against the total amount
+due."
+[READER NOTE: this page is explicitly for OVERALL AUM, so it covers the off-book portion as well. The
+GNPA, NNPA and PCR figures on pages 7 and 30 are on-book only.]
+
+===== PAGE 30: Asset quality (added 2026-09-18) =====
+Stage 2 movement (%):  Jun-25 3.90 | Sep-25 4.11 | Dec-25 3.90 | Mar-26 2.35 | Jun-26 3.15
+Stage 3 / Gross NPA (%): Jun-25 3.64 | Sep-25 2.92 | Dec-25 2.90 | Mar-26 2.12 | Jun-26 2.25
+Stage 3 PCR (%):       Jun-25 90.66 | Sep-25 88.97 | Dec-25 86.88 | Mar-26 86.15 | Jun-26 84.13
+Net NPA (%):           Jun-25 0.34 | Sep-25 0.32 | Dec-25 0.38 | Mar-26 0.29 | Jun-26 0.36
+
+===== PAGE 31: Stage-wise mix and provision coverage (added 2026-09-18) =====
+AUM Mix:            Jun-25 | Sep-25 | Dec-25 | Mar-26 | Jun-26
+  Stage 1 Asset      92.5% |  93.0% |  93.2% |  95.5% |  94.6%
+  Stage 2 Asset       3.9% |   4.1% |   3.9% |   2.4% |   3.1%
+  Stage 3 Asset       3.6% |   2.9% |   2.9% |   2.1% |   2.2%
+ECL Coverage:
+  Stage 1 ECL         3.3% |   3.4% |   2.8% |   3.0% |   3.4%
+  Stage 2 ECL        59.1% |  59.6% |  62.5% |  75.6% |  80.4%
+  Stage 3 ECL        90.7% |  89.0% |  86.9% |  86.2% |  84.1%
+Management overlay (MO) amount (Rs Cr):
+                       122 |    122 |    136 |    136 |    136
+Provision Coverage & MO for Stage 2 & Stage 3 Asset:
+                      137% |   134% |   139% |   166% |   150%
+"The above information is for on-book AUM"
+[READER NOTE: this page resolves the concern the card first raised. Stage 3 coverage fell 653 bps over
+five quarters, but Stage 2 coverage rose 2,130 bps, the management overlay rose Rs 14 crore, and
+combined Stage 2 plus Stage 3 coverage including the overlay rose from 137% to 150%. Total provisioning
+increased.]

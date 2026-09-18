@@ -12,6 +12,10 @@
   step 6.
 - **Four months listed.** The FY2026 annual report exists in Bull AI's inventory and was not opened in
   this shallow read.
+- **CORRECTION, 2026-09-18.** This card originally recorded that falling Stage 3 provision coverage
+  alongside falling impairment cost could not be separated from lighter provisioning. Deck pages 29
+  and 31, which this shallow read did not open, separate them. Total provisioning rose. Steps 8 and 9
+  are corrected below. The PROCEED verdict is unchanged and better supported.
 
 ## Business Understanding Narrative
 
@@ -64,9 +68,8 @@ covering the FLDG accounting policy, the off-book partnership structures, the re
 the financial risk management note.
 Missing, and the first three are significant: the FY2026 annual report, which Bull AI holds and which
 this shallow read did not open, leaving no audited balance sheet, related-party schedule or auditor's
-report and weakening steps 4, 5 and 9. Deck pages 20 to 30, eleven pages of Risk Management Framework
-and Portfolio Performance and Asset Quality, which is the section bearing on the one question this
-card says decides the name. Two earnings call transcripts, so step 7 has no spoken guidance. Beyond
+report and weakening steps 4, 5 and 9. Deck pages 27 to 31 were read on 2026-09-18 and are now held;
+pages 20 to 26, the Risk Management Framework section, remain unread. Two earnings call transcripts, so step 7 has no spoken guidance. Beyond
 those: no asset-quality figures for the 46.4% of AUM that is off-book; no rupee quantification of the
 FLDG exposure; no shareholding pattern, so promoter holding and pledge are NOT FOUND; no board list;
 and no vintage or static-pool loss curves.
@@ -231,13 +234,21 @@ non-performing assets rose 13 basis points sequentially. Net non-performing asse
 sequentially and 2 year on year, so the net number is not improving even as the gross number does.
 Collection efficiency at DPD 30 slipped 33 basis points both sequentially and year on year, to 96.82%.
 
-**And one combination that deserves the operator's attention.** Provision coverage fell from 90.66% a
-year ago to 86.15% at FY26 to 84.13% at June 2026, a decline of 653 basis points year on year
-(IP p.7). Impairment cost fell over the same period. Falling provision coverage alongside falling
-impairment cost is arithmetically consistent with better assets, and it is also arithmetically
-consistent with provisioning less against the same assets. The corpus held cannot separate the two.
-Deck pages 27 to 30, the Portfolio Performance and Asset Quality section, were not read in this run
-and may well answer it.
+**One combination looked concerning and resolves the right way.** Stage 3 provision coverage fell from
+90.66% a year ago to 84.13% at June 2026, 653 basis points, while impairment cost also fell. That
+pairing is consistent with better assets and equally with lighter provisioning. **Deck page 31
+separates them and the answer is better assets.** Stage 2 ECL coverage rose from 59.1% to 80.4% across
+the same five quarters. The management overlay rose from Rs 122 crore to Rs 136 crore. Combined
+provision coverage plus overlay on Stage 2 and Stage 3 assets rose from 137% to 150% (IP p.31). Total
+provisioning went up. The Stage 3 coverage decline is a mix effect: Stage 3 assets fell from 3.6% to
+2.2% of the book (IP p.31), and a shrinking Stage 3 stock carries newer, less-aged exposures.
+
+**And the off-book blind spot is narrower than this card first said.** Page 29 carries bounce rate,
+first-EMI-to-DPD-90 and collection efficiency, and states "The above information is for overall AUM",
+so those three cover the off-book 46.4% as well. First EMI to DPD 90, the cleanest available read on
+new origination quality, fell from 1.6% at June 2025 to 0.7% and held there for three quarters
+(IP p.29). Bounce rate was flat at 13.5% to 13.6%. What remains undisclosed for the off-book half is
+Stage 3 and net NPA specifically, not asset quality altogether.
 
 **The proof point, named: impairment cost as a percentage of average AUM, read together with provision
 coverage and net non-performing assets.** Not one of the three alone.
@@ -253,13 +264,16 @@ assets, has not.
   exposure, about 9.5% of net worth. The inference assumes the cap applies across the whole off-book
   book and that none has already been called; neither is verifiable from the corpus. The rupee amount
   is not disclosed anywhere held.
-- **Reported asset quality covers only half the book.** Every GNPA, NNPA and PCR figure on the deck
-  carries the footnote "Pertains to the subsidiary NBFC... and is based on on-book portfolio"
-  (IP p.7). At June 2026 that is 53.6% of AUM. The 46.4% off-book has no asset quality disclosed and
-  is the portion carrying the first-loss guarantee. Properly disclosed by the company; central to
-  reading the card.
-- **Provision coverage is falling while impairment cost falls**, 90.66% to 84.13% year on year
-  (IP p.7). Needs the unread asset-quality section to resolve.
+- **Stage 3 and net NPA cover only the on-book half, though other asset-quality metrics do not.**
+  Every GNPA, NNPA and PCR figure carries the footnote "Pertains to the subsidiary NBFC... and is
+  based on on-book portfolio" (IP p.7), which at June 2026 is 53.6% of AUM. **But bounce rate,
+  first-EMI-to-DPD-90 and collection efficiency are disclosed for overall AUM** (IP p.29), so the
+  off-book half is not dark. The specific gap is Stage 3 and net NPA for the off-book portion, which
+  is also the portion carrying the first-loss guarantee.
+- ~~Provision coverage is falling while impairment cost falls.~~ **RESOLVED 2026-09-18 and withdrawn
+  as a flag.** Stage 2 ECL coverage rose 59.1% to 80.4%, the management overlay rose Rs 122 crore to
+  Rs 136 crore, and combined Stage 2 plus Stage 3 coverage including the overlay rose 137% to 150%
+  (IP p.31). Total provisioning increased.
 - **Net non-performing assets are not improving.** Up 2 basis points year on year and 6 sequentially,
   while gross improved 139 basis points (IP p.7).
 - **Collection efficiency slipped**, 33 basis points both sequentially and year on year (IP p.7).
@@ -333,12 +347,13 @@ non-performing assets are not improving. And the secured mix, the structural fix
 and slowed to a crawl last quarter.
 
 **Load-bearing facts a deep run must verify first:**
-1. **Off-book asset quality.** Gross and net non-performing assets and the loss rate on the 46.4% of
-   AUM sitting with partners. Not disclosed anywhere held, and it is the largest blind spot.
+1. **Off-book Stage 3 and net NPA.** Bounce rate, first-EMI-to-DPD-90 and collection efficiency are
+   given for overall AUM (IP p.29); gross and net non-performing assets are not. Get the loss rate on
+   the 46.4% sitting with partners.
 2. **The FLDG exposure in rupees**, at each balance-sheet date, how much has been called historically,
    and how it is provided for. The policy caps it at 5%; the amount is not stated.
-3. **Why provision coverage fell 653 basis points** while impairment cost fell. Read deck pages 27 to
-   30 and the FY26 annual report first.
+3. ~~Why provision coverage fell 653 basis points.~~ **RESOLVED**, see step 8. Confirm the Rs 136
+   crore management overlay and the 150% combined coverage against the audited FY26 accounts.
 4. Static-pool or vintage loss curves by origination cohort, which is the only honest way to tell
    better underwriting from a growing book masking losses.
 5. The FY2026 annual report, held by Bull AI and unopened here: audited balance sheet, related-party

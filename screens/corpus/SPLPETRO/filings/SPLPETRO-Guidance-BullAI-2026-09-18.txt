@@ -1,0 +1,62 @@
+SOURCE: Bull AI get_company_guidance tool output for SPLPETRO (management guidance and
+self-reported delivery statements, extracted from company-filed concalls, investor presentations
+and the FY25 annual report, across periods Q3FY24 to Q1FY27).
+RETRIEVED: 2026-09-18. Cited in the card as "(guidance)" per framework rule. Bull AI guardrail:
+deliveries are self-reported statements by management describing what they say was achieved, not
+independently verified.
+
+Q1FY27 (transcript AN3WXf / doc 56c5ebe3, page 10/13): "All capacities will be on board by March
+2029." (Total Capacity Expansion). "It will be 140,000 nameplate capacity." (ABS terminal
+capacity). "All the products put together on full capacity basis, there will be twice." (asset
+turnover target).
+
+Q4FY26 deliveries (transcript Nvrpt7 / doc 115bd94b, pages 3-4, who: Rakesh Nayyar, ED and CFO):
+"Revenue from the operations for the 4th Quarter stood at INR 1,587 crores, reflecting a growth
+of 3% year-on-year." "Operating EBITDA stood at INR 253 crores, reflecting a growth of 75%
+year-on-year, with operating EBITDA margins improving to 15.9%." "Net profit after tax stood at
+INR 168 crores, with a PAT margin of 10.59% for the quarter." "Sales volume of manufactured
+products increased to 100,664 tons in Quarter 4, 2026... reflecting a growth of about 5.4%." "The
+EPS Phase-II expansion project... was successfully commissioned on April 14, 2026, enhancing the
+EPS capacity from 85,000 tons per annum to 115,000 tons per annum." "The Company continues to
+remain debt-free with an investable surplus of INR 700 crores as at the end of March 2026."
+Q4FY26 guidance (same doc, pages 6-13): "If normalcy returns by June end... we should be able to
+do 8% to 10% volume growth this year" (FY27 volume). "For the year, for the Company as a whole,
+we will be doing around Rs.250 crores" (FY27 capex, as guided in the April 2026 call - later
+revised to ~Rs 900cr per the July 2026 call, see concall file). Xmold volume growth guide "50 to
+60% more" this year. Capacity utilisation target "close to say 70%... or 65 to 70%". ABS
+utilisation target "close to 85%, 90% or 80%". Compounding volume target "50,000" by FY28.
+ABS volume target FY27 "around 36,000 tons". Phase-II ABS "planned by FY28".
+
+Q1FY26 deliveries (transcript FX2G8I / doc cbd23710, pages 5-17): "Operating Income INR 13,865
+Mn" (vs INR 15,735 Mn Q1FY25, an 11.9% YoY decline). "Operating EBITDA INR 1,147 Mn at 8.27%
+Operating EBITDA Margins." "Net Profit INR 809 Mn." "Company's sales volume of its manufactured
+products in Q1-FY26 increased to 93,853 MT as compared to 93,323 MT in Q1-FY25." "SPL remains
+debt free with investable surplus of INR 713 crores at the end of June 2025." Guidance: "new line
+of ABS with capacity of 70,000 MTA is nearing completion and commercial operations shall be
+starting in Q2-FY26."
+
+FY25 (annual report HT9FWI / doc fef983a8, pages 3-21): "Operating Income 60,234 (INR Mn)",
+growth 14.66% YoY. "Net Profit 3,905 (INR Mn)", growth 12.70% YoY. "Company's sales volume of
+manufactured products in FY25, increased by 9.4% on Y-o-Y basis" to 3,55,967 MT. "SPL remains debt
+free with investable surplus of INR 872 crores at the end of March 2025." "Capacity utilization
+for the year for all the products based on effective expanded capacity was 79%." "Market Leader in
+Polystyrene and Expanded Polystyrene with market share exceeding 50%." Guidance: mABS project
+"mechanically completed by May 2025", commercial production "from 2nd quarter of FY26"; combined
+Amdoshi capacity post mABS+EPS Phase II to reach 5,22,000 MTA; Haryana styrenics complex, "36 to
+48 months post receipt of statutory clearances", 107 acres acquired.
+
+Q1FY25 deliveries (transcript dvD2nv / doc a0455ae0, pages 15-18, who: D N Mishra, Company
+Secretary): "Company's sales volume of manufactured products increased to 93,323 MT in Q1-FY25 as
+compared to 77,148 MT in Q1-FY24" (21% YoY growth). "Revenue from Operations INR 15,735 Mn... 28.4%
+YoY." "Net Profit INR 1,219 Mn... PAT Margins 7.75%" (75.9% YoY PAT growth). "SPL remains debt free
+with investible surplus of Rs. 1,041 crores at the end of June 2024." "Capacity Utilisation for
+June 2024 quarter increased to 80%." Guidance: Mass ABS first line 70,000 MTA "expected to be
+commissioned by the 4th quarter of FY25"; Haryana plant, 96 acres, "estimated cost of INR 800Crs";
+total Mass ABS project (140K MTPA, two 70K phases) "total project cost estimated at INR 850 Crs".
+
+Q3FY24 deliveries (transcript qfh1rt / doc ed6e38c2, pages 13-16): "Revenue from Operations INR
+11,877 Mn" (0.6% YoY growth). "Operating EBITDA INR 949 Mn; EBITDA Margins 7.99%" (vs 10.10% in
+Q3FY23). "The company continues to remain debt free." "Quantities Sold in MT 70,623" (1.7% growth).
+Guidance: "Ongoing capex of over INR 1,200 Crs to cater to additional demand without any external
+borrowings"; Mass ABS first line 70,000 KTA agreement signed with Versalis; negotiations under way
+for second Mass ABS line; 12.5 MW solar plant to be operational Q1FY25.

@@ -1,0 +1,98 @@
+stage: B12c
+company: "TRUALT"
+run_date: "2026-09-18"
+model: "claude-opus-5"
+status: complete
+scope: "phase 1 (Gate 0 + Emerging Moat); valuation, expectation ledger and narrative pending phase 3"
+gate0:
+  rules_checked: 49
+  fails:
+    - {rule: "E2 promoter change over 3 years", severity: "MAJOR", stated: "3 (Mar-2026 to Jun-2026 window substituted)", recomputed: "0 (N/A per G0 rule 5; filed pre-offer 88.20% to 70.55% also scores 0)", effect: "Block E 13 to 10; Core 46 to 43; classification unchanged"}
+    - {rule: "M8 distribution", severity: "MAJOR", stated: "0 (no retail network)", recomputed: "1 conservative to 3 literal (AR p.103 discloses 7 retail outlets live plus 4 under construction; rev CAGR 31.4%)", effect: "literal reading gives 4 moats present, class MODERATE to STRONG; Gate 0 classification unchanged"}
+    - {rule: "M4 customer stickiness", severity: "MINOR", stated: "0", recomputed: "1 (1 decline year with positive CAGR beats the 2-decline-year band; 0 needs 3+ decline years)", effect: "moat score +1; moats present unchanged"}
+    - {rule: "M5 scale and dominance", severity: "MINOR", stated: "3 on a 4-company set", recomputed: "3 on the provided set, PEER DATA NEEDED for segment peers B01 itself names (EID Parry, Dalmia Bharat Sugar, Dhampur, Bajaj Hindusthan)", effect: "if below 3, moats present 2, still MODERATE"}
+    - {rule: "M7 regulatory licence", severity: "MINOR", stated: "1 (well over 10 players)", recomputed: "1, count unanchored (7 names given)", effect: "at 10 or fewer players M7 = 3 and class STRONG"}
+    - {rule: "M11 network effects", severity: "MINOR", stated: "0 (qualitative)", recomputed: "numeric overall-trend test not run; outcome 0 to 3", effect: "moats present could rise; classification unchanged"}
+emoat:
+  rules_checked: 21
+  fails:
+    - {rule: "one improvement one mechanism", severity: "MAJOR", stated: "R1 HH 4.0 documented", recomputed: "R1 0.7 to 2.0 after removing OMC status (E1), PM JI-VAN VGF and APEDB MoU (H2), court order (optionality register); total 14.2 to 15.5", effect: "MODEST unchanged"}
+    - {rule: "6C/6E use of injected Gate 0", severity: "MAJOR", stated: "existing moats M2, M5, M9; AVOID only via one leverage deal-breaker; GOOD-adjacent", recomputed: "present moats M1, M2, M5; AVOID also via Core AVERAGE band plus LIMITED downgrade; DB5 caps AVERAGE", effect: "TURNAROUND reasoning must be restated; matrix cell not derivable from rule source"}
+    - {rule: "evidence tier consistency", severity: "MINOR", stated: "E1 Strong at 1.0x; APEDB non-binding MoU counted documented in H2", recomputed: "E1 first-mover element is a self-description PENDING LIVE VERIFICATION; non-binding MoU is not a signed contract", effect: "no forced score change"}
+    - {rule: "completionist recount consistency", severity: "MINOR", stated: "recount 14 documented items", recomputed: "YAML evidence_mix documented 17; unreconciled", effect: "none"}
+    - {rule: "source anchors", severity: "MINOR", stated: "AR p.191-ish; upstream-block anchors (B02, B03, B05)", recomputed: "primary-document page anchors required", effect: "none"}
+valuation: {rules_checked: 0, fails: [], status: "pending phase 3"}
+expectation_ledger: {present: false, downside_row: false, all_rows_confirm_by: false, all_rows_metric_threshold: false, prob_in_range: false, decay_status_valid: false, off_ledger_credit: false, residual_pct_cmp: 0, residual_starter_cap_ok: true, fails: [], status: "pending phase 3"}
+business_understanding_narrative: {present: false, five_questions_answered: false, prose_only: false, section6_candidates_named: 0, valuation_vocab_leak: false, fails: [], status: "pending phase 3"}
+recomputed_destination_pe: ""
+recomputed_decision: ""
+recomputed_gate0: {core_score: 43, grand_total: "60 conservative M8, 62 literal M8", moat_class: "MODERATE (STRONG on literal M8)", classification: "AVOID (concur)"}
+recomputed_emoat: {em_score: "14.2 to 17.5", em_classification: "MODEST (concur)"}
+findings:
+  - {severity: "MAJOR", location: "01-gate0.md l.229-240, E2", note: "3-month window substituted for a 3-year change; as written N/A score 0"}
+  - {severity: "MAJOR", location: "01-gate0.md l.322-323, M8", note: "no-network premise contradicted by AR p.103 (7 outlets live, 4 under construction); recomputed 1 to 3"}
+  - {severity: "MAJOR", location: "07-emoat.md l.196-202, l.268-280, l.351, R1/E1/H2", note: "same evidence credited in two categories and a registered option scored; R1 recomputed 0.7 to 2.0"}
+  - {severity: "MAJOR", location: "07-emoat.md l.404-434, 6D/6E", note: "Gate 0 misread: wrong existing-moat list (M9 for M1) and single-override premise for AVOID"}
+  - {severity: "MINOR", location: "01-gate0.md l.305-308, M4", note: "scored 0 though 0 band needs 3+ decline years; recomputed 1"}
+  - {severity: "MINOR", location: "01-gate0.md l.309-314, M5", note: "mcap rank tested on 3 peers while B01 names 7+ segment players; PEER DATA NEEDED"}
+  - {severity: "MINOR", location: "01-gate0.md l.317-321, M7", note: "player count asserted, not anchored; at 10 or fewer M7 = 3"}
+  - {severity: "MINOR", location: "01-gate0.md l.334-336, M11", note: "numeric overall-trend test replaced by qualitative line"}
+  - {severity: "MINOR", location: "01-gate0.md l.199-203 vs l.279, l.299", note: "two EBITDA bases (300.29 vs 289.75) in one scorecard; no score change"}
+  - {severity: "MINOR", location: "01-gate0.md l.399-402", note: "LIMITED downgrade independently yields AVOID; report understates robustness"}
+  - {severity: "MINOR", location: "B01-gate0.yaml data_notes vs 01-gate0.md l.188-191", note: "Q2FY26 loss labelled standalone in YAML, consolidated screener in report"}
+  - {severity: "MINOR", location: "07-emoat.md l.158-162, l.199", note: "E1 first-mover element and APEDB non-binding MoU tiered as documented"}
+  - {severity: "MINOR", location: "07-emoat.md l.256 vs B07-emoat.yaml l.24", note: "recount 14 vs evidence_mix documented 17"}
+  - {severity: "MINOR", location: "07-emoat.md l.52 and upstream-block anchors", note: "non-page anchors"}
+  - {severity: "MINOR", location: "07-emoat.md l.73-89, 2C", note: "CWIP 67.71cr excluded; with it 10.9% vs 7.7%; conservative choice unstated as such"}
+critical_count: 0
+major_count: 4
+minor_count: 11
+acceptance_rate: 84.3
+input_gaps:
+- 'carried from B00 by orchestrator: collector_warning (verbatim): sector_cap_row_guess Pharma / CDMO is the collector
+  default and is wrong; Step 1 set Sugar / agri-commodity.'
+- 'carried from B00 by orchestrator: collector_warning (verbatim): peer RENUKA (Shree Renuka Sugars) collected but
+  has held no concall since Jun-2022; replaced by TRIVENI, collected separately with screener_collect.py. RENUKA
+  Data_Sheet removed.'
+- 'carried from B00 by orchestrator: collector_warning (verbatim): announcements: collector downloaded 5 of 102
+  BSE rows; Step 1 fetched the material Reg 30 filings by hand (41 files, 6 duplicates of other folders removed).
+  Routine filings (trading window, Reg 74(5), newspaper ads, SDD) skipped.'
+- 'carried from B00 by orchestrator: collector_warning (verbatim): results, rating, prospectus and shareholding
+  were empty after the collector; Step 1 filled them from BSE (results Q3FY26, Q4FY26, Q1FY27; Ind-Ra rating with
+  full rationale), the NSE archive (final prospectus 01-Oct-2025) and the BSE XBRL SHP (Mar and Jun 2026, converted
+  to text).'
+- 'carried from B00 by orchestrator: collector_warning (verbatim): Q4FY26 audited results PDF is a scan (16 of 20
+  pages image-only); the .txt beside it carries RapidOCR text marked per page. OCR also filled 4 image pages in
+  each deck and 10 in the prospectus.'
+- 'carried from B00 by orchestrator: collector_warning (verbatim): concall filenames: collector names by month;
+  BALRAMCHIN May_2026 is dated 30-Apr-2026 and Jun_2026 is dated 22-May-2026 on page 1.'
+- 'carried from B00 by orchestrator: collector_warning (verbatim): screener export sheets came out EMPTY (formulas
+  with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance
+  Sheet, screener:Cash Flow, screener:Customization, GULPOLY:Profit & Loss, GULPOLY:Quarters, GULPOLY:Balance Sheet,
+  GULPOLY:Cash Flow, GULPOLY:Customization, BALRAMCHIN:Profit & Loss, BALRAMCHIN:Quarters, BALRAMCHIN:Balance Sheet,
+  BALRAMCHIN:Cash Flow, BALRAMCHIN:Customization, TRIVENI:Profit & Loss, TRIVENI:Quarters, TRIVENI:Balance Sheet,
+  TRIVENI:Cash Flow, TRIVENI:Customization (every Data_Sheet.csv is populated and carries P&L, quarters, balance
+  sheet and cash flow). Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again.'
+- 'carried from B00 by orchestrator: research: NONE. No broker notes collected. No effect on anchored evidence.'
+- 'carried from B00 by orchestrator: other: NONE (folder empty, never consumed).'
+- 'carried from B00 by orchestrator: screening: only <TICKER>-Data_Sheet.csv exists for TRUALT and each peer; the
+  Profit & Loss / Balance Sheet / Cash Flow / Quarters sheets exported empty and were not written. Data_Sheet carries
+  FY23-FY26 annual P&L, balance sheet, cash flow and nine quarters (Jun-2024 to Jun-2026), so the gap is cosmetic.
+  TRUALT screener history starts FY23 (company incorporated 2021): Gate 0 data_years is at most 4 audited years;
+  the prospectus restated FY23-FY25 is the backward baseline.'
+- 'carried from B00 by orchestrator: concalls: FOUR transcripts present (Q2FY26 to Q1FY27). The contract uses the
+  3 most recent (Q3FY26, Q4FY26, Q1FY27); the Q2FY26 (Nov-2025) transcript is passed to stage 5 as the promise baseline
+  for the multi-feed shutdown, because the load-bearing guidance-vs-delivery fact needs the first post-listing promise.
+  Deliberate deviation, recorded here.'
+- 'carried from B00 by orchestrator: prospectus: PRESENT (final prospectus 01-Oct-2025). Listed 03-Oct-2025, inside
+  the ~3 year window, so it is foundational: promoter/group history, group-company map, restated FY23-FY25.'
+- 'carried from B00 by orchestrator: results: the Q4FY26 audited results PDF is a scan; its financial tables come
+  from OCR text (RapidOCR). Stages cross-check any OCR figure against the FY26 AR (text-native) and anchor to the
+  AR where both carry the figure.'
+- 'carried from B00 by orchestrator: results: Q2FY26 and Q1FY26 results are not in results/ (contract keeps 3 most
+  recent). The Q2FY26 results sit inside inputs/announcements/20251111-d6d62c30-*.pdf (board outcome); Q1FY26 (BSE,
+  19-Oct-2025) was not downloaded.'
+- 'carried from B00 by orchestrator: sector_cap_row: Step 1 set ''Sugar / agri-commodity'' (18x). That row is Section
+  1B v3.11 Amendment 27.4 (16-Sep-2026), present on branch framework/group-3-promotions and NOT yet merged to main;
+  this run branch is cut from main, whose cap table lacks the row. Nearest row on main: ''Agri processing'' 20x.
+  Flagged for phase-3 operator confirmation before stage 11.'

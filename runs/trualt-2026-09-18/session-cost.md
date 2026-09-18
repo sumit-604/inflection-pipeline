@@ -18,3 +18,7 @@ Run: runs/trualt-2026-09-18 | Phase 1 executed 2026-09-18 via /step1
 | 6 | peer concalls | sonnet | agent default | - | - | 294683 | 5m26s | 1 |
 | 7 | emerging moat | sonnet | agent default | - | - | 196444 | 10m09s | 1 |
 | 9 | TAM | sonnet | agent default | - | - | 197434 | 9m10s | 1 |
+| 12a | verifier A | haiku | agent default | - | - | 100103 | 2m46s | 1 |
+| 12b | verifier B | opus | agent default | - | - | 272401 | 9m51s | 1 |
+| 12c | verifier C (phase 1 scope) | opus | agent default | - | - | 127033 | 5m40s | 1 |
+| 12d | verifier D | sonnet | agent default | - | - | 134544 | 5m41s | 1 |

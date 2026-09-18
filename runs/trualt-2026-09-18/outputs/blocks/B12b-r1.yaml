@@ -1,0 +1,111 @@
+stage: B12b
+company: "TRUALT"
+run_date: "2026-09-18"
+model: "claude-opus-5"
+status: complete
+independent_flags_found: 34
+caught: 11
+partially_caught: 6
+missed:
+  - {severity: "CRITICAL", item: "Repeated evasion over 2 quarters: feedstock (grain vs sugar) volume split deferred to the same analyst in Nov and May, given only in Aug to another analyst", anchor: "Nov p15 L599-603; May p25 L962-966; Aug p8 L284-287"}
+  - {severity: "MAJOR", item: "Private-OMC pricing told two ways: higher than government pricing (Feb) vs Rs 60-60.50 discounted contract (May, Aug)", anchor: "Feb p21 L832-835; May p4 L140-142, p26 L992-999; Aug p22 L841"}
+  - {severity: "MAJOR", item: "Shutdown called intentional on investor calls but force majeure (rainfall) in the court claim behind the 15 cr L / Rs 1,062 cr order", anchor: "Nov p10 L396-398, p24 L946-947; Feb p11 L438-444; Aug p23 L895-896"}
+  - {severity: "MAJOR", item: "SAF revenue slipped FY28 to FY29 and FID moved from after signed offtake (May) to capex in 2-3 months with no offtake (Aug); B05 says date unchanged", anchor: "Feb p9 L343-348; May p7 L258-259, p29 L1116-1122; Aug p7 L260-264, p9 L342-349"}
+  - {severity: "MAJOR", item: "CBG attribution: showcase plant sits in Leafiniti, now 49% GAIL; TGPL called wholly-owned though Sumitomo holds 49%; MD says only 51% of revenue is reported", anchor: "May p6 L203-212, p9 L341-351, p20 L786-787; Aug p16 L605-607"}
+  - {severity: "MAJOR", item: "26% promoter shares re-pledged to SBI/IREDA after listing; confused CFO answer on release in Aug", anchor: "Nov p17-18 L683-703; Aug p14-15 L555-569"}
+  - {severity: "MAJOR", item: "Group sourcing stated as under 55% (May) and as 100% assured (Aug), group payables stretched to 2-3 months; never tested against the AR 72.6% RPT purchase share", anchor: "May p18-19 L708-729; Aug p24 L935-937; Nov p16 L642-649"}
+  - {severity: "MAJOR", item: "FY27 44 cr L called orders on hand and also a base-case repeat of last year; up from 40 in May with no reason given; peer says the Supreme Court status quo blocks tenders", anchor: "Aug p8 L306-309, p9 L335, L352-355; May p20 L757-759; TRIVENI Aug p6 L307-312"}
+  - {severity: "MINOR", item: "Revenue and CBG outlook refused on every call while volume and price are given with do-the-math", anchor: "Nov p19 L747-751; Feb p18 L720-723; May p19 L750; Aug p20 L783-785"}
+  - {severity: "MINOR", item: "Q1FY27 80% utilisation promise missed (about 60%); Q2 two-month maintenance plan reversed", anchor: "Feb p13 L518-521; Aug p3 L91, p23 L889-892"}
+  - {severity: "MINOR", item: "Advertising promised in May, not started by Aug", anchor: "May p23 L894-897; Aug p22 L862-866"}
+  - {severity: "MINOR", item: "TruAlt says E21 notification is in; GULPOLY and TRIVENI say beyond-E20 is delayed or uncertified; PENDING LIVE VERIFICATION", anchor: "May p5 L177-178; GULPOLY Aug p7 L267-270; TRIVENI Jun p4 L192-195"}
+  - {severity: "MINOR", item: "CBG margin figures drift across calls; Q1 dip explained as nothing, then as one-time costs", anchor: "Nov p6 L220-226; Feb p4 L129-131; May p5 L193-194; Aug p6 L227-233"}
+  - {severity: "MINOR", item: "Q3FY26 operating days 58 (MD) vs 48-50 (CFO), three different causes given", anchor: "Feb p3 L110, p5 L185, p8 L321-325, p11 L425"}
+  - {severity: "MINOR", item: "Nov says all plants commenced with COD complete; Unit 5 consent to operate only on 17-Dec-2025", anchor: "Nov p7 L263-265; Feb p4 L119-120"}
+  - {severity: "MINOR", item: "CFO calls higher depreciation and finance cost a one-time effect", anchor: "May p9 L337-340"}
+  - {severity: "MINOR", item: "SAF IRR answer mixes payback years and IRR", anchor: "Nov p21 L838-840"}
+pipeline_flags_not_supported:
+  - "B05 HIGH flag: zero mention of DSCR or related-party concentration and never asked; DSCR stated Aug p5 L191 and May p9 L356, group sourcing asked and answered May p18-19 L708-729 (only the cash-flow silence holds)"
+  - "B05 1B/1C: SAF commissioning Aug-Oct 2027 and FY28 revenue unchanged across Q4 FY26 and Q1 FY27; transcripts say FY29 (May p29 L1116-1122, Aug p7 L260-264)"
+  - "B05 2B/3C/credibility_basis: GST restatement as an unprompted accountability admission and PAT understatement; it was analyst-prompted and the explanation does not add up (Aug p20 L761-775)"
+  - "B05 3D: 44 cr L order book composed as 26+8+6+15 netted; Aug p9 L335 says the 44 excludes the 15 cr L"
+  - "B06 Q3: TruAlt maize-margin claim CONTRADICTED by peers; misframes a point-in-time sensitivity as FY26 compression, and GULPOLY Aug p4 L124-128, p6 L235-245 supports the direction"
+  - "OVERSTATED, not scored as unsupported: B05 HIGH utilisation-denominator flag (Feb p4 L123-124 gives both figures; under 35% is a different period, May p5 L172-174); B06 2E that TruAlt never described the Supreme Court stay (May p11 L426-429)"
+promise_delivery_spot_checks: {checked: 7, confirmed: 6, wrong: 1}
+credibility_grade_concur: "lower; would grade D, because the GST positive that holds B05 at C does not survive the transcript and four material cross-call contradictions (allocation, private-OMC price, shutdown cause, SAF FID/date) are unscored"
+findings:
+  - {severity: "CRITICAL", finding: "Missed repeated evasion: feedstock split deferred in Nov and May to the same analyst", anchor: "Nov p15 L599-603; May p25 L962-966"}
+  - {severity: "MAJOR", finding: "Allocation contradiction under-weighted: Nov 34 cr L PSU called a done deal vs May 26 cr L award; May dodge on why investors were not informed", anchor: "Nov p10 L403-404, p15 L595-598; May p10-11 L396-407, p26 L1023"}
+  - {severity: "MAJOR", finding: "Private-OMC pricing contradiction missed", anchor: "Feb p21 L832-835; May p26 L992-999"}
+  - {severity: "MAJOR", finding: "Intentional shutdown vs force majeure court claim missed", anchor: "Nov p10 L396-398; Feb p11 L438-444"}
+  - {severity: "MAJOR", finding: "SAF FY28 to FY29 slip and FID reversal missed; B05 states the date unchanged", anchor: "May p29 L1116-1122; Aug p7 L260-264"}
+  - {severity: "MAJOR", finding: "Core ethanol EBITDA about 9-9.5% ex co-products and subsidies, Q1 margin from cheap stock; under-weighted as delivered", anchor: "Aug p8 L294-301, p18 L692-697"}
+  - {severity: "MAJOR", finding: "CBG attribution to minority partners and wrong consolidation statements missed", anchor: "May p6 L203-212, p20 L786-787; Aug p16 L605-607"}
+  - {severity: "MAJOR", finding: "26% promoter pledge missed", anchor: "Nov p17-18 L683-703; Aug p14-15 L555-569"}
+  - {severity: "MAJOR", finding: "GST prior-period restatement misclassified as an accountability positive that holds the C grade", anchor: "Aug p20 L761-775"}
+  - {severity: "MAJOR", finding: "B05 zero-mention DSCR and RPT flag not supported; group-sourcing inconsistency untested", anchor: "Aug p5 L191; May p18-19 L708-729; Aug p24 L935-937"}
+  - {severity: "MAJOR", finding: "44 cr L order book is an assumption; B05 composition has no transcript support", anchor: "Aug p8 L306-309, p9 L335, L352-355"}
+  - {severity: "MAJOR", finding: "Rs 460-500 cr unsold inventory not linked to the cash-conversion flag", anchor: "Feb p18 L705-717; May p11 L408-410, p27 L1043-1053"}
+  - {severity: "MAJOR", finding: "B06 Q3 CONTRADICTED verdict on maize margin not supported; carried to Halt 1 as the top priority", anchor: "Aug p8 L294-301; GULPOLY Aug p4 L124-128, p6 L235-245, p8 L310-321"}
+  - {severity: "MINOR", finding: "B05 utilisation-denominator HIGH flag overstated", anchor: "Feb p4 L123-124; May p5 L172-174"}
+  - {severity: "MINOR", finding: "B06 2E overstated; TruAlt did describe the Supreme Court no-new-allocation direction", anchor: "May p11 L426-429"}
+  - {severity: "MINOR", finding: "Q1FY27 80% utilisation promise and Q2 maintenance reversal missing from the promise table", anchor: "Feb p13 L518-521; Aug p3 L91, p23 L889-892"}
+  - {severity: "MINOR", finding: "FY26 volume totals do not reconcile (24 vs 26 vs quarter sum about 19-20)", anchor: "May p10 L388-390, p25 L960-961"}
+  - {severity: "MINOR", finding: "E21 notification claim contradicted by peers; PENDING LIVE VERIFICATION", anchor: "May p5 L177-178; GULPOLY Aug p7 L267-270"}
+  - {severity: "MINOR", finding: "Other minor misses: CBG margin drift, operating-days conflict, Unit 5 CTO, one-time depreciation, SAF IRR, advertising, outlook refusals", anchor: "see report Part 1 items 19, 27, 29-33"}
+  - {severity: "MINOR", finding: "B05 promise row Q1FY27 EBITDA delivered is not a promise-delivery item", anchor: "Nov p23 L921-923; Feb p11 L429; Feb p13 L518-519"}
+critical_count: 1
+major_count: 12
+minor_count: 7
+material_found: 18
+material_caught: 10
+acceptance_rate: 55.6
+coverage_basis: "18 material (1 CRITICAL, 17 MAJOR) of 34 listed; 6 caught plus 4 partially caught = 10 counted as caught; 8 missed; on fully caught alone the rate is 33.3%"
+input_gaps:
+- 'carried from B00 by orchestrator: collector_warning (verbatim): sector_cap_row_guess Pharma / CDMO is the collector
+  default and is wrong; Step 1 set Sugar / agri-commodity.'
+- 'carried from B00 by orchestrator: collector_warning (verbatim): peer RENUKA (Shree Renuka Sugars) collected but
+  has held no concall since Jun-2022; replaced by TRIVENI, collected separately with screener_collect.py. RENUKA
+  Data_Sheet removed.'
+- 'carried from B00 by orchestrator: collector_warning (verbatim): announcements: collector downloaded 5 of 102
+  BSE rows; Step 1 fetched the material Reg 30 filings by hand (41 files, 6 duplicates of other folders removed).
+  Routine filings (trading window, Reg 74(5), newspaper ads, SDD) skipped.'
+- 'carried from B00 by orchestrator: collector_warning (verbatim): results, rating, prospectus and shareholding
+  were empty after the collector; Step 1 filled them from BSE (results Q3FY26, Q4FY26, Q1FY27; Ind-Ra rating with
+  full rationale), the NSE archive (final prospectus 01-Oct-2025) and the BSE XBRL SHP (Mar and Jun 2026, converted
+  to text).'
+- 'carried from B00 by orchestrator: collector_warning (verbatim): Q4FY26 audited results PDF is a scan (16 of 20
+  pages image-only); the .txt beside it carries RapidOCR text marked per page. OCR also filled 4 image pages in
+  each deck and 10 in the prospectus.'
+- 'carried from B00 by orchestrator: collector_warning (verbatim): concall filenames: collector names by month;
+  BALRAMCHIN May_2026 is dated 30-Apr-2026 and Jun_2026 is dated 22-May-2026 on page 1.'
+- 'carried from B00 by orchestrator: collector_warning (verbatim): screener export sheets came out EMPTY (formulas
+  with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance
+  Sheet, screener:Cash Flow, screener:Customization, GULPOLY:Profit & Loss, GULPOLY:Quarters, GULPOLY:Balance Sheet,
+  GULPOLY:Cash Flow, GULPOLY:Customization, BALRAMCHIN:Profit & Loss, BALRAMCHIN:Quarters, BALRAMCHIN:Balance Sheet,
+  BALRAMCHIN:Cash Flow, BALRAMCHIN:Customization, TRIVENI:Profit & Loss, TRIVENI:Quarters, TRIVENI:Balance Sheet,
+  TRIVENI:Cash Flow, TRIVENI:Customization (every Data_Sheet.csv is populated and carries P&L, quarters, balance
+  sheet and cash flow). Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again.'
+- 'carried from B00 by orchestrator: research: NONE. No broker notes collected. No effect on anchored evidence.'
+- 'carried from B00 by orchestrator: other: NONE (folder empty, never consumed).'
+- 'carried from B00 by orchestrator: screening: only <TICKER>-Data_Sheet.csv exists for TRUALT and each peer; the
+  Profit & Loss / Balance Sheet / Cash Flow / Quarters sheets exported empty and were not written. Data_Sheet carries
+  FY23-FY26 annual P&L, balance sheet, cash flow and nine quarters (Jun-2024 to Jun-2026), so the gap is cosmetic.
+  TRUALT screener history starts FY23 (company incorporated 2021): Gate 0 data_years is at most 4 audited years;
+  the prospectus restated FY23-FY25 is the backward baseline.'
+- 'carried from B00 by orchestrator: concalls: FOUR transcripts present (Q2FY26 to Q1FY27). The contract uses the
+  3 most recent (Q3FY26, Q4FY26, Q1FY27); the Q2FY26 (Nov-2025) transcript is passed to stage 5 as the promise baseline
+  for the multi-feed shutdown, because the load-bearing guidance-vs-delivery fact needs the first post-listing promise.
+  Deliberate deviation, recorded here.'
+- 'carried from B00 by orchestrator: prospectus: PRESENT (final prospectus 01-Oct-2025). Listed 03-Oct-2025, inside
+  the ~3 year window, so it is foundational: promoter/group history, group-company map, restated FY23-FY25.'
+- 'carried from B00 by orchestrator: results: the Q4FY26 audited results PDF is a scan; its financial tables come
+  from OCR text (RapidOCR). Stages cross-check any OCR figure against the FY26 AR (text-native) and anchor to the
+  AR where both carry the figure.'
+- 'carried from B00 by orchestrator: results: Q2FY26 and Q1FY26 results are not in results/ (contract keeps 3 most
+  recent). The Q2FY26 results sit inside inputs/announcements/20251111-d6d62c30-*.pdf (board outcome); Q1FY26 (BSE,
+  19-Oct-2025) was not downloaded.'
+- 'carried from B00 by orchestrator: sector_cap_row: Step 1 set ''Sugar / agri-commodity'' (18x). That row is Section
+  1B v3.11 Amendment 27.4 (16-Sep-2026), present on branch framework/group-3-promotions and NOT yet merged to main;
+  this run branch is cut from main, whose cap table lacks the row. Nearest row on main: ''Agri processing'' 20x.
+  Flagged for phase-3 operator confirmation before stage 11.'

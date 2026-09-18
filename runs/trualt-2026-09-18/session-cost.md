@@ -12,3 +12,6 @@ Run: runs/trualt-2026-09-18 | Phase 1 executed 2026-09-18 via /step1
 | 2.2 | notes pass 2 | sonnet | agent default | - | - | 177464 | 7m03s | 1 |
 | 2.3 | notes pass 3 | sonnet | agent default | - | - | 106851 | 3m51s | 1 |
 | 3 | AR deep dive | sonnet | agent default | - | - | 247023 | 12m01s | 1 |
+| 4 | business model | sonnet | agent default | - | - | 177997 | 6m33s | 1 |
+| 5 | concall | sonnet | agent default | - | - | 192506 | 5m47s | 1 |
+| 8 | promoter | sonnet | agent default | - | - | 224877 | 9m02s | 1 |

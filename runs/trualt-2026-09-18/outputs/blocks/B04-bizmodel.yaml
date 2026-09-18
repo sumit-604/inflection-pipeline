@@ -1,0 +1,130 @@
+stage: B04-bizmodel
+company: "TRUALT"
+run_date: "2026-09-18"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+- "investor presentation PRESENT (two decks used: Q1FY27 filed 28-Jul-2026 and Q4FY26/FY26 filed 22-May-2026); no gap."
+- "granular product-level revenue split (ethanol vs ENA vs CO2/dry ice/DDGS within the 'Sale of goods' line) is NOT
+  FOUND at an anchored percentage; the AR discloses only 'Sale of goods' (86.1%), 'Sale of traded goods' (12.3%)
+  and PLI (1.5%) of standalone FY26 revenue from operations (AR Note 26, p.340), plus the Ethanol-and-other-products
+  vs CBG segment split (AR p.89/109)."
+- "retail fuel segment revenue is NOT FOUND as a separately disclosed line; 7 outlets operational, 4 under construction
+  (AR p.24/44), scale immaterial to consolidated revenue as filed."
+- "post-prospectus (FY26/FY27) government ethanol procurement price schedule by feedstock type is NOT FOUND in
+  this corpus; prospectus p.233-235 carries the schedule only through ESY 2024-25. PENDING LIVE VERIFICATION for
+  claude.ai."
+flags:
+- type: FLAG-CONVERTER-CLASSIFICATION
+  reason: "TRUALT fits the Commodity converter archetype (CLAUDE.md ARCHETYPE LIBRARY): ethanol output price fixed
+    by the Government of India per feedstock type per Ethanol Supply Year (prospectus p.233-234), margin is the
+    spread against feedstock cost, not pricing power. This binds Section 1B v3.7 Amendment 17 for every downstream
+    stage: spot-year ROCE and rupee-denominated working-capital trends must not feed Section 1B or FTTCP for this
+    name."
+- type: FLAG-MARGIN
+  reason: "Grain-ethanol margin, the load-bearing economics of the multi-feed transition thesis, has already compressed
+    from Rs15-16/litre (maize Rs17.50-22/kg, Oct-2025 to mid-Feb-2026) to Rs6-7/litre (maize Rs25.50/kg, as of
+    Jul-2026) (concall Aug-2026 transcript p.8-9). Utilisation (60.57%, Inv. Pres. Q1FY27 p.6) is tracking toward
+    the company's own target, but on the weaker margin leg of the thesis, not the stronger one company memory
+    assumed as a live risk rather than an already-printed fact."
+- type: FLAG-VALUATION-METHOD
+  reason: "4B hands stage 11 a decisive PRIMARY/SECONDARY/TERTIARY method set (cycle-normalized P/E anchored to
+    Section 1B destination PE / EV-EBITDA / SOTP for CBG-SAF-retail optionality). FY26 Debt/EBITDA 3.29x standalone
+    (AR p.107) and the sector cap row (Sugar / agri-commodity, 18x, provisional per B00/B01) both carry into stage
+    11, not decided here."
+business_type: "manufacturing"
+revenue_streams:
+- {name: "Ethanol, ENA and by-products (own manufacture, 'sale of goods')", type: "commodity sale, government-administered
+    core price", pct_of_revenue: 86.1, predictability: "M"}
+- {name: "Traded goods", type: "trading", pct_of_revenue: 12.3, predictability: "L"}
+- {name: "Performance Linked Incentive (PLI)", type: "government scheme, booked in revenue", pct_of_revenue: 1.5,
+  predictability: "L"}
+- {name: "Compressed Biogas + FOM (segment)", type: "commodity sale, long-term offtake", pct_of_revenue: 2.4, predictability: "H"}
+- {name: "Ethanol and other products (segment total, superset of the above manufacture/trading/PLI lines)", type: "manufacturing
+    + trading", pct_of_revenue: 97.6, predictability: "M"}
+asset_intensity: "heavy"
+wc_intensity: "high"
+pricing_power: "price-taker"
+cyclicality: "cyclical"
+moats_present:
+- {moat: "Cost advantage (scale + multi-feed flexibility)", durability: "narrow, compresses to near-zero when both
+    feedstocks are expensive simultaneously"}
+- {moat: "Regulatory/licence moat (OMC status, PLI/interest-subvention eligibility)", durability: "narrow, scheme
+    access is not exclusive to TRUALT"}
+- {moat: "Process/execution moat (multi-feed conversion delivered on schedule)", durability: "narrow, a demonstrated
+    capability, not yet a structural barrier to replication by peers"}
+- {moat: "Distribution/access moat (OMC status, 7 retail outlets operational)", durability: "narrow, early-stage,
+    4 of planned 11-outlet Phase 1 still under construction"}
+valuation_methods:
+  primary: {method: "Cycle-normalized P/E anchored to Section 1B destination PE", why: "Sole exit-multiple authority
+      per CLAUDE.md; Amendment 17 bars the depressed spot-year (FY26/Q1FY27) grain spread from defining the base"}
+  secondary: {method: "EV/EBITDA", why: "Cross-check that captures the FY26 leverage distortion (Debt/EBITDA 3.29x
+      standalone, AR p.107) a pure P/E can understate"}
+  tertiary: {method: "Sum-of-the-parts (SOTP)", why: "CBG, SAF and retail fuel are pre-earnings, option-like legs
+      beside the mature ethanol core; a single blended multiple risks double-counting or missing this optionality"}
+  not_applicable:
+  - "DCF as primary (feedstock-spread volatility, maize Rs17.50 to Rs25.50/kg within one year, makes multi-year
+    cash-flow forecasting unusually input-sensitive without a separately underwritten spread assumption)"
+  - "Dividend discount model (no established dividend policy disclosed)"
+  - "Replacement cost / asset-based NAV as primary (relevant only as an R0/floor sanity check)"
+  - "Precedent transactions (no disclosed comparable pure-play ethanol-distillery transaction in this corpus)"
+irrelevant_ratios:
+- {ratio: "Gross margin %", why: "output price is government-fixed by feedstock type; the informative number is
+    absolute spread per litre, not a percentage margin mixing manufacture, trading and scheme income"}
+- {ratio: "Trailing P/E", why: "FY26 PAT was 73.2%-underwritten by government-scheme income at the PBT level (B02/B03);
+    unadjusted trailing EPS overstates earnings quality"}
+- {ratio: "Debt/Equity ratio (as an improvement signal)", why: "FY26 improvement to 0.61x standalone (AR p.107) is
+    an IPO-dilution effect; net debt itself rose (B02 rank 3, AR Note 53)"}
+- {ratio: "Revenue growth YoY (single year)", why: "the FY26 9.33% standalone decline (AR p.105) was a planned three-plant
+    shutdown for multi-feed conversion, not demand loss"}
+- {ratio: "Return on Equity (FY26 print)", why: "fell mechanically because the equity base roughly doubled on IPO
+    proceeds mid-year, a denominator effect (AR p.107)"}
+- {ratio: "Inventory turnover (FY26 print)", why: "fell 56.60% standalone (AR p.107) on a deliberate feedstock stock-build
+    ahead of the multi-feed ramp, with no management composition narrative given (B02 rank 6)"}
+must_track_metrics:
+- {metric: "Capacity utilisation % (all-days basis)", healthy: "rising toward the company's own 80-85% target",
+  red_flag: "flat or falling after the transition completes"}
+- {metric: "Grain (maize/rice) feedstock price, Rs/kg", healthy: "reverting below Rs20-22/kg", red_flag: "sustained
+    above Rs25/kg (already printed Jul-2026)"}
+- {metric: "Cash flow from operations", healthy: "positive for a full quarter", red_flag: "a second consecutive
+    negative annual print (FY26 standalone was -Rs29,615.04 lakh)"}
+- {metric: "DSCR (Schedule III ratio)", healthy: "above 1.0x", red_flag: "at or below 1.0x (FY26 printed 0.99x)"}
+- {metric: "Related-party feedstock purchases as % of total purchases", healthy: "falling below FY26's 72.6% and
+    reconciled between notes", red_flag: "still unreconciled between the total-purchases and RPT notes"}
+unit_economics:
+  unit: "one litre of ethanol delivered to a customer"
+  revenue_per_unit: "blended ~Rs74/litre Q1FY27 (Rs630-odd cr on 8.5 crore litres); sugar-based ~Rs63.4/litre, grain-based
+    ~Rs80.1/litre that quarter (concall Aug-2026 p.8)"
+  margin_per_unit: "grain margin Rs15-16/litre when maize was Rs17.50-22/kg (Oct-2025 to mid-Feb-2026), compressed
+    to Rs6-7/litre at maize Rs25.50/kg (as of Jul-2026); private-OMC margin target Rs10-12/litre (concall Aug-2026
+    p.8-9, 20-21)"
+  key_lever: "utilisation against largely fixed, already-spent dual-feed capex; high operating leverage cuts both
+    ways with the feedstock-cost spread"
+first_deterioration_signals:
+- {risk: "OMC tender allocation shrinks or a contracted volume goes unfulfilled", first_signal: "quarterly ethanol
+    sales volume (crore litres) and revenue from operations line"}
+- {risk: "Grain feedstock price stays elevated, holding margin near Rs6-7/litre", first_signal: "cost of materials
+    consumed as % of revenue, quarterly"}
+- {risk: "CFO stays negative through a second year or DSCR stays below 1.0x", first_signal: "quarterly CFO and the
+    Schedule III DSCR/interest-coverage ratios"}
+- {risk: "CBG or SAF project slips past its own guided quarter", first_signal: "capital work-in-progress and capacity-commissioning
+    disclosures in board meeting outcomes"}
+- {risk: "Government withdraws or delays PLI/interest-subvention claims", first_signal: "other income and Performance
+    Linked Incentive lines (AR Notes 26-27)"}
+mgmt_questions:
+- "At what maize price does the grain-feed line stop adding incremental margin over the sugar-feed line?"
+- "What is the lender-defined DSCR covenant threshold, and does the 0.99x FY26 figure sit inside or outside it?"
+- "Why did related-party purchases from the Nirani group exceed 100% of disclosed total FY25 purchases, and what
+  reconciles the two notes?"
+- "What utilisation level is needed for the multi-feed platform to be CFO-positive on a trailing-twelve-month basis?"
+- "What is the guarantee amount and status for TGPL's NABARD facility, given the CARO/Note-57/RPT-note contradiction?"
+- "What share of FY27 planned ethanol volume is contracted versus open-market dependent?"
+- "What is the funding plan and first-cash-flow date for the SAF project relative to the existing leverage position?"
+one_line_verdict: "A scale ethanol converter whose year-round-running thesis is real but whose grain-margin economics
+  just printed their worst case, on a balance sheet not yet generating cash."
+analyst_note: "Company memory frames grain-margin compression as a risk to watch; this stage's filings read finds
+  it already realised: Rs15-16/litre to Rs6-7/litre within one Ethanol Supply Year (concall Aug-2026 p.8-9). Utilisation
+  (60.57%) is tracking the thesis; margin is not, as filed. The Commodity converter archetype classification is
+  load-bearing for every downstream stage via Section 1B Amendment 17 (spot-year ROCE and rupee WC trends barred
+  from Section 1B/FTTCP). Moat class reads thin-to-moderate, concentrated in scale and demonstrated execution rather
+  than pricing power, consistent with Gate 0's independent MODERATE score (B01)."

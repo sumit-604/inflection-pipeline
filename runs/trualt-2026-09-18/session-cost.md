@@ -27,3 +27,29 @@ Run: runs/trualt-2026-09-18 | Phase 1 executed 2026-09-18 via /step1
 | 12b | verifier B (round 2) | opus | agent default | - | - | 415871 | 11m04s | 2 |
 | 12d | verifier D (round 2) | sonnet | agent default | - | - | 139070 | 6m50s | 2 |
 | 13 | synthesis-lite | opus | agent default | - | - | 239039 | 9m39s | 1 |
+| 9b | Halt 1 dossier | sonnet | agent default | - | - | 231407 | 9m35s | 1 |
+| 9b | Halt 1 dossier (marker re-run) | sonnet | agent default | - | - | 261983 | 2m43s | 2 |
+
+Token note: the subagent result metadata reports one total per run (subagent_tokens), not an input/output split, so in_tok and out_tok read "-". Wall times from duration_ms.
+
+## CLOSE-OUT SUMMARY
+
+(a) TOP FIVE BY TOKENS (retries and loops summed per stage; run total 5,171,375 over 22 subagent runs)
+| rank | stage | total_tok | share |
+|---|---|---|---|
+| 1 | 2 notes triple-pass (3 passes + 1 YAML retry) | 787,352 | 15.2% |
+| 2 | 12b verifier B (round 1 + round 2) | 688,272 | 13.3% |
+| 3 | 6 peer concalls (run + rework) | 620,639 | 12.0% |
+| 4 | 9b Halt 1 dossier (run + marker re-run) | 493,390 | 9.5% |
+| 5 | 5 concall (run + rework) | 438,320 | 8.5% |
+
+The REWORK cycle (stage 5 and 6 reruns, verifier B and D round 2) cost 1,126,711 tokens, 21.8% of the run.
+
+(b) DOWNSHIFT FAILURES: none. Verifier A ran on haiku. Stage 0 ran inside the orchestrator session (Opus 5) as run-pipeline step 1 directs ("do this yourself"); it was not a dispatched stage. Stage 10 does not run in phase 1.
+
+(c) COST SPIKES: none. No prior run exists for TRUALT.
+
+(d) OPERATOR SNAPSHOT: run /cost and /usage now and paste the cache hit ratio and the loop totals below.
+
+### Operator snapshot
+(pending operator)

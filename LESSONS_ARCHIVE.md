@@ -598,3 +598,17 @@ Verifier C check 15 (PR #163, PR #164), and the LESSONS discipline changes
 (PR #165).
 
 Size: LESSONS.md 164 lines / 1555 words before, 119 lines / 1062 words after.
+
+## 2026-09-18 — TRUALT (TruAlt Bioenergy) — /step1 intake, phase 1 to Halt 1 (runs/trualt-2026-09-18)
+
+- The collector left four folders empty that BSE fills: results, rating, shareholding, prospectus. It also fetched only 5 of 102 BSE rows. Step 1 filled them by hand: results and the Ind-Ra rating (full rationale inside the Reg 30 PDF) from the BSE announcements API; the final prospectus from the NSE archive (FP_<ISIN>_<date>.pdf); the SHP from the BSE XBRL endpoint (SHPQNewFormat, then the xbrlurl HTML, converted to row text). All four routes worked and could be automated in the collector.
+- My own hand filter skipped "Postal Ballot" filings. It dropped the Jun-2026 postal ballot notice and the Jul-2026 scrutiniser report, which carry the Rs 2,500 cr FY27 related-party ceiling. The dossier named it a findable gap. Filter on subject by exclusion only for pure noise (trading window, Reg 74(5), newspaper ads, SDD).
+- Peer RENUKA had no concall since Jun-2022, so the collector got nothing. Replaced with TRIVENI through screener_collect.py directly. Check a peer's concall list on screener before picking it.
+- Stage 1 again scored the peer moat tests zero because the orchestrator (me) left the peer Data_Sheets out of DATA_SOURCES. Same failure as TOTEM on 2026-09-09. It cost one resume. Pass the peer Data_Sheets to stage 1 every time.
+- The Q4FY26 audited results PDF was a scan. The Read tool cannot render PDFs (no pdftoppm). Fix that worked: PyMuPDF renders plus RapidOCR, text written into the page-marked .txt with an [OCR] marker. RapidOCR ran out of memory at 200 dpi on large deck pages; cap the longest side at about 1,800 px.
+- Heredocs with backslashes break in this Bash tool. Write helper scripts with the Write tool to the scratchpad and run them.
+- Stage subagents emitted malformed YAML twice (plain multi-line scalars with colons) and several emitted input_gaps: []. A quoting-only repair script plus a B00 input_gaps copy step fixed both without re-invoking. The explicit YAML VALIDITY line in later task messages stopped new breaks.
+- Verifier B round 1: 55.6% (below 60). One rework of stages 5 and 6 with the verifier lists as the brief, then fresh verifiers: B 96.0%, D 75%. The rework moved credibility C to D and reversed a false peer contradiction on grain margin. It converged in one cycle, unlike TOTEM.
+- The sector cap row "Sugar / agri-commodity" exists only on the unmerged branch framework/group-3-promotions (v3.11 A27.4). The run branch is cut from main, so B00 carries it as PROVISIONAL.
+- Tokens: 5.17M over 22 subagent runs; the rework cycle was 21.8%.
+- Not a clean run.

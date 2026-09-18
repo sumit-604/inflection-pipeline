@@ -1,0 +1,26 @@
+stage: confidence-delta
+company: TRUALT
+run_date: 2026-09-18
+phase: 1
+confidence_delta:
+  numerical_acceptance: 100       # B12a: 32 of 32 checked numbers clean (32 of ~45 material universe); 0 CRITICAL, 0 MAJOR
+  redflag_coverage: 96.0          # B12b round 2: 24 of 25 MATERIAL flags caught (20 outright + 4 partial); strict outright rate 80.0; 1 MAJOR missed
+  framework_adherence: 84.3       # B12c Gate 0 + Emerging Moat portion only: 59 of 70 rules pass (Gate 0 43/49, EM 16/21); valuation component PENDING PHASE 3
+  peer_utilisation: 75            # B12d round 2: 7 of 10 SUBSTANTIVE peer-quarter rows confirmed at their anchors; 3 MAJOR citation misplacements; all 6 peer questions addressed
+  overall: 75                     # min of the four applicable components
+  overall_set_by: peer_utilisation
+  not_applicable: []              # every component has 4 or more items in its denominator
+  band: "75-89 normal, note specifics; no PROCEED downgrade, no forced REWORK"
+valuation_component: "PENDING PHASE 3: verifier C valuation-adherence audit (B10/B11) deferred; framework_adherence is recomputed in phase 3"
+rework_check:
+  verifier_a_identity_check: "0 CRITICAL rows in B12a; nothing to strike"
+  verifier_a_critical: 0
+  round_1: "B12b acceptance 55.6 (18 material) was below 60: REWORK trigger. Stages 5 and 6 re-run once; round-1 files kept as *-r1."
+  round_2_any_acceptance_below_60: false
+  verdict: "NO REWORK (after one rework cycle on stages 5 and 6)"
+notable_verifier_findings:
+  - "B12b MAJOR (missed by B05 and B06): BALRAMCHIN and TRIVENI Aug-2026 calls expect B-heavy molasses and cane-juice diversion to ethanol to be restricted in ESY 26-27; about 53% of TruAlt Q1FY27 volume is sugar-based and two of five units are mono-feed. Carried to synthesis and the dossier."
+  - "B12b MAJOR: the Nov-2025 '47 cr L is a done deal' allocation claim should rate CRITICAL; in the May-2026 call the MD dates the cut to November."
+  - "B12b MAJOR: TruAlt books about Rs 22 cr a quarter of interest subvention plus PLI inside EBITDA (Rs 107 cr accrued receivable); BALRAMCHIN keeps subvention below EBITDA and GULPOLY books on receipt. TruAlt EBITDA margin is not like-for-like with peers (bears on B01 M2/M5 peer margin tests)."
+  - "B12d MAJOR x3: B06 citations misplaced (GULPOLY May PLI Rs 30 cr at p.8 not p.15; BALRAMCHIN Jun overcapacity at p.11 not p.10; TRIVENI Sir Shadi Lal quote is in the Aug-2026 call p.13, not Jun p.14). Quotes are genuine; locations wrong."
+  - "B12c MAJOR x4: B01 E2 should score 0 (core 46 to 43); B01 M8 ignores 7 retail outlets live (AR p.103); B07 R1 double-credits OMC status, the VGF grant and the MoU (EM 17.5 to 14.2-15.5); B07 6D/6E misreads Gate 0 moats and AVOID routes. No classification changes: Gate 0 AVOID and EM MODEST stand."

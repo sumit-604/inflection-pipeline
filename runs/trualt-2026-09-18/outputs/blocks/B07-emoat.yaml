@@ -1,0 +1,50 @@
+stage: B07-emoat
+company: "TRUALT"
+run_date: "2026-09-18"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "carried from B04: granular product-level revenue split (ethanol vs ENA vs CO2/dry ice/DDGS) not anchored to a percentage; only segment-level splits (97.6% ethanol-and-other-products, 2.4% CBG) exist."
+  - "this stage: CBG plant capacity/count figures do not reconcile across sources (AR specs 152 TPD total = 4x20 TPD Sumitomo + 6x12 TPD GAIL, AR p.164; management's Aug-2026 concall cites 132 TPD for the same combined programme, p.15); carried as an unresolved flag, not restated."
+  - "this stage: SAF project location is inconsistent between company documents (AR and APEDB MoU say Srikakulam, Andhra Pradesh; the PM JI-VAN grant press release, Reg 30 18-Jun-2026, says Bagalkot, Karnataka, which is TruAlt's registered-office district); PENDING LIVE VERIFICATION."
+  - "this stage: CBG total gross capex (~Rs760cr, per management, Concall Aug-2026 p.15) is not split by JV (Sumitomo vs GAIL leg) in this corpus; SAF capex mix of grant/state-subsidy/debt/equity is NOT FOUND."
+  - "this stage: no CBG plant has disclosed a post-commissioning utilisation percentage in this corpus; the Mudhol construction-progress figures (95% civil / 70% mechanical, Inv. Pres. Q1FY27 p.21) are not an operating-utilisation metric."
+flags:
+  - {type: FLAG-DISCLOSURE, reason: "CBG plant capacity/count figures do not reconcile across the AR (152 TPD total spec) and the Aug-2026 concall (132 TPD cited for the same combined programme); compounds B05's separately flagged plant-count drift (16 to 24 to 3-of-4) across calls"}
+  - {type: FLAG-DISCLOSURE, reason: "SAF project location inconsistent between company-issued documents: AR and APEDB MoU (Reg 30, 15-Nov-2025) say Srikakulam, Andhra Pradesh; the PM JI-VAN grant press release (Reg 30, 18-Jun-2026) says Bagalkot, Karnataka (TruAlt's registered-office district), unreconciled in this corpus"}
+  - {type: FLAG-CAPITAL-COMPETITION, reason: "The SAF programme (Rs2,000-2,250cr) and remaining CBG build-out compete for funding against a balance sheet Gate 0 (B01) classified AVOID on leverage: FY26 net debt/EBITDA 5.20x and interest coverage 1.81x, both binding deal-breaker DB6"}
+em_score: 17.5
+em_classification: "MODEST"
+active_categories:
+  - {id: "A3", name: "Process innovation", strength: "Moderate", evidence_type: "documented", time_to_materialise: "delivered"}
+  - {id: "E1", name: "Geographic first-mover (OMC status)", strength: "Strong", evidence_type: "documented", time_to_materialise: "active"}
+  - {id: "F2", name: "Execution moat (capex strong, guidance weak)", strength: "Moderate", evidence_type: "claim", time_to_materialise: "12-24m"}
+  - {id: "H2", name: "Strategic partnerships (Sumitomo, GAIL, Honeywell UOP, APEDB)", strength: "Strong", evidence_type: "documented", time_to_materialise: "12-24m (CBG), 24-36m+ (SAF)"}
+  - {id: "R1", name: "Regulatory/policy tailwind", strength: "Strong", evidence_type: "documented", time_to_materialise: "active"}
+evidence_mix: {documented: 17, claim: 12, inference: 4}
+completionist_recount: "recount performed: 14 documented items across 6 categories (A3, A4, E1, F2, H2, R1); 5 categories scored Strong/Moderate, well under the 12-category alarm threshold"
+catalysts_12m:
+  - {catalyst: "First actual CBG plant COD (either the Sumitomo/TGPL or GAIL/Leafiniti JV)", window: "Q3 FY27 target, previously slipped from Jun-2026", evidence_type: "claim", anchor: "Concall Aug-2026 p.3-4"}
+  - {catalyst: "Karnataka HC 15cr litre ethanol allocation implementation", window: "unresolved since the 04-May-2026 court deadline, next test Q2-Q3 FY27", evidence_type: "documented", anchor: "B05 FLAG-TIMELINE; court order 04-Feb-2026"}
+  - {catalyst: "SAF EPC contract award and Andhra Pradesh land procurement", window: "FY27", evidence_type: "claim", anchor: "Concall Aug-2026 p.3"}
+  - {catalyst: "Retail 76-outlet rollout resumption decision", window: "contingent on Middle East crude stabilising, FY27", evidence_type: "claim", anchor: "Concall Aug-2026 p.4"}
+  - {catalyst: "FY27 DSCR/CFO print, first full year after the multi-feed transition", window: "FY27 annual results, ~May-2027", evidence_type: "documented", anchor: "AR p.106-107, Note 52; B01/B02"}
+capex_embedded_growth_pct: 7.7
+optionality_register:
+  - {optionality: "SAF Andhra Pradesh plant revenue (Rs2,000-2,250cr capex, 310 KLPD/100 MMLPA)", converting_evidence: "signed EPC contract plus financial closure", first_appears: "Reg 30 exchange filing", window: "commissioning 24-30m from Jun-2026 grant; revenue FY28"}
+  - {optionality: "CBG scale-up beyond the 10 plants currently identified", converting_evidence: "signed EPC/construction-start disclosure for plants beyond the current 10", first_appears: "Reg 30 board outcome or investor presentation", window: "FY28-FY29, unconfirmed"}
+  - {optionality: "Visolis MoU (MVL/isoprene speciality chemical, bio-rubber precursor)", converting_evidence: "a definitive agreement or committed capex", first_appears: "Reg 30 filing", window: "deprioritised by management, no near-term window"}
+  - {optionality: "Green hydrogen (IISc Bharat Mission tie-up)", converting_evidence: "a funded pilot or offtake commitment", first_appears: "concall or Reg 30 filing", window: "management states no progress as of Q1 FY27; NOT FOUND"}
+  - {optionality: "Retail network scale-up to 76+ outlets", converting_evidence: "franchise-construction starts disclosed", first_appears: "quarterly concall outlet count", window: "paused, contingent on crude-price stabilisation"}
+  - {optionality: "Karnataka HC 15cr litre ethanol allocation (~Rs1,062-1,065cr value)", converting_evidence: "actual OMC supply/invoicing against the court order", first_appears: "quarterly results volume disclosure", window: "unresolved 3 quarters running, no new timeline (Q1 FY27 call)"}
+  - {optionality: "CBG Central Financial Assistance (up to Rs4cr/4.8TPD, max Rs10cr/plant)", converting_evidence: "formal CFA sanction letter", first_appears: "Reg 30 filing", window: "advanced stage per Q1 FY27 presentation, no date given"}
+  - {optionality: "FY27 ethanol volume upside to 55cr litres (vs 44cr litre base case)", converting_evidence: "quarterly delivered volume prints above the base case", first_appears: "quarterly results", window: "FY27"}
+combined_assessment: "TURNAROUND"
+combined_reasoning: "AVOID-classified backward score (B01, mechanical leverage deal-breaker on a 46/100 AVERAGE-band core) paired with a thin but genuine 17.5/92 MODEST forward moat score; five real categories evidenced, none structural (I1/I2 both 0), so the company must clear FY27 leverage before any emerging optionality can be underwritten."
+top_moat_risks:
+  - "Guidance-delivery credibility grade C (B05): 6 of 10 scored promises missed, so every emerging-moat date above is more likely to slip than hold"
+  - "SAF capex (Rs2,000-2,250cr) and CBG scale-up compete for funding against a balance sheet already at 5.20x ND/EBITDA and 0.99x DSCR (B01/B02)"
+  - "CBG plant counts and capacity figures are internally inconsistent across disclosures (152 TPD spec vs a verbally cited 132 TPD; B05 separately flags 16-to-24 plant-count drift), unreconciled"
+  - "Government-scheme dependency (73.2% of standalone FY26 PBT) means the R1 regulatory tailwind is also an earnings-quality risk if schemes lapse (B02/B03)"
+  - "SAF project location inconsistency between the AR/MoU (Srikakulam, Andhra Pradesh) and the PM JI-VAN press release (Bagalkot, Karnataka), unreconciled in the corpus"
+analyst_note: "Five categories carry genuine evidence (A3 process delivery, E1 OMC first-mover, F2 divergent execution, H2 four named signed partners, R1 active policy tailwind), consistent with the completionist guard's 3-6 base rate; every other category, including both I1 and I2, scores 0 on the evidence, not by default. The forward score (17.5) sits at the low end of MODEST, short of the >=25 MOAT STRENGTHENING UA qualifier. The 2C capex-embedded-growth figure (7.7%) is deliberately conservative, using only Note 56 contractually-committed capex; the much larger guided CBG (~Rs760cr) and SAF (Rs2,000-2,250cr) programmes sit in the optionality register, excluded by design since neither carries a signed EPC contract yet. Treat every date in Section 6A as the top of a range: B05 grades management credibility C with a persistent external-blame pattern on missed guidance."

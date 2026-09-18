@@ -104,3 +104,48 @@ Known limits of this run, all recorded in the per-company manifests:
   it. Its manifest carries a calendar-year warning.
 - Cards ran 2,600 to 3,800 words against the framework's 1,400 to 1,900. Longer than
   specified, and flagged rather than trimmed.
+
+## Third run, 2026-09-18
+
+Nine operator picks, screened in one session: Timex Group India, CSM Technologies,
+Poonawalla Fincorp, Max India, Capillary Technologies, D.P. Abhushan, Supreme Petrochem,
+Steel Strips Wheels, Alufluoride.
+
+Verdicts: PROCEED to `/step1` on TIMEX and POONAWALLA. WATCH on CSM, MAXIND, CAPILLARY,
+DPABHUSHAN, SPLPETRO, SSWL and ALUFLUOR. PASS on none.
+
+**Same method as the second run.** No egress again: the proxy denied the CONNECT to
+docs.bull-ai.in, BSE, screener.in and the rating agency sites. The corpus was built from
+Bull AI's chunk reader and guidance tool under the 2026-09-08 ruling. Every card cites a
+file and a page; no PDF is held on disk.
+
+**Two names sit far above the small/micro-cap mandate.** POONAWALLA (~Rs 38,155 cr) and
+SPLPETRO (~Rs 15,220 cr) were screened because the operator named them. Both cards say
+so in the header.
+
+**One verdict was aligned by the orchestrator.** The MAXIND agent draft said PROCEED while
+its own step 11 posture read RESEARCH / WATCH. Step 12 was aligned to step 11: an R0 shell
+that has not yet shown a consolidated operating profit, with FY26 revenue and EBITDA loss
+disagreeing between the concall and the guidance tool, is a WATCH.
+
+**Credit ratings were reachable this time for five of nine**, through rating releases and
+rationales that Bull AI indexes as company filings: CARE (DPABHUSHAN, stale Jan 2026),
+India Ratings (SSWL, SPLPETRO), CRISIL (SPLPETRO), and rating grades without a rationale
+for CSM (in the RHP) and POONAWALLA (in the deck). NOT FOUND for TIMEX, MAXIND, CAPILLARY,
+ALUFLUOR.
+
+Bull AI budget: 109 metered calls for nine names, 46 chunk reads, 47 searches, 9 guidance
+pulls, 7 classification lookups. One agent ran one call over its 14-call cap (CAPILLARY);
+the manifest names the cause. 622 calls remain in the cycle to 2026-10-08.
+
+Known limits of this run, all recorded in the per-company manifests:
+- Documents that Bull AI indexes but returns empty: the Q4FY26 concall and deck of MAXIND,
+  the Q1FY27 deck of SPLPETRO, the TIMEX transcript, and one CAPILLARY concall record.
+- No transcript or presentation exists for ALUFLUOR. No Q1FY27 result is indexed for
+  ALUFLUOR or TIMEX although both should have filed by now.
+- Page 19 of the DPABHUSHAN Q1FY27 deck carries text that contradicts the rest of the
+  corpus; it was excluded as extraction noise and is flagged in the manifest.
+- Cards ran 1,900 to 2,004 words against the framework's 1,400 to 1,900. Closer than the
+  second run's 2,600 to 3,800; still flagged, not trimmed.
+- No promoter pledge figure was found for any of the nine. Every card marks it NOT FOUND
+  and lists it as a load-bearing fact for `/step1`.

@@ -6,7 +6,7 @@ confidence_delta:
   numerical_acceptance: 100       # B12a: 32 of 32 checked numbers clean (32 of ~45 material universe); 0 CRITICAL, 0 MAJOR
   redflag_coverage: 96.0          # B12b round 2: 24 of 25 MATERIAL flags caught (20 outright + 4 partial); strict outright rate 80.0; 1 MAJOR missed
   framework_adherence: 84.3       # B12c Gate 0 + Emerging Moat portion only: 59 of 70 rules pass (Gate 0 43/49, EM 16/21); valuation component PENDING PHASE 3
-  peer_utilisation: 75            # B12d round 2: 7 of 10 SUBSTANTIVE peer-quarter rows confirmed at their anchors; 3 MAJOR citation misplacements; all 6 peer questions addressed
+  peer_utilisation: 75            # B12d round 2 acceptance_rate as the verifier computed it (12 peer-quarter rows audited, 3 UNSUPPORTED anchors = 9 of 12 clean). On the SUBSTANTIVE-only basis it is 7 of 10 = 70, which would put overall in the 60-74 band. Orchestrator ruling: the verifier figure governs, same convention as prior runs; the alternative is named for the operator.
   overall: 75                     # min of the four applicable components
   overall_set_by: peer_utilisation
   not_applicable: []              # every component has 4 or more items in its denominator

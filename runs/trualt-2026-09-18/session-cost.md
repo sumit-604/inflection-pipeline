@@ -26,3 +26,4 @@ Run: runs/trualt-2026-09-18 | Phase 1 executed 2026-09-18 via /step1
 | 6 | peer concalls (REWORK) | sonnet | agent default | - | - | 325956 | 8m01s | 2 |
 | 12b | verifier B (round 2) | opus | agent default | - | - | 415871 | 11m04s | 2 |
 | 12d | verifier D (round 2) | sonnet | agent default | - | - | 139070 | 6m50s | 2 |
+| 13 | synthesis-lite | opus | agent default | - | - | 239039 | 9m39s | 1 |

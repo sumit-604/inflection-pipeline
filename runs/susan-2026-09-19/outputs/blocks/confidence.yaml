@@ -1,0 +1,28 @@
+stage: confidence-delta
+company: SUSAN
+run_date: 2026-09-19
+phase: 1
+confidence_delta:
+  numerical_acceptance: 95.5        # B12a: 67 of 87 material figures checked; 0 CRITICAL, 3 MAJOR
+  redflag_coverage: 62.5            # B12b: material_found 8, material_caught 5 (partial counted as found per verifier rule 3). Strict fully-caught rate 37.5%, recorded for the operator, not used.
+  framework_adherence: 87.5         # B12c phase-1 scope only: 70 of 80 Gate 0 + EMoat rules passed; valuation half pending phase 3
+  peer_utilisation: null            # NOT APPLICABLE: 3 peers provided (< 4-item floor); 3 of 3 used substantively, 7 of 7 transcript-quarters confirmed
+  overall: 62.5
+  overall_set_by: redflag_coverage
+  band: "60-74: PROCEED verdicts downgrade one level"
+  not_applicable:
+    - {component: peer_utilisation, reason: "denominator 3 peers, below the 4-item floor; reported as count 3/3 substantive"}
+  pending_phase3:
+    - "framework_adherence valuation half (B10/B11)"
+verifier_a_identity_check:
+  critical_rows: 0
+  struck: 0
+  note: "No CRITICAL rows in B12a; identity check has nothing to strike."
+disagreements:
+  - date: 2026-09-19
+    run: susan-2026-09-19
+    number_claim: "B02 top finding 1: total borrowings +47.4% to Rs 6,671.70 Lakhs"
+    verifier_a: "MAJOR, source_fidelity true: read as FY24 to FY26 (+169%)"
+    downstream_position: "orchestrator source re-check"
+    disposition: "FLAG CLEARED - source re-check found the number at a correct anchor: AR FY26 Note 4a Grand Total Rs 6,671.70 Lakhs (31-Mar-2026) vs Rs 4,526.86 Lakhs (31-Mar-2025), PDF page 67 (txt line 2597); +47.4% is year on year. B02 never stated FY24 as the base. Re-checked by the orchestrator session."
+    note: "The +169% FY24-FY26 figure is also true and B01 carries it as 'borrowings tripling'. Both readings stand; neither is a fabricated number."

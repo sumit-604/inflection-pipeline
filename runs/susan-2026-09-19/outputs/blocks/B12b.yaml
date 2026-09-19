@@ -1,0 +1,55 @@
+stage: B12b
+company: "SUSAN"
+run_date: "2026-09-19"
+model: "claude-opus-5"
+status: complete
+independent_flags_found: 21
+caught: 7
+partially_caught: 6
+missed:
+  - {severity: "MAJOR", item: "Winding-wire EBITDA margin 24.39% equals winding-wire revenue share 24.39%; contradicts management's own 'winding wires typically 10-15%' and the mix-shift logic; B05 and B06 use it as fact", anchor: "SUSAN-T p.5 l.131; p.3 l.69-70; SUSAN-PR p.3 l.81"}
+  - {severity: "MAJOR", item: "Q1 FY27 sequential decline not volunteered: revenue -17.5% QoQ, PBT -38.2%, operating margin ~14.0% to 11.9%; script frames margin as 'improved'", anchor: "SUSAN-R p.2 l.57-83; SUSAN-T p.3 l.71"}
+  - {severity: "MAJOR", item: "'Peak ... potential of ~700 to 800cr in revenue' unrecorded and unprobed; DYCL 6-7x asset turn implies Rs 90-140 Cr from Rs 15-20 Cr capex", anchor: "SUSAN-T p.4 l.92; p.7 l.178; DYCL-Jul26 [page 10] l.397-398"}
+  - {severity: "MINOR", item: "Current HT/MVCC share also stated as 10-15% (vs 5-10% and filed 7.11%)", anchor: "SUSAN-T p.8 l.222; p.6 l.168"}
+  - {severity: "MINOR", item: "~20% HT/MVCC figure called 'net margins' in Q&A, 'EBITDA' in script", anchor: "SUSAN-T p.6 l.157-158; p.3 l.69"}
+  - {severity: "MINOR", item: "Press release says 'a significant portion' of order book in 3 months; B05 quotes it as the whole", anchor: "SUSAN-PR p.2 l.62-64"}
+  - {severity: "MINOR", item: "No volume vs price split of 279% growth; peers disclose one", anchor: "SUSAN-T p.3 l.57; DYCL-Jul26 [page 5] l.173-176"}
+  - {severity: "MINOR", item: "DIACABS: MV cable Q1 seasonal low and site-delivered only; benign reading for SUSAN Q1 FG build not linked", anchor: "DIACABS [page 3] l.118-126; [page 13] l.533-539"}
+pipeline_flags_not_supported:
+  - "B05 2C/3C/4C: 'segment margins given only after three analyst prompts' -- NOT SUPPORTED (given in first answer, SUSAN-T p.5 l.124-132)"
+  - "B05 2B: cash conversion and trading 'raised only when an analyst pushed' -- NOT SUPPORTED (never raised)"
+  - "B05 2D/4A/4D: inventory-change credit as unrealised profit, 'PBT flips to loss' -- OVERSTATED (cost reversal; real issue is Rs 9.33 Cr cash into FG)"
+  - "B06 Q5: Feb-2027 target 'aggressive' -- OVERSTATED (Rs 10.30 Cr brownfield compared to greenfield/CCV projects)"
+  - "B06 2A: DIACABS order book 'grew from INR1,900 crore' -- NOT SUPPORTED (1,900 is revenue), context only"
+  - "B06 Q4: DYCL government share 'falling' -- NOT SUPPORTED (12/13/13/16%), context only"
+promise_delivery_spot_checks: {checked: 4, confirmed: 4, wrong: 0}
+credibility_grade_concur: "concur -- C holds under the single-transcript cap; drop the unsupported 'three prompts' ground and add the 24.39% implausibility, the unvolunteered QoQ decline and the Rs 700-800 Cr claim"
+findings:
+  - {severity: "MAJOR", location: "B05 1B/2D/4B; B06 Q6", finding: "MISSED: 24.39% winding-wire margin equals revenue share and contradicts management's own 10-15% range; hold margin-bridge inputs until audio or segment disclosure resolves it"}
+  - {severity: "MAJOR", location: "B05 1A/1B/4A", finding: "MISSED: Rs 700-800 Cr peak revenue claim unrecorded and untested against peer asset turns"}
+  - {severity: "MAJOR", location: "B05 all sections", finding: "MISSED: QoQ revenue -17.5%, PBT -38.2%, margin down ~200 bps not stated; seasonal reading also not stated"}
+  - {severity: "MAJOR", location: "B05 2D, 4A #3, 4D", finding: "OVERSTATED: inventory-change credit is a cost reversal, not unrealised profit; restate as working-capital/cash flag with the seasonal reading"}
+  - {severity: "MAJOR", location: "B05 2C, 3C, 4C", finding: "NOT SUPPORTED: segment margins were given in the first answer, not after three prompts"}
+  - {severity: "MINOR", location: "B05 1A/1B/1C", finding: "PARTIAL: third form of HT/MVCC guidance (FY27 mix ~30-35%) missing"}
+  - {severity: "MINOR", location: "B05 methodology/1C", finding: "PARTIAL: transcript is edited summary; 50% text out of order; call date 14/18/19 Aug; name audio as LBF4 tie-breaker"}
+  - {severity: "MINOR", location: "B05 1B", finding: "MISSED: current HT/MVCC share also stated 10-15%"}
+  - {severity: "MINOR", location: "B05 1A/1B; B06 Q2", finding: "MISSED: ~20% called net margin in Q3"}
+  - {severity: "MINOR", location: "B05 2A", finding: "MISSED: PR says 'significant portion' of order book in 3 months"}
+  - {severity: "MINOR", location: "B05; B06", finding: "MISSED: no volume/price split of growth"}
+  - {severity: "MINOR", location: "B05 4D; B06 Q5", finding: "PARTIAL: 'ahead of schedule' heading vs 'on track' body"}
+  - {severity: "MINOR", location: "B05 3C", finding: "PARTIAL: implicit 'last two to three years' growth anchor not recorded"}
+  - {severity: "MINOR", location: "B06 Q1/Q2", finding: "PARTIAL: DYCL 10-11% B2B margin ceiling not used; DYCL called silent"}
+  - {severity: "MINOR", location: "B06 2A/2E", finding: "PARTIAL: DYCL industry-wide Apr-May booking slump not set against SUSAN order book"}
+  - {severity: "MINOR", location: "B05 2D; B06 2E", finding: "MISSED: DIACABS MV seasonality/site delivery not linked to SUSAN Q1 FG build"}
+  - {severity: "MINOR", location: "B06 Q5", finding: "OVERSTATED: 'aggressive' Feb-2027 timeline rests on non-comparable projects"}
+  - {severity: "MINOR", location: "B06 Q5", finding: "Anchor misattributed: 'end of H2 only' quote is DYCL Oct-2025 call, not Q3 FY26"}
+  - {severity: "MINOR", location: "B06 2A", finding: "NOT SUPPORTED (context): DIACABS 1,900 Cr is revenue, not prior order book"}
+  - {severity: "MINOR", location: "B06 Q4", finding: "NOT SUPPORTED (context): DYCL government share rose to 16%"}
+  - {severity: "MINOR", location: "B05 2B", finding: "Internal inconsistency on which topics analysts raised"}
+critical_count: 0
+major_count: 5
+minor_count: 16
+material_found: 8
+material_caught: 5
+acceptance_rate: 62.5
+coverage_basis: "8 material of 21 listed; 5 found by pipeline (3 fully caught, 2 partially caught; partial counted as found per rule 3 definition); strict fully-caught rate 37.5%; 8 of 8 corpus transcripts read (1 main, 7 peer), 15-transcript design unreachable"

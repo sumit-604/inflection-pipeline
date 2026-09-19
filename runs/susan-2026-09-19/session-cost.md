@@ -14,3 +14,7 @@
 | 6 | peers | sonnet | agent default | n/a | n/a | 189241 | 5m58s | 1 |
 | 7 | emoat | sonnet | agent default | n/a | n/a | 174678 | 7m29s | 1 |
 | 9 | tam | sonnet | agent default | n/a | n/a | 209880 | 16m40s | 1 |
+| 12a | verifier A | haiku | agent default | n/a | n/a | 82833 | 3m12s | 1 |
+| 12b | verifier B | opus | agent default | n/a | n/a | 237882 | 7m12s | 1 |
+| 12c | verifier C (phase 1) | opus | agent default | n/a | n/a | 110121 | 4m29s | 1 |
+| 12d | verifier D | sonnet | agent default | n/a | n/a | 203594 | 5m19s | 1 |

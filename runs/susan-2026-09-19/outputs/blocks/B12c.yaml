@@ -1,0 +1,47 @@
+stage: B12c
+company: "SUSAN"
+run_date: "2026-09-19"
+model: "claude-opus-5"
+status: complete
+scope: "phase 1 (Gate 0 B01 + Emerging Moat B07 only); valuation audit pending phase 3"
+gate0:
+  rules_checked: 50
+  fails:
+    - {id: G-M1, severity: MAJOR, rule: "M10 switching costs", stated: 3, recomputed: 0, note: "3 band requires growth all but 1 year AND stable receivables; receivable days +16.78 (45.96 to 62.74, FY24-26) not stable; 1 band needs 2+ decline years (SUSAN 0); literal = 0, generous monotone reading = 1; both below present threshold 3. Cascades: moat_score 21->18, moats_confirmed 5->4, grand_total 73->70; moat_class STRONG and classification AVERAGE unchanged"}
+    - {id: G-M2, severity: MAJOR, rule: "data confidence / history_downgrade", stated: "true", recomputed: "false", note: "data_years 6 = 5-6 lower-confidence tier, no downgrade; report itself says 3-4yr rule does not trigger and applies none. Alternative reading (3-4yr ratio/cash history binds LIMITED) would downgrade AVERAGE to AVOID and make this CRITICAL; operator ruling requested"}
+    - {id: G-m1, severity: MINOR, rule: "M7 grounded claims / anchors", note: "score 0 stands; basis cites >10 listed players from 'general industry knowledge', unanchored, and reads as the 'regulated >10 players = 1' band"}
+    - {id: G-m2, severity: MINOR, rule: "5-6yr confidence flag", note: "'may not have seen full cycle' flag absent from YAML flags[]"}
+    - {id: G-m3, severity: MINOR, rule: "deal-breaker driving years", note: "deal_breakers entries give actuals but not the years (FY24-26 negative CFO) driving #2 and #4"}
+    - {id: G-m4, severity: MINOR, rule: "output format", note: "moat profile bars absent"}
+emoat:
+  rules_checked: 30
+  fails:
+    - {id: E-M1, severity: MAJOR, rule: "Section 2C / capex_embedded_growth_pct", stated: 22.8, recomputed: "~80 (10.30 Cr x 21.0 FAT / 269.36 Cr); ~84 on 10.81 Cr total project", note: "field carries a substitute capacity-based cross-check, not the 2C method; substitution transparent and flagged (FLAG-EMOAT 4); carry mechanical value in field with 22.8 as labelled cross-check, or operator rules on substitution"}
+    - {id: E-m1, severity: MINOR, rule: "source anchors on every evidence item", note: "G1/G2/H1 anchored to pipeline blocks (B00/B01/B04) not primary sources; Monitoring Agency and some transcript items lack page/question anchors"}
+    - {id: E-m2, severity: MINOR, rule: "scores consistent with evidence tier", stated: "F2 2.0 at documented 1.0x", recomputed: "F2 1.4 at claim 0.7x; em_score 10.1", note: "Monitoring Agency report documents fund-use compliance, not on-time delivery; the Feb-2027 on-time leg is a management claim; band NONE unchanged"}
+    - {id: E-m3, severity: MINOR, rule: "completionist recount consistency", note: "evidence_mix documented 14 vs recount 7 documented items; basis of each count not stated"}
+valuation: {rules_checked: 0, fails: [], status: "pending phase 3"}
+expectation_ledger: {present: "pending phase 3", downside_row: "pending phase 3", all_rows_confirm_by: "pending phase 3", all_rows_metric_threshold: "pending phase 3", prob_in_range: "pending phase 3", decay_status_valid: "pending phase 3", off_ledger_credit: "pending phase 3", residual_pct_cmp: "pending phase 3", residual_starter_cap_ok: "pending phase 3", fails: []}
+business_understanding_narrative: {present: "pending stage 13", five_questions_answered: "pending stage 13", prose_only: "pending stage 13", section6_candidates_named: "pending stage 13", valuation_vocab_leak: "pending stage 13", fails: []}
+recomputed_destination_pe: ""
+recomputed_decision: ""
+recomputed_phase1_values: {gate0_moat_score: 18, gate0_moats_confirmed: 4, gate0_grand_total: 70, gate0_history_downgrade: false, gate0_moat_class: "STRONG (unchanged)", gate0_classification: "AVERAGE (unchanged)", emoat_em_score_if_E_m2_applied: 10.1, emoat_classification: "NONE (unchanged)", capex_embedded_growth_pct_per_2C: "~80"}
+findings:
+  - {severity: MAJOR, location: "B01 M10 (01-gate0.md L236-239; YAML moat_score/moats_confirmed/grand_total)", finding: "M10 scored 3; rule gives 0 (stability condition fails, <2 decline years)", recomputed: "0"}
+  - {severity: MAJOR, location: "B01 YAML history_downgrade (L27) vs report L270-273", finding: "field true but no downgrade applied; 6-yr history is the 5-6 lower-confidence tier", recomputed: "false"}
+  - {severity: MAJOR, location: "B07 Section 2C (07-emoat.md L81-113) / YAML capex_embedded_growth_pct", finding: "field holds 22.8 from substitute method, not 2C mechanical ~80", recomputed: "~80"}
+  - {severity: MINOR, location: "B01 M7 (L226-230)", finding: "unanchored industry-knowledge player count in basis", recomputed: "score 0 stands"}
+  - {severity: MINOR, location: "B01 YAML flags[]", finding: "missing 'may not have seen full cycle' flag", recomputed: ""}
+  - {severity: MINOR, location: "B01 YAML deal_breakers", finding: "driving years not stated", recomputed: ""}
+  - {severity: MINOR, location: "B01 output", finding: "moat profile bars absent", recomputed: ""}
+  - {severity: MINOR, location: "B01 E1 (L176-179) / input_gaps", finding: "post-listing SHP absence cited 'per input_gaps' but not listed there", recomputed: "rule outcome unchanged"}
+  - {severity: MINOR, location: "B01 M1 (L205) vs M11 (L242)", finding: "FY24-26 revenue CAGR stated 61.3% and 61.8%; stated inputs give 61.8%", recomputed: "band unchanged"}
+  - {severity: MINOR, location: "B01 M11 (L240-247)", finding: "'3yr' windows are 2-yr CAGRs; selling % trend on FY24-26 only", recomputed: "score 5 unchanged"}
+  - {severity: MINOR, location: "B07 G1/G2/H1, F2 anchors", finding: "evidence anchored to pipeline blocks or missing page/question", recomputed: ""}
+  - {severity: MINOR, location: "B07 F2 (L215-223, L368)", finding: "documented multiplier on a category whose on-time leg is a claim", recomputed: "F2 1.4; em_score 10.1; NONE unchanged"}
+  - {severity: MINOR, location: "B07 YAML evidence_mix vs completionist_recount", finding: "documented 14 vs 7 unexplained", recomputed: ""}
+critical_count: 0
+major_count: 3
+minor_count: 10
+acceptance_rate: 87.5
+coverage_basis: "phase-1 scope: 80 rules checked (Gate 0 50, EMoat 30), 70 passed; valuation rules pending phase 3"

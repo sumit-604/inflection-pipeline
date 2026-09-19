@@ -1,0 +1,23 @@
+stage: B12d
+company: "SUSAN"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+peers_audited: 3
+substantive_confirmed: 7
+substantive_unsupported: []
+unused_but_relevant:
+  - {peer: "VIDYAWIRES", missed_item: "Customer-concentration disclosure (458 customers, no single customer >9% of revenue, 94% repeat-customer revenue) not cited alongside the DIACABS Adani-concentration point already used in Part 2E; a directly relevant contrast to Susan's own repeat-customer concentration collapse (89.47% to 45.09%, per B04)", anchor: "VIDYAWIRES Q2 FY26 call (Dec-2025), p.4"}
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "MINOR", location: "B06 Q5 evidence row, DYCL Q1 FY27 citation", claimed_anchor: "DYCL, Q1 FY27 call, p.13-14", actual_anchor: "transcript marker p.16 (footer Page 15 of 16)", note: "Quote ('optimum utilization...80%-85% by end of FY28') is accurate and correctly attributed; anchor page is 2-3 pages early."}
+  - {severity: "MINOR", location: "B06 Q3 evidence row, VIDYAWIRES Q2 FY26 citation", claimed_anchor: "p.9", actual_anchor: "marker p.8", note: "Quote ('100% whatever price increase in the LME...passed on to the customer') is accurate; anchor is one page late."}
+  - {severity: "MINOR", location: "B06 Q3 evidence row, VIDYAWIRES Q2 FY26 citation", claimed_anchor: "p.10", actual_anchor: "marker p.9", note: "Quote ('it is entirely hedged, even the exchange rate is hedged...') is accurate; anchor is one page late."}
+  - {severity: "MINOR", location: "B06 risks_peers_raise item 5, VIDYAWIRES Q4/FY26 citation", claimed_anchor: "p.17", actual_anchor: "marker p.14 (footer Page 13 of 17)", note: "Quote ('41 days of debtors...bring it down to around 35 days') is accurate; anchor is 3 pages early."}
+  - {severity: "MINOR", location: "B06 Part 2E / industry cross-read", claimed_anchor: "n/a (omission)", actual_anchor: "VIDYAWIRES Q2 FY26 call p.4", note: "Customer-concentration disclosure (94% repeat, no customer >9%) not used as a second, contrasting data point alongside DIACABS' Adani-concentration disclosure already cited."}
+critical_count: 0
+major_count: 0
+minor_count: 5
+acceptance_rate: 100
+coverage_note: "Denominator is 3 peer companies (7 transcript-quarters); below the 4-item threshold this pipeline treats as reliable for a percentage, so this rate is reported for information only and does not independently trigger REWORK. All 7 SUBSTANTIVE citations traced to real, correctly attributed material; all 5 findings are MINOR (citation-page drift or an unused-but-relevant industry-context disclosure), none changing a B06 verdict."

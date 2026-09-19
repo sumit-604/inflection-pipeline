@@ -1,7 +1,8 @@
 # Shallow Analysis Framework v1.1
 
 v1.1 (2026-09-19, operator ruling): step 5A, the FY27 forward read, is required on
-every card and its four numbers ride in the header. Earlier cards lacked it; the
+every card and its four numbers ride in the header. Same day: forward P/E replaces
+forward P/S as the headline multiple; P/S stays as a secondary figure. Earlier cards lacked it; the
 operator had asked for it repeatedly and the spec never carried it.
 
 The specification for the shallow read of a screener candidate. It sits between
@@ -43,7 +44,7 @@ Operator: Keerti Kaushik. Strategy: transition alpha, quality-ladder climb.
 One markdown file at `screens/cards/<TICKER>.md`. The Business Understanding
 Narrative first, then the twelve steps (plus 5A) as sections, then the verdict.
 Roughly 1,400 to 2,100 words. The header block carries one line with the four
-step-5A numbers: FY27E revenue, FY27E PAT, FY27E PAT growth, forward P/S. Operator voice: one idea per sentence, numbers first,
+step-5A numbers: FY27E revenue, FY27E PAT, FY27E PAT growth, forward P/E. Operator voice: one idea per sentence, numbers first,
 active voice, no em-dashes, plain words.
 
 ## Business Understanding Narrative (read first, prose)
@@ -78,8 +79,11 @@ standing ask, the FY27 forward read, is step 5A.
    asset event.
 5A. **FY27 forward read.** Four numbers, each with its basis named: expected
    FY27 revenue, expected FY27 PAT, FY27 PAT growth on FY26 actual, and forward
-   price to sales (market cap from the screen divided by FY27E revenue; CMP to be
-   verified live). FY27E is an estimate by construction and is always marked E.
+   price to earnings (market cap from the screen divided by FY27E PAT; CMP to be
+   verified live). Forward price to sales rides beside it as a secondary figure
+   (operator ruling 2026-09-19: P/E is the headline multiple, not P/S). A
+   loss-maker's forward P/E is "not meaningful"; P/S then stands alone. FY27E is
+   an estimate by construction and is always marked E.
    The basis follows a fixed hierarchy and the card names the letter used:
    (a) management's numeric FY27 guidance, taken as stated, with PAT derived at
    the FY26 conversion ratio when only revenue or EBITDA is guided;
@@ -117,8 +121,9 @@ standing ask, the FY27 forward read, is step 5A.
 
 - Every number traces to a corpus file and page.
 - No valuation, no target price, no buy or sell instruction. The step-5A
-  forward P/S is a market-implied multiple the operator requires; it is not a
-  valuation and never becomes a price.
+  forward P/E (and the secondary P/S) is a market-implied multiple the operator
+  requires; it is not a valuation, never becomes a price, and is not an exit PE
+  (Section 1B stays the sole exit-multiple authority).
 - Step 5A's FY27E figures are the one place an estimate is allowed. They are
   marked E, carry their basis letter, and never overwrite a filed number.
 - A missing document marks the steps it weakens; it does not stop the analysis.

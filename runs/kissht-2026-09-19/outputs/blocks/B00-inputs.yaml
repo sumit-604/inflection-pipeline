@@ -1,0 +1,174 @@
+stage: B00-inputs
+company: KISSHT
+run_date: 2026-09-19
+model: orchestrator (stage 0 run inline by the orchestrator session, claude-opus-5)
+status: complete
+spear:
+  line: "Spear: OVERRIDE 2026-09-19 (operator standing ruling 2026-09-05: Step-1 intake replaces the web spear)"
+  gate: PASS (recorded override in companies/KISSHT.md)
+  load_bearing_facts:
+    - "LBF-1 GNPA recognition and credit cost: GNPA 2.25% (Q1 FY27) with write-off at 150 DPD; credit cost 6.80% vs 8.85% of average AUM. Test whether low GNPA/NNPA comes from fast write-off rather than clean lending."
+    - "LBF-2 FLDG and off-book exposure: 53.6% of AUM off-book with a 5% upfront FLDG. Find FLDG/DLG outstanding, its accounting (asset, liability, provision) and where utilisation is booked (credit cost or opex)."
+    - "LBF-3 Guidance vs delivery: FY27 AUM >40%, credit cost -15%, GNPA <2.25%, RoE 19-21%; RHP claims vs the post-IPO prints (Q4 FY26, Q1 FY27)."
+    - "LBF-4 Capital and governance: Rs 832 Cr preferential at Rs 314.11 four months after the IPO with CRAR 40.2%; ED notice and FIU-IND high-risk classification; related parties and ESOPs in the RHP and FY26 AR."
+sector_cap_row: "Banks / NBFCs / MFIs"
+sector_cap_row_evidence: >
+  18x (P/B primary; PE is cross-check only), section-1b chunk 05
+  (.claude/skills/section-1b/references/05-sector-cap.md line 57). The
+  business lends through the NBFC-ML subsidiary Si Creva on a Rs 8,001 Cr
+  AUM, 92.3% unsecured personal loans (Q1 FY27 press release,
+  inputs/announcements/20260729-74639f09-*.txt page 2). The collector's guess
+  "Platform / SaaS / IT services" is rejected: revenue is interest and fee
+  income on loans, not a software or platform fee. Lender archetype; the
+  framework's lender variant (P/B primary) governs phase 3. Confirm in phase 3.
+listed_date: 2026-05-08
+reporting_units:
+  results: "Rs million (both results filings, statement face)"
+  annual_report: "Rs million in the audited financial statements; Rs crore in the KPI and MD&A narrative (AR txt lines ~629-650 crore, ~3788 onward million). The glyph 'J' in the AR text extract is the rupee sign."
+  prospectus: "Rs million (restated financial information)"
+  presentation: "Rs Cr"
+  screener: "Rs Cr"
+  rating: "Rs Cr (CRISIL rationale)"
+  note: "10 million = 1 crore. No stage converts silently; conversion happens once, at stage 10."
+input_gaps:
+  - "COLLECTOR WARNING (verbatim): shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend. -- REPAIRED IN PART: inputs/shareholding/BSE-shareholding-summary-Jun2026.txt (BSE API summary statement, Jun-2026). It gives promoter 24.80% / public 75.20%, no pledge, locked-in shares, ESOPs outstanding. It does NOT give the FII/DII split; the UA institutional qualifier stays OPEN."
+  - "COLLECTOR WARNING (verbatim): screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance Sheet, screener:Cash Flow, screener:Customization, POONAWALLA:Profit & Loss, POONAWALLA:Quarters, POONAWALLA:Balance Sheet, POONAWALLA:Cash Flow, POONAWALLA:Customization, UGROCAP:Profit & Loss, UGROCAP:Quarters, UGROCAP:Balance Sheet, UGROCAP:Cash Flow, UGROCAP:Customization. Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again. -- Only <TICKER>-Data_Sheet.csv exists and it is the usable screening source."
+  - "COLLECTOR WARNING (verbatim): no results PDFs yet (screener has none): add later on github or locally + --push-again -- REPAIRED: Q1 FY27 and FY26 audited results downloaded from BSE into inputs/results/."
+  - "COLLECTOR WARNING (verbatim): no rating PDF yet: add later the same way -- REPAIRED: CRISIL rationale for Si Creva dated 13-Feb-2026 rendered to text in inputs/rating/. It rates the subsidiary, not the listed parent."
+  - "COLLECTOR WARNING (verbatim): only 2 concalls -> no-concall mode -- OVERRIDDEN: concalls_available is true. The company holds calls. Two transcripts (Q4 FY26 on 29-May-2026, Q1 FY27 on 30-Jul-2026) are ALL calls held since the 08-May-2026 listing. Stage 5 runs on 2 transcripts, not 3: the promise-delivery series is one quarter long."
+  - "COLLECTOR DEFECT: the BSE announcements fetch staged 10 of 69 filings and missed both results filings. 16 material filings plus the two results and the Q4 FY26 deck were added by hand. The first live test of fetch_bse_announcements (LESSONS OPEN ACTION, PR #167) therefore PASSED on connectivity and FAILED on selection: it stops short of max_files and skips Result-category rows."
+  - "results: 2 of up to 3 held (Q1 FY27 unaudited, FY26 audited incl. Q4). No Q3 FY26 results filing exists on BSE for this company: it was unlisted until 08-May-2026. Q3 FY26 and earlier quarters come from the RHP and the decks."
+  - "screening: SBICARD produced no Data_Sheet CSV. Peer screening data exists for POONAWALLA and UGROCAP only."
+  - "peer-concalls: POONAWALLA-Concall_Jan_2026_Transcript.pdf and POONAWALLA-Concall_Jan_2026_Transcript_2.pdf are the SAME call (Q3 FY26, held 16-Jan-2026); _2 carries the 21-Jan-2026 BSE cover letter. Treat as one call. Effective peer transcripts: 11 (SBICARD 4, POONAWALLA 3, UGROCAP 4)."
+  - "annual-report: only FY26 is held. The company was unlisted before May 2026 and published no listed-company AR for FY25. The RHP restated financials (FY23-FY25 and the 9M FY26 stub, per the RHP) carry the backward baseline."
+  - "shareholding: only the Jun-2026 summary statement. No trend: the company has one post-listing quarter."
+  - "research: EMPTY. No broker notes. No effect on anchored evidence."
+  - "other: EMPTY."
+  - "Duplicate PDFs removed at intake by MD5 (AGM-notice attachment = AR; BSE Q1 deck = Investor_Presentation_1; two Q1 attachments = Q1 results; 27-May acquisition attachment = FY26 results; one of two identical 17-Sep board outcomes). Named in manifest.notes (5)."
+inventory:
+  prospectus:
+    count: 1
+    status: PRESENT
+    note: "RHP dated 25-Apr-2026, 464 pp, from BSE. listed_date 2026-05-08 is within ~3 years, so RECENTLY-LISTED PRIORITY applies; the RHP is the foundational document for promoter/group history, restated FY23-FY25 financials, risk factors and outstanding litigation."
+    files: [inputs/prospectus/OnEMI_RHP_2026-04-25.pdf]
+  annual-report:
+    count: 1
+    status: PRESENT
+    note: "FY2025-26 annual report (10th AGM on 22-Sep-2026), 138 pp."
+    files: [inputs/annual-report/Annual_Report_2026.pdf]
+  results:
+    count: 2
+    status: PRESENT
+    files:
+      - inputs/results/20260729-9867adf0-2020-405b-96a9-b57ee65f7276.pdf   # Q1 FY27 unaudited, standalone + consolidated, board 29-Jul-2026
+      - inputs/results/20260527-66c05534-3efb-496b-bfda-4612052b99b8.pdf   # FY26 audited incl. Q4 FY26, board 27-May-2026
+  rating:
+    count: 1
+    status: PRESENT
+    files: [inputs/rating/CRISIL-SiCreva-RR-2026-02-13.txt]
+  concalls:
+    count: 2
+    status: PRESENT (all calls held since listing)
+    quarter_map:
+      - {file: inputs/concalls/Concall_Jun_2026_Transcript.pdf, quarter: Q4 FY26, call_date: 2026-05-29, order: 1}
+      - {file: inputs/concalls/Concall_Aug_2026_Transcript.pdf, quarter: Q1 FY27, call_date: 2026-07-30, order: 2}
+  peer-concalls:
+    count: 12
+    status: PRESENT
+    coverage:
+      SBICARD: "4 (Q2 FY26 24-Oct-2025; Q3 FY26 28-Jan-2026; Q4 FY26 27-Apr-2026; Q1 FY27 24-Jul-2026)"
+      POONAWALLA: "3 distinct (Q3 FY26 16-Jan-2026, held twice; Q4 FY26 17-Apr-2026; Q1 FY27 08-Jul-2026)"
+      UGROCAP: "4 (Q2 FY26 10-Nov-2025; Q3 FY26 09-Feb-2026; Q4 FY26 21-Apr-2026; Q1 FY27 05-Aug-2026)"
+  announcements:
+    count: 26
+    status: PRESENT
+    note: "BSE Reg 30 filings 08-May-2026 to 18-Sep-2026: KPI filings (Q4, Q1), press releases, monitoring agency report (Q1 FY27), acquisitions (16-May, 18-Jun), clarification on 27-May outcome, management changes (09-Jul), director resignation (17-Aug), postal ballot notice and outcome, ESOP allotment, MoA/AoA amendment, AR weblink, investor meets, preferential issue (board 17-Sep) and its press release (18-Sep)."
+  shareholding:
+    count: 1
+    status: PARTIAL
+    files: [inputs/shareholding/BSE-shareholding-summary-Jun2026.txt]
+  research:
+    count: 0
+    status: ABSENT
+  screening:
+    count: 3
+    status: PARTIAL
+    note: "KISSHT (screener-Data_Sheet.csv), POONAWALLA, UGROCAP Data_Sheet CSVs are populated. KISSHT data runs FY21-FY26. All other sheets were never written (collector empty-export defect)."
+    files: [inputs/screening/screener-Data_Sheet.csv, inputs/screening/POONAWALLA-Data_Sheet.csv, inputs/screening/UGROCAP-Data_Sheet.csv]
+  presentation:
+    count: 2
+    status: PRESENT
+    files:
+      - inputs/presentation/Investor_Presentation_1.pdf                      # Q1 FY27 deck, 29-Jul-2026
+      - inputs/presentation/20260528-594302b3-1dfb-489f-9836-fe71e8db07c6.pdf  # Q4 FY26 deck, 28-May-2026
+  other:
+    count: 0
+    status: ABSENT
+corpus_manifest:
+  - {path: inputs/prospectus/OnEMI_RHP_2026-04-25.pdf, issuer: OnEMI Technology Solutions Ltd, type: RHP, period: "dated 25-Apr-2026", folder_match: true}
+  - {path: inputs/annual-report/Annual_Report_2026.pdf, issuer: OnEMI Technology Solutions Ltd, type: annual report, period: FY2025-26, folder_match: true}
+  - {path: inputs/results/20260729-9867adf0-2020-405b-96a9-b57ee65f7276.pdf, issuer: OnEMI Technology Solutions Ltd, type: unaudited results (SA+consol), period: Q1 FY27 (quarter ended 30-Jun-2026), folder_match: true}
+  - {path: inputs/results/20260527-66c05534-3efb-496b-bfda-4612052b99b8.pdf, issuer: OnEMI Technology Solutions Ltd, type: audited results (SA+consol), period: Q4 and FY26 (year ended 31-Mar-2026), folder_match: true}
+  - {path: inputs/rating/CRISIL-SiCreva-RR-2026-02-13.txt, issuer: CRISIL Ratings on Si Creva Capital Services Pvt Ltd (subsidiary), type: full rating rationale, period: 13-Feb-2026, folder_match: true}
+  - {path: inputs/concalls/Concall_Jun_2026_Transcript.pdf, issuer: OnEMI, type: earnings call transcript, period: Q4 FY26 (call 29-May-2026, filed 04-Jun-2026), folder_match: true}
+  - {path: inputs/concalls/Concall_Aug_2026_Transcript.pdf, issuer: OnEMI, type: earnings call transcript, period: Q1 FY27 (call 30-Jul-2026, filed 04-Aug-2026), folder_match: true}
+  - {path: inputs/presentation/Investor_Presentation_1.pdf, issuer: OnEMI, type: investor presentation, period: Q1 FY27, folder_match: true}
+  - {path: inputs/presentation/20260528-594302b3-1dfb-489f-9836-fe71e8db07c6.pdf, issuer: OnEMI, type: investor presentation, period: Q4 FY26, folder_match: true}
+  - {path: inputs/peer-concalls/SBICARD-Concall_Oct_2025_Transcript.pdf, issuer: SBI Cards, type: transcript, period: Q2 FY26, folder_match: true}
+  - {path: inputs/peer-concalls/SBICARD-Concall_Feb_2026_Transcript.pdf, issuer: SBI Cards, type: transcript, period: Q3 FY26, folder_match: true}
+  - {path: inputs/peer-concalls/SBICARD-Concall_May_2026_Transcript.pdf, issuer: SBI Cards, type: transcript, period: Q4 FY26, folder_match: true}
+  - {path: inputs/peer-concalls/SBICARD-Concall_Jul_2026_Transcript.pdf, issuer: SBI Cards, type: transcript, period: Q1 FY27, folder_match: true}
+  - {path: inputs/peer-concalls/POONAWALLA-Concall_Jan_2026_Transcript.pdf, issuer: Poonawalla Fincorp, type: transcript, period: Q3 FY26, folder_match: true}
+  - {path: inputs/peer-concalls/POONAWALLA-Concall_Jan_2026_Transcript_2.pdf, issuer: Poonawalla Fincorp, type: transcript (DUPLICATE of the Q3 FY26 call, with cover letter), period: Q3 FY26, folder_match: true}
+  - {path: inputs/peer-concalls/POONAWALLA-Concall_May_2026_Transcript.pdf, issuer: Poonawalla Fincorp, type: transcript, period: Q4 FY26, folder_match: true}
+  - {path: inputs/peer-concalls/POONAWALLA-Concall_Jul_2026_Transcript.pdf, issuer: Poonawalla Fincorp, type: transcript, period: Q1 FY27, folder_match: true}
+  - {path: inputs/peer-concalls/UGROCAP-Concall_Nov_2025_Transcript.pdf, issuer: Ugro Capital, type: transcript, period: Q2 FY26, folder_match: true}
+  - {path: inputs/peer-concalls/UGROCAP-Concall_Feb_2026_Transcript.pdf, issuer: Ugro Capital, type: transcript, period: Q3 FY26, folder_match: true}
+  - {path: inputs/peer-concalls/UGROCAP-Concall_Apr_2026_Transcript.pdf, issuer: Ugro Capital, type: transcript, period: Q4 FY26, folder_match: true}
+  - {path: inputs/peer-concalls/UGROCAP-Concall_Aug_2026_Transcript.pdf, issuer: Ugro Capital, type: transcript, period: Q1 FY27, folder_match: true}
+  - {path: "inputs/announcements/*.pdf (26 files)", issuer: OnEMI Technology Solutions Ltd, type: BSE Reg 30 / LODR filings, period: 08-May-2026 to 18-Sep-2026, folder_match: true}
+pdf_readability:
+  total_pdfs: 45
+  unreadable: 0
+  scanned_zero_text: 0
+  pre_extracted_text: "beside each PDF as <name>.txt with one [page N] marker per page. Stages and verifiers read the .txt; page markers carry the PDF page number."
+freshness_pairs:
+  - pair: RESULTS to CONCALL
+    trigger_doc: inputs/results/20260729-9867adf0-2020-405b-96a9-b57ee65f7276.pdf (Q1 FY27)
+    mate_expected: Q1 FY27 concall transcript
+    status: PASS
+    missing_doc: ""
+    note: "inputs/concalls/Concall_Aug_2026_Transcript.pdf covers the quarter ended 30-Jun-2026 (call 30-Jul-2026)."
+  - pair: RATING BULLETIN to RATIONALE
+    trigger_doc: inputs/rating/CRISIL-SiCreva-RR-2026-02-13.txt
+    mate_expected: full rating rationale
+    status: PASS
+    missing_doc: ""
+    note: "The file IS the full CRISIL rationale (rating action, detailed rationale, strengths, weaknesses, liquidity, outlook, annexures), not a bulletin."
+  - pair: SEBI ORDER to ORDER TEXT
+    trigger_doc: NONE
+    mate_expected: SEBI order text
+    status: PASS
+    missing_doc: ""
+    note: "Searched every pre-extracted text for SEBI order, adjudicating officer, show cause, penalty imposed. RHP hits are generic disclosure headings; the only show cause notices named are an FIU-IND notice to Si Creva (RHP txt line ~3486) and an NFAC tax SCN dated 28-Mar-2025 (RHP txt line ~25084). Neither is a SEBI order."
+  - pair: AR to LATEST AUDITED ANNUAL RESULTS
+    trigger_doc: inputs/results/20260527-66c05534-3efb-496b-bfda-4612052b99b8.pdf (FY26 audited)
+    mate_expected: annual report for FY2025-26
+    status: PASS
+    missing_doc: ""
+freshness_verdict: FRESHNESS PAIRS OK
+empty_folder_confirmation:
+  asked: false
+  reason: "STEP 1 AUTONOMY CONTRACT suppresses the pause. Standing answer: proceed with the gaps."
+  empty_folders: [research, other]
+  partial_folders: [shareholding (summary only, no FII/DII split), screening (Data_Sheet only; no SBICARD), results (2 of 3; no Q3 FY26 listed filing exists)]
+  defaults_taken: "Proceed degraded per the DEGRADATION MAP. The FII/DII split is left open (UA qualifier unevidenced). No guess substitutes for a document."
+company_memory: "companies/KISSHT.md (spear override, LBF-1..4) and runs/kissht-2026-09-19/step1-business-brief.md. Memory, never a source."
+flags: []
+analyst_note: >
+  Lender. Every stage should read the business on lender metrics (AUM, NIM /
+  spread, credit cost, GNPA/NNPA, write-offs, RoA, RoE, CRAR, borrowings),
+  not on manufacturing metrics. The history is short on listed documents:
+  one AR, two calls, two results filings. The RHP carries FY23-FY25 and must
+  be used for every backward series. Unit trap: statements in Rs million,
+  decks in Rs crore.

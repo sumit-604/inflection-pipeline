@@ -1,0 +1,41 @@
+stage: B01-gate0
+company: "RAPPID"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "rating/ folder empty, no credit rating exists"
+  - "research/ folder empty"
+  - "one earnings call only (NO-CONCALL MODE)"
+  - "peer transcripts 8 of 12 available"
+  - "screener P&L/BS/CF/Quarters tabs were empty exports; Data_Sheet tab populated and used"
+  - "SME half-yearly filer; Q1 FY27 figures exist only as an unaudited business update, not used in this annual scorecard"
+  - "no peer margin/mcap dataset provided for M2/M5/M9 moat tests, PEER DATA NEEDED"
+  - "no R&D expenditure disclosure in provided documents (M6)"
+  - "no shareholding pattern later than Mar-2026 (AR) available for E1/E3 latest-quarter checks"
+flags:
+  - type: FLAG-GATE0
+    reason: "Classification capped at AVERAGE by deal-breaker 4 (cumulative CFO/PAT = -1.46x, FY22-26) despite raw GOOD+ (Core 68, Moat STRONG). Block B scored 0/20 on all four sub-metrics: CFO negative every year FY23-FY26 (-26.56 Cr cumulative) against cumulative PAT +17.40 Cr; FCF positive in only 1 of 5 years; WC days rose from 150.3 to 334.2 (FY22 to FY26), driven mainly by receivable days (79.1 to 170.2) and inventory days (138.3 to 182.9). Block A also carries an ROCE-trend penalty (A4=0) driven by a small-base FY22 ROCE of 85.4% that is not representative of run-rate returns."
+data_years: 5
+fy_range: "FY22 to FY26"
+blocks: {A: 15, B: 0, C: 20, D: 16, E: 17}
+core_score: 68
+moat_score: 15
+grand_total: 83
+moats_confirmed: 4
+moat_class: "STRONG"
+classification: "AVERAGE"
+deal_breakers:
+  - "Block B <8 -> max GOOD (Block B = 0)"
+  - "Cumulative CFO/PAT <0.50 -> max AVERAGE (ratio = -1.46, FY22-26)"
+history_downgrade: false
+data_notes:
+  - "FY22 ROCE (85.4%) is a small-capital-employed-base distortion (Cap Employed only Rs 2.04 Cr, reserves still negative at that date); reported per fixed formula with no adjustment."
+  - "FY22 ROE excluded from median: negative average net worth (-Rs 0.25 Cr) makes PAT/NW a non-meaningful negative ratio despite positive PAT; opening NW unavailable for FY22 so closing NW used per rule, as stated."
+  - "RHP restated FY24 CFO (-Rs 1.07 Cr, RHP p.217 area) differs from screener-Data_Sheet.csv FY24 CFO (-Rs 2.48 Cr); screener series used across all 5 years for internal consistency, discrepancy not reconciled."
+  - "Company memory (step1 brief) cites FY26 inventory days ~258; this stage's prescribed formula (Inventory/Revenue x 365) gives 182.9 for FY26. Basis difference not reconciled; own computed figure used for scoring."
+  - "E2 measured over the ~2-year listed history (post-issue Sep-2024 to Mar-2026), not a full 3 years, since pre-IPO holding is a dilution event, not a valid same-basis comparator; stated explicitly, not estimated."
+  - "No loss-to-profit swing: PAT positive in all 5 years (FY22 smallest at Rs 0.29 Cr)."
+  - "PEER DATA NEEDED: M2 (cost advantage), M5 (scale and dominance), M9 (brand) all require peer financial data not present in this run's input set."
+block_b_trend: "deteriorating - CFO swung from +Rs1.14 Cr (FY22) to -Rs10.83 Cr (FY26); cumulative FY23-26 CFO -Rs26.56 Cr against cumulative PAT +Rs17.11 Cr over the same 4 years"
+analyst_note: "The classification hinges entirely on Block B. Growth (20/20) and moat count (4, STRONG) would put this at GOOD+ on a Core/Moat basis alone. Block B's zero score is not one weak metric outvoted by three strong ones; all four cash metrics failed together, and the same underlying driver (receivable and inventory days both roughly doubling FY22 to FY26) shows up again in moat test M4 and M10, where it blocks credit that revenue growth would otherwise earn. This is one root cause counted honestly across multiple tests, not four independent problems. The FY22 ROCE outlier (85.4%) inflates the Block A median; A2 (minimum-year ROCE, 18.7%) and A4 (trend, -66.7pp) better reflect the current run rate. Downstream stages should treat the cash-conversion pattern as the single most load-bearing fact of this run, consistent with company memory's own framing."

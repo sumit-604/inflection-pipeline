@@ -1,0 +1,48 @@
+stage: B08-promoter
+company: "CAPILLARY"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - no credit rating (none obtained)
+  - final RHP absent (UDRHP-I held)
+  - FII/DII split not in BSE summary
+  - screener P&L/BS/CF/Quarters CSVs empty
+  - research empty
+flags: []
+verdict: "CAUTION"
+scorecard: {clean: 5, caution: 5, red: 0}
+deal_breakers: []
+adverse_findings:
+  - {finding: "Promoter-group entity Gowthami Agro Industries Private Limited received a notice seeking information from an Andhra Pradesh SIT in connection with the state's 2019 liquor policy; separate, unrelated AP liquor-policy corruption probe alleges ~Rs 3,200-3,500 crore in kickbacks. No evidence found tying the entity or the Boddu family to any chargesheet.", evidence_tier: "UDRHP-disclosed fact of the notice is VERIFIED; underlying implication is UNVERIFIED", source: "UDRHP-I p.4461-4464; web search 2026-09-19 (no hit on entity name in scam coverage)", date: "notice disclosed in UDRHP dated Jun-2025, referencing an Oct-2019 policy period"}
+  - {finding: "Institutional shareholders voted 55.9% AGAINST the Feb-2026 postal ballot ratifying ESOP 2021 extension to subsidiary employees; resolution passed only because Promoter and Promoter Group voted 100% in favour plus retail voted 99.995% in favour.", evidence_tier: "VERIFIED", source: "Reg 44(3) Voting Results filed 13-Mar-2026, Scrutinizer BMP & Co. LLP", date: "2026-03-13"}
+  - {finding: "Two consecutive senior finance/corporate-development SMP resignations (Head-Finance 29-May-2026; Head-Corporate Development 27-Jul-2026) fell inside the window bracketing the Jul-2026 cyber-fraud disclosure and the KPMG forensic audit initiation; causal link to the fraud not established by any source found.", evidence_tier: "VERIFIED as to dates/titles; causal link UNVERIFIED", source: "Reg 30 resignation filings 20260529-e43c3912, 20260727-bcf6b0ea; cyber-fraud filing 20260706-07f4090c; forensic-audit filing 20260731-17c4e00c", date: "2026-05-29 / 2026-07-27"}
+  - {finding: "CTIPL (promoter entity) sold 4.14% of the company (3,292,428 shares) on 10-Aug-2026 via block deal, reducing its holding 48.92% to 44.78%, to facilitate Peak XV Partners' exit at the CTIPL level; company discloses other PE investors still hold >30% of CTIPL and may exit similarly through CTIPL in future.", evidence_tier: "VERIFIED", source: "Reg 29(2) company intimation 20260811-B8C7ECCC; CTIPL's own Reg 29(2) filing 20260811-B44A8DBB (image); company clarification 20260825-9a49d6e4", date: "2026-08-10 (transaction), 2026-08-25 (clarification)"}
+  - {finding: "Chairperson Neelam Dhawan holds Chairperson of 3 + Member of 9 = 12 Audit/Stakeholders Relationship Committee positions across other listed companies, at or above the SEBI LODR Regulation 26(1) ceiling depending on count method; not flagged as non-compliant by the FY26 Secretarial Audit; not independently verified against the SEBI/MCA registry (no live access).", evidence_tier: "VERIFIED against filed AR/AGM Annexure; regulatory-compliance status UNVERIFIED", source: "Corporate Governance Report p.52; AGM Notice Annexure-A p.268 (carried from B03-ardeep)", date: "FY26 AR, signed 2026-05-06"}
+transition_evidence:
+  - {item: "New independent director Peeyush Ranjan (ex-Google, ex-Airbnb, ex-Flipkart Internet) appointed 07-May-2025, pre-IPO, adding AI/technology domain expertise to the board.", source: "UDRHP-I p.328-329"}
+  - {item: "Kotak Mahindra Mutual Fund crossed 5% ownership on 14-Aug-2026, an institutional entrant in the same window CTIPL (Peak XV exit) was a net seller.", source: "Reg 29(1) disclosure 20260817-D8805431 (image)"}
+  - {item: "Audit Committee self-initiated a KPMG forensic audit within 25 days of the cyber-fraud discovery, without a regulator mandate.", source: "Reg 30 filing 20260731-17c4e00c"}
+  - {item: "Company voluntarily issued unprompted clarifications on both the ESOP exercise-price mechanism (24-Feb-2026) and the CTIPL stake sale (25-Aug-2026), naming the actual mechanism rather than issuing boilerplate reassurance.", source: "20260224-e9874d34; 20260825-9a49d6e4"}
+  - {item: "Postal-ballot e-voting/scrutinizer mechanism functioned transparently: institutional shareholders exercised real, uncoerced 55.9% dissent, auditable via the filed voting-results table.", source: "Reg 44(3) Voting Results, 2026-03-13"}
+pledge_pct_latest: 0
+pledge_trend: "stable at 0% across all three disclosed BSE shareholding-pattern quarters (Dec-2025, Mar-2026, Jun-2026); no pledge, no NDU encumbrance, no other encumbrance in any quarter; no post-Jun-2026 quarter filed yet as of run date"
+searches_performed:
+  - "Aneesh Reddy Boddu Capillary Technologies SEBI litigation controversy (web)"
+  - "Capillary Technologies promoter CTIPL Peak XV stake sale IPO lock-in (web)"
+  - "Capillary Technologies Glassdoor AmbitionBox employee reviews culture (web)"
+  - "Capillary Technologies cyber fraud Czech subsidiary insurance recovery update (web)"
+  - "Capillary Technologies KPMG forensic audit findings report September 2026 (web)"
+  - "Capillary Technologies IiAS OR proxy advisory OR SEBI order OR SAT adverse (web, multi-round)"
+  - "Gowthami Agro Industries Andhra Pradesh liquor policy investigation (web)"
+  - "Mohan Boddu Reddy OR M&S Bottling Andhra Pradesh liquor scam (web)"
+  - "Full corpus read: UDRHP-I promoters/promoter group/management/group companies/litigation sections"
+  - "Full corpus read: FY26 AR secretarial audit, RPT Note 32, auditor IFC exception"
+  - "Full corpus read: BSE shareholding-pattern summaries Dec-2025/Mar-2026/Jun-2026"
+  - "Full corpus read: 20+ Reg 30/Reg 29 announcements including 2 OCR page-image reads"
+searches_skipped:
+  - "Direct SEBI/MCA registry lookup for Neelam Dhawan's cross-board committee count (no live regulator-database access in this container)"
+  - "Independent confirmation of Gowthami Agro Industries' current status in the AP SIT chargesheet beyond the UDRHP-disclosed notice"
+  - "KPMG forensic-audit findings/completion report (not yet public as of 2026-09-19 per web search)"
+verdict_basis: "Legal/regulatory record for both promoters is genuinely clean (nil SEBI/criminal/tax across the board) and direct promoter-entity RPT shows no extraction pattern; verdict held at CAUTION rather than TRUSTWORTHY because five independent caution-tier items surfaced inside the company's first listed fiscal year (institutional ESOP-vote revolt, disclosed CTIPL PE overhang, finance-SMP turnover coinciding with the fraud/forensic-audit window, unresolved chairperson committee-count question, and an unrelated-sector promoter-group entity under a separate liquor-policy probe), none individually rising to CONCERN but the accumulation and timing warranting active tracking."
+analyst_note: "The two most decision-relevant items for FTTCP/Role-1 stages are not the promoter's personal record (clean) but structural: (1) CTIPL's >30% remaining PE ownership is a disclosed, pre-announced future float/control event that sits outside standard promoter-pledge monitoring and should be tracked at the CTIPL cap-table level, not just the company's own shareholding pattern; (2) the finance-SMP turnover timing versus the cyber-fraud/forensic-audit window has no established causal link in any source found, but is exactly the kind of coincidence that should be a direct management query at the next review rather than either dismissed or assumed adverse."

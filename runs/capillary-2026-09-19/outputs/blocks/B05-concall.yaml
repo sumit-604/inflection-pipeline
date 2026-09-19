@@ -1,0 +1,67 @@
+stage: B05-concall
+company: "CAPILLARY"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["no credit rating (none obtained)", "final RHP absent (UDRHP-I held)", "FII/DII split not in BSE summary", "screener sheets empty", "research empty"]
+flags: ["cyber fraud (EUR 3.0m) and KPMG forensic audit under-detailed on Q1 FY27 call vs Reg 30 filings", "OCF/adjusted EBITDA ratio ~140% unreconciled against management's own stated 105-110% sustainable range", "customer concentration (~58.71% top-10 FY25) never named on any call", "aiRA adoption metric basis shifted between Q4 and Q1 calls"]
+quarters_analysed: ["Q3 FY26", "Q4 FY26", "Q1 FY27"]
+triggers:
+  - {priority: 1, name: "Organic NRR holds 114-116% ex-large-account", type: "VOLUME/PRICE-MIX", timeframe: "near-term", conviction: "H", confirm_signal: "NRR ex-large-account stays >=114% for 2 more quarters", kill_signal: "NRR ex-large-account falls below 105%"}
+  - {priority: 2, name: "SessionM margin ramp to 35-40% contribution margin", type: "INORGANIC/COST", timeframe: "medium-term", conviction: "M-H", confirm_signal: "sequential margin step-up each quarter as management discloses", kill_signal: "margin stalls below 15% by Q4 FY27 or logo churn appears"}
+  - {priority: 3, name: "Kognitiv full migration to Capillary platform by Sept-2027", type: "COST", timeframe: "medium-term", conviction: "M", confirm_signal: "first customer live Sep-2026 as stated, remaining customers migrate over following 2-3 quarters", kill_signal: "first go-live slips past Sep-2026 or migration pace stalls"}
+  - {priority: 4, name: "aiRA scales to 5-10% of FY27 revenue", type: "PRICE-MIX (new product)", timeframe: "medium-term", conviction: "M", confirm_signal: "paying-customer count and ARR run-rate step up from $2-2.5m each quarter", kill_signal: "paying customers stay under 10 of 150+ through FY27"}
+  - {priority: 5, name: "FY27 revenue lands >= Rs 1,065 Cr", type: "VOLUME+INORGANIC", timeframe: "near-term", conviction: "H", confirm_signal: "quarterly ARR trajectory holds above Rs 1,026 Cr, trending to target", kill_signal: "guidance walked back in a later call"}
+  - {priority: 6, name: "New-logo/ACV momentum ex-large-account +30-40% FY27", type: "VOLUME", timeframe: "medium-term", conviction: "M", confirm_signal: "full-year new ACV growth lands in stated range", kill_signal: "growth decelerates below 15%"}
+  - {priority: 7, name: "Cash-conversion ratio normalises toward stated 105-110%", type: "COST/governance", timeframe: "near-term", conviction: "L-M", confirm_signal: "management explicitly reconciles the OCF/EBITDA gap with a stated reason", kill_signal: "ratio stays unexplained and debtor days rise"}
+  - {priority: 8, name: "Fraud/forensic-audit resolves cleanly", type: "governance", timeframe: "near-term", conviction: "L", confirm_signal: "KPMG findings disclosed, clean internal-controls verdict, insurance quantified", kill_signal: "further control lapses disclosed or adverse forensic findings"}
+guidance:
+  - {item: "9M FY26 new order book", number: "Rs 66 Cr vs Rs 53 Cr 9M FY25", timeframe: "9M FY26", stated_in: "Q3 FY26 call"}
+  - {item: "ARR growth", number: "+21% over Mar-2025", timeframe: "9M FY26", stated_in: "Q3 FY26 call"}
+  - {item: "OCF/adjusted EBITDA sustainable range", number: "105-110%", timeframe: "ongoing", stated_in: "Q3 FY26 call"}
+  - {item: "FY26 full-year results", number: "revenue Rs 734 Cr (+23% YoY), adj. EBITDA Rs 107 Cr (14.7%), normalised PAT Rs 32 Cr", timeframe: "FY26", stated_in: "Q4 FY26 call"}
+  - {item: "FY27 revenue guidance", number: "Rs 1,000-1,050 Cr", timeframe: "FY27", stated_in: "Q4 FY26 call"}
+  - {item: "SessionM margin path", number: "break-even Y1, positive margin Y2, ~$15m EBITDA potential, 45% contribution margin post-migration", timeframe: "FY27-FY29", stated_in: "Q4 FY26 call"}
+  - {item: "Steady-state EBITDA margin", number: "25-30%+ (70% gross margin, ~15-16% tech, similar S&M, 5-7% G&A)", timeframe: "no date given", stated_in: "Q4 FY26 call"}
+  - {item: "Q1 FY27 results", number: "revenue Rs 256 Cr (+43% YoY, organic +17%), adj. EBITDA Rs 44 Cr (17% margin, ~23% organic), normalised PAT Rs 25 Cr, ARR Rs 1,026.6 Cr", timeframe: "Q1 FY27", stated_in: "Q1 FY27 call"}
+  - {item: "FY27 revenue/EBITDA reaffirmed", number: "will definitely beat Rs 1,065 Cr revenue and Rs 172 Cr EBITDA", timeframe: "FY27", stated_in: "Q1 FY27 call"}
+  - {item: "New ACV full year", number: "at least 30-40% more than FY26's Rs 121 Cr", timeframe: "FY27", stated_in: "Q1 FY27 call"}
+  - {item: "aiRA target", number: "5-10% of revenue; current run-rate $2-2.5m ARR", timeframe: "FY27", stated_in: "Q1 FY27 call"}
+  - {item: "ESOP expense", number: "Rs 12-15 Cr, 1-2% of top line", timeframe: "FY27", stated_in: "Q1 FY27 call"}
+  - {item: "Kognitiv migration", number: "first customer live 01-Sep-2026; full migration target latest Sept 2027", timeframe: "FY27-28", stated_in: "Q1 FY27 call"}
+promise_delivery:
+  delivered: 5
+  partial: 3
+  missed: 1
+  rows:
+    - {promised_in: "Q3 FY26 call", promise: "Tech+corp cost keeps falling as % of revenue", outcome: "delivered (directionally)", explanation: "FY26 EBITDA margin rose to 14.7%, organic margin ~23% by Q1 FY27, though the specific 28%->18% metric was not restated"}
+    - {promised_in: "Q3 FY26 call", promise: "OCF/adjusted EBITDA normalises to 105-110%", outcome: "missed / unreconciled", explanation: "FY26 full-year ratio approx 140% (Rs 150 Cr OCF / Rs 107 Cr EBITDA), never reconciled in later calls"}
+    - {promised_in: "Q4 FY26 call", promise: "Q1 FY27 margin softness expected from salary hikes", outcome: "delivered, better than guided", explanation: "Q1 FY27 adj. EBITDA margin still rose to 17% (organic ~23%) vs ~10% Q1 FY26 despite hikes"}
+    - {promised_in: "Q4 FY26 call", promise: "SessionM break-even Y1, positive margin Y2", outcome: "delivered, ahead of schedule", explanation: "fully profitable and generating Rs 5-6 Cr FCF within first two months"}
+    - {promised_in: "Q4 FY26 call", promise: "FY27 revenue guidance Rs 1,000-1,050 Cr", outcome: "on track / reaffirmed and sharpened", explanation: "Q1 FY27 ARR already Rs 1,026.6 Cr; guidance sharpened to will definitely beat Rs 1,065 Cr"}
+    - {promised_in: "Q3 FY26 call", promise: "AI/agentic wave will not disrupt Capillary's system-of-record position", outcome: "consistent", explanation: "reaffirmed with expanded agentic-commerce framing in Q1 FY27 call, no contradicting evidence"}
+    - {promised_in: "Q3 FY26 call", promise: "aiRA monetisation clarity in a couple of quarters", outcome: "partial", explanation: "Q4 and Q1 gave numbers, but paying customers (<10 of ~150) remain a small fraction versus the earlier a-fourth piloting-or-paying framing"}
+    - {promised_in: "Q4 FY26 call", promise: "Kognitiv AI-led upgrade cycle 12-to-18-month type period", outcome: "partial", explanation: "Q1 FY27 call gives concrete but longer dates: first customer live Sep-2026, full completion latest Sept 2027, approx 28 months from the May-2025 deal"}
+    - {promised_in: "Q4 FY26 call (implicit stance)", promise: "guidance discipline, no over-promising", outcome: "delivered", explanation: "declined to raise guidance when pressed in Q1 FY27 call despite outperformance"}
+excuse_pattern: "balanced-to-honest on operating misses; understated on the governance event"
+repeated_evasions: []
+credibility_grade: "B"
+credibility_basis: "5 of 9 tracked promise-delivery items fully delivered (incl. SessionM ahead of schedule, FY27 guidance sharpened not walked back), only 1 unreconciled miss (cash-conversion ratio); offset by under-detailed disclosure of the cyber-fraud/forensic-audit on the Q1 FY27 call and only 3 quarters of listed track record."
+peer_questions:
+  - {question: "Is loyalty software genuinely under 10% of the overall loyalty market versus agencies (Epsilon ~$2bn, Merkle >$0.5bn)?", why: "underlies Capillary's long agency-to-software share-shift growth runway", check_peers: ["NEWGEN", "INTELLECT"]}
+  - {question: "Do peer managements characterise 110%+ net revenue retention as top-decile for global SaaS?", why: "tests whether Capillary's NRR framing is standard sector language or an inflated self-comparison", check_peers: ["UNIECOM", "NEWGEN"]}
+  - {question: "Do peers report a non-COGS cost base growing 12-15 points below revenue growth, i.e. comparable operating leverage?", why: "this is Capillary's core margin-expansion mechanism", check_peers: ["NEWGEN", "INTELLECT"]}
+  - {question: "Do any peers run an M&A-led margin-bridge model (buy sub-scale competitors at 0.3-1.5x revenue, migrate to 65-75% gross margin in 2-3 years)?", why: "tests whether the engineered-EBITDA model is a proven playbook or unique and higher-risk to Capillary", check_peers: ["NEWGEN", "INTELLECT"]}
+  - {question: "What FX tailwind/headwind do peers report from USD revenue, matching Capillary's ~6% for Q1 FY27?", why: "tests whether reported growth across the set is similarly FX-flattered", check_peers: ["NEWGEN", "INTELLECT"]}
+  - {question: "How do peer managements frame agentic AI as a risk vs. opportunity for their own system-of-record software?", why: "cross-checks Capillary's AI-is-a-net-positive framing against comparable enterprise software", check_peers: ["NEWGEN", "INTELLECT", "UNIECOM"]}
+  - {question: "What deal-cycle length (RFP to go-live) do peers report for large-enterprise contracts?", why: "tests Capillary's stated ~9-month average deal cycle and 3-7 month go-live claims", check_peers: ["NEWGEN", "INTELLECT"]}
+red_flags:
+  - "Cyber-enabled banking fraud (EUR 3.0m, deepfake KMP impersonation) at a recently acquired step-down subsidiary; forensic audit (KPMG) ongoing; not named or detailed on the Q1 FY27 call despite the audit's disclosure four days earlier - Moderate-High"
+  - "OCF/adjusted EBITDA ratio running ~140% for two consecutive periods vs management's own stated sustainable 105-110% range, never reconciled - Moderate"
+  - "aiRA adoption metrics presented on an inconsistent basis quarter to quarter (piloting+paying combined in Q4 vs split out in Q1) - Low-Moderate"
+  - "Customer concentration (top-10 ~58.71% of FY25 revenue per filings) never named or quantified in any of the three calls - Low"
+  - "Recurring normalise-for-one-offs items in all three reported quarters (gratuity/IPO costs Q3, Kognitiv indemnity income Q4, fraud loss and deferred tax Q1) - Low"
+dropped_triggers: ["tech+corp cost as % of revenue (28% to 18%), tracked explicitly only in Q3 FY26 call, superseded afterward by blended/organic EBITDA margin reporting"]
+timeline_slippages: ["Kognitiv migration: Q4 FY26 call framed AI-led upgrades as a 12-to-18-month type period; Q1 FY27 call gives concrete dates (first customer live Sep-2026, full completion latest Sept 2027) implying ~28 months from the May-2025 acquisition, longer than the earlier framing though volunteered, not extracted under pressure"]
+analyst_note: "Only 3 quarters of transcripts exist since the Nov-2025 listing, so every credibility read here is provisional; the B grade should be revisited after 2-3 more quarters, especially on whether the OCF/EBITDA gap gets reconciled and whether the forensic audit findings get disclosed with the same numeric candour management shows on operating metrics. The NRR/ACV/organic definitional complexity surfaced in the Q1 FY27 call (Akshay Jogani exchange) is worth a standing note for stage 11: headline growth and retention numbers require the full bridge to interpret, not the single percentage."
+no_concall_mode: false

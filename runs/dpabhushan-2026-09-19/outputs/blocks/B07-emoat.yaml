@@ -1,0 +1,43 @@
+stage: B07-emoat
+company: "DPABHUSHAN"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Store-level revenue and utilisation are NOT FOUND anywhere in this corpus; only store-level footfall/conversion is disclosed. Section 2B could not be completed at facility granularity."
+  - "Digital/e-commerce revenue is NOT FOUND for any quarter to date; the 3-5%-of-topline / Rs 25-30 Cr guidance (Q4 FY26 call) has no disclosed actual against it yet."
+  - "FOCO franchise economics (royalty/fee structure, franchisee capex split) are NOT FOUND; only the store-count pace guidance (2-3/year) is disclosed."
+  - "Jodhpur showroom size/format is NOT FOUND (Reg 30 announcement 17-Aug-2026 gives no square footage), so its capex was estimated from the disclosed small-format bracket (Rs 2.5-3 Cr) by analogy to Dahod, not anchored directly."
+  - "'Revenue from Non-Retail Operations' (12.3% of FY26 revenue, -5.96% YoY, per B04 Note 20) has no composition narrative anywhere in the AR; carried forward from B04, not resolved here."
+flags:
+  - {type: FLAG-EMOAT-THIN, reason: "Adjusted emerging-moat total is 10/92, below the 12-point MODEST MOAT DEVELOPMENT threshold (NO MEANINGFUL EMERGING MOAT). Only 5 of 22 categories plus R1 carry any non-zero evidence (C1, D2, E1, H1, R1); three categories (F2 execution, G1 war chest, G2 WC trajectory) carry DOCUMENTED evidence running AGAINST an emerging moat, not merely absent evidence, directly mirroring the Gate 0 Block B cash-conversion zero."
+  - {type: FLAG-GUIDANCE-CREDIBILITY, reason: "Carried from B05 (credibility grade C): the store-pace and diamond-mix targets this scan would need to trust to score E1/C1 higher are the same targets B05 found whipsawed across four consecutive calls, with a specific prior numeric pledge (double stores by FY28) silently dropped. E1 and the optionality register are scored/weighted accordingly, at DOC-only sites rather than the multi-year guidance."
+em_score: 10
+em_classification: "NONE"
+active_categories:
+  - {id: "E1", name: "Geographic first-mover", strength: "Moderate", evidence_type: "DOCUMENTED", time_to_materialise: "12-24 months"}
+  - {id: "R1", name: "Regulatory/policy tailwind (hallmarking formalisation)", strength: "Moderate", evidence_type: "DOCUMENTED", time_to_materialise: "ongoing"}
+evidence_mix: {documented: 10, claim: 6, inference: 2}
+completionist_recount: "DOC recount performed: 7 documented items across 5 non-zero categories (Dahod/Jabalpur/Jodhpur Reg 30 filings, e-commerce website launch, DP Swarn Plus/old-gold-exchange %, hallmarking district-expansion figures), plus 3 further DOC items used to zero F2/G1/G2 (promise-delivery record, CFO/borrowings trend, renewable-energy disclosure). 5 non-zero categories sits inside the 3-6 realistic base rate; no re-examination triggered."
+catalysts_12m:
+  - {catalyst: "Dahod (Gujarat), Jabalpur (FOCO) and Jodhpur (Rajasthan) showrooms opening on schedule", window: "0-12 months", evidence_type: "DOCUMENTED", anchor: "AR p.14 printed p.22-23; Reg 30 filings 20-Jul-2026 and 17-Aug-2026"}
+  - {catalyst: "Mobile application exiting final testing to full launch", window: "0-12 months", evidence_type: "DOCUMENTED (status)", anchor: "AR p.12 printed p.19"}
+  - {catalyst: "First disclosure of digital/e-commerce revenue as a quantified line", window: "0-12 months (test), 3-5 years (target)", evidence_type: "MANAGEMENT CLAIM", anchor: "Q4 FY26 call, per B05-concall"}
+  - {catalyst: "Diamond-mix trend reversal (currently declining both FY26 and Q1 FY27) vs the 12-15%-by-Mar-2028 target", window: "0-12 months (early read)", evidence_type: "MANAGEMENT CLAIM vs DOCUMENTED delivered trend", anchor: "Q1 FY27 call, Concall_Jul_2026 p.355-365; Q4 FY26 deck p.9 per B04"}
+  - {catalyst: "QIP Rs 600 Cr status (launch or formal abandonment)", window: "indefinite", evidence_type: "MANAGEMENT CLAIM (currently silent)", anchor: "B05 timeline_slippages"}
+capex_embedded_growth_pct: 23
+optionality_register:
+  - {optionality: "Diamond-studded mix reaching 12-15% by Mar-2028 (currently declining both FY26 and Q1 FY27)", converting_evidence: "Disclosed segment revenue split showing diamond growth outpacing gold for 2 consecutive quarters", first_appears: "Quarterly investor decks / concall segment commentary", window: "FY27-FY28"}
+  - {optionality: "Store network to 51 by FY30 (guidance whipsawed 3x, math unreconciled per B05)", converting_evidence: "Net new store openings tracking >=5/year from FY27, confirmed via Reg 30 filings with COCO/FOCO split reconciled", first_appears: "Reg 30 showroom-opening announcements", window: "multi-year, through FY30"}
+  - {optionality: "Digital/e-commerce revenue reaching 3-5% of topline, Rs 25-30 Cr incremental profit/year", converting_evidence: "A quantified online/digital revenue line disclosed in results or investor deck", first_appears: "Quarterly results filing or investor presentation", window: "3-5 years"}
+  - {optionality: "Rs 600 Cr QIP (approved Feb-2025, now indefinitely postponed)", converting_evidence: "QIP launched and closed, proceeds disclosed and deployment tracked", first_appears: "Reg 30 board outcome / stock exchange filing", window: "indefinite"}
+  - {optionality: "FOCO franchise format scaling at 2-3 franchisees/year", converting_evidence: "Signed franchise agreements disclosed via Reg 30, with franchise economics made public", first_appears: "Reg 30 filings; AR franchise disclosure", window: "next 4-5 years"}
+  - {optionality: "Cash conversion turning structurally positive (GROWTH-INDUCED vs STRUCTURAL, LBF2, unresolved)", converting_evidence: "2 consecutive quarters of positive/improving CFO with inventory days at or below the company's own 75-85 day target", first_appears: "Quarterly results filings", window: "FY27-FY28"}
+combined_assessment: "AVERAGE"
+combined_reasoning: "Gate 0 AVERAGE (capped by the CFO/PAT deal-breaker) is unchanged and not elevated by this stage: the emerging-moat total (10) sits below even the MODEST threshold, and three categories (F2, G1, G2) carry documented evidence running against an emerging moat rather than merely lacking it, directly mirroring Gate 0's zeroed Block B."
+top_moat_risks:
+  - "F2 execution: guidance whipsawed 3x on the company's own primary growth lever (store pace), credibility grade C (B05); the near-term catalysts this scan names (Dahod/Jabalpur/Jodhpur openings) are the fourth test of that same record."
+  - "G1/G2 cash and war chest: FY26 CFO -Rs 97.31 Cr, borrowings +76.8%, QIP indefinitely postponed; any emerging-moat capex plan currently has no disclosed funding source beyond further bank debt."
+  - "Diamond-mix and digital-revenue targets are both CLAIM-grade only and both currently moving opposite to the guided direction (diamond down YoY twice; digital revenue never yet disclosed)."
+  - "H1/R1 regulatory tailwind is real but not exclusive: better-capitalised organised peers share the same hallmarking-driven formalisation benefit."
+analyst_note: "The single most decision-relevant finding this stage produced is not any of the 5 non-zero categories; it is that F2 (execution), G1 (war chest) and G2 (WC trajectory) each carry DOCUMENTED evidence running AGAINST an emerging moat, not merely absent evidence -- a materially stronger negative signal than a standard zero. This mirrors Gate 0's own governing tension (Block A maxed, Block B zeroed) almost exactly on the forward side. The two real findings (E1 geographic first-mover into Gujarat/first FOCO site, and the shared H1/R1 hallmarking tailwind) are genuine but small and, in E1's case, should be weighted at the three DOC-grade sites only -- not at the CLAIM-grade multi-year store-count targets, which carry the same credibility discount B05 already applied to this management's guidance generally."

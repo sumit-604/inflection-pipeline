@@ -35,8 +35,8 @@ Brief: runs/dpabhushan-2026-09-19/step1-business-brief.md
 
 ## OPERATOR RULINGS
 - 2026-09-19: Step-1 intake run; peers auto-selected (SENCO, PNGJL,
-  MOTISONS; THANGAMAYL rejected for want of transcripts); empty folders
-  accepted as gaps.
+  KALYANKJIL; THANGAMAYL and MOTISONS rejected for want of transcripts);
+  empty folders accepted as gaps.
 
 ## ACTIVE TRIPWIRES
 None yet (no signed model).

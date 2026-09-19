@@ -1,0 +1,48 @@
+stage: B06-peers
+company: "DPABHUSHAN"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "MOTISONS: 0 of 4 intended transcripts provided. All four files named MOTISONS-* in inputs/peer-concalls/ are confirmed by page 1 (Security ID RBZJEWEL) to be RBZ Jewellers Ltd, a Gujarat/Ahmedabad wholesale+retail manufacturer with no Rajasthan overlap, not Motisons Jewellers Ltd (Jaipur). The Rajasthan/Jaipur catchment test named in step1-business-brief.md's Peers section was not performed. RBZ data is used as an unplanned substitute, labelled throughout, mainly informative on hedging-ratio dispersion and margin-disclosure practice."
+flags:
+  - {type: "CORPUS-MISLABEL", reason: "inputs/peer-concalls/MOTISONS-*.pdf (4 files) are RBZ Jewellers Ltd transcripts, confirmed from page 1 of each. Not caught at Stage 0/B00 intake despite B00 explicitly flagging quarter-confirmation as an open item for Stage 6. Collector or intake process should be checked for how a BSE/screener query for MOTISONS returned RBZ filings."}
+peers_provided: 12
+verified: []
+partially_verified:
+  - {claim: "25-30% of FY26 margin improvement from gold-price inventory gains, Q3-strong/Q4-weak/Q1-strong swing", peers: ["Senco Gold Ltd"]}
+  - {claim: "Strengthening hedging/GML narrative vs FY26 AR's new 42kg unhedged position (sector hedging-ratio comparison)", peers: ["Senco Gold Ltd", "P N Gadgil Jewellers Ltd", "RBZ Jewellers Ltd (mislabeled MOTISONS)"]}
+contradicted:
+  - {claim: "Industry-wide gold volume declined ~20-29% in FY26", contradicting_peer: "P N Gadgil Jewellers Ltd", quote_anchor: "PNGJL Q3 FY26 call (10-Feb-2026), p.9: 'volume growth for Q3 would have been in the range of around 25% plus'"}
+  - {claim: "Industry-wide gold volume declined ~20-29% in FY26 (second contradiction)", contradicting_peer: "RBZ Jewellers Ltd (mislabeled MOTISONS)", quote_anchor: "RBZ Q2 FY26 call (12-Nov-2025), p.4: 'we have not de-grown on our volumes... we are volume positive in the first half'"}
+  - {claim: "Import duty increase (6% to 15%) and PM 'mindful spending' remarks as material Q1 FY27 demand headwinds", contradicting_peer: "P N Gadgil Jewellers Ltd", quote_anchor: "PNGJL Q1 FY27 call (28-Jul-2026): highest-ever first quarter, +41% revenue, +57% EBITDA, no duty/PM mention anywhere in transcript; PNGJL Q4/FY26 call (15-May-2026), p.12-13: duty impact scoped to bars/coins only, 'I don't see an impact much on the jewellery side'"}
+  - {claim: "FY27 EBITDA margin guided 6-6.5% then delivered 11.01% is consistent with sector-normal guidance-to-delivery gaps", contradicting_peer: "P N Gadgil Jewellers Ltd and RBZ Jewellers Ltd (mislabeled MOTISONS)", quote_anchor: "PNGJL beat-and-raised FY26/FY27 revenue guidance with stated reasons (PNGJL Q4/FY26 call, p.10); RBZ withdrew guidance rather than reverse it (RBZ Q4/FY26 call, p.13-14: 'there is no guidance for this year, frankly saying')"}
+unverifiable:
+  - {claim: "'47 lakh weddings' Nov-2025 to Mar-2026 cited as an industry demand driver", peers_checked: ["Senco Gold Ltd", "P N Gadgil Jewellers Ltd", "RBZ Jewellers Ltd (mislabeled MOTISONS)"]}
+  - {claim: "Single D.P. Indore store outsells 14-15 combined stores of 'a leading national jewellery brand'", peers_checked: ["Senco Gold Ltd", "P N Gadgil Jewellers Ltd", "RBZ Jewellers Ltd (mislabeled MOTISONS)"]}
+peer_coverage_map:
+  - {peer: "Senco Gold Ltd", quarter: "Q2 FY26 (13-Nov-2025)", usage: "SUBSTANTIVE", contribution: "Hedging ratio/liquidity trade-off framework; Q1 FY26 realisation-gain quantification"}
+  - {peer: "Senco Gold Ltd", quarter: "Q3 FY26 (13-Feb-2026)", usage: "SUBSTANTIVE", contribution: "Volume -3% QoQ/-10% 9M; realisation-gain % disclosed quarterly"}
+  - {peer: "Senco Gold Ltd", quarter: "Q4/FY26 (27-May-2026, filed as Jun_2026)", usage: "SUBSTANTIVE", contribution: "Customs-duty gain quantification; MCX margin-cost escalation; symmetric duty-reversal risk; PM-appeal footfall dip"}
+  - {peer: "Senco Gold Ltd", quarter: "Q1 FY27 (12-Aug-2026)", usage: "SUBSTANTIVE", contribution: "Strong Q1 FY27 actual (+67% revenue) contradicting a duty/PM demand-headwind framing"}
+  - {peer: "P N Gadgil Jewellers Ltd", quarter: "Q2 FY26 (13-Nov-2025, filed 18-Nov-2025)", usage: "CITED-ONLY", contribution: "Store-expansion and franchise economics context, no direct hit on the seven questions"}
+  - {peer: "P N Gadgil Jewellers Ltd", quarter: "Q3 FY26 (10-Feb-2026, filed 16-Feb-2026)", usage: "SUBSTANTIVE", contribution: "+25% volume growth contradicting Q1; 'fully hedged, no inventory gain' claim"}
+  - {peer: "P N Gadgil Jewellers Ltd", quarter: "Q4/FY26 (15-May-2026, filed 22-May-2026)", usage: "SUBSTANTIVE", contribution: "Duty-hike impact scoped to bars/coins only; guidance beat-and-raise pattern; Indore outperformance"}
+  - {peer: "P N Gadgil Jewellers Ltd", quarter: "Q1 FY27 (28-Jul-2026, filed 04-Aug-2026)", usage: "SUBSTANTIVE", contribution: "Record Q1 FY27, zero duty/PM headwind mention"}
+  - {peer: "RBZ Jewellers Ltd (mislabeled MOTISONS)", quarter: "Q2 FY26 (12-Nov-2025)", usage: "SUBSTANTIVE", contribution: "Volume-positive H1 FY26 contradicting implied industry decline"}
+  - {peer: "RBZ Jewellers Ltd (mislabeled MOTISONS)", quarter: "Q3 FY26 (16-Feb-2026)", usage: "CITED-ONLY", contribution: "Inventory-gain question raised, not quantified by management"}
+  - {peer: "RBZ Jewellers Ltd (mislabeled MOTISONS)", quarter: "Q4/FY26 (15-May-2026)", usage: "SUBSTANTIVE", contribution: "Historically unhedged/low-GML practice disclosed candidly; guidance withdrawn rather than reversed"}
+  - {peer: "RBZ Jewellers Ltd (mislabeled MOTISONS)", quarter: "Q1 FY27 (12-Aug-2026)", usage: "SUBSTANTIVE", contribution: "GML-adoption rationale; duty impact framed as negligible combined with FX; robust demand, no headwind"}
+industry_cross_read:
+  demand: "Peer set is broadly strong-with-short-lived-dips (SENCO under-guides and beats every quarter; PNGJL beats and raises); short dips (Sep-2025, late-May-2026, Adhik Maas) are consistently days-to-weeks, not quarter-defining, and followed by quantified strong recoveries. This complicates DPABHUSHAN's framing of a sustained industry-wide volume/demand problem."
+  pricing_inputs: "Customs-duty hike (6% to 15%) treated sector-wide primarily as an inventory-valuation tailwind realised over Q1-Q2 FY27, not a demand shock; SENCO flags the symmetric downside (a future duty cut reverses the gain, as happened in FY25 for an INR57cr hit) which DPABHUSHAN's own calls do not address per B05. Old-gold exchange is the dominant sourcing channel sector-wide (SENCO ~44-50% of revenue by Q4 FY26), at a scale DPABHUSHAN's own disclosures do not give a directly comparable percentage for."
+  capex_cycle: "Industry-wide capacity race, not a lone expander: SENCO 18-20 stores/year, PNGJL 25 stores/year toward 150 by FY28, RBZ two large-format flagship stores funded by debt. DPABHUSHAN's 51-by-FY30 ambition (per B05) sits inside this same land grab; its 3-6 stores/year pace is slower than better-capitalised peers even before B05's own store-pace-reconciliation flag is applied."
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "MCX hedging-cost inflation (margin requirements risen to ~25-26%, per SENCO) making full hedging cost-prohibitive — plausible root cause of DPABHUSHAN's own unhedged 42kg position, never addressed on any DPABHUSHAN call per B05"
+  - "Symmetric customs-duty-reversal risk (a future duty cut reverses this year's inventory gain into a loss, per SENCO's FY25 precedent of an INR57cr hit) — not raised on any DPABHUSHAN call per B05"
+  - "Bars/coins investment-demand elasticity as distinct from jewellery demand inelasticity (PNGJL's explicit segmentation) — more granular than DPABHUSHAN's undifferentiated demand-headwind framing per B05"
+  - "Melting-loss economics on old-gold exchange schemes (SENCO discusses having phased out charging customers for this) — not discussed on any DPABHUSHAN call per B05 despite DPABHUSHAN's reliance on DP Swarn Plus"
+  - "One-time labour-code cost impact (SENCO quantifies INR6.2cr) — not mentioned in DPABHUSHAN's own results commentary per B05"
+net_narrative_effect: "undercuts"
+analyst_note: "The MOTISONS-mislabeled-as-RBZ corpus defect means the intended Rajasthan/Jaipur catchment test (Motisons vs DPABHUSHAN's home market) was never performed; this is a genuine open item for a future run, not something this triangulation can retroactively fix. Three of the seven B05 questions (Q1 volume, Q6 duty/PM demand, Q7 guidance discipline) all independently come back contradicted, and all three share a common shape: DPABHUSHAN frames a company-specific weakness as an industry-wide or macro-driven phenomenon, and better-capitalised, better-disciplined peers in the same weeks show materially different results. This pattern, not any single question, is the main synthesis-relevant finding from this stage."

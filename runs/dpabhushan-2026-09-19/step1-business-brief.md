@@ -70,13 +70,20 @@ gold-price quarter, alongside gold grams sold.
   Sep-2024 and expanding by franchise. DP names Nagpur and Nashik as next
   markets, which is PNG's home ground. Tests margin structure and entry
   competition.
-- MOTISONS (Motisons Jewellers), https://www.screener.in/company/MOTISONS/ :
-  Jaipur-based retailer in DP's Rajasthan catchment. Tests local demand and
-  pricing in the same geography.
+- KALYANKJIL (Kalyan Jewellers India), https://www.screener.in/company/KALYANKJIL/consolidated/ :
+  national chain that scaled into tier-2/3 India through an asset-light
+  franchise (FOCO) model. DP is adopting FOCO (Jabalpur) and benchmarks its
+  Indore store against "a leading national jewellery brand". Tests franchise
+  economics and the national-brand competition DP faces in its catchment.
 - Rejected: THANGAMAYL (Thangamayil Jewellery) is the closest economic
   mirror (tier-2/3 Tamil Nadu, gold-heavy, store rollout) but files no
-  earnings-call transcripts on BSE, so stage 6 cannot use it. Its screener
-  Data_Sheet is kept in inputs/other/ as a financial comp only.
+  earnings-call transcripts on BSE, so stage 6 cannot use it. MOTISONS
+  (Motisons Jewellers, Jaipur) was picked next for the Rajasthan catchment,
+  but it has held no call since Jun-2024 (BSE 544053). Intake first pulled
+  four transcripts under the wrong scrip code (544060 = RBZ Jewellers);
+  stage 6 caught the mislabel and they now sit in
+  inputs/other/rbz-mislabeled/. Both rejected peers' Data_Sheets are kept in
+  inputs/other/ as financial comps only.
 
 ## LOAD-BEARING FACTS (first verification priority)
 

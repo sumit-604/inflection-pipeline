@@ -1,0 +1,41 @@
+stage: B06-peers
+company: "CAPILLARY"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["no credit rating (none obtained)", "final RHP absent (UDRHP-I held)", "FII/DII split not in BSE summary", "screener sheets empty", "research empty"]
+flags: ["AI-risk framing: all three peers name and partly quantify agentic-AI risk before rebutting it; Capillary's own net-positive framing is less candid on the risk half (05-concall already flags this gap)", "loyalty market-size claim (Q1) and top-decile NRR framing (Q2) find zero independent peer support anywhere in the 12-transcript corpus", "M&A margin-bridge magnitude (65-75% gross margin) has no peer precedent; the one comparable peer playbook (INTELLECT/CentralOne) lands at single-digit margin, not 65-75%"]
+peers_provided: 12
+verified:
+  - {claim: "Non-COGS cost base grows well below revenue growth (core margin-expansion mechanism)", peers: ["NEWGEN", "INTELLECT"], anchor_count: 4}
+partially_verified:
+  - {claim: "M&A-led margin-bridge model (buy sub-scale, migrate to high gross margin)", peers: ["INTELLECT"]}
+  - {claim: "FX tailwind of comparable order of magnitude to Capillary's ~6%", peers: ["INTELLECT"]}
+  - {claim: "Agentic AI framed as manageable/net-positive for system-of-record software", peers: ["NEWGEN", "UNIECOM", "INTELLECT"]}
+  - {claim: "Deal-cycle/go-live length measured in multiple quarters/months, consistent order of magnitude", peers: ["NEWGEN", "INTELLECT"]}
+contradicted: []
+unverifiable:
+  - {claim: "Loyalty software is under 10% of the overall loyalty market vs. agencies", peers_checked: ["NEWGEN", "INTELLECT", "UNIECOM"]}
+  - {claim: "110%+ NRR is top-decile for global SaaS", peers_checked: ["UNIECOM", "NEWGEN"]}
+peer_coverage_map:
+  - {peer: "NEWGEN", quarter: "Q2 FY26", usage: "SUBSTANTIVE", contribution: "AI risk/opportunity segmented framing; order-book-to-revenue lag"}
+  - {peer: "NEWGEN", quarter: "Q3 FY26", usage: "SUBSTANTIVE", contribution: "Cost-base operating-leverage direct evidence; elongated decision cycles, AI-driven deal deferral"}
+  - {peer: "NEWGEN", quarter: "Q4 FY26", usage: "SUBSTANTIVE", contribution: "Headcount -6% YoY vs revenue growth; pricing not a headwind; no completed M&A"}
+  - {peer: "NEWGEN", quarter: "Q1 FY27", usage: "SUBSTANTIVE", contribution: "Continued margin/operating-leverage confirmation; FX only as treasury line item"}
+  - {peer: "UNIECOM", quarter: "Q2 FY26", usage: "SUBSTANTIVE", contribution: "Churn mechanics; pricing/realisation dynamics; Shipway M&A margin-path strategy"}
+  - {peer: "UNIECOM", quarter: "Q3 FY26", usage: "SUBSTANTIVE", contribution: "Top-10 concentration/churn detail; AI capability launches"}
+  - {peer: "UNIECOM", quarter: "Q4 FY26", usage: "SUBSTANTIVE", contribution: "NRR 100%+ framing; Rule-of-40 self-description; investment ramp-up decision"}
+  - {peer: "UNIECOM", quarter: "Q1 FY27", usage: "SUBSTANTIVE", contribution: "Full vibe-coding/three-moats AI-risk rebuttal; NRR reaffirmed"}
+  - {peer: "INTELLECT", quarter: "Q2 FY26", usage: "SUBSTANTIVE", contribution: "Purple Fabric investment disclosure; early AI-is-opportunity framing; CentralOne first mention"}
+  - {peer: "INTELLECT", quarter: "Q3 FY26", usage: "SUBSTANTIVE", contribution: "CentralOne/Forge acquisition margin outcome (single-digit); direct Anthropic/Claude answer"}
+  - {peer: "INTELLECT", quarter: "Q4/FY26", usage: "SUBSTANTIVE", contribution: "Explicit AI job-loss risk admission; constant-currency FX tailwind quantified; M&A strategy rationale"}
+  - {peer: "INTELLECT", quarter: "Q1 FY27", usage: "SUBSTANTIVE", contribution: "Quantified 60% AI development-effort industry risk; go-live/revenue-recognition timing"}
+industry_cross_read:
+  demand: "Split three ways: NEWGEN cautious (elongated BFSI/enterprise decision cycles, AI-driven deferral), INTELLECT confident (20%+ LTM growth, no material headwinds), UNIECOM structurally positive but quarter-to-quarter volatile (seasonality, GST, one large client exit); none speaks to Capillary's own loyalty/retail-brand segment directly"
+  pricing_inputs: "Not a physical-input business for any peer; no AI-driven price deflation reported by any peer to date, consistent with Capillary's own margin narrative; UNIECOM's new price-escalation clauses are a direct analogue to Capillary's inflation-linked uplifts"
+  capex_cycle: "Industry-wide investment race among growth-oriented names, not a lone-expander situation: UNIECOM and INTELLECT are both front-loading AI/product/M&A spend ahead of current revenue (like Capillary); NEWGEN alone is in cost-optimisation, headcount-shrinking mode"
+peer_mentions_of_company: []
+risks_peers_raise: ["AI-driven decision-paralysis delaying signed-off enterprise deals (NEWGEN, multiple calls) - not named by Capillary as a risk to its own ~9-month deal cycle", "Quantified industry-wide AI development-effort compression risk, -60% (INTELLECT, Q1 FY27 call) - Capillary frames AI only as an upside (aiRA) with no downside scenario stated", "Customer build-it-yourself / vibe-coding risk, named and rebutted explicitly (UNIECOM, two calls) - not named as a risk category anywhere in Capillary's own concalls despite structural analogy (large retail/D2C buyers with in-house engineering capacity)", "Active litigation/contingent-liability proactively named on-call (NEWGEN, Qatar Central Bank claim) - contrasts with Capillary's own under-detailed governance disclosure per 05-concall", "Investor pushback on ESOP-driven dilution/free-float creep (INTELLECT, UNIECOM) - not yet raised on Capillary's own calls (only 3 quarters of history)"]
+net_narrative_effect: "complicates"
+analyst_note: "Q3 (operating leverage) is the one claim fully verified and is also the load-bearing mechanism behind Capillary's whole margin story; treat it as solid. Q1 and Q2 (market-size and NRR-benchmark framing) are self-comparisons with zero independent support anywhere in this 12-transcript corpus and should be treated as asserted, not evidenced, in Role 1/FTTCP. Q6 (AI framing) is the one where tone matters as much as substance: peers corroborate the underlying defensive logic but are all more willing than Capillary to name and quantify the risk side before rebutting it; Capillary's own record already flags this same gap (05-concall 3C), so this is a confirmed pattern, not a new one. Part 5's cross-peer hypothesis suggests Capillary's own AI defence may be an industry-standard script rather than a differentiated moat - worth a specific question in live verification (claude.ai) on whether Capillary's system-of-record framing predates or postdates this now-common peer-sector answer."
+no_concall_mode: false

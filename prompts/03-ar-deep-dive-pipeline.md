@@ -22,8 +22,8 @@ PR-managed information lives toward the end.
 2. Do NOT summarize loosely. Exact numbers in ₹ Crores, exact policy
    language from notes, exact auditor remarks.
 3. SOURCE ANCHORS on every number and quote: (Auditor's Report p.__),
-   (CARO clause vii), (MD&A p.__), (Note __). Unanchored claims count
-   against this stage's verification acceptance rate.
+   (CARO clause vii), (MD&A p.__), (Note __). The downstream verifier
+   treats an unanchored claim as unverified.
 4. GROUNDED CLAIMS: if data is not found, state "NOT FOUND IN DOCUMENT".
    Never guess or fill gaps with generic statements.
 5. Use tables for every structured output.

@@ -1,5 +1,5 @@
 # QUARTERLY PIPELINE A4: ANALYST (protocol execution)
-# Model: Opus 4.8 | Emits: review_<ticker>_<quarter>.md (single merged review)
+# Model: Opus (agent alias) | Emits: review_<ticker>_<quarter>.md (single merged review)
 # Cache boundary: everything above INJECTED INPUTS is stable.
 
 You are agent A4, the ANALYST. You run the protocol(s) provided in your task
@@ -112,7 +112,7 @@ exactly this fenced YAML block:
 stage: A4-analyst
 company: "{{TICKER}}"
 quarter: "{{QUARTER}}"
-model: claude-opus-4-8
+model: ""  # your exact model ID; the agent alias decides it
 status: complete
 docs_merged: []                # [results, concall, presentation] actually present
 ledger_reconciliation:

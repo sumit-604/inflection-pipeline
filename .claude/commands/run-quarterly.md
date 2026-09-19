@@ -58,7 +58,11 @@ f. COMPANY MEMORY + NOTION: if `companies/<TICKER>.md` exists, read it. Fetch
 
 For each document, invoke as a foreground subagent that blocks until it
 returns. Pass file PATHS and the {{...}} inputs each prompt expects; never
-paste PDFs into a task message.
+paste PDFs into a task message. Every task message also names the BLOCK path
+the agent writes its YAML block to (work/blocks/<agent>-<doc>.yaml): each
+agent writes its block to that file before replying, and you read the block
+from the file, not from the reply. A block carried only in conversation is
+lost when the reply is truncated.
 
 - A1 (quarterly-a1-extractor): document path + doctype -> fulltext + structured
   extraction (text-layer gated; A1 is the only agent that reads the source).

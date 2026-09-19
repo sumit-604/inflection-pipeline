@@ -85,9 +85,8 @@ nothing decisive. UNUSED: nothing relevant found; state the one-line
 reason (different sub-segment, call covered other topics, transcript
 quality).
 
-Be honest in this map. The downstream verifier (Verifier D) re-checks
-it, and a peer marked SUBSTANTIVE without a real citation in Parts 1-2
-counts against this stage's acceptance rate.
+Verifier D re-checks this map. Mark a peer SUBSTANTIVE only when Parts
+1-2 carry a real citation from it.
 
 ## PART 4: TRIANGULATION SUMMARY
 

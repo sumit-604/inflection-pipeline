@@ -3,46 +3,38 @@ company: "EMUDHRA"
 run_date: "2026-09-19"
 model: "claude-opus-5"
 status: complete
-scope: "PHASE 1 ONLY: Gate 0 (B01) + Emerging Moat (B07). Valuation (B10/B11) PENDING PHASE 3."
+scope: "phase 1 (Gate 0 + Emerging Moat); valuation deferred to phase 3"
 gate0:
-  rules_checked: 41
+  rules_checked: 42
   fails:
-    - {rule: "B4 WC days", severity: CRITICAL, stated: "N/A (payables OCR-scrambled), score 0", recomputed: "Consolidated payables clean at AR p.216 BS and Note 18 p.255 (600.92 / 314.34 Mn). WC days 81.1d FY25 -> 69.2d FY26, -11.9d -> 5. Block B 12 under the stage's own n=2 convention (used for B2/B3); deal-breaker #2 off; classification GOOD+. If sub-window rejected for B2-B4 alike: Block B 5, GOOD."}
-    - {rule: "A2 min ROCE", severity: MAJOR, stated: "15.0% (AR-disclosed FY26) -> 5", recomputed: "Consistent computed series min 14.41% (FY24) -> 3; Block A 10"}
-    - {rule: "D1 net debt", severity: MINOR, stated: "cash 107.31 Cr (FY25 column)", recomputed: "FY26 cash 65.20 Cr, net cash 36.42 Cr; score 5 unchanged"}
-    - {rule: "D4 current ratio", severity: MINOR, stated: "2.90x standalone", recomputed: "2.76x consolidated (4,355.64 / 1,578.00 Mn, AR p.216); score 5 unchanged"}
-    - {rule: "M1 EBITDA method", severity: MINOR, stated: "FY26 EBITDA 154.12 Cr, 21.97%", recomputed: "Change in Inventory sign reversed; FY26 159.12 Cr, 22.68%; FY19 31.71%; M1/M2/M5 unchanged"}
-    - {rule: "M12 negative WC", severity: MINOR, stated: "N/A, 0", recomputed: "69.2d FY26 (>45) -> 0; label wrong, score unchanged"}
+    - {rule: "B4 WC days change, latest vs earliest (+ operating rules 5, 6)", severity: MAJOR, filed: "B4=5 on FY25->FY26 (-11.91d); Block B 12; core 74; GOOD+", recomputed: "earliest = FY19 (as in A4); FY19 trade payables not in provided data -> N/A, 0; Block B 7; core 69; deal-breaker #2 triggers; GOOD", note: "stage already carries FLAG-OPERATOR-RULING and classification_alternative; file GOOD as primary, GOOD+ as the reading pending ruling"}
+    - {rule: "ROCE formula fixed as EBIT/(TA-CL)", severity: MINOR, filed: "Equity+Reserves+Borrowings basis, FY26 14.51%", recomputed: "FY26 12.92% (1,055.63 Cr CE), FY25 14.08% (AR p.216); A1 3, A2 3, A4 0 unchanged"}
+    - {rule: "M6 tier bands", severity: MINOR, filed: "0, 'not consistent'", recomputed: "'consistently' binds the 5-point tier only; FY26 product development 601.00 Mn = 8.57% of revenue meets the 3-point tier text; M6 0 or 3; if 3, F 20, grand 94, moats 5, still STRONG; 814.21 Mn label on the 8.6% is wrong (814.21 = 11.6%)"}
+    - {rule: "YAML block_b_trend enum", severity: MINOR, filed: "mixed, two numbers", recomputed: "use improving | stable | deteriorating with one number"}
 emoat:
-  rules_checked: 22
+  rules_checked: 24
   fails:
-    - {rule: "Evidence-tier consistency (E1 row)", severity: MAJOR, stated: "HH x 1.0 = 4.0", recomputed: "first-mover attribute is unanchored inference; 3.0 (HM, doc) or 2.0 (HH, inference); em_score 22.1 or 21.1; band MODEST unchanged"}
-    - {rule: "2C capex-embedded growth", severity: MAJOR, stated: "22.6%", recomputed: "PP&E-only FAT 5.43x applied to CWIP + intangibles under development; run-consistent FAT 0.97x gives 4.0%; range 4.0-22.6%"}
-    - {rule: "R1 narrative vs score", severity: MINOR, stated: "HH = 4 while 4C says tempered", recomputed: "HM = 3 if tempered; em_score -1.0"}
-    - {rule: "Count consistency", severity: MINOR, stated: "evidence_mix documented 24; 14 None/Weak rows", recomputed: "recount says 19 documented, unreconciled; None/Weak rows = 15"}
-    - {rule: "No estimated fills (1C)", severity: MINOR, stated: "Services FY27 ~16.5% assumed; total 8,674.16 Mn, +23.6%", recomputed: "NOT FOUND; derived FY27E totals must be removed"}
-valuation: {rules_checked: 0, fails: [], status: "PENDING PHASE 3 (B10/B11 not present)"}
-expectation_ledger: {status: "PENDING PHASE 3", present: null, downside_row: null, all_rows_confirm_by: null, all_rows_metric_threshold: null, prob_in_range: null, decay_status_valid: null, off_ledger_credit: null, residual_pct_cmp: null, residual_starter_cap_ok: null, fails: []}
-business_understanding_narrative: {status: "OUT OF PHASE 1 SCOPE (stage 13)", present: null, five_questions_answered: null, prose_only: null, section6_candidates_named: null, valuation_vocab_leak: null, fails: []}
+    - {rule: "evidence_mix reconciles to report", severity: MINOR, filed: "claim 10, inference 6", recomputed: "not itemised in report; unverifiable"}
+    - {rule: "scores consistent with evidence tiers", severity: MINOR, filed: "C2 HL=2 at documented 1.0x = 2.0", recomputed: "category test unconfirmed; inference tier 0.5x = 1.0; em_score 21.1; band MODEST unchanged"}
+    - {rule: "strength label consistent with score", severity: MINOR, filed: "H2 Strong at HM=3", recomputed: "Moderate (same raw as A4, E1, H1)"}
+valuation: {rules_checked: 0, fails: [], status: "PENDING - phase 3; B10/B11 not present"}
+expectation_ledger: {present: false, downside_row: false, all_rows_confirm_by: false, all_rows_metric_threshold: false, prob_in_range: false, decay_status_valid: false, off_ledger_credit: false, residual_pct_cmp: 0, residual_starter_cap_ok: true, fails: [], status: "PENDING - phase 3"}
+business_understanding_narrative: {present: false, five_questions_answered: false, prose_only: false, section6_candidates_named: 0, valuation_vocab_leak: false, fails: [], status: "OUT OF SCOPE - stage 13 not in phase 1"}
 recomputed_destination_pe: ""
-recomputed_decision: "Gate 0 classification: filed GOOD; GOOD+ under the stage's own n=2 window convention applied to B4 (core 74, deal-breaker #2 off); GOOD only if the sub-window is rejected for B2-B4 alike (core 67). Operator ruling needed on the window convention. EM: MODEST confirmed (21.1-23.1)."
+recomputed_decision: ""
+recomputed_gate0_classification: "GOOD (filed GOOD+); rests on B4 N/A per operator rule 5; routes to the operator ruling B01 already raised"
+recomputed_em_score: "21.1 MODEST (filed 22.1 MODEST); band unchanged"
+recomputed_combined_assessment: "GOOD (filed GOOD+), follows the Gate 0 recompute"
 findings:
-  - {severity: CRITICAL, location: "B01 Block B / B4, deal-breakers, classification", finding: "B4 scored N/A on a false premise; consolidated payables clean in provided mupdf AR p.216 and Note 18 p.255. Window convention applied inconsistently (B2/B3 on n=2, B4 refused).", recomputed: "B4 = 5; Block B 12; GOOD+ (or GOOD with Block B 5 if sub-window rejected for all)", rework: "stage 1"}
-  - {severity: MAJOR, location: "B01 Block A / A2", finding: "Mixed computed and AR-disclosed ROCE series; minimum sits on the 15% band edge", recomputed: "A2 = 3; Block A 10", rework: "stage 1"}
-  - {severity: MAJOR, location: "B07 Section 3/5 E1", finding: "First-mover attribute rests on unanchored inference, scored at max with doc multiplier", recomputed: "em_score 22.1 or 21.1; band unchanged", rework: "stage 7 correction, no REWORK trigger"}
-  - {severity: MAJOR, location: "B07 Section 2C / capex_embedded_growth_pct", finding: "FAT basis mismatch (PP&E-only turnover applied to a base incl. intangibles under development; single-year FAT)", recomputed: "4.0% on run-consistent FAT; range 4.0-22.6%", rework: "stage 7 correction before stage 11 reads it"}
-  - {severity: MINOR, location: "B01 D1", finding: "FY25 cash column used for FY26", recomputed: "net cash 36.42 Cr; score unchanged"}
-  - {severity: MINOR, location: "B01 D4", finding: "Standalone current ratio used; consolidated available", recomputed: "2.76x; score unchanged"}
-  - {severity: MINOR, location: "B01 M1/M2/M5", finding: "Change in Inventory sign reversed in EBITDA", recomputed: "FY26 22.68%; scores unchanged"}
-  - {severity: MINOR, location: "B01 M12", finding: "N/A label on false premise", recomputed: "69.2d -> 0; unchanged"}
-  - {severity: MINOR, location: "B07 R1 / 4C", finding: "Narrative says tempered, score is max", recomputed: "HM = 3 if tempered"}
-  - {severity: MINOR, location: "B07 evidence_mix / Section 3 count", finding: "evidence_mix unreconciled with 19-item recount; 14 vs 15 None/Weak rows", recomputed: "reconcile"}
-  - {severity: MINOR, location: "B07 Section 1C", finding: "Estimated Services growth filled where NOT FOUND required", recomputed: "remove derived FY27E totals"}
-framework_gaps:
-  - "prompts/07 Section 6D cites a 'standard matrix' (EXCEPTIONAL ... AVOID) that exists nowhere in prompts/ or frameworks/; the label feeds the Section 1B v3.3 Amendment 4.3 hurdle tier. Operator to supply the lookup table."
-  - "prompts/01 is silent on whether a Block B metric may run on a sub-window when the full history is not extractable; the EMUDHRA B01 classification turns on this. Operator ruling needed."
-critical_count: 1
-major_count: 3
-minor_count: 7
-acceptance_rate: 82.5
-coverage_basis: "63 rules checked (Gate 0 41, Emerging Moat 22); 52 pass, 11 fail."
+  - {id: F1, stage: B01, severity: MAJOR, summary: "B4 scored on FY25 as 'earliest' while A4 uses FY19; rule 5 requires N/A and 0 for the missing FY19 payables; Block B 7, deal-breaker #2, GOOD not GOOD+"}
+  - {id: F2, stage: B01, severity: MINOR, summary: "M6 scored 0 on a 'consistently' test that binds only the 5-point tier; possible 3; no classification effect"}
+  - {id: F3, stage: B01, severity: MINOR, summary: "ROCE computed on a substitute basis; prompt formula gives FY26 12.92%, FY25 14.08%; Block A scores unchanged"}
+  - {id: F4, stage: B01, severity: MINOR, summary: "block_b_trend not in the schema enum"}
+  - {id: F5, stage: B07, severity: MINOR, summary: "evidence_mix claim/inference counts not itemised"}
+  - {id: F6, stage: B07, severity: MINOR, summary: "C2 credited at documented tier on customer additions while the concentration test is unconfirmed; 1.0 not 2.0; em_score 21.1"}
+  - {id: F7, stage: B07, severity: MINOR, summary: "H2 labelled Strong at raw 3"}
+  - {id: O1, stage: prompts/07, severity: OBSERVATION, summary: "Section 6D names an 8-label combined matrix that no rule source defines; prompt defect, not a stage fail"}
+critical_count: 0
+major_count: 1
+minor_count: 6
+acceptance_rate: 89.4

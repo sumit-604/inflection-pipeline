@@ -1,197 +1,217 @@
-# Stage 12b: Verifier B, Concall Red Flags. eMudhra Ltd (EMUDHRA)
+# Stage 12, Verifier B: Concall Red Flags. eMudhra Ltd (EMUDHRA)
 
-Run date: 2026-09-19. Model: claude-opus-5. Fresh context. Inputs read by this verifier:
-- Main company, read in full: Q3 FY26 call 03-Feb-2026 (`inputs/concalls/Concall_Feb_2026_Q3FY26_Transcript.txt`), special 3i Infotech call 06-Feb-2026 (`inputs/announcements/20260209-3i-Infotech-Investor-Call-Transcript.txt`), Q4 FY26 call 07-May-2026 (`Concall_May_2026_Transcript.txt`), Q1 FY27 call 30-Jul-2026 (`Concall_Aug_2026_Transcript.txt`).
-- Peers (12 files): targeted reads on the claim-relevant passages, not cover to cover. NEWGEN Jan-2026 p.14-15, Jul-2026 p.2-4 and margin lines, Nov-2025 and May-2026 margin and profit lines. PROTEAN Aug-2026 p.3-6, May-2026 p.3 and p.15. QUICKHEAL Aug-2025 p.4 and p.8-9, May-2026 p.3-4. The other peer passages were reached by keyword search (H-1B, EBITDA margin, PAT, eSign, DSC, token, DPDP, consent, war, conflict).
-- Pipeline outputs compared: B05 (`outputs/reports/05-concall.md`) and B06 (`outputs/reports/06-peers.md`).
+Run date: 2026-09-19. Model: claude-opus-5. Fresh context. I did not read any
+other verifier output.
 
-Anchor convention: transcript file (call date), speaker, [page N] marker in the .txt. "VS" is Venkatraman Srinivasan (Executive Chairman). "KS" is Kaushik Srinivasan. "AS" is Arvind Srinivasan.
+Inputs read in full, oldest first:
+- Q3 FY26 call, 03-Feb-2026: `inputs/concalls/Concall_Feb_2026_Q3FY26_Transcript.txt`
+- 3i Infotech special investor call, 06-Feb-2026: `inputs/announcements/20260209-3i-Infotech-Investor-Call-Transcript.txt`
+- Q4 FY26 call, 07-May-2026: `inputs/concalls/Concall_May_2026_Transcript.txt`
+- Q1 FY27 call, 30-Jul-2026: `inputs/concalls/Concall_Aug_2026_Transcript.txt`
+- Peers: PROTEAN Aug-2026 and May-2026, NEWGEN Jul-2026, QUICKHEAL May-2026
+  read in full. NEWGEN May-2026 read in part (pages 3-4, 9-12). The other
+  seven peer files were searched by keyword (eSign, DSC, token, H-1B, DPDP,
+  hardware, pricing, competition, delay, decision-making).
+- Used to check two pipeline claims only: Reg 30 letters
+  `inputs/announcements/20260204-d507034d.txt` and `20260818-7509d90d.txt`.
+- Pipeline analyses: `outputs/reports/05-concall.md`, `outputs/reports/06-peers.md`.
 
----
+Scope note. Both B05 and B06 already carry a "Correction (Verifier B)"
+section from an earlier pass. I audit the reports as they stand now. I made
+my independent list from the transcripts before I read either report.
 
-## PART 1: INDEPENDENT RED-FLAG LIST (from raw transcripts, before reading B05/B06)
-
-| # | Sev | Item | Anchor(s) |
-|---|---|---|---|
-| 1 | MAJOR | **FY27 PAT guidance softened and called "unchanged".** May: "bottom line may be around between 25% to 30%. Could be around 27%-28%". Jul: "guidance remains unchanged ... work towards achieving a PAT growth of 25%". VS repeats "Overall, we are expecting 25% growth on PAT" later in the Jul call. | May-2026, VS, [page 8]; Jul-2026, VS opening, [page 5]; Jul-2026, VS, [page 12] |
-| 2 | MAJOR | **Organic growth runs below the 18% guide in the quarters the calls quantify.** Q3 FY26 organic was "11% to 12%" (3 months), even though VS called FY26 organic "18-19%". Q1 FY27 total growth is 28% and "approximately 13% was contributed by the Cryptas acquisition", so organic is about 15%. KS gives a different frame in the same Jul call ("25% was the organic growth in the product segment"). [INFERENCE] The 18% FY27 organic guide (May) has no quarter at or above 18% in the calls that disclose a split. A Q4 FY26 figure of about 13-14% follows from FY Cryptas Rs 85 Cr less Q2 Rs 24 Cr and Q3 Rs 34 Cr. That figure is my arithmetic, not a management statement. | Feb-2026, VS, [page 6] and [page 13]; May-2026, VS, [page 8] and [page 12]; Jul-2026, VS, [page 4]; Jul-2026, KS, [page 18] |
-| 3 | MAJOR | **The Cryptas profitability story changes each quarter.** Feb: "now positive at INR 1 crore or INR 1.25 crores CRYPTAS PAT" ([page 6]). The same call later says "profit of about INR 1.4 crores or INR 1.5 crores" ([page 8]). May: "almost a break-even ... maybe totally 1 or 2 crores profit", and FY27 "almost over a million dollar of profit" ([page 12]). Jul: Cryptas is "roughly around INR 100 crore business, which was not profitable at all. Gradually, it is improving. This year, we expect profit" ([page 11]). Jul also shows a subsidiary net loss of about Rs 4 Cr "predominantly ... the European subsidiary, B.V." with legal expenses ([page 12]). Revenue also swings: Q3 Rs 34 Cr was lifted by the Cryptas "year-end" ([page 7]), and Q1 FY27 was Rs 20 Cr ([page 10]). [INFERENCE] Management's own account moved from "positive" to "not profitable at all" in two quarters. The acquired asset's earnings run-rate is not established. | Feb-2026, VS, [page 6-8]; May-2026, VS, [page 12]; Jul-2026, VS, [page 10-12] |
-| 4 | MAJOR | **3i Infotech matter escalated while management said "no update".** May: "we have not got the complaint from the police or any inquiry from the police". Jul: "No. There is no update. The police to it, they have complied. They called me for a statement on Monday, and they have extensively taken our side of the story". A police statement from the Executive Chairman is a development, and management framed it as "no update". | May-2026, VS, [page 7-8]; Jul-2026, VS, [page 23] |
-| 5 | MAJOR | **Promoter bought a personal stake in the complainant.** Analyst: "a group called Capital MXT has acquired 5% stake in [3i Infotech] ... Is that ... related to eMudhra?" VS: "Not related to eMudhra. That is related to my personal investment." [INFERENCE] The Executive Chairman holds about 5% of the company that filed a criminal complaint against him. That creates a governance conflict and possible leverage over the dispute. Nobody asked a follow-up question. | Jul-2026, analyst Sanjyot Khare and VS, [page 23-24] |
-| 6 | MAJOR | **The 3i exposure is structurally open-ended and was never quantified.** The Rs 5 Cr preference tranche was "equated ... to 8% of equity", and one redemption trigger was "IPO valuation". 3i contests which trigger applied. The term sheet was "between me and the 3i Infotech", which names the promoter personally. No rupee exposure or provision is given on any call. | Special call 06-Feb-2026, VS, [page 5-6]; May-2026 [page 7-8]; Jul-2026 [page 23] |
-| 7 | MAJOR | **R&D is capitalised, and the peer comparison mixes bases.** FY26 software capex is "INR 60 crores or INR 62 crores" (FY25: "INR 45 crores"), plus about Rs 15 Cr for the UAE data centre. VS benchmarks this as R&D: "US product companies are all they are incurring 20%. For us, it may be 10% to 12% only." [INFERENCE] Reported EBITDA and the "only company above 25% EBITDA" claim (item 19) sit on a capitalised-R&D base. The comparison with US peers who expense R&D is not like-for-like. | Feb-2026, VS, [page 11-12] |
-| 8 | MAJOR | **Management says ROE of about 15% is the sustainable level.** "Around 14.5-15%. Ideally, that could be the ROE which we can maintain." The analyst had asked twice why the Enterprise mix shift has not lifted ROE/ROCE. [INFERENCE] This bears directly on any R3/R4 quality-ladder claim, where durable ROCE is 20-30%. | Jul-2026, VS, [page 25] |
-| 9 | MINOR | Trust Services fell in Q1 FY27, and management expects Q2 to be weak too: "the top-line may continue to be less during the next quarter also". ProxKey tokens are "not getting re-certified". ePass recertification is "pending from the CCA side". The May guide was +20% Trust growth for FY27. | Jul-2026, VS, [page 4], [page 9-10]; May-2026, VS, [page 9] |
-| 10 | MINOR | The FY26 Trust "beat" was partly low-margin tokens and channel stocking. May gives tokens sold separately as a growth driver. Jul says token gross margin is "10% or something" and "this time everybody was stocking". [INFERENCE] Part of the 32% FY26 Trust growth was hardware pass-through and partner inventory, not DSC/eSign franchise growth. | May-2026, VS, [page 11]; Jul-2026, VS, [page 10] |
-| 11 | MINOR | The "stock issue" with former partners and distributors drags "INR 3 crore" per quarter through stock-in-trade purchases. It will "go another one or two quarters". The root cause is never explained or revisited. | Feb-2026, analyst Aashray Vasa and VS, [page 12-13] |
-| 12 | MINOR | UAE timeline. Feb: audit "two months, three months ... Then we can commission". May prepared remarks: "we now have data centers operating in ... the UAE". Jul: QTSP licence at the "final step", with completion "towards the end of this quarter to beginning of next quarter". | Feb-2026 [page 10]; May-2026 [page 4]; Jul-2026, AS, [page 8] |
-| 13 | MINOR | Order-book math. FY25 book was Rs 191 Cr and FY26 book is Rs 238 Cr (+24.6%). The conversion multiple was raised from "generally ... 2X" to "2.2X-2.3X" even as ME orders were "delayed". In Feb, the interim book figure was refused: "working in proportion to our growth numbers". | Feb-2026 [page 13]; May-2026, VS, [page 6] |
-| 14 | MINOR | The eSign volume figure fell between calls: "now it is almost more than 4 lakh per day" (Feb) became "well over 3 lakh daily transactions" (May). This was not explained. | Feb-2026, VS, [page 10]; May-2026, VS, [page 4] |
-| 15 | MINOR | International segment profitability outlook was declined: "Separately, we are not put what is the profitability for that". A qualitative bridge was given: services at 18-20% gross margin, Cryptas unprofitable, senior hires at USD 200-300k. | Jul-2026, VS, [page 11-12] |
-| 16 | MINOR | The US cross-sell story is thin. May cites US services relationships as a cross-sell base. Yet "The identity access management, we have not taken to the US because that is still not part of the full plan". | May-2026, VS [page 3]; KS [page 11] |
-| 17 | MINOR | PrivaTrust slipped. Feb: "Early deployment ... being tested in live environments". Jul: "pilots, proof of concepts, and very soon a few wins". A peer (QUICKHEAL) had a tier-1 BFSI DPDP win with consent management in Aug-2025 and "several large BFSI customers" by May-2026. eMudhra arrives late to that market. | Feb-2026 [page 5]; Jul-2026, KS, [page 6]; QUICKHEAL Aug-2025 [page 9]; QUICKHEAL May-2026 [page 3] |
-| 18 | MINOR | A peer competes head-on in India BFSI eSign workflows. PROTEAN calls eSign Pro ("complete digital documentation workflow ... stamping to signing") "a unique moat ... massively scalable". PROTEAN reports Identity Services +16% on 20% volume growth and holds more than Rs 800 Cr of cash. This overlaps emSigner plus eSign/eStamp in BFSI. | PROTEAN Aug-2026 [page 5-6]; PROTEAN May-2026 [page 15] |
-| 19 | MINOR | VS claims on peer margins: "nobody is achieving more than 25% EBITDA margin or more than 16% PAT margin". This is partly contradicted by NEWGEN (FY25 EBITDA 25.3%, Q2 FY26 net margin 20.4%, FY26 adjusted PAT Rs 334 Cr on Rs 1,574 Cr revenue). VS scoped the claim to cybersecurity, and NEWGEN is not a cybersecurity vendor. QUICKHEAL (negative EBITDA) supports VS. | Jul-2026, VS, [page 25]; NEWGEN Nov-2025 lines 160 and 426; NEWGEN May-2026 lines 109 and 199-200 |
-| 20 | MINOR | The acquisition stance drifts. Feb: "Currently, we are not evaluating any acquisition ... six months to nine months". May: "open to selective bolt-on ... Maybe ... 3rd Quarter or 4th Quarter ... US only". Jul (KS): "nothing immediately". | Feb-2026 [page 11]; May-2026 [page 5], [page 7]; Jul-2026 [page 19] |
-| 21 | MINOR | Adjusted-EBITDA framing. Q3 reported 23.1% is recast as "adjusted EBITDA margin is 25.8%" by excluding acquisition legal cost and the labour-code gratuity. The Q4 margin of 22.4% (EBITDA +25.5% vs income +31.7%) drew no question and no explanation. | Feb-2026, VS, [page 7]; May-2026, CFO, [page 5] |
-| 22 | MINOR | Middle East war delayed March-quarter orders (volunteered). | May-2026, VS, [page 6] |
-| 23 | MINOR | The year-end cash expectation was cut from Rs 140-150 Cr to Rs 125-140 Cr, with "we have to wait and see". | Feb-2026, VS, [page 14] |
-
-Grading summary: 23 items listed, 8 MAJOR, 15 MINOR, 0 CRITICAL. I found no evasion repeated across 2+ quarters (see Part 2, the international-profitability row).
+Anchor format: (call, speaker, file page marker). "[page N]" is the page
+marker in the .txt file, not the printed page number.
 
 ---
 
-## PART 2: COMPARISON TABLE
+## 1. Independent red-flag list (from raw transcripts only)
 
-### 2A. My items vs pipeline
+### 1A. Material items (CRITICAL + MAJOR)
 
-| # | Sev | Status | Pipeline location / note |
+No CRITICAL item. I found no question that went unanswered in two or more
+quarters. Candidates I tested and rejected as repeats: international
+profitability (Q3 was a misunderstood question that got an answer, Q1 was a
+refusal), deal size (Q3 answered, Q4 refused once), order book (Q3 vague, Q4
+disclosed Rs 238 Cr).
+
+| # | Severity | Item | Anchor |
 |---|---|---|---|
-| 1 | MAJOR | CAUGHT | B05 1B last guidance row, 2C Consistency, 4E Medium flag 3 |
-| 2 | MAJOR | PARTIALLY CAUGHT | B05 2A row 7 catches Q1 organic of about 15%. It misses Q3 FY26 organic of "11% to 12%", which makes this a trend, not one quarter. B05 also writes "management attributes the shortfall to the temporary Trust Services decline". The transcripts contain no such attribution. |
-| 3 | MAJOR | MISSED | B05 3C marks Cryptas disclosure "Yes / Low risk, high transparency mark". 1C calls the Cryptas trigger "strengthening". The Feb→May→Jul drift ("positive" → "break-even" → "not profitable at all") and the B.V. loss are not flagged. |
-| 4 | MAJOR | PARTIALLY CAUGHT | B05 4E rates the 3i matter "Low". 4C grades governance handling "Good" with a "consistent factual account". The Jul "no update" framing around a fresh police statement is not flagged. |
-| 5 | MAJOR | MISSED | No mention in B05, B06, or any other report (grep across outputs/: "personal investment", "Capital MXT", "5% stake": no hit). |
-| 6 | MAJOR | CAUGHT | B05 2D bullet 1 (no provisioning or contingent-liability figure) |
-| 7 | MAJOR | PARTIALLY CAUGHT | B05 1B lists the capex guide, and 3B treats the 10-12% vs 20% R&D line as an "unverified competitive cost-structure claim". The capitalisation angle is absent from B05. The pipeline does carry it elsewhere (B02 finding 7, useful-life extension; B04 asset-intensity row). |
-| 8 | MAJOR | PARTIALLY CAUGHT | B05 4E lists it as "Low". Management calls ~15% ROE the level "we can maintain". That caps the quality-ladder thesis, so "Low" under-weights it. |
-| 9 | MINOR | CAUGHT | B05 1C Trust row, 2B, 1B "mostly by September" |
-| 10 | MINOR | MISSED | B05 2A row 2 records the 32% Trust beat as clean delivery. |
-| 11 | MINOR | CAUGHT | B05 2A row 6, 4E Low-Medium |
-| 12 | MINOR | PARTIALLY CAUGHT | Caught as a slip. B05 says Q4 was "silent" and "no update given at all", but the May prepared remarks say the UAE DC is "operating" ([page 4]). See spot check 3. |
-| 13 | MINOR | CAUGHT | B05 2B (multiple raised despite delays), 1B |
-| 14 | MINOR | MISSED | not in B05 |
-| 15 | MINOR | CAUGHT | B05 2E, 3C, 4E. B05 over-grades it (see 2B). |
-| 16 | MINOR | MISSED | not in B05 |
-| 17 | MINOR | MISSED | B05 marks PrivaTrust "Aspirational" but has no peer comparison. B06 was not asked. |
-| 18 | MINOR | MISSED | B06 2D and Q7 call PROTEAN "adjacent but structurally distinct" and find no competitive mention. eSign Pro competes directly with the emSigner/eSign BFSI workflow. |
-| 19 | MINOR | MISSED | B06 Q5 uses NEWGEN margins as "held flat". It does not test VS's "nobody above 25%/16%" claim. |
-| 20 | MINOR | CAUGHT | B05 1C acquisition row |
-| 21 | MINOR | MISSED | B05 2A row 3 accepts adjusted EBITDA as delivered, with no flag on the adjusted framing or the Q4 dip. |
-| 22 | MINOR | CAUGHT | B05 2B; B06 Q6 and 2A |
-| 23 | MINOR | CAUGHT | B05 1B |
+| M1 | MAJOR | The Executive Chairman has a personal investment link to Capital MXT. Capital MXT bought 5% of 3i Infotech, the party that brought the fraud complaint. He disclosed this only when an analyst asked. | Q1 FY27, V. Srinivasan, [page 23]-[page 24]: "Not related to eMudhra. That is related to my personal investment." |
+| M2 | MAJOR | Management told a different Cryptas profit story on each call, and never reconciled them. Q3: Cryptas "improving overall margin quality", PAT "positive at INR 1 crore or INR 1.25 crores", then "INR 1.4 crores or INR 1.5 crores" later in the same call. Q4: FY26 "almost a break-even... totally 1 or 2 crores profit", and FY27 "over a million dollar of profit" expected. Q1: "roughly around INR 100 crore business, which was not profitable at all". The B.V. entity that holds Cryptas lost about Rs 4 Cr. | Q3 FY26, VS, [page 3], [page 6], [page 8]; Q4 FY26, VS, [page 12]; Q1 FY27, VS, [page 11], [page 12] |
+| M3 | MAJOR | The 3i Infotech allegations were not disclosed on any earnings call before they became public. 3i first raised them by letter in January 2024 and raised them again in September 2024. The company replied in January 2025. The Q3 FY26 call on 03-Feb-2026 was silent on the matter. 3i filed its EOW complaint that same day, 03-Feb-2026. The company spoke only after 3i's own Reg 30 disclosure on 04-Feb, and then held a special call on 06-Feb. That call drew no analyst questions. | 3i special call, VS, [page 6] (letters Jan-2024, Sep-2024, Jan-2025); Reg 30 letter 04-Feb-2026, [page 1] ("first raised via a letter... in January 2024"; complaint "filed... on 03 February 2026"); Q3 FY26 call, full transcript, no mention; special call [page 7] "we have no questions" |
+| M4 | MAJOR | The FY27 PAT guidance softened, but management called it "unchanged". Q4: "between 25% to 30%. Could be around 27%-28%". Q1: "work towards achieving a PAT growth of 25%... guidance remains unchanged". | Q4 FY26, VS, [page 8]; Q1 FY27, VS opening, [page 5], and [page 12] |
+| M5 | MAJOR | Management itself says part of the Q1 FY27 EBITDA margin gain (26.2%) came from a temporary fall in low-margin token sales. Its own sustainable guide is about 25%. On this reading, the Q1 margin is partly a denominator effect from a revenue dip that management expects to reverse. It is not clean evidence of the product-mix shift. | Q1 FY27, VS, [page 20]: "the margin slightly improved because the token sales are less, which has a less margin... we may be able to maintain this EBITDA at 25%"; token GM "10% or something", [page 10] |
+| M6 | MAJOR | Trust Services reversed. Partners stocked tokens in FY26 and destocked in Q1 FY27 ahead of the September FIPS 140-3 cut-off. Management expects the top line to stay weak in Q2 as well. One token supplier (ProxKey) is not recertifying. The main token (ePass) is waiting on the CCA. The FY26 beat (32% against a 22-25% guide) therefore includes pulled-forward demand. | Q1 FY27, VS opening, [page 4]; VS, [page 9] ("ProxKey, I don't think they are getting re-certified"); VS, [page 10] ("this time everybody was stocking... almost INR 5-7 crore volume got less... top-line may continue to be less during the next quarter"); Q4 FY26, VS, [page 11] (token portal sales drove growth) |
+| M7 | MAJOR | Management frames ROE at about 14.5-15% as the level it "can maintain". It defends ROCE without giving a number, by pointing to peer margins and its no-leverage policy. The analyst asked twice in the same call. | Q1 FY27, VS, [page 25] |
 
-Totals: CAUGHT 9, PARTIALLY CAUGHT 5, MISSED 9 (of 23).
+### 1B. Minor items
 
-### 2B. Pipeline flags I did not independently raise
-
-| Pipeline flag | Assessment | Evidence |
+| # | Item | Anchor |
 |---|---|---|
-| B05 4E: "3i's threatened SEBI complaint status is never addressed on any earnings call" (also 2D bullet 5) | **NOT SUPPORTED** | May-2026, VS, [page 7]: "though they said they are going to file a complaint with SEBI, we have not got anything from them." The status was addressed in the Q4 call. |
-| B06 Q8 verdict CONTRADICTED (H-1B), named "single most consequential contradiction" and "priority item for synthesis" | **NOT SUPPORTED** | eMudhra blames H-1B only for its US *services* line: "the US services business, there is no growth ... because of the AI and because of the H1 visa problem" (Feb-2026 [page 6]). It says product is unaffected. NEWGEN's statement is about *product* businesses: "for product-based businesses, H-1B is not a criteria" (NEWGEN Jan-2026 [page 16], lines 756-763). The two statements agree on the product/services split, so they do not contradict each other. The anchor is also wrong: B06 cites "NEWGEN Q4FY26, May-2026 call, p.10". The quote sits in the **Jan-2026 (Q3FY26)** transcript, and the May-2026 file has no H-1B mention. |
-| B05 2E / 4E: international profitability "Deflected every time" (Q3 FY26 and Q1 FY27), a repeated evasion | **OVERSTATED** | Q3: VS said "I do not understand the question" and then gave Cryptas revenue and profit. That is a misunderstanding answered with data, not a deflection (Feb-2026 [page 7-8]). Only Q1 FY27 is a real decline to answer, and it came with a qualitative bridge. One evasion, not a repeated one. |
-| B05 1C: bolt-on acquisition "not raised by management or any analyst" in Q1 FY27 | **OVERSTATED** (the fading read holds, the fact is wrong) | Jul-2026, KS, [page 19]: "some bolt-on capability ... may pursue sometime down the future, although nothing immediately" (in answer to Amit Chandra). |
-| B06 2B: stock-in-trade drag may be industry hardware inflation | **OVERSTATED** (speculative) | The Jul call shows stock-in-trade is DSC tokens with ~10% gross margin, driven by partner stocking and a FIPS transition (Jul-2026 [page 10]). The Feb driver was a partner and distributor "stock issue". No transcript links it to price inflation. |
-| B05 4C: "EOW outcome (civil, not criminal) favourable so far" | NOT ASSESSABLE from transcripts | The source is the 18-Aug-2026 Reg 30 letter, which is outside Verifier B's inputs. The last transcript touchpoint (30-Jul) shows an active police statement process. |
-| B05 4E: no customer-concentration disclosure | SUPPORTED | No call discloses it. The Q3 India defence deal skews Q4 India (May-2026, KS, [page 10]). |
-| B05 2D: FCF and working capital never discussed | SUPPORTED | Only the cash balance is discussed (Feb-2026 [page 14]). |
-| B05 2B: India Q4 dip from a large Q3 defence deal | SUPPORTED | May-2026, KS, [page 10] |
-| B06 Q4: organic guide "reads aggressive" vs NEWGEN 6%/11% | SUPPORTED as context | NEWGEN May-2026 line 109 (6%), Jul-2026 line 125 (11%) |
-| B06 2E: CEO transitions at all three peers | SUPPORTED as peer fact | NEWGEN Jul-2026 line 102. The read-across to eMudhra is weak. Note that Jul-2026 is the first eMudhra call with three Srinivasan family members on the panel. |
+| m1 | 3i escalation. Q4: "we have not got the complaint from the police or any inquiry from the police". Q1: "There is no update", then "They called me for a statement on Monday". | Q4 FY26, VS, [page 7]; Q1 FY27, VS, [page 23] |
+| m2 | Q3 said "we expect to continue with this level of margin" (23.1% reported). The Q4 reported EBITDA margin was 22.4%. Q4 gave no one-off explanation. | Q3 FY26, VS, [page 8]; Q4 FY26, CFO, [page 5] |
+| m3 | Acquisition stance. Q3: "Currently, we are not evaluating any acquisition... another six months to nine months, it may not be required". Q4: "open to selective bolt-on acquisitions" but "nothing in the pipeline". Q1: "nothing immediately". | Q3 FY26, VS, [page 11]; Q4 FY26, VS, [page 5], [page 7]; Q1 FY27, Kaushik S., [page 19] |
+| m4 | Management declined to give an outlook for the international segment margin. | Q1 FY27, VS, [page 12] |
+| m5 | Management declined to put a size on the InCommon deal. | Q4 FY26, VS, [page 6] |
+| m6 | eSign daily volume: "more than 4 lakh per day" in Q3, then "well over 3 lakh daily" in Q4. No reason given. | Q3 FY26, VS, [page 10]; Q4 FY26, VS, [page 4] |
+| m7 | Q3 said the stock-in-trade drag (about Rs 3 Cr a quarter) would take "another one or two quarters". Neither later call revisits it. | Q3 FY26, VS, [page 12]-[page 13] |
+| m8 | Enterprise growth guidance drifted. Q4: "25% to 30%" for FY27. Q1: Arvind says "about 25%, which we are maintaining", and the 3-year vision says "maybe 20-25% per year". | Q4 FY26, VS, [page 9]; Q1 FY27, Arvind S., [page 14]; VS, [page 21] |
+| m9 | Trust Services guidance drifted. Q4: "This year we estimate 20%". Q1 3-year vision: "Trust Service may grow 15-20%". | Q4 FY26, VS, [page 9]; Q1 FY27, VS, [page 21] |
+| m10 | The AI Cyber Forge acquisition has no separate revenue line ("no separate tracking"), so the acquisition's return cannot be audited. | Q3 FY26, VS, [page 6] |
+| m11 | The Rs 4 Cr B.V. loss was put down to "some legal expenses", which management did not specify. The Chairman first asked for the number ("A loss of how many crores?"). | Q1 FY27, VS, [page 12] |
+| m12 | Asked for the order-book level at nine months, management gave a vague answer: "working in proportion to our growth numbers". Q4 later disclosed the number. | Q3 FY26, VS, [page 13] |
+| m13 | Q4 said the Middle East war delayed orders. In the same answer, management raised the order-book-to-revenue multiple to 2.2-2.3x (from the usual 2x). | Q4 FY26, VS, [page 6] |
+| m14 | Self-graded track record: "last 4-5 years, whatever guidance we have given, we have achieved 100%". | Q4 FY26, VS, [page 9] |
+| m15 | Cryptas quarterly revenue went from about Rs 24 Cr (Q2) to 34 (Q3) to about 27 (Q4, implied by the Rs 85 Cr full year) to 20 (Q1 FY27). Management gives seasonality as the reason. | Q3 FY26, VS, [page 6]; Q4 FY26, VS, [page 12]; Q1 FY27, VS, [page 4], [page 10] |
+| m16 | Token supply is concentrated. ePass is waiting on the CCA, ProxKey is not recertifying, and a third token ("innate") has low capacity. | Q1 FY27, VS, [page 9] |
+| p1 | Peer read-across, collections. NEWGEN reports slower Middle East/EMEA collections, a rising DSO, and India licence revenue down 20-30%. eMudhra (11% MEA, government-heavy) never discusses receivables or collections on any call, and no analyst asks. | NEWGEN May-2026, [page 4], [page 11]; NEWGEN Jul-2026, [page 10] |
+| p2 | Peer read-across, hardware inputs. QUICKHEAL reports "IT hardware... price inflation of up to 400% during 2026". PROTEAN reports geopolitical procurement cost inflation. eMudhra resells hardware tokens and built data centres, but is silent on input costs. | QUICKHEAL May-2026, [page 4]; PROTEAN Aug-2026, [page 5] |
+| p3 | Peer competition. PROTEAN's eSign Pro, which covers the workflow through stamping to signing, targets BFSI directly and calls itself "a unique moat". It overlaps emSigner/eSign. | PROTEAN Aug-2026, Ajay Rajan, [page 6] |
+| p4 | Peer timing. QUICKHEAL already has "several large BFSI customers" on its DPDP product. eMudhra's PrivaTrust is at "pilots, proof of concepts". | QUICKHEAL May-2026, [page 3]; eMudhra Q1 FY27, Kaushik S., [page 6] |
+| p5 | eMudhra says "nobody is achieving more than 25% EBITDA margin". NEWGEN says "we usually have 23% to 25% EBITDA margin for the entire year". This partly contradicts the claim. | eMudhra Q1 FY27, VS, [page 25]; NEWGEN Jul-2026, Tarun Nandwani, [page 5] |
+
+List total: 28 items. 7 material (0 CRITICAL, 7 MAJOR) and 21 MINOR.
 
 ---
 
-## PART 3: PROMISE-DELIVERY SPOT CHECKS (B05 2A)
+## 2. Comparison against the pipeline (B05, B06)
 
-| B05 row | Promise in earlier call? | Outcome in later call? | Verdict |
-|---|---|---|---|
-| 1. FY26 revenue Rs 700 Cr → Rs 713.2 Cr | Yes. Feb-2026 [page 6]: "we will achieve that Rs.700 crores" | Yes. May-2026 [page 3]: "total income of INR7,132 million" | CONFIRMED |
-| 2. FY26 Trust growth 22-25% → 32% | Yes. Feb-2026 [page 10]: "at least 22% to 25% increase" | Yes. May-2026 [page 3]: Trust "up 32%"; CFO Rs 1,400 Mn [page 5] | CONFIRMED (direction). Quality caveat in item 10. |
-| 5. UAE DC commissioning slipped; "no update given at all" in Q4 | Yes. Feb-2026 [page 10]: audit "two months, three months ... Then we can commission" | Partly wrong. May-2026 [page 4] says the UAE data centre is "operating", so Q4 was not silent. What is still pending in Jul is the QTSP licence (Jul-2026 [page 8]), a later milestone. | WRONG (partial). The slip is real, but it sits on the licence and not the DC, and the "silent in Q4" claim is false. |
-| 6. Stock-in-trade drag to normalise in 1-2 quarters; never revisited | Yes. Feb-2026 [page 12-13] | Correct. It is not revisited in May or Jul. | CONFIRMED |
-| 7. FY27 organic 18% → Partial (~15%) | Yes. May-2026 [page 8]: "Most likely 18% organic growth" | Yes. Jul-2026 [page 4]: 28% total, ~13% Cryptas | CONFIRMED. The "management attributes shortfall to Trust decline" line is not in the transcript. |
+| # | Sev | Item | Pipeline status | Where / note |
+|---|---|---|---|---|
+| M1 | MAJOR | Capital MXT personal stake | CAUGHT | B05 4D row 1, 2D, 3C |
+| M2 | MAJOR | Cryptas profit narrative drift | CAUGHT | B05 4D row 2, 2B, 4C |
+| M3 | MAJOR | 3i allegations known since Jan-2024, absent from Q3 call held the day the complaint was filed | **MISSED** | B05 2B credits the 06-Feb call as "raised proactively... within two business days of the allegation". The transcripts support the opposite reading. The allegation was 2 years old, and the special call answered 3i's public disclosure. It did not come first. B05 never mentions the Jan-2024 to Jan-2025 correspondence or the silence on the Q3 call. |
+| M4 | MAJOR | PAT guidance softened while called "unchanged" | CAUGHT | B05 1B, 4D (Medium) |
+| M5 | MAJOR | Q1 margin partly a token-mix artefact | **MISSED** | B05 1C and 4A trigger 1 treat 26.2% as mix-shift evidence ("highest of the three quarters"; confirm = ">25% for 2+ quarters"). B05 never cites management's own statement that low token sales lifted the Q1 margin, or its ~25% sustainable guide. |
+| M6 | MAJOR | Trust Services reversal and pull-forward | CAUGHT | B05 1C, 2A row 2 caveat, 2B |
+| M7 | MAJOR | ROE "can maintain" ~15%, ROCE deflected | CAUGHT | B05 2B, 3C, 4D (Medium) |
+| m1 | MINOR | 3i "no update" vs police statement | CAUGHT | B05 correction MAJOR 3, 4D |
+| m2 | MINOR | Q4 margin dip vs Q3 "continue" | CAUGHT | B05 2A row 3 |
+| m3 | MINOR | Acquisition stance | PARTIALLY CAUGHT (misread) | B05 1C says "Q3 FY26: live consideration, '6-9 months.'" The transcript says "not evaluating any acquisition... may not be required". B05 reverses the meaning, so its "narrowing" trajectory is wrong. The stance went from closed (Q3) to open but empty (Q4) to "nothing immediately" (Q1). |
+| m4 | MINOR | International margin outlook declined | CAUGHT | B05 3C, 4D |
+| m5 | MINOR | InCommon size declined | CAUGHT | B05 3C |
+| m6 | MINOR | eSign 4 lakh to 3 lakh | CAUGHT | B05 1C, 4D |
+| m7 | MINOR | Stock-in-trade not revisited | CAUGHT | B05 2A row 6 |
+| m8 | MINOR | Enterprise growth guide drift | MISSED | B05 1B records 25-30% only |
+| m9 | MINOR | Trust guide drift 20% to 15-20% | PARTIALLY CAUGHT | B05 marks the trigger "Weakening" but does not record the lower guide |
+| m10 | MINOR | AI Cyber Forge untracked | MISSED | B05 3C says "Cryptas / AI Cyber Forge quarterly numbers... Full numbers given". That is wrong for AI Cyber Forge, which management says is not tracked separately. |
+| m11 | MINOR | B.V. loss "legal expenses" unexplained | PARTIALLY CAUGHT | B05 cites the Rs 4 Cr loss, not the unexplained legal cost |
+| m12 | MINOR | Q3 order-book vagueness | MISSED | Not repeated, low weight |
+| m13 | MINOR | ME delays vs raised multiple | CAUGHT | B05 2B |
+| m14 | MINOR | "100%" guidance self-claim | CAUGHT | B05 3C |
+| m15 | MINOR | Cryptas revenue trend down | PARTIALLY CAUGHT | Numbers present, trend not flagged |
+| m16 | MINOR | Token supplier concentration | PARTIALLY CAUGHT | B05 1B has "mostly by September", not the supplier detail |
+| p1 | MINOR | Peer collections/DSO read-across | PARTIALLY CAUGHT | B06 coverage map notes NEWGEN DSO. B05 2D notes WC silence. Neither connects the two. |
+| p2 | MINOR | Peer hardware inflation vs token/DC inputs | PARTIALLY CAUGHT | B06 2B withdrew the link on a false premise (see Section 3, item 2) |
+| p3 | MINOR | PROTEAN eSign Pro | CAUGHT | B06 Q7, 2D |
+| p4 | MINOR | QUICKHEAL DPDP lead | CAUGHT | B06 2D |
+| p5 | MINOR | NEWGEN margin vs "nobody above 25%" | CAUGHT | B06 Q5 (Nov-2025 data; the Jul-2026 annual-range quote also supports it) |
 
-Checked 5, confirmed 4, wrong 1.
+Tally: CAUGHT 16, PARTIALLY CAUGHT 7, MISSED 5.
+Material: 7 found, 5 caught (M1, M2, M4, M6, M7), 2 missed (M3, M5).
 
 ---
 
-## PART 4: CREDIBILITY GRADE
+## 3. Pipeline flags I did not find independently
 
-B05 grades management **B (Good)**. I would grade **lower (B-/C+)**. The B grade rests on a clean FY26 batting average and a "consistent" 3i account. The transcripts show four things that grade does not price in:
-1. Cryptas economics restated in each call (item 3).
-2. A police-statement development presented as "no update", beside an undisclosed-until-asked promoter stake in the complainant (items 4-5).
-3. A PAT guide cut from "27-28%" to "25%" and labelled unchanged (item 1).
-4. Organic growth below the 18% guide in every quarter where a split is given (item 2).
-
-The FY26 quantified promises were met. That part of the B05 basis stands.
-
----
-
-## PART 5: CONSOLIDATED FINDINGS
-
-| Sev | Location | Finding |
+| Pipeline claim | Assessment | Evidence |
 |---|---|---|
-| MAJOR | B05 3C/1C/4A row 2 | MISSED: the Cryptas profitability narrative drifts from "positive Rs 1-1.5 Cr" (Feb) to "break-even" (May) to "not profitable at all" (Jul), with a ~Rs 4 Cr B.V. loss. It is graded "high transparency" instead. |
-| MAJOR | B05 (absent), all reports | MISSED: the Executive Chairman's personal ~5% stake in 3i Infotech, the complainant (Jul-2026 [page 23-24]). |
-| MAJOR | B05 4E/4C | UNDER-WEIGHTED: the 3i matter is rated Low and handling "Good". The Jul call shows a police statement framed as "no update". |
-| MAJOR | B05 4E | UNDER-WEIGHTED: management's "~15% ROE we can maintain" is rated Low. It caps the transition thesis. |
-| MAJOR | B05 4E / 2D | NOT SUPPORTED: "3i SEBI complaint status never addressed". It was addressed in May-2026 [page 7]. |
-| MAJOR | B06 Q8, Part 4, flags | NOT SUPPORTED: the H-1B CONTRADICTED verdict. NEWGEN's statement concerns product businesses and agrees with eMudhra's services-only attribution. The quote is misanchored (Jan-2026 p.15-16, not May-2026 p.10). |
-| MINOR | B05 2A row 7 | PARTIAL: Q3 FY26 organic of 11-12% is omitted, and a Trust-decline attribution is written that the transcript does not contain. |
-| MINOR | B05 3B | PARTIAL: R&D capitalisation (Rs 60-62 Cr) is not tied to the EBITDA and peer-R&D comparison in the concall read. It is carried elsewhere (B02/B04). |
-| MINOR | B05 2A row 5, 1C | Spot check wrong in part: the Q4 call was not silent on the UAE DC ("operating", May [page 4]). The pending item is the QTSP licence. |
-| MINOR | B05 2E | OVERSTATED: the "repeated deflection" rests on a Q3 misunderstanding, not an evasion. |
-| MINOR | B05 1C | OVERSTATED detail: the bolt-on acquisition was raised in Q1 FY27 (KS [page 19]). |
-| MINOR | B06 2B | OVERSTATED: the hardware-inflation hypothesis for stock-in-trade is contradicted by the Jul token explanation. |
-| MINOR | B05 2A row 2 | MISSED: the FY26 Trust beat was partly 10%-margin tokens and partner stocking. |
-| MINOR | B05 | MISSED: eSign daily volume went from ">4 lakh" (Feb) to "well over 3 lakh" (May). |
-| MINOR | B05 | MISSED: IAM "not taken to the US", which weakens the US cross-sell narrative. |
-| MINOR | B06 | MISSED: QUICKHEAL was a year ahead on DPDP consent-management wins, and PrivaTrust slipped. |
-| MINOR | B06 2D/Q7 | MISSED: PROTEAN eSign Pro competes directly in BFSI eSign/eStamp workflows. |
-| MINOR | B06 Q5 | MISSED: NEWGEN's ~20% PAT margin partly contradicts VS's "nobody above 16% PAT" claim (VS scoped it to cybersecurity). |
-| MINOR | B05 2A row 3 | MISSED: the adjusted-EBITDA framing and the unprobed Q4 margin dip to 22.4%. |
+| B05 2A row 5 and 4D: "UAE QTSP licence slippage", promise marked MISSED | OVERSTATED | The Q3 promise concerned the UAE data centre: a 2-3 month audit, "Then we can commission" (Q3, VS, [page 9]-[page 10]). Q4 says the data centres are "operating in the United States, Europe and the UAE and India" (Q4, VS, [page 4]). The QTSP licence date first appears in Q1 (Arvind S., [page 8]) and is not yet due. B05 ties the Q3 DC promise to the Q1 licence by inference. The earlier call contains no licence promise. |
+| B06 2B correction and flag: "eMudhra's own Jul-2026 call attributes the stock-in-trade item to DSC-token partner stocking and a FIPS-140-3 recertification transition" | NOT SUPPORTED | The Q1 FY27 transcript never mentions stock-in-trade or the Q3 "stock issue". It discusses token sales volume and token gross margin ([page 10]). B05 2A row 6 states the item was "never revisited in Q4 FY26 or Q1 FY27 calls". B05 and B06 now contradict each other on the same item. The link may be true, since tokens are resold stock. But it is an inference stated as the call's own attribution. It was also used to withdraw the hardware-inflation hypothesis, even though tokens are hardware. |
+| B05 2A row 7: "management attributes the shortfall to the temporary Trust Services decline" | OVERSTATED (weak) | Q1 management names the Trust decline in its opening, [page 4]. On guidance it says only "little bit here and there it will adjust" ([page 12]). It does not explicitly tie the organic gap to the Trust decline. |
+| B05 4D: "EOW closed the complaint as civil, not criminal" | SUPPORTED | Reg 30 letter 18-Aug-2026, lines 30-34 |
+| B05 2D: "Rs 128 Cr+ alleged" | SUPPORTED | Reg 30 letter 04-Feb-2026, [page 1] |
+| B05 4D: no customer-concentration disclosure | SUPPORTED (absence) | None of the three calls discloses it |
+| B06 2E: eMudhra never raises AI-driven deferral for its enterprise pipeline | SUPPORTED as scoped | eMudhra blames "AI" only for US services stagnation (Q3, [page 6], [page 8]) |
+| B06 Q8 (corrected): H-1B claim is services-scoped | SUPPORTED | Q3 FY26, VS, [page 6] |
 
-Counts: CRITICAL 0, MAJOR 6, MINOR 13.
+---
 
-Acceptance basis. There are 8 material items (MAJOR) in my independent list. Of those, the pipeline had 6: CAUGHT 2 (items 1, 6) and PARTIALLY CAUGHT 4 (items 2, 4, 7, 8). It MISSED 2 (items 3, 5). Acceptance rate 6/8 = 75%. Under the strict CAUGHT-only reading it is 2/8 = 25%. The orchestrator should read the 75% together with the four under-weightings above.
+## 4. Promise-delivery spot checks
 
+| B05 row | Promise in earlier call? | Outcome in later call? | Result |
+|---|---|---|---|
+| 1. FY26 Rs 700 Cr | Yes, Q3 [page 6]: "we will achieve that Rs.700 crores" | Yes, Q4 [page 3]: total income INR 7,132 Mn | CONFIRMED |
+| 2. FY26 Trust 22-25% | Yes, Q3 [page 10]: "INR 120 crores or INR 122 crores... 22% to 25%" | Yes, Q4 [page 3]: "up 32%"; CFO [page 5] Rs 1,400 Mn | CONFIRMED |
+| 5. UAE DC commissioning, marked MISSED | Promise was DC audit and commissioning, not the QTSP licence | Q4 [page 4] reports the UAE DC "operating" | WRONG (direction not supported as stated; see Section 3) |
+| 6. Stock-in-trade to normalise | Yes, Q3 [page 12]-[page 13] | Neither later call revisits it | CONFIRMED |
+| 7. FY27 organic 18%, Q1 ~15% | Yes, Q4 [page 8] | Yes, Q1 [page 4]: 28% total, ~13% Cryptas | CONFIRMED |
+| 8. FY27 PAT 25-30% | Yes, Q4 [page 8] | Yes, Q1 [page 5]: PAT +27.9% | CONFIRMED |
+
+Checked 6, confirmed 5, wrong 1.
+
+---
+
+## 5. Credibility grade
+
+B05 grades management C (Mixed), revised down from B. I concur. Two items
+this audit adds point the same way. First, the 3i allegations were known for
+two years and stayed off the earnings calls, including the Q3 call on the
+day the complaint was filed. Second, management's own admission that token
+mix inflated the Q1 margin sits beside a "guidance unchanged" line that in
+fact trimmed the PAT band. The positives hold: the Rs 700 Cr and Trust
+guides were met and beaten, Q1 PAT landed inside the band, and segment
+disclosure is granular. These keep the grade above D.
+
+---
+
+## 6. Consolidated findings
+
+| Severity | Location | Finding |
+|---|---|---|
+| MAJOR | B05 2B, 2D, 4C "Governance/legal handling" | MISSED: the 3i allegations date from Jan-2024 (letters Jan-2024 and Sep-2024, company reply Jan-2025), yet no earnings call mentions them. The Q3 FY26 call on 03-Feb-2026, the day the EOW complaint was filed, is silent. B05 calls the response "proactive". It was reactive to 3i's 04-Feb disclosure. Anchors: 3i special call [page 6]; Reg 30 04-Feb-2026 [page 1]. |
+| MAJOR | B05 1C, 4A trigger 1 | MISSED: management says low-margin token sales falling helped lift the Q1 FY27 margin to 26.2%, and guides to ~25% sustainable (Q1, VS, [page 20]; token GM ~10%, [page 10]). B05 treats 26.2% as clean mix-shift evidence. This matters for the 26.2 margin bridge: part of the Q1 print reverses when token volume returns after September. |
+| MINOR | B05 1C, "Bolt-on AI-cybersecurity acquisition" | Misread: Q3 said "not evaluating any acquisition... may not be required" (Q3, VS, [page 11]). B05 records this as "live consideration", which reverses the trajectory. |
+| MINOR | B05 2A row 5, 4D "UAE QTSP licence slippage" | OVERSTATED: the Q3 promise was DC commissioning, and Q4 reports the DC operating (Q4 [page 4]). The licence date first appears in Q1. |
+| MINOR | B06 2B correction, flags, industry_cross_read.pricing_inputs | NOT SUPPORTED attribution: the Q1 FY27 call never mentions the stock-in-trade item. B06 contradicts B05 2A row 6. Using this premise to withdraw the hardware-inflation read-across is unsound, because tokens are hardware. |
+| MINOR | B05 1B | MISSED guidance drift: Enterprise 25-30% (Q4 [page 9]) became "about 25%" and "20-25% per year" (Q1 [page 14], [page 21]). Trust 20% (Q4 [page 9]) became "15-20%" (Q1 [page 21]). |
+| MINOR | B05 3C, Cryptas / AI Cyber Forge row | OVERSTATED "Full numbers given": AI Cyber Forge revenue is "not separately" tracked (Q3 [page 6]), so that acquisition cannot be audited. |
+| MINOR | B05 2A row 7 | Weak: the claim that management attributed the organic shortfall to the Trust decline is not stated explicitly (Q1 [page 12]). |
+| MINOR | B05 2D, B06 2A | Peer read-across not connected: NEWGEN reports ME/EMEA collection slowdown and DSO pressure (May-2026 [page 4], [page 11]). eMudhra is silent on receivables and has MEA and government exposure. Carry to stage 3 working-capital checks. |
+
+---
+
+## 7. Coverage basis
+
+28 items on my independent list. 7 are material (0 CRITICAL, 7 MAJOR), and
+the pipeline caught 5 of them. The material count is 4 or more, so
+acceptance_rate is computed: 5 / 7 = 71.4%, reported as 71.
+
+```yaml
 stage: B12b
 company: "EMUDHRA"
 run_date: "2026-09-19"
 model: "claude-opus-5"
 status: complete
-independent_flags_found: 23
-caught: 9
-partially_caught: 5
+independent_flags_found: 28
+caught: 16
+partially_caught: 7
 missed:
-  - {severity: "MAJOR", item: "Cryptas profitability narrative drifts: 'positive Rs 1-1.5 Cr' (Q3) -> 'break-even' (Q4) -> 'not profitable at all' (Q1 FY27); ~Rs 4 Cr B.V. subsidiary loss; B05 grades Cryptas disclosure high-transparency", anchor: "Feb-2026 VS [page 6-8]; May-2026 VS [page 12]; Jul-2026 VS [page 11-12]"}
-  - {severity: "MAJOR", item: "Executive Chairman holds a personal ~5% stake in 3i Infotech, the complainant against him ('That is related to my personal investment')", anchor: "Jul-2026 Sanjyot Khare / VS [page 23-24]"}
-  - {severity: "MINOR", item: "FY26 Trust Services beat partly low-margin (~10% GM) token sales and partner stocking", anchor: "May-2026 VS [page 11]; Jul-2026 VS [page 10]"}
-  - {severity: "MINOR", item: "eSign daily volume stated >4 lakh (Feb) then 'well over 3 lakh' (May), unexplained", anchor: "Feb-2026 VS [page 10]; May-2026 VS [page 4]"}
-  - {severity: "MINOR", item: "IAM not taken to the US ('not part of the full plan'), thins the US cross-sell narrative", anchor: "May-2026 KS [page 11]"}
-  - {severity: "MINOR", item: "PrivaTrust slipped from 'live environments' (Feb) to 'pilots, POCs' (Jul) while QUICKHEAL already had BFSI DPDP consent wins", anchor: "Feb-2026 [page 5]; Jul-2026 KS [page 6]; QUICKHEAL Aug-2025 [page 9]; QUICKHEAL May-2026 [page 3]"}
-  - {severity: "MINOR", item: "PROTEAN eSign Pro competes directly in BFSI eSign/eStamp workflow; B06 called PROTEAN structurally distinct", anchor: "PROTEAN Aug-2026 [page 6]; PROTEAN May-2026 [page 15]"}
-  - {severity: "MINOR", item: "Chairman's 'nobody above 25% EBITDA / 16% PAT' claim partly contradicted by NEWGEN (~20% PAT margin, 25.3% FY25 EBITDA)", anchor: "Jul-2026 VS [page 25]; NEWGEN Nov-2025 lines 160, 426; NEWGEN May-2026 lines 199-200"}
-  - {severity: "MINOR", item: "Adjusted-EBITDA recasting (23.1% -> 25.8%) and unprobed Q4 FY26 margin dip to 22.4%", anchor: "Feb-2026 VS [page 7]; May-2026 CFO [page 5]"}
+  - {severity: "MAJOR", item: "3i Infotech allegations known since Jan-2024 (letters Jan-2024, Sep-2024; reply Jan-2025) never raised on any earnings call; Q3 FY26 call on 03-Feb-2026, the day the EOW complaint was filed, silent; B05 frames the 06-Feb special call as proactive when it was reactive to 3i's 04-Feb disclosure", anchor: "3i special call 06-Feb-2026 [page 6]; Reg 30 letter 04-Feb-2026 [page 1]; Q3 FY26 transcript (no mention)"}
+  - {severity: "MAJOR", item: "Q1 FY27 EBITDA margin 26.2% partly a mix artefact of temporarily lower low-margin token sales, per management; sustainable guide ~25%; B05 treats 26.2% as clean mix-shift evidence", anchor: "Q1 FY27, V. Srinivasan, [page 20]; token GM ~10%, [page 10]"}
+  - {severity: "MINOR", item: "Enterprise growth guide drift 25-30% (Q4) to 'about 25%' / '20-25% per year' (Q1)", anchor: "Q4 FY26 VS [page 9]; Q1 FY27 Arvind S. [page 14], VS [page 21]"}
+  - {severity: "MINOR", item: "AI Cyber Forge revenue not separately tracked; acquisition return unauditable; B05 says 'full numbers given'", anchor: "Q3 FY26 VS [page 6]"}
+  - {severity: "MINOR", item: "Q3 order-book question answered vaguely ('working in proportion to our growth numbers'); disclosed in Q4", anchor: "Q3 FY26 VS [page 13]"}
 pipeline_flags_not_supported:
-  - "B05 4E/2D: 3i Infotech SEBI complaint status 'never addressed on any earnings call' (addressed May-2026 VS [page 7])"
-  - "B06 Q8 CONTRADICTED (H-1B): NEWGEN's statement is about product businesses and agrees with eMudhra's services-only attribution; quote misanchored (NEWGEN Jan-2026 [page 16], not May-2026 p.10)"
-promise_delivery_spot_checks: {checked: 5, confirmed: 4, wrong: 1}
-credibility_grade_concur: "lower: B is too generous given Cryptas economics restated each call, 3i police development framed as 'no update' plus undisclosed promoter stake in the complainant, PAT guide cut 27-28% to 25% called unchanged, organic below 18% guide in every disclosed quarter"
+  - "B06 2B correction/flags: 'eMudhra's own Jul-2026 call attributes the stock-in-trade item to DSC-token partner stocking and a FIPS-140-3 transition' - the Q1 FY27 transcript never mentions stock-in-trade; contradicts B05 2A row 6 ('never revisited')"
+promise_delivery_spot_checks: {checked: 6, confirmed: 5, wrong: 1}
+credibility_grade_concur: "concur - C (Mixed) holds; the 2-year undisclosed 3i dispute and the token-flattered Q1 margin beside a trimmed-but-'unchanged' PAT guide weigh down, the met FY26 Rs 700 Cr and Trust guides keep it above D"
 findings:
-  - {severity: "MAJOR", location: "B05 3C/1C/4A", finding: "MISSED Cryptas profitability narrative drift and B.V. loss"}
-  - {severity: "MAJOR", location: "B05 and all reports", finding: "MISSED promoter personal ~5% stake in 3i Infotech"}
-  - {severity: "MAJOR", location: "B05 4E/4C", finding: "UNDER-WEIGHTED 3i matter (Low, handling Good) despite Jul police statement framed as 'no update'"}
-  - {severity: "MAJOR", location: "B05 4E", finding: "UNDER-WEIGHTED management's ~15% ROE 'we can maintain' admission, thesis-capping"}
-  - {severity: "MAJOR", location: "B05 4E/2D", finding: "NOT SUPPORTED: SEBI complaint status was addressed in Q4 call"}
-  - {severity: "MAJOR", location: "B06 Q8 / Part 4 / flags", finding: "NOT SUPPORTED: H-1B CONTRADICTED verdict; misanchored quote"}
-  - {severity: "MINOR", location: "B05 2A row 7", finding: "Q3 FY26 organic 11-12% omitted; Trust-decline attribution not in transcript"}
-  - {severity: "MINOR", location: "B05 3B", finding: "R&D capitalisation not tied to EBITDA/peer R&D comparison in concall read (carried in B02/B04)"}
-  - {severity: "MINOR", location: "B05 2A row 5 / 1C", finding: "Spot check partly wrong: Q4 not silent, UAE DC stated 'operating'; pending item is QTSP licence"}
-  - {severity: "MINOR", location: "B05 2E", finding: "OVERSTATED repeated deflection; Q3 was a misunderstanding answered with data"}
-  - {severity: "MINOR", location: "B05 1C", finding: "OVERSTATED detail: bolt-on acquisition was raised in Q1 FY27 (KS [page 19])"}
-  - {severity: "MINOR", location: "B06 2B", finding: "OVERSTATED hardware-inflation hypothesis for stock-in-trade"}
-  - {severity: "MINOR", location: "B05 2A row 2", finding: "MISSED Trust beat quality (tokens, partner stocking)"}
-  - {severity: "MINOR", location: "B05", finding: "MISSED eSign volume drift 4 lakh to 3 lakh/day"}
-  - {severity: "MINOR", location: "B05", finding: "MISSED IAM not taken to US"}
-  - {severity: "MINOR", location: "B06", finding: "MISSED QUICKHEAL DPDP lead vs PrivaTrust slip"}
-  - {severity: "MINOR", location: "B06 2D/Q7", finding: "MISSED PROTEAN eSign Pro direct competition"}
-  - {severity: "MINOR", location: "B06 Q5", finding: "MISSED NEWGEN margin partial contradiction of chairman peer-margin claim"}
-  - {severity: "MINOR", location: "B05 2A row 3", finding: "MISSED adjusted-EBITDA framing and Q4 margin dip"}
+  - {severity: "MAJOR", location: "B05 2B, 2D, 4C governance row", finding: "MISSED 3i non-disclosure: allegations known since Jan-2024, silent on Q3 FY26 call held 03-Feb-2026 (complaint filing date); 'proactive' framing wrong", anchor: "3i special call [page 6]; Reg 30 04-Feb-2026 [page 1]"}
+  - {severity: "MAJOR", location: "B05 1C, 4A trigger 1", finding: "MISSED: Q1 FY27 26.2% EBITDA margin partly lifted by lower low-margin token sales per management; guide ~25%; affects margin-bridge evidence", anchor: "Q1 FY27 VS [page 20], [page 10]"}
+  - {severity: "MINOR", location: "B05 1C bolt-on acquisition", finding: "Q3 stance misread as 'live consideration'; transcript says 'not evaluating any acquisition... may not be required'", anchor: "Q3 FY26 VS [page 11]"}
+  - {severity: "MINOR", location: "B05 2A row 5, 4D", finding: "UAE promise OVERSTATED as missed: Q3 promise was DC commissioning, Q4 reports DC operating; QTSP licence first timed in Q1", anchor: "Q3 [page 9]-[page 10]; Q4 [page 4]; Q1 [page 8]"}
+  - {severity: "MINOR", location: "B06 2B, flags, pricing_inputs", finding: "NOT SUPPORTED attribution of stock-in-trade item to Jul-2026 call; B05/B06 contradict; hardware-inflation read-across withdrawn on an unsound premise", anchor: "Q1 FY27 [page 10]; Q3 FY26 [page 12]-[page 13]"}
+  - {severity: "MINOR", location: "B05 1B", finding: "Guidance drift not recorded: Enterprise 25-30% to 20-25%; Trust 20% to 15-20%", anchor: "Q4 [page 9]; Q1 [page 14], [page 21]"}
+  - {severity: "MINOR", location: "B05 3C", finding: "'Full numbers given' overstated; AI Cyber Forge revenue untracked", anchor: "Q3 FY26 [page 6]"}
+  - {severity: "MINOR", location: "B05 2A row 7", finding: "Attribution of organic shortfall to Trust decline not stated explicitly by management", anchor: "Q1 FY27 [page 12]"}
+  - {severity: "MINOR", location: "B05 2D, B06 2A", finding: "NEWGEN ME/EMEA collections slowdown and DSO pressure not connected to eMudhra's receivables silence", anchor: "NEWGEN May-2026 [page 4], [page 11]"}
 critical_count: 0
-major_count: 6
-minor_count: 13
-material_found: 8
-material_caught: 6
-acceptance_rate: 75
-coverage_basis: "23 independent items listed, 8 material (all MAJOR, 0 CRITICAL); pipeline had 6 of 8 (2 CAUGHT, 4 PARTIALLY CAUGHT), missed 2; CAUGHT-only rate would be 25%. Main transcripts read in full; peers read on claim-relevant passages plus keyword search"
+major_count: 2
+minor_count: 7
+material_found: 7
+material_caught: 5
+acceptance_rate: 71
+coverage_basis: "7 material (0 CRITICAL, 7 MAJOR) of 28 listed; 5 material caught (M1 Capital MXT, M2 Cryptas drift, M4 PAT guide, M6 Trust reversal, M7 ROE); 2 material missed (3i non-disclosure, token-flattered Q1 margin)"
+```

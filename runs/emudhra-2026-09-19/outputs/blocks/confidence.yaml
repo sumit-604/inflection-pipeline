@@ -1,0 +1,24 @@
+stage: confidence-delta
+company: EMUDHRA
+run_date: '2026-09-19'
+phase: 1
+basis: 'Round-2 verifier blocks (B12b, B12c, B12d re-run on corrected B01/B05/B06/B07); B12a round 1 (no numbers changed that it audited except B01 FCF/WC items, which B12c round 2 re-audited). Round-1 copies kept as *-r1.'
+confidence_delta:
+  numerical_acceptance: 100      # B12a: 27/27 material figures matched; 0 CRITICAL, 0 MAJOR
+  redflag_coverage: 71           # B12b r2: 5 of 7 MATERIAL (MAJOR) caught incl. partials; material_found 7 >= 4
+  framework_adherence: 89.4      # B12c r2 phase-1 scope: 59 of 66 rules (Gate 0 42, EM 24); valuation half PENDING PHASE 3
+  peer_utilisation: 91.7         # B12d r2: 11 of 12 peer-quarters SUBSTANTIVE (PROTEAN Dec-2025 business-update call CITED-ONLY)
+  overall: 71
+  overall_set_by: redflag_coverage
+  not_applicable: []
+  pending_phase3: ['framework_adherence valuation half (B10, B11)']
+band: '60-74: PROCEED verdicts downgrade one level (orchestrator Section 5)'
+verifier_a_identity_check: 'B12a has no CRITICAL rows; nothing to strike.'
+rework_trigger: 'none: Verifier A has no CRITICAL; every acceptance_rate >= 60 (A 100, B 71, C 89.4, D 83).'
+residual_findings_carried:
+- 'B12b MAJOR: 3i Infotech allegations known since Jan-2024, never raised on an earnings call; Q3 FY26 call silent on the complaint filing day; special call reactive, not proactive.'
+- 'B12b MAJOR: Q1 FY27 EBITDA margin 26.2% partly lifted by lower low-margin token sales; management guides ~25% sustainable.'
+- 'B12b MINOR: B06 attributes the stock-in-trade item to the Jul-2026 call; transcript does not; B05/B06 contradict on this item.'
+- 'B12c MAJOR: Gate 0 B4 window. Filed GOOD+ (core 74, B4 on FY25-FY26); verifier recomputes GOOD (core 69, B4 N/A for missing FY19 payables). Operator ruling on the Block B window convention decides.'
+- 'B12c MINOR: em_score 21.1 on C2 tier fix (filed 22.1); band MODEST either way.'
+- 'B12d MAJOR: NEWGEN Q4FY26 Middle East quote cited p.8, sits on p.9.'

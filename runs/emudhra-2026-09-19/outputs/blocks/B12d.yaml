@@ -4,18 +4,15 @@ run_date: "2026-09-19"
 model: claude-sonnet-5
 status: complete
 peers_audited: 12
-substantive_confirmed: 9
-substantive_unsupported:
-  - "NEWGEN (Q4FY26/May-2026 entry — H-1B quote cited at p.10 does not exist in this transcript; true source is Q3FY26/Jan-2026, p.16)"
-  - "PROTEAN (Q1FY27/Aug-2026 entry — 'decision-making...war and supply chain' quote cited at p.11 does not exist in this transcript; true source is Q4FY26/May-2026, p.13)"
+substantive_confirmed: 11
+substantive_unsupported: []
 unused_but_relevant: []
 claims_all_addressed: true
 verdict_discipline_fails: []
 findings:
-  - {severity: "MAJOR", location: "B06 Q8 verdict / Part 4 / YAML contradicted.quote_anchor", claimed_anchor: "NEWGEN Q4FY26 call (May-2026), p.10", actual_location: "NEWGEN Q3FY26 call (Jan-2026), p.16", note: "Quote genuine and accurately transcribed, wrong call and page cited; feeds the report's single highest-stakes finding"}
-  - {severity: "MAJOR", location: "B06 Q6 verdict / Part 2A", claimed_anchor: "PROTEAN Q1FY27 (Aug-2026 call), p.11", actual_location: "PROTEAN Q4FY26 call (May-2026), p.13", note: "Quote genuine, wrong call and page; feeds the report's self-described strongest independent triangulation"}
-  - {severity: "MAJOR", location: "B06 Q5 verdict", claimed_anchor: "PROTEAN Q1FY27, Aug-2026 call, p.4", actual_location: "PROTEAN Q1FY27, Aug-2026 call, p.11", note: "Same call, wrong page; the 18.7%-vs-10% comparison sits in the CFO's detailed remarks (p.11), not the opening remarks (p.4) where only the standalone 10% figure appears"}
+  - {severity: "MAJOR", location: "06-peers.md Q6 verdict text, Part 2A, Part 3 peer coverage map row, YAML flags entry (4 locations)", claimed: "NEWGEN Q4FY26 (May-2026) 'serious impact last quarter' Middle East quote cited at p.8", source_truth: "Quote confirmed present in transcript, but sits after the [page 9] marker (line 382), not [page 8]; verified by direct line-by-line read-back", note: "Anchor off by one page on the report's own stated single strongest independent corroboration; quote itself is genuine and the finding is unaffected once the page is corrected"}
+  - {severity: "MINOR", location: "06-peers.md Part 2 and Part 2D text, cited '(p.9, 2D)'", claimed: "QUICKHEAL Q1FY26 (Aug-2025) tier-1 BFSI DPDP quote 'we have won large BFSI deal in this quarter... it's a tier one insurance Company' cited as a single page-9 quote", source_truth: "Quote is a genuine two-part splice: 'we have won large BFSI deal in this quarter' sits on p.5 (line 191), 'It's a tier one insurance Company' sits on p.9 (line 388), same deal discussed twice four pages apart in the call", note: "Split not disclosed, unlike the comparable PROTEAN EBITDA split-anchor elsewhere in the same report which does name both pages; underlying finding is sound"}
 critical_count: 0
-major_count: 3
-minor_count: 0
+major_count: 1
+minor_count: 1
 acceptance_rate: 83

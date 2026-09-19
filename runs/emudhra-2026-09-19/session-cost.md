@@ -26,3 +26,6 @@ Run: runs/emudhra-2026-09-19 | Phase 1 executed 2026-09-19 via /step1
 | 7 | emerging moat (Verifier C correction) | sonnet | agent default | - | - | 317236 | 7m05s | 2 |
 | 5 | concall (Verifier B correction) | sonnet | agent default | - | - | 208696 | 7m48s | 2 |
 | 7 | emerging moat (combined-label update) | sonnet | agent default | - | - | 395434 | 12m25s | 3 |
+| 12b | verifier B (round 2) | opus | agent default | - | - | 245149 | 5m59s | 2 |
+| 12c | verifier C (round 2, phase 1 scope) | opus | agent default | - | - | 134246 | 4m39s | 2 |
+| 12d | verifier D (round 2) | sonnet | agent default | - | - | 138399 | 6m23s | 2 |

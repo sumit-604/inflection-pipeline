@@ -1,0 +1,47 @@
+stage: B12b
+company: "GOODLUCK"
+run_date: "2026-09-19"
+model: "claude-opus-5"
+status: complete
+independent_flags_found: 28
+caught: 12
+partially_caught: 6
+missed:
+  - {severity: "CRITICAL", item: "Order book never quantified across 4 calls; horizon claims contradict (no order book / 8 months / 1 year / 2 years); only Rs 307 Cr disclosed vs Rs 300-350 Cr FY27 defence guide", anchor: "NOV25 [page 15],[page 17]; FEB26 [page 4],[page 5]; JUN26 [page 16],[page 18]; AUG26 [page 7],[page 20]-[page 21]"}
+  - {severity: "MAJOR", item: "Debt Rs 1,000 Cr (WC 800 + TL 200) and inventory build (production +11% vs sales ~+5%) vs Chairman's 'disciplined working capital... strengthen the balance sheet' in the same call; vs Nov 'we are at 160'", anchor: "NOV25 [page 14]; JUN26 [page 4],[page 11],[page 16],[page 20]-[page 22]"}
+  - {severity: "MAJOR", item: "Chairman 'no margin impact' vs Q1 FY27 standalone EBITDA margin 9.17% vs 9.74% (-57 bps, calc) masked by consolidated 'above 10%' framing; peers report gas cost doubled", anchor: "JUN26 [page 8]-[page 9]; AUG26 [page 3],[page 6]; HITECH-Concall_Aug_2026 [page 6]"}
+  - {severity: "MINOR", item: "Solar base contradiction: 'running at almost Rs 250 Cr' (Nov) vs 'this year Rs 400 Cr, 2 years back Rs 250 Cr' (Feb)", anchor: "NOV25 [page 18]; FEB26 [page 15]"}
+  - {severity: "MINOR", item: "Dividend paid while borrowing for capex; defensive reply", anchor: "FEB26 [page 10]-[page 11]"}
+  - {severity: "MINOR", item: "Other-expense 14% to 16% question deflected to total cost ratio", anchor: "FEB26 [page 12]-[page 13]"}
+  - {severity: "MINOR", item: "Q2 FY26 EPS Rs 11.95 vs Rs 13.80 while PAT +19.43%; H1 PAT Rs 81.44 Cr vs Rs 82.54 Cr read as 'increased'; cause NOT FOUND", anchor: "NOV25 [page 7]"}
+  - {severity: "MINOR", item: "Standalone utilisation 92-98% vs 15-20% guide; 40-45k t add slipping from '9-12 months' to 'next 6 months'", anchor: "FEB26 [page 10]; JUN26 [page 8]; AUG26 [page 3],[page 18],[page 20]"}
+  - {severity: "MINOR", item: "Conduit pipe margin drift: Chairman ~15%, CEO 15-25%, use 15-20%", anchor: "JUN26 [page 14],[page 20]"}
+  - {severity: "MINOR", item: "Gross margin 27-28% to ~33% called sustainable, no reason given", anchor: "JUN26 [page 13]"}
+pipeline_flags_not_supported:
+  - "B06 2E / risks_peers_raise premise 'Goodluck claims ~53% export revenue share': AUG26 [page 13] '53%' answers a question on export GROWTH; the CBAM-silence flag itself stands (MINOR)"
+promise_delivery_spot_checks: {checked: 5, confirmed: 4, wrong: 1}
+credibility_grade_concur: "concur (D); missed items C2 (order book), C1 (CEO/CFO contradiction on defence intercompany) and M9 (balance-sheet script vs Rs 1,000 Cr debt) place it at the bottom of D, not higher"
+findings:
+  - {severity: "CRITICAL", location: "B05 repeated_evasions / red_flags", claimed: "two cross-quarter evasion patterns only", source_truth: "order book quantification dodged in all 4 calls with contradicting horizons", note: "MISSED repeated evasion"}
+  - {severity: "MAJOR", location: "B05 2A row 3 / YAML promise_delivery", claimed: "Defence EBITDA 30-35% DELIVERED, 38-70%", source_truth: "FY26 Rs 46/29 Cr unreconciled to consol-minus-standalone ~Rs 33/23 Cr; mgmt calls it non-sustaining; only Q1 FY27 (38%) clean", note: "misclassified; CEO 'No' vs CFO 'Yes' on intercompany material not captured (JUN26 [page 19]-[page 20])"}
+  - {severity: "MAJOR", location: "B05 dropped_triggers / 2C", claimed: "per-shell pricing declined Q2 FY26 and never revisited", source_truth: "refused again FEB26 [page 14], JUN26 [page 10], AUG26 [page 19]", note: "4-quarter repeated evasion under-weighted, absent from repeated_evasions"}
+  - {severity: "MAJOR", location: "B05 1B net debt row", claimed: "data row only", source_truth: "Rs 1,000 Cr debt, inventory build, Chairman script contradiction", note: "MISSED"}
+  - {severity: "MAJOR", location: "B05/B06 margin commentary", claimed: "not tested", source_truth: "standalone margin -57 bps Q1 FY27 vs 'no margin impact'", note: "MISSED"}
+  - {severity: "MAJOR", location: "B05 3D / trigger table", claimed: "Goodluck Astra and Green Energy merger as open items", source_truth: "related entities outside listed co, valuation withheld, deflected; Balu keeps energetics inside listed group", note: "under-weighted, not a red flag"}
+  - {severity: "MAJOR", location: "B06 Part 4 net read", claimed: "external-blame excuses were industry-wide conditions", source_truth: "HITECH Q4 FY26 volume +27%; Goodluck standalone Q4 revenue -3.9%", note: "peer evidence read in the wrong direction on the revenue miss"}
+  - {severity: "MINOR", location: "B06 Q6", claimed: "Balu multi-year 2021-2025 build contradicts 'within one year'", source_truth: "BALUFORGE [page 6]: foundation 2023, shell line 2024/2025", note: "OVERSTATED"}
+  - {severity: "MINOR", location: "B05 4D promoter sale", claimed: "never mentioned in any of 4 transcripts", source_truth: "3 of 4 calls predate 29-Jun-2026", note: "OVERSTATED"}
+  - {severity: "MINOR", location: "B05 red_flags GDAL", claimed: "~9x forward EBITDA", source_truth: "15.0x-20.5x on mgmt FY27 guide (Rs 1,841 Cr / Rs 90-123 Cr, calc)", note: "OVERSTATED multiple; governance core stands"}
+  - {severity: "MINOR", location: "B05 credibility_basis", claimed: "~2-year slip", source_truth: "~10-17 months vs NOV25 guide", note: "OVERSTATED"}
+  - {severity: "MINOR", location: "B05 1B / 2A row 7", claimed: "standalone capex guide Rs 250 Cr", source_truth: "consolidated guide (JUN26 [page 19])", note: "basis mislabel"}
+  - {severity: "MINOR", location: "B06 Q6 / Q5", claimed: "Balu 360k line used as timeline benchmark only", source_truth: "360k line is competing supply against the scarcity-pricing claim", note: "PARTIALLY CAUGHT"}
+  - {severity: "MINOR", location: "B06 2E", claimed: "~53% export revenue share", source_truth: "53% is export growth (AUG26 [page 13])", note: "premise not supported"}
+  - {severity: "MINOR", location: "B05 4D IR flag", claimed: "IR redirection LOW", source_truth: "analysts publicly request clear answers JUN26 [page 20],[page 21]", note: "PARTIALLY CAUGHT"}
+  - {severity: "MINOR", location: "B05 (absent)", claimed: "", source_truth: "solar base contradiction; dividend defensiveness; other-expense deflection; EPS/PAT wording; standalone capacity ceiling; conduit margin drift; gross margin jump", note: "7 MISSED minor items, see report Section 6"}
+critical_count: 1
+major_count: 6
+minor_count: 15
+material_found: 15
+material_caught: 12
+acceptance_rate: 80
+coverage_basis: "15 material (4 CRITICAL + 11 MAJOR) of 28 listed; 7 CAUGHT + 5 PARTIALLY CAUGHT = 12 counted as caught (80%); strict CAUGHT-only rate 7/15 = 46.7% disclosed for orchestrator ruling; corpus 12 docs (4 main + 8 peer transcripts + 1 presentation), RATNAMANI Nov-2024 and May-2025 keyword-scanned only"

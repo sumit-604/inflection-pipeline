@@ -1,0 +1,17 @@
+stage: confidence
+company: GOODLUCK
+run_date: "2026-09-19"
+phase: 1
+confidence_delta:
+  numerical_acceptance: 95.4     # B12a re-run (coverage addendum): 62 clean of 65 checked; 0 findings
+  redflag_coverage: 80           # B12b: 12 of 15 material (7 caught + 5 partially caught). Orchestrator ruling: PARTIALLY CAUGHT counts as caught per rubric rule 3 (found but under-weighted) and precedent (VOEPL partial credit). Strict caught-only rate 7/15 = 46.7% disclosed. B12b carries 1 CRITICAL (missed repeated evasion: order book never quantified across 4 calls) and 6 MAJOR; they bind through their own severity as contradicted claims and monitorables, not through REWORK (REWORK triggers only on a Verifier A CRITICAL or an applicable rate below 60).
+  framework_adherence: 87.0      # B12c phase-1 portion only (Gate 0 + EM): 47 of 54 rules pass; valuation half pending phase 3
+  peer_utilisation: 77.8         # B06/B12d: 7 of 9 peer documents SUBSTANTIVE (2 RATNAMANI FY25 transcripts CITED-ONLY); B12d acceptance 89
+  overall: 77.8
+  overall_set_by: peer_utilisation
+  band: "75-89 normal; note specifics"
+  not_applicable: []
+  pending_phase_3: ["framework_adherence valuation half (B10/B11)"]
+verifier_a_identity_check: "0 CRITICAL rows; nothing to strike"
+verifier_a_reinvocation: "first pass (56 numbers, 100%) was stage-1 weighted and listed an ANCHOR NOT FOUND row outside findings[]; re-invoked once with the coverage addendum; second pass governs"
+disagreements: none

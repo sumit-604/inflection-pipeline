@@ -1,0 +1,19 @@
+stage: B12d
+company: "GOODLUCK"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+peers_audited: 9
+substantive_confirmed: 7
+substantive_unsupported: []
+unused_but_relevant: []
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "MAJOR", location: "B06 Part 1 Q5 (BALUFORGE margin proxy)", claimed: "27.0% FY26 / 27.2% FY25 EBITDA margin cited at BALUFORGE-Investor_Presentation_Jun2026.txt p.5", source_truth: "p.5 is the Key Financial Metrics intro tile (shows FY26 EBIT margin 26.2%, a different metric); the 27.0%/27.2% EBITDA-margin-by-year series is on the Historical Financial Highlights slide, same page as the correctly-cited FY25/FY26 ROCE figures (p.27)", note: "Number itself verified correct and genuine; the page anchor for this one clause is wrong. Content-fidelity intact, location-fidelity is not."}
+  - {severity: "MINOR", location: "B06 Part 1 Q2 / 2B (HITECH CBAM mention)", claimed: "HITECH-Concall_Feb_2026_Transcript.txt, p.11", source_truth: "Quote is genuine and verbatim; sits on the transcript's own printed 'Page 11 of 12' but on this repo's extraction-tag page 12", note: "Numbering-convention artifact, not a fabricated or wrong citation."}
+  - {severity: "MINOR", location: "B06 Part 2B (HITECH Q1 FY27 gas-price quote)", claimed: "HITECH-Concall_Aug_2026_Transcript.txt, p.3-5", source_truth: "Iran-war quote is on extraction-tag p.3 as cited; the gas-price quote is genuine and verbatim but sits on extraction-tag p.6 (transcript's own 'Page 5 of 9'), one page beyond the cited range", note: "Same numbering-convention pattern as the HITECH CBAM finding above."}
+critical_count: 0
+major_count: 1
+minor_count: 2
+acceptance_rate: 89

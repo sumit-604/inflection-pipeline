@@ -1,0 +1,38 @@
+stage: B12c
+company: "GOODLUCK"
+run_date: "2026-09-19"
+model: "claude-opus-5"
+status: complete
+scope: "phase 1 (Gate 0 B01 + Emerging Moat B07); valuation pending phase 3"
+gate0:
+  rules_checked: 36
+  fails:
+    - {rule: "A3 median ROE", severity: MAJOR, stated: "13.26% (AR Key Ratios FY24-26 only) -> 2", recomputed: "11.80% (fixed formula, 10yr, screener-data NW rows 39-40) -> 0", effect: "Block A 13->11, core 48->46, grand 56->54; classification AVERAGE unchanged"}
+    - {rule: "M7 regulatory/licence", severity: MINOR, stated: "unregulated, no licence gate evidenced -> 0", recomputed: "regulated (Arms Act 1959 Industrial Licence, AR [page 16] l.1074, [page 39] l.3573); player count NOT FOUND -> 0 PEER DATA NEEDED", effect: "score unchanged; rationale corrected"}
+    - {rule: "M8 distribution", severity: MINOR, stated: "no distribution-reach data in corpus -> 0", recomputed: "BRSR dealers 157 FY26 vs 316 FY25, 9.30% vs 9.8% of sales (AR [page 104] l.7871-7872); quantified and shrinking -> 0 or 1", effect: "moat_score 8 or 9; moats present 2 unchanged"}
+emoat:
+  rules_checked: 18
+  fails:
+    - {rule: "one improvement one mechanism (A1/R1)", severity: MAJOR, stated: "A1 HH 4.0 and R1 HH 4.0 on the same Arms Act licence + DGQA + CRISIL quote; R1-specific policy tailwind NOT FOUND per 4B", recomputed: "R1 0 -> em 15.4 (15.9 if Atmanirbhar credited at inference tier)", effect: "MODEST unchanged; EM>=25 not met either way"}
+    - {rule: "Section 2C capex x historical FAT", severity: MAJOR, stated: "method not run, 'no net-block schedule'; CRISIL FY27 guide substituted -> 12%", recomputed: "PPE 1,201.91 Cr (AR [page 188] l.13000), revenue 4,100.28 Cr (AR [page 189] l.13072), FAT 3.41x; 500 x 3.41 = 1,706 Cr = 41.6%; defence-FAT reading about 6-7% as caveat", effect: "capex_embedded_growth_pct field carries a non-defined metric; no classification change"}
+    - {rule: "evidence tier consistency (E2)", severity: MINOR, stated: "E2 HM 📄 3.0 on a single-quarter presentation export figure", recomputed: "MM 📄 2.0 on filed FY26 FOB exports +9.6% (AR [page 52] l.4768-4770)", effect: "em 15.4 -> 14.4; MODEST unchanged"}
+    - {rule: "completionist recount integrity", severity: MINOR, stated: "17 📄 items incl. 3 GDAL order filings, 1 export order filing, Q1 FY27 presentation export figures", recomputed: "order filings unanchored in scan body; presentation figure is 🎙️-tier", effect: "guard outcome unchanged (4 active)"}
+valuation: {rules_checked: 0, fails: [], status: "pending phase 3"}
+expectation_ledger: {status: "pending phase 3", present: null, downside_row: null, all_rows_confirm_by: null, all_rows_metric_threshold: null, prob_in_range: null, decay_status_valid: null, off_ledger_credit: null, residual_pct_cmp: null, residual_starter_cap_ok: null, fails: []}
+business_understanding_narrative: {status: "not in phase-1 scope (stage 13)", present: null, five_questions_answered: null, prose_only: null, section6_candidates_named: null, valuation_vocab_leak: null, fails: []}
+recomputed_destination_pe: ""
+recomputed_decision: ""
+recomputed_gate0: {core_score: 46, blocks: {A: 11, B: 4, C: 17, D: 8, E: 6}, moat_score: "8 or 9", grand_total: "54 or 55", moats_confirmed: 2, moat_class: "MODERATE", classification: "AVERAGE (unchanged)"}
+recomputed_emoat: {em_score: "15.4 (A1/R1 fix); 14.4 (with E2 fix)", em_classification: "MODEST (unchanged)", capex_embedded_growth_pct: "41.6 per rule; 6-7 defence-FAT caveat; 12 CRISIL guide cross-check", combined_assessment: "AVERAGE (unchanged)"}
+findings:
+  - {severity: MAJOR, location: "01-gate0.md Block A, A3", finding: "ROE taken from AR ratios on 3 years; fixed formula computable on 10 years from screener NW; median 11.80% scores 0 not 2"}
+  - {severity: MAJOR, location: "07-emoat.md Section 5, rows A1 and R1", finding: "same licence/DGQA/CRISIL evidence credited twice (8.0 of 19.4); R1 has no independent evidence"}
+  - {severity: MAJOR, location: "07-emoat.md Section 2C; B07 capex_embedded_growth_pct", finding: "rule arithmetic not run on a false 'no net-block schedule' premise; rule value 41.6% vs substituted 12%"}
+  - {severity: MINOR, location: "01-gate0.md Block F, M7", finding: "'unregulated' rationale contradicts the Arms Act licence in AR; should read PEER DATA NEEDED"}
+  - {severity: MINOR, location: "01-gate0.md Block F, M8", finding: "'no distribution data' premise false; BRSR dealer count 157 vs 316"}
+  - {severity: MINOR, location: "07-emoat.md Section 3/5, E2", finding: "H likelihood and 📄 tier rest on one presentation quarter; filed FY26 export growth +9.6%"}
+  - {severity: MINOR, location: "07-emoat.md Section 3 recount line", finding: "recount includes unanchored order filings and a presentation figure as 📄"}
+critical_count: 0
+major_count: 3
+minor_count: 4
+acceptance_rate: 87.0

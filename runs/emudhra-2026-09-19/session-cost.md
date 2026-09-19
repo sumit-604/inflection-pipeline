@@ -25,3 +25,4 @@ Run: runs/emudhra-2026-09-19 | Phase 1 executed 2026-09-19 via /step1
 | 6 | peer concalls (Verifier B/D correction) | sonnet | agent default | - | - | 367735 | 6m45s | 2 |
 | 7 | emerging moat (Verifier C correction) | sonnet | agent default | - | - | 317236 | 7m05s | 2 |
 | 5 | concall (Verifier B correction) | sonnet | agent default | - | - | 208696 | 7m48s | 2 |
+| 7 | emerging moat (combined-label update) | sonnet | agent default | - | - | 395434 | 12m25s | 3 |

@@ -1,0 +1,21 @@
+stage: B12d
+company: "EMUDHRA"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+peers_audited: 12
+substantive_confirmed: 9
+substantive_unsupported:
+  - "NEWGEN (Q4FY26/May-2026 entry — H-1B quote cited at p.10 does not exist in this transcript; true source is Q3FY26/Jan-2026, p.16)"
+  - "PROTEAN (Q1FY27/Aug-2026 entry — 'decision-making...war and supply chain' quote cited at p.11 does not exist in this transcript; true source is Q4FY26/May-2026, p.13)"
+unused_but_relevant: []
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "MAJOR", location: "B06 Q8 verdict / Part 4 / YAML contradicted.quote_anchor", claimed_anchor: "NEWGEN Q4FY26 call (May-2026), p.10", actual_location: "NEWGEN Q3FY26 call (Jan-2026), p.16", note: "Quote genuine and accurately transcribed, wrong call and page cited; feeds the report's single highest-stakes finding"}
+  - {severity: "MAJOR", location: "B06 Q6 verdict / Part 2A", claimed_anchor: "PROTEAN Q1FY27 (Aug-2026 call), p.11", actual_location: "PROTEAN Q4FY26 call (May-2026), p.13", note: "Quote genuine, wrong call and page; feeds the report's self-described strongest independent triangulation"}
+  - {severity: "MAJOR", location: "B06 Q5 verdict", claimed_anchor: "PROTEAN Q1FY27, Aug-2026 call, p.4", actual_location: "PROTEAN Q1FY27, Aug-2026 call, p.11", note: "Same call, wrong page; the 18.7%-vs-10% comparison sits in the CFO's detailed remarks (p.11), not the opening remarks (p.4) where only the standalone 10% figure appears"}
+critical_count: 0
+major_count: 3
+minor_count: 0
+acceptance_rate: 83

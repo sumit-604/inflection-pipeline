@@ -69,6 +69,11 @@ separate REWORK routed to Stage 1, not corrected here. Section 6C/6D below
 still read the B01-as-filed GOOD classification and should be re-read once
 B01 is reworked, per the verifier's own routing note.
 
+**Update, 2026-09-19: the B01 REWORK named above has since closed.**
+Section 6C/6D below were re-derived against the corrected B01 block; see
+those sections for the current combined label and the alternative reading
+still pending an operator ruling.
+
 ---
 
 ## SECTION 1: FUTURE PRODUCT & REVENUE STREAM ANALYSIS
@@ -720,28 +725,39 @@ never scored.
 
 ### 6C. Combined Gate 0 + Emerging Moat table
 
-| Block | Value | Source |
-| --- | --- | --- |
-| Gate 0 core score | 71 | B01-gate0 (as filed; under separate REWORK per Verifier C Part 1 — see note below) |
-| Gate 0 existing moat count / class | 4 moats confirmed, STRONG | B01-gate0 (as filed) |
-| Gate 0 grand total | 88 | B01-gate0 (as filed) |
-| Gate 0 classification | GOOD (capped — Block B <8, deal-breaker) | B01-gate0 (as filed) |
-| Emerging Moat score | **22.1 / 92 (corrected, Verifier C; was 23.1)** | This stage |
-| Emerging Moat classification | MODEST MOAT DEVELOPMENT | This stage |
+**Update, 2026-09-19: the B01 REWORK named in this report's Correction
+section (Verifier C, Part 1) has closed.** B01-gate0.yaml now files a
+corrected reading (GOOD+), with an alternative reading (GOOD) named
+pending an operator ruling on B01's own open item (whether a two-year
+window may score B2, B3 and B4 alike). Both readings are carried below;
+the filed reading is primary.
 
-**Note on B01 status:** Verifier C's Part 1 (Gate 0) found a CRITICAL
-rule-misapplication in B01's Block B/M12 (a false "data unextractable"
-premise on consolidated payables that, once corrected, flips the
-classification to GOOD+ under the stage's own n=2-window convention). That
-finding is routed to Stage 1 REWORK and is NOT corrected in this pass —
-this stage's scope is B07 only. The 71/88/GOOD figures above are the
-current B01-as-filed values; 6C and 6D should be re-read once B01 is
-reworked.
+| Block | Filed (post-REWORK) | Alternative (pending operator ruling) | Source |
+| --- | --- | --- | --- |
+| Gate 0 core score | 74 | 67 | B01-gate0 |
+| Gate 0 existing moat count / class | 4 moats confirmed, STRONG | 4 moats confirmed, STRONG (unchanged) | B01-gate0 |
+| Gate 0 grand total | 91 | 84 | B01-gate0 |
+| Gate 0 classification | **GOOD+** (two-year window applied to B2-B4 alike, Block B 12) | **GOOD** (two-year window rejected for B2-B4 alike, Block B 5, deal-breaker #2 triggers) | B01-gate0 |
+| Emerging Moat score | 22.1 / 92 (corrected, Verifier C; was 23.1) | 22.1 / 92 (unchanged — B01's reading does not affect this stage's own score) | This stage |
+| Emerging Moat classification | MODEST MOAT DEVELOPMENT | MODEST MOAT DEVELOPMENT (unchanged) | This stage |
+
+**Note on B01 status:** the CRITICAL rule-misapplication Verifier C found
+in Part 1 (a false "data unextractable" premise on consolidated
+Trade Payables) is now corrected in B01-gate0.yaml. Filed classification
+is GOOD+ (core 74, grand total 91, Block B 12), applying the two-year
+window (FY25-FY26) to B2, B3 and B4 alike — the stage's own convention,
+now applied consistently. An alternative reading stays open pending an
+operator ruling on whether that two-year window is admissible at all for
+Block B sub-metrics: if rejected for B2-B4 alike, Block B falls to 5,
+core to 67, deal-breaker #2 (Block B <8) triggers, and classification
+reads GOOD (the same figure this report carried before the REWORK
+closed). Both readings feed 6D below.
 
 ### 6D. Combined classification
 
-**Combined assessment: GOOD** (backward GOOD as filed, forward MODEST —
-read together below; provisional pending the B01 REWORK noted in 6C).
+**Combined assessment: GOOD+ under the filed B01 reading; GOOD under the
+alternative reading** (pending the operator ruling on B01's two-year
+window convention, named in 6C).
 
 Reasoning: the instruction names a fixed 8-tier combined label set
 (EXCEPTIONAL / EXCELLENT+ / HIGH POTENTIAL / GOOD+ / GOOD / TURNAROUND /
@@ -752,22 +768,31 @@ were both searched; only the Gate 0 stage's OWN backward-only matrix
 located, in prompts/01-gate-0-pipeline.md). Verifier C's own Part 2 review
 (rule E20) independently confirms this gap was searched for and not
 found, and did not fail the stage on it. This is carried as an input_gap
-below, not silently resolved. Applied from first principles per the
-instruction's own stated logic — "GOOD or AVERAGE backward scores with
-EXPANSION forward scores are exactly the transition setups this operation
-hunts" — eMudhra's backward score (GOOD) qualifies as a transition-eligible
-base, but the forward score is MODEST, not EXPANSION. This is explicitly
-NOT the flagship HIGH POTENTIAL / TURNAROUND setup the strategy hunts:
-HIGH POTENTIAL and TURNAROUND rows are reserved (per the instruction) for
-cases pairing a modest/weak backward score with an EXPANSION-tier forward
-score, or a strong backward score compounding with one; neither applies
-here. With backward GOOD and forward MODEST (neither STRENGTHENING nor
-EXPANSION), the combined read stays at the backward tier, unchanged by the
-forward scan: **GOOD**. Stage 9/13 should verify this against the
-authoritative combined matrix if one exists outside this stage's
-accessible corpus, AND should re-derive this label once B01's Block B
-REWORK resolves (a shift from GOOD to GOOD+ at the backward level would
-directly change this line).
+below, not silently resolved.
+
+Applied from first principles per the instruction's own stated logic —
+"GOOD or AVERAGE backward scores with EXPANSION forward scores are
+exactly the transition setups this operation hunts" — under BOTH B01
+readings the forward score stays MODEST (22.1), not EXPANSION or
+STRENGTHENING. Neither reading produces the flagship HIGH POTENTIAL /
+TURNAROUND setup the strategy hunts: that setup needs an EXPANSION-tier
+forward score, which this scan does not have under either backward
+reading. With the forward score fixed at MODEST across both readings, the
+combined label in each case stays at the backward tier, unchanged by the
+forward scan:
+
+- **Filed reading (B01 GOOD+, core 74, grand total 91):** combined =
+  **GOOD+**.
+- **Alternative reading (B01 GOOD, core 67, grand total 84, pending the
+  operator ruling on the two-year window):** combined = **GOOD**,
+  matching this report's own combined label before the B01 REWORK
+  closed.
+
+Stage 9/13 should verify both readings against the authoritative combined
+matrix if one exists outside this stage's accessible corpus, and should
+carry forward whichever B01 reading the operator ultimately rules on; the
+window-convention question is B01's own open item, not resolved by this
+stage.
 
 ### 6E. Final output card
 
@@ -829,10 +854,10 @@ time, not independently.
   container).
 - The literal 8-tier combined backward×forward classification lookup
   table (Section 6D) was not found in frameworks/ or prompts/ accessible
-  to this stage; the GOOD label above is derived from first principles
-  per the instruction's own stated transition-setup logic, not read off
-  an explicit table. Flagged for Stage 9/13 verification; independently
-  confirmed absent by Verifier C (Part 2, rule E20).
+  to this stage; the GOOD+/GOOD labels above are derived from first
+  principles per the instruction's own stated transition-setup logic, not
+  read off an explicit table. Flagged for Stage 9/13 verification;
+  independently confirmed absent by Verifier C (Part 2, rule E20).
 - Facility-level utilisation/capacity metrics (Section 2B) are NOT FOUND
   for any data centre (India, US, Europe, UAE); consistent with an
   asset-light business model where this disclosure gap may be structural
@@ -842,11 +867,6 @@ time, not independently.
   the Services stream specifically); an earlier draft of this report
   filled this gap with an assumed rate, corrected out per Verifier C
   finding 11.
-- B01 (Gate 0) is under a separate CRITICAL REWORK per Verifier C Part 1
-  (Block B/M12 WC-days false-premise finding); Section 6C/6D of this
-  report currently read the B01-as-filed GOOD classification and will
-  need re-reading once that REWORK closes, since the corrected B01 read
-  (GOOD+) would change 6D's combined label.
 
 ## FLAGS (this stage)
 
@@ -864,8 +884,3 @@ time, not independently.
   partly on the still-pending UAE QTSP licence, which has already slipped
   once (B05). If it slips again past the B05 kill-signal date (Q3 FY27
   without a firm date), the E1 row's evidentiary basis weakens further.
-- FLAG-VERIFIER-DEPENDENCY (new this correction): Section 6C/6D of this
-  report inherit B01's classification as filed (GOOD). B01 is under a
-  separate CRITICAL REWORK (Verifier C Part 1) that could move it to
-  GOOD+. If that REWORK closes with GOOD+, Section 6D's combined label in
-  this report should be re-read, not assumed unchanged.

@@ -1,0 +1,14 @@
+stage: B12a
+company: EMUDHRA
+run_date: 2026-09-19
+model: claude-haiku-4-5
+status: complete
+numbers_checked: 27
+findings: []
+critical_count: 0
+major_count: 0
+minor_count: 0
+false_positives_struck: 0
+material_universe: 27
+acceptance_rate: 100
+coverage_note: "27 material figures identified across B01, B03, B04, B05 (gate0 scorecard, AR deep dive, bizmodel, concall sections). Material = verdict-card class or scorecard pillar input per stage definitions. All 27 checked and verified against source anchors (AR consolidated statements p.218-219 cash flow, p.216 balance sheet, results filing p.387 P&L, BSE shareholding Reg 31, Note 49 segment data, screener cross-checks). 100% match rate, zero mismatches. No Section 1B/valuation-stage inputs in scope (Phase 1 audit). OCR misalignment on segment sub-components noted but aggregate totals reconcile cleanly (7,015.80 Mn consolidated confirmed). All checked figures have source-fidelity: true."

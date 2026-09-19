@@ -17,3 +17,7 @@ Run: runs/emudhra-2026-09-19 | Phase 1 executed 2026-09-19 via /step1
 | 6 | peer concalls | sonnet | agent default | - | - | 281441 | 6m12s | 1 |
 | 7 | emerging moat | sonnet | agent default | - | - | 223578 | 12m02s | 1 |
 | 9 | TAM | sonnet | agent default | - | - | 158223 | 11m29s | 1 |
+| 12a | verifier A | haiku | agent default | - | - | 89272 | 2m57s | 1 |
+| 12b | verifier B | opus | agent default | - | - | 189076 | 6m16s | 1 |
+| 12c | verifier C (phase 1 scope) | opus | agent default | - | - | 140612 | 5m03s | 1 |
+| 12d | verifier D | sonnet | agent default | - | - | 286279 | 4m47s | 1 |

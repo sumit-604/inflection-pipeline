@@ -1,0 +1,50 @@
+stage: B12b
+company: "EMUDHRA"
+run_date: "2026-09-19"
+model: "claude-opus-5"
+status: complete
+independent_flags_found: 23
+caught: 9
+partially_caught: 5
+missed:
+  - {severity: "MAJOR", item: "Cryptas profitability narrative drifts: 'positive Rs 1-1.5 Cr' (Q3) -> 'break-even' (Q4) -> 'not profitable at all' (Q1 FY27); ~Rs 4 Cr B.V. subsidiary loss; B05 grades Cryptas disclosure high-transparency", anchor: "Feb-2026 VS [page 6-8]; May-2026 VS [page 12]; Jul-2026 VS [page 11-12]"}
+  - {severity: "MAJOR", item: "Executive Chairman holds a personal ~5% stake in 3i Infotech, the complainant against him ('That is related to my personal investment')", anchor: "Jul-2026 Sanjyot Khare / VS [page 23-24]"}
+  - {severity: "MINOR", item: "FY26 Trust Services beat partly low-margin (~10% GM) token sales and partner stocking", anchor: "May-2026 VS [page 11]; Jul-2026 VS [page 10]"}
+  - {severity: "MINOR", item: "eSign daily volume stated >4 lakh (Feb) then 'well over 3 lakh' (May), unexplained", anchor: "Feb-2026 VS [page 10]; May-2026 VS [page 4]"}
+  - {severity: "MINOR", item: "IAM not taken to the US ('not part of the full plan'), thins the US cross-sell narrative", anchor: "May-2026 KS [page 11]"}
+  - {severity: "MINOR", item: "PrivaTrust slipped from 'live environments' (Feb) to 'pilots, POCs' (Jul) while QUICKHEAL already had BFSI DPDP consent wins", anchor: "Feb-2026 [page 5]; Jul-2026 KS [page 6]; QUICKHEAL Aug-2025 [page 9]; QUICKHEAL May-2026 [page 3]"}
+  - {severity: "MINOR", item: "PROTEAN eSign Pro competes directly in BFSI eSign/eStamp workflow; B06 called PROTEAN structurally distinct", anchor: "PROTEAN Aug-2026 [page 6]; PROTEAN May-2026 [page 15]"}
+  - {severity: "MINOR", item: "Chairman's 'nobody above 25% EBITDA / 16% PAT' claim partly contradicted by NEWGEN (~20% PAT margin, 25.3% FY25 EBITDA)", anchor: "Jul-2026 VS [page 25]; NEWGEN Nov-2025 lines 160, 426; NEWGEN May-2026 lines 199-200"}
+  - {severity: "MINOR", item: "Adjusted-EBITDA recasting (23.1% -> 25.8%) and unprobed Q4 FY26 margin dip to 22.4%", anchor: "Feb-2026 VS [page 7]; May-2026 CFO [page 5]"}
+pipeline_flags_not_supported:
+  - "B05 4E/2D: 3i Infotech SEBI complaint status 'never addressed on any earnings call' (addressed May-2026 VS [page 7])"
+  - "B06 Q8 CONTRADICTED (H-1B): NEWGEN's statement is about product businesses and agrees with eMudhra's services-only attribution; quote misanchored (NEWGEN Jan-2026 [page 16], not May-2026 p.10)"
+promise_delivery_spot_checks: {checked: 5, confirmed: 4, wrong: 1}
+credibility_grade_concur: "lower: B is too generous given Cryptas economics restated each call, 3i police development framed as 'no update' plus undisclosed promoter stake in the complainant, PAT guide cut 27-28% to 25% called unchanged, organic below 18% guide in every disclosed quarter"
+findings:
+  - {severity: "MAJOR", location: "B05 3C/1C/4A", finding: "MISSED Cryptas profitability narrative drift and B.V. loss"}
+  - {severity: "MAJOR", location: "B05 and all reports", finding: "MISSED promoter personal ~5% stake in 3i Infotech"}
+  - {severity: "MAJOR", location: "B05 4E/4C", finding: "UNDER-WEIGHTED 3i matter (Low, handling Good) despite Jul police statement framed as 'no update'"}
+  - {severity: "MAJOR", location: "B05 4E", finding: "UNDER-WEIGHTED management's ~15% ROE 'we can maintain' admission, thesis-capping"}
+  - {severity: "MAJOR", location: "B05 4E/2D", finding: "NOT SUPPORTED: SEBI complaint status was addressed in Q4 call"}
+  - {severity: "MAJOR", location: "B06 Q8 / Part 4 / flags", finding: "NOT SUPPORTED: H-1B CONTRADICTED verdict; misanchored quote"}
+  - {severity: "MINOR", location: "B05 2A row 7", finding: "Q3 FY26 organic 11-12% omitted; Trust-decline attribution not in transcript"}
+  - {severity: "MINOR", location: "B05 3B", finding: "R&D capitalisation not tied to EBITDA/peer R&D comparison in concall read (carried in B02/B04)"}
+  - {severity: "MINOR", location: "B05 2A row 5 / 1C", finding: "Spot check partly wrong: Q4 not silent, UAE DC stated 'operating'; pending item is QTSP licence"}
+  - {severity: "MINOR", location: "B05 2E", finding: "OVERSTATED repeated deflection; Q3 was a misunderstanding answered with data"}
+  - {severity: "MINOR", location: "B05 1C", finding: "OVERSTATED detail: bolt-on acquisition was raised in Q1 FY27 (KS [page 19])"}
+  - {severity: "MINOR", location: "B06 2B", finding: "OVERSTATED hardware-inflation hypothesis for stock-in-trade"}
+  - {severity: "MINOR", location: "B05 2A row 2", finding: "MISSED Trust beat quality (tokens, partner stocking)"}
+  - {severity: "MINOR", location: "B05", finding: "MISSED eSign volume drift 4 lakh to 3 lakh/day"}
+  - {severity: "MINOR", location: "B05", finding: "MISSED IAM not taken to US"}
+  - {severity: "MINOR", location: "B06", finding: "MISSED QUICKHEAL DPDP lead vs PrivaTrust slip"}
+  - {severity: "MINOR", location: "B06 2D/Q7", finding: "MISSED PROTEAN eSign Pro direct competition"}
+  - {severity: "MINOR", location: "B06 Q5", finding: "MISSED NEWGEN margin partial contradiction of chairman peer-margin claim"}
+  - {severity: "MINOR", location: "B05 2A row 3", finding: "MISSED adjusted-EBITDA framing and Q4 margin dip"}
+critical_count: 0
+major_count: 6
+minor_count: 13
+material_found: 8
+material_caught: 6
+acceptance_rate: 75
+coverage_basis: "23 independent items listed, 8 material (all MAJOR, 0 CRITICAL); pipeline had 6 of 8 (2 CAUGHT, 4 PARTIALLY CAUGHT), missed 2; CAUGHT-only rate would be 25%. Main transcripts read in full; peers read on claim-relevant passages plus keyword search"

@@ -1,0 +1,19 @@
+stage: B12d
+company: "SSWL"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+peers_audited: 12
+substantive_confirmed: 11
+substantive_unsupported: []
+unused_but_relevant: []
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "MAJOR", location: "B06 Part 1 Q2 + Part 3 coverage map, UNOMINDA Q1 FY27 (04-Aug-2026) row", claimed: "Quote 'our teams are on the job... can we cut half year to monthly, if possible, quarter to monthly? So some of the customers have been positive' attributed to UNOMINDA Q1 FY27 (04-Aug-2026 call), p.13-14", source_truth: "Quote is verbatim absent from the Aug-2026 transcript (text search returns no match); it is present in the UNOMINDA Q4 FY26 (18-May-2026) transcript, p.14, immediately preceding the Haryana wage-hike sentence B06 correctly attributes elsewhere to that same May-2026 call", note: "Wrong-quarter/wrong-transcript citation. Real, findable quote, just mis-dated by one quarter. Does not change the Q2 VERIFIED verdict since 3 peers and 5 other confirmed anchors still stand.", source_fidelity: false}
+  - {severity: "MINOR", location: "B06 Part 1 Q6, WHEELS Q4 FY26 (15-May-2026) row", claimed: "GST 2.0 'turbocharge the domestic industry' quote cited at p.4", source_truth: "Quote sits on p.3 of that transcript (bracket-verified: between the [page 3] and [page 4] tool markers)", note: "Off-by-one page anchor; content and transcript are correct, page number is not.", source_fidelity: false}
+  - {severity: "MINOR", location: "B06 Part 1 Q3 net read", claimed: "Neither WHEELS nor UNOMINDA transcript mentions Vietnam or Thailand... anywhere across the 8 combined calls read", source_truth: "UNOMINDA Q2 FY26 (07-Nov-2025) transcript, line 374, contains one 'Vietnam' token, referring to UNOMINDA's own tech-centre location, unrelated to wheel exports or antidumping/circumvention", note: "UNVERIFIABLE verdict unaffected (context is genuinely irrelevant to the claim); the absolute 'no mention' phrasing overstates the actual search result.", source_fidelity: false}
+critical_count: 0
+major_count: 1
+minor_count: 2
+acceptance_rate: 92

@@ -1,0 +1,46 @@
+stage: B12c
+company: "SSWL"
+run_date: "2026-09-19"
+model: claude-opus-5
+status: complete
+scope: "PHASE 1 (Gate 0 B01 + Emerging Moat B07 only); valuation audit pending phase 3"
+gate0:
+  rules_checked: 48
+  fails:
+    - {rule: "Formula definitions (fixed, no substitution): ROCE = EBIT / (TA - CL)", severity: MAJOR, finding: "FY22-FY24 capital employed proxied as Equity + Borrowings, a substituted formula the rules forbid; A1/A2/A4 mix proxy and exact bases.", recomputed: "Exact-year window FY25-FY26 (same treatment B01 gave B2-B4): A1 median 17.69% = 3; A2 min 16.97% = 5; A3 = 4; A4 -1.43pp = 3; Block A 15 (was 11); Core 67 (was 63); classification GOOD unchanged."}
+    - {rule: "Rule 5 N/A treatment and rule 6 3-year minimum, applied to partial-window metrics (B2, B3, B4, E2, M12)", severity: MAJOR, finding: "B2/B3/B4 scored full or mid marks on a 2-year window, E2 on a 1-year window, M12 on 2 years; the rules state no partial-window treatment, and B01 took the favourable reading without showing the other.", recomputed: "Strict reading (N/A scores 0): B2 0, B3 0, B4 0, E2 0, M12 0; Block B 5, Block E 15, Core 47, moat 16; classification AVERAGE. B01 reading: Core 63, GOOD. Core sits 3 points above the 60 boundary; operator ruling needed on partial windows."}
+    - {rule: "M5 Scale and Dominance band reading", severity: MAJOR, finding: "B01 ranked margin across all 4 names (SSWL 3rd) and scored 1. The 5-band wording ranks margin among the top-3 mcap set; on that parallel reading SSWL (mcap 2nd, margin 2nd of UNOMINDA/SSWL/WHEELS) meets 'top 3 mcap AND margin top 2'. A strict 'segment' reading on a 3-peer set gives 0, PEER DATA NEEDED.", recomputed: "Parallel reading: M5 3, moats present 4 (M3, M4, M5, M10), STRONG, moat 19, Core 63 + STRONG = GOOD+. Strict segment reading: M5 0, moat 16, MODERATE, GOOD. Range GOOD to GOOD+."}
+    - {rule: "WC Days formula: state inventory/payable basis (revenue vs COGS)", severity: MINOR, finding: "Basis not stated for B4/M12 inventory and payable days.", recomputed: "No score change determinable."}
+    - {rule: "Rule 5 grounded claims (M6 marked N/A not in provided data)", severity: MINOR, finding: "B07 located total R&D spend at 1.14% (FY25) and 0.40% (FY26) of turnover in the same FY26 AR (AR p.2394-2397 per B07). Data existed.", recomputed: "M6 as written: 0.40% < 1% and margin below peer median = 0. Score unchanged."}
+emoat:
+  rules_checked: 30
+  fails:
+    - {rule: "One improvement, one mechanism (CLAUDE.md NEVER; B07 applied it to E2/H1)", severity: MAJOR, finding: "Echanda Urja and Clean Max Astria captive-power investments credited in B1 (Moderate, 2.0) and again cited in H2 (DOC, 3.0) and counted twice in the DOC recount.", recomputed: "H2 on the Arays/Hainan tripartite agreement alone likely holds H x M = 3.0; em_score 17, MODEST unchanged. Recount loses 2 items."}
+    - {rule: "Completionist recount accuracy", severity: MINOR, finding: "Recount line claims 15 documented items; the items it lists sum to 13 (B1 2, F1 1, F2 4, H2 3, H3 2, R1 1), 11 distinct after the B1/H2 duplicate.", recomputed: "11 distinct documented items across 6 categories."}
+    - {rule: "Evidence multiplier from the defined set (1.0 / 0.7 / 0.5)", severity: MINOR, finding: "R1 uses a blended 0.67 (not a defined tier, not even the 1.0/0.7 midpoint); H1 uses INFER 0.5 as a contradiction discount on evidence that is a management claim; F2 takes DOC 1.0 on a row the report itself types DOC/CLAIM (EBITDA/wheel is a management-reported metric).", recomputed: "Range 16.5 (F2 0.7, R1 0.7, H1 0.7) to 18.1 (R1 1.0); MODEST (12-24) holds under every combination."}
+    - {rule: "Stage 7 rule 3 anchors (AR p.__)", severity: MINOR, finding: "Anchors such as AR p.1190, p.2363, p.9666, p.13238 exceed the AR page count (B01 cites Note 40 at p.225) and appear to be text-file line numbers labelled as pages; G1 anchors standalone cash to company memory/B00 rather than the AR (B01 has it at AR p.141); several items anchor to B03/B04 derived blocks rather than source documents.", recomputed: "n/a (anchor fidelity is Verifier A territory; format fail recorded here)."}
+    - {rule: "Section 2C arithmetic on one basis", severity: MINOR, finding: "2C labels Rs 5,182.80 Cr as standalone revenue; B01 reports the same figure as consolidated. FAT 2.85x (standalone NFA incl. intangibles) vs B01 M3 FAT 2.63x (consolidated net block).", recomputed: "At 2.63x: 600 x 2.63 = Rs 1,578 Cr, ~30% (vs 33%)."}
+    - {rule: "Section 3 strength enum (Strong/Moderate/Weak/None)", severity: MINOR, finding: "H2 graded 'Moderate-Strong', outside the enum, and carried into active_categories.", recomputed: "Moderate or Strong; score unaffected."}
+valuation: {rules_checked: 0, fails: [], status: "PENDING PHASE 3 (B10/B11 not in scope)"}
+expectation_ledger: {status: "PENDING PHASE 3", present: null, downside_row: null, all_rows_confirm_by: null, all_rows_metric_threshold: null, prob_in_range: null, decay_status_valid: null, off_ledger_credit: null, residual_pct_cmp: null, residual_starter_cap_ok: null, fails: []}
+business_understanding_narrative: {status: "PENDING (stage 13 not in scope)", present: null, five_questions_answered: null, prose_only: null, section6_candidates_named: null, valuation_vocab_leak: null, fails: []}
+recomputed_destination_pe: ""
+recomputed_decision: ""
+gate0_classification_sensitivity: "B01 GOOD (Core 63, MODERATE) holds on its own readings, but three rule readings move it: strict partial-window N/A = AVERAGE (Core 47); M5 parallel reading = GOOD+ (STRONG, 4 moats); exact-year ROCE window = GOOD (Core 67). Operator ruling needed on partial-window treatment and the M5 margin-rank set."
+emoat_classification_sensitivity: "em_score 17 (17.1) MODEST; recomputed range 16.5 to 18.1 across all multiplier readings; classification robust."
+findings:
+  - {severity: MAJOR, location: "B01 Block A", rule: "ROCE formula substitution (proxy CE FY22-24)", recomputed: "Block A 15, Core 67, GOOD"}
+  - {severity: MAJOR, location: "B01 B2/B3/B4/E2/M12", rule: "partial-window scoring vs rule 5/6", recomputed: "strict: Core 47, AVERAGE"}
+  - {severity: MAJOR, location: "B01 M5", rule: "margin-rank set reading", recomputed: "parallel: M5 3, STRONG, GOOD+"}
+  - {severity: MAJOR, location: "B07 B1 + H2 + recount", rule: "one improvement one mechanism", recomputed: "em_score 17 unchanged"}
+  - {severity: MINOR, location: "B01 B4/M12", rule: "WC basis not stated", recomputed: ""}
+  - {severity: MINOR, location: "B01 M6", rule: "R&D data marked N/A but present in AR", recomputed: "M6 0 unchanged"}
+  - {severity: MINOR, location: "B07 Section 3 recount", rule: "recount count 15 vs 13 listed / 11 distinct", recomputed: ""}
+  - {severity: MINOR, location: "B07 Section 5 R1/H1/F2", rule: "multiplier outside defined set / inconsistent", recomputed: "16.5-18.1, MODEST"}
+  - {severity: MINOR, location: "B07 anchors", rule: "page anchors are line numbers; memory/derived-block anchors", recomputed: ""}
+  - {severity: MINOR, location: "B07 2C", rule: "standalone/consolidated basis mix", recomputed: "~30% at 2.63x"}
+  - {severity: MINOR, location: "B07 H2 strength", rule: "strength enum", recomputed: ""}
+critical_count: 0
+major_count: 4
+minor_count: 7
+acceptance_rate: 86   # 67 passed / 78 checked (gate0 43/48, emoat 24/30); phase-1 scope only

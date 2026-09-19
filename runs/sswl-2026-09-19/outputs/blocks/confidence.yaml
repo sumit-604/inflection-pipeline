@@ -1,0 +1,17 @@
+stage: confidence-delta
+company: SSWL
+run_date: 2026-09-19
+phase: 1
+confidence_delta:
+  numerical_acceptance: 94      # B12a: 18 material numbers checked of a 47-number universe; 0 CRITICAL, 1 MAJOR (EBITDA basis), 1 MINOR
+  redflag_coverage: 71          # B12b: material_caught 10 / material_found 14 (partial catches counted as caught per rule 3; strict caught-only 3/14 = 21%, half-credit 46%)
+  framework_adherence: 86       # B12c PHASE-1 PORTION ONLY: 67 of 78 Gate 0 + Emerging Moat rules pass; valuation half PENDING PHASE 3
+  peer_utilisation: 92          # B12d: 11 of 12 peer transcripts substantive and confirmed
+  overall: 71
+  overall_set_by: redflag_coverage
+  not_applicable: []
+verifier_a_identity_check: "No CRITICAL rows in B12a; identity check not triggered; nothing struck."
+band: "60-74: PROCEED verdicts downgrade one level (orchestrator Section 5). Set by redflag_coverage (Verifier B)."
+notes:
+  - "redflag_coverage is sensitive to the partial-catch reading: 71% (partial = caught, rule 3), 46% (half credit), 21% (strict). The pipeline rule counts partial catches as caught; the operator sees all three."
+  - "framework_adherence valuation component pending phase 3 (B10/B11 not yet run)."

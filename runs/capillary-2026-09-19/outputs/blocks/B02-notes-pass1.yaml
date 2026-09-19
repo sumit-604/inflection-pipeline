@@ -1,0 +1,144 @@
+stage: B02-notes-pass1
+company: "CAPILLARY"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+pass: 1
+note: "Intermediate checkpoint for Pass 1 of the Notes triple-pass. Final
+  B02-notes schema (accounting_quality, pass_2_empty, pass_3_empty, full
+  consolidated top_findings) is emitted after Pass 3."
+input_gaps:
+  - "Contingent liabilities note (standalone Note 31, p.166; consolidated
+    Note 34, p.244) has no quantified table in the extracted text - genuinely
+    NIL or an extraction gap, needs source-PDF verification."
+  - "Major-customer >10%-of-revenue disclosure (consolidated Note 36(iii),
+    p.247) references the requirement but no name/amount/Nil statement
+    follows in extracted text."
+  - "Capital commitments note not identified as a distinct line in either
+    note set."
+  - "Unsatisfied performance obligations (Ind AS 115 required disclosure)
+    not found as a quantified table."
+  - "5-year borrowings repayment schedule not disclosed as a granular
+    maturity ladder beyond current/non-current split."
+  - "Standalone forward-contract/hedging policy statement (Note 34(2),
+    p.171) has no corresponding hedge-book balance or fair value shown in
+    the financial-instruments fair-value hierarchy table."
+flags:
+  - {type: FLAG-CASH, reason: "Mixed receivables signal: standalone unbilled
+      revenue against related party Capillary Pte Ltd more than doubled
+      (INR 283.36mn to INR 641.83mn, +126.5%) while consolidated (group)
+      receivables grew only 12.2% against 22.8% revenue growth and
+      credit-impaired receivables fell 65.3% - net group trend is improving
+      but the standalone-only build should be monitored (Note 8, p.146
+      standalone / p.222 consolidated)."}
+  - {type: FLAG-EARNINGS-QUALITY, reason: "INR 249.60mn exceptional Churn
+      Indemnity compensation (Note 28 consolidated, p.235) equals 49% of
+      consolidated PBT of INR 511.10mn; one-time, non-operating (received
+      via investing activities), must be stripped for run-rate earnings
+      view."}
+  - {type: FLAG-GOODWILL, reason: "Goodwill INR 3,095.76mn (24% of
+      consolidated total assets) tested at 27.70% WACC with no disclosed
+      sensitivity headroom; CGU structure changed from 1 to 2 CGUs this
+      year; Key Audit Matter (Note 4, p.219-220; Auditor's KAM p.180-181)."}
+  - {type: FLAG-RPT, reason: "Standalone revenue 75.7% related-party via
+      Singapore invoicing hub; RP receivables 80.6% and RP payables 81.1%
+      of respective totals; FY26 transfer-pricing study still in process
+      at report date (Note 20/32 standalone, p.155-156, 166-168; Note 37/41
+      p.176/257)."}
+top_findings:
+  - {rank: 1, finding: "Standalone revenue 75.7% related-party (Singapore
+      invoicing hub); RP receivables 80.6%, RP payables 81.1%; FY26 transfer
+      pricing study still in process at report date.", note_ref: "Note
+      20/32 standalone, p.155-156, 166-168", rating: "WATCH",
+      why: "Standalone P&L is largely an internal transfer-pricing
+      construct, not third-party economics; arm's-length not yet
+      independently certified for the year."}
+  - {rank: 2, finding: "INR 249.60mn one-time Churn Indemnity compensation
+      (exceptional income) equals 49% of consolidated PBT; relates to a
+      breach of a churn-protection clause in an unnamed prior US
+      acquisition's PSA.", note_ref: "Note 28 consolidated, p.235",
+      rating: "WATCH", why: "Must be stripped from run-rate earnings; cash
+      received via investing activities, not operating."}
+  - {rank: 3, finding: "Group profit extremely concentrated: Capillary
+      Technologies LLC (US) alone contributed 104.9% of consolidated profit
+      (INR 549.61mn vs INR 523.88mn total), requiring a -45.6% consolidation
+      elimination to reconcile.", note_ref: "Note 40, Statutory Group
+      Information, p.274", rating: "WATCH", why: "Extremely lumpy
+      subsidiary-level profitability; normalized group economics look far
+      thinner without this entity and the exceptional item within it."}
+  - {rank: 4, finding: "Goodwill INR 3,095.76mn (24% of consolidated assets)
+      tested at 27.70% WACC, no disclosed sensitivity headroom; CGU
+      structure changed from 1 to 2 CGUs this year.", note_ref: "Note 4,
+      p.219-220; Auditor's KAM p.180-181", rating: "WATCH",
+      why: "High discount rate leaves limited headroom; Key Audit Matter."}
+  - {rank: 5, finding: "Kognitiv Solutions Inc. acquired 1-May-2025 for
+      CAD 23.44mn (INR 1,472.33mn); goodwill INR 909.53mn = 62% of
+      consideration, attributed to assembled workforce and synergies.",
+      note_ref: "Note 39, p.254", rating: "WATCH",
+      why: "High goodwill-to-consideration ratio raises future impairment
+      sensitivity; funded via a chain through Capillary Pte Ltd and
+      Capillary Technologies LLC using FY25 IPO-adjacent subscription
+      proceeds."}
+  - {rank: 6, finding: "Internally generated software capitalisation
+      (INR 366.15mn, ~34% of consolidated EBITDA) is a named Key Audit
+      Matter; 3-year amortisation life.", note_ref: "Note 4 / Note 2.3(f),
+      p.131-132, 219; Auditor's KAM p.178-179", rating: "WATCH",
+      why: "High capitalisation-to-earnings ratio is judgement-heavy and
+      flagged by the auditors themselves."}
+  - {rank: 7, finding: "Standalone unbilled revenue more than doubled
+      (INR 283.36mn to INR 641.83mn, +126.5%) against 21.7% standalone
+      revenue growth; reversed at consolidated level where unbilled fell.",
+      note_ref: "Note 8, p.146 standalone vs p.222 consolidated",
+      rating: "WATCH", why: "Intra-group timing item (against Capillary Pte
+      Ltd) that nets out on consolidation but worth monitoring."}
+  - {rank: 8, finding: "Auditor's IFC report flags books-of-account backup
+      not held on India-based servers daily, and inability to confirm
+      database-level audit-trail integrity at a third-party accounting
+      software host; overall IFC opinion stayed unmodified.",
+      note_ref: "Auditor's Report paras 19(b)/19(h)(vi) and Annexure II,
+      p.184-185, 188", rating: "WATCH",
+      why: "Named control gap in an active SEBI/MCA scrutiny area (audit
+      trail/edit-log mandate), not a qualification but worth tracking."}
+  - {rank: 9, finding: "Contingent liabilities note (standalone and
+      consolidated) contains only boilerplate with no quantified table of
+      claims, tax disputes, or guarantees.", note_ref: "Note 31 standalone
+      p.166; Note 34 consolidated p.244", rating: "WATCH",
+      why: "Either genuinely NIL or a disclosure/extraction gap; needs
+      source-PDF verification before treating as fact for valuation."}
+  - {rank: 10, finding: "SessionM Inc. and SessionM Czech Republic s.r.o.
+      acquired from Mastercard International, USD 20.00mn, signed
+      24-Feb-2026, completed 1-May-2026 (5 days after AR sign-off).",
+      note_ref: "Note 44 consolidated, p.259", rating: "CLEAN",
+      why: "Confirms B00 context Czech step-down subsidiary; not yet in any
+      FY26 number; high forward relevance for live verification."}
+receivables_trend: "improving (group/consolidated level): total trade
+  receivables grew 12.2% (INR 1,611.21mn to INR 1,808.35mn) against 22.8%
+  revenue growth; credit-impaired receivables fell 65.3% (INR 128.28mn to
+  INR 44.52mn). Caveat: standalone-only unbilled revenue against related
+  party Capillary Pte Ltd more than doubled (+126.5%), an intra-group
+  timing item that reverses on consolidation (Note 8, p.146 standalone /
+  p.222-223 consolidated)."
+restatements_found:
+  - "No substantive restatement identified. One drafting artifact: the
+    consolidated EBITDA policy sentence (Note 2.1, accounting policies)
+    refers to the 'restated Consolidated Statement of Profit and Loss',
+    apparently leftover RHP-drafting language; no actual restatement table
+    or prior-period adjustment found to accompany it."
+going_concern_language: "NONE - standard going-concern basis of preparation
+  language only (standalone Note 2.1, p.125-126; consolidated Note 2.1,
+  p.191-192); no material uncertainty or doubt raised by management or
+  auditors."
+analyst_note: "Pass 1 covered every standalone note (1-40, pp.125-177) and
+  every consolidated note (1-44, pp.189-259) plus the consolidated
+  Auditor's Report and its four Key Audit Matters (capitalised
+  intangibles, revenue recognition, goodwill impairment, Kognitiv business
+  combination). The dominant theme is a young, IPO-fresh (21-Nov-2025)
+  group whose standalone entity is structurally a related-party
+  transfer-pricing vehicle, whose consolidated earnings this year are
+  flattered by a large one-time indemnity gain and concentrated in one US
+  subsidiary, and whose balance sheet just absorbed one acquisition
+  (Kognitiv) with a second (SessionM) closing five days after sign-off.
+  None of this is hidden - disclosure architecture is generally strong -
+  but a normalized, ex-exceptional, ex-one-subsidiary-concentration view of
+  earnings is materially different from the reported INR 523.88mn
+  consolidated profit."

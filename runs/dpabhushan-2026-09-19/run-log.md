@@ -7,3 +7,4 @@
 - stage 6 run 1: found the four MOTISONS-* peer transcripts were RBZ Jewellers (orchestrator used wrong BSE scrip 544060; Motisons is 544053 and has held no call since Jun-2024). Peer replaced by KALYANKJIL (4 BSE transcripts Q2 FY26-Q1 FY27). RBZ files moved to inputs/other/rbz-mislabeled/. Run-1 outputs kept as outputs/reports/06-peers-run1-superseded.md and B06-peers-run1-superseded.yaml (not a block; never consumed). Stage 6 re-run.
 - stage 7: reply omitted the YAML block; B07-emoat.yaml exists and parses. File governs.
 - stage 7: block file had two flag flow-mappings missing the closing brace; orchestrator added the braces (content unchanged), now parses.
+- stage 6 run 2: block file had three flag flow-mappings missing the closing brace; orchestrator added them (content unchanged), now parses.

@@ -11,3 +11,4 @@ not split input/output, so in_tok/out_tok read n/a).
 | 1 | gate 0 scorecard (table text, governs) | claude-sonnet-5 | default | n/a | n/a | 137514 | 10m07s | 2 |
 | 2 | notes triple-pass, pass 2 | claude-sonnet-5 | default | n/a | n/a | 181911 | 6m58s | 2 |
 | 2 | notes triple-pass, pass 3 (consolidated) | claude-sonnet-5 | default | n/a | n/a | 101923 | 4m00s | 3 |
+| 3 | AR backward deep dive (8 phases) | claude-sonnet-5 | default | n/a | n/a | 309824 | 12m46s | 1 |

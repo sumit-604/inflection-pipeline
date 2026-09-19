@@ -1,0 +1,105 @@
+stage: B09-tam
+company: "SHAREINDIA"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Exact FY26 total organized Indian broking-industry revenue (all ~300 SEBI-registered brokers) NOT FOUND; ICRA's May-2025 and Nov-2025 broking-industry reports were not machine-readable via web fetch (binary/image PDF content)"
+  - "Groww FY26 full-year revenue not yet reported at run date; extrapolated from FY25 actual (Rs 3,901 Cr) and Q1/Q2 FY26 YoY declines (~9.5%), flagged as extrapolation not filed figure"
+  - "No bps-level bid-ask/arbitrage margin-capture rate for Indian equity-derivatives liquidity providers found in any primary source; PROP POOL (Section 2B) is narrative-only for this reason, not converted to a Rs Cr figure"
+  - "MTF industry-wide average yield is not a single disclosed figure; the 9.5%-18% p.a. range used for the capacity cross-check comes from broker-comparison websites (2026), not a regulator or primary filing"
+  - "Share India's own per-trade brokerage rate and MTF interest rate remain NOT FOUND in the AR or presentations (confirms B04 gap); Method 2 bottom-up ARPU (Rs 34,500/client) is fees-only and excluded from the triangulation average as non-representative"
+flags:
+  - {type: FLAG-SCOPE-LIMITED-TO-CLIENT-POOL, reason: "SOM-implied revenue CAGR (19.2% yr3 / 20.0% yr5) applies only to the Rs 442 Cr client-annuity revenue base (fees, interest, services), not to Share India's Rs 1,470 Cr total consolidated revenue. Stage 11 must not apply this CAGR to total-company revenue without separately addressing the prop-trading line (58.3% of FY26 income, no clean unit economics per B04), which this method does not and cannot forecast."}
+  - {type: FLAG-LOW-CONFIDENCE-REALISTIC-TAM, reason: "The realistic TAM estimate (Rs 30,000 Cr) carries low confidence; a full current organized-industry revenue total was not found despite multiple targeted searches. The conservative Rs 21,600 Cr Method 3 peer-sum floor is the more defensible number for downstream arithmetic."}
+  - {type: FLAG-JUDGMENT-BASED-SAM-FILTERS, reason: "The five SAM filter percentages (product/geography/channel/customer/capability) are analyst-judgment calls with reasoning shown in the report, not independently sourced per-filter data points."}
+  - {type: FLAG-TREND-CONTRADICTS-SOM-DIRECTION, reason: "The one clean filed YoY signal for the client pool (fees and commission income) fell 12.7%/18.6% standalone/consol in FY26 (B04), i.e. the company is currently losing share within its own client pool even as the SOM math assumes 1.4-2.9pp of share GAIN over 3-5 years. Read the SOM as what the branch/MTF/AIF plan could deliver if it works, not as an extrapolation of the observed trend."}
+market_definition: "Indian capital-markets client-annuity revenue pool (brokerage/fee income, MTF and NBFC lending interest, wealth/PMS/AIF and insurance distribution fees, merchant banking, uTrade algo subscriptions); the prop-trading pool (58.3% of FY26 income) is sized separately and narratively in Section 2B, not as a TAM figure."
+tam_cr: {conservative: 21600, realistic: 30000}
+sam_cr: 3650
+sam_pct_of_tam: 16.9
+som_3yr_cr: 749
+som_5yr_cr: 1101
+som_implied_revenue_cagr: {yr3: 19.2, yr5: 20.0}   # client-pool revenue base (Rs 442 Cr FY26) only; FORMAL handoff to stage 11 with that scope caveat
+current_sam_share_pct: 12.1
+revenue_headroom_x: 8.3
+tam_growth_pct: 15
+runway_class: "STRONG"
+mgmt_claim_cr: 0
+mgmt_claim_ratio: 0
+mgmt_claim_read: "no explicit numeric TAM claim found in AR MD&A or investor presentations; qualitative growth narrative only (financialization of savings, wealth-market and IPO-pipeline backdrop stats sourced to third parties), not comparable to a conservative estimate"
+capacity_check: "sufficient in principle - no capex programme exists to check against (B07 capex_embedded_growth_pct=0/NOT APPLICABLE); standalone net worth Rs 2,187.26 Cr (AR p.74) gives balance-sheet headroom for the guided branch/MTF plan (~Rs 58-72 Cr incremental annual interest revenue, arithmetic shown in report Section 3C). Real constraint is funding quality not physical capacity: CFO negative 3 of last 4 years, growth is debt-funded, and the Sep-2026 Infomerics ISSUER NOT COOPERATING downgrade plus adjourned NCD meeting (B00 LBF4) threaten that debt access. The SOM, not the branch/MTF plan, is the side more likely to prove optimistic if debt access tightens further."
+methods_used:
+  - "Method 1: top-down (ICRA industry revenue, FY22 anchor, STALE)"
+  - "Method 2: bottom-up unit economics (Share India own ARPU scaled nationally; excluded from triangulation as non-representative)"
+  - "Method 3: peer revenue aggregation (6 known players, FY26, primary method used)"
+  - "Method 4: import substitution (not applicable)"
+  - "Method 5: global benchmark cross-check (light, order-of-magnitude only)"
+stale_data_flags:
+  - {datapoint: "India securities broking industry revenue Rs 28,000 Cr", source: "ICRA via Zeebiz", year: 2022}
+searches_performed:
+  - "India stock broking industry revenue size 2026 CRISIL ICRA report"
+  - "India margin trading facility MTF industry book size 2026 crore"
+  - "SEBI F&O derivatives options premium turnover decline 2025 2026 industry"
+  - "India algo trading software market size 2026"
+  - "ICRA securities broking industry revenue FY26 FY27 crore estimate"
+  - "India wealth management AUM market size 2026 CRISIL"
+  - "NSE active derivatives traders number 2026 8.75 million premium turnover average daily"
+  - "Zerodha revenue FY25 FY26 crore profit"
+  - "Groww revenue FY25 FY26 crore India broking"
+  - "MTF interest rate charged brokers India range 2026 percent"
+  - "ICRA broking industry revenue FY26 crore regulatory tightening 2025"
+  - "WebFetch: ICRA May-2025 securities broking industry report PDF (unparseable)"
+  - "WebFetch: ICRA November-2025 securities broking and allied industry report PDF (unparseable)"
+searches_skipped: []
+downstream_candidates:
+  - signal: "NSE/BSE monthly cash and F&O average daily turnover (ADTO) and options premium turnover"
+    entity_type: "macro"
+    demand_link: "Drives prop-trading revenue, brokerage volumes and MTF utilisation together"
+    likely_source: "NSE/BSE monthly business-growth bulletins"
+    cadence: "monthly"
+    shared: true
+  - signal: "SEBI active-derivatives-trader count and F&O regulatory circulars"
+    entity_type: "regulatory"
+    demand_link: "Sets structural ceiling on retail options volumes underlying brokerage fees and the prop pool"
+    likely_source: "SEBI monthly bulletin / SEBI board circulars"
+    cadence: "monthly"
+    shared: true
+  - signal: "RBI intraday-funding and bank-guarantee circular status/implementation"
+    entity_type: "regulatory"
+    demand_link: "Caps capital available to the prop/liquidity-provision desk (mgmt's own Rs 40,000-50,000 Cr estimate)"
+    likely_source: "RBI notifications/circulars"
+    cadence: "event-driven"
+    shared: false
+  - signal: "NSDL/CDSL total demat-account additions"
+    entity_type: "end-customer"
+    demand_link: "Direct proxy for addressable client-pool population growth or deceleration"
+    likely_source: "NSDL/CDSL monthly investor-data releases"
+    cadence: "monthly"
+    shared: true
+  - signal: "AMFI mutual-fund AUM and monthly SIP flow data"
+    entity_type: "end-customer"
+    demand_link: "Drives wealth/PMS/AIF and mutual-fund-distribution segment pool size"
+    likely_source: "AMFI monthly data release"
+    cadence: "monthly"
+    shared: false
+  - signal: "Peer-disclosed MTF book size and MTF interest-rate changes"
+    entity_type: "counterparty"
+    demand_link: "Signals industry-wide MTF yield compression, the largest quantified SAM lever"
+    likely_source: "NSE/BSE MTF disclosure data; peer investor presentations"
+    cadence: "monthly"
+    shared: false
+  - signal: "Infomerics/rating-agency cooperation status"
+    entity_type: "counterparty"
+    demand_link: "Debt-funded growth capacity (Section 3C) depends on restored rating cooperation"
+    likely_source: "Infomerics rating rationale (Reg 30 filings)"
+    cadence: "event-driven"
+    shared: false
+  - signal: "SEBI DRHP filings / SME-platform IPO listing counts"
+    entity_type: "end-customer"
+    demand_link: "Drives merchant-banking fee revenue"
+    likely_source: "SEBI DRHP filings; NSE/BSE SME platform listing data"
+    cadence: "quarterly"
+    shared: false
+demand_externally_verifiable: true
+analyst_note: "This name required splitting TAM into a CLIENT POOL (fees, MTF/NBFC interest, wealth, insurance, merchant banking, algo subscriptions - 30.1% of FY26 revenue) and a PROP POOL (58.3%+ of FY26 revenue, no clean unit economics per B04) per the injected instruction. All formal TAM/SAM/SOM/YAML figures cover the client pool only; the prop pool is discussed narratively in the report with sourced anchors (options turnover, RBI curb capital estimate, active-trader decline) but deliberately not converted into a Rs Cr market size, since no bid-ask/arbitrage margin-capture rate exists in any source found. The conservative TAM (Rs 21,600 Cr) is a known floor from six named peers (Zerodha, Angel One, Groww, SMC Global, Share India, Choice International); a full organized-industry total was searched for but not found. The SOM math assumes 1.4-2.9pp of share gain despite the one clean filed trend (fee income) currently running the other way - flagged prominently so Stage 11 treats the SOM as plan-dependent upside, not trend extrapolation."

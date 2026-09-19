@@ -15,3 +15,4 @@ Per-stage token ledger (one line per subagent run).
 | 8 | promoter check | sonnet | default | not reported | not reported | 274636 | 14m18s | 1 |
 | 6 | peer concalls | sonnet | default | not reported | not reported | 139005 | 10m14s | 1 |
 | 7 | emerging moat | sonnet | default | not reported | not reported | 167911 | 9m02s | 1 |
+| 9 | TAM | sonnet | default | not reported | not reported | 168060 | 11m47s | 1 |

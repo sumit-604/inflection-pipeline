@@ -17,3 +17,5 @@ not split input/output, so in_tok/out_tok read n/a).
 | 8 | promoter check (web) | claude-sonnet-5 | default | n/a | n/a | 207740 | 10m14s | 1 |
 | 6 | peer concall verification (RBZ mislabeled as MOTISONS, superseded) | claude-sonnet-5 | default | n/a | n/a | 228811 | 8m17s | 1 |
 | 7 | emerging moat scan | claude-sonnet-5 | default | n/a | n/a | 149572 | 7m57s | 1 |
+| 6 | peer concall verification (SENCO, PNGJL, KALYANKJIL; governs) | claude-sonnet-5 | default | n/a | n/a | 375766 | 6m12s | 2 |
+| 9 | TAM/SAM/SOM (web) | claude-sonnet-5 | default | n/a | n/a | 183592 | 12m15s | 1 |

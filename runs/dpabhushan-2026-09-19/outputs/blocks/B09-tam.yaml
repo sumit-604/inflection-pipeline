@@ -1,0 +1,67 @@
+stage: B09-tam
+company: "DPABHUSHAN"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Management states no explicit TAM/market-size claim in any filed document (AR, decks, four concall transcripts); the Rs 15,000 Cr-by-FY30 revenue target used for the LBF3 test is sourced only to a Business Standard media report (Sep-2026), not to any primary filing in this corpus."
+  - "'Revenue from Non-Retail Operations' (12.3% of FY26 revenue, B04) has undisclosed composition; left inside the revenue base used for the SAM-share calculation (conservative, revenue-inclusive treatment) but its customer-scope fit (retail vs wholesale) is unresolved."
+  - "The organized-retail-share glidepath used to project SAM forward (37% CY25 -> 45.5% CY30P) is this stage's own linear interpolation between two sourced endpoints (37% actual, 43-47% CY29P projected, both web-sourced); the path between is an ESTIMATE, not itself sourced."
+flags:
+  - {type: FLAG-MGMT-TARGET-UNFILED, reason: "The Rs 15,000 Cr FY30 revenue target central to B00 LBF3 does not appear in the AR, either investor deck, or any of the four concall transcripts in this corpus; it is sourced only to a single Business Standard article (Sep-2026). Tested against the SOM regardless (Section 3B) because it is the operator's stated first verification priority, but the sourcing gap itself should be named at Halt 1."}
+  - {type: FLAG-MGMT-TARGET-INCONSISTENT, reason: "The Rs 15,000 Cr-by-FY30 target implies a 38.6% revenue CAGR from the FY26 base, above management's own concall-guided 25-30% range and above the explicit Rs 4,800 Cr FY27 / Rs 5,500 Cr FY28 figures given on the same Q4 FY26 call (which imply only 18% / 14.6% growth). Plausible on SAM/TAM grounds (1.45x the base-case SOM at FY30) but requires a +7.4pp SAM-share gain in 4 years, beyond even the aggressive 3-5pp/3yr band, with no competitor-exit or acquisition basis for the >5pp threshold."}
+  - {type: FLAG-CAPACITY-GAP, reason: "Store-opening capex (Rs 2.5-7 Cr/store) is not the binding constraint on the 51-store/Rs 15,000 Cr target; working-capital/inventory funding is, at an estimated Rs 1,150-1,750 Cr incremental need against a Rs 600 Cr QIP that is indefinitely postponed and unmentioned in the latest (Q1 FY27) call, and FY26 borrowings of only Rs 290 Cr. No disclosed funding source covers this gap."}
+market_definition: "India domestic retail gold-led jewellery (gold, diamond-studded, silver; excludes exports and loose-stone/B2B trade) in the West & Central India region, organized-retail channel"
+tam_cr: {conservative: 562450, realistic: 684380}
+sam_cr: 53080
+sam_pct_of_tam: 9.4
+som_3yr_cr: 8035
+som_5yr_cr: 12973
+som_implied_revenue_cagr: {yr3: 25.5, yr5: 26.1}
+current_sam_share_pct: 7.7
+revenue_headroom_x: 13.1
+tam_growth_pct: 12.2
+runway_class: "STRONG"
+mgmt_claim_cr: 15000
+mgmt_claim_ratio: 1.45
+mgmt_claim_read: "inflated"
+capacity_check: "gap of approximately Rs 1,150-1,750 Cr in disclosed working-capital/inventory funding for the SOM's implied FY30 store buildout; the SOM (and more so the 51-store/Rs 15,000 Cr media target) is the optimistic side, not the store-opening capex plan itself, which is small and within the company's stated Rs 50 Cr internal-accrual plan"
+methods_used: ["top-down (AR/IMARC-CareEdge)", "bottom-up (WGC tonnage x price + diamond/silver overlay)", "peer revenue aggregation + unorganised estimate", "global benchmark (directional, per-capita)"]
+stale_data_flags: []
+searches_performed:
+  - "India organised jewellery retail market size 2026 Crore CRISIL ICRA report"
+  - "India gems and jewellery market organised vs unorganised share percentage 2026"
+  - "Senco Gold PNG Jewellers Kalyan Jewellers FY26 annual revenue crore"
+  - "PNG Jewellers PNGJL FY26 annual revenue crore results"
+  - "Titan jewellery division Tanishq revenue FY26 crore"
+  - "Malabar Gold and Diamonds revenue FY26 crore India"
+  - "India organised jewellery retail market size Rs crore 2025 2026 IBEF ICRA CRISIL tier 2 tier 3"
+  - "World Gold Council India gold jewellery demand tonnes 2025 2026 full year"
+  - "India gold jewellery demand value Rs crore 2025 WGC quarterly gold demand trends"
+  - "China gold jewellery consumption demand tonnes 2025 WGC per capita comparison India"
+  - "DP Abhushan 51 stores Tier 2 3 cities Rs 15000 Cr revenue FY30 business standard"
+searches_skipped:
+  - "Joyalukkas / PC Jeweller exact FY26 revenue (peer set already sufficient for Method 3 triangulation with 5 named players)"
+  - "Primary IBEF/ICRA/CRISIL report PDFs opened directly (search-result synthesis used instead; AR's own primary chart is the higher-confidence anchor)"
+  - "GJEPC export-data detail (Method 4 ruled not applicable for a domestic retailer)"
+downstream_candidates:
+  - {signal: "MCX/LBMA domestic gold price", entity_type: "macro", demand_link: "Drives ~91% of revenue value and the FY26 margin/holding-gain story (LBF1)", likely_source: "MCX price series", cadence: "monthly", shared: true}
+  - {signal: "CBIC/Ministry of Finance gold and silver import duty notifications", entity_type: "regulatory", demand_link: "Raises landed cost sector-wide; May-2026 hike 6% to 15% already realised", likely_source: "CBIC / Ministry of Finance notifications", cadence: "event-driven", shared: true}
+  - {signal: "BIS hallmarking district-coverage expansion", entity_type: "regulatory", demand_link: "Direct formalisation driver favouring organised retailers over the 62-64% unorganised base", likely_source: "BIS / PIB releases", cadence: "event-driven", shared: false}
+  - {signal: "World Gold Council India Gold Demand Trends (quarterly)", entity_type: "macro", demand_link: "National jewellery tonnage/value read this SAM/SOM depends on; cross-checks the industry-wide volume-decline claim", likely_source: "World Gold Council, Gold Demand Trends India Focus", cadence: "quarterly", shared: false}
+  - {signal: "Competitor store-opening announcements in MP/Rajasthan/Gujarat/Chhattisgarh/Maharashtra", entity_type: "counterparty", demand_link: "Direct competitive pressure inside DPAL's own West and Central SAM", likely_source: "BSE/NSE corporate announcements per listed peer (Titan, Kalyan, Senco, PNG)", cadence: "event-driven", shared: false}
+  - {signal: "IMD monsoon/kharif season forecast and rural income indicators", entity_type: "macro", demand_link: "AR names rural/monsoon sensitivity as a Tier II/III demand driver", likely_source: "IMD seasonal forecast; RBI Annual Report household-savings data", cadence: "event-driven", shared: false}
+  - {signal: "ICRA/CRISIL/IBEF notes on organised-vs-unorganised jewellery retail share", entity_type: "macro", demand_link: "Directly the formalisation tailwind the SOM share-gain assumption depends on", likely_source: "ICRA/CRISIL sector rating notes; IBEF industry reports", cadence: "event-driven", shared: false}
+demand_externally_verifiable: true
+analyst_note: >
+  The single most load-bearing finding is the Rs 15,000 Cr-by-FY30 target test (Section 3B):
+  it is plausible on pure SAM/TAM grounds (1.45x the base-case SOM) but requires a SAM-share
+  gain (+7.4pp in 4 years) beyond even the aggressive band, is not in any filed document, and
+  contradicts management's own Rs 4,800/5,500 Cr FY27/FY28 figures from the same call. The
+  second finding is that the binding constraint on any of these growth paths is not market size
+  (13.1x SAM headroom, STRONG runway) but working-capital funding: an estimated Rs 1,150-1,750
+  Cr gap against a postponed QIP and Rs 290 Cr of current borrowings. Third, on LBF1's
+  value-vs-volume question, this stage's per-capita finding (India now exceeds China in gold
+  jewellery tonnage for comparable populations, CY2024 WGC data) independently supports B04's
+  own reading that FY26's growth is more a price/formalisation story than a fresh-demand story
+  for the category as a whole, not just for DPAL specifically.

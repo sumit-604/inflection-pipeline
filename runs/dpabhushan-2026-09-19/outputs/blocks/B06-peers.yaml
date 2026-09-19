@@ -1,0 +1,49 @@
+stage: B06-peers
+company: "DPABHUSHAN"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - {type: FLAG-HEDGING-DISCLOSURE-GAP-VS-PEERS, reason: "All three peers (SENCO, PNGJL, KALYANKJIL) disclose a numeric hedge ratio and its quantified P&L impact on every call, including the two peers (SENCO, PNGJL) that run significantly unhedged books. DPABHUSHAN's silence on its FY26 AR Note 33.2.2(D) 42kg unhedged position is the outlier practice against this peer norm, not the underlying partial-hedge exposure itself."
+  - {type: FLAG-GUIDANCE-DISCIPLINE-GAP-VS-PEERS, reason: "All three peers reconcile every guidance-to-delivery gap with a same-call, quantified bridge (SENCO's realisation-gain percentage points; PNGJL's three-factor 230bps dilution bridge; KALYANKJIL's three-factor PBT-margin bridge). DPABHUSHAN's FY27 EBITDA guide of 6-6.5% followed by an unreconciled 11.01% Q1 FY27 print has no peer parallel."
+  - {type: FLAG-VOLUME-MAGNITUDE-UNSUPPORTED, reason: "PNGJL discloses explicit +25-27% gold volume growth (Q3 and Q4 FY26); SENCO's disclosed 9M FY26 volume decline is -10%, roughly a third of DPABHUSHAN's claimed -29%. DPABHUSHAN's 'industry-wide ~20-29% volume decline' framing is not supported in magnitude by any peer, though the underlying gold-price/volume tension is real and PNGJL's own CEO concedes industry-wide like-for-like degrowth once new stores are stripped out."
+peers_provided: 12
+verified:
+  - {claim: "Import duty hike (6% to 15%, May 2026) and PM mindful-spending appeal cited as Q1 FY27 demand headwinds", peers: ["SENCO", "PNGJL", "KALYANKJIL"], anchor_count: 6}
+partially_verified:
+  - {claim: "Industry-wide gold volume declined ~20-29% in FY26", peers: ["SENCO", "PNGJL"]}
+  - {claim: "25-30% of FY26 margin improvement from gold-price inventory gains, Q3-strong/Q4-weak/Q1-strong swing", peers: ["SENCO", "PNGJL", "KALYANKJIL"]}
+contradicted:
+  - {claim: "Strengthening hedging/GML narrative vs FY26 AR's new 42kg unhedged position", contradicting_peer: "SENCO, PNGJL (both disclose numeric hedge ratio and quantified gain/loss every quarter)", quote_anchor: "SENCO Feb-2026 call: hedging 'in the range of 55% to 60%... down from 80% in previous years'; PNGJL May-2026 call: hedging '57%... to 63%... to 67%', Deepak Vijay"}
+  - {claim: "FY27 EBITDA margin guided 6-6.5%, delivered 11.01% with no guidance revision", contradicting_peer: "SENCO, PNGJL, KALYANKJIL (all three reconcile guidance gaps with same-call quantified bridges)", quote_anchor: "PNGJL May-2026 call: Saurabh Gadgil's three-factor 230bps gross-margin-dilution bridge; KALYANKJIL Aug-2026 call: Ramesh Kalyanaraman's three-factor PBT-margin bridge"}
+unverifiable:
+  - {claim: "'47 lakh weddings' Nov-2025 to Mar-2026 industry demand statistic", peers_checked: ["SENCO", "PNGJL", "KALYANKJIL"]}
+  - {claim: "D.P. Indore store outsells 14-15 combined stores of 'a leading national jewellery brand'", peers_checked: ["SENCO", "PNGJL", "KALYANKJIL"]}
+peer_coverage_map:
+  - {peer: "SENCO", quarter: "Q2 & H1 FY26 (13-Nov-2025)", usage: "SUBSTANTIVE", contribution: "Hedging ratio baseline (65-70%), sales-side hedging 90-105%, Q1 FY26 realisation gain (~INR20-25cr)"}
+  - {peer: "SENCO", quarter: "Q3 & 9M FY26 (13-Feb-2026)", usage: "SUBSTANTIVE", contribution: "9M volume decline -10% vs DP's claimed -29%, hedging cut to 55-60% with margin-call rationale"}
+  - {peer: "SENCO", quarter: "Q4 FY26 (27-May-2026)", usage: "SUBSTANTIVE", contribution: "PM-appeal footfall dip dated, customs-duty gain estimate (~9% of inventory), GML constraint"}
+  - {peer: "SENCO", quarter: "Q1 FY27 (12-Aug-2026)", usage: "SUBSTANTIVE", contribution: "Customs-duty gain quantified (INR12-15cr), margin normalization to 7.0%"}
+  - {peer: "PNGJL", quarter: "Q2 & H1 FY26 (13-Nov-2025)", usage: "SUBSTANTIVE", contribution: "'100% effective hedging' baseline claim, positive volume framing"}
+  - {peer: "PNGJL", quarter: "Q3 FY26 (10-Feb-2026)", usage: "SUBSTANTIVE", contribution: "Explicit +25% gold volume growth, direct counter to industry-decline claim"}
+  - {peer: "PNGJL", quarter: "Q4 FY26 (15-May-2026)", usage: "SUBSTANTIVE", contribution: "230bps gross-margin bridge (3 named factors), real hedging ratio 57%->67%, gold volume +27%"}
+  - {peer: "PNGJL", quarter: "Q1 FY27 (28-Jul-2026)", usage: "SUBSTANTIVE", contribution: "Duty-hike passback mechanics, bars/coin mix collapse, Indore store 1.4x stock turn"}
+  - {peer: "KALYANKJIL", quarter: "Q2 & H1 FY26 (07-Nov-2025)", usage: "SUBSTANTIVE", contribution: "'Fully protected' hedging stance established, FOCO/COCO conversion detail"}
+  - {peer: "KALYANKJIL", quarter: "Q3 & 9M FY26 (06-Feb-2026)", usage: "SUBSTANTIVE", contribution: "Hedging reiterated (silver/platinum ~0.2-0.3% exception), 18-karat adoption regional split"}
+  - {peer: "KALYANKJIL", quarter: "Q4 FY26 (08-May-2026)", usage: "SUBSTANTIVE", contribution: "150-store FY27 guidance, debt-reduction plan, pledging status"}
+  - {peer: "KALYANKJIL", quarter: "Q1 FY27 (04-Aug-2026)", usage: "SUBSTANTIVE", contribution: "Customs-duty gain quantified (INR40cr Q1), RPT/governance question answered on record, PBT-margin bridge"}
+industry_cross_read:
+  demand: "Consensus with DPABHUSHAN on timing (strong Oct-Nov 2025 festive, strong Apr-2026 Akshaya Tritiya, soft May-Jun 2026, recovering Jul-Aug 2026); diverges on volume magnitude, with peer revenue growth (33-43% FY26) showing no sector-wide contraction"
+  pricing_inputs: "Consensus on 50-70%+ gold price rise driving mix shift to lightweight/lower-karat and rising old-gold exchange (25-55%+ across peers); all peers separate making-charge income from inventory/realisation gain more sharply and disclose the latter in smaller, quantified percentage-point terms than DPABHUSHAN's 25-30%-of-improvement framing"
+  capex_cycle: "Industry-wide capacity race, not a lone-expander situation: SENCO 18-20+/yr toward 300+ stores by FY30, PNGJL 25+/yr toward 140-177 by FY29, KALYANKJIL 80-90+ Kalyan plus 50-55 Candere/yr; all scaling FOCO/franchise mix, matching DPABHUSHAN's own FOCO pivot but dwarfing its absolute pace"
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "GML/MCX margin-call mechanics forcing active hedge-ratio cuts (SENCO, quantified)"
+  - "Corporate governance / related-party-transaction and pledging overhang, raised on-record by an analyst citing external media (KALYANKJIL Aug-2026 call)"
+  - "Promoter shareholding dilution against a hard SEBI MPS deadline (PNGJL, September 2027)"
+  - "One-time labour-code cost impact, quantified (SENCO, ~INR6.2-6.5cr)"
+  - "Employee attrition risk in a specific division, quantified and explained (KALYANKJIL, ~50%+)"
+  - "Credit-rating action with quantified borrowing-cost implication (SENCO CareEdge A1, PNGJL CRISIL A+ upgrade)"
+net_narrative_effect: "complicates"
+analyst_note: "Peers confirm the macro backdrop (gold surge, duty hike, PM appeal, wedding demand, FOCO capacity race) is genuinely sector-wide; DPABHUSHAN is not fabricating its environment. But peers undercut DPABHUSHAN's two HIGH-severity Stage 5 flags directly: every peer discloses a numeric hedge ratio and quantified guidance-reconciliation every quarter, which DPABHUSHAN does not, making its hedging silence and guidance whipsaw genuine, peer-benchmarked management-quality gaps rather than pipeline artefacts. Volume-decline magnitude is the weakest DPABHUSHAN claim tested: PNGJL's explicit +25-27% gold volume growth directly counters an 'industry-wide ~20-29% decline' framing, even though PNGJL's own CEO concedes like-for-like industry degrowth exists once new-store contribution is stripped out. No peer transcript discusses DPABHUSHAN or Madhya Pradesh comparative economics."

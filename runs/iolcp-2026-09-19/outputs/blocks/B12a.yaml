@@ -1,0 +1,14 @@
+stage: B12a
+company: "IOLCP"
+run_date: "2026-09-19"
+model: claude-haiku-4-5
+status: complete
+numbers_checked: 21
+findings: []
+critical_count: 0
+major_count: 0
+minor_count: 0
+false_positives_struck: 0
+material_universe: 47
+acceptance_rate: 100
+coverage_note: "Gate0 verdict cards (blocks A-E, deal-breakers), Section 1B pillar inputs (revenue 2,319.06 Cr, PAT 137.72 Cr, ROCE 10.65%, leverage 0.075x, shareholding 62.28%), segment revenues (Pharma 1,396.25 Cr, Chemical 922.81 Cr, inter-segment 237.72 Cr), capacity figures (Ibuprofen 12,000 MTPA, Paracetamol 10,800 MTPA), capex (FY26 172.99 Cr CFS, FY25 213.55 Cr CFS, FY22-24 AR chart basis noted). Sampling methodology: highest-materiality tier first (verdict cards, then pillar inputs, then table cells). 21 of 47 identifiable material numbers sampled. Clean verification on all checked; no gaps preclude scoring."

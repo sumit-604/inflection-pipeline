@@ -1,0 +1,32 @@
+stage: B12c
+company: "IOLCP"
+run_date: "2026-09-19"
+model: "claude-opus-5"
+status: complete
+scope: "PHASE 1 (Gate 0 B01 + Emerging Moat B07 only); valuation audit PENDING PHASE 3"
+gate0: {rules_checked: 32, fails: ["G0-1 MAJOR: B2/B3 FCF built on AR p.24 capex chart for FY22-FY24, a substituted basis the fixed formula forbids; CFS-basis B2 = 2 (FY25-FY26, 1 of 2 positive) or 0 if N/A, maker 0; classification GOOD unchanged", "G0-2 MINOR: B4 scored on a 1-year window (FY25->FY26, -1.04 days -> 3); Block B sits exactly at deal-breaker-2 line (8) on this read, fragile", "G0-3 MINOR: E2 scored on a 21-month window (Sep-2024 to Jun-2026), not 3 years; score unchanged", "G0-4 MINOR: qualitative framing (Ibuprofen supercycle, company-memory LBF3) in a numbers-only stage; analyst_note says A1-A4 score off the post-reset band, but A1 median (15.03%, FY18) spans the peak years"]}
+emoat: {rules_checked: 24, fails: ["EM-1 CRITICAL: L x I matrix misapplied, LM scored 2 (rule says 1) on B2, E2, F1, G1; em_score 26.3 -> 23.4 (23.1 on maker A2 multiplier); STRENGTHENING -> MODEST; crosses below the EM >= 25 UA qualifier; 6D GOOD+ loses its basis, stage 7 must re-map (rules 6, 12, 20)", "EM-2 MAJOR: C1 scored HH at 1.0 (4.0) on Anchor Customer relationships that H2 grades as management claim ('contracts being finalized'); 0.7 reading gives 2.8", "EM-3 MAJOR: same EDQM/MFDS/NMPA filing extension credited in A1 (3.0) and R1 (2.0); one improvement, two mechanisms", "EM-4 MAJOR: capex_embedded_growth_pct 142.6 includes the undated Rs 1,200-1,400 Cr greenfield, not capex under execution; dated Rs 495 Cr tranche gives 39.3", "EM-5 MINOR: A2 stated DOCUMENTED tier but multiplied 0.7; rule gives 1.0 (+0.3)", "EM-6 MINOR: completionist recount says 28 documented items, listed breakdown sums to 18; evidence_mix.documented 28 unreconciled; guard outcome unchanged", "EM-7 MINOR: several anchors point to upstream blocks (B03, B04, B05) instead of primary documents", "EM-8 MINOR: 6C omits existing moat count (moats_confirmed 0, moat_class NONE)", "EM-9 MINOR: 07-emoat.md does not end with the fenced YAML block; block exists only in blocks/B07-emoat.yaml"]}
+valuation: {rules_checked: 0, fails: [], status: "PENDING PHASE 3 (B10/B11 not yet produced)"}
+expectation_ledger: {present: false, downside_row: false, all_rows_confirm_by: false, all_rows_metric_threshold: false, prob_in_range: false, decay_status_valid: false, off_ledger_credit: false, residual_pct_cmp: 0, residual_starter_cap_ok: true, fails: [], status: "NOT IN SCOPE (phase 3)"}
+business_understanding_narrative: {present: false, five_questions_answered: false, prose_only: false, section6_candidates_named: 0, valuation_vocab_leak: false, fails: [], status: "NOT IN SCOPE (stage 13)"}
+recomputed_destination_pe: ""
+recomputed_decision: ""
+recomputed_em: {maker_em_score: 26.3, recomputed_em_score: 23.4, maker_class: "STRENGTHENING", recomputed_class: "MODEST", ua_em25_qualifier: "fails at recomputed score", capex_embedded_growth_pct_recomputed: 39.3}
+findings:
+  - {id: "EM-1", severity: "CRITICAL", location: "07-emoat.md Section 5 rows B2, E2, F1, G1; B07 em_score, em_classification, combined_assessment", rule: "07 Section 5 matrix: ML/LM=1", claimed: "LM raw 2; em_score 26.3 STRENGTHENING", recomputed: "LM raw 1; em_score 23.4 MODEST", action: "REWORK stage 7 Section 5 and 6D recommended"}
+  - {id: "EM-2", severity: "MAJOR", location: "07-emoat.md C1 vs H2", rule: "07 verifier rule 3 tier consistency", claimed: "C1 HH x 1.0 = 4.0", recomputed: "4.0 (capex-committed reading) or 2.8 (relationship is a claim)", action: "state one tier for the Anchor Customer evidence"}
+  - {id: "EM-3", severity: "MAJOR", location: "07-emoat.md A1 and R1/4A-4C", rule: "one improvement, one mechanism", claimed: "A1 3.0 + R1 2.0 on the same filings", recomputed: "credit once", action: "separate R1 evidence or drop the overlap"}
+  - {id: "EM-4", severity: "MAJOR", location: "07-emoat.md 2C; B07 capex_embedded_growth_pct", rule: "07 2C: total capex under execution", claimed: "142.6", recomputed: "39.3", action: "restate the field; keep 142.6 as a labelled ceiling note"}
+  - {id: "G0-1", severity: "MAJOR", location: "01-gate0.md Block B B2/B3", rule: "01 FORMULA DEFINITIONS: capex from CFS, do not substitute", claimed: "B2 0 on 5 years incl. AR-chart capex", recomputed: "B2 2 (CFS FY25-FY26) or 0 (N/A)", action: "restate on CFS basis or source FY22-FY24 CFS"}
+  - {id: "G0-2", severity: "MINOR", location: "01-gate0.md B4", rule: "01 B4 latest vs earliest", claimed: "B4 3 on FY25->FY26", recomputed: "same score; 1-year window, deal-breaker 2 fragile", action: "carry fragility note"}
+  - {id: "G0-3", severity: "MINOR", location: "01-gate0.md E2", rule: "01 E2 3-year window", claimed: "E2 5 on 21 months", recomputed: "5", action: "none"}
+  - {id: "G0-4", severity: "MINOR", location: "01-gate0.md deal-breaker text, analyst_note", rule: "01 operating rule 2", claimed: "qualitative supercycle framing; A1-A4 post-reset claim", recomputed: "n/a", action: "trim"}
+  - {id: "EM-5", severity: "MINOR", location: "07-emoat.md Section 5 A2", rule: "multiplier by tier", claimed: "0.7", recomputed: "1.0", action: "fix"}
+  - {id: "EM-6", severity: "MINOR", location: "07-emoat.md Section 3 recount; B07 evidence_mix", rule: "completionist recount", claimed: "28", recomputed: "18 per listed breakdown", action: "reconcile"}
+  - {id: "EM-7", severity: "MINOR", location: "07-emoat.md G1, G2, 1C", rule: "07 operating rule 3 anchors", claimed: "anchors to B03/B04/B05", recomputed: "n/a", action: "anchor to primary documents"}
+  - {id: "EM-8", severity: "MINOR", location: "07-emoat.md 6C", rule: "6C injected Gate 0 fields", claimed: "moat count absent", recomputed: "moats_confirmed 0, NONE", action: "add"}
+  - {id: "EM-9", severity: "MINOR", location: "07-emoat.md end", rule: "07 OUTPUT: end with fenced YAML", claimed: "absent", recomputed: "n/a", action: "append block"}
+critical_count: 1
+major_count: 4
+minor_count: 8
+acceptance_rate: 73.2

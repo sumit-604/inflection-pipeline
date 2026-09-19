@@ -18,3 +18,7 @@ total tokens and wall time per subagent; the in/out split is not exposed.
 | 7 | emerging moat | sonnet | agent default | n/a | n/a | 174758 | 9m35s | 1 |
 | 6 | peer concalls (YAML retry) | sonnet | agent default | n/a | n/a | 201517 | 3m01s | 2 |
 | 9 | TAM/SAM/SOM | sonnet | agent default | n/a | n/a | 231089 | 9m08s | 1 |
+| 12a | verifier A numerical | haiku | agent default | n/a | n/a | 91878 | 3m04s | 1 |
+| 12b | verifier B red flags | opus | agent default | n/a | n/a | 214027 | 7m27s | 1 |
+| 12c | verifier C phase-1 half | opus | agent default | n/a | n/a | 120061 | 4m34s | 1 |
+| 12d | verifier D peers | sonnet | agent default | n/a | n/a | 96369 | 2m55s | 1 |

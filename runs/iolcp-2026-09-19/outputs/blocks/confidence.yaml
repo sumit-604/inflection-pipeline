@@ -1,0 +1,23 @@
+stage: confidence-delta
+company: IOLCP
+run_date: 2026-09-19
+phase: 1
+verifier_a_identity_check: "B12a has 0 CRITICAL rows; nothing to check, nothing struck"
+confidence_delta:
+  numerical_acceptance: 100        # B12a: 21 of 21 sampled figures clean (material universe 47)
+  redflag_coverage: 77             # B12b: 10 of 13 MATERIAL flags caught upstream (caught + partially caught)
+  framework_adherence: 73.2        # B12c phase-1 portion only: 41 of 56 rules (Gate 0 28/32, EM 13/24)
+  peer_utilisation: 100            # B12d: 12 of 12 peer transcripts substantive
+  overall: 73.2
+  overall_set_by: framework_adherence (B12c Gate 0 + Emerging Moat half)
+  not_applicable: []               # every component has a denominator of 4 or more
+  pending: ["framework_adherence valuation half (B11/B10): phase 3"]
+band: "60-74: PROCEED verdicts downgrade one level (orchestrator Section 5); set by framework_adherence"
+rework_gate:
+  verifier_a_critical: 0
+  any_acceptance_below_60: false
+  result: "no REWORK trigger"
+notes:
+  - "B12b states two readings of redflag_coverage: 77% counting partially-caught as caught (its rule definition, used here) and 31% counting full catches only (4 of 13). Under the strict reading the component falls below 60 and would force REWORK. Operator ruling needed at Halt 1 on which reading the rule means."
+  - "B12c EM-1 CRITICAL: corrected em_score 23.4 (MODEST), not 26.3 (STRENGTHENING); corrected capex_embedded_growth_pct 39.3, not 142.6. A Verifier C critical does not force REWORK; stage 7 was not re-run in phase 1. Downstream readers take the B12c recomputed values."
+  - "B12b CRITICAL: missed repeated evasion on the R&D / new-product pipeline across Feb, May, Aug calls. B12b also recommends credibility grade at the B/C line, not B; operator ruling at Halt 1."

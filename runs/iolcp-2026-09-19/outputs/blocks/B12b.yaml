@@ -1,0 +1,49 @@
+stage: B12b
+company: "IOLCP"
+run_date: "2026-09-19"
+model: "claude-opus-5"
+status: complete
+independent_flags_found: 24
+caught: 8
+partially_caught: 9
+missed:
+  - {severity: "CRITICAL", item: "R&D / new-product pipeline unanswered in three straight quarters; R&D stated as process-only; all 3 patents non-commercial", anchor: "Feb p.12-14 (Rana, Abhay); May p.11 (Sachin Kasera; Abhay); Aug p.7, p.11, p.12 (Santosh, Nimish Verma, Shaikh Mohammed; Abhay, Rana)"}
+  - {severity: "MAJOR", item: "May call: Mahajan confirms ethyl acetate margins 'much better' Apr-May ('absolutely correct'); Abhay tells another analyst the spread is 'more or less same'; LXCHEM puts April spread ~$250 vs ~$130 Jan-Feb", anchor: "May p.7 (Mahajan); May p.9 (Abhay); LXCHEM-Concall_May_2026 p.7"}
+  - {severity: "MAJOR", item: "Paracetamol sold on price to fill capacity (pharma EBIT 10.5% to 9.7%, 'focusing mainly on volume'); utilisation then flat at 55%; Granules reports paracetamol price erosion same quarter", anchor: "Feb p.9 (Mahajan, Khanna); Aug p.4 (Abhay); GRANULES-Concall_Jan_2026 p.12"}
+  - {severity: "MINOR", item: "Sep: ibuprofen feedstock effect 'neutralised for us' vs 'probable margin expansion... Yes, that's correct'", anchor: "Sep p.7, p.13 (Abhay)"}
+  - {severity: "MINOR", item: "Non-ibu export share drifts 15-17% to 20% to 21-20%; regulated split given in Feb, 'not having exact bifurcation' in Aug", anchor: "Feb p.6; May p.11; Aug p.6 (Abhay)"}
+  - {severity: "MINOR", item: "Aug margin hit blamed on prices already tied up with big customers vs Sep 'in every contract, we have a clause of price adjustment'", anchor: "Aug p.9-10 (Mahajan); Sep p.10 (Abhay)"}
+  - {severity: "MINOR", item: "Triacetin 'recent commissioning' (22-May) vs 'started production... after May'", anchor: "May p.3 (Abhay); Aug p.13 (Rana)"}
+pipeline_flags_not_supported:
+  - "B05 3C row 3: Q1 FY27 inventory-gain answer described as 'explicit denial both times... consistent'. Aug p.7 (Abhay) and Aug p.9 (Mahajan) admit a March-quarter inventory valuation gain, reversing the May p.4 denial. MAJOR."
+  - "B05 3B / peer_questions Q3: ethyl acetate spread '$200+ to $150-160' and 'neutralised by Sep 2026' attributed to IOL management 'across three calls'. The figures are analyst Sachin Kasera's premise (May p.7); 'neutralised' is Abhay on ibuprofen feedstock (Sep p.7). MAJOR."
+  - "B06 Q3 / FLAG-SPREAD / contradicted[1]: 'Acetyls spread neutralised by Sep 2026' contradicted by LXCHEM. IOL made no such claim; the LXCHEM Aug transcript is dated 30-Jul-2026 (before IOL's 13-Aug call), and its above-average spread refers to Mar/Apr. Contradicted count should be 1, not 2. MAJOR."
+promise_delivery_spot_checks: {checked: 5, confirmed: 4, wrong: 1}
+credibility_grade_concur: "lower: B/C boundary. Delivery supports B, but the May-denied / Aug-admitted inventory gain, contradictory margin and spread answers across analysts, the CDMO 'proof-of-concept' reply 4 weeks before an EU-GMP plant, and a 3-quarter pipeline non-answer cut Consistency and Transparency to 3/5 at most; operator ruling needed at Halt 1 since 4D weights key off the grade"
+findings:
+  - {severity: "CRITICAL", location: "B05 2E / repeated_evasions", finding: "MISSED repeated evasion (Feb, May, Aug): R&D / new-product pipeline never answered", anchor: "Feb p.12-14; May p.11; Aug p.7, p.11, p.12"}
+  - {severity: "MAJOR", location: "B05 3C row 3", finding: "NOT SUPPORTED: inventory-gain exchange read as consistent denial; transcript shows admission reversing the May denial; Q4 15.2% beat partly valuation-driven", anchor: "May p.4 (Abhay); Aug p.7 (Abhay); Aug p.9 (Mahajan)"}
+  - {severity: "MAJOR", location: "B05 3B bullet 4; peer_questions Q3", finding: "NOT SUPPORTED: analyst's spread figures and ibuprofen 'neutralised' remark attributed to IOL management as an acetyls claim", anchor: "May p.7 (Sachin Kasera); Sep p.7 (Abhay); Aug p.4 (Mahajan)"}
+  - {severity: "MAJOR", location: "B06 Q3, FLAG-SPREAD, Part 4", finding: "NOT SUPPORTED: second contradiction rests on a claim IOL never made; LXCHEM Aug call dated 30-Jul-2026, not after IOL's call", anchor: "LXCHEM-Concall_Aug_2026 p.7; Sep p.7"}
+  - {severity: "MAJOR", location: "B05 2A row 6 / promise_delivery", finding: "Greenfield MISSED is wrong in direction: 4-6/6-8 quarter window not elapsed; 'not in this FY' agrees with it; the 3-4 month approvals sub-promise was substantially met. Should be OPEN / NOT YET DUE", anchor: "May p.4, p.11; Aug p.11; Sep p.8"}
+  - {severity: "MAJOR", location: "B05 2B/2C/3B", finding: "MISSED: contradictory spread answers to two analysts on the May call; peer backs the higher-spread version", anchor: "May p.7, p.9; LXCHEM-Concall_May_2026 p.7"}
+  - {severity: "MAJOR", location: "B05 1C / 4A trigger 2", finding: "MISSED: paracetamol price concession for volume, peer-corroborated", anchor: "Feb p.9; GRANULES-Concall_Jan_2026 p.12"}
+  - {severity: "MAJOR", location: "B05 1C / 4D", finding: "PARTIALLY CAUGHT: CDMO formulations denied in Feb, 'proof-of-concept' answer in Aug, EU-GMP plant with ~30% funding incurred disclosed in Sep", anchor: "Feb p.7; Aug p.12; Sep p.2-3"}
+  - {severity: "MAJOR", location: "B05 3C row 2 / 3B", finding: "PARTIALLY CAUGHT: ibuprofen 'no pressure' denials vs May admission of a new peer entrant, alongside 50% capacity add with unquantified customer backing", anchor: "Feb p.4, p.13; May p.6, p.8; Sep p.10"}
+  - {severity: "MAJOR", location: "B05 1B / guidance YAML / 2C", finding: "PARTIALLY CAUGHT: FY28 15-20% / 15-17% entered without the same-breath 'we cannot predict for 28'; May FY27 numbers vary 15%+/-2 to 16-18% to mid-teen; Consistency 4/5 overstated", anchor: "May p.5, p.6, p.15; Aug p.9"}
+  - {severity: "MINOR", location: "B05 2E row 1", finding: "PARTIALLY CAUGHT: Aug margin drivers contradict across Khanna, Abhay, Mahajan", anchor: "Aug p.5, p.7, p.8, p.9"}
+  - {severity: "MINOR", location: "B05 1B / guidance YAML", finding: "PARTIALLY CAUGHT: ibuprofen asset turn walked to 1.5-1.75x, 'not the firm number'; B05 records 1.75-2.0x", anchor: "Sep p.3, p.12"}
+  - {severity: "MINOR", location: "B05 Supplementary", finding: "MISSED: 'neutralised' vs 'margin expansion, yes' within Sep call", anchor: "Sep p.7, p.13"}
+  - {severity: "MINOR", location: "B05 2A row 5", finding: "PARTIALLY CAUGHT: minoxidil end-Dec target slip omitted", anchor: "Feb p.7-8"}
+  - {severity: "MINOR", location: "B05 2A row 4", finding: "PARTIALLY CAUGHT: FY26 capex Rs160 Cr vs Rs130-135 Cr guide labelled DELIVERED", anchor: "Feb p.7; May p.3"}
+  - {severity: "MINOR", location: "B05 3D", finding: "MISSED: non-ibu export share drift", anchor: "Feb p.6; May p.11; Aug p.6"}
+  - {severity: "MINOR", location: "B05 2B", finding: "MISSED: pass-through statements conflict", anchor: "Aug p.9-10; Sep p.10"}
+  - {severity: "MINOR", location: "B05 1B / Supplementary", finding: "PARTIALLY CAUGHT: ROCE 'more about 15%' transcribed as '>15%'", anchor: "Sep p.10 (Mahajan)"}
+  - {severity: "MINOR", location: "B05 1A", finding: "MISSED: Triacetin commissioning timing", anchor: "May p.3; Aug p.13"}
+critical_count: 1
+major_count: 9
+minor_count: 9
+material_found: 13
+material_caught: 10
+acceptance_rate: 77
+coverage_basis: "24 items listed; 13 material (2 CRITICAL, 11 MAJOR); of those 4 CAUGHT, 6 PARTIALLY CAUGHT, 3 MISSED. material_caught counts CAUGHT + PARTIALLY CAUGHT = 10/13 = 77%; strict CAUGHT-only = 4/13 = 31%. Company transcripts read in full; peers read by targeted search on IOL-contradiction topics (per-peer coverage is Verifier D's)."

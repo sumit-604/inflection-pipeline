@@ -19,3 +19,4 @@
 | 12c | verifier C framework (phase-1 scope) | claude-opus-5 | default | n/a | n/a | 112776 | 5m41s | 1 |
 | 12d | verifier D peer coverage | claude-sonnet-5 | default | n/a | n/a | 245572 | 6m12s | 1 |
 | 5c | confidence delta | orchestrator (inline) | n/a | n/a | n/a | n/a | ~3m | 1 |
+| 13 | synthesis-lite (phase 1, 3 files) | claude-opus-5 | default | n/a | n/a | 181835 | 5m52s | 1 |

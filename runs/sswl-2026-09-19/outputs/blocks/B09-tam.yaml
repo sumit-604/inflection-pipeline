@@ -1,0 +1,110 @@
+stage: B09-tam
+company: "SSWL"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: partial               # searches skipped, see searches_skipped
+input_gaps:
+  - "No SSWL-specific alloy-wheel market share is disclosed anywhere in the corpus (Ind-Ra's 34/52/42/35/39% shares, rationale 18-Feb-2026 p.2-3, are for the STEEL wheel rim segment only); the alloy-market TAM slice rests on a single third-party report (2025 base year) with no second corroborating source and no SSWL-specific share to cross-check against."
+  - "UNOMINDA's alloy-wheel-specific segment revenue is not disclosed in the corpus or found via web search; Method 3 (peer aggregation) could not include the largest listed alloy-wheel maker's wheel-specific revenue, so it is flagged a known undercount and used only as the conservative bound."
+  - "No India-specific third-party steel-wheel market-size report was found (searched); the steel-wheel TAM slice relies solely on reverse-engineering SSWL's own disclosed revenue against SSWL's own disclosed market share (Ind-Ra rationale), a single-source, potentially self-serving figure."
+  - "No independently sourced export-destination (ex-India) wheel market size exists; SSWL's stated ambition to sell more wheels abroad than in India within a decade (LBF1) could not be tested against a sized export TAM, only against directional context (Method 5 global benchmark, Section 5D quarter-delivery test)."
+flags:
+  - "SOM-implied revenue CAGR (12.4-12.7%, 3-5yr) is roughly half management's FY27 guidance of 25% YoY growth (Rs 6,500 Cr) and well below the strategy's 25% CAGR target. The FY27 guidance reads as a low-base, capacity-ramp catch-up year (GST 2.0 recovery plus Bhuj/knuckle ramp), not a sustained 3-5yr rate. Formal handoff to Stage 11 per this stage's mandate."
+  - "Capacity check: currently committed capex (B07's 33% embedded-growth figure) covers the 3yr SOM within ~8% but falls short of the 5yr SOM by ~Rs 2,390 Cr (~35%); the 5yr SOM requires a further, currently uncommitted capex cycle (management itself calls this 'nothing firm,' Q1 FY27 concall)."
+  - "Basis mismatch corrected in Method 2: Ind-Ra's disclosed SSWL market shares are stated for the steel wheel rim segment only; PV revenue was split into steel/alloy components before reverse-engineering to avoid overstating the implied PV market (full workings in Section 2)."
+market_definition: "India domestic OEM-fitment steel and alloy wheel rims (PV/CV/tractor/OTR/2W-3W) plus early-stage aluminium knuckles; export and aftermarket tracked directionally, not sized (data gap)."
+tam_cr: {conservative: 17200, realistic: 19900}
+sam_cr: 18100
+sam_pct_of_tam: 91.0
+som_3yr_cr: 7420
+som_5yr_cr: 9280
+som_implied_revenue_cagr: {yr3: 12.7, yr5: 12.4}   # FORMAL handoff to stage 11
+current_sam_share_pct: 28.6
+revenue_headroom_x: 3.49
+tam_growth_pct: 8.5
+runway_class: "GOOD"
+mgmt_claim_cr: 0
+mgmt_claim_ratio: 0
+mgmt_claim_read: "NOT FOUND (no absolute Rs TAM figure given anywhere in the AR, decks or transcripts; management's only quantified market claim is a growth rate -- steel wheel market +4%/yr, alloy wheel market +12%/yr over the next 5 years, Jul-2026-A deck p.16 -- cross-checked as reasonable against the third-party alloy-market CAGR of 10.1%)"
+capacity_check: "gap of ~Rs 530 Cr (7.6% short) at 3yr vs B07's 33% capex-embedded ceiling; gap widens to ~Rs 2,390 Cr (34.6% short) at 5yr -- the SOM is the optimistic side beyond year 3 unless a further, currently uncommitted capex cycle materialises"
+methods_used:
+  - "Method 1: top-down, India alloy-wheel market (third-party report, alloy slice only)"
+  - "Method 2: bottom-up, SSWL disclosed revenue divided by SSWL disclosed segment market share (steel-wheel basis, primary/realistic estimate)"
+  - "Method 3: peer revenue aggregation (SSWL + Wheels India) plus 40% unorganised-sector uplift (conservative estimate)"
+  - "Method 5: global benchmark (context only; India value share vs volume share cross-checked, no material divergence once ASP gap is accounted for)"
+stale_data_flags: []
+searches_performed:
+  - "global automotive wheels market size 2026 alloy steel wheel rim market report"
+  - "India alloy wheel market size penetration passenger vehicle 2026"
+  - "marketlensiq.com India Aluminum Alloy Wheel Market (WebFetch)"
+  - "India automotive wheel rim market size steel wheel INR crore 2025 2026"
+  - "Wheels India Ltd FY26 annual revenue crore"
+  - "USD INR exchange rate September 2026"
+  - "India tractor production FY2025-26 units TMA Tractor Manufacturers Association"
+  - "ackodrive.com India tractor sales FY2026 (WebFetch, 403 Forbidden, failed)"
+  - "India tractor industry FY26 total domestic sales 10 lakh units full year 2025-26"
+  - "Uno Minda alloy wheel business segment revenue FY26 Kharkhoda"
+  - "ACMA India auto component exports FY26 total value crore"
+searches_skipped:
+  - "Superior Industries / Enkei / Maxion India wheel-market competitor presence -- skipped for time; would refine Section 4C market structure only, not the TAM/SAM/SOM numbers"
+  - "OICA global vehicle production total units, direct source -- skipped; used published USD-value global wheel-market reports and a standard approximate global production figure instead"
+  - "India aftermarket/replacement wheel market (retrofit/tuning channel) size -- skipped; Bhuj's planned aftermarket export channel noted qualitatively only (Section 3A channel filter), not independently sized"
+downstream_candidates:
+  - signal: "SIAM monthly domestic vehicle production/sales (PV/CV/2W/3W)"
+    entity_type: "macro"
+    demand_link: "Direct volume driver for OEM wheel orders across four of SSWL's five vehicle segments"
+    likely_source: "SIAM monthly press release"
+    cadence: "monthly"
+    shared: true
+  - signal: "TMA/FADA tractor wholesale and retail data"
+    entity_type: "macro"
+    demand_link: "Direct volume driver for SSWL's tractor segment, 13% of FY26 revenue"
+    likely_source: "TMA / FADA monthly releases"
+    cadence: "monthly"
+    shared: false
+  - signal: "Tata Motors PV+CV volume and capex disclosures"
+    entity_type: "end-customer"
+    demand_link: "Named strategic customer, co-located Jamshedpur plant; drives PV and CV wheel offtake"
+    likely_source: "Tata Motors monthly sales release / investor disclosures"
+    cadence: "monthly"
+    shared: true
+  - signal: "Hyundai Motor India PV sales and model mix"
+    entity_type: "end-customer"
+    demand_link: "Named alloy-wheel customer, co-located Mehsana plant; drives PV alloy wheel demand"
+    likely_source: "Hyundai Motor India monthly sales release"
+    cadence: "monthly"
+    shared: false
+  - signal: "Domestic/LME aluminium price index"
+    entity_type: "macro"
+    demand_link: "Input-cost pass-through driver for alloy wheel and knuckle margin"
+    likely_source: "LME / MCX aluminium price series"
+    cadence: "monthly"
+    shared: false
+  - signal: "US Section 232 / reciprocal tariff rate on Indian auto exports"
+    entity_type: "regulatory"
+    demand_link: "Drives export competitiveness of the Rs 450-600 Cr export book vs Vietnam/Thailand rivals"
+    likely_source: "USTR / Federal Register tariff notices"
+    cadence: "event-driven"
+    shared: false
+  - signal: "EU CBAM implementation updates"
+    entity_type: "regulatory"
+    demand_link: "Drives cost/competitiveness of Europe-bound exports; disclosed by peer WHEELS, never by SSWL"
+    likely_source: "European Commission CBAM registry / official updates"
+    cadence: "event-driven"
+    shared: false
+demand_externally_verifiable: true
+analyst_note: >
+  The single most consequential number in this stage is the SOM-implied
+  sustained revenue CAGR of 12.4-12.7%, roughly half management's FY27
+  guidance of 25% and the strategy's 25% CAGR target. Both readings are
+  evidenced, not shaded: FY27 guidance is a low-base, capacity-ramp
+  catch-up year (GST 2.0 recovery, Bhuj/knuckle ramp); SOM reflects
+  realistic 3-5yr share-gain economics against an ~8.5% p.a. growing
+  market. The 5yr SOM (Rs 9,280 Cr) also exceeds what SSWL's currently
+  committed capex can physically produce (Rs 6,893 Cr ceiling per B07's
+  33% embedded-growth figure) by ~35%, meaning the 5yr SOM assumes a
+  second, unannounced capex cycle. LBF1 (export-exceeds-domestic within
+  a decade) could not be tested against a sized export TAM -- no
+  independent source exists -- so Section 5D substitutes a near-term
+  quarterly delivery test (FY27 Rs 600cr export guide vs Q1 actual
+  Rs 127cr) for Stage 11/FTTCP to track instead.

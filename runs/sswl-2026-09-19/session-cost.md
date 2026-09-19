@@ -16,3 +16,4 @@ not split input/output, so in_tok/out_tok read n/a).
 | 8 | promoter check (web) | claude-sonnet-5 | default | n/a | n/a | 193917 | 7m51s | 1 |
 | 6 | peer concall verification | claude-sonnet-5 | default | n/a | n/a | 314975 | 6m21s | 1 |
 | 7 | emerging moat scan | claude-sonnet-5 | default | n/a | n/a | 178074 | 9m19s | 1 |
+| 9 | TAM/SAM/SOM (web) | claude-sonnet-5 | default | n/a | n/a | 169330 | 11m00s | 1 |

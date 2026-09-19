@@ -1,0 +1,214 @@
+stage: B02-notes-pass1
+company: "SHAREINDIA"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Carried from B00: research/ empty, no broker notes; shareholding FII/DII
+    split and pledgee names not in filing-level detail; screener Financials.xlsx
+    absent (CSV parse used instead); sector_cap_row uses closest 'Banks / NBFCs
+    / MFIs' row pending Phase 3 operator confirmation."
+  - "PASS 1 FINDING: AR notes carry NO promoter-pledge disclosure (pledge
+    status is a shareholding-pattern filing item, not an Ind AS note item).
+    LBF2 pledgee/purpose is NOT FOUND IN DOCUMENT; must come from BSE SHP or
+    live verification."
+  - "PASS 1 FINDING: AR signed 19-May-2026 (Note 62 standalone p.221 / Note 66
+    consol p.334, 'no significant events after reporting date'). ALL of LBF4
+    (Infomerics downgrade 16-Sep-2026, NCD holders' meeting adjournment,
+    21-Sep-2026 board meeting, Enshrine Leasing purchase 17-Sep-2026)
+    post-dates this AR by 4 months and is NOT FOUND IN DOCUMENT by
+    construction. Must be verified from rating rationale / Reg 30 filings."
+  - "NOT FOUND: reason for FY25 auditor change (Note 39 standalone p.183
+    references 'erstwhile auditor' remuneration; predecessor firm not named)."
+  - "NOT FOUND: business purpose/activity of new subsidiary Share India Cred
+    Capital Private Limited (incorporated 06-Jan-2026, 60% owned)."
+  - "NOT FOUND: narrative driver for Share India Algoplus PAT collapse
+    (-64.7% YoY) or Share India Securities (IFSC) swing to loss; Schedule III
+    AOC-1 notes (61/62 consol) are numbers-only by design."
+  - "NOT FOUND: rupee-value NPA/stage bucket for the NBFC (Fincap) loan book;
+    only the qualitative GNPA 4.30% figure exists (MD&A, not the notes)."
+flags:
+  - {type: FLAG-CASH, reason: "MTF book +69.8% YoY standalone (Note 9, p.157)
+    funded by ~Rs 215.05 Cr net new financing cash flow (new NCDs + higher
+    borrowings, Note 57, p.213), not retained cash; standalone and
+    consolidated debt-service coverage fell (4.79x->3.25x; 4.62x->2.74x) and
+    interest-service coverage fell (5.84x->4.87x; 5.94x->4.42x) even before
+    the Sep-2026 rating stress (Notes 58a/63a, pp.218,328)."}
+  - {type: FLAG-SEGMENT-GAP, reason: "Segment note (Note 45 consol, p.289)
+    reports 'Share broking/trading business' as one undifferentiated segment;
+    the notes cannot answer the LBF1 prop-vs-client revenue/profit split.
+    Net gain on fair value changes (proprietary trading) is Rs 867.30 Cr
+    consol FY26 (Note 31, p.282), 58.3% of total income and >5x fee income."}
+  - {type: FLAG-SUBSIDIARY-CONCENTRATION, reason: "Consol Schedule III (Note
+    62, pp.327-330) shows parent's share of consolidated profit rose from
+    75.28% (FY25) to 92.03% (FY26); Algoplus PAT fell 64.7% YoY (Rs 67.61 Cr
+    to Rs 23.83 Cr) and Share India Securities (IFSC) swung from a Rs 3.97 Cr
+    profit to a Rs 4.18 Cr loss. Group earnings diversification narrowed, not
+    widened, this year."}
+accounting_quality: 6
+pass_2_empty: false
+pass_3_empty: false
+top_findings:
+  - {rank: 1, finding: "Segment note reports broking/trading as one
+    undifferentiated segment; cannot answer prop-vs-client split. Net gain on
+    fair value changes = Rs 867.30 Cr consol FY26 (58.3% of total income),
+    >5x fee income (Rs 165.18 Cr).", note_ref: "Note 45 consol p.289; Note 31
+    consol p.282; Note 50 consol p.295", rating: "RED", why: "This is the
+    central LBF1 question and the notes cannot resolve it; earnings look
+    trading-driven, not fee-driven, on the numbers that do exist."}
+  - {rank: 2, finding: "Parent's share of consolidated profit rose from
+    75.28% (FY25) to 92.03% (FY26); earnings concentration in the standalone
+    entity increased, opposite of a subsidiary-led diversification
+    narrative.", note_ref: "Note 62 consol pp.327-330", rating: "RED", why:
+    "Directly tests the transition thesis: if the bull case rests on
+    subsidiaries diversifying earnings, FY26 moved the wrong way."}
+  - {rank: 3, finding: "Share India Algoplus Pvt Ltd (100% subsidiary, algo
+    trading) PAT fell 64.7% YoY (Rs 67.61 Cr to Rs 23.83 Cr); Share India
+    Securities (IFSC) swung from Rs 3.97 Cr profit to Rs 4.18 Cr loss. No
+    narrative given (Schedule III is numbers-only).", note_ref: "Note 61/62
+    consol pp.325-330", rating: "RED", why: "Masked at consol headline by
+    parent-level profit growth; a real deterioration inside the group."}
+  - {rank: 4, finding: "Rs 99.90 Cr NCD (First Issue, 23-Jun-2025) needed an
+    end-use change NCD holders/Trustee would not approve; Board (19-May-2026)
+    proposed early redemption instead. A separate subsidiary NCD (Rs 30.85 Cr
+    carrying, 11.50%) matures 1-Oct-2026.", note_ref: "Note 17e standalone
+    p.171; Note 18c/e consol pp.271-272", rating: "RED", why: "Plausible root
+    cause of the Aug-Sep 2026 adjourned NCD holders' meeting in company
+    memory; two distinct NCD events cluster around Sep-Oct 2026, not one."}
+  - {rank: 5, finding: "Contingent liabilities (bank guarantees, mostly
+    exchange margin) grew 48.3% YoY consol to Rs 3,232.72 Cr, far outpacing
+    revenue growth; pledged fixed deposits grew 42.7% to Rs 1,526.88 Cr.",
+    note_ref: "Note 44/44a consol pp.288", rating: "YELLOW", why: "Guarantee
+    corpus scaling with derivatives/trading exposure, not income; standard for
+    a clearing member but the growth rate is a leverage signal."}
+  - {rank: 6, finding: "Debt-service coverage and interest-service coverage
+    weakened meaningfully in FY26, before the Sep-2026 rating action: DSCR
+    4.79x->3.25x standalone, 4.62x->2.74x consol; ISCR 5.84x->4.87x
+    standalone, 5.94x->4.42x consol.", note_ref: "Note 58a standalone p.218;
+    Note 63a consol p.328", rating: "YELLOW", why: "Funding stress was
+    building through FY26 on the company's own disclosed ratios, not only a
+    Sep-2026 rating-agency event."}
+  - {rank: 7, finding: "AR notes carry no promoter-pledge disclosure at all;
+    separately, a new Rs 50.04 Cr FY26 borrowing is secured against 'lien on
+    shares of promoter, directors and relatives'.", note_ref: "Note 18
+    standalone p.171", rating: "YELLOW", why: "Distinct from but adjacent to
+    the LBF2 pledge question; company borrowing is now directly collateralised
+    by promoter/director shareholding."}
+  - {rank: 8, finding: "Trade receivables from related parties and
+    director-linked firms jumped from near-zero to Rs 8.26 Cr and Rs 7.89 Cr
+    respectively, unexplained.", note_ref: "Note 7 standalone p.156", rating:
+    "YELLOW", why: ">100x increase with no note-level explanation; a genuine
+    new item not in prior company memory."}
+  - {rank: 9, finding: "MTF book +69.8% YoY standalone (Rs 402.61 Cr) funded
+    by ~Rs 215.05 Cr net new financing cash flow (new NCDs + higher
+    borrowings), confirming growth-induced (not trading-inventory) cash
+    drain.", note_ref: "Note 9 p.157-158; Note 57 p.213", rating: "YELLOW",
+    why: "Resolves LBF3 mechanically but confirms the growth is externally
+    funded, not self-funded from operating cash."}
+  - {rank: 10, finding: "Consolidated deferred tax swung from a Rs 4.97 Cr net
+    liability to a Rs 1.48 Cr net asset, plausibly originating in the
+    lower-profit Algoplus subsidiary; realisability not testable from the
+    notes.", note_ref: "Note 13/42 consol pp.261, 282-285", rating: "YELLOW",
+    why: "A DTA recognised against a subsidiary whose profit just fell 65%
+    needs a realisability check outside this corpus."}
+  - {rank: 11, finding: "Finance costs rose 53.4% (guarantee charges +10.1%,
+    interest on borrowings +93.8%) standalone, far outpacing revenue growth.",
+    note_ref: "Note 33 standalone p.177", rating: "YELLOW", why: "Cost of
+    funding the balance-sheet scale-up rising faster than income from it."}
+  - {rank: 12, finding: "Auditor fees rose 43.2% standalone / 57.6% consol;
+    FY25 note references an 'erstwhile auditor' with no predecessor firm
+    named or reason for change given.", note_ref: "Note 39 standalone p.183;
+    Note 41 consol", rating: "YELLOW", why: "Auditor rotation with no
+    disclosed reason is a standard governance question, not itself a red
+    flag but worth a direct question."}
+  - {rank: 13, finding: "Exchange/SEBI operating charges fell 15.6% even as
+    derivatives notional fell 38.3% and fair-value trading gains rose;
+    trading profit per unit of book/cost improved.", note_ref: "Note 5, Note
+    30, Note 34 standalone pp.154-155,176-177", rating: "GREEN", why:
+    "A genuinely positive quality-of-earnings finding: FY26 generated more
+    realised trading profit on a smaller, more efficient book."}
+  - {rank: 14, finding: "Net gain on fair value changes is 105% realised /
+    -5% unrealised FY26 standalone (Rs 756.67 Cr realised vs Rs -36.61 Cr
+    unrealised), a cleaner earnings-quality mix than a mark-to-market-heavy
+    year.", note_ref: "Note 30 standalone p.176-177", rating: "GREEN", why:
+    "Reduces (does not eliminate) the concern that the dominant income line
+    is low-quality paper gains; it is mostly cash-settled trading profit."}
+  - {rank: 15, finding: "All foreign currency exposure stated fully hedged
+    both years; unhedged exposure nil; MSME dues stable and small with no
+    interest/penalty; CSR shortfall correctly deposited to Unspent CSR
+    Account per law.", note_ref: "Note 50, Note 59, Note 51 standalone
+    pp.192-194,220", rating: "GREEN", why: "Baseline compliance items,
+    confirming no hidden currency or statutory-payment risk."}
+red_flags:
+  - "Segment reporting structurally cannot separate proprietary trading from
+    client-driven broking revenue/profit (Note 45 consol, p.289) -- the
+    central LBF1 question is unanswerable from the notes alone."
+  - "Group profit concentration in the parent rose from 75.28% to 92.03% of
+    consolidated profit YoY (Note 62 consol, pp.327-330), the opposite of a
+    subsidiary-diversification transition."
+  - "Two subsidiaries reversed sharply: Algoplus PAT -64.7% YoY, Share India
+    Securities (IFSC) swung profit to loss (Note 61/62 consol, pp.325-330),
+    with no narrative given in the notes."
+  - "NCD end-use change failed to get holder approval; Board pivoted to
+    proposing early redemption of Rs 99.90 Cr of NCDs (Note 17e standalone
+    p.171; Note 18e consol p.271-272), the likely root cause of the Aug-Sep
+    2026 adjourned NCD holders' meeting; a separate subsidiary NCD (Rs 30.85
+    Cr) matures 1-Oct-2026 (Note 18c consol, p.271)."
+  - "Debt-service and interest-service coverage ratios weakened materially in
+    FY26 on the company's own disclosed figures, before any Sep-2026 rating
+    action (Note 58a standalone p.218; Note 63a consol p.328)."
+questions_for_mgmt:
+  - "The segment note reports 'Share broking/trading business' as one
+    segment (Rs 1,387.84 Cr revenue, Note 45 p.289). Please provide the
+    quarterly split between proprietary trading income and client-driven
+    brokerage/fee income within this segment, FY24-FY26 and Q1 FY27."
+  - "Share India Algoplus Private Limited's PAT fell 64.7% YoY (Rs 67.61 Cr
+    to Rs 23.83 Cr, Note 62 p.330) and Share India Securities (IFSC) swung to
+    a loss. What drove these reversals, and are they linked to the SEBI F&O
+    curbs or the Mar-2026 SEBI algo-platform settlement?"
+  - "The Rs 99.90 Cr NCD First Issue needed an end-use change that NCD
+    holders/Trustee did not approve, leading to a proposed early redemption
+    (Note 17e p.171). What is the current status of that redemption, and is
+    it the same matter behind the Aug-Sep 2026 adjourned NCD holders'
+    meeting? Separately, what is the status of the Rs 30.85 Cr subsidiary NCD
+    maturing 1-Oct-2026 (Note 18c consol p.271)?"
+  - "Trade receivables from related parties and director-linked firms jumped
+    from near-zero to Rs 8.26 Cr and Rs 7.89 Cr respectively (Note 7 p.156).
+    What is the nature of this receivable and its expected collection
+    timeline?"
+  - "Debt service coverage fell from 4.79x to 3.25x (standalone) and 4.62x to
+    2.74x (consolidated), and the guarantee corpus grew 48.3% YoY to
+    Rs 3,232.72 Cr. Given the Sep-2026 Infomerics downgrade, what is
+    management's plan to restore coverage and cooperate with the rater?"
+receivables_trend: "Trade receivables ageing itself is CLEAN and stable
+  (98.7-98.8% under 6 months both years, Note 7 standalone p.156 / consol
+  p.256); ECL provision flat (Rs 39.50 lakhs). The deterioration signal is
+  NOT in receivables ageing but in working-capital FUNDING: the Rs 402.61 Cr
+  MTF book (+69.8% YoY, Note 9 p.157) is funded by rising external debt (new
+  NCDs + borrowings, Note 57 p.213) while debt-service coverage fell
+  (4.79x->3.25x standalone, Note 58a p.218). Classified DETERIORATING on
+  funding quality despite clean ageing (feeds FLAG-CASH)."
+restatements_found:
+  - "Generic, unquantified: 'Previous year figures have been regrouped/
+    reclassified and rearranged whenever necessary... does not affect the
+    overall financial position, results of operations, or cash flows'
+    (Note 64 standalone p.221; Note 68 consol p.331). No line-item impact
+    disclosed; treated as immaterial per management assertion, not verified
+    independently in this pass."
+going_concern_language: "NONE (standard affirmative statement only):
+  'financial statements have been prepared on going concern basis... no
+  material uncertainty exists that may cast significant doubt on the going
+  concern assumption' (accounting policy 2.1(c), standalone p.140-141 /
+  consol identical). No qualifying or risk-flagging going-concern language
+  found anywhere in the notes."
+analyst_note: "The notes read consistently point one direction: FY26 looks
+  fine or improving at the parent (standalone PAT +20.7%, cleaner realised
+  trading gains, falling exchange charges on a smaller derivatives book) but
+  WORSE at the group level (consol EPS -5.1%, Algoplus PAT -64.7%, IFSC
+  subsidiary to a loss, profit concentration in the parent rising to 92%).
+  If the transition thesis rests on subsidiaries carrying the annuity/fee
+  story, FY26's Schedule III numbers argue against it happening yet. The NCD
+  end-use/early-redemption item (Note 17e/18e) is the single most load-bearing
+  new fact in this pass: it is dated 19-May-2026, months before the Aug-Sep
+  2026 stress events in company memory, and plausibly explains them
+  mechanically rather than coincidentally."

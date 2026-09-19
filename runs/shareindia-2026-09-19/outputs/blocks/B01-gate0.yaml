@@ -1,0 +1,39 @@
+stage: B01-gate0
+company: "SHAREINDIA"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "D1 CAR not disclosed anywhere in provided corpus (group-wide); scored N/A/0"
+  - "D2 group-wide PCR not disclosed; NBFC-subsidiary GNPA/NNPA (AR p.74) used to compute a PCR proxy (38.1%), flagged as proxy and subsidiary-level"
+  - "D4 Current Ratio structurally N/A: screener consol BS has no current/non-current split (Ind AS financial-services presentation is liquidity-ordered); scored N/A/0"
+  - "M5 market cap not in provided screener CSVs (no valuation row); PEER DATA NEEDED, scored 0"
+  - "M6 R&D spend not disclosed by this broking/NBFC group; scored 0"
+  - "M11 selling-expense % not separately disclosed in screener P&L (one combined Expenses line); scored on revenue deceleration alone"
+flags:
+  - {type: FLAG-GATE0, reason: "classification AVERAGE, driven by two confirmed depressors: cumulative CFO/PAT 0.085x over 11 years (CFO negative FY23/FY24/FY26, LBF3) and promoter pledge 57.80% of promoter holding as of Jun-2026 (rising from 52.16% Sep-2025, LBF2). New finding: FY26 contingent liabilities Rs 3,233 Cr, up 48% YoY, now 122.7% of net worth."}
+data_years: 11
+fy_range: "FY16 to FY26"
+blocks: {A: 15, B: 7, C: 18, D: 3, E: 3}
+core_score: 46
+moat_score: 23
+grand_total: 69
+moats_confirmed: 6
+moat_class: "FORTRESS"
+classification: "AVERAGE"
+deal_breakers:
+  - "#2 Block B <8 (7/20) -> max GOOD, superseded by #4"
+  - "#4 cumulative CFO/PAT <0.50 (0.085) -> max AVERAGE"
+  - "#5 promoter pledge >15% (57.80% of promoter holding, Jun-2026, BSE SHP summary) -> max AVERAGE"
+history_downgrade: false
+data_notes:
+  - "A3 ROE: FY16 uses closing net worth only, opening (FY15) not in provided data"
+  - "B4/M12/M10: screener's own 'Working Capital Days' and 'Debtor Days' rows used directly; Receivable/Inventory/Payable-day components are blank in source for most of FY16-FY24"
+  - "D1/D2/D3: Banks/NBFC substitution rule applied per B00 sector-cap-row assignment; general-corporate cross-checks shown in report (gross debt/EBITDA ~1.2x, interest coverage 4.36x, D/E 0.26x) do not suggest overleverage but are not the scored metrics"
+  - "E4: FY26 contingent liabilities Rs 3,233.44 Cr (AR p.287/printed 284, Note 44) vs FY25 Rs 2,182 Cr (screener/AR comparative column) - up 48% YoY, mostly NSE/MCX Clearing margin guarantees"
+  - "M4: FY26 revenue (1,470 Cr) is 99.1% of the FY24 pre-decline peak (1,483 Cr) - near-miss on 'fully recovered', scored 3, flagged as judgment call"
+  - "M8: NBFC branch count declined 80 (FY25, AR-FY25) -> 73 (FY26, AR p.74); broking '95 branches' (FY26) not comparable to FY25's differently-categorised '280 branches and franchises'; scored 0, network growth not confirmed"
+  - "M9: SHAREINDIA OPM 39% is only +4pp above 3-peer (Angel One/Choice International/SMC Global) FY26 median of 35%, below the +5pp threshold for any positive band despite 34.8% revenue CAGR; scored 0 as most conservative literal fit"
+  - "Moat classification FORTRESS rests on 6 tests at/near their minimum qualifying score (M2, M3, M4) or on thin/missing peer data elsewhere (M5, M6, M9, M11 all score 0); treat individual test results as load-bearing, not the aggregate label"
+block_b_trend: "deteriorating - CFO negative in 3 of last 4 years (FY23 -170 Cr, FY24 -310 Cr, FY26 -182 Cr), cumulative CFO/PAT 0.085 over 11 years; confirms LBF3"
+analyst_note: "Core score 46 bands to AVERAGE on its own; two deal-breakers (cash conversion 0.085x, pledge 57.80% of promoter holding) confirm rather than change that. Both are live, worsening, current-quarter facts (Jun-2026 pledge, FY26 cash flow), not legacy artefacts, so no deal-breaker carve-out applies. New finding beyond B00's load-bearing facts: contingent liabilities rose 48% YoY to Rs 3,233 Cr (122.7% of net worth), almost all NSE/MCX Clearing margin guarantees. Block D's 3/20 is largely a sector-cap-row data-fit problem (CAR/PCR/Current Ratio do not exist or are subsidiary-level only for this diversified intermediary) and should not be read as confirmed balance-sheet distress; Block B and E's low scores are filing-confirmed, not data gaps. FORTRESS moat label is the literal formula output but six of twelve tests are 0 (missing/insufficient data) and three more (M2/M3/M4) sit at their minimum qualifying score."

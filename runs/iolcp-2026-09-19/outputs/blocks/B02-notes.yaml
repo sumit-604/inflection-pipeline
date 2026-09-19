@@ -1,0 +1,70 @@
+stage: B02-notes
+company: "IOLCP"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "COLLECTOR WARNING (verbatim): shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend. -- RESOLVED at intake: 8 quarters fetched from BSE XBRL."
+  - "COLLECTOR WARNING (verbatim): screener export sheets came out EMPTY (formulas with no cached values) ... Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again. -- RESOLVED at intake: workbooks recalculated in Excel; P&L/BS/CF/Quarters CSVs carry figures (content checked, screener-Profit_Loss.csv Sales FY22 2184.02)."
+  - "COLLECTOR WARNING (verbatim): no results PDFs yet (screener has none): add later on github or locally + --push-again -- RESOLVED at intake: Q3 FY26, Q4 FY26, Q1 FY27 results fetched from BSE."
+  - "COLLECTOR WARNING (verbatim): no rating PDF yet: add later the same way -- PARTLY RESOLVED: Jun-2026 bulletin + Jul-2025 CARE rationale present; Jun-2026 rationale ABSENT."
+  - "COLLECTOR DEFECT (new): fetch_bse_announcements issued one 12-month query and BSE returned only the latest ~30 days (7 of 105 rows). Month-window queries recovered 105 rows; 34 material filings kept."
+  - "rating rationale Jun-2026 (CARE reaffirmation letter 30-Jun-2026) ABSENT -> freshness pair 2 FAIL; expected source careratings.com press release, Jun/Jul 2026"
+  - "announcements PARTIAL: 34 of 105 BSE filings over 12 months kept (routine newspaper ads, trading-window, KYC, Reg 74(5) excluded); Q2 FY26 results and Nov-2025 Q2 FY26 transcript not collected (outside the 3-most-recent rule)"
+  - "shareholding entity detail: promoter entity-level tables present only for Sep 2024 - Mar 2025 (XML); Jun 2025 - Jun 2026 are category summaries. LBF2 entity mapping relies on SAST 29(2) disclosures + AR"
+  - "prospectus: not expected (long-listed, BSE 524164); not a gap"
+  - "research: absent (no broker notes collected)"
+  - "other: absent"
+  - "concalls: 4 transcripts vs contract 0-3; 3 quarterly (Q3 FY26, Q4 FY26, Q1 FY27) + 1 business-update call (11-Sep-2026); all kept, stage 5 reads quarterly three as the chronology and the business-update call as a fourth, latest data point"
+  - "rating: 2 files vs contract 0-1; most recent (Jun-2026 bulletin) governs the rating level, Jul-2025 rationale is the latest available rationale text"
+  - "annual-report: 2 files vs contract 0-1; FY26 is primary, FY25 is backward-baseline support"
+  - "deduplication: 3 byte-identical duplicates removed at intake (announcements copy of Q1 FY27 presentation; announcements copy of Sep-2026 business-update transcript; Q3 FY26 dividend filing identical to Q3 FY26 results)"
+  - "AR notes: lease discount rate for Ind AS 116 ROU/lease liability NOT FOUND IN DOCUMENT (only the 7.25% gratuity discount rate is disclosed)"
+  - "AR notes: capitalisation threshold (rupee amount) NOT FOUND IN DOCUMENT"
+  - "AR notes: inter-segment transfer-pricing basis for chemicals-to-pharma captive transfer (Rs 237.72 Cr FY26) NOT FOUND IN DOCUMENT"
+  - "AR notes: dedicated events-after-the-reporting-period note NOT FOUND IN DOCUMENT (board sign-off 20-May-2026; no explicit subsequent-events disclosure either way)"
+flags:
+  - {type: FLAG-CASH, reason: "Gross trade receivables +17.7% YoY (Rs 516.32 Cr to Rs 607.72 Cr) vs revenue +11.5% YoY; ECL coverage rose from 0.51% to 0.76% of gross receivables; payable days fell (~100 to ~89 days) while receivable days rose, a working-capital squeeze funded so far by flat/negative net debt (Note 10 p.152, Note 20 p.156-157, Note 49 p.177-178)."}
+  - {type: FLAG-GOVERNANCE, reason: "Vasudeva Commercials Limited held 7.94% (2,33,19,295 shares) at 31-Mar-2025 and vanishes entirely from the >5% shareholder table at 31-Mar-2026 with no AR explanation and no related-party classification either year (Note 15c, p.153-154)."}
+  - {type: FLAG-CAPEX, reason: "Gross PP&E additions -71.4% YoY and CWIP capitalisation -73.6% YoY even as capital commitments rose 172.8% and zero term debt exists against the guided Rs 500 Cr + Rs 1,200-1,400 Cr programme (Note 3.1-3.3 p.147-149; Note 19/41/42 p.156/173-174; Note 39 capex rows p.168)."}
+accounting_quality: 7
+pass_2_empty: false
+pass_3_empty: false
+top_findings:
+  - {rank: 1, finding: "Vasudeva Commercials Limited (7.94% at 31-Mar-2025) vanishes from the >5% shareholder table at 31-Mar-2026 with no AR explanation and no related-party classification either year", note_ref: "Note 15c, p.153-154", rating: "RED FLAG", why: "New unnamed thread beyond the five LBF2 entities; stake destination unresolved, touches the promoter-consolidation thesis directly"}
+  - {rank: 2, finding: "Promoter/promoter-group shareholding rose 52.63% to 57.48% within the AR year itself, mainly via NM Merchantiles (+4.00pp) and NCVI Enterprises (+0.62pp)", note_ref: "Note 15h, p.155-156", rating: "WATCH", why: "Confirms and dates roughly half of the LBF2 rise before the Jun-2026 amalgamation; NM Merchantiles is the largest single driver inside the AR window"}
+  - {rank: 3, finding: "Gross PP&E additions -71.4% YoY, CWIP capitalisation -73.6% YoY, even as capital commitments rose 172.8% and zero term debt exists on the balance sheet", note_ref: "Note 3.1-3.3, Note 19, Note 39 capex rows, p.147-149/156/168", rating: "WATCH", why: "Direct LBF3 evidence: the guided Rs 500 Cr + Rs 1,200-1,400 Cr programme shows no acceleration yet, no funding facility drawn"}
+  - {rank: 4, finding: "Related-party purchases from the three named promoter-group entities rose 31.1% YoY to Rs 131.94 Cr (8.8% of material consumed); NM Merchantiles nearly tripled the same year its shareholding jumped", note_ref: "Note 40, p.169-171", rating: "WATCH", why: "Commercial-role expansion for a promoter entity coincides with an equity-stake jump; a pattern to track, not proven non-arm's-length"}
+  - {rank: 5, finding: "Company's own disclosed return ratios: ROCE 9.70% (FY25 7.91%), ROE 7.90% (FY25 6.12%), ROI 7.11% (FY25 6.03%), directionally improving but absolutely low", note_ref: "Note 49, p.177-178", rating: "WATCH", why: "Base-rate check ahead of valuation: a sub-10% ROCE business must show a credible, fast path to a 25% CAGR-supporting return profile"}
+  - {rank: 6, finding: "Gross trade receivables +17.7% YoY vs revenue +11.5%; ECL coverage rose 0.51% to 0.76% of gross receivables; ageing mix roughly flat", note_ref: "Note 10, p.152", rating: "WATCH", why: "Receivables outrunning revenue is the mechanism behind the debtor-days rise company memory flags (79 to 95 days); feeds FLAG-CASH"}
+  - {rank: 7, finding: "Rs 11.21 Cr exceptional item, Labour Codes-driven gratuity/compensated-absences past-service cost, excluded from segment results but hits standalone/consolidated PBT", note_ref: "Note 50 standalone / Note 47 consolidated, p.178/229-230", rating: "WATCH", why: "Largest one-off in the note set; must be normalised out of YoY margin comparisons; watch FY27 for a second wave"}
+  - {rank: 8, finding: "Chemical segment result nearly doubled net of the exceptional item (confirms LBF4); captive inter-segment transfer pricing basis (Rs 237.72 Cr) not disclosed", note_ref: "Note 39, p.167-169", rating: "WATCH", why: "Confirms LBF4 headline but leaves the transfer-pricing mechanism as a direct evidence gap"}
+  - {rank: 9, finding: "Power and Fuel expense +34.8% YoY and stores/spares consumption +31.9% YoY, both roughly 3x revenue growth", note_ref: "Note 31/27, p.157-159", rating: "WATCH", why: "New margin-pressure signal not visible at segment-result level; energy inflation vs ramp inefficiency vs throughput not distinguished"}
+  - {rank: 10, finding: "Net FX exposure reversed from net USD receivable (+Rs 72.29 Cr FY25) to net USD payable (-Rs 124.89 Cr FY26) on the unhedged book, while forward-hedge cover shrank", note_ref: "Note 41, p.172-173", rating: "WATCH", why: "INR depreciation now hurts rather than helps; sensitivity-direction reversal worth a treasury-policy question"}
+  - {rank: 11, finding: "Note 35's Advance Authorisation/DFIA export-obligation table row shows Nil both years, but its own footnote discloses Rs 11.31 Cr of bonds executed under that scheme in FY26, with no reconciling sentence", note_ref: "Note 35 footnote #, p.161-162", rating: "WATCH", why: "Pattern-pass finding: the one note pair in the set where a headline figure and its own footnote do not visibly bridge"}
+  - {rank: 12, finding: "New customs Order-In-Original: Rs 2.06 Cr aggregate demand/penalty for incorrectly availed ASEAN-India FTA exemption via non-conforming Certificates of Origin; company appealing", note_ref: "Note 35 footnote, p.161", rating: "WATCH", why: "Likely the same matter as the 09-May-2026 BSE filing in the corpus manifest; compliance-process finding, small quantum"}
+  - {rank: 13, finding: "Fixed deposits with maturity over 12 months rose 472% YoY while plain cash and cash equivalents fell 16.3%", note_ref: "Note 7 / Note 11, p.151-152", rating: "WATCH", why: "Total cash + bank balance is rising but its composition is shifting toward earmarked/longer-tenor deposits, a liquidity-quality nuance for LBF3 funding"}
+  - {rank: 14, finding: "MSME interest due on delayed payments accrued (Rs 0.15 Cr FY26) but Nil actually paid under Section 16, both years", note_ref: "Note 46, p.176", rating: "WATCH", why: "Small quantum, governance-hygiene point: a statutory interest liability is recognised but not settled"}
+  - {rank: 15, finding: "Clean audit opinion, no going-concern uncertainty, no fraud, no goodwill, no ESOP dilution, no related-party loans, no quantified restatement, actuarial and depreciation assumptions held flat YoY, CSR fully compliant", note_ref: "Multiple: Note 2, 36, 48/45, CARO p.131", rating: "CLEAN", why: "Foundation finding: the promoter/receivables/capex-funding/Note-35 items above are the real watch list, not a broader accounting-quality concern"}
+red_flags:
+  - "Vasudeva Commercials Limited's 7.94% stake (2,33,19,295 shares) vanishes from the >5% shareholder table between 31-Mar-2025 and 31-Mar-2026 with zero AR disclosure of destination and no related-party classification either year (Note 15c, p.153-154)."
+questions_for_mgmt:
+  - "What happened to Vasudeva Commercials Limited's 7.94% stake between 31-Mar-2025 and 31-Mar-2026: dispersed below the 5% threshold, sold, or absorbed into NM Merchantiles or another promoter-group holder?"
+  - "What is the transfer-pricing basis (cost, market, or a stated formula) for the Rs 237.72 Cr FY26 inter-segment transfer of acetyls from the Chemical segment into Pharmaceutical API production?"
+  - "Why did gross PP&E additions fall 71.4% and CWIP capitalisation fall 73.6% in FY26 even as capital commitments rose 172.8%, and on what date does term-debt drawdown begin for the Rs 500 Cr + Rs 1,200-1,400 Cr programme?"
+  - "What specifically comprises the Rs 79.7 Cr rise in the segment note's Unallocated liabilities line (Rs 82.29 Cr to Rs 162.02 Cr)?"
+  - "Does the Rs 11.31 Cr of Advance Authorisation Scheme bonds executed in FY26 correspond to a fully-discharged (Nil outstanding) export obligation, as the IGCR footnote explains for its own bond-vs-obligation figures, and if so can that bridge be stated explicitly in the note?"
+receivables_trend: "deteriorating (working-capital mechanism, not ageing-mix): gross trade receivables +17.7% YoY (Rs 516.32 Cr to Rs 607.72 Cr) vs revenue +11.5% YoY; overdue >6 months roughly flat at 1.6% to 1.7% of gross (Note 10, p.152); ECL allowance coverage rose from 0.51% to 0.76% of gross receivables (Rs 2.63 Cr to Rs 4.59 Cr); payable days fell (~100 to ~89 days, Note 49) in the same year, compounding the working-capital squeeze."
+restatements_found: []
+going_concern_language: "NONE (clean). Note 2(i).I / Note 2(i) consolidated: statements prepared on a going-concern basis (p.138/p.192). CARO Annexure to the standalone auditor's report (p.131) states verbatim: 'nothing has come to our attention, which causes us to believe that any material uncertainty exists as on the date of the audit report that Company is not capable of meeting its liabilities existing at the date of balance sheet as and when they fall due within a period of one year from the balance sheet date.' No emphasis-of-matter, no qualification, no fraud reported."
+analyst_note: >
+  Three passes converge on the same shortlist: the promoter/RPT cluster (Vasudeva Commercials
+  disappearance, NM Merchantiles purchase and stake growth together, the customs surety) and the
+  capex-funding cluster (zero term debt, FY26 PP&E/CWIP activity actually falling YoY despite
+  rising commitments) are the two threads that matter most for LBF2 and LBF3 respectively. Neither
+  is an accounting-quality problem on the notes' own terms; both are business/governance questions
+  the AR raises but cannot answer, and both are named explicitly for the live-web verification
+  stage. The Note 35 AA/DFIA table-footnote gap found in the pattern pass is genuine but low
+  stakes; it is carried as a question, not a red flag. The Vasudeva Commercials finding is the one
+  item rated RED FLAG because the AR gives no path to an answer at all, unlike the RPT/capex items
+  which at least have partial visibility.

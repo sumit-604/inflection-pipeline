@@ -1,0 +1,17 @@
+stage: confidence-delta
+company: CAPILLARY
+run_date: 2026-09-19
+phase: 1
+confidence_delta:
+  numerical_acceptance: 100      # B12a: 41 of 41 checked figures clean (material universe 47); 0 CRITICAL, identity check not needed
+  redflag_coverage: 70           # B12b: 7 of 10 material flags caught (1 caught + 6 partially caught per rubric); 3 MAJOR missed
+  framework_adherence: 86.7      # B12c phase-1 portion only (Gate 0 44 rules + Emerging Moat 31 rules = 75 checks, 65 pass); valuation half PENDING PHASE 3
+  peer_utilisation: 100          # B12d: 12 of 12 peer transcripts used substantively
+  overall: 70
+  overall_set_by: redflag_coverage
+  not_applicable: []
+  band: "60-74: PROCEED verdicts downgrade one level (orchestrator Section 5)"
+notes:
+  - "redflag_coverage basis: Verifier B reports 70 counting its 6 partial catches as caught, per its rubric ('found but under-weighted or misclassified'). On a strict basis (only partials the pipeline flagged as a concern) it is 4/10 = 40, below the 60 REWORK line. The rubric basis is used here as written; the strict basis is surfaced to the operator, not resolved by the orchestrator (same open question as AWFIS 2026-09-19)."
+  - "Verifier C recomputes Gate 0 to 66/160 (moat 15, 3 moats, MODERATE; classification AVERAGE unchanged) and Emerging Moat to 21.9 before A4/F1 rescoring (band MODEST unchanged). Verifier C also raises an operator question: keying the data-confidence band to the 4 balance-sheet years would take Gate 0 from AVERAGE to AVOID."
+  - "Framework adherence component covers Gate 0 + Emerging Moat only; the valuation-adherence audit (B10, B11) runs in phase 3."

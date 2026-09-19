@@ -1,0 +1,17 @@
+stage: B12d
+company: "CAPILLARY"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+peers_audited: 12
+substantive_confirmed: 12
+substantive_unsupported: []
+unused_but_relevant: []
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "MAJOR", location: "B06 report, Q6 verdict table, NEWGEN peer-evidence cell", claimed: "NEWGEN 'concedes agentic workflows will disrupt... low-code companies'", source_truth: "Virender Jeet states low-code companies are 'the ones who are going to win' the ad hoc/departmental segment being transformed, i.e. NEWGEN cedes that segment to low-code vendors as winners, not casualties", note: "Individually quoted fragments are verbatim and correctly located (NEWGEN Jan 2026 call, lines 603-611); the connecting prose reverses who wins vs loses. Does not change the Q6 overall verdict (PARTIALLY VERIFIED still holds on the other two peers)."}
+critical_count: 0
+major_count: 1
+minor_count: 0
+acceptance_rate: 92   # 11 of 12 peers handled with zero issue found; 1 (NEWGEN) carries one MAJOR paraphrase finding

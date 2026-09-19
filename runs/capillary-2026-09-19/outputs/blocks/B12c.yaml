@@ -1,0 +1,52 @@
+stage: B12c
+company: "CAPILLARY"
+run_date: "2026-09-19"
+model: "claude-opus-5"
+status: complete
+scope: "phase-1 (gate0 + emoat only); valuation pending phase 3"
+gate0:
+  rules_checked: 44
+  fails:
+    - {id: F-G1, rule: "M11 network effects", severity: MAJOR, stated: "3 (moat 17, 4 present, STRONG, total 68)", recomputed: "1 (moat 15, 3 present, MODERATE, total 66)", note: "selling-% leg read on a different window than the revenue leg; FY23->FY26 proxy rises 32.5% -> 39.2% (screener-Data_Sheet.csv rows 17-18); classification AVERAGE unchanged"}
+    - {id: F-G2, rule: "block_b_trend / FLAG-CASH mechanism", severity: MAJOR, stated: "FY26 CFO leans on payable-days compression 66.6 -> 37.0 rather than receivable discipline", recomputed: "66.6 -> 37.0 is FY23->FY26 and consumes cash; FY26 receivable days fell 98.3 -> 89.8 and payable days rose 30.9 -> 37.0, both helping FY26 CFO; multi-year WC deterioration (24.0 -> 52.8) stands"}
+    - {id: F-G3, rule: "M6 grounded-claims / N/A basis", severity: MINOR, stated: "no R&D disclosure found", recomputed: "R&D expenditure incl. ESOP Rs 1,212 Mn disclosed (Annual_Report_2026.txt p.41, Directors' Report technology absorption item iv); M6 score 0 unchanged"}
+    - {id: F-G4, rule: "analyst_note <= 200 words", severity: MINOR, stated: "about 208 words", recomputed: "trim; truncated sentence survives in input_gaps"}
+emoat:
+  rules_checked: 31
+  fails:
+    - {id: F-E1, rule: "I2 test for each moat claimed", severity: MAJOR, stated: "test run on H1 only", recomputed: "run on C1, D1, B2, A3, F2 and B04's aiRA usage-pricing counter-positioning; claim-tier score at most +0.7, band survives"}
+    - {id: F-E2, rule: "C1 evidence tier", severity: MAJOR, stated: "HH x 1.0 = 4.0", recomputed: "HH x 0.7 = 2.8; the documented Fortune 50 deal is a net new logo (Concall_May_2026_Transcript.txt lines 195-198, 755), cross-sell evidence is claim-tier"}
+    - {id: F-E3, rule: "F2 evidence tier and single credit", severity: MAJOR, stated: "HM x 1.0 = 3.0 on a stated mixed tier", recomputed: "HM x 0.7 = 2.1; M&A margin turnarounds credited in both F2 and H1"}
+    - {id: F-E4, rule: "documented recount line", severity: MINOR, stated: "18 items across 6 categories", recomputed: "12 items across 5 scan categories plus 6 company-profile items; 3 of 6 active rows at documented multiplier, 2 after F-E2"}
+    - {id: F-E5, rule: "optionality register scope", severity: MINOR, stated: "7 rows incl. concentration disclosure and fraud forensic close", recomputed: "move the 2 risk items to monitoring; add D1, H2, A4 claim-only rows"}
+    - {id: F-E6, rule: "evidence gaps correctly declared", severity: MAJOR, stated: "R&D spend undisclosed (A4, F1, analyst_note)", recomputed: "disclosed Rs 1,212 Mn (Annual_Report_2026.txt p.41); rescore A4 and F1; crossing 25 would need F1 at HH documented, not supportable by a spend line"}
+valuation: {rules_checked: 0, fails: [], status: "PENDING PHASE 3"}
+expectation_ledger: {status: "NOT IN SCOPE, PENDING PHASE 3", present: false, downside_row: false, all_rows_confirm_by: false, all_rows_metric_threshold: false, prob_in_range: false, decay_status_valid: false, off_ledger_credit: false, residual_pct_cmp: 0, residual_starter_cap_ok: true, fails: []}
+business_understanding_narrative: {status: "NOT IN SCOPE, STAGE 13", present: false, five_questions_answered: false, prose_only: false, section6_candidates_named: 0, valuation_vocab_leak: false, fails: []}
+recomputed_destination_pe: ""
+recomputed_decision: ""
+recomputed_gate0: {moat_score: 15, moats_confirmed: 3, moat_class: "MODERATE", grand_total: 66, core_score: 51, classification: "AVERAGE"}
+recomputed_em_score: "21.9 before F-E1/F-E6 rescoring (stated 24.0); band MODEST unchanged"
+findings:
+  - {id: F-G1, stage: B01, severity: MAJOR, summary: "M11 window mismatch; moat class STRONG -> MODERATE, total 68 -> 66"}
+  - {id: F-G2, stage: B01, severity: MAJOR, summary: "FLAG-CASH / block_b_trend mechanism contradicts B01's own B4 numbers; propagated into B07 G2"}
+  - {id: F-G3, stage: B01, severity: MINOR, summary: "false 'no R&D disclosure' gap; M6 score unchanged"}
+  - {id: F-G4, stage: B01, severity: MINOR, summary: "analyst_note over 200 words"}
+  - {id: O1, stage: B01, severity: MINOR, summary: "D2 keeps Rs 24.96 Cr one-off in EBIT while M1/M2 strip it; recurring reading 5.79x -> D2 4, core 50; AVERAGE unchanged; rule passed"}
+  - {id: O2, stage: B01, severity: MINOR, summary: "ROE/ROCE series mix AR-published and computed bases; values reconcile or do not move scores; data_notes wrongly says FY21-FY22 ROCE computed"}
+  - {id: O3, stage: B01, severity: MINOR, summary: "M5 top-5 tier trivially met on a 4-name peer set; moat count unaffected"}
+  - {id: O4, stage: B01, severity: MINOR, summary: "rule passed, ambiguity for operator ruling: 4-year balance-sheet window would trigger LIMITED downgrade (AVERAGE -> AVOID) if the band keyed to it; B01 keyed to 6 P&L years"}
+  - {id: F-E1, stage: B07, severity: MAJOR, summary: "I2 sacrifice test run on H1 only; aiRA usage-pricing counter-positioning untested"}
+  - {id: F-E2, stage: B07, severity: MAJOR, summary: "C1 documented multiplier rests on a new-logo contract; 4.0 -> 2.8"}
+  - {id: F-E3, stage: B07, severity: MAJOR, summary: "F2 mixed tier scored at 1.0 and double-credits H1 M&A margins; 3.0 -> 2.1"}
+  - {id: F-E4, stage: B07, severity: MINOR, summary: "recount counts a non-category; 5 scan categories, not 6"}
+  - {id: F-E5, stage: B07, severity: MINOR, summary: "register holds 2 risk items, omits D1/H2/A4"}
+  - {id: F-E6, stage: B07, severity: MAJOR, summary: "R&D spend Rs 1,212 Mn disclosed (AR p.41); A4/F1 reasoned on a false gap 1.0 below the 25 threshold"}
+  - {id: O6, stage: B07, severity: MINOR, summary: "B2 graded impact M while text calls it table-stakes; HL would give 2.0"}
+  - {id: O7, stage: B07, severity: MINOR, summary: "2C N/A written as 0 in YAML; prose says Rs 394 Cr capex vs table Rs 39.4 Cr"}
+  - {id: O8, stage: B07, severity: MINOR, summary: "6D cites an unanchored 75x P/E; pricing belongs to stage 11"}
+  - {id: O9, stage: B07, severity: MINOR, summary: "catalyst evidence_type 'documented_pending' outside the three-tier taxonomy"}
+critical_count: 0
+major_count: 6
+minor_count: 12
+acceptance_rate: 86.7

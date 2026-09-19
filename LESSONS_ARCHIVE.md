@@ -598,3 +598,12 @@ Verifier C check 15 (PR #163, PR #164), and the LESSONS discipline changes
 (PR #165).
 
 Size: LESSONS.md 164 lines / 1555 words before, 119 lines / 1062 words after.
+
+## 2026-09-19 — IOLCP (IOL Chemicals & Pharmaceuticals) — /step1 intake, phase 1 to Halt 1 (runs/iolcp-2026-09-19)
+- Worktree isolation: another session held the main checkout (run/awfis-2026-09-19), so the run used .claude/worktrees/iolcp. collect_to_repo.py hardcodes REPO_ROOT to the main checkout; the staged run folder was moved into the worktree by hand.
+- fetch_bse_announcements (PR #167 open action) ran live for the first time: it WORKS, but one 12-month query returns only the latest ~30 days (7 of 105 rows). Month-window queries recovered all 105. Older attachments sit under AttachHis/, not AttachLive/. Suggest a code fix (monthly windows + AttachHis fallback) and closing the #167 action after it.
+- Collector deleted _download/ after classifying, so Financials.xlsx was gone when the empty-sheet repair was needed; re-downloaded, recalculated in Excel via COM, CSVs rewritten. Consolidated screener export covers FY22-FY26 only; standalone 10-year export added for Gate 0.
+- No results PDFs, no rating, no shareholding from the collector; fetched from BSE (results x3, rating bulletin, SAST x8, 8 quarters of SHP via SHPQNewFormat API). CARE Jun-2026 rationale not findable (careratings URL is timestamped) -> freshness FAIL.
+- 3 byte-identical duplicates removed at intake (collector copies presentation and business-update transcript into announcements/ too).
+- B01 block arrived wrapped in a markdown fence (stripped, mechanical). B06 block malformed (unclosed flow mapping); one retry fixed it. B13 lite emitted its block only in the reply; orchestrator wrote it to file.
+- Verifier B returned two readings of redflag_coverage (77% partial-counts vs 31% strict); the rule text does not settle which. Verifier C EM-1 CRITICAL (LM scored 2 not 1) moved em_score 26.3 -> 23.4, STRENGTHENING -> MODEST; stage 7 not re-run in phase 1.

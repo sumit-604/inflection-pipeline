@@ -1,0 +1,65 @@
+stage: B09b-dossier
+company: "IOLCP"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+corpus_verdict: "CORPUS GAPPED-FRESHNESS"
+corpus_gaps:
+  - document: "CARE Ratings rationale for the 30-Jun-2026 reaffirmation letter"
+    expected_source: "rating agency site"
+    kind: "freshness-pair"
+  - document: "Q2 FY26 results and Nov-2025 concall transcript"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "MCA beneficial-ownership filings for Vasudeva Commercials Ltd and G Consultants and Fabricators Pvt Ltd pre-merger"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "Molecule-level global market size for 9 of 11 named molecules"
+    expected_source: "company IR page"
+    kind: "findable-missing"
+  - document: "Inter-segment transfer-pricing basis (Rs 237.72 Cr chemicals-to-pharma transfer)"
+    expected_source: "company IR page"
+    kind: "plausibly-nonexistent"
+  - document: "Independent broker/analyst research on IOLCP"
+    expected_source: "BSE"
+    kind: "plausibly-nonexistent"
+  - document: "CDMO and specialty-chemicals-tolling counterparty identity and contract terms"
+    expected_source: "BSE"
+    kind: "plausibly-nonexistent"
+archetypes:
+  - line: "Pharma/API segment"
+    archetype: "Commodity converter"
+  - line: "Chemicals segment (acetyls)"
+    archetype: "Commodity converter"
+transition:
+  - line: "Pharma/API segment"
+    from_tier: "R2 COST-ADVANTAGED CONVERTER"
+    to_tier: "R3 VALUE-ADDED / SPEC'D SUPPLIER"
+    engine: "Mix shift away from ibuprofen toward a diversified API basket (36% to 43% of pharma revenue, +67% YoY) plus two new spec'd, anchor-customer-dependent lines (CDMO tablets, specialty tolling), both targeted commercial Q3 FY27"
+    proof_gate: "Non-ibuprofen share of pharma revenue continuing to rise past 43% with margin held at parity to ibuprofen at the product level, AND first commercial revenue disclosed from the CDMO and tolling lines on or before Q3 FY27"
+    recognition_gap: "OPEN QUESTION, resolved at Stage 11: trailing PE 33.8x (company memory, not anchored) against company-disclosed ROCE 9.70% (Note 49) and a stock up ~170% in four months to Jul-2026 -- whether the TO state is already priced is unresolved here; no number, no conclusion stated"
+    ugliness: "UNRESOLVED (B13 FLAG-CASH determination INDETERMINATE) -- rising debtor days and low absolute ROCE both carry a plausible ARTIFACT-OF-CLIMB reading and a plausible STRUCTURAL-FEATURE reading; the missing CARE rationale and the 30-Sep-2026 half-year balance sheet are the evidence that resolves it"
+    transition_falsifier: "Non-ibuprofen share of pharma revenue plateaus or reverses below 37% (FY26 level), or margin-parity claim stays unconfirmed at product level, or both new pre-commercial lines slip past Q3 FY27 with anchor customers still unnamed"
+dominant_variables:
+  - "Non-ibuprofen share of pharma revenue (43% Q1 FY27, the mix engine)"
+  - "CDMO/tolling first commercial revenue and named anchor customers (zero revenue, customers undisclosed)"
+  - "Debtor days / working-capital trend (78.5 to 94.9 days, decides the B5 ugliness classification)"
+  - "Capex commissioning dates: Rs 495 Cr dated tranche and the undated Rs 1,200-1,400 Cr greenfield"
+business_falsifier: "Ibuprofen and Ethyl Acetate core (~72% of FY25 revenue) prints segment results below a cost-of-capital return for two or more consecutive quarters with no mix offset visible in the pharma segment result margin -- evidence the FROM platform itself, not just the transition, is impaired"
+mental_model_status: "DRAFT - PENDING OPERATOR SIGN-OFF"
+fragility:
+  variable_count: 7
+  verifiability_ratio: "4 of 7 externally observable"
+  single_point_failure: "CDMO and specialty-chemicals tolling anchor-customer relationships (collapse 3 of 5 active moat categories together on one conversion failure)"
+  fragility_verdict: "FRAGILE"
+candidate_count: 8
+second_order:
+  chains_drafted: 2
+  pending_live_links: 2
+  confirm_by_observations: 2
+research_brief_items: 10
+plain_summary_points: 15
+annex:
+  present: true
+  questions_answered: 10
+  corpus_commit_hash: "fdef8985eb1f31bb7db83492927b9d8d3c644c75"

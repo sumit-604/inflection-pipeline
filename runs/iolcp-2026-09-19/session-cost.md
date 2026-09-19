@@ -23,3 +23,24 @@ total tokens and wall time per subagent; the in/out split is not exposed.
 | 12c | verifier C phase-1 half | opus | agent default | n/a | n/a | 120061 | 4m34s | 1 |
 | 12d | verifier D peers | sonnet | agent default | n/a | n/a | 96369 | 2m55s | 1 |
 | 13 | synthesis-lite | opus | agent default | n/a | n/a | 153758 | 5m10s | 1 |
+| 9b | Halt 1 dossier | sonnet | agent default | n/a | n/a | 200850 | 6m58s | 1 |
+
+## Close-out summary
+
+Run total across subagent ledger rows: 3,111,132 tokens (orchestrator session tokens not included).
+
+(a) TOP FIVE BY TOKENS
+1. Stage 2 notes, 3 passes: 442,153 (14.2%)
+2. Stage 6 peers, 2 runs (YAML retry): 362,196 (11.6%)
+3. Stage 8 promoter: 275,655 (8.9%)
+4. Stage 3 AR deep dive: 249,228 (8.0%)
+5. Stage 9 TAM: 231,089 (7.4%)
+
+(b) DOWNSHIFT FAILURES: none. Verifier A ran on haiku. Stage 0 ran inline in the orchestrator session (no subagent). Stage 10 does not run in phase 1.
+
+(c) COST SPIKES: none (no prior IOLCP run).
+
+(d) OPERATOR SNAPSHOT: run /cost and /usage now and paste the cache hit ratio and the loop totals below under "Operator snapshot".
+
+### Operator snapshot
+(pending operator)

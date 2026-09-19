@@ -1,0 +1,82 @@
+stage: B04-bizmodel
+company: "IOLCP"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Inter-segment transfer-pricing basis for the Rs 237.72 Cr chemicals-to-pharma captive transfer: NOT FOUND IN DOCUMENT (carried from B00/B02/B03)."
+  - "Product-level realisation (Rs/kg) for Ibuprofen, Ethyl Acetate or any other product: NOT FOUND IN AR or Investor Presentation."
+  - "CDMO formulations and specialty-chemicals-tolling customer identity, contracted volume and tenor: NOT DISCLOSED by the company (Reg 30, 09-Sep-2026, Annexure-2 item 7)."
+  - "Segment-level capital employed (for a true segment ROCE): NOT FOUND IN DOCUMENT; only segment assets disclosed (Note 39)."
+  - "Peer competitor names/margins used in Section 2B are sourced from company memory / screener.in exports already in the run corpus, not from the AR or Investor Presentation (this stage's designated primary/secondary sources)."
+flags: []
+business_type: "manufacturing"
+revenue_streams:
+  - {name: "Ibuprofen API", type: "manufacturing B2B bulk commodity API", pct_of_revenue: 37.9, predictability: "M"}
+  - {name: "Non-Ibuprofen API basket (Paracetamol, Metformin, Clopidogrel, Pantoprazole, etc.)", type: "manufacturing B2B diversified API", pct_of_revenue: 22.3, predictability: "M"}
+  - {name: "Specialty Chemicals external sale (Ethyl Acetate, Acetic Anhydride, Triacetin)", type: "manufacturing B2B commodity/industrial chemicals", pct_of_revenue: 39.8, predictability: "L"}
+  - {name: "Inter-segment chemicals-to-pharma transfer (internal, eliminated, not external revenue)", type: "internal captive transfer", pct_of_revenue: 0, predictability: "N/A"}
+  - {name: "CDMO formulations (pre-commercial, target Q3 FY27)", type: "contract manufacturing fee-for-service", pct_of_revenue: 0, predictability: "NOT FOUND"}
+  - {name: "Specialty chemicals tolling, single customer (pre-commercial, target Q3 FY27)", type: "tolling fee arrangement", pct_of_revenue: 0, predictability: "NOT FOUND"}
+asset_intensity: "heavy"
+wc_intensity: "high"
+pricing_power: "weak"
+cyclicality: "cyclical"
+moats_present:
+  - {moat: "Regulatory/licensing (DMF/CEP/USFDA/EU-GMP/ANVISA/NMPA base)", durability: "moderate-high"}
+  - {moat: "Cost advantage from backward integration", durability: "moderate for Pharma; capped for Chemicals converter slice (Amendment 17)"}
+  - {moat: "Switching costs via DMF/CEP reference in customer filings", durability: "low-moderate"}
+  - {moat: "Efficient scale (world's largest Ibuprofen capacity)", durability: "moderate, unproven yet on non-Ibuprofen lines"}
+valuation_methods:
+  primary: {method: "Comparable multiples (P/E, EV/EBITDA), SOTP-aware", why: "Identifiable listed peers exist (Aarti Drugs, Granules India, Laxmi Organic); Section 1B Pharma/CDMO sector-cap row already keyed to this name at intake"}
+  secondary: {method: "SOTP (sum-of-the-parts)", why: "Note 39 shows Pharma (12.3% FY26 segment margin) and Chemicals (2.6% FY26 segment margin) are economically different businesses; a blended multiple risks mispricing one segment"}
+  tertiary: {method: "DCF", why: "Forecast-discipline cross-check on the mix-shift and capex-ramp story; weak as a primary anchor given the commodity price-taker segment's volatility"}
+  not_applicable:
+    - "Dividend discount model (growth-capex-first capital allocation; modest ~21% FY26 payout, not the return driver)"
+    - "Residual income / EVA (return ratios still low and only recently improving, Note 49)"
+irrelevant_ratios:
+  - {ratio: "Blended company ROCE/ROE as a single number", why: "Blends a ~12% margin Pharma segment with a ~2-3% margin Chemicals converter segment (Note 39); segment-level capital employed not disclosed"}
+  - {ratio: "Trailing 3-5yr revenue CAGR taken alone", why: "FY22-FY25 stall then FY26 break; a straight CAGR masks the inflection and violates the basis-hierarchy rule against anchoring to audited history alone"}
+  - {ratio: "Standalone net profit margin vs peers, unnormalised", why: "Structurally driven by segment mix (chemicals-heavy peers print far lower margin than formulations-forward peers)"}
+  - {ratio: "Debt-to-equity (0.08x) as a funding-risk comfort signal", why: "Reads safe but zero term debt sits against a Rs 495 Cr+ Rs 1,200-1,400 Cr capex programme called internally funded on FY26 FCF of only Rs 43 Cr"}
+  - {ratio: "Current ratio alone", why: "Can be inflated by receivables growth rather than cash; must be read against the rising debtor-days trend"}
+must_track_metrics:
+  - {metric: "Non-Ibuprofen % of Pharma revenue", healthy: "continued rise past 43% (Q1 FY27) toward ~50% target", red_flag: "stalls or reverses below 37% (FY26)"}
+  - {metric: "Chemical segment result margin (on total incl. inter-segment revenue)", healthy: "holding/improving above FY26's 2.6%", red_flag: "reverts toward FY25's 1.4% or lower"}
+  - {metric: "Pharma segment result margin", healthy: "above 12%", red_flag: "falls below 10%"}
+  - {metric: "Debtor days", healthy: "flat or falling from ~95", red_flag: "further rise past 95"}
+  - {metric: "Free cash flow vs capex commitment pace", healthy: "FCF funds a rising share of the Rs 495 Cr specific-project set", red_flag: "FCF turns negative while commitments accelerate, or an undisclosed term loan appears"}
+unit_economics:
+  unit: "1 metric tonne (MT) of API or specialty chemical"
+  revenue_per_unit: "NOT FOUND - only aggregate revenue vs aggregate installed MTPA capacity disclosed; a company-wide per-tonne figure would average incompatible products"
+  margin_per_unit: "NOT FOUND - no per-product cost disclosure in AR or Investor Presentation"
+  key_lever: "Utilisation/volume ramp on a largely fixed-cost, continuous-process plant (operating leverage: FY26 revenue +11.5%, EBITDA +29.3%) plus mix-shift toward higher-realisation non-Ibuprofen APIs"
+first_deterioration_signals:
+  - {risk: "Revenue model: Ibuprofen + Ethyl Acetate price-taker exposure (~72% of FY25 revenue)", first_signal: "Segment net sale/income for Chemical, or Pharma segment revenue growth turning negative despite stable volume"}
+  - {risk: "Margin: raw-material pass-through lag on majority China-sourced chemicals feedstock", first_signal: "Cost of materials consumed % of revenue rising above FY26's 64.75% baseline while EBITDA margin compresses below 12%"}
+  - {risk: "Balance sheet: receivables outrunning revenue, capex funding claim unproven with zero term debt", first_signal: "Net cash from operating activities falling below FY26's Rs 214 Cr, or trade receivables continuing to outpace revenue growth"}
+  - {risk: "Execution: two new pre-commercial lines each single/anchor-customer dependent, target Q3 FY27", first_signal: "Zero disclosed revenue contribution from either line past Q3 FY27"}
+  - {risk: "Structural: promoter-group shareholding consolidation and related-party purchase growth alongside a price-taker base business", first_signal: "Related-party purchases from promoter-group entities continuing to outgrow material-consumed growth, or a repeat unexplained shareholder-table change"}
+mgmt_questions:
+  - "What is the transfer-pricing basis for the Rs 237.72 Cr FY26 inter-segment chemicals-to-pharma transfer, and does it embed a below-market subsidy between segments?"
+  - "Who are the CDMO formulations Anchor Customers and the tolling leading global chemical company, and what share of each new facility's capacity is contracted versus speculative?"
+  - "What specific financing plan, beyond internal accruals, backs the Rs 1,200-1,400 Cr greenfield, given FY26 FCF of only Rs 43 Cr?"
+  - "What happened to Vasudeva Commercials Limited's 7.94% stake between 31-Mar-2025 and 31-Mar-2026?"
+  - "What is the expected steady-state margin for the two new pre-commercial lines once ramped, compared with existing Pharma/Chemical segment margins?"
+  - "Is the Ibuprofen expansion to 18,000 MTPA volume-led, or does its economics implicitly require a global price recovery?"
+  - "Given the roughly two-month raw-material pass-through lag on majority China-sourced chemicals feedstock, what hedging or lag-reduction mechanism exists today?"
+one_line_verdict: "Two-speed manufacturer: price-taker commodity core funding an unproven diversification climb."
+analyst_note: >
+  Chemicals segment is a converter slice by Amendment 17's own definition:
+  segment margin swings on spread/utilisation, not price it sets. Pharma
+  segment (12.3% FY26 margin, 60.2% of revenue) is closer to a spec'd/value-added
+  supplier but still ~38 points of that is Ibuprofen, itself commodity-priced.
+  The SOTP split flagged at B00 intake is load-bearing for Stage 11: a single
+  blended destination PE would either over-credit the converter slice or
+  under-credit the diversification thesis. The two new pre-commercial lines
+  (CDMO formulations, specialty tolling) both carry single/anchor-customer
+  concentration by the company's own non-disclosure of counterparties; treat
+  any peak-revenue or margin claim tied to them as unverified until first
+  revenue is booked. Peer comparators (Aarti Drugs, Granules, Laxmi Organic)
+  are company-memory/screener sourced, not AR-anchored; useful for
+  positioning only, not for anchored numbers.

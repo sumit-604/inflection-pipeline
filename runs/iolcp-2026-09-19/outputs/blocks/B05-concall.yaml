@@ -1,0 +1,152 @@
+stage: B05-concall
+company: "IOLCP"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Original FY26 EBITDA margin guidance (the '14-15%' figure Q3 FY26 call references as the
+     starting point before being walked down to 13% then 11-12%) predates this transcript set;
+     no Q1 FY26 or Q2 FY26 call transcript is in the corpus (collector 3-most-recent rule), so
+     the origin and exact wording of that first guide could not be independently verified."
+  - "Q2 FY26 results and its Nov-2025 concall transcript were not collected (outside the
+     3-most-recent-quarter rule at intake); the Q2 FY26 flood/power-cost episode referenced
+     retrospectively in the Q3 FY26 call is therefore only visible second-hand."
+  - "Specialty chemicals tolling customer identity is contractually undisclosed by the company
+     itself ('confidentiality obligations'), not a corpus gap, but it blocks verification of
+     that trigger's customer-concentration risk."
+  - "No customer-concentration figures (top-5/top-10 % of revenue) were volunteered by
+     management or asked for by any analyst across all four calls."
+flags:
+  - {type: FLAG-CAPEX, reason: "Greenfield site (Rs1,200-1,400 Cr) produced no firm commissioning
+     date across four consecutive call touchpoints (Feb, May, Aug, Sep 2026 transcripts);
+     consistent with B02/B03's AR finding of only Rs69.35 Cr booked capital commitments against
+     the guided scale."}
+  - {type: FLAG-GOVERNANCE, reason: "Promoter shareholding rise (48.19% to 62.28%), the Vasudeva
+     Commercials stake disappearance, and Rs131.94 Cr of related-party purchases (all flagged
+     independently in B02/B03) were never raised by management or any analyst in any of the
+     four calls in this corpus."}
+  - {type: FLAG-CASH, reason: "Management's repeated 'internally funded' capex claim (Rs495 Cr
+     plus Rs1,200-1,400 Cr) was never tested against the receivables/working-capital trend
+     (debtor days 79 to 95, B02/B03 FLAG-CASH) by either management or any analyst on any call."}
+quarters_analysed: ["Q3 FY26", "Q4 FY26", "Q1 FY27", "Business Update 11-Sep-2026"]
+triggers:
+  - {priority: 1, name: "Non-ibuprofen API mix shift (36% to 43% of pharma revenue, +67% YoY)",
+     type: "VOLUME+PRICE-MIX", timeframe: "near-term, already live",
+     conviction: "H",
+     confirm_signal: "Continued quarterly rise toward the stated 50% near-term / 50-55% FY29 target with held margin parity vs ibuprofen",
+     kill_signal: "Non-ibu share plateaus or reverses; margin-parity claim stays unconfirmed at product level"}
+  - {priority: 2, name: "Paracetamol utilisation ramp (55% to 70-75% target by FY27-end)",
+     type: "VOLUME", timeframe: "near-term, due within 2-3 quarters",
+     conviction: "M",
+     confirm_signal: "Reported utilisation above 60% in Q2 or Q3 FY27",
+     kill_signal: "Utilisation still ~55% by Q3 FY27, confirming the Q1 FY27 flat print was structural, not a blip"}
+  - {priority: 3, name: "Ibuprofen expansion +6,000 MTPA (18,000 MTPA by Dec 2027)",
+     type: "VOLUME", timeframe: "medium-term",
+     conviction: "M",
+     confirm_signal: "Named customer commitments disclosed and on-time commissioning news flow",
+     kill_signal: "Commissioning slips past Dec 2027 without explanation, echoing the greenfield pattern"}
+  - {priority: 4, name: "Export / regulated-market mix expansion (28.5% Q1 FY27, target 25-30% FY27)",
+     type: "PRICE-MIX", timeframe: "near-term",
+     conviction: "H",
+     confirm_signal: "Export share holds at or above 28% through FY27",
+     kill_signal: "Reversion below 25% without a stated reason"}
+  - {priority: 5, name: "CDMO formulations entry (1,500 mn tablets/yr, EU-GMP certified)",
+     type: "VOLUME+INORGANIC", timeframe: "medium-term, commercial Q3 FY27",
+     conviction: "L-M",
+     confirm_signal: "Firm (not soft) contracts disclosed and first commercial revenue on schedule",
+     kill_signal: "Commercialisation slips past Q3 FY27, or soft commitments never convert to contracts"}
+  - {priority: 6, name: "Greenfield site (Rs1,200-1,400 Cr, 101 acres)",
+     type: "VOLUME", timeframe: "long-term, 4-5 years",
+     conviction: "L",
+     confirm_signal: "A firm commissioning date given and next AR's capital commitments rise materially above Rs69.35 Cr",
+     kill_signal: "A fifth consecutive touchpoint with no firm date"}
+guidance:
+  - {item: "Q4 FY26 revenue", number: "~Rs600 Cr", timeframe: "Q4 FY26", stated_in: "Q3 FY26 call"}
+  - {item: "Q4 FY26 EBITDA margin", number: "~11%", timeframe: "Q4 FY26", stated_in: "Q3 FY26 call"}
+  - {item: "FY26 EBITDA margin (final, walked-down guide)", number: "11-12%", timeframe: "FY26", stated_in: "Q3 FY26 call"}
+  - {item: "FY27 revenue growth", number: "10-15% (revised later to 15-20%)", timeframe: "FY27", stated_in: "Q3 FY26 call; revised Q4 FY26 and Q1 FY27 calls"}
+  - {item: "FY27 PAT growth", number: "15-20%", timeframe: "FY27", stated_in: "Q3 FY26 call"}
+  - {item: "FY26 capex", number: "~Rs150 Cr (trimmed toward Rs130-135 Cr)", timeframe: "FY26", stated_in: "Q3 FY26 call"}
+  - {item: "Greenfield site total capex", number: "Rs1,200-1,400 Cr, Rs200-250 Cr/year over 4-5 years", timeframe: "4-5 years", stated_in: "Q4 FY26 call"}
+  - {item: "FY27 EBITDA margin", number: "14-15%", timeframe: "FY27", stated_in: "Q4 FY26 and Q1 FY27 calls"}
+  - {item: "Paracetamol utilisation target", number: "70-75% by FY27-end, full utilisation by FY28", timeframe: "FY27/FY28", stated_in: "Q4 FY26 call"}
+  - {item: "Peak revenue at 100% utilisation of current assets", number: "Rs3,200-3,300 Cr", timeframe: "no date attached", stated_in: "Q4 FY26 call"}
+  - {item: "FY27 export contribution", number: "25-30% of revenue", timeframe: "FY27", stated_in: "Q1 FY27 call"}
+  - {item: "FY28 revenue growth", number: "15-20%", timeframe: "FY28", stated_in: "Q1 FY27 call"}
+  - {item: "FY28 EBITDA margin", number: "15-17%", timeframe: "FY28", stated_in: "Q1 FY27 call"}
+  - {item: "Non-ibu contribution to API segment", number: "50-55% by FY29, margin parity with ibuprofen", timeframe: "FY29", stated_in: "Q1 FY27 call"}
+  - {item: "Ibuprofen expansion capex and terms", number: "Rs350 Cr, 6,000 MTPA, ~1.75-2.0x asset turn, >80% utilisation targeted", timeframe: "commissioning Dec 2027, optimal FY28/29", stated_in: "Business Update call 11-Sep-2026 / Reg 30 filing"}
+  - {item: "CDMO formulations capex and terms", number: "Rs110 Cr, ~1.0-1.25x asset turn at 90% utilisation, optimal in 18-24 months", timeframe: "commercial Q3 FY27", stated_in: "Business Update call"}
+  - {item: "Specialty chemicals tolling capex", number: "Rs35 Cr", timeframe: "commercial Q3 FY27", stated_in: "Business Update call / Reg 30 filing"}
+  - {item: "Combined three-initiative incremental top-line contribution", number: "25-30% incremental, once fully operational (~FY29)", timeframe: "FY29", stated_in: "Business Update call"}
+  - {item: "Combined three-initiative blended ROCE target", number: ">15% company-wide once fully implemented", timeframe: "no date attached", stated_in: "Business Update call"}
+promise_delivery:
+  delivered: 5
+  partial: 4
+  missed: 1
+  rows:
+    - {promised_in: "Q3 FY26 call", promise: "Q4 FY26 revenue ~Rs600 Cr", outcome: "DELIVERED (beat): Rs619 Cr, +17.4% YoY", explanation: "Q4 FY26 call financials"}
+    - {promised_in: "Q3 FY26 call", promise: "Q4 FY26 EBITDA margin ~11%", outcome: "DELIVERED (large beat): 15.2%", explanation: "Q4 FY26 call financials, +251 bps YoY"}
+    - {promised_in: "Q3 FY26 call", promise: "FY26 EBITDA margin walked down live from 14-15% to 13% to 11-12%", outcome: "PARTIAL: met the revised 11-12% guide (actual 12.4%); original 14-15% guide (pre-corpus) missed", explanation: "Management's own sequence, stated under analyst pressure; FY26 actual reported in Q4 FY26 call"}
+    - {promised_in: "Q3 FY26 call", promise: "FY26 capex ~Rs150 Cr (trimmed to Rs130-135 Cr)", outcome: "DELIVERED: Rs160 Cr actual, internally funded", explanation: "Q4 FY26 call financials"}
+    - {promised_in: "Q3 FY26 call", promise: "Minoxidil commercial API launch by Q1 FY27", outcome: "DELIVERED early: launch confirmed in Q4 FY26 call opening remarks", explanation: "Q4 FY26 call"}
+    - {promised_in: "Q4 FY26 call", promise: "Greenfield project to come up in 4-6 to 6-8 quarters from May 2026", outcome: "MISSED / SLIPPING: walked back to 'probably not in this FY' by Q1 FY27 call, still no firm date by Sep 2026 call", explanation: "Approvals described as still in process; only initial base work started; no material capex deployed"}
+    - {promised_in: "Q4 FY26 call", promise: "Paracetamol utilisation 55% to 70-75% by FY27-end", outcome: "PARTIAL/PENDING: still ~55% one quarter later (Q1 FY27 call), target date not yet due", explanation: "On watch, not yet a confirmed miss"}
+    - {promised_in: "Q4 FY26 and Q1 FY27 calls", promise: "FY27 revenue +15-20%, EBITDA margin 14-15%", outcome: "PARTIAL/ON TRACK: Q1 FY27 print revenue +37%, margin 14.6%, well ahead of pace but not yet full-year tested; management explicitly declined to raise the guide", explanation: "Q1 FY27 call financials and Maulik Varia exchange"}
+    - {promised_in: "Q1 FY27 call", promise: "Export contribution 25-30% of revenue for FY27", outcome: "DELIVERED early, upper end: 28.5% in Q1 FY27 vs 24.4% Q1 FY26", explanation: "Q1 FY27 call financials"}
+    - {promised_in: "Sep 2026 Business Update call", promise: "Capex breakdown Rs350 Cr (ibuprofen) + Rs110 Cr (CDMO) + Rs35 Cr (specialty chemicals) = Rs495 Cr", outcome: "DELIVERED, internally consistent: exact match to the Reg 30 filing dated 09-Sep-2026", explanation: "Cross-checked against inputs/announcements/20260909-...txt"}
+excuse_pattern: "balanced"
+repeated_evasions:
+  - {question: "What is the exact price-vs-volume split behind the margin/revenue growth?",
+     quarters_asked: ["Q3 FY26", "Q4 FY26", "Q1 FY27"],
+     classification: "deflected every time"}
+  - {question: "Would IOL acquire a competitor's Ibuprofen assets / how do you read the competitor exits (Solara, SMS Pharma)?",
+     quarters_asked: ["Q3 FY26", "Q4 FY26", "Q1 FY27"],
+     classification: "deflected every time"}
+  - {question: "What is the greenfield site's capex, timeline, and product mix?",
+     quarters_asked: ["Q3 FY26", "Q4 FY26", "Q1 FY27", "Business Update Sep 2026"],
+     classification: "answer changed between quarters (dollar figures firmed, commissioning timeline never firmed)"}
+credibility_grade: "B"
+credibility_basis: "Beat or met every explicit quarterly guide found in this corpus (Q4 FY26 revenue Rs600->619 Cr, margin ~11%->15.2%; FY26 margin met its own twice-revised 11-12% target at 12.4%); Sep-2026 Rs495 Cr capex breakdown matches the Reg 30 filing exactly; minoxidil launched ahead of its own target quarter. Capped below A by the live guidance walk-down inside the Q3 FY26 call itself, the greenfield project's un-firmed timeline across four consecutive touchpoints, and zero engagement across all four calls, by either management or analysts, with the AR-flagged promoter-shareholding, related-party, and receivables threads (B02/B03)."
+peer_questions:
+  - {question: "Does Granules India, Aarti Drugs, or Laxmi Organic corroborate a 3-4%/year global ibuprofen demand growth rate and the 'overstocked 2023-2024, destocked into Oct 2025' cycle IOL cites to explain its Ibuprofen demand revival?",
+     why: "IOL's new +6,000 MTPA Ibuprofen expansion and its 'no pricing pressure' claims both rest on this cycle-turn narrative; Aarti Drugs also makes Ibuprofen and would see the same cycle.",
+     check_peers: ["AARTIDRUGS"]}
+  - {question: "Do Aarti Drugs or Granules India confirm the Ibuprofen-side distress IOL's management repeatedly declines to characterise directly (Solara Active Pharma's asset-sale process, SMS Pharma's weak quarter, an unnamed 2025/26 US capacity closure)?",
+     why: "IOL frames these as validation of its cost position but never engages specifics; a peer read tests whether IOL is the surviving low-cost producer or is simply avoiding a hard question.",
+     check_peers: ["AARTIDRUGS", "GRANULES"]}
+  - {question: "Does Laxmi Organic's Q4 FY26/Q1 FY27 commentary corroborate the ethyl acetate/acetic anhydride spread spiking to $200+/ton around the US-Iran war (~March 2026), stabilising to $150-160/ton, and being 'neutralised' by Sep 2026, as IOL states across three calls?",
+     why: "IOL's chemicals-segment EBIT 'nearly doubling' rests partly on this spread; Laxmi Organic is the direct comparable for acetyls spread economics.",
+     check_peers: ["LXCHEM"]}
+  - {question: "IOL's own Q4 FY26 spokesperson references having read a Granules India transcript stating 'no price increase' in paracetamol, while IOL claims a price increase across APIs including paracetamol in the same window. Does Granules' actual transcript confirm or contradict IOL's characterisation?",
+     why: "A direct, named, checkable contradiction between two peers on the same product's pricing in the same window; resolves whether IOL's margin story is price-led or volume/mix-led.",
+     check_peers: ["GRANULES"]}
+  - {question: "Does Granules India's own formulations/CDMO margin and asset-turn history validate IOL's unquantified claim that its new CDMO tablet business will run 'better than API' margins at a 1.0-1.25x asset turn and 90% utilisation?",
+     why: "IOL gives only qualitative CDMO margin claims for a business not yet commercial; Granules is the explicit template IOL's thesis leans on and has delivered multi-year data.",
+     check_peers: ["GRANULES"]}
+  - {question: "Does Aarti Drugs' concall commentary corroborate IOL's claim that 'most companies,' not just IOL, depend on China for DCDA (metformin's key starting material) with no Indian alternative supplier yet?",
+     why: "Tests a specific raw-material-dependency and China-substitution claim IOL states as industry-wide rather than IOL-specific.",
+     check_peers: ["AARTIDRUGS"]}
+red_flags:
+  - "Greenfield site (Rs1,200-1,400 Cr): four consecutive call touchpoints (Feb, May, Aug, Sep 2026), never a firm commissioning date; echoes B02/B03's AR finding of only Rs69.35 Cr booked capital commitments against the guided scale. Severity: MODERATE."
+  - "Total silence, across all four calls and by both sides, on promoter shareholding (48.19%->62.28%), the Vasudeva Commercials stake disappearance, and Rs131.94 Cr of related-party purchases, all independently flagged in the AR (B02/B03). Severity: MODERATE."
+  - "'Internally funded' capex claim repeated every call with zero engagement, from either side, on the receivables/working-capital trend (debtor days 79 to 95, B02/B03 FLAG-CASH). Severity: MODERATE."
+  - "FY26 EBITDA margin guidance walked down twice within a single call (14-15% -> 13% -> 11-12%) before being met; ultimately delivered above even the lowest revised guide. Severity: LOW."
+  - "Chemicals-segment capacity utilisation stated as 'near 200%' in the Q3 FY26 call, an internally impossible figure, never corrected in later calls. Severity: LOW, likely verbal/transcription artifact."
+  - "Specialty chemicals tolling facility (Rs35 Cr) is built around a single, unnamed customer under confidentiality restrictions: full customer concentration by design on a new asset. Severity: LOW-MODERATE."
+dropped_triggers:
+  - "Patent pipeline / 3 process patents (sitagliptin, vildagliptin, losartan), discussed as stalled (nitrosamine impurities, enzyme usage) in the Q3 FY26 call, never revisited in the Q4 FY26, Q1 FY27, or Sep 2026 calls, and never re-asked by any analyst."
+timeline_slippages:
+  - "Greenfield 101-acre site (Rs1,200-1,400 Cr): Q3 FY26 call said EC granted, pursuing NOC/highway approvals; Q4 FY26 call projected the project to 'come up' in 4-6 to 6-8 quarters from May 2026; Q1 FY27 call walked this back to 'probably not in this FY'; Sep 2026 call still describes approvals as 'in process,' with only 'initial base work' started and no firm commissioning date given in any of the four touchpoints."
+  - "Paracetamol enhanced-capacity utilisation: guided to rise from 55% (Q4 FY26 call, May 2026) to 70-75% by end of FY27; the Q1 FY27 call (Aug 2026, one quarter later) still reports ~55%, with no interim uptick disclosed."
+analyst_note: >
+  The single clearest credibility data point in this corpus is the FY26 EBITDA margin guidance
+  walked down twice within one call (14-15% to 13% to 11-12%) before being met at 12.4% --
+  management under-delivered against its own earlier promise, then met its own reduced promise,
+  and both the promise-cut and the eventual beat are on the record in management's own words.
+  That combination (a real cut, honestly narrated, then a beat of the cut number) is why this
+  run grades B rather than A or C: it is neither clean over-delivery nor a pattern of hollow
+  promises. The greenfield site's four-touchpoint timeline vagueness and the total silence on
+  the AR's promoter/RPT/receivables threads are the two items most worth carrying into the
+  Halt-1 dossier as verification priorities, since neither is a concall problem on its own terms
+  (nobody asked) but both compound the B02/B03 findings from the same threads.

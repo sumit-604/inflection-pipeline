@@ -1,0 +1,65 @@
+stage: B08-promoter
+company: "IOLCP"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Beneficial/ultimate control of Vasudeva Commercials Limited and G Consultants and Fabricators Private Limited before their Oct-2025/Jun-2026 corporate actions: NOT FOUND (directors on record carry no Gupta-family surname; shared registered address with promoter entity NCVI Enterprises at 93 Industrial Area-A, Ludhiana is a circumstantial signal only, not proof)."
+  - "MCA beneficial-ownership filings for the pre-merger entities: NOT FOUND (outside this container's reach)."
+  - "Company/proxy-advisory explanation for the 91.34% institutional vote against Kushal Kumar Rana's re-appointment at the 39th AGM (2-Sep-2026): NOT FOUND in corpus or web search."
+  - "AmbitionBox-specific employee review data: NOT FOUND via search (only Glassdoor retrieved)."
+  - "Industry peer promoter-quality comparison (Aarti Drugs, Granules, Laxmi Organic promoter background): NOT FOUND IN THIS PASS (out of scope this stage)."
+flags: []
+verdict: "CAUTION"
+scorecard: {clean: 2, caution: 8, red: 0}
+deal_breakers: []
+adverse_findings:
+  - {finding: "RPT purchases from three promoter entities rose 31.1% YoY to Rs 131.94 Cr (8.8% of material consumed) FY26; NM Merchantiles's sales to the company nearly tripled (+205.4% YoY) the same year its own equity stake rose 4.00pp", evidence_tier: "VERIFIED", source: "AR FY26 Note 40, p.169-171", date: "FY26 (year ended 31-Mar-2026)"}
+  - {finding: "Promoter/promoter-group holding rose 57.48% (31-Mar-2026) to 62.28% (30-Jun-2026), a genuine +4.80pp increase via RD-sanctioned amalgamation of two previously-public vehicles (G Consultants and Fabricators Pvt Ltd, Synthorix Trading Ltd) into promoter entity NM Merchantiles; secondary media (Whalesbook, scanx.trade) mischaracterized this as 'no change'", evidence_tier: "VERIFIED", source: "SAST-29-2-4 (26-Jun-2026); SHP-March-2026.txt and SHP-June-2026.txt XBRL shareholding patterns", date: "24/25-Jun-2026"}
+  - {finding: "Institutional (Public-Institutions category) shareholders voted 91.34% AGAINST re-appointment of director Kushal Kumar Rana at the 39th AGM; resolution passed only on promoter and retail votes; no company or proxy-advisory explanation found", evidence_tier: "VERIFIED", source: "BSE voting-results filing and scrutinizer report, 02-Sep-2026", date: "02-Sep-2026"}
+  - {finding: "External professional CEO (Vikas Vij, ex-Cipla) resigned after an 18-month tenure 'on personal grounds'; CEO seat has not been refilled, family executives run operations directly", evidence_tier: "VERIFIED", source: "AR FY26 Note 40, p.169; corroborated by biospectrumindia.com/peoplematters.in appointment coverage", date: "resigned 09-Sep-2024, effective 30-Sep-2024"}
+  - {finding: "CEO-to-median-employee pay ratio 283.82x, high in absolute terms for a small-cap", evidence_tier: "VERIFIED", source: "AR FY26 Annexure-4, p.69", date: "FY26"}
+  - {finding: "Brief technical non-compliance: mandatory woman independent-director seat vacant ~5 weeks (22-Sep-2024 to 28-Oct-2024), breaching Reg 17(1E); fine paid, remedied", evidence_tier: "VERIFIED", source: "Secretarial Compliance Report FY25 as referenced in the FY26 report filed 20-May-2026", date: "22-Sep-2024 to 28-Oct-2024"}
+  - {finding: "Customs Order-In-Original: Rs 2.06 Cr aggregate demand/penalty for allegedly non-conforming ASEAN-India FTA Certificates of Origin; company appealing; company states no material impact", evidence_tier: "VERIFIED", source: "Reg 30 disclosure, 09-May-2026; AR FY26 Note 35 footnote, p.161", date: "order received 08-May-2026"}
+  - {finding: "Non-audit fees exceeded statutory audit fee in FY25 (107.7% of audit fee), pulled back to 93.75% in FY26, close to parity both years; statutory auditor is a regional firm (M/s Ashwani & Associates, Ludhiana), not Tier-1 national", evidence_tier: "VERIFIED", source: "AR FY26 Note 45, p.174; Board's Report Section 26, p.94-95", date: "FY25-FY26"}
+  - {finding: "Blog post alleges a company filing had corrupted/garbled text in place of project details for the Rs 500 Cr capex plan; not corroborated -- the actual Reg 30 capex intimation held in the corpus (09-Sep-2026) is complete and itemised", evidence_tier: "UNVERIFIED", source: "Whalesbook.com Hinglish blog post (single source)", date: "undated post, referencing the capex disclosure period, 2026"}
+  - {finding: "Shared registered office address (93 Industrial Area-A, Ludhiana) between confirmed promoter entity NCVI Enterprises Limited and non-promoter Vasudeva Commercials Limited (the entity whose demerger ultimately fed the Jun-2026 promoter-holding increase)", evidence_tier: "UNVERIFIED", source: "SAST-29-2-2/3/6/7 (NCVI Enterprises letterhead) vs SAST-29-2-8 (Vasudeva Commercials letterhead)", date: "filings Oct-2025 and Mar-2026"}
+transition_evidence:
+  - {item: "FPI/FII holding rose from 1.72% (31-Mar-2026) to 4.87% (30-Jun-2026), nearly tripling in one quarter, coinciding with the reported +170% four-month stock rally", source: "SHP-March-2026.txt and SHP-June-2026.txt, BSE XBRL shareholding patterns", date: "quarter ended 30-Jun-2026"}
+pledge_pct_latest: 0
+pledge_trend: "stable at 0% across all 8 quarters examined (Sep-2024 through Jun-2026); explicit 'No' pledge declaration in every quarterly XBRL shareholding-pattern filing (item 7 of the Declaration table, e.g. SHP-June-2026.txt)"
+searches_performed:
+  - "\"NM Merchantiles\" IOL Chemicals promoter shareholding restructuring 2026"
+  - "IOL Chemicals Pharmaceuticals Varinder Gupta Rajinder Gupta founders history"
+  - "\"Vasudeva Commercials\" IOL Chemicals shareholding"
+  - "IOL Chemicals Pharmaceuticals SEBI order adjudication"
+  - "\"IOL Chemicals\" Kushal Kumar Rana AGM 2026 institutional investors vote against reappointment"
+  - "IOL Chemicals Pharmaceuticals Glassdoor AmbitionBox employee reviews"
+  - "IOL Chemicals Pharmaceuticals AmbitionBox reviews rating"
+  - "IOL Chemicals Pharmaceuticals proxy advisory IiAS SES InGovern recommendation"
+  - "IOL Chemicals Pharmaceuticals promoter pledge shares"
+  - "\"Vikas Vij\" IOL Chemicals CEO resignation 2024"
+  - "IOL Chemicals Pharmaceuticals short seller report forensic concerns"
+  - "Rajinder Gupta Trident Varinder Gupta IOL family settlement dispute"
+  - "Harpal Singh Sharad Tyagi Rajni Jha independent director IOL Chemicals background"
+  - "\"Vasudeva Commercials\" \"Rakesh Sharma\" Ludhiana director company"
+  - "WebFetch: whalesbook.com IOL Chemicals filing-corrupted article full text"
+searches_skipped: []
+verdict_basis: "No SEBI/criminal record and zero pledge, but a real filed +4.80pp promoter-holding increase via demerger-then-amalgamation of two previously-public vehicles (media-mischaracterized as unchanged), RPT growth co-timed with a promoter entity's own stake rise, and an unexplained 91% institutional vote against a director's reappointment keep this at CAUTION rather than TRUSTWORTHY."
+analyst_note: >
+  The Vasudeva Commercials / LBF2 puzzle is now resolved with a six-document evidence
+  chain, not a residual gap: Vasudeva was always non-promoter; it demerged into Synthorix
+  Trading Ltd (Oct-2025, NCLT Chandigarh order), both non-promoter; both were then
+  amalgamated into promoter entity NM Merchantiles (Jun-2026, RD order) alongside
+  previously-public G Consultants and Fabricators Pvt Ltd. The BSE XBRL shareholding
+  pattern for 31-Mar-2026 independently names Synthorix Trading at 3.81% under the public
+  "Bodies Corporate" category -- direct proof the pre-merger classification was genuinely
+  public. This means the +4.80pp promoter-holding rise in Jun-2026 is real and filed, and
+  secondary media describing it as "no change" is incorrect. Downstream stages should cite
+  this stage's evidence chain rather than re-deriving it. The one item this stage could not
+  close is who beneficially controlled Vasudeva Commercials and G Consultants before their
+  respective corporate actions; the shared registered address with NCVI Enterprises is
+  circumstantial only. None of the eight caution-rated dimensions individually would cap
+  position size under the deal-breaker rules; downstream (FTTCP, Role 2/Role 6, /finalize
+  tripwires) should carry the RPT-growth trend, the AGM institutional-dissent pattern, and
+  the unfilled CEO seat as named monitorables.

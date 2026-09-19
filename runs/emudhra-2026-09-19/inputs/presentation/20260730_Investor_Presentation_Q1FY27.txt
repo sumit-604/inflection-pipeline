@@ -1,0 +1,476 @@
+[page 1]
+EL/SEC/2026-27/44
+
+July 30, 2026
+
+Corporate Relationship Department          The Manager, Listing Department
+BSE Limited                                National Stock Exchange of India Limited
+1st Floor, New Trading Ring Rotunda        “Exchange Plaza”, C-1, Block G,
+Building, P J Towers, Dalal Street, Fort,  Bandra-Kurla Complex, Bandra (E),
+Mumbai - 400 001                           Mumbai - 400 051
+
+Script Code: 543533                        Symbol: EMUDHRA
+
+Dear Sir/Madam,
+
+Sub: Earnings Presentation on the financial results of the company for the quarter ended June 30,
+2026
+
+Pursuant to Regulation 30 read with Schedule III of the Securities and Exchange Board of India (Listing
+Obligations and Disclosure Requirements) Regulations, 2015, please find enclosed herewith a copy of
+the Earnings Presentation on the financial results of the company for the quarter ended June 30, 2026,
+which will be circulated to the Investors/ Analysts for the Earnings Call scheduled on Thursday, July
+30, 2026.
+
+This is for your information and records.
+
+Thanking you
+
+Yours faithfully,
+
+For eMudhra Limited
+
+                       Digitally signed
+
+JOHNSON by JOHNSON
+
+                       XAVIER
+
+XAVIER Date: 2026.07.30
+
+                       11:15:58 +05'30'
+
+Johnson Xavier
+Company Secretary & Compliance Officer
+Membership No. A28304
+
+Encl.: As Above
+
+                                                      eMudhra Limited
+
+  eMudhra Digital Campus, 12-Pl-A & 12-Pl-B, Hi-Tech Defence and Aerospace Park (IT sector), Jala Hobli, B.K. Palya,
+
+Bengaluru, Karnataka 562149 IPhone: +91 80 4848 4001 I Email: corporate@emudhra.com IWeb: www.emudhra.com
+
+                                                                             CIN - L72900KA2008PLC060368
+
+[page 2]
+July 2026
+
+Q127
+
+Investor Presentation
+
+Trust Infrastructure for the AI Economy
+
+eMudhra Limited | BSE: 543533 | NSE: EMUDHRA
+
+[page 3]
+Table of Contents
+
+01  Business Review
+02
+03  Company overview, lines of business, products, trust and data-privacy strategy, R&D, geography and key wins
+
+    Q127 Financial Overview
+
+    Performance highlights, revenue growth and operating performance
+
+    Q127 Financial Statement
+
+    Consolidated Profit & Loss Statement
+
+eMudhra Limited | Q127 Investor Presentation                                                                     2
+
+[page 4]
+01 Business Review
+
+Lines of business, trust and data-privacy strategy, product stack, R&D, key wins and recognition
+
+                                                                                                                                                                                                                                                                                                               3
+
+[page 5]
+Q127 AT A GLANCE
+
+Results at a glance
+
+Growth in revenue and profitability, with an increasing focus on product led growth
+
+TOTAL INCOME                                  EBITDA                                                                                                                PAT
+
+Rs. 1,925 Mn                                  Rs. 504 Mn                                                                                                            Rs. 320 Mn
+
++27.8% YoY                                    +40.4% YoY · 26.2% margin                                                                                             +27.9% YoY · 16.6% margin
+
+ADJ. EBITDA                                   ADJ. PAT                                                                                                              INTERNATIONAL REVENUE
+
+Rs. 529 Mn                                    Rs. 339 Mn                                                                                                            66%
+
++29.5% YoY · 27.5% margin                     +24.1% YoY · 17.6% margin                                                                                             of total revenue
+
+Adjusted figures exclude ESOP provisioning (non-dilutive) and notional interest on acquisition liability; include interest and capital gain income on investments.
+
+eMudhra Limited | Q127 Investor Presentation                                                                                                                                                   4
+
+[page 6]
+BUSINESS OVERVIEW
+
+eMudhra line of business
+
+Three complementary lines of business spanning trust services, enterprise applications and services
+
+Trust Services                                           Enterprise Solutions                                    Services
+
+15%              -3% YoY                                 65%                   +50% YoY                          20%              +5.0% YoY
+
+of Q127 revenue                                          of Q127 revenue                                         of Q127 revenue
+
+• CCA mandate to shift to a higher token security level  • Five proprietary platforms — emCA (PKI),              • Consulting and product integration supporting client
+    resulted in a supply chain disruption because of         SecurePass (converged identity and access),             digital-transformation programmes
+    which, no tokens were ready for sale in Q1.              Certinext (certificate lifecycle management),
+                                                             emSigner (paperless transformation) and PrivaTrust  • A steady base of activity that continues to support
+• SSL/TLS certificate issuance, with WebTrust                (data privacy, in development)                          cross-sell into the platform business
+    recognition in major browser stores — the only
+    Indian CA with this standing                         • SecurePass and Certinext deployed across large        • New Account additions in US resulting in
+                                                             Banking, Government and Defence environments,           incremental growth YoY.
+• Extending into Global Trust Services through the           with EAL 4+ certification supporting regulated use
+    Cryptas / Primesign subsidiary in Europe bundling        cases
+    with Enterprise Solutions
+                                                         • emSigner processes over 500,000 signing
+                                                             workflows a day globally, combining AI-based
+                                                             liveness and signer validation
+
+      15 offices globally                                35+ countries served  850+ employees worldwide                           5 proprietary platforms
+
+eMudhra Limited | Q127 Investor Presentation                                                                                                                                                           5
+
+[page 7]
+INDUSTRY CONTEXT
+
+The next big focus is AI Trust and Governance
+
+A measured view of why identity and trust infrastructure matters more as AI adoption spreads
+
+•1 Machine identity is growing faster than human                                        •2 Tooling remains fragmented
+          identity                                                                        Coverage of the machine identity and secrets management market points to a
+                                                                                          landscape of specialised vendors rather than a single consolidated category,
+  Analysts covering identity and access management note that APIs, workloads,             meaning most organisations are still assembling, rather than buying off-the-shelf, a
+  devices and AI agents are expanding the population of machine identities that           complete approach.
+  organisations must discover, credential and govern — a population that is already
+  larger, and growing faster, than the human workforce it sits alongside.
+
+•3 Deepfakes raise the bar on verification                                              •4 Agentic AI adoption need to be trusted
+  The rise of generative-AI-driven impersonation is adding a further layer of             Industry research flags that unresolved identity and governance questions around AI
+  complexity to establishing who — or what — an organisation is actually dealing with     agents could stall a meaningful share of enterprise AI initiatives over the next few
+  online, bringing greater importance to Identity and Trust as a critical component in    years in the absence of a strong Trust infrastructure for Identity & Risk
+  organizational risk management.                                                         Management.
+
+Source: Gartner research on machine identity, IAM for AI agents and related emerging technology trends, 2026 (paraphrased).
+
+eMudhra Limited | Q127 Investor Presentation                                                                                                                                    6
+
+[page 8]
+INDUSTRY CONTEXT
+
+Where organisations increasingly need help
+
+Three converging shifts are shaping the CISO and DPO agenda alongside a broadening threat landscape
+
+• 1                                           • 2                                                  • 3
+ Certificate lifecycles are                    Post-Quantum readiness is                            AI and machine identity are
+ shortening                                    becoming an active workstream                        multiplying
+
+Public TLS certificate validity is being      Migration planning for quantum-safe                    Agentic AI and machine-to-machine workflows
+compressed from 398 days toward 47 days by    cryptography is moving from a research topic           are increasing the number of identities, secrets
+2029 necessitates CLM for service continuity  toward practical planning, requiring crypto-agility    and certificates that must be discovered,
+and better control of PKI in an Enterprise.   and a clear inventory of where and how                 credentialed and governed — each one a
+                                              cryptography is used across the estate.                potential point of exposure.
+
+Post Quantum Migration Deadline: 2029 for Critical Infrastructure, 2030 for High Priority Enteprise Systems (Dept. of Science & Technology, India)
+47 day certificate migration Deadline: March 2029 (CA Browser Forum)
+
+eMudhra Limited | Q127 Investor Presentation                                                                                                           7
+
+[page 9]
+BUSINESS OVERVIEW
+
+Trust, translated into business value
+
+Our product landscape spans identity, trust services, data privacy and risk & governance
+
+                                                                             Agent Identity         Identity Governance              Context
+
+     APls                                     PRODUCT PILLARS                     0 emSigner                C, CERTlnext            0 PrivaTrust                             RISK &
+MCP Servers                                                                                                                                                             GOVERNANCE
+                                                 0 SECUREpass                             KYC                        CLM                Data Privacy
+     SDKs                                                                          Workflow Mgmt                   CIPoM                    DSAR                             Policies
+Integrations                                                      PAM                                                KMS                                                  Co m p lia nc e
+ Webhooks                                                    Access Mgmt                 QTSP               Machine & Agents          Consent Mgmt
+                                                         Converged Identity                                                                                                   Audi t
+                                                            CMS&Cards                                                               Data Privacy &                       Risk Controls
+                                                                                                                                      Compliance
+                                                                  MFA                                                                                                      Monitoring
+                                                                                                                                              Humans
+                                              BU SINESS OUTCOMES             Workflow & Efficiency          Trust Automation
+
+                                                        Auth & Access        loT                    Agents               Workforce
+
+                                              REACH - APPLIES AC ROSS
+
+                                                     Infrastructu re
+
+                                                                                                                              ~     ------ / 1
+                                                                                                                                 ' ID Broker
+
+                                              C, emCA                             Trust Center - Issuance of Crypt ographic Cred entials • PKI • OCSP • TSA • HSM Keys
+
+eMudhra Limited | Q127 Investor Presentation                                                                                                                                               8
+
+[page 10]
+PRODUCT OVERVIEW                                                                                         0 Shipped Q127 0 Roadmap
+
+Product stack, R&D and roadmap
+
+Five proprietary platforms — capability shipped in Q127, what comes next, and the R&D behind it
+
+emCA                     Certinext                  SecurePass                emSigner                   PrivaTrust
+
+DIGITAL CERTIFICATE      CERTIFICATE LIFECYCLE      CONVERGED IDENTITY &      PAPERLESS                  DATA PRIVACY &
+ISSUANCE                 MANAGEMENT                 ACCESS                    TRANSFORMATION             CONSENT
+Issuance of DSC, retail  Discovery of certificates  Identity and Access       Multi-document, multi-
+eSign and SSL/TLS        across servers, systems    Management across 15+     party workflow routing     Consent management
+certificates             and IoT devices            authentication modes      300,000+ workflows         across digital
+Cryptographic key-pair   Automated renewal with     Privileged Access         completed per day in       touchpoints, with audit
+generation underpinning  a built-in secrets engine  Management with secrets   India                      trails
+secure data exchange                                vaulting
+                                 CBOM analysis                                         AI document       Vendor and third-party
+    PQC-ready issuance                                Cross-cloud federation     summarisation & risk    consent and disclosure
+             support        S/MIME email signing                                                         tracking
+                                                       Adaptive risk scoring               scoring
+      Agent & machine       PQC migration tooling                                                              Consent & vendor
+      identity issuance                                                             Agentic signing &              consent live
+                                                                                   authorisation trails
+                                                                                                                Data discovery,
+                                                                                                            classification & DSAR
+
+                                                                                                                   automation
+
+R&D — Post-Quantum: quantum-safe               R&D — Converged Identity: one fabric for          R&D — Data Privacy: discovery, classification
+algorithms across emCA and Certinext, crypto-  workforce, customer, machine and device, with     and DSAR automation in R&D; early talks with
+agility framework, CBOM shipped                adaptive authentication                           large regulated entities
+
+Industry growth: Global Cyber Security and Paperless Transformation estimated at 21.2% (FY2026–FY2028). Source: Frost & Sullivan.
+
+eMudhra Limited | Q127 Investor Presentation                                                                                                    9
+
+[page 11]
+RECOGNITION
+
+Awards and accolades
+
+Independent recognition across analyst, review-site, employer and compliance categories
+
+            Frost & Sullivan                                                                                       G2
+
+F&S                                                                                                     G2
+
+                Global PKI-as-a-Service market recognised as growing above 30% annually, with                           Leader — Small Business eSignature, Asia; regional Leader badges for emSigner
+                eMudhra highlighted for its leadership position in India (2025 Best Practices report).                  across the Asia Pacific, Middle East & Africa and India grids.
+
+           Gartner Peer Insights                                                                                   IDC
+
+GPI                                                                                                     IDC
+                emSigner named in Gartner’s eSignature Market Guide as a Global, Full-Service,                          Ranked 1st among 42 vendors in the Identity and Digital Trust space in India, per
+                Enterprise workflow platform — the only Indian vendor in this category; verified                        IDC’s semi-annual market tracker.
+                reviewers cite security, compliance and ease of deployment.
+                                                                                                                   WebTrust
+GPTW  Great Place to Work
+                                                                                                        WT
+      Certified for 4 consecutive years.                                                                                Ongoing WebTrust accreditation; only Indian CA listed in major browser trust stores.
+
+ECSC  European Cloud Signature Consortium                                                                          Economic Times
+
+      Only Indian member admitted, reinforcing our European credibility.                                ET
+
+                                                                                                                       Recognised among the Iconic Brands of India, 2025.
+
+eMudhra Limited | Q127 Investor Presentation                                                                                                                                                                  16
+
+[page 12]
+Key project successes and business highlights
+
+Selected Q127 customer engagements across our core markets, with the quarter's operating updates
+
+INDIA                                         NORTH AMERICA                              OTHER BUSINESS HIGHLIGHTS
+
+Large Government Tax Department signs         Deeper penetration into the Higher         UAE Trust Services expected to launch in Q2
+up for SecurePass; large Bank                 Education Network for Private Trust        Data centre complete; QTSP services nearing licence
+onboarding for emSigner.                      Services and other products                application with TDRA, the local regulator.
+
+EUROPE (DACH)                                 MIDDLE EAST                                Regulatory reform drives PKI demand in Kenya
+First emSigner Enterprise customer in         Large CLM deal with a UAE Police           Mandate enforcing use of a licensed CA for all critical
+Austria, a Government entity; large           Authority; emSigner for a large hospital.  government services.
+German data centre client for CLM and
+workforce ID.                                 AFRICA                                     Cryptas product cross-sales successful
+                                              Sale of CA, CLM, SecurePass, Cryptas       First clients now using the full eMudhra product stack — paving
+ASIA PACIFIC                                  and emSigner at a Kenyan regulator;        the way for more.
+Large Government insurer and                  large hospital group purchases emSigner.
+Department of Social Welfare for                                                         Progress in CIS markets for SecurePass
+emSigner.                                                                                Advanced-stage client engagement and PoCs in Kazakhstan.
+
+                                                                                         CSR focussed on Digital Public Infrastructure skills
+                                                                                         Initiatives centred on upskilling in Digital Public Infrastructure.
+
+eMudhra Limited | Q127 Investor Presentation                                                                                                  11
+
+[page 13]
+02
+
+Q127 Financial Overview
+
+Performance highlights, revenue growth and operating performance
+
+                                                                                                                                                                                                                                                                                                             12
+
+[page 14]
+Q127 performance highlights
+
+Quarterly performance with continued momentum in international markets
+
+TOTAL INCOME                                  EBITDA                     EBIT                                                               NET PROFITS
+
+Rs. 1,925 Mn                                  Rs. 504 Mn                 Rs. 384 Mn                                                         Rs. 320 Mn
+
++27.8% YoY                                    +40.4% YoY · 26.2% margin  +31.7% YoY · 20.0% margin                                          +27.9% YoY · 16.6% margin
+
+ADJ. EBITDA                                   ADJ. EBIT                  ADJ. NET PROFITS                                                   BASIC EPS (INR)
+
+Rs. 529 Mn                                    Rs. 409 Mn                 Rs. 339 Mn                                                         3.91
+
++29.5% YoY · 27.5% margin                     +20.0% YoY · 21.3% margin  +24.1% YoY · 17.6% margin                                          +28.1% YoY
+
+Q1 margins reflect ESOP provisioning of Rs. 15.53 Mn and notional interest on acquisition liability. Adjusted figures exclude these items.
+
+eMudhra Limited | Q127 Investor Presentation                                                                                                                           13
+
+[page 15]
+Revenue growth
+
+Revenue from Operations Rs. 1,925 Mn — diversified by geography, segment, sector, product and channel
+
+             By geography                                                                         By line of business
+
+                                  ■ India                                                    34%                       ■ Enterprise Solutions 65%
+                                                                                                                       ■ Trust Services 15%
+                                  ■ International 66%
+
+                                                                                                                       ■ Services  20%
+
+By segment*                       By channel*                                                                          By sector*
+
+•            ■ Paperless 20%                                                                      ■ Direct  64%                                    ■ BFSI  25%
+             ■ Cybersecurity 80%
+                                                                                                  ■ Partner-led 36%                                ■ Government & Defense 31%
+
+                                                                                                                                                   ■ Enterprise 44%
+
+* Applicable only for Enterprise Applications; does not include Trust Services or Services.                                                                                    14
+          eMudhra Limited | Q127 Investor Presentation
+
+[page 16]
+Operational performance
+
+Quarter-on-quarter and year-on-year comparison across EBITDA, EBIT and PAT
+
+EBITDA                                                        EBIT                                                          PAT
+
+                                                         504                                                           384                                                           320
+          441                                                           349                                                           296
+
+                                 359                                                           292                                                           250
+
+        Q4 FY26  Q1 FY26  Q1 FY27                                     Q4 FY26  Q1 FY26  Q1 FY27                                     Q4 FY26  Q1 FY26  Q1 FY27
+
+(in Rs. Mn)                                                   (in Rs. Mn)                                                   (in Rs. Mn)
+
+eMudhra Limited | Q127 Investor Presentation                                                                                                                                              15
+
+[page 17]
+Key business indicator trends
+
+Revenue mix by line of business and geography, current quarter vs. prior quarter and year-ago quarter
+
+Revenue mix — Enterprise Applications & Services / Trust                 Revenue mix by geography — India / International
+Services
+
+                  397   292                                      284          1,255                                939             1,263
+                1,537  1,181                                    1,623
+                                                                                679                                534              644
+           Q4 FY26                     Q1 FY26                  Q1 FY27
+(in Rs. Mn).           ■ Solutions & Services ■ Trust Services             Q4 FY26                           Q1 FY26            Q1 FY27
+                                                                         (in Rs. Mn).                  ■ India ■ International
+
+eMudhra Limited | Q127 Investor Presentation                                                                                              16
+
+[page 18]
+03
+
+Q127 Financial Statement
+
+ Consolidated Profit & Loss Statement
+
+                                                                                                                                                                                                                                                                                                              17
+
+[page 19]
+Consolidated statement of profit and loss
+
+(Rs. INR Millions)
+
+Line Item                                     Q1 FY27     Q1 FY26                           YoY %  Q4 FY26     QoQ %    FY 2026
+Total Income                                      1,925       1,506                         27.8%      1,966     -2.1%     7,132
+Gross Margin                                      1,103          808                        36.4%      1,037      6.3%     3,840
+Gross Margin (%)                                 57.3%       53.7%                                    52.8%               53.8%
+EBITDA                                               504         359                        40.4%         441   14.3%      1,654
+EBITDA (%)                                       26.2%       23.8%                                    22.4%               23.2%
+Adjusted EBITDA                                      529         408                        29.5%         478   10.8%      1,835
+EBIT                                                 384         292                        31.7%         349   10.0%      1,312
+PAT                                                  320         250                        27.9%         296              1,100
+PAT (%)                                          16.6%       16.6%                                    15.0%       8.2%    15.4%
+Adjusted PAT                                         339         273                        24.1%         324              1,218
+Basic EPS (INR)                                     3.91        3.05                        28.1%        3.53     4.6%     13.14
+Diluted EPS (INR)                                   3.88        3.00                        29.2%        3.50   10.8%      13.02
+                                                                                                                10.9%
+
+Adjusted figures exclude ESOP provisioning and notional interest on acquisition liability.
+
+eMudhra Limited | Q127 Investor Presentation                                                                            18
+
+[page 20]
+Disclaimer and contact information
+
+This presentation contains statements that are "forward-looking statements" including, but without limitation,    EMUDHRA LIMITED
+statements relating to the implementation of strategic initiatives, and other statements relating to eMudhra’s    Kaushik Srinivasan
+future business developments and economic performance. While these forward-looking statements indicate            Kaushik@eMudhra.com
+our assessment and future expectations concerning the development of our business, a number of risks,             +080 4848 4041
+uncertainties and other unknown factors could cause actual developments and results to differ materially from
+our expectations.                                                                                                 INVESTOR RELATIONS
+
+These factors include, but are not limited to, general market, macro-economic, governmental and regulatory        Investorrelations@emudhra.com
+trends, movements in currency exchange and interest rates, competitive pressures, technological
+developments, changes in the financial conditions of third parties dealing with us, legislative developments,
+and other key factors that could affect our business and financial performance. eMudhra undertakes no
+obligation to publicly revise any forward-looking statements to reflect future / likely events or circumstances.
+
+eMudhra Limited | Q127 Investor Presentation                                                                                                     19
+
+[page 21]
+Enabling enterprises and consumers to engage, exchange
+information and transact securely, efficiently and with
+enhanced customer experience.
+
+OFFICES    Bengaluru  Bogota      Dubai      Doha        Jakarta
+Amsterdam  Nairobi    New Jersey  Singapore  Utah        Vienna
+Manila
+
+© 2026 eMudhra Limited. CIN — L72900KA2008PLC060368. Corporate Office: eMudhra Digital Campus, 2-P1-A & 12-P1-B, Hi-Tech Defence and Aerospace Park (IT sector), Jala Hobli, B.K. Palya, Bengaluru, 562149.
+

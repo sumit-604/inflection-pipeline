@@ -1,0 +1,26 @@
+company: eMudhra Ltd
+ticker: EMUDHRA
+cmp: 613.0
+market_cap_cr: 5080.0
+run_date: 2026-09-19
+run_type: full
+listed_date: 2022-06-01   # NSE/BSE listing June 2022 (IPO); >3y before run_date, prospectus not mandatory
+concalls_available: true
+sector_cap_row: "Platform / SaaS / IT services"   # set at /step1 step D 2026-09-19 (owned PKI/identity/signing software IP; not Cybersecurity / VAD, which A27.4 defines as distribution); stage 0 confirms against chunk 05; flag for phase-3 confirmation
+sector_cap_row_guess: "Platform / SaaS / IT services"   # keyword guess only, never consumed
+collector_warnings:
+  - "shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend."
+  - "screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance Sheet, screener:Cash Flow, screener:Customization, NEWGEN:Profit & Loss, NEWGEN:Quarters, NEWGEN:Balance Sheet, NEWGEN:Cash Flow, NEWGEN:Customization, QUICKHEAL:Profit & Loss, QUICKHEAL:Quarters, QUICKHEAL:Balance Sheet, QUICKHEAL:Cash Flow, QUICKHEAL:Customization, PROTEAN:Profit & Loss, PROTEAN:Quarters, PROTEAN:Balance Sheet, PROTEAN:Cash Flow, PROTEAN:Customization. Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again."
+  - "no results PDFs yet (screener has none): add later on github or locally + --push-again"
+  - "no rating PDF yet: add later the same way"
+step1_repairs:
+  - "results/: 3 PDFs fetched from BSE (Q3FY26, FY26 audited, Q1FY27); screener had none"
+  - "rating/: ICRA reaffirmation letter 29-Jun-2026 fetched from BSE; the June-2026 rationale is not reachable (icra.in bot wall); June-2025 upgrade rationale and July-2025 material-event update filed as the latest full rationale available"
+  - "shareholding/: BSE Reg 31 summaries Jun-2026 and Mar-2026 fetched via BSE API"
+  - "announcements/: 29 material Reg 30 filings fetched from BSE, 26 kept after dedup; folder holds 30 PDFs: those 26, 3 from the collector, and the 3i special-call transcript (3i Infotech letters, restructuring, management changes, press releases); 3 board-outcome copies byte-identical to results/ removed; 1 copy of the Q1FY27 transcript removed"
+  - "concalls/: the 06-Feb-2026 special investor call on the 3i Infotech allegations moved to announcements/; three earnings transcripts remain (Q3FY26, Q4FY26, Q1FY27)"
+  - "presentation/: Q1FY27 deck (duplicate of collector copy, kept once) and Q4FY26 deck from BSE"
+  - "annual-report/: FY26 AR kept; FY25 AR moved to other/ (contract is 0-1 AR)"
+  - "screening/: Data_Sheet CSVs populated (8 years + quarters); P&L/BS/CF/Quarters sheets empty exports"
+  - "every PDF opened with pypdf and was pre-extracted to a page-marked .txt beside it"
+notes: "Collected from screener.in by collect_to_repo.py v3. sector_cap_row is deliberately empty: resolve it at stage 0 against the Section 1B cap table."

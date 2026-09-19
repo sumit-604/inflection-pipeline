@@ -1,0 +1,16 @@
+company: Share India Securities Ltd
+ticker: SHAREINDIA
+cmp: 228.0
+market_cap_cr: 4992.0
+run_date: 2026-09-19
+run_type: full
+listed_date: ""        # long-listed (BSE 2017 per company history); prospectus not expected
+concalls_available: true
+sector_cap_row: "Banks / NBFCs / MFIs"   # step1 Step D pick (18x, P/B primary): capital-market intermediary with prop book, MTF lending and an NBFC; no broking/capital-markets row exists. Stage 0 confirms; flag for phase-3 operator confirmation
+sector_cap_row_guess: "Pharma / CDMO"    # collector keyword guess only, never consumed
+collector_warnings:
+  - "collect_to_repo.py produced NO files: the screener session came back logged out ('Company: Get a free account'), so Financials.xlsx, annual reports, concall transcripts and presentations were not downloaded for the main company or peers. Corpus was built by hand in step 1 (see notes)."
+  - "screener Financials.xlsx export absent (logged-out session). inputs/screening/ holds CSVs parsed from the PUBLIC screener page tables (quarters, profit-loss, balance-sheet, cash-flow, ratios, shareholding), consolidated and standalone for SHAREINDIA, consolidated for peers. Rounded to Rs Cr; no Data_Sheet."
+  - "shareholding/ holds BSE SHP summary tables only (Sep-2025 to Jun-2026) as text; the promoter-level and public-category detail tables (pledgee names, FII/DII split) were not fetchable from the BSE API."
+  - "peer-concalls: Choice International's BSE 'transcript' filings are one-page link letters; the real transcripts were fetched from the linked cmsapi.choiceindia.com assets. The link letters are kept in other/choice-link-letters/."
+notes: "STEP1 CORPUS 2026-09-19, built by hand after the collector failed. (1) BSE announcements API (scrip 540725), 60-day windows Apr-2025..19-Sep-2026: results Q1FY27 (24-Jul-2026), Q4FY26+FY26 audited (19-May-2026), Q3FY26 (27-Jan-2026); transcripts Q1FY27 (31-Jul-2026), Q4FY26 (23-May-2026), Q3FY26 (30-Jan-2026); presentations 27-Jul-2026, 20-May-2026, 20-Mar-2026; FY26 AR (Reg 34, filed 05-Sep-2026, 335pp incl. cover letter); 97 Reg 30 filings 19-Sep-2025..18-Sep-2026 plus scheme-of-arrangement updates from Jul-2025 to announcements/. (2) other/: FY25 AR, Q2FY26 results and transcript (kept, not consumed). (3) rating/: Infomerics BSE letter 18-Sep-2026, Infomerics rationale 16-Sep-2026 (downgrade to IVR A4, ISSUER NOT COOPERATING), and Infomerics prior detailed rationale 22-Sep-2025 (the one the 2026 note refers to). (4) peers SMCGLOBAL (543263), CHOICEIN (531358), ANGELONE (543235): 4 most recent quarterly earnings-call transcripts each. (5) Every PDF pre-extracted to a page-marked .txt beside it; all opened with pypdf, none low-text. sector_cap_row set to the Step D pick; stage 0 confirms."

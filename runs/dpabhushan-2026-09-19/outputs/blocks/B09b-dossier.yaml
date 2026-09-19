@@ -1,0 +1,49 @@
+stage: B09b-dossier
+company: "DPABHUSHAN"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+corpus_verdict: "CORPUS GAPPED"
+corpus_gaps:
+  - {document: "Jun-2026 filed shareholding pattern (SEBI format)", expected_source: "BSE", kind: "findable-missing"}
+  - {document: "Three Reg 29(2) SAST scans (SAST-67E48196, SAST-D20D00B6, SAST-E3FFDBC9), readable text/OCR", expected_source: "BSE", kind: "findable-missing"}
+  - {document: "Broker/research notes", expected_source: "company IR page / broker sites", kind: "plausibly-nonexistent"}
+  - {document: "Investor presentations prior to Q4 FY26", expected_source: "company IR page", kind: "findable-missing"}
+  - {document: "CARE surveillance rationale rating FY26 figures", expected_source: "rating agency site", kind: "findable-missing"}
+  - {document: "FY24 Annual Report (third year for AR-level backward check)", expected_source: "BSE / company IR page", kind: "findable-missing"}
+  - {document: "Kataria Dhulchand Pannalal Jewellers Ltd DRHP, primary text", expected_source: "SEBI site", kind: "findable-missing"}
+archetypes:
+  - line: "Jewellery retail (single reportable segment, AR Note 33.19)"
+    archetype: "Commodity converter (per B00 sector-cap flag: ~91% of revenue value is gold pass-through; margin is a making-charge/mix spread over bullion price; pricing power scored weak, B04). Management's claimed direction reads as Brand/franchise consumer but is not yet evidenced; see Part B."
+transition:
+  - line: "Jewellery retail (single segment)"
+    from_tier: "R1/R2 boundary - commodity price-taker sliding toward cost-advantaged converter (weak pricing power on the gold core, B04; ROCE high but cash conversion unproven, B01 Block A vs Block B)"
+    to_tier: "R3/R4 - value-added studded-mix supplier / regional franchise-style leader (guided diamond mix 12-15% by Mar-2028; store network 12 toward 51 by FY30, B05)"
+    engine: "Diamond/studded mix rising as % of revenue; store network scaling via COCO/FOCO beyond Madhya Pradesh/Rajasthan (B04, B05, B07)"
+    proof_gate: "EBITDA margin >=8% for 2 consecutive quarters, at least one printed in a flat/falling MCX gold-price quarter (B04 must_track_metrics; gate-recommendation.md monitorable 3)"
+    recognition_gap: "OPEN QUESTION, not resolved here: whether the store-network/diamond-mix ascent is already reflected in the current multiple. Stage 11 resolves this via the PE gap to the Section 1B destination multiple for the TO tier."
+    ugliness: "STRUCTURAL-FEATURE"
+    transition_falsifier: "Gold grams sold continuing to fall for two more quarters while EBITDA margin normalises to the pre-FY26 ~4-5% band in a stable/falling gold quarter, and diamond mix stays flat or falls through FY28 - confirming the FY26 margin step was a price/holding-gain artifact, not a structural mix or making-charge shift (B04, B05, B07)."
+dominant_variables:
+  - "Gold grams sold (volume, not value); current state -13.3% YoY FY26 (B04)"
+  - "EBITDA margin in a flat/falling gold quarter; current state untested, 5.45% (Q4 FY26) to 11.01% (Q1 FY27) unexplained (B05, B12b R2)"
+  - "Diamond/studded mix % of revenue; current state 6-7%, falling in FY26 and Q1 FY27 (B04, B07)"
+  - "Operating cash flow / inventory funding; current state CFO -Rs 97.31 Cr FY26, borrowings +76.8% (B01, B02)"
+business_falsifier: "A going-concern qualification, a covenant breach or default on the personally-guaranteed bank facilities, a promoter pledge event, or the unexplained Rs 50.33 Cr Note 7/Note 23 inventory reconciliation gap (B02 rank 1) resolving as misstated inventory rather than Gold-Metal-Loan/lease timing - any of which would undermine trust in the base retail business's own numbers, not just the growth narrative."
+mental_model_status: "DRAFT - PENDING OPERATOR SIGN-OFF"
+fragility:
+  variable_count: 5
+  verifiability_ratio: "2 of 5 externally observable (gold price via MCX; store openings via BSE Reg 30 filings) - grams sold, diamond-mix magnitude and QIP/funding timing are company-narrated only"
+  single_point_failure: "working-capital funding - if the postponed Rs 600 Cr QIP stays postponed and gearing approaches CARE's 1x negative-sensitivity trigger, the store-network and diamond-mix engines stall regardless of the margin outcome (CARE PR 08-Jan-2026 p.1; B09 FLAG-CAPACITY-GAP)"
+  fragility_verdict: "FRAGILE"
+candidate_count: 7
+second_order:
+  chains_drafted: 2
+  pending_live_links: 2
+  confirm_by_observations: 2
+research_brief_items: 9
+plain_summary_points: 15
+annex:
+  present: true
+  questions_answered: 10
+  corpus_commit_hash: "cdc39c5b817c9b5eb6b66bea25dfc0ce06e9d942"

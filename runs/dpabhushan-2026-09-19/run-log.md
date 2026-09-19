@@ -8,3 +8,4 @@
 - stage 7: reply omitted the YAML block; B07-emoat.yaml exists and parses. File governs.
 - stage 7: block file had two flag flow-mappings missing the closing brace; orchestrator added the braces (content unchanged), now parses.
 - stage 6 run 2: block file had three flag flow-mappings missing the closing brace; orchestrator added them (content unchanged), now parses.
+- 09b: mechanical dossier check passed first time. Close-out written. LESSONS_ARCHIVE entry committed via temp index (working-tree file also carries the operator's uncommitted v3.11 block, not committed).

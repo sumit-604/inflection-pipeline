@@ -598,3 +598,34 @@ Verifier C check 15 (PR #163, PR #164), and the LESSONS discipline changes
 (PR #165).
 
 Size: LESSONS.md 164 lines / 1555 words before, 119 lines / 1062 words after.
+
+## 2026-09-19 — DPABHUSHAN (D. P. Abhushan) — /step1 intake, phase 1 to Halt 1
+
+Run: runs/dpabhushan-2026-09-19, branch run/dpabhushan-2026-09-19. Peers SENCO,
+PNGJL, KALYANKJIL. Gate PROCEED WITH CAVEATS (FLAG-CASH INDETERMINATE).
+Confidence overall 79 (set by redflag_coverage). Dossier CORPUS GAPPED, FRAGILE.
+- Screener /consolidated/ page stops at Mar-2022 for a company with no
+  subsidiary; the standalone page is the live one. Check the latest year on
+  the chosen page, not only the HTTP status.
+- Peer pick failed twice on transcripts: THANGAMAYL files none on BSE, MOTISONS
+  none since Jun-2024. I pulled MOTISONS transcripts under the wrong BSE scrip
+  (544060 = RBZ Jewellers). Stage 6 caught it from page 1; KALYANKJIL replaced
+  it and stage 6 re-ran (228,811 tokens wasted). Confirm each peer's BSE scrip
+  from its screener page link and page 1 of one transcript before collecting.
+- pdftotext -layout interleaved facing tables on the FY26 AR two-page spreads
+  (balance sheet, P&L, cash flow, notes). Fix: xpdf pdftotext -table, with
+  spread pages (width > 1.3x height) split into halves via -marginl/-marginr.
+  Stage 1 re-ran (151,657 tokens wasted). Make -table plus spread split the
+  default pre-extraction.
+- Collector gaps repeated the AWFIS pattern: no results, no rating, no
+  shareholding, 6 announcements. Filled from BSE by 30-day windows with the
+  AttachHis fallback, and CARE's site for the rationale.
+- Three SAST Reg 29(2) scans have no text layer; unreadable without OCR.
+- Two stage block files (B06, B07) had flag flow-mappings missing the closing
+  brace; orchestrator closed them. Replies omitted the YAML block on 2.3, 5, 7.
+- Verifier B redflag_coverage basis again split: 79 counting partial catches,
+  50 strict (AWFIS: 77 vs 31). Second occurrence; candidate for /compost.
+- Verifier B disputes the Note 33.2.2(D) 42 kg reading (unhedged vs GML hedge);
+  open for Halt 1.
+- DOWNSHIFT FAILURE: stage 0 ran inline on the Opus orchestrator (no haiku
+  stage-0 agent exists). Structural, not a routing slip.

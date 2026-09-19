@@ -1,4 +1,3 @@
-```yaml
 stage: B01-gate0
 company: "SUSAN"
 run_date: "2026-09-19"
@@ -51,4 +50,3 @@ analyst_note: >
   and LBF3's government-revenue-share glide path are both named but not
   resolvable from documents read at this stage; carry both forward
   unresolved, not as closed items.
-```

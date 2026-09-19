@@ -18,3 +18,4 @@
 | 12b | verifier B | opus | agent default | n/a | n/a | 237882 | 7m12s | 1 |
 | 12c | verifier C (phase 1) | opus | agent default | n/a | n/a | 110121 | 4m29s | 1 |
 | 12d | verifier D | sonnet | agent default | n/a | n/a | 203594 | 5m19s | 1 |
+| 13 | synthesis-lite | opus | agent default | n/a | n/a | 225883 | 8m36s | 1 |

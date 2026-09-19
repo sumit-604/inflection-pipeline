@@ -1,0 +1,34 @@
+# Written by the orchestrator from the stage-13 reply (the stage was given no block path). Content verbatim.
+stage: B13-synthesis
+company: "SUSAN"
+run_date: "2026-09-19"
+model: "claude-opus-5"
+status: complete
+mode: phase-1-lite
+verdict: "PROCEED WITH FLAGS"
+verdict_rule_applied: 3
+flags_active: [FLAG-CASH, FLAG-PROMOTER, FLAG-GATE0]
+cash_determination: INDETERMINATE
+confidence_delta: {numerical: 95.5, redflag: 62.5, framework: 87.5, peer: null, overall: 62.5}
+confidence_overall_set_by: redflag_coverage
+redflag_strict_fully_caught_pct: 37.5
+valuation_decision: ""
+entry_range: {low: null, high: null}
+headline: "Cable climb funded by debt, margins unproven"
+falsification_metric: "H1 FY27 (half year ended 30-Sep-2026) operating cash flow negative despite the Rs 33 Cr IPO working capital object and a seasonal Q2 recovery"
+monitorables_count: 8
+publish_candidate: false
+publish_candidate_summary: ""
+source_fidelity_dispositions:
+  - {finding: "B02 borrowings +47.4%", disposition: "FLAG CLEARED - orchestrator source re-check, AR Note 4a p.67 txt 2597"}
+  - {finding: "B04 manufactured 59.71%", disposition: "GATE HELD - withheld; printed AR Note 18 rupee lines used"}
+  - {finding: "B04 winding 25.62%", disposition: "GATE HELD - figure removed"}
+files:
+  - runs/susan-2026-09-19/outputs/final/business-narrative.md
+  - runs/susan-2026-09-19/outputs/final/gate-recommendation.md
+  - runs/susan-2026-09-19/outputs/final/verifier-summary.md
+notion_save:
+  page_title: "SUSAN - Susan Electricals India Ltd"
+  summary: "Phase 1 gate PROCEED WITH FLAGS (rule 3; FLAG-CASH INDETERMINATE capped to caveats, 60-74 band downgrade). Headline: Cable climb funded by debt, margins unproven. No valuation run."
+  drive_link: "none (repo run folder runs/susan-2026-09-19)"
+  mode: append-never-overwrite-status

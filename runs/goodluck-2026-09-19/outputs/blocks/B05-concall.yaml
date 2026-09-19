@@ -1,0 +1,87 @@
+stage: B05-concall
+company: "GOODLUCK"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "GDAL rating rationale absent from corpus (freshness FAIL, HIGH per run brief)"
+  - "Shareholding data is aggregator-sourced only (MEDIUM per run brief)"
+  - "FY26 guidance-cut-to-12% cited in company memory (Sep-2025, pre-corpus) is not evidenced in any transcript; earliest transcript (Q2 FY26, 10-Nov-2025) instead shows management reaffirming 15-20%, unreconciled within this corpus"
+  - "Goodluck Green Energy merger swap ratio/valuation not yet disclosed as of Q1 FY27 call"
+  - "Segment-wise volume/margin breakdown promised 'by mail' in Q3 FY26 call has no later-call confirmation it was delivered"
+flags:
+  - "GDAL external equity raise at ~9x forward EBITDA vs 20-30x sector comps, rationale not substantively answered to 3 analysts in one call (HIGH)"
+  - "Promoter open-market sale of 2.45% (29-Jun-2026) never mentioned or asked about in any of the 4 analysed transcripts (HIGH)"
+  - "Standalone FY26 capex reconciliation (Rs 340 Cr calc vs Rs 250 Cr guide vs Rs 232 Cr counter-figure) unresolved (MEDIUM)"
+  - "HRC price direction contradiction: management cites falling prices as the FY26 miss excuse, but its own later data shows HRC rising ~21% Dec-2025 to May-2026 (MEDIUM)"
+  - "Guidance whiplash: FY27 growth cut to 14-15% (Q4 FY26 call) then reinstated to 15-20% one quarter later (Q1 FY27 call) with no bridge given (MEDIUM)"
+  - "All segment/vertical EBITDA margins are unaudited verbal assertions; company reports a single IND-AS 108 segment (LOW-MEDIUM)"
+quarters_analysed: ["Q3 FY26", "Q4 FY26", "Q1 FY27"]
+triggers:
+  - {priority: 1, name: "GDAL 400,000-shell capacity expansion, Q4 FY28 commercial", type: "VOLUME/INORGANIC", timeframe: "long", conviction: "L", confirm_signal: "Firm financial closure and construction start on the new timeline", kill_signal: "Further slip past Q4 FY28 or cancellation"}
+  - {priority: 2, name: "Defence revenue ramp to Rs 300-350 Cr FY27 at 30-35%+ EBITDA", type: "VOLUME/PRICE-MIX", timeframe: "near-medium", conviction: "M", confirm_signal: "Q2/Q3 FY27 prints sustaining the Q1 FY27 run-rate", kill_signal: "Dispatch or order delays recur as in FY26"}
+  - {priority: 3, name: "Value-added mix shift lifting EBITDA/t toward Rs 9,000/t", type: "PRICE-MIX", timeframe: "medium", conviction: "M", confirm_signal: "EBITDA/t sustaining above Rs 8,500-9,000 for 2+ quarters", kill_signal: "Reversion to sub-Rs 7,000/t"}
+  - {priority: 4, name: "Hydraulic tube utilisation ramp to 65-70%", type: "VOLUME", timeframe: "near", conviction: "L", confirm_signal: "A quarter crossing 65% utilisation", kill_signal: "Stuck below 60% for 2 more quarters"}
+  - {priority: 5, name: "GDAL IPO / value-unlock event (~18 months from Aug-2026)", type: "INORGANIC", timeframe: "long", conviction: "L", confirm_signal: "DRHP filing or firm structure announcement", kill_signal: "Further 'under planning' deferral past FY28"}
+  - {priority: 6, name: "Solar/transmission revenue to Rs 600-700 Cr", type: "SECTORAL/VOLUME", timeframe: "medium", conviction: "M", confirm_signal: "FY27 actual crossing Rs 500 Cr+", kill_signal: "Stalls below Rs 400 Cr run-rate"}
+  - {priority: 7, name: "Aerospace/missile parts revenue, Rs 200 Cr peak (AMCA/BrahMos ecosystem)", type: "INORGANIC/SECTORAL", timeframe: "long", conviction: "L", confirm_signal: "A named order or RFQ-status update", kill_signal: "Continued silence for 2+ more quarters"}
+guidance:
+  - {item: "FY26 revenue growth", number: "15-20%, delivered +4.2%", timeframe: "FY26", stated_in: "Q2 FY26 call, reaffirmed Q3 FY26; miss confirmed Q4 FY26 call"}
+  - {item: "FY27 revenue growth", number: "15-20% (cut to 14-15% Q4 FY26 call, reinstated to 15-20% Q1 FY27 call)", timeframe: "FY27", stated_in: "Q4 FY26 and Q1 FY27 calls"}
+  - {item: "Defence FY26 revenue", number: "Rs 100 Cr guided -> Rs 60 Cr revised -> Rs 46 Cr delivered", timeframe: "FY26", stated_in: "Q2 FY26, Q3 FY26, Q4 FY26 calls"}
+  - {item: "Defence FY27 revenue", number: "Rs 300 Cr -> Rs 250-300 Cr -> Rs 300-350 Cr", timeframe: "FY27", stated_in: "Q2 FY26, Q4 FY26, Q1 FY27 calls"}
+  - {item: "Defence EBITDA margin", number: "30-35% (held flat vs 38-70% actuals)", timeframe: "ongoing", stated_in: "Q2 FY26 call, held through Q3/Q4 FY26 and Q1 FY27 calls"}
+  - {item: "400,000-shell capacity commercial date", number: "\"within one year\" (Oct-2025) -> Sep-2027 completion, Q4 FY28 commercial", timeframe: "long", stated_in: "Reg 30 filing 10-Oct-2025; Q1 FY27 call and Reg 30 filing 06-Aug-2026"}
+  - {item: "Peak combined defence revenue (shells + aerospace)", number: "Rs 1,000 Cr (Rs 800 Cr shells + Rs 200 Cr aerospace), timeline pushed 6-9 months, no new number given", timeframe: "FY28 peak, now delayed", stated_in: "Q2 FY26, Q3 FY26 calls; timeline push Q1 FY27 call"}
+  - {item: "Standalone FY26 capex", number: "Rs 250 Cr guided vs Rs 340 Cr analyst-calculated actual (unreconciled)", timeframe: "FY26", stated_in: "Q4 FY26 call"}
+  - {item: "Standalone FY27 capex", number: "Rs 100-150 Cr", timeframe: "FY27", stated_in: "Q1 FY27 call"}
+  - {item: "GDAL preferential raise", number: "Rs 285 Cr at Rs 375/share, 75 lakh new shares (4.91 Cr -> 5.66 Cr o/s), ~10.5pp dilution to GI's stake", timeframe: "mid-2026", stated_in: "Q1 FY27 call"}
+  - {item: "Hydraulic tube utilisation", number: "70% by Mar-2026 target -> ~50% actual FY26 close -> 60% Q1 FY27, target 60-65% FY27", timeframe: "FY26-FY27", stated_in: "Q2 FY26, Q3 FY26, Q4 FY26, Q1 FY27 calls"}
+  - {item: "Solar/transmission revenue", number: "Rs 500-600 Cr -> revised Rs 600-700 Cr \"next year\"; +33% YoY delivered FY26", timeframe: "FY27", stated_in: "Q2 FY26, Q3 FY26, Q4 FY26 calls"}
+  - {item: "Net debt at FY26 close", number: "Rs 1,000 Cr (Rs 800 Cr WC + Rs 200 Cr term loan); cash ~Rs 50 Cr", timeframe: "31-Mar-2026", stated_in: "Q4 FY26 call"}
+  - {item: "Debt repayment", number: "Rs 54 Cr FY26 -> revised Rs 62 Cr FY27; Rs 25 Cr repaid Q1 FY27", timeframe: "FY27", stated_in: "Q4 FY26 and Q1 FY27 calls"}
+  - {item: "GDAL IPO timeline", number: "\"18 months from today\" (first firm figure)", timeframe: "~Feb-2028", stated_in: "Q1 FY27 call"}
+promise_delivery:
+  delivered: 1
+  partial: 2
+  missed: 4
+  rows:
+    - {promised_in: "Q2 FY26 call, reaffirmed Q3 FY26", promise: "FY26 revenue growth 15-20%", outcome: "missed", explanation: "Delivered +4.2% consolidated; external-blame (HR coil price fall, West Asia crisis) per Q4 FY26 call"}
+    - {promised_in: "Q2 FY26 call, revised Q3 FY26", promise: "Defence FY26 revenue Rs 100 Cr, revised to Rs 60 Cr", outcome: "missed", explanation: "Delivered Rs 46 Cr revenue / Rs 29 Cr EBITDA; dispatch-permission delay cited (external, pre-flagged)"}
+    - {promised_in: "Q2 FY26 call", promise: "Defence EBITDA margin 30-35%", outcome: "delivered", explanation: "Beaten: 38-70% in first 3 quarters of production, attributed to demand-supply tightness and one-off depreciation/interest timing"}
+    - {promised_in: "Reg 30 filing Oct-2025 / Q2 FY26 call", promise: "400,000-shell capacity online within one year", outcome: "missed", explanation: "Now targeting Sep-2027 completion, Q4 FY28 commercial; 'financial closure' delay cited in Q1 FY27 call"}
+    - {promised_in: "Q2 FY26 call, restated each quarter", promise: "Hydraulic tube utilisation 70% by Mar-2026", outcome: "missed", explanation: "~50% at FY26 close, 60% in Q1 FY27, below every restated quarterly target; tariffs/West Asia crisis cited repeatedly"}
+    - {promised_in: "Q4 FY26 call", promise: "FY27 growth guidance cut to 14-15%", outcome: "partial", explanation: "Reinstated to 15-20% one quarter later (Q1 FY27 call) with no bridging explanation given"}
+    - {promised_in: "Q4 FY26 call (implicit, via prior Rs 250 Cr guide)", promise: "Standalone FY26 capex Rs 250 Cr", outcome: "partial", explanation: "Analyst calculates Rs 340 Cr from cash flow; management counters with an unreconciled Rs 232 Cr WIP figure, deflects to 'check your figure'"}
+excuse_pattern: "external-blame-heavy"
+repeated_evasions:
+  - {question: "Defence EBITDA margin is beating your 30-35% guide every quarter - why not raise the guide?", quarters_asked: ["Q2 FY26", "Q4 FY26", "Q1 FY27"], classification: "deflected every time"}
+  - {question: "Why an external stake sale into GDAL / IPO instead of a demerger or Goodluck India rights issue that flows value directly to GI shareholders?", quarters_asked: ["Q2 FY26", "Q1 FY27"], classification: "deflected every time"}
+credibility_grade: "D"
+credibility_basis: "Of 7 tracked promise-delivery items, 1 delivered, 2 partial/unresolved, 4 missed, including both load-bearing facts named in the run brief: FY26 revenue guidance (15-20% guided, 4.2% delivered) and the GDAL capacity timeline (originally within one year, now a confirmed ~2-year slip to Q4 FY28 commercial)."
+peer_questions:
+  - {question: "India defence export figure cited as both Rs 23,000 Cr and Rs 38,000 Cr across calls, with a Rs 50,000-Cr-by-2030 target", why: "Internal inconsistency in Goodluck's own cited figures needs an external anchor", check_peers: ["BALUFORGE"]}
+  - {question: "HRC price path: 5-year low ~Rs 47,000-48,000/t (Oct-2025), then +21% to Rs 58,000/t by May-2026", why: "Stated reason for both the FY26 growth miss and margin risk; a same-input peer should show the same path", check_peers: ["HITECH"]}
+  - {question: "~30%+ market share claimed in solar support structures (Q1 FY27 call)", why: "Unverified specific share claim with no named source", check_peers: ["HITECH", "RATNAMANI"]}
+  - {question: "Global 155mm shell demand 7.5-9 million units vs supply capacity 2-3.5 million units, management itself flags as unverifiable", why: "The single most load-bearing unverified claim behind the entire GDAL growth case", check_peers: ["BALUFORGE"]}
+  - {question: "Defence EBITDA margin 30-35% guided, 38-70% delivered in the first 3 quarters of production", why: "Peer benchmark needed to judge whether this is a sustainable steady-state margin or a ramp-up artifact", check_peers: ["BALUFORGE"]}
+  - {question: "400,000-shell capacity build, 'within one year' (Oct-2025) now slipped to Sep-2027 completion", why: "Benchmark Goodluck's large-capex execution speed against a peer building comparable capacity", check_peers: ["BALUFORGE"]}
+  - {question: "Claimed continued US procurement of hydraulic/DOM tubes despite a 50% US duty", why: "Verify the claimed inelastic export demand to the same end market", check_peers: ["HITECH", "RATNAMANI"]}
+red_flags:
+  - "GDAL external equity raise at ~9x forward EBITDA vs 20-30x sector comps, unexplained to 3 analysts in one call (HIGH)"
+  - "Promoter open-market sale of 2.45% (29-Jun-2026) never mentioned or asked about in any of the 4 analysed transcripts (HIGH)"
+  - "Standalone FY26 capex reconciliation unresolved: Rs 340 Cr calc vs Rs 250 Cr guide vs Rs 232 Cr counter-figure (MEDIUM)"
+  - "HRC price direction contradicts the FY26 growth-miss excuse: management cites falling prices, own later data shows +21% rise (MEDIUM)"
+  - "Guidance whiplash: FY27 growth cut to 14-15%, reinstated to 15-20% one quarter later, no bridge given (MEDIUM)"
+  - "All segment/vertical EBITDA margins are unaudited verbal assertions; company reports a single IND-AS 108 segment (LOW-MEDIUM)"
+  - "Repeated redirection to 'connect with our IR team' on hard numeric questions across all 4 calls (LOW)"
+dropped_triggers:
+  - "AMCA EOI/RFQ status (BrahMos/Axiscades partnership) - prominent in Q2 FY26 call, silent for 3 straight analysed quarters"
+  - "Segment-wise volume breakdown promised 'by mail' in Q3 FY26 call, never confirmed delivered or discussed again"
+  - "Per-shell / raw-material pricing detail declined in Q2 FY26 call and never revisited"
+timeline_slippages:
+  - "400,000-shell capacity: 'within one year' (Oct-2025 filing) -> April '27 execution (Q3 FY26) -> 'may fall to next year' (Q4 FY26) -> explicit 6-9 month delay, Sep-2027 completion, Q4 FY28 commercial (Q1 FY27 call and 06-Aug-2026 Reg 30 filing) - a confirmed ~2-year slip"
+  - "Hydraulic tube utilisation: 70% target by Mar-2026 missed every quarter it was restated (40-45% Q3 FY26, ~50% FY26 close, 60% Q1 FY27)"
+  - "Peak combined defence revenue Rs 1,000 Cr timeline pushed 6-9 months with no new number given (Q1 FY27 call)"
+  - "GDAL IPO timeline never firm until Q1 FY27 call's '18 months,' itself unproven given the capacity-timeline track record"
+analyst_note: "The GDAL ownership math is internally consistent across quarters: 79% stake (Q2 FY26 call) x 4.91/5.66 post-raise share count implies ~68.5%, matching management's stated 10.5pp dilution (Q1 FY27 call) almost exactly - a rare positive cross-check, not a red flag, and worth weighing against the otherwise poor credibility picture. The FY26 guidance-cut-to-12% cited in company memory (Sep-2025, pre-corpus) does not appear in any transcript read; the earliest transcript (Q2 FY26, 10-Nov-2025) instead shows an explicit reaffirmation of 15-20% for FY26 under direct analyst pressure. This is a genuine gap between the web-sourced company memory and the primary transcript record that stage 0/6 should resolve against the original Sep-2025 filing, not a finding this stage can close on transcripts alone."

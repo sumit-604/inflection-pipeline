@@ -11,3 +11,6 @@ Per-stage token ledger. One row per subagent run. Stage 0 is orchestrator-inline
 | 2 | notes triple-pass (pass 2) | claude-sonnet-5 | default | n/a | n/a | 182497 | 496s | 2 |
 | 2 | notes triple-pass (pass 3) | claude-sonnet-5 | default | n/a | n/a | 108239 | 365s | 3 |
 | 3 | AR deep dive (8 phases) | claude-sonnet-5 | default | n/a | n/a | 240280 | 696s | 1 |
+| 4 | business model decoder | claude-sonnet-5 | default | n/a | n/a | 167333 | 650s | 1 |
+| 5 | concall analysis | claude-sonnet-5 | default | n/a | n/a | 185929 | 444s | 1 |
+| 8 | promoter check | claude-sonnet-5 | default | n/a | n/a | 195455 | 634s | 1 |

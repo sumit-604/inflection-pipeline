@@ -1,0 +1,71 @@
+stage: B08-promoter
+company: "GOODLUCK"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "GDAL rating rationale absent (freshness FAIL, HIGH)"
+  - "Shareholding aggregator only (MEDIUM)"
+  - "Screener sheets empty (LOW)"
+  - "No research (LOW)"
+  - "BALUFORGE no transcripts (MEDIUM)"
+  - "GDAL non-promoter investor identity never disclosed across Dec-2023 (Rs136.5cr) and Aug-2026 (Rs285cr) raises, despite exhausted web search this session (HIGH, core of LBF2)"
+  - "Exact appointment/tenure/education detail for independent directors Rajiv Goel, Rajni Abbi, Charu Jindal, Madhur Gupta NOT FOUND in AR or web search (MEDIUM)"
+  - "Price per share and stated reason for the 29-Jun-2026 promoter sale NOT FOUND (not a required Reg 29(2) field, no bulk/block-deal source located) (MEDIUM)"
+  - "Goodluck Green Energy Ltd amalgamation swap-ratio/valuation terms not yet disclosed as of run date (HIGH, live monitorable)"
+  - "Employee-review ratings (Glassdoor/AmbitionBox) specific to Goodluck India NOT FOUND/inconclusive (LOW)"
+  - "SEBI SCORES, NCLT case database and full MCA compounding/disqualification records not directly queried against primary registers, web-search only, PENDING LIVE VERIFICATION (MEDIUM)"
+flags:
+  - type: FLAG-PROMOTER
+    verdict: "CONCERN"
+    top_findings:
+      - "GDAL described as company's 'wholly-owned subsidiary' twice in FY26 AR narrative (Chairman's letter, MD&A) while the same AR's Form AOC-1 shows 79.43% parent stake (AR p.16/p.39 per B03; AOC-1 p.60-61)"
+      - "GDAL non-promoter investor identity undisclosed across FY24-FY26 annual reports and two separate capital raises (Dec-2023 Rs136.5cr at Rs150/sh; Aug-2026 Rs285cr at Rs375/sh)"
+      - "Undisclosed promoter-family private vehicle Goodluck Green Energy Ltd (founded/directed by promoter-group members Rishabh Garg and Rajat Garg) never appears in any AR; board approved its in-principle amalgamation into the listco 11-Jul-2026 on terms not yet set"
+      - "Unexplained 2.45% promoter-group open-market sale (29-Jun-2026, 56.45% to 54.00%) concentrated in specific family members (Manish Garg/COO and HUF ~45% of shares sold, Dhruv Aggarwal 78% of his holding) while M.C. Garg, R.C. Garg and Nitin Garg's own holdings were unchanged; sale preceded the GDAL Rs285cr raise by about 5 weeks and a +31% quarter"
+      - "Excellent Fincap Pvt Ltd (directors Saras Garg, Umesh Garg, both promoter-group/KMP-relative individuals) routes Rs11-33cr/year of advances through GDAL, invisible at the parent-only level; outstanding receivable +1,211% YoY"
+verdict: "CONCERN"
+scorecard: {clean: 6, caution: 3, red: 1}
+deal_breakers: []
+adverse_findings:
+  - {finding: "GDAL described as company's 'wholly-owned subsidiary' twice in FY26 AR narrative sections while the same AR's Form AOC-1 (signed 5-Sep-2026) discloses 79.43% parent shareholding", evidence_tier: "VERIFIED", source: "Annual_Report_2026.txt Chairman's letter p.16 / MD&A p.39 (per B03); AOC-1 p.60-61 (this session)", date: "2026-09-05 (AR signing)"}
+  - {finding: "GDAL non-promoter minority investor identity never disclosed across FY24, FY25, FY26 annual reports or any Reg 30 filing, across a Dec-2023 raise (91 lakh shares, Rs136.5cr at Rs150/share, taking parent to ~81.47%) and an Aug-2026 raise (up to Rs285cr at Rs375/share)", evidence_tier: "VERIFIED (non-disclosure) / exhausted UNVERIFIED search for identity", source: "20260806-Further_Issue_Of_Equity_Shares...txt; AOC-1 p.60-61; 20+ web searches 2026-09-19", date: "2023-12-19 and 2026-08-06"}
+  - {finding: "Excellent Fincap Pvt Ltd, directed by Saras Garg and Umesh Garg (both named promoter-group/KMP-relative individuals in the AR's own RPT note), routes Rs11-33cr/year of advances through GDAL, invisible in the standalone parent-only Note 32; outstanding receivable +1,211% YoY to Rs12.40cr", evidence_tier: "VERIFIED (AR figures) / MEDIA REPORTED (director identity, ZaubaCorp)", source: "AR consolidated Note 32(ii)/(iii) p.219; ZaubaCorp Excellent Fincap Pvt Ltd listing", date: "FY26 AR; searched 2026-09-19"}
+  - {finding: "Goodluck Green Energy Limited, founded and directed by promoter-group members Rishabh Garg and Rajat Garg, is not disclosed anywhere in the FY26 AR (absent from the 5-subsidiary AOC-1 list and all notes); board approved its in-principle amalgamation into the listed company on 2026-07-11, terms and valuation not yet disclosed", evidence_tier: "VERIFIED (board resolution, Reg 30 filing) / MEDIA REPORTED (founders, unlistedbuzz.com)", source: "20260711-Board_Meeting_Outcome_for_Outcome_Of_Board_Meeting.txt; unlistedbuzz.com", date: "2026-07-11"}
+  - {finding: "2.45% open-market promoter-group share sale on 2026-06-29 (8,13,684 shares, 56.45% to 54.00%) concentrated in specific family members: Manish Garg (COO) and his HUF combined were the largest sellers (~45% of total sold), Dhruv Aggarwal sold 78% of his personal holding, Munni Lal and Sons HUF sold 47% of its holding; M.C. Garg, R.C. Garg and Nitin Garg's own individual holdings unchanged; sale preceded the GDAL Rs285cr non-promoter raise (2026-08-06) by about 5 weeks and the +31% Q1 FY27 print by a similar window; price and reason not disclosed (not a required Reg 29(2) field)", evidence_tier: "VERIFIED (transaction facts, SAST 29(2) filing, read from page images) / [INFERENCE] on timing significance", source: "20260701-Disclosures_under_Reg_29_2_of_SEBI_SAST_Regulations_2011-pages, pages 2-6", date: "2026-06-29 (trade), filed 2026-06-30"}
+transition_evidence:
+  - "New external Group CFO Ashok Kumar Vashisht appointed 2026-09-05, 28 years at GSK/Reliance Industries/SMA Solar/Tubacex, non-family professional hire (Reg 30 filing 20260905)"
+  - "New independent director Iswarchandra Dayanidhi Agasti appointed 2025-10-01 for 5 years, retired IDBI Bank Principal Officer, 35 years banking, ex-Haldia Petrochemicals nominee director (Reg 30 filing 20250925; AR)"
+  - "Promoter/KMP remuneration cut 30.32%-53.55% at parent level in a PAT-growth year (AR Annexure F, p.66)"
+  - "Promoter capital infusion of Rs22.50cr via warrant conversion at Rs598 premium (AR Governance Report p.83)"
+  - "0% pledge, no encumbrance confirmed for FY26, no pledge history found in periods checked"
+  - "DII holding rose from 0.00% (Mar-2021) to 6.14% (Aug-2026) per screener aggregator, unnamed but genuine institutional-entry trend"
+  - "GDAL assigned its own independent credit rating IND A+/Stable by India Ratings, 2026-08-13 (Reg 30 filing 20260813)"
+  - "Three long-dormant 100%-subsidiary shells (GLS Engineering, GLS Metallics, GLS Steel India) struck off from RoC in Aug-2026, reducing promoter-group entity clutter"
+  - "Board is majority-independent (5 of 9), gender-diverse (2 women independent directors), 75% independent weighting on Audit Committee"
+pledge_pct_latest: 0
+pledge_trend: "stable at 0% across periods checked; no encumbrance confirmed for FY26 (web search, MEDIA REPORTED)"
+searches_performed:
+  - "Goodluck India Limited SEBI order adjudication promoter"
+  - "Goodluck India Limited Mahesh Chandra Garg Ramesh Chandra Garg fraud litigation NCLT"
+  - "Goodluck Defence and Aerospace Limited Rs 285 crore preferential issue investor subscriber"
+  - "\"Excellent Fincap\" Private Limited directors Goodluck"
+  - "WebFetch equitybulls.com GDAL ceases wholly-owned subsidiary"
+  - "\"Goodluck Green Energy\" Limited amalgamation Goodluck India"
+  - "Goodluck India Limited Glassdoor AmbitionBox employee reviews"
+  - "Goodluck India IiAS proxy advisory governance report"
+  - "WebFetch unlistedbuzz.com Goodluck Green Energy Limited"
+  - "Goodluck Defence Aerospace non-promoter investor stake acquired name 2026"
+  - "Goodluck Defence Aerospace December 2023 preferential allotment 91 lakh shares investor name non-promoter"
+  - "WebFetch ritscapital.com Goodluck Defence share price 2026"
+  - "Goodluck India Limited income tax raid search seizure OR SFIO OR ED OR PMLA"
+  - "Goodluck India Limited promoter pledge shares history"
+  - "Goodluck India Limited auditor resignation qualification whistleblower"
+  - "\"Goodluck India\" Mahesh Chandra Garg history founder 1986 steel tubes company profile"
+  - "WebFetch raunaksharma.substack.com Goodluck India Limited"
+  - "Goodluck India Ltd short seller report concerns red flag analysis"
+  - "Goodluck Defence and Aerospace India Ratings credit rating rationale 2026"
+  - "Goodluck India Ltd mutual fund institutional investor holding stake 2026"
+searches_skipped: []
+verdict_basis: "A repeated, internally-contradicted GDAL ownership misstatement plus three years of undisclosed minority investors and a newly surfacing promoter-family private vehicle (Goodluck Green Energy) being injected into the listco outweigh a clean legal/auditor/pledge record and genuine pay-cut/capital-infusion transition evidence, yielding CONCERN with strong transition evidence rather than a static CONCERN."
+analyst_note: "Status is complete, not partial: no searches were skipped, only two sub-items (employee reviews, proxy-advisory coverage) came back inconclusive after genuine attempts. The single highest-priority live monitorable for Halt 1 and beyond is Goodluck Green Energy Ltd's amalgamation terms, since that entity is confirmed promoter-family-founded (Rishabh Garg, Rajat Garg) and undisclosed in any AR to date. The GDAL non-promoter investor identity (LBF2) remains genuinely unresolved after an exhausted search; downstream stages should not assume it is a passive financial investor versus a promoter-linked party, since the FY26 AR's own SOCE shows the Aug-2026 raise fell after the balance-sheet date and so was never tested against AR disclosure. The 29-Jun-2026 sale's family-concentration pattern (COO-led, non-Chairman) is a genuine [INFERENCE]-tier timing observation, not a proven pre-announcement trade; no evidence of price manipulation or insider dealing was found."

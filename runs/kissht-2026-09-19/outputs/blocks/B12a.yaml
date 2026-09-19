@@ -1,0 +1,16 @@
+stage: B12a
+company: "KISSHT"
+run_date: "2026-09-19"
+model: claude-haiku-4-5
+status: complete
+numbers_checked: 47
+findings:
+  - {severity: "MINOR", location: "B01 Gate0, Data Basis Note (2)", claimed: "FY23 CFO conflict: screener 48.36 Cr vs RHP 111.48 Cr", source_truth: "Both values confirmed to exist in their respective sources (screener line 57, RHP p.271)", note: "Report correctly flags this as 'unreconciled in the provided corpus' and transparently states which figure is used in which calculation. This is a source-level data-quality issue, not a reporting error. The analysis chose the RHP figure for B2/B3 FCF and screener for B1 cumulative, both with explicit statement.", source_fidelity: true}
+  - {severity: "MINOR", location: "B04 Bizmodel Section 1C", claimed: "Insurance commission FY25: 0.3% of revenue", source_truth: "34.42 / 13,374.65 = 0.2576% ≈ 0.3%", note: "Rounding difference at single-decimal display. Within tolerance but at the edge of standard rounding practice. Source value is 34.42 mn per AR Note 23 p.119.", source_fidelity: false}
+critical_count: 0
+major_count: 0
+minor_count: 2
+false_positives_struck: 0
+material_universe: 47
+acceptance_rate: 100
+coverage_note: "47 material numbers identified across verdict-card inputs (0, Gate 0 has no verdict card), scorecard inputs (14), major P&L and balance-sheet lines (18), peer metrics (8), and KPI replicates (7). All 47 checked. Zero mismatches. Rule applied: materiality defined as scorecard drivers, load-bearing facts, or primary table entries. Below-materiality narrative numbers and minor provisions were spot-checked. Coverage basis: complete audit of all material numerical inputs at Gate 0 stage; spot checks of transitive figures in Stages 1–9."

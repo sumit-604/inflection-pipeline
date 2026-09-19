@@ -1,0 +1,20 @@
+stage: confidence-delta
+company: KISSHT
+run_date: 2026-09-19
+phase: 1
+confidence_delta:
+  numerical_acceptance: 100      # B12a: 47 material numbers checked, 0 CRITICAL, 0 MAJOR, 2 MINOR
+  redflag_coverage: 67           # B12b: material_found 9 (CRITICAL + MAJOR), 6 held upstream (1 caught, 5 partial), 3 MISSED
+  framework_adherence: 77.5      # B12c phase-1 portion only (Gate 0 52 rules + Emerging Moat 28 rules); valuation half pending phase 3
+  peer_utilisation: 90.9         # B12d: 10 substantive of 11 distinct peer transcripts (3 of 3 peers used substantively)
+  overall: 67
+  overall_set_by: redflag_coverage
+  not_applicable: []
+  pending_phase_3: ["framework_adherence valuation half (B10/B11)"]
+verifier_a_identity_check: "0 CRITICAL rows in B12a; nothing to strike."
+rework_gate: "not triggered: no Verifier A CRITICAL; no verifier acceptance_rate below 60 (lowest B12b 67)."
+band: "60-74: any PROCEED verdict downgrades one level (orchestrator Section 5), set by redflag_coverage."
+source_fidelity_flags: "B12a marks one MINOR with source_fidelity true: FY23 CFO carried at two values (screener 48.36 Cr vs RHP restated 111.48 Cr, RHP p.271). Both exist in their sources; B01 disclosed the conflict. Under FLAG-DISAGREEMENT the audited figure is the RHP restated value; the screener figure is a data-vendor reading. UNRESOLVED inside this run for any pillar input; carried to phase 3."
+operator_rulings_requested_by_verifiers:
+  - "B12c: Gate 0 lender variant for Blocks A and F, applied symmetrically."
+  - "B12c: Deal-breaker 6 for financials: confirm CAR/PCR substitution or require literal ND/EBITDA and IC."

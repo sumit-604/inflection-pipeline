@@ -1,0 +1,52 @@
+stage: B12b
+company: "KISSHT"
+run_date: "2026-09-19"
+model: "claude-opus-5"
+status: complete
+independent_flags_found: 18
+caught: 3
+partially_caught: 6
+missed:
+  - {severity: "MAJOR", item: "I4 guidance restated upward within one quarter: credit cost 10-15% -> '15%', ROE 19-21% -> '20% plus', AUM FY27 -> 'next 12 months', historical growth floor 50% -> 60%; B05 says guidance 'UNCHANGED'/'repeated identically'", anchor: "Q4 [page 8-9],[page 11],[page 17]; Q1 [page 5],[page 7],[page 11],[page 14],[page 16]"}
+  - {severity: "MAJOR", item: "I7 disbursement fell QoQ (Rs 3,812 Cr vs 3,954 Cr) while AUM +13% via tenure extension; disbursement guidance refused; Q4 'reduced disbursements ~7%' conflicts with +27% QoQ Q4 disbursal", anchor: "Q4 [page 5],[page 17-18]; Q1 [page 4]"}
+  - {severity: "MAJOR", item: "P1 same-quarter peers improved asset quality (SBICARD GNPA -36 bps, Stage 2 -10 bps; POONAWALLA GNPA 1.44->1.37%, bounces stable/down), contradicting Kissht's 'Q1 seasonal' explanation for Stage 2 2.4->3.15%, GNPA 2.12->2.25%", anchor: "SBICARD Jul-2026 [page 5-6]; POONAWALLA Jul-2026 [page 8],[page 15]; Kissht Q1 [page 5],[page 10]"}
+  - {severity: "MINOR", item: "I11 Q4 other-income decline unexplained after two analyst questions", anchor: "Q4 [page 14-15],[page 22]"}
+  - {severity: "MINOR", item: "I12 risk separation 2.5x (CEO) vs 5x (CDAO) on the same call", anchor: "Q4 [page 5],[page 21]"}
+  - {severity: "MINOR", item: "I13 organic share for Q4 stated as 30% then as '27 odd percent'", anchor: "Q4 [page 6]; Q1 [page 15]"}
+  - {severity: "MINOR", item: "I14 IPO 25% GCP use described two ways (tech/AI only vs brand, acquisition, strategic)", anchor: "Q4 [page 8],[page 21]"}
+  - {severity: "MINOR", item: "I15 Q1 ROAE 21.2% on part-period IPO equity (net worth 1,343 -> 2,245 Cr) while promising '20% plus' ahead", anchor: "Q1 [page 5],[page 11]"}
+  - {severity: "MINOR", item: "I16 no LAP asset-quality disclosure; Rs 6-10 lakh LAP band that peers mark higher risk (POONAWALLA avoids <Rs 50 lakh; UGRO peak GNPA 3.5-4%)", anchor: "Q4 [page 12]; Q1 [page 18-19]; POONAWALLA May-2026 [page 16]; UGROCAP Aug-2026 [page 11]"}
+pipeline_flags_not_supported:
+  - "B05 4D/1C/2A LAP breakeven 'reframed from a year or two away to around Q3': Q4 'a year or two away' refers to steady-state ROA, not breakeven (Q4 [page 15]); Q1 breakeven ~Q3 then desired ROE (Q1 [page 18]); no inconsistency"
+  - "B06 Part 5 POONAWALLA 'denied accelerated write-offs... business-as-usual credit costs': words are analyst Abhijit Tibrewal's question, not management (POONAWALLA Jan-2026 [page 18-19])"
+  - "B06 Claim 4 CONTRADICTED (overstated): UGRO shows 7 consecutive quarterly CoB declines, incremental 9.8% (Aug-2026 [page 7]) though B06 says UGRO has no such commentary; SBICARD guidance mixed ([page 5] vs [page 7]); POONAWALLA cause stated by analyst; B05 never relied on FCNR(B)"
+promise_delivery_spot_checks: {checked: 6, confirmed: 5, wrong: 1}
+credibility_grade_concur: "concur (C), different basis: drop the invalid LAP-breakeven inconsistency; add transcript-internal guidance drift, CoB KPI method change in an adverse quarter, contradictory FLDG answers, and a peer-unsupported 'Q1 seasonal' explanation"
+findings:
+  - {severity: "MAJOR", location: "B05 1C, 2C", finding: "MISSED guidance drift (I4); B05 claims guidance unchanged/repeated identically"}
+  - {severity: "MAJOR", location: "B05 absent", finding: "MISSED disbursement fall vs tenure-driven AUM and refused disbursement guidance (I7)"}
+  - {severity: "MAJOR", location: "B06 Part 2 absent", finding: "MISSED peer contradiction of Kissht 'Q1 seasonal' asset-quality explanation (P1)"}
+  - {severity: "MAJOR", location: "B05 2E, LBF-2", finding: "FLDG economics unquantified on both calls with contradictory Q1 answers; B05 records no repeated evasion and treats mechanics as FACT (I1)"}
+  - {severity: "MAJOR", location: "B05 3C item 2", finding: "Stage 2 2.4->3.15%, NNPA 0.29->0.36%, CE 97.15->96.82% not recorded; 'seasonal' answer accepted untested (I3)"}
+  - {severity: "MAJOR", location: "B05 1B, 3D", finding: "249 bps one-quarter revenue-margin drop vs Q4 'four to six quarters' trajectory not flagged; origination yield refused (I5)"}
+  - {severity: "MAJOR", location: "B05 3C item 4", finding: "CoB KPI method change in adverse quarter graded 'resolved satisfactorily'; 200->150 bps and upgrade-timing slip not noted (I6)"}
+  - {severity: "MAJOR", location: "B05 3B, 3D, 4D", finding: "45% multi-PL customers framed as corroboration, not exposure to management's named stress pocket (I8)"}
+  - {severity: "MAJOR", location: "B05 4D, 1C, 2A", finding: "NOT SUPPORTED LAP breakeven inconsistency flag; misreads Q4 [page 15]"}
+  - {severity: "MAJOR", location: "B06 Claim 4, Part 4", finding: "OVERSTATED 'single most consequential contradiction'; UGRO CoB falling 7 quarters omitted; SBICARD mixed; POONAWALLA cause misattributed; B05 FCNR reliance nonexistent"}
+  - {severity: "MAJOR", location: "B06 Part 5", finding: "NOT SUPPORTED: POONAWALLA 'denial' quote is analyst's question (Jan-2026 [page 18-19])"}
+  - {severity: "MINOR", location: "B06 Claim 6", finding: "OVERSTATED: POONAWALLA gave no numeric raise rationale; direction of contrast holds"}
+  - {severity: "MINOR", location: "B05 3D", finding: "OVERSTATED registered-user 'jump': 60m was model-training base (Q4 [page 3-4])"}
+  - {severity: "MINOR", location: "B06 2B", finding: "OVERSTATED SBICARD yields stable-to-up; margins came off QoQ (Jul-2026 [page 15-16])"}
+  - {severity: "MINOR", location: "B05", finding: "MISSED I11 other-income fall unexplained"}
+  - {severity: "MINOR", location: "B05 3A", finding: "MISSED I12 2.5x vs 5x risk separation"}
+  - {severity: "MINOR", location: "B05 1B", finding: "MISSED I13 organic share 30% vs 27%"}
+  - {severity: "MINOR", location: "B05", finding: "MISSED I14 IPO GCP use described two ways"}
+  - {severity: "MINOR", location: "B05 2A", finding: "MISSED I15 part-period IPO equity flatters ROAE"}
+  - {severity: "MINOR", location: "B05, B06", finding: "MISSED I16 LAP asset quality undisclosed in peer-flagged ticket band"}
+critical_count: 0
+major_count: 11
+minor_count: 9
+material_found: 9
+material_caught: 6
+acceptance_rate: 67
+coverage_basis: "9 material (1 CRITICAL + 8 MAJOR) of 18 listed; 6 held by pipeline (1 CAUGHT in full, 5 PARTIALLY CAUGHT), 3 MISSED. Only 1 of 9 weighted in full. Company 2/2 calls read in full; peers 3 Q1 FY27 calls read in full, 8 earlier calls read by targeted search and citation checks."

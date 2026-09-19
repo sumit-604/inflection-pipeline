@@ -1,0 +1,82 @@
+stage: B00-inputs
+company: SHAREINDIA
+run_date: 2026-09-19
+model: claude-opus-5 (orchestrator, inline stage 0)
+status: complete
+run_mode: step1-intake (operator standing ruling 2026-09-05); peer-selection and empty-folder pauses suppressed; standing answer "proceed with the gaps"
+spear_gate: "PASS - Spear: OVERRIDE 2026-09-19 (operator standing ruling 2026-09-05: Step-1 intake replaces the web spear), companies/SHAREINDIA.md"
+load_bearing_facts:   # first verification priority for every stage (from companies/SHAREINDIA.md and step1-business-brief.md)
+  - "LBF1 PROP vs CLIENT: split FY24-FY26 and Q1 FY27 revenue and profit into proprietary trading income, brokerage, interest (MTF/NBFC/deposits) and fees from the AR revenue and segment notes. Management's '60% client' is a VOLUME figure."
+  - "LBF2 PLEDGE AND CONTINGENT LIABILITIES: promoter pledge 42.87% (Mar-26) to 57.80% (Jun-26) of promoter holding per BSE SHP summaries; contingent liabilities Rs 2,182 Cr (screener). Pledgee, purpose, and what the guarantees back."
+  - "LBF3 CASH CONVERSION: CFO negative FY23, FY24, FY26 (screener). Growth-induced (MTF book, exchange margin) or structural (trading inventory)?"
+  - "LBF4 FUNDING AND DISCLOSURE STRESS SEP-2026: Infomerics downgrade IVR A4+ to IVR A4 under ISSUER NOT COOPERATING (16-Sep-2026); adjourned NCD holders' meeting (Aug-Sep 2026); preferential equity/warrant raise to board 21-Sep-2026; Rs 39.72 Cr Enshrine Leasing property purchase 17-Sep-2026."
+tooling: "pypdf 1 route OK on every PDF; whole run switched to pre-extracted page-marked .txt (one '[page N]' marker per page) beside each PDF; stages and verifiers are given the .txt paths. No low-text (scanned) document found."
+reporting_units:
+  results: "INR Lakhs (face: '(Rs. in Lakhs, except EPS)')"
+  annual_report: "INR Lakhs (face: '(` in Lakhs)')"
+  presentation: "INR Mn (Q1 FY27 deck, e.g. 'MTF AUM INR 4,655 Mn')"
+  concalls: "mixed; INR Cr and INR Mn as spoken"
+  screener: "INR Cr (rounded)"
+  shareholding: "number of shares and %"
+  note: "Conversion happens once, at stage 10, with arithmetic shown. 1 Cr = 100 Lakhs = 10 Mn."
+sector_cap_row: "Banks / NBFCs / MFIs"
+sector_cap_row_evidence: "Section 1B cap table (.claude/skills/section-1b/references/05-sector-cap.md, 'Sector cap table') has no broking / capital-markets row. The business is a capital-market intermediary: proprietary trading, client broking, MTF lending, an NBFC subsidiary (loan book ~Rs 265 Cr per brief), merchant banking. Closest existing row is 'Banks / NBFCs / MFIs' 18x (P/B primary; PE cross-check only). Collector guess 'Pharma / CDMO' rejected (keyword artefact). FLAG for Phase 3 operator confirmation: a capital-markets row is an operator ruling, not a stage decision."
+listed_date: "long-listed; prospectus not expected; its absence is not a gap"
+concalls_available: true
+inventory:
+  prospectus: {count: 0, status: "not expected (long-listed)"}
+  annual-report: {count: 1, files: ["inputs/annual-report/SHAREINDIA-AR-FY26.pdf (335pp incl. BSE cover letter; FY26, filed 05-Sep-2026)"]}
+  results: {count: 3, files: ["inputs/results/SHAREINDIA-results-Q1FY27-2026-07-24.pdf", "inputs/results/SHAREINDIA-results-Q4FY26-FY26-2026-05-19.pdf", "inputs/results/SHAREINDIA-results-Q3FY26-2026-01-27.pdf"]}
+  rating: {count: 3, files: ["inputs/rating/SHAREINDIA-rating-Infomerics-2026-09-18.pdf (company's Reg 30 letter)", "inputs/rating/SHAREINDIA-rating-rationale-Infomerics-2026-09-16.pdf (rationale, ISSUER NOT COOPERATING)", "inputs/rating/SHAREINDIA-rating-rationale-Infomerics-2025-09-22-prior-detailed.pdf (prior detailed rationale the 2026 note refers to)"], note: "contract says 0-1; the letter, its rationale and the referenced prior detailed rationale are one rating action set, kept together"}
+  concalls: {count: 3, quarter_map_oldest_first: ["inputs/concalls/SHAREINDIA-concall-Q3FY26-2026-01-30.pdf = Q3 FY26", "inputs/concalls/SHAREINDIA-concall-Q4FY26-2026-05-23.pdf = Q4 FY26", "inputs/concalls/SHAREINDIA-concall-Q1FY27-2026-07-31.pdf = Q1 FY27"]}
+  peer-concalls: {count: 12, peers: {SMCGLOBAL: [Q2FY26 2025-11-07, Q3FY26 2026-02-09, Q4FY26 2026-05-08, Q1FY27 2026-07-31], CHOICEIN: [Q2FY26 call 17-Oct-2025, Q3FY26 call 04-Feb-2026, Q4FY26 call 24-Apr-2026, Q1FY27 call 11-Aug-2026], ANGELONE: [Q2FY26 2025-10-23, Q3FY26 2026-01-21, Q4FY26 2026-04-22, Q1FY27 2026-07-21]}}
+  announcements: {count: 99, note: "97 Reg 30 filings 19-Sep-2025..18-Sep-2026 plus scheme-of-arrangement updates from Jul-2025 (BSE API, scrip 540725), and the SEBI settlement order text (algo-platform scheme, Mar-2026) fetched from sebi.gov.in for the freshness pair"}
+  shareholding: {count: 4, files: ["BSE SHP summary tables Jun-2026, Mar-2026, Dec-2025, Sep-2025 as .txt"], note: "summary level only; promoter-level pledgee detail and FII/DII split tables not fetched"}
+  research: {count: 0}
+  screening: {count: 30, note: "CSVs parsed from the PUBLIC screener page tables; SHAREINDIA consolidated + standalone, peers consolidated. Every CSV opened and holds figures (content check passed). No Data_Sheet / Financials.xlsx."}
+  presentation: {count: 3, files: ["inputs/presentation/SHAREINDIA-invpres-Q1FY27-2026-07-27.pdf", "inputs/presentation/SHAREINDIA-invpres-Q4FY26-2026-05-20.pdf", "inputs/presentation/SHAREINDIA-invpres-2026-03-20.pdf"]}
+  other: {count: 7, note: "FY25 AR, Q2 FY26 results and transcript, Choice link letters; preserved, never consumed"}
+corpus_manifest:
+  - {path: inputs/annual-report/SHAREINDIA-AR-FY26.pdf, issuer: Share India Securities Ltd, type: annual report (Reg 34), period: FY26 (Apr-2025..Mar-2026), folder_match: true}
+  - {path: inputs/results/SHAREINDIA-results-Q1FY27-2026-07-24.pdf, issuer: Share India Securities Ltd, type: unaudited results SA+consol, period: Q1 FY27 (qe 30-Jun-2026), folder_match: true}
+  - {path: inputs/results/SHAREINDIA-results-Q4FY26-FY26-2026-05-19.pdf, issuer: Share India Securities Ltd, type: audited results SA+consol, period: Q4 FY26 and FY26, folder_match: true}
+  - {path: inputs/results/SHAREINDIA-results-Q3FY26-2026-01-27.pdf, issuer: Share India Securities Ltd, type: unaudited results SA+consol, period: Q3 FY26 (qe 31-Dec-2025), folder_match: true}
+  - {path: inputs/concalls/SHAREINDIA-concall-Q1FY27-2026-07-31.pdf, issuer: Share India Securities Ltd, type: earnings call transcript, period: Q1 FY27, folder_match: true}
+  - {path: inputs/concalls/SHAREINDIA-concall-Q4FY26-2026-05-23.pdf, issuer: Share India Securities Ltd, type: earnings call transcript, period: Q4 FY26, folder_match: true}
+  - {path: inputs/concalls/SHAREINDIA-concall-Q3FY26-2026-01-30.pdf, issuer: Share India Securities Ltd, type: earnings call transcript, period: Q3 FY26, folder_match: true}
+  - {path: inputs/presentation/SHAREINDIA-invpres-Q1FY27-2026-07-27.pdf, issuer: Share India Securities Ltd, type: earnings presentation, period: Q1 FY27, folder_match: true}
+  - {path: inputs/presentation/SHAREINDIA-invpres-Q4FY26-2026-05-20.pdf, issuer: Share India Securities Ltd, type: earnings presentation, period: Q4 FY26, folder_match: true}
+  - {path: inputs/presentation/SHAREINDIA-invpres-2026-03-20.pdf, issuer: Share India Securities Ltd, type: investor presentation, period: Mar-2026, folder_match: true}
+  - {path: inputs/rating/SHAREINDIA-rating-rationale-Infomerics-2026-09-16.pdf, issuer: Infomerics Valuation and Rating Ltd, type: rating rationale (INC), period: 16-Sep-2026, folder_match: true}
+  - {path: inputs/rating/SHAREINDIA-rating-rationale-Infomerics-2025-09-22-prior-detailed.pdf, issuer: Infomerics Valuation and Rating Ltd, type: rating rationale (detailed), period: 22-Sep-2025, folder_match: true}
+  - {path: inputs/rating/SHAREINDIA-rating-Infomerics-2026-09-18.pdf, issuer: Share India Securities Ltd, type: Reg 30 credit rating intimation, period: 18-Sep-2026, folder_match: true}
+  - {path: "inputs/peer-concalls/*.pdf (12)", issuer: "SMC Global Securities / Choice International / Angel One (per filename, confirmed on page 1)", type: earnings call transcripts, period: "Q2 FY26..Q1 FY27", folder_match: true}
+  - {path: "inputs/announcements/*.pdf (99)", issuer: "Share India Securities Ltd (BSE feed scrip 540725); one SEBI order (SEBI)", type: "Reg 30 filings; SEBI settlement order", period: "Jul-2025..18-Sep-2026", folder_match: true}
+  - {path: "inputs/other/choice-link-letters/*.pdf (4)", issuer: Choice International, type: "BSE cover letters linking to transcripts (not transcripts)", period: "Oct-2025..Aug-2026", folder_match: "moved from peer-concalls/ to other/choice-link-letters/"}
+input_gaps:
+  - "COLLECTOR (verbatim, manifest.collector_warnings[0]): collect_to_repo.py produced NO files: the screener session came back logged out ('Company: Get a free account'), so Financials.xlsx, annual reports, concall transcripts and presentations were not downloaded for the main company or peers. Corpus was built by hand in step 1 (see notes)."
+  - "COLLECTOR (verbatim, manifest.collector_warnings[1]): screener Financials.xlsx export absent (logged-out session). inputs/screening/ holds CSVs parsed from the PUBLIC screener page tables (quarters, profit-loss, balance-sheet, cash-flow, ratios, shareholding), consolidated and standalone for SHAREINDIA, consolidated for peers. Rounded to Rs Cr; no Data_Sheet."
+  - "COLLECTOR (verbatim, manifest.collector_warnings[2]): shareholding/ holds BSE SHP summary tables only (Sep-2025 to Jun-2026) as text; the promoter-level and public-category detail tables (pledgee names, FII/DII split) were not fetchable from the BSE API."
+  - "COLLECTOR (verbatim, manifest.collector_warnings[3]): peer-concalls: Choice International's BSE 'transcript' filings are one-page link letters; the real transcripts were fetched from the linked cmsapi.choiceindia.com assets. The link letters are kept in other/choice-link-letters/."
+  - "MOVE: inputs/peer-concalls/CHOICEIN-<date>-transcript.pdf (link letters) -> inputs/other/choice-link-letters/; real transcripts placed at the original peer-concalls paths."
+  - "research/: empty. No broker notes collected. No effect on anchored evidence."
+  - "shareholding/: FII vs DII split and pledgee names absent at summary level; screener shareholding CSV carries the FII/DII series (FII 1.87%, DII 0.48% Jun-2026, screener, rounded). UA qualifier evidence is screener-level, not filing-level."
+  - "results/: Q2 FY26 results held in other/ (contract caps results/ at 3 most recent)."
+  - "sector_cap_row: no broking/capital-markets row in the Section 1B cap table; 'Banks / NBFCs / MFIs' taken as closest; flagged for Phase 3 operator confirmation."
+freshness_pairs:
+  - {pair: "RESULTS to CONCALL", trigger_doc: "inputs/results/SHAREINDIA-results-Q1FY27-2026-07-24.pdf (Q1 FY27)", mate_expected: "Q1 FY27 transcript", status: PASS, missing_doc: ""}
+  - {pair: "RATING BULLETIN to RATIONALE", trigger_doc: "inputs/rating/SHAREINDIA-rating-Infomerics-2026-09-18.pdf", mate_expected: "Infomerics rationale for the Sep-2026 action", status: PASS, missing_doc: "", note: "rationale 16-Sep-2026 present; it refers to the prior detailed rationale (22-Sep-2025), also present. The Crisil CP rating named in the Q1 FY27 call has no rationale in corpus; Crisil rating letters sit in announcements/ (Reg 30 filings) only."}
+  - {pair: "SEBI ORDER to ORDER TEXT", trigger_doc: "inputs/announcements/2026-03-19-Disclosure_Under_Regulation_30_...-2739634b.pdf (settlement order under the algo-platform scheme)", mate_expected: "SEBI settlement order text", status: PASS, missing_doc: "", note: "order text fetched from sebi.gov.in (attachdocs/mar-2026/1773830572885.pdf) into announcements/. Exchange (NSE/NCL/MCX) penalties in announcements/ are exchange levies, not SEBI orders."}
+  - {pair: "AR to LATEST AUDITED ANNUAL RESULTS", trigger_doc: "inputs/results/SHAREINDIA-results-Q4FY26-FY26-2026-05-19.pdf (FY26 audited)", mate_expected: "FY26 AR", status: PASS, missing_doc: ""}
+freshness_verdict: "FRESHNESS PAIRS OK"
+corpus_verdict_hint: "CORPUS GAPPED (research empty; shareholding detail tables absent; screener Data_Sheet absent). No freshness failure."
+collector_defect_gate:
+  collector_warnings_copied: 4
+  screening_csv_content: "PASS: every CSV opened; figures present beside every label"
+  announcements_empty: false
+  shareholding_empty: false
+  cmp_market_cap: "cmp 228.0, market_cap_cr 4992.0 (screener, 18-Sep-2026 close); non-zero, PASS"
+company_memory: "companies/SHAREINDIA.md (Spear OVERRIDE line, 4 load-bearing facts, one operator ruling) and runs/shareindia-2026-09-19/step1-business-brief.md. Memory to weigh, never anchored evidence."
+empty_folder_confirmation: "SUPPRESSED by Step-1 AUTONOMY CONTRACT. Standing answer: proceed with the gaps. Empty folders: research/ (prospectus/ not expected). Repeat in the Halt 1 dossier."
+flags: []
+analyst_note: "Two corpus facts matter before any stage runs. The Sep-2026 Infomerics action is a downgrade under ISSUER NOT COOPERATING after six unanswered information requests; the prior rating (Sep-2025) was already a short-term IVR A4+. The BSE SHP summary shows the promoter pledge moving 52.16% (Sep-25) -> 44.75% (Dec-25) -> 42.87% (Mar-26) -> 57.80% (Jun-26) of promoter holding. Both are load-bearing facts, not conclusions."

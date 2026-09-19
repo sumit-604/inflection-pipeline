@@ -1,0 +1,32 @@
+```yaml
+stage: B01-gate0
+company: "IOLCP"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "CFS purchase-of-PPE capex breakdown not in provided data for FY17-FY24; FY22-FY24 FCF uses AR capex-utilisation chart (p.24) as a non-CFS-confirmed proxy, FY17-FY21 FCF not computed"
+  - "Trade payables breakdown (for Payable Days / WC Days) available only for FY25 and FY26 in provided corpus; FY17-FY24 WC Days not computed"
+  - "Shareholding data provided only from Sep-2024 onward; E2 promoter-change scored on ~21-month window (Sep-2024 to Jun-2026), not the full 3-year window the rule specifies"
+  - "No peer dataset provided; M2, M5, M6 (top tier), M7, M9 scored 0, PEER DATA NEEDED"
+flags: []
+data_years: 10
+fy_range: "FY17 to FY26"
+blocks: {A: 5, B: 8, C: 16, D: 19, E: 20}
+core_score: 68
+moat_score: 3
+grand_total: 71
+moats_confirmed: 0
+moat_class: "NONE"
+classification: "GOOD"
+deal_breakers:
+  - "Block A total (5) < 8 -> caps classification at max GOOD; driven by FY22-FY26 ROCE normalization (17.1% -> 8.85% -> 10.65%) below 15% in 4 of last 5 years, following the FY19-FY21 pricing-supercycle peak"
+history_downgrade: false
+data_notes:
+  - "PAT CAGR (45.65%) and C4 (+31.6pp) driven by a depressed FY17 base (PAT Rs 4.67 Cr, near-breakeven on Rs 67.68 Cr interest expense), not a loss year so the loss-to-profit swing rule does not apply, but flagged as a base-effect distortion; revenue CAGR (14.04%) is the more representative growth read"
+  - "Inventory Days and Payable Days computed on Revenue basis (no standalone COGS line isolated in provided data), consistent with screener's own Receivable Days convention"
+  - "FY22-FY24 capex (153/224/257) sourced from AR FY26 capex-utilisation chart (p.24), a different presentation than the Standalone Cash Flow Statement 'purchase of PP&E' line used for FY25/FY26 (213.55/172.99); basis switch noted, not an estimate"
+  - "5 of 12 moat tests (M2, M5, M6, M7, M9) scored 0 solely for missing peer data (PEER DATA NEEDED), not weak evidence; moat_score should not be read as a finding of no moat until peer data resolves those tests"
+block_b_trend: "deteriorating"
+analyst_note: "PAT CAGR (45.65%) is a base-effect artifact off a depressed FY17 (Rs 4.67 Cr PAT on Rs 67.68 Cr interest expense); revenue CAGR 14.04% is more representative. Block A's deal-breaker is a normalization off an episodic FY19-FY21 Ibuprofen pricing supercycle (ROCE 54-68%), not a straight decline; FY22-FY26 sits in an 8.85-17.14% band. Cash quality is mixed inside a strong headline: cumulative CFO/PAT is 1.27x over 10 years (B1=5), but FCF was negative in 3 of the last 5 years and receivable days rose from 78.5 (FY22) to 94.9 (FY26) on flat revenue (matches company-memory LBF3). Five of twelve moat tests scored 0 purely for missing peer data; treat moat_score (3/60) as unresolved, not a finding of no moat."
+```

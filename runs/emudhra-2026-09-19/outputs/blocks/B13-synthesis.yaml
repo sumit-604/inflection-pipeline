@@ -1,0 +1,33 @@
+stage: B13-synthesis
+company: "EMUDHRA"
+run_date: "2026-09-19"
+model: "claude-opus-5"
+status: complete
+mode: "phase 1 lite (three files: business-narrative.md, gate-recommendation.md, verifier-summary.md; no valuation content)"
+verdict: "PROCEED WITH CAVEATS"
+verdict_rule_applied: 3        # FLAG-CASH active with INDETERMINATE determination caps at PWC; freshness cap and confidence band (71) land on the same level
+freshness_cap: "CORPUS GAPPED-FRESHNESS: ICRA June-2026 surveillance rationale for eMudhra Limited (reaffirmed [ICRA]A (Stable)/[ICRA]A1, 29-Jun-2026) missing; source icra.in"
+flags_active: ["FLAG-CASH (INDETERMINATE, leans GROWTH-INDUCED)"]
+flags_not_active: ["FLAG-PROMOTER (B08 CAUTION, not CONCERN/AVOID)", "FLAG-GATE0 (GOOD+ filed / GOOD alternative)"]
+stage_flags_carried: ["FLAG-LIABILITY", "FLAG-GOODWILL", "FLAG-MSME", "FLAG-GOVERNANCE", "FLAG-DISCLOSURE", "FLAG-REGULATORY-DEPENDENCY", "FLAG-OPERATOR-RULING"]
+transition_posture: "NOT SET (model unsigned, Stage 11 not run); proof gate NOT FIRED on filed evidence (AR Note 49 p.288 outside-India segment margin 26.0% to 21.9%)"
+confidence_delta: {numerical: 100, redflag: 71, framework: 89.4, peer: 91.7, overall: 71}
+valuation_decision: ""         # NOT RUN: phase 3 (stages 10, 11)
+entry_range: {low: "NOT RUN", high: "NOT RUN"}
+headline: "Licence business funds a global software bet"
+falsification_metric: "Q2 FY27 (quarter to 30-Sep-2026) reported EBITDA margin below 23% after token recertification normalises"
+cash_falsification_metric: "H1 FY27 consolidated CFO less purchase of PPE and intangibles below zero (filed with Q2 FY27 results)"
+monitorables_count: 8
+contradicted_claims_count: 8   # peer-stage contradicted list empty after correction; 8 weakened-by-peer or record-internal contradictions listed
+open_operator_rulings: ["Gate 0 Block B window convention (GOOD+ core 74 vs GOOD core 69/67)", "prompts/07 Section 6D combined matrix missing from rule sources", "sector cap row Platform / SaaS / IT services for phase-3 confirmation"]
+publish_candidate: false
+publish_candidate_summary: ""
+files:
+  - runs/emudhra-2026-09-19/outputs/final/business-narrative.md
+  - runs/emudhra-2026-09-19/outputs/final/gate-recommendation.md
+  - runs/emudhra-2026-09-19/outputs/final/verifier-summary.md
+notion_save:
+  page_title: "eMudhra Ltd (EMUDHRA) - phase 1 - 2026-09-19"
+  summary: "Licence business funds a global software bet. Gate: PROCEED WITH CAVEATS (freshness cap, INDETERMINATE cash, confidence 71). No valuation yet."
+  drive_link: "not applicable (repo run folder runs/emudhra-2026-09-19)"
+  mode: append-never-overwrite-status

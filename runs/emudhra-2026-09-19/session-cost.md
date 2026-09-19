@@ -29,3 +29,4 @@ Run: runs/emudhra-2026-09-19 | Phase 1 executed 2026-09-19 via /step1
 | 12b | verifier B (round 2) | opus | agent default | - | - | 245149 | 5m59s | 2 |
 | 12c | verifier C (round 2, phase 1 scope) | opus | agent default | - | - | 134246 | 4m39s | 2 |
 | 12d | verifier D (round 2) | sonnet | agent default | - | - | 138399 | 6m23s | 2 |
+| 13 | synthesis-lite | opus | agent default | - | - | 190510 | 6m33s | 1 |

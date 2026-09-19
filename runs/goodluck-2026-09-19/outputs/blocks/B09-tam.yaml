@@ -1,0 +1,107 @@
+stage: B09-tam
+company: "GOODLUCK"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: partial               # Balu Forge FY26 revenue and precision/auto-tube TAM not found; two searches skipped
+input_gaps:
+  - "GDAL rating rationale absent (freshness FAIL, HIGH)"
+  - "Shareholding aggregator only (MEDIUM)"
+  - "Screener sheets empty (LOW)"
+  - "No research corpus (LOW)"
+  - "BALUFORGE no transcripts (MEDIUM)"
+  - "Precision Pipes & Auto Tubes segment TAM NOT FOUND at a reliably-scoped level; only proxy found (TPI, >Rs800cr) sits below Goodluck's own Rs1,107cr FY26 segment revenue, so the proxy is too narrow and was excluded from the quantified TAM/SAM/SOM"
+  - "155mm-shell share of India's total Army ammunition budget NOT FOUND in corpus or search; analyst assumption of 30-40% applied and flagged throughout the defence sizing chain"
+  - "Raw audited results file (20260526-Results_Q4FY26_FY26_Audited.txt) OCR-corrupted on numeric columns; FY26 revenue anchor cross-checked via investor presentation Q4 figure and CRISIL rationale instead of the primary results table"
+  - "Exact count of Arms Act artillery-shell licence holders NOT FOUND (carried from B07; AR calls Goodluck part of a 'select group', no number given)"
+  - "Balu Forge FY26 consolidated revenue NOT FOUND (search returned no figure; Method 3 peer-aggregation row for defence is therefore incomplete)"
+  - "USD/INR conversion assumed at 85, not pinned to a filed source in this corpus"
+flags:
+  - type: FLAG-MGMT-DEFENCE-DEMAND-INFLATED
+    reason: "CMD's own claim ('India needs 48 lakh [4.8 million] 155mm shells per year', Concall_Feb_2026_Transcript.txt p.13, hedged only as 'as per my information') implies a domestic-only market of Rs1,15,200cr/year at GDAL's own realised blended shell price (~Rs24,000/shell). This is ~24.5x this stage's conservative India-centric defence TAM (Rs4,700cr, built from the KPMG Army-ammunition-budget anchor). Internally inconsistent with the company's own better-anchored context; read as inflated, most likely a multi-year stockpile figure or a global/domestic conflation, not a usable annual-flow sizing input."
+  - type: FLAG-MGMT-SOLAR-SHARE-INFLATED
+    reason: "CMD claims 'presently serving 30% plus market share' of the solar-support-structures sector (Concall_Aug_2026_Transcript.txt line164). Against this stage's India solar-mounting-structure TAM (US$1.8-2.2bn / Rs15,300-18,700cr, web search) and Goodluck's own guided FY27 solar-structures revenue (Rs600-700cr, Concall_Feb_2026 line231-232), the implied actual share is ~3.2-4.6%, not 30%+. Unresolved; either 'this sector' refers to a much narrower niche than the full market, or the claim is overstated."
+  - type: FLAG-DEFENCE-EXPORT-SHARE-AR-INTERNAL-INCONSISTENCY
+    reason: "AR2026 states private-sector share of India's domestic defence output as both 'around 30% to nearly 50%' (prose) and '24%' (summary card) on the same page (p.19/extraction); not resolved in this stage."
+  - type: FLAG-GDAL-CAPACITY-TIMELINE-RISK
+    reason: "This stage's defence SOM assumes GDAL Phase-2 (400,000 shells) is at least partially ramped within the 5yr window (Sept-2027/Q4-FY28 target per Reg 30 filing 06-Aug-2026). That target already reflects one confirmed slip from the original 'within one year' (Oct-2025) promise, and B07 carries a grade-D promise-delivery record (1 delivered, 2 partial, 4 missed of 7). A second slip would push the 5yr SOM (Rs610cr) toward the 3yr SOM (Rs420cr) instead."
+market_definition: "Steel processing/engineering products (CR/ERW/GI pipes, precision auto/hydraulic tubes, solar/transmission structures, oil-and-gas forgings) plus a licence-scarcity 155mm defence-shell subsidiary (GDAL, 79.43% owned), India-domestic with ~29% export share."
+tam_cr: {conservative: 105700, realistic: 173800}
+sam_cr: 44120
+sam_pct_of_tam: 41.7
+som_3yr_cr: 5350
+som_5yr_cr: 6320
+som_implied_revenue_cagr: {yr3: 9.3, yr5: 9.0}   # FORMAL handoff to stage 11
+current_sam_share_pct: 9.3
+revenue_headroom_x: 10.8
+tam_growth_pct: 8
+runway_class: "STRONG"
+mgmt_claim_cr: 115200          # CMD's "48 lakh (4.8M) 155mm shells/year" domestic claim x GDAL's own ~Rs24,000/shell blended realisation
+mgmt_claim_ratio: 24.5         # vs this stage's conservative India-centric defence TAM of Rs4,700cr
+mgmt_claim_read: "inflated"
+capacity_check: "sufficient — committed capacity (GDAL 400,000 shells by Sept-2027 on Rs500cr Phase-2 capex; consolidated Rs300-350cr/yr capex guide; CR/Pipes already ~98% utilised) can physically produce the quantified SOM at both 3yr and 5yr horizons; the binding constraint is GDAL's execution timeline (already slipped once), not capacity size"
+methods_used:
+  - "top-down segment-by-segment (Method 1)"
+  - "bottom-up unit economics, defence shell-body pricing (Method 2)"
+  - "peer revenue aggregation with unorganised-sector uplift (Method 3)"
+  - "import substitution / government ammunition-budget target, defence (Method 4)"
+  - "global benchmark, defence complete-round market and global steel-pipe market (Method 5)"
+stale_data_flags:
+  - {datapoint: "India solar panel mounting structure market US$1.8-2.2bn", source: "web search synthesis (UnivDatos/IndexBox/Future Market Insights, primary report and exact date unconfirmed)", year: "2026 (unconfirmed primary date)"}
+  - {datapoint: "India steel pipes & tubes market US$17,599mn by 2030 / 5.8% CAGR 2024-2030", source: "web search (Grand View Research)", year: 2024}
+  - {datapoint: "India metal forging market US$4.2bn", source: "AR2026 p.31/extraction, citing expertmarketresearch.com", year: 2024}
+searches_performed:
+  - "India ERW GI steel pipes tubes market size 2026 CRISIL IBEF Mordor billion"
+  - "India solar mounting structure market size 2026 crore"
+  - "India 155mm artillery shell ammunition market size crore defence indigenisation"
+  - "global 155mm artillery shell demand supply million units 2026"
+  - "Hi-Tech Pipes Ratnamani Metals Tubes Balu Forge FY26 annual revenue crore"
+  - "India precision tube auto tube market size crore CDW hydraulic tubes"
+searches_skipped:
+  - "Balu Forge FY26 consolidated revenue (no result surfaced; not re-run separately)"
+  - "Paid CRISIL/ICRA/Mordor full sector reports (paywalled, unreachable by this tool)"
+  - "India transmission-tower market size, sized separately from solar structures (folded into general infra citations instead; ESF TAM is a solar-structures floor, not a full-segment figure)"
+downstream_candidates:
+  - signal: "Union Budget defence capital acquisition allocation"
+    entity_type: "macro"
+    demand_link: "Sets ceiling on domestic MoD 155mm shell order flow to GDAL"
+    likely_source: "Union Budget documents / PIB Ministry of Defence"
+    cadence: "annual"
+    shared: false
+  - signal: "NATO/EU rearmament procurement (ReArm Europe, US Replenish)"
+    entity_type: "macro"
+    demand_link: "Drives global 155mm shell export demand GDAL could access, though no GDAL export order is yet disclosed"
+    likely_source: "NATO/European Defence Agency procurement announcements, trade press"
+    cadence: "event-driven"
+    shared: false
+  - signal: "India National Infrastructure Pipeline / Union Budget capex"
+    entity_type: "macro"
+    demand_link: "Drives demand across Engineering Structures, CR/Pipes and Forgings simultaneously"
+    likely_source: "PIB / Union Budget documents"
+    cadence: "annual"
+    shared: true
+  - signal: "MNRE/CEA India solar capacity addition data (GW/year)"
+    entity_type: "macro"
+    demand_link: "Drives Engineering Structures solar-structure order volume"
+    likely_source: "MNRE / CEA reports"
+    cadence: "monthly"
+    shared: false
+  - signal: "Global automotive OEM production volumes (VW, Audi, Tata Motors, TVS, Bajaj)"
+    entity_type: "end-customer"
+    demand_link: "Drives Precision Pipes & Auto Tubes order volume"
+    likely_source: "SIAM / OEM production disclosures"
+    cadence: "monthly"
+    shared: false
+  - signal: "Indian Railways / NHSRCL high-speed-rail project milestones"
+    entity_type: "counterparty"
+    demand_link: "Drives Engineering Structures rail-bridge order flow"
+    likely_source: "Indian Railways / NHSRCL project updates"
+    cadence: "quarterly"
+    shared: false
+  - signal: "India oil & gas E&P and refinery capex announcements (ONGC, HPCL, OALP rounds)"
+    entity_type: "end-customer"
+    demand_link: "Drives Forgings (flange) demand"
+    likely_source: "PIB / company capex announcements"
+    cadence: "quarterly"
+    shared: false
+demand_externally_verifiable: true
+analyst_note: "Two management claims tested as inflated (defence domestic demand ~24.5x conservative TAM; solar market share 30%+ vs implied ~3-5%) are the most consequential findings for LBF2 and should travel to Halt 1. The SOM-implied CAGR (9.0-9.3%) looks lower than FY27 guidance (+15-20%) but reconciles once defence's low-base effect is isolated (Section 3B); Stage 11 should use the smoothed 9.0-9.3% figure for multi-year projection, not the single-year guide. Defence TAM/SAM/SOM chain compounds two unsourced share assumptions (155mm share of India ammunition budget, 30-40%) -- treat the whole defence sizing chain as LOW-MEDIUM confidence directionally correct, not precise. Precision Pipes & Auto Tubes has no reliable TAM in this corpus; its exclusion understates total company TAM/SAM/headroom."

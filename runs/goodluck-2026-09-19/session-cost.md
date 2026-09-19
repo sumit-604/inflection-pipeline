@@ -16,3 +16,4 @@ Per-stage token ledger. One row per subagent run. Stage 0 is orchestrator-inline
 | 8 | promoter check | claude-sonnet-5 | default | n/a | n/a | 195455 | 634s | 1 |
 | 6 | peer concall verification | claude-sonnet-5 | default | n/a | n/a | 223894 | 355s | 1 |
 | 7 | emerging moat scan | claude-sonnet-5 | default | n/a | n/a | 179781 | 565s | 1 |
+| 9 | TAM/SAM/SOM sizing | claude-sonnet-5 | default | n/a | n/a | 174896 | 865s | 1 |

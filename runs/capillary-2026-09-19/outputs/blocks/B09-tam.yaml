@@ -1,0 +1,56 @@
+stage: B09-tam
+company: "CAPILLARY"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "no credit rating (none obtained)"
+  - "final RHP absent (UDRHP-I held)"
+  - "FII/DII split not in BSE summary"
+  - "screener sheets empty"
+  - "research empty"
+flags:
+  - "Management's $18.2B Global Loyalty Management TAM claim (Zinnov Report, company-commissioned for the IPO) measures total loyalty-ecosystem spend including agency/services/rewards-redemption costs, not the software-only revenue pool Capillary can capture; against the correct software-only denominator the claim is ~18x inflated, though against the broad-market denominator it is a reasonable ~1.4x versus independent estimates. Both readings are shown in the report; neither the industry report nor management is accused of fabrication, the issue is denominator choice."
+  - "Three estimation methods diverge by more than 10x (software-only $1.0-1.8B vs broad loyalty-management market $12.9-15.2B vs fragmented agency-led M&A-target segment $5.6B) because each answers a different question; deliberately not averaged."
+  - "FY27 guided total revenue growth (36-43%, LBF1) runs well above the SOM-implied medium-term CAGR (21-23%) because FY27 includes a one-off full-year step-up from the SessionM acquisition (closed 01-May-2026, zero months in the FY26 base, ~$32M ARR alone explains +37.2%); the SOM math cannot underwrite continued M&A execution, only the organic-plus-steady-state-M&A trajectory."
+  - "India-specific TAM is not separately disclosed by Capillary (revenue geography split is US/UK/Others only); independent India loyalty-market estimates ($0.7-4.3B depending on definition breadth) suggest India is immaterial to the current SAM/SOM."
+market_definition: "Global enterprise SaaS subscription revenue pool for loyalty management, CDP and customer engagement software sold to retail, CPG, BFSI, hospitality, travel and healthcare brands, excluding agency/services/rewards-redemption spend"
+tam_cr: {conservative: 8550, realistic: 11115}
+sam_cr: 5835
+sam_pct_of_tam: 52.5
+som_3yr_cr: 1361
+som_5yr_cr: 1913
+som_implied_revenue_cagr: {yr3: 22.8, yr5: 21.1}
+current_sam_share_pct: 12.6
+revenue_headroom_x: 7.9
+tam_growth_pct: 12
+runway_class: "STRONG"
+mgmt_claim_cr: 155610
+mgmt_claim_ratio: 18.2
+mgmt_claim_read: "inflated"
+capacity_check: "sufficient (asset-light SaaS, capex_embedded_growth_pct=0 per B07; IPO-earmarked cloud infra/R&D funds sat at zero utilisation at FY26 close, so capacity is not the binding constraint; the real constraint on SOM delivery is M&A integration and sales-execution pace, not physical or cloud capacity)"
+methods_used:
+  - "Method 1: top-down, broad loyalty-management market, independent third-party research (MarketsandMarkets, Grand View Research, Roots Analysis, Fortune Business Insights)"
+  - "Method 2: bottom-up, software-only slice, derived from management's own <10%-of-loyalty-revenue claim and cross-checked against an independent (stale) software-specific estimate — adopted as the headline TAM"
+  - "Method 3: peer/competitor revenue aggregation, Capillary's own disclosed M&A-target tier segmentation, cross-checked against one named competitor's (Comarch) actual revenue"
+  - "Method 5: regional/geographic decomposition (Zinnov Report via UDRHP-I), including a separate India estimate"
+stale_data_flags:
+  - {datapoint: "Customer Loyalty Management Software market, $1.82B by 2030 at 8.9% CAGR (used as the software-only bottom-up cross-check)", source: "Straits Research via GlobeNewswire press release", year: 2022}
+searches_performed:
+  - "global loyalty management market size 2025 billion Mordor Grand View"
+  - "loyalty management software market size forecast 2030"
+  - "customer data platform market size 2025 global billion"
+  - "Kobie Comarch LoyaltyLion loyalty software company annual revenue 2025"
+  - "India loyalty management market size 2025 crore"
+searches_skipped:
+  - "Named private competitor (Kobie, LoyaltyLion) audited revenue beyond what surfaced in the Comarch search - both are private, no public financials found, further searching unlikely to surface filed numbers"
+  - "Standalone agentic-commerce/AI-marketing-agent software market size for aiRA - skipped, aiRA ARR ($2-2.5M) too immaterial today for a separate TAM line, treated as optionality only per B07"
+downstream_candidates:
+  - {signal: "Fortune 500/large-enterprise new-logo referrals via System Integrators and Consulting Partners (~40% of FY26 new logos)", entity_type: "counterparty", demand_link: "SI/consulting referrals feed the new-ACV pipeline that is the SAM-capture engine", likely_source: "Capillary Reg 30 filings / named partner-program announcements", cadence: "quarterly", shared: false}
+  - {signal: "US enterprise MarTech/customer-engagement software budget growth", entity_type: "macro", demand_link: "sets the ceiling on enterprise loyalty/CDP software spend Capillary sells into; ~56% of FY26 revenue is US-sourced", likely_source: "Gartner Marketing Technology / CMO Spend Survey", cadence: "quarterly", shared: false}
+  - {signal: "USD/INR and other cross-currency rates", entity_type: "macro", demand_link: "FX contributed ~6% of Q1 FY27 reported revenue growth; a stronger rupee reverses this tailwind", likely_source: "RBI reference rate / company quarterly disclosure", cadence: "quarterly", shared: false}
+  - {signal: "Named large/flagship end-customer renewal and expansion decisions (Fortune 50 US retailer $20m/5yr deal; the one large healthcare customer dragging NRR)", entity_type: "end-customer", demand_link: "top-10 concentration ~58.71% FY25 (FY26 NOT FOUND); a single non-renewal materially moves NRR and revenue", likely_source: "Reg 30 non-renewal disclosures / the customer's own investor filings", cadence: "event-driven", shared: false}
+  - {signal: "Data-privacy regulatory activity (GDPR enforcement, US state privacy laws, India DPDP Rules rollout)", entity_type: "regulatory", demand_link: "first-party-data mandates push brands from third-party ad targeting toward owned CDP/loyalty platforms, a named indirect tailwind", likely_source: "EU Data Protection Board / India MeitY DPDP notifications / US state AG offices", cadence: "event-driven", shared: false}
+  - {signal: "Enterprise generative-AI/agentic-AI adoption rate among marketing organisations", entity_type: "macro", demand_link: "drives both aiRA monetisation upside and the peer-named vibe-coding build-vs-buy substitution risk", likely_source: "Gartner / Forrester enterprise AI adoption surveys", cadence: "annual", shared: true}
+demand_externally_verifiable: true
+analyst_note: "The single most consequential judgment call in this stage is the market-definition boundary in 1A/Method 2: management's $18.2B headline is for the whole loyalty ecosystem (software+agency+rewards), while Capillary's own concall admits software is under 10% of that. Every downstream SAM/SOM/headroom number in this report uses the narrower, ~$1.0-1.3B software-only reading, which is materially more conservative than a naive read of the investor decks would produce. If a later stage instead anchors to the $18.2B or $17B Zinnov figure directly, the headroom/runway conclusions here will look far too conservative by comparison; that difference is the market-definition choice, not a data error, and should be reconciled explicitly rather than silently overridden."

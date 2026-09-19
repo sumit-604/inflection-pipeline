@@ -1,0 +1,103 @@
+stage: B09-tam
+company: "RAPPID"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "rating/ folder empty, no credit rating exists"
+  - "research/ folder empty"
+  - "one earnings call only (01-Jun-2026, NO-CONCALL MODE); no guidance history to cross-check FY27 '50% or more' claim"
+  - "peer transcripts 8 of 12; no listed pure-play marine valve maker exists in India"
+  - "SME half-yearly filer; no quarterly-granularity disclosure"
+  - "no per-valve ASP, volume, or valve-content-% of end-market capex in the corpus; Method 2 (bottom-up) NOT COMPUTABLE"
+  - "Atam Valves FY26 revenue conflicts across web sources (Rs47.30 Cr vs Rs347.29 Cr), used directionally only"
+  - "FX conversion (Rs96/USD, 18-Sep-2026 spot) is an analyst assumption; no FX rate specified anywhere in the corpus"
+  - "no rupee- or dollar-denominated Indian naval/marine valve market size exists anywhere in the corpus or in this stage's searches"
+flags:
+  - type: FLAG-MGMT-CLAIM-INCONSISTENCY
+    reason: "Management's 'huge opportunity of import substitution' claim (Investor_Presentation_1.txt p.25) is undercut by its own cited figures: India exported $2.66Bn of valves against $2.15Bn imported in 2024, a net-exporter position."
+  - type: FLAG-TAM-SOURCE-DIVERGENCE
+    reason: "India industrial valves market-size estimates diverge over 2x across named research houses (Mordor $1.56Bn vs IMARC $3.4Bn vs VMR $3.73Bn, all ~2024-25 base years) while CAGR estimates cluster tightly at 6.64-7.74%. Level uncertain, trajectory reliable."
+  - type: FLAG-CAPACITY-CONSTRAINT
+    reason: "Disclosed Rs120 Cr revenue capacity ceiling (Jun-2026 concall p.5-6) binds the SOM within 3-5 years under both base and upside scenarios; two years of management's own '50% or more' FY27 guidance sustained would hit that ceiling almost exactly (Rs53.23 x 1.5 x 1.5 = Rs119.8 Cr). No new capacity plan beyond continued automation investment (B07's 12% capex-embedded growth) exists in this corpus."
+  - type: FLAG-NAVAL-TAM-NOT-SIZEABLE
+    reason: "No company disclosure, peer disclosure, or web search performed this stage sizes the Indian naval/marine valve market in rupee or dollar terms. Carried forward from B06/06-peers.md. Marine SAM/SOM built off Rappid's own revenue and order-book trajectory, not a derived market-size figure."
+market_definition: "India-domestic industrial and marine/naval valves (ball/gate/globe/butterfly/check/double-block/strainer, 15-600mm, ferrous+non-ferrous incl. NAB) sold to oil&gas/chemicals/ethanol/water/power/EPC/marine-defence shipyard customers"
+tam_cr: {conservative: 14976, realistic: 32640}
+sam_cr: 5616
+sam_pct_of_tam: 37.5
+som_3yr_cr: 110
+som_5yr_cr: 166
+som_implied_revenue_cagr: {yr3: 27.4, yr5: 25.5}
+current_sam_share_pct: 0.95
+revenue_headroom_x: 105.5
+tam_growth_pct: 6.64
+runway_class: "MASSIVE"
+mgmt_claim_cr: 79.85
+mgmt_claim_ratio: 1.83
+mgmt_claim_read: "reasonable"
+capacity_check: "insufficient beyond yr3-4; gap of ~Rs32 Cr by yr5 (SOM base case Rs166cr vs Rs120cr disclosed ceiling + B07 12% automation uplift ~Rs134cr); capacity/capex plan is the conservative/limiting side, not the SOM"
+methods_used:
+  - "top-down (multi-source triangulation: Mordor/IMARC/VMR)"
+  - "peer revenue aggregation"
+  - "import substitution"
+  - "global benchmark (India vs China)"
+  - "bottom-up: NOT COMPUTABLE, no per-unit or valve-content-% anchor in corpus"
+stale_data_flags:
+  - {datapoint: "Global Marine Actuators & Valves market $2.8Bn(2022)->$3.6Bn(2027), CAGR 4.5-5.3%", source: "Rappid_Valves_RHP_Sep2024.txt p.140-141 / Investor_Presentation_1.txt p.26", year: 2022}
+  - {datapoint: "India industrial valves market $2.6Bn(2021)->$3.7Bn(2028), CAGR 5.2%", source: "QUESTFLOW-Concall_Jun_2024_Transcript.txt p.3", year: 2021}
+  - {datapoint: "India industrial automation market to reach USD19.3Bn by 2025", source: "Rappid_Valves_RHP_Sep2024.txt / Investor_Presentation_1.txt p.6", year: 2025}
+searches_performed:
+  - "USD INR exchange rate September 2026"
+  - "India industrial valves market size 2025 2026 CRISIL ICRA CARE valve industry India"
+  - "Mordor Intelligence India Industrial Valves Market (WebFetch)"
+  - "global marine valves actuators market size 2025 2026 forecast CAGR"
+  - "valves percentage of shipbuilding cost naval vessel piping systems share of total vessel value"
+  - "China industrial valves market size 2025 billion USD"
+  - "KSB Limited India FY26 annual revenue crore pumps valves segment"
+  - "Atam Valves Ltd revenue FY26 crore Meson Valves India revenue crore"
+  - "Meson Valves India Limited revenue FY25 FY26 crore BSE 543982"
+  - "Rappid Valves India Limited share price PE ratio NSE RAPPID"
+  - "Kirloskar Brothers valve segment revenue India L&T Valves market share industrial valves"
+searches_skipped:
+  - "dedicated IBEF capital-goods sector report query (comparable ground already covered by market-size searches above)"
+  - "valve-content-% of vessel/programme value assumption to derive an India naval TAM number - deliberately not computed, no sourced percentage exists"
+downstream_candidates:
+  - signal: "Named naval shipyards (Mazagon Dock, GRSE, Cochin Shipyard, L&T Shipbuilding)"
+    entity_type: "end-customer"
+    demand_link: "Direct source of Marine + Shipbuilding & Repair revenue, 32.85% of FY26"
+    likely_source: "Individual shipyard investor disclosures / Ministry of Defence PIB releases"
+    cadence: "quarterly"
+    shared: true
+  - signal: "Ministry of Defence capital outlay and defence-production target (Rs3 lakh Cr by 2029)"
+    entity_type: "macro"
+    demand_link: "Sets size and pace of the naval-modernisation pipeline the marine stream depends on"
+    likely_source: "Union Budget documents; PIB, Ministry of Defence"
+    cadence: "event-driven"
+    shared: false
+  - signal: "GeM portal PSU industrial-valve tender awards"
+    entity_type: "counterparty"
+    demand_link: "Primary channel for the fixed-price PSU industrial-valve revenue stream"
+    likely_source: "Government e-Marketplace (GeM) public tender/award data"
+    cadence: "event-driven"
+    shared: false
+  - signal: "US data-centre customer (NDA) contract conversion"
+    entity_type: "end-customer"
+    demand_link: "Would convert 16+ months of stalled export pipeline into recognised revenue"
+    likely_source: "Rappid's own Reg 30 / exchange filings"
+    cadence: "event-driven"
+    shared: false
+  - signal: "Praj Industries Ltd ARC repricing (~Rs10-12 Cr)"
+    entity_type: "end-customer"
+    demand_link: "Disclosed customer under active price renegotiation, near-term margin/revenue catalyst"
+    likely_source: "Praj Industries Ltd investor disclosures/concalls"
+    cadence: "event-driven"
+    shared: false
+  - signal: "Ethanol Blended Petrol Programme target and OMC ethanol-infrastructure capex"
+    entity_type: "regulatory"
+    demand_link: "Underpins the single largest FY26 revenue vertical, Ethanol/Breweries/Wastewater at 30.81%"
+    likely_source: "Ministry of Petroleum & Natural Gas / PIB releases"
+    cadence: "annual"
+    shared: false
+demand_externally_verifiable: true
+analyst_note: "mgmt_claim_ratio (1.83x) is computed per this run's explicit task instruction as FY27 guidance (50%) vs SOM_3yr CAGR (27.4%), not the generic TAM-claim-vs-conservative-TAM ratio; that TAM ratio is 2.18x (IMARC $32,640cr vs Mordor $14,976cr), reported separately in Section 2, and reflects research-house divergence more than company inflation. Capacity (Rs120-134cr ceiling), not SAM (Rs5,616cr), is the real 3-5yr constraint: two years of management's own guidance sustained hits the ceiling almost exactly. India naval/marine valve TAM in rupee terms is NOT FOUND anywhere; marine SAM/SOM rests on company revenue and order-book trajectory, not a market-size figure. Atam Valves peer revenue conflicts across web sources 7x (Rs47cr vs Rs347cr); used directionally only, not resolved."

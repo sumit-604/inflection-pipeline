@@ -15,3 +15,4 @@ Run: runs/rappid-2026-09-19 | Phase 1 executed 2026-09-19 via /step1
 | 8 | promoter | sonnet | agent default | - | - | 185080 | 9m20s | 1 |
 | 6 | peer concalls | sonnet | agent default | - | - | 178576 | 7m40s | 1 |
 | 7 | emerging moat | sonnet | agent default | - | - | 239916 | 10m16s | 1 |
+| 9 | TAM | sonnet | agent default | - | - | 178863 | 15m28s | 1 |

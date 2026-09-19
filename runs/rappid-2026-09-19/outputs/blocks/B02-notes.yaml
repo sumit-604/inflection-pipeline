@@ -1,0 +1,47 @@
+stage: B02-notes
+company: "RAPPID"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["rating/ empty (no rating exists)", "research/ empty", "one earnings call only (NO-CONCALL MODE)", "peer transcripts 8 of 12", "screener P&L/BS/CF/Quarters empty exports (Data_Sheet populated)", "SME half-yearly filer"]
+flags:
+  - {type: FLAG-CASH, reason: "Receivable days deteriorated ~82 (FY24) -> ~135 (FY25) -> ~170 (FY26) monotonically (Note 18/21, Note 36 turnover 2.71x->2.14x); inventory +65% with finished goods +93.6% on +2.1% revenue, turnover fell 3.22x->2.00x (Note 16, Note 36); GST input tax credit +68.3% YoY (Note 20) is a third, compounding drag. Zero receivables/inventory provisioning recognised against this trend."}
+accounting_quality: 4
+pass_2_empty: false
+pass_3_empty: false
+top_findings:
+  - {rank: 1, finding: "Receivable days rose ~82 -> ~135 -> ~170 (FY24-FY26), monotonic; company's own turnover ratio confirms 2.71x->2.14x", note_ref: "Note 18, Note 21, Note 36 (p.65-66, p.69)", rating: "Red Flag", why: "Direct cash-conversion evidence feeding FLAG-CASH; receivables +29% on +2.1% revenue"}
+  - {rank: 2, finding: "Inventory +65% (finished goods +93.6%) on flat revenue; turnover fell 3.22x->2.00x, largest ratio move in Note 36", note_ref: "Note 16, Note 36 (p.65, p.69)", rating: "Red Flag", why: "Compounding cash-conversion signal; explains OD/CC facility more than doubling"}
+  - {rank: 3, finding: "GST input tax credit +68.3% YoY (+Rs.133.7 Lakh), a third unquantified cash-conversion drag, linked to export-mix surge", note_ref: "Note 20 (p.65-66); cross-ref Note 21", rating: "Watch", why: "Cash increasingly parked in a GST receivable rather than converted; no recoverability status disclosed"}
+  - {rank: 4, finding: "100% of Rs.400 Lakh inorganic-growth IPO budget and Rs.364.5 Lakh unspent capex redirected to working capital via 17-Apr-2026 EGM", note_ref: "Note 32 (p.68-69)", rating: "Red Flag", why: "Acquisition pillar of the equity story abandoned exactly when cash conversion weakened; load-bearing per run brief"}
+  - {rank: 5, finding: "Directors' Report states no material change occurred in the period covering the 17-Apr-2026 EGM, while Note 32 discloses that EGM's Rs.764.51 Lakh IPO-proceeds redirection within the same window", note_ref: "Directors' Report (Material Changes section); Note 32 (p.68-69)", rating: "Red Flag", why: "Internal materiality-judgment inconsistency across two sections of the same filing"}
+  - {rank: 6, finding: "Note 32's IPO paragraph self-contradicts on year: subscription dated 2025, allotment one day later dated 2024, listing correctly dated 2024", note_ref: "Note 32 (p.68); cross-ref Note 3.5, 3.3", rating: "Red Flag", why: "Third instance of rolled-forward-boilerplate date defect (with Note 3.5, Note 35)"}
+  - {rank: 7, finding: "Note 29 FY25 comparative net deferred tax liability of Rs.0.1 Lakh does not tie to Balance Sheet/Note 7 FY25 figure of Rs.13.4 Lakh; AR FY25's own Note 29 confirms 13.4 is correct", note_ref: "Note 29 (p.67); Note 7, Balance Sheet (p.55, p.61-62)", rating: "Red Flag", why: "Real cross-year, cross-note number mismatch in a filed, audited statement"}
+  - {rank: 8, finding: "Note 37 self-contradicts on contingent liabilities: item (iii) says none exist, item (xxv) says Rs.14.62 Lakh; Note 34 discloses the same guarantee", note_ref: "Note 34, Note 37(iii)/(xxv) (p.69, p.71)", rating: "Red Flag", why: "Amount immaterial but a live contradiction inside one audited note"}
+  - {rank: 9, finding: "Note 21 unbilled-revenue roll-forward shows opening/closing balances (~Rs.53 Cr) implausible against Note 18's unbilled-debtor balance (~Rs.1.2-1.6 Cr)", note_ref: "Note 21 (p.66)", rating: "Red Flag", why: "Probable decimal/drafting error; total revenue to P&L still ties"}
+  - {rank: 10, finding: "MSME trade payables (Rs.93.7 Lakh, FY26) sit 100% in the >3-years ageing bucket both years with zero MSMED Section 16 interest recognised", note_ref: "Note 10.2, 10.3 (p.62-63)", rating: "Red Flag", why: "Reads as a static/legacy balance rather than current trade purchases"}
+  - {rank: 11, finding: "Note 3.5 misdates the CCPS redemption/equity issue as 10th July 2025 when it demonstrably occurred 10-Jul-2024", note_ref: "Note 3.5, Note 3.3, Note 4.3 (p.60-61); AR FY25", rating: "Watch", why: "First instance of the rolled-forward-text defect; numbers tie out, narrative date does not"}
+  - {rank: 12, finding: "Note 36 ratio table shows 6 ratios moving >20-25% YoY (incl. DSCR +3,800%) with zero narrative explanation, plus a likely decimal typo in the Principal-repayments row", note_ref: "Note 36 (p.69)", rating: "Watch", why: "Disclosure gap against the Schedule III explanatory-note norm the company itself adopted"}
+  - {rank: 13, finding: "P&L face shows EPS of Rs.0.1 (both years) while Note 30 computes and reconciles to Rs.12.5 FY26 / Rs.11.6 FY25", note_ref: "P&L p.55-56; Note 30 (p.67)", rating: "Watch", why: "Internal inconsistency between statement face and supporting note in the same filing"}
+  - {rank: 14, finding: "Depreciation useful-life/residual-value revision (AS 5, prospective) during the year with no quantified P&L impact disclosed", note_ref: "Note 2.6 (p.58)", rating: "Watch", why: "Cannot isolate the earnings effect of the estimate change from organic profit growth"}
+  - {rank: 15, finding: "Export incentive accounting policy exists but no export incentive income disclosed despite export revenue up 132.3%", note_ref: "Note 2.19 (p.59-60); Note 22, 21 (p.65-66)", rating: "Watch", why: "Either the company earns none, unusual for this exporter profile, or it is buried unnamed in another line"}
+red_flags:
+  - "Receivable days deteriorated monotonically ~82->135->170 over FY24-FY26 with zero doubtful-debt provisioning (Note 18/21/36)"
+  - "Inventory +65% (finished goods +93.6%) on flat revenue, turnover fell 3.22x->2.00x (Note 16/36)"
+  - "100% of the IPO acquisitions budget and unspent capex redirected to working capital via 17-Apr-2026 EGM (Note 32)"
+  - "Directors' Report 'no material changes' statement contradicts Note 32's own disclosure of the 17-Apr-2026 EGM within the same window"
+  - "Note 32's IPO paragraph self-contradicts on year (2025 subscription, 2024 allotment, one day apart)"
+  - "Note 29 FY25 deferred-tax comparative (Rs.0.1 Lakh) does not tie to Balance Sheet/Note 7 FY25 figure (Rs.13.4 Lakh)"
+  - "Note 37 self-contradicts on whether contingent liabilities exist (item iii vs item xxv)"
+  - "Note 21 unbilled-revenue roll-forward figures implausible against Note 18's unbilled-debtor balance"
+  - "MSME trade payables 100% aged >3 years both years with zero MSMED interest accrued"
+questions_for_mgmt:
+  - "What is the quantified Rupee impact of the FY26 useful-life/residual-value revision (Note 2.6) on depreciation, and on which asset classes?"
+  - "Why has zero doubtful-debt provision and no NRV write-down been recognised despite receivable days rising ~82->170 and finished-goods inventory nearly doubling over three years?"
+  - "The Directors' Report says no material change occurred in the period, yet Note 32 discloses a 17-Apr-2026 EGM redirecting Rs.764.51 Lakh of IPO proceeds including the entire acquisitions budget - does the Directors' Report need correction, and what triggered the redirection?"
+  - "What explains the Rs.93.7 Lakh MSME payable balance sitting entirely in the >3-years ageing bucket in both FY25 and FY26 with zero MSMED interest accrued?"
+  - "What changes are planned to financial-statement drafting and review controls before FY27, given the rolled-forward FY25 text (Note 3.5, Note 32, Note 35) and cross-note number mismatches (Note 29, Note 21, P&L face EPS) found in this filing?"
+receivables_trend: "deteriorating - receivable days ~82 (FY24) -> ~135 (FY25) -> ~170 (FY26), monotonic and accelerating; company's own trade receivables turnover ratio fell 2.71x -> 2.14x (Note 36, p.69); ageing >6 months rose from 7.25% to 8.34% of total (Note 18, p.65-66); zero doubtful-debt provision in either year"
+restatements_found: ["No quantified restatement disclosed; Note 37(xxi)/(xxvi) carry only generic 'regrouped/reclassified wherever necessary' boilerplate (p.70-71). The only concrete cross-note number discrepancies found (Note 29 FY25 deferred-tax comparative; Note 21 unbilled-revenue roll-forward) read as transcription/decimal errors, not disclosed restatements."]
+going_concern_language: "NONE - standard unqualified boilerplate (Note 2.16, p.59: financial statements prepared on the assumption the Company is a going concern); Auditor's Report (Rule 11(h)(xix)/CARO clause xix, p.53) affirms nothing indicates inability to meet liabilities within one year"
+analyst_note: "The standout Pass 3 finding is the Directors' Report vs Note 32 contradiction: the Report's standard subsequent-events paragraph denies any material change in a window that Note 32 itself shows contained a shareholder-approved, 25%-of-proceeds capital redirection. Combined with three separate instances of unrefreshed FY25 boilerplate text (Note 3.5, Note 32's own dates, Note 35) and three cross-note number mismatches (Note 29, Note 21, EPS face), this filing shows a first-full-post-IPO-year drafting-control weakness distinct from and additive to the evidenced cash-conversion deterioration. Neither pattern moves reported PAT; both bear on how much confidence to place in supporting schedules feeding Section 1B and FTTCP inputs downstream."

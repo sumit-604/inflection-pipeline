@@ -1,0 +1,16 @@
+company: D. P. Abhushan Ltd
+ticker: DPABHUSHAN
+cmp: 1448.0
+market_cap_cr: 3306.0
+run_date: 2026-09-19
+run_type: full
+listed_date: ""     # not printed in the corpus; screener shareholding history starts Mar-2018, so listed >3y before run_date; prospectus not expected
+concalls_available: true
+sector_cap_row: "Consumer franchise / Jewellery"   # set at /step1 Step D from section-1b chunk 05 (40x); stage 0 confirms
+sector_cap_row_guess: "Pharma / CDMO"   # keyword guess only, never consumed
+collector_warnings:
+  - "shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend."
+  - "screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance Sheet, screener:Cash Flow, screener:Customization, THANGAMAYL:Profit & Loss, THANGAMAYL:Quarters, THANGAMAYL:Balance Sheet, THANGAMAYL:Cash Flow, THANGAMAYL:Customization, SENCO:Profit & Loss, SENCO:Quarters, SENCO:Balance Sheet, SENCO:Cash Flow, SENCO:Customization. Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again."
+  - "no results PDFs yet (screener has none): add later on github or locally + --push-again"
+  - "no rating PDF yet: add later the same way"
+notes: "Main URL is screener STANDALONE (/company/DPABHUSHAN/): the /consolidated/ page stops at Mar-2022 and the company has no subsidiary (FY26 AR). Peers SENCO, PNGJL, MOTISONS (THANGAMAYL rejected: no transcripts). Collected from screener.in by collect_to_repo.py v3. sector_cap_row is deliberately empty: resolve it at stage 0 against the Section 1B cap table."

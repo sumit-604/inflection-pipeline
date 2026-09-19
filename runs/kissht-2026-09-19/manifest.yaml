@@ -1,0 +1,63 @@
+company: OnEMI Technology Solutions Ltd (Kissht)
+ticker: KISSHT
+cmp: 356.0
+market_cap_cr: 6312.0
+run_date: 2026-09-19
+run_type: full
+concalls_available: true
+sector_cap_row: "Banks / NBFCs / MFIs"
+sector_cap_row_guess: "Platform / SaaS / IT services"   # collector keyword guess, rejected by Step-1
+listed_date: "2026-05-08"
+collector_warnings:
+  - "shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend."
+  - "screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance Sheet, screener:Cash Flow, screener:Customization, POONAWALLA:Profit & Loss, POONAWALLA:Quarters, POONAWALLA:Balance Sheet, POONAWALLA:Cash Flow, POONAWALLA:Customization, UGROCAP:Profit & Loss, UGROCAP:Quarters, UGROCAP:Balance Sheet, UGROCAP:Cash Flow, UGROCAP:Customization. Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again."
+  - "no results PDFs yet (screener has none): add later on github or locally + --push-again"
+  - "no rating PDF yet: add later the same way"
+  - "only 2 concalls -> no-concall mode"
+notes: >
+  Collected from screener.in by collect_to_repo.py v3 (--dry-run), then
+  repaired by the Step-1 intake per CLAUDE.md and LESSONS.md.
+  REPAIRS APPLIED 2026-09-19:
+  (1) sector_cap_row set to "Banks / NBFCs / MFIs" (18x, P/B primary, PE
+      cross-check only; section-1b chunk 05). The collector guessed
+      "Platform / SaaS / IT services". The business is a lender: it earns
+      spread on a Rs 8,001 Cr AUM through the NBFC-ML subsidiary Si Creva.
+      Confirm the row in phase 3. Lender archetype: the framework has a
+      lender variant (P/B primary), which phase 3 must apply.
+  (2) listed_date 2026-05-08 (BSE "New Listing" filing). Within ~3 years,
+      RECENTLY-LISTED PRIORITY applies. The RHP dated 25-Apr-2026 (464 pp)
+      was downloaded from BSE into inputs/prospectus/.
+  (3) concalls_available set to TRUE, overriding the collector's
+      "only 2 concalls -> no-concall mode". The company holds calls; two
+      transcripts (Jun-2026 = Q4 FY26, Aug-2026 = Q1 FY27) are ALL the
+      calls held since the 08-May-2026 listing. Stage 5 runs on two
+      transcripts, and B00 records the short series as a gap.
+  (4) The collector's BSE fetch returned 10 of 69 filings and missed both
+      results filings. Downloaded by hand from BSE (scrip 544754):
+      inputs/results/ Q1 FY27 unaudited (29-Jul-2026) and FY26 audited
+      (27-May-2026); inputs/presentation/ Q4 FY26 deck (28-May-2026);
+      16 more material filings into inputs/announcements/ (KPI filings,
+      press releases, monitoring agency report, acquisitions, director
+      resignation, management changes, postal ballot, ESOP allotment,
+      MoA amendment, Reg 30(5)).
+  (5) Duplicates removed by MD5 (same bytes as a kept file): the AGM-notice
+      attachment (= AR), the Q1 deck from BSE (= Investor_Presentation_1),
+      two Q1 attachments (= Q1 results), the 27-May acquisition attachment
+      (= FY26 results), and one of two identical 17-Sep board outcomes.
+  (6) inputs/shareholding/BSE-shareholding-summary-Jun2026.txt: the Jun-2026
+      summary statement from the BSE shareholding API, rendered to text.
+      Category totals only; the FII/DII split sits in the detailed
+      statement, which was not fetched. Gap for the UA qualifier.
+  (7) inputs/rating/CRISIL-SiCreva-RR-2026-02-13.txt: CRISIL rating
+      rationale for Si Creva (A-/Stable, upgraded from BBB+), rendered from
+      the CRISIL HTML page. It rates the subsidiary, not the listed parent.
+  (8) Every input PDF is pre-extracted to page-marked text beside it
+      (<name>.txt, one "[page N]" marker per page). All 45 PDFs opened with
+      pypdf; none unreadable. Stages read the .txt.
+  (9) Screening: only Data_Sheet CSVs exist (KISSHT, POONAWALLA, UGROCAP).
+      SBICARD produced no screening CSV at all.
+  PEERS: SBICARD (unsecured consumer credit), POONAWALLA (digital PL
+  NBFC), UGROCAP (tech-led co-lending). Rationale in
+  step1-business-brief.md.
+  SPEAR: OVERRIDE 2026-09-19 recorded in companies/KISSHT.md per the
+  operator standing ruling of 2026-09-05.

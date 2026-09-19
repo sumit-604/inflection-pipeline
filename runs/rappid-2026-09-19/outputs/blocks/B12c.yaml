@@ -3,30 +3,45 @@ company: "RAPPID"
 run_date: "2026-09-19"
 model: "claude-opus-5"
 status: complete
-scope: "phase1 (gate0 + emoat only; valuation pending phase 3)"
-gate0: {rules_checked: 37, fails: ["G3 ROCE source-precedence: AR p.69 Note 36 ROCE FY26 14% / FY25 17% omitted and unreconciled (MAJOR)", "G22 E2 window substituted; 3-yr rule gives 69.46% -> 51.58% = -17.88pp -> 0 not 3 (MAJOR)", "G6 A3 FY22 ROE excluded, rule has no exclusion; score unchanged (MINOR)", "G30 M10 stated reason misstates loosest tier; score 0 correct (MINOR)", "G34 'may not have seen full cycle' flag absent from B01 YAML (MINOR)", "G37 FLAG-GATE0 reason mixes FY23-26 CFO with FY22-26 PAT window (MINOR)"]}
-emoat: {rules_checked: 21, fails: ["M-2 H2 documented item anchored partly to company memory (MINOR)", "M-4 F2 multiplier 0.5 applied to D-tier evidence; total 19.2 -> 19.4/19.7, band unchanged (MINOR)", "M-5 6D narrative calls C1 documented-grade; scored as claim (MINOR)", "M-9 recount 'approximately 9', UL double-counted (8 distinct), H2 scored 1.0 but omitted from recount (MINOR)", "M-12 I2 test worked for B2 only, not each claimed moat; score 0 unaffected (MINOR)", "M-14 optionality register: A3 row dropped from YAML; H1 and C2 claim-only rows absent (MINOR)"]}
-valuation: {rules_checked: 0, fails: [], note: "NOT RUN - pending phase 3"}
-expectation_ledger: {not_run: true, note: "pending phase 3", present: false, downside_row: false, all_rows_confirm_by: false, all_rows_metric_threshold: false, prob_in_range: false, decay_status_valid: false, off_ledger_credit: false, residual_pct_cmp: 0, residual_starter_cap_ok: true, fails: []}
-business_understanding_narrative: {not_run: true, note: "pending phase 3 (stage 13)", present: false, five_questions_answered: false, prose_only: false, section6_candidates_named: 0, valuation_vocab_leak: false, fails: []}
-recomputed_destination_pe: ""
-recomputed_decision: ""
-recomputed_gate0: "Final AVERAGE unchanged. E2 fix: core 65, grand 80, raw GOOD+. E2 fix + source-ROCE reading: A 13, E 14, core 63, moat 13, 3 moats MODERATE, grand 76, raw GOOD."
-recomputed_emoat: "em_score 19.2 -> 19.4-19.7 on F2 multiplier fix; MODEST unchanged under all sensitivities (floor 16.5)."
+scope: "phase 1 only (B01 Gate 0, B07 Emerging Moat). valuation, expectation_ledger, business_understanding_narrative NOT RUN, pending phase 3; their fields below are schema placeholders, not results."
+gate0:
+  rules_checked: 29
+  fails:
+    - {rule: "G03 ROCE source precedence / single basis", severity: MAJOR, claimed: "mixed series 85.4/39.5/47.7 computed + 17/14 AR-disclosed; RHP ROCE rejected for different denominator; AR denominator 'not shown'", recomputed: "AR K = H + I + DTL (AR p.69 Note 36) is the same family as RHP (Tangible NW + Total Debt + DTL, RHP p.151 note 6). Uniform source: 18.38/15.85/29.88/17/14 -> A1 3, A2 3, A4 1"}
+    - {rule: "G04 Block A total", severity: MAJOR, claimed: "13 (core 63, GT 76)", recomputed: "12 (core 62, GT 75) uniform source; 15 (core 65, moat 15, 4 moats STRONG, GT 80) uniform computed; final AVERAGE either way"}
+    - {rule: "G13 D2 formula EBIT/Interest", severity: MINOR, claimed: "7.52x AR-disclosed", recomputed: "7.27x (9.67/1.33); score 4 unchanged"}
+    - {rule: "G16 E2 3-year window", severity: MINOR, claimed: "69.46% pre-issue to 51.58%, 'approximating 3 years'", recomputed: "window is ~18 months (Sep-2024 to Mar-2026); Mar-2023 start NOT FOUND; score 0 unchanged"}
+    - {rule: "G18 M1 window, use all history", severity: MINOR, claimed: "FY23-FY26 +6.3pp", recomputed: "FY22-FY26 16.0% to 19.4% = +3.4pp; score 5 unchanged"}
+emoat:
+  rules_checked: 24
+  fails:
+    - {rule: "E02 evidence taxonomy", severity: MINOR, detail: "concall/presentation items (90+ clients call p.1; 60% repeat rate Inv. Pres. p.7) tagged [D]; inflates evidence_mix documented"}
+    - {rule: "E07 multiplier vs stated tier", severity: MINOR, detail: "A3 [D] scored at 0.5 (should be 1.0, +0.5); F2 'mixed 0.5' is not a defined multiplier (0.7-1.0, +0.2 to +0.5)"}
+    - {rule: "E08 raw score consistency", severity: MINOR, detail: "H1 'Weak' on one CMD claim scored MM=2; other Weak rows at 1; recomputed 0.7 (-0.7)"}
+    - {rule: "E12 completionist recount", severity: MINOR, detail: "'approximately 9'; UL approval double-counted (distinct 8); H2 scored at 1.0x omitted; 6D claims C1 is documented-grade, contradicting recount"}
+    - {rule: "E16 I2 test for each claimed moat", severity: MINOR, detail: "run for B2 only; A1, C1, E2, R1 not shown; score 0 likely survives"}
+    - {rule: "E20 optionality register", severity: MINOR, detail: "report 7 rows, YAML 6 (A3 row missing); H1 claim-only not registered"}
+    - {rule: "E21 6C uses injected Gate 0 block", severity: MAJOR, detail: "6C/6E show Core 68, Moat 15, GT 83, 4 moats STRONG; current B01 is Core 63, Moat 13, GT 76, 3 moats MODERATE; 6D AVERAGE survives"}
+    - {rule: "E24 catalysts_12m window", severity: MINOR, detail: "margin-recovery row '24-36m' and US contract row 'long' sit in a 12-month list"}
+valuation: {rules_checked: 0, fails: []}  # NOT RUN, pending phase 3
+expectation_ledger: {present: false, downside_row: false, all_rows_confirm_by: false, all_rows_metric_threshold: false, prob_in_range: false, decay_status_valid: false, off_ledger_credit: false, residual_pct_cmp: 0, residual_starter_cap_ok: true, fails: []}  # NOT RUN, pending phase 3; placeholder values, not findings
+business_understanding_narrative: {present: false, five_questions_answered: false, prose_only: false, section6_candidates_named: 0, valuation_vocab_leak: false, fails: []}  # NOT RUN, pending phase 3 (stage 13); placeholder values, not findings
+recomputed_destination_pe: ""  # not in phase-1 scope
+recomputed_decision: ""        # concur: Gate 0 AVERAGE, EM MODEST (18.2-19.7 recomputed range), combined AVERAGE
 findings:
-  - {id: G3, stage: B01, severity: MAJOR, rule: "ROCE: use source's own ROCE where provided", claimed: "computed ROCE FY26 18.7%, FY25 20.2%; A2=5, M3=3, 4 moats STRONG", recomputed: "AR p.69 Note 36 ROCE FY26 14%, FY25 17% -> A2=3, M3=1, 3 moats MODERATE, raw GOOD", decision_impact: "none; final AVERAGE held by deal-breaker 4"}
-  - {id: G22, stage: B01, severity: MAJOR, rule: "E2 promoter holding change over 3 years", claimed: "+0.45pp over Sep-2024 to Mar-2026 -> 3", recomputed: "69.46% pre-issue (RHP p.95) to 51.58% (AR p.60) = -17.88pp -> 0; Block E 14, core 65", decision_impact: "none; final AVERAGE unchanged"}
-  - {id: G6, stage: B01, severity: MINOR, rule: "A3 ROE closing-NW fallback", claimed: "FY22 excluded, median 27.5%", recomputed: "FY22 included, median 22.9% -> 5 unchanged", decision_impact: "none"}
-  - {id: G30, stage: B01, severity: MINOR, rule: "M10 tiers", claimed: "loosest tier needs receivable days <=10", recomputed: "loosest tier needs 2+ decline years, no receivable test; score 0 correct", decision_impact: "none"}
-  - {id: G34, stage: B01, severity: MINOR, rule: "5-6 yr data confidence flag", claimed: "flag in report only", recomputed: "flag missing from YAML flags/data_notes", decision_impact: "none"}
-  - {id: G37, stage: B01, severity: MINOR, rule: "FLAG-GATE0 reason coherence", claimed: "FY23-26 CFO -26.56 vs PAT 17.40", recomputed: "matched window PAT FY23-26 = 17.11 (screener)", decision_impact: "none"}
-  - {id: M-2, stage: B07, severity: MINOR, rule: "anchor every evidence item to a filed source", claimed: "H2 anchored to Inv. Pres. p.6 + company memory", recomputed: "drop memory anchor; deck anchor stands", decision_impact: "none"}
-  - {id: M-4, stage: B07, severity: MINOR, rule: "evidence multiplier per tier", claimed: "F2 LL x 0.5 = 0.5", recomputed: "F2 LL x 1.0 = 1.0 (D) or x 0.7 = 0.7 (M); total 19.4-19.7", decision_impact: "none; MODEST"}
-  - {id: M-5, stage: B07, severity: MINOR, rule: "claim-only category not treated as documented", claimed: "6D: C1 on documented-grade evidence", recomputed: "C1 scored and recounted as management claim", decision_impact: "none"}
-  - {id: M-9, stage: B07, severity: MINOR, rule: "completionist recount line", claimed: "approximately 9 items, 4 categories", recomputed: "8 distinct items (UL counted twice); 5 categories incl. H2 scored at 1.0", decision_impact: "none"}
-  - {id: M-12, stage: B07, severity: MINOR, rule: "I2 answered for each moat claimed", claimed: "worked for B2 only", recomputed: "A1, C1, E2, R1 not shown; score 0 unaffected", decision_impact: "none"}
-  - {id: M-14, stage: B07, severity: MINOR, rule: "optionality register carries 0-scored and claim/inference-only items in YAML", claimed: "6 YAML rows", recomputed: "add A3 (in report), H1 and C2 (claim-only)", decision_impact: "none; monitoring checklist incomplete"}
+  - {id: F1, stage: B01, severity: MAJOR, rule: "ROCE formula / source precedence (prompts/01 FORMULA DEFINITIONS)", finding: "5-year ROCE series mixes computed (FY22-24) and AR-disclosed (FY25-26) bases; RHP disclosed ROCE rejected for a denominator that AR p.69 Note 36 K (H + I + DTL) shares; report wrongly says AR denominator not shown", recomputed: "Reading 1 uniform source: A 12, core 62, moat 13 MODERATE, GT 75, raw GOOD. Reading 2 uniform computed: A 15, core 65, moat 15 STRONG, GT 80, raw GOOD+. Final AVERAGE both (deal-breaker 4)", separating_observation: "operator ruling on whether 'the data source' includes AR/RHP disclosures", decision_impact: none, rework: "stage 1"}
+  - {id: F2, stage: B01, severity: MINOR, rule: "D2 EBIT/Interest", finding: "disclosed 7.52x used over formula", recomputed: "7.27x, score 4 unchanged"}
+  - {id: F3, stage: B01, severity: MINOR, rule: "E2 change over 3 years", finding: "18-month window labelled as approximating 3 years", recomputed: "score 0 unchanged; Mar-2023 holding NOT FOUND"}
+  - {id: F4, stage: B01, severity: MINOR, rule: "pipeline rule 6 / M1", finding: "M1 on FY23-26 while FY22-26 available", recomputed: "+3.4pp FY22-26, score 5 unchanged"}
+  - {id: F5, stage: B07, severity: MINOR, rule: "stage 7 rule 2 taxonomy", finding: "concall/presentation statements tagged documented", recomputed: "no score change; evidence_mix documented overstated"}
+  - {id: F6, stage: B07, severity: MINOR, rule: "Section 5 multipliers", finding: "A3 and F2 multipliers do not match stated tiers", recomputed: "A3 1.0 (+0.5); F2 0.7-1.0 (+0.2 to +0.5)"}
+  - {id: F7, stage: B07, severity: MINOR, rule: "Section 5 L x I consistency", finding: "H1 Weak scored MM", recomputed: "0.7 (-0.7)"}
+  - {id: F8, stage: B07, severity: MINOR, rule: "completionist guard recount", finding: "approximate count, UL double-counted, H2 omitted, 6D contradicts recount on C1", recomputed: "8 distinct documented items across 5 categories scored at 1.0x; guard still passes (10 non-zero rows)"}
+  - {id: F9, stage: B07, severity: MINOR, rule: "I2 for each claimed moat", finding: "test applied to B2 only", recomputed: "score 0 likely unchanged"}
+  - {id: F10, stage: B07, severity: MINOR, rule: "optionality register", finding: "YAML omits A3 row; H1 claim-only not registered", recomputed: "n/a"}
+  - {id: F11, stage: B07, severity: MAJOR, rule: "6C uses injected Gate 0 block", finding: "stale round-1 Gate 0 values (68/15/83, 4 STRONG) in 6C and 6E", recomputed: "63/13/76, 3 MODERATE per current B01 (subject to F1 resolution); 6D AVERAGE unchanged", decision_impact: none, rework: "stage 7 sections 6C, 6E"}
+  - {id: F12, stage: B07, severity: MINOR, rule: "catalysts_12m", finding: "24-36m and 'long' windows inside the 12-month list", recomputed: "move to 6A / register"}
 critical_count: 0
 major_count: 2
 minor_count: 10
-acceptance_rate: 79             # 46 / 58 = 79.3%
+acceptance_rate: 75.5             # 40 passed / 53 checked (gate0 24/29, emoat 16/24)

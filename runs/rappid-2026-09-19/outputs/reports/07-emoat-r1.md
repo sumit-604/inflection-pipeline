@@ -1,18 +1,9 @@
 # STAGE 7 — EMERGING MOAT SCAN (22 CATEGORIES): RAPPID VALVES (INDIA) LTD
-## ROUND 2 (CORRECTION RUN)
 
 Run date: 2026-09-19 | Model: claude-sonnet-5 | Taxonomy: "Emerging Competitive
 Advantages" scan (Categories A1-R1, adjusted 0-92 scale). This is NOT FTTCP.
 FTTCP is a separate analysis inside the valuation stage (Stage 11). No number
 here is reused as an FTTCP or Section 1B input; the two never share a name.
-
-This is a correction run. Round 1 (`07-emoat-r1.md`, `B07-emoat-r1.yaml`) is
-preserved unchanged. This round refreshes Section 6C/6E against the
-round-2-corrected B01 block, refreshes F2 against the round-2-corrected B05
-promise-delivery record, and works every Verifier C finding (r1 pass: M-2,
-M-4, M-5, M-9, M-12, M-14; r2 pass: F5-F12, including the MAJOR F11). A
-CORRECTIONS (ROUND 2) section at the end lists each finding's disposition.
-Changes are marked **[R2]** inline where they alter a round-1 number or claim.
 
 NO-CONCALL MODE partially applies: one earnings call is available (01-Jun-2026,
 covering H2/FY26), so F2 uses both the transcript and the capex-completion
@@ -25,8 +16,6 @@ Evidence taxonomy used throughout: [D] DOCUMENTED, [M] MANAGEMENT CLAIM,
 ---
 
 ## SECTION 1: FUTURE PRODUCT & REVENUE STREAM ANALYSIS
-
-(Unchanged from round 1; no finding touches Section 1.)
 
 ### 1A. New products / services in pipeline
 
@@ -75,8 +64,6 @@ into Section 1B without the forward evidence tested elsewhere in this run.
 ---
 
 ## SECTION 2: CAPACITY & CAPEX PIPELINE
-
-(Unchanged from round 1; no finding touches Section 2.)
 
 ### 2A. Capex programme table
 
@@ -149,13 +136,6 @@ separately dated.
 | Multi-year qualification timelines: certifications built "over the last two decades," not overnight (management framing, corroborated by the certification-year timeline on the deck: 2008-2025) | [D]/[M] | Jun-2026 call, p.1; Inv. Pres. p.22-23 |
 Time to materialise: already active (present-day moat), durability contingent on renewal.
 
-**A1 — I2 cannibalization test [R2, applied per finding M-12/F9]:** what would
-the best-resourced competitor have to destroy in its own P&L or org to match
-this? Nothing named. A competitor invests time and capital to earn the same
-type-approvals; that is an execution-lead barrier (years, capability), not a
-sacrifice of an existing pricing regime, channel, or product line. Honest
-answer: "nothing must be destroyed." I2 contribution from A1: **0**.
-
 **A2. Patent and IP pipeline — NO EVIDENCE FOUND.** No patent filings, licensing revenue, or lab partnerships disclosed anywhere in this corpus. AR explicitly: "Your Company has not acquired any technologies during the year under review" (AR p.41).
 
 **A3. Process innovation — WEAK**
@@ -163,18 +143,7 @@ answer: "nothing must be destroyed." I2 contribution from A1: **0**.
 |---|---|---|
 | Automation investment (VMCs, automated test benches, PMI/X-ray testing) reduces manual variance | [D] | AR p.15; Jun-2026 call p.1 |
 | No yield disclosure, no unit-cost trend, no waste-to-value claim | — | NOT FOUND |
-Impact plausible but unquantified; scored weak, not moderate. **[R2, finding
-M-4/F6 addressed, NOT APPLIED]**: Verifier C flagged the 🔍 0.5 multiplier as
-inconsistent with the [D]-tagged capex fact. Re-reading the rule: the
-multiplier should reflect the evidence quality of the *category's scored
-claim*, not only its cheapest supporting fact. The scored claim here is
-"automation drives process innovation" — the automation spend is documented,
-but the causal link to yield/cost improvement is unquantified and rests on
-analyst inference (no yield, unit-cost, or scrap-rate disclosure exists to
-verify it). Per rule 4 ("prioritise hard evidence over promises... be
-skeptical"), the weaker link in the chain governs the multiplier. 🔍 0.5 is
-kept, not raised to 🎙️/📄. Anchor: AR p.15 (automation fact, documented);
-NOT FOUND (yield/unit-cost, the actual process-innovation claim).
+Impact plausible but unquantified; scored weak, not moderate.
 
 **A4. Product platform / modular architecture — NO EVIDENCE FOUND.** Product
 range expanded (High Performance Butterfly, large NAB Globe) but this is
@@ -203,14 +172,6 @@ initiative is not an emerging moat.
 Time to materialise: already active; durability tied to certification renewal
 and continued shipyard relationships, not a one-time unlock.
 
-**B2 — I2 cannibalization test [round 1, unchanged]:** applying the test to
-this scan's strongest single moat claim: a competitor does not have to
-destroy any part of its own P&L, pricing regime, or product line to compete
-for the same PSU tenders — it has to invest years and capital to get
-certified, which is an execution-lead barrier (time and capability), not a
-configuration the competitor's own economics would need to sacrifice. Honest
-answer: "nothing must be destroyed." I2 contribution from B2: **0**.
-
 **B3. Supply chain network effect — NO EVIDENCE FOUND.** Rappid is a
 manufacturer inside a supply chain, not an aggregator or platform connecting
 third-party suppliers and buyers.
@@ -221,23 +182,13 @@ third-party suppliers and buyers.
 | Evidence | Type | Anchor |
 |---|---|---|
 | Annual Rate Contract (ARC) with Praj Industries, Rs 13-14 Cr/year recurring, supplying 75+ distilleries under an approved-make status | [M] | Jun-2026 call, p.18 |
-| Repeat-customer rate: 60% per Inv. Pres. p.7 **[R2, retagged M — finding M-2/F5]** vs "almost 75%" per CMD, Jun-2026 call p.17 [M] — unreconciled (confirmed inconsistency, B04 flag) | [M]/[M] | Inv. Pres. p.7; Jun-2026 call p.17 |
-| 90+ clients, 65 "most active" **[R2, retagged M — finding M-2/F5: a concall statement, per rule 2, not a documented filing figure]** | [M] | Jun-2026 call, p.1 |
+| Repeat-customer rate: 60% per Inv. Pres. p.7 [D] vs "almost 75%" per CMD, Jun-2026 call p.17 [M] — unreconciled (confirmed inconsistency, B04 flag) | [D]/[M] | Inv. Pres. p.7; Jun-2026 call p.17 |
+| 90+ clients, 65 "most active" | [D] | Jun-2026 call, p.1 |
 | Valve automation (actuator integration) as a cross-sell attached to base valve orders | [D] | AR p.13; Inv. Pres. p.12 |
 No AMC/installed-base recurring-service revenue disclosed; no ERP/workflow
 integration claim. Scored moderate on the strength of the ARC + repeat-rate
 evidence, capped there by the unreconciled repeat-rate figure and absence of
-quantified wallet-share trend. **Category evidence base is now 1 documented
-item (AR-cited actuator cross-sell) plus 3 management-claim items; the 🎙️ 0.7
-multiplier already used in Section 5 is unchanged and is now the correct
-tier on every item, not just the dominant one.**
-
-**C1 — I2 cannibalization test [R2, applied per finding M-12/F9]:** what
-would a competitor have to destroy to match Rappid's Praj ARC and repeat-buyer
-base? Nothing named in this corpus — a rival would need to win the same
-tender/ARC cycle on price and delivery, which is competition, not a sacrifice
-of an existing cost structure, channel, or product line. Honest answer:
-"nothing must be destroyed." I2 contribution from C1: **0**.
+quantified wallet-share trend.
 
 **C2. Customer concentration improving — WEAK**
 | Evidence | Type | Anchor |
@@ -260,8 +211,7 @@ No ML, data-accumulation, or platform-transaction claims anywhere in the corpus.
 **E1. Geographic first-mover — NO EVIDENCE FOUND.** Presence in 19 states and
 5 countries is disclosed, but no land-bank, logistics-advantage, or
 "first-mover" claim is made or evidenced; multiple Indian valve makers serve
-the same PSU shipyards (KSB, Atam, Quest Flow, per company memory — weighed
-as context, not anchored evidence).
+the same PSU shipyards (KSB, Atam, Quest Flow per company memory's peer set).
 
 **E2. China+1 beneficiary — MODERATE**
 | Evidence | Type | Anchor |
@@ -274,14 +224,6 @@ The growth is real and documented; the largest single opportunity (US bulk
 contract) remains unconverted after 16+ months (see optionality register).
 Scored moderate, not strong, on that basis.
 
-**E2 — I2 cannibalization test [R2, applied per finding M-12/F9]:** would a
-Chinese or domestic competitor have to destroy anything in its own P&L to
-match Rappid's export/China+1 positioning? Not shown in this corpus — the
-barrier here is a certification-and-relationship lead (UL approval, direct
-customer relationship), an execution lead a competitor can close with time
-and capital, not a configuration sacrifice. Honest answer: "nothing must be
-destroyed." I2 contribution from E2: **0**.
-
 **FAMILY F — TALENT & ORGANISATIONAL**
 
 **F1. Talent density — NO EVIDENCE FOUND.** No R&D headcount, PhD/specialist
@@ -290,25 +232,17 @@ equity shares under Employee's Stock Options scheme" (AR p.42). This is a
 confirmed B01 gap (no R&D expenditure disclosure in any provided document).
 
 **F2. Execution moat — WEAK, and the injected promise-delivery record argues
-against a moat framing. [R2 — B05 refreshed: promise_delivery now 1
-delivered / 2 partial / 2 missed, not 1/1/3.]**
+against a moat framing.**
 | Evidence | Type | Anchor |
 |---|---|---|
 | Capex broadly delivered on the stated near-term timeline (VMCs, test benches ordered and delivered/expected within weeks of announcement across three separate updates) | [D] | 09-Mar-2026 BU; Jun-2026 call p.1; 10-Jul-2026 GBU |
-| **Injected B05 promise-delivery record (round-2 corrected): 1 delivered, 2 partial, 2 missed of 5 gradable promises.** The 50% volume CAGR guidance (Feb-2025) MISSED at +2.1% FY26 actual; the foundry backward-integration promise was MISSED/ABANDONED via postal ballot resolved 30-Apr-2026; capex completion by June 2025 was PARTIAL (Rs 364.5 Lakh of the IPO plant-and-machinery object stayed unutilised through FY26 and was redirected to working capital); a Jul-2025 "further acceleration" claim was PARTIAL (Q2 FY26 genuinely accelerated +47.8% QoQ) before a 24.9% H2 FY26 revenue decline reversed it; the quarterly-update commitment (Jun-2026 call) was DELIVERED on schedule. Credibility grade: **C**, excuse pattern "external-blame-heavy." | [D] | B05-concall.yaml, promise_delivery block (round 2) |
+| **Injected B05 promise-delivery record: 1 delivered, 1 partial, 3 missed of 5 gradable promises.** The 50% volume CAGR guidance (Feb-2025) missed at +2.1% FY26 actual; the foundry backward-integration promise was abandoned; a Jul-2025 "further acceleration" claim was followed by a 24.9% H2 FY26 revenue decline. Credibility grade: **C**, excuse pattern "external-blame-heavy." | [D] | B05-concall.yaml, promise_delivery block |
 | Revenue-per-employee, ramp speed post-commissioning: not disclosed in a form that supports a trend read | — | NOT FOUND |
 This is scored weak, and the write-up is explicit that capex-timing delivery
 and revenue-guidance delivery point in opposite directions for the same
 management team. An "execution moat" claim resting only on the capex side
 while ignoring the guidance-delivery record would be exactly the kind of
-one-sided credit the completionist guard exists to catch. **[R2, finding
-M-4/F6 addressed, APPLIED]**: the round-1 evidence-quality tag "🎙️/📄 mixed,
-0.5" is not a defined multiplier (the rubric has only 1.0/0.7/0.5). Both
-listed evidence rows are [D] (capex-timing facts from Reg 30/AR; the injected
-B05 record itself is a documented data block, not a live spoken claim).
-Corrected multiplier: 📄 1.0. Raw score is unchanged (LL = 1, reflecting low
-likelihood this becomes a durable moat and low differentiating impact even if
-it did); adjusted score moves from 0.5 to **1.0** (+0.5).
+one-sided credit the completionist guard exists to catch.
 
 **FAMILY G — FINANCIAL & STRUCTURAL**
 
@@ -328,35 +262,21 @@ directly blocks credit here.
 
 **FAMILY H — ECOSYSTEM & EXTERNAL**
 
-**H1. Industry consolidation beneficiary — WEAK [R2, raw score corrected —
-finding F7]**
+**H1. Industry consolidation beneficiary — WEAK**
 | Evidence | Type | Anchor |
 |---|---|---|
 | CMD claim that recent defence-market entrants have exited: "People who have entered last year, whatever orders we have lost, they're not bidding for any more orders...they realize the entire cumbersome nature of this business" | [M] | Jun-2026 call, p.28 |
 No named competitor exits, no anti-dumping or compliance-cost regulation
 cited. Plausible, unverified beyond the CMD's own framing — scored weak.
-**[R2, finding F7 addressed, APPLIED]**: round 1 scored this raw MM = 2, the
-same raw value as E2 (Moderate), while every other Weak-labelled row in this
-scan (A3, C2, F2, H2) is scored at raw = 1. A single, unverified,
-uncorroborated CMD claim with no named exits and no third-party confirmation
-supports low likelihood, not medium; the potential impact if true (fewer
-competitors bidding) is plausibly medium. Corrected raw: LM = 1, consistent
-with the category's own Weak label and with every other Weak row in this
-scan. Adjusted score moves from 1.4 to **0.7** (-0.7).
 
-**H2. Strategic partnerships — WEAK [R2, anchor corrected — finding
-M-2/F5]**
+**H2. Strategic partnerships — WEAK**
 | Evidence | Type | Anchor |
 |---|---|---|
-| Maharashtra Defence and Aerospace Venture Fund invested Rs 5 Cr (2023), a government-linked defence-sector fund taking an equity stake pre-listing | [D] | Inv. Pres. p.6 (Milestones) |
+| Maharashtra Defence and Aerospace Venture Fund invested Rs 5 Cr (2023), a government-linked defence-sector fund taking an equity stake pre-listing | [D] | Inv. Pres. p.6 (Milestones); company memory |
 No subsequent joint venture, technology-licensing, or board-representation
 evidence in this run's window; the investment itself is nearly 3 years old
 and pre-dates the marine mix-shift's acceleration. Scored weak: a real
-validation signal, not an active operating partnership. **[R2]**: the
-round-1 anchor cited "Inv. Pres. p.6 (Milestones); company memory". Company
-memory is weighed, never anchored evidence (CLAUDE.md); the memory citation
-is dropped. The deck anchor alone carries this item and the score is
-unaffected (already 📄 1.0 on the deck fact alone).
+validation signal, not an active operating partnership.
 
 **H3. ESG moat — NO EVIDENCE FOUND (negative disclosure).** AR explicitly:
 "Your Company has not carried any activities relating to the conservation of
@@ -373,24 +293,16 @@ Part (a) of the I1 test (unusual-capability class) is not evidenced; the
 claim would be a hiring/management-quality story at best, which the framework
 explicitly scores 0.
 
-**I2. Cannibalization barrier — NO EVIDENCE FOUND (score 0 by design). [R2,
-finding M-12/F9 addressed, APPLIED]** Round 1 worked this test for B2 only.
-The rule requires the test run "for each moat claimed anywhere in this scan."
-It is now worked inline for every Strong/Moderate category above (A1, B2, C1,
-E2) and for R1 below; all five give the identical honest answer — "nothing
-must be destroyed," an execution lead rather than a configuration a
-competitor's own economics would need to sacrifice. Aggregate I2
-contribution across every moat claimed in this scan: **0**. The category
-score of 0 stands, now on a complete rather than a single-example basis.
+**I2. Cannibalization barrier — NO EVIDENCE FOUND (score 0 by design).**
+Applying the test to the strongest moat claimed in this scan (B2, qualification
+lock-in): a competitor does not have to destroy any part of its own P&L,
+pricing regime, or product line to compete for the same PSU tenders — it has
+to invest years and capital to get certified, which is an execution-lead
+barrier (time and capability), not a configuration the competitor's own
+economics would need to sacrifice. The honest answer is "nothing must be
+destroyed"; per the framework's own rule this scores 0, not partial credit.
 
 **R1. Regulatory & policy tailwinds — see Section 4.**
-
-**R1 — I2 cannibalization test [R2, applied per finding M-12/F9]:** the
-tailwind (defence budget, domestic-procurement reservation, Maritime India
-Vision) is available to every qualified domestic supplier; no competitor
-sacrifices anything in its own P&L or org to access it. Honest answer:
-"nothing must be destroyed" — and this is precisely why Section 4C classes
-R1 as shared, not exclusive. I2 contribution from R1: **0**.
 
 ### Section 3 summary table
 
@@ -403,14 +315,14 @@ R1 as shared, not exclusive. I2 contribution from R1: **0**.
 | B1 | Backward integration/RM security | No (reversed) | D | None | — |
 | B2 | Qualification lock-in | Yes | D | Strong | Active now |
 | B3 | Supply chain network effect | No | — | None | — |
-| C1 | Customer ecosystem | Yes | M | Moderate | Active now |
+| C1 | Customer ecosystem | Yes | M/D | Moderate | Active now |
 | C2 | Customer concentration improving | Partial | M | Weak | Ongoing, unquantified |
 | D1 | Proprietary data asset | No | — | None | — |
 | D2 | Digital platform | No | — | None | — |
 | E1 | Geographic first-mover | No | — | None | — |
 | E2 | China+1 beneficiary | Yes | D/M | Moderate | 12-24m for full conversion |
 | F1 | Talent density | No | — | None | — |
-| F2 | Execution moat | Partial (mixed record) | D | Weak | — |
+| F2 | Execution moat | Partial (mixed record) | D/D | Weak | — |
 | G1 | War chest | No (reversed) | D | None | — |
 | G2 | WC improvement trajectory | No (reversed) | D | None | — |
 | H1 | Industry consolidation beneficiary | Partial | M | Weak | — |
@@ -420,35 +332,26 @@ R1 as shared, not exclusive. I2 contribution from R1: **0**.
 | I2 | Cannibalization barrier | No | — | None | — |
 | R1 | Regulatory/policy tailwinds | Yes | D | Moderate-Strong (shared with sector) | Multi-year, already underway |
 
-**Count with Strong/Moderate evidence: 5** (A1, B2, C1, E2, R1). C1 is
-🎙️-grade (management-claim dominant); A1, B2, E2, R1 are 📄-grade.
+**Count with Strong/Moderate evidence: 5** (A1, B2, C1, E2, R1).
 
-**Completionist guard check [R2, finding M-9/F8 addressed, APPLIED — exact
-count, no double-count, H2 included].** 📄 documented items recount, by
-category, with the UL Approval (Reg 30, 16-Oct-2025) counted once, under A1,
-and not counted a second time under E2:
-- A1 — 3 items: ClassNK type approval, UL approval, API/DNV/IBR certification
-  cluster (AR p.16; Reg 30, 16-Oct-2025).
-- B2 — 2 items: approved-vendor list across 6+ shipyards, four dated FSS work
-  orders (AR p.1; Reg 30, 29-May/08-Jun/15-Jun/13-Aug-2026).
-- E2 — 1 item: export revenue growth table (AR Note 21, p.64-65). The UL
-  Approval that also supports this row is counted once, under A1.
-- H2 — 1 item: Maharashtra Defence and Aerospace Venture Fund investment
-  (Inv. Pres. p.6).
-- R1 — 2 items: defence budget figures, capital outlay figures (AR p.21-22).
-
-**📄 recount performed: 9 distinct documented evidence items across 5
-categories** (A1, B2, E2, H2, R1). C1's strongest evidence (the Praj ARC, the
-repeat-customer rate, the client count) is 🎙️ management claim throughout,
-not independently quantified in the AR — it is correctly excluded from this
-📄 recount. Total categories scored Strong/Moderate is 5, inside the 3-6 base
-rate. Guard passed; no force-fitting detected.
+**Completionist guard check.** 📄 documented items recount, by category:
+A1 — ClassNK type approval, UL approval, API/DNV/IBR certifications (AR p.16;
+Reg 30, 16-Oct-2025); B2 — approved-vendor list across 6+ shipyards plus four
+dated FSS work orders (AR p.1; Reg 30, 29-May/08-Jun/15-Jun/13-Aug-2026); E2 —
+export revenue growth table (AR Note 21); R1 — defence budget and capital
+outlay figures (AR p.21-22). That is **4 categories carrying at least one 📄
+item**; C1's strongest evidence (the Praj ARC, the repeat-customer rate) is
+🎙️ management claim, not independently quantified in the AR. **📄 recount
+performed: approximately 9 distinct documented evidence items across 4
+categories** (A1: 3 items: ClassNK, UL, API/DNV/IBR cluster; B2: 2 items:
+vendor list, 4 work orders; E2: 2 items: export revenue table, UL approval;
+R1: 2 items: defence budget, capital outlay). Total categories scored
+Strong/Moderate is 5, inside the 3-6 base rate. Guard passed; no
+force-fitting detected.
 
 ---
 
 ## SECTION 4: REGULATORY & POLICY TAILWINDS (Category R1)
-
-(Unchanged from round 1.)
 
 ### 4A. Regulatory approvals in pipeline
 
@@ -473,7 +376,7 @@ Source for all: AR p.21-23 (MD&A Global/Indian Economic Overview, Industry
 Structure); Inv. Pres. p.26-27 (Industry Overview). None of these are PLI-type
 schemes with a company-specific enrolment step; they are demand-side sector
 tailwinds available to every qualified domestic valve/marine supplier,
-including the peer set (KSB, Atam Valves, Quest Flow Controls, per company
+including the peer set (KSB, Atam Valves, Quest Flow Controls per company
 memory).
 
 ### 4C. Regulatory moat assessment
@@ -495,53 +398,42 @@ Scoring: raw score from likelihood × impact (HH=4, HM/MH=3, HL/MM/LH=2,
 ML/LM=1, LL=1, no evidence=0), multiplied by evidence quality (📄 1.0x,
 🎙️ 0.7x, 🔍 0.5x). 23 rows (22 categories + R1); ceiling 92 (23 × 4.0).
 
-**[R2] Two rows corrected from round 1**: F2 (multiplier 0.5 → 1.0, finding
-M-4/F6) and H1 (raw MM=2 → LM=1, finding F7). Net change: +0.5 -0.7 = -0.2.
-
 | # | Category | Raw (L×I) | Evidence quality | Adjusted score | I1/I2 flag |
 |---|---|---|---|---|---|
-| A1 | Rare manufacturing capability | HH = 4 | 📄 1.0 | **4.0** | I2 worked [R2]: 0 |
+| A1 | Rare manufacturing capability | HH = 4 | 📄 1.0 | **4.0** | — |
 | A2 | Patent/IP pipeline | none = 0 | — | 0.0 | — |
 | A3 | Process innovation | ML = 1 | 🔍 0.5 | 0.5 | — |
 | A4 | Product platform | none = 0 | — | 0.0 | — |
 | B1 | Backward integration | none = 0 (reversed) | — | 0.0 | — |
-| B2 | Qualification lock-in | HH = 4 | 📄 1.0 | **4.0** | I2 worked: 0 |
+| B2 | Qualification lock-in | HH = 4 | 📄 1.0 | **4.0** | — |
 | B3 | Supply chain network effect | none = 0 | — | 0.0 | — |
-| C1 | Customer ecosystem | HM = 3 | 🎙️ 0.7 | 2.1 | I2 worked [R2]: 0 |
+| C1 | Customer ecosystem | HM = 3 | 🎙️ 0.7 | 2.1 | — |
 | C2 | Customer concentration improving | LM = 1 | 🎙️ 0.7 | 0.7 | — |
 | D1 | Proprietary data asset | none = 0 | — | 0.0 | — |
 | D2 | Digital platform | none = 0 | — | 0.0 | — |
 | E1 | Geographic first-mover | none = 0 | — | 0.0 | — |
-| E2 | China+1 beneficiary | MM = 2 | 📄 1.0 | 2.0 | I2 worked [R2]: 0 |
+| E2 | China+1 beneficiary | MM = 2 | 📄 1.0 | 2.0 | — |
 | F1 | Talent density | none = 0 | — | 0.0 | — |
-| F2 | Execution moat | LL = 1 | 📄 1.0 **[R2, was "mixed, 0.5"]** | **1.0** [R2, was 0.5] | — |
+| F2 | Execution moat | LL = 1 | 🎙️/📄 mixed, 0.5 | 0.5 | — |
 | G1 | War chest | none = 0 (reversed) | — | 0.0 | — |
 | G2 | WC improvement trajectory | none = 0 (reversed) | — | 0.0 | — |
-| H1 | Industry consolidation beneficiary | LM = 1 **[R2, was MM=2]** | 🎙️ 0.7 | **0.7** [R2, was 1.4] | — |
+| H1 | Industry consolidation beneficiary | MM = 2 | 🎙️ 0.7 | 1.4 | — |
 | H2 | Strategic partnerships | LM = 1 | 📄 1.0 | 1.0 | — |
 | H3 | ESG moat | none = 0 (negative) | — | 0.0 | — |
 | I1 | Talent asymmetry | none = 0 | — | **0.0** | I1: not fired, both legs absent |
-| I2 | Cannibalization barrier | none = 0 | — | **0.0** | I2: not fired for any of A1/B2/C1/E2/R1, "nothing must be destroyed" [R2, extended] |
-| R1 | Regulatory/policy tailwinds | HM = 3 | 📄 1.0 | 3.0 | I2 worked [R2]: 0 |
-| **Total** | | | | **19.0** [R2, was 19.2] | I1/I2 contribution: **0.0 of 19.0** |
+| I2 | Cannibalization barrier | none = 0 | — | **0.0** | I2: not fired, "nothing must be destroyed" |
+| R1 | Regulatory/policy tailwinds | HM = 3 | 📄 1.0 | 3.0 | — |
+| **Total** | | | | **19.2** | I1/I2 contribution: **0.0 of 19.2** |
 
-**em_score = 19.0 (round to 19 for the block; unchanged from round 1's
-rounded figure of 19). Classification: 12-24 → MODEST MOAT DEVELOPMENT
-(unchanged).**
+**em_score = 19.2 (round to 19 for the block). Classification: 12-24 →
+MODEST MOAT DEVELOPMENT.**
 
-No threshold crossing occurs via I1/I2 points in this run (all five worked
-rows score 0); this name does not enter the operator's I1/I2 review-checkpoint
-list.
+No threshold crossing occurs via I1/I2 points in this run (both scored 0);
+this name does not enter the operator's I1/I2 review-checkpoint list.
 
 ---
 
 ## OPTIONALITY REGISTER
-
-**[R2, finding M-14/F10 addressed, APPLIED]**: round 1's report table had 7
-rows but the YAML block carried only 6 (the A3 row was dropped). Two more
-rows now added — H1 (rests only on one 🎙️ claim) and C2 (rests only on 🎙️
-claims) — meeting the rule's scope test ("scored 0 or rest only on 🎙️/🔍
-evidence"). Both report and YAML now carry all 9 rows.
 
 | Optionality (one line) | Converting 📄 evidence | Where it first appears | Conversion window |
 |---|---|---|---|
@@ -552,8 +444,6 @@ evidence"). Both report and YAML now carry all 9 rows.
 | Backward integration / foundry acquisition (closed option, listed for completeness) | A renewed acquisition announcement with a named target | Reg 30 board-meeting outcome | Low probability; the RHP object was formally abandoned 17-Apr-2026 |
 | Talent asymmetry (I1) documentation | Named inventor on a patent filing, or AR disclosure of technical (non-family) hires paid above sector norm | Patent database (Espacenet/ipindia.gov.in, outside this container) / future AR remuneration annexure | Not scheduled; would require a first patent filing to exist |
 | Process-innovation quantification (A3) | A disclosed yield, unit-cost, or scrap-rate metric | Future AR or investor deck | Not scheduled; company has not disclosed this metric type to date |
-| **[R2 add] Industry-consolidation beneficiary (H1), currently one unverified CMD claim** | Named competitor exit filing, MCA strike-off record, or a third-party industry report corroborating exits | Reg 30 business update / concall / industry press | Not scheduled; contingent on a future disclosure that has not appeared in this run's corpus |
-| **[R2 add] Customer-concentration improvement (C2), currently qualitative only** | Disclosed top-5/top-10 customer revenue-share trend, before and after | Future AR customer-concentration note or investor deck | Not scheduled; no such disclosure exists to date |
 
 ---
 
@@ -588,58 +478,38 @@ evidence"). Both report and YAML now carry all 9 rows.
 | E2 (China+1 beneficiary) | The single largest opportunity (US bulk contract) has already slipped 16+ months without a signature | A fourth consecutive quarter passing with no signed contract |
 | R1 (regulatory tailwind) | Shared with every qualified domestic competitor; provides no differentiation on its own | A peer's order-win rate rising faster than Rappid's on the same tailwind |
 
-### 6C. Combined Gate 0 + Emerging Moat table **[R2, refreshed per finding F11, MAJOR]**
-
-Round 1 quoted a stale, round-1 B01 block (Core 68, Moat 15, Grand Total 83,
-4 confirmed moats STRONG). Verifier C's F11 finding confirmed this was never
-refreshed after B01's own round-2 correction. This table now reads the
-CURRENT injected B01 block (B01-gate0.yaml, round 2).
+### 6C. Combined Gate 0 + Emerging Moat table
 
 | | Gate 0 (backward) | Emerging Moat (forward) |
 |---|---|---|
-| Core/raw score | Core 63, Moat 13, Grand Total 76 **[R2, was Core 68, Moat 15, GT 83]** | em_score 19.0 (of 92 ceiling) **[R2, was 19.2]** |
-| Existing moat count | 3 confirmed, class MODERATE **[R2, was 4 confirmed, STRONG]** | 5 categories Strong/Moderate (A1, B2, C1, E2, R1) — unchanged |
-| Classification | **AVERAGE** (capped by Block B deal-breaker: cumulative CFO/PAT = -1.46x, FY22-26; Block B = 0/20) — unchanged | **MODEST MOAT DEVELOPMENT** (12-24 band) — unchanged |
+| Core/raw score | Core 68, Moat 15, Grand Total 83 | em_score 19.2 (of 92 ceiling) |
+| Existing moat count | 4 confirmed, class STRONG | 5 categories Strong/Moderate (A1, B2, C1, E2, R1) |
+| Classification | **AVERAGE** (capped by Block B deal-breaker: cumulative CFO/PAT = -1.46x, FY22-26; Block B = 0/20) | **MODEST MOAT DEVELOPMENT** (12-24 band) |
 
-B01's own round-2 correction (its A2/M3 ROCE re-basis to the AR's Note 36
-disclosed figures, and its E2 promoter-holding window fix) lowered the raw
-backward footing from GOOD+ to GOOD and the moat class from STRONG to
-MODERATE, but did not change the final AVERAGE classification: deal-breaker 4
-(cumulative CFO/PAT ratio) was already binding and stays binding under every
-reading B01's own verifier audit tested. The forward side (this stage) is
-unaffected by that correction; only the backward column changes.
-
-### 6D. Combined classification **[R2, C1 tier language corrected — finding M-5/F8]**
+### 6D. Combined classification
 
 **AVERAGE.** Backward is AVERAGE, not GOOD or GOOD+, and it is capped there
 by a mechanical deal-breaker (Block B = 0/20), not by a soft judgment call.
 Forward is MODEST, not STRENGTHENING or EXPANSION. The special transition
 setups this operation hunts — AVERAGE-or-GOOD backward paired with
 EXPANSION forward — require the forward score to clear at least the 25-39
-STRENGTHENING band, and this name does not (19.0 of 92, or roughly 21% of
+STRENGTHENING band, and this name does not (19.2 of 92, or roughly 21% of
 ceiling). The reasoning is not that the marine/naval mix-shift is fake: 5
-categories score Strong/Moderate in this scan (A1, B2, C1, E2, R1). Four of
-those five (A1, B2, E2, R1) carry 📄-grade evidence; the fifth, C1, is
-🎙️-grade (management claim, scored and recounted accordingly at the 0.7
-multiplier, not at 1.0) **[R2, was misstated in round 1 as "5 categories
-score Strong/Moderate on 📄-grade evidence"]**. This mix is still a genuine,
-evidenced climb in qualification and certification breadth. But the same
-root cause that caps Gate 0 — cash conversion — also caps three categories
-here outright (B1, G1, G2 all score 0 on reversed/negative findings), and a
-fourth (H1, corrected this round to raw LM=1) and fifth (F2) score weak
-specifically because the underlying evidence does not support a stronger
-read once B05's promise-delivery record is applied. A combined read of HIGH
-POTENTIAL or TURNAROUND would require either the backward score to clear
-GOOD+ or the forward score to clear STRENGTHENING; neither condition is met
-this run, and both readings B01's own verifier tested for the ROCE-basis
-question keep the backward score at GOOD or below.
+categories score Strong/Moderate on 📄-grade evidence (A1, B2, C1, E2, R1),
+which is a genuine, evidenced climb of the Section 3G qualification ladder.
+But the same root cause that caps Gate 0 — cash conversion — also caps three
+categories here outright (B1, G1, G2 all score 0 on reversed/negative
+findings), and a fourth (F2) scores weak specifically because the
+promise-delivery record argues against crediting execution as a moat. A
+combined read of HIGH POTENTIAL or TURNAROUND would require either the
+backward score to clear GOOD+ or the forward score to clear STRENGTHENING;
+neither condition is met this run.
 
-### 6E. Final output card **[R2, existing-moat count refreshed per finding F11]**
+### 6E. Final output card
 
 **Moat evolution map (existing → emerging, by family):**
-- Existing (Gate 0, 3 confirmed moats, MODERATE **[R2, was "4 confirmed
-  moats, STRONG"]**): not itemised in this stage (B01 is the authority);
-  this scan's job is the forward layer only.
+- Existing (Gate 0, 4 confirmed moats, STRONG): not itemised in this stage
+  (B01 is the authority); this scan's job is the forward layer only.
 - Emerging, Family A (Product & Technology): certification-driven rare
   capability (A1, Strong) is the one genuinely forward-shifting item; A2-A4
   show no evidence.
@@ -647,8 +517,8 @@ question keep the backward score at GOOD or below.
   the second pillar of the whole thesis; B1 is a closed/reversed option, B3
   absent.
 - Emerging, Family C (Customer): moderate embedding (C1) via the Praj ARC
-  and repeat-customer base, entirely on 🎙️-grade evidence; concentration
-  data (C2) is too thin to score beyond weak.
+  and repeat-customer base; concentration data (C2) is too thin to score
+  beyond weak.
 - Emerging, Family E (Geographic/Access): export growth (E2) is real and
   documented but unconverted on its largest single opportunity.
 - Emerging, Family R (Regulatory): a large, real, but sector-wide tailwind
@@ -657,14 +527,10 @@ question keep the backward score at GOOD or below.
   particular carry **negative** findings (cash conversion, ESG) that this
   scan is required to report as NO EVIDENCE FOUND rather than paper over.
 
-**Catalysts to watch, next 12 months [R2, list narrowed per finding F12 —
-two rows moved out of the 12-month field, both remain covered above/in the
-optionality register]:** FSS shipset execution (H1/H2 FY27), H1 FY27 growth
-run-rate vs. the "50% or more" guidance, Praj ARC repricing, executable
-order-book conversion into recognised revenue. The US bulk-contract
-resolution (already 16+ months delayed; see optionality register) and the
-EBITDA margin recovery (24-36m, see 6A) are real catalysts but do not clear a
-12-month window and are carried outside `catalysts_12m` accordingly.
+**Catalysts to watch, next 12 months:** FSS shipset execution (H1/H2 FY27),
+US bulk-contract resolution, Praj ARC repricing, H1 FY27 growth run-rate vs.
+the "50% or more" guidance, EBITDA margin recovery as the low-margin carried
+book executes. Full list in `catalysts_12m` below.
 
 **Biggest risk to the emerging moats:** the qualification-lock-in and rare-
 capability moats (A1, B2) are real but do not by themselves fix the cash-
@@ -677,42 +543,6 @@ FY23-FY26. This is not a hypothetical: it is B01's single most load-bearing
 finding, restated here because two of this scan's five Strong/Moderate
 categories (B2, C1) rely on the same PSU-shipyard relationship that produces
 the receivable-day problem.
-
----
-
-## CORRECTIONS (ROUND 2)
-
-Every finding named in the task brief is addressed below with its
-disposition. Where the r1 audit (`12c-verifier-c-phase1-r1.md`) and the later
-audit (`12c-verifier-c-phase1.md`) named the same underlying issue under two
-IDs, both IDs are listed together.
-
-| Finding(s) | Rule | Round-1 issue | Disposition | Detail |
-|---|---|---|---|---|
-| M-2 / F5 | Stage 7 rule 2, evidence taxonomy | Concall/presentation statements ("90+ clients" call p.1; 60% repeat rate Inv. Pres. p.7) tagged [D]; H2 anchor partly cited "company memory" | **APPLIED** | C1's two items retagged [M] (Section 3, C1 table). H2 anchor now reads "Inv. Pres. p.6 (Milestones)" only; company-memory citation dropped. Neither retag moves a score (C1 was already scored at the 🎙️ 0.7 tier; H2 was already scored at 📄 1.0 on the deck fact alone). |
-| M-4 / F6 (F2 part) | Section 5, evidence-quality multiplier must match stated tier | F2 used "🎙️/📄 mixed, 0.5" — not a defined multiplier | **APPLIED** | Both F2 evidence rows are [D]. Multiplier corrected to 📄 1.0. Adjusted score 0.5 → 1.0 (+0.5). |
-| M-4 / F6 (A3 part) | Section 5, evidence-quality multiplier must match stated tier | A3's listed fact is [D] but scored at 🔍 0.5 | **NOT APPLIED** | Kept at 🔍 0.5. Reasoning: the scored claim is "automation drives process innovation," not merely "automation capex occurred." The capex fact is documented; the process-innovation effect (yield, unit cost) is undisclosed and unverifiable, an analyst inference. Per rule 4 (skepticism default, hard evidence over promise), the weaker link in the causal chain governs the multiplier. Anchor for the documented leg: AR p.15. Anchor for the missing leg: NOT FOUND (no yield/unit-cost/scrap-rate disclosure anywhere in the corpus). |
-| M-5 / F8 (narrative part) | Section 5/6D, a 🎙️-only category must not be described as 📄-grade | 6D stated "5 categories score Strong/Moderate on 📄-grade evidence (A1, B2, C1, E2, R1)"; C1 is 🎙️-grade | **APPLIED** | 6D corrected to state 4 of 5 (A1, B2, E2, R1) are 📄-grade and the fifth (C1) is 🎙️-grade, scored at the 0.7 multiplier. Section 3 summary table's "Type" column for C1 corrected from "M/D" to "M". |
-| M-9 / F8 (recount part) | Section 3, completionist recount line must state an exact count | "approximately 9…across 4 categories"; UL Approval double-counted (A1 and E2); H2 (scored at 📄 1.0) omitted | **APPLIED** | Recount redone precisely: 9 distinct 📄 items across 5 categories (A1: 3, B2: 2, E2: 1 with UL counted once under A1, H2: 1, R1: 2). Section 3 and YAML `completionist_recount` both updated. |
-| M-12 / F9 | Stage 7 Family I rule, I2 test "for each moat claimed anywhere in this scan" | Test worked for B2 only | **APPLIED** | I2 test now worked inline for A1, C1, E2, and R1 (in addition to B2). All five give "nothing must be destroyed"; I2 aggregate contribution stays 0, now on a complete rather than single-example basis. |
-| M-14 / F10 | Optionality register scope: any row scored 0 or resting only on 🎙️/🔍 evidence, report and YAML must match | YAML omitted the report's A3 row; H1 (🎙️-only) and C2 (🎙️-only) met the test and were absent from both | **APPLIED** | A3 row restored to YAML. H1 and C2 rows added to both report table and YAML. Register now carries 9 rows in both artifacts. |
-| F7 | Section 5, raw L×I score must be internally consistent with the category's own strength label | H1 labelled "Weak" but scored raw MM=2, the same raw as Moderate-labelled E2; every other Weak row scored raw=1 | **APPLIED** | H1 raw corrected to LM=1 (single unverified, uncorroborated CMD claim = low likelihood; plausible medium impact if true). Adjusted score 1.4 → 0.7 (-0.7). |
-| F11 (MAJOR) | Stage 7 Section 6C, "combined Gate 0 + Emerging Moat table using the INJECTED Gate 0 block" | 6C and 6E carried the stale round-1 B01 values (Core 68, Moat 15, GT 83, 4 moats STRONG) after B01 was corrected to Core 63, Moat 13, GT 76, 3 moats MODERATE | **APPLIED** | 6C table and 6E "existing" bullet refreshed to the current B01-gate0.yaml (round 2): Core 63, Moat 13, Grand Total 76, 3 moats confirmed, class MODERATE, classification AVERAGE. 6D's combined AVERAGE call is unaffected — it survives under every ROCE-basis reading B01's own verifier tested. |
-| F12 | YAML schema, `catalysts_12m` is a 12-month list | Two rows carried windows outside 12 months ("24-36m" margin-recovery row; "long" US-contract row) | **APPLIED** | Both rows removed from `catalysts_12m`. The margin-recovery item remains in 6A (24-36m timeline, unchanged). The US bulk-contract item remains in the optionality register (unchanged). `catalysts_12m` now carries 4 rows, all within a 12-month window. |
-| (task instruction, not a numbered finding) | B05 promise-delivery record refresh | F2 and its flag cited the round-1 B05 figure (1 delivered, 1 partial, 3 missed) | **APPLIED** | F2 evidence table and `FLAG-EMOAT-EXECUTION-RECORD` updated to the round-2 B05 figure (1 delivered, 2 partial, 2 missed of 5 gradable promises); credibility grade C is unchanged. |
-
-**Items named in the audits but outside this task's scope, left unresolved
-here by design:** the two B01 MAJOR findings (G3 ROCE source-precedence, G22
-E2 window) are Stage 1's rework items, not Stage 7's; this stage reads
-whatever B01 block is injected and has done so (6C now matches the current
-B01 block exactly). If B01 is corrected again on the ROCE-basis operator
-ruling, 6C's moat-count and classification cells must be re-read against the
-new B01 block in a future round.
-
-**Net numeric effect of this round's corrections on the scorecard:** em_score
-19.2 → 19.0 (F2 +0.5, H1 -0.7). Rounded block value stays 19. Classification
-band unchanged: MODEST MOAT DEVELOPMENT (12-24). Combined assessment
-unchanged: AVERAGE.
 
 ---
 
@@ -748,9 +578,8 @@ unchanged: AVERAGE.
   falling cash balance, worsening working-capital days, no ESG activity),
   not merely an absence of evidence. This is the same root cause B01 names
   as the run's single most load-bearing fact. Downstream stages should not
-  read the em_score of 19.0 in isolation from this counterweight.
-- **FLAG-EMOAT-EXECUTION-RECORD [R2, updated to the round-2 B05 figures]**:
-  F2 (execution moat) is scored weak specifically because the injected B05
-  promise-delivery record (1 delivered, 2 partial, 2 missed of 5 gradable
-  promises; credibility grade C, excuse pattern external-blame-heavy) argues
-  against crediting capex-timing delivery as a broader execution moat.
+  read the em_score of 19.2 in isolation from this counterweight.
+- **FLAG-EMOAT-EXECUTION-RECORD**: F2 (execution moat) is scored weak
+  specifically because the injected B05 promise-delivery record (1
+  delivered, 1 partial, 3 missed; credibility grade C) argues against
+  crediting capex-timing delivery as a broader execution moat.

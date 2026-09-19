@@ -23,3 +23,7 @@ Run: runs/rappid-2026-09-19 | Phase 1 executed 2026-09-19 via /step1
 | 1 | gate 0 (Verifier C correction) | sonnet | agent default | - | - | 101624 | 5m31s | 2 |
 | 5 | concall (Verifier B correction) | sonnet | agent default | - | - | 231280 | 8m46s | 2 |
 | 6 | peer concalls (Verifier B/D correction) | sonnet | agent default | - | - | 147339 | 8m40s | 2 |
+| 12b | verifier B (round 2) | opus | agent default | - | - | 183483 | 6m14s | 2 |
+| 12c | verifier C (round 2, phase 1 scope) | opus | agent default | - | - | 135214 | 6m18s | 2 |
+| 12d | verifier D (round 2) | sonnet | agent default | - | - | 255099 | 5m10s | 2 |
+| 7 | emerging moat (B01/B05 refresh, Verifier C correction) | sonnet | agent default | - | - | 167104 | 11m14s | 2 |

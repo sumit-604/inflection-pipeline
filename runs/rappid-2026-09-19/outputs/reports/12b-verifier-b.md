@@ -1,144 +1,143 @@
-# STAGE 12 VERIFIER B: CONCALL RED FLAGS, RAPPID (Rappid Valves (India) Ltd)
+# Stage 12 Verifier B: Concall Red Flags, Rappid Valves (India) Ltd (RAPPID)
 
-Run date: 2026-09-19. Model: claude-opus-5. Mode: NO-CONCALL MODE (manifest
-concalls_available: false). The audit runs on the only company call
-(01-Jun-2026, FY26 results) plus the written communication record: Reg 30
-business updates, results PDFs, the FY26 AR (Chairman's Message, MD&A), the
-IPO variation filings and the order disclosures.
+Run date: 2026-09-19. Model: claude-opus-5. Fresh context. Independent audit.
 
-## Inputs and coverage
+Mode: NO-CONCALL MODE (manifest concalls_available: false). One company call exists:
+Concall_Jun_2026_Transcript.txt (01-Jun-2026, inaugural H2/FY26 call, CMD Gaurav Dalal the only
+management speaker). I read it in full (31 pages). I also read the communication sources that stand
+in for the missing transcripts: the 27-May-2026 results PDF (pp.8-9 notes, cash flow, IPO table), the
+13-Nov-2025 results, the 01-Feb-2025, 03-Jul-2025, 16-Oct-2025, 09-Jul-2026 and 10-Jul-2026 business
+updates, the 09-Mar-2026 deck, the 24-Mar-2026 postal ballot notice, the 30-Mar-2026 corrigendum, the
+30-Apr-2026 scrutinizer report, and targeted greps of Annual_Report_2026.txt. Peers: targeted greps
+across all 8 peer transcripts plus full reads of the KSB Mar-2026 passages on LPG, commodity risk and
+PVC. Transcript page cites use the transcript's own [page N] markers.
 
-- Company transcript: Concall_Jun_2026_Transcript.txt. Read in full (pages 1 to 31).
-- Written communication, read in full: 01Feb2025 QIA business update; 03Jul2025, 16Oct2025 business updates;
-  09Jul2026 and 10Jul2026 (revised) Q1 FY27 updates; 09Mar2026 business-update deck; 21Mar2026 board outcome
-  (IPO object variation); 16Jan2026 and 19Jan2026 clarification letters; the four work-order filings (29May, 08Jun,
-  15Jun, 13Aug 2026).
-- Read in targeted sections: 27May2026 FY26 results (p.8 to p.10 notes, balance sheet lines); 13Nov2025 H1 FY26 results
-  (p.3 statement); 24Mar2026 postal ballot notice (p.18 reasons); 30Mar2026 corrigendum; 30Apr2026 scrutinizer report;
-  Annual_Report_2026.txt (Chairman's Message p.6 to p.7, capacity page p.15, MD&A p.23 to p.25); CS filings 01Mar2025,
-  28Feb2026, 07Mar2026.
-- Peer transcripts (8 of the 12 the rubric expects; the pipeline input set holds 8). Read by targeted search plus
-  context reads, not cover to cover: KSB Mar-2026 (p.9 to p.10), KSB Aug-2026 (p.20 to p.26), with keyword sweeps over all
-  four KSB calls, the three ATAM calls and the QUESTFLOW (Meson Valves) call. Coverage of the peer set is therefore
-  partial. Peer items below are limited to what those reads surfaced.
-- Pipeline artifacts audited: outputs/reports/05-concall.md and outputs/reports/06-peers.md (B06 YAML embedded).
-
-Basis notes. Revenue figures are standalone, Rs Lakh, from the results PDFs. Rs Cr = Rs Lakh / 100.
-FY26 EBITDA is Rs 10.31 Cr (AR 2026, Chairman's Message p.6). FY26 PAT is Rs 647.8 L (27May2026 results p.8).
-On revenue of Rs 5,323.3 L, the EBITDA margin is 19.4% and the PAT margin is 12.17%.
+Audited artifacts: outputs/reports/05-concall.md (round 2) and outputs/reports/06-peers.md (round 2).
+I did not read any earlier verifier output.
 
 ---
 
-## PART 1: INDEPENDENT RED-FLAG LIST (graded before comparison)
-
-Anchors use: CC = Concall_Jun_2026_Transcript.txt, page; GD = Gaurav Dalal (CMD).
+## 1. Independent red-flag list (from the sources alone, graded before comparison)
 
 | # | Item | Anchor | Severity |
 |---|---|---|---|
-| F1 | The Feb-2025 guidance of 50% volume CAGR for FY26 and FY27 missed. FY26 revenue grew 2.1% (Rs 5,212.5 L to Rs 5,323.3 L). GD claims "we were on track". H1 FY26 revenue grew 46.9% (Rs 1,961.6 L to Rs 2,882.2 L), so that claim holds for H1 only. H2 FY26 fell 24.9% (Rs 3,250.9 L to Rs 2,441.1 L). | 01Feb2025 GBU p.2 "Volume CAGR Target: 50% CAGR in FY 2026 and FY 2027"; CC p.5 GD; 27May2026 results p.8; 13Nov2025 results p.3 | MAJOR |
-| F2 | GD restates FY27 growth as "closing to 50% or more" (CC p.10). He then retreats under analyst extrapolation: "If I overcommit and underperform, that's a problem" (CC p.14). Deepanshu Bhatia later says "you are right now not very clearly telling us the next 2 or 3 years" (CC p.26). The FY26 AR does not repeat the figure. | CC p.10, p.14, p.26; AR 2026 (no "50%" hit) | MAJOR |
-| F3 | IPO object variation. The full unutilised Rs 764.51 L is moved to working capital: Rs 364.51 L of unspent plant-and-machinery capex plus Rs 400 L for acquisitions. The Feb-2025 "advanced talks to acquire a Pune-based foundry" is abandoned. The notice gives a reason for the acquisition balance only. It gives none for the unspent capex balance. | 01Feb2025 GBU p.1; 21Mar2026 board outcome Annexure I p.2; 24Mar2026 notice p.18; CC p.22 to p.23 | MAJOR |
-| F4 | Capex figure and funding contradict the filings. Asked for FY26 capex, GD says "around 3.65 crores", then "No, no, no, no, one second" and moves the answer to email (CC p.12). Rs 3.65 Cr matches the unspent IPO capex balance (Rs 364.51 L), not capex spent. Audited FY26 capex is Rs 179.4 L (27May2026 results p.10). GD says current capex is funded by "a working capital loan from our bankers" (CC p.22). The IPO capex money was at the same time moved to working capital. This is a live misstatement of a use-of-proceeds number, plus a circular funding swap. | CC p.12, p.22; 27May2026 results p.10; 21Mar2026 Annexure I | MAJOR |
-| F5 | The written working-capital explanation conflicts with the call. The FY26 results note says the rise "reflects business expansion and execution of higher order volumes". Revenue grew 2.1%. GD says Rs 10 Cr of finished material sat undispatched in March, pending a price revision (CC p.6). Inventory rose Rs 1,050.5 L. CFO was an outflow of Rs 1,082.6 L. The same note says the IPO completed "during the financial year" (it completed in FY25). | 27May2026 results p.9 to p.10; CC p.5 to p.6 | MAJOR |
-| F6 | Working-capital stress stated plainly. GD says "Currently, no working capital is enough" (CC p.21). The company pays 50% advances to all suppliers (CC p.16). It will seek funding "down the line 4 or 5 months" (CC p.20, p.25). GD calls it an "extremely capital-intensive manufacturing business" (CC p.25). The bank limit is Rs 23 Cr (CC p.21). ST borrowings rose from Rs 841.4 L to Rs 1,784.3 L (27May2026 results p.8). | CC p.16, p.20 to p.21, p.25 to p.26; results p.8 | MAJOR |
-| F7 | US data-centre customer. The Oct-2025 filing says the valves "underwent extensive testing at the customer's laboratory", received UL approval and "will be exclusively manufactured and exported". In Jun-2026, GD says the company still waits for lab results on 10 valves, "prices to revisit", with no bulk contract. He says the process is "barely from last one year". | 16Oct2025 GBU p.2; CC p.9, p.20, p.27 | MAJOR |
-| F8 | Capacity arithmetic stays unreconciled: 85% utilisation, "well equipped up to 120 crores", FY26 revenue Rs 53.23 Cr (CC p.5, p.11). The unit-capacity figure also moves: 29,625 units (09Mar2026 deck p.3) to 33,500 units at 85% (AR 2026 p.15). | CC p.11; 09Mar2026 deck p.3; AR p.15 | MAJOR |
-| F9 | The order-book definition shifts between statements. 1-Jun: "42 crores = 33 PO + 8.5 LOI". Also on 1-Jun: "carry-forward 20, 22 + fresh 18 to 20", and "80% of the order booking has been concluded" (CC p.5, p.7). BHEL's Rs 18.05 Cr came on 15-Jun. The 9-Jul update reports "executable ~Rs 40 Cr" plus "~Rs 11 Cr confirmations". The disclosures do not reconcile the 42 + 18.05 inflow less June execution to that 40 + 11. | CC p.5 to p.7, p.17; 15Jun2026 work order; 09/10Jul2026 GBU | MAJOR |
-| F10 | The tender pipeline disappears without an outcome. The Oct-2025 update cites "total bid worth INR 119 Crores on GEM Portal where result is awaited". The Mar-2026 deck shows "Tender Quoted ₹90 Crores". On the call, PSU bids are "around 40-50 crores", with "8-10 crores" awarded (CC p.26). No filing reports what happened to the Rs 119 Cr. | 16Oct2025 GBU p.1; 09Mar2026 deck p.3; CC p.26 | MAJOR |
-| F11 | Single-customer concentration. Praj alone gives "13 to 14 crores" a year (CC p.12, p.18), which is 24% to 26% of FY26 revenue. Its ARC was still under price renegotiation on 1-Jun. The Feb-2025 update said the ARC would "ensure continuous flow of orders". The AR's largest vertical is ethanol, breweries and wastewater at 30.81%, above shipbuilding and repair at 24.51%. | CC p.12, p.18, p.22; 01Feb2025 GBU p.1; AR p.23 | MAJOR |
-| F12 | Volunteered negative. The Rs 20 to 22 Cr carried-forward book goes out at low margin, because PSU orders carry no escalation (CC p.15). GD: "a 10 crore order can flip to a 3-4 crore loss" (CC p.16). | CC p.15 to p.16 | MAJOR |
-| F13 | Rs 10 to 12 Cr of finished goods held back from a private shipyard to force a price revision (CC p.5 to p.6). This carries customer-dispute risk. The AR repeats the figure. | CC p.5 to p.6; AR p.23 | MINOR |
-| F14 | Within-call inconsistency on escalation clauses. On p.6: "no PSU units ... any price variation" and the private-shipyard order still needs a revision. On p.16: "we have put a price escalation clause" for later private shipsets. The analyst flags the conflict (p.16). | CC p.6, p.16 to p.17 | MINOR |
-| F15 | Narrative drift on exports and data centres. GD: "I am not trying to focus on export market as of now" (CC p.10). The company earlier commissioned a 6,000 sq ft export-dedicated unit (16Oct2025 GBU p.4). GD had "not scouted for any, in India, for data centers" (CC p.28). Three months later the AR says "We also intend to pursue emerging opportunities in data-centre cooling" (AR p.24). | CC p.10, p.28; 16Oct2025 GBU p.4; AR p.24 | MINOR |
-| F16 | The same small capex keeps slipping and changing count. Mar-2026: a VMC plus 4 test benches, "installed ... 10th March 2026 and ... 25th March 2026". Jun-2026: 2 VMCs plus 5 benches "within the next 25 days", also given as "7 new machines", Rs 1.25 Cr. Jul-2026: 2 VMCs plus 6 benches, "POs placed and advances released". Aug-2026 AR: "planned deployment of four automated test benches and a new VMC". | 09Mar2026 deck p.3; CC p.4, p.8, p.13; 09Jul2026 GBU p.2; AR p.15 | MINOR |
-| F17 | Unverifiable promotional claims. "supplying all the valves through both the shipyards for FSS" (CC p.15); filed FSS orders come via BHEL, Shree, Muller-BBM and L&T. "90% capacities [of foundries] are dedicated to Rappid" (CC p.21). "India's building more than 20 warships" and "next 20 years" (CC p.21). | CC p.15, p.21; work orders | MINOR |
-| F18 | Cluster of filing corrections: a PIT disclosure value error (16Jan2026); an NSE query on a segment discrepancy in the H1 results (19Jan2026); a corrigendum to the postal ballot notice (30Mar2026); a Q1 FY27 "Revenue from Operations" to "Sales" relabel (10Jul2026). The FY26 results note calls the variation approval an "EGM held on April 17, 2026", but the vote was a postal ballot, with results on 30Apr2026. The CS changed in Feb-2025, Feb-2026 and Mar-2026. | named filings | MINOR |
-| F19 | Margin guidance deferred: "when we connect again ... after 6 months, you'll have a better, clear picture" (CC p.13). | CC p.13 | MINOR |
-| F20 | Receivables deflection: "I would not use the word delay" (CC p.27). Receivables over 6 months stand at Rs 207.1 L, and unbilled at Rs 161.3 L (27May2026 results p.9). | CC p.23, p.27; results p.9 | MINOR |
-| F21 | Volunteered negative: new entrants took orders last year ("whatever orders we have lost", CC p.28). | CC p.28 | MINOR |
-| F22 | No raw-material hedge. Hedging "requires huge working capital ... 15-20 crores, that's not something I'm looking at" (CC p.26). The FY26 excuse therefore can repeat. | CC p.26 | MINOR |
-| F23 | Silence ahead of the miss. The order book fell from Rs 24.64 Cr (Jun-2025) to Rs 20.19 Cr (Sep-2025). The Oct-2025 update led with certifications and did not flag the decline. | 03Jul2025 GBU p.2; 16Oct2025 GBU p.1 | MAJOR |
-| P1 | Peer timing tension on the central FY26 excuse. On 17-Mar-2026, KSB treats the commodity spike as prospective: "there is a chances of the spike in commodity prices ... we are watching very carefully" (KSB-Concall_Mar_2026 p.9). By Aug-2026, KSB describes foundry increases of 12% to 15% over "last 6 months or maybe last 3 months" (KSB-Concall_Aug_2026 p.24). Rappid dates its shock to H2 FY26 (Oct-2025 to Mar-2026), and its order book was already falling by Sep-2025 (F23). [INFERENCE] Order intake weakened before the peer-dated commodity shock, so the excuse explains at most part of the H2 miss. Caveat: KSB is mainly ferrous, and Rappid's shock is non-ferrous (NAB, copper). | KSB Mar-2026 p.9; KSB Aug-2026 p.24; CC p.4 to p.5 | MAJOR |
-| P2 | Peer corroboration: KSB says its domestic project business runs "without PVC" (price-variation clause) with long deliveries (KSB Mar-2026 p.9 to p.10). This supports Rappid's no-escalation PSU claim. | KSB Mar-2026 p.9 to p.10 | MINOR |
-| P3 | Peer ballpark on content share. KSB puts pumps at "3% to 5% ... of the total value of the project", including marine and data centres (KSB Aug-2026 p.25). This is comparable to Rappid's 2% to 3% valve share of a vessel (CC p.25). | KSB Aug-2026 p.25 to p.26 | MINOR |
-| P4 | Peer corroboration of the niche. Meson: fewer than 5% of Indian valve makers are non-ferrous, and "nonferrous, they have better margins". It ran near 100% utilisation on domestic defence demand (QUESTFLOW-Concall_Jun_2024 transcript around lines 247 to 249, 316 to 318, 1076 to 1080). | QUESTFLOW Jun-2024 | MINOR |
+| 1 | Feb-2025 "50% volume CAGR FY26 and FY27" missed (FY26 revenue Rs 5,323.3 L vs Rs 5,212.5 L, +2.1%). Asked for the assumption behind it, CMD reframes: "we were on track", then pivots to held orders. The assumption question is not answered | 01-Feb-2025 GBU line 65; Concall p.5 (Prasenjit Paul Q, CMD A); 27-May-2026 results p.8 | MAJOR |
+| 2 | Multi-year growth question dodged twice. Ashish Soni asks for two years; CMD answers "closing to 50% or more" then narrows it: "I'm talking about the current year". Deepanshu Bhatia later says "you are right now not very clearly telling us the next 2 or 3 years". CMD retreats from the analyst's 70-80% extrapolation with "If I overcommit and underperform, that's a problem" | Concall p.10, p.14, p.26 | MAJOR |
+| 3 | FY26 capex stated as "around 3.65 crores", retracted at once ("No, no, no, no, one second"), never given. Audited FY26 PPE purchase Rs 179.4 L; unutilised P&M IPO balance Rs 364.5 L | Concall p.12; 27-May-2026 results cash flow ("Purchase of property, plant and equipment (179.4)") and p.9 IPO table | MAJOR |
+| 4 | CMD misstates the status of the IPO-object change. On 01-Jun-2026 he says the capex money move was "just passed [at] a board meeting", and of the Rs 4 Cr acquisition money: "we have not yet utilized. We are yet to figure out what we have to do", "reverse integration would be anything", "It is already in process". Shareholders had already approved moving both sums (Rs 764.51 L) to working capital: e-voting closed 29-Apr-2026, scrutinizer report 30-Apr-2026. The CMD-signed results of 27-May-2026 record the approval. On the call he keeps an acquisition door open that the company had formally closed | Concall p.22-23 (Shruti Malpani Q); 27-May-2026 results p.9 note; 30-Apr-2026 scrutinizer report line 65; 24-Mar-2026 notice line 915 | MAJOR |
+| 5 | Contradiction between answers to different analysts on non-ferrous pricing. To Ashish Soni: "for the non-Ferrous market, I'm not working with any PSUs. We are working with all private companies ... They are accepting the price change. So that is not a very big challenge." But the opening remarks say marine valves need nickel-aluminium bronze and gunmetal (non-ferrous) and name PSU shipyards as the customers. To Prasenjit Paul: PSU tenders carry no escalation, and Rs 10 Cr of material sits undispatched awaiting a private-shipyard price revision. To Deepanshu Bhatia: the PSU half of the Rs 20-22 Cr carry-forward gets no increase ("No, not at all") and will not earn the normal EBITDA margin | Concall p.3-4, p.5-6, p.10, p.15 | MAJOR |
+| 6 | Year-end dispatch concentration, volunteered under the receivables question: "there was a 14-15 crore of dispatch in the month of March". On the results, H2 FY26 revenue = Rs 5,323.3 L less Rs 2,882.2 L = Rs 2,441.1 L. So March carried about 57-61% of H2 revenue and about 26-28% of full-year revenue. In the same March, Rs 10 Cr of finished material was held back. Revenue timing and receivable quality both rest on one month | Concall p.6, p.23; 27-May-2026 results p.8; 13-Nov-2025 results (H1 FY26 Rs 2,882.2 L) | MAJOR |
+| 7 | Written results note says the working-capital rise "reflects business expansion and execution of higher order volumes" on +2.1% revenue. Inventory rose Rs 1,617.0 L to Rs 2,667.5 L (+Rs 1,050 L), which matches the CMD's spoken Rs 10 Cr held-back material. Receivables (Rs 1,923.2 L to Rs 2,483.2 L) the CMD ties to March dispatches. The inventory leg conflicts with the note; the receivables leg does not | 27-May-2026 results p.9; Concall p.6, p.23 | MINOR |
+| 8 | US export customer slippage. Feb-2025 "prototype"; Oct-2025 "underwent extensive testing at the customer's laboratory ... received UL Approval", with a 6,000 sq ft export unit "fully functional"; Jun-2026 still "waiting for the final results of the 10 valves", "hoping by next one month", prices "to revisit", no bulk contract. Same call: "I am not trying to focus on export market as of now" and "I have not scouted for any, in India for data centers". The 09/10-Jul-2026 Q1 update is silent on the customer | 01-Feb-2025 GBU line 49; 16-Oct-2025 GBU lines 71-82, 160-164; Concall p.9, p.10, p.20, p.27-28; 09/10-Jul-2026 GBU | MAJOR |
+| 9 | Near-dated on-call commitments not reported in the next filing. (a) Praj, about 24-26% of FY26 revenue: "they are, in fact, visiting our factory on thursday to sign the annual rate contract". (b) PSU price bids: conversions known "in next 7 to 8 days". The Q1 FY27 update of 09-Jul-2026 (revised 10-Jul-2026), five weeks later, names only the three FSS orders. It says nothing on a Praj ARC or PSU bid outcomes | Concall p.12, p.22, p.26; 09-Jul-2026 GBU p.2; 10-Jul-2026 GBU p.3 | MAJOR |
+| 10 | Capacity arithmetic unresolved. "Well equipped up to 120 crores" and 85% utilisation against Rs 53 Cr revenue. Nishita Shanklesha: "the numbers doesn't match"; answer is valve size/pressure, no reconciliation. Installed units 29,625 (Mar-2026 deck) vs 33,500 (FY26 AR), both at 85% | Concall p.5, p.8, p.11; 09-Mar-2026 deck p.3 line 89; AR lines 580-581, 1800-1801 | MAJOR |
+| 11 | Order-book figure shifts inside one call. Rs 42 Cr = Rs 33 Cr PO + Rs 8.5 Cr LOI (p.5); "In my presentation, we have mentioned 33" (p.17); "This booking has come in, in the first two months" (p.12) vs carry-forward Rs 20-22 Cr (p.7, p.14) | Concall p.5, p.7, p.12, p.14, p.17 | MINOR |
+| 12 | Acute working-capital stress, volunteered: "Currently, no working capital is enough"; 50% advances to all suppliers; more funding "down the line 4 or 5 months"; "we will definitely see some sweating"; no raw-material hedge ("blocking 15-20 crores, that's not something I'm looking at"). ST borrowings Rs 841.4 L to Rs 1,784.3 L | Concall p.16, p.20-21, p.25-26; 27-May-2026 results p.8 | MAJOR |
+| 13 | PSU receivable deflection: "I would not use the word delay ... that paper doesn't travel" | Concall p.27 | MINOR |
+| 14 | Unverifiable promotional claims: "supplying all the valves through both the shipyards for FSS"; foundries' "90% capacities are dedicated to Rappid valves"; "India's building more than 20 warships at a time"; last year's new entrants "not bidding for any more orders" | Concall p.15, p.21, p.28 | MINOR |
+| 15 | Capex equipment announced repeatedly as new. Mar-2026 deck: 4 test benches "ordered and being installed in two phases: 2 units on 10th March 2026, and balance on 25th March 2026", plus one "New VMC Machine". Jun-2026: 2 VMCs and 5 benches "within the next 25 days"; "7 new machines"; Rs 1.25 Cr. Jul-2026: "placed purchase orders and released advances" for 2 VMCs and 6 benches. FY26 AR: "four automated test benches and a new VMC machine" | 09-Mar-2026 deck lines 95-111; Concall p.4, p.6, p.8, p.13; 09-Jul-2026 GBU p.2; AR line 620 | MINOR |
+| 16 | Margin guidance deferred: "when we connect again ... after 6 months, you'll have a better, clear picture about what margin" | Concall p.13 | MINOR |
+| 17 | On-call arithmetic slips. "8.5 plus 3, 12 ... around 14 crores is from new customers" (8.5 + 3 = 11.5). Counterfactual FY26 revenue "66, 68" when held orders are Rs 10-12 Cr on Rs 53 Cr (63-65) | Concall p.14, p.17 | MINOR |
+| 18 | IPO money parked in FDs (non-current investments "56 lakh" to "4.7 Crore", confirmed by CMD) while current capex runs on a bank working-capital loan at "roughly about 8.25%" | Concall p.22, p.24 | MINOR |
+| 19 | Peer timing contradicts the LPG leg of the H2 FY26 excuse. KSB, 17-Mar-2026: the LPG/gas restriction on foundries "has started coming a bit" and "if this situation continues for some more weeks and months, then we would have issues related to our supplies of castings". Rappid blames LPG disruption for the whole H2 FY26 (Oct-2025 to Mar-2026). KSB dates its start to about March 2026, the last weeks of that half. KSB also still called the commodity spike a watch item on the same call. Rappid's order book had already fallen Rs 24.64 Cr to Rs 20.19 Cr by 30-Sep-2025 | KSB-Concall_Mar_2026_Transcript.txt [page 7] ("Page 6 of 29") lines 321-331, [page 9] ("Page 8 of 29") lines 454-459; Concall p.5; 16-Oct-2025 GBU line 30; 03-Jul-2025 GBU line 47 | MAJOR |
+| 20 | Sep-2025 order-book decline (Rs 24.64 Cr to Rs 20.19 Cr) not flagged in the 16-Oct-2025 update, which led with certifications | 03-Jul-2025 GBU line 47; 16-Oct-2025 GBU line 30 | MINOR |
+| 21 | Foundry acquisition pillar abandoned. "Advanced talks" (Feb-2025) to redirection of Rs 400 L; the reason ("unable to tap the right opportunity") appears only in the postal ballot notice | 01-Feb-2025 GBU line 41; 24-Mar-2026 notice line 915; 27-May-2026 results p.9 | MAJOR |
+| 22 | Rs 119 Cr GeM "bid worth ... result is awaited" never reported on again. It is a bid pipeline, not a delivery promise | 16-Oct-2025 GBU lines 36-37; deck lines 91-94, 118-120; Concall p.26 | MINOR |
+| 23 | FY27 "50% or more" not repeated anywhere in the FY26 AR (grep for "50%" and "closing to" returns nothing) | Annual_Report_2026.txt (no match) | MINOR |
+| 24 | Filing-correction cluster: postal-ballot corrigendum ("certain details ... incorrectly mentioned"); results note calls the approval an "EGM held on April 17, 2026", but e-voting closed 29-Apr-2026 and the scrutinizer reported 30-Apr-2026; Q1 update relabel "Revenue from Operations" to "Sales" | 30-Mar-2026 corrigendum line 22; 27-May-2026 results p.9 line 1028; 30-Apr-2026 scrutinizer line 65; 10-Jul-2026 GBU p.1 lines 31-34 | MINOR |
 
-Independent list: 27 items. Material (CRITICAL + MAJOR): 14. CRITICAL: 0. No repeated evasion across 2 or more
-quarters can be tested, because only one company call exists.
+Totals: 24 items. Material (CRITICAL + MAJOR): 12 (items 1, 2, 3, 4, 5, 6, 8, 9, 10, 12, 19, 21).
+CRITICAL: 0. No repeated evasion across 2+ calls is possible: only one call exists. The export
+slippage repeats across filings, and the pipeline caught it.
 
 ---
 
-## PART 2: COMPARISON AGAINST THE PIPELINE (B05, B06)
+## 2. Comparison against the pipeline (B05, B06)
 
-| # | Status | Where the pipeline has it / what is missing |
-|---|---|---|
-| F1 | CAUGHT | B05 2A row 1, 4D row 1, 3C row 3. B05 does not credit the 46.9% H1 FY26 growth that partly backs "we were on track" |
-| F2 | CAUGHT | B05 1B, 2C Consistency, 1C "quiet drop", 4D |
-| F3 | CAUGHT | B05 1C (foundry, capex), 2A rows 2-3, 4D row 2 |
-| F4 | MISSED | B05 does not mention the Rs 3.65 Cr misstatement and retraction, the audited Rs 179.4 L capex, or the bank-loan-for-capex against the IPO-capex-to-WC swap |
-| F5 | MISSED | B05 2D notes negative CFO only as an AR risk-table silence. It does not test the results note's "higher order volumes" explanation against +2.1% revenue and the held inventory |
-| F6 | PARTIALLY CAUGHT | B05 1B (funding "in 4 or 5 months"), 4B Q6 (advances as a peer question). Absent from the 4D red-flag table. "No working capital is enough" not quoted |
-| F7 | CAUGHT | B05 1C, 4A row 3, 4D (Medium). The Oct-2025 "testing done, exclusive" versus Jun-2026 "awaiting lab results" contradiction is implicit, not stated |
-| F8 | CAUGHT | B05 3C row 1, 4D. The unit-capacity drift (29,625 to 33,500) is not noted |
-| F9 | PARTIALLY CAUGHT | B05 3D lists each figure but does not flag that the definitions change and do not reconcile |
-| F10 | MISSED | The Rs 119 Cr GeM pipeline (Oct-2025) and its outcome appear nowhere in B05 |
-| F11 | PARTIALLY CAUGHT | B05 3D and 4A row 4 treat Praj as a repricing trigger, not as ~25% single-customer concentration under renegotiation |
-| F12 | CAUGHT | B05 4A row 5 |
-| F13 | CAUGHT | B05 4A row 1 "Kills" column |
-| F14 | PARTIALLY CAUGHT | B05 3B reports the reconciled version (PSU no, private yes) and does not name the within-call reversal |
-| F15 | MISSED | B05 1C lists domestic data centres as a dropped trigger. The AR (p.24), which B05 says it read, names data-centre cooling as intended. The export-focus contradiction is absent |
-| F16 | PARTIALLY CAUGHT | B05 2A row 2 and 1C mention repeated VMC/bench announcements. The Mar-2026 install dates and count drift are missing |
-| F17 | PARTIALLY CAUGHT | B05 3B flags "20 warships" as unverified. The FSS "all the valves" and foundry-dedication claims are not flagged |
-| F18 | PARTIALLY CAUGHT | B05 4C has the GBU relabel and CS churn. The PIT correction, NSE segment query, corrigendum and "EGM" mislabel are missing. B05 itself repeats "17-Apr-2026 EGM" |
-| F19 | CAUGHT | B05 4A row 5, 4B Q2 |
-| F20 | PARTIALLY CAUGHT | B05 4B Q1 hands this to peers. The deflection and the >6-month bucket are not flagged |
-| F21 | CAUGHT | B05 3A |
-| F22 | MISSED | Absent |
-| F23 | CAUGHT | B05 2B, 2D, 3D, 4D |
-| P1 | MISSED | B06 2B says KSB "matches the direction" of Rappid's narrative. It does not test timing |
-| P2 | MISSED | B06 Claim 1 says no peer discusses a price-escalation clause. KSB Mar-2026 does, for domestic project business |
-| P3 | MISSED | B06 Claim 4 says no peer gives a per-vessel/per-project content share. KSB Aug-2026 gives 3-5% for pumps |
-| P4 | PARTIALLY CAUGHT | B06 uses Meson's utilisation and margins. The non-ferrous scarcity point that backs Rappid's niche claim is not used |
+| # | Severity | Status | Where / what the pipeline has or lacks |
+|---|---|---|---|
+| 1 | MAJOR | CAUGHT | B05 2A row 1, 3C row 3, 4D row 1 |
+| 2 | MAJOR | CAUGHT | B05 1A row 2 ("restated under pressure as 'current year' only"), 2C Consistency, 3C row 2 |
+| 3 | MAJOR | CAUGHT | B05 3C row 4, 2D, 4D (High) |
+| 4 | MAJOR | PARTIALLY CAUGHT | B05 1C quotes the p.22-23 answer only as "a softer, less specific framing". It never says the CMD described a shareholder-approved, completed reallocation as pending and still open to "inorganic growth", one month after e-voting closed and five days after he signed the results note recording it. That is a statement-vs-filing contradiction, and B05 under-weights it |
+| 5 | MAJOR | MISSED | No B05/B06 text carries the p.10 "not working with any PSUs" non-ferrous claim. B05 3B concludes the CMD "is consistent throughout" on escalation. That holds for PSU-vs-private escalation clauses. It does not hold for the pricing risk: the p.10 claim that non-ferrous pricing is "not a very big challenge" conflicts with p.3-4, p.5-6 and p.15. This bears on trigger 5 (margin recovery) |
+| 6 | MAJOR | MISSED | No mention of the Rs 14-15 Cr March dispatch anywhere in B05/B06 (grep for "14-15" and "month of March" returns nothing). B05 3D discusses receivables but misses the year-end concentration |
+| 7 | MINOR | CAUGHT (pipeline over-weights it; see 3) | B05 2B, 2D, 4D row 4 |
+| 8 | MAJOR | CAUGHT | B05 1A, 1C, 4A row 3, 4D |
+| 9 | MAJOR | MISSED | B05 carries Praj as "still under renegotiation" (3D) and the trigger kill signal is "renegotiation stalls". It does not record the CMD's claim that the ARC would be signed that Thursday (p.22), or the "7 to 8 days" PSU price-bid claim (p.26). It does not test either against the Q1 FY27 update's silence. Praj is about a quarter of revenue, so this is thesis-relevant |
+| 10 | MAJOR | CAUGHT | B05 3C row 1, 2D, 4D |
+| 11 | MINOR | CAUGHT | B05 3D |
+| 12 | MAJOR | CAUGHT | B05 4D row 7, 3B, 2D |
+| 13 | MINOR | CAUGHT | B05 3D, 4D |
+| 14 | MINOR | CAUGHT | B05 3A, 3B |
+| 15 | MINOR | CAUGHT | B05 1C, 4D (Watch). One misread: B05 says the Mar-2026 deck shows "a VMC (2 units)". The deck's "2 units on 10th March" is the first installation phase of the 4 test benches. The deck names one "New VMC Machine" (deck lines 95-111) |
+| 16 | MINOR | PARTIALLY CAUGHT | B05 quotes "nobody likes to be at the 12% margin point" but not the six-month deferral of margin guidance |
+| 17 | MINOR | MISSED | Not noted |
+| 18 | MINOR | PARTIALLY CAUGHT | B05 4D row 3 notes bank-loan-funded capex alongside the IPO redirection. It omits the Rs 4.7 Cr FD parking and the 8.25% borrowing cost |
+| 19 | MAJOR | PARTIALLY CAUGHT | B06 2B makes the timing inference on commodities (KSB Mar-2026 p.8 "watching very carefully"). Neither B06 nor B05 uses the KSB LPG passage on the same call. B05 2A/2B accept the LPG leg of the excuse without a challenge. The LPG passage is the more direct timing test, because it names the same foundry mechanism Rappid cites |
+| 20 | MINOR | CAUGHT | B05 3D, 2D |
+| 21 | MAJOR | CAUGHT | B05 1C, 2A, 4D |
+| 22 | MINOR | CAUGHT (pipeline over-weights it; see 3) | B05 1A, 1B, 2A, 4D (High) |
+| 23 | MINOR | CAUGHT | B05 1C, 4D |
+| 24 | MINOR | CAUGHT | B05 1C, 4C, 4D |
 
-Tally: caught 10, partially caught 9, missed 8 (27 total).
-Material subset (14): caught 7 (F1, F2, F3, F7, F8, F12, F23); partially caught 3 (F6, F9, F11); missed 4 (F4, F5, F10, P1).
+Counts: caught 16, partially caught 4, missed 4.
 
-### Pipeline flags not on my list: support test
+---
+
+## 3. Pipeline flags I did not raise at the same weight (support test)
 
 | Pipeline flag | Verdict | Reason |
 |---|---|---|
-| B06 FLAG-MARGIN-CONTRADICTION ("Quest Flow 23-25% EBITDA ... roughly double Rappid's ~12%"; CMD framed 12% as "structural", "where everybody in this niche ends up") | NOT SUPPORTED as framed | (1) Basis mismatch. Rappid's 12.17% is PAT margin. Its FY26 EBITDA margin is 19.4% (AR p.6: EBITDA Rs 10.31 Cr on Rs 53.23 Cr). On a like basis the gap is 23.6-25.0% vs 19.4% EBITDA and 14.3-14.85% vs 12.17% PAT. That is about 2.5 to 5.5 points, not "double". (2) The transcript has no "structural" or "floor" framing. GD says "nobody likes to be at the 12% margin point ... We are trying to improvise our margins" (CC p.13), which is the opposite. A residual reading survives: Meson earns a few points more in the same niche. |
-| B05 4D "Jul-2025 'further acceleration' claim followed by 24.9% H2 decline" (High), 2A "MISSED" | OVERSTATED | Q2 FY26 revenue was ~Rs 17.19 Cr (H1 Rs 2,882.2 L less Q1 "sales" Rs 11.63 Cr), up from Rs 11.63 Cr in Q1. The quarter right after the claim did accelerate. H2 then fell. The correct grade is MIXED, and the tally becomes delivered 1, partial 2, missed 2. Caveat: the Q1 FY26 figure is labelled "sales" |
-| B05 2C Over-promotion evidence: "framing a 2.1% growth year as a positive surprise" | NOT SUPPORTED (quote misread) | The full sentence reads "not something that our stakeholders and shareholders would have expected, but there's a reasonable reason" (CC p.4). That is an admission of disappointment |
-| B05 2E "two analysts independently pressed the same capacity inconsistency" | OVERSTATED (minor) | Chintan Parikh asked whether 85% utilisation caused low growth (CC p.8). Only Nishita Shanklesha pressed the arithmetic (CC p.11) |
-| B05 all other 4D rows (foundry abandonment, US stall, capacity, Sep-2025 order-book decline, GBU relabel, CS churn, AR omission of FY27 figure) | SUPPORTED | Verified against the anchors above |
-| B06 Claims 1, 3 partially verified; Claims 5, 6 unverifiable | SUPPORTED | Anchors check. Minor: ATAM's capacity is stated both "per month" (Apr-2024 line 133) and "per day" (line 370 to 374). B06 uses per month without noting the conflict |
-| B06 Claim 4 "Peers silent: no per-vessel cost percentage" | PARTIALLY WRONG | KSB Aug-2026 p.25 gives 3-5% of project value for pumps (P3) |
+| B05 4D "Written FY26 results-note WC explanation conflicts with the CMD's spoken explanation (held-back undispatched material)" (High). B05 2D says the CMD attributes "the inventory and receivables build to held-back, undispatched material" | OVERSTATED | This holds for inventory only (+Rs 1,050 L, matching the Rs 10 Cr held). For receivables the CMD gives a different reason: "the reason you see high receivables is because there was a 14-15 crore of dispatch in the month of March" (Concall p.23). That fits "execution of higher order volumes". B05 misattributes the receivables leg. The real signal in that answer is the March concentration (my item 6), which B05 missed. Correct weight: Medium, inventory leg only |
+| B05 4D "Rs 119 Cr GeM tender bid pipeline never reported on" (High) | OVERSTATED (severity) | Supported as a disclosure lapse: the 16-Oct-2025 GBU lines 36-37 name it and no later filing resolves it. But it was a bid pipeline "where result is awaited", not a delivery promise. The call's "40-50 crores" PSU bid figure (p.26) may cover a different window. Medium fits better than High |
+| B05 all other 4D rows | SUPPORTED | Checked against the anchors in section 1 |
+| B06 FLAG-MARGIN-GAP-VS-NICHE-PEER | SUPPORTED, with a caveat | The QUESTFLOW figures are H2/FY24 (Jun-2024 call), about two years older than Rappid's FY26. This is a period mismatch in a commodity-shock year. B06 lists the transcript as stale in input_gaps but does not qualify the gap itself |
+| B06 2B commodity-timing [INFERENCE] | SUPPORTED | KSB Mar-2026 lines 454-459 verified verbatim |
+| B06 2E "MSME 45-day law" risk | SUPPORTED but stale | Source is ATAM Apr-2024; no 2025-26 peer restates it |
+
+pipeline_flags_not_supported: none. Two B05 flags are OVERSTATED; none is invented.
 
 ---
 
-## PART 3: PROMISE-DELIVERY SPOT CHECKS (B05 2A)
+## 4. Promise-delivery spot checks (B05 2A)
 
-| # | Promise (source) | Pipeline outcome | Check | Result |
+| # | Row | Earlier source contains the promise? | Later source shows the outcome? | Result |
 |---|---|---|---|---|
-| 1 | 50% volume CAGR FY26 (01Feb2025 GBU p.2) | MISSED | The promise is in the source. Revenue +2.1% (27May2026 results p.8). Volume data is NOT FOUND, so revenue stands in as the proxy | CONFIRMED |
-| 2 | Pune foundry acquisition (01Feb2025 GBU p.1) | MISSED / ABANDONED | Rs 400 L moved to WC (21Mar2026 Annexure I). Reason: "unable to tap the right opportunity" (24Mar2026 notice p.18) | CONFIRMED |
-| 3 | Capex completion by June 2025 (01Feb2025 GBU p.1) | PARTIAL | Rs 364.51 L unspent and moved to WC. Equipment still being ordered in Mar, Jun and Jul 2026. PARTIAL is lenient but defensible, given the Jul-2025 facility commissioning | CONFIRMED |
-| 4 | "Anticipates further growth acceleration in the forthcoming quarters" (03Jul2025 GBU p.1) | MISSED | Q2 FY26 ~Rs 17.19 Cr vs Q1 Rs 11.63 Cr: acceleration delivered. H2 FY26 -24.9% YoY. Outcome is MIXED, not MISSED | WRONG (overgraded) |
-| 5 | Quarterly business updates (CC p.30) | DELIVERED | 09Jul2026 GBU issued, revised 10Jul2026 | CONFIRMED |
+| 1 | Feb-2025 50% volume CAGR FY26: MISSED | Yes. 01-Feb-2025 GBU line 65 "Volume CAGR Target: 50% CAGR in FY 2026 and FY 2027" | Yes. Revenue Rs 5,323.3 L vs Rs 5,212.5 L (27-May-2026 results p.8) | CONFIRMED |
+| 2 | Feb-2025 foundry acquisition: MISSED/ABANDONED | Yes. Line 41 "Advanced talks to acquire a Pune-based foundry" | Yes. Rs 400 L redirected (27-May-2026 results p.9 note); reason at 24-Mar-2026 notice line 915 | CONFIRMED |
+| 3 | Jul-2025 "further growth acceleration": PARTIAL | Yes. 03-Jul-2025 GBU lines 29-31 (Q1 FY26 sales Rs 11.63 Cr) | Yes. H1 FY26 Rs 2,882.2 L (13-Nov-2025 results), so Q2 about Rs 17.19 Cr. H2 FY26 Rs 2,441.1 L vs H2 FY25 Rs 3,250.9 L (-24.9%). Basis caveat: the Q1 figure is GBU "sales"; the H1 figure is results revenue | CONFIRMED |
+| 4 | Jun-2026 quarterly updates: DELIVERED | Yes. Concall p.30 | Yes. 09-Jul-2026 GBU, revised 10-Jul-2026 | CONFIRMED |
+| 5 | Feb-2025 capex by June 2025: PARTIAL | Yes. Line 38 "Capex completion by June 2025" | Yes. "Rappid Valves 2.0" commissioned (03-Jul-2025 GBU lines 62-70); Rs 364.5 L P&M balance pending at FY26 end (27-May-2026 results p.9) | CONFIRMED |
 
-Checked 5, confirmed 4, wrong 1.
+Checked 5, confirmed 5, wrong 0. Tally caveat: B05 grades only completed cycles. The Praj ARC and
+PSU-bid commitments of 01-Jun-2026 (item 9) were due within days. They are gradable now as NOT
+REPORTED in the 09/10-Jul-2026 update, and B05 does not track them.
 
 ---
 
-## PART 4: CREDIBILITY GRADE
+## 5. Credibility grade
 
-B05 grade: C. Verifier view: concur at C. Two effects offset. The missed items push lower: the live capex misstatement (F4), the written WC explanation that contradicts the call (F5), and the pipeline figure that vanished (F10). The overgraded Jul-2025 item pushes higher, as do the H1 FY26 +46.9% print and the four filed FSS orders in Q1 FY27. Net, C holds.
+B05 grade C: concur. The three missed items (5, 6, 9) and the under-weighted item 4 all point the
+same way: management's spoken account runs ahead of its filings. Taken together they would pull
+toward the bottom of C, not below it. The two overstated flags pull slightly the other way.
 
-Operator action items (flag only, decision stays human):
-1. Put the capex-funding swap (F4) and the Rs 119 Cr pipeline outcome (F10) into the Halt 1 extraction annex. Ask the company directly.
-2. Withdraw or restate the B06 margin-contradiction flag on a like-for-like basis before it reaches FTTCP or Role 3.
-3. Correct the B05 promise tally to delivered 1, partial 2, missed 2.
+---
+
+## 6. Consolidated findings
+
+| Severity | Location | Finding |
+|---|---|---|
+| MAJOR | B05 3B, 4D, trigger 5 | MISSED: contradiction between answers to different analysts on non-ferrous pricing risk (Concall p.10 vs p.3-4, p.5-6, p.15). B05's conclusion that the CMD is "consistent throughout" is wrong on pricing risk |
+| MAJOR | B05 3D, 2D | MISSED: Rs 14-15 Cr dispatched in March 2026 (Concall p.23), about 57-61% of H2 FY26 revenue and 26-28% of FY26 revenue in one month, next to Rs 10 Cr held back |
+| MAJOR | B05 2A, 3D, 4A row 4 | MISSED: Praj ARC "sign ... on thursday" (Concall p.22) and PSU price bids in "7 to 8 days" (p.26) not reported in the Q1 FY27 update. B05 does not track these near-dated commitments |
+| MINOR | B05 1C, 2A row 3 | PARTIALLY CAUGHT, under-weighted: on 01-Jun-2026 the CMD calls the acquisition-money move pending and the acquisition search open (p.22-23), while shareholder approval closed 29/30-Apr-2026 and his own results note records it |
+| MINOR | B05 2B, B06 2B | PARTIALLY CAUGHT: the KSB 17-Mar-2026 LPG passage (lines 321-331) dates the foundry gas restriction to about March 2026. That undercuts the LPG leg of the H2 FY26 excuse. Not used |
+| MINOR | B05 2D, 4D row 4 | OVERSTATED: the CMD links receivables to March dispatches, not held material. The written-vs-spoken conflict holds for inventory only |
+| MINOR | B05 4D row 5 | OVERSTATED severity: Rs 119 Cr was a bid pipeline, not a promise; Medium, not High |
+| MINOR | B05 1C | Misread: the deck's "2 units" is the first bench installation phase, not 2 VMCs; the deck names one VMC |
+| MINOR | B05 | MISSED: on-call arithmetic slips (p.14, p.17); six-month margin-guidance deferral (p.13); IPO FD parking at Rs 4.7 Cr alongside 8.25% bank debt (p.24) |
+| MINOR | B06 flag | QUESTFLOW margin gap compares FY24 with FY26 without qualifying the period |
 
 ---
 
@@ -148,52 +147,33 @@ company: "RAPPID"
 run_date: "2026-09-19"
 model: "claude-opus-5"
 status: complete
-independent_flags_found: 27
-caught: 10
-partially_caught: 9
+independent_flags_found: 24
+caught: 16
+partially_caught: 4
 missed:
-  - {severity: "MAJOR", item: "CMD misstated FY26 capex as ~Rs 3.65 Cr then retracted; audited capex Rs 179.4 L; 3.65 Cr equals unspent IPO capex balance (Rs 364.51 L); current capex funded by bank WC loan while IPO capex money moved to WC", anchor: "Concall_Jun_2026 p.12, p.22; 27May2026 results p.10; 21Mar2026 board outcome Annexure I"}
-  - {severity: "MAJOR", item: "FY26 results note attributes WC build to 'execution of higher order volumes' while revenue +2.1% and CMD says Rs 10 Cr material held undispatched; CFO -Rs 1,082.6 L", anchor: "27May2026 results p.9-10; Concall_Jun_2026 p.5-6"}
-  - {severity: "MAJOR", item: "Rs 119 Cr GeM bid pipeline (Oct-2025) never reported on; deck shows Rs 90 Cr quoted (Mar-2026); call gives PSU bids Rs 40-50 Cr with Rs 8-10 Cr won", anchor: "16Oct2025 GBU p.1; 09Mar2026 deck p.3; Concall_Jun_2026 p.26"}
-  - {severity: "MAJOR", item: "Peer timing tension: KSB treats commodity spike as prospective in Mar-2026; Rappid dates its shock to H2 FY26 while its order book already fell by Sep-2025 [INFERENCE; ferrous-peer caveat]", anchor: "KSB-Concall_Mar_2026 p.9; KSB-Concall_Aug_2026 p.24; 16Oct2025 GBU p.1"}
-  - {severity: "MINOR", item: "Export/data-centre narrative drift: CMD 'not trying to focus on export' and 'not scouted' Indian data centres vs export-dedicated unit and AR intent to pursue data-centre cooling; B05 lists data centres as dropped", anchor: "Concall_Jun_2026 p.10, p.28; 16Oct2025 GBU p.4; AR 2026 p.24"}
-  - {severity: "MINOR", item: "No raw-material hedge; hedging needs Rs 15-20 Cr WC, so the FY26 excuse can repeat", anchor: "Concall_Jun_2026 p.26"}
-  - {severity: "MINOR", item: "KSB confirms domestic project business runs without PVC clause (corroborates Rappid PSU claim); B06 says peers silent", anchor: "KSB-Concall_Mar_2026 p.9-10"}
-  - {severity: "MINOR", item: "KSB gives 3-5% content share of project value for pumps incl. marine; B06 says no peer gives a share", anchor: "KSB-Concall_Aug_2026 p.25-26"}
-pipeline_flags_not_supported:
-  - "B06 FLAG-MARGIN-CONTRADICTION: compares Quest Flow EBITDA 23-25% with Rappid PAT 12.17% (Rappid EBITDA is 19.4%, AR 2026 p.6); CMD never framed 12% as structural (Concall p.13). Like-for-like gap is ~2.5-5.5 pts, not 'double'"
-  - "B05 2C over-promotion evidence misreads Concall p.4: 'not something ... would have expected, but there's a reasonable reason' is an admission, not a positive-surprise framing"
-  - "B05 4D/2A Jul-2025 'further acceleration' graded MISSED/High: OVERSTATED, since Q2 FY26 ~Rs 17.19 Cr vs Q1 Rs 11.63 Cr accelerated before H2 fell; correct grade MIXED"
-promise_delivery_spot_checks: {checked: 5, confirmed: 4, wrong: 1}
-credibility_grade_concur: "concur at C: missed capex, WC and pipeline items lean lower; the overgraded Jul-2025 item and the H1 FY26 +46.9% print lean higher; net C holds"
+  - {severity: "MAJOR", item: "Contradiction between answers to different analysts on non-ferrous pricing: 'not working with any PSUs' in non-ferrous and price change 'not a very big challenge' (to Ashish Soni) vs PSU shipyards as NAB/gunmetal marine customers, no PSU escalation, Rs10Cr held awaiting private revision, PSU half of Rs20-22Cr carry-forward gets no increase (to Prasenjit Paul, Deepanshu Bhatia); B05 3B wrongly concludes CMD consistent throughout", anchor: "Concall_Jun_2026_Transcript.txt p.3-4, p.5-6, p.10, p.15"}
+  - {severity: "MAJOR", item: "Year-end dispatch concentration: Rs14-15Cr dispatched in March 2026, about 57-61% of H2 FY26 revenue (Rs2,441.1L) and 26-28% of FY26 revenue, while Rs10Cr was held back the same month", anchor: "Concall p.6, p.23; 27May2026 results p.8; 13Nov2025 results (H1 FY26 Rs2,882.2L)"}
+  - {severity: "MAJOR", item: "Near-dated on-call commitments not reported in the next filing: Praj (about 24-26% of revenue) to sign ARC 'on thursday'; PSU price-bid conversions 'in next 7 to 8 days'; Q1 FY27 update silent on both", anchor: "Concall p.12, p.22, p.26; 09Jul2026 GBU p.2; 10Jul2026 GBU p.3"}
+  - {severity: "MINOR", item: "On-call arithmetic slips: '8.5 plus 3, 12 ... around 14 crores' new-customer orders; counterfactual FY26 revenue '66, 68' vs 63-65 implied", anchor: "Concall p.14, p.17"}
+pipeline_flags_not_supported: []
+promise_delivery_spot_checks: {checked: 5, confirmed: 5, wrong: 0}
+credibility_grade_concur: "concur - C holds; missed items 5, 6, 9 and under-weighted item 4 show spoken claims running ahead of filings, pulling toward the bottom of C, not below it"
 findings:
-  - {severity: "MAJOR", location: "B05 (absent)", claimed: "no capex-funding flag", source_truth: "CMD Rs 3.65 Cr vs audited Rs 179.4 L; capex on bank WC loan while IPO capex moved to WC", note: "MISSED; Concall p.12, p.22; results p.10"}
-  - {severity: "MAJOR", location: "B05 2D", claimed: "negative CFO noted only as AR risk silence", source_truth: "results note says WC build from 'higher order volumes' vs +2.1% revenue and held inventory", note: "MISSED; results p.9-10"}
-  - {severity: "MAJOR", location: "B05 3D", claimed: "pipeline not tracked", source_truth: "Rs 119 Cr GeM bids (Oct-2025) with no outcome disclosed", note: "MISSED; 16Oct2025 GBU p.1"}
-  - {severity: "MAJOR", location: "B06 2B", claimed: "KSB matches direction of Rappid commodity narrative", source_truth: "KSB treats the spike as prospective in Mar-2026; timing does not back an Oct-2025 start", note: "MISSED; inference with ferrous caveat"}
-  - {severity: "MAJOR", location: "B06 flags / Part 4", claimed: "Quest Flow margin roughly double Rappid ~12%; CMD framed 12% as structural", source_truth: "Rappid EBITDA 19.4%, PAT 12.17%; CMD said he wants to improve from 12%", note: "NOT SUPPORTED as framed; basis mismatch"}
-  - {severity: "MAJOR", location: "B05 4D", claimed: "WC stress not in red-flag table", source_truth: "'no working capital is enough', 50% supplier advances, funding need in 4-5 months, ST debt Rs 841.4 L to Rs 1,784.3 L", note: "PARTIALLY CAUGHT"}
-  - {severity: "MAJOR", location: "B05 3D", claimed: "order-book figures listed", source_truth: "definitions shift (PO/LOI/carry-forward/executable/confirmations) and do not reconcile after the BHEL Rs 18.05 Cr win", note: "PARTIALLY CAUGHT"}
-  - {severity: "MAJOR", location: "B05 3D, 4A", claimed: "Praj as repricing trigger", source_truth: "Praj Rs 13-14 Cr/yr, ~24-26% of FY26 revenue, ARC under renegotiation", note: "PARTIALLY CAUGHT; concentration unflagged"}
-  - {severity: "MINOR", location: "B05 2A row 4, 4D", claimed: "Jul-2025 acceleration MISSED (High)", source_truth: "Q2 FY26 ~Rs 17.19 Cr vs Q1 Rs 11.63 Cr; H2 -24.9%", note: "OVERSTATED; tally becomes 1/2/2"}
-  - {severity: "MINOR", location: "B05 2C", claimed: "positive-surprise framing of 2.1% growth", source_truth: "Concall p.4 admits shortfall", note: "quote misread"}
-  - {severity: "MINOR", location: "B05 2E", claimed: "two analysts pressed capacity math", source_truth: "only Nishita Shanklesha pressed the arithmetic (p.11)", note: "overstated"}
-  - {severity: "MINOR", location: "B05 1C, 2A", claimed: "17-Apr-2026 EGM", source_truth: "approval by postal ballot, results 30-Apr-2026", note: "company filing error transcribed"}
-  - {severity: "MINOR", location: "B05 1C", claimed: "domestic data-centre dropped", source_truth: "AR 2026 p.24 names data-centre cooling as intended", note: "MISSED narrative drift, with export-focus contradiction"}
-  - {severity: "MINOR", location: "B05 (absent)", claimed: "", source_truth: "no hedging; Rs 15-20 Cr WC needed to hedge", note: "MISSED; Concall p.26"}
-  - {severity: "MINOR", location: "B05 3B", claimed: "PSU no clause, private clause", source_truth: "within-call reversal p.6 vs p.16", note: "PARTIALLY CAUGHT"}
-  - {severity: "MINOR", location: "B05 1C", claimed: "repeat VMC/bench announcements", source_truth: "Mar-2026 install dates missed; counts drift 4 to 5 to 6 benches, 1 to 2 VMCs", note: "PARTIALLY CAUGHT"}
-  - {severity: "MINOR", location: "B05 3B", claimed: "20 warships unverified", source_truth: "FSS 'all the valves' and 90% foundry-dedication claims also unverifiable", note: "PARTIALLY CAUGHT"}
-  - {severity: "MINOR", location: "B05 4C", claimed: "GBU relabel, CS churn", source_truth: "also PIT correction, NSE segment query, ballot corrigendum, results-note mislabels", note: "PARTIALLY CAUGHT"}
-  - {severity: "MINOR", location: "B05 4B Q1", claimed: "PSU receivables handed to peers", source_truth: "'I would not use the word delay'; Rs 207.1 L over 6 months", note: "PARTIALLY CAUGHT"}
-  - {severity: "MINOR", location: "B06 Claim 1", claimed: "no peer discusses escalation clause", source_truth: "KSB Mar-2026 p.9-10 domestic project business without PVC", note: "MISSED corroboration"}
-  - {severity: "MINOR", location: "B06 Claim 4", claimed: "no peer gives content share", source_truth: "KSB Aug-2026 p.25 pumps 3-5% of project value", note: "MISSED"}
-  - {severity: "MINOR", location: "B06 Claim 2", claimed: "Meson margins used", source_truth: "Meson: <5% of Indian valve makers non-ferrous, non-ferrous better margins", note: "PARTIALLY CAUGHT; niche corroboration unused"}
+  - {severity: "MAJOR", location: "B05 3B, 4D, trigger 5", finding: "MISSED non-ferrous pricing contradiction between answers to different analysts (Concall p.10 vs p.3-4, p.5-6, p.15); B05 'consistent throughout' conclusion wrong on pricing risk"}
+  - {severity: "MAJOR", location: "B05 3D, 2D", finding: "MISSED Rs14-15Cr March dispatch concentration (Concall p.23), about 57-61% of H2 FY26 revenue"}
+  - {severity: "MAJOR", location: "B05 2A, 3D, 4A row 4", finding: "MISSED Praj ARC 'sign on thursday' (p.22) and PSU bids '7 to 8 days' (p.26) claims, unreported in the 09/10-Jul-2026 Q1 FY27 update"}
+  - {severity: "MINOR", location: "B05 1C, 2A row 3", finding: "PARTIALLY CAUGHT: CMD calls acquisition-money redirection pending and the acquisition search open on 01-Jun-2026 (p.22-23) though e-voting closed 29-Apr-2026 and his signed 27-May-2026 results note records the approval; B05 reads it only as a 'softer deflection'"}
+  - {severity: "MINOR", location: "B05 2A/2B, B06 2B", finding: "PARTIALLY CAUGHT: KSB 17-Mar-2026 LPG passage (lines 321-331) dates the foundry gas restriction to about March 2026, undercutting the LPG leg of the H2 FY26 excuse; unused"}
+  - {severity: "MINOR", location: "B05 2D, 4D row 4", finding: "OVERSTATED: CMD ties receivables to March dispatches (p.23), not to held material; written-vs-spoken WC conflict holds for inventory only (+Rs1,050L); High should be Medium"}
+  - {severity: "MINOR", location: "B05 4D row 5", finding: "OVERSTATED severity: Rs119Cr GeM figure was a bid pipeline 'where result is awaited', not a promise; Medium, not High"}
+  - {severity: "MINOR", location: "B05 1C", finding: "Misread: 09-Mar-2026 deck '2 units on 10th March' is the first bench installation phase, not 2 VMCs; deck names one 'New VMC Machine'"}
+  - {severity: "MINOR", location: "B05", finding: "MISSED/PARTIAL minor items: arithmetic slips (p.14, p.17); six-month margin-guidance deferral (p.13); IPO FD parking Rs4.7Cr alongside 8.25% bank debt (p.22, p.24)"}
+  - {severity: "MINOR", location: "B06 FLAG-MARGIN-GAP-VS-NICHE-PEER", finding: "QUESTFLOW H2/FY24 margins compared with Rappid FY26 without qualifying the two-year period mismatch in a commodity-shock year"}
 critical_count: 0
-major_count: 8
-minor_count: 14
-material_found: 14
-material_caught: 10
-acceptance_rate: 71
-coverage_basis: "14 material of 27 listed; 7 caught fully + 3 partially caught = 10 counted as caught (pipeline had them, under-weighted); strict full-catch rate 7/14 = 50%. Company call read in full; peer set 8 transcripts read by targeted search, not cover to cover"
+major_count: 3
+minor_count: 7
+material_found: 12
+material_caught: 9
+acceptance_rate: 75
+coverage_basis: "12 material (0 CRITICAL, 12 MAJOR) of 24 listed; 7 fully caught + 2 partially caught (items 4, 19; counted as caught per rule 3's definition: found but under-weighted) = 9; 3 missed (items 5, 6, 9). Strict full-catch-only rate would be 7/12 = 58%. Only one company call exists (01-Jun-2026), so no cross-quarter evasion test is possible; filings substituted per NO-CONCALL MODE."
 ```

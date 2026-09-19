@@ -1,0 +1,28 @@
+stage: confidence-delta
+company: RAPPID
+run_date: '2026-09-19'
+phase: 1
+basis: 'Round-2 verifier blocks B12b, B12c, B12d (re-run on corrected B01/B05/B06); B12a round 1 (numbers audited in the round-1 reports; the B01 round-2 changes are score re-basings on filed AR/RHP figures, audited by B12c r2). Stage 7 was refreshed after B12c r2 (finding F11) and is not re-verified. Round-1 copies kept as *-r1.'
+confidence_delta:
+  numerical_acceptance: 100      # B12a: 49 of 58 material numbers checked, 0 mismatches, 0 CRITICAL, 0 MAJOR
+  redflag_coverage: 75           # B12b r2: 9 of 12 MATERIAL (all MAJOR) caught incl. 2 partials; strict full-catch 7/12 = 58%
+  framework_adherence: 75.5      # B12c r2 phase-1 scope: 40 of 53 rules (Gate 0 24/29, EM 16/24); valuation half PENDING PHASE 3
+  peer_utilisation: 100          # B12d r2: 8 of 8 peer transcripts SUBSTANTIVE
+  overall: 75
+  overall_set_by: redflag_coverage
+  not_applicable: []
+  pending_phase3: ['framework_adherence valuation half (B10, B11)']
+band: '75-89: normal confidence, note specifics (orchestrator Section 5)'
+partial_catch_convention: 'Partially caught items counted as caught, per the Verifier B rule 3 definition (found but under-weighted) and the convention used on the 2026-09-19 EMUDHRA run. On a strict full-catch count redflag_coverage is 58% (round 2) and 50% (round 1), below the 60% REWORK line. Flagged for operator ruling at Halt 1.'
+verifier_a_identity_check: 'B12a has no CRITICAL rows; nothing to strike.'
+rework_trigger: 'none: Verifier A has no CRITICAL; every acceptance_rate >= 60 on the partial-counts-as-caught convention (A 100, B 75, C 75.5, D 100).'
+run_log:
+- 'B12d round 1 MAJOR "QUESTFLOW transcript has zero page markers" was false: the file carries 32 [page N] markers (checked by orchestrator and by stage 6 round 2). The page-anchor corrections it prompted were applied anyway.'
+- 'QUESTFLOW-Concall_Jun_2024_Transcript is filed by Meson Valves India Ltd under BSE scrip 543982; screener lists scrip 543982 as Quest Flow Controls Ltd (same scrip, renamed). Same entity.'
+residual_findings_carried:
+- 'B12b r2 MAJOR: non-ferrous pricing answers differ between analysts on the Jun-2026 call (p.10 vs p.3-6, p.15); B05 reads the CMD as consistent.'
+- 'B12b r2 MAJOR: Rs 14-15 Cr dispatched in March 2026, about 57-61% of H2 FY26 revenue, while Rs 10 Cr of material was held back.'
+- 'B12b r2 MAJOR: Praj ARC "sign on Thursday" and PSU bids "in 7 to 8 days" (Jun-2026 call) not reported in the Q1 FY27 update.'
+- 'B12c r2 MAJOR F1: Gate 0 ROCE series mixes computed (FY22-24) and AR-disclosed (FY25-26) bases. Uniform filed ROCE gives core 62 / grand 75 / raw GOOD; uniform computed gives core 65 / grand 80 / moat STRONG / raw GOOD+. Final AVERAGE either way. Operator ruling needed on ROCE source precedence.'
+- 'B12c r2 MAJOR F11: stage 7 6C/6E stale Gate 0 values. FIXED in stage 7 run 2 (not re-verified).'
+- 'B12d r2: two MINOR page-range imprecisions in B06; content verbatim-accurate.'

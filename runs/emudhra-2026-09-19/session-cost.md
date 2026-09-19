@@ -7,3 +7,4 @@ Run: runs/emudhra-2026-09-19 | Phase 1 executed 2026-09-19 via /step1
 | 0 | input validation | orchestrator | - | - | - | - | - | 1 |
 | 1 | gate 0 | sonnet | agent default | - | - | 168736 | 14m14s | 1 |
 | 2.1 | notes pass 1 | sonnet | agent default | - | - | 255426 | 11m22s | 1 |
+| 2.2 | notes pass 2 | sonnet | agent default | - | - | 139386 | 8m06s | 1 |

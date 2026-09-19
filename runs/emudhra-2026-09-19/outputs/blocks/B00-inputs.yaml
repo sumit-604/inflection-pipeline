@@ -24,7 +24,7 @@ spear_gate:
 company_memory: companies/EMUDHRA.md (Step-1 draft) + runs/emudhra-2026-09-19/step1-business-brief.md (web-sourced).
   Memory to weigh, never anchored evidence.
 text_route: 'Every inputs/ PDF has a page-marked .txt beside it ([page N] markers, pdftotext -layout). Stages and verifiers
-  read the .txt; the PDF stays the source of record and page numbers match. Every PDF opened with pypdf; none unreadable.'
+  read the .txt; the PDF stays the source of record and page numbers match. Every PDF opened with pypdf; none unreadable. Added after stage 2.2: pdftoppm is absent, so the Read tool cannot render PDF pages; a second text layer (<name>.mupdf.txt, PyMuPDF sort=True) sits beside the AR and the three results PDFs, and AR pages 195-300 (statements and notes) are rendered to work/raster/AR2026/pNNN.png (gitignored, local only) for tables that pdftotext -layout scrambles.'
 reporting_units:
   results: 'INR Million (face of FY26 audited, Q3FY26 and Q1FY27 results)'
   annual_report: 'INR Million (FY26 AR financial statements)'

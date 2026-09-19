@@ -1,0 +1,82 @@
+stage: B02-notes-pass2
+company: "EMUDHRA"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: pass2_complete
+pass_2_empty: false
+notes_covered: "Re-read consolidated Note 1-65 (AR p.222-292) and standalone equivalents against Pass 1's own
+  note-by-note coverage. New ground this pass: Note 47/48 (Financial Instruments / Financial risk management,
+  credit risk, liquidity risk, fair value hierarchy), Note 8 (Other current assets - unbilled revenue), Note 29
+  (Finance costs), Note 44.1(4) (KMP salary table), Note 50 (Schedule III additional information), and settlement
+  of the Note 43 MSME/non-MSME payables-ageing ambiguity Pass 1 flagged for verifier."
+payables_figure_settled: "Consolidated trade payables Rs 600.92mn (FY26) / Rs 314.34mn (FY25) is now cross-tied
+  across four independent notes (Note 18, Note 43 ageing-schedule grand total, Note 47 Financial Instruments
+  table, Note 48 liquidity-risk maturity table) - all four agree to the rupee. Settles the task instruction to
+  confirm this figure; PDF page-render tool unavailable in this environment (pdftoppm not installed), settlement
+  achieved by internal triangulation instead."
+new_flags:
+  - {type: FLAG-CASH, reason: "Unbilled revenue (Note 8/48, AR p.248-249/286) Rs 1,035.48mn (FY26) vs Rs 736.50mn
+      (FY25), +40.6% YoY, ahead of 35.1% revenue growth - the asset-side counterpart to Pass 1's trade-payables
+      flag, judgment-based (input-cost/milestone recognition) and inside the auditor's sole KAM's scope. Not
+      previously surfaced in Pass 1."}
+  - {type: FLAG-CONTINGENT, reason: "Cryptas 49%-stake put/call option (Note 4a(c), AR p.243) carries a revenue
+      FLOOR ('subject to a minimum of one time revenue') in addition to the uncapped 10x-EBITDA mechanic Pass 1
+      already flagged - sharpens, does not replace, that flag. Separately, Note 29 Finance costs (AR p.256-257)
+      carries a new 'Interest on contingent consideration' line confirming a recurring P&L unwinding-of-discount
+      charge on the earn-out liabilities; FY26 rupee amount NOT FOUND WITH CONFIDENCE in this extraction."}
+pass2_new_findings:
+  - {rank: 1, finding: "Unbilled revenue Rs 1,035.48mn (FY26) vs Rs 736.50mn (FY25), +40.6% YoY, cross-confirmed
+      across Note 8, Note 42 footnote and Note 48 credit-risk table; recognised via input-cost/milestone method,
+      inside the auditor's sole KAM's scope", note_ref: "Note 8/23(iii)/48, AR p.248-249/260/286", rating: WATCH,
+      why: "Genuinely new to load-bearing fact 2 (cash conversion): the asset-side counterpart to Pass 1's
+      trade-payables-growth flag, growing faster than revenue."}
+  - {rank: 2, finding: "MSME payables ageing ambiguity Pass 1 flagged for verifier is now settled: the >3-year
+      overdue bucket (Rs 21.61mn) is 100% MSME, 0% non-MSME, unchanged FY25 to FY26; non-MSME >3yr is Nil both
+      years", note_ref: "Note 40/43, AR p.266/268-269, triangulated against Note 18's Rs 600.92mn total",
+      rating: RED, why: "Confirms and sharpens Pass 1's red flag with precision; resolves the ambiguity Pass 1
+      explicitly deferred to verifier."}
+  - {rank: 3, finding: "Cryptas 49%-stake put/call option carries a revenue floor ('minimum of one time revenue')
+      in addition to the uncapped EBITDA-multiple ceiling", note_ref: "Note 4a(c), AR p.243", rating: WATCH,
+      why: "Bounds the downside cash-outflow scenario for Stage 11 but confirms no cheap-buy-in scenario exists
+      absent a revenue collapse at Cryptas, not just a margin one."}
+  - {rank: 4, finding: "A recurring P&L finance-cost line, 'Interest on contingent consideration', exists (Note
+      29) confirming the earn-out liabilities unwind discount through the income statement annually; exact FY26
+      rupee amount NOT FOUND WITH CONFIDENCE in this extraction", note_ref: "Note 29, AR p.256-257", rating: WATCH,
+      why: "Not a one-off fair-value remeasurement; a growing, recurring charge Stage 11 should model forward."}
+  - {rank: 5, finding: "Fair-value Level 3 sensitivity/valuation-technique disclosure is confirmed absent for the
+      Rs 881.45mn contingent-consideration liability (second-largest non-current liability after borrowings), not
+      just unmentioned - checked directly and found only generic hierarchy-definition boilerplate", note_ref: "Note 47/48, AR p.285-286", rating: WATCH, why: "Extends Pass 1's goodwill-impairment disclosure-gap finding to
+      the arguably more decision-useful earn-out fair value."}
+  - {rank: 6, finding: "Named KMP salary table not previously extracted: Venu Madhava Rs 7.14mn, Ritesh Raj
+      Pariyani Rs 5.31mn, Johnson Xavier Rs 3.68mn (all eMudhra Limited), Arvind Srinivasan (promoter family) Rs
+      11.54mn paid via eMudhra DMCC (Dubai)", note_ref: "Note 44.1(4), AR p.271", rating: WATCH, why: "Incremental
+      data point for Pass 1's finding 6 (overseas-subsidiary cash flows to promoter-family individuals)."}
+  - {rank: 7, finding: "Note 17a precision: Rs 881.16mn contingent consideration + Rs 0.29mn unrelated employee
+      class-B-share redemption payable = Rs 881.45mn total - both figures correct at different scope, not a
+      reconciliation break", note_ref: "Note 17a, AR p.255", rating: CLEAN, why: "Prevents a downstream
+      misreading of an apparent Rs 0.29mn discrepancy between Note 17a and the Note 47/48 summary tables."}
+  - {rank: 8, finding: "Schedule III: parent company's share of consolidated net assets fell from 45.66% (FY25) to
+      34.25% (FY26) while its share of consolidated P&L stayed roughly flat (18.40% to 19.85%) - LOW CONFIDENCE,
+      table known to be extraction-degraded, flagged for verifier PDF confirmation before quantitative use",
+      note_ref: "Note 50, AR p.288-289", rating: WATCH, why: "If directionally correct: foreign subsidiaries
+      (principally Cryptas) now hold the asset majority without yet a matching profit share - normal in a partial
+      first year, worth watching normalise in FY27."}
+receivables_trend_pass2: "Refines Pass 1's 'improving to stable' read. Trade receivables alone (Note 42) improved
+  slightly (>6mo bucket 13.5% to 12.3% of gross); but the fuller picture per Note 48's combined trade receivables
+  + unbilled revenue (net of ECL) grew 33.6% YoY (Rs 2,191.17mn to Rs 2,927.61mn), roughly tracking the 35.1%
+  revenue growth - milder than trade receivables alone would suggest, but unbilled revenue specifically (the
+  judgment-estimate component) grew faster (40.6%) than revenue. Net effect: still stable-to-watch, not
+  deteriorating, but the composition shifted toward the less-verified (unbilled, estimate-based) asset."
+restatements_found: []
+going_concern_language_pass2: "NONE, confirmed on re-read. No new language found beyond Pass 1's CARO clause (xix)
+  finding and the absence of an emphasis-of-matter paragraph in either audit report."
+analyst_note: "The unbilled-revenue finding and the settled MSME-ageing finding are the two items downstream
+  stages should treat as load-bearing. Unbilled revenue (Note 8/48) materially updates the cash-conversion
+  picture Pass 1 built from payables alone: growth is happening on both the payables-float side (91% YoY,
+  favourable to reported cash flow) and the unbilled-revenue side (40.6% YoY, unfavourable, an uncollected
+  judgment-based asset) at the same time, largely netting out in aggregate receivables+unbilled growth (33.6%)
+  but shifting composition toward the less-verified asset. The MSME ageing settlement (Rs 21.61mn, 100% MSME,
+  frozen two years running) should be carried forward as an anchored, no-longer-ambiguous red flag; it no longer
+  needs verifier PDF cross-check per Pass 1's deferral, since it is now cross-tied across four notes textually.
+  PDF page-render tool (pdftoppm) was unavailable in this environment for the whole of this pass; all settlements
+  above rest on internal cross-note reconciliation, not visual PDF confirmation - noted for the verifier stage."

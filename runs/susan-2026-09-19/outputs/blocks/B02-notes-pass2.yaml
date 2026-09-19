@@ -1,0 +1,60 @@
+stage: B02-notes-pass2
+company: "SUSAN"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: pass2_complete
+input_gaps: []
+flags:
+  - {type: FLAG-CASH, reason: "RHP Annexure 33 (3-year KPI history) shows inventory turnover crashed from 13.41x FY24 to 5.76x FY25 (days roughly tripled) and stayed there in FY26 (5.60x); FY24 DSCR was 0.89x, below 1, meaning FY24 operating cash flow did not cover that year's debt service. The AR's own 2-year table (Note 33.12) never shows this base."}
+  - {type: FLAG-DISCLOSURE, reason: "RHP litigation section reveals the FY26 GST matter in AR Note 32 was a departmental inspection and seizure of Rs 49.53 Lakhs of goods as alleged 'unaccounted stock,' with a confiscation threat under Section 67(2) UP GST Act, not a routine demand notice as the AR describes it."}
+  - {type: FLAG-RESTATEMENT, reason: "RHP restated P&L (Annexure 4) shows the AR's Note 3 Rs 8.89 Lakh FY26 'prior period adjustment to reserves' is actually an FY25-origin item under the company's own restatement, and shows FY25 as-filed audited accounts omitted statutory gratuity, bonus and MSME-creditor interest that were only corrected via SEBI-mandated restatement."}
+accounting_quality: 0   # scoring deferred to Pass 3 consolidation per instruction file
+pass_2_empty: false
+pass_3_empty: false     # not yet run
+new_findings:
+  - {finding: "Government revenue share fell from 90.55% (FY24) to 49.40% (FY25) to 35.78% (FY26); private-entity share rose from 9.45% to 64.22% over two years", source_ref: "RHP p.19 (revenue bifurcation table)", rating: "RED FLAG", why: "Undisclosed in the audited AR anywhere; moves together with the trading-revenue surge (Note 18) and resolves Pass 1's LBF3 government-vs-private gap"}
+  - {finding: "RHP Annexure 7 shows AR Note 3's Rs 8.89 Lakh FY26 'prior period adjustment' direct-to-reserves is an FY25-origin item (RHP opening FY26 retained earnings Rs 743.24L vs AR's Rs 752.14L, gap Rs 8.90L); restated statement shows nil prior-period expense for any year", source_ref: "RHP p.207 Annexure 7; cross-ref AR Note 3 p.66", rating: "RED FLAG", why: "Escalates Pass 1 finding #3 from an unexplained inconsistency to a demonstrated non-compliant P&L bypass, evidenced by the company's own later restatement"}
+  - {finding: "RHP restatement schedule (Annexure 4) shows FY25 as-filed audited accounts had no MSME creditor interest booked (restated FY25 PAT adjusted down Rs 4.07L for this), plus no statutory gratuity (AS-15) or bonus recognised in FY24/FY25 as-filed accounts", source_ref: "RHP p.203-206 Annexure 4 (Material Adjustments in Restated P&L)", rating: "RED FLAG", why: "Directly contradicts AR Note 9/29's framing of the MSMED interest liability as first-appearing in FY26 with nil FY25; the liability existed in substance in FY25, just unrecognised at the time"}
+  - {finding: "RHP litigation section: FY26 GST 'demand' in AR Note 32 was a search/inspection (7-Jan-2026) and seizure of Rs 49.53L of goods as alleged unaccounted stock under Section 67(2) UP GST Act, followed by an Rs 8.91L penalty order under appeal", source_ref: "RHP p.264 (Outstanding Litigation)", rating: "RED FLAG", why: "AR Note 32 discloses only a demand notice; the underlying regulatory seizure action and confiscation threat are absent from the audited AR"}
+  - {finding: "AR Note 33.12 vs RHP Annexure 33 ratios diverge for FY25 (RoE 40.25% AR vs 46.72% RHP; Net Profit Ratio 3.71% vs 4.16%; DSCR 3.21x vs 2.98x), traceable to the FY25 restated-vs-audited PAT difference (Rs 565.10L vs Rs 502.96L)", source_ref: "AR Note 33.12 p.88-89; RHP p.234 Annexure 33", rating: "WATCH", why: "Arithmetically explained by the restatement but never cross-referenced in either document; an investor reading only the AR sees different FY25 ratios than the company's own later-restated figures"}
+  - {finding: "RHP 3-year KPI table: inventory turnover 13.41x FY24 to 5.76x FY25 to 5.60x FY26; DSCR 0.89x FY24 to 2.98x FY25 to 3.57x FY26", source_ref: "RHP p.234 Annexure 33", rating: "WATCH", why: "Shows the working-capital deterioration and weak debt-service base predate the AR's own 2-year comparative window"}
+  - {finding: "RHP 3-year product revenue table confirms Aluminium Rod trading (26.77% of FY26 revenue) was negligible in FY24 (0.50%) and FY25 (0.06%); FY24's trading mix was instead concentrated in Winding Aluminium Wire/Strip resale (25.68%)", source_ref: "RHP p.136 (product-wise revenue)", rating: "WATCH", why: "Rules out a 'trading always ran ~30% of revenue' reading; FY26's Aluminium Rod line is a genuinely new, product-specific pattern in the year before listing"}
+  - {finding: "Top-10 customer concentration fell from 98.00% (FY24) to 95.94% (FY25) to 63.68% (FY26); FY25's single largest customer (35.53% of that year's revenue, Private Infrastructure/EPC) does not reappear at comparable scale in the FY26 top-10 list", source_ref: "RHP p.21 (top-10 customer tables)", rating: "WATCH", why: "Genuine customer-base de-concentration and turnover; buyer identities remain anonymised so the FY26 Aluminium Rod trading counterparty is still NOT FOUND"}
+  - {finding: "Three non-reconciling Fixed Deposit totals inside the AR itself: Note 13 Rs 710.63L, Note 16 table Rs 733.58L (Note 16 states the full 733.58L was reclassified to Note 13), Note 16 footnote 'Total Fixed deposits Rs 14.90 crore'; Note 4a security schedule separately shows Rs 322L of FD liens vs the Rs 140L cited in Note 16's footnote", source_ref: "AR Note 13 p.72; Note 16 p.74; Note 4(a) security schedule p.68", rating: "RED FLAG", why: "Four different FD-related figures for the same balance sheet date across adjoining notes in a set of standalone financial statements, FY26-only break (FY25 figures tie exactly)"}
+  - {finding: "Accounting policy 1.14 states preliminary expenditure is amortised fully in the year incurred; Note 17 instead capitalises Rs 35.27L of 'Preliminary Expenses-IPO' as a short-term advance at year-end", source_ref: "AR Note 1.14 p.61; Note 17 p.74", rating: "WATCH", why: "The item is labelled with the exact term the stated policy governs, and the AR does not explain the departure"}
+red_flags_new:
+  - "Government-to-private revenue mix reversed (90.55% to 35.78% government in two years), undisclosed in the AR (RHP p.19)"
+  - "AR Note 3's Rs 8.89L FY26 prior-period reserves charge is shown by the company's own RHP restatement to be an FY25-origin item, confirming a non-compliant P&L bypass (RHP p.207)"
+  - "RHP restatement shows FY25 as-filed accounts omitted MSME creditor interest, gratuity (AS-15) and bonus recognition, contradicting the AR's 'first-time FY26' MSMED framing (RHP p.203-206)"
+  - "FY26 GST matter was a search-and-seizure action with a confiscation threat, disclosed in the AR only as a routine demand notice (RHP p.264)"
+  - "Three to four non-reconciling Fixed Deposit totals across AR Notes 13, 16 and 4(a) for the same balance sheet date (AR p.68, 72, 74)"
+questions_for_mgmt_new:
+  - "The government-revenue share fell from 90.55% to 35.78% of revenue over FY24-FY26 per the RHP; why was this shift, and its concentration in a single new Aluminium Rod trading line, not disclosed anywhere in the FY26 Annual Report?"
+  - "The RHP's own restated financials show the Rs 8.89 Lakh 'prior period adjustment' in AR Note 3 relates to FY25, not FY26, and that FY25 audited accounts omitted MSME creditor interest, gratuity and bonus recognition entirely. Why were these corrections made only for the IPO restatement and not reflected or explained in the FY26 Annual Report as filed?"
+  - "Confirm the actual January 2026 GST inspection and goods-seizure event at the Sahibabad premises, its resolution status, and why AR Note 32 discloses only a 'demand notice' rather than the search-and-seizure and confiscation-threat facts stated in the RHP."
+  - "Reconcile the Fixed Deposit balances in AR Note 13 (Rs 710.63 Lakhs), Note 16 (Rs 733.58 Lakhs, stated as fully reclassified to Note 13), and Note 16's footnote (Rs 14.90 crore total, Rs 1.40 crore liened) — which figure is the correct FY26 closing Fixed Deposit balance?"
+  - "Who are the buyers behind the FY26 Aluminium Rod trading line (Rs 72.10 Cr, 26.8% of revenue) and the FY25 single customer that alone was 35.53% of that year's revenue, and are either related parties or connected to related parties?"
+receivables_trend: "unchanged from Pass 1 (stable per AR); no new receivables-specific finding in this pass"
+restatements_found:
+  - "RHP Annexure 4 (Material Adjustments in Restated P&L): FY25 audited PAT Rs 502.96L restated to Rs 565.10L (net +Rs 62.14L, driven by gratuity AS-15 add-back +15.56, unsecured-loan interest add-back +10.44, income tax provision +41.81, offset by MSME interest -4.07 and interest-on-income-tax -3.95); FY24 audited PAT Rs 126.53L restated to Rs 75.58L (net -Rs 50.95L, driven by income tax provision -37.86); FY26 unchanged (audited = restated, Rs 1,824.64L, no adjustment line items)."
+  - "RHP Annexure 7: retained-earnings opening balance for FY26 is Rs 743.24L (restated) vs Rs 752.14L (AR Note 3, as-filed), a Rs 8.90L gap matching the AR's disputed Rs 8.89L 'prior period adjustment' — see new_findings F2 above."
+going_concern_language: "unchanged from Pass 1 — NONE found in either the AR or the RHP's restated auditor's reports"
+analyst_note: >
+  This is Pass 2 of 3. Per orchestrator instruction, this pass reads the
+  RHP (Susan_RHP_2026-06-08.txt) as a supplementary anchored source for
+  the first time, resolving several items Pass 1 correctly logged as "NOT
+  FOUND IN DOCUMENT" within the AR-only scope (government-vs-private
+  split, trading-buyer sector identity, 3-year KPI history). The
+  strongest new findings (F2, F3) use the RHP's own restated financial
+  statements to independently corroborate and sharpen two of Pass 1's
+  existing AR-only red flags (the prior-period reserves bypass and the
+  MSMED "first-time" framing) rather than introducing unrelated new
+  concerns; F9 (Fixed Deposit triple/quadruple inconsistency) is a
+  genuine AR-internal finding, found by cross-referencing Notes 13, 16
+  and 4(a) against each other, that Pass 1 did not run. F5's ratio
+  divergence is presented as explained (by the restatement) rather than
+  an open puzzle, per the grounded-claims rule against asserting
+  contradiction where a mechanical explanation is available and
+  evidenced. Buyer identities (Aluminium Rod trading counterparty, FY25's
+  35.53%-of-revenue customer) remain genuinely NOT FOUND even after the
+  RHP cross-read, since RHP customer tables are anonymised.

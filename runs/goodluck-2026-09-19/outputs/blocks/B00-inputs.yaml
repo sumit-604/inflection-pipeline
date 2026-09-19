@@ -30,7 +30,7 @@ reporting_units:
   stage_instruction: "All figures in Rs Cr unless the source says otherwise; the source unit is on the face of the document, not in the filename. Convert once, at stage 10."
 tooling:
   pdf_read: "pypdf read all 63 PDFs, 0 unreadable. Whole run switched to pre-extracted page-marked .txt beside every PDF ([page N] markers); stages read the .txt and cite the PDF path + page."
-  scanned_pages: "20260701 SAST 29(2) disclosure (6 of 6 pages image-only) and 20260814 postal ballot outcome (pages 4-7) rendered to PNG in <file>-pages/ folders beside the PDF; no OCR engine on this machine."
+  scanned_pages: "20260701 SAST 29(2) disclosure (6 of 6 pages image-only) and 20260814 postal ballot outcome (pages 4-7) rendered to PNG in <file>-pages/ folders beside the PDF; no OCR engine on this machine. ADDED after stage 9: the four results filings (inputs/results/*.pdf and other/20251108-Results_Q2FY26.pdf) carry a garbled OCR text layer with the financial tables unreadable as text; every page rendered to PNG in <file>-pages/ for visual reading. Figures from results filings must be read from those images."
 inventory:
   prospectus:    { count: 0, status: NOT EXPECTED }
   annual-report: { count: 2, status: present, detail: "FY26 AR (224pp, filed 08-Sep-2026) = primary; FY25 AR (236pp, filed 02-Sep-2025) = backward context" }
@@ -78,6 +78,7 @@ input_gaps:
   - { type: collector-warning, severity: INFO, reason: "Collector BSE fetch (first live test, PR #167) wrote 9 files, 7 duplicates of AR, AGM notice, BRSR, transcript and presentation; it caps at 25 rows and has no AttachHis fallback, so older filings failed. Step 1 re-fetched 37 unique filings with the fallback." }
   - { type: collector-warning, severity: INFO, reason: "sector_cap_row guess Pharma / CDMO was wrong; resolved to Cables / Industrial products." }
   - { type: collector-warning, severity: INFO, reason: "Q2 FY26 press release (1.15 MB variant, 08-Nov-2025) lost to a filename collision; Q2 results pack kept in other/." }
+  - { type: results-text-layer, severity: MEDIUM, reason: "Results filings are scans with a garbled text layer; the tables are readable only from the rendered page images (<file>-pages/page-N.png). Stages 1-9 read results figures from AR, presentations and screener where the text failed; verifiers read the images." }
   - { type: document-identity, severity: INFO, reason: "presentation/20260808-Investor_Presentation.pdf cover letter is dated August 8, 2025; content is Q1 FY27 (30th June 2026). Period taken from content." }
 degradation_applied:
   - "All stages read pre-extracted .txt (page-marked) and cite PDF path + page."

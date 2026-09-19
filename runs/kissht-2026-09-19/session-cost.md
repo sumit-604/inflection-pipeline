@@ -6,3 +6,4 @@
 | 1 | gate 0 scorecard | claude-sonnet-5 | default | n/a | n/a | 132901 | 12m30s | 1 |
 | 2 | notes triple-pass, pass 1 | claude-sonnet-5 | default | n/a | n/a | 246830 | 9m41s | 1 |
 | 2 | notes triple-pass, pass 2 | claude-sonnet-5 | default | n/a | n/a | 128983 | 8m28s | 2 |
+| 2 | notes triple-pass, pass 3 (consolidated) | claude-sonnet-5 | default | n/a | n/a | 87149 | 5m25s | 3 |

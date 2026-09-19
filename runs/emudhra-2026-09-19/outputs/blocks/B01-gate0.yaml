@@ -1,4 +1,3 @@
-```yaml
 stage: B01-gate0
 company: "EMUDHRA"
 run_date: "2026-09-19"
@@ -31,4 +30,3 @@ data_notes:
 - "Consolidated CFO cross-check clean: AR p.155-156 MD&A table shows Rs 1,328.49 Mn FY26, matches screener-data Rs 132.85 Cr exactly. Consolidated CFI: AR shows Rs -2,250.53 Mn vs screener-data Rs -197.76 Cr (~Rs 27 Cr gap), immaterial to sign, not reconciled further."
 block_b_trend: "improving — CFO/PAT rose from 0.54x (FY23: 33.57/61.68, screener-data) to 1.23x (FY26: 132.85/107.79, screener-data); FCF confidence LOW (single anchored year, FY26 only); WC-days trend N/A (consolidated payables gap)."
 analyst_note: "GOOD+ driven by strong growth (C=18/20) and a clean balance sheet (D=20/20, net cash, 27x interest cover). The two operator-flagged priorities do not cleanly resolve: FY26 FCF is positive (+Rs 51 Cr) under this stage's formula, contradicting the -Rs 52 Cr load-bearing claim, but underlying payables/WC-days data needed to judge durability could not be pulled from the AR's OCR text at any confidence (corpus problem, not company problem) — this blocks Block B and zeroes M10/drags M4. E4's clean 0.38% contingent-liability score is correct per AR Note 36 but structurally excludes the disputed Rs 128 Cr+ 3i Infotech claim, which sits in narrative disclosure only. Recommend sourcing clean AR pages 216-219/255 for consolidated payables, and treating the 3i Infotech claim as a named unquantified tail risk regardless of E4's score."
-```

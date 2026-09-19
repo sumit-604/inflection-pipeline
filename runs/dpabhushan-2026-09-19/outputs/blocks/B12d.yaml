@@ -1,0 +1,18 @@
+stage: B12d
+company: "DPABHUSHAN"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+peers_audited: 3
+substantive_confirmed: 12
+substantive_unsupported: []
+unused_but_relevant: []
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "MAJOR", location: "B06 Claim 4 / Part 5 Cross-Peer Hypothesis", claimed: "KALYANKJIL quote 'we do not take any margin benefit... We are fully protected' attributed to Nov-2025 call", source_truth: "Quote found verbatim in the Feb-2026 (Q3 FY26) transcript, KALYANKJIL-20260210-734a40ea-8d9f-420f-b381-e3f39c0f06e3.txt lines 710-720, Ramesh Kalyanaraman to Awais Bakshi; absent from the Nov-2025 (Q2 FY26) transcript", note: "Real quote, wrong quarter; the 'fully protected' stance itself recurs across KALYANKJIL calls so the substantive point survives, only the anchor date is wrong"}
+  - {severity: "MINOR", location: "B06 Claim 5", claimed: "SENCO hedging 'down from a historical 80-90%'", source_truth: "SENCO Feb-2026 transcript states the last-2-3-year range as 80%; the 85-90% figure in the same passage is a stated forward target if prices stabilise, not a historical level", note: "Direction and rough magnitude correct; range slightly overstated/conflated with a forward figure"}
+critical_count: 0
+major_count: 1
+minor_count: 1
+acceptance_rate: 92   # 11 of 12 checked substantive coverage points (9 direct citation checks + peer-mention absence check + claim-coverage check + verdict-discipline check, with 1 MAJOR anchor-date defect) verified clean

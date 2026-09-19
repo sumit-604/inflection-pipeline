@@ -1,0 +1,14 @@
+stage: B12a
+company: DPABHUSHAN
+run_date: "2026-09-19"
+model: claude-haiku-4-5
+status: complete
+numbers_checked: 32
+findings: []
+critical_count: 0
+major_count: 0
+minor_count: 0
+false_positives_struck: 0
+material_universe: 32
+acceptance_rate: 100
+coverage_note: "32 material scorecard figures checked (100% of Block A/B/C/D/E scorecard inputs, intermediates, outputs + grand total + classification). All anchored to FY26 AR (primary) or FY25 AR (secondary) or screener Data_Sheet cross-checked to AR. No mismatches found. One weak anchor noted (M3 FAT 54.5x does not reconcile to AR Net Block; report itself acknowledges metric unreliability; conclusion unaffected). Zero false positives struck."

@@ -1,0 +1,49 @@
+stage: B12b
+company: "DPABHUSHAN"
+run_date: "2026-09-19"
+model: "claude-opus-5"
+status: complete
+independent_flags_found: 24
+caught: 11
+partially_caught: 4
+missed:
+  - {severity: "MAJOR", item: "Q1 FY27 EBITDA 11.01% exceeds CFO-stated normal gross margin 10-11%; stated split (10-15% inventory gain, majority making charges) cannot produce it (R2)", anchor: "Q1 FY27 call, Manish Laddha, Jul p5, p14, p19"}
+  - {severity: "MAJOR", item: "FY27/FY28 revenue guide Rs 4,800/5,500 Cr implies +17.9%/+14.6%, not the stated 20-25%; 25-30% also stated same call (R5)", anchor: "Q4 FY26 call, Vikas Kataria, May p7, p9, p12, p17"}
+  - {severity: "MAJOR", item: "FOCO pilot: company bears all expenses, franchisee receives gold gain, counterparty unnamed; reverse of KALYANKJIL model; B06 2C says it matches peers (R14)", anchor: "Q1 FY27 call, Manish Laddha, Jul p7; KALYANKJIL Aug-2026 p8"}
+  - {severity: "MINOR", item: "CFO calls 6-6.5% EBITDA 'consistently maintained' against FY26 7.61% and a 7-8% prior guide; promoter promises yearly margin gains same call (R4b)", anchor: "Q4 FY26 call, May p6, p8, p12; Q2 FY26 Nov p12"}
+  - {severity: "MINOR", item: "QIP dilution 5-8% cannot take promoter from 75% to 65-68% (R7b)", anchor: "Q4 FY26 call, Manish Laddha, May p15"}
+  - {severity: "MINOR", item: "FY26 volume question dodged with industry framing instead of the -20% company figure (R12)", anchor: "Q1 FY27 call, Manish Laddha, Jul p14; Q4 FY26 May p11"}
+  - {severity: "MINOR", item: "E-commerce told as already live (May) and as launched in Q1 FY27 (Jul); Rs 25-30 Cr profit on 3-5% of revenue implies 9-18% channel margin (R17)", anchor: "Nov p12; May p4, p16; Jul p5"}
+  - {severity: "MINOR", item: "Inventory days: Dhar Rs 100-125 Cr vs Rs 40-60 Cr per-store norm in same answer; 4.7-5.0x turns called best in industry after a ~100-day close (R18)", anchor: "Q4 FY26 May p13-p14; Q1 FY27 Jul p16"}
+  - {severity: "MINOR", item: "Store payback quoted on capex only (6-9 months) while inventory of Rs 40-60 Cr per store is excluded (R19)", anchor: "Jan p11-p12; May p13; Jul p8"}
+pipeline_flags_not_supported:
+  - "OVERSTATED (MAJOR): B05 HIGH #1 / FLAG-HEDGING-CONTRADICTION. Transcripts show GML adoption began in FY26 (Jan p14, May p5), so a new FY26 GML/leased-gold position likely confirms the narrative; an unfixed gold loan may be the hedge, not the exposure. AR Note 33.2.2(D) meaning needs a re-read; same premise in B06 Claim 5 and Part 5"
+  - "NOT SUPPORTED as worded (MAJOR, counted in missed R14): B06 2C says DPABHUSHAN's FOCO pivot matches peers; Jul p7 structure is the reverse of KALYANKJIL Aug-2026 p8"
+  - "OVERSTATED (MINOR): B05 4D #6 SSSG, Q1 FY27 half; 52% SSSG vs 58% total growth is consistent (Jul p5, p6)"
+promise_delivery_spot_checks: {checked: 6, confirmed: 5, wrong: 1}
+credibility_grade_concur: "lower: C to D boundary. B05's hedging-vs-AR leg is overstated, but B05 missed the four-call inventory-gain evasion, a Q1 FY27 margin the stated split cannot produce, the unquantified duty windfall, self-contradicting rupee guidance, and intra-call contradictions in all four calls"
+findings:
+  - {severity: "MAJOR", type: "PARTIALLY CAUGHT", item: "Repeated evasion on inventory-gain share across four calls recorded by B05 as transparency (R1)", anchor: "Nov p8; Jan p6, p8; May p6, p9; Jul p14, p18-p19"}
+  - {severity: "MAJOR", type: "MISSED", item: "Q1 FY27 EBITDA above stated normal gross margin; source split cannot produce it (R2)", anchor: "Jul p5, p14, p19"}
+  - {severity: "MAJOR", type: "PARTIALLY CAUGHT", item: "Customs-duty inventory windfall never mentioned; SENCO Rs 12-15 Cr and KALYANKJIL ~Rs 40 Cr quantified (R3)", anchor: "Jul p4, p15; SENCO Aug-2026 p14; KALYANKJIL Aug-2026 p10, p14"}
+  - {severity: "MAJOR", type: "MISSED", item: "Rupee revenue guide contradicts its own growth percentages (R5)", anchor: "May p7, p9, p12, p17"}
+  - {severity: "MAJOR", type: "PARTIALLY CAUGHT", item: "10-15% growth to one analyst, 25-30% minimum to the next, same Q3 FY26 call (R6)", anchor: "Jan p8, p9"}
+  - {severity: "MAJOR", type: "PARTIALLY CAUGHT", item: "Diamond decline contradicts mix explanation of margin (R11)", anchor: "Jan p7; May p6; Jul p6, p12"}
+  - {severity: "MAJOR", type: "MISSED", item: "FOCO economics inverted vs peer norm, counterparty unnamed (R14)", anchor: "Jul p7; KALYANKJIL Aug-2026 p8"}
+  - {severity: "MAJOR", type: "OVERSTATED", item: "B05 HIGH #1 hedging contradiction likely misreads a GML/leased-gold position as unhedged; transcripts show GML began FY26", anchor: "Nov p8; Jan p12, p14; May p5"}
+  - {severity: "MINOR", type: "MISSED", item: "'Consistently maintained' margin misstatement; promoter vs CFO same call (R4b)", anchor: "May p8, p12"}
+  - {severity: "MINOR", type: "MISSED", item: "QIP dilution arithmetic (R7b)", anchor: "May p15"}
+  - {severity: "MINOR", type: "MISSED", item: "FY26 volume question dodged (R12)", anchor: "Jul p14"}
+  - {severity: "MINOR", type: "MISSED", item: "E-commerce timeline and profit claim (R17)", anchor: "Nov p12; May p4, p16; Jul p5"}
+  - {severity: "MINOR", type: "MISSED", item: "Inventory-days explanation inconsistent (R18)", anchor: "May p13-p14; Jul p16"}
+  - {severity: "MINOR", type: "MISSED", item: "Capex-only store payback (R19)", anchor: "Jan p11-p12; May p13; Jul p8"}
+  - {severity: "MINOR", type: "WRONG SPOT CHECK", item: "B05 marks 4-6 stores around Diwali as missed; promise is Diwali 2026, not yet due", anchor: "Jan p15; Jul p5"}
+  - {severity: "MINOR", type: "OVERSTATED", item: "B05 SSSG flag Q1 FY27 half; 52% vs 58% consistent", anchor: "Jul p5, p6"}
+  - {severity: "MINOR", type: "ATTRIBUTION", item: "B05 3C names Kanishk Gupta on guidance-cut question (Abhi Bilala only); 2A says no explanation given (one was)", anchor: "May p15"}
+critical_count: 0
+major_count: 8
+minor_count: 9
+material_found: 14
+material_caught: 11
+acceptance_rate: 79
+coverage_basis: "14 material of 24 listed (1 CRITICAL, 13 MAJOR); 7 caught + 4 partially caught = 11 had by pipeline (79%); strict caught-only 7 of 14 = 50%. Company transcripts 4 of 4 read in full; peer transcripts 3 of 12 in full, 9 of 12 by topic search"

@@ -1,0 +1,21 @@
+stage: confidence-delta
+company: DPABHUSHAN
+run_date: 2026-09-19
+phase: 1
+verifier_a_identity_check: "B12a carries 0 CRITICAL rows; nothing to strike. No Verifier A finding struck."
+confidence_delta:
+  numerical_acceptance: 100      # B12a: 32 of 32 material figures clean (coverage: Gate 0 scorecard figures only; stated in B12a coverage_note)
+  redflag_coverage: 79           # B12b: 11 of 14 MATERIAL flags had by the pipeline (7 caught + 4 partially caught). Strict caught-only 7/14 = 50%, recorded, not the number of record per B12b's rule.
+  framework_adherence: 86.7      # B12c phase-1 half: 52 of 60 Gate 0 + EM rules passed; valuation half pending phase 3
+  peer_utilisation: 92           # B12d: 11 of 12 substantive coverage points clean; 12 of 12 peer transcripts substantive per B06
+  overall: 79
+  overall_set_by: redflag_coverage
+  not_applicable: []
+  pending_phase_3: ["framework_adherence valuation half (B10/B11)"]
+band: "75-89 normal, note specifics (set by redflag_coverage)"
+notes:
+  - "No CRITICAL findings in any verifier; no REWORK trigger (no acceptance_rate below 60)."
+  - "B12b strict caught-only rate (50%) sits below the 60% line; the rule of record counts partially caught as had, giving 79%. Flagged for the operator at Halt 1, not applied as REWORK."
+  - "B12b disputes B05's top flag: it reads the FY26 AR Note 33.2.2(D) 42kg position as a possible GML/leased-gold hedge rather than unhedged exposure (Verifier B could not read the AR). B02, B03 and B04 read the note as 'unfixed/unhedged'. Open for Halt 1 re-read; recorded, not resolved here."
+  - "B12c: moat class FORTRESS -> STRONG (M11), EM score 10 -> 7.7 (hallmarking double credit); no classification change (Gate 0 AVERAGE, EM NONE)."
+  - "B12a coverage is narrow (Gate 0 figures). Stage-report figures outside the scorecard (B02-B09) were not sampled by Verifier A."

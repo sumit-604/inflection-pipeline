@@ -1,0 +1,31 @@
+stage: B12c
+company: "DPABHUSHAN"
+run_date: "2026-09-19"
+model: "claude-opus-5"
+status: complete
+scope: "PHASE 1 - Gate 0 (B01) and Emerging Moat (B07) only; valuation audit pending phase 3"
+gate0: {rules_checked: 40, fails: ["M11 scored 3 on rising selling % with FY26 missing; recomputed 1 (or 0 strict N/A)", "Moat class FORTRESS -> STRONG (5 present) consequential of M11", "M9 PEER DATA NEEDED misapplied; peer GM proxy computable, score 0 unchanged", "M2 on stale peer set (MOTISONS); current set SENCO/PNGJL/KALYANKJIL gives M2 = 1"]}
+emoat: {rules_checked: 20, fails: ["H1 and R1 both credit hallmarking formalisation (double credit); recomputed total 7.7", "Section 2C capex estimated by analogy and from guided unsited stores; capex_embedded_growth_pct NOT FOUND (or 4-5% on bracket basis), not 23", "Adjusted total rounds D2 0.7 up to 1; correct sum 9.7", "Completionist recount does not reconcile with evidence_mix (7 vs 10 DOC)"]}
+valuation: {rules_checked: 0, fails: [], status: "PENDING PHASE 3"}
+expectation_ledger: {status: "PENDING PHASE 3", present: false, downside_row: false, all_rows_confirm_by: false, all_rows_metric_threshold: false, prob_in_range: false, decay_status_valid: false, off_ledger_credit: false, residual_pct_cmp: 0, residual_starter_cap_ok: true, fails: []}
+business_understanding_narrative: {status: "PENDING STAGE 13", present: false, five_questions_answered: false, prose_only: false, section6_candidates_named: 0, valuation_vocab_leak: false, fails: []}
+recomputed_destination_pe: ""
+recomputed_decision: ""
+recomputed_gate0: {core_score: 69, moat_score: "22 (current peer set) / 21 (B01 peer set)", moats_confirmed: 5, moat_class: "STRONG", classification: "AVERAGE"}
+recomputed_emoat: {em_score: 7.7, em_classification: "NONE", capex_embedded_growth_pct: "NOT FOUND (4-5 on Dahod bracket basis)"}
+findings:
+  - {id: "F-G1", stage: "B01", rule: "M11 network effects", severity: "MAJOR", claimed: "M11 = 3; 6 present; FORTRESS", recomputed: "M11 = 1 (selling % 0.88 FY24 -> 1.06 FY25, combined opex 1.49 -> 1.80 FY24-FY26); 5 present; STRONG", decision_change: false}
+  - {id: "F-G2", stage: "B01", rule: "M9 brand, PEER DATA NEEDED", severity: "MINOR", claimed: "PEER DATA NEEDED, 0", recomputed: "peer GM median 19.79 (B01 set) / 13.16 (current set) vs DPABHUSHAN 10.28; score 0", decision_change: false}
+  - {id: "F-G3", stage: "B01", rule: "M2/M5 peer set", severity: "MINOR", claimed: "peer median EBITDA 12.62 incl MOTISONS; M2 = 0", recomputed: "median 7.62 with KALYANKJIL; M2 = 1; M5 = 1 unchanged", decision_change: false}
+  - {id: "F-G4", stage: "B01", rule: "data confidence tier", severity: "MINOR", claimed: "10+ yrs full", recomputed: "defensible; ratio blocks on FY24-FY26 only; LIMITED tier would not change final AVERAGE", decision_change: false}
+  - {id: "F-G5", stage: "B01", rule: "E2 3-year window", severity: "MINOR", claimed: "1-year filed -0.23pp, 3", recomputed: "3-year screener -0.11pp, 3", decision_change: false}
+  - {id: "F-E1", stage: "B07", rule: "one improvement one mechanism", severity: "MAJOR", claimed: "H1 2.0 + R1 3.0 on hallmarking", recomputed: "one credit only; total 7.7", decision_change: false}
+  - {id: "F-E2", stage: "B07", rule: "Section 2C no estimated inputs", severity: "MAJOR", claimed: "capex 13.75 Cr, growth 23%", recomputed: "NOT FOUND at site level; 4.2-5.0% on Dahod bracket basis", decision_change: false}
+  - {id: "F-E3", stage: "B07", rule: "adjusted total arithmetic", severity: "MINOR", claimed: "10", recomputed: "9.7", decision_change: false}
+  - {id: "F-E4", stage: "B07", rule: "completionist recount", severity: "MINOR", claimed: "7 DOC items", recomputed: "evidence_mix documented 10; counts must reconcile", decision_change: false}
+  - {id: "F-E5", stage: "B07", rule: "Section 6C presentation", severity: "MINOR", claimed: "Core 69/?; FORTRESS; MOTISONS named", recomputed: "Core 69/100; STRONG; peer set SENCO/PNGJL/KALYANKJIL", decision_change: false}
+  - {id: "F-E6", stage: "B07", rule: "register items never scored", severity: "MINOR", claimed: "D2 0.7 on digital revenue claim also in register", recomputed: "operator ruling needed; if register-only, D2 0 and total 7.0", decision_change: false}
+critical_count: 0
+major_count: 3
+minor_count: 8
+acceptance_rate: 86.7

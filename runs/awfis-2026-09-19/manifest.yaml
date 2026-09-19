@@ -1,0 +1,16 @@
+company: Awfis Space Solutions Ltd
+ticker: AWFIS
+cmp: 276.0
+market_cap_cr: 1973.0
+run_date: 2026-09-19
+run_type: full
+listed_date: 2024-05-30
+concalls_available: true
+sector_cap_row: "Real estate"   # step1 Step D pick (20x): leasehold flex-workspace operator; no flex/coworking row exists. Stage 0 confirms; flag for phase-3 operator confirmation
+sector_cap_row_guess: "Pharma / CDMO"   # keyword guess only, never consumed
+collector_warnings:
+  - "shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend."
+  - "screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance Sheet, screener:Cash Flow, screener:Customization, SMARTWORKS:Profit & Loss, SMARTWORKS:Quarters, SMARTWORKS:Balance Sheet, SMARTWORKS:Cash Flow, SMARTWORKS:Customization, INDIQUBE:Profit & Loss, INDIQUBE:Quarters, INDIQUBE:Balance Sheet, INDIQUBE:Cash Flow, INDIQUBE:Customization, DEVX:Profit & Loss, DEVX:Quarters, DEVX:Balance Sheet, DEVX:Cash Flow, DEVX:Customization. Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again."
+  - "no results PDFs yet (screener has none): add later on github or locally + --push-again"
+  - "no rating PDF yet: add later the same way"
+notes: "STEP1 REPAIRS 2026-09-19: (1) collector annual-report/ held a web-link letter and the BRSR, not the AR; moved to other/; the real FY26 AR (Reg 34, 176pp incl AGM notice) moved from announcements/ to annual-report/. (2) results/ filled by hand from BSE AttachHis: Q1FY27 (13-Aug-2026), Q4FY26 (25-May-2026), Q3FY26 (02-Feb-2026). (3) rating/: Ind-Ra 03-Jul-2026 affirmation letter (text layer garbled, render as image) plus Ind-Ra 16-May-2025 rationale text (pr76615). The Jul-2026 rationale web page was not found. (4) prospectus/: final Prospectus dated 27-May-2024 from awfis.com. (5) shareholding/: BSE summary Jun-2026 as text; FII/DII split not in summary. (6) 25 Reg 30 filings Sep-2025..Aug-2026 added to announcements/. (7) screener P&L/BS/CF/Quarters sheets empty; Data_Sheet holds raw values. Collected from screener.in by collect_to_repo.py v3. sector_cap_row is deliberately empty: resolve it at stage 0 against the Section 1B cap table."

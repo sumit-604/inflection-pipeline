@@ -5,3 +5,4 @@
 - stage 4: reply omitted the YAML block; B04-bizmodel.yaml exists and parses. File governs.
 - stage 4: block file carried markdown code fences; stripped by orchestrator (content unchanged), now parses.
 - stage 7: reply omitted the YAML block; B07-emoat.yaml exists and parses. File governs.
+- stage 9: status partial (named report houses skipped after two CBRE-linked sources converged); reply omitted the YAML block, file exists and parses.

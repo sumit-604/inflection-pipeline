@@ -1,0 +1,116 @@
+stage: B09-tam
+company: "AWFIS"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: partial               # named report houses (JLL/Knight Frank/Anarock/Mordor/Ken/RedSeer, direct Nasscom-Zinnov pull) skipped after two CBRE-linked sources converged; see searches_skipped
+input_gaps:
+  - "No India-specific 'design & build / office fit-out market size' report found in the corpus or web search; Section 2B D&B TAM is an analyst-constructed bottom-up estimate (gross office leasing x Cushman & Wakefield fit-out cost/sq ft), L confidence throughout."
+  - "Method 3 (peer revenue aggregation) could individually source only 6 of the 500+ national flex operators named by CBRE-FICCI (Mar-2026); the conservative TAM/SAM/SOM track built on it is a data-availability floor, not a confirmed market ceiling."
+  - "Screener peer P&L CSVs were empty at intake (B00 EMPTY-CSV defect, SMARTWORKS/INDIQUBE/DEVX); this stage independently web-sourced FY26 peer revenue figures to compensate."
+flags:
+  - {type: "FLAG-MGMT-CLAIM-READ-IS-DATA-FLOOR-ARTIFACT", reason: "mgmt_claim_ratio (3.29x, 'inflated') is computed against the conservative TAM (Rs16,200 Cr), which is a peer-count-limited floor. Against the realistic TAM (Rs52,200 Cr, cross-validated by an independent Mar-2026 CBRE-FICCI report against the company's own Apr-2024 CBRE-commissioned figure), the same management claim is 1.02x, 'reasonable'. The most evidenced read is that management's number is roughly right, not inflated."}
+  - {type: "FLAG-CAPACITY-EXCEEDS-CONSERVATIVE-SOM", reason: "FY27 capex-funded seat-addition guidance (22,000-25,000 gross seats) implies Rs187-212 Cr of new annualized revenue capacity in ONE fiscal year, nearly matching the ENTIRE conservative-track 3-year SOM growth (Rs303 Cr, co-working + D&B combined). Gap of roughly Rs180-190 Cr. Consistent with B05/B06's already-flagged occupancy plateau (75-76% blended vs peers' 80-92%) and twice-cut FY26 seat guidance; the capex plan is the optimistic side under the conservative track."}
+  - {type: "FLAG-CONSERVATIVE-VS-REALISTIC-CAGR-SPREAD", reason: "SOM-implied revenue CAGR diverges sharply by track: ~6.8%/6.3% (conservative, formal handoff below) vs ~15.5%/14.0% (realistic, better-evidenced per Section 2A). Both sit below management's FY27 coworking guide of 23-25% and FY26 delivered coworking growth of 35% YoY. Stage 11 should weight the realistic track, not the mechanical conservative number, per this stage's analyst note."}
+market_definition: "India organized flexible workspace/co-working and managed-office market (co-working, 82.8% of AWFIS FY26 revenue) plus the separate India corporate office design-and-build fit-out contracting market (Transform, 17.2% of revenue), sized separately and summed"
+tam_cr: {conservative: 33500, realistic: 101700}
+sam_cr: 19800
+sam_pct_of_tam: 59.1
+som_3yr_cr: 1692
+som_5yr_cr: 1889
+som_implied_revenue_cagr: {yr3: 6.8, yr5: 6.3}   # FORMAL handoff to stage 11; conservative track. Realistic track (better evidenced, see analyst_note): yr3 ~15.5%, yr5 ~14.0%
+current_sam_share_pct: 7.01
+revenue_headroom_x: 14.3
+tam_growth_pct: 10.2
+runway_class: "STRONG"          # conservative track (14.3x headroom); realistic track (44.3x) would classify MASSIVE
+mgmt_claim_cr: 53300
+mgmt_claim_ratio: 3.29           # vs conservative co-working-only TAM (Rs16,200 Cr); vs realistic co-working TAM (Rs52,200 Cr) the ratio is 1.02x, "reasonable" -- see flags and analyst_note
+mgmt_claim_read: "inflated"      # mechanical read per >2x rule; see FLAG-MGMT-CLAIM-READ-IS-DATA-FLOOR-ARTIFACT for the more evidenced "reasonable" alternative read
+capacity_check: "gap of ~Rs180-190 Cr in FY27 alone; capex plan is the optimistic side under the conservative SOM track, roughly right-sized to still-conservative under the realistic track"
+methods_used:
+  - "top-down (CBRE-FICCI Mar-2026 independent report + CBRE Apr-2024 company-commissioned cross-check)"
+  - "bottom-up (seat/sq ft count x realized and blended market pricing)"
+  - "peer revenue aggregation with unorganized-sector estimate"
+  - "global benchmark (APAC flex penetration, qualitative direction only)"
+  - "bottom-up, D&B only (gross office leasing x fit-out cost per sq ft)"
+stale_data_flags:
+  - {datapoint: "CBRE Report TAM 282 million sq ft / Rs474-592bn by 2026", source: "IPO Prospectus p.142-143 (CBRE Report dated 29-Apr-2024)", year: 2024}
+  - {datapoint: "Tier-1 flex stock/seat density ratio (62 million sq ft / ~950,000 seats)", source: "IPO Prospectus p.175 (CBRE Report, Dec-2023 data)", year: 2023}
+  - {datapoint: "APAC flex penetration ~4% benchmark", source: "IPO Prospectus p.167 (CBRE Report, Mar-2023 data)", year: 2023}
+searches_performed:
+  - "India flexible workspace coworking market size 2026 CBRE report million square feet"
+  - "India office fit-out design and build market size India 2026 crore"
+  - "India commercial office fit-out contracting market size crore 2025 2026 report"
+  - "India Grade A office stock total million square feet 2026 CBRE JLL"
+  - "WebFetch tablespace.com India Flex Workspace Market Leaders article"
+  - "Flex-plosion CBRE FICCI report 2026 India flex office market Rs crore"
+  - "USD INR exchange rate September 2026"
+  - "Smartworks Coworking Spaces FY26 revenue crore annual results"
+  - "Indiqube Spaces FY26 revenue crore IPO DRHP"
+  - "Dev Accelerator DevX FY26 revenue crore annual results"
+  - "WeWork India revenue FY26 crore"
+  - "Table Space coworking India revenue FY26 crore seats"
+  - "India flexible workspace total seats million 2026 CBRE FICCI flex-plosion"
+  - "India coworking flexible workspace average revenue per seat per month rent 2026"
+  - "WebFetch cushmanwakefield.com India Office Fit Out Cost Guide 2026"
+  - "India office space leasing gross absorption 2026 total million square feet annual full year forecast"
+searches_skipped:
+  - "Direct JLL India flex-specific report pull -- relied on JLL headlines surfaced incidentally by other queries plus AR/concall citations of JLL data"
+  - "Direct Knight Frank India flex/office report pull"
+  - "Direct Anarock report pull"
+  - "Direct Mordor Intelligence / Ken Research / RedSeer paid-report-style India coworking market report"
+  - "Direct fetch of the full Nasscom-Zinnov GCC Landscape Report -- relied on the AR's own citation of Nasscom-Zinnov/Colliers figures instead"
+downstream_candidates:
+  - signal: "Quarterly India Grade A office gross leasing & flex-share-of-leasing data"
+    entity_type: "macro"
+    demand_link: "Direct leading indicator for both co-working demand and D&B fit-out volume (leasing precedes fit-out)"
+    likely_source: "CBRE / JLL / Knight Frank / Colliers quarterly India office market report"
+    cadence: "quarterly"
+    shared: true
+  - signal: "Nasscom-Zinnov / Colliers annual GCC count and aggregate GCC revenue tracker"
+    entity_type: "macro"
+    demand_link: "Underwrites the largest cited demand driver: GCC >40% of India CRE leasing"
+    likely_source: "Nasscom-Zinnov GCC Landscape Report (annual)"
+    cadence: "event-driven"
+    shared: true
+  - signal: "Peer quarterly occupancy, seat-addition and cash-margin disclosures (Smartworks, Indiqube, DevX)"
+    entity_type: "counterparty"
+    demand_link: "Benchmarks whether Awfis's occupancy plateau and cash-margin gap are company-specific or sector-wide"
+    likely_source: "Peer BSE/NSE quarterly results filings and earnings calls"
+    cadence: "quarterly"
+    shared: true
+  - signal: "New GCC / first-time GCC set-up announcements in India"
+    entity_type: "end-customer"
+    demand_link: "Direct leading indicator for the GCC client-entry pipeline (20-30 first-time GCCs/quarter)"
+    likely_source: "Nasscom-Zinnov GCC tracker / SEZ-STPI new-unit registrations"
+    cadence: "quarterly"
+    shared: false
+  - signal: "GST Council / CBIC commercial leasing and works-contract GST notifications"
+    entity_type: "regulatory"
+    demand_link: "GST treatment change named by AWFIS itself as a challenge affecting both segments' cost structure"
+    likely_source: "CBIC / GST Council press releases"
+    cadence: "event-driven"
+    shared: true
+  - signal: "Large enterprise/GCC office-leasing transaction announcements (mandates >2,000 seats)"
+    entity_type: "end-customer"
+    demand_link: "AWFIS's growth pattern leans on large single mandates (multiple 2,000+ seater GCC deals closed FY26)"
+    likely_source: "CBRE/JLL/Knight Frank transaction trackers; company Reg 30 filings"
+    cadence: "event-driven"
+    shared: false
+demand_externally_verifiable: true
+analyst_note: >
+  Two things a downstream stage cannot reconstruct from the fields alone.
+  First, the conservative/realistic TAM divergence (Rs16,200 Cr vs
+  Rs52,200 Cr, co-working) is not a genuine range of opinion about market
+  size; it is the gap between a data-availability floor (only 6 of 500+
+  national operators individually priced) and a figure cross-validated
+  twice by the same research house family two years apart. Treat the
+  conservative number as lower because fewer competitors could be named,
+  not because the market is smaller. Second, the capacity-vs-SOM gap in
+  3C (Rs180-190 Cr) inverts depending on track: conservative says Awfis
+  is over-building; realistic says the capex plan is right-sized. Given
+  Awfis's credibility grade C (B05) and its occupancy plateau contradicted
+  by all three peers (B06), this stage recommends Stage 11 weight the
+  realistic-track SOM CAGR (~14-16% combined) as the primary cross-check
+  on revenue growth, while still naming the execution risk that capex may
+  be sized for a market larger than Awfis is currently proving it can
+  fill.

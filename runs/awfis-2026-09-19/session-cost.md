@@ -13,3 +13,4 @@ not split input/output, so in_tok/out_tok read n/a).
 | 3 | AR backward deep dive (8 phases) | claude-sonnet-5 | default | n/a | n/a | 215916 | 13m30s | 1 |
 | 6 | peer concall verification | claude-sonnet-5 | default | n/a | n/a | 338642 | 6m14s | 1 |
 | 7 | emerging moat scan | claude-sonnet-5 | default | n/a | n/a | 170648 | 9m01s | 1 |
+| 9 | TAM/SAM/SOM (web) | claude-sonnet-5 | default | n/a | n/a | 187974 | 13m50s | 1 |

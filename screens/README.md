@@ -158,14 +158,17 @@ POONAWALLA, MAXIND, CAPILLARY and DPABHUSHAN; (c) CAGR or FY26 growth for TIMEX 
 ALUFLUOR, which have no June-2026 quarter indexed. Three more Bull AI calls fetched TIMEX's
 FY26 PAT and SPLPETRO's FY26 revenue and PAT.
 
-| Ticker | FY27E revenue (Rs cr) | FY27E PAT (Rs cr) | PAT growth | Fwd P/S | Basis |
-|---|---:|---:|---:|---:|---|
-| TIMEX | 1,020 | 96 | +28% | 6.0x | c |
-| CSM | 274 | 29 | +21% | 1.9x | b |
-| POONAWALLA (NII) | 7,420 | 1,620 | +198% | 5.1x | b |
-| MAXIND | 316 | loss | n.m. | 2.5x | b |
-| CAPILLARY | 1,048 | 69 reported (104 normalised) | +31% | 3.4x | b |
-| DPABHUSHAN | 6,425 | 485 | +129% | 0.47x | b |
-| SPLPETRO | 5,820 | 357 | +9% | 2.6x | a |
-| SSWL | 6,500 | 257 | +27% | 0.84x | a |
-| ALUFLUOR | 232 | 27 | +12% | 1.7x | c |
+| Ticker | FY27E revenue (Rs cr) | FY27E PAT (Rs cr) | PAT growth | Fwd P/E | Fwd P/S | Basis |
+|---|---:|---:|---:|---:|---:|---|
+| TIMEX | 1,020 | 96 | +28% | 64x | 6.0x | c |
+| CSM | 274 | 29 | +21% | 18x | 1.9x | b |
+| POONAWALLA (NII) | 7,420 | 1,620 | +198% | 24x | 5.1x | b |
+| MAXIND | 316 | loss | n.m. | n.m. | 2.5x | b |
+| CAPILLARY | 1,048 | 69 reported (104 normalised) | +31% | 52x (34x normalised) | 3.4x | b |
+| DPABHUSHAN | 6,425 | 485 | +129% | 6.3x | 0.47x | b |
+| SPLPETRO | 5,820 | 357 | +9% | 43x | 2.6x | a |
+| SSWL | 6,500 | 257 | +27% | 21x | 0.84x | a |
+| ALUFLUOR | 232 | 27 | +12% | 14x | 1.7x | c |
+
+Forward P/E replaced forward P/S as the headline multiple the same day, on operator
+ruling; the cards carry both.

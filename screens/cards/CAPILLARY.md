@@ -8,7 +8,8 @@
 - Market cap ~Rs 3,561 cr per Bull AI screen; verify CMP live. Above the small/micro-cap
   mandate; written anyway.
 - FY27E (step 5A, basis b): revenue Rs 1,048 cr, reported PAT Rs 69 cr (+31% on FY26
-  Rs 52.4 cr; normalised Rs 104 cr), forward P/S 3.4x on the Rs 3,561 cr screen cap.
+  Rs 52.4 cr; normalised Rs 104 cr), forward P/E 52x reported, 34x normalised (P/S 3.4x)
+  on the Rs 3,561 cr screen cap.
 - Corpus caveat: no annual report, no credit rating, no post-listing shareholding. Concall
   read only to page 12. One cited concall document returned zero text from Bull AI; those
   quotes are guidance-sourced, not page-verified. See manifest for full gaps.
@@ -106,9 +107,10 @@ Rs 27.4 cr (IP p.18). No numeric FY27 guidance held; basis (b) applies.
 - Primary (b): Q1FY27 revenue grew 42.6% (IP p.15). FY27E revenue Rs 1,048 cr. PAT at
   Q1's normalised margin of 9.9% (IP p.17): Rs 104 cr normalised. Reported PAT after the
   Rs 33.4 cr fraud provision and the Rs 1.6 cr deferred-tax charge already booked in
-  Q1: Rs 69 cr, +31% on reported FY26, +150% on FY26 before exceptionals. Forward P/S 3.4x.
+  Q1: Rs 69 cr, +31% on reported FY26, +150% on FY26 before exceptionals. Forward P/E 52x on reported, 34x on
+  normalised; P/S 3.4x.
 - Alternate: organic growth only, 17% (IP p.15), with acquired revenue flat. Revenue
-  Rs 860 cr, normalised PAT Rs 85 cr. Forward P/S 4.1x.
+  Rs 860 cr, normalised PAT Rs 85 cr, P/E 42x on normalised. P/S 4.1x.
 - Separating observation: whether the Kognitiv and Brierley revenue in Q2FY27 holds
   its Q1 level. A migration-led churn moves the year to the alternate. A further
   fraud-related charge would cut reported PAT below Rs 69 cr.

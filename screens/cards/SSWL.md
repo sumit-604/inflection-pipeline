@@ -7,7 +7,8 @@
   valuation, no price.
 - Market cap ~Rs 5,478 cr per Bull AI screen; verify CMP live.
 - FY27E (step 5A, basis a): revenue Rs 6,500 cr, PAT Rs 257 cr (+27% on FY26 Rs 202 cr),
-  forward P/S 0.84x on the Rs 5,478 cr screen cap. Alternate PAT Rs 286 cr (+42%).
+  forward P/E 21x (P/S 0.84x) on the Rs 5,478 cr screen cap. Alternate PAT Rs 286 cr
+  (+42%), P/E 19x.
 - Corpus caveat: one quarter's concall and deck, one credit rating, partial FY25 AR
   pages, guidance quotes. No FY26/FY27 annual report yet, no consolidated P&L, no
   isolated Q4FY26 quarter.
@@ -101,10 +102,10 @@ FY26 actual (standalone): revenue Rs 5,182.8 cr, EBITDA Rs 511.1 cr, PAT Rs 202.
 (Presentation Q1FY27 p.27). Management guides FY27 revenue of Rs 6,500 cr and EBITDA of
 Rs 650 cr (Concall p.4, p.8, p.10); basis (a) applies.
 - Primary (a): revenue Rs 6,500 cr, +25%. EBITDA Rs 650 cr, 10% margin. PAT at FY26's
-  conversion of 39.5% of EBITDA: Rs 257 cr, +27%. Forward P/S 0.84x.
+  conversion of 39.5% of EBITDA: Rs 257 cr, +27%. Forward P/E 21x, P/S 0.84x.
 - Alternate: PAT at Q1FY27's conversion of 44.1% (PAT Rs 71.5 cr on EBITDA Rs 162.3 cr,
   Presentation Q1FY27 p.22), which reflects lower interest on a flat debt load. PAT
-  Rs 286 cr, +42%.
+  Rs 286 cr, +42%, P/E 19x.
 - Separating observation: FY27 capex against the Rs 826 cr net debt. If the Bhuj and
   alloy expansion lifts interest and depreciation in H2, the conversion reverts to
   FY26's; if debt stays flat, Q1's holds. The guidance itself assumes tariff headwinds

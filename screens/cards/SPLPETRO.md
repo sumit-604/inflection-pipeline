@@ -8,7 +8,8 @@
 - **Market cap ~Rs 15,220 cr per Bull AI screen, well above the small/micro-cap mandate (over
   Rs 10,000 cr). Flagged; card written anyway.**
 - FY27E (step 5A, basis a): revenue Rs 5,820 cr, PAT Rs 357 cr (+9% on FY26 Rs 327 cr),
-  forward P/S 2.6x on the Rs 15,220 cr screen cap. Alternate reading 2.3x, PAT Rs 910 cr.
+  forward P/E 43x (P/S 2.6x) on the Rs 15,220 cr screen cap. Alternate PAT
+  Rs 910 cr, P/E 17x.
 - Corpus caveat: Bull AI page-cited passages, not full PDFs on disk. Held: full Q1FY27 concall,
   two rating rationales, FY25 AR MD&A/governance/promoter pages, guidance back to Q3FY24. No
   investor presentation, FY26 AR, balance sheet, or pledge disclosure. See MANIFEST.md.
@@ -92,9 +93,9 @@ FY26 actual: revenue Rs 5,338 cr, down 11% on lower styrene prices; PAT Rs 327 c
 (Q4FY26 call, guidance p.6) and refuses margin guidance (Concall Q1FY27 p.9); basis (a)
 applies to volume, with realisation held at FY26.
 - Primary (a): volume +9%, price flat. FY27E revenue Rs 5,820 cr. PAT at the FY26 margin:
-  Rs 357 cr, +9%. Forward P/S 2.6x.
+  Rs 357 cr, +9%. Forward P/E 43x, P/S 2.6x.
 - Alternate (b): Q1FY27 revenue grew 22% on price alone, volume fell 24.5% (Concall p.3).
-  Revenue Rs 6,520 cr; PAT at Q1's 13.96% margin Rs 910 cr, +178%. Forward P/S 2.3x.
+  Revenue Rs 6,520 cr; PAT at Q1's 13.96% margin Rs 910 cr, +178%. Forward P/E 17x, P/S 2.3x.
 - Separating observation: the styrene-to-polystyrene spread. Q1 ran at $250 to 350 a
   tonne against a normal $200 to 300 (Concall p.3). The CFO calls the quarter "an
   aberration" (Concall p.10). The alternate needs the wide spread to hold three more

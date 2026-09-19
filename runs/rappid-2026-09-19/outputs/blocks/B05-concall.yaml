@@ -1,0 +1,78 @@
+stage: B05-concall
+company: "RAPPID"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+no_concall_mode: true
+input_gaps:
+  - "rating/ empty (no rating exists)"
+  - "research/ empty"
+  - "one earnings call only (NO-CONCALL MODE); no cross-quarter transcript comparison possible, promise-vs-delivery built from AR/GBU/results instead"
+  - "peer transcripts 8 of 12"
+  - "screener P&L/BS/CF/Quarters empty exports (Data_Sheet populated)"
+  - "SME half-yearly filer"
+  - "press release 28-May-2026 pages 2-3 image-only, not decoded (content duplicates the 27-May-2026 results PDF already read)"
+flags:
+  - type: FLAG-GUIDANCE
+    reason: "50% volume CAGR guidance (01-Feb-2025 Reg 30 update, FY26-27) missed at +2.1% FY26 actual growth (Rs52.13Cr to Rs53.23Cr, 27-May-2026 results PDF); FY27 restated 'closing to 50% or more' guidance (Jun-2026 concall) is absent from the FY26 AR three months later (grep-verified, no '50%'/'closing to' language in Annual_Report_2026.txt outlook/chairman sections); Q1 FY27 actual +28% YoY sits well below the run-rate a 50%+ full year needs. Confirms company-memory Load-Bearing Fact 1."
+  - type: FLAG-STRATEGY-ABANDONED
+    reason: "IPO's inorganic-growth pillar (Pune-based foundry, 'advanced talks' per 01-Feb-2025 update) never completed; entire Rs400 Lakh acquisition object plus Rs364.5 Lakh unspent capex object redirected to working capital via 17-Apr-2026 EGM, 14-18 months after being described as advanced talks, with no interim disclosure that the search had stalled."
+accounting_quality_carryforward: 4
+quarters_analysed: ["Q2 FY25 (30-Sep-2024, filed 14-Nov-2024)", "FY25 (31-Mar-2025, filed 12-May-2025)", "Q2 FY26 (30-Sep-2025, filed 13-Nov-2025)", "FY26 (31-Mar-2026, filed 27-May-2026)", "01-Jun-2026 earnings call (H2/FY26)", "Q1 FY27 business update (30-Jun-2026, filed 09/10-Jul-2026)"]
+triggers:
+  - {priority: 1, name: "FSS naval shipset orders (Rs29.85Cr, Q1 FY27: BHEL, Shree Refrigerations, Muller-BBM)", type: "VOLUME/SECTORAL", timeframe: "near", conviction: "M", confirm_signal: "H1/H2 FY27 results show rupee-for-rupee revenue recognition of these purchase orders", kill_signal: "PSU/private execution slippage repeats the FY26 pattern of held-back March dispatches"}
+  - {priority: 2, name: "FY27 'closing to 50% or more' growth guidance", type: "VOLUME", timeframe: "near", conviction: "L", confirm_signal: "H1 FY27 half-yearly print shows an accelerating run-rate materially above the Q1 FY27 +28% pace", kill_signal: "H1 FY27 growth stays near the Q1 pace or decelerates further"}
+  - {priority: 3, name: "US export/data-center customer conversion", type: "VOLUME/REGULATORY-POLICY", timeframe: "long, already 16+ months delayed", conviction: "L", confirm_signal: "a signed bulk contract with a disclosed rupee value", kill_signal: "two more quarters pass with the relationship still at lab-testing/NDA stage"}
+  - {priority: 4, name: "Praj Industries / ethanol ARC repricing (~Rs10-12Cr)", type: "PRICE", timeframe: "near", conviction: "M", confirm_signal: "a signed FY27 ARC at revised pricing adds the stated Rs10-12Cr", kill_signal: "renegotiation stalls or volumes shift to a competitor"}
+  - {priority: 5, name: "Margin recovery above FY26's 12.17% PAT margin", type: "COST", timeframe: "medium", conviction: "L-M", confirm_signal: "FY27 EBITDA/PAT margin expansion despite the ~Rs22Cr of low-margin carried orders CMD named", kill_signal: "further compression from executing the carried low-margin book"}
+guidance:
+  - {item: "Volume CAGR target", number: "50% CAGR", timeframe: "FY26 and FY27", stated_in: "01-Feb-2025 Reg 30 business update"}
+  - {item: "Capex completion", number: "By June 2025", timeframe: "FY25/FY26", stated_in: "01-Feb-2025 Reg 30 business update"}
+  - {item: "Backward integration (foundry acquisition)", number: "'Advanced talks', Rs400 Lakh budget", timeframe: "FY25", stated_in: "01-Feb-2025 Reg 30 business update"}
+  - {item: "Growth trajectory", number: "'Further growth acceleration in forthcoming quarters'", timeframe: "FY26 remaining quarters", stated_in: "03-Jul-2025 Reg 30 business update"}
+  - {item: "FY27 growth", number: "'Closing to 50% or more'", timeframe: "FY27", stated_in: "01-Jun-2026 earnings call, Gaurav Dalal"}
+  - {item: "FY27 capex", number: "None beyond small test equipment", timeframe: "FY27", stated_in: "01-Jun-2026 earnings call"}
+  - {item: "Additional working-capital funding", number: "Required in 4-5 months", timeframe: "FY27 H2", stated_in: "01-Jun-2026 earnings call"}
+  - {item: "Investor communication cadence", number: "Quarterly business updates going forward", timeframe: "Ongoing", stated_in: "01-Jun-2026 earnings call"}
+  - {item: "Q1 FY27 delivery", number: "Sales Rs14.87Cr (+28% YoY); executable order book ~Rs40Cr (+60% YoY); ~Rs11Cr confirmations pending PO", timeframe: "Q1 FY27", stated_in: "09-Jul-2026 GBU, revised 10-Jul-2026"}
+promise_delivery:
+  delivered: 1
+  partial: 1
+  missed: 3
+  rows:
+    - {promised_in: "01-Feb-2025 Reg 30 update", promise: "50% volume CAGR, FY26", outcome: "MISSED - FY26 actual revenue growth +2.1% (Rs52.13Cr to Rs53.23Cr)", explanation: "Copper/nickel-aluminium-bronze price volatility (~32% rise) and geopolitical LPG-supply disruption to foundries; 'conscious management decision to prioritize profitability' over volume"}
+    - {promised_in: "01-Feb-2025 Reg 30 update", promise: "Capex completion by June 2025", outcome: "PARTIAL - new facility commissioned per 03-Jul-2025 update, but Rs364.5 Lakh of the original plant-and-machinery IPO object stayed unutilized through FY26 and was redirected to working capital at the 17-Apr-2026 EGM", explanation: "Not separately explained by management; inferred from Note 32/EGM disclosure chain"}
+    - {promised_in: "01-Feb-2025 Reg 30 update", promise: "Backward integration via Pune foundry acquisition", outcome: "MISSED/ABANDONED - entire Rs400 Lakh acquisition object redirected to working capital, 17-Apr-2026 EGM", explanation: "'We are unable to have any inorganic... synergy... with a foundry' (Jun-2026 concall) - a deflection, not a stated reason"}
+    - {promised_in: "03-Jul-2025 Reg 30 update", promise: "'Anticipates further growth acceleration in forthcoming quarters'", outcome: "MISSED - H2 FY26 revenue fell 24.9% YoY", explanation: "Same commodity-price/selective-bidding explanation given only retroactively at the Jun-2026 call, not disclosed as a risk at the 16-Oct-2025 update when the order book had already shrunk sequentially"}
+    - {promised_in: "01-Jun-2026 concall", promise: "Quarterly business updates going forward", outcome: "DELIVERED - Q1 FY27 update issued 09-Jul-2026 (revised 10-Jul-2026), on schedule", explanation: "n/a"}
+    - {promised_in: "01-Jun-2026 concall", promise: "FY27 growth 'closing to 50% or more'", outcome: "IN PROGRESS, not gradable this run - Q1 FY27 +28% YoY, below the run-rate a 50%+ full year needs", explanation: "Monitorable, not a completed promise-delivery cycle"}
+excuse_pattern: "external-blame-heavy"
+repeated_evasions: []
+credibility_grade: "C"
+credibility_basis: "FY26 50% CAGR guidance (Feb-2025) missed at +2.1% actual growth; the IPO's acquisition pillar was fully abandoned by Apr-2026; a Jul-2025 acceleration claim was followed by a 24.9% H2 revenue decline; the Jun-2026 call's FY27 '50% or more' figure is absent from the FY26 AR three months later. Sole documented delivery is the quarterly-update commitment kept on schedule (1 delivered, 1 partial, 3 missed of gradable items). Grade stays at the NO-CONCALL default of C; no rise to B is supported."
+peer_questions:
+  - {question: "What are typical PSU shipyard (Mazagon Dock, GRSE, Cochin Shipyard, HSL) payment terms and receivable-cycle length for naval valve orders, and do PSU contracts carry any price-escalation clause?", why: "Tests Rappid's claim that PSU 'delay' is a logistics/GRN artifact rather than a payment risk, and whether ~170-day receivable days is industry-normal or company-specific.", check_peers: ["KSB", "Atam Valves"]}
+  - {question: "What EBITDA margin differential, if any, do naval/marine valve orders carry versus general industrial valve orders, and how has non-ferrous raw-material price volatility (nickel-aluminium bronze, copper) been passed through in the last 12-18 months?", why: "Tests the 'nobody likes to be at the 12% margin point' comment and whether the cited NAB price shock was industry-wide or a company-specific bidding miscalculation.", check_peers: ["KSB", "Quest Flow Controls"]}
+  - {question: "What working-capital cycle (debtor days, inventory days, supplier-advance practice) is typical for a valve maker serving PSU shipyards and private industrial customers?", why: "Tests whether Rappid's negative CFO and rising debtor/inventory days are a structural feature of this segment or company-specific.", check_peers: ["KSB", "Atam Valves", "Quest Flow Controls"]}
+  - {question: "How large is the Indian marine/naval valve addressable market, and what share of a shipyard's per-vessel cost typically goes to valves?", why: "Tests the CMD's own admission that no shipyard could give him a consistent answer, and the growth narrative's dependence on this pool being large and growing.", check_peers: ["KSB"]}
+  - {question: "How does a claimed capacity-utilization figure (e.g. 'well-equipped up to X crore of revenue at Y% utilization') normally track against realized revenue for a build-to-order valve maker, given that valve size and pressure rating, not unit count, drive revenue?", why: "Tests whether Rappid's unresolved 120Cr-capacity-at-85%-utilization-vs-53Cr-actual gap is normal for the business model or specific to Rappid.", check_peers: ["KSB", "Atam Valves"]}
+  - {question: "How common is a practice of paying foundry/raw-material suppliers 50% advance to lock pricing, and how much does it widen the buyer's own working-capital gap?", why: "Tests Rappid's stated advance-payment practice and its margin-protection rationale against industry norm.", check_peers: ["Atam Valves", "Quest Flow Controls"]}
+red_flags:
+  - "50% CAGR guidance (Feb-2025, FY26-27) missed at +2.1% FY26 actual growth (High)"
+  - "IPO's inorganic-growth pillar (Pune foundry) abandoned; Rs400 Lakh redirected to working capital (High)"
+  - "Jul-2025 'further acceleration' claim followed by a 24.9% H2 FY26 revenue decline (High)"
+  - "US export customer stalled at pre-contract stage for 16+ months despite repeated positive framing at each touchpoint (Medium)"
+  - "Capacity claim (120Cr at 85% utilization) mathematically unreconciled against Rs53.23Cr FY26 actual revenue (Medium)"
+  - "Order book fell sequentially (Rs24.64Cr to Rs20.19Cr) immediately ahead of the H2 FY26 miss, not flagged as a risk at the time (Medium)"
+  - "Q1 FY27 business update required a same-week correction of its headline revenue-growth metric's label, same figure retained (Watch)"
+  - "Third Company Secretary in under two years (Watch)"
+  - "FY27 '50% or more' guidance restated at the Jun-2026 call does not appear anywhere in the FY26 AR three months later (Medium)"
+dropped_triggers:
+  - "CBG/RNG (compressed biogas/renewable natural gas) diversification, named once in the 01-Feb-2025 outlook, never repeated since"
+  - "Domestic data-center valve opportunity - CMD explicitly states no scouting done in India as of Jun-2026"
+  - "Pumped-hydro-storage valve demand - analyst-proposed, not management-originated; CMD had not previously encountered the requirement"
+timeline_slippages:
+  - "US export customer (data-center valves): prototype stage (Feb-2025) to UL approval and lab testing (Oct-2025) to still no signed bulk contract 16+ months later (Jun-2026 concall)"
+  - "Backward integration/foundry acquisition: 'advanced talks' (Feb-2025) to formal abandonment via EGM (Apr-2026), 14 months"
+  - "Capex completion: guided for June 2025, still adding VMC/testing-bench equipment in Jun-2026 and Q1 FY27, with Rs364.5 Lakh of the original object never utilized and eventually redirected"
+analyst_note: "The load-bearing pattern is structural, not a one-off miss: a numeric growth target (50% CAGR, Feb-2025) was set with no stated allowance for commodity-price and PSU-execution-timing risk management itself later calls structural to this business, and the same pattern repeats at the Jun-2026 call with the FY27 '50% or more' figure, restated with confidence then hedged hard the moment an analyst extrapolated further upside from the CMD's own numbers. Grade C reflects a mixed but miss-heavy record, not a coroner's verdict: the marine/naval mix shift is real and AR-corroborated, and the Q1 FY27 FSS orders are genuine, PO-backed evidence. Q1 FY27's +28% YoY pace sitting well under the run-rate a 50%+ full year requires is this run's central monitorable, testable at the H1 FY27 half-yearly print with no inference required."

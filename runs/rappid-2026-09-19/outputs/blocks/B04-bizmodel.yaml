@@ -1,0 +1,64 @@
+stage: B04-bizmodel
+company: "RAPPID"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "no screener P&L/BS/CF exports; AR and Inv. Pres. face figures used directly"
+  - "only one earnings call filed (01-Jun-2026); no older calls to check guidance history"
+  - "naval-specific revenue split within the 32.85% Marine + Shipbuilding & Repair vertical NOT FOUND in FY26 AR or Inv. Pres."
+  - "no average-selling-price or per-valve cost disclosure; only company-wide % figures available"
+  - "peer financial statements (KSB, Quest Flow Controls, Atam Valves) not loaded this stage"
+flags:
+  - type: FLAG-DISCLOSURE
+    reason: "10-Jul-2026 revision to the Q1 FY27 business update relabelled 'Revenue from Operations' as 'Sales' for the same Rs 14.87 Cr figure, with no clarification of whether the two terms are numerically identical for this company. Touches company-memory Load-Bearing Fact 1 (guidance vs delivery); confirm against the FY27 half-yearly result before using in any Section 1B revenue basis."
+  - type: FLAG-DATA-INCONSISTENCY
+    reason: "Repeat-customer % is stated as 60% in the Inv. Pres. (slide 7) and as 'almost 75%' by the CMD on the Jun-2026 concall (line 777); not reconciled in this run's sources."
+business_type: "manufacturing"
+revenue_streams:
+  - {name: "Industrial valves", type: "build-to-order unit sale", pct_of_revenue: 67, predictability: "M"}
+  - {name: "Marine/naval valves", type: "build-to-order unit sale on long-cycle fixed-price contract", pct_of_revenue: 33, predictability: "L"}
+  - {name: "Valve automation/actuators", type: "integrated add-on, embedded in above streams", pct_of_revenue: 0, predictability: "M"}
+asset_intensity: "medium"
+wc_intensity: "high"
+pricing_power: "weak"
+cyclicality: "cyclical"
+moats_present:
+  - {moat: "Type-approval/classification-society certification (marine)", durability: "moderate-high, contingent on renewal"}
+  - {moat: "Switching costs once type-approved into a vessel programme", durability: "moderate"}
+valuation_methods:
+  primary: {method: "Sum-of-the-parts by revenue stream (industrial vs marine/naval), Section 1B exit multiple per stream, blended by revenue mix", why: "the two streams have materially different pricing power, cycle length and cash-conversion economics; a single blended multiple would mask the transition thesis"}
+  secondary: {method: "Trailing/forward P/E and comparable-company multiples", why: "usable cross-check once FY26's H1/H2 order-timing distortion is normalised and peer data (KSB, Quest Flow Controls, Atam Valves) is loaded"}
+  tertiary: {method: "Order-book-to-revenue visibility ratio", why: "feeds the forward revenue assumption only, not a standalone multiple"}
+  not_applicable: ["DCF (CFO negative every year FY23-FY26; would forecast unproven cash recovery)", "Asset-based/NAV (operating manufacturer, not asset-holding or distressed)"]
+irrelevant_ratios:
+  - {ratio: "Trailing P/E on last-twelve-months EPS alone", why: "FY26 revenue grew only 2.1% after a 48% FY23-26 CAGR; a P/E on this distorted year misreads the mix-shift thesis"}
+  - {ratio: "Standard current ratio as a liquidity-safety signal", why: "fell from 3.38x to 2.55x mainly because inventory and receivables ballooned, masking the real CFO problem"}
+  - {ratio: "Single-period YoY revenue growth", why: "H1 FY26 +46.9%, H2 FY26 -24.9%; the blended +2.1% hides a deliberate order-holding decision"}
+must_track_metrics:
+  - {metric: "CFO / PAT", healthy: "trending toward >0.7x", red_flag: "a fifth consecutive negative-CFO year"}
+  - {metric: "Marine + Shipbuilding & Repair % of revenue", healthy: "rising or holding above ~30%", red_flag: "reverting toward the FY23 base of 0.5%"}
+  - {metric: "Executable order book (Rs Cr), QoQ", healthy: "rising faster than trailing revenue", red_flag: "flat or falling for two consecutive updates"}
+  - {metric: "Trade receivables turnover", healthy: "recovering toward 2.7x+ (FY24 level)", red_flag: "falling further below 2.0x"}
+  - {metric: "EBITDA margin", healthy: "holding at or above FY26's 19.36%", red_flag: "reverting toward the '12% margin point' the CMD flagged as undesirable"}
+unit_economics:
+  unit: "one valve (or valve-plus-actuator assembly), 15mm-600mm, multiple product families"
+  revenue_per_unit: "NOT FOUND - disclosed only by product type and industry vertical, no volume count or ASP"
+  margin_per_unit: "NOT FOUND - only company-wide material cost % of revenue (70.9% FY26) disclosed"
+  key_lever: "customer channel: PSU tenders are fixed-price with no escalation clause, private/export orders allow some price revision and advances; input metal price (copper/non-ferrous) is the dominant cost swing factor"
+first_deterioration_signals:
+  - {risk: "PSU fixed-price tenders with no escalation clause", first_signal: "revenue from operations diverging from the executable order book as deliveries are held back"}
+  - {risk: "Rs 22 Cr low-margin carried orders", first_signal: "quarterly EBITDA margin"}
+  - {risk: "Four-year negative CFO / rising WC", first_signal: "cash flow from operations; short-term borrowings balance"}
+  - {risk: "Long-cycle marine/defence execution risk", first_signal: "unbilled revenue/work-in-progress balance; inventory days"}
+  - {risk: "Marine/shipbuilding sector concentration", first_signal: "Marine + Shipbuilding & Repair revenue % of total"}
+mgmt_questions:
+  - "What is the FY27 naval-specific revenue (or a defined proxy) versus commercial shipbuilding within the combined Marine + Shipbuilding & Repair line?"
+  - "Of the Rs 40 Cr executable order book at Q1 FY27, how much sits on PSU fixed-price terms with no escalation clause versus private/export terms with price flexibility?"
+  - "What concrete, dated plan will turn CFO positive after four consecutive negative-CFO years?"
+  - "Reconcile the 60% (Inv. Pres.) versus ~75% (Jun-2026 concall) repeat-customer figures."
+  - "How much of the Rs 22 Cr low-margin carried-order backlog remains unexecuted, and what margin is it printing?"
+  - "What specific, measurable lever will lift EBITDA margin sustainably above 19.36%, and by when?"
+  - "With the entire IPO acquisitions budget redirected to working capital, what is the updated inorganic-growth strategy, if any?"
+one_line_verdict: "A certified, moat-lite valve maker shifting into fixed-price naval work whose transition is evidenced but whose cash economics are not yet proven."
+analyst_note: "Two archetypes apply by revenue stream, not one for the whole company: build-to-spec component maker (industrial, 67%) and order-book business/EPC-defence variant (marine/naval, 33%). This split IS the transition thesis; valuing the company on a single blended archetype would understate the mix-shift. The Rs 14.87 Cr Q1 FY27 'Sales' vs 'Revenue from Operations' relabelling (10-Jul-2026) is unresolved and bears directly on company-memory Load-Bearing Fact 1; treat any FY27 growth-rate claim built on that figure as provisional until the half-yearly result clarifies the basis. Naval-specific revenue disaggregation remains NOT FOUND across every document in this run, which caps confidence in the defence/strategic sector-cap classification flagged in company memory."

@@ -1,0 +1,41 @@
+stage: B08-promoter
+company: "RAPPID"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["rating/ empty (no rating exists)", "research/ empty", "one earnings call only (NO-CONCALL MODE)", "peer transcripts 8 of 12", "SME half-yearly filer", "no Glassdoor/AmbitionBox coverage exists for a company this size (data gap, not a clean finding)", "no proxy-advisory (IiAS/SES) coverage exists (SME too small for their universe)", "SCORES complaint database not searchable via general web search"]
+flags:
+  - {type: FLAG-PROMOTER, verdict: "CONCERN", top_findings: ["CMD (Gaurav Dalal) basic-pay ceiling revised twice within ~12 months (Rs72,00,000 -> Rs84,00,000 p.a., effective 01-Sep-2026); actual paid rose Rs48.0L (FY25) -> Rs62.0L (FY26), +29%, against +2.1% revenue growth and negative CFO both years", "Rs48,00,000 FY26 remuneration to promoter's spouse Mansi Gaurav Dalal as Non-Executive Director (18.4x median employee remuneration, ~8x the CFO's salary), no disclosed executive function post-redesignation from Executive to Non-Executive Director", "Promoter-family cash compensation (CMD salary + spouse NED pay + spouse rent + father's salary) rose from an estimated ~11-12% of PAT (FY25) to ~19% of PAT (FY26) [INFERENCE from AR Note 28 RPT figures and reported PAT margins]", "Three Company Secretaries in ~19 months since listing, two resignations both citing personal reasons on the same calendar date (28-Feb) in consecutive years", "25.1% of gross IPO proceeds (acquisition + unspent capex budgets, Rs764.51L) redirected to working capital via shareholder vote, abandoning the growth-capital equity story in the same year cash conversion deteriorated", "EGM-vs-Postal-Ballot mechanism description conflict across five citations for the same IPO-proceeds redirection (does not affect voting outcome, which passed unanimously)"]}
+verdict: "CONCERN"
+scorecard: {clean: 5, caution: 4, red: 1}
+deal_breakers: []
+adverse_findings:
+  - {finding: "CMD basic-pay ceiling revised twice in ~12 months (Rs72L->Rs84L) on +2.1% revenue growth and negative CFO both years", evidence_tier: "VERIFIED", source: "AGM Notice 27-Sep-2025 (Rs72L approval); AGM Notice/Explanatory Statement 01-Sep-2026 (Rs84L revision, effective 01-Sep-2026)", date: "2026-08-29 (board approval), 2026-09-01 (notice)"}
+  - {finding: "Rs48,00,000 FY26 remuneration to promoter-family Non-Executive Director Mansi Gaurav Dalal, 18.4x median employee remuneration", evidence_tier: "VERIFIED", source: "Annual Report 2025-26, Annexure D (Section 197 remuneration disclosure), p.48", date: "2026 AR (FY ended 31-Mar-2026)"}
+  - {finding: "Three Company Secretaries in 19 months post-listing; two resignations, both 'personal reasons', same calendar date (28-Feb) in consecutive years", evidence_tier: "VERIFIED", source: "NSE Reg 30 intimations 01-Mar-2025 (Nidhi Shah resignation), 10-Mar-2025 (Vrinda Saboo appointment), 28-Feb-2026 (Vrinda Saboo resignation)", date: "2025-03-01 to 2026-02-28"}
+  - {finding: "100% of IPO acquisition budget (Rs400L) and unspent capex budget (Rs364.51L), 25.1% of gross proceeds, redirected to working capital via shareholder vote", evidence_tier: "VERIFIED", source: "Board Meeting Outcome 21-Mar-2026 (Annexure-I); Postal Ballot voting results 30-Apr-2026 (Scrutinizer's Report)", date: "2026-03-21 to 2026-04-30"}
+  - {finding: "IPO-proceeds redirection mechanism described inconsistently as EGM (MD&A/Note 32 language, Board Meeting outcome, initial Postal Ballot Notice) vs Postal Ballot (actual e-voting mechanism, Secretarial Audit Report, Corrigendum)", evidence_tier: "VERIFIED", source: "Board Meeting Outcome 21-Mar-2026; Postal Ballot Notice 24-Mar-2026; Corrigendum 30-Mar-2026; Voting Results 30-Apr-2026", date: "2026-03-21 to 2026-04-30"}
+  - {finding: "At least six distinct NSE clarification/correction filings in ~18 months (segment-reporting query, financial-results-format correction, unmodified-opinion-declaration omission, PIT disclosure value-column correction, shareholding-pattern discrepancy revision)", evidence_tier: "VERIFIED", source: "NSE announcements 14-Jan-2025/19-Dec-2024 reply, 25-Jun-2025 clarification, 16-Jan-2026 PIT correction, SHP revision dated 17-Apr-2026 per nse_shp_master_RAPPID.json", date: "2024-12 to 2026-04"}
+  - {finding: "Minor disputed income-tax demands against the promoter personally (AY2017-18 ~Rs4.9L, AY2018-19 ~Rs2.4L, both disputed, not admitted)", evidence_tier: "VERIFIED", source: "RHP Sep-2024, Outstanding Litigations and Material Developments, p.261-262", date: "RHP dated Sep-2024, citing IT Dept portal demand notices 2018-2019"}
+transition_evidence:
+  - "Promoter on-market creeping acquisition: Gaurav Dalal's personal stake rose 47.5162% (18-Mar-2025) to 47.9669% (04-Jun-2025) via three personally-funded market purchases, no sales found (PIT Form B disclosures, VERIFIED)"
+  - "Zero promoter pledge/encumbrance maintained through the cash-stressed FY26 year, declared under Reg 31(4) for both FY25 (07-Apr-2025) and FY26 (06-Apr-2026) (VERIFIED)"
+  - "Promoter net-funding the company rather than extracting: Rs38.5L advanced by Gaurav Dalal to the company in FY26 (Note 28, AR p.67), a shrinking residual of a much larger pre-IPO bridge-financing relationship (Rs369.0L FY25)"
+  - "FY26 CSR spend (Rs9,56,940) routed to an external, non-promoter-controlled agency (Hetal Apurva Foundation), not to the promoter's own Manray Foundation"
+pledge_pct_latest: 0
+pledge_trend: "stable at zero - no encumbrance declared for FY25 (07-Apr-2025 Reg 31(4) declaration) or FY26 (06-Apr-2026 Reg 31(4) declaration); no pledge event found at any point since listing"
+searches_performed:
+  - "Gaurav Dalal Rappid Valves SEBI"
+  - "\"Rappid Valves\" promoter controversy OR fraud OR litigation"
+  - "\"Gaurav Dalal\" \"Rappid Valves\" Managing Director profile"
+  - "WebFetch thecompanycheck.com Gaurav Vijay Dalal DIN 00494466 directorships"
+  - "\"Rappid Valves\" Glassdoor OR AmbitionBox employee reviews"
+  - "\"Rappid Valves\" IiAS OR \"proxy advisory\" OR SES governance"
+  - "\"Rappid Valves\" NSE fine penalty non-compliance delay"
+  - "Rappid Valves IPO listing 2024 news oversubscription"
+  - "\"Rappid Valves\" order win defence navy 2026"
+  - "\"Rappid Valves\" OR \"Gaurav Dalal\" political donation OR BJP OR electoral"
+  - "\"Rappid Valves\" short seller OR activist OR SCORES complaint investor"
+searches_skipped: []
+verdict_basis: "CMD compensation ceiling raised twice in ~12 months (Rs72L->Rs84L) plus a new Rs48L FY26 payment to the promoter's spouse as Non-Executive Director (18.4x median employee pay), both against +2.1% revenue growth and negative CFO in both years, evidence a promoter-family compensation-extraction pattern that outweighs an otherwise clean legal, auditor, and pledge record."
+analyst_note: "No deal-breaker fires: clean SEBI/criminal/civil record, same statutory auditor throughout with unmodified opinions, zero pledge, and the promoter is a net personal financer of the company (loans in, not out) even through the cash-stressed FY26 year. The CONCERN verdict rests on one well-evidenced, quantifiable dimension (family compensation rising against weak delivery) plus a cluster of CAUTION items (CS turnover, filing-quality corrections, EGM/Postal-Ballot mechanism confusion) that echo B02/B03's independently-found drafting-control weakness. Treat this as a CONCERN with modest offsetting transition evidence (creeping promoter buying, zero pledge), not a static one: the promoter is not draining the company, but is extracting more of its profit through family pay as growth stalls. Synthesis should weigh this alongside FLAG-CASH; both flags trace to the same FY26 (weak growth, negative CFO)."

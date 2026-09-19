@@ -1,0 +1,98 @@
+stage: B04-bizmodel
+company: "KISSHT"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "COLLECTOR WARNING (verbatim): shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend. -- REPAIRED IN PART: inputs/shareholding/BSE-shareholding-summary-Jun2026.txt (BSE API summary statement, Jun-2026). It gives promoter 24.80% / public 75.20%, no pledge, locked-in shares, ESOPs outstanding. It does NOT give the FII/DII split; the UA institutional qualifier stays OPEN."
+  - "COLLECTOR WARNING (verbatim): screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance Sheet, screener:Cash Flow, screener:Customization, POONAWALLA:Profit & Loss, POONAWALLA:Quarters, POONAWALLA:Balance Sheet, POONAWALLA:Cash Flow, POONAWALLA:Customization, UGROCAP:Profit & Loss, UGROCAP:Quarters, UGROCAP:Balance Sheet, UGROCAP:Cash Flow, UGROCAP:Customization. Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again. -- Only <TICKER>-Data_Sheet.csv exists and it is the usable screening source."
+  - "COLLECTOR WARNING (verbatim): no results PDFs yet (screener has none): add later on github or locally + --push-again -- REPAIRED: Q1 FY27 and FY26 audited results downloaded from BSE into inputs/results/."
+  - "COLLECTOR WARNING (verbatim): no rating PDF yet: add later the same way -- REPAIRED: CRISIL rationale for Si Creva dated 13-Feb-2026 rendered to text in inputs/rating/. It rates the subsidiary, not the listed parent."
+  - "COLLECTOR WARNING (verbatim): only 2 concalls -> no-concall mode -- OVERRIDDEN: concalls_available is true. The company holds calls. Two transcripts (Q4 FY26 on 29-May-2026, Q1 FY27 on 30-Jul-2026) are ALL calls held since the 08-May-2026 listing. Stage 5 runs on 2 transcripts, not 3: the promise-delivery series is one quarter long."
+  - "COLLECTOR DEFECT: the BSE announcements fetch staged 10 of 69 filings and missed both results filings. 16 material filings plus the two results and the Q4 FY26 deck were added by hand. The first live test of fetch_bse_announcements (LESSONS OPEN ACTION, PR #167) therefore PASSED on connectivity and FAILED on selection: it stops short of max_files and skips Result-category rows."
+  - "results: 2 of up to 3 held (Q1 FY27 unaudited, FY26 audited incl. Q4). No Q3 FY26 results filing exists on BSE for this company: it was unlisted until 08-May-2026. Q3 FY26 and earlier quarters come from the RHP and the decks."
+  - "screening: SBICARD produced no Data_Sheet CSV. Peer screening data exists for POONAWALLA and UGROCAP only."
+  - "peer-concalls: POONAWALLA-Concall_Jan_2026_Transcript.pdf and POONAWALLA-Concall_Jan_2026_Transcript_2.pdf are the SAME call (Q3 FY26, held 16-Jan-2026); _2 carries the 21-Jan-2026 BSE cover letter. Treat as one call. Effective peer transcripts: 11 (SBICARD 4, POONAWALLA 3, UGROCAP 4)."
+  - "annual-report: only FY26 is held. The company was unlisted before May 2026 and published no listed-company AR for FY25. The RHP restated financials (FY23-FY25 and the 9M FY26 stub, per the RHP) carry the backward baseline."
+  - "shareholding: only the Jun-2026 summary statement. No trend: the company has one post-listing quarter."
+  - "research: EMPTY. No broker notes. No effect on anchored evidence."
+  - "other: EMPTY."
+  - "Duplicate PDFs removed at intake by MD5 (AGM-notice attachment = AR; BSE Q1 deck = Investor_Presentation_1; two Q1 attachments = Q1 results; 27-May acquisition attachment = FY26 results; one of two identical 17-Sep board outcomes). Named in manifest.notes (5)."
+  - "STAGE-4 SPECIFIC: standalone NIM/lending yield/cost-of-funds is NOT FOUND as an explicit % anywhere in the AR, the presentations, the RHP or the CRISIL rationale in this container. Total-income-per-avg-AUM and finance-cost-per-avg-AUM (DuPont-style, IP1 p.41) are the closest disclosed proxies but net in fee income, so they are not a pure interest yield/spread."
+  - "STAGE-4 SPECIFIC: LAP ticket size and tenure are disclosed inconsistently across three filed documents: AR (up to Rs 30 lakh / 15 years, AR p.9), Q1 FY27 investor presentation (up to Rs 15 lakh / 10 years, IP1 p.11), and the CRISIL rating rationale (up to Rs 20 lakh / 10 years). Unreconciled in this container; a management question is raised in Section 4D."
+  - "STAGE-4 SPECIFIC: the RHP's competitive positioning tables (peer AUM/PAT/RoAA, market-size projections) are sourced to a company-commissioned '1Lattice analysis' rather than independent third-party research; used here as the best available anchored source but flagged as issuer-sourced."
+flags:
+  - {type: FLAG-DISCLOSURE-INCONSISTENCY, reason: "LAP ticket size/tenure differs across three filed documents in the same period: AR up to Rs 30 lakh/15yr (AR p.9), Q1 FY27 deck up to Rs 15 lakh/10yr (IP1 p.11), CRISIL rationale up to Rs 20 lakh/10yr. No document reconciles the difference."}
+  - {type: FLAG-BUSINESS-MODEL, reason: "Repeat-customer AUM share fell from 73% (FY25) to 49% (FY26), AR p.7 -- the opposite of a strengthening switching-cost/stickiness moat, even as headline AUM grew 73%."}
+  - {type: FLAG-BUSINESS-MODEL, reason: "Management's own stated operating-leverage claim (opex and cost of borrowing as % of avg AUM expected to fall with scale, IP1 p.5) is contradicted by the disclosed record: Cost-to-Income ratio worsened from 45.54% to 56.64% FY24-26 even as AUM grew 73% (per B01 FLAG-QUALITY)."}
+sector_cap_row_confirmed: "Banks / NBFCs / MFIs (P/B primary, PE cross-check) -- confirmed for phase 3 per B00; no evidence in this stage contradicts the lender archetype."
+business_type: "lending"
+revenue_streams:
+  - {name: "Interest on loans (on-book)", type: "interest income", pct_of_revenue: 58.4, predictability: "M"}
+  - {name: "Sourcing and servicing fees (off-book origination + servicing)", type: "fee income", pct_of_revenue: 26.6, predictability: "M"}
+  - {name: "Other fees and charges (late payment, foreclosure)", type: "penal/foreclosure fee income", pct_of_revenue: 11.1, predictability: "L"}
+  - {name: "Insurance commission and rewards", type: "cross-sell commission", pct_of_revenue: 3.2, predictability: "L"}
+  - {name: "Marketing and commission income", type: "cross-sell/referral commission", pct_of_revenue: 0.7, predictability: "L"}
+asset_intensity: "medium"
+wc_intensity: "high"
+pricing_power: "weak"
+cyclicality: "cyclical"
+moats_present:
+  - {moat: "Proprietary underwriting/collections data and AI models (400+ variables, 40 models, AUC 66% to 74% 2023-2026)", durability: "moderate"}
+  - {moat: "Brand recognition (Sachin Tendulkar endorsement, industry awards)", durability: "low-moderate"}
+  - {moat: "Distribution breadth (45+ lending partners, 8+ off-book partners, merchant O2O acquisition)", durability: "moderate"}
+valuation_methods:
+  primary: {method: "P/B (Price-to-Book / P/ABV)", why: "Sector cap row for Banks/NBFCs/MFIs (B00) names P/B primary; ties demonstrated RoAE (23.97% FY26) and near-4x net-worth growth since Mar-23 to a sustainable book-value multiple"}
+  secondary: {method: "PE cross-check", why: "Two years of clean, restated profitability (FY25-FY26) allow an earnings-multiple cross-check against AUM/PAT growth and RoAAUM trajectory"}
+  tertiary: {method: "Residual income / excess-return model (RoE vs cost of equity)", why: "Makes explicit whether 23.97% RoAE durably clears cost of equity, disciplining any P/B premium"}
+  not_applicable:
+    - "DCF -- short, lumpy Ind-AS-7 loan-growth-classified cash flow history makes multi-year FCF forecasting unreliable"
+    - "EV/EBITDA -- not a meaningful metric for a financial firm whose core input cost (finance cost) sits above the EBITDA line"
+    - "SOTP/NAV -- single core lending business; LAP still nascent (7.3-7.7% of AUM), not a separable segment"
+irrelevant_ratios:
+  - {ratio: "Trade receivable/payable days, inventory turnover", why: "No inventory or trade-receivables cycle; the loan book is the asset"}
+  - {ratio: "Gross margin % (COGS-based)", why: "No cost-of-goods-sold concept; finance cost is the analogous input, already isolated"}
+  - {ratio: "CFO/PAT cash-conversion, read as a manufacturer would", why: "Deeply negative cumulative CFO (B01, -2.46x cumulative PAT) is a loan-disbursal-as-operating-outflow artefact under Ind AS 7, not evidence of earnings-quality failure on its own"}
+  - {ratio: "ROCE with finance cost added back to EBIT", why: "Structurally inflated for a lender per B01's own note; finance cost is core cost of funds, not overhead"}
+  - {ratio: "Fixed-asset turnover / capex-to-sales", why: "Asset-light, opex-driven cost structure; PP&E is trivial"}
+  - {ratio: "D/E vs a manufacturer's safe threshold (e.g. under 1x)", why: "Lenders run leveraged balance sheets by design; must be read against CRAR and the guarantee structure, not a manufacturer comfort band"}
+must_track_metrics:
+  - {metric: "AUM growth % YoY", healthy: "30-50%+ (currently +73% FY26, +61% Q1 FY27 YoY)", red_flag: "sustained deceleration below ~15-20%, or a sharp one-quarter drop"}
+  - {metric: "Off-book AUM % of total", healthy: "40-60% (currently 50-53.6%)", red_flag: ">65% without a stated FLDG ceiling"}
+  - {metric: "GNPA / Stage-3 % sequential trend", healthy: "flat or improving", red_flag: "any further sequential rise past 2.25% (Q1 FY27)"}
+  - {metric: "Guarantee-to-parent-net-worth ratio", healthy: "a stated, bounded ceiling", red_flag: "further rise past 228% (FY26) with no ceiling disclosed"}
+  - {metric: "Cost-to-Income ratio", healthy: "improving toward under 50%", red_flag: "continued worsening past 56.64% (FY26)"}
+unit_economics:
+  unit: "Rs 100 of average AUM"
+  revenue_per_unit: "Rs 39.6 total income FY26 (computed from AR MD&A P&L / avg AUM); Rs 35.9 Q1 FY27 annualized (IP1 p.41, disclosed) -- no standalone lending yield % is disclosed"
+  margin_per_unit: "Rs 5.0 PAT FY26 (matches disclosed RoAAUM 5.05%); Rs 5.0 Q1 FY27 (disclosed)"
+  key_lever: "Opex and credit cost as % of avg AUM falling as the book scales -- management claims this (IP1 p.5) but the disclosed Cost-to-Income trend (45.54% to 56.64%, FY24-26) runs the opposite way so far"
+first_deterioration_signals:
+  - {risk: "Off-book partner concentration (8+ partners carry 53.6% of AUM)", first_signal: "sourcing-and-servicing fee growth decelerating faster than AUM growth"}
+  - {risk: "Cost of borrowing rises or rating fails to improve", first_signal: "average cost of borrowings % ticking up quarter-on-quarter"}
+  - {risk: "Parent guarantee to Si Creva's lenders (228% of parent net worth, rising since FY24)", first_signal: "guarantee-to-net-worth ratio disclosed higher in the next AR, or a rating-agency query"}
+  - {risk: "GNPA improvement is a write-off-rate artefact; Q1 FY27 already rose sequentially", first_signal: "any further sequential GNPA/Stage-3 rise in the next quarterly print"}
+  - {risk: "Regulatory tightening on DLG caps or unsecured-PL risk weights", first_signal: "a new RBI circular naming DLG/co-lending caps or unsecured-PL risk weights, or a sudden off-book sanction slowdown"}
+mgmt_questions:
+  - "What specific DPD threshold triggers a loan write-off, and why does no numeric trigger appear in the AR despite qualitative write-off language?"
+  - "What ceiling, if any, governs the parent's corporate guarantee to Si Creva's lenders as a % of the parent's own net worth, now at 228% and rising every year since FY24?"
+  - "Why did Cost-to-Income worsen from 45.54% to 56.64% (FY24-26) even as AUM grew 73%, when the CEO letter states opex/AUM should fall with scale?"
+  - "What is the company's actual lending yield and cost-of-funds split (an explicit NIM), given neither is disclosed as a standalone percentage anywhere in this container?"
+  - "Why did repeat-customer AUM share fall from 73% (FY25) to 49% (FY26) in one year -- a strategic shift, or a retention weakness?"
+  - "Which LAP ticket size and tenure is correct -- the AR's Rs 30 lakh/15yr, the Q1 FY27 deck's Rs 15 lakh/10yr, or CRISIL's Rs 20 lakh/10yr?"
+  - "What is the FY27 credit-cost/GNPA glide path, given Q1 FY27 GNPA already rose sequentially against the 'further strengthen asset quality' guidance?"
+one_line_verdict: "Fast-growing digital lender priced on AUM momentum; earnings quality still turns on an undisclosed write-off trigger and an over-stretched parent guarantee, not on a durable competitive moat."
+analyst_note: >
+  The listed parent (OnEMI) does not lend directly at all: on-book interest income
+  sits entirely inside subsidiary Si Creva, and the parent's own income (sourcing
+  fees plus an intercompany guarantee fee that eliminates on consolidation) is
+  fee-based. This structural fact is the clearest lens on the B02/B03 guarantee
+  flag: the listed entity's balance sheet exposure to Si Creva is a guarantee
+  obligation (228% of parent net worth), not a loan book, so equity holders are
+  geared to a contingent liability larger than the parent's own net worth. Moat
+  is thin and concentrated in the underwriting-data stack; brand, switching cost,
+  cost advantage and scale are each absent or actively weakening (repeat-customer
+  AUM share fell 73% to 49% in one year). No standalone NIM/yield/cost-of-funds
+  percentage is disclosed anywhere in this container -- downstream valuation
+  stages should treat the DuPont-style Total-income/avg-AUM proxy as a mix-blended
+  substitute, not a true lending spread.

@@ -1,0 +1,80 @@
+stage: B05-concall
+company: "KISSHT"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Only 2 concalls exist since listing (Q4 FY26 29-May-2026, Q1 FY27 30-Jul-2026); the company was unlisted before 08-May-2026. This is a declared short series, not a collection miss (B00-inputs.yaml). Section 2E and all three-quarter comparisons in the prompt template are answered on a two-point basis; a third column, where the template implies one, is N/A (NO CALL HELD), not NOT FOUND."
+  - "The Rs 832 Cr preferential issue (board approved 17-Sep-2026) postdates both available calls; no transcript in this container addresses its rationale. Carried forward as the top open question for the next call (see triggers and red_flags)."
+  - "FLDG-in-opex/credit-cost exact quantum for Q1 FY27 was requested on the call itself and not available ('not readily available... handy', Krishnan Vishwanathan, Concall_Aug_2026_Transcript.pdf p.19-20); no numeric figure exists in either transcript."
+  - "Product-wise (PL vs LAP) NIM/yield disclosure does not yet exist; management committed to starting it 'from next quarter' (Q1 FY27 call, p.21), not yet delivered in this container."
+flags:
+  - {type: FLAG-SILENCE-GUARANTEE, reason: "The parent corporate guarantee to Si Creva's lenders (228% of parent net worth FY26, backing 99.8% of the NCD book per B02/B03) is never mentioned on either call; no analyst across both calls asks about it. Largest quantified structural risk in the corpus, absent from the call record entirely."}
+  - {type: FLAG-FRAMING-GNPA, reason: "Management calls the GNPA rise from 0.79% to 2.9% purely 'a technicality... not anything to do with credit quality improving or worsening' (Krishnan Vishwanathan, Concall_Jun_2026_Transcript.pdf p.19-20). Cross-checked against B02/B03's write-off-rate acceleration finding (write-offs +10.7% YoY vs new Stage-3 inflow +28.9% YoY), this framing is more reassuring than the evidence fully supports."}
+  - {type: FLAG-FLDG-QUANTUM, reason: "FLDG-in-opex bps could not be given on request on the Q1 FY27 call despite FLDG cost reportedly tripling group-wide in FY26 per B02/B03 (Concall_Aug_2026_Transcript.pdf p.19-20)."}
+  - {type: FLAG-CAPITAL-RAISE-SILENCE, reason: "Rs 832 Cr preferential raise (17-Sep-2026, board outcome 20260917-acc1d37a) at CRAR 40.2% (Q1 FY27, press release 20260729-74639f09 p.2) four months post-IPO has no numeric rationale in any filing or call in this container; press release rationale is general ('strengthen capital position... next phase of growth', 20260918-4643d424 p.2). Directly evidences B00 LBF-4; unresolved."}
+  - {type: FLAG-LAP-PACE, reason: "LAP branches added only 3 in Q1 FY27 (98 to 101) against an implied ~27/quarter pace needed for the guided 'at least 80 more by FY27-end' target; not raised by management or any analyst."}
+quarters_analysed: ["Q4 FY26", "Q1 FY27"]
+triggers:
+  - {priority: 1, name: "AUM growth sustaining >40% FY27 guidance", type: "VOLUME", timeframe: "near (FY27)", conviction: "M-H", confirm_signal: "Continued 13%+ QoQ AUM prints through FY27", kill_signal: "QoQ AUM growth decelerating below ~8-9% without explanation"}
+  - {priority: 2, name: "Credit cost reduction 10-15% YoY FY27", type: "COST", timeframe: "FY27", conviction: "M", confirm_signal: "Sequential decline below 6.80% of average AUM", kill_signal: "Any sequential credit-cost rise without a clearly explained seasonal/one-off cause"}
+  - {priority: 3, name: "GNPA direction vs guided <2.25% ceiling", type: "REGULATORY-POLICY (asset quality)", timeframe: "immediate, next quarter", conviction: "L", confirm_signal: "Sequential GNPA decline back toward or below 2.12% in Q2 FY27", kill_signal: "Further sequential GNPA rise past 2.25%"}
+  - {priority: 4, name: "Cost-of-borrowing decline from rating upgrade cycle", type: "COST", timeframe: "FY27-28", conviction: "M", confirm_signal: "Confirmed second-notch upgrade from CRISIL or India Ratings within FY27", kill_signal: "No upgrade materialising by end-FY27"}
+  - {priority: 5, name: "LAP branch scale-up and breakeven", type: "VOLUME/MARGIN", timeframe: "FY27", conviction: "L", confirm_signal: "Branch count catching up toward ~178 FY27-end target and Q3 FY27 breakeven landing", kill_signal: "Continued sub-pace branch adds with no explanation, or further pushed-out breakeven date"}
+  - {priority: 6, name: "Rationale for Rs 832 Cr preferential raise", type: "REGULATORY-POLICY/CAPITAL", timeframe: "immediate, next call", conviction: "NOT YET RATEABLE (post-dates both calls)", confirm_signal: "Clear numeric capital-need rationale given at next call", kill_signal: "Continued silence on why Rs 832 Cr was needed at 40.2% CRAR"}
+  - {priority: 7, name: "Fee-income diversification (insurance, mutual fund distribution)", type: "VOLUME (fee revenue)", timeframe: "long", conviction: "L", confirm_signal: "Disclosed fee-income contribution in a future quarter", kill_signal: "Continued non-disclosure of quantum after several quarters"}
+guidance:
+  - {item: "AUM growth", number: ">40%", timeframe: "FY27", stated_in: "Q4 FY26 call (Ranvir Singh, Concall_Jun_2026_Transcript.pdf p.8)"}
+  - {item: "Gross NPA ceiling", number: "below 2.25%", timeframe: "FY27", stated_in: "Q4 FY26 call (p.9)"}
+  - {item: "Credit cost reduction", number: "10-15% YoY", timeframe: "FY27", stated_in: "Q4 FY26 call (p.9); reaffirmed Q1 FY27 call (Concall_Aug_2026_Transcript.pdf p.4, p.9)"}
+  - {item: "Return on average AUM", number: "4.5-5%", timeframe: "FY27", stated_in: "Q4 FY26 call (p.9)"}
+  - {item: "Return on average equity", number: "19-21%", timeframe: "FY27", stated_in: "Q4 FY26 call (p.9)"}
+  - {item: "Cost of borrowing cut, near-term", number: "minimum 100 bps", timeframe: "next 3 quarters from Q1 FY27", stated_in: "Q1 FY27 call (Krishnan Vishwanathan/Ranvir Singh, p.11-12)"}
+  - {item: "Cost of borrowing cut, 3-year cumulative", number: "200-300 bps", timeframe: "3 years", stated_in: "Q1 FY27 call (Ranvir Singh, p.15)"}
+  - {item: "Steady-state on-book leverage", number: "2.5x-3.0x debt-to-equity", timeframe: "long run", stated_in: "Q4 FY26 call (Krishnan Vishwanathan, p.22)"}
+  - {item: "LAP branch expansion", number: "at least 80 more branches (98 to 178+)", timeframe: "FY27", stated_in: "Q4 FY26 call (Ranvir Singh, p.20)"}
+  - {item: "Organic acquisition channel share, long-run", number: "40-45% (or 40-50%)", timeframe: "unstated horizon", stated_in: "Q1 FY27 call (Ranvir Singh, p.15)"}
+promise_delivery:
+  delivered: 6
+  partial: 3
+  missed: 1
+  rows:
+    - {promised_in: "Q4 FY26 call", promise: "AUM growth >40% FY27", outcome: "delivered so far", explanation: "One quarter: +61% YoY, +13% QoQ to Rs 8,001 Cr (Q1 FY27 press release, Concall_Aug_2026_Transcript.pdf p.3, p.7)"}
+    - {promised_in: "Q4 FY26 call", promise: "Credit cost -10 to -15% YoY FY27", outcome: "delivered so far", explanation: "6.80% Q1 FY27 vs 8.85% Q1 FY26, ahead of low end on one quarter (p.4, p.9)"}
+    - {promised_in: "Q4 FY26 call", promise: "GNPA below 2.25% FY27", outcome: "partial", explanation: "Printed exactly 2.25% Q1 FY27, up from 2.12% Mar-26 (sequential rise); called 'very range bound' with no acknowledgement of direction (p.4)"}
+    - {promised_in: "Q4 FY26 call", promise: "RoAUM 4.5-5%, RoAE 19-21% FY27", outcome: "delivered so far", explanation: "RoAUM 5.05%, RoAE 21.20% Q1 FY27, at/above top of both bands"}
+    - {promised_in: "Q4 FY26 call", promise: "Further cost-of-borrowing cut on second rating upgrade", outcome: "partial", explanation: "Incremental borrowing ~150bps below FY26 average in Q1 FY27, but no second upgrade confirmed yet"}
+    - {promised_in: "Q4 FY26 call", promise: "LAP: at least 80 more branches (98 to 178+) by FY27-end", outcome: "missed pace", explanation: "Only 3 branches added in Q1 FY27 (98 to 101), no explanation offered or sought"}
+    - {promised_in: "Q4 FY26 call", promise: "LAP breakeven 'a year or two away'", outcome: "partial / inconsistent", explanation: "Reframed to 'around Q3' of current year on the Q1 FY27 call, no reconciliation given"}
+    - {promised_in: "Q4 FY26 call", promise: "450 pin codes paused, to be reviewed on data", outcome: "delivered", explanation: "180 of 450 (40%) reopened by Q1 FY27, specific and falsifiable follow-through"}
+    - {promised_in: "RHP (25-Apr-2026)", promise: "Objects of Fresh Issue: 75% to Si Creva capital base, 25% general corporate purposes", outcome: "delivered", explanation: "~Rs 637 Cr infused into Si Creva by 16-May-2026; CRISIL Monitoring Agency Report confirms Rs 6,368.03mn of Rs 6,375mn utilised, no deviation (20260729-4997d936 p.5, p.8)"}
+excuse_pattern: "balanced"
+repeated_evasions: []
+credibility_grade: "C"
+credibility_basis: "Two clean quarters mostly ahead of specific guidance would ordinarily support B, but the one hard credibility test available (GNPA/write-off mechanic, framed as pure 'technicality' with 'nothing to do with credit quality') is not fully supported once cross-checked against B02/B03's independent write-off-rate acceleration finding, and the corpus's largest structural risk (228%-of-net-worth parent guarantee) and the Rs 832 Cr raise rationale are both wholly absent from the call record."
+peer_questions:
+  - {question: "Is Kissht's 'divergence beneath a calm surface' industry narrative (headline unsecured PL delinquencies improving while stress concentrates in small-ticket, multi-lender borrowers) echoed independently in SBICARD, Poonawalla, or Ugro's own recent concall commentary?", why: "Tests whether this is a real sector inflection or Kissht-specific commentary framed as sector-wide (Ranvir Singh, Concall_Aug_2026_Transcript.pdf p.3)", check_peers: ["SBICARD", "POONAWALLA", "UGROCAP"]}
+  - {question: "Do peers disclose a specific DPD write-off trigger for unsecured PL, and has any peer extended that trigger in the last three years the way Kissht moved 120 to 150 DPD?", why: "Tests whether 150-DPD write-off is industry-standard or an outlier extension flattering Kissht's headline GNPA specifically", check_peers: ["SBICARD", "POONAWALLA", "UGROCAP"]}
+  - {question: "What FLDG/DLG rates and off-book AUM shares do Poonawalla and Ugro run, and how do they describe FLDG cost trend and accounting treatment (opex vs credit cost)?", why: "Tests whether Kissht's reported tripling of FLDG cost in FY26 is company-specific or a system-wide co-lending repricing trend", check_peers: ["POONAWALLA", "UGROCAP"]}
+  - {question: "What cost-of-funds trajectory do peers guide for FY27, and do they cite the same FCNR(B)-driven system liquidity easing Kissht cites as a tailwind?", why: "Tests whether Kissht's guided cost-of-borrowing improvement is company-specific (rating upgrade) or a system-wide liquidity tailwind", check_peers: ["SBICARD", "POONAWALLA", "UGROCAP"]}
+  - {question: "How do peers frame competitive intensity from bank-led digital lenders in unsecured PL, and do any name Kissht, Bajaj, or Chola as share-gaining/losing competitors?", why: "Kissht names Bajaj and Chola as competitors with no market-share evidence given; peer commentary tests this claim", check_peers: ["SBICARD", "POONAWALLA", "UGROCAP"]}
+  - {question: "Have any peers raised large preferential/QIP capital shortly after listing or at a CRAR comfortably above regulatory minimums, and what numeric capital-need rationale did they give?", why: "Directly tests whether Kissht's unexplained Rs 832 Cr raise at 40.2% CRAR four months post-IPO is unusual or a recognised sector pattern", check_peers: ["POONAWALLA", "UGROCAP"]}
+red_flags:
+  - "HIGH: parent corporate guarantee at 228% of net worth backing 99.8% of Si Creva's NCD book is never mentioned on either call; no analyst asks about it across both calls"
+  - "MEDIUM: GNPA 'shoot-up' framed as pure 'technicality... nothing to do with credit quality' not fully supported once cross-checked against B02/B03's write-off-rate acceleration finding"
+  - "MEDIUM: FLDG-in-opex quantum not available on request on the Q1 FY27 call despite FLDG cost reportedly tripling group-wide in FY26"
+  - "LOW-MEDIUM: LAP branch count added only 3 in the quarter against an implied ~27/quarter pace needed for the FY27-end target, unexplained and unasked"
+  - "LOW: LAP breakeven timeline reframed from 'a year or two away' to 'around Q3' of the current year with no bridge given"
+dropped_triggers: []
+timeline_slippages:
+  - "LAP branch expansion: guided 'at least 80 more branches by FY27-end' (Q4 FY26 call) against only 3 added in Q1 FY27, well below the implied run rate, unaddressed on either call"
+  - "LAP breakeven: 'a year or two away' (Q4 FY26 call) reframed to 'around Q3' of the current year (Q1 FY27 call), an accelerated timeline with no reconciliation given"
+analyst_note: >
+  The credibility grade sits at the C/B boundary. It would move to B on one further clean
+  quarter where GNPA resumes its downward path AND management proactively addresses either
+  the guarantee structure or the Rs 832 Cr raise rationale without being asked. It would move
+  toward D if a future call repeats the "technicality" framing on a further asset-quality miss
+  without engaging the write-off-rate mechanic B02/B03 have made visible. The RHP objects-of-
+  issue delivery (75% to Si Creva, independently confirmed by the CRISIL Monitoring Agency
+  Report) is the cleanest, most independently verified promise-delivery match in this container
+  and should anchor the "delivered" side of the ledger even though it predates both calls.

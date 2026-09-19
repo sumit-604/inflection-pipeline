@@ -598,3 +598,33 @@ Verifier C check 15 (PR #163, PR #164), and the LESSONS discipline changes
 (PR #165).
 
 Size: LESSONS.md 164 lines / 1555 words before, 119 lines / 1062 words after.
+
+## 2026-09-19 — CAPILLARY (Capillary Technologies India) — /step1 intake, phase 1 to Halt 1
+
+Run: runs/capillary-2026-09-19, branch run/capillary-2026-09-19 (git worktree
+.claude/worktrees/capillary). Peers NEWGEN, UNIECOM, INTELLECT. Gate PROCEED
+WITH CAVEATS (FLAG-CASH INDETERMINATE). Confidence overall 70 (redflag_coverage).
+- Concurrency: another session was using the shared tools/collector/companies.txt
+  (KISSHT) in the main tree. Ran a private collector copy with REPO_ROOT patched
+  to the worktree. The shared companies.txt was left untouched.
+- Machine memory pressure (13-200 MB free of 6 GB with several sessions live):
+  git worktree add failed once with a malloc error reported as a corrupt pack
+  (the object was intact); a low packedGitWindowSize/Limit retry worked. The
+  first collector pass failed to launch Chromium for the main company only.
+- Collector clears _download/ at exit; deleting inputs/ to re-classify forced
+  a full re-download. Re-run the collector, never hand-reset its staging.
+- Peer swap: RAMCOSYS's newest screener transcripts were 2022-2024; replaced by
+  INTELLECT before classification.
+- fetch_bse_announcements (open action, PR #167): found 6 of 38 material filings
+  again. 60-day windows plus AttachHis filled the set by hand; six SAST /
+  secretarial filings were image-only and rendered to PNG with pymupdf.
+- Final RHP on capillarytech.com returns HTTP 403 to scripted download; the
+  SEBI-hosted UDRHP-I (Jun-2025) was used.
+- Orchestrator omitted the peer Data_Sheet paths from the stage-1 task message;
+  stage 1 scored M2/M5/M9 as "no peer data" and was resumed to rescore.
+- 09b wrote the DRAFT marker with an em-dash, failing the exact-string check;
+  fixed by resuming the same agent (31 dashes replaced).
+- Verifier B redflag_coverage basis again split: 70 rubric vs 40 strict (strict
+  would force REWORK). Surfaced to the operator, not resolved.
+- DOWNSHIFT FAILURE: stage 0 ran inline on the Opus orchestrator (no haiku
+  stage-0 agent exists). Structural, not a routing slip.

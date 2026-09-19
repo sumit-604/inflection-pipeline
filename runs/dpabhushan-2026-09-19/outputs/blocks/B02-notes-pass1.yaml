@@ -1,0 +1,80 @@
+stage: B02-notes
+company: "DPABHUSHAN"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+pass: 1
+status: pass1_complete
+provenance_note: >
+  Source is the FY2025-26 Annual Report (standalone, Ind AS, company has no
+  subsidiary/JV/associate), Notes to the Standalone Financial Statements,
+  Note 1 through Note 33.26, read in full, PDF pages 85-106 (printed pages
+  164-205). All figures quoted in Rs Lakh (source unit) with a Rs Cr
+  equivalent in parentheses. FY25 AR held only as a prior-year backward
+  check, not separately re-read this pass.
+notes_scope: >
+  Notes 1-33.26 in full (accounting policies, PP&E/CWIP/intangibles/ROU,
+  all balance sheet and P&L notes, related parties, financial instruments
+  and fair value, commodity price risk, capital management, contingent
+  liabilities, MSME, CSR, gratuity, SEBI LODR/Sec 186, events after
+  reporting date, segment reporting, ESOP, non-current investments,
+  deferred tax, ratio analysis). No consolidated statements exist.
+extraction_defect_flag: >
+  CRITICAL CAVEAT governing confidence on this whole pass. The source PDF
+  holds two printed pages per PDF page (print spread); pdftotext -layout
+  interleaves cells from adjacent/facing tables on several wide numeric
+  tables (Balance Sheet, P&L face, Cash Flow Statement, Note 7 Inventories,
+  Note 12 Borrowings instrument split, Note 16 Trade Payables, Note 33.25
+  Deferred Tax, Note 33.26 Ratio Analysis). pdftoppm/image rendering is
+  unavailable this session, so affected figures could not be independently
+  re-verified against a page image. Every number in the full report is
+  marked HIGH/MODERATE/LOW confidence; LOW-confidence figures are named as
+  candidates only, never anchored as fact. Recommend page-image
+  re-verification of the flagged tables before downstream stages rely on
+  exact FY26 CFO, inventory closing balance, or trade payables total.
+input_gaps:
+  - "Note 7 (Inventories) category breakdown and exact FY26/FY25 closing total NOT RELIABLY EXTRACTABLE (PDF two-page-spread interleaving with Note 10 on the facing page)"
+  - "Cash Flow Statement (CFO/investing/financing totals) NOT RELIABLY EXTRACTABLE from the text layer this session; B00/company-memory CFO figure (Rs -97cr FY26) NOT independently verified against this AR this pass"
+  - "Note 16 Trade Payables total: two conflicting candidate totals (Rs 176.71cr vs Rs 173.78cr) could not be reconciled from the text layer"
+  - "Note 33.25 Deferred Tax Assets reconciliation NOT RELIABLY EXTRACTABLE (numeric column appears contaminated by unrelated Balance Sheet totals)"
+  - "Note 33.26 Ratio Analysis: only Current Ratio (2.14) and Debt-Equity Ratio (0.45) isolated with confidence; DSCR, RoE, inventory/receivable/payable turnover, net profit ratio and RoCE values not reliably isolated"
+  - "No numeric incremental borrowing rate disclosed for Ind AS 116 leases (policy text only, no number)"
+  - "No trade receivables ageing schedule located in the extracted text (may be a genuine immateriality-driven omission given receivables of only Rs 1.64cr, or lost to the extraction defect)"
+  - "Per-party rupee figures in the Note 33.1 related-party transaction table are mostly MODERATE/LOW confidence; only the aggregate related-party unsecured-borrowings figure (Note 12) is HIGH confidence"
+load_bearing_facts_status:
+  - {lbf: "LBF1 margin source", status: "PARTIALLY CONFIRMED, POINTS BEARISH", detail: "Two independent, well-anchored findings both point toward price/hedging rather than structural margin: (1) Note 33.5 gold physical stock FELL 6.15% in grams (807,542g to 757,878g) while purchases (5,480,870g) nearly matched consumption (5,530,535g), consistent with rupee inventory-value growth being gold-price-driven not volume-driven; (2) Other Operating Income (booked inside Revenue from Operations) = Commission Income + Profit Th. MCX Hedging, grew from Rs 6.53 lakh to Rs 1,867.22 lakh (285x), ~6.6% of FY26 PBT. Separately, unfixed/unhedged gold exposure opened from zero to 42 Kg (Note 33.2.2). Annual data only; quarterly grams-sold and the Q4 FY26 margin-dip explanation are NOT in this AR (concall corpus territory, stage 5/6)."}
+  - {lbf: "LBF2 cash conversion", status: "NOT VERIFIABLE FROM NOTES THIS PASS", detail: "Cash Flow Statement figures not reliably extractable due to the PDF spread defect; borrowings figure (Rs 290.91cr FY26 vs Rs 167.64cr FY25, Note 33.3) is HIGH confidence and matches B00's cited Rs 290cr exactly. Inventory days / exact inventory balance not confirmed this pass (Note 7 garbled); gram-level data (Note 33.5) suggests the inventory-value build is more price than volume."}
+  - {lbf: "LBF3 guidance vs delivery", status: "NOT ADDRESSABLE FROM NOTES", detail: "Store count, revenue growth guidance and diamond-mix targets are not Notes-to-Financial-Statements content; single segment 'Jewellery, within India' confirmed (Note 33.19); no export revenue disclosed despite the e-commerce launch (outside Notes scope)."}
+  - {lbf: "LBF4 promoter and related parties", status: "PARTIALLY CONFIRMED", detail: "Warrant conversion at Rs 1,182/warrant, balance Rs 885/warrant paid in FY26, fully converted, confirmed (Note 10/11). Related-party unsecured borrowings rose Rs 333.06 lakh to Rs 1,520.42 lakh (+356%, Note 12, HIGH confidence). All banking facilities personally guaranteed by seven named Kataria family members and partly collateralised by personally-owned family real estate (Note 12, HIGH confidence). Full related-party name universe confirmed (Note 33.1). Per-party RPT rupee amounts mostly MODERATE/LOW confidence this pass. Form AOC-2 and the secretarial observation on late XBRL RPT filing are NOT in the Notes to Financial Statements (Board's Report / Secretarial Compliance Report territory, outside this stage's scope)."}
+top_findings_preliminary:
+  - {rank: 1, finding: "Gold physical inventory fell 6.15% in grams (807,542g to 757,878g) during FY26; purchases (5,480,870g) nearly matched consumption (5,530,535g), an arithmetic identity independently verified from the note's own four columns", note_ref: "Note 33.5, PDF p.101 (printed p.196-197)", rating: "RED", why: "Directly tests LBF1: supports the bear reading that FY26 inventory-value growth is gold-price-driven, not volume-driven; annual data only"}
+  - {rank: 2, finding: "Other Operating Income (Commission Income + Profit Th. MCX Hedging), booked inside Revenue from Operations, grew Rs 6.53 lakh to Rs 1,867.22 lakh (285x), ~6.6% of FY26 PBT", note_ref: "Note 2 policy p.169; Note 21, PDF p.95-96 (printed p.184-187)", rating: "RED", why: "A chunk of reported revenue growth is an MCX gold/silver hedging profit line, not retail sales; a second distinct MTM-notional stream exists in Note 22"}
+  - {rank: 3, finding: "Unfixed/unhedged gold exposure opened from zero (FY25) to 42 Kg -10 Kg GML + 32 Kg Gold on Lease- (FY26)", note_ref: "Note 33.2.2(D), PDF p.101 (printed p.196-197)", rating: "RED", why: "Management's own numbers show a new open gold-price position this year, qualifying the natural-hedge framing used elsewhere"}
+  - {rank: 4, finding: "PDF two-page-spread text extraction corrupts most primary-statement and several notes tables; pdftoppm unavailable this session for image re-verification", note_ref: "Balance Sheet/P&L/CFS PDF p.83-84 (printed p.160-163); Notes 7, 12, 16, 33.25, 33.26", rating: "YELLOW", why: "Materially limits confidence on exact FY26 CFO, inventory closing balance, trade payables total; flagged for page-image re-verification"}
+  - {rank: 5, finding: "Related-party unsecured borrowings from the Kataria family rose Rs 333.06 lakh to Rs 1,520.42 lakh (+356%)", note_ref: "Note 12, PDF p.93 (printed p.180-181)", rating: "YELLOW", why: "LBF4: growing reliance on promoter/family loans in the same year bank debt also rose ~77%"}
+  - {rank: 6, finding: "All company banking facilities secured by personal guarantees of seven named promoter-family members plus six pledged immovable properties, several personally owned by the family", note_ref: "Note 12, PDF p.93-94 (printed p.181-183)", rating: "YELLOW", why: "LBF4: personal and corporate credit structurally entangled; no default or covenant breach disclosed"}
+  - {rank: 7, finding: "Contingent liabilities (tax disputes) total Rs 73.34 lakh, cross-validated by exact arithmetic; 0.12% of FY26 net worth", note_ref: "Note 33.4/33.10, PDF p.101-102 (printed p.196-199)", rating: "GREEN", why: "Immaterial, no item near the 10%-of-net-worth threshold; clean"}
+  - {rank: 8, finding: "Trade receivables fell to Rs 164.37 lakh (0.04% of revenue) even as revenue grew 22%; cash-and-carry model explicitly stated; no ageing schedule located", note_ref: "Note 8, PDF p.92 (printed p.178-179); Note 33.2.2", rating: "GREEN", why: "Receivables trend improving; economically immaterial credit risk"}
+  - {rank: 9, finding: "New ESOP 2024 plan: 62,300 options at Rs 10 exercise price vs ~Rs 1,475 grant-date share price; Rs 176.96 lakh expense, new this year", note_ref: "Note 33.23, PDF p.104 (printed p.202-203)", rating: "YELLOW", why: "Small (~0.25% potential dilution) but a new recurring non-cash expense and dilution source"}
+  - {rank: 10, finding: "Total Revenue from Operations, PAT and Note 33.3 borrowings all tie out exactly to B00/company-memory/screener figures", note_ref: "Notes 20, 21, 32, 33.3", rating: "GREEN", why: "High-confidence anchor points against which the rest of this pass's garbled-table caveats can be measured"}
+receivables_trend_preliminary: >
+  IMPROVING (in absolute rupee terms). Trade receivables fell from Rs 217.99
+  lakh (FY25) to Rs 164.37 lakh (FY26) even as revenue grew ~22%, now 0.04%
+  of revenue. Cash-and-carry retail model explicitly stated (Note 33.2.2).
+  No ageing schedule located; no single-customer concentration disclosed.
+going_concern_language: >
+  NONE ADVERSE. Explicit clean management assessment: "management has
+  performed an assessment of the entity's ability to continue as a going
+  concern... management believe that there is no material uncertainty..."
+  (Note 2, PDF p.86, printed p.166-167). Standard boilerplate, no emphasis
+  of matter or qualification found.
+restatements_found_preliminary:
+  - "Note 33.22/33.7: standard boilerplate - previous year figures re-grouped/re-arranged wherever necessary to correspond with current year classification/disclosure; no specific line items or amounts named."
+analyst_note: >
+  Two independently-anchored findings (gold gram roll-forward, Note 33.5;
+  Other Operating Income composition, Note 21/policy note) both point the
+  same direction on LBF1 without depending on any garbled table - they are
+  the strongest evidence in this pass and should carry forward regardless
+  of how the extraction-defect items resolve. The PDF spread defect is
+  itself a first-class finding: several LBF2-relevant figures (CFO,
+  inventory total) could not be confirmed against the AR this pass and
+  remain sourced only from B00's screener citation until re-verified.

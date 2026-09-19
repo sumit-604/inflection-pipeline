@@ -1,0 +1,51 @@
+stage: B01-gate0
+company: "DPABHUSHAN"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "COLLECTOR WARNING (verbatim): shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend."
+  - "COLLECTOR WARNING (verbatim): screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance Sheet, screener:Cash Flow, screener:Customization, THANGAMAYL:Profit & Loss, THANGAMAYL:Quarters, THANGAMAYL:Balance Sheet, THANGAMAYL:Cash Flow, THANGAMAYL:Customization, SENCO:Profit & Loss, SENCO:Quarters, SENCO:Balance Sheet, SENCO:Cash Flow, SENCO:Customization. Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again."
+  - "COLLECTOR WARNING (verbatim): no results PDFs yet (screener has none): add later on github or locally + --push-again"
+  - "COLLECTOR WARNING (verbatim): no rating PDF yet: add later the same way"
+  - "RESOLVED AT INTAKE: results/ filled from BSE (AttachHis): Q1 FY27 (board outcome 20-Jul-2026), Q4/FY26 audited (21-May-2026), Q3 FY26 (board outcome 23-Jan-2026, BSE-filed 29-Jan-2026). Q2 FY26 results (03-Nov-2025) held in inputs/other/ as an extra backward check; its text layer is poor OCR."
+  - "RESOLVED AT INTAKE: rating/ holds the company's Reg 30 CARE intimation (09-Jan-2026) and the full CARE press release with rationale (08-Jan-2026, careratings.com): CARE A-; Stable / CARE A2+, reaffirmed; limits Rs 51.95 Cr LT + Rs 288 Cr LT/ST."
+  - "RESOLVED AT INTAKE (PARTIAL): shareholding/ holds the screener shareholding table as text (Sep-2023 to Jun-2026; promoter 74.89%, FII 0.23%, DII 0.00% at Jun-2026). It is a SCREENER AGGREGATION, NOT A FILING: weigh, do not anchor. The filed pattern at 31-Mar-2026 is in the FY26 AR. The UA FII+DII qualifier may be read from the AR filed pattern; the Jun-2026 figure is unanchored."
+  - "screening: EMPTY-CSV defect present. Profit & Loss, Balance Sheet, Cash Flow and Quarters sheets are absent for the subject and all peers. The four Data_Sheet CSVs (screener-Data_Sheet.csv for DPABHUSHAN; SENCO, PNGJL, MOTISONS) are populated with raw annual P&L, balance sheet, cash flow and quarterly rows. Stage 1 reads Data_Sheet only. THANGAMAYL-Data_Sheet.csv moved to inputs/other/ (rejected peer)."
+  - "screener basis: main URL is STANDALONE (/company/DPABHUSHAN/). The /consolidated/ page stops at Mar-2022; the FY26 AR states the company has no subsidiary, JV or associate. Standalone is the only basis."
+  - "annual-report/: TWO ARs held, FY26 (Reg 34 filing 03-Sep-2026, 106 PDF pages, each PDF page a two-page print spread, printed pages up to 205) and FY25 (Reg 34 filing 05-Sep-2025, 221 PDF pages). Contract is 0-1: FY26 is the primary AR; FY25 is the backward-check AR. The FY26 AR duplicate in announcements/ (9c3bc998) was removed."
+  - "concalls: 4 transcripts held; quarter read from page 1: Concall_Dec_2025 = Q2 FY26 (call 06-Nov-2025, filed 12-Nov-2025; screener filename month is wrong); Concall_Jan_2026 = Q3 FY26 (call 24-Jan-2026); Concall_May_2026 = Q4 FY26 (call 22-May-2026); Concall_Jul_2026 = Q1 FY27 (call 22-Jul-2026). Stage 5 uses the three most recent (Q3 FY26, Q4 FY26, Q1 FY27); Q2 FY26 is an extra backward check."
+  - "peer-concalls: 12 transcripts, 4 per peer. Peer set changed at intake: THANGAMAYL replaced by MOTISONS because Thangamayil files no earnings-call transcripts on BSE."
+  - "announcements/SAST-*.pdf: four Reg 29(2) SAST disclosures by promoter Santosh Kataria; THREE are image-only scans with NO TEXT LAYER: UNREADABLE by the text route in this session (pdftoppm absent). Named here, never anchored."
+  - "research: EMPTY. No broker notes. No effect on anchored evidence."
+  - "presentation: 2 decks, Q4 FY26 (22-May-2026) and Q1 FY27 (21-Jul-2026). Earlier decks not held."
+  - "prospectus: EMPTY, not expected (listed >3 years). Not a gap."
+  - "STAGE 1 (this run): screener-Data_Sheet.csv has no Current Liabilities, Trade Payables or capex-split line for any year. ROCE, D/E-style leverage and WC-days are computable per formula only for FY24-FY26, using the AR standalone financials (FY26 AR gives FY26+FY25; FY25 AR gives FY25+FY24). Block C growth metrics use the full FY17-FY26 screener series; Block B1 uses the full 10-year CFO/PAT series; B2-B4 and Block A/D/most WC-moat tests use the FY24-FY26 AR-detail window only."
+  - "STAGE 1 (this run): E3 promoter pledge searched in both ARs and the CARE rationale; no SEBI-format pledge/encumbrance table or statement found for promoter shareholding (only an unrelated vehicle-loan pledge note). Scored NOT FOUND / 0, not assumed clean."
+  - "STAGE 1 (this run): M9 peer gross-margin proxy unusable - screener-Data_Sheet.csv Raw Material Cost for SENCO FY26 exceeds Sales, an apparent inventory-change categorisation artefact in that peer's export. Marked PEER DATA NEEDED rather than guessed."
+  - "STAGE 1 (this run): screener-Data_Sheet.csv 'Interest' row for FY24 (14.12 Cr) and FY25 (17.14 Cr) does not match the AR's own 'Finance Cost' line (11.62 Cr and 14.44 Cr respectively) for the same years; FY26 matches exactly (16.22 Cr both sources). AR figures used throughout this scorecard; screener figure not used anywhere in the arithmetic."
+flags:
+  - {type: FLAG-GATE0, reason: "Classification capped at AVERAGE by deal-breaker #4 (cumulative CFO/PAT -4.5%). Historical depressor named: FY25-FY26 cash-conversion collapse (CFO -18.93 Cr then -97.31 Cr) during the showroom-expansion/inventory-build phase (LBF2/LBF3). FORTRESS moat profile (6/12) and maxed Block A (20/20 ROCE/ROE) sit against a zeroed Block B (0/20); stage 2 must classify GROWTH-INDUCED vs STRUCTURAL before Halt 1."}
+  - {type: FLAG-CASH, reason: "block_b_trend deteriorating: CFO -0.28 Cr (FY24) -> -18.93 Cr (FY25) -> -97.31 Cr (FY26), tracking Inventory Rs 454.55 Cr -> Rs 722.10 Cr -> Rs 1,003.94 Cr. FCF negative in all 3 anchored years (FY24 -3.95, FY25 -44.22, FY26 -104.49 Cr)."}
+data_years: 10
+fy_range: "FY2017 to FY2026 (P&L/CF full window; balance-sheet-detail window FY2024 to FY2026 only, see data_notes)"
+blocks: {A: 20, B: 0, C: 18, D: 18, E: 13}
+core_score: 69
+moat_score: 23
+grand_total: 92
+moats_confirmed: 6
+moat_class: "FORTRESS"
+classification: "AVERAGE"
+deal_breakers:
+  - "#2 Block B <8 (score 0) -> max GOOD (superseded by #4)"
+  - "#4 Cumulative CFO/PAT <0.50 (-4.5%) -> max AVERAGE (BINDING)"
+history_downgrade: false
+data_notes:
+  - "No loss-to-profit swing in any CAGR window (Revenue and PAT both positive at every endpoint used)."
+  - "ROCE/ROE/D1-D4/WC-days computed only for FY24-FY26 (the only years with a filed Current Liabilities and Trade Payables split); Block C growth uses the full FY17-FY26 screener series; B1 uses the full 10-year CFO/PAT series; B2-B4 use the FY24-FY26 AR-detail window (capex only anchored there)."
+  - "M9 (Brand) marked PEER DATA NEEDED: screener Raw Material Cost line for peer SENCO FY26 exceeds Sales, an apparent categorisation artefact; DPABHUSHAN's own AR-anchored gross margin (10.28% FY26 vs 8.03% FY25 restated) is directionally consistent with LBF1's cited 10%/7.72% but not independently peer-ranked here."
+  - "E3 (pledge) marked NOT FOUND after searching both ARs and the CARE rationale; no SEBI-format pledge/encumbrance table for promoter shareholding was located in the corpus."
+  - "screener-Data_Sheet.csv 'Interest' row for FY24/FY25 is inconsistent with the AR's own Finance Cost line for the same years (FY26 matches); AR figures used throughout, screener figure not used in any calculation."
+  - "Inventory-days formula result (~70-90 days across FY24-FY26) does not match LBF2's cited ~100 days; likely a different revenue or averaging basis upstream. Flagged for stage 2, not reconciled here."
+block_b_trend: "deteriorating - CFO -0.28 Cr (FY24) -> -18.93 Cr (FY25) -> -97.31 Cr (FY26), tracking a 39% YoY inventory build in FY26 (Rs 722.10 Cr -> Rs 1,003.94 Cr); FCF negative in all 3 anchored years."
+analyst_note: "The scorecard's central tension: Block A maxes at 20/20 (ROCE 37-46%, ROE 29-41%, both rising) while Block B zeroes at 0/20 (cumulative CFO/PAT -4.5%, FCF negative all 3 anchored years). Both are real, from the same anchored numbers, in the same FY24-FY26 window. The deal-breaker rule correctly caps classification at AVERAGE rather than letting the FORTRESS moat profile and strong core score alone read as GOOD+. LBF1 (gold-price/inventory-holding-gain vs structural margin) and LBF2 (growth-induced vs structural cash burn) are the two questions that resolve which read is right; this stage cannot resolve them, only surface the numbers. E3 (pledge) is unverified, not confirmed-clean, despite a direct AR search."

@@ -1,0 +1,61 @@
+stage: B02-notes
+company: "DPABHUSHAN"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+pass: 2
+status: pass2_complete
+provenance_note: >
+  Source is the FY2025-26 Annual Report (standalone, Ind AS, no subsidiary/JV/associate),
+  Notes to the Standalone Financial Statements, Note 1 through Note 33.26, re-read in full
+  from the CORRECTED table-mode extraction (every two-page print spread split into LEFT
+  HALF / RIGHT HALF under its [page N] marker). PDF pages 83-106 (printed pages 160-205),
+  including the primary statements (Balance Sheet, P&L, Cash Flow, Statement of Changes in
+  Equity) which Pass 1 could not reliably read. All figures in Rs Lakh (source unit) with a
+  Rs Cr equivalent in parentheses in the full report.
+extraction_defect_status: >
+  RESOLVED. Every table Pass 1 flagged as garbled, LOW or MODERATE confidence (Balance
+  Sheet, P&L face, Cash Flow Statement, Note 7 Inventories, Note 12 Borrowings, Note 16
+  Trade Payables, Note 33.1 RPT table, Note 33.25 Deferred Tax, Note 33.26 Ratio Analysis)
+  is now internally clean and reconciles by exact arithmetic against at least one other
+  statement or note. No material table in Notes 1-33.26 remains unreliable.
+corrections_to_pass1:
+  - {item: "Related-party unsecured borrowings (Note 12)", pass1_claim: "rose Rs 333.06 lakh to Rs 1,520.42 lakh (+356%)", corrected: "FELL Rs 2,321.99 lakh to Rs 1,520.42 lakh (-34.5%); 'From Other's' unsecured flat at Rs 333.06 lakh both years. Pass 1 read the two unsecured sub-lines backwards.", impact: "Reverses a Pass 1 top-10 finding and the LBF4 'leaning more on family loans' read; the FY26 debt build is 100% bank-sourced."}
+  - {item: "Employee Benefits Expense (Note 26)", pass1_claim: "Rs 7,085.85 lakh FY26 vs Rs 3,828.10 lakh FY25 (+85.1%)", corrected: "Rs 4,000.92 lakh FY26 vs Rs 2,983.76 lakh FY25 (+34.1%). Pass 1 mislabelled the P&L's Total Tax Expenses line (item 6) as Employee Benefits Expense.", impact: "Corrects a mislabelled cost line; no red flag, normal-scale headcount cost growth."}
+  - {item: "Trade Payables (Note 16)", pass1_claim: "NOT RELIABLY EXTRACTABLE, order of magnitude Rs 174-177cr", corrected: "Rs 11,360.73 lakh (Rs 113.61cr) FY26 vs Rs 17,670.68 lakh (Rs 176.71cr) FY25, a 35.7% DECLINE, cross-validated exactly against the CFS trade-payables line.", impact: "New load-bearing finding for LBF2: inventory build was funded with almost no supplier-credit help; payables were paid DOWN in the same year, a double cash drain."}
+  - {item: "Cash Flow Statement", pass1_claim: "NOT RELIABLY EXTRACTABLE this pass", corrected: "Fully clean. FY26 CFO = Rs -9,730.52 lakh = Rs -97.31cr, confirming B00 LBF2's 'CFO Rs -97cr FY26' exactly.", impact: "LBF2 now fully confirmed from the AR, not just from screener/company memory."}
+  - {item: "Note 33.1 Related-Party Transaction table (per-party figures)", pass1_claim: "MODERATE-to-LOW confidence per row; Suman Devi Kataria FY26 loan received Rs 338.70 lakh etc.", corrected: "Fully clean. Those figures belong to Supriya Kataria, not Suman Devi Kataria (two counterparties' rows were swapped in Pass 1). D. P. Jewelline's Rs -212.98 lakh Rent/Sale & Purchase line is FY25, not FY26.", impact: "Corrects two per-party misattributions; RPT table now HIGH confidence throughout, cross-validated (sum of closing balances ~Rs 1,548 lakh vs Note 12's Rs 1,520.42 lakh)."}
+  - {item: "Note 33.25 Deferred Tax Assets", pass1_claim: "NOT RELIABLY EXTRACTABLE (contaminated by unrelated Balance Sheet totals)", corrected: "Fully clean: Opening -10.35 + PP&E 11.60 + Employee Benefits 10.56 + Lease 10.37 = Net DTA 22.19, ties exactly to the Balance Sheet.", impact: "Resolved, no anomaly."}
+  - {item: "Note 33.26 Ratio Analysis", pass1_claim: "only Current Ratio and Debt-Equity Ratio isolated", corrected: "All 10 ratios clean with numerator/denominator and % change; DSCR +64.82%, Net Profit Ratio +53.09% both cross the Schedule III 25% threshold with no accompanying narrative explanation (new finding).", impact: "Minor disclosure-quality gap noted; drivers inferable from elsewhere in the notes."}
+  - {item: "Useful-life table (Note 2)", pass1_claim: "Office Equipment and Leasehold Improvements both amortised over Primary Period of Lease (MODERATE)", corrected: "Only Leasehold Improvements uses Primary Period of Lease; Office Equipment has its own 5-year Schedule II life.", impact: "Minor correction, no valuation impact."}
+  - {item: "Capital commitments candidate figure", pass1_claim: "candidate Rs 40.90 lakh possibly a capital commitment", corrected: "Rs 40.90 lakh is the FY25 comparative for the disputed VAT/GST contingent liability, unrelated to commitments; capital commitments confirmed NIL both years.", impact: "Minor correction, no valuation impact."}
+new_findings_pass2:
+  - {rank: 1, finding: "Note 7 (Balance Sheet) FY26 raw-material closing (Rs 19,284.21 lakh) is Rs 5,033.23 lakh HIGHER than Note 23's own implied raw-material closing (Rs 14,250.98 lakh) used in the Cost of Material Consumed roll-forward -- two audited notes describing the same balance disagree", note_ref: "Note 7 vs Note 23, PDF p.92/95-96 (printed p.178-179/185-186)", rating: "RED", why: "LBF1: [INFERENCE] plausibly explained by Gold Metal Loan / Gold-on-Lease gold (Rs 6,010.32 lakh new liability, Note 12) entering inventory directly against a liability rather than through a conventional purchase-and-consumption cycle, which would mean Cost of Material Consumed understates true gold throughput financed via GML/lease. Unconfirmed from Notes alone; flagged for stage 5/6 and management question."}
+  - {rank: 2, finding: "Trade payables fell 35.7% (Rs 176.71cr to Rs 113.61cr) in the same year inventory grew 39.0% and revenue grew 22.2%", note_ref: "Note 16, PDF p.93 (printed p.181)", rating: "RED", why: "LBF2: a double cash drain -- inventory build funded with almost no supplier-credit help, payables actively paid down; direct contributor to the confirmed -Rs 97.31cr FY26 CFO"}
+  - {rank: 3, finding: "FY26 growth financed almost entirely by fresh bank borrowing (+Rs 126.94cr net current-borrowings draw in financing activities), not by operations (CFO -Rs 97.31cr) or fresh equity (QIP postponed per LBF3); company still made a new Rs 12.50cr liquid-fund investment in the same year", note_ref: "Cash Flow Statement, PDF p.84 (printed p.162-163)", rating: "YELLOW", why: "LBF2: confirms GROWTH-INDUCED cash gap, now running entirely on debt; no structural red flag beyond the leverage build itself"}
+  - {rank: 4, finding: "Customer Dues under Schemes/Advance (Note 18) grew 30.8% (Rs 62.39cr to Rs 81.64cr), faster than revenue", note_ref: "Note 18, PDF p.94-95 (printed p.184-185)", rating: "GREEN", why: "Normal jewellery-sector customer-scheme float, not a red flag, but a growing liability worth tracking in working-capital analysis"}
+  - {rank: 5, finding: "Right-of-Use asset additions fell 90.5% (Rs 1,124.34 lakh FY25 to Rs 106.77 lakh FY26) even as PP&E gross additions rose 24.0%", note_ref: "Note 4 vs Note 3A, PDF p.90-91 (printed p.174-177)", rating: "YELLOW", why: "LBF3: possible shift toward owned/leasehold-improved space or a slowdown in new lease signings; cross-check against store-count guidance and announcement-folder showroom openings at stage 5/6"}
+  - {rank: 6, finding: "Revenue from Non-Retail Operations declined 5.96% (Rs 530.98cr to Rs 499.32cr) while Retail grew 27.61%", note_ref: "Note 20, PDF p.95 (printed p.184-185)", rating: "YELLOW", why: "Worth a management question on what Non-Retail Operations comprises and why it shrank while overall revenue grew 22%"}
+  - {rank: 7, finding: "Two new gold-hedging income streams appeared in FY26 with zero FY25 balance: Profit Th. MCX Hedging Rs 18.60cr (inside revenue, Note 21) plus MTM Notional gains on GML/Gold-on-Lease Rs 3.95cr (inside Other Income, Note 22), combined ~Rs 22.55cr", note_ref: "Note 21/22, PDF p.95-96 (printed p.184-187)", rating: "RED", why: "Sharpens Pass 1's rank-2 finding with exact split figures; confirms the same LBF1 direction at higher precision"}
+input_gaps: []
+load_bearing_facts_status:
+  - {lbf: "LBF1 margin source", status: "SHARPENED, STILL BEARISH-LEANING", detail: "Pass 1's two anchors (gold grams flat, MCX hedging inside revenue) unchanged and now at exact precision (Rs 18.60cr MCX hedging + Rs 3.95cr MTM notional, combined Rs 22.55cr new this year). New: a Rs 50.33cr Note-7-vs-Note-23 raw-material gap plausibly tied to GML/gold-lease inventory recognition, unconfirmed inference, needs stage 5/6 quarterly gram cross-check."}
+  - {lbf: "LBF2 cash conversion", status: "FULLY CONFIRMED FROM THE AR", detail: "CFO = Rs -97.31cr FY26, exact match to B00 citation. Inventory +39.0% to Rs 1,003.94cr; trade payables FELL 35.7% to Rs 113.61cr in the same year (new finding); borrowings +76.8% to Rs 290.91cr. Growth funded almost entirely by fresh bank debt in financing activities. GROWTH-INDUCED classification well supported; no structural cash-conversion red flag distinct from the leverage build."}
+  - {lbf: "LBF3 guidance vs delivery", status: "STILL NOT DIRECTLY ADDRESSABLE FROM NOTES", detail: "New data point: ROU asset additions fell 90.5% YoY while PP&E capex rose 24.0% -- possible signal on store-opening mode/pace, cross-check required against concalls and announcements at stage 5/6."}
+  - {lbf: "LBF4 promoter and related parties", status: "MATERIALLY REVISED", detail: "Related-party unsecured borrowings FELL 34.5% (not +356% as Pass 1 reported) -- the entire FY26 debt build is bank-sourced, not family-sourced. Per-party RPT table now HIGH confidence with two misattributions corrected (Suman Devi Kataria / Supriya Kataria rows swapped; D.P. Jewelline's Rs -212.98 lakh line is FY25 not FY26). Personal-guarantee and pledged-property findings from Pass 1 Section 7 unchanged."}
+receivables_trend: "unchanged from Pass 1: IMPROVING (Rs 217.99 lakh to Rs 164.37 lakh, 0.04% of revenue)"
+going_concern_language: "unchanged from Pass 1: NONE ADVERSE, clean management assessment (Note 2)"
+restatements_found:
+  - "Note 33.22/33.7 boilerplate (unchanged from Pass 1): prior-year figures re-grouped/re-arranged wherever necessary."
+  - "NEW (B4): Note 3A PP&E shows a quantified FY25-only inter-category regrouping across Building/Leasehold Improvements/Plant & Machinery/Computer/Furniture & Fittings/Office Equipment, net zero on Total PP&E; a specific instance of the generic 33.7 boilerplate, immaterial to valuation, flagged for Pass 3's pattern search."
+pass_2_empty: false
+analyst_note: >
+  The corrected table-mode extraction did not just raise confidence on Pass 1's flagged
+  items -- it overturned one of them (related-party borrowings direction) and corrected two
+  mislabelled/misattributed figures (Employee Benefits Expense; Suman Devi Kataria vs
+  Supriya Kataria). Downstream stages should treat this Pass 2 report, not Pass 1's, as
+  authoritative wherever the two conflict; Section A of the full report lists every
+  correction with its exact anchor. The single open item this pass could not close is B1
+  (the Note 7 vs Note 23 raw-material gap): the arithmetic gap itself is HIGH confidence
+  (both notes close their own totals exactly), but the GML/gold-lease explanation is a
+  labelled inference, not a filed fact, and is this run's most important open LBF1 question
+  heading into Pass 3 and stage 5/6.

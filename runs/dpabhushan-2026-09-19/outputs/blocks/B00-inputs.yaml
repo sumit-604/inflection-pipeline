@@ -49,6 +49,7 @@ input_gaps:
   - "research: EMPTY. No broker notes. No effect on anchored evidence."
   - "presentation: 2 decks, Q4 FY26 (22-May-2026) and Q1 FY27 (21-Jul-2026). Earlier decks not held."
   - "prospectus: EMPTY, not expected (listed >3 years). Not a gap."
+  - "TOOLING RE-EXTRACTION (after stage 1 and stage 2 pass 1): the first -layout extraction interleaved facing tables on the FY26 AR two-page spreads (balance sheet, P&L, cash flow, notes) and misaligned result-filing tables. Every inputs/ .txt was regenerated with xpdf pdftotext -table, and each spread page (width > 1.3x height) is split into LEFT HALF / RIGHT HALF sections under its [page N] marker. Page numbers are unchanged. Stage 1 was re-invoked on the corrected text; pass 2 re-reads the items pass 1 marked garbled."
   - "TOOLING: pdftoppm absent; the Read tool cannot render PDF pages. Every input PDF is pre-extracted with pdftotext -layout to a page-marked .txt BESIDE the PDF (same basename, '[page N]' markers = PDF page numbers). Stages and verifiers read the .txt; anchors cite the PDF with the page number. FY26 AR: PDF page N holds two printed pages side by side; cite the PDF page and, where visible, the printed page."
 freshness_pairs:
   - pair: "RESULTS to CONCALL"

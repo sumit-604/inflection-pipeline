@@ -1,0 +1,57 @@
+stage: B07-emoat
+company: "AWFIS"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - type: FLAG-CONCENTRATION-CONTRADICTS-C1
+    reason: "Top-10 customer receivable concentration rose 42.74% to 61.66% YoY (B03-ardeep, Note 36) even as the customer-ecosystem/cross-sell narrative (C1) claims deepening, broadening relationships; a second large single-client exit (~3,000 seats) occurred in Q1 FY27 the quarter immediately after a Q4 FY26 churn reassurance was broken. C1 is scored Moderate, not Strong, specifically because of this contradiction."
+  - type: FLAG-F2-NET-NEGATIVE
+    reason: "F2 (execution moat) evidence is net-negative per the injected B05 promise-delivery record (credibility_grade C): seat-addition guidance cut twice in FY26, FY27 revenue guidance cut within a single quarter with no acknowledgment, a churn reassurance broken the next quarter. Presented as Weak/cautionary, not force-fit as a positive moat."
+  - type: FLAG-G2-DOUBLE-CREDIT-EXCLUDED
+    reason: "WC-days deepening (-24.9 FY21 to -41.3 FY26) is genuine evidence but is already scored inside Gate 0 Block B (B01 moat_score/moats_confirmed). Excluded from this scan's total per the CLAUDE.md rule against crediting one quality improvement through two mechanisms."
+  - type: FLAG-H1-GENERIC-NARRATIVE
+    reason: "AR's industry-consolidation language (p.29, 'consolidation in favour of scaled, well-capitalised operators') is market-wide narrative shared equally by all peers, not Awfis-specific evidence; scored 0, not force-fit as H1 evidence."
+em_score: 12.5
+em_classification: "MODEST"
+active_categories:
+  - {id: "G1", name: "War chest", strength: "Strong", evidence_type: "documented", time_to_materialise: "active/ongoing"}
+  - {id: "H2", name: "Strategic partnerships", strength: "Moderate", evidence_type: "documented", time_to_materialise: "12m"}
+  - {id: "C1", name: "Customer ecosystem / embedded relationships", strength: "Moderate", evidence_type: "documented+claim", time_to_materialise: "12-24m"}
+evidence_mix: {documented: 14, claim: 9, inference: 4}
+completionist_recount: "8 documented items across 4 categories (G1: IPO capital, self-funded capex, net debt ratio, rating upgrade; H2: Malpani partnership, WELL certification; F2: FY26 capex delivered; C1: GCC MRR/allied-billing figure). 6 of 23 rows carry any scored evidence, within the 3-6 realistic base rate."
+catalysts_12m:
+  - {catalyst: "FY27 capex guidance Rs 200-210 Cr (self-funded, internal accruals, no debt/equity raise stated)", window: "FY27 (next 12 months)", evidence_type: "management guidance, consistent across 2 calls", anchor: "Concall_Aug_2026_Transcript p.13; reiterated Concall_May_2026_Transcript p.15"}
+  - {catalyst: "Cash EBITDA H2>H1 delivery toward Rs 195-200 Cr FY27 guide", window: "FY27 H2", evidence_type: "management claim (LBF1)", anchor: "Concall_Aug_2026_Transcript; Investor Pres. p.20-21 bridge"}
+  - {catalyst: "2-3 more developer-partnership deals beyond Malpani Estates", window: "1-2 quarters (management's own language)", evidence_type: "management claim", anchor: "Concall_Aug_2026_Transcript p.17"}
+  - {catalyst: "13 GCC mandates in pipeline going live", window: "2-3 quarters", evidence_type: "management claim", anchor: "AR-FY26-with-AGM-notice.txt p.8 (FY26 at a glance)"}
+  - {catalyst: "Frame by Awfis: revival or confirmed quiet abandonment", window: "next 1-2 quarters", evidence_type: "management claim, currently silent", anchor: "Concall_May_2026_Transcript p.6-8 vs silence in Concall_Aug_2026_Transcript"}
+capex_embedded_growth_pct: 20.6
+optionality_register:
+  - {optionality: "Frame by Awfis becomes a standalone furniture revenue channel", converting_evidence: "named external mandate closes with disclosed revenue figure", first_appears: "concall or Reg 30 order announcement", window: "stalled/uncertain, re-open only if re-mentioned"}
+  - {optionality: "Awfis 6.0/Gold 2.0/Elite 2.0 formats prove the claimed 30-50% realization premium", converting_evidence: "company discloses realization figure specific to next-gen-format centres vs base portfolio", first_appears: "quarterly investor presentation", window: "2-4 quarters"}
+  - {optionality: "Developer-partnership model becomes a repeatable playbook beyond Malpani", converting_evidence: "second/third signed, named developer partnership", first_appears: "Reg 30 filing or concall", window: "1-2 quarters (management's own stated timeline)"}
+  - {optionality: "GCC pipeline (13 large mandates) converts to live, billing clients", converting_evidence: "mandates go live with named client/seat-count disclosure", first_appears: "quarterly investor presentation", window: "2-3 quarters (management's own stated window)"}
+  - {optionality: "Union Budget 2026 MNC tax-holiday/transfer-pricing tailwind sustains and is quantified", converting_evidence: "repeated citation with quantified GCC-demand linkage", first_appears: "concall or industry report", window: "uncertain, long; dropped after one mention"}
+  - {optionality: "Industry consolidation narrative becomes an actual Awfis-specific event", converting_evidence: "named competitor exit or Awfis bolt-on acquisition", first_appears: "Reg 30 filing or AR", window: "long, 2-3 years, unproven"}
+  - {optionality: "WELL certification converts into a measurable realization premium", converting_evidence: "disclosed realization/occupancy delta tied specifically to WELL-certified centres", first_appears: "quarterly investor presentation", window: "2-4 quarters"}
+combined_assessment: "TURNAROUND"
+combined_reasoning: "Gate 0 AVOID is mechanically driven by Ind AS 116 lease accounting and a short 2-of-8-year data window (not genuine distress, per B01's own analyst note); AWFIS shows a real historical loss-to-profit turn (FY19-24 losses to FY25-26 profit) and a MODEST, thin-but-real forward moat case (G1/H2/C1), which together fit TURNAROUND rather than a flat AVOID or the HIGH POTENTIAL (needs EXPANSION-tier forward score) this scan does not reach."
+top_moat_risks:
+  - "G1 war chest depends on capex staying capital-light; FY26 capex guidance itself whipsawed three times within one year before landing on the delivered figure"
+  - "H2 developer-partnership model is a single unproven instance (Malpani); collapses to a one-off if the 'couple more deals... curating' do not close within 1-2 quarters"
+  - "C1 customer ecosystem is contradicted by rising top-10 receivable concentration (42.74% to 61.66% YoY) and a recurring large single-client exit pattern (Q1 FY27, immediately after a broken churn reassurance)"
+analyst_note: >
+  Capex for the next 12-24 months, explicit for stage 9: Rs 200-210 Cr
+  (FY27 guidance, reiterated identically across the Q4 FY26 and Q1 FY27
+  calls; funded from internal accruals, net cash maintained throughout,
+  no debt or equity raise stated). Keep this separate from reported
+  (Ind AS 116) EBITDA (36.8% FY26, 38.2% Q1 FY27) versus cash EBITDA
+  (10.1% Q1 FY27, per the AUP-reviewed bridge at Investor Pres. p.20-21):
+  every emerging-moat catalyst in this scan that touches margin (G1
+  sustainability, the FY27 guide) rides the cash line, not the reported
+  line. Score is deliberately low (12.5/92, MODEST) and concentrated in
+  3 categories: this reflects a real-estate arbitrage business with very
+  little product/technology/data surface area for 16 of the 22
+  categories to attach to, not an under-scanned corpus.

@@ -4,3 +4,4 @@
 - stage 3: reply omitted the YAML block; B03-ardeep.yaml exists and parses. File governs.
 - stage 4: reply omitted the YAML block; B04-bizmodel.yaml exists and parses. File governs.
 - stage 4: block file carried markdown code fences; stripped by orchestrator (content unchanged), now parses.
+- stage 7: reply omitted the YAML block; B07-emoat.yaml exists and parses. File governs.

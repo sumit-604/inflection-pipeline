@@ -11,3 +11,5 @@ not split input/output, so in_tok/out_tok read n/a).
 | 2 | notes triple-pass, pass 2 | claude-sonnet-5 | default | n/a | n/a | 161682 | 7m53s | 2 |
 | 2 | notes triple-pass, pass 3 (consolidated) | claude-sonnet-5 | default | n/a | n/a | 108357 | 4m34s | 3 |
 | 3 | AR backward deep dive (8 phases) | claude-sonnet-5 | default | n/a | n/a | 215916 | 13m30s | 1 |
+| 6 | peer concall verification | claude-sonnet-5 | default | n/a | n/a | 338642 | 6m14s | 1 |
+| 7 | emerging moat scan | claude-sonnet-5 | default | n/a | n/a | 170648 | 9m01s | 1 |

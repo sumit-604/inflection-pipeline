@@ -1,0 +1,58 @@
+stage: B06-peers
+company: "AWFIS"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+input_gaps: []                 # 12 of 12 expected peer transcripts present and read (4 per peer x 3 peers)
+flags:
+  - "MEDIUM: all three peers (Smartworks, Indiqube, DevX) report materially higher blended occupancy (80-92%) than Awfis's ~75-76% plateau, weighing against a market-wide explanation for the occupancy stall"
+  - "MEDIUM: all three peers disclose a post-rent cash margin (16-21% band) materially above Awfis's 10.1% cash EBITDA margin (Q1 FY27), corroborating a real sector gap, not just a low-base effect from a newly-disclosed metric"
+  - "LOW: no peer runs an MA-equivalent co-invested supply format; Awfis's declining MA share likely reflects convergence toward the peer-standard straight-lease/developer-partnership structure rather than an Awfis-specific anomaly"
+peers_provided: 12
+verified:
+  - {claim: "Do peers report an equivalent cash EBITDA or post-rent margin metric, and at what level?", peers: ["SMARTWORKS", "INDIQUBE", "DEVX"], anchor_count: 4}
+partially_verified:
+  - {claim: "Is India's GCC ecosystem generating nearly $100 million or nearly $100 billion in revenue?", peers: ["DEVX"]}
+  - {claim: "Is flex penetration of total office leasing genuinely on a path from 21% to 25% by 2027?", peers: ["SMARTWORKS", "INDIQUBE", "DEVX"]}
+  - {claim: "What is peer capex per seat/per sq ft for premium (Gold/Elite-equivalent) formats?", peers: ["SMARTWORKS", "INDIQUBE"]}
+contradicted:                  # priority items for synthesis
+  - {claim: "Is Awfis's ~75-76% blended / 83-84% mature-cohort occupancy plateau a market-wide pattern or Awfis-specific?", contradicting_peer: "SMARTWORKS, INDIQUBE, DEVX (all three)", quote_anchor: "SMARTWORKS Q1 FY27 call p.6 (mature committed occupancy 92%); INDIQUBE Q1 FY27 call p.14 (occupancy 86%); DEVX Q1 FY27 call p.3 (occupancy 91.93%, up from 88.6%)"}
+unverifiable:
+  - {claim: "Are peers also seeing Managed Aggregation share drift down toward straight lease and developer partnerships, or is this Awfis-specific?", peers_checked: ["SMARTWORKS", "INDIQUBE"]}
+  - {claim: "Do peers face a similar multi-quarter lag between landlord rent resets and client-side pass-through on older-vintage leases?", peers_checked: ["SMARTWORKS", "INDIQUBE", "DEVX"]}
+  - {claim: "Does the GCC client lifecycle (25-50 seats entry, expand to 100-300, then managed office) match peer experience and timeline?", peers_checked: ["SMARTWORKS", "INDIQUBE"]}
+peer_coverage_map:
+  - {peer: "SMARTWORKS", quarter: "Q1 FY26", usage: "SUBSTANTIVE", contribution: "Baseline occupancy/capex/margin figures; capex Rs1,350/sqft anchor"}
+  - {peer: "SMARTWORKS", quarter: "Q2 FY26", usage: "SUBSTANTIVE", contribution: "Flex penetration (C&W 10%->25%), GCC >15% of revenue, institutional landlord 24%, retention volatility first appears"}
+  - {peer: "SMARTWORKS", quarter: "Q3 FY26", usage: "SUBSTANTIVE", contribution: "Cash-margin trend point (18%), ROCE 21%, retention recovery to 93%, capex step-up guide"}
+  - {peer: "SMARTWORKS", quarter: "Q1 FY27", usage: "SUBSTANTIVE", contribution: "Flex penetration update (19%->27%), GCC 21% of revenue, cash margin 19.6% (peer ceiling), capex guide Rs550-600cr"}
+  - {peer: "INDIQUBE", quarter: "Q2 FY26", usage: "SUBSTANTIVE", contribution: "Cash EBIT ~21% explicit metric, GCC 40% of clients, capex/sqft Rs1,517, landlord vs client escalation mismatch data"}
+  - {peer: "INDIQUBE", quarter: "Q3 FY26", usage: "SUBSTANTIVE", contribution: "GCC 56% of revenue, lease-liability disclosure clarification, cash-flow disclosure deferral (evasion noted)"}
+  - {peer: "INDIQUBE", quarter: "Q4 FY26", usage: "SUBSTANTIVE", contribution: "Occupancy-dip clarification (81% EOM vs 84% avg), capex/sqft Rs1,650 with tariff-cost attribution, capex breakdown"}
+  - {peer: "INDIQUBE", quarter: "Q1 FY27", usage: "SUBSTANTIVE", contribution: "GCC 53% of revenue, occupancy 86%, EBIT margin trend, no lease-reset-lag mention"}
+  - {peer: "DEVX", quarter: "Q2 FY26", usage: "SUBSTANTIVE", contribution: "Explicit cash EBIT metric (18.5%), rent-to-revenue ratio, GCC/flex macro stats, DM model context"}
+  - {peer: "DEVX", quarter: "Q3 FY26", usage: "SUBSTANTIVE", contribution: "GCC ecosystem $105bn figure (resolves Awfis $100mn/$100bn inconsistency), cash EBIT 9M, DM-model economics detail"}
+  - {peer: "DEVX", quarter: "Q4 FY26", usage: "SUBSTANTIVE", contribution: "Cash EBIT margin 21.4% (peer ceiling), occupancy-definition change flagged by analyst, Noida landlord-failure closure, promoter/NCD disclosure practice"}
+  - {peer: "DEVX", quarter: "Q1 FY27", usage: "SUBSTANTIVE", contribution: "Standalone revenue deceleration to 7.8% YoY (demand-split signal), occupancy 91.93%, promoter-encumbrance and NCD terms disclosed in full"}
+industry_cross_read:
+  demand: "All three peers report strong, accelerating demand (record CY2025 leasing ~82-82.6msf, Q1 CY2026 running above trend, GCC 34-44% of absorption); no peer reports a demand slowdown, though DevX's own standalone revenue growth decelerated to 7.8% YoY in Q1 FY27 (management attributes to Capital One ramp timing, not demand)."
+  pricing_inputs: "Indiqube names a 5-7% material-cost/tariff-driven capex inflation (Rs1,550 to Rs1,650/sqft) that no Awfis call attributes any part of its own capex or margin story to; Awfis instead names a client-side lease-reset lag, a different mechanism."
+  capex_cycle: "Industry-wide capacity race, not a lone-expander situation: Smartworks steps capex up ~45-55% (Rs388cr to Rs550-600cr guide), DevX guides Rs220-230cr over FY27-28 against a small base (NCD-funded), Indiqube holds steady ~Rs350-414cr. Awfis's ~Rs200-210cr FY27 guide is the most conservative of the four in absolute terms."
+peer_mentions_of_company: []   # no transcript names Awfis; DevX's Q2 FY26 call (p.11) names only Smartworks and Indiqube as "match-to-match players" when asked directly, a notable absence
+risks_peers_raise:
+  - "Input-cost/material inflation from tariff disruption (Indiqube, Q4 FY26 call, p.16-17) -- never named on any Awfis call"
+  - "AI-driven IT-sector hiring impact on office demand (DevX Q4 FY26 call p.17-18; Indiqube Q4 FY26 call p.7-8) -- not substantively addressed on any Awfis call despite GCC demand being Awfis's largest cited trigger"
+  - "Landlord/CAM maintenance failure forcing a center closure (DevX, Q4 FY26 call, p.9-10, Noida) -- a landlord-side operational risk never surfaced on any Awfis call"
+  - "Promoter share encumbrance for debt security, proactively disclosed with covenant detail (DevX, Q1 FY27 call, p.4-5) -- a governance-disclosure practice Awfis's calls do not match for its own live governance items (GST notices, D&B transfer)"
+net_narrative_effect: "complicates"
+analyst_note: >
+  The two claims that most matter for Stage 11/13 both cut against Awfis relative to
+  peers: occupancy (claim 4, CONTRADICTED -- all three peers run materially higher
+  blended occupancy) and cash EBITDA margin (claim 5, VERIFIED peer band of 16-21% vs
+  Awfis's 10.1%). Both are the same two items B05 named as the near-term confirm/kill
+  triggers (priority 3 and priority 5), so this stage sharpens rather than resolves them:
+  the peer set gives Stage 11 a real external benchmark to test Awfis's FY27 guided
+  cash-EBITDA and occupancy-recovery paths against, not just Awfis's own prior guidance.
+  The Part 5 cross-peer hypothesis (capital-structure mix vs cash margin) is a genuinely
+  novel read with only three peer data points behind it; treat as a testable hypothesis
+  for future quarters, not a settled finding.

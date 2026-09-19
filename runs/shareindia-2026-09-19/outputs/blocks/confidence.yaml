@@ -1,0 +1,23 @@
+stage: confidence-delta-phase1
+company: SHAREINDIA
+run_date: 2026-09-19
+status: complete
+verifier_a_identity_check: "no CRITICAL rows in B12a (findings: []); nothing to strike"
+confidence_delta:
+  numerical_acceptance: 100        # B12a.acceptance_rate; 80 material figures checked
+  redflag_coverage: 50             # B12b.acceptance_rate; material_found 10, material_caught 5 (3 full + 2 partial)
+  framework_adherence: 84.7        # B12c Gate 0 + EM portion only; 61 passed / 72 checked; valuation portion PENDING PHASE 3
+  peer_utilisation: 91.7           # B12d: 11 substantive / 12 peer transcripts provided
+  overall: 50
+  overall_set_by: redflag_coverage
+  not_applicable: []               # every component has a denominator of 4 or more
+  pending: ["framework_adherence valuation half (B10/B11 audit) - phase 3"]
+band: "< 60 -> forced REWORK (orchestrator Section 5; Section 4 REWORK rule: a verifier acceptance_rate below 60% makes the synthesis verdict REWORK regardless of company quality)"
+rework_drivers:
+  - "B12b: 7 MAJOR and 15 MINOR findings against B05/B06; 5 of 10 material verifier-found flags caught upstream"
+  - "B12b MAJOR on B05: MTF trigger scored on track though target restated each quarter; Q4 profit-mix target misrecorded (55/45 profit, not 60/40); fair-value contribution to Q4 weakness and Q1 record PAT not identified; five-for-five Q3 FY26 milestone slip not stated"
+  - "B12b MAJOR on B06: false peer silence on MTF (SMC and Choice do disclose MTF books); SMC algo platform contradicts Share India's algo-uniqueness claim; Tier-3 'no supply' claim untested"
+  - "B12c MAJOR on B01: M4 and M12 over-scored; moat_class FORTRESS recomputes to STRONG (classification AVERAGE unchanged)"
+  - "B12d MAJOR on B06: one mischaracterised SMC anchor (Q&A answer framed as opening remarks)"
+orchestrator_notes:
+  - "B12b internal inconsistency: coverage_basis text says '1 CRITICAL, 9 MAJOR' and '30% on full catches only', while critical_count is 0 and major_count 7. The acceptance_rate field (50) is used as reported. On the full-catch reading (30) the band is the same: forced REWORK."

@@ -1,0 +1,14 @@
+stage: B12a
+company: SHAREINDIA
+run_date: 2026-09-19
+model: claude-haiku-4-5-20251001
+status: complete
+numbers_checked: 80
+findings: []
+critical_count: 0
+major_count: 0
+minor_count: 0
+false_positives_struck: 0
+material_universe: 80
+acceptance_rate: 100
+coverage_note: "All 80+ material financial figures across stages 01-09 checked against source PDFs (AR FY26, quarterly results, investor presentations, screener CSVs, BSE shareholding). Coverage method: verdict-card numbers first (Gate 0 blocks A-E), then scorecard inputs (ROCE, CFO, PAT, growth, shareholding, pledging), then table cells (revenue, segment, fair value, peers). All major basis/unit traps verified (Cr vs Lakh, standalone vs consolidated, FY vs TTM). Zero material figures unchecked. Acceptance rate 100% (zero mismatches, zero anchor-not-found, zero unanchored material figures)."

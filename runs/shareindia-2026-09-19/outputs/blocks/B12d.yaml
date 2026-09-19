@@ -1,0 +1,24 @@
+stage: B12d
+company: "SHAREINDIA"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+peers_audited: 12
+substantive_confirmed: 11
+substantive_unsupported: []
+unused_but_relevant:
+  - {peer: "SMCGLOBAL", missed_item: "Q2 FY26 (2025-11-07) call discloses NBFC GNPA 3.6% / NNPA 2.5% (line 313-314), an earlier corroborating data point for B06's Part 2E finding that peers proactively quantify asset-quality metrics Share India never discloses; B06 makes the point using later SMC/Choice quarters instead, so substance already reaches downstream stages", anchor: "SMCGLOBAL-2025-11-07"}
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "MAJOR", location: "B06 Part 2B (industry_cross_read.pricing_inputs)", claimed: "SMCGLOBAL-2026-05-08, p.2, framed as proactive 'opening remarks' tying NCD/CP diversification to RBI intent", source_truth: "Actual location is p.11 by the file's own bracket page markers (line 342-350), inside a Q&A answer from Himanshu Gupta responding to a direct, narrower analyst question ('what is the strategic intent behind diversifying toward NCD') — not an unprompted RBI-curb disclosure", note: "Quote text itself is verbatim-accurate; the anchor and the 'proactive opening remarks' characterization are both wrong, overstating how voluntarily SMC volunteered the RBI-driven funding parallel. Does not touch any Part 1 verdict."}
+  - {severity: "MINOR", location: "B06 Part 1 Q1 evidence (SMCGLOBAL-2026-02-09)", claimed: "p.4", source_truth: "p.6 by the file's 'Page N of 8' footer convention", note: "Quote ('around 4% share from commodity... towards 10%') verbatim-accurate; anchor drift only."}
+  - {severity: "MINOR", location: "B06 Part 1 Q2 evidence (ANGELONE-2026-04-22)", claimed: "p.6", source_truth: "p.7 by the file's 'Page N of 21' footer convention", note: "Quote verbatim-accurate; anchor drift only."}
+  - {severity: "MINOR", location: "B06 Part 1 Q3 evidence (ANGELONE-2026-01-21)", claimed: "p.17-18", source_truth: "roughly p.16 by one convention in this file, ambiguous because two page-marking conventions ('[page N]' bracket vs 'Page N of 19' footer) disagree by about one page in this section", note: "Quote verbatim-accurate; source-extraction ambiguity, not a clear pipeline error."}
+  - {severity: "MINOR", location: "B06 Part 2E (ANGELONE-2026-07-21 restricted-basket quote)", claimed: "p.19-20", source_truth: "p.24 by the file's 'Page N of 25' footer convention", note: "Largest single anchor drift found (~4-5 pages); quote itself is exact and correctly attributed to the right speaker and transcript."}
+  - {severity: "MINOR", location: "B06 Part 2C (CHOICEIN-2026-08-17 800-branch quote)", claimed: "p.13", source_truth: "p.12 by the file's bracket page markers", note: "Quote verbatim-accurate; the companion '210-350 branches' quote in the same paragraph is correctly on p.13."}
+  - {severity: "MINOR", location: "B06 Part 2 (SMCGLOBAL Q2 FY26, CITED-ONLY)", claimed: "N/A - coverage completeness", source_truth: "Call also discloses NBFC GNPA 3.6% / NNPA 2.5%, not reused in Part 2E", note: "Industry-context miss per rule 3; the Part 2E point is already made via other quarters, so not claim-critical."}
+critical_count: 0
+major_count: 1
+minor_count: 6
+acceptance_rate: 92

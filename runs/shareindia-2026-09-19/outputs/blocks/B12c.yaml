@@ -1,0 +1,28 @@
+stage: B12c
+company: "SHAREINDIA"
+run_date: "2026-09-19"
+model: "claude-opus-5"
+status: complete
+scope: "phase 1 (Gate 0 B01 + Emerging Moat B07); valuation audit pending phase 3"
+gate0: {rules_checked: 47, fails: ["M4 scored 3 but 'fully recovered' not met (FY26 1,470 < FY24 1,483); recomputed 1", "M12 uses screener WC Days, not the G0 L33-38 formula; inventory/payable components N/A; recomputed 0", "moat_class FORTRESS -> STRONG (moats_confirmed 6 -> 4; moat_score 23 -> 15) consequential on M4/M12/M7", "B4 uses screener WC Days (same substitution); strict reading B4 0, Block B 2, core 41; AVERAGE unchanged", "M7 '>10 listed players' from general market knowledge, not provided data; recomputed 0", "analyst_note says six moat tests score 0; actual count is 5 (M5, M6, M8, M9, M11)"]}
+emoat: {rules_checked: 25, fails: ["H1 scored at 1.0x though the beneficiary link is inference/NOT FOUND; recomputed 0.5", "I2 sacrifice is analyst-constructed; tier 0.5x not 0.7x; recomputed 0.5", "capex_embedded_growth_pct filled 0 instead of NOT FOUND", "optionality register omits claim-only rows C1, D1 and claim items Silverleaf HFT, Cred Rs 500 Cr target, third-party-country expansion", "em_score carried as 10, adjusted total is 9.6 (verifier recompute 8.9); band NONE unchanged"]}
+valuation: {rules_checked: 0, fails: []}   # pending phase 3
+expectation_ledger: {present: false, downside_row: false, all_rows_confirm_by: false, all_rows_metric_threshold: false, prob_in_range: false, decay_status_valid: false, off_ledger_credit: false, residual_pct_cmp: 0, residual_starter_cap_ok: true, fails: []}  # pending phase 3, not audited
+business_understanding_narrative: {present: false, five_questions_answered: false, prose_only: false, section6_candidates_named: 0, valuation_vocab_leak: false, fails: []}  # pending stage 13, not audited
+recomputed_destination_pe: ""   # not applicable in phase 1
+recomputed_decision: ""         # concur: Gate 0 AVERAGE, EM NONE, combined AVERAGE all survive
+findings:
+  - {id: G-1, severity: MAJOR, location: "01-gate0.md L236-242; B01 moats_confirmed/moat_class", rule: "prompts/01-gate-0-pipeline.md L109-111", issue: "M4 scored 3 on 'fully recovered' band though FY26 revenue is 99.1% of FY24 peak; band gaps resolved upward here but downward for M8/M9", recomputed: "M4 1; alone flips FORTRESS to STRONG"}
+  - {id: G-2, severity: MAJOR, location: "01-gate0.md L284-286; B01 data_notes line 31", rule: "prompts/01-gate-0-pipeline.md L27, L33-38, L19-21", issue: "M12 uses screener Working Capital Days, which is not Rec+Inv-Pay (FY16 debtor days 91, screener WC days 29); inventory/payable days blank except FY25", recomputed: "M12 0; with G-1 moats_confirmed 4, moat_class STRONG, moat_score 15 (with G-4)"}
+  - {id: G-3, severity: MINOR, location: "01-gate0.md L75-80", rule: "prompts/01-gate-0-pipeline.md L27, L33-38, L67-68", issue: "B4 uses the same substituted WC Days; report also misstates debtor days as blank FY16-FY24", recomputed: "strict: B4 0, Block B 2, core 41, still AVERAGE; receivable-only reading keeps 5"}
+  - {id: G-4, severity: MINOR, location: "01-gate0.md L250-253", rule: "prompts/01-gate-0-pipeline.md L19-21, L117-119", issue: "M7 player count taken from general market knowledge, not provided data", recomputed: "M7 0; no moat-count effect"}
+  - {id: G-5, severity: MINOR, location: "B01-gate0.yaml line 39", rule: "internal consistency", issue: "analyst_note says six moat tests score 0; five do", recomputed: "5 of 12"}
+  - {id: E-1, severity: MINOR, location: "07-emoat.md L151, L208", rule: "prompts/07-emerging-moat-pipeline.md L172-173", issue: "H1 scored 1.0x while the category's beneficiary link is inference/NOT FOUND", recomputed: "0.5"}
+  - {id: E-2, severity: MINOR, location: "07-emoat.md L128, L212", rule: "prompts/07-emerging-moat-pipeline.md L172-173", issue: "I2 sacrifice is the scanner's inference, scored at claim tier", recomputed: "0.5; total 8.9, band unchanged"}
+  - {id: E-3, severity: MINOR, location: "B07-emoat.yaml line 30", rule: "CLAUDE.md NEVER: NOT FOUND is the only valid fill", issue: "capex_embedded_growth_pct carries 0 for a not-computable figure", recomputed: "NOT FOUND"}
+  - {id: E-4, severity: MINOR, location: "07-emoat.md L224-237; B07 optionality_register", rule: "prompts/07-emerging-moat-pipeline.md L183-196", issue: "register omits claim-only rows C1, D1 and claim items Silverleaf HFT, Cred Rs 500 Cr target, third-party-country expansion", recomputed: "add 5 rows"}
+  - {id: E-5, severity: MINOR, location: "B07-emoat.yaml line 17", rule: "prompts/07-emerging-moat-pipeline.md L224", issue: "em_score rounded to 10; adjusted total is 9.6", recomputed: "9.6 (verifier 8.9)"}
+critical_count: 0
+major_count: 2
+minor_count: 8
+acceptance_rate: 84.7             # 61 passed / 72 checked (47 Gate 0 + 25 EM)

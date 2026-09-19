@@ -1,0 +1,62 @@
+stage: B12b
+company: "SHAREINDIA"
+run_date: "2026-09-19"
+model: "claude-opus-5"
+status: complete
+independent_flags_found: 28
+caught: 8
+partially_caught: 5
+missed:
+  - {severity: "MAJOR", item: "Prop profit share flat (~52%) vs Q4 FY27 target 55/45; B05 misrecords target as 60/40 profitability", anchor: "Q4 [page 16] L589-593, [page 17] L605-607; Q1 [page 10] L408-409"}
+  - {severity: "MAJOR", item: "MTF target restated every quarter (Abhinav FY28 vs Sachin FY27; 2-yr clock reset Jul-26); book +3% in 6 months; B05 scores on track", anchor: "Q3 [page 10] L455-469; Q4 [page 8] L270-272, [page 12] L424-425; Q1 [page 5] L193-198"}
+  - {severity: "MAJOR", item: "Fair-value swings drive Q4 consol weakness and part of record Q1 consol PAT (+114% QoQ), never quantified", anchor: "Q4 [page 4] L152-154; Q1 [page 3] L114-117, [page 10-11] L417-422"}
+  - {severity: "MAJOR", item: "SMC retail algo integration and AI algo platform contradict 'nobody is offering this product' / 'unique advantage of algo trading'", anchor: "Q4 [page 7-8] L259-260; Q1 [page 13] L511; SMCGLOBAL-2026-02-09 [page 6] L218-222; SMCGLOBAL-2026-07-31 [page 10] L352-355"}
+  - {severity: "MAJOR", item: "Peer MTF books outgrow Share India (SMC 760->900+ Cr in Q1 FY27; Choice 370-400 Cr aggressive; Angel +10% QoQ); B06 wrongly says SMC/Choice have no MTF line", anchor: "SMCGLOBAL-2026-07-31 [page 7] L271-272; CHOICEIN-2026-02-11 [page 6] L233-236; ANGELONE-2026-01-21 [page 17] L707-708"}
+  - {severity: "MINOR", item: "Wealth distribution ops slid Q1 FY27 -> Q3 FY27 unacknowledged", anchor: "Q3 [page 5] L237-242; Q4 [page 6] L222-228; Q1 [page 6-7] L255-260"}
+  - {severity: "MINOR", item: "Insurance: Sachin says no decline, Abhinav concedes YoY drop", anchor: "Q3 [page 8] L398-399; [page 9] L402-409"}
+  - {severity: "MINOR", item: "Q4 opening numbers impossible (Q4 rev 383 vs FY 395; EPS 17.6)", anchor: "Q4 [page 4] L139-148"}
+  - {severity: "MINOR", item: "Volunteered retail client stagnation", anchor: "Q3 [page 5] L213-221"}
+  - {severity: "MINOR", item: "NBFC NIM compression, NPA rise, branch downsizing", anchor: "Q3 [page 7] L305-331; Q4 [page 18] L655-665"}
+  - {severity: "MINOR", item: "Share India Cred run rate vs Rs 500 Cr target; six-issue overlap Q4/Q1", anchor: "Q4 [page 7] L246-248; Q1 [page 6] L221-226"}
+  - {severity: "MINOR", item: "PMS metric broadened to include advisory; launch quarter inconsistent", anchor: "Q4 [page 7] L229-235; Q1 [page 5] L202-204"}
+  - {severity: "MINOR", item: "Margin guidance 43/24 (Q3) restated as 38/22 'from the very beginning' (Q4)", anchor: "Q3 [page 4] L152-153; Q4 [page 10] L353-356"}
+  - {severity: "MINOR", item: "Branch economics restated (10-15 Cr/yr vs 15 Cr in 8 months); branch revenue disclosure declined", anchor: "Q4 [page 19] L670-697; Q1 [page 7] L282-285"}
+  - {severity: "MINOR", item: "MTF spread / break-even AUM question deflected as 'unfair statement'", anchor: "Q4 [page 11-12] L402-425"}
+pipeline_flags_not_supported:
+  - "B06 Q3: 'no MTF product line disclosed by either [SMC, Choice]' - false (SMCGLOBAL-2026-07-31 [page 7] L271-272; CHOICEIN-2026-02-11 [page 6] L233-236)"
+  - "B06 Part 5: 'stagnate' attributed to Angel One CFO - analyst's word, rebutted by CEO (ANGELONE-2026-04-22 [page 12] L535-572)"
+  - "B05 3B: 'media hype' quote attributed to Q4 FY26 SEBI prop-cap answer - it is Q2 FY26 context, on weekly expiries (inputs/other Q2FY26 [page 13] L526, L535)"
+  - "OVERSTATED: B05 1C RBI impact '25-30%' - transcript ~20% (Q4 [page 20] L722-723)"
+  - "OVERSTATED: B06 2E Share India lending 'never discussed in asset-quality terms' - Q3 NBFC NPA Q&A (Q3 [page 7] L322-331)"
+promise_delivery_spot_checks: {checked: 5, confirmed: 4, wrong: 1}
+credibility_grade_concur: "concur - C holds, but B05's 'Good' operational-delivery sub-rating is overstated: MTF is off its glide path and all five dated Q3 FY26 new-initiative milestones slipped"
+findings:
+  - {severity: "MAJOR", location: "B05 1C/2A/4A", finding: "MTF trigger scored on track / no slippage; target restated each quarter, book +3% in 6 months"}
+  - {severity: "MAJOR", location: "B05 1B/2A", finding: "Q4 profit-mix target misrecorded (55/45 profit, not 60/40); flat ~52% prop profit share not flagged"}
+  - {severity: "MAJOR", location: "B05 absent", finding: "Fair-value contribution to Q4 weakness and Q1 record consol PAT not identified"}
+  - {severity: "MAJOR", location: "B06 Q3", finding: "False peer silence on MTF; peer MTF outgrowth missed"}
+  - {severity: "MAJOR", location: "B06 Q5", finding: "SMC algo platform contradicts Share India algo-uniqueness claim; not tested"}
+  - {severity: "MAJOR", location: "B06 2C", finding: "Tier-3 'no supply / vacuum' claim not set against Choice/Angel evidence (partially caught)"}
+  - {severity: "MAJOR", location: "B05 1C/2A/2B", finding: "Five-for-five slip pattern on Q3 FY26 milestones not stated (partially caught)"}
+  - {severity: "MINOR", location: "B05 1A", finding: "Wealth distribution slip not flagged"}
+  - {severity: "MINOR", location: "B05 1C", finding: "RBI tone shift not read; 25-30% misstatement"}
+  - {severity: "MINOR", location: "B05 1B/2A", finding: "Enshrine acquisition not flagged"}
+  - {severity: "MINOR", location: "B05 absent", finding: "Insurance speaker contradiction missed"}
+  - {severity: "MINOR", location: "B05 absent", finding: "Impossible Q4 opening numbers missed"}
+  - {severity: "MINOR", location: "B05 absent", finding: "Retail client stagnation missed"}
+  - {severity: "MINOR", location: "B05 absent / B06 2E", finding: "NBFC NIM/NPA missed; B06 2E overstated"}
+  - {severity: "MINOR", location: "B05 1A", finding: "Share India Cred run rate not checked"}
+  - {severity: "MINOR", location: "B05 1C", finding: "PMS metric broadening and launch-quarter inconsistency missed"}
+  - {severity: "MINOR", location: "B05 1B", finding: "Margin guidance restatement missed"}
+  - {severity: "MINOR", location: "B05 1B", finding: "Branch economics called first-time quantified; Q4 already quantified"}
+  - {severity: "MINOR", location: "B05 absent", finding: "MTF spread question deflection missed"}
+  - {severity: "MINOR", location: "B05 3D", finding: "Institutional active vs empanelment counts merged"}
+  - {severity: "MINOR", location: "B05 2C/3B", finding: "Quarter/topic attribution errors (52%/49%; media hype)"}
+  - {severity: "MINOR", location: "B06 Part 5/2A", finding: "'Stagnate' misattributed to Angel One CFO"}
+critical_count: 0
+major_count: 7
+minor_count: 15
+material_found: 10
+material_caught: 5
+acceptance_rate: 50
+coverage_basis: "10 material of 28 listed (1 CRITICAL, 9 MAJOR); 3 caught + 2 partially caught = 5; 30% on full catches only; denominator >= 4 so rule 7 does not apply"

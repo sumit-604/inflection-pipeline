@@ -16,3 +16,7 @@ Per-stage token ledger (one line per subagent run).
 | 6 | peer concalls | sonnet | default | not reported | not reported | 139005 | 10m14s | 1 |
 | 7 | emerging moat | sonnet | default | not reported | not reported | 167911 | 9m02s | 1 |
 | 9 | TAM | sonnet | default | not reported | not reported | 168060 | 11m47s | 1 |
+| 12a | verifier A numerical | haiku | default | not reported | not reported | 92063 | 3m16s | 1 |
+| 12b | verifier B red flags | opus | default | not reported | not reported | 216051 | 7m32s | 1 |
+| 12c | verifier C (gate0+EM half) | opus | default | not reported | not reported | 111946 | 4m23s | 1 |
+| 12d | verifier D peers | sonnet | default | not reported | not reported | 123712 | 6m37s | 1 |

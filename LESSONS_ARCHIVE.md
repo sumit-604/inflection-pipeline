@@ -598,3 +598,14 @@ Verifier C check 15 (PR #163, PR #164), and the LESSONS discipline changes
 (PR #165).
 
 Size: LESSONS.md 164 lines / 1555 words before, 119 lines / 1062 words after.
+
+## 2026-09-19 — EMUDHRA (eMudhra Ltd) — /step1 intake, phase 1 to Halt 1 (runs/emudhra-2026-09-19)
+Peers NEWGEN, QUICKHEAL, PROTEAN. Gate PROCEED WITH CAVEATS (freshness cap + INDETERMINATE cash + confidence 71). No valuation run.
+- Collector: 4 of 126 BSE announcement rows downloaded; results, rating and shareholding empty; took FY25 and FY26 ARs; filed a special investor call (3i Infotech allegations) as an earnings concall; Q1 deck duplicated. All repaired by hand from BSE (API AnnSubCategoryGetData and shpSecSummery_New qtrid 130.00 = Jun-2026, 129.00 = Mar-2026).
+- ICRA rationale unreachable: icra.in sits behind a bot wall; only the 29-Jun-2026 reaffirmation letter came from BSE. Freshness pair failed; the operator must download it by hand.
+- Windows tooling: pdftoppm absent, so the Read tool cannot render PDF pages. pdftotext -layout scrambled the AR balance sheet and Note 18; stage 1 marked consolidated payables NOT FOUND, which Verifier C later rated CRITICAL. A PyMuPDF text layer (sort=True) read the same pages cleanly. PROMOTION CANDIDATE: write a .mupdf.txt layer beside the AR and results by default at intake.
+- FLAG-DISAGREEMENT settled at source: stage 1 read FY26 capex from an MD&A prose subset (Rs 814.21 Mn) instead of the cash flow line (Rs 1,853.68 Mn, AR p.218); FCF flipped from +Rs 51 Cr to -Rs 52.5 Cr.
+- Company-memory fact from a screener ratio did not reproduce: "420 days payable" vs 31.3 days on Note 18 over revenue. Screener's payable-days denominator is cost-based. Check the denominator before a screener ratio becomes a load-bearing fact.
+- Stage 1 block file came wrapped in code fences; stripped by the orchestrator.
+- Correction round cost: resuming a finished stage agent by SendMessage re-bills its full context. A one-line label update on stage 7 cost 395k tokens.
+- Framework gaps raised by Verifier C, for operator ruling: prompts/01 is silent on Block B sub-windows (the EMUDHRA Gate 0 class turns on it: GOOD+ vs GOOD); prompts/07 Section 6D cites a combined backward x forward matrix that exists nowhere in prompts/ or frameworks/.

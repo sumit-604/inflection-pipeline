@@ -11,6 +11,10 @@ FY26); the thesis rests on operating leverage from that mix shift.
 
 ## DECISION STATUS AND ENTRY ZONE
 Not set. No valuation has run; stages 10 and 11 are phase 3.
+Phase 1 gate recommendation 2026-09-19: PROCEED WITH CAVEATS (freshness cap:
+June-2026 ICRA rationale missing; FLAG-CASH INDETERMINATE; confidence 71).
+Gate 0 GOOD+ filed (core 74, grand 91) or GOOD pending the Block B window
+ruling; Emerging Moat 22.1 MODEST; promoter CAUTION; concall credibility C.
 
 ## SPEAR
 Spear: OVERRIDE 2026-09-19 (operator standing ruling 2026-09-05: Step-1 intake replaces the web spear)
@@ -24,7 +28,10 @@ runs/emudhra-2026-09-19/step1-business-brief.md
    15%, against a FY27 organic guide of 15-18% and PAT +25-30%. Verify the
    Cryptas revenue and consolidation date and split organic from acquired.
 2. CASH CONVERSION. FY26 free cash flow Rs -52 Cr (screener); days payable
-   420 vs debtor days 98; other liabilities Rs 123 Cr to Rs 274 Cr. Verify
+   420 vs debtor days 98; other liabilities Rs 123 Cr to Rs 274 Cr.
+   [Run 2026-09-19: FCF -Rs 52.52 Cr confirmed (AR p.218). The 420-day
+   figure does NOT reproduce: 31.3 days on Note 18 over revenue. Payables
+   +91% and unbilled revenue +40.6% both outran 35% revenue growth.] Verify
    what sits in payables and other liabilities (vendor pass-through, deferred
    revenue, deferred acquisition consideration) and the receivables ageing.
 3. 3i INFOTECH CLAIM. Criminal complaint of 03-Feb-2026 over the 2008
@@ -44,6 +51,8 @@ runs/emudhra-2026-09-19/step1-business-brief.md
 ## OPERATOR RULINGS
 - 2026-09-19: Step-1 intake run; peers auto-selected (NEWGEN, QUICKHEAL,
   PROTEAN); empty folders accepted as gaps. Standing ruling 2026-09-05.
+- OPEN for operator (2026-09-19): Gate 0 Block B window convention (GOOD+ vs
+  GOOD); sector cap row Platform / SaaS / IT services to confirm in phase 3.
 
 ## ACTIVE TRIPWIRES
 - None set. Set at /finalize.

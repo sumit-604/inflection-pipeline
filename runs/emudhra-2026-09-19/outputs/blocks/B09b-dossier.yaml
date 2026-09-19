@@ -1,0 +1,59 @@
+stage: B09b-dossier
+company: "EMUDHRA"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+corpus_verdict: "CORPUS GAPPED-FRESHNESS"
+corpus_gaps:
+  - document: "ICRA rating rationale for the 29-Jun-2026 surveillance reaffirmation"
+    expected_source: "rating agency site"
+    kind: "freshness-pair"
+  - document: "Annual reports prior to FY26 (FY24 and earlier)"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "Full 12-quarter (3-year) BSE shareholding-pattern / pledge history"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "FII/DII institutional ownership split (AR-anchored)"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "Broker/research coverage note"
+    expected_source: "company IR page"
+    kind: "plausibly-nonexistent"
+archetypes:
+  - line: "Trust Services (licensed digital signature / certifying authority, 20% of FY26 revenue)"
+    archetype: "Licence/scarcity business"
+  - line: "Enterprise Solutions (owned PKI/identity/signing/CLM software platform, 59% of FY26 revenue, incl. 21% project-consulting folded in under Note 49)"
+    archetype: "Platform/network"
+transition:
+  - line: "Consolidated (declared at company level; segments do not report separate capital employed)"
+    from_tier: "R2 COST-ADVANTAGED / LICENCE-PROTECTED CONVERTER (consolidated ROCE 12.9-14.9% FY26)"
+    to_tier: "R3 VALUE-ADDED / SPEC'D SUPPLIER (stretch claim toward R4 if the India Enterprise Solutions 57.5% margin replicates internationally)"
+    engine: "Mix shift from India-only Trust Services fee income toward global Enterprise Solutions subscription revenue (64% international), accelerated by the Cryptas and AI Cyberforge acquisitions; plus the Outside-India Enterprise Solutions segment margin closing toward the India segment's band as overseas headcount investment matures into revenue scale"
+    proof_gate: "Outside-India Enterprise Solutions segment operating margin (Note 49, AR p.288) narrows for two consecutive annual prints toward the India segment's 51-58% band, without a disclosed one-off cost relief; NOT FIRED, moved 26.0% (FY25) to 21.9% (FY26)"
+    recognition_gap: "OPEN QUESTION, not resolved here: whether the current market multiple already prices the margin-convergence story or leaves room to reward it once the proof gate fires; Stage 11's PE-gap work resolves this"
+    ugliness: "ARTIFACT-OF-CLIMB"
+    transition_falsifier: "Outside-India Enterprise Solutions segment margin (Note 49) fails to narrow toward the India band for two more consecutive annual prints while international revenue keeps growing"
+dominant_variables:
+  - "Outside-India Enterprise Solutions segment operating margin (Note 49): 21.9% FY26, down from 26.0% FY25"
+  - "Consolidated EBITDA margin trend: 23.2% FY26, 26.2% Q1FY27 (partly token-mix flattered per Verifier B)"
+  - "Enterprise Solutions organic growth ex-M&A vs FY27 15-18% organic guide: whole-company organic ~15% Q1FY27"
+  - "Free cash flow (CFO minus capex): Rs -52.52 Cr FY26, first negative print"
+business_falsifier: "Loss of WebTrust accreditation or a browser-vendor distrust/removal notice for eMudhra's roots (existential for the Trust Services identity); or the 3i Infotech matter escalating past the EOW's civil-not-criminal closure into a confirmed SEBI complaint or adverse civil finding against the Executive Chairman"
+mental_model_status: "DRAFT - PENDING OPERATOR SIGN-OFF"
+fragility:
+  variable_count: 5
+  verifiability_ratio: "3 of 5 externally observable via filed financial statements (segment margin, EBITDA margin, FCF); 2 of 5 company-narrated only (organic-growth split, Cryptas EBITDA trajectory)"
+  single_point_failure: "Outside-India Enterprise Solutions segment operating margin (Note 49): the literal proof gate; if it fails to narrow, the transition engine has no remaining mechanism regardless of the other four variables"
+  fragility_verdict: "MODERATE"
+candidate_count: 7
+second_order:
+  chains_drafted: 2
+  pending_live_links: 2
+  confirm_by_observations: 2
+research_brief_items: 10
+plain_summary_points: 15
+annex:
+  present: true
+  questions_answered: 10
+  corpus_commit_hash: "15e51891e556b28bc70dece85bc4ed6b162948c2"

@@ -12,6 +12,65 @@ INFERENCE (pattern-based).
 
 ---
 
+## CORRECTION (VERIFIER C), 2026-09-19
+
+Verifier C (framework adherence, phase 1, opus, fresh context) reviewed
+this stage against prompts/07-emerging-moat-pipeline.md and re-derived the
+scorecard independently. Five findings applied to this stage. Each was
+checked against the source documents before correcting; all five held up.
+
+1. **E1 row (MAJOR, verifier finding 3).** Confirmed: E1 scored HH=4 at
+   📄 1.0x (the maximum) but the write-up included an unanchored
+   comparative claim — "positioning eMudhra in Central Asia ahead of most
+   listed Indian identity/security peers" — with no source, and read the
+   East Africa case study's "one of East Africa's first nations" language
+   as evidence of eMudhra's own first-mover lead, when it describes the
+   customer nation's status, not eMudhra's standing against peers.
+   Corrected: E1 rescored MH=3 at 📄 1.0x = 3.0 (was 4.0), strength
+   relabelled Moderate (was Strong). See Section 3 and Section 5.
+2. **Section 2C / capex_embedded_growth_pct (MAJOR, verifier finding 4).**
+   Confirmed: the original arithmetic applied a PP&E-only fixed asset
+   turnover (5.43x, excludes goodwill/intangibles) to a numerator (Rs
+   291.76 Mn) that included intangible assets under development — a
+   basis mismatch. Corrected: the settled figure now uses the run's own
+   consistent fixed-asset-turnover convention (B01-gate0 M3: FAT =
+   Revenue / Net Block, screener-data basis, which includes PP&E + CWIP +
+   goodwill + intangibles = 0.97x), applied to the same Rs 291.76 Mn
+   numerator. Settled figure: **4.0%** (was 22.6%). The basis choice is
+   genuinely open, so the range (4.0%-22.6%, three readings) is shown
+   explicitly in Section 2C rather than collapsed to one number.
+3. **R1 narrative/score inconsistency (MINOR, verifier finding 9).**
+   Confirmed: Section 4C stated the shared, non-exclusive nature of the
+   regulatory tailwinds "tempers R1's score" while the scorecard kept R1
+   at the maximum HH=4. Corrected: the sentence is rewritten so the
+   competitive-capture caveat is stated as a distinct question (for
+   Role 2/FTTCP, not this scan) without claiming it lowers R1's own
+   likelihood×impact read. R1 stays at HH=4 (📄, 1.0x = 4.0); no score
+   change from this item.
+4. **evidence_mix / None-Weak row count (MINOR, verifier finding 10).**
+   Confirmed: the YAML evidence_mix documented count (24) did not
+   reconcile to the Section 3 recount (19 items, no reconciliation shown),
+   and the completionist paragraph said "14" None/Weak rows where 23 - 8
+   active = 15. Both corrected: evidence_mix.documented set to 19
+   (matching the recount exactly, no additional untallied items claimed);
+   "14" corrected to "15" in Section 3.
+5. **Section 1C estimated fill (MINOR, verifier finding 11).** Confirmed:
+   Section 1C marked Services FY27 growth "NOT FOUND" then filled it with
+   an assumed ~16.5% and derived FY27E Services and company-total figures
+   from that assumption, breaking the NOT FOUND-only rule. Corrected: the
+   assumed growth rate and every figure derived from it are removed;
+   Services FY27E and the company FY27E total are now marked NOT FOUND.
+
+**em_score restated: 22.1 / 92 (was 23.1). Classification unchanged: 12-24
+band, MODEST MOAT DEVELOPMENT.** Both MAJOR findings move the score down;
+none raised it. Gate 0 (B01) findings from the same verifier pass (Part 1
+of the verifier report, CRITICAL/MAJOR items on B01 Block B/A) are a
+separate REWORK routed to Stage 1, not corrected here. Section 6C/6D below
+still read the B01-as-filed GOOD classification and should be re-read once
+B01 is reworked, per the verifier's own routing note.
+
+---
+
 ## SECTION 1: FUTURE PRODUCT & REVENUE STREAM ANALYSIS
 
 ### 1A. New products/services in pipeline
@@ -50,23 +109,24 @@ read): Trust Services 20% (Rs 1,400.08 Mn), Enterprise Solutions software
 59% (Rs ~4,139 Mn), Services 21% (Rs ~1,473 Mn). Revenue from operations
 total Rs 7,015.80 Mn, +35.1% YoY (MD&A p.151).
 
-FY27E single-year shift (🎙️, using the company's own FY27 guidance —
-Trust Services ~20% growth, Enterprise Solutions ~25-30% growth (midpoint
-27.5%), stated at the Q4 FY26 call and carried in B05):
+FY27E shift for the two streams the company actually guided (🎙️, Q4 FY26
+call, carried in B05): Trust Services ~20% growth → FY27E Rs 1,680.10 Mn
+(19.4% of a two-stream sub-total); Enterprise Solutions software ~25-30%
+growth (midpoint 27.5%) → FY27E Rs 5,277.64 Mn (60.8% of a two-stream
+sub-total).
 
-| Stream | FY26 % | FY26 Rs Mn | FY27E growth (🎙️) | FY27E Rs Mn | FY27E % |
+| Stream | FY26 % | FY26 Rs Mn | FY27E growth | FY27E Rs Mn | Source |
 | --- | --- | --- | --- | --- | --- |
-| Trust Services | 20.0% | 1,400.08 | ~20% | 1,680.10 | 19.4% |
-| Enterprise Solutions (software) | 59.0% | ~4,139.32 | ~27.5% (midpoint of 25-30%) | 5,277.64 | 60.8% |
-| Services | 21.0% | ~1,473.32 | NOT FOUND (assumed to track blended company guide ~16.5%, NOT company-disclosed — flagged) | 1,716.42 | 19.8% |
-| Total | 100% | 7,015.80 | — | 8,674.16 (implied +23.6%) | 100% |
+| Trust Services | 20.0% | 1,400.08 | ~20% (🎙️) | 1,680.10 | Q4 FY26 call, B05 |
+| Enterprise Solutions (software) | 59.0% | ~4,139.32 | ~27.5%, midpoint of 25-30% (🎙️) | 5,277.64 | Q4 FY26 call, B05 |
+| Services | 21.0% | ~1,473.32 | **NOT FOUND** | **NOT FOUND** | No company guidance found for this stream (corrected, Verifier C — the ~16.5% figure previously shown here was an unsourced assumption and has been removed, not estimated) |
+| Total FY27E (all three streams) | 100% | 7,015.80 | **NOT FOUND** | **NOT FOUND** | Cannot be computed without the missing Services figure; not derived (corrected, Verifier C) |
 
 FY28-FY29 stream-level growth rates: NOT FOUND. No company guidance exists
-beyond FY27, so a mechanical 3-year compounding is not shown; doing so
-would be an estimate, not a sourced number. Directionally, if the FY27
-guided rates persisted, Enterprise Solutions software share would keep
-rising and Trust Services share would keep falling, but that is 🔍
-inference, not a company forecast.
+beyond FY27. Directionally, if the FY27 guided rates for Trust Services and
+Enterprise Solutions persisted, Enterprise Solutions software share would
+keep rising and Trust Services share would keep falling, but that is 🔍
+inference, not a company forecast, and is not carried into any total.
 
 Margin direction and profitability impact — the second-order finding
 carried from B04: Trust Services segment margin is 31.4% FY26 (Note 49,
@@ -150,34 +210,54 @@ licence/contract capacity (customer count, transaction volume) than
 physical throughput, and none of those are disclosed at a facility level
 either.
 
-### 2C. Growth embedded in capex — arithmetic shown, applicability flagged
+### 2C. Growth embedded in capex — arithmetic corrected (Verifier C, MAJOR finding 4)
 
-Historical fixed asset turnover (Net Property, Plant & Equipment basis,
-excluding goodwill/intangibles/CWIP): Revenue from operations FY26
-Rs 7,015.80 Mn ÷ Net PP&E FY26 Rs 1,291.08 Mn (consol Balance Sheet, AR
-p.216) = **5.43x**.
+**Correction applied 2026-09-19.** The original reading applied a
+PP&E-only fixed asset turnover (5.43x, excludes goodwill/intangibles) to a
+numerator that included intangible assets under development — a basis
+mismatch. Corrected below using the run's own consistent fixed-asset-
+turnover convention, and the basis choice is shown as an open range rather
+than collapsed into one number.
 
-"Capex under execution" (projects not yet commissioned, i.e., CWIP +
-intangible assets under development) = Rs 185.84 Mn (UAE DC CWIP) +
-Rs 105.92 Mn (intangible assets under development, consol) = **Rs 291.76
-Mn** (AR p.216, Note 3b/5b).
+Run-consistent fixed asset turnover (B01-gate0 M3, screener-data Net Block
+basis — Net Block includes PP&E + CWIP + goodwill + intangibles, the same
+wide basis used elsewhere in this run): Revenue FY26 Rs 701.58 Cr ÷ Net
+Block Rs 726.86 Cr = **0.97x** (outputs/reports/01-gate0.md, M3 Capital
+Efficiency).
 
-Implied incremental revenue = Rs 291.76 Mn × 5.43x = **Rs 1,584.3 Mn**, or
-**22.6%** of FY26 revenue (Rs 7,015.80 Mn).
+"Capex under execution" (unchanged from the original reading): CWIP
+Rs 185.84 Mn (UAE DC) + intangible assets under development Rs 105.92 Mn
+(consol) = **Rs 291.76 Mn** (AR p.216, Note 3b/5b).
 
-Applicability caveat (🔍 analyst note, not a company claim): this
-methodology is built for capacity-constrained manufacturing, where fixed
-asset turnover causally links a plant addition to throughput. eMudhra is
-a licence/subscription software and trust-services business; its PP&E is
-overwhelmingly office and data-centre infrastructure, not a
-revenue-generating capacity constraint. The 22.6% figure is shown because
-the instruction requires the arithmetic, but it should be read as a
-weak/low-confidence proxy, not a forecast. Applying the SAME multiplier to
-the FULL FY26 capex figure (Rs 1,853.68 Mn, not just the under-execution
-slice) would imply Rs 10,065 Mn of incremental revenue, 143% of FY26
-revenue — an obviously implausible result that underscores the mismatch
-between this framework and an asset-light, acquisition-and-R&D-driven
-business model.
+Implied incremental revenue, run-consistent basis = Rs 291.76 Mn × 0.97x =
+**Rs 283.1 Mn**, or **4.0%** of FY26 revenue (Rs 7,015.80 Mn). **This is
+the settled figure carried to the YAML block below.**
+
+The basis choice is genuinely open, so the range is named explicitly
+rather than hidden behind one number:
+
+| Reading | Numerator | Turnover multiplier | Multiplier basis | Implied revenue | % of FY26 revenue |
+| --- | --- | --- | --- | --- | --- |
+| **Run-consistent (settled)** | Rs 291.76 Mn (CWIP + intangibles under development) | 0.97x | Screener Net Block (PP&E + CWIP + goodwill + intangibles), same convention as B01 M3 | Rs 283.1 Mn | **4.0%** |
+| PP&E-only numerator, PP&E-only turnover | Rs 185.84 Mn (UAE DC CWIP only, excludes intangibles) | 5.43x | Net PP&E only (AR p.216 Balance Sheet) | Rs 1,009.1 Mn | 14.4% |
+| Original reading (superseded, basis-mismatched) | Rs 291.76 Mn (CWIP + intangibles under development) | 5.43x | Net PP&E only, applied against a numerator that includes non-PP&E intangibles | Rs 1,584.3 Mn | 22.6% (do not use) |
+
+Applicability caveat (🔍 analyst note, not a company claim, unchanged in
+substance): this methodology is built for capacity-constrained
+manufacturing, where fixed asset turnover causally links a plant addition
+to throughput. eMudhra is a licence/subscription software and
+trust-services business; its fixed-asset base is overwhelmingly office and
+data-centre infrastructure plus acquisition goodwill/intangibles, not a
+revenue-generating capacity constraint in the manufacturing sense. Even on
+the corrected, run-consistent 4.0% reading, this should be read as a
+weak/low-confidence proxy, not a forecast. Applying the SAME
+run-consistent 0.97x multiplier to the FULL FY26 capex figure (Rs 1,853.68
+Mn, not just the under-execution slice) would imply Rs 1,798.1 Mn of
+incremental revenue, 25.6% of FY26 revenue — still a large single-year
+jump, and a reminder that most of FY26's capex was already spent/
+commissioned this year, not "under execution." The framework transfers
+poorly to an asset-light, acquisition-and-R&D-driven business model under
+any of the three readings above.
 
 ### 2D. New geography or market entries
 
@@ -193,7 +273,9 @@ business model.
 - East Africa (national PKI/emCA deployment, unnamed national regulatory
   authority) — 📄 AR case study, p.24-25: "one of East Africa's first
   nations to operate an internationally-interoperable, domestically-governed
-  national CA infrastructure."
+  national CA infrastructure." (Note: this describes the CUSTOMER nation's
+  status, not a documented claim about eMudhra's standing versus peers —
+  see the E1 correction in Section 3.)
 - International footprint at year-end: 35+ countries, 16 mapped
   international office locations plus 5 India offices (AR p.9); this is
   existing scale, carried here for context, not itself new-this-year
@@ -300,16 +382,23 @@ the platform level (only at the case-study level). Not scored.
 
 ### FAMILY E — Geographic & Access
 
-**E1 geographic first-mover. STRONG.** Three distinct 📄 items within
-FY2025-26 to FY2026-27: Almaty (Kazakhstan) office opened (📄 Reg 30,
-20-Feb-2026), positioning eMudhra in Central Asia ahead of most listed
-Indian identity/security peers; East Africa National PKI deployment,
-explicitly framed as a national first ("one of East Africa's first
-nations...", 📄 AR p.24-25); UAE in-country data-centre build for QTSP
-compliance, CWIP Rs 185.84 Mn already committed (📄 AR p.150/Note 3b),
-though the licence itself is still pending. Time to materialise:
-near (Almaty and East Africa are live; UAE is near-term per the guided
-timeline).
+**E1 geographic first-mover. MODERATE (corrected, Verifier C, MAJOR finding
+3).** Three distinct 📄 items within FY2025-26 to FY2026-27: Almaty
+(Kazakhstan) office opened (📄 Reg 30, 20-Feb-2026); East Africa National
+PKI deployment, explicitly framed as a national first for the CUSTOMER
+nation ("one of East Africa's first nations...", 📄 AR p.24-25); UAE
+in-country data-centre build for QTSP compliance, CWIP Rs 185.84 Mn
+already committed (📄 AR p.150/Note 3b), though the licence itself is
+still pending. **Correction:** the original write-up additionally claimed
+this positions eMudhra "ahead of most listed Indian identity/security
+peers," a comparative claim with no source; removed. The three events
+themselves are 📄 documented, but the category's defining attribute — a
+first-mover ADVANTAGE over peers, specifically — is not itself evidenced;
+the East Africa case study describes the customer nation's status, not
+eMudhra's standing against competitors, and one of the three legs (UAE) is
+a pending licence, not a completed entry. Rescored accordingly (Section 5).
+Time to materialise: near (Almaty and East Africa are live; UAE is
+near-term per the guided timeline, already once-slipped).
 
 **E2 China+1 beneficiary.** NO EVIDENCE FOUND. Not applicable — this
 category maps to manufacturing supply-chain diversification away from
@@ -428,7 +517,7 @@ explicitly classifies as execution lead, not configuration, and scores 0.
 | C2 | Customer concentration improving | Yes | 📄 (addition only) | Moderate | Near |
 | D1 | Proprietary data asset | Weak | — | Weak | — |
 | D2 | Digital platform | Weak | — | Weak | — |
-| E1 | Geographic first-mover | Yes | 📄 | Strong | Near |
+| E1 | Geographic first-mover | Yes | 📄 | Moderate (corrected, Verifier C; was Strong) | Near |
 | E2 | China+1 beneficiary | No | — | None (not applicable) | — |
 | F1 | Talent density | Weak | — | Weak | — |
 | F2 | Execution moat | Weak/Mixed | — | Weak | — |
@@ -458,10 +547,13 @@ inspection: FY2025-26 was an unusually announcement-dense year for
 eMudhra (2 completed bolt-on acquisitions, 4 new product pillars launched
 within 12 months, and a cluster of dated regulatory deadlines landing in
 the same window). Each of the 8 active rows rests on a dated, named 📄
-item, not a reworded 🎙️ claim; none of the 14 None/Weak rows were
-force-fit upward to make the count look complete, per rule 5 and the
-explicit "NO EVIDENCE FOUND" calls above for A1, A2, A3, B1, B3, E2, G1,
-G2, H3, I1, I2.
+item, not a reworded 🎙️ claim; none of the **15** (23 - 8) None/Weak rows
+were force-fit upward to make the count look complete (corrected,
+Verifier C — was misstated as 14), per rule 5 and the explicit "NO
+EVIDENCE FOUND" calls above for A1, A2, A3, B1, B3, E2, G1, G2, H3, I1,
+I2. E1's item count and evidence tier are unchanged by the Verifier C
+correction above; only its likelihood×impact read (and therefore its
+raw score) changed, since the underlying events remain 📄.
 
 ---
 
@@ -498,10 +590,18 @@ own competition table (DigiCert, Entrust, Sectigo, GlobalSign, Venafi,
 Keyfactor, AppViewX) faces the identical compliance clock. eMudhra's
 argument is a one-stop-shop platform position (AR p.10-11) plus
 lower-cost Bangalore delivery (AR p.158, existing moat per B04), not
-regulatory exclusivity. This tempers R1's score: the raw likelihood/impact
-of the tailwind itself is High/High, but the COMPETITIVE capture of that
-tailwind by eMudhra specifically is not guaranteed and is not scored
-separately here (that belongs to Role 2/FTTCP, not this scan).
+regulatory exclusivity.
+
+**Correction (Verifier C, MINOR finding 9):** the previous text here said
+this observation "tempers R1's score" while the scorecard kept R1 at the
+maximum HH=4, an internal inconsistency. Corrected framing: R1's own
+likelihood×impact read stays HH — the tailwinds themselves are High
+likelihood (already active, dated, statutory) and High impact (span
+multiple products and geographies), which is what this category scores.
+Whether eMudhra specifically OUTCOMPETES named rivals in capturing that
+shared tailwind is a separate question, addressed in Section 6B's risk
+discussion and left for Role 2/FTTCP, not folded into this category's
+score.
 
 ---
 
@@ -510,6 +610,10 @@ separately here (that belongs to Role 2/FTTCP, not this scan).
 Scoring: raw score = likelihood × impact (HH=4, HM/MH=3, HL/MM/LH=2,
 ML/LM=1, LL=1, no evidence=0), then × evidence-quality multiplier
 (📄 1.0x, 🎙️ 0.7x, 🔍 0.5x).
+
+**Correction (Verifier C, MAJOR finding 3):** the E1 row below is
+rescored from HH/4/4.0 to MH/3/3.0. All other rows unchanged from the
+original scan; only the total changes as a result.
 
 | # | Category | Likelihood×Impact | Raw | Evidence tier | Multiplier | Adjusted score |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -524,7 +628,7 @@ ML/LM=1, LL=1, no evidence=0), then × evidence-quality multiplier
 | C2 | Customer concentration improving | HL | 2 | 📄 | 1.0x | 2.0 |
 | D1 | Proprietary data asset | — | 0 | — | — | 0 |
 | D2 | Digital platform | — | 0 | — | — | 0 |
-| E1 | Geographic first-mover | HH | 4 | 📄 | 1.0x | 4.0 |
+| E1 | Geographic first-mover | **MH (corrected, was HH)** | **3** | 📄 | 1.0x | **3.0 (corrected, was 4.0)** |
 | E2 | China+1 beneficiary | — | 0 | — | — | 0 |
 | F1 | Talent density | — | 0 | — | — | 0 |
 | F2 | Execution moat | — | 0 | — | — | 0 |
@@ -536,24 +640,25 @@ ML/LM=1, LL=1, no evidence=0), then × evidence-quality multiplier
 | I1 | Talent asymmetry | — | 0 | — | — | 0 |
 | I2 | Cannibalization barrier | — | 0 | — | — | 0 |
 | R1 | Regulatory & policy tailwinds | HH | 4 | 📄 | 1.0x | 4.0 |
-| **Total** | | | | | | **23.1** |
+| **Total** | | | | | | **22.1 (corrected, was 23.1)** |
 
 **I1/I2 contribution: 0.0** (both score 0 by design per the 20-Aug-2026
 ruling; neither crosses a threshold here, so the REVIEW CHECKPOINT list
 does not gain an entry from this run).
 
-**em_score = 23.1 / 92.**
+**em_score = 22.1 / 92 (corrected, Verifier C; was 23.1).**
 
-**Classification: 12-24 → MODEST MOAT DEVELOPMENT.** Bands are absolute
-per the 20-Aug-2026 operator ruling (no rescale). eMudhra sits mid-band:
-genuine, dated, 📄-documented forward activity (new products, bolt-on
-acquisitions, geographic entries, partnerships, a favourable regulatory
-calendar) exists across 8 of 23 categories, but the two Financial &
-Structural rows (G1, G2) are NEGATIVE this year (cash fell, FCF turned
-negative, WC deteriorated), Talent (F1) and Execution (F2) evidence is
-thin-to-mixed, and neither Family-I structural-asymmetry row clears its
-evidentiary bar. This is a real but early-stage build, not an expansion
-already underway.
+**Classification: 12-24 → MODEST MOAT DEVELOPMENT (unchanged).** Bands are
+absolute per the 20-Aug-2026 operator ruling (no rescale). The correction
+moves eMudhra from 23.1 to 22.1, still comfortably mid-band and still
+below the EM ≥25 UA qualifier either way. eMudhra sits mid-band: genuine,
+dated, 📄-documented forward activity (new products, bolt-on acquisitions,
+geographic entries, partnerships, a favourable regulatory calendar)
+exists across 8 of 23 categories, but the two Financial & Structural rows
+(G1, G2) are NEGATIVE this year (cash fell, FCF turned negative, WC
+deteriorated), Talent (F1) and Execution (F2) evidence is thin-to-mixed,
+and neither Family-I structural-asymmetry row clears its evidentiary bar.
+This is a real but early-stage build, not an expansion already underway.
 
 ---
 
@@ -574,6 +679,7 @@ never scored.
 | Bolt-on AI-cybersecurity acquisition (dropped trigger, B05) | Signed acquisition agreement / Reg 30 filing | Reg 30 filing | Live in Q3 FY26 commentary, absent by Q1 FY27; unresolved |
 | R&D intensity vs the company's own 15-20% global-peer benchmark (currently 7-8% estimated) | A disclosed multi-year R&D-to-revenue trend showing convergence toward the peer band | FY27/28 AR MD&A or BRSR | Not scheduled |
 | FY27 free cash flow returning positive (G1/G2 reversal) | FY27 audited cash flow statement showing CFO > capex + acquisition spend | FY27 AR / quarterly results | FY27 year-end |
+| eMudhra's own first-mover advantage over listed Indian peers in Central Asia/East Africa (E1 leg removed this correction) | A sourced peer-footprint comparison (e.g., a named competitor's absence from these markets) | Analyst/verifier cross-check, not disclosed by eMudhra itself | Not scheduled; operator-driven verification |
 
 ---
 
@@ -607,7 +713,7 @@ never scored.
 
 | Top-scoring moat | Risk | Early warning sign |
 | --- | --- | --- |
-| E1 Geographic first-mover | UAE QTSP has already slipped once (Apr-Jun 2026 implied → Sep-Oct 2026, with a silent intervening call, B05) | Further slippage past Q3 FY27 without a firm new date (B05's own kill signal) |
+| E1 Geographic first-mover | UAE QTSP has already slipped once (Apr-Jun 2026 implied → Sep-Oct 2026, with a silent intervening call, B05); the "first-mover" framing itself rests on documented EVENTS but not a documented peer-lead claim (corrected this pass) | Further slippage past Q3 FY27 without a firm new date (B05's own kill signal); or a named peer matching/pre-empting one of the three geographic entries |
 | H2 Strategic partnerships | LankaPay, GLEIF/LEIL, and MOSIP are all early-stage, unquantified in revenue terms | No disclosed revenue contribution from any of the three within 12 months |
 | R1 Regulatory tailwinds | Shared industry-wide (DigiCert, Entrust, Venafi, Protean, Newgen all face the same PQC/DPDP/eIDAS clocks); eMudhra's edge is execution speed and one-stop-shop breadth, not exclusivity | A named competitor announces an equivalent automation/PQC capability and converts a paid deal before eMudhra does |
 | A4/C1 New products and cross-sell | Cryptas cross-sell (2 named wins) is running against a Rs 881.45 Mn UNCAPPED contingent-consideration liability tied to Cryptas EBITDA (Note 17a, B02); if cross-sell stalls, both the platform thesis and the earn-out economics are exposed together | Cryptas FY27 full-year PAT stays near breakeven (B05 Priority-2 kill signal) with no further named cross-sell wins |
@@ -616,17 +722,26 @@ never scored.
 
 | Block | Value | Source |
 | --- | --- | --- |
-| Gate 0 core score | 71 | B01-gate0 |
-| Gate 0 existing moat count / class | 4 moats confirmed, STRONG | B01-gate0 |
-| Gate 0 grand total | 88 | B01-gate0 |
-| Gate 0 classification | GOOD (capped — Block B <8, deal-breaker) | B01-gate0 |
-| Emerging Moat score | 23.1 / 92 | This stage |
+| Gate 0 core score | 71 | B01-gate0 (as filed; under separate REWORK per Verifier C Part 1 — see note below) |
+| Gate 0 existing moat count / class | 4 moats confirmed, STRONG | B01-gate0 (as filed) |
+| Gate 0 grand total | 88 | B01-gate0 (as filed) |
+| Gate 0 classification | GOOD (capped — Block B <8, deal-breaker) | B01-gate0 (as filed) |
+| Emerging Moat score | **22.1 / 92 (corrected, Verifier C; was 23.1)** | This stage |
 | Emerging Moat classification | MODEST MOAT DEVELOPMENT | This stage |
+
+**Note on B01 status:** Verifier C's Part 1 (Gate 0) found a CRITICAL
+rule-misapplication in B01's Block B/M12 (a false "data unextractable"
+premise on consolidated payables that, once corrected, flips the
+classification to GOOD+ under the stage's own n=2-window convention). That
+finding is routed to Stage 1 REWORK and is NOT corrected in this pass —
+this stage's scope is B07 only. The 71/88/GOOD figures above are the
+current B01-as-filed values; 6C and 6D should be re-read once B01 is
+reworked.
 
 ### 6D. Combined classification
 
-**Combined assessment: GOOD** (backward GOOD, forward MODEST — read
-together below).
+**Combined assessment: GOOD** (backward GOOD as filed, forward MODEST —
+read together below; provisional pending the B01 REWORK noted in 6C).
 
 Reasoning: the instruction names a fixed 8-tier combined label set
 (EXCEPTIONAL / EXCELLENT+ / HIGH POTENTIAL / GOOD+ / GOOD / TURNAROUND /
@@ -634,21 +749,25 @@ AVERAGE / AVOID) but the literal backward×forward lookup table was not
 found in the corpus available to this stage (frameworks/ and prompts/
 were both searched; only the Gate 0 stage's OWN backward-only matrix
 [Core score × moat class → EXCELLENT/GOOD+/GOOD/AVERAGE/AVOID] was
-located, in prompts/01-gate-0-pipeline.md). This is carried as an
-input_gap below, not silently resolved. Applied from first principles per
-the instruction's own stated logic — "GOOD or AVERAGE backward scores
-with EXPANSION forward scores are exactly the transition setups this
-operation hunts" — eMudhra's backward score (GOOD) qualifies as a
-transition-eligible base, but the forward score is MODEST, not EXPANSION.
-This is explicitly NOT the flagship HIGH POTENTIAL / TURNAROUND setup the
-strategy hunts: HIGH POTENTIAL and TURNAROUND rows are reserved (per the
-instruction) for cases pairing a modest/weak backward score with an
-EXPANSION-tier forward score, or a strong backward score compounding with
-one; neither applies here. With backward GOOD and forward MODEST (neither
-STRENGTHENING nor EXPANSION), the combined read stays at the backward
-tier, unchanged by the forward scan: **GOOD**. Stage 9/13 should verify
-this against the authoritative combined matrix if one exists outside this
-stage's accessible corpus.
+located, in prompts/01-gate-0-pipeline.md). Verifier C's own Part 2 review
+(rule E20) independently confirms this gap was searched for and not
+found, and did not fail the stage on it. This is carried as an input_gap
+below, not silently resolved. Applied from first principles per the
+instruction's own stated logic — "GOOD or AVERAGE backward scores with
+EXPANSION forward scores are exactly the transition setups this operation
+hunts" — eMudhra's backward score (GOOD) qualifies as a transition-eligible
+base, but the forward score is MODEST, not EXPANSION. This is explicitly
+NOT the flagship HIGH POTENTIAL / TURNAROUND setup the strategy hunts:
+HIGH POTENTIAL and TURNAROUND rows are reserved (per the instruction) for
+cases pairing a modest/weak backward score with an EXPANSION-tier forward
+score, or a strong backward score compounding with one; neither applies
+here. With backward GOOD and forward MODEST (neither STRENGTHENING nor
+EXPANSION), the combined read stays at the backward tier, unchanged by the
+forward scan: **GOOD**. Stage 9/13 should verify this against the
+authoritative combined matrix if one exists outside this stage's
+accessible corpus, AND should re-derive this label once B01's Block B
+REWORK resolves (a shift from GOOD to GOOD+ at the backward level would
+directly change this line).
 
 ### 6E. Final output card
 
@@ -666,12 +785,12 @@ stage's accessible corpus.
   (B2). Family C → the existing embedded-relationship moat gains a
   cross-sell leg via the Cryptas acquisition, still early (C1, C2).
   Family E → the existing single-jurisdiction (India) licensed-CA model
-  is being replicated abroad (UAE, East Africa, pending) for the first
-  time at this pace (E1). Family H → the existing partner-channel
-  distribution gains three new named partnership arrangements (LankaPay,
-  GLEIF/LEIL, MOSIP) that could become distribution channels in their own
-  right (H2), alongside inorganic consolidation of fragmented
-  identity/PKI vendors (H1).
+  is being replicated abroad (UAE, East Africa, pending), on documented
+  events, though not yet on a documented lead over peers (E1, corrected).
+  Family H → the existing partner-channel distribution gains three new
+  named partnership arrangements (LankaPay, GLEIF/LEIL, MOSIP) that could
+  become distribution channels in their own right (H2), alongside
+  inorganic consolidation of fragmented identity/PKI vendors (H1).
 
 **Catalysts to watch, next 12 months:** UAE QTSP licence grant (~Sep-Oct
 2026, already once-slipped); DPDP Phase 2 (13-Nov-2026) testing PrivaTrust
@@ -712,11 +831,22 @@ time, not independently.
   table (Section 6D) was not found in frameworks/ or prompts/ accessible
   to this stage; the GOOD label above is derived from first principles
   per the instruction's own stated transition-setup logic, not read off
-  an explicit table. Flagged for Stage 9/13 verification.
+  an explicit table. Flagged for Stage 9/13 verification; independently
+  confirmed absent by Verifier C (Part 2, rule E20).
 - Facility-level utilisation/capacity metrics (Section 2B) are NOT FOUND
   for any data centre (India, US, Europe, UAE); consistent with an
   asset-light business model where this disclosure gap may be structural
   rather than a corpus gap.
+- Section 1C: FY27E growth for the Services revenue stream and the
+  company-wide FY27E total are NOT FOUND (no company guidance exists for
+  the Services stream specifically); an earlier draft of this report
+  filled this gap with an assumed rate, corrected out per Verifier C
+  finding 11.
+- B01 (Gate 0) is under a separate CRITICAL REWORK per Verifier C Part 1
+  (Block B/M12 WC-days false-premise finding); Section 6C/6D of this
+  report currently read the B01-as-filed GOOD classification and will
+  need re-reading once that REWORK closes, since the corrected B01 read
+  (GOOD+) would change 6D's combined label.
 
 ## FLAGS (this stage)
 
@@ -733,4 +863,9 @@ time, not independently.
 - FLAG-REGULATORY-DEPENDENCY: the E1 geographic first-mover score leans
   partly on the still-pending UAE QTSP licence, which has already slipped
   once (B05). If it slips again past the B05 kill-signal date (Q3 FY27
-  without a firm date), the E1 row's evidentiary basis weakens.
+  without a firm date), the E1 row's evidentiary basis weakens further.
+- FLAG-VERIFIER-DEPENDENCY (new this correction): Section 6C/6D of this
+  report inherit B01's classification as filed (GOOD). B01 is under a
+  separate CRITICAL REWORK (Verifier C Part 1) that could move it to
+  GOOD+. If that REWORK closes with GOOD+, Section 6D's combined label in
+  this report should be re-read, not assumed unchanged.

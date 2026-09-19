@@ -3,38 +3,43 @@ company: "EMUDHRA"
 run_date: "2026-09-19"
 model: claude-sonnet-5
 status: complete
+correction_applied: "Verifier C, 2026-09-19: E1 rescored HH->MH (unanchored peer-lead claim removed, evidence stays documented), em_score 23.1->22.1. Section 2C capex_embedded_growth_pct rebased to the run-consistent FAT (B01 M3, 0.97x), 22.6->4.0, range 4.0-22.6% named. R1 narrative/score inconsistency resolved (R1 stays HH=4). evidence_mix.documented reconciled to the 19-item recount (was 24). Section 1C estimated Services FY27 growth and derived FY27E totals removed, marked NOT FOUND. See report 'CORRECTION (VERIFIER C), 2026-09-19' section for full detail. B01 (Gate 0) CRITICAL finding from the same verifier pass is routed to Stage 1 REWORK, not corrected here."
 input_gaps:
   - "R&D-to-revenue historical trend not disclosed on a comparable multi-year basis (carried from B01); only a single FY27 company ESTIMATE exists (7-8% of revenue vs 15-20% for global peers, Q4FY26 Inv. Pres. p.24)."
   - "Capex reconciliation gap not resolved: three AR/Investor-Presentation classifications of capex-like spend (Rs 1,853.68 Mn CFS line; Rs 1,915.56 Mn MD&A prose; Rs 1,363 Mn Investor Presentation IP Investment) do not sum to each other; carried from B04."
   - "No patent search possible beyond AR full-text keyword search; Espacenet/ipindia.gov.in verification (I1 evidence hierarchy) is PENDING LIVE VERIFICATION, no live web access in this container."
-  - "The literal 8-tier combined backward x forward classification lookup table (EXCEPTIONAL/EXCELLENT+/HIGH POTENTIAL/GOOD+/GOOD/TURNAROUND/AVERAGE/AVOID) was not found in frameworks/ or prompts/ accessible to this stage; the GOOD combined label is derived from first principles, not read off an explicit table. Flagged for Stage 9/13 verification."
+  - "The literal 8-tier combined backward x forward classification lookup table (EXCEPTIONAL/EXCELLENT+/HIGH POTENTIAL/GOOD+/GOOD/TURNAROUND/AVERAGE/AVOID) was not found in frameworks/ or prompts/ accessible to this stage; the GOOD combined label is derived from first principles, not read off an explicit table. Independently confirmed absent by Verifier C (rule E20). Flagged for Stage 9/13 verification."
   - "Facility-level utilisation/capacity metrics (Section 2B) NOT FOUND for any data centre (India, US, Europe, UAE)."
+  - "Section 1C: FY27E growth for the Services revenue stream and the company-wide FY27E total are NOT FOUND (no company guidance exists for the Services stream specifically); an earlier draft filled this with an assumed rate, corrected out per Verifier C finding 11."
+  - "B01 (Gate 0) is under a separate CRITICAL REWORK per Verifier C Part 1 (Block B/M12 WC-days false-premise finding, potential GOOD -> GOOD+ flip); Section 6C/6D of the B07 report read the B01-as-filed GOOD classification and need re-reading once that REWORK closes."
 flags:
   - type: FLAG-CASH
     reason: "The emerging-moat forward build (6 product pillars, 2 completed acquisitions, 3 new regulatory jurisdictions in flight) runs in the same year Gate 0 found FY26 FCF turning negative (-Rs 52.52 Cr) and cash falling Rs 617.06 Mn (AR p.153-154). The forward build is not yet self-funded from operations."
   - type: FLAG-LIABILITY
     reason: "The C1 cross-sell evidence (2 named Cryptas customer wins, Q1 FY27 call) and the single largest unresolved forward liability in the corpus (Rs 881.45 Mn uncapped Cryptas contingent consideration, Note 17a) are the same underlying bet; a stall in one is a stall in the other."
   - type: FLAG-REGULATORY-DEPENDENCY
-    reason: "The E1 geographic first-mover score leans partly on the still-pending UAE QTSP licence, which has already slipped once (B05). Further slippage past Q3 FY27 without a firm date (B05 kill signal) would weaken E1's evidentiary basis."
-em_score: 23.1                 # adjusted total, ~0-90 scale (ceiling 92 with I1/I2)
-em_classification: "MODEST"    # 12-24 band: MODEST MOAT DEVELOPMENT
+    reason: "The E1 geographic first-mover score leans partly on the still-pending UAE QTSP licence, which has already slipped once (B05). Further slippage past Q3 FY27 without a firm date (B05 kill signal) would weaken E1's evidentiary basis further."
+  - type: FLAG-VERIFIER-DEPENDENCY
+    reason: "Section 6C/6D of the B07 report inherit B01's classification as filed (GOOD). B01 is under a separate CRITICAL REWORK (Verifier C Part 1) that could move it to GOOD+. If that REWORK closes with GOOD+, Section 6D's combined label should be re-read, not assumed unchanged."
+em_score: 22.1                 # corrected (Verifier C, was 23.1); adjusted total, ~0-90 scale (ceiling 92 with I1/I2)
+em_classification: "MODEST"    # 12-24 band: MODEST MOAT DEVELOPMENT (unchanged by the correction)
 active_categories:
   - {id: "A4", name: "Product platform / modular architecture", strength: "Moderate", evidence_type: "documented", time_to_materialise: "near"}
   - {id: "B2", name: "Qualification lock-in", strength: "Moderate", evidence_type: "documented", time_to_materialise: "near-medium"}
   - {id: "C1", name: "Customer ecosystem / embedded relationships", strength: "Moderate", evidence_type: "documented+claim", time_to_materialise: "near"}
   - {id: "C2", name: "Customer concentration improving", strength: "Moderate", evidence_type: "documented", time_to_materialise: "near"}
-  - {id: "E1", name: "Geographic first-mover", strength: "Strong", evidence_type: "documented", time_to_materialise: "near"}
+  - {id: "E1", name: "Geographic first-mover", strength: "Moderate", evidence_type: "documented", time_to_materialise: "near"}
   - {id: "H1", name: "Industry consolidation beneficiary", strength: "Moderate", evidence_type: "documented", time_to_materialise: "near-medium"}
   - {id: "H2", name: "Strategic partnerships", strength: "Strong", evidence_type: "documented", time_to_materialise: "near"}
   - {id: "R1", name: "Regulatory & policy tailwinds", strength: "Strong", evidence_type: "documented", time_to_materialise: "near-medium"}
-evidence_mix: {documented: 24, claim: 10, inference: 6}
-completionist_recount: "recount performed: 19 documented items across 8 categories (A4:4, B2:1, C1:1, C2:1, E1:3, H1:2, H2:3, R1:4)."
+evidence_mix: {documented: 19, claim: 10, inference: 6}
+completionist_recount: "recount performed: 19 documented items across 8 categories (A4:4, B2:1, C1:1, C2:1, E1:3, H1:2, H2:3, R1:4). evidence_mix.documented reconciled to this figure (corrected, Verifier C; was 24, unreconciled)."
 catalysts_12m:
   - {catalyst: "UAE QTSP licence grant and data centre commissioning", window: "~Sep-Oct 2026 (already once-slipped)", evidence_type: "claim", anchor: "Q1 FY27 call; B05"}
   - {catalyst: "DPDP Phase 2 (Consent Manager registration, Significant Data Fiduciary obligations) takes effect, testing PrivaTrust demand", window: "13-Nov-2026", evidence_type: "documented", anchor: "AR p.29"}
   - {catalyst: "Cryptas cross-sell scaling beyond the 2 named FY27 wins", window: "FY27", evidence_type: "claim", anchor: "Q1 FY27 call"}
   - {catalyst: "EUDI Wallet mandatory deployment testing ID Broker adoption in EU", window: "31-Dec-2026", evidence_type: "documented", anchor: "AR p.21"}
-capex_embedded_growth_pct: 22.6   # LOW-CONFIDENCE / low applicability - see report Section 2C caveat (asset-light business, methodology built for manufacturing capacity)
+capex_embedded_growth_pct: 4.0   # corrected (Verifier C, was 22.6): run-consistent FAT basis (B01 M3, 0.97x, Net Block incl. goodwill/intangibles) applied to the same Rs 291.76 Mn CWIP+intangibles-under-development numerator. Range across bases: 4.0%-22.6%, three readings shown in report Section 2C; 4.0% is the settled figure.
 optionality_register:
   - {optionality: "UAE QTSP licence and in-country Trust Services launch", converting_evidence: "Licence grant notice + first UAE eSign/QTSP transaction disclosed", first_appears: "Reg 30 filing / concall", window: "~Sep-Oct 2026 (already once-slipped)"}
   - {optionality: "Cryptas cross-sell scaling beyond the 2 named FY27 wins", converting_evidence: "Named revenue contribution from cross-sold deals in FY27 AR segment note or a Reg 30 order-win filing", first_appears: "FY27 AR Note 49 / Reg 30 filings", window: "FY27-FY28"}
@@ -46,16 +51,18 @@ optionality_register:
   - {optionality: "Bolt-on AI-cybersecurity acquisition (dropped trigger, B05)", converting_evidence: "Signed acquisition agreement / Reg 30 filing", first_appears: "Reg 30 filing", window: "live in Q3 FY26 commentary, absent by Q1 FY27, unresolved"}
   - {optionality: "R&D intensity convergence toward the company's own 15-20% global-peer benchmark (currently 7-8% estimated)", converting_evidence: "A disclosed multi-year R&D-to-revenue trend", first_appears: "FY27/28 AR MD&A or BRSR", window: "not scheduled"}
   - {optionality: "FY27 free cash flow returning positive (G1/G2 reversal)", converting_evidence: "FY27 audited cash flow statement showing CFO > capex + acquisition spend", first_appears: "FY27 AR / quarterly results", window: "FY27 year-end"}
+  - {optionality: "eMudhra's own first-mover advantage over listed Indian peers in Central Asia/East Africa (E1 leg removed this correction)", converting_evidence: "A sourced peer-footprint comparison naming a competitor's absence from these markets", first_appears: "Analyst/verifier cross-check, not disclosed by eMudhra itself", window: "not scheduled; operator-driven"}
 combined_assessment: "GOOD"
-combined_reasoning: "Backward Gate 0 GOOD (core 71, moat STRONG, capped by the Block B FCF deal-breaker) paired with forward MODEST (23.1, not EXPANSION) is not the HIGH POTENTIAL/TURNAROUND transition setup the strategy hunts; combined read stays at the backward tier, GOOD, pending Stage 9/13 verification against the authoritative combined matrix (not located in this stage's accessible corpus)."
+combined_reasoning: "Backward Gate 0 GOOD-as-filed (core 71, moat STRONG, capped by the Block B FCF deal-breaker) paired with forward MODEST (22.1, corrected, not EXPANSION) is not the HIGH POTENTIAL/TURNAROUND transition setup the strategy hunts; combined read stays at the backward tier, GOOD, pending (a) Stage 9/13 verification against the authoritative combined matrix, not located in this stage's accessible corpus, and (b) re-derivation once B01's separate CRITICAL REWORK (Verifier C Part 1) closes, since a GOOD->GOOD+ flip at the backward level would change this line."
 top_moat_risks:
   - "UAE QTSP licence slippage repeats; regulatory dependency stays unresolved past Q3 FY27 (B05 kill signal)."
   - "Cryptas cross-sell stays at 2 named wins while the Rs 881.45 Mn uncapped contingent consideration keeps growing (Note 17a)."
   - "R&D spend (7-8% of revenue, company estimate) lags the company's own cited 15-20% global-peer benchmark (Q4FY26 Inv. Pres. p.24), a constraint on sustaining new-product-pillar pace."
   - "Regulatory tailwinds (PQC, DPDP, eIDAS 2.0) are shared industry-wide; eMudhra's edge is execution speed and platform breadth, not exclusivity."
   - "FY26 cash and working-capital signals moved the wrong way (FCF -Rs 52.52 Cr, cash down Rs 617.06 Mn) in the same year the emerging-moat product/geography build accelerated; the forward bet is not yet self-funding."
-analyst_note: "Score driven almost entirely by a genuinely announcement-dense FY26: 2 completed bolt-on acquisitions, 4 new product pillars launched in 12 months, 3 new regulatory jurisdictions in flight, and a favourable regulatory calendar shared industry-wide. Family G (financial/structural) scored zero because both signals ran backward this year (cash fell, FCF negative, WC deteriorated), which is the main reason the total lands at MODEST rather than STRENGTHENING despite 8 active categories. I1/I2 both score 0 by design; no threshold crossing occurred via Family I points, so no REVIEW CHECKPOINT entry is generated by this run. The single most important downstream link: the C1 cross-sell evidence and the Cryptas uncapped earn-out liability are the same bet, not two independent facts."
+  - "E1's geographic-first-mover read rests on documented events but not a documented lead over named peers; treat as company activity, not a proven competitive edge, until a peer comparison is sourced."
+analyst_note: "Corrected 2026-09-19 per Verifier C (phase 1, framework adherence): E1 rescored HH->MH on an unanchored peer-comparison claim (em_score 23.1->22.1, band unchanged, MODEST); Section 2C capex_embedded_growth_pct rebased from a PP&E-only/mixed-numerator basis (22.6%) to the run-consistent FAT basis (4.0%, B01 M3 0.97x), range 4.0-22.6% named; R1 narrative/score contradiction resolved (score unchanged, HH=4); evidence_mix.documented reconciled to the 19-item recount (was 24, unreconciled); Section 1C's estimated Services FY27 growth and derived totals removed, marked NOT FOUND. Family G (financial/structural) still scores zero because both signals ran backward this year. I1/I2 both score 0 by design; no threshold crossing occurred via Family I points. B01 (Gate 0) carries a separate CRITICAL REWORK from the same verifier pass (Block B/M12 false-premise finding); not corrected in this B07 pass, but flagged here since it would change Section 6C/6D's combined label if it closes at GOOD+."
 capex_fy26_inr_mn: 1853.68
 acquisition_payment_fy26_inr_mn: 629.03
 combined_capex_acquisition_fy26_inr_mn: 2482.71
-capex_source: "AR p.218 (mupdf), Purchase of Property, plant and equipment and Intangible assets, FY26 consolidated Cash Flow Statement; acquisition payment separately per AR p.218; combined figure matches AR MD&A p.155 prose (INR 2,482.71 Million) exactly. Two other AR/Investor-Presentation classifications of capex-like spend exist and do NOT reconcile to this figure - see report Section 2A arithmetic."
+capex_source: "AR p.218 (mupdf), Purchase of Property, plant and equipment and Intangible assets, FY26 consolidated Cash Flow Statement; acquisition payment separately per AR p.218; combined figure matches AR MD&A p.155 prose (INR 2,482.71 Million) exactly. Two other AR/Investor-Presentation classifications of capex-like spend exist and do NOT reconcile to this figure - see report Section 2A arithmetic. (Unchanged by the Verifier C correction; only Section 2C's capex_embedded_growth_pct derivation was corrected.)"

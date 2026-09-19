@@ -1,0 +1,54 @@
+stage: B08-promoter
+company: "DPABHUSHAN"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Three Reg 29(2) SAST filings by Santosh Kataria (SAST-67E48196, SAST-D20D00B6, SAST-E3FFDBC9) are image-only scans with no text layer; UNREADABLE in this session (no OCR route), named never guessed."
+  - "The ~30 promoter-group corporate/LLP entities named in the Reg 29(2) PAC Annexure I were not individually checked against MCA/RoC for strike-off or dormant status; only their AR-disclosed transaction status was checked."
+  - "Kataria Dhulchand Pannalal Jewellers Ltd DRHP (Aug-2026) not read directly; only secondary aggregator coverage available in this session."
+flags: []
+verdict: "CAUTION"
+scorecard: {clean: 7, caution: 2, red: 1}
+deal_breakers:
+  - "Multiple mid-term independent director exits within 3 years: TRIGGERED. Deepak Gadia (DIN 08782782) resigned 21-Nov-2024 after ~4 years' tenure; Seema Mandloi (DIN 10617559) resigned 18-Feb-2025 after under 9 months' tenure; both cited 'personal and unavoidable reasons', no backfill appointment since (FY25 AR PDF p.60-61 printed p.115-116; FY26 AR director-tenure table PDF p.42 printed p.131). RECORDED per pipeline rule, not enforced as a halt."
+adverse_findings:
+  - {finding: "Two independent director mid-term exits within a ~3-month window (FY24-25), no backfill, board thinned from 4 to 3 independent directors", evidence_tier: "VERIFIED", source: "FY25 AR PDF p.60-61 printed p.115-116; FY26 AR PDF p.42 printed p.131 (director tenure table)", date: "resignations 21-Nov-2024 and 18-Feb-2025"}
+  - {finding: "All bank facilities secured by personal guarantees of 7 named family members (Anil, Santosh, Renu, Ratanlal, Sanjay, Vikas Kataria, Suman Devi Kataria) plus 6 pledged immovable properties, several family-owned; no default or covenant breach disclosed", evidence_tier: "VERIFIED", source: "FY26 AR Note 12, PDF p.93-94 printed p.180-183", date: "FY26 (31-Mar-2026)"}
+  - {finding: "Disproportionately large promoter-group entity footprint: ~30 corporate/LLP vehicles (real estate, wind infra, castings, trading, finance-flavoured names e.g. 'DP Finsure Private Limited', 'Manratan Finserve Private Limited', 'Deep Finance Limited', 'Genietalk Money Private Limited') named as Persons Acting in Concert; only 7 appear in the FY26 AR's own related-party note", evidence_tier: "VERIFIED", source: "SAST-D7E0ACB6 (Reg 29(2) filing, 16-Apr-2026, Annexure I) cross-checked against FY26 AR Note 33.1, PDF p.97-98 printed p.189-190", date: "16-Apr-2026 filing; FY26 AR"}
+  - {finding: "Large recurring related-party loan churn with promoter family and promoter-group entities (e.g. Manratan Retail Pvt Ltd: Rs 51.4 Cr received / Rs 50.8 Cr repaid in FY25 alone); interest paid by the company on balances; net related-party unsecured borrowings fell 34.5% YoY (Rs 23.22 Cr to Rs 15.20 Cr)", evidence_tier: "VERIFIED", source: "FY26 AR Note 33.1, PDF p.97-99 printed p.189-192; Note 12/16289", date: "FY26 vs FY25"}
+  - {finding: "One non-arm's-length RPT: Ratanlal Kataria (CMD's father) paid Rs 36 lakh/year as 'Head - Marketing', appointed at a place of profit; disclosed, special-resolution-backed (2019), modest in size", evidence_tier: "VERIFIED", source: "FY26 AR Form AOC-2, PDF p.34 printed p.62-63", date: "FY26"}
+  - {finding: "Two of DPAL's three Independent Directors (Mukesh Kumar Jain, Apurva Lunawat) also serve as Independent Directors of Kataria Industries Limited, a separate Ratlam-headquartered company; no individual-name overlap found with DPAL's promoter family, treated as a different Kataria family on current evidence", evidence_tier: "MEDIA REPORTED", source: "WebSearch 2026-09-19 (Kataria Industries Limited board listings); FY26 AR board table, PDF p.38 printed p.70", date: "2026-09-19 search"}
+  - {finding: "UNVERIFIED: Kataria Dhulchand Pannalal Jewellers Ltd ('Kataria Jewellers'), same-city (Ratlam/Indore) organised jewellery retailer, filed a DRHP in Aug-2026; its marketing and CARE's DPAL rationale both trace descent to an identically-named ancestor 'Dhulchand Kataria'; promoter names do not overlap with DPAL's list; one secondary aggregator source names DPAL's former CS Aashi Neema (resigned 2-Jun-2025) among its KMP, not corroborated against the primary DRHP in this session", evidence_tier: "UNVERIFIED", source: "WebFetch heerazhaveraat.com 2026-09-19; WebSearch aggregator hits (Tracxn, katariajewellers.com); CARE PR 8-Jan-2026 p.2", date: "DRHP Aug-2026, resignation 2-Jun-2025"}
+transition_evidence:
+  - "External, non-family CFO Manish Laddha appointed 2-Jun-2025; promoter-group incumbent Vijesh Kumar Kasera re-designated Deputy CFO rather than exited (FY26 AR Secretarial Audit Report; Note 33.1)"
+  - "New independent Secretarial Auditor (ALAP & Co. LLP) appointed for a fresh 5-year term from FY26, unqualified report"
+  - "Broad-based ESOP 2024 grant to employees (62,300 options, 4-Nov-2025, 4-year vesting) extends equity participation beyond the promoter family for the first time in this corpus"
+  - "COUNTERWEIGHT (not a positive): no independent director backfill after the two FY24-25 exits; no institutional investor entry (FII+DII combined under 0.5% of register throughout); pledge has been zero throughout, so no reduction trend to report"
+pledge_pct_latest: 0
+pledge_trend: "flat at 0% across FY24-FY26 and the screener's Sep-2023 to Jun-2026 series; no pledge column populated in any period; a Reg 30 filing referenced via web search is titled 'D.P. Abhushan confirms no share encumbrance in FY26' (not independently opened this session)"
+searches_performed:
+  - "\"Kataria Industries Limited\" independent director Mukesh Kumar Jain Apurva Lunawat"
+  - "\"D P Abhushan\" OR \"DPABHUSHAN\" SEBI order adjudication"
+  - "Santosh Kataria D P Abhushan Ratlam promoter controversy"
+  - "\"Kataria Industries Limited\" Indore Ratlam promoter Arun Kataria family"
+  - "\"D P Abhushan\" Glassdoor OR AmbitionBox employee reviews"
+  - "D P Abhushan IiAS SES proxy advisory report OR short seller report"
+  - "\"D P Abhushan\" news 2026 jewellery Ratlam"
+  - "DP Jewellers Ratlam income tax raid OR GST raid OR ED raid"
+  - "\"Ratlam\" jewellers income tax raid \"D P\" OR \"DP Jewellers\" survey"
+  - "D P Abhushan IPO 2017 promoter history sole proprietorship Dhulchand Kataria"
+  - "\"Kataria Dhulchand Pannalal Jewellers\" DRHP promoters directors"
+  - "\"Kataria Jewellers\" Ratlam DRHP promoter Manoj OR Ashok OR Pradeep Kataria"
+  - "\"Aashi Neema\" company secretary Kataria Jewellers OR \"Kataria Dhulchand\""
+  - "\"D P Abhushan\" CSR philanthropy Kataria Foundation Ratlam"
+  - "D P Abhushan Limited NCLT OR litigation OR court case Kataria family dispute"
+  - "\"Digital Gold India Private Limited\" SafeGold owner promoter"
+  - "WebFetch: heerazhaveraat.com DRHP article on Kataria Dhulchand Pannalal Jewellers Ltd"
+searches_skipped:
+  - "Individual RoC/strike-off/dormant status check for each of the ~30 promoter-group corporate/LLP entities in the PAC Annexure I"
+  - "Direct MCA portal query for director disqualification (relied on Secretarial Auditor and Secretarial Compliance Report representations instead)"
+  - "Primary-text read of the Kataria Dhulchand Pannalal Jewellers Ltd DRHP itself"
+  - "indiankanoon.org / court-record-specific name search for Santosh Kataria or Anil Kataria"
+verdict_basis: "No SEBI/criminal/tax/pledge/auditor/restatement finding, but real promoter-family financial entanglement (7 personal guarantors, 6 pledged family properties, large recurring related-party loan flows) plus an unusual 2-independent-director exit cluster in FY24-25 with no backfill (meets the literal deal-breaker wording), plus one open, unverified same-city competing-family-jewellery question requiring live verification before Halt 1."
+analyst_note: "The single highest-value follow-up for Claude web is the Kataria Dhulchand Pannalal Jewellers Ltd DRHP (filed Aug-2026): it would resolve whether this is a genealogically related family branch now running a directly competing, soon-to-listed organised jewellery retailer in DPAL's own catchment (Ratlam/Indore, expanding toward MP/Rajasthan), and whether DPAL's former CS Aashi Neema is in fact there. Both are UNVERIFIED here on secondary sources only. Separately, the independent-director exit cluster (Gadia Nov-2024, Mandloi Feb-2025, no backfill) is the one finding in this report that maps directly onto a named Section 6C deal-breaker pattern; it is recorded, not enforced, and should be weighed explicitly at Halt 1 alongside the personal-guarantee/related-party entanglement in Section 3A, since both bear on the same key-person/family-entanglement risk axis."

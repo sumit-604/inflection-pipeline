@@ -1,0 +1,82 @@
+stage: B04-bizmodel
+company: "DPABHUSHAN"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Gold/diamond/silver revenue split by product is deck-level only (Q4/FY26 deck p.9, Q1 FY27 deck p.7); the audited FY26 AR treats the company as a single reportable segment 'Jewellery' with no product-line breakup in the financial statements (Note 33.19, AR p.104, printed p.202-203)."
+  - "'Revenue from Non-Retail Operations' (12.3% of FY26 revenue, -5.96% YoY, Note 20, AR p.95 printed p.184-185) has no composition narrative anywhere in the AR or MD&A."
+  - "DP Swarn Plus scheme enrolment/AUM, e-commerce revenue share, and store-level revenue (as opposed to store-level footfall) are NOT FOUND in this corpus."
+  - "Per-gram or per-store COST (as opposed to revenue) is NOT FOUND; only company-wide Cost of Material Consumed (Note 23) is disclosed."
+flags:
+  - {type: FLAG-VOLUME-VS-PRICE, reason: "FY26 gold grams sold (Note 33.5, AR p.101 printed p.197) fell 13.3% YoY (63,80,585.86g to 55,30,535.03g) while gold segment revenue (Q4 deck p.9) rose 21% YoY, implying revenue-per-gram rose ~39% YoY. FY26 revenue/margin growth is price-led, not volume-led; directly on point for B00 LBF1."}
+  - {type: FLAG-CASH, reason: "Carried from B01/B02: FY26 CFO -Rs 97.31 Cr on PAT +Rs 211.84 Cr, financed entirely by fresh bank borrowing while trade payables were paid down 35.7%; inventory is 24.7% of FY26 revenue and asset intensity is otherwise light, so this is a working-capital, not a fixed-asset, cash story."}
+  - {type: FLAG-GUIDANCE-GAP, reason: "Diamond-studded jewellery is named a 'strategic growth category' / 'key revenue driver' (AR p.12, printed p.18-19; Q4 deck p.29) but FY26 diamond segment revenue fell 5% YoY (Q4 deck p.9), the opposite direction of the stated priority."}
+business_type: "trading"
+revenue_streams:
+  - {name: "Retail Operations (showroom jewellery sales)", type: "direct retail sale of goods", pct_of_revenue: 87.2, predictability: "M"}
+  - {name: "Non-Retail Operations (composition undisclosed)", type: "undisclosed, likely wholesale/bulk (inference, not filed fact)", pct_of_revenue: 12.3, predictability: "L"}
+  - {name: "Other Operating Income (commission + MCX hedging gain)", type: "commodity hedging/financial income booked inside revenue", pct_of_revenue: 0.5, predictability: "L"}
+asset_intensity: "light"
+wc_intensity: "high"
+pricing_power: "weak"
+cyclicality: "cyclical"
+moats_present:
+  - {moat: "Regional brand trust (86-year legacy, 'Most Trusted Jewellery Brand in Central India')", durability: "medium, regional only"}
+  - {moat: "Tier 2/3 cost advantage and centralised sourcing-radius efficient scale", durability: "medium"}
+  - {moat: "First-mover regional showroom distribution", durability: "medium-low, untested outside MP/Rajasthan"}
+valuation_methods:
+  primary: {method: "Relative P/E (peer/sector)", why: "Standard for a listed growth-stage jewellery retailer; Section 1B sector-cap row (Consumer franchise / Jewellery, 40x, resolved at stage 0) governs the destination multiple downstream at stage 11."}
+  secondary: {method: "EV/EBITDA", why: "Less distorted by the FY26 capital-structure shift (debt-funded inventory build) than a pure equity multiple; nets out the financing side of the FY26 story."}
+  tertiary: {method: "DCF", why: "Applicable in principle to a cash-generative retailer, but FY26 negative CFO/FCF (unresolved GROWTH-INDUCED vs STRUCTURAL classification, LBF2) makes a near-term FCF-based DCF fragile until Halt 1 resolves that question. Low confidence."}
+  not_applicable:
+    - "SOTP / NAV (single reportable segment 'Jewellery', Note 33.19; no distinct business lines to sum)"
+    - "Dividend yield (growth/reinvestment story, no meaningful payout signal in this corpus)"
+    - "Replacement cost / asset-based NAV (asset-light rented-showroom model; PP&E Rs 60.14 Cr is trivial against total assets Rs 1,142.62 Cr and does not represent where value sits)"
+irrelevant_ratios:
+  - {ratio: "Headline revenue growth %", why: "~91% of revenue is gold-value; FY26's 22.9% revenue growth coexists with a 13.3% YoY decline in gold grams sold (Note 33.5) -- growth is price pass-through, not demand."}
+  - {ratio: "Same-store-sales growth (unadjusted for gold price)", why: "Same distortion as revenue growth, applied at store level; no store-level revenue exists in this corpus to even attempt the adjustment."}
+  - {ratio: "Reported net profit margin at face value", why: "6.6% of FY26 PBT is a 'Profit Th. MCX Hedging' gain booked inside revenue (Note 21), a financial/hedging item mixed into operating profit."}
+  - {ratio: "Trade receivable days / DSO", why: "Near meaningless -- cash-and-carry retail model, receivables are 0.04% of FY26 revenue (Note 8)."}
+  - {ratio: "Debt/Equity at face value as a comfort read", why: "0.45x FY26 looks comfortable in isolation but the FY26 debt increase (+76.8%) financed a year of negative operating cash flow, not discretionary capacity."}
+must_track_metrics:
+  - {metric: "Gold grams sold, YoY (volume, not value)", healthy: "flat to rising", red_flag: "sustained double-digit YoY decline (already -13.3% FY26)"}
+  - {metric: "CFO and inventory days", healthy: "positive/improving CFO; operating cycle at or below CARE's 75-day benchmark", red_flag: "CFO negative a 4th straight year; operating cycle beyond 75 days"}
+  - {metric: "Diamond-studded revenue mix %", healthy: "rising toward the 12-15%-by-FY28 target", red_flag: "flat or falling (it fell in FY26)"}
+  - {metric: "EBITDA/PBILDT margin", healthy: "sustained above CARE's 6% positive trigger", red_flag: "sustained below CARE's 3% negative trigger"}
+  - {metric: "MCX hedging gain as % of PBT", healthy: "small, stable, realised", red_flag: "swings to a hedging loss in a falling-gold-price quarter"}
+unit_economics:
+  unit: "1 gram of gold jewellery sold"
+  revenue_per_unit: "~Rs 6,693/gram FY26 vs ~Rs 4,812/gram FY25 (+39% YoY); calculated by dividing deck gold segment revenue by AR Note 33.5 gold grams sold -- a cross-source calculated figure, not a single-source audited anchor"
+  margin_per_unit: "NOT FOUND -- gram-level cost is not disclosed; Cost of Material Consumed (Note 23) is company-wide and blended across gold, silver, diamond and platinum"
+  key_lever: "Gold price pass-through plus making-charge rate and diamond/studded mix, not volume; FY26 grams sold fell 13.3% YoY while revenue per gram rose 39% YoY"
+first_deterioration_signals:
+  - {risk: "Revenue model: gold-price-driven growth masking volume decline", first_signal: "Gold grams sold (Note 33.5) turning further negative; footfall-to-conversion % falling below the 80-87% band"}
+  - {risk: "Margin: MCX hedging/MTM gains reverse, or the new 42kg unfixed position becomes a realised loss", first_signal: "Hedging gain line turning negative; EBITDA margin reverting toward the Q4 FY26 trough of 5.45%"}
+  - {risk: "Balance sheet: negative CFO continues, financed by rising secured bank debt", first_signal: "CFO negative a 4th consecutive year; inventory days beyond CARE's 75-day trigger; gearing approaching 1x"}
+  - {risk: "Execution: stated diamond-mix and store-count priorities not matching delivery", first_signal: "Diamond segment revenue/mix % continuing to shrink; net new store openings running below implied pace"}
+  - {risk: "Structural/regulatory: May-2026 gold/silver import duty hike (6% to 15%) raises landed cost", first_signal: "Gross margin compression in the quarter(s) following the duty change; inventory turnover falling further below 4.72x"}
+mgmt_questions:
+  - "What share of FY26 revenue growth is gold-price appreciation versus incremental grams sold?"
+  - "Reconcile the Rs 50.33 Cr gap between Note 7's raw-material closing balance and Note 23's implied closing balance."
+  - "What is the realised-versus-MTM split of the Rs 18.60 Cr MCX hedging gain, and what happens to it in a falling-gold-price quarter?"
+  - "Why did a 42kg unfixed/unhedged gold position appear at FY26-end against the stated natural-hedge policy, and is it closed now?"
+  - "What does 'Revenue from Non-Retail Operations' (12.3% of FY26 revenue, -5.96% YoY) actually comprise?"
+  - "Diamond revenue fell 5% YoY in FY26 despite being named a strategic growth category -- what concretely changes in FY27 to reach the stated mix target?"
+  - "With borrowings up 76.8% to fund inventory while trade payables were paid down 35.7% in the same year, and every facility personally guaranteed, what is the delevering plan given the Rs 600 Cr QIP was postponed?"
+one_line_verdict: "Trusted regional trader, price-led FY26 growth, cash burn funded by debt."
+analyst_note: >
+  The single highest-value finding this stage produced from primary AR text, not carried
+  forward from B01-B03: cross-referencing Note 33.5 (quantitative gold grams, both FY26 and
+  FY25 ARs) against the investor deck's gold segment revenue shows FY26 gold grams sold FELL
+  13.3% YoY (6,380.6 kg to 5,530.5 kg) while gold revenue rose 21% YoY, implying revenue per
+  gram rose ~39%. This is the most direct evidence available in this corpus on LBF1 (margin
+  source): FY26's growth and margin story is substantially a gold-price story, not a volume
+  or mix story, at least at the physical-quantity level. It does not by itself resolve
+  GROWTH-INDUCED vs STRUCTURAL cash burn (LBF2) or the making-charge/studded-mix component of
+  margin, which need quarterly gram data this annual-only note cannot provide. Also load-
+  bearing: the AR's own segment note (33.19) treats DPAL as a single "Jewellery" segment, so
+  every gold/silver/diamond revenue split used in Section 3D and elsewhere is deck-level
+  (unaudited), not a statutory segment disclosure -- weigh accordingly downstream. The
+  "Revenue from Non-Retail Operations" line (12.3% of FY26 revenue) remains a genuine black
+  box; no document in this corpus explains what it is.

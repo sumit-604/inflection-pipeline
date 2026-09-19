@@ -1,0 +1,122 @@
+stage: B00-inputs
+company: EMUDHRA
+run_date: '2026-09-19'
+model: orchestrator
+status: complete
+spear_gate:
+  form: OVERRIDE
+  date: '2026-09-19'
+  source: companies/EMUDHRA.md
+  note: 'operator standing ruling 2026-09-05: Step-1 intake replaces the web spear'
+  load_bearing_facts:
+  - 'ORGANIC GROWTH vs GUIDANCE: FY26 organic about 19%; Q1FY27 total income +28% of which about 13 points from Cryptas,
+    so organic near 15%, against the FY27 organic guide of 15-18% and PAT +25-30%. Verify Cryptas revenue and consolidation
+    date (FY26 AR, results) and split organic from acquired growth.'
+  - 'CASH CONVERSION: FY26 FCF Rs -52 Cr (screener); days payable 420 vs debtor days 98; other liabilities Rs 123 Cr
+    to Rs 274 Cr. Verify what sits in payables and other liabilities (vendor pass-through, deferred revenue, deferred
+    acquisition consideration) and the receivables ageing in the FY26 AR notes.'
+  - '3i INFOTECH CLAIM: complaint of 03-Feb-2026 over the 2008 disinvestment of 3i Consumer Services (now eMudhra) and
+    a preference share redemption, claim above Rs 128 Cr; EOW Navi Mumbai termed it civil (inputs/announcements/20260818-7509d90d.pdf).
+    Verify the AR contingent-liability note, inputs/announcements/20260204-d507034d.pdf and the special-call transcript
+    inputs/announcements/20260209-3i-Infotech-Investor-Call-Transcript.pdf.'
+  - 'ASSET BUILD: fixed assets Rs 419 Cr to Rs 727 Cr in FY26 (screener). Verify the split between acquisition goodwill
+    and intangibles, capitalised product development, and trust-infrastructure capex, and the R&D amortisation policy.'
+company_memory: companies/EMUDHRA.md (Step-1 draft) + runs/emudhra-2026-09-19/step1-business-brief.md (web-sourced).
+  Memory to weigh, never anchored evidence.
+text_route: 'Every inputs/ PDF has a page-marked .txt beside it ([page N] markers, pdftotext -layout). Stages and verifiers
+  read the .txt; the PDF stays the source of record and page numbers match. Every PDF opened with pypdf; none unreadable.'
+reporting_units:
+  results: 'INR Million (face of FY26 audited, Q3FY26 and Q1FY27 results)'
+  annual_report: 'INR Million (FY26 AR financial statements)'
+  screener: 'INR Cr (screener Data_Sheet)'
+  note: 'Filings report in INR Million; screener in INR Cr. 10 INR Mn = 1 INR Cr. Convert once, at stage 10.'
+sector_cap_row: 'Platform / SaaS / IT services'
+sector_cap_row_evidence: 'eMudhra owns and licenses its PKI, identity/access, signing and contract-lifecycle software
+  (Enterprise Solutions 59% of FY26 revenue per Q4FY26 concall) and runs a licensed certifying authority (Trust Services
+  20%). Section-1b chunk 05 row boundary (A27.4) defines Cybersecurity / VAD as distribution with vendor certifications,
+  which eMudhra is not. The ~21% pure services line argues toward a lower row. FLAG for phase-3 confirmation (cap 45x
+  vs Cybersecurity / VAD 25x). Cite: .claude/skills/section-1b/references/05-sector-cap.md.'
+listed_date: '2022-06-01'
+prospectus_status: 'not mandatory: listed June 2022, more than 3 years before run_date; absence is not a gap'
+inventory:
+  prospectus: 0
+  annual-report: 1
+  results: 3
+  rating: 3
+  concalls: 3
+  peer-concalls: 12
+  announcements: 30
+  shareholding: 2
+  research: 0
+  screening: 4
+  presentation: 2
+  other: 1
+concall_quarter_map:
+- {file: inputs/concalls/Concall_Feb_2026_Q3FY26_Transcript.pdf, quarter: Q3FY26, call_date: '2026-02-03'}
+- {file: inputs/concalls/Concall_May_2026_Transcript.pdf, quarter: Q4FY26, call_date: '2026-05-07'}
+- {file: inputs/concalls/Concall_Aug_2026_Transcript.pdf, quarter: Q1FY27, call_date: '2026-07-30'}
+peer_transcripts:
+  NEWGEN: [Q2FY26 Nov-2025, Q3FY26 Jan-2026, Q4FY26 May-2026, Q1FY27 Jul-2026]
+  PROTEAN: [business-update call on NSDL Payments Bank stake Dec-2025, Q3FY26 Feb-2026, Q4FY26 May-2026, Q1FY27 Aug-2026]
+  QUICKHEAL: [Q3FY25 Feb-2025, Q1FY26 Aug-2025, Q2FY26 Oct-2025, Q4FY26 May-2026]
+freshness_pairs:
+- pair: RESULTS to CONCALL
+  trigger_doc: inputs/results/FY27-Q1_Results_30Jun2026.pdf
+  mate_expected: Q1FY27 earnings call transcript
+  status: PASS
+  missing_doc: ''
+- pair: RATING BULLETIN to RATIONALE
+  trigger_doc: inputs/rating/20260629_Credit_Rating_Intimation.pdf (ICRA reaffirmation [ICRA]A (Stable)/A1, 29-Jun-2026)
+  mate_expected: ICRA rating rationale dated on or about 29-Jun-2026
+  status: FAIL
+  missing_doc: 'ICRA rationale for eMudhra Limited, June 2026 surveillance (icra.in; not reachable by script, bot wall).
+    Latest full rationale held is 02-Jun-2025 (inputs/rating/20250602_ICRA_Rationale_Upgrade_A_Stable.pdf) plus the
+    08-Jul-2025 material-event update.'
+- pair: SEBI ORDER to ORDER TEXT
+  trigger_doc: none (only director-eligibility boilerplate references SEBI orders)
+  mate_expected: n/a
+  status: PASS
+  missing_doc: ''
+- pair: AR to LATEST AUDITED ANNUAL RESULTS
+  trigger_doc: inputs/results/FY26_Audited_Results_31Mar2026.pdf
+  mate_expected: FY26 annual report
+  status: PASS
+  missing_doc: ''
+freshness_verdict: CORPUS GAPPED-FRESHNESS
+input_gaps:
+- 'FRESHNESS FAIL: ICRA June-2026 rating rationale absent; only the reaffirmation letter is held. Gate recommendation
+  caps at PROCEED WITH CAVEATS. Operator: download from icra.in and push to inputs/rating/.'
+- 'collector_warning (verbatim): shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding
+  pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend. [REPAIRED at Step 1: BSE Reg 31
+  summaries Jun-2026 and Mar-2026 fetched; they show promoter 54.40% and no pledge but not the FII/DII split, which
+  is on screener only.]'
+- 'collector_warning (verbatim): screener export sheets came out EMPTY (formulas with no cached values), so no CSV
+  was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance Sheet, screener:Cash Flow, screener:Customization,
+  NEWGEN:Profit & Loss, NEWGEN:Quarters, NEWGEN:Balance Sheet, NEWGEN:Cash Flow, NEWGEN:Customization, QUICKHEAL:Profit
+  & Loss, QUICKHEAL:Quarters, QUICKHEAL:Balance Sheet, QUICKHEAL:Cash Flow, QUICKHEAL:Customization, PROTEAN:Profit
+  & Loss, PROTEAN:Quarters, PROTEAN:Balance Sheet, PROTEAN:Cash Flow, PROTEAN:Customization. Open Financials.xlsx once
+  in Excel or LibreOffice, save it, then run --push-again. [Every Data_Sheet.csv is populated: FY19-FY26 annual P&L,
+  balance sheet, cash flow and recent quarters. Gap is cosmetic.]'
+- 'collector_warning (verbatim): no results PDFs yet (screener has none): add later on github or locally + --push-again
+  [REPAIRED: Q3FY26, FY26 audited, Q1FY27 fetched from BSE.]'
+- 'collector_warning (verbatim): no rating PDF yet: add later the same way [PARTLY REPAIRED: ICRA letter 29-Jun-2026
+  plus the 2025 rationale and material-event update; the 2026 rationale is the freshness gap above.]'
+- 'announcements: collector downloaded 4 of 126 BSE rows; Step 1 fetched 29 material Reg 30 filings by hand, removed
+  3 board-outcome copies byte-identical to results/ and 1 copy of the Q1FY27 transcript. Routine filings (trading
+  window, investor-meet intimations, Reg 74(5), newspaper ads) skipped.'
+- 'concalls: collector filed the 06-Feb-2026 special investor call on the 3i Infotech allegations as a concall; moved
+  to announcements/ (it is not an earnings call). Three earnings transcripts remain.'
+- 'annual-report: collector took FY25 and FY26 ARs; contract is 0-1, so FY25 moved to other/ (preserved, not consumed).
+  Stage 3 backward depth relies on the FY26 AR comparatives and screener Data_Sheet.'
+- 'prospectus: NONE; not a gap (listed June 2022, >3y).'
+- 'research: NONE. No broker notes. No effect on anchored evidence.'
+- 'shareholding: FII/DII split not in the BSE summary text held; screener shows FII 3.92% + DII 10.55% = 14.47% at
+  Jun-2026 (non-anchored). UA institutional-absence qualifier (<3%) is not met on either reading.'
+- 'peer-concalls: PROTEAN Dec-2025 file is a business-update call (NSDL Payments Bank stake), not an earnings call;
+  QUICKHEAL has no Q3FY26 or Q1FY27 transcript on screener, so its set spans Feb-2025 to May-2026.'
+- 'EMPTY-FOLDER CONFIRMATION suppressed by /step1 autonomy contract: prospectus (not a gap) and research are empty;
+  standing answer "proceed with the gaps"; run degrades per the DEGRADATION MAP.'
+corpus_manifest_ref: outputs/reports/00-inputs.md (one row per PDF, issuer/type/period from page 1)
+flags: []
+analyst_note: 'Filings are in INR Million; screener in INR Cr. The rating freshness pair fails only because icra.in
+  blocks scripted retrieval; the June-2026 action was a reaffirmation, so the 2025 rationale is the latest full text.'

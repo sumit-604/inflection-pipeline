@@ -1,0 +1,46 @@
+```yaml
+stage: B02-notes-pass1
+company: "GOODLUCK"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+pass: 1
+status: complete
+notes_covered:
+  standalone: "Note 1 to Note 40 (full)"
+  consolidated: "Note 1 to Note 44 (full)"
+input_gaps:
+  - "GDAL rating rationale absent (freshness FAIL, HIGH) - carried from run brief"
+  - "shareholding aggregator only (MEDIUM) - carried from run brief"
+  - "screener sheets empty (LOW) - carried from run brief"
+  - "no research (LOW) - carried from run brief"
+  - "BALUFORGE no transcripts (MEDIUM) - carried from run brief"
+  - "GDAL minority investor identity and equity-issue pricing basis not disclosed in notes (Note 36/Consolidated SOCE)"
+  - "no actuarial assumption note for gratuity/compensated absence provisions (Note 15)"
+  - "no ECL matrix for trade receivables (Note 2I.1.IV / Note 8)"
+  - "no product/segment revenue disaggregation - single segment per Ind AS 108 (Note 35)"
+  - "no top customer concentration % disclosed"
+  - "no corporate guarantee to GDAL separately broken out in Note 33"
+flags:
+  - {type: FLAG-CASH, reason: "Inventory +29.1% YoY (Rs 809.13 Cr vs Rs 626.80 Cr) against 3.35% revenue growth; finished goods +28.0%; inventory days 65.49 to 74.79 (Note 7 p.157, Note 37 p.179)"}
+  - {type: FLAG-CASH, reason: "Net debt up Rs 160.51 Cr YoY (Rs 812.40 Cr to Rs 972.91 Cr), gearing 0.67x to 0.70x, OCF Rs 206.69 Cr short of capex Rs 231.67 Cr (Note 31.1 p.170, Cash Flow Statement p.146-147)"}
+  - {type: FLAG-SUBSIDIARY, reason: "Consolidated capital commitments Rs 363.06 Cr exceed standalone Rs 78.36 Cr by Rs 284.70 Cr, almost entirely a GDAL forward-capex commitment against GDAL net assets of Rs 183.07 Cr (Note 33 p.178/220, Note 38 p.221)"}
+  - {type: FLAG-DISCLOSURE, reason: "CSR shortfall of Rs 0.18 Cr disclosed in Note 36/40 contradicts CARO representation of full CSR spend with no unspent amount (Note 36 p.178-179 vs CARO annexure p.144)"}
+  - {type: FLAG-DISCLOSURE, reason: "Note 8 FY25 comparative trade-receivables ageing table is numerically identical to the FY26 table; prior-year ageing cannot be independently verified (Note 8 p.158)"}
+  - {type: FLAG-SUBSIDIARY, reason: "Loan/advance to GDAL grew 79.3% YoY to Rs 146.01 Cr (~10.9% imputed rate) while parent's equity investment in GDAL stayed flat (Note 32(iii)/Note 11 p.177/p.159-160)"}
+top_findings:
+  - {rank: 1, finding: "Inventory +29.1% YoY vs revenue +3.35%; finished goods +28.0%; inventory days 65.49 to 74.79", note_ref: "Note 7 p.157; Note 37 p.179", rating: "RED", why: "Largest cash-conversion divergence in the notes; funds much of the debt increase"}
+  - {rank: 2, finding: "Net debt up Rs 160.51 Cr YoY, gearing 0.67x to 0.70x, OCF short of capex by Rs 24.98 Cr", note_ref: "Note 31.1 p.170; Cash Flow Statement p.146-147", rating: "RED", why: "Debt-funded working capital and capex build, LBF3 priority"}
+  - {rank: 3, finding: "Consolidated capital commitments exceed standalone by Rs 284.70 Cr, almost entirely GDAL forward capex vs GDAL net assets of Rs 183.07 Cr", note_ref: "Note 33 p.178/220; Note 38 p.221", rating: "RED", why: "Scale of forward commitment vs current subsidiary balance sheet, LBF2 priority"}
+  - {rank: 4, finding: "CSR shortfall of Rs 0.18 Cr contradicts CARO full-spend representation", note_ref: "Note 36 p.178-179; CARO annexure p.144", rating: "RED", why: "Internal contradiction, low rupee materiality, high signal on drafting discipline"}
+  - {rank: 5, finding: "Note 8 FY25 comparative ageing table is identical to FY26 table", note_ref: "Note 8 p.158", rating: "RED", why: "Disclosure-integrity flag; prior-year receivables ageing trend cannot be verified"}
+  - {rank: 6, finding: "Loan to GDAL grew 79.3% YoY to Rs 146.01 Cr while equity investment stayed flat", note_ref: "Note 32(iii)/Note 11 p.177/p.159-160", rating: "YELLOW", why: "Parent increasingly debt-funding GDAL rather than equity-funding it, LBF2 priority"}
+  - {rank: 7, finding: "GDAL 79.43% owned; ~20.57% NCI stake from FY25 equity infusion, investor identity and pricing not disclosed", note_ref: "Note 36 p.220-221; Consolidated SOCE p.192", rating: "YELLOW", why: "Halt-1 verification item, LBF2 priority"}
+  - {rank: 8, finding: "Investment in subsidiaries at fair value through P&L drove one-off Rs 14.00 Cr FY25 gain on investment that did not recur in FY26", note_ref: "Note 2I.1.III p.152; Cash Flow Statement p.147", rating: "YELLOW", why: "FY25 PAT base flattered by non-recurring non-operating gain, affects YoY comparability"}
+  - {rank: 9, finding: "Promoter/KMP remuneration fell 45.1% YoY while PAT grew 7.2%; promoter shareholding rose 55.78% to 56.44% via warrant conversion", note_ref: "Note 32(ii) p.176; Note 12(ii) p.160-161", rating: "GREEN", why: "Capital discipline signal, LBF4 priority, constructive not a flag"}
+  - {rank: 10, finding: "No actuarial assumption note for gratuity/compensated absences and no ECL matrix for trade receivables", note_ref: "Note 15 p.164; Note 2F/2I.1.IV p.151-152", rating: "YELLOW", why: "Standard Ind AS disclosures absent for two sizeable balances (Rs 11.65 Cr provision, Rs 487.98 Cr receivables)"}
+receivables_trend: "stable - closing balance down 6.07% YoY (Rs 519.51 Cr to Rs 487.98 Cr) but Note 37 turnover days worsened 40.77 to 45.67 (+12.0%); Note 8 FY25 ageing table is a numeric duplicate of FY26, so ageing-bucket trend is unverifiable from the notes"
+going_concern_language: "NONE"
+pass_2_pending: true
+pass_3_pending: true
+analyst_note: "GDAL (79.43% owned) is the pivotal subsidiary: Rs 503.62 Cr assets on Rs 45.41 Cr turnover, funded increasingly by parent debt (Rs 146.01 Cr loan, +79.3% YoY) rather than fresh parent equity, against Rs 284.70 Cr of incremental consolidated capital commitments the notes do not itemise by contract or timeline. The FY25 minority equity infusion that created the 20.57% NCI stake has no disclosed investor or price. Parent-level cash conversion weakened this year (inventory +29.1% vs revenue +3.35%, net debt +Rs 160.51 Cr) independent of GDAL. Two disclosure-integrity items (identical-looking FY25/FY26 receivables ageing table; CSR shortfall vs CARO full-spend claim) warrant Pass 3 pattern confirmation before being treated as resolved."
+```

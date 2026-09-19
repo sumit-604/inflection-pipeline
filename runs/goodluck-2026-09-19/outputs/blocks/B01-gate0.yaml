@@ -1,0 +1,49 @@
+```yaml
+stage: B01-gate0
+company: "GOODLUCK"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "rating rationale for subsidiary GDAL absent (freshness FAIL, HIGH) -- carried from task inputs, not resolvable from this corpus"
+  - "shareholding is aggregator table (screener), not the BSE Reg 31 filing (MEDIUM)"
+  - "screener P&L/BS/CF/Quarters sheets exported empty; only Data_Sheet available (LOW) -- Data_Sheet itself confirmed consolidated and cross-verified against both ARs, so core scorecard numbers are not degraded, but source diversity is"
+  - "no research corpus provided (LOW) -- blocks all peer-dependent moat tests (M2, M5, M9) and part of M6"
+  - "BALUFORGE: no transcripts in corpus (MEDIUM) -- not load-bearing for Gate 0's quantitative formulas"
+  - "promoter pledge % not disclosed anywhere in AR2026 or the two rating rationales; scored 0 per no-estimate rule, not assumed 0%"
+  - "FY17-FY23 consolidated Balance Sheet (current/non-current split, Trade Payables) not in the provided corpus -- only 2 ARs provided, each with a 2-year comparative BS, so ROCE (Block A), Net Debt/EBITDA and IC (Block D), and the WC-days trend (B4) run on FY24-FY26 only (3 years) rather than the 10-year P&L/CF window"
+  - "R&D spend, distribution-network reach, and peer EBITDA/gross-margin benchmarks not in corpus -- blocks M2, M5, M6, M8, M9"
+flags:
+  - type: FLAG-GATE0
+    reason: "Classification AVERAGE (core 48/100). Depressors: Block B cash generation 4/20 (FCF negative all 3 measurable years FY24-26, cumulative FCF -Rs722.41 Cr vs cumulative PAT +Rs478.61 Cr in that window; WC days +19.5 FY24->FY26); Block D leverage 8/20 (Net Debt/EBITDA 2.69x and Interest Coverage 3.32x, both near the deal-breaker-6 AVOID threshold from opposite sides); Block E 6/20 (promoter holding down 2.45pp over ~32 months, pledge undisclosed, contingent liabilities 23.11% of net worth). Growth (Block C 17/20) is genuinely strong and not a depressor."
+  - type: FLAG-CASH
+    reason: "block_b_trend deteriorating -- FY24 CFO was -Rs45.93 Cr against PAT +Rs132.27 Cr; borrowings rose Rs612.04 Cr (FY24) to Rs1,119.46 Cr (FY26) funding a capex programme (Capex Rs196.39/490.96/347.63 Cr FY24-26) that operating cash has not yet covered. Matches company-memory LBF3."
+  - type: FLAG-LEVERAGE-WATCH
+    reason: "Net Debt/EBITDA 2.69x and Interest Coverage 3.32x both sit within 0.3-0.4x of the deal-breaker-6 AVOID trigger (ND/EBITDA>3x AND IC<3x) without crossing it. Not mechanically triggered; named for the operator to track as leverage keeps rising."
+  - type: FLAG-DATA-LIMITED
+    reason: "ROCE (Block A), Net Debt/EBITDA and Interest Coverage (Block D), and the WC-days trend (B4) are computed on FY24-FY26 only (3 years) because the provided corpus holds only two Annual Reports, each with a 2-year Balance Sheet comparative, and no pre-FY24 Balance Sheet. Not mechanically downgraded a tier since the shortfall is metric-specific (10-year data is intact for Blocks B1 and C); flagged for downstream awareness."
+data_years: 10
+fy_range: "FY17 to FY26"
+blocks: {A: 13, B: 4, C: 17, D: 8, E: 6}
+core_score: 48
+moat_score: 8
+grand_total: 56
+moats_confirmed: 2
+moat_class: "MODERATE"
+classification: "AVERAGE"
+deal_breakers:
+  - "#2 Block B (4/20) <8 -> caps classification at max GOOD; non-binding, natural classification (AVERAGE) already sits below the cap"
+history_downgrade: false
+data_notes:
+  - "screener Data_Sheet confirmed CONSOLIDATED (Total Assets, Borrowings, CFO, Capex, PBT, Interest, Depreciation, Other Income all tie to Rs0.01 Cr against AR2026/AR2025 consolidated statements)"
+  - "EBIT = PBT + Finance Cost (Other Income retained inside PBT, not stripped out) -- stated convention, no alternative formula substituted"
+  - "EBITDA for D1 = PBT + Finance Cost + Depreciation - Other Income; cross-checked against screener's quarterly Operating Profit sum for FY26 (Rs398.25 Cr vs derived Rs398.26 Cr) -- consistent"
+  - "No loss-to-profit PAT swing anywhere in FY17-FY26; PAT positive every year"
+  - "E2 promoter-holding change uses latest Aug 2026 (54.00%) vs nearest available prior point Dec 2023 (56.45%) -- the provided quarterly CSV starts Dec 2023, giving a ~32-month lookback, not a clean 36; stated as the nearest available anchor, not a true 3-year point"
+  - "E4 Net Worth uses Total Equity including non-controlling interest (Rs1,528.61 Cr), matching the AR's own convention for its D3 Debt/Equity ratio, for consistency across the two equity-denominator ratios"
+  - "Bonus issue allotted Aug-2026 changed share count; no per-share figure (EPS/BVPS) is required by this scorecard's formula set, so it was not computed and the share-basis question does not bind Gate 0"
+  - "M2, M5, M6, M8, M9 scored 0 as PEER DATA NEEDED / DISCLOSURE NEEDED -- no peer set, research corpus, R&D disclosure, or distribution-network data provided"
+  - "A4 ROCE trend: FY26 vs FY24 decline is 0.69pp, below the lower bound of the defined 1-3pp band (no band explicitly covers a sub-1pp decline); scored against the nearest defined band (1-3pp=3) as a documented edge case"
+block_b_trend: "deteriorating -- WC days +19.5 (85.3->104.7, FY24->FY26); FCF negative all 3 measurable years, cumulative FY24-26 FCF -Rs722.41 Cr vs cumulative PAT +Rs478.61 Cr"
+analyst_note: "Growth and cash generation are pulling in opposite directions. PAT CAGR (27.85%) beats revenue CAGR (15.81%) by 12pp with only 2 decline years in 9 -- a strong Block C. But the capex programme funding that growth (Rs196-491 Cr/yr, FY24-26) has outrun operating cash every year measurable: FCF is negative all 3 years and borrowings roughly doubled (Rs612 Cr to Rs1,119 Cr, FY24-26). Net Debt/EBITDA (2.69x) and Interest Coverage (3.32x) both sit close to the deal-breaker-6 AVOID line without crossing it -- worth a tripwire, not yet a halt. The AVERAGE classification is a Core-score-band outcome (48, in the flat 40-59 AVERAGE band), not a deal-breaker cap; Block B's own <8 breaker is non-binding here since AVERAGE already sits below its GOOD ceiling. ROCE, leverage ratios, and the WC-days trend run on a 3-year window (FY24-26 only) because the corpus holds no pre-FY24 consolidated Balance Sheet -- treat Block A and D as thinner evidence than Block C's full 10-year base."
+```

@@ -1,0 +1,53 @@
+stage: B12b
+company: "RAPPID"
+run_date: "2026-09-19"
+model: "claude-opus-5"
+status: complete
+independent_flags_found: 27
+caught: 10
+partially_caught: 9
+missed:
+  - {severity: "MAJOR", item: "CMD misstated FY26 capex as ~Rs 3.65 Cr then retracted; audited capex Rs 179.4 L; 3.65 Cr equals unspent IPO capex balance (Rs 364.51 L); current capex funded by bank WC loan while IPO capex money moved to WC", anchor: "Concall_Jun_2026 p.12, p.22; 27May2026 results p.10; 21Mar2026 board outcome Annexure I"}
+  - {severity: "MAJOR", item: "FY26 results note attributes WC build to 'execution of higher order volumes' while revenue +2.1% and CMD says Rs 10 Cr material held undispatched; CFO -Rs 1,082.6 L", anchor: "27May2026 results p.9-10; Concall_Jun_2026 p.5-6"}
+  - {severity: "MAJOR", item: "Rs 119 Cr GeM bid pipeline (Oct-2025) never reported on; deck shows Rs 90 Cr quoted (Mar-2026); call gives PSU bids Rs 40-50 Cr with Rs 8-10 Cr won", anchor: "16Oct2025 GBU p.1; 09Mar2026 deck p.3; Concall_Jun_2026 p.26"}
+  - {severity: "MAJOR", item: "Peer timing tension: KSB treats commodity spike as prospective in Mar-2026; Rappid dates its shock to H2 FY26 while its order book already fell by Sep-2025 [INFERENCE; ferrous-peer caveat]", anchor: "KSB-Concall_Mar_2026 p.9; KSB-Concall_Aug_2026 p.24; 16Oct2025 GBU p.1"}
+  - {severity: "MINOR", item: "Export/data-centre narrative drift: CMD 'not trying to focus on export' and 'not scouted' Indian data centres vs export-dedicated unit and AR intent to pursue data-centre cooling; B05 lists data centres as dropped", anchor: "Concall_Jun_2026 p.10, p.28; 16Oct2025 GBU p.4; AR 2026 p.24"}
+  - {severity: "MINOR", item: "No raw-material hedge; hedging needs Rs 15-20 Cr WC, so the FY26 excuse can repeat", anchor: "Concall_Jun_2026 p.26"}
+  - {severity: "MINOR", item: "KSB confirms domestic project business runs without PVC clause (corroborates Rappid PSU claim); B06 says peers silent", anchor: "KSB-Concall_Mar_2026 p.9-10"}
+  - {severity: "MINOR", item: "KSB gives 3-5% content share of project value for pumps incl. marine; B06 says no peer gives a share", anchor: "KSB-Concall_Aug_2026 p.25-26"}
+pipeline_flags_not_supported:
+  - "B06 FLAG-MARGIN-CONTRADICTION: compares Quest Flow EBITDA 23-25% with Rappid PAT 12.17% (Rappid EBITDA is 19.4%, AR 2026 p.6); CMD never framed 12% as structural (Concall p.13). Like-for-like gap is ~2.5-5.5 pts, not 'double'"
+  - "B05 2C over-promotion evidence misreads Concall p.4: 'not something ... would have expected, but there's a reasonable reason' is an admission, not a positive-surprise framing"
+  - "B05 4D/2A Jul-2025 'further acceleration' graded MISSED/High: OVERSTATED, since Q2 FY26 ~Rs 17.19 Cr vs Q1 Rs 11.63 Cr accelerated before H2 fell; correct grade MIXED"
+promise_delivery_spot_checks: {checked: 5, confirmed: 4, wrong: 1}
+credibility_grade_concur: "concur at C: missed capex, WC and pipeline items lean lower; the overgraded Jul-2025 item and the H1 FY26 +46.9% print lean higher; net C holds"
+findings:
+  - {severity: "MAJOR", location: "B05 (absent)", claimed: "no capex-funding flag", source_truth: "CMD Rs 3.65 Cr vs audited Rs 179.4 L; capex on bank WC loan while IPO capex moved to WC", note: "MISSED; Concall p.12, p.22; results p.10"}
+  - {severity: "MAJOR", location: "B05 2D", claimed: "negative CFO noted only as AR risk silence", source_truth: "results note says WC build from 'higher order volumes' vs +2.1% revenue and held inventory", note: "MISSED; results p.9-10"}
+  - {severity: "MAJOR", location: "B05 3D", claimed: "pipeline not tracked", source_truth: "Rs 119 Cr GeM bids (Oct-2025) with no outcome disclosed", note: "MISSED; 16Oct2025 GBU p.1"}
+  - {severity: "MAJOR", location: "B06 2B", claimed: "KSB matches direction of Rappid commodity narrative", source_truth: "KSB treats the spike as prospective in Mar-2026; timing does not back an Oct-2025 start", note: "MISSED; inference with ferrous caveat"}
+  - {severity: "MAJOR", location: "B06 flags / Part 4", claimed: "Quest Flow margin roughly double Rappid ~12%; CMD framed 12% as structural", source_truth: "Rappid EBITDA 19.4%, PAT 12.17%; CMD said he wants to improve from 12%", note: "NOT SUPPORTED as framed; basis mismatch"}
+  - {severity: "MAJOR", location: "B05 4D", claimed: "WC stress not in red-flag table", source_truth: "'no working capital is enough', 50% supplier advances, funding need in 4-5 months, ST debt Rs 841.4 L to Rs 1,784.3 L", note: "PARTIALLY CAUGHT"}
+  - {severity: "MAJOR", location: "B05 3D", claimed: "order-book figures listed", source_truth: "definitions shift (PO/LOI/carry-forward/executable/confirmations) and do not reconcile after the BHEL Rs 18.05 Cr win", note: "PARTIALLY CAUGHT"}
+  - {severity: "MAJOR", location: "B05 3D, 4A", claimed: "Praj as repricing trigger", source_truth: "Praj Rs 13-14 Cr/yr, ~24-26% of FY26 revenue, ARC under renegotiation", note: "PARTIALLY CAUGHT; concentration unflagged"}
+  - {severity: "MINOR", location: "B05 2A row 4, 4D", claimed: "Jul-2025 acceleration MISSED (High)", source_truth: "Q2 FY26 ~Rs 17.19 Cr vs Q1 Rs 11.63 Cr; H2 -24.9%", note: "OVERSTATED; tally becomes 1/2/2"}
+  - {severity: "MINOR", location: "B05 2C", claimed: "positive-surprise framing of 2.1% growth", source_truth: "Concall p.4 admits shortfall", note: "quote misread"}
+  - {severity: "MINOR", location: "B05 2E", claimed: "two analysts pressed capacity math", source_truth: "only Nishita Shanklesha pressed the arithmetic (p.11)", note: "overstated"}
+  - {severity: "MINOR", location: "B05 1C, 2A", claimed: "17-Apr-2026 EGM", source_truth: "approval by postal ballot, results 30-Apr-2026", note: "company filing error transcribed"}
+  - {severity: "MINOR", location: "B05 1C", claimed: "domestic data-centre dropped", source_truth: "AR 2026 p.24 names data-centre cooling as intended", note: "MISSED narrative drift, with export-focus contradiction"}
+  - {severity: "MINOR", location: "B05 (absent)", claimed: "", source_truth: "no hedging; Rs 15-20 Cr WC needed to hedge", note: "MISSED; Concall p.26"}
+  - {severity: "MINOR", location: "B05 3B", claimed: "PSU no clause, private clause", source_truth: "within-call reversal p.6 vs p.16", note: "PARTIALLY CAUGHT"}
+  - {severity: "MINOR", location: "B05 1C", claimed: "repeat VMC/bench announcements", source_truth: "Mar-2026 install dates missed; counts drift 4 to 5 to 6 benches, 1 to 2 VMCs", note: "PARTIALLY CAUGHT"}
+  - {severity: "MINOR", location: "B05 3B", claimed: "20 warships unverified", source_truth: "FSS 'all the valves' and 90% foundry-dedication claims also unverifiable", note: "PARTIALLY CAUGHT"}
+  - {severity: "MINOR", location: "B05 4C", claimed: "GBU relabel, CS churn", source_truth: "also PIT correction, NSE segment query, ballot corrigendum, results-note mislabels", note: "PARTIALLY CAUGHT"}
+  - {severity: "MINOR", location: "B05 4B Q1", claimed: "PSU receivables handed to peers", source_truth: "'I would not use the word delay'; Rs 207.1 L over 6 months", note: "PARTIALLY CAUGHT"}
+  - {severity: "MINOR", location: "B06 Claim 1", claimed: "no peer discusses escalation clause", source_truth: "KSB Mar-2026 p.9-10 domestic project business without PVC", note: "MISSED corroboration"}
+  - {severity: "MINOR", location: "B06 Claim 4", claimed: "no peer gives content share", source_truth: "KSB Aug-2026 p.25 pumps 3-5% of project value", note: "MISSED"}
+  - {severity: "MINOR", location: "B06 Claim 2", claimed: "Meson margins used", source_truth: "Meson: <5% of Indian valve makers non-ferrous, non-ferrous better margins", note: "PARTIALLY CAUGHT; niche corroboration unused"}
+critical_count: 0
+major_count: 8
+minor_count: 14
+material_found: 14
+material_caught: 10
+acceptance_rate: 71
+coverage_basis: "14 material of 27 listed; 7 caught fully + 3 partially caught = 10 counted as caught (pipeline had them, under-weighted); strict full-catch rate 7/14 = 50%. Company call read in full; peer set 8 transcripts read by targeted search, not cover to cover"

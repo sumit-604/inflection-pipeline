@@ -16,3 +16,7 @@ Run: runs/rappid-2026-09-19 | Phase 1 executed 2026-09-19 via /step1
 | 6 | peer concalls | sonnet | agent default | - | - | 178576 | 7m40s | 1 |
 | 7 | emerging moat | sonnet | agent default | - | - | 239916 | 10m16s | 1 |
 | 9 | TAM | sonnet | agent default | - | - | 178863 | 15m28s | 1 |
+| 12a | verifier A | haiku | agent default | - | - | 88441 | 3m39s | 1 |
+| 12b | verifier B | opus | agent default | - | - | 204682 | 8m25s | 1 |
+| 12c | verifier C (phase 1 scope) | opus | agent default | - | - | 120668 | 4m54s | 1 |
+| 12d | verifier D | sonnet | agent default | - | - | 111919 | 6m04s | 1 |

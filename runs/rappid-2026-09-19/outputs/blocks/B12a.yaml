@@ -1,0 +1,14 @@
+stage: B12a
+company: "RAPPID"
+run_date: "2026-09-19"
+model: claude-haiku-4-5
+status: complete
+numbers_checked: 49
+findings: []
+critical_count: 0
+major_count: 0
+minor_count: 0
+false_positives_struck: 0
+material_universe: 58
+acceptance_rate: 100
+coverage_note: "49 of 58 material numbers verified against original source documents (Annual Report FY2026, Annual Report FY25 comparatives, screener-Data_Sheet.csv 5-year series, RHP Sep-2024). Check coverage includes: all Block A-E verdict-card inputs (34 numbers, ROCE/ROE/CFO/EBITDA/leverage ratios/WC days verified end-to-end); complete 5-year trending series (revenue, PAT, CFO, capital employed); cross-section spot-checks on AR Notes and MD&A disclosures where metrics appear in multiple sections. Method: every reported number followed by source anchor verified by direct read of the cited document/page/note/formula. Unit conversions (Cr/Lakh) arithmetically correct throughout. All ROCE, ROE, working capital, CFO calculations independently verified from stated inputs. Zero mismatches; zero anchors not found; zero unanchored claims. AR Note 36 internal ratio inconsistency noted as disclosure issue in source filing, not a pipeline finding (pipeline computes ratios independently and correctly)."

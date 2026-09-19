@@ -1,0 +1,101 @@
+stage: B05-concall
+company: "SUSAN"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Only ONE earnings-call transcript exists (Q1 FY27, quarter ended 30-Jun-2026, filed BSE 22-Aug-2026); no Q2/Q3/Q4 transcripts to build cross-quarter chronology. Promise-vs-delivery built instead from RHP (08-Jun-2026), post-listing decks (23-Jun, 19-Aug, 05-Sep-2026), Q1 press releases (14-Jul, 14-Aug-2026), Monitoring Agency Report (12-Aug-2026) and AR FY26 Chairman's Message, each checked against the Q1 FY27 results/transcript."
+  - "Analyst-meet outcome filings (24-Jun-2026, 20-Aug-2026) carry only attendee lists / audio-link submission, no additional substantive content beyond the decks and transcript already read."
+flags:
+  - {type: FLAG-MARGIN-QUALITY, reason: "Q1 FY27 'Changes in Inventories of Finished Goods' credit of Rs 932.66 Lakh is ~82% of reported Operating Profit (Rs 1,137.34 Lakh); stripping it flips Q1 PBT (Rs 858.22 Lakh) to a small loss (~Rs -74 Lakh). Same mechanism B02 flagged at FY26 annual level (Rs 12.54 Cr inventory-build credit inside AR 'EBITDA'). Not disclosed as such by management, not probed by analysts."}
+  - {type: FLAG-GUIDANCE-INCONSISTENCY, reason: "HT/MVCC FY27-end revenue-share target stated as ~15% (opening script, transcript p.3) and ~50% (Q&A answer to Question 4, same call, transcript p.6-7). LBF4 names the ~50% figure; the ~15% figure printed in the same call is a genuine internal inconsistency, not resolved on the record."}
+quarters_analysed: ["Q1 FY27"]
+no_concall_mode: false
+single_transcript_mode: true
+single_transcript_note: >
+  concalls_available is TRUE (one transcript exists) but only one quarter
+  has been called since listing (18-Jun-2026): Q1 FY27, call held
+  19-Aug-2026, transcript filed 22-Aug-2026. No promise-then-delivery pair
+  exists inside the transcript corpus itself. Section 2A is instead built
+  from RHP/AR/press-release/deck/Monitoring-Agency guidance checked against
+  the Q1 FY27 print and transcript. Per the NO-CONCALL degraded rule,
+  credibility_grade is capped at C by default and may rise to B only on
+  documented delivery evidence; it never reaches A in this mode.
+triggers:
+  - {priority: 1, name: "Capacity expansion 7,500 to 12,000 km/yr live by Feb-2027", type: "VOLUME", timeframe: "near (8mo from call)", conviction: "M", confirm_signal: "CWIP appears/grows in Q2/Q3 FY27 filings; capex utilisation vs Rs 10.30 Cr object accelerates past current 11.7%", kill_signal: "Zero/negligible CWIP still at Q3 FY27; Monitoring Agency flags deviation or delay"}
+  - {priority: 2, name: "HT/MVCC revenue share climbs materially from Q1 FY27 base of 7.11%", type: "PRICE-MIX", timeframe: "near-medium (FY27)", conviction: "L", confirm_signal: "Q2/Q3 FY27 product-mix tables show clear, accelerating climb toward either stated target (15% or 50%)", kill_signal: "Share stalls near 7-10% through FY27; 50% claim quietly dropped without explanation"}
+  - {priority: 3, name: "Operating margin holds/improves without relying on large inventory-build credit", type: "PRICE-MIX/COST", timeframe: "near (Q2 FY27)", conviction: "L", confirm_signal: "Q2 FY27 'Changes in Inventories' much smaller relative to Operating Profit than Q1's ~82% ratio", kill_signal: "Q2/Q3 FY27 repeats or worsens the same ratio"}
+  - {priority: 4, name: "Order book (Rs 142.39 Cr) converts to booked revenue on stated ~3-month timeline", type: "VOLUME", timeframe: "near (by ~Q2 FY27 close)", conviction: "M", confirm_signal: "Q2 FY27 revenue growth holds near Q1 pace; receivable/inventory days do not deteriorate further", kill_signal: "Revenue growth decelerates sharply and/or order book rolls forward largely unexecuted"}
+  - {priority: 5, name: "Cash conversion turns positive after two years negative (FY25, FY26)", type: "COST", timeframe: "medium (needs 2+ quarters)", conviction: "L", confirm_signal: "Published/inferable CFO turns positive for 2+ consecutive quarters", kill_signal: "CFO stays negative through FY27 despite rising PAT"}
+  - {priority: 6, name: "Aluminium-rod trading line (26.8% of FY26 revenue) shrinks genuinely or is explained/reclassified", type: "REGULATORY-POLICY/COST", timeframe: "near (Q2 FY27)", conviction: "L", confirm_signal: "Management or a filing explains the Q1 FY27 collapse of the trading line from ~27% to ~2.8% of revenue", kill_signal: "Line reappears unexplained, or reclassification obscures like-for-like comparison"}
+guidance:
+  - {item: "Capacity", number: "7,500 km/yr to 12,000 km/yr (+60%)", timeframe: "commercial ops from Feb-2027", stated_in: "RHP 08-Jun-2026; 23-Jun-2026 deck; 14-Jul-2026 PR; 14-Aug-2026 PR; Q1 FY27 call"}
+  - {item: "Capex (Unit III project, IPO-funded object)", number: "Rs 1,080.96 Lakh total (Rs 1,029.49 Lakh from Net Proceeds)", timeframe: "up to FY 2026-27", stated_in: "RHP 08-Jun-2026; Monitoring Agency Report 12-Aug-2026"}
+  - {item: "FY27 total capex (company-wide)", number: "Rs 15-20 Cr", timeframe: "FY27", stated_in: "Q1 FY27 call, Q5"}
+  - {item: "Working capital object", number: "Rs 3,300 Lakh (Rs 33.00 Cr)", timeframe: "FY 2027-28", stated_in: "RHP 08-Jun-2026; Monitoring Agency Report 12-Aug-2026"}
+  - {item: "Unexecuted order book", number: "Rs 142.39 Cr", timeframe: "execute over ~3 months from 30-Jun-2026", stated_in: "14-Jul-2026 PR; 14-Aug-2026 PR; Q1 FY27 call"}
+  - {item: "Active order pipeline", number: "Rs 150 Cr", timeframe: "not dated", stated_in: "14-Jul-2026 PR; 14-Aug-2026 PR; Q1 FY27 call"}
+  - {item: "HT/MVCC revenue share target (version A)", number: "~15% by year-end FY27", timeframe: "FY27 year-end", stated_in: "Q1 FY27 call opening script"}
+  - {item: "HT/MVCC revenue share target (version B)", number: "~50% by end of FY27", timeframe: "FY27 year-end", stated_in: "Q1 FY27 call, Q&A answer to Question 4"}
+  - {item: "HT/MVCC product-level margin potential", number: "~20% (or 20-25%)", timeframe: "not dated", stated_in: "Q1 FY27 call, Q3 answer"}
+  - {item: "Blended operating margin", number: "~11.9%", timeframe: "Q1 FY27", stated_in: "Q1 FY27 call; 14-Aug-2026 PR"}
+  - {item: "Segment EBITDA margins", number: "LT/conductors ~6.5%; HT ~7%; winding wire ~24.39%", timeframe: "Q1 FY27", stated_in: "Q1 FY27 call, Q1 answer"}
+promise_delivery:
+  delivered: 1
+  partial: 2
+  missed: 1
+  rows:
+    - {promised_in: "RHP 08-Jun-2026 (Objects of the Offer + business strategy); repeated 23-Jun-2026 deck, 14-Jul-2026 PR", promise: "Capacity 7,500 to 12,000 km/yr by Feb-2027, funded mainly by Rs 1,029.49 Lakh IPO capex object", outcome: "PARTIAL", explanation: "Monitoring Agency (12-Aug-2026): only Rs 1.20 Cr of Rs 10.30 Cr object utilised by 30-Jun-2026 (11.7%); delay column reads 'Ongoing/None'. Feb-2027 date reaffirmed at call and in both decks. Directionally on track per filings; capital deployed so far is thin against 8-month runway. None volunteered on the call; not asked."}
+    - {promised_in: "RHP 08-Jun-2026 (line 5969); Monitoring Agency schedule (FY27-28 completion)", promise: "Rs 33.00 Cr of Net Proceeds for working capital", outcome: "PARTIAL", explanation: "Rs 13.64 Cr utilised (41.3%) by 30-Jun-2026, ahead of the capex object's pace. None asked/given on the call."}
+    - {promised_in: "RHP business strategy (qualitative, no %); AR FY26 Chairman's Message 27-Jul-2026", promise: "Shift toward HT/MVCC and higher-margin products", outcome: "DELIVERED (directionally, small base)", explanation: "HT+MVCC revenue share rose from 2.07% (Q1 FY26) to 7.11% (Q1 FY27) per 14-Aug-2026 PR product table; real, but far from either FY27-end target (15% or 50%) set only at the Q1 call itself."}
+    - {promised_in: "AR FY26 Chairman's Message 27-Jul-2026, p.13", promise: "'Reinforcing our global distribution network'; 'delivering innovative engineering solutions'", outcome: "MISSED", explanation: "Same Annual Report's Board's Report states zero foreign exchange earnings and outgo during the year, and that no technology-absorption agreement was entered into (per B03-ardeep). Chairman's claim and the Board's own factual disclosure directly contradict each other within one document; never reconciled."}
+excuse_pattern: "deflection-lite"
+repeated_evasions: []
+credibility_grade: "C"
+credibility_basis: >
+  Single-quarter, written-document promise-delivery test (one transcript
+  only): capacity and working-capital IPO objects show real but early
+  utilisation with no Monitoring Agency deviation flagged (mild positive);
+  set against an internally inconsistent headline HT/MVCC target (~15% vs
+  ~50% inside the same call), a Q1 operating-profit figure ~82% dependent
+  on an undisclosed finished-goods inventory-build credit, a segment-margin
+  arithmetic that does not cleanly reconcile to the reported blended
+  margin, zero mention of a two-year negative-CFO history the call never
+  addressed, and one AR-level promotional claim directly contradicted by
+  the same document's own factual disclosure. Per the NO-CONCALL degraded
+  rule this evidence set does not clear the bar for B; grade stays at the
+  C default.
+peer_questions:
+  - {question: "Are LT-cable EBITDA margins in the 6-7% range typical for discom/EPC-tender-driven LT cable makers right now, or is Susan's ~6.5% low/high relative to peers?", why: "Tests whether Susan's disclosed LT segment margin is a company-specific weakness or a sector-wide tender-pricing reality (LBF1).", check_peers: ["DYCL", "DIACABS"]}
+  - {question: "What HT-cable and MVCC-cable EBITDA margins are peers reporting or guiding to, and do any peer managements independently corroborate a ~20% (or 20-25%) product-level margin potential for HT/MVCC?", why: "Directly tests Susan's single largest margin-expansion claim.", check_peers: ["DYCL", "DIACABS", "VIDYAWIRES"]}
+  - {question: "How do peers describe aluminium (and copper) input-price pass-through mechanisms on discom/EPC tender contracts?", why: "Susan's own answer (Q13) was generic ('monitored closely'); peers may name an actual mechanism that supports or contradicts Susan's implied protection.", check_peers: ["DYCL", "DIACABS", "VIDYAWIRES"]}
+  - {question: "What discom/state-utility payment terms (DSO, receivable ageing) are peers reporting, and do they describe payment delays or improvements from RDSS-linked tenders specifically?", why: "Tests Susan's ~50:50 government/private order-book mix and whether that skew is a receivables risk.", check_peers: ["DYCL", "VIDYAWIRES"]}
+  - {question: "What lead times and ramp-up periods do peers report between capacity-expansion capex and revenue contribution, for LT/HT cable lines specifically?", why: "Benchmarks whether Susan's Feb-2027 commissioning-to-scale timeline, and the thin capex spend so far, is realistic.", check_peers: ["DYCL", "DIACABS"]}
+  - {question: "Do any peers cite winding-wire spreads near Susan's disclosed ~24.39%, and is that typical for a legacy product line being deliberately deprioritised?", why: "Tests whether Susan's highest-margin segment is sector-normal or an outlier requiring scrutiny.", check_peers: ["VIDYAWIRES"]}
+  - {question: "What RDSS/reconductoring order-inflow growth rates and tender bid-to-award conversion rates are peers citing?", why: "Tests Susan's ~15-20% conversion assumption on Rs 800-1,200 Cr of regular bidding, the largest unbooked-pipeline assumption in the trigger list.", check_peers: ["DYCL", "DIACABS", "VIDYAWIRES"]}
+  - {question: "Have any peers described a large trading (bought-and-resold, non-manufactured) revenue line similar in scale to Susan's FY26 aluminium-rod trading (26.8% of revenue), and how do they treat its margin and disclosure?", why: "Benchmarks whether Susan's trading-line scale and its near-disappearance in Q1 FY27 is unusual for the sector or recognised practice.", check_peers: ["DYCL", "DIACABS", "VIDYAWIRES"]}
+red_flags:
+  - "HT/MVCC FY27-end revenue-share target given as two different numbers (~15% vs ~50%) within the same call -- HIGH severity"
+  - "Q1 FY27 operating profit (Rs 1,137.34 Lakh) includes a finished-goods inventory-build credit of Rs 932.66 Lakh (~82% of the line); stripping it flips PBT to a small loss -- HIGH severity, undisclosed as such, unprobed"
+  - "Disclosed segment margins do not cleanly reconcile, on the disclosed revenue mix, to the reported blended 11.9% margin (~0.8-0.9 point gap) -- MEDIUM severity"
+  - "Cash conversion (two years negative CFO per B02/B03) not mentioned once on the call, not asked about -- MEDIUM severity"
+  - "FY26's largest single revenue driver, aluminium-rod trading (26.8% of FY26 revenue), appears to collapse to ~2.8% of Q1 FY27 revenue with no explanation offered or sought -- MEDIUM severity"
+  - "Capex on the RHP-designated Unit III expansion object only Rs 1.20 Cr of Rs 10.30 Cr (11.7%) utilised as of 30-Jun-2026 against a Feb-2027 commissioning target -- MEDIUM severity (no formal deviation flagged by Monitoring Agency, but pace is thin)"
+  - "AR Chairman's Message claims ('global distribution network', 'innovative engineering solutions') directly contradicted by the same Annual Report's Board's Report (zero forex earnings/outgo; no technology-absorption agreement) -- LOW-MEDIUM severity"
+dropped_triggers: []
+timeline_slippages: []
+analyst_note: >
+  This stage ran in a hybrid mode: one real transcript (Q1 FY27) plus a
+  written pre/post-listing document set standing in for the missing
+  cross-quarter chronology. The most load-bearing new finding is the Q1
+  FY27 finished-goods inventory-build credit (Rs 932.66 Lakh against
+  Rs 1,137.34 Lakh operating profit): it is the same mechanism B02 flagged
+  at FY26 annual level, now visible one quarter into the post-listing
+  record, and it is the best available answer to LBF1's "what produced the
+  12%" question. The HT/MVCC 15%-vs-50% inconsistency is LBF4's most
+  direct test point; downstream stages should treat ~50% as management's
+  stated target (per the task brief) while carrying the ~15% figure as an
+  open credibility flag. Capex and working-capital IPO-proceeds utilisation
+  (Monitoring Agency Report) gave the cleanest, most independently-sourced
+  delivery evidence available this quarter; it is real but early, and nowhere
+  near sufficient by itself to lift the grade above the NO-CONCALL C default.

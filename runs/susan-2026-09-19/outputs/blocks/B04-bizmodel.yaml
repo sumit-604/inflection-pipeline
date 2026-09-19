@@ -1,0 +1,77 @@
+stage: B04-bizmodel
+company: "SUSAN"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Investor presentation carries no product/segment-level EBITDA figures; management-cited LT ~6.5% / HT ~7% segment EBITDA (from COMPANY MEMORY, web-sourced) does not appear in AR, RHP or the three investor decks read at this stage"
+  - "Peer financial/scale data for named competitors (Prime Cable Industries, Divine Power Energy, V-Marc India, JD Cables) NOT FOUND; RHP names them only, no comparative figures"
+  - "Raw-material price pass-through or escalation clause in DISCOM rate contracts NOT FOUND in the corpus"
+  - "Counterparty identities behind FY26 aluminium rod trading line and FY25's single 35.53%-of-revenue customer remain anonymised in the RHP"
+flags:
+  - {type: FLAG-BIZMODEL, reason: "Trading of raw aluminium rod/wire/ingot is 38.38% of FY26 revenue with the RHP's own words describing it as low-margin, competitive, with entry barriers relatively low (RHP p.24); this slice should be evaluated separately from the manufacturing engine at valuation (SOTP candidate, Section 4B tertiary)"}
+  - {type: FLAG-BIZMODEL, reason: "Repeat-customer revenue share fell from 89.47% (FY24) to 84.87% (FY25) to 45.09% (FY26), RHP p.132 KPI table; runs counter to a durable customer-relationship moat and should be watched, not assumed to self-correct"}
+  - {type: FLAG-BIZMODEL, reason: "AR highlights page (p.5) labels PBT (Rs 24.62 Cr, 9.14%) as EBITDA; true EBITDA is Rs 32.08-32.69 Cr (11.91-12.1%) per RHP KPI table and AR Notes 21/23/24; any downstream use of the AR's own 'EBITDA' line will misstate margin"}
+data_years: 3
+fy_range: "FY24 to FY26 (RHP restated); Q1 FY27 as latest quarter"
+business_type: "hybrid"
+revenue_streams:
+  - {name: "Manufactured cables, wires and conductors (LT/HT/MVCC + winding wire/strip)", type: "manufacturing", pct_of_revenue: 59.71, predictability: "M"}
+  - {name: "Traded aluminium rod/wire/ingot", type: "trading", pct_of_revenue: 38.38, predictability: "L"}
+  - {name: "Job work services + other operating revenue (freight/scrap)", type: "services", pct_of_revenue: 1.91, predictability: "M"}
+asset_intensity: "medium"
+wc_intensity: "high"
+pricing_power: "weak"
+cyclicality: "cyclical"
+moats_present:
+  - {moat: "Regulatory/licence (BIS product licences + multi-state DISCOM vendor registration)", durability: "medium, real but replicable by any competitor investing in certification and time"}
+  - {moat: "Efficient scale (self-claimed Top 20 wire and cable player)", durability: "low, unverified by independent data"}
+valuation_methods:
+  primary: {method: "P/E on normalized EPS", why: "Earnings-based business; PAT must be normalized for the FY26 inventory-build credit and trading-segment swing before use"}
+  secondary: {method: "EV/EBITDA on normalized EBITDA (RHP KPI-table figure, not AR highlights-page PBT)", why: "Captures rising net debt (borrowings +47.4% to Rs 66.72 Cr) that P/E alone misses"}
+  tertiary: {method: "SOTP (manufacturing/cable core vs trading slice)", why: "Trading is 38% of FY26 revenue at low value-add with explicitly low entry barriers (RHP p.24); flagged for Stage 11 per v3.11 Amendment 27.2/27.4"}
+  not_applicable:
+    - "DCF (cash conversion negative 3 straight years; capacity ramp unproven, zero CWIP at FY26 close)"
+    - "P/B (net worth base about to be structurally reset by IPO fresh-issue proceeds; pre/post-IPO book value not comparable)"
+    - "Dividend yield / DDM (no dividend history, growth-stage capital allocation)"
+    - "Replacement-cost / asset-based (not a scarce-fixed-capacity NAV story; capacity is being actively added)"
+irrelevant_ratios:
+  - {ratio: "Consolidated gross margin", why: "Blends an 87%-raw-material manufacturing business with a near-zero-value-add 38% trading line; hides which engine is actually improving"}
+  - {ratio: "5-year revenue/PAT CAGR", why: "Base-effect artifact off a near-zero FY21 PAT (Rs 0.08 Cr); not a repeatable operating-leverage signal"}
+  - {ratio: "Trailing RoE/RoCE (64.64%/29.05% FY26)", why: "Denominator about to be reset by IPO fresh-issue proceeds (Rs 60.22 Cr); pre/post-IPO ratio not comparable"}
+  - {ratio: "AR highlights-page 'EBITDA' (Rs 24.62 Cr, p.5)", why: "This is actually PBT; true EBITDA is Rs 32.08-32.69 Cr per RHP KPI table"}
+must_track_metrics:
+  - {metric: "HT + MVCC % of quarterly revenue", healthy: "rising toward ~50% by end-FY27 guidance", red_flag: "flat or falling vs prior quarter"}
+  - {metric: "CFO / CFO-PAT ratio", healthy: "CFO positive, tracking PAT", red_flag: "third consecutive year of negative CFO"}
+  - {metric: "Net working-capital days", healthy: "falling from the FY25 123.58-day peak", red_flag: "rising again toward or past the FY25 peak"}
+  - {metric: "MSME payables % of trade payables", healthy: "falling from 90.9% FY26", red_flag: "rising further past 90.9%"}
+  - {metric: "Order book + active pipeline (Rs Cr)", healthy: "growing from Rs 292 Cr (30-Jun-26)", red_flag: "shrinking quarter on quarter"}
+unit_economics:
+  unit: "1 tonne of manufactured winding wire (aluminium + copper blended, Unit-I output)"
+  revenue_per_unit: "~Rs 2.59 Lakh/tonne FY26 (derived: AR Note 18 winding Al+Cu wire/strip manufactured revenue Rs 4,908.25L / RHP-certified Unit-I actual production 1,893 tonnes FY26; blended figure, not a disclosed per-product price)"
+  margin_per_unit: "NOT FOUND -- no segment- or product-level cost disclosed in AR or RHP"
+  key_lever: "Mix shift from winding wire to LT/HT/MVCC cable claimed to raise EBITDA per unit (Sep-2026 deck p.7,p.14); unverified quantitatively, no segment EBITDA disclosed"
+first_deterioration_signals:
+  - {risk: "Trading-line dependency (38% of revenue, low margin, low barrier)", first_signal: "Traded-products revenue line falling faster than manufactured revenue rises (AR Note 18)"}
+  - {risk: "HT/MVCC ramp not materialising on schedule", first_signal: "HT+MVCC % of quarterly product-mix table staying flat (deck p.14)"}
+  - {risk: "Metal price volatility, no disclosed hedging", first_signal: "Change-in-inventories line turning from a credit to a drawdown while gross margin holds flat or falls"}
+  - {risk: "Negative CFO / debt-funded growth", first_signal: "CFO staying negative in the next Cash Flow Statement"}
+  - {risk: "Capacity-execution risk (zero CWIP at FY26 close)", first_signal: "CWIP still zero in the next 1-2 quarterly results"}
+mgmt_questions:
+  - "What was the segment-level EBITDA margin for LT cables, HT/MVCC cables and winding wire separately in FY26 and Q1 FY27?"
+  - "Why did operating cash flow stay negative for a third straight year even as PAT rose sharply, and what is the unwind timeline?"
+  - "What is the current status of capex for the 7,500-to-12,000 km/yr expansion, given zero CWIP and nil capital commitments at 31-Mar-2026?"
+  - "Who are the counterparties behind the FY26 aluminium rod trading line and the FY25 customer that alone was 35.53% of that year's revenue?"
+  - "What is the resolution status of the GST search-and-seizure matter, and why did the AR describe it only as a routine demand notice?"
+  - "Is there any raw-material price pass-through or escalation clause in DISCOM rate contracts?"
+  - "Why has repeat-customer revenue fallen from 89.47% (FY24) to 45.09% (FY26)?"
+one_line_verdict: "Winding-wire trader in cable clothing, real margin ramp, cash conversion still unproven."
+analyst_note: >
+  Business type is genuinely hybrid, not a clean order-book or converter archetype: 38% of FY26
+  revenue is unprocessed aluminium-rod resale that the company's own RHP calls low-margin and
+  low-barrier. The one evidenced moat (BIS/vendor-registration) sits in the cable segment the
+  company is trying to grow into, not the segment (winding wire, trading) it is trying to grow out
+  of. Repeat-customer revenue falling to 45.09% cuts against any switching-cost story. The AR's own
+  highlights page mislabels PBT as EBITDA, a discipline flag downstream stages should not repeat.
+  Section 1B destination-PE selection is Stage 11's job; this stage's only input is flagging the
+  trading slice as a SOTP candidate given its distinct, weaker economics from the cable/wire core.

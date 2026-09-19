@@ -1,0 +1,73 @@
+stage: B08-promoter
+company: "SUSAN"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "No post-listing shareholding pattern filed yet (only SHP as on 17-Jun-2026 exists); pledge trend is a single snapshot, not a multi-period trend."
+  - "No independent court-record / MCA DIN-disqualification / SEBI SCORES lookup tool available in this environment; 2A/2B rest on RHP self-declaration plus general web search, which found nothing contradicting it."
+flags:
+  - {type: FLAG-PROMOTER, verdict: "CAUTION (high end)", top_findings: ["15-year MCA/RoC late-filing pattern (delays up to 5,542 days) with two compounding applications (PAS-3 errors, non-appointment of Cost Auditor FY25) still pending with the RoC, plus untraceable historical corporate records and one unverifiable 2012 intra-family share transfer (Gaurav Jain to Sanju Jain)", "Co-promoter Mahak Jain's proprietorship SMV Enterprises is an explicitly disclosed same-industry competitor with a live, growing RPT (FY26 purchases Rs 1,115.42L, up 19.8x YoY); non-compete signed only 14-Feb-2026, 4 months pre-listing", "Board/KMP churn: 2 directors <1 month tenure (Oct-Nov 2025), 1 Independent Director exit at ~3.5 months, 1 Non-Executive Director exit ~7 weeks post-listing (also quit a second listed board same period), 2 CFO changes and a new CS, all inside an 11-month-old governance structure; only 2 of 6 directors independent on an executive-chaired board", "GST search-and-seizure at Sahibabad unit (7-Jan-2026, Rs 49.53L goods seized, Rs 8.91L penalty, appeal pending), disclosed thinly in the AR as a routine demand notice", "Positive counterweight: zero promoter pledge, promoter loans priced at 6% (below market), clean SEBI/criminal record, ESOP excludes promoters, and one credible transition signal (Charan Singh, ex-banking/NCLT/IBBI professional, appointed 7-Aug-2026 replacing a weak director profile)"]}
+verdict: "CAUTION"
+scorecard: {clean: 5, caution: 3, red: 2}
+deal_breakers:
+  - "SEBI market ban: NOT TRIGGERED"
+  - "Economic offence conviction: NOT TRIGGERED"
+  - "Live SFIO: NOT TRIGGERED"
+  - "PMLA with attached assets: NOT TRIGGERED"
+  - "Auditor resignation within 3 years: NOT TRIGGERED (same firm, S A R B & Associates, throughout)"
+  - "Pledge >40%: NOT TRIGGERED (0% per SHP 17-Jun-2026)"
+  - "Multiple mid-term independent-director exits within 3 years: BORDERLINE - only one true Independent Director exit (Twinkle Gupta, ~3.5 months); broader director/KMP churn recorded separately"
+  - "Restatement cutting past profits >10%: TRIGGERED on FY24 (RHP Annexure 4: audited PAT Rs 126.53L restated to Rs 75.58L, -40.3%), part of the SEBI-mandated IPO restatement, not a freshly discovered item"
+adverse_findings:
+  - {finding: "MCA/RoC Form MGT-14 filings for loan approvals and loan-to-equity conversions filed 271 to 5,542 days late across 13 corporate actions dating to 2010, all regularised only in Jan-2026 pre-RHP", evidence_tier: "VERIFIED", source: "RHP p.28-29 (txt lines 2057-2091)", date: "2026-06-08"}
+  - {finding: "Non-appointment of Cost Auditor for FY2024-25 (Section 148 breach); compounding application SRN AC0372364 filed 24-Dec-2025, pending", evidence_tier: "VERIFIED", source: "RHP p.28 (txt line 2053-2055)", date: "2026-06-08"}
+  - {finding: "PAS-3 filing errors on 30-Mar-2024 allotment (wrong share count, wrong valuation report, wrong date); compounding application SRN AC1628796 filed 24-Jan-2026, pending", evidence_tier: "VERIFIED", source: "RHP p.28 (txt line 2046-2051)", date: "2026-06-08"}
+  - {finding: "Form CHG-1 never filed for a Rs 6L ICICI vehicle loan FY24 (Section 77 breach), now permanently unrectifiable since the loan is repaid", evidence_tier: "VERIFIED", source: "RHP p.28-29 (txt line 2093-2097)", date: "2026-06-08"}
+  - {finding: "Untraceable historical corporate records (2010 name-change form, Form 18 registered-office change) on MCA public inspection; Company awaiting RoC response", evidence_tier: "VERIFIED", source: "RHP p.29 (txt line 2112-2120)", date: "2026-06-08"}
+  - {finding: "2012 share transfer of 5,000 shares (Rs 50,000) from Gaurav Jain (Vishal Jain's brother) to Sanju Jain (Vishal Jain's mother) unverifiable against bank statement; verification limited to transfer deed and board resolution", evidence_tier: "VERIFIED", source: "RHP p.29 (txt line 2122-2124)", date: "2026-06-08"}
+  - {finding: "SMV Enterprises (proprietorship of co-promoter Mahak Jain) is an explicitly disclosed same-industry competitor with a live RPT: FY26 purchases Rs 1,115.42L (up 19.8x from Rs 56.24L FY25), sales Rs 255.16L, rent Rs 4.91L; non-compete agreement dated only 14-Feb-2026", evidence_tier: "VERIFIED", source: "RHP p.32 risk factor 23 (txt 2476-2511); AR Note 28 p.78-82", date: "2026-06-08 / 2026-07-27"}
+  - {finding: "Two promoter-group entities (Magnum Aluminium Private Limited, Perfect Insulation) disclosed as promoter-group members with zero transaction value but no line-of-business ever named in RHP or AR", evidence_tier: "VERIFIED (opacity itself, not a transaction)", source: "RHP p.183 (txt 12200,12213); AR Note 28 p.78", date: "2026-06-08 / 2026-07-27"}
+  - {finding: "Material RPT resolution covering SMV Enterprises passed as ordinary resolution at the 19th AGM (3-Jun-2026), 15 days pre-listing, before any independent public shareholder existed to vote on it", evidence_tier: "VERIFIED", source: "AR AGM Notice item 4, p.16-17 (txt 542-559)", date: "2026-06-03"}
+  - {finding: "Board/KMP churn: Rahul Kumar (director, appointed 4/6-Oct-2025, resigned 1-Nov-2025, <1 month); Sanju Jain (WTD, appointed 6-Oct-2025, resigned 1-Nov-2025, <1 month); Twinkle Gupta (Independent Director, appointed 4-Oct-2025, ceased 14-Jan-2026, ~3.5 months); Manoj Kumar (Non-Exec Director, appointed 1-Nov-2025, resigned 5-Aug-2026 citing personal reasons, ~7 weeks post-listing; also resigned as Independent Director of Newtime Infrastructure Ltd effective 13-Feb-2026)", evidence_tier: "VERIFIED", source: "AR Board's Report p.24-25 (txt 822-868); announcement 20260805-116cadb0", date: "2025-10-06 to 2026-08-05"}
+  - {finding: "Only 2 of 6 board seats independent (33%) on a board chaired by the executive Chairman & MD; MD (Vishal Jain) sits as member on 3 of 4 board committees (Audit, CSR, Stakeholders Relationship), not on N&R", evidence_tier: "VERIFIED", source: "AR p.26-27 (txt 935-952)", date: "2026-07-27"}
+  - {finding: "Manoj Kumar (resigned Non-Executive Director) attended only 24 of 48 board meetings (50%) in FY26", evidence_tier: "VERIFIED", source: "AR Annexure-A p.21 (txt 689)", date: "2026-07-27"}
+  - {finding: "GST search-and-seizure at Sahibabad unit 7-Jan-2026 (Rs 49.53L goods seized, Rs 8.91L SGST penalty, appeal filed 13-Mar-2026, pending); disclosed in AR Note 32 only as a routine demand notice, omitting the seizure/confiscation-threat facts the RHP itself states", evidence_tier: "VERIFIED", source: "RHP p.264 (txt 16713-16727) vs AR Note 32 p.86-87", date: "2026-01-27 / 2026-07-27"}
+  - {finding: "Statutory remittance delays: TDS 97 instances (FY24-26, 1-179 days), GST 19 instances, PF 3, ESIC 8, all since regularised with interest/late fees", evidence_tier: "VERIFIED", source: "RHP risk factor 20 (txt 2394-2434)", date: "2026-06-08"}
+  - {finding: "FY24 audited PAT restated down 40.3% (Rs 126.53L to Rs 75.58L) at IPO restatement, mainly an income-tax-provision correction; FY25 PAT restated up 12.4%", evidence_tier: "VERIFIED", source: "RHP Annexure 4, p.203-206", date: "2026-06-08"}
+transition_evidence:
+  - {item: "Charan Singh (ex-Executive Director UCO Bank, ex-GM Bank of India, ex-NCLT Member Technical 2022-2025, IBBI-registered Insolvency Professional) appointed Non-Executive Director 7-Aug-2026, replacing Manoj Kumar (weak credential: proprietorship handling bulk mailing of legal notices); approved 100.00% by shareholders at EGM 3-Sep-2026", anchor: "Announcement 20260807-cb3a79d6 Annexure-II; Scrutinizer's Report 20260903-741ae947"}
+  - {item: "Some institutional shareholder presence confirmed post-listing: EGM Scrutinizer's Report (record date 27-Aug-2026) shows a Public-Institutions voting category holding 800,880 shares; name/stake not itemised, post-listing SHP still not filed", anchor: "Scrutinizer's Report 20260903-741ae947, p.5-7"}
+  - {item: "Sanju Jain (Vishal Jain's mother) exited the Whole-Time Director role within a month of appointment (resigned 1-Nov-2025), reducing direct family executive presence on the board, though she remains a lender/guarantor/mortgagor", anchor: "AR Board's Report p.24-25 (txt 849-851); AR Note 4a p.68"}
+  - {item: "First-ever ESOP (SEIL ESOP 2026, up to 2,04,000 options) approved Aug/Sep 2026, explicitly excludes Promoters and Promoter Group from participation", anchor: "Announcement 20260807-87a63974 (txt 723-724, 959-962)"}
+  - {item: "Genuine independent financial expert (Sushil Kumar Poddar, FCA, 25 years) chairs the Audit Committee", anchor: "AR p.26 (txt 936); AR p.15 bio"}
+pledge_pct_latest: 0
+pledge_trend: "stable at 0% (single snapshot only, SHP as on 17-Jun-2026 pre-listing; no post-listing SHP filed yet; no multi-period trend establishable)"
+searches_performed:
+  - "Susan Electricals India Limited Vishal Jain promoter SEBI"
+  - "\"Susan Electricals\" Jain CIN MCA director"
+  - "\"Manoj Kumar\" director \"Newtime Infrastructure\" OR \"Adhbhut Infrastructure\" resignation"
+  - "Susan Electricals India IPO GST search seizure Sahibabad Ghaziabad January 2026"
+  - "\"Susan Electricals\" Glassdoor OR AmbitionBox reviews employees"
+  - "\"Susan Electricals\" IPO controversy OR risk OR red flag review analysis"
+  - "IiAS OR SES OR InGovern \"Susan Electricals\""
+searches_skipped:
+  - "Direct MCA DIN-master disqualification lookup (no direct-access tool in this environment; general web search substituted, found nothing adverse)"
+  - "Direct court-record / NCLT cause-list search for Vishal Jain / Mahak Jain personally (no direct-access tool; RHP self-declaration plus web search substituted)"
+  - "SEBI SCORES complaint-database lookup (no direct-access tool; web search substituted, found nothing)"
+verdict_basis: "A 15-year MCA/RoC late-filing pattern (delays up to 5,542 days) with two still-pending compounding applications, untraceable historical records and one unverifiable intra-family share transfer, layered on a live competing-entity RPT (co-promoter's own firm SMV Enterprises) and an 11-month-old board/KMP structure that has already lost 4 of its original appointees, against an otherwise clean SEBI/criminal record and zero pledge."
+analyst_note: >
+  This stage's largest new finding versus B02/B03 is RHP risk factor 10 (txt
+  2037-2131), which neither prior stage read: a systemic RoC/MCA compliance
+  failure spanning 2010-2025, regularised only in the five months before the
+  RHP was filed, with two compounding applications (PAS-3 errors, missing Cost
+  Auditor FY25) still unresolved with the RoC and one intra-family share
+  transfer that could not be bank-verified. None of this is criminal and all of
+  it is self-disclosed, but the scale is unusual even for a first-time SME
+  issuer. Separately, this stage confirms SMV Enterprises (co-promoter Mahak
+  Jain's firm) as a disclosed, live, growing competing-entity RPT, and traces
+  the post-listing board churn through to Charan Singh's credentialed
+  replacement appointment, the strongest transition-evidence item found. No
+  promoter-group entity was found to be the counterparty behind the Rs 72.10 Cr
+  FY26 aluminium-rod trading line B03 flagged; those counterparties remain
+  anonymised in both RHP and AR.

@@ -8,3 +8,6 @@
 | 2b | notes pass 2 | sonnet | agent default | n/a | n/a | 151856 | 9m03s | 1 |
 | 2c | notes pass 3 | sonnet | agent default | n/a | n/a | 103035 | 4m34s | 1 |
 | 3 | ardeep | sonnet | agent default | n/a | n/a | 209061 | 10m32s | 1 |
+| 4 | bizmodel | sonnet | agent default | n/a | n/a | 174500 | 7m16s | 1 |
+| 5 | concall | sonnet | agent default | n/a | n/a | 162448 | 7m37s | 1 |
+| 8 | promoter | sonnet | agent default | n/a | n/a | 217365 | 10m50s | 1 |

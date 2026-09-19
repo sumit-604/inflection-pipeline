@@ -16,3 +16,4 @@ Run: runs/emudhra-2026-09-19 | Phase 1 executed 2026-09-19 via /step1
 | 8 | promoter | sonnet | agent default | - | - | 216767 | 8m54s | 1 |
 | 6 | peer concalls | sonnet | agent default | - | - | 281441 | 6m12s | 1 |
 | 7 | emerging moat | sonnet | agent default | - | - | 223578 | 12m02s | 1 |
+| 9 | TAM | sonnet | agent default | - | - | 158223 | 11m29s | 1 |

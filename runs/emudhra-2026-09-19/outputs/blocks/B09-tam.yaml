@@ -1,0 +1,98 @@
+stage: B09-tam
+company: "EMUDHRA"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "No India-specific tier-1 report (IBEF/CRISIL/ICRA/CARE) found for PKI/DSC/digital-trust; India digital-signature sizing rests on Grand View Research and Fortune Business Insights (mid-tier, SEO-style market-report vendors), flagged LOW-M confidence and STALE (GVR base year 2024)."
+  - "No per-account ACV disclosed for Enterprise Solutions (B04 gap carried forward); Method 2 bottom-up not computable for Market B, stated as NOT FOUND rather than estimated."
+  - "No market price / P/E was injected into this stage's inputs; Section 5E's valuation-implication sentence cannot state a P/E figure, marked NOT FOUND."
+  - "B04's unresolved AR capex reconciliation flag (injected B07 capex figure Rs 1,853.68 Mn PPE+intangibles does not tie to AR p.150's own investing-activities breakdown) is carried into 3C, not re-resolved here."
+flags:
+  - "Management claim ratio (244x) is a denominator-mismatch artifact: AR MD&A cites Gartner's whole global cybersecurity spend ($240B, 2026), not a company-specific TAM; eMudhra never states a TAM figure for its own niche anywhere in the corpus. Read as INFLATED per the ratio rule, but the caveat is load-bearing for anyone reading the ratio alone."
+  - "Market B (global PKI/IAM-adjacent) TAM size estimates diverge ~7.1x between top-down generic reports (USD 6.65B, 2026) and named-peer aggregation (USD 938.7M, 2026); growth RATE triangulates tightly (~20-21%, both company-cited F&S and independent Mordor/R&M agree) even though absolute SIZE does not. Conservative TAM uses peer aggregation per Rule 6."
+  - "SOM-implied revenue CAGR (25.1% yr3, 24.5% yr5) sits materially above the company's own FY27 ORGANIC growth guide (15-18%, load-bearing fact 1). The gap is M&A-inclusive: SOM assumes continued bolt-on acquisition activity at a pace similar to FY26 (three acquisitions). If FY27+ M&A stops, the achievable path collapses toward the organic guide. Stage 11 should treat the SOM CAGR as an M&A-inclusive ceiling, not an organic base case."
+  - "Capacity check found no physical-plant constraint (asset-light business) but a real M&A-cadence dependency: SOM is the optimistic side of the 3C cross-check if FY27+ acquisition spend reverts to zero."
+market_definition: "India-licensed digital trust services (DSC/SSL/eSign, CCA-regulated) plus the global PKI-as-a-Service / certificate-lifecycle / IAM-adjacent enterprise software category (emSigner, SecurePass, CertiNext, Cryptas/PrimeSign)"
+tam_cr: {conservative: 8253, realistic: 16570}
+sam_cr: 1888
+sam_pct_of_tam: 22.9
+som_3yr_cr: 1371
+som_5yr_cr: 2098
+som_implied_revenue_cagr: {yr3: 25.1, yr5: 24.5}
+current_sam_share_pct: 37.2
+revenue_headroom_x: 2.69
+tam_growth_pct: 20.8
+runway_class: "MODERATE"
+mgmt_claim_cr: 2016000
+mgmt_claim_ratio: 244
+mgmt_claim_read: "inflated"
+capacity_check: "no physical-plant gap (asset-light business); SOM's ~24-25% CAGR is contingent on continued bolt-on M&A at a FY26-like pace (Rs 62.9 Cr/yr acquisition outlay demonstrated); SOM is the optimistic side of the split if FY27+ M&A stops"
+methods_used:
+  - "top-down (industry reports, Market A and Market B, separately sized and combined)"
+  - "bottom-up (management-disclosed India DSC share, Market A only; Market B bottom-up NOT FOUND, no ACV disclosed)"
+  - "peer revenue aggregation (named India CAs directional for Market A; named global PKI pure-plays DigiCert/Keyfactor/Venafi + eMudhra + 30% long-tail uplift for Market B)"
+stale_data_flags:
+  - {datapoint: "India digital signature market USD 163.4M base year", source: "Grand View Research (web search 2026-09-19)", year: 2024}
+  - {datapoint: "eMudhra ~38% India DSC market share by value", source: "Frost & Sullivan 2024, cited in Q4FY26 Investor Presentation p.8 (07-May-2026)", year: 2024}
+  - {datapoint: "Global Trust Services 13.0% / Global Cyber Security and Paperless Transformation 21.2% (FY26-FY28) growth rates", source: "Frost & Sullivan 2024, cited in Q4FY26 Investor Presentation p.6-8", year: 2024}
+searches_performed:
+  - "India digital signature certificate market size 2025 2026 report"
+  - "global PKI public key infrastructure market size 2026 2030 CAGR"
+  - "global e-signature market size 2026 forecast billion"
+  - "identity and access management IAM market size 2026 global billion CAGR"
+  - "certificate lifecycle management market size 2026 global"
+  - "India cybersecurity market size 2026 CRISIL IBEF billion"
+  - "Controller of Certifying Authorities India digital signature certificates issued per year 2025"
+  - "Frost & Sullivan PKI-as-a-Service market India eMudhra 2025 best practices"
+  - "machine identity management market size 2026 Gartner billion"
+  - "DigiCert annual revenue 2025 Keyfactor revenue Venafi ARR CyberArk acquisition"
+searches_skipped:
+  - "CRISIL/IBEF-specific India cybersecurity or PKI report: queried, none surfaced (Mordor/Coherent returned instead)"
+  - "Official CCA/MeitY annual DSC issuance statistics: queried, no usable public data point found"
+  - "India-specific IAM or CLM market size: not separately searched; Market B sized on global figures filtered through the disclosed India/international revenue split instead"
+downstream_candidates:
+  - signal: "CCA (Controller of Certifying Authorities, MeitY) licensing/model changes"
+    entity_type: "regulatory"
+    demand_link: "Governs DSC licence renewal and fee/model structure; a repeat of the July-2024 model change directly hits Trust Services revenue"
+    likely_source: "MeitY / CCA government portal"
+    cadence: "event-driven"
+    shared: false
+  - signal: "CA/Browser Forum and browser root-store vendors (Chrome, Microsoft, Mozilla, Apple)"
+    entity_type: "regulatory"
+    demand_link: "WebTrust audit result and root-store listing are existential for SSL/TLS issuance; loss is a distrust event"
+    likely_source: "CA/Browser Forum public records; browser-vendor security blogs"
+    cadence: "event-driven"
+    shared: false
+  - signal: "UAE Telecommunications and Digital Government Regulatory Authority (TDRA)"
+    entity_type: "regulatory"
+    demand_link: "Governs the pending QTSP licence and in-country data-centre mandate gating UAE Trust Services expansion"
+    likely_source: "TDRA government portal"
+    cadence: "event-driven"
+    shared: false
+  - signal: "EU NIS2/DORA regulatory implementation (ENISA, national regulators)"
+    entity_type: "regulatory"
+    demand_link: "Named structural driver of European PKI/qualified-trust-service demand for Cryptas/PrimeSign"
+    likely_source: "ENISA / EU Official Journal publications"
+    cadence: "quarterly"
+    shared: true
+  - signal: "Large India public-sector/BFSI customers (defence agency, PSU bank, InCommon US consortium)"
+    entity_type: "end-customer"
+    demand_link: "Direct order-book and large-deal signal for both Trust Services and Enterprise Solutions"
+    likely_source: "Customer/counterparty public procurement disclosures, press releases"
+    cadence: "event-driven"
+    shared: false
+  - signal: "Gartner / IDC global cybersecurity and PKI-as-a-Service spend trackers"
+    entity_type: "macro"
+    demand_link: "Macro demand backdrop management itself cites in AR MD&A and investor decks"
+    likely_source: "Gartner/IDC published forecast updates (press-release summaries)"
+    cadence: "quarterly"
+    shared: false
+  - signal: "Named global PKI/IAM competitors (DigiCert, Keyfactor, Venafi/CyberArk, Entrust)"
+    entity_type: "counterparty"
+    demand_link: "Competitor revenue growth/consolidation is an indirect read on category demand and eMudhra's relative share trend"
+    likely_source: "Company press releases; private-company revenue aggregators (Owler/Craft)"
+    cadence: "event-driven"
+    shared: false
+demand_externally_verifiable: true
+analyst_note: "Two separate markets sized (India-licensed Trust Services, Market A; global PKI-adjacent Enterprise Solutions, Market B) and combined, per instruction. Conservative TAM took the lower of divergent methods each time (Rule 6): Market A bottom-up over top-down (8-9x gap, likely scope mismatch between licensed DSC issuance and broader 'digital signature' reports); Market B peer aggregation over top-down (7x gap, likely embedded/OEM PKI spend inflating generic reports). Growth RATE triangulates far better than absolute SIZE across both markets. SAM's geography (40%) and capability (70%) filters on Market B do the heavy lifting toward MODERATE runway, reflecting real execution-capacity gaps against DigiCert/Entrust/Microsoft/Okta rather than weak underlying demand. The single most important number for Stage 11: SOM-implied CAGR (24.5-25.1%) is an M&A-inclusive ceiling, not an organic base case, and sits above the 15-18% organic guide."

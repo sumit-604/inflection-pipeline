@@ -1,0 +1,28 @@
+﻿stage: B13-synthesis
+company: "IOLCP"
+run_date: "2026-09-19"
+model: "claude-opus-5"
+status: complete
+phase: "1-lite"
+verdict: "PROCEED WITH CAVEATS"
+verdict_rule_applied: 3        # FLAG-CASH INDETERMINATE cap; freshness cap and 60-74 band concur
+flags_active: ["FLAG-CASH (INDETERMINATE)"]
+confidence_delta: {numerical: 100, redflag: 77, framework: 73.2, peer: 100, overall: 73.2}
+overall_set_by: "framework_adherence"
+valuation_decision: "NOT RUN (phase 1 lite)"
+entry_range: {low: "NOT RUN", high: "NOT RUN"}
+headline: "Ibuprofen maker diversifies, cash and ownership unresolved"
+falsification_metric: "Q2 FY27 pharma segment result margin below 10% (Q2 FY27 results segment note, BSE)"
+monitorables_count: 8
+publish_candidate: false
+publish_candidate_summary: ""
+freshness_first_line: "CARE Ratings rationale for IOL Chemicals and Pharmaceuticals Limited, reaffirmation letter dated 30-Jun-2026 (careratings.com press release, Jun/Jul 2026); only the 04-Jul-2025 rationale is held."
+halt1_rulings_needed:
+  - "redflag_coverage reading: 77 (partial counts) vs 31 (strict); strict forces REWORK on stage 5"
+  - "credibility grade: B (stage 5) vs B/C line (Verifier B)"
+  - "stage 7 rerun after B12c EM-1 CRITICAL (em_score 23.4 MODEST used downstream)"
+notion_save:
+  page_title: "IOLCP: Phase 1 evidence pack (2026-09-19)"
+  summary: "Ibuprofen maker diversifies, cash and ownership unresolved. PROCEED WITH CAVEATS (phase 1 lite, no valuation)."
+  drive_link: "{{DRIVE_FOLDER_LINK}}"
+  mode: append-never-overwrite-status

@@ -22,3 +22,4 @@ total tokens and wall time per subagent; the in/out split is not exposed.
 | 12b | verifier B red flags | opus | agent default | n/a | n/a | 214027 | 7m27s | 1 |
 | 12c | verifier C phase-1 half | opus | agent default | n/a | n/a | 120061 | 4m34s | 1 |
 | 12d | verifier D peers | sonnet | agent default | n/a | n/a | 96369 | 2m55s | 1 |
+| 13 | synthesis-lite | opus | agent default | n/a | n/a | 153758 | 5m10s | 1 |

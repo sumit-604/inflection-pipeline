@@ -5,3 +5,4 @@
 - step1: main working tree is shared by live sessions and switched branch mid-run; the run lives in worktree .claude/worktrees/shareindia (sparse checkout) on run/shareindia-2026-09-19.
 - stage 0: done inline by orchestrator. Empty-folder pause suppressed (Step-1 autonomy contract).
 - stages 1, 2.1: block files carried markdown code fences; stripped by orchestrator (content unchanged), now parse.
+- stage 2 pass 3: B02-notes.input_gaps emitted empty; B00.input_gaps remain authoritative and are passed to every later stage.

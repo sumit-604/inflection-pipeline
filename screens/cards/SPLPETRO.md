@@ -7,6 +7,8 @@
   price.
 - **Market cap ~Rs 15,220 cr per Bull AI screen, well above the small/micro-cap mandate (over
   Rs 10,000 cr). Flagged; card written anyway.**
+- FY27E (step 5A, basis a): revenue Rs 5,820 cr, PAT Rs 357 cr (+9% on FY26 Rs 327 cr),
+  forward P/S 2.6x on the Rs 15,220 cr screen cap. Alternate reading 2.3x, PAT Rs 910 cr.
 - Corpus caveat: Bull AI page-cited passages, not full PDFs on disk. Held: full Q1FY27 concall,
   two rating rationales, FY25 AR MD&A/governance/promoter pages, guidance back to Q3FY24. No
   investor presentation, FY26 AR, balance sheet, or pledge disclosure. See MANIFEST.md.
@@ -83,6 +85,21 @@ deltas widened to GPPS $250-275, HIPS ~$350, versus a normal $200 and $275-300.
 Inflection: MARGIN-LED and SPREAD-DRIVEN, not mix-driven. The quarter with the biggest margin
 jump also has the biggest volume fall, and management calls the margin an aberration, not
 evidence of the ABS transition.
+
+## 5A. FY27 forward read
+FY26 actual: revenue Rs 5,338 cr, down 11% on lower styrene prices; PAT Rs 327 cr, down
+16%; margin 6.13% (IP Q4FY26 p.19). Management guides 8 to 10% volume growth for FY27
+(Q4FY26 call, guidance p.6) and refuses margin guidance (Concall Q1FY27 p.9); basis (a)
+applies to volume, with realisation held at FY26.
+- Primary (a): volume +9%, price flat. FY27E revenue Rs 5,820 cr. PAT at the FY26 margin:
+  Rs 357 cr, +9%. Forward P/S 2.6x.
+- Alternate (b): Q1FY27 revenue grew 22% on price alone, volume fell 24.5% (Concall p.3).
+  Revenue Rs 6,520 cr; PAT at Q1's 13.96% margin Rs 910 cr, +178%. Forward P/S 2.3x.
+- Separating observation: the styrene-to-polystyrene spread. Q1 ran at $250 to 350 a
+  tonne against a normal $200 to 300 (Concall p.3). The CFO calls the quarter "an
+  aberration" (Concall p.10). The alternate needs the wide spread to hold three more
+  quarters; the primary needs volumes to recover after a 24.5% fall. Amendment 17
+  binds any deep run: a converter's spread year is not a re-rating.
 
 ## 6. The transition and the quality ladder
 Management's claim, quoted once: "we are now moving more towards the ABS compounds... has done

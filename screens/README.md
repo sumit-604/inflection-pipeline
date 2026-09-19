@@ -145,7 +145,27 @@ Known limits of this run, all recorded in the per-company manifests:
   ALUFLUOR or TIMEX although both should have filed by now.
 - Page 19 of the DPABHUSHAN Q1FY27 deck carries text that contradicts the rest of the
   corpus; it was excluded as extraction noise and is flagged in the manifest.
-- Cards ran 1,900 to 2,004 words against the framework's 1,400 to 1,900. Closer than the
-  second run's 2,600 to 3,800; still flagged, not trimmed.
+- Cards ran 1,900 to 2,004 words before step 5A and 2,097 to 2,237 after it, against
+  the v1.1 framework's 1,400 to 2,100. Flagged, not trimmed.
 - No promoter pledge figure was found for any of the nine. Every card marks it NOT FOUND
   and lists it as a load-bearing fact for `/step1`.
+
+**Step 5A added on 2026-09-19 (operator ruling, framework v1.1).** The operator's standing
+ask, FY27E revenue, FY27E PAT, FY27 PAT growth and forward P/S, was missing from the spec
+and so from every card. All nine cards now carry it in the header and as step 5A, with the
+basis letter named: (a) guidance for SPLPETRO and SSWL; (b) latest-quarter growth for CSM,
+POONAWALLA, MAXIND, CAPILLARY and DPABHUSHAN; (c) CAGR or FY26 growth for TIMEX and
+ALUFLUOR, which have no June-2026 quarter indexed. Three more Bull AI calls fetched TIMEX's
+FY26 PAT and SPLPETRO's FY26 revenue and PAT.
+
+| Ticker | FY27E revenue (Rs cr) | FY27E PAT (Rs cr) | PAT growth | Fwd P/S | Basis |
+|---|---:|---:|---:|---:|---|
+| TIMEX | 1,020 | 96 | +28% | 6.0x | c |
+| CSM | 274 | 29 | +21% | 1.9x | b |
+| POONAWALLA (NII) | 7,420 | 1,620 | +198% | 5.1x | b |
+| MAXIND | 316 | loss | n.m. | 2.5x | b |
+| CAPILLARY | 1,048 | 69 reported (104 normalised) | +31% | 3.4x | b |
+| DPABHUSHAN | 6,425 | 485 | +129% | 0.47x | b |
+| SPLPETRO | 5,820 | 357 | +9% | 2.6x | a |
+| SSWL | 6,500 | 257 | +27% | 0.84x | a |
+| ALUFLUOR | 232 | 27 | +12% | 1.7x | c |

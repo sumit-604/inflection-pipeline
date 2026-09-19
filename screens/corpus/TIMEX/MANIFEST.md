@@ -75,3 +75,10 @@ get_company_classification-style lookups, which do not count against the cap)
   Rs 2,473 cr) which does not match the brief's stated screen figure of ~Rs 6,171 cr.
   The card uses the brief's screen figure per instruction and flags the discrepancy
   against the corpus figure; live CMP must be verified.
+
+## Addendum 2026-09-19 (step 5A)
+| File | Source PDF | Pages held | Bull AI document_id |
+|---|---|---|---|
+| results/TIMEX-Results-FY2026Q4-2026-05-26.txt | Audited FY26 results with the FY26 press release, uploaded 2026-05-26 | 10 | f5025c25-f53c-4303-91f5-4ff691246367 |
+Two more metered calls (one search, one chunk read) to get FY26 PAT, Rs 7,544 lakh.
+Bull AI still indexes no June-2026 quarter result for TIMEX as of 2026-09-19.

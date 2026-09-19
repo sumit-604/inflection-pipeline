@@ -6,6 +6,8 @@
   valuation, no price.
 - Market cap ~Rs 530 cr per Bull AI screen; verify CMP live. Firmly in the
   small/micro-cap mandate.
+- FY27E (step 5A, basis b): revenue Rs 274 cr, PAT Rs 29 cr (+21% on FY26 Rs 24 cr),
+  forward P/S 1.9x on the Rs 530 cr screen cap.
 - Corpus caveat: no annual report or investor presentation exist yet for this recently
   listed company. The RHP is about 500 pages; this corpus holds a small slice of it.
   See MANIFEST.md for the full gap list.
@@ -94,6 +96,19 @@ margin gain: operating cash flow, ROE, debt-equity and receivables turnover all 
 the wrong way over the same three periods (detail in step 9, not repeated here).
 Inflection classification: earnings-led on the income statement, but
 capital-efficiency-negative underneath it.
+
+## 5A. FY27 forward read
+FY26 actual: revenue Rs 226 cr, PAT Rs 24 cr, margin 10.5% (Concall Q4FY26 p.7).
+Management gives no FY27 number, only "a strong full-year FY27" (Press Release Q1FY27
+p.3); basis (b) applies.
+- Primary (b): Q1FY27 total income grew 21.2% (Press Release Q1FY27 p.2). FY27E revenue
+  Rs 274 cr. Q1 is a seasonal loss quarter, so PAT takes the FY26 margin: Rs 29 cr,
+  +21%. Forward P/S 1.9x.
+- Alternate: order book Rs 357.6 cr at March 2026 (Concall Q4FY26 p.9) is 1.6x FY26
+  revenue. If execution matches FY26's Q4 margin structure (PAT 15.1%), FY27E PAT is
+  Rs 41 cr, +72%. The corpus does not show that structure holding outside Q4.
+- Separating observation: Q2FY27 operating cash flow and receivable days. A second
+  negative cash quarter makes the primary the ceiling, not the floor.
 
 ## 6. The transition and the quality ladder
 Management's claim, quoted once: continued investment "in strengthening technology

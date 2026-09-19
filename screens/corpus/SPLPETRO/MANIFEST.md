@@ -68,3 +68,9 @@ on disk.
 - No market cap or CMP held in the corpus (per framework, this is never sourced from the corpus).
   Market cap ~Rs 15,220 cr is given directly by the calling brief, sourced to the Bull AI screen,
   not to a document in this corpus; verify live.
+
+## Addendum 2026-09-19 (step 5A)
+| File | Source PDF | Pages held | Bull AI document_id |
+|---|---|---|---|
+| presentations/SPLPETRO-InvestorPresentation-Q4FY26-extracts.txt | Q4FY26 investor presentation, pages 14, 19, 22 as search snippets | 14, 19, 22 | 4eb8281d-8ccd-48f3-817d-c697453eb59a |
+One more metered call (search) to get FY26 revenue Rs 5,338 cr and PAT Rs 327 cr.

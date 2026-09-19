@@ -8,6 +8,8 @@
   valuation, no price.
 - Market cap ~Rs 384 cr per Bull AI screen; verify CMP live. Inside the small/micro-cap
   mandate.
+- FY27E (step 5A, basis c): revenue Rs 232 cr, PAT Rs 27 cr (+12% on FY26 Rs 24.3 cr),
+  forward P/S 1.7x on the Rs 384 cr screen cap. Alternate PAT Rs 15 cr (-38%).
 - Corpus caveat: no transcript and no presentation exist, confirmed against Bull AI's
   own inventory. No FY2026 Annual Report or Q1FY27 result is indexed yet, and no credit
   rating is reachable. Corpus is one partial FY2024-25 Annual Report and the audited
@@ -105,6 +107,21 @@ a roughly 2.4x step-up in capex, to about Rs 35.5 crore from Rs 14.5 crore (Resu
 FY26Q4 p.8-p.9); cash fell 77% to Rs 38.14 lakh.
 Inflection classification: earnings-led on the full year; the trailing quarter needs
 watching before calling it a trend.
+
+## 5A. FY27 forward read
+FY26 actual (standalone): revenue Rs 206.9 cr, PAT Rs 24.3 cr, margin 11.7% (Results
+FY26Q4 p.7). No transcript, no guidance, and no June-2026 quarter indexed; basis (c)
+applies, on FY26's growth rate because FY23 and FY24 revenue are not in the corpus.
+- Primary (c): FY26 growth of 12.2% carried forward. FY27E revenue Rs 232 cr. PAT at the
+  FY26 margin: Rs 27 cr, +12%. Forward P/S 1.7x. The AR's outlook supports the
+  direction: capacity rising to 18,000 TPA and FSA supply from IFFCO up to 19,000 TPA
+  (AR FY25 p.30 to 31).
+- Alternate: Q4FY26 repeated four times. Revenue Rs 203 cr, down 2%; PAT Rs 15 cr,
+  down 38% (Results FY26Q4 p.7: Q4 PAT Rs 3.76 cr against Q3's Rs 9.44 cr). Forward
+  P/S 1.9x.
+- Separating observation: the June-2026 quarter, when filed. Revenue above Rs 55 cr
+  and PAT above Rs 6 cr restore the primary; a repeat of Q4's Rs 3.8 cr PAT makes the
+  alternate the year.
 
 ## 6. The transition and the quality ladder
 

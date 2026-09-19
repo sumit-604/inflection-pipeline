@@ -7,6 +7,9 @@
   valuation, no price.
 - **Market cap ~Rs 38,155 cr per Bull AI screen; far above the small/micro-cap
   mandate. Verify live. Card written anyway per operator instruction.**
+- FY27E (step 5A, basis b, lender: top line is NII incl. fees): NII Rs 7,420 cr, PAT
+  Rs 1,620 cr (+198% on FY26 Rs 542 cr), forward P/S 5.1x on the Rs 38,155 cr screen
+  cap. Alternate reading 6.7x.
 - Corpus caveat: one quarter held, Q1FY27 (ended 30 June 2026), earnings call
   transcript and investor deck, full. No annual report, no pledge figure, no rating
   rationale, no prior-quarter transcripts.
@@ -91,6 +94,21 @@ p.30). CAR 19.46%, Tier 1 18.37%, LCR 199.62% (Concall p.12). Write-offs run ~Rs
 Inflection: earnings-led and margin-led together. AUM grew 62.5%; PAT grew 391.5%, a
 multiple of volume, from yield expansion, credit-cost decline and opex leverage
 together.
+
+## 5A. FY27 forward read
+FY26 actual: NII (including fees and other income) Rs 4,029 cr, the sum of the four
+quarters Rs 768, 905, 1,080 and 1,276 cr; PAT Rs 542 cr, the sum of Rs 63, 74, 150 and
+255 cr (IP p.20). Management guides RoA of 3 to 3.5% by June 2028 (Concall p.13) but
+gives no FY27 number; basis (b) applies.
+- Primary (b): Q1FY27 NII grew 84.3% (IP p.6). FY27E NII Rs 7,420 cr, which holds Q1's
+  19% share of the year at last year's share and so carries the ramp forward at about
+  12% a quarter, in line with AUM growth of 11.1% QoQ. PAT at Q1's PAT-to-NII ratio of
+  21.8%: Rs 1,620 cr, +198%. Forward P/S 5.1x.
+- Alternate: Q1FY27 held flat for four quarters. NII Rs 5,660 cr, PAT Rs 1,232 cr,
+  +127%. Forward P/S 6.7x.
+- Separating observation: Q2FY27 AUM growth QoQ. Above 10% keeps the primary; a drop
+  toward 5% moves the year to the alternate. The credit-cost line (2.4% in Q1, Concall
+  p.9) is the risk to the PAT ratio either way.
 
 ## 6. The transition and the quality ladder
 Management's claim, quoted once: "We did not just launch 6 businesses. We built 6

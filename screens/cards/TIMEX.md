@@ -7,6 +7,8 @@
 - Market cap ~Rs 6,171 cr per Bull AI screen; verify CMP live. The corpus's own investor
   presentation gives Rs 2,473 cr at 31 March 2026 (IP p.27), less than half the screen
   figure. Resolve this first.
+- FY27E (step 5A, basis c): revenue Rs 1,020 cr, PAT Rs 96 cr (+28% on FY26 Rs 75.4 cr),
+  forward P/S 6.0x on the Rs 6,171 cr screen cap. Alternate reading 5.2x.
 - Corpus caveat: no transcript retrieved. No credit rating. Annual report read at
   targeted pages only.
 
@@ -97,6 +99,20 @@ is light: a Rs 2,200 lakh DBS Bank facility, only Rs 378 lakhs drawn (AR FY25 p.
 Total borrowings, cash and ROCE NOT FOUND.
 Inflection: earnings-led and margin-led together, four straight years, accelerating into
 FY26, not a one-off or an asset event.
+
+## 5A. FY27 forward read
+FY26 actual: revenue from operations Rs 798.6 cr, PAT Rs 75.4 cr, PAT margin 9.4%
+(Results FY26Q4 p.10). No June-2026 quarter is indexed, so basis (c) applies.
+- Primary (c): three-year CAGR of total income, FY23 Rs 383.8 cr to FY26 Rs 800.6 cr
+  (IP p.22), is 27.8%. FY27E revenue Rs 1,020 cr. PAT at the FY26 margin: Rs 96 cr,
+  +28%. Forward P/S 6.0x.
+- Alternate: FY26's own growth of 48% carried forward. Revenue Rs 1,185 cr, PAT Rs 112
+  cr, +48%. Forward P/S 5.2x. Q4FY26 PAT margin was 11.6% (Results FY26Q4 p.10); at
+  that margin the alternate PAT is Rs 138 cr.
+- Separating observation: the Q1FY27 filing. If the June quarter grows above 40% on
+  Rs 15,700 lakh of Q1FY26 total income, the alternate is the path.
+- Caveat: the corpus's own market cap (Rs 2,473 cr at March 2026, IP p.3) would give
+  2.4x. The screen figure rules until the CMP is verified live.
 
 ## 6. The transition and the quality ladder
 Management's claim, quoted once: "The objective is not just faster growth, but

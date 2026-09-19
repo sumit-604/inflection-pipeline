@@ -6,6 +6,9 @@
   `screens/corpus/MAXIND/`. Every number cites a file and page. No forensics, no
   valuation, no price.
 - Market cap ~Rs 792 cr per Bull AI screen; verify CMP live.
+- FY27E (step 5A, basis b): revenue Rs 316 cr, PAT a net loss (FY26 consolidated PAT
+  NOT FOUND; EBITDA loss Rs 121 cr), PAT growth not meaningful, forward P/S 2.5x on the
+  Rs 792 cr screen cap.
 - Corpus caveat: full Q1FY27 concall and deck held; Q4FY26 concall and deck return no
   text from Bull AI. FY26 detail partly from the guidance tool, which conflicts with
   the concall's numbers (step 5). No credit rating found, no FY26 annual report read.
@@ -91,6 +94,22 @@ Both readings are shown; neither resolved.
 Inflection classification: earnings-led and capacity-led. Revenue grows on new
 capacity, but the group is loss-making throughout, and FY26 cannot be pinned down
 with confidence.
+
+## 5A. FY27 forward read
+FY26 actual: revenue Rs 190 cr and EBITDA loss Rs 121 cr per the concall (Concall p.5,
+p.9); Rs 213.4 cr and Rs 83 cr per the guidance tool (step 5). FY26 PAT: NOT FOUND in
+the corpus. Management declines FY27 numbers ("I cannot comment on specific numbers of
+FY27", Concall p.13); basis (b) applies.
+- Primary (b): Q1FY27 revenue grew 66% (IP Q1FY27 p.8). FY27E revenue Rs 316 cr on the
+  Rs 190 cr base. Forward P/S 2.5x.
+- Alternate: Rs 354 cr on the Rs 213.4 cr base (2.2x), or Rs 274 cr if Q1 simply repeats
+  (2.9x). Q1 fell 4.7% QoQ, so the repeat reading is live.
+- Bottom line: a net loss in FY27. The mechanical read at Q1's loss margin of 53% is a
+  Rs 167 cr loss. Management's stated direction is the opposite: the EBITDA loss ratio
+  falls below FY26's 63% of revenue and Q4FY27 is EBITDA positive (Concall p.13, p.17).
+  The two cannot both hold; the card quotes both and derives neither further.
+- Separating observation: Q2FY27 EBITDA loss against Q1's Rs 25 cr. Narrower supports
+  management; wider supports the mechanical read.
 
 ## 6. The transition and the quality ladder
 Management's claim, quoted once: the company is "building an integrated care

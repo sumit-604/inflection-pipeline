@@ -6,6 +6,8 @@
   valuation, no price.
 - Market cap ~Rs 3,043 cr per Bull AI screen; verify CMP live. Inside the small/micro-
   cap mandate.
+- FY27E (step 5A, basis b): revenue Rs 6,425 cr, PAT Rs 485 cr (+129% on FY26 Rs 212 cr),
+  forward P/S 0.47x on the Rs 3,043 cr screen cap. Alternate PAT Rs 335 cr (+58%).
 - Corpus caveat: full Q1FY27 concall and investor deck, full CARE credit rating (dated
   January 2026, predates the May 2026 import-duty hike and Q1FY27), FY25 annual report
   front matter only (no MD&A, no balance sheet). One deck page looks like OCR noise,
@@ -94,6 +96,20 @@ Balance sheet (Credit Rating p.3-4): gearing 0.46x FY25 (0.72x FY24), interest c
 Operating cash flow negative for three straight years, since 95-98% of assets are
 inventory (Concall p.15). ROCE and total debt: NOT FOUND.
 Inflection classification: price-led, not volume-led or margin-structural.
+
+## 5A. FY27 forward read
+FY26 actual: revenue Rs 4,070 cr, PAT Rs 212 cr, margin 5.2% (guidance). Management
+guides 10% volume growth "going forward" with value growth on top from gold (Concall
+p.14), no revenue number; basis (b) applies.
+- Primary (b): Q1FY27 revenue grew 58% (Concall p.5). FY27E revenue Rs 6,425 cr. PAT at
+  Q1's margin of 7.55%: Rs 485 cr, +129%. Forward P/S 0.47x.
+- Alternate: same revenue at the FY26 margin of 5.2%, since Q1's margin carried 10 to
+  15% of growth from inventory gains (Concall p.14). PAT Rs 335 cr, +58%.
+- Separating observation: the gold price path. The 58% is price, not volume (volume
+  1 to 2%). A flat gold price from here compresses both the revenue growth and the
+  inventory gain in H2FY27; the May 2026 import-duty rise to 15% (Credit Rating p.1
+  context) cuts the other way on realisation. Q2FY27 revenue growth below 30% moves
+  the year toward Rs 5,500 cr and P/S 0.55x.
 
 ## 6. The transition and the quality ladder
 Management's claim, quoted once: "we remain fully committed to our long-term vision" of

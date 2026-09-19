@@ -1,0 +1,143 @@
+stage: B00-inputs
+company: RAPPID
+run_date: '2026-09-19'
+model: orchestrator
+status: complete
+spear_gate:
+  form: OVERRIDE
+  date: '2026-09-19'
+  source: companies/RAPPID.md
+  note: 'operator standing ruling 2026-09-05: Step-1 intake replaces the web spear'
+  load_bearing_facts:
+  - 'GUIDANCE vs DELIVERY: FY27 growth guided "closing to 50% or more" (Jun-2026 call) against Q1 FY27 sales Rs 14.87
+    Cr (+28%) and a Rs 40 Cr executable book (inputs/announcements/10Jul2026_*GBU*); FY26 grew 2% with H2 down 25%.
+    Verify what "Sales" means in the revised Q1 update versus revenue from operations, and test earlier guidance against
+    FY26 delivery.'
+  - 'CASH CONVERSION: CFO negative in each of FY23-FY26 (sum about Rs -26.6 Cr, screener) against PAT of about Rs 17
+    Cr; debtor days 170, inventory days 258. Verify the FY26 AR receivables ageing, receivables by customer type, inventory
+    composition, and the "March dispatch" explanation (Jun-2026 concall).'
+  - 'IPO PROCEEDS AND INVESTMENTS: Rs 7.65 Cr of IPO money (capex and acquisition objects) moved to working capital
+    (inputs/announcements/21Mar2026_*; EGM/postal ballot 24Mar/30Mar/30Apr-2026); investments Rs 0.57 Cr to Rs 4.76
+    Cr in FY26 (screener). Verify the deviation statements, the nature of the investment, and any related-party link.'
+  - 'FILING QUALITY AND MARINE SHARE: NSE results clarifications for Sep-2024, Mar-2025, Sep-2025; FY25 results refiled
+    14-May-2025; Sep-2025 shareholding pattern revised Apr-2026. Verify the FY26 auditor report and CARO, and the deck
+    claim of 33% marine revenue (0.5% FY23) and its naval part against the AR.'
+company_memory: companies/RAPPID.md (Step-1 draft) + runs/rappid-2026-09-19/step1-business-brief.md (web-sourced).
+  Memory to weigh, never anchored evidence.
+text_route: 'Every inputs/ PDF has a page-marked .txt beside it ([page N] markers, PyMuPDF get_text). Stages and verifiers
+  read the .txt; the PDF stays the source of record and page numbers match. Every PDF opened with pypdf; none unreadable.
+  Image-only pages are rendered to PNG in work/raster/ (gitignored, local only) for the Read tool: FY26 AR pages 2,
+  5, 7-11 (AR2026_pN.png); the 14-Nov-2024 IPO statement of deviation, 3 pages, no text layer (deviation_14Nov2024_pN.png);
+  the 28-May-2026 press release pages 2-3 (pressrelease_28May2026_pN.png).'
+reporting_units:
+  results: 'INR Lakhs (face of H1FY25, FY25 refiled, H1FY26 and FY26 audited results; the 12-May-2025 original FY25
+    filing shows statements "In Rupees")'
+  annual_report: 'INR Lakhs (FY26 AR statements). FY25 AR (inputs/other/) reports in INR Thousands.'
+  prospectus: 'INR Lakhs (RHP restated financials)'
+  business_updates: 'INR Cr (Q1 FY27 business update, order disclosures)'
+  screener: 'INR Cr (screener Data_Sheet)'
+  note: '100 INR Lakhs = 1 INR Cr; 10,000 INR Thousands = 1 INR Cr. Convert once, at stage 10.'
+sector_cap_row: 'Cables / Industrial products'
+sector_cap_row_evidence: 'Build-to-spec industrial and marine valve maker, single plant at Palghar, single reported
+  segment "manufacturing of valve solutions" (NSE clarification 19-Jan-2026). FY26 deck p.11: industrial valves 67%,
+  marine valves 33%; marine includes commercial shipbuilding, so Defence / strategic (38x) is not evidenced as the dominant
+  line. Row cap 25x. Cite: .claude/skills/section-1b/references/05-sector-cap.md. FLAG for phase-3 confirmation (Defence
+  / strategic 38x if the AR or later filings show naval revenue dominating).'
+listed_date: '2024-09-30'
+prospectus_status: 'MANDATORY (listed 30-Sep-2024, within 3y). Red Herring Prospectus Sep-2024 (335pp) held. Final
+  Prospectus not held; RHP carries the same restated financials and promoter/group history.'
+concalls_available: false
+no_concall_mode: 'ON. One earnings call ever filed (01-Jun-2026, FY26 results, inputs/concalls/Concall_Jun_2026_Transcript.pdf).
+  Stage 5 runs degraded per NO-CONCALL MODE, with the single transcript read as supplementary evidence and the 42 Reg
+  30 filings (business updates, order disclosures) as the guidance record. Stage 6 runs because peer-concalls/ holds
+  files.'
+inventory:
+  prospectus: 1
+  annual-report: 1
+  results: 5
+  rating: 0
+  concalls: 1
+  peer-concalls: 8
+  announcements: 42
+  shareholding: 5 XBRL + 1 JSON
+  research: 0
+  screening: 4
+  presentation: 2
+  other: 1
+results_used: 'three most recent: FY26 audited (27-May-2026), H1FY26 (13-Nov-2025), FY25 refiled (14-May-2025). Also
+  held: FY25 original (12-May-2025) and H1FY25 (14-Nov-2024), for the refiling comparison and the backward baseline.'
+concall_quarter_map:
+- {file: inputs/concalls/Concall_Jun_2026_Transcript.pdf, period: 'H2FY26 / FY26 results', call_date: '2026-06-01'}
+peer_transcripts:
+  KSB: [Q2CY25 Sep-2025, Q3CY25 Nov-2025, Q4CY25 Mar-2026, Q2CY26 Aug-2026]   # KSB reports on a calendar year; Q1CY26 transcript not held
+  ATAM: [Q2FY24 Nov-2023, Q4FY24 Apr-2024, Q1FY25 Jul-2024]
+  QUESTFLOW: [Jun-2024 (only transcript filed)]
+freshness_pairs:
+- pair: RESULTS to CONCALL
+  trigger_doc: inputs/results/27May2026_RAPPID_27052026180012_BM_Outcome.pdf (FY26 audited, half year and year to 31-Mar-2026)
+  mate_expected: FY26 results call transcript
+  status: PASS
+  missing_doc: 'none (skip condition applies since concalls_available is false; the 01-Jun-2026 transcript is held in
+    any case)'
+- pair: RATING BULLETIN to RATIONALE
+  trigger_doc: none (no rating bulletin in corpus; no rating found on web, NSE feed or FY26 AR)
+  mate_expected: n/a
+  status: PASS
+  missing_doc: ''
+- pair: SEBI ORDER to ORDER TEXT
+  trigger_doc: none (only director-eligibility boilerplate "not debarred by any Order of SEBI")
+  mate_expected: n/a
+  status: PASS
+  missing_doc: ''
+- pair: AR to LATEST AUDITED ANNUAL RESULTS
+  trigger_doc: inputs/results/27May2026_RAPPID_27052026180012_BM_Outcome.pdf (FY26 audited)
+  mate_expected: FY26 annual report
+  status: PASS
+  missing_doc: ''
+freshness_verdict: FRESHNESS PAIRS OK
+input_gaps:
+- 'collector_warning (verbatim): collect_to_repo.py crashed after downloads, during classification (OpenBLAS: memory
+  allocation failed). Classification, CSV conversion and this manifest were completed by hand at /step1 using the
+  collector''s own sanitize() and xlsx_to_csvs() functions.'
+- 'collector_warning (verbatim): consolidated page has no figures (company files standalone only); standalone /company/RAPPID/
+  used for the main company'
+- 'collector_warning (verbatim): screener export sheets came out EMPTY (formulas with no cached values), so no CSV
+  was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance Sheet, screener:Cash Flow, screener:Customization,
+  KSB:Profit & Loss, KSB:Quarters, KSB:Balance Sheet, KSB:Cash Flow, KSB:Customization, QUESTFLOW:Profit & Loss, QUESTFLOW:Quarters,
+  QUESTFLOW:Balance Sheet, QUESTFLOW:Cash Flow, QUESTFLOW:Customization, ATAM:Profit & Loss, ATAM:Quarters, ATAM:Balance
+  Sheet, ATAM:Cash Flow, ATAM:Customization. Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again.
+  [Every Data_Sheet.csv carries FY22-FY26 annual P&L, balance sheet and cash flow. The Quarters block is blank for
+  RAPPID: a half-yearly SME filer. Gap is cosmetic for annual data.]'
+- 'collector_warning (verbatim): BSE scrip code not found: RAPPID is listed on NSE Emerge only, so the BSE announcements
+  fetch cannot apply. announcements/ was filled from the NSE SME announcements API at /step1.'
+- 'collector_warning (verbatim): no rating PDF: no credit rating of Rappid Valves was found on the web or in NSE filings;
+  stage 0 confirms against the AR [CONFIRMED: FY26 and FY25 ARs carry no credit-rating disclosure. rating/ is EMPTY.
+  FLAG-CASH cannot draw on a rating rationale; receivables ageing from the AR notes is the substitute evidence.]'
+- 'rating: NONE (see above). Stage 10 marks rating_wc_quote unresolved.'
+- 'concalls: ONE transcript (01-Jun-2026). NO-CONCALL MODE; credibility grade defaults to C, may rise to B only on
+  documented guidance-vs-results delivery.'
+- 'peer-concalls: 8 transcripts, not 12. KSB 4 (current). ATAM 3, Nov-2023 to Jul-2024 (stale, 2+ years; a second copy of the Q4FY24 call without its cover letter was removed as a duplicate). QUESTFLOW
+  1 (Jun-2024; screener lists later "Transcript" entries that are AI summaries, not filings; BSE feed shows no transcript
+  filings Oct-2024 to Sep-2026). Marine Electricals (MARINE), the naval-shipyard supplier comp, was collected and dropped:
+  it files no transcripts.'
+- 'results: SME half-yearly filer. No Q1 FY27 results exist; Q1 FY27 figures are an unaudited business update (09-Jul-2026,
+  revised 10-Jul-2026 to read "Sales" in place of "Revenue from Operations").'
+- 'announcements: 42 Reg 30 filings Oct-2024 to Sep-2026 from the NSE SME API (one Investor Presentation filing, 09-Mar-2026,
+  moved to presentation/). Routine DP certificates, trading-window notices and SDD certificates skipped. The 13-Jan-2026
+  NSE clarification request itself has no attachment (only the company reply is held).'
+- 'announcements: 14-Nov-2024 statement of deviation (IPO proceeds) is image-only; rendered to work/raster/deviation_14Nov2024_p1-3.png.
+  28-May-2026 press release pages 2-3 image-only; rendered to work/raster/pressrelease_28May2026_p2-3.png.'
+- 'annual-report: collector took FY25 and FY26 ARs; contract is 0-1, so FY25 moved to other/ (preserved). The FY25
+  AR reports in INR Thousands. FY26 AR pages 2, 5, 7-11 are image-only (front section); rendered to work/raster/AR2026_pN.png.'
+- 'shareholding: NSE XBRL SHP Sep-2024 (two filings, both revised), Mar-2025, Sep-2025 (revised 17-Apr-2026 "pursuant
+  to discrepancies noted by exchange"), Mar-2026. Half-yearly SME cadence; no Jun-2026 pattern exists.'
+- 'research: NONE. No broker notes. No effect on anchored evidence.'
+- 'prospectus: RHP held; final Prospectus not held (not a gap in substance).'
+- 'EMPTY-FOLDER CONFIRMATION suppressed by /step1 autonomy contract: rating and research are empty; standing answer
+  "proceed with the gaps"; run degrades per the DEGRADATION MAP.'
+corpus_manifest_ref: outputs/reports/00-inputs.md (one row per PDF, issuer/type/period from page 1)
+flags: []
+analyst_note: 'Filings are in INR Lakhs (FY25 AR in INR Thousands); screener and business updates in INR Cr. No credit
+  rating exists, so the cash-conversion determination must rest on the AR receivables ageing, the inventory note and
+  the IPO-proceeds deviation papers. The company is a half-yearly SME filer with one earnings call; the Reg 30 business
+  updates carry most of its forward statements.'

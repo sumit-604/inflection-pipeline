@@ -22,3 +22,26 @@ not split input/output, so in_tok/out_tok read n/a).
 | 12c | verifier C framework (phase-1 half) | claude-opus-5 | default | n/a | n/a | 110569 | 5m05s | 1 |
 | 12d | verifier D peers | claude-sonnet-5 | default | n/a | n/a | 114550 | 6m05s | 1 |
 | 13 | synthesis-lite (phase 1) | claude-opus-5 | default | n/a | n/a | 189286 | 8m38s | 1 |
+| 9b | Halt 1 understanding dossier | claude-sonnet-5 | default | n/a | n/a | 191182 | 9m28s | 1 |
+
+## CLOSE-OUT SUMMARY
+
+Run total (sum of ledger rows with token counts): 3,112,342 tokens.
+
+(a) TOP FIVE BY TOKENS
+| rank | stage | total_tok | share |
+|---|---|---|---|
+| 1 | 2 notes triple-pass | 495,724 | 15.9% |
+| 2 | 6 peer concall verification | 314,975 | 10.1% |
+| 3 | 3 AR backward deep dive (8 phases) | 271,183 | 8.7% |
+| 4 | 12b verifier B red flags | 266,960 | 8.6% |
+| 5 | 4 business model decoder | 198,311 | 6.4% |
+
+(b) DOWNSHIFT FAILURES
+- DOWNSHIFT FAILURE: stage 0 (input validation ran inline in the Opus orchestrator session, as run-pipeline step 1 directs "do this yourself"; no haiku stage-0 agent exists, so the downshift cannot take on this path). Verifier A ran on haiku as routed.
+
+(c) COST SPIKES
+- none (no prior SSWL run ledger exists).
+
+(d) OPERATOR SNAPSHOT
+- Operator: run /cost and /usage now and paste the cache hit ratio and loop totals under an "Operator snapshot" heading here.

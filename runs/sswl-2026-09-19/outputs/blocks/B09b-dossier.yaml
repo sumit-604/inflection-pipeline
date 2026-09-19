@@ -1,0 +1,67 @@
+stage: B09b-dossier
+company: "SSWL"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+corpus_verdict: "CORPUS GAPPED"
+corpus_gaps:
+  - document: "FY25 Annual Report"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "FY24 Annual Report"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "Screener export sheets (P&L/Balance Sheet/Cash Flow/Quarters), SSWL and 3 peers"
+    expected_source: "company IR page"
+    kind: "findable-missing"
+  - document: "Debtor-factoring / bill-discounting note (Rs 400-500 Cr limit named on concalls)"
+    expected_source: "BSE"
+    kind: "plausibly-nonexistent"
+  - document: "Broker / research coverage note"
+    expected_source: "rating agency site"
+    kind: "findable-missing"
+archetypes:
+  - line: "Steel wheels (~63% of FY26 revenue)"
+    archetype: "Commodity converter"
+  - line: "Alloy wheels + aluminium knuckles (~37% of FY26 revenue)"
+    archetype: "Build-to-spec component maker"
+transition:
+  - line: "Steel wheels"
+    from_tier: "R1 COMMODITY PRICE-TAKER"
+    to_tier: "R2 COST-ADVANTAGED CONVERTER"
+    engine: "Backward integration into hot rolling, Tata Steel supply tie, captive renewable power, ~25.7 Mn combined capacity base"
+    proof_gate: "N/A - already the FROM anchor for this line; the model's proof gate binds the alloy/knuckle line (see below)"
+    recognition_gap: "Open question; resolved at Stage 11 via the destination-PE gap"
+    ugliness: "STRUCTURAL-FEATURE"
+    transition_falsifier: "N/A - falsifier applies to the alloy/knuckle transition, not the steel base"
+  - line: "Alloy wheels + aluminium knuckles"
+    from_tier: "R2 COST-ADVANTAGED CONVERTER"
+    to_tier: "R3 VALUE-ADDED / SPEC'D SUPPLIER"
+    engine: "OEM platform-qualification wins routing volume into higher-ASP alloy/knuckle capacity at Bhuj; product mix shift lifting blended per-wheel realisation"
+    proof_gate: "Blended EBITDA/wheel >= Rs 310/wheel in the same quarter alloy revenue share moves off its 35-37% stall band (4-quarter band, B12b); management has stonewalled the direct steel-vs-alloy split every quarter asked"
+    recognition_gap: "Open question, poses whether the claimed R2-to-R3 climb is already reflected in market pricing; Stage 11 resolves via the PE gap; no number or conclusion stated here"
+    ugliness: "STRUCTURAL-FEATURE"
+    transition_falsifier: "A disclosed or credibly-inferable product-level split showing alloy/knuckle EBITDA/wheel at or below steel's, sustained across quarters; or blended EBITDA/wheel tracking input-price cycles while alloy share stays pinned at 35-37% for two-plus further quarters"
+dominant_variables:
+  - "Blended EBITDA/wheel trend, and whether it moves with alloy share or input-price cycles"
+  - "Alloy + knuckle revenue share of total revenue"
+  - "Bhuj capacity commissioning and OEM approvals"
+  - "Cash conversion (CFO/EBITDA)"
+business_falsifier: "Loss of a top-tier OEM platform (AR names top-customer concentration as a risk), or a durable break in the Tata Steel raw-material/technology tie underlying the cost-advantage moat, or the AMW Autocomponent cluster (3 years of subsidiary losses, unexplained reserve transfers over Rs 1,000 Cr, adverse CARO land-title finding, zero Key Audit Matters) crystallising into a material capital loss forcing a re-read of SSWL as a group with weak parent-level capital-allocation control"
+mental_model_status: "DRAFT - PENDING OPERATOR SIGN-OFF"
+fragility:
+  variable_count: 7
+  verifiability_ratio: "5 of 7 externally observable"
+  single_point_failure: "none for the whole bull case (conjunction required); but a disclosed product-level split showing alloy/knuckle EBITDA/wheel at or below steel's would alone falsify the TRANSITION thesis specifically"
+  fragility_verdict: "MODERATE"
+candidate_count: 7
+second_order:
+  chains_drafted: 2
+  pending_live_links: 2
+  confirm_by_observations: 2
+research_brief_items: 14
+plain_summary_points: 15
+annex:
+  present: true
+  questions_answered: 10
+  corpus_commit_hash: "0c6387f9"

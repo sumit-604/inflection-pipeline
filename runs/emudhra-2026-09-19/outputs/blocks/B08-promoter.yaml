@@ -1,0 +1,58 @@
+stage: B08-promoter
+company: "EMUDHRA"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Promoter/promoter-group shareholding table (AR consol p.247, standalone p.339) is scrambled in the text-extraction layer beyond confident per-holder reconstruction (confirmed independently of B03's earlier finding of the same issue); the five names (V Srinivasan, Mythili Srinivasan, Taarav Pte Ltd, Arvind Srinivasan, Kaushik Srinivasan) and two values (V Srinivasan 17.36%, Taarav Pte Ltd 15.40%) anchor cleanly; the remaining three values (16.72%/3.81%/1.12%, summing correctly to 54.40% with the first two) could not be mapped to individual names."
+  - "FII/DII split NOT FOUND in the AR (screener-only per B00/B03, non-anchored); company memory shows DII falling 16.75% (Dec-2025) to 10.55% (Jun-2026), not independently verified this pass."
+  - "Full 3-year (12-quarter) BSE shareholding-pattern pledge history not available; only Mar-2026 and Jun-2026 Reg 31 summaries were in this run's inputs/shareholding folder, both confirming 0% pledge."
+  - "3i Infotech's own complaint text and its 10-Feb-2026 response letter to eMudhra were not retrievable in readable form (PDF returned encoded/image content); only eMudhra's side of the correspondence (Reg 30 filings, investor-call transcript) was readable."
+  - "Exact FY24 (Apr-2023 to Mar-2024) mechanism for the promoter holding decline from 57.7% to a lower level before stabilising at 54.40% is not resolved beyond a partial explanation (ESOP dilution plus a modest Mar-2024 bulk deal); outside this AR's comparative window."
+flags: []
+verdict: "CAUTION"
+scorecard: {clean: 3, caution: 7, red: 0}
+deal_breakers: []
+adverse_findings:
+  - {finding: "3i Infotech filed an EOW complaint (03-Feb-2026, Navi Mumbai) alleging financial fraud and criminal breach of trust over the 2010 disinvestment of 3i Consumer Services (now eMudhra) and a 2015-2017 preference-share redemption, claim >Rs 128 crore. EOW closed the complaint 13-Aug-2026, terming it civil not criminal, after eMudhra's detailed on-record rebuttal (Deloitte valuation, staged/acknowledged redemption). Media reports 3i Infotech may file a SEBI complaint or civil suit; unconfirmed as of this run.", evidence_tier: "VERIFIED (Reg 30 filings, EOW letter, investor-call transcript); the SEBI-complaint/civil-suit follow-on is MEDIA REPORTED, unconfirmed", source: "inputs/announcements/20260204-d507034d, 20260209-3i-Infotech-Investor-Call-Transcript, 20260818-7509d90d; Whalesbook 18-Aug-2026", date: "2026-02-03 to 2026-08-18"}
+  - {finding: "CFO remuneration rose 42.4% YoY (Rs 3.73 Mn to Rs 5.31 Mn FY26), the largest percentage increase of any named KMP, against a 7.1% median-employee increase; no narrative explanation in the AR.", evidence_tier: "VERIFIED", source: "AR Board's Report p.94, 97", date: "FY26"}
+  - {finding: "Two promoter-family members (Kaushik Srinivasan, Arvind Srinivasan, sons of the Executive Chairman) appointed Whole-Time Director and Director effective 1-Apr-2026 via Postal Ballot, expanding board from 7 to 9 and promoter-family board share from 2-of-7 (28.6%) to 4-of-9 (44.4%), with no offsetting independent/institutional director addition.", evidence_tier: "VERIFIED", source: "inputs/announcements/20260209-a7e3e2bf (Postal Ballot notice); AR Board's Report p.91", date: "effective 2026-04-01"}
+  - {finding: "First-instance related-party funding of subsidiaries: Taarav Pte Ltd (promoter entity, Singapore) lent Rs 45.15 Mn combined (8% p.a.) and Executive Chairman V. Srinivasan personally lent Rs 37.72 Mn (interest-free, on demand) to eMudhra DMCC/PTE in FY26, versus zero in FY25, reversing the normal funding direction with no stated rationale for bypassing intercompany treasury or bank lines.", evidence_tier: "VERIFIED", source: "AR Note 16, 44.2, consol p.254/269-270", date: "FY26"}
+  - {finding: "Related-party balances with Bluesky Infotech (promoter-group-influenced DSC franchise/reseller partnership) grew sharply: trade payable Rs 1.89 Mn to Rs 104.01 Mn, trade receivable Rs 0.15 Mn to Rs 66.48 Mn in one year, the fastest-growing RPT counterparty in the corpus; no independent fairness benchmarking disclosed.", evidence_tier: "VERIFIED (balances); company's channel-partner status independently corroborated by general web search", source: "AR Note 44.2, consol p.269", date: "FY26"}
+  - {finding: "The 3i Infotech claim (>Rs 128 crore, ~14% of net worth if crystallised) is fully narrated in Note 36(f)/38(e) but excluded from the AR's quantified contingent-liability total and absent from the MD&A Enterprise Risk Management section (pp.153-163) despite the chronology running to three weeks before the 6-May-2026 audit sign-off.", evidence_tier: "VERIFIED (carried forward from B02/B03, independently re-confirmed this pass)", source: "AR Note 36(f) consol p.265, Note 38(e) standalone p.353; MD&A pp.153-163", date: "FY26 AR, signed 2026-05-06"}
+  - {finding: "CFO Saji K Louiz resigned Nov-2023 citing personal reasons; successor Ritesh Raj Pariyani (external hire, no prior family/company tie) appointed Feb-2024, roughly a 3-month gap.", evidence_tier: "MEDIA REPORTED (exchange filing via MarketScreener, not in this run's corpus)", source: "MarketScreener India, EMudhra CFO appointment news", date: "2023-11 to 2024-02"}
+transition_evidence:
+  - "External, non-family CFO hire (Ritesh Raj Pariyani, Feb-2024, Chartered Accountant/Company Secretary, AXA Business Services background) replacing a departed CFO — genuine outside-professional KMP hire. MEDIA REPORTED / AR-corroborated."
+  - "COUNTER-SIGNAL, recorded for completeness not as positive evidence: company memory (screener, non-anchored) shows DII holding falling 16.75% (Dec-2025) to 10.55% (Jun-2026), i.e. net institutional reduction not entry, over the two-plus quarters before this run."
+  - "COUNTER-SIGNAL: FY26/27 board change adds two promoter-family directors, not new independent directors or an auditor upgrade; board control is concentrating toward family, not diluting toward outside governance."
+pledge_pct_latest: 0
+pledge_trend: "flat at 0% for the two quarters directly verified in this run (BSE Reg 31 summaries, 31-Mar-2026 and 30-Jun-2026, both answering 'No' to pledge/NDU/other encumbrance); company memory (screener, non-anchored) reports no pledge historically. Full 3-year/12-quarter direct verification not possible from this run's inputs (only 2 quarterly files held)."
+searches_performed:
+  - "eMudhra 3i Infotech SEBI complaint 2026"
+  - "eMudhra Venkatraman Srinivasan promoter background"
+  - "eMudhra promoter shareholding decreased 57.7% 54.4% dilution"
+  - "WebFetch: whalesbook.com EOW complaint closure article"
+  - "WebFetch: 3i-infotech.com response letter PDF (10-Feb-2026)"
+  - "\"Kaushik Srinivasan\" OR \"Arvind Srinivasan\" eMudhra SEBI MCA director disqualification"
+  - "WebFetch: thecompanycheck.com Kaushik Srinivasan director profile"
+  - "\"V Srinivasan\" OR \"Venkatraman Srinivasan\" 3i Infotech SEBI order MD CEO 2012 exit"
+  - "eMudhra Glassdoor AmbitionBox employee reviews"
+  - "eMudhra IiAS SES proxy advisory report AGM"
+  - "\"Bluesky Infotech\" partnership firm eMudhra promoter"
+  - "\"Taarav Pte\" Singapore eMudhra Srinivasan"
+  - "eMudhra promoter stake sale OFS block deal 2023 2024"
+  - "eMudhra IPO offer for sale Venkatraman Srinivasan Taarav Pte 2022"
+  - "eMudhra SEBI adjudication order OR show cause notice"
+  - "eMudhra Ltd SFIO ED PMLA investigation"
+  - "\"Ravi Jagannathan\" \"Indus Innovest\" 3i Infotech eMudhra"
+  - "eMudhra CFO Ritesh Raj Pariyani appointed history previous CFO resignation"
+  - "eMudhra Limited independent director resignation 2023 2024 2025"
+  - "eMudhra \"Manoj Pundalik Kunkalienkar\" independent director term"
+  - "eMudhra short seller report activist investor concerns"
+  - "eMudhra CSR Annexure A activities FY26 education skilling"
+searches_skipped:
+  - "AmbitionBox-specific numeric ratings (only Glassdoor's own figures retrieved)"
+  - "Direct SEBI SCORES portal complaint lookup (no interactive/API access; general web search substituted, found nothing)"
+  - "Direct MCA director master-data / disqualified-directors list query (interactive-login site; general web search substituted)"
+verdict_basis: "Clean SEBI/criminal-conviction/tax/pledge record on every hard regulatory check run, offset by seven converging soft-governance items (family board concentration, unexplained CFO pay jump, rising promoter-linked RPT balances, first-instance Chairman/Taarav funding of subsidiaries, the omitted 3i Infotech risk-section line) with no AR-stated rationale for any of them; the one serious legal allegation (3i Infotech) is EOW-closed as civil, not a confirmed adverse finding."
+analyst_note: "The 3i Infotech dispute is this run's load-bearing legal item; this pass could only read eMudhra's own filings and on-record investor-call transcript (Srinivasan's detailed, checkable rebuttal: Deloitte valuation range vs actual sale price, staged and 3i-Infotech-acknowledged preference-share redemption). 3i Infotech's own complaint text and 10-Feb-2026 response letter were unreadable (encoded PDF). Treat the EOW's civil-not-criminal closure as independently verified; treat the underlying valuation/redemption dispute as one-sided evidence in this corpus and a standing tripwire (any SEBI complaint or civil suit filing). Separately, the promoter-family board expansion, unexplained CFO pay jump, and Chairman/Taarav loans to subsidiaries all landed in the same FY26 year as the 3i Infotech complaint; no causal link was found or implied, but the concentration of watch items in one year is itself worth downstream note."

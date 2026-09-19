@@ -5,28 +5,34 @@ model: claude-sonnet-5
 status: complete
 input_gaps:
 - "FRESHNESS FAIL (carried from B00): ICRA June-2026 rating rationale absent; only the reaffirmation letter is held. Not scored by this stage (no rating metric in Gate 0), carried forward per instruction."
-- "Consolidated Trade Payables balance not reliably extractable: AR Note 18 (p.255) and consolidated balance sheet (p.216-219) are OCR-scrambled (label/value pairing unreliable, candidate readings diverged up to 8x). Blocks B4 and M12 (WC days), and forces D4 to a standalone-basis proxy."
-- "FCF (B2/B3) computable for FY26 only; FY19-FY25 capex not in provided data (screener Data_Sheet has no capex line; no multi-year AR cash-flow statement in corpus). Scored at LIMITED confidence, n=1."
+- "Consolidated Trade Payables balance not reliably extractable: AR Note 18 (p.255) and consolidated balance sheet (p.216-219) are OCR-scrambled in the pdftotext-layout extraction (label/value pairing unreliable, candidate readings diverged up to 8x). Blocks B4 and M12 (WC days), and forces D4 to a standalone-basis proxy. The mupdf extraction resolved the cash-flow-statement page (p.218) cleanly but was not re-run against the balance-sheet/Note-18 pages."
+- "FCF (B2/B3) computable for FY25-FY26 only (n=2), corrected 2026-09-19 (see report Correction note): AR p.218 mupdf extraction, capex = Purchase of PP&E and Intangible assets (Rs 1,853.68 Mn FY26 / Rs 832.02 Mn FY25), acquisition payment (Rs 629.03 Mn FY26 / Rs 743.23 Mn FY25) correctly excluded. FY19-FY24 capex not in provided data. Scored at LIMITED confidence, n=2."
 - "R&D-to-revenue % not disclosed on a comparable multi-year basis (M6); BRSR question marked NA by the company."
-- "Peer data insufficient for M7 (listed-player count in the licensed Certifying Authority segment) and M9 (comparable COGS/gross-margin basis — 2 of 3 peers report zero Raw Material Cost, a data-structure artifact)."
+- "Peer data insufficient for M7 (listed-player count in the licensed Certifying Authority segment) and M9 (comparable COGS/gross-margin basis - 2 of 3 peers report zero Raw Material Cost, a data-structure artifact)."
 - "Promoter holding 3-year change (E2) not verifiable: only ~1-2 years of data points in the provided corpus (BSE Mar/Jun-2026 summaries, AR FY26-vs-FY25 note)."
-flags: []
+flags:
+- type: FLAG-DISAGREEMENT
+  reason: "RESOLVED 2026-09-19: original draft misread FY26 capex as Rs 814.21 Mn (MD&A prose subset) instead of the full Rs 1,853.68 Mn cash-flow-statement line (AR p.218), giving a false-positive FY26 FCF of +Rs 51.43 Cr. Corrected to -Rs 52.52 Cr, matching the operator's original load-bearing fact and Stage 3's independent reading. See report Correction note for full detail."
+- type: FLAG-CASH
+  reason: "FY26 FCF confirmed -Rs 52.52 Cr, swung negative from FY25 +Rs 18.41 Cr (AR p.218), on capex nearly doubling (Rs 832.02 Mn to Rs 1,853.68 Mn) while CFO grew ~31%. This is now the deal-breaker binding classification to GOOD (Block B = 7, below the 8-point floor). Whether this is a one-off Cryptas-integration capex step-up or a new steady-state level could not be determined from provided data (no FY19-FY24 capex history, no clean consolidated payables/WC-days trend)."
 data_years: 8
 fy_range: "FY19 to FY26"
-blocks: {A: 12, B: 13, C: 18, D: 20, E: 14}
-core_score: 77
+blocks: {A: 12, B: 7, C: 18, D: 20, E: 14}
+core_score: 71
 moat_score: 17
-grand_total: 94
+grand_total: 88
 moats_confirmed: 4
 moat_class: "STRONG"
-classification: "GOOD+"
-deal_breakers: []
+classification: "GOOD"
+deal_breakers:
+- "Block B <8 (actual 7) -> max GOOD. Classification would otherwise be GOOD+ (Core 71, Moat STRONG)."
 history_downgrade: false
 data_notes:
 - "No loss-to-profit PAT swing FY19-FY26; PAT positive every year."
 - "ROCE/ROE FY19-FY23 computed (Capital Employed = Equity Share Capital + Reserves + Borrowings, screener 4-bucket model); FY24-FY26 use company-disclosed consolidated figures (AR p.57), close to but not identical to this stage's own computed method (FY26: 15.0% disclosed vs 14.51% computed)."
 - "D4 Current Ratio (2.90x FY26) is STANDALONE basis (AR Note 50, p.364), not consolidated; flagged for re-verification, basis-inconsistent with rest of analysis."
 - "M9 gross-margin peer comparison distorted: NEWGEN and PROTEAN report zero Raw Material Cost in screener Data_Sheet for every year (cost-classification artifact, not real 100% GM); not used as a scored signal beyond the 0 assigned."
-- "Consolidated CFO cross-check clean: AR p.155-156 MD&A table shows Rs 1,328.49 Mn FY26, matches screener-data Rs 132.85 Cr exactly. Consolidated CFI: AR shows Rs -2,250.53 Mn vs screener-data Rs -197.76 Cr (~Rs 27 Cr gap), immaterial to sign, not reconciled further."
-block_b_trend: "improving — CFO/PAT rose from 0.54x (FY23: 33.57/61.68, screener-data) to 1.23x (FY26: 132.85/107.79, screener-data); FCF confidence LOW (single anchored year, FY26 only); WC-days trend N/A (consolidated payables gap)."
-analyst_note: "GOOD+ driven by strong growth (C=18/20) and a clean balance sheet (D=20/20, net cash, 27x interest cover). The two operator-flagged priorities do not cleanly resolve: FY26 FCF is positive (+Rs 51 Cr) under this stage's formula, contradicting the -Rs 52 Cr load-bearing claim, but underlying payables/WC-days data needed to judge durability could not be pulled from the AR's OCR text at any confidence (corpus problem, not company problem) — this blocks Block B and zeroes M10/drags M4. E4's clean 0.38% contingent-liability score is correct per AR Note 36 but structurally excludes the disputed Rs 128 Cr+ 3i Infotech claim, which sits in narrative disclosure only. Recommend sourcing clean AR pages 216-219/255 for consolidated payables, and treating the 3i Infotech claim as a named unquantified tail risk regardless of E4's score."
+- "Consolidated CFO cross-check clean: AR p.155-156 MD&A table and AR p.218 mupdf extraction both show Rs 1,328.49 Mn FY26, matches screener-data Rs 132.85 Cr exactly. Consolidated CFI: AR shows Rs -2,250.53 Mn vs screener-data Rs -197.76 Cr (~Rs 27 Cr gap), immaterial to sign, not reconciled further."
+- "CORRECTED 2026-09-19: FY26 capex was Rs 814.21 Mn (wrong, MD&A prose subset); is Rs 1,853.68 Mn (AR p.218, mupdf, full cash-flow-statement line). FY26 FCF was +Rs 51.43 Cr (wrong); is -Rs 52.52 Cr. FY25 FCF newly computed: +Rs 18.41 Cr. B2 was 5, is 2. B3 was 3, is 0. Block B was 13, is 7. core_score was 77, is 71. grand_total was 94, is 88. classification was GOOD+, is GOOD (deal-breaker #2 now triggers)."
+block_b_trend: "deteriorating - FCF swung from +Rs 18.41 Cr (FY25) to -Rs 52.52 Cr (FY26), AR p.218 (mupdf), on capex nearly doubling while CFO grew ~31%; CFO/PAT (accrual quality) kept improving, 0.54x (FY23) to 1.23x (FY26, screener-data), so the two cash signals diverge. WC-days trend remains N/A (consolidated payables gap)."
+analyst_note: "GOOD (deal-breaker capped), was GOOD+ before the FY26 capex/FCF correction. Growth remains excellent (C=18/20) and the balance sheet is clean (D=20/20, net cash, 27x interest cover). The corrected read confirms both operator priorities: FY26 FCF is genuinely negative (-Rs 52.5 Cr, AR p.218), matching the load-bearing fact and now capping classification at GOOD; E4's clean 0.38% contingent-liability score still excludes the disputed Rs 128 Cr+ 3i Infotech claim (narrative-only, AR Note 36(f)). Open question: whether the FY26 capex jump (Rs 832 Mn to Rs 1,854 Mn) is a one-off Cryptas-integration build or a new steady-state level - no FY19-FY24 capex history or clean consolidated payables/WC-days trend exists in this corpus to judge either way. Recommend sourcing AR Note 18/BS pages 216-219 via mupdf for consolidated payables and current ratio, and asking claude.ai whether management has guided on FY27 capex intensity."

@@ -1,0 +1,85 @@
+stage: B05-concall
+company: "EMUDHRA"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - "UAE QTSP licence slipped from an implied ~Apr-Jun 2026 commissioning (Q3 FY26 call) to a still-unconfirmed ~Sep-Oct 2026 target (Q1 FY27 call), with zero update in the intervening Q4 FY26 call"
+  - "Repeated deflection on international/overseas segment profitability trajectory, asked and redirected in both Q3 FY26 and Q1 FY27 calls (Section 2E)"
+  - "FY27 PAT growth guidance narrowed from a 25-30% (most likely 27-28%) band at Q4 FY26 to a flat 25% at Q1 FY27, called 'unchanged' by management"
+  - "Stock-in-trade/distributor cost drag (~Rs 3 Cr/quarter, flagged Q3 FY26) never revisited or confirmed resolved in either later call"
+  - "3i Infotech claim (Rs 128 Cr+) remains open; EOW Navi Mumbai called it civil not criminal (18-Aug-2026), but 3i's threatened SEBI complaint status is never addressed on any earnings call and no contingent-liability figure is discussed on any of the three calls"
+  - "No customer-concentration disclosure in any of the three calls, despite one large India defence deal visibly skewing the Q4 FY26 India enterprise number"
+  - "ROE (~14.5-15%) has not moved despite the Enterprise-mix-shift narrative; management frames this as close to a ceiling without a structural improvement path when asked directly (Q1 FY27 call)"
+quarters_analysed: ["Q3 FY26", "Q4 FY26", "Q1 FY27"]
+triggers:
+  - {priority: 1, name: "Enterprise Solutions product-mix shift lifting margin", type: "PRICE-MIX", timeframe: "medium", conviction: "H", confirm_signal: "EBITDA margin holds above 25% for 2+ more consecutive quarters", kill_signal: "Reversion to ~23% margin band or product mix stalling"}
+  - {priority: 2, name: "Cryptas cross-sell converts to profitability", type: "INORGANIC", timeframe: "near-medium", conviction: "M", confirm_signal: "Cryptas FY27 full-year PAT positive with 2+ more named cross-sell wins", kill_signal: "Cryptas PAT stays near breakeven through FY27"}
+  - {priority: 3, name: "US product / InCommon university consortium momentum", type: "VOLUME", timeframe: "near", conviction: "M-H", confirm_signal: "US product revenue and university onboarding keep expanding toward the guided 25-30% FY27 growth", kill_signal: "US product growth stalls below 15-20%"}
+  - {priority: 4, name: "UAE QTSP licence and Middle East Trust Services build-out", type: "REGULATORY-POLICY", timeframe: "near", conviction: "M", confirm_signal: "Licence granted and DC commissioned by Q2/Q3 FY27", kill_signal: "Further slippage past Q3 FY27 without a firm new date"}
+  - {priority: 5, name: "FY27 organic growth closes the 15%-to-18% gap", type: "VOLUME", timeframe: "medium", conviction: "M", confirm_signal: "Q2/Q3 FY27 organic print moves back toward 18% as token transition normalises", kill_signal: "Organic growth stays near 15% for two more quarters"}
+  - {priority: 6, name: "SecurePass/IAM international expansion", type: "VOLUME", timeframe: "medium", conviction: "M", confirm_signal: "A named international SecurePass deal win within FY27", kill_signal: "No international SecurePass deal named by FY27 year-end"}
+  - {priority: 7, name: "PQC/CBOM and Agentic AI identity layer", type: "SECTORAL", timeframe: "long", conviction: "L", confirm_signal: "First paid PQC- or agentic-AI-linked deal named", kill_signal: "Still 'early stage, hard to quantify' language into FY28"}
+  - {priority: 8, name: "PrivaTrust / DPDP consent management", type: "REGULATORY-POLICY", timeframe: "medium-long", conviction: "L", confirm_signal: "First named customer win within 2 quarters", kill_signal: "No win or quantification by Q3 FY27 call"}
+guidance:
+  - {item: "FY26 total revenue", number: "Rs 700 Cr", timeframe: "FY26", stated_in: "Q3 FY26 call"}
+  - {item: "FY26 capex", number: "Rs 75-80 Cr (Rs 60-62 Cr ex data centres + Rs 15 Cr UAE DC)", timeframe: "FY26", stated_in: "Q3 FY26 call"}
+  - {item: "FY26 year-end cash", number: "Rs 125-140 Cr", timeframe: "FY26", stated_in: "Q3 FY26 call"}
+  - {item: "FY26 Trust Services revenue", number: "~Rs 120-122 Cr (22-25% growth)", timeframe: "FY26", stated_in: "Q3 FY26 call"}
+  - {item: "FY26 adjusted EBITDA margin", number: "25.8%", timeframe: "Q3 FY26", stated_in: "Q3 FY26 call"}
+  - {item: "FY27 organic revenue growth", number: "15-18%, most likely 18%", timeframe: "FY27", stated_in: "Q4 FY26 call"}
+  - {item: "FY27 PAT growth", number: "25-30%, most likely 27-28%", timeframe: "FY27", stated_in: "Q4 FY26 call"}
+  - {item: "PAT doubling", number: "2x PAT over 3 years", timeframe: "FY27-FY29", stated_in: "Q4 FY26 call, reaffirmed Q1 FY27 call"}
+  - {item: "FY27 order book to revenue conversion", number: "2.2x-2.3x (vs generally 2x historically)", timeframe: "FY27", stated_in: "Q4 FY26 call"}
+  - {item: "FY27 Trust Services growth", number: "~20%", timeframe: "FY27", stated_in: "Q4 FY26 call"}
+  - {item: "FY27 Enterprise Solutions growth", number: "~25-30%", timeframe: "FY27", stated_in: "Q4 FY26 call"}
+  - {item: "UAE QTSP licence completion", number: "end of this quarter to beginning of next (~Sep-Oct 2026)", timeframe: "near", stated_in: "Q1 FY27 call"}
+  - {item: "FY27 guidance restated", number: "organic 18%, PAT growth 25% (flat, band dropped)", timeframe: "FY27", stated_in: "Q1 FY27 call"}
+  - {item: "Token/DSC recertification normalisation", number: "mostly by September", timeframe: "Q2 FY27", stated_in: "Q1 FY27 call"}
+  - {item: "SecurePass typical deal size", number: "Rs 4-6 Cr per large bank/government entity, Rs 10 Cr+ for full PIM/PAM suite", timeframe: "ongoing", stated_in: "Q1 FY27 call"}
+  - {item: "ROE target level", number: "~14.5-15%", timeframe: "ongoing", stated_in: "Q1 FY27 call"}
+promise_delivery:
+  delivered: 4
+  partial: 2
+  missed: 2
+  rows:
+    - {promised_in: "Q3 FY26 call", promise: "FY26 total revenue Rs 700 Cr", outcome: "delivered", explanation: "Beat; actual Rs 713.2 Cr per Q4 FY26 call; guide held firm mid-year despite tracking ahead"}
+    - {promised_in: "Q3 FY26 call", promise: "FY26 Trust Services growth 22-25%", outcome: "delivered", explanation: "Beat; actual FY26 growth 32% per Q4 FY26 call"}
+    - {promised_in: "Q3 FY26 call", promise: "Adjusted EBITDA margin ~25.8% sustained", outcome: "delivered", explanation: "FY26 adjusted EBITDA margin 25.7% per FY2026 investor presentation"}
+    - {promised_in: "referenced in Q3 FY26 call as a prior-quarter promise", promise: "5-6 major US customers signed, revenue to follow", outcome: "partial", explanation: "Customers retained, US business flat not declined, but one customer's revenue shifted from Q3 to Q4 FY26 on usage-based recognition timing"}
+    - {promised_in: "Q3 FY26 call", promise: "UAE data centre commissioning after a 2-3 month audit (~Apr-Jun 2026)", outcome: "missed", explanation: "QTSP licence still pending as of Q1 FY27 call, now targeted ~Sep-Oct 2026; no update given at all in the intervening Q4 FY26 call"}
+    - {promised_in: "Q3 FY26 call", promise: "Stock-in-trade cost drag (~Rs 3 Cr/quarter) to normalise in 1-2 quarters", outcome: "missed", explanation: "Never revisited or confirmed resolved in Q4 FY26 or Q1 FY27 calls; no root cause ever given"}
+    - {promised_in: "Q4 FY26 call", promise: "FY27 organic revenue growth 18%", outcome: "partial", explanation: "Q1 FY27 print: total income +28%, ~13 points from Cryptas, so company-wide organic ~15%; product-segment organic framed separately at ~25% by Kaushik Srinivasan; shortfall attributed to temporary Trust Services decline"}
+    - {promised_in: "Q4 FY26 call", promise: "FY27 PAT growth 25-30%, most likely 27-28%", outcome: "delivered", explanation: "Q1 FY27 PAT +27.9% YoY, within/near top of the guided range, though the spoken guide language was later narrowed to a flat 25%"}
+excuse_pattern: "balanced"
+repeated_evasions:
+  - {question: "What is the trajectory/timeline for international (overseas) segment profitability?", quarters_asked: ["Q3 FY26", "Q1 FY27"], classification: "deflected every time"}
+credibility_grade: "B"
+credibility_basis: "Strong batting average on quantified, checkable promises (FY26 revenue and Trust Services beats, Q1 FY27 PAT delivered near the top of guide, adjusted EBITDA margin held) and proactive, consistent handling of the 3i Infotech allegation, with high segment/geography disclosure granularity. Held to B rather than A by one repeated, unresolved evasion (international segment margin trajectory), a guidance-language softening presented as unchanged, a silent/unresolved UAE data-centre timeline slip, a dropped cost-drag item never revisited, and no instance of management admitting a mistake across three transcripts."
+peer_questions:
+  - {question: "Is NIS2/DORA compliance genuinely accelerating enterprise PKI/identity software demand in Europe in FY26-27, or is this a generic industry narrative?", why: "eMudhra cites it as a structural European growth driver with no market size given", check_peers: ["NEWGEN"]}
+  - {question: "Are Indian public-sector or BFSI customers reporting a broad rise in cybersecurity spend, as eMudhra claims for one unnamed PSU bank (+50%)?", why: "tests whether this is an isolated anecdote or a sector-wide trend", check_peers: ["QUICKHEAL"]}
+  - {question: "Is India's DSC/token industry seeing a broad volume hit from the FIPS 140-3 recertification transition into September 2026?", why: "verifies whether the Q1 FY27 Trust Services decline is industry-wide or eMudhra-specific execution", check_peers: ["PROTEAN"]}
+  - {question: "What organic growth and margin trajectory are Indian enterprise software exporters with Middle East/BFSI exposure reporting for FY27, and does eMudhra's 15-18% organic guide look conservative or aggressive by comparison?", why: "benchmarks eMudhra's FY27 organic guide and its Q1 FY27 ~15% organic print", check_peers: ["NEWGEN"]}
+  - {question: "Do Indian cybersecurity/identity software vendors report improving ROE/ROCE as enterprise/product mix rises, or does the metric stay range-bound regardless of mix shift?", why: "tests whether eMudhra's flat ~14.5-15% ROE despite the mix-shift narrative is industry-wide or company-specific", check_peers: ["NEWGEN", "QUICKHEAL", "PROTEAN"]}
+  - {question: "Is the UAE's new in-country data-centre mandate for trust service providers driving broad capex/timeline slippage industry-wide, or is eMudhra unusually exposed?", why: "verifies whether the UAE QTSP delay is a common regulatory bottleneck", check_peers: ["PROTEAN", "NEWGEN"]}
+  - {question: "Is eMudhra's claim of leadership in the Indian certifying-authority space corroborated by the competitive landscape (Capricorn, Verasys, PentaSign named)?", why: "market-share-gain claim, unverified from transcript alone", check_peers: ["PROTEAN"]}
+  - {question: "Are comparable Indian-origin enterprise software vendors reporting similar US senior-hire cost inflation (~$200-300k per hire) and H-1B-visa-driven US services headcount constraints?", why: "input/talent-cost trend claim used to explain US services stagnation", check_peers: ["NEWGEN", "QUICKHEAL"]}
+  - {question: "Are eMudhra's disclosed average deal sizes ($250k-700k for US/global CA and CLM products) broadly consistent with what comparable vendors report for similar US enterprise/government deals?", why: "pricing/deal-size credibility cross-check", check_peers: ["NEWGEN"]}
+red_flags:
+  - "MEDIUM: UAE QTSP licence slippage, ~Apr-Jun 2026 implied to still-unconfirmed ~Sep-Oct 2026, with a silent Q4 FY26 call in between"
+  - "MEDIUM: repeated deflection on international/overseas segment profitability trajectory (Q3 FY26 and Q1 FY27)"
+  - "MEDIUM: FY27 PAT growth guidance narrowed from a 25-30% band to a flat 25% while called unchanged"
+  - "LOW-MEDIUM: stock-in-trade/distributor cost drag never revisited or confirmed resolved"
+  - "LOW: 3i Infotech claim (Rs 128 Cr+) remains open; no contingent-liability figure discussed on any earnings call; 3i's threatened SEBI complaint status never addressed"
+  - "LOW: no customer-concentration disclosure in any of the three calls"
+  - "LOW: ROE (~14.5-15%) has not moved despite the mix-shift narrative; management frames it as close to a ceiling without a structural improvement path"
+dropped_triggers:
+  - "Near-term bolt-on AI-cybersecurity acquisition: live consideration in Q3 FY26 (6-9 months), cautious in Q4 FY26 (maybe Q3/Q4), entirely absent from Q1 FY27 call with no resolution stated"
+  - "US EBITDA margin recovery timeline to 25-26%: specific framing from Q3 FY26 not revisited with a timeline in Q4 or Q1, absorbed into general consolidated-margin commentary"
+timeline_slippages:
+  - "UAE data centre audit/commissioning: guided ~2-3 months from the Feb-2026 call (~Apr-Jun 2026); as of the Jul-2026 call, QTSP licence still pending, now targeted ~Sep-Oct 2026"
+  - "Order book to next-year-revenue multiple: 'generally 2x' historically; Middle East war delayed some March-2026-quarter orders, yet the guide was raised to 2.2x-2.3x rather than cut"
+  - "Stock-in-trade/purchase cost normalisation: guided 'another one or two quarters' from the Feb-2026 call (~by Q1 FY27); never confirmed resolved in either later call"
+analyst_note: "Concalls only; FCF, payables composition, receivables ageing and the AR contingent-liability note (spear facts 2 and 3) are outside this stage's transcript-only mandate and are not discussed by either side on any of the three calls, which is itself recorded as a Section 2D silence. The FY26 audited results text held no searchable '3i Infotech' or 'contingent liability' string; likely sits in a rasterised AR section not reached by plain-text extraction. Flagged for stage 3. No FY27 order book figure has been disclosed yet, so the 2.2x-2.3x conversion promise is unverifiable until a later print."

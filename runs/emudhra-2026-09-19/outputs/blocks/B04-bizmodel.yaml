@@ -1,0 +1,64 @@
+stage: B04-bizmodel
+company: "EMUDHRA"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - "Whole-company organic vs. acquired revenue split (load-bearing fact 1) is disclosed only at the Enterprise Solutions segment level (FY26: +55% total, organic +23 pts / inorganic +32 pts, Q4FY26 Inv. Pres. slide 6 footnote), not at the whole-company level; the ~19% FY26 / ~15% Q1FY27 whole-company estimates in company memory remain concall-sourced, not AR-anchored."
+  - "AR capex breakdown (existing-product Rs 124.62 Mn + new product Rs 476.38 Mn + data centre Rs 213.21 Mn + acquisitions net Rs 1,101.35 Mn, AR p.155-156) does not reconcile to the B01/B03 capex figure (Rs 1,853.68 Mn PPE+intangibles); flagged, not resolved in this stage."
+  - "Group headcount is reported two ways with different scope: 850+ worldwide (Q1FY27 Inv. Pres. slide 5) vs. 861 reported in the AR Board's Report (standalone-entity employees, AR p.152); not on a like-for-like basis."
+business_type: "hybrid"
+revenue_streams:
+  - {name: "Trust Services (DSC/eSign, India-led)", type: "licensed-transaction fee", pct_of_revenue: 20, predictability: "M-H"}
+  - {name: "Enterprise Solutions (owned software platform: emSigner, SecurePass, CertiNext/emCA)", type: "software licence/subscription", pct_of_revenue: 59, predictability: "M"}
+  - {name: "Services (consulting/integration)", type: "project/time-and-materials", pct_of_revenue: 21, predictability: "L"}
+asset_intensity: "light"
+wc_intensity: "high"
+pricing_power: "moderate"
+cyclicality: "secular-growth"
+moats_present:
+  - "Switching costs (67% existing-customer revenue, AR p.55) - durability: high"
+  - "Licensed-CA regulatory moat, CCA licence + WebTrust accreditation (Trust Services, 20% of revenue) - durability: high, narrow scope"
+  - "Cost advantage, Bangalore delivery vs global rivals (AR p.158) - durability: medium"
+  - "Distribution/channel, CA-partner network for DSC + direct/partner mix for Enterprise (AR p.55, Q4FY26 slide 8) - durability: medium"
+  - "Brand (WebTrust 'only Indian CA', G2/IDC recognition) - durability: medium, niche"
+valuation_methods:
+  primary: {method: "P/E (reported and adjusted)", why: "Profitable since FY19, clean core CFO/PAT >1x both years, company itself tracks Adjusted PAT"}
+  secondary: {method: "DCF", why: "Order book (Rs 2,380 Mn, +24.8% YoY) and 65% recurring revenue support forward cash-flow build once FY26 capex/M&A-driven FCF dip is normalised"}
+  tertiary: {method: "EV/Sales (Enterprise Solutions slice only)", why: "Cross-check the higher-growth, still-thin-margin international segment against named global cybersecurity/IAM peers"}
+  not_applicable: ["SOTP/sum-of-the-parts (no standalone segment financials or CA peer multiples)", "Dividend discount model (modest payout, growth-reinvestment strategy)", "Asset-based/replacement value (value is IP/licence/relationships, not physical assets)"]
+irrelevant_ratios:
+  - {ratio: "Inventory turnover / days inventory", why: "stock-in-trade is CA-partner DSC pass-through, not manufacturing input; already distorted once by the July-2024 CCA model change"}
+  - {ratio: "Gross margin vs pure-SaaS peers", why: "reported COGS bundles commission expense, personnel cost, stock-in-trade and transfer pricing, not comparable to a hosting-only cost stack"}
+  - {ratio: "Reported P/E alone", why: "company discloses a materially different Adjusted PAT (strips ESOP provisioning and notional acquisition-liability interest); unadjusted PAT alone overstates M&A-accounting noise"}
+  - {ratio: "Debt/Equity, interest coverage", why: "net cash, D/E 0.03x; real leverage risk is the uncapped contingent consideration/put-call option, not funded debt"}
+  - {ratio: "Receivable days in isolation", why: "looks stable (92-96 days) but misses that unbilled revenue (+40.6%) and payables (+91%) both outrun 35.1% revenue growth"}
+  - {ratio: "Fixed asset turnover FY26 vs FY25", why: "asset base roughly doubled almost entirely from Cryptas/AI Cyberforge goodwill and intangibles, not organic capacity"}
+must_track_metrics:
+  - {metric: "Enterprise Solutions organic growth ex-M&A", healthy: "at or above FY27 guide 15-18%", red_flag: "materially below guide while total growth is propped up by acquisition comps"}
+  - {metric: "Outside-India Enterprise Solutions segment margin (Note 49)", healthy: "narrowing gap to India segment's 51-58%", red_flag: "further widening below 21.9% FY26 print"}
+  - {metric: "Free cash flow (CFO minus capex)", healthy: "return to positive", red_flag: "second consecutive negative year"}
+  - {metric: "Order book (Enterprise Solutions)", healthy: "growth at or above 24.8% FY26 print", red_flag: "flat or declining book"}
+  - {metric: "Goodwill (Rs 2,940.46 Mn) + contingent consideration (Rs 881.45 Mn) vs net worth", healthy: "disclosed impairment headroom, liability growth in line with Cryptas EBITDA", red_flag: "any impairment charge or liability growth ahead of disclosed performance"}
+unit_economics:
+  unit: "Two units tracked separately: (A) one 2-year Digital Signature Certificate, Trust Services; (B) one enterprise Enterprise Solutions account (per-deal ACV NOT FOUND)"
+  revenue_per_unit: "Unit A: ~Rs 1,500 per 2-year DSC (Q4FY26 Inv. Pres. slide 8). Unit B: NOT FOUND at per-account granularity"
+  margin_per_unit: "Unit A: partner commission 45-50% where sold via the ~70% partner channel; Trust Services segment margin 31.4% FY26 (Note 49). Unit B: Outside-India Enterprise segment margin compressed to 21.9% FY26 from 26.0% FY25 (Note 49), the opposite of operating leverage"
+  key_lever: "Unit A: partner commission rate and eSignature volume. Unit B: employee cost of international expansion (19.46% of consolidated revenue, up from 17.6%) vs new-account/order-book conversion"
+first_deterioration_signals:
+  - {risk: "Revenue model: licensed Trust Services channel disruption (repeat of the July-2024 CCA model change)", first_signal: "Trust Services segment revenue growth (Note 49) turns negative, or a repeat stock-repurchase charge appears in COGS"}
+  - {risk: "Margin: international Enterprise Solutions stays structurally lower-margin than the India book", first_signal: "Outside-India Enterprise Solutions segment operating margin (Note 49) falls further, quarter over quarter"}
+  - {risk: "Balance sheet: Cryptas contingent consideration/put-call option crystallises above fair value", first_signal: "the 'Interest on contingent consideration' finance-cost line (Note 29) or the Note 17a liability balance jumps ahead of disclosed EBITDA growth"}
+  - {risk: "Execution: acquisition integration underperforms (as the smaller Two95 earn-out already partly missed)", first_signal: "any disclosed movement in Cryptas actual EBITDA vs the implicit 10x contingent-consideration target"}
+  - {risk: "Structural: loss of WebTrust accreditation or browser root-store listing", first_signal: "a qualified WebTrust audit opinion or a browser-vendor distrust/removal notice"}
+mgmt_questions:
+  - "What exact revenue did Cryptas and AI Cyberforge contribute to FY26 and Q1FY27 growth, to separate organic from acquired growth cleanly?"
+  - "Note 49 shows India Enterprise Solutions margin at 57.5% vs Outside-India at 21.9% in FY26 - what is the specific plan and timeline to close that gap?"
+  - "What EBITDA/revenue trajectory for Cryptas is embedded in the Rs 881.45 Mn contingent-consideration fair value, and is there any ceiling on the mechanic?"
+  - "Is the FY26 capex spike (product development plus data-centre build) now largely behind the company, or does capex of this scale recur in FY27?"
+  - "Why has the Rs 21.61 Mn MSME payable sat overdue and unchanged across two consecutive annual reports?"
+  - "What contractual basis defines the 65% 'recurring revenue' figure - subscription/licence revenue under multi-year contract, or does it include repeat-but-not-contracted project revenue?"
+  - "Why were two promoter-family members added to the board effective just after FY26 year-end, and why did CFO remuneration rise 42.4% YoY, well above the 7.1% median-employee increase?"
+one_line_verdict: "Licensed trust utility funding a global security-software platform bet, both real, not yet equally profitable."
+analyst_note: "B00's sector-cap row (Platform/SaaS/IT services, not Cybersecurity/VAD) is CONFIRMED: eMudhra owns its PKI/identity/signing IP outright (AR p.13, p.158) rather than distributing certified third-party products; the 21% Services line is project consulting, not resale, so it does not push the row toward distribution. Highest-value new finding this stage: Ind AS 108 Note 49 (AR p.288) splits Enterprise Solutions operating margin by geography, India 57.5% vs Outside-India 21.9% in FY26, down from 26.0% in FY25 even as international revenue grew 38.3%. This directly contradicts the 'operating leverage from international mix shift' framing in company memory for FY26 specifically; margin dilution, not leverage, is what the segment note shows this year. The organic-vs-acquired split (load-bearing fact 1) is only disclosed at the Enterprise Solutions segment level (organic +23 pts of +55% FY26 growth), not company-wide; flagged, not resolved."

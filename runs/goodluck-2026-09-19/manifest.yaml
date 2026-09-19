@@ -1,0 +1,24 @@
+company: Goodluck India Ltd
+ticker: GOODLUCK
+cmp: 517.0
+market_cap_cr: 5158.0
+run_date: 2026-09-19
+run_type: full
+listed_date: ""   # long-listed (BSE 530655); no prospectus expected
+bse_code: "530655"
+screener_url: "https://www.screener.in/company/GOODLUCK/consolidated/"
+peers: [BALUFORGE, RATNAMANI, HITECH]
+concalls_available: true
+sector_cap_row: "Cables / Industrial products"   # Step-1 D (2026-09-19): 25x, section-1b chunk 05; GDAL defence slice candidate row "Defence / strategic" 38x for phase-3 SOTP ruling
+sector_cap_row_guess: "Pharma / CDMO"   # keyword guess only, never consumed
+collector_warnings:
+  - "shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend."
+  - "screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance Sheet, screener:Cash Flow, screener:Customization, BALUFORGE:Profit & Loss, BALUFORGE:Quarters, BALUFORGE:Balance Sheet, BALUFORGE:Cash Flow, BALUFORGE:Customization, RATNAMANI:Profit & Loss, RATNAMANI:Quarters, RATNAMANI:Balance Sheet, RATNAMANI:Cash Flow, RATNAMANI:Customization, HITECH:Profit & Loss, HITECH:Quarters, HITECH:Balance Sheet, HITECH:Cash Flow, HITECH:Customization. Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again."
+  - "RESOLVED at Step 1: results/ filled from BSE (Q1 FY27 board outcome 06-Aug-2026, Q4 FY26 audited 26-May-2026, Q3 FY26 13-Feb-2026); Q2 FY26 in other/."
+  - "RESOLVED at Step 1: rating/ holds the CRISIL rationale dated 30-Jun-2026, printed to PDF from the CRISIL HTML page."
+  - "shareholding/ holds a screener-scraped quarterly table (aggregator, not the BSE Reg 31 filing); the promoter 29(2) SAST disclosure of 01-Jul-2026 is in announcements/."
+  - "announcements/: collector BSE fetch (first live test of fetch_bse_announcements, PR #167) returned 9 files, 7 of them duplicates of the AR, AGM notice, BRSR, transcript and presentation; Step 1 re-fetched 38 unique Reg 30 filings (AttachHis fallback needed for older items). The collector capped at 25 rows and does not fall back to AttachHis."
+  - "BALUFORGE holds no earnings calls (BSE search 12 months: transcripts none); its Jun-2026 investor presentation sits in peer-concalls/ as its only peer document."
+  - "Screener export: Profit & Loss, Balance Sheet, Cash Flow, Quarters sheets EMPTY for all four companies; Data_Sheet CSVs carry the raw annual figures."
+  - "20251108 press release (1.15 MB variant) lost to a filename collision; the Q2 FY26 results pack is in other/."
+notes: "Collected from screener.in by collect_to_repo.py v3. sector_cap_row is deliberately empty: resolve it at stage 0 against the Section 1B cap table."

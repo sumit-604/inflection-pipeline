@@ -1,0 +1,34 @@
+company: Susan Electricals India Ltd
+ticker: SUSAN
+bse_code: "544793"
+screener_url: https://www.screener.in/company/544793/
+cmp: 314.0
+market_cap_cr: 639.0
+run_date: 2026-09-19
+run_type: full
+listed_date: 2026-06-18      # BSE SME; IPO Rs 127, RHP dated 08-Jun-2026 in inputs/prospectus/
+concalls_available: true     # step 1 repair: the company holds calls; only ONE transcript exists since listing (Q1 FY27, filed 22-Aug-2026). Collector set false on count alone.
+sector_cap_row: "Cables / Industrial products"   # step 1 (Step D) pick, 25x; stage 0 confirms against section-1b chunk 05. Phase-3 flag: aluminium rod/wire trading slice may need Distribution / trading (20x) under v3.11 Amendment 27.2 SOTP.
+sector_cap_row_guess: "Pharma / CDMO"   # collector keyword guess, wrong, consumed by nothing
+peers: [DYCL, DIACABS, VIDYAWIRES]      # auto-selected at Step 1; PRECWIRE dropped (no transcripts filed, collector download failed)
+collector_warnings:
+  - "consolidated page had no price, standalone page used: this company files no consolidated statements. Every stage reads standalone."
+  - "shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend."
+  - "screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance Sheet, screener:Cash Flow, screener:Customization, DIACABS:Profit & Loss, DIACABS:Quarters, DIACABS:Balance Sheet, DIACABS:Cash Flow, DIACABS:Customization. Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again."
+  - "no AR found on screener: AR stages will be skipped"
+  - "no results PDFs yet (screener has none): add later on github or locally + --push-again"
+  - "no rating PDF yet: add later the same way"
+  - "only 1 concalls -> no-concall mode"
+  - "PRECWIRE peer download failed (Excel timeout; no AR, concall or presentation found)."
+step1_repairs:
+  - "annual-report/: FY2025-26 AR downloaded by hand from seil.net.in/investor/annual-reports/ (dated 27-Jul-2026). Supersedes warning 'no AR found'."
+  - "results/: Q1 FY27 results (BSE 14-Aug-2026) downloaded from BSE announcements. Supersedes warning 'no results PDFs'. FY26 audited annuals sit in the AR and RHP; SME listed 18-Jun-2026, so no earlier listed-company results filings exist."
+  - "rating/: CRISIL rating rationale 04-Sep-2026 saved as HTML plus .txt (no PDF published). Supersedes warning 'no rating PDF'."
+  - "prospectus/: RHP 08-Jun-2026 from bsesme.com."
+  - "shareholding/: only SHP on BSE is the pre-listing 17-Jun-2026 filing (XBRL HTML plus .txt). No post-listing quarterly SHP filed yet (SME half-yearly cycle); Sep-2026 SHP is due after this run."
+  - "announcements/: 23 BSE filings 18-Jun to 16-Sep-2026 (collector fetched 6). Two duplicates removed; presentations moved to presentation/."
+  - "concalls/: one transcript, Q1 FY27 call (BSE 22-Aug-2026). Collector's Concall_Sep_2026 file was the same PDF, removed."
+  - "research/: company-commissioned industry report from seil.net.in (NON-ANCHORED)."
+  - "peer-concalls: PRECWIRE replaced by VIDYAWIRES (winding wire and conductor maker that files transcripts). 7 transcripts: DYCL x4, DIACABS x1, VIDYAWIRES x2."
+  - "Every PDF opened with pypdf; page-marked .txt written beside each. Presentations are image-heavy (about 300 chars per page of text)."
+notes: "Step-1 intake (operator standing ruling 2026-09-05). Load-bearing facts in companies/SUSAN.md and step1-business-brief.md."

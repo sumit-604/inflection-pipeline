@@ -1,0 +1,45 @@
+stage: B06-peers
+company: "SHAREINDIA"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - "LBF1 UNRESOLVED BY PEERS: neither SMC Global nor Choice International discloses a prop-vs-client revenue or profit split in any consistent metric across 8 combined transcripts. Peer silence does not corroborate or refute Share India's '60% client' framing; the AR/BRSR contradiction (B03/B05) remains the operative evidence."
+  - "SMC Global frames its own 'proprietary' book as low-leverage treasury/arbitrage deployment of surplus funds (SMCGLOBAL-2026-05-08, p.11), structurally different from what Share India's RBI-curb bank-guarantee workaround implies about the scale/risk of its own prop desk. Sharpens, does not resolve, prop-book-risk concern."
+  - "Branch-scale mismatch: Choice International targets 800 branches in 3-4 years (already 210-220, CHOICEIN-2026-08-17 p.13) vs Share India's 30 branches in 2-3 years. Same playbook (physical Tier 2/3 presence vs digital-only discount brokers), order-of-magnitude different scale."
+peers_provided: 12
+verified:
+  - {claim: "Q3 FY26 ADTO recovery was industry-wide and commodity-driven (gold/silver/crude), not company-specific", peers: ["ANGELONE", "SMCGLOBAL"], anchor_count: 2}
+  - {claim: "RBI intraday bank-funding curb on capital-market/prop exposure is real, industry-wide, and bank-guarantee conversion is a shared industry mitigation mechanism (magnitude 'Rs 40,000-50,000 Cr' unconfirmed by any peer)", peers: ["ANGELONE", "SMCGLOBAL"], anchor_count: 3}
+partially_verified:
+  - {claim: "Industry-wide MTF pricing pressure from deep-pocketed/discount entrants is real (direction confirmed); Zerodha/Groww not named in this context by any peer, and Share India's specific 'direct branch removes sub-broker layer' counter-strategy is uncorroborated", peers: ["ANGELONE"]}
+contradicted: []
+unverifiable:
+  - {claim: "Prop-vs-client revenue/profit split comparable to Share India's '60% client' framing (LBF1)", peers_checked: ["SMCGLOBAL", "CHOICEIN"]}
+  - {claim: "SEBI circular constraining third-party algo-platform vendors serving multiple brokers (uTrade multi-broker stall)", peers_checked: ["ANGELONE", "CHOICEIN", "SMCGLOBAL"]}
+peer_coverage_map:
+  - {peer: "SMCGLOBAL", quarter: "Q2 FY26", usage: "CITED-ONLY", contribution: "Confirms a genuine derivatives-ADTO decline the quarter before Share India's claimed Q3 FY26 recovery"}
+  - {peer: "SMCGLOBAL", quarter: "Q3 FY26", usage: "SUBSTANTIVE", contribution: "Commodity revenue share growth 4% to ~10%; broadly constructive tone; SEBI retail-algo framing (no vendor-cost circular corroborated)"}
+  - {peer: "SMCGLOBAL", quarter: "Q4 FY26", usage: "SUBSTANTIVE", contribution: "Direct analyst question on RBI prop-leverage circular; 'treasury operations' framing of prop/arbitrage book; NCD/CP funding-diversification parallel"}
+  - {peer: "SMCGLOBAL", quarter: "Q1 FY27", usage: "SUBSTANTIVE", contribution: "Measured 'relatively stable' Q1 FY27 tone contrasts with Share India's 'strongest ever' framing; proactive GNPA/asset-quality disclosure"}
+  - {peer: "CHOICEIN", quarter: "Q2 FY26", usage: "SUBSTANTIVE", contribution: "Segment revenue split (broking 59%/NBFC 15%) and proactive NNPA disclosure, comparison baseline"}
+  - {peer: "CHOICEIN", quarter: "Q3 FY26", usage: "SUBSTANTIVE", contribution: "ADTO market-share disclosure (silent on Share India's specific claim); structural-pivot demand framing; per-branch capex figure (Rs 3-5 lakh)"}
+  - {peer: "CHOICEIN", quarter: "Q4 FY26", usage: "SUBSTANTIVE", contribution: "'Deliberate emphasis... rather than broad-based expansion' tone; segment revenue split"}
+  - {peer: "CHOICEIN", quarter: "Q1 FY27", usage: "SUBSTANTIVE", contribution: "800-branch, 3-4-year target and 210-350 branch trajectory; single largest capex-cycle finding"}
+  - {peer: "ANGELONE", quarter: "Q2 FY26", usage: "SUBSTANTIVE", contribution: "MTF/interest-income mechanics context; candid non-deflecting answer to peer cost-ratio challenge; expiry-count sensitivity question"}
+  - {peer: "ANGELONE", quarter: "Q3 FY26", usage: "SUBSTANTIVE", contribution: "Commodity ADTO +43% QoQ; direct analyst MTF-pricing-war question and stickiness answer; draft (different) RBI MTF-funding circular"}
+  - {peer: "ANGELONE", quarter: "Q4 FY26", usage: "SUBSTANTIVE", contribution: "Proactive disclosure (dated before Share India's own Q4 call) of the RBI intraday/bank-guarantee curb; ADTO/market-share stagnation admission"}
+  - {peer: "ANGELONE", quarter: "Q1 FY27", usage: "SUBSTANTIVE", contribution: "Analyst question on RBI circular 'second order impact', 'transient, no liquidity issue' answer; standout Q1 FY27 print tested against 'far, far better than peers' claim; restricted-basket customer-attrition risk"}
+industry_cross_read:
+  demand: "All three peers show broadly constructive-to-resilient demand Oct-2025 to Jul-2026, with a genuine SMC Global ADTO trough in Q2 FY26 before recovery; by Q1 FY27, Angel One posts a standout quarter (PAT +102% YoY) while SMC Global's tone is notably measured ('relatively stable'), undercutting Share India's unquantified 'far, far better than peers' claim."
+  pricing_inputs: "MTF pricing pressure from deep-pocketed entrants confirmed industry-wide (Angel One); NCD/CP funding-diversification away from bank borrowing confirmed as an industry-wide response to RBI direction, not a Share India-specific innovation (SMC Global)."
+  capex_cycle: "Not a uniform industry-wide capacity race: Choice International is a large-scale physical-branch expander (800 branches targeted, low per-branch cost), Angel One has stopped physical expansion and redeploys capital into technology/named-vertical infusions, SMC Global runs a low-leverage treasury-style prop book rather than aggressive branch/MTF expansion. Share India's capital-intensive branch-plus-prop combination matches none of the three peer archetypes cleanly."
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "NBFC/lending asset quality (GNPA/NNPA) proactively quantified by SMC Global and Choice International each quarter; Share India discloses no equivalent asset-quality metric for its MTF book or Share India Cred lending in any of its three calls."
+  - "Direct analyst cost-ratio peer comparison, answered candidly without external-blame deflection by Angel One (Q2 FY26); contrasts with Share India's external-blame-heavy pattern (B05 2B)."
+  - "Regulatory sensitivity to a potential SEBI reduction in monthly options expiries (8 to 1-2), quantified as a risk by an Angel One analyst; never raised or asked about in any Share India call despite comparable F&O/commodity ADTO dependence."
+  - "Compliance-driven customer attrition: a named instance of a client moving holdings to a competitor because of Angel One's 'restricted basket' feature (Q1 FY27); no comparable compliance-attrition risk discussed in any Share India call."
+net_narrative_effect: "complicates"
+analyst_note: "Peers corroborate every factual, checkable, industry-level claim tested (ADTO/commodity recovery, RBI intraday curb plus bank-guarantee mitigation, MTF pricing pressure) and contradict none. This should raise confidence in Share India's operational/regulatory disclosures specifically. But peers are silent, not supportive, on LBF1 (prop-vs-client mix): no peer discloses a comparable metric, so the AR/BRSR contradiction (B03/B05) remains governing, unmoved by this stage. Two new moderate-weight findings for Role 2/6 and FTTCP: SMC Global's low-leverage 'treasury' framing of its own prop book sharpens concern about Share India's own prop-book scale/risk; and the Choice International branch-scale mismatch (800 vs 30) means Share India's Tier-3 branch thesis, while industry-validated in direction, is a much smaller bet than the peer running the same playbook hardest. Neither moves the B05 credibility grade (C)."

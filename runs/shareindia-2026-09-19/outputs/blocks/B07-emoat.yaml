@@ -1,0 +1,47 @@
+stage: B07-emoat
+company: "SHAREINDIA"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "No rupee-denominated capex programme, project table or funding source found anywhere in AR/concalls/presentations; branch rollout is the only capacity proxy and lacks a per-branch capex figure"
+  - "uTrade/Algowire subscription revenue (Rs terms) not disclosed anywhere in the AR's revenue notes; subscriber-count growth (D2) is documented but its P&L materiality is not"
+  - "R&D/technical headcount, PhD/specialist count and technical-staff ESOP detail not disclosed (confirms B00 gap M6)"
+  - "No patent/IP filing disclosure for uTrade, Algowire or Algoplus despite AI/algo being the AR's central narrative theme"
+  - "Branch-count series internally inconsistent: broking branches+franchises (228 FY26 AR p.10 to 225 Q1 FY27 presentation) vs NBFC branches (80 FY25 to 73 FY26 to 68 Q1 FY27) move in different directions on different bases; neither confirms the branch-expansion narrative"
+  - "IFSC subsidiary profit/loss contribution not separately disclosed beyond B04's finding that it 'swung to a loss in FY26'; GIFT City policy tailwind (R1) is structural, not yet realised in the numbers"
+flags:
+  - {type: FLAG-NEGATIVE-CATEGORIES, reason: "G1 (war chest) and G2 (working capital improvement) scored 0 not because evidence is absent but because the documented trend runs the opposite direction: CFO negative 3 of last 4 years with MTF book growth funded by new debt/NCDs not retained cash (G1), and debtor turnover fell 29.8%/34.2% with long-term debt/working capital up 4.7x/2.2x (G2). These are risks, not neutral gaps."}
+  - {type: FLAG-EXECUTION-MIXED, reason: "F2 execution moat scored 0: B05 promise-delivery record shows 5 delivered / 3 partial / 2 missed across 3 quarters, credibility grade C, and the NBFC branch count is falling while the branch-expansion narrative implies growth."}
+  - {type: FLAG-NARRATIVE-VS-EVIDENCE, reason: "The AR's central theme (AI, Algo and Trust; a shift to client-led, fee-based business) is supported by only 2 Moderate-strength forward categories (C2 institutional client growth, D2 uTrade platform scaling), both financially immaterial in disclosed terms, while fee and commission income fell double digits in the same year (confirms B04 FLAG-DISCLOSURE-CONTRADICTION)."}
+em_score: 10                    # adjusted total 9.6, rounded; ~0-90 scale, ceiling 92 with I1/I2
+em_classification: "NONE"        # EXPANSION | STRENGTHENING | MODEST | NONE (<12 NO MEANINGFUL EMERGING MOAT)
+active_categories:             # only Strong/Moderate rows
+  - {id: "C2", name: "Customer concentration improving (institutional client growth)", strength: "Moderate", evidence_type: "documented", time_to_materialise: "already occurring"}
+  - {id: "D2", name: "Digital platform (uTrade Algos)", strength: "Moderate", evidence_type: "documented", time_to_materialise: "already occurring; financial materiality unquantified"}
+evidence_mix: {documented: 4, claim: 6, inference: 1}   # item counts across active/weak rows (C1,C2,D1,D2,H1,I2,R1)
+completionist_recount: "4 documented items across 3 categories (C2, D2, H1); within the 3-6 category base rate, no re-classification required"
+catalysts_12m:                 # feeds Pillar 3 catalyst proximity
+  - {catalyst: "Category III AIF launch", window: "Q3 FY27 (already slipped once)", evidence_type: "management claim", anchor: "Q1 FY27 concall, 31-Jul-2026"}
+  - {catalyst: "PMS AUM crossing ~Rs 250 Cr FY27 target", window: "by FY27 end", evidence_type: "management claim", anchor: "Q1 FY27 concall, 31-Jul-2026"}
+  - {catalyst: "uTrade paid-subscriber growth continuing past 6,543", window: "next 1-2 quarters", evidence_type: "documented (trend to date)", anchor: "AR FY26 p.11; Q1 FY27 investor presentation, 27-Jul-2026"}
+  - {catalyst: "Next Tier-3 branch tranche (8 branches) opening / NBFC branch decline reversing", window: "next 8-month tranche cycle", evidence_type: "management claim", anchor: "Q1 FY27 concall, 31-Jul-2026"}
+  - {catalyst: "Fee and commission income trajectory (fell 12.7%/18.6% FY26)", window: "FY27 Q2/Q3 results", evidence_type: "documented (base trend)", anchor: "AR FY26 Note 30 consol; B04"}
+capex_embedded_growth_pct: 0   # NOT APPLICABLE: no capex programme disclosed and no meaningful physical asset base (B04); not an estimated figure, see Section 2C
+optionality_register:          # scored 0 or management-claim/inference-only; watched, never scored
+  - {optionality: "AIF launch converting client demand into disclosed AUM", converting_evidence: "Reg 30 approval filing plus a disclosed AUM figure in a later quarter", first_appears: "exchange filing then investor presentation/concall", window: "Q3 FY27 per current guidance, already slipped once"}
+  - {optionality: "uTrade/Algowire subscriber growth converting to a disclosed, material revenue line", converting_evidence: "AR revenue note or MD&A breaking out algo-platform subscription revenue in Rs Cr", first_appears: "AR revenue note", window: "NOT FOUND, no current disclosure trajectory"}
+  - {optionality: "Talent asymmetry (I1) becoming evidenced", converting_evidence: "named technical hires paid above sector norms in AR remuneration annexure, or named inventors on a filed patent", first_appears: "AR remuneration annexure or patent-office filing", window: "NOT FOUND"}
+  - {optionality: "Patent/IP pipeline (A2) opening", converting_evidence: "any patent application or grant disclosed for uTrade/Algowire/Algoplus", first_appears: "AR IP note or exchange filing", window: "NOT FOUND, no filing trend exists"}
+  - {optionality: "Industry-consolidation beneficiary claim (H1) becoming quantified", converting_evidence: "disclosed market-share gain or named competitor exit linked to SHAREINDIA growth", first_appears: "investor presentation or concall", window: "NOT FOUND"}
+  - {optionality: "Cannibalization barrier (I2) against discount brokers becoming proven", converting_evidence: "a discount broker's own filing/pricing disclosure showing branch/MTF economics fail at Tier-3 scale", first_appears: "peer AR, presentation or concall", window: "NOT FOUND, no pure discount broker in this run's peer set"}
+  - {optionality: "GIFT City/IFSC tailwind (R1) converting to disclosed profit", converting_evidence: "IFSC subsidiary turning profitable with contribution disclosed in segment note", first_appears: "AR segment note or subsidiary financial statement", window: "NOT FOUND, currently moved to a loss in FY26"}
+  - {optionality: "Branch network net expansion", converting_evidence: "a single, consistent branch-count metric showing net growth for two consecutive quarters", first_appears: "AR or investor presentation branch disclosure", window: "NOT FOUND, the two disclosed series move in opposite directions"}
+combined_assessment: "AVERAGE"        # from 6D
+combined_reasoning: "Backward AVERAGE (Gate 0, capped by confirmed cash-conversion and pledge deal-breakers) paired with forward NO MEANINGFUL EMERGING MOAT (em_score ~10, two Moderate categories only, both financially immaterial) is not one of the AVERAGE/GOOD-plus-EXPANSION transition setups this operation hunts; no upgrade warranted."
+top_moat_risks:
+  - "uTrade monetisation model unanswered across two quarters of direct analyst questions (B05 repeated_evasions); D2's financial materiality cannot be verified"
+  - "NBFC branch count falling (80->73->68) while the Tier-3 branch-expansion narrative implies growth; the two disclosed branch series are internally inconsistent"
+  - "Fee and commission income fell 12.7%/18.6% in FY26, the opposite direction of the AR's own stated client-led, fee-based diversification claim"
+  - "Silverleaf, the one clearly documented FY26 inorganic move, was loss-making in its own pre-merger FY25 financials (NCLT order)"
+analyst_note: "This scan lands at NO MEANINGFUL EMERGING MOAT (em_score ~10) despite a prominent AI/Algo/diversification narrative because three categories (F2 execution, G1 war chest, G2 working capital) show actively negative, not merely absent, evidence: cash conversion and working capital both deteriorated in FY26, and execution against management's own guidance is mixed (credibility grade C, B05). The two Moderate categories found (C2 institutional client growth, D2 uTrade platform scaling) are real and consistently disclosed across independent documents, but neither is yet sized in Rs terms against a Rs 1,470 Cr revenue base that remains 58.3% dependent on proprietary trading gains. No capex programme, no patent/IP filing and no talent-density disclosure exist anywhere in the corpus. The Silverleaf NCLT sanction (20-Aug-2026) is the single most credibility-relevant documented event this quarter but the acquired entity was itself loss-making pre-merger. This is an honest sparse scan, not a shaded one."

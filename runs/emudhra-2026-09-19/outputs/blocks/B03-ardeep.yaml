@@ -1,0 +1,66 @@
+stage: B03-ardeep
+company: "EMUDHRA"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Promoter/promoter-group shareholding table (consol p.248/252) is scrambled beyond confident row-by-row reconstruction in both pdftotext and mupdf renderings; total is mid-50s% and flat YoY on the one legible line, consistent with the 54.40% BSE figure in company memory, but exact per-holder percentages are NOT reliably extractable from the text layer."
+  - "FII/DII split is NOT FOUND in this AR (screener-only, non-anchored per B00); pledge language searched case-insensitively across the full AR text with zero matches (consistent with 'no pledge' company memory but not itself an anchored confirmation)."
+  - "B01's FY26 FCF figure of +Rs 51.4 Cr (acquisitions excluded) could not be reconstructed from any combination of consolidated cash flow statement lines tried in this pass; the AR's own capex line (CFO 1,328.49 Mn minus capex 1,853.68 Mn = -525.19 Mn) ties cleanly to the screener's -Rs 52 Cr instead. Flagged for B01/verifier reconciliation, not resolved here."
+  - "Standalone PAT growth rate: MD&A results table (p.150) implies +73.6% (Rs 186.65 to Rs 323.92 Mn) vs B02's +60.7% read from the standalone financial statements (Rs 270.45 to Rs 434.86 Mn); both directionally agree standalone grew faster than consolidated (+26.1%) but the exact bases differ and were not reconciled."
+  - "Auditor 'Other matters' non-audit fee (Rs 3.88 Mn consol FY26) is not itemised anywhere found in this pass; standalone Note 32.1 equivalent is also scrambled in the text layer."
+flags:
+  - {type: FLAG-CASH, reason: "FY26 consolidated FCF turned negative for the first time in the two years shown: CFO Rs 1,328.49 Mn minus capex (PPE+intangibles) Rs 1,853.68 Mn = Rs -525.19 Mn (Rs -52.5 Cr), matching the screener figure. Capex more than doubled YoY (Rs 832.02 Mn to Rs 1,853.68 Mn, +122.8%) while CFO grew only 30.8%. CFO/PAT remains healthy (1.21x FY26, 1.16x FY25) so this is a capex/M&A-timing dip, not a cash-earnings-quality problem. Cash Flow Statement, consol p.216-219."}
+  - {type: FLAG-LIABILITY, reason: "Confirmed independently from the Balance Sheet: Cryptas contingent consideration Rs 881.45 Mn (non-current other financial liabilities) plus the 2028-2030 49% put/call option are structurally uncapped on the EBITDA upside with no Level 3 sensitivity disclosed, and this item is entirely absent from the MD&A Enterprise Risk Management section (pp.153-163) despite being the largest, least-bounded forward liability in the corpus. Note 4a(c)/17a/53(b), consol p.243/255/290-291; Balance Sheet p.216."}
+  - {type: FLAG-GOVERNANCE, reason: "Two promoter-family members (Kaushik Srinivasan, Arvind Srinivasan) added to the board effective 1-Apr-2026 (just after FY26 year-end) via Postal Ballot, expanding the board from 7 to 9 and the executive/promoter-family count from 2-of-7 to 4-of-9. CFO remuneration rose 42.4% YoY (Rs 3.73 to Rs 5.31 Mn), the largest percentage increase of any named KMP, well above the 7.1% median-employee increase, with no narrative explanation found. Board's Report Section 15/25, p.91-94."}
+  - {type: FLAG-DISCLOSURE, reason: "The 3i Infotech claim (>Rs 128 Cr, ~14% of net worth if crystallised) is excluded from the quantified contingent-liability total on management's own unsupported assessment, and does not appear anywhere in the MD&A risk section despite the chronology running to three weeks before the 6-May-2026 audit sign-off. Note 36(f)/38(e), consol p.265, standalone p.353; absence confirmed against MD&A pp.153-163."}
+phase_verdicts: {p1: "WATCH", p2: "WATCH", p3: "WATCH", p4: "WATCH", p5: "WATCH", p6: "WATCH", p7_best_fit: "GARP-WATCHLIST"}
+overall_quality: 6
+quality_components: {governance: 6, accounting: 6, balance_sheet: 6, earnings: 6}
+kill_switch_notes:
+  - "Phase 1: a human reviewer would NOT stop here — unmodified opinions both reports, no going concern, no fraud; sole CARO exception is small persistent PF arrears (vii(a))."
+  - "Phase 2: would NOT stop here — 15/15 triple-pass findings verified with 0 discrepancies; core operating business clean, flags are disclosure gaps on acquisition judgment items."
+  - "Phase 3: would NOT stop here — CFO/PAT >1x both years and net-cash balance sheet argue against a cash-flow-quality problem despite FCF turning negative and ROCE/ROE compressing to 13-15%."
+  - "Phase 4: would NOT stop here, but would want the 3i Infotech and Cryptas earn-out omissions from the risk section explained directly by management — the single most conspicuous omission in the AR."
+  - "Phase 5: would NOT stop here — nothing rises to fraud, pledge, promoter-selling, or SEBI-action level; the promoter-family board expansion and CFO pay jump are watch items, not halt items."
+  - "Phase 6: would NOT stop here — the Chairman's letter's central claim (Cryptas/Europe) is financially substantiated; the two smaller geographic claims are silent drops (narrative-only) but not contradictions of disclosed fact."
+triple_pass_verification:
+  verified: 15
+  discrepancies: []
+missing_risks:
+  - "3i Infotech Rs 128+ Cr claim absent from MD&A Enterprise Risk Management section (pp.153-163) despite chronology running to 23-Apr-2026, three weeks before the 6-May-2026 audit sign-off. Note 36(f)/38(e)."
+  - "Cryptas contingent-consideration/49%-option earn-out structure (uncapped upside, Rs 881.45 Mn) has no 'acquisition integration risk' or 'earn-out risk' category anywhere in the risk section despite two completed acquisitions this year. Note 4a(c)/17a/53(b)."
+  - "Goodwill impairment risk (Rs 2,940.46 Mn, 32.3% of net worth, no discount rate/growth rate/headroom disclosed) not named as a risk category. Note 4a/2.5a."
+  - "MSME/statutory-dues payment risk (Rs 21.61 Mn frozen >3 years across two annual reports) not named as a risk, despite CARO qualification. CARO clause vii(a)."
+  - "Working-capital-funded-growth risk (unbilled revenue +40.6%, payables +91%, both outrunning 35.1% revenue growth) not named; only visible via cross-note synthesis, consistent with B02 Pattern A."
+guidance_table:
+  - {claim: "FY27 organic revenue growth 15-18%", number: "15-18%", timeframe: "FY27", credibility: "NOT FOUND IN THIS AR; concall-sourced (company memory) only, cannot be checked against AR text"}
+  - {claim: "FY27 PAT growth 25-30%", number: "25-30%", timeframe: "FY27", credibility: "NOT FOUND IN THIS AR; concall-sourced (company memory) only"}
+  - {claim: "Double PAT over 3 years", number: "~26% implied CAGR", timeframe: "3 years", credibility: "NOT FOUND IN THIS AR; concall-sourced (company memory) only"}
+  - {claim: "Existing-customer share of business", number: "67%", timeframe: "FY26 actual", credibility: "Directly stated in MD&A p.148, not a forward claim, verified"}
+  - {claim: "International revenue growth", number: "38.7%", timeframe: "FY26 actual", credibility: "Directly stated in MD&A p.148, verified against segment note"}
+monitorables:
+  - {metric: "Cryptas actual EBITDA vs implicit 10x contingent-consideration target", threshold: "Any disclosed movement in the Rs 881.45 Mn liability", where: "FY27 quarterly results / FY27 AR Note 17a/47/48", why: "Directly sizes the largest unbounded forward liability in the corpus"}
+  - {metric: "3i Infotech claim status", threshold: "Escalation beyond 23-Apr-2026 legal notice; any SEBI complaint filed", where: "Reg 30 filings; FY27 AR Note 36/38", why: "~14% of net worth if it moves from denied to probable"}
+  - {metric: "Goodwill impairment test assumptions", threshold: "Whether FY27 AR discloses discount rate/growth rate/headroom (currently absent)", where: "FY27 AR goodwill impairment note", why: "Tests whether this year's disclosure gap was one-off or a pattern"}
+  - {metric: "MSME >3-year overdue balance", threshold: "Whether the frozen Rs 21.61 Mn finally moves", where: "FY27 AR Note 40/43, standalone CARO vii(a)", why: "A third consecutive frozen year would harden the finding"}
+  - {metric: "Free cash flow", threshold: "Whether FY27 FCF returns positive", where: "FY27 AR / quarterly cash flow statements", why: "Tests whether the FY26 dip was transition-year-specific or a new pattern"}
+  - {metric: "ROCE/ROE", threshold: "Whether ROCE recovers above the 13-15% FY26 print", where: "FY27 AR key ratios", why: "Tests the capital-efficiency thesis implicit in the acquisition strategy"}
+  - {metric: "Effective tax rate", threshold: "Whether consolidated ETR drifts from 16.2% toward the standalone 25.5% print", where: "FY27 AR tax reconciliation note", why: "Meaningful swing factor for any forward EPS model"}
+  - {metric: "CFO remuneration", threshold: "Whether the 42.4% FY26 increase repeats", where: "FY27 AR Board's Report KMP remuneration table", why: "Currently unexplained; a repeat would be a governance signal"}
+ar_new_downstream_entities:
+  - {name: "AI Cyberforge Inc.", where_in_ar: "Note 4a(d), consol p.243; MD&A p.148, p.156", entity_type: "acquired subsidiary (US, key and secrets management), first consolidated this AR (1-Jul-2025)"}
+  - {name: "Cryptas International GmbH", where_in_ar: "Note 4a(c), consol p.243; Chairman's Message p.6; MD&A p.148", entity_type: "acquired subsidiary (Europe, PKI/digital trust), first consolidated this AR (1-Jul-2025)"}
+  - {name: "Taarav Pte Ltd", where_in_ar: "Note 16/44.2, consol p.254/269; promoter shareholding table p.248", entity_type: "promoter entity, first-instance lender to the group this AR (8% p.a.) and also appears in the promoter/promoter-group shareholding table"}
+  - {name: "Bluesky Infotech", where_in_ar: "Note 10/44.2, consol p.249/269", entity_type: "related-party counterparty (promoter-influenced partnership), first year with material trade receivable/payable balances"}
+strengths_top3:
+  - "Clean control environment: unmodified opinions both reports, no going concern, no fraud (CARO xi clean), no whistleblower complaints, no SEBI action against any director, near-zero leverage (D/E 0.026x, net cash). Auditor's report p.202/293, CARO p.303-308."
+  - "Real, granular growth engine: international revenue +38.7% (64% of FY26 total), Enterprise Solutions Outside India +38.3% to Rs 4,375.72 Mn (62.4% of revenue), 240 new enterprise customers, 67% existing-customer revenue share. MD&A p.148/151, Note 49."
+  - "Cash-earnings quality intact despite the FCF dip: CFO exceeded PAT in both years (1.21x FY26, 1.16x FY25), no exceptional items either year, other income immaterial (1.6% of total income). Cash Flow Statement p.216-219."
+red_flags_top3:
+  - "Cryptas contingent-consideration structure is uncapped on the upside (10x EBITDA, no ceiling), with a 2028-2030 49%-option repeating the mechanic, no Level 3 sensitivity disclosed, and absent from the MD&A risk section entirely. Note 4a(c)/17a/53(b)/47-48."
+  - "3i Infotech claim (>Rs 128 Cr, ~14% of net worth) fully excluded from the quantified contingent-liability total on management's own unsupported assessment, and absent from the MD&A risk section despite the chronology running to three weeks before audit sign-off. Note 36(f)/38(e)."
+  - "Goodwill nearly tripled to Rs 2,940.46 Mn (32.3% of net worth) with no disclosed impairment-test discount rate, growth rate, or headroom; the useful-life extension on intangibles (cutting FY26 amortisation ~Rs 39.96 Mn) is timed with the same acquisition-driven asset build. Note 4a/2.5a/5a(iii)(a)."
+best_fit_strategy: "GARP (WATCHLIST)"
+one_line_verdict: "Clean-control, genuinely-growing platform business carrying undisclosed acquisition-accounting tail risk and an omitted legal claim; ROCE/FCF recovery path from this year's acquisition dip is not disclosed anywhere in the AR."
+analyst_note: "Two items need downstream reconciliation, not resolution here: (1) B01's +Rs 51.4 Cr FY26 FCF figure does not reconstruct from any AR cash flow statement combination tried; the AR ties cleanly to the screener's -Rs 52 Cr instead (CFO 1,328.49 minus capex 1,853.68 Mn). (2) The promoter/promoter-group shareholding table (p.248/252) is scrambled beyond confident per-holder reconstruction in both text layers; a verifier with raster access could resolve exact percentages if Stage 11/B08 needs them beyond the 'mid-50s%, flat YoY' read reached here. Both are flagged, not silently estimated."

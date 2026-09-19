@@ -27,3 +27,4 @@ Run: runs/rappid-2026-09-19 | Phase 1 executed 2026-09-19 via /step1
 | 12c | verifier C (round 2, phase 1 scope) | opus | agent default | - | - | 135214 | 6m18s | 2 |
 | 12d | verifier D (round 2) | sonnet | agent default | - | - | 255099 | 5m10s | 2 |
 | 7 | emerging moat (B01/B05 refresh, Verifier C correction) | sonnet | agent default | - | - | 167104 | 11m14s | 2 |
+| 13 | synthesis-lite | opus | agent default | - | - | 201610 | 9m15s | 1 |

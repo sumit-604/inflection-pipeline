@@ -1,0 +1,37 @@
+stage: B13-synthesis
+company: "RAPPID"
+run_date: "2026-09-19"
+model: "claude-opus-5"
+status: complete
+phase: phase-1-lite
+verdict: "PROCEED WITH CAVEATS"
+verdict_rule_applied: 3        # FLAG-PROMOTER (CONCERN) and FLAG-CASH active; INDETERMINATE cash caps at PROCEED WITH CAVEATS
+flags_active: ["FLAG-CASH", "FLAG-PROMOTER", "FLAG-GATE0"]
+flag_cash_determination: "INDETERMINATE"   # missing: H1 FY27 (to 30-Sep-2026) BS and CFS; receivables by customer type (NOT FOUND, AR FY26 Note 18); finished goods split by order (NOT FOUND, Note 16); no rating exists
+flag_promoter_verdict: "CONCERN"
+transition_posture: "provisional: proof gate NOT FIRED; ugliness UNCLASSIFIED (Mental Model unsigned); recognition gap resolves at stage 11. Artifact reading gives RESEARCH-WATCH (gap open) or PRICED NARRATIVE (gap closed); structural reading gives VALUE-TRAP RISK"
+freshness_verdict: "FRESHNESS PAIRS OK"
+confidence_delta: {numerical: 100, redflag: 75, framework: 75.5, peer: 100, overall: 75}
+confidence_note: "redflag strict full-catch 58% (below 60 REWORK line); partial-counts-as-caught convention pending operator ruling at Halt 1"
+valuation_decision: ""         # phase 1 lite; deferred to phase 3
+entry_range: {low: 0, high: 0} # phase 1 lite; deferred to phase 3
+headline: "Naval valve mix grows, cash does not"
+falsification_metric: "H1 FY27 (to 30-Sep-2026) CFO negative for a fifth straight period, with receivables plus inventory above Rs 51.5 Cr (31-Mar-2026: Rs 24.83 Cr + Rs 26.68 Cr) and revenue growth near Q1 FY27's +28%"
+monitorables_count: 8
+contradicted_claims_count: 0
+operator_rulings_needed:
+  - "redflag_coverage partial-catch convention (75 vs strict 58)"
+  - "Gate 0 ROCE source precedence (B12c r2 F1); final AVERAGE either way"
+  - "sector cap row: Cables / Industrial 25x set; Defence / strategic 38x needs naval split, NOT FOUND"
+  - "Mental Model Part B5: ARTIFACT vs STRUCTURAL"
+publish_candidate: false
+publish_candidate_summary: ""
+files_written:
+  - outputs/final/business-narrative.md
+  - outputs/final/gate-recommendation.md
+  - outputs/final/verifier-summary.md
+notion_save:
+  page_title: "RAPPID | Rappid Valves (India) Ltd | phase 1 2026-09-19"
+  summary: "Naval valve mix grows, cash does not. PROCEED WITH CAVEATS (phase 1 lite; FLAG-CASH INDETERMINATE, FLAG-PROMOTER CONCERN). No valuation decision or entry range until phase 3."
+  drive_link: "{{DRIVE_FOLDER_LINK}}"
+  mode: append-never-overwrite-status

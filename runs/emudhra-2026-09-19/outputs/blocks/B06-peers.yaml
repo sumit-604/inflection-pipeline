@@ -1,0 +1,51 @@
+stage: B06-peers
+company: "EMUDHRA"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "PROTEAN Dec-2025 file is a business-update call (NSDL Payments Bank stake), not an earnings call; carried CITED-ONLY, not SUBSTANTIVE, in the coverage map (per B00 input_gaps)"
+  - "QUICKHEAL set spans Feb-2025 to May-2026 with no Q3FY26 or Q1FY27 transcript on screener, so its most recent evidence is roughly one quarter stale relative to eMudhra's Q1FY27 call (per B00 input_gaps)"
+  - "No listed Indian pure-play PKI/certifying-authority peer exists; all three peers are partial-mapping comps, which drove 5 of 9 questions to UNVERIFIABLE on structural silence rather than active peer disagreement"
+flags:
+  - "Q8 CONTRADICTED: NEWGEN explicitly states H-1B visa policy is not a constraint for its US business (locally-hired, no manpower-based assignments), undercutting eMudhra's own H-1B-driven framing for US services stagnation"
+  - "Q4 PARTIALLY VERIFIED, reads aggressive not conservative: NEWGEN (closest ME/BFSI comp) grew FY26 revenue only 6% and Q1FY27 revenue 11%, well under eMudhra's 15-18% FY27 organic guide"
+  - "Strongest unprompted corroboration (not one of the 9 scoped questions): Middle East war disruption to order timing/closures in Q4FY26-Q1FY27 independently confirmed by both NEWGEN and PROTEAN in the same quarters eMudhra's own concalls flag Middle East-driven delay"
+peers_provided: 12
+verified: []
+partially_verified:
+  - {claim: "Indian PSU/BFSI cybersecurity spend rising broadly (tests eMudhra's one-PSU-bank +50% claim)", peers: ["QUICKHEAL"]}
+  - {claim: "FY27 organic growth guide (15-18%) benchmarked against comparable ME/BFSI-exposed exporter", peers: ["NEWGEN"]}
+  - {claim: "Flat ROE despite Enterprise-mix-shift narrative is industry-typical, not company-specific (no direct ROE data; margin proxy used)", peers: ["QUICKHEAL", "PROTEAN", "NEWGEN"]}
+contradicted:
+  - {claim: "US senior-hire cost inflation and H-1B-driven headcount constraints are a shared industry pattern explaining US services stagnation", contradicting_peer: "NEWGEN", quote_anchor: "NEWGEN Q4FY26 call (May-2026), p.10: 'We don't do any H-1Bs anyway. There are very few... we sell products and products don't need [people movement]'"}
+unverifiable:
+  - {claim: "NIS2/DORA compliance is genuinely accelerating enterprise PKI/identity demand in Europe FY26-27", peers_checked: ["NEWGEN"]}
+  - {claim: "India's DSC/token industry is seeing a broad volume hit from FIPS 140-3 recertification into Sep-2026", peers_checked: ["PROTEAN"]}
+  - {claim: "UAE in-country data-centre mandate is driving broad capex/timeline slippage industry-wide for trust service providers", peers_checked: ["PROTEAN", "NEWGEN"]}
+  - {claim: "eMudhra's Indian certifying-authority leadership is corroborated by the competitive landscape (Capricorn, Verasys, PentaSign)", peers_checked: ["PROTEAN"]}
+  - {claim: "eMudhra's disclosed US/global CA and CLM deal sizes ($250k-700k) are broadly consistent with comparable vendor deal sizes", peers_checked: ["NEWGEN"]}
+peer_coverage_map:
+  - {peer: "NEWGEN", quarter: "Q2FY26 (Nov-2025)", usage: "SUBSTANTIVE", contribution: "Pre-war EMEA/Middle East growth baseline (3%) for demand cross-read"}
+  - {peer: "NEWGEN", quarter: "Q3FY26 (Jan-2026)", usage: "SUBSTANTIVE", contribution: "Names AI-led uncertainty as explicit large-deal deferral cause; margin-held-via-cost-optimisation evidence"}
+  - {peer: "NEWGEN", quarter: "Q4FY26 (May-2026)", usage: "SUBSTANTIVE", contribution: "H-1B rejection quote; FY26 6% growth benchmark; Middle East war impact; CEO succession context begins"}
+  - {peer: "NEWGEN", quarter: "Q1FY27 (Jul-2026)", usage: "SUBSTANTIVE", contribution: "Q1FY27 11% growth/EMEA 10% benchmark; CEO transition to Tarun Nandwani; deal-size disclosures; EMEA DSO delay"}
+  - {peer: "PROTEAN", quarter: "Dec-2025 business-update call (NSDL Payments Bank stake)", usage: "CITED-ONLY", contribution: "Non-earnings call per B00; strategic-rationale context only"}
+  - {peer: "PROTEAN", quarter: "Q3FY26 (Feb-2026)", usage: "SUBSTANTIVE", contribution: "CRA/pension AUM-linked regulator repricing and margin-dip disclosure"}
+  - {peer: "PROTEAN", quarter: "Q4FY26 (May-2026)", usage: "SUBSTANTIVE", contribution: "Aadhaar Seva Kendra capex build-out; CEO transition to Ajay Rajan announced; war-caution language"}
+  - {peer: "PROTEAN", quarter: "Q1FY27 (Aug-2026)", usage: "SUBSTANTIVE", contribution: "Geopolitical procurement-cost inflation; EBITDA margin crater 18.7%->10%; new-CEO capital-allocation pivot"}
+  - {peer: "QUICKHEAL", quarter: "Q3FY25 (Feb-2025)", usage: "SUBSTANTIVE", contribution: "Government-orders-sluggish baseline pre-FY26 uptick; DPDP deal-size range"}
+  - {peer: "QUICKHEAL", quarter: "Q1FY26 (Aug-2025)", usage: "SUBSTANTIVE", contribution: "CEO search disclosed; enterprise-pivot execution struggle context"}
+  - {peer: "QUICKHEAL", quarter: "Q2FY26 (Oct-2025)", usage: "SUBSTANTIVE", contribution: "Government business robust-growth quote used directly for Q2 verdict"}
+  - {peer: "QUICKHEAL", quarter: "Q4FY26 (May-2026)", usage: "SUBSTANTIVE", contribution: "Enterprise mix 20%->50%+ with negative EBITDA; Rs 64cr govt order and Operation Sindoor context; hardware inflation up to 400%"}
+industry_cross_read:
+  demand: "Bifurcated: domestic/government-linked demand resilient-to-strong across all 3 peers, while large-ticket India/Middle East enterprise deals were repeatedly delayed through the window from both AI-driven customer deferral (NEWGEN, named explicitly) and Middle East war disruption (NEWGEN and PROTEAN both, corroborating eMudhra's own Q4FY26 order-timing claim)."
+  pricing_inputs: "Two peers (QUICKHEAL, PROTEAN) independently flag 2026 hardware/technology procurement cost inflation (QuickHeal quantifies it at 'up to 400%'); this does not map directly to eMudhra's SaaS cost base but offers a plausible industry-wide explanation for eMudhra's own unresolved stock-in-trade cost drag that eMudhra's concalls never test."
+  capex_cycle: "Two-cluster split, not a lone expander and not a uniform capacity race: PROTEAN (and by extension eMudhra, per its FY26 asset build) is actively building physical/regulatory infrastructure, while NEWGEN is cutting headcount and substituting AI for capacity growth in the same window; QUICKHEAL sustains R&D spend through losses without committing major capex."
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "Leadership/C-suite transition risk: all three peers changed CEO within roughly the same 9-month window (NEWGEN Aug-2026, PROTEAN Jun-2026, QUICKHEAL search ongoing since mid-2025); eMudhra's own concalls raise no such risk, worth watching as a sector pattern"
+  - "AI-driven large-deal deferral risk: NEWGEN names this explicitly and repeatedly as a demand-side risk distinct from budget/macro; eMudhra's own concalls never raise this for its own enterprise pipeline"
+  - "Regulator-driven pricing reset risk: PROTEAN's CRA/pension charge structure was reset by PFRDA toward AUM-linked pricing with an explicit short-term margin hit; not directly analogous to eMudhra but a live risk type in the adjacent government-linked-services space"
+net_narrative_effect: "complicates"
+analyst_note: "Where the peer set could structurally verify (organic-growth benchmark, margin-mix mechanics, H-1B framing), evidence leans against eMudhra's most favourable framing without falsifying the underlying thesis. Where the peer set is structurally silent (PKI/CA landscape, DSC/token recertification, UAE data-centre mandate, NIS2/DORA), that silence is a genuine evidentiary gap given the weak peer-mapping (no true PKI/CA comp exists), not passive confirmation, and downstream stages should not upgrade any UNVERIFIABLE item here on plausibility. The Middle East war corroboration, while not one of the 9 scoped questions, is the single strongest piece of independent evidence produced by this stage and should carry into synthesis alongside the Q8 contradiction."

@@ -1,0 +1,67 @@
+stage: B02-notes-pass1
+company: "EMUDHRA"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: pass1_complete
+notes_covered: "Consolidated Note 1-65 in full (AR p.222-292, primary basis per task). Standalone Note 1-46+ read
+  for contingent liabilities, MSME/payables, related-party transactions, investment-in-subsidiaries and receivables
+  ageing (AR p.310-358), reported only where materially different from consolidated."
+source_quality_note: "pdftotext extraction of this AR mangles multi-column table alignment in many notes (numbers
+  interleaved across rows/columns). Figures reported here are reconciled against balance sheet/note-ending-balance
+  totals wherever possible; unreconciled cells are flagged inline in the report rather than asserted as precise."
+input_gaps: []
+flags:
+  - {type: FLAG-CONTINGENT, reason: "Cryptas earn-out grew from EUR 7.95mn fair value (1-Jul-2025 acquisition) to
+      EUR 9.18mn undiscounted (31-Mar-2026), 10x-FY26-EBITDA mechanic, plus a 49% put/call option exercisable
+      2028-2030 on the same 10x-EBITDA basis, no cap disclosed (Note 4a(c)/17a/53(b), AR p.243/255/290-291)."}
+  - {type: FLAG-CASH, reason: "Trade payables up 91% YoY (Rs 314.34mn to Rs 600.92mn, Note 18); MSME dues Rs 68.06mn
+      of which Rs 21.61mn (32%) aged over 3 years overdue, identical to prior year's >3yr bucket - unresolved across
+      two ARs, plus Rs 4.18mn accrued unpaid MSMED interest (Note 40/43, AR p.266/268-269)."}
+  - {type: FLAG-LITIGATION, reason: "3i Infotech Rs 128+ Cr claim disclosed narratively but excluded from the
+      quantified contingent-liability total of Rs 34.55mn; management's no-outflow view is its own assessment, not
+      an independent opinion cited in the note (Note 36(f)/38(e), AR p.265/353). Answers load-bearing fact 3."}
+  - {type: FLAG-RPT, reason: "New this year: group borrowed Rs 82.87mn combined from a promoter entity (Taarav PTE,
+      8% p.a.) and the Executive Chairman personally (interest-free, on demand) to fund two overseas subsidiaries;
+      zero in FY25 (Note 16/44.2, AR p.254/269)."}
+pass1_top_findings:
+  - {rank: 1, finding: "Cryptas contingent consideration/earn-out grew to EUR 9.18mn undiscounted on a 10x-EBITDA
+      mechanic, plus an uncapped 49%-stake put/call option on the same basis exercisable 2028-2030", note_ref: "Note 4a(c)/17a/53(b), AR p.243/255/290-291", rating: RED, why: "Large, performance-linked liability directly tied to the
+      Cryptas integration the transition thesis rests on; cash-outflow timing and quantum uncertain."}
+  - {rank: 2, finding: "Goodwill nearly tripled to Rs 2,940.46mn (FY26) from Rs 1,254.60mn (FY25); entire Rs 1,315.25mn
+      Cryptas price landed in goodwill (net assets acquired ~nil); no impairment-test assumptions disclosed", note_ref: "Note 4a/2.5a, AR p.221-222/242-243", rating: WATCH, why: "Answers ASSET BUILD load-bearing fact; disclosure gap on impairment testing for a goodwill balance that just doubled."}
+  - {rank: 3, finding: "Auditor's sole Key Audit Matter (both standalone and consolidated reports) is revenue
+      recognition; no KAM on business-combination accounting or the intangible useful-life change", note_ref: "Independent Auditor's Reports, AR p.199-201/291-293", rating: WATCH, why: "Gap between what the notes show is judgment-heavy this year and what the auditor spotlighted."}
+  - {rank: 4, finding: "Useful life of capitalised software/intangibles extended to 10 years effective 1-Apr-2025,
+      cutting FY26 amortisation by approx Rs 39.96mn", note_ref: "Note 5a(iii)(a), AR p.244-245", rating: WATCH, why: "P&L-flattering estimate change in the same year the intangible base surged from acquisitions."}
+  - {rank: 5, finding: "3i Infotech Rs 128+ Cr claim excluded from the quantified contingent-liability total (only
+      Rs 34.55mn); management's no-outflow assessment is not independently corroborated in the note", note_ref: "Note 36(f)/38(e), AR p.265/353", rating: WATCH, why: "Directly answers load-bearing fact 3; would be material (approx 14% of net worth) if it ever moved from denied to probable."}
+  - {rank: 6, finding: "New this year: Rs 82.87mn combined borrowing from promoter entity Taarav PTE (8% p.a.) and
+      Executive Chairman (interest-free, on demand) to fund two overseas subsidiaries; zero in FY25", note_ref: "Note 16/44.2, AR p.254/269", rating: WATCH, why: "New financing pattern not present prior year; raises question on why overseas subsidiaries needed shareholder/director funding rather than intercompany treasury or bank lines."}
+  - {rank: 7, finding: "Rs 21.61mn of MSME payables (32% of Rs 68.06mn MSME total) aged more than 3 years overdue,
+      an identical figure to the prior year's >3yr bucket - unresolved across two annual reports", note_ref: "Note 40/43, AR p.266/268-269", rating: RED, why: "Persistent, unresolved MSMED Act payment default; small in rupees but a compliance pattern that has not moved."}
+  - {rank: 8, finding: "Trade payables rose 91% YoY (Rs 314.34mn to Rs 600.92mn), well ahead of 35% revenue growth;
+      related-party payables alone rose from Rs 1.89mn to Rs 104.01mn", note_ref: "Note 18, AR p.255-256", rating: WATCH, why: "Cash-conversion signal; consistent with company-memory's days-payable concern."}
+  - {rank: 9, finding: "Consolidated effective tax rate 16.2% vs 25.17% statutory, driven almost entirely by lower
+      foreign-subsidiary tax rates (Rs 109.17mn reconciling benefit)", note_ref: "Note 20(c), AR p.258", rating: WATCH, why: "Geography-dependent EPS inflator; a mix-shift back toward India or foreign-subsidiary rate normalisation would compress reported EPS growth versus PBT growth."}
+  - {rank: 10, finding: "Group's own prior acquisition (Two95 International) already shows a partial earn-out miss
+      this year; Rs 13.01mn of upside-bonus liability reversed as sellers did not meet performance conditions", note_ref: "Note 53(a), AR p.290", rating: WATCH, why: "Disclosed base rate for handicapping the much larger, untested Cryptas earn-out."}
+receivables_trend_pass1: "Improving to stable: gross trade receivables >6-months-overdue bucket was approx 13.5% of
+  gross (FY25) vs approx 12.3% of gross (FY26, Note 42, AR p.268), even as absolute receivables grew 30% YoY on 35%
+  revenue growth and the Cryptas/AI Cyberforge consolidation. Related-party receivables grew 13.9x (Rs 4.91mn to
+  Rs 68.18mn) concentrated in Bluesky Infotech, a promoter-influenced partnership (Note 10/44.2)."
+going_concern_language_pass1: "NONE. CARO clause (xix), standalone AR p.305-306: auditor states nothing has come to
+  attention indicating inability to meet liabilities as they fall due within 12 months of balance sheet date. No
+  emphasis-of-matter paragraph in either audit report."
+notes_not_yet_stress_tested_for_pass2: "Segment note 49 (consol) and its standalone equivalent have partially
+  garbled column alignment in extraction; revenue/segment-result rows reconcile to the P&L and are trustworthy,
+  assets/liabilities rows carry more uncertainty. Note 21 (contract liability/deferred revenue) sub-split between
+  MSME/related/other inside Note 18/43 payables tables has some column ambiguity flagged inline in the report.
+  Pass 2 should re-check these against source PDF pages directly rather than the extracted .txt where precision
+  matters."
+analyst_note: "Two items compound: the Cryptas earn-out (finding 1) and the goodwill build with no disclosed
+  impairment assumptions (finding 2) are both about the same acquisition and sit on top of each other - if Cryptas
+  underperforms, the earn-out liability shrinks (favourable) but goodwill impairment risk rises (unfavourable) on
+  the same underlying facts. Stage 11 valuation should treat these as linked, not independent, risks. Standalone
+  parent PAT grew 61% vs consolidated 26%, explained by intercompany royalty/licensing fees the parent charges
+  subsidiaries (Rs 169.9mn FY26 vs Rs 79.8mn FY25, standalone Note 46.3) - normal group-IP structure, fully
+  disclosed as RPT, but means standalone trends should never be read as a group-economics proxy."

@@ -1,0 +1,34 @@
+```yaml
+stage: B01-gate0
+company: "EMUDHRA"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+- "FRESHNESS FAIL (carried from B00): ICRA June-2026 rating rationale absent; only the reaffirmation letter is held. Not scored by this stage (no rating metric in Gate 0), carried forward per instruction."
+- "Consolidated Trade Payables balance not reliably extractable: AR Note 18 (p.255) and consolidated balance sheet (p.216-219) are OCR-scrambled (label/value pairing unreliable, candidate readings diverged up to 8x). Blocks B4 and M12 (WC days), and forces D4 to a standalone-basis proxy."
+- "FCF (B2/B3) computable for FY26 only; FY19-FY25 capex not in provided data (screener Data_Sheet has no capex line; no multi-year AR cash-flow statement in corpus). Scored at LIMITED confidence, n=1."
+- "R&D-to-revenue % not disclosed on a comparable multi-year basis (M6); BRSR question marked NA by the company."
+- "Peer data insufficient for M7 (listed-player count in the licensed Certifying Authority segment) and M9 (comparable COGS/gross-margin basis — 2 of 3 peers report zero Raw Material Cost, a data-structure artifact)."
+- "Promoter holding 3-year change (E2) not verifiable: only ~1-2 years of data points in the provided corpus (BSE Mar/Jun-2026 summaries, AR FY26-vs-FY25 note)."
+flags: []
+data_years: 8
+fy_range: "FY19 to FY26"
+blocks: {A: 12, B: 13, C: 18, D: 20, E: 14}
+core_score: 77
+moat_score: 17
+grand_total: 94
+moats_confirmed: 4
+moat_class: "STRONG"
+classification: "GOOD+"
+deal_breakers: []
+history_downgrade: false
+data_notes:
+- "No loss-to-profit PAT swing FY19-FY26; PAT positive every year."
+- "ROCE/ROE FY19-FY23 computed (Capital Employed = Equity Share Capital + Reserves + Borrowings, screener 4-bucket model); FY24-FY26 use company-disclosed consolidated figures (AR p.57), close to but not identical to this stage's own computed method (FY26: 15.0% disclosed vs 14.51% computed)."
+- "D4 Current Ratio (2.90x FY26) is STANDALONE basis (AR Note 50, p.364), not consolidated; flagged for re-verification, basis-inconsistent with rest of analysis."
+- "M9 gross-margin peer comparison distorted: NEWGEN and PROTEAN report zero Raw Material Cost in screener Data_Sheet for every year (cost-classification artifact, not real 100% GM); not used as a scored signal beyond the 0 assigned."
+- "Consolidated CFO cross-check clean: AR p.155-156 MD&A table shows Rs 1,328.49 Mn FY26, matches screener-data Rs 132.85 Cr exactly. Consolidated CFI: AR shows Rs -2,250.53 Mn vs screener-data Rs -197.76 Cr (~Rs 27 Cr gap), immaterial to sign, not reconciled further."
+block_b_trend: "improving — CFO/PAT rose from 0.54x (FY23: 33.57/61.68, screener-data) to 1.23x (FY26: 132.85/107.79, screener-data); FCF confidence LOW (single anchored year, FY26 only); WC-days trend N/A (consolidated payables gap)."
+analyst_note: "GOOD+ driven by strong growth (C=18/20) and a clean balance sheet (D=20/20, net cash, 27x interest cover). The two operator-flagged priorities do not cleanly resolve: FY26 FCF is positive (+Rs 51 Cr) under this stage's formula, contradicting the -Rs 52 Cr load-bearing claim, but underlying payables/WC-days data needed to judge durability could not be pulled from the AR's OCR text at any confidence (corpus problem, not company problem) — this blocks Block B and zeroes M10/drags M4. E4's clean 0.38% contingent-liability score is correct per AR Note 36 but structurally excludes the disputed Rs 128 Cr+ 3i Infotech claim, which sits in narrative disclosure only. Recommend sourcing clean AR pages 216-219/255 for consolidated payables, and treating the 3i Infotech claim as a named unquantified tail risk regardless of E4's score."
+```

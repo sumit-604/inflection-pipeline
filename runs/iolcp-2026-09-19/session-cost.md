@@ -14,3 +14,5 @@ total tokens and wall time per subagent; the in/out split is not exposed.
 | 4 | business model | sonnet | agent default | n/a | n/a | 200965 | 8m29s | 1 |
 | 5 | concall analysis | sonnet | agent default | n/a | n/a | 187051 | 7m46s | 1 |
 | 8 | promoter check | sonnet | agent default | n/a | n/a | 275655 | 9m38s | 1 |
+| 6 | peer concalls | sonnet | agent default | n/a | n/a | 160679 | 6m32s | 1 |
+| 7 | emerging moat | sonnet | agent default | n/a | n/a | 174758 | 9m35s | 1 |

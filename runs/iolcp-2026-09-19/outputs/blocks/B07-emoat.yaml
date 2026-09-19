@@ -1,0 +1,49 @@
+stage: B07-emoat
+company: "IOLCP"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "No peer dataset queried this pass for E1 (geographic first-mover); cannot confirm whether AARTIDRUGS/GRANULES already hold equivalent Korea/China filings, so E1 scored NO EVIDENCE FOUND rather than a finding either way"
+  - "Greenfield site (Rs 1,200-1,400 Cr) product mix, capacity, and commissioning date all NOT FOUND across AR and 4 call touchpoints; carried as the largest optionality-register item"
+  - "CDMO formulations and specialty chemicals tolling counterparty identities NOT DISCLOSED by the company (confidentiality obligations, Reg 30 Annexure-2 item 7), blocking concentration-risk verification"
+  - "Segment-level / product-level revenue and margin figures needed to build a true 3-year total-company mix-shift table (Section 1C) are NOT FOUND; only the non-ibuprofen-of-pharma-segment ratio and export % have forward targets stated"
+  - "PLI / government policy tailwind evidence (Section 4B) NOT FOUND IN CORPUS"
+flags:
+  - {type: FLAG-CAPEX-UNEVIDENCED, reason: "Rs 1,200-1,400 Cr greenfield is 72% of the total capex base used for capex_embedded_growth_pct but scores zero across all 22 categories; its evidence never clears the management-claim tier and carries no firm commissioning date across 4 consecutive call touchpoints (B05 FLAG-CAPEX)."}
+  - {type: FLAG-PATENT-INCONSISTENCY, reason: "AR headline language 'Increased patent filings' (p.20) is contradicted by patents HELD staying static at 3 in both FY25 and FY26 AR text; scored WEAK (A2), not credited as growth."}
+  - {type: FLAG-CONCENTRATION, reason: "3 of 5 active/scored categories (C1, H2, H3) all trace to the same unconfirmed, unnamed European/global customer relationships (CDMO Anchor Customers, single tolling customer); a single conversion failure would collapse the scan's strongest findings together."}
+em_score: 26.3
+em_classification: "STRENGTHENING"
+active_categories:
+  - {id: "A1", name: "Rare manufacturing capability", strength: "Moderate", evidence_type: "DOCUMENTED", time_to_materialise: "near/medium-term"}
+  - {id: "A3", name: "Process innovation", strength: "Moderate", evidence_type: "DOCUMENTED", time_to_materialise: "ongoing"}
+  - {id: "C1", name: "Customer ecosystem / embedded relationships", strength: "Strong", evidence_type: "DOCUMENTED", time_to_materialise: "near-term (Q3 FY27)"}
+  - {id: "H2", name: "Strategic partnerships", strength: "Moderate", evidence_type: "DOCUMENTED", time_to_materialise: "near-term (Q3 FY27)"}
+  - {id: "H3", name: "ESG moat", strength: "Moderate-Strong", evidence_type: "DOCUMENTED", time_to_materialise: "ongoing"}
+evidence_mix: {documented: 28, claim: 9, inference: 4}
+completionist_recount: "Recount performed: 28 documented items across 5 Strong/Moderate categories (A1 5, A3 5, C1 1, H2 1, H3 6, plus overlap items in Section 4/R1 not double-counted); count with Strong/Moderate evidence = 5 categories, well inside the 3-6 realistic base rate. No management-claim item was recharacterised as documented."
+catalysts_12m:
+  - {catalyst: "Paracetamol utilisation crossing 60% (from ~55% flat at Q1 FY27)", window: "Q2-Q3 FY27", evidence_type: "MANAGEMENT CLAIM", anchor: "B05 triggers row 2 / Q4 FY26 and Q1 FY27 calls"}
+  - {catalyst: "CDMO formulations and specialty chemicals tolling commercial launch", window: "Q3 FY27", evidence_type: "DOCUMENTED", anchor: "Reg 30 filing 09-Sep-2026 (Annexure-2)"}
+  - {catalyst: "Export share holding at or above 28% through FY27", window: "FY27, quarterly checkpoints", evidence_type: "DOCUMENTED", anchor: "Q1 FY27 results, 28.5% vs 24.4% Q1 FY26"}
+  - {catalyst: "Non-ibuprofen share of pharma revenue continuing past 43%", window: "ongoing quarterly", evidence_type: "DOCUMENTED", anchor: "B05 triggers row 1"}
+  - {catalyst: "Greenfield site reaching a firm commissioning date (5th touchpoint test)", window: "next quarterly/business-update call", evidence_type: "MANAGEMENT CLAIM", anchor: "B05 FLAG-CAPEX, kill_signal on triggers row 6"}
+capex_embedded_growth_pct: 142.6
+optionality_register:
+  - {optionality: "Greenfield site (Rs 1,200-1,400 Cr) reaches a firm commissioning date", converting_evidence: "Dated Reg 30 intimation or a material capital-commitment jump in next AR's Note 35B", first_appears: "BSE Reg 30 filing; next AR capital-commitments note", window: "guided 4-5 years from May-2026, currently undated after 4 touchpoints"}
+  - {optionality: "I1 talent asymmetry becomes provable", converting_evidence: "Named inventor(s) on patent filings traceable to IOLCP employment, or AR remuneration annexure showing technical-staff pay premium", first_appears: "AR remuneration annexure; patent office records (Espacenet/ipindia.gov.in)", window: "NOT FOUND / no current trigger disclosed"}
+  - {optionality: "China+1 / competitor-exit narrative confirmed by the company", converting_evidence: "Management directly characterising the Solara/SMS Pharma capacity exits and IOL's captured share", first_appears: "future concall Q&A; peer transcripts (AARTIDRUGS, GRANULES)", window: "next 1-2 quarterly calls"}
+  - {optionality: "Patent pipeline expands beyond the static 3 held", converting_evidence: "A new patent GRANT (not filing) disclosed in next AR's IP section", first_appears: "next AR (FY27) IP/patent portfolio table", window: "FY27 AR (~11 months)"}
+  - {optionality: "CDMO/tolling Anchor Customers named with firm contracts", converting_evidence: "A named customer, contracted volume, or tenor disclosed, replacing confidentiality-obligation language", first_appears: "Reg 30 filing; AR related-party/customer note; investor presentation", window: "post Q3 FY27 commercialisation"}
+  - {optionality: "UK subsidiary (IOL Pharmaxis) becomes an operating entity", converting_evidence: "Disclosed business activity, revenue, or headcount for the subsidiary", first_appears: "next AR subsidiary note; Reg 30", window: "FY27 AR"}
+  - {optionality: "Ibuprofen expansion (18,000 MTPA) reaches named customer commitments", converting_evidence: "Disclosed offtake/customer names for the incremental 6,000 MTPA", first_appears: "BSE filings, order-flow announcements", window: "ahead of Dec-2027 commissioning"}
+combined_assessment: "GOOD+"
+combined_reasoning: "GOOD backward (core_score 68, capped by the Block A deal-breaker) paired with STRENGTHENING forward (em_score 26.3) maps to GOOD+, not the HIGH POTENTIAL/TURNAROUND transition setup, because the largest capex number (Rs 1,200-1,400 Cr greenfield) scores zero on evidence quality and keeps the forward score below the 40-point EXPANSION threshold."
+top_moat_risks:
+  - "Three of five active categories (C1, H2, H3) all trace to the same unconfirmed, unnamed European/global customer relationships; one conversion failure collapses the scan's strongest findings together, not independently."
+  - "Greenfield site (Rs 1,200-1,400 Cr, 72% of the total capex base used in the 2C arithmetic) has no firm commissioning date across 4 consecutive call touchpoints and earns zero moat-scorecard points."
+  - "Patent count static at 3 across two ARs despite 'increased patent filings' headline language, an internal narrative-vs-fact inconsistency worth carrying into promoter/governance verification."
+  - "Both new pre-commercial lines (CDMO, specialty tolling) carry single/anchor-customer concentration by design, undisclosed identity, per the company's own confidentiality language."
+  - "Working capital is deteriorating (debtor days 79 to 95) even as the 'internally funded' capex claim is repeated every call with zero analyst or management engagement on that tension (B05 FLAG-CASH)."
+analyst_note: "em_score 26.3 rests on 5 DOCUMENTED-tier categories (A1, A3, C1, H2, H3); no management claim was credited as documented. The greenfield, the largest rupee figure in the corpus, scores zero everywhere because its evidence never clears the management-claim tier across 4 touchpoints -- the main reason this lands at STRENGTHENING, not EXPANSION. capex_embedded_growth_pct (142.6%) is the full-total figure per the 2C formula; the dated Rs 495 Cr tranche alone implies 39.3%, close to management's own stated 25-30% incremental claim. Stage 9 should weight the dated tranche more heavily than the full-total figure."

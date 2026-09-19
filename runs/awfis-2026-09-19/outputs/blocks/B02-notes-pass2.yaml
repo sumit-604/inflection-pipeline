@@ -1,0 +1,57 @@
+stage: B02-notes
+company: "AWFIS"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+pass: 2
+status: pass2_complete
+pass_2_empty: false
+provenance_note: >
+  Re-verified five named Pass 1 findings word-for-word against the cited AR pages (Note 33 vs CARO
+  disputed-dues gap, GST SCN absence, Note 38 lease cash outflow, Note 40 Design & Build transfer,
+  lessor finance-lease reclassification 9->30) - all five CONFIRMED exact, no discrepancy from Pass 1.
+  Then re-read the standalone Notes end to end a second time for what Pass 1 skipped: sub-notes and
+  footnotes, cross-references between notes (Note 36 vs Note 8, Note 29 vs Note 36), unflagged YoY
+  changes in Note 29 Other Expenses, and Notes 44/45 which Pass 1 did not mention at all. Cross-checked
+  the three GST SCN announcement filings for disclosure-timing detail beyond the "absent from Notes"
+  finding Pass 1 already made.
+verification_of_pass1_findings:
+  - {item: "Note 33 vs CARO disputed-dues gap", result: "CONFIRMED exact, Rs1,101.50mn total matches line by line"}
+  - {item: "GST SCN absence from Notes to Financial Statements", result: "CONFIRMED; see new_findings B5 for an additional, distinct SEBI LODR disclosure-delay finding on the second SCN"}
+  - {item: "Note 38 lease cash outflow +67.4% YoY", result: "CONFIRMED exact, Rs4,121.64mn FY26 vs Rs2,462.21mn FY25"}
+  - {item: "Note 40 Design & Build transfer to Awfis Transform", result: "CONFIRMED exact, Rs265.91mn consideration, timeline extended to 31-Dec-2026"}
+  - {item: "Lessor finance-lease reclassification 9 to 30 leases", result: "CONFIRMED exact; cross-reconciles to Note 9 finance lease receivable split (non-current Rs1,721.15mn + current Rs1,862.35mn = Rs3,583.50mn, matches Note 38's Rs3,583.51mn)"}
+  - {item: "Note 38 'unexplained third figure' (Rs817.21mn / Rs303.71mn) Pass 1 flagged as a probable PDF-extraction artifact", result: "RESOLVED - confirmed artifact. Consolidated Note 38's equivalent table shows clean two-column figures (822.20/779.70 and 328.28/337.30) with no third number, matching only the standalone table's middle/last values that reconcile to the stated Total"}
+corrections_to_pass1_input_gaps:
+  - "Pass 1 stated 'No numeric ECL loss-rate-by-ageing-bucket matrix disclosed.' This is incorrect as stated: the matrix exists in Note 36 (financial instruments / credit risk, standalone PDF p.116), not Note 8 where Pass 1 looked. Rates by bucket are disclosed for both years and swing materially: unbilled/current-not-due bucket 0.00% (FY25) to 17.32% (FY26); 90-180 days 10.77% to 0.00%; 180-360 days 5.40% to 37.09%; 2-3yr 54.13% to 100.00%."
+new_findings:
+  - {rank: 1, finding: "Total diluted EPS is flat YoY (Rs9.34 both years) and basic EPS fell slightly (Rs9.42 to Rs9.36, -0.6%) despite standalone continuing-ops revenue growth of +32.9%, because FY25 PAT included a one-off Rs251.02mn exceptional gain (AWFIS Care divestiture, Note 30) that did not recur, and FY26 discontinued-ops profit fell 31.9%. Continuing-operations-only PAT actually grew 20.5% (Rs422.21mn to Rs509.01mn). This is a required priority-topic item (basic vs diluted EPS gap and dilution sources) that Pass 1 did not cover at all.", note_ref: "Note 31, standalone PDF p.110-111", rating: "YELLOW", why: "Flat headline PAT/EPS is an optics artifact of a lapsed one-off gain, not underlying deterioration; a reader looking only at total PAT would miss real 20.5% continuing-ops growth"}
+  - {rank: 2, finding: "Statutory auditor states it is unable to comment on whether the audit-trail (edit-log) feature was enabled and operated at database level throughout the year for the Company's core third-party-hosted accounting software, because the SOC Type 2 assurance report obtained did not address database-level edit logs; not flagged in Pass 1 at all.", note_ref: "Note 45, standalone PDF p.124-125; Auditor's Report Rule 11(g) paragraph, PDF p.85-86", rating: "YELLOW", why: "A named, auditor-acknowledged scope gap on a mandatory Companies Act books-of-account control; common industry-wide for third-party SaaS accounting platforms, not unique to AWFIS, but a genuine gap Pass 1 missed"}
+  - {rank: 3, finding: "Top-10 customer receivable concentration rose from 42.74% (FY25) to 61.66% (FY26) of total trade receivables outstanding", note_ref: "Note 36(b)(II), standalone PDF p.116", rating: "YELLOW", why: "Directly qualifies Pass 1's receivables_trend read of 'broadly stable to modestly improving'; the ageing mix improved but customer concentration worsened materially in the same year"}
+  - {rank: 4, finding: "ECL rate-by-ageing-bucket matrix exists (Note 36, not Note 8 as Pass 1 looked) and shows non-monotonic, materially volatile bucket-level rates YoY, including a new 17.32% ECL rate on the previously-zero-risk unbilled/current-not-due bucket", note_ref: "Note 36(b)(II), standalone PDF p.116", rating: "YELLOW", why: "Corrects a Pass 1 NOT FOUND claim; the volatility pattern reads more like case-specific provisioning than a stable statistical loss model, worth a management question on ECL methodology consistency"}
+  - {rank: 5, finding: "Second GST Show Cause Notice (dated 23-May-2026, received 25-May-2026) was disclosed to exchanges only on 2-Jun-2026 (8-day gap), requiring a formal SEBI LODR 'reason for delay' filing on 4-Jun-2026 citing time needed to identify a material calculation error in the notice. The first SCN (received 20-May) was disclosed cleanly the next day (21-May).", note_ref: "Cross-checked against announcements 20260521-*, 20260602-*, 20260604-*; not in the AR Notes", rating: "YELLOW", why: "A distinct compliance-timing finding beyond Pass 1's 'absent from Notes' flag; the delayed notice was received the same day the FY26 accounts were board-approved"}
+  - {rank: 6, finding: "Infra and allied service expenses grew Rs110.48mn to Rs483.26mn (+337.4% YoY) with no narrative explanation anywhere in the Notes; security and housekeeping charges nearly doubled (+89.5%, Rs464.01mn to Rs879.38mn); common area maintenance +52.1%. Total Other expenses grew 40.8% YoY, outpacing standalone continuing-ops revenue growth of 32.9%.", note_ref: "Note 29, standalone PDF p.109-110", rating: "YELLOW", why: "A second, independent margin-quality data point beyond the already-flagged lease-cost growth; the single largest driver is disclosed as a number with zero explanation"}
+  - {rank: 7, finding: "New/enlarged doubtful-debt provisions inside Note 29 Other Expenses (Provision for doubtful debts Rs27.05mn FY26, Nil FY25, first occurrence; Provision for doubtful advances and deposits Rs41.42mn FY26 vs Rs0.63mn FY25) do not cleanly reconcile to the Note 36 trade-receivables ECL roll-forward figure of Rs57.44mn 'provision made'", note_ref: "Note 29, standalone PDF p.109-110, cross-checked against Note 36, PDF p.117", rating: "YELLOW", why: "Two different bad-debt-related numbers for what may be overlapping pools, not bridged anywhere in the Notes; worth a direct management question rather than an assumption either way"}
+  - {rank: 8, finding: "OCR/text-extraction digit-drop identified in the Consolidated Segment Information note (Note 31): FY25 Total Income shown as Rs2,075.35mn should be Rs12,075.35mn (segment columns sum to this); FY25 Total assets shown as Rs5,069.84mn should be Rs25,069.84/85mn, confirmed by the note's own later reconciliation table", note_ref: "Consolidated PDF p.152-153", rating: "GREEN", why: "Not a company disclosure error, a corpus text-extraction defect; flagged so no downstream stage misquotes the garbled figures as real FY25 consolidated totals"}
+  - {rank: 9, finding: "Unallocated (corporate) segment loss before tax widened 39.3% YoY (Rs232.47mn to Rs323.74mn), driven partly by unallocated employee benefit expense +12.5% and standalone auditor remuneration +20.1% (Rs7.45mn to Rs8.95mn, statutory audit fee only, no separately disclosed non-audit fees)", note_ref: "Consolidated Note 31, PDF p.152; standalone Note 29(i), PDF p.109", rating: "GREEN", why: "Minor on its own scale, consistent with the broader Note 29 opex-ahead-of-revenue pattern"}
+  - {rank: 10, finding: "TDS recoverable (non-current tax assets) grew 73.4% YoY (Rs534.48mn to Rs926.71mn)", note_ref: "Note 10, standalone PDF p.101", rating: "GREEN", why: "Texture on Pass 1's 0% effective tax rate finding; a growing pool of cash held by tax authorities pending refund, relevant to working-capital/cash-conversion reads"}
+  - {rank: 11, finding: "New Labour Codes (effective 21-Nov-2025) impact assessed 'not material' for FY26 - a first-time regulatory item Pass 1's accounting-policy section did not mention", note_ref: "Note 44, standalone PDF p.124", rating: "GREEN", why: "Routine gap-fill against the pass-2 keyword hunt list; no action needed"}
+receivables_trend_update: >
+  Pass 1's read stands (broadly stable to modestly improving on ageing mix, structurally distorted by
+  the Design & Build carve-out) but is now incomplete without two new facts: top-10 customer
+  concentration rose from 42.74% to 61.66% of total receivables (finding 3), and the previously
+  zero-risk unbilled/current-not-due bucket now carries a 17.32% ECL rate versus 0.00% prior year
+  (finding 4). Fuller read: the receivables book is smaller, its ageing mix looks better, but it is
+  more concentrated in fewer customer relationships and carries a new pocket of expected loss that
+  did not exist a year ago.
+analyst_note: >
+  Two items matter most from this pass. First, the flat total diluted EPS (Rs9.34 both years) is an
+  optics trap that a surface read of the P&L would get wrong: it is entirely explained by the FY25
+  one-off exceptional gain lapsing, and continuing-operations PAT actually grew 20.5%. Downstream
+  stages building growth narratives should use the continuing-operations figures, not the flat
+  headline. Second, the auditor's named exception on database-level audit-trail assurance (Note 45 /
+  Rule 11(g)) is common industry-wide for third-party-hosted accounting software and should not be
+  over-weighted as unique to AWFIS, but it belongs in the record because Pass 1 did not read the
+  Rule 11(g) paragraph of the Auditor's Report at all. Everything else in this pass (receivables
+  concentration, ECL-rate volatility, the GST SCN disclosure-delay filing, the Note 29 cost-line
+  growth, and the two provision lines that do not obviously reconcile to Note 36) is second-tier but
+  genuinely new, and none of it contradicts Pass 1's top findings - it adds texture around them.

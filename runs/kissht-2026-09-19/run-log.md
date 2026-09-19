@@ -1,0 +1,1 @@
+- 2026-09-19 B03-ardeep.yaml: stage wrote the block wrapped in markdown fences; orchestrator stripped the two fence lines, content unchanged.

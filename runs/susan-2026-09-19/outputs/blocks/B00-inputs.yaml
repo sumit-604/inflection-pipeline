@@ -1,0 +1,107 @@
+stage: B00-inputs
+company: SUSAN
+run_date: 2026-09-19
+model: orchestrator (stage 0 run inline by the orchestrator session)
+status: complete
+spear_gate: "PASS. companies/SUSAN.md carries 'Spear: OVERRIDE 2026-09-19 (operator standing ruling 2026-09-05: Step-1 intake replaces the web spear)'."
+load_bearing_facts:   # first verification priority for every stage (from companies/SUSAN.md SPEAR; web-sourced, non-anchored until a stage anchors them)
+  - "LBF1 MARGIN RECONCILIATION: company EBITDA 1.7% FY23 to ~12% FY26 and 11.9% Q1 FY27, against management-cited segment EBITDA of ~6.5% (LT) and ~7% (HT). Find what produced the 12%: product mix, other operating income, metal-price inventory gains, trading margin, or cost classification."
+  - "LBF2 CASH CONVERSION: FY26 CFO about -Rs 10 Cr on PAT Rs 18.25 Cr; borrowings Rs 24.8 Cr (FY24) to Rs 66.7 Cr (FY26). Receivable and inventory days, discom receivable ageing, CRISIL rationale working-capital reading."
+  - "LBF3 REVENUE QUALITY AND RELATED PARTIES: aluminium rod/wire trading ~38.8% of 9M FY26 revenue; government share 90.6% (FY24) to 35.8% (FY26). Identify trading and private buyers, RPTs, group entities of promoters Vishal Jain and Mahak Jain."
+  - "LBF4 GUIDANCE VS DELIVERY: HT/MVCC from 7.1% (Q1 FY27) to ~50% of revenue by end FY27; capacity 7,500 to 12,000 km/yr by Feb 2027 on Rs 15-20 Cr FY27 capex; order book Rs 142.39 Cr at 30-Jun-2026."
+sector_cap_row: "Cables / Industrial products"
+sector_cap_row_evidence: >
+  section-1b chunk 05 (.claude/skills/section-1b/references/05-sector-cap.md,
+  row 'Cables / Industrial products | 25x'; same row in Master Section 1B
+  Sector Cap Table). The company makes aluminium and copper winding wires,
+  aluminium conductors, LT / LT AB / HT / MVCC power cables (RHP business
+  overview; AR FY26). CRISIL rates it within 'electrical wires, cables, and
+  conductors manufacturing industry' (rationale 04-Sep-2026). Alternatives
+  considered: 'EPC / Civil construction' 20x (rejected: it supplies product
+  into discom tenders, it does not build); 'Distribution / trading' 20x
+  (not the whole-company row, but a candidate SOTP slice for the aluminium
+  rod/wire trading line under v3.11 Amendment 27.2; FLAG for phase-3
+  operator confirmation). Collector guess 'Pharma / CDMO' is wrong and
+  discarded.
+reporting_units:
+  results: "INR Lakhs (Q1 FY27 results, BSE 14-Aug-2026)"
+  annual_report: "INR Lakhs (AR FY2025-26 financial statements)"
+  prospectus: "INR Lakhs (RHP restated financial information)"
+  rating: "INR Crore (CRISIL rationale; '1 crore = 10 million')"
+  screener: "INR Cr (screener Data_Sheet)"
+  note: "Filings report in INR Lakhs; screener and CRISIL in INR Cr. 100 Lakhs = 1 Cr. Conversion happens once, at stage 10."
+listed_date: 2026-06-18
+recently_listed: true
+exchange_segment: "BSE SME (scrip 544793); standalone only, no consolidated statements"
+input_gaps:
+  - "COLLECTOR WARNING (verbatim): consolidated page had no price, standalone page used: this company files no consolidated statements. Every stage reads standalone."
+  - "COLLECTOR WARNING (verbatim): shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend."
+  - "COLLECTOR WARNING (verbatim): screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance Sheet, screener:Cash Flow, screener:Customization, DIACABS:Profit & Loss, DIACABS:Quarters, DIACABS:Balance Sheet, DIACABS:Cash Flow, DIACABS:Customization. Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again."
+  - "COLLECTOR WARNING (verbatim): no AR found on screener: AR stages will be skipped"
+  - "COLLECTOR WARNING (verbatim): no results PDFs yet (screener has none): add later on github or locally + --push-again"
+  - "COLLECTOR WARNING (verbatim): no rating PDF yet: add later the same way"
+  - "COLLECTOR WARNING (verbatim): only 1 concalls -> no-concall mode"
+  - "COLLECTOR WARNING (verbatim): PRECWIRE peer download failed (Excel timeout; no AR, concall or presentation found)."
+  - "RESOLVED AT INTAKE: annual-report/ holds AR FY2025-26 (91pp, dated 27-Jul-2026) from seil.net.in. Only FY26 AR held; FY25 and earlier ARs exist on seil.net.in but are not in the corpus. The RHP restated financials cover the backward years."
+  - "RESOLVED AT INTAKE: results/ holds Q1 FY27 unaudited results (BSE 14-Aug-2026, 4pp, includes board outcome). This is the ONLY post-listing results filing: the company listed 18-Jun-2026, so no Q4 FY26 or earlier exchange results exist. FY26 audited annuals are in the AR; FY24-FY26 restated in the RHP."
+  - "RESOLVED AT INTAKE: rating/ holds the CRISIL rationale 04-Sep-2026 (Crisil BBB/Stable/A3+, Rs 137 Cr facilities) as HTML plus page-marked .txt. No PDF version is published."
+  - "RESOLVED AT INTAKE: prospectus/ holds the RHP dated 08-Jun-2026 (376pp) from bsesme.com. RECENTLY-LISTED PRIORITY met; not a gap."
+  - "PARTIAL: shareholding/ holds only the pre-listing SHP as on 17-Jun-2026 (BSE XBRL HTML plus .txt; inline XBRL, text is dense). No post-listing SHP is filed yet (BSE list shows one filing). FII+DII post-IPO split is therefore OPEN; UA institutional-absence qualifier cannot be affirmed (Amendment 3). Pledge status is readable from the 17-Jun filing only."
+  - "concalls: ONE transcript, Q1 FY27 (call on the quarter ended 30-Jun-2026, filed BSE 22-Aug-2026). This is the only call the company has held with a transcript since listing. concalls_available set TRUE (the company holds calls); stage 5 runs on one transcript plus RHP/AR/press-release guidance. A single transcript means no promise-to-delivery pair exists inside the transcripts themselves; stage 5 tests RHP and AR statements against the Q1 FY27 print instead."
+  - "peer-concalls: 7 transcripts. DYCL x4 (Q2 FY26 Oct-2025, Q3 FY26 Jan-2026, Q4 FY26 May-2026, Q1 FY27 Jul-2026). DIACABS x1 (Q1 FY27 Aug-2026; screener lists no earlier transcript). VIDYAWIRES x2 (Q2 FY26 Dec-2025, Q4 FY26 May-2026; the company listed Dec-2025, no Q1 FY27 transcript found on BSE). PRECWIRE was the original third peer and was dropped at intake: it files no transcripts."
+  - "announcements/: 21 BSE Reg 30 filings 24-Jun to 16-Sep-2026 (includes Q1 FY27 press releases, monitoring agency report 12-Aug-2026, EGM notice 07-Aug-2026 and EGM outcome/scrutiniser 03-Sep-2026, change in management / director resignation 05-Aug-2026, board outcomes 07-Aug and 16-Sep-2026). Full post-listing set; duplicates removed."
+  - "presentation/: 4 filings: 19-Jun-2026 (1p cover), 23-Jun-2026 (25pp post-listing investor deck), 19-Aug-2026 (26pp Q1 FY27 deck), 05-Sep-2026 (18pp deck). Decks are image-heavy: the .txt carries about 300 chars per page. Read the PDF page images where a figure matters."
+  - "research/: 1 document, the company-commissioned industry report by Infomerics Analytics & Research (90pp, from seil.net.in). NON-ANCHORED for company claims; usable by stage 9 as an industry source with its tier stated."
+  - "screening: EMPTY-CSV defect present. Only screener-Data_Sheet.csv (SUSAN) and DIACABS-Data_Sheet.csv exist; Profit & Loss, Balance Sheet, Cash Flow, Quarters sheets absent. No screening file for DYCL or VIDYAWIRES. Stage 1 reads Data_Sheet plus RHP/AR statements."
+  - "TOOLING: every input PDF is pre-extracted to a page-marked .txt BESIDE the PDF (same basename, '[page N]' markers = PDF page numbers, via pypdf). Stages and verifiers read the .txt; anchors cite the PDF with the page number."
+freshness_pairs:
+  - pair: "RESULTS to CONCALL"
+    trigger_doc: "inputs/results/20260814-fd652fd2-eec0-4917-bc74-1defe7f9ed1d.pdf (Q1 FY27, quarter ended 30-Jun-2026)"
+    mate_expected: "Q1 FY27 earnings call transcript"
+    status: PASS
+    missing_doc: ""
+    mate_found: "inputs/concalls/20260822-587aa8e9-0422-42c8-b53e-bbec8ba76b57.pdf (quarter ended June 30 2026)"
+  - pair: "RATING BULLETIN to RATIONALE"
+    trigger_doc: "inputs/rating/CRISIL_Susan_2026-09-04_RR_404224.html"
+    mate_expected: "full rating rationale"
+    status: PASS
+    missing_doc: ""
+    mate_found: "same document is the full CRISIL Rating Rationale (detailed rationale, key strengths/weaknesses, liquidity, outlook, sensitivities)"
+  - pair: "SEBI ORDER to ORDER TEXT"
+    trigger_doc: "none"
+    mate_expected: "n/a"
+    status: PASS
+    missing_doc: ""
+    note: "No SEBI order referenced. The RHP (txt line ~16722) cites a show cause notice dated 16-Jan-2026 under Section 130(2) read with Section 122 of a tax statute (GST), not a SEBI order; stages 2, 3, 8 read it in the RHP outstanding-litigation section."
+  - pair: "AR to LATEST AUDITED ANNUAL RESULTS"
+    trigger_doc: "FY26 audited financial statements (AR FY26; RHP restated to 31-Mar-2026)"
+    mate_expected: "FY26 Annual Report"
+    status: PASS
+    missing_doc: ""
+    mate_found: "inputs/annual-report/Susan-Electricals-2025-26-Annual-Report.pdf"
+freshness_verdict: FRESHNESS PAIRS OK
+corpus_verdict_hint: "CORPUS GAPPED (single main transcript, post-listing SHP absent, FY25 AR absent, peer transcripts thin for DIACABS); freshness pairs OK"
+operator_pause: "EMPTY-FOLDER CONFIRMATION suppressed by /step1 AUTONOMY CONTRACT; standing answer 'proceed with the gaps'. After intake repairs no input folder is empty; other/ holds nothing."
+corpus_manifest:
+  - {path: inputs/prospectus/Susan_RHP_2026-06-08.pdf, issuer: Susan Electricals India Ltd, type: "Red Herring Prospectus (BSE SME)", period: "08-Jun-2026; restated FY24-FY26", folder_match: yes}
+  - {path: inputs/annual-report/Susan-Electricals-2025-26-Annual-Report.pdf, issuer: Susan Electricals India Ltd, type: "Annual Report FY2025-26", period: FY26, folder_match: yes}
+  - {path: inputs/results/20260814-fd652fd2-eec0-4917-bc74-1defe7f9ed1d.pdf, issuer: Susan Electricals India Ltd, type: "Unaudited results + board outcome", period: "Q1 FY27", folder_match: yes}
+  - {path: inputs/rating/CRISIL_Susan_2026-09-04_RR_404224.html, issuer: Crisil Ratings, type: "rating rationale", period: "04-Sep-2026", folder_match: yes}
+  - {path: inputs/concalls/20260822-587aa8e9-0422-42c8-b53e-bbec8ba76b57.pdf, issuer: Susan Electricals India Ltd, type: transcript, period: "Q1 FY27", folder_match: yes}
+  - {path: "inputs/presentation/*.pdf (4)", issuer: Susan Electricals India Ltd, type: "investor presentations with BSE cover letters", period: "19-Jun, 23-Jun, 19-Aug, 05-Sep-2026", folder_match: "yes (two moved from announcements/)"}
+  - {path: inputs/shareholding/SHP_2026-06-17_BSE_544793.html, issuer: "BSE (Reg 31 XBRL)", type: "shareholding pattern", period: "as on 17-Jun-2026 (pre-listing)", folder_match: yes}
+  - {path: inputs/research/Susan-Electrical-Industry-Report.pdf, issuer: Infomerics Analytics & Research, type: "industry report (company-commissioned)", period: "2026 (IPO)", folder_match: yes}
+  - {path: "inputs/peer-concalls/DYCL-*.pdf (4)", issuer: Dynamic Cables Ltd, type: transcripts, period: "Q2 FY26, Q3 FY26, Q4 FY26, Q1 FY27", folder_match: yes}
+  - {path: inputs/peer-concalls/DIACABS-Concall_Aug_2026_Transcript.pdf, issuer: Diamond Power Infrastructure Ltd, type: transcript, period: "Q1 FY27", folder_match: yes}
+  - {path: "inputs/peer-concalls/VIDYAWIRES-*.pdf (2)", issuer: Vidya Wires Ltd, type: transcripts, period: "Q2 FY26, Q4 FY26", folder_match: yes}
+  - {path: "inputs/announcements/*.pdf (21)", issuer: Susan Electricals India Ltd, type: "Reg 30 filings", period: "24-Jun to 16-Sep-2026", folder_match: yes}
+  - {path: inputs/screening/screener-Data_Sheet.csv, issuer: screener.in, type: "Data_Sheet export", period: "to Jun-2026", folder_match: yes}
+  - {path: inputs/screening/DIACABS-Data_Sheet.csv, issuer: screener.in, type: "Data_Sheet export (peer)", period: "to Jun-2026", folder_match: yes}
+flags: []
+analyst_note: >
+  Filings report in INR Lakhs; screener and CRISIL in INR Cr. BSE SME
+  listing 18-Jun-2026, so the only exchange results filing is Q1 FY27 and
+  the only transcript is the Q1 FY27 call; the RHP (restated FY24-FY26)
+  and AR FY26 carry the backward baseline. Post-IPO: v3.11 Amendment 27.1
+  (operating ROCE ex surplus cash) will apply at phase 3; the monitoring
+  agency report (announcements 12-Aug-2026) tracks unspent proceeds.

@@ -514,8 +514,11 @@ kbd { display: inline-block; border: 1px solid #d8cdb2; border-bottom-width: 3px
   .job-title-row h2 { font-size: 18px; }
 }
 
-#objective { position: absolute; left: 50%; top: 12px; transform: translateX(-50%); background: rgba(29,53,87,0.92); color: #fff; padding: 7px 16px; border-radius: 999px; font-weight: 700; font-size: 14px; max-width: min(560px, 92vw); text-align: center; box-shadow: 0 3px 8px rgba(0,0,0,0.2); }
-#compass { top: 52px; }
+#objective { position: absolute; left: 12px; bottom: 14px; background: rgba(29,53,87,0.85); color: #fff; padding: 6px 12px; border-radius: 10px; font-weight: 600; font-size: 12px; max-width: min(340px, 60vw); line-height: 1.3; box-shadow: 0 3px 8px rgba(0,0,0,0.2); }
+#objective::before { content: "🎯 "; }
+@media (max-width: 700px) { #objective { bottom: 160px; max-width: 46vw; } }
+#compass { top: 12px; }
+#controls-hint { top: 70px; font-size: 12px; padding: 6px 10px; }
 #touch-use { position: absolute; right: 26px; bottom: 136px; width: 64px; height: 64px; border-radius: 50%; border: none; background: rgba(255,253,246,0.92); font-size: 26px; box-shadow: 0 4px 0 rgba(0,0,0,0.2); touch-action: none; }
 #bag-btn { position: absolute; top: 12px; right: 174px; width: 46px; height: 46px; border: none; border-radius: 12px; background: rgba(255,253,246,0.92); font-size: 22px; cursor: pointer; box-shadow: 0 3px 8px rgba(0,0,0,0.15); }
 #debt-badge { position: absolute; left: 12px; top: 252px; background: #1d3557; color: #fff; border-radius: 999px; padding: 5px 12px; font-weight: 700; font-size: 12px; }
@@ -612,6 +615,7 @@ kbd { display: inline-block; border: 1px solid #d8cdb2; border-bottom-width: 3px
         <button class="find-btn" data-find="school">🏫 School gate</button>
         <button class="find-btn" data-find="class">🪑 My class</button>
         <button class="find-btn" data-find="bus">🚏 Bus stop</button>
+        <button class="find-btn" data-find="bike">🚲 My bicycle</button>
         <button class="find-btn" data-find="busnow">🚌 The bus</button>
         <button class="find-btn" data-find="friends">🧒 Friends</button>
         <button class="find-btn" data-find="shops">🛍️ Shop</button>
@@ -657,12 +661,13 @@ kbd { display: inline-block; border: 1px solid #d8cdb2; border-bottom-width: 3px
       <div class="section-label">The school day</div>
       <table class="keys">
         <tr><td>7:00</td><td>Wake up at home. Breakfast, pocket money and tiffin from Maa.</td></tr>
-        <tr><td>7:30</td><td>School bus from the Shanti Nagar stop. Or walk: cross at the zebra.</td></tr>
+        <tr><td>7:30</td><td>School bus from the Shanti Nagar stop, or your bicycle, or walk: cross at the zebra.</td></tr>
         <tr><td>8:00</td><td>Assembly by the flag. Thought for the day.</td></tr>
-        <tr><td>8:30 to 10:45</td><td>Maths, Science, English. Sit at your desk. Raise your hand to answer: 2 marks each.</td></tr>
-        <tr><td>10:45</td><td>Lunch on the benches with friends. Canteen sells more.</td></tr>
-        <tr><td>11:30</td><td>EVS, then Games on the field with Coach Vikram.</td></tr>
-        <tr><td>1:00</td><td>Bus home. Homework at your desk, dinner, sleep. A new day.</td></tr>
+        <tr><td>8:30, 9:15</td><td>Two classes. Sit at your desk. Raise your hand to answer: 2 marks each. Subjects rotate each day: Maths, Science, English, EVS.</td></tr>
+        <tr><td>10:00</td><td>Lunch on the benches with friends. Canteen sells more.</td></tr>
+        <tr><td>10:45</td><td>Third class, then Games on the field with Coach Vikram.</td></tr>
+        <tr><td>12:15</td><td>Bus or bicycle home. Homework at your desk, dinner, sleep. A new day.</td></tr>
+        <tr><td>🚲</td><td>Your bicycle waits by the garden gate. E to ride, E to get off. It goes anywhere.</td></tr>
         <tr><td>FA days</td><td>Every 5th day: a 10 mark test in each subject.</td></tr>
         <tr><td>Term exam</td><td>Day 10 and day 20: 20 mark papers, then the report card with grades and class rank.</td></tr>
       </table>
@@ -1602,15 +1607,13 @@ function showToast(text, ms = 2600, kind = "") {
   el.textContent = text; el.className = kind; el.hidden = false;
   clearTimeout(_toastTimer); _toastTimer = setTimeout(() => (el.hidden = true), ms);
 }
-const PERIODS = [
-  { id: "assembly", name: "Assembly", time: "8:00", where: "the flag on the assembly ground" },
-  { id: "maths", name: "Maths", time: "8:30", where: "your desk in class" },
-  { id: "science", name: "Science", time: "9:15", where: "your desk in class" },
-  { id: "english", name: "English", time: "10:00", where: "your desk in class" },
-  { id: "lunch", name: "Lunch", time: "10:45", where: "the lunch benches by the canteen" },
-  { id: "evs", name: "EVS", time: "11:30", where: "your desk in class" },
-  { id: "games", name: "Games", time: "12:15", where: "the football field" },
-];
+// Three classes a day. The three subjects rotate through the week, so EVS gets its turn.
+const PERIODS = [];
+function buildPeriods(day) {
+  const rot = [["maths", "science", "english"], ["evs", "maths", "science"], ["english", "evs", "maths"], ["science", "english", "evs"]][(day - 1) % 4];
+  PERIODS.length = 0;
+  PERIODS.push({ id: "assembly", name: "Assembly", time: "8:00" }, { id: rot[0], name: SUBJECTS[rot[0]].name, time: "8:30" }, { id: rot[1], name: SUBJECTS[rot[1]].name, time: "9:15" }, { id: "lunch", name: "Lunch", time: "10:00" }, { id: rot[2], name: SUBJECTS[rot[2]].name, time: "10:45" }, { id: "games", name: "Games", time: "11:30" });
+}
 const FRIEND_ORDER = ["aarav", "diya", "kabir", "meher", "rohan", "sana"];
 
 class UI {
@@ -2333,6 +2336,8 @@ class World {
     const stage = new THREE.Mesh(new THREE.BoxGeometry(14, 0.6, 5), mat(COLORS.stone)); stage.position.set(100, 0.3, -66); this.scene.add(stage); this.addBox(100, -66, 14, 5);
     const stageSign = makeTextSprite("Morning Assembly", { size: 48, scale: 1.3 }); stageSign.position.set(100, 3.2, -66); this.scene.add(stageSign);
     this.assemblySpot = { x: 100, z: -50 };
+    const asSign = makeTextSprite("ASSEMBLY GROUND · line up here", { size: 44, color: "#ffffff", bg: "rgba(29,53,87,0.92)", scale: 2.0 }); asSign.position.set(100, 4.5, -46); this.scene.add(asSign);
+    for (let k = 0; k < 6; k++) { const mark = new THREE.Mesh(new THREE.BoxGeometry(0.4, 0.03, 0.4), mat(0xffffff)); mark.position.set(92 + k * 3, 0.1, -48); this.scene.add(mark); }
     // Main building: a long two-storey block with a porch.
     const main = makeBuilding({ w: 60, d: 16, h: 3.6, floors: 2, roof: "flat", wall: 0xfff1d6, roofColor: 0xc0532f, sign: "Main Building" });
     this._place(main, 100, -95, 0, "Main Building");
@@ -3432,13 +3437,9 @@ class Player {
     this.camera = camera;
 
     // Build the character: blue shirt, dark trousers, yellow hard hat.
-    this.group = makeHuman({
-      skin: 0xe8b98a,
-      shirt: 0x2f7db0,
-      trousers: 0x3b3f4a,
-      hair: 0x2b1d14,
-      hat: 0xffd21e,
-    });
+    // A school boy in uniform: white shirt, navy shorts, a red tie, black shoes, no hat.
+    this.group = makeHuman({ skin: 0xe8b98a, shirt: 0xffffff, trousers: 0x1d3557, hair: 0x2b1d14, shoes: 0x1a1a1a, hat: null });
+    { const parts0 = this.group.userData.parts; const tie = new THREE.Mesh(new THREE.BoxGeometry(0.07, 0.34, 0.03), humanMat(0xc1121f)); tie.position.set(0, parts0.torso.position.y + 0.08, 0.16); this.group.add(tie); const badge = new THREE.Mesh(new THREE.BoxGeometry(0.12, 0.08, 0.02), humanMat(0xffd21e)); badge.position.set(-0.15, parts0.torso.position.y + 0.18, 0.16); this.group.add(badge); }
     this.group.position.copy(world.spawn);
     world.scene.add(this.group);
 
@@ -3548,7 +3549,7 @@ class Player {
       // Vehicles stay on roads and never enter another vehicle; walkers cannot pass through vehicles either.
       const ok = (x, z) => {
         if (!this.world.isWalkable(x, z)) return false;
-        if (this.riding && !this.world.currentRoom && !this.world.onRoad(x, z)) { this.blockedBy = "road"; return false; }
+        if (this.riding && this.riding.kind !== "bike" && !this.world.currentRoom && !this.world.onRoad(x, z)) { this.blockedBy = "road"; return false; }
         if (this.world.vehicleBlocked && this.world.vehicleBlocked(x, z, this.riding ? this.riding.group : null, this.riding ? 0.9 : 0.5)) { this.blockedBy = "vehicle"; return false; }
         return true;
       };
@@ -4771,6 +4772,7 @@ class BigMap {
     if (kind === "bus") list = BUS_STOPS.map((s) => ({ x: s.standAt.x, z: s.standAt.z, label: "Bus stop: " + s.name }));
     if (kind === "busnow" && this.world.bus) list = [{ x: this.world.bus.group.position.x, z: this.world.bus.group.position.z, label: "The school bus" }];
     if (kind === "friends") list = g.npcs.filter((n) => n.def.child && n.group.visible).map((n) => ({ x: n.position.x, z: n.position.z, label: n.name }));
+    if (kind === "bike" && g.bike) list = [{ x: g.bike.group.position.x, z: g.bike.group.position.z, label: "Your bicycle" }];
     if (kind === "objective" && g.objective) list = [{ x: g.objective.x, z: g.objective.z, label: g.objective.label }];
     const shopCat = (p) => (p.landmark ? null : catalogFor(p.name, roomTypeFor(p.name)));
     if (kind === "shops") list = this.places.filter((p) => shopCat(p)).map((p) => ({ x: p.x, z: p.z, label: p.name }));
@@ -4816,6 +4818,7 @@ class BigMap {
     }
     for (const s of BUS_STOPS) icon(s.x, s.z + 3, "🚏");
     if (this.world.bus) icon(this.world.bus.group.position.x, this.world.bus.group.position.z, "🚌", 20);
+    if (game.bike) icon(game.bike.group.position.x, game.bike.group.position.z, "🚲", 16);
     icon(HOME.x, HOME.z, "🏠", 18); icon(SCHOOL.gate.x, SCHOOL.gate.z, "🏫", 20);
     if (game.objective) icon(game.objective.x, game.objective.z - 1, "🎯", 20);
     if (this.zoom >= 1.8) for (const p of this.places) { const c = p.landmark ? null : catalogFor(p.name, roomTypeFor(p.name)); if (c) icon(p.x, p.z, ["tea", "dhaba", "chaat", "sweets", "bakery", "icecream", "juice", "pizza"].includes(c) ? "🍽️" : c === "produce" ? "🍎" : c === "petrol" ? "⛽" : "🛍️", 13); }
@@ -4876,6 +4879,7 @@ class Game {
     this.profile = profile;
     this.profileLabel = profile === "class3" ? "Class 3-A" : "Class 5-A";
     this.progress = loadProgress(profile);
+    buildPeriods(this.progress.day);
     this.big = profile === "class5";
     this._setupRenderer();
     this.world = new World();
@@ -4887,8 +4891,11 @@ class Game {
     this.phase = this.progress.phase || "morning";
     this.periodIndex = this.progress.period || 0;
     if (this.input.isTouch) document.getElementById("touch-controls").hidden = false;
-    else { const hint = document.getElementById("controls-hint"); hint.hidden = false; setTimeout(() => hint.classList.add("fade"), 9000); setTimeout(() => (hint.hidden = true), 9800); }
+    else { const hint = document.getElementById("controls-hint"); hint.hidden = false; setTimeout(() => hint.classList.add("fade"), 4000); setTimeout(() => (hint.hidden = true), 4800); }
     this._buildNpcs();
+    // Your own bicycle, parked by the garden gate. Ride it anywhere: roads, lanes, the campus.
+    const bike = makeBicycle(0xd62828); bike.position.set(HOME.x + 7.5, 0, HOME.z + 9.5); bike.rotation.y = Math.PI / 2; this.world.scene.add(bike);
+    this.bike = { group: bike, speed: 9, kind: "bike", label: "bicycle", controlled: true };
     this._buildInteractables();
     this.world.vehicleBlocked = (x, z, self, pad) => {
       for (const mv of [...this.world.movers, ...this.world.cityMovers]) {
@@ -4942,7 +4949,7 @@ class Game {
     const p = this.phase;
     if (p === "morning") return "7:00 · At home";
     if (p === "school") { const per = PERIODS[this.periodIndex] || PERIODS[PERIODS.length - 1]; return `${per.time} · ${per.name}`; }
-    if (p === "over") return "1:00 · School over";
+    if (p === "over") return "12:15 · School over";
     if (p === "evening") return "4:00 · At home";
     return "9:00 · Bedtime";
   }
@@ -5042,8 +5049,9 @@ class Game {
     this.interactables = [];
     for (const door of this.world.doors) this.interactables.push({ pos: { x: door.x, z: door.z }, radius: 2.0, prompt: () => `Enter the ${door.label}`, activate: () => this._enterRoom(door) });
     for (const sp of this.world.shopSpots) this.interactables.push({ pos: { x: sp.x, z: sp.z }, radius: 2.2, prompt: () => `${sp.label} (${fmtMoney(this.progress.money)})`, activate: () => this._openShop(sp.name, sp.cat, sp.keeper) });
+    this.interactables.push({ pos: this.bike.group.position, radius: 2.4, prompt: () => "Ride your bicycle", activate: () => { this.player.mount(this.bike); Audio.playPick(); showToast("🚲 Helmet on! Ring ring. Press E to get off. Cross roads at the zebra.", 3200, "good"); } });
     for (const st of BUS_STOPS) this.interactables.push({ pos: st.standAt, radius: 3.5, prompt: () => (this.world.busWaitingAt(st) ? "Board the school bus" : "Bus stop (wait for the bus)"), activate: () => this._boardBus(st) });
-    this.interactables.push({ pos: this.world.assemblySpot, radius: 4, prompt: () => (this.phase === "school" && PERIODS[this.periodIndex].id === "assembly" ? "Stand for the morning assembly" : "The assembly ground"), activate: () => this._assembly() });
+    this.interactables.push({ pos: this.world.assemblySpot, radius: 7, prompt: () => (this.phase === "school" && PERIODS[this.periodIndex].id === "assembly" ? "Stand in line for the morning assembly" : "The assembly ground"), activate: () => this._assembly() });
     for (const b of this.world.lunchBenches) this.interactables.push({ pos: b, radius: 2.4, prompt: () => (this.phase === "school" && PERIODS[this.periodIndex].id === "lunch" ? "Sit and eat your tiffin" : "A lunch bench"), activate: () => this._lunch() });
     for (const npc of this.npcs) this.interactables.push({ pos: npc.position, radius: 2.6, visible: () => npc.group.visible, prompt: () => `Talk to ${npc.name}`, activate: () => this._talk(npc) });
   }
@@ -5120,14 +5128,31 @@ class Game {
     if (def.id === "papa") return this.dialogue.say("Papa", [this.phase === "morning" ? "Good morning, champ. Bag packed? Water bottle? Off you go, and listen to your teachers." : `So, how was school? ${this.termMarks()} marks this term. ${this.termMarks() > 20 ? "That is my child!" : "Keep at it, every day counts."}`], null, { pitch: def.pitch, speaker: npc.id });
     if (TEACHERS[def.id.replace("t_", "")]) return this._talkTeacher(npc);
     if (def.child) return this._talkFriend(npc);
-    this._engagedNpc = npc;
-    this.dialogue.say(npc.name, [def.greet || "Hello!"], () => { this._engagedNpc = null; }, { pitch: def.pitch || 400, speaker: npc.id });
+    this._engagedNpc = npc; setMood(npc.group, "happy", 3);
+    const small = ["Nice weather today, no?", "Did you have your breakfast?", "Study well, beta. Studies first.", "My nephew is in Class 5 too. Do you know him?", "Careful on the road, so many cars these days.", "Have you seen the new park by the market?"];
+    if (Math.random() < 0.5) { this.dialogue.say(npc.name, [def.greet || "Hello!", small[Math.floor(Math.random() * small.length)]], () => { this._engagedNpc = null; }, { pitch: def.pitch || 400, speaker: npc.id }); return; }
+    const subj = SUBJECT_IDS[Math.floor(Math.random() * SUBJECT_IDS.length)], q = drawSubject(subj, 1, this.big)[0];
+    const steps = [q.choices ? { q: q.q, choices: q.choices, answer: q.answer, hint: q.hint } : { q: q.q, answer: q.answer, unit: q.unit, hint: q.hint }];
+    this.dialogue.say(npc.name, [def.greet || "Hello!", "You are a school child, no? Let me test you. Get it right and there is ₹10 for a toffee."], () => {
+      runStepQuiz({ profile: this.profile, level: 1, world: this.world, audio: Audio, countAttempt: () => countAttempt(this.profile, this.progress, "town:" + subj), onSolve: () => { this.addMoney(10, `${npc.name}'s quiz`); setMood(npc.group, "happy", 3); this._engagedNpc = null; } },
+        { title: `${npc.name} asks`, intro: `${npc.name}: "${q.q}"`, goal: `A ${SUBJECTS[subj].name} question. ₹10 if you get it.`, steps, doneBtn: "Thank you!", doneHtml: `<b>${npc.name}:</b> "Sharp! Here, buy yourself a toffee."`, onLeave: () => { this._engagedNpc = null; } });
+    }, { pitch: def.pitch || 400, speaker: npc.id });
   }
   _talkTeacher(npc) {
     const k = npc.def.id.replace("t_", ""), per = PERIODS[this.periodIndex];
     setMood(npc.group, "happy", 3);
     if (k === "games" && this.phase === "school" && per && per.id === "games") return this._games(npc);
     if (k === "principal" && this.phase === "school" && per && per.id === "assembly") return this._assembly();
+    if (SUBJECTS[k] && Math.random() < 0.5) {
+      const q = drawSubject(k, 1, this.big)[0];
+      const steps = [q.choices ? { q: q.q, choices: q.choices, answer: q.answer, hint: q.hint } : { q: q.q, answer: q.answer, unit: q.unit, hint: q.hint }];
+      this._engagedNpc = npc;
+      this.dialogue.say(npc.name, ["Ah, just the student I wanted. A quick one, no marks, only for practice."], () => {
+        runStepQuiz({ profile: this.profile, level: 1, world: this.world, audio: Audio, countAttempt: () => countAttempt(this.profile, this.progress, "practice:" + k), onSolve: () => { this.addMarks(k, "cw", 1, "practice with " + npc.name); setMood(npc.group, "happy", 3); this._engagedNpc = null; } },
+          { title: `${npc.name}: practice`, intro: `${npc.name}: "${q.q}"`, goal: `${SUBJECTS[k].name} practice. One mark for a correct answer.`, steps, doneBtn: "Thank you, teacher", doneHtml: `<b>${npc.name}:</b> "Good. That is how it is done."`, onLeave: () => { this._engagedNpc = null; } });
+      }, { pitch: npc.def.pitch, speaker: npc.id });
+      return;
+    }
     const line = SUBJECTS[k] ? [`${SUBJECTS[k].name}: ${this.subjectTotal(k)} marks so far this term.`, this.subjectTotal(k) >= 20 ? "Good work. Keep your hand up in class." : "Raise your hand more. Every answer is two marks."] : k === "games" ? ["Warm up before you play. Two rounds of the field!"] : ["Walk, do not run. And smile, it is a good day."];
     this.dialogue.say(npc.name, line, null, { pitch: npc.def.pitch, speaker: npc.id });
   }
@@ -5195,7 +5220,7 @@ class Game {
       const card = openPanel(`<div class="job-title-row"><h2>🌙 Day ${pr.day} is over</h2></div><div class="job-goal">Marks today: <b>${this._marksToday || 0}</b> · Term total: <b>${this.termMarks()}</b> · Wallet: <b>${fmtMoney(pr.money)}</b> · Friendship: <b>${Object.values(pr.friendship).reduce((a, b) => a + b, 0)}</b></div><p class="job-brief">${pr.day + 1 === 5 || pr.day + 1 === 15 ? "Tomorrow is an FA day: 10 mark tests in every subject. Revise!" : pr.day + 1 === 10 || pr.day + 1 === 20 ? "Tomorrow is the TERM EXAM. Sleep early." : "Tomorrow is a normal school day."}</p><div class="btn-row"><button class="big-btn" id="sleep-ok">Sleep 😴</button></div>`);
       card.querySelector("#sleep-ok").addEventListener("click", () => {
         closePanel();
-        pr.day++; pr.tiffin = null; pr.homework = []; pr.period = 0; this._marksToday = 0; this._ateLunch = false; this._goalDone = false; this._gamesActive = false;
+        pr.day++; buildPeriods(pr.day); pr.tiffin = null; pr.homework = []; pr.period = 0; this._marksToday = 0; this._ateLunch = false; this._goalDone = false; this._gamesActive = false;
         if (pr.day === 11) { for (const s of SUBJECT_IDS) pr.marks[s] = { cw: 0, hw: 0, fa: [], term: [] }; pr.games = []; showToast("Term 2 begins. Marks start fresh; Term 1 is on your report card.", 4000, "good"); }
         if (pr.day > 20) { pr.day = 1; for (const s of SUBJECT_IDS) pr.marks[s] = { cw: 0, hw: 0, fa: [], term: [] }; pr.games = []; showToast("A new school year! Reports are kept in your diary.", 4000, "good"); }
         saveProgress(this.profile, pr);
@@ -5424,12 +5449,14 @@ class Game {
     this.world.update(dt, elapsed, this.player.position);
     const pp = this.player.position;
     // Walking to school on foot: entering the campus starts the school day.
-    if (this.phase === "morning" && !this.world.currentRoom && !this.player.riding && pp.x > SCHOOL.x1 && pp.x < SCHOOL.x2 && pp.z > SCHOOL.z1 && pp.z < SCHOOL.z2) this._startPhase("school");
+    if (this.phase === "morning" && !this.world.currentRoom && (!this.player.riding || this.player.riding.kind === "bike") && pp.x > SCHOOL.x1 && pp.x < SCHOOL.x2 && pp.z > SCHOOL.z1 && pp.z < SCHOOL.z2) this._startPhase("school");
     if (this.phase === "over" && this.world.currentRoom && this.world.currentRoom.type === "home") this._startPhase("evening");
     if (!this.player.riding && this.player.speedKmh > 1 && !this.world.currentRoom) { this.progress.energy = Math.max(0, this.progress.energy - dt / (this.input.running ? 8 : 16)); if (Math.floor(this.progress.energy) !== this._energyShown) { this._energyShown = Math.floor(this.progress.energy); this.ui.refreshRank(); } }
     this.player.tired = this.progress.energy < 25;
     this._updateGear(dt, elapsed, !blocked && this.input.usePressed());
     this._updateGames();
+    // Walk up to the line and the assembly begins on its own.
+    if (!blocked && this.phase === "school" && PERIODS[this.periodIndex] && PERIODS[this.periodIndex].id === "assembly" && !this.player.riding && !this.world.currentRoom && Math.hypot(pp.x - this.world.assemblySpot.x, pp.z - this.world.assemblySpot.z) < 5) this._assembly();
     this._updateBus(dt);
     this._checkRoad(elapsed);
     // Traffic brakes for you; you cannot walk through it.
@@ -5448,7 +5475,8 @@ class Game {
     if (amb.chirp <= 0) { playChirp(); amb.chirp = 3 + Math.random() * 6; }
     if (amb.horn <= 0) { amb.horn = 6 + Math.random() * 9; if (!this.world.currentRoom && Math.abs(pp.z) < 30) playHorn(); }
     // Interact.
-    if (!blocked && this.player.riding) { /* handled in _updateBus */ }
+    if (!blocked && this.player.riding && this.player.riding.kind === "bike") { this.ui.setInteractPrompt(`Get off the bicycle${this.input.isTouch ? "" : "  (E)"}`); if (this.input.interactPressed()) { this.player.dismount(); Audio.playPick(); } }
+    else if (!blocked && this.player.riding) { /* handled in _updateBus */ }
     else if (!blocked) {
       if (this._engagedNpc && !this.dialogue.active && !panelOpen()) this._engagedNpc = null;
       const near = this._nearestInteractable();

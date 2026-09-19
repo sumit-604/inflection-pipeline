@@ -20,3 +20,4 @@ Per-stage token ledger (one line per subagent run).
 | 12b | verifier B red flags | opus | default | not reported | not reported | 216051 | 7m32s | 1 |
 | 12c | verifier C (gate0+EM half) | opus | default | not reported | not reported | 111946 | 4m23s | 1 |
 | 12d | verifier D peers | sonnet | default | not reported | not reported | 123712 | 6m37s | 1 |
+| 13L | synthesis-lite | opus | default | not reported | not reported | 185693 | 6m02s | 1 |

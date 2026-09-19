@@ -1,0 +1,32 @@
+stage: B13-synthesis
+company: "SHAREINDIA"
+run_date: "2026-09-19"
+model: "claude-opus-5"
+status: complete
+mode: "phase1-lite (three files; no valuation content; stage 11 not run)"
+verdict: "REWORK"
+verdict_rule_applied: 1        # B12b acceptance_rate 50 < 60; overall 50 set by redflag_coverage (forced REWORK band)
+freshness_cap: "CORPUS GAPPED-FRESHNESS: capped at PROCEED WITH CAVEATS; REWORK more severe, stands. Missing: SEBI AO order, NSE co-location matter, ~30-May-2022, Rs 3 lakh (sebi.gov.in > Enforcement > Orders > Orders of AO, May-2022)"
+ceiling_after_clean_rerun: "PROCEED WITH CAVEATS (freshness cap; FLAG-CASH INDETERMINATE; FLAG-PROMOTER active)"
+rework_stages: ["stage 5 concall (B05)", "stage 6 peers (B06)", "stage 1 Gate 0 (B01 M4/M12/M7, moat_class STRONG)", "stage 7 emerging moat (B07 H1/I2/capex NOT FOUND/register/em_score 9.6)", "verifier B rerun"]
+flags_active: ["FLAG-PROMOTER (CONCERN)", "FLAG-CASH (INDETERMINATE)", "FLAG-GATE0 (AVERAGE, 69/160)", "FRESHNESS-CAP (CORPUS GAPPED-FRESHNESS)"]
+cash_determination: "INDETERMINATE"
+transition_posture: "NOT CLASSIFIABLE (Mental Model NOT SIGNED; recognition gap needs Stage 11); proof gate NOT FIRED on phase 1 evidence"
+confidence_delta: {numerical: 100, redflag: 50, framework: 84.7, peer: 91.7, overall: 50}
+confidence_overall_set_by: "redflag_coverage"
+valuation_decision: "NOT APPLICABLE (phase 1 lite; stage 11 not run)"
+entry_range: {low: "NOT APPLICABLE", high: "NOT APPLICABLE"}
+headline: "Prop trading house, client story unproven"
+falsification_metric: "Q2 FY27 consolidated fees and commission income lower year on year (FY26 fell 18.6% consol / 12.7% standalone)"
+monitorables_count: 8
+publish_candidate: false
+publish_candidate_summary: ""
+files_written:
+  - "runs/shareindia-2026-09-19/outputs/final/business-narrative.md"
+  - "runs/shareindia-2026-09-19/outputs/final/gate-recommendation.md"
+  - "runs/shareindia-2026-09-19/outputs/final/verifier-summary.md"
+notion_save:
+  page_title: "SHAREINDIA - Phase 1 evidence run 2026-09-19"
+  summary: "Prop trading house, client story unproven. Gate: REWORK (B12b redflag_coverage 50 < 60; overall 50). Freshness cap PROCEED WITH CAVEATS (SEBI co-location AO order absent). Flags: PROMOTER CONCERN, CASH INDETERMINATE, GATE0 AVERAGE 69/160. No valuation in phase 1."
+  drive_link: "not applicable (repo run folder runs/shareindia-2026-09-19 on branch run/shareindia-2026-09-19)"
+  mode: append-never-overwrite-status

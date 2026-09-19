@@ -1,0 +1,59 @@
+stage: B09b-dossier
+company: "SUSAN"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+corpus_verdict: "CORPUS GAPPED"
+corpus_gaps:
+  - document: "FY25 and earlier Annual Reports"
+    expected_source: "company IR page"
+    kind: "findable-missing"
+  - document: "Post-listing shareholding pattern (only pre-listing 17-Jun-2026 SHP filed)"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "Q2/Q3/Q4 FY27 concall transcripts"
+    expected_source: "BSE"
+    kind: "plausibly-nonexistent"
+  - document: "Second/later DIACABS peer transcripts and any PRECWIRE transcript"
+    expected_source: "BSE"
+    kind: "plausibly-nonexistent"
+  - document: "Screener P&L/Balance Sheet/Cash Flow/Quarters export sheets"
+    expected_source: "screener.in"
+    kind: "findable-missing"
+archetypes:
+  - line: "Manufacturing (LT/HT/MVCC cable, aluminium conductor, Al/Cu winding wire)"
+    archetype: "Build-to-spec component maker crossed with order-book business (EPC/discom tender)"
+  - line: "Trading (aluminium rod/wire/ingot resale, 38.38% of FY26 revenue)"
+    archetype: "Commodity converter (weak; RHP states entry barriers relatively low)"
+transition:
+  - line: "Manufacturing (LT/HT/MVCC cable, conductor, winding wire)"
+    from_tier: "R1 COMMODITY PRICE-TAKER (winding wire, LT cable)"
+    to_tier: "R2/R3 boundary (HT/MVCC cable, spec-in via BIS/DISCOM qualification)"
+    engine: "Capacity 7,500 to 12,000 km/yr by Feb-2027, plus product-mix shift from winding wire/LT cable toward HT/MVCC cable"
+    proof_gate: "CWIP appears and grows against the Rs 10.30 Cr Unit-III object (zero at 31-Mar-2026); HT+MVCC share of quarterly revenue climbs from the Q1 FY27 print of 7.11% toward a reconciled FY27-end target"
+    recognition_gap: "OPEN QUESTION, resolved at Stage 11 via the destination-PE gap: whether the market already prices the HT/MVCC-weighted TO state"
+    ugliness: "CONTESTED - not classified at Halt 1: three years negative operating cash flow and borrowings up Rs24.79cr to Rs66.72cr read either as ARTIFACT-OF-CLIMB (cash use scaling with the FY26 revenue doubling) or STRUCTURAL-FEATURE (drain predates the sharpest growth and never reverted); operator classifies at sign-off"
+    transition_falsifier: "HT+MVCC share stalls near 7-10% through FY27 with the ~50% claim quietly dropped unreconciled, or CWIP still zero at Q3 FY27 with a Monitoring Agency deviation flag"
+dominant_variables:
+  - "HT+MVCC % of quarterly revenue (7.11% at Q1 FY27 against three stated FY27-end targets)"
+  - "Unit-III capex utilisation and CWIP (11.7% used, zero CWIP at 31-Mar-2026)"
+  - "Operating cash flow sign and trend (negative FY24-FY26, INDETERMINATE cause)"
+  - "Winding-wire/HT-MVCC segment margin once disclosed and reconciled (24.39% claim equals its own revenue share)"
+business_falsifier: "A confirmed reading of the GST search-and-seizure action, Note 32 contingent liabilities and the promoter related-party pattern as evidence of a going-concern-threatening compliance or diversion problem, rather than the disclosed reading of regularised historical lapses and one live competing-entity RPT with no deal-breaker triggered"
+mental_model_status: "DRAFT - PENDING OPERATOR SIGN-OFF"
+fragility:
+  variable_count: 5
+  verifiability_ratio: "2 of 5 externally observable"
+  single_point_failure: "none - failure requires conjunction"
+  fragility_verdict: "FRAGILE"
+candidate_count: 7
+second_order:
+  chains_drafted: 2
+  pending_live_links: 3
+  confirm_by_observations: 2
+research_brief_items: 11
+plain_summary_points: 15
+annex:
+  present: true
+  questions_answered: 10
+  corpus_commit_hash: "15a225f3b88f220f80a468acb6d4aa6fbbec61f0"

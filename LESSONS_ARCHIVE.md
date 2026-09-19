@@ -598,3 +598,12 @@ Verifier C check 15 (PR #163, PR #164), and the LESSONS discipline changes
 (PR #165).
 
 Size: LESSONS.md 164 lines / 1555 words before, 119 lines / 1062 words after.
+
+## 2026-09-19 SUSAN (step-1 intake + phase 1)
+- Collector wrote the run folder into the MAIN checkout, not the worktree it was launched from (REPO_ROOT resolves to the main repo); moved by hand.
+- Collector caught 6 of 31 post-listing BSE filings, no AR (company site only), no RHP, no rating (CRISIL HTML only); all fetched by hand. concalls_available set false on a count of 1; overridden to true.
+- PRECWIRE peer: Excel download timed out and it files no transcripts; replaced by VIDYAWIRES at intake.
+- Stage blocks from stages 1 and 2 pass 1 were written wrapped in markdown code fences; stripped mechanically. Later task messages said "plain YAML, NO code fences" and the defect stopped.
+- Stage 13 lite had no block path in its task message and returned its block in the reply only; orchestrator wrote it to outputs/blocks/B13-synthesis-lite.yaml. run-pipeline.md step 6 names no block path for synthesis-lite.
+- 09b used an em-dash in the DRAFT marker (exact-text check failed) and misstated listing as five months before the run; fixed by resuming the same 09b agent.
+- Verifier A MAJOR on B02 borrowings +47.4% (it read FY24 as the base) cleared by orchestrator source re-check (AR Note 4a p.67); logged as a disagreement.

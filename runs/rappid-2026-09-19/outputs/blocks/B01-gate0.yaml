@@ -15,27 +15,29 @@ input_gaps:
   - "no shareholding pattern later than Mar-2026 (AR) available for E1/E3 latest-quarter checks"
 flags:
   - type: FLAG-GATE0
-    reason: "Classification capped at AVERAGE by deal-breaker 4 (cumulative CFO/PAT = -1.46x, FY22-26) despite raw GOOD+ (Core 68, Moat STRONG). Block B scored 0/20 on all four sub-metrics: CFO negative every year FY23-FY26 (-26.56 Cr cumulative) against cumulative PAT +17.40 Cr; FCF positive in only 1 of 5 years; WC days rose from 150.3 to 334.2 (FY22 to FY26), driven mainly by receivable days (79.1 to 170.2) and inventory days (138.3 to 182.9). Block A also carries an ROCE-trend penalty (A4=0) driven by a small-base FY22 ROCE of 85.4% that is not representative of run-rate returns."
+    reason: "Classification capped at AVERAGE by deal-breaker 4 (cumulative CFO/PAT = -1.46x, FY22-26: cumulative CFO -25.42 Cr vs cumulative PAT +17.40 Cr; on the FY23-26 window during which CFO was continuously negative, cumulative CFO -26.56 Cr vs cumulative PAT +17.11 Cr) despite raw GOOD (round-2 corrected; Core 63, Moat MODERATE). Block B scored 0/20 on all four sub-metrics: CFO negative every year FY23-FY26 against positive, growing PAT; FCF positive in only 1 of 5 years; WC days rose from 150.3 to 334.2 (FY22 to FY26), driven mainly by receivable days (79.1 to 170.2) and inventory days (138.3 to 182.9). Round-2 correction (verifier 12c, G3): FY25/FY26 ROCE now use the AR's own Note 36 disclosed figures (17%, 14%) instead of this stage's higher computed figures (20.2%, 18.7%), which drops A2 from 5 to 3 and M3 from 3 to 1, taking the moat count from 4 (STRONG) to 3 (MODERATE). Round-2 correction (G22): E2 promoter-holding-change now uses the pre-issue-to-latest window (69.46% to 51.58%, -17.88pp) per the rule's own literal 3-year-change test, dropping E2 from 3 to 0. Neither correction changes the final classification; deal-breaker 4 already capped it at AVERAGE."
 data_years: 5
 fy_range: "FY22 to FY26"
-blocks: {A: 15, B: 0, C: 20, D: 16, E: 17}
-core_score: 68
-moat_score: 15
-grand_total: 83
-moats_confirmed: 4
-moat_class: "STRONG"
+blocks: {A: 13, B: 0, C: 20, D: 16, E: 14}
+core_score: 63
+moat_score: 13
+grand_total: 76
+moats_confirmed: 3
+moat_class: "MODERATE"
 classification: "AVERAGE"
 deal_breakers:
   - "Block B <8 -> max GOOD (Block B = 0)"
   - "Cumulative CFO/PAT <0.50 -> max AVERAGE (ratio = -1.46, FY22-26)"
 history_downgrade: false
 data_notes:
+  - "5-6 years of data (FY22-FY26): LOWER confidence band, flag 'may not have seen full cycle' (round 2 addition, G34: this was stated in the report prose in round 1 but omitted from this YAML field)."
   - "FY22 ROCE (85.4%) is a small-capital-employed-base distortion (Cap Employed only Rs 2.04 Cr, reserves still negative at that date); reported per fixed formula with no adjustment."
-  - "FY22 ROE excluded from median: negative average net worth (-Rs 0.25 Cr) makes PAT/NW a non-meaningful negative ratio despite positive PAT; opening NW unavailable for FY22 so closing NW used per rule, as stated."
+  - "Round 2 (G3): FY25/FY26 ROCE scoring basis changed from this stage's computed EBIT/(TA-CL) figures (20.2%, 18.7%) to the AR's own Note 36 disclosed ROCE (17%, 14%, AR p.69), per the rule's source-precedence instruction. FY22-FY24 stay on the computed formula; no AR/screener ROCE disclosure exists for those years, and RHP's disclosed ROCE uses a different denominator (Net worth + Total Debt) not treated as substitutable. This produces a 5-year ROCE series on two different bases; flagged, not smoothed."
+  - "Round 2 (G6): A3 median ROE now includes FY22 (closing-NW basis, -116%, rule-directed substitution not exclusion), giving median 22.9% (was 27.5% with FY22 excluded in round 1). Score unchanged at 5."
+  - "Round 2 (G22): E2 promoter-holding-change now measured pre-issue (69.46%, RHP p.95) to latest (51.58%, AR p.60) = -17.88pp, per the rule's literal 3-year-change test with no dilution exception (Rule 2). Score changed from 3 to 0. The post-listing-only window (Sep-2024 to Mar-2026, +0.45pp) is kept as context: it isolates post-IPO promoter behaviour from the one-time IPO dilution event, but is not the scoring basis."
   - "RHP restated FY24 CFO (-Rs 1.07 Cr, RHP p.217 area) differs from screener-Data_Sheet.csv FY24 CFO (-Rs 2.48 Cr); screener series used across all 5 years for internal consistency, discrepancy not reconciled."
   - "Company memory (step1 brief) cites FY26 inventory days ~258; this stage's prescribed formula (Inventory/Revenue x 365) gives 182.9 for FY26. Basis difference not reconciled; own computed figure used for scoring."
-  - "E2 measured over the ~2-year listed history (post-issue Sep-2024 to Mar-2026), not a full 3 years, since pre-IPO holding is a dilution event, not a valid same-basis comparator; stated explicitly, not estimated."
   - "No loss-to-profit swing: PAT positive in all 5 years (FY22 smallest at Rs 0.29 Cr)."
   - "PEER DATA NEEDED: M2 (cost advantage), M5 (scale and dominance), M9 (brand) all require peer financial data not present in this run's input set."
 block_b_trend: "deteriorating - CFO swung from +Rs1.14 Cr (FY22) to -Rs10.83 Cr (FY26); cumulative FY23-26 CFO -Rs26.56 Cr against cumulative PAT +Rs17.11 Cr over the same 4 years"
-analyst_note: "The classification hinges entirely on Block B. Growth (20/20) and moat count (4, STRONG) would put this at GOOD+ on a Core/Moat basis alone. Block B's zero score is not one weak metric outvoted by three strong ones; all four cash metrics failed together, and the same underlying driver (receivable and inventory days both roughly doubling FY22 to FY26) shows up again in moat test M4 and M10, where it blocks credit that revenue growth would otherwise earn. This is one root cause counted honestly across multiple tests, not four independent problems. The FY22 ROCE outlier (85.4%) inflates the Block A median; A2 (minimum-year ROCE, 18.7%) and A4 (trend, -66.7pp) better reflect the current run rate. Downstream stages should treat the cash-conversion pattern as the single most load-bearing fact of this run, consistent with company memory's own framing."
+analyst_note: "Round-2 correction lowers the classification's raw pre-deal-breaker footing (GOOD+ -> GOOD, moat STRONG -> MODERATE) but does not move the final AVERAGE call: deal-breaker 4 (cumulative CFO/PAT -1.46x) was already the binding constraint and stays binding. The two MAJOR fixes both point the same direction, toward a more conservative read of return quality and promoter alignment: the AR's own Note 36 ROCE (14-17%) is lower than this stage's computed figure (18.7-20.2%), and the only rule-compliant 3-year promoter-holding window is IPO-dilution-inclusive and shows a large drop, not the small post-listing rise round 1 reported. Growth (Block C, 20/20) is untouched by any correction and remains the strongest signal in the scorecard. Downstream stages should treat the cash-conversion pattern (Block B, 0/20) as the single most load-bearing fact of this run, and should now read the moat count as 3 (MODERATE), not 4 (STRONG), when B07's 6C table cites this block."

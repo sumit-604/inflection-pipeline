@@ -1,0 +1,25 @@
+stage: B12d
+company: "RAPPID"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+peers_audited: 8
+substantive_confirmed: 8
+substantive_unsupported: []
+unused_but_relevant: []
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "MAJOR", location: "B06 Quest Flow Controls citations (Claims 2/4, Part 2A-2C, Part 5, YAML)", claimed: "page anchors p.3-4 / p.3 / p.6 / p.7-8", source_truth: "QUESTFLOW-Concall_Jun_2024_Transcript.txt contains zero page markers; quoted content itself is verbatim-accurate", note: "most consequential peer (sole basis for the report's one FLAG) has unverifiable anchors throughout; content not disputed"}
+  - {severity: "MAJOR", location: "B06 Part 2D, KSB-Concall_Sep_2025_Transcript.txt citation", claimed: "p.16", source_truth: "p.11 (line 646); p.16 (lines 906-935) covers unrelated Navy/BP&CL/turbine-pump content", note: "5-page displacement; quote and speaker (Nitin Patil) otherwise correct"}
+  - {severity: "MINOR", location: "B06 Claim 1, ATAM-Concall_Apr_2024_Transcript.txt", claimed: "p.6", source_truth: "p.5", note: "off by 1 page, content verbatim-correct"}
+  - {severity: "MINOR", location: "B06 Claim 1, ATAM-Concall_Apr_2024_Transcript.txt", claimed: "p.14", source_truth: "p.13", note: "off by 1 page, content verbatim-correct"}
+  - {severity: "MINOR", location: "B06 Claim 1, KSB-Concall_Sep_2025_Transcript.txt", claimed: "p.11", source_truth: "p.10", note: "off by 1 page, content verbatim-correct"}
+  - {severity: "MINOR", location: "B06 Claim 2 / 2B, KSB-Concall_Aug_2026_Transcript.txt", claimed: "p.24", source_truth: "p.23", note: "off by 1 page, content verbatim-correct"}
+  - {severity: "MINOR", location: "B06 Claim 5, KSB-Concall_Aug_2026_Transcript.txt", claimed: "p.9", source_truth: "p.7", note: "off by 2 pages, content verbatim-correct"}
+  - {severity: "MINOR", location: "B06 Claim 1, KSB-Concall_Aug_2026_Transcript.txt", claimed: "p.29-30", source_truth: "p.27", note: "off by 2-3 pages, content verbatim-correct"}
+  - {severity: "MINOR", location: "B06 Claim 5, KSB-Concall_Nov_2025_Transcript.txt", claimed: "p.39", source_truth: "p.37", note: "off by 2 pages, content verbatim-correct"}
+critical_count: 0
+major_count: 2
+minor_count: 7
+acceptance_rate: 100

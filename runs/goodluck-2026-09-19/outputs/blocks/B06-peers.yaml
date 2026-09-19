@@ -1,0 +1,49 @@
+stage: B06-peers
+company: "GOODLUCK"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "GDAL rating rationale absent from corpus (freshness FAIL, HIGH per run brief)"
+  - "Shareholding data is aggregator-sourced only (MEDIUM per run brief)"
+  - "Peer screener Data_Sheets (HITECH, RATNAMANI, BALUFORGE) empty, no numeric benchmark drawn from them (LOW per run brief)"
+  - "No equity research used in this stage (LOW per run brief)"
+  - "BALUFORGE evidence is a single investor presentation, not a transcript: no analyst Q&A, company-claim tier only (MEDIUM per run brief)"
+  - "RATNAMANI has no Q1 FY27 transcript; two of four RATNAMANI transcripts (Q2 FY25, Q4 FY25) are FY25 vintage, pre-dating Goodluck's analysed quarters and used as CITED-ONLY baseline context (LOW per run brief)"
+flags:
+  - "BALUFORGE is the sole source for Q1 (defence export figures), Q5 (margin proxy) and Q6 (capacity-timeline benchmark); all three rest on presentation-tier, single-peer, no-Q&A evidence and should be weighted accordingly downstream (MEDIUM)"
+  - "The single most load-bearing unverified number behind the GDAL growth case (global 155mm shell demand 7.5-9M units vs supply 2-3.5M units) remains genuinely unverifiable in this corpus; management itself concedes this (HIGH, carried forward from B05)"
+peers_provided: 9
+verified:
+  - {claim: "HRC price path: 5-year low ~Rs 47,000-48,000/t (Oct-2025), then +21% to Rs 58,000/t by May-2026, driven by the 12% safeguard duty", peers: ["HITECH", "RATNAMANI"], anchor_count: 3}
+partially_verified:
+  - {claim: "India defence export figures: Rs 23,000 Cr (FY25) and Rs 50,000 Cr-by-2030 target verified via peer chart; Rs 38,000 Cr figure unconfirmed and inconsistent with the implied peer trend", peers: ["BALUFORGE"]}
+  - {claim: "Continued US procurement despite a steep US duty (RATNAMANI/RTL corroborates continued, undiminished US export relationship, but different product category and 'very minimal' US exposure)", peers: ["RATNAMANI"]}
+contradicted:
+  - {claim: "400,000-shell capacity online 'within one year' (Oct-2025 original guide)", contradicting_peer: "BALUFORGE", quote_anchor: "BALUFORGE-Investor_Presentation_Jun2026.txt p.8 (360,000-shell line commissioned after a multi-year, roughly 2021-2025, foundation-to-commercial build per p.5 Business Journey)"}
+unverifiable:
+  - {claim: "~30%+ market share claimed in solar support structures", peers_checked: ["HITECH", "RATNAMANI"]}
+  - {claim: "Global 155mm shell demand 7.5-9 million units vs supply capacity 2-3.5 million units", peers_checked: ["BALUFORGE"]}
+  - {claim: "Defence EBITDA margin 30-35% guided, 38-70% delivered: sustainable steady-state or ramp-up artifact", peers_checked: ["BALUFORGE"]}
+peer_coverage_map:
+  - {peer: "HITECH", quarter: "Q2 FY26", usage: "SUBSTANTIVE", contribution: "Declining steel prices corroborates HRC-low timing"}
+  - {peer: "HITECH", quarter: "Q3 FY26", usage: "SUBSTANTIVE", contribution: "Quantified HRC decline and exact 30-Dec-2025 safeguard duty trigger match Goodluck's own cited driver; CBAM mention"}
+  - {peer: "HITECH", quarter: "Q4 FY26", usage: "SUBSTANTIVE", contribution: "Capacity-race context; gas-price and stock-in-trade cost commentary"}
+  - {peer: "HITECH", quarter: "Q1 FY27", usage: "SUBSTANTIVE", contribution: "Iran war and gas-price commentary corroborates West Asia crisis framing timing"}
+  - {peer: "RATNAMANI", quarter: "Q2 FY25", usage: "CITED-ONLY", contribution: "Pre-dates analysed window; baseline context only"}
+  - {peer: "RATNAMANI", quarter: "Q4 FY25", usage: "CITED-ONLY", contribution: "Pre-dates analysed window; baseline financial/segment context only"}
+  - {peer: "RATNAMANI", quarter: "Q2 FY26", usage: "SUBSTANTIVE", contribution: "Softer input prices corroborates HRC-low point; RTL/US export commentary for Q7"}
+  - {peer: "RATNAMANI", quarter: "Q4 FY26", usage: "SUBSTANTIVE", contribution: "Explicit unprompted West Asia crisis and gas-cost corroboration; defence/aerospace pivot feeds Part 5 hypothesis"}
+  - {peer: "BALUFORGE", quarter: "Investor Presentation Jun-2026", usage: "SUBSTANTIVE", contribution: "Defence export figures; shell-line commissioning as capacity-timeline benchmark; blended margin/ROCE trajectory as indirect defence-margin proxy (presentation-tier, no Q&A)"}
+industry_cross_read:
+  demand: "Peers split by end-market exposure: HITECH (commodity/infra/solar) shows strong double-digit volume growth all 4 quarters; RATNAMANI (export/oil-and-gas) shows genuine demand softness, explicitly citing the same West Asia crisis Goodluck names, an unprompted independent corroboration"
+  pricing_inputs: "HRC price direction and the 12% safeguard duty date match almost exactly via HITECH; elevated gas costs independently confirmed by both HITECH and RATNAMANI in the same window Goodluck references the West Asia crisis"
+  capex_cycle: "Industry-wide capacity race, not a lone expander: all three peers (HITECH, RATNAMANI, BALUFORGE) are expanding meaningfully in the same period as Goodluck; this normalizes the decision to expand but not Goodluck's specific execution failures (capex reconciliation gap, timeline slippage)"
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "RATNAMANI: structural competitive/margin risk from 'piercing technology' entrants into premium stainless-steel tube segments, plus a named product-failure/liability risk class, never raised by Goodluck for its own products"
+  - "HITECH: EU Carbon Border Adjustment Mechanism (CBAM) as an active regulatory/cost risk for exporters, unaddressed in any of Goodluck's four analysed calls despite a claimed ~53% export revenue share"
+  - "HITECH and RATNAMANI: China+1/Europe+1 capacity-shift dynamics and new-entrant competitive intensity as live pricing/margin pressures, versus Goodluck's calls framing competition almost entirely as generic 'demand outstrips supply'"
+  - "RATNAMANI: geography-specific duty/anti-dumping risk as it localises manufacturing (Saudi stainless steel), an analogous risk class never discussed for Goodluck's own GDAL/aerospace international ambitions"
+net_narrative_effect: "complicates"
+analyst_note: "BALUFORGE is a Regulation-30 investor presentation, not an earnings call: no analyst pressed it on the exact shell-line build timeline, the isolated defence-segment margin, or the export-figure basis. Every Q1/Q5/Q6 finding sourced from it should be read as directional peer signal, not verified fact, and reweighted if a BALUFORGE transcript becomes available in a later run. The two most consequential findings (HRC/West-Asia corroboration strengthening Goodluck's excuses; the capacity-timeline peer benchmark contradicting the ORIGINAL 'within one year' guide) point in opposite directions for the credibility read, which is why net_narrative_effect is 'complicates' rather than a clean support or undercut."

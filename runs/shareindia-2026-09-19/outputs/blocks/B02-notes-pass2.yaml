@@ -1,0 +1,129 @@
+stage: B02-notes-pass2
+company: "SHAREINDIA"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Carried from Pass 1 / B00: research/ empty, no broker notes; shareholding
+    FII/DII split and pledgee names not filing-level; screener Financials.xlsx
+    absent; sector_cap_row uses closest 'Banks / NBFCs / MFIs' row pending
+    Phase 3 operator confirmation; LBF2 pledgee/purpose NOT FOUND IN DOCUMENT;
+    LBF4 (Sep-2026 stress events) post-dates AR signing (19-May-2026) and is
+    NOT FOUND IN DOCUMENT by construction."
+  - "PASS 2 FINDING: no narrative explanation in the notes for the near-total
+    (99.2%) collapse of related-party brokerage received from Idhyah Futures
+    (Note 52(iii) standalone p.205), nor for the subsidiary-level Master Trust
+    Limited FVPL position being held through a ~55% mark-to-market decline
+    (Note 10B consol p.260) rather than trimmed."
+flags:
+  - {type: FLAG-CASH, reason: "ENHANCEMENT to Pass 1 FLAG-CASH: the Schedule
+    III ratio table's own footnote (Note 58a standalone p.218; Note 63a consol
+    p.328) states the reported DSCR (3.25x standalone, 2.74x consol) is
+    computed on the ORIGINAL contractual repayment schedule and explicitly
+    EXCLUDES the impact of the Board-approved (19-May-2026) proposed early
+    redemption of the Rs 99.90 Cr First-Issue NCDs. The company's own
+    disclosure is the direct evidentiary link between the DSCR decline and the
+    NCD redemption event; the reported ratio is a floor, not the ratio once
+    the redemption executes. Two further ratios also deteriorated and were not
+    individually cited in Pass 1: long-term debt to working capital (0.03x->
+    0.14x standalone; 0.06x->0.13x consol) and debtor turnover (5.87x->4.12x
+    standalone; 7.13x->4.69x consol)."}
+accounting_quality: 6
+pass_2_empty: false
+pass_3_empty: false
+top_findings:
+  - {rank: 1, finding: "Reported DSCR/consol DSCR explicitly excludes the
+    Board-approved proposed early redemption of the Rs 99.90 Cr First-Issue
+    NCDs; the ratio is computed on the original contractual schedule, not the
+    accelerated one management itself resolved on 19-May-2026.", note_ref:
+    "Note 58a standalone p.218; Note 63a consol p.328 (footnote)", rating:
+    "RED", why: "The company's own footnote is the direct link between two
+    Pass 1 findings (DSCR decline and the NCD early-redemption item); the
+    reported 3.25x/2.74x DSCR is a floor, not a like-for-like forward
+    reading, once the redemption executes."}
+  - {rank: 2, finding: "Two additional Schedule III ratios deteriorated
+    materially, not individually named in Pass 1: long-term debt to working
+    capital 0.03x->0.14x standalone (0.06x->0.13x consol); debtor turnover
+    5.87x->4.12x standalone (7.13x->4.69x consol).", note_ref: "Note 58a
+    standalone p.218; Note 63a consol p.328", rating: "YELLOW", why: "Same
+    direction as the DSCR/ISCR decline; broadens the evidence base for
+    funding-quality deterioration beyond the two ratios Pass 1 cited."}
+  - {rank: 3, finding: "FVOCI quoted equity book fell 93.5% (Rs 56.42 Cr to
+    Rs 3.64 Cr, 30 scrips to 5), driven mainly by a ~90% disposal of Master
+    Trust Limited shares; gains/losses on FVOCI equity never pass through
+    the P&L by accounting policy, only through OCI to retained earnings on
+    disposal.", note_ref: "Note 10/10A standalone pp.159-160; consol Note
+    10/10A pp.258-260; accounting policy 2.11(b)(ii) p.145", rating:
+    "YELLOW", why: "A ~Rs 52 Cr portfolio churn this year is invisible in
+    reported PAT by design, not defect; an earnings-quality/transparency
+    point a P&L bridge would otherwise miss."}
+  - {rank: 4, finding: "A subsidiary (not the parent) independently holds a
+    ~21 lakh share FVPL position in Master Trust Limited, the same stock the
+    parent is exiting via FVOCI, and held it through a 55.6% mark-to-market
+    decline (Rs 27.06 Cr to Rs 12.02 Cr) with share count barely changed.",
+    note_ref: "Note 10B consol p.260 (absent from standalone Note 10B)",
+    rating: "YELLOW", why: "Single-name concentration and risk-discipline
+    question underneath the group's still-positive aggregate trading gains;
+    parent exiting and subsidiary holding through a large loss in the same
+    name was not visible without cross-checking standalone against consol."}
+  - {rank: 5, finding: "A new Level 3 (illiquid/model-valued) slice, Rs
+    33.03 Cr (13.6%), appears inside 'Securities for trade' this year;
+    FY25 was 100% Level 1 (liquid, quoted).", note_ref: "Note 53 standalone
+    fair value hierarchy table, pp.207-208", rating: "YELLOW", why:
+    "Securities held 'for trade' are meant to be the most liquid book on
+    the balance sheet; a new illiquid slice this year is a distinct nuance
+    from the already-known Level 3 strategic-investment book."}
+  - {rank: 6, finding: "Related-party brokerage received from Idhyah Futures
+    collapsed 99.2% (Rs 2.81 Cr to Rs 0.02 Cr), unexplained; consultancy
+    charges of Rs 1.50 Cr paid to Ace Alpha Tech Limited in FY25 ceased after
+    it exited related-party status 12-Sep-2024.", note_ref: "Note 52(iii)
+    standalone pp.205-206", rating: "YELLOW", why: "Largest related-party
+    brokerage relationship in the disclosed table effectively wound down
+    with no note-level explanation."}
+  - {rank: 7, finding: "NBFC segment (Fincap) revenue fell 2.4% and segment
+    result (EBIT) fell 5.7% YoY even as the underlying loan book grew and
+    impairment allowance rose 58.9%; segment liabilities fell 37.3%.",
+    note_ref: "Note 45 consol pp.286-287, cross-ref Note 9 consol p.257",
+    rating: "GREEN", why: "Sharpens Pass 1 finding on parent profit
+    concentration: the NBFC arm is not currently the profit-diversification
+    engine a subsidiary-led transition narrative would need, on FY26
+    numbers."}
+red_flags:
+  - "The company's own DSCR footnote (Note 58a/63a) confirms the reported
+    3.25x/2.74x debt service coverage excludes the Board-approved proposed
+    early redemption of Rs 99.90 Cr of NCDs; true near-term coverage is
+    worse than reported on a like-for-like basis once that redemption
+    executes."
+questions_for_mgmt:
+  - "The Schedule III DSCR footnote states the ratio excludes the impact of
+    the proposed early NCD redemption. What would standalone and
+    consolidated DSCR be if the Rs 99.90 Cr redemption is treated as a
+    current obligation, and what is the funding plan for it?"
+  - "Related-party brokerage received from Idhyah Futures fell from Rs 2.81
+    Cr to Rs 0.02 Cr (Note 52(iii) p.205). What drove this, and is Idhyah
+    Futures still an active trading client of the Company?"
+  - "A subsidiary carries a ~21 lakh share FVPL position in Master Trust
+    Limited that fell 55.6% in value this year with the position held
+    essentially intact (Note 10B consol p.260), while the parent disposed of
+    ~90% of its own Master Trust FVOCI stake. What is the subsidiary's risk
+    limit and stop-loss policy for single-name proprietary positions of this
+    size?"
+receivables_trend: "No change to the Pass 1 classification (DETERIORATING on
+  funding quality despite clean ageing). New corroborating evidence this pass:
+  debtor turnover ratio fell 5.87x->4.12x standalone and 7.13x->4.69x consol
+  (Note 58a/63a), consistent with, and broadening, the funding-quality
+  deterioration already flagged under FLAG-CASH."
+restatements_found: []
+going_concern_language: "NONE (unchanged from Pass 1; no new going-concern
+  language surfaced on re-read)."
+analyst_note: "Pass 1 was unusually thorough; this pass's most load-bearing
+  addition is the DSCR footnote (Note 58a/63a) explicitly excluding the
+  proposed NCD early redemption from the current-maturity denominator. That
+  single sentence is the company's own admission that its reported FY26 debt
+  service coverage is calculated on a basis that already looks past the one
+  named funding event in this AR most likely to explain the Sep-2026 stress
+  in company memory. The FVOCI/FVPL Master Trust Limited findings (items 3-4)
+  are secondary but genuinely new: they show the parent and a subsidiary
+  running opposite positions in the same stock, visible only by
+  cross-referencing standalone against consolidated schedules that Pass 1
+  treated as mirroring each other."

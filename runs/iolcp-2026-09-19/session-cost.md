@@ -10,3 +10,4 @@ total tokens and wall time per subagent; the in/out split is not exposed.
 | 2 | notes pass 1 | sonnet | agent default | n/a | n/a | 171341 | 5m44s | 1 |
 | 2 | notes pass 2 | sonnet | agent default | n/a | n/a | 172510 | 4m25s | 2 |
 | 2 | notes pass 3 | sonnet | agent default | n/a | n/a | 98302 | 4m11s | 3 |
+| 3 | AR deep dive | sonnet | agent default | n/a | n/a | 249228 | 12m52s | 1 |

@@ -1,0 +1,77 @@
+stage: B03-ardeep
+company: "IOLCP"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "FY25 AR (Annual_Report_2025.txt) not independently re-read this pass; FY25 comparatives embedded in the FY26 AR's own statements/notes served the backward-comparison purpose. Phase 6D (tone/priority drift YoY) is NOT FOUND IN THIS PASS'S SCOPE as a formal comparison."
+  - "Auditor tenure/rotation year: NOT FOUND IN DOCUMENT in the sections read (would require the AGM appointment-resolution history)."
+  - "Ind AS 116 lease discount rate: NOT FOUND IN DOCUMENT (carried forward from B00/B02)."
+  - "Capitalisation threshold (rupee amount): NOT FOUND IN DOCUMENT (carried forward from B00/B02)."
+  - "Inter-segment transfer-pricing basis for the Rs 237.72 Cr chemicals-to-pharma captive transfer: NOT FOUND IN DOCUMENT (carried forward)."
+  - "Genuine 3-year+ exceptional-items pattern could not be established: AR shows only 2 years of comparatives (Nil FY25, Rs 11.21 Cr FY26); Screener standalone P&L export does not isolate an exceptional-items line."
+  - "B02 ranks 9, 10, 13, 14 (power/fuel and stores/spares cost growth, FX exposure reversal, fixed-deposit tenor shift, MSME interest) not independently re-pulled this pass (time-budget choice); carried forward from B02 as reported, not contradicted by anything found."
+  - "No numeric FY27 forward guidance (revenue %, EBITDA margin, capex Rs figure, capacity timeline) found anywhere in the AR text itself; all such figures in company memory come from concalls/investor presentations outside this document."
+flags:
+  - {type: FLAG-CASH, reason: "Gross trade receivables outrunning revenue (+17.4% net receivables vs +11.5% revenue, Balance Sheet p.132/Note 49 p.177) drove a Rs 73.34 Cr working-capital cash use in FY26 (Cash Flow Statement p.136), keeping FCF thin (Rs 43.52 Cr) against the guided capex programme even though CFO/PAT (1.56x) and CFO/EBITDA (73.9%) are both healthy."}
+  - {type: FLAG-PROMOTER-PRELIM, reason: "Promoter/promoter-group holding rose 52.62%->57.48% within the AR year (Note 15h p.155-156: NM Merchantiles +4.00pp, NCVI Enterprises +0.62pp) while Vasudeva Commercials' 7.94% stake vanishes from FY26 disclosure with zero AR explanation (full-document keyword search confirms zero 'Vasudeva' mentions in the FY26 AR). Concurrently RPT purchases from three promoter-group entities grew 31.1% YoY to Rs 131.94 Cr (8.8% of material consumed, Note 40 p.169-171), with NM Merchantiles nearly tripling its sales to the Company the same year its own stake jumped. Board's Report Section 22 (p.57) states 'no material transaction... AOC-2 not applicable', which is technically correct under Section 188 but understates the RPT book's scale versus the notes."}
+  - {type: FLAG-CAPEX, reason: "Rs 500 Cr + Rs 1,200-1,400 Cr capex programme management calls 'internally funded' (per company memory/concalls) is never quantified anywhere in the AR text (Chairman's Message p.8, MD's Message p.9-10, Investment Case p.10 all narrate the programme with zero rupee figure). Zero term debt exists (Note 42 p.174-175, gearing ratio N.A.), and booked capital commitments are only Rs 69.35 Cr (+172.8% YoY, Note 35B p.161) -- under 14% of even the smaller guided tranche. Correction to B02's framing: cash capex spend fell only 19.0% YoY (Rs 172.99 Cr, cash flow p.136) and CWIP additions were still Rs 147.09 Cr (Note 3.2 p.147); what collapsed was the capitalisation/completion pace (-73.6%) and gross block additions (-71.4%), not total spend -- consistent with an early-stage, not-yet-commissioned programme, but the funding-source gap remains real and unresolved."}
+  - {type: FLAG-GOVERNANCE, reason: "Non-audit fees exceeded the statutory audit fee in FY25 (Rs 0.14 Cr vs Rs 0.13 Cr = 107.7%); FY26 pulled back to 93.75% but remains close to parity (Note 45, p.174). CARO vii(b) reports zero disputed statutory dues while Note 35 discloses a live Rs 2.06 Cr Customs Order-In-Original under appeal (p.161) -- a minor, informational reconciliation gap, not a material breach. CEO-to-median-employee pay ratio is 283.82x (Annexure-4, p.69), high in absolute terms for a small-cap."}
+phase_verdicts: {p1: "GREEN clean, one YELLOW fee-ratio watch item", p2: "YELLOW watch (promoter/RPT + capex-funding threads; zero numeric discrepancies found on independent re-verification of 9 of 15 triple-pass findings)", p3: "GREEN-to-YELLOW clean (CFO/PAT 1.56x, margin-driven ROE improvement, other income only 11.5% of PBT)", p4: "YELLOW watch (no numeric FY27 guidance anywhere in AR; risk section largely boilerplate; MD&A cross-reference to 'page 30-33' resolves to BRSR content, not a risk section)", p5: "YELLOW watch (clean committee process and no pledge, offset by the promoter-consolidation thread and high CEO-median pay multiple)", p6: "YELLOW watch (3 quiet-abandonment findings: capacity-building tone vs -71.4% gross PP&E additions; unquantified 'internally funded' capex claim; 'no material RPT' language vs Rs 131.94 Cr RPT book)", p7_best_fit: "GARP watchlist; Turnaround pass-leaning (clear five-year stall FY22-FY25 then FY26 break, mechanism evidenced, balance sheet never distressed)"}
+overall_quality: 7
+quality_components: {governance: 6, accounting: 8, balance_sheet: 7, earnings: 8}
+kill_switch_notes:
+  - "Phase 1: would not stop; opinion clean, CARO clean across all high-risk clauses; fee-ratio and CARO vii/Note 35 items are minor follow-up questions, not disqualifying."
+  - "Phase 2: would not stop on accounting-quality grounds (no restatement/fraud/going-concern issue); would stop to ask where Vasudeva Commercials' stake went and what facility funds the capex programme before signing a Mental Model."
+  - "Phase 3: would not stop; financial statements support a real, operationally-driven FY26 recovery, not an accounting-driven one."
+  - "Phase 4: would not stop alone, but would flag the empty guidance-table and the RPT-language contradiction as items to resolve before valuation work leans on management's forward capex/margin claims."
+  - "Phase 5: would not stop on committee-process grounds (functions correctly, independent-majority Audit Committee approved the RPT book), but would want the promoter-consolidation thread (Vasudeva exit, NM Merchantiles/NCVI growth, June-2026 amalgamation) resolved before signing a Mental Model."
+triple_pass_verification:
+  verified: 9
+  discrepancies: []
+missing_risks:
+  - {finding: "Receivables/working-capital deterioration not named as a risk despite being the company's own leading cash-conversion indicator", evidence_anchor: "Note 49 p.177 (receivables turnover 4.21x->4.14x), Note 10 (gross receivables outrunning revenue, cited via B02)"}
+  - {finding: "Capex funding source not risk-tested against an accruals-shortfall scenario despite 'internally funded' being asserted with no supporting number", evidence_anchor: "Note 35B p.161 (commitments Rs 69.35 Cr), Note 42 p.174-175 (gearing N.A.), Investment Case p.10"}
+  - {finding: "Promoter-group commercial dependency (8.8% of material consumed) not named as a risk", evidence_anchor: "Note 40 p.169-171 (Rs 131.94 Cr RPT purchases)"}
+  - {finding: "Live Customs OIO / trade-compliance risk (FTA Certificate of Origin non-conformance) not mentioned in the Risks/SCOT section", evidence_anchor: "Note 35 p.161 (Rs 2.06 Cr OIO, under appeal)"}
+  - {finding: "No quantified downside scenario for Ibuprofen pricing despite the entire growth narrative resting on diversifying away from it", evidence_anchor: "MD&A SCOT/Risk Management p.50-51; Investment Case p.10 (18%->37% mix shift claim)"}
+guidance_table: []
+monitorables:
+  - {metric: "Vasudeva Commercials stake destination", threshold: "Any disclosure naming buyer/reclassification", where: "SAST 29(2) filings, shareholding pattern", why: "Resolves the single largest unexplained governance thread (LBF2)"}
+  - {metric: "Term debt drawdown for the capex programme", threshold: "Any term loan sanction/utilisation announced", where: "BSE filings, next quarter's borrowings note", why: "Tests whether 'internally funded' holds or external financing is needed"}
+  - {metric: "Capital commitments (Note 35B)", threshold: "Material rise toward the guided Rs 500 Cr+ scale", where: "Next AR / quarterly disclosures", why: "Confirms the capex programme is being contractually committed, not just discussed on calls"}
+  - {metric: "Receivable days", threshold: "Further rise beyond ~95 days (company memory FY26 figure)", where: "Quarterly results, screener", why: "Leading indicator of the working-capital drag keeping FCF thin"}
+  - {metric: "RPT purchase growth from promoter entities", threshold: "Continued growth beyond 8.8% of material consumed", where: "Quarterly RPT disclosures, next AR Note 40", why: "Tests whether FY26's pattern (RPT growing 3x faster than revenue) continues or normalises"}
+  - {metric: "Non-audit fee ratio", threshold: "Non-audit fees exceeding audit fee again", where: "Next AR's auditor remuneration note", why: "FY25 already breached this once; a repeat would be worth an independence question"}
+ar_new_downstream_entities:
+  - name: "IOL Pharmaxis UK Limited"
+    where_in_ar: "Note 40 Related Party Disclosures (p.169); Secretarial Audit Report (p.66-67)"
+    entity_type: "new wholly-owned overseas subsidiary, incorporated 16-Oct-2025, England and Wales"
+strengths_top3:
+  - "Near debt-free balance sheet (debt-equity 0.08x, DSCR 22.61x, zero long-term borrowings, no covenant breaches) funding growth from internal accruals so far (Note 42, p.174-175)."
+  - "Real, broad-based FY26 margin recovery: EBITDA +29.3%, chemicals segment result nearly doubling (Rs 15.39 to 30.24 Cr), pharma segment +36.4%, other income only 11.5% of PBT (Note 39 p.168, P&L p.133)."
+  - "Clean audit trail: unmodified opinion, no fraud, no disputed statutory dues admitted, no cash losses, no wilful default, light contingent liabilities at 0.31% of net worth (Auditor's Report/CARO p.121-131, Note 35 p.161)."
+red_flags_top3:
+  - "Vasudeva Commercials Limited's 7.94% stake vanishes from FY26 disclosure with zero AR explanation, while the Corporate Governance Report's 'no materially significant RPT' language sits against Rs 131.94 Cr of FY26 purchases from three promoter-group entities (+31% YoY, one of which tripled its sales the same year its own shareholding jumped 4.00pp) (Note 15c/15h p.153-156, Note 40 p.169-171, Corp Gov Report Section 13(a) p.82)."
+  - "The Rs 500 Cr + Rs 1,200-1,400 Cr capex programme called 'internally funded' is entirely unquantified inside this AR, has zero term debt behind it, and only Rs 69.35 Cr of booked capital commitments -- under 14% of even the smaller guided tranche (Note 35 p.161, Note 42 p.174-175, Investment Case p.10)."
+  - "Absolute return ratios remain low despite the recovery narrative: ROCE 9.70%, ROE 7.90%, ROI 7.11% -- the base the 25% CAGR thesis must climb from (Note 49, p.177-178)."
+best_fit_strategy: "GARP (watchlist) / Turnaround (pass-leaning)"
+one_line_verdict: "Real margin recovery; promoter consolidation and unfunded capex plan unresolved."
+analyst_note: >
+  Nine of B02's fifteen triple-pass findings were independently re-pulled from source
+  this pass with zero numeric discrepancies; the framework's own instruction to
+  cross-reference aggressively surfaced one genuine correction, not to B02's numbers
+  but to their framing: FY26 cash capex spend fell only 19% (not 71%), because the
+  -71.4%/-73.6% figures measure completion/capitalisation pace, not total spend. CWIP
+  still absorbed Rs 147 Cr of new cash. The funding-source gap for the guided Rs 500 Cr
+  + Rs 1,200-1,400 Cr programme is real regardless: zero term debt, thin capital
+  commitments, and total silence on the number itself in the Chairman's, MD's, and
+  Investment Case narrative sections (Phase 6E finding). The promoter-consolidation
+  thread (Vasudeva Commercials exit, NM Merchantiles/NCVI growth, RPT growth) is the
+  same thread B02 named and this pass adds no new resolution to it, only tighter
+  anchoring (exact Note 15h percentages, exact Note 40 rupee figures) and one added
+  observation: the RPT approvals did pass through an independent-majority Audit
+  Committee, a mitigating fact worth carrying into the promoter verdict work at B08.
+  FY25 AR was not independently re-read this pass; Phase 6D (YoY tone drift) is
+  correspondingly thin. Auditor tenure/rotation year was not located in the sections
+  read and should be pulled from the AGM notice if it becomes load-bearing.

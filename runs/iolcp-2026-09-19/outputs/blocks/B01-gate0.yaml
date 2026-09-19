@@ -1,4 +1,3 @@
-```yaml
 stage: B01-gate0
 company: "IOLCP"
 run_date: "2026-09-19"
@@ -29,4 +28,3 @@ data_notes:
   - "5 of 12 moat tests (M2, M5, M6, M7, M9) scored 0 solely for missing peer data (PEER DATA NEEDED), not weak evidence; moat_score should not be read as a finding of no moat until peer data resolves those tests"
 block_b_trend: "deteriorating"
 analyst_note: "PAT CAGR (45.65%) is a base-effect artifact off a depressed FY17 (Rs 4.67 Cr PAT on Rs 67.68 Cr interest expense); revenue CAGR 14.04% is more representative. Block A's deal-breaker is a normalization off an episodic FY19-FY21 Ibuprofen pricing supercycle (ROCE 54-68%), not a straight decline; FY22-FY26 sits in an 8.85-17.14% band. Cash quality is mixed inside a strong headline: cumulative CFO/PAT is 1.27x over 10 years (B1=5), but FCF was negative in 3 of the last 5 years and receivable days rose from 78.5 (FY22) to 94.9 (FY26) on flat revenue (matches company-memory LBF3). Five of twelve moat tests scored 0 purely for missing peer data; treat moat_score (3/60) as unresolved, not a finding of no moat."
-```

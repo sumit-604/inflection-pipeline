@@ -1,0 +1,40 @@
+stage: B13-synthesis
+company: "AWFIS"
+run_date: "2026-09-19"
+model: claude-opus-5
+status: complete
+mode: phase1-lite
+gate_verdict: "PROCEED WITH CAVEATS"
+verdict_rule_applied: 3   # FLAG-CASH INDETERMINATE caps at PROCEED WITH CAVEATS; rule 4 MAJORs also carried
+flags_active:
+  - FLAG-CASH
+  - FLAG-GATE0
+flags_not_active:
+  - "FLAG-PROMOTER (B08 verdict CAUTION, not CONCERN/AVOID; carried as caveat)"
+cash_determination: INDETERMINATE
+cash_separating_observation: "cash EBITDA margin of centres older than 12 months vs ramping centres; withheld on Nov-2025 p.10, Feb-2026 p.15-16, Aug-2026 p.14 calls"
+provisional_falsifier: "Q2 FY27 cash EBITDA at or below Rs44 Cr (10.1%), Q2 FY27 investor deck"
+confidence_overall: 77
+confidence_delta: {numerical: 97.8, redflag: 77, framework: 84.4, peer: 100, overall: 77}
+operator_rulings_needed:
+  - "Red flag coverage basis: filed 77 (partials held) vs strict full catch 31%; strict basis fires REWORK on stages 5 and 6"
+  - "Sector cap row 'Real estate' (20x) confirmation before phase 3"
+stage_vs_verifier_figures:
+  gate0_core: {stage: 31, verifier_c: 36, classification: "AVOID both"}
+  em: {stage: "12.5 MODEST", verifier_c: "9.8-11.8 NONE"}
+  peer_cash_margin_basis: {stage: "Awfis cash EBITDA 10.1% vs peers 16-21%", verifier_b: "Awfis normalized EBITDA 14.3% like for like; gap 2-9 pts"}
+transition_posture: "NOT CLASSIFIED (Mental Model unsigned; recognition gap resolves at Stage 11)"
+lbf_status:
+  LBF1: PARTLY VERIFIED
+  LBF2: PARTLY RESOLVED
+  LBF3: PARTLY RESOLVED
+  LBF4: VERIFIED WITH CONFLICT (churn definition)
+new_evidence_retrieved_by_stage13: "Ind-Ra 03-Jul-2026 verbatim ALM, liquidity and capex text (page-image p.4) and Ind-Ra adjusted EBITDA table (p.5); not in any stage block; unchecked by Verifier A; carry to Stage 10"
+headline: "Cash margin after rent decides this story"
+monitorables_count: 8
+publish_candidate: false
+files_written:
+  - runs/awfis-2026-09-19/outputs/final/business-narrative.md
+  - runs/awfis-2026-09-19/outputs/final/gate-recommendation.md
+  - runs/awfis-2026-09-19/outputs/final/verifier-summary.md
+  - runs/awfis-2026-09-19/outputs/blocks/B13-synthesis-lite.yaml

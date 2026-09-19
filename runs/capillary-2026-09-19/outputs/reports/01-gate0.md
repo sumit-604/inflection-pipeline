@@ -9,7 +9,9 @@ liabilities, and the UDRHP-I restated financials start at FY23. Scoring
 adapted: Blocks C (growth) and most of E use the full 6-year window;
 Block A (ROCE/ROE median/min/trend) and B4 (WC days) use the 4-year
 FY23-FY26 window, noted at each line. Block D uses latest year (FY26)
-only, per formula definition.
+only, per formula definition. Block F (moat) peer tests use peer
+screener-data exports for NEWGEN, UNICOMMERCE (ticker UNIECOM) and
+INTELLECT (see Block F).
 
 Units: all figures below in Rs Cr unless stated. Source filings are in
 Rs million; conversions are shown at first use per line (10 INR
@@ -52,7 +54,7 @@ note 9/10), consistent with memory's Rs 33.4 Cr figure. Both LBF4 and
 LBF2 check out against the filings as described in company memory; the
 detail added here is that the FY26 "clean" numbers (CFO, EBITDA margin)
 need the one-off Kognitiv gain stripped out to read the recurring trend,
-which this scorecard does for the moat block (M1).
+which this scorecard does for the moat block (M1, M2).
 
 ---
 
@@ -238,19 +240,36 @@ Rs Cr: FY21 -12.60 (-7.37% margin), FY22 -51.04 (-22.88%), FY23 -64.18
 (Rs 106.59 Cr FY26, Rs 78.57 Cr FY25, AR p.190) once AR's Rs 13.73 Cr
 true recurring other income is removed (106.59 - 13.73 = 92.86 ~= 92.85).
 
+Peer data (screener-data exports, FY26, same EBITDA formula applied for
+consistency): NEWGEN Software Technologies — Sales 1,574.40, PBT 387.29,
+Interest 5.47, Depreciation 36.60, Other Income 23.58 => EBITDA 405.78,
+margin 25.78%; Market Cap 7,087.02. Unicommerce eSolutions (ticker
+UNIECOM) — Sales 204.34, PBT 28.78, Interest 0.78, Depreciation 9.95,
+Other Income 4.08 => EBITDA 35.43, margin 17.34%; Market Cap 935.11.
+Intellect Design Arena — Sales 3,038.18, PBT 460.07, Interest 9.76,
+Depreciation 208.90, Other Income 94.83 => EBITDA 583.90, margin 19.22%;
+Market Cap 9,094.30. Capillary Market Cap (screener-data, meta) =
+3,852.49.
+
 M1 Pricing Power: EBITDA margin expanded from -7.37% (FY21) to 12.64%
 (FY26), >>2pp, AND revenue CAGR 33.88% (≥10%). **M1 = 5**
-M2 Cost Advantage vs peer median EBITDA margin: no peer (NEWGEN,
-UNIECOM, INTELLECT) financial data was provided in this run's input
-set. **M2 = 0, PEER DATA NEEDED**
+M2 Cost Advantage vs peer median EBITDA margin: peer FY26 EBITDA margins
+sorted 17.34% (UNIECOM), 19.22% (INTELLECT), 25.78% (NEWGEN); peer
+median = 19.22%. Capillary FY26 = 12.64%, which is 6.58pp BELOW the peer
+median. Below band => **M2 = 0**
 M3 Capital Efficiency: FAT (Revenue/Net Block, FY26) = 734.60/460.17 =
 1.60x; ROCE (FY26) = 8.82%. FAT >1x but ROCE not >12% => **M3 = 0**
 M4 Customer Stickiness: zero revenue-decline years (all 5 YoY periods
 positive), but Receivable Days moved from 117.1 (FY21) to 89.8 (FY26),
 a 27-day change, outside a strict "stable +/-10" band for the top tier.
 Decline-year count is 0 (<=1), satisfying the next tier. **M4 = 3**
-M5 Scale & Dominance: requires peer mcap/margin ranking; no peer data
-provided. **M5 = 0, PEER DATA NEEDED**
+M5 Scale & Dominance: market cap ranking (screener-data, same run date)
+of Capillary plus the three named peers: Intellect Rs9,094.3 Cr >
+NEWGEN Rs7,087.0 Cr > Capillary Rs3,852.5 Cr > Unicommerce Rs935.1 Cr.
+Capillary ranks 3rd of 4 (top 3/top 5 mcap) but last of 4 on FY26 EBITDA
+margin (12.64% vs peers' 17.3-25.8%), so margin is not top 2. The
+"largest mcap AND top margin" and "top 3 mcap AND margin top 2" tiers
+both fail; the "top 5 mcap" tier holds. **M5 = 1**
 M6 Technology/R&D: no R&D or product-development spend ratio disclosed
 in the AR or screener data (searched; no "Research and development"
 line found). **M6 = 0, N/A (not in provided data)**
@@ -258,8 +277,20 @@ M7 Regulatory/License: SaaS business, unregulated/no licence regime.
 **M7 = 0**
 M8 Distribution: purely digital SaaS distribution, no physical network.
 **M8 = 0**
-M9 Brand: requires peer gross-margin comparison; no peer data provided.
-**M9 = 0, PEER DATA NEEDED**
+M9 Brand: cannot be scored from these rows. All four companies
+(Capillary and all three peers) show a blank or zero "Raw Material
+Cost" line in their screener Data_Sheet exports — expected for
+software/SaaS businesses with no material input cost. The rubric's own
+proxy, Gross Margin = (Revenue - Material Cost)/Revenue, therefore
+evaluates to ~100% for every one of the four names, which gives no
+comparative signal for a brand-premium test (all four "tie" at the
+proxy ceiling). Capillary's AR separately discloses a subscription
+gross margin of 67.2% FY26, up from 66.4% FY25 (AR MD&A, cost-of-
+revenue basis), but none of the three peer screener exports carry an
+equivalent cost-of-revenue or subscription-gross-margin breakdown to
+compare it against, so no like-for-like peer figure exists in the
+provided data. **M9 = 0, NOT SCORABLE FROM PROVIDED ROWS** (distinct
+from "below peers": the metric is indeterminate, not unfavourable)
 M10 Switching Costs: revenue grew every year, and Receivable Days moved
 by -27.3 days (FY21 to FY26) which is <= the +10 day ceiling on the top
 tier (a decrease also satisfies "rose <=10 days" literally). **M10 = 5**
@@ -277,13 +308,13 @@ treated as "stable/declining". **M11 = 3**
 M12 Negative WC/Float: WC Days (FY23-FY26) were 24.0, 50.6, 67.4, 52.8 —
 none negative, and 3 of 4 years exceed 45 days. **M12 = 0**
 
-**Moat score = 5+0+0+3+0+0+0+0+0+5+3+0 = 16 / 60**
+**Moat score = 5+0+0+3+1+0+0+0+0+5+3+0 = 17 / 60**
 Moats "present" (score >=3): M1, M4, M10, M11 = **4 confirmed**
 Moat classification: 4-5 present = STRONG => **Moat class = STRONG**
 
 ---
 
-## GRAND TOTAL = Core (51) + Moat (16) = 67 / 160
+## GRAND TOTAL = Core (51) + Moat (17) = 68 / 160
 
 ## DATA CONFIDENCE
 
@@ -353,11 +384,14 @@ FY25-FY26 years.
 
 ## DECISION LINE
 
-Gate 0 mechanical score: AVERAGE (67/160, Core 51/100, moat STRONG
+Gate 0 mechanical score: AVERAGE (68/160, Core 51/100, moat STRONG
 4/12). Three deal-breakers bind, all rooted in the FY21-FY24 loss
 history; the FY25-FY26 turn is evidenced but short and carries a
-one-off item. Flags propagate; this is not a halt. Per pipeline rule,
-company quality never halts a run — the classification and flags above
-carry forward to Halt 1 for the operator's read.
+one-off item. Against real peer data, Capillary's FY26 EBITDA margin
+(12.64%) sits below all three named comparators' margins (17.3-25.8%),
+and its market cap (Rs3,852.5 Cr) is mid-pack, 3rd of 4. Flags
+propagate; this is not a halt. Per pipeline rule, company quality never
+halts a run — the classification and flags above carry forward to
+Halt 1 for the operator's read.
 
 ---

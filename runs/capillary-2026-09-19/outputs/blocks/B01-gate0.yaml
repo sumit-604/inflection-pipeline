@@ -12,8 +12,8 @@ input_gaps:
   - "capex FY21-FY22 not in provided sources (UDRHP-I restated cash flows start FY23)"
   - "trade payables FY21-FY22 not in provided sources"
   - "promoter holding history only 3 quarters (Dec-2025 to Jun-2026); 3-year trend not computable"
-  - "no peer (NEWGEN/UNIECOM/INTELLECT) financial data provided in this run's inputs"
   - "no R&D/technology spend disclosure found in AR or screener data"
+  - "peer screener exports (NEWGEN/UNIECOM/INTELLECT) lack a cost-of-revenue or gross-margin breakdown, so M9 brand test cannot be scored: all four names show blank Raw Material Cost, degenerating the rubric's GM proxy to ~100% for everyone"
 flags:
   - type: FLAG-GATE0
     reason: "Classification AVERAGE (Core 51/100) with historical depressors: PAT negative FY21-FY24 (deal-breaker PAT negative FY24, one of last 3 years), median ROCE -1.83% on the FY23-FY26 window (deal-breaker), cumulative CFO/PAT distorted by the same loss years (cumulative PAT FY21-FY26 = Rs -202.71 Cr against cumulative CFO Rs +189.14 Cr). FY25-FY26 inflection is real (PBT/CFO/ROCE/EBITDA margin all turned positive) but two years deep and FY26 carries a Rs 24.96 Cr one-off Kognitiv exceptional gain."
@@ -23,8 +23,8 @@ data_years: 6
 fy_range: "FY21 to FY26"
 blocks: {A: 5, B: 2, C: 10, D: 20, E: 14}
 core_score: 51
-moat_score: 16
-grand_total: 67
+moat_score: 17
+grand_total: 68
 moats_confirmed: 4
 moat_class: "STRONG"
 classification: "AVERAGE"
@@ -37,13 +37,15 @@ deal_breakers:
 history_downgrade: false
 data_notes:
   - "loss-to-profit swing, FY24 to FY25 (PAT negative FY21-FY24, positive FY25-FY26); PAT CAGR marked N/M per CAGR edge rule"
-  - "PEER DATA NEEDED: M2, M5, M9 scored 0 (no peer financial data provided for NEWGEN/UNIECOM/INTELLECT in this run's inputs)"
+  - "M2 rescored with peer data: FY26 EBITDA margins (screener-data, same formula as Capillary) - NEWGEN 25.78% (405.78/1574.40), INTELLECT 19.22% (583.90/3038.18), UNIECOM 17.34% (35.43/204.34); peer median 19.22%. Capillary FY26 12.64%, 6.58pp below peer median -> M2=0 (below)"
+  - "M5 rescored with peer data: FY26 market cap (screener-data meta) - INTELLECT Rs9,094.3 Cr, NEWGEN Rs7,087.0 Cr, CAPILLARY Rs3,852.5 Cr, UNIECOM Rs935.1 Cr. Capillary ranks 3rd of 4 (top-5-mcap tier) but last of 4 on EBITDA margin (not top 2) -> M5=1 (top-5-mcap tier only)"
+  - "M9 (brand) not scorable from provided rows: Capillary and all three peers report blank/zero Raw Material Cost (software/SaaS), so the rubric's GM proxy (Revenue-Material Cost)/Revenue degenerates to ~100% for all four names and gives no discriminating signal. Capillary's AR discloses subscription gross margin 67.2% FY26 (AR MD&A) but no peer screener export carries an equivalent cost-of-revenue breakdown to compare it against. Scored 0, marked NOT SCORABLE (indeterminate, not 'below peers')"
   - "M6 (R&D) scored 0, N/A: no R&D/technology spend disclosure found in AR or screener data"
   - "M11 selling-expense trend used a proxy (Selling & Admin + Other Expenses combined, % of revenue): raw screener 'Selling and admin' line breaks in FY24 (Rs 2.49 Cr vs Rs 98.52 Cr FY23 and Rs 220.98 Cr FY25), a categorization anomaly"
   - "ROCE/ROE for FY25 and FY26 use the company's own AR-published ratios (AR p.83) per the fixed-formula rule allowing source figures; FY21-FY24 are computed from screener-data capital employed / net worth"
   - "Capital Employed (Total Assets - Current Liabilities) available only FY23-FY26 from provided sources; ROCE median/min and WC-day trend computed over that 4-year window, not the full FY21-FY26 6-year P&L window"
   - "Trade payables data available only FY23-FY26 (UDRHP-I p.394, AR p.230); Inventory Days = 0, SaaS business with no inventory (AR p.82 states Inventory Turnover NA)"
-  - "screener's annual FY26 'Other Income' (Rs 38.69 Cr) bundles a one-off Rs 24.96 Cr Kognitiv churn-indemnity exceptional gain (AR p.190, note IX/28); true recurring other income per AR is Rs 13.73 Cr FY26. Moat block M1 EBITDA-margin calc nets out the full screener Other Income figure, excluding the exceptional gain; cross-checked against AR's own EBITDA note (Rs 106.59 Cr FY26) and reconciles"
+  - "screener's annual FY26 'Other Income' (Rs 38.69 Cr) bundles a one-off Rs 24.96 Cr Kognitiv churn-indemnity exceptional gain (AR p.190, note IX/28); true recurring other income per AR is Rs 13.73 Cr FY26. Moat block M1/M2 EBITDA-margin calc nets out the full screener Other Income figure, excluding the exceptional gain; cross-checked against AR's own EBITDA note (Rs 106.59 Cr FY26) and reconciles"
   - "AR's own published Interest Service Coverage Ratio (7.01x FY26, 2.58x FY25, AR p.83) diverges from the fixed-formula EBIT/Interest calc used for D2 (10.36x FY26); likely a different finance-cost/EBIT base. Fixed pipeline formula governs the D2 score"
 block_b_trend: "improving on latest-year absolute CFO (Rs -46.2 Cr FY25 to Rs +149.9 Cr FY26), but deteriorating on conversion quality: Working Capital Days rose from 24.0 (FY23) to 52.8 (FY26), and cumulative FY21-FY26 CFO (Rs 189.1 Cr) sits against a net negative cumulative PAT (Rs -202.7 Cr)"
-analyst_note: "Gate 0 score (67, AVERAGE) is pulled down by four loss years FY21-FY24 sitting inside the 6-year P&L window. The last two years show a real inflection: PBT and CFO turned positive, EBITDA margin reached 12.6%, and the AR's own ROCE reached 8.82% FY26. But three deal-breakers still bind, all rooted in the FY21-FY24 losses: median ROCE below 10%, cumulative CFO/PAT distorted by those losses, and PAT was negative in FY24, one of the last three years. Working capital is deteriorating, not improving: WC days rose from 24 to 53 even as absolute CFO improved, mostly on payable-days compression rather than receivable discipline. Block D's clean 20/20 reflects one-time IPO cash and near-zero post-listing debt, not operating deleveraging. Moat score (STRONG, 4/12) rests on demonstrated margin expansion and zero revenue-decline years; three peer-dependent tests are unscored for lack of peer data. Promoter-holding 3-year trend is not computable; only 3 quarters of BSE data exist since the Nov-2025 listing."
+analyst_note: "Gate 0 score (68, AVERAGE) is pulled down by four loss years FY21-FY24 sitting inside the 6-year P&L window. The last two years show a real inflection: PBT and CFO turned positive, EBITDA margin reached 12.6%, and the AR's own ROCE reached 8.82% FY26. But three deal-breakers still bind, all rooted in the FY21-FY24 losses: median ROCE below 10%, cumulative CFO/PAT distorted by those losses, and PAT was negative in FY24, one of the last three years. Working capital is deteriorating, not improving: WC days rose from 24 to 53 even as absolute CFO improved, mostly on payable-days compression rather than receivable discipline. Block D's clean 20/20 reflects one-time IPO cash and near-zero post-listing debt, not operating deleveraging. Moat score (STRONG, 4/12) rests on demonstrated margin expansion and zero revenue-decline years; against real peer data Capillary's FY26 EBITDA margin (12.6%) sits below all three named comparators (17.3-25.8%) and its market cap is mid-pack, 3rd of 4. The brand test (M9) stays unscored, not for missing peers but because none of the four companies report a cost-of-revenue line that supports the rubric's gross-margin proxy. Promoter-holding 3-year trend is not computable; only 3 quarters of BSE data exist since the Nov-2025 listing."

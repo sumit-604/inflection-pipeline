@@ -598,3 +598,27 @@ Verifier C check 15 (PR #163, PR #164), and the LESSONS discipline changes
 (PR #165).
 
 Size: LESSONS.md 164 lines / 1555 words before, 119 lines / 1062 words after.
+
+## 2026-09-19 — AWFIS (Awfis Space Solutions) — /step1 intake, phase 1 to Halt 1
+
+Run: runs/awfis-2026-09-19, branch run/awfis-2026-09-19. Peers SMARTWORKS,
+INDIQUBE (standalone page; consolidated page carries no price), DEVX. Gate
+PROCEED WITH CAVEATS (FLAG-CASH INDETERMINATE). Confidence overall 77.
+- Collector misfiled the AR: annual-report/ got the AR web-link letter and the
+  BRSR; the real FY26 AR (Reg 34, 176pp) landed in announcements/. Moved by hand.
+- Collector fetched no results, no rating, no shareholding. Filled by hand from
+  BSE, awfis.com (prospectus) and the BSE shareholding API (summary only).
+- fetch_bse_announcements first live test (open action, PR #167): it pulled 5
+  recent filings. Two defects: a single 14-month BSE query returns ZERO rows
+  (60-day windows return all 292), and the AttachLive path 404s on filings older
+  than a few days (AttachHis serves them). The open action stays open until
+  the collector windows its query and falls back to AttachHis.
+- Ind-Ra rating letter PDF has a scrambled font map (garbled text layer).
+  Rendered to PNG with pymupdf; stages read the images. pdftoppm still absent.
+- Five stage replies omitted the YAML block (2.3, 3, 4, 7, 9); the block files
+  existed and parsed each time. B04's block file carried markdown code fences;
+  stripped by the orchestrator.
+- Verifier B redflag_coverage basis: 77 counting partial catches, 31 strict.
+  Strict basis would force REWORK. Surfaced to the operator, not resolved.
+- DOWNSHIFT FAILURE: stage 0 ran inline on the Opus orchestrator (no haiku
+  stage-0 agent exists). Structural, not a routing slip.

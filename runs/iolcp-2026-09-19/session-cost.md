@@ -16,3 +16,5 @@ total tokens and wall time per subagent; the in/out split is not exposed.
 | 8 | promoter check | sonnet | agent default | n/a | n/a | 275655 | 9m38s | 1 |
 | 6 | peer concalls | sonnet | agent default | n/a | n/a | 160679 | 6m32s | 1 |
 | 7 | emerging moat | sonnet | agent default | n/a | n/a | 174758 | 9m35s | 1 |
+| 6 | peer concalls (YAML retry) | sonnet | agent default | n/a | n/a | 201517 | 3m01s | 2 |
+| 9 | TAM/SAM/SOM | sonnet | agent default | n/a | n/a | 231089 | 9m08s | 1 |

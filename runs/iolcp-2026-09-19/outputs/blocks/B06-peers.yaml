@@ -17,91 +17,113 @@ input_gaps:
      1,500mn-tablet CDMO line; even on its own terms Granules declines to quantify CDMO asset
      turn or margin (peer_question 5)."
 flags:
-  - {type: FLAG-PRICING, reason: "Granules explicitly states 'no price increases' and 'price
-     erosion' in paracetamol across Q3 FY26 and Q4 FY26 (same fiscal quarters as IOL's), directly
-     contradicting IOL's claim of a price increase across APIs including paracetamol in the same
-     window; bears on whether IOL's margin story is price-led or volume/mix-led. Priority item
-     for synthesis."
-  - {type: FLAG-SPREAD, reason: "Laxmi Organic's most recent transcript (Aug 2026) describes
-     ethyl acetate spreads still above their 12-year average with a fresh 'West Asia 2.0'
-     disruption and a China typhoon layered on, in tension with IOL's 'neutralised by Sep 2026'
-     framing of the same spread."}
+  - type: FLAG-PRICING
+    reason: >
+      Granules explicitly states "no price increases" and "price erosion" in paracetamol
+      across Q3 FY26 and Q4 FY26 (same fiscal quarters as IOL's), directly contradicting
+      IOL's claim of a price increase across APIs including paracetamol in the same window;
+      bears on whether IOL's margin story is price-led or volume/mix-led. Priority item for
+      synthesis.
+  - type: FLAG-SPREAD
+    reason: >
+      Laxmi Organic's most recent transcript (Aug 2026) describes ethyl acetate spreads
+      still above their 12-year average with a fresh "West Asia 2.0" disruption and a China
+      typhoon layered on, in tension with IOL's "neutralised by Sep 2026" framing of the
+      same spread.
 peers_provided: 12
 verified:
-  - {claim: "Most companies, not just IOL, depend on China for DCDA (metformin's key starting
-     material) with no Indian alternative supplier yet", peers: ["AARTIDRUGS", "GRANULES"],
-     anchor_count: 2}
+  - claim: "Most companies, not just IOL, depend on China for DCDA (metformin's key starting material) with no Indian alternative supplier yet"
+    peers: ["AARTIDRUGS", "GRANULES"]
+    anchor_count: 2
 partially_verified:
-  - {claim: "Ethyl acetate/acetic anhydride spread spiked to $200+/ton around the US-Iran war
-     (~March 2026) and stabilised to $150-160/ton", peers: ["LXCHEM"]}
+  - claim: "Ethyl acetate/acetic anhydride spread spiked to $200+/ton around the US-Iran war (~March 2026) and stabilised to $150-160/ton"
+    peers: ["LXCHEM"]
 contradicted:
-  - {claim: "IOL claims a price increase across APIs including paracetamol in Q4 FY26 (Jan-Mar
-     2026 quarter)", contradicting_peer: "GRANULES",
-     quote_anchor: "GRANULES-Concall_May_2026_Transcript.txt p.7, K.P. Chigurupati: 'there were
-     no price increases we wish we had, whereas raw material prices have gone up'; corroborated
-     by GRANULES-Concall_Jan_2026_Transcript.txt p.12, Priyanka Chigurupati: 'some amount of
-     price erosion also in paracetamol'"}
-  - {claim: "Acetyls spread pressure was 'neutralised' by Sep 2026", contradicting_peer: "LXCHEM",
-     quote_anchor: "LXCHEM-Concall_Aug_2026_Transcript.txt p.7-8: spreads 'higher than an average
-     12-year spread' at $215-220 for Mar/Apr, plus a 'West Asia 2.0' crisis and a South China
-     typhoon disrupting Q2 FY27"}
+  - claim: "IOL claims a price increase across APIs including paracetamol in Q4 FY26 (Jan-Mar 2026 quarter)"
+    contradicting_peer: "GRANULES"
+    quote_anchor: >
+      GRANULES-Concall_May_2026_Transcript.txt p.7, K.P. Chigurupati: "there were no price
+      increases we wish we had, whereas raw material prices have gone up"; corroborated by
+      GRANULES-Concall_Jan_2026_Transcript.txt p.12, Priyanka Chigurupati: "some amount of
+      price erosion also in paracetamol"
+  - claim: "Acetyls spread pressure was 'neutralised' by Sep 2026"
+    contradicting_peer: "LXCHEM"
+    quote_anchor: >
+      LXCHEM-Concall_Aug_2026_Transcript.txt p.7-8: spreads "higher than an average 12-year
+      spread" at $215-220 for Mar/Apr, plus a "West Asia 2.0" crisis and a South China
+      typhoon disrupting Q2 FY27
 unverifiable:
-  - {claim: "3-4%/year global ibuprofen demand growth and an overstocked 2023-2024 / destocked
-     into Oct 2025 cycle", peers_checked: ["AARTIDRUGS"]}
-  - {claim: "Solara Active Pharma asset-sale process, SMS Pharma weak quarter, and an unnamed
-     2025/26 US ibuprofen capacity closure validate IOL's cost position", peers_checked:
-     ["AARTIDRUGS", "GRANULES"]}
-  - {claim: "New CDMO tablet business will run 'better than API' margins at a 1.0-1.25x asset
-     turn and 90% utilisation", peers_checked: ["GRANULES"]}
+  - claim: "3-4%/year global ibuprofen demand growth and an overstocked 2023-2024 / destocked into Oct 2025 cycle"
+    peers_checked: ["AARTIDRUGS"]
+  - claim: "Solara Active Pharma asset-sale process, SMS Pharma weak quarter, and an unnamed 2025/26 US ibuprofen capacity closure validate IOL's cost position"
+    peers_checked: ["AARTIDRUGS", "GRANULES"]
+  - claim: "New CDMO tablet business will run 'better than API' margins at a 1.0-1.25x asset turn and 90% utilisation"
+    peers_checked: ["GRANULES"]
 peer_coverage_map:
-  - {peer: "AARTIDRUGS", quarter: "Q2 FY26 (Nov 2025)", usage: "SUBSTANTIVE",
-     contribution: "Anti-inflammatory API mix baseline (11.8%); no ibuprofen naming; GLP-1 risk
-     question raised by analyst"}
-  - {peer: "AARTIDRUGS", quarter: "Q3 FY26 (Feb 2026)", usage: "SUBSTANTIVE",
-     contribution: "Anti-inflammatory mix trend point (12.9%); China salicylic-acid competitive
-     context"}
-  - {peer: "AARTIDRUGS", quarter: "Q4 FY26 (May 2026)", usage: "SUBSTANTIVE",
-     contribution: "DCDA China/Europe sourcing quote (Q6); West Asia war cost commentary;
-     anti-inflammatory mix (11.9%)"}
-  - {peer: "AARTIDRUGS", quarter: "Q1 FY27 (Aug 2026)", usage: "SUBSTANTIVE",
-     contribution: "Anti-inflammatory capacity-constrained/'doing very well' quote; West Asia and
-     U.S.-Iran war price-hike commentary; new USFDA anti-inflammatory greenfield"}
-  - {peer: "GRANULES", quarter: "Q2 FY26 (Nov 2025)", usage: "SUBSTANTIVE",
-     contribution: "Paracetamol partial-recovery Q&A; CDMO (Ascelis) description, explicit
-     refusal to quantify asset turn"}
-  - {peer: "GRANULES", quarter: "Q3 FY26 (Jan 2026)", usage: "SUBSTANTIVE",
-     contribution: "Paracetamol 'price erosion' quote; Gagillapur warning-letter remediation
-     status"}
-  - {peer: "GRANULES", quarter: "Q4 FY26 (May 2026)", usage: "SUBSTANTIVE",
-     contribution: "'No price increases' paracetamol quote (CONTRADICTED); 'only DCDA
-     manufacturer outside China' quote (VERIFIED); CDMO gross-margin uplift data point"}
-  - {peer: "GRANULES", quarter: "Q1 FY27 (Jul 2026)", usage: "SUBSTANTIVE",
-     contribution: "CDMO $50mn/2.5-year milestone; Gagillapur remediation complete; gross margin
-     'insulated' commentary"}
-  - {peer: "LXCHEM", quarter: "Q2 FY26 (Nov 2025)", usage: "SUBSTANTIVE",
-     contribution: "Ethyl acetate spread baseline ($90-100); Sipchem Middle East capacity-offline
-     context"}
-  - {peer: "LXCHEM", quarter: "Q3 FY26 (Feb 2026)", usage: "SUBSTANTIVE",
-     contribution: "Spread improving to ~$130; acetic anhydride/paracetamol-capacity correlation"}
-  - {peer: "LXCHEM", quarter: "Q4 FY26 (May 2026)", usage: "SUBSTANTIVE",
-     contribution: "Spread spike to $220-250 (Mar/Apr) then moderation to $150-160 -- core
-     evidence for Q3"}
-  - {peer: "LXCHEM", quarter: "Q1 FY27 (Aug 2026)", usage: "SUBSTANTIVE",
-     contribution: "Spread still above 12-year average; 'West Asia 2.0' and China typhoon
-     disruption -- contradicts 'neutralised by Sep 2026' framing"}
+  - peer: "AARTIDRUGS"
+    quarter: "Q2 FY26 (Nov 2025)"
+    usage: "SUBSTANTIVE"
+    contribution: "Anti-inflammatory API mix baseline (11.8%); no ibuprofen naming; GLP-1 risk question raised by analyst"
+  - peer: "AARTIDRUGS"
+    quarter: "Q3 FY26 (Feb 2026)"
+    usage: "SUBSTANTIVE"
+    contribution: "Anti-inflammatory mix trend point (12.9%); China salicylic-acid competitive context"
+  - peer: "AARTIDRUGS"
+    quarter: "Q4 FY26 (May 2026)"
+    usage: "SUBSTANTIVE"
+    contribution: "DCDA China/Europe sourcing quote (Q6); West Asia war cost commentary; anti-inflammatory mix (11.9%)"
+  - peer: "AARTIDRUGS"
+    quarter: "Q1 FY27 (Aug 2026)"
+    usage: "SUBSTANTIVE"
+    contribution: "Anti-inflammatory capacity-constrained/'doing very well' quote; West Asia and U.S.-Iran war price-hike commentary; new USFDA anti-inflammatory greenfield"
+  - peer: "GRANULES"
+    quarter: "Q2 FY26 (Nov 2025)"
+    usage: "SUBSTANTIVE"
+    contribution: "Paracetamol partial-recovery Q&A; CDMO (Ascelis) description, explicit refusal to quantify asset turn"
+  - peer: "GRANULES"
+    quarter: "Q3 FY26 (Jan 2026)"
+    usage: "SUBSTANTIVE"
+    contribution: "Paracetamol 'price erosion' quote; Gagillapur warning-letter remediation status"
+  - peer: "GRANULES"
+    quarter: "Q4 FY26 (May 2026)"
+    usage: "SUBSTANTIVE"
+    contribution: "'No price increases' paracetamol quote (CONTRADICTED); 'only DCDA manufacturer outside China' quote (VERIFIED); CDMO gross-margin uplift data point"
+  - peer: "GRANULES"
+    quarter: "Q1 FY27 (Jul 2026)"
+    usage: "SUBSTANTIVE"
+    contribution: "CDMO $50mn/2.5-year milestone; Gagillapur remediation complete; gross margin 'insulated' commentary"
+  - peer: "LXCHEM"
+    quarter: "Q2 FY26 (Nov 2025)"
+    usage: "SUBSTANTIVE"
+    contribution: "Ethyl acetate spread baseline ($90-100); Sipchem Middle East capacity-offline context"
+  - peer: "LXCHEM"
+    quarter: "Q3 FY26 (Feb 2026)"
+    usage: "SUBSTANTIVE"
+    contribution: "Spread improving to ~$130; acetic anhydride/paracetamol-capacity correlation"
+  - peer: "LXCHEM"
+    quarter: "Q4 FY26 (May 2026)"
+    usage: "SUBSTANTIVE"
+    contribution: "Spread spike to $220-250 (Mar/Apr) then moderation to $150-160 -- core evidence for Q3"
+  - peer: "LXCHEM"
+    quarter: "Q1 FY27 (Aug 2026)"
+    usage: "SUBSTANTIVE"
+    contribution: "Spread still above 12-year average; 'West Asia 2.0' and China typhoon disruption -- contradicts 'neutralised by Sep 2026' framing"
 industry_cross_read:
-  demand: "No peer describes an ibuprofen-specific boom (none discloses the product); recoveries
-    elsewhere (Granules paracetamol, Aarti exports) are incremental and mix-driven, not framed as
-    a structural multi-year cycle turn the way IOL frames ibuprofen."
-  pricing_inputs: "All three peers corroborate the same March-2026 West Asia/US-Iran shock to
-    input costs and freight; they diverge sharply on price realisation -- Granules explicitly got
-    no paracetamol price increase despite the cost shock, contradicting IOL's claim for the same
-    product and quarter."
-  capex_cycle: "Industry-wide capacity race, not a lone-expander situation: all three peers are
-    simultaneously greenfield/brownfield expanding (Aarti: Sayakha, salicylic, new USFDA line;
-    Granules: ~Rs600 Cr FY27 capex, new API plant, US distribution centre; Laxmi: Dahej Phase 2,
-    world-scale ethyl acetate, Vayu/Hitachi JV) alongside IOL's own Rs495 Cr + Rs1,200-1,400 Cr
-    programme."
+  demand: >
+    No peer describes an ibuprofen-specific boom (none discloses the product); recoveries
+    elsewhere (Granules paracetamol, Aarti exports) are incremental and mix-driven, not
+    framed as a structural multi-year cycle turn the way IOL frames ibuprofen.
+  pricing_inputs: >
+    All three peers corroborate the same March-2026 West Asia/US-Iran shock to input costs
+    and freight; they diverge sharply on price realisation -- Granules explicitly got no
+    paracetamol price increase despite the cost shock, contradicting IOL's claim for the
+    same product and quarter.
+  capex_cycle: >
+    Industry-wide capacity race, not a lone-expander situation: all three peers are
+    simultaneously greenfield/brownfield expanding (Aarti: Sayakha, salicylic, new USFDA
+    line; Granules: ~Rs600 Cr FY27 capex, new API plant, US distribution centre; Laxmi:
+    Dahej Phase 2, world-scale ethyl acetate, Vayu/Hitachi JV) alongside IOL's own Rs495 Cr
+    + Rs1,200-1,400 Cr programme.
 peer_mentions_of_company: []
 risks_peers_raise:
   - "USFDA warning letter and multi-quarter remediation drag at Granules' Gagillapur facility

@@ -1,0 +1,118 @@
+stage: B09-tam
+company: "IOLCP"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: partial
+input_gaps:
+  - "Product-level global market size for 9 of IOLCP's 11 named molecules (Metformin, Clopidogrel, Pantoprazole, Fenofibrate, Levetiracetam, Lamotrigine, Losartan, Minoxidil, Sitagliptin): NOT FOUND, not searched this pass (effort budget); Method 2 bottom-up uses only Ibuprofen and Paracetamol and is a stated floor, not a complete molecule-basket TAM."
+  - "IOLCP Paracetamol-specific revenue (bundled in B04's 22.3% non-Ibuprofen basket): NOT FOUND as a standalone line; volume-only cross-check used instead."
+  - "Specialty chemicals tolling line revenue (customer-led, undisclosed counterparty): NOT FOUND, carried from B04/B07."
+  - "China domestic Ibuprofen consumption (to size the Apr-2025 NMPA approval's addressable upside): NOT FOUND, not searched."
+  - "Molecule-level import/domestic-production/consumption split behind the AR's PLI figures: NOT FOUND IN DOCUMENT; Method 4 stays directional only."
+  - "Second independent INR/USD source to corroborate the single Federal Reserve H.10 spot (95.76, 18-Sep-2026) used for the Ibuprofen $/MT conversion: not searched."
+flags:
+  - type: FLAG-TAM-SOURCE-INCONSISTENCY
+    reason: "FY26 AR (filed 07-Aug-2026, p.48) cites Indian specialty chemicals market USD 27.1bn (2024, Custom Market Insights); Q1FY27 Investor Presentation (filed 12-Aug-2026, p.25) cites USD 67.0bn (2025, blended Frost&Sullivan/Imarc/CareEdge/Precedence/GVR). Same company, same reporting cycle, five days apart, >2x spread on the same claimed market."
+  - type: FLAG-MGMT-TAM-BROAD
+    reason: "Management's Industry Overview slides (AR + all 3 IPs) show global/India API and specialty-chemical headline sizes with no bridge to IOLCP's ~11-molecule product basket. Ratio of the headline claim (global API, $256.4bn) to the conservative company-specific estimate is ~153x -- squarely 'inflated' per the standard >2x read, not a borderline call."
+  - type: FLAG-CDMO-SCALE
+    reason: "IOLCP's planned CDMO line (1,500mn tablets/yr) is under 0.3% of just two established European solid-dose CDMOs' combined output (Delpharm + Fareva, >500bn tablets/yr, towardshealthcare.com). Frame as a small customer-led niche entry, not a scale TAM driver."
+market_definition: "Bulk generic small-molecule APIs (11 named molecules, led by Ibuprofen) plus acetyl-chain specialty chemicals (Ethyl Acetate, Acetic Anhydride, MCA, Acetyl Chloride, Triacetin), sold B2B globally to formulators and industrial buyers, plus emerging CDMO tablet contract manufacturing from Q3 FY27."
+tam_cr: {conservative: 16000, realistic: 18700}
+sam_cr: 15200
+sam_pct_of_tam: 81.3
+som_3yr_cr: 3220
+som_5yr_cr: 3940
+som_implied_revenue_cagr: {yr3: 11.6, yr5: 11.2}
+current_sam_share_pct: 15.3
+revenue_headroom_x: 6.55
+tam_growth_pct: 5
+runway_class: "GOOD"
+mgmt_claim_cr: 2455300
+mgmt_claim_ratio: 153.5
+mgmt_claim_read: "inflated"
+capacity_check: "sufficient, thin margin at Yr5 (~Rs0-130 Cr headroom); Rs1,200-1,400 Cr greenfield (undated, B07 flag) and tolling revenue (undisclosed) excluded as unquantified upside, not required to hit SOM"
+methods_used:
+  - "top-down (global generic-API segment, boundary check only, not fed into triangulation as a numeric TAM)"
+  - "bottom-up (Ibuprofen + Paracetamol product-level, anchored to IOLCP's own realisation and capacity)"
+  - "peer-revenue-aggregation (Aarti Drugs + Granules India + Laxmi Organic + IOLCP FY26 sales, +30% unorganised loading)"
+  - "import-substitution (PLI bulk-drug scheme, directional only, no numeric TAM input)"
+stale_data_flags:
+  - {datapoint: "IOLCP revenue concentration ~72% from Ibuprofen+Ethyl Acetate; non-Ibuprofen pharma target ~35% in 2-3 years", source: "CARE Ratings rationale, 04-Jul-2025", year: 2025}
+searches_performed:
+  - "global ibuprofen API market size 2025 tonnes production capacity"
+  - "IOL Chemicals Pharmaceuticals global ibuprofen market share largest manufacturer"
+  - "global ibuprofen production volume metric tons per year total market"
+  - "global ethyl acetate market size 2025 tonnes acetic anhydride market size"
+  - "global paracetamol acetaminophen API market size 2025 tonnes value"
+  - "India USD INR exchange rate September 2026"
+  - "Europe CDMO tablet contract manufacturing market size solid dosage formulation"
+searches_skipped:
+  - "Per-capita/global-benchmark search for Method 5 -- skipped, B2B export business, per-capita framing not decision-relevant"
+  - "9 molecule-specific global-market searches (Metformin, Clopidogrel, Pantoprazole, Fenofibrate, Levetiracetam, Lamotrigine, Losartan, Minoxidil, Sitagliptin) -- not run given stage effort budget; Method 2 understates true TAM as a result"
+  - "China domestic Ibuprofen consumption -- not run"
+  - "Second independent INR/USD source -- not run, single Fed H.10 spot used"
+downstream_candidates:
+  - signal: "European/global generic formulator offtake volumes (Ibuprofen, non-Ibuprofen APIs)"
+    entity_type: "end-customer"
+    demand_link: "Direct demand pull on IOLCP's largest revenue line; export shipments proxy real-time offtake"
+    likely_source: "Trade/customs export-shipment data (e.g. Volza/Zauba-type records)"
+    cadence: "monthly"
+    shared: false
+  - signal: "Ibuprofen competitor capacity status (Solara Active Pharma, Shandong Xinhua, BASF)"
+    entity_type: "counterparty"
+    demand_link: "~40% of global Ibuprofen capacity sits with these 4 players; exit/expansion moves IOLCP's share ceiling"
+    likely_source: "Competitor investor filings / press releases"
+    cadence: "event-driven"
+    shared: false
+  - signal: "Paracetamol global spot price index"
+    entity_type: "macro"
+    demand_link: "Tests IOLCP-vs-Granules pricing contradiction (B06 FLAG-PRICING) each quarter"
+    likely_source: "ChemAnalyst / ICIS price index"
+    cadence: "monthly"
+    shared: true
+  - signal: "China DCDA export/price data (Metformin KSM)"
+    entity_type: "counterparty"
+    demand_link: "No Indian alternative supplier yet (B06 verified); China shock is a direct input-cost/margin risk"
+    likely_source: "China customs export data / ICIS China chemical reports"
+    cadence: "monthly"
+    shared: false
+  - signal: "Acetyl spread (Ethyl Acetate/Acetic Anhydride vs Acetic Acid)"
+    entity_type: "macro"
+    demand_link: "Tests IOLCP's 'neutralised by Sep 2026' claim against Laxmi Organic's contradicting framing (B06 FLAG-SPREAD)"
+    likely_source: "ChemAnalyst / ICIS spread index"
+    cadence: "monthly"
+    shared: true
+  - signal: "USFDA DMF / EDQM CEP filing status (Paracetamol, Pantoprazole, Metformin -- Under Review)"
+    entity_type: "regulatory"
+    demand_link: "Approval directly expands addressable geography/customer base for filing-constrained products"
+    likely_source: "USFDA DMF database / EDQM CEP database"
+    cadence: "event-driven"
+    shared: false
+  - signal: "PLI bulk-drug scheme disbursement and molecule list"
+    entity_type: "regulatory"
+    demand_link: "Tracks the live import-substitution tailwind (Rs4,763 Cr mobilised vs Rs4,330 Cr target) Method 4 could not resolve to molecule level"
+    likely_source: "Dept of Pharmaceuticals PLI dashboard / PIB press releases"
+    cadence: "quarterly"
+    shared: false
+  - signal: "CDMO European anchor-customer identity and contract terms"
+    entity_type: "end-customer"
+    demand_link: "Currently undisclosed (Reg 30 confidentiality clause); naming converts the largest unresolved concentration risk into a verifiable driver"
+    likely_source: "Reg 30 filings / next AR related-party or customer note"
+    cadence: "event-driven"
+    shared: false
+demand_externally_verifiable: true
+analyst_note: >
+  SAM sits at 81.3% of realistic TAM because the realistic TAM (Method 3, peer-aggregation)
+  is itself a narrow, IOLCP-comparable base, not the broad industry headline from Section
+  1B; this is a scoping consequence, not an error. Current SAM share (15.3%) is unusually
+  high for this kind of exercise because IOLCP is one of only 4 organized listed
+  comparables in this specific niche -- flagged explicitly in Section 3B rather than
+  smoothed into the share-gain math. SOM-implied CAGR (11.2-11.6%) sits meaningfully below
+  management's 15-20% FY27 guidance and its 25-30% incremental capex-payoff claim; the two
+  are not the same kind of number (market-share-disciplined SOM vs asset-turn-based peak
+  revenue at full utilisation of specific new lines) and Stage 11 should not treat them as
+  interchangeable. The Rs1,200-1,400 Cr greenfield (B07's largest, least-evidenced capex
+  line) is excluded from every SOM/capacity number in this stage; if it gains a firm date,
+  both SAM-expansion (5D) and the Year-5 capacity margin (3C, currently thin) should be
+  re-run.

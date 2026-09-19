@@ -1,0 +1,104 @@
+stage: B00-inputs
+company: AWFIS
+run_date: 2026-09-19
+model: orchestrator (stage 0 run inline by the orchestrator session)
+status: complete
+spear_gate: "PASS. companies/AWFIS.md carries 'Spear: OVERRIDE 2026-09-19 (operator standing ruling 2026-09-05: Step-1 intake replaces the web spear)'."
+load_bearing_facts:   # first verification priority for every stage (from companies/AWFIS.md SPEAR)
+  - "LBF1 CASH EBITDA DELIVERY: FY27 guide Rs 195-200 Cr cash EBITDA on ~Rs 1,800 Cr revenue vs Q1 FY27 Rs 44 Cr (10.1%). Verify the reported-to-cash EBITDA bridge (lease rent paid; Ind AS 116 lease cash outflow in the FY26 AR cash flow) and the FY26 guidance-vs-delivery pair."
+  - "LBF2 LEASE BOOK AND ALM: managed-aggregation (MA) vs straight-lease share (centres and seats), lessor vs client lock-ins, lease liability maturity analysis (FY26 AR), quantum of the 2021 lease resets."
+  - "LBF3 GOVERNANCE AND CONTROL: promoter group 17.00% after investor block sales; 25-May-2026 board outcome (loan facilities, transfer of the Design & Build business to wholly owned subsidiary Awfis Transform Pvt Ltd); CFO change 05-Jan-2026; director resignation 09-Apr-2026; change in management / issue of securities 13-Aug-2026; GST show-cause notices May-Jun 2026."
+  - "LBF4 OCCUPANCY AND CHURN: 83% mature / 76% overall occupancy and a 3,000-seat enterprise exit in Q1 FY27; test whether churn is rising."
+sector_cap_row: "Real estate"
+sector_cap_row_evidence: >
+  section-1b chunk 05 (.claude/skills/section-1b/references/05-sector-cap.md,
+  row 'Real estate | 20x'). The business leases office floors from landlords
+  and sublets desks and managed offices (co-working and allied services, the
+  bulk of revenue), plus a design-and-build fit-out arm (Transform). India
+  Ratings files it under 'Residential | Commercial Projects' (rating letter
+  03-Jul-2026, page 2). No flexible-workspace or coworking row exists in the
+  table. Alternatives considered and rejected: 'Hotels' 30x (per-night
+  hospitality, owned or managed assets, not lease-sublease desks);
+  'Consulting / Engineering services' 25x (Transform only, a minority slice).
+  The collector guess 'Pharma / CDMO' is wrong and is discarded. FLAG for
+  phase-3 operator confirmation: a flex-workspace row is an operator ruling.
+reporting_units:
+  annual_report: "INR million (AR FY26 statements, '(₹ million)')"
+  results: "INR million (Q3 FY26, Q4 FY26 and Q1 FY27 results filings)"
+  screener: "INR Cr (screener Data_Sheet)"
+  rating: "INR million (Ind-Ra)"
+  note: "Filings report in INR million; screener in INR Cr. 10 INR million = 1 INR Cr. Conversion happens once, at stage 10."
+listed_date: 2024-05-30
+recently_listed: true
+input_gaps:
+  - "COLLECTOR WARNING (verbatim): shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend."
+  - "COLLECTOR WARNING (verbatim): screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance Sheet, screener:Cash Flow, screener:Customization, SMARTWORKS:Profit & Loss, SMARTWORKS:Quarters, SMARTWORKS:Balance Sheet, SMARTWORKS:Cash Flow, SMARTWORKS:Customization, INDIQUBE:Profit & Loss, INDIQUBE:Quarters, INDIQUBE:Balance Sheet, INDIQUBE:Cash Flow, INDIQUBE:Customization, DEVX:Profit & Loss, DEVX:Quarters, DEVX:Balance Sheet, DEVX:Cash Flow, DEVX:Customization. Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again."
+  - "COLLECTOR WARNING (verbatim): no results PDFs yet (screener has none): add later on github or locally + --push-again"
+  - "COLLECTOR WARNING (verbatim): no rating PDF yet: add later the same way"
+  - "RESOLVED AT INTAKE: results/ filled from BSE (AttachHis path): Q1 FY27 (filed 13-Aug-2026), Q4 FY26 audited (25-May-2026), Q3 FY26 (02-Feb-2026)."
+  - "RESOLVED AT INTAKE: rating/ holds the Ind-Ra letter 03-Jul-2026 (9pp; page 1 Awfis cover letter, pages 2-9 the full Ind-Ra press release with rationale). Its PDF text layer is a scrambled font map: READ THE PAGE IMAGES at inputs/rating/page-images/IndRa-2026-07-03-page01..09.png, never the .txt. The prior Ind-Ra rationale of 16-May-2025 (upgrade to IND A+) is held as text at inputs/rating/IndRa-rationale-2025-05-16-pr76615.txt."
+  - "RESOLVED AT INTAKE: prospectus/ holds the final Prospectus dated 27-May-2024 (506pp) from awfis.com. The RECENTLY-LISTED PRIORITY is met; not a gap."
+  - "RESOLVED AT INTAKE (PARTIAL): shareholding/ holds the BSE shareholding SUMMARY for quarter ended June 2026 as text (promoter and promoter group 17.00%, 2 holders, no pledge, no NDU). The FII / DII split is NOT in the summary, so the UA institutional-absence qualifier stays OPEN (Amendment 3 cannot apply on an unevidenced qualifier). The AR FY26 shareholding distribution is the fallback."
+  - "screening: EMPTY-CSV defect present. Profit & Loss, Balance Sheet, Cash Flow and Quarters sheets are absent for the subject and all three peers. The four <TICKER>-Data_Sheet.csv files (screener-Data_Sheet.csv for AWFIS) are populated with raw annual P&L, balance sheet, cash flow and quarterly rows. Stage 1 reads Data_Sheet only."
+  - "annual-report/: collector misfile. The two collector 'Annual_Report_2026' files were the AR web-link letter (2pp) and the BRSR (20pp); both moved to inputs/other/. The real FY26 Annual Report (Reg 34 filing, 176pp including the 12th AGM notice) was in announcements/ and is moved to inputs/annual-report/AR-FY26-with-AGM-notice.pdf. Only FY26 AR is held; the FY25 AR is not in the corpus (the prospectus covers FY21-FY24 restated, 9M FY24)."
+  - "concalls: 4 transcripts held (Q2 FY26 Nov-2025, Q3 FY26 Feb-2026, Q4 FY26 May-2026, Q1 FY27 Aug-2026). Contract is 0-3: stage 5 uses the three most recent (Q3 FY26, Q4 FY26, Q1 FY27); Q2 FY26 is available as an extra backward check."
+  - "peer-concalls: 12 transcripts, 4 per peer. SMARTWORKS: Q1 FY26 (Aug-2025), Q2 FY26, Q3 FY26, Q1 FY27 (file 'Jul_2026'); no Q4 FY26 call in the set. INDIQUBE: Q2 FY26 (Nov-2025, quarter not printed on page 1; confirm), Q3 FY26, Q4 FY26, Q1 FY27. DEVX: Q2 FY26, Q3 FY26, Q4 FY26, Q1 FY27."
+  - "announcements/: 29 Reg 30 filings Sep-2025 to Sep-2026 staged by hand from BSE. The collector's own fetch returned 5; a 14-month single-window BSE query returned ZERO rows and the AttachLive path returned 404 for older filings. Filed-set coverage is curated, not exhaustive (routine trading-window, ESOP-allotment and analyst-meet filings excluded)."
+  - "research: EMPTY. No broker notes. No effect on anchored evidence."
+  - "presentation: 1 deck, Q1 FY27 (13-Aug-2026). Its copy also sits in announcements/ (20260813-7da331d4...). Q4 FY26 and earlier decks are not held."
+  - "GST show-cause notices (Commercial Tax Officer, Tamil Nadu and others) filed 21-May, 02-Jun and 04-Jun-2026 are in announcements/. Stages 2, 3 and 8 read them."
+  - "TOOLING: pdftoppm absent; the Read tool cannot render PDF pages. Every input PDF is pre-extracted to a page-marked .txt BESIDE the PDF (same basename, '[page N]' markers = PDF page numbers). Stages and verifiers read the .txt; anchors cite the PDF with the page number."
+freshness_pairs:
+  - pair: "RESULTS to CONCALL"
+    trigger_doc: "inputs/results/20260813-ef5b8155-a44a-4a36-9865-1e326f798b07.pdf (Q1 FY27, quarter ended 30-Jun-2026)"
+    mate_expected: "Q1 FY27 earnings call transcript"
+    status: PASS
+    missing_doc: ""
+    mate_found: "inputs/concalls/Concall_Aug_2026_Transcript.pdf (quarter ended June 30, 2026)"
+  - pair: "RATING BULLETIN to RATIONALE"
+    trigger_doc: "inputs/rating/20260703-2cce03ab-2b56-4bfb-83ed-2f4e3cd074cb.pdf (Ind-Ra, 03-Jul-2026)"
+    mate_expected: "full rating rationale"
+    status: PASS
+    missing_doc: ""
+    mate_found: "same PDF pages 2-9 carry the full Ind-Ra press release (rationale, key rating drivers, liquidity, sensitivities); read via page-images/"
+  - pair: "SEBI ORDER to ORDER TEXT"
+    trigger_doc: "none"
+    mate_expected: "n/a"
+    status: PASS
+    missing_doc: ""
+    note: "No SEBI order is referenced. The only hits are boilerplate 'not debarred ... by virtue of any SEBI Order' director declarations. The Show Cause Notices filed May-Jun 2026 are GST (Commercial Tax Officer) notices, not SEBI orders."
+  - pair: "AR to LATEST AUDITED ANNUAL RESULTS"
+    trigger_doc: "inputs/results/20260525-0b90edfb-c654-4afa-baad-c94f8f035928.pdf (FY26 audited, 25-May-2026)"
+    mate_expected: "FY26 Annual Report"
+    status: PASS
+    missing_doc: ""
+    mate_found: "inputs/annual-report/AR-FY26-with-AGM-notice.pdf"
+freshness_verdict: FRESHNESS PAIRS OK
+corpus_verdict_hint: "CORPUS GAPPED (FII/DII split, FY25 AR, earlier decks, research absent); freshness pairs OK"
+operator_pause: "EMPTY-FOLDER CONFIRMATION suppressed by /step1 AUTONOMY CONTRACT; standing answer 'proceed with the gaps'. Only research/ is empty."
+corpus_manifest:
+  - {path: inputs/annual-report/AR-FY26-with-AGM-notice.pdf, issuer: Awfis Space Solutions Ltd, type: "Annual Report FY2025-26 + 12th AGM notice (Reg 34 filing)", period: FY26, folder_match: "yes (moved from announcements/)"}
+  - {path: inputs/results/20260813-ef5b8155-a44a-4a36-9865-1e326f798b07.pdf, issuer: Awfis, type: "Board outcome + unaudited results SA & consol", period: "Q1 FY27", folder_match: yes}
+  - {path: inputs/results/20260525-0b90edfb-c654-4afa-baad-c94f8f035928.pdf, issuer: Awfis, type: "Board outcome + audited results SA & consol", period: "Q4 / FY26", folder_match: yes}
+  - {path: inputs/results/20260202-a4cadff1-dbb3-4c23-afcc-dba62cfdbfc3.pdf, issuer: Awfis, type: "Unaudited results SA & consol", period: "Q3 / 9M FY26", folder_match: yes}
+  - {path: inputs/rating/20260703-2cce03ab-2b56-4bfb-83ed-2f4e3cd074cb.pdf, issuer: "Awfis cover + India Ratings press release", type: "rating letter with full rationale", period: "03-Jul-2026", folder_match: yes}
+  - {path: inputs/rating/IndRa-rationale-2025-05-16-pr76615.txt, issuer: India Ratings, type: "rating rationale (web text)", period: "16-May-2025", folder_match: yes}
+  - {path: inputs/prospectus/Awfis-Prospectus-May2024.pdf, issuer: Awfis, type: "IPO Prospectus", period: "27-May-2024 (restated FY21-FY23, 9M FY24)", folder_match: yes}
+  - {path: inputs/concalls/Concall_Aug_2026_Transcript.pdf, issuer: Awfis, type: transcript, period: "Q1 FY27", folder_match: yes}
+  - {path: inputs/concalls/Concall_May_2026_Transcript.pdf, issuer: Awfis, type: transcript, period: "Q4 FY26", folder_match: yes}
+  - {path: inputs/concalls/Concall_Feb_2026_Transcript.pdf, issuer: Awfis, type: transcript, period: "Q3 FY26", folder_match: yes}
+  - {path: inputs/concalls/Concall_Nov_2025_Transcript.pdf, issuer: Awfis, type: transcript, period: "Q2 FY26", folder_match: yes}
+  - {path: inputs/presentation/Investor_Presentation_1.pdf, issuer: Awfis, type: "investor presentation", period: "Q1 FY27", folder_match: yes}
+  - {path: inputs/shareholding/BSE-SHP-summary-Jun2026.txt, issuer: "BSE (Reg 31 summary)", type: "shareholding summary", period: "Jun-2026", folder_match: yes}
+  - {path: "inputs/peer-concalls/SMARTWORKS-*.pdf (4)", issuer: Smartworks Coworking Spaces Ltd, type: transcripts, period: "Q1 FY26, Q2 FY26, Q3 FY26, Q1 FY27", folder_match: yes}
+  - {path: "inputs/peer-concalls/INDIQUBE-*.pdf (4)", issuer: Indiqube Spaces Ltd, type: transcripts, period: "Q2 FY26 (confirm), Q3 FY26, Q4 FY26, Q1 FY27", folder_match: yes}
+  - {path: "inputs/peer-concalls/DEVX-*.pdf (4)", issuer: Dev Accelerator Ltd, type: transcripts, period: "Q2 FY26, Q3 FY26, Q4 FY26, Q1 FY27", folder_match: yes}
+  - {path: "inputs/announcements/*.pdf (29)", issuer: Awfis, type: "Reg 30 filings", period: "Sep-2025 to Sep-2026", folder_match: yes}
+  - {path: inputs/other/AR-FY26-weblink-letter.pdf, issuer: Awfis, type: "AR web-link letter", period: FY26, folder_match: "moved from annual-report/"}
+  - {path: inputs/other/BRSR-FY26.pdf, issuer: Awfis, type: BRSR, period: FY26, folder_match: "moved from annual-report/"}
+flags: []
+analyst_note: >
+  Filings report in INR million; screener in INR Cr. The rating PDF text is
+  scrambled: stages must read its PNG pages. Reported EBITDA is Ind AS 116
+  (pre-rent); the company reports a separate cash EBITDA. Every stage should
+  keep the two apart.

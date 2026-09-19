@@ -1,0 +1,50 @@
+stage: B01-gate0
+company: "SSWL"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Screener export sheets (P&L/BS/CF/Quarters) came out empty for SSWL and all 3 peers; Data_Sheet.csv read instead (all blocks)."
+  - "FY25 AR not in corpus (only FY26 AR, which carries FY25-26 comparatives); FY22-FY24 Capital Employed, Capex and Trade Payables could not be sourced exactly from a primary statement. FY22-24 Capital Employed is a proxy (Equity+Total Borrowings), understating true ROCE; FY25-26 use exact AR figures. Flagged in Block A."
+  - "Capex and Trade Payables not broken out in Data_Sheet for FY22-24 (aggregate Investing-activity line only, no payables line); FCF (B2/B3) and full WC Days (B4, M12) scored on a 2-of-5-year window (FY25-FY26 only, sourced from AR)."
+  - "Shareholding pattern in corpus is Jun-2026 only; E2 (3-year promoter holding change) scored on the single 1-year change available in the AR (FY25 to FY26, -0.10pp) instead of 3 years."
+  - "R&D operating expense (% of revenue) not located in the reviewed AR pages; only R&D capital expenditure by site is disclosed. M6 scored 0, N/A not in provided data."
+  - "Factoring / bill-discounting note referenced in company memory LBF3 not located in the reviewed AR pages; deferred to a later stage's document read."
+  - "AMW/AACL FY24 gain: exact gain break-up and the ~Rs 138 Cr consideration figure (LBF4) not verifiable from FY26 AR (FY24 AR not in corpus); only the Other Income spike (Rs 486.76 Cr vs Rs 3-13 Cr adjacent years) is confirmed from screener-data."
+flags:
+  - {type: FLAG-CASH, reason: "CFO/EBITDA conversion fell from 106.7% (FY25) to 65.0% (FY26); block_b_trend deteriorating on the latest year. Relates to company memory LBF3 (factoring/receivables effect on CFO); factoring note itself not located in reviewed AR pages."}
+  - {type: FLAG-DATA-GAP, reason: "ROCE/Capital Employed methodology break: FY22-24 use a proxy (Equity+Total Borrowings, screener-data) that understates true ROCE since it includes current borrowings; FY25-26 use exact AR figures (Total Assets - Current Liabilities). A1/A2/A4 blend both bases."}
+  - {type: FLAG-AMW, reason: "FY24 Other Income (Rs 486.76 Cr, consolidated) drove FY24 ROE to a 52.4% outlier and lifted the equity base FY25-26 ROE/ROCE denominators sit on (LBF4). EBIT used for ROCE excludes Other Income, so ROCE itself is not directly contaminated, only the equity/ROE side and the ROCE denominator via retained reserves."}
+data_years: 5
+fy_range: "FY22 to FY26"
+blocks: {A: 11, B: 18, C: 6, D: 10, E: 18}
+core_score: 63
+moat_score: 17
+grand_total: 80
+moats_confirmed: 3
+moat_class: "MODERATE"
+classification: "GOOD"
+deal_breakers: []
+history_downgrade: false
+data_notes:
+  - "Change in Inventory sign convention: screener's positive 'Change in Inventory' value is a credit to EBITDA (inventory build). Verified by reconciling computed EBITDA to reported PBT exactly in all 5 years (e.g. FY26: EBITDA 510.23 - Depreciation 136.05 - Interest 123.22 + Other Income 3.18 = PBT 254.14, matches reported exactly)."
+  - "Screener consolidated figures cross-checked exactly against AR FY26 consolidated statements for FY25-26 (Total Assets, CFO, Cash & Bank, Total Equity all matched to the rupee), giving high confidence in the screener-data basis used for FY22-24 where AR is unavailable."
+  - "PEER DATA NEEDED for M2/M5/M9 was partially resolved: peer Data_Sheet.csv files for ALICON, UNOMINDA, WHEELS were present in the corpus and used (3-company peer set, not a full segment/industry set)."
+  - "M6 (R&D) and M8 (Distribution) scored 0 on genuine data/archetype grounds, not peer-data gaps: R&D opex% not disclosed in reviewed pages; SSWL is a B2B OEM supplier with no outlet-distribution metric."
+  - "E4 excludes CARO-annexure disputed statutory dues (~Rs 24.9 Cr across GST/excise/customs, AR p.135-136), a separate disclosure from the formal Note 40 Contingent Liabilities line (Rs 60.22 Cr) used in the ratio."
+block_b_trend: "deteriorating — CFO/EBITDA conversion fell from 106.7% (FY25: CFO 516.64 / EBITDA 484.34) to 65.0% (FY26: CFO 331.65 / EBITDA 510.23)"
+analyst_note: >
+  GOOD classification, no deal-breakers. Cash quality (18/20) and
+  shareholder alignment (18/20) are the strongest blocks; growth (6/20) is
+  the weakest, dragged by a sub-10% revenue CAGR and a negative PAT CAGR.
+  Block A's ROCE trend (A4=1, -4.76pp over 5 years) and the moat block's
+  M1/M2/M9 zeros triangulate on the same story as company memory LBF2:
+  margin compression is real and shows up across independent tests, not
+  just one ratio. The FY24 AMW/AACL gain (LBF4) is a genuine one-off that
+  inflates FY24 ROE and the equity base beneath FY25-26 ROE/ROCE; it does
+  not inflate ROCE itself since EBIT excludes Other Income. Treat FY22-24
+  Block A figures as a soft floor (proxy Capital Employed); FY25-26 are
+  exact. The single biggest fresh risk this stage surfaces beyond company
+  memory: FY26 cash conversion (CFO/EBITDA 65.0%) is a sharp one-year drop
+  from FY25 (106.7%), worth a tripwire even though B1's 5-year cumulative
+  ratio (1.23x) still scores well.

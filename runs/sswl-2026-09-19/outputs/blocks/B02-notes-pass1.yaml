@@ -1,0 +1,71 @@
+stage: B02-notes-pass1
+company: SSWL
+run_date: "2026-09-19"
+model: claude-sonnet-5
+pass: 1
+status: complete
+report_path: outputs/reports/02-notes-pass1.md
+source_read: "inputs/annual-report/SSWL-AR-FY26-Reg34-2026-09-03.txt (standalone notes 1-54, AR p.144-183; consolidated notes 1-56, AR p.196-239; AOC-1 schedule, AR p.239-240)"
+units: "All figures as printed in the source: INR lakh. Cr equivalents stated inline in the report (100 lakh = 1 Cr), never converted silently."
+input_gaps_carried_from_B00:
+  - "shareholding/ automation gap (not relevant to notes pass)"
+  - "screener Data_Sheet-only gap (not relevant to notes pass)"
+  - "FY25 AR not in corpus; FY26 AR comparatives (FY25 column) used as the only FY25 source"
+lbf_checks:
+  - lbf: LBF3
+    label: "cash conversion / factoring / CFO effect"
+    result: CONFIRMED_AND_EXPANDED
+    detail: >
+      Standalone Note 12+13 cash+other bank balances at FY26 close = Rs 151.25
+      lakh + Rs 500.89 lakh = Rs 652.14 lakh (Rs 6.52 Cr), matching the ~Rs 6.5
+      Cr load-bearing fact. The factoring mechanism is a payables-side Supplier
+      Finance (reverse factoring) arrangement in Note 25, not a receivables-side
+      facility: Rs 676.50 Cr of trade payables (67.6% of standalone total) sit
+      under third-party financing, Rs 494.84 Cr already paid to suppliers by
+      the institution at year end. First-year Ind AS 7/107 disclosure, no FY25
+      comparative (transitional relief taken).
+  - lbf: LBF4
+    label: "AMW NCLT write-back gain, subsidiary status, carrying value"
+    result: CONFIRMED_SUBSIDIARY_STATUS_GAIN_TRAIL_PARTIAL
+    detail: >
+      AMW confirmed 100% wholly owned (Note 52C consol, AOC-1). FY24 exceptional
+      gain itself falls outside this AR's two-year comparative window (FY25/
+      FY26 only) so cannot be directly re-verified from this document. A large,
+      wholly unexplained Rs 364.52 Cr "Transfer to Capital Reserves" appears in
+      consolidated Other Equity (Note 19) in FY26 with no note connecting it to
+      AMW; AMW's standalone carrying value is Rs 5.00 Cr (cost), AMW posted a
+      third consecutive year of losses (FY26 standalone loss Rs 16.82 Cr per
+      AOC-1), and a growing Rs 59.31 Cr DTA on AMW's carried-forward tax losses
+      is recognised despite continuing losses (DTA realism flag).
+flags:
+  - {type: FLAG-CASH, reason: "Trade receivables +25.2% YoY vs revenue +11-17%; Net Capital Turnover days worsened 59.4% (11.24->17.93); trade payable days stretched 69.29->75.64; Rs 676.50 Cr of trade payables (67.6% of total) under a supplier finance/reverse-factoring arrangement that keeps debt-like financing off the borrowings note and routes it through operating cash flow (Note 25); MSME overdue-and-unpaid principal nearly doubled (Rs 1.97 Cr -> Rs 3.73 Cr). Ties directly to LBF3."}
+  - {type: FLAG-DERIVATIVE, reason: "Mark-to-market loss of Rs 32.42 Cr on FX forwards/options at FY26 close, including a USD 25mn notional Put & Call Options position (not a plain forward hedge); no FY25 comparative shown; P&L/OCI recognition point not traceable from the notes (Note 48c)."}
+  - {type: FLAG-DISCLOSURE, reason: "Rs 364.52 Cr 'Transfer to Capital Reserves' in consolidated Other Equity (Note 19) FY26 with zero explanatory note anywhere in the AR; drives consolidated retained earnings to -Rs 826.70 Cr. Needs a direct management question and a check against the FY25 AR / Board's Report."}
+  - {type: FLAG-DTA, reason: "Consolidated DTA on AMW's carried-forward tax losses grown to Rs 59.31 Cr (from Rs 54.38 Cr FY25, Rs 46.02 Cr FY24-on-acquisition) despite AMW posting losses every year since acquisition; no forecast or realisation-timeline basis disclosed (Note 51 consol)."}
+  - {type: FLAG-INTEREST-OPACITY, reason: "'Interest Others' of Rs 69.85 Cr within finance costs is 1.4x disclosed bank-loan interest (Rs 50.31 Cr combined term/WC/FX loan interest) with no breakdown sub-note (Note 35)."}
+receivables_trend: "deteriorating in growth-rate terms (gross receivables +25.2% YoY vs revenue +11-17%, receivable days 30.89->32.80) though the mix shifted toward current/not-due rather than concentrated in overdue ageing; combined with stretching payable days (69.29->75.64) and inventory +28.2%, the working-capital picture as a whole is deteriorating (Notes 11, 25, 10, 52 standalone)."
+top_10_findings:
+  - {rank: 1, finding: "Consolidated Other Equity Rs 364.52 Cr unexplained 'Transfer to Capital Reserves' (FY26 only), retained earnings to -Rs 826.70 Cr", note_ref: "Note 19, consol AR p.219-220", rating: RED, why: "Largest unexplained equity movement in the filing; touches LBF4/AMW gain trail; no note anywhere explains it."}
+  - {rank: 2, finding: "Supplier finance (reverse factoring) covers 67.6% of standalone trade payables (Rs 676.50 Cr of Rs 1,001.77 Cr), Rs 494.84 Cr already advanced to suppliers", note_ref: "Note 25, standalone AR p.166-167, consol AR p.221-222", rating: RED, why: "Mechanism behind LBF3; debt-like financing classified as operating payable, flatters current ratio and Net Debt/EBITDA, routed through operating cash flow."}
+  - {rank: 3, finding: "Rs 32.42 Cr mark-to-market loss on FX forwards/options incl. USD 25mn Put & Call Options notional", note_ref: "Note 48(c), standalone AR p.178-179, consol AR p.233-234", rating: RED, why: "~16% of standalone FY26 PAT; options structure implies more than a plain hedge; P&L treatment not traceable from notes."}
+  - {rank: 4, finding: "'Interest Others' Rs 69.85 Cr in finance costs, 1.4x disclosed bank interest, no breakdown", note_ref: "Note 35, standalone AR p.169, consol AR p.224", rating: YELLOW, why: "Opacity on a large finance-cost line likely embedding SCF/derivative costs limits verifiability of true borrowing cost."}
+  - {rank: 5, finding: "AMW Autocomponent Ltd: third year of losses, Turnover disclosed as 0, net assets falling, DTA on its losses growing to Rs 59.31 Cr", note_ref: "Note 51/52/53 consol AR p.236-238; AOC-1 AR p.239", rating: RED, why: "DTA realism risk plus a wholly-owned operating subsidiary reporting zero turnover; extends LBF4."}
+  - {rank: 6, finding: "Rs 133.15 Cr unsecured interest-bearing loan from SSWL to loss-making AMW, unchanged 2 years", note_ref: "Note 41, standalone AR p.171-172", rating: YELLOW, why: "Related-party support commitment to a loss-making subsidiary, invisible in consolidated statements (eliminated); a contingent capital commitment for position sizing."}
+  - {rank: 7, finding: "Working capital deterioration across receivables (+25.2%), payables days (69.29->75.64), inventory (+28.2%), Net Capital Turnover days (+59.4%)", note_ref: "Notes 11, 25, 10, 52 standalone AR p.161/166-167/161/181-182", rating: YELLOW, why: "Coherent multi-note cash-conversion-quality signal alongside compressing ROE/ROCE/net margin; resolves LBF3's core question."}
+  - {rank: 8, finding: "MSME overdue-and-unpaid principal nearly doubled (Rs 1.97 Cr -> Rs 3.73 Cr), unpaid interest nearly doubled", note_ref: "Note 25, standalone AR p.166-167", rating: YELLOW, why: "Vendor-payment-stress signal corroborating the broader working-capital read."}
+  - {rank: 9, finding: "No product-level segment disclosure anywhere in the notes; single business segment, geography-only split", note_ref: "Note 44, standalone AR p.173-174, consol AR p.228-229", rating: YELLOW, why: "LBF2 (mix-shift margin, alloy % of revenue) cannot be verified or cross-checked from the AR notes at all; evidence gap for downstream stages."}
+  - {rank: 10, finding: "Capital commitments up 56.5% (Rs 99.14 Cr -> Rs 155.11 Cr) while LC/BG contingent exposure fell 34.6%; Net Debt/EBITDA improved mildly", note_ref: "Note 40, 49", rating: "GREEN/YELLOW", why: "Capex-ramp signal consistent with falling interest capitalisation elsewhere; read together with working-capital strain for near-term FCF modelling."}
+rating_tally: {red: 5, yellow: 5, green: "policies, gratuity mechanics, deferred-tax reconciliation quality (standalone), EPS dilution, leverage trend"}
+carry_forward_to_pass_2: >
+  Re-check with fresh eyes: R&D capex/opex split trend (Note 3/5 sub-notes);
+  leave-encashment non-current provision 12.4x jump (Rs 30.28 lakh -> Rs
+  374.39 lakh, Note 22/28); CSR routed through related-party trust Hansraj
+  Trust with a small spend shortfall (Note 45D); absence of any warranty
+  provision roll-forward despite an auto-OEM-supplier profile; complete
+  absence of a subsequent-events note format anywhere in the AR (not even
+  boilerplate "no material subsequent events"); the AMW AOC-1 "Turnover: 0"
+  line: unresolved, needs Pass 2/Stage 3-5 attention. Also re-scan every note
+  for cross-references between standalone and consolidated figures that do
+  not tie (e.g. Note 6 investment carrying values, Note 8 security deposits
+  standalone Rs 1,471.29 lakh vs consolidated Rs 1,202.09 lakh -- a Rs 269.20
+  lakh gap not explained anywhere).

@@ -1,0 +1,26 @@
+company: Rappid Valves (India) Ltd
+ticker: RAPPID
+cmp: 365.9
+market_cap_cr: 189.97
+run_date: 2026-09-19
+run_type: full
+listed_date: 2024-09-30   # NSE Emerge SME IPO (fresh issue Rs 30.41 Cr at Rs 222); within 3y of run_date, prospectus MANDATORY (RHP collected)
+concalls_available: false   # one earnings call ever filed (01-Jun-2026, FY26 results); company is a half-yearly SME filer. Stage 5 runs NO-CONCALL MODE with the single transcript as supplementary evidence
+sector_cap_row: "Cables / Industrial products"   # set at /step1 step D 2026-09-19 (build-to-spec industrial and marine valve maker; Defence / strategic 38x not taken: marine is 33% of revenue per deck and includes commercial shipbuilding); stage 0 confirms against chunk 05; flag for phase-3 confirmation
+sector_cap_row_guess: ""   # collector crashed before writing a guess (OpenBLAS memory error during classification)
+collector_warnings:
+  - "collect_to_repo.py crashed after downloads, during classification (OpenBLAS: memory allocation failed). Classification, CSV conversion and this manifest were completed by hand at /step1 using the collector's own sanitize() and xlsx_to_csvs() functions."
+  - "consolidated page has no figures (company files standalone only); standalone /company/RAPPID/ used for the main company"
+  - "screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance Sheet, screener:Cash Flow, screener:Customization, KSB:Profit & Loss, KSB:Quarters, KSB:Balance Sheet, KSB:Cash Flow, KSB:Customization, QUESTFLOW:Profit & Loss, QUESTFLOW:Quarters, QUESTFLOW:Balance Sheet, QUESTFLOW:Cash Flow, QUESTFLOW:Customization, ATAM:Profit & Loss, ATAM:Quarters, ATAM:Balance Sheet, ATAM:Cash Flow, ATAM:Customization. Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again."
+  - "BSE scrip code not found: RAPPID is listed on NSE Emerge only, so the BSE announcements fetch cannot apply. announcements/ was filled from the NSE SME announcements API at /step1."
+  - "no rating PDF: no credit rating of Rappid Valves was found on the web or in NSE filings; stage 0 confirms against the AR"
+step1_repairs:
+  - "annual-report/: FY26 AR (NSE archive, 71pp) kept; FY25 AR moved to other/ (contract is 0-1 AR)"
+  - "results/: 5 NSE result filings (H1 FY25 14-Nov-2024, FY25 12-May-2025 and the refiled FY25 set 14-May-2025, H1 FY26 13-Nov-2025, FY26 27-May-2026); byte-identical board-outcome copies removed"
+  - "announcements/: 43 Reg 30 filings Oct-2024 to Sep-2026 fetched from the NSE SME announcements API (order wins, business updates, NSE clarification letters, IPO object variation, EGM and postal-ballot papers, AGM notices, KMP changes); byte-identical duplicates removed; DP certificates and trading-window notices skipped"
+  - "prospectus/: Red Herring Prospectus (Sep-2024, 335pp) from data.cbonds.info; the company website link list did not resolve; final Prospectus not separately collected"
+  - "shareholding/: NSE XBRL shareholding patterns Sep-2024 (two filings), Mar-2025, Sep-2025 (revised Apr-2026), Mar-2026, plus the NSE master JSON"
+  - "peer-concalls/: KSB 4, ATAM 4, QUESTFLOW 1. Marine Electricals (MARINE) was collected first and dropped: it files no transcripts; replaced by Quest Flow Controls (543982)"
+  - "screening/: Data_Sheet CSVs populated for RAPPID, KSB, QUESTFLOW, ATAM; P&L/BS/CF/Quarters sheets are empty exports"
+  - "every PDF opened with PyMuPDF and was pre-extracted to a page-marked .txt ([page N]) beside it; 14Nov2024 statement_of_deviation is image-only (0 chars)"
+notes: "Collected by /step1 2026-09-19. Step 1 business brief at runs/rappid-2026-09-19/step1-business-brief.md (COMPANY MEMORY, not a source). Half-yearly SME filer: no quarterly results; Q1 FY27 figures exist only as an unaudited business update."

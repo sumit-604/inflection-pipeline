@@ -1,0 +1,51 @@
+stage: B12c
+company: "AWFIS"
+run_date: "2026-09-19"
+model: claude-opus-5
+status: complete
+scope: "PHASE 1 (Gate 0 + Emerging Moat only); valuation, expectation ledger and narrative audits PENDING PHASE 3"
+gate0:
+  rules_checked: 42
+  fails:
+    - "A3 median ROE: FY25 excluded as sign-crossing though its average net worth is positive (Rs182.71 Cr); FY25 ROE 37.15%, median 25.58% -> score 5 not 2 (MAJOR)"
+    - "B2 FCF-positive share: FY19/FY20 CFO negative so FCF negative regardless of capex; 5 of 7 determinable = 71.4% -> score 2 not 5 (MAJOR)"
+    - "E4 contingent liabilities: AR Note 33(i) files a nil disclosed contingent liability; 0% -> score 5 not 0 (MAJOR)"
+    - "M11 network effects: FY26 selling-expense % NOT FOUND, FY25 substituted; stage 1 rule 5 -> score 0 not 5 (MAJOR)"
+    - "Payload says 2-of-8-year balance-sheet window; report body says 5 of 8 (FY21-23, FY25-26); propagated into B07 (MINOR)"
+  recomputed: {blocks: {A: 10, B: 7, C: 8, D: 1, E: 10}, core_score: 36, moat_score: 19, moats_confirmed: 4, moat_class: "STRONG", grand_total: 55, classification: "AVOID", deal_breakers_triggered: [2, 3, 4, 8]}
+  classification_concur: true
+emoat:
+  rules_checked: 22
+  fails:
+    - "F2 scored 0.7 on evidence B07 calls net-negative; C2/B1 contrary evidence scored 0 in the same report; F2 -> 0, EM 11.8 NONE (MAJOR)"
+    - "WELL certification credited in both H2 and H3 (same anchor); one-evidence-one-credit breached; EM 10.5-11.5 on either fix (MAJOR)"
+    - "Section 5 scoring table groups zero rows instead of 23 rows (MINOR)"
+    - "evidence_mix 14/9/4 does not reconcile with 8-item recount; no inference items visible; 6C count says 2 lists 3 (MINOR)"
+    - "AR anchors cite text-file line numbers as page numbers (A2, D2, F1, H3) (MINOR)"
+  recomputed_em_score: "9.8-11.8 (filed 12.5)"
+  recomputed_em_classification: "NONE (filed MODEST)"
+  classification_concur: false
+valuation: {rules_checked: 0, fails: [], status: "PENDING PHASE 3 (B10/B11 not yet produced)"}
+expectation_ledger: {present: null, downside_row: null, all_rows_confirm_by: null, all_rows_metric_threshold: null, prob_in_range: null, decay_status_valid: null, off_ledger_credit: null, residual_pct_cmp: null, residual_starter_cap_ok: null, fails: [], status: "PENDING PHASE 3"}
+business_understanding_narrative: {present: null, five_questions_answered: null, prose_only: null, section6_candidates_named: null, valuation_vocab_leak: null, fails: [], status: "PENDING STAGE 13"}
+recomputed_destination_pe: ""
+recomputed_decision: ""
+findings:
+  - {id: G-1, severity: MAJOR, location: "01-gate0.md Block A, A3", finding: "FY25 ROE excluded by an unwritten sign-crossing rule", recomputed: "A3 5 (median 25.58%); Block A 7 -> 10; deal-breaker 1 clears"}
+  - {id: G-2, severity: MAJOR, location: "01-gate0.md Block B, B2", finding: "FY19/FY20 determinably FCF-negative (CFO -11.48, -7.79) dropped as NOT FOUND", recomputed: "B2 2 (71.4%); Block B 10 -> 7; deal-breaker 2 fires, non-binding"}
+  - {id: G-3, severity: MAJOR, location: "01-gate0.md Block E, E4", finding: "Filed nil contingent liability (AR Note 33(i)) scored as missing data", recomputed: "E4 5; Block E 5 -> 10; GST SCN exposure carried as flag"}
+  - {id: G-4, severity: MAJOR, location: "01-gate0.md Block F, M11", finding: "Missing FY26 selling-expense leg filled with FY25; FY25 proxy shows only -0.14pp", recomputed: "M11 0; moat score 24 -> 19; 4 present, STRONG unchanged"}
+  - {id: G-5, severity: MINOR, location: "B01-gate0.yaml flags/analyst_note; 01-gate0.md decision line", finding: "2-of-8-year window contradicts body's 5-of-8; propagated to B07 6C/6D", recomputed: "text fix only"}
+  - {id: G-6, severity: MINOR, location: "01-gate0.md M8", finding: "Per-centre revenue implied on signed supply, not operational centres", recomputed: "score likely unchanged"}
+  - {id: G-7, severity: MINOR, location: "prompts/01-gate-0-pipeline.md M9, M10", finding: "Rubric gaps: unmapped states (M9 above peers with higher growth; M10 one decline year with unstable receivables)", recomputed: "operator rubric fix; no present/absent change"}
+  - {id: G-8, severity: MINOR, location: "01-gate0.md Block A table", finding: "FY25/FY26 rows garbled; corrected in note", recomputed: "presentational"}
+  - {id: E-1, severity: MAJOR, location: "07-emoat.md Section 5, F2", finding: "Net-negative F2 scored 0.7 while contrary-evidence C2/B1 scored 0", recomputed: "F2 0; EM 11.8 -> NONE; escalate re-test at phase 3 if Pillar 3 consumes em_classification"}
+  - {id: E-2, severity: MAJOR, location: "07-emoat.md H2 and H3", finding: "WELL certification double-credited (H2 and H3, same anchor; also listed as existing brand moat in 6E)", recomputed: "EM 10.5 (fix b) or 11.5 (fix a, H2 re-rated MM); maker to choose and re-rate"}
+  - {id: E-3, severity: MINOR, location: "07-emoat.md Section 5", finding: "Zero rows grouped; stage 7 asks for all 23 rows", recomputed: "presentational"}
+  - {id: E-4, severity: MINOR, location: "B07-emoat.yaml evidence_mix; 07-emoat.md 6C", finding: "evidence_mix does not reconcile with recount; 6C says 2 Weak, lists 3", recomputed: "text fix"}
+  - {id: E-5, severity: MINOR, location: "07-emoat.md A2, D2, F1, H3", finding: "AR anchors are text line numbers labelled as pages", recomputed: "re-anchor to PDF pages"}
+  - {id: E-6, severity: MINOR, location: "07-emoat.md 2C; B07 capex_embedded_growth_pct", finding: "Guided (not under-execution) capex x company gross-block FAT 1.5x; B01 FAT 0.88x basis gives 12.1%", recomputed: "20.6% stands if basis labelled downstream"}
+critical_count: 0
+major_count: 6
+minor_count: 8
+acceptance_rate: 84.4

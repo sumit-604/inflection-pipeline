@@ -1,0 +1,19 @@
+stage: B12a
+company: "AWFIS"
+run_date: "2026-09-19"
+model: claude-haiku-4-5
+status: complete
+numbers_checked: 45
+findings:
+  - {severity: "major", location: "B09 TAM Section 2A Method 3 peer aggregation table, Indiqube row", claimed: "1,469 Cr (FY26)", source_truth: "1,450.81 Cr per INDIQUBE-Data_Sheet.csv row 11", note: "Variance -18.19 Cr (-1.24%). CSV is primary audit source; report may have cited web source or interim update.", source_fidelity: true}
+  - {severity: "minor", location: "B09 Section 2A Method 1 CBRE-FICCI figure", claimed: "Rs52,200 Cr (2025-26)", source_truth: "Web-sourced live report 24-Mar-2026, not in corpus", note: "Unanchored to filed docs; report transparently attributes to live-web search per TAM-stage methodology", source_fidelity: false}
+  - {severity: "minor", location: "B09 Section 2A Method 3 WeWork India peer revenue", claimed: "Rs2,477 Cr (FY26)", source_truth: "Web-searched company results release, not in corpus", note: "Unanchored to corpus; report explicitly flags peer-coverage incompleteness", source_fidelity: false}
+  - {severity: "minor", location: "B09 Section 2A Method 3 Table Space peer revenue", claimed: "Rs2,262 Cr (FY26)", source_truth: "Web-searched Entrackr/Inc42 media aggregate, not in corpus", note: "Unanchored to corpus; report explicitly flags peer-coverage incompleteness", source_fidelity: false}
+  - {severity: "minor", location: "B04 Bizmodel Section 3B must-track metrics, FY27 cash-EBITDA guidance", claimed: "~10.8-11.1% for FY27", source_truth: "External company-memory store (companies/AWFIS.md), not filed or web-sourced", note: "Unanchored to corpus; correctly attributed to external memory, no fidelity claim", source_fidelity: false}
+critical_count: 0
+major_count: 1
+minor_count: 4
+false_positives_struck: 0
+material_universe: 92
+acceptance_rate: 97.8
+coverage_note: "45 of 92 material figures checked (49% stratified sample). Verdict-card and balance-sheet figures 100% clean. TAM peer-coverage section explicitly flags incompleteness per B09 methodology. One genuine MAJOR mismatch (Indiqube FY26 revenue -1.24% variance) affects B09 peer-sum total but does not change formal conclusions, which cite realistic-estimate TAM as superior. Four MINOR findings are correctly-attributed unanchored figures, not mismatches."

@@ -1,0 +1,19 @@
+stage: confidence-delta
+company: AWFIS
+run_date: 2026-09-19
+phase: 1
+confidence_delta:
+  numerical_acceptance: 97.8      # B12a: 44 of 45 checked figures clean (denominator 45)
+  redflag_coverage: 77            # B12b.acceptance_rate: 10 of 13 MATERIAL flags held (4 full + 6 partial)
+  framework_adherence: 84.4       # B12c phase-1 portion: 54 of 64 rules (Gate 0 42 + EM 22); valuation half PENDING PHASE 3
+  peer_utilisation: 100           # B12d: 12 of 12 peer transcripts used substantively
+  overall: 77
+  overall_set_by: redflag_coverage
+  not_applicable: []
+  band: "75-89 normal, note specifics"
+notes:
+  - "Verifier A identity check: no CRITICAL rows, nothing struck. Critical count 0, so no source-fidelity REWORK."
+  - "redflag_coverage basis: Verifier B counts 6 partially caught material flags as held. On a strict full-catch basis the rate is 31% (4 of 13), which would sit below the 60% REWORK line. The B12b acceptance_rate (77) is used as filed; the basis choice is surfaced to the operator, not resolved here."
+  - "Verifier B carries 1 CRITICAL (F1: 3-call evasion on per-seat realization and cohort margins, missed by B05). A Verifier B CRITICAL is a judgment finding, not a source-fidelity finding; it does not trigger the Verifier A REWORK gate."
+  - "Verifier C recomputes Gate 0 core 31 -> 36 (classification AVOID unchanged) and EM 12.5 -> 9.8-11.8, class MODEST -> NONE (disagrees with B07). Re-test as CRITICAL at phase 3 if Pillar 3 consumes em_classification."
+  - "framework_adherence valuation component PENDING PHASE 3."

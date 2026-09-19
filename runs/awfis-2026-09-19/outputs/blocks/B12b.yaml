@@ -1,0 +1,53 @@
+stage: B12b
+company: "AWFIS"
+run_date: "2026-09-19"
+model: "claude-opus-5"
+status: complete
+independent_flags_found: 25
+caught: 10
+partially_caught: 7
+missed:
+  - {severity: "CRITICAL", item: "Repeated 3-call evasion on per-seat realization and cohort margins; promised annual disclosure lapsed; all peers disclose Rs/sqft", anchor: "Nov-2025 Lakhani p.10; Feb-2026 Dugar/Lakhani p.15-16; Aug-2026 Lakhani p.14"}
+  - {severity: "MAJOR", item: "Feb churn denial vs Aug volunteered 1.5-2% monthly churn (18-24%/yr); 58k seats sold vs ~21k net occupied gain FY26", anchor: "Feb-2026 Lakhani p.15-16; Aug-2026 Lakhani p.8; May-2026 Ramani p.6"}
+  - {severity: "MAJOR", item: "3,000-seat client exit (May 2026) not disclosed at 25-May call while mature-cohort gain promised; two readings, separated by notice date", anchor: "Aug-2026 Lakhani p.8; May-2026 Lakhani p.13; Smartworks Jan-2026 p.14; Indiqube Aug-2026 p.15"}
+  - {severity: "MINOR", item: "Retail/hospitality expansion stated then denied", anchor: "Nov-2025 Ramani p.4; Feb-2026 Lakhani p.17"}
+  - {severity: "MINOR", item: "Tenure figures inconsistent within Feb call and vs Nov", anchor: "Nov-2025 p.6; Feb-2026 p.7, p.10"}
+  - {severity: "MINOR", item: "Transform margin 7-8% net (May) vs 17-18% gross (Aug)", anchor: "May-2026 Rochlani p.12; Aug-2026 Ramani p.15"}
+  - {severity: "MINOR", item: "Net debt/equity swings -0.18/-0.06/-0.20/-0.08 unexplained", anchor: "Nov-2025 p.7; Feb-2026 p.8; May-2026 p.11; Aug-2026 p.10"}
+  - {severity: "MINOR", item: "FY27 cash EBITDA guide stated Rs190-200cr and Rs195-200cr in same call", anchor: "Aug-2026 Ramani p.7; Lakhani p.17"}
+pipeline_flags_not_supported:
+  - {status: "OVERSTATED", flag: "B06 claim 5 VERIFIED: Awfis cash margin roughly half peer band", reason: "basis mismatch; peers' post-rent EBITDA compares to Awfis normalized 14.3%, not cash 10.1%; like-for-like gap ~2-9 pts", anchor: "May-2026 p.11; Indiqube Nov-2025 p.6, p.12; Smartworks Jul-2026 p.3; DevX Aug-2026 p.3"}
+  - {status: "OVERSTATED", flag: "B05 2C/2B: Q1 FY27 client-exit disclosure is strongest transparency evidence", reason: "exit likely known at May call; unresolved until notice date known", anchor: "Aug-2026 p.8; May-2026 p.13"}
+  - {status: "OVERSTATED", flag: "B05 4D: D&B business transfer never raised on calls", reason: "subsidiarisation volunteered and questioned; only consideration/valuation absent", anchor: "Nov-2025 p.4, p.8; Feb-2026 p.17"}
+  - {status: "WRONG VERDICT", flag: "B06 claim 7 UNVERIFIABLE (lease-reset lag)", reason: "peers describe 2020-21 vintage as repricing upside and escalation spreads as tailwind; directional contradiction", anchor: "Smartworks Nov-2025 p.17, Jan-2026 p.12, Jul-2026 p.11; Indiqube Nov-2025 p.11"}
+promise_delivery_spot_checks: {checked: 6, confirmed: 5, wrong: 1}
+credibility_grade_concur: "lower - C leans on a client-exit transparency credit that is unresolved, and misses a 3-call realization evasion and a contradicted churn denial"
+findings:
+  - {id: F1, severity: CRITICAL, finding: "B05 missed repeated realization/cohort-margin evasion across Nov, Feb, Aug", anchor: "Nov-2025 p.10; Feb-2026 p.15-16; Aug-2026 p.14"}
+  - {id: F2, severity: MAJOR, finding: "B05 missed churn denial vs 1.5-2%/month admission", anchor: "Feb-2026 p.15-16; Aug-2026 p.8"}
+  - {id: F3, severity: MAJOR, finding: "B05 missed likely-known client exit at May call; over-credits Aug disclosure", anchor: "Aug-2026 p.8; May-2026 p.13"}
+  - {id: F4, severity: MAJOR, finding: "B06 claim 5 cash-margin comparison on mismatched bases", anchor: "May-2026 p.11; Indiqube Nov-2025 p.6, p.12"}
+  - {id: F5, severity: MAJOR, finding: "B06 claim 7 verdict should be directional contradiction", anchor: "Aug-2026 p.17; Smartworks Nov-2025 p.17, Jul-2026 p.11"}
+  - {id: F6, severity: MAJOR, finding: "Cash-rent questions in three calls not linked or elevated to 4D", anchor: "Nov-2025 p.13-14; May-2026 p.19; Aug-2026 p.10-11"}
+  - {id: F7, severity: MAJOR, finding: "Metric switch to cash EBITDA not flagged; Nov FY27 margin promise untestable", anchor: "Nov-2025 p.8; Aug-2026 p.7, p.9-10"}
+  - {id: F8, severity: MAJOR, finding: "MA stance change under-weighted as LOW", anchor: "Nov-2025 p.7, p.12; May-2026 p.15; Aug-2026 p.11"}
+  - {id: F9, severity: MAJOR, finding: "Closure-promise outcome mis-evidenced; Nov baseline missed", anchor: "Nov-2025 p.10; May-2026 p.19; Aug-2026 p.8"}
+  - {id: F10, severity: MAJOR, finding: "Rising capex per gross seat and 50% developer fit-out share not computed", anchor: "May-2026 p.11, p.13; Aug-2026 p.12-13"}
+  - {id: F11, severity: MINOR, finding: "D&B transfer silence overstated", anchor: "Nov-2025 p.4, p.8; Feb-2026 p.17"}
+  - {id: F12, severity: MINOR, finding: "Cash EBITDA guide misquoted/misattributed", anchor: "Aug-2026 p.7, p.17"}
+  - {id: F13, severity: MINOR, finding: "B05 anchors mix internal and PDF pagination; Verifier A to re-check", anchor: "Aug-2026 p.7; May-2026 p.17; Nov-2025 p.15; Feb-2026 p.12"}
+  - {id: F14, severity: MINOR, finding: "Retail/hospitality walk-back missed", anchor: "Nov-2025 p.4; Feb-2026 p.17"}
+  - {id: F15, severity: MINOR, finding: "Tenure inconsistencies missed", anchor: "Feb-2026 p.7, p.10"}
+  - {id: F16, severity: MINOR, finding: "Transform margin basis shift missed", anchor: "May-2026 p.12; Aug-2026 p.15"}
+  - {id: F17, severity: MINOR, finding: "ROCE drift and peer basis evidence unused", anchor: "Nov-2025 p.7; Aug-2026 p.4; Smartworks Aug-2025 p.3"}
+  - {id: F18, severity: MINOR, finding: "Net debt/equity swings unremarked", anchor: "Feb-2026 p.8; Aug-2026 p.10"}
+  - {id: F19, severity: MINOR, finding: "B06 claim 4 Smartworks gap 5 pts; mixed occupancy bases", anchor: "Smartworks Jul-2026 p.6"}
+  - {id: F20, severity: MINOR, finding: "B06 misattributes Indiqube Q3 deferral to cash EBIT", anchor: "Indiqube Feb-2026 p.6, p.8"}
+  - {id: F21, severity: MINOR, finding: "GCC $ inconsistency occurs within Aug call itself", anchor: "Aug-2026 p.3, p.15"}
+critical_count: 1
+major_count: 9
+minor_count: 11
+material_found: 13
+material_caught: 10
+acceptance_rate: 77
+coverage_basis: "13 material of 25 listed; 4 fully caught + 6 partially caught = 10 held; 3 missed (1 CRITICAL, 2 MAJOR). Strict full-catch rate 4/13 = 31%."

@@ -1,0 +1,18 @@
+stage: B12d
+company: "AWFIS"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+peers_audited: 12
+substantive_confirmed: 12
+substantive_unsupported: []
+unused_but_relevant: []
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "MINOR", location: "B06 Claim 3 / Part 3 coverage map, DevX Q3 FY26 (02-Feb-2026)", claimed: "Rs400-600/sqft design/execution fee cited at p.7-8", source_truth: "figure appears at p.20 of DEVX-Concall_Feb_2026_Transcript.txt (Anand Mundra Q&A); p.7-8 discusses the DM model generally but not this figure", note: "page-anchor mismatch; figure itself is genuine and correctly transcribed"}
+  - {severity: "MINOR", location: "B06 Claim 5, Indiqube Q2 FY26 (10-Nov-2025) citation", claimed: "'cash EBIT' margin ~21% -- explicit label match, p.6", source_truth: "analyst question used 'cash EBIT margins'; management's answer uses 'EBITDA improvement'/'EBITDA margin' phrasing throughout, never restating 'cash EBIT' verbatim", note: "substance and direction correct; 'explicit label match' descriptor overstates lexical fidelity"}
+critical_count: 0
+major_count: 0
+minor_count: 2
+acceptance_rate: 100

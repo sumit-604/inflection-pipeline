@@ -598,3 +598,15 @@ Verifier C check 15 (PR #163, PR #164), and the LESSONS discipline changes
 (PR #165).
 
 Size: LESSONS.md 164 lines / 1555 words before, 119 lines / 1062 words after.
+
+## 2026-09-19 — SHAREINDIA (Share India Securities) — /step1 intake, phase 1 to Halt 1
+
+- Shared tools/collector/companies.txt is a race: five parallel intake sessions overwrote it and the first collector run collected another session's company (RAPPID). Each session needs a private companies.txt (or a --companies flag).
+- The private collector run came back logged out of screener ("Company: Get a free account") and wrote zero files; parallel logins likely tripped screener. Corpus built by hand: BSE announcements API, public screener tables parsed to CSV, Infomerics via the built-in browser, SEBI, Choice's cmsapi links.
+- fetch_bse_announcements (PR #167 open action): a single 12-month query returned ZERO rows for scrip 540725; the same API in 60-day windows returned 222 rows. The collector's window is too wide. Evidence for the open action.
+- Main working tree is shared by live sessions and switched branch mid-run; run moved to a sparse worktree (.claude/worktrees/shareindia). A full worktree checkout failed with git out-of-memory.
+- Choice International files BSE "transcripts" that are one-page link letters; the real transcript sits behind the link.
+- Block files came back wrapped in markdown fences (stages 1, 2.1) and with path comments (B12b); stripped by orchestrator.
+- Stage 8 found a SEBI AO order (NSE co-location, ~30-May-2022) cited only in the NCLT scheme filing; sebi.gov.in blocked the automated search; freshness pair FAIL, CORPUS GAPPED-FRESHNESS.
+- Verifier B acceptance 50% (B05/B06 missed material concall flags) forced REWORK; B12b coverage_basis text disagreed with its own counts.
+- 09b wrote the draft marker with an em-dash; exact-string check failed; fixed by the same agent.

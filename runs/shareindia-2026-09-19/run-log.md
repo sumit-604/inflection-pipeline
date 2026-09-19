@@ -8,3 +8,4 @@
 - stage 2 pass 3: B02-notes.input_gaps emitted empty; B00.input_gaps remain authoritative and are passed to every later stage.
 - stage 8 found a SEBI AO order (NSE co-location, ~30-May-2022) cited in the Aug-2026 NCLT scheme filing; order text not in corpus; sebi.gov.in search blocked the automated request. B00 amended: freshness pair 3 FAIL, freshness_verdict CORPUS GAPPED-FRESHNESS. Gate caps at PROCEED WITH CAVEATS.
 - verifiers: B12b acceptance 50% (material 10, caught 5) -> overall 50 set by redflag_coverage -> forced REWORK band. B12b coverage_basis text inconsistent with its own counts (noted in confidence.yaml). B12b reply carried two path comment lines at the top of the block file; stripped.
+- 09b: draft marker written with an em-dash; exact-string check failed; same agent resumed via SendMessage, fixed the marker and 27 other em-dashes; recheck passed.

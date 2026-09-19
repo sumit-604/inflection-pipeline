@@ -1,0 +1,64 @@
+stage: B09b-dossier
+company: "SHAREINDIA"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+corpus_verdict: "CORPUS GAPPED-FRESHNESS"
+corpus_gaps:
+  - document: "SEBI Adjudication Order, NSE co-location matter, ~30-May-2022, Rs 3 lakh penalty"
+    expected_source: "rating agency site"  # nearest enum; actual source is sebi.gov.in > Enforcement > Orders > Orders of AO
+    kind: "freshness-pair"
+  - document: "Broker/research note or rating-agency research report"
+    expected_source: "rating agency site"
+    kind: "findable-missing"
+  - document: "Aug-2026 preferential warrant allotment filings, allottee identity (BSE 21-Aug-2026, 27-Aug-2026)"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "Silverleaf Capital Services Pvt Ltd pre-merger shareholder list"
+    expected_source: "BSE"  # NCLT/MCA register; nearest enum
+    kind: "findable-missing"
+  - document: "BSE SHP promoter-level pledgee-name and FII/DII split detail tables"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "Screener Financials.xlsx (Data_Sheet export)"
+    expected_source: "company IR page"
+    kind: "findable-missing"
+archetypes:
+  - line: "Proprietary trading desk (58.3% of FY26 consolidated income)"
+    archetype: "fits no known archetype"
+  - line: "NBFC lending (Share India Fincap, MTF book)"
+    archetype: "Lender"
+  - line: "Digital/algo platform (uTrade Algos, Algowire, Silverleaf)"
+    archetype: "Platform/network"
+transition:
+  - line: "Group revenue and profit mix, prop trading vs client/annuity business"
+    from_tier: "R1 COMMODITY PRICE-TAKER (prop-trading engine, no pricing power, ROCE cyclical with market direction)"
+    to_tier: "R3 VALUE-ADDED / SPEC'D SUPPLIER neighbourhood (specialised: institutional broking stickiness, scaled MTF book, wealth/PMS/AIF fees), claimed only"
+    engine: "(1) fee and commission income must rise as a share of total income while prop fair-value gains fall as a share, opposite of FY26 (-12.7%/-18.6% fee income); (2) MTF/NBFC book and new branches must scale on disclosed credit discipline while PMS/AIF/institutional lines convert stated targets into filed Rs Cr revenue"
+    proof_gate: "A single, consistently-defined revenue AND profit split (not volume) disclosed the same way for two consecutive quarters, showing prop share of profit falling from ~52% (Q4 FY26/Q1 FY27) toward management's own 45% end-FY27 target, with fee and commission income returning to positive YoY growth. NOT FIRED on phase 1 evidence."
+    recognition_gap: "OPEN QUESTION for Stage 11: whether the market already prices SHAREINDIA at a level consistent with the claimed client-annuity TO state or still at a prop-trading-dependent FROM level, given trailing PE ~13.7x (screener) against 0% three-year profit CAGR. No number, fair value, or conclusion stated here."
+    ugliness: "STRUCTURAL-FEATURE"
+    transition_falsifier: "A further 1-2 quarters where the prop share of profit (one consistent basis) does not decline below ~50-52%, combined with a second consecutive year of fee and commission income decline"
+dominant_variables:
+  - "Fee and commission income YoY growth (client engine health; fell 12.7%/18.6% FY26)"
+  - "Prop share of profit/revenue on a single consistent basis (flat ~52% across two quarters vs 45% end-FY27 target)"
+  - "MTF book growth against management's own restated targets (book +3% in six months against a thrice-restated target)"
+  - "Cash conversion and debt/rating access (CFO negative 3 of last 4 years; Infomerics ISSUER NOT COOPERATING since Nov-2024)"
+business_falsifier: "A funding-access shock (failed/unfavourable NCD redemption or refinancing, deepened Infomerics ISSUER NOT COOPERATING status, or an adverse order in the open SEBI show-cause notice or MCX appeal touching the prop book's capital base) that forces the group to shrink its own balance sheet"
+mental_model_status: "DRAFT - PENDING OPERATOR SIGN-OFF"
+fragility:
+  variable_count: 4
+  verifiability_ratio: "3 of 4 externally observable (fee income, MTF book, cash/rating access via exchange and rating-agency filings); 1 of 4 company-narrated only and shifting basis each quarter (prop-vs-client profit split)"
+  single_point_failure: "funding access / cash conversion (CFO negative 3 of last 4 years, Infomerics ISSUER NOT COOPERATING since 22-Nov-2024, adjourned NCD holders' meeting Aug-Sep 2026)"
+  fragility_verdict: "FRAGILE"
+candidate_count: 8
+second_order:
+  chains_drafted: 2
+  pending_live_links: 2
+  confirm_by_observations: 2
+research_brief_items: 8
+plain_summary_points: 15
+annex:
+  present: true
+  questions_answered: 10
+  corpus_commit_hash: "0cd9060d0e3245706018992c95730a73805a947e"

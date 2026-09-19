@@ -1,0 +1,105 @@
+stage: B00-inputs
+company: DPABHUSHAN
+run_date: 2026-09-19
+model: orchestrator (stage 0 run inline by the orchestrator session)
+status: complete
+corpus_commit: 74c3bb4647abcdd42067219a9eb55c67d06fa446
+spear_gate: "PASS. companies/DPABHUSHAN.md carries 'Spear: OVERRIDE 2026-09-19 (operator standing ruling 2026-09-05: Step-1 intake replaces the web spear)'."
+load_bearing_facts:   # first verification priority for every stage (from companies/DPABHUSHAN.md SPEAR)
+  - "LBF1 MARGIN SOURCE: FY26 gross margin 10% vs 7.72% FY25; Q1 FY27 EBITDA margin 11.0% vs Q4 FY26 5.45%. Separate inventory holding gain on rising gold from structural margin (mix, making charges): hedge accounting, gold metal loan (GML) share of inventory, MCX MTM, gold grams sold by quarter, the Q4 FY26 margin-dip explanation."
+  - "LBF2 CASH CONVERSION: CFO Rs -97 Cr FY26 on PAT Rs 212 Cr (screener); inventory days 100; borrowings Rs 290 Cr. Verify from FY26 AR cash flow, inventory and borrowings notes and the CARE rationale; classify GROWTH-INDUCED (new-store stock) vs STRUCTURAL."
+  - "LBF3 GUIDANCE VS DELIVERY: 25-30% revenue growth; ~6 stores a year to 51 by FY30; Rs 15,000 Cr revenue by FY30; diamond share 6-7% to 12-15% by Mar-2028; Rs 600 Cr QIP (approved Feb-2025) postponed. Test FY26 promises against delivery across the Q2 FY26 to Q1 FY27 calls."
+  - "LBF4 PROMOTER AND RELATED PARTIES: promoter 74.89%; Reg 29(2) acquisition disclosures by Santosh Kataria (2026); preferential warrants at Rs 1,182 converted 01-Jul-2025, allottees include promoter family members Supriya Kataria and Udit Kataria; RPTs with Kataria relatives (FY26 AR Form AOC-2); secretarial observation on late XBRL submission of RPT disclosures (FY26 AR)."
+sector_cap_row: "Consumer franchise / Jewellery"
+sector_cap_row_evidence: >
+  section-1b chunk 05 (.claude/skills/section-1b/references/05-sector-cap.md,
+  row 'Consumer franchise / Jewellery | 40x'). The company retails gold,
+  diamond and silver jewellery through 12 owned showrooms under the brand
+  'D. P. Jewellers' in MP and Rajasthan (FY26 AR business overview; CARE PR
+  08-Jan-2026 p1). The table has a named Jewellery row; it fits directly.
+  The collector guess 'Pharma / CDMO' is wrong and is discarded. FLAG for
+  phase 3: a ~90% gold-by-value retailer with ~4% historic OPM may carry
+  commodity-pass-through economics; whether any slice is a CONVERTER
+  (Amendment 17) is a stage 11 / operator question, not a cap-row question.
+reporting_units:
+  annual_report: "INR lakh (FY26 and FY25 AR financial statements, '( In Lakhs)')"
+  results: "INR lakh (Q3 FY26, Q4 FY26, Q1 FY27 results, 'In Lakh except per share data')"
+  presentation: "INR Cr (Q4 FY26 and Q1 FY27 decks, 'In Crores')"
+  screener: "INR Cr (screener Data_Sheet)"
+  rating: "INR crore (CARE PR)"
+  note: "Filings report in INR lakh; decks, CARE and screener in INR Cr. 100 INR lakh = 1 INR Cr. Conversion happens once, at stage 10."
+listed_date: ""
+recently_listed: false
+recently_listed_evidence: "Listing date not printed in the corpus. Screener yearly shareholding history begins Mar-2018 and the FY26 AR is the company's 9th AGM; listed more than 3 years before run_date. Prospectus not expected; its absence is not a gap."
+input_gaps:
+  - "COLLECTOR WARNING (verbatim): shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend."
+  - "COLLECTOR WARNING (verbatim): screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance Sheet, screener:Cash Flow, screener:Customization, THANGAMAYL:Profit & Loss, THANGAMAYL:Quarters, THANGAMAYL:Balance Sheet, THANGAMAYL:Cash Flow, THANGAMAYL:Customization, SENCO:Profit & Loss, SENCO:Quarters, SENCO:Balance Sheet, SENCO:Cash Flow, SENCO:Customization. Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again."
+  - "COLLECTOR WARNING (verbatim): no results PDFs yet (screener has none): add later on github or locally + --push-again"
+  - "COLLECTOR WARNING (verbatim): no rating PDF yet: add later the same way"
+  - "RESOLVED AT INTAKE: results/ filled from BSE (AttachHis): Q1 FY27 (board outcome 20-Jul-2026), Q4/FY26 audited (21-May-2026), Q3 FY26 (board outcome 23-Jan-2026, BSE-filed 29-Jan-2026). Q2 FY26 results (03-Nov-2025) held in inputs/other/ as an extra backward check; its text layer is poor OCR."
+  - "RESOLVED AT INTAKE: rating/ holds the company's Reg 30 CARE intimation (09-Jan-2026) and the full CARE press release with rationale (08-Jan-2026, careratings.com): CARE A-; Stable / CARE A2+, reaffirmed; limits Rs 51.95 Cr LT + Rs 288 Cr LT/ST."
+  - "RESOLVED AT INTAKE (PARTIAL): shareholding/ holds the screener shareholding table as text (Sep-2023 to Jun-2026; promoter 74.89%, FII 0.23%, DII 0.00% at Jun-2026). It is a SCREENER AGGREGATION, NOT A FILING: weigh, do not anchor. The filed pattern at 31-Mar-2026 is in the FY26 AR. The UA FII+DII qualifier may be read from the AR filed pattern; the Jun-2026 figure is unanchored."
+  - "screening: EMPTY-CSV defect present. Profit & Loss, Balance Sheet, Cash Flow and Quarters sheets are absent for the subject and all peers. The four Data_Sheet CSVs (screener-Data_Sheet.csv for DPABHUSHAN; SENCO, PNGJL, MOTISONS) are populated with raw annual P&L, balance sheet, cash flow and quarterly rows. Stage 1 reads Data_Sheet only. THANGAMAYL-Data_Sheet.csv moved to inputs/other/ (rejected peer)."
+  - "screener basis: main URL is STANDALONE (/company/DPABHUSHAN/). The /consolidated/ page stops at Mar-2022; the FY26 AR states the company has no subsidiary, JV or associate. Standalone is the only basis."
+  - "annual-report/: TWO ARs held, FY26 (Reg 34 filing 03-Sep-2026, 106 PDF pages, each PDF page a two-page print spread, printed pages up to 205) and FY25 (Reg 34 filing 05-Sep-2025, 221 PDF pages). Contract is 0-1: FY26 is the primary AR; FY25 is the backward-check AR. The FY26 AR duplicate in announcements/ (9c3bc998) was removed."
+  - "concalls: 4 transcripts held; quarter read from page 1: Concall_Dec_2025 = Q2 FY26 (call 06-Nov-2025, filed 12-Nov-2025; screener filename month is wrong); Concall_Jan_2026 = Q3 FY26 (call 24-Jan-2026); Concall_May_2026 = Q4 FY26 (call 22-May-2026); Concall_Jul_2026 = Q1 FY27 (call 22-Jul-2026). Stage 5 uses the three most recent (Q3 FY26, Q4 FY26, Q1 FY27); Q2 FY26 is an extra backward check."
+  - "peer-concalls: 12 transcripts, 4 per peer. SENCO (screener): Nov-2025, Feb-2026, Jun-2026 (filename; Q4 FY26), Aug-2026. PNGJL (BSE): 18-Nov-2025, 16-Feb-2026, 22-May-2026, 04-Aug-2026. MOTISONS (BSE): 17-Nov-2025, 18-Feb-2026, 19-May-2026, 17-Aug-2026. Stage 6 confirms each quarter from page 1. Peer set changed at intake: THANGAMAYL replaced by MOTISONS because Thangamayil files no earnings-call transcripts on BSE (checked 12 months of Reg 30 filings)."
+  - "announcements/: 27 Reg 30 filings Jul-2025 to Sep-2026 staged from BSE by month-window queries (the collector's own fetch returned 6). Curated, not exhaustive: trading-window, Reg 74(5), newspaper and analyst-meet intimations mostly excluded. Includes board outcomes (01-Jul-2025 warrant conversion, 03-Sep-2025, 05-Aug-2026, 22-Aug-2026 MD/WTD re-appointment), showroom openings (Dhar 29-Mar-2026, Dahod COCO and Jabalpur FOCO 20-Jul-2026, Jodhpur COCO 17-Aug-2026, Dahod inauguration 03-Sep-2026), press releases, e-commerce launch (07-May-2026), ESOP grant (04-Nov-2025), BSE volume clarification (09-Jul-2026), annual secretarial compliance report (25-May-2026), FY26 BRSR and AGM notice (03-Sep-2026)."
+  - "announcements/SAST-*.pdf: four Reg 29(2) SAST disclosures by promoter Santosh Kataria (BSE rows carry no submission date; the one readable file is dated 16-Apr-2026, acquisition 12-Feb-2026). THREE are image-only scans with NO TEXT LAYER (SAST-67E48196, SAST-D20D00B6, SAST-E3FFDBC9): UNREADABLE by the text route in this session (pdftoppm absent). Named here, never anchored."
+  - "research: EMPTY. No broker notes. No effect on anchored evidence."
+  - "presentation: 2 decks, Q4 FY26 (22-May-2026) and Q1 FY27 (21-Jul-2026). Earlier decks not held."
+  - "prospectus: EMPTY, not expected (listed >3 years). Not a gap."
+  - "TOOLING: pdftoppm absent; the Read tool cannot render PDF pages. Every input PDF is pre-extracted with pdftotext -layout to a page-marked .txt BESIDE the PDF (same basename, '[page N]' markers = PDF page numbers). Stages and verifiers read the .txt; anchors cite the PDF with the page number. FY26 AR: PDF page N holds two printed pages side by side; cite the PDF page and, where visible, the printed page."
+freshness_pairs:
+  - pair: "RESULTS to CONCALL"
+    trigger_doc: "inputs/results/20260720-770099c4-55e0-4738-9ce5-f2b82db4215a.pdf (Q1 FY27, quarter ended 30-Jun-2026)"
+    mate_expected: "Q1 FY27 earnings call transcript"
+    status: PASS
+    missing_doc: ""
+    mate_found: "inputs/concalls/Concall_Jul_2026_Transcript.pdf (Q1FY27 call held 22-Jul-2026)"
+  - pair: "RATING BULLETIN to RATIONALE"
+    trigger_doc: "inputs/rating/20260109-a44cc6f8-46e8-4aad-a9fa-8e4c56300f46.pdf (Reg 30 intimation, CARE, 09-Jan-2026)"
+    mate_expected: "full CARE rating rationale"
+    status: PASS
+    missing_doc: ""
+    mate_found: "inputs/rating/CARE-PR-2026-01-08-DPAbhushan.pdf (CARE press release 08-Jan-2026, rationale and key rating drivers)"
+  - pair: "SEBI ORDER to ORDER TEXT"
+    trigger_doc: "none"
+    mate_expected: "n/a"
+    status: PASS
+    missing_doc: ""
+    note: "No SEBI order referenced. FY25 and FY26 ARs state 'no adjudication proceedings against the company'; the annual secretarial compliance report (25-May-2026) shows fine amount Nil."
+  - pair: "AR to LATEST AUDITED ANNUAL RESULTS"
+    trigger_doc: "inputs/results/20260521-1f90fd61-0444-4296-90ce-6f7bcec0c8d1.pdf (FY26 audited, 21-May-2026)"
+    mate_expected: "FY26 Annual Report"
+    status: PASS
+    missing_doc: ""
+    mate_found: "inputs/annual-report/Annual_Report_2026.pdf (FY2025-26, Reg 34 filing 03-Sep-2026)"
+freshness_verdict: FRESHNESS PAIRS OK
+corpus_verdict_hint: "CORPUS GAPPED (shareholding filing for Jun-2026 absent, three SAST scans unreadable, research absent, earlier decks absent); freshness pairs OK"
+operator_pause: "EMPTY-FOLDER CONFIRMATION suppressed by /step1 AUTONOMY CONTRACT; standing answer 'proceed with the gaps'. Empty folders: research/ (prospectus/ empty and not expected). shareholding/ holds only a non-filing screener table."
+corpus_manifest:
+  - {path: inputs/annual-report/Annual_Report_2026.pdf, issuer: D. P. Abhushan Ltd, type: "Annual Report FY2025-26 + 9th AGM notice (Reg 34 filing 03-Sep-2026)", period: FY26, folder_match: yes}
+  - {path: inputs/annual-report/Annual_Report_2025.pdf, issuer: D. P. Abhushan Ltd, type: "Annual Report FY2024-25 (Reg 34 filing 05-Sep-2025)", period: FY25, folder_match: "yes (backward check)"}
+  - {path: inputs/results/20260720-770099c4-55e0-4738-9ce5-f2b82db4215a.pdf, issuer: D. P. Abhushan, type: "Board outcome + unaudited results + limited review", period: "Q1 FY27", folder_match: yes}
+  - {path: inputs/results/20260521-1f90fd61-0444-4296-90ce-6f7bcec0c8d1.pdf, issuer: D. P. Abhushan, type: "Board outcome + audited results + auditor report", period: "Q4 / FY26", folder_match: yes}
+  - {path: inputs/results/20260129-81074665-0907-4666-98eb-27b270351130.pdf, issuer: D. P. Abhushan, type: "Board outcome 23-Jan-2026 + unaudited results", period: "Q3 / 9M FY26", folder_match: yes}
+  - {path: inputs/other/20251103-7cb31ac1-f239-4eaa-ab5c-937550021e0d.pdf, issuer: D. P. Abhushan, type: "Q2 FY26 results (poor OCR text)", period: "Q2 / H1 FY26", folder_match: "other (4th results filing, beyond the 0-3 contract)"}
+  - {path: inputs/rating/20260109-a44cc6f8-46e8-4aad-a9fa-8e4c56300f46.pdf, issuer: "D. P. Abhushan (Reg 30 cover) + CARE letter", type: "rating intimation", period: "09-Jan-2026", folder_match: yes}
+  - {path: inputs/rating/CARE-PR-2026-01-08-DPAbhushan.pdf, issuer: CARE Ratings, type: "rating press release with rationale", period: "08-Jan-2026", folder_match: yes}
+  - {path: inputs/concalls/Concall_Jul_2026_Transcript.pdf, issuer: D. P. Abhushan, type: transcript, period: "Q1 FY27", folder_match: yes}
+  - {path: inputs/concalls/Concall_May_2026_Transcript.pdf, issuer: D. P. Abhushan, type: transcript, period: "Q4 FY26", folder_match: yes}
+  - {path: inputs/concalls/Concall_Jan_2026_Transcript.pdf, issuer: D. P. Abhushan, type: transcript, period: "Q3 FY26", folder_match: yes}
+  - {path: inputs/concalls/Concall_Dec_2025_Transcript.pdf, issuer: D. P. Abhushan, type: transcript, period: "Q2 FY26 (filename month wrong)", folder_match: yes}
+  - {path: inputs/presentation/20260721-96dd0406-966d-4d04-887d-4eda3845b905.pdf, issuer: D. P. Abhushan, type: investor presentation, period: "Q1 FY27", folder_match: yes}
+  - {path: inputs/presentation/20260522-05926324-f7cf-47dd-bd05-03a825efe33e.pdf, issuer: D. P. Abhushan, type: investor presentation, period: "Q4 / FY26", folder_match: yes}
+  - {path: "inputs/peer-concalls/SENCO-*.pdf (4)", issuer: Senco Gold Ltd, type: transcripts, period: "Q2 FY26 to Q1 FY27 (stage 6 confirms)", folder_match: yes}
+  - {path: "inputs/peer-concalls/PNGJL-*.pdf (4)", issuer: P N Gadgil Jewellers Ltd, type: transcripts, period: "Q2 FY26 to Q1 FY27 (stage 6 confirms)", folder_match: yes}
+  - {path: "inputs/peer-concalls/MOTISONS-*.pdf (4)", issuer: Motisons Jewellers Ltd, type: transcripts, period: "Q2 FY26 to Q1 FY27 (stage 6 confirms)", folder_match: yes}
+  - {path: "inputs/announcements/*.pdf (27)", issuer: D. P. Abhushan (SAST files by promoter Santosh Kataria), type: "Reg 30 / SAST filings", period: "Jul-2025 to Sep-2026", folder_match: yes}
+  - {path: inputs/announcements/20260903-0989d038-a3f2-44fd-95e1-aac198263750.pdf, issuer: D. P. Abhushan, type: "BRSR FY26", period: FY26, folder_match: "yes (Reg 30 filing)"}
+  - {path: inputs/announcements/20260903-8d1f88a8-075f-4af5-bd71-075d39222a68.pdf, issuer: D. P. Abhushan, type: "9th AGM notice", period: "Sep-2026", folder_match: yes}
+  - {path: inputs/shareholding/screener-shareholding-pattern-2026-09-19.txt, issuer: "screener.in (aggregation)", type: "shareholding table, NOT A FILING", period: "Sep-2023 to Jun-2026", folder_match: "partial (non-filing)"}
+  - {path: "inputs/screening/{screener,SENCO,PNGJL,MOTISONS}-Data_Sheet.csv", issuer: screener.in, type: "raw financial data sheet", period: "10y annual + 10q", folder_match: yes}
+flags: []
+analyst_note: "Peer set changed at intake (THANGAMAYL out, MOTISONS in) for want of peer transcripts. Filings report in INR lakh; decks and screener in INR Cr."

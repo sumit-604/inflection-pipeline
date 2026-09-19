@@ -23,3 +23,27 @@ not split input/output, so in_tok/out_tok read n/a).
 | 12c | verifier C framework (phase-1 half) | claude-opus-5 | default | n/a | n/a | 142726 | 6m46s | 1 |
 | 12d | verifier D peers | claude-sonnet-5 | default | n/a | n/a | 87416 | 4m19s | 1 |
 | 13 | synthesis-lite (phase 1) | claude-opus-5 | default | n/a | n/a | 237436 | 8m17s | 1 |
+| 9b | Halt 1 understanding dossier | claude-sonnet-5 | default | n/a | n/a | 236476 | 9m52s | 1 |
+| 9b | Halt 1 dossier marker fix (em-dash in DRAFT marker; resumed same agent) | claude-sonnet-5 | default | n/a | n/a | n/a | ~2m | 2 |
+
+## CLOSE-OUT SUMMARY
+
+Run total (sum of ledger rows with token counts): 3,227,162 tokens.
+
+(a) TOP FIVE BY TOKENS
+| rank | stage | total_tok | share |
+|---|---|---|---|
+| 1 | 2 notes triple-pass (3 runs) | 410,233 | 12.7% |
+| 2 | 6 peer concall verification | 354,991 | 11.0% |
+| 3 | 1 gate 0 scorecard (2 runs) | 305,650 | 9.5% |
+| 4 | 13 synthesis-lite | 237,436 | 7.4% |
+| 5 | 9b Halt 1 dossier (2 runs; fix run untallied) | 236,476 | 7.3% |
+
+(b) DOWNSHIFT FAILURES
+- DOWNSHIFT FAILURE: stage 0 (input validation ran inline in the Opus orchestrator session, as run-pipeline step 1 directs "do this yourself"; no haiku stage-0 agent exists). Verifier A ran on haiku as routed.
+
+(c) COST SPIKES
+- none (no prior CAPILLARY run ledger exists).
+
+(d) OPERATOR SNAPSHOT
+- Operator: run /cost and /usage now and paste the cache hit ratio and loop totals under an "Operator snapshot" heading here.

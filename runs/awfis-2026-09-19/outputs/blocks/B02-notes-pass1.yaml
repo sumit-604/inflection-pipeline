@@ -1,0 +1,80 @@
+stage: B02-notes
+company: "AWFIS"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+pass: 1
+status: pass1_complete
+provenance_note: >
+  Source is the FY26 Annual Report (Reg 34 filing, 176pp incl. 12th AGM notice), read in full for
+  Notes to the Standalone Financial Statements (Note 1-48, PDF p.92-125), cross-read against the
+  Notes to the Consolidated Financial Statements (PDF p.133-165) for every subsidiary/RPT/segment/
+  contingent-liability item, plus the standalone Independent Auditor's Report and its CARO 2020
+  Annexure (PDF p.55-90, incl. Key Audit Matter p.83-84 and disputed statutory dues table p.86).
+  Three GST Show Cause Notice announcements (20-May, 02-Jun, 04-Jun 2026) were cross-checked against
+  the Notes per the task brief; their absence from the Notes is itself reported as a finding.
+notes_scope: >
+  Standalone Notes 1-48 (PDF p.92-125) read in full, all sub-notes and footnotes. Consolidated notes
+  read selectively for subsidiaries (group info table, PDF p.154), related parties (PDF p.154-156),
+  contingent liabilities (PDF p.155-156), segment information (PDF p.152-154), and going concern
+  (PDF p.133-134) - every item the priority list names as Group/consolidated-specific.
+input_gaps:
+  - "No weighted-average incremental borrowing rate (IBR) disclosed anywhere in the standalone or consolidated Notes (Note 4M policy references IBR but gives no numeric rate)"
+  - "No numeric ECL loss-rate-by-ageing-bucket matrix disclosed (Note 8 ageing table gives balances only, not the applied provision rate per bucket)"
+  - "No separate accounting policy, revenue line, or lease treatment disclosed anywhere in the Notes for Managed Aggregation (MA) revenue-share arrangements, distinct from ordinary co-working/rental accounting; MA is discussed only in the MD&A/business-description sections outside the Notes"
+  - "Two GST Show Cause Notices (~Rs6.53 Cr received 20/21-May-2026 for FY23-24; ~Rs7.10 Cr dated 23-May received 25-May-2026 for FY22-23) confirmed present in the announcements corpus are NOT FOUND anywhere in the Notes to Financial Statements (no Note 33 entry, no subsequent-events note); the first notice predates the 25-May-2026 board approval of the FY26 accounts"
+  - "Note 33 (Contingent liabilities), both standalone and consolidated, discloses zero quantified amounts; the only quantum for disputed statutory dues (~Rs1,101.50mn / ~INR110.15 Cr, Income Tax + GST) is in the standalone auditor's CARO Annexure (PDF p.86), not in the Ind AS 37 note itself"
+  - "No explicit statement of when/whether the Company formally elected Section 115BAA (concessional 25.17% rate); visible only by comparing the FY26 vs FY25 statutory-rate lines in Note 39's tax reconciliation"
+  - "2021 lease resets named in company memory (companies/AWFIS.md LBF2) are NOT mentioned anywhere in the FY26 AR notes (outside this year's comparatives; would require the FY22 AR, not in corpus)"
+load_bearing_facts_status:
+  - {lbf: "LBF1 cash EBITDA bridge / lease cash outflow", status: "PARTIALLY CONFIRMED FROM NOTES", detail: "Note 38 gives exact lease cash outflow: principal Rs2,505.11mn + interest Rs1,616.53mn = Rs4,121.64mn FY26 (~Rs412.16 Cr) vs Rs2,462.21mn FY25 (~Rs246.22 Cr), +67.4% YoY, outpacing standalone continuing-ops revenue growth of +32.9%. The Notes do not themselves compute or reconcile a cash-EBITDA figure to the FY27 Rs195-200 Cr guide or Q1 FY27 Rs44 Cr delivery; that reconciliation needs the Cash Flow Statement and results filings, outside this stage's remit."}
+  - {lbf: "LBF2 lease book and ALM", status: "CONFIRMED FROM NOTES (partial)", detail: "Full lease liability maturity given (Note 36 Liquidity risk): undiscounted up to 1yr Rs5,293.98mn FY26 (Rs4,313.44mn FY25, +22.7%), 1-2yr Rs4,368.35mn, 2-5yr Rs6,608.32mn, >5yr Rs1,885.54mn, total Rs18,156.20mn vs carrying Rs14,502.69mn. Effective interest rate fell to 9.05% (11% FY25). No MA-vs-straight-lease split and no numeric IBR found (see input_gaps). 2021 lease resets not in this AR's notes."}
+  - {lbf: "LBF3 governance, control, business transfer", status: "CONFIRMED FROM NOTES", detail: "Design & Build transfer to Awfis Transform Pvt Ltd fully detailed in Note 40: BTA approved 23-Dec-2025, slump sale consideration Rs265.91mn, timeline extended to 31-Dec-2026 pending revised valuation, disposal group revenue -7.8% and PBT -31.9% YoY. CFO change (Ravi Dugar to Sumit Rochlani, 3-Feb-2026), Company Secretary change (Amit Kumar to Shweta Gupta, 30-Sep-2025), and director Arjun Shanker Bhartia's exit (till 09-Apr-2026) all confirmed in Note 32 KMP list. GST SCNs confirmed present in corpus but absent from the Notes (the governance-relevant finding is the disclosure gap itself)."}
+  - {lbf: "LBF4 occupancy and churn", status: "OUT OF SCOPE for Notes stage", detail: "Occupancy % and seat-count churn are MD&A/business-description KPIs, not in the Notes to Financial Statements. Only churn-adjacent fact in the Notes is the Note 46B customer default / NCLT recovery item (Rs113.08mn lease receivables derecognised FY26, Rs188.65mn FY25; additional impairment Rs34.76mn FY26, Nil FY25) - a recurring two-year pattern with one enterprise customer."}
+top_findings_preliminary:
+  - {rank: 1, finding: "Contingent liabilities note (Note 33) discloses zero quantified amounts in both standalone and consolidated FS, while the standalone auditor's CARO Annexure (PDF p.86) discloses ~Rs1,101.50mn (~INR110.15 Cr) of disputed statutory dues under appeal (Income Tax Rs1,083.38mn incl. Rs757.93mn at Delhi High Court = 13.9% of net worth; GST Rs18.12mn), none of which appear in the Ind AS 37 note itself", note_ref: "Note 33, standalone PDF p.112-113 and consolidated PDF p.155-156; CARO Annexure PDF p.86", rating: "RED", why: "Direct disclosure-consistency gap within the same Annual Report; the statutory Ind AS 37 note that is supposed to carry this exact information carries nothing"}
+  - {rank: 2, finding: "Two GST Show Cause Notices (~Rs6.53 Cr FY23-24, received/disclosed 20/21-May-2026; ~Rs7.10 Cr FY22-23, dated 23-May received 25-May-2026) are entirely absent from the Notes to Financial Statements; the first predates the 25-May-2026 board approval of the FY26 accounts and no subsequent-events note exists to capture it", note_ref: "Cross-checked against announcements 20260521-*, 20260602-*, 20260604-*; NOT FOUND in Note 33 or elsewhere in the AR notes", rating: "RED", why: "A known, dated, quantified tax demand that existed before the financial statements were approved is missing from the notes specifically designed to capture it"}
+  - {rank: 3, finding: "Design & Build business transfer to Awfis Transform Pvt Ltd (100% subsidiary): slump sale Rs265.91mn, timeline extended to 31-Dec-2026 pending revised valuation; the transferring segment's revenue fell 7.8% and PBT fell 31.9% YoY in the same year of the carve-out", note_ref: "Note 40, PDF p.122-123", rating: "YELLOW", why: "Directly answers LBF3; the asset being transferred is shrinking, and the stated consideration will be re-based on a later valuation, so Rs265.91mn is not final"}
+  - {rank: 4, finding: "Effective tax rate is 0% in both FY26 and FY25 (current tax Nil, deferred tax Nil); mechanism is a large DTL (ROU/PPE Rs2,616.93mn + finance lease receivables Rs901.90mn, new this year) exactly netting a large DTA (lease liabilities Rs3,650.04mn + carryforwards), with management explicitly choosing not to recognise DTA in excess of DTL", note_ref: "Note 39, PDF p.121-122", rating: "YELLOW", why: "Explains the priority-flagged 'unusually low effective tax rate'; structural feature of the Ind AS 116 lease book, not an aggressive tax position - if anything conservative, and ~Rs150-250mn of unrecognised carryforward benefit is a future one-time non-cash-credit watch item"}
+  - {rank: 5, finding: "Lease cash outflow grew 67.4% YoY (Rs2,462.21mn to Rs4,121.64mn: principal Rs1,169.45mn to Rs2,505.11mn +114.2%, interest Rs1,292.76mn to Rs1,616.53mn +25.0%) while continuing-ops revenue grew 32.9%", note_ref: "Note 38, PDF p.120-121", rating: "YELLOW", why: "The single most direct notes-based number bearing on LBF1's reported-to-cash EBITDA bridge; lease cash commitment is growing materially faster than revenue"}
+  - {rank: 6, finding: "Lessor-side finance lease reclassification: number of finance leases grew from 9 to 30 YoY, net investment in finance lease +76.1% (Rs2,035.33mn to Rs3,583.51mn), finance lease income +302.8% (Rs70.13mn to Rs282.51mn)", note_ref: "Note 38 Part II (lessor), PDF p.121", rating: "YELLOW", why: "A real shift in how much reported client income is front-loaded interest-method recognition versus straight-line rental; changes both revenue quality and balance sheet composition"}
+  - {rank: 7, finding: "MSME payment discipline deteriorating: MSME principal due (incl. capital creditors) up 55.9% YoY (Rs173.20mn to Rs270.04mn), and MSMED Act interest became payable for the first time (Rs0.93mn FY26, Nil FY25)", note_ref: "Note 20(b), PDF p.107-108", rating: "YELLOW", why: "Small in absolute rupee terms but a first-time-occurrence signal on supplier payment discipline"}
+  - {rank: 8, finding: "ESOP P&L charge grew 141.3% YoY (Rs41.41mn to Rs99.91mn), with ~75% of the FY26 charge (Rs74.68mn) concentrated in a single KMP grant to CEO Sumit Lakhani", note_ref: "Note 26/Note 37/Note 32, PDF p.110, p.118-120, p.111-112", rating: "YELLOW", why: "Material non-cash cost growth with unusually high single-person concentration, worth naming even though fully disclosed and quantified"}
+  - {rank: 9, finding: "Customer default and NCLT (Hyderabad) recovery proceedings: lease receivables derecognised Rs113.08mn FY26 (Rs188.65mn FY25, a recurring two-year pattern) plus fresh impairment loss Rs34.76mn FY26 (Nil FY25)", note_ref: "Note 46B, PDF p.124", rating: "YELLOW", why: "A named, quantified, recurring bad-debt pattern with one enterprise customer now in formal recovery proceedings"}
+  - {rank: 10, finding: "Managed-aggregation (MA) revenue-share accounting is NOT FOUND anywhere in the Notes to Financial Statements, and no numeric weighted-average lease discount rate (IBR) is disclosed", note_ref: "Note 4A/4M policy text, PDF p.93-94, p.96-97; Note 38, PDF p.120-121", rating: "YELLOW", why: "Direct gap against the priority-topic ask; MA is discussed only in MD&A, not accounted for distinctly in the Notes"}
+receivables_trend_preliminary: >
+  Comparability is broken by the Design & Build carve-out (Rs937.14mn receivables + Rs733.42mn contract
+  assets moved to held-for-sale in FY26, Note 40), so the headline fall in gross trade receivables
+  (Rs1,277.20mn to Rs510.99mn) is not a like-for-like collections signal. Within the continuing-ops
+  book, the ageing mix improved: receivables overdue >6 months fell from ~27.1% of gross (Rs345.91mn /
+  Rs1,277.20mn FY25) to ~21.1% (Rs107.56mn / Rs510.99mn FY26), but this partly reflects the smaller,
+  post-carve-out base rather than pure collections improvement. ECL allowance fell from Rs69.24mn to
+  Rs60.08mn (roll-forward: provision made Rs57.44mn, reclassified to held-for-sale Rs(66.60)mn). Zero
+  disputed receivables either year. Trade receivables turnover 12.26x FY25 to 11.45x FY26 (-6.6%,
+  company's own Note 41 ratio, below the 25% explanation threshold). Related-party (Awliv) receivable
+  grew 259.9% (Rs3.49mn to Rs12.56mn) on a small base. Net read: broadly stable to modestly improving
+  on ageing mix, with the YoY comparison structurally distorted by discontinued operations.
+going_concern_language: >
+  PRESENT in both standalone (Note 2, PDF p.92) and consolidated (Note 2, PDF p.133-134) Basis of
+  Preparation notes - management's own paragraph, not an auditor qualification. Cites net current
+  liability position: standalone Rs3,388.14mn at 31-Mar-2026 (Rs2,140.98mn FY25, +58.3%); consolidated
+  Rs3,127.70mn (Rs2,110.86mn FY25, +48.2%). Current ratio 0.68x (Note 41), down from 0.71x. Management
+  concludes going-concern basis is appropriate citing planned fund-raising, operating cash generation,
+  and working-capital optimisation. The Independent Auditor's Report carries NO Material Uncertainty
+  Related to Going Concern paragraph and NO Emphasis of Matter paragraph in either the standalone or
+  consolidated opinion - both are unmodified/unqualified.
+restatements_found_preliminary:
+  - "Note 48 (standalone) and its consolidated equivalent: standard 'previous year figures regrouped/reclassified... not material' boilerplate, no items named"
+  - "FY25 comparatives in Notes 8 (receivables), 22 (revenue), and elsewhere are NOT restated to a continuing-operations-only basis throughout every note; the Design & Build disposal group's FY25 comparatives instead sit in the supplementary Note 40 only. Ind AS 105-compliant, not an error, but a genuine comparability trap for anyone reading individual notes without cross-referencing Note 40"
+  - "Consolidated Note 1 'Group overview' and 'Basis of consolidation' paragraphs (PDF p.133) are drafted in the singular ('its wholly-owned subsidiary... the Group'; 'the Holding Company and its subsidiary'), omitting Awfis Transform Pvt Ltd by name, even though the consolidated group-information table (PDF p.154) and related-party note correctly consolidate both subsidiaries at 100%. A note-preparation QC gap, not a consolidation-scope error"
+analyst_note: >
+  Two items dominate this pass and both sit on the disclosure-quality axis rather than the
+  operating-performance axis: (1) the Note 33 contingent-liability blank next to a ~Rs110 Cr CARO
+  disputed-dues table in the same document is the kind of gap a verifier should independently confirm
+  by re-reading both sections, since it is easy to miss if only Note 33 is checked; (2) the GST SCN
+  absence from the notes is timing-sensitive - the first notice (Rs6.53 Cr) existed before the
+  25-May-2026 board approval date, which is the fact that elevates it from "routine post-year-end
+  litigation" to a genuine notes-completeness question worth a direct management question at Halt 1.
+  Separately, the lease cash-outflow growth (+67.4%) outpacing revenue growth (+32.9%) and the 9-to-30
+  finance-lease reclassification are the two numbers most load-bearing for the FY27 cash-EBITDA
+  thesis; downstream stages building the cash-EBITDA bridge should anchor to Note 38's Rs4,121.64mn
+  FY26 lease cash outflow figure rather than re-deriving it from the cash flow statement alone.

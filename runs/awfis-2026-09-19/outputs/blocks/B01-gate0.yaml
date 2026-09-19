@@ -1,0 +1,64 @@
+stage: B01-gate0
+company: "AWFIS"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "COLLECTOR WARNING (verbatim): screener export sheets came out EMPTY for Profit & Loss, Quarters, Balance Sheet, Cash Flow, Customization for AWFIS and all three peers (SMARTWORKS, INDIQUBE, DEVX). Only the Data_Sheet CSVs are populated; used exclusively for this scorecard."
+  - "RESOLVED AT INTAKE (PARTIAL): shareholding/ holds the BSE shareholding SUMMARY for quarter ended June 2026 only. FII/DII split is NOT in the summary; E1's professionally-managed alternate (FII+DII>50%) could not be tested."
+  - "screener Data_Sheet 'Selling and admin' line is blank for FY26 (collector gap); M11's selling-expense leg used FY25 as the nearest available point."
+  - "screener Data_Sheet BALANCE SHEET section carries no Trade Payables line for any year; Payable Days (B4, M10, M12) and current-liabilities split (A1/A2/D1-D4) required FY26 AR (FY25, FY26) and IPO Prospectus (FY21, FY22, FY23) instead. FY19, FY20, FY24 have no current-liabilities/payables breakdown in the provided corpus and are marked NOT FOUND for those sub-metrics."
+  - "DevX (peer) Raw Material Cost line is blank for all years in its Data_Sheet; M9 gross-margin-proxy peer median used Smartworks and Indiqube only (2 of 3 peers)."
+  - "No quantified contingent-liability amount is disclosed in the FY26 AR (Ind AS 37 recognition criteria not met); E4 marked N/A, not zero."
+  - "3-year promoter-holding history (E2) does not exist: AWFIS listed 30-May-2024. Used post-Offer expected 28.25% (Prospectus), FY25 actual 20.40% and FY26 actual 17.00% (both AR p.104) as the available points."
+flags:
+  - type: FLAG-GATE0
+    reason: "Classification AVOID (Core 31/100) with historical depressors identified: dominated by Ind AS 116 lease-liability accounting (Block D 1/20, ~97% of screener 'Borrowings' is lease liability, AR's own ex-lease adjusted net debt is negative/net-cash both FY25 and FY26) and a short 2-of-8-year clean balance-sheet window (FY25-26 only) for Blocks A/E. Growth (38.3% revenue CAGR) and cash generation (100% FCF-positive years, deepening negative WC days) are strong. Not a going-concern signal; route to Halt 1 for qualitative read, do not treat as a standalone kill."
+  - type: FLAG-LEASE-ACCOUNTING
+    reason: "Screener 'Borrowings' (Rs1,501.18 Cr FY26) is ~97% lease liability (financial borrowings only Rs509.03m/Rs50.90 Cr). All D1-D4 scores are on the reported (lease-inclusive) basis per the fixed formula; the AR's own adjusted net debt is negative (net cash), -Rs386.84 Cr FY26 and -Rs583.12 Cr FY25 (AR p.155). Section 1B/FTTCP must decide which basis governs valuation for this Ind AS 116 lessee."
+  - type: FLAG-ROCE-DEFINITION-GAP
+    reason: "FY26 AR business review (p.9) claims '60%+ RoCE... across 250+ centres, 175K+ seats' vs this scorecard's fixed-formula ROCE of 13.47% FY26 (EBIT/[Total Assets-Current Liabilities]). Gap almost certainly the capital-employed definition (company likely excludes lease liabilities). Unreconciled; must be resolved before any ROCE-based downstream input."
+  - type: FLAG-MARGIN-VS-PEERS
+    reason: "AWFIS FY26 core EBITDA margin 36.8% is 23.9pp below the 3-peer median 60.7% (Smartworks 64.3%, Indiqube 60.7%, DevX 48.4%), despite AWFIS being the largest of the four by revenue. M2 scored 0. Check Transform/D&B segment mix and peer accounting comparability before reading as a genuine cost disadvantage."
+  - type: FLAG-SHAREHOLDING-GAP
+    reason: "E1 professionally-managed alternate untestable (FII/DII split not in the provided BSE summary). E2's apparent 3.40pp FY25-to-FY26 promoter decline (20.40% to 17.00%, AR p.104) is 3.24pp a 10-Jul-2025 reclassification of Peak XV Partners from Promoter to Public, not an open-market sale; residual decline ~0.16pp for the year."
+data_years: 8
+fy_range: "FY19 to FY26"
+blocks: {A: 7, B: 10, C: 8, D: 1, E: 5}
+core_score: 31
+moat_score: 24
+grand_total: 55
+moats_confirmed: 5
+moat_class: "STRONG"
+classification: "AVOID"
+deal_breakers:
+  - "1: Block A = 7 <8 -> max GOOD (TRIGGERED, non-binding: base already below this cap)"
+  - "3: median ROCE 4.01% <10% -> max AVERAGE (TRIGGERED, non-binding: base already below this cap)"
+  - "4: cumulative CFO/PAT negative (cumulative PAT -Rs155.74 Cr FY19-26 vs cumulative CFO +Rs1,523.81 Cr) -> max AVERAGE (TRIGGERED, non-binding)"
+  - "8: PAT negative in FY24 (-Rs17.57 Cr), within last 3 years FY24-26 -> max AVERAGE (TRIGGERED, non-binding; FY25 and FY26 PAT both positive)"
+history_downgrade: false
+data_notes:
+  - "C2/C4: loss-to-profit swing, FY19 (PAT -Rs62.47 Cr) to FY26 (PAT +Rs70.85 Cr, last loss year FY24 -Rs17.57 Cr); PAT CAGR marked N/M, C4 scored 0 per the fixed CAGR edge rule."
+  - "B1/B3: cumulative CFO/PAT and cumulative FCF/PAT both score 0 on a negative/near-zero cumulative-PAT denominator, not a cash-quality problem. Cumulative CFO Rs1,523.81 Cr (FY19-26) and cumulative FCF Rs656.39 Cr (FY21,22,23,25,26, the years with capex data) are both strongly positive; cumulative PAT is -Rs155.74 Cr (FY19-26 full window) / -Rs7.72 Cr (matched FY21,22,23,25,26 window for B3)."
+  - "A1/A2/D1-D4: capital-employed / current-liabilities breakdown available only FY21, FY22, FY23 (IPO Prospectus restated financials, p.76-79) and FY25, FY26 (FY26 AR, standalone p.89, consolidated p.130-131). FY19, FY20, FY24 NOT FOUND for this sub-metric and excluded from median/min/trend calculations."
+  - "A3: net worth negative or sign-crossing in FY19, FY20, FY22, FY23, FY24, and FY25 (IPO capital infusion crosses FY24's negative opening to FY25's positive closing) -> all marked N/M (negative/crossing net worth), excluded. Only FY26 (opening and closing both positive) produces a valid ROE (14.01%); median is a single data point."
+  - "B4/M10/M12: WC Days computed only for FY21, FY22, FY23, FY25, FY26 (payables data availability, see input_gaps); FY19, FY20, FY24 NOT FOUND."
+  - "M9: gross-margin proxy (Revenue-Material Cost)/Revenue is not a business-model fit for a lease-and-sublet operator (no real raw-material cost line); scored per the literal rule (AWFIS 97.83% vs 2-peer median 96.46%, +1.37pp, below the 5pp band) but flagged as not a genuine brand read."
+  - "M6/M7: scored 0 by definition, not by data gap -- no R&D line disclosed, and flexible-workspace leasing is an unregulated activity in the provided corpus."
+  - "PEER DATA used for M2, M5, M9, M11 comparisons: SMARTWORKS-Data_Sheet.csv, INDIQUBE-Data_Sheet.csv, DEVX-Data_Sheet.csv (same Data_Sheet-only basis as AWFIS)."
+block_b_trend: "improving -- FCF turned from Rs19.4 Cr (FY21) to Rs405.8 Cr (FY26); WC days deepened from -24.9 (FY21) to -41.3 (FY26). The B1/B3 zero scores are a denominator artifact, not a trend reversal."
+analyst_note: >
+  AVOID is mechanically correct but two effects the fixed formulas cannot
+  see through drive nearly all of it. First, Ind AS 116: screener
+  "Borrowings" (Rs1,501 Cr) is 97% lease liability; the AR's own ex-lease
+  net debt is negative both FY25 and FY26, yet Block D scored 1/20 on the
+  reported basis. Second, only FY25-FY26 carry a full balance-sheet
+  breakdown in this corpus, so Blocks A and E ride a two-year window on a
+  company 2.3 years post-IPO. Growth (38.3% CAGR) and cash generation
+  (100% FCF-positive years, WC days -24.9 to -41.3) are genuinely strong
+  and undercut the AVOID's implication of business decay. The company's
+  own "60%+ RoCE" claim (AR p.9) against this scorecard's 13.47% is an
+  unreconciled capital-employed definition gap Section 1B must resolve.
+  The one clean peer read that survives (EBITDA margin 23.9pp below
+  median despite largest scale) is the more genuine yellow flag here and
+  deserves stage 2-3 attention over the mechanical debt ratios.

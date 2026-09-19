@@ -1,0 +1,52 @@
+```yaml
+stage: B02-notes-pass1
+company: "SUSAN"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: pass1_complete
+input_gaps: []
+flags:
+  - {type: FLAG-CASH, reason: "CFO negative two years running: Rs (971.43) Lakhs FY26 on PAT Rs 1,824.64 Lakhs; Rs (1,214.67) Lakhs FY25 on PAT Rs 502.96 Lakhs (Cash Flow Statement, p.58). Total borrowings up 47.4% to Rs 6,671.70 Lakhs (Note 4a, p.68)."}
+accounting_quality: 0   # scoring deferred to Pass 3 consolidation per instruction file
+pass_2_empty: false     # not yet run
+pass_3_empty: false     # not yet run
+top_findings:
+  - {rank: 1, finding: "CFO negative two years running (FY26 Rs -9.71 Cr on PAT Rs 18.25 Cr; FY25 Rs -12.15 Cr on PAT Rs 5.03 Cr); total borrowings +47.4% to Rs 66.72 Cr", note_ref: "Cash Flow Statement p.58; Note 4a p.68", rating: "RED FLAG", why: "Growth entirely debt-funded; core cash-conversion signal"}
+  - {rank: 2, finding: "AR highlights page labels PBT (Rs 24.62 Cr, 9.14% margin) as 'EBITDA'; true EBITDA is Rs 32.69 Cr (12.1% margin), partly from a Rs 12.54 Cr finished-goods inventory build booked as a P&L credit", note_ref: "p.5; Note 21 p.76-77; Note 23/24 p.77", rating: "WATCH", why: "Explains LBF1 margin composition and a labelling defect in the AR's own summary"}
+  - {rank: 3, finding: "Three non-reconciling 'prior period' figures for FY26 (Rs 10.44L Note 26 with no face-P&L line; Rs 8.89L Note 3 direct-to-reserves bypassing P&L; Rs 14.20L cash flow statement)", note_ref: "Note 3 p.66; Note 26 p.78; Cash Flow p.58", rating: "RED FLAG", why: "Direct-to-reserves adjustment bypassing P&L, inconsistent across three statements"}
+  - {rank: 4, finding: "MSMED Act interest liability Rs 18.67L first appears FY26 (nil FY25); MSME payables up 4.2x to Rs 17.06 Cr, now 90.9% of trade payables", note_ref: "Note 9 p.70; Note 29 p.82; Note 7 p.69", rating: "RED FLAG", why: "First-year evidence of deteriorating payment discipline to small suppliers"}
+  - {rank: 5, finding: "Aluminium Rod trading revenue Rs 0.08 Cr (FY25) to Rs 72.10 Cr (FY26), 26.8% of total revenue alone; traded-products share 14.4% to 38.4% of revenue", note_ref: "Note 18 p.75-76", rating: "WATCH", why: "Confirms LBF3: largest FY26 growth driver is a low-value-add trading line, not manufactured cable volume"}
+  - {rank: 6, finding: "Note 34 Events-After-Balance-Sheet-Date cites 'after March 31, 2025' not 2026 (apparent carried-over boilerplate); does not disclose the BSE SME DRHP approval (15-Apr-2026) inside the true subsequent-events window", note_ref: "Note 34 p.89; Secretarial Audit Report p.41", rating: "RED FLAG", why: "Wrong date on a required disclosure; material subsequent event (imminent listing) unnamed"}
+  - {rank: 7, finding: "Contingent liabilities up 5.6x to Rs 5.92 Cr (15.4% of net worth), incl. new Rs 4.72 Cr guarantee with no disclosed beneficiary", note_ref: "Note 32 p.86-87", rating: "WATCH", why: "Crosses >10%-of-net-worth threshold; guarantee counterparty undisclosed"}
+  - {rank: 8, finding: "Related-party purchases from M/s SMV Enterprises (Mahak Jain proprietorship) up 19.8x to Rs 11.15 Cr, the transaction named in the AGM material-RPT ratification resolution", note_ref: "Note 28 p.78-81; AOC-2 p.35; Notice p.19", rating: "WATCH", why: "Scale/direction of growth in a single promoter-family counterparty; disclosure itself ties out cleanly"}
+  - {rank: 9, finding: "Zero CWIP and nil capital commitments at 31-Mar-2026 against guidance of 12,000 km/yr capacity by Feb-2027 on Rs 15-20 Cr FY27 capex", note_ref: "Note 33.04 p.87; Note 32 p.86", rating: "WATCH", why: "Capacity-expansion story has not left the starting gate as of the balance sheet date (LBF4)"}
+  - {rank: 10, finding: "Bank facilities secured by personal guarantees of Vishal Jain, Mahak Jain and Sanju Jain plus mortgages on their personal real estate", note_ref: "Note 4(a) Notes 1-2 p.68", rating: "WATCH", why: "Standard for SME borrower but blurs personal/corporate boundary; relevant to promoter-quality assessment"}
+red_flags:
+  - "CFO negative two years running despite PAT growth (Cash Flow Statement p.58)"
+  - "Three non-reconciling prior-period adjustment figures for FY26, one bypassing the P&L directly to reserves (Note 3 p.66, Note 26 p.78, Cash Flow p.58)"
+  - "First-time MSMED Act delayed-payment interest liability, Rs 18.67 Lakhs (Note 9 p.70, Note 29 p.82)"
+  - "Note 34 subsequent-events disclosure cites the wrong balance sheet date and omits the DRHP/listing approval that fell inside the true window (Note 34 p.89)"
+questions_for_mgmt:
+  - "What is driving the two-year negative operating cash flow despite rising PAT, and what is the plan to normalise working-capital consumption (inventory + receivables) relative to revenue growth?"
+  - "Reconcile the three FY26 'prior period' figures: Rs 10.44 Lakhs (Note 26), Rs 8.89 Lakhs (Note 3, direct to reserves), and Rs 14.20 Lakhs (Cash Flow Statement) — are these the same item split three ways, or three distinct items?"
+  - "Confirm the correct reporting date intended in Note 34 (31-Mar-2025 as printed, or 31-Mar-2026) and disclose whether the BSE SME DRHP approval (15-Apr-2026) and subsequent listing were considered as a subsequent event."
+  - "What is the nature, counterparty and purpose of the new Rs 471.57 Lakh guarantee given on behalf of the Company (Note 32)?"
+  - "What is the business rationale for the sharp increase (19.8x) in purchases from M/s SMV Enterprises, and how is arm's-length pricing evidenced for this related party?"
+receivables_trend: "stable — total receivables +84.8% (Rs 25.05 Cr to Rs 46.31 Cr FY26), slower than revenue +98.4%; DSO improved 51.2 to 48.3 days (Note 33.12 turnover ratio); >6-month bucket rose from Rs 28.32L to Rs 82.54L (1.13% to 1.78% of total, still small); the <6-month ageing bucket explicitly includes not-due amounts so true within-terms DSO cannot be isolated (Note 15a/15b p.73). The FLAG-CASH driver is inventory and short-term advances, not receivables ageing specifically."
+restatements_found: []
+going_concern_language: "NONE — Board's Directors Responsibility Statement and Auditor's Report both affirm going concern with no material uncertainty (Board's Report p.28; Auditor's Report CARO clause (xix) p.51); no going-concern qualification anywhere in the notes."
+analyst_note: >
+  This is Pass 1 of 3 (full extraction, AR notes only per pipeline scope
+  rule). Accounting_quality score deferred to Pass 3 consolidation once
+  Pass 2 (missed items) and Pass 3 (pattern/contradiction pass) complete.
+  Two items flagged above are corroborated cross-references rather than
+  independent problems: Note 33.03 (no loans given to related parties)
+  does not conflict with Note 4a/28 (loans received FROM related
+  parties) once read carefully. The FY25 Plant & Machinery
+  reclassification figure (Note 10) that does not arithmetically tie to
+  its own row, despite the FY25 total column reconciling, is flagged as
+  WATCH pending a source-PDF image check (possible table-extraction
+  artifact, not asserted as confirmed). RHP-sourced items (FY24 baseline,
+  govt-vs-private customer split, GST show-cause notice detail) are
+  explicitly out of scope for this AR-only pass.
+```

@@ -1,0 +1,54 @@
+```yaml
+stage: B01-gate0
+company: "SUSAN"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "E2 (promoter holding change over 3 years): N/A, no pre-IPO shareholding filing exists to compare against"
+  - "M2/M5/M9 (moat tests needing peer median): PEER DATA NEEDED, only DIACABS peer screener data downloaded and it is a post-CIRP name not comparable in scale or profile"
+  - "M6 (R&D/Rev): no R&D expense line disclosed anywhere in corpus for SUSAN"
+  - "LBF1 segment-EBITDA reconciliation (6.5% LT / 7% HT vs ~12% company) not resolvable at Gate 0: no segment P&L in Data_Sheet, RHP, AR or Q1 FY27 result"
+  - "LBF3 government-vs-private revenue split by year not located in sections read for this stage"
+flags:
+  - {type: FLAG-GATE0, reason: "Classification AVERAGE, driven by Block B = 0/20 (cumulative CFO/PAT FY23-26 = -1.15, FCF negative 3 of 4 years, WC days +45.32 FY24 to FY26) against borrowings tripling Rs24.8 Cr to Rs66.7 Cr FY24-FY26. Corroborated independently by CRISIL rationale naming 'high working capital cycle' as a rated weakness."}
+  - {type: FLAG-GATE0, reason: "Block C = 20/20 is base-effect inflated: 5yr PAT CAGR ~196% and PAT-minus-revenue CAGR spread of +155pp both driven by a near-zero FY21 PAT base (Rs0.08 Cr = Rs8 Lakhs), not a repeatable operating-leverage signal."}
+data_years: 6
+fy_range: "FY21 to FY26"
+blocks: {A: 14, B: 0, C: 20, D: 5, E: 13}
+core_score: 52
+moat_score: 21
+grand_total: 73
+moats_confirmed: 5
+moat_class: "STRONG"
+classification: "AVERAGE"
+deal_breakers:
+  - "#2 Block B <8 (actual 0) -> caps max GOOD (no effect, already below)"
+  - "#4 cumulative CFO/PAT <0.50 (actual -1.15) -> caps max AVERAGE (reinforces Core-score outcome)"
+history_downgrade: true
+data_notes:
+  - "PAT CAGR FY21-26 (~196%) and PAT-minus-revenue CAGR spread (+155pp) are base-effect artifacts off a near-zero FY21 PAT (Rs0.08 Cr); flagged, not treated as a growth-quality signal."
+  - "ROCE/ROE for FY21-FY23 marked N/A (not in provided data): screener Data_Sheet does not split Current Liabilities from Borrowings/Other Liabilities for those years, so EBIT/(TA-CL) cannot be computed without estimating a missing split."
+  - "FCF capex for FY23 uses screener total-investing-activity as a PROXY (RHP restatement covers only FY24-26 with a clean 'purchase of fixed assets' line); FY23 figure is therefore less precise than FY24-26."
+  - "M4 and M10 (Customer Stickiness, Switching Costs) scored 3 via judgment call: zero revenue-decline years satisfies the top-band growth clause, but receivable-days stability fails the top-band threshold, and the rubric's lower bands are keyed to decline-year counts (1/2/3+) that do not apply when there are zero declines."
+  - "M11 (Network Effects) mechanically scores 5 but the construct does not fit a cable manufacturing/trading archetype; flagged for downstream discount."
+  - "Trade Receivables/Inventory/Payables Working Capital Days computed on REVENUE basis (not COGS): no explicit standalone COGS line is disclosed, only Cost of Material Consumed plus separate inventory-change and other-expense lines."
+block_b_trend: "deteriorating -- WC days rose from 60.64 (FY24) to 123.58 (FY25) before easing to 105.96 (FY26), net +45.32 days over the two-year restated window, while CFO stayed negative in all three restated years (FY24 -Rs5.49 Cr, FY25 -Rs18.39 Cr, FY26 -Rs9.71 Cr) against PAT positive and rising throughout."
+analyst_note: >
+  Core score 52 (AVERAGE) sits on a split profile: Block C's 20/20 is a
+  small-base artifact (FY21 PAT of Rs8 Lakhs), not evidence of durable
+  operating leverage, and should not be read as confirming the growth
+  story on its own. Block B's 0/20 is the real signal: three straight
+  restated years of CFO below PAT, FCF negative in three of four years,
+  and borrowings near-tripling to fund a working-capital cycle CRISIL
+  itself names as a weakness. Block F (moat, STRONG) rests on only 5 of
+  12 tests scoring "present," two of those five are minimum-threshold
+  judgment calls (M4, M10) on a rubric-fit ambiguity, and a third (M11)
+  applies a platform-business construct to a cable manufacturer. Three
+  tests (M2, M5, M9) are unscored for missing peer data (DIACABS is a
+  post-CIRP outlier, not a usable comparator; DYCL and VIDYAWIRES
+  screener sheets did not download). LBF1's segment-margin reconciliation
+  and LBF3's government-revenue-share glide path are both named but not
+  resolvable from documents read at this stage; carry both forward
+  unresolved, not as closed items.
+```

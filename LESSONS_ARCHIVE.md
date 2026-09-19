@@ -598,3 +598,13 @@ Verifier C check 15 (PR #163, PR #164), and the LESSONS discipline changes
 (PR #165).
 
 Size: LESSONS.md 164 lines / 1555 words before, 119 lines / 1062 words after.
+
+## 2026-09-19 — RAPPID (Rappid Valves (India) Ltd) — /step1 intake, phase 1 to Halt 1 (runs/rappid-2026-09-19)
+Peers KSB, QUESTFLOW (Quest Flow Controls, BSE 543982, formerly Meson Valves India), ATAM. Gate PROCEED WITH CAVEATS (INDETERMINATE cash + promoter CONCERN; confidence 75). No valuation run.
+- Collector crashed after downloads, in classification (OpenBLAS memory allocation failure, likely pypdf on a 57 MB AR). Classification, CSVs and manifest finished by hand with the collector's own functions.
+- NSE Emerge SME name: no BSE code, so the BSE announcement fetch cannot apply. announcements/, results/ and shareholding/ were filled from the NSE SME APIs (corporate-announcements?index=sme, corporate-share-holdings-master?index=sme; cookie from nseindia.com first). PROMOTION CANDIDATE: an NSE SME branch in collect_to_repo.py.
+- BSE AnnSubCategoryGetData rejects a window over 12 months ("Date range cannot exceed 12 months"). Relevant to the untested fetch_bse_announcements open action (PR #167): its 12-month default must stay at or under 365 days.
+- Peer transcripts are thin for small valve makers: Marine Electricals files none (dropped), Quest Flow filed one (Jun-2024); screener lists AI "Transcript" summaries with no PDF behind them. A duplicate ATAM Q4FY24 transcript (with and without cover letter) was removed.
+- Verifier D round 1 raised a false MAJOR ("QUESTFLOW transcript has zero page markers"); the file has 32. It searched for "Page N of M" only.
+- Verifier B partial-catch convention decides REWORK: 75% counting partials, 58% strict. Carried to Halt 1 as an operator ruling.
+- Framework gap raised by Verifier C: prompts/01 does not say whether "the data source" for ROCE includes AR/RHP-disclosed ROCE; Gate 0 core is 62 or 65 depending on the reading (final AVERAGE either way).

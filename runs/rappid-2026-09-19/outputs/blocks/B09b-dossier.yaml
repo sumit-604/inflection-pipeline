@@ -1,0 +1,59 @@
+stage: B09b-dossier
+company: "RAPPID"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+corpus_verdict: "CORPUS GAPPED"
+corpus_gaps:
+  - document: "credit rating rationale"
+    expected_source: "rating agency site"
+    kind: "plausibly-nonexistent"
+  - document: "broker/research notes"
+    expected_source: "company IR page"
+    kind: "plausibly-nonexistent"
+  - document: "ATAM Valves concall transcripts more recent than Jul-2024"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "Quest Flow Controls / Meson Valves India transcripts, Oct-2024 to Sep-2026"
+    expected_source: "BSE"
+    kind: "plausibly-nonexistent"
+  - document: "Final Prospectus (post-RHP)"
+    expected_source: "company IR page"
+    kind: "findable-missing"
+archetypes:
+  - line: "Industrial valves (67% of FY26 revenue)"
+    archetype: "Build-to-spec component maker"
+  - line: "Marine/naval valves (33% of FY26 revenue, up from 0.5% FY23)"
+    archetype: "Order-book business (EPC/defence/capital goods)"
+transition:
+  - line: "Marine/naval valves"
+    from_tier: "R1 Commodity price-taker (undifferentiated, 0.5% of revenue FY23)"
+    to_tier: "R3 Value-added/spec'd supplier (type-approval and switching-cost lock-in)"
+    engine: "Marine type-approval/classification-society certification (ClassNK, UL, API/DNV/IBR) plus approved-vendor status converting into dated, PO-backed FSS work orders (BHEL, Shree Refrigerations, Muller-BBM, L&T)"
+    proof_gate: "H1 FY27 operating cash flow turns positive AND receivables plus inventory fall below Rs 51.51 Cr (31-Mar-2026 level) while Marine + Shipbuilding & Repair revenue share holds at or above 30%"
+    recognition_gap: "OPEN QUESTION, resolved at Stage 11: does current pricing already assume the marine mix-shift narrative keeps compounding, or does it still price the company as a flat commodity industrial valve maker"
+    ugliness: "STRUCTURAL-FEATURE (most evidenced draft reading; ARTIFACT-OF-CLIMB is a live competing account for the FY26 increment alone; separating observation is the H1 FY27 print)"
+    transition_falsifier: "Marine + Shipbuilding & Repair revenue share reverting toward the FY23 base of 0.5% for two consecutive periods, or the FSS/naval order pipeline drying up while the receivable/inventory pattern persists unchanged"
+dominant_variables:
+  - "CFO / PAT ratio: -1.67x FY26, -2.12x FY25"
+  - "Marine + Shipbuilding & Repair % of revenue: 32.85% FY26, up from 0.5% FY23"
+  - "Executable order book (Rs Cr) QoQ: ~Rs40 Cr at Q1 FY27, +60% YoY"
+  - "Trade receivables / inventory turnover: 2.14x / 2.00x FY26, down from 2.71x / 3.22x FY24"
+business_falsifier: "A working-capital funding failure: the CMD's own stated need for fresh funding within 4-5 months of the Jun-2026 call going unmet, given the IPO's capex/acquisition buffer (Rs764.51 Lakh) is already spent redirecting to working capital, forcing an order-execution halt, covenant issue, or distressed capital raise across both revenue lines"
+mental_model_status: "DRAFT - PENDING OPERATOR SIGN-OFF"
+fragility:
+  variable_count: 5
+  verifiability_ratio: "2 of 5 externally observable"
+  single_point_failure: "additional working-capital funding shortfall (CMD-stated need within H2 FY27); a funding failure would halt order execution across both lines regardless of naval order momentum"
+  fragility_verdict: "FRAGILE"
+candidate_count: 6
+second_order:
+  chains_drafted: 2
+  pending_live_links: 2
+  confirm_by_observations: 2
+research_brief_items: 9
+plain_summary_points: 15
+annex:
+  present: true
+  questions_answered: 10
+  corpus_commit_hash: "074a32392097043632952df0c555f89a332f9773"

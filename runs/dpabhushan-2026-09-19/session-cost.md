@@ -23,3 +23,4 @@ not split input/output, so in_tok/out_tok read n/a).
 | 12b | verifier B red flags | claude-opus-5 | default | n/a | n/a | 299717 | 10m28s | 1 |
 | 12c | verifier C framework (phase-1 half) | claude-opus-5 | default | n/a | n/a | 124077 | 4m56s | 1 |
 | 12d | verifier D peers | claude-sonnet-5 | default | n/a | n/a | 93143 | 2m44s | 1 |
+| 13 | synthesis-lite (phase 1) | claude-opus-5 | default | n/a | n/a | 224835 | 8m44s | 1 |

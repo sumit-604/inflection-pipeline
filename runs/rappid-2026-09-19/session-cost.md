@@ -13,3 +13,5 @@ Run: runs/rappid-2026-09-19 | Phase 1 executed 2026-09-19 via /step1
 | 4 | business model | sonnet | agent default | - | - | 127968 | 5m08s | 1 |
 | 5 | concall (no-concall mode) | sonnet | agent default | - | - | 229571 | 7m44s | 1 |
 | 8 | promoter | sonnet | agent default | - | - | 185080 | 9m20s | 1 |
+| 6 | peer concalls | sonnet | agent default | - | - | 178576 | 7m40s | 1 |
+| 7 | emerging moat | sonnet | agent default | - | - | 239916 | 10m16s | 1 |

@@ -1,4 +1,8 @@
-# Shallow Analysis Framework v1.0
+# Shallow Analysis Framework v1.1
+
+v1.1 (2026-09-19, operator ruling): step 5A, the FY27 forward read, is required on
+every card and its four numbers ride in the header. Earlier cards lacked it; the
+operator had asked for it repeatedly and the spec never carried it.
 
 The specification for the shallow read of a screener candidate. It sits between
 the screener hit and the heavy pipeline. Its job is understanding, a posture,
@@ -37,8 +41,9 @@ Operator: Keerti Kaushik. Strategy: transition alpha, quality-ladder climb.
 ## The output, per company
 
 One markdown file at `screens/cards/<TICKER>.md`. The Business Understanding
-Narrative first, then the twelve steps as sections, then the verdict. Roughly
-1,400 to 1,900 words. Operator voice: one idea per sentence, numbers first,
+Narrative first, then the twelve steps (plus 5A) as sections, then the verdict.
+Roughly 1,400 to 2,100 words. The header block carries one line with the four
+step-5A numbers: FY27E revenue, FY27E PAT, FY27E PAT growth, forward P/S. Operator voice: one idea per sentence, numbers first,
 active voice, no em-dashes, plain words.
 
 ## Business Understanding Narrative (read first, prose)
@@ -50,10 +55,11 @@ Five questions, answered in prose before any step or verdict.
 4. What must be true for the thesis to work?
 5. What breaks it?
 
-## The twelve steps
+## The twelve steps, plus 5A
 
 The four themes the operator named each get a dedicated step: business model
-(2), transition (6), competitive advantages (3), promoters (4).
+(2), transition (6), competitive advantages (3), promoters (4). The operator's
+standing ask, the FY27 forward read, is step 5A.
 
 1. **Corpus ledger.** What is held, what is missing, which later step each gap
    weakens. No new fetching.
@@ -70,6 +76,26 @@ The four themes the operator named each get a dedicated step: business model
    quarters: revenue, EBITDA margin, PAT, ROCE, leverage, cash-conversion
    direction. Classify the inflection: earnings-led, margin-led, one-off, or an
    asset event.
+5A. **FY27 forward read.** Four numbers, each with its basis named: expected
+   FY27 revenue, expected FY27 PAT, FY27 PAT growth on FY26 actual, and forward
+   price to sales (market cap from the screen divided by FY27E revenue; CMP to be
+   verified live). FY27E is an estimate by construction and is always marked E.
+   The basis follows a fixed hierarchy and the card names the letter used:
+   (a) management's numeric FY27 guidance, taken as stated, with PAT derived at
+   the FY26 conversion ratio when only revenue or EBITDA is guided;
+   (b) no numeric guidance: FY26 actual times the latest reported quarter's
+   year-on-year growth (this holds the quarter's share of the year at last
+   year's share, so it carries a ramp forward for a ramping business and the
+   season for a seasonal one), with PAT at the latest quarter's PAT margin, or
+   at the FY26 margin when the latest quarter is a seasonal loss;
+   (c) no FY27 quarter reported yet: FY26 actual times the three-year CAGR, or
+   the FY26 growth rate when three years are not held, and PAT at the FY26
+   margin.
+   One primary reading, one alternate reading, and the single observation that
+   separates them (v3.9 Amendment 25 applies: no shading to be safe). For a
+   lender the top line is NII including fees. For a loss-maker the PAT line says
+   loss, gives the mechanical read, and quotes management's direction. Never a
+   blend of bases, never an unlabelled number.
 6. **The transition and the quality ladder.** The rung the business leaves and
    the rung it claims, R0 to R5, with the mechanism. Management's claim quoted
    once.
@@ -90,7 +116,11 @@ The four themes the operator named each get a dedicated step: business model
 ## Rules that must not break
 
 - Every number traces to a corpus file and page.
-- No valuation, no target price, no buy or sell instruction.
+- No valuation, no target price, no buy or sell instruction. The step-5A
+  forward P/S is a market-implied multiple the operator requires; it is not a
+  valuation and never becomes a price.
+- Step 5A's FY27E figures are the one place an estimate is allowed. They are
+  marked E, carry their basis letter, and never overwrite a filed number.
 - A missing document marks the steps it weakens; it does not stop the analysis.
 - The credit rating is one view, not the verdict. Today's filings win over an
   older rating.

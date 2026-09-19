@@ -1,0 +1,17 @@
+﻿company: IOL Chemicals & Pharmaceuticals Ltd
+ticker: IOLCP
+cmp: 203.0
+market_cap_cr: 5963.0
+run_date: 2026-09-19
+run_type: full
+concalls_available: true
+sector_cap_row: "Pharma / CDMO"   # /step1 Step D 2026-09-19: pharma API is the larger segment and the thesis engine (section-1b chunk 05, 38x); chemicals (acetyls) slice is a converter, SOTP candidate for phase 3. Stage 0 confirms.
+sector_cap_row_guess: "Pharma / CDMO"   # keyword guess only, never consumed
+collector_warnings:
+  - "shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend."
+  - "screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance Sheet, screener:Cash Flow, screener:Customization, AARTIDRUGS:Profit & Loss, AARTIDRUGS:Quarters, AARTIDRUGS:Balance Sheet, AARTIDRUGS:Cash Flow, AARTIDRUGS:Customization, GRANULES:Profit & Loss, GRANULES:Quarters, GRANULES:Balance Sheet, GRANULES:Cash Flow, GRANULES:Customization, LXCHEM:Profit & Loss, LXCHEM:Quarters, LXCHEM:Balance Sheet, LXCHEM:Cash Flow, LXCHEM:Customization. Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again."
+  - "no results PDFs yet (screener has none): add later on github or locally + --push-again"
+  - "no rating PDF yet: add later the same way"
+listed_date: ""   # long-listed (BSE 524164); prospectus not expected
+notes: "Step-1 intake 2026-09-19. Corpus repaired after collection: 30 BSE filings added by month-window query (results x3, rating bulletin, Reg 30, SAST 29(2) x8, older presentations); CARE Jul-2025 rationale added (Jun-2026 rationale not found); 8 quarters of BSE shareholding pattern added; screener workbooks recalculated in Excel so P&L/BS/CF/Quarters CSVs carry figures; standalone 10-year export added as screener-standalone-*; duplicate PDFs removed; every PDF pre-extracted to page-marked .txt (OCR fallback). Collected from screener.in by collect_to_repo.py v3. sector_cap_row is deliberately empty: resolve it at stage 0 against the Section 1B cap table."
+

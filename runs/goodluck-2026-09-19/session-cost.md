@@ -23,3 +23,25 @@ Per-stage token ledger. One row per subagent run. Stage 0 is orchestrator-inline
 | 12c | verifier C framework (phase 1) | claude-opus-5 | default | n/a | n/a | 126381 | 310s | 1 |
 | 12d | verifier D peers | claude-sonnet-5 | default | n/a | n/a | 213752 | 267s | 1 |
 | 13 | synthesis-lite (phase 1) | claude-opus-5 | default | n/a | n/a | 221844 | 463s | 1 |
+| 09b | Halt 1 dossier | claude-sonnet-5 | default | n/a | n/a | 178178 | 473s | 1 |
+
+## Close-out summary (Phase 1)
+
+Run total (subagent rows): 3,126,383 tokens across 18 subagent runs.
+
+(a) TOP FIVE BY TOKENS (loop and retry runs summed per stage):
+- 2 notes triple-pass: 443,935 (14.2%)
+- 12b verifier B red flags: 290,129 (9.3%)
+- 3 AR deep dive: 240,280 (7.7%)
+- 6 peer concall verification: 223,894 (7.2%)
+- 13 synthesis-lite: 221,844 (7.1%)
+
+(b) DOWNSHIFT FAILURES: none. Stage 0 ran orchestrator-inline (no subagent); verifier A ran on claude-haiku-4-5 both runs; stage 10 is Phase 3.
+
+(c) COST SPIKES: none (no prior runs/goodluck-* ledger exists).
+
+(d) OPERATOR SNAPSHOT: run /cost and /usage now and paste the cache hit ratio and loop totals below.
+
+### Operator snapshot
+
+(pending operator)

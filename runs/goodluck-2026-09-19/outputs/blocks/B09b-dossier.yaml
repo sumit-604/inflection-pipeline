@@ -1,0 +1,79 @@
+stage: B09b-dossier
+company: "GOODLUCK"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+corpus_verdict: "CORPUS GAPPED-FRESHNESS"
+corpus_gaps:
+  - document: "India Ratings rationale, Goodluck Defence and Aerospace Ltd (IND A+/Stable), Aug-2026"
+    expected_source: "rating agency site"
+    kind: "freshness-pair"
+  - document: "BSE Reg 31 shareholding pattern (pledge %, category-wise split)"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "Screener P&L/Balance Sheet/Cash Flow/Quarters export sheets (GOODLUCK and peers)"
+    expected_source: "company IR page"
+    kind: "findable-missing"
+  - document: "Broker/equity research corpus"
+    expected_source: "company IR page"
+    kind: "findable-missing"
+  - document: "BALUFORGE earnings call transcripts"
+    expected_source: "BSE"
+    kind: "plausibly-nonexistent"
+  - document: "GDAL statutory auditor identity and audit-fee/non-audit-fee split"
+    expected_source: "company IR page"
+    kind: "findable-missing"
+  - document: "Precision Pipes & Auto Tubes segment TAM and Balu Forge FY26 revenue"
+    expected_source: "BSE"
+    kind: "findable-missing"
+archetypes:
+  - line: "CR Coils, Pipes & Tubes (34% FY26 revenue)"
+    archetype: "Commodity converter"
+  - line: "Precision Pipes & Auto Tubes (27%)"
+    archetype: "Build-to-spec component maker"
+  - line: "Engineering Structures & Precision Fabrication (24%)"
+    archetype: "Order-book business (EPC/capital goods)"
+  - line: "Forging Products (15%)"
+    archetype: "Build-to-spec component maker"
+  - line: "Defence & Aerospace, GDAL (~6% of Q1 FY27 run-rate)"
+    archetype: "Licence/scarcity business"
+transition:
+  - line: "Core steel processing (CR/Pipes/Tubes, PPAT, Forgings, Engineering Structures)"
+    from_tier: "R1 COMMODITY PRICE-TAKER"
+    to_tier: "R3 VALUE-ADDED / SPEC'D SUPPLIER"
+    engine: "Mix shift toward tubes/forgings/structures; value-added revenue share rose 64% to 66% of FY26 sales; gross margin rose ~27% to ~33%"
+    proof_gate: "Value-added mix (ESF+Forging+PPAT) sustaining >=66% of sales for 2+ consecutive quarters, without standalone EBITDA margin (9.17% Q1 FY27, -57bps YoY) continuing to fall"
+    recognition_gap: "Open question, resolved at Stage 11: does the current multiple already sit in the R3 neighbourhood, spending the re-rating engine, or is it still available"
+    ugliness: "ARTIFACT-OF-CLIMB (most evidenced reading; capex-funded per rating agencies); STRUCTURAL-FEATURE is the competing reading on the inventory-days/ROCE evidence"
+    transition_falsifier: "Value-added mix reverting toward the CR-heavy historical split, or gross margin reverting from 33% toward the mid-20s without a stated cause"
+  - line: "Defence & Aerospace (GDAL)"
+    from_tier: "R0 NON-OPERATING / ACCOUNTING-DRIVEN"
+    to_tier: "R5 BRAND / SCARCITY OWNER neighbourhood (claimed; candidate SOTP row named at B00, a phase-3 ruling not applied here)"
+    engine: "Arms Act licence unlocks government shell orders at 30-35% guided EBITDA margin; capacity expansion 150,000 to 400,000 shells/year via ~Rs500cr Phase-2 capex"
+    proof_gate: "GDAL quarterly defence revenue sustaining Rs75-88cr/quarter at 30-35%+ EBITDA margin for 2+ consecutive quarters (one clean quarter exists: ~Rs81.5cr at 36-38%, Q1 FY27)"
+    recognition_gap: "Open question, resolved at Stage 11: does current pricing already reflect a scarcity-premium defence slice"
+    ugliness: "ARTIFACT-OF-CLIMB (most evidenced reading; India Ratings expects negative FCF near-term from GIL+GDAL capex); STRUCTURAL-FEATURE is the competing reading on dispatch-delay-driven inventory build and 4-year ROE decline"
+    transition_falsifier: "A second slip on the 400,000-shell Phase-2 timeline past Q4 FY28, or the order book remaining unquantified across further calls while the FY27 revenue guide holds unchanged"
+dominant_variables:
+  - "Value-added revenue mix % (ESF+Forging+PPAT), currently 66% of FY26 sales"
+  - "GDAL quarterly defence revenue vs the Rs300-350cr FY27 guide, currently ~Rs81.5cr at 36-38% margin (one quarter)"
+  - "Consolidated CFO/PAT ratio and inventory days, currently 1.10x FY26 and 84 days"
+  - "GDAL 400,000-shell Phase-2 execution timeline, currently targeting Q4 FY28 commercial after one confirmed slip"
+business_falsifier: "Net Debt/EBITDA crossing 3x together with Interest Coverage below 3x (the Gate 0 deal-breaker-6 AVOID trigger, currently 2.69x/3.32x), combined with a covenant event on the Rs275cr parent guarantee for GDAL's HDFC Bank facility (Debt/EBITDA<=1.50x release covenant); or any auditor qualification, going-concern flag, or regulatory action tied to the unresolved GDAL ownership and related-party questions"
+mental_model_status: "DRAFT - PENDING OPERATOR SIGN-OFF"
+fragility:
+  variable_count: 4
+  verifiability_ratio: "2 of 4 externally observable"
+  single_point_failure: "none - failure requires conjunction"
+  fragility_verdict: "FRAGILE"
+candidate_count: 7
+second_order:
+  chains_drafted: 2
+  pending_live_links: 2
+  confirm_by_observations: 2
+research_brief_items: 11
+plain_summary_points: 15
+annex:
+  present: true
+  questions_answered: 10
+  corpus_commit_hash: "193042e26042c1f28a96e3ece51f392deea6f58d"

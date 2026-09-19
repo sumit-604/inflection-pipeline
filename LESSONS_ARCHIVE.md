@@ -598,3 +598,15 @@ Verifier C check 15 (PR #163, PR #164), and the LESSONS discipline changes
 (PR #165).
 
 Size: LESSONS.md 164 lines / 1555 words before, 119 lines / 1062 words after.
+
+## 2026-09-19 — GOODLUCK (Goodluck India Ltd, runs/goodluck-2026-09-19) /step1 intake, phase 1 to Halt 1
+
+- Parallel session (AWFIS) held the main checkout and companies.txt; ran this intake in worktree .claude/worktrees/goodluck on run/goodluck-2026-09-19. collect_to_repo.py hardcodes REPO_ROOT to the main checkout, so it was patched locally (not committed) to Path(__file__).resolve().parents[2]. A first sed patch mangled the Windows path and cost one collector restart.
+- fetch_bse_announcements first live test (open action, PR #167): it RAN and wrote 9 files, but 7 duplicated the AR, AGM notice, BRSR, transcript and presentation; it caps at 25 rows and has no AttachHis fallback, so filings older than ~2 months returned non-PDF bodies. Re-fetched 37 unique filings by hand with the AttachHis fallback. The action is not closed: fix cap, dedupe and fallback first.
+- Collector gave no results/ and no rating/: filled from BSE (Q3 FY26, Q4 FY26, Q1 FY27) and CRISIL/India Ratings (rationales printed to PDF with headless Edge; IndRa is a JS page). Results PDFs are scans with a garbled text layer (numbers absent); found at stage 9, fixed by rendering pages to PNG (PyMuPDF). Check results text for digits at stage 0 next time.
+- Freshness FAIL: India Ratings rationale for the subsidiary GDAL (Aug-2026) not findable; gate capped at PROCEED WITH CAVEATS.
+- Balu Forge (engine peer) holds no calls; its presentation stood in, claim tier.
+- Stage agents wrote block files with markdown fences (B01, B02-pass1); stripped by a validator before parsing. Later prompts said "no fences" and it held.
+- Verifier A first pass was stage-1 weighted (56 numbers, 14 tool calls) and left an ANCHOR NOT FOUND row out of findings[]; one coverage-addendum re-run governs (65 numbers, 95.4%, 0 findings).
+- Verifier B partial-vs-strict acceptance (80% vs 46.7%): ruled partial counts per rubric rule 3 and VOEPL precedent; strict rate disclosed.
+- 09b wrote the DRAFT marker with an em-dash; normalised mechanically to the exact marker.

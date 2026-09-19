@@ -1,0 +1,62 @@
+stage: B03-ardeep
+company: "SHAREINDIA"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Auditor (MSKA & Associates) appointment date / tenure start / rotation-due year NOT FOUND IN DOCUMENT"
+  - "Goodwill line NOT FOUND on either balance sheet (not material/not separately disclosed at this presentation level)"
+  - "Phase 6D (tone/priority drift vs prior year) out of scope: FY25 AR sits in inputs/other/, not a primary source per run instructions"
+  - "Group-level CAR/PCR/current-ratio still not disclosed (carried from B01 D1/D2/D4); this stage found no additional AR text resolving it"
+  - "Pledge % of promoter holding not disclosed anywhere in this AR (Corporate Governance Report shareholding table shows only Promoter/Public split, 48.62% Mar-26 vs 48.67% Mar-25); LBF2's 57.80% figure remains BSE-SHP-summary sourced only"
+flags:
+  - {type: FLAG-CASH, reason: "Confirmed and quantified from primary financial statements (not just notes): standalone CFO FY26 Rs (164.27) Cr on PAT Rs 297.69 Cr (CFO/PAT -0.55x); consol CFO FY26 Rs (182.40) Cr on PAT Rs 324.44 Cr (CFO/PAT -0.56x); CFO/EBITDA -0.32x standalone / -0.30x consol. Driven by bank-balance-other-than-cash and MTF loan book absorption, funded by new debt/NCDs, not retained cash (Standalone/Consolidated Statement of Cash Flow, pp.134, 230-231)."}
+  - {type: FLAG-PROMOTER-PRELIM, reason: "Board-family concentration (Parveen Gupta and Rajesh Gupta are brothers; Saroj Gupta is mother of Sachin Gupta CEO), three family members among top-5 director shareholders (Corp Gov Report p.40, 42-43). Company paid 'interest on pledged shares' to Saroj Gupta and Rajesh Gupta in FY26 (Corp Gov Report p.46), confirming a company borrowing secured on promoter/relative shares (Note 18 standalone, per B02 rank 9). No pledge % disclosed in the AR's own shareholding table. Two independent directors exited within 3 months of the FY26 close (Kalia resigned 2-Jun-2026; Shanti Kumar Jain age-out 27-Aug-2026), clustering with the Sep-2026 rating downgrade/NCD stress window (LBF4). Full promoter verdict deferred to B08 per protocol."}
+phase_verdicts: {p1: "WATCH", p2: "WATCH", p3: "RED FLAG", p4: "RED FLAG", p5: "WATCH", p6: "RED FLAG", p7_best_fit: "GARP (WATCHLIST)"}
+overall_quality: 5.5
+quality_components: {governance: 6, accounting: 6, balance_sheet: 5, earnings: 5}
+kill_switch_notes:
+  - "Phase 1: would not stop; clean opinions, CARO issues are disclosure-depth/subsidiary-scale, not standalone solvency"
+  - "Phase 2: would not stop; no fraud/manipulation signal, disclosure-design and provisioning-conservatism concerns only"
+  - "Phase 3: would pause on cash-flow quality alone (negative CFO/PAT both entity levels), but not going-concern level; D/E and current ratio remain adequate"
+  - "Phase 4: would flag strongly for FTTCP/Role 2 to test the stated diversification strategy against delivery; disclosure-quality finding, not going-concern"
+  - "Phase 5: would not stop on governance mechanics; would flag promoter-pledge-secured borrowing and family board composition for the Promoter Ledger"
+triple_pass_verification:
+  verified: 15
+  discrepancies: []
+missing_risks:
+  - {risk: "NCD refinancing / early-redemption execution risk", evidence_anchor: "Note 17e standalone p.171 (B02 rank 4/5); MD&A risk table (pp.75-76) names no debt/refinancing risk"}
+  - {risk: "Negative operating cash flow / cash conversion", evidence_anchor: "Standalone/Consolidated Statement of Cash Flow pp.134, 230-231; absent from MD&A risk table and Chairman's letter"}
+  - {risk: "Contingent liability / exchange-guarantee growth outpacing revenue", evidence_anchor: "Note 44/44a consol p.288 (+48.3% YoY, B02 rank 6); not named in MD&A risk table"}
+  - {risk: "Prop-trading revenue concentration", evidence_anchor: "BRSR Annexure 7 p.84 (73.47% Trading in Securities vs 15.19% broking); Note 45 segment note (B02 rank 1); not named as a risk anywhere"}
+  - {risk: "SEBI enforcement history (algo-platform settlement scheme, Mar-2026, per company memory)", evidence_anchor: "Board's Report Item 37 p.37 states 'no significant and material orders'; document-wide search found zero mentions of the settlement anywhere in this AR"}
+  - {risk: "IT audit-trail / backup-server control gap", evidence_anchor: "Auditor's Rule 11(g) exception both reports (Note 61 standalone p.123, Note 65 consol p.225); MD&A Operational Risk mitigation language does not acknowledge it"}
+guidance_table:
+  - {claim: "Reducing dependence on proprietary trading by increasing client-led and fee-based business", number: "n/a (directional claim)", timeframe: "ongoing, stated in FY26 MD&A", credibility: "LOW - fee and commission income fell -12.7% standalone / -18.6% consol the same year; BRSR shows 73.47% of turnover from Trading in Securities vs 15.19% broking (p.84)"}
+  - {claim: "PMS AUM target", number: "Rs 200 Cr", timeframe: "FY27", credibility: "UNTESTED - PMS crossed Rs 100 Cr in its first year (FY26); target is 2x current, no track record yet to check"}
+  - {claim: "Category III AIF launch", number: "n/a", timeframe: "awaiting regulatory approval, no date given", credibility: "UNTESTED - pending regulatory approval as of report date"}
+  - {claim: "Retail branch network expansion", number: "7 new branches named", timeframe: "FY26 (completed)", credibility: "MIXED - 7 new city branches confirmed, but NBFC branch count fell 80 to 73 the same year and broking branch-count base (280 to 95) is not comparable across years (B01 M8)"}
+  - {claim: "No material changes and commitments since FY26 close", number: "n/a", timeframe: "31-Mar-2026 to 03-Sep-2026 report date", credibility: "LOW - Board approved NCD early redemption 19-May-2026 and 100% Enshrine Leasing acquisition 24-Jul-2026, both inside this window and both absent from the Item 25 statement"}
+monitorables:
+  - {metric: "CFO/PAT (standalone and consol)", threshold: "return to positive; second consecutive negative year hardens FLAG-CASH", where: "quarterly cash flow statement in results filings", why: "single largest red flag this stage; tests whether FY26 was a one-year funding event or a structural pattern"}
+  - {metric: "NCD early-redemption execution / holders' meeting outcome", threshold: "redemption completed or meeting resolved", where: "BSE Reg 30 filings, next quarterly results notes", why: "connects this AR's Note 17e finding directly to the Sep-2026 adjourned-meeting stress (LBF4)"}
+  - {metric: "Fee and commission income (standalone)", threshold: "return to growth vs FY26's -12.7%", where: "quarterly P&L", why: "direct test of the MD&A's stated prop-trading-dependence-reduction strategy"}
+  - {metric: "Prop-trading revenue share", threshold: "declining trend toward parity with claimed strategy", where: "next AR's BRSR Annexure or quarterly investor presentation", why: "only annual disclosure point found for this split; BRSR is annual-only"}
+  - {metric: "Contingent liabilities / net worth", threshold: "stabilising below 100%, or continued rise", where: "quarterly notes / next AR Note 44", why: "guarantee corpus scaling with trading book; further rise alongside negative CFO compounds the cash-conversion flag"}
+  - {metric: "Enshrine Leasing acquisition completion and consideration", threshold: "closes at or near disclosed terms", where: "next quarterly results / Reg 30 filings", why: "tests capital allocation discipline against the concurrent NCD liquidity event"}
+ar_new_downstream_entities:
+  - {name: "Enshrine Leasing and Infotech Private Limited", where_in_ar: "Board's Report subsidiary-list note p.34; MD&A p.75; Chairman's letter p.15", entity_type: "acquisition target (100% equity, to become wholly-owned subsidiary; holds IT Zone property, Mumbai), Board approved 24-Jul-2026"}
+  - {name: "Share India Wealth Multiplier Solutions Private Limited", where_in_ar: "Board's Report subsidiary list p.34; Chairman's letter p.13; BRSR p.86", entity_type: "new wholly-owned subsidiary, incorporated 06-Nov-2025, Category III AIF/PMS platform"}
+  - {name: "Share India Cred Capital Private Limited", where_in_ar: "Board's Report subsidiary list p.34; Chairman's letter p.13; BRSR p.86", entity_type: "new subsidiary (60% held), incorporated 06-Jan-2026, fixed-income/investment-product distribution platform"}
+  - {name: "M/s B D G & Co. LLP", where_in_ar: "Corp Gov Report Item 8L p.56", entity_type: "statutory auditor of material subsidiary Share India AlgoPlus, appointed 25-Sep-2025 (distinct firm from parent auditor MSKA)"}
+strengths_top3:
+  - "Clean, unmodified standalone and consolidated audit opinions with no fraud/wilful-default/cash-loss CARO findings at the standalone level, and low leverage (D/E 0.25x)"
+  - "Conservative, largely realised-gain revenue recognition with clean internal tie-outs across all six standalone revenue notes to the rupee"
+  - "Granular, specific operational KPI disclosure in the MD&A (branches, clients, AUM, GNPA/NNPA, subscriptions) well above the depth of the risk-factor section in the same document"
+red_flags_top3:
+  - "Negative operating cash flow at both standalone and consolidated levels (CFO/PAT -0.55x/-0.56x FY26), balance-sheet growth funded by new debt/NCDs, not retained cash, alongside contingent liabilities up 48.3% YoY to ~122% of net worth"
+  - "BRSR discloses 73.47% of turnover from Trading in Securities vs 15.19% from Stock Broking Services (p.84), directly answering LBF1 and contradicting the same AR's MD&A claim of 'reducing dependence on proprietary trading' in a year fee income fell -12.7%/-18.6%"
+  - "Recurring disclosure-placement pattern keeping Board-approved, post-year-end financial commitments (NCD early redemption 19-May-2026; Enshrine acquisition 24-Jul-2026) out of the sections designed to surface them (Board's Report Item 25 'no material changes', echoing B02's Note 62/66 finding)"
+best_fit_strategy: "GARP (WATCHLIST)"
+one_line_verdict: "Growing broking group funds expansion with debt while its own numbers contradict its stated shift away from proprietary trading."
+analyst_note: "Top new finding: BRSR Annexure 7 (p.84) discloses 73.47% of turnover from Trading in Securities vs 15.19% from broking services, a filed numeric answer to LBF1 sitting outside the segment note B02 found unable to answer it. Read with the FY26 fee-income decline and the MD&A's 'reducing dependence on proprietary trading' claim, the filing contradicts itself on the run's central question. Second finding: a repeat, independent instance of B02's Note 62/66 disclosure-placement pattern, this time in Board's Report Item 25, which omits both the 19-May-2026 NCD early-redemption resolution and the 24-Jul-2026 Enshrine acquisition approval from its 'no material changes and commitments' statement. Neither is accounting fraud; both are business-model and disclosure-design findings for Role 1/2/6."

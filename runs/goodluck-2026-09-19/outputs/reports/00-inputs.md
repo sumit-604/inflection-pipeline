@@ -1,0 +1,478 @@
+# Stage 0 — Input validation (GOODLUCK, 2026-09-19)
+
+Orchestrator-inline. Step-1 intake: peer pause and empty-folder confirmation suppressed (standing default: proceed with the gaps).
+
+- Spear gate: PASS on the recorded OVERRIDE line in companies/GOODLUCK.md. Load-bearing facts LBF1-LBF4 carried as first verification priority.
+- Corpus: 63 PDFs, all readable; page-marked .txt beside each.
+- Freshness verdict: CORPUS GAPPED-FRESHNESS. Missing mate: India Ratings rationale for Goodluck Defence and Aerospace Ltd (IND A+/Stable, Aug-2026).
+- Sector cap row: Cables / Industrial products (25x, section-1b chunk 05).
+- Units: results and AR statements in INR lakh; screener in INR Cr.
+
+```yaml
+stage: B00-inputs
+company: GOODLUCK
+company_name: Goodluck India Ltd
+run_date: 2026-09-19
+model: orchestrator-inline (claude-opus-5)
+status: complete
+run_type: full
+run_origin: "/step1 intake; peer selection and empty-folder confirmation SUPPRESSED by the Step-1 autonomy contract (operator standing ruling 2026-09-05); standing answer is proceed with the gaps"
+concalls_available: true
+listed_note: "Long-listed (BSE 530655, NSE GOODLUCK). Prospectus not expected; its absence is not a gap."
+cmp: 517.0
+market_cap_cr: 5158.0
+sector_cap_row: "Cables / Industrial products"
+sector_cap_row_evidence: "Section-1b chunk 05 cap table, row Cables / Industrial products 25x. Business: steel processing into CR sheets and ERW pipes, precision/CDW tubes, engineering structures and forgings (screener: Industrial Products / Iron & Steel Products; AR FY26 segment disclosure to confirm at B04). Collector guess Pharma / CDMO rejected (keyword artefact). Candidate SOTP row for the GDAL defence slice: Defence / strategic 38x, a phase-3 ruling, not applied here."
+spear:
+  line: "Spear: OVERRIDE 2026-09-19 (operator standing ruling 2026-09-05: Step-1 intake replaces the web spear)"
+  load_bearing_facts:
+    - "LBF1 GUIDANCE VS DELIVERY: FY26 guided +20%, cut to +12% (Sep-2025), delivered about +4% (Rs 3,936 Cr to Rs 4,100 Cr). FY27 guided +15-20% and Rs 300-350 Cr defence revenue. Verify each guide and delivery from transcripts and results."
+    - "LBF2 GDAL ECONOMICS AND OWNERSHIP: about Rs 84 Cr defence revenue in Q1 FY27 at 30-35% EBITDA; Rs 285 Cr raise at Rs 375/share took the parent below 100%; 400,000-shell expansion slipped to Q4 FY28. Verify post-issue stake and subscribers (announcements 20260806, AR subsidiary and RPT notes)."
+    - "LBF3 CASH CONVERSION UNDER CAPEX: borrowings Rs 612 Cr (FY24) to Rs 1,119 Cr (FY26); GCA 152 days; Rs 300-350 Cr/yr capex ahead. Verify CFO vs EBITDA and PAT FY24-FY26, receivable and inventory days."
+    - "LBF4 PROMOTER SELL-DOWN: 2.45% open-market sale around 29-Jun-2026 (56.44% to 54.00%), before the GDAL raise and a +31% quarter. Verify from SAST 29(2) (announcements 20260701, scanned; page images rendered) and shareholding."
+  brief: runs/goodluck-2026-09-19/step1-business-brief.md
+  company_memory: companies/GOODLUCK.md
+reporting_units:
+  results: "INR lakh (face of every results filing: (Rs. In Lakhs))"
+  annual_report: "INR lakh in the financial statements; some narrative sections state INR crore"
+  presentation: "mixed INR Cr / INR Mn; read the unit per slide"
+  rating: "CRISIL INR crore; India Ratings INR million"
+  screener: "INR Cr"
+  stage_instruction: "All figures in Rs Cr unless the source says otherwise; the source unit is on the face of the document, not in the filename. Convert once, at stage 10."
+tooling:
+  pdf_read: "pypdf read all 63 PDFs, 0 unreadable. Whole run switched to pre-extracted page-marked .txt beside every PDF ([page N] markers); stages read the .txt and cite the PDF path + page."
+  scanned_pages: "20260701 SAST 29(2) disclosure (6 of 6 pages image-only) and 20260814 postal ballot outcome (pages 4-7) rendered to PNG in <file>-pages/ folders beside the PDF; no OCR engine on this machine."
+inventory:
+  prospectus:    { count: 0, status: NOT EXPECTED }
+  annual-report: { count: 2, status: present, detail: "FY26 AR (224pp, filed 08-Sep-2026) = primary; FY25 AR (236pp, filed 02-Sep-2025) = backward context" }
+  results:       { count: 3, status: present, detail: ["Q1 FY27 board outcome 06-Aug-2026", "Q4 FY26 + FY26 audited 26-May-2026", "Q3 FY26 13-Feb-2026"], note: "Q2 FY26 results preserved in other/" }
+  rating:        { count: 2, status: present, detail: ["India Ratings rationale 14-Jul-2026 IND AA-/Stable/IND A1+ (most recent, governs)", "CRISIL rationale 30-Jun-2026 AA-/Stable/A1+ (upgrade from A+/Positive)"] }
+  concalls:
+    count: 4
+    status: present
+    quarter_map:
+      - { file: Concall_Nov_2025_Transcript.pdf, quarter: Q2 FY26, filed: 2025-11-14, note: backward context }
+      - { file: Concall_Feb_2026_Transcript.pdf, quarter: Q3 FY26, filed: 2026-02-20 }
+      - { file: Concall_Jun_2026_Transcript.pdf, quarter: Q4 FY26, filed: 2026-06-03 }
+      - { file: Concall_Aug_2026_Transcript.pdf, quarter: Q1 FY27, filed: 2026-08-17 }
+    stage5_use: "3 most recent oldest-first: Q3 FY26 -> Q4 FY26 -> Q1 FY27; Q2 FY26 as backward context (it carries the FY26 guidance cut)"
+  peer-concalls:
+    count: 9
+    status: present
+    peers:
+      HITECH: [Q2 FY26, Q3 FY26, Q4 FY26, Q1 FY27]
+      RATNAMANI: [Q2 FY25, Q4 FY25, Q2 FY26, Q4 FY26]
+      BALUFORGE: ["Investor presentation Jun-2026 (no transcripts exist)"]
+  announcements: { count: 37, status: present, detail: "Reg 30 filings 25-Sep-2025 to 11-Sep-2026, deduplicated; includes GDAL preferential issue, bonus issue, corporate restructuring intimation, subsidiary closures, orders, ratings, SAST 29(2), KMP changes" }
+  shareholding:  { count: 1, status: present-degraded, detail: "screener quarterly table Dec-2023 to Aug-2026 (aggregator, not the Reg 31 filing)" }
+  research:      { count: 0, status: ABSENT }
+  screening:     { count: 4, status: present-degraded, detail: "Data_Sheet CSV only for GOODLUCK, BALUFORGE, RATNAMANI, HITECH; P&L/BS/CF/Quarters sheets EMPTY" }
+  presentation:  { count: 4, status: present, detail: "Q2 FY26, Q3 FY26, Q4 FY26, Q1 FY27 decks" }
+  other:         { count: 1, status: preserved, detail: "Q2 FY26 results" }
+freshness_pairs:
+  - { pair: "RESULTS to CONCALL", trigger_doc: "inputs/results/20260806-Results_Q1FY27_Board_Outcome.pdf (Q1 FY27)", mate_expected: "Q1 FY27 transcript", status: PASS, missing_doc: "" }
+  - { pair: "RATING BULLETIN to RATIONALE", trigger_doc: "inputs/announcements/20260813-Intimation_Of_New_Credit_Rating_Assigned_By_India_Ratings_To.pdf (India Ratings IND A+/Stable/IND A1+ on GDAL bank facilities Rs 2,050 mn, 13-Aug-2026)", mate_expected: "India Ratings full rationale for Goodluck Defence and Aerospace Ltd, Aug-2026", status: FAIL, missing_doc: "India Ratings rationale, Goodluck Defence and Aerospace Ltd (IND A+/Stable), Aug-2026; indiaratings.co.in press release, not found by web search on 2026-09-19. Parent bulletins 30-Jun (CRISIL) and 14-Jul (IndRa) PASS: both full rationales present." }
+  - { pair: "SEBI ORDER to ORDER TEXT", trigger_doc: "none: no SEBI order referenced in any corpus filing (only director declarations of not being debarred by any SEBI order)", mate_expected: "n/a", status: PASS, missing_doc: "" }
+  - { pair: "AR to LATEST AUDITED ANNUAL RESULTS", trigger_doc: "FY26 audited results 26-May-2026", mate_expected: "FY26 AR", status: PASS, missing_doc: "" }
+freshness_verdict: CORPUS GAPPED-FRESHNESS
+input_gaps:
+  - { type: rating-rationale-GDAL, severity: HIGH, reason: "Freshness pair 2 FAIL. The engine subsidiary's own rating rationale (India Ratings, Aug-2026) is absent; GDAL standalone leverage, debt terms and order-book view come only from the parent consolidated rationales. Caps the phase-1 gate at PROCEED WITH CAVEATS." }
+  - { type: research, severity: LOW, reason: "No broker notes. No effect on anchored evidence." }
+  - { type: shareholding-filing, severity: MEDIUM, reason: "No BSE Reg 31 shareholding pattern PDF. screener aggregator table only (promoter 56.44% Mar-2026 to 54.00% Jun-2026; FII 1.92%, DII 6.14% Aug-2026). Pledge status not in the table. UA FII+DII qualifier evidenced at aggregator tier only." }
+  - { type: screening-sheets, severity: LOW, reason: "COLLECTOR DEFECT: screener Profit & Loss, Balance Sheet, Cash Flow, Quarters, Customization sheets exported EMPTY for GOODLUCK and all three peers. Only Data_Sheet populated. Gate 0 extracts from Data_Sheet plus results and AR statements." }
+  - { type: peer-transcripts-BALUFORGE, severity: MEDIUM, reason: "Balu Forge holds no earnings calls (BSE 531112 filings, 12 months: none). The defence-shell engine peer is represented by its Jun-2026 investor presentation only; stage 6 treats it as company-claim tier, not call Q&A." }
+  - { type: peer-transcripts-RATNAMANI-Q1FY27, severity: LOW, reason: "Ratnamani latest transcript is Q4 FY26 (May-2026); two of four are FY25 vintage." }
+  - { type: scanned-SAST, severity: MEDIUM, reason: "20260701 SAST 29(2) disclosure (LBF4) is image-only; page PNGs rendered for visual read; no OCR text." }
+  - { type: collector-warning, severity: INFO, reason: "shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend. (verbatim; Step 1 filled it from screener)" }
+  - { type: collector-warning, severity: INFO, reason: "screener export sheets came out EMPTY (formulas with no cached values) for GOODLUCK, BALUFORGE, RATNAMANI, HITECH: Profit & Loss, Quarters, Balance Sheet, Cash Flow, Customization. (verbatim, condensed)" }
+  - { type: collector-warning, severity: INFO, reason: "no results PDFs yet (screener has none); no rating PDF yet. (verbatim; both filled at Step 1 from BSE, CRISIL and India Ratings)" }
+  - { type: collector-warning, severity: INFO, reason: "Collector BSE fetch (first live test, PR #167) wrote 9 files, 7 duplicates of AR, AGM notice, BRSR, transcript and presentation; it caps at 25 rows and has no AttachHis fallback, so older filings failed. Step 1 re-fetched 37 unique filings with the fallback." }
+  - { type: collector-warning, severity: INFO, reason: "sector_cap_row guess Pharma / CDMO was wrong; resolved to Cables / Industrial products." }
+  - { type: collector-warning, severity: INFO, reason: "Q2 FY26 press release (1.15 MB variant, 08-Nov-2025) lost to a filename collision; Q2 results pack kept in other/." }
+  - { type: document-identity, severity: INFO, reason: "presentation/20260808-Investor_Presentation.pdf cover letter is dated August 8, 2025; content is Q1 FY27 (30th June 2026). Period taken from content." }
+degradation_applied:
+  - "All stages read pre-extracted .txt (page-marked) and cite PDF path + page."
+  - "Stage 6 runs on 8 transcripts (HITECH, RATNAMANI) + 1 BALUFORGE presentation (claim tier)."
+  - "UA FII+DII qualifier rests on aggregator shareholding; stage 10/11 note the tier."
+flags: []
+analyst_note: "Freshness FAIL is the GDAL rating rationale only. Spear OVERRIDE recorded; LBF1-4 are the first verification priority for every stage."
+corpus_manifest:
+  - path: inputs/announcements/20250925-Change_in_Management.pdf
+    text: inputs/announcements/20250925-Change_in_Management.txt
+    issuer: Goodluck India Ltd
+    doc_type: 'Reg 30 / exchange filing: Change in Management'
+    period: 25-09-2025
+    folder_match: true
+  - path: inputs/announcements/20250925-Shareholder_Meeting_Postal_Ballot_Outcome_of_AGM.pdf
+    text: inputs/announcements/20250925-Shareholder_Meeting_Postal_Ballot_Outcome_of_AGM.txt
+    issuer: Goodluck India Ltd
+    doc_type: 'Reg 30 / exchange filing: Shareholder Meeting Postal Ballot Outcome of AGM'
+    period: 25-09-2025
+    folder_match: true
+  - path: inputs/announcements/20251001-Announcement_Under_Regulation_30_Receipt_Of_The_Industrial_L.pdf
+    text: inputs/announcements/20251001-Announcement_Under_Regulation_30_Receipt_Of_The_Industrial_L.txt
+    issuer: Goodluck India Ltd
+    doc_type: 'Reg 30 / exchange filing: Announcement Under Regulation 30 Receipt Of The Industrial L'
+    period: 01-10-2025
+    folder_match: true
+  - path: inputs/announcements/20251001-Signing_Of_Tripartite_Memorandum_Of_Understanding_MOU_For_AM.pdf
+    text: inputs/announcements/20251001-Signing_Of_Tripartite_Memorandum_Of_Understanding_MOU_For_AM.txt
+    issuer: Goodluck India Ltd
+    doc_type: 'Reg 30 / exchange filing: Signing Of Tripartite Memorandum Of Understanding MOU For AM'
+    period: 01-10-2025
+    folder_match: true
+  - path: inputs/announcements/20251003-Press_Release_Media_Release.pdf
+    text: inputs/announcements/20251003-Press_Release_Media_Release.txt
+    issuer: Goodluck India Ltd
+    doc_type: 'Reg 30 / exchange filing: Press Release Media Release'
+    period: 03-10-2025
+    folder_match: true
+  - path: inputs/announcements/20251009-Disclosure_Under_Regulation_30_Of_SEBI_Listing_Obligations_A.pdf
+    text: inputs/announcements/20251009-Disclosure_Under_Regulation_30_Of_SEBI_Listing_Obligations_A.txt
+    issuer: Goodluck India Ltd
+    doc_type: 'Reg 30 / exchange filing: Disclosure Under Regulation 30 Of SEBI Listing Obligations A'
+    period: 09-10-2025
+    folder_match: true
+  - path: inputs/announcements/20251010-Disclosure_Under_Regulation_30_Of_The_Securities_And_Exchang.pdf
+    text: inputs/announcements/20251010-Disclosure_Under_Regulation_30_Of_The_Securities_And_Exchang.txt
+    issuer: Goodluck India Ltd
+    doc_type: 'Reg 30 / exchange filing: Disclosure Under Regulation 30 Of The Securities And Exchang'
+    period: 10-10-2025
+    folder_match: true
+  - path: inputs/announcements/20251108-Press_Release_Media_Release.pdf
+    text: inputs/announcements/20251108-Press_Release_Media_Release.txt
+    issuer: Goodluck India Ltd
+    doc_type: 'Reg 30 / exchange filing: Press Release Media Release'
+    period: 08-11-2025
+    folder_match: true
+  - path: inputs/announcements/20251110-Analyst_Investor_Meet_Outcome.pdf
+    text: inputs/announcements/20251110-Analyst_Investor_Meet_Outcome.txt
+    issuer: Goodluck India Ltd
+    doc_type: 'Reg 30 / exchange filing: Analyst Investor Meet Outcome'
+    period: 10-11-2025
+    folder_match: true
+  - path: inputs/announcements/20251120-Update_Receipt_Of_Export_Order_Under_Regulation_30_Of_The_SE.pdf
+    text: inputs/announcements/20251120-Update_Receipt_Of_Export_Order_Under_Regulation_30_Of_The_SE.txt
+    issuer: Goodluck India Ltd
+    doc_type: 'Reg 30 / exchange filing: Update Receipt Of Export Order Under Regulation 30 Of The SE'
+    period: 20-11-2025
+    folder_match: true
+  - path: inputs/announcements/20251224-Intimation_Under_Regulation_30_Of_SEBI_LODR_Regulations_2015.pdf
+    text: inputs/announcements/20251224-Intimation_Under_Regulation_30_Of_SEBI_LODR_Regulations_2015.txt
+    issuer: Goodluck India Ltd
+    doc_type: 'Reg 30 / exchange filing: Intimation Under Regulation 30 Of SEBI LODR Regulations 2015'
+    period: 24-12-2025
+    folder_match: true
+  - path: inputs/announcements/20260216-Analyst_Investor_Meet_Outcome.pdf
+    text: inputs/announcements/20260216-Analyst_Investor_Meet_Outcome.txt
+    issuer: Goodluck India Ltd
+    doc_type: 'Reg 30 / exchange filing: Analyst Investor Meet Outcome'
+    period: 16-02-2026
+    folder_match: true
+  - path: inputs/announcements/20260316-Press_Release_Media_Release.pdf
+    text: inputs/announcements/20260316-Press_Release_Media_Release.txt
+    issuer: Goodluck India Ltd
+    doc_type: 'Reg 30 / exchange filing: Press Release Media Release'
+    period: 16-03-2026
+    folder_match: true
+  - path: inputs/announcements/20260512-Format_of_the_Initial_Disclosure_to_be_made_by_an_entity_ide.pdf
+    text: inputs/announcements/20260512-Format_of_the_Initial_Disclosure_to_be_made_by_an_entity_ide.txt
+    issuer: Goodluck India Ltd
+    doc_type: 'Reg 30 / exchange filing: Format of the Initial Disclosure to be made by an entity ide'
+    period: 12-05-2026
+    folder_match: true
+  - path: inputs/announcements/20260522-Award_of_Order_Receipt_of_Order.pdf
+    text: inputs/announcements/20260522-Award_of_Order_Receipt_of_Order.txt
+    issuer: Goodluck India Ltd
+    doc_type: 'Reg 30 / exchange filing: Award of Order Receipt of Order'
+    period: 22-05-2026
+    folder_match: true
+  - path: inputs/announcements/20260526-Change_in_Management.pdf
+    text: inputs/announcements/20260526-Change_in_Management.txt
+    issuer: Goodluck India Ltd
+    doc_type: 'Reg 30 / exchange filing: Change in Management'
+    period: 26-05-2026
+    folder_match: true
+  - path: inputs/announcements/20260526-Press_Release_Media_Release.pdf
+    text: inputs/announcements/20260526-Press_Release_Media_Release.txt
+    issuer: Goodluck India Ltd
+    doc_type: 'Reg 30 / exchange filing: Press Release Media Release'
+    period: 26-05-2026
+    folder_match: true
+  - path: inputs/announcements/20260527-Order_Bags.pdf
+    text: inputs/announcements/20260527-Order_Bags.txt
+    issuer: Goodluck India Ltd
+    doc_type: 'Reg 30 / exchange filing: Order Bags'
+    period: 27-05-2026
+    folder_match: true
+  - path: inputs/announcements/20260528-Analyst_Investor_Meet_Outcome.pdf
+    text: inputs/announcements/20260528-Analyst_Investor_Meet_Outcome.txt
+    issuer: Goodluck India Ltd
+    doc_type: 'Reg 30 / exchange filing: Analyst Investor Meet Outcome'
+    period: 28-05-2026
+    folder_match: true
+  - path: inputs/announcements/20260528-Clarification_On_Receipt_Of_Order.pdf
+    text: inputs/announcements/20260528-Clarification_On_Receipt_Of_Order.txt
+    issuer: Goodluck India Ltd
+    doc_type: 'Reg 30 / exchange filing: Clarification On Receipt Of Order'
+    period: 28-05-2026
+    folder_match: true
+  - path: inputs/announcements/20260619-Award_of_Order_Receipt_of_Order.pdf
+    text: inputs/announcements/20260619-Award_of_Order_Receipt_of_Order.txt
+    issuer: Goodluck India Ltd
+    doc_type: 'Reg 30 / exchange filing: Award of Order Receipt of Order'
+    period: 19-06-2026
+    folder_match: true
+  - path: inputs/announcements/20260630-Credit_Rating.pdf
+    text: inputs/announcements/20260630-Credit_Rating.txt
+    issuer: Goodluck India Ltd
+    doc_type: 'Reg 30 / exchange filing: Credit Rating'
+    period: 30-06-2026
+    folder_match: true
+  - path: inputs/announcements/20260701-Disclosures_under_Reg_29_2_of_SEBI_SAST_Regulations_2011.pdf
+    text: inputs/announcements/20260701-Disclosures_under_Reg_29_2_of_SEBI_SAST_Regulations_2011.txt
+    issuer: Goodluck India Ltd
+    doc_type: 'Reg 30 / exchange filing: Disclosures under Reg 29 2 of SEBI SAST Regulations 2011'
+    period: 01-07-2026
+    folder_match: true
+  - path: inputs/announcements/20260707-Board_Meeting_Intimation_for_Issue_Of_Bonus_Equity_Shares_An.pdf
+    text: inputs/announcements/20260707-Board_Meeting_Intimation_for_Issue_Of_Bonus_Equity_Shares_An.txt
+    issuer: Goodluck India Ltd
+    doc_type: 'Reg 30 / exchange filing: Board Meeting Intimation for Issue Of Bonus Equity Shares An'
+    period: 07-07-2026
+    folder_match: true
+  - path: inputs/announcements/20260711-Board_Meeting_Outcome_for_Outcome_Of_Board_Meeting.pdf
+    text: inputs/announcements/20260711-Board_Meeting_Outcome_for_Outcome_Of_Board_Meeting.txt
+    issuer: Goodluck India Ltd
+    doc_type: 'Reg 30 / exchange filing: Board Meeting Outcome for Outcome Of Board Meeting'
+    period: 11-07-2026
+    folder_match: true
+  - path: inputs/announcements/20260714-Credit_Rating.pdf
+    text: inputs/announcements/20260714-Credit_Rating.txt
+    issuer: Goodluck India Ltd
+    doc_type: 'Reg 30 / exchange filing: Credit Rating'
+    period: 14-07-2026
+    folder_match: true
+  - path: inputs/announcements/20260714-Shareholder_Meeting_Postal_Ballot_Notice_of_Postal_Ballot.pdf
+    text: inputs/announcements/20260714-Shareholder_Meeting_Postal_Ballot_Notice_of_Postal_Ballot.txt
+    issuer: Goodluck India Ltd
+    doc_type: 'Reg 30 / exchange filing: Shareholder Meeting Postal Ballot Notice of Postal Ballot'
+    period: 14-07-2026
+    folder_match: true
+  - path: inputs/announcements/20260727-Press_Release_Regarding_Successfully_Secured_Quality_Assuran.pdf
+    text: inputs/announcements/20260727-Press_Release_Regarding_Successfully_Secured_Quality_Assuran.txt
+    issuer: Goodluck India Ltd
+    doc_type: 'Reg 30 / exchange filing: Press Release Regarding Successfully Secured Quality Assuran'
+    period: 27-07-2026
+    folder_match: true
+  - path: inputs/announcements/20260806-Further_Issue_Of_Equity_Shares_To_Persons_Belonging_To_Non_P.pdf
+    text: inputs/announcements/20260806-Further_Issue_Of_Equity_Shares_To_Persons_Belonging_To_Non_P.txt
+    issuer: Goodluck India Ltd
+    doc_type: 'Reg 30 / exchange filing: Further Issue Of Equity Shares To Persons Belonging To Non P'
+    period: 06-08-2026
+    folder_match: true
+  - path: inputs/announcements/20260806-Project_Update_Of_Subsidiary_Company.pdf
+    text: inputs/announcements/20260806-Project_Update_Of_Subsidiary_Company.txt
+    issuer: Goodluck India Ltd
+    doc_type: 'Reg 30 / exchange filing: Project Update Of Subsidiary Company'
+    period: 06-08-2026
+    folder_match: true
+  - path: inputs/announcements/20260810-Analyst_Investor_Meet_Outcome.pdf
+    text: inputs/announcements/20260810-Analyst_Investor_Meet_Outcome.txt
+    issuer: Goodluck India Ltd
+    doc_type: 'Reg 30 / exchange filing: Analyst Investor Meet Outcome'
+    period: 10-08-2026
+    folder_match: true
+  - path: inputs/announcements/20260813-Intimation_Of_New_Credit_Rating_Assigned_By_India_Ratings_To.pdf
+    text: inputs/announcements/20260813-Intimation_Of_New_Credit_Rating_Assigned_By_India_Ratings_To.txt
+    issuer: Goodluck India Ltd
+    doc_type: 'Reg 30 / exchange filing: Intimation Of New Credit Rating Assigned By India Ratings To'
+    period: 13-08-2026
+    folder_match: true
+  - path: inputs/announcements/20260814-Shareholder_Meeting_Postal_Ballot_Outcome_of_Postal_Ballot.pdf
+    text: inputs/announcements/20260814-Shareholder_Meeting_Postal_Ballot_Outcome_of_Postal_Ballot.txt
+    issuer: Goodluck India Ltd
+    doc_type: 'Reg 30 / exchange filing: Shareholder Meeting Postal Ballot Outcome of Postal Ballot'
+    period: 14-08-2026
+    folder_match: true
+  - path: inputs/announcements/20260819-Intimation_Regarding_Closure_Of_Subsidiaries_Under_Regulatio.pdf
+    text: inputs/announcements/20260819-Intimation_Regarding_Closure_Of_Subsidiaries_Under_Regulatio.txt
+    issuer: Goodluck India Ltd
+    doc_type: 'Reg 30 / exchange filing: Intimation Regarding Closure Of Subsidiaries Under Regulatio'
+    period: 19-08-2026
+    folder_match: true
+  - path: inputs/announcements/20260824-Board_Meeting_Outcome_for_Allotment_Of_Bonus_Equity_Shares.pdf
+    text: inputs/announcements/20260824-Board_Meeting_Outcome_for_Allotment_Of_Bonus_Equity_Shares.txt
+    issuer: Goodluck India Ltd
+    doc_type: 'Reg 30 / exchange filing: Board Meeting Outcome for Allotment Of Bonus Equity Shares'
+    period: 24-08-2026
+    folder_match: true
+  - path: inputs/announcements/20260825-Intimation_Regarding_Closure_Of_Subsidiary_Under_Regulation.pdf
+    text: inputs/announcements/20260825-Intimation_Regarding_Closure_Of_Subsidiary_Under_Regulation.txt
+    issuer: Goodluck India Ltd
+    doc_type: 'Reg 30 / exchange filing: Intimation Regarding Closure Of Subsidiary Under Regulation'
+    period: 25-08-2026
+    folder_match: true
+  - path: inputs/announcements/20260905-Change_in_Management_and_MoA_Amendment.pdf
+    text: inputs/announcements/20260905-Change_in_Management_and_MoA_Amendment.txt
+    issuer: Goodluck India Ltd
+    doc_type: 'Reg 30 / exchange filing: Change in Management and MoA Amendment'
+    period: 05-09-2026
+    folder_match: true
+  - path: inputs/announcements/20260911-Newspaper_AGM_Notice.pdf
+    text: inputs/announcements/20260911-Newspaper_AGM_Notice.txt
+    issuer: Goodluck India Ltd
+    doc_type: 'Reg 30 / exchange filing: Newspaper AGM Notice'
+    period: 11-09-2026
+    folder_match: true
+  - path: inputs/annual-report/Annual_Report_2025.pdf
+    text: inputs/annual-report/Annual_Report_2025.txt
+    issuer: Goodluck India Ltd
+    doc_type: Annual Report
+    period: FY25 (FY2024-25), filed 02-Sep-2025
+    folder_match: true
+  - path: inputs/annual-report/Annual_Report_2026.pdf
+    text: inputs/annual-report/Annual_Report_2026.txt
+    issuer: Goodluck India Ltd
+    doc_type: Annual Report
+    period: FY26 (FY2025-26), filed 08-Sep-2026
+    folder_match: true
+  - path: inputs/concalls/Concall_Aug_2026_Transcript.pdf
+    text: inputs/concalls/Concall_Aug_2026_Transcript.txt
+    issuer: Goodluck India Ltd
+    doc_type: Earnings call transcript
+    period: Q1 FY27 (filed 17-Aug-2026)
+    folder_match: true
+  - path: inputs/concalls/Concall_Feb_2026_Transcript.pdf
+    text: inputs/concalls/Concall_Feb_2026_Transcript.txt
+    issuer: Goodluck India Ltd
+    doc_type: Earnings call transcript
+    period: Q3 FY26 (filed 20-Feb-2026)
+    folder_match: true
+  - path: inputs/concalls/Concall_Jun_2026_Transcript.pdf
+    text: inputs/concalls/Concall_Jun_2026_Transcript.txt
+    issuer: Goodluck India Ltd
+    doc_type: Earnings call transcript
+    period: Q4 FY26 (filed 03-Jun-2026)
+    folder_match: true
+  - path: inputs/concalls/Concall_Nov_2025_Transcript.pdf
+    text: inputs/concalls/Concall_Nov_2025_Transcript.txt
+    issuer: Goodluck India Ltd
+    doc_type: Earnings call transcript
+    period: Q2 FY26 (filed 14-Nov-2025)
+    folder_match: true
+  - path: inputs/other/20251108-Results_Q2FY26.pdf
+    text: inputs/other/20251108-Results_Q2FY26.txt
+    issuer: Goodluck India Ltd
+    doc_type: Unaudited results + press release
+    period: Q2 FY26 (preserved, beyond the 3-most-recent rule)
+    folder_match: true
+  - path: inputs/peer-concalls/BALUFORGE-Investor_Presentation_Jun2026.pdf
+    text: inputs/peer-concalls/BALUFORGE-Investor_Presentation_Jun2026.txt
+    issuer: Balu Forge Industries Ltd
+    doc_type: Investor presentation (NOT a transcript; peer holds no calls)
+    period: Jun-2026
+    folder_match: true
+  - path: inputs/peer-concalls/HITECH-Concall_Aug_2026_Transcript.pdf
+    text: inputs/peer-concalls/HITECH-Concall_Aug_2026_Transcript.txt
+    issuer: Hi-Tech Pipes Ltd
+    doc_type: Earnings call transcript
+    period: Q1 FY27
+    folder_match: true
+  - path: inputs/peer-concalls/HITECH-Concall_Feb_2026_Transcript.pdf
+    text: inputs/peer-concalls/HITECH-Concall_Feb_2026_Transcript.txt
+    issuer: Hi-Tech Pipes Ltd
+    doc_type: Earnings call transcript
+    period: Q3 FY26
+    folder_match: true
+  - path: inputs/peer-concalls/HITECH-Concall_Jun_2026_Transcript.pdf
+    text: inputs/peer-concalls/HITECH-Concall_Jun_2026_Transcript.txt
+    issuer: Hi-Tech Pipes Ltd
+    doc_type: Earnings call transcript
+    period: Q4 FY26
+    folder_match: true
+  - path: inputs/peer-concalls/HITECH-Concall_Nov_2025_Transcript.pdf
+    text: inputs/peer-concalls/HITECH-Concall_Nov_2025_Transcript.txt
+    issuer: Hi-Tech Pipes Ltd
+    doc_type: Earnings call transcript
+    period: Q2 FY26
+    folder_match: true
+  - path: inputs/peer-concalls/RATNAMANI-Concall_May_2025_Transcript.pdf
+    text: inputs/peer-concalls/RATNAMANI-Concall_May_2025_Transcript.txt
+    issuer: Ratnamani Metals & Tubes Ltd
+    doc_type: Earnings call transcript
+    period: Q4 FY25
+    folder_match: true
+  - path: inputs/peer-concalls/RATNAMANI-Concall_May_2026_Transcript.pdf
+    text: inputs/peer-concalls/RATNAMANI-Concall_May_2026_Transcript.txt
+    issuer: Ratnamani Metals & Tubes Ltd
+    doc_type: Earnings call transcript
+    period: Q4 FY26
+    folder_match: true
+  - path: inputs/peer-concalls/RATNAMANI-Concall_Nov_2024_Transcript.pdf
+    text: inputs/peer-concalls/RATNAMANI-Concall_Nov_2024_Transcript.txt
+    issuer: Ratnamani Metals & Tubes Ltd
+    doc_type: Earnings call transcript
+    period: Q2 FY25
+    folder_match: true
+  - path: inputs/peer-concalls/RATNAMANI-Concall_Nov_2025_Transcript.pdf
+    text: inputs/peer-concalls/RATNAMANI-Concall_Nov_2025_Transcript.txt
+    issuer: Ratnamani Metals & Tubes Ltd
+    doc_type: Earnings call transcript
+    period: Q2 FY26
+    folder_match: true
+  - path: inputs/presentation/20251108-Investor_Presentation.pdf
+    text: inputs/presentation/20251108-Investor_Presentation.txt
+    issuer: Goodluck India Ltd
+    doc_type: Investor presentation
+    period: Q2 FY26
+    folder_match: true
+  - path: inputs/presentation/20260214-Investor_Presentation.pdf
+    text: inputs/presentation/20260214-Investor_Presentation.txt
+    issuer: Goodluck India Ltd
+    doc_type: Investor presentation
+    period: Q3 FY26
+    folder_match: true
+  - path: inputs/presentation/20260527-Investor_Presentation.pdf
+    text: inputs/presentation/20260527-Investor_Presentation.txt
+    issuer: Goodluck India Ltd
+    doc_type: Investor presentation
+    period: Q4 FY26
+    folder_match: true
+  - path: inputs/presentation/20260808-Investor_Presentation.pdf
+    text: inputs/presentation/20260808-Investor_Presentation.txt
+    issuer: Goodluck India Ltd
+    doc_type: Investor presentation
+    period: Q1 FY27 (content Q1 FY27; cover letter misdated August 8, 2025)
+    folder_match: true
+  - path: inputs/rating/CRISIL_Rationale_Goodluck_2026-06-30.pdf
+    text: inputs/rating/CRISIL_Rationale_Goodluck_2026-06-30.txt
+    issuer: CRISIL Ratings
+    doc_type: Rating rationale (full)
+    period: 30-Jun-2026; upgrade to AA-/Stable/A1+
+    folder_match: true
+  - path: inputs/rating/IndRa_Rationale_Goodluck_2026-07-14.pdf
+    text: inputs/rating/IndRa_Rationale_Goodluck_2026-07-14.txt
+    issuer: India Ratings & Research
+    doc_type: Rating rationale (full)
+    period: 14-Jul-2026; IND AA-/Stable/IND A1+ assigned, consolidated view incl. GDAL
+    folder_match: true
+  - path: inputs/results/20260213-Results_Q3FY26.pdf
+    text: inputs/results/20260213-Results_Q3FY26.txt
+    issuer: Goodluck India Ltd
+    doc_type: Unaudited results, standalone+consolidated
+    period: Q3 FY26, quarter ended 31-Dec-2025
+    folder_match: true
+  - path: inputs/results/20260526-Results_Q4FY26_FY26_Audited.pdf
+    text: inputs/results/20260526-Results_Q4FY26_FY26_Audited.txt
+    issuer: Goodluck India Ltd
+    doc_type: Audited results, standalone+consolidated
+    period: Q4 FY26 and FY26, year ended 31-Mar-2026
+    folder_match: true
+  - path: inputs/results/20260806-Results_Q1FY27_Board_Outcome.pdf
+    text: inputs/results/20260806-Results_Q1FY27_Board_Outcome.txt
+    issuer: Goodluck India Ltd
+    doc_type: Unaudited results, standalone+consolidated (board outcome)
+    period: Q1 FY27, quarter ended 30-Jun-2026
+    folder_match: true
+```

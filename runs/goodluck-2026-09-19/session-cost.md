@@ -22,3 +22,4 @@ Per-stage token ledger. One row per subagent run. Stage 0 is orchestrator-inline
 | 12b | verifier B red flags | claude-opus-5 | default | n/a | n/a | 290129 | 500s | 1 |
 | 12c | verifier C framework (phase 1) | claude-opus-5 | default | n/a | n/a | 126381 | 310s | 1 |
 | 12d | verifier D peers | claude-sonnet-5 | default | n/a | n/a | 213752 | 267s | 1 |
+| 13 | synthesis-lite (phase 1) | claude-opus-5 | default | n/a | n/a | 221844 | 463s | 1 |

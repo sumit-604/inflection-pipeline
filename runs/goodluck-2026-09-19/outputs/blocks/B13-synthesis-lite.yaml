@@ -1,0 +1,30 @@
+stage: B13-synthesis
+company: "GOODLUCK"
+run_date: "2026-09-19"
+model: "claude-opus-5"
+status: complete
+phase: phase-1-lite
+verdict: "PROCEED WITH CAVEATS"
+verdict_rule_applied: 3        # FLAG-PROMOTER (CONCERN) + FLAG-CASH would land PROCEED WITH FLAGS; capped to CAVEATS by CORPUS GAPPED-FRESHNESS and by INDETERMINATE cash; rule 4 concurs
+flags_active: ["FLAG-PROMOTER", "FLAG-CASH", "FLAG-GATE0"]
+flag_cash_determination: "INDETERMINATE"
+flag_promoter_verdict: "CONCERN"
+freshness_cap: "India Ratings rationale for Goodluck Defence and Aerospace Ltd (IND A+/Stable/IND A1+, bank facilities Rs 2,050 mn, bulletin 13-Aug-2026); expected source indiaratings.co.in press release"
+transition_posture: "RESEARCH / WATCH (provisional; proof not fired, artifact reading, gap unresolved until stage 11)"
+confidence_delta: {numerical: 95.4, redflag: 80, framework: 87.0, peer: 77.8, overall: 77.8}
+valuation_decision: ""         # phase 1 lite: not computed, deferred to phase 3
+entry_range: {low: 0, high: 0} # phase 1 lite: not computed
+headline: "Steel converter with a shell licence attached"
+falsification_metric: "Q2 FY27 consolidated revenue minus standalone revenue below Rs 75 Cr (the quarterly pace the Rs 300-350 Cr FY27 defence guide needs)"
+monitorables_count: 8
+publish_candidate: false
+publish_candidate_summary: ""
+files_written:
+  - runs/goodluck-2026-09-19/outputs/final/business-narrative.md
+  - runs/goodluck-2026-09-19/outputs/final/gate-recommendation.md
+  - runs/goodluck-2026-09-19/outputs/final/verifier-summary.md
+notion_save:
+  page_title: "GOODLUCK | Goodluck India Ltd | phase 1 | 2026-09-19"
+  summary: "Steel converter with a shell licence attached. PROCEED WITH CAVEATS (phase 1, freshness cap: GDAL India Ratings rationale missing; FLAG-PROMOTER CONCERN; FLAG-CASH INDETERMINATE). No valuation decision or entry range in phase 1."
+  drive_link: "NOT PROVIDED"
+  mode: append-never-overwrite-status

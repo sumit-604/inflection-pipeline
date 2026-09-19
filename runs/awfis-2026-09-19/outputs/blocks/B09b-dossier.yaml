@@ -1,0 +1,67 @@
+stage: B09b-dossier
+company: "AWFIS"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+corpus_verdict: "CORPUS GAPPED"
+corpus_gaps:
+  - document: "FY25 (and earlier) Annual Report"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "Investor presentations, Q2 FY26 / Q3 FY26 / Q4 FY26"
+    expected_source: "company IR page"
+    kind: "findable-missing"
+  - document: "Detailed FII/DII split within institutional shareholding (trend, not one quarter)"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "Independent broker/analyst research notes"
+    expected_source: "company IR page"
+    kind: "plausibly-nonexistent"
+  - document: "Screener financial-statement export sheets (P&L, Balance Sheet, Cash Flow, Quarters) for AWFIS and peers"
+    expected_source: "BSE"
+    kind: "findable-missing"
+archetypes:
+  - line: "Coworking / co-working space and allied services (82.8% of FY26 revenue)"
+    archetype: "Outsourcing partner (CDMO/EMS/IT services): wallet share via multi-centre clients, capacity fill via occupancy, contract stickiness via 26-month lock-in"
+  - line: "Transform / construction and fit-out projects (Design & Build, 17.2% of FY26 revenue)"
+    archetype: "Order-book business (EPC/defence/capital goods): order inflow via GCC/enterprise mandates, execution pace via percentage-of-completion recognition, margin on backlog"
+transition:
+  - line: "Coworking / co-working space and allied services"
+    from_tier: "R1 COMMODITY PRICE-TAKER (undifferentiated desk rental; FY19-FY24 losses, no durable pricing power evidenced pre-turnaround)"
+    to_tier: "R3 VALUE-ADDED / SPEC'D SUPPLIER (claimed via GCC stickiness, premiumization, multi-centre switching costs); evidence to date supports at most an early R2 COST-ADVANTAGED CONVERTER footing, not yet R3 (emerging-moat score 12.5/92 MODEST, verifier recompute 9.8-11.8 NONE)"
+    engine: "(1) Managed Aggregation supply mix shifting capex and rent-reset risk to landlords; (2) premiumization and GCC mix shift raising realization per seat as centres mature past lock-in"
+    proof_gate: "Cash EBITDA margin (post cash rent) rising each quarter from the Q1 FY27 print of 10.1% (Rs44 Cr) toward the FY27 guide-implied ~10.8-11% (Rs195-200 Cr on ~Rs1,800 Cr revenue), H2 FY27 exceeding H1"
+    recognition_gap: "OPEN QUESTION for Stage 11: does the market's current price already reflect a cash-margin climb to the FY27 guide, or does it still price the 36.8% reported-EBITDA optic / the backward scorecard's own AVOID classification. Stage 11 resolves via the PE gap; no number or conclusion stated here."
+    ugliness: "MIXED, unresolved by this run. The reported-vs-cash EBITDA gap (36.8% vs 10.1%) and near-zero FY26 post-lease free cash read as ARTIFACT-OF-CLIMB (Ind AS 116 mechanics on a net-cash balance sheet). The occupancy plateau trailing all three peers and the credibility grade of C on guidance discipline point toward STRUCTURAL-FEATURE. The cohort cash-margin observation withheld on three calls is built to separate these two readings and has not yet been given."
+    transition_falsifier: "A Q2 FY27 cash EBITDA print at or below Rs44 Cr / 10.1%; or a fourth consecutive quarter of Managed Aggregation share decline with no reason given; or further widening of the occupancy gap to peers"
+  - line: "Transform / construction and fit-out projects (Design & Build)"
+    from_tier: "R1 COMMODITY PRICE-TAKER (price-competed fit-out contracting)"
+    to_tier: "No forward TO claim is evidenced in the corpus; total segment revenue fell 7.8% and PBT fell 31.9% in FY26 while being carved into a subsidiary at an unresolved consideration"
+    engine: "Not evidenced as an active climb; the observable move is a structural carve-out (slump sale to Awfis Transform Pvt Ltd), not a quality-tier engine change"
+    proof_gate: "None stated by management with a metric and threshold; the only dated commitment is the transfer's completion timeline, 31-Dec-2026"
+    recognition_gap: "Not applicable; no TO state is claimed to be priced for this line"
+    ugliness: "STRUCTURAL-FEATURE is the better-evidenced read: shrinking total segment revenue, falling segment PBT, and a related-party transfer at an unresolved consideration"
+    transition_falsifier: "n/a for a claimed climb; see business_falsifier"
+dominant_variables:
+  - "Cash EBITDA margin, post-rent (currently 10.1% Q1 FY27)"
+  - "Managed Aggregation share of supply (fell from ~65% to 57% across three quarters)"
+  - "Occupancy: mature vs blended, and single-client churn (83-84% mature / 76% blended plateau, trailing all three peers)"
+  - "Top-10 customer / receivable concentration (rose from 42.74% to 61.66% in FY26)"
+business_falsifier: "Free cash after lease service and capex turning and staying negative for two consecutive years (FY26 was already near breakeven at ~Rs(64) million), together with the standalone net current liability position continuing to widen past its FY26 pace of +58.3% YoY, or the going-concern language escalating from a management disclosure to an auditor Emphasis of Matter. That would mean the core lease-arbitrage engine itself, not just the premiumization/GCC climb on top of it, has stopped working."
+mental_model_status: "DRAFT - PENDING OPERATOR SIGN-OFF"
+fragility:
+  variable_count: 4
+  verifiability_ratio: "1 of 4 externally auditable (top-10 concentration, filed AR note); 3 of 4 company-narrated only (cash EBITDA margin AUP-reviewed not audited; occupancy and MA share self-reported with shifting definitions)"
+  single_point_failure: "cash EBITDA margin (post-rent) failing to climb toward the FY27 guide"
+  fragility_verdict: "FRAGILE"
+candidate_count: 6
+second_order:
+  chains_drafted: 2
+  pending_live_links: 2
+  confirm_by_observations: 2
+research_brief_items: 17
+plain_summary_points: 15
+annex:
+  present: true
+  questions_answered: 10
+  corpus_commit_hash: "2447bbd4074fce493f996f409b4640d93557dc03"

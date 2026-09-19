@@ -1,0 +1,79 @@
+stage: B08-promoter
+company: "AWFIS"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Family relationship of Bhagwan Kewal Ramani / Lakshmi Kewal Ramani (co-respondents with Amit Ramani in the ~Rs208 Cr DoIT arbitration claim, Prospectus p.402-403) to Amit Ramani is not stated in any document read; inferred from surname only, NOT FOUND confirmed"
+  - "Current status of the DoIT Urban Ventures arbitration (~Rs208 Cr claim) since the May-2024 Prospectus is NOT independently confirmed; a web search engine synthesis of a casemine.com judgment excerpt indicates the claim was withdrawn by the claimant, but the primary document could not be opened (HTTP 403) and no Awfis filing discloses or updates this"
+  - "Resolution status of the two PMLA Section 8(2) applications (OC 1304/2020, OC 1298/2020) filed by Ncube/PAFM/Petra against ED bank-account attachment, since 2024: NOT FOUND"
+  - "Status since mid-2024 of the pending criminal complaint (CT Case 196/2023, Enhance Lifestyle Pvt Ltd v. Ncube and Amit Ramani, Saket Court): NOT FOUND"
+  - "Precise current (Sep-2026) resolution status of the two May-2026 GST show-cause notices (Rs6.53 Cr FY23-24, Rs7.10 Cr FY22-23) specifically: an adjacent GST resolution (Rs7.61 Cr dropped, dated 12-May-2026, spanning FY19-20 through FY24-25) was found but could not be confirmed as covering these same two notices"
+  - "Company-specific cause of the 17.41% share price rise on 15-Sep-2026 (task referenced 11-Sep-2026; the confirmed date in web sources is 15-Sep-2026): NOT FOUND as a disclosed event; attributed generically by MarketsMojo to technical/sentiment factors"
+  - "IiAS/SES/InGovern proxy-advisory coverage of Awfis: NOT FOUND (likely outside routine coverage given recency of listing)"
+  - "Current (Sep-2026) exact shareholding percentage of Peak XV Partners Investments V: NOT FOUND; absent from the AR's >5% holder table at 31-Mar-2026 (was 3.26% at 31-Mar-2025), implying further sell-down below 5%"
+flags: []
+verdict: "CAUTION"
+scorecard: {clean: 5, caution: 4, red: 1}
+deal_breakers: []
+adverse_findings:
+  - {finding: "Amit Ramani disassociated (director + shareholder) from three private companies -- Ncube Planning and Design Pvt Ltd, Petra Asset and Facility Management Pvt Ltd, PAFM Security Solutions Pvt Ltd -- in Nov-Dec 2023, weeks before the IPO Prospectus promoter group was finalised; all three share Awfis's own registered address and Ncube's design-and-build business line is materially the same as Awfis's own later Transform subsidiary", evidence_tier: "VERIFIED", source: "Prospectus (Awfis-Prospectus-May2024.txt) p.282-283, 409-410", date: "disassociation Nov-Dec 2023; Prospectus dated 27-May-2024"}
+  - {finding: "DoIT Urban Ventures (India) Pvt Ltd arbitration sought ~Rs2,082.25 million (~Rs208 Cr) from Amit Ramani, Bhagwan Kewal Ramani and Lakshmi Kewal Ramani jointly, arising from a 2013 Ncube-related shareholders' agreement; pending as of Prospectus date", evidence_tier: "VERIFIED", source: "Prospectus p.402-403", date: "arbitration ongoing as of 27-May-2024"}
+  - {finding: "Web search (casemine.com judgment excerpt via search synthesis, primary document blocked HTTP 403) indicates the DoIT claim was withdrawn by the claimant, and a related O&M petition and an insolvency petition were also withdrawn/dismissed; none of this is disclosed in any Awfis filing", evidence_tier: "UNVERIFIED (secondary excerpt of a court record, primary text not independently opened)", source: "casemine.com (In re DOIT URBAN VENTURES...v.NCUBE...), via WebSearch synthesis", date: "underlying Statement of Claim dated 11-Jan-2024; withdrawal date not confirmed"}
+  - {finding: "Pending private criminal complaint (CT Case 196/2023, Saket Court, Section 200 CrPC, IPC 120B/409/420/506) filed by Enhance Lifestyle Pvt Ltd against Ncube and Amit Ramani over non-payment of Rs1.90mn for furniture; Section 156(3) FIR request dismissed 26-Mar-2024, converted to private complaint, status since not tracked", evidence_tier: "VERIFIED (fact of complaint, per Prospectus)", source: "Prospectus p.401", date: "complaint filed 2023, FIR-request dismissed 26-Mar-2024"}
+  - {finding: "Two PMLA Section 8(2) applications by Ncube/PAFM/Petra (entities Amit Ramani led until Nov/Dec-2023) challenging ED attachment of their bank accounts, stemming from the ED case against former Yes Bank founder Rana Kapoor; Ramani not named as accused", evidence_tier: "VERIFIED (fact of applications, per Prospectus); Rana Kapoor PMLA case independently VERIFIED via multiple press/legal sources", source: "Prospectus p.403-404; WebSearch (Wikipedia, Business Standard, Deccan Herald, Indian Kanoon)", date: "applications pending as of 27-May-2024"}
+  - {finding: "SEBI received 3 separate complaints (Jan-Apr 2024) alleging Awfis suppressed the Ncube-DoIT arbitration in the DRHP and alleging unspecified matters against Amit Ramani personally (one from DoIT, one anonymous ex-Ncube-employee); company denies all, no SEBI order followed", evidence_tier: "VERIFIED (fact of complaints, per Prospectus); substance of allegations NOT FOUND", source: "Prospectus p.63-64", date: "11-Jan-2024 to 4-May-2024"}
+  - {finding: "CMD (Amit Ramani) compensation disclosed as two different absolute figures for the same FY26 within the same AR Note 32 (Rs69.95mn in one table, Rs41.57mn in another), unbridged; CMD remuneration ratio 99.56x median employee, +30% YoY vs +10% for the CEO and +13% average employee increase", evidence_tier: "VERIFIED", source: "AR FY26 Note 32, p.111-112 (lines 16320, 16359); Annexure-5, p.48 (line 6582)", date: "FY2025-26"}
+  - {finding: "Independent Director Radhika Gokul Jaykrishna attended 4 of 9 board meetings (44%) in FY26, the lowest attendance on the board and below the informal 75% governance norm, with no explanation given in the AR", evidence_tier: "VERIFIED", source: "AR FY26 Corporate Governance Report p.51-52", date: "FY2025-26"}
+  - {finding: "One CFO change, one Company Secretary change, and one Non-Executive Non-Independent director resignation (citing outside-role capacity, not dispute) inside roughly 14 months, alongside a new first-ever CEO appointment", evidence_tier: "VERIFIED", source: "AR FY26 Board's Report p.39; Reg 30 filings 20260105-838ef23e, 20260409-ff6bdca1", date: "May-2025 to Apr-2026"}
+transition_evidence:
+  - {item: "New professional, non-family CEO (Sumit Lakhani) appointed 26-May-2025, a role distinct from the founder-CMD position", source: "AR FY26 Board's Report p.39", date: "26-May-2025"}
+  - {item: "New professional, non-family CFO (Sumit Rochlani, CA, 14 years' experience) appointed w.e.f. 03-Feb-2026, replacing the IPO-era CFO", source: "AR FY26 Board's Report p.39; Reg 30 filing 20260105-838ef23e", date: "03-Feb-2026"}
+  - {item: "New Company Secretary (Shweta Gupta) appointed w.e.f. 30-Sep-2025", source: "AR FY26 Board's Report p.39", date: "30-Sep-2025"}
+  - {item: "Institutional investor entry: Nippon Life India Trustee Ltd (Nippon MF) new >5% holder at 6.00% (from 0% a year earlier); HDFC Small Cap Fund increased from 5.23% to 9.79%; combined institutional ownership (FII+MF+Insurance+AIF) 52.9% at 31-Mar-2026", source: "AR FY26 Standalone Note 15(c), p.104", date: "31-Mar-2026 vs 31-Mar-2025"}
+  - {item: "Exit of the erstwhile co-'promoter' Peak XV Partners Investments V (with Bisque Ltd, Link Investment Trust) via a Dec-2024 block deal (~12.2% combined, ~Rs606 Cr) and formal reclassification from 'Promoter and Promoter Group' to 'Public' by shareholder postal ballot dated 10-Jul-2025", source: "AR FY26 Standalone Note 15(e) footnote, p.104-105; WebSearch (inc42, Outlook Business)", date: "block deal Dec-2024; reclassification 10-Jul-2025"}
+  - {item: "Governance restoration: new Independent Director Abhishek Poddar appointed 01-Jul-2026, restoring the 50% independent-board ratio after Bhartia's exit", source: "AR FY26 Board's Report p.38-39; Reg 30 filing 20260629-9ce5fe3f", date: "01-Jul-2026"}
+  - {item: "Promoter share pledge stable at 0% throughout the corpus (no pledge to reduce)", source: "BSE Reg 31 shareholding summary Jun-2026", date: "Jun-2026"}
+pledge_pct_latest: 0
+pledge_trend: "stable at 0% (nil pledge at every observation point in the corpus: BSE Jun-2026 summary and AR FY26 both confirm no pledge, no non-disposal undertaking; a historical 15% NDU tied to a company loan was released per AR Note 32(iii))"
+searches_performed:
+  - "Amit Ramani Awfis founder biography background"
+  - "Awfis share price surge September 2026"
+  - "DoIT Urban Ventures Ncube Amit Ramani arbitration award"
+  - "Peak XV Partners Awfis stake sale block deal 2026"
+  - "WebFetch casemine.com judgment page (HTTP 403, not opened)"
+  - "Awfis Amit Ramani SEBI insider trading pledge"
+  - "Peak XV Awfis stake September 2026 exit complete"
+  - "WebFetch livelawbiz.com NCLT PDF (unreadable binary content)"
+  - "\"Ncube Planning\" \"Amit Ramani\" arbitration withdrawn 2025"
+  - "Ncube Planning Design Rana Kapoor PMLA Enforcement Directorate"
+  - "Awfis GST show cause notice resolved settled 2026"
+  - "Awfis Space Solutions promoter Amit Ramani net worth controversy"
+  - "WebFetch whalesbook.com GST-resolution article"
+  - "Awfis Space Solutions 17.41% OR 17% surge September 15 2026 reason"
+  - "Awfis Chennai Commercial Tax Officer GST DRC-01 6.53 crore reply order"
+  - "Awfis Space Solutions Amit Ramani education architect Cornell"
+  - "Awfis Glassdoor AmbitionBox employee reviews rating"
+  - "Awfis IiAS SES proxy advisory governance report"
+  - "Amit Ramani philanthropy CSR donation"
+  - "Sahil Sood Awfis co-founder departure"
+  - "Awfis Space Solutions promoter pledge 0% OR nil shares encumbered"
+searches_skipped:
+  - "Direct MCA/RoC portal query for Ncube/Petra/PAFM active/struck-off status -- no MCA portal access from available tools"
+  - "Securities Appellate Tribunal (SAT) case database direct query -- no SAT-specific portal access, general web search only"
+  - "Full primary text of the casemine.com judgment -- blocked, HTTP 403"
+  - "Full primary text of the NCLT (Mumbai, RAB Enterprises) judgment PDF -- fetched but returned unreadable binary/embedded-font content"
+  - "Direct confirmation of Bhagwan Kewal Ramani / Lakshmi Kewal Ramani relationship to Amit Ramani -- not run"
+verdict_basis: "No SEBI order, pledge, or proven fraud at Awfis, and clean current-period promoter conduct (0% pledge, no market selling, CARE-verified clean IPO-proceeds use); weighed down to CAUTION (not TRUSTWORTHY) by the promoter's pre-Awfis Ncube venture legacy -- a ~Rs208 Cr personal-quantum arbitration claim (reportedly withdrawn, unconfirmed), a pending criminal complaint, ED/PMLA-adjacent account attachments tied to the Rana Kapoor case, and 3 SEBI complaints -- none of which is disclosed or updated in any Awfis filing since the May-2024 Prospectus, and Ncube's business line now mirrors Awfis Transform."
+analyst_note: >
+  The single most decision-relevant fact this stage could not pin down with a primary
+  source is whether the ~Rs208 Cr DoIT arbitration claim against Amit Ramani personally
+  is actually closed. A search-engine synthesis of a casemine.com judgment says it was
+  withdrawn by the claimant, but the primary document returned HTTP 403 on direct fetch,
+  and Awfis itself has never disclosed the withdrawal (or the claim's continuation) in
+  any filing since the Prospectus. This is a strong candidate for a live-web verification
+  request to claude.ai at Halt 1: confirm the current status of (a) the DoIT arbitration,
+  (b) the Enhance Lifestyle criminal complaint, and (c) the two PMLA Section 8(2)
+  applications. Separately, Awfis Transform now operates the identical design-and-build
+  business line that sat inside Ncube -- a thematic echo worth naming to the operator
+  even though no direct entity linkage between Ncube and ATPL is evidenced.

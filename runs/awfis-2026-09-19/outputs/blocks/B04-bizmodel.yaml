@@ -1,0 +1,90 @@
+```yaml
+stage: B04-bizmodel
+company: "AWFIS"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "No separately disclosed revenue split for allied services (TechLabs, Awfis Go, Cafe, events, mobility) inside the co-working and allied services segment line; bundled in Note 31, not broken out anywhere in the AR or deck."
+  - "AR p.11 carries an unlabelled percentage split (53%/29%/12%/4%/1% and a second set 39%/16%/13%/11%/10%/9%) that could not be confidently tied to the MA/Straight Lease/Partial MO supply mix or any other named metric (B03 gap, carried forward unresolved)."
+  - "No company-disclosed revenue-per-seat, cash-EBITDA-per-seat or capex-per-seat figure; all unit-economics numbers in this report are stage-4 derivations combining two AR/deck-disclosed figures, flagged as such."
+  - "No named competitor or independently sourced market-share figure anywhere in the AR or prospectus text provided; the 'largest flexible workspace operator' claim is unverified against a named competitor set within this stage's inputs."
+flags:
+  - {type: FLAG-CASH-BRIDGE-CONFIRMED, reason: "Investor presentation Q1 FY27 p.20-21 discloses the full reported-to-cash EBITDA bridge, agreed-upon-procedures reviewed by MSKA & Associates: Reported EBITDA Rs162 Cr (38.2%) less rental payments traced from the cash flow statement (Rs132 Cr) plus finance-lease and ESOP adjustments = Cash EBITDA Rs44 Cr (10.1%). This is the load-bearing LBF1 anchor; downstream stages should cite this bridge directly rather than re-deriving it."}
+  - {type: FLAG-ROCE-DEFINITION-PARTIAL-RESOLUTION, reason: "AR p.34 (Board's Report MD&A, Key Ratios note) discloses the formula behind the AR's own ROCE figures: (Ind AS EBITDA less actual lease payments) / average capital employed (net worth + borrowings - cash and cash equivalents including fixed deposits). This is a real, disclosed formula (distinct from the still-undefined 'Cash EBIT' language on p.6/p.9), but it remains ~5x the Schedule III Note 41 RoCE (11.87% FY26). Downstream stages should use the p.34 formula, not the front-matter headline, and still flag the gap to Note 41."}
+  - {type: FLAG-TRANSFORM-QUIET-RETREAT, reason: "Construction and fit-out projects segment total revenue fell 7.8% YoY in FY26 (Rs2,782.58mn to Rs2,566.31mn, Note 31) even as third-party D&B revenue grew 27% CAGR FY24-26 to Rs1,520mn and third-party share rose from 46% to 59% (AR p.34). The 'growth engine' framing in the Chairman's Letter and investor deck describes only the third-party slice; total segment revenue is shrinking as internal/captive fit-out work declines alongside the MA-driven fall in company-funded new-centre capex."}
+  - {type: FLAG-ALM-QUANTIFIED, reason: "Standalone lease liability maturity (Note 36(b), FY26): Rs14,502.69mn carrying value, Rs18,156.20mn total undiscounted, with 29% due within 1 year, 24% in 1-2 years, 36% in 2-5 years, 10% beyond 5 years. Weighted client lease tenure is ~33 months versus 60-120 months to lessors (Ind-Ra rationale). This is the concrete LBF2 ALM anchor for downstream valuation and FTTCP work."}
+business_type: "hybrid"
+revenue_streams:
+  - {name: "Co-working space on rent and allied services", type: "recurring space-as-a-service (licence, not lease, to occupier)", pct_of_revenue: 82.8, predictability: "M"}
+  - {name: "Construction and fit-out projects (Transform / Design & Build)", type: "project-based service (EPC-like fit-out contracting)", pct_of_revenue: 17.2, predictability: "L"}
+asset_intensity: "medium"
+wc_intensity: "negative"
+pricing_power: "moderate"
+cyclicality: "cyclical"
+moats_present:
+  - {moat: "Network effects / multi-centre stickiness", durability: "moderate"}
+  - {moat: "Switching costs (26-month weighted lock-in, sunk client fit-out/integration)", durability: "moderate"}
+  - {moat: "Brand / intangible (Gold/Elite tiers, triple WELL certification)", durability: "moderate, still building"}
+  - {moat: "Scarce institutional landlord access (Grade A/A+ MA partnerships)", durability: "moderate, capital-replicable"}
+valuation_methods:
+  primary: {method: "DCF on cash EBITDA / actual lease cash-outflow basis (FCFE/FCFF)", why: "Only method that reconciles the 28.1pp reported-vs-cash EBITDA gap and the landlord-reset-vs-tenant-passthrough timing lag; Ind AS 116 reported earnings are not cash-comparable across periods or peers"}
+  secondary: {method: "EV/EBITDA or EV/Sales rebuilt on a common cash-EBITDA basis, cross-checked vs Smartworks/IndiQube/DevX", why: "Reported-basis multiples are not comparable across peers with different MA/Straight Lease mix and lease-accounting elections"}
+  tertiary: {method: "EV per operational seat / EV per sq ft", why: "Capacity-based sanity check common among flexible-workspace investors; not a standalone driver"}
+  not_applicable:
+    - "Reported EV/EBITDA (Ind AS 116, pre-rent) — materially overstates cash-generating capacity"
+    - "P/E on unadjusted reported PAT — near-0% effective tax rate and a one-off FY25 exceptional gain distort it"
+    - "Asset-based / NAV / SOTP — negligible owned real estate; footprint is leased or co-invested"
+irrelevant_ratios:
+  - {ratio: "Reported EBITDA margin (36.8% FY26)", why: "Ind AS 116 keeps cash lease rent out of EBITDA; cash EBITDA is 10.1% (Q1 FY27), a 28.1pp gap"}
+  - {ratio: "Gross 'Borrowings' / Net Debt ratio (reported)", why: "~97% of reported Borrowings is lease liability, not financial debt; actual financial debt is Rs50.9 Cr FY26 against net cash"}
+  - {ratio: "Interest coverage on reported EBITDA", why: "Both numerator and denominator are distorted by the same Ind AS 116 lease-interest embedding; AR discloses a separate ex-Ind-AS-116 figure (~11x) instead"}
+  - {ratio: "Front-matter '60%+ RoCE' headline", why: "Uses an undefined 'Cash EBIT' numerator inconsistent with the Schedule III Note 41 ratio (11.87% FY26), a ~5x unreconciled gap in the same document"}
+  - {ratio: "Gross margin proxy (Revenue-Material Cost)/Revenue", why: "No real cost-of-goods-sold concept for a lease-and-sublet service business"}
+  - {ratio: "Current ratio / quick ratio (static)", why: "Negative working capital is a designed, cash-generative feature (upfront client deposits); the widening net current liability trend (Note 2) is the more relevant signal"}
+  - {ratio: "Fixed-asset turnover on gross block including right-of-use assets", why: "Mixes owned PP&E with capitalised lease rights; not comparable across peers with different Straight Lease vs MA mix"}
+  - {ratio: "P/E on reported PAT", why: "~0% effective tax rate (DTL/DTA netting) and a one-off FY25 exceptional gain distort reported PAT quality"}
+must_track_metrics:
+  - {metric: "Cash EBITDA margin (post-rent)", healthy: "rising toward/above the ~10.8-11% FY27 guide implied level", red_flag: "sustained readings below 10% or widening gap vs guide"}
+  - {metric: "Mature (>12mo) vs blended occupancy gap", healthy: "gap narrowing, both rising", red_flag: "gap widening or mature occupancy falling QoQ"}
+  - {metric: "MA : Straight Lease : Partial MO supply mix", healthy: "near the disclosed ~60:40 MA:SL target", red_flag: "SL share rising involuntarily"}
+  - {metric: "Top-10 customer receivable concentration", healthy: "stable or falling from 61.66% FY26", red_flag: "continued rise past FY26 level"}
+  - {metric: "Lease-liability vs client-lock-in maturity gap (ALM)", healthy: "stable near-term (<1yr) bucket vs client lock-in", red_flag: "widening near-term mismatch"}
+unit_economics:
+  unit: "one seat (desk/cabin equivalent), billed monthly"
+  revenue_per_unit: "derived ~Rs 74,000/seat/year (capacity basis) to ~Rs 97,400/seat/year (occupied basis), from co-working revenue / operational seats (AR p.8-9, p.152)"
+  margin_per_unit: "derived ~Rs 923/seat/month cash EBITDA (Q1 FY27 cash EBITDA Rs44 Cr / ~159,000 operational seats)"
+  key_lever: "occupancy fill against a largely fixed lease-cost base, and the MA-vs-Straight-Lease mix (who bears fit-out capex and rent-reset risk)"
+first_deterioration_signals:
+  - {risk: "Enterprise/GCC client consolidation or mid-lock-in exit", first_signal: "blended occupancy % and net seat count (quarterly)"}
+  - {risk: "Landlord rent resets outrunning tenant pass-through", first_signal: "cash EBITDA margin (post-rent), quarterly"}
+  - {risk: "Widening ALM gap between lease-liability and client lock-in maturity", first_signal: "standalone net current liability position (Note 2) and <1yr lease-liability bucket (Note 36)"}
+  - {risk: "Transform/D&B project deferral or delay during the ATPL carve-out", first_signal: "construction and fit-out projects segment revenue"}
+  - {risk: "Tax-litigation disclosure gap widening or escalating", first_signal: "Note 33 contingent liabilities vs CARO disputed-dues table, next AR; Reg 30 GST filings"}
+mgmt_questions:
+  - "What is the accounting policy and lease-liability treatment for Managed Aggregation revenue-share arrangements, and what weighted-average incremental borrowing rate discounts the lease liabilities?"
+  - "Reconcile the AR front-matter '60%+ RoCE' claim to the Schedule III Note 41 figure of 11.87% FY26."
+  - "Why does Note 33 disclose Rs0 in contingent liabilities when the CARO Annexure of the same Annual Report discloses ~Rs110.15 Cr of disputed statutory dues, and why are both GST show-cause notices absent from the Notes?"
+  - "What is the actual MA : Straight Lease : Partial MO split of the current portfolio, and how does the FY27 pipeline change that mix?"
+  - "On the 2021-vintage lease-reset cohort, what share of the portfolio still carries an unresolved timing gap between landlord reset and tenant pass-through, and when does it fully wash through?"
+  - "What is the current status and expected final consideration for the Design & Build business transfer to Awfis Transform Pvt Ltd?"
+  - "What drove the 337.4% YoY jump in 'Infra and allied service expenses' with no narrative explanation in the Notes?"
+one_line_verdict: "Real estate arbitrage story: cash margin, not headline EBITDA, decides if this compounds."
+analyst_note: >
+  Two findings sharpen the LBF1/LBF2 verification priorities beyond what B00-B03
+  established. First, the Q1 FY27 investor deck (p.20-21) carries a full,
+  agreed-upon-procedures-reviewed reported-to-cash EBITDA bridge: Rs162 Cr
+  reported EBITDA less Rs132 Cr actual cash rent (traced from the cash flow
+  statement) plus small adjustments equals Rs44 Cr cash EBITDA. This is a
+  cleaner, company-sourced anchor than deriving the bridge from the AR alone,
+  and should be the primary citation downstream. Second, the AR's own MD&A
+  (p.34) discloses the formula behind its RoCE claims (Ind AS EBITDA less
+  actual lease payments / average capital employed), which is a real, usable
+  definition distinct from the still-undefined front-matter "Cash EBIT"
+  language; the gap to the Schedule III Note 41 figure (11.87%) persists and
+  should still be named, but the formula itself is no longer a pure black box.
+  Third, the archetype fit is clean: AWFIS maps to "Outsourcing partner" on
+  wallet share, capacity fill and contract stickiness far better than to
+  Licence/scarcity (no regulatory gate) or a literal Platform read (no
+  marketplace take rate; it is a real-estate spread business).
+```

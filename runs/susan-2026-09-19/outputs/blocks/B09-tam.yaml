@@ -1,0 +1,111 @@
+stage: B09-tam
+company: "SUSAN"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "India-specific winding-wire market size not disclosed anywhere in corpus; the ₹4,835 Cr (2025E) figure used here is DERIVED by applying the global winding-wire-to-wires-and-cables ratio (Infomerics) to the India wires-and-cables figure, per the stage's own Method 5 benchmark instructions -- not a disclosed number."
+  - "No voltage-class (LT/HT-up-to-33kV vs EHV) split of the India cable market exists in the corpus or in a quick web check; Method 1's 60% Power-T&D-Utilities filter (Infomerics) may still include EHV/HV cable value Susan cannot supply given its 33kV HT ceiling."
+  - "Geography SAM filter (45%) and the 5D expansion-lever figure (15.6%) are population-share proxies for Susan's registered states, not a disclosed state-wise cable-spend or RDSS-allocation split. Flagged LOW confidence throughout."
+  - "KEI Industries' exact FY26 full-year revenue not confirmed (only the Q4 FY26 print, Rs 3,477 Cr, was found); Method 3 peer-aggregation uses an approximate range (Rs 11,000-13,000 Cr)."
+  - "Aluminium conductor per-tonne ASP used in Method 2 (Rs 128-142/kg) is sourced from undated generic trade-listing web pages, not a verified OEM/wholesale contract price."
+flags:
+  - {type: FLAG-TAM-MGMT-CLAIM, reason: "Management's only quasi-TAM reference is the RHP's verbatim reproduction of the company-commissioned Infomerics India Wires & Cables figure (USD 10.32bn/Rs 98,498 Cr 2025E), presented unfiltered and undisaggregated to Susan's actual 33kV-capped, T&D-utility-focused serviceable scope. Ratio to the conservative estimate is 2.03x -> read as INFLATED per the stage's >2x rule."}
+  - {type: FLAG-TAM-GUIDANCE-INCONSISTENCY, reason: "The SOM-implied revenue CAGR handoff to stage 11 rests partly on Susan's own HT/MVCC mix-shift ramp, but the Q1 FY27 call states two different FY27-end HT/MVCC targets in the same call (~15% opening script vs ~50% Q&A, per B05). Stage 11 should discount the CAGR handoff for this credibility gap."}
+  - {type: FLAG-TAM-CAPACITY-GAP, reason: "The mechanical aggressive share-gain SOM_3yr (Rs 1,290 Cr) exceeds management's own peak-capacity revenue reference (Rs 700-800 Cr, Q1 FY27 call) by Rs 490-590 Cr. Capex utilisation is thin (11.7% of the Unit-III object as of 30-Jun-2026, 8 months before the Feb-2027 commissioning target). The capex/execution plan, not market absorption, is the side to doubt in this run's central growth cross-check."}
+  - {type: FLAG-TAM-TRADING-EXCLUDED, reason: "The aluminium rod/wire/ingot trading line (38.38% of FY26 revenue, RHP-stated low entry barriers) is deliberately excluded from TAM/SAM/SOM: it is commodity resale, not a served market with a penetration curve. Sized separately in the report body; SOTP candidate per B04/v3.11 Amendment 27.2/27.4."}
+market_definition: "India LT/HT-up-to-33kV/MVCC power cables, AB cables, AAC/AAAC/ACSR aluminium conductors, and Al/Cu winding wires sold to DISCOMs, EPC contractors and transformer OEMs; trading line and EHV/telecom/residential cable segments excluded"
+tam_cr: {conservative: 48490, realistic: 63934}
+sam_cr: 28770
+sam_pct_of_tam: 45.0
+som_3yr_cr: 700
+som_5yr_cr: 750
+som_implied_revenue_cagr: {yr3: 63, yr5: 36}   # FORMAL handoff to stage 11; manufacturing-segment revenue basis (FY26 = Rs 160.83 Cr), NOT whole-company revenue
+current_sam_share_pct: 0.56
+revenue_headroom_x: 178.9
+tam_growth_pct: 8.0
+runway_class: "MASSIVE"
+mgmt_claim_cr: 98498
+mgmt_claim_ratio: 2.03
+mgmt_claim_read: "inflated"
+capacity_check: "gap of ~Rs 490-590 Cr between the aggressive share-gain SOM_3yr (Rs 1,290 Cr) and management's own peak-capacity revenue reference (Rs 700-800 Cr); reported SOM_3yr uses the capacity-bound figure. The capex plan (11.7% utilised as of Jun-2026) is the optimistic/fragile side, not market absorption."
+methods_used:
+  - "Method 1 top-down (India wires & cables market, Power-T&D-Utilities filter)"
+  - "Method 2 bottom-up (aluminium conductor sub-segment only, partial)"
+  - "Method 3 peer revenue aggregation + unorganised estimate"
+  - "Method 4 import substitution"
+  - "Method 5 global benchmark (India winding-wire market derived by ratio)"
+stale_data_flags:
+  - {datapoint: "CMIE aluminium conductor/cable production and trade volumes", source: "RHP p.120-121, CMIE Outlook", year: "FY2024-25 (~1.5yr old at run date, under the 2yr staleness threshold)"}
+  - {datapoint: "Aluminium conductor per-kg ASP (Rs 128-142/kg)", source: "generic web trade-listing pages", year: "undated, not a staleness issue but an UNDATED/low-confidence sourcing issue"}
+  - {datapoint: "KEI Industries FY26 full-year revenue", source: "web search, Q4 FY26 print only", year: "2026, incomplete rather than stale"}
+searches_performed:
+  - "India winding wire market size 2025 crore CRISIL ICRA report"
+  - "India power cables and conductors market size 2025 CAGR crore CRISIL"
+  - "Dynamic Cables Ltd Diamond Power Infrastructure Vidya Wires FY26 annual revenue crore"
+  - "Vidya Wires Ltd FY26 annual revenue crore results"
+  - "Polycab India KEI Industries FY26 annual revenue crore"
+  - "India aluminium conductor ACSR AAC average price per tonne 2025 2026"
+searches_skipped:
+  - "KEI Industries confirmed FY26 full-year revenue (only Q4 print found; used approximate range instead)"
+  - "State-wise RDSS/DISCOM cable-spend split (would replace the population-share geography proxy with a disclosed number)"
+  - "Voltage-class (LT/HT-up-to-33kV vs EHV) value split of the India cable market"
+downstream_candidates:
+  - signal: "RDSS sanctioned/disbursed outlay by DISCOM"
+    entity_type: "regulatory"
+    demand_link: "Sanctioning pace directly funds the LT/HT/MVCC/AB-cable tenders Susan bids into"
+    likely_source: "Ministry of Power / RDSS dashboard, PIB releases"
+    cadence: "quarterly"
+    shared: false
+  - signal: "State DISCOM tender awards (UP-PVVNL, Haryana, Telangana, Jharkhand, Bihar, MP, Rajasthan)"
+    entity_type: "end-customer"
+    demand_link: "Direct source of Susan's ~50% government order-book share"
+    likely_source: "State DISCOM e-tender portals / GeM"
+    cadence: "event-driven"
+    shared: true
+  - signal: "EPC contractor order pipeline (Monte Carlo, RVNL and peer utility-EPC majors)"
+    entity_type: "counterparty"
+    demand_link: "Source of Susan's ~50% private/EPC order book and the stated Rs 800-1,200 Cr bidding pool"
+    likely_source: "EPC contractor investor disclosures / L1-L2 tender award notices"
+    cadence: "event-driven"
+    shared: false
+  - signal: "LME aluminium price"
+    entity_type: "macro"
+    demand_link: "Input cost for LT/HT/MVCC cables and AAC/AAAC/ACSR conductors; drives the inventory-build margin mechanism B05 flagged"
+    likely_source: "London Metal Exchange (LME) aluminium settlement price"
+    cadence: "monthly"
+    shared: true
+  - signal: "LME copper price"
+    entity_type: "macro"
+    demand_link: "Input cost for copper winding wire, Susan's highest disclosed-margin segment (~24.39%, Q1 FY27)"
+    likely_source: "LME copper settlement price"
+    cadence: "monthly"
+    shared: false
+  - signal: "BIS product licence status / renewal"
+    entity_type: "regulatory"
+    demand_link: "Gates tender eligibility across all product lines; shared dependency for every DISCOM/EPC order"
+    likely_source: "Bureau of Indian Standards (BIS) licence database"
+    cadence: "event-driven"
+    shared: true
+  - signal: "Monitoring Agency (Brickwork Ratings) quarterly IPO-proceeds utilisation report"
+    entity_type: "regulatory"
+    demand_link: "Tracks whether the 12,000 km/yr capacity (this stage's SOM_3yr ceiling) is being built on schedule"
+    likely_source: "BSE Reg 32(6) filings / Brickwork Ratings Monitoring Agency Reports"
+    cadence: "quarterly"
+    shared: false
+demand_externally_verifiable: true
+analyst_note: >
+  TAM/SAM/SOM here excludes the aluminium-rod trading line by design (38.38%
+  of FY26 revenue) -- it is commodity resale, not a served market, sized
+  separately in the report body. India winding-wire TAM (Rs 4,835 Cr) is
+  benchmark-derived, not disclosed; flag its low confidence if reused.
+  SOM_3yr/5yr are set at management's own capacity-linked reference
+  (Rs 700-800 Cr) rather than the mechanical share-gain math, because
+  Section 3C shows capacity, not market size, is the binding constraint:
+  SAM is ~179x current manufacturing revenue, so demand scarcity is not the
+  risk here. The 63%/36% SOM CAGR handoff should be read against two
+  credibility gaps this stage could not resolve: the internally inconsistent
+  HT/MVCC FY27 target (15% vs 50%, same call) and the Q1 FY27 margin's
+  ~82% dependence on an undisclosed inventory-build credit (B05). Stage 11's
+  valuation-implication read (PEG ~0.42 at ~26.3x trailing P/E) should be
+  treated as fragile support, not robust support, for the current price.

@@ -1,0 +1,55 @@
+stage: B07-emoat
+company: "SUSAN"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "R&D headcount, patent filings, and any lab/licensing data are absent from the entire corpus (AR, RHP, transcript, decks); A1/A2/F1 scored 0 on true absence, not on a search failure"
+  - "No segment-level (product-level) P&L exists in any filing; the HT/MVCC ~20-25% product-margin claim (Q1 FY27 call) cannot be checked against a disclosed segment income statement"
+  - "Peer financial/scale data (Prime Cable Industries, Divine Power Energy, V-Marc India, JD Cables named in RHP; DYCL/VIDYAWIRES/DIACABS screener sheets largely empty per B00) prevented any R1/H1 relative-share benchmarking"
+flags:
+  - {type: FLAG-EMOAT, reason: "Adjusted emerging-moat total is 10.7, just below the 12-point MODEST MOAT DEVELOPMENT floor; classified NO MEANINGFUL EMERGING MOAT. Borderline result reported exactly as computed, not rounded up."}
+  - {type: FLAG-EMOAT, reason: "The strongest evidenced category (B2, qualification lock-in via BIS/ISO/DISCOM vendor registrations) fails the I2 cannibalization-barrier test: nothing a funded competitor must sacrifice to replicate it. Consistent with B04's own 'durability medium, replicable' finding."}
+  - {type: FLAG-EMOAT, reason: "C2 (customer concentration improving, Top-10 98%->64% FY24-FY26) may be a mechanical artifact of the collapsing aluminium-rod trading line rather than genuine manufacturing-customer diversification; C1 shows repeat-customer revenue collapsing (89%->45%) over the identical window, a contradictory signal inside the same Customer family."}
+  - {type: FLAG-EMOAT, reason: "Mechanical fixed-asset-turnover x capex calculation (Section 2C) produces an implied ~80% revenue uplift that is a known artifact of the trading-line's asset-light revenue base; capex_embedded_growth_pct reports the capacity-based cross-check (22.8%) instead, per analyst judgment documented in the full report."}
+em_score: 10.7
+em_classification: "NONE"
+active_categories:
+  - {id: "B2", name: "Qualification lock-in (BIS/ISO/DISCOM vendor registration)", strength: "Strong", evidence_type: "DOCUMENTED", time_to_materialise: "active now"}
+  - {id: "C2", name: "Customer concentration improving", strength: "Moderate", evidence_type: "DOCUMENTED", time_to_materialise: "near-term (1-2 qtrs to confirm)"}
+  - {id: "F2", name: "Execution moat (IPO capex/WC objects on schedule per Monitoring Agency)", strength: "Moderate", evidence_type: "DOCUMENTED", time_to_materialise: "12-24m (Feb-2027 test)"}
+  - {id: "R1", name: "Regulatory/policy tailwind (RDSS scheme)", strength: "Moderate", evidence_type: "DOCUMENTED", time_to_materialise: "ongoing, multi-year, shared with all peers"}
+evidence_mix: {documented: 14, claim: 7, inference: 4}
+completionist_recount: "recount performed: 7 documented items across 5 categories (B2 x3 items [BIS licences, ISO certs, DISCOM vendor registrations], R1 x1 [RDSS sanctioned amount], C2 x1 [customer concentration table], F2 x1 [Monitoring Agency Report], A3 x1 [CCV Line committed capex])"
+catalysts_12m:
+  - {catalyst: "Unit III capex utilisation pace vs Feb-2027 commissioning deadline", window: "next 2-3 quarters", evidence_type: "DOCUMENTED", anchor: "Monitoring Agency Report 12-Aug-2026 (Rs 1.20 Cr of Rs 10.30 Cr, 11.7%, No deviation)"}
+  - {catalyst: "Resolution of HT/MVCC FY27-end revenue-share target inconsistency (~15% vs ~50%)", window: "Q2/Q3 FY27 results", evidence_type: "MANAGEMENT CLAIM", anchor: "Q1 FY27 call, opening script vs Q&A answer to Question 4"}
+  - {catalyst: "Disclosure (or non-disclosure) of segment-level EBITDA reconciling to the claimed 20-25% HT/MVCC product margin", window: "next 1-2 quarters", evidence_type: "MANAGEMENT CLAIM (requested by an analyst on the call)", anchor: "Q1 FY27 call Question 10"}
+  - {catalyst: "Order book (Rs 142.39 Cr) conversion to booked revenue on the stated ~3-month timeline", window: "by Q2 FY27 close", evidence_type: "MANAGEMENT CLAIM", anchor: "Q1 FY27 call; 14-Jul/14-Aug-2026 press releases"}
+capex_embedded_growth_pct: 22.8
+optionality_register:
+  - {optionality: "HT/MVCC destination margin (~20-25% product-level)", converting_evidence: "Segment-level P&L or audited product-margin disclosure showing HT/MVCC EBITDA converging toward the claimed range as volume scales", first_appears: "Quarterly results/investor deck product-mix table, or a segment note in a future AR", window: "2-4 quarters (FY27 progression)"}
+  - {optionality: "HT/MVCC revenue-share target (~50% vs ~15%, unresolved within one call)", converting_evidence: "A single, reconciled FY27-end target restated consistently across a subsequent call/deck", first_appears: "Q2/Q3 FY27 call or deck", window: "1-2 quarters"}
+  - {optionality: "Geographic expansion (Tamil Nadu, Kerala, Uttarakhand, Gujarat)", converting_evidence: "Signed distributor/dealer agreement, new DISCOM vendor registration in a named state, or first booked order from the state", first_appears: "Exchange filing (Reg 30) or investor deck", window: "12-24 months"}
+  - {optionality: "Railways and defence segment exploration", converting_evidence: "Signed empanelment letter, qualification certificate, or first booked order from a railway/defence customer", first_appears: "Exchange filing or AR next-year Chairman's Message", window: "12-36 months, unproven"}
+  - {optionality: "Empanelment with leading power sector companies", converting_evidence: "Named empanelment certificate or vendor code disclosure", first_appears: "Exchange filing", window: "12-24 months"}
+  - {optionality: "CCV Line-enabled tender eligibility (Maharashtra-type CCV mandate)", converting_evidence: "Booked order or tender win explicitly citing CCV-based manufacturing as the qualifying capability", first_appears: "Order announcement (Reg 30)", window: "12-24 months (post Feb-2027 commissioning)"}
+  - {optionality: "Customer-concentration improvement becoming a genuine (not trading-line-driven) trend", converting_evidence: "Fourth consecutive year of Top-10 concentration decline measured on manufacturing-only revenue base (excluding trading)", first_appears: "Next AR/RHP-style KPI table or annual results", window: "12 months"}
+combined_assessment: "AVERAGE"
+combined_reasoning: "Gate 0 core score 52 (AVERAGE, driven by a 0/20 cash-conversion block) pairs with an emerging-moat scan at 10.7, below even the 12-point MODEST floor; no forward lift exists to move this into HIGH POTENTIAL or GOOD+ territory."
+top_moat_risks:
+  - "B2 qualification lock-in fails I2: any funded competitor replicates the same BIS/ISO/DISCOM registrations, no exclusivity"
+  - "HT/MVCC margin destination (~20-25%) is unproven at product level; disclosed actual segment margins are ~6.5-7% on a 5-10% revenue base"
+  - "C2 customer-concentration improvement may be an artifact of the aluminium-rod trading line's collapse, not genuine diversification, and runs opposite to the C1 repeat-customer collapse (89%->45%)"
+  - "No capex-embedded fixed-asset-turnover signal is usable at face value: 38% of FY26 revenue is asset-light trading, which inflates any naive turnover-based capex multiplier"
+analyst_note: >
+  Adjusted total 10.7 is a genuine borderline result against the absolute 12-point floor,
+  reported as computed rather than rounded. The four Strong/Moderate categories (B2,
+  C2, F2, R1) are all real and documented, but each fails a durability or attribution test:
+  B2 and F2 fail I2 (replicable by any funded competitor), R1 is shared identically with
+  every DISCOM-facing peer, and C2 is confounded by the trading-line collapse that also
+  drove the C1 repeat-customer decline in the opposite direction. The single largest
+  forward-looking claim in the whole corpus, HT/MVCC destination margin of 20-25%,
+  rests on a 5-10% revenue base and is contradicted in-quarter by the disclosed 6.5-7%
+  actual segment margins; it is carried in the optionality register, not scored. No I1/I2
+  threshold crossing occurred for this name.

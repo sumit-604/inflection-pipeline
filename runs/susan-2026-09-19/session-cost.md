@@ -11,3 +11,6 @@
 | 4 | bizmodel | sonnet | agent default | n/a | n/a | 174500 | 7m16s | 1 |
 | 5 | concall | sonnet | agent default | n/a | n/a | 162448 | 7m37s | 1 |
 | 8 | promoter | sonnet | agent default | n/a | n/a | 217365 | 10m50s | 1 |
+| 6 | peers | sonnet | agent default | n/a | n/a | 189241 | 5m58s | 1 |
+| 7 | emoat | sonnet | agent default | n/a | n/a | 174678 | 7m29s | 1 |
+| 9 | tam | sonnet | agent default | n/a | n/a | 209880 | 16m40s | 1 |

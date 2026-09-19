@@ -1,0 +1,57 @@
+stage: B06-peers
+company: "SUSAN"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Seven peer transcripts read (DYCL x4, DIACABS x1, VIDYAWIRES x2); this is the full available set. Contract allows up to 12 but PRECWIRE, the original third named peer, was dropped at intake because it files no transcripts. No other peer transcript gap."
+flags:
+  - {type: FLAG-MARGIN-CONTRADICTION, reason: "Susan's disclosed winding-wire EBITDA margin (~24.39%, Q1 FY27 call) is 5-6x the only directly comparable listed peer, VIDYAWIRES, which reports 4.3% (H1 FY26) and 4.66% (FY26 full year) across two separate quarters. Gap too large to explain by mix/scale alone. HIGH severity, unresolved."}
+  - {type: FLAG-CAPEX-TIMELINE, reason: "DYCL's own greenfield plant guidance slipped ~12-15 months (H2 FY26 to Sep-2026) citing regulatory approval delay, import machinery delay, and compliance sign-off; DIACABS' CCV line runs ~16-17 months order-to-commission. Against this peer evidence, Susan's Feb-2027 target with only 11.7% capex utilisation as of Q1 FY27 looks aggressive. MEDIUM severity, reinforces existing B05 kill-signal."}
+  - {type: FLAG-TRADING-LINE-ATYPICAL, reason: "None of DYCL, DIACABS or VIDYAWIRES, across seven transcripts spanning nearly a year, discloses any trading/resale revenue line comparable to Susan's aluminium-rod trading (26.8-38.4% of FY26 revenue). All three present as vertically integrated or pure manufacturers. Informative silence, not a direct contradiction; MEDIUM-LOW severity."}
+peers_provided: 7
+verified:
+  - {claim: "Aluminium/copper input-price pass-through via a named contractual or hedging mechanism is standard sector practice", peers: ["DYCL", "DIACABS", "VIDYAWIRES"], anchor_count: 5}
+  - {claim: "Cable/conductor capex, especially higher-voltage-class lines, carries 12-18+ month lead times and is prone to multi-quarter slippage", peers: ["DYCL", "DIACABS"], anchor_count: 4}
+partially_verified:
+  - {claim: "Susan's LT-cable EBITDA margin (~6.5%) is typical for discom/EPC-tender-driven LT cable makers", peers: ["DIACABS"]}
+  - {claim: "Susan's HT/MVCC product-level margin potential (~20%, or 20-25%)", peers: ["DIACABS"]}
+contradicted:
+  - {claim: "Susan's winding-wire segment EBITDA margin ~24.39%", contradicting_peer: "VIDYAWIRES", quote_anchor: "VIDYAWIRES Q2 FY26 call p.5 (EBITDA margin 4.3%, H1 FY26); VIDYAWIRES Q4/FY26 call p.4 (EBITDA margin 4.66%, full FY26)"}
+unverifiable:
+  - {claim: "Discom/state-utility payment terms (DSO, receivable ageing) relative to Susan's ~50:50 government/private order-book mix", peers_checked: ["DYCL", "VIDYAWIRES"]}
+  - {claim: "RDSS/reconductoring tender bid-to-award conversion rate near Susan's ~15-20% assumption", peers_checked: ["DYCL", "DIACABS", "VIDYAWIRES"]}
+  - {claim: "Large trading (bought-and-resold) revenue line comparable in scale/treatment to Susan's aluminium-rod trading", peers_checked: ["DYCL", "DIACABS", "VIDYAWIRES"]}
+peer_coverage_map:
+  - {peer: "DYCL", quarter: "Q2 FY26 (call 28-Oct-2025)", usage: "SUBSTANTIVE", contribution: "DYCL declines to disclose any product-wise segment margin, informing Q1's silence; baseline capacity/demand/order-book context"}
+  - {peer: "DYCL", quarter: "Q3 FY26 (call 27-Jan-2026)", usage: "SUBSTANTIVE", contribution: "Clearest statement of 100% real-time raw-material pass-through"}
+  - {peer: "DYCL", quarter: "Q4 FY26 (call 12-May-2026)", usage: "SUBSTANTIVE", contribution: "Detailed capex-delay reasons and revised timeline; strategic exit from low-margin segments (railway signalling, LV conductors)"}
+  - {peer: "DYCL", quarter: "Q1 FY27 (call 20-Jul-2026)", usage: "SUBSTANTIVE", contribution: "Fixed-vs-variable pass-through contract mechanism; working-capital/receivable discussion; industry-wide capex-race framing; Adani/Birla captive-cable competitive mention"}
+  - {peer: "DIACABS", quarter: "Q1 FY27 (call 14-Aug-2026)", usage: "SUBSTANTIVE", contribution: "Only peer with a full voltage-tiered EBITDA margin table; capacity lead-time detail by line type; RDSS/disaster-management tender pipeline scale; customer concentration and monsoon-risk disclosure"}
+  - {peer: "VIDYAWIRES", quarter: "Q2 FY26 (call 24-Dec-2025)", usage: "SUBSTANTIVE", contribution: "First disclosure of company-wide EBITDA margin (4.3%) directly contradicting Susan's winding-wire claim; back-to-back pass-through mechanism; receivable-day detail"}
+  - {peer: "VIDYAWIRES", quarter: "Q4/FY26 (call 14-May-2026)", usage: "SUBSTANTIVE", contribution: "Confirms full-year EBITDA margin (4.66%), reinforcing the winding-wire contradiction across a second quarter; working-capital improvement targets"}
+industry_cross_read:
+  demand: "All three peers describe healthy-to-strong T&D cable/conductor demand Oct-2025 through Aug-2026; DIACABS most bullish (order book Rs1,900cr to Rs3,688cr, Rs22,000cr multi-state disaster-management pipeline); DYCL's occasional order-booking softness attributed to monsoon timing and raw-material price spikes, not demand destruction; no peer corroborates Susan's specific bid-to-award conversion rate."
+  pricing_inputs: "Uniform 100% or near-100% pass-through of aluminium/copper via named price-variation clauses or back-to-back LME booking across all three peers; matches Susan's implied protection but Susan's own answer is markedly less specific than sector norm."
+  capex_cycle: "Industry-wide capacity race, not a lone expander: DYCL, DIACABS and VIDYAWIRES are all expanding simultaneously in the same window as Susan. DYCL's own guidance slipped ~12-15 months from original target; DIACABS' CCV line runs ~16-17 months order-to-commission. This is a live cautionary data point against Susan's Feb-2027 target given only 11.7% capex utilisation as of Q1 FY27."
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "Raw-material price spikes causing customer order deferment/booking slowdowns for two consecutive quarters (DYCL, Q4 FY26 call p.5-6; Q1 FY27 call p.5-6) -- not raised in Susan's own call"
+  - "Deliberate exit from competitively-squeezed, low-margin sub-segments as an active margin-defence strategy (DYCL discontinuing railway signalling and LV conductors, Q4 FY26/Q1 FY27 calls) -- Susan frames its winding-wire deprioritisation as ambition, not margin-defence response"
+  - "Single-customer/group order-book concentration named as an explicit governance risk with a board reduction mandate (DIACABS: Adani >40% of order book, board target 20%, Q1 FY27 call p.16) -- Susan's own repeat-customer collapse (89.47% to 45.09%, per B04) is a related but differently-shaped risk its own call does not address"
+  - "Weather/monsoon seasonality named as a structural quarterly risk to execution (DIACABS, Q1 FY27 call p.3) -- Susan's transcript does not discuss weather/seasonality risk at all"
+  - "Analyst scrutiny of OCF-to-EBITDA conversion met with a specific numeric improvement plan (VIDYAWIRES targeting receivable days 41 to 35, Q4/FY26 call p.17) -- Susan's own two-year negative CFO history was never raised on its call (per B05)"
+net_narrative_effect: "complicates"
+analyst_note: >
+  The VIDYAWIRES winding-wire margin contradiction (Q6) is the single most
+  load-bearing finding: two quarters, one directly comparable peer, a 5-6x
+  gap against Susan's disclosed 24.39% figure. Flag for resolution before any
+  Section 1B margin-bridge or destination-mix input keys off that number as
+  sector-typical. The capex lead-time evidence (DYCL, DIACABS) independently
+  reinforces the existing B05 kill-signal on the Feb-2027 capacity trigger;
+  treat that trigger's conviction as no higher than M absent new evidence.
+  The HT/MVCC margin question is genuinely mixed, not clean either way:
+  DIACABS' own numbers put Susan's ~20% claim closer to an extra-high-voltage
+  band than a true medium-voltage band, a magnitude concern to carry forward
+  rather than a confirmation or contradiction. No peer mentions Susan by
+  name in any transcript.

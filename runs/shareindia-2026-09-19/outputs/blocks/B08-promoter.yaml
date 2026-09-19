@@ -1,0 +1,75 @@
+stage: B08-promoter
+company: "SHAREINDIA"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Aug-2026 warrant allottee identity NOT FOUND: two BSE filings (21-Aug-2026 corpfiling 8297da79..., 27-Aug-2026 corpfiling 09658cb2...) disclose a preferential warrant allotment; automated web search returned 'Sunbright Mauritius' but this is very likely a search-engine cross-contamination artefact from an unrelated, concurrent Zee Entertainment/Sunbright Mauritius warrant deal using the identical Rs 126/warrant headline figure. Both BSE PDFs returned HTTP 403 on direct fetch. PENDING LIVE VERIFICATION, directly bears on LBF4 ('who gets the new equity')."
+  - "Silverleaf Capital Services Pvt Ltd pre-merger shareholders NOT NAMED in the NCLT sanction order (20-Aug-2026); cannot confirm or rule out promoter/promoter-group ownership of the transferor entity ahead of its 500:1 share-exchange amalgamation into SHAREINDIA. PENDING LIVE VERIFICATION."
+  - "Silverleaf SECURITIES Research Pvt Ltd (separate existing subsidiary) rights-issue subscriber NOT NAMED; parent's stake diluted 73.09% to 64.81% (15-Sep-2026) via non-participation, disclosure does not say who took up the balance. PENDING LIVE VERIFICATION."
+  - "Reason for the Jun-2026 pledge jump (42.87% to 57.80% of promoter holding, +1.59 Cr shares in one quarter) NOT FOUND in corpus; the company's 'no new encumbrance in FY26' statement covers only the period to 31-Mar-2026 and does not resolve the Jun-2026 quarter."
+  - "Note 52 KMP transaction table shows no 'interest paid' line for Saroj Gupta despite the Corp Gov Report's narrative statement that interest on pledged shares was paid to her; unresolved internal inconsistency, not independently resolvable from this corpus."
+  - "Predecessor auditor's identity and reason for change (Note 39) undisclosed in the AR (carried from B02/B03); not independently found via web search."
+  - "Parveen Gupta / Saroj Gupta marital relationship not company-disclosed; treated as inference only, not asserted."
+flags:
+  - type: FLAG-PROMOTER
+    verdict: "CONCERN"
+    top_findings:
+      - "Live, unresolved SEBI show-cause notice (Aug-2023, matter still before SEBI per company's own Aug-2026 filing) alleging Rs 1.91 Cr abnormal profit tied to the 2022 NSE co-location penalty (Rs 3 Lakh, PFUTP violation, no collusion/fraud/undue-advantage finding at that stage) -- none of this disclosed anywhere in the FY26 Annual Report, which states 'no significant and material orders' (Item 37) and BRSR NIL legal proceedings."
+      - "MCX adjudication (penalty Rs 1.09 Cr, appeal pending before SAT) found a 21.46% open-position-limit breach in Natural Gas options by aggregating the company's proprietary account with two entities (R S Futures LLP, R S Securities) named on the AR's own Note 52 list of KMP/relative-controlled entities; company disputes the aggregation and denies control."
+      - "NSE SAT appeal pending (order-placement/market-disruption allegation, NIFTY 14500 CE, Nov-2022 SCN) -- unresolved as of company's own Aug-2026 filing."
+      - "Promoter pledge (% of promoter holding, BSE SHP): 52.16% (Sep-25) -> 44.75% (Dec-25) -> 42.87% (Mar-26) -> 57.80% (Jun-26); above the 40% deal-breaker threshold in every available quarter; promoter absolute holding unchanged (no creeping acquisition/sale), so the swing is entirely in encumbrance of the same static block; Jun-26 jump unexplained."
+      - "Company borrowed Rs 50.04 Cr in FY26 (nil FY25) secured on a lien on shares of promoter, directors and relatives (Note 18), and separately paid interest on pledged shares to Saroj Gupta and Rajesh Gupta (Corp Gov Report) -- family shareholding backs both personal and company-level debt."
+      - "Chronic Infomerics 'ISSUER NOT COOPERATING' status since 22-Nov-2024 (not a Sep-2026 event as company memory framed it), through four successive downgrades (A1+ -> A1 -> A4+ -> A4) over ~2 years, while the company maintains a separate CRISIL A1+ rating -- selective, not company-wide, disclosure failure."
+      - "Aug-2026 warrant allottee and Silverleaf Capital Services pre-merger ownership both unverified (see input_gaps); first-priority live-verification items."
+verdict: "CONCERN"
+scorecard: {clean: 4, caution: 5, red: 1}
+deal_breakers:
+  - {check: "SEBI market ban", status: "NOT TRIGGERED"}
+  - {check: "Economic offence conviction", status: "NOT TRIGGERED"}
+  - {check: "Live SFIO", status: "NOT TRIGGERED"}
+  - {check: "PMLA with attached assets", status: "NOT TRIGGERED"}
+  - {check: "Auditor resignation within 3 years", status: "NOT CONFIRMED - ambiguous evidence, not established as for-cause"}
+  - {check: "Pledge >40% of promoter holding", status: "TRIGGERED - 42.87% to 57.80% across every quarter Sep-25..Jun-26, BSE SHP"}
+  - {check: "Multiple mid-term independent exits within 3 years", status: "NOT CLEARLY TRIGGERED - one resignation (no stated adverse reason) plus one mechanical age-out (Reg 17(1A), age 75), both at FY26/27 boundary"}
+  - {check: "Restatement cutting past profits >10%", status: "NOT FOUND - no restatement anywhere in the AR (B03)"}
+adverse_findings:
+  - {finding: "Live SEBI show-cause notice alleging Rs 1.91 Cr abnormal profit from NSE co-location access, unresolved, undisclosed in the AR", evidence_tier: "VERIFIED", source: "Company's own NCLT scheme-of-amalgamation filing, Reg 30 disclosure 21-Aug-2026, litigation annexure item (b)", date: "SCN Aug-2023; status as of Aug-2026 filing"}
+  - {finding: "SEBI adjudication order, NSE co-location, Rs 3,00,000 penalty; no collusion/fraud/undue-advantage found", evidence_tier: "VERIFIED", source: "SEBI final order 30-May-2022, quoted in company's Aug-2026 NCLT filing; corroborated by Business Today/Zee Business/Moneylife contemporaneous coverage", date: "2026-05-30"}
+  - {finding: "MCX penalty Rs 1,09,43,750 for open-position-limit breach computed by aggregating company's proprietary account with two KMP/relative-controlled entities (R S Futures LLP, R S Securities); appeal pending SAT", evidence_tier: "VERIFIED", source: "Company's own NCLT scheme filing, litigation annexure item (c); cross-referenced against Note 52 related-party entity list, standalone AR p.198-199", date: "penalty 2023-08-23; SCN 2024-02-14; pending as of 2026-08 filing"}
+  - {finding: "NSE SAT appeal pending re alleged below-intrinsic-value order placement disrupting NIFTY 14500 CE market", evidence_tier: "VERIFIED", source: "Company's own NCLT scheme filing, litigation annexure item (a)", date: "SCN 2022-11-25; pending as of 2026-08 filing"}
+  - {finding: "SEBI settlement, industry-wide algo-platform association scheme, Rs 1,00,000, no admission of guilt; 111 brokers including most of the industry settled the same scheme", evidence_tier: "VERIFIED", source: "SEBI settlement order text PSD/SD/SettScheme/2/2025-26 dated 2026-03-17, in corpus; company Reg 30 disclosure", date: "2026-03-17"}
+  - {finding: "Chronic Infomerics ISSUER NOT COOPERATING status since 22-Nov-2024 through four downgrades (A1+ to A4) over ~2 years", evidence_tier: "VERIFIED", source: "Infomerics rating rationales 2025-09-22 and 2026-09-16, in corpus, three-year rating history tables", date: "2024-11-22 to 2026-09-16"}
+  - {finding: "Rs 50.04 Cr FY26 company borrowing secured on lien on shares of promoter, directors and relatives; interest on pledged shares paid to Saroj Gupta and Rajesh Gupta", evidence_tier: "VERIFIED", source: "Note 18 standalone p.171-172; Corporate Governance Report printed p.46", date: "FY26"}
+  - {finding: "Promoter pledge 42.87%-57.80% of promoter holding across all four available quarters (Sep-25..Jun-26), sharpest jump (+14.93pp) in the most recent quarter, unexplained", evidence_tier: "VERIFIED", source: "BSE SHP summary filings Sep-2025, Dec-2025, Mar-2026, Jun-2026", date: "2025-09 to 2026-06"}
+  - {finding: "Interest paid to Rajesh Gupta rose 12.9x YoY (Rs 1.54 Lakh to Rs 19.88 Lakh); no corresponding interest-paid line disclosed for Saroj Gupta despite Corp Gov Report narrative saying she received it", evidence_tier: "VERIFIED (amount) / discrepancy UNVERIFIED (Saroj Gupta omission)", source: "Note 52(iii)(b) standalone p.203 vs Corporate Governance Report p.46", date: "FY26"}
+  - {finding: "Trade receivables from related-party/director-linked firms rose from near-zero to Rs 8.26 Cr and Rs 7.89 Cr respectively, unexplained", evidence_tier: "VERIFIED", source: "Note 7 standalone p.156 (carried from B02 rank 8)", date: "FY26"}
+transition_evidence: []
+transition_evidence_note: "PARTIAL, not NONE FOUND: two credentialed independent-director additions (Piyush Khandelwal re-appointment from 2026-03-03, Arun Kumar Jain fresh appointment from 2026-03-05, both with real external listed directorships at GHCL/India Pesticides) and a new dedicated PIT Compliance Officer (Sarthak Bhalla, appointed 2026-06-22). No institutional investor entry found (FII 1.87%/DII 0.48%, both low). No pledge reduction -- trend is net rising. No exit of a problematic family member -- all four named promoters remain on the Board. No auditor upgrade -- MSKA & Associates unchanged. Net: modest, outweighed by the concurrently rising pledge and the newly surfaced live SEBI/MCX/NSE record."
+pledge_pct_latest: 57.80
+pledge_pct_latest_basis: "% of promoter holding, Jun-2026 BSE SHP (= 28.10% of total company shares); promoter absolute holding unchanged across the four-quarter window"
+pledge_trend: "rising (most recent quarter) after an interim dip -- 52.16% (Sep-25) -> 44.75% (Dec-25) -> 42.87% (Mar-26) -> 57.80% (Jun-26) of promoter holding, BSE SHP; every quarter above the 40% deal-breaker line; Jun-26 jump of +14.93pp (+1.59 Cr shares) unexplained in available sources"
+searches_performed:
+  - "Share India Securities Parveen Gupta SEBI order"
+  - "Share India Securities promoter pledge shares 2026"
+  - "Share India Securities Sachin Gupta CEO controversy"
+  - "Share India Securities SEBI 2017 order adjudicating officer (no relevant hit)"
+  - "Share India Securities Rajesh Gupta Kalyan Capitals director"
+  - "Share India Securities NSE penalty algo trading violation history"
+  - "Share India Securities SEBI co-location penalty 2022"
+  - "Share India Securities proxy advisory IiAS governance concerns (no company-specific hit)"
+  - "Share India Securities AmbitionBox Glassdoor employee reviews"
+  - "\"Share India Securities\" SEBI algo platform settlement scheme 2026"
+  - "Share India Securities fraud scam allegations investors (none found)"
+  - "\"Share India Securities\" NCLT court case litigation shareholder (none found beyond company's own scheme filing)"
+  - "Share India Securities auditor resignation MSKA appointment history (no company-specific hit)"
+  - "Share India Securities institutional investors FII DII stake entry 2026 (no company-specific hit)"
+  - "Share India Securities Enshrine Leasing preferential issue warrant allottee September 2026"
+  - "Share India Securities warrant allotment August 2026 preferential"
+  - "\"Share India Securities\" \"Sunbright\" warrant allottee promoter (identified as likely cross-contamination with an unrelated Zee Entertainment transaction)"
+  - "WebFetch: SEBI 2017 PDF (binary, unreadable)"
+  - "WebFetch: BSE corpfiling 8297da79... (403 Forbidden)"
+  - "WebFetch: BSE corpfiling 09658cb2... (403 Forbidden)"
+searches_skipped: []
+verdict_basis: "Live, unresolved SEBI show-cause notice alleging Rs 1.91 Cr abnormal profit inside the company's core proprietary-trading book (co-location matter), undisclosed anywhere in the audited FY26 Annual Report, combined with a promoter pledge above 40% of holding in every available quarter (57.80% latest) and a new Rs 50.04 Cr company borrowing secured on promoter/relative shares with interest paid to family for the encumbrance."
+analyst_note: "Three of the four Section 2A regulatory items (NSE SAT appeal, the live SEBI abnormal-profits SCN, the MCX position-aggregation appeal) were found only because the company's own Aug-2026 NCLT scheme-of-amalgamation filing carries a mandatory pending-litigation annexure; none appear in the FY26 Annual Report's Board's Report or BRSR legal-proceedings table, which report 'no significant and material orders' and 'NIL' respectively. This is the same disclosure-placement pattern B02/B03 found for the NCD early-redemption and Enshrine-acquisition items, now confirmed a third time on a different document type and a different subject (contested regulatory conduct in the prop-trading book, not a balance-sheet event). The MCX finding is the most load-bearing single item for the transition thesis: a regulator aggregated a promoter-adjacent entity's derivatives positions with the company's own book in the exact activity (proprietary trading) the thesis needs to shrink as a share of profit. Two capital-allocation items (Aug-2026 warrant allottee, Silverleaf Capital Services pre-merger ownership) could not be verified in this run and are named as first-priority live-verification items, not treated as findings."

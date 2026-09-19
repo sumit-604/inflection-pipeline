@@ -1,0 +1,79 @@
+stage: B05-concall
+company: "SHAREINDIA"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - "LBF1 CROSS-CHECK: the '60% client' claim repeated in Q4 FY26 and Q1 FY27 calls is a volume/turnover metric that does not reconcile with the FY26 AR's BRSR Annexure (73.47% of turnover from Trading in Securities vs 15.19% from Stock Broking Services, per B03). Treat as unresolved, not confirmed, for LBF1."
+  - "Material balance-sheet items (negative operating cash flow, contingent liabilities +48.3% YoY, promoter pledge at 57.80% of promoter holding, the May-2026 NCD early-redemption Board resolution) are never raised proactively in any of the three calls."
+quarters_analysed: ["Q3 FY26", "Q4 FY26", "Q1 FY27"]
+triggers:
+  - {priority: 1, name: "MTF book scale-up to Rs 1,000 Cr", type: "VOLUME", timeframe: "medium (2 years)", conviction: "M", confirm_signal: "quarterly MTF book holding the Rs 424-470 Cr trajectory and the Rs 650 Cr FY27 interim milestone", kill_signal: "sustained MTF book contraction below ~Rs 400 Cr for two consecutive quarters, or a funding-cost blow-out"}
+  - {priority: 2, name: "Tier-3 branch rollout economics (8-month payback, 30 branches)", type: "VOLUME", timeframe: "medium", conviction: "M", confirm_signal: "net new branch openings each quarter and per-branch MTF ramp toward the Rs 15 Cr in 8 months bar", kill_signal: "branch count stalling (already flat Q4 FY26 to Q1 FY27) or repeated invocation of the 12-month hard-stop"}
+  - {priority: 3, name: "Prop-to-client mix shift, verified on a consistent metric", type: "PRICE-MIX", timeframe: "long", conviction: "L", confirm_signal: "a single, consistently-defined revenue AND profit split disclosed the same way two quarters running, reconciling with the AR's BRSR segment split", kill_signal: "continued shifting of the metric definition, or a BRSR/segment split that keeps showing >70% prop-linked revenue"}
+  - {priority: 4, name: "PMS/AIF/wealth fee ramp", type: "PRICE-MIX", timeframe: "near-medium", conviction: "M", confirm_signal: "PMS AUM continuing to outrun its own stated targets; AIF actually launching in Q3 FY27 as now guided", kill_signal: "a further AIF timeline slip past Q3 FY27, or PMS AUM growth stalling below Rs 200 Cr"}
+  - {priority: 5, name: "Silverleaf merger completion", type: "INORGANIC", timeframe: "medium", conviction: "L", confirm_signal: "NCLT approval news and Silverleaf's Rs 50-60 Cr revenue appearing in FY27 consolidated numbers", kill_signal: "another quarter passing with no management update on NCLT status"}
+  - {priority: 6, name: "RBI/SEBI regulatory transition absorbed without margin damage", type: "REGULATORY-POLICY", timeframe: "near", conviction: "M", confirm_signal: "continued strong quarters through the FY27 transition window, as Q1 FY27 showed", kill_signal: "a quarter where bank-guarantee/limit constraints visibly compress prop-desk profitability"}
+  - {priority: 7, name: "Institutional broking growth", type: "VOLUME", timeframe: "near", conviction: "H", confirm_signal: "continued client-count growth quarter on quarter (154->174->186->212)", kill_signal: "a quarter of flat or declining institutional empanelment"}
+guidance:
+  - {item: "MTF book two-year target", number: "Rs 900-1,000 Cr (double from ~Rs 450 Cr)", timeframe: "2 years from Jan-2026", stated_in: "Q3 FY26"}
+  - {item: "Insurance segment full-year growth", number: "20-25% YoY", timeframe: "FY26", stated_in: "Q3 FY26"}
+  - {item: "Merchant banking approvals in hand", number: "6 approvals; 2 main-board IPOs filed", timeframe: "next quarter onward", stated_in: "Q3 FY26"}
+  - {item: "EBITDA margin guideline", number: "~38% (+/-2%)", timeframe: "standing", stated_in: "Q4 FY26"}
+  - {item: "PAT margin guideline", number: "~22% (+/-2%)", timeframe: "standing", stated_in: "Q4 FY26"}
+  - {item: "PMS AUM target", number: "Rs 200 Cr", timeframe: "FY27", stated_in: "Q4 FY26"}
+  - {item: "AIF approval/launch", number: "approval by end of Q2 [FY27]; ops to start this financial year", timeframe: "FY27", stated_in: "Q4 FY26"}
+  - {item: "MTF book target", number: "Rs 650 Cr (from Rs 424 Cr FY26 close)", timeframe: "FY27", stated_in: "Q4 FY26"}
+  - {item: "Share India Cred issuance target", number: "Rs 500 Cr worth of issues", timeframe: "FY27", stated_in: "Q4 FY26"}
+  - {item: "Branch plan", number: "6 more branches (13 total)", timeframe: "end of FY27", stated_in: "Q4 FY26"}
+  - {item: "Branch plan (longer)", number: "30 branches", timeframe: "2-3 years", stated_in: "Q4 FY26"}
+  - {item: "Client vs prop mix (profitability)", number: "client 60% / prop 40%", timeframe: "end of FY27", stated_in: "Q4 FY26"}
+  - {item: "Client vs prop mix (3-year vision)", number: "client 70% / prop 30%", timeframe: "3 years", stated_in: "Q4 FY26"}
+  - {item: "RBI intraday-funding impact", number: "~20% impact on deposit/limits used", timeframe: "effective ~1-Jul-2026; relief to ~Mar-2027", stated_in: "Q4 FY26"}
+  - {item: "Group revenue growth guidance", number: "around 20%", timeframe: "FY27", stated_in: "Q1 FY27"}
+  - {item: "PMS AUM target (raised)", number: "~Rs 250 Cr", timeframe: "FY27", stated_in: "Q1 FY27"}
+  - {item: "AIF launch (slipped)", number: "Q3 FY27", timeframe: "FY27", stated_in: "Q1 FY27"}
+  - {item: "MTF book two-year target (restated)", number: "Rs 1,000 Cr", timeframe: "2 years from Jul-2026", stated_in: "Q1 FY27"}
+  - {item: "Branch payback economics", number: "Rs 15 Cr MTF book in 8 months = breakeven; hard stop at 12 months", timeframe: "per branch", stated_in: "Q1 FY27"}
+  - {item: "Branch rollout pace", number: "~8 branches per tranche; 25-30 branches in 24 months", timeframe: "2 years", stated_in: "Q1 FY27"}
+  - {item: "Enshrine Leasing acquisition (property)", number: "up to Rs 45 Cr; property value more than Rs 42 Cr", timeframe: "immediate", stated_in: "Q1 FY27 (closed 17-Sep-2026 at Rs 39.72 Cr, Reg 30 filing)"}
+promise_delivery:
+  delivered: 5
+  partial: 3
+  missed: 2
+  rows:
+    - {promised_in: "Q3 FY26", promise: "Silverleaf NCLT approval by end of Q4 FY26", outcome: "missed", explanation: "still in NCLT, 'maximum quarter's time' (Q4 FY26); no status update at all by Q1 FY27"}
+    - {promised_in: "Q3 FY26", promise: "uTrade multi-broker rollout from FY27, 2x-3x revenue in 1-2 years", outcome: "missed", explanation: "new SEBI circular makes multi-broker vendor setup extremely costly (Q4 FY26); dropped from Q1 FY27 commentary"}
+    - {promised_in: "Q3 FY26", promise: "insurance segment 20-25% FY26 growth", outcome: "partial", explanation: "never re-confirmed with a number in Q4 FY26 or Q1 FY27 calls"}
+    - {promised_in: "Q3 FY26", promise: "MTF two-year target Rs 900-1,000 Cr", outcome: "delivered", explanation: "glide path intact: Rs 424 Cr (Q4, seasonal dip) to Rs 470 Cr (Q1 FY27)"}
+    - {promised_in: "Q4 FY26", promise: "PMS FY27 AUM target Rs 200 Cr", outcome: "delivered", explanation: "Q1 FY27: Rs 150 Cr already at Q1 end, target raised to ~Rs 250 Cr"}
+    - {promised_in: "Q4 FY26", promise: "AIF approval by end of Q2 FY27, ops this financial year", outcome: "partial", explanation: "Q1 FY27: launch pushed to Q3 FY27"}
+    - {promised_in: "Q4 FY26", promise: "6 more branches by end of FY27", outcome: "partial", explanation: "too early to call; zero net new branches reported in Q1 FY27"}
+    - {promised_in: "Q4 FY26", promise: "client volume share to 60% by end of FY27", outcome: "delivered", explanation: "Q1 FY27: management claims 60% volume already achieved, ahead of target; but this is a volume metric, not the revenue/profit split the AR discloses differently"}
+    - {promised_in: "Q4 FY26", promise: "RBI curb: ~20% deposit/limit impact, minimal bottom-line impact", outcome: "delivered", explanation: "Q1 FY27 reports strongest quarterly performance to date through the transition window"}
+    - {promised_in: "Q1 FY27", promise: "Enshrine Leasing acquisition up to Rs 45 Cr", outcome: "delivered", explanation: "closed 17-Sep-2026 at Rs 39.72 Cr, within the range given"}
+excuse_pattern: "external-blame-heavy"
+repeated_evasions:
+  - {question: "What is uTrade's (and the tech subsidiaries') actual revenue / monetization model?", quarters_asked: ["Q3 FY26", "Q4 FY26"], classification: "deflected every time"}
+credibility_grade: "C"
+credibility_basis: "Solid operational delivery (MTF, PMS, institutional broking, new verticals) but the central, repeated prop-to-client mix claim shifts units (volume/revenue/profit) every quarter and contradicts the FY26 AR's own BRSR split (73.47% trading vs 15.19% broking); no self-attributed miss found in three calls; material balance-sheet stress items (cash conversion, contingent liabilities, pledge, NCD redemption) never raised proactively."
+peer_questions:
+  - {question: "Did SMC Global, Choice International or Angel One see anything like a 29% QoQ ADTO jump in Q3 FY26, and how much of any industry-wide ADTO recovery is commodity-driven versus cash/F&O?", why: "Tests whether Share India's Q3 FY26 stabilization/ADTO-growth narrative is company-specific or industry-wide.", check_peers: ["SMCGLOBAL", "CHOICEIN", "ANGELONE"]}
+  - {question: "What do peer concalls say about the RBI intraday-funding curb on proprietary desks (effective ~1-Jul-2026) and the claimed Rs 40,000-50,000 Cr of capital pulled from the market?", why: "Share India's own margin-recovery narrative depends on this specific, checkable industry-wide number.", check_peers: ["ANGELONE", "SMCGLOBAL", "CHOICEIN"]}
+  - {question: "Do any peers quantify MTF industry growth, or discuss discount brokers (Zerodha, Groww) cutting MTF yields, the way Share India's Q2 FY26 call did?", why: "Tests the MTF-yield-pressure counter-narrative for company-specific execution edge versus industry-wide pricing dynamics.", check_peers: ["ANGELONE", "SMCGLOBAL"]}
+  - {question: "What prop-vs-client revenue and profit splits (in a single, consistent metric) do SMC Global and Choice International disclose, and how does Share India's self-described '60% client by volume' compare on a like-for-like revenue basis?", why: "Directly tests LBF1 and the central transition-thesis question this run exists to answer.", check_peers: ["SMCGLOBAL", "CHOICEIN"]}
+  - {question: "Has any peer disclosed a similar SEBI circular constraint on third-party algo-platform vendors serving multiple brokers?", why: "Verifies whether the uTrade multi-broker setback is a genuine industry-wide regulatory event or a company-specific miss dressed as external-blame.", check_peers: ["ANGELONE", "CHOICEIN"]}
+red_flags:
+  - {severity: "HIGH", flag: "Prop-vs-client metric inconsistency: the '60% client' claim shifts between volume, turnover and profitability across three calls and does not reconcile with the AR's BRSR split (73.47% trading vs 15.19% broking)."}
+  - {severity: "MEDIUM", flag: "Material balance-sheet items never raised proactively: negative operating cash flow, contingent liabilities +48.3% YoY, promoter pledge at 57.80% of promoter holding, and the May-2026 NCD early-redemption Board resolution (predates the Q1 FY27 call by over two months)."}
+  - {severity: "MEDIUM", flag: "uTrade monetization model never answered across two quarters of direct analyst questions."}
+  - {severity: "LOW-MEDIUM", flag: "Silverleaf NCLT timeline slippage with declining transparency: unprompted updates in Q3/Q4 FY26, no status update at all in Q1 FY27."}
+  - {severity: "LOW", flag: "Self-serving, unquantified peer-outperformance claim in Q1 FY27 ('we have performed far, far better') with no metric or named peer."}
+dropped_triggers:
+  - "uTrade multi-broker expansion (last discussed Q4 FY26 as stalled by a SEBI circular; absent from Q1 FY27 commentary)"
+  - "Silverleaf NCLT merger status (unprompted updates in Q3/Q4 FY26; no update, even prompted, in Q1 FY27)"
+timeline_slippages:
+  - "AIF launch: 'end of Q2 FY27' (Q4 FY26 call, May-2026) slipped to 'Q3 FY27' (Q1 FY27 call, Jul-2026) inside one quarter of guidance"
+  - "Silverleaf merger: 'NCLT approval by end of Q4 FY26' (Q3 FY26) slipped to 'maximum quarter's time' from May-2026 (Q4 FY26), then no update at all (Q1 FY27)"
+analyst_note: "The run's central open question (LBF1, prop vs client) cannot be resolved from the concalls alone: management's own framing shifts unit every quarter and is contradicted by the FY26 AR's BRSR split. Downstream stages should treat 'client share rising' as management narrative, not confirmed fact, and weight the AR/segment-note evidence (B02/B03) over concall claims when the two conflict. The credibility grade (C) is the binding input to the Role 1 4D weights (35/45/20); a purely operational read of MTF/PMS/institutional delivery would suggest B, but the strategic-narrative inconsistency and total silence on cash conversion, contingent liabilities, the pledge and the NCD redemption cap it at C."

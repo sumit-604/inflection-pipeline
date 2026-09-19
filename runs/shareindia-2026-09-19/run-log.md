@@ -6,3 +6,4 @@
 - stage 0: done inline by orchestrator. Empty-folder pause suppressed (Step-1 autonomy contract).
 - stages 1, 2.1: block files carried markdown code fences; stripped by orchestrator (content unchanged), now parse.
 - stage 2 pass 3: B02-notes.input_gaps emitted empty; B00.input_gaps remain authoritative and are passed to every later stage.
+- stage 8 found a SEBI AO order (NSE co-location, ~30-May-2022) cited in the Aug-2026 NCLT scheme filing; order text not in corpus; sebi.gov.in search blocked the automated request. B00 amended: freshness pair 3 FAIL, freshness_verdict CORPUS GAPPED-FRESHNESS. Gate caps at PROCEED WITH CAVEATS.

@@ -1,0 +1,59 @@
+stage: B07-emoat
+company: "SSWL"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "No product-level or segment margin split disclosed anywhere in the AR, decks or transcripts (single Ind AS 108 segment, AR p.7688-7690); B2's qualification-lock-in and the whole mix-shift-margin thesis cannot be verified below the blended level."
+  - "No IATF/TS 16949/NADCAP-style automotive quality certification found in the AR; only general ISO 9001/14001/27001/45001/50001 management-system certifications located, so B2 cannot be anchored to a certification-based qualification barrier."
+  - "Alloy wheel utilisation shows a live tension between the Jul-2026 deck's 82% (Q1 FY27) and management's 'completely sold out'/100% characterisation on the same-period call; not reconciled in this stage."
+  - "Steel wheel/agri brownfield capex (~Rs150cr) has no separate Board resolution located in the AR; sourced only from the Q1 FY27 concall."
+  - "Q2 FY26 backward-check transcript (inputs/other/) was not separately re-scanned category-by-category beyond the promise-delivery cross-reference already carried in B05; any Q2-only forward-looking claim not repeated in Q3/Q4/Q1 could be under-counted."
+flags:
+  - {type: FLAG-CONTRADICTED-CLAIM, reason: "H1's Southeast Asia antidumping/tariff-advantage claim (Q4 FY26 call) was reversed by management itself one quarter later ('no differential advantage... level playing field,' Q1 FY27 call). Scored WEAK/INFER, not credited twice via E2."}
+  - {type: FLAG-UNVERIFIABLE-LOCKIN, reason: "B2 (Strong, the highest-scoring category) rests entirely on unaudited investor-deck OEM share-of-business percentages and management's own sole-supplier/near-monopoly claims. The one disclosure that would test this (steel-vs-alloy EBITDA/wheel split) has been stonewalled in every quarter asked per B05."}
+  - {type: FLAG-NEGATIVE-TREND, reason: "Three categories (F1 talent density, G1 war chest, G2 WC trajectory) score zero on a genuinely negative documented trend, not a data gap: R&D spend fell 1.14% to 0.40% of turnover, standalone cash was Rs6.5cr at FY26-end, and CFO/EBITDA fell from 106.7% to 65.0%."}
+em_score: 17
+em_classification: "MODEST"
+active_categories:
+  - {id: "B1", name: "Backward integration and RM security", strength: "Moderate", evidence_type: "DOCUMENTED", time_to_materialise: "ongoing"}
+  - {id: "B2", name: "Qualification lock-in", strength: "Strong", evidence_type: "MANAGEMENT CLAIM", time_to_materialise: "active now"}
+  - {id: "C1", name: "Customer ecosystem / embedded relationships", strength: "Moderate", evidence_type: "MANAGEMENT CLAIM", time_to_materialise: "active now"}
+  - {id: "F2", name: "Execution moat", strength: "Moderate", evidence_type: "DOCUMENTED/MANAGEMENT CLAIM", time_to_materialise: "active now"}
+  - {id: "H2", name: "Strategic partnerships", strength: "Moderate-Strong", evidence_type: "DOCUMENTED", time_to_materialise: "active now"}
+  - {id: "R1", name: "Regulatory/policy tailwind (GST 2.0)", strength: "Moderate", evidence_type: "DOCUMENTED/MANAGEMENT CLAIM", time_to_materialise: "active now, shared by peers"}
+evidence_mix: {documented: 15, claim: 10, inference: 3}
+completionist_recount: "📄 recount performed: 15 documented items across 6 categories (B1, F1[negative], F2, H2, H3, R1)."
+catalysts_12m:
+  - {catalyst: "Bhuj alloy wheel and knuckle trial production", window: "Oct-2026", evidence_type: "MANAGEMENT CLAIM", anchor: "Q4 FY26 concall (02-Jun-2026), p.5-6"}
+  - {catalyst: "Steel wheel / agri brownfield commissioning (24mn to 26mn)", window: "before end of CY2026", evidence_type: "MANAGEMENT CLAIM", anchor: "Q1 FY27 concall (16-Jul-2026), p.7-8"}
+  - {catalyst: "EBITDA/wheel holding above raised >Rs310 guide", window: "through FY27", evidence_type: "MANAGEMENT CLAIM", anchor: "Q1 FY27 concall, p.5"}
+  - {catalyst: "Export run-rate confirming ~Rs600cr FY27 guide", window: "H2 FY27", evidence_type: "MANAGEMENT CLAIM", anchor: "Q4 FY26 concall, p.5-6; Q1 FY27 concall, p.5-6"}
+  - {catalyst: "Two additional knuckle OEM wins", window: "FY27", evidence_type: "MANAGEMENT CLAIM", anchor: "Q4 FY26 concall, p.18-19"}
+capex_embedded_growth_pct: 33
+optionality_register:
+  - {optionality: "Hot stamping as a new product line", converting_evidence: "Committed capex sanction or signed OEM development contract", first_appears: "Reg 30 board outcome filing / concall", window: "12-24 months"}
+  - {optionality: "Knuckle phase 2 (+0.5mn beyond the 1.1mn Bhuj phase 1)", converting_evidence: "Board capex approval / Reg 30 filing naming the phase", first_appears: "AR Key Business Development note or Reg 30 filing", window: "FY28 (softened: mentioned Q4 FY26 only, not repeated Q1 FY27)"}
+  - {optionality: "Further aluminium wheel/export capacity beyond 6.2mn", converting_evidence: "Committed capex sanction", first_appears: "Reg 30 board outcome / concall", window: "6-18 months, contingent on export ramp"}
+  - {optionality: "Two additional knuckle OEM wins", converting_evidence: "Disclosed order win or named customer addition", first_appears: "Reg 30 filing / concall / investor deck customer table", window: "FY27 (12 months)"}
+  - {optionality: "Bhuj as a global aftermarket export hub", converting_evidence: "Disclosed export-revenue split attributable to Bhuj-sourced product", first_appears: "Investor deck export-profile slide or segment note", window: "24 months, post trial production"}
+  - {optionality: "Southeast Asia antidumping / China+1 cost advantage", converting_evidence: "A quantified, sustained duty-differential disclosure (claim already reversed once)", first_appears: "Concall or rating-agency rationale", window: "uncertain, already contradicted once"}
+  - {optionality: "Yield/unit-cost improvement from process innovation and robotic automation", converting_evidence: "A disclosed yield % or unit-cost metric", first_appears: "AR Technology Absorption note or concall", window: "ongoing, no fixed date"}
+combined_assessment: "GOOD"
+combined_reasoning: "Backward GOOD (B01 core 63) plus forward MODEST (EM ~17, below the >=25 STRENGTHENING/EXPANSION threshold) stays GOOD; the forward story does not yet clear the bar this stage's own rule requires to elevate toward HIGH POTENTIAL."
+top_moat_risks:
+  - "B2 (qualification lock-in, the highest-scoring category) rests entirely on unaudited management percentages; the one verifying disclosure (steel-vs-alloy split) has been stonewalled every quarter asked."
+  - "F2 (execution moat) already shows Bhuj running 4-5 months behind the MD's own internal timeline, and an earlier steel-wheel capacity plan was quietly curtailed without proactive disclosure."
+  - "H1's antidumping/tariff tailwind reversed within one quarter on management's own telling; R1's GST tailwind is shared by every peer, not company-specific."
+  - "Three categories central to a durable moat story (F1 talent density, G1 war chest, G2 working-capital trajectory) show documented negative trends, not merely absent evidence."
+analyst_note: >
+  The forward scan and the backward Gate 0 flags triangulate on the same
+  company memory question (LBF2): the mix-shift-lifts-margin story is
+  real at the level of management's own claims (B2, F2) but not yet
+  verifiable company-wide, because the one disclosure that would settle
+  it (steel-vs-alloy economics) is the one thing management has
+  stonewalled in every call read. The R&D-spend collapse (F1, DOC) sits
+  oddly against an AR narrative that repeatedly cites "technologically
+  superior" components as the mitigation for customer-concentration risk
+  (AR p.7621); this is worth a direct question at Halt 1, not a silent
+  pass-through to valuation.

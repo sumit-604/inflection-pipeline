@@ -1,0 +1,60 @@
+stage: B06-peers
+company: "SSWL"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags: []
+peers_provided: 12
+verified:
+  - {claim: "RM pass-through (steel/aluminium) is genuine, lagged, and moving toward near-monthly settlement industry-wide", peers: ["ALICON", "UNOMINDA", "WHEELS"], anchor_count: 6}
+  - {claim: "GST 2.0-driven demand recovery is broad-based across PV/CV/tractor/2W-3W, industry-wide", peers: ["WHEELS", "UNOMINDA", "ALICON"], anchor_count: 5}
+  - {claim: "Peer commodity cost trajectories match SSWL's cited West-Asia-conflict-driven Q1 FY27 cost event in timing and causal attribution; margin held via pass-through (ALICON underlying margin flat YoY)", peers: ["WHEELS", "UNOMINDA", "ALICON"], anchor_count: 6}
+  - {claim: "~Rs600cr/1.2mn-wheel Bhuj capex-per-unit-capacity is in line with peer capex-per-unit (WHEELS ~Rs625/unit, UNOMINDA ~Rs424/unit)", peers: ["WHEELS", "UNOMINDA"], anchor_count: 2}
+partially_verified:
+  - {claim: "Aluminium-wheel EBITDA/wheel ~2x steel wheel's / ~Rs450 per-wheel alloy margin", peers: ["UNOMINDA", "WHEELS"]}
+  - {claim: "CV industry growth ~16% YoY 9M FY26 reconciles with peers; SSWL's 52% MHCV/LCV wheel share (vs discarded 61%) holds", peers: ["WHEELS"]}
+contradicted: []
+unverifiable:
+  - {claim: "Vietnam/Thailand wheel exporters face US antidumping/circumvention investigations giving India/SSWL a tariff advantage; level playing field held since ~June 2026", peers_checked: ["WHEELS", "UNOMINDA"]}
+  - {claim: "Indian alloy wheel market has only 2 serious players with durable pricing power despite rising import competition", peers_checked: ["UNOMINDA", "ALICON"]}
+  - {claim: "SSWL holds ~80% share in EV-scooter wheels and ~30% in ICE 2W/3W wheels", peers_checked: ["ALICON", "UNOMINDA"]}
+peer_coverage_map:
+  - {peer: "WHEELS", quarter: "Q2 FY25 (28-Oct-2024)", usage: "SUBSTANTIVE", contribution: "Multi-year RM pass-through lag baseline"}
+  - {peer: "WHEELS", quarter: "Q4 FY25 (20-May-2025)", usage: "SUBSTANTIVE", contribution: "Continues pass-through-lag longitudinal evidence; debt/bill-discounting baseline"}
+  - {peer: "WHEELS", quarter: "Q2 FY26 (31-Oct-2025)", usage: "SUBSTANTIVE", contribution: "Alloy-wheel ROI-underperformance quote; steel-vs-aluminium pass-through asymmetry; CV/tractor market share 45%/52%; alloy capex-per-unit; near-miss competitor mention"}
+  - {peer: "WHEELS", quarter: "Q4 FY26 (15-May-2026)", usage: "SUBSTANTIVE", contribution: "GST 2.0 broad-based quote; West Asia commodity spike; CBAM risk disclosure; FY27 capex plan"}
+  - {peer: "UNOMINDA", quarter: "Q2 FY26 (07-Nov-2025)", usage: "SUBSTANTIVE", contribution: "GST 2.0/festive sector data; 2W alloy market share and application ratio"}
+  - {peer: "UNOMINDA", quarter: "Q3 FY26 (05-Feb-2026)", usage: "SUBSTANTIVE", contribution: "New LPDC plant capex/capacity (Q9 comparator); alloy-margin-above-average statement; alloy penetration softness first flagged"}
+  - {peer: "UNOMINDA", quarter: "Q4 FY26 (18-May-2026)", usage: "SUBSTANTIVE", contribution: "Commodity inflation onset tied to geopolitical event; alloy penetration moderation continued; Haryana wage-code impact"}
+  - {peer: "UNOMINDA", quarter: "Q1 FY27 (04-Aug-2026)", usage: "SUBSTANTIVE", contribution: "Margin-dilution mechanics of pass-through; monthly-settlement negotiation in progress; alloy penetration recovering"}
+  - {peer: "ALICON", quarter: "Q2 FY26 (07-Nov-2025)", usage: "SUBSTANTIVE", contribution: "GST 2.0 boost quote; US tariff rates by product; revenue mix by segment"}
+  - {peer: "ALICON", quarter: "Q3 FY26 (16-Feb-2026)", usage: "SUBSTANTIVE", contribution: "ACMA-sourced segment growth stats matching GST 2.0 story; European cyber-attack loss"}
+  - {peer: "ALICON", quarter: "Q4 FY26 (13-May-2026)", usage: "SUBSTANTIVE", contribution: "Quantified West Asia aluminium cost spike; Haryana labour code wage hike; order-book revision"}
+  - {peer: "ALICON", quarter: "Q1 FY27 (14-Aug-2026)", usage: "SUBSTANTIVE", contribution: "Underlying aluminium-adjusted margin flat YoY confirming pass-through math; immediate monthly pass-through; capex payback comparator"}
+industry_cross_read:
+  demand: "Unanimous GST 2.0-driven, broad-based, multi-segment domestic recovery from late Sep-2025 sustaining through Q1 FY27, with a new Middle East geopolitical headwind emerging from Q4 FY26 on the cost/energy side, not the demand side."
+  pricing_inputs: "Genuine but lagged RM pass-through, compressing toward monthly cadence after the 2026 commodity spike; all three peers name the West Asia conflict as the specific driver, matching SSWL's timing; peers surface a mechanical nuance (full pass-through still dilutes reported % margin) SSWL's own transcripts do not."
+  capex_cycle: "INDUSTRY-WIDE CAPACITY RACE, not a lone SSWL expander -- all three peers simultaneously expanding alloy/aluminium and adjacent capacity through FY26-FY27; validates the demand read but signals rising medium-term competitive supply."
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "CBAM (EU Carbon Border Adjustment Mechanism, live 1-Jan-2026) as a new quantified cost/compliance line on EU-bound exports (WHEELS, Q4 FY26 call) -- not mentioned in any SSWL transcript despite SSWL's own export-growth ambition partly Europe-facing"
+  - "New national labour code minimum-wage revisions (~35% Haryana hike) as a material cost pressure (ALICON Q4 FY26 call; UNOMINDA Q4 FY26 call) -- not surfaced in any SSWL transcript"
+  - "Customer-side operational/cyber-security disruption risk (ALICON's 5-week production pause at a UK OEM after a cyber-attack) as a risk category -- SSWL does not discuss analogous customer-concentration/operational-disruption exposure"
+net_narrative_effect: "complicates"
+analyst_note: >
+  Peer evidence supports SSWL's demand (GST 2.0, broad-based, matching timing)
+  and RM-pass-through/cost-trajectory narratives (same West Asia shock, same
+  window, ALICON's underlying-margin-flat result the cleanest single
+  confirmation available). It complicates the LBF2 mix-shift-margin thesis at
+  the segment level: WHEELS states its own alloy wheel business is currently
+  its LOWEST-ROI segment pending a ~60k-wheel/month scale threshold, the
+  opposite direction from "alloy ~2x steel," while UNOMINDA supports the
+  general direction without a magnitude. Three questions (Vietnam/Thailand
+  tariff advantage, 2-player alloy market structure, SSWL's specific
+  EV-scooter/ICE-2W share) are genuinely unverifiable -- no peer transcript
+  touches them, this is a real evidence gap, not a soft negative. The
+  cross-peer hypothesis (alloy/aluminium margins may systematically lag
+  entry-level-driven volume surges by 1-2 quarters) is worth carrying into
+  Stage 11 as a lens for reading SSWL's own EBITDA/wheel quarter-to-quarter
+  volatility.

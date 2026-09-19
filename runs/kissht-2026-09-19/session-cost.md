@@ -20,3 +20,27 @@
 | 12d | verifier D peer coverage | claude-sonnet-5 | default | n/a | n/a | 245572 | 6m12s | 1 |
 | 5c | confidence delta | orchestrator (inline) | n/a | n/a | n/a | n/a | ~3m | 1 |
 | 13 | synthesis-lite (phase 1, 3 files) | claude-opus-5 | default | n/a | n/a | 181835 | 5m52s | 1 |
+| 09b | Halt 1 understanding dossier | claude-sonnet-5 | default | n/a | n/a | 180844 | 9m40s | 1 |
+
+## CLOSE-OUT SUMMARY
+
+Run total (subagent ledger rows): 3,048,613 tokens. Input/output split not exposed by the subagent metadata (n/a in the ledger).
+
+(a) TOP FIVE BY TOKENS
+1. 2 notes triple-pass (3 runs): 462,962 (15.2%)
+2. 12d verifier D: 245,572 (8.1%)
+3. 12b verifier B: 244,952 (8.0%)
+4. 3 AR deep dive: 242,916 (8.0%)
+5. 6 peer concalls: 225,708 (7.4%)
+
+(b) DOWNSHIFT FAILURES
+DOWNSHIFT FAILURE: stage 0 (input validation ran inline in the orchestrator session on claude-opus-5, as run-pipeline step 1 directs; DISPATCH routes stage 0 to haiku). Verifier A ran on claude-haiku-4-5 as routed. Stage 10 does not run in phase 1.
+
+(c) COST SPIKES
+none (no prior KISSHT run exists)
+
+(d) OPERATOR SNAPSHOT
+Operator: run /cost and /usage now and paste the cache hit ratio and the loop totals below under 'Operator snapshot'. The orchestrator cannot read those interactive commands.
+
+### Operator snapshot
+(pending operator)

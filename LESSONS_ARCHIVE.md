@@ -598,3 +598,14 @@ Verifier C check 15 (PR #163, PR #164), and the LESSONS discipline changes
 (PR #165).
 
 Size: LESSONS.md 164 lines / 1555 words before, 119 lines / 1062 words after.
+
+## 2026-09-19 — KISSHT (OnEMI Technology Solutions) — /step1 intake, phase 1 to Halt 1
+
+- fetch_bse_announcements, first live test (LESSONS OPEN ACTION, PR #167): connectivity PASSED (scrip 544754, 69 rows returned), selection FAILED. It staged 10 of 69 filings and missed both Result-category filings (Q1 FY27 and FY26 audited). Results, the Q4 deck and 16 material filings were pulled by hand from BSE AttachLive. Keep the open action; change it from "untested" to "selection defect".
+- collect_to_repo set concalls_available: false on 2 transcripts. For a name listed 4 months earlier, 2 calls is the full history, not no-concall mode. Overridden to true in the manifest.
+- Sector guess "Platform / SaaS / IT services" for a digital lender. Corrected to Banks / NBFCs / MFIs (18x, P/B primary).
+- SBICARD produced no screener Data_Sheet CSV; Poonawalla's Q3 FY26 transcript arrived twice (one with a BSE cover letter). Six duplicate PDFs removed by MD5 at intake.
+- Shareholding: the BSE API shpSecSummery_New endpoint gives the summary statement (promoter/public, pledge) but not the FII/DII split. UA qualifier left open.
+- One stage (B03) wrote its block file wrapped in markdown fences; after the task messages added "plain YAML, no markdown fences", no later stage did.
+- DOWNSHIFT FAILURE: stage 0 ran inline on the orchestrator (claude-opus-5), as run-pipeline step 1 directs. Same pattern as TOTEM.
+- Worktree used: the main checkout carried another session's uncommitted v3.11 framework edits, so the run branch was built in a separate git worktree (../inflection-pipeline-kissht) off origin/main to keep amendment and run work apart.

@@ -137,7 +137,28 @@ row 15 (post-split SHP) each sit under data source 926b65ce-ddd2-4d8b-8eae-
 rows are recorded on the operator's instruction and were not fetched.
   3. Handover dossier committed to inputs/research/. **DONE 2026-09-21.**
   4. FY23, FY24 and FY25 annual reports plus the AGM transcripts committed to
-     inputs/. **PENDING.** Not on disk; the operator holds them in claude.ai.
+     inputs/. **WAIVED BY OPERATOR 2026-09-21.**
+     Operator ruling, in the operator's words: "Leave the corpus addition gate.
+     You have all the data from me here. Start with the FTT CP exercise."
+     Claude Code checked for the seven named files on 2026-09-20 and again on
+     2026-09-21, in the run folder, in the main checkout, and across the user
+     profile. None was present either time. The gate is therefore waived, not
+     satisfied.
+     COST OF THE WAIVER, carried into the deliberation and into Phase 3:
+     - The dossier's prior-year series in Section 2 V3 (top-customer FY22-FY26),
+       Section 2 V5 (treasury and Aamsar FY23-FY26) and Section 3 S7 (FY23
+       versus FY24 Note 7) are used at the dossier's own [FILED] tier, read in
+       claude.ai. They are NOT anchored to a filing in this corpus and were not
+       re-anchored on the repo side.
+     - CARO clause 3(iii)(a) can be quoted for FY26 only. The four-year
+       limited-liability-partnership denial the dossier asserts cannot be shown
+       in the record, so the INTEGRITY escalation that rests on it stays
+       untested against filings.
+     - Step 1's backward baseline runs on the FY26 annual report plus the
+       screener series, with FY22-FY24 carried from the dossier, not from
+       filings in corpus.
+     Every figure sourced this way is tagged [DOSSIER, NOT RE-ANCHORED] in the
+     FTTCP draft.
 
 ## OPERATOR RULINGS
 - 2026-09-10: Step-1 intake run; peers auto-selected; empty folders accepted as

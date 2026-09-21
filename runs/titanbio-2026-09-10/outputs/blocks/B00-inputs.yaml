@@ -1,0 +1,81 @@
+stage: B00-inputs
+company: TITANBIO
+run_date: 2026-09-16
+model: orchestrator
+status: complete
+spear_gate:
+  form: OVERRIDE
+  date: 2026-09-10
+  source: companies/TITANBIO.md
+  load_bearing_facts:
+    - "Freight gross-up inside reported revenue. FY26 and Q1FY27 filings add freight to revenue from operations and neutralise it in other expenses. Cartage and freight outward Rs 584.41 lakh FY26 vs Rs 426.95 lakh FY25 (AR FY26 p.138). Reported FY26 growth 31.8%, roughly 28% ex the gross-up. Confirm whether FY25 comparative was restated."
+    - "Peptech Biosciences Ltd associate, 36.87% held, cost Rs 12.30 cr, attributable net worth Rs 74.33 cr, FY26 profit considered Rs 6.51 cr (AR FY26 p.80 AOC-1), yet consolidated PAT exceeds standalone by only Rs 2.44 cr. Reconcile; establish what Peptech does and whether related-party sales run through it."
+    - "TM Media brand (AR FY26 p.100) versus Titan Media Ltd associate 48.44% held (AR FY26 p.75). Establish whether any part of the culture-media engine sits outside the consolidated P&L."
+    - "FY26 investing outflow Rs 34.41 cr vs Rs 9.87 cr FY25 (AR FY26 p.104), but gross block up only Rs 5 cr and investments up Rs 27 cr. Split plant from financial assets; find any stated capacity or commissioning date."
+inventory:
+  prospectus: 0
+  annual-report: 3
+  results: 4
+  rating: 0
+  concalls: 0
+  peer-concalls: 11
+  announcements: 8
+  shareholding: 0
+  research: 0
+  screening: 24
+  presentation: 0
+  other: 0
+input_gaps:
+  - "concalls: NONE. Titan Biotech holds no earnings calls. manifest concalls_available: false. NO-CONCALL MODE: stage 5 reads AR MD&A, chairman/directors report and results commentary; credibility_grade defaults C, may rise to B only on documented AR-guidance-vs-results delivery; never A."
+  - "rating: NONE. No credit rating document exists on screener or in BSE announcements for scrip 524717. Company is near debt-free (borrowings Rs 6 cr FY26). Stage 10 will mark rating_wc_quote unresolved; Pillar 2 proceeds without rating evidence."
+  - "presentation: NONE. The company publishes no investor presentation. Stage 4 runs from the annual report and results commentary."
+  - "shareholding: NONE. The BSE shareholding XBRL API did not serve. The AR and the screener quarterly table carry the pattern (promoter 55.78%, DII 0.01%, FII nil, Jun-2026). Stage 10 marks FII+DII source as screener-derived, not filing-anchored; stage 11 must treat the UA institutional-absence qualifier as evidenced only if it accepts that source."
+  - "research: NONE. No broker notes. No effect on anchored evidence."
+  - "prospectus: NONE. Long-listed company (incorporated 1992, BSE scrip 524717); manifest listed_date NOT FOUND but far outside the ~3 year window. Not a gap."
+  - "screening CSV defect (collect_to_repo v3, known): only Data_Sheet.csv is populated for the company and each peer; Profit_Loss / Balance_Sheet / Cash_Flow / Quarters CSVs are empty header shells. Data_Sheet carries the FY17-FY26 series, so the gap is cosmetic."
+  - "segment mix NOT DISCLOSED. The company reports ONE segment (AR FY26 p.100) with no product-wise or geography-wise revenue split beyond the export total."
+  - "sector_cap_row corrected by hand from the collector default 'Pharma / CDMO' to 'Specialty chemicals' (35x). No Section 1B row exists for biological ingredients or fermentation inputs. Flagged for phase-3 confirmation."
+freshness_pairs:
+  - pair: "RESULTS to CONCALL"
+    trigger_doc: "inputs/results/2026-08-13_Q1FY27_unaudited_results.pdf"
+    mate_expected: "Q1FY27 concall transcript"
+    status: SKIPPED
+    missing_doc: "n/a - concalls_available is false, the absence is declared not accidental"
+  - pair: "RATING BULLETIN to RATIONALE"
+    trigger_doc: "none - inputs/rating/ is empty, no bulletin exists"
+    mate_expected: "n/a"
+    status: PASS
+    missing_doc: ""
+  - pair: "SEBI ORDER to ORDER TEXT"
+    trigger_doc: "none - no SEBI order is referenced in any collected filing (grep over all extracted text found no adjudication, show-cause or settlement order reference)"
+    mate_expected: "n/a"
+    status: PASS
+    missing_doc: ""
+  - pair: "AR to LATEST AUDITED ANNUAL RESULTS"
+    trigger_doc: "inputs/results/2026-05-30_FY26_audited_results.pdf (FY2025-26 audited)"
+    mate_expected: "FY2025-26 annual report"
+    status: PASS
+    missing_doc: ""
+freshness_verdict: FRESHNESS PAIRS OK
+empty_folder_confirmation:
+  asked: true
+  when: "2026-09-10, in the step-1 intake report to the operator"
+  folders_listed: "rating, presentation, shareholding, research, prospectus (concalls excluded: declared absent)"
+  operator_answer: "go (2026-09-16) - proceed with the gaps"
+documents_used:
+  annual_report_primary: "inputs/annual-report/AR_FY2026.pdf (FY2025-26, 201 pages)"
+  annual_report_history:
+    - "inputs/annual-report/AR_FY2025.pdf (FY2024-25, 195 pages)"
+    - "inputs/annual-report/AR_FY2024.pdf (FY2023-24, 200 pages)"
+  results_three_most_recent:
+    - "inputs/results/2026-08-13_Q1FY27_unaudited_results.pdf"
+    - "inputs/results/2026-05-30_FY26_audited_results.pdf"
+    - "inputs/results/2026-02-12_Q3FY26_unaudited_results.pdf"
+  results_additional: "inputs/results/2025-11-11_Q2FY26_unaudited_results.pdf (fourth filing, held; contract uses the 3 most recent)"
+  peer_concalls:
+    ADVENZYMES: 4
+    FERMENTA: 4
+    VIDHIING: 3
+  text_extractions: "work/extracted/ mirrors inputs/ as page-marked .txt for every PDF (26 of 26 extracted clean, no unreadable file)"
+flags: []
+analyst_note: "Two corpus facts shape every downstream stage. First, NO-CONCALL MODE: there is no management voice in this corpus at all, so every forward claim must come from the AR MD&A and Directors' Report, and the peer transcripts carry the only current-cycle demand commentary. Second, the four spear load-bearing facts are all accounting-structure questions, not business questions: a revenue gross-up, an associate that will not reconcile, a brand-versus-associate naming overlap, and a capex line that went mostly into financial assets. Stage 1 and stage 2 must clear those before any later stage builds on FY26 revenue or on consolidated profit."

@@ -6,7 +6,9 @@
 
 *Amended v1.3 (12 July 2026): adds Step 2E, the Management Intent-and-Action Ledger, a governed cross-check against over-conservatism; see Step 2E and the version history.*
 
-*Amended v2.2 (08 September 2026): Section C.2 wires Section 1B v3.9 Amendments 21-22 into the catalyst table — an explicit per-catalyst probability (0.00-1.00), the evidence basis feeding that probability rather than gating the credit, a mandatory downside row, and rejection of any catalyst table with no downside row. The filename keeps the v2_1 stem so pipeline pointers stay valid; the content is v2.2. See Section C.2 and the version history.*
+*Amended v2.2 (08 September 2026): Section C.2 wires Section 1B v3.9 Amendments 21-22 into the catalyst table — an explicit per-catalyst probability (0.00-1.00), the evidence basis feeding that probability rather than gating the credit, a mandatory downside row, and rejection of any catalyst table with no downside row. See Section C.2 and the version history.*
+
+*Amended v2.3 (08 September 2026): Step 4.5 Second-Order Section added between the transition verdicts and the monitoring triggers, per Master Project Prompt v3.7 Rule F. Follows v2.2 the same day; the two amendments are independent and both stand. Nothing in Part A or Part B changed. The filename keeps the v2_1 stem so pipeline pointers stay valid; the content is v2.3. See Step 4.5 and the version history.*
 
 ## THE CORE INSIGHT THAT MOTIVATES THIS PROTOCOL
 

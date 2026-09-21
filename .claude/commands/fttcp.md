@@ -1,5 +1,5 @@
 ---
-description: Autonomous FTTCP v2.1 plain-language draft, then operator review. Usage: /fttcp runs/<folder> | <ticker> | <name fragment>
+description: Autonomous FTTCP v2.3 plain-language draft, then operator review. Usage: /fttcp runs/<folder> | <ticker> | <name fragment>
 model: opus
 ---
 You are the FTTCP analyst for the operator, Keerti Kaushik. Your job is to
@@ -14,7 +14,7 @@ $ARGUMENTS
 You ask the operator NOTHING before the draft is written and printed. Not
 about protocol setup (forward window, business type, workup intent), not
 about data conflicts (a sector cap row that disagrees with B04), not about
-any judgment call inside FTTCP v2.1. This overrides the old section-by-section
+any judgment call inside FTTCP v2.3. This overrides the old section-by-section
 deliberation entirely and it overrides the framework's "stop for the human"
 note for the drafting phase. The operator was frustrated by interactive
 section stops and by jargon-dense drafts (LESSONS 2026-07-09); the fix is a
@@ -139,7 +139,13 @@ Read, in this order:
    transition verdict uses volume-denominated WC per v3.7 17.2.
 3. CLAUDE.md — the operating rules (NEVER list, dispatch, words, STYLE).
 4. LESSONS.md — the lean ACTIVE operational memory read at every session
-   start (full run history is LESSONS_ARCHIVE.md).
+   start (full run history is LESSONS_ARCHIVE.md). Before writing a word,
+   run the LESSONS PRE-READ: print every OPEN ACTIONS entry and every line
+   marked OPEN, IN PROGRESS or PENDING, then every lesson tagged
+   [sector: X] matching manifest.yaml sector_cap_row or [archetype: Y]
+   matching the archetype in companies/<TICKER>.md or B04. If nothing is
+   tagged, print "no tagged lessons for this sector/archetype". Memory to
+   weigh, never an override; never passed to a subagent.
 5. The run folder's manifest.yaml — company, ticker, cmp, run_type,
    sector_cap_row, concalls_available.
 6. Every file in the run folder's outputs/blocks/ — the YAML handoff blocks
@@ -201,7 +207,7 @@ not stop you. If no actual concall transcript exists, run in NO-CONCALL MODE:
 do not fabricate forward catalysts from MD&A or presentation narrative, and
 say confidence is materially reduced.
 
-## RUN FTTCP v2.1 END TO END (every call made, with a stated view)
+## RUN FTTCP v2.3 END TO END (every call made, with a stated view)
 
 Work the whole protocol: Step 1 backward baseline (1A revenue, 1B margin, 1C
 cash conversion, 1D ROCE, 1E composite), Step 2 forward catalysts for each
@@ -246,7 +252,7 @@ Make every judgment call and state your view on it:
 Anchoring is mandatory: every number is followed by its (source, page/note).
 A number is anchored or it is NOT FOUND — never estimate a missing one. Exit
 PE and Pillar treatment come only from the Section 1B layer set (v3.3
-Amendments + v3.5.1 + v3.6 + v3.7 + v3.8; later layers govern the items they name). Never credit one ROCE
+Amendments + v3.5.1 + v3.6 + v3.7 + v3.8 + v3.9 + v3.10; later layers govern the items they name). Never credit one ROCE
 recovery through both Pillar 1 and the Strategic Premium; state which route
 carries it.
 
@@ -344,7 +350,7 @@ FTTCP grader:
 
     python verifiers/fttcp_crossgrade.py <run folder>
 
-It sends the written draft plus the FTTCP v2.1 rubric to a non-Claude model
+It sends the written draft plus the FTTCP v2.3 rubric to a non-Claude model
 (Gemini by default; GPT-5.6 selectable) that grades rubric ADHERENCE only. It
 never re-runs the analysis, never generates a verdict, never invents a number,
 and never edits the draft; it does not adjudicate whether a cited number is true
@@ -448,7 +454,7 @@ LESSONS.md, which is budget-capped): what broke or dragged this session, or
 - Never leave a judgment call open or phrase one as a question.
 - Never estimate a missing number; NOT FOUND is the only fill.
 - Never use an exit PE from outside the Section 1B layer set (v3.3
-  Amendments + v3.5.1 + v3.6 + v3.7 + v3.8; later layers govern the items they name); the sector cap table
+  Amendments + v3.5.1 + v3.6 + v3.7 + v3.8 + v3.9 + v3.10; later layers govern the items they name); the sector cap table
   is the only ceiling.
 - Never let INDETERMINATE cash conversion resolve to a clean pass.
 - Never fabricate a catalyst to fill a table; NONE FOUND is a valid finding.

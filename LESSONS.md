@@ -121,3 +121,19 @@ _Pending framework edits Keerti maintains._
   3. OR-9 (proposed): Amendment 24 caps size at starter when the residual
      exceeds 25% of CMP; Amendment 25 permits a starter only at 25% or less.
      Reading A: size zero. Reading B: a 2-3% starter. Operator ruling needed.
+
+## OPEN ACTIONS (added 2026-09-06, ORCHPHARMA phase 1)
+- Corrupt OCR text layers in filed PDFs are a live corpus failure mode. Promote the
+  [OCR:embedded] / [OCR:tesseract] / [OCR:embedded-CORRUPT] page tag and the
+  read-the-source-page-directly rule into the stage prompts and the verifier A
+  invocation. See LESSONS_ARCHIVE.md 2026-09-06 ORCHPHARMA item 1.
+- Verifier A's coverage addendum (minimum checks per report, a real denominator,
+  per-report acceptance) should be standing, not retry-only. Same entry, item 4.
+- Decide how many REWORK remediation cycles an orchestrator runs before handing the
+  verdict to the operator. One cycle cost a third of the ORCHPHARMA run and did not
+  clear the gate. Same entry, item 5.
+- Resolve the stage 0 routing conflict between /run-pipeline (orchestrator does it
+  inline) and DISPATCH (mechanical stages go to haiku). Same entry, item 6.
+- Peer selection needs a product-chain check. ORCHPHARMA's three peers contained no
+  cephalosporin or 7-ACA maker, so six of eight peer questions were structurally
+  unanswerable. Same entry, closing note.

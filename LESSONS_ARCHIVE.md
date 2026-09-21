@@ -598,3 +598,51 @@ Verifier C check 15 (PR #163, PR #164), and the LESSONS discipline changes
 (PR #165).
 
 Size: LESSONS.md 164 lines / 1555 words before, 119 lines / 1062 words after.
+
+- [2026-09-06] ORCHPHARMA phase 1 (first workup, run runs/orchpharma-2026-09-06). Gate
+  cleared by operator spear OVERRIDE, no spear pass, so the run carried no load-bearing
+  facts and no first verification priority. Six things broke or dragged.
+  (1) CORPUS OCR CORRUPTION, new failure mode. Both annual report PDFs ship a corrupt
+  embedded OCR text layer, FY2024 on 305 of 318 pages and FY2025 on 112 of 300
+  concentrated exactly in the financial statements. Digits dropped and merged
+  ("sllare data", "0,aJ595"). Stage 2 pass 1 caught it and correctly wrote NOT FOUND
+  rather than estimating. tesseract repair works but container OCR throughput swung
+  from 3s to 235s per page, so full repair was abandoned at 12 of 112 pages. Fix that
+  did work: every extracted page carries an [OCR:embedded] / [OCR:tesseract] /
+  [OCR:embedded-CORRUPT] tag, and stages read the source PDF page directly with the
+  Read tool pages parameter wherever a number mattered on a corrupt page. Stage 2
+  pass 2, stage 3 and the 09b annex all used that route successfully. Recommend the
+  tag convention and the read-the-source-page rule go into the stage prompts.
+  (2) tools/ocr_repair.py written and fixed twice during the run: per-page pdftoppm
+  re-parsed the whole PDF (107 of 112 timeouts), and a failed page overwrote good text
+  with a failure marker. Now renders in contiguous spans, caches per page, resumes on a
+  time budget, and never leaves the corpus worse than it started.
+  (3) SCREENER CONSOLIDATION TRAP, worth promoting. The screener showed FY2026 revenue
+  up 34%. It is a consolidation artifact of a merger with a retroactive appointed date.
+  Revenue actually fell about 12%. Stage 5 caught it from the transcripts after the
+  orchestrator had already passed the wrong premise to stages 1 and 2. A merger with a
+  retroactive appointed date makes any screener year-on-year comparison meaningless
+  until the basis is checked on both sides.
+  (4) VERIFIER A COVERAGE OVERSTATEMENT, a new variant of the catalogued pattern.
+  Run 1 reported 100% acceptance on 30 figures across nine reports and called it 80%
+  coverage against 450-plus figures. Re-invoked once with a coverage addendum; run 2
+  gave 42 checks, honest 10.1% coverage and per-report acceptance. Run 2 then raised
+  one false source-fidelity MISMATCH (Q4 FY26 EBITDA) which the orchestrator cleared
+  at source and logged as a disagreement, plus two items it labelled MAJOR and then
+  described in its own notes as not findings. Recommend the coverage addendum become
+  part of the standing verifier A invocation, not a retry-only addendum.
+  (5) REWORK LOOP DID NOT CONVERGE. Verifier B passed stage 5 at 31%. One full
+  remediation cycle (stage 5 re-run against 17 named gaps, then verifier B re-run)
+  moved it to 39%, still under the 60% gate, at a cost of about 991,000 tokens, a third
+  of the run. Verifier B round 2 also correctly overturned the remediated stage's own
+  centrepiece magnitude. Open question for /compost: how many remediation cycles an
+  orchestrator should run before handing REWORK to the operator, and whether the answer
+  belongs in the flag rules rather than in orchestrator judgement.
+  (6) DOWNSHIFT FAILURE: stage 0. It ran inline on opus because /run-pipeline tells the
+  orchestrator to do stage 0 itself, while DISPATCH routes mechanical stages to haiku.
+  The two instructions conflict. Recommend /run-pipeline either route stage 0 to the
+  haiku subagent or state that the inline exception is deliberate.
+  Also recorded: the peer set (NEULANDLAB, GRANULES, KOPRAN) contains no cephalosporin
+  or 7-ACA maker, so six of eight peer questions came back unverifiable for a
+  structural reason rather than disagreement. Peer selection needs a product-chain
+  check, not just a sector check.

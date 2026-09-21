@@ -1,0 +1,28 @@
+stage: B12d
+company: "TAALTECH"
+run_date: "2026-09-10"
+model: claude-sonnet-5
+status: complete
+peers_audited: 11
+substantive_confirmed: 9
+substantive_unsupported: []
+peer_utilisation: 81.8
+peer_utilisation_basis: "9 transcripts mined substantively with real, locatable citations, out of 11 provided. The CITED-ONLY (Cyient TAO Digital acquisition call) and UNUSED (Cyient semiconductor financing call) classifications both hold up on the actual content; neither is a quarterly earnings call."
+unused_but_relevant:
+  - {peer: "CYIENT-Concall_Jun_2026_Transcript_2 (Semiconductor Strategic Financing, 26-May-2026)", missed_item: "AI and data-centre power demand share rising from 2% (2025) to 8% (2030), framing the entire fundraise around AI-infrastructure capex", anchor: "CYIENT-Concall_Jun_2026_Transcript_2, PAGE 4"}
+claims_all_addressed: true
+questions_worked: 6
+questions_restated_only: 0
+verdict_discipline_fails: []
+verdict_discipline_note: "Two or more independent anchors on every VERIFIED verdict; no upgrade-from-silence anywhere in the report."
+findings:
+  - {severity: "MAJOR", location: "B06 Q6 and Part 5 cross-peer hypothesis", description: "B06 states Cyient's TAO Digital deal reframes the ER&D TAM to '$2-3 trillion', citing the TAO Digital call p.3-4 and the Cyient Q1 FY27 call p.5. Neither transcript supports the range: the TAO Digital call states an estimated '$2 trillion market' (PAGE 4, a single figure, not a range) and the Q1 FY27 call implies roughly $1.6-2.0 trillion ('20 times' an $80-100bn base, PAGE 5). No source states $3 trillion at either end."}
+  - {severity: "MAJOR", location: "B06 THE MARGIN BENCHMARK section", description: "B06 attributes the analyst quote 'our peers, I believe, are somewhere around in the range of 20%' to the ONWARDTEC Q3 FY26 call (Jan 2026 transcript) p.11. The quote does not appear anywhere in that transcript. It is genuinely said in the ONWARDTEC Q2 FY26 call (Oct 2025 transcript), PAGE 10. Wrong-quarter misattribution of a real and material quote."}
+  - {severity: "MINOR", location: "Multiple B06 citations: TATAELXSI Apr 2026 and Jan 2026, CYIENT Apr 2026", description: "B06 mixes the extraction's PAGE-marker numbering with the transcripts' internal printed 'Page X of Y' numbering inconsistently within the same report, producing citations off by one and occasionally two pages. Every quote's content is genuine and present in the named file."}
+  - {severity: "MINOR", location: "B06 Q1 sector demand section, TATAELXSI Q1 FY27 quote", description: "B06 places 'soft' in quotation marks as a direct Tata Elxsi quote describing Germany. The word does not appear in the Jul 2026 transcript; management says 'softness in Germany' twice, at PAGE 5 and PAGE 11. Substance accurate, quotation-mark precision is not."}
+  - {severity: "MINOR", location: "B06 Part 3 coverage map, CYIENT-Concall_Jun_2026_2 row", description: "The UNUSED classification is justified on content, but the file contains an AI and data-centre power-demand market-sizing passage (PAGE 4) that would have reinforced B06's own cross-peer hypothesis about AI-infrastructure-adjacent demand clustering."}
+critical_count: 0
+major_count: 2
+minor_count: 3
+acceptance_rate: 82
+rework_triggered: false

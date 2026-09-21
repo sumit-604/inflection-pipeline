@@ -516,6 +516,51 @@ Company memory written for both with the standing-ruling spear OVERRIDE.
   three. Stage 5, stage 6 and the two verifiers that audit them are 60.6% of the run.
 - Not a clean run.
 
+### 2026-09-10 — TAALTECH (TAAL Tech Ltd), /step1 intake, phase 1 to Halt 1
+- CONCURRENT SESSION COLLISION, new failure mode. Another Claude Code session
+  checked out run/indnippon-2026-09-10 in the same working tree mid-run. Every
+  TAALTECH working file vanished; stage 2 pass 2 failed and reported a
+  "corpus missing" mechanical failure. No commit was lost. Fix applied: move the
+  run into an isolated git worktree (.claude/worktrees/taaltech) and continue
+  there. Cost 106,763 wasted tokens. Two sessions must never share one checkout;
+  a worktree per run is the fix. `git worktree add` needs an operator permission
+  grant in auto mode.
+- VERIFIER A PATH FAILURE, a variant of the known false-CRITICAL pattern. The
+  first invocation resolved RELATIVE paths against the main checkout instead of
+  the worktree, found one stale leftover file, and returned seven CRITICAL
+  ANCHOR NOT FOUND findings with acceptance_rate 0. Re-invoked once with
+  ABSOLUTE paths plus the severity addendum: 127 numbers checked, 96.9%, zero
+  CRITICALs. Rule to consider promoting: pass verifier A absolute paths always,
+  and add "I could not open the file is never a CRITICAL" to its severity
+  semantics.
+- WEBSEARCH OUTAGE. Stage 8 lost roughly 75-80% of its calls; stage 9 lost 20 of
+  20. Both closed status: partial with searches_skipped populated, per the
+  orchestrator rule, and the synthesis named both. Who controls the 50.74%
+  holding company could not be established from this container. That is now the
+  first item on the Halt 1 live-verification list.
+- SCANNED FILINGS AND NO pdftoppm. Two of the three results PDFs were image-only
+  with no text layer, and pdftoppm was absent so the Read tool could not render
+  them either. Fix: pip install pymupdf, render each page to PNG, transcribe via
+  a mechanical subagent into page-marked .txt. Worth 150,132 tokens and it made
+  the inflection quarter readable. Every input PDF was pre-extracted to
+  page-marked .txt up front, per the standing LESSONS pattern; it worked.
+- COLLECTOR DEFECTS, all four recurred exactly as catalogued: sector_cap_row
+  defaulted to "Pharma / CDMO" (corrected to "Consulting / Engineering
+  services", 25x); the results folder came back empty and had to be filled from
+  the company IR page; screener P&L/BS/CF/Quarters CSVs were header-only with
+  only Data_Sheet populated; five input folders were absent and needed .gitkeep.
+- NO-CONCALL MODE ran cleanly end to end for the first time on a name with no
+  calls AND no investor presentation. Stage 5 degraded to the AR and results
+  commentary and graded C at the floor. Stage 6 became the run's most valuable
+  stage rather than a check: the peer transcripts were the only outside evidence
+  and they contradicted both charitable readings, the sector-demand explanation
+  and the normal-growth-working-capital explanation.
+- FRAMEWORK GAP FOUND BY VERIFIER C, for /compost: prompts/07-emerging-moat-pipeline.md
+  section 6D names the eight combined-classification labels but defines no cells
+  mapping backward class against forward class, so the output cannot be
+  independently re-derived.
+- Verdict PROCEED WITH FLAGS, confidence 64, fragility FRAGILE. Not a clean run.
+
 ## 2026-09-16 — /compost maintenance pass (LESSONS.md), operator-approved
 
 Actions: tag sector- or archetype-specific lessons, move closed items here,

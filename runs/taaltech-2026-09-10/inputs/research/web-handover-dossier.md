@@ -79,7 +79,38 @@ No guidance has ever been given; the ledger is built from AGM statements [MGMT] 
 
 ## 5. ROLE 5.5 TRACKER PROOF (gate satisfaction)
 
-**STATUS: PENDING.** Tracker rows not yet written to DOWNSTREAM SIGNAL TRACKER (data_source_id 926b65ce-ddd2-4d8b-8eae-05e66b6f6c9f). Proposed rows, each to be linked to the TAALTECH COMPANIES MASTER page (3d7bb2b9-d3ab-817f-a8ba-f03584796a16), for operator approval before writing:
+**STATUS: WRITTEN 21-Sep-2026.** Proof, recorded verbatim:
+
+Role 5.5 tracker proof: 15 signal rows written 21-Sep-2026 by
+claude.ai on operator instruction to DOWNSTREAM SIGNAL TRACKER
+(data_source_id 926b65ce-ddd2-4d8b-8eae-05e66b6f6c9f), each linked
+to COMPANIES MASTER page 3d7bb2b9-d3ab-817f-a8ba-f03584796a16.
+Tier 1 (5): revenue Rs/$ gate https://app.notion.com/p/3e2bb2b9d3ab819a9ee8c0a48dfa3ec3 |
+employee cost QoQ https://app.notion.com/p/3e2bb2b9d3ab8186b6c1cdf84e566c7b |
+cash days/CFO/ageing https://app.notion.com/p/3e2bb2b9d3ab81d88761c15f3f9eea67 |
+top-customer share https://app.notion.com/p/3e2bb2b9d3ab81bfb808fa62a9947e71 |
+treasury book https://app.notion.com/p/3e2bb2b9d3ab81d48e32e80f6b9f54d5
+Tier 2 (4): NBFC issuer ratings https://app.notion.com/p/3e2bb2b9d3ab81c6807ee81fb25cd3f4 |
+USD/INR https://app.notion.com/p/3e2bb2b9d3ab81f89c03d3ae8baa7ebe |
+EPFO headcount https://app.notion.com/p/3e2bb2b9d3ab81bdb74beedd296097e5 |
+Vishkul loan https://app.notion.com/p/3e2bb2b9d3ab81a5a04bc5161376bb49
+Tier 3 (6): blog/postings https://app.notion.com/p/3e2bb2b9d3ab81908c99dc51a966d92c |
+AE-firm M&A https://app.notion.com/p/3e2bb2b9d3ab81bf8a27f427b4344f00 |
+hyperscaler capex https://app.notion.com/p/3e2bb2b9d3ab813e9561ce0d9363d3d8 |
+aerospace ramp https://app.notion.com/p/3e2bb2b9d3ab814a82d2e917b6d99cfc |
+fixed-price share https://app.notion.com/p/3e2bb2b9d3ab8197acdfed39d433386c |
+post-split SHP https://app.notion.com/p/3e2bb2b9d3ab81c89300e4bea85adef6
+URL verification: one source fetched live (case-studies page); ten
+rows carry BSE/company-IR URLs seen in search results, not fetched;
+four rows carry no URL with the gap stated in Notes.
+Next checks: 05-Oct, 20-Oct, 25-Oct, 05-Nov, 15-Nov, 15-Dec-2026,
+15-Aug-2027.
+
+Claude Code spot check, 2026-09-21: rows 1 and 15 were fetched through the
+Notion connector and both resolve under the named data source with the
+COMPANIES MASTER page linked. The other thirteen were not fetched.
+
+The rows as written:
 
 | # | Signal | Tier | Cadence | Source (URL to be live-verified at write) | Falsifying observation |
 |---|---|---|---|---|---|

@@ -1,0 +1,35 @@
+stage: B13-synthesis
+company: "ORCHPHARMA"
+run_date: "2026-09-06"
+model: "claude-opus-5"
+status: complete
+phase: "1-lite (stages 10 and 11 did not run; no valuation exists)"
+verdict: "REWORK"
+verdict_rule_applied: 1
+verdict_basis: "Verifier B red-flag coverage 39% (<60% acceptance threshold) and overall confidence delta 39 (<60). Either alone forces REWORK. REWORK judges the analysis, not the company."
+freshness_cap: "CORPUS GAPPED-FRESHNESS; gate cap PROCEED WITH CAVEATS would have applied alone; REWORK is more severe and stands on its own grounds"
+missing_document: "Orchid Pharma FY2026 audited annual results filing (Q4 FY26 full-year Reg 33), and the FY2026 Annual Report when filed. Source: BSE/NSE corporate filings or company IR page."
+flags_active: ["FLAG-PROMOTER", "FLAG-CASH", "FLAG-GATE0"]
+flag_promoter_verdict: "CAUTION"
+flag_cash_determination: "INDETERMINATE"
+flag_cash_missing_evidence: "no rating rationale anywhere in corpus; no receivables ageing beyond FY2025"
+flag_gate0_classification: "AVOID (core 29/100, grand 40/160)"
+confidence_delta: {numerical: 95.2, redflag: 39, framework: 90, peer: 91, overall: 39}
+confidence_weakest: "redflag coverage 39 (B12b round 2), on the stage carrying the most decision-relevant evidence"
+framework_scope_note: "framework adherence 90 is phase-1 scope only (Gate 0 + Emerging Moat); valuation adherence PENDING PHASE 3"
+valuation_decision: ""         # none; stage 11 did not run
+entry_range: {low: 0, high: 0} # none; stage 11 did not run
+destination_pe: ""             # none; stage 11 did not run
+per_share_figures_used: false  # share count does not reconcile (5.07 / 5.99 / 9.53 cr); Correction 4 binds
+headline: "Cephalosporin exporter funds unproven backward integration bet"
+falsification_metric: "Q2 FY27 combined revenue below about Rs 304 cr with EBITDA margin at or under 8%, on the same combined basis as Q1 FY27"
+monitorables_count: 8
+contradicted_claims_count: 5
+publish_candidate: false
+publish_candidate_summary: ""
+files_written:
+  - "outputs/final/business-narrative.md"
+  - "outputs/final/gate-recommendation.md"
+  - "outputs/final/verifier-summary.md"
+files_deferred_to_phase_3: ["fttcp-recommendation.md", "fttcp-handoff.md", "notion-payload.md"]
+notion_save: "WITHHELD - phase 1 lite; no Notion save payload emitted"

@@ -24,3 +24,4 @@ its own stage. Loops and retries each get their own line with a run counter.
 | 12b | verifier B concall red flags | opus-4.8 | default | n/a | n/a | 372,409 | 15m43s | 1 |
 | 5 | concall analysis, remediation re-run | sonnet-5 | default | n/a | n/a | 241,394 | 16m25s | 2 |
 | 12b | verifier B concall red flags, re-run on remediated B05 | opus-4.8 | default | n/a | n/a | n/a | n/a | 2 |
+| 13 | synthesis lite (phase 1) | opus-5 | default | n/a | n/a | n/a | n/a | 1 |

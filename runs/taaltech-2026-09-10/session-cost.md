@@ -78,3 +78,4 @@ totals below. The orchestrator cannot read those interactive commands.
 **Operator snapshot**
 
 _(paste /cost and /usage output here)_
+| 1 | Gate 0 Block F moat rerun (C8, peer Data_Sheets) | sonnet | default | - | - | 83,834 | 289s | 2 |

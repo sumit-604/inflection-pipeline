@@ -83,3 +83,26 @@ degradation_active:
   - "Stage 8 sources the promoter and group picture from web search plus the AR governance section; no announcements folder to grade documented actions."
 flags: []
 analyst_note: "Two corpus facts shape every downstream stage. First, TAAL Tech is a silent filer: no calls, no presentations, no broker coverage in corpus. Everything management has said in FY26 sits inside one annual report. Second, the ten-year financial series spans a business change. The company was an aircraft-charter operator, stopped flying after an accident, and became an engineering services firm when TAAL Tech India Pvt Ltd merged into the listed parent. Standalone total assets moved Rs19cr to Rs207cr between March 2024 and March 2025 on that merger. Stages must check the segment note before reading FY16-FY21 rows as an engineering-services operating history."
+
+halt1_corrections:
+  ruled: "2026-09-20 (operator Halt 1 ruling, PROCEED)"
+  source: "runs/taaltech-2026-09-10/inputs/research/web-handover-dossier.md (NON-ANCHORED research input, committed 2026-09-21)"
+  items:
+    - id: C9
+      correction: "Annual_Report_2026.pdf pages 30 and 163 are BLANK pages, not unread pages. The corpus read audit of 2026-09-18 listed them as having no text layer; claude.ai read both as images on 2026-09-20 and confirmed they carry no content. The corrigendum PDF's page 2 was read the same way and also carries no content beyond the revised statement."
+      effect: "The AR read-coverage floor of 149 of 164 pages is understated by 2. No stage missed disclosed content."
+    - id: C8
+      correction: "Three populated peer Data_Sheet CSVs (TATAELXSI, CYIENT, ONWARDTEC) were in inputs/screening/ from the corpus commit and were never passed to stage 1. B01 recorded peer data as absent and scored moat sub-tests M2, M5 and M9 at zero for want of it."
+      effect: "Orchestration error, not a data gap. Block F rerun on 2026-09-21 per the Halt 1 gate: moat 11/60 to 19/60, moats_confirmed 2 to 4, class MODERATE to STRONG, grand total 81/160 to 89/160, classification GOOD to GOOD+. Core score unchanged at 70/100. See outputs/reports/01-gate0-blockF-rerun.md and outputs/blocks/B01-gate0-blockF-rerun.yaml. B01-gate0.yaml is superseded on the moat fields only."
+    - id: NEW
+      correction: "TATAELXSI-Data_Sheet.csv carries FY2008-FY2015 financial statements, 11 to 19 years stale. Only its META block (current price and market capitalisation) is contemporaneous."
+      effect: "Found during the Block F rerun. The scored peer median for M2 rests on two of three peers, Cyient and Onward Technologies. Recorded as a collector defect to add to the standing list."
+corpus_verdict_revised: "CORPUS CURRENT with named residue (operator ruling 2026-09-20). Residue: Vishkul MGT-7 shareholder list; identities of Creovate, Dureleg, Torrozo and Tenshi; 12th AGM transcript not yet published."
+pending_corpus_additions:
+  note: "Named in the Halt 1 ruling as to be committed under inputs/ before /fttcp. NOT PRESENT on disk as at 2026-09-21. The operator holds them in claude.ai and must place the files."
+  files:
+    - "Annual Report FY2022-23 -> inputs/annual-report/"
+    - "Annual Report FY2023-24 -> inputs/annual-report/"
+    - "Annual Report FY2024-25 -> inputs/annual-report/"
+    - "11th AGM (26-Aug-2025) video transcript -> inputs/other/ or inputs/announcements/"
+    - "12th AGM (01-Sep-2026) proceedings summary and voting results, Reg 30 filings of 01 and 02 Sep 2026 -> inputs/announcements/"

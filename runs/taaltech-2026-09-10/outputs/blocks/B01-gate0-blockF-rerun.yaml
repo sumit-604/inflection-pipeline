@@ -1,0 +1,39 @@
+stage: B01-gate0-blockF-rerun
+company: "TAALTECH"
+run_date: "2026-09-10"
+rerun_date: "2026-09-21"
+model: claude-sonnet-5
+status: complete
+scope: "BLOCK F (moat) ONLY - Blocks A-E and core score not rescored"
+moat_score_original: 11
+moat_score_rerun: 19
+moats_confirmed_original: 2
+moats_confirmed_rerun: 4
+moat_class_original: "MODERATE"
+moat_class_rerun: "STRONG"
+core_score: 70
+grand_total_original: 81
+grand_total_rerun: 89
+classification_original: "GOOD"
+classification_rerun: "GOOD+"
+subtests:
+  - {id: M1, original: 0, rerun: 0, basis: "unchanged, not peer-data-dependent, out of rerun scope"}
+  - {id: M2, original: 0, rerun: 5, basis: "peer median EBITDA margin (Cyient 11.64%, Onward 13.21%, FY2026, screener/CYIENT/ONWARDTEC-Data_Sheet.csv) = 12.43%; TAALTECH FY2026 EBITDA margin 30.14% (screener-Data_Sheet.csv); gap +17.71pp >=5pp above -> band 5"}
+  - {id: M3, original: 5, rerun: 5, basis: "unchanged, not peer-data-dependent, out of rerun scope"}
+  - {id: M4, original: 0, rerun: 0, basis: "unchanged, not peer-data-dependent, out of rerun scope"}
+  - {id: M5, original: 0, rerun: 3, basis: "mcap rank 3rd of 4 (TATAELXSI-/CYIENT-/ONWARDTEC-/screener-Data_Sheet.csv META blocks: 21202.62/11980.65/1609.15/647.35); margin rank 1st of 4 (30.14% vs 20.89%/13.21%/11.64%); top-3-mcap AND margin-top-2 -> band 3, not band 5 (TAALTECH is not largest mcap)"}
+  - {id: M6, original: 0, rerun: 0, basis: "unchanged - never peer-data-blocked; TAALTECH's own R&D/Revenue 0.19% (AR p.49) already fails the >=1% floor; no R&D row exists in any of the four Data_Sheet CSVs"}
+  - {id: M7, original: 0, rerun: 0, basis: "unchanged, not peer-data-dependent, out of rerun scope"}
+  - {id: M8, original: 0, rerun: 0, basis: "unchanged, not peer-data-dependent, out of rerun scope"}
+  - {id: M9, original: 0, rerun: 0, basis: "confirmed zero on corrected reasoning - TAALTECH's own Material Cost/Change in Inventory rows are blank/NOT FOUND (screener-Data_Sheet.csv) from FY2019 onward, and Onward's from FY2023 onward; the rule's GM proxy (Revenue-Material Cost)/Revenue cannot be built for the subject without treating a blank field as zero cost, which is estimating a missing number (forbidden); peer data (Cyient's populated Material Cost line) does not resolve this because the blocker is on the subject side"}
+  - {id: M10, original: 1, rerun: 1, basis: "unchanged, not peer-data-dependent, out of rerun scope"}
+  - {id: M11, original: 5, rerun: 5, basis: "unchanged, not peer-data-dependent, out of rerun scope"}
+  - {id: M12, original: 0, rerun: 0, basis: "unchanged, not peer-data-dependent, out of rerun scope"}
+still_blocked:
+  - {id: M9, missing_field: "Material Cost / COGS line for TAALTECH itself (screener-Data_Sheet.csv 'Raw Material Cost' and 'Change in Inventory' rows blank/NOT FOUND FY2019-FY2026; also blank for Onward Technologies FY2023-FY2026)", where_it_would_be_found: "a cost-of-services/cost-of-revenue note distinct from Employee Cost in TAALTECH's audited financials - none exists in this corpus (the FY2026 AR's P&L already follows the same Schedule III nature-of-expense format as Data_Sheet.csv); more likely structurally inapplicable for a billable-engineer ER&D services archetype, which has no materials/COGS component distinct from Employee Cost"}
+input_gaps: ["TATAELXSI-Data_Sheet.csv P&L/Balance Sheet/Cash Flow sections cover FY2008-FY2015 only (11-19 years stale); only its META block (current price/mcap) is contemporaneous, so M2's peer median uses 2 of 3 peers (Cyient, Onward) and M5's margin-ranking leg for the Tata Elxsi comparator rests on stale data (does not change TAALTECH's own rank)", "No R&D expense row exists in any of the four Data_Sheet.csv files (subject or peers) - structurally absent from this CSV template, not company-specific"]
+flags:
+  - {type: FLAG-MOAT-RERUN, reason: "Moat score corrected 11/60 -> 19/60 and class MODERATE -> STRONG after locating three populated peer Data_Sheet CSVs (Cyient, Onward Technologies, Tata Elxsi) already in the corpus but not passed to the original Stage 1 run (Halt 1 correction C8, 20-Sep-2026). Gate 0 classification moves GOOD -> GOOD+ on the unchanged core score of 70/100."}
+  - {type: FLAG-PEER-DATA-QUALITY, reason: "Tata Elxsi Data_Sheet.csv's financial statements are an 11-19-year-old stale export (FY2008-FY2015); only its META block is current. M2's scored peer median therefore rests on 2 of 3 named peers."}
+  - {type: FLAG-SMALL-PEER-SET, reason: "M5 Scale & Dominance is scored against a 4-company total universe (TAALTECH + 3 selected peers), not an exhaustively counted listed segment; top-3-of-4 mcap is a low bar. Score stands on the rule as written; flagged for downstream weighing."}
+analyst_note: "This rerun corrects an orchestration error, not a reassessment of company quality. Peer Data_Sheet CSVs existed in the corpus all along; passing them in unblocks M2 (cost advantage: TAALTECH's 30.14% FY2026 EBITDA margin beats a Cyient/Onward peer median of 12.43% by +17.71pp) and M5 (scale: 3rd of 4 by mcap, 1st of 4 by margin). M9 (brand) stays blocked, but for a different and more precise reason than originally stated: TAALTECH's own Material Cost/COGS line is not disclosed post-FY2018, so the rule's named gross-margin proxy cannot be built without assuming a value for a missing number, which is forbidden regardless of peer data availability. Two data-quality caveats travel with the upgrade: Tata Elxsi's financial statements in this corpus are 11-19 years stale (only its current mcap is usable), and the peer universe is only 4 companies, making 'top 3' a low bar for M5. Moat score 11->19/60, class MODERATE->STRONG, grand total 81->89/160, classification GOOD->GOOD+, core score unchanged at 70/100."

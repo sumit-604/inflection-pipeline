@@ -5,10 +5,11 @@ Memory to weigh, never anchored evidence. Every number a stage reports comes
 from that run's own inputs, verified against the source PDFs.
 
 ## THESIS (one line)
-Provisional, phase 1 evidence only, no valuation has run: an offshore ER&D
-shop earning a cost-position margin accelerated three quarters running, and
-neither the acceleration nor the cash that stopped following it is explained
-in any document the company has filed.
+Signed model, 2026-09-20, no valuation has run: a Bangalore drafting shop
+rents engineers to foreign design firms by the hour, earns a cost-position
+margin the rupee has widened, depends on one client for most of its growth,
+and runs an unreviewed high-yield portfolio worth three quarters of a year's
+revenue out of its cash drawer.
 
 ## DECISION STATUS AND ENTRY ZONE
 No decision. No entry zone. Phase 3 has not run.
@@ -55,19 +56,55 @@ these before its own work. Full brief: runs/taaltech-2026-09-10/step1-business-b
   observable.
 
 ## HALT 1 GATE
-- Mental Model signed: NOT SIGNED. The declaration is a DRAFT in
-  runs/taaltech-2026-09-10/outputs/reports/09b-understanding-dossier.md,
-  Section 2, pending operator sign-off in claude.ai.
-- Halt 1 decision (KILL/SHALLOW/PROCEED): PENDING.
-- Draft ladder read, for the operator to accept or overrule at sign-off:
-  FROM R2 COST-ADVANTAGED CONVERTER, TO R3 VALUE-ADDED / SPEC'D SUPPLIER.
-  The TO rung is claimed on ten-year client tenure and deepening wallet share.
-  It is unproven: no bill-rate or utilisation evidence separates pricing power
-  from cost position.
-- Proof gate drafted: quarterly consolidated revenue holds above Rs57-60cr for
-  two more quarters WHILE CFO/PAT recovers above 0.7x and unbilled revenue
-  falls below 15% of quarter revenue. Both test in the H1 FY27 filing, due
-  around November 2026.
+- Mental Model signed: **2026-09-20**. Signed as declared in
+  runs/taaltech-2026-09-10/inputs/research/web-handover-dossier.md Section 1.
+  It supersedes 09b Section 2 in three places: the treasury book is added as
+  Line 2 and a fifth dominant variable; the TO state is recorded as an open
+  pair, not a single claim; the Vishkul finding is reclassified from an
+  undisclosed material RPT to an audit-committee conflict with defective
+  disclosure.
+  Signed-model block:
+  - ARCHETYPE, two lines valued separately. Line 1 CONCENTRATED OUTSOURCING
+    PARTNER (billable-engineer ER&D, 95.5% time-and-material, one client at
+    24.05%). Line 2 SELF-MANAGED INVESTMENT PORTFOLIO WITH NO POLICY
+    (Rs143.89cr, 85.5% unquoted). Line 2 is valued as a fund, never as cash.
+    SOTP only if stage 11 finds Line 2 above 20% of value.
+  - FROM rung -> TO rung: FROM cost-advantaged offshore shop. The TO state is
+    an OPEN PAIR. Bull: a supplier clients build around, on ten-year tenures
+    and a construction-design practice reaching the US data-centre build.
+    Bear: overflow capacity for one or two capacity-bound clients, ending when
+    the client hires, is acquired, or finishes the programme.
+  - Engine: top-account wallet share, billed headcount and utilisation, client
+    capacity constraint, USD/INR. Plus, for Line 2, named-issuer credit events
+    and classification integrity.
+  - Proof gate (H1 FY27 results, Nov 2026): quarterly revenue above Rs57-60cr
+    AND above about $6.3m at the quarter's average RBI reference rate;
+    receivables plus unbilled not rising beyond the Mar 2026 level in days;
+    CFO/PAT above 0.5x; ageing tail over six months under 3%. Two legs of
+    three is not proof.
+  - Ugliness verdict: the cash-conversion fall is STRUCTURAL for the
+    construction-design line and GROWTH-INDUCED for the time-and-material
+    core. Computed per line, never blended.
+  - Transition falsifier: revenue below Rs57cr or below $6.3m with unbilled
+    revenue still above 20% of the quarter.
+  - Business falsifier: loss of, or a material slowdown at, the top account
+    (24.05% of FY26 revenue) with no named replacement.
+- Halt 1 decision: **PROCEED, 2026-09-20.** Corpus ruled CURRENT with named
+  residue: Vishkul MGT-7 shareholder list, the identities of Creovate,
+  Dureleg, Torrozo and Tenshi, and the 12th AGM transcript, not yet published.
+- Sizing ceiling: **SMALL** under Part 2.6 (structure concern, Entrepreneur
+  Ledger short of three heads), regardless of return. A25 starter only.
+- Escalation to INTEGRITY, a hard stop: the FY27 audit repeating the
+  limited-liability-partnership denial while the fund is still held, or any
+  private-company holding resolving to a promoter-linked entity.
+- Gates before /fttcp:
+  1. Stage 1 moat Block F rerun with the peer sheets (C8). **DONE 2026-09-21.**
+  2. Role 5.5 tracker rows written and the proof line recorded. **PENDING.**
+     Fifteen rows are drafted in the dossier Section 5 for operator approval;
+     the write happens in claude.ai.
+  3. Handover dossier committed to inputs/research/. **DONE 2026-09-21.**
+  4. FY23, FY24 and FY25 annual reports plus the AGM transcripts committed to
+     inputs/. **PENDING.** Not on disk; the operator holds them in claude.ai.
 
 ## OPERATOR RULINGS
 - 2026-09-10: Step-1 intake run; peers auto-selected; empty folders accepted as
@@ -76,6 +113,31 @@ these before its own work. Full brief: runs/taaltech-2026-09-10/step1-business-b
 - 2026-09-10: sector_cap_row set to "Consulting / Engineering services" (25x),
   correcting the collector's "Pharma / CDMO". Flagged for phase-3 confirmation
   because the listed ER&D comparator set is priced on IT-services multiples.
+- 2026-09-20: Halt 1 PROCEED. Mental Model signed. Sector cap row confirmed at
+  Consulting / engineering services, 25x. Sizing ceiling SMALL.
+- 2026-09-20: nine corrections logged from the claude.ai live-verification
+  layer. C1 the SEBI warning-letter claim withdrawn; the 23 April 2026 filing
+  is the routine Large Corporate confirmation. C2 the Rs10cr loan sits below
+  the Regulation 23 materiality threshold, so no shareholder vote was needed;
+  the finding is conflict and defective disclosure, not concealment. C3
+  transfer-pricing risk immaterial, US arm operating profit on total cost about
+  9.5%, inside the arm's-length range. C4 the headcount narrative withdrawn on
+  a basis mismatch; 690 was group-wide, 521 is Indian permanent rolls. C5 the
+  rupee contributes about 11 points of the 42% Q1 FY27 growth; dollar growth is
+  about 28%. C6 Aamsar LLP is Alpha Alternatives MSAR LLP, a Category III AIF,
+  not promoter-linked. C7 the FY23 Note 7 footnote is superseded by the FY24
+  restatement. C8 the Gate 0 moat score was understated for want of peer sheets
+  that were in corpus; Block F rerun required. C9 annual report pages 30 and
+  163 are blank, not unread.
+- 2026-09-21: stage 1 Block F rerun executed against the three peer
+  Data_Sheet CSVs. Moat 11/60 to 19/60, moats confirmed 2 to 4, class MODERATE
+  to STRONG, grand total 81/160 to 89/160, classification GOOD to GOOD+. Core
+  score unchanged at 70/100. Two caveats travel with it: the Tata Elxsi
+  Data_Sheet holds FY2008-FY2015 statements and is 11 to 19 years stale, so the
+  M2 peer median rests on Cyient and Onward only; and M5 scores "top 3" against
+  a four-company universe, a low bar. M9 stays zero, on corrected reasoning:
+  TAAL Tech's own material-cost line is blank from FY2019, so the rule's
+  gross-margin proxy cannot be built without estimating a missing number.
 
 ## ACTIVE TRIPWIRES
 Provisional, from phase 1. Confirmed or replaced at /finalize.

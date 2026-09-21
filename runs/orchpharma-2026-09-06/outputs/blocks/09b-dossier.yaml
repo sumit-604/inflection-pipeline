@@ -1,0 +1,76 @@
+stage: B09b-dossier
+company: "ORCHPHARMA"
+run_date: "2026-09-06"
+model: claude-sonnet-5
+status: complete
+corpus_verdict: "CORPUS GAPPED-FRESHNESS"
+corpus_gaps:
+  - document: "FY2026 audited annual results filing (Q4 FY26 Reg 33) and FY2026 Annual Report"
+    expected_source: "BSE"
+    kind: "freshness-pair"
+  - document: "Post-allotment shareholding pattern (SAST XBRL)"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "Exchange announcements / Reg 30 filings"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "CARE Ratings rationale, Mar-2025"
+    expected_source: "rating agency site"
+    kind: "findable-missing"
+  - document: "Dhanuka Laboratories merger scheme document, fairness opinion, swap-ratio valuation"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "Dhanuka Laboratories Ltd's own filed accounts"
+    expected_source: "company IR page"
+    kind: "findable-missing"
+  - document: "Aurobindo Pharma's own filings on its competing 7-ACA project"
+    expected_source: "company IR page"
+    kind: "findable-missing"
+  - document: "Broker / research notes"
+    expected_source: "company IR page"
+    kind: "plausibly-nonexistent"
+archetypes:
+  - line: "Cephalosporin API/FDF export business (98.3%+1.7% of FY25 revenue)"
+    archetype: "Commodity converter (Section 1B v3.7 Amendment 17 binds)"
+  - line: "Enmetazobactam / Orblicef / Exblifep licensing (0% of FY25 revenue)"
+    archetype: "Licence/scarcity business"
+transition:
+  - line: "Cephalosporin API/FDF export business"
+    from_tier: "R1 COMMODITY PRICE-TAKER"
+    to_tier: "R2 COST-ADVANTAGED CONVERTER"
+    engine: "Rs 750 cr 7-ACA backward-integration plant at Jammu converting a purchased, market-priced input into a captive, cost-controlled input; in-house/third-party sourcing mix shifting toward ~80% in-house"
+    proof_gate: "First commercial 7-ACA batch at disclosed yield/quality, guided ~March 2027; thereafter material cost % of revenue falling sustainably below the FY25/FY24 63.5% baseline"
+    recognition_gap: "OPEN QUESTION, resolved at Stage 11 via the PE gap: does current pricing already credit a successful R1-to-R2 climb, or still price the FY22-25 audited AVOID entity. No per-share/PE figure exists in this corpus (share count does not reconcile, Correction 4)"
+    ugliness: "STRUCTURAL-FEATURE (most evidenced reading for the weak-ROCE/FY26-decline record; ARTIFACT-OF-CLIMB reading named for the PBT/FCF collapse specifically; both readings stated, not resolved)"
+    transition_falsifier: "Further 7-ACA commissioning slip past March 2027, yield/quality shortfall at first commercial batch, or Aurobindo's larger competing capacity reaching market first"
+  - line: "Enmetazobactam / Orblicef / Exblifep licensing"
+    from_tier: "R0 NON-OPERATING (imperfect fit; pre-revenue optionality with one signed deal)"
+    to_tier: "R5 BRAND/SCARCITY OWNER"
+    engine: "Converting patent protection into signed, royalty/milestone-bearing licence deals market by market beyond the one signed Russia deal"
+    proof_gate: "At least one further definitive licensing agreement, beyond Russia, signed and disclosed with economics, within FY27"
+    recognition_gap: "Not assessed separately; folded into the base-business open question, since no per-share or PE figure exists in this corpus at all"
+    ugliness: "STRUCTURAL-FEATURE (four consecutive quarters of slipping, decreasingly specific promises; credibility grade weakest on this line specifically)"
+    transition_falsifier: "FY27 ends with zero further signed deals beyond Russia, or Europe absolute-sales non-disclosure continues past a full year"
+dominant_variables:
+  - "7-ACA commissioning-date adherence and post-commissioning material cost %/sourcing mix"
+  - "Base-business EBITDA margin sustaining a cyclical recovery (target ~12% FY27, contested reading of Q1 FY27 actual)"
+  - "Enmetazobactam ex-India licensing conversion beyond the one signed Russia deal"
+  - "Otsuka Chemical (India) Pvt Ltd / GCLE related-party input concentration trend"
+business_falsifier: "Continued fund diversion from the earning business into the pre-revenue subsidiary without a matching disclosed return (Rs 447.22 cr guarantee with no Ind AS 109 treatment, standalone capital commitments +797% in FY2025, base-business QIP tranche only 0.36% utilised while consolidated CWIP grows fastest) combined with continued non-disclosure of PBT/PAT/debt/cash would force re-declaring the FROM business from an operating API exporter toward a capital source funding and guaranteeing a separate pre-revenue subsidiary"
+mental_model_status: "DRAFT - PENDING OPERATOR SIGN-OFF"
+fragility:
+  variable_count: 7
+  verifiability_ratio: "4 of 7 externally observable"
+  single_point_failure: "Rs 447.22 cr corporate guarantee for Orchid Bio-Pharma Ltd's borrowings crystallising (34.0% of standalone net worth, no visible Ind AS 109 treatment)"
+  fragility_verdict: "FRAGILE"
+candidate_count: 8
+second_order:
+  chains_drafted: 2
+  pending_live_links: 2
+  confirm_by_observations: 2
+research_brief_items: 13
+plain_summary_points: 15
+annex:
+  present: true
+  questions_answered: 10
+  corpus_commit_hash: "fc45249d591fa0f9f8044db3e762dd24f057009d"

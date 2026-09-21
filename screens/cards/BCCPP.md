@@ -266,5 +266,23 @@ largely by an unexplained fall in other expenses, is a hypothesis.
 - A reversion to an 11% margin makes the quarter a cost timing artefact.
 - Promoters not taking up their rights entitlement.
 
-No valuation was run. No target price. This verdict decides only whether the
+No Role 1 valuation was run and no target price is set. This verdict decides only whether the
 name earns a full `/step1`, and it is not a position.
+
+## 13. Forward view
+
+Operator ruling 2026-09-21. A screening metric, not a valuation. Read it with
+steps 5, 8, 9 and 11, never instead of them.
+
+| | |
+|---|---|
+| Market capitalisation (Bull AI company record, 21-Sep-2026, not a filed document) | Rs 513 (fully paid line) crore |
+| Last reported full-year profit after tax | Rs 6.1 (derived at an assumed 25% tax) crore |
+| FY27 expected profit after tax | Rs 16.2 crore |
+| Growth | +164% |
+| **Forward price-to-earnings** | **31.7x** |
+| Basis tier | B — Q1 FY27 pre-tax profit annualised, taxed at an assumed 25%. One quarter only. |
+
+**Two warnings.** Q1 FY27 pre-tax profit of Rs 5.40 crore was 66% of the whole of FY26, and the largest single driver was other expenses falling 21% sequentially with no note. Separately, the multiple above is the fully paid line; you hold the partly paid line, whose call money and schedule are NOT FOUND.
+
+Full run table and the ranking: `screens/forward-view-2026-09-21.md`.

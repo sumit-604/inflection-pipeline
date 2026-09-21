@@ -268,5 +268,23 @@ service to very large customers.
   the ugliness structural.
 - Any disclosure that one client is more than a third of the services book.
 
-No valuation was run. No target price. This verdict decides only whether the
+No Role 1 valuation was run and no target price is set. This verdict decides only whether the
 name earns a full `/step1`, and it is not a position.
+
+## 13. Forward view
+
+Operator ruling 2026-09-21. A screening metric, not a valuation. Read it with
+steps 5, 8, 9 and 11, never instead of them.
+
+| | |
+|---|---|
+| Market capitalisation (Bull AI company record, 21-Sep-2026, not a filed document) | Rs 343 crore |
+| Last reported full-year profit after tax | Rs 11.9 crore |
+| FY27 expected profit after tax | Rs 16 – 20 crore |
+| Growth | +34% to +68% |
+| **Forward price-to-earnings** | ****17.1x – 21.4x**** |
+| Basis tier | A — guided FY27 blended EBITDA margin of 18% to 19% against 15.0% delivered, plus published segment targets of 12-15% for products and 30-35% for patient support programmes. |
+
+The guided blended margin has already printed once: Q3 FY26 came in at 18.1%. That is what makes the guide checkable rather than aspirational.
+
+Full run table and the ranking: `screens/forward-view-2026-09-21.md`.

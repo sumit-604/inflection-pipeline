@@ -284,5 +284,23 @@ revenue, and Eltech either resolved or ring-fenced.
 - A first service contract on an installed naval system.
 - A price fall that reopens the gap against pre-tax profit of Rs 75.75 crore.
 
-No valuation was run. No target price. This verdict decides only whether the
+No Role 1 valuation was run and no target price is set. This verdict decides only whether the
 name earns a full `/step1`, and it is not a position.
+
+## 13. Forward view
+
+Operator ruling 2026-09-21. A screening metric, not a valuation. Read it with
+steps 5, 8, 9 and 11, never instead of them.
+
+| | |
+|---|---|
+| Market capitalisation (Bull AI company record, 21-Sep-2026, not a filed document) | Rs 5,307 crore |
+| Last reported full-year profit after tax | Rs 56.8 (derived at an assumed 25% tax) crore |
+| FY27 expected profit after tax | Rs 71.3 crore |
+| Growth | +25% |
+| **Forward price-to-earnings** | **74.4x** |
+| Basis tier | B — Q1 FY27 pre-tax profit annualised. **Bull AI holds zero guidance records for this company.** |
+
+Seventy-four times pre-tax-derived earnings, with no order book published since 31 March 2025 and a going-concern emphasis on a subsidiary. The growth is real and the price has already paid for more of it.
+
+Full run table and the ranking: `screens/forward-view-2026-09-21.md`.

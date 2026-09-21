@@ -240,5 +240,23 @@ exist and the evidence that does exist points the wrong way.
 - A named, verifiable reason for the H2 FY26 step change.
 - The company starting to hold earnings calls.
 
-No valuation was run. No target price. This verdict decides only whether the
+No Role 1 valuation was run and no target price is set. This verdict decides only whether the
 name earns a full `/step1`, and it is not a position.
+
+## 13. Forward view
+
+Operator ruling 2026-09-21. A screening metric, not a valuation. Read it with
+steps 5, 8, 9 and 11, never instead of them.
+
+| | |
+|---|---|
+| Market capitalisation (Bull AI company record, 21-Sep-2026, not a filed document) | Rs 603 crore |
+| Last reported full-year profit after tax | Rs 17.7 (derived at an assumed 25% tax) crore |
+| FY27 expected profit after tax | Rs NOT FOUND crore |
+| Growth | — |
+| **Forward price-to-earnings** | ****blank**** |
+| Basis tier | D — no forward basis exists. Half-yearly reporting, latest period 31 March 2026, no guidance, and the FY26 revenue doubling is unexplained on the record. |
+
+A trailing multiple of about 34x is computable and is not meaningful next to operating cash flow of minus Rs 32.02 crore and a cash flow statement that does not reconcile.
+
+Full run table and the ranking: `screens/forward-view-2026-09-21.md`.

@@ -205,5 +205,23 @@ because management publishes neither a presentation nor a transcript.
   would be a real cost-curve move.
 - A price that reopens the gap against fully-taxed earnings.
 
-No valuation was run. No target price. This verdict decides only whether the
+No Role 1 valuation was run and no target price is set. This verdict decides only whether the
 name earns a full `/step1`, and it is not a position.
+
+## 13. Forward view
+
+Operator ruling 2026-09-21. A screening metric, not a valuation. Read it with
+steps 5, 8, 9 and 11, never instead of them.
+
+| | |
+|---|---|
+| Market capitalisation (Bull AI company record, 21-Sep-2026, not a filed document) | Rs 2,378 crore |
+| Last reported full-year profit after tax | Rs 110.0 (nil tax) crore |
+| FY27 expected profit after tax | Rs 135 crore |
+| Growth | +23% |
+| **Forward price-to-earnings** | **17.6x** |
+| Basis tier | B — Q1 FY27 annualised. No presentation and no earnings call exists, so no guidance is possible. |
+
+**The cheapness is not real.** These earnings carry no tax at all, in FY24, FY25, FY26 and Q1 FY27. Fully taxed, FY27E is about Rs 101 crore and the multiple is 23.5x. Revenue also fell 31% year on year in Q1 FY27. The verdict stays PASS.
+
+Full run table and the ranking: `screens/forward-view-2026-09-21.md`.

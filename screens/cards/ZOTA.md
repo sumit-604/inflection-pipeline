@@ -280,5 +280,23 @@ EBITDA in this company's accounts.
 - A third quarter of widening loss makes the ugliness structural and the
   verdict PASS.
 
-No valuation was run. No target price. This verdict decides only whether the
+No Role 1 valuation was run and no target price is set. This verdict decides only whether the
 name earns a full `/step1`, and it is not a position.
+
+## 13. Forward view
+
+Operator ruling 2026-09-21. A screening metric, not a valuation. Read it with
+steps 5, 8, 9 and 11, never instead of them.
+
+| | |
+|---|---|
+| Market capitalisation (Bull AI company record, 21-Sep-2026, not a filed document) | Rs 3,964 crore |
+| Last reported full-year profit after tax | Rs pre-tax loss Rs 73.84 crore crore |
+| FY27 expected profit after tax | Rs pre-tax loss crore |
+| Growth | — |
+| **Forward price-to-earnings** | ****NOT APPLICABLE**** |
+| Basis tier | — loss-making; the framework forbids a forward PE here. |
+
+**The gate, so it can be checked:** group profit before tax must narrow for two consecutive quarters on growing revenue. Management guides EBITDA positive in two to three quarters, which is not the same thing, because under Ind AS 116 the store rent sits below EBITDA.
+
+Full run table and the ranking: `screens/forward-view-2026-09-21.md`.

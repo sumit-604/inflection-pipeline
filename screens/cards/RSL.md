@@ -237,5 +237,23 @@ attached. The market already pays about 28 times pre-tax profit for all of it.
 - A price fall that restores a converter multiple to a converter.
 - Evidence that revenue, not just spread, is growing.
 
-No valuation was run. No target price. This verdict decides only whether the
+No Role 1 valuation was run and no target price is set. This verdict decides only whether the
 name earns a full `/step1`, and it is not a position.
+
+## 13. Forward view
+
+Operator ruling 2026-09-21. A screening metric, not a valuation. Read it with
+steps 5, 8, 9 and 11, never instead of them.
+
+| | |
+|---|---|
+| Market capitalisation (Bull AI company record, 21-Sep-2026, not a filed document) | Rs 1,507 crore |
+| Last reported full-year profit after tax | Rs 40.8 (FY25, derived at 25.3% tax) crore |
+| FY27 expected profit after tax | Rs 48.2 (FY26E) crore |
+| Growth | +18% |
+| **Forward price-to-earnings** | **31.3x** |
+| Basis tier | C — the corpus ends at the half-year to September 2025, which this annualises. No FY27 basis exists at all. |
+
+Revenue has been flat for three years at Rs 910-948 crore. The profit growth is spread, not volume, and FY25 turned Rs 54.64 crore of pre-tax profit into Rs 7.08 crore of operating cash.
+
+Full run table and the ranking: `screens/forward-view-2026-09-21.md`.

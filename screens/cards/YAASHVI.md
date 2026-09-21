@@ -91,3 +91,21 @@ and it should not be given a PASS either, because a PASS implies evidence was
 weighed.
 
 No valuation was run. No target price. No business verdict was reached.
+
+## 13. Forward view
+
+Operator ruling 2026-09-21. A screening metric, not a valuation. Read it with
+steps 5, 8, 9 and 11, never instead of them.
+
+| | |
+|---|---|
+| Market capitalisation (Bull AI company record, 21-Sep-2026, not a filed document) | Rs 126 crore |
+| Last reported full-year profit after tax | Rs NOT FOUND crore |
+| FY27 expected profit after tax | Rs NOT FOUND crore |
+| Growth | — |
+| **Forward price-to-earnings** | ****blank**** |
+| Basis tier | D — no financial statement of any kind exists in the corpus. |
+
+Nothing can be estimated and nothing is.
+
+Full run table and the ranking: `screens/forward-view-2026-09-21.md`.

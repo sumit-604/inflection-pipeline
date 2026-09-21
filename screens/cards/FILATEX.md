@@ -33,11 +33,14 @@ Filatex has also collaborated with American and Efird Global LLC for industrial
 threads (Q1 FY27 call, page 5).
 
 **What must be true for the thesis to work?** Recycled polyester must sell at a
-premium that a commodity converter cannot earn. Management guided the recycling
-plant to add roughly Rs 80 crore of EBITDA on Rs 300 crore of capex, and the
-brownfield expansion to add roughly Rs 70 crore on Rs 235 crore. It guided a
-blended EBITDA margin of 11% to 12% (Q1 FY26 call, pages 6 and 7). FY26
-delivered 8.3%.
+premium that a commodity converter cannot earn. The current deck puts rupee
+EBITDA against each leg of the Rs 690 crore programme: ECOSIS recycling
+Rs 80-85 crore a year on Rs 300 crore of capex, PFY brownfield Rs 60 crore on
+Rs 235 crore, a steam distribution platform Rs 60-65 crore on Rs 85 crore,
+renewable energy Rs 18-20 crore of savings on Rs 30 crore, and automation Rs 4
+crore on Rs 40 crore. **That totals Rs 222-234 crore a year at steady state,
+against FY26 EBITDA of Rs 346.50 crore** (FY27 Q1 guidance deck, pages 7, 8 and
+12). ECOSIS is guided at 30-35% EBITDA margins.
 
 **What breaks it?** Chemical recycling is hard. Management itself says other
 companies have spent millions of dollars on research and still have no large
@@ -137,9 +140,12 @@ years. The claim is inside the base rate.
 |---|---|---|---|
 | Brownfield PFY expansion, 50% complete | September 2026 | Q1 FY27 call, page 5 | Underway |
 | Brownfield PFY expansion, balance complete | October 2026 | Q1 FY27 call, page 5 | Stated |
-| Brownfield expansion adds about Rs 70 crore EBITDA a year on Rs 235 crore capex | Full year after completion | Q1 FY26 call, page 6 | Stated |
-| Ecosis recycling plant, 75 tonnes a day, commissioning | August to September 2026 | Q1 FY26 call, page 6 | Stated |
-| Recycling adds about Rs 80 crore EBITDA a year on Rs 300 crore capex | Full year after ramp | Q1 FY26 call, page 6 | Stated |
+| PFY brownfield adds about Rs 60 crore EBITDA a year on Rs 235 crore capex, 55,000 tonnes | Full year after completion | FY27 Q1 guidance deck, page 7 | Stated |
+| ECOSIS recycling, 26,750 tonnes a year, commissioning | **October 2026** | FY27 Q1 guidance deck, page 7 | Stated |
+| ECOSIS adds about Rs 80-85 crore EBITDA a year on Rs 300 crore capex, at 30-35% margins | Full year after ramp | FY27 Q1 guidance deck, pages 7 and 12 | Stated |
+| Steam distribution platform adds Rs 60-65 crore EBITDA a year on Rs 85 crore capex | FY26-27 | FY27 Q1 guidance deck, page 8 | Stated |
+| Renewable energy saves Rs 18-20 crore a year on Rs 30 crore capex; renewable share 26% to 55% of captive power | FY26-27 | FY27 Q1 guidance deck, page 7 | Stated |
+| Automation saves about Rs 4 crore a year on Rs 40 crore capex, about 180 fewer staff | FY26-27 | FY27 Q1 guidance deck, page 8 | Stated |
 | Recycling utilisation 65% to 70% in first six months | From commissioning | FY26 results call, page 13 | Stated |
 | Decathlon entity running structural trials of Ecosis chips and yarn | Live at 31-Jul-2026 | Q1 FY27 call, page 5 | Underway |
 | Blended EBITDA margin 11% to 12% | After capex | Q1 FY26 call, page 7 | Stated |
@@ -154,7 +160,7 @@ revenue rise.
 
 The proof point that matters has not arrived. The recycling plant has not
 been reported as commissioned in any document held. The brownfield expansion is
-half done. Every rupee of the guided Rs 150 crore EBITDA uplift is still a
+half done. Every rupee of the guided Rs 222-234 crore EBITDA uplift is still a
 forecast. Name the absence plainly: no delivered volume from either project
 appears in this corpus.
 
@@ -217,10 +223,16 @@ in the market. That is a base worth building on.
 2. The Decathlon and A&E arrangements. Are they trials or are they offtake.
    The corpus says trials.
 3. Realisation per tonne on recycled chips against virgin chips. The whole
-   rung climb lives in that spread.
-4. How the Rs 690 crore is funded. Cumulative equity into Ecosis is Rs 64.98
-   crore. Find the debt.
-5. Why volume fell 11.5% while revenue rose.
+   rung climb lives in that spread. ECOSIS is guided at 30-35% EBITDA margins
+   against a company blended 8.3%.
+4. The steam distribution platform. Rs 60-65 crore of guided EBITDA on Rs 85
+   crore of capex is the best return in the programme and the card found no
+   detail on who buys the steam.
+5. How the Rs 690 crore is funded. Cumulative equity into Ecosis is Rs 64.98
+   crore. Find the debt, and the depreciation and interest schedule. The
+   forward view assumes Rs 48 crore and Rs 32 crore a year; neither is
+   disclosed.
+6. Why volume fell 11.5% while revenue rose.
 
 **What would change the view**
 - A commissioning announcement with volume, not a commissioning plan.
@@ -228,5 +240,23 @@ in the market. That is a base worth building on.
 - A second quarter of falling volume without the price offset, which would
   turn the ugliness structural.
 
-No valuation was run. No target price. This verdict decides only whether the
+No Role 1 valuation was run and no target price is set. This verdict decides only whether the
 name earns a full `/step1`, and it is not a position.
+
+## 13. Forward view
+
+Operator ruling 2026-09-21. A screening metric, not a valuation. Read it with
+steps 5, 8, 9 and 11, never instead of them.
+
+| | |
+|---|---|
+| Market capitalisation (Bull AI company record, 21-Sep-2026, not a filed document) | Rs 4,174 crore |
+| Last reported full-year profit after tax | Rs 183.2 crore |
+| FY27 expected profit after tax | Rs 205 (FY27) / 290 (FY28) crore |
+| Growth | +12% FY27, +41% FY28 |
+| **Forward price-to-earnings** | **20.4x FY27 / **14.4x FY28**** |
+| Basis tier | A — Rs 222-234 crore of guided steady-state EBITDA with dates. Depreciation of Rs 48 crore and interest of Rs 32 crore are my assumption, not disclosed. |
+
+**Price this on FY28, not FY27.** The capex commissions in October 2026, so FY27 absorbs depreciation and interest before the plants earn. FY28 is the first full year of the Rs 222-234 crore programme.
+
+Full run table and the ranking: `screens/forward-view-2026-09-21.md`.

@@ -266,5 +266,23 @@ exists to answer, and this corpus cannot.
   and the verdict WATCH.
 - A half-year that gives back the Q1 margin gain.
 
-No valuation was run. No target price. This verdict decides only whether the
+No Role 1 valuation was run and no target price is set. This verdict decides only whether the
 name earns a full `/step1`, and it is not a position.
+
+## 13. Forward view
+
+Operator ruling 2026-09-21. A screening metric, not a valuation. Read it with
+steps 5, 8, 9 and 11, never instead of them.
+
+| | |
+|---|---|
+| Market capitalisation (Bull AI company record, 21-Sep-2026, not a filed document) | Rs 1,309 crore |
+| Last reported full-year profit after tax | Rs 53.9 crore |
+| FY27 expected profit after tax | Rs 72 crore |
+| Growth | +34% |
+| **Forward price-to-earnings** | ****18.2x**** |
+| Basis tier | C — no guidance records exist. FY27E applies FY26's 31% revenue growth with a modest margin gain. |
+
+**Q1 FY27 is deliberately not annualised.** The company's own filing warns a quarter "is not indicative of full year's expected performance". Annualising would give Rs 95.5 crore and a 13.7x multiple, and would breach that warning.
+
+Full run table and the ranking: `screens/forward-view-2026-09-21.md`.

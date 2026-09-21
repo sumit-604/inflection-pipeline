@@ -68,6 +68,13 @@ business.** The registrations are the scarce asset. Each one is a regulatory
 licence with a cost, a lead time and an incumbency. That is the thing to
 value, not the tonnage.
 
+Correct one framing before going further. The decks call this company "a
+growing force in pharmaceutical formulations export", and the FY26 deck then
+states that **domestic revenue reached 49% of FY26** and that "the domestic
+business emerged as a key growth driver during the period" (FY26 deck,
+page 28). Half the company is now domestic. The registration stack is still the
+asset; the export label is out of date.
+
 ## 3. Competitive advantages
 
 Forming, and in one specific place. A registration stack is a barrier. A rival
@@ -237,5 +244,23 @@ survived a change of manufacturing model, and the growth is not one quarter.
 - A second reporting period showing the margin below 25% as owned capacity
   fills slowly.
 
-No valuation was run. No target price. This verdict decides only whether the
+No Role 1 valuation was run and no target price is set. This verdict decides only whether the
 name earns a full `/step1`, and it is not a position.
+
+## 13. Forward view
+
+Operator ruling 2026-09-21. A screening metric, not a valuation. Read it with
+steps 5, 8, 9 and 11, never instead of them.
+
+| | |
+|---|---|
+| Market capitalisation (Bull AI company record, 21-Sep-2026, not a filed document) | Rs 377 crore |
+| Last reported full-year profit after tax | Rs 18.1 crore |
+| FY27 expected profit after tax | Rs 25.3 crore |
+| Growth | +40% |
+| **Forward price-to-earnings** | ****14.9x**** |
+| Basis tier | C — the only FY27 statement is "The outlook for FY27 remains robust". FY27E applies +40% against a four-year profit compound of about 46%. |
+
+Reports half-yearly and the latest period ends 31 March 2026, so six months are unobserved when this estimate is made.
+
+Full run table and the ranking: `screens/forward-view-2026-09-21.md`.

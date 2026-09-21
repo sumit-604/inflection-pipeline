@@ -245,5 +245,23 @@ the complex-injectable or biologics contribution separately.
 - A commissioning date and a rupee number for biologics or injectables.
 - A price fall that reopens the gap against 5% to 10% profit growth.
 
-No valuation was run. No target price. This verdict decides only whether the
+No Role 1 valuation was run and no target price is set. This verdict decides only whether the
 name earns a full `/step1`, and it is not a position.
+
+## 13. Forward view
+
+Operator ruling 2026-09-21. A screening metric, not a valuation. Read it with
+steps 5, 8, 9 and 11, never instead of them.
+
+| | |
+|---|---|
+| Market capitalisation (Bull AI company record, 21-Sep-2026, not a filed document) | Rs 7,025 crore |
+| Last reported full-year profit after tax | Rs 109.9 crore |
+| FY27 expected profit after tax | Rs 121 crore |
+| Growth | +10% |
+| **Forward price-to-earnings** | **58.1x** |
+| Basis tier | C — no guidance and no result as a listed company. FY27E applies +10% against a three-year profit path of Rs 100.06, Rs 96.79 and Rs 109.90 crore. |
+
+**The most expensive multiple on the run for the least growth.** Fifty-eight times for about 10% a year. The biologics facility that could change the growth rate is "yet to be commissioned".
+
+Full run table and the ranking: `screens/forward-view-2026-09-21.md`.

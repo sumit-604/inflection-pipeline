@@ -242,5 +242,23 @@ shape of a recognition gap.
   reverts to WATCH.
 - Any disclosure that technical textiles depends on one customer.
 
-No valuation was run. No target price. This verdict decides only whether the
+No Role 1 valuation was run and no target price is set. This verdict decides only whether the
 name earns a full `/step1`, and it is not a position.
+
+## 13. Forward view
+
+Operator ruling 2026-09-21. A screening metric, not a valuation. Read it with
+steps 5, 8, 9 and 11, never instead of them.
+
+| | |
+|---|---|
+| Market capitalisation (Bull AI company record, 21-Sep-2026, not a filed document) | Rs 792 crore |
+| Last reported full-year profit after tax | Rs 35.9 crore |
+| FY27 expected profit after tax | Rs 70 – 84 crore |
+| Growth | +95% to +135% |
+| **Forward price-to-earnings** | ****9.4x – 11.3x**** |
+| Basis tier | B — no guidance exists anywhere; the company has never held an earnings call. FY27E applies FY26's own seasonal factor of 3.17 times to Q1 FY27. |
+
+**Cheapest on the run, and built on one quarter.** What supports the climb over the cycle: Q1 FY23 earned Rs 13.95 crore on Rs 253 crore of revenue, a 5.5% margin. Q1 FY27 earned Rs 26.61 crore on Rs 236 crore, 11.3%. The margin doubled on lower revenue. If cotton turns, it does not hold.
+
+Full run table and the ranking: `screens/forward-view-2026-09-21.md`.

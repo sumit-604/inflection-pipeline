@@ -235,3 +235,33 @@ SYMBIOTEC listed three weeks before the screen.
 - Two names are read from a prospectus alone, SYMBIOTEC and RSL, because both
   listed recently and have filed no result yet that the index holds. Every
   competitive claim on those two cards is marked as an issuer claim.
+
+### Step 13 added, 2026-09-21 (operator ruling)
+
+The operator ranks on next-year bottom-line growth against forward
+price-to-earnings. A card that stops at the verdict cannot be ranked, so
+`SHALLOW_ANALYSIS_FRAMEWORK.md` gains **step 13, the forward view**, and every
+card in this run carries it. The run-wide table is
+`screens/forward-view-2026-09-21.md`.
+
+The ruling keeps the three prohibitions: no target price, no buy or sell, and
+no forward PE on a loss-maker. What it adds is a basis tier on every estimate,
+A for guided down to D for no basis, so a cheap-looking multiple can be read
+against how much is actually known.
+
+Eight Bull AI guidance calls were spent building it. They corrected three
+cards, which is the argument for running guidance before writing a card rather
+than after:
+
+- **FILATEX** — the capex programme adds **Rs 222-234 crore** of steady-state
+  EBITDA, not the Rs 150 crore the card carried. A steam distribution platform
+  worth Rs 60-65 crore was missing entirely. ECOSIS commissioning moved to
+  October 2026 and its capacity is 26,750 TPA.
+- **FABCLEAN** — FY25 profit after tax was **Rs 13.30 crore**, so FY26 profit
+  grew 18.95% against revenue growth of 46.93%. The Kelvin holding is **60%**,
+  not the prospectus figure of 33.33%.
+- **TLL** — **domestic revenue reached 49% of FY26.** The export framing on the
+  card was out of date.
+
+Two names returned zero guidance records, which is itself a finding recorded on
+both cards: **MARINE** and **AVTNPL**.

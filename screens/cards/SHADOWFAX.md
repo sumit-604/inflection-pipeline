@@ -257,5 +257,23 @@ statements and to learn what "adjusted" adjusts.
 - Price per order falling while volume grows, which would mean the share is
   being bought.
 
-No valuation was run. No target price. This verdict decides only whether the
+No Role 1 valuation was run and no target price is set. This verdict decides only whether the
 name earns a full `/step1`, and it is not a position.
+
+## 13. Forward view
+
+Operator ruling 2026-09-21. A screening metric, not a valuation. Read it with
+steps 5, 8, 9 and 11, never instead of them.
+
+| | |
+|---|---|
+| Market capitalisation (Bull AI company record, 21-Sep-2026, not a filed document) | Rs 14,772 crore |
+| Last reported full-year profit after tax | Rs 112 crore |
+| FY27 expected profit after tax | Rs 280 crore |
+| Growth | +150% |
+| **Forward price-to-earnings** | **52.8x** |
+| Basis tier | A — management **raised** FY27 revenue growth guidance from 27-30% to **38-40%**, and guides 100-120 basis points of profitability improvement a year to FY28. |
+
+The growth is guided and the margin path is guided, which is as good as the evidence gets on this run. At 52.8x the multiple already assumes both land.
+
+Full run table and the ranking: `screens/forward-view-2026-09-21.md`.

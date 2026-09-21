@@ -14,7 +14,10 @@ Operator: Keerti Kaushik. Strategy: transition alpha, quality-ladder climb.
 - No forensics: no Notes triple-pass, no 17-check, no arithmetic audit.
 - No live-web promoter dig, no peer verification, no verifier agents.
 - No Role 1 valuation and no price target. Shallow stops before the spear and
-  before `/step1`.
+  before `/step1`. **Step 13 is the one exception** (operator ruling
+  2026-09-21): a forward bottom-line estimate and a forward PE, built only from
+  disclosed guidance or delivered run-rates, are screening metrics and are
+  required on every card.
 - One independent check stands in for the cut machinery: the credit-rating
   rationale, written by an agency that holds management's numbers.
 
@@ -33,6 +36,7 @@ Operator: Keerti Kaushik. Strategy: transition alpha, quality-ladder climb.
 | Stage 9 TAM/SAM/SOM | CUT, opportunity noted in one line |
 | Verifiers A to D | REPLACE with document-surfaced flags plus the credit rating |
 | 09b dossier, 13 synthesis | KEEP as the narrative plus the verdict card |
+| Role 1 valuation | REPLACE with the step 13 forward view: next-year bottom line and forward PE |
 
 ## The output, per company
 
@@ -86,11 +90,51 @@ The four themes the operator named each get a dedicated step: business model
     Yields the posture label.
 12. **Verdict card.** PROCEED to `/step1`, WATCH, or PASS. Load-bearing facts
     to verify first. What would change the view. No price.
+13. **Forward view.** Added by operator ruling, 2026-09-21. Next year's
+    expected bottom line, the growth rate against the last reported year, and
+    the forward price-to-earnings ratio. The operator screens on growth against
+    forward multiple, so a card without this step cannot be ranked and is
+    incomplete. Rules in the section below.
+
+## Step 13: the forward view
+
+Operator ruling, 2026-09-21. The purpose is ranking, not valuation: find the
+companies whose bottom line grows fast and whose forward multiple has not yet
+paid for it.
+
+Each card states four things and the basis tier for the estimate.
+
+- **FY+1 bottom line.** Profit after tax. Where only profit before tax is
+  disclosed, apply tax and say the rate is an assumption.
+- **Growth** against the last reported full year.
+- **Forward PE** = market capitalisation divided by the FY+1 bottom line.
+  Market capitalisation comes from the Bull AI company record and is labelled
+  as a service record, not a filed document, with its date.
+- **Basis tier**, which is the honest part:
+  - **A — Guided.** Management gave a rupee number, a growth band or a margin
+    target, with a date. Cite it.
+  - **B — Run-rate.** A delivered quarter or half-year, annualised. Say so,
+    and respect any seasonality warning the company itself filed.
+  - **C — Trend.** A delivered multi-year growth rate with a mechanism behind
+    it. Weakest usable tier.
+  - **D — NOT FOUND.** No forward basis exists. Leave the forward PE blank.
+    Do not fill it.
+
+Three prohibitions carry over unchanged. Do not set a target price. Do not
+issue a buy or sell. Do not compute a forward PE for a loss-making company;
+write NOT APPLICABLE and name the gate to profitability instead.
+
+One warning the ruling exists to serve. A cheap forward multiple on fast
+growth is a screen result, not a conclusion. Earnings that carry no tax, a
+quarter that will not repeat, and a run-rate built on falling revenue all
+screen well and all mislead. The card's own steps 5, 8, 9 and 11 are what stop
+that, so the forward view is read with them, never instead of them.
 
 ## Rules that must not break
 
 - Every number traces to a corpus file and page.
-- No valuation, no target price, no buy or sell instruction.
+- No target price and no buy or sell instruction. The step 13 forward PE is a
+  screening metric and is not a valuation.
 - A missing document marks the steps it weakens; it does not stop the analysis.
 - The credit rating is one view, not the verdict. Today's filings win over an
   older rating.

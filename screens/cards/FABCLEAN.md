@@ -64,10 +64,13 @@ pace. Two verticals: cleanroom partitions took Rs 112.40 crore of the May order
 intake and HVAC systems Rs 40.65 crore (Corporate announcement 12-Jun-2026,
 page 1).
 
-Growth is partly bought. The company has acquired 26% of Advantek, which makes
-air handling units, and subscribed to compulsorily convertible preference
-shares in Kelvin representing 33.33% on conversion; Kelvin integrates critical
-HVAC (RHP, page 144). The consolidated FY26 total income of Rs 221.72 crore
+Growth is partly bought. The company acquired 26% of Advantek, which makes air
+handling units, and took a position in Kelvin, which integrates critical HVAC
+(RHP, page 144). The prospectus figure of 33.33% on conversion is stale: the
+Kelvin holding is now **60% and management intends to raise it to 70-72%**
+(FY26 earnings call, page 10). Advantek may follow after European
+certification. An associate, Aart Integrated Projects, grew its top line from
+Rs 14 crore to Rs 34 crore in FY26. The consolidated FY26 total income of Rs 221.72 crore
 against standalone Rs 143.39 crore shows that 35% of the group's income sits
 outside the parent (Investor Presentation, page 21).
 
@@ -115,12 +118,16 @@ crore, profit after tax Rs 15.82 crore, earnings per share Rs 12.84. Standalone:
 total income Rs 143.39 crore, EBITDA Rs 12.96 crore, profit after tax Rs 9.06
 crore, earnings per share Rs 7.35 (Investor Presentation, page 21).
 
-Revenue rose 46% in FY26. EBITDA margin was 10.4% of total income and profit
+Total income rose 46.93%, EBITDA rose 28.31% and profit after tax rose
+**18.95%, from Rs 13.30 crore in FY25 to Rs 15.82 crore in FY26** (FY26
+earnings call, page 3). EBITDA margin was 10.4% of total income and profit
 margin 7.1%. Employee cost doubled, finance cost more than tripled and
 depreciation nearly tripled, which is what building execution capacity costs.
 
-**Classification: earnings-led, order-book driven.** Not a margin story. The
-company is winning more work and executing more of it.
+**Classification: earnings-led, order-book driven, with margin compressing.**
+Read the three growth rates in order: revenue 47%, EBITDA 28%, profit 19%. The
+company is winning more work and keeping less of each rupee of it. That is the
+number to watch against the sector mix question in step 6.
 
 ## 6. The transition and the quality ladder
 
@@ -160,6 +167,13 @@ That is a growth claim, not a returns claim. Record the ladder reading as
 | Kelvin CCPS subscription, 33.33% on conversion, HVAC integration | Pre-IPO | RHP, page 144 | Underway |
 | MEP capability added to the turnkey offering | Not dated | Investor Presentation FY2026 Q2, page 10 | Stated |
 | Maintenance services offering to pharmaceutical customers | Not dated | RHP, page 145 | Stated |
+| FY27 growth guided at "20 to 30 to 40 percent" | FY27 | FY26 earnings call, page 11 | Stated |
+| Kelvin holding raised to 60%, intended 70-72% | FY26, ongoing | FY26 earnings call, page 10 | Delivered, then stated |
+| Second manufacturing site, Hyderabad, 2 acres, 2,000 sqm a day | FY26 | FY26 earnings call, page 4 | Delivered |
+| UAE subsidiary incorporated | FY26 | FY27 Q1 deck, page 18 | Delivered |
+| Single ticket size up to about Rs 70 crore; Waaree solar project Rs 68 crore | FY26 | FY2026 Q4 deck, pages 14 and 22 | Delivered |
+| Semiconductor entry: Kaynes Semiconductor, CG Semi | FY26 | FY27 Q1 deck, page 17 | Delivered |
+| FY28 "beautiful takeoff", retention money returning, margin growth | FY28 | FY26 earnings call, page 12 | Stated |
 
 This is the best-documented trigger register in the run. The company publishes
 its order book every month, by sector and by vertical, with the pipeline
@@ -262,5 +276,23 @@ quality downgrade. The run must settle it.
   quality slide and the verdict to WATCH.
 - A stalling order book, or a receivable build in H1 FY27.
 
-No valuation was run. No target price. This verdict decides only whether the
+No Role 1 valuation was run and no target price is set. This verdict decides only whether the
 name earns a full `/step1`, and it is not a position.
+
+## 13. Forward view
+
+Operator ruling 2026-09-21. A screening metric, not a valuation. Read it with
+steps 5, 8, 9 and 11, never instead of them.
+
+| | |
+|---|---|
+| Market capitalisation (Bull AI company record, 21-Sep-2026, not a filed document) | Rs 588 crore |
+| Last reported full-year profit after tax | Rs 15.8 crore |
+| FY27 expected profit after tax | Rs 19 – 22 crore |
+| Growth | +20% to +40% |
+| **Forward price-to-earnings** | **26.6x – 31.0x** |
+| Basis tier | A — management guided FY27 growth as "20 to 30 to 40 percent". FY27E applies the midpoint at FY26's 7.1% profit margin. |
+
+**Temper the guide with FY26's own record.** Revenue rose 46.93%, EBITDA 28.31% and profit after tax only 18.95%. Margin compressed while the order book grew, which is the same question step 6 asks about the sector mix.
+
+Full run table and the ranking: `screens/forward-view-2026-09-21.md`.

@@ -97,7 +97,8 @@ halt1_corrections:
     - id: NEW
       correction: "TATAELXSI-Data_Sheet.csv carries FY2008-FY2015 financial statements, 11 to 19 years stale. Only its META block (current price and market capitalisation) is contemporaneous."
       effect: "Found during the Block F rerun. The scored peer median for M2 rests on two of three peers, Cyient and Onward Technologies. Recorded as a collector defect to add to the standing list."
-corpus_verdict_revised: "CORPUS CURRENT with named residue (operator ruling 2026-09-20). Residue: Vishkul MGT-7 shareholder list; identities of Creovate, Dureleg, Torrozo and Tenshi; 12th AGM transcript not yet published."
+corpus_verdict_revised: "NOT YET CURRENT. The operator ruled CORPUS CURRENT with named residue on 2026-09-20, conditional on the prior-year annual reports and the AGM filings being committed to inputs/. As at 2026-09-21 none of those seven files is on disk, so the condition is unmet and the standing verdict remains CORPUS GAPPED. Re-audit and set CURRENT when the files land. Named residue when it does: Vishkul MGT-7 shareholder list; identities of Creovate, Dureleg, Torrozo and Tenshi; 12th AGM transcript not yet published."
+corpus_verdict_recheck_2026_09_21: "Checked inputs/annual-report/ (holds Annual_Report_2026.pdf only), inputs/announcements/ (.gitkeep only), inputs/concalls/ (.gitkeep only), the main checkout, and a filesystem-wide search. None of the seven named additions is present."
 pending_corpus_additions:
   note: "Named in the Halt 1 ruling as to be committed under inputs/ before /fttcp. NOT PRESENT on disk as at 2026-09-21. The operator holds them in claude.ai and must place the files."
   files:

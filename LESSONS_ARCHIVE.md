@@ -560,3 +560,86 @@ Company memory written for both with the standing-ruling spear OVERRIDE.
   mapping backward class against forward class, so the output cannot be
   independently re-derived.
 - Verdict PROCEED WITH FLAGS, confidence 64, fragility FRAGILE. Not a clean run.
+
+## 2026-09-16 — /compost maintenance pass (LESSONS.md), operator-approved
+
+Actions: tag sector- or archetype-specific lessons, move closed items here,
+bring the active file under its 1,500-token budget. No pattern was promoted to
+law in this pass; promotion proposals still need operator approval.
+
+Tagged in the active file (the only two lessons that are sector- or
+archetype-specific; the recurring patterns are tooling and process failures
+that fire on every run, so they stay untagged):
+- Steel / Integrated Metals cap row [archetype: Commodity converter]
+- Sugar / Agri-commodity cap row [sector: Agri processing] [archetype: Commodity converter]
+
+CLOSED ITEMS MOVED OUT OF THE ACTIVE FILE (verbatim):
+- CLOSED 2026-09-15: the FTTCP v2.1 pointer pass left open by commit 17a57973.
+  Nine pointers now read v2.3, and the FTTCP file banner carries a v2.3 note
+  (PR #162, branch prompt-audit-fixes).
+- CLOSED (2026-09-15): prompts/11-valuation-pipeline.md lines 185, 205 and 301
+  ("conservative" wording) and lines 213 to 221 (Hurdle Ratio as a verdict cap, now a
+  feasibility check per Amendment 24 and OR-2) fixed by PR #164 (branch
+  prompt/stage11-skill-preload).
+- CORRECTION (2026-09-15): Section 1B v3.6 holds six amendments (11 to 16), not 56.
+  This corrects the August chat summary. Recorded in PR #163.
+
+PROMOTED TO LAW entries compressed to one line each in the active file. Full
+text as it stood before compression:
+- [2026-08-26] frameworks/Section_1B_v3_9_Amendments.md — Amendment 20, new
+  step 1C Relative Valuation Cross-Check. After the pillar build, before the
+  verdict card: Claude web supplies a live peer table (4-6 peers; trailing P/E,
+  clean/forward P/E, ROCE, growth, net debt, governance), clusters on normalised
+  earnings, places the subject with stated adjustments, rules bear/base/bull
+  exit multiples. Pillar destination >30% below the adjusted peer base = the
+  relative multiple governs (bounded by the sector cap), pillar shown as a
+  cross-check. Sector caps reviewed annually against live peer medians. Peer
+  multiples must be live and dated; memory-pulled multiples are barred. Caught
+  on MANINDS: pillar output 8.1-12.6x vs peer quality cluster ~30x; stale
+  multiples in Claude web's memory caused Correction 6. Web-side ferry:
+  docs/team_workflow_amendments_maninds_2026-08-26.md.
+- [2026-08-26] Relative Valuation Cross-Check (MANINDS) — Section 1B v3.8
+  Amendment 20 (Step 1C). Duplicate of the entry above, carrying the same rule
+  with the MANINDS evidence (Welspun ROCE 23% net cash, Ratnamani; the pillar
+  was correct on its own terms yet priced the converter far below where the
+  market prices the peer set, and no step forced that gap to be seen before the
+  verdict card). Folded into one line in the active file.
+- [2026-07-12] frameworks/Section_1B_v3.3_Amendments.md — Amendment 4.5,
+  Normalized-ROCE anchor for TEMPORARILY DEPRESSED + RECOVERING verdicts: a
+  document-gated third ROCE anchor (median pre-depression cycle ROCE, capped
+  at the evidenced level, a named unwind catalyst required), blended by
+  recovery probability and self-withdrawing if the recovery does not print.
+  Stops Pillar 1 from pricing a capital-cycle trough as permanent and
+  missing transition setups. Caught on TATVA. Now superseded by the
+  Section_1B_v3.5.1 route-selection guard.
+- Input contract expanded to four folders (prospectus, announcements,
+  shareholding, research) plus manifest listed_date, so recently-listed
+  names are worked from primary filings, not third-party reconstructions.
+  Caught on AIMTRON.
+- [2026-08-25] run-pipeline.md stage-0 scaffold + runs/_template: inputs/research/
+  absent on PERMAGNET and INDIAGLYCO runs; cause is git not tracking empty
+  directories; fix is a .gitkeep planted by the scaffold. The /fttcp handover
+  input gate now reports "inputs/research/ missing" as distinct from
+  "dossier missing".
+- [2026-08-25] corpus completeness (MANINDS) — Freshness Pair Check into
+  00-orchestrator.md + 09b + run-pipeline.md. A present filing can hide an
+  absent companion filing; the count passes and Halt 1 runs blind. Rule: the
+  newest results filing needs its same-quarter concall; a rating bulletin its
+  full rationale; a referenced SEBI order its text; the AR must not trail the
+  latest audited annual results. A missing mate sets CORPUS GAPPED-FRESHNESS
+  and caps the gate at PROCEED WITH CAVEATS, missing document named the first
+  line of gate-recommendation.md. Caught on MANINDS: Q1FY27 results in corpus,
+  Q1FY27 concall (filed to BSE three days before the run) absent; 09b listed it
+  as a gap but the gate did not block, operator found it several Phase 2 turns in.
+  MANINDS coda (2026-08-25): the kill line was already breached when the model
+  was signed — the Q1FY27 concall disclosed India standalone at Rs2,200-2,300cr
+  (below the ~Rs2,500cr kill) only after Halt 1 sign-off; the freshness check
+  exists for this. A late primary filing can move a signed decision variable,
+  not just fill a gap.
+
+Two promotions were added to the active file in this pass, recording work that
+landed outside /compost: the section-1b skill with its stage-11 preload and
+Verifier C check 15 (PR #163, PR #164), and the LESSONS discipline changes
+(PR #165).
+
+Size: LESSONS.md 164 lines / 1555 words before, 119 lines / 1062 words after.

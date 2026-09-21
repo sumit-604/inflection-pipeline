@@ -14,9 +14,8 @@ thresholds defined below, and produce a classification.
 3. Show every number you extract and the score for each metric.
 4. SOURCE ANCHORS ARE MANDATORY. Every extracted number is immediately
    followed by its source in parentheses: (screener-data), (results Q4
-   FY26 p.3), (AR p.187, Note 27). A number without an anchor is treated
-   as unverified by the downstream verifier and will count against this
-   stage's acceptance rate.
+   FY26 p.3), (AR p.187, Note 27). The downstream verifier treats a number
+   without an anchor as unverified.
 5. GROUNDED CLAIMS. Before reporting any figure, confirm it exists in the
    provided data. If a data point is not available, mark it "N/A (not in
    provided data)" and score it 0. Never fill gaps with typical-industry

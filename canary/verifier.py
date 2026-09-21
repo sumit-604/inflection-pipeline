@@ -14,7 +14,7 @@ pipeline until a human looks.
 
 What it does
 ------------
-Sends ONE fixed, low-temperature prompt to the target model N times, then
+Sends ONE fixed prompt to the target model N times, then
 fingerprints each reply:
   - the `model` field the server reports (an explicit-reroute signal), and
   - `stop_reason`, and
@@ -107,7 +107,7 @@ def call_model(api_key, model, request_spec, retries=4):
     payload = {
         "model": model,
         "max_tokens": request_spec["max_tokens"],
-        "temperature": request_spec.get("temperature", 0),
+        # No sampling params: Opus 4.7 and later reject temperature/top_p/top_k with a 400.
         "messages": [{"role": "user", "content": request_spec["prompt"]}],
     }
     system = request_spec.get("system")
@@ -181,7 +181,7 @@ def require_key():
 
 def cmd_calibrate(args):
     """Run many probes on a known-good day and record every distinct fingerprint
-    as accepted. Capturing natural low-temperature variation up front keeps the
+    as accepted. Capturing natural sampling variation up front keeps the
     daily check from crying wolf on ordinary token jitter."""
     key = require_key()
     with open(GOLDEN_PATH) as f:
@@ -243,7 +243,7 @@ def cmd_check(args):
         reason = f"{novel_count}/{n} probes produced novel output fingerprints"
     elif novel_count > 0:
         status = "WARN"
-        reason = f"{novel_count}/{n} probes novel (within tolerance; likely temperature jitter)"
+        reason = f"{novel_count}/{n} probes novel (within tolerance; likely sampling jitter)"
     else:
         status = "CLEAN"
         reason = "all probes match a known-good fingerprint"

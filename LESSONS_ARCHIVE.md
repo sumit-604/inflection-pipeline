@@ -598,3 +598,69 @@ Verifier C check 15 (PR #163, PR #164), and the LESSONS discipline changes
 (PR #165).
 
 Size: LESSONS.md 164 lines / 1555 words before, 119 lines / 1062 words after.
+
+## [2026-09-21] Shallow screen, third run — sixteen operator picks
+
+Not a /run-pipeline, /fttcp or /finalize session. Recorded here because the run
+produced two reusable findings and one collector defect, and because the
+commits reference them.
+
+Run record and per-name detail: `screens/README.md`, "Third run, 2026-09-21".
+Cards: `screens/cards/`. Corpus manifests: `screens/corpus/<TICKER>/MANIFEST.md`.
+
+**What broke or dragged**
+
+- **Egress denied for the second screen running.** The network policy answered
+  403 to CONNECT for docs.bull-ai.in, BSE, screener.in and every rating agency
+  site. The 2026-09-08 operator ruling was applied again: corpus built from Bull
+  AI's chunk reader, no PDF on disk. This is now the normal condition for screen
+  sessions, not an exception. The collector runs only on the operator's machine.
+- **Credit rating NOT FOUND on eleven of fifteen cards.** Same cause as the
+  second run. Step 10 of the shallow framework is structurally unavailable
+  without egress, except where a company files its own Regulation 30 rating
+  intimation, which Bull AI does index. INDORAMA and FILATEX both did. PRECOT's
+  rating filing is indexed but the chunk reader returns empty for it
+  (document 049528d0-0532-4412-900b-b2d26a4fc9de), which is the same
+  empty-reader defect seen on GOODLUCK, LXCHEM, IKIO and BEPL in the second run.
+- **Promoter holding NOT FOUND on nine of fifteen cards.** Bull AI indexes SAST
+  disclosures and annual report shareholding pages unevenly. Step 4 is one of
+  the four themes the operator named, and it is the weakest step in the run.
+- **Bull AI fiscal labels wrong again.** FILATEX document 2ff9d3d7 is indexed
+  as FY2027 Q2 and is the Q4/FY26 call of 4 May 2026. Same class of error as
+  QUADFUTURE in the second run. Treat the fiscal label as a hint and read the
+  document's own date line.
+- **Cards over the word band again**, 1,763 to 2,547 against 1,400 to 1,900.
+  Better than the second run's 2,600 to 3,800. The overrun is mostly tables:
+  trigger registers and financial trajectories.
+
+**Findings that generalise beyond these names**
+
+- **Cash-flow statements can fail to reconcile, and the framework should check.**
+  HSIL's audited FY26 standalone cash flow statement does not add up in either
+  year presented: section totals against the reported net increase, and opening
+  plus increase against closing. Doubling revenue with operating cash flow at
+  negative Rs 32.02 crore is the substantive finding; the arithmetic failure is
+  what makes it a PASS rather than a caveat. This sits alongside the existing
+  Kernex / Tipco / Rappid / Ind Swift cash guard: that guard catches
+  INDETERMINATE conversion, this catches a statement that does not foot.
+- **"EBITDA" is the wrong metric for a leased-store retailer under Ind AS 116,**
+  and ZOTA's management said so on its own call. Rent sits below EBITDA in
+  depreciation and finance cost. FY26 depreciation Rs 82.45 crore against
+  EBITDA Rs 25.98 crore. Any archetype with a large right-of-use asset base
+  needs profit before tax as the read, not EBITDA.
+- **A growing order book can be a quality downgrade.** FABCLEAN's book grew 55%
+  in a month, and grew by moving from validated pharma cleanrooms into
+  renewable-energy capex. Order-book growth alone does not establish a rung
+  climb; the sector mix behind it can move the business down the ladder while
+  the headline number rises.
+
+**Open action, collector**
+
+The screener.in CSV exports held at `runs/544332-2026-08-04/inputs/screening/`
+are empty files: row labels, no data. `screener-Quarters.csv`,
+`screener-Profit_Loss.csv`, `screener-Balance_Sheet.csv`,
+`screener-Cash_Flow.csv` and `screener-Data_Sheet.csv` all fail the same way.
+They contributed nothing to the FABCLEAN card and the whole card was rebuilt
+from Bull AI instead. `tools/collector/` should fail loudly when an export
+comes back with no rows, rather than writing the header and exiting clean.
+Recorded here against the shallow-screen commits of 2026-09-21.

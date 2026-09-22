@@ -6,6 +6,90 @@ Corpus: `screens/corpus/QLL/`. Every number below cites a file and a page.
 
 ---
 
+## Full-page verification pass, 2026-09-22
+
+This card was first written from search snippets. Its load-bearing pages have
+now been read in full via `get_document_chunks`. Four corrections, one of them
+verdict-relevant.
+
+**1. The consolidated balance sheet EXISTS and was found.** It is in the FY26
+management discussion, not the results filing (Press Release / Media Release,
+FY2027, Q1, page 3):
+
+| Consolidated, 31-Mar-2026 | FY26 | FY25 |
+|---|---|---|
+| Total assets | Rs 270.84 cr | Rs 157.92 cr |
+| Net worth | Rs 152.49 cr | Rs 92.78 cr |
+| Total borrowings | **Rs 92.97 cr** | Rs 49.98 cr |
+| **Net debt to EBITDA** | **about 3.0x** | — |
+
+The step-5 note that consolidated leverage was unobserved is withdrawn. Group
+borrowings are Rs 92.97 crore, not the Rs 64.99 crore standalone figure the card
+used. Debt to net worth is 0.61.
+
+**2. MY OWN TRIPWIRE HAS FIRED.** Step 12 of this card said: "A consolidated
+net-debt-to-EBITDA above 2.5x would do the same [move this to DEEP WATCH]." The
+disclosed figure is about 3.0x. The tripwire fired on the letter, and it is
+addressed in the revised verdict below rather than explained away.
+
+**3. The full-year margin did NOT expand. The deck and the press release
+disagree.** The investor presentation says consolidated EBITDA margin improved
+from 23% to 24% (Investor Presentation, FY2027, Q2, page 10). The management
+discussion says 23.1% to **23.5%**, and calls it "flat on the full year despite
+the consolidation of two newly acquired entities still in their integration
+window" (Press Release, FY2027, Q1, page 2). The press release is the more
+precise document and its framing is the honest one. **Margin was flat on the
+year. The expansion is an H2 event.**
+
+**4. The guidance is far more credible than the card allowed, and this cuts the
+other way.** The card treated the 15-17% PAT margin target as "a 300 to 500 basis
+point step in one year" from 12%. That was wrong. H2 FY26 already delivered a
+consolidated EBITDA margin of **25.7%** and a PAT margin of **14.1%**. The
+company states the FY27 ranges "hold exit run-rate across the full year and edge
+higher" (Press Release, FY2027, Q1, page 3). **The guidance is the delivered H2
+exit rate carried forward, not a step-change.** That is a materially lower bar.
+
+Precise FY26 figures, replacing the rounded deck numbers: consolidated EBITDA Rs
+29.28 crore, PAT Rs 14.66 crore; H2 EBITDA Rs 18.05 crore and PAT Rs 9.89 crore
+against H1's Rs 11.23 crore and Rs 4.77 crore. Gross margin expanded to 87% from
+85%. FY27 EBITDA margin guidance is **25-27%** in the press release against
+25-26% in the deck.
+
+**Also newly established.** Standalone H2 EBITDA margin fell to 25.9% from 28.9%,
+which management attributes to pre-operative costs for Pune Unit-II, the Noida
+lab gestation, the VOC facility and the Barwala land, all expensed rather than
+deferred. Scale: 10 owned laboratories and 6 PPP laboratories, over 1,200 staff
+including 450 scientists, installed capacity above 5 million tests a year.
+Segment mix: transport, defence and mechanical 40-45% of revenue, food and feed
+25-30%, pharmaceuticals 15-20%. Medium-term commitments to FY31: revenue past Rs
+500 crore, operating margin above 30%, 30% of revenue from overseas, and a
+cash-surplus debt-free balance sheet by FY32.
+
+**REVISED VERDICT: PROCEED WITH CAVEATS stands, and leverage is promoted to the
+first load-bearing fact.** The two readings, per Amendment 25, with the one
+observation that separates them:
+
+- **Reading A, constructive.** Net debt to EBITDA of 3.0x is the arithmetic of a
+  front-loaded acquisition cycle that is now complete. EBITDA grew 80%, the
+  denominator is still growing, the company discloses the ratio unprompted and
+  commits to compression, and the H2 exit run-rate already validates the FY27
+  margin guidance.
+- **Reading B, cautious.** 3.0x leverage sits on a company that spent Rs 51.3
+  crore of capex in FY26 and plans Rs 63 crore more in FY27 against Rs 14.66
+  crore of profit, with receivables up 67% against 47% standalone revenue growth
+  and Rs 41.92 crore of capital work in progress not yet earning.
+- **The observation that separates them: H1 FY27 consolidated net debt to EBITDA
+  and operating cash conversion**, reporting around November 2026. Below 2.5x
+  with PAT margin at or above 14% confirms Reading A. Above 3.0x with margin
+  below 13% confirms Reading B and the disposition drops to DEEP WATCH.
+
+The conservatism goes in position size, not in the input. This remains the run's
+only PROCEED, and it is now a better-evidenced one on growth and a worse one on
+the balance sheet.
+
+
+---
+
 ## Business Understanding Narrative
 
 **What does it do, and how does it make money?** Qualitek sells testing and

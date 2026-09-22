@@ -6,6 +6,105 @@ Corpus: `screens/corpus/OPTIEMUS/`. Every number below cites a file and a page.
 
 ---
 
+## Full-page verification pass, 2026-09-22
+
+Load-bearing pages now read in full. **This is the largest set of corrections in
+the run, and two of them change how the card should be read.**
+
+**1. FY26 WAS A YEAR OF DECLINE. The card missed it entirely.** The card used
+FY26 as its base and never showed FY25. The Q4 FY26 deck carries both (Investor
+Presentation, FY2026, Q4, page 7), Rs lakh:
+
+| | FY25 | FY26 | Change |
+|---|---|---|---|
+| Operating revenue | 1,89,000 | 1,76,862 | **-6.4%** |
+| EBITDA | 12,909 | 13,809 | +7.0% |
+| EBITDA margin | 6.83% | 7.81% | +0.98pt |
+| PBT | 7,668 | 9,067 | +18.2% |
+| PAT | 6,333 | 6,601 | **+4.2%** |
+| Diluted EPS (Rs) | 7.33 | 7.39 | +0.8% |
+
+**Revenue fell 6.4% in FY26 and profit grew 4.2%.** The Q1 FY27 doubling comes
+off a year that shrank, not off a growing base. The card's framing of a company
+in mid-inflection is still defensible on Q1 FY27, but the FY26 context materially
+weakens the three-year CAGR guidance, which is now a recovery claim as much as a
+growth claim.
+
+**2. TWO COMPANY DOCUMENTS DISAGREE ON FY26 EBITDA.** The Q4 FY26 deck reports
+FY26 EBITDA of Rs 138.09 crore at a 7.81% margin (page 7). The Q1 FY27 deck
+reports the same year's EBITDA as Rs 123.65 crore at 7.0% (Investor
+Presentation, FY2027, Q1, page 16). **A Rs 14.44 crore gap on the same audited
+year, unreconciled and unexplained in either document.** The gap is almost
+exactly the share of associate profit in item 4 below, which suggests one deck
+includes it in EBITDA and the other does not. The card used the 7.0% figure.
+This must be settled before any valuation.
+
+**3. CUSTOMER CONCENTRATION IS DISCLOSED, AND IT IS EXTREME.** The card recorded
+"customer concentration undisclosed; no customer is named with a revenue share".
+That is withdrawn. The Chairman states the AI+ EMS partnership "contributed
+**~Rs 500+ cr.** in Q1" (Investor Presentation, FY2027, Q1, page 4), against
+total Q1 FY27 revenue of Rs 882.99 crore. **One customer is about 57% of the
+quarter.** The doubling is one customer.
+
+**4. A SIXTH OF FY26 PRE-TAX PROFIT CAME FROM AN ASSOCIATE, NOT OPERATIONS.**
+The full consolidated statement (Outcome of Board Meeting, FY2027, Q1, page 5)
+splits it: FY26 profit before exceptional items and tax was Rs 76.22 crore, and
+"share of profit of an associate and a joint venture" added **Rs 14.44 crore** to
+reach the Rs 90.67 crore the card reported. **In Q4 FY26 alone the associate
+contributed Rs 13.86 crore of Rs 27.57 crore of pre-tax profit, just over half
+the quarter.** In Q1 FY27 the associate was a Rs 0.21 crore loss. Quarterly
+profit comparisons in the card's step 5 are therefore not like for like.
+
+**5. The balance sheet is partly visible after all, through segment
+disclosure** (Outcome of Board Meeting, FY2027, Q1, page 6), Rs lakh:
+
+| | Jun-2025 | Mar-2026 | Jun-2026 |
+|---|---|---|---|
+| Total segment assets | 1,37,324 | 1,83,817 | **2,63,222** |
+| Total segment liabilities | 72,342 | 1,01,615 | **1,78,911** |
+
+**Segment liabilities grew Rs 773 crore in a single quarter** and assets grew Rs
+794 crore. Manufacturing liabilities alone went from Rs 1,101.56 crore to Rs
+1,961.46 crore between March and June 2026. The card said working capital was
+unobserved. It is now partly observed, and the consumption is very large. This
+is what doubling revenue in an EMS business costs.
+
+Segment results for Q1 FY27: manufacturing revenue Rs 745.89 crore for a segment
+result of Rs 20.79 crore, trading Rs 144.01 crore for Rs 3.00 crore. The
+manufacturing pivot in step 2 is confirmed at segment level.
+
+**6. The Cover Glass venture is a 70:30 joint venture with Corning
+International** (Investor Presentation, FY2027, Q1, page 5), with OEM audits
+underway and customer onboarding expected Q4 FY27 or Q1 FY28. The card recorded
+it as an unnamed incubation. A named Corning joint venture is a materially
+better option than the card credited, and it is the strongest single quality
+signal on this name.
+
+**7. The incentive scheme is named and sized.** MPMS / PLI 2.0 is a Rs 62,500
+crore approved scheme offering up to 9.5% incentives for Indian brands. This
+sharpens the step-3 point that the moat is licence-derived: the policy is large,
+explicit and finite.
+
+**8. The FY27 guidance excludes the optionality.** "These projections exclude
+contributions from the screen protector, cover glass segment and the Q3 FY27 B2C
+launch" (Investor Presentation, FY2027, Q1, page 4). The doubling is a baseline,
+which is the one correction that favours the company.
+
+**VERDICT UNCHANGED: WATCH.** The reasons shift but the conclusion holds and
+hardens. Against the name: FY26 revenue declined, 57% of the growth quarter is
+one customer, a sixth of FY26 pre-tax profit was associate income, segment
+liabilities grew Rs 773 crore in a quarter, and two company decks disagree on
+EBITDA. For the name: the Corning joint venture is real, the guidance excludes
+the optionality, and the manufacturing pivot is confirmed at segment level. At
+80.6 times trailing earnings none of that resolves the price.
+
+**Step 12 gains a load-bearing fact, promoted to first:** reconcile the Rs 14.44
+crore FY26 EBITDA discrepancy between the two decks, and establish how much of
+reported profit is associate income rather than operations.
+
+
+---
+
 ## Business Understanding Narrative
 
 **What does it do, and how does it make money?** Optiemus is a contract

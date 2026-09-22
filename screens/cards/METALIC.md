@@ -18,6 +18,78 @@ confirmation before any deep run.
 
 ---
 
+## Full-page verification pass, 2026-09-22
+
+Load-bearing pages now read in full. One governance finding, one correction that
+favours the company, and one reader defect.
+
+**1. THE PROMOTER SHAREHOLDING TABLE OMITS THE CHAIRMAN AND MANAGING
+DIRECTOR.** On the same page (RHP, FY2027, Q2, page 108), the promoter table
+lists five individuals totalling 99,45,000 shares, then states a promoter group
+total of **1,46,19,983 shares, 83.56%**. The two do not reconcile. The missing
+46,74,983 shares appear in the directors table immediately below, against **Mr
+Gajipara Keyur Dhirajlal, Chairman and Managing Director, 26.72% of pre-issue
+capital**.
+
+He is the single largest holder in the company and his name is absent from the
+promoter shareholding table while his shares are inside its total. The card's
+step 4 listed the five names and missed him. **Whether this is a drafting defect
+in the offer document or an artefact of the reader, it must be settled before
+any deep run**, because the person who controls the largest block is the one the
+table does not name.
+
+**2. Customer concentration is improving much faster than the card showed.** The
+card carried FY26 only. The full risk factor gives three years, auditor-certified
+on 13 July 2026 (RHP, FY2027, Q2, page 37):
+
+| | FY24 | FY25 | FY26 |
+|---|---|---|---|
+| Top customer | 30.53% | 24.89% | 22.94% |
+| Top 5 customers | 63.49% | 48.92% | 45.35% |
+| Top 10 customers | 79.76% | 67.82% | 64.61% |
+
+Top-five concentration fell 18 percentage points in two years while revenue grew
+88%. **That is de-risking and growing at the same time**, and it is a better
+fact than the card's static 45.35% conveyed. The company also states it has "not
+experienced material loss of major customers or significant payment defaults"
+across FY24 to FY26.
+
+**3. Every promoter share came from a bonus issue four months before the
+offer.** On 17 March 2026 the promoters received 1,37,69,584 bonus shares: Keyur
+Dhirajlal 43,99,984, Ronakkumar 24,80,016, Dhaval Vrajlal 20,80,000, and
+16,00,000 each to Satish Rameshbhai and Vipul Kapadiya (RHP, FY2027, Q2, page
+108). Ordinary pre-IPO capital restructuring, recorded because the promoters'
+reported holdings are almost entirely four months old on paper.
+
+**4. Lock-in is stronger than the statutory minimum, which is a positive
+signal.** 52,76,568 shares, 22% of post-issue capital, are locked for three
+years as minimum promoter contribution. Beyond that: "**excess pre-issued equity
+shares held by our promoters shall be locked-in for a period of 3 years
+voluntarily**" (RHP, FY2027, Q2, page 110), against a statutory requirement of
+one and two years. The entire pre-issue non-promoter holding of 28,76,417 shares
+is locked for one year. Promoters who voluntarily extend their own lock-in are
+not preparing to sell.
+
+**Reader defects recorded.** Three page ranges return **empty chunks** from the
+Bull AI reader across two attempts each: RHP document 23039ecc pages 139 to 141,
+which carry the peer comparison table, and Prospectus document 8ccee046 pages
+287 to 288 and 319 to 322, which carry the revenue annexure and the key
+performance indicators. **The peer table in step 2 and the FY26 revenue split in
+step 2 therefore remain snippet-sourced and unverified at full-page level.**
+
+Separately: the reader honours only **one page range per document per call**. A
+call requesting several ranges of the same document silently returns the first
+and drops the rest, with no error. Three requests were lost that way before it
+was noticed. Recorded for the collector.
+
+**VERDICT UNCHANGED: WATCH, upgrading to PROCEED on the first post-listing
+result.** The concentration trend and the voluntary lock-in both improve the
+case. The unnamed Chairman in the promoter table is a new item for the deep run
+and is added to step 12 as a load-bearing fact.
+
+
+---
+
 ## Business Understanding Narrative
 
 **What does it do, and how does it make money?** Metalic Technoforge forges and

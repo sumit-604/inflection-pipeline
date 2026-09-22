@@ -27,6 +27,8 @@ and openable. They are not full-page reads.
 | PROSPECTUS | 8ccee046-b098-484b-89ca-8d7619ddb950 | 60, 61, 62, 268, 287, 321 | 2026-07-28 |
 | DRHP | 8a8aa7b4-d307-40df-8cbc-4021577e0c31 | 258, 288 | 2026-03-31 |
 
+**Full-page verification pass, 2026-09-22.** Read in full via `get_document_chunks`: 23039ecc p37, p108-110. **Reader defects: 23039ecc p139-141 (peer table) and 8ccee046 p287-288 and p319-322 return empty chunks on two attempts each.** Those remain snippet-sourced.
+
 ## Known gaps
 
 - **No post-listing financial result of any kind.** The index holds only the

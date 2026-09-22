@@ -33,6 +33,8 @@ and openable. They are not full-page reads.
 | SAST Reg. 31(4) promoter encumbrance declaration | 37c59b6f-30da-40b1-877a-742e6f0e85f2 | 1 | 2026-04-06 |
 | General, HDFC credit facility corporate guarantee | b0452740-452e-4dcf-ad60-80ab96f896bc | 1, 2 | 2025-12-11 |
 
+**Full-page verification pass, 2026-09-22.** Read in full via `get_document_chunks`: 963edab6 p10; 1cba2683 p23-25; dd6eb132 p2-3; 938a5098 p13-16. The consolidated balance sheet and net-debt-to-EBITDA were found on dd6eb132 p3 and are new to the card.
+
 ## Known gaps
 
 - **Consolidated balance sheet and cash flow NOT FOUND.** Only the standalone

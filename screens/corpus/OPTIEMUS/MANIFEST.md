@@ -34,6 +34,8 @@ and openable. They are not full-page reads.
 | Investor Presentation FY2026 Q2 (Nothing partnership) | ce763fec-093d-4cb4-9fee-3eaec0c29024 | 7 | 2025-11-14 |
 | Certificate under Reg. 74(5), RTA confirmation | 422af187-2908-4368-871d-fb3f1073ffd6 | 2 | 2026-07-04 |
 
+**Full-page verification pass, 2026-09-22.** Read in full via `get_document_chunks`: fed50256 p4-5; c7744525 p5-6; 4c0cb9ed p7-8. FY25 comparatives, the associate-profit split, segment assets and liabilities, and the 57% single-customer concentration are all new to the card.
+
 ## Known gaps
 
 - **FRESHNESS GAP ON THE LOAD-BEARING NEWS.** The operator reports the stock

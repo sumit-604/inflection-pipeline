@@ -44,6 +44,29 @@ Growth is FY27E against the last reported full year.
 DICIND reports to a **31 December** year end. Its "FY26A" column is calendar
 2025 and must not be compared to March-year peers without restating.
 
+## Full-page verification pass, 2026-09-22
+
+The four names carrying live verdicts, QLL, AVIENCE, OPTIEMUS and METALIC, were
+re-read at full-page level after this table was built. **No forward PE in the
+table changes.** Three things behind them do.
+
+- **QLL.** The FY27 guidance is stronger evidence than the table implied. It is
+  not a step-change from a 12% full-year PAT margin; it is the delivered H2 FY26
+  exit run-rate of 14.1% carried forward. Against that, consolidated net debt to
+  EBITDA is **about 3.0x**, newly found, which fires a tripwire the card itself
+  set at 2.5x. FY26 PAT is precisely Rs 14.66 crore, so growth reads +75% to
+  +99%. EBITDA margin guidance is 25-27%, not 25-26%.
+- **OPTIEMUS.** The growth is measured off a declining base. **FY26 revenue fell
+  6.4%**, from Rs 1,890.00 crore to Rs 1,768.62 crore, and FY26 PAT grew only
+  4.2%. Separately, Rs 14.44 crore of FY26's Rs 90.67 crore pre-tax profit was
+  share of associate profit, not operations, and two company decks disagree on
+  FY26 EBITDA by that same Rs 14.44 crore. The forward multiple of 50x to 60x is
+  unchanged and now rests on a weaker base than the table suggested.
+- **AVIENCE.** The 60% growth guidance is confirmed as a direct, attributed
+  quote from the Managing Director, which firms the tier A rating. But the
+  288-product target is 88 approvals plus **200 applications yet to be filed**,
+  not 288 approvals.
+
 ## Ranked on growth against multiple
 
 **The two that screen best, and why each needs its card read.**

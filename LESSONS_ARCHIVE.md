@@ -868,3 +868,64 @@ resolved company block for the substitution check, and costs nothing. Querying
 
 **Carry into the collector:** store the ISIN for every screen-list name, and
 resolve identity through the availability endpoint before any paid call.
+
+### Third addendum: full-page verification pass on the four live-verdict names
+
+Operator instructed an upgrade from snippet cites to full page reads on QLL,
+AVIENCE, OPTIEMUS and METALIC. Six `get_document_chunks` calls. **Every verdict
+held. Five substantive findings did not survive.**
+
+- **The cheapest insurance in the whole framework is reading the prior year.**
+  OPTIEMUS FY26 revenue **fell 6.4%** and FY26 PAT grew 4.2%. The snippet pass
+  used FY26 as its base, never showed FY25, and read the company as
+  mid-inflection. One page of a deck carried both years. **A card that shows one
+  year of history is not a trajectory, it is a data point.** Step 5 should
+  require the prior full year on the same page or an explicit NOT FOUND.
+- **Associate and joint-venture income can carry a sixth of reported profit and
+  never appear in a snippet.** Rs 14.44 crore of OPTIEMUS's Rs 90.67 crore FY26
+  pre-tax profit was share of associate profit; in Q4 FY26 it was just over half
+  the quarter. Quarter-on-quarter profit comparisons built on the consolidated
+  headline were not like for like. **Read to the PBT build, not to the PBT
+  line.**
+- **Two presentations by the same company can disagree on the same audited
+  year.** OPTIEMUS FY26 EBITDA is Rs 138.09 crore at 7.81% in the Q4 FY26 deck
+  and Rs 123.65 crore at 7.0% in the Q1 FY27 deck. The gap equals the associate
+  profit exactly, which suggests differing EBITDA definitions, but neither deck
+  reconciles it. **Where two company documents cover the same period, check them
+  against each other before using either.**
+- **A missing name in a shareholding table is a governance finding.** METALIC's
+  promoter table lists five holders summing to 99,45,000 shares under a stated
+  total of 1,46,19,983. The 46,74,983-share difference is the Chairman and
+  Managing Director, 26.72%, named only in the directors table below. The
+  arithmetic check that caught it takes ten seconds. **Sum every shareholding
+  table against its own total.**
+- **A stated product count can be approvals or applications, and the difference
+  is the moat.** AVIENCE's "288+ approved products" target is 88 CDSCO approvals
+  plus 200 applications yet to be filed. The snippet pass built an R1-to-R3 rung
+  claim on it.
+- **A tripwire I set fired on my own card.** QLL step 12 said net debt to EBITDA
+  above 2.5x moves it to DEEP WATCH. The consolidated figure, found only on full
+  read, is about 3.0x. The verdict was held at PROCEED WITH CAVEATS with both
+  readings named per Amendment 25 and the separating observation stated, rather
+  than either ignoring the tripwire or applying it mechanically. **Recording it
+  because the temptation to quietly rewrite a threshold once it fires is the
+  exact failure the tripwire exists to prevent.**
+
+**Method conclusion.** Snippets were adequate for the eight PASS verdicts, where
+the disqualifying facts were large and visible. They were **not** adequate for
+the four names carrying live verdicts: four of those four had a material
+correction. The rule that follows is proportionate rather than absolute.
+
+**Open action 5.** `screens/SHALLOW_ANALYSIS_FRAMEWORK.md` should require
+full-page reads, not snippets, for any name whose verdict is PROCEED or WATCH,
+covering at minimum the latest two full years on one page, the PBT build, the
+balance sheet or leverage ratio, and any shareholding table. PASS verdicts may
+remain snippet-sourced where the disqualifying fact is explicit. Cost on this
+run: six calls for four names.
+
+**Two further tool defects.** Bull AI's chunk reader returns empty chunks for
+several valid page ranges (AVIENCE 78f9e436 p366-368; METALIC 23039ecc p139-141
+and 8ccee046 p287-288, p319-322) on repeated attempts. And
+`get_document_chunks` honours **only one page range per document per call**,
+silently dropping additional ranges for the same document with no error. Three
+requests were lost before it was noticed. Both belong in the collector notes.

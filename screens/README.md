@@ -218,6 +218,49 @@ SYMBIOTEC listed three weeks before the screen.
   labels and no data. They contributed nothing to the FABCLEAN card. Worth
   fixing in `tools/collector/`.
 
+### Full-page verification pass on the four live-verdict names, 2026-09-22
+
+At the operator's instruction, QLL, AVIENCE, OPTIEMUS and METALIC were re-read
+at full-page level via `get_document_chunks`, six calls in total. Every verdict
+held. Five findings did not survive the first pass and are corrected on the
+cards.
+
+- **QLL.** The consolidated balance sheet exists, in the management discussion
+  rather than the results filing. Group borrowings are Rs 92.97 crore and **net
+  debt to EBITDA is about 3.0x**, which fires a tripwire the card set at 2.5x.
+  Against that, the FY27 margin guidance turns out to be the delivered H2 FY26
+  exit run-rate carried forward, not a step-change, so the growth case is
+  stronger and the balance-sheet case weaker than the card first said. Full-year
+  EBITDA margin was **flat** at 23.5% against 23.1%, not up from 23% to 24% as
+  the deck claims; the deck and the press release disagree.
+- **OPTIEMUS. FY26 revenue fell 6.4%**, from Rs 1,890.00 crore to Rs 1,768.62
+  crore, and FY26 PAT grew 4.2%. The first pass never showed FY25 and implied a
+  growth year. Further: **one customer, the AI+ partnership, was about 57% of Q1
+  FY27 revenue**; Rs 14.44 crore of FY26 pre-tax profit was share of associate
+  profit rather than operations, and just over half of Q4 FY26 pre-tax profit
+  was; segment liabilities grew Rs 773 crore in one quarter; and the two company
+  decks disagree on FY26 EBITDA by Rs 14.44 crore, unreconciled. The Cover Glass
+  venture is a **70:30 joint venture with Corning International**, which the
+  first pass recorded only as an unnamed incubation.
+- **METALIC.** The promoter shareholding table **omits the Chairman and Managing
+  Director**, who holds 26.72% and is the largest single holder; his shares sit
+  inside the stated promoter total but his name is not in the table. Customer
+  concentration is improving far faster than the first pass showed: top five fell
+  from 63.49% to 45.35% in two years. Promoters voluntarily extended their own
+  lock-in to three years, beyond the statutory one and two.
+- **AVIENCE.** The 288-product target is 88 CDSCO approvals plus **200
+  applications yet to be filed**, not 288 approvals. The first pass built the
+  rung claim on an approval count that does not exist. The regulator, previously
+  NOT FOUND, is CDSCO.
+
+**Two more reader defects and one tool behaviour recorded.** Bull AI's chunk
+reader returns **empty chunks** for AVIENCE prospectus 78f9e436 pages 366-368,
+METALIC RHP 23039ecc pages 139-141 and METALIC prospectus 8ccee046 pages 287-288
+and 319-322, on two attempts each. Separately, `get_document_chunks` honours
+**only one page range per document per call**: a call requesting several ranges
+of the same document silently returns the first and drops the rest with no
+error. Three requests were lost that way before it was noticed.
+
 ### Known limits of this run
 
 - Cards ran 1,763 to 2,547 words against the framework's 1,400 to 1,900,

@@ -6,6 +6,51 @@ Corpus: `screens/corpus/AVIENCE/`. Every number below cites a file and a page.
 
 ---
 
+## Full-page verification pass, 2026-09-22
+
+Load-bearing pages now read in full. Three corrections, one of them material to
+the thesis.
+
+**1. The 288-product target is NOT 288 approvals. It is 88 approvals plus 200
+applications to be filed.** The Managing Director's own words: "We plan to file
+regulatory approval applications for over **200 additional products**, while
+accelerating the commercialization of our **88 CDSCO-approved products**"
+(Investor Presentation, FY2027, Q2, page 23). The card's step 3 and step 6 read
+288 as an approval count and built the R1-to-R3 rung claim on it. **Filing an
+application is not holding an approval.** The regulatory moat is 88 products
+today, and the other 200 are an intention with no stated timeline or approval
+rate. The two-rung ladder flag in step 6 is strengthened, not weakened.
+
+**2. The regulator is now named: CDSCO**, the Central Drugs Standard Control
+Organisation. The card recorded "this corpus does not say which regulator". That
+gap is closed. The approved segments are biochemistry, rapid diagnostics,
+haematology, microbiology and other diagnostic categories.
+
+**3. The 60% guidance is a direct, attributed, dated commitment**, which firms
+the step-13 tier A rating. Mr Dharam Deo Choudhary, Promoter and Managing
+Director: "we are confident of delivering at least **60% revenue growth in
+FY27**". The same statement confirms the order reading the card inferred: the Rs
+47.46 crore PSU order "is approximately equivalent to our FY26 revenue and is
+scheduled to be executed within 3-4 months".
+
+**Also newly established.** IPO proceeds are earmarked for a new manufacturing
+facility at the **Medical Device Park, Yamuna Expressway**. The FY26 financial
+highlights are confirmed exactly as the card carried them: revenue Rs 52.51
+crore, EBITDA Rs 14.94 crore, PAT Rs 8.75 crore.
+
+**Reader defect recorded.** Prospectus document 78f9e436, pages 366 to 368, which
+carry the restated profit and loss, return **empty chunks** from the Bull AI
+reader across two attempts. The FY23 to FY25 profit history on this card remains
+snippet-sourced and could not be verified at full-page level.
+
+**VERDICT UNCHANGED: WATCH.** The correction cuts against the name, not for it.
+The single best reason to like it, a 288-product regulatory moat, is really an
+88-product moat plus an intention. The forward view is unchanged because the
+revenue guidance leg is confirmed and the margin leg was always my assumption.
+
+
+---
+
 ## Business Understanding Narrative
 
 **What does it do, and how does it make money?** Avience makes and sells medical

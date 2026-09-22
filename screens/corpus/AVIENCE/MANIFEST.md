@@ -28,6 +28,8 @@ and openable. They are not full-page reads.
 | RHP | 03506277-2c74-462a-88b0-d3c421e38ab9 | 378, 379 | 2026-06-25 |
 | DRHP | 3e821dd5-e36a-4cb8-b0c5-da394a77a83b | 88, 90, 91, 353 | 2026-06-12 |
 
+**Full-page verification pass, 2026-09-22.** Read in full via `get_document_chunks`: b429aa83 p22-24. **Reader defect: 78f9e436 p366-368 (restated P&L) returns empty chunks on two attempts.** The FY23-FY25 profit history remains snippet-sourced.
+
 ## Known gaps
 
 - **No post-listing financial result of any kind.** The company listed

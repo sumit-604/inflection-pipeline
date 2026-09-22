@@ -265,3 +265,181 @@ than after:
 
 Two names returned zero guidance records, which is itself a finding recorded on
 both cards: **MARINE** and **AVTNPL**.
+
+## Fourth run, 2026-09-22
+
+Fourteen operator picks, screened in one session: Steamhouse India, Technocraft
+Ventures, Cresto Techno, PCS Technology, Optiemus Infracom, STL Networks
+(Invenia), IntraSoft Technologies, Indo-MIM, Avience Biomedicals, Qualitek Labs,
+Tirupati Forge, Metalic Technoforge, Taneja Aerospace & Aviation, DIC India.
+
+**Verdicts.** PROCEED to `/step1` on **QLL** alone, with caveats. WATCH on
+**AVIENCE**, **OPTIEMUS** and **METALIC**. PASS on **ISFT**, **TIRUPATIFL**,
+**TECHNOCRAF**, **INDOMIM**, **TANAA**, **DICIND** and **STLNETWORK**.
+**STEAMHOUSE** is a WATCH for documents, not a business verdict: its Bull AI
+corpus is empty. **CRESTO** and **PCS** got no card at all.
+
+That is one PROCEED from fourteen names, the thinnest ratio of any run so far.
+The reason is visible in the forward-view table: seven of the twelve names
+screened carry a trailing or forward multiple above 30 times, and three above 85
+times.
+
+**The corpus rule was bent again, under the same operator ruling as 2026-09-08.**
+This session had no egress: the network policy answered 403 to the CONNECT for
+docs.bull-ai.in, www.bseindia.com, www.screener.in and every rating agency site.
+No PDF could be downloaded and the collector could not run. The corpus is Bull
+AI's chunk reader, which returns page-numbered text of the same filed PDFs. Every
+card cites a file and a page, and the page numbers are the source PDF's own. What
+is absent is the PDF on disk.
+
+**Credit ratings were unreachable on all twelve cards.** Step 10 is NOT FOUND
+everywhere, with the agency sites named as where it was looked for. Three cards
+record a PARTIAL substitute and they are worth naming because each is a different
+kind of independent evidence: **OPTIEMUS** has an ICRA monitoring-agency report
+confirming Rs 216.86 crore of Rs 296.37 crore of issue proceeds deployed to
+stated objects with no comments; **TECHNOCRAF** has no-objection certificates
+from four banks (PNB, Kotak, ICICI, HDFC) dated June 2025; **STLNETWORK** has a
+Debenture Trust Deed with quarterly security-cover certificates audited by Price
+Waterhouse. None is a credit opinion.
+
+**Three names could not be screened, for two different reasons.**
+- **CRESTO** and **PCS** are not in the Bull AI index. Four search forms were
+  tried on each, by company name, by short name and by BSE code, and none
+  resolved. Both are **BSE-only listings with no NSE symbol**, which is the
+  pattern: Bull AI's `search_companies` resolves NSE symbols and company names
+  well and bare BSE codes poorly. With no egress there was no second route and
+  the identity was never resolved to an ISIN. See
+  `cards/_NOT_SCREENED-CRESTO-PCS.md`.
+- **STEAMHOUSE** resolved cleanly but a complete, untruncated availability check
+  returned an empty document list. It listed 17 September 2026, five days before
+  the screen, so the index has most likely not ingested it yet. Its card carries
+  the ledger and no business verdict, the same shape as YAASHVI in the third run.
+
+Bull AI budget: 48 calls used, 28 searches, 12 guidance calls, 7 identity and
+availability probes that cost nothing, and 1 chunk read covering three documents.
+`search_companies` and `list_document_availability` are free and were used
+freely. 514 of 1,000 remained for the cycle at the close.
+
+### Findings worth carrying out of the cards
+
+- **TIRUPATIFL is the sharpest negative in four runs.** FY26 revenue rose 41% to
+  Rs 162.48 crore and net profit **fell** 19.9% to Rs 6.30 crore. Q1 FY27 revenue
+  rose 18% and net profit fell 13.6%. Two consecutive periods of rising revenue
+  and falling profit. Then two more facts: **40% of FY26 pre-tax profit was
+  foreign-exchange gain**, Rs 242.48 lakh of Rs 855.45 lakh; and the promoters
+  approved **37,00,000 further warrants at Rs 58** in July 2026 on top of a
+  1,17,60,000-warrant issue still converting. At Rs 924 crore of market
+  capitalisation that is 147 times trailing earnings on shrinking profit.
+- **QLL is the run's one PROCEED and its balance sheet is the reason it is
+  capped.** Consolidated revenue grew 77% to Rs 124.52 crore and PAT 90% to Rs
+  14.6 crore, with margin expanding, which is rare for acquired growth. But
+  standalone borrowings went from Rs 28.22 crore to Rs 64.99 crore, operating
+  cash was Rs 7.15 crore against Rs 38.72 crore of investing outflow, receivables
+  grew 67% against 47% revenue growth, and **the consolidated cash flow statement
+  is not in the corpus at all**. Cash conversion is INDETERMINATE, so the verdict
+  caps at PROCEED WITH CAVEATS with the missing evidence named.
+- **OPTIEMUS is the clearest case of fast growth that does not screen cheap.**
+  Q1 FY27 revenue doubled to Rs 882.99 crore and the cost structure proves it was
+  manufactured, not traded: cost of materials consumed went from Rs 149.84 crore
+  to Rs 676.01 crore in a year. But EBITDA margin fell to 4.68% from 6.80%, and
+  at 2.4% PAT margin a doubling of revenue still leaves a 50x to 60x forward
+  multiple. **A thin-margin assembler is levered to margin, not to revenue.**
+- **OPTIEMUS also carries the run's one freshness gap on load-bearing news.** The
+  operator flagged the stock at 20% upper circuit on screen day because CMF by
+  Nothing and Optiemus expanded their partnership to end-to-end smartphone R&D.
+  That announcement is **NOT FOUND** in the corpus, whose newest document is
+  4 August 2026. The card reads the original September 2025 joint venture instead
+  and says so.
+- **TANAA is not the business its sector label says.** The screen list calls it
+  aerospace and MRO manufacturing. Its own MD&A says it "earns its revenue by
+  providing technical support and leasing services" and has "leased hangar space
+  and buildings to a Maintenance, Repair and Overhaul (MRO) organization". The
+  settling number: **cost of materials consumed is 1.5% of revenue.** It is a
+  landlord with an airstrip, which puts it at the R0/R1 boundary where the ladder
+  directs NAV treatment rather than a destination PE. The MRO tenant is never
+  named in any document, and the group contains related aviation entities.
+- **STLNETWORK has Rs 307.15 crore of receivables that did not move in a
+  quarter.** Contract assets of Rs 155.74 crore and trade receivables of Rs
+  151.41 crore are identical **to the rupee** at 30 June 2026 and 31 March 2026.
+  The explanatory note was truncated in the reader. Against annual revenue of Rs
+  958.96 crore and a pre-tax loss of Rs 106.15 crore, that is the largest single
+  unexplained item in the run.
+- **INDOMIM is the best business screened and the price disqualifies it.** 28%
+  EBITDA margin, 23.5% ROCE, NADCAP plus AS 9100 plus ISO 13485, top-ten customer
+  concentration falling from 42.00% to 38.41% over two years while revenue grew,
+  and domestic top-ten revenue rising from Rs 100.56 crore to Rs 591.68 crore in
+  one year. Two facts sit against it: the UK acquisition **Conway Marsh & Garrett
+  was impaired by Rs 71.13 crore of goodwill** in the year before listing, and
+  the IPO was an offer for sale 6.6 times the size of the fresh issue, followed
+  by Rs 329 crore of dividend in the listing quarter.
+- **METALIC's own peer table is the most useful single page in the run.** It puts
+  Metalic against Amic Forging, Tirupati Forge and Paramount Speciality on
+  identical FY24 definitions: Metalic ROCE 37.01% against 16.84% for Tirupati
+  Forge, on debt-equity of 1.40 and a current ratio of exactly 1.00. Two of this
+  run's names appear in one issuer's comparison, and the comparison favours the
+  one the operator has not heard of.
+- **DICIND's whole management changed in CY2026.** The MD and CEO resigned
+  2 June 2026 and left 29 August; a parent nominee became MD on 1 September; a
+  new whole-time director and a new deputy CEO were appointed in July. Read
+  correctly this is **the Japanese parent taking direct executive control**, not a
+  governance failure. The company earns a 4.05% return on equity on a debt-free
+  balance sheet, which is an asset and parent-action case, not a GARP transition.
+
+### Reader and collector defects recorded
+
+- **TANAA**, page 18 of document 49529697, FY26 consolidated cash flow: the table
+  does not internally reconcile through the reader. Profit before tax of Rs
+  2,250.91 lakh with the listed adjustments does not produce the stated operating
+  profit before working capital changes of Rs 330.42 lakh, and cash generated from
+  operations reads negative Rs 8.80 lakh. No line from that page is used as
+  evidence beyond flagging it.
+- **STLNETWORK**, note 3 on contract assets, truncated mid-sentence in the reader
+  on both the Q1 FY27 filings. The frozen Rs 307.15 crore is visible; the reason
+  is not.
+- **DICIND** reports to a **31 December** year end and Bull AI's Indian fiscal
+  labels are wrong for it throughout. Same defect class as ELANTAS in the second
+  run. Every period on that card is restated as a calendar year.
+- **DICIND**, page 6 of document 8d0ce5d9: the reader returns the literal string
+  "UNREADABLE" inside the notes, and page 3 of document 94f1b7ae returns the
+  results table as headings with no figures.
+- **Bull AI identity resolution fails on BSE-only micro-caps.** CRESTO (535043)
+  and PCS (517119) both failed on name, short name and bare code. **Recommendation
+  for the collector: for any BSE-only name, resolve the ISIN out of session
+  before the run and query Bull AI by ISIN, not by name or code.**
+- **Operator data conflict on METALIC.** The screen list carries "revenue TTM ~Rs
+  343 cr (Jul-2026 data)". The company's restated FY26 revenue from operations is
+  **Rs 95.55 crore**. The operator figure appears to belong to another entity and
+  is flagged at the head of that card for confirmation.
+
+### Known limits of this run
+
+- Cards ran 1,135 to 3,044 words against the framework's 1,400 to 1,900,
+  excluding the two-name not-screened note at 639. **Longer than specified on ten
+  of twelve cards, and flagged rather than trimmed**, the same defect the second
+  and third runs recorded. The overrun is worst on the names with the most
+  documents, which suggests the spec needs either a raise or an explicit
+  compression rule for rich corpora.
+- **Promoter holding is NOT FOUND on eight of twelve cards**: OPTIEMUS, ISFT,
+  STLNETWORK, QLL, DICIND, TIRUPATIFL, INDOMIM and STEAMHOUSE. Four are known
+  precisely, all from offer documents: METALIC 61.00% post-issue, TECHNOCRAF
+  68.01% post-offer, AVIENCE 64.59% post-issue, TANAA 51.85% from a SAST filing.
+  **Bull AI indexes SAST disclosures and offer documents but not shareholding
+  patterns**, so recently listed names have this datum and long-listed ones do
+  not. This is now the third consecutive run with the same systematic gap.
+- **Balance sheet or cash flow is NOT FOUND on nine of twelve cards.** Cash
+  conversion is recorded INDETERMINATE on QLL, TECHNOCRAF, TANAA, DICIND and
+  STLNETWORK, which caps each verdict per the framework rule with the missing
+  evidence named.
+- **Four names are read from offer documents alone**: TECHNOCRAF, METALIC,
+  INDOMIM and AVIENCE, all listed between June and August 2026. Every competitive
+  claim on those four cards is marked as an issuer claim. Same limitation the
+  third run recorded for SYMBIOTEC and RSL.
+- **Five names have no post-listing or recent result at all.** STEAMHOUSE (no
+  documents), METALIC and TECHNOCRAF (listed, nothing filed yet in the index),
+  TANAA (latest period 31-Mar-2026), DICIND (latest period 31-Dec-2025).
+- **Documents indexed but not read**, each named on its card and manifest for the
+  deep run to retrieve: TIRUPATIFL's price-movement query and its "Action(s)
+  initiated or orders passed" filing; TANAA's three order-receipt filings;
+  DICIND's May 2026 warrant allotment and its litigation-pendency stream; ISFT's
+  exchange clarification reply; AVIENCE's FY26 Q4 earnings call transcript;
+  INDOMIM's Q1 FY27 profit and loss table on pages 6 to 9 of document 70ca2fe3.

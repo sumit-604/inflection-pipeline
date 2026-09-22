@@ -709,3 +709,97 @@ They contributed nothing to the FABCLEAN card and the whole card was rebuilt
 from Bull AI instead. `tools/collector/` should fail loudly when an export
 comes back with no rows, rather than writing the header and exiting clean.
 Recorded here against the shallow-screen commits of 2026-09-21.
+
+---
+
+## [2026-09-22] Shallow screen, fourth run — fourteen operator picks
+
+Names: STEAMHOUSE, TECHNOCRAF, CRESTO, PCS, OPTIEMUS, STLNETWORK, ISFT, INDOMIM,
+AVIENCE, QLL, TIRUPATIFL, METALIC, TANAA, DICIND.
+
+Run record and per-name detail: `screens/README.md`, "Fourth run, 2026-09-22".
+Forward view: `screens/forward-view-2026-09-22.md`.
+
+**What broke or dragged**
+
+- **No egress, for the third consecutive shallow run.** The network policy
+  answered 403 to the CONNECT for docs.bull-ai.in, www.bseindia.com,
+  www.screener.in and every rating agency site. The 2026-09-08 operator ruling
+  was applied again: corpus built from the Bull AI chunk reader, no PDF on disk.
+  Step 10 was NOT FOUND on all twelve cards written. Three carried a PARTIAL
+  substitute (an ICRA monitoring report, four bank no-objection letters, a
+  debenture security-cover certificate), none of which is a credit opinion.
+  **This is now structural rather than incidental, and the shallow framework
+  should say so**: step 10 as written assumes a reachable agency site.
+- **Bull AI identity resolution failed on two BSE-only micro-caps.** CRESTO (BSE
+  535043) and PCS (BSE 517119) did not resolve on company name, short name or
+  bare BSE code, across four query forms each. Both lack an NSE symbol. QLL (BSE
+  544091) resolved only because its company name matched. No card was written
+  for either name. Same outcome class as LIBAS on 2026-09-21, different cause:
+  LIBAS was absent from the index, these two are probably present and
+  unreachable by the query forms tried.
+- **A five-day-old listing has no corpus at all.** STEAMHOUSE listed 17-Sep-2026
+  and `list_document_availability` returned a complete, untruncated empty list.
+  Not even a prospectus. Its card carries the ledger and no business verdict,
+  the same shape as YAASHVI in the third run. The lesson is about timing: a name
+  inside roughly two weeks of listing is not screenable from this index.
+- **Cards ran long again**, 1,135 to 3,044 words against a 1,400 to 1,900 spec,
+  over on ten of twelve. Third consecutive run with this defect. The overrun
+  tracks corpus richness, which suggests the spec needs either a raise or an
+  explicit compression rule for names with deep document sets.
+
+**Patterns worth carrying**
+
+- **Rising revenue with falling profit, twice in a row, is a harder negative
+  than any ratio.** TIRUPATIFL grew revenue 41% in FY26 and lost 19.9% of net
+  profit; Q1 FY27 grew revenue 18% and lost 13.6% of profit. Two consecutive
+  periods in the same direction removed any artifact-of-climb reading and
+  classified the ugliness STRUCTURAL without needing a cash flow statement,
+  which was absent. **The two-period rule does real work when the cash statement
+  is missing**, which on this corpus is most of the time.
+- **Other income as a share of pre-tax profit is a cheap, fast forensic.** Two
+  names in this run lean on it: TIRUPATIFL took 40% of FY26 pre-tax profit from
+  foreign-exchange gain (Rs 242.48 lakh of Rs 855.45 lakh), and TANAA takes
+  12.2% and rising. Neither is operating income. This is computable from the
+  face of any result filing and belongs in the shallow step 5 read.
+- **Cost of materials consumed as a share of revenue settles what a business
+  actually is.** TANAA is labelled aerospace and MRO manufacturing by the
+  screen; its materials are **1.5% of revenue** and its own MD&A says it leases
+  hangars. One ratio reclassified the name from build-to-spec component maker to
+  licence/scarcity landlord, and moved it to the R0/R1 boundary where the ladder
+  directs NAV treatment rather than a destination PE. **Check this ratio before
+  accepting any sector label.**
+- **A thin-margin assembler is levered to margin, not revenue, and the forward
+  multiple shows it.** OPTIEMUS doubled Q1 revenue and still screens at 50x to
+  60x forward, because 2.4% of revenue reaches the bottom line. Move the margin
+  40 basis points and the whole doubling disappears. Step 13 caught this cleanly
+  where a revenue-growth screen would not have.
+- **Identical receivable balances across two reporting dates are a first-order
+  flag.** STLNETWORK carries Rs 155.74 crore of contract assets and Rs 151.41
+  crore of trade receivables, unchanged to the rupee between 31-Mar-2026 and
+  30-Jun-2026, against annual revenue of Rs 958.96 crore. Nothing else on that
+  card matters as much, and the explanatory note was truncated in the reader.
+- **Guidance coverage predicts verdict quality.** Guidance calls were run on
+  eight names; five returned zero records (TIRUPATIFL, INDOMIM, STLNETWORK,
+  DICIND, TANAA) and all five are PASS verdicts. The two with dated, quantified
+  guidance (OPTIEMUS, QLL) are the two with testable theses. **Running guidance
+  before writing the card, not after, is now confirmed across two runs.**
+
+**Open action, collector and framework**
+
+1. **Resolve BSE-only names by ISIN, out of session, before the run starts.**
+   Bull AI's `search_companies` handles NSE symbols and company names well and
+   bare BSE codes poorly. `tools/collector/` should carry a BSE scrip-master
+   lookup that returns the ISIN, and the screen input list should carry the ISIN
+   for any name without an NSE symbol. CRESTO and PCS were lost to this.
+2. **Shallow framework, step 10.** Three consecutive runs have had no reachable
+   agency site. `screens/SHALLOW_ANALYSIS_FRAMEWORK.md` should name the PARTIAL
+   substitutes that do work from filings alone: a monitoring-agency report on
+   issue proceeds, bank no-objection certificates in an offer document, and a
+   debenture trustee's security-cover certificate. All three appeared in this
+   run and none is currently contemplated by the step as written.
+3. **Shallow framework, card length.** Ten of twelve cards overran the 1,400 to
+   1,900 word spec, as did the second and third runs. Either raise the spec or
+   add a compression rule keyed to corpus size.
+
+Recorded here against the shallow-screen commits of 2026-09-22.

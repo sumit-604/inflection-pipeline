@@ -12,7 +12,14 @@ The corpus is the Bull AI chunk reader, which returns page-numbered text of the
 same filed PDFs. Page numbers are the source PDF's own. Nobody holds the
 original file.
 
-## Documents read
+## Documents cited
+
+**Read this column honestly.** Only three documents in the whole run were read as
+full pages via `get_document_chunks`: TIRUPATIFL page 3, QLL pages 13 to 15, and
+DICIND page 106. Every other page below was sourced from a
+`search_company_documents` **snippet**, which carries the document id and the
+page number but is a truncated extract, not the full page. The cites are real
+and openable. They are not full-page reads.
 
 ## Reporting-calendar warning
 
@@ -21,7 +28,7 @@ are wrong for this company: its "FY2025" is the calendar year ended 31 December
 2025. Same defect class the 2026-09-21 run recorded for ELANTAS. Every period on
 the card is stated as a calendar year.
 
-| Document | Bull AI doc id | Pages read | Filed / uploaded |
+| Document | Bull AI doc id | Pages cited | Filed / uploaded |
 |---|---|---|---|
 | Reg. 34(1) Annual Report CY2025 (MD&A, ratios, P&L, equity, dividend) | e67b4bd9-8b53-4590-9ac3-20b577d2a4a3 | 39, 49, 51, 105, 106 | FY2025 label, CY2025 |
 | Change in Management, new MD and whole-time director | 277da0a9-213b-44d6-8cd9-4475c44f56d0 | 1, 3 | 2026-07-15 |

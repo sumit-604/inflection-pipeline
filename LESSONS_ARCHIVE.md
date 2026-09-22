@@ -803,3 +803,36 @@ Forward view: `screens/forward-view-2026-09-22.md`.
    add a compression rule keyed to corpus size.
 
 Recorded here against the shallow-screen commits of 2026-09-22.
+
+### Addendum, same day, after the operator queried the corpus
+
+Two corrections and one new defect, all recorded against commit a586d84d.
+
+- **Call count in the run record was wrong.** The README claimed 48 paid calls
+  and 514 remaining. The usage endpoint gives **39 paid calls** (30 searches,
+  8 guidance, 1 chunk read) and **523 remaining**. Corrected.
+- **Snippets were presented as page reads.** Thirty search calls returned
+  page-cited but truncated extracts; `get_document_chunks` was called **once**,
+  covering three documents and five pages. The twelve manifests said "Pages
+  read". They now say "Pages cited" and each carries the distinction. **Lesson:
+  a search snippet satisfies the cite-a-file-and-a-page rule but does not
+  satisfy "read the document". The shallow framework should name the difference,
+  because on a no-egress run almost every card is built from snippets.**
+- **NEW DEFECT, Bull AI identifier resolver substitutes a wrong company
+  silently.** `list_document_availability` with the nonsense identifier `999999`
+  returned a complete document map for **Balaji Amines Ltd (BSE 530999)** with
+  `"single_company": true` and no warning. An unmatched numeric identifier is
+  fuzzy-matched to a real, unrelated company. Separately, `535043` and the
+  adjacent unused `535044` both return "Multiple companies match", so that
+  message is noise and is never evidence that a company exists. **This is the
+  most dangerous tooling defect found in four shallow runs: it can silently
+  produce a card about the wrong company.** The control is cheap and must become
+  standard: every Bull AI response echoes a `company` block, and the name in it
+  must be checked before any figure from that response is used. Every call in
+  the 2026-09-22 run was verified this way after the defect was found, and all
+  twelve names resolved correctly.
+
+**Open action 4, added.** `screens/SHALLOW_ANALYSIS_FRAMEWORK.md` and any
+collector wrapper should require the resolved company name to be asserted
+against the intended company before a card is written, and should distinguish
+snippet-sourced cites from full-page reads in the corpus manifest.

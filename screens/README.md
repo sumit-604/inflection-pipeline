@@ -315,10 +315,10 @@ Waterhouse. None is a credit opinion.
   the screen, so the index has most likely not ingested it yet. Its card carries
   the ledger and no business verdict, the same shape as YAASHVI in the third run.
 
-Bull AI budget: 48 calls used, 28 searches, 12 guidance calls, 7 identity and
-availability probes that cost nothing, and 1 chunk read covering three documents.
+Bull AI budget: 39 paid calls used, 30 searches, 8 guidance calls and 1 chunk
+read covering three documents. Identity and availability probes cost nothing.
 `search_companies` and `list_document_availability` are free and were used
-freely. 514 of 1,000 remained for the cycle at the close.
+freely. 523 of 1,000 remained for the cycle at the close.
 
 ### Findings worth carrying out of the cards
 
@@ -403,9 +403,26 @@ freely. 514 of 1,000 remained for the cycle at the close.
   "UNREADABLE" inside the notes, and page 3 of document 94f1b7ae returns the
   results table as headings with no figures.
 - **Bull AI identity resolution fails on BSE-only micro-caps.** CRESTO (535043)
-  and PCS (517119) both failed on name, short name and bare code. **Recommendation
-  for the collector: for any BSE-only name, resolve the ISIN out of session
-  before the run and query Bull AI by ISIN, not by name or code.**
+  and PCS (517119) both failed on name, short name and bare code, across twelve
+  query forms in two passes, including a fifty-result sweep that returned no
+  Cresto at any rank. Both are absent from the company index, not merely hard to
+  address. **Recommendation for the collector: for any BSE-only name, resolve the
+  ISIN out of session before the run and query Bull AI by ISIN, not by name or
+  code.**
+- **The Bull AI identifier resolver silently substitutes a wrong company.**
+  `list_document_availability` with the nonsense identifier `999999` returned a
+  full, confident document map for **Balaji Amines Ltd, BSE 530999**, flagged
+  `"single_company": true`, with no warning. Separately, both `535043` and the
+  adjacent unused `535044` return "Multiple companies match", so that message is
+  noise and never evidence a company exists. **Control: read the `company` block
+  echoed in every response and confirm the name before using any figure.** Every
+  call used in this run was checked that way and every one resolved to the
+  intended company.
+- **Snippets are not page reads.** Thirty `search_company_documents` calls
+  returned page-cited but truncated extracts. Only one `get_document_chunks`
+  call was made, covering three documents and five pages. The manifests were
+  corrected from "Pages read" to "Pages cited" and each carries the caveat. The
+  cites are real and openable; they are not full pages.
 - **Operator data conflict on METALIC.** The screen list carries "revenue TTM ~Rs
   343 cr (Jul-2026 data)". The company's restated FY26 revenue from operations is
   **Rs 95.55 crore**. The operator figure appears to belong to another entity and

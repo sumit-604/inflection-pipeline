@@ -12,9 +12,16 @@ The corpus is the Bull AI chunk reader, which returns page-numbered text of the
 same filed PDFs. Page numbers are the source PDF's own. Nobody holds the
 original file.
 
-## Documents read
+## Documents cited
 
-| Document | Bull AI doc id | Pages read | Filed / uploaded |
+**Read this column honestly.** Only three documents in the whole run were read as
+full pages via `get_document_chunks`: TIRUPATIFL page 3, QLL pages 13 to 15, and
+DICIND page 106. Every other page below was sourced from a
+`search_company_documents` **snippet**, which carries the document id and the
+page number but is a truncated extract, not the full page. The cites are real
+and openable. They are not full-page reads.
+
+| Document | Bull AI doc id | Pages cited | Filed / uploaded |
 |---|---|---|---|
 | Investor Presentation FY2027 Q2 (Q1 FY27 P&L, business model, targets) | c0b6f688-126f-45b7-9be8-d2f94aa9936c | 4, 9, 10, 13, 16 | 2026-08-13 |
 | Outcome of Board Meeting, Q1 FY27 standalone and consolidated results | ef4282bd-60db-495e-ad77-c9a65ed111e2 | 4, 6 | FY2027 Q1 |

@@ -836,3 +836,35 @@ Two corrections and one new defect, all recorded against commit a586d84d.
 collector wrapper should require the resolved company name to be asserted
 against the intended company before a card is written, and should distinguish
 snippet-sourced cites from full-page reads in the corpus manifest.
+
+### Second addendum, same day: identity resolution resolved, one claim withdrawn
+
+The operator supplied confirmed ISINs for the two unscreened names, plus the
+fact that Cresto Techno was formerly Silly Monks Entertainment and is NSE-listed
+as CRESTO.
+
+- **Both companies are genuinely absent from the Bull AI index.** Cresto
+  (INE203Y01012) and PCS Technology (INE834B01012) each return "No listed
+  company was found" from `list_document_availability`, tried on ISIN, on NSE
+  symbol and on the former name. Fifteen query forms across three passes. They
+  cannot be screened from this container and need a live-web session.
+- **A claim from the first pass is withdrawn.** The run record attributed both
+  failures to "BSE-only listings with no NSE symbol". Cresto is NSE-listed and
+  still absent, so that pattern is false. **Lesson about method, not about Bull
+  AI: two failures sharing one visible attribute is not a pattern, and I
+  promoted it to one on a sample of two without a control.** The control that
+  would have caught it, testing a BSE-only name that does resolve, was available
+  free the whole time: QLL is BSE-only and resolves fine.
+- **SECOND TOOL DEFECT. `search_companies` does not match ISINs**, although its
+  own description claims it searches by "company name, NSE symbol, BSE code, or
+  ISIN". Control: `search_companies("INE303A01010")` returns zero results while
+  DIC India is fully indexed under that exact ISIN. The same ISIN passed to
+  `list_document_availability` resolves DIC India correctly.
+
+**Open action 1 is superseded.** The correct identity-resolution procedure is
+`list_document_availability(identifier=<ISIN>)`, which accepts ISINs, echoes the
+resolved company block for the substitution check, and costs nothing. Querying
+`search_companies` by ISIN, which the earlier action recommended, does not work.
+
+**Carry into the collector:** store the ISIN for every screen-list name, and
+resolve identity through the availability endpoint before any paid call.

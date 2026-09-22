@@ -99,13 +99,50 @@ the STEAMHOUSE case.
 
 ---
 
-## The pattern worth recording
+## Third pass, 2026-09-22: operator supplied confirmed ISINs
 
-Both failures share one shape: **BSE-only listings with no NSE symbol.** Bull
-AI's `search_companies` resolves NSE symbols and company names well, and BSE
-codes poorly. QLL (BSE 544091) resolved only because the company name matched;
-the bare code "544091" was never tried as a search term, but "535043" and
-"517119" both failed.
+The operator supplied both ISINs, each confirmed across two independent
+sources, plus the fact that **Cresto Techno was formerly Silly Monks
+Entertainment** and is **NSE-listed as CRESTO**.
+
+| Identity | Value |
+|---|---|
+| Cresto Techno Ltd (formerly Silly Monks Entertainment) | NSE CRESTO, BSE 535043, **ISIN INE203Y01012** |
+| PCS Technology Ltd | BSE 517119, not NSE-listed, **ISIN INE834B01012** |
+
+**Result: both are absent from the Bull AI index. Confirmed through the lookup
+path that demonstrably works.**
+
+| Probe | Cresto | PCS |
+|---|---|---|
+| `list_document_availability` on ISIN | No listed company found | No listed company found |
+| `list_document_availability` on NSE symbol | No listed company found | n/a |
+| `search_companies` on ISIN | 0 results | 0 results |
+| `search_companies` on former name "Silly Monks Entertainment" | 0 relevant | n/a |
+
+## Second Bull AI defect: `search_companies` ignores ISINs
+
+The tool description says it searches "by company name, NSE symbol, BSE code, or
+ISIN". **It does not match ISINs.** Control: `search_companies("INE303A01010")`
+returns **zero results**, although DIC India is fully indexed under that exact
+ISIN. The same ISIN passed to `list_document_availability` resolves DIC India
+correctly.
+
+**Correct procedure, superseding the earlier recommendation:** resolve an
+identity with **`list_document_availability(identifier=<ISIN>)`**, not with
+`search_companies`. The availability endpoint accepts ISINs and returns the
+resolved `company` block. It is also free.
+
+## The pattern claim from the first pass was wrong
+
+The first pass recorded that both failures shared the shape "BSE-only listings
+with no NSE symbol". **That is disproved.** Cresto is NSE-listed as CRESTO and
+is still absent from the index. BSE-only-ness is not the cause.
+
+The actual finding is simpler and less useful: these two companies are not in
+the Bull AI company index at all. Both are micro-caps, one of them recently
+renamed, and the index does not carry them. There is no query form that
+retrieves them.
 
 **Recommendation for the collector and for future screens:** for any BSE-only
 name, resolve the ISIN before the run starts, out of session, and pass the ISIN

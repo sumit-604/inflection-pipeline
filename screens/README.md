@@ -303,13 +303,17 @@ Debenture Trust Deed with quarterly security-cover certificates audited by Price
 Waterhouse. None is a credit opinion.
 
 **Three names could not be screened, for two different reasons.**
-- **CRESTO** and **PCS** are not in the Bull AI index. Four search forms were
-  tried on each, by company name, by short name and by BSE code, and none
-  resolved. Both are **BSE-only listings with no NSE symbol**, which is the
-  pattern: Bull AI's `search_companies` resolves NSE symbols and company names
-  well and bare BSE codes poorly. With no egress there was no second route and
-  the identity was never resolved to an ISIN. See
-  `cards/_NOT_SCREENED-CRESTO-PCS.md`.
+- **CRESTO** and **PCS** are not in the Bull AI company index. Three passes were
+  run, ending with the operator supplying confirmed ISINs: Cresto Techno
+  (formerly Silly Monks Entertainment, NSE CRESTO) **INE203Y01012**, and PCS
+  Technology **INE834B01012**. Both return "No listed company was found" from
+  `list_document_availability`, which is the lookup path that demonstrably
+  resolves ISINs. Neither can be screened from this container at all; both need
+  a live-web session. See `cards/_NOT_SCREENED-CRESTO-PCS.md`.
+- **A pattern claimed in the first pass was wrong and is withdrawn.** The run
+  record initially attributed both failures to "BSE-only listings with no NSE
+  symbol". Cresto is NSE-listed as CRESTO and is still absent, so BSE-only-ness
+  is not the cause. These two companies are simply not in the index.
 - **STEAMHOUSE** resolved cleanly but a complete, untruncated availability check
   returned an empty document list. It listed 17 September 2026, five days before
   the screen, so the index has most likely not ingested it yet. Its card carries
@@ -402,13 +406,19 @@ freely. 523 of 1,000 remained for the cycle at the close.
 - **DICIND**, page 6 of document 8d0ce5d9: the reader returns the literal string
   "UNREADABLE" inside the notes, and page 3 of document 94f1b7ae returns the
   results table as headings with no figures.
-- **Bull AI identity resolution fails on BSE-only micro-caps.** CRESTO (535043)
-  and PCS (517119) both failed on name, short name and bare code, across twelve
-  query forms in two passes, including a fifty-result sweep that returned no
-  Cresto at any rank. Both are absent from the company index, not merely hard to
-  address. **Recommendation for the collector: for any BSE-only name, resolve the
-  ISIN out of session before the run and query Bull AI by ISIN, not by name or
-  code.**
+- **Bull AI identity resolution fails on some micro-caps regardless of
+  exchange.** CRESTO and PCS failed across fifteen query forms in three passes,
+  including a fifty-result name sweep, the former name "Silly Monks
+  Entertainment", both confirmed ISINs and the NSE symbol. Both are absent from
+  the company index.
+- **`search_companies` does not match ISINs, despite its own description.** Its
+  documentation says it searches by "company name, NSE symbol, BSE code, or
+  ISIN". Control: `search_companies("INE303A01010")` returns **zero results**
+  while DIC India is fully indexed under that exact ISIN. The same ISIN resolves
+  correctly through `list_document_availability`. **Recommendation for the
+  collector, superseding the earlier one: resolve identities with
+  `list_document_availability(identifier=<ISIN>)`, which accepts ISINs, returns
+  the resolved company block, and is free.**
 - **The Bull AI identifier resolver silently substitutes a wrong company.**
   `list_document_availability` with the nonsense identifier `999999` returned a
   full, confident document map for **Balaji Amines Ltd, BSE 530999**, flagged

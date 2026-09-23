@@ -1759,6 +1759,7 @@ function runStepQuiz(ctx, cfg) {
   function checkChoice(choice, btn) {
     ctx.countAttempt();
     const st = cfg.steps[idx];
+    if (!st) return;
     if (choice === st.answer) {
       log.innerHTML += `<div class="step-ok">✔ ${st.q} <b>${st.answer}</b></div>`;
       idx++;

@@ -543,6 +543,17 @@ kbd { display: inline-block; border: 1px solid #d8cdb2; border-bottom-width: 3px
 #start-btn { width: 100%; margin: 4px 0 10px; }
 .start-box { max-height: 92vh; overflow-y: auto; }
 
+.dialogue-btns { display: flex; gap: 8px; justify-content: flex-end; align-items: center; }
+#dialogue-chat { border: 2px solid #e2c7a8; background: #fff8ef; border-radius: 12px; padding: 6px 12px; font-size: 18px; cursor: pointer; }
+.chat-log { max-height: 220px; overflow-y: auto; background: #fff8ef; border: 2px solid #e2c7a8; border-radius: 12px; padding: 8px 10px; margin: 8px 0; font-size: 15px; }
+.chat-log .me { text-align: right; color: #1d3557; margin: 4px 0; }
+.chat-log .them { text-align: left; color: #b4531a; margin: 4px 0; }
+.chat-row { display: flex; gap: 6px; }
+.chat-row input { flex: 1; font-size: 16px; padding: 8px 10px; border: 2px solid #e2c7a8; border-radius: 10px; font-family: inherit; }
+.flash-card { text-align: center; padding: 18px 8px; font-size: 17px; line-height: 1.5; }
+.flash-card .big { font-size: 56px; margin-bottom: 8px; }
+.lunch-timer { font-weight: 700; color: #b4531a; }
+
 </style>
   <canvas id="game-canvas"></canvas>
 
@@ -591,7 +602,7 @@ kbd { display: inline-block; border: 1px solid #d8cdb2; border-bottom-width: 3px
     <div id="controls-hint" hidden>
       <span><b>W A S D</b> to walk</span><span><b>← →</b> or drag to look</span><span><b>E</b> to talk / sit / board</span><span><b>B</b> backpack</span><span><b>F</b> use what you hold</span><span><b>M</b> map</span><span><b>N</b> diary</span><span><b>H</b> all controls</span>
     </div>
-    <div id="dialogue" hidden><div id="dialogue-name"></div><div id="dialogue-text"></div><button id="dialogue-next">Continue</button></div>
+    <div id="dialogue" hidden><div id="dialogue-name"></div><div id="dialogue-text"></div><div class="dialogue-btns"><button id="dialogue-chat" title="Say something (T)">💬</button><button id="dialogue-next">Continue</button></div></div>
     <div id="touch-controls" hidden><div id="joystick"><div id="joystick-knob"></div></div><button id="touch-interact">E</button><button id="touch-run" title="Run">🏃</button><button id="touch-use" title="Use (F)">✋</button></div>
   </div>
 
@@ -817,6 +828,25 @@ const ROWS = [
 ["🤫 Let someone else answer", "🤫 कोई और जवाब दे", "🤫 Koi aur jawab de", "🤫 다른 친구가 답하기", "🤫 让别人回答", "🤫 ほかの人に答えてもらう", "🤫 Que responda otro", "🤫 Laisser répondre un autre"],
 ["{t} looks at the class: \"{q}\"", "{t} कक्षा की ओर देखते हैं: \"{q}\"", "{t} class ki taraf dekhte hain: \"{q}\"", "{t} 선생님이 반을 보며: \"{q}\"", "{t}看着全班：“{q}”", "{t}先生がクラスを見て：「{q}」", "{t} mira a la clase: \"{q}\"", "{t} regarde la classe : « {q} »"],
 ["Jobs", "नौकरियाँ", "Naukriyan", "직업", "工作", "仕事", "Trabajos", "Emplois"],
+["Talk with {n}", "{n} से बात", "{n} se baat", "{n}와 대화", "和{n}聊天", "{n}と話す", "Hablar con {n}", "Parler avec {n}"],
+["Type what you want to say. {n} answers.", "जो कहना है लिखो। {n} जवाब देगा।", "Jo kehna hai likho. {n} jawab dega.", "하고 싶은 말을 입력하세요. {n}이(가) 대답해요.", "输入你想说的话。{n}会回答。", "言いたいことを入力してね。{n}が答えるよ。", "Escribe lo que quieras decir. {n} responde.", "Écris ce que tu veux dire. {n} répond."],
+["Say something…", "कुछ कहो…", "Kuch kaho…", "말해 보세요…", "说点什么…", "何か言ってみて…", "Di algo…", "Dis quelque chose…"],
+["Say", "कहो", "Kaho", "말하기", "说", "言う", "Decir", "Dire"],
+["You", "तुम", "Tum", "나", "你", "あなた", "Tú", "Toi"],
+["Lunch ends in", "लंच खत्म होने में", "Lunch khatam hone mein", "점심 종료까지", "午餐还剩", "昼食終了まで", "El almuerzo termina en", "Fin du déjeuner dans"],
+["30 seconds of lunch left. Eat up!", "लंच के 30 सेकंड बचे। जल्दी खाओ!", "Lunch ke 30 second bache. Jaldi khao!", "점심시간 30초 남았어요. 어서 먹어요!", "午餐还剩30秒，快吃！", "昼食はあと30秒。急いで食べて！", "Quedan 30 segundos de almuerzo. ¡Come!", "Il reste 30 secondes. Mange vite !"],
+["Ride to school in Papa's car", "पापा की कार से स्कूल चलो", "Papa ki car se school chalo", "아빠 차로 학교 가기", "坐爸爸的车去学校", "パパの車で学校へ", "Ir al colegio en el coche de papá", "Aller à l'école dans la voiture de papa"],
+["Ride home in Papa's car", "पापा की कार से घर चलो", "Papa ki car se ghar chalo", "아빠 차로 집에 가기", "坐爸爸的车回家", "パパの車で家へ", "Volver a casa en el coche de papá", "Rentrer dans la voiture de papa"],
+["Papa's car", "पापा की कार", "Papa ki car", "아빠 차", "爸爸的车", "パパの車", "El coche de papá", "La voiture de papa"],
+["Watch a movie with the family", "परिवार के साथ फ़िल्म देखो", "Family ke saath movie dekho", "가족과 영화 보기", "和家人看电影", "家族と映画を見る", "Ver una película con la familia", "Regarder un film en famille"],
+["Play ludo with Papa and Gudiya", "पापा और गुड़िया के साथ लूडो खेलो", "Papa aur Gudiya ke saath ludo khelo", "아빠, 구디야와 루도 놀이", "和爸爸、古迪亚玩飞行棋", "パパとグディヤとルードー", "Jugar al ludo con papá y Gudiya", "Jouer au ludo avec papa et Gudiya"],
+["The TV", "टीवी", "TV", "텔레비전", "电视", "テレビ", "La tele", "La télé"],
+["The ludo board", "लूडो बोर्ड", "Ludo board", "루도 판", "飞行棋", "ルードー盤", "El tablero de ludo", "Le plateau de ludo"],
+["Trouble in class", "कक्षा में गड़बड़", "Class mein gadbad", "교실의 소동", "课堂风波", "教室でのトラブル", "Problemas en clase", "Problème en classe"],
+["The last evening", "आख़िरी शाम", "Aakhri shaam", "마지막 저녁", "最后的傍晚", "最後の夕べ", "La última tarde", "Le dernier soir"],
+["The End", "समाप्त", "The End", "끝", "剧终", "おわり", "Fin", "Fin"],
+["Play again from Nursery", "नर्सरी से फिर खेलो", "Nursery se phir khelo", "유치원부터 다시", "从幼儿园重新开始", "ナーサリーからもう一度", "Jugar de nuevo desde Nursery", "Rejouer depuis la maternelle"],
+["Time for bed. Press E at your bed.", "सोने का समय। बिस्तर पर E दबाओ।", "Sone ka time. Bed par E dabao.", "잘 시간이에요. 침대에서 E를 누르세요.", "该睡觉了。在床边按E。", "寝る時間。ベッドでEを押して。", "Hora de dormir. Pulsa E en tu cama.", "Au lit. Appuie sur E près du lit."],
 ["Language", "भाषा", "Bhasha", "언어", "语言", "言語", "Idioma", "Langue"],
 ["Who is playing today?", "आज कौन खेल रहा है?", "Aaj kaun khel raha hai?", "오늘 누가 플레이하나요?", "今天谁来玩？", "今日は誰が遊ぶ？", "¿Quién juega hoy?", "Qui joue aujourd'hui ?"],
 ["Start", "शुरू करो", "Shuru karo", "시작", "开始", "スタート", "Empezar", "Commencer"],
@@ -1226,7 +1256,7 @@ function playTalkBlip(pitch = 400, ch = "a") {
 const KEY = (profile) => `school-days.v1.${profile}`;
 function emptyProgress() {
   const marks = {}; for (const s of SUBJECT_IDS) marks[s] = { cw: 0, hw: 0, fa: [], term: [] };
-  return { day: 1, phase: "morning", period: 0, marks, games: [], attempts: {}, friendship: {}, money: 0, energy: 100, bag: [], wardrobe: [], held: null, hints: 0, outfit: {}, tiffin: null, homework: [], reports: [], diary: [], thought: [], job: null, hired: [], shifts: 0 };
+  return { day: 1, phase: "morning", period: 0, marks, games: [], attempts: {}, friendship: {}, money: 0, energy: 100, bag: [], wardrobe: [], held: null, hints: 0, outfit: {}, tiffin: null, homework: [], reports: [], diary: [], thought: [], conduct: 0, nights: 0, ended: false, incidents: 0, job: null, hired: [], shifts: 0 };
 }
 function loadProgress(profile) {
   try {
@@ -1471,6 +1501,8 @@ class Dialogue {
   //   lines = array of strings
   //   opts.pitch = voice pitch in Hz (higher = lighter voice)
   say(name, lines, onDone = null, opts = {}) {
+    this.name = name;
+    if (!this._chatWired) { this._chatWired = true; const cb = document.getElementById("dialogue-chat"); if (cb) cb.addEventListener("click", () => { const g = window.__game; if (g) g._chatFromDialogue(); }); }
     this.lines = (Array.isArray(lines) ? lines : [lines]).map((l) => (typeof L === "function" ? L(l) : l));
     this.index = 0;
     this.onDone = onDone;
@@ -4467,7 +4499,7 @@ class Room {
       this.group.add(dadi); this._solid(-5.5, 2, 0.7, 0.7); this._label("Dadi", -5.5, 2, 2.0, 0.5);
       const gudiya = makeHuman({ skin: 0xe8b98a, shirt: 0xff8fab, dress: true, hair: 0x1d1410 }); gudiya.scale.setScalar(0.62); gudiya.position.set(4, 0, 5.5); gudiya.rotation.y = 0.8;
       this.group.add(gudiya); this._solid(4, 5.5, 0.6, 0.6); this._label("Gudiya", 4, 5.5, 2.1, 0.45);
-      this.extras = [dadi, gudiya];
+      this.extras = [dadi, gudiya]; this.figures = { dadi: { group: dadi, x: -5.5, z: 2 }, gudiya: { group: gudiya, x: 4, z: 5.5 } };
       return true;
     }
     if (t === "school") {
@@ -4829,6 +4861,100 @@ class Npc {
   }
 }
 
+// ===== src/school/life.js =====
+/* ============================================================
+   life.js — the parts that make the game feel like a real life:
+   people on the colony roads, a chat box to say your own words,
+   nights with the family (movie, ludo, Dadi's story), Papa's car,
+   school incidents (teasing, a fight, the class monitor) and the
+   peaceful ending with a flashback.
+   ============================================================ */
+const STREET_FOLK = [
+  { id: "sharma_uncle", name: "Sharma Uncle", look: { shirt: 0xf1f1f1, trousers: 0x3b3f4a, hair: 0x333333 }, pitch: 330, zone: "colony", greet: "Namaste, beta! Off to school?" },
+  { id: "verma_aunty", name: "Verma Aunty", look: { shirt: 0x9b5de5, dress: true, hair: 0x1d1410 }, pitch: 460, zone: "colony", greet: "Arre, tell your Maa I will come for tea." },
+  { id: "chhotu", name: "Chhotu", look: { shirt: 0xffd21e, trousers: 0x2a9d8f, hair: 0x1d1410 }, child: true, pitch: 520, zone: "colony", greet: "Cricket in the lane after school?" },
+  { id: "pinky", name: "Pinky", look: { shirt: 0x6fae54, dress: true, hair: 0x1d1410 }, child: true, pitch: 540, zone: "colony", greet: "Hi! Chhotu is my brother. He never shares the bat." },
+  { id: "guard", name: "Guard Bahadur", look: { shirt: 0x1d3557, trousers: 0x1d3557, hair: 0x111111 }, pitch: 300, zone: "colony", greet: "Salaam, baba. Gate closes at nine." },
+  { id: "jogger", name: "Neha Didi", look: { shirt: 0xff8fab, trousers: 0x111111, hair: 0x1d1410 }, pitch: 440, zone: "colony", greet: "Morning! Two rounds of the park and I am done." },
+  { id: "kaka", name: "Kaka", look: { shirt: 0xdddddd, trousers: 0xdddddd, hair: 0xcccccc, skin: 0xc98d62 }, pitch: 310, zone: "colony", greet: "Sit, sit. In my time we walked to school, barefoot." },
+  { id: "milkman", name: "Ramu Milkman", look: { shirt: 0xffffff, trousers: 0x8a5626, hair: 0x111111 }, pitch: 340, zone: "street", greet: "Doodh! Fresh from the dairy. Tell Maa, two packets today." },
+  { id: "postman_g", name: "Postman Gupta", look: { shirt: 0xc94848, trousers: 0x3b3f4a, hair: 0x333333 }, pitch: 360, zone: "street", greet: "A letter for Sharma ji. Nothing for you. Study well." },
+  { id: "sabziwala", name: "Sabziwala", look: { shirt: 0x2a9d8f, trousers: 0x8a5626, hair: 0x1d1410 }, pitch: 350, zone: "market", greet: "Tomatoes twenty, onions thirty! Tell Maa." },
+  { id: "chaiwala", name: "Chaiwala", look: { shirt: 0xd62828, trousers: 0x333333, hair: 0x1d1410 }, pitch: 380, zone: "market", greet: "Chai, garam chai! Not for children, milk for you." },
+  { id: "amit", name: "Amit Bhaiya", look: { shirt: 0x3a86ff, trousers: 0x111111, hair: 0x1d1410 }, pitch: 400, zone: "market", greet: "College is fun, but the exams! Study now, beta." },
+];
+WAYPOINTS.market = [[30, 60], [50, 80], [35, 100], [55, 115], [30, 125], [60, 70], [45, 95], [20, 110]];
+WAYPOINTS.street = [[-100, 46], [-60, 46], [-20, 46], [10, 46], [-30, 60], [-130, 46], [-90, 134], [-60, 134], [-20, 134], [-115, 60]];
+
+// ---- The chat box: you type, they answer in character. ----
+const CHAT_RULES = [
+  { k: ["hello", "hi", "namaste", "good morning", "good night", "hey"], r: { maa: "Hello, my sunshine. Did you wash your hands?", papa: "Hello, champ. Come, sit with me.", dadi: "Jeete raho, beta. Come, sit near Dadi.", gudiya: "Hiii! Play with me, na?", friend: "Hey! What's up?", teacher: "Good day. Stand straight when you talk, please.", other: "Hello, hello! Nice to see you." } },
+  { k: ["how are you", "kaise ho", "how r u"], r: { maa: "I am well, beta. Tired, but well. And you?", papa: "First class! Office was busy, but I am home now.", dadi: "My knees hurt, but my heart is happy when I see you.", gudiya: "I am good! My doll is sick though.", friend: "Fine, yaar. Bored of homework.", teacher: "Well, thank you. Are you prepared for class?", other: "All well, by God's grace." } },
+  { k: ["love", "pyar"], r: { maa: "I love you more than all the stars, beta.", papa: "Love you too, champ. Now, studies?", dadi: "Dadi loves you the most in this whole house. Don't tell Gudiya.", gudiya: "I love you too! Now give me your pencil.", friend: "Ha! Best friends forever.", teacher: "Hmm. Show it in your homework.", other: "Bless you, child." } },
+  { k: ["hungry", "food", "eat", "khana", "bhookh"], r: { maa: "There are parathas in the kitchen. Wash your hands first.", papa: "Ask Maa. And do not eat only chips.", dadi: "I have laddoos hidden in my tin. Shh.", gudiya: "Me too! Let's ask Maa for Maggi.", friend: "Canteen? Samosa is ₹10 today.", teacher: "Lunch is at 10:45. Not in class.", other: "The chaiwala has good biscuits." } },
+  { k: ["homework", "study", "padhai", "exam", "test"], r: { maa: "Homework first, everything else after. You know the rule.", papa: "Which subject is hard? Tell me, we will do it together.", dadi: "In my time we wrote on slates. Do it neatly.", gudiya: "Homework is boring. Play instead!", friend: "Did you finish the maths one? Show me, please!", teacher: "Study every day a little. That beats cramming.", other: "Study well, beta. Then a big job." } },
+  { k: ["marks", "number", "result", "rank", "topper"], r: { maa: "Marks matter, but effort matters more. Did you try?", papa: "Show me the diary. Every mark counts.", dadi: "Marks come and go. Kindness stays.", gudiya: "I got a star sticker today!", friend: "You always score more than me. Teach me.", teacher: "Raise your hand more. Marks follow attention.", other: "Top the class, beta, and make your parents proud." } },
+  { k: ["play", "game", "cricket", "football", "khel"], r: { maa: "After homework, one hour. Not more.", papa: "Sunday we play cricket in the park. Promise.", dadi: "Ludo! Get the board. I will beat you.", gudiya: "Yes yes yes! Hide and seek! You count.", friend: "Games period today. I am on your team.", teacher: "Games period is with Coach Vikram. In class we study.", other: "Kids used to play in this lane all evening." } },
+  { k: ["movie", "tv", "film", "cartoon"], r: { maa: "One movie on Saturday, if homework is done.", papa: "Tonight a family movie, if Maa agrees.", dadi: "Put the old songs on. I will sing.", gudiya: "Cartoons! Please please please.", friend: "Have you seen the new superhero one?", teacher: "Less TV, more books.", other: "Cinema is by the market. Tickets are ₹60." } },
+  { k: ["story", "kahani", "tell me"], r: { maa: "Dadi tells the best stories. Ask her at night.", papa: "Once, when I was your age, I ran away from a goat. True story.", dadi: "Sit. Once there was a king who had everything but a friend...", gudiya: "The bunny story! Again!", friend: "Once our teacher slipped on chalk. Don't laugh.", teacher: "History is the best story. Read chapter three.", other: "This colony was all fields once." } },
+  { k: ["money", "paisa", "rupee", "pocket", "buy"], r: { maa: "Pocket money is ₹50. Spend it wisely, count your change.", papa: "Save half, spend half. That is the rule.", dadi: "Take ₹10 from my purse. Buy a toffee. Shh.", gudiya: "Buy me a toffee too!", friend: "Lend me ₹5? I will return it tomorrow.", teacher: "Money is not for the classroom.", other: "Everything is expensive these days." } },
+  { k: ["sorry", "maaf"], r: { maa: "It is fine, beta. Just do not do it again.", papa: "Sorry is good. Fixing it is better.", dadi: "Come here. All is forgiven.", gudiya: "Okay... but give me your chocolate.", friend: "Chill, yaar. We are friends.", teacher: "Accepted. Now, show me you have learned.", other: "No problem, child." } },
+  { k: ["thank", "shukriya", "dhanyavad"], r: { maa: "You are welcome, my child.", papa: "Anytime, champ.", dadi: "Bless you.", gudiya: "You're welcome! Now play?", friend: "No thanks between friends.", teacher: "Thank yourself: you did the work.", other: "Most welcome." } },
+  { k: ["school", "class", "teacher", "bus"], r: { maa: "Bus at 7:30. Do not run on the road.", papa: "Which teacher do you like most? Mine was Mr. Sinha.", dadi: "School is a temple. Go with a clean heart.", gudiya: "I go to school next year! Same bus?", friend: "Did you see the notice board? FA on Friday.", teacher: "The bell does not wait. Be on time.", other: "Sunrise School is good. My nephew studies there." } },
+  { k: ["fight", "bully", "tease", "hit", "punch", "angry"], r: { maa: "Never hit first. Tell your teacher. And tell me, always.", papa: "Stand tall, speak firmly, walk away. Hitting solves nothing.", dadi: "An angry man loses first. Breathe, then speak.", gudiya: "Did someone hurt you? I will bite them!", friend: "If anyone bothers you, tell me. We stick together.", teacher: "Any teasing, report it to the monitor or to me. No fights.", other: "Children fight, then they forget. Be the first to forgive." } },
+  { k: ["sleep", "tired", "neend", "sona"], r: { maa: "Then sleep, beta. Growing children need nine hours.", papa: "Early to bed, early to rise. Go on.", dadi: "Sleep. I will put the blanket on you.", gudiya: "No sleeping! One more game.", friend: "Same. Slept at 11 yesterday.", teacher: "Tired? Sleep early. No yawning in class.", other: "Rest well." } },
+  { k: ["job", "work", "office", "salary", "doctor", "engineer", "police"], r: { maa: "Whatever you become, be kind first.", papa: "Study now, and every job is open to you.", dadi: "Become a doctor, then fix my knee.", gudiya: "I will be a pilot!", friend: "I want to be a cricketer. And you?", teacher: "First Class 12, then college. One step at a time.", other: "Good jobs need good marks, beta." } },
+  { k: ["?"], r: { maa: "Hmm, good question. What do you think?", papa: "Think about it. What would you do?", dadi: "God knows, beta. Ask your teacher tomorrow.", gudiya: "I don't know! I am small.", friend: "No idea. Ask the teacher.", teacher: "A good question. Look it up tonight and tell me tomorrow.", other: "Who knows, child. Who knows." } },
+];
+const CHAT_FALLBACK = { maa: ["Achha. Now go, finish your work.", "Hmm, tell me more, beta.", "Yes, yes. Did you drink water?"], papa: ["Is that so? Good.", "Hmm. Tell me properly.", "Okay, champ. Noted."], dadi: ["Haan, beta. Haan.", "In my time it was the same.", "Come, sit. Say it again, slowly."], gudiya: ["Hehe! Okay!", "You are funny.", "Play now?"], friend: ["Ha ha, yeah.", "Okay okay.", "Cool. See you at lunch."], teacher: ["Noted. Sit down now.", "Interesting. Write it in your notebook.", "Hmm. Let us get back to the lesson."], other: ["Achha.", "Yes, yes.", "Good, good. Carry on."] };
+function chatReply(who, text) {
+  const t = (text || "").toLowerCase();
+  for (const rule of CHAT_RULES) if (rule.k.some((k) => t.includes(k))) return rule.r[who] || rule.r.other;
+  const list = CHAT_FALLBACK[who] || CHAT_FALLBACK.other;
+  return list[Math.floor(Math.random() * list.length)];
+}
+
+// ---- Nights: what the family does after dinner. ----
+const MOVIES = [
+  { title: "The Little Kite", story: "A kite that is scared of the wind learns to fly high when its friend holds the string steady.", q: "Who held the string steady?", a: "Its friend", ch: ["Its friend", "The wind", "A crow", "Nobody"] },
+  { title: "Rocket Rani", story: "A village girl builds a rocket from a pressure cooker and reaches the moon, then comes back for her Dadi's rotis.", q: "What did she build the rocket from?", a: "A pressure cooker", ch: ["A pressure cooker", "A bus", "A bicycle", "A tin box"] },
+  { title: "Cricket Chacha", story: "An old man coaches the colony team. They lose every match until they learn to pass the ball and cheer for each other.", q: "Why did they start winning?", a: "They played as a team", ch: ["They played as a team", "They bought a new bat", "The umpire helped", "They practised alone"] },
+  { title: "Bittu the Honest", story: "Bittu finds a wallet at the mela. He returns it, and the owner turns out to be his new teacher.", q: "What did Bittu do with the wallet?", a: "Returned it", ch: ["Returned it", "Kept it", "Hid it", "Lost it"] },
+];
+const DADI_STORIES = [
+  { title: "The King Without a Friend", text: "A king had gold, horses and a palace, but nobody to laugh with. One day a gardener's boy shared his mango. The king gave away half his gold, and gained a friend for life.", lesson: "What did the king gain that gold could not buy?", a: "A friend", ch: ["A friend", "More gold", "A horse", "A bigger palace"] },
+  { title: "The Two Pots", text: "Two clay pots carried water from the river. One had a crack and lost half the water. It felt useless, until it saw the flowers that grew only on its side of the path.", lesson: "What grew because of the cracked pot?", a: "Flowers", ch: ["Flowers", "Weeds", "Nothing", "Mangoes"] },
+  { title: "Dadi's First Day of School", text: "When I was five, I cried at the gate. My teacher gave me a piece of chalk and said, 'Draw your house.' I drew it, and forgot to cry. I still have that chalk.", lesson: "What did the teacher give little Dadi?", a: "A piece of chalk", ch: ["A piece of chalk", "A toffee", "A book", "A slap"] },
+  { title: "The Slow Tortoise", text: "Everyone knows the tortoise won the race. But do you know why? He did not stop to look at who was behind him. He looked only at the road ahead.", lesson: "What did the tortoise look at?", a: "The road ahead", ch: ["The road ahead", "The hare", "The crowd", "The sky"] },
+];
+
+// ---- School incidents: teasing, a push, the class monitor. ----
+const INCIDENTS = [
+  { id: "tease", text: "{b} points at your tiffin and sings, 'Aloo paratha, aloo paratha!' Some children laugh.", who: "you" },
+  { id: "push", text: "In the corridor {b} shoves past you. Your books fall. 'Watch it, slowpoke,' he says.", who: "you" },
+  { id: "friend", text: "{b} snatches {f}'s notebook and holds it above his head. {f} is about to cry.", who: "friend" },
+  { id: "copy", text: "{b} whispers, 'Show me your answers or I will tell everyone you still sleep with a teddy.'", who: "you" },
+  { id: "name", text: "{b} keeps calling you 'four-eyes' every time the teacher looks away.", who: "you" },
+];
+const INCIDENT_CHOICES = [
+  { id: "firm", label: "Say firmly: 'Stop it. That is not funny.' Then walk away.", result: "You say it loud and clear. {b} shrugs and goes quiet. {f} nods at you. The class saw who was bigger.", conduct: 2, friendship: 2, marks: 0 },
+  { id: "monitor", label: "Tell the class monitor, {m}.", result: "{m} writes it in the monitor's diary. Miss Priya reads it at the bell. {b} gets a warning and a note to his parents.", conduct: 1, friendship: 1, marks: 0 },
+  { id: "punch", label: "Punch {b} back.", result: "Fists fly. Both of you hit the floor. Miss Priya pulls you apart. Principal's office: 'No matter who started it, hitting is out.' A red mark in your diary and 2 marks cut.", conduct: -3, friendship: -1, marks: -2 },
+  { id: "laugh", label: "Laugh along so he leaves you alone.", result: "You laugh. {b} is pleased. {f} looks at you, hurt. It was easy, and it felt bad.", conduct: -1, friendship: -2, marks: 0 },
+];
+
+// ---- The ending: a peaceful flashback. ----
+const FLASHBACK = [
+  ["🌅", "Nursery. Maa held your hand at the gate. You cried, then you drew your house with a piece of chalk."],
+  ["🚌", "The yellow bus every morning. Shanti Nagar to the school gate. Aarav saved you a seat."],
+  ["✋", "The first time your hand went up in class and the answer was right. Two marks, and a smile from Mrs. Rao."],
+  ["🍱", "Lunch on the benches. Parathas shared, secrets traded, one fight forgiven by the next bell."],
+  ["📜", "Report cards on the fridge. Some terms shone, some did not. Papa said every mark counts, and meant the effort."],
+  ["🌙", "Nights: Dadi's stories, ludo with Gudiya, a movie with everyone on one sofa."],
+  ["🎓", "Class 12, then college. The written test, the interview. 'You are hired.' The first salary went into Maa's hands."],
+  ["🏡", "Now you sit on the roof at Shanti Nagar. Papa's old car below, Maa's tea, Gudiya grown, Dadi's chair still by the window."],
+];
+
 class Minimap {
   constructor(world) {
     this.world = world;
@@ -5126,6 +5252,10 @@ class Game {
     // Your own bicycle, parked by the garden gate. Ride it anywhere: roads, lanes, the campus.
     const bike = makeBicycle(0xd62828); bike.position.set(HOME.x + 7.5, 0, HOME.z + 9.5); bike.rotation.y = Math.PI / 2; this.world.scene.add(bike);
     this.bike = { group: bike, speed: 9, kind: "bike", label: "bicycle", controlled: true };
+    // The family car, silver, parked in our lane by the gate.
+    const car = makeRideCar(0xbfc5cc); car.position.set(HOME.x + 4, 0, HOME.z - 10); car.rotation.y = 0; this.world.scene.add(car);
+    this.car = { group: car, kind: "car", label: "Papa's car", controlled: false, speed: 0, driving: false, atSchool: false, home: { x: HOME.x + 4, z: HOME.z - 10 }, gate: { x: 96, z: 4 } };
+    this._carPapa = makeHuman({ shirt: 0x3f6f9f, trousers: 0x3b3f4a, hair: 0x1d1410 }); this._carPapa.visible = false; this.world.scene.add(this._carPapa);
     this._buildInteractables();
     this.world.vehicleBlocked = (x, z, self, pad) => {
       for (const mv of [...this.world.movers, ...this.world.cityMovers]) {
@@ -5143,7 +5273,7 @@ class Game {
     this._gearChanged();
     this.minimap = new Minimap(this.world);
     this.bigmap = new BigMap(this);
-    window.addEventListener("keydown", (e) => { if (e.target && e.target.tagName === "INPUT") return; if (e.key.toLowerCase() === "m") { if (this.bigmap.isOpen) this.bigmap.close(); else this.bigmap.open(); } if (e.key === "Escape") this.bigmap.close(); if (e.key.toLowerCase() === "j") { if (panelOpen()) closePanel(); else this._openJobs(); } });
+    window.addEventListener("keydown", (e) => { if (e.target && e.target.tagName === "INPUT") return; if (e.key.toLowerCase() === "m") { if (this.bigmap.isOpen) this.bigmap.close(); else this.bigmap.open(); } if (e.key === "Escape") this.bigmap.close(); if (e.key.toLowerCase() === "j") { if (panelOpen()) closePanel(); else this._openJobs(); } if (e.key.toLowerCase() === "t") { if (this.dialogue.active) this._chatFromDialogue(); else if (!panelOpen()) { const near = this._nearestInteractable(); if (near && near.npc) this._chat(near.npc); } } });
     this._ambient = { chirp: 3, horn: 5, bell: 30 };
     startAmbient();
     this.clock = new THREE.Clock();
@@ -5196,7 +5326,7 @@ class Game {
   }
   addFriendship(id, n, why) {
     this.progress.friendship[id] = (this.progress.friendship[id] || 0) + n; saveProgress(this.profile, this.progress); this.ui.refreshRank();
-    if (why) showToast(`🤝 +${n} friendship with ${FRIENDS.find((f) => f.id === id).name}: ${why}`, 2400, "good");
+    if (why) { const who = FRIENDS.find((f) => f.id === id); showToast(`🤝 +${n} friendship with ${who ? who.name : id === "family" ? "the family" : id === "gudiya" ? "Gudiya" : id}: ${why}`, 2400, "good"); }
   }
   diary(text) { this.progress.diary.push(`Day ${this.progress.day}: ${text}`); saveProgress(this.profile, this.progress); }
   setObjective(label, x, z) {
@@ -5222,12 +5352,15 @@ class Game {
     for (const k of Object.keys(TEACHERS)) { const n = new Npc(TEACHERS[k], this.world, { pos: [100 + Object.keys(TEACHERS).indexOf(k) * 3 - 8, -70], fixed: true }); n.group.visible = false; this.teachers[k] = n; this.npcs.push(n); }
     this.family = {};
     for (const k of Object.keys(FAMILY)) { const n = new Npc(FAMILY[k], this.world, { pos: [0, 0], fixed: true }); n.group.visible = false; this.family[k] = n; this.npcs.push(n); }
+    // Neighbours, vendors and children on the colony roads and the market street.
+    this.folk = STREET_FOLK.map((def) => { const n = new Npc(def, this.world, { zone: def.zone }); this.npcs.push(n); return n; });
   }
   // Put everyone where the phase says they should be.
   _placePeople() {
     const ph = this.phase, per = PERIODS[this.periodIndex];
     for (const t of Object.values(this.teachers)) t.group.visible = false;
-    for (const f of Object.values(this.family)) f.group.visible = false;
+    const atHome = this.world.currentRoom && this.world.currentRoom.type === "home";
+    for (const f of Object.values(this.family)) f.group.visible = !!atHome && f !== this.family.dadi;
     const inClass = ph === "school" && per && SUBJECTS[per.id];
     this.friends.forEach((f, i) => {
       f.group.visible = ph === "school" || ph === "over";
@@ -5263,7 +5396,7 @@ class Game {
     this._placePeople();
     const exam = this.isTermDay() ? L("TERM EXAM: ") : this.isFaDay() ? L("FA test: ") : "";
     if (per.id === "assembly") this.setObjective(L("Morning assembly: stand by the flag on the assembly ground."), this.world.assemblySpot.x, this.world.assemblySpot.z);
-    else if (per.id === "lunch") this.setObjective(L("Lunch break! Sit at the lunch benches by the canteen and eat your tiffin."), 63, -108);
+    else if (per.id === "lunch") { this.setObjective(L("Lunch break! Sit at the lunch benches by the canteen and eat your tiffin."), 63, -108); this._lunchLeft = 150; }
     else if (per.id === "games") this.setObjective(L("Games period: meet Coach Vikram on the football field."), 128, -142);
     else this.setObjective(L("{exam}{s} with {t}. Sit at your desk in {c} (Main Building).", { exam, s: SUBJECTS[per.id].name, t: SUBJECTS[per.id].teacher, c: this.profileLabel }), 100, -86);
     this.ui.refreshRank();
@@ -5284,7 +5417,9 @@ class Game {
     for (const st of BUS_STOPS) this.interactables.push({ pos: st.standAt, radius: 3.5, prompt: () => (this.world.busWaitingAt(st) ? L("Board the school bus") : L("Bus stop (wait for the bus)")), activate: () => this._boardBus(st) });
     this.interactables.push({ pos: this.world.assemblySpot, radius: 7, prompt: () => (this.phase === "school" && PERIODS[this.periodIndex].id === "assembly" ? L("Stand in line for the morning assembly") : L("The assembly ground")), activate: () => this._assembly() });
     for (const b of this.world.lunchBenches) this.interactables.push({ pos: b, radius: 2.4, prompt: () => (this.phase === "school" && PERIODS[this.periodIndex].id === "lunch" ? L("Sit and eat your tiffin") : L("A lunch bench")), activate: () => this._lunch() });
-    for (const npc of this.npcs) this.interactables.push({ pos: npc.position, radius: 2.6, visible: () => npc.group.visible, prompt: () => L("Talk to {n}", { n: npc.name }), activate: () => this._talk(npc) });
+    for (const npc of this.npcs) this.interactables.push({ pos: npc.position, radius: 2.6, npc, visible: () => npc.group.visible, prompt: () => L("Talk to {n}", { n: npc.name }), activate: () => this._talk(npc) });
+    // Papa's car, parked in our lane. In the morning he drops you at school; after school he picks you up at the gate.
+    this.interactables.push({ pos: this.car.group.position, radius: 3.0, visible: () => !this.car.driving, prompt: () => (this.phase === "morning" && !this.graduate ? L("Ride to school in Papa's car") : this.phase === "over" && this.car.atSchool ? L("Ride home in Papa's car") : L("Papa's car")), activate: () => this._carRide() });
   }
 
   // ---- Rooms ----
@@ -5337,8 +5472,8 @@ class Game {
     if (lessonNow) { const t = this.teachers[per.id]; t.group.visible = true; t._inRoom = true; t.station(cls.teacher, 0); }
     // The principal in her office.
     const pr = this.teachers.principal; pr.group.visible = true; pr._inRoom = true; pr.station({ x: room.x0 + 16.5, z: room.z0 - 2.5 }, Math.PI);
-    for (const f of this.friends) this.roomInteractables.push({ pos: f.position, radius: 2.2, prompt: () => L("Talk to {n}", { n: f.name }), activate: () => this._talkFriend(f) });
-    for (const t of Object.values(this.teachers)) this.roomInteractables.push({ pos: t.position, radius: 2.6, visible: () => t.group.visible, prompt: () => L("Talk to {n}", { n: t.name }), activate: () => this._talkTeacher(t) });
+    for (const f of this.friends) this.roomInteractables.push({ pos: f.position, radius: 2.2, npc: f, prompt: () => L("Talk to {n}", { n: f.name }), activate: () => this._talkFriend(f) });
+    for (const t of Object.values(this.teachers)) this.roomInteractables.push({ pos: t.position, radius: 2.6, npc: t, visible: () => t.group.visible, prompt: () => L("Talk to {n}", { n: t.name }), activate: () => this._talkTeacher(t) });
     this.roomInteractables.push({ pos: cls.desks[4], radius: 1.8, prompt: () => (lessonNow ? L("Sit at your desk ({s} with {t})", { s: SUBJECTS[per.id].name, t: SUBJECTS[per.id].teacher }) : L("Your desk")), activate: () => this._sitAtDesk(room, cls) });
     this.roomInteractables.push({ pos: { x: room.x0 - 2, z: room.z0 + 3.2 }, radius: 2, prompt: () => "Read the notice board", activate: () => this.dialogue.say("Notice Board", [`Day ${this.progress.day}. Timetable: ${PERIODS.map((p) => p.name).join(", ")}.`, this.isTermDay() ? "TERM EXAM TODAY. All the best!" : this.isFaDay() ? "FA tests today in every subject. 10 marks each." : `Next FA on day ${Math.ceil(this.progress.day / 5) * 5 === this.progress.day ? this.progress.day + 5 : Math.ceil(this.progress.day / 5) * 5}. Term exam on day ${this.progress.day <= 10 ? 10 : 20}.`, "Rules: walk in the corridor, no running; raise your hand; be kind."]) });
   }
@@ -5347,7 +5482,15 @@ class Game {
     maa.group.visible = true; maa.station({ x: room.x0 + 8, z: room.z0 - 4.5 }, Math.PI);
     papa.group.visible = true; papa.station({ x: room.x0 - 9, z: room.z0 - 3.5 }, 0);
     dadi.group.visible = false; // the knitting figure is part of the room
-    for (const f of [maa, papa]) this.roomInteractables.push({ pos: f.position, radius: 2.6, prompt: () => L("Talk to {n}", { n: f.name }), activate: () => this._talk(f) });
+    for (const f of [maa, papa]) this.roomInteractables.push({ pos: f.position, radius: 2.6, npc: f, prompt: () => L("Talk to {n}", { n: f.name }), activate: () => this._talk(f) });
+    // Dadi in her chair and little Gudiya on the floor are part of the room; they talk too.
+    const fig = room.figures || {};
+    this._dadiFig = fig.dadi ? { id: "dadi", name: "Dadi", def: FAMILY.dadi, group: fig.dadi.group, position: { x: room.x0 + fig.dadi.x, z: room.z0 + fig.dadi.z } } : null;
+    this._gudiyaFig = fig.gudiya ? { id: "gudiya", name: "Gudiya", def: { id: "gudiya", name: "Gudiya", pitch: 560 }, group: fig.gudiya.group, position: { x: room.x0 + fig.gudiya.x, z: room.z0 + fig.gudiya.z } } : null;
+    if (this._dadiFig) this.roomInteractables.push({ pos: this._dadiFig.position, radius: 2.4, npc: this._dadiFig, prompt: () => L("Talk to {n}", { n: "Dadi" }), activate: () => this._talkDadi() });
+    if (this._gudiyaFig) this.roomInteractables.push({ pos: this._gudiyaFig.position, radius: 2.2, npc: this._gudiyaFig, prompt: () => L("Talk to {n}", { n: "Gudiya" }), activate: () => this._talkGudiya() });
+    this.roomInteractables.push({ pos: { x: room.x0 - 8, z: room.z0 - 5 }, radius: 2.2, prompt: () => (this.phase === "night" ? L("Watch a movie with the family") : L("The TV")), activate: () => this._nightMovie() });
+    this.roomInteractables.push({ pos: { x: room.x0 - 9, z: room.z0 + 0.5 }, radius: 1.8, prompt: () => (this.phase === "night" ? L("Play ludo with Papa and Gudiya") : L("The ludo board")), activate: () => this._nightLudo() });
     this.roomInteractables.push({ pos: { x: room.x0 + 9, z: room.z0 + 2.4 }, radius: 1.8, prompt: () => (this.phase === "evening" && this.progress.homework.length ? L("Do your homework at the study desk") : L("Your study desk")), activate: () => this._homework() });
     this.roomInteractables.push({ pos: { x: room.x0 - 11, z: room.z0 + 5.6 }, radius: 2.2, prompt: () => (this.phase === "evening" ? L("Dinner with the family") : L("The dining table")), activate: () => this._dinner() });
     this.roomInteractables.push({ pos: { x: room.x0 + 6, z: room.z0 + 5.6 }, radius: 2.0, prompt: () => (this.phase === "night" ? L("Go to sleep") : L("Your bed")), activate: () => this._sleep() });
@@ -5443,16 +5586,17 @@ class Game {
     const papa = this.family.papa; setMood(papa.group, "happy", 5); setMood(this.family.maa.group, "happy", 5);
     this.player.eatT = 4;
     const marksToday = this._marksToday || 0;
-    this.dialogue.say("Papa", [L("Dal, rice, sabzi and hot rotis. So, {n} marks today?", { n: marksToday }), marksToday >= 12 ? "Excellent! Dadi, did you hear? Extra kheer for this one." : marksToday >= 6 ? "Good. Tomorrow raise your hand a little more." : "Hmm. Tomorrow, hand up in every class. I know you can.", "Eat well, then straight to bed. Growing children need sleep."], () => { this.addEnergy(60); this._startPhase("night"); }, { pitch: 320, speaker: papa.id });
+    this.dialogue.say("Papa", [L("Dal, rice, sabzi and hot rotis. So, {n} marks today?", { n: marksToday }), marksToday >= 12 ? "Excellent! Dadi, did you hear? Extra kheer for this one." : marksToday >= 6 ? "Good. Tomorrow raise your hand a little more." : "Hmm. Tomorrow, hand up in every class. I know you can.", "Eat well. Then a movie, ludo, or Dadi's story, and bed by ten."], () => { this.addEnergy(60); this._startPhase("night"); }, { pitch: 320, speaker: papa.id });
   }
   _sleep() {
+    if (this.phase === "night" && this.graduate && this.progress.shifts >= 10 && !this.progress.ended) return this._ending();
     if (this.phase !== "night") { showToast(this.phase === "evening" ? "Homework and dinner first!" : "Not bedtime yet.", 2200); return; }
     const pr = this.progress;
     const finish = () => {
       const card = openPanel(`<div class="job-title-row"><h2>🌙 Day ${pr.day} is over</h2></div><div class="job-goal">Marks today: <b>${this._marksToday || 0}</b> · Term total: <b>${this.termMarks()}</b> · Wallet: <b>${fmtMoney(pr.money)}</b> · Friendship: <b>${Object.values(pr.friendship).reduce((a, b) => a + b, 0)}</b></div><p class="job-brief">${pr.day + 1 === 5 || pr.day + 1 === 15 ? "Tomorrow is an FA day: 10 mark tests in every subject. Revise!" : pr.day + 1 === 10 || pr.day + 1 === 20 ? "Tomorrow is the TERM EXAM. Sleep early." : "Tomorrow is a normal school day."}</p><div class="btn-row"><button class="big-btn" id="sleep-ok">Sleep 😴</button></div>`);
       card.querySelector("#sleep-ok").addEventListener("click", () => {
         closePanel();
-        pr.day++; buildPeriods(pr.day); pr.tiffin = null; pr.homework = []; pr.period = 0; this._marksToday = 0; this._ateLunch = false; this._goalDone = false; this._gamesActive = false; this._shiftDone = false;
+        pr.day++; buildPeriods(pr.day); pr.tiffin = null; if (this._lateNight) { pr.energy = Math.max(20, pr.energy - 25); this._lateNight = false; } this._incidentDone = false; this.car.atSchool = false; this.car.group.position.set(this.car.home.x, 0, this.car.home.z); this.car.group.rotation.y = 0; pr.homework = []; pr.period = 0; this._marksToday = 0; this._ateLunch = false; this._goalDone = false; this._gamesActive = false; this._shiftDone = false;
         if (pr.day === 11) { for (const s of SUBJECT_IDS) pr.marks[s] = { cw: 0, hw: 0, fa: [], term: [] }; pr.games = []; showToast("Term 2 begins. Marks start fresh; Term 1 is on your report card.", 4000, "good"); }
         if (pr.day > 20) { pr.day = 1; for (const s of SUBJECT_IDS) pr.marks[s] = { cw: 0, hw: 0, fa: [], term: [] }; pr.games = []; showToast("A new school year! Reports are kept in your diary.", 4000, "good"); }
         saveProgress(this.profile, pr);
@@ -5471,10 +5615,10 @@ class Game {
     const grand = total + games, pct = grand / 210 * 100;
     const others = FRIENDS.map((f) => ({ name: f.name, total: Math.round(SUBJECT_IDS.reduce((n, s) => n + f.skill[s] * 50 * (0.85 + Math.random() * 0.2), 0) + 6) }));
     const rank = 1 + others.filter((o) => o.total > grand).length;
-    const report = { term, total: grand, grade: gradeFor(pct), rank, subjects };
+    const report = { term, total: grand, grade: gradeFor(pct), rank, subjects, conduct: pr.conduct || 0 };
     pr.reports.push(report); saveProgress(this.profile, pr);
     Audio.playSuccess();
-    const card = openPanel(`<div class="job-title-row"><h2>📜 Report Card · Term ${term}</h2></div><p class="job-brief">Sunrise Public School, Suryanagar. ${this.profileLabel}. Total <b>${grand} / 210</b>, grade <b>${report.grade}</b>, rank <b>${rank} of 7</b>.</p>
+    const card = openPanel(`<div class="job-title-row"><h2>📜 Report Card · Term ${term}</h2></div><p class="job-brief">Sunrise Public School, Suryanagar. ${this.profileLabel}. Total <b>${grand} / 210</b>, grade <b>${report.grade}</b>, rank <b>${rank} of 7</b>. Conduct: <b>${(pr.conduct || 0) >= 4 ? "A" : (pr.conduct || 0) >= 0 ? "B" : "C"}</b>${(pr.conduct || 0) < 0 ? " (fighting noted)" : ""}.</p>
       <table class="report"><tr><th>Subject</th><th>Class + HW /20</th><th>Best FA /10</th><th>Term /20</th><th>Total /50</th><th>Grade</th></tr>${SUBJECT_IDS.map((s) => `<tr><td>${SUBJECTS[s].icon} ${SUBJECTS[s].name}</td><td>${subjects[s].cw}</td><td>${subjects[s].fa}</td><td>${subjects[s].term}</td><td>${subjects[s].total}</td><td class="g">${subjects[s].grade}</td></tr>`).join("")}<tr><td>⚽ Games</td><td colspan="3"></td><td>${games} /10</td><td></td></tr></table>
       <div class="job-goal">Class list: ${[...others, { name: "You", total: grand }].sort((a, b) => b.total - a.total).map((o, i) => `${i + 1}. ${o.name} ${o.total}`).join(" · ")}</div>
       <div class="solved-banner">Principal Mrs. Verma: "${rank === 1 ? "Class topper! We are proud of you." : rank <= 3 ? "Top three. Excellent effort." : pct >= 50 ? "A steady term. Push a little harder next term." : "Marks can grow. Raise your hand, do the homework, and see."}"<div class="btn-row"><button class="big-btn" id="rc-ok">Show Papa and Maa</button></div></div>`);
@@ -5562,6 +5706,171 @@ class Game {
     show();
   }
 
+
+  // ---- Family who talk: Dadi, Gudiya ----
+  _talkDadi() {
+    const d = this._dadiFig; if (!d) return; setMood(d.group, "happy", 4); this._engagedNpc = d;
+    const opts = { pitch: 380, speaker: "dadi" };
+    if (this.phase === "morning") return this.dialogue.say("Dadi", ["Jeete raho, beta. Take my blessing before school.", "Eat your tiffin fully. Empty box, full brain."], () => { this._engagedNpc = null; this.addEnergy(5); }, opts);
+    if (this.phase === "night") return this._nightStory();
+    const st = DADI_STORIES[this.progress.day % DADI_STORIES.length];
+    this.dialogue.say("Dadi", [`Come, sit. A quick one from my puzzle book.`, st.lesson], () => {
+      runStepQuiz({ profile: this.profile, level: 1, world: this.world, audio: Audio, countAttempt: () => countAttempt(this.profile, this.progress, "dadi"), onSolve: () => { this.addMoney(5, "Dadi's prize"); setMood(d.group, "laugh", 4); this._engagedNpc = null; } },
+        { title: "Dadi's puzzle", intro: `Dadi: "${st.text}"`, goal: "Answer Dadi. ₹5 from her tin if you are right.", steps: [{ q: st.lesson, choices: st.ch, answer: st.a, hint: "Think about the story." }], doneBtn: "Thank you, Dadi!", doneHtml: `<b>Dadi:</b> "Sharp as a needle. Here, ₹5. Don't tell Maa."`, onLeave: () => { this._engagedNpc = null; } });
+    }, opts);
+  }
+  _talkGudiya() {
+    const gd = this._gudiyaFig; if (!gd) return; setMood(gd.group, "happy", 4); this._engagedNpc = gd;
+    const opts = { pitch: 560, speaker: "gudiya" };
+    if (this.phase === "morning") return this.dialogue.say("Gudiya", ["Bhaiya! Bring me a toffee from school. Pinky promise?"], () => { this._engagedNpc = null; }, opts);
+    if (this.phase === "night") return this._nightLudo();
+    const n = 2 + Math.floor(Math.random() * 6), k = 1 + Math.floor(Math.random() * 3);
+    this.dialogue.say("Gudiya", [`Teach me counting! I have ${n} blocks and Maa gives me ${k} more.`], () => {
+      runStepQuiz({ profile: this.profile, level: 1, world: this.world, audio: Audio, countAttempt: () => countAttempt(this.profile, this.progress, "gudiya"), onSolve: () => { this.addFriendship("gudiya", 1, "taught Gudiya"); setMood(gd.group, "laugh", 4); this._engagedNpc = null; } },
+        { title: "Teach Gudiya", intro: "Gudiya lines up her blocks on the floor.", goal: "Show her the answer.", steps: [{ q: `${n} blocks + ${k} blocks = ?`, answer: n + k, hint: "Count them one by one." }], doneBtn: "Good girl!", doneHtml: `<b>Gudiya:</b> "${n + k}! I am clever like Bhaiya!"`, onLeave: () => { this._engagedNpc = null; } });
+    }, opts);
+  }
+
+  // ---- The chat box ----
+  _npcKind(npc) {
+    const id = npc && npc.def ? npc.def.id : ""; if (["maa", "papa", "dadi", "gudiya"].includes(id)) return id;
+    if (npc && npc.def && npc.def.child) return "friend"; if (id.startsWith("t_") || (npc && npc.def && TEACHERS[id])) return "teacher"; return "other";
+  }
+  _chatFromDialogue() {
+    let npc = this._engagedNpc;
+    if (!npc && this.dialogue.speaker) npc = this.npcs.find((n) => n.id === this.dialogue.speaker) || (this.dialogue.speaker === "dadi" ? this._dadiFig : this.dialogue.speaker === "gudiya" ? this._gudiyaFig : null);
+    if (!npc) { const near = this._nearestInteractable(); npc = near && near.npc; }
+    if (!npc) { const nm = this.dialogue.name; npc = this.npcs.find((n) => n.name === nm) || (nm === "Dadi" ? this._dadiFig : nm === "Gudiya" ? this._gudiyaFig : null); }
+    if (!npc) return;
+    this.dialogue._stopTyping(); this.dialogue.index = this.dialogue.lines.length; this.dialogue.close(); const f = this.dialogue.onDone; this.dialogue.onDone = null; if (f) f();
+    this._chat(npc);
+  }
+  _chat(npc) {
+    const kind = this._npcKind(npc), name = npc.name, pitch = (npc.def && npc.def.pitch) || 400;
+    this._engagedNpc = npc; setMood(npc.group, "happy", 3);
+    const card = openPanel(`<div class="job-title-row"><h2>💬 ${L("Talk with {n}", { n: name })}</h2><button class="ghost-btn" id="chat-close">${L("Okay")}</button></div><p class="job-brief">${L("Type what you want to say. {n} answers.", { n: name })}</p><div class="chat-log" id="chat-log"></div><div class="chat-row"><input id="chat-in" type="text" maxlength="120" placeholder="${L("Say something…")}" autocomplete="off"><button class="big-btn" id="chat-send">${L("Say")}</button></div>`);
+    const log = card.querySelector("#chat-log"), input = card.querySelector("#chat-in");
+    const add = (cls, who, text) => { const div = document.createElement("div"); div.className = cls; div.textContent = `${who}: ${text}`; log.appendChild(div); log.scrollTop = 1e6; };
+    const send = () => { const t = (input.value || "").trim(); if (!t) return; input.value = ""; add("me", L("You"), t); const r = L(chatReply(kind, t)); this.progress.chats = (this.progress.chats || 0) + 1; setTimeout(() => { add("them", name, r); speakLine(r, pitch); setMood(npc.group, /!|ha/i.test(r) ? "laugh" : "happy", 3); if (kind === "friend" && npc.def) this.addFriendship(npc.def.id, this.progress.chats % 3 === 0 ? 1 : 0); }, 350); };
+    card.querySelector("#chat-send").addEventListener("click", send); input.addEventListener("keydown", (e) => { if (e.key === "Enter") send(); e.stopPropagation(); });
+    card.querySelector("#chat-close").addEventListener("click", () => { closePanel(); this._engagedNpc = null; });
+    setTimeout(() => input.focus(), 60);
+  }
+
+  // ---- Lunch is short: two and a half minutes, then the bell ----
+  _tickLunch(dt) {
+    const per = PERIODS[this.periodIndex];
+    if (!(this.phase === "school" && per && per.id === "lunch") || this._lunchLeft == null) return;
+    this._lunchLeft -= dt;
+    const s = Math.max(0, Math.ceil(this._lunchLeft));
+    if (s !== this._lunchShown) { this._lunchShown = s; const el = document.getElementById("star-text"); if (el) el.textContent = `${this.clockText()} · ${L("Lunch ends in")} ${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`; if (s === 30) showToast(L("30 seconds of lunch left. Eat up!"), 2500); }
+    if (this._lunchLeft <= 0) { this._lunchLeft = null; if (!this._ateLunch) { this.addEnergy(-10); showToast(L("The bell went and you did not eat. Hungry till evening."), 3200, "bad"); this._ateLunch = true; } this._endPeriod(); }
+  }
+
+  // ---- Papa's car ----
+  _carRide() {
+    const c = this.car;
+    if (this.phase === "morning" && !this.graduate) {
+      if (!this.progress.tiffin) { showToast(L("Papa: Tiffin first! Ask Maa."), 2400); return; }
+      this._driveCar([[c.home.x, c.home.z], [c.home.x, 44], [-44, 44], [-44, 4], [c.gate.x, c.gate.z]], () => { c.atSchool = true; this.player.group.position.set(c.gate.x, 0, c.gate.z + 4); this._startPhase("school"); showToast(L("Papa: Study well. I will pick you up after school."), 3200, "good"); });
+    } else if (this.phase === "over" && c.atSchool) {
+      this._driveCar([[c.gate.x, c.gate.z], [-44, 4], [-44, 44], [c.home.x, 44], [c.home.x, c.home.z]], () => { c.atSchool = false; this.player.group.position.set(HOME.door.x, 0, HOME.door.z + 3); this._enterRoom(this.world.doors.find((d) => d.label === "Our Home")); this._startPhase("evening"); });
+    } else showToast(L("Papa's car. He drives you to school in the morning and home after school."), 2600);
+  }
+  _driveCar(path, onArrive) {
+    const c = this.car; if (this.player.riding) this.player.dismount();
+    c.driving = true; c.mover = new PathMover(c.group, path, 12, { L: 2.2, W: 1.0, city: true }); c.onArrive = onArrive;
+    this.player.mount({ group: c.group, speed: 0, kind: "car", label: "Papa's car", controlled: false });
+    this._carPapa.visible = true; c.group.add(this._carPapa); this._carPapa.position.set(0.45, 0.08, 0.1); sitPose(this._carPapa, "car");
+    playHorn(); showToast(L("🚗 Seat belt on. Papa drives."), 2600, "good"); setMood(this.family.papa.group, "happy", 4);
+  }
+  _tickCar(dt) {
+    const c = this.car; if (!c.driving) return;
+    c.mover.update(dt); engineTick("auto", 25, dt);
+    if (c.mover.i >= c.mover.points.length - 1) {
+      c.driving = false; c.group.remove(this._carPapa); this._carPapa.visible = false;
+      this.world.scene.add(this.player.group); this.player.riding = null; standPose(this.player.group);
+      const f = c.onArrive; c.onArrive = null; if (f) f();
+    }
+  }
+
+  // ---- Nights: movie, ludo, story, or sleep ----
+  _nightGate() { if (this.phase !== "night") { showToast(L("That is for after dinner."), 2200); return false; } return true; }
+  _nightMovie() {
+    if (!this._nightGate()) return;
+    const mv = MOVIES[(this.progress.day + this.progress.nights) % MOVIES.length]; this._lateNight = true; this.progress.nights++;
+    for (const f of [this.family.maa, this.family.papa]) setMood(f.group, "laugh", 6); if (this._gudiyaFig) setMood(this._gudiyaFig.group, "laugh", 6);
+    this.dialogue.say("Papa", [L("Everyone on the sofa! Tonight: \"{t}\".", { t: mv.title }), mv.story, L("Gudiya is asleep on Maa's lap. Dadi is humming. Now, a question before bed.")], () => {
+      runStepQuiz({ profile: this.profile, level: 1, world: this.world, audio: Audio, countAttempt: () => countAttempt(this.profile, this.progress, "movie"), onSolve: () => { this.addFriendship("family", 2, "movie night"); this.diary(`Movie night: ${mv.title}.`); } },
+        { title: `🎬 ${mv.title}`, intro: mv.story, goal: L("Were you watching? One question."), steps: [{ q: mv.q, choices: mv.ch, answer: mv.a, hint: "Think about the story." }], doneBtn: L("Good night"), doneHtml: `<b>Maa:</b> "${L("Late night! Straight to bed now. You will be sleepy tomorrow.")}"`, onLeave: () => { this.setObjective(L("Time for bed. Press E at your bed."), null); } });
+    }, { pitch: 320, speaker: this.family.papa.id });
+  }
+  _nightLudo() {
+    if (!this._nightGate()) return;
+    this._lateNight = true; this.progress.nights++;
+    const roll = () => 1 + Math.floor(Math.random() * 6);
+    const rounds = 3; let me = 0, papa = 0, gud = 0, r = 0;
+    const card = openPanel(`<div class="job-title-row"><h2>🎲 ${L("Ludo with Papa and Gudiya")}</h2></div><p class="job-brief">${L("Three rounds. Highest dice moves the token. Add up your rolls; the biggest total wins ₹10 from Papa.")}</p><div class="job-goal" id="ludo-board">${L("Round")} 1 / ${rounds}</div><div class="btn-row"><button class="big-btn" id="ludo-roll">${L("Roll the dice")}</button></div><div id="ludo-result"></div>`);
+    const board = card.querySelector("#ludo-board"), res = card.querySelector("#ludo-result"), btn = card.querySelector("#ludo-roll");
+    btn.addEventListener("click", () => {
+      const a = roll(), b = roll(), c = roll(); me += a; papa += b; gud += c; r++; Audio.playPick();
+      board.textContent = `${L("Round")} ${Math.min(r + 1, rounds)} / ${rounds} · ${L("You")} ${a} (${me}) · Papa ${b} (${papa}) · Gudiya ${c} (${gud})`;
+      if (r >= rounds) {
+        btn.hidden = true; const win = me >= papa && me >= gud, gwin = gud > me && gud >= papa;
+        if (win) { this.addMoney(10, "ludo"); playSuccess(); }
+        res.innerHTML = `<div class="solved-banner"><b>${win ? L("You win!") : gwin ? L("Gudiya wins!") : L("Papa wins!")}</b> ${win ? L("Papa: 'Ten rupees, and bragging rights.'") : gwin ? L("Gudiya: 'I am the champion! Say it!'") : L("Papa: 'Old is gold. Tomorrow again?'")} ${L("Maa: 'Enough! It is late. Bed, everyone.'")}</div><div class="btn-row"><button class="big-btn" id="ludo-ok">${L("Okay")}</button></div>`;
+        res.querySelector("#ludo-ok").addEventListener("click", () => { closePanel(); this.addFriendship("family", 2, "ludo night"); this.diary(`Ludo night: ${win ? "won" : "lost"}.`); this.setObjective(L("Time for bed. Press E at your bed."), null); });
+      }
+    });
+  }
+  _nightStory() {
+    if (!this._nightGate()) return;
+    const st = DADI_STORIES[(this.progress.day + this.progress.nights) % DADI_STORIES.length]; this.progress.nights++;
+    const d = this._dadiFig; if (d) setMood(d.group, "happy", 8);
+    this.dialogue.say("Dadi", [L("Come under the blanket. Tonight: \"{t}\".", { t: st.title }), st.text], () => {
+      runStepQuiz({ profile: this.profile, level: 1, world: this.world, audio: Audio, countAttempt: () => countAttempt(this.profile, this.progress, "story"), onSolve: () => { this.addFriendship("family", 2, "Dadi's story"); this.diary(`Dadi's story: ${st.title}.`); } },
+        { title: `📖 ${st.title}`, intro: st.text, goal: L("Dadi asks one question."), steps: [{ q: st.lesson, choices: st.ch, answer: st.a, hint: "Think about the story." }], doneBtn: L("Good night, Dadi"), doneHtml: `<b>Dadi:</b> "${L("Now sleep. Dreams are free.")}"`, onLeave: () => { this._engagedNpc = null; this.setObjective(L("Time for bed. Press E at your bed."), null); } });
+    }, { pitch: 380, speaker: "dadi" });
+  }
+
+  // ---- School incidents ----
+  _incident(then) {
+    const pr = this.progress;
+    const bully = this.friends[this.friends.length - 1], friend = this.friends[1], monitor = this.friends[0];
+    const inc = INCIDENTS[Math.floor(Math.random() * INCIDENTS.length)];
+    const fill = (s) => s.split("{b}").join(bully.name).split("{f}").join(friend.name).split("{m}").join(monitor.name);
+    setMood(bully.group, "angry", 8); setMood(friend.group, "sad", 8);
+    const card = openPanel(`<div class="job-title-row"><h2>⚡ ${L("Trouble in class")}</h2></div><p class="job-brief">${L(fill(inc.text))}</p><p class="job-goal">${L("The teacher is not here yet. {m} is the class monitor this week. What do you do?", { m: monitor.name })}</p><div class="choice-bank">${INCIDENT_CHOICES.map((c) => `<button class="choice-btn" data-id="${c.id}">${L(fill(c.label))}</button>`).join("")}</div><div id="inc-result"></div>`);
+    card.querySelectorAll(".choice-btn").forEach((b) => b.addEventListener("click", () => {
+      const ch = INCIDENT_CHOICES.find((c) => c.id === b.dataset.id);
+      pr.conduct = (pr.conduct || 0) + ch.conduct; pr.incidents = (pr.incidents || 0) + 1;
+      if (ch.marks) { const per = this._effectivePeriod(); if (per && SUBJECTS[per.id]) pr.marks[per.id].cw = Math.max(0, pr.marks[per.id].cw + ch.marks); }
+      if (ch.friendship) this.addFriendship(friend.def.id, ch.friendship, "incident");
+      if (ch.id === "punch") { setMood(bully.group, "sad", 6); Audio.playRetry(); this.player.tired = true; } else if (ch.id === "laugh") { setMood(friend.group, "sad", 10); } else { setMood(bully.group, "shy", 6); setMood(friend.group, "happy", 6); setMood(monitor.group, "stern", 6); playSuccess(); }
+      saveProgress(this.profile, pr); this.diary(`Incident: ${inc.id}, you chose "${ch.id}". Conduct ${pr.conduct}.`);
+      card.querySelector(".choice-bank").innerHTML = "";
+      card.querySelector("#inc-result").innerHTML = `<div class="solved-banner">${L(fill(ch.result))}</div><div class="job-goal">${L("Conduct")}: ${pr.conduct >= 0 ? "+" : ""}${pr.conduct} · ${ch.id === "firm" ? L("Papa's rule: stand tall, speak firmly, walk away.") : ch.id === "monitor" ? L("Telling the monitor or teacher is not tattling. It is the rule.") : ch.id === "punch" ? L("Hitting back made you the one in the principal's office.") : L("Laughing along made a friend feel small.")}</div><div class="btn-row"><button class="big-btn" id="inc-ok">${L("Okay")}</button></div>`;
+      card.querySelector("#inc-ok").addEventListener("click", () => { closePanel(); then(); });
+    }));
+  }
+
+  // ---- The ending ----
+  _ending() {
+    const pr = this.progress; pr.ended = true; saveProgress(this.profile, pr);
+    let i = 0;
+    const card = openPanel(`<div class="job-title-row"><h2>🌙 ${L("The last evening")}</h2></div><div class="flash-card" id="flash"></div><div class="btn-row"><button class="big-btn" id="flash-next">${L("Continue")}</button></div>`);
+    const box = card.querySelector("#flash"), btn = card.querySelector("#flash-next");
+    const show = () => {
+      if (i < FLASHBACK.length) { const [ic, txt] = FLASHBACK[i]; box.innerHTML = `<div class="big">${ic}</div><div>${L(txt)}</div>`; speakLine(L(txt), 360); i++; return; }
+      const money = fmtMoney(pr.money), reports = pr.reports.length, friends = Object.values(pr.friendship).reduce((a, b) => a + b, 0);
+      box.innerHTML = `<div class="big">🏡</div><div><b>${L("The End")}</b></div><div>${L("Ten shifts of honest work. {r} report cards. Friendship {f}. Wallet {m}.", { r: reports, f: friends, m: money })}</div><div>${L("Maa says: 'You grew up well.' Papa says nothing, but his eyes are wet. Dadi pats the chair beside her. You sit. The colony lights come on, one by one.")}</div>`;
+      speakLine(L("The end. You grew up well."), 360);
+      btn.textContent = L("Play again from Nursery"); btn.onclick = () => { try { localStorage.setItem("school-days.profile", "nursery"); localStorage.removeItem("school-days.v1.graduate"); } catch (e) {} location.reload(); };
+      for (const f of Object.values(this.family)) setMood(f.group, "happy", 30);
+    };
+    btn.addEventListener("click", show); show();
+  }
+
   // ---- The bus ----
   _boardBus(stop) {
     if (!this.world.busWaitingAt(stop)) { Audio.playRetry(); showToast("The bus is not here yet. Watch the road.", 2200); return; }
@@ -5616,6 +5925,7 @@ class Game {
     if (this.phase === "school" && per && per.id === "lunch" && this._ateLunch) { this.periodIndex++; this.progress.period = this.periodIndex; saveProgress(this.profile, this.progress); per = PERIODS[this.periodIndex]; this._placePeople(); this.friends.forEach((f, i) => { const d = cls.desks[i < 4 ? i : i + 1]; f.group.visible = true; f.station(d, Math.PI); }); playBell(); }
     if (!(this.phase === "school" && per && SUBJECTS[per.id])) { showToast(per && per.id === "lunch" ? "Eat your lunch at the benches first." : "No class right now. Check the objective at the top.", 2200); return; }
     this.player.group.position.set(cls.desks[4].x, 0, cls.desks[4].z); this.player.group.rotation.y = Math.PI;
+    if (!this._incidentDone && !this.isTermDay() && !this.isFaDay() && Math.random() < 0.3) { this._incidentDone = true; this._incident(() => this._sitAtDesk(room, cls)); return; }
     const subject = per.id, t = this.teachers[subject];
     t.group.visible = true; t._inRoom = true; t.station(cls.teacher, 0);
     if (this.isTermDay()) return this._examPeriod(subject, t, "term");
@@ -5765,6 +6075,7 @@ class Game {
     // Walking to school on foot: entering the campus starts the school day.
     if (!this.graduate && this.phase === "morning" && !this.world.currentRoom && (!this.player.riding || this.player.riding.kind === "bike") && pp.x > SCHOOL.x1 && pp.x < SCHOOL.x2 && pp.z > SCHOOL.z1 && pp.z < SCHOOL.z2) this._startPhase("school");
     if (this.phase === "over" && this.world.currentRoom && this.world.currentRoom.type === "home") this._startPhase("evening");
+    this._tickLunch(dt); this._tickCar(dt);
     if (!this.player.riding && this.player.speedKmh > 1 && !this.world.currentRoom) { this.progress.energy = Math.max(0, this.progress.energy - dt / (this.input.running ? 8 : 16)); if (Math.floor(this.progress.energy) !== this._energyShown) { this._energyShown = Math.floor(this.progress.energy); this.ui.refreshRank(); } }
     this.player.tired = this.progress.energy < 25;
     this._updateGear(dt, elapsed, !blocked && this.input.usePressed());

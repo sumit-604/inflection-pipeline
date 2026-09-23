@@ -50,6 +50,26 @@ Choose one, follow the compass to its place, and press E at the door.
 3. Hired: work one shift a day (five tasks). Pay is the salary times the
    tasks done right. A graduate goes to work instead of school.
 
+## Family life
+
+- Twelve neighbours, vendors and children walk the colony lanes, the main
+  road and the market street. Talk to any of them.
+- At home everyone talks: Maa, Papa, Dadi in her chair (blessings, puzzle
+  book, bedtime stories) and little Gudiya (teach her to count). Maa and Papa
+  stay in the room through every phase.
+- Chat box: press T near anyone, or the speech-bubble button in a dialogue,
+  and type what you want to say. They answer in character.
+- Papa's car is parked in the lane. He drives you to school in the morning
+  and home after the last bell.
+- Nights after dinner: a movie on the TV, ludo with Papa and Gudiya, or
+  Dadi's story. A late night costs energy the next morning.
+- Lunch lasts two and a half minutes on the clock. Eat before the bell.
+- Sometimes there is trouble in class before the teacher arrives: teasing,
+  a shove, a snatched notebook. Speak firmly, tell the class monitor, punch
+  back, or laugh along. Conduct goes on the report card.
+- The ending: a graduate who has worked ten shifts goes to bed one last
+  time and the game closes with a flashback from Nursery to now.
+
 ## Files
 
 - `index.html` the whole game. Open it in a browser.

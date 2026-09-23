@@ -565,6 +565,10 @@ kbd { display: inline-block; border: 1px solid #d8cdb2; border-bottom-width: 3px
 #error-bar { position: absolute; left: 50%; top: 56px; transform: translateX(-50%); max-width: 92vw; background: #c1121f; color: #fff; padding: 8px 14px; border-radius: 12px; font-size: 13px; z-index: 60; box-shadow: 0 3px 10px rgba(0,0,0,0.3); }
 #error-bar[hidden] { display: none; }
 
+#phone-btn { position: absolute; top: 12px; right: 228px; width: 46px; height: 46px; border: none; border-radius: 12px; background: rgba(255,253,246,0.92); font-size: 22px; cursor: pointer; box-shadow: 0 2px 6px rgba(0,0,0,0.15); }
+#map-search { flex: 1 1 100%; font-size: 15px; padding: 8px 12px; border: 2px solid #e2c7a8; border-radius: 12px; font-family: inherit; }
+#map-search-result { flex: 1 1 100%; margin: 0 0 4px; }
+
 </style>
   <canvas id="game-canvas"></canvas>
 
@@ -610,11 +614,12 @@ kbd { display: inline-block; border: 1px solid #d8cdb2; border-bottom-width: 3px
     <button id="notebook-btn" title="Diary and marks (N)">📓</button>
     <button id="sound-btn" title="Sound on / off">🔊</button>
     <button id="bag-btn" title="Backpack (B)">🎒</button>
+    <button id="phone-btn" title="Mobile (M)">📱</button>
     <button id="controls-btn" title="Controls (H)">⌨️</button>
     <canvas id="minimap" width="160" height="160"></canvas>
     <div id="interact-prompt" hidden></div>
     <div id="controls-hint" hidden>
-      <span><b>W A S D</b> to walk</span><span><b>← →</b> or drag to look</span><span><b>E</b> to talk / sit / board</span><span><b>B</b> backpack</span><span><b>F</b> use what you hold</span><span><b>M</b> map</span><span><b>N</b> diary</span><span><b>H</b> all controls</span>
+      <span><b>W A S D</b> to walk</span><span><b>← →</b> or drag to look</span><span><b>E</b> to talk / sit / board</span><span><b>B</b> backpack</span><span><b>F</b> use what you hold</span><span><b>M</b> mobile</span><span><b>G</b> map</span><span><b>N</b> diary</span><span><b>H</b> all controls</span>
     </div>
     <div id="dialogue" hidden><div id="dialogue-name"></div><div id="dialogue-text"></div><div class="dialogue-btns"><button id="dialogue-chat" title="Say something (T)">💬</button><button id="dialogue-next">Continue</button></div></div>
     <div id="touch-controls" hidden><div id="joystick"><div id="joystick-knob"></div></div><button id="touch-interact">E</button><button id="touch-run" title="Run">🏃</button><button id="touch-use" title="Use (F)">✋</button></div>
@@ -632,6 +637,7 @@ kbd { display: inline-block; border: 1px solid #d8cdb2; border-bottom-width: 3px
     <div class="overlay-card bigmap-card">
       <div class="overlay-header"><h2>Map of Suryanagar</h2><button class="overlay-close" data-close="bigmap">✕</button></div>
       <div class="find-row">
+        <input id="map-search" type="text" placeholder="Type a place… (RTO, hospital, stadium)" autocomplete="off"><span id="map-search-result" class="tiny-note"></span>
         <span class="section-label" style="margin:0">Find:</span>
         <button class="find-btn" data-find="objective">🎯 Where to go now</button>
         <button class="find-btn" data-find="home">🏠 Home</button>
@@ -652,7 +658,7 @@ kbd { display: inline-block; border: 1px solid #d8cdb2; border-bottom-width: 3px
         <select id="map-goto" class="find-btn"></select>
       </div>
       <canvas id="bigmap-canvas" width="900" height="900"></canvas>
-      <p class="tiny-note">Scroll or use ➕ ➖ to zoom, drag to move, tap a spot to plant a flag. The white arrow is you. Press M to open or close.</p>
+      <p class="tiny-note">Scroll or use ➕ ➖ to zoom, drag to move, tap a spot to plant a flag. The white arrow is you. Press G to open or close.</p>
     </div>
   </div>
 
@@ -668,7 +674,8 @@ kbd { display: inline-block; border: 1px solid #d8cdb2; border-bottom-width: 3px
         <tr><td><kbd>B</kbd></td><td>Backpack: eat, wear, hold gear, read.</td></tr>
         <tr><td><kbd>F</kbd></td><td>Use what you hold: kick the football, swing the bat, skip, fly the kite.</td></tr>
         <tr><td><kbd>N</kbd></td><td>Diary: timetable, marks, report cards, friends.</td></tr>
-        <tr><td><kbd>M</kbd></td><td>Map with zoom, and a Find button for where to go now.</td></tr>
+        <tr><td><kbd>G</kbd></td><td>Map with zoom, a search box, and a Find button for where to go now.</td></tr>
+        <tr><td><kbd>M</kbd></td><td>Mobile phone: messages and calls (from age 14).</td></tr>
         <tr><td><kbd>H</kbd></td><td>This board.</td></tr>
         <tr><td><kbd>Enter</kbd></td><td>Check an answer.</td></tr>
         <tr><td><kbd>Esc</kbd></td><td>Close a panel.</td></tr>
@@ -5723,6 +5730,7 @@ class BigMap {
   _places() {
     const list = this.world.doors.filter((d) => !["House", "Apartments"].includes(d.label)).map((d) => ({ name: d.label, x: d.x, z: d.z }));
     for (const sp of this.world.shopSpots || []) list.push({ name: sp.name, x: sp.x, z: sp.z });
+    { const ps = this.world.doors.find((d) => d.label === "Police Station"); if (ps) list.push({ name: "RTO Office (inside the Police Station)", x: ps.x, z: ps.z }); const S = this.world.stadium; if (S) list.push({ name: "Stadium Ground (cricket pitch, goal)", x: S.batX, z: S.z }); list.push({ name: "City Park (swings, fountain)", x: 128, z: 70 }, { name: "Shanti Nagar Park", x: -90, z: 110 }, { name: "Our Home (Kaushik family)", x: HOME.door.x, z: HOME.door.z + 2 }, { name: "New Town", x: 110, z: 160 }, { name: "Old Town", x: -110, z: -80 }); }
     list.push(...[["School Gate", SCHOOL.gate.x, SCHOOL.gate.z], ["Assembly Ground", 100, -50], ["Flag Pole", 100, -60], ["Lunch Benches", 63, -108], ["Playground", 50, -145], ["Football Field", 138, -145], ["Basketball Court", 150, -50], ["Cycle Stand", 43, -30], ["Bus Stop: Shanti Nagar", -100, 50], ["Bus Stop: School Gate", 108, 10], ["Shanti Nagar Park", -90, 110], ["City Park", 140, 60]].map(([name, x, z]) => ({ name, x, z, landmark: true })));
     // One entry per name (the first), sorted A to Z.
     const seen = new Set();
@@ -5747,6 +5755,9 @@ class BigMap {
     document.getElementById("map-zoom-in").addEventListener("click", () => zoomBy(1.5));
     document.getElementById("map-zoom-out").addEventListener("click", () => zoomBy(1 / 1.5));
     document.getElementById("map-me").addEventListener("click", () => { const p = this.game.player.position; this.cx = p.x; this.cz = p.z; if (this.zoom < 3) this.zoom = 3; this._clampCentre(); this.draw(); });
+    const search = document.getElementById("map-search"), res = document.getElementById("map-search-result");
+    const doSearch = (go) => { const q = (search.value || "").trim().toLowerCase(); if (!q) { res.textContent = ""; return; } const hits = this.places.filter((p) => p.name.toLowerCase().includes(q)); if (!hits.length) { res.textContent = `No place called "${search.value}". Try: hospital, stadium, RTO, bank, park, school.`; return; } const p = hits[0]; const me = this.game.player.position, dx = p.x - me.x, dz = p.z - me.z, dist = Math.round(Math.hypot(dx, dz)); const dir = Math.abs(dx) > Math.abs(dz) * 2.4 ? (dx > 0 ? "east" : "west") : Math.abs(dz) > Math.abs(dx) * 2.4 ? (dz > 0 ? "south" : "north") : (dz > 0 ? "south" : "north") + "-" + (dx > 0 ? "east" : "west"); res.textContent = `${p.name}: ${dist} m ${dir}${hits.length > 1 ? ` (+${hits.length - 1} more)` : ""}. ${go ? "Compass set. Follow the arrow." : "Press Enter to set the compass."}`; if (go) { this.setWaypoint(p.x, p.z, p.name); this.cx = p.x; this.cz = p.z; if (this.zoom < 3) this.zoom = 3; this._clampCentre(); this.draw(); } };
+    if (search) { search.addEventListener("input", () => doSearch(false)); search.addEventListener("keydown", (e) => { e.stopPropagation(); if (e.key === "Enter") doSearch(true); }); }
     document.getElementById("map-goto").addEventListener("change", (e) => { const p = this.places[Number(e.target.value)]; if (p) { this.setWaypoint(p.x, p.z, p.name); this.cx = p.x; this.cz = p.z; if (this.zoom < 3) this.zoom = 3; this._clampCentre(); this.draw(); } e.target.value = ""; });
     this.canvas.addEventListener("wheel", (e) => { e.preventDefault(); const r = this.canvas.getBoundingClientRect(); const px = ((e.clientX - r.left) * this.canvas.width) / r.width, pz = ((e.clientY - r.top) * this.canvas.height) / r.height; zoomBy(e.deltaY < 0 ? 1.25 : 0.8, this.wx(px), this.wz(pz)); }, { passive: false });
     // Drag to pan; a click without a drag plants a flag.
@@ -5918,6 +5929,11 @@ class Game {
     const car = makeRideCar(0xbfc5cc); car.position.set(HOME.x + 4, 0, HOME.z - 10); car.rotation.y = 0; this.world.scene.add(car);
     this.car = { group: car, kind: "car", label: "Papa's car", controlled: false, speed: 0, driving: false, atSchool: false, home: { x: HOME.x + 4, z: HOME.z - 10 }, gate: { x: 96, z: 4 } };
     this._carPapa = makeHuman({ shirt: 0x3f6f9f, trousers: 0x3b3f4a, hair: 0x1d1410 }); this._carPapa.visible = false; this.world.scene.add(this._carPapa);
+    // Maa's scooty and Papa's motorbike, parked beside the car. Scooty from 16, motorbike from 18, both need the licence.
+    const scooty = makeScooty(0x2a9d8f); scooty.position.set(HOME.x + 8, 0, HOME.z - 10); scooty.rotation.y = 0; this.world.scene.add(scooty);
+    this.scooty = { group: scooty, speed: 11, kind: "scooty", label: L("Maa's scooty"), controlled: true, minAge: 16 };
+    const moto = makeScooty(0x111111); moto.scale.set(1.15, 1.15, 1.25); const tank = new THREE.Mesh(new THREE.SphereGeometry(0.22, 10, 8), new THREE.MeshStandardMaterial({ color: 0xd62828, roughness: 0.3, metalness: 0.4 })); tank.scale.set(1, 0.8, 1.4); tank.position.set(0, 0.85, 0.05); moto.add(tank); moto.position.set(HOME.x + 11, 0, HOME.z - 10); this.world.scene.add(moto);
+    this.moto = { group: moto, speed: 13, kind: "scooty", label: L("Papa's motorbike"), controlled: true, minAge: 18 };
     this._buildInteractables();
     this.world.vehicleBlocked = (x, z, self, pad) => {
       for (const mv of [...this.world.movers, ...this.world.cityMovers]) {
@@ -5929,6 +5945,7 @@ class Game {
       }
       return false;
     };
+    { const pb = document.getElementById("phone-btn"); if (pb) pb.addEventListener("click", () => { if (panelOpen()) closePanel(); else this._phone(); }); }
     this.applyOutfit(); if (this.progress.glasses) this._wearGlasses(); if (this.progress.cast) this.player.speedMul = 0.6;
     { const job = JOBS.find((j) => j.id === this.progress.job); if (job) setTimeout(() => showToast(`👔 ${L("Uniform")}: ${job.name}. ${L("Press J to switch jobs.")}`, 3600, "good"), 1200); }
     this._gear = { ball: null, kite: null, line: null };
@@ -5936,7 +5953,7 @@ class Game {
     this._gearChanged();
     this.minimap = new Minimap(this.world);
     this.bigmap = new BigMap(this);
-    window.addEventListener("keydown", (e) => { if (e.target && e.target.tagName === "INPUT") return; if (e.key.toLowerCase() === "m") { if (this.bigmap.isOpen) this.bigmap.close(); else this.bigmap.open(); } if (e.key === "Escape") this.bigmap.close(); if (e.key.toLowerCase() === "j") { if (panelOpen()) closePanel(); else this._openJobs(); } if (e.key.toLowerCase() === "p") { if (panelOpen()) closePanel(); else this._phone(); } if (e.key === "2") this._toggleP2(); if (e.key.toLowerCase() === "t") { if (this.dialogue.active) this._chatFromDialogue(); else if (!panelOpen()) { const near = this._nearestInteractable(); if (near && near.npc) this._chat(near.npc); } } });
+    window.addEventListener("keydown", (e) => { if (e.target && e.target.tagName === "INPUT") return; if (e.key.toLowerCase() === "g") { if (this.bigmap.isOpen) this.bigmap.close(); else this.bigmap.open(); } if (e.key.toLowerCase() === "m") { if (panelOpen()) closePanel(); else this._phone(); } if (e.key === "Escape") this.bigmap.close(); if (e.key.toLowerCase() === "j") { if (panelOpen()) closePanel(); else this._openJobs(); }  if (e.key === "2") this._toggleP2(); if (e.key.toLowerCase() === "t") { if (this.dialogue.active) this._chatFromDialogue(); else if (!panelOpen()) { const near = this._nearestInteractable(); if (near && near.npc) this._chat(near.npc); } } });
     this._ambient = { chirp: 3, horn: 5, bell: 30 };
     startAmbient();
     this.clock = new THREE.Clock();
@@ -6133,6 +6150,7 @@ class Game {
       this.interactables.push({ pos: { x: pg.x + 10, z: pg.z - 2.2 }, radius: 1.8, prompt: () => L("Climb the slide"), activate: () => this._playPark("slide", pg) });
     }
     for (const npc of this.npcs) this.interactables.push({ pos: npc.position, radius: 2.6, npc, visible: () => npc.group.visible, prompt: () => L("Talk to {n}", { n: npc.name }), activate: () => this._talk(npc) });
+    for (const v of [this.scooty, this.moto]) this.interactables.push({ pos: v.group.position, radius: 2.4, visible: () => !(this.player.riding && this.player.riding.group === v.group), prompt: () => L("Ride {v}", { v: v.label }), activate: () => { const pr = this.progress; if (pr.age < v.minAge) { showToast(L("Papa: 'Not yet. {a} first, then the RTO test.'", { a: v.minAge }), 2800); return; } if (!pr.licence) { showToast(L("No licence. RTO counter, Police Station: ₹100 test."), 3000, "bad"); return; } this.player.mount(v); playHorn(); showToast(L("🛵 Helmet on. Roads only, stop at red. Press E to get off."), 3000, "good"); } });
     // Papa's car, parked in our lane. In the morning he drops you at school; after school he picks you up at the gate.
     this.interactables.push({ pos: this.car.group.position, radius: 3.0, visible: () => !this.car.driving, prompt: () => (this.working ? L("Drive the car") : this.phase === "morning" ? L("Ride to school in Papa's car") : this.phase === "over" && this.car.atSchool ? L("Ride home in Papa's car") : L("Papa's car")), activate: () => this._carRide() });
   }
@@ -7418,7 +7436,7 @@ class Game {
     if (amb.chirp <= 0) { playChirp(); amb.chirp = 3 + Math.random() * 6; }
     if (amb.horn <= 0) { amb.horn = 6 + Math.random() * 9; if (!this.world.currentRoom && Math.abs(pp.z) < 30) playHorn(); }
     // Interact.
-    if (!blocked && this.player.riding && (this.player.riding.kind === "bike" || (this.player.riding.kind === "car" && this.player.riding.controlled))) { this.ui.setInteractPrompt((this.player.riding.kind === "bike" ? L("Get off the bicycle") : L("Get out of the car")) + (this.input.isTouch ? "" : "  (E)")); if (this.input.interactPressed()) { this.player.dismount(); Audio.playPick(); } }
+    if (!blocked && this.player.riding && (this.player.riding.kind === "bike" || ((this.player.riding.kind === "car" || this.player.riding.kind === "scooty") && this.player.riding.controlled))) { this.ui.setInteractPrompt((this.player.riding.kind === "bike" ? L("Get off the bicycle") : this.player.riding.kind === "scooty" ? L("Get off") : L("Get out of the car")) + (this.input.isTouch ? "" : "  (E)")); if (this.input.interactPressed()) { this.player.dismount(); Audio.playPick(); } }
     else if (!blocked && this.player.riding) { /* handled in _updateBus */ }
     else if (!blocked) {
       if (this._engagedNpc && !this.dialogue.active && !panelOpen()) this._engagedNpc = null;

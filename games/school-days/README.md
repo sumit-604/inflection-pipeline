@@ -94,7 +94,7 @@ and cars run on every road.
 ## Fifteen more pieces of life
 
 1. Voices: every person has a different voice and speed for their pitch.
-2. Phone (P) from age 14: messages from Maa, the boss and the bank; call
+2. Mobile (M, or the 📱 button beside the backpack) from age 14: messages from Maa, the boss and the bank; call
    anyone in your contacts from anywhere.
 3. Seasons: summer days 1 to 7, monsoon 8 to 13 with rain on odd days,
    winter 14 to 20 with fog and a school sweater.
@@ -123,6 +123,16 @@ Stadium Ground to practise. A lawyer's cases are heard in Courtroom 2 of
 the District Court. Every workplace has your named seat with a bobbing
 "YOUR SEAT" arrow and a visitor's chair; "Go to work now" in the J panel
 takes you straight there.
+
+## Map search and family vehicles
+
+- Press G for the map. Type a place in the search box (RTO, hospital,
+  stadium, bank, park) and press Enter: the compass points there and the
+  map centres on it. The RTO Office is inside the Police Station on the
+  school road, west of City Hospital.
+- Beside Papa's car in the lane stand Maa's scooty (from 16, with a
+  licence) and Papa's motorbike (from 18, with a licence). Press E to ride,
+  roads only, E again to get off.
 
 ## Moti the dog
 

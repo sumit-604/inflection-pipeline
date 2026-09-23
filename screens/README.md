@@ -513,3 +513,103 @@ freely. 523 of 1,000 remained for the cycle at the close.
   DICIND's May 2026 warrant allotment and its litigation-pendency stream; ISFT's
   exchange clarification reply; AVIENCE's FY26 Q4 earnings call transcript;
   INDOMIM's Q1 FY27 profit and loss table on pages 6 to 9 of document 70ca2fe3.
+
+## Fifth run, 2026-09-23
+
+Fourteen operator picks, screened in one session: Advance Agrolife, NOCIL,
+South Indian Bank, Jindal Supreme (India), Cubex Tubings, Mukand, Scoda Tubes,
+TruAlt Bioenergy, Kavveri Defence & Wireless, Sunflag Iron & Steel, Steel
+Exchange India, Pearl Global, KDDL, Premier Polyfilm. The operator supplied NSE
+symbol, BSE code and ISIN for each. All fourteen resolved through
+`list_document_availability` on the ISIN, and every echoed company block was
+checked against the operator's name.
+
+**Verdicts.** PROCEED to `/step1` on **ADVANCE** alone, with caveats. WATCH on
+**SOUTHBANK**, **SUNFLAG** and **SCODATUBES**. PASS on **NOCIL**, **PGIL**,
+**KDDL**, **TRUALT**, **STEELXIND**, **MUKANDLTD**, **PREMIERPOL**, **JSIPL**,
+**CUBEXTUB** and **KAVDEFENCE**. Forward view: `forward-view-2026-09-23.md`.
+
+**Why so few pass the screen.** Three reasons repeat across the ten PASS cards.
+1. **Reported profit is not operating profit on three names.** MUKANDLTD's FY26
+   PAT of Rs 604.15 crore includes a Rs 554.31 crore land surplus; PBT excluding
+   other income was negative in FY26 and in Q1 FY27. CUBEXTUB's other income was
+   Rs 8.22 crore against PBT of Rs 9.64 crore. KAVDEFENCE's other income exceeded
+   its PBT and its Q1 FY27 revenue was Rs 0.44 crore.
+2. **The multiple already pays for the growth on four names.** NOCIL, PGIL, KDDL
+   and PREMIERPOL sit at 23x to 45x forward on 10% to 47% growth.
+3. **Guidance failed its own test on two names.** TRUALT delivered about 24
+   crore litres of ethanol against 37 crore litres guided in February, and the
+   change in the allocation mechanism was not disclosed to investors. STEELXIND
+   said volumes double "from next quarter"; Q1 FY27 total income fell 11.2%.
+
+**ADVANCE is the one name that screens well without a reversing flag.** Q1 FY27
+PAT was Rs 22.54 crore against Rs 8.94 crore, on revenue up 96%. FY27E PAT of Rs
+48.9 crore to Rs 56.3 crore gives 12.4x to 14.2x forward. The caveat is the
+posture: the proof gate for the climb from formulator to technical maker is the
+Unit-4 plant at Gidani, which slipped from Q2 FY27 to Q3 FY27. The transition
+matrix reads RESEARCH / WATCH until it fires, so `/step1` is research, not a
+position.
+
+**The three WATCH names are three different kinds of WATCH.**
+- **SOUTHBANK** is a lender whose asset quality is fixed (GNPA 4.50% to 1.43%
+  in eight quarters) but whose earnings quality is not: FY26 operating profit
+  excluding treasury fell 4.4%, and Q1 FY27 RoA fell to 1.05%. It sits at 7.1x
+  to 7.8x forward. Its market capitalisation of Rs 11,855 crore is above the
+  strategy's usual band.
+- **SUNFLAG** is a holding-company discount, not a transition. Its standalone
+  investments, mostly Lloyds Metals & Energy shares, were Rs 7,695 crore at 31
+  March 2026. Its market capitalisation is Rs 6,404 crore.
+- **SCODATUBES** has two forward answers: 15.6x to 16.7x on reaffirmed guidance,
+  36.4x on the Q1 FY27 run-rate. Q2 FY27 separates them.
+
+**Open action 5 applied, and only partly met.** Full-page reads were run for
+all four live verdicts. ADVANCE met all four requirements (two years on one
+page, PBT build, leverage, shareholding summing to 100.00%). SOUTHBANK and
+SUNFLAG met three; neither shareholding pattern is in the corpus. SCODATUBES met
+one fully; its PBT build and shareholding were not read. Each card states which.
+
+**The corpus rule was bent again, under the operator ruling of 2026-09-08.** No
+egress: the network policy answered 403 to docs.bull-ai.in, www.bseindia.com,
+www.screener.in and the rating agency sites. The corpus is Bull AI's chunk
+reader. Every card cites a document id and page; manifests mark which pages
+were read whole and which came from search snippets.
+
+**Credit ratings.** Read on two names only: SUNFLAG (Crisil AA-, from its own
+large-corporate disclosure) and PREMIERPOL (Crisil BBB+/Stable and A2,
+reaffirmed 10 August 2026, under a filing labelled "Revision"). TRUALT filed a
+new rating in April 2026; it was listed and not read. Step 10 is NOT FOUND on
+the rest.
+
+**How the cards were written.** The orchestrator read the corpus, fixed every
+verdict, posture and step-13 number in one decisions file, and wrote one facts
+file with document ids and pages. Four writer subagents drafted the cards from
+those two files in parallel, with an instruction to write NOT FOUND for any
+fact not in the facts file. The orchestrator then checked each card's numbers
+against the facts file. Every decimal on every card was matched against the facts,
+guidance and decisions files by script; the 26 that did not match were all
+labelled derivations and were rechecked by hand. Twelve cites that the writers
+left without a page were traced to their filed page and fixed. Cards run 1,528
+to 1,937 words; six sit slightly above the 1,900 target.
+
+Bull AI budget: 45 paid calls: 14 guidance calls, 26 searches and 5 chunk calls
+covering 12 documents. Identity and availability probes cost nothing. 472 of
+1,000 remained for the cycle at the close.
+
+### Findings worth carrying out of the cards
+
+- **Bull AI period labels follow the upload quarter, not the reporting
+  quarter.** Five decks and transcripts labelled "FY2027 Q2" carried Q4 FY26 or
+  Q3 FY26 content (NOCIL, SOUTHBANK, PGIL, TRUALT, STEELXIND). Read the period
+  from the page, never from the label.
+- **Filed totals that do not add up.** SUNFLAG's audited FY26 results print a
+  Q4 total tax line equal to Q4 PAT, and the Q1 FY27 filing prints FY26 total
+  tax as Rs 108.45 crore while its own components sum to Rs 98.45 crore. PAT ties
+  only to the component sum.
+- **A lapsed certificate list on an exporter's own slide.** SCODATUBES' Q1 FY27
+  deck lists PED, AD 2000 and ISO certificates with validity dates that expired
+  before the deck was filed. Either the slide is stale or the approvals lapsed.
+  A deep run checks the certificate numbers first.
+- **A GNPA fall with almost no provision.** SOUTHBANK cut GNPA by Rs 1,300 crore
+  in Q4 FY26 while NPA provisions for the quarter were Rs 15 crore. The likely
+  reading is a technical write-off of a fully provided book; the annual report
+  note decides it.

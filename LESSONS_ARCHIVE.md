@@ -929,3 +929,50 @@ and 8ccee046 p287-288, p319-322) on repeated attempts. And
 `get_document_chunks` honours **only one page range per document per call**,
 silently dropping additional ranges for the same document with no error. Three
 requests were lost before it was noticed. Both belong in the collector notes.
+
+## [2026-09-23] Shallow screen, fifth run: fourteen operator picks
+
+Names: ADVANCE, NOCIL, SOUTHBANK, JSIPL, CUBEXTUB, MUKANDLTD, SCODATUBES,
+TRUALT, KAVDEFENCE, SUNFLAG, STEELXIND, PGIL, KDDL, PREMIERPOL.
+
+Run record and per-name detail: `screens/README.md`, "Fifth run, 2026-09-23".
+Forward view: `screens/forward-view-2026-09-23.md`.
+
+**What broke or dragged**
+
+- **No egress, fourth consecutive shallow run.** Same 403s, same 2026-09-08
+  ruling, same Bull AI chunk-reader corpus. Step 10 read on two cards only
+  (SUNFLAG, PREMIERPOL); TRUALT's April 2026 rating was listed and not read.
+- **Identity resolution was clean this time.** The operator supplied ISINs up
+  front and all fourteen resolved on the first `list_document_availability`
+  call. Supplying the ISIN with the name removes the whole failure class that
+  cost CRESTO and PCS in the fourth run.
+- **Upload-quarter labels misdate documents.** Five documents labelled FY2027
+  Q2 held Q4 FY26 or Q3 FY26 content. Nothing was misread because each period
+  was taken from the page header, but a label-driven filter would have missed
+  the right deck or doubled a quarter.
+- **Chunk reader returned empty pages again.** SOUTHBANK Q1 FY27 deck
+  b6415007, pages 8 to 16, empty on two calls. The Q1 FY27 GNPA stayed NOT
+  FOUND as a result.
+- **Open action 5 cost five chunk calls and was only partly met.** Shareholding
+  patterns are rarely indexed as filings. Three of four live-verdict names could
+  not produce one. The rule as drafted assumes a table the corpus often lacks;
+  the card should say "NOT FOUND, looked for in X" rather than treat the
+  verdict as unsupported.
+- **Reported profit was not operating profit on three of fourteen names.**
+  MUKANDLTD (land surplus), CUBEXTUB (other income 85% of PBT), KAVDEFENCE
+  (other income above PBT). **PBT excluding other income is the ten-second
+  check that caught all three.** It belongs beside the shareholding sum-check.
+- **A filed tax total that does not sum.** SUNFLAG's audited Q4 FY26 and Q1
+  FY27 filings both print wrong total-tax lines. The fourth run's lesson (sum
+  every table against its own total) caught it again.
+- **Holding-company look-through distorts step 13 twice.** SUNFLAG (listed stake
+  worth more than the market cap) and KDDL (consolidated PAT includes minority
+  share of listed Ethos). Step 13 has no rule for either; both cards state the
+  distortion in the warning paragraph.
+- **Cards drafted by four parallel writers from one facts file and one binding
+  decisions file.** Verdicts and numbers were fixed before drafting. The
+  orchestrator checked each card against the facts file after.
+
+Bull AI: 45 paid calls (14 guidance, 26 searches, 5 chunk calls). 472 of 1,000
+remain for the cycle ending 2026-10-08.

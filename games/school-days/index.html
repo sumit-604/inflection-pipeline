@@ -1892,7 +1892,7 @@ class UI {
   }
   refreshRank() {
     const g = this.game, pr = g.progress;
-    this.rankText.textContent = `${g.profileLabel} · ${L("Day")} ${pr.day} · ${L("Term")} ${pr.day <= 10 ? 1 : 2}`;
+    { const job = JOBS.find((j) => j.id === pr.job); this.rankText.textContent = job && g.working ? `${job.icon} ${job.name} · ${L("Day")} ${pr.day}` : `${g.profileLabel} · ${L("Day")} ${pr.day} · ${L("Term")} ${pr.day <= 10 ? 1 : 2}`; }
     document.getElementById("star-text").textContent = g.clockText();
     document.getElementById("safety-text").textContent = String(g.termMarks());
     document.getElementById("money-text").textContent = fmtMoney(pr.money);
@@ -1906,7 +1906,8 @@ class UI {
   _render() {
     const g = this.game, pr = g.progress;
     let html = `<div class="section-label">Today</div><ul class="job-list"><li><div class="job-title">Day ${pr.day}, Term ${pr.day <= 10 ? 1 : 2}${g.isFaDay() ? " · FA day (tests in every subject)" : ""}${g.isTermDay() ? " · TERM EXAM day" : ""}</div><div class="job-concept">${g.objective ? "Now: " + g.objective.label : ""}</div></li></ul>`;
-    html += `<div class="section-label">Timetable</div><ul class="job-list">${PERIODS.map((p, i) => `<li><div class="job-title">${p.time} · ${p.name}${SUBJECTS[p.id] ? " · " + SUBJECTS[p.id].teacher : p.id === "games" ? " · Coach Vikram" : ""}${g.phase === "school" && g.periodIndex === i ? " ◀ now" : g.phase === "school" && i < g.periodIndex ? " ✔" : ""}</div></li>`).join("")}</ul>`;
+    if (g.working) { const job = JOBS.find((j) => j.id === pr.job); html += `<div class="section-label">${L("Work day")}</div><ul class="job-list"><li><div class="job-title">${job ? `9:00 · ${L("Shift at")} ${job.place} · ${job.boss} · ₹${job.salary}` : L("No job yet. Press J.")}</div></li><li><div class="job-title">5:00 · ${L("Home, family, rest")}</div></li></ul>`; }
+    else html += `<div class="section-label">Timetable</div><ul class="job-list">${PERIODS.map((p, i) => `<li><div class="job-title">${p.time} · ${p.name}${SUBJECTS[p.id] ? " · " + SUBJECTS[p.id].teacher : p.id === "games" ? " · Coach Vikram" : ""}${g.phase === "school" && g.periodIndex === i ? " ◀ now" : g.phase === "school" && i < g.periodIndex ? " ✔" : ""}</div></li>`).join("")}</ul>`;
     html += `<div class="section-label">Marks this term</div><table class="report"><tr><th>Subject</th><th>Class work</th><th>Homework</th><th>FA</th><th>Term</th><th>Total</th></tr>`;
     for (const s of SUBJECT_IDS) { const m = pr.marks[s]; html += `<tr><td>${SUBJECTS[s].icon} ${SUBJECTS[s].name}</td><td>${m.cw}</td><td>${m.hw}</td><td>${m.fa.length ? m.fa.join(", ") + " /10" : "–"}</td><td>${m.term.length ? m.term.join(", ") + " /20" : "–"}</td><td class="g">${g.subjectTotal(s)}</td></tr>`; }
     html += `<tr><td>⚽ Games</td><td colspan="4">${pr.games.length ? pr.games.join(", ") + " /5" : "–"}</td><td class="g">${pr.games.reduce((a, b) => a + b, 0)}</td></tr></table>`;
@@ -3550,6 +3551,17 @@ JOBS.push(
   { id: "footballer", name: "Footballer", icon: "⚽", place: "Sports Stadium", subject: "evs", salary: 1200, boss: "Coach Fernandes", desc: "Play for Suryanagar FC at the Sports Stadium.", trial: { kind: "football", name: "Penalty practice", icon: "⚽", cue: "Stand behind the ball, turn to aim past the keeper, press F to shoot.", hit: "GOAL!", miss: "Saved!", verb: "Shoot" } },
   { id: "vet", name: "Veterinary Doctor", icon: "🐾", place: "Vet Clinic", subject: "science", salary: 850, boss: "Dr. Pillai", desc: "Treat animals at the Vet Clinic." },
 );
+// What you wear once hired: shirt, trousers, cap colour (null = no cap), and whether the school tie stays.
+const UNIFORMS = {
+  teacher: { shirt: 0x3a86ff, trousers: 0x3b3f4a, cap: null }, doctor: { shirt: 0xffffff, trousers: 0x3b3f4a, cap: null, coat: true }, engineer: { shirt: 0x2a9d8f, trousers: 0x111111, cap: null },
+  police: { shirt: 0xc2a878, trousers: 0xc2a878, cap: 0x1d3557, belt: true }, banker: { shirt: 0xffffff, trousers: 0x1d3557, cap: null, tie: true }, chef: { shirt: 0xffffff, trousers: 0x333333, cap: 0xffffff, tall: true },
+  shopkeeper: { shirt: 0xf77f00, trousers: 0x3b3f4a, cap: null }, postman: { shirt: 0xc94848, trousers: 0x3b3f4a, cap: 0xc94848 }, firefighter: { shirt: 0xd62828, trousers: 0xd62828, cap: 0xffd21e },
+  lawyer: { shirt: 0x111111, trousers: 0x111111, cap: null, tie: true }, pilot: { shirt: 0xffffff, trousers: 0x1d3557, cap: 0x1d3557, tie: true }, journalist: { shirt: 0x9b5de5, trousers: 0x111111, cap: null },
+  mechanic: { shirt: 0x3b3f4a, trousers: 0x3b3f4a, cap: 0x555555 }, scientist: { shirt: 0xffffff, trousers: 0x3b3f4a, cap: null, coat: true }, architect: { shirt: 0x111111, trousers: 0xdddddd, cap: 0xffd21e },
+  coach: { shirt: 0xd62828, trousers: 0xffffff, cap: 0xd62828 }, hotelier: { shirt: 0x6a4c93, trousers: 0x111111, cap: null, tie: true }, cityBanker: { shirt: 0xffffff, trousers: 0x1d3557, cap: null, tie: true },
+  farmer: { shirt: 0x8bc46a, trousers: 0x8a5626, cap: 0xd9c9a3 }, librarian: { shirt: 0xf6efd8, trousers: 0x3b3f4a, cap: null }, rj: { shirt: 0xff8fab, trousers: 0x111111, cap: null },
+  vet: { shirt: 0x2a9d8f, trousers: 0x2a9d8f, cap: null }, cricketer: { shirt: 0x1d3557, trousers: 0x1d3557, cap: 0x1d3557 }, footballer: { shirt: 0xffd21e, trousers: 0x111111, cap: null },
+};
 const INTERVIEW = [
   MC("Tell us about yourself. The best answer…", "Says who you are, what you studied and why you want this job", "Lists your favourite films", "Complains about your last school", "Is one word long"),
   MC("You make a mistake at work. You…", "Own it, fix it, and tell your senior", "Hide it", "Blame a colleague", "Leave early"),
@@ -3830,7 +3842,11 @@ class Player {
     // Build the character: blue shirt, dark trousers, yellow hard hat.
     // A school boy in uniform: white shirt, navy shorts, a red tie, black shoes, no hat.
     this.group = makeHuman({ skin: 0xe8b98a, shirt: 0xffffff, trousers: 0x1d3557, hair: 0x2b1d14, shoes: 0x1a1a1a, hat: null });
-    { const parts0 = this.group.userData.parts; const tie = new THREE.Mesh(new THREE.BoxGeometry(0.07, 0.34, 0.03), humanMat(0xc1121f)); tie.position.set(0, parts0.torso.position.y + 0.08, 0.16); this.group.add(tie); const badge = new THREE.Mesh(new THREE.BoxGeometry(0.12, 0.08, 0.02), humanMat(0xffd21e)); badge.position.set(-0.15, parts0.torso.position.y + 0.18, 0.16); this.group.add(badge); }
+    { const parts0 = this.group.userData.parts; const tie = new THREE.Mesh(new THREE.BoxGeometry(0.07, 0.34, 0.03), humanMat(0xc1121f)); tie.position.set(0, parts0.torso.position.y + 0.08, 0.16); this.group.add(tie); const badge = new THREE.Mesh(new THREE.BoxGeometry(0.12, 0.08, 0.02), humanMat(0xffd21e)); badge.position.set(-0.15, parts0.torso.position.y + 0.18, 0.16); this.group.add(badge); this.tie = tie; this.badge = badge;
+      // A work cap and a coat, hidden until a job hands them over.
+      const capMat = humanMat(0x1d3557); const dome = new THREE.Mesh(new THREE.SphereGeometry(0.26, 14, 8, 0, Math.PI * 2, 0, Math.PI / 2), capMat); dome.position.y = 0.06; const peak = new THREE.Mesh(new THREE.BoxGeometry(0.3, 0.04, 0.22), capMat); peak.position.set(0, 0.06, 0.28); const tall = new THREE.Mesh(new THREE.CylinderGeometry(0.2, 0.24, 0.42, 12), capMat); tall.position.y = 0.36;
+      this.cap = new THREE.Group(); this.cap.add(dome, peak, tall); this.cap.visible = false; this.cap.userData.mat = capMat; this.cap.userData.tall = tall; parts0.head.add(this.cap);
+      const coat = new THREE.Mesh(new THREE.BoxGeometry(0.62, 0.9, 0.44), humanMat(0xffffff)); coat.position.set(0, parts0.torso.position.y - 0.12, 0); coat.visible = false; this.coat = coat; this.group.add(coat); }
     this.group.position.copy(world.spawn);
     world.scene.add(this.group);
 
@@ -5693,6 +5709,7 @@ class Game {
   isTermDay() { const d = this.progress.day; return d === 10 || d === 20; }
   clockText() {
     const p = this.phase;
+    if (this.working) { const job = JOBS.find((j) => j.id === this.progress.job); return p === "morning" ? (this.isSunday() ? "8:00 · Sunday" : `8:00 · ${L("Off to work")}${job ? ": " + job.place : ""}`) : p === "over" ? `5:00 · ${L("Work over")}` : p === "evening" ? "6:00 · At home" : "10:00 · Bedtime"; }
     if (p === "morning") return "7:00 · At home";
     if (p === "school") { const per = PERIODS[this.periodIndex] || PERIODS[PERIODS.length - 1]; return `${per.time} · ${per.name}`; }
     if (p === "over") return "12:15 · School over";
@@ -5728,6 +5745,17 @@ class Game {
     if (o.trousers != null) for (const k of ["legL", "legR"]) paint(p[k].children[0], o.trousers);
     if (o.hair != null) paint(p.hair, o.hair);
     if (o.shoes != null) for (const k of ["legL", "legR"]) paint(p[k].children[1], o.shoes);
+    this.applyUniform();
+  }
+  // The job's uniform goes on over everything else: police khaki and cap, cricket blues, the chef's tall hat.
+  applyUniform() {
+    const u = UNIFORMS[this.progress.job], pl = this.player, p = pl.group.userData.parts;
+    const paint = (mesh, c) => { if (mesh && mesh.material && mesh.material.color) mesh.material.color.set(c); };
+    if (!u) { if (pl.cap) pl.cap.visible = false; if (pl.coat) pl.coat.visible = false; if (pl.tie) pl.tie.visible = true; if (pl.badge) pl.badge.visible = true; return; }
+    paint(p.torso, u.shirt); for (const k of ["armL", "armR"]) paint(p[k].children[0], u.shirt); for (const k of ["legL", "legR"]) paint(p[k].children[0], u.trousers);
+    if (pl.tie) pl.tie.visible = !!u.tie; if (pl.badge) pl.badge.visible = false;
+    if (pl.coat) pl.coat.visible = !!u.coat;
+    if (pl.cap) { pl.cap.visible = u.cap != null; if (u.cap != null) pl.cap.userData.mat.color.set(u.cap); pl.cap.userData.tall.visible = !!u.tall; }
   }
 
   // ---- People ----
@@ -5763,6 +5791,7 @@ class Game {
 
   // ---- Phases ----
   _startPhase(phase, restoring = false) {
+    if (phase === "school" && this.working) phase = "morning";
     this.phase = phase; this.progress.phase = phase; saveProgress(this.profile, this.progress);
     this._placePeople();
     if (phase === "morning") {
@@ -6099,6 +6128,7 @@ class Game {
     card.querySelectorAll(".use-btn").forEach((b) => b.addEventListener("click", () => {
       const job = JOBS.find((j) => j.id === b.dataset.id); closePanel();
       this._applying = job.id;
+      if (pr.hired.includes(job.id) && pr.job !== job.id) { pr.job = job.id; saveProgress(this.profile, pr); this.applyUniform(); this.ui.refreshRank(); showToast(L("👔 Today you work as {j}.", { j: job.name }), 2800, "good"); }
       const d = this.world.doors.find((x) => x.label === job.place);
       this.setObjective(`${job.icon} ${job.name}: ${pr.hired.includes(job.id) ? L("go to work at") : L("interview at")} ${job.place}`, d.x, d.z + 2);
       showToast(L("Follow the compass to {p}. Press E at the door.", { p: job.place }), 3200, "good");
@@ -6109,7 +6139,14 @@ class Game {
     const pr = this.progress, base = room.occupantPos();
     const hiredHere = here.filter((j) => pr.hired.includes(j.id)), cur = hiredHere.find((j) => j.id === pr.job) || hiredHere[0];
     let k = 0;
-    if (cur) { this.roomInteractables.push({ pos: base, radius: 2.4, prompt: () => L("Work a shift as {j} (₹{n})", { j: cur.name, n: cur.salary }), activate: () => this._workShift(cur) }); k++; }
+    if (cur) {
+      // Your own desk: a table, your chair, a visitor's chair, a nameplate. Built once per room.
+      const dx = room.x0 + 7, dz = room.z0 + 3;
+      if (!room.playerDesk) { room.playerDesk = { x: dx, z: dz }; room._desk(dx, dz, cur.trial ? 0x3b3f4a : 0x8a5626); room._box(0.5, 0.45, 0.5, 0x3f6f9f, dx - 1.3, 0.22, dz - 0.9, false); room._box(0.9, 0.02, 0.6, 0xf4f6f8, dx + 0.2, 0.8, dz, false); room._box(0.4, 0.06, 0.3, 0xffd21e, dx - 0.5, 0.82, dz + 0.1, false); room._label(`${cur.icon} ${L("Your desk")} · ${cur.name}`, dx, dz, 1.9, 0.6); room._label(L("Visitor"), dx - 1.3, dz - 0.9, 1.3, 0.4); }
+      const seat = { x: dx, z: dz + 0.8 };
+      this.roomInteractables.push({ pos: seat, radius: 2.0, prompt: () => (this._shiftDone ? L("Your desk (shift done)") : L("Sit at your desk and work a shift as {j} (₹{n})", { j: cur.name, n: cur.salary })), activate: () => { if (!this._shiftDone && !this.isSunday()) { const P = this.player.group; P.position.set(seat.x, 0, seat.z); P.rotation.y = Math.PI; if (!cur.trial) sitPose(P, "car"); } this._workShift(cur); } });
+      k++;
+    }
     if (this.stage >= stageIndex("c12")) for (const job of here.filter((j) => !pr.hired.includes(j.id))) { const pos = { x: base.x + k * 2.2, z: base.z }; k++; this.roomInteractables.push({ pos, radius: 1.6, prompt: () => L("Job interview: {j}", { j: job.name }), activate: () => this._jobInterview(job) }); }
   }
   _jobInterview(job) {
@@ -6124,7 +6161,7 @@ class Game {
           const qs = makeRng(Math.floor(Math.random() * 1e9)).shuffle(INTERVIEW).slice(0, 5).map((q) => ({ ...q, choices: [q.answer, ...q.choices.filter((c) => c !== q.answer)].sort(() => Math.random() - 0.5) }));
           this._runPaper(`${job.icon} ${L("Interview")}: ${job.name}`, qs, (isc) => {
             if (isc < 4) { setMood(this.family.papa.group, "calm", 1); this.dialogue.say(boss, [L("{n} out of 5. Think about your answers and try again tomorrow.", { n: isc })]); this.diary(`${job.name} interview: ${isc}/5, not selected.`); return; }
-            this.progress.hired.push(job.id); this.progress.job = job.id; saveProgress(this.profile, this.progress);
+            this.progress.hired.push(job.id); this.progress.job = job.id; saveProgress(this.profile, this.progress); this.applyUniform(); showToast(L("👔 New uniform: {j}.", { j: job.name }), 3000, "good");
             playSuccess(); this.diary(`Hired as ${job.name}!`);
             this.dialogue.say(boss, [L("{n} out of 5. You are hired! Welcome. Come every morning; a shift pays ₹{s}.", { n: isc, s: job.salary }), L("No more school for you. From tomorrow, work.")], () => { if (this.phase === "school") { this.friends.forEach((f) => (f.group.visible = false)); this._startPhase("over"); showToast(L("You have a job now. School is over for good. Head home."), 3600, "good"); } else this._startPhase(this.phase); });
           });
@@ -6141,6 +6178,7 @@ class Game {
         const pay = Math.round(job.salary * score / 5);
         this._shiftDone = true; this.progress.shifts++; this.addMoney(pay, L("salary") + " (" + score + "/5)");
         this.diary(`Worked as ${job.name}: ${score}/5, ₹${pay}.`);
+        standPose(this.player.group);
         this.dialogue.say(job.boss, [score >= 4 ? L("Excellent work today. See you tomorrow.") : L("Some slips today. Rest, and do better tomorrow.")], () => { if (this.working) this._startPhase("over"); });
       });
     });

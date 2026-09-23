@@ -103,7 +103,12 @@ Choose one, follow the compass to its place, and press E at the door.
 
 1. Written test: ten questions in the job's subject, six to pass.
 2. Interview: five questions about work and conduct, four to pass.
-3. Hired: school ends that moment. From the next morning you go to work
+3. Hired: your clothes change to the job's uniform on the spot (police
+   khaki and cap, the chef's tall hat, the doctor's white coat, cricket
+   blues, the pilot's cap and tie, and so on for all 24 jobs). Every
+   workplace gets your own desk with your chair and a visitor's chair;
+   sit there to work the shift. The clock, the day badge and the notebook
+   show a work day, not a school timetable. School ends that moment. From the next morning you go to work
    instead of school, at any class. The bus and Papa's car take you to the city, never to a lesson.
    A working adult drives the family car: press E at it, stay on the roads,
    E again to get out. One shift a day (five tasks); pay is the salary times the tasks

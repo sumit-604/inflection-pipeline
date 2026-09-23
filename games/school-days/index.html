@@ -2661,6 +2661,8 @@ class World {
     B({ w: 12, d: 8, h: 3.8, roof: "flat", wall: 0xf6efd8, roofColor: 0x8d6e63, sign: "Old Town Library" }, -142, -92, 0, "Old Town Library");
     B({ w: 10, d: 8, h: 3.6, roof: "flat", wall: 0xe3ecf5, roofColor: 0xd62828, sign: "Radio Suryanagar" }, -100, -92, 0, "Radio Suryanagar");
     B({ w: 10, d: 7, h: 3.2, roof: "flat", wall: 0xbfe3f2, roofColor: 0x1d3557, sign: "Fish Market" }, -70, -92, 0, "Fish Market");
+    B({ w: 10, d: 8, h: 3.6, roof: "flat", wall: 0xffffff, roofColor: 0x1d3557, sign: "RTO Office" }, -52, -92, 0, "RTO Office");
+    this._addBillboard(-40, -70, "RTO Office: driving licence →", 0x1d3557);
     B({ w: 10, d: 8, h: 3.4, roof: "flat", wall: 0xffffff, roofColor: 0x2f9e44, sign: "Vet Clinic" }, -160, -68, Math.PI, "Vet Clinic");
     B({ w: 16, d: 10, h: 5, roof: "flat", wall: 0x1d3557, roofColor: 0x111111, sign: "Cinema Hall" }, -100, -68, Math.PI, "Cinema Hall");
     B({ w: 12, d: 8, h: 3.4, roof: "gable", wall: 0xf3d9c8, roofColor: 0x8a5626, sign: "Old Town Tea House" }, -70, -68, Math.PI, "Old Town Tea House");
@@ -5759,7 +5761,7 @@ class BigMap {
   _places() {
     const list = this.world.doors.filter((d) => !["House", "Apartments"].includes(d.label)).map((d) => ({ name: d.label, x: d.x, z: d.z }));
     for (const sp of this.world.shopSpots || []) list.push({ name: sp.name, x: sp.x, z: sp.z });
-    { const ps = this.world.doors.find((d) => d.label === "Police Station"); if (ps) list.push({ name: "RTO Office (inside the Police Station)", x: ps.x, z: ps.z }); const S = this.world.stadium; if (S) list.push({ name: "Stadium Ground (cricket pitch, goal)", x: S.batX, z: S.z }); list.push({ name: "City Park (swings, fountain)", x: 128, z: 70 }, { name: "Shanti Nagar Park", x: -90, z: 110 }, { name: "Our Home (Kaushik family)", x: HOME.door.x, z: HOME.door.z + 2 }, { name: "New Town", x: 110, z: 160 }, { name: "Old Town", x: -110, z: -80 }); }
+    { const ps = this.world.doors.find((d) => d.label === "RTO Office"); if (ps) list.push({ name: "RTO Office (driving licence, Old Town road)", x: ps.x, z: ps.z }); const S = this.world.stadium; if (S) list.push({ name: "Stadium Ground (cricket pitch, goal)", x: S.batX, z: S.z }); list.push({ name: "City Park (swings, fountain)", x: 128, z: 70 }, { name: "Shanti Nagar Park", x: -90, z: 110 }, { name: "Our Home (Kaushik family)", x: HOME.door.x, z: HOME.door.z + 2 }, { name: "New Town", x: 110, z: 160 }, { name: "Old Town", x: -110, z: -80 }); }
     list.push(...[["School Gate", SCHOOL.gate.x, SCHOOL.gate.z], ["Assembly Ground", 100, -50], ["Flag Pole", 100, -60], ["Lunch Benches", 63, -108], ["Playground", 50, -145], ["Football Field", 138, -145], ["Basketball Court", 150, -50], ["Cycle Stand", 43, -30], ["Bus Stop: Shanti Nagar", -100, 50], ["Bus Stop: School Gate", 108, 10], ["Shanti Nagar Park", -90, 110], ["City Park", 140, 60]].map(([name, x, z]) => ({ name, x, z, landmark: true })));
     // One entry per name (the first), sorted A to Z.
     const seen = new Set();
@@ -6184,7 +6186,7 @@ class Game {
       this.interactables.push({ pos: { x: pg.x + 10, z: pg.z - 2.2 }, radius: 1.8, prompt: () => L("Climb the slide"), activate: () => this._playPark("slide", pg) });
     }
     for (const npc of this.npcs) this.interactables.push({ pos: npc.position, radius: 2.6, npc, visible: () => npc.group.visible, prompt: () => L("Talk to {n}", { n: npc.name }), activate: () => this._talk(npc) });
-    for (const v of [this.scooty, this.moto]) this.interactables.push({ pos: v.group.position, radius: 2.4, visible: () => !(this.player.riding && this.player.riding.group === v.group), prompt: () => L("Ride {v}", { v: v.label }), activate: () => { const pr = this.progress; if (pr.age < v.minAge) { showToast(L("Papa: 'Not yet. {a} first, then the RTO test.'", { a: v.minAge }), 2800); return; } if (!pr.licence) { showToast(L("No licence. RTO counter, Police Station: ₹100 test."), 3000, "bad"); return; } this.player.mount(v); playHorn(); showToast(L("🛵 Helmet on. Roads only, stop at red. Press E to get off."), 3000, "good"); } });
+    for (const v of [this.scooty, this.moto]) this.interactables.push({ pos: v.group.position, radius: 2.4, visible: () => !(this.player.riding && this.player.riding.group === v.group), prompt: () => L("Ride {v}", { v: v.label }), activate: () => { const pr = this.progress; if (pr.age < v.minAge) { showToast(L("Papa: 'Not yet. {a} first, then the RTO test.'", { a: v.minAge }), 2800); return; } if (!pr.licence) { showToast(L("No licence. RTO Office, Old Town road: ₹100 test with Officer Verma."), 3200, "bad"); this.setObjective(L("Go to the RTO Office"), -52, -86); return; } this.player.mount(v); playHorn(); showToast(L("🛵 Helmet on. Roads only, stop at red. Press E to get off."), 3000, "good"); } });
     // Papa's car, parked in our lane. In the morning he drops you at school; after school he picks you up at the gate.
     this.interactables.push({ pos: this.car.group.position, radius: 3.0, visible: () => !this.car.driving, prompt: () => (this.working ? L("Drive the car") : this.phase === "morning" ? L("Ride to school in Papa's car") : this.phase === "over" && this.car.atSchool ? L("Ride home in Papa's car") : L("Papa's car")), activate: () => this._carRide() });
   }
@@ -6215,7 +6217,13 @@ class Game {
     if (room.type === "home") this._setupHome(room);
     this._jobRoomSetup(room, door);
     if (door.label === "City Hospital") this.roomInteractables.push({ pos: { x: room.x0 + 6, z: room.z0 + 2 }, radius: 2.6, prompt: () => L("Dr. Mehta: yearly check-up (₹30)"), activate: () => this._checkup() });
-    if (door.label === "Police Station") this.roomInteractables.push({ pos: { x: room.x0 - 6, z: room.z0 + 4 }, radius: 2.4, prompt: () => L("RTO counter: driving test (₹100)"), activate: () => this._drivingTest() });
+    if (door.label === "Police Station") this.roomInteractables.push({ pos: { x: room.x0 - 6, z: room.z0 + 4 }, radius: 2.4, prompt: () => L("Notice: driving licences at the RTO Office, Old Town road"), activate: () => { showToast(L("Constable: 'Licences are at the RTO Office now, Old Town road, next to the Fish Market. Officer Verma sits there.'"), 4200); this.setObjective(L("Go to the RTO Office"), -52, -86); } });
+    if (door.label === "RTO Office") {
+      if (!this._rto) { this._rto = new Npc({ id: "rto_verma", name: "RTO Officer Verma", boss: true, pitch: 360, look: { shirt: 0xffffff, trousers: 0x1d3557, hair: 0x333333 } }, this.world, { pos: [room.x0 - 2, room.z0 - 3], fixed: true }); this.npcs.push(this._rto); }
+      this._rto.group.visible = true; this._rto._inRoom = true; this._rto.station({ x: room.x0 - 2, z: room.z0 - 3 }, 0);
+      room._label(L("Counter 1 · Driving test"), room.x0 - 2, room.z0 - 1.5, 2.2, 0.6);
+      this.roomInteractables.push({ pos: this._rto.position, radius: 3.0, npc: this._rto, prompt: () => (this.progress.licence ? L("RTO Officer Verma (licence issued)") : L("RTO Officer Verma: driving test (₹100, from 16)")), activate: () => this._drivingTest() });
+    }
     if (/bank|lotus plaza/i.test(door.label)) this.roomInteractables.push({ pos: { x: room.x0 - 2, z: room.z0 + 4 }, radius: 2.0, prompt: () => L("Fixed deposit (₹200 at 5% a term)"), activate: () => this._fixedDeposit() });
     if (door.label === "Suryanagar Supermarket") this.roomInteractables.push({ pos: { x: room.x0 + 6, z: room.z0 + 5 }, radius: 2.4, prompt: () => (this.progress.shop ? L("Your shop (earns ₹100 a night)") : L("Open your own shop (₹2,000)")), activate: () => this._openShopBusiness() });
     if (door.label === "Vet Clinic") this.roomInteractables.push({ pos: room.occupantPos(), radius: 3.0, prompt: () => L("Dr. Pillai: check-up for Moti (₹50)"), activate: () => this._vetVisit() });
@@ -6245,6 +6253,7 @@ class Game {
     for (const t of Object.values(this.teachers)) if (t._inRoom) { t.group.visible = false; t._inRoom = false; }
     for (const k of Object.values(this._kin || {})) { k.group.visible = false; k._inRoom = false; }
     for (const o of this._officers || []) { o.group.visible = false; o._inRoom = false; }
+    if (this._rto) { this._rto.group.visible = false; this._rto._inRoom = false; }
     for (const b of Object.values(this._bosses || {})) { b.group.visible = false; b._inRoom = false; }
     this._placePeople();
     Audio.playPick();
@@ -6903,7 +6912,8 @@ class Game {
     } else if (this.phase === "over" && c.atSchool) {
       this._driveCar([[c.gate.x, c.gate.z], [-44, 4], [-44, 44], [c.home.x, 44], [c.home.x, c.home.z]], () => { c.atSchool = false; this.player.group.position.set(HOME.door.x, 0, HOME.door.z + 3); this._enterRoom(this.world.doors.find((d) => d.label === "Our Home")); this._startPhase("evening"); });
     } else if (this.working) {
-      if (!this.progress.licence) { showToast(L("No licence yet. Take the driving test at the RTO counter in the Police Station (₹100, age 18+)."), 3800, "bad"); return; }
+      if (!this.progress.licence) { showToast(L("No licence yet. RTO Office, Old Town road: Officer Verma, ₹100 test (age 18 for the car)."), 3800, "bad"); this.setObjective(L("Go to the RTO Office"), -52, -86); return; }
+      if (this.progress.age < 18) { showToast(L("Papa: 'The car at eighteen, champ. Take the scooty.'"), 2800); return; }
       this.player.mount({ group: c.group, speed: 14, kind: "car", label: L("Your car"), controlled: true }); playHorn();
       showToast(L("🚗 Your car now. Seat belt on. Stay on the roads, stop at red lights. Press E to get out."), 3600, "good");
     } else showToast(L("Papa's car. He drives you to school in the morning and home after school."), 2600);
@@ -7108,9 +7118,13 @@ class Game {
   }
   // ---- Driving test ----
   _drivingTest() {
-    const pr = this.progress; if (pr.age < 18) { showToast(L("RTO: 'Eighteen first, beta. Then the test.'"), 2600); return; } if (pr.licence) { showToast(L("You already hold a licence. Drive safe."), 2200); return; } if (pr.money < 100) { showToast(L("RTO: ₹100 fee for the test."), 2400, "bad"); return; }
+    const pr = this.progress; if (pr.age < 16) { this.dialogue.say("RTO Officer Verma", [L("Sixteen first, young one. At sixteen a scooty licence, at eighteen the motorbike and the car. Come back then.")]); return; } if (pr.licence) { this.dialogue.say("RTO Officer Verma", [L("You already hold a licence. Seat belt, signals, no phone. Drive safe.")]); return; } if (pr.money < 100) { this.dialogue.say("RTO Officer Verma", [L("The test fee is ₹100. Come back with the money.")]); return; }
+    this.dialogue.say("RTO Officer Verma", [L("Driving test. Five road-rule questions, four to pass. Sit."), L("The fee is ₹100. Ready?")], () => this._drivingTestPaper()); return;
+  }
+  _drivingTestPaper() {
+    const pr = this.progress;
     this.addMoney(-100, "RTO fee");
-    this._runPaper(`🪪 ${L("Driving test")}`, makeRng(pr.day).shuffle(TRAFFIC_QS.slice()).slice(0, 5).map((q) => ({ ...q, choices: makeRng(pr.day + 1).shuffle(q.choices.slice()) })), (score) => { if (score >= 4) { pr.licence = true; saveProgress(this.profile, pr); playSuccess(); this._snap("🪪", "Passed the driving test."); this.dialogue.say("RTO Officer", [L("{n} out of 5. Licence granted. Seat belt, signals, no phone. Congratulations.", { n: score })]); } else this.dialogue.say("RTO Officer", [L("{n} out of 5. Read the road rules and come back tomorrow.", { n: score })]); });
+    this._runPaper(`🪪 ${L("Driving test")}`, makeRng(pr.day).shuffle(TRAFFIC_QS.slice()).slice(0, 5).map((q) => ({ ...q, choices: makeRng(pr.day + 1).shuffle(q.choices.slice()) })), (score) => { if (score >= 4) { pr.licence = true; saveProgress(this.profile, pr); playSuccess(); this._snap("🪪", "Passed the driving test."); this.dialogue.say("RTO Officer Verma", [L("{n} out of 5. Licence granted{s}. Seat belt, signals, no phone. Congratulations.", { n: score, s: pr.age < 18 ? L(" for the scooty; the motorbike and car open at eighteen") : "" })]); } else this.dialogue.say("RTO Officer Verma", [L("{n} out of 5. Read the road rules and come back tomorrow.", { n: score })]); });
   }
   // ---- Money that grows ----
   _fixedDeposit() {

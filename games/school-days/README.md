@@ -111,8 +111,9 @@ and cars run on every road.
 11. Photo album in the notebook, shown again in the ending.
 12. Festivals: Holi (day 6), Independence Day (12), Eid (16), Christmas
     (20), plus Diwali and your birthday.
-13. Driving licence: RTO counter at the Police Station from 18; needed to
-    drive the car.
+13. Driving licence: the RTO Office on the Old Town road, next to the Fish
+    Market. RTO Officer Verma sits at Counter 1. From 16 a scooty licence,
+    from 18 the motorbike and car. ₹100, five road-rule questions.
 14. Money that grows: piggy bank at home, fixed deposit at the bank, your
     own shop as a working adult (₹100 a night).
 15. Sports league: six Sunday matches for the city cricketer or footballer,
@@ -149,8 +150,8 @@ takes you straight there.
 
 - Press G for the map. Type a place in the search box (RTO, hospital,
   stadium, bank, park) and press Enter: the compass points there and the
-  map centres on it. The RTO Office is inside the Police Station on the
-  school road, west of City Hospital.
+  map centres on it. The RTO Office is on the Old Town road, next to the
+  Fish Market; a billboard on the avenue points to it.
 - Beside Papa's car in the lane stand Maa's scooty (from 16, with a
   licence) and Papa's motorbike (from 18, with a licence). Press E to ride,
   roads only, E again to get off.

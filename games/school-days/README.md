@@ -67,6 +67,20 @@ and cars run on every road.
   family nights, lab hands, Sunday cricket, Diwali, birthday.
 - Free practice at the Stadium Ground any day: cricket nets and penalties.
 
+## Moti the dog
+
+Moti waits in the garden at home. Press E at him: pet him, feed him ₹5
+biscuits, take him for a walk (he follows you outside, waits at doors, runs
+beside your cycle or car, and sometimes digs up a coin), or talk to him in
+the chat box. His happiness drops a little every day. Below 25 he is unwell
+and will not walk: Dr. Pillai at the Vet Clinic in Old Town fixes him for
+₹50. Three walks and a happy dog earn the "Moti's best friend" badge.
+
+## Rain
+
+Every sixth day it rains: grey sky, falling drops, and games period moves
+indoors to carrom in the hall.
+
 ## Parks
 
 Three playgrounds: Shanti Nagar Park, City Park and the school playground.
@@ -96,7 +110,8 @@ scientist, architect, sports coach, hotel manager, bank manager, farmer,
 librarian, radio jockey, veterinary doctor, cricketer, footballer. The two
 sports jobs are tested on the field: the coach takes you out to the Stadium
 Ground behind the stadium. For cricket a bowler bowls ten balls and you
-press F to swing as each one reaches you. For football a keeper paces the
+press F (or E, or the big Swing button on screen) to swing as each one
+reaches you. For football a keeper paces the
 goal line and you turn to aim and press F to shoot ten penalties. Six clean
 to pass, then the interview. A shift is a match day of five.
 Choose one, follow the compass to its place, and press E at the door.

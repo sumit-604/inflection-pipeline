@@ -557,6 +557,10 @@ kbd { display: inline-block; border: 1px solid #d8cdb2; border-bottom-width: 3px
 .sport-track { position: relative; height: 34px; border-radius: 17px; background: linear-gradient(90deg, #f6d1b8 0 38%, #8fd694 38% 62%, #f6d1b8 62%); border: 2px solid #e2c7a8; margin: 10px 0; overflow: hidden; }
 .sport-marker { position: absolute; top: 3px; width: 24px; height: 24px; border-radius: 12px; background: #b4531a; box-shadow: 0 2px 0 rgba(0,0,0,0.2); }
 
+#trial-btn { position: absolute; left: 50%; bottom: 96px; transform: translateX(-50%); z-index: 30; font-size: 26px; font-weight: 800; padding: 16px 34px; border-radius: 40px; border: 3px solid #b4531a; background: #ffd21e; color: #3b2110; box-shadow: 0 6px 0 #b4531a; cursor: pointer; font-family: inherit; }
+#trial-btn:active { transform: translateX(-50%) translateY(5px); box-shadow: 0 1px 0 #b4531a; }
+#trial-btn[hidden] { display: none; }
+
 </style>
   <canvas id="game-canvas"></canvas>
 
@@ -595,6 +599,7 @@ kbd { display: inline-block; border: 1px solid #d8cdb2; border-bottom-width: 3px
     <div id="toast" hidden></div>
     <div id="compass" hidden><span id="compass-arrow">➤</span><span id="compass-text"></span><button id="waypoint-clear" title="Hide">✕</button></div>
     <div id="objective"><span id="objective-text">Good morning!</span></div>
+    <button id="trial-btn" hidden>🏏 Swing!</button>
 
     <button id="notebook-btn" title="Diary and marks (N)">📓</button>
     <button id="sound-btn" title="Sound on / off">🔊</button>
@@ -1281,11 +1286,14 @@ function playTalkBlip(pitch = 400, ch = "a") {
 }
 
 
+// Moti's bark: two short rough notes.
+function playBark() { if (muted) return; const c = getCtx(); if (!c) return; const t = c.currentTime; tone(420, t, 0.08, "sawtooth", 0.18); tone(360, t + 0.11, 0.1, "sawtooth", 0.16); }
+
 // ===== src/school/save.js =====
 const KEY = (profile) => `school-days.v1.${profile}`;
 function emptyProgress() {
   const marks = {}; for (const s of SUBJECT_IDS) marks[s] = { cw: 0, hw: 0, fa: [], term: [] };
-  return { day: 1, phase: "morning", period: 0, marks, games: [], attempts: {}, friendship: {}, money: 0, energy: 100, bag: [], wardrobe: [], held: null, hints: 0, outfit: {}, tiffin: null, homework: [], reports: [], diary: [], thought: [], conduct: 0, nights: 0, ended: false, incidents: 0, job: null, hired: [], shifts: 0 };
+  return { day: 1, phase: "morning", period: 0, marks, games: [], attempts: {}, friendship: {}, money: 0, energy: 100, bag: [], wardrobe: [], held: null, hints: 0, outfit: {}, tiffin: null, homework: [], reports: [], diary: [], thought: [], conduct: 0, nights: 0, ended: false, incidents: 0, job: null, hired: [], shifts: 0, petHappy: 70, petWalks: 0 };
 }
 function loadProgress(profile) {
   try {
@@ -2779,7 +2787,14 @@ class World {
   }
 
   // ---- Per frame ----
+  setRain(on) {
+    if (on === !!this.raining) return; this.raining = on;
+    if (on && !this.rain) { const n = 900, pos = new Float32Array(n * 3); for (let i = 0; i < n; i++) { pos[i * 3] = (Math.random() - 0.5) * 70; pos[i * 3 + 1] = Math.random() * 30; pos[i * 3 + 2] = (Math.random() - 0.5) * 70; } const geo = new THREE.BufferGeometry(); geo.setAttribute("position", new THREE.BufferAttribute(pos, 3)); this.rain = new THREE.Points(geo, new THREE.PointsMaterial({ color: 0xdfe8f0, size: 0.14, transparent: true, opacity: 0.7 })); this.scene.add(this.rain); }
+    if (this.rain) this.rain.visible = on;
+    this.scene.background.set(on ? 0x8d9aa6 : 0xbfe3f2); if (this.scene.fog) { this.scene.fog.color.set(on ? 0x8d9aa6 : 0xbfe3f2); this.scene.fog.near = on ? 60 : 150; this.scene.fog.far = on ? 220 : 420; }
+  }
   update(dt, elapsed, followPos = null) {
+    if (this.raining && this.rain && followPos) { const arr = this.rain.geometry.attributes.position.array; for (let i = 1; i < arr.length; i += 3) { arr[i] -= 24 * dt; if (arr[i] < 0) arr[i] += 30; } this.rain.geometry.attributes.position.needsUpdate = true; this.rain.position.set(followPos.x, 0, followPos.z); }
     if (followPos) { this.sun.position.copy(followPos).add(this.sunOffset); this.sun.target.position.copy(followPos); }
     for (const m of this.movers) m.update(dt);
     this._updateCity(dt, elapsed);
@@ -5349,6 +5364,36 @@ const BADGES = [
 ];
 const DIWALI_QUIZ = [{ q: "Diwali is the festival of…", choices: ["Lights", "Colours", "Kites", "Harvest"], answer: "Lights" }, { q: "The small clay lamp we light is a…", choices: ["Diya", "Rangoli", "Ladoo", "Cracker"], answer: "Diya" }, { q: "The pattern drawn at the door with colours is…", choices: ["Rangoli", "Diya", "Roti", "Kite"], answer: "Rangoli" }];
 
+// ---- Moti the dog ----
+function makeDog(color = 0xc98d62) {
+  const g = new THREE.Group(); const m = (c) => new THREE.MeshStandardMaterial({ color: c, flatShading: true, roughness: 0.9 });
+  const body = new THREE.Mesh(new THREE.BoxGeometry(0.7, 0.36, 0.34), m(color)); body.position.set(0, 0.42, 0); body.castShadow = true; g.add(body);
+  const head = new THREE.Mesh(new THREE.BoxGeometry(0.32, 0.3, 0.3), m(color)); head.position.set(0.48, 0.6, 0); g.add(head);
+  const snout = new THREE.Mesh(new THREE.BoxGeometry(0.16, 0.14, 0.18), m(0xe8c39e)); snout.position.set(0.68, 0.54, 0); g.add(snout);
+  const nose = new THREE.Mesh(new THREE.BoxGeometry(0.06, 0.06, 0.08), m(0x222222)); nose.position.set(0.77, 0.57, 0); g.add(nose);
+  for (const s of [-1, 1]) { const ear = new THREE.Mesh(new THREE.BoxGeometry(0.1, 0.22, 0.06), m(0x8a5626)); ear.position.set(0.42, 0.68, s * 0.16); ear.rotation.x = s * 0.3; g.add(ear); const eye = new THREE.Mesh(new THREE.SphereGeometry(0.035, 6, 4), m(0x111111)); eye.position.set(0.62, 0.66, s * 0.09); g.add(eye); }
+  const legs = []; for (const [x, z] of [[0.25, 0.12], [0.25, -0.12], [-0.25, 0.12], [-0.25, -0.12]]) { const leg = new THREE.Mesh(new THREE.BoxGeometry(0.1, 0.3, 0.1), m(color)); leg.position.set(x, 0.15, z); g.add(leg); legs.push(leg); }
+  const tail = new THREE.Mesh(new THREE.BoxGeometry(0.28, 0.06, 0.06), m(color)); tail.position.set(-0.45, 0.55, 0); tail.rotation.z = 0.7; g.add(tail);
+  const collar = new THREE.Mesh(new THREE.BoxGeometry(0.34, 0.06, 0.34), m(0xd62828)); collar.position.set(0.3, 0.5, 0); g.add(collar);
+  const tag = makeTextSprite("Moti", { size: 46, scale: 0.45 }); tag.position.set(0.2, 1.15, 0); g.add(tag);
+  g.userData = { legs, tail, dynamic: true, head };
+  return g;
+}
+const PET_REPLIES = { food: ["WOOF! (runs to the bowl, tail helicopter)", "Woof woof! (sits, gives paw, stares at your pocket)"], walk: ["(grabs the leash in his mouth) Woof!", "Bhow! (runs to the gate and back, twice)"], good: ["(tail wagging so hard the whole dog wags)", "Wooof. (rolls over for a belly rub)"], name: ["Woof? (tilts head)", "(ears up) Bhow!"], love: ["(licks your hand)", "(leans on your leg, sighs)"], bad: ["(ears down, whimper)", "(hides behind Dadi's chair)"], any: ["Woof!", "(tilts head) ...?", "Bhow bhow! (runs in a circle)", "(sniffs your shoe) Woof.", "(yawns, thumps tail on the floor)"] };
+function petReply(text) {
+  const t = (text || "").toLowerCase(); const pick = (k) => PET_REPLIES[k][Math.floor(Math.random() * PET_REPLIES[k].length)];
+  if (/food|eat|biscuit|treat|hungry|bone|khana/.test(t)) return pick("food");
+  if (/walk|park|out|come|chalo|run/.test(t)) return pick("walk");
+  if (/good boy|good dog|clever|shabash/.test(t)) return pick("good");
+  if (/name|who are you|moti/.test(t)) return pick("name");
+  if (/love|pyar|kiss|hug/.test(t)) return pick("love");
+  if (/bad|no!|stop|angry|shut/.test(t)) return pick("bad");
+  return pick("any");
+}
+BADGES.push({ id: "moti", icon: "🐕", name: "Moti's best friend", test: (pr) => (pr.petHappy || 0) >= 95 && (pr.petWalks || 0) >= 3 });
+BADGES.push({ id: "rain", icon: "☔", name: "Rainy day", test: (pr) => !!pr.rainDay });
+const CARROM = { id: "carrom", name: "Carrom (rainy day)", icon: "🎯", cue: "Rain outside. Carrom in the hall: flick when the striker is in the green.", hit: "Pocketed!", miss: "Missed the pocket!", verb: "Flick" };
+
 class Minimap {
   constructor(world) {
     this.world = world;
@@ -5647,6 +5692,7 @@ class Game {
     else { const hint = document.getElementById("controls-hint"); hint.hidden = false; setTimeout(() => hint.classList.add("fade"), 4000); setTimeout(() => (hint.hidden = true), 4800); }
     this._buildNpcs();
     this._eqUsed = new Set();
+    this._buildPet();
     // Your own bicycle, parked by the garden gate. Ride it anywhere: roads, lanes, the campus.
     const bike = makeBicycle(0xd62828); bike.position.set(HOME.x + 7.5, 0, HOME.z + 9.5); bike.rotation.y = Math.PI / 2; this.world.scene.add(bike);
     this.bike = { group: bike, speed: 9, kind: "bike", label: "bicycle", controlled: true };
@@ -5702,6 +5748,7 @@ class Game {
   subjectTotal(s) { const m = this.progress.marks[s]; return m.cw + m.hw + m.fa.reduce((a, b) => a + b, 0) + m.term.reduce((a, b) => a + b, 0); }
   termMarks() { return SUBJECT_IDS.reduce((n, s) => n + this.subjectTotal(s), 0) + this.progress.games.reduce((a, b) => a + b, 0); }
   isFaDay() { const d = this.progress.day; return d % 5 === 0 && !this.isTermDay(); }
+  isRainy() { return this.progress.day % 6 === 4; }
   isSunday() { return this.progress.day % 7 === 0; }
   isBirthday() { return this.progress.day === 15; }
   isDiwali() { return this.progress.day === 18; }
@@ -5802,7 +5849,7 @@ class Game {
       else if (false) this.setObjective(this.working ? L("Sunday! No work today. Drive, play in the park, or cricket at the Stadium Ground with Papa.") : L("Sunday! No school. Cricket with Papa at the Stadium Ground (E at the pitch), or play in the park."), this.world.stadium.batX, this.world.stadium.z);
       else if (this.working) this._workObjective();
       else this.setObjective(L("Catch the school bus at the Shanti Nagar stop (or walk, and cross at the zebra)."), BUS_STOPS[0].standAt.x, BUS_STOPS[0].standAt.z);
-    } else if (phase === "school") { this._periodObjective(); if (this.isMonitorDay()) setTimeout(() => showToast(L("📛 You are the class monitor today. Mind the class before the teacher comes."), 4000, "good"), 1500); }
+    } else if (phase === "school") { this._periodObjective(); if (this.isRainy()) { this.progress.rainDay = true; setTimeout(() => showToast(L("☔ Rain today. Games period moves to the hall: carrom."), 3600), 800); } if (this.isMonitorDay()) setTimeout(() => showToast(L("📛 You are the class monitor today. Mind the class before the teacher comes."), 4000, "good"), 1500); }
     else if (phase === "over") this.setObjective(this.working ? L("Work is over. Head home.") : L("School is over. Take the bus home from the gate stop."), this.working ? HOME.door.x : BUS_STOPS[1].standAt.x, this.working ? HOME.door.z + 2 : BUS_STOPS[1].standAt.z);
     else if (phase === "evening" && this.isBirthday() && !this.progress.birthday) { this.setObjective(L("It is your birthday! Cut the cake at the dining table."), HOME.door.x, HOME.door.z + 2); }
     else if (phase === "evening" && this.isDiwali() && !this.progress.diwali) { this.setObjective(L("Happy Diwali! Light the diyas at the dining table."), HOME.door.x, HOME.door.z + 2); }
@@ -5847,6 +5894,8 @@ class Game {
       this.interactables.push({ pos: { x: S.batX - 1, z: S.z }, radius: 2.4, visible: () => !this._trial, prompt: () => (this.isSunday() && !this.progress.sundayDone ? L("Sunday cricket with Papa (6 balls)") : L("Cricket nets: 6 balls for fun")), activate: () => this._sundayCricket() });
       this.interactables.push({ pos: { x: S.spot.x - 1.5, z: S.z }, radius: 2.4, visible: () => !this._trial, prompt: () => L("Penalty practice: 6 shots for fun"), activate: () => this._funPenalties() });
     }
+    // Moti, the family dog.
+    this.interactables.push({ pos: this.pet.group.position, radius: 2.2, visible: () => this.pet.group.visible, npc: this.pet.npc, prompt: () => L("Moti 🐕 (pet, feed, walk)"), activate: () => this._petMenu() });
     for (const pg of this.world.playgrounds || []) {
       this.interactables.push({ pos: { x: pg.x, z: pg.z + 1 }, radius: 1.8, prompt: () => L("Swing on the swing"), activate: () => this._playPark("swing", pg) });
       this.interactables.push({ pos: { x: pg.x + 5, z: pg.z + 1 }, radius: 1.8, prompt: () => L("Ride the see-saw"), activate: () => this._playPark("seesaw", pg) });
@@ -5882,6 +5931,7 @@ class Game {
     if (room.type === "lab" || room.type === "computer") this._setupLabRoom(room);
     if (room.type === "home") this._setupHome(room);
     this._jobRoomSetup(room, door);
+    if (door.label === "Vet Clinic") this.roomInteractables.push({ pos: room.occupantPos(), radius: 3.0, prompt: () => L("Dr. Pillai: check-up for Moti (₹50)"), activate: () => this._vetVisit() });
     if (/bank|lotus plaza/i.test(door.label)) this.roomInteractables.push({ pos: { x: room.x0 - 6, z: room.z0 + 4 }, radius: 2.4, prompt: () => L("Bank counter: savings account"), activate: () => this._bank() });
     if (room.type === "gym" || door.label === "Sports Stadium") this.roomInteractables.push({ pos: { x: room.x0 + 6, z: room.z0 + 4 }, radius: 2.4, prompt: () => L("Go out to the Stadium Ground"), activate: () => { this._exitRoom(); const S = this.world.stadium; this.player.group.position.set(S.batX - 4, 0, S.z + 3); showToast(L("The Stadium Ground. Cricket pitch and the goal."), 2400); } });
     if (room.type === "library") this.roomInteractables.push({ pos: { x: room.x0, z: room.z0 + 0.5 }, radius: 2.2, prompt: () => "Read at the table", activate: () => this._library() });
@@ -6072,7 +6122,7 @@ class Game {
       card.querySelector("#sleep-ok").addEventListener("click", () => {
         closePanel();
         this._awardBadges();
-        pr.day++; buildPeriods(pr.day); pr.tiffin = null; if (this._lateNight) { pr.energy = Math.max(20, pr.energy - 25); this._lateNight = false; } this._incidentDone = false; this._monitorDone = false; this._pocketGiven = false; pr.sundayDone = false; this._eqUsed = new Set(); this.car.atSchool = false; this.car.group.position.set(this.car.home.x, 0, this.car.home.z); this.car.group.rotation.y = 0; pr.homework = []; pr.period = 0; this._marksToday = 0; this._ateLunch = false; this._goalDone = false; this._gamesActive = false; this._shiftDone = false;
+        pr.day++; buildPeriods(pr.day); pr.tiffin = null; if (this._lateNight) { pr.energy = Math.max(20, pr.energy - 25); this._lateNight = false; } this._incidentDone = false; this._monitorDone = false; this._pocketGiven = false; pr.sundayDone = false; pr.petHappy = Math.max(0, (pr.petHappy == null ? 70 : pr.petHappy) - 12); if (pr.petHappy < 25) showToast(L("🐕 Moti looks unwell. Feed him, or take him to the Vet Clinic."), 3600, "bad"); this._eqUsed = new Set(); this.car.atSchool = false; this.car.group.position.set(this.car.home.x, 0, this.car.home.z); this.car.group.rotation.y = 0; pr.homework = []; pr.period = 0; this._marksToday = 0; this._ateLunch = false; this._goalDone = false; this._gamesActive = false; this._shiftDone = false;
         if (pr.day === 11) { for (const s of SUBJECT_IDS) pr.marks[s] = { cw: 0, hw: 0, fa: [], term: [] }; pr.games = []; showToast("Term 2 begins. Marks start fresh; Term 1 is on your report card.", 4000, "good"); }
         if (pr.day > 20) { pr.day = 1; for (const s of SUBJECT_IDS) pr.marks[s] = { cw: 0, hw: 0, fa: [], term: [] }; pr.games = []; showToast("A new school year! Reports are kept in your diary.", 4000, "good"); }
         saveProgress(this.profile, pr);
@@ -6225,7 +6275,7 @@ class Game {
 
   // ---- The chat box ----
   _npcKind(npc) {
-    const id = npc && npc.def ? npc.def.id : ""; if (["maa", "papa", "dadi", "gudiya"].includes(id)) return id;
+    const id = npc && npc.def ? npc.def.id : ""; if (id === "moti") return "pet"; if (["maa", "papa", "dadi", "gudiya"].includes(id)) return id;
     if (npc && npc.def && npc.def.child) return "friend"; if (id.startsWith("t_") || (npc && npc.def && TEACHERS[id])) return "teacher"; return "other";
   }
   _chatFromDialogue() {
@@ -6291,7 +6341,7 @@ class Game {
     const card = openPanel(`<div class="job-title-row"><h2>💬 ${L("Talk with {n}", { n: name })}</h2><button class="ghost-btn" id="chat-close">${L("Okay")}</button></div><p class="job-brief">${L("Type what you want to say. {n} answers.", { n: name })}</p><div class="chat-log" id="chat-log"></div><div class="chat-row"><input id="chat-in" type="text" maxlength="120" placeholder="${L("Say something…")}" autocomplete="off"><button class="big-btn" id="chat-send">${L("Say")}</button></div>`);
     const log = card.querySelector("#chat-log"), input = card.querySelector("#chat-in");
     const add = (cls, who, text) => { const div = document.createElement("div"); div.className = cls; div.textContent = `${who}: ${text}`; log.appendChild(div); log.scrollTop = 1e6; };
-    const send = () => { const t = (input.value || "").trim(); if (!t) return; input.value = ""; add("me", L("You"), t); this._pendingAct = null; const r = L(chatReply(kind, t, this._chatCtx(npc))); this.progress.chats = (this.progress.chats || 0) + 1; const act = this._pendingAct; if (act) setTimeout(() => { closePanel(); this._engagedNpc = null; this._doAct(act, npc); }, 1800); setTimeout(() => { add("them", name, r); speakLine(r, pitch); setMood(npc.group, /!|ha/i.test(r) ? "laugh" : "happy", 3); if (kind === "friend" && npc.def) this.addFriendship(npc.def.id, this.progress.chats % 3 === 0 ? 1 : 0); }, 350); };
+    const send = () => { const t = (input.value || "").trim(); if (!t) return; input.value = ""; add("me", L("You"), t); this._pendingAct = null; const r = kind === "pet" ? petReply(t) : L(chatReply(kind, t, this._chatCtx(npc))); this.progress.chats = (this.progress.chats || 0) + 1; const act = this._pendingAct; if (act) setTimeout(() => { closePanel(); this._engagedNpc = null; this._doAct(act, npc); }, 1800); setTimeout(() => { add("them", name, r); speakLine(r, pitch); setMood(npc.group, /!|ha/i.test(r) ? "laugh" : "happy", 3); if (kind === "friend" && npc.def) this.addFriendship(npc.def.id, this.progress.chats % 3 === 0 ? 1 : 0); }, 350); };
     card.querySelector("#chat-send").addEventListener("click", send); input.addEventListener("keydown", (e) => { if (e.key === "Enter") send(); e.stopPropagation(); });
     card.querySelector("#chat-close").addEventListener("click", () => { closePanel(); this._engagedNpc = null; });
     setTimeout(() => input.focus(), 60);
@@ -6303,15 +6353,19 @@ class Game {
     const S = this.world.stadium, P = this.player.group;
     if (this.world.currentRoom) this._exitRoom(); if (this.player.riding) this.player.dismount();
     const kind = spec.kind || "cricket";
-    if (!this._trialNpc) { this._trialNpc = new Npc({ id: "trial_npc", name: who, look: { shirt: 0xffffff, trousers: 0xffffff, hair: 0x111111 } }, this.world, { pos: [S.bowlX, S.z], fixed: true }); this.npcs.push(this._trialNpc); }
-    const n = this._trialNpc; n.name = who; n.group.visible = true;
+    this._trialNpcs = this._trialNpcs || {};
+    if (this._trialNpc && this._trialNpc.name !== who) this._trialNpc.group.visible = false;
+    if (!this._trialNpcs[who]) { this._trialNpcs[who] = new Npc({ id: "trial_" + who.replace(/\W/g, ""), name: who, look: { shirt: kind === "cricket" ? 0xffffff : 0x2a9d8f, trousers: kind === "cricket" ? 0xffffff : 0x111111, hair: 0x111111 } }, this.world, { pos: [S.bowlX, S.z], fixed: true }); this.npcs.push(this._trialNpcs[who]); }
+    this._trialNpc = this._trialNpcs[who]; const n = this._trialNpc; n.group.visible = true;
     if (!this._trialBall) { this._trialBall = kind === "cricket" ? new THREE.Mesh(new THREE.SphereGeometry(0.12, 8, 6), new THREE.MeshStandardMaterial({ color: 0xd62828 })) : makeFootball(); this.world.scene.add(this._trialBall); }
     else if ((kind === "cricket") !== (this._trialBall.geometry.type === "SphereGeometry")) { this.world.scene.remove(this._trialBall); this._trialBall = kind === "cricket" ? new THREE.Mesh(new THREE.SphereGeometry(0.12, 8, 6), new THREE.MeshStandardMaterial({ color: 0xd62828 })) : makeFootball(); this.world.scene.add(this._trialBall); }
     const b = this._trialBall; b.visible = true;
     if (kind === "cricket") { P.position.set(S.batX - 0.6, 0, S.z + 0.9); n.station({ x: S.bowlX, z: S.z }, -Math.PI / 2); b.position.set(S.bowlX, 1.4, S.z); }
     else { P.position.set(S.spot.x - 1.6, 0, S.z); n.station({ x: S.goal.x - 0.8, z: S.z }, -Math.PI / 2); b.position.set(S.spot.x, 0.22, S.z); }
     P.rotation.y = Math.PI / 2; this.player.facing = Math.PI / 2; this.player.camYaw = Math.PI / 2 + Math.PI;
-    this._trial = { spec, kind, total, n: 0, hits: 0, state: kind === "cricket" ? "wait" : "ready", t: 0, onDone, who, keeperDir: 1 };
+    this._trial = { spec, kind, total, n: 0, hits: 0, state: kind === "cricket" ? "wait" : "ready", t: 0, onDone, who, keeperDir: 1, pinned: 0 };
+    const tb = document.getElementById("trial-btn"); if (tb) { tb.hidden = false; tb.textContent = `${spec.icon} ${L(spec.verb || (kind === "cricket" ? "Swing" : "Shoot"))}!`; if (!tb._wired) { tb._wired = true; tb.addEventListener("click", () => { this._trialPress = true; }); tb.addEventListener("touchstart", (e) => { e.preventDefault(); this._trialPress = true; }, { passive: false }); } }
+    this.player._placeCamera(1);
     this.player.setHeld(null); this._gearChanged && this._gearChanged();
     playBell(); showToast(`${spec.icon} ${L(spec.cue)}`, 4200, "good");
     this._trialObjective();
@@ -6319,6 +6373,9 @@ class Game {
   _trialObjective() { const tr = this._trial; this.setObjective(`${tr.spec.icon} ${tr.spec.name}: ${tr.hits} ${L("clean")} / ${tr.n} ${L("of")} ${tr.total}. ${L("Press F")}${tr.kind === "cricket" ? " " + L("when the ball reaches you.") : " " + L("to shoot past the keeper.")}`, null); }
   _tickTrial(dt, useP) {
     const tr = this._trial, S = this.world.stadium, b = this._trialBall, n = this._trialNpc, P = this.player.group;
+    if (this._trialPress) { useP = true; this._trialPress = false; }
+    // The first frames re-pin you to the crease or the spot, whatever moved you meanwhile.
+    if (tr.pinned < 3) { tr.pinned++; if (tr.kind === "cricket") P.position.set(S.batX - 0.6, 0, S.z + 0.9); else P.position.set(S.spot.x - 1.6, 0, S.z); P.rotation.y = Math.PI / 2; this.player.facing = Math.PI / 2; this.player._placeCamera(1); }
     tr.t += dt;
     const next = (ok, msg) => { if (ok) { tr.hits++; playSuccess(); setMood(P, "laugh", 3); } else { Audio.playRetry(); setMood(P, "sad", 2); } tr.n++; showToast(msg, 1600, ok ? "good" : "bad"); tr.state = "pause"; tr.t = 0; this._trialObjective(); };
     if (tr.kind === "cricket") {
@@ -6345,6 +6402,7 @@ class Game {
   }
   _endTrial() {
     const tr = this._trial; this._trial = null; this._trialBall.visible = false; this._trialNpc.group.visible = false;
+    const tb = document.getElementById("trial-btn"); if (tb) tb.hidden = true;
     const good = tr.hits >= tr.total * 0.6;
     const card = openPanel(`<div class="job-title-row"><h2>${tr.spec.icon} ${tr.spec.name}</h2></div><div class="score-big">${tr.hits} / ${tr.total}</div><div class="solved-banner"><b>${tr.who}:</b> "${L(good ? "That is what I wanted to see. Come inside." : "Not today. Practise at the nets and come back tomorrow.")}"</div><div class="btn-row"><button class="big-btn" id="tr-ok">${L("Okay")}</button></div>`);
     card.querySelector("#tr-ok").addEventListener("click", () => { closePanel(); this.setObjective(this.objective ? this.objective.label : "", null); tr.onDone(tr.hits); });
@@ -6399,6 +6457,51 @@ class Game {
     const pr = this.progress; pr.badges = pr.badges || [];
     for (const b of BADGES) { if (pr.badges.includes(b.id)) continue; let ok = false; try { ok = b.test(pr); } catch (e) {} if (ok) { pr.badges.push(b.id); showToast(`${b.icon} ${L("Badge")}: ${L(b.name)}`, 3000, "good"); this.diary(`Badge earned: ${b.name}.`); } }
   }
+
+  // ---- Moti the dog: follows you, wags, barks, digs up coins ----
+  _buildPet() {
+    const g = makeDog(); g.position.set(HOME.x - 5, 0, HOME.z + 8); g.rotation.y = -Math.PI / 2; this.world.scene.add(g);
+    this.pet = { group: g, following: false, wait: { x: HOME.x - 5, z: HOME.z + 8 }, walkDist: 0, coinT: 30, barkT: 6, npc: { id: "moti", name: "Moti", def: { id: "moti", name: "Moti", pitch: 600 }, group: g, position: g.position } };
+  }
+  _petSad() { return (this.progress.petHappy || 0) < 25; }
+  _petMenu() {
+    const pr = this.progress, pet = this.pet, sad = this._petSad();
+    const card = openPanel(`<div class="job-title-row"><h2>🐕 Moti</h2><button class="ghost-btn" id="pet-close">${L("Okay")}</button></div><p class="job-brief">${sad ? L("Moti is not well. Ears down, no wagging. Take him to the Vet Clinic in Old Town.") : L("Moti wags his tail and looks up at you.")} ${L("Happiness")}: <b>${Math.round(pr.petHappy)}</b> / 100 · ${L("Walks")}: ${pr.petWalks || 0}</p>
+      <div class="btn-row"><button class="big-btn" id="pet-pat">🤚 ${L("Pet him")}</button><button class="big-btn" id="pet-feed">🦴 ${L("Feed (₹5 biscuits)")}</button><button class="big-btn" id="pet-walk">${pet.following ? "🏠 " + L("Stay home") : "🦮 " + L("Walk with me")}</button><button class="big-btn" id="pet-talk">💬 ${L("Talk")}</button></div><div class="job-goal" id="pet-msg"></div>`);
+    const msg = card.querySelector("#pet-msg");
+    card.querySelector("#pet-close").addEventListener("click", () => closePanel());
+    card.querySelector("#pet-pat").addEventListener("click", () => { pr.petHappy = Math.min(100, pr.petHappy + 5); playBark(); pet.wagT = 4; msg.textContent = L("Moti leans into your hand. Happiness +5."); saveProgress(this.profile, pr); });
+    card.querySelector("#pet-feed").addEventListener("click", () => { if (pr.money < 5) { msg.textContent = L("No money for biscuits. Ask Papa."); Audio.playRetry(); return; } this.addMoney(-5, "Moti's biscuits"); pr.petHappy = Math.min(100, pr.petHappy + 30); playBark(); pet.wagT = 6; msg.textContent = L("Crunch crunch. Happiness +30."); saveProgress(this.profile, pr); });
+    card.querySelector("#pet-walk").addEventListener("click", () => { if (sad && !pet.following) { msg.textContent = L("He will not get up. The vet first."); return; } pet.following = !pet.following; if (pet.following) { pet.walkDist = 0; playBark(); msg.textContent = L("Moti jumps up. He follows you outside; he waits at doors."); this.setObjective(L("Walk Moti: 150 m for a happy dog. Careful on the road."), null); } else { pet.wait = { x: pet.group.position.x, z: pet.group.position.z }; msg.textContent = L("Moti sits. Good boy."); } });
+    card.querySelector("#pet-talk").addEventListener("click", () => { closePanel(); this._chat(pet.npc); });
+  }
+  _tickPet(dt) {
+    const pet = this.pet; if (!pet) return;
+    const g = pet.group, pr = this.progress, pp = this.player.position, u = g.userData;
+    const outdoors = !this.world.currentRoom; g.visible = outdoors;
+    let moving = false;
+    if (pet.following && outdoors && !(this.player.riding && this.player.riding.kind === "metro")) {
+      const dx = pp.x - g.position.x, dz = pp.z - g.position.z, d = Math.hypot(dx, dz);
+      if (d > 2.6) { const sp = this.player.riding ? 9 : 4.2, step = Math.min(d - 2.2, sp * dt); const nx = g.position.x + (dx / d) * step, nz = g.position.z + (dz / d) * step; if (!this.world.blockedBySolid(nx, nz, 0.3)) { g.position.x = nx; g.position.z = nz; pet.walkDist += step; moving = true; } g.rotation.y = Math.atan2(-dz, dx); }
+      if (d > 40) { g.position.x = pp.x - 2; g.position.z = pp.z + 1; }
+      if (pet.walkDist > 150) { pet.walkDist = 0; pr.petWalks = (pr.petWalks || 0) + 1; pr.petHappy = Math.min(100, pr.petHappy + 15); showToast(L("🐕 A good walk. Moti +15 happiness."), 2600, "good"); saveProgress(this.profile, pr); }
+      pet.coinT -= dt; if (pet.coinT <= 0) { pet.coinT = 35 + Math.random() * 40; if (Math.random() < 0.35) { this.addMoney(5, L("Moti dug up a coin")); playBark(); } }
+    } else if (!pet.following) { const wx = pet.wait.x, wz = pet.wait.z, dx = wx - g.position.x, dz = wz - g.position.z, d = Math.hypot(dx, dz); if (d > 0.3) { const step = Math.min(d, 3 * dt); g.position.x += (dx / d) * step; g.position.z += (dz / d) * step; g.rotation.y = Math.atan2(-dz, dx); moving = true; } }
+    const t = performance.now() / 1000;
+    u.legs.forEach((l, i) => { l.rotation.z = moving ? Math.sin(t * 14 + (i % 2) * Math.PI) * 0.5 : 0; });
+    const near = Math.hypot(pp.x - g.position.x, pp.z - g.position.z) < 3.5;
+    pet.wagT = Math.max(0, (pet.wagT || 0) - dt);
+    u.tail.rotation.y = (near || pet.wagT > 0) && !this._petSad() ? Math.sin(t * 16) * 0.8 : 0; u.tail.rotation.z = this._petSad() ? -0.6 : 0.7;
+    u.head.rotation.z = this._petSad() ? -0.25 : (near ? Math.sin(t * 2) * 0.08 : 0);
+    pet.barkT -= dt; if (pet.barkT <= 0) { pet.barkT = 8 + Math.random() * 14; if (near && outdoors && !this._petSad()) playBark(); }
+  }
+  _vetVisit() {
+    const pr = this.progress;
+    if (pr.money < 50) { showToast(L("Dr. Pillai: ₹50 for the check-up, beta. Come back with the money."), 3000, "bad"); return; }
+    this.addMoney(-50, "vet"); pr.petHappy = Math.max(pr.petHappy, 85); saveProgress(this.profile, pr); playSuccess();
+    this.dialogue.say("Dr. Pillai", [L("Let me see him. Hmm, a tired tummy and a lonely heart. One injection, one biscuit, and a walk every day."), L("Moti is fine now. Look at that tail!")], () => { this.diary("Took Moti to the vet."); });
+  }
+  _tickRain() { const on = this.isRainy() && !this.world.currentRoom; if (this.world.setRain) this.world.setRain(on); }
 
   // ---- Playing in the park: swing, see-saw, slide ----
   _playPark(kind, pg) {
@@ -6718,6 +6821,7 @@ class Game {
 
   // ---- Games period ----
   _games(coach) {
+    if (this.isRainy() && !this._goalDone) { this._engagedNpc = coach; return this._sportGame(CARROM, coach); }
     if (this._goalDone) { this.dialogue.say(coach.name, ["Great game today. Play on, or head for the bus."], null, { pitch: 300, speaker: coach.id }); return; }
     this._engagedNpc = coach; setMood(coach.group, "happy", 4);
     const sport = sportForDay(this.progress.day);
@@ -6803,7 +6907,8 @@ class Game {
     this._tickLunch(dt); this._tickCar(dt); this._tickPark(dt);
     if (!this.player.riding && this.player.speedKmh > 1 && !this.world.currentRoom) { this.progress.energy = Math.max(0, this.progress.energy - dt / (this.input.running ? 8 : 16)); if (Math.floor(this.progress.energy) !== this._energyShown) { this._energyShown = Math.floor(this.progress.energy); this.ui.refreshRank(); } }
     this.player.tired = this.progress.energy < 25;
-    const useP = !blocked && this.input.usePressed(); if (this._trial) this._tickTrial(dt, useP);
+    const useP = !blocked && this.input.usePressed(); if (this._trial) { const eP = this.input.interactPressed(); this._tickTrial(dt, useP || eP); this.ui.setInteractPrompt(`${this._trial ? this._trial.spec.icon : ""} ${L(this._trial && this._trial.kind === "cricket" ? "Swing" : "Shoot")}  (F / E)`); }
+    this._tickPet(dt); this._tickRain();
     this._updateGear(dt, elapsed, this._trial ? false : useP);
     this._updateGames();
     // Walk up to the line and the assembly begins on its own.

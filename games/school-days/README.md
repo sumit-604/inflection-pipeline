@@ -91,6 +91,39 @@ and cars run on every road.
   peacefully with a flashback from Nursery to now. "Let a year pass" at
   bedtime skips ahead when you want the story to move.
 
+## Fifteen more pieces of life
+
+1. Voices: every person has a different voice and speed for their pitch.
+2. Phone (P) from age 14: messages from Maa, the boss and the bank; call
+   anyone in your contacts from anywhere.
+3. Seasons: summer days 1 to 7, monsoon 8 to 13 with rain on odd days,
+   winter 14 to 20 with fog and a school sweater.
+4. Player two: press 2 and Gudiya walks beside you on I J K L.
+5. Room decor: furniture at the supermarket appears in your bedroom.
+6. Cooking with Maa, or for your own family: put the recipe steps in order.
+7. Health: yearly check-up at City Hospital, glasses after too many late
+   nights, a cast if you cycle with no energy.
+8. Board exams in Class 10 and 12 with a hall and seat number, result on
+   the certificate.
+9. College: choose Science, Commerce, Arts or Sports; jobs need the right
+   stream; a college fest on day 10.
+10. Play as your child from age four, generation two, same gate.
+11. Photo album in the notebook, shown again in the ending.
+12. Festivals: Holi (day 6), Independence Day (12), Eid (16), Christmas
+    (20), plus Diwali and your birthday.
+13. Driving licence: RTO counter at the Police Station from 18; needed to
+    drive the car.
+14. Money that grows: piggy bank at home, fixed deposit at the bank, your
+    own shop as a working adult (₹100 a night).
+15. Sports league: six Sunday matches for the city cricketer or footballer,
+    a trophy and ₹2,000 for four wins.
+
+Also: talk to Coach Vikram or a sports boss and you are taken to the
+Stadium Ground to practise. A lawyer's cases are heard in Courtroom 2 of
+the District Court. Every workplace has your named seat with a bobbing
+"YOUR SEAT" arrow and a visitor's chair; "Go to work now" in the J panel
+takes you straight there.
+
 ## Moti the dog
 
 Moti waits in the garden at home. Press E at him: pet him, feed him ₹5

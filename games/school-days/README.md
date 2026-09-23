@@ -1,6 +1,6 @@
 # School Days
 
-A 3D school roleplay game for children in Class 3 and Class 5. One HTML file,
+A 3D school roleplay game for children, from Nursery to Graduate. One HTML file,
 three.js from a CDN, no build step. Sister game of Engineer's Village and built
 on the same engine: the same people, faces (blinking, lips that move while
 talking, moods: happy, sad, stern, surprised), speech, shopping and interiors.
@@ -20,6 +20,35 @@ talking, moods: happy, sad, stern, surprised), speech, shopping and interiors.
 - Every 5th day is an FA (10 marks per subject). Day 10 and day 20 are term
   exams (20 marks per subject) followed by a report card with grades and a
   class rank against six classmates.
+
+## A whole life
+
+- Pick a class on the start screen: Nursery, KG, Class 1 to Class 12, College,
+  Graduate. Questions match the class (counting and letters early, fractions
+  and percentages in the middle classes, algebra, trigonometry and calculus
+  later).
+- Pass Term 2 with 33% or more and the principal promotes you to the next
+  class. Money, backpack, clothes, friendships and report cards carry over.
+- Faces have eye whites, pupils, lids, brows, teeth and a tongue. Moods:
+  happy, laugh, sad, stern, angry, surprised, thinking, wink, sleepy, shy.
+
+## Languages
+
+Pick a language on the start screen: English, Hindi, Hinglish, Korean,
+Chinese, Japanese, Spanish, French. Teachers, friends, family and the
+screen labels use it, and the voice speaks it. Questions and answers stay
+in English so the marks mean the same in every language.
+
+## Jobs (press J)
+
+From Class 12 the Jobs list opens: teacher, doctor, software engineer,
+police officer, bank officer, chef, supermarket manager, post office clerk.
+Choose one, follow the compass to its place, and press E at the door.
+
+1. Written test: ten questions in the job's subject, six to pass.
+2. Interview: five questions about work and conduct, four to pass.
+3. Hired: work one shift a day (five tasks). Pay is the salary times the
+   tasks done right. A graduate goes to work instead of school.
 
 ## Files
 

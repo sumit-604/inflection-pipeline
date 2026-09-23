@@ -1,11 +1,3 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>School Days</title>
-</head>
-<body>
 <title>School Days</title>
 <style>
 /* ============================================================
@@ -544,6 +536,13 @@ kbd { display: inline-block; border: 1px solid #d8cdb2; border-bottom-width: 3px
 .hand-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
 .money-badge-neg { color: #b3261e; }
 
+.lang-buttons, .stage-buttons { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin: 0 0 12px; }
+.lang-btn, .stage-btn { border: 2px solid #e2c7a8; background: #fff8ef; color: #5a3a1c; border-radius: 12px; padding: 7px 11px; font-size: 14px; font-weight: 700; cursor: pointer; font-family: inherit; }
+.stage-btn { min-width: 64px; }
+.lang-btn.on, .stage-btn.on { background: #f2a45b; border-color: #b4531a; color: #3b2110; }
+#start-btn { width: 100%; margin: 4px 0 10px; }
+.start-box { max-height: 92vh; overflow-y: auto; }
+
 </style>
   <canvas id="game-canvas"></canvas>
 
@@ -560,14 +559,13 @@ kbd { display: inline-block; border: 1px solid #d8cdb2; border-bottom-width: 3px
     <div class="start-box">
       <div class="hardhat">🎒</div>
       <h1>School Days</h1>
-      <p class="subtitle">A day at Sunrise Public School, Suryanagar. Wake up at home, catch the school bus, answer in class, eat lunch with friends, play, do homework, and collect your marks.</p>
-      <p class="tiny-note" style="margin:-10px 0 16px">Terms have two FAs (formative assessments) and a term exam. Marks go on your report card. Pocket money is real: bills, cash and change.</p>
-      <p class="pick-label">Who is playing today?</p>
-      <div class="profile-buttons">
-        <button class="profile-btn" data-profile="class3"><span class="profile-name">Class 3-A</span><span class="profile-hint">Whole numbers, one idea at a time</span></button>
-        <button class="profile-btn" data-profile="class5"><span class="profile-name">Class 5-A</span><span class="profile-hint">Fractions, percentages, the wider world</span></button>
-      </div>
-      <p class="tiny-note">Your progress is saved on this device for each player.</p>
+      <p class="subtitle" id="start-sub">A whole school life at Sunrise Public School, Suryanagar. Wake up at home, ride your cycle or catch the bus, answer in class, eat lunch with friends, collect your marks, and grow up class by class. From Class 12 press J for jobs: exams, interviews and real work.</p>
+      <p class="pick-label" id="lang-label">Language</p>
+      <div class="lang-buttons" id="lang-buttons"></div>
+      <p class="pick-label" id="stage-label">Which class?</p>
+      <div class="stage-buttons" id="stage-buttons"></div>
+      <button class="big-btn" id="start-btn">Start</button>
+      <p class="tiny-note" id="start-note">Your progress is saved on this device. Pass Term 2 to move up to the next class.</p>
     </div>
   </div>
 
@@ -688,6 +686,184 @@ kbd { display: inline-block; border: 1px solid #d8cdb2; border-bottom-width: 3px
 </script>
 <script type="module">
 import * as THREE from 'three';
+// ===== src/school/i18n.js =====
+/* ============================================================
+   i18n.js — languages. Everything people SAY and every screen
+   label goes through L(). The voice follows the language.
+   Questions and answers stay in English for now.
+   ============================================================ */
+const LANGS = {
+  en: { name: "English", voice: "en-IN" },
+  hi: { name: "हिन्दी", voice: "hi-IN" },
+  hin: { name: "Hinglish", voice: "en-IN" },
+  ko: { name: "한국어", voice: "ko-KR" },
+  zh: { name: "中文", voice: "zh-CN" },
+  ja: { name: "日本語", voice: "ja-JP" },
+  es: { name: "Español", voice: "es-ES" },
+  fr: { name: "Français", voice: "fr-FR" },
+};
+let LANG = "en";
+try { LANG = localStorage.getItem("school-days.lang") || "en"; if (!LANGS[LANG]) LANG = "en"; } catch (e) {}
+function setLang(code) { LANG = LANGS[code] ? code : "en"; try { localStorage.setItem("school-days.lang", LANG); } catch (e) {} }
+// Translate a line. Unknown lines come back in English. {name} style slots are filled from `vars`.
+function L(s, vars = null) {
+  const d = STR[LANG];
+  let out = (d && d[s]) || s;
+  if (vars) for (const k of Object.keys(vars)) out = out.split("{" + k + "}").join(vars[k]);
+  return out;
+}
+// Each row: English key, then hi, hin, ko, zh, ja, es, fr.
+const ROWS = [
+["Good morning, class! Books open, page 12.", "सुप्रभात, कक्षा! किताबें खोलो, पृष्ठ 12।", "Good morning class! Kitaabein kholo, page 12.", "좋은 아침이에요, 여러분! 책 12쪽을 펴세요.", "早上好，同学们！打开课本第12页。", "おはようございます、みなさん！教科書の12ページを開いて。", "¡Buenos días, clase! Abrid el libro por la página 12.", "Bonjour la classe ! Ouvrez le livre page 12."],
+["Today we sharpen our sums. Hands up when you know the answer.", "आज हम अपनी गणित तेज़ करेंगे। जवाब पता हो तो हाथ उठाओ।", "Aaj hum apni sums tez karenge. Jawab pata ho to haath uthao.", "오늘은 계산을 연습해요. 답을 알면 손을 드세요.", "今天我们练习算术。知道答案就举手。", "今日は計算の練習です。答えが分かったら手を挙げて。", "Hoy afinamos las cuentas. Levantad la mano si sabéis la respuesta.", "Aujourd'hui, on s'entraîne au calcul. Levez la main si vous connaissez la réponse."],
+["Good morning. Science is asking why.", "सुप्रभात। विज्ञान का मतलब है 'क्यों' पूछना।", "Good morning. Science matlab 'kyon' poochhna.", "좋은 아침. 과학은 '왜'라고 묻는 것이에요.", "早上好。科学就是问为什么。", "おはよう。科学とは「なぜ」と問うことです。", "Buenos días. La ciencia es preguntar por qué.", "Bonjour. La science, c'est demander pourquoi."],
+["Watch, think, then answer. No guessing in my class!", "देखो, सोचो, फिर जवाब दो। मेरी कक्षा में अंदाज़ा नहीं!", "Dekho, socho, phir jawab do. Meri class mein guessing nahi!", "보고, 생각하고, 답하세요. 내 수업에서 찍기는 안 돼요!", "先看，再想，再回答。我的课上不许乱猜！", "見て、考えて、答える。私の授業で当てずっぽうは禁止！", "Mirad, pensad y luego responded. ¡En mi clase no se adivina!", "Regardez, réfléchissez, puis répondez. Pas de devinettes dans ma classe !"],
+["Good morning, everyone. Sit up straight, smile.", "सुप्रभात सबको। सीधे बैठो, मुस्कुराओ।", "Good morning sabko. Seedhe baitho, muskurao.", "모두 좋은 아침. 허리를 펴고 웃어요.", "大家早上好。坐直，微笑。", "みなさん、おはよう。背筋を伸ばして、笑顔で。", "Buenos días a todos. Sentaos derechos, sonreíd.", "Bonjour à tous. Asseyez-vous droit, souriez."],
+["Words are power. Let us see who knows them today.", "शब्द ही शक्ति हैं। देखें आज कौन जानता है।", "Words hi power hain. Dekhte hain aaj kaun jaanta hai.", "말은 힘이에요. 오늘 누가 잘 아는지 봅시다.", "词语就是力量。看看今天谁认识它们。", "言葉は力です。今日は誰が知っているかな。", "Las palabras son poder. Veamos quién las conoce hoy.", "Les mots, c'est le pouvoir. Voyons qui les connaît aujourd'hui."],
+["Assalamu alaikum, good morning! Maps out.", "अस्सलामु अलैकुम, सुप्रभात! नक्शे निकालो।", "Assalamu alaikum, good morning! Maps nikalo.", "앗살라무 알라이쿰, 좋은 아침! 지도를 꺼내세요.", "你们好，早上好！拿出地图。", "アッサラーム・アライクム、おはよう！地図を出して。", "Assalamu alaikum, ¡buenos días! Sacad los mapas.", "Assalamu alaikum, bonjour ! Sortez les cartes."],
+["Our world is big. Today we learn a corner of it.", "हमारी दुनिया बड़ी है। आज हम उसका एक कोना सीखेंगे।", "Hamari duniya badi hai. Aaj uska ek kona seekhenge.", "우리 세상은 넓어요. 오늘은 그 한 구석을 배워요.", "我们的世界很大。今天学习它的一角。", "世界は広い。今日はその一角を学びます。", "Nuestro mundo es grande. Hoy aprendemos un rincón.", "Notre monde est grand. Aujourd'hui, on en apprend un coin."],
+["Line up! Two rounds of the field, then football.", "लाइन में लगो! मैदान के दो चक्कर, फिर फुटबॉल।", "Line mein lago! Field ke do chakkar, phir football.", "줄 서세요! 운동장 두 바퀴, 그다음 축구!", "排队！跑两圈，然后踢足球。", "整列！グラウンド2周、それからサッカー。", "¡En fila! Dos vueltas al campo y luego fútbol.", "En rang ! Deux tours de terrain, puis football."],
+["Sport builds the body and the team. Go!", "खेल शरीर और टीम बनाता है। जाओ!", "Sport body aur team banata hai. Jao!", "운동은 몸과 팀을 만들어요. 가자!", "运动锻炼身体和团队。出发！", "スポーツは体とチームを作る。行け！", "El deporte forma el cuerpo y el equipo. ¡Vamos!", "Le sport forge le corps et l'équipe. Allez !"],
+["Good morning, Sunrise Public School!", "सुप्रभात, सनराइज़ पब्लिक स्कूल!", "Good morning, Sunrise Public School!", "좋은 아침입니다, 선라이즈 공립학교!", "早上好，日出公立学校！", "おはようございます、サンライズ公立学校！", "¡Buenos días, Escuela Pública Sunrise!", "Bonjour, école publique Sunrise !"],
+["Stand straight for the anthem. Then a thought for the day.", "राष्ट्रगान के लिए सीधे खड़े हो। फिर आज का विचार।", "Anthem ke liye seedhe khade ho. Phir aaj ka vichaar.", "국가를 위해 바로 서세요. 그다음 오늘의 생각.", "唱国歌请立正。然后是每日一思。", "国歌のために気をつけ。それから今日の一言。", "Firmes para el himno. Luego, el pensamiento del día.", "Debout pour l'hymne. Puis la pensée du jour."],
+["Good morning, Sunrise Public School! Stand straight. Eyes front.", "सुप्रभात, सनराइज़ पब्लिक स्कूल! सीधे खड़े हो। सामने देखो।", "Good morning, Sunrise Public School! Seedhe khade ho. Saamne dekho.", "좋은 아침, 선라이즈 공립학교! 바로 서고 앞을 보세요.", "早上好，日出公立学校！立正，向前看。", "おはよう、サンライズ公立学校！気をつけ、前を見て。", "¡Buenos días, Escuela Sunrise! Firmes. Vista al frente.", "Bonjour, école Sunrise ! Debout, droit. Regard devant."],
+["Jana Gana Mana… (everyone sings the anthem)", "जन गण मन… (सब राष्ट्रगान गाते हैं)", "Jana Gana Mana… (sab anthem gaate hain)", "자나 가나 마나… (모두 국가를 부른다)", "《人民的意志》……（大家齐唱国歌）", "ジャナ・ガナ・マナ…（みんなで国歌を歌う）", "Jana Gana Mana… (todos cantan el himno)", "Jana Gana Mana… (tout le monde chante l'hymne)"],
+["Thought for the day: \"{t}\"", "आज का विचार: \"{t}\"", "Aaj ka vichaar: \"{t}\"", "오늘의 생각: \"{t}\"", "每日一思：“{t}”", "今日の一言：「{t}」", "Pensamiento del día: \"{t}\"", "Pensée du jour : « {t} »"],
+["Now, a quick question for the class before you go.", "अब जाने से पहले कक्षा के लिए एक छोटा सवाल।", "Ab jaane se pehle class ke liye ek chhota sawal.", "가기 전에 반 전체에게 짧은 질문 하나.", "走之前，给全班一个小问题。", "行く前に、クラスに一つ短い質問。", "Ahora, una pregunta rápida para la clase antes de iros.", "Maintenant, une petite question pour la classe avant de partir."],
+["Good class. Homework: one question, in your notebook, tonight.", "अच्छी कक्षा रही। गृहकार्य: एक सवाल, कॉपी में, आज रात।", "Achhi class. Homework: ek sawal, notebook mein, aaj raat.", "잘했어요. 숙제: 오늘 밤 공책에 문제 하나.", "这节课不错。作业：今晚在本子上做一道题。", "よくできました。宿題：今夜ノートに問題を一つ。", "Buena clase. Deberes: una pregunta en el cuaderno, esta noche.", "Bonne classe. Devoir : une question dans le cahier, ce soir."],
+["The bell is about to go. Pack up quietly.", "घंटी बजने वाली है। चुपचाप बस्ता बाँधो।", "Bell bajne wali hai. Chupchaap bag pack karo.", "곧 종이 울려요. 조용히 정리하세요.", "快打铃了。安静地收拾书包。", "もうすぐチャイムです。静かに片づけて。", "Va a sonar el timbre. Recoged en silencio.", "La cloche va sonner. Rangez en silence."],
+["Yes, you. Tell the class.", "हाँ, तुम। कक्षा को बताओ।", "Haan, tum. Class ko batao.", "네, 너. 반에게 말해봐.", "对，就是你。告诉全班。", "はい、君。クラスに教えて。", "Sí, tú. Díselo a la clase.", "Oui, toi. Dis-le à la classe."],
+["Correct! Well done.", "सही! शाबाश।", "Sahi! Shabash.", "정답! 잘했어요.", "正确！做得好。", "正解！よくできました。", "¡Correcto! Muy bien.", "Correct ! Bravo."],
+["Correct, {f}. Two marks for you.", "सही, {f}। तुम्हें दो अंक।", "Sahi, {f}. Tumhe do marks.", "정답이에요, {f}. 2점!", "正确，{f}。给你两分。", "正解、{f}。2点あげます。", "Correcto, {f}. Dos puntos para ti.", "Correct, {f}. Deux points pour toi."],
+["And you? Next time, hand up.", "और तुम? अगली बार हाथ उठाना।", "Aur tum? Agli baar haath uthana.", "그리고 너는? 다음엔 손을 들어.", "那你呢？下次举手。", "君は？次は手を挙げて。", "¿Y tú? La próxima vez, mano arriba.", "Et toi ? La prochaine fois, lève la main."],
+["No, {f}. Think again.", "नहीं, {f}। फिर सोचो।", "Nahi, {f}. Phir socho.", "아니에요, {f}. 다시 생각해봐.", "不对，{f}。再想想。", "違います、{f}。もう一度考えて。", "No, {f}. Piénsalo otra vez.", "Non, {f}. Réfléchis encore."],
+["You at the middle desk. Can you help the class?", "बीच वाली डेस्क वाले। क्या तुम कक्षा की मदद करोगे?", "Beech wali desk wale. Class ki madad karoge?", "가운데 책상, 너. 반을 도와줄래?", "中间那位。你能帮帮全班吗？", "真ん中の席の君。クラスを助けてくれる？", "Tú, el del pupitre del medio. ¿Ayudas a la clase?", "Toi, au bureau du milieu. Tu peux aider la classe ?"],
+["Show {f} how it is done.", "{f} को दिखाओ कैसे होता है।", "{f} ko dikhao kaise hota hai.", "{f}에게 어떻게 하는지 보여줘.", "给{f}示范一下。", "{f}にやり方を見せて。", "Enséñale a {f} cómo se hace.", "Montre à {f} comment on fait."],
+["That is it. {f}, did you follow?", "बस यही। {f}, समझ आया?", "Bas yahi. {f}, samajh aaya?", "바로 그거야. {f}, 이해했니?", "就是这样。{f}，明白了吗？", "その通り。{f}、分かった？", "Eso es. {f}, ¿lo has seguido?", "Voilà. {f}, tu as suivi ?"],
+["Umm… {w}?", "उम्म… {w}?", "Umm… {w}?", "음… {w}?", "呃……{w}？", "えっと…{w}？", "Mmm… ¿{w}?", "Euh… {w} ?"],
+["Term exam, {s}. Ten questions, two marks each. No talking.", "सत्र परीक्षा, {s}। दस सवाल, दो-दो अंक। बात नहीं।", "Term exam, {s}. Das sawal, do-do marks. Baat nahi.", "학기 시험, {s}. 열 문제, 각 2점. 말하지 마세요.", "期末考试，{s}。十道题，每题两分。不许说话。", "学期試験、{s}。10問、各2点。私語禁止。", "Examen trimestral de {s}. Diez preguntas, dos puntos cada una. Sin hablar.", "Examen de trimestre, {s}. Dix questions, deux points chacune. Silence."],
+["FA test, {s}. Ten questions, one mark each.", "एफ.ए. टेस्ट, {s}। दस सवाल, एक-एक अंक।", "FA test, {s}. Das sawal, ek-ek mark.", "FA 시험, {s}. 열 문제, 각 1점.", "FA测验，{s}。十道题，每题一分。", "FAテスト、{s}。10問、各1点。", "Prueba FA de {s}. Diez preguntas, un punto cada una.", "Contrôle FA, {s}. Dix questions, un point chacune."],
+["Read every question twice. Begin.", "हर सवाल दो बार पढ़ो। शुरू करो।", "Har sawal do baar padho. Shuru karo.", "문제를 두 번 읽으세요. 시작.", "每道题读两遍。开始。", "問題は二度読むこと。始め。", "Leed cada pregunta dos veces. Empezad.", "Lisez chaque question deux fois. Commencez."],
+["Outstanding. Full marks nearly!", "शानदार। लगभग पूरे अंक!", "Shaandaar. Almost full marks!", "훌륭해요. 거의 만점!", "太棒了。几乎满分！", "素晴らしい。ほぼ満点！", "Excelente. ¡Casi la nota máxima!", "Remarquable. Presque tous les points !"],
+["Good paper. A little revision and it is perfect.", "अच्छा पेपर। थोड़ा दोहराव और परफेक्ट।", "Achha paper. Thoda revision aur perfect.", "잘 봤어요. 조금만 복습하면 완벽해요.", "考得不错。再复习一下就完美了。", "良い答案。少し復習すれば完璧。", "Buen examen. Un poco de repaso y perfecto.", "Bonne copie. Un peu de révision et c'est parfait."],
+["Average. Read the chapter again tonight.", "औसत। आज रात अध्याय फिर से पढ़ो।", "Average. Aaj raat chapter phir padho.", "보통이에요. 오늘 밤 단원을 다시 읽으세요.", "一般。今晚再读一遍这一章。", "普通。今夜もう一度章を読んで。", "Regular. Repasa el tema esta noche.", "Moyen. Relis le chapitre ce soir."],
+["This needs work. Come to me at lunch, we will go through it.", "मेहनत चाहिए। दोपहर में मेरे पास आना, साथ देखेंगे।", "Mehnat chahiye. Lunch mein mere paas aana, saath dekhenge.", "노력이 필요해요. 점심에 오면 같이 봐요.", "需要努力。午饭时来找我，我们一起过一遍。", "努力が必要。昼休みに来て、一緒に見直そう。", "Hay que trabajar más. Ven en el almuerzo y lo repasamos.", "Il faut travailler. Viens me voir à midi, on reverra tout."],
+["Good morning, sunshine! Breakfast is on the table: paratha and a glass of milk.", "सुप्रभात, मेरे लाल! नाश्ता मेज़ पर है: पराठा और एक गिलास दूध।", "Good morning, beta! Nashta table par hai: paratha aur ek glass doodh.", "좋은 아침, 우리 아가! 아침은 식탁 위에: 파라타와 우유 한 잔.", "早上好，宝贝！早餐在桌上：抛饼和一杯牛奶。", "おはよう、私の太陽！朝ごはんはテーブルに：パラタと牛乳。", "¡Buenos días, cariño! El desayuno está en la mesa: paratha y un vaso de leche.", "Bonjour, mon soleil ! Le petit-déjeuner est sur la table : paratha et un verre de lait."],
+["Here is ₹{n} pocket money from Papa. Now, what shall I pack in your tiffin?", "पापा से ₹{n} जेब खर्च। अब टिफिन में क्या रखूँ?", "Papa se ₹{n} pocket money. Ab tiffin mein kya rakhoon?", "아빠가 준 용돈 ₹{n}. 도시락에 뭘 싸줄까?", "这是爸爸给的₹{n}零花钱。午餐盒装什么呢？", "パパからのおこづかい₹{n}。お弁当は何にする？", "Aquí tienes ₹{n} de paga de papá. ¿Qué te pongo en la fiambrera?", "Voici ₹{n} d'argent de poche de papa. Qu'est-ce que je mets dans ta boîte ?"],
+["Tiffin is packed. Bus comes at 7:30 at the Shanti Nagar stop. Don't run on the road!", "टिफिन तैयार है। बस 7:30 पर शांति नगर स्टॉप पर आएगी। सड़क पर दौड़ना मत!", "Tiffin ready hai. Bus 7:30 par Shanti Nagar stop par aayegi. Road par daudna mat!", "도시락 쌌어. 버스는 7시 30분 샨티 나가르 정류장. 길에서 뛰지 마!", "午餐盒装好了。7:30在香提纳格尔站坐校车。别在马路上跑！", "お弁当できたよ。バスは7時半、シャンティ・ナガル停留所。道路で走らないで！", "La fiambrera está lista. El bus pasa a las 7:30 por la parada de Shanti Nagar. ¡No corras por la carretera!", "La boîte est prête. Le bus passe à 7 h 30 à l'arrêt Shanti Nagar. Ne cours pas sur la route !"],
+["Beta, wash your hands. Homework first, then dinner.", "बेटा, हाथ धो लो। पहले गृहकार्य, फिर खाना।", "Beta, haath dho lo. Pehle homework, phir khana.", "얘야, 손 씻어. 숙제 먼저, 그다음 저녁.", "宝贝，洗手。先做作业，再吃晚饭。", "手を洗って。宿題が先、夕ごはんはあと。", "Cariño, lávate las manos. Primero los deberes, luego la cena.", "Mon chéri, lave-toi les mains. Les devoirs d'abord, puis le dîner."],
+["Sleep well. Tomorrow is a new day.", "अच्छे से सोना। कल नया दिन है।", "Achhe se sona. Kal naya din hai.", "잘 자. 내일은 새로운 날이야.", "睡个好觉。明天是新的一天。", "おやすみ。明日は新しい一日。", "Duerme bien. Mañana es un nuevo día.", "Dors bien. Demain est un autre jour."],
+["Good morning, champ. Bag packed? Water bottle? Off you go, and listen to your teachers.", "सुप्रभात, चैंप। बस्ता तैयार? पानी की बोतल? जाओ, और शिक्षकों की सुनना।", "Good morning, champ. Bag pack hai? Paani ki bottle? Jao, teachers ki suno.", "좋은 아침, 챔피언. 가방 쌌니? 물병은? 다녀와, 선생님 말씀 잘 듣고.", "早上好，小冠军。书包收拾好了？水壶？去吧，听老师的话。", "おはよう、チャンプ。カバンは？水筒は？行っておいで、先生の話を聞くんだよ。", "Buenos días, campeón. ¿Mochila lista? ¿Botella de agua? Venga, y escucha a tus profes.", "Bonjour, champion. Sac prêt ? Gourde ? Allez, file, et écoute tes profs."],
+["Dal, rice, sabzi and hot rotis. So, {n} marks today?", "दाल, चावल, सब्ज़ी और गरम रोटियाँ। तो, आज {n} अंक?", "Dal, chawal, sabzi aur garam rotiyan. To, aaj {n} marks?", "달, 밥, 채소 그리고 따뜻한 로티. 그래서 오늘 {n}점?", "扁豆、米饭、蔬菜和热薄饼。今天{n}分？", "ダル、ご飯、野菜、焼きたてのロティ。で、今日は{n}点？", "Dal, arroz, verduras y rotis calientes. ¿Así que {n} puntos hoy?", "Dal, riz, légumes et rotis chauds. Alors, {n} points aujourd'hui ?"],
+["Excellent! Dadi, did you hear? Extra kheer for this one.", "बहुत बढ़िया! दादी, सुना? इसके लिए एक्स्ट्रा खीर।", "Excellent! Dadi, suna? Iske liye extra kheer.", "훌륭해! 할머니, 들으셨어요? 이 아이에게 키르 한 그릇 더.", "太棒了！奶奶，听到了吗？给这孩子多加一份甜粥。", "素晴らしい！おばあちゃん、聞いた？この子にキールをおかわり。", "¡Excelente! Abuela, ¿has oído? Kheer extra para este.", "Excellent ! Mamie, tu as entendu ? Kheer en plus pour celui-là."],
+["Good. Tomorrow raise your hand a little more.", "अच्छा। कल हाथ थोड़ा और उठाना।", "Achha. Kal haath thoda aur uthana.", "좋아. 내일은 손을 조금 더 들어.", "不错。明天多举几次手。", "いいね。明日はもう少し手を挙げよう。", "Bien. Mañana levanta la mano un poco más.", "Bien. Demain, lève la main un peu plus."],
+["Hmm. Tomorrow, hand up in every class. I know you can.", "हम्म। कल हर कक्षा में हाथ उठाना। मुझे पता है तुम कर सकते हो।", "Hmm. Kal har class mein haath uthana. Mujhe pata hai tum kar sakte ho.", "음. 내일은 모든 수업에서 손 들기. 넌 할 수 있어.", "嗯。明天每节课都举手。我知道你能做到。", "うーん。明日は全部の授業で手を挙げて。君ならできる。", "Mmm. Mañana, mano arriba en todas las clases. Sé que puedes.", "Hmm. Demain, la main levée dans chaque cours. Je sais que tu peux."],
+["Eat well, then straight to bed. Growing children need sleep.", "अच्छे से खाओ, फिर सीधे बिस्तर। बढ़ते बच्चों को नींद चाहिए।", "Achhe se khao, phir seedhe bed. Growing bachchon ko neend chahiye.", "잘 먹고 바로 자야지. 크는 아이들은 잠이 필요해.", "好好吃饭，然后马上睡觉。长身体的孩子需要睡眠。", "しっかり食べて、すぐ寝ること。育ち盛りは睡眠が大事。", "Come bien y luego a la cama. Los niños que crecen necesitan dormir.", "Mange bien, puis au lit. Les enfants qui grandissent ont besoin de sommeil."],
+["Football! The goal is at the EAST end of the field, between the white posts.", "फुटबॉल! गोल मैदान के पूर्वी छोर पर है, सफेद खंभों के बीच।", "Football! Goal field ke EAST end par hai, safed posts ke beech.", "축구! 골대는 운동장 동쪽 끝, 흰 기둥 사이예요.", "足球！球门在场地东端，两根白柱之间。", "サッカー！ゴールはグラウンドの東端、白いポストの間。", "¡Fútbol! La portería está en el extremo ESTE, entre los postes blancos.", "Football ! Le but est à l'EST du terrain, entre les poteaux blancs."],
+["Dribble by walking into the ball. Press F to kick hard. One goal is five marks. Go!", "गेंद में चलकर ड्रिबल करो। ज़ोर से मारने के लिए F दबाओ। एक गोल = पाँच अंक। जाओ!", "Ball mein chal kar dribble karo. Zor se maarne ke liye F dabao. Ek goal = paanch marks. Jao!", "공을 향해 걸어가면 드리블. F를 누르면 강하게 킥. 한 골에 5점. 가자!", "走向球就是带球。按F大力射门。进一球得五分。上！", "ボールに歩けばドリブル。Fで強く蹴る。1ゴール5点。行け！", "Regatea caminando hacia el balón. Pulsa F para chutar fuerte. Un gol, cinco puntos. ¡Vamos!", "Dribble en marchant dans le ballon. Appuie sur F pour frapper fort. Un but, cinq points. Allez !"],
+["Great goal today. Play on, or head for the bus.", "आज बढ़िया गोल। खेलते रहो, या बस की ओर जाओ।", "Aaj badhiya goal. Khelte raho, ya bus ki taraf jao.", "오늘 멋진 골. 더 놀거나 버스로 가렴.", "今天进球漂亮。继续玩，或者去坐校车。", "今日はいいゴールだった。続けるか、バスへ。", "Gran gol hoy. Sigue jugando o ve al bus.", "Beau but aujourd'hui. Continue, ou file au bus."],
+["Can you help me with {s}? I keep getting this wrong.", "क्या तुम {s} में मेरी मदद करोगे? मैं बार-बार गलत कर रहा हूँ।", "Kya tum {s} mein meri madad karoge? Main baar-baar galat kar raha hoon.", "{s} 좀 도와줄래? 자꾸 틀려.", "你能帮我学{s}吗？我老是做错。", "{s}を手伝ってくれる？いつも間違えるんだ。", "¿Me ayudas con {s}? Siempre me equivoco.", "Tu peux m'aider en {s} ? Je me trompe tout le temps."],
+["Oh! Now I get it. Thanks!", "ओह! अब समझ आया। शुक्रिया!", "Oh! Ab samajh aaya. Thanks!", "아! 이제 알겠다. 고마워!", "哦！现在明白了。谢谢！", "あ！分かった。ありがとう！", "¡Ah! Ahora lo entiendo. ¡Gracias!", "Ah ! Maintenant je comprends. Merci !"],
+["You're my best friend, you know that?", "तुम मेरे सबसे अच्छे दोस्त हो, पता है?", "Tum mere best friend ho, pata hai?", "넌 내 가장 친한 친구야, 알지?", "你是我最好的朋友，知道吗？", "君は僕の親友だよ、知ってた？", "Eres mi mejor amigo, ¿lo sabes?", "Tu es mon meilleur ami, tu sais ?"],
+["See you in class!", "कक्षा में मिलते हैं!", "Class mein milte hain!", "수업에서 봐!", "课上见！", "教室で会おう！", "¡Nos vemos en clase!", "À tout à l'heure en classe !"],
+["Did you finish the sums? I did them on the bus.", "सवाल पूरे किए? मैंने बस में कर लिए।", "Sums poore kiye? Maine bus mein kar liye.", "계산 다 했어? 난 버스에서 했어.", "算术题做完了吗？我在车上做的。", "計算終わった？僕はバスでやったよ。", "¿Terminaste las cuentas? Yo las hice en el bus.", "Tu as fini les calculs ? Moi, je les ai faits dans le bus."],
+["Bet I can solve it faster!", "शर्त लगा लो, मैं जल्दी हल कर लूँगा!", "Shart laga lo, main jaldi solve kar loonga!", "내가 더 빨리 풀 수 있을걸!", "我打赌我解得更快！", "僕の方が速く解けるよ！", "¡Apuesto a que lo resuelvo más rápido!", "Je parie que je résous plus vite !"],
+["Sit with me at lunch, I have extra paratha.", "दोपहर में मेरे साथ बैठना, मेरे पास एक्स्ट्रा पराठा है।", "Lunch mein mere saath baithna, mere paas extra paratha hai.", "점심 때 같이 앉자, 파라타 더 있어.", "午饭跟我一起坐，我多带了抛饼。", "昼は一緒に座ろう、パラタが余分にあるんだ。", "Siéntate conmigo en el almuerzo, tengo paratha de sobra.", "Assieds-toi avec moi à midi, j'ai du paratha en plus."],
+["I read that whales are mammals. Isn't that amazing?", "मैंने पढ़ा कि व्हेल स्तनधारी हैं। है न कमाल?", "Maine padha whales mammals hain. Kamaal hai na?", "고래가 포유류래. 신기하지 않아?", "我读到鲸鱼是哺乳动物。太神奇了吧？", "クジラは哺乳類なんだって。すごくない？", "Leí que las ballenas son mamíferos. ¿No es increíble?", "J'ai lu que les baleines sont des mammifères. Incroyable, non ?"],
+["Want to see my leaf collection at lunch?", "दोपहर में मेरा पत्तों का संग्रह देखोगे?", "Lunch mein mera leaf collection dekhoge?", "점심에 내 나뭇잎 수집 볼래?", "午饭时想看看我收集的树叶吗？", "昼休みに葉っぱのコレクション見る？", "¿Quieres ver mi colección de hojas en el almuerzo?", "Tu veux voir ma collection de feuilles à midi ?"],
+["Ms. D'Souza said my story was the best!", "मिस डिसूज़ा ने कहा मेरी कहानी सबसे अच्छी थी!", "Ms. D'Souza ne kaha meri story best thi!", "드수자 선생님이 내 이야기가 최고래!", "德索萨老师说我的故事最棒！", "ドスーザ先生が僕の話が一番って！", "¡La señorita D'Souza dijo que mi cuento fue el mejor!", "Mme D'Souza a dit que mon histoire était la meilleure !"],
+["Games period! Finally!", "खेल का पीरियड! आख़िरकार!", "Games period! Finally!", "체육 시간! 드디어!", "体育课！终于！", "体育の時間！やっと！", "¡Clase de deporte! ¡Por fin!", "Cours de sport ! Enfin !"],
+["Pass me the ball at break, okay?", "छुट्टी में मुझे गेंद पास करना, ठीक?", "Break mein mujhe ball pass karna, theek?", "쉬는 시간에 공 패스해줘, 알았지?", "课间把球传给我，好吗？", "休み時間にボールパスしてね？", "Pásame el balón en el recreo, ¿vale?", "Passe-moi le ballon à la récré, d'accord ?"],
+["I forgot my homework again...", "मैं फिर गृहकार्य भूल गया...", "Main phir homework bhool gaya...", "숙제 또 깜빡했어...", "我又忘了作业……", "また宿題忘れた…", "Se me olvidaron los deberes otra vez...", "J'ai encore oublié mes devoirs..."],
+["Listen, I wrote a poem about the rain.", "सुनो, मैंने बारिश पर कविता लिखी है।", "Suno, maine baarish par poem likhi hai.", "들어봐, 비에 대한 시를 썼어.", "听着，我写了一首关于雨的诗。", "聞いて、雨の詩を書いたんだ。", "Escucha, escribí un poema sobre la lluvia.", "Écoute, j'ai écrit un poème sur la pluie."],
+["Can you check my spelling? I keep mixing i and e.", "मेरी स्पेलिंग देखोगे? मैं i और e मिला देता हूँ।", "Meri spelling check karoge? Main i aur e mix kar deta hoon.", "내 철자 좀 봐줄래? i랑 e를 자꾸 헷갈려.", "能帮我检查拼写吗？我老把i和e弄混。", "スペル見てくれる？iとeをいつも混ぜちゃう。", "¿Me revisas la ortografía? Confundo la i y la e.", "Tu peux vérifier mon orthographe ? Je mélange le i et le e."],
+["The library has a new book on dinosaurs!", "पुस्तकालय में डायनासोर की नई किताब आई है!", "Library mein dinosaurs ki nayi book aayi hai!", "도서관에 공룡 책이 새로 들어왔어!", "图书馆新到了一本恐龙的书！", "図書館に恐竜の新しい本があるよ！", "¡La biblioteca tiene un libro nuevo de dinosaurios!", "La bibliothèque a un nouveau livre sur les dinosaures !"],
+["I can name all 28 states. Test me!", "मैं सभी 28 राज्यों के नाम बता सकता हूँ। परखो!", "Main sabhi 28 states ke naam bata sakta hoon. Test karo!", "28개 주 이름 다 말할 수 있어. 시험해봐!", "我能说出全部28个邦的名字。考考我！", "28州全部言えるよ。テストして！", "Me sé los 28 estados. ¡Ponme a prueba!", "Je connais les 28 États. Teste-moi !"],
+["My uncle drove us to Jaipur last week.", "पिछले हफ़्ते चाचा हमें जयपुर ले गए।", "Pichhle hafte chacha humein Jaipur le gaye.", "지난주에 삼촌이 자이푸르에 데려갔어.", "上周叔叔开车带我们去了斋浦尔。", "先週おじさんがジャイプルに連れてってくれた。", "Mi tío nos llevó a Jaipur la semana pasada.", "Mon oncle nous a emmenés à Jaipur la semaine dernière."],
+["Do you take the bus too? I'm at the Shanti Nagar stop.", "तुम भी बस लेते हो? मैं शांति नगर स्टॉप पर हूँ।", "Tum bhi bus lete ho? Main Shanti Nagar stop par hoon.", "너도 버스 타? 난 샨티 나가르 정류장이야.", "你也坐校车吗？我在香提纳格尔站。", "君もバス？僕はシャンティ・ナガル停留所。", "¿Tú también vas en bus? Yo subo en Shanti Nagar.", "Toi aussi tu prends le bus ? Moi, c'est l'arrêt Shanti Nagar."],
+["Shh, I'm revising for the FA.", "श्श, मैं एफ.ए. के लिए दोहरा रही हूँ।", "Shh, main FA ke liye revise kar rahi hoon.", "쉿, FA 복습 중이야.", "嘘，我在复习FA测验。", "しっ、FAの復習中。", "Shh, estoy repasando para la FA.", "Chut, je révise pour le contrôle."],
+["You can share my notes if you like.", "चाहो तो मेरे नोट्स ले लो।", "Chaho to mere notes le lo.", "원하면 내 노트 같이 봐.", "你想的话可以看我的笔记。", "よかったら僕のノート見て。", "Puedes usar mis apuntes si quieres.", "Tu peux prendre mes notes si tu veux."],
+["Mrs. Rao gave me a star today!", "आज मिसेज़ राव ने मुझे स्टार दिया!", "Aaj Mrs. Rao ne mujhe star diya!", "오늘 라오 선생님이 별 스티커 줬어!", "今天拉奥老师给了我一颗星！", "今日ラオ先生に星をもらった！", "¡La señora Rao me dio una estrella hoy!", "Mme Rao m'a donné une étoile aujourd'hui !"],
+// Screen labels and objectives.
+["Good morning! Breakfast with Maa, then pack your tiffin.", "सुप्रभात! माँ के साथ नाश्ता, फिर टिफिन तैयार करो।", "Good morning! Maa ke saath nashta, phir tiffin pack karo.", "좋은 아침! 엄마와 아침 식사, 그다음 도시락 싸기.", "早上好！和妈妈吃早餐，然后装午餐盒。", "おはよう！ママと朝ごはん、それからお弁当を用意。", "¡Buenos días! Desayuno con mamá y luego prepara la fiambrera.", "Bonjour ! Petit-déjeuner avec maman, puis prépare ta boîte."],
+["Catch the school bus at the Shanti Nagar stop (or walk, and cross at the zebra).", "शांति नगर स्टॉप पर स्कूल बस पकड़ो (या पैदल जाओ, ज़ेबरा पर सड़क पार करो)।", "Shanti Nagar stop par school bus pakdo (ya paidal jao, zebra par cross karo).", "샨티 나가르 정류장에서 스쿨버스 타기 (또는 걸어서, 횡단보도로 건너기).", "在香提纳格尔站坐校车（或步行，走斑马线过马路）。", "シャンティ・ナガル停留所でスクールバスに乗る（歩く場合は横断歩道で）。", "Coge el bus escolar en la parada de Shanti Nagar (o ve andando y cruza por el paso de cebra).", "Prends le bus scolaire à l'arrêt Shanti Nagar (ou marche, et traverse au passage piéton)."],
+["School is over. Take the bus home from the gate stop.", "स्कूल ख़त्म। गेट स्टॉप से बस लेकर घर जाओ।", "School khatam. Gate stop se bus lekar ghar jao.", "학교 끝. 정문 정류장에서 버스 타고 집으로.", "放学了。从校门口车站坐车回家。", "学校おわり。校門のバス停から帰る。", "Se acabó la escuela. Coge el bus a casa en la parada de la puerta.", "L'école est finie. Prends le bus à l'arrêt du portail."],
+["Homework first: sit at your study desk at home.", "पहले गृहकार्य: घर पर पढ़ाई की मेज़ पर बैठो।", "Pehle homework: ghar par study desk par baitho.", "숙제 먼저: 집 책상에 앉기.", "先做作业：在家坐到书桌前。", "まず宿題：家の勉強机に座る。", "Primero los deberes: siéntate en tu escritorio en casa.", "Les devoirs d'abord : assieds-toi à ton bureau à la maison."],
+["Dinner with the family at the dining table.", "खाने की मेज़ पर परिवार के साथ भोजन।", "Dining table par family ke saath dinner.", "식탁에서 가족과 저녁 식사.", "在餐桌和家人吃晚饭。", "食卓で家族と夕ごはん。", "Cena con la familia en la mesa.", "Dîner en famille à table."],
+["Time for bed. Press E at your bed.", "सोने का समय। बिस्तर के पास E दबाओ।", "Sone ka time. Bed ke paas E dabao.", "잘 시간. 침대에서 E 누르기.", "该睡觉了。在床边按E。", "寝る時間。ベッドでEを押す。", "Hora de dormir. Pulsa E en tu cama.", "Au lit. Appuie sur E près de ton lit."],
+["Morning assembly: stand by the flag on the assembly ground.", "सुबह की सभा: सभा मैदान में झंडे के पास खड़े हो।", "Morning assembly: assembly ground mein jhande ke paas khade ho.", "아침 조회: 조회장 국기 옆에 서기.", "早会：站在操场的旗杆旁。", "朝礼：校庭の旗のそばに立つ。", "Asamblea matinal: ponte junto a la bandera en el patio.", "Rassemblement du matin : place-toi près du drapeau."],
+["Lunch break! Sit at the lunch benches by the canteen and eat your tiffin.", "लंच ब्रेक! कैंटीन के पास बेंच पर बैठकर टिफिन खाओ।", "Lunch break! Canteen ke paas benches par baith kar tiffin khao.", "점심시간! 매점 옆 벤치에 앉아 도시락 먹기.", "午休！坐在食堂旁的长凳上吃午餐盒。", "昼休み！食堂そばのベンチでお弁当。", "¡Recreo del almuerzo! Siéntate en los bancos junto a la cantina y come.", "Pause déjeuner ! Assieds-toi sur les bancs près de la cantine et mange."],
+["Games period: meet Coach Vikram on the football field.", "खेल का पीरियड: फुटबॉल मैदान पर कोच विक्रम से मिलो।", "Games period: football field par Coach Vikram se milo.", "체육 시간: 축구장에서 비크람 코치 만나기.", "体育课：在足球场找维克拉姆教练。", "体育：サッカー場でヴィクラム・コーチに会う。", "Deporte: ve con el entrenador Vikram al campo de fútbol.", "Sport : retrouve le coach Vikram sur le terrain de foot."],
+["{exam}{s} with {t}. Sit at your desk in {c} (Main Building).", "{exam}{t} के साथ {s}। {c} (मुख्य भवन) में अपनी डेस्क पर बैठो।", "{exam}{t} ke saath {s}. {c} (Main Building) mein apni desk par baitho.", "{exam}{t} 선생님의 {s}. {c} (본관) 네 책상에 앉기.", "{exam}{t}的{s}课。到{c}（主楼）坐到你的座位。", "{exam}{t}先生の{s}。{c}（本館）の自分の席に座る。", "{exam}{s} con {t}. Siéntate en tu pupitre de {c} (edificio principal).", "{exam}{s} avec {t}. Assieds-toi à ta place en {c} (bâtiment principal)."],
+["TERM EXAM: ", "सत्र परीक्षा: ", "TERM EXAM: ", "학기 시험: ", "期末考试：", "学期試験：", "EXAMEN: ", "EXAMEN : "],
+["FA test: ", "एफ.ए. टेस्ट: ", "FA test: ", "FA 시험: ", "FA测验：", "FAテスト：", "Prueba FA: ", "Contrôle FA : "],
+["Continue", "आगे", "Aage", "계속", "继续", "つづく", "Continuar", "Continuer"],
+["Okay", "ठीक है", "Theek hai", "확인", "好的", "はい", "Vale", "D'accord"],
+["Enter the {p}", "{p} में जाओ", "{p} mein jao", "{p} 들어가기", "进入{p}", "{p}に入る", "Entrar en {p}", "Entrer dans {p}"],
+["Go outside", "बाहर जाओ", "Bahar jao", "밖으로 나가기", "出去", "外に出る", "Salir", "Sortir"],
+["Talk to {n}", "{n} से बात करो", "{n} se baat karo", "{n}에게 말하기", "和{n}说话", "{n}と話す", "Hablar con {n}", "Parler à {n}"],
+["Board the school bus", "स्कूल बस में चढ़ो", "School bus mein chadho", "스쿨버스 타기", "上校车", "スクールバスに乗る", "Subir al bus escolar", "Monter dans le bus"],
+["Bus stop (wait for the bus)", "बस स्टॉप (बस का इंतज़ार)", "Bus stop (bus ka intezaar)", "버스 정류장 (버스 기다리기)", "车站（等车）", "バス停（バスを待つ）", "Parada (espera al bus)", "Arrêt (attends le bus)"],
+["Ride your bicycle", "साइकिल चलाओ", "Cycle chalao", "자전거 타기", "骑自行车", "自転車に乗る", "Montar en bici", "Faire du vélo"],
+["Get off the bicycle", "साइकिल से उतरो", "Cycle se utro", "자전거에서 내리기", "下自行车", "自転車を降りる", "Bajar de la bici", "Descendre du vélo"],
+["Sit at your desk ({s} with {t})", "अपनी डेस्क पर बैठो ({t} के साथ {s})", "Apni desk par baitho ({t} ke saath {s})", "책상에 앉기 ({t} 선생님의 {s})", "坐到座位（{t}的{s}课）", "席に座る（{t}先生の{s}）", "Sentarte ({s} con {t})", "S'asseoir ({s} avec {t})"],
+["Your desk", "तुम्हारी डेस्क", "Tumhari desk", "네 책상", "你的座位", "自分の席", "Tu pupitre", "Ton bureau"],
+["Sit and eat your tiffin", "बैठो और टिफिन खाओ", "Baitho aur tiffin khao", "앉아서 도시락 먹기", "坐下吃午餐", "座ってお弁当を食べる", "Siéntate y come", "Assieds-toi et mange"],
+["Stand in line for the morning assembly", "सुबह की सभा के लिए लाइन में लगो", "Morning assembly ke liye line mein lago", "아침 조회 줄 서기", "排队参加早会", "朝礼の列に並ぶ", "Ponte en fila para la asamblea", "Mets-toi en rang pour le rassemblement"],
+["Do your homework at the study desk", "पढ़ाई की मेज़ पर गृहकार्य करो", "Study desk par homework karo", "책상에서 숙제하기", "在书桌做作业", "机で宿題をする", "Haz los deberes en el escritorio", "Fais tes devoirs au bureau"],
+["Dinner with the family", "परिवार के साथ भोजन", "Family ke saath dinner", "가족과 저녁", "和家人吃晚饭", "家族と夕ごはん", "Cena con la familia", "Dîner en famille"],
+["Go to sleep", "सो जाओ", "So jao", "잠자기", "睡觉", "寝る", "Dormir", "Dormir"],
+["✋ Raise my hand", "✋ हाथ उठाओ", "✋ Haath uthao", "✋ 손 들기", "✋ 举手", "✋ 手を挙げる", "✋ Levantar la mano", "✋ Lever la main"],
+["🤫 Let someone else answer", "🤫 कोई और जवाब दे", "🤫 Koi aur jawab de", "🤫 다른 친구가 답하기", "🤫 让别人回答", "🤫 ほかの人に答えてもらう", "🤫 Que responda otro", "🤫 Laisser répondre un autre"],
+["{t} looks at the class: \"{q}\"", "{t} कक्षा की ओर देखते हैं: \"{q}\"", "{t} class ki taraf dekhte hain: \"{q}\"", "{t} 선생님이 반을 보며: \"{q}\"", "{t}看着全班：“{q}”", "{t}先生がクラスを見て：「{q}」", "{t} mira a la clase: \"{q}\"", "{t} regarde la classe : « {q} »"],
+["Jobs", "नौकरियाँ", "Naukriyan", "직업", "工作", "仕事", "Trabajos", "Emplois"],
+["Language", "भाषा", "Bhasha", "언어", "语言", "言語", "Idioma", "Langue"],
+["Who is playing today?", "आज कौन खेल रहा है?", "Aaj kaun khel raha hai?", "오늘 누가 플레이하나요?", "今天谁来玩？", "今日は誰が遊ぶ？", "¿Quién juega hoy?", "Qui joue aujourd'hui ?"],
+["Start", "शुरू करो", "Shuru karo", "시작", "开始", "スタート", "Empezar", "Commencer"],
+];
+const STR = { hi: {}, hin: {}, ko: {}, zh: {}, ja: {}, es: {}, fr: {} };
+for (const r of ROWS) { STR.hi[r[0]] = r[1]; STR.hin[r[0]] = r[2]; STR.ko[r[0]] = r[3]; STR.zh[r[0]] = r[4]; STR.ja[r[0]] = r[5]; STR.es[r[0]] = r[6]; STR.fr[r[0]] = r[7]; }
+
+// ===== src/school/tiers.js =====
+/* Classes from Nursery to College. Each stage has a level number; the
+   question banks pick a tier by level. */
+const STAGES = [
+  { id: "nursery", label: "Nursery", short: "Nursery" }, { id: "kg", label: "KG", short: "KG" },
+  { id: "c1", label: "Class 1", short: "1-A" }, { id: "c2", label: "Class 2", short: "2-A" }, { id: "c3", label: "Class 3", short: "3-A" }, { id: "c4", label: "Class 4", short: "4-A" }, { id: "c5", label: "Class 5", short: "5-A" },
+  { id: "c6", label: "Class 6", short: "6-A" }, { id: "c7", label: "Class 7", short: "7-A" }, { id: "c8", label: "Class 8", short: "8-A" }, { id: "c9", label: "Class 9", short: "9-A" }, { id: "c10", label: "Class 10", short: "10-A" }, { id: "c11", label: "Class 11", short: "11-A" }, { id: "c12", label: "Class 12", short: "12-A" },
+  { id: "college", label: "College", short: "College" }, { id: "graduate", label: "Graduate (working life)", short: "Graduate" },
+];
+function stageIndex(id) { const i = STAGES.findIndex((s) => s.id === id); return i < 0 ? 4 : i; }
+function tierFor(lvl) { return lvl <= 2 ? "early" : lvl <= 7 ? "mid" : lvl <= 13 ? "high" : "senior"; }
+
+const EARLY = {
+  maths: [MC("How many apples? 🍎🍎🍎", "3", "2", "4", "5"), MC("Which is bigger?", "7", "3", "5", "1"), MC("2 + 2 = ?", "4", "3", "5", "22"), MC("What comes after 5?", "6", "4", "7", "50"), MC("How many legs does a dog have?", "4", "2", "3", "6"), MC("Which shape is round?", "Circle", "Square", "Triangle", "Star"), MC("How many fingers on one hand?", "5", "4", "10", "2"), MC("5 − 2 = ?", "3", "2", "7", "1"), MC("Which number is the smallest?", "1", "9", "5", "3"), MC("Count the stars: ⭐⭐⭐⭐", "4", "3", "5", "2")],
+  science: [MC("Which animal says 'moo'?", "Cow", "Dog", "Cat", "Hen"), MC("What do we drink when thirsty?", "Water", "Sand", "Stones", "Paper"), MC("The sun comes out in the…", "Day", "Night", "Rain only", "Winter only"), MC("Which one can fly?", "Bird", "Fish", "Cow", "Goat"), MC("Plants need ___ to grow.", "Water and sunlight", "Toys", "Sweets", "Shoes"), MC("Which is hot?", "Fire", "Ice", "Snow", "Water"), MC("We hear with our…", "Ears", "Eyes", "Nose", "Hands"), MC("Ice is…", "Cold", "Hot", "Warm", "Soft"), MC("Which animal lives in water?", "Fish", "Dog", "Cat", "Hen"), MC("A baby cat is a…", "Kitten", "Puppy", "Calf", "Chick")],
+  english: [MC("Which letter comes after A?", "B", "C", "D", "Z"), MC("Which word starts with 'c'?", "Cat", "Dog", "Ball", "Sun"), MC("Which is a colour?", "Red", "Run", "Cup", "Hop"), MC("The opposite of 'big' is…", "Small", "Tall", "Hot", "Fast"), MC("Which word rhymes with 'cat'?", "Hat", "Cup", "Dog", "Pen"), MC("How many letters in 'sun'?", "3", "2", "4", "5"), MC("Which is a fruit?", "Mango", "Chair", "Shoe", "Bus"), MC("'I ___ a boy.'", "am", "is", "are", "be"), MC("Which letter is a vowel?", "A", "B", "C", "D"), MC("What is the last letter of the alphabet?", "Z", "Y", "A", "X")],
+  evs: [MC("Where do we sleep?", "Bed", "Road", "Tree", "River"), MC("Who teaches you at school?", "Teacher", "Doctor", "Driver", "Farmer"), MC("Which is used to cross the road safely?", "Zebra crossing", "Middle of the road", "A tree", "A car"), MC("We wash our hands before…", "Eating", "Sleeping", "Playing", "Running"), MC("Which day comes after Monday?", "Tuesday", "Sunday", "Friday", "Saturday"), MC("Our national flag has how many colours?", "Three", "One", "Five", "Two"), MC("Which is a vegetable?", "Carrot", "Apple", "Banana", "Mango"), MC("Rain falls from…", "Clouds", "Trees", "Roads", "Houses"), MC("Where do birds live?", "Nest", "Den", "Hive", "Burrow"), MC("Which season is very hot?", "Summer", "Winter", "Monsoon", "Spring")],
+};
+const EARLY_GEN = {
+  maths: [(r) => { const a = r.int(1, 5), b = r.int(1, 4); return NUM(`${a} + ${b} = ?`, a + b, "", "Count on your fingers."); }, (r) => { const a = r.int(3, 9), b = r.int(1, a - 1); return NUM(`${a} − ${b} = ?`, a - b, "", "Take away, one at a time."); }, (r) => { const n = r.int(2, 9); return NUM(`Count the balls: ${"⚽".repeat(n)}`, n, "", "Point and count."); }, (r) => { const n = r.int(1, 9); return NUM(`What comes after ${n}?`, n + 1, "", "One more."); }],
+  science: [], english: [], evs: [],
+};
+const HIGH = {
+  maths: [MC("The value of 3² + 4² is…", "25", "14", "49", "12"), MC("The LCM of 4 and 6 is…", "12", "24", "2", "10"), MC("If 3x + 5 = 20, x = ?", "5", "15", "25/3", "3"), MC("The area of a circle is…", "πr²", "2πr", "πd", "r²"), MC("25% of 80 is…", "20", "25", "40", "8"), MC("The sum of angles in a triangle is…", "180°", "90°", "360°", "270°"), MC("√144 = ?", "12", "14", "11", "72"), MC("0.5 × 0.4 = ?", "0.2", "2", "0.02", "0.9"), MC("A ratio of 2:3 with 10 parts total: the smaller share is…", "4", "6", "5", "2"), MC("The HCF of 12 and 18 is…", "6", "3", "36", "2"), MC("Simple interest on ₹1000 at 10% for 2 years is…", "₹200", "₹100", "₹20", "₹1200"), MC("The next prime after 13 is…", "17", "15", "19", "14")],
+  science: [MC("The chemical symbol for water is…", "H₂O", "CO₂", "O₂", "NaCl"), MC("The powerhouse of the cell is the…", "Mitochondria", "Nucleus", "Ribosome", "Cell wall"), MC("Force = mass × …", "Acceleration", "Velocity", "Distance", "Time"), MC("The unit of electric current is the…", "Ampere", "Volt", "Ohm", "Watt"), MC("Photosynthesis makes…", "Glucose and oxygen", "Water only", "Carbon dioxide", "Nitrogen"), MC("The pH of pure water is…", "7", "0", "14", "1"), MC("Light travels fastest in…", "Vacuum", "Water", "Glass", "Diamond"), MC("The atomic number of carbon is…", "6", "12", "8", "14"), MC("Which blood cells carry oxygen?", "Red blood cells", "White blood cells", "Platelets", "Plasma"), MC("Sound cannot travel through…", "A vacuum", "Water", "Steel", "Air"), MC("The largest planet is…", "Jupiter", "Saturn", "Earth", "Neptune"), MC("Acids turn blue litmus…", "Red", "Green", "Yellow", "Blue")],
+  english: [MC("Identify the figure of speech: 'The wind whispered.'", "Personification", "Simile", "Metaphor", "Hyperbole"), MC("Choose the correct sentence.", "Neither of them was ready.", "Neither of them were ready.", "Neither of they was ready.", "Neither them was ready."), MC("The passive of 'She wrote a letter' is…", "A letter was written by her.", "A letter is written by her.", "A letter has wrote by her.", "She was written a letter."), MC("A synonym of 'benevolent' is…", "Kind", "Cruel", "Lazy", "Loud"), MC("'Ubiquitous' means…", "Found everywhere", "Very rare", "Very old", "Very small"), MC("Which is an adverb clause?", "She left because it rained.", "The red car", "A tall boy", "Running fast"), MC("The plural of 'crisis' is…", "Crises", "Crisises", "Crisis", "Crisi"), MC("Choose the correct spelling.", "Accommodate", "Acommodate", "Accomodate", "Acomodate"), MC("An antonym of 'transparent' is…", "Opaque", "Clear", "Bright", "Thin"), MC("'Break a leg' means…", "Good luck", "Get hurt", "Run away", "Sit down")],
+  evs: [MC("The Indian Constitution came into force on…", "26 January 1950", "15 August 1947", "2 October 1948", "26 November 1949"), MC("The Tropic of Cancer passes through…", "India", "Sri Lanka", "Nepal", "Bhutan"), MC("The first Prime Minister of India was…", "Jawaharlal Nehru", "Mahatma Gandhi", "Sardar Patel", "Dr. Rajendra Prasad"), MC("GDP stands for…", "Gross Domestic Product", "General Development Plan", "Global Domestic Price", "Gross Daily Profit"), MC("The Ganga rises from…", "Gangotri glacier", "Yamunotri", "Mansarovar", "Nanda Devi"), MC("The Parliament of India has how many houses?", "Two", "One", "Three", "Four"), MC("The largest producer of tea in India is…", "Assam", "Kerala", "Punjab", "Goa"), MC("Monsoon winds reach Kerala in early…", "June", "January", "October", "March"), MC("The 'Quit India' movement began in…", "1942", "1930", "1947", "1919"), MC("The currency of Japan is the…", "Yen", "Won", "Yuan", "Dollar")],
+};
+const HIGH_GEN = {
+  maths: [(r) => { const x = r.int(2, 12), a = r.int(2, 9), b = r.int(1, 20); return NUM(`Solve: ${a}x + ${b} = ${a * x + b}. x = ?`, x, "", `Take ${b} away, then divide by ${a}.`); }, (r) => { const p = r.pick([10, 15, 20, 25, 40, 50]), n = r.int(2, 40) * 10; return NUM(`${p}% of ${n} = ?`, (p * n) / 100, "", "Percent means out of 100."); }, (r) => { const d = r.int(20, 300), t = r.pick([2, 4, 5]); return NUM(`A train covers ${d * t} km in ${t} hours. Its speed in km/h is…`, d, "km/h", "Speed = distance ÷ time."); }, (r) => { const a = r.int(2, 9), b = r.int(2, 9); return NUM(`(${a} + ${b})² = ?`, (a + b) * (a + b), "", "Add first, then square."); }, (r) => { const P = r.int(2, 20) * 500, R = r.pick([5, 8, 10]), T = r.int(1, 4); return NUM(`Simple interest on ₹${P} at ${R}% for ${T} years = ₹?`, (P * R * T) / 100, "₹", "P × R × T ÷ 100."); }],
+  science: [(r) => { const m = r.int(2, 20), a = r.int(2, 10); return NUM(`Force on a ${m} kg body accelerating at ${a} m/s² is ? N`, m * a, "N", "F = m × a."); }, (r) => { const v = r.int(2, 24), i = r.int(1, 6); return NUM(`A ${v} V battery drives ${i} A. Resistance in ohms = ?`, v / i, "Ω", "V = I × R."); }],
+  english: [], evs: [],
+};
+const SENIOR = {
+  maths: [MC("The derivative of x³ is…", "3x²", "x²", "3x", "x³/3"), MC("∫ 2x dx = ?", "x² + C", "2x² + C", "x + C", "2 + C"), MC("sin 90° = ?", "1", "0", "½", "√3/2"), MC("The determinant of [[1,2],[3,4]] is…", "−2", "2", "10", "−10"), MC("log₁₀ 1000 = ?", "3", "10", "100", "1"), MC("The probability of a head on a fair coin is…", "1/2", "1/4", "1", "0"), MC("The number of ways to arrange 4 books is…", "24", "16", "4", "12"), MC("The slope of y = 3x + 2 is…", "3", "2", "5", "1/3"), MC("i² = ?", "−1", "1", "0", "i"), MC("The sum of the first 10 natural numbers is…", "55", "50", "45", "100")],
+  science: [MC("Newton's third law: every action has an equal and opposite…", "Reaction", "Force", "Mass", "Energy"), MC("DNA stands for…", "Deoxyribonucleic acid", "Dinucleic acid", "Deoxyribose nitrogen acid", "Double nucleic acid"), MC("The SI unit of energy is the…", "Joule", "Newton", "Watt", "Pascal"), MC("Ohm's law relates…", "Voltage, current and resistance", "Mass and force", "Heat and light", "Speed and time"), MC("Avogadro's number is about…", "6.022 × 10²³", "3 × 10⁸", "9.8", "1.6 × 10⁻¹⁹"), MC("The process by which plants lose water vapour is…", "Transpiration", "Respiration", "Digestion", "Fermentation"), MC("The speed of light is about…", "3 × 10⁸ m/s", "3 × 10⁶ m/s", "340 m/s", "3 × 10¹⁰ m/s"), MC("Which gas is most abundant in the atmosphere?", "Nitrogen", "Oxygen", "Carbon dioxide", "Argon"), MC("An enzyme is a…", "Biological catalyst", "Type of sugar", "Vitamin", "Hormone"), MC("The nucleus of an atom contains…", "Protons and neutrons", "Electrons only", "Protons only", "Neutrons only")],
+  english: [MC("Who wrote 'Hamlet'?", "William Shakespeare", "Charles Dickens", "Jane Austen", "R. K. Narayan"), MC("The word 'ephemeral' means…", "Short-lived", "Eternal", "Heavy", "Bright"), MC("A sonnet has how many lines?", "14", "10", "12", "16"), MC("Which is a subordinating conjunction?", "Although", "And", "But", "Or"), MC("'Malgudi Days' was written by…", "R. K. Narayan", "Ruskin Bond", "Premchand", "Tagore"), MC("The tone of 'I wandered lonely as a cloud' is…", "Reflective", "Angry", "Sarcastic", "Fearful"), MC("Choose the correct usage.", "Fewer people came than expected.", "Less people came than expected.", "Fewer water was left.", "Less cars are here."), MC("An oxymoron is…", "Two opposite words together, like 'deafening silence'", "A long story", "A comparison using 'like'", "A repeated sound"), MC("'Gitanjali' was written by…", "Rabindranath Tagore", "Sarojini Naidu", "Kalidasa", "Mirza Ghalib"), MC("The prefix 'anti-' means…", "Against", "Before", "After", "With")],
+  evs: [MC("The Governor of the RBI heads…", "India's central bank", "The Supreme Court", "The Election Commission", "ISRO"), MC("Inflation means…", "A general rise in prices", "A fall in prices", "More jobs", "Lower taxes"), MC("ISRO's mission that reached Mars orbit in 2014 was…", "Mangalyaan", "Chandrayaan-1", "Aditya-L1", "Gaganyaan"), MC("The Panchayati Raj gives power to…", "Village councils", "The army", "Big companies", "Foreign banks"), MC("The Right to Education Act (2009) covers children aged…", "6 to 14", "3 to 6", "14 to 18", "18 and above"), MC("The United Nations was founded in…", "1945", "1919", "1950", "1965"), MC("A bull market means share prices are…", "Rising", "Falling", "Frozen", "Random"), MC("Kyoto and Paris agreements are about…", "Climate change", "Trade", "Nuclear weapons", "Sports"), MC("The longest national highway in India is…", "NH 44", "NH 1", "NH 8", "NH 48"), MC("India's first satellite was…", "Aryabhata", "Bhaskara", "Rohini", "INSAT-1A")],
+};
+
 // ===== src/engine/audio.js =====
 /* ============================================================
    audio.js — a few short sounds made with the Web Audio API.
@@ -982,7 +1158,9 @@ function pickVoice() {
   const voices = speechSynthesis.getVoices();
   if (!voices.length) return null;
   // Prefer an Indian English voice, then British, then any English.
-  for (const pref of ["en-in", "en-gb", "en-au", "en-us", "en"]) {
+  const want = (typeof LANGS !== "undefined" && LANGS[LANG]) ? LANGS[LANG].voice.toLowerCase() : "en-in";
+  const prefs = [want, want.split("-")[0], "en-in", "en-gb", "en-us", "en"];
+  for (const pref of prefs) {
     const v = voices.find((v) => (v.lang || "").replace("_", "-").toLowerCase().startsWith(pref));
     if (v) return v;
   }
@@ -995,6 +1173,7 @@ function speakLine(text, pitch = 400) {
     const u = new SpeechSynthesisUtterance(text.replace(/[*_`]/g, ""));
     const v = pickVoice();
     if (v) u.voice = v;
+    if (typeof LANGS !== "undefined" && LANGS[LANG]) u.lang = LANGS[LANG].voice;
     // Villager pitch 400 Hz is a normal voice; children are higher, elders lower.
     u.pitch = Math.max(0.5, Math.min(2, pitch / 400));
     u.rate = 0.95;
@@ -1047,7 +1226,7 @@ function playTalkBlip(pitch = 400, ch = "a") {
 const KEY = (profile) => `school-days.v1.${profile}`;
 function emptyProgress() {
   const marks = {}; for (const s of SUBJECT_IDS) marks[s] = { cw: 0, hw: 0, fa: [], term: [] };
-  return { day: 1, phase: "morning", period: 0, marks, games: [], attempts: {}, friendship: {}, money: 0, energy: 100, bag: [], wardrobe: [], held: null, hints: 0, outfit: {}, tiffin: null, homework: [], reports: [], diary: [], thought: [] };
+  return { day: 1, phase: "morning", period: 0, marks, games: [], attempts: {}, friendship: {}, money: 0, energy: 100, bag: [], wardrobe: [], held: null, hints: 0, outfit: {}, tiffin: null, homework: [], reports: [], diary: [], thought: [], job: null, hired: [], shifts: 0 };
 }
 function loadProgress(profile) {
   try {
@@ -1056,7 +1235,7 @@ function loadProgress(profile) {
     const d = JSON.parse(raw), e = emptyProgress();
     const out = Object.assign(e, d);
     for (const s of SUBJECT_IDS) out.marks[s] = Object.assign({ cw: 0, hw: 0, fa: [], term: [] }, (d.marks || {})[s] || {});
-    for (const k of ["bag", "wardrobe", "games", "homework", "reports", "diary", "thought"]) if (!Array.isArray(out[k])) out[k] = [];
+    for (const k of ["bag", "wardrobe", "games", "homework", "reports", "diary", "thought", "hired"]) if (!Array.isArray(out[k])) out[k] = [];
     for (const k of ["attempts", "friendship", "outfit"]) if (!out[k] || typeof out[k] !== "object") out[k] = {};
     out.energy = Math.max(0, Math.min(100, Number(out.energy) || 0)); out.money = Number(out.money) || 0;
     if (!["morning", "tobus", "school", "lunch", "games", "over", "evening", "night"].includes(out.phase)) out.phase = "morning";
@@ -1292,7 +1471,7 @@ class Dialogue {
   //   lines = array of strings
   //   opts.pitch = voice pitch in Hz (higher = lighter voice)
   say(name, lines, onDone = null, opts = {}) {
-    this.lines = Array.isArray(lines) ? lines : [lines];
+    this.lines = (Array.isArray(lines) ? lines : [lines]).map((l) => (typeof L === "function" ? L(l) : l));
     this.index = 0;
     this.onDone = onDone;
     this.pitch = opts.pitch || 400;
@@ -1309,7 +1488,7 @@ class Dialogue {
     const full = this.lines[this.index];
     this._shown = 0;
     this.textEl.textContent = "";
-    this.nextBtn.textContent = this.index === this.lines.length - 1 ? "Okay" : "Continue";
+    this.nextBtn.textContent = this.index === this.lines.length - 1 ? L("Okay") : L("Continue");
     // Say the line out loud. The letter blips only play where speech is missing.
     speakLine(full, this.pitch);
     const useBlips = !speechAvailable();
@@ -1651,7 +1830,7 @@ class UI {
   }
   refreshRank() {
     const g = this.game, pr = g.progress;
-    this.rankText.textContent = `Day ${pr.day} · Term ${pr.day <= 10 ? 1 : 2}`;
+    this.rankText.textContent = `${g.profileLabel} · ${L("Day")} ${pr.day} · ${L("Term")} ${pr.day <= 10 ? 1 : 2}`;
     document.getElementById("star-text").textContent = g.clockText();
     document.getElementById("safety-text").textContent = String(g.termMarks());
     document.getElementById("money-text").textContent = fmtMoney(pr.money);
@@ -2112,10 +2291,15 @@ const BANK = {
 };
 
 // Draw n distinct questions for a subject. Generators use the shared rng.
-function drawSubject(subject, n, big, rng = null) {
+function drawSubject(subject, n, lvl, rng = null) {
   const r = rng || makeRng(Math.floor(Math.random() * 1e9));
-  const b = BANK[subject];
-  const pool = b.fixed.map((q) => ({ ...q })).concat(b.gen.map((g) => g(r, big)), b.gen.map((g) => g(r, big)));
+  if (typeof lvl === "boolean") lvl = lvl ? 6 : 4;
+  const tier = tierFor(lvl), b = BANK[subject];
+  let pool;
+  if (tier === "early") pool = EARLY[subject].map((q) => ({ ...q })).concat(EARLY_GEN[subject].map((g) => g(r)), EARLY_GEN[subject].map((g) => g(r)));
+  else if (tier === "mid") { const big = lvl >= 6; pool = b.fixed.map((q) => ({ ...q })).concat(b.gen.map((g) => g(r, big)), b.gen.map((g) => g(r, big))); }
+  else if (tier === "high") pool = HIGH[subject].map((q) => ({ ...q })).concat(HIGH_GEN[subject].map((g) => g(r)), b.gen.slice(0, 6).map((g) => g(r, true)));
+  else pool = SENIOR[subject].map((q) => ({ ...q })).concat(HIGH[subject].slice(0, 4).map((q) => ({ ...q })), HIGH_GEN[subject].map((g) => g(r)));
   const all = r.shuffle(pool);
   const out = [], seen = new Set();
   for (const q of all) { if (seen.has(q.q)) continue; seen.add(q.q); out.push(q); if (out.length >= n) break; }
@@ -3190,6 +3374,36 @@ function openLiftPanel(door, currentFloor, onPick) {
 }
 
 
+// ===== src/school/jobs.js =====
+/* Jobs: press J, choose a job, go to its place, sit the written exam,
+   face the interview, get hired, and work shifts for a salary. */
+const JOBS = [
+  { id: "teacher", name: "School Teacher", icon: "👩‍🏫", place: "Main Building", subject: "english", salary: 600, boss: "Principal Mrs. Verma", desc: "Teach a class at Sunrise Public School." },
+  { id: "doctor", name: "Doctor", icon: "🩺", place: "City Hospital", subject: "science", salary: 900, boss: "Dr. Mehta", desc: "Treat patients at City Hospital." },
+  { id: "engineer", name: "Software Engineer", icon: "💻", place: "Tech Park", subject: "maths", salary: 1000, boss: "Manager Sharma", desc: "Build software at Tech Park." },
+  { id: "police", name: "Police Officer", icon: "👮", place: "Police Station", subject: "evs", salary: 700, boss: "Inspector Rathi", desc: "Keep Suryanagar safe." },
+  { id: "banker", name: "Bank Officer", icon: "🏦", place: "Lotus Plaza", subject: "maths", salary: 800, boss: "Branch Manager Nair", desc: "Run the counter at the bank in Lotus Plaza." },
+  { id: "chef", name: "Chef", icon: "👨‍🍳", place: "Pizza Corner", subject: "science", salary: 500, boss: "Chef Rocky", desc: "Cook at Pizza Corner." },
+  { id: "shopkeeper", name: "Supermarket Manager", icon: "🛒", place: "Suryanagar Supermarket", subject: "maths", salary: 550, boss: "Cashier Meena", desc: "Run the supermarket floor." },
+  { id: "postman", name: "Post Office Clerk", icon: "📮", place: "Post Office", subject: "english", salary: 450, boss: "Postmaster Gupta", desc: "Sort and send the city's letters." },
+];
+// Interview questions: attitude and sense, the same for every job.
+const INTERVIEW = [
+  MC("Tell us about yourself. The best answer…", "Says who you are, what you studied and why you want this job", "Lists your favourite films", "Complains about your last school", "Is one word long"),
+  MC("You make a mistake at work. You…", "Own it, fix it, and tell your senior", "Hide it", "Blame a colleague", "Leave early"),
+  MC("A customer is angry. You…", "Listen calmly, then help", "Shout back", "Walk away", "Laugh"),
+  MC("Why should we hire you?", "I learn fast, I work hard and I care about the people I serve", "I need money", "My friend works here", "No reason"),
+  MC("A task is due tomorrow and you are stuck. You…", "Ask for help early", "Wait and hope", "Say nothing", "Give up"),
+  MC("Where do you see yourself in five years?", "Growing in this job and learning more", "Sleeping", "I have not thought", "Rich, somehow"),
+  MC("Your colleague takes credit for your work. You…", "Talk to them politely, then to your senior if needed", "Fight", "Quit", "Do the same to them"),
+  MC("Being on time shows…", "Respect for others and the work", "Weakness", "Nothing", "You have no friends"),
+  MC("Teamwork means…", "Sharing the work and the credit", "Doing everything alone", "Letting others do it", "Winning arguments"),
+  MC("If you do not know an answer in the interview, you…", "Say so honestly and explain how you would find out", "Make something up", "Stay silent", "Change the subject"),
+];
+const WORK_TASKS = {
+  teacher: "Teach today's lesson: answer the class's questions.", doctor: "Diagnose the patients: answer the science questions.", engineer: "Fix the bugs: solve the maths.", police: "Handle the cases: general knowledge.", banker: "Balance the ledger: the sums.", chef: "Get the recipes right: science of cooking.", shopkeeper: "Stock and bills: the sums.", postman: "Sort the letters: spelling and reading.",
+};
+
 // ===== src/engine/characters.js =====
 /* ============================================================
    characters.js — builds a simple, friendly HUMAN figure out of
@@ -3293,22 +3507,30 @@ function makeHuman({
 
   // Eyes: two little dark dots, slightly apart, on the front (+Z).
   // We keep them in `parts` so they can blink.
-  const eyeMat = humanMat(0x22201c);
+  // Big readable eyes: a white, a dark pupil that can look sideways, and a skin-coloured eyelid that blinks.
+  const eyeMat = humanMat(0x22201c), whiteMat = humanMat(0xffffff);
+  parts.pupils = []; parts.lids = [];
   for (const side of [-1, 1]) {
-    const eye = new THREE.Mesh(new THREE.SphereGeometry(0.03, 6, 6), eyeMat);
-    eye.position.set(side * 0.08, 0.04, 0.2);
+    const eye = new THREE.Group(); eye.position.set(side * 0.085, 0.045, 0.195);
+    const white = new THREE.Mesh(new THREE.SphereGeometry(0.055, 10, 8), whiteMat); white.scale.set(1, 0.85, 0.6); eye.add(white);
+    const pupil = new THREE.Mesh(new THREE.SphereGeometry(0.028, 8, 6), eyeMat); pupil.position.set(0, 0, 0.04); eye.add(pupil); parts.pupils.push(pupil);
+    const lid = new THREE.Mesh(new THREE.SphereGeometry(0.06, 10, 8, 0, Math.PI * 2, 0, Math.PI / 2), skinMat); lid.scale.set(1.05, 1, 0.65); lid.position.y = 0.002; lid.rotation.x = -0.15; lid.scale.y = 0.05; eye.add(lid); parts.lids.push(lid);
     head.add(eye);
     parts[side < 0 ? "eyeL" : "eyeR"] = eye;
-    // A thin eyebrow above each eye.
-    const brow = new THREE.Mesh(new THREE.BoxGeometry(0.06, 0.014, 0.012), hairMat);
-    brow.position.set(side * 0.08, 0.095, 0.205);
+    // A thick eyebrow above each eye.
+    const brow = new THREE.Mesh(new THREE.BoxGeometry(0.085, 0.022, 0.014), hairMat);
+    brow.position.set(side * 0.085, 0.115, 0.21);
     head.add(brow);
   }
-  // A small mouth. Its height grows and shrinks while the person talks.
-  const mouth = new THREE.Mesh(new THREE.BoxGeometry(0.09, 0.028, 0.02), humanMat(0x9b4b3a));
+  // A mouth with lips and a strip of teeth that shows in a smile or a laugh.
+  const mouth = new THREE.Mesh(new THREE.BoxGeometry(0.1, 0.03, 0.02), humanMat(0x9b4b3a));
   mouth.position.set(0, -0.08, 0.215);
   head.add(mouth);
   parts.mouth = mouth;
+  const teeth = new THREE.Mesh(new THREE.BoxGeometry(0.08, 0.012, 0.01), whiteMat); teeth.position.set(0, 0.004, 0.011); teeth.visible = false; mouth.add(teeth); parts.teeth = teeth;
+  const tongue = new THREE.Mesh(new THREE.BoxGeometry(0.05, 0.01, 0.01), humanMat(0xe06070)); tongue.position.set(0, -0.006, 0.011); tongue.visible = false; mouth.add(tongue); parts.tongue = tongue;
+  // A nose.
+  const nose = new THREE.Mesh(new THREE.ConeGeometry(0.03, 0.06, 6), skinMat); nose.rotation.x = Math.PI / 2; nose.position.set(0, -0.01, 0.235); head.add(nose);
   // Ears.
   for (const side of [-1, 1]) {
     const ear = new THREE.Mesh(new THREE.SphereGeometry(0.045, 6, 6), skinMat);
@@ -3368,16 +3590,21 @@ function animateHuman(group, dt, walking, speed = 1, talking = false) {
     u.blinkLeft = 0.14;
   }
   if (u.blinkLeft > 0) u.blinkLeft -= dt;
-  const eyeOpen = u.blinkLeft > 0 ? 0.12 : 1;
-  if (p.eyeL) { p.eyeL.scale.y = eyeOpen; p.eyeR.scale.y = eyeOpen; }
+  const mood0 = u.mood || "calm";
+  const shut = u.blinkLeft > 0 || mood0 === "sleepy";
+  if (p.lids) p.lids.forEach((lid, i) => { const wink = mood0 === "wink" && i === 1; const target = shut || wink ? 1 : mood0 === "sleepy" ? 0.7 : mood0 === "stern" || mood0 === "angry" ? 0.45 : 0.05; lid.scale.y += (target - lid.scale.y) * Math.min(1, dt * 22); });
+  // Pupils look sideways while thinking, up when surprised.
+  if (p.pupils) p.pupils.forEach((pu) => { const tx = mood0 === "thinking" ? 0.02 : 0, ty = mood0 === "thinking" ? 0.02 : mood0 === "surprised" ? 0.012 : 0; pu.position.x += (tx - pu.position.x) * Math.min(1, dt * 8); pu.position.y += (ty - pu.position.y) * Math.min(1, dt * 8); });
 
   // ---- Face: mood. happy = wide mouth, cheeks, brows up; sad = small mouth, brows down; stern = brows down, flat mouth; surprised = round mouth, brows high ----
   if (u.moodT > 0) { u.moodT -= dt; if (u.moodT <= 0) u.mood = "calm"; }
   const mood = u.mood || "calm";
-  if (p.cheekL) { p.cheekL.visible = p.cheekR.visible = mood === "happy"; }
-  if (p.brows) for (const [i, b] of p.brows.entries()) { const side = i === 0 ? -1 : 1; const ty = mood === "surprised" ? 0.125 : mood === "happy" ? 0.105 : (mood === "sad" || mood === "stern") ? 0.08 : 0.095; b.position.y += (ty - b.position.y) * Math.min(1, dt * 8); b.rotation.z += (((mood === "stern" ? -0.35 : mood === "sad" ? 0.35 : 0) * side) - b.rotation.z) * Math.min(1, dt * 8); }
-  const mouthX = mood === "happy" ? 1.6 : mood === "surprised" ? 0.8 : mood === "sad" ? 0.7 : 1, mouthY = mood === "surprised" ? 2.6 : mood === "happy" ? 1.3 : 1;
-  const mouthPosY = mood === "happy" ? -0.065 : mood === "sad" ? -0.1 : -0.08;
+  if (p.cheekL) { p.cheekL.visible = p.cheekR.visible = mood === "happy" || mood === "laugh" || mood === "shy"; }
+  if (p.teeth) p.teeth.visible = mood === "happy" || mood === "laugh"; if (p.tongue) p.tongue.visible = mood === "laugh";
+  if (p.brows) for (const [i, b] of p.brows.entries()) { const side = i === 0 ? -1 : 1; const ty = mood === "surprised" ? 0.145 : mood === "happy" || mood === "laugh" ? 0.125 : mood === "thinking" ? (i === 1 ? 0.14 : 0.11) : (mood === "sad" || mood === "stern" || mood === "angry") ? 0.1 : 0.115; b.position.y += (ty - b.position.y) * Math.min(1, dt * 8); b.rotation.z += (((mood === "stern" ? -0.3 : mood === "angry" ? -0.55 : mood === "sad" ? 0.35 : 0) * side) - b.rotation.z) * Math.min(1, dt * 8); }
+  const mouthX = mood === "happy" ? 1.6 : mood === "laugh" ? 1.7 : mood === "surprised" ? 0.8 : mood === "sad" ? 0.7 : mood === "angry" ? 1.2 : mood === "thinking" ? 0.6 : 1, mouthY = mood === "surprised" ? 2.6 : mood === "laugh" ? 3.2 : mood === "happy" ? 1.3 : mood === "angry" ? 0.6 : 1;
+  const mouthPosY = mood === "happy" || mood === "laugh" ? -0.065 : mood === "sad" ? -0.1 : -0.08;
+  if (p.head && mood === "laugh" && !talking) p.head.rotation.z = Math.sin(performance.now() / 120) * 0.08; else if (p.head && mood !== "laugh" && !talking) p.head.rotation.z *= 1 - Math.min(1, dt * 6);
   // ---- Face: lips move and the head nods a little while talking ----
   if (p.mouth) {
     const now = performance.now();
@@ -3413,7 +3640,7 @@ function animateHuman(group, dt, walking, speed = 1, talking = false) {
 }
 
 
-// Set a face for a while (seconds). Moods: happy, sad, stern, surprised, calm.
+// Set a face for a while (seconds). Moods: happy, laugh, sad, stern, angry, surprised, thinking, wink, sleepy, shy, calm.
 function setMood(group, mood, seconds = 3) { if (!group || !group.userData) return; group.userData.mood = mood; group.userData.moodT = seconds; }
 
 // ===== src/engine/player.js =====
@@ -4175,9 +4402,9 @@ class Room {
       // A long corridor along the front; behind it, left to right: Class 3-A, Class 5-A, Staff Room, Principal's Office.
       this._wall(-hx, 2, hx, 2, [[-17, -14.6], [-6, -3.6], [5, 7.4], [15, 17.4]]);
       for (const x of [-10.5, 1, 11.5]) this._wall(x, -hz, x, 2);
-      this._label("Corridor", 0, 6.5, 2.9, 1.0); this._label("Class 3-A", -16.5, 1.6, 2.9); this._label("Class 5-A", -5, 1.6, 2.9); this._label("Staff Room", 6, 1.6, 2.9); this._label("Principal", 16.5, 1.6, 2.9);
+      this._label("Corridor", 0, 6.5, 2.9, 1.0); this._label((window.__game && window.__game.profileLabel) || "Your class", -16.5, 1.6, 2.9); this._label("Class B", -5, 1.6, 2.9); this._label("Staff Room", 6, 1.6, 2.9); this._label("Principal", 16.5, 1.6, 2.9);
       this.classrooms = {};
-      for (const [cx, name, sum] of [[-16.5, "class3", "2 + 3 = 5"], [-4.5, "class5", "¾ + ¼ = 1"]]) {
+      for (const [cx, name, sum] of [[-16.5, "mine", "2 + 3 = 5"], [-4.5, "other", "¾ + ¼ = 1"]]) {
         this._box(4.4, 1.6, 0.1, 0x1f3b2c, cx, 1.8, -hz + 0.2, false); this._label(sum, cx, -hz + 0.3, 1.9, 0.7);
         this._desk(cx + 3.6, -hz + 1.8);
         const desks = [];
@@ -4877,10 +5104,13 @@ const THOUGHTS = ["A book is a dream you hold in your hands.", "Mistakes are pro
 class Game {
   constructor(profile) {
     this.profile = profile;
-    this.profileLabel = profile === "class3" ? "Class 3-A" : "Class 5-A";
+    this.stage = stageIndex(profile);
+    this.profileLabel = STAGES[this.stage].short === "Nursery" || STAGES[this.stage].short === "KG" || STAGES[this.stage].short === "College" || STAGES[this.stage].short === "Graduate" ? STAGES[this.stage].label : "Class " + STAGES[this.stage].short;
     this.progress = loadProgress(profile);
     buildPeriods(this.progress.day);
-    this.big = profile === "class5";
+    this.lvl = this.stage;
+    this.big = this.lvl;
+    this.graduate = STAGES[this.stage].id === "graduate";
     this._setupRenderer();
     this.world = new World();
     this.player = new Player(this.world, this.camera);
@@ -4913,7 +5143,7 @@ class Game {
     this._gearChanged();
     this.minimap = new Minimap(this.world);
     this.bigmap = new BigMap(this);
-    window.addEventListener("keydown", (e) => { if (e.target && e.target.tagName === "INPUT") return; if (e.key.toLowerCase() === "m") { if (this.bigmap.isOpen) this.bigmap.close(); else this.bigmap.open(); } if (e.key === "Escape") this.bigmap.close(); });
+    window.addEventListener("keydown", (e) => { if (e.target && e.target.tagName === "INPUT") return; if (e.key.toLowerCase() === "m") { if (this.bigmap.isOpen) this.bigmap.close(); else this.bigmap.open(); } if (e.key === "Escape") this.bigmap.close(); if (e.key.toLowerCase() === "j") { if (panelOpen()) closePanel(); else this._openJobs(); } });
     this._ambient = { chirp: 3, horn: 5, bell: 30 };
     startAmbient();
     this.clock = new THREE.Clock();
@@ -5018,23 +5248,24 @@ class Game {
     if (phase === "morning") {
       this.periodIndex = 0; this.progress.period = 0;
       if (!this.world.currentRoom) this._enterRoom(this.world.doors.find((d) => d.label === "Our Home"));
-      if (!this.progress.tiffin) this.setObjective("Good morning! Breakfast with Maa, then pack your tiffin.", null);
-      else this.setObjective("Catch the school bus at the Shanti Nagar stop (or walk, and cross at the zebra).", BUS_STOPS[0].standAt.x, BUS_STOPS[0].standAt.z);
+      if (!this.progress.tiffin) this.setObjective(L("Good morning! Breakfast with Maa, then pack your tiffin."), null);
+      else if (this.graduate) { const job = JOBS.find((j) => j.id === this.progress.job); if (job) { const d = this.world.doors.find((x) => x.label === job.place); this.setObjective(`${job.icon} ${L("Go to work")}: ${job.place}. ${L("Or press J for jobs.")}`, d.x, d.z); } else this.setObjective(L("You are a graduate! Press J to choose a job, then go for the interview."), null); }
+      else this.setObjective(L("Catch the school bus at the Shanti Nagar stop (or walk, and cross at the zebra)."), BUS_STOPS[0].standAt.x, BUS_STOPS[0].standAt.z);
     } else if (phase === "school") this._periodObjective();
-    else if (phase === "over") this.setObjective("School is over. Take the bus home from the gate stop.", BUS_STOPS[1].standAt.x, BUS_STOPS[1].standAt.z);
-    else if (phase === "evening") { this.setObjective(this.progress.homework.length ? "Homework first: sit at your study desk at home." : "Dinner with the family at the dining table.", HOME.door.x, HOME.door.z + 2); }
-    else if (phase === "night") this.setObjective("Time for bed. Press E at your bed.", null);
+    else if (phase === "over") this.setObjective(this.graduate ? L("Work is over. Head home.") : L("School is over. Take the bus home from the gate stop."), this.graduate ? HOME.door.x : BUS_STOPS[1].standAt.x, this.graduate ? HOME.door.z + 2 : BUS_STOPS[1].standAt.z);
+    else if (phase === "evening") { this.setObjective(this.progress.homework.length ? L("Homework first: sit at your study desk at home.") : L("Dinner with the family at the dining table."), HOME.door.x, HOME.door.z + 2); }
+    else if (phase === "night") this.setObjective(L("Time for bed. Press E at your bed."), null);
     this.ui.refreshRank();
   }
   _periodObjective() {
     const per = PERIODS[this.periodIndex];
     if (!per) { this._startPhase("over"); return; }
     this._placePeople();
-    const exam = this.isTermDay() ? "TERM EXAM: " : this.isFaDay() ? "FA test: " : "";
-    if (per.id === "assembly") this.setObjective("Morning assembly: stand by the flag on the assembly ground.", this.world.assemblySpot.x, this.world.assemblySpot.z);
-    else if (per.id === "lunch") this.setObjective("Lunch break! Sit at the lunch benches by the canteen and eat your tiffin.", 63, -108);
-    else if (per.id === "games") this.setObjective("Games period: meet Coach Vikram on the football field.", 128, -142);
-    else this.setObjective(`${exam}${SUBJECTS[per.id].name} with ${SUBJECTS[per.id].teacher}. Sit at your desk in ${this.profileLabel} (Main Building).`, 100, -86);
+    const exam = this.isTermDay() ? L("TERM EXAM: ") : this.isFaDay() ? L("FA test: ") : "";
+    if (per.id === "assembly") this.setObjective(L("Morning assembly: stand by the flag on the assembly ground."), this.world.assemblySpot.x, this.world.assemblySpot.z);
+    else if (per.id === "lunch") this.setObjective(L("Lunch break! Sit at the lunch benches by the canteen and eat your tiffin."), 63, -108);
+    else if (per.id === "games") this.setObjective(L("Games period: meet Coach Vikram on the football field."), 128, -142);
+    else this.setObjective(L("{exam}{s} with {t}. Sit at your desk in {c} (Main Building).", { exam, s: SUBJECTS[per.id].name, t: SUBJECTS[per.id].teacher, c: this.profileLabel }), 100, -86);
     this.ui.refreshRank();
   }
   _endPeriod() {
@@ -5047,13 +5278,13 @@ class Game {
   // ---- Interactables ----
   _buildInteractables() {
     this.interactables = [];
-    for (const door of this.world.doors) this.interactables.push({ pos: { x: door.x, z: door.z }, radius: 2.0, prompt: () => `Enter the ${door.label}`, activate: () => this._enterRoom(door) });
+    for (const door of this.world.doors) this.interactables.push({ pos: { x: door.x, z: door.z }, radius: 2.0, prompt: () => L("Enter the {p}", { p: door.label }), activate: () => this._enterRoom(door) });
     for (const sp of this.world.shopSpots) this.interactables.push({ pos: { x: sp.x, z: sp.z }, radius: 2.2, prompt: () => `${sp.label} (${fmtMoney(this.progress.money)})`, activate: () => this._openShop(sp.name, sp.cat, sp.keeper) });
-    this.interactables.push({ pos: this.bike.group.position, radius: 2.4, prompt: () => "Ride your bicycle", activate: () => { this.player.mount(this.bike); Audio.playPick(); showToast("🚲 Helmet on! Ring ring. Press E to get off. Cross roads at the zebra.", 3200, "good"); } });
-    for (const st of BUS_STOPS) this.interactables.push({ pos: st.standAt, radius: 3.5, prompt: () => (this.world.busWaitingAt(st) ? "Board the school bus" : "Bus stop (wait for the bus)"), activate: () => this._boardBus(st) });
-    this.interactables.push({ pos: this.world.assemblySpot, radius: 7, prompt: () => (this.phase === "school" && PERIODS[this.periodIndex].id === "assembly" ? "Stand in line for the morning assembly" : "The assembly ground"), activate: () => this._assembly() });
-    for (const b of this.world.lunchBenches) this.interactables.push({ pos: b, radius: 2.4, prompt: () => (this.phase === "school" && PERIODS[this.periodIndex].id === "lunch" ? "Sit and eat your tiffin" : "A lunch bench"), activate: () => this._lunch() });
-    for (const npc of this.npcs) this.interactables.push({ pos: npc.position, radius: 2.6, visible: () => npc.group.visible, prompt: () => `Talk to ${npc.name}`, activate: () => this._talk(npc) });
+    this.interactables.push({ pos: this.bike.group.position, radius: 2.4, prompt: () => L("Ride your bicycle"), activate: () => { this.player.mount(this.bike); Audio.playPick(); showToast("🚲 Helmet on! Ring ring. Press E to get off. Cross roads at the zebra.", 3200, "good"); } });
+    for (const st of BUS_STOPS) this.interactables.push({ pos: st.standAt, radius: 3.5, prompt: () => (this.world.busWaitingAt(st) ? L("Board the school bus") : L("Bus stop (wait for the bus)")), activate: () => this._boardBus(st) });
+    this.interactables.push({ pos: this.world.assemblySpot, radius: 7, prompt: () => (this.phase === "school" && PERIODS[this.periodIndex].id === "assembly" ? L("Stand in line for the morning assembly") : L("The assembly ground")), activate: () => this._assembly() });
+    for (const b of this.world.lunchBenches) this.interactables.push({ pos: b, radius: 2.4, prompt: () => (this.phase === "school" && PERIODS[this.periodIndex].id === "lunch" ? L("Sit and eat your tiffin") : L("A lunch bench")), activate: () => this._lunch() });
+    for (const npc of this.npcs) this.interactables.push({ pos: npc.position, radius: 2.6, visible: () => npc.group.visible, prompt: () => L("Talk to {n}", { n: npc.name }), activate: () => this._talk(npc) });
   }
 
   // ---- Rooms ----
@@ -5064,7 +5295,7 @@ class Game {
       const names = OCCUPANTS[room.type] || OCCUPANTS.house;
       const def = { id: "room" + this.world.rooms.size, name: names[this.world.rooms.size % names.length], look: { shirt: [0xe75480, 0x4f772d, 0x3a86ff, 0xffb703][this.world.rooms.size % 4], dress: this.world.rooms.size % 2 === 0, hair: 0x1d1410 }, greet: OCC_GREETS[room.type] || OCC_GREETS.house, pitch: 400 };
       room.occupant = new Npc(def, this.world, { pos: room.occupantPos(), fixed: true }); this.npcs.push(room.occupant);
-      this.interactables.push({ pos: room.occupant.position, radius: 2.6, prompt: () => `Talk to ${room.occupant.name}`, activate: () => this._talk(room.occupant), room });
+      this.interactables.push({ pos: room.occupant.position, radius: 2.6, prompt: () => L("Talk to {n}", { n: room.occupant.name }), activate: () => this._talk(room.occupant), room });
     }
     this.world.currentRoom = room;
     this.world.roomLight.position.set(room.x0, 3.2, room.z0); this.world.roomLight.visible = true;
@@ -5072,13 +5303,14 @@ class Game {
     this.player.group.position.copy(room.doorInside); this.player.group.rotation.y = Math.PI;
     this.player._placeCamera(1);
     document.getElementById("minimap").hidden = true;
-    this.roomInteractables = [{ pos: room.exitPos, radius: 1.8, prompt: () => "Go outside", activate: () => this._exitRoom() }];
-    if (room.occupant) this.roomInteractables.push({ pos: room.occupant.position, radius: 2.8, prompt: () => `Talk to ${room.occupant.name}`, activate: () => this._talk(room.occupant) });
+    this.roomInteractables = [{ pos: room.exitPos, radius: 1.8, prompt: () => L("Go outside"), activate: () => this._exitRoom() }];
+    if (room.occupant) this.roomInteractables.push({ pos: room.occupant.position, radius: 2.8, prompt: () => L("Talk to {n}", { n: room.occupant.name }), activate: () => this._talk(room.occupant) });
     const cat = catalogFor(door.label, room.type);
     if (cat && ["shop", "eatery", "canteen", "supermarket", "clinic", "hospital"].includes(room.type)) { playShopBell(); this.roomInteractables.push({ pos: room.counterPos || { x: room.x0, z: room.z0 - 0.3 }, radius: 2.2, prompt: () => `Buy at the counter (${fmtMoney(this.progress.money)})`, activate: () => this._openShop(door.label, cat, room.occupant ? room.occupant.name : "Shopkeeper") }); }
     if (room.hasLift) this.roomInteractables.push({ pos: room.liftPos, radius: 1.9, prompt: () => `Take the lift (${door.floors} floors)`, activate: () => openLiftPanel(door, floor, (f) => this._enterRoom(door, f)) });
     if (room.type === "mainbuilding") this._setupSchoolRoom(room);
     if (room.type === "home") this._setupHome(room);
+    this._jobRoomSetup(room, door);
     if (room.type === "library") this.roomInteractables.push({ pos: { x: room.x0, z: room.z0 + 0.5 }, radius: 2.2, prompt: () => "Read at the table", activate: () => this._library() });
     Audio.playPick();
   }
@@ -5097,7 +5329,7 @@ class Game {
   // After lunch is eaten, the next lesson is "now" as soon as you sit down.
   _effectivePeriod() { const per = PERIODS[this.periodIndex]; return per && per.id === "lunch" && this._ateLunch ? PERIODS[this.periodIndex + 1] : per; }
   _setupSchoolRoom(room) {
-    const cls = room.classrooms[this.profile];
+    const cls = room.classrooms.mine;
     const per = this._effectivePeriod();
     const lessonNow = this.phase === "school" && per && SUBJECTS[per.id];
     // Classmates at their desks, the teacher at the front, during a period.
@@ -5105,9 +5337,9 @@ class Game {
     if (lessonNow) { const t = this.teachers[per.id]; t.group.visible = true; t._inRoom = true; t.station(cls.teacher, 0); }
     // The principal in her office.
     const pr = this.teachers.principal; pr.group.visible = true; pr._inRoom = true; pr.station({ x: room.x0 + 16.5, z: room.z0 - 2.5 }, Math.PI);
-    for (const f of this.friends) this.roomInteractables.push({ pos: f.position, radius: 2.2, prompt: () => `Talk to ${f.name}`, activate: () => this._talkFriend(f) });
-    for (const t of Object.values(this.teachers)) this.roomInteractables.push({ pos: t.position, radius: 2.6, visible: () => t.group.visible, prompt: () => `Talk to ${t.name}`, activate: () => this._talkTeacher(t) });
-    this.roomInteractables.push({ pos: cls.desks[4], radius: 1.8, prompt: () => (lessonNow ? `Sit at your desk (${SUBJECTS[per.id].name} with ${SUBJECTS[per.id].teacher})` : "Your desk"), activate: () => this._sitAtDesk(room, cls) });
+    for (const f of this.friends) this.roomInteractables.push({ pos: f.position, radius: 2.2, prompt: () => L("Talk to {n}", { n: f.name }), activate: () => this._talkFriend(f) });
+    for (const t of Object.values(this.teachers)) this.roomInteractables.push({ pos: t.position, radius: 2.6, visible: () => t.group.visible, prompt: () => L("Talk to {n}", { n: t.name }), activate: () => this._talkTeacher(t) });
+    this.roomInteractables.push({ pos: cls.desks[4], radius: 1.8, prompt: () => (lessonNow ? L("Sit at your desk ({s} with {t})", { s: SUBJECTS[per.id].name, t: SUBJECTS[per.id].teacher }) : L("Your desk")), activate: () => this._sitAtDesk(room, cls) });
     this.roomInteractables.push({ pos: { x: room.x0 - 2, z: room.z0 + 3.2 }, radius: 2, prompt: () => "Read the notice board", activate: () => this.dialogue.say("Notice Board", [`Day ${this.progress.day}. Timetable: ${PERIODS.map((p) => p.name).join(", ")}.`, this.isTermDay() ? "TERM EXAM TODAY. All the best!" : this.isFaDay() ? "FA tests today in every subject. 10 marks each." : `Next FA on day ${Math.ceil(this.progress.day / 5) * 5 === this.progress.day ? this.progress.day + 5 : Math.ceil(this.progress.day / 5) * 5}. Term exam on day ${this.progress.day <= 10 ? 10 : 20}.`, "Rules: walk in the corridor, no running; raise your hand; be kind."]) });
   }
   _setupHome(room) {
@@ -5115,10 +5347,10 @@ class Game {
     maa.group.visible = true; maa.station({ x: room.x0 + 8, z: room.z0 - 4.5 }, Math.PI);
     papa.group.visible = true; papa.station({ x: room.x0 - 9, z: room.z0 - 3.5 }, 0);
     dadi.group.visible = false; // the knitting figure is part of the room
-    for (const f of [maa, papa]) this.roomInteractables.push({ pos: f.position, radius: 2.6, prompt: () => `Talk to ${f.name}`, activate: () => this._talk(f) });
-    this.roomInteractables.push({ pos: { x: room.x0 + 9, z: room.z0 + 2.4 }, radius: 1.8, prompt: () => (this.phase === "evening" && this.progress.homework.length ? "Do your homework at the study desk" : "Your study desk"), activate: () => this._homework() });
-    this.roomInteractables.push({ pos: { x: room.x0 - 11, z: room.z0 + 5.6 }, radius: 2.2, prompt: () => (this.phase === "evening" ? "Dinner with the family" : "The dining table"), activate: () => this._dinner() });
-    this.roomInteractables.push({ pos: { x: room.x0 + 6, z: room.z0 + 5.6 }, radius: 2.0, prompt: () => (this.phase === "night" ? "Go to sleep" : "Your bed"), activate: () => this._sleep() });
+    for (const f of [maa, papa]) this.roomInteractables.push({ pos: f.position, radius: 2.6, prompt: () => L("Talk to {n}", { n: f.name }), activate: () => this._talk(f) });
+    this.roomInteractables.push({ pos: { x: room.x0 + 9, z: room.z0 + 2.4 }, radius: 1.8, prompt: () => (this.phase === "evening" && this.progress.homework.length ? L("Do your homework at the study desk") : L("Your study desk")), activate: () => this._homework() });
+    this.roomInteractables.push({ pos: { x: room.x0 - 11, z: room.z0 + 5.6 }, radius: 2.2, prompt: () => (this.phase === "evening" ? L("Dinner with the family") : L("The dining table")), activate: () => this._dinner() });
+    this.roomInteractables.push({ pos: { x: room.x0 + 6, z: room.z0 + 5.6 }, radius: 2.0, prompt: () => (this.phase === "night" ? L("Go to sleep") : L("Your bed")), activate: () => this._sleep() });
   }
 
   // ---- Talking ----
@@ -5160,7 +5392,7 @@ class Game {
     const f = npc.def, per = PERIODS[this.periodIndex];
     setMood(npc.group, "happy", 3);
     const fs = this.progress.friendship[f.id] || 0;
-    const line = f.lines[Math.floor(Math.random() * f.lines.length)];
+    const line = L(f.lines[Math.floor(Math.random() * f.lines.length)]);
     // Sometimes a friend has a doubt: help them and friendship grows.
     const doubt = Math.random() < 0.45 && (!per || per.id === "lunch" || this.phase !== "school");
     if (doubt) {
@@ -5168,13 +5400,13 @@ class Game {
       const q = drawSubject(weak, 1, this.big)[0];
       const steps = [q.choices ? { q: q.q, choices: q.choices, answer: q.answer, hint: q.hint } : { q: q.q, answer: q.answer, unit: q.unit, hint: q.hint }];
       this._engagedNpc = npc;
-      this.dialogue.say(f.name, [line, `Can you help me with ${SUBJECTS[weak].name}? I keep getting this wrong.`], () => {
+      this.dialogue.say(f.name, [line, L("Can you help me with {s}? I keep getting this wrong.", { s: SUBJECTS[weak].name })], () => {
         runStepQuiz({ profile: this.profile, level: 1, world: this.world, audio: Audio, countAttempt: () => countAttempt(this.profile, this.progress, "help:" + f.id), onSolve: () => { this.addFriendship(f.id, 2, "helped with " + SUBJECTS[weak].name); this.addMoney(10, "a friend's thank-you toffee money"); this.diary(`Helped ${f.name} with ${SUBJECTS[weak].name}.`); this._engagedNpc = null; } },
-          { title: `${f.name}'s doubt`, intro: `${f.name}: "${q.q}"`, goal: `Explain it by solving it. <b>${SUBJECTS[weak].name}</b>.`, steps, doneBtn: "There you go!", doneHtml: `<b>${f.name}:</b> "Oh! Now I get it. Thanks!"`, onLeave: () => { this._engagedNpc = null; } });
+          { title: `${f.name}'s doubt`, intro: `${f.name}: "${q.q}"`, goal: `Explain it by solving it. <b>${SUBJECTS[weak].name}</b>.`, steps, doneBtn: "There you go!", doneHtml: `<b>${f.name}:</b> "${L("Oh! Now I get it. Thanks!")}"`, onLeave: () => { this._engagedNpc = null; } });
       }, { pitch: 560, speaker: npc.id });
     } else {
       this._engagedNpc = npc;
-      this.dialogue.say(f.name, [line, fs >= 6 ? "You're my best friend, you know that?" : "See you in class!"], () => { this.addFriendship(f.id, 1); this._engagedNpc = null; }, { pitch: 560, speaker: npc.id });
+      this.dialogue.say(f.name, [line, fs >= 6 ? L("You're my best friend, you know that?") : L("See you in class!")], () => { this.addFriendship(f.id, 1); this._engagedNpc = null; }, { pitch: 560, speaker: npc.id });
     }
   }
   _talkMaa() {
@@ -5190,7 +5422,7 @@ class Game {
     const maa = this.family.maa; setMood(maa.group, "happy", 4);
     this._engagedNpc = maa;
     const pocket = this.isFaDay() || this.isTermDay() ? 60 : 50;
-    this.dialogue.say("Maa", ["Good morning, sunshine! Breakfast is on the table: paratha and a glass of milk.", `Here is ₹${pocket} pocket money from Papa. Now, what shall I pack in your tiffin?`], () => {
+    this.dialogue.say("Maa", ["Good morning, sunshine! Breakfast is on the table: paratha and a glass of milk.", L("Here is ₹{n} pocket money from Papa. Now, what shall I pack in your tiffin?", { n: pocket })], () => {
       this.addEnergy(40); this.addMoney(pocket, "pocket money");
       const card = openPanel(`<div class="job-title-row"><h2>🍱 Pack the tiffin</h2></div><p class="job-brief">Maa: "Choose one. You eat it at lunch with your friends."</p><div class="shop-list">${TIFFINS.map((t, i) => `<div class="cart-row"><div>${t.icon} ${t.name}<small>+${t.energy} energy at lunch</small></div><button class="use-btn" data-i="${i}">Pack it</button></div>`).join("")}</div>`);
       card.querySelectorAll(".use-btn").forEach((b) => b.addEventListener("click", () => { const t = TIFFINS[Number(b.dataset.i)]; this.progress.tiffin = t.id; saveProgress(this.profile, this.progress); closePanel(); Audio.playPick(); showToast(`${t.icon} ${t.name} packed. Bus at 7:30!`, 2800, "good"); this._engagedNpc = null; this.setObjective("Catch the school bus at the Shanti Nagar stop (or walk, and cross at the zebra).", BUS_STOPS[0].standAt.x, BUS_STOPS[0].standAt.z); }));
@@ -5211,7 +5443,7 @@ class Game {
     const papa = this.family.papa; setMood(papa.group, "happy", 5); setMood(this.family.maa.group, "happy", 5);
     this.player.eatT = 4;
     const marksToday = this._marksToday || 0;
-    this.dialogue.say("Papa", [`Dal, rice, sabzi and hot rotis. So, ${marksToday} marks today?`, marksToday >= 12 ? "Excellent! Dadi, did you hear? Extra kheer for this one." : marksToday >= 6 ? "Good. Tomorrow raise your hand a little more." : "Hmm. Tomorrow, hand up in every class. I know you can.", "Eat well, then straight to bed. Growing children need sleep."], () => { this.addEnergy(60); this._startPhase("night"); }, { pitch: 320, speaker: papa.id });
+    this.dialogue.say("Papa", [L("Dal, rice, sabzi and hot rotis. So, {n} marks today?", { n: marksToday }), marksToday >= 12 ? "Excellent! Dadi, did you hear? Extra kheer for this one." : marksToday >= 6 ? "Good. Tomorrow raise your hand a little more." : "Hmm. Tomorrow, hand up in every class. I know you can.", "Eat well, then straight to bed. Growing children need sleep."], () => { this.addEnergy(60); this._startPhase("night"); }, { pitch: 320, speaker: papa.id });
   }
   _sleep() {
     if (this.phase !== "night") { showToast(this.phase === "evening" ? "Homework and dinner first!" : "Not bedtime yet.", 2200); return; }
@@ -5220,7 +5452,7 @@ class Game {
       const card = openPanel(`<div class="job-title-row"><h2>🌙 Day ${pr.day} is over</h2></div><div class="job-goal">Marks today: <b>${this._marksToday || 0}</b> · Term total: <b>${this.termMarks()}</b> · Wallet: <b>${fmtMoney(pr.money)}</b> · Friendship: <b>${Object.values(pr.friendship).reduce((a, b) => a + b, 0)}</b></div><p class="job-brief">${pr.day + 1 === 5 || pr.day + 1 === 15 ? "Tomorrow is an FA day: 10 mark tests in every subject. Revise!" : pr.day + 1 === 10 || pr.day + 1 === 20 ? "Tomorrow is the TERM EXAM. Sleep early." : "Tomorrow is a normal school day."}</p><div class="btn-row"><button class="big-btn" id="sleep-ok">Sleep 😴</button></div>`);
       card.querySelector("#sleep-ok").addEventListener("click", () => {
         closePanel();
-        pr.day++; buildPeriods(pr.day); pr.tiffin = null; pr.homework = []; pr.period = 0; this._marksToday = 0; this._ateLunch = false; this._goalDone = false; this._gamesActive = false;
+        pr.day++; buildPeriods(pr.day); pr.tiffin = null; pr.homework = []; pr.period = 0; this._marksToday = 0; this._ateLunch = false; this._goalDone = false; this._gamesActive = false; this._shiftDone = false;
         if (pr.day === 11) { for (const s of SUBJECT_IDS) pr.marks[s] = { cw: 0, hw: 0, fa: [], term: [] }; pr.games = []; showToast("Term 2 begins. Marks start fresh; Term 1 is on your report card.", 4000, "good"); }
         if (pr.day > 20) { pr.day = 1; for (const s of SUBJECT_IDS) pr.marks[s] = { cw: 0, hw: 0, fa: [], term: [] }; pr.games = []; showToast("A new school year! Reports are kept in your diary.", 4000, "good"); }
         saveProgress(this.profile, pr);
@@ -5246,7 +5478,88 @@ class Game {
       <table class="report"><tr><th>Subject</th><th>Class + HW /20</th><th>Best FA /10</th><th>Term /20</th><th>Total /50</th><th>Grade</th></tr>${SUBJECT_IDS.map((s) => `<tr><td>${SUBJECTS[s].icon} ${SUBJECTS[s].name}</td><td>${subjects[s].cw}</td><td>${subjects[s].fa}</td><td>${subjects[s].term}</td><td>${subjects[s].total}</td><td class="g">${subjects[s].grade}</td></tr>`).join("")}<tr><td>⚽ Games</td><td colspan="3"></td><td>${games} /10</td><td></td></tr></table>
       <div class="job-goal">Class list: ${[...others, { name: "You", total: grand }].sort((a, b) => b.total - a.total).map((o, i) => `${i + 1}. ${o.name} ${o.total}`).join(" · ")}</div>
       <div class="solved-banner">Principal Mrs. Verma: "${rank === 1 ? "Class topper! We are proud of you." : rank <= 3 ? "Top three. Excellent effort." : pct >= 50 ? "A steady term. Push a little harder next term." : "Marks can grow. Raise your hand, do the homework, and see."}"<div class="btn-row"><button class="big-btn" id="rc-ok">Show Papa and Maa</button></div></div>`);
-    card.querySelector("#rc-ok").addEventListener("click", () => { closePanel(); setMood(this.family.papa.group, rank <= 3 ? "happy" : "calm", 5); then(); });
+    card.querySelector("#rc-ok").addEventListener("click", () => { closePanel(); setMood(this.family.papa.group, rank <= 3 ? "happy" : "calm", 5); if (term === 2 && pct >= 33 && this.stage < STAGES.length - 1) this._promote(then); else then(); });
+  }
+
+  // Passed both terms: the next class (or college, or graduation) next year.
+  _promote(then) {
+    const next = STAGES[this.stage + 1];
+    const card = openPanel(`<div class="job-title-row"><h2>🎓 ${L("Promoted!")}</h2></div><p class="job-brief">${L("Principal Mrs. Verma: \"Congratulations! You passed the year. Next year you go to {c}.\"", { c: next.label })}</p>${next.id === "graduate" ? `<p class="job-goal">${L("You are a graduate now. Press J to choose a job. Every job has a written exam and an interview, then work and a salary.")}</p>` : ""}<div class="btn-row"><button class="big-btn" id="pr-ok">${L("Okay")}</button></div>`);
+    card.querySelector("#pr-ok").addEventListener("click", () => {
+      closePanel();
+      // Carry the wallet, backpack, friends and reports into the next stage's save.
+      const carry = this.progress; const np = loadProgress(next.id);
+      for (const k of ["money", "bag", "wardrobe", "held", "hints", "outfit", "friendship", "reports", "hired", "job"]) np[k] = carry[k];
+      saveProgress(next.id, np);
+      try { localStorage.setItem("school-days.profile", next.id); } catch (e) {}
+      showToast(L("Welcome to {c}!", { c: next.label }), 3000, "good");
+      setTimeout(() => location.reload(), 1200);
+    });
+  }
+
+  // ---- Jobs: J ----
+  _openJobs() {
+    const pr = this.progress, canWork = this.stage >= stageIndex("c12");
+    const card = openPanel(`<div class="job-title-row"><h2>💼 ${L("Jobs")}</h2><button class="ghost-btn" id="jobs-close">${L("Okay")}</button></div>
+      <p class="job-brief">${canWork ? L("Choose a job. Go to its place for the written exam and the interview. Hired? Work a shift there every day for a salary.") : L("Jobs open after Class 12. Right now: study, pass your exams, and get promoted. ({c})", { c: this.profileLabel })}</p>
+      <div class="shop-list">${JOBS.map((j) => `<div class="cart-row"><div>${j.icon} <b>${j.name}</b>${pr.job === j.id ? " ✔ " + L("your job") : pr.hired.includes(j.id) ? " · " + L("hired") : ""}<small>${j.desc} · ${L("Place")}: ${j.place} · ${L("Salary")} ₹${j.salary}/${L("day")}</small></div>${canWork ? `<button class="use-btn" data-id="${j.id}">${pr.hired.includes(j.id) ? L("Go") : L("Apply")}</button>` : ""}</div>`).join("")}</div>`);
+    card.querySelector("#jobs-close").addEventListener("click", () => closePanel());
+    card.querySelectorAll(".use-btn").forEach((b) => b.addEventListener("click", () => {
+      const job = JOBS.find((j) => j.id === b.dataset.id); closePanel();
+      this._applying = job.id;
+      const d = this.world.doors.find((x) => x.label === job.place);
+      this.setObjective(`${job.icon} ${job.name}: ${pr.hired.includes(job.id) ? L("go to work at") : L("interview at")} ${job.place}`, d.x, d.z + 2);
+      showToast(L("Follow the compass to {p}. Press E at the door.", { p: job.place }), 3200, "good");
+    }));
+  }
+  _jobRoomSetup(room, door) {
+    const job = JOBS.find((j) => j.place === door.label); if (!job) return;
+    const pr = this.progress;
+    if (pr.hired.includes(job.id)) this.roomInteractables.push({ pos: room.occupantPos(), radius: 3.2, prompt: () => L("Work a shift as {j} (₹{n})", { j: job.name, n: job.salary }), activate: () => this._workShift(job) });
+    else if (this.stage >= stageIndex("c12")) this.roomInteractables.push({ pos: room.occupantPos(), radius: 3.2, prompt: () => L("Job interview: {j}", { j: job.name }), activate: () => this._jobInterview(job) });
+  }
+  _jobInterview(job) {
+    const S = SUBJECTS[job.subject];
+    const boss = job.boss;
+    this.dialogue.say(boss, [L("So, you want to be a {j}. First the written test: ten {s} questions, six to pass. Then the interview.", { j: job.name, s: S.name })], () => {
+      this._runPaper(`${job.icon} ${L("Written test")}: ${job.name}`, drawSubject(job.subject, 10, this.lvl), (score) => {
+        if (score < 6) { this.dialogue.say(boss, [L("{n} out of 10. Not enough. Study {s} and come back tomorrow.", { n: score, s: S.name })]); this.diary(`${job.name} written test: ${score}/10, failed.`); return; }
+        this.dialogue.say(boss, [L("{n} out of 10. Good. Now the interview. Sit.", { n: score })], () => {
+          const qs = makeRng(Math.floor(Math.random() * 1e9)).shuffle(INTERVIEW).slice(0, 5).map((q) => ({ ...q, choices: [q.answer, ...q.choices.filter((c) => c !== q.answer)].sort(() => Math.random() - 0.5) }));
+          this._runPaper(`${job.icon} ${L("Interview")}: ${job.name}`, qs, (isc) => {
+            if (isc < 4) { setMood(this.family.papa.group, "calm", 1); this.dialogue.say(boss, [L("{n} out of 5. Think about your answers and try again tomorrow.", { n: isc })]); this.diary(`${job.name} interview: ${isc}/5, not selected.`); return; }
+            this.progress.hired.push(job.id); this.progress.job = job.id; saveProgress(this.profile, this.progress);
+            playSuccess(); this.diary(`Hired as ${job.name}!`);
+            this.dialogue.say(boss, [L("{n} out of 5. You are hired! Welcome. Come every morning; a shift pays ₹{s}.", { n: isc, s: job.salary })], () => { this._startPhase(this.phase); });
+          });
+        });
+      });
+    });
+  }
+  _workShift(job) {
+    if (this._shiftDone) { showToast(L("Shift done for today. Go home and rest."), 2400); return; }
+    this.dialogue.say(job.boss, [L(WORK_TASKS[job.id]), L("Five tasks. Each one right is a full day's pay.")], () => {
+      this._runPaper(`${job.icon} ${L("At work")}: ${job.name}`, drawSubject(job.subject, 5, this.lvl), (score) => {
+        const pay = Math.round(job.salary * score / 5);
+        this._shiftDone = true; this.progress.shifts++; this.addMoney(pay, L("salary") + " (" + score + "/5)");
+        this.diary(`Worked as ${job.name}: ${score}/5, ₹${pay}.`);
+        this.dialogue.say(job.boss, [score >= 4 ? L("Excellent work today. See you tomorrow.") : L("Some slips today. Rest, and do better tomorrow.")], () => { if (this.graduate) this._startPhase("over"); });
+      });
+    });
+  }
+  // A paper: one question at a time, no hints, a score at the end.
+  _runPaper(title, qs, onDone) {
+    let i = 0, score = 0; const n = qs.length;
+    this._paperQ = () => qs[i];
+    const card = openPanel(`<div class="job-title-row"><h2>${title}</h2></div><div class="test-progress" id="ex-prog"></div><div class="test-q" id="ex-q"></div><div class="choice-bank" id="ex-choices"></div><div class="num-row" id="ex-row"><input class="num-input" id="ex-in" type="number" inputmode="decimal" step="any" placeholder="?"><span class="num-unit" id="ex-unit"></span><button class="big-btn" id="ex-check">Next</button></div><div id="ex-result"></div>`);
+    this._lockPanel = true;
+    const prog = card.querySelector("#ex-prog"), qEl = card.querySelector("#ex-q"), bank = card.querySelector("#ex-choices"), row = card.querySelector("#ex-row"), input = card.querySelector("#ex-in"), unit = card.querySelector("#ex-unit");
+    const show = () => { const q = qs[i]; prog.textContent = `${i + 1} / ${n}`; qEl.textContent = q.q; bank.innerHTML = ""; if (q.choices) { row.hidden = true; q.choices.forEach((c) => { const b = document.createElement("button"); b.className = "choice-btn"; b.textContent = c; b.addEventListener("click", () => answer(c === q.answer)); bank.appendChild(b); }); } else { row.hidden = false; input.value = ""; unit.textContent = q.unit || ""; setTimeout(() => input.focus(), 50); } };
+    const answer = (ok) => { countAttempt(this.profile, this.progress, "paper"); if (ok) { score++; Audio.playStep(); } else Audio.playRetry(); i++; if (i < n) show(); else finish(); };
+    const checkNum = () => { if (i >= n || input.value.trim() === "") return; answer(Math.abs(Number(input.value) - qs[i].answer) < 0.001); };
+    card.querySelector("#ex-check").addEventListener("click", checkNum); input.addEventListener("keydown", (e) => { if (e.key === "Enter") checkNum(); });
+    const finish = () => { this._lockPanel = false; closePanel(); onDone(score); };
+    show();
   }
 
   // ---- The bus ----
@@ -5276,6 +5589,7 @@ class Game {
         Audio.playPick();
         if (at === BUS_STOPS[1] && this.phase === "morning") this._startPhase("school");
         else if (at === BUS_STOPS[0] && this.phase === "over") this._startPhase("evening");
+        else if (at === BUS_STOPS[1] && this.phase === "morning" && this.graduate) this.setObjective(this.objective ? this.objective.label : "", null);
         else this.setObjective(this.objective ? this.objective.label : "", null);
       }
     }
@@ -5288,7 +5602,7 @@ class Game {
     const p = this.teachers.principal; setMood(p.group, "happy", 6);
     const thought = THOUGHTS[(this.progress.day - 1) % THOUGHTS.length];
     this._engagedNpc = p;
-    this.dialogue.say("Principal Mrs. Verma", ["Good morning, Sunrise Public School! Stand straight. Eyes front.", "Jana Gana Mana… (everyone sings the anthem)", `Thought for the day: "${thought}"`, "Now, a quick question for the class before you go."], () => {
+    this.dialogue.say("Principal Mrs. Verma", ["Good morning, Sunrise Public School! Stand straight. Eyes front.", "Jana Gana Mana… (everyone sings the anthem)", L("Thought for the day: \"{t}\"", { t: thought }), "Now, a quick question for the class before you go."], () => {
       const q = drawSubject("evs", 1, this.big)[0];
       const steps = [q.choices ? { q: q.q, choices: q.choices, answer: q.answer, hint: q.hint } : { q: q.q, answer: q.answer, unit: q.unit, hint: q.hint }];
       runStepQuiz({ profile: this.profile, level: 1, world: this.world, audio: Audio, countAttempt: () => countAttempt(this.profile, this.progress, "assembly"), onSolve: () => { this.progress.thought.push(thought); this._marksToday = (this._marksToday || 0) + 1; this.addMarks("evs", "cw", 1, "assembly question"); this._engagedNpc = null; this._endPeriod(); } },
@@ -5312,7 +5626,7 @@ class Game {
     const S = SUBJECTS[subject], qs = drawSubject(subject, 3, this.big);
     this._engagedNpc = t;
     setMood(t.group, "happy", 4);
-    this.dialogue.say(t.name, TEACHERS[subject].greet, () => this._askRound(subject, t, qs, 0), { pitch: TEACHERS[subject].pitch, speaker: t.id });
+    this.dialogue.say(t.name, TEACHERS[subject].greet.map((x) => L(x)), () => this._askRound(subject, t, qs, 0), { pitch: TEACHERS[subject].pitch, speaker: t.id });
   }
   _askRound(subject, t, qs, i) {
     const S = SUBJECTS[subject];
@@ -5324,12 +5638,12 @@ class Game {
     }
     const q = qs[i];
     const step = q.choices ? { q: q.q, choices: q.choices, answer: q.answer, hint: q.hint } : { q: q.q, answer: q.answer, unit: q.unit, hint: q.hint };
-    const card = openPanel(`<div class="job-title-row"><h2>${S.icon} ${S.name} · question ${i + 1} of ${qs.length}</h2></div><p class="job-brief">${t.name} looks at the class: <b>"${q.q}"</b></p><div class="hand-row"><button class="big-btn" id="hand-up">✋ Raise my hand</button><button class="ghost-btn" id="hand-down">🤫 Let someone else answer</button></div><p class="tiny-note">A correct answer on the first try is 2 marks. With help, 1 mark.</p>`);
+    const card = openPanel(`<div class="job-title-row"><h2>${S.icon} ${S.name} · question ${i + 1} of ${qs.length}</h2></div><p class="job-brief"><b>${L("{t} looks at the class: \"{q}\"", { t: t.name, q: q.q })}</b></p><div class="hand-row"><button class="big-btn" id="hand-up">${L("✋ Raise my hand")}</button><button class="ghost-btn" id="hand-down">${L("🤫 Let someone else answer")}</button></div><p class="tiny-note">A correct answer on the first try is 2 marks. With help, 1 mark.</p>`);
     const ctx = { profile: this.profile, level: 1, world: this.world, audio: Audio, countAttempt: () => countAttempt(this.profile, this.progress, "class:" + subject) };
     card.querySelector("#hand-up").addEventListener("click", () => {
       let tries = 0;
       runStepQuiz({ ...ctx, countAttempt: () => { tries++; ctx.countAttempt(); }, onSolve: () => { const m = tries <= 1 ? 2 : 1; this._marksToday = (this._marksToday || 0) + m; this.addMarks(subject, "cw", m, tries <= 1 ? "answered first time" : "answered with a hint"); setMood(t.group, "happy", 3); this.friends.forEach((f) => setMood(f.group, Math.random() < 0.5 ? "happy" : "calm", 2)); this._askRound(subject, t, qs, i + 1); } },
-        { title: `${S.name}: your answer`, intro: `${t.name}: "Yes, you. Tell the class."`, goal: "Take your time. Wrong tries lose a mark, not the question.", steps: [step], doneBtn: "Sit down", doneHtml: `<b>${t.name}:</b> "Correct! Well done."`, noLeave: true });
+        { title: `${S.name}: your answer`, intro: `${t.name}: "${L("Yes, you. Tell the class.")}"`, goal: "Take your time. Wrong tries lose a mark, not the question.", steps: [step], doneBtn: "Sit down", doneHtml: `<b>${t.name}:</b> "${L("Correct! Well done.")}"`, noLeave: true });
     });
     card.querySelector("#hand-down").addEventListener("click", () => {
       closePanel();
@@ -5338,13 +5652,13 @@ class Game {
       const ans = q.choices ? q.answer : `${q.answer}${q.unit ? " " + q.unit : ""}`;
       if (right) {
         setMood(f.group, "happy", 3);
-        this.dialogue.say(f.name, [`${ans}!`], () => this.dialogue.say(t.name, [`Correct, ${f.name}. Two marks for you.`, `And you? Next time, hand up.`], () => this._askRound(subject, t, qs, i + 1), { pitch: TEACHERS[subject].pitch, speaker: t.id }), { pitch: 560, speaker: f.id });
+        this.dialogue.say(f.name, [`${ans}!`], () => this.dialogue.say(t.name, [L("Correct, {f}. Two marks for you.", { f: f.name }), L("And you? Next time, hand up.")], () => this._askRound(subject, t, qs, i + 1), { pitch: TEACHERS[subject].pitch, speaker: t.id }), { pitch: 560, speaker: f.id });
       } else {
         const wrong = q.choices ? q.choices.find((c) => c !== q.answer) : `${q.answer + (Math.random() < 0.5 ? 1 : -1) * Math.max(1, Math.round(q.answer * 0.2))}`;
         setMood(f.group, "sad", 4); setMood(t.group, "stern", 4);
-        this.dialogue.say(f.name, [`Umm… ${wrong}?`], () => this.dialogue.say(t.name, [`No, ${f.name}. Think again.`, "You at the middle desk. Can you help the class?"], () => {
+        this.dialogue.say(f.name, [L("Umm… {w}?", { w: wrong })], () => this.dialogue.say(t.name, [L("No, {f}. Think again.", { f: f.name }), L("You at the middle desk. Can you help the class?")], () => {
           runStepQuiz({ ...ctx, onSolve: () => { this._marksToday = (this._marksToday || 0) + 1; this.addMarks(subject, "cw", 1, "helped the class"); setMood(t.group, "happy", 3); setMood(f.group, "calm", 1); this._askRound(subject, t, qs, i + 1); } },
-            { title: `${S.name}: help the class`, intro: `${t.name}: "Show ${f.name} how it is done."`, goal: "One mark for the rescue.", steps: [step], doneBtn: "Sit down", doneHtml: `<b>${t.name}:</b> "That is it. ${f.name}, did you follow?"`, noLeave: true });
+            { title: `${S.name}: help the class`, intro: `${t.name}: "${L("Show {f} how it is done.", { f: f.name })}"`, goal: "One mark for the rescue.", steps: [step], doneBtn: "Sit down", doneHtml: `<b>${t.name}:</b> "${L("That is it. {f}, did you follow?", { f: f.name })}"`, noLeave: true });
         }, { pitch: TEACHERS[subject].pitch, speaker: t.id }), { pitch: 560, speaker: f.id });
       }
     });
@@ -5354,7 +5668,7 @@ class Game {
     const S = SUBJECTS[subject], n = 10, each = kind === "term" ? 2 : 1;
     const qs = drawSubject(subject, n, this.big);
     this._engagedNpc = t; setMood(t.group, "stern", 5);
-    this.dialogue.say(t.name, [kind === "term" ? `Term exam, ${S.name}. Ten questions, two marks each. No talking.` : `FA test, ${S.name}. Ten questions, one mark each.`, "Read every question twice. Begin."], () => {
+    this.dialogue.say(t.name, [kind === "term" ? L("Term exam, {s}. Ten questions, two marks each. No talking.", { s: S.name }) : L("FA test, {s}. Ten questions, one mark each.", { s: S.name }), L("Read every question twice. Begin.")], () => {
       let i = 0, score = 0;
       const card = openPanel(`<div class="job-title-row"><h2>${S.icon} ${kind === "term" ? "Term Exam" : "FA Test"}: ${S.name}</h2></div><div class="test-progress" id="ex-prog"></div><div class="test-q" id="ex-q"></div><div class="choice-bank" id="ex-choices"></div><div class="num-row" id="ex-row"><input class="num-input" id="ex-in" type="number" inputmode="decimal" step="any" placeholder="?"><span class="num-unit" id="ex-unit"></span><button class="big-btn" id="ex-check">Next</button></div><div id="ex-result"></div>`);
       this._lockPanel = true;
@@ -5365,7 +5679,7 @@ class Game {
         else { row.hidden = false; input.value = ""; unit.textContent = q.unit || ""; setTimeout(() => input.focus(), 50); }
       };
       const answer = (ok) => { countAttempt(this.profile, this.progress, kind + ":" + subject); if (ok) { score += each; Audio.playStep(); } else Audio.playRetry(); i++; if (i < n) show(); else finish(); };
-      const checkNum = () => { if (input.value.trim() === "") return; answer(Math.abs(Number(input.value) - qs[i].answer) < 0.001); };
+      const checkNum = () => { if (i >= n || input.value.trim() === "") return; answer(Math.abs(Number(input.value) - qs[i].answer) < 0.001); };
       card.querySelector("#ex-check").addEventListener("click", checkNum); input.addEventListener("keydown", (e) => { if (e.key === "Enter") checkNum(); });
       const finish = () => {
         this._lockPanel = false;
@@ -5375,7 +5689,7 @@ class Game {
         const max = n * each, pct = score / max;
         setMood(t.group, pct >= 0.7 ? "happy" : pct >= 0.4 ? "calm" : "sad", 5);
         this.diary(`${kind === "term" ? "Term exam" : "FA"} ${S.name}: ${score}/${max}.`);
-        card.querySelector("#ex-result").innerHTML = `<div class="score-big">${score} / ${max}</div><div class="solved-banner"><b>${t.name}:</b> "${pct >= 0.9 ? "Outstanding. Full marks nearly!" : pct >= 0.7 ? "Good paper. A little revision and it is perfect." : pct >= 0.4 ? "Average. Read the chapter again tonight." : "This needs work. Come to me at lunch, we will go through it."}"<div class="btn-row"><button class="big-btn" id="ex-done">Hand in the paper</button></div></div>`;
+        card.querySelector("#ex-result").innerHTML = `<div class="score-big">${score} / ${max}</div><div class="solved-banner"><b>${t.name}:</b> "${L(pct >= 0.9 ? "Outstanding. Full marks nearly!" : pct >= 0.7 ? "Good paper. A little revision and it is perfect." : pct >= 0.4 ? "Average. Read the chapter again tonight." : "This needs work. Come to me at lunch, we will go through it.")}"<div class="btn-row"><button class="big-btn" id="ex-done">Hand in the paper</button></div></div>`;
         card.querySelector("#ex-done").addEventListener("click", () => { closePanel(); this._engagedNpc = null; this._endPeriod(); });
         if (pct >= 0.7) Audio.playSuccess();
       };
@@ -5449,7 +5763,7 @@ class Game {
     this.world.update(dt, elapsed, this.player.position);
     const pp = this.player.position;
     // Walking to school on foot: entering the campus starts the school day.
-    if (this.phase === "morning" && !this.world.currentRoom && (!this.player.riding || this.player.riding.kind === "bike") && pp.x > SCHOOL.x1 && pp.x < SCHOOL.x2 && pp.z > SCHOOL.z1 && pp.z < SCHOOL.z2) this._startPhase("school");
+    if (!this.graduate && this.phase === "morning" && !this.world.currentRoom && (!this.player.riding || this.player.riding.kind === "bike") && pp.x > SCHOOL.x1 && pp.x < SCHOOL.x2 && pp.z > SCHOOL.z1 && pp.z < SCHOOL.z2) this._startPhase("school");
     if (this.phase === "over" && this.world.currentRoom && this.world.currentRoom.type === "home") this._startPhase("evening");
     if (!this.player.riding && this.player.speedKmh > 1 && !this.world.currentRoom) { this.progress.energy = Math.max(0, this.progress.energy - dt / (this.input.running ? 8 : 16)); if (Math.floor(this.progress.energy) !== this._energyShown) { this._energyShown = Math.floor(this.progress.energy); this.ui.refreshRank(); } }
     this.player.tired = this.progress.energy < 25;
@@ -5475,7 +5789,7 @@ class Game {
     if (amb.chirp <= 0) { playChirp(); amb.chirp = 3 + Math.random() * 6; }
     if (amb.horn <= 0) { amb.horn = 6 + Math.random() * 9; if (!this.world.currentRoom && Math.abs(pp.z) < 30) playHorn(); }
     // Interact.
-    if (!blocked && this.player.riding && this.player.riding.kind === "bike") { this.ui.setInteractPrompt(`Get off the bicycle${this.input.isTouch ? "" : "  (E)"}`); if (this.input.interactPressed()) { this.player.dismount(); Audio.playPick(); } }
+    if (!blocked && this.player.riding && this.player.riding.kind === "bike") { this.ui.setInteractPrompt(L("Get off the bicycle") + (this.input.isTouch ? "" : "  (E)")); if (this.input.interactPressed()) { this.player.dismount(); Audio.playPick(); } }
     else if (!blocked && this.player.riding) { /* handled in _updateBus */ }
     else if (!blocked) {
       if (this._engagedNpc && !this.dialogue.active && !panelOpen()) this._engagedNpc = null;
@@ -5806,10 +6120,33 @@ function boot() {
     }
   }, 120);
 
-  // Profile buttons start the game.
-  document.querySelectorAll(".profile-btn").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const profile = btn.getAttribute("data-profile");
+  // Language and class pickers, then Start.
+  let profile = "c3";
+  try { profile = localStorage.getItem("school-days.profile") || "c3"; } catch (e) {}
+  if (stageIndex(profile) === 4 && profile !== "c3") profile = "c3";
+  const langBox = document.getElementById("lang-buttons");
+  const stageBox = document.getElementById("stage-buttons");
+  const labels = () => {
+    document.getElementById("lang-label").textContent = L("Language");
+    document.getElementById("stage-label").textContent = L("Who is playing today?");
+    document.getElementById("start-btn").textContent = L("Start");
+  };
+  const paintLang = () => { langBox.querySelectorAll(".lang-btn").forEach((b) => b.classList.toggle("on", b.dataset.lang === LANG)); labels(); };
+  const paintStage = () => { stageBox.querySelectorAll(".stage-btn").forEach((b) => b.classList.toggle("on", b.dataset.stage === profile)); };
+  for (const code of Object.keys(LANGS)) {
+    const b = document.createElement("button"); b.className = "lang-btn"; b.dataset.lang = code; b.textContent = LANGS[code].name;
+    b.addEventListener("click", () => { setLang(code); paintLang(); });
+    langBox.appendChild(b);
+  }
+  for (const s of STAGES) {
+    const b = document.createElement("button"); b.className = "stage-btn"; b.dataset.stage = s.id; b.textContent = s.label;
+    b.addEventListener("click", () => { profile = s.id; try { localStorage.setItem("school-days.profile", profile); } catch (e) {} paintStage(); });
+    stageBox.appendChild(b);
+  }
+  paintLang(); paintStage();
+
+  document.getElementById("start-btn").addEventListener("click", () => {
+      try { localStorage.setItem("school-days.profile", profile); } catch (e) {}
       unlockAudio(); // first tap: browsers allow sound from here on
       startScreen.hidden = true;
       hud.hidden = false;
@@ -5834,13 +6171,9 @@ function boot() {
         }
       };
       attempt();
-    });
   });
 }
 
 boot();
 
 </script>
-
-</body>
-</html>

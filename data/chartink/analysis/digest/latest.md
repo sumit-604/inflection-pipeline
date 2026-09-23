@@ -137,3 +137,19 @@ These are weekly or slower series. The date shown is their last reading.
 
 
 <!-- market-read -->
+
+## Market read
+
+The market climbed back from last Tuesday's washout without a thrust day. A
+thrust day is a session where 300 or more stocks jump four and a half percent.
+The best day this week had 166, on Friday, and each day since has had fewer.
+The short-term count repaired fast. About 850 stocks now sit above their
+twenty-day line, against about 470 a week ago. The long-term floor did not
+repair. Slightly fewer stocks sit above their two-hundred-day line than below
+it. Yearly highs doubled, and small companies lead them. Fear fell back to
+cheap. Gold's lead over stocks shrank to a third of its size a week ago. The
+Nifty sits below its long trend line, while the smallcap and microcap indices
+sit above theirs. It is a quiet, thin repair of the short end, with the long
+end still undecided.
+
+Full brief: briefs/2026-09-22.html

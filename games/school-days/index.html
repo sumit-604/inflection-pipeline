@@ -5097,6 +5097,42 @@ function chatReply(kind, text, ctx = {}) {
   if (has("bye", "see you", "good night", "going now", "chalo")) return { gudiya: "Nooo, don't go! Okay, bye Bhaiya.", teacher: "Go on. Homework tonight, no excuses.", maa: "Go carefully. Come back before dark." }[kind] || `Bye, ${you}. Take care.`;
   if (has("thank", "shukriya", "dhanyavad")) return { maa: "You are welcome, my child.", papa: "Anytime, champ.", dadi: "Bless you.", gudiya: "You're welcome! Now play?", friend: "No thanks between friends, yaar.", teacher: "Thank yourself: you did the work." }[kind] || "Most welcome.";
   if (has("sorry", "maaf")) return { maa: "It is fine, beta. Just do not do it again.", papa: "Sorry is good. Fixing it is better. What will you do differently?", dadi: "Come here. All is forgiven.", gudiya: "Okay... but give me your chocolate.", friend: "Chill, yaar. We are friends.", teacher: "Accepted. Now show me you have learned." }[kind] || "No problem, child.";
+  // 2b. Requests: "can you drive me to school", "give me money", "help me with homework", "tell me a story", "play with me".
+  const asking = has("can you", "could you", "will you", "would you", "please", "pls", "plz", "take me", "drop me", "drive me", "give me", "buy me", "help me", "play with me", "tell me", "teach me", "let's", "lets ", "come with", "make me", "cook", "i want", "want to", "chahiye", "mujhe", "sakte ho", "sakti ho", "karo", "chalo", "le chalo", "do na", "can we", "shall we", "may i");
+  if (asking) {
+    const can = (n) => (ctx.canAct ? ctx.canAct(n) : false), go = (n) => (ctx.act ? ctx.act(n) : false);
+    if (has("drive", "car", "drop", "take me to school", "school by car", "gaadi", "gadi", "lift")) {
+      if (kind === "papa") { if (go("drive")) return "Of course, champ. Tiffin in the bag? Get in, seat belt on. I will drop you at the gate."; if (go("drivehome")) return "Coming, champ. I am at the gate with the car. Get in."; if (ctx.working) return "You have your own car now, champ. It is in the lane. Drive carefully, stay on the roads."; if (!ctx.tiffin && ctx.phase === "morning") return "Yes, but tiffin first. Ask Maa to pack it, then come to the car."; return ctx.phase === "morning" ? "The car is in the lane. Come out and press E at it, I will drive." : ctx.phase === "over" ? "I am not at the gate today. Take the bus, champ, or cycle home." : "Tomorrow morning, champ. Tiffin first, then the car."; }
+      return { maa: "Ask Papa, beta. He drives; I pack the tiffin.", dadi: "Ask your Papa. I stopped driving years ago.", gudiya: "I can't drive, silly! I am four! Ask Papa.", friend: "Ha, I wish I had a car. Papa's car? Ask your Papa. Or take the bus with me.", teacher: "The school bus is at 7:30 at Shanti Nagar. Or ask your father." }[kind] || "A lift? Ask your Papa, beta. I am on foot.";
+    }
+    if (has("homework", "study", "help me with", "maths", "science", "english", "evs", "teach me", "question", "practice", "sum")) {
+      if (go("homework")) return { maa: "Come, sit at the study desk. I will bring milk and we do it together.", papa: "Bring your notebook to the desk. Let us see it.", dadi: "Bring it here. Old teacher, remember?" }[kind];
+      if (go("practice")) return kind === "teacher" ? "Good. One question, for practice. Ready?" : "Sure, yaar. Try this one, it was in my notebook.";
+      return { maa: ctx.homework ? "Homework is for the evening at the study desk. I will help you then." : "No homework is pending, beta. Read a book instead.", papa: ctx.homework ? "In the evening, at the desk. I will sit with you." : "Nothing pending. Good. Then play a little.", dadi: ctx.homework ? "In the evening, beta. Bring the notebook to me." : "No homework? Then come, a story.", gudiya: "I can't do homework! I can draw a cow on it.", friend: ctx.homework ? "Same here. Let's do it together at lunch." : "Nothing pending. Free evening!", teacher: "Bring your doubt tomorrow before the bell. I will explain." }[kind] || "Study well, beta. Ask your teacher.";
+    }
+    if (has("story", "kahani")) { if (go("story")) return "Come under the blanket. Tonight's story is ready."; return { dadi: "Tonight, after dinner. Stories are for the night.", maa: "Dadi tells the stories in this house. Ask her at night.", papa: "Dadi is the storyteller. I only know the goat one.", gudiya: "The bunny story? Ask Dadi, she does the voices.", friend: "Story? Our teacher slipped on chalk once. That's it.", teacher: "Read chapter three. It is a story." }[kind] || "Ask your Dadi, beta. Grandmothers keep the stories."; }
+    if (has("ludo", "play", "game", "khel", "cricket", "football", "hide and seek", "carrom")) {
+      if (go("ludo")) return kind === "gudiya" ? "Yes yes yes! Get the ludo board! I am red!" : "Ludo it is. Get the board, call Gudiya.";
+      if (go("count")) return "Play with my blocks! Teach me counting, Bhaiya!";
+      return { maa: "After homework, beta. One hour, then bed.", papa: "Tonight after dinner: ludo. Sunday: cricket in the park.", dadi: "My knees, beta. Ludo at night, yes. Running, no.", gudiya: "Not now? Then at night! Ludo! Promise?", friend: "Games period today, or the park after school. I am in.", teacher: "Games are with Coach Vikram. In class we study." }[kind] || "The park has swings and a slide, beta. Go play there.";
+    }
+    if (has("movie", "film", "tv", "cartoon")) { if (go("movie")) return "Everyone on the sofa! I will switch the TV on."; return { maa: "At night, after dinner, if homework is done.", papa: "Tonight, after dinner. Pick the movie.", dadi: "Old songs, not those noisy films. At night.", gudiya: "Cartoons! At night! Maa says so.", friend: "Come to my house on Sunday, we have the big TV.", teacher: "Less TV, more books." }[kind] || "The Cinema Hall is in Old Town, beta. Show at six."; }
+    if (has("food", "eat", "hungry", "khana", "breakfast", "dinner", "lunch", "tiffin", "paratha", "cook", "maggi", "milk", "roti")) {
+      if (go("breakfast")) return "Come to the table, sunshine. Paratha and milk, then we pack your tiffin.";
+      if (go("dinner")) return kind === "papa" ? "Dinner is on the table. Come, sit." : "Wash your hands. Dinner is ready: dal, rice and hot rotis.";
+      return { maa: ctx.phase === "evening" ? "Homework first, then dinner. That is the rule." : ctx.phase === "school" || ctx.phase === "over" ? "Your tiffin is in the bag, beta. Eat it at lunch." : "Breakfast is done. Dinner is in the evening.", papa: "Ask Maa, champ. She runs the kitchen. I only eat.", dadi: "My laddoo tin is under my chair. Take one. Shh.", gudiya: "Maggi! Ask Maa! I want too!", friend: "Canteen at lunch. Samosa ₹15. Share?", teacher: "Lunch is at 10:00, at the benches. Not in class." }[kind] || "The chaiwala has biscuits, beta. ₹5.";
+    }
+    if (has("buy me") && !has("toffee", "chocolate", "ice cream", "money")) { const tp = chatTopic(t.replace(/buy me|please|can you|will you/g, "")) || "that"; return { papa: `A ${tp}? Save half your pocket money for a month, and I add the other half. Deal?`, maa: `A ${tp}? Ask Papa, and finish your homework first.`, dadi: `A ${tp}? For you, when I get my pension. Come, sit.`, gudiya: `A ${tp}! I want one too! Ask Papa!`, friend: `A ${tp}? Yaar, I have ₹5. Ask your Papa.`, teacher: `A ${tp}? Ask your parents, child. Not the school.` }[kind] || `A ${tp}? Ask your Papa, beta.`; }
+    if (has("money", "paisa", "rupee", "toffee", "₹", "pocket", "chocolate", "ice cream")) {
+      if (go("money")) return { papa: "Here, ten rupees. Save half, spend half. That is the rule.", maa: "Ten rupees, and count your change when you spend it.", dadi: "Ten rupees from my tin. Don't tell Maa." }[kind];
+      return { papa: "I gave you ten already today, champ. Tomorrow.", maa: "Already gave you today. Money does not grow on trees.", dadi: "My tin is empty till tomorrow, beta.", gudiya: "I have two rupees! You can have one.", friend: "I have ₹5. Lend you ₹2?", teacher: "No money talk in class." }[kind] || "Ask your Papa, beta.";
+    }
+    if (has("bless", "aashirwad", "ashirwad")) { if (go("bless")) return "Jeete raho, beta. Go well."; return "Bless you, child."; }
+    if (has("sleep", "bed", "sona")) return { maa: ctx.phase === "night" ? "Yes, go to bed. Press E at your bed." : "Not yet, beta. Homework and dinner first.", papa: ctx.phase === "night" ? "Go on. Lights out." : "Bed is for the night, champ.", dadi: "Sleep, beta. I will put the blanket on you.", gudiya: "No! One more game!", friend: "Same, yaar. So sleepy.", teacher: "Not in my class." }[kind] || "Sleep well, beta.";
+    if (has("come with", "come to", "chalo", "let's go", "lets go", "outside", "park", "market", "walk")) return { maa: "You go, beta. Be back before dark. I have the kitchen.", papa: "Sunday, champ. Today I have office. Take your cycle.", dadi: "My knees, beta. Bring me back a story.", gudiya: "Yes! Wait, my shoes! Maa, I am going with Bhaiya!", friend: "Let's go! Cycle race to the park?", teacher: "After school, not now." }[kind] || "Go on, beta. Careful on the road.";
+    const tp = chatTopic(t.replace(/can you|could you|will you|would you|please|give me|help me|tell me|teach me/g, ""));
+    return { maa: `${tp || "That"}? We will see, beta. Homework first, then we talk.`, papa: `${tp || "That"}? Let me think about it, champ. Ask me again at dinner.`, dadi: `${tp || "That"}? For you, anything. Come, sit first.`, gudiya: `${tp || "That"}? Okay! But you play with me after!`, friend: `${tp || "That"}? Sure, yaar, if I can.`, teacher: `${tp || "That"}? Ask me after class, properly.` }[kind] || `${tp || "That"}? Let us see, beta.`;
+  }
   // 3. Questions about the person.
   if (has("your name", "who are you", "naam", "tumhara naam", "aapka naam")) return kind === "gudiya" ? "I am Gudiya! Your little sister, silly." : kind === "maa" || kind === "papa" || kind === "dadi" ? `I am your ${P.name}, ${you}. Who else?` : `I am ${P.name}. ${P.job}.`;
   if (has("how old", "your age", "umar", "kitne saal")) return kind === "gudiya" ? "Four! Four and a half, actually." : kind === "dadi" ? `${P.age}. Older than this colony.` : kind === "friend" ? `Same as you, ${you}. We are in the same class.` : `${P.age}, ${you}.`;
@@ -5107,7 +5143,7 @@ function chatReply(kind, text, ctx = {}) {
     if (has("colour", "color", "rang")) return `${P.colour.charAt(0).toUpperCase() + P.colour.slice(1)}. Always ${P.colour}.`;
     if (has("game", "sport", "play", "khel", "hobby")) return `${P.hobby.charAt(0).toUpperCase() + P.hobby.slice(1)}. Ask me any time.`;
     const tp = chatTopic(t.replace(/favou?rite|pasand|do you like|you like|what do you like/g, ""));
-    if (tp) return has("hate", "dislike") ? `${tp}? Not my favourite. I dislike ${P.dislikes}.` : `${tp}? Yes, I like ${tp}. Though I like ${P.likes} more.`;
+    if (tp) return has("hate", "dislike") ? `${tp}? Not my favourite. I dislike ${P.dislikes}.` : P.likes.toLowerCase().includes(tp.split(" ").pop()) ? `${tp}? Yes! I love ${tp}. ${P.likes.charAt(0).toUpperCase() + P.likes.slice(1)}: those are my favourites.` : `${tp}? Yes, I like ${tp}. Though ${P.likes} come first for me.`;
     return `I like ${P.likes}. And I do not like ${P.dislikes}.`;
   }
   if (has("how are you", "kaise ho", "how r u", "how do you feel", "are you ok", "are you fine", "kaisi ho")) return { maa: "I am well, beta. Tired, but well. And you?", papa: "First class! Office was busy, but I am home now. You?", dadi: "My knees hurt, but my heart is happy when I see you.", gudiya: "I am good! My doll is sick though. Will you check her?", friend: "Fine, yaar. Bored of homework. You?", teacher: "Well, thank you. Are you prepared for class?" }[kind] || "All well, by God's grace. And you?";
@@ -5152,7 +5188,7 @@ function chatReply(kind, text, ctx = {}) {
   // 6. A yes/no question: answer yes or no, and repeat the topic.
   const topic0 = chatTopic(t), topic = topic0 ? topic0.charAt(0).toUpperCase() + topic0.slice(1) : "";
   if (/^(can|could|will|would|do|does|did|is|are|am|have|has|should|kya)\b/.test(t)) {
-    const yes = has("can you", "will you", "do you", "are you", "kya tum", "kya aap") ? (topic.length % 2 === 0) : true;
+    const yes = has("do you", "are you", "kya tum", "kya aap") ? !has("hate", "not", "never", "dislike") : true;
     if (has("can i", "may i", "kya main")) return { maa: `${topic ? topic.charAt(0).toUpperCase() + topic.slice(1) : "That"}? After homework, yes.`, papa: `${topic || "That"}? Ask Maa first. If she says yes, yes.`, dadi: `${topic || "That"}? Yes, yes. Go, but come back soon.`, gudiya: `Only if I can come too!`, friend: `${topic || "That"}? Sure, why not.`, teacher: `${topic || "That"}? Not during class. At lunch, yes.` }[kind] || `${topic || "That"}? Yes, go ahead, beta.`;
     return (yes ? `Yes, ${topic || "I do"}. ` : `No, not ${topic || "really"}. `) + ({ gudiya: "Why do you ask?", teacher: "Why do you ask? Think about it and tell me.", friend: "Why, what happened?", dadi: "Ask me anything, beta." }[kind] || "Why do you ask?");
   }
@@ -5544,7 +5580,6 @@ class Game {
     this.big = this.lvl;
     this.graduate = STAGES[this.stage].id === "graduate";
     Object.defineProperty(this, "working", { get: () => this.graduate || !!this.progress.job });
-    if (this.working && this.phase === "school") { this.phase = "morning"; this.progress.phase = "morning"; this.periodIndex = 0; }
     this._setupRenderer();
     this.world = new World();
     this.player = new Player(this.world, this.camera);
@@ -5554,6 +5589,8 @@ class Game {
     this.objective = null;
     this.phase = this.progress.phase || "morning";
     this.periodIndex = this.progress.period || 0;
+    // A working adult never has a school day: a saved school phase becomes a fresh morning.
+    if (this.working && this.phase === "school") { this.phase = "morning"; this.progress.phase = "morning"; this.periodIndex = 0; this.progress.period = 0; saveProgress(this.profile, this.progress); }
     if (this.input.isTouch) document.getElementById("touch-controls").hidden = false;
     else { const hint = document.getElementById("controls-hint"); hint.hidden = false; setTimeout(() => hint.classList.add("fade"), 4000); setTimeout(() => (hint.hidden = true), 4800); }
     this._buildNpcs();
@@ -5954,7 +5991,7 @@ class Game {
       const card = openPanel(`<div class="job-title-row"><h2>🌙 Day ${pr.day} is over</h2></div><div class="job-goal">Marks today: <b>${this._marksToday || 0}</b> · Term total: <b>${this.termMarks()}</b> · Wallet: <b>${fmtMoney(pr.money)}</b> · Friendship: <b>${Object.values(pr.friendship).reduce((a, b) => a + b, 0)}</b></div><p class="job-brief">${pr.day + 1 === 5 || pr.day + 1 === 15 ? "Tomorrow is an FA day: 10 mark tests in every subject. Revise!" : pr.day + 1 === 10 || pr.day + 1 === 20 ? "Tomorrow is the TERM EXAM. Sleep early." : "Tomorrow is a normal school day."}</p><div class="btn-row"><button class="big-btn" id="sleep-ok">Sleep 😴</button></div>`);
       card.querySelector("#sleep-ok").addEventListener("click", () => {
         closePanel();
-        pr.day++; buildPeriods(pr.day); pr.tiffin = null; if (this._lateNight) { pr.energy = Math.max(20, pr.energy - 25); this._lateNight = false; } this._incidentDone = false; this._monitorDone = false; this._eqUsed = new Set(); this.car.atSchool = false; this.car.group.position.set(this.car.home.x, 0, this.car.home.z); this.car.group.rotation.y = 0; pr.homework = []; pr.period = 0; this._marksToday = 0; this._ateLunch = false; this._goalDone = false; this._gamesActive = false; this._shiftDone = false;
+        pr.day++; buildPeriods(pr.day); pr.tiffin = null; if (this._lateNight) { pr.energy = Math.max(20, pr.energy - 25); this._lateNight = false; } this._incidentDone = false; this._monitorDone = false; this._pocketGiven = false; this._eqUsed = new Set(); this.car.atSchool = false; this.car.group.position.set(this.car.home.x, 0, this.car.home.z); this.car.group.rotation.y = 0; pr.homework = []; pr.period = 0; this._marksToday = 0; this._ateLunch = false; this._goalDone = false; this._gamesActive = false; this._shiftDone = false;
         if (pr.day === 11) { for (const s of SUBJECT_IDS) pr.marks[s] = { cw: 0, hw: 0, fa: [], term: [] }; pr.games = []; showToast("Term 2 begins. Marks start fresh; Term 1 is on your report card.", 4000, "good"); }
         if (pr.day > 20) { pr.day = 1; for (const s of SUBJECT_IDS) pr.marks[s] = { cw: 0, hw: 0, fa: [], term: [] }; pr.games = []; showToast("A new school year! Reports are kept in your diary.", 4000, "good"); }
         saveProgress(this.profile, pr);
@@ -6036,7 +6073,7 @@ class Game {
             if (isc < 4) { setMood(this.family.papa.group, "calm", 1); this.dialogue.say(boss, [L("{n} out of 5. Think about your answers and try again tomorrow.", { n: isc })]); this.diary(`${job.name} interview: ${isc}/5, not selected.`); return; }
             this.progress.hired.push(job.id); this.progress.job = job.id; saveProgress(this.profile, this.progress);
             playSuccess(); this.diary(`Hired as ${job.name}!`);
-            this.dialogue.say(boss, [L("{n} out of 5. You are hired! Welcome. Come every morning; a shift pays ₹{s}.", { n: isc, s: job.salary })], () => { this._startPhase(this.phase); });
+            this.dialogue.say(boss, [L("{n} out of 5. You are hired! Welcome. Come every morning; a shift pays ₹{s}.", { n: isc, s: job.salary }), L("No more school for you. From tomorrow, work.")], () => { if (this.phase === "school") { this.friends.forEach((f) => (f.group.visible = false)); this._startPhase("over"); showToast(L("You have a job now. School is over for good. Head home."), 3600, "good"); } else this._startPhase(this.phase); });
           });
         });
       });
@@ -6117,8 +6154,44 @@ class Game {
     return { name: npc.name, day: d, term: d <= 10 ? 1 : 2, special: this.isTermDay() ? "the term exam day" : this.isFaDay() ? "an FA test day" : "", nextFa: nextFa === 10 || nextFa === 20 ? nextFa + 5 : nextFa, nextTerm: d <= 10 ? 10 : 20,
       marksToday: this._marksToday || 0, termMarks: this.termMarks(), rank: last ? last.rank : 0, money: fmtMoney(pr.money), homework: pr.homework.length, homeworkSubjects: [...new Set(pr.homework.map((h) => SUBJECTS[h.subject].name))].join(", "),
       clock: this.clockText(), period: per ? per.name : "", nextPeriod: nxt ? nxt.name : "", timeWord: this.phase === "morning" ? "morning" : this.phase === "school" || this.phase === "over" ? "afternoon" : this.phase === "evening" ? "evening" : "night",
-      playerName: "Bunty", stageLabel: this.profileLabel, phase: this.phase, places: this.world.doors.filter((d) => !["House", "Apartments"].includes(d.label)).map((d) => d.label),
+      playerName: "Bunty", stageLabel: this.profileLabel, phase: this.phase, tiffin: !!pr.tiffin, working: this.working, pocketGiven: !!this._pocketGiven, canAct: (name) => this._canAct(name, npc), act: (name) => { if (!this._canAct(name, npc)) return false; this._pendingAct = name; return true; }, places: this.world.doors.filter((d) => !["House", "Apartments"].includes(d.label)).map((d) => d.label),
       locate: (label) => { const d = this.world.doors.find((x) => x.label === label); if (!d) return ""; const p = this.player.position, dx = d.x - p.x, dz = d.z - p.z, dist = Math.round(Math.hypot(dx, dz)); const dir = Math.abs(dx) > Math.abs(dz) * 2.4 ? (dx > 0 ? "east" : "west") : Math.abs(dz) > Math.abs(dx) * 2.4 ? (dz > 0 ? "south" : "north") : (dz > 0 ? "south" : "north") + "-" + (dx > 0 ? "east" : "west"); this.bigmap.waypoint = { name: label, x: d.x, z: d.z }; this.setObjective(`${L("Go to")} ${label}`, d.x, d.z + 2); return `${dir}, about ${dist} m away`; }, bestFriend: fr ? FRIENDS.find((f) => f.id === fr[0]).name : "", job: job ? job.name : "", shifts: pr.shifts };
+  }
+  // What a chat request can make happen right now.
+  _canAct(name, npc) {
+    const id = npc && npc.def ? npc.def.id : "", pr = this.progress, home = this.world.currentRoom && this.world.currentRoom.type === "home";
+    switch (name) {
+      case "drive": return id === "papa" && this.phase === "morning" && !this.working && !!pr.tiffin;
+      case "drivehome": return id === "papa" && this.phase === "over" && !!this.car.atSchool;
+      case "homework": return ["maa", "papa", "dadi"].includes(id) && this.phase === "evening" && pr.homework.length > 0 && home;
+      case "story": return id === "dadi" && this.phase === "night" && home;
+      case "ludo": return ["papa", "gudiya", "maa"].includes(id) && this.phase === "night" && home;
+      case "movie": return ["papa", "maa"].includes(id) && this.phase === "night" && home;
+      case "count": return id === "gudiya" && this.phase !== "night" && home;
+      case "breakfast": return id === "maa" && this.phase === "morning" && !pr.tiffin && home;
+      case "dinner": return ["maa", "papa"].includes(id) && this.phase === "evening" && pr.homework.length === 0 && home;
+      case "money": return ["papa", "maa", "dadi"].includes(id) && !this._pocketGiven;
+      case "practice": return !!npc && (!!TEACHERS[id.replace("t_", "")] || !!(npc.def && npc.def.child));
+      case "bless": return id === "dadi";
+      default: return false;
+    }
+  }
+  _doAct(name, npc) {
+    switch (name) {
+      case "drive": case "drivehome": this._exitRoom(); { const c = this.car; this.player.group.position.set(c.group.position.x, 0, c.group.position.z + 3); } this._carRide(); break;
+      case "homework": this._homework(); break;
+      case "story": this._nightStory(); break;
+      case "ludo": this._nightLudo(); break;
+      case "movie": this._nightMovie(); break;
+      case "count": this._talkGudiya(); break;
+      case "breakfast": this._breakfast(); break;
+      case "dinner": this._dinner(); break;
+      case "money": this._pocketGiven = true; this.addMoney(10, `${npc.name}'s gift`); setMood(npc.group, "happy", 4); break;
+      case "practice": { const k = (npc.def.id || "").replace("t_", ""); const subj = SUBJECTS[k] ? k : SUBJECT_IDS[Math.floor(Math.random() * SUBJECT_IDS.length)]; const q = drawSubject(subj, 1, this.big)[0]; const steps = [q.choices ? { q: q.q, choices: q.choices, answer: q.answer, hint: q.hint } : { q: q.q, answer: q.answer, unit: q.unit, hint: q.hint }]; this._engagedNpc = npc;
+        runStepQuiz({ profile: this.profile, level: 1, world: this.world, audio: Audio, countAttempt: () => countAttempt(this.profile, this.progress, "practice:" + subj), onSolve: () => { this.addMarks(subj, "cw", 1, L("practice with {n}", { n: npc.name })); setMood(npc.group, "happy", 3); this._engagedNpc = null; } },
+          { title: `${SUBJECTS[subj].icon} ${L("Practice with {n}", { n: npc.name })}`, intro: `${npc.name}: "${L("Try this one.")}"`, goal: L("One question, one mark."), steps, doneBtn: L("Thank you!"), doneHtml: `<b>${npc.name}:</b> "${L("Good. Ask me any time.")}"`, onLeave: () => { this._engagedNpc = null; } }); break; }
+      case "bless": this.addEnergy(5); setMood(npc.group, "happy", 4); showToast(L("Dadi's blessing: +5 energy."), 2200, "good"); break;
+    }
   }
   _chat(npc) {
     const kind = this._npcKind(npc), name = npc.name, pitch = (npc.def && npc.def.pitch) || 400;
@@ -6126,7 +6199,7 @@ class Game {
     const card = openPanel(`<div class="job-title-row"><h2>💬 ${L("Talk with {n}", { n: name })}</h2><button class="ghost-btn" id="chat-close">${L("Okay")}</button></div><p class="job-brief">${L("Type what you want to say. {n} answers.", { n: name })}</p><div class="chat-log" id="chat-log"></div><div class="chat-row"><input id="chat-in" type="text" maxlength="120" placeholder="${L("Say something…")}" autocomplete="off"><button class="big-btn" id="chat-send">${L("Say")}</button></div>`);
     const log = card.querySelector("#chat-log"), input = card.querySelector("#chat-in");
     const add = (cls, who, text) => { const div = document.createElement("div"); div.className = cls; div.textContent = `${who}: ${text}`; log.appendChild(div); log.scrollTop = 1e6; };
-    const send = () => { const t = (input.value || "").trim(); if (!t) return; input.value = ""; add("me", L("You"), t); const r = L(chatReply(kind, t, this._chatCtx(npc))); this.progress.chats = (this.progress.chats || 0) + 1; setTimeout(() => { add("them", name, r); speakLine(r, pitch); setMood(npc.group, /!|ha/i.test(r) ? "laugh" : "happy", 3); if (kind === "friend" && npc.def) this.addFriendship(npc.def.id, this.progress.chats % 3 === 0 ? 1 : 0); }, 350); };
+    const send = () => { const t = (input.value || "").trim(); if (!t) return; input.value = ""; add("me", L("You"), t); this._pendingAct = null; const r = L(chatReply(kind, t, this._chatCtx(npc))); this.progress.chats = (this.progress.chats || 0) + 1; const act = this._pendingAct; if (act) setTimeout(() => { closePanel(); this._engagedNpc = null; this._doAct(act, npc); }, 1800); setTimeout(() => { add("them", name, r); speakLine(r, pitch); setMood(npc.group, /!|ha/i.test(r) ? "laugh" : "happy", 3); if (kind === "friend" && npc.def) this.addFriendship(npc.def.id, this.progress.chats % 3 === 0 ? 1 : 0); }, 350); };
     card.querySelector("#chat-send").addEventListener("click", send); input.addEventListener("keydown", (e) => { if (e.key === "Enter") send(); e.stopPropagation(); });
     card.querySelector("#chat-close").addEventListener("click", () => { closePanel(); this._engagedNpc = null; });
     setTimeout(() => input.focus(), 60);

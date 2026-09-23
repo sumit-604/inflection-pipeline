@@ -86,8 +86,8 @@ Choose one, follow the compass to its place, and press E at the door.
 
 1. Written test: ten questions in the job's subject, six to pass.
 2. Interview: five questions about work and conduct, four to pass.
-3. Hired: from the next morning you go to work instead of school, at any
-   class. The bus and Papa's car take you to the city, never to a lesson.
+3. Hired: school ends that moment. From the next morning you go to work
+   instead of school, at any class. The bus and Papa's car take you to the city, never to a lesson.
    A working adult drives the family car: press E at it, stay on the roads,
    E again to get out. One shift a day (five tasks); pay is the salary times the tasks
    done right. Ten shifts promote you to the next stage.
@@ -105,7 +105,11 @@ Choose one, follow the compass to its place, and press E at the door.
   from their profile, questions about your day (marks, money, homework,
   period, exams) come from the game, yes/no questions get yes or no, common
   facts (sky, moon, planets, rivers) are answered, and anything else repeats
-  your topic back.
+  your topic back. Requests are understood and acted on: ask Papa to drive
+  you to school and the car ride starts; ask for money and ₹10 arrives once
+  a day; ask for homework help, a story, ludo, a movie, breakfast or dinner
+  and the right scene opens; ask a teacher or friend to teach you and you
+  get a practice question. Each person answers in their own way.
 - Papa's car is parked in the lane. He drives you to school in the morning
   and home after the last bell.
 - Nights after dinner: a movie on the TV, ludo with Papa and Gudiya, or

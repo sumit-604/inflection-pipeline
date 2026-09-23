@@ -53,6 +53,20 @@ Town Library, Radio Suryanagar, Fish Market, Vet Clinic, Cinema Hall, Old
 Town Tea House and a lane of houses). Twenty six people walk the streets,
 and cars run on every road.
 
+## Real life, all of it
+
+- Sunday every seventh day: no school and no work. Cricket with Papa at
+  the Stadium Ground (six balls), the park, a drive.
+- Day 15 is your birthday: cake, a song, friends at the door, ₹100 and a
+  party shirt. Day 18 is Diwali: light five diyas, a question, sweets and
+  sparklers, a gift.
+- City Bank and Lotus Plaza have a savings counter: deposit and withdraw,
+  2% interest every term. Savings show in the notebook.
+- Badges in the notebook: first hand up, goal, class topper, everyone's
+  friend, saver, hired, ten shifts, fair monitor, park lover, chatterbox,
+  family nights, lab hands, Sunday cricket, Diwali, birthday.
+- Free practice at the Stadium Ground any day: cricket nets and penalties.
+
 ## Parks
 
 Three playgrounds: Shanti Nagar Park, City Park and the school playground.
@@ -80,8 +94,11 @@ software engineer, police officer, bank officer, chef, supermarket manager,
 post office clerk, firefighter, lawyer, pilot, journalist, mechanic,
 scientist, architect, sports coach, hotel manager, bank manager, farmer,
 librarian, radio jockey, veterinary doctor, cricketer, footballer. The two
-sports jobs replace the written test with a fitness trial (ten tries, six
-clean) and a match day of five balls or five shots for the shift.
+sports jobs are tested on the field: the coach takes you out to the Stadium
+Ground behind the stadium. For cricket a bowler bowls ten balls and you
+press F to swing as each one reaches you. For football a keeper paces the
+goal line and you turn to aim and press F to shoot ten penalties. Six clean
+to pass, then the interview. A shift is a match day of five.
 Choose one, follow the compass to its place, and press E at the door.
 
 1. Written test: ten questions in the job's subject, six to pass.

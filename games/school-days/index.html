@@ -864,6 +864,15 @@ const ROWS = [
 ["Or press J for jobs.", "या नौकरियों के लिए J दबाओ।", "Ya jobs ke liye J dabao.", "또는 J를 눌러 직업 보기.", "或按J查看工作。", "またはJで仕事一覧。", "O pulsa J para los trabajos.", "Ou appuie sur J pour les emplois."],
 ["Work is over. Head home.", "काम खत्म। घर चलो।", "Kaam khatam. Ghar chalo.", "일이 끝났어요. 집으로 가세요.", "下班了。回家吧。", "仕事は終わり。家へ帰ろう。", "El trabajo terminó. Vuelve a casa.", "Le travail est fini. Rentre à la maison."],
 ["Work a shift as {j} (₹{n})", "{j} की शिफ़्ट करो (₹{n})", "{j} ki shift karo (₹{n})", "{j}로 근무하기 (₹{n})", "以{j}身份上班 (₹{n})", "{j}として働く (₹{n})", "Trabajar un turno como {j} (₹{n})", "Faire un service comme {j} (₹{n})"],
+["Monitor duty", "मॉनिटर ड्यूटी", "Monitor duty", "반장 임무", "班长值日", "監督当番", "Deber de monitor", "Devoir de chef de classe"],
+["You are the class monitor today.", "आज तुम कक्षा के मॉनिटर हो।", "Aaj tum class monitor ho.", "오늘은 네가 반장이야.", "今天你是班长。", "今日はあなたが学級委員。", "Hoy eres el monitor de la clase.", "Aujourd'hui tu es chef de classe."],
+["📛 You are the class monitor today. Mind the class before the teacher comes.", "📛 आज तुम कक्षा के मॉनिटर हो। शिक्षक के आने से पहले कक्षा संभालो।", "📛 Aaj tum class monitor ho. Teacher aane se pehle class sambhalo.", "📛 오늘은 네가 반장이야. 선생님 오시기 전에 반을 챙겨.", "📛 今天你是班长。老师来之前管好班级。", "📛 今日はあなたが学級委員。先生が来る前にクラスをまとめて。", "📛 Hoy eres el monitor. Cuida la clase antes de que llegue el profesor.", "📛 Tu es chef de classe aujourd'hui. Tiens la classe avant l'arrivée du professeur."],
+["Use the {n}", "{n} इस्तेमाल करो", "{n} use karo", "{n} 사용하기", "使用{n}", "{n}を使う", "Usar {n}", "Utiliser {n}"],
+["{n} (done today)", "{n} (आज हो गया)", "{n} (aaj ho gaya)", "{n} (오늘 완료)", "{n}（今天已完成）", "{n}（今日は済み）", "{n} (hecho hoy)", "{n} (fait aujourd'hui)"],
+["Typing test", "टाइपिंग टेस्ट", "Typing test", "타자 시험", "打字测试", "タイピングテスト", "Prueba de mecanografía", "Test de frappe"],
+["Type the word exactly, then press Enter. Five words.", "शब्द ठीक वैसा ही टाइप करो, फिर Enter दबाओ। पाँच शब्द।", "Word bilkul waisa type karo, phir Enter dabao. Paanch words.", "단어를 똑같이 입력하고 Enter. 다섯 단어.", "准确输入单词，然后按回车。五个词。", "単語をそのまま入力してEnter。5語。", "Escribe la palabra exacta y pulsa Enter. Cinco palabras.", "Tape le mot exactement puis Entrée. Cinq mots."],
+["Go to", "जाओ:", "Jao:", "가기:", "前往", "行く:", "Ir a", "Aller à"],
+["Riding to the city. Get off at the School Gate stop.", "शहर की ओर। स्कूल गेट स्टॉप पर उतरो।", "City ki taraf. School Gate stop par utro.", "시내로 갑니다. 학교 정문 정류장에서 내리세요.", "前往市区。在学校门口站下车。", "街へ向かう。学校ゲート停留所で降りて。", "Rumbo a la ciudad. Bájate en la parada de la puerta del colegio.", "Direction la ville. Descends à l'arrêt de l'école."],
 ["Language", "भाषा", "Bhasha", "언어", "语言", "言語", "Idioma", "Langue"],
 ["Who is playing today?", "आज कौन खेल रहा है?", "Aaj kaun khel raha hai?", "오늘 누가 플레이하나요?", "今天谁来玩？", "今日は誰が遊ぶ？", "¿Quién juega hoy?", "Qui joue aujourd'hui ?"],
 ["Start", "शुरू करो", "Shuru karo", "시작", "开始", "スタート", "Empezar", "Commencer"],
@@ -2411,7 +2420,7 @@ const HOME = { x: -120, z: 110, door: { x: -120, z: 106.5 } };
 const BUS_STOPS = [{ name: "Shanti Nagar", x: -100, z: 47, standAt: { x: -100, z: 50 } }, { name: "School Gate", x: 108, z: 7, standAt: { x: 108, z: 10 } }];
 const BUS_ROUTE = [[-100, 44], [-44, 44], [-44, 4], [108, 4]];
 // Where crowds murmur: the market street, the school ground at break, the colony park.
-const MARKET_HUBS = [[40, 80, 40], [100, -45, 45], [-90, 120, 25]];
+const MARKET_HUBS = [[40, 80, 40], [100, -45, 45], [-90, 120, 25], [120, 160, 45], [-110, -80, 40]];
 
 const COLORS = {
   grass: 0x8bc46a, grassDark: 0x6fae54, path: 0xd8c08a, water: 0x5fb6d9, wood: 0xb9773c, woodDark: 0x8a5626,
@@ -2450,6 +2459,7 @@ class World {
     this._buildRoads();
     this._buildColony();
     this._buildMarket();
+    this._buildDistricts();
     this._buildSchool();
     this._buildTraffic();
     this._buildTrees();
@@ -2487,6 +2497,11 @@ class World {
     main([[-190, 130], [40, 130]], 7);      // colony back lane
     main([[-120, 40], [-120, 130]], 6);     // our lane
     main([[-70, 40], [-70, 130]], 6);
+    // New Town (south east) and Old Town (north west).
+    main([[40, 160], [190, 160]], 7);       // New Town street
+    main([[130, 130], [130, 190]], 6);
+    main([[-190, -80], [-40, -80]], 7);     // Old Town road
+    main([[-120, -190], [-120, -80]], 6);
     // Campus drive from the gate to the assembly ground.
     this._addRoad([[100, -20], [100, -40]], 6, 0xcfc7b8);
     // Lane lines on the wide roads.
@@ -2578,6 +2593,35 @@ class World {
     for (let z = 50; z <= 120; z += 20) for (const x of [33, 47]) this._addLamp(x, z);
   }
 
+  // ---- New Town and Old Town: more of the city, more places to work ----
+  _buildDistricts() {
+    const B = (o, x, z, rot, label) => this._place(makeBuilding(o), x, z, rot, label);
+    // New Town, along the street at z = 160. North side faces south (rot 0), south side faces north (rot PI).
+    B({ w: 12, d: 8, h: 4, roof: "flat", wall: 0xd62828, roofColor: 0x333333, sign: "Fire Station" }, 70, 148, 0, "Fire Station");
+    B({ w: 14, d: 9, h: 4.5, floors: 2, roof: "flat", wall: 0xf3d9c8, roofColor: 0x8a5626, sign: "District Court" }, 92, 148, 0, "District Court");
+    B({ w: 12, d: 8, h: 3.8, roof: "flat", wall: 0xdfe6ea, roofColor: 0x1d3557, sign: "Daily Suryanagar Press" }, 112, 148, 0, "Daily Suryanagar Press");
+    B({ w: 12, d: 8, h: 4, roof: "flat", wall: 0xffffff, roofColor: 0x2a9d8f, sign: "City Bank" }, 152, 148, 0, "City Bank");
+    B({ w: 22, d: 10, h: 5, roof: "flat", wall: 0xbfe3f2, roofColor: 0x9aa6ad, sign: "Suryanagar Airport" }, 176, 147, 0, "Suryanagar Airport");
+    B({ w: 12, d: 8, h: 3.6, roof: "gable", wall: 0xffe0a3, roofColor: 0x555555, sign: "Auto Garage" }, 70, 172, Math.PI, "Auto Garage");
+    B({ w: 14, d: 9, h: 4.2, roof: "flat", wall: 0xe3ecf5, roofColor: 0x6a4c93, sign: "Research Lab" }, 92, 172, Math.PI, "Research Lab");
+    B({ w: 10, d: 8, h: 3.6, roof: "flat", wall: 0xfff1d6, roofColor: 0xf77f00, sign: "Design Studio" }, 112, 172, Math.PI, "Design Studio");
+    const hotel = makeTower({ w: 14, d: 12, floors: 9, tint: 0xe8d5b5, sign: "Grand Hotel" }); this._place(hotel, 152, 176, Math.PI, "Grand Hotel"); this.cityLights.push(hotel.userData.blink);
+    B({ w: 22, d: 12, h: 5, roof: "flat", wall: 0x8bc46a, roofColor: 0xffffff, sign: "Sports Stadium" }, 178, 174, Math.PI, "Sports Stadium");
+    this._addBillboard(60, 150, "New Town →", 0x2a9d8f); this._addCart("Ice Cream", 130, 150, 0xff8fab, "juice");
+    for (let x = 60; x <= 180; x += 30) this._addLamp(x, 156);
+    // Old Town, along the road at z = -80.
+    B({ w: 18, d: 10, h: 3.4, roof: "gable", wall: 0xd9e4d0, roofColor: 0x8a5626, sign: "Green Farm" }, -170, -92, 0, "Green Farm");
+    B({ w: 12, d: 8, h: 3.8, roof: "flat", wall: 0xf6efd8, roofColor: 0x8d6e63, sign: "Old Town Library" }, -142, -92, 0, "Old Town Library");
+    B({ w: 10, d: 8, h: 3.6, roof: "flat", wall: 0xe3ecf5, roofColor: 0xd62828, sign: "Radio Suryanagar" }, -100, -92, 0, "Radio Suryanagar");
+    B({ w: 10, d: 7, h: 3.2, roof: "flat", wall: 0xbfe3f2, roofColor: 0x1d3557, sign: "Fish Market" }, -70, -92, 0, "Fish Market");
+    B({ w: 10, d: 8, h: 3.4, roof: "flat", wall: 0xffffff, roofColor: 0x2f9e44, sign: "Vet Clinic" }, -160, -68, Math.PI, "Vet Clinic");
+    B({ w: 16, d: 10, h: 5, roof: "flat", wall: 0x1d3557, roofColor: 0x111111, sign: "Cinema Hall" }, -100, -68, Math.PI, "Cinema Hall");
+    B({ w: 12, d: 8, h: 3.4, roof: "gable", wall: 0xf3d9c8, roofColor: 0x8a5626, sign: "Old Town Tea House" }, -70, -68, Math.PI, "Old Town Tea House");
+    for (let i = 0; i < 6; i++) { const side = i % 2 ? 1 : -1; B({ w: 7, d: 6, h: 3.2, roof: "gable", wall: [0xfff1d6, 0xffe0a3, 0xe3ecf5][i % 3], roofColor: 0xc94848, sign: null }, -120 + side * 9, -110 - Math.floor(i / 2) * 22, side < 0 ? Math.PI / 2 : -Math.PI / 2, "House"); }
+    this._addBillboard(-60, -70, "← Old Town", 0x8a5626); this._addCart("Chai", -130, -75, 0xd62828, "chaat");
+    for (let x = -180; x <= -50; x += 30) this._addLamp(x, -84);
+  }
+
   // ---- Sunrise Public School ----
   _buildSchool() {
     const S = SCHOOL;
@@ -2648,6 +2692,11 @@ class World {
     for (const loop of loops) for (let n = 0; n < 3; n++) {
       const car = makeCar(carColors[k++ % carColors.length]); car.userData.dynamic = true; this.scene.add(car);
       const mv = new PathMover(car, loop, 8 + n * 1.5, { L: 2.2, W: 1.0, city: true }); mv.i = 0; car.position.set(loop[0][0] + n * 14 * (loop[1][0] > loop[0][0] ? 1 : -1), 0, loop[0][1]);
+      this.cityMovers.push(mv);
+    }
+    for (const [pts, n0] of [[[[40, 162.5], [190, 162.5]], 3], [[[-190, -77.5], [-40, -77.5]], 3], [[[130, 130], [130, 190]], 1], [[[-120, -190], [-120, -80]], 1]]) for (let n = 0; n < n0; n++) {
+      const car = makeCar(carColors[k++ % carColors.length]); car.userData.dynamic = true; this.scene.add(car);
+      const mv = new PathMover(car, pts, 7 + n * 1.5, { L: 2.2, W: 1.0, city: true }); car.position.set(pts[0][0] + n * 18 * Math.sign(pts[1][0] - pts[0][0] || 0), 0, pts[0][1] + n * 18 * Math.sign(pts[1][1] - pts[0][1] || 0));
       this.cityMovers.push(mv);
     }
     const scooty = makeScooty(0xd62828); scooty.userData.dynamic = true; this.scene.add(scooty);
@@ -3467,6 +3516,22 @@ const JOBS = [
   { id: "postman", name: "Post Office Clerk", icon: "📮", place: "Post Office", subject: "english", salary: 450, boss: "Postmaster Gupta", desc: "Sort and send the city's letters." },
 ];
 // Interview questions: attitude and sense, the same for every job.
+JOBS.push(
+  { id: "firefighter", name: "Firefighter", icon: "🚒", place: "Fire Station", subject: "science", salary: 800, boss: "Chief Officer Singh", desc: "Fight fires and rescue people from the Fire Station." },
+  { id: "lawyer", name: "Lawyer", icon: "⚖️", place: "District Court", subject: "english", salary: 1100, boss: "Judge Menon", desc: "Argue cases at the District Court." },
+  { id: "pilot", name: "Pilot", icon: "✈️", place: "Suryanagar Airport", subject: "maths", salary: 1500, boss: "Captain Kaur", desc: "Fly from Suryanagar Airport." },
+  { id: "journalist", name: "Journalist", icon: "📰", place: "Daily Suryanagar Press", subject: "english", salary: 700, boss: "Editor Bose", desc: "Report the news for the Daily Suryanagar." },
+  { id: "mechanic", name: "Mechanic", icon: "🔧", place: "Auto Garage", subject: "science", salary: 600, boss: "Master Mechanic Salim", desc: "Fix cars and scooters at the Auto Garage." },
+  { id: "scientist", name: "Scientist", icon: "🧪", place: "Research Lab", subject: "science", salary: 1200, boss: "Dr. Rao", desc: "Run experiments at the Research Lab." },
+  { id: "architect", name: "Architect", icon: "📐", place: "Design Studio", subject: "maths", salary: 1100, boss: "Ar. Fernandes", desc: "Design buildings at the Design Studio." },
+  { id: "coach", name: "Sports Coach", icon: "🏅", place: "Sports Stadium", subject: "evs", salary: 750, boss: "Head Coach Bhatia", desc: "Train the city team at the Sports Stadium." },
+  { id: "hotelier", name: "Hotel Manager", icon: "🏨", place: "Grand Hotel", subject: "maths", salary: 900, boss: "GM Kapoor", desc: "Run the front desk at the Grand Hotel." },
+  { id: "cityBanker", name: "Bank Manager", icon: "🏦", place: "City Bank", subject: "maths", salary: 1000, boss: "Regional Head Iyer", desc: "Manage the City Bank branch." },
+  { id: "farmer", name: "Farmer", icon: "🌾", place: "Green Farm", subject: "evs", salary: 500, boss: "Kisan Bhola", desc: "Grow vegetables at Green Farm in Old Town." },
+  { id: "librarian", name: "Librarian", icon: "📚", place: "Old Town Library", subject: "english", salary: 500, boss: "Head Librarian Das", desc: "Keep the Old Town Library in order." },
+  { id: "rj", name: "Radio Jockey", icon: "🎙️", place: "Radio Suryanagar", subject: "english", salary: 650, boss: "Station Head Rhea", desc: "Host the morning show on Radio Suryanagar." },
+  { id: "vet", name: "Veterinary Doctor", icon: "🐾", place: "Vet Clinic", subject: "science", salary: 850, boss: "Dr. Pillai", desc: "Treat animals at the Vet Clinic." },
+);
 const INTERVIEW = [
   MC("Tell us about yourself. The best answer…", "Says who you are, what you studied and why you want this job", "Lists your favourite films", "Complains about your last school", "Is one word long"),
   MC("You make a mistake at work. You…", "Own it, fix it, and tell your senior", "Hide it", "Blame a colleague", "Leave early"),
@@ -3480,6 +3545,7 @@ const INTERVIEW = [
   MC("If you do not know an answer in the interview, you…", "Say so honestly and explain how you would find out", "Make something up", "Stay silent", "Change the subject"),
 ];
 const WORK_TASKS = {
+  firefighter: "Drill day: answer the safety science questions.", lawyer: "Court is in session: answer the language questions.", pilot: "Pre-flight checks: answer the maths questions.", journalist: "Deadline: answer the language questions for the front page.", mechanic: "Three cars in the bay: answer the science questions.", scientist: "The experiment: answer the science questions.", architect: "The blueprint: answer the maths questions.", coach: "Training plan: answer the EVS questions.", hotelier: "Check-in rush: answer the maths questions.", cityBanker: "Loan day: answer the maths questions.", farmer: "Harvest: answer the EVS questions.", librarian: "New books: answer the language questions.", rj: "On air: answer the language questions.", vet: "Patients waiting: answer the science questions.",
   teacher: "Teach today's lesson: answer the class's questions.", doctor: "Diagnose the patients: answer the science questions.", engineer: "Fix the bugs: solve the maths.", police: "Handle the cases: general knowledge.", banker: "Balance the ledger: the sums.", chef: "Get the recipes right: science of cooking.", shopkeeper: "Stock and bills: the sums.", postman: "Sort the letters: spelling and reading.",
 };
 
@@ -4100,6 +4166,13 @@ function roomTypeFor(sign) {
   if (s.includes("canteen")) return "canteen";
   if (s.includes("our home")) return "home";
   if (s.includes("hospital")) return "hospital";
+  if (s.includes("research")) return "lab";
+  if (s.includes("court") || s.includes("press") || s.includes("radio") || s.includes("studio") || s.includes("bank") || s.includes("airport") || s.includes("garage") || s.includes("fire station")) return "office";
+  if (s.includes("stadium")) return "gym";
+  if (s.includes("farm")) return "barn";
+  if (s.includes("cinema")) return "cinema";
+  if (s.includes("tea house") || s.includes("fish market")) return "eatery";
+  if (s.includes("vet")) return "clinic";
   if (s.includes("house") || s.includes("hut")) return "house";
   if (s.includes("apartment") || s.includes("tower") || s.includes("park") && !s.includes("central") || s.includes("heights") || s.includes("plaza") || s.includes("bank") || s.includes("depot")) return "office";
   if (s.includes("supermarket")) return "supermarket";
@@ -4929,9 +5002,25 @@ const STREET_FOLK = [
   { id: "postman_g", name: "Postman Gupta", look: { shirt: 0xc94848, trousers: 0x3b3f4a, hair: 0x333333 }, pitch: 360, zone: "street", greet: "A letter for Sharma ji. Nothing for you. Study well." },
   { id: "sabziwala", name: "Sabziwala", look: { shirt: 0x2a9d8f, trousers: 0x8a5626, hair: 0x1d1410 }, pitch: 350, zone: "market", greet: "Tomatoes twenty, onions thirty! Tell Maa." },
   { id: "chaiwala", name: "Chaiwala", look: { shirt: 0xd62828, trousers: 0x333333, hair: 0x1d1410 }, pitch: 380, zone: "market", greet: "Chai, garam chai! Not for children, milk for you." },
+  { id: "newtown_1", name: "Fireman Joe", look: { shirt: 0xd62828, trousers: 0x333333, hair: 0x111111 }, pitch: 320, zone: "newtown", greet: "Never play with matches, beta. Fire is fast." },
+  { id: "newtown_2", name: "Advocate Rita", look: { shirt: 0x111111, dress: true, hair: 0x1d1410 }, pitch: 430, zone: "newtown", greet: "Court at eleven. Rules keep us safe, remember that." },
+  { id: "newtown_3", name: "Pilot Arjun", look: { shirt: 0xffffff, trousers: 0x1d3557, hat: 0x1d3557 }, pitch: 350, zone: "newtown", greet: "Flew to Mumbai this morning. Maths gets you into the cockpit." },
+  { id: "newtown_4", name: "Reporter Zoya", look: { shirt: 0x9b5de5, trousers: 0x111111, hair: 0x1d1410 }, pitch: 450, zone: "newtown", greet: "Any news from Sunrise School? Tell me everything." },
+  { id: "newtown_5", name: "Mechanic Salim", look: { shirt: 0x3b3f4a, trousers: 0x3b3f4a, hair: 0x111111 }, pitch: 340, zone: "newtown", greet: "Oil, grease and a good ear. That is a mechanic." },
+  { id: "newtown_6", name: "Tinku", look: { shirt: 0x2a9d8f, trousers: 0xffd21e, hair: 0x1d1410 }, child: true, pitch: 530, zone: "newtown", greet: "Race you to the stadium!" },
+  { id: "newtown_7", name: "Ice Cream Wala", look: { shirt: 0xff8fab, trousers: 0xffffff, hair: 0x1d1410 }, pitch: 370, zone: "newtown", greet: "Kulfi, ten rupees! Chocobar, fifteen!" },
+  { id: "oldtown_1", name: "Kisan Bhola", look: { shirt: 0xffffff, trousers: 0x8a5626, hair: 0x333333 }, pitch: 330, zone: "oldtown", greet: "Tomatoes from my farm. Fresh, fresh." },
+  { id: "oldtown_2", name: "Librarian Das", look: { shirt: 0xf6efd8, trousers: 0x3b3f4a, hair: 0x888888 }, pitch: 360, zone: "oldtown", greet: "A book a week keeps the mind awake." },
+  { id: "oldtown_3", name: "Fisherwoman Lakshmi", look: { shirt: 0x1d3557, dress: true, hair: 0x1d1410 }, pitch: 440, zone: "oldtown", greet: "Fresh fish from the river, morning catch!" },
+  { id: "oldtown_4", name: "Munna", look: { shirt: 0xffd21e, trousers: 0x2a9d8f, hair: 0x1d1410 }, child: true, pitch: 540, zone: "oldtown", greet: "Cinema has a new cartoon! Coming?" },
+  { id: "oldtown_5", name: "Dr. Pillai", look: { shirt: 0xffffff, trousers: 0x3b3f4a, hair: 0x555555 }, pitch: 380, zone: "oldtown", greet: "Dogs, cows, parrots. I treat them all." },
+  { id: "oldtown_6", name: "Usher Pappu", look: { shirt: 0xd62828, trousers: 0x111111, hair: 0x1d1410 }, pitch: 400, zone: "oldtown", greet: "Show at six. Tickets ₹60. No talking inside." },
+  { id: "oldtown_7", name: "Bua ji", look: { shirt: 0x6fae54, dress: true, hair: 0x888888, skin: 0xc98d62 }, pitch: 420, zone: "oldtown", greet: "Arre, Sunrise School child! Say hello to your Dadi." },
   { id: "amit", name: "Amit Bhaiya", look: { shirt: 0x3a86ff, trousers: 0x111111, hair: 0x1d1410 }, pitch: 400, zone: "market", greet: "College is fun, but the exams! Study now, beta." },
 ];
 WAYPOINTS.market = [[30, 60], [50, 80], [35, 100], [55, 115], [30, 125], [60, 70], [45, 95], [20, 110]];
+WAYPOINTS.newtown = [[70, 140], [100, 145], [150, 140], [80, 180], [120, 178], [160, 182], [135, 150], [110, 165], [60, 165]];
+WAYPOINTS.oldtown = [[-170, -100], [-140, -100], [-100, -100], [-70, -105], [-160, -60], [-100, -62], [-130, -150], [-115, -120], [-80, -84]];
 WAYPOINTS.street = [[-100, 46], [-60, 46], [-20, 46], [10, 46], [-30, 60], [-130, 46], [-90, 134], [-60, 134], [-20, 134], [-115, 60]];
 
 // ---- The chat box: you type, they answer what you asked. ----
@@ -5019,6 +5108,14 @@ function chatReply(kind, text, ctx = {}) {
   }
   if (has("how are you", "kaise ho", "how r u", "how do you feel", "are you ok", "are you fine", "kaisi ho")) return { maa: "I am well, beta. Tired, but well. And you?", papa: "First class! Office was busy, but I am home now. You?", dadi: "My knees hurt, but my heart is happy when I see you.", gudiya: "I am good! My doll is sick though. Will you check her?", friend: "Fine, yaar. Bored of homework. You?", teacher: "Well, thank you. Are you prepared for class?" }[kind] || "All well, by God's grace. And you?";
   if (has("family", "your mother", "your father", "your wife", "your husband", "your children", "your brother", "your sister")) return { maa: "My family is you, Papa, Gudiya and Dadi. My own mother lives in Jaipur; we visit in summer.", papa: "Dadi is my mother. My brother, your Chacha, is in Pune.", dadi: "You are all my family. Your Dada ji passed away ten years ago; he loved you.", gudiya: "You! And Maa, Papa, Dadi. And Chinki the doll.", friend: "Two brothers. Both older, both annoying.", teacher: "A husband and a daughter in Class 8. She also studies here." }[kind] || "A wife, two children, one scooter. A full house.";
+  // 3b. Where is a place? Name it and set the compass.
+  if (has("where is", "where's", "kahan hai", "how do i get to", "how to go to", "way to", "how to reach", "where can i find")) {
+    const places = ctx.places || [];
+    const found = places.find((p) => t.includes(p.toLowerCase())) || places.find((p) => p.toLowerCase().split(/\s+/).some((w) => w.length > 3 && t.includes(w)));
+    if (found) { const d = ctx.locate ? ctx.locate(found) : ""; return { gudiya: `${found}? Umm, ${d}. I think. I set your compass!`, dadi: `${found}? ${d}. In my time we walked; you take the cycle. Your compass points there now.`, teacher: `${found}: ${d}. Follow the compass and do not run.` }[kind] || `${found} is ${d}. I have set your compass to it.`; }
+    return `Which place, ${you}? Say the name: the hospital, the market, the library, the stadium, the airport...`;
+  }
+  if (has("what are you doing", "kya kar rahe", "kya kar rahi", "what do you do all day", "busy")) return ({ maa: { morning: "Packing tiffins and hurrying everyone out of the door.", school: "Cleaning, then the music class at eleven.", over: "Waiting for you with tea.", evening: "Making dinner: dal, rice and rotis.", night: "Putting Gudiya to bed. Then I sleep too." }, papa: { morning: "Reading the paper before the office.", school: "At the office, with the accounts.", over: "Driving back. Traffic!", evening: "Helping you with homework, if you let me.", night: "Ludo or a movie, then bed." }, dadi: { morning: "My prayers, then knitting.", school: "Knitting this sweater for you.", over: "Resting my knees.", evening: "Waiting for dinner and gossip.", night: "Thinking of a story for you." }, gudiya: { morning: "Feeding Chinki my doll.", school: "Playschool! We painted a cow.", over: "Building a block tower. Don't knock it!", evening: "Hiding. You are supposed to find me.", night: "NOT sleeping. Ludo!" }, friend: { morning: "Running for the bus, same as you.", school: `In class, like you. ${ctx.period ? "It is " + ctx.period + "." : ""}`, over: "Going home. Cricket in the lane later?", evening: "Homework. Boring.", night: "Sleeping soon, or Maa will shout." }, teacher: { morning: "Marking notebooks before the bell.", school: "Teaching, as always.", over: "Staff meeting, then home.", evening: "Checking your homework. Yes, yours.", night: "Reading. Teachers read too." } }[kind] || { morning: "Starting the day, beta.", school: "Working.", over: "Heading home.", evening: "Resting.", night: "Sleeping soon." })[ctx.phase || "morning"];
   // 4. Questions about your own day, answered from the game.
   if (has("marks", "score", "number", "kitne number", "result", "rank", "topper", "grade")) return `${has("today") ? `Today you have ${ctx.marksToday || 0} marks. ` : ""}This term you have ${ctx.termMarks || 0} marks so far${ctx.rank ? `, rank ${ctx.rank} in the last report` : ""}. ` + ({ maa: "Effort matters more than the number. Did you try?", papa: "Every mark counts. Hand up in every class.", dadi: "Marks come and go. Kindness stays.", gudiya: "Is that a lot? I got a star sticker!", friend: "You always score more than me. Teach me.", teacher: "Raise your hand more. Marks follow attention." }[kind] || "Top the class and make your parents proud.");
   if (has("money", "paisa", "rupee", "wallet", "pocket", "how much do i have", "kitne paise")) return `You have ${ctx.money || "₹0"} in your wallet. ` + ({ maa: "Spend it wisely and count your change.", papa: "Save half, spend half. That is the rule.", dadi: "Take ₹10 from my tin if you need. Shh.", gudiya: "Buy me a toffee!", friend: "Lend me ₹5? I return it tomorrow.", teacher: "Money is not for the classroom." }[kind] || "Everything is expensive these days.");
@@ -5116,6 +5213,49 @@ const SPORTS = [
   { id: "skipping", name: "Skipping", icon: "🪢", cue: "Jump when the rope is in the green.", hit: "Clean jump!", miss: "Rope caught!", verb: "Jump" },
 ];
 function sportForDay(day) { return SPORTS[(day - 1) % SPORTS.length]; }
+
+// ---- Senior students who use the labs when your class is not in ----
+const SENIORS = [
+  { id: "sr_riya", name: "Riya (Class 9)", look: { shirt: 0xffffff, trousers: 0x1d3557, hair: 0x1d1410 }, pitch: 470, greet: "Careful with the burner. Class 9 has a practical." },
+  { id: "sr_dev", name: "Dev (Class 10)", look: { shirt: 0xffffff, trousers: 0x1d3557, hair: 0x111111 }, pitch: 380, greet: "Boards this year. Want to see a real reaction?" },
+  { id: "sr_tara", name: "Tara (Class 11)", look: { shirt: 0xffffff, dress: true, hair: 0x4a2c1a }, pitch: 460, greet: "I want to be a scientist. This lab is my favourite room." },
+  { id: "sr_arjun", name: "Arjun (Class 8)", look: { shirt: 0xffffff, trousers: 0x1d3557, hair: 0x1d1410 }, pitch: 420, greet: "Typing test today. 30 words a minute, watch me." },
+];
+// ---- Lab equipment: use it, see something, answer one question ----
+const LAB_GEAR = {
+  lab: [
+    { id: "microscope", name: "Microscope", x: -8, z: -3, text: "You look through the eyepiece at a drop of pond water. Tiny green shapes wobble and spin.", q: "The tiny green living things in the drop are…", a: "Algae and microbes", ch: ["Algae and microbes", "Dust", "Sugar", "Sand"] },
+    { id: "burner", name: "Bunsen burner", x: -1, z: -3, text: "Goggles on. You heat a beaker of water. Bubbles rise, then steam comes off the top.", q: "Water turns to steam at…", a: "100 °C", ch: ["100 °C", "10 °C", "50 °C", "0 °C"] },
+    { id: "tubes", name: "Test tubes", x: 6, z: -3, text: "You mix vinegar with baking soda. It fizzes and foams over the rim!", q: "The fizz is a gas called…", a: "Carbon dioxide", ch: ["Carbon dioxide", "Oxygen", "Helium", "Steam"] },
+    { id: "scale", name: "Weighing scale", x: -8, z: 1, text: "You put a 200 g weight on one pan and two 100 g weights on the other. The beam sits level.", q: "The two pans balance because…", a: "Both sides weigh 200 g", ch: ["Both sides weigh 200 g", "The left is heavier", "The right is heavier", "The scale is broken"] },
+    { id: "magnets", name: "Magnets", x: -1, z: 1, text: "You bring two bar magnets close. North to north, they push apart. North to south, they snap together.", q: "Which ends attract each other?", a: "North and south", ch: ["North and south", "North and north", "South and south", "None"] },
+    { id: "prism", name: "Prism and torch", x: 6, z: 1, text: "You shine the torch through the glass prism. A rainbow spreads on the wall.", q: "White light is made of…", a: "Seven colours", ch: ["Seven colours", "One colour", "Only red", "Only blue"] },
+    { id: "skeleton", name: "Skeleton model", x: -12.8, z: -6.8, text: "You count the ribs on the model: twelve pairs. The skull has no moving part but the jaw.", q: "How many pairs of ribs?", a: "12", ch: ["12", "6", "20", "3"] },
+  ],
+  computer: [
+    { id: "pc1", name: "Computer 1", x: -7.5, z: -3.5, typing: true }, { id: "pc2", name: "Computer 2", x: -2.5, z: -3.5, typing: true }, { id: "pc3", name: "Computer 3", x: 2.5, z: -3.5, typing: true }, { id: "pc4", name: "Computer 4", x: 7.5, z: -3.5, typing: true },
+    { id: "pc5", name: "Computer 5", x: -7.5, z: 0, typing: true }, { id: "pc6", name: "Computer 6", x: -2.5, z: 0, typing: true }, { id: "pc7", name: "Computer 7", x: 2.5, z: 0, typing: true }, { id: "pc8", name: "Computer 8", x: 7.5, z: 0, typing: true },
+  ],
+};
+const TYPING_WORDS = ["school", "monitor", "keyboard", "science", "friend", "tiffin", "cricket", "Suryanagar", "homework", "computer", "teacher", "library", "rainbow", "magnet", "bicycle", "sunrise"];
+// ---- Monitor duty: mind the class before the teacher comes ----
+const MONITOR_DUTY = [
+  { text: "The teacher is late. {b} and {k} start pushing each other near the board. The class is getting loud.", choices: [
+    { label: "Stand between them: 'Stop. Sit down.' Then write both names, fairly.", result: "They sit. Miss Priya reads the diary, nods at you: 'That is a monitor.'", conduct: 2, marks: 1, friendship: 0 },
+    { label: "Write only {b}'s name. {k} is your friend.", result: "{k} grins. {b} says 'Not fair!' and he is right. Miss Priya sees through it.", conduct: -2, marks: 0, friendship: 0 },
+    { label: "Shout at the whole class to shut up.", result: "The class goes quiet for ten seconds, then laughs at you. Miss Priya walks in on the noise.", conduct: -1, marks: 0, friendship: 0 },
+    { label: "Do nothing. Not your problem.", result: "A chair falls. Miss Priya: 'Where was the monitor?' Everyone looks at you.", conduct: -1, marks: 0, friendship: 0 } ] },
+  { text: "{f} forgot the homework and begs you: 'Please don't tell Miss.' Miss Priya is coming down the corridor.", choices: [
+    { label: "Tell {f} to own up, and stand beside them when they do.", result: "{f} owns up. Miss Priya: 'Honesty noted. Bring it tomorrow.' {f} squeezes your hand.", conduct: 2, marks: 0, friendship: 1 },
+    { label: "Cover for {f}: tell Miss everyone did the homework.", result: "Miss checks the notebooks anyway. Now two names are in trouble: {f}'s and the monitor's.", conduct: -2, marks: 0, friendship: 0 },
+    { label: "Announce it loudly so everyone hears.", result: "{f} goes red. The class laughs. Miss Priya: 'A monitor reports quietly, not cruelly.'", conduct: -1, marks: 0, friendship: -2 },
+    { label: "Say nothing and let Miss find out.", result: "Miss finds out. {f} gets a note home and does not look at you at lunch.", conduct: 0, marks: 0, friendship: -1 } ] },
+  { text: "{s} puts her head on the desk. She looks pale and says she feels dizzy. Nobody else notices.", choices: [
+    { label: "Take {s} to the school hospital room and tell the teacher.", result: "The nurse gives her water and glucose. Miss Priya: 'Quick thinking, monitor.'", conduct: 2, marks: 1, friendship: 2 },
+    { label: "Give her your water bottle and tell Miss the moment she comes.", result: "{s} sips slowly. Miss sends her to the nurse. Good, but a little slow.", conduct: 1, marks: 0, friendship: 1 },
+    { label: "Tell her to sit straight; class is starting.", result: "She nearly faints at the bell. Miss Priya is not pleased with the monitor.", conduct: -2, marks: 0, friendship: -1 },
+    { label: "Laugh: 'Drama, as usual!'", result: "Nobody laughs with you. Miss Priya takes the monitor badge off you for the day.", conduct: -2, marks: 0, friendship: -2 } ] },
+];
 
 class Minimap {
   constructor(world) {
@@ -5400,6 +5540,7 @@ class Game {
     this.big = this.lvl;
     this.graduate = STAGES[this.stage].id === "graduate";
     Object.defineProperty(this, "working", { get: () => this.graduate || !!this.progress.job });
+    if (this.working && this.phase === "school") { this.phase = "morning"; this.progress.phase = "morning"; this.periodIndex = 0; }
     this._setupRenderer();
     this.world = new World();
     this.player = new Player(this.world, this.camera);
@@ -5412,6 +5553,7 @@ class Game {
     if (this.input.isTouch) document.getElementById("touch-controls").hidden = false;
     else { const hint = document.getElementById("controls-hint"); hint.hidden = false; setTimeout(() => hint.classList.add("fade"), 4000); setTimeout(() => (hint.hidden = true), 4800); }
     this._buildNpcs();
+    this._eqUsed = new Set();
     // Your own bicycle, parked by the garden gate. Ride it anywhere: roads, lanes, the campus.
     const bike = makeBicycle(0xd62828); bike.position.set(HOME.x + 7.5, 0, HOME.z + 9.5); bike.rotation.y = Math.PI / 2; this.world.scene.add(bike);
     this.bike = { group: bike, speed: 9, kind: "bike", label: "bicycle", controlled: true };
@@ -5467,6 +5609,7 @@ class Game {
   subjectTotal(s) { const m = this.progress.marks[s]; return m.cw + m.hw + m.fa.reduce((a, b) => a + b, 0) + m.term.reduce((a, b) => a + b, 0); }
   termMarks() { return SUBJECT_IDS.reduce((n, s) => n + this.subjectTotal(s), 0) + this.progress.games.reduce((a, b) => a + b, 0); }
   isFaDay() { const d = this.progress.day; return d % 5 === 0 && !this.isTermDay(); }
+  isMonitorDay() { return this.progress.day % 3 === 2; }
   isTermDay() { const d = this.progress.day; return d === 10 || d === 20; }
   clockText() {
     const p = this.phase;
@@ -5517,6 +5660,7 @@ class Game {
     for (const k of Object.keys(FAMILY)) { const n = new Npc(FAMILY[k], this.world, { pos: [0, 0], fixed: true }); n.group.visible = false; this.family[k] = n; this.npcs.push(n); }
     // Neighbours, vendors and children on the colony roads and the market street.
     this.folk = STREET_FOLK.map((def) => { const n = new Npc(def, this.world, { zone: def.zone }); this.npcs.push(n); return n; });
+    this.seniors = SENIORS.map((def) => { const n = new Npc(def, this.world, { pos: [0, 0], fixed: true }); n.group.visible = false; this.npcs.push(n); return n; });
   }
   // Put everyone where the phase says they should be.
   _placePeople() {
@@ -5545,9 +5689,9 @@ class Game {
       this.periodIndex = 0; this.progress.period = 0;
       if (!this.world.currentRoom) this._enterRoom(this.world.doors.find((d) => d.label === "Our Home"));
       if (!this.progress.tiffin) this.setObjective(L("Good morning! Breakfast with Maa, then pack your tiffin."), null);
-      else if (this.working) { const job = JOBS.find((j) => j.id === this.progress.job); if (job) { const d = this.world.doors.find((x) => x.label === job.place); this.setObjective(`${job.icon} ${L("Go to work")}: ${job.place}. ${L("Or press J for jobs.")}`, d.x, d.z); } else this.setObjective(L("You are a graduate! Press J to choose a job, then go for the interview."), null); }
+      else if (this.working) this._workObjective();
       else this.setObjective(L("Catch the school bus at the Shanti Nagar stop (or walk, and cross at the zebra)."), BUS_STOPS[0].standAt.x, BUS_STOPS[0].standAt.z);
-    } else if (phase === "school") this._periodObjective();
+    } else if (phase === "school") { this._periodObjective(); if (this.isMonitorDay()) setTimeout(() => showToast(L("📛 You are the class monitor today. Mind the class before the teacher comes."), 4000, "good"), 1500); }
     else if (phase === "over") this.setObjective(this.working ? L("Work is over. Head home.") : L("School is over. Take the bus home from the gate stop."), this.working ? HOME.door.x : BUS_STOPS[1].standAt.x, this.working ? HOME.door.z + 2 : BUS_STOPS[1].standAt.z);
     else if (phase === "evening") { this.setObjective(this.progress.homework.length ? L("Homework first: sit at your study desk at home.") : L("Dinner with the family at the dining table."), HOME.door.x, HOME.door.z + 2); }
     else if (phase === "night") this.setObjective(L("Time for bed. Press E at your bed."), null);
@@ -5564,6 +5708,11 @@ class Game {
     else if (LAB_SUBJECTS[per.id]) { const lab = this.world.doors.find((d) => d.label === LAB_SUBJECTS[per.id]); this.setObjective(L("{exam}{s} with {t}. Go to the {r} and sit at a bench.", { exam, s: SUBJECTS[per.id].name, t: SUBJECTS[per.id].teacher, r: LAB_SUBJECTS[per.id] }), lab.x, lab.z + 2); }
     else this.setObjective(L("{exam}{s} with {t}. Sit at your desk in {c} (Main Building).", { exam, s: SUBJECTS[per.id].name, t: SUBJECTS[per.id].teacher, c: this.profileLabel }), 100, -86);
     this.ui.refreshRank();
+  }
+  _workObjective() {
+    const job = JOBS.find((j) => j.id === this.progress.job);
+    if (job) { const d = this.world.doors.find((x) => x.label === job.place); this.setObjective(`${job.icon} ${L("Go to work")}: ${job.place}. ${L("Or press J for jobs.")}`, d.x, d.z); }
+    else this.setObjective(L("You are a graduate! Press J to choose a job, then go for the interview."), null);
   }
   _endPeriod() {
     playBell();
@@ -5655,6 +5804,26 @@ class Game {
     for (const f of this.friends) this.roomInteractables.push({ pos: f.position, radius: 2.2, npc: f, visible: () => f.group.visible, prompt: () => L("Talk to {n}", { n: f.name }), activate: () => this._talkFriend(f) });
     for (const t of Object.values(this.teachers)) this.roomInteractables.push({ pos: t.position, radius: 2.6, npc: t, visible: () => t.group.visible, prompt: () => L("Talk to {n}", { n: t.name }), activate: () => this._talkTeacher(t) });
     this.roomInteractables.push({ pos: cls.desks[4], radius: 1.8, prompt: () => (lessonNow ? L("Sit at your bench ({s} with {t})", { s: SUBJECTS[subj].name, t: SUBJECTS[subj].teacher }) : L("A lab bench")), activate: () => this._sitAtDesk(room, cls) });
+    // Senior students use the lab when your class is not in it.
+    this.seniors.forEach((s, i) => { s.group.visible = !lessonNow && room.label !== "Research Lab"; if (s.group.visible) { s.station(cls.desks[[0, 2, 5, 7][i]], Math.PI); this.roomInteractables.push({ pos: s.position, radius: 2.2, npc: s, prompt: () => L("Talk to {n}", { n: s.name }), activate: () => this._talk(s) }); } });
+    // The equipment: use it, see something, answer one question.
+    const gear = LAB_GEAR[room.type] || [];
+    for (const eq of gear) this.roomInteractables.push({ pos: { x: room.x0 + eq.x, z: room.z0 + eq.z }, radius: 1.6, prompt: () => (this._eqUsed.has(eq.id) ? L("{n} (done today)", { n: eq.name }) : L("Use the {n}", { n: eq.name })), activate: () => this._useEquipment(eq, room) });
+  }
+  _useEquipment(eq, room) {
+    if (this._eqUsed.has(eq.id)) { showToast(L("You used that today. Try another one."), 2200); return; }
+    const subject = room.type === "lab" ? "science" : "computer";
+    if (eq.typing) {
+      const words = makeRng(Math.floor(Math.random() * 1e9)).shuffle(TYPING_WORDS).slice(0, 5); let i = 0, right = 0;
+      const card = openPanel(`<div class="job-title-row"><h2>💻 ${L("Typing test")}</h2></div><p class="job-brief">${L("Type the word exactly, then press Enter. Five words.")}</p><div class="test-q" id="ty-word"></div><div class="chat-row"><input id="ty-in" type="text" autocomplete="off" autocapitalize="off"><button class="big-btn" id="ty-go">${L("Enter")}</button></div><div class="job-goal" id="ty-score">0 / 5</div><div id="ty-result"></div>`);
+      const wEl = card.querySelector("#ty-word"), input = card.querySelector("#ty-in"), score = card.querySelector("#ty-score"), res = card.querySelector("#ty-result");
+      const show = () => { wEl.textContent = words[i]; input.value = ""; setTimeout(() => input.focus(), 50); };
+      const go = () => { if (i >= words.length) return; if ((input.value || "").trim() === words[i]) { right++; Audio.playStep(); } else Audio.playRetry(); i++; score.textContent = `${right} / 5`; if (i < words.length) show(); else { this._eqUsed.add(eq.id); if (right) this.addMarks(subject, "cw", right, L("typing test")); res.innerHTML = `<div class="solved-banner"><b>${L("Lab Assistant Tina")}:</b> "${L(right >= 4 ? "Fast fingers! Save your work." : "Slow and steady. Practise on another computer.")}"</div><div class="btn-row"><button class="big-btn" id="ty-ok">${L("Okay")}</button></div>`; res.querySelector("#ty-ok").addEventListener("click", () => closePanel()); } };
+      card.querySelector("#ty-go").addEventListener("click", go); input.addEventListener("keydown", (e) => { if (e.key === "Enter") go(); e.stopPropagation(); });
+      show(); return;
+    }
+    runStepQuiz({ profile: this.profile, level: 1, world: this.world, audio: Audio, countAttempt: () => countAttempt(this.profile, this.progress, "lab:" + eq.id), onSolve: () => { this._eqUsed.add(eq.id); this.addMarks(subject, "cw", 1, eq.name); this.diary(`Used the ${eq.name} in the lab.`); } },
+      { title: `🔬 ${eq.name}`, intro: L(eq.text), goal: L("One question. One science mark."), steps: [{ q: eq.q, choices: eq.ch, answer: eq.a, hint: L("Think about what you just saw.") }], doneBtn: L("Okay"), doneHtml: `<b>Mr. Iyer:</b> "${L("Observed, thought, answered. That is science.")}"`, onLeave: () => {} });
   }
   _setupHome(room) {
     const maa = this.family.maa, papa = this.family.papa, dadi = this.family.dadi;
@@ -5776,7 +5945,7 @@ class Game {
       const card = openPanel(`<div class="job-title-row"><h2>🌙 Day ${pr.day} is over</h2></div><div class="job-goal">Marks today: <b>${this._marksToday || 0}</b> · Term total: <b>${this.termMarks()}</b> · Wallet: <b>${fmtMoney(pr.money)}</b> · Friendship: <b>${Object.values(pr.friendship).reduce((a, b) => a + b, 0)}</b></div><p class="job-brief">${pr.day + 1 === 5 || pr.day + 1 === 15 ? "Tomorrow is an FA day: 10 mark tests in every subject. Revise!" : pr.day + 1 === 10 || pr.day + 1 === 20 ? "Tomorrow is the TERM EXAM. Sleep early." : "Tomorrow is a normal school day."}</p><div class="btn-row"><button class="big-btn" id="sleep-ok">Sleep 😴</button></div>`);
       card.querySelector("#sleep-ok").addEventListener("click", () => {
         closePanel();
-        pr.day++; buildPeriods(pr.day); pr.tiffin = null; if (this._lateNight) { pr.energy = Math.max(20, pr.energy - 25); this._lateNight = false; } this._incidentDone = false; this.car.atSchool = false; this.car.group.position.set(this.car.home.x, 0, this.car.home.z); this.car.group.rotation.y = 0; pr.homework = []; pr.period = 0; this._marksToday = 0; this._ateLunch = false; this._goalDone = false; this._gamesActive = false; this._shiftDone = false;
+        pr.day++; buildPeriods(pr.day); pr.tiffin = null; if (this._lateNight) { pr.energy = Math.max(20, pr.energy - 25); this._lateNight = false; } this._incidentDone = false; this._monitorDone = false; this._eqUsed = new Set(); this.car.atSchool = false; this.car.group.position.set(this.car.home.x, 0, this.car.home.z); this.car.group.rotation.y = 0; pr.homework = []; pr.period = 0; this._marksToday = 0; this._ateLunch = false; this._goalDone = false; this._gamesActive = false; this._shiftDone = false;
         if (pr.day === 11) { for (const s of SUBJECT_IDS) pr.marks[s] = { cw: 0, hw: 0, fa: [], term: [] }; pr.games = []; showToast("Term 2 begins. Marks start fresh; Term 1 is on your report card.", 4000, "good"); }
         if (pr.day > 20) { pr.day = 1; for (const s of SUBJECT_IDS) pr.marks[s] = { cw: 0, hw: 0, fa: [], term: [] }; pr.games = []; showToast("A new school year! Reports are kept in your diary.", 4000, "good"); }
         saveProgress(this.profile, pr);
@@ -5934,7 +6103,8 @@ class Game {
     return { name: npc.name, day: d, term: d <= 10 ? 1 : 2, special: this.isTermDay() ? "the term exam day" : this.isFaDay() ? "an FA test day" : "", nextFa: nextFa === 10 || nextFa === 20 ? nextFa + 5 : nextFa, nextTerm: d <= 10 ? 10 : 20,
       marksToday: this._marksToday || 0, termMarks: this.termMarks(), rank: last ? last.rank : 0, money: fmtMoney(pr.money), homework: pr.homework.length, homeworkSubjects: [...new Set(pr.homework.map((h) => SUBJECTS[h.subject].name))].join(", "),
       clock: this.clockText(), period: per ? per.name : "", nextPeriod: nxt ? nxt.name : "", timeWord: this.phase === "morning" ? "morning" : this.phase === "school" || this.phase === "over" ? "afternoon" : this.phase === "evening" ? "evening" : "night",
-      playerName: "Bunty", stageLabel: this.profileLabel, bestFriend: fr ? FRIENDS.find((f) => f.id === fr[0]).name : "", job: job ? job.name : "", shifts: pr.shifts };
+      playerName: "Bunty", stageLabel: this.profileLabel, phase: this.phase, places: this.world.doors.filter((d) => !["House", "Apartments"].includes(d.label)).map((d) => d.label),
+      locate: (label) => { const d = this.world.doors.find((x) => x.label === label); if (!d) return ""; const p = this.player.position, dx = d.x - p.x, dz = d.z - p.z, dist = Math.round(Math.hypot(dx, dz)); const dir = Math.abs(dx) > Math.abs(dz) * 2.4 ? (dx > 0 ? "east" : "west") : Math.abs(dz) > Math.abs(dx) * 2.4 ? (dz > 0 ? "south" : "north") : (dz > 0 ? "south" : "north") + "-" + (dx > 0 ? "east" : "west"); this.bigmap.waypoint = { name: label, x: d.x, z: d.z }; this.setObjective(`${L("Go to")} ${label}`, d.x, d.z + 2); return `${dir}, about ${dist} m away`; }, bestFriend: fr ? FRIENDS.find((f) => f.id === fr[0]).name : "", job: job ? job.name : "", shifts: pr.shifts };
   }
   _chat(npc) {
     const kind = this._npcKind(npc), name = npc.name, pitch = (npc.def && npc.def.pitch) || 400;
@@ -6045,6 +6215,23 @@ class Game {
     }));
   }
 
+  // ---- Monitor duty ----
+  _monitorDuty(then) {
+    const pr = this.progress, bully = this.friends[this.friends.length - 1], kabir = this.friends[2], friend = this.friends[1], sana = this.friends[5];
+    const sc = MONITOR_DUTY[Math.floor(Math.random() * MONITOR_DUTY.length)];
+    const fill = (s) => s.split("{b}").join(bully.name).split("{k}").join(kabir.name).split("{f}").join(friend.name).split("{s}").join(sana.name);
+    const card = openPanel(`<div class="job-title-row"><h2>📛 ${L("Monitor duty")}</h2></div><p class="job-brief">${L("You are the class monitor today.")} ${L(fill(sc.text))}</p><div class="choice-bank">${sc.choices.map((c, i) => `<button class="choice-btn" data-id="${i}">${L(fill(c.label))}</button>`).join("")}</div><div id="mon-result"></div>`);
+    card.querySelectorAll(".choice-btn").forEach((b) => b.addEventListener("click", () => {
+      const ch = sc.choices[Number(b.dataset.id)];
+      pr.conduct = (pr.conduct || 0) + ch.conduct; if (ch.marks) this.addMarks("evs", "cw", ch.marks, L("monitor duty")); if (ch.friendship) this.addFriendship(friend.def.id, ch.friendship, "monitor duty");
+      if (ch.conduct > 0) { playSuccess(); setMood(this.teachers.evs.group, "happy", 6); } else { Audio.playRetry(); setMood(this.teachers.evs.group, "stern", 6); }
+      saveProgress(this.profile, pr); this.diary(`Monitor duty: conduct ${ch.conduct >= 0 ? "+" : ""}${ch.conduct}.`);
+      card.querySelector(".choice-bank").innerHTML = "";
+      card.querySelector("#mon-result").innerHTML = `<div class="solved-banner">${L(fill(ch.result))}</div><div class="job-goal">${L("Conduct")}: ${pr.conduct >= 0 ? "+" : ""}${pr.conduct}</div><div class="btn-row"><button class="big-btn" id="mon-ok">${L("Okay")}</button></div>`;
+      card.querySelector("#mon-ok").addEventListener("click", () => { closePanel(); then(); });
+    }));
+  }
+
   // ---- The ending ----
   _ending() {
     const pr = this.progress; pr.ended = true; saveProgress(this.profile, pr);
@@ -6069,7 +6256,7 @@ class Game {
     this.player.mount({ group: b.group, speed: 0, kind: "metro", label: "School bus", controlled: false });
     b.mover.wait = 1.0; b.leaving = 4; b.fromStop = stop;
     playHorn(); showToast("🚌 On the bus. Sit down, hold the rail. Press E at the stop to get off.", 3200, "good");
-    this.setObjective(stop === BUS_STOPS[0] ? "Riding to school. Get off at the School Gate stop." : "Riding home. Get off at the Shanti Nagar stop.", null);
+    this.setObjective(stop === BUS_STOPS[0] ? (this.working ? L("Riding to the city. Get off at the School Gate stop.") : L("Riding to school. Get off at the School Gate stop.")) : L("Riding home. Get off at the Shanti Nagar stop."), null);
   }
   _updateBus(dt) {
     const b = this.world.bus, riding = this.player.riding && this.player.riding.group === b.group;
@@ -6087,9 +6274,9 @@ class Game {
         this.world.scene.add(this.player.group); this.player.riding = null; standPose(this.player.group);
         this.player.group.position.set(at.standAt.x, 0, at.standAt.z); this.player.group.rotation.y = Math.PI;
         Audio.playPick();
-        if (at === BUS_STOPS[1] && this.phase === "morning") this._startPhase("school");
+        if (at === BUS_STOPS[1] && this.phase === "morning" && !this.working) this._startPhase("school");
         else if (at === BUS_STOPS[0] && this.phase === "over") this._startPhase("evening");
-        else if (at === BUS_STOPS[1] && this.phase === "morning" && this.working) this.setObjective(this.objective ? this.objective.label : "", null);
+        else if (at === BUS_STOPS[1] && this.phase === "morning" && this.working) this._workObjective();
         else this.setObjective(this.objective ? this.objective.label : "", null);
       }
     }
@@ -6120,6 +6307,7 @@ class Game {
     if (LAB_SUBJECTS[per.id] && room.type !== "mainbuilding" && LAB_SUBJECTS[per.id] !== room.label) { showToast(L("{s} is in the {r}, not here.", { s: SUBJECTS[per.id].name, r: LAB_SUBJECTS[per.id] }), 2800); return; }
     this.player.group.position.set(cls.desks[4].x, 0, cls.desks[4].z); this.player.group.rotation.y = Math.PI;
     if (!this._incidentDone && !this.isTermDay() && !this.isFaDay() && Math.random() < 0.3) { this._incidentDone = true; this._incident(() => this._sitAtDesk(room, cls)); return; }
+    if (this.isMonitorDay() && !this._monitorDone && !this.isTermDay() && !this.isFaDay()) { this._monitorDone = true; this._monitorDuty(() => this._sitAtDesk(room, cls)); return; }
     const subject = per.id, t = this.teachers[subject];
     t.group.visible = true; t._inRoom = true; t.station(cls.teacher, 0);
     if (this.isTermDay()) return this._examPeriod(subject, t, "term");
@@ -6208,7 +6396,7 @@ class Game {
     const t = TIFFINS.find((x) => x.id === this.progress.tiffin);
     if (this._ateLunch) { showToast("You have eaten. Chat with friends, buy something at the canteen, then EVS class.", 3000); return; }
     const card = openPanel(`<div class="job-title-row"><h2>🍱 Lunch break</h2></div><p class="job-brief">You sit on the bench. ${this.friends[0].name} and ${this.friends[1].name} squeeze in beside you. You open your tiffin: <b>${t ? t.icon + " " + t.name : "nothing! You forgot it"}</b>.</p><div class="hand-row">${t ? `<button class="big-btn" id="eat">Eat it (+${t.energy} energy)</button><button class="ghost-btn" id="share">Share half with a friend (+${Math.round(t.energy / 2)} energy, friendship)</button>` : `<button class="big-btn" id="nofood">Ask a friend for a bite</button>`}</div>`);
-    const done = (msg) => { closePanel(); this._ateLunch = true; this.player.eatT = 3; showToast(msg, 3200, "good"); this.friends.forEach((f) => setMood(f.group, "happy", 4)); this.setObjective("Lunch is on: chat with friends, buy at the canteen counter, then EVS: sit at your desk.", 100, -86); };
+    const done = (msg) => { closePanel(); this._ateLunch = true; if (!this._incidentDone && Math.random() < 0.25) { this._incidentDone = true; setTimeout(() => this._incident(() => {}), 900); } this.player.eatT = 3; showToast(msg, 3200, "good"); this.friends.forEach((f) => setMood(f.group, "happy", 4)); this.setObjective("Lunch is on: chat with friends, buy at the canteen counter, then EVS: sit at your desk.", 100, -86); };
     const eat = card.querySelector("#eat"); if (eat) eat.addEventListener("click", () => { this.addEnergy(t.energy); done(`${t.icon} Yum. Energy ${Math.round(this.progress.energy)}.`); });
     const share = card.querySelector("#share"); if (share) share.addEventListener("click", () => { const f = this.friends[Math.floor(Math.random() * this.friends.length)]; this.addEnergy(Math.round(t.energy / 2)); this.addFriendship(f.def.id, 2, "shared your tiffin"); this.diary(`Shared lunch with ${f.name}.`); done(`${f.name}: "Mmm! Your Maa cooks the best."`); });
     const nf = card.querySelector("#nofood"); if (nf) nf.addEventListener("click", () => { this.addEnergy(15); done("Aarav gives you half a paratha. Pack your tiffin tomorrow!"); });

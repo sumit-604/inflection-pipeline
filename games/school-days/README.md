@@ -43,16 +43,44 @@ Chinese, Japanese, Spanish, French. Teachers, friends, family and the
 screen labels use it, and the voice speaks it. Questions and answers stay
 in English so the marks mean the same in every language.
 
+## The city
+
+Three districts. Shanti Nagar colony and the market in the middle; New Town
+to the south east (Fire Station, District Court, Daily Suryanagar Press,
+City Bank, Suryanagar Airport, Auto Garage, Research Lab, Design Studio,
+Grand Hotel, Sports Stadium); Old Town to the north west (Green Farm, Old
+Town Library, Radio Suryanagar, Fish Market, Vet Clinic, Cinema Hall, Old
+Town Tea House and a lane of houses). Twenty six people walk the streets,
+and cars run on every road.
+
+## The labs
+
+Outside your own period, four senior students work at the benches. The
+equipment can be used once a day each: microscope, Bunsen burner, test
+tubes, weighing scale, magnets, prism, skeleton model. Each one shows you
+something and asks one question for a science mark. The Computer Room's
+eight computers run a five-word typing test for computer marks.
+
+## Monitor duty
+
+Every third day you are the class monitor. Before the teacher arrives
+something happens: a scuffle at the board, a friend who forgot homework, a
+classmate who feels faint. Four ways to handle it; conduct, marks and
+friendship follow from your choice.
+
 ## Jobs (press J)
 
-From Class 12 the Jobs list opens: teacher, doctor, software engineer,
-police officer, bank officer, chef, supermarket manager, post office clerk.
+From Class 12 the Jobs list opens with twenty two jobs: teacher, doctor,
+software engineer, police officer, bank officer, chef, supermarket manager,
+post office clerk, firefighter, lawyer, pilot, journalist, mechanic,
+scientist, architect, sports coach, hotel manager, bank manager, farmer,
+librarian, radio jockey, veterinary doctor.
 Choose one, follow the compass to its place, and press E at the door.
 
 1. Written test: ten questions in the job's subject, six to pass.
 2. Interview: five questions about work and conduct, four to pass.
 3. Hired: from the next morning you go to work instead of school, at any
-   class. One shift a day (five tasks); pay is the salary times the tasks
+   class. The bus and Papa's car take you to the city, never to a lesson. One shift a day (five tasks); pay is the salary times the tasks
    done right. Ten shifts promote you to the next stage.
 
 ## Family life

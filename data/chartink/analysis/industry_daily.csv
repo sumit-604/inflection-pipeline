@@ -728,315 +728,211 @@ date,industry,industry_close_52_week__high
 2026-09-15,transport - airlines,33.3333
 2026-09-15,travel agencies,16.6667
 2026-09-15,tyres,0
-2026-09-16,abrasives and grinding wheels,0
-2026-09-16,air-conditioners,20
-2026-09-16,aluminium and aluminium products,12.5
-2026-09-16,aquaculture,0
-2026-09-16,auto ancillaries,31.8841
-2026-09-16,automobiles - lcvs / hcvs,20
-2026-09-16,automobiles - motorcycles / mopeds,50
-2026-09-16,automobiles - passenger cars,0
-2026-09-16,automobiles - scooters and 3 - wheelers,66.6667
-2026-09-16,automobiles - tractors,0
-2026-09-16,banks - private sector,44.4444
-2026-09-16,banks - public sector,0
-2026-09-16,bearings,14.2857
-2026-09-16,breweries & distilleries,21.4286
-2026-09-16,cables - power,38.4615
-2026-09-16,cables - telephone,66.6667
-2026-09-16,castings & forgings,15
-2026-09-16,cement - north india,6.6667
-2026-09-16,cement - south india,0
-2026-09-16,cement products,16.6667
-2026-09-16,ceramics - tiles / sanitaryware,50
-2026-09-16,chemicals,24.1758
-2026-09-16,chlor alkali / soda ash,0
-2026-09-16,cigarettes,0
-2026-09-16,compressors / drilling equipment,33.3333
-2026-09-16,computers - education,0
-2026-09-16,computers - hardware,33.3333
-2026-09-16,computers - software - large,9.0909
-2026-09-16,computers - software - medium / small,6.25
-2026-09-16,construction,6
-2026-09-16,couriers,0
-2026-09-16,diamond cutting / jewellery,30.7692
-2026-09-16,diversified - large,14.2857
-2026-09-16,diversified - medium / small,33.3333
-2026-09-16,diversified - mega,0
-2026-09-16,domestic appliances,8.3333
-2026-09-16,dry cells,0
-2026-09-16,dyes and pigments,21.4286
-2026-09-16,electric equipment,11.8644
-2026-09-16,electrodes - graphites,33.3333
-2026-09-16,electrodes - welding equipment,0
-2026-09-16,electronics - components,23.8095
-2026-09-16,electronics - consumer,0
-2026-09-16,engineering,24.6377
-2026-09-16,engineering - turnkey services,13.5135
-2026-09-16,engines,0
-2026-09-16,entertainment / electronic media software,13.6364
-2026-09-16,fasteners,0
-2026-09-16,fertilizers,13.3333
-2026-09-16,finance & investments,12.5786
-2026-09-16,finance - housing,21.4286
-2026-09-16,finance - term-lending institutions,14.2857
-2026-09-16,food - processing - indian,20.5882
-2026-09-16,food - processing - mnc,0
-2026-09-16,glass & glass products,0
-2026-09-16,healthcare,38.2353
-2026-09-16,hotels,12.1951
-2026-09-16,leather / leather products,9.0909
-2026-09-16,mining / minerals / metals,3.125
-2026-09-16,miscellaneous,16.5644
-2026-09-16,moulded luggage,0
-2026-09-16,oil drilling / allied services,27.2727
-2026-09-16,packaging,29.6296
-2026-09-16,paints / varnishes,0
-2026-09-16,paper,40
-2026-09-16,personal care - indian,14.2857
-2026-09-16,personal care - multinational,0
-2026-09-16,pesticides / agrochemicals - indian,0
-2026-09-16,pesticides / agrochemicals - multinational,0
-2026-09-16,petrochemicals,36.3636
-2026-09-16,pharmaceuticals - indian - bulk drugs,35.7143
-2026-09-16,pharmaceuticals - indian - bulk drugs & formln,40.9091
-2026-09-16,pharmaceuticals - indian - formulations,52.6316
-2026-09-16,pharmaceuticals - multinational,12.5
-2026-09-16,photographic and allied products,100
-2026-09-16,plastics products,19.0476
-2026-09-16,power generation and supply,4.7619
-2026-09-16,printing & stationery,0
-2026-09-16,pumps,0
-2026-09-16,recreation / amusement parks,0
-2026-09-16,refineries,12.5
-2026-09-16,refractories / intermediates,0
-2026-09-16,shipping,20
-2026-09-16,solvent extraction,25
-2026-09-16,steel - large,20
-2026-09-16,steel - medium / small,29.0909
-2026-09-16,steel - sponge iron,33.3333
-2026-09-16,sugar,4.7619
-2026-09-16,tea,0
-2026-09-16,telecommunications - equipment,16.6667
-2026-09-16,telecommunications - service provider,22.2222
-2026-09-16,textile machinery,0
-2026-09-16,textiles - composite,33.3333
-2026-09-16,textiles - cotton/blended,30.4348
-2026-09-16,textiles - jute - yarn / products,0
-2026-09-16,textiles - manmade,60
-2026-09-16,textiles - processing,0
-2026-09-16,textiles - products,17.0732
-2026-09-16,textiles - spinning - synthetic / blended,0
-2026-09-16,trading,19.3548
-2026-09-16,transmisson line towers / equipment,14.2857
-2026-09-16,transport - airlines,33.3333
-2026-09-16,travel agencies,16.6667
-2026-09-16,tyres,0
-2026-09-17,abrasives and grinding wheels,33.3333
-2026-09-17,air-conditioners,20
-2026-09-17,aluminium and aluminium products,12.5
-2026-09-17,aquaculture,0
-2026-09-17,auto ancillaries,33.3333
-2026-09-17,automobiles - lcvs / hcvs,20
-2026-09-17,automobiles - motorcycles / mopeds,50
-2026-09-17,automobiles - passenger cars,0
-2026-09-17,automobiles - scooters and 3 - wheelers,33.3333
-2026-09-17,automobiles - tractors,0
-2026-09-17,banks - private sector,44.4444
-2026-09-17,banks - public sector,0
-2026-09-17,bearings,28.5714
-2026-09-17,breweries & distilleries,21.4286
-2026-09-17,cables - power,38.4615
-2026-09-17,cables - telephone,66.6667
-2026-09-17,castings & forgings,25
-2026-09-17,cement - north india,6.6667
-2026-09-17,cement - south india,0
-2026-09-17,cement products,16.6667
-2026-09-17,ceramics - tiles / sanitaryware,50
-2026-09-17,chemicals,27.7778
-2026-09-17,chlor alkali / soda ash,50
-2026-09-17,cigarettes,0
-2026-09-17,compressors / drilling equipment,33.3333
-2026-09-17,computers - education,0
-2026-09-17,computers - hardware,33.3333
-2026-09-17,computers - software - large,9.0909
-2026-09-17,computers - software - medium / small,6.25
-2026-09-17,construction,7.9208
-2026-09-17,couriers,0
-2026-09-17,diamond cutting / jewellery,26.9231
-2026-09-17,diversified - large,28.5714
-2026-09-17,diversified - medium / small,33.3333
-2026-09-17,diversified - mega,0
-2026-09-17,domestic appliances,8.3333
-2026-09-17,dry cells,0
-2026-09-17,dyes and pigments,35.7143
-2026-09-17,electric equipment,13.5593
-2026-09-17,electrodes - graphites,33.3333
-2026-09-17,electrodes - welding equipment,33.3333
-2026-09-17,electronics - components,33.3333
-2026-09-17,electronics - consumer,0
-2026-09-17,engineering,31.8841
-2026-09-17,engineering - turnkey services,13.5135
-2026-09-17,engines,0
-2026-09-17,entertainment / electronic media software,13.6364
-2026-09-17,fasteners,0
-2026-09-17,fertilizers,13.3333
-2026-09-17,finance & investments,18.239
-2026-09-17,finance - housing,21.4286
-2026-09-17,finance - term-lending institutions,14.2857
-2026-09-17,food - processing - indian,17.6471
-2026-09-17,food - processing - mnc,0
-2026-09-17,glass & glass products,0
-2026-09-17,healthcare,35.2941
-2026-09-17,hotels,12.1951
-2026-09-17,leather / leather products,9.0909
-2026-09-17,mining / minerals / metals,6.25
-2026-09-17,miscellaneous,18.4049
-2026-09-17,moulded luggage,0
-2026-09-17,oil drilling / allied services,36.3636
-2026-09-17,packaging,25
-2026-09-17,paints / varnishes,0
-2026-09-17,paper,26.6667
-2026-09-17,personal care - indian,14.2857
-2026-09-17,personal care - multinational,0
-2026-09-17,pesticides / agrochemicals - indian,0
-2026-09-17,pesticides / agrochemicals - multinational,0
-2026-09-17,petrochemicals,36.3636
-2026-09-17,pharmaceuticals - indian - bulk drugs,28.5714
-2026-09-17,pharmaceuticals - indian - bulk drugs & formln,45.4545
-2026-09-17,pharmaceuticals - indian - formulations,57.8947
-2026-09-17,pharmaceuticals - multinational,12.5
-2026-09-17,photographic and allied products,100
-2026-09-17,plastics products,19.0476
-2026-09-17,power generation and supply,4.7619
-2026-09-17,printing & stationery,0
-2026-09-17,pumps,0
-2026-09-17,recreation / amusement parks,0
-2026-09-17,refineries,12.5
-2026-09-17,refractories / intermediates,0
-2026-09-17,shipping,20
-2026-09-17,solvent extraction,25
-2026-09-17,steel - large,26.6667
-2026-09-17,steel - medium / small,23.6364
-2026-09-17,steel - sponge iron,33.3333
-2026-09-17,sugar,4.7619
-2026-09-17,tea,0
-2026-09-17,telecommunications - equipment,16.6667
-2026-09-17,telecommunications - service provider,22.2222
-2026-09-17,textile machinery,50
-2026-09-17,textiles - composite,33.3333
-2026-09-17,textiles - cotton/blended,34.7826
-2026-09-17,textiles - jute - yarn / products,0
-2026-09-17,textiles - manmade,60
-2026-09-17,textiles - processing,0
-2026-09-17,textiles - products,12.1951
-2026-09-17,textiles - spinning - synthetic / blended,25
-2026-09-17,trading,17.2043
-2026-09-17,transmisson line towers / equipment,14.2857
-2026-09-17,transport - airlines,33.3333
-2026-09-17,travel agencies,16.6667
-2026-09-17,tyres,0
-2026-09-18,abrasives and grinding wheels,66.6667
-2026-09-18,air-conditioners,20
-2026-09-18,aluminium and aluminium products,12.5
-2026-09-18,aquaculture,0
-2026-09-18,auto ancillaries,39.1304
-2026-09-18,automobiles - lcvs / hcvs,20
-2026-09-18,automobiles - motorcycles / mopeds,50
-2026-09-18,automobiles - passenger cars,0
-2026-09-18,automobiles - scooters and 3 - wheelers,66.6667
-2026-09-18,automobiles - tractors,0
-2026-09-18,banks - private sector,51.8519
-2026-09-18,banks - public sector,0
-2026-09-18,bearings,28.5714
-2026-09-18,breweries & distilleries,21.4286
-2026-09-18,cables - power,38.4615
-2026-09-18,cables - telephone,66.6667
-2026-09-18,castings & forgings,20
-2026-09-18,cement - north india,6.6667
-2026-09-18,cement - south india,0
-2026-09-18,cement products,33.3333
-2026-09-18,ceramics - tiles / sanitaryware,50
-2026-09-18,chemicals,28.5714
-2026-09-18,chlor alkali / soda ash,50
-2026-09-18,cigarettes,0
-2026-09-18,compressors / drilling equipment,33.3333
-2026-09-18,computers - education,0
-2026-09-18,computers - hardware,33.3333
-2026-09-18,computers - software - large,18.1818
-2026-09-18,computers - software - medium / small,8.3333
-2026-09-18,construction,8.9109
-2026-09-18,couriers,0
-2026-09-18,diamond cutting / jewellery,30.7692
-2026-09-18,diversified - large,42.8571
-2026-09-18,diversified - medium / small,33.3333
-2026-09-18,diversified - mega,0
-2026-09-18,domestic appliances,16.6667
-2026-09-18,dry cells,0
-2026-09-18,dyes and pigments,42.8571
-2026-09-18,electric equipment,18.6441
-2026-09-18,electrodes - graphites,33.3333
-2026-09-18,electrodes - welding equipment,66.6667
-2026-09-18,electronics - components,38.0952
-2026-09-18,electronics - consumer,0
-2026-09-18,engineering,34.7826
-2026-09-18,engineering - turnkey services,13.5135
-2026-09-18,engines,0
-2026-09-18,entertainment / electronic media software,13.6364
-2026-09-18,fasteners,0
-2026-09-18,fertilizers,13.3333
-2026-09-18,finance & investments,18.239
-2026-09-18,finance - housing,21.4286
-2026-09-18,finance - term-lending institutions,14.2857
-2026-09-18,food - processing - indian,14.7059
-2026-09-18,food - processing - mnc,0
-2026-09-18,glass & glass products,14.2857
-2026-09-18,healthcare,41.1765
-2026-09-18,hotels,12.1951
-2026-09-18,leather / leather products,9.0909
-2026-09-18,mining / minerals / metals,12.5
-2026-09-18,miscellaneous,21.4724
-2026-09-18,moulded luggage,0
-2026-09-18,oil drilling / allied services,54.5455
-2026-09-18,packaging,28.5714
-2026-09-18,paints / varnishes,0
-2026-09-18,paper,33.3333
-2026-09-18,personal care - indian,0
-2026-09-18,personal care - multinational,0
-2026-09-18,pesticides / agrochemicals - indian,0
-2026-09-18,pesticides / agrochemicals - multinational,0
-2026-09-18,petrochemicals,45.4545
-2026-09-18,pharmaceuticals - indian - bulk drugs,57.1429
-2026-09-18,pharmaceuticals - indian - bulk drugs & formln,45.4545
-2026-09-18,pharmaceuticals - indian - formulations,57.8947
-2026-09-18,pharmaceuticals - multinational,12.5
-2026-09-18,photographic and allied products,100
-2026-09-18,plastics products,23.8095
-2026-09-18,power generation and supply,9.5238
-2026-09-18,printing & stationery,0
-2026-09-18,pumps,0
-2026-09-18,recreation / amusement parks,0
-2026-09-18,refineries,12.5
-2026-09-18,refractories / intermediates,0
-2026-09-18,shipping,20
-2026-09-18,solvent extraction,25
-2026-09-18,steel - large,40
-2026-09-18,steel - medium / small,29.0909
-2026-09-18,steel - sponge iron,33.3333
-2026-09-18,sugar,4.7619
-2026-09-18,tea,0
-2026-09-18,telecommunications - equipment,16.6667
-2026-09-18,telecommunications - service provider,33.3333
-2026-09-18,textile machinery,0
-2026-09-18,textiles - composite,50
-2026-09-18,textiles - cotton/blended,34.7826
-2026-09-18,textiles - jute - yarn / products,0
-2026-09-18,textiles - manmade,60
-2026-09-18,textiles - processing,0
-2026-09-18,textiles - products,19.5122
-2026-09-18,textiles - spinning - synthetic / blended,25
-2026-09-18,trading,20.4301
-2026-09-18,transmisson line towers / equipment,14.2857
-2026-09-18,transport - airlines,33.3333
-2026-09-18,travel agencies,16.6667
-2026-09-18,tyres,0
+2026-09-21,abrasives and grinding wheels,33.3333
+2026-09-21,air-conditioners,20
+2026-09-21,aluminium and aluminium products,25
+2026-09-21,aquaculture,0
+2026-09-21,auto ancillaries,39.1304
+2026-09-21,automobiles - lcvs / hcvs,20
+2026-09-21,automobiles - motorcycles / mopeds,50
+2026-09-21,automobiles - passenger cars,0
+2026-09-21,automobiles - scooters and 3 - wheelers,66.6667
+2026-09-21,automobiles - tractors,0
+2026-09-21,banks - private sector,48.1481
+2026-09-21,banks - public sector,0
+2026-09-21,bearings,28.5714
+2026-09-21,breweries & distilleries,21.4286
+2026-09-21,cables - power,38.4615
+2026-09-21,cables - telephone,66.6667
+2026-09-21,castings & forgings,20
+2026-09-21,cement - north india,6.6667
+2026-09-21,cement - south india,0
+2026-09-21,cement products,33.3333
+2026-09-21,ceramics - tiles / sanitaryware,50
+2026-09-21,chemicals,30.7692
+2026-09-21,chlor alkali / soda ash,50
+2026-09-21,cigarettes,0
+2026-09-21,compressors / drilling equipment,33.3333
+2026-09-21,computers - education,0
+2026-09-21,computers - hardware,33.3333
+2026-09-21,computers - software - large,9.0909
+2026-09-21,computers - software - medium / small,8.3333
+2026-09-21,construction,10.8911
+2026-09-21,couriers,0
+2026-09-21,diamond cutting / jewellery,30.7692
+2026-09-21,diversified - large,42.8571
+2026-09-21,diversified - medium / small,33.3333
+2026-09-21,diversified - mega,0
+2026-09-21,domestic appliances,8.3333
+2026-09-21,dry cells,0
+2026-09-21,dyes and pigments,42.8571
+2026-09-21,electric equipment,20.339
+2026-09-21,electrodes - graphites,66.6667
+2026-09-21,electrodes - welding equipment,66.6667
+2026-09-21,electronics - components,38.0952
+2026-09-21,electronics - consumer,0
+2026-09-21,engineering,34.7826
+2026-09-21,engineering - turnkey services,13.5135
+2026-09-21,engines,0
+2026-09-21,entertainment / electronic media software,13.6364
+2026-09-21,fasteners,0
+2026-09-21,fertilizers,13.3333
+2026-09-21,finance & investments,18.8679
+2026-09-21,finance - housing,21.4286
+2026-09-21,finance - term-lending institutions,14.2857
+2026-09-21,food - processing - indian,17.6471
+2026-09-21,food - processing - mnc,0
+2026-09-21,glass & glass products,0
+2026-09-21,healthcare,41.1765
+2026-09-21,hotels,12.1951
+2026-09-21,leather / leather products,18.1818
+2026-09-21,mining / minerals / metals,12.5
+2026-09-21,miscellaneous,20.122
+2026-09-21,moulded luggage,0
+2026-09-21,oil drilling / allied services,45.4545
+2026-09-21,packaging,32.1429
+2026-09-21,paints / varnishes,0
+2026-09-21,paper,26.6667
+2026-09-21,personal care - indian,0
+2026-09-21,personal care - multinational,0
+2026-09-21,pesticides / agrochemicals - indian,0
+2026-09-21,pesticides / agrochemicals - multinational,0
+2026-09-21,petrochemicals,45.4545
+2026-09-21,pharmaceuticals - indian - bulk drugs,42.8571
+2026-09-21,pharmaceuticals - indian - bulk drugs & formln,55.2239
+2026-09-21,pharmaceuticals - indian - formulations,52.6316
+2026-09-21,pharmaceuticals - multinational,12.5
+2026-09-21,photographic and allied products,100
+2026-09-21,plastics products,23.8095
+2026-09-21,power generation and supply,9.5238
+2026-09-21,printing & stationery,0
+2026-09-21,pumps,0
+2026-09-21,recreation / amusement parks,0
+2026-09-21,refineries,12.5
+2026-09-21,refractories / intermediates,0
+2026-09-21,shipping,20
+2026-09-21,solvent extraction,25
+2026-09-21,steel - large,40
+2026-09-21,steel - medium / small,29.0909
+2026-09-21,steel - sponge iron,33.3333
+2026-09-21,sugar,4.7619
+2026-09-21,tea,0
+2026-09-21,telecommunications - equipment,16.6667
+2026-09-21,telecommunications - service provider,33.3333
+2026-09-21,textile machinery,0
+2026-09-21,textiles - composite,50
+2026-09-21,textiles - cotton/blended,26.087
+2026-09-21,textiles - jute - yarn / products,0
+2026-09-21,textiles - manmade,60
+2026-09-21,textiles - processing,11.1111
+2026-09-21,textiles - products,17.0732
+2026-09-21,textiles - spinning - synthetic / blended,37.5
+2026-09-21,trading,18.2796
+2026-09-21,transmisson line towers / equipment,14.2857
+2026-09-21,transport - airlines,33.3333
+2026-09-21,travel agencies,16.6667
+2026-09-21,tyres,0
+2026-09-22,abrasives and grinding wheels,33.3333
+2026-09-22,air-conditioners,20
+2026-09-22,aluminium and aluminium products,12.5
+2026-09-22,aquaculture,0
+2026-09-22,auto ancillaries,39.1304
+2026-09-22,automobiles - lcvs / hcvs,20
+2026-09-22,automobiles - motorcycles / mopeds,50
+2026-09-22,automobiles - passenger cars,0
+2026-09-22,automobiles - scooters and 3 - wheelers,33.3333
+2026-09-22,automobiles - tractors,0
+2026-09-22,banks - private sector,48.1481
+2026-09-22,banks - public sector,0
+2026-09-22,bearings,28.5714
+2026-09-22,breweries & distilleries,21.4286
+2026-09-22,cables - power,38.4615
+2026-09-22,cables - telephone,66.6667
+2026-09-22,castings & forgings,25
+2026-09-22,cement - north india,6.6667
+2026-09-22,cement - south india,0
+2026-09-22,cement products,33.3333
+2026-09-22,ceramics - tiles / sanitaryware,50
+2026-09-22,chemicals,32.6087
+2026-09-22,chlor alkali / soda ash,50
+2026-09-22,cigarettes,0
+2026-09-22,compressors / drilling equipment,33.3333
+2026-09-22,computers - education,0
+2026-09-22,computers - hardware,33.3333
+2026-09-22,computers - software - large,0
+2026-09-22,computers - software - medium / small,9.375
+2026-09-22,construction,11.7647
+2026-09-22,couriers,0
+2026-09-22,diamond cutting / jewellery,30.7692
+2026-09-22,diversified - large,57.1429
+2026-09-22,diversified - medium / small,33.3333
+2026-09-22,diversified - mega,0
+2026-09-22,domestic appliances,8.3333
+2026-09-22,dry cells,0
+2026-09-22,dyes and pigments,42.8571
+2026-09-22,electric equipment,16.9492
+2026-09-22,electrodes - graphites,66.6667
+2026-09-22,electrodes - welding equipment,66.6667
+2026-09-22,electronics - components,42.8571
+2026-09-22,electronics - consumer,0
+2026-09-22,engineering,34.7826
+2026-09-22,engineering - turnkey services,13.5135
+2026-09-22,engines,0
+2026-09-22,entertainment / electronic media software,18.1818
+2026-09-22,fasteners,0
+2026-09-22,fertilizers,20
+2026-09-22,finance & investments,16.9811
+2026-09-22,finance - housing,21.4286
+2026-09-22,finance - term-lending institutions,14.2857
+2026-09-22,food - processing - indian,14.7059
+2026-09-22,food - processing - mnc,0
+2026-09-22,glass & glass products,14.2857
+2026-09-22,healthcare,38.2353
+2026-09-22,hotels,12.1951
+2026-09-22,leather / leather products,9.0909
+2026-09-22,mining / minerals / metals,12.5
+2026-09-22,miscellaneous,21.9512
+2026-09-22,moulded luggage,0
+2026-09-22,oil drilling / allied services,45.4545
+2026-09-22,packaging,28.5714
+2026-09-22,paints / varnishes,0
+2026-09-22,paper,26.6667
+2026-09-22,personal care - indian,0
+2026-09-22,personal care - multinational,0
+2026-09-22,pesticides / agrochemicals - indian,0
+2026-09-22,pesticides / agrochemicals - multinational,0
+2026-09-22,petrochemicals,45.4545
+2026-09-22,pharmaceuticals - indian - bulk drugs,42.8571
+2026-09-22,pharmaceuticals - indian - bulk drugs & formln,53.7313
+2026-09-22,pharmaceuticals - indian - formulations,52.6316
+2026-09-22,pharmaceuticals - multinational,12.5
+2026-09-22,photographic and allied products,100
+2026-09-22,plastics products,23.8095
+2026-09-22,power generation and supply,4.7619
+2026-09-22,printing & stationery,0
+2026-09-22,pumps,0
+2026-09-22,recreation / amusement parks,0
+2026-09-22,refineries,12.5
+2026-09-22,refractories / intermediates,20
+2026-09-22,shipping,20
+2026-09-22,solvent extraction,25
+2026-09-22,steel - large,40
+2026-09-22,steel - medium / small,30.9091
+2026-09-22,steel - sponge iron,33.3333
+2026-09-22,sugar,4.7619
+2026-09-22,tea,0
+2026-09-22,telecommunications - equipment,16.6667
+2026-09-22,telecommunications - service provider,33.3333
+2026-09-22,textile machinery,0
+2026-09-22,textiles - composite,50
+2026-09-22,textiles - cotton/blended,30.4348
+2026-09-22,textiles - jute - yarn / products,0
+2026-09-22,textiles - manmade,60
+2026-09-22,textiles - processing,11.1111
+2026-09-22,textiles - products,17.0732
+2026-09-22,textiles - spinning - synthetic / blended,37.5
+2026-09-22,trading,22.5806
+2026-09-22,transmisson line towers / equipment,14.2857
+2026-09-22,transport - airlines,33.3333
+2026-09-22,travel agencies,16.6667
+2026-09-22,tyres,0

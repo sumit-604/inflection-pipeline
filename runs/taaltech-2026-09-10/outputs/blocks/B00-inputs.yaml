@@ -1,0 +1,109 @@
+stage: B00-inputs
+company: TAALTECH
+run_date: 2026-09-10
+model: orchestrator-inline
+status: complete
+input_gaps:
+  - "presentation: ABSENT. TAAL Tech publishes no investor presentation. Verified against the company investor page and the screener documents list, 2026-09-10. Stage 4 and stage 7 run from the annual report and results commentary alone."
+  - "announcements: ABSENT. No exchange / Reg 30 filings collected. Stages 5, 7 and 8 lose the documented-ACTION record; the intent-and-action cross-check runs on AR and results evidence only."
+  - "shareholding: ABSENT as a separate quarterly filing. The FY2025-26 annual report carries the shareholding pattern as at 31 March 2026, so the promoter and pledge trend is covered to that date. The June 2026 quarterly pattern is not in corpus; the FII+DII figure for the UA qualifier is therefore stale by one quarter."
+  - "research: ABSENT. No broker notes. No effect on anchored evidence; the pipeline loses a lead-generation and management-intent cross-check source only."
+  - "screening: PARTIAL. screener-Profit_Loss.csv, screener-Balance_Sheet.csv, screener-Cash_Flow.csv and screener-Quarters.csv are header-only and carry no data (known collect_to_repo v3 defect). screener-Data_Sheet.csv IS fully populated: FY17-FY26 P&L, balance sheet, cash flow, and the last ten quarters. Stage 1 reads Data_Sheet. The same defect applies to all three peer CSV sets."
+  - "results: two of the three results PDFs (Q1 FY27 Jun 2026, Q3 FY26 Dec 2025) are image-only scans with no text layer. Every page was rendered to PNG under extracted/images/ and transcribed to extracted/results__*.txt. Stages read the transcription; the PDF remains the anchor."
+declared_not_gaps:
+  - "concalls and peer-concalls for the subject: TAAL Tech holds no earnings calls. manifest.concalls_available is false. NO-CONCALL MODE is active. The absence is declared, not accidental."
+  - "rating: the FY2025-26 annual report states the Company was not required to obtain a credit rating in FY2025-26 because fund-based and non-fund-based facilities were NIL (extracted/annual-report__Annual_Report_2026.txt line 3270-3271). The absent rating PDF is explained by the filing, not a collection miss."
+  - "prospectus: TAAL Tech (then TAAL Enterprises Ltd) listed by demerger from Taneja Aerospace and Aviation Ltd, scheme effective 21 August 2015. Long-listed, more than three years before run_date, so an IPO prospectus is neither expected nor a gap."
+inventory:
+  prospectus: 0
+  annual-report: 1
+  results: 3
+  rating: 0
+  concalls: 0
+  peer-concalls: 11
+  announcements: 0
+  shareholding: 0
+  research: 0
+  screening: 24
+  presentation: 0
+  other: 1
+peer_set:
+  - ticker: TATAELXSI
+    name: Tata Elxsi Ltd
+    transcripts: 3
+    quarters: ["Jan 2026", "Apr 2026", "Jul 2026"]
+  - ticker: CYIENT
+    name: Cyient Ltd
+    transcripts: 4
+    quarters: ["Apr 2026", "Jun 2026 (x2)", "Aug 2026"]
+  - ticker: ONWARDTEC
+    name: Onward Technologies Ltd
+    transcripts: 4
+    quarters: ["Oct 2025", "Jan 2026", "May 2026", "Jul 2026"]
+freshness_pairs:
+  - pair: "RESULTS to CONCALL"
+    trigger_doc: "inputs/results/Results_Q1FY27_Jun_2026.pdf (newest results filing, quarter ended 30-Jun-2026)"
+    mate_expected: "same-quarter concall transcript"
+    status: SKIPPED
+    missing_doc: ""
+    note: "Skipped per the orchestrator rule: manifest.concalls_available is false. The company holds no calls."
+  - pair: "RATING BULLETIN to RATIONALE"
+    trigger_doc: "none"
+    mate_expected: "full rating rationale"
+    status: PASS
+    missing_doc: ""
+    note: "No rating bulletin exists to trigger the pair. The FY2025-26 AR states no credit rating was required, facilities NIL."
+  - pair: "SEBI ORDER to ORDER TEXT"
+    trigger_doc: "none"
+    mate_expected: "order text"
+    status: PASS
+    missing_doc: ""
+    note: "The FY2025-26 AR references SEBI orders only in the standard director-eligibility declaration (lines 1074, 1110). No SEBI order against the Company or its directors is referenced in any corpus filing."
+  - pair: "AR to LATEST AUDITED ANNUAL RESULTS"
+    trigger_doc: "inputs/results/Results_Q4FY26_Mar_2026.pdf (audited full-year results, FY2025-26)"
+    mate_expected: "annual report for the same financial year"
+    status: PASS
+    missing_doc: ""
+    note: "inputs/annual-report/Annual_Report_2026.pdf is the FY2025-26 annual report, filed to BSE 7 August 2026 under scrip code 539956. Same year. The AR does not trail the latest audited annual result."
+freshness_verdict: "FRESHNESS PAIRS OK"
+corpus_verdict: "CORPUS GAPPED"
+spear_gate:
+  status: SATISFIED
+  line: "Spear: OVERRIDE 2026-09-10 (operator standing ruling 2026-09-05: Step-1 intake replaces the web spear)"
+  source: "companies/TAALTECH.md"
+load_bearing_facts:
+  - "The 30% operating margin. FY25 OPM rose 25% to 32% while revenue fell Rs187cr to Rs185cr. No listed Indian ER&D peer of any size earns this. Verify in the FY26 and FY25 AR P&L whether the margin is operating, or whether other income, forex or treasury income sits inside it."
+  - "The Q1 FY27 revenue jump. Rs64.81cr against Rs45.77cr, up 41.6%, after three years at 7% CAGR. Verify whether the step is organic, one large client, a scope change, or an acquisition."
+  - "Cash conversion. Consolidated CFO Rs18.74cr FY26 against PAT Rs56.72cr, 0.33x, down from 0.84x. Working capital days 77 to 120. Receivables Rs38.61cr to Rs52.04cr. Verify ageing, the Rs143.89cr investment composition, and settle the FLAG-CASH determination."
+  - "Related-party exposure to the Taneja group. Taneja Aerospace and Aviation Ltd is a separately listed entity of the same promoter lineage. Verify the FY26 related-party note in full: balances, transactions, guarantees, and any receivable from group entities."
+degradation_active:
+  - "NO-CONCALL MODE: stage 5 runs from the AR MD&A, the Board report and the results commentary. credibility_grade defaults to C and may rise to B only on documented AR-guidance-versus-results delivery evidence, never to A. B05 carries no_concall_mode: true."
+  - "Stage 6 runs: inputs/peer-concalls/ holds 11 transcripts across three peers."
+  - "Stage 4 and stage 7 run without an investor presentation."
+  - "Stage 8 sources the promoter and group picture from web search plus the AR governance section; no announcements folder to grade documented actions."
+flags: []
+analyst_note: "Two corpus facts shape every downstream stage. First, TAAL Tech is a silent filer: no calls, no presentations, no broker coverage in corpus. Everything management has said in FY26 sits inside one annual report. Second, the ten-year financial series spans a business change. The company was an aircraft-charter operator, stopped flying after an accident, and became an engineering services firm when TAAL Tech India Pvt Ltd merged into the listed parent. Standalone total assets moved Rs19cr to Rs207cr between March 2024 and March 2025 on that merger. Stages must check the segment note before reading FY16-FY21 rows as an engineering-services operating history."
+
+halt1_corrections:
+  ruled: "2026-09-20 (operator Halt 1 ruling, PROCEED)"
+  source: "runs/taaltech-2026-09-10/inputs/research/web-handover-dossier.md (NON-ANCHORED research input, committed 2026-09-21)"
+  items:
+    - id: C9
+      correction: "Annual_Report_2026.pdf pages 30 and 163 are BLANK pages, not unread pages. The corpus read audit of 2026-09-18 listed them as having no text layer; claude.ai read both as images on 2026-09-20 and confirmed they carry no content. The corrigendum PDF's page 2 was read the same way and also carries no content beyond the revised statement."
+      effect: "The AR read-coverage floor of 149 of 164 pages is understated by 2. No stage missed disclosed content."
+    - id: C8
+      correction: "Three populated peer Data_Sheet CSVs (TATAELXSI, CYIENT, ONWARDTEC) were in inputs/screening/ from the corpus commit and were never passed to stage 1. B01 recorded peer data as absent and scored moat sub-tests M2, M5 and M9 at zero for want of it."
+      effect: "Orchestration error, not a data gap. Block F rerun on 2026-09-21 per the Halt 1 gate: moat 11/60 to 19/60, moats_confirmed 2 to 4, class MODERATE to STRONG, grand total 81/160 to 89/160, classification GOOD to GOOD+. Core score unchanged at 70/100. See outputs/reports/01-gate0-blockF-rerun.md and outputs/blocks/B01-gate0-blockF-rerun.yaml. B01-gate0.yaml is superseded on the moat fields only."
+    - id: NEW
+      correction: "TATAELXSI-Data_Sheet.csv carries FY2008-FY2015 financial statements, 11 to 19 years stale. Only its META block (current price and market capitalisation) is contemporaneous."
+      effect: "Found during the Block F rerun. The scored peer median for M2 rests on two of three peers, Cyient and Onward Technologies. Recorded as a collector defect to add to the standing list."
+corpus_verdict_revised: "NOT YET CURRENT. The operator ruled CORPUS CURRENT with named residue on 2026-09-20, conditional on the prior-year annual reports and the AGM filings being committed to inputs/. As at 2026-09-21 none of those seven files is on disk, so the condition is unmet and the standing verdict remains CORPUS GAPPED. Re-audit and set CURRENT when the files land. Named residue when it does: Vishkul MGT-7 shareholder list; identities of Creovate, Dureleg, Torrozo and Tenshi; 12th AGM transcript not yet published."
+corpus_verdict_recheck_2026_09_21: "Checked inputs/annual-report/ (holds Annual_Report_2026.pdf only), inputs/announcements/ (.gitkeep only), inputs/concalls/ (.gitkeep only), the main checkout, and a filesystem-wide search. None of the seven named additions is present."
+pending_corpus_additions:
+  note: "Named in the Halt 1 ruling as to be committed under inputs/ before /fttcp. NOT PRESENT on disk as at 2026-09-21. The operator holds them in claude.ai and must place the files."
+  files:
+    - "Annual Report FY2022-23 -> inputs/annual-report/"
+    - "Annual Report FY2023-24 -> inputs/annual-report/"
+    - "Annual Report FY2024-25 -> inputs/annual-report/"
+    - "11th AGM (26-Aug-2025) video transcript -> inputs/other/ or inputs/announcements/"
+    - "12th AGM (01-Sep-2026) proceedings summary and voting results, Reg 30 filings of 01 and 02 Sep 2026 -> inputs/announcements/"

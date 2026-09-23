@@ -1,0 +1,62 @@
+stage: B12c
+company: "TAALTECH"
+run_date: "2026-09-10"
+model: claude-opus-4-8
+status: complete
+scope: "PHASE 1 ONLY - Gate 0 (B01) and Emerging Moat (B07). Valuation adherence deferred to phase 3."
+gate0:
+  rules_checked: 51
+  fails:
+    - {id: "F5", severity: "MAJOR", rule: "Data confidence / history downgrade", location: "B01-gate0.yaml history_downgrade + 01-gate0.md CLASSIFICATION", detail: "history_downgrade set true with data_years 10; the rule's only downgrade trigger is a 3-4 year history (10+ years is full). Classification correctly NOT downgraded, so the boolean and the classification contradict each other on the rule's own terms, and a machine consumer may apply an unauthorised GOOD to AVERAGE drop.", recomputed: "history_downgrade: false; the comparability concern belongs in flags[] and data_notes, where it already also sits"}
+    - {id: "F1", severity: "MINOR", rule: "FORMULA DEFINITIONS (fixed, do not substitute)", location: "01-gate0.md Block A preamble", detail: "ROCE denominator taken as Total Assets minus Other Liabilities (equity plus borrowings) instead of the mandated Total Assets minus Current Liabilities.", recomputed: "FY2026 22.62% versus 22.54% reported; A1/A2 hold with wide margin, A4 already at floor 0; no block-score change demonstrable"}
+    - {id: "F2", severity: "MINOR", rule: "B2 FCF-positive years as proportion", location: "01-gate0.md Block B", detail: "Proportion computed over 8 computable years (100%) rather than the 10 available years; FY2017 and FY2021 excluded from the denominator. Operating rule 5 scores unavailable data 0.", recomputed: "8/10 = 80% gives B2 = 4; Block B 13; core 69; grand total 80; classification unchanged GOOD"}
+    - {id: "F3", severity: "MINOR", rule: "FCF = CFO minus Capex", location: "01-gate0.md FCF table, FY2026 row", detail: "FY2026 FCF shown as 18.62; 18.74 minus 0.13 = 18.61.", recomputed: "cumulative FCF 181.15; B3 = 0.7053; no band change"}
+    - {id: "F4", severity: "MINOR", rule: "Operating rule 3, show every number extracted", location: "01-gate0.md Block F, M11", detail: "M11 = 5 rests on a 0.44pp gap (7.45% versus 7.01%) whose FY2020 and FY2023 revenue endpoints are never shown, so the test cannot be re-derived. The selling-expense leg substituted a 3-year-average comparison for the rule's 'declining'.", recomputed: "if M11 = 0: moat_score 6, moats_confirmed 1, moat_class THIN; classification still GOOD"}
+emoat:
+  rules_checked: 47
+  fails:
+    - {id: "F6", severity: "MINOR", rule: "Completionist guard recount line", location: "07-emoat.md Section 3 and B07-emoat.yaml completionist_recount / evidence_mix", detail: "States 5 documented items but enumerates 4; the fifth exists only by counting the same actuarial attrition assumption twice (standalone p.94 and consolidated p.146).", recomputed: "documented = 4; guard threshold is 12, no consequence"}
+    - {id: "F7", severity: "MINOR", rule: "G1 war chest what-to-look-for list", location: "07-emoat.md Family G", detail: "G1 scored 0 citing an injected run constraint present in neither rule file, though debt-free status and internally funded capex are on the category's own list.", recomputed: "even a raw 2 x 1.0 gives em_score 6; band NONE holds against the 12 threshold"}
+    - {id: "F8", severity: "MINOR", rule: "Optionality register: realistic conversion window on every row", location: "07-emoat.md register rows 3 and 5", detail: "Window column reads 'unclear, no signal currently' on two of seven rows. Two watch items enter the monitoring checklist with no review date.", recomputed: ""}
+    - {id: "F9", severity: "MINOR", rule: "Optionality register scope (scored 0 or claim/inference-only)", location: "07-emoat.md register rows 4 and 6", detail: "H3 and F1 rows registered although both categories scored 1.0 on documented evidence. No double credit occurs, since register items are never scored.", recomputed: ""}
+    - {id: "F10", severity: "MINOR", rule: "Evidence taxonomy, three values only", location: "B07-emoat.yaml catalysts_12m entries 3 and 5", detail: "evidence_type 'documented if it appears' is a conditional, not a tier. This field feeds Pillar 3 catalyst proximity downstream.", recomputed: ""}
+    - {id: "F12", severity: "MINOR", rule: "Evidence taxonomy applied to every item", location: "B07-emoat.yaml evidence_mix", detail: "inference: 4 is never enumerated in the report, so the count is untraceable. No scoring consequence: no inference item was scored, so the 0.5x multiplier is nowhere in play.", recomputed: ""}
+    - {id: "F13", severity: "MINOR", rule: "Internal consistency of block versus report", location: "B07-emoat.yaml analyst_note", detail: "'22 of 23 rows return NO EVIDENCE FOUND or the reverse' contradicts the body and the recount line, which both give 20 of 23.", recomputed: "20 of 23"}
+valuation:
+  status: "PENDING PHASE 3"
+  rules_checked: 0
+  fails: []
+  note: "B10/B11 do not exist for this run. No Section 1B layer, Master Prompt Role 1, or FTTCP file was read. Verifier C rules 4, 6, 7, 9, 11, 12 not evaluated."
+expectation_ledger:
+  status: "PENDING PHASE 3"
+  present: false
+  note: "Stage 11 artifact. Not in phase-1 scope; absence here is not a REWORK trigger."
+business_understanding_narrative:
+  status: "PENDING PHASE 3"
+  present: false
+  note: "Stage 13 artifact. Not in phase-1 scope; absence here is not a REWORK trigger."
+stage7_categories_21_22: {present: true, cat21_score: 0, cat22_score: 0, both_legs_rule_applied: true, rework: false}
+recomputed_destination_pe: ""
+recomputed_decision: "concur: Gate 0 GOOD and Emerging Moat NONE hold under every recomputation above"
+framework_gaps:
+  - {id: "F11", severity: "MINOR", location: "prompts/07-emerging-moat-pipeline.md section 6D", detail: "The standard matrix for combined classification names its eight output labels but defines no cells mapping backward class against forward class to a label. The stage's GOOD plus NONE giving GOOD is reasoned but not independently re-derivable. Rule-file gap, not a stage defect; excluded from the acceptance denominator. FOR OPERATOR: this is a framework amendment candidate."}
+findings:
+  - {severity: "MAJOR", location: "B01-gate0.yaml history_downgrade / 01-gate0.md CLASSIFICATION", description: "history_downgrade set true on a business-mix comparability concern; the field's only rule trigger is a 3-4 year history and TAALTECH has 10. Classification correctly stayed GOOD, so the boolean contradicts the classification and risks an unauthorised downstream one-tier drop."}
+  - {severity: "MINOR", location: "01-gate0.md Block A preamble", description: "ROCE computed on Total Assets minus Other Liabilities instead of the mandated Total Assets minus Current Liabilities, under a formula heading that says do not substitute. FY2026 effect 0.08pp; no score change demonstrable."}
+  - {severity: "MINOR", location: "01-gate0.md Block B, B2", description: "FCF-positive proportion taken over 8 computable years rather than 10 available years, lifting B2 from 4 to 5. Recomputed core score 69, classification unchanged."}
+  - {severity: "MINOR", location: "01-gate0.md FCF table, FY2026", description: "FY2026 FCF stated 18.62 against 18.74 minus 0.13 = 18.61; cumulative FCF 181.15 not 181.16. No band change."}
+  - {severity: "MINOR", location: "01-gate0.md Block F, M11", description: "M11 = 5 turns on a 0.44pp CAGR gap whose FY2020 and FY2023 revenue endpoints are never shown, so the scored test is not re-derivable from the report's own inputs. Classification is GOOD whether M11 is 5 or 0."}
+  - {severity: "MINOR", location: "07-emoat.md Section 3 completionist recount", description: "Recount claims 5 documented items and enumerates 4; the fifth double-counts one actuarial assumption filed twice. evidence_mix.documented carries the same overcount."}
+  - {severity: "MINOR", location: "07-emoat.md Family G, G1", description: "G1 scored 0 on a run constraint absent from both rule files, despite debt-free status and internally funded capex sitting on the category's own evidence list. Band NONE holds regardless."}
+  - {severity: "MINOR", location: "07-emoat.md optionality register rows 3 and 5", description: "Two of seven register rows give no realistic conversion window, so two watch items carry no review date into the monitoring checklist."}
+  - {severity: "MINOR", location: "07-emoat.md optionality register rows 4 and 6", description: "H3 and F1 rows registered though both scored above zero on documented evidence; the register is defined for items that scored 0 or rest only on claim/inference evidence. No double credit results."}
+  - {severity: "MINOR", location: "B07-emoat.yaml catalysts_12m entries 3 and 5", description: "evidence_type given as 'documented if it appears', outside the three-value evidence taxonomy, in a field that feeds Pillar 3 catalyst proximity."}
+  - {severity: "MINOR", location: "B07-emoat.yaml evidence_mix", description: "inference: 4 is not enumerated anywhere in the report; the count cannot be traced to specific passages. No multiplier consequence."}
+  - {severity: "MINOR", location: "B07-emoat.yaml analyst_note", description: "Opens '22 of 23 rows return NO EVIDENCE FOUND or the reverse'; the body and the recount line both give 20 of 23. Cosmetic."}
+  - {severity: "MINOR", location: "prompts/07-emerging-moat-pipeline.md section 6D", description: "FRAMEWORK GAP, not a stage defect: the combined-classification standard matrix names eight labels but defines no cells, so its output cannot be independently re-derived. Excluded from the acceptance denominator."}
+critical_count: 0
+major_count: 1
+minor_count: 12
+acceptance_rate: 88
+acceptance_basis: "86 of 98 phase-1 rule checks passed (gate0 46/51, emoat 40/47); F11 excluded as a rule-file gap"
+rework_triggered: false

@@ -1,0 +1,72 @@
+stage: B09-tam
+company: "TAALTECH"
+run_date: "2026-09-10"
+model: claude-sonnet-5
+status: partial
+partial_reason: "WebSearch failed on 20 of 20 calls (100%). Most industry-report WebFetch attempts also failed (403/404/mismatched content). TAM and SAM are peer-aggregation floors, not top-down industry data."
+input_gaps:
+  - "Global/India top-down ER&D outsourced-services market size (industry report figures): NOT FOUND, all WebSearch and most market-research WebFetch attempts failed or returned internally inconsistent, rejected figures"
+  - "Consolidated (group) headcount: NOT FOUND, only standalone 521 disclosed; foreign subsidiary headcount unknown"
+  - "Realised billing rate, utilisation rate: NOT FOUND (already flagged at B04)"
+  - "Current market price / P/E for TAAL Tech: NOT FOUND this run (screener.in ticker guesses TAALENTER and TAAL both 404). NOTE FOR STAGE 10/11: the manifest carries cmp 5164.0 and market_cap_cr 1609.0 as at run date."
+  - "Vertical-level revenue split for peer set (LTTS/Cyient/Tata Elxsi by plant/aerospace/transport/civil vs other verticals): NOT FOUND, blocks a precise product-fit SAM subtraction"
+flags:
+  - {type: FLAG-SEARCH-FAILURE, reason: "WebSearch unavailable on 20/20 calls; TAM and SAM are both built as floors from peer-aggregation and analog proxies, not from top-down industry data. True TAM/SAM almost certainly larger than stated."}
+  - {type: FLAG-SOM-BASIS, reason: "SOM base uses Q1 FY27 (Jun 2026) annualised run-rate (~Rs259cr, up 41.6% YoY) as the fresh-evidence starting point per Amendment 26's basis hierarchy. This is one quarter of evidence; B04 already flags the cause of the jump as unresolved. Confirming observation: Q2/Q3 FY27 sustaining a Rs64-65cr+ quarterly run-rate."}
+  - {type: FLAG-SAM-SHARE-TENSION, reason: "SOM implies SAM-share gain of +10.6pp (3yr) and +16.6pp (5yr), above this framework's normal 1-2pp / aggressive 3-5pp bands. Most likely explanation is an undersized SAM proxy (built from only 2 analog peers under search-failure conditions), not SOM overreach; named so stage 11 does not misread a measurement artifact as an aggressive claim."}
+  - {type: FLAG-AI-UNRESOLVED, reason: "Management states it has not assessed AI's impact on the ER&D sector. Both a bearish (billable-hour compression) and bullish (demand expansion, safety-critical work slower to substitute) reading are evidenced; no data this run to call a direction. Position size should carry this uncertainty, not the SOM number."}
+market_definition: "Outsourced ER&D services delivered from India to global industrial and technology clients in TAAL Tech's named verticals (plant, aerospace, transport, civil/AEC engineering); excludes captive in-house R&D and EPC/construction execution."
+tam_cr: {conservative: 23678, realistic: 23875}
+sam_cr: 1100
+sam_pct_of_tam: 4.6
+som_3yr_cr: 313
+som_5yr_cr: 379
+som_implied_revenue_cagr: {yr3: 16.6, yr5: 13.9}
+current_sam_share_pct: 17.9
+revenue_headroom_x: 5.6
+tam_growth_pct: 4.1
+tam_growth_basis: "low-confidence proxy: FY24-FY26 revenue-weighted peer CAGR (LTTS/Cyient/Tata Elxsi/Onward), not a sourced industry figure"
+runway_class: "GOOD"
+runway_caveat: "likely understated: TAM and SAM are floors built under a total WebSearch failure"
+mgmt_claim_cr: 0
+mgmt_claim_ratio: "NOT APPLICABLE"
+mgmt_claim_read: "not applicable - management makes no TAM, market-size or industry-growth claim anywhere in the annual report"
+capacity_check: "not applicable to capex (asset-light); headcount cross-check instead - the SOM path implies 521 to about 1,000 engineers over five years (13.9-16.8% headcount CAGR), inside the peer-observed hiring band (Onward Technologies actual 18% five-year CAGR) but not yet demonstrated by TAAL Tech itself"
+methods_used:
+  - "Method 3: peer revenue aggregation (5 listed India ER&D pure-plays, floor only)"
+  - "Method 2 (adapted): bottom-up headcount x revenue-per-engineer, primary method for SOM per company archetype"
+  - "Method 1 top-down: NOT FOUND, search failure"
+  - "Method 5 global benchmark: NOT FOUND, search failure"
+  - "Method 4 import substitution: NOT APPLICABLE"
+stale_data_flags:
+  - {datapoint: "Sasken Technologies FY26 revenue Rs1,113cr (not used as growth anchor; likely M&A-driven jump from Rs551cr FY25, not organic ER&D demand)", source: "screener.in", year: "2026"}
+searches_performed:
+  - "WebFetch: screener.in/company/ONWARDTEC/consolidated (Onward Technologies FY24-26 revenue, OPM)"
+  - "WebFetch: screener.in/company/CYIENT/consolidated (Cyient FY24-26 revenue, OPM)"
+  - "WebFetch: screener.in/company/LTTS/consolidated (LTTS FY24-26 revenue, OPM)"
+  - "WebFetch: screener.in/company/TATAELXSI (FY23-26 revenue, OPM, retried after stale cache)"
+  - "WebFetch: screener.in/company/SASKEN/consolidated (Sasken FY23-26 revenue, OPM)"
+  - "WebFetch: ltts.com/about-us (LTTS self-reported USD 1.22bn revenue)"
+  - "WebFetch: ltts.com/investors (document link listing)"
+searches_skipped:
+  - "WebSearch x20: Nasscom/Zinnov ER&D market size, global ESO market size, India ER&D outsourcing market, LTTS/Cyient/Tata Elxsi/Onward/QuEST revenue, Nasscom strategic review, AI impact on ER&D billable hours, AI IT services headcount, aerospace engineering outsourcing market, engineering services outsourcing market 2030 - ALL returned 'web search tool is currently unavailable' (100% failure)"
+  - "WebFetch: zinnov.com/insights, zinnov.com/press-release/indias-er-and-d-market, zinnov.com/reports - no data / 404"
+  - "WebFetch: grandviewresearch.com (2 URLs) - 403 Forbidden"
+  - "WebFetch: mordorintelligence.com - 404 Not Found"
+  - "WebFetch: ibef.org (2 pages) - no ER&D-specific figures present"
+  - "WebFetch: nasscom.in strategic review - 406 Not Acceptable"
+  - "WebFetch: statista.com - returned unrelated cached content (mismatched)"
+  - "WebFetch: marketsandmarkets.com, precedenceresearch.com - returned internally inconsistent, implausible figures (751bn vs 2.57 trillion for overlapping category); rejected as unreliable"
+  - "WebFetch: fortunebusinessinsights.com - returned unrelated report"
+  - "WebFetch: cyient.com/investors - no market-sizing content found"
+  - "WebFetch: ltts.com Q1FY27 Investor Presentation PDF - could not parse (graphics-heavy PDF)"
+  - "WebFetch: ltts.com Integrated Annual Report FY26 PDF - exceeded 10MB fetch limit"
+downstream_candidates:
+  - {signal: "Top customer revenue concentration (unnamed, 24.05% of FY26 revenue)", entity_type: "end-customer", demand_link: "Single largest account; loss or slowdown directly moves T&M billing", likely_source: "AR Note 42 major customers disclosure, next AR", cadence: "event-driven", shared: false}
+  - {signal: "Listed India ER&D peer quarterly results (LTTS, Cyient, Tata Elxsi, Onward, Sasken)", entity_type: "counterparty", demand_link: "Sector demand-cycle read-across; only sourced growth-rate proxy this run", likely_source: "Company quarterly results / investor releases", cadence: "quarterly", shared: true}
+  - {signal: "USD-INR and EUR-INR exchange rates", entity_type: "macro", demand_link: "99.82% of revenue billed outside India; FX moves realised INR revenue directly", likely_source: "RBI reference rate / FBIL", cadence: "monthly", shared: false}
+  - {signal: "NA/Europe industrial and aerospace capex cycle (PMI, Boeing/Airbus order backlogs)", entity_type: "macro", demand_link: "AR names NA/Europe slowdown as explicit risk; TAAL Tech verticals track client capex cycles", likely_source: "ISM/Markit PMI; Boeing/Airbus order and delivery reports", cadence: "monthly", shared: false}
+  - {signal: "GenAI/AI tooling adoption pace in engineering services", entity_type: "macro", demand_link: "Direct swing factor on T&M revenue-per-engineer economics; management states it is unassessed", likely_source: "Nasscom/Zinnov AI-in-ER&D commentary; peer earnings-call AI commentary", cadence: "event-driven", shared: false}
+  - {signal: "India ER&D engineer wage and attrition trend (Bangalore)", entity_type: "macro", demand_link: "Hiring pace is the primary SOM lever; wage inflation/attrition determines if the 14-17% headcount CAGR is achievable", likely_source: "Nasscom talent-supply reports; peer (LTTS, Cyient) attrition disclosures", cadence: "quarterly", shared: false}
+demand_externally_verifiable: true
+analyst_note: "WebSearch failed 20/20 this run; most guessed industry-report URLs also failed. TAM (Rs23,678-23,875cr) and SAM (Rs1,100cr) are both explicit floors from peer aggregation and a two-peer analog proxy, not top-down industry data; true numbers are almost certainly larger. The load-bearing figure, the SOM-implied CAGR (13.9-16.6%), is built bottom-up off TAAL Tech's own filed headcount (521) and revenue-per-engineer (Rs36.5 lakh), anchored to Q1 FY27's fresh run-rate per Amendment 26, and cross-checked against Onward Technologies' achieved 18% five-year CAGR. The SAM-share-gain math looks aggressive only because the SAM denominator is thin; treat that as a measurement flag, not a SOM red flag."

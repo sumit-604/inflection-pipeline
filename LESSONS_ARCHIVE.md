@@ -516,6 +516,51 @@ Company memory written for both with the standing-ruling spear OVERRIDE.
   three. Stage 5, stage 6 and the two verifiers that audit them are 60.6% of the run.
 - Not a clean run.
 
+### 2026-09-10 — TAALTECH (TAAL Tech Ltd), /step1 intake, phase 1 to Halt 1
+- CONCURRENT SESSION COLLISION, new failure mode. Another Claude Code session
+  checked out run/indnippon-2026-09-10 in the same working tree mid-run. Every
+  TAALTECH working file vanished; stage 2 pass 2 failed and reported a
+  "corpus missing" mechanical failure. No commit was lost. Fix applied: move the
+  run into an isolated git worktree (.claude/worktrees/taaltech) and continue
+  there. Cost 106,763 wasted tokens. Two sessions must never share one checkout;
+  a worktree per run is the fix. `git worktree add` needs an operator permission
+  grant in auto mode.
+- VERIFIER A PATH FAILURE, a variant of the known false-CRITICAL pattern. The
+  first invocation resolved RELATIVE paths against the main checkout instead of
+  the worktree, found one stale leftover file, and returned seven CRITICAL
+  ANCHOR NOT FOUND findings with acceptance_rate 0. Re-invoked once with
+  ABSOLUTE paths plus the severity addendum: 127 numbers checked, 96.9%, zero
+  CRITICALs. Rule to consider promoting: pass verifier A absolute paths always,
+  and add "I could not open the file is never a CRITICAL" to its severity
+  semantics.
+- WEBSEARCH OUTAGE. Stage 8 lost roughly 75-80% of its calls; stage 9 lost 20 of
+  20. Both closed status: partial with searches_skipped populated, per the
+  orchestrator rule, and the synthesis named both. Who controls the 50.74%
+  holding company could not be established from this container. That is now the
+  first item on the Halt 1 live-verification list.
+- SCANNED FILINGS AND NO pdftoppm. Two of the three results PDFs were image-only
+  with no text layer, and pdftoppm was absent so the Read tool could not render
+  them either. Fix: pip install pymupdf, render each page to PNG, transcribe via
+  a mechanical subagent into page-marked .txt. Worth 150,132 tokens and it made
+  the inflection quarter readable. Every input PDF was pre-extracted to
+  page-marked .txt up front, per the standing LESSONS pattern; it worked.
+- COLLECTOR DEFECTS, all four recurred exactly as catalogued: sector_cap_row
+  defaulted to "Pharma / CDMO" (corrected to "Consulting / Engineering
+  services", 25x); the results folder came back empty and had to be filled from
+  the company IR page; screener P&L/BS/CF/Quarters CSVs were header-only with
+  only Data_Sheet populated; five input folders were absent and needed .gitkeep.
+- NO-CONCALL MODE ran cleanly end to end for the first time on a name with no
+  calls AND no investor presentation. Stage 5 degraded to the AR and results
+  commentary and graded C at the floor. Stage 6 became the run's most valuable
+  stage rather than a check: the peer transcripts were the only outside evidence
+  and they contradicted both charitable readings, the sector-demand explanation
+  and the normal-growth-working-capital explanation.
+- FRAMEWORK GAP FOUND BY VERIFIER C, for /compost: prompts/07-emerging-moat-pipeline.md
+  section 6D names the eight combined-classification labels but defines no cells
+  mapping backward class against forward class, so the output cannot be
+  independently re-derived.
+- Verdict PROCEED WITH FLAGS, confidence 64, fragility FRAGILE. Not a clean run.
+
 ## 2026-09-16 — /compost maintenance pass (LESSONS.md), operator-approved
 
 Actions: tag sector- or archetype-specific lessons, move closed items here,
@@ -598,3 +643,69 @@ Verifier C check 15 (PR #163, PR #164), and the LESSONS discipline changes
 (PR #165).
 
 Size: LESSONS.md 164 lines / 1555 words before, 119 lines / 1062 words after.
+
+## [2026-09-21] Shallow screen, third run — sixteen operator picks
+
+Not a /run-pipeline, /fttcp or /finalize session. Recorded here because the run
+produced two reusable findings and one collector defect, and because the
+commits reference them.
+
+Run record and per-name detail: `screens/README.md`, "Third run, 2026-09-21".
+Cards: `screens/cards/`. Corpus manifests: `screens/corpus/<TICKER>/MANIFEST.md`.
+
+**What broke or dragged**
+
+- **Egress denied for the second screen running.** The network policy answered
+  403 to CONNECT for docs.bull-ai.in, BSE, screener.in and every rating agency
+  site. The 2026-09-08 operator ruling was applied again: corpus built from Bull
+  AI's chunk reader, no PDF on disk. This is now the normal condition for screen
+  sessions, not an exception. The collector runs only on the operator's machine.
+- **Credit rating NOT FOUND on eleven of fifteen cards.** Same cause as the
+  second run. Step 10 of the shallow framework is structurally unavailable
+  without egress, except where a company files its own Regulation 30 rating
+  intimation, which Bull AI does index. INDORAMA and FILATEX both did. PRECOT's
+  rating filing is indexed but the chunk reader returns empty for it
+  (document 049528d0-0532-4412-900b-b2d26a4fc9de), which is the same
+  empty-reader defect seen on GOODLUCK, LXCHEM, IKIO and BEPL in the second run.
+- **Promoter holding NOT FOUND on nine of fifteen cards.** Bull AI indexes SAST
+  disclosures and annual report shareholding pages unevenly. Step 4 is one of
+  the four themes the operator named, and it is the weakest step in the run.
+- **Bull AI fiscal labels wrong again.** FILATEX document 2ff9d3d7 is indexed
+  as FY2027 Q2 and is the Q4/FY26 call of 4 May 2026. Same class of error as
+  QUADFUTURE in the second run. Treat the fiscal label as a hint and read the
+  document's own date line.
+- **Cards over the word band again**, 1,763 to 2,547 against 1,400 to 1,900.
+  Better than the second run's 2,600 to 3,800. The overrun is mostly tables:
+  trigger registers and financial trajectories.
+
+**Findings that generalise beyond these names**
+
+- **Cash-flow statements can fail to reconcile, and the framework should check.**
+  HSIL's audited FY26 standalone cash flow statement does not add up in either
+  year presented: section totals against the reported net increase, and opening
+  plus increase against closing. Doubling revenue with operating cash flow at
+  negative Rs 32.02 crore is the substantive finding; the arithmetic failure is
+  what makes it a PASS rather than a caveat. This sits alongside the existing
+  Kernex / Tipco / Rappid / Ind Swift cash guard: that guard catches
+  INDETERMINATE conversion, this catches a statement that does not foot.
+- **"EBITDA" is the wrong metric for a leased-store retailer under Ind AS 116,**
+  and ZOTA's management said so on its own call. Rent sits below EBITDA in
+  depreciation and finance cost. FY26 depreciation Rs 82.45 crore against
+  EBITDA Rs 25.98 crore. Any archetype with a large right-of-use asset base
+  needs profit before tax as the read, not EBITDA.
+- **A growing order book can be a quality downgrade.** FABCLEAN's book grew 55%
+  in a month, and grew by moving from validated pharma cleanrooms into
+  renewable-energy capex. Order-book growth alone does not establish a rung
+  climb; the sector mix behind it can move the business down the ladder while
+  the headline number rises.
+
+**Open action, collector**
+
+The screener.in CSV exports held at `runs/544332-2026-08-04/inputs/screening/`
+are empty files: row labels, no data. `screener-Quarters.csv`,
+`screener-Profit_Loss.csv`, `screener-Balance_Sheet.csv`,
+`screener-Cash_Flow.csv` and `screener-Data_Sheet.csv` all fail the same way.
+They contributed nothing to the FABCLEAN card and the whole card was rebuilt
+from Bull AI instead. `tools/collector/` should fail loudly when an export
+comes back with no rows, rather than writing the header and exiting clean.
+Recorded here against the shallow-screen commits of 2026-09-21.

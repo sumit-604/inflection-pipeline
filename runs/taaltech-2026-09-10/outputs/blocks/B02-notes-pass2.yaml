@@ -1,0 +1,9 @@
+stage: B02-notes
+pass: 2
+company: "TAALTECH"
+run_date: "2026-09-10"
+model: claude-sonnet-5
+status: complete
+pass_2_empty: false
+new_findings_count: 11
+output_path: "runs/taaltech-2026-09-10/outputs/reports/02-notes-pass2.md"

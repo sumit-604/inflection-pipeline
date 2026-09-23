@@ -561,6 +561,10 @@ kbd { display: inline-block; border: 1px solid #d8cdb2; border-bottom-width: 3px
 #trial-btn:active { transform: translateX(-50%) translateY(5px); box-shadow: 0 1px 0 #b4531a; }
 #trial-btn[hidden] { display: none; }
 
+#version-tag { position: absolute; right: 8px; bottom: 4px; font-size: 11px; opacity: 0.55; color: #3b2110; pointer-events: none; z-index: 5; }
+#error-bar { position: absolute; left: 50%; top: 56px; transform: translateX(-50%); max-width: 92vw; background: #c1121f; color: #fff; padding: 8px 14px; border-radius: 12px; font-size: 13px; z-index: 60; box-shadow: 0 3px 10px rgba(0,0,0,0.3); }
+#error-bar[hidden] { display: none; }
+
 </style>
   <canvas id="game-canvas"></canvas>
 
@@ -576,7 +580,7 @@ kbd { display: inline-block; border: 1px solid #d8cdb2; border-bottom-width: 3px
   <div id="start-screen" class="screen" hidden>
     <div class="start-box">
       <div class="hardhat">🎒</div>
-      <h1>School Days</h1>
+      <h1>School Days <small id="start-ver" style="font-size:14px;opacity:.6"></small></h1>
       <p class="subtitle" id="start-sub">A whole school life at Sunrise Public School, Suryanagar. Wake up at home, ride your cycle or catch the bus, answer in class, eat lunch with friends, collect your marks, and grow up class by class. From Class 12 press J for jobs: exams, interviews and real work.</p>
       <p class="pick-label" id="lang-label">Language</p>
       <div class="lang-buttons" id="lang-buttons"></div>
@@ -600,6 +604,8 @@ kbd { display: inline-block; border: 1px solid #d8cdb2; border-bottom-width: 3px
     <div id="compass" hidden><span id="compass-arrow">➤</span><span id="compass-text"></span><button id="waypoint-clear" title="Hide">✕</button></div>
     <div id="objective"><span id="objective-text">Good morning!</span></div>
     <button id="trial-btn" hidden>🏏 Swing!</button>
+    <div id="version-tag"></div>
+    <div id="error-bar" hidden></div>
 
     <button id="notebook-btn" title="Diary and marks (N)">📓</button>
     <button id="sound-btn" title="Sound on / off">🔊</button>
@@ -711,6 +717,7 @@ import * as THREE from 'three';
    label goes through L(). The voice follows the language.
    Questions and answers stay in English for now.
    ============================================================ */
+const GAME_VERSION = "v13";
 const LANGS = {
   en: { name: "English", voice: "en-IN" },
   hi: { name: "हिन्दी", voice: "hi-IN" },
@@ -5712,6 +5719,7 @@ class Game {
       return false;
     };
     this.applyOutfit();
+    { const job = JOBS.find((j) => j.id === this.progress.job); if (job) setTimeout(() => showToast(`👔 ${L("Uniform")}: ${job.name}. ${L("Press J to switch jobs.")}`, 3600, "good"), 1200); }
     this._gear = { ball: null, kite: null, line: null };
     this.player.setHeld(this.progress.held || null);
     this._gearChanged();
@@ -5840,6 +5848,7 @@ class Game {
   _startPhase(phase, restoring = false) {
     if (phase === "school" && this.working) phase = "morning";
     this.phase = phase; this.progress.phase = phase; saveProgress(this.profile, this.progress);
+    this.applyUniform();
     this._placePeople();
     if (phase === "morning") {
       this.periodIndex = 0; this.progress.period = 0;
@@ -6174,6 +6183,10 @@ class Game {
     const card = openPanel(`<div class="job-title-row"><h2>💼 ${L("Jobs")}</h2><button class="ghost-btn" id="jobs-close">${L("Okay")}</button></div>
       <p class="job-brief">${canWork ? L("Choose a job. Go to its place for the written exam and the interview. Hired? Work a shift there every day for a salary.") : L("Jobs open after Class 12. Right now: study, pass your exams, and get promoted. ({c})", { c: this.profileLabel })}</p>
       <div class="shop-list">${JOBS.map((j) => `<div class="cart-row"><div>${j.icon} <b>${j.name}</b>${pr.job === j.id ? " ✔ " + L("your job") : pr.hired.includes(j.id) ? " · " + L("hired") : ""}<small>${j.desc} · ${L("Place")}: ${j.place} · ${L("Salary")} ₹${j.salary}/${L("day")}</small></div>${canWork ? `<button class="use-btn" data-id="${j.id}">${pr.hired.includes(j.id) ? L("Go") : L("Apply")}</button>` : ""}</div>`).join("")}</div>`);
+    const pr2 = card.querySelector(".job-brief"); if (pr2) pr2.insertAdjacentHTML("afterend", `<div class="btn-row"><button class="big-btn" id="jobs-nets">🏏 ${L("Practice: cricket nets at the Stadium Ground")}</button><button class="big-btn" id="jobs-pens">⚽ ${L("Practice: penalties at the Stadium Ground")}</button></div>`);
+    const goGround = (fn) => { closePanel(); if (this.world.currentRoom) this._exitRoom(); if (this.player.riding) this.player.dismount(); const S = this.world.stadium; this.player.group.position.set(S.batX - 4, 0, S.z + 3); this.player._placeCamera(1); showToast(L("You walk over to the Stadium Ground."), 2000); setTimeout(fn, 300); };
+    card.querySelector("#jobs-nets").addEventListener("click", () => goGround(() => this._sundayCricket()));
+    card.querySelector("#jobs-pens").addEventListener("click", () => goGround(() => this._funPenalties()));
     card.querySelector("#jobs-close").addEventListener("click", () => closePanel());
     card.querySelectorAll(".use-btn").forEach((b) => b.addEventListener("click", () => {
       const job = JOBS.find((j) => j.id === b.dataset.id); closePanel();
@@ -6350,6 +6363,10 @@ class Game {
   // ---- On the field: a bowler bowls, a keeper guards. You press F. ----
   _startTrial(spec, total, onDone, who = "Coach") {
     if (this._trial) return;
+    try { this._startTrialField(spec, total, onDone, who); }
+    catch (e) { this._reportError(e); this._trial = null; const tb = document.getElementById("trial-btn"); if (tb) tb.hidden = true; this._timingGame(spec, total, onDone, who); }
+  }
+  _startTrialField(spec, total, onDone, who) {
     const S = this.world.stadium, P = this.player.group;
     if (this.world.currentRoom) this._exitRoom(); if (this.player.riding) this.player.dismount();
     const kind = spec.kind || "cricket";
@@ -6894,7 +6911,17 @@ class Game {
 
   _uiBlocking() { return this.dialogue.active || panelOpen() || !document.getElementById("notebook").hidden || !document.getElementById("controls-board").hidden || !document.getElementById("bigmap").hidden || !document.getElementById("parent-view").hidden; }
 
+  // Any runtime error shows on screen so it can be reported, instead of silently freezing a feature.
+  _reportError(e) {
+    console.error(e);
+    const msg = String(e && e.message ? e.message : e);
+    if (this._lastErr === msg) return; this._lastErr = msg;
+    const bar = document.getElementById("error-bar"); if (bar) { bar.hidden = false; bar.textContent = `⚠ ${GAME_VERSION}: ${msg}`; clearTimeout(this._errT); this._errT = setTimeout(() => { bar.hidden = true; this._lastErr = null; }, 12000); }
+  }
   _loop() {
+    try { this._loopBody(); } catch (e) { this._reportError(e); }
+  }
+  _loopBody() {
     requestAnimationFrame(this._loop);
     const dt = Math.min(this.clock.getDelta(), 0.05), elapsed = this.clock.elapsedTime;
     const blocked = this._uiBlocking() || !!this._park;
@@ -7242,7 +7269,9 @@ function boot() {
   const loadingScreen = document.getElementById("loading-screen");
   // If anything goes wrong while starting, say so on screen instead of
   // leaving a frozen loading bar.
+  window.addEventListener("unhandledrejection", (e) => { const g = window.__game; if (g && g._reportError) g._reportError(e.reason || e); });
   window.addEventListener("error", (e) => {
+    const g = window.__game; if (g && g._reportError && loadingScreen.hidden) g._reportError(e.error || e.message);
     const t = loadingScreen.querySelector(".loading-text");
     if (t && !loadingScreen.hidden) t.textContent = "Something went wrong while loading: " + (e.message || "unknown error") + ". Try reloading the page.";
   });
@@ -7266,6 +7295,7 @@ function boot() {
   let profile = "c3";
   try { profile = localStorage.getItem("school-days.profile") || "c3"; } catch (e) {}
   if (stageIndex(profile) === 4 && profile !== "c3") profile = "c3";
+  document.getElementById("start-ver").textContent = GAME_VERSION; document.getElementById("version-tag").textContent = "School Days " + GAME_VERSION;
   const langBox = document.getElementById("lang-buttons");
   const stageBox = document.getElementById("stage-buttons");
   const labels = () => {

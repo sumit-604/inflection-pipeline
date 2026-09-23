@@ -124,6 +124,27 @@ the District Court. Every workplace has your named seat with a bobbing
 "YOUR SEAT" arrow and a visitor's chair; "Go to work now" in the J panel
 takes you straight there.
 
+## Games Room, the Mess, birthdays, directions
+
+- The Games Room on campus, between the playground and the field, holds a
+  football, a cricket bat and ball, a basketball, rackets and skipping
+  ropes. Take one and go: the football scores practice goals at the east
+  posts, the bat opens six balls at the school pitch with Coach Vikram
+  bowling, the basketball opens hoops at the court by the assembly ground.
+- The Officers' Mess in New Town, north of the New Town street: Army, Navy,
+  Air Force, Police and Fire officers stand inside. Members are the
+  uniformed services (police, pilot, fire, coach, cricketer, footballer).
+  A mess function gives dinner, a toast, one question and a ₹200 envelope,
+  and celebrates the birthday of the day.
+- Birthdays for everyone: Maa (day 3), Papa (9), Dadi (13), Gudiya (17),
+  Moti (11), you (15), your spouse (1) and child (6), friends and teachers
+  on their own days, your boss on day 5. Family birthdays are a party at
+  dinner with a gift to choose; friends bring toffees at lunch; the boss
+  brings cake to the office.
+- Directions: if you have not got closer to your objective for about forty
+  seconds, the game says "Turn left, then go straight about 120 m" out loud
+  and on screen, and repeats until you arrive.
+
 ## Map search and family vehicles
 
 - Press G for the map. Type a place in the search box (RTO, hospital,

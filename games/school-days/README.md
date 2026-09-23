@@ -67,6 +67,30 @@ and cars run on every road.
   family nights, lab hands, Sunday cricket, Diwali, birthday.
 - Free practice at the Stadium Ground any day: cricket nets and penalties.
 
+## Working life
+
+- Shifts are real cases, not general questions. A police officer gets a
+  snatched cash box, a lost child, a crash at the crossroads, a missing
+  man, a fight at the tea house. A doctor gets fevers, chest pain, a cut
+  palm. Firefighters, teachers, lawyers, pilots, journalists, mechanics,
+  vets, chefs, engineers, scientists, bankers, farmers, librarians, radio
+  jockeys, hoteliers, shopkeepers, postmen, architects and coaches each
+  have their own case files. Five cases a shift, one right action each.
+- Ranks: Constable to DSP, Junior Doctor to Head of Department, and so on
+  for every job. Promotion at 5, 12, 20 and 30 shifts, with a salary rise
+  each time and a ceremony from the boss.
+- The boss stands by your desk in every workplace. Talk to them about
+  your rank, the shifts to the next promotion, and today's cases.
+- Family, friends and old teachers talk to a working adult about work,
+  not school. The chat box knows too.
+- Years: five shifts make a year. At 25 Maa brings proposals and you
+  choose who to marry; the spouse moves into the home. Two years later a
+  child is born and you name it. The child grows up at home, goes to
+  Nursery at four, marries at 23, and two years later your grandchild
+  arrives. Three generations on one sofa, and that night the story ends
+  peacefully with a flashback from Nursery to now. "Let a year pass" at
+  bedtime skips ahead when you want the story to move.
+
 ## Moti the dog
 
 Moti waits in the garden at home. Press E at him: pet him, feed him ₹5

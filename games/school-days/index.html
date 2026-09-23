@@ -1300,7 +1300,7 @@ function playBark() { if (muted) return; const c = getCtx(); if (!c) return; con
 const KEY = (profile) => `school-days.v1.${profile}`;
 function emptyProgress() {
   const marks = {}; for (const s of SUBJECT_IDS) marks[s] = { cw: 0, hw: 0, fa: [], term: [] };
-  return { day: 1, phase: "morning", period: 0, marks, games: [], attempts: {}, friendship: {}, money: 0, energy: 100, bag: [], wardrobe: [], held: null, hints: 0, outfit: {}, tiffin: null, homework: [], reports: [], diary: [], thought: [], conduct: 0, nights: 0, ended: false, incidents: 0, job: null, hired: [], shifts: 0, petHappy: 70, petWalks: 0 };
+  return { day: 1, phase: "morning", period: 0, marks, games: [], attempts: {}, friendship: {}, money: 0, energy: 100, bag: [], wardrobe: [], held: null, hints: 0, outfit: {}, tiffin: null, homework: [], reports: [], diary: [], thought: [], conduct: 0, nights: 0, ended: false, incidents: 0, job: null, hired: [], shifts: 0, petHappy: 70, petWalks: 0, age: null, workDays: 0, spouse: null, marriedAt: null, child: null, childBornAt: null, childMarried: false, grandchild: null, generations: 1, payToday: 0 };
 }
 function loadProgress(profile) {
   try {
@@ -1907,7 +1907,7 @@ class UI {
   }
   refreshRank() {
     const g = this.game, pr = g.progress;
-    { const job = JOBS.find((j) => j.id === pr.job); this.rankText.textContent = job && g.working ? `${job.icon} ${job.name} · ${L("Day")} ${pr.day}` : `${g.profileLabel} · ${L("Day")} ${pr.day} · ${L("Term")} ${pr.day <= 10 ? 1 : 2}`; }
+    { const job = JOBS.find((j) => j.id === pr.job); this.rankText.textContent = job && g.working ? `${job.icon} ${rankName(job, pr.shifts)} · ${job.name} · ${L("Age")} ${pr.age}` : g.working ? `${L("Graduate")} · ${L("Age")} ${pr.age} · ${L("Day")} ${pr.day}` : `${g.profileLabel} · ${L("Day")} ${pr.day} · ${L("Term")} ${pr.day <= 10 ? 1 : 2}`; }
     document.getElementById("star-text").textContent = g.clockText();
     document.getElementById("safety-text").textContent = String(g.termMarks());
     document.getElementById("money-text").textContent = fmtMoney(pr.money);
@@ -1921,7 +1921,7 @@ class UI {
   _render() {
     const g = this.game, pr = g.progress;
     let html = `<div class="section-label">Today</div><ul class="job-list"><li><div class="job-title">Day ${pr.day}, Term ${pr.day <= 10 ? 1 : 2}${g.isFaDay() ? " · FA day (tests in every subject)" : ""}${g.isTermDay() ? " · TERM EXAM day" : ""}</div><div class="job-concept">${g.objective ? "Now: " + g.objective.label : ""}</div></li></ul>`;
-    if (g.working) { const job = JOBS.find((j) => j.id === pr.job); html += `<div class="section-label">${L("Work day")}</div><ul class="job-list"><li><div class="job-title">${job ? `9:00 · ${L("Shift at")} ${job.place} · ${job.boss} · ₹${job.salary}` : L("No job yet. Press J.")}</div></li><li><div class="job-title">5:00 · ${L("Home, family, rest")}</div></li></ul>`; }
+    if (g.working) { const job = JOBS.find((j) => j.id === pr.job); html += `<div class="section-label">${L("Family")}</div><div class="job-goal">${g.familyLine()} · ${L("Generations")}: ${pr.generations || 1} / 3${job ? ` · ${rankName(job, pr.shifts)}, ${pr.shifts} ${L("shifts")}, ₹${salaryFor(job, pr.shifts)}/${L("shift")}` : ""}</div>`; html += `<div class="section-label">${L("Work day")}</div><ul class="job-list"><li><div class="job-title">${job ? `9:00 · ${L("Shift at")} ${job.place} · ${job.boss} · ₹${job.salary}` : L("No job yet. Press J.")}</div></li><li><div class="job-title">5:00 · ${L("Home, family, rest")}</div></li></ul>`; }
     else html += `<div class="section-label">Timetable</div><ul class="job-list">${PERIODS.map((p, i) => `<li><div class="job-title">${p.time} · ${p.name}${SUBJECTS[p.id] ? " · " + SUBJECTS[p.id].teacher : p.id === "games" ? " · Coach Vikram" : ""}${g.phase === "school" && g.periodIndex === i ? " ◀ now" : g.phase === "school" && i < g.periodIndex ? " ✔" : ""}</div></li>`).join("")}</ul>`;
     html += `<div class="section-label">Marks this term</div><table class="report"><tr><th>Subject</th><th>Class work</th><th>Homework</th><th>FA</th><th>Term</th><th>Total</th></tr>`;
     for (const s of SUBJECT_IDS) { const m = pr.marks[s]; html += `<tr><td>${SUBJECTS[s].icon} ${SUBJECTS[s].name}</td><td>${m.cw}</td><td>${m.hw}</td><td>${m.fa.length ? m.fa.join(", ") + " /10" : "–"}</td><td>${m.term.length ? m.term.join(", ") + " /20" : "–"}</td><td class="g">${g.subjectTotal(s)}</td></tr>`; }
@@ -5092,6 +5092,9 @@ const PERSONA = {
   gudiya:  { name: "Gudiya", age: 4, lives: "with you, silly! In our house", job: "I go to playschool. I am the line leader", likes: "my doll Chinki, bubbles and toffee", dislikes: "karela", food: "Maggi", colour: "pink", hobby: "hide and seek", you: "Bhaiya", call: "Bhaiya" },
   friend:  { name: "", age: 0, lives: "in the colony, near the park", job: "I am a student, same class as you", likes: "cricket, cartoons and samosas", dislikes: "homework on Friday", food: "samosa", colour: "green", hobby: "cricket", you: "yaar", call: "yaar" },
   teacher: { name: "", age: 38, lives: "near the market, ten minutes from school", job: "I teach at Sunrise Public School", likes: "a quiet class and a neat notebook", dislikes: "late homework", food: "idli", colour: "blue", hobby: "reading", you: "child", call: "child" },
+  boss:    { name: "", age: 50, lives: "in New Town, near the court", job: "I run this office, and I watch who works and who talks", likes: "punctual people, closed cases and strong coffee", dislikes: "excuses", food: "idli sambar", colour: "navy", hobby: "chess", you: "officer", call: "officer" },
+  spouse:  { name: "", age: 26, lives: "here, with you, in our home", job: "I work too, and I run this house with you", likes: "evening tea with you, Sunday park walks and Moti", dislikes: "you skipping lunch", food: "paneer", colour: "yellow", hobby: "gardening", you: "jaan", call: "jaan" },
+  child:   { name: "", age: 6, lives: "with you and Maa, in our house", job: "I go to Sunrise Public School, like you did", likes: "cartoons, Moti and the swing", dislikes: "karela and homework", food: "Maggi", colour: "green", hobby: "drawing", you: "Papa", call: "Papa" },
   other:   { name: "", age: 45, lives: "in Shanti Nagar, like you", job: "I work in the colony", likes: "a good chat and hot chai", dislikes: "traffic", food: "chai and biscuits", colour: "yellow", hobby: "walking", you: "beta", call: "beta" },
 };
 const STOP = new Set("i me my you your yours we our us it its is are am was were be been do does did can could will would should shall may might have has had the a an and or but so to of in on at for with about from by as this that these those what which who whom whose where when why how not no yes ok okay please tell say give want like love hate know think there here then than too very really just also again still ever never always some any much many more most what's whats how's its it's im i'm you're dont don't didn't cant can't isn't aren't hi hello hey ho hain hai ka ki ke ko se mein na ne kya kyu kyon kaise kab kahan kaun aur ya to bhi ye yeh woh wo tum aap main mera meri tera teri tumhara apna nahi haan ji go went come came get got make made take took saw see seen today tomorrow yesterday now big small new old one two good bad nice thing things something anything everything lot lots".split(/\s+/));
@@ -5132,7 +5135,7 @@ function chatTopic(t) {
   return words.length ? words.slice(-2).join(" ") : "";
 }
 function chatReply(kind, text, ctx = {}) {
-  const raw = (text || "").trim(), t = raw.toLowerCase();
+  const raw = (text || "").trim(); let t = raw.toLowerCase();
   const P = Object.assign({}, PERSONA[kind] || PERSONA.other, { name: ctx.name || (PERSONA[kind] || {}).name || "I" });
   const you = P.call;
   const has = (...ks) => ks.some((k) => t.includes(k));
@@ -5146,12 +5149,29 @@ function chatReply(kind, text, ctx = {}) {
     return kind === "gudiya" ? `Umm... ${ans} Maa told me!` : kind === "teacher" ? `${ans} Now you tell me: how did I get that?` : `${ans} Check it once yourself, ${you}.`;
   }
   // 2. Greetings and manners.
-  if (/^(hi|hello|hey|namaste|namaskar|hola|good (morning|afternoon|evening|night)|salaam|jai)\b/.test(t)) return { maa: `Good ${ctx.timeWord || "day"}, ${you}. Did you eat?`, papa: `Hello, ${you}. Come, sit with me.`, dadi: `Jeete raho, ${you}. Come, sit near Dadi.`, gudiya: `Hiii ${you}! Play with me, na?`, friend: `Hey! What's up, ${you}?`, teacher: `Good ${ctx.timeWord || "day"}. Stand straight when you talk, please.`, other: `Namaste, ${you}. All well at home?` }[kind];
+  const greetRe = /^(hi|hello|hey|namaste|namaskar|hola|good (morning|afternoon|evening|night)|salaam|jai)\b[\s,!.]*/;
+  if (greetRe.test(t) && t.replace(greetRe, "").split(/\s+/).filter(Boolean).length > 2) { t = t.replace(greetRe, ""); }
+  else if (greetRe.test(t)) return { maa: `Good ${ctx.timeWord || "day"}, ${you}. Did you eat?`, papa: `Hello, ${you}. Come, sit with me.`, dadi: `Jeete raho, ${you}. Come, sit near Dadi.`, gudiya: `Hiii ${you}! Play with me, na?`, friend: `Hey! What's up, ${you}?`, teacher: `Good ${ctx.timeWord || "day"}. Stand straight when you talk, please.`, other: `Namaste, ${you}. All well at home?` }[kind];
   if (has("bye", "see you", "good night", "going now", "chalo")) return { gudiya: "Nooo, don't go! Okay, bye Bhaiya.", teacher: "Go on. Homework tonight, no excuses.", maa: "Go carefully. Come back before dark." }[kind] || `Bye, ${you}. Take care.`;
   if (has("thank", "shukriya", "dhanyavad")) return { maa: "You are welcome, my child.", papa: "Anytime, champ.", dadi: "Bless you.", gudiya: "You're welcome! Now play?", friend: "No thanks between friends, yaar.", teacher: "Thank yourself: you did the work." }[kind] || "Most welcome.";
   if (has("sorry", "maaf")) return { maa: "It is fine, beta. Just do not do it again.", papa: "Sorry is good. Fixing it is better. What will you do differently?", dadi: "Come here. All is forgiven.", gudiya: "Okay... but give me your chocolate.", friend: "Chill, yaar. We are friends.", teacher: "Accepted. Now show me you have learned." }[kind] || "No problem, child.";
-  // 2b. Requests: "can you drive me to school", "give me money", "help me with homework", "tell me a story", "play with me".
   const asking = has("can you", "could you", "will you", "would you", "please", "pls", "plz", "take me", "drop me", "drive me", "give me", "buy me", "help me", "play with me", "tell me", "teach me", "let's", "lets ", "come with", "make me", "cook", "i want", "want to", "chahiye", "mujhe", "sakte ho", "sakti ho", "karo", "chalo", "le chalo", "do na", "can we", "shall we", "may i");
+  // 2a. News about yourself: "I got a job", "I am bigger than you", "I won", "I am married".
+  if (/^(i |i'm|im |me |my )/.test(t) || has(" i have", " i got", " i am", " i'm", "i've")) {
+    const news = has("job", "hired", "promotion", "promoted", "salary", "office", "duty") ? "job" : has("married", "wedding", "wife", "husband") ? "married" : has("baby", "child", "son", "daughter", "born") ? "baby" : has("bigger", "older", "taller", "stronger", "senior", "grown") ? "bigger" : has("won", "topper", "first", "goal", "six", "medal", "badge", "prize") ? "won" : has("sad", "tired", "sick", "scared", "hurt", "angry", "bored") ? "low" : has("happy", "excited", "fine", "good", "great") ? "high" : has("hungry") ? "" : "";
+    const R = {
+      job: { maa: `A job! My child, a working person. Eat properly at that office, and send me your first salary photo.`, papa: `A job, champ! Now save half, spend half. And listen to your boss like you never listened to me.`, dadi: `A job? Jeete raho. Buy your Dadi a shawl with the first salary. Blue.`, gudiya: `Bhaiya has a job! Bring me a toffee from the office. Every day!`, friend: `A JOB?! Yaar, congratulations! Treat at the canteen, big shot. Don't forget us small people.`, teacher: `A job! My student, employed. Now you will understand why I nagged about homework.`, boss: `Yes, you have a job. Keep it: cases closed, on time, every day.`, spouse: `I know, silly, I married you. Now tell me about today.`, child: `I know, Papa! You wear a uniform!`, other: `A job! Congratulations, beta. Sweets for the colony?` },
+      married: { maa: `Married, and you tell me like news? I arranged it, beta.`, papa: `Married life, champ: listen more, argue less. Ask me how I know.`, dadi: `Married! Now the grandchild. Do not make me wait.`, gudiya: `Bhabhi is so nice! Better than you!`, friend: `Married! You, who cried at the bus stop in Class 3. Party?`, teacher: `Married! Bring your partner to school day.`, other: `Married! Bless you both, beta.` },
+      baby: { maa: `A baby! Come, give the child to me. You go rest.`, papa: `A baby! Champ, you are Papa now. Welcome to the club.`, dadi: `Three generations under one roof. My eyes have seen enough.`, gudiya: `I am an aunt! Chachi! Give me the baby!`, friend: `Congratulations, yaar! Uncle Aarav reporting for duty.`, other: `A baby! Sweets, beta, sweets.` },
+      bigger: { maa: `Bigger, yes. Wiser, we will see. Eat your dinner.`, papa: `Bigger than me? Then you carry the shopping bags, champ.`, dadi: `Bigger than me, everyone is. Sit, so I can see your face.`, gudiya: `You are NOT bigger than Papa! Papa is the biggest!`, friend: `Bigger, maybe. Faster? Race you to the gate. Loser buys samosas.`, teacher: `Bigger, and hopefully wiser. Stand straight.`, boss: `Size is not rank. Cases are rank.`, child: `You are the biggest, Papa! Lift me!`, other: `Big and strong, beta. Help me carry this.` },
+      won: { maa: `You won! I knew it. Kheer tonight.`, papa: `Winner! That is my child. Show me the medal.`, dadi: `Jeete raho. You always win when you try.`, gudiya: `You won! I told everyone you would!`, friend: `You won?! Yaar, champion! Autograph please.`, teacher: `Won! Effort shows. Tell the class tomorrow.`, boss: `Good. Winners close cases too.`, other: `Well done, beta. Sweets?` },
+      low: { maa: `Come here. Tell me what happened, slowly. Then we fix it.`, papa: `Bad days pass, champ. What is it? I am listening.`, dadi: `Sit with me. Sadness is lighter when shared.`, gudiya: `Don't be sad! Here, my toffee.`, friend: `Hey, I am here, yaar. What happened?`, teacher: `Talk to me after class. Nobody stays down alone here.`, boss: `Rest tonight. Tomorrow, come back strong.`, spouse: `Come here. Tea first, then talk.`, child: `Don't be sad, Papa. I will hug you.`, other: `Everything passes, beta.` },
+      high: { maa: `Seeing you happy makes my day, beta.`, papa: `Good! Keep that face on.`, dadi: `Happiness suits you.`, gudiya: `Yay! Me too! Dance!`, friend: `Same, yaar! Good day.`, teacher: `Good. Bring that energy to class.`, boss: `Good. Happy workers close cases faster.`, spouse: `Then I am happy too.`, child: `Yay Papa!`, other: `Good, good, beta.` },
+    };
+    if (news && R[news]) return R[news][kind] || R[news].other;
+    const tp = chatTopic(t); if (tp && !asking) return { maa: `You ${t.replace(/^i /, "")}? Achha. Tell me more, beta.`, papa: `${tp}? Is that so. Tell me properly, champ.`, dadi: `${tp}... good, good. Come, sit.`, gudiya: `${tp}! Hehe. Me too!`, friend: `${tp}? Cool, yaar. Same here, kind of.`, teacher: `${tp}. Noted. Now, about your work.`, boss: `${tp}. Fine. Back to the cases.`, spouse: `${tp}? Tell me over tea.`, child: `${tp}? Okay Papa!` }[kind] || `${tp}? Achha, beta.`;
+  }
+  // 2b. Requests: "can you drive me to school", "give me money", "help me with homework", "tell me a story", "play with me".
   if (asking) {
     const can = (n) => (ctx.canAct ? ctx.canAct(n) : false), go = (n) => (ctx.act ? ctx.act(n) : false);
     if (has("drive", "car", "drop", "take me to school", "school by car", "gaadi", "gadi", "lift")) {
@@ -5209,6 +5229,9 @@ function chatReply(kind, text, ctx = {}) {
     return `Which place, ${you}? Say the name: the hospital, the market, the library, the stadium, the airport...`;
   }
   if (has("what are you doing", "kya kar rahe", "kya kar rahi", "what do you do all day", "busy")) return ({ maa: { morning: "Packing tiffins and hurrying everyone out of the door.", school: "Cleaning, then the music class at eleven.", over: "Waiting for you with tea.", evening: "Making dinner: dal, rice and rotis.", night: "Putting Gudiya to bed. Then I sleep too." }, papa: { morning: "Reading the paper before the office.", school: "At the office, with the accounts.", over: "Driving back. Traffic!", evening: "Helping you with homework, if you let me.", night: "Ludo or a movie, then bed." }, dadi: { morning: "My prayers, then knitting.", school: "Knitting this sweater for you.", over: "Resting my knees.", evening: "Waiting for dinner and gossip.", night: "Thinking of a story for you." }, gudiya: { morning: "Feeding Chinki my doll.", school: "Playschool! We painted a cow.", over: "Building a block tower. Don't knock it!", evening: "Hiding. You are supposed to find me.", night: "NOT sleeping. Ludo!" }, friend: { morning: "Running for the bus, same as you.", school: `In class, like you. ${ctx.period ? "It is " + ctx.period + "." : ""}`, over: "Going home. Cricket in the lane later?", evening: "Homework. Boring.", night: "Sleeping soon, or Maa will shout." }, teacher: { morning: "Marking notebooks before the bell.", school: "Teaching, as always.", over: "Staff meeting, then home.", evening: "Checking your homework. Yes, yours.", night: "Reading. Teachers read too." } }[kind] || { morning: "Starting the day, beta.", school: "Working.", over: "Heading home.", evening: "Resting.", night: "Sleeping soon." })[ctx.phase || "morning"];
+  // 3c. A working adult: school words mean the old days, not today.
+  if (ctx.working && has("school", "homework", "class", "exam", "marks", "teacher", "tiffin")) return { maa: `School days are over, beta. Now it is ${ctx.job ? "your " + ctx.job + " work" : "your career"} I worry about. Did you eat?`, papa: `School? Ha. You are a ${ctx.job || "graduate"} now. ${ctx.shifts || 0} shifts. Any hard case today?`, dadi: `You were such a small thing at that gate. Now look, a ${ctx.job || "grown person"}. Time runs, beta.`, gudiya: `I am the one in school now, Bhaiya! Class 8. You just go to your office.`, friend: `Those were the days, yaar. Now it is bosses and deadlines. Cricket on Sunday?`, teacher: `You are my old student, not my current one. Tell me about your work instead.`, boss: `Your school marks got you the interview. Your cases keep you the job.`, spouse: `Our child will go to that school one day. Same gate.`, child: `School was fun! Mrs. Rao asked about you!` }[kind] || `School? Long finished, beta. You are a working person now.`;
+  if (kind === "boss") { if (has("promotion", "rank", "salary", "raise")) return `Promotion comes from closed cases, not from asking. ${ctx.nextRank ? ctx.nextRank : "Keep working."}`; if (has("case", "work", "today", "duty")) return "Five cases on your desk. Read them twice, act once."; if (has("leave", "holiday", "off")) return "Sunday is your holiday. Weekdays, the city needs you."; }
   // 4. Questions about your own day, answered from the game.
   if (has("marks", "score", "number", "kitne number", "result", "rank", "topper", "grade")) return `${has("today") ? `Today you have ${ctx.marksToday || 0} marks. ` : ""}This term you have ${ctx.termMarks || 0} marks so far${ctx.rank ? `, rank ${ctx.rank} in the last report` : ""}. ` + ({ maa: "Effort matters more than the number. Did you try?", papa: "Every mark counts. Hand up in every class.", dadi: "Marks come and go. Kindness stays.", gudiya: "Is that a lot? I got a star sticker!", friend: "You always score more than me. Teach me.", teacher: "Raise your hand more. Marks follow attention." }[kind] || "Top the class and make your parents proud.");
   if (has("money", "paisa", "rupee", "wallet", "pocket", "how much do i have", "kitne paise")) return `You have ${ctx.money || "₹0"} in your wallet. ` + ({ maa: "Spend it wisely and count your change.", papa: "Save half, spend half. That is the rule.", dadi: "Take ₹10 from my tin if you need. Shh.", gudiya: "Buy me a toffee!", friend: "Lend me ₹5? I return it tomorrow.", teacher: "Money is not for the classroom." }[kind] || "Everything is expensive these days.");
@@ -5400,6 +5423,161 @@ function petReply(text) {
 BADGES.push({ id: "moti", icon: "🐕", name: "Moti's best friend", test: (pr) => (pr.petHappy || 0) >= 95 && (pr.petWalks || 0) >= 3 });
 BADGES.push({ id: "rain", icon: "☔", name: "Rainy day", test: (pr) => !!pr.rainDay });
 const CARROM = { id: "carrom", name: "Carrom (rainy day)", icon: "🎯", cue: "Rain outside. Carrom in the hall: flick when the striker is in the green.", hit: "Pocketed!", miss: "Missed the pocket!", verb: "Flick" };
+
+// ===== src/school/life2.js =====
+/* ============================================================
+   life2.js — working life and the years after: real cases for
+   every job, ranks and promotion, the boss, marriage, children,
+   grandchildren, and the peaceful end after three generations.
+   ============================================================ */
+const STAGE_AGE = { nursery: 3, kg: 4, c1: 6, c2: 7, c3: 8, c4: 9, c5: 10, c6: 11, c7: 12, c8: 13, c9: 14, c10: 15, c11: 16, c12: 17, college: 18, graduate: 21 };
+const RANK_STEPS = [0, 5, 12, 20, 30];           // shifts needed for rank 0..4
+const RANK_MULT = [1, 1.3, 1.6, 2.0, 2.5];
+const RANKS = {
+  police: ["Constable", "Head Constable", "Sub-Inspector", "Inspector", "DSP"],
+  doctor: ["Junior Doctor", "Resident", "Senior Doctor", "Consultant", "Head of Department"],
+  teacher: ["Assistant Teacher", "Teacher", "Senior Teacher", "Vice Principal", "Principal"],
+  firefighter: ["Fireman", "Leading Fireman", "Sub-Officer", "Station Officer", "Chief Fire Officer"],
+  pilot: ["Cadet", "Second Officer", "First Officer", "Captain", "Chief Pilot"],
+  lawyer: ["Junior Advocate", "Advocate", "Senior Advocate", "Partner", "Judge"],
+  cricketer: ["Net Bowler", "District Player", "State Player", "Team Regular", "Captain"],
+  footballer: ["Trainee", "Reserve", "First Team", "Star Striker", "Captain"],
+  engineer: ["Intern", "Software Engineer", "Senior Engineer", "Tech Lead", "CTO"],
+  scientist: ["Research Assistant", "Scientist", "Senior Scientist", "Principal Scientist", "Director"],
+  banker: ["Clerk", "Officer", "Senior Officer", "Branch Manager", "Regional Head"], cityBanker: ["Clerk", "Officer", "Senior Officer", "Branch Manager", "Regional Head"],
+  generic: ["Trainee", "Junior", "Senior", "Manager", "Director"],
+};
+function rankIndex(shifts) { let r = 0; for (let i = 0; i < RANK_STEPS.length; i++) if (shifts >= RANK_STEPS[i]) r = i; return r; }
+function rankName(job, shifts) { const list = RANKS[job.id] || RANKS.generic; return list[rankIndex(shifts)]; }
+function salaryFor(job, shifts) { return Math.round(job.salary * RANK_MULT[rankIndex(shifts)]); }
+
+// Cases: a scene, then the one right thing to do. Written for children: no gore, real consequences.
+const C = (t, q, a, ...d) => ({ t, q, a, ch: [a, ...d] });
+const JOB_CASES = {
+  police: [
+    C("A shopkeeper on the market street runs to the station: 'Two men on a scooter snatched my cash box, ₹8,000, and drove towards the avenue!'", "What do you do first?", "Note the scooter's colour and number, alert the checkpost by radio, then go", "Chase them alone on your cycle", "Tell him to come back tomorrow", "Ask why he kept cash"),
+    C("A six year old girl is crying at the bus stop. She does not know where her mother is.", "What is right?", "Stay with her, calm her, announce her name at the station and the market", "Leave her, she will find the way", "Scold her for wandering", "Send her home in an auto alone"),
+    C("Two cars have hit each other at the crossroads. One driver is holding his arm. Traffic is piling up.", "Order of work?", "Call the ambulance, keep people back, then move traffic, then take statements", "Take statements first", "Argue about whose fault it is", "Drive away, it is not your beat"),
+    C("At night the Sweet Shop's back window is broken. Nothing seems taken. The owner blames the neighbour's boy without proof.", "Your move?", "Photograph the scene, look for footprints and fingerprints, question everyone calmly", "Arrest the boy because the owner said so", "Close the case, nothing was stolen", "Tell the owner to fight it out"),
+    C("An old man reports his gold chain stolen on the bus. He describes a tall man with a red bag.", "What next?", "Write a proper FIR, share the description with bus-route constables, check the depot cameras", "Say nothing can be done", "Search every tall man in town", "Ask him for money to start the search"),
+    C("A big van jumps the red light near the school at 8:00, children on the zebra.", "Right action?", "Stop the van, fine the driver, warn him, and stand at the crossing every morning this week", "Let it go, he was in a hurry", "Shout and throw your cap", "Fine the children for slow crossing"),
+    C("A woman says her husband has been missing since yesterday. He never came home from the Tech Park.", "First steps?", "Take his photo and details, call the Tech Park and City Hospital, alert the night patrol", "Wait 3 days as a rule", "Tell her he probably went to a friend", "Send her to another station"),
+    C("A fight breaks out at the Old Town Tea House. Two men shouting, one has a stick.", "What do you do?", "Step in firmly with your partner, take the stick, separate them, cool them down, then hear both", "Join the crowd and watch", "Hit the man with the stick first", "Arrest everyone at the tea house"),
+    C("A boy of 14 is caught with a stolen bicycle. He is scared and says he was hungry.", "Correct way?", "Call his parents, return the cycle, register it properly, and connect the family with the welfare officer", "Lock him up with adults", "Beat him", "Let him keep it"),
+    C("You find ₹2,000 lying on the road with no one around.", "What do you do?", "Deposit it at the station as found property and record it", "Keep it, finders keepers", "Buy sweets for the station", "Throw it away"),
+  ],
+  doctor: [
+    C("A boy comes with high fever for three days, body pain and red eyes. It is monsoon season.", "Likely first step?", "Test for dengue and malaria, give fluids and paracetamol, no aspirin", "Give strong antibiotics at once", "Send him home, it is only a cold", "Operate"),
+    C("A woman has chest pain spreading to her left arm and is sweating.", "What do you do?", "Treat it as a heart emergency: ECG now, aspirin, oxygen, call the cardiac team", "Give her a cough syrup", "Ask her to walk it off", "Book an appointment for next week"),
+    C("A child has a deep cut on the palm from broken glass. It is bleeding.", "Right order?", "Press to stop bleeding, clean, check for glass, stitch, tetanus shot", "Stitch first, clean later", "Apply turmeric and send home", "Give a painkiller only"),
+    C("An old man is dizzy and has fainted twice today. He takes blood pressure tablets.", "What to check first?", "Blood pressure lying and standing, sugar, and his tablet doses", "His eyesight", "Send him for a dance class", "Nothing, old people faint"),
+    C("A patient asks you to write a certificate saying he is sick, but he is well and wants a holiday.", "Correct?", "Refuse politely; a certificate must be true", "Write it for ₹200", "Write it, he is a friend", "Report him to police"),
+    C("A baby is vomiting and has loose motions since morning. The mother is worried.", "First advice?", "ORS in small sips, keep breastfeeding, watch for dryness, come back if no urine in 6 hours", "Stop all fluids", "Give adult medicine in half dose", "Only prayers"),
+  ],
+  firefighter: [
+    C("Smoke from the third floor of Sunrise Apartments. People are on the balconies.", "First move?", "Cut the power, ladder to the balconies, evacuate floor by floor from the top of the smoke", "Break every window", "Wait for the smoke to clear", "Send the children in first"),
+    C("A kitchen fire: oil in a pan is burning at the Grand Hotel.", "What do you use?", "A lid or fire blanket, or a CO2 extinguisher. Never water on oil", "A bucket of water", "A fan to blow it out", "Sugar"),
+    C("A car has fallen into the canal. A man is on the roof of the car.", "Right action?", "Throw the rope and float, pull him from the bank; do not jump in without a line", "Jump in at once", "Ask him to swim", "Wait for the police"),
+    C("Diwali night: a cracker box catches fire in a lane full of children.", "Do?", "Move the children back, douse with water and sand, check for more boxes", "Light the rest quickly", "Let it burn out", "Scold the children only"),
+    C("A kitten is stuck in a drainpipe. The children are crying.", "Do?", "Yes, help: small tools, patience, a towel, and a happy rescue", "Refuse, only humans", "Break the whole pipe", "Pour water in"),
+  ],
+  teacher: [
+    C("Aarav has not done his homework for three days. He looks tired.", "Best response?", "Talk to him alone; ask what is happening at home before any punishment", "Make him stand outside", "Zero for the term", "Ignore it"),
+    C("During the test Rohan is copying from Diya.", "What do you do?", "Quietly move him, take the paper after the test, speak to him alone and to his parents", "Tear his paper in front of the class", "Do nothing", "Punish Diya"),
+    C("Half the class did not understand fractions.", "Next class?", "Teach it again a different way, with paper strips and pizza pictures", "Move on, the syllabus is waiting", "Blame the children", "Give a harder test"),
+    C("A parent shouts at you about marks in front of children.", "Right way?", "Stay calm, invite them to the staff room, show the answer sheet and a plan", "Shout back", "Change the marks", "Walk away"),
+    C("Sana is being teased about her stammer.", "Do?", "Stop it at once, talk to the class about respect, and support Sana privately", "Tell Sana to talk faster", "Laugh along", "Ignore"),
+  ],
+  lawyer: [
+    C("A poor rickshaw driver was hit by a car. The car owner offers him ₹500 to stay quiet.", "Your advice?", "Do not sign; file a police report and a claim for proper compensation", "Take the ₹500", "Fight the owner", "Ignore it"),
+    C("Your client asks you to hide a document that proves he is wrong.", "Correct?", "Refuse. A lawyer never hides evidence from the court", "Hide it, he pays", "Burn it", "Give it to the newspaper"),
+    C("A landlord is throwing out a family without notice.", "What does the law want?", "Proper written notice and time; you file for a stay order", "Nothing, his house", "Police beat the landlord", "The family must leave today"),
+    C("Two brothers fight over their father's shop.", "Best first step?", "Mediation: sit both down, read the will, seek a fair settlement before court", "Go to court at once", "Pick the richer brother", "Sell the shop"),
+    C("The judge asks a question you do not know.", "Do?", "Say so honestly and ask for time to check", "Make up an answer", "Change the subject", "Blame your junior"),
+  ],
+  pilot: [
+    C("Before take-off a warning light shows for a fuel pump.", "Do?", "Stop, report to engineering, delay the flight until cleared", "Take off, it is only a light", "Switch the light off", "Ask the passengers"),
+    C("Thunderstorm ahead on the route to Mumbai.", "Right call?", "Ask control for a route around it; comfort and delay beat risk", "Fly straight through", "Fly under it", "Turn off the radar"),
+    C("A passenger is unwell at 30,000 feet.", "Do?", "Ask for a doctor on board, call ground medical, prepare to divert if serious", "Ignore till landing", "Open the door for air", "Give tea"),
+    C("You slept only three hours last night.", "Rule?", "Report unfit to fly; rest is a safety rule", "Drink coffee and fly", "Let the co-pilot do everything", "Fly a short flight only"),
+    C("The co-pilot makes a mistake in the checklist.", "Do?", "Point it out calmly and redo the item; the checklist protects everyone", "Shout", "Ignore", "Report him to the airline without telling him"),
+  ],
+  journalist: [
+    C("A rumour says the school water is dirty. You have no proof yet.", "Do?", "Test the water, ask the school and the municipality, print only what is confirmed", "Print the rumour, it sells", "Ignore", "Ask children to boycott school"),
+    C("A politician offers you ₹5,000 for a nice story.", "Do?", "Refuse and report facts as they are", "Take it", "Ask for more", "Write a bad story in revenge"),
+    C("A fire at the market. You reach first.", "Do?", "Call the fire station first, then report from a safe distance", "Film close to the flames", "Interview the burning shop owner", "Go home"),
+    C("You made a mistake in yesterday's headline.", "Do?", "Print a clear correction today", "Hope nobody noticed", "Blame the printer", "Delete the paper"),
+  ],
+  mechanic: [
+    C("A scooter will not start. The lights work.", "Check first?", "Fuel and spark plug, then the starter", "Change the tyres", "Repaint it", "Replace the engine"),
+    C("The car's brakes squeal and feel soft.", "Do?", "Check brake pads and fluid; do not release the car until fixed", "Say drive slowly", "Turn up the radio", "Oil the brakes"),
+    C("A customer wants a cheap fix that is unsafe.", "Do?", "Explain the danger and refuse the unsafe fix", "Do it for the money", "Do it secretly properly and charge more", "Send him away rudely"),
+    C("A tyre is flat with a nail in it.", "Do?", "Remove the nail, patch or plug from inside, check pressure on all four", "Fill air and send", "Replace all four tyres", "Remove the wheel forever"),
+  ],
+  vet: [
+    C("A dog is limping and cries when you touch its paw.", "First?", "Check the paw for a thorn or glass, then X-ray if needed", "Give it a biscuit", "Say dogs limp", "Cut the nails"),
+    C("A cow is not eating and her stomach is swollen.", "Likely?", "Bloat: treat quickly, check what she ate", "Tooth ache", "Nothing", "She is shy"),
+    C("A parrot is pulling out its feathers.", "Common cause?", "Boredom or stress: more time out, toys, a check for mites", "Too many seeds", "It is normal", "Cut its wings"),
+    C("A child brings a kitten with a runny nose and sneezing.", "Do?", "Warmth, fluids, an eye and nose clean, medicine if fever", "Send it away", "Bath in cold water", "Feed chocolate"),
+  ],
+  chef: [
+    C("The dal is too salty.", "Fix?", "Add a boiled potato or more water and lemon", "Add more salt", "Serve it", "Throw the kitchen"),
+    C("A customer says she is allergic to peanuts.", "Do?", "Check every ingredient, use a clean pan, tell the waiter", "Ignore, a little is fine", "Add extra peanuts", "Refuse to serve her"),
+    C("Chicken smells odd in the fridge.", "Do?", "Throw it out; when in doubt, throw it out", "Cook it longer", "Add masala", "Serve to staff"),
+    C("Ten orders come at once.", "Do?", "Plan: start the slowest dish first, keep the pass organised, stay calm", "Panic", "Cook one at a time slowly", "Send customers away"),
+  ],
+  engineer: [
+    C("The app crashes when a user types a very long name.", "Fix?", "Limit and validate the input, add a test for it", "Tell users to use short names", "Restart the server daily", "Ignore"),
+    C("Your teammate's code has a bug that deletes data.", "Do?", "Tell them kindly, fix together, add a backup and a test", "Laugh at them", "Say nothing", "Delete their code"),
+    C("The manager wants the feature today; it needs three days.", "Do?", "Explain the real time, offer a smaller safe version today", "Rush and skip testing", "Quit", "Say yes and disappear"),
+    C("A user's password is stored in plain text.", "Do?", "Hash the passwords immediately and rotate them", "Leave it", "Email everyone their password", "Print them"),
+  ],
+  scientist: [
+    C("Your experiment gives a result you did not expect.", "Do?", "Repeat it, check the method, record everything honestly", "Change the numbers", "Publish at once", "Throw the data"),
+    C("A colleague copies your notes for her paper.", "Do?", "Talk to her, then to the head; keep dated records", "Copy hers back", "Do nothing", "Burn the lab"),
+    C("The water sample from the river shows lead.", "Do?", "Test twice more, then inform the municipality and the hospital", "Keep quiet", "Post on social media first", "Drink it to check"),
+    C("Your assistant forgets goggles at the burner.", "Do?", "Stop work until goggles are on. Safety first, always", "Continue", "Shout", "Send him home"),
+  ],
+  banker: [
+    C("An old lady wants to withdraw her whole savings for a man who called about a 'prize'.", "Do?", "Stop, explain the scam gently, call her family, report the number", "Give the money", "Charge a fee", "Laugh"),
+    C("The cash drawer is ₹100 short at closing.", "Do?", "Recount, check the slips, report it honestly", "Put ₹100 from your pocket quietly", "Blame the cleaner", "Ignore"),
+    C("A young man wants a loan to open a cycle repair shop.", "Do?", "Check his plan and repayment; small loan with clear terms", "Refuse, too young", "Give a huge loan", "Ask for a bribe"),
+    C("A customer shouts because the queue is long.", "Do?", "Stay polite, open a second counter, explain the wait", "Shout back", "Close the bank", "Serve him first over everyone"),
+  ],
+  farmer: [
+    C("The monsoon is late and the tomato plants droop.", "Do?", "Mulch the soil, water at dawn, drip if possible", "Water at noon", "Pull them out", "Pray only"),
+    C("Caterpillars are eating the cabbage.", "Safe fix?", "Neem spray and pick them off; invite birds", "Strong poison", "Burn the field", "Ignore"),
+    C("The market price for onions falls to ₹5.", "Do?", "Store what keeps, sell some, plant a mixed crop next time", "Dump them on the road", "Sell everything at once", "Stop farming"),
+    C("A neighbour's goats enter your field.", "Do?", "Talk to the neighbour, fix the fence together", "Hit the goats", "Steal his hen", "Call the police first"),
+  ],
+  librarian: [
+    C("A child returns a book three weeks late, scared.", "Do?", "Be kind, take the small fine or waive it, teach the due date", "Ban the child", "Shout", "Tear the card"),
+    C("Two students argue over the last copy of the exam guide.", "Do?", "Set a fair time limit and a waiting list", "Give it to the older one", "Hide the book", "Send both out"),
+    C("Someone drew in a library book.", "Do?", "Erase gently, put a note, remind everyone of the rule", "Throw the book", "Fine the whole class", "Ignore"),
+  ],
+  rj: [C("A listener calls in crying about her lost dog.", "On air?", "Be warm, describe the dog, ask listeners to help", "Cut the call", "Make a joke", "Play a sad song"), C("A song request has bad words.", "Do?", "Play a clean version or another song", "Play it", "Insult the caller", "Go silent"), C("Breaking news: road closed at the avenue.", "Do?", "Announce it clearly and repeat every 10 minutes", "Wait for the newspaper", "Ignore", "Guess the details")],
+  hotelier: [C("A guest's room has no hot water.", "Do?", "Apologise, send the plumber now, offer another room", "Say use cold", "Blame the guest", "Charge extra"), C("A family arrives at midnight, tired, without a booking.", "Do?", "Find a room, help with bags, breakfast on the house", "Send them away", "Triple the price", "Make them wait outside"), C("The chef and a waiter argue in front of guests.", "Do?", "Separate them, apologise to guests, settle it in the office", "Fire both", "Join the fight", "Ignore")],
+  shopkeeper: [C("A customer gives a ₹500 note for ₹120 of goods.", "Change?", "₹380", "₹280", "₹420", "₹620"), C("A child tries to steal a chocolate.", "Do?", "Stop him kindly, talk, tell his parent, no shouting", "Call the police", "Hit him", "Let him"), C("Milk packets are past their date.", "Do?", "Remove them from the shelf", "Sell at half price", "Sell anyway", "Change the date")],
+  postman: [C("A letter has a wrong house number.", "Do?", "Check the name on the street, ask the guard, return if not found", "Throw it", "Open it", "Deliver anywhere"), C("A parcel is marked FRAGILE.", "Do?", "Carry it upright, do not stack, hand it over in person", "Toss it", "Leave at the gate", "Open to check"), C("An old man cannot read his pension letter.", "Do?", "Read it to him kindly", "Leave", "Charge ₹10", "Give it to a neighbour")],
+  architect: [C("The client wants no pillars in a 20 m hall.", "Do?", "Design a proper beam or truss, calculated by the engineer", "Remove pillars and hope", "Refuse rudely", "Use wood sticks"), C("The plan blocks the neighbour's window light.", "Do?", "Redesign to respect light and rules", "Build anyway", "Pay the neighbour", "Add a mirror"), C("The budget is half of the dream.", "Do?", "Prioritise: strong structure first, decoration later", "Cut the foundation", "Use fake bricks", "Quit")],
+  coach: [C("A player twists an ankle in practice.", "Do?", "Stop, ice, rest, elevate; no play till checked", "Run it off", "Ignore", "Substitute and forget"), C("The best player skips practice.", "Do?", "Talk to him about the team and set a fair rule", "Drop him forever", "Let him", "Punish the others"), C("The team lost 5-0.", "Do?", "Praise effort, review mistakes calmly, plan the next practice", "Shout for an hour", "Quit", "Blame the referee only")],
+};
+const GENERIC_CASES = [C("A colleague blames you for a mistake you did not make.", "Do?", "Explain calmly with facts, then fix the problem together", "Shout", "Blame someone else", "Quit"), C("The boss asks you to stay late; you promised Gudiya a story.", "Do?", "Finish the urgent part, tell the boss your limit, keep the promise", "Ignore the boss", "Break the promise without a word", "Pretend to be sick"), C("You find a mistake in your own work from yesterday.", "Do?", "Fix it and tell the team", "Hide it", "Blame the intern", "Leave it")];
+function casesFor(job, n) {
+  const pool = (JOB_CASES[job.id] || JOB_CASES[job.id === "cityBanker" ? "banker" : ""] || []).concat(GENERIC_CASES);
+  const r = makeRng(Math.floor(Math.random() * 1e9)); const picked = r.shuffle(pool.slice()).slice(0, n);
+  return picked.map((c) => ({ q: `${c.t}\n\n${c.q}`, choices: r.shuffle(c.ch.slice()), answer: c.a }));
+}
+
+// ---- Marriage, children, grandchildren ----
+const PARTNERS = [
+  { id: "priya", name: "Priya", job: "a doctor at City Hospital", look: { shirt: 0xe75480, dress: true, hair: 0x1d1410 }, pitch: 460, line: "I like people who keep promises to their little sisters." },
+  { id: "arjun", name: "Arjun", job: "a software engineer at Tech Park", look: { shirt: 0x2a9d8f, trousers: 0x111111, hair: 0x1d1410 }, pitch: 340, line: "I make apps. You make the city work. Good team?" },
+  { id: "meera", name: "Meera", job: "a teacher at Sunrise Public School", look: { shirt: 0x9b5de5, dress: true, hair: 0x4a2c1a }, pitch: 480, line: "I teach Class 3 now. Your old desk is still wobbly." },
+  { id: "kabir", name: "Kabir", job: "a chef at the Grand Hotel", look: { shirt: 0xffffff, trousers: 0x333333, hair: 0x111111 }, pitch: 360, line: "I cook. You eat. Some things are simple." },
+];
+const CHILD_NAMES = ["Anaya", "Vihaan", "Ira", "Aarav", "Myra", "Kabir", "Zoya", "Reyansh"];
+const WORK_FLASHBACK = [["👔", "The first uniform. Maa cried at the door. Papa checked the collar twice."], ["🚨", "The first case: a lost girl at the bus stop. She held your hand until her mother came."], ["📈", "Promotions, one by one. The boss who was hard on you shook your hand the day you passed him."], ["💍", "The wedding under the mango tree. Gudiya danced. Dadi blessed you both and then asked for cake."], ["👶", "A small hand around your finger. You promised to be the kind of parent your parents were."], ["🎒", "Your child's first day at Sunrise Public School. The same gate, the same crying, the same chalk."], ["👴", "Your child's wedding, then a grandchild in your arms. Three generations on one sofa, watching a movie."]];
 
 class Minimap {
   constructor(world) {
@@ -5684,6 +5862,7 @@ class Game {
     this.big = this.lvl;
     this.graduate = STAGES[this.stage].id === "graduate";
     Object.defineProperty(this, "working", { get: () => this.graduate || !!this.progress.job });
+    if (this.progress.age == null) this.progress.age = STAGE_AGE[STAGES[this.stage].id] || 8;
     this._setupRenderer();
     this.world = new World();
     this.player = new Player(this.world, this.camera);
@@ -5757,6 +5936,10 @@ class Game {
   termMarks() { return SUBJECT_IDS.reduce((n, s) => n + this.subjectTotal(s), 0) + this.progress.games.reduce((a, b) => a + b, 0); }
   isFaDay() { const d = this.progress.day; return d % 5 === 0 && !this.isTermDay(); }
   isRainy() { return this.progress.day % 6 === 4; }
+  get job() { return JOBS.find((j) => j.id === this.progress.job) || null; }
+  get married() { return !!this.progress.spouse; }
+  childAge() { return this.progress.child ? Math.max(0, this.progress.age - this.progress.childBornAt) : null; }
+  familyLine() { const pr = this.progress; const parts = [`${L("Age")} ${pr.age}`]; if (pr.spouse) parts.push(`${L("married to")} ${pr.spouse.name}`); if (pr.child) parts.push(`${pr.child.name} (${this.childAge()})`); if (pr.grandchild) parts.push(`${L("grandchild")} ${pr.grandchild.name}`); return parts.join(" · "); }
   isSunday() { return this.progress.day % 7 === 0; }
   isBirthday() { return this.progress.day === 15; }
   isDiwali() { return this.progress.day === 18; }
@@ -5807,7 +5990,8 @@ class Game {
     const u = UNIFORMS[this.progress.job], pl = this.player, p = pl.group.userData.parts;
     const paint = (mesh, c) => { if (mesh && mesh.material && mesh.material.color) mesh.material.color.set(c); };
     if (!u) { if (pl.cap) pl.cap.visible = false; if (pl.coat) pl.coat.visible = false; if (pl.tie) pl.tie.visible = true; if (pl.badge) pl.badge.visible = true; return; }
-    paint(p.torso, u.shirt); for (const k of ["armL", "armR"]) paint(p[k].children[0], u.shirt); for (const k of ["legL", "legR"]) paint(p[k].children[0], u.trousers);
+    const swap = (mesh, c) => { if (mesh) mesh.material = humanMat(c); };
+    swap(p.torso, u.shirt); for (const k of ["armL", "armR"]) swap(p[k].children[0], u.shirt); for (const k of ["legL", "legR"]) swap(p[k].children[0], u.trousers);
     if (pl.tie) pl.tie.visible = !!u.tie; if (pl.badge) pl.badge.visible = false;
     if (pl.coat) pl.coat.visible = !!u.coat;
     if (pl.cap) { pl.cap.visible = u.cap != null; if (u.cap != null) pl.cap.userData.mat.color.set(u.cap); pl.cap.userData.tall.visible = !!u.tall; }
@@ -5955,6 +6139,8 @@ class Game {
     document.getElementById("minimap").hidden = false;
     this.roomInteractables = null;
     for (const t of Object.values(this.teachers)) if (t._inRoom) { t.group.visible = false; t._inRoom = false; }
+    for (const k of Object.values(this._kin || {})) { k.group.visible = false; k._inRoom = false; }
+    for (const b of Object.values(this._bosses || {})) { b.group.visible = false; b._inRoom = false; }
     this._placePeople();
     Audio.playPick();
   }
@@ -6020,6 +6206,12 @@ class Game {
     this._gudiyaFig = fig.gudiya ? { id: "gudiya", name: "Gudiya", def: { id: "gudiya", name: "Gudiya", pitch: 560 }, group: fig.gudiya.group, position: { x: room.x0 + fig.gudiya.x, z: room.z0 + fig.gudiya.z } } : null;
     if (this._dadiFig) this.roomInteractables.push({ pos: this._dadiFig.position, radius: 2.4, npc: this._dadiFig, prompt: () => L("Talk to {n}", { n: "Dadi" }), activate: () => this._talkDadi() });
     if (this._gudiyaFig) this.roomInteractables.push({ pos: this._gudiyaFig.position, radius: 2.2, npc: this._gudiyaFig, prompt: () => L("Talk to {n}", { n: "Gudiya" }), activate: () => this._talkGudiya() });
+    // Your own family, once it exists: spouse, child, grandchild.
+    const pr = this.progress; this._kin = this._kin || {};
+    const kin = (key, def, pos, scale) => { if (!this._kin[key]) { const n = new Npc(def, this.world, { pos: [pos.x, pos.z], fixed: true }); this.npcs.push(n); this._kin[key] = n; } const n = this._kin[key]; n.group.visible = true; n._inRoom = true; n.group.scale.setScalar(scale); n.station(pos, Math.PI); this.roomInteractables.push({ pos: n.position, radius: 2.4, npc: n, prompt: () => L("Talk to {n}", { n: n.name }), activate: () => this._talkKin(key, n) }); return n; };
+    if (pr.spouse) kin("spouse", { id: "spouse", name: pr.spouse.name, look: pr.spouse.look, pitch: pr.spouse.pitch, kin: "spouse" }, { x: room.x0 - 3, z: room.z0 - 2 }, 1);
+    if (pr.child) { const age = this.childAge(); kin("child", { id: "child", name: `${pr.child.name} (${age})`, look: { shirt: 0xffd21e, trousers: 0x2a9d8f, hair: 0x1d1410 }, pitch: 560, kin: "child" }, { x: room.x0 + 2, z: room.z0 + 3 }, Math.min(1, 0.45 + age * 0.03)).name = pr.child.name; }
+    if (pr.grandchild) kin("grandchild", { id: "grandchild", name: pr.grandchild.name, look: { shirt: 0xff8fab, dress: true, hair: 0x1d1410 }, pitch: 600, kin: "child" }, { x: room.x0 + 4.5, z: room.z0 + 3.5 }, 0.5);
     this.roomInteractables.push({ pos: { x: room.x0 - 8, z: room.z0 - 5 }, radius: 2.2, prompt: () => (this.phase === "night" ? L("Watch a movie with the family") : L("The TV")), activate: () => this._nightMovie() });
     this.roomInteractables.push({ pos: { x: room.x0 - 9, z: room.z0 + 0.5 }, radius: 1.8, prompt: () => (this.phase === "night" ? L("Play ludo with Papa and Gudiya") : L("The ludo board")), activate: () => this._nightLudo() });
     this.roomInteractables.push({ pos: { x: room.x0 + 9, z: room.z0 + 2.4 }, radius: 1.8, prompt: () => (this.phase === "evening" && this.progress.homework.length ? L("Do your homework at the study desk") : L("Your study desk")), activate: () => this._homework() });
@@ -6031,7 +6223,10 @@ class Game {
   _talk(npc) {
     const def = npc.def;
     if (def.id === "maa") return this._talkMaa();
-    if (def.id === "papa") return this.dialogue.say("Papa", [this.phase === "morning" ? "Good morning, champ. Bag packed? Water bottle? Off you go, and listen to your teachers." : `So, how was school? ${this.termMarks()} marks this term. ${this.termMarks() > 20 ? "That is my child!" : "Keep at it, every day counts."}`], null, { pitch: def.pitch, speaker: npc.id });
+    if (def.id === "papa") {
+      if (this.working) { const job = this.job, pr = this.progress; const lines = this.phase === "morning" ? [job ? L("Good morning, {r}. Uniform pressed? The city needs you. Drive carefully.", { r: rankName(job, pr.shifts) }) : L("Good morning. No job yet? Press J, champ. Every big person started with an interview.")] : this.phase === "night" ? [L("Sleep, champ. Tomorrow is another shift.")] : [job ? L("How was the shift, {r}? ₹{p} today, {s} shifts in all. Any tough case?", { r: rankName(job, pr.shifts), p: pr.payToday || 0, s: pr.shifts }) : L("How was the day? Any interview lined up?"), pr.spouse ? L("{n} was asking about you.", { n: pr.spouse.name }) : pr.age >= 24 ? L("You are {a} now. Your Maa has started looking at wedding cards.", { a: pr.age }) : L("Proud of you, champ.")]; return this.dialogue.say("Papa", lines, null, { pitch: def.pitch, speaker: npc.id }); }
+      return this.dialogue.say("Papa", [this.phase === "morning" ? "Good morning, champ. Bag packed? Water bottle? Off you go, and listen to your teachers." : `So, how was school? ${this.termMarks()} marks this term. ${this.termMarks() > 20 ? "That is my child!" : "Keep at it, every day counts."}`], null, { pitch: def.pitch, speaker: npc.id });
+    }
     if (TEACHERS[def.id.replace("t_", "")]) return this._talkTeacher(npc);
     if (def.child) return this._talkFriend(npc);
     this._engagedNpc = npc; setMood(npc.group, "happy", 3);
@@ -6047,6 +6242,7 @@ class Game {
   _talkTeacher(npc) {
     const k = npc.def.id.replace("t_", ""), per = PERIODS[this.periodIndex];
     setMood(npc.group, "happy", 3);
+    if (this.working) { const job = this.job; return this.dialogue.say(npc.name, [job ? L("My student, a {j}! I always said you would go far.", { j: job.name }) : L("Graduated, and still visiting your old teacher. Any job yet?"), L("Come and speak to the children some day. They need to see what hard work becomes.")], null, { pitch: TEACHERS[k] ? TEACHERS[k].pitch : 400, speaker: npc.id }); }
     if (k === "games" && this.phase === "school" && per && per.id === "games") return this._games(npc);
     if (k === "principal" && this.phase === "school" && per && per.id === "assembly") return this._assembly();
     if (SUBJECTS[k] && Math.random() < 0.5) {
@@ -6065,6 +6261,7 @@ class Game {
   _talkFriend(npc) {
     const f = npc.def, per = PERIODS[this.periodIndex];
     setMood(npc.group, "happy", 3);
+    if (this.working) { const job = this.job; const lines = [job ? L("Look at you, {j}! Remember when you hid from Mrs. Rao's test?", { j: job.name }) : L("Graduate and free! Any interviews yet?"), [L("Cricket at the stadium on Sunday? Like old days."), L("I am at Tech Park now. Lunch at the canteen some day?"), L("Meher got married last month. You missed the dance."), L("Bring Moti to the park, he still remembers me.")][Math.floor(Math.random() * 4)]]; this._engagedNpc = npc; return this.dialogue.say(npc.name, lines, () => { this._engagedNpc = null; this.addFriendship(f.id, 1); }, { pitch: f.pitch || 520, speaker: npc.id }); }
     const fs = this.progress.friendship[f.id] || 0;
     const line = L(f.lines[Math.floor(Math.random() * f.lines.length)]);
     // Sometimes a friend has a doubt: help them and friendship grows.
@@ -6085,6 +6282,7 @@ class Game {
   }
   _talkMaa() {
     const maa = this.family.maa;
+    if (this.working) { const pr = this.progress, job = this.job; const lines = this.phase === "morning" ? [pr.tiffin ? L("Lunch box is packed, {n}. Eat at work, not at the desk while typing.", { n: job ? job.name.toLowerCase() : "beta" }) : L("Breakfast first, then work. Sit."), L("Call me when you reach.")] : this.phase === "night" ? [L("Sleep. A working person needs sleep more than a school child.")] : [L("Wash your hands, beta. Working or not, you are my child."), pr.child ? L("{c} waited for you all evening.", { c: pr.child.name }) : pr.spouse ? L("{s} made the sabzi today. Praise it.", { s: pr.spouse.name }) : L("Dinner is ready. Tell us about work.")]; if (this.phase === "morning" && !pr.tiffin) return this._breakfast(); return this.dialogue.say("Maa", lines, null, { pitch: 470, speaker: maa.id }); }
     if (this.phase === "morning" && !this.progress.tiffin) return this._breakfast();
     if (this.phase === "morning") return this.dialogue.say("Maa", ["Tiffin is packed. Bus comes at 7:30 at the Shanti Nagar stop. Don't run on the road!"], null, { pitch: 470, speaker: maa.id });
     if (this.phase === "evening") return this.dialogue.say("Maa", ["Beta, wash your hands. Homework first, then dinner.", `${this.progress.homework.length ? "Your teachers sent " + this.progress.homework.length + " question" + (this.progress.homework.length > 1 ? "s" : "") + " for homework." : "No homework? Then help me lay the table."}`], null, { pitch: 470, speaker: maa.id });
@@ -6118,19 +6316,22 @@ class Game {
     if (this.progress.homework.length) { showToast("Maa: Homework first, then dinner!", 2400, "bad"); return; }
     const papa = this.family.papa; setMood(papa.group, "happy", 5); setMood(this.family.maa.group, "happy", 5);
     this.player.eatT = 4;
+    if (this.working) { const pr = this.progress, job = this.job; return this.dialogue.say("Papa", [L("Dal, rice, sabzi and hot rotis. So, how was work?"), job ? L("₹{p} today. {s} shifts done, {r}. Any case that kept you thinking?", { p: pr.payToday || 0, s: pr.shifts, r: rankName(job, pr.shifts) }) : L("No job yet? Tomorrow, press J and go for an interview."), pr.spouse ? L("{s}: 'Eat properly, you skipped lunch again.'", { s: pr.spouse.name }) : L("Eat well. The city runs on people like you.")], () => { this.addEnergy(40); this._startPhase("night"); }, { pitch: 320, speaker: papa.id }); }
     const marksToday = this._marksToday || 0;
     this.dialogue.say("Papa", [L("Dal, rice, sabzi and hot rotis. So, {n} marks today?", { n: marksToday }), marksToday >= 12 ? "Excellent! Dadi, did you hear? Extra kheer for this one." : marksToday >= 6 ? "Good. Tomorrow raise your hand a little more." : "Hmm. Tomorrow, hand up in every class. I know you can.", "Eat well. Then a movie, ludo, or Dadi's story, and bed by ten."], () => { this.addEnergy(60); this._startPhase("night"); }, { pitch: 320, speaker: papa.id });
   }
   _sleep() {
-    if (this.phase === "night" && this.graduate && this.progress.shifts >= 10 && !this.progress.ended) return this._ending();
+    if (this.phase === "night" && this.progress.generations >= 3 && !this.progress.ended) return this._ending();
     if (this.phase === "night" && this.working && !this.graduate && this.progress.shifts >= 10 && this.stage < STAGES.length - 1) return this._promote(() => {});
     if (this.phase !== "night") { showToast(this.phase === "evening" ? "Homework and dinner first!" : "Not bedtime yet.", 2200); return; }
     const pr = this.progress;
     const finish = () => {
       const card = openPanel(`<div class="job-title-row"><h2>🌙 Day ${pr.day} is over</h2></div><div class="job-goal">Marks today: <b>${this._marksToday || 0}</b> · Term total: <b>${this.termMarks()}</b> · Wallet: <b>${fmtMoney(pr.money)}</b> · Friendship: <b>${Object.values(pr.friendship).reduce((a, b) => a + b, 0)}</b></div><p class="job-brief">${pr.day + 1 === 5 || pr.day + 1 === 15 ? "Tomorrow is an FA day: 10 mark tests in every subject. Revise!" : pr.day + 1 === 10 || pr.day + 1 === 20 ? "Tomorrow is the TERM EXAM. Sleep early." : "Tomorrow is a normal school day."}</p><div class="btn-row"><button class="big-btn" id="sleep-ok">Sleep 😴</button></div>`);
+      if (this.working) { const brief = card.querySelector(".job-brief"); if (brief) brief.innerHTML = `${L("Pay today")}: <b>${fmtMoney(pr.payToday || 0)}</b> · ${this.familyLine()} · ${L("Work days this year")}: ${(pr.workDays || 0) % 5} / 5<div class="btn-row"><button class="big-btn" id="sleep-year">⏩ ${L("Let a year pass")}</button></div>`; const yb = card.querySelector("#sleep-year"); if (yb) yb.addEventListener("click", () => { closePanel(); this._fastYear(); }); }
       card.querySelector("#sleep-ok").addEventListener("click", () => {
         closePanel();
         this._awardBadges();
+        if (this.working && pr.workDays && pr.workDays % 5 === 0 && pr.lastYearAt !== pr.workDays) { pr.lastYearAt = pr.workDays; this._yearPassed(); }
         pr.day++; buildPeriods(pr.day); pr.tiffin = null; if (this._lateNight) { pr.energy = Math.max(20, pr.energy - 25); this._lateNight = false; } this._incidentDone = false; this._monitorDone = false; this._pocketGiven = false; pr.sundayDone = false; pr.petHappy = Math.max(0, (pr.petHappy == null ? 70 : pr.petHappy) - 12); if (pr.petHappy < 25) showToast(L("🐕 Moti looks unwell. Feed him, or take him to the Vet Clinic."), 3600, "bad"); this._eqUsed = new Set(); this.car.atSchool = false; this.car.group.position.set(this.car.home.x, 0, this.car.home.z); this.car.group.rotation.y = 0; pr.homework = []; pr.period = 0; this._marksToday = 0; this._ateLunch = false; this._goalDone = false; this._gamesActive = false; this._shiftDone = false;
         if (pr.day === 11) { for (const s of SUBJECT_IDS) pr.marks[s] = { cw: 0, hw: 0, fa: [], term: [] }; pr.games = []; showToast("Term 2 begins. Marks start fresh; Term 1 is on your report card.", 4000, "good"); }
         if (pr.day > 20) { pr.day = 1; for (const s of SUBJECT_IDS) pr.marks[s] = { cw: 0, hw: 0, fa: [], term: [] }; pr.games = []; showToast("A new school year! Reports are kept in your diary.", 4000, "good"); }
@@ -6207,7 +6408,12 @@ class Game {
       const dx = room.x0 + 7, dz = room.z0 + 3;
       if (!room.playerDesk) { room.playerDesk = { x: dx, z: dz }; room._desk(dx, dz, cur.trial ? 0x3b3f4a : 0x8a5626); room._box(0.5, 0.45, 0.5, 0x3f6f9f, dx - 1.3, 0.22, dz - 0.9, false); room._box(0.9, 0.02, 0.6, 0xf4f6f8, dx + 0.2, 0.8, dz, false); room._box(0.4, 0.06, 0.3, 0xffd21e, dx - 0.5, 0.82, dz + 0.1, false); room._label(`${cur.icon} ${L("Your desk")} · ${cur.name}`, dx, dz, 1.9, 0.6); room._label(L("Visitor"), dx - 1.3, dz - 0.9, 1.3, 0.4); }
       const seat = { x: dx, z: dz + 0.8 };
-      this.roomInteractables.push({ pos: seat, radius: 2.0, prompt: () => (this._shiftDone ? L("Your desk (shift done)") : L("Sit at your desk and work a shift as {j} (₹{n})", { j: cur.name, n: cur.salary })), activate: () => { if (!this._shiftDone && !this.isSunday()) { const P = this.player.group; P.position.set(seat.x, 0, seat.z); P.rotation.y = Math.PI; if (!cur.trial) sitPose(P, "car"); } this._workShift(cur); } });
+      this.roomInteractables.push({ pos: seat, radius: 2.0, prompt: () => (this._shiftDone ? L("Your desk (shift done)") : L("Sit at your desk: today's cases as {r} (₹{n})", { r: rankName(cur, pr.shifts), n: salaryFor(cur, pr.shifts) })), activate: () => { if (!this._shiftDone && !this.isSunday()) { const P = this.player.group; P.position.set(seat.x, 0, seat.z); P.rotation.y = Math.PI; if (!cur.trial) sitPose(P, "car"); } this._workShift(cur); } });
+      // The boss stands by your desk.
+      this._bosses = this._bosses || {};
+      if (!this._bosses[cur.boss]) { this._bosses[cur.boss] = new Npc({ id: "boss_" + cur.id, name: cur.boss, boss: true, pitch: 340, look: { shirt: 0x1d3557, trousers: 0x111111, hair: 0x555555 } }, this.world, { pos: [dx - 3, dz - 2], fixed: true }); this.npcs.push(this._bosses[cur.boss]); }
+      const boss = this._bosses[cur.boss]; boss.group.visible = true; boss._inRoom = true; boss.station({ x: dx - 3.2, z: dz - 1.8 }, Math.PI / 2); this._bossNpc = boss;
+      this.roomInteractables.push({ pos: boss.position, radius: 2.4, npc: boss, prompt: () => L("Talk to {n}", { n: cur.boss }), activate: () => this._talkBoss(cur, boss) });
       k++;
     }
     if (this.stage >= stageIndex("c12")) for (const job of here.filter((j) => !pr.hired.includes(j.id))) { const pos = { x: base.x + k * 2.2, z: base.z }; k++; this.roomInteractables.push({ pos, radius: 1.6, prompt: () => L("Job interview: {j}", { j: job.name }), activate: () => this._jobInterview(job) }); }
@@ -6232,17 +6438,26 @@ class Game {
       });
     });
   }
+  _talkBoss(job, boss) {
+    const pr = this.progress, r = rankIndex(pr.shifts), next = RANK_STEPS[r + 1];
+    setMood(boss.group, "happy", 3); this._engagedNpc = boss;
+    const lines = [L("{r}. {s} shifts with us.", { r: rankName(job, pr.shifts), s: pr.shifts }), next ? L("{k} more good shifts and I sign your promotion to {nr}.", { k: next - pr.shifts, nr: (RANKS[job.id] || RANKS.generic)[r + 1] }) : L("Top rank. One day this chair is yours."), this._shiftDone ? L("Today's cases are closed. Go home to your family.") : L("Cases are waiting on your desk. Sit, and think before you act.")];
+    this.dialogue.say(boss.name, lines, () => { this._engagedNpc = null; }, { pitch: 340, speaker: boss.id });
+  }
   _workShift(job) {
     if (this._shiftDone) { showToast(L("Shift done for today. Go home and rest."), 2400); return; }
     if (this.isSunday()) { showToast(L("Sunday. The office is closed. Rest, play, drive."), 2600); return; }
-    this.dialogue.say(job.boss, [L(WORK_TASKS[job.id]), L("Five tasks. Each one right is a full day's pay.")], () => {
-      const work = (cb) => (job.trial ? this._startTrial(job.trial, 5, cb, job.boss) : this._runPaper(`${job.icon} ${L("At work")}: ${job.name}`, drawSubject(job.subject, 5, this.lvl), cb));
+    const pr = this.progress, before = rankIndex(pr.shifts);
+    this.dialogue.say(job.boss, [L(WORK_TASKS[job.id]), job.trial ? L("Five chances. Each clean one is a full day's pay.") : L("Five cases on your desk. Read each one, choose the right action. Each right call is a full day's pay.")], () => {
+      const work = (cb) => (job.trial ? this._startTrial(job.trial, 5, cb, job.boss) : this._runPaper(`${job.icon} ${L("Cases")}: ${job.name} · ${rankName(job, pr.shifts)}`, casesFor(job, 5), cb));
       work((score) => {
-        const pay = Math.round(job.salary * score / 5);
-        this._shiftDone = true; this.progress.shifts++; this.addMoney(pay, L("salary") + " (" + score + "/5)");
+        const pay = Math.round(salaryFor(job, pr.shifts) * score / 5);
+        this._shiftDone = true; pr.shifts++; pr.workDays = (pr.workDays || 0) + 1; pr.payToday = pay; this.addMoney(pay, L("salary") + " (" + score + "/5)");
         this.diary(`Worked as ${job.name}: ${score}/5, ₹${pay}.`);
         standPose(this.player.group);
-        this.dialogue.say(job.boss, [score >= 4 ? L("Excellent work today. See you tomorrow.") : L("Some slips today. Rest, and do better tomorrow.")], () => { if (this.working) this._startPhase("over"); });
+        const after = rankIndex(pr.shifts), promoted = after > before;
+        if (promoted) { playSuccess(); pr.badges = pr.badges || []; if (!pr.badges.includes("promoted")) pr.badges.push("promoted"); this.applyUniform(); this.ui.refreshRank(); }
+        this.dialogue.say(job.boss, [promoted ? L("Stand up. By the power of this office, you are promoted to {r}. Salary ₹{s} a shift. Well earned.", { r: rankName(job, pr.shifts), s: salaryFor(job, pr.shifts) }) : score >= 4 ? L("Excellent work today. See you tomorrow.") : L("Some slips today. Rest, and do better tomorrow.")], () => { if (this.working) this._startPhase("over"); });
       });
     });
   }
@@ -6253,7 +6468,7 @@ class Game {
     const card = openPanel(`<div class="job-title-row"><h2>${title}</h2></div><div class="test-progress" id="ex-prog"></div><div class="test-q" id="ex-q"></div><div class="choice-bank" id="ex-choices"></div><div class="num-row" id="ex-row"><input class="num-input" id="ex-in" type="number" inputmode="decimal" step="any" placeholder="?"><span class="num-unit" id="ex-unit"></span><button class="big-btn" id="ex-check">Next</button></div><div id="ex-result"></div>`);
     this._lockPanel = true;
     const prog = card.querySelector("#ex-prog"), qEl = card.querySelector("#ex-q"), bank = card.querySelector("#ex-choices"), row = card.querySelector("#ex-row"), input = card.querySelector("#ex-in"), unit = card.querySelector("#ex-unit");
-    const show = () => { const q = qs[i]; prog.textContent = `${i + 1} / ${n}`; qEl.textContent = q.q; bank.innerHTML = ""; if (q.choices) { row.hidden = true; q.choices.forEach((c) => { const b = document.createElement("button"); b.className = "choice-btn"; b.textContent = c; b.addEventListener("click", () => answer(c === q.answer)); bank.appendChild(b); }); } else { row.hidden = false; input.value = ""; unit.textContent = q.unit || ""; setTimeout(() => input.focus(), 50); } };
+    const show = () => { const q = qs[i]; prog.textContent = `${i + 1} / ${n}`; qEl.textContent = q.q; qEl.style.whiteSpace = "pre-line"; bank.innerHTML = ""; if (q.choices) { row.hidden = true; q.choices.forEach((c) => { const b = document.createElement("button"); b.className = "choice-btn"; b.textContent = c; b.addEventListener("click", () => answer(c === q.answer)); bank.appendChild(b); }); } else { row.hidden = false; input.value = ""; unit.textContent = q.unit || ""; setTimeout(() => input.focus(), 50); } };
     const answer = (ok) => { countAttempt(this.profile, this.progress, "paper"); if (ok) { score++; Audio.playStep(); } else Audio.playRetry(); i++; if (i < n) show(); else finish(); };
     const checkNum = () => { if (i >= n || input.value.trim() === "") return; answer(Math.abs(Number(input.value) - qs[i].answer) < 0.001); };
     card.querySelector("#ex-check").addEventListener("click", checkNum); input.addEventListener("keydown", (e) => { if (e.key === "Enter") checkNum(); });
@@ -6266,7 +6481,7 @@ class Game {
   _talkDadi() {
     const d = this._dadiFig; if (!d) return; setMood(d.group, "happy", 4); this._engagedNpc = d;
     const opts = { pitch: 380, speaker: "dadi" };
-    if (this.phase === "morning") return this.dialogue.say("Dadi", ["Jeete raho, beta. Take my blessing before school.", "Eat your tiffin fully. Empty box, full brain."], () => { this._engagedNpc = null; this.addEnergy(5); }, opts);
+    if (this.phase === "morning") return this.dialogue.say("Dadi", this.working ? [L("Jeete raho, beta. Take my blessing before work."), this.progress.spouse ? L("Look after {s}. A home is built by two.", { s: this.progress.spouse.name }) : L("Come home before dark. And find a good match, I want to see the wedding.")] : ["Jeete raho, beta. Take my blessing before school.", "Eat your tiffin fully. Empty box, full brain."], () => { this._engagedNpc = null; this.addEnergy(5); }, opts);
     if (this.phase === "night") return this._nightStory();
     const st = DADI_STORIES[this.progress.day % DADI_STORIES.length];
     this.dialogue.say("Dadi", [`Come, sit. A quick one from my puzzle book.`, st.lesson], () => {
@@ -6277,7 +6492,7 @@ class Game {
   _talkGudiya() {
     const gd = this._gudiyaFig; if (!gd) return; setMood(gd.group, "happy", 4); this._engagedNpc = gd;
     const opts = { pitch: 560, speaker: "gudiya" };
-    if (this.phase === "morning") return this.dialogue.say("Gudiya", ["Bhaiya! Bring me a toffee from school. Pinky promise?"], () => { this._engagedNpc = null; }, opts);
+    if (this.phase === "morning") return this.dialogue.say("Gudiya", this.working ? [L("Bhaiya, you look so smart in uniform! Bring me a toffee from the office canteen. Pinky promise?")] : ["Bhaiya! Bring me a toffee from school. Pinky promise?"], () => { this._engagedNpc = null; }, opts);
     if (this.phase === "night") return this._nightLudo();
     const n = 2 + Math.floor(Math.random() * 6), k = 1 + Math.floor(Math.random() * 3);
     this.dialogue.say("Gudiya", [`Teach me counting! I have ${n} blocks and Maa gives me ${k} more.`], () => {
@@ -6288,7 +6503,7 @@ class Game {
 
   // ---- The chat box ----
   _npcKind(npc) {
-    const id = npc && npc.def ? npc.def.id : ""; if (id === "moti") return "pet"; if (["maa", "papa", "dadi", "gudiya"].includes(id)) return id;
+    const id = npc && npc.def ? npc.def.id : ""; if (id === "moti") return "pet"; if (npc && npc.def && npc.def.boss) return "boss"; if (npc && npc.def && npc.def.kin) return npc.def.kin; if (["maa", "papa", "dadi", "gudiya"].includes(id)) return id;
     if (npc && npc.def && npc.def.child) return "friend"; if (id.startsWith("t_") || (npc && npc.def && TEACHERS[id])) return "teacher"; return "other";
   }
   _chatFromDialogue() {
@@ -6661,6 +6876,61 @@ class Game {
     }));
   }
 
+  _talkKin(key, n) {
+    const pr = this.progress; setMood(n.group, "happy", 4); this._engagedNpc = n;
+    let lines;
+    if (key === "spouse") lines = this.phase === "morning" ? [L("Good morning. Your lunch is packed, I put an extra roti."), L("Drive carefully, and message me when you reach.")] : this.phase === "night" ? [L("Long day. Come, sleep. Tomorrow is another one."), pr.child ? L("{c} finally slept. Do not wake the child.", { c: pr.child.name }) : L("Maa was hinting about grandchildren again.")] : [L("How was work? Sit, I will get tea."), pr.child ? L("{c} drew you at work today. It is on the fridge.", { c: pr.child.name }) : L("Sunday, let us take Moti to the park. Just us.")];
+    else { const age = key === "grandchild" ? 1 : this.childAge(); lines = age < 3 ? ["(giggles) Ba-ba!", "(holds your finger and does not let go)"] : age < 6 ? [L("Papa! Look, I drew a police car!"), L("Play hide and seek? You count!")] : age < 13 ? [L("I got 9 out of 10 in maths! Mrs. Rao says hi."), L("Can we go to the stadium on Sunday?")] : age < 18 ? [L("Exams next week. Can you check my science?"), L("Everyone says I look like you. I do not see it.")] : [L("Work is good. My boss is almost as strict as yours was."), L("Sunday dinner, all of us? I will bring the sweets.")]; }
+    this.dialogue.say(n.name, lines, () => { this._engagedNpc = null; }, { pitch: n.def.pitch || 500, speaker: n.id });
+  }
+  // ---- Years, weddings, children ----
+  _fastYear() {
+    const pr = this.progress, job = this.job;
+    const pay = job ? Math.round(salaryFor(job, pr.shifts) * 0.8 * 5) : 0; if (pay) { this.addMoney(pay, L("a year's salary, saved")); pr.shifts += 5; }
+    pr.workDays = (pr.workDays || 0) + 5 - ((pr.workDays || 0) % 5); pr.lastYearAt = pr.workDays; pr.day = ((pr.day + 4) % 20) + 1; buildPeriods(pr.day);
+    saveProgress(this.profile, pr); this._yearPassed(); this._startPhase("morning"); showToast(L("⏩ A year went by. Age {a}.", { a: pr.age }), 3200, "good");
+  }
+  _yearPassed() {
+    const pr = this.progress; pr.age++; saveProgress(this.profile, pr); this.ui.refreshRank();
+    if (!pr.spouse && pr.age >= 25) return this._wedding();
+    if (pr.spouse && !pr.child && pr.age >= pr.marriedAt + 2) return this._childBorn();
+    if (pr.child && !pr.childMarried && this.childAge() >= 23) return this._childWedding();
+    if (pr.childMarried && !pr.grandchild && this.childAge() >= 25) return this._grandchildBorn();
+    if (pr.child && this.childAge() === 4) showToast(L("🎒 {c} starts Nursery at Sunrise Public School today. Same gate, same chalk.", { c: pr.child.name }), 4200, "good");
+    showToast(L("🎂 Happy birthday! You are {a}.", { a: pr.age }), 3000, "good");
+  }
+  _wedding() {
+    const pr = this.progress;
+    const card = openPanel(`<div class="job-title-row"><h2>💍 ${L("Maa has a question")}</h2></div><p class="job-brief">${L("Maa: 'You are {a}, settled, with a good job. Three families have sent proposals. Meet them at the tea house and tell me who feels like home.'", { a: pr.age })}</p><div class="shop-list">${PARTNERS.map((p) => `<div class="cart-row"><div><b>${p.name}</b>, ${L(p.job)}<small>"${L(p.line)}"</small></div><button class="use-btn" data-id="${p.id}">${L("Choose")}</button></div>`).join("")}</div>`);
+    card.querySelectorAll(".use-btn").forEach((b) => b.addEventListener("click", () => {
+      const p = PARTNERS.find((x) => x.id === b.dataset.id); pr.spouse = { id: p.id, name: p.name, job: p.job, look: p.look, pitch: p.pitch }; pr.marriedAt = pr.age; pr.generations = Math.max(pr.generations || 1, 1);
+      this.addMoney(500, L("wedding gifts")); pr.badges = pr.badges || []; pr.badges.push("married"); saveProgress(this.profile, pr); playSuccess();
+      for (const f of Object.values(this.family)) setMood(f.group, "laugh", 12);
+      card.innerHTML = `<div class="job-title-row"><h2>💍 ${L("The wedding")}</h2></div><div class="flash-card"><div class="big">🎉</div><div>${L("Under the mango tree in Shanti Nagar Park. Lights on every tree. Papa cannot stop smiling. Dadi blesses you both and asks for cake. Gudiya dances until the band gives up. {n} takes your hand.", { n: p.name })}</div><div>${L("Gifts: ₹500. {n} moves into our home.", { n: p.name })}</div></div><div class="btn-row"><button class="big-btn" id="wd-ok">${L("Okay")}</button></div>`;
+      card.querySelector("#wd-ok").addEventListener("click", () => { closePanel(); this.diary(`Married ${p.name}.`); if (this.world.currentRoom && this.world.currentRoom.type === "home") { this._exitRoom(); this._enterRoom(this.world.doors.find((d) => d.label === "Our Home")); } });
+    }));
+  }
+  _childBorn() {
+    const pr = this.progress;
+    const card = openPanel(`<div class="job-title-row"><h2>👶 ${L("A new voice in the house")}</h2></div><p class="job-brief">${L("City Hospital, early morning. {s} is tired and smiling. A small hand closes around your finger. Dadi says the child has your nose.", { s: pr.spouse.name })}</p><div class="chat-row"><input id="cb-name" type="text" maxlength="16" placeholder="${L("Name the baby")}" value="${CHILD_NAMES[pr.day % CHILD_NAMES.length]}"><button class="big-btn" id="cb-ok">${L("Okay")}</button></div>`);
+    card.querySelector("#cb-ok").addEventListener("click", () => {
+      const name = (card.querySelector("#cb-name").value || "Chintu").trim().slice(0, 16) || "Chintu";
+      pr.child = { name }; pr.childBornAt = pr.age; pr.generations = 2; pr.badges = pr.badges || []; pr.badges.push("parent"); saveProgress(this.profile, pr); playSuccess(); closePanel();
+      showToast(L("👶 {n} is born. Two generations now.", { n: name }), 4000, "good"); this.diary(`${name} was born.`);
+      if (this.world.currentRoom && this.world.currentRoom.type === "home") { this._exitRoom(); this._enterRoom(this.world.doors.find((d) => d.label === "Our Home")); }
+    });
+  }
+  _childWedding() {
+    const pr = this.progress; pr.childMarried = true; saveProgress(this.profile, pr);
+    const card = openPanel(`<div class="job-title-row"><h2>💍 ${L("{n}'s wedding", { n: pr.child.name })}</h2></div><div class="flash-card"><div class="big">🎊</div><div>${L("The same mango tree, new lights. Now you are the one checking the collar twice. {s} cries the way Maa did. Dadi's chair is empty this year, but her shawl is on it.", { s: pr.spouse.name })}</div></div><div class="btn-row"><button class="big-btn" id="cw-ok">${L("Okay")}</button></div>`);
+    card.querySelector("#cw-ok").addEventListener("click", () => { closePanel(); this.diary(`${pr.child.name} got married.`); });
+  }
+  _grandchildBorn() {
+    const pr = this.progress; const name = CHILD_NAMES[(pr.day + 3) % CHILD_NAMES.length]; pr.grandchild = { name }; pr.generations = 3; pr.badges = pr.badges || []; pr.badges.push("grandparent"); saveProgress(this.profile, pr); playSuccess();
+    const card = openPanel(`<div class="job-title-row"><h2>👶 ${L("Three generations")}</h2></div><div class="flash-card"><div class="big">👨‍👩‍👧‍👦</div><div>${L("{c} places a small bundle in your arms: {g}. Three generations on one sofa. The movie plays; nobody watches it.", { c: pr.child.name, g: name })}</div><div>${L("Tonight, when you go to bed, the story finds its peaceful end.")}</div></div><div class="btn-row"><button class="big-btn" id="gc-ok">${L("Okay")}</button></div>`);
+    card.querySelector("#gc-ok").addEventListener("click", () => { closePanel(); this.diary(`${name}, your grandchild, was born.`); });
+  }
+
   // ---- The ending ----
   _ending() {
     const pr = this.progress; pr.ended = true; saveProgress(this.profile, pr);
@@ -6668,11 +6938,12 @@ class Game {
     const card = openPanel(`<div class="job-title-row"><h2>🌙 ${L("The last evening")}</h2></div><div class="flash-card" id="flash"></div><div class="btn-row"><button class="big-btn" id="flash-next">${L("Continue")}</button></div>`);
     const box = card.querySelector("#flash"), btn = card.querySelector("#flash-next");
     const show = () => {
-      if (i < FLASHBACK.length) { const [ic, txt] = FLASHBACK[i]; box.innerHTML = `<div class="big">${ic}</div><div>${L(txt)}</div>`; speakLine(L(txt), 360); i++; return; }
+      const ALL = FLASHBACK.concat(WORK_FLASHBACK);
+      if (i < ALL.length) { const [ic, txt] = ALL[i]; box.innerHTML = `<div class="big">${ic}</div><div>${L(txt)}</div>`; speakLine(L(txt), 360); i++; return; }
       const money = fmtMoney(pr.money), reports = pr.reports.length, friends = Object.values(pr.friendship).reduce((a, b) => a + b, 0);
-      box.innerHTML = `<div class="big">🏡</div><div><b>${L("The End")}</b></div><div>${L("Ten shifts of honest work. {r} report cards. Friendship {f}. Wallet {m}.", { r: reports, f: friends, m: money })}</div><div>${L("Maa says: 'You grew up well.' Papa says nothing, but his eyes are wet. Dadi pats the chair beside her. You sit. The colony lights come on, one by one.")}</div>`;
+      box.innerHTML = `<div class="big">🏡</div><div><b>${L("The End")}</b></div><div>${L("{s} shifts of honest work. {r} report cards. Friendship {f}. Wallet {m}. {fam}.", { s: pr.shifts, r: reports, f: friends, m: money, fam: this.familyLine() })}</div><div>${L("Maa says: 'You grew up well.' Papa says nothing, but his eyes are wet. Dadi pats the chair beside her. You sit. The colony lights come on, one by one.")}</div>`;
       speakLine(L("The end. You grew up well."), 360);
-      btn.textContent = L("Play again from Nursery"); btn.onclick = () => { try { localStorage.setItem("school-days.profile", "nursery"); localStorage.removeItem("school-days.v1.graduate"); } catch (e) {} location.reload(); };
+      btn.textContent = L("Play again from Nursery"); btn.onclick = () => { try { localStorage.setItem("school-days.profile", "nursery"); for (const s of STAGES) localStorage.removeItem("school-days.v1." + s.id); } catch (e) {} location.reload(); };
       for (const f of Object.values(this.family)) setMood(f.group, "happy", 30);
     };
     btn.addEventListener("click", show); show();

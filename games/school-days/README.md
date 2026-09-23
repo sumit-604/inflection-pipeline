@@ -53,6 +53,11 @@ Town Library, Radio Suryanagar, Fish Market, Vet Clinic, Cinema Hall, Old
 Town Tea House and a lane of houses). Twenty six people walk the streets,
 and cars run on every road.
 
+## Parks
+
+Three playgrounds: Shanti Nagar Park, City Park and the school playground.
+Press E at the swing, the see-saw or the slide to play on it.
+
 ## The labs
 
 Outside your own period, four senior students work at the benches. The
@@ -74,13 +79,17 @@ From Class 12 the Jobs list opens with twenty two jobs: teacher, doctor,
 software engineer, police officer, bank officer, chef, supermarket manager,
 post office clerk, firefighter, lawyer, pilot, journalist, mechanic,
 scientist, architect, sports coach, hotel manager, bank manager, farmer,
-librarian, radio jockey, veterinary doctor.
+librarian, radio jockey, veterinary doctor, cricketer, footballer. The two
+sports jobs replace the written test with a fitness trial (ten tries, six
+clean) and a match day of five balls or five shots for the shift.
 Choose one, follow the compass to its place, and press E at the door.
 
 1. Written test: ten questions in the job's subject, six to pass.
 2. Interview: five questions about work and conduct, four to pass.
 3. Hired: from the next morning you go to work instead of school, at any
-   class. The bus and Papa's car take you to the city, never to a lesson. One shift a day (five tasks); pay is the salary times the tasks
+   class. The bus and Papa's car take you to the city, never to a lesson.
+   A working adult drives the family car: press E at it, stay on the roads,
+   E again to get out. One shift a day (five tasks); pay is the salary times the tasks
    done right. Ten shifts promote you to the next stage.
 
 ## Family life

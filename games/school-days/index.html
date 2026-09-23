@@ -2590,6 +2590,7 @@ class World {
     // City park with a fountain between the market and the school road.
     const lawn = new THREE.Mesh(new THREE.BoxGeometry(30, 0.3, 26), mat(0x8bc46a)); lawn.position.set(140, 0.12, 60); lawn.receiveShadow = true; this.scene.add(lawn);
     this._addPondDecor(140, 60);
+    this._buildPlayground(128, 70); const cp = makeTextSprite("City Park", { size: 50, scale: 1.3 }); cp.position.set(140, 3.6, 46); this.scene.add(cp);
     for (let z = 50; z <= 120; z += 20) for (const x of [33, 47]) this._addLamp(x, z);
   }
 
@@ -2771,8 +2772,7 @@ class World {
     for (const f of this.flags) { const p = f.geometry.attributes.position; for (let i = 0; i < p.count; i++) { const x = p.getX(i); p.setZ(i, Math.sin(x * 3 + elapsed * 8) * 0.08 * (x + 1.1)); } p.needsUpdate = true; }
     for (const cloud of this.clouds) { cloud.position.x += dt * cloud.userData.speed; if (cloud.position.x > 220) cloud.position.x = -220; }
     for (const bird of this.birds) { const u = bird.userData; u.angle += dt * u.speed; bird.position.set(u.cx + Math.cos(u.angle) * u.r, u.h + Math.sin(elapsed * 2 + u.r) * 0.4, u.cz + Math.sin(u.angle) * u.r); bird.rotation.y = -u.angle; const flap = Math.sin(elapsed * 10 + u.r) * 0.6; bird.children[0].rotation.z = flap; bird.children[1].rotation.z = -flap; }
-    if (this.swing) this.swing.rotation.x = Math.sin(elapsed * 1.6) * 0.6;
-    if (this.seesaw) this.seesaw.rotation.z = Math.sin(elapsed * 1.1) * 0.25;
+    for (const pg of this.playgrounds || []) { if (pg.busy) continue; pg.swing.rotation.x = Math.sin(elapsed * 1.6 + pg.x) * 0.6; if (pg.seesaw) pg.seesaw.rotation.z = Math.sin(elapsed * 1.1 + pg.z) * 0.25; }
     // The school bus waits at each stop for a while.
     const b = this.bus;
     if (b) {
@@ -3015,14 +3015,15 @@ class World {
     frame.add(swing);
     frame.position.set(x, h, z); this.scene.add(frame);
     frame.userData.dynamic = true;
-    this.swing = swing;
+    this.swing = swing; swing.userData.seat = { x: 0, y: -2.2 + 0.06, z: 0 };
+    if (!this.playgrounds) this.playgrounds = []; const pg = { x, z, swing, frame, seesaw: null }; this.playgrounds.push(pg);
     for (const dx of [-1.2, 1.2]) this.addCircle(x + dx, z, 0.15);
     this.addCircle(x + 5, z, 0.3);
     this.addBox(x + 10, z, 0.8, 4.2);
     // Seesaw.
     const pivot = new THREE.Mesh(new THREE.BoxGeometry(0.3, 0.6, 0.3), mat(COLORS.metal)); pivot.position.set(x + 5, h + 0.3, z); this.scene.add(pivot);
     const plank = new THREE.Mesh(new THREE.BoxGeometry(3.6, 0.1, 0.4), mat(0xffb703)); plank.position.set(x + 5, h + 0.65, z); plank.userData.dynamic = true; this.scene.add(plank);
-    this.seesaw = plank;
+    this.seesaw = plank; pg.seesaw = plank;
     // Slide.
     const ladder = new THREE.Mesh(new THREE.BoxGeometry(0.6, 2, 0.1), mat(COLORS.metal)); ladder.position.set(x + 10, h + 1, z - 1); this.scene.add(ladder);
     const slide = new THREE.Mesh(new THREE.BoxGeometry(0.7, 0.1, 3.2), mat(0x3a86ff)); slide.position.set(x + 10, h + 1.05, z + 0.8); slide.rotation.x = 0.6; this.scene.add(slide);
@@ -3530,6 +3531,8 @@ JOBS.push(
   { id: "farmer", name: "Farmer", icon: "🌾", place: "Green Farm", subject: "evs", salary: 500, boss: "Kisan Bhola", desc: "Grow vegetables at Green Farm in Old Town." },
   { id: "librarian", name: "Librarian", icon: "📚", place: "Old Town Library", subject: "english", salary: 500, boss: "Head Librarian Das", desc: "Keep the Old Town Library in order." },
   { id: "rj", name: "Radio Jockey", icon: "🎙️", place: "Radio Suryanagar", subject: "english", salary: 650, boss: "Station Head Rhea", desc: "Host the morning show on Radio Suryanagar." },
+  { id: "cricketer", name: "Cricketer", icon: "🏏", place: "Sports Stadium", subject: "evs", salary: 1300, boss: "Captain Rahul", desc: "Play for Suryanagar XI at the Sports Stadium.", trial: { name: "Net practice", icon: "🏏", cue: "Swing when the ball is in the green zone.", hit: "SIX!", miss: "Bowled!", verb: "Swing" } },
+  { id: "footballer", name: "Footballer", icon: "⚽", place: "Sports Stadium", subject: "evs", salary: 1200, boss: "Coach Fernandes", desc: "Play for Suryanagar FC at the Sports Stadium.", trial: { name: "Penalty practice", icon: "⚽", cue: "Shoot when the keeper is in the green zone.", hit: "GOAL!", miss: "Saved!", verb: "Shoot" } },
   { id: "vet", name: "Veterinary Doctor", icon: "🐾", place: "Vet Clinic", subject: "science", salary: 850, boss: "Dr. Pillai", desc: "Treat animals at the Vet Clinic." },
 );
 const INTERVIEW = [
@@ -3545,6 +3548,7 @@ const INTERVIEW = [
   MC("If you do not know an answer in the interview, you…", "Say so honestly and explain how you would find out", "Make something up", "Stay silent", "Change the subject"),
 ];
 const WORK_TASKS = {
+  cricketer: "Match day: five balls to face.", footballer: "Match day: five shots on goal.",
   firefighter: "Drill day: answer the safety science questions.", lawyer: "Court is in session: answer the language questions.", pilot: "Pre-flight checks: answer the maths questions.", journalist: "Deadline: answer the language questions for the front page.", mechanic: "Three cars in the bay: answer the science questions.", scientist: "The experiment: answer the science questions.", architect: "The blueprint: answer the maths questions.", coach: "Training plan: answer the EVS questions.", hotelier: "Check-in rush: answer the maths questions.", cityBanker: "Loan day: answer the maths questions.", farmer: "Harvest: answer the EVS questions.", librarian: "New books: answer the language questions.", rj: "On air: answer the language questions.", vet: "Patients waiting: answer the science questions.",
   teacher: "Teach today's lesson: answer the class's questions.", doctor: "Diagnose the patients: answer the science questions.", engineer: "Fix the bugs: solve the maths.", police: "Handle the cases: general knowledge.", banker: "Balance the ledger: the sums.", chef: "Get the recipes right: science of cooking.", shopkeeper: "Stock and bills: the sums.", postman: "Sort the letters: spelling and reading.",
 };
@@ -5730,9 +5734,14 @@ class Game {
     for (const st of BUS_STOPS) this.interactables.push({ pos: st.standAt, radius: 3.5, prompt: () => (this.world.busWaitingAt(st) ? L("Board the school bus") : L("Bus stop (wait for the bus)")), activate: () => this._boardBus(st) });
     this.interactables.push({ pos: this.world.assemblySpot, radius: 7, prompt: () => (this.phase === "school" && PERIODS[this.periodIndex].id === "assembly" ? L("Stand in line for the morning assembly") : L("The assembly ground")), activate: () => this._assembly() });
     for (const b of this.world.lunchBenches) this.interactables.push({ pos: b, radius: 2.4, prompt: () => (this.phase === "school" && PERIODS[this.periodIndex].id === "lunch" ? L("Sit and eat your tiffin") : L("A lunch bench")), activate: () => this._lunch() });
+    for (const pg of this.world.playgrounds || []) {
+      this.interactables.push({ pos: { x: pg.x, z: pg.z + 1 }, radius: 1.8, prompt: () => L("Swing on the swing"), activate: () => this._playPark("swing", pg) });
+      this.interactables.push({ pos: { x: pg.x + 5, z: pg.z + 1 }, radius: 1.8, prompt: () => L("Ride the see-saw"), activate: () => this._playPark("seesaw", pg) });
+      this.interactables.push({ pos: { x: pg.x + 10, z: pg.z - 2.2 }, radius: 1.8, prompt: () => L("Climb the slide"), activate: () => this._playPark("slide", pg) });
+    }
     for (const npc of this.npcs) this.interactables.push({ pos: npc.position, radius: 2.6, npc, visible: () => npc.group.visible, prompt: () => L("Talk to {n}", { n: npc.name }), activate: () => this._talk(npc) });
     // Papa's car, parked in our lane. In the morning he drops you at school; after school he picks you up at the gate.
-    this.interactables.push({ pos: this.car.group.position, radius: 3.0, visible: () => !this.car.driving, prompt: () => (this.phase === "morning" && !this.working ? L("Ride to school in Papa's car") : this.phase === "over" && this.car.atSchool ? L("Ride home in Papa's car") : L("Papa's car")), activate: () => this._carRide() });
+    this.interactables.push({ pos: this.car.group.position, radius: 3.0, visible: () => !this.car.driving, prompt: () => (this.working ? L("Drive the car") : this.phase === "morning" ? L("Ride to school in Papa's car") : this.phase === "over" && this.car.atSchool ? L("Ride home in Papa's car") : L("Papa's car")), activate: () => this._carRide() });
   }
 
   // ---- Rooms ----
@@ -6006,16 +6015,20 @@ class Game {
     }));
   }
   _jobRoomSetup(room, door) {
-    const job = JOBS.find((j) => j.place === door.label); if (!job) return;
-    const pr = this.progress;
-    if (pr.hired.includes(job.id)) this.roomInteractables.push({ pos: room.occupantPos(), radius: 3.2, prompt: () => L("Work a shift as {j} (₹{n})", { j: job.name, n: job.salary }), activate: () => this._workShift(job) });
-    else if (this.stage >= stageIndex("c12")) this.roomInteractables.push({ pos: room.occupantPos(), radius: 3.2, prompt: () => L("Job interview: {j}", { j: job.name }), activate: () => this._jobInterview(job) });
+    const here = JOBS.filter((j) => j.place === door.label); if (!here.length) return;
+    const pr = this.progress, base = room.occupantPos();
+    const hiredHere = here.filter((j) => pr.hired.includes(j.id)), cur = hiredHere.find((j) => j.id === pr.job) || hiredHere[0];
+    let k = 0;
+    if (cur) { this.roomInteractables.push({ pos: base, radius: 2.4, prompt: () => L("Work a shift as {j} (₹{n})", { j: cur.name, n: cur.salary }), activate: () => this._workShift(cur) }); k++; }
+    if (this.stage >= stageIndex("c12")) for (const job of here.filter((j) => !pr.hired.includes(j.id))) { const pos = { x: base.x + k * 2.2, z: base.z }; k++; this.roomInteractables.push({ pos, radius: 1.6, prompt: () => L("Job interview: {j}", { j: job.name }), activate: () => this._jobInterview(job) }); }
   }
   _jobInterview(job) {
     const S = SUBJECTS[job.subject];
     const boss = job.boss;
-    this.dialogue.say(boss, [L("So, you want to be a {j}. First the written test: ten {s} questions, six to pass. Then the interview.", { j: job.name, s: S.name })], () => {
-      this._runPaper(`${job.icon} ${L("Written test")}: ${job.name}`, drawSubject(job.subject, 10, this.lvl), (score) => {
+    const first = job.trial ? L("So, you want to be a {j}. First the fitness trial: {t}, ten tries, six clean to pass. Then the interview.", { j: job.name, t: job.trial.name }) : L("So, you want to be a {j}. First the written test: ten {s} questions, six to pass. Then the interview.", { j: job.name, s: S.name });
+    const test = (cb) => (job.trial ? this._timingGame(job.trial, 10, cb, boss) : this._runPaper(`${job.icon} ${L("Written test")}: ${job.name}`, drawSubject(job.subject, 10, this.lvl), cb));
+    this.dialogue.say(boss, [first], () => {
+      test((score) => {
         if (score < 6) { this.dialogue.say(boss, [L("{n} out of 10. Not enough. Study {s} and come back tomorrow.", { n: score, s: S.name })]); this.diary(`${job.name} written test: ${score}/10, failed.`); return; }
         this.dialogue.say(boss, [L("{n} out of 10. Good. Now the interview. Sit.", { n: score })], () => {
           const qs = makeRng(Math.floor(Math.random() * 1e9)).shuffle(INTERVIEW).slice(0, 5).map((q) => ({ ...q, choices: [q.answer, ...q.choices.filter((c) => c !== q.answer)].sort(() => Math.random() - 0.5) }));
@@ -6032,7 +6045,8 @@ class Game {
   _workShift(job) {
     if (this._shiftDone) { showToast(L("Shift done for today. Go home and rest."), 2400); return; }
     this.dialogue.say(job.boss, [L(WORK_TASKS[job.id]), L("Five tasks. Each one right is a full day's pay.")], () => {
-      this._runPaper(`${job.icon} ${L("At work")}: ${job.name}`, drawSubject(job.subject, 5, this.lvl), (score) => {
+      const work = (cb) => (job.trial ? this._timingGame(job.trial, 5, cb, job.boss) : this._runPaper(`${job.icon} ${L("At work")}: ${job.name}`, drawSubject(job.subject, 5, this.lvl), cb));
+      work((score) => {
         const pay = Math.round(job.salary * score / 5);
         this._shiftDone = true; this.progress.shifts++; this.addMoney(pay, L("salary") + " (" + score + "/5)");
         this.diary(`Worked as ${job.name}: ${score}/5, ₹${pay}.`);
@@ -6118,6 +6132,30 @@ class Game {
     setTimeout(() => input.focus(), 60);
   }
 
+  // ---- Playing in the park: swing, see-saw, slide ----
+  _playPark(kind, pg) {
+    if (this._park || this.player.riding) return;
+    const P = this.player.group;
+    this._park = { kind, pg, t: 0, dur: kind === "slide" ? 4 : 8 }; pg.busy = true;
+    if (kind === "swing") { this.player.mount({ group: pg.swing, speed: 0, kind: "swing", label: "swing", controlled: false }); }
+    else if (kind === "seesaw") { P.position.set(pg.x + 5 - 1.4, 0.75, pg.z); P.rotation.y = Math.PI / 2; sitPose(P, "car"); }
+    else { P.position.set(pg.x + 10, 2.1, pg.z - 1.2); P.rotation.y = 0; sitPose(P, "car"); }
+    Audio.playPick(); showToast(kind === "swing" ? L("Wheee! Higher, higher!") : kind === "seesaw" ? L("Up... and down... Gudiya would love this.") : L("Up the ladder, and... whoosh!"), 2600, "good");
+    setMood(P, "laugh", 6);
+  }
+  _tickPark(dt) {
+    const k = this._park; if (!k) return;
+    k.t += dt; const P = this.player.group, pg = k.pg;
+    if (k.kind === "swing") pg.swing.rotation.x = Math.sin(k.t * 2.4) * Math.min(0.9, k.t * 0.3);
+    else if (k.kind === "seesaw") { const a = Math.sin(k.t * 2.0) * 0.25; pg.seesaw.rotation.z = a; P.position.set(pg.x + 5 - 1.4, 0.75 + Math.sin(a) * 1.4 + 0.1, pg.z); }
+    else { const u = Math.min(1, Math.max(0, (k.t - 1) / 2)); P.position.set(pg.x + 10, 2.1 - u * 1.9, pg.z - 1.2 + u * 3.6); }
+    if (k.t >= k.dur) {
+      if (k.kind === "swing") { this.world.scene.add(P); this.player.riding = null; }
+      standPose(P); P.position.set(pg.x + (k.kind === "swing" ? 0 : k.kind === "seesaw" ? 5 : 10), 0, pg.z + 2.6); P.rotation.set(0, Math.PI, 0);
+      pg.busy = false; this._park = null; this.addEnergy(4); this.progress.fun = (this.progress.fun || 0) + 1; this.diary(`Played on the ${k.kind} in the park.`);
+    }
+  }
+
   // ---- Lunch is short: two and a half minutes, then the bell ----
   _tickLunch(dt) {
     const per = PERIODS[this.periodIndex];
@@ -6136,6 +6174,9 @@ class Game {
       this._driveCar([[c.home.x, c.home.z], [c.home.x, 44], [-44, 44], [-44, 4], [c.gate.x, c.gate.z]], () => { c.atSchool = true; this.player.group.position.set(c.gate.x, 0, c.gate.z + 4); this._startPhase("school"); showToast(L("Papa: Study well. I will pick you up after school."), 3200, "good"); });
     } else if (this.phase === "over" && c.atSchool) {
       this._driveCar([[c.gate.x, c.gate.z], [-44, 4], [-44, 44], [c.home.x, 44], [c.home.x, c.home.z]], () => { c.atSchool = false; this.player.group.position.set(HOME.door.x, 0, HOME.door.z + 3); this._enterRoom(this.world.doors.find((d) => d.label === "Our Home")); this._startPhase("evening"); });
+    } else if (this.working) {
+      this.player.mount({ group: c.group, speed: 14, kind: "car", label: L("Your car"), controlled: true }); playHorn();
+      showToast(L("🚗 Your car now. Seat belt on. Stay on the roads, stop at red lights. Press E to get out."), 3600, "good");
     } else showToast(L("Papa's car. He drives you to school in the morning and home after school."), 2600);
   }
   _driveCar(path, onArrive) {
@@ -6421,30 +6462,35 @@ class Game {
     }, { pitch: 300, speaker: coach.id });
   }
   // A timing game for every sport but football: hit the green zone five times.
+  // A timing game: hit the green zone. Used for games period, sports trials and match days.
+  _timingGame(spec, tries, onDone, who = "Coach Vikram") {
+    let n = 0, hits = 0, pos = 0, dir = 1, last = performance.now(), running = true;
+    const card = openPanel(`<div class="job-title-row"><h2>${spec.icon} ${spec.name}</h2></div><p class="job-brief">${L(spec.cue)}</p><div class="sport-track"><div class="sport-marker" id="sp-mark"></div></div><div class="job-goal" id="sp-score">${L("Try")} 1 / ${tries}</div><div class="btn-row"><button class="big-btn" id="sp-hit">${spec.icon} ${L(spec.verb)}!</button></div><div id="sp-result"></div>`);
+    this._lockPanel = true;
+    const mark = card.querySelector("#sp-mark"), score = card.querySelector("#sp-score"), btn = card.querySelector("#sp-hit"), res = card.querySelector("#sp-result");
+    const speed = 0.9 + Math.min(0.6, this.lvl * 0.05);
+    const tick = () => { if (!running) return; const now = performance.now(), dt = (now - last) / 1000; last = now; pos += dir * dt * speed; if (pos > 1) { pos = 1; dir = -1; } if (pos < 0) { pos = 0; dir = 1; } mark.style.left = `calc(${(pos * 100).toFixed(1)}% - ${(pos * 24).toFixed(0)}px)`; requestAnimationFrame(tick); };
+    requestAnimationFrame(tick);
+    this._sportPos = () => pos; this._sportSet = (v) => { pos = v; };
+    btn.addEventListener("click", () => {
+      if (n >= tries) return;
+      n++; const ok = Math.abs(pos - 0.5) <= 0.12; if (ok) { hits++; Audio.playStep(); } else Audio.playRetry();
+      score.textContent = `${L("Try")} ${Math.min(n + 1, tries)} / ${tries} · ${ok ? L(spec.hit) : L(spec.miss)} · ${hits} ${L("clean")}`;
+      if (n >= tries) {
+        running = false; btn.hidden = true;
+        res.innerHTML = `<div class="score-big">${hits} / ${tries}</div><div class="solved-banner"><b>${who}:</b> "${L(hits >= tries * 0.8 ? "Champion! Rest, then water." : hits >= tries * 0.4 ? "Good effort. Watch the green zone, not the button." : "Keep practising. Tomorrow again.")}"</div><div class="btn-row"><button class="big-btn" id="sp-ok">${L("Okay")}</button></div>`;
+        res.querySelector("#sp-ok").addEventListener("click", () => { this._lockPanel = false; closePanel(); onDone(hits); });
+      }
+    });
+  }
   _sportGame(sport, coach) {
     this.dialogue.say(coach.name, [L("Today: {s}! {c}", { s: sport.name, c: L(sport.cue) }), L("Five tries. Every clean one is a mark.")], () => {
       this._engagedNpc = null;
-      let tries = 0, hits = 0, pos = 0, dir = 1, last = performance.now(), running = true;
-      const card = openPanel(`<div class="job-title-row"><h2>${sport.icon} ${sport.name}</h2></div><p class="job-brief">${L(sport.cue)}</p><div class="sport-track"><div class="sport-marker" id="sp-mark"></div></div><div class="job-goal" id="sp-score">${L("Try")} 1 / 5</div><div class="btn-row"><button class="big-btn" id="sp-hit">${sport.icon} ${L(sport.verb)}!</button></div><div id="sp-result"></div>`);
-      const mark = card.querySelector("#sp-mark"), score = card.querySelector("#sp-score"), btn = card.querySelector("#sp-hit"), res = card.querySelector("#sp-result");
-      const speed = 0.9 + Math.min(0.6, this.lvl * 0.05);
-      const tick = () => { if (!running) return; const now = performance.now(), dt = (now - last) / 1000; last = now; pos += dir * dt * speed; if (pos > 1) { pos = 1; dir = -1; } if (pos < 0) { pos = 0; dir = 1; } mark.style.left = `calc(${(pos * 100).toFixed(1)}% - ${(pos * 24).toFixed(0)}px)`; requestAnimationFrame(tick); };
-      requestAnimationFrame(tick);
-      this._sportPos = () => pos; this._sportSet = (v) => { pos = v; };
-      btn.addEventListener("click", () => {
-        if (tries >= 5) return;
-        tries++; const ok = Math.abs(pos - 0.5) <= 0.12; if (ok) { hits++; Audio.playStep(); } else Audio.playRetry();
-        score.textContent = `${L("Try")} ${Math.min(tries + 1, 5)} / 5 · ${ok ? L(sport.hit) : L(sport.miss)} · ${hits} ${L("clean")}`;
-        if (tries >= 5) {
-          running = false; btn.hidden = true;
-          res.innerHTML = `<div class="score-big">${hits} / 5</div><div class="solved-banner"><b>${coach.name}:</b> "${L(hits >= 4 ? "Champion! Rest, then water." : hits >= 2 ? "Good effort. Watch the green zone, not the button." : "Keep practising. Tomorrow is a new sport.")}"</div><div class="btn-row"><button class="big-btn" id="sp-ok">${L("Okay")}</button></div>`;
-          res.querySelector("#sp-ok").addEventListener("click", () => {
-            closePanel(); this._goalDone = true; if (hits) { this._marksToday = (this._marksToday || 0) + hits; this.addMarks("games", "cw", hits, `${sport.name}`); }
-            this.diary(`${sport.name}: ${hits}/5.`); this.friends.forEach((f) => setMood(f.group, "happy", 4)); playSuccess();
-            setTimeout(() => this._endPeriod(), 800);
-          });
-        }
-      });
+      this._timingGame(sport, 5, (hits) => {
+        this._goalDone = true; if (hits) { this._marksToday = (this._marksToday || 0) + hits; this.addMarks("games", "cw", hits, `${sport.name}`); }
+        this.diary(`${sport.name}: ${hits}/5.`); this.friends.forEach((f) => setMood(f.group, "happy", 4)); playSuccess();
+        setTimeout(() => this._endPeriod(), 800);
+      }, coach.name);
     }, { pitch: 300, speaker: coach.id });
   }
   _updateGames() {
@@ -6479,14 +6525,14 @@ class Game {
   _loop() {
     requestAnimationFrame(this._loop);
     const dt = Math.min(this.clock.getDelta(), 0.05), elapsed = this.clock.elapsedTime;
-    const blocked = this._uiBlocking();
+    const blocked = this._uiBlocking() || !!this._park;
     this.player.update(dt, blocked ? { x: 0, y: 0 } : this.input.move, this.input.running, blocked ? 0 : this.input.cameraDelta(dt), this.input.cameraIdleFor());
     this.world.update(dt, elapsed, this.player.position);
     const pp = this.player.position;
     // Walking to school on foot: entering the campus starts the school day.
     if (!this.working && this.phase === "morning" && !this.world.currentRoom && (!this.player.riding || this.player.riding.kind === "bike") && pp.x > SCHOOL.x1 && pp.x < SCHOOL.x2 && pp.z > SCHOOL.z1 && pp.z < SCHOOL.z2) this._startPhase("school");
     if (this.phase === "over" && this.world.currentRoom && this.world.currentRoom.type === "home") this._startPhase("evening");
-    this._tickLunch(dt); this._tickCar(dt);
+    this._tickLunch(dt); this._tickCar(dt); this._tickPark(dt);
     if (!this.player.riding && this.player.speedKmh > 1 && !this.world.currentRoom) { this.progress.energy = Math.max(0, this.progress.energy - dt / (this.input.running ? 8 : 16)); if (Math.floor(this.progress.energy) !== this._energyShown) { this._energyShown = Math.floor(this.progress.energy); this.ui.refreshRank(); } }
     this.player.tired = this.progress.energy < 25;
     this._updateGear(dt, elapsed, !blocked && this.input.usePressed());
@@ -6511,7 +6557,7 @@ class Game {
     if (amb.chirp <= 0) { playChirp(); amb.chirp = 3 + Math.random() * 6; }
     if (amb.horn <= 0) { amb.horn = 6 + Math.random() * 9; if (!this.world.currentRoom && Math.abs(pp.z) < 30) playHorn(); }
     // Interact.
-    if (!blocked && this.player.riding && this.player.riding.kind === "bike") { this.ui.setInteractPrompt(L("Get off the bicycle") + (this.input.isTouch ? "" : "  (E)")); if (this.input.interactPressed()) { this.player.dismount(); Audio.playPick(); } }
+    if (!blocked && this.player.riding && (this.player.riding.kind === "bike" || (this.player.riding.kind === "car" && this.player.riding.controlled))) { this.ui.setInteractPrompt((this.player.riding.kind === "bike" ? L("Get off the bicycle") : L("Get out of the car")) + (this.input.isTouch ? "" : "  (E)")); if (this.input.interactPressed()) { this.player.dismount(); Audio.playPick(); } }
     else if (!blocked && this.player.riding) { /* handled in _updateBus */ }
     else if (!blocked) {
       if (this._engagedNpc && !this.dialogue.active && !panelOpen()) this._engagedNpc = null;

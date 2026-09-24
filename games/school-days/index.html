@@ -748,7 +748,7 @@ import * as THREE from 'three';
    label goes through L(). The voice follows the language.
    Questions and answers stay in English for now.
    ============================================================ */
-const GAME_VERSION = "v26";
+const GAME_VERSION = "v27";
 const LANGS = {
   en: { name: "English", voice: "en-IN" },
   hi: { name: "हिन्दी", voice: "hi-IN" },
@@ -6327,7 +6327,7 @@ function buildCabin(scene) {
   box(3.9, 2.4, 0.1, 0xdfe4ea, 0, 1.2, half);                     // front wall (cockpit door)
   box(0.9, 1.9, 0.05, 0x9aa6ad, 0, 0.95, half - 0.06);
   box(3.9, 2.4, 0.1, 0xdfe4ea, 0, 1.2, -half);                    // back wall
-  const sign = makeTextSprite("✈️ Suryanagar Air · SA 101 · Mumbai", { size: 42, scale: 1.1 }); sign.position.set(0, 1.95, half - 0.2); g.add(sign);
+  const sign = makeTextSprite("✈️ Suryanagar Air · Flight SA 101", { size: 42, scale: 1.1 }); sign.position.set(0, 1.95, half - 0.2); g.add(sign);
   const belt = makeTextSprite("🔔 Fasten seat belt", { size: 38, scale: 0.7 }); belt.position.set(0, 2.1, half - 3); g.add(belt);
   const seats = [];
   for (let r = 0; r < CABIN.rows; r++) { const z = -10 + r * 1.1; for (const x of [-1.55, -1.1, -0.65, 0.65, 1.1, 1.55]) { box(0.42, 0.12, 0.45, 0x1d3557, x, 0.45, z); box(0.42, 0.7, 0.1, 0x1d3557, x, 0.85, z - 0.22); box(0.36, 0.14, 0.11, 0xffffff, x, 1.12, z - 0.22); box(0.08, 0.2, 0.4, 0x2a3a5c, x - 0.23, 0.6, z); seats.push({ x, z, row: r }); } }
@@ -6337,6 +6337,116 @@ function buildCabin(scene) {
   let light = null; try { light = new THREE.PointLight(0xfff6e0, 14, 30, 2); light.position.set(0, 2.1, 0); g.add(light); } catch (e) { /* no light: the hemisphere light still shows the cabin */ }
   return { group: g, seats, clouds, len: L };
 }
+
+// ---- Inside a train coach: facing seats, barred windows, fields and poles outside ----
+const COACH = { x: -900, z: -760, len: 22 };
+function buildCoachInterior(scene) {
+  const g = new THREE.Group(); g.position.set(COACH.x, 0, COACH.z); scene.add(g); g.visible = false;
+  const box = (w, h, d, c, x, y, z, e = 0) => { const m = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), new THREE.MeshStandardMaterial({ color: c, roughness: 0.8, emissive: e ? c : 0x000000, emissiveIntensity: e })); m.position.set(x, y, z); g.add(m); return m; };
+  const L = COACH.len, half = L / 2;
+  box(3.2, 0.1, L, 0x6b6f76, 0, -0.05, 0); box(3.2, 0.12, L, 0x9fb7c9, 0, 2.5, 0); box(0.3, 0.05, L - 1, 0xfff6e0, 0, 2.43, 0, 0.8);
+  for (const s of [-1, 1]) { const x = s * 1.6; box(0.1, 0.9, L, 0x2f6f8f, x, 0.45, 0); box(0.1, 0.9, L, 0x2f6f8f, x, 2.05, 0); for (let z = -half + 0.6; z < half; z += 1.2) box(0.1, 0.72, 0.5, 0x2f6f8f, x, 1.26, z); for (let z = -half + 0.2; z < half; z += 0.3) box(0.03, 0.72, 0.03, 0x9aa6ad, s * 1.62, 1.26, z); }
+  box(3.2, 2.6, 0.1, 0x2f6f8f, 0, 1.3, half); box(3.2, 2.6, 0.1, 0x2f6f8f, 0, 1.3, -half);
+  const sign = makeTextSprite("🚆 Coach S3 · Sleeper", { size: 40, scale: 0.9 }); sign.position.set(0, 2.1, half - 0.2); g.add(sign);
+  const seats = [];
+  for (let k = 0; k < 8; k++) { const z = -9 + k * 2.4; for (const face of [1, -1]) { const zz = z + (face > 0 ? -0.55 : 0.55); box(1.1, 0.12, 0.5, 0x1d4e89, -1.0, 0.45, zz); box(1.1, 0.6, 0.1, 0x1d4e89, -1.0, 0.8, zz - face * 0.25); seats.push({ x: -1.25, z: zz, face }); seats.push({ x: -0.72, z: zz, face }); }
+    box(1.1, 0.08, 0.5, 0x1d4e89, -1.0, 1.55, z); box(0.5, 0.12, 0.5, 0x1d4e89, 1.2, 0.45, z); seats.push({ x: 1.2, z, face: 1, side: true }); }
+  // Outside: green fields, electric poles and trees that slide past.
+  const grass = new THREE.Mesh(new THREE.BoxGeometry(120, 0.1, 160), new THREE.MeshStandardMaterial({ color: 0x6fae54 })); grass.position.set(0, -1.2, 0); g.add(grass);
+  const movers = [];
+  for (let i = 0; i < 18; i++) { const s = i % 2 ? 1 : -1; if (i % 3 === 0) { const pole = new THREE.Mesh(new THREE.BoxGeometry(0.2, 6, 0.2), new THREE.MeshStandardMaterial({ color: 0x555555 })); pole.position.set(s * 4.5, 1.5, -60 + i * 7); g.add(pole); movers.push(pole); } else { const tree = new THREE.Mesh(new THREE.ConeGeometry(1.6, 4.5, 8), new THREE.MeshStandardMaterial({ color: 0x2f7d32 })); tree.position.set(s * (8 + (i % 4) * 5), 1.2, -60 + i * 7); g.add(tree); movers.push(tree); } }
+  let light = null; try { light = new THREE.PointLight(0xfff6e0, 12, 26, 2); light.position.set(0, 2.2, 0); g.add(light); } catch (e) { /* hemisphere light only */ }
+  return { group: g, seats, movers };
+}
+// Open country for the outside shots: fields, hills, a river with a bridge, and a long train.
+function buildCountryside(scene) {
+  const g = new THREE.Group(); g.position.set(-900, 0, -420); scene.add(g); g.visible = false;
+  const m = (c) => new THREE.MeshStandardMaterial({ color: c, roughness: 0.9 });
+  const ground = new THREE.Mesh(new THREE.BoxGeometry(700, 0.2, 240), m(0x7cb35a)); ground.position.y = -0.1; g.add(ground);
+  const river = new THREE.Mesh(new THREE.BoxGeometry(24, 0.22, 240), m(0x3a86c8)); river.position.set(40, -0.05, 0); g.add(river);
+  const bridge = new THREE.Mesh(new THREE.BoxGeometry(30, 0.6, 5), m(0x8a8f96)); bridge.position.set(40, 0.3, 0); g.add(bridge);
+  for (let k = -1; k <= 1; k++) { const arch = new THREE.Mesh(new THREE.BoxGeometry(1, 3, 1), m(0x8a8f96)); arch.position.set(40 + k * 12, -1.2, 0); g.add(arch); }
+  const bed = new THREE.Mesh(new THREE.BoxGeometry(700, 0.15, 3.4), m(0x7a6f63)); bed.position.y = 0.08; g.add(bed);
+  for (const z of [-0.75, 0.75]) { const r = new THREE.Mesh(new THREE.BoxGeometry(700, 0.12, 0.1), new THREE.MeshStandardMaterial({ color: 0x9aa6ad, metalness: 0.8 })); r.position.set(0, 0.2, z); g.add(r); }
+  for (let i = 0; i < 40; i++) { const t = new THREE.Mesh(new THREE.ConeGeometry(1.8, 5, 8), m(0x2f7d32)); const s = i % 2 ? 1 : -1; t.position.set(-330 + i * 17, 2.4, s * (12 + (i % 5) * 9)); g.add(t); }
+  for (let i = 0; i < 6; i++) { const h = new THREE.Mesh(new THREE.ConeGeometry(30, 22, 10), m(0x5d8c4a)); h.position.set(-300 + i * 120, 10, -95 - (i % 2) * 20); g.add(h); }
+  const train = new THREE.Group(); let x = 0; for (const c of [makeCoach(0, true), makeCoach(0x1d4e89), makeCoach(0x1d4e89), makeCoach(0x6a1b2a), makeCoach(0x1d4e89), makeCoach(0x1d4e89)]) { const L2 = c.userData.len; c.position.x = x - L2 / 2; x -= L2 + 0.6; train.add(c); } g.add(train);
+  return { group: g, train };
+}
+
+// ---- Where you can go: type a city at the ticket counter ----
+// Trains go only inside India. Flights go inside India or abroad.
+const INDIA_CITIES = [
+  ["Delhi", 300, "Rajdhani Express", ["Fields of wheat, then the Yamuna bridge.", "The Red Fort glows red at sunset.", "Parathas in Chandni Chowk, extra butter!"]],
+  ["Mumbai", 350, "Duronto Express", ["Tunnels in the Western Ghats; the coach goes dark and everyone cheers.", "The sea at Marine Drive, the Queen's Necklace at night.", "Vada pav at the station, two for twenty."]],
+  ["Jaipur", 200, "Pink City Express", ["Camels walk beside the track in the desert.", "Hawa Mahal has 953 windows. You count ten.", "Dal baati churma with a Rajasthani uncle."]],
+  ["Shimla", 250, "Himalaya Queen (toy train from Kalka)", ["103 tunnels on the toy train!", "Pine trees and snow on the hills.", "Hot corn and chai on the Mall Road."]],
+  ["Goa", 400, "Konkan Kanya Express", ["Waterfalls beside the track at Dudhsagar.", "Coconut trees, red soil, blue sea.", "A cashew farm and a beach sunset."]],
+  ["Kolkata", 380, "Howrah Mail", ["The Howrah Bridge, full of people and yellow taxis.", "A tram ride, slow and old.", "Rosogolla from the station sweet shop."]],
+  ["Chennai", 420, "Chennai Mail", ["Rice fields and palm trees for hours.", "Marina Beach, one of the longest beaches in the world.", "Idli, dosa and filter coffee at the station."]],
+  ["Bengaluru", 400, "Karnataka Express", ["Granite hills and sunflower fields.", "Lalbagh garden and its glass house.", "Masala dosa at an old cafe."]],
+  ["Hyderabad", 350, "Telangana Express", ["Rocky hills, then the city lights.", "Charminar, with its four tall minars.", "Hyderabadi biryani, the best in the world, they say."]],
+  ["Pune", 330, "Deccan Queen", ["The Ghats, green after the rain.", "Shaniwar Wada, the old fort gate.", "Misal pav, spicy and hot."]],
+  ["Ahmedabad", 280, "Shatabdi Express", ["Flat cotton fields and salt pans.", "Sabarmati Ashram, where Gandhi ji lived.", "Dhokla and khandvi for breakfast."]],
+  ["Lucknow", 250, "Lucknow Mail", ["Mango orchards beside the track.", "The Bara Imambara maze: you get lost, then found.", "Tunday kebabs and kulfi."]],
+  ["Varanasi", 260, "Kashi Vishwanath Express", ["The Ganga appears beside the track at dawn.", "The evening aarti on the ghats, lamps on the river.", "Banarasi paan and lassi in a clay cup."]],
+  ["Agra", 220, "Taj Express", ["Mustard fields, bright yellow.", "The Taj Mahal, white as milk at sunrise.", "Agra petha, soft and sweet."]],
+  ["Amritsar", 300, "Golden Temple Mail", ["Green Punjab fields and tube wells.", "The Golden Temple shining on the water.", "Langar: free food for everyone, sitting together."]],
+  ["Chandigarh", 260, "Kalka Shatabdi", ["Wide roads and neat sectors.", "The Rock Garden, made from broken things.", "Chole bhature by the lake."]],
+  ["Bhopal", 240, "Bhopal Express", ["Lakes and green hills.", "The Upper Lake at sunset.", "Poha and jalebi for breakfast."]],
+  ["Patna", 270, "Sampoorna Kranti Express", ["The Ganga, wide like a sea.", "Golghar, the giant old granary.", "Litti chokha, smoky and tasty."]],
+  ["Guwahati", 450, "Brahmaputra Mail", ["Tea gardens as far as you can see.", "The Brahmaputra river, huge and calm.", "Assam tea, strong and golden."]],
+  ["Kochi", 460, "Kerala Express", ["Backwaters and houseboats beside the line.", "Chinese fishing nets at Fort Kochi.", "Appam and stew on a banana leaf."]],
+  ["Udaipur", 260, "Mewar Express", ["Aravalli hills and white marble.", "The City Palace on Lake Pichola.", "Boat ride at sunset."]],
+  ["Darjeeling", 420, "Darjeeling toy train from New Jalpaiguri", ["The toy train loops round and round the hill.", "Kanchenjunga, white and huge, at sunrise.", "Momos and Darjeeling tea."]],
+  ["Rishikesh", 260, "Dehradun Express", ["Forests and the first mountains.", "Laxman Jhula bridge over the Ganga.", "Ganga aarti by the river."]],
+  ["Madurai", 430, "Pandian Express", ["Coconut groves and temple towers.", "Meenakshi Temple with thousands of colourful statues.", "Jigarthanda, a cold sweet drink."]],
+  ["Puri", 380, "Purushottam Express", ["Paddy fields and ponds with lotus.", "The Jagannath Temple and the sea.", "Khaja sweets from the temple market."]],
+  ["Kanyakumari", 480, "Himsagar Express", ["The longest train trip in India ends here!", "Three seas meet at the tip of India.", "Sunrise and sunset from the same beach."]],
+  ["Jammu", 380, "Jammu Tawi Express", ["The train climbs into the hills.", "The Tawi river and old temples.", "Kalari cheese and rajma rice."]],
+  ["Mysuru", 410, "Chamundi Express", ["Sugarcane fields and bullock carts.", "Mysore Palace, lit with 97,000 bulbs.", "Mysore pak, melts in the mouth."]],
+];
+const ABROAD_CITIES = [
+  ["Dubai", 3500, ["The Burj Khalifa, the tallest building in the world.", "Desert safari on the sand dunes.", "A gold market that shines like the sun."]],
+  ["London", 6000, ["Big Ben and the red double-decker buses.", "A cricket match at Lord's, the home of cricket.", "Fish and chips in the rain."]],
+  ["New York", 7000, ["The Statue of Liberty from the ferry.", "Times Square, full of lights at night.", "A slice of pizza as big as your face."]],
+  ["Paris", 6000, ["The Eiffel Tower sparkles every hour at night.", "The Louvre and the Mona Lisa's smile.", "Warm croissants for breakfast."]],
+  ["Tokyo", 6500, ["The bullet train, faster than a plane on the ground!", "Mount Fuji with snow on top.", "Sushi on a moving belt."]],
+  ["Singapore", 4000, ["Gardens by the Bay with giant tree towers.", "The Merlion spitting water.", "Chilli crab and ice kacang."]],
+  ["Sydney", 7500, ["The Opera House like white sails.", "Kangaroos in the wildlife park.", "A cricket match at the SCG."]],
+  ["Bangkok", 3500, ["Floating markets on the river.", "Golden temples and a giant sleeping Buddha.", "Mango sticky rice."]],
+  ["Kathmandu", 2500, ["Mount Everest from the plane window!", "Temples with prayer wheels.", "Momos, the Nepali way."]],
+  ["Colombo", 2500, ["The Indian Ocean, blue and warm.", "A cricket match with the Sri Lanka fans.", "Hoppers and coconut sambol."]],
+  ["Toronto", 7500, ["Niagara Falls, loud and huge.", "The CN Tower, glass floor and all.", "Maple syrup on everything."]],
+  ["Cairo", 5000, ["The Great Pyramids of Giza.", "A camel ride near the Sphinx.", "The Nile river at sunset."]],
+  ["Rome", 6000, ["The Colosseum, 2,000 years old.", "You throw a coin in the Trevi Fountain.", "Gelato, three flavours."]],
+  ["Moscow", 6000, ["Red Square and the colourful domes.", "The metro stations look like palaces.", "Snow, snow and more snow."]],
+  ["Cape Town", 7000, ["Table Mountain with a cloud tablecloth.", "Penguins on the beach!", "A cricket match at Newlands."]],
+];
+const CITY_ALIASES = { bombay: "Mumbai", bangalore: "Bengaluru", calcutta: "Kolkata", madras: "Chennai", benares: "Varanasi", banaras: "Varanasi", kashi: "Varanasi", mysore: "Mysuru", cochin: "Kochi", "new delhi": "Delhi", dilli: "Delhi", nyc: "New York", "cape town": "Cape Town", nepal: "Kathmandu", "sri lanka": "Colombo", japan: "Tokyo", england: "London", uk: "London", usa: "New York", america: "New York", france: "Paris", italy: "Rome", russia: "Moscow", egypt: "Cairo", canada: "Toronto", australia: "Sydney", uae: "Dubai", thailand: "Bangkok", "south africa": "Cape Town" };
+// Find a typed city. Returns { city, kind: "india" | "abroad" } or null, and near-miss suggestions.
+function findCity(text) {
+  const t = String(text || "").trim().toLowerCase().replace(/[^a-z ]/g, "").replace(/\s+/g, " "); if (!t) return { hit: null, near: [] };
+  const name = CITY_ALIASES[t] || t;
+  const inI = INDIA_CITIES.find((c) => c[0].toLowerCase() === name.toLowerCase()); if (inI) return { hit: { kind: "india", name: inI[0], fare: inI[1], train: inI[2], sights: inI[3] }, near: [] };
+  const inA = ABROAD_CITIES.find((c) => c[0].toLowerCase() === name.toLowerCase()); if (inA) return { hit: { kind: "abroad", name: inA[0], fare: inA[1], sights: inA[2] }, near: [] };
+  const all = [...INDIA_CITIES.map((c) => c[0]), ...ABROAD_CITIES.map((c) => c[0])];
+  const near = all.filter((n) => n.toLowerCase().startsWith(t.slice(0, 2)) || n.toLowerCase().includes(t)).slice(0, 5);
+  return { hit: null, near };
+}
+function flightFare(c) { return c.kind === "abroad" ? c.fare : Math.max(800, Math.round(c.fare * 2.8 / 50) * 50); }
+
+// ---- Outings: friends (or jobmates) plan something, invite you, and you go and do it together ----
+const OUTINGS = [
+  { id: "breakfast", place: "Old Town Tea House", icon: "🍳", name: "Breakfast", when: ["morning"], chat: ["{a}: I am so hungry. Breakfast at the Old Town Tea House?", "{b}: Yes! Their aloo paratha is the best. Let us call {p} also."], menu: [["Aloo paratha with curd", 30], ["Poha and jalebi", 25], ["Idli sambar", 25], ["Masala chai", 10]], talk: ["{a}: The paratha is so hot, blow on it first!", "{b}: Same time next Sunday? This is our place now."] },
+  { id: "lunch", place: "Pizza Corner", icon: "🍕", name: "Lunch", when: ["over", "school", "evening"], chat: ["{a}: Lunch at Pizza Corner? They have a new cheese burst.", "{b}: Only if we share. {p} will come, right?"], menu: [["Cheese burst pizza (share)", 60], ["Veg burger", 40], ["Pasta", 45], ["Cold drink", 20]], talk: ["{a}: The last slice is mine. Rock, paper, scissors?", "{b}: Best lunch of the month. I am full till dinner."] },
+  { id: "dinner", place: "Grand Hotel", icon: "🍽️", name: "Dinner", when: ["evening", "night"], chat: ["{a}: Let us have dinner at the Grand Hotel tonight. It is a special day!", "{b}: Fancy! I will wear my good shirt. Tell {p}."], menu: [["Paneer butter masala and naan", 90], ["Veg biryani", 80], ["Dal makhani and rice", 70], ["Gulab jamun", 30]], talk: ["{a}: Look, the waiter folded the napkin like a swan!", "{b}: We should do this every month. Today was really nice."] },
+  { id: "cafe", place: "City Bakery", icon: "☕", name: "Cafe", when: ["over", "evening", "morning"], chat: ["{a}: I need a cold coffee. City Bakery cafe?", "{b}: And their chocolate pastry! Ping {p}."], menu: [["Cold coffee", 30], ["Chocolate pastry", 35], ["Veg puff", 20], ["Hot chocolate", 30]], talk: ["{a}: This cafe smells like fresh bread. Heaven.", "{b}: Let us sit here and plan the weekend."] },
+  { id: "techpark", place: "Tech Park", icon: "🤖", name: "Robot expo at Tech Park", when: ["over", "evening"], chat: ["{a}: There is a robot expo at Tech Park today! Drones, robots, VR games!", "{b}: I want to try the VR headset. {p} must come."], quiz: true, talk: ["{a}: That robot made tea! Can I have one at home?", "{b}: When I grow up I will build a robot that does homework. Just kidding. Maybe."] },
+  { id: "planespot", place: "Suryanagar Airport", icon: "✈️", name: "Plane watching at the airport", when: ["over", "evening", "morning"], chat: ["{a}: Let us go to the airport viewing deck and watch the planes land!", "{b}: I will bring binoculars. And {p}, bring snacks!"], planes: true, talk: ["{a}: That was an A320. See the engines under the wings?", "{b}: One day we will fly together. Promise."] },
+  { id: "movie", place: "Cinema Hall", icon: "🎬", name: "Movie", when: ["over", "evening"], chat: ["{a}: New cartoon movie at Cinema Hall! Six o'clock show.", "{b}: Popcorn with extra butter. {p}, are you in?"], menu: [["Ticket and popcorn", 80], ["Ticket and nachos", 80], ["Ticket only", 60]], talk: ["{a}: The ending! I did not see that coming!", "{b}: The music is stuck in my head. Na na na na!"] },
+];
+const TECH_QS = [MC("A robot needs a ... to think.", "Computer (a processor)", "Battery only", "Wheel", "Paint"), MC("Drones fly with the help of...", "Propellers", "Balloons", "Magnets", "Wings that flap"), MC("VR stands for...", "Virtual Reality", "Very Real", "Video Radio", "Voice Robot")];
 
 function makeQuadruped() { return new THREE.Group(); }
 function makeCow() { return new THREE.Group(); }
@@ -6669,12 +6779,20 @@ class Game {
     if (room.type === "lab" || room.type === "computer") this._setupLabRoom(room);
     if (room.type === "home") this._setupHome(room);
     this._seatArrow = null;
+    if (this._outing && this._outing.o.place === door.label) setTimeout(() => this._startOuting(room), 500);
     this._jobRoomSetup(room, door);
     this._visitorSeat(room);
     if (this._fieldCase && this._fieldCase.c.doorLabel === door.label) setTimeout(() => this._openFieldScene(), 400);
     if (door.label === "City Hospital") this.roomInteractables.push({ pos: { x: room.x0 + 6, z: room.z0 + 2 }, radius: 2.6, prompt: () => L("Dr. Mehta: yearly check-up (₹30)"), activate: () => this._checkup() });
     if (door.label === "Police Station") this.roomInteractables.push({ pos: { x: room.x0 - 6, z: room.z0 + 4 }, radius: 2.4, prompt: () => L("Notice: driving licences at the RTO Office, Old Town road"), activate: () => { showToast(L("Constable: 'Licences are at the RTO Office now, Old Town road, next to the Fish Market. Officer Verma sits there.'"), 4200); this.setObjective(L("Go to the RTO Office"), -52, -86); } });
-    if (door.label === "Railway Station") { room._label("🎫 " + L("Booking counter"), 8, -3.5, 2.4, 0.6); room._label("🕒 " + L("Train timetable"), 3, -6, 2.4, 0.5); this.roomInteractables.push({ pos: { x: room.x0 + 8, z: room.z0 - 2.5 }, radius: 2.4, prompt: () => (this.progress.ticket ? L("Booking counter (you have a ticket to {c})", { c: L(this.progress.ticket.to) }) : L("Booking counter: buy a train ticket")), activate: () => this._bookTicket() }); this.roomInteractables.push({ pos: { x: room.x0 + 3, z: room.z0 - 5 }, radius: 2.2, prompt: () => L("Read the train timetable"), activate: () => this.dialogue.say(L("Timetable"), TRAIN_TRIPS.map((t) => `${t[2]} · ${L(t[0])} · ₹${t[1]}`).concat([L("All trains leave from Platform 1, behind this building.")]), null, { pitch: 400 }) }); }
+    if (door.label === "Railway Station") {
+      if (!room._waitBuilt) { room._waitBuilt = true; for (let k = 0; k < 3; k++) room._box(2.2, 0.45, 0.55, 0x8a5626, -9.5, 0.22, 2.2 + k * 1.3, false); room._label("🪑 " + L("Waiting room"), -9.5, 1.4, 2.6, 0.6); room._label("🎫 " + L("Ticket counter: press E"), -8, -3.9, 2.9, 0.55); room._label("🕒 " + L("Timetable"), 2, -5.2, 1.6, 0.45); }
+      const tk = () => this.progress.ticket;
+      this.roomInteractables.push({ pos: { x: room.x0 - 8, z: room.z0 - 4.4 }, radius: 2.6, prompt: () => (tk() ? L("Ticket counter (your ticket: {c}, PNR {p})", { c: tk().to, p: tk().pnr }) : L("Ticket counter: type where you want to go")), activate: () => this._bookTicket() });
+      this.roomInteractables.push({ pos: { x: room.x0 - 9.5, z: room.z0 + 3.4 }, radius: 2.2, prompt: () => (!tk() ? L("Waiting room (buy a ticket first)") : this._lounge ? L("Waiting for your train...") : this._boardReady === "train" ? L("Your train is here! Go to Platform 1") : L("Sit in the waiting room until your train comes")), activate: () => { if (!tk()) { showToast(L("Buy a ticket at the ticket counter first."), 2400); return; } if (this._lounge || this._boardReady === "train") return; const P = this.player.group; P.position.set(room.x0 - 9.5, 0, room.z0 + 3.4); P.rotation.y = Math.PI; sitPose(P, "car"); this._lounge = { kind: "train", t: 0, said: new Set(), room }; showToast(L("🪑 You sit in the waiting room with your bag. Listen for the announcement."), 3000, "good"); } });
+      this.roomInteractables.push({ pos: { x: room.x0 + 2, z: room.z0 - 5.4 }, radius: 2.0, prompt: () => L("Read the timetable"), activate: () => this.dialogue.say(L("Timetable"), [L("Trains from Platform 1 go all over India."), L("Type any city at the ticket counter: Delhi, Mumbai, Chennai, Kolkata, Varanasi, Goa..."), L("After the ticket, wait in the waiting room for the announcement.")], null, { pitch: 400 }) });
+      this.roomInteractables.push({ pos: { x: room.x0 + 9, z: room.z0 - 4.4 }, radius: 2.2, prompt: () => L("Tea & Snacks: chai and samosa (₹15)"), activate: () => { const pr = this.progress; if (pr.money < 15) { showToast(L("Not enough money."), 2000, "bad"); return; } this.addMoney(-15, "station snacks"); this.addEnergy && this.addEnergy(8); playPick(); showToast(L("☕ Hot chai in a clay cup and a crispy samosa!"), 2400, "good"); } });
+    }
     if (door.label === "RTO Office") {
       if (!this._rto) { this._rto = new Npc({ id: "rto_verma", name: "RTO Officer Verma", boss: true, pitch: 360, look: { shirt: 0xffffff, trousers: 0x1d3557, hair: 0x333333 } }, this.world, { pos: [room.x0 - 2, room.z0 - 3], fixed: true }); this.npcs.push(this._rto); }
       this._rto.group.visible = true; this._rto._inRoom = true; this._rto.station({ x: room.x0 - 2, z: room.z0 - 3 }, 0);
@@ -6685,7 +6803,13 @@ class Game {
     if (door.label === "Suryanagar Supermarket") { this.roomInteractables.push({ pos: { x: room.x0 + 6, z: room.z0 + 5 }, radius: 2.4, prompt: () => (this.progress.shop ? L("Your shop (earns ₹{n} a night)", { n: this.progress.shopLevel ? 350 : 100 }) : L("Open your own shop (₹2,000)")), activate: () => this._openShopBusiness() }); if (this.progress.shop) this.roomInteractables.push({ pos: { x: room.x0 + 9, z: room.z0 + 5 }, radius: 2.0, prompt: () => (this.progress.shopLevel ? L("Check the books") : L("Expand the shop: second counter, hire Chhotu (₹3,000)")), activate: () => this._growShop() }); }
     if (door.label === "Suryanagar Club") { const M = this.progress.club; this.roomInteractables.push({ pos: { x: room.x0 - 5, z: room.z0 + 1.5 }, radius: 3.0, prompt: () => (M ? L("Swim 4 laps") : L("Join the club")), activate: () => this._club("pool") }); this.roomInteractables.push({ pos: { x: room.x0 + 6, z: room.z0 - 3 }, radius: 2.2, prompt: () => (M ? L("Table tennis") : L("Join the club")), activate: () => this._club("tt") }); this.roomInteractables.push({ pos: { x: room.x0 + 6, z: room.z0 + 2 }, radius: 2.0, prompt: () => (M ? L("Chess corner") : L("Join the club")), activate: () => this._club("chess") }); this.roomInteractables.push({ pos: { x: room.x0 - 4, z: room.z0 + 4 }, radius: 2.2, prompt: () => (M ? L("Club canteen: nimbu pani ₹20") : L("Join the club")), activate: () => this._club("canteen") }); }
     if (door.label === "Community Hall") this.roomInteractables.push({ pos: room.occupantPos(), radius: 3.0, prompt: () => (this.progress.president ? L("Colony president's desk") : this.progress.voted ? L("Stand for colony president") : L("Vote in the colony election (18+)")), activate: () => this._vote() });
-    if (door.label === "Suryanagar Airport") this.roomInteractables.push({ pos: { x: room.x0 + 4, z: room.z0 + 4 }, radius: 3.0, prompt: () => L("Fly to Mumbai for the match (₹800)"), activate: () => this._flight() });
+    if (door.label === "Suryanagar Airport") {
+      if (!room._airportBuilt) { room._airportBuilt = true; room._label("🧳 " + L("Check-in counter"), 4, 3.2, 2.4, 0.6); room._box(2.6, 1.0, 0.6, 0x9aa6ad, 4, 0.5, 3.1); for (let k = 0; k < 3; k++) { room._box(1.8, 0.45, 0.55, 0x1d3557, -12.8 + k * 0.0, 0.22, 4.4 + k * 1.1, false); } room._label("🛋️ " + L("Departure lounge"), -12.8, 4.2, 2.6, 0.6); room._label("✈️ SA 101 · Mumbai · Gate 1", -12.8, 3.2, 1.9, 0.5); room._label("🛫 " + L("GATE 1"), -11.8, -1.2, 2.7, 0.7); }
+      const pr = this.progress, bp = () => pr.boardingPass;
+      this.roomInteractables.push({ pos: { x: room.x0 + 4, z: room.z0 + 4 }, radius: 2.6, prompt: () => (bp() ? L("Check-in done: {c}, Seat 3A, Gate 1. Wait in the lounge.", { c: pr.boardingPass.to || "" }) : L("Check-in counter: type where you want to fly")), activate: () => (bp() ? showToast(L("🎫 Your boarding pass: SA 101 to {c}, Seat 3A, Gate 1. The lounge is on the left.", { c: pr.boardingPass.to || "" }), 3000, "good") : this._flight()) });
+      this.roomInteractables.push({ pos: { x: room.x0 - 12.8, z: room.z0 + 5.5 }, radius: 2.2, prompt: () => (!bp() ? L("Departure lounge (check in first)") : this._boardReady === "flight" ? L("Boarding now! Go to Gate 1") : this._lounge ? L("Waiting for the boarding call...") : L("Sit in the lounge and wait for boarding")), activate: () => { if (!bp()) { showToast(L("Get your boarding pass at the check-in counter first."), 2400); return; } if (this._boardReady === "flight" || this._lounge) return; const P = this.player.group; P.position.set(room.x0 - 12.8, 0, room.z0 + 5.5); P.rotation.y = Math.PI; sitPose(P, "car"); this._lounge = { kind: "flight", t: 0, said: new Set(), room }; showToast(L("🛋️ You sit in the lounge. The board says: SA 101 {c}, ON TIME.", { c: pr.boardingPass.to }), 3000, "good"); } });
+      this.roomInteractables.push({ pos: { x: room.x0 - 11.8, z: room.z0 - 0.6 }, radius: 2.0, prompt: () => (this._boardReady === "flight" ? L("Gate 1: show your boarding pass and board") : bp() ? L("Gate 1 (wait in the lounge for the boarding call)") : L("Gate 1 (check in first)")), activate: () => { if (this._boardReady !== "flight") { showToast(bp() ? L("Not boarding yet. Sit in the lounge and wait for the call.") : L("Check in first at the counter."), 2400); return; } this._boardReady = null; const bpx = pr.boardingPass; pr.boardingPass = null; saveProgress(this.profile, pr); this._flightDest = bpx; this.dialogue.say(L("Gate staff"), [L("Boarding pass, please. SA 101 to {c}, Seat 3A. Enjoy your flight!", { c: bpx.to }), L("(You walk down the jet bridge into the plane.)")], () => this._flightScene(() => this._destMatch(bpx)), { pitch: 450 }); } });
+    }
     if (door.label === "Green Farm") this.roomInteractables.push({ pos: { x: room.x0 - 4, z: room.z0 + 3 }, radius: 3.0, prompt: () => L("Milk the cows (₹20)"), activate: () => this._milkCow() });
     if (door.label === "Old Town Library") this.roomInteractables.push({ pos: { x: room.x0 + 5, z: room.z0 + 4 }, radius: 2.0, prompt: () => L("Pet Chintu the library cat"), activate: () => { setMood(this.player.group, "happy", 4); this.addEnergy(3); showToast(L("🐈 Chintu purrs and sits on the atlas."), 2200, "good"); } });
     if (door.label === "Aarav's House") { this.roomInteractables.push({ pos: room.occupantPos(), radius: 3.0, prompt: () => (this.isSunday() || this.progress.day % 7 === 6 ? L("Sleepover at Aarav's tonight") : L("Aarav's family: say hello")), activate: () => { if (this.progress.day % 7 === 6 || this.isSunday()) { this.progress.sleepovers = (this.progress.sleepovers || 0) + 1; this.addFriendship("aarav", 3, L("sleepover")); this._lateNight = true; this._snap("🛏️", "Sleepover at Aarav's house."); this.dialogue.say("Aarav's Maa", [L("Pizza, a movie, and no sleeping before midnight, I know. Your Maa has been told.")], () => this._startPhase("night")); } else this.dialogue.say("Aarav's Maa", [L("Beta! Aarav is doing homework. Saturday, come for a sleepover.")]); } }); }
@@ -6806,6 +6930,7 @@ class Game {
   // ---- Talking ----
   _talk(npc) {
     const def = npc.def;
+    { const cr = this.world.currentRoom; if (cr && npc === cr.occupant && this.insideDoor && this.insideDoor.label === "Railway Station") { this._bookTicket(); return; } }
     { const cr = this.world.currentRoom; if (cr && cr._jobPlace && npc === cr.occupant) { const open = cr._openJobs || []; this._engagedNpc = npc; const done = () => { this._engagedNpc = null; };
       if (open.length) { const job = open.find((j) => j.id === this._applying) || open[0]; return this.dialogue.say(npc.name, [L("Here for the {j} job? {b} will interview you right now.", { j: job.name, b: job.boss }), L("Come, sit in the chair with the arrow. Best of luck!")], () => { done(); job._start && job._start(); }, { pitch: def.pitch || 400, speaker: npc.id }); }
       if (this.job && this.job.place === this.insideDoor.label) return this.dialogue.say(npc.name, [L("Good morning, {r}. Your desk is ready. Follow the arrow to your seat.", { r: rankName(this.job, this.progress.shifts) })], done, { pitch: def.pitch || 400, speaker: npc.id });
@@ -7439,7 +7564,7 @@ class Game {
     const tr = this._trial; this._trial = null; this._trialBall.visible = false; this._trialNpc.group.visible = false;
     const tb = document.getElementById("trial-btn"); if (tb) tb.hidden = true;
     const good = tr.hits >= tr.total * 0.6;
-    const card = openPanel(`<div class="job-title-row"><h2>${tr.spec.icon} ${tr.spec.name}</h2></div><div class="score-big">${tr.hits} / ${tr.total}</div><div class="solved-banner"><b>${tr.who}:</b> "${L(good ? "That is what I wanted to see. Come inside." : "Not today. Practise at the nets and come back tomorrow.")}"</div><div class="btn-row"><button class="big-btn" id="tr-ok">${L("Okay")}</button></div>`);
+    const card = openPanel(`<div class="job-title-row"><h2>${tr.spec.icon} ${tr.spec.name}</h2></div><div class="score-big">${tr.hits} / ${tr.total}</div><div class="solved-banner"><b>${tr.who}:</b> "${L(good ? (tr.spec.good || "That is what I wanted to see. Come inside.") : (tr.spec.bad || "Not today. Practise at the nets and come back tomorrow."))}"</div><div class="btn-row"><button class="big-btn" id="tr-ok">${L("Okay")}</button></div>`);
     card.querySelector("#tr-ok").addEventListener("click", () => { closePanel(); this.setObjective(this.objective ? this.objective.label : "", null); tr.onDone(tr.hits); });
   }
   _sundayCricket() {
@@ -7723,7 +7848,7 @@ class Game {
     this._planes = [makePlane(0x1d3557, 1), makePlane(0xd62828, 0.9), makePlane(0xff7b00, 0.8)]; for (const p of this._planes) { p.rotation.order = "YXZ"; this.world.scene.add(p); }
     { const ap = this.world.doors.find((d) => d.label === "Suryanagar Airport"); if (ap) { const parked = makePlane(0x2a9d8f, 0.8); parked.position.set(ap.x - 2, 1.6 * 0.8, ap.z - 24); parked.rotation.y = Math.PI / 2; this._parkedPlane = parked; parked.rotation.order = "YXZ"; this._parkedHome = { x: ap.x - 2, y: 1.6 * 0.8, z: ap.z - 24 }; this.world.scene.add(parked); this.world.addBox(ap.x - 2, ap.z - 24, 14, 18); const lbl = makeTextSprite("✈️ Suryanagar Airport · Gate 1", { size: 40, scale: 1.2 }); lbl.position.set(ap.x - 2, 7, ap.z - 24); this.world.scene.add(lbl); } }
     its.push({ pos: { x: -79, z: RAIL.platformZ - 0.5 }, radius: 9, visible: () => !!this.world.railway && this.world.railway.state === "halted", prompt: () => (this.progress.ticket ? L("Board the train to {c} (ticket {p})", { c: L(this.progress.ticket.to), p: this.progress.ticket.pnr }) : L("Board the train (no ticket!)")), activate: () => this._boardTrain() });
-    its.push({ pos: { x: -90, z: RAIL.platformZ + 1 }, radius: 3, visible: () => !!this.world.railway && this.world.railway.state !== "halted", prompt: () => L("Enquiry: when is the next train?"), activate: () => { const s = trainAt(this.clock.elapsedTime); const secs = s.state === "away" ? Math.round(s.next + 24) : s.state === "arriving" ? 1 : Math.round(RAIL.cycle - (this.clock.elapsedTime % RAIL.cycle) + 24); showToast(s.state === "arriving" ? L("🚆 It is arriving now! Stand behind the yellow line.") : L("🚆 Suryanagar Express on Platform 1 in about {n} seconds. Buy a ticket inside the station.", { n: secs }), 3200, "good"); } });
+    its.push({ pos: { x: -90, z: RAIL.platformZ + 1 }, radius: 3, visible: () => !!this.world.railway && this.world.railway.state !== "halted", prompt: () => L("Enquiry: when is the next train?"), activate: () => { const s = trainAt(this.clock.elapsedTime + (this._railOffset || 0)); const secs = s.state === "away" ? Math.round(s.next + 24) : s.state === "arriving" ? 1 : Math.round(RAIL.cycle - ((this.clock.elapsedTime + (this._railOffset || 0)) % RAIL.cycle) + 24); showToast(s.state === "arriving" ? L("🚆 It is arriving now! Stand behind the yellow line.") : L("🚆 Suryanagar Express on Platform 1 in about {n} seconds. Buy a ticket inside the station.", { n: secs }), 3200, "good"); } });
     // A lost wallet on the footpath every fourth day.
     const w = new THREE.Mesh(new THREE.BoxGeometry(0.28, 0.06, 0.2), new THREE.MeshStandardMaterial({ color: 0x5a3a1a })); w.position.set(-66, 0.05, 46.5); this.world.scene.add(w); this._wallet = w;
     its.push({ pos: w.position, radius: 1.8, visible: () => w.visible, prompt: () => L("A wallet on the footpath! Pick it up"), activate: () => { const pr = this.progress; w.visible = false; pr.walletDay = pr.day; saveProgress(this.profile, pr); playPick(); const card = openPanel(`<h2>👛 ${L("A lost wallet")}</h2><p class="job-brief">${L("Inside: ₹200, an ID card of Mr. Kapoor, and a photo of his daughter.")}</p><div class="btn-row"><button class="big-btn" id="wl-ret">👮 ${L("Take it to the traffic police")}</button><button class="ghost-btn" id="wl-keep">💰 ${L("Keep the money")}</button></div>`); card.querySelector("#wl-ret").addEventListener("click", () => { closePanel(); pr.walletHeld = true; saveProgress(this.profile, pr); this.setObjective(L("Give the wallet to the traffic police at the colony road signal"), -31, 31); showToast(L("👛 Good choice. The traffic police are at the signal."), 2600, "good"); }); card.querySelector("#wl-keep").addEventListener("click", () => { closePanel(); this.addMoney(200, "kept wallet"); this.addRep(-3, L("kept a lost wallet")); this.diary(L("Kept a wallet I found. It does not feel good.")); this.dialogue.say(L("Your heart"), [L("₹200 in your pocket. But the photo of the little girl... Mr. Kapoor must be searching everywhere."), L("Dadi always says: what is not yours never stays yours.")], null, { pitch: 400 }); }); } });
@@ -7768,13 +7893,10 @@ class Game {
       const host = makeVillager({ shirt: 0xd62828, dress: true, hair: 0x111111 }); host.position.set(0, 0, 9); host.rotation.y = Math.PI; this._cabin.group.add(host); const trolley = new THREE.Mesh(new THREE.BoxGeometry(0.45, 0.9, 0.7), new THREE.MeshStandardMaterial({ color: 0xc9d1d9, metalness: 0.5 })); trolley.position.set(0, 0.45, 8.3); this._cabin.group.add(trolley); this._cabin.host = host; this._cabin.trolley = trolley; }
     const seat = this._cabin.seats.find((s) => s.row === CABIN.playerRow && s.x === -1.55);
     const P = this.player.group; this._cabin.group.add(P); P.position.set(seat.x, -0.12, seat.z); P.rotation.set(0, 0, 0); sitPose(P, "car");
-    const bar = document.createElement("div"); bar.id = "cut-bar"; bar.style.cssText = "position:fixed;left:50%;bottom:28px;transform:translateX(-50%);max-width:min(620px,92vw);padding:10px 16px;border-radius:12px;background:rgba(10,16,30,.78);color:#fff;font:600 16px system-ui,sans-serif;text-align:center;z-index:50;pointer-events:none";
-    const skip = document.createElement("button"); skip.id = "cut-skip"; skip.textContent = L("Skip ⏭"); skip.style.cssText = "position:fixed;right:16px;top:16px;z-index:51;padding:8px 14px;border-radius:10px;border:none;background:#fff;font:700 15px system-ui,sans-serif;cursor:pointer";
-    const fade = document.createElement("div"); fade.id = "cut-fade"; fade.style.cssText = "position:fixed;inset:0;background:#000;opacity:0;transition:opacity .8s;z-index:49;pointer-events:none";
-    try { document.body.appendChild(fade); document.body.appendChild(bar); document.body.appendChild(skip); } catch (e) { /* captions are optional */ }
-    skip.addEventListener("click", () => this._endFlight());
-    this._cut = { t: 0, onDone, plane, ap, bar, skip, fade, fired: new Set(), focus: { x: plane.position.x, y: 0, z: plane.position.z }, x0: this._parkedHome.x, y0: this._parkedHome.y, z0: this._parkedHome.z, shake: 0 };
-    playBell(); speakLine(L("Ladies and gentlemen, welcome aboard Suryanagar Air flight S A one zero one to Mumbai."), 360);
+    const { bar, skip, fade } = this._cutUI();
+    const dest = (this._flightDest && this._flightDest.to) || "Mumbai", abroad = !!(this._flightDest && this._flightDest.kind === "abroad");
+    this._cut = { kind: "flight", dest, abroad, t: 0, onDone, plane, ap, bar, skip, fade, fired: new Set(), focus: { x: plane.position.x, y: 0, z: plane.position.z }, x0: this._parkedHome.x, y0: this._parkedHome.y, z0: this._parkedHome.z, shake: 0 };
+    playBell(); speakLine(L("Ladies and gentlemen, welcome aboard Suryanagar Air flight S A one zero one to {c}.", { c: this._cut.dest }), 360);
   }
   _cutSay(text, speak = false, pitch = 360) { const c = this._cut; if (!c) return; c.bar.textContent = text; if (speak) speakLine(text, pitch); }
   _tickFlight(dt, elapsed) {
@@ -7802,17 +7924,17 @@ class Game {
       else if (t < 31) { cam.position.set(g.x + 0.1 + sx, 1.9 + sy, g.z + 11.5); cam.lookAt(g.x - 0.2, 0.9, g.z - 4); }
       else { cam.position.set(g.x - 1.0, 1.35, g.z + pz + 0.35); cam.lookAt(g.x - 6, 1.1, g.z + pz + 3); }
       once("in", () => this._cutSay(L("💺 Seat 3A, by the window. {n} passengers on board with you.", { n: cab.people.length + 1 })));
-      if (t > 19) once("cap", () => this._cutSay(L("Captain Kaur: Namaste! Flight time to Mumbai is 1 hour 50 minutes. Sit back and relax."), true, 340));
+      if (t > 19) once("cap", () => this._cutSay(c.abroad ? L("Captain Kaur: Namaste! We fly to {c}, far across the sea. Flight time is about 8 hours. Sit back and relax.", { c: c.dest }) : L("Captain Kaur: Namaste! Flight time to {c} is about 2 hours. Sit back and relax.", { c: c.dest }), true, 340));
       if (t > 23.5) once("host", () => this._cutSay(L("Air hostess: Tea, coffee or juice? A sandwich for the cricket fan?"), true, 470));
       if (t > 27) once("bump", () => this._cutSay(L("🔔 Bump bump! Small turbulence. Seat belts on, everyone.")));
-      if (t > 31) once("win", () => this._cutSay(L("Out of the window: clouds like cotton, and the sun shining on the wing.")));
+      if (t > 31) once("win", () => this._cutSay(c.abroad ? L("Out of the window: the deep blue sea, then clouds like cotton. You are going abroad!") : L("Out of the window: clouds like cotton, and the sun shining on the wing.")));
       return;
     }
     if (t < 44) {
       // Outside again: the descent to Mumbai.
       cab.group.visible = false; const u = t - 36, x = 60 - u * 22, y = Math.max(6, 70 - u * 9); pl.position.set(x, y, 30); pl.rotation.set(0.1, -Math.PI / 2, 0); c.focus = { x, y: 0, z: 30 };
       cam.position.set(x - 26, y + 5, 42); cam.lookAt(x, y, 30);
-      once("land", () => this._cutSay(L("🛬 Mumbai below! The sea, the tall buildings. Landing now."), true)); if (u > 6.2 && c.fade) c.fade.style.opacity = "1";
+      once("land", () => this._cutSay(L("🛬 {c} below! Look at the city. Landing now.", { c: c.dest }), true)); if (u > 6.2 && c.fade) c.fade.style.opacity = "1";
       return;
     }
     this._endFlight();
@@ -7821,13 +7943,14 @@ class Game {
     const c = this._cut; if (!c) return; this._cut = null;
     for (const el of [c.bar, c.skip, c.fade]) try { el.remove(); } catch (e) { /* already gone */ }
     if (this._cabin) this._cabin.group.visible = false;
+    if (c.kind === "train") { if (this._coachIn) this._coachIn.group.visible = false; if (this._country) this._country.group.visible = false; const P = this.player.group; this.world.scene.add(P); P.position.set(-79, 0, RAIL.platformZ + 1.5); P.rotation.set(0, 0, 0); standPose(P); this.player._placeCamera(1); playSuccess(); c.onDone(); return; }
     const pl = c.plane, h = this._parkedHome; pl.position.set(h.x, h.y, h.z); pl.rotation.set(0, Math.PI / 2, 0); pl.visible = true;
     const P = this.player.group; this.world.scene.add(P); P.position.set(c.ap.x, 0, c.ap.z + 2.5); P.rotation.set(0, 0, 0); standPose(P); this.player._placeCamera(1);
-    playSuccess(); showToast(L("✈️ Landed in Mumbai. What a flight!"), 2600, "good"); c.onDone();
+    playSuccess(); showToast(L("✈️ Landed in {c}. What a flight!", { c: c.dest }), 2600, "good"); c.onDone();
   }
   _tickTransport(dt, elapsed) {
     const RW = this.world.railway, pp = this.player.position, near = (x, z, r) => Math.hypot(pp.x - x, pp.z - z) < r;
-    if (RW) { const s = trainAt(elapsed), tr = RW.train, prev = RW.state; const dx = s.x - tr.position.x; tr.position.x = s.x; tr.visible = s.state !== "away"; if (Math.abs(dx) > 0 && Math.abs(dx) < 5) for (const c of tr.children || []) if (c.children && c.children.length) for (const w of c.children) if (w.userData && w.userData.wheel) w.rotation.x += Math.abs(dx) / (w.userData.wheelR || 0.42); RW.state = s.state;
+    if (RW) { const s = trainAt(elapsed + (this._railOffset || 0)), tr = RW.train, prev = RW.state; const dx = s.x - tr.position.x; tr.position.x = s.x; tr.visible = s.state !== "away"; if (Math.abs(dx) > 0 && Math.abs(dx) < 5) for (const c of tr.children || []) if (c.children && c.children.length) for (const w of c.children) if (w.userData && w.userData.wheel) w.rotation.x += Math.abs(dx) / (w.userData.wheelR || 0.42); RW.state = s.state;
       if (prev !== s.state && near(-79, RAIL.z, 110)) { if (s.state === "arriving") { playHorn(); showToast(L("📢 Train 12951 Suryanagar Express is arriving on Platform 1. Stand behind the yellow line."), 4200, "good"); speakLine(L("Train number one two nine five one, Suryanagar Express, is arriving on platform number one."), 380); } else if (s.state === "halted") showToast(L("🚆 The train stops. Doors open. Board with a ticket (E on the platform)."), 3200, "good"); else if (s.state === "departing") { playHorn(); setTimeout(() => playHorn(), 400); showToast(L("🚆 The guard waves the green flag. The train leaves."), 2600); } }
       const len = tr.userData.length || 60, crossing = s.state !== "away" && s.x > RAIL.crossX - 14 && s.x - len < RAIL.crossX + 14; const want = crossing ? 0 : -Math.PI / 2 * 0.95; for (const b of RW.booms) b.rotation.z += (want - b.rotation.z) * Math.min(1, dt * 2.5);
       if (RW.sig) { const green = s.state === "departing" || (s.state === "halted" && s.left < 5); RW.sig.material = green ? RW.sig.userData.green : RW.sig.userData.red; }
@@ -7836,17 +7959,132 @@ class Game {
     }
     for (let i = 0; i < (this._planes || []).length; i++) { const p = this._planes[i], s = planeAt(i, elapsed); p.position.set(s.x, s.y, s.z); p.rotation.set(s.pitch, s.yaw, 0); if (p.userData.beacon) p.userData.beacon.visible = Math.sin(elapsed * 6 + i) > 0.3; if (i === 0) { if (s.low && near(s.x, s.z, 90) && !this._planeWhoosh) { this._planeWhoosh = true; playWhoosh(); showToast(L("✈️ An aeroplane roars over Suryanagar Airport!"), 2200); } if (!s.low) this._planeWhoosh = false; } }
   }
+  _cutUI() {
+    const bar = document.createElement("div"); bar.id = "cut-bar"; bar.style.cssText = "position:fixed;left:50%;bottom:28px;transform:translateX(-50%);max-width:min(620px,92vw);padding:10px 16px;border-radius:12px;background:rgba(10,16,30,.78);color:#fff;font:600 16px system-ui,sans-serif;text-align:center;z-index:50;pointer-events:none";
+    const skip = document.createElement("button"); skip.id = "cut-skip"; skip.textContent = L("Skip ⏭"); skip.style.cssText = "position:fixed;right:16px;top:16px;z-index:51;padding:8px 14px;border-radius:10px;border:none;background:#fff;font:700 15px system-ui,sans-serif;cursor:pointer";
+    const fade = document.createElement("div"); fade.id = "cut-fade"; fade.style.cssText = "position:fixed;inset:0;background:#000;opacity:0;transition:opacity .8s;z-index:49;pointer-events:none";
+    try { document.body.appendChild(fade); document.body.appendChild(bar); document.body.appendChild(skip); } catch (e) { /* captions are optional */ }
+    skip.addEventListener("click", () => this._endFlight());
+    return { bar, skip, fade };
+  }
+  // Lounge and waiting room: sit, hear the announcements, then go and board.
+  _tickLounge(dt, elapsed) {
+    const lo = this._lounge; if (!lo) return; lo.t += dt; const once = (k, fn) => { if (!lo.said.has(k)) { lo.said.add(k); fn(); } }; const pr = this.progress;
+    if (lo.kind === "flight") { const bp = pr.boardingPass; if (!bp) { this._lounge = null; return; }
+      if (lo.t > 3) once("a", () => { playBell(); showToast(L("📢 Suryanagar Air: flight SA 101 to {c} is ON TIME. Please stay in the lounge.", { c: bp.to }), 3200); });
+      if (lo.t > 8) { this._lounge = null; this._boardReady = "flight"; playBell(); speakLine(L("Flight S A one zero one to {c} is now boarding at gate one.", { c: bp.to }), 380); showToast(L("📢 Flight SA 101 to {c} is now BOARDING at Gate 1!", { c: bp.to }), 4200, "good"); const r = lo.room; if (r) this.setObjective(L("Gate 1: board the flight"), r.x0 - 11.8, r.z0 - 0.6); }
+      return; }
+    const tk = pr.ticket; if (!tk) { this._lounge = null; return; }
+    once("skip", () => { const cyc = RAIL.cycle, tt = (elapsed + (this._railOffset || 0)) % cyc; this._railOffset = (this._railOffset || 0) + (((14 - tt) % cyc) + cyc) % cyc; showToast(L("🕒 You wait on the bench. Time passes..."), 2400); });
+    if (lo.t > 2) once("ann", () => { playBell(); speakLine(L("Attention please. Train number one two nine five one to {c} is arriving on platform number one.", { c: tk.to }), 380); showToast(L("📢 Train 12951 to {c} is arriving on Platform 1!", { c: tk.to }), 4200, "good"); });
+    if (trainAt(elapsed + (this._railOffset || 0)).state === "halted" && lo.t > 3) { this._lounge = null; this._boardReady = "train"; showToast(L("🚆 Your train is on Platform 1. Go out behind the station and board (E)."), 4200, "good"); this.setObjective(L("Platform 1: board your train"), -79, RAIL.platformZ); }
+  }
+  // The train journey: leave the platform, sit in coach S3, the TC and the chaiwala, fields outside, arrive.
+  _trainScene() {
+    const pr = this.progress, tk = pr.ticket; if (!tk) return; if (this.world.currentRoom) this._exitRoom(); if (this.player.riding) this.player.dismount(); closePanel();
+    if (!this._coachIn) { this._coachIn = buildCoachInterior(this.world.scene); const shirts = [0xe75480, 0x3a86ff, 0x2a9d8f, 0xffb703, 0x9b5de5, 0xd62828, 0x8ecae6, 0xffffff];
+      this._coachIn.people = this._coachIn.seats.filter((s, i) => i !== 15 && i % 3 !== 2).map((s, i) => { const h = makeVillager({ shirt: shirts[i % shirts.length], trousers: 0x3b3f4a, dress: i % 3 === 0, hair: [0x1d1410, 0x111111, 0x888888][i % 3] }); h.position.set(s.x, -0.12, s.z); h.rotation.y = s.face > 0 ? 0 : Math.PI; sitPose(h, "car"); this._coachIn.group.add(h); return h; });
+      const tc = makeVillager({ shirt: 0xffffff, trousers: 0x111111, hair: 0x111111 }); tc.position.set(0.2, 0, 9); tc.rotation.y = Math.PI; this._coachIn.group.add(tc); const chai = makeVillager({ shirt: 0xd62828, trousers: 0x333333, hair: 0x1d1410 }); chai.position.set(0.2, 0, -9); this._coachIn.group.add(chai); this._coachIn.tc = tc; this._coachIn.chai = chai; }
+    if (!this._country) this._country = buildCountryside(this.world.scene);
+    const seat = this._coachIn.seats[15], P = this.player.group; this._coachIn.group.add(P); P.position.set(seat.x, -0.12, seat.z); P.rotation.set(0, 0, 0); sitPose(P, "car");
+    const { bar, skip, fade } = this._cutUI();
+    this._cut = { kind: "train", t: 0, tk, seatZ: seat.z, bar, skip, fade, fired: new Set(), focus: { x: -79, y: 0, z: RAIL.z }, onDone: () => this._trainArrived(tk) };
+    playHorn(); this._cutSay(L("🚆 You climb into coach S3 with your bag. Seat 42, by the window."));
+  }
+  _tickTrain(dt, elapsed) {
+    const c = this._cut, t = (c.t += dt), cam = this.camera, RW = this.world.railway, co = this._coachIn, cn = this._country, tk = c.tk, s3 = tk.sights || ["Green fields everywhere.", "A big city at last.", "Street food at the station."];
+    const once = (k, fn) => { if (!c.fired.has(k)) { c.fired.add(k); fn(); } };
+    if (t < 8) { co.group.visible = false; cn.group.visible = false; const tr = RW.train; tr.visible = true; const x = t < 3.5 ? RAIL.stopX : RAIL.stopX - 1.25 * (t - 3.5) * (t - 3.5); tr.position.x = x; c.focus = { x: -79, y: 0, z: RAIL.z };
+      cam.position.set(-100, 3.2, RAIL.platformZ + 5); cam.lookAt(x - 18, 2, RAIL.z);
+      if (t > 3.5) once("go", () => { playHorn(); setTimeout(() => playHorn(), 400); this._cutSay(L("The guard waves the green flag. Whistle! The train moves.")); }); return; }
+    if (t < 28) { co.group.visible = true; cn.group.visible = false; const g = co.group.position, sz = c.seatZ; c.focus = { x: g.x, y: 0, z: g.z };
+      for (const mv of co.movers) { mv.position.z -= dt * 20; if (mv.position.z < -60) mv.position.z += 126; }
+      const w = (t - 8) * 0.8; co.tc.position.z = 9 - (w % 18); co.chai.position.z = -9 + ((w + 6) % 18); animateHuman(co.tc, dt, true, 0.6); animateHuman(co.chai, dt, true, 0.6); co.chai.rotation.y = 0;
+      for (const p of co.people) { animateHuman(p, dt, false); sitPose(p, "car"); } animateHuman(this.player.group, dt, false); sitPose(this.player.group, "car");
+      const sway = Math.sin(t * 9) * 0.015;
+      if (t < 16) { cam.position.set(g.x + 0.45, 1.7 + sway, g.z + sz - 2.3); cam.lookAt(g.x - 0.9, 1.0, g.z + sz + 3); } else if (t < 22) { cam.position.set(g.x + 0.2, 1.9 + sway, g.z + 10.2); cam.lookAt(g.x - 0.3, 0.9, g.z - 4); } else { cam.position.set(g.x - 0.6, 1.35 + sway, g.z + sz + 0.2); cam.lookAt(g.x - 6, 1.0, g.z + sz + 2); }
+      once("in", () => this._cutSay(L("💺 The coach is full: families, students, a grandmother with a tiffin box. Clack-clack, clack-clack.")));
+      if (t > 11) once("tc", () => this._cutSay(L("TC: Ticket, please! PNR {p}, {c}, {k}. All correct. Happy journey!", { p: tk.pnr, c: tk.to, k: tk.cls }), true, 340));
+      if (t > 16) once("chai", () => { this._cutSay(L("Chaiwala: Chai chai, garam chai! Samosa, samosa!"), true, 400); });
+      if (t > 22) once("win", () => this._cutSay(L("Out of the window: {s}", { s: L(s3[0]) })));
+      return; }
+    if (t < 38.5) { co.group.visible = false; cn.group.visible = true; const G = cn.group.position, x = -150 + (t - 28) * 30; cn.train.position.x = x; for (const car of cn.train.children || []) for (const w of car.children || []) if (w.userData && w.userData.wheel) w.rotation.x += dt * 30 / 0.42; c.focus = { x: G.x + x, y: 0, z: G.z };
+      cam.position.set(G.x + x - 22, 7, G.z + 22); cam.lookAt(G.x + x - 8, 1.5, G.z);
+      once("out", () => this._cutSay(L("🌾 The train races across the fields and over the river bridge."))); if (t > 32) once("next", () => this._cutSay(L("Next station: {c}!", { c: tk.to }), true)); if (t > 36.5 && c.fade) c.fade.style.opacity = "1"; return; }
+    this._endFlight();
+  }
+  _trainArrived(tk) {
+    const pr = this.progress, s3 = tk.sights || ["Green fields everywhere.", "A big city at last.", "Street food at the station."];
+    pr.trainTrips = (pr.trainTrips || 0) + 1; pr.trainCities = [...new Set([...(pr.trainCities || []), tk.to])]; pr.ticket = null; this.addMoney(-Math.min(10, pr.money), "chai"); saveProgress(this.profile, pr);
+    this._snap && this._snap("🚆", `Train trip to ${tk.to} on the ${tk.train}.`); this.diary(L("Went to {c} by train. {m}", { c: tk.to, m: s3[1] }));
+    this.dialogue.say(L("{c} station", { c: tk.to }), [L("You reached {c}!", { c: tk.to }), L(s3[1]), L(s3[2]), L("(Three days later you ride the train home to Suryanagar Junction with a bag of gifts.)")], () => showToast(L("🚆 Back at Suryanagar Junction. Trips by train: {n}.", { n: pr.trainTrips }), 3200, "good"), { pitch: 400 });
+  }
+  // After landing: the cricket match in that city, on the ground, then home.
+  _destMatch(bp) {
+    const pr = this.progress, city = (bp && bp.to) || "Mumbai", good = bp ? bp.good : true, s3 = (bp && bp.sights) || ["The sea and the tall buildings.", "The crowd sings songs.", "Street food after the match."];
+    pr.flights = (pr.flights || 0) + 1; this._snap("✈️", `Flew to ${city}${good ? "" : " (forgot something!)"}.`); saveProgress(this.profile, pr);
+    this.dialogue.say("Captain Kaur", [L("Welcome to {c}! Thank you for flying Suryanagar Air.", { c: city }), L(s3[0]), L("A taxi takes you to the {c} Cricket Stadium. Suryanagar Juniors against the {c} Colts. You bat at number 3!", { c: city })], () => this._goGround(() => {
+      const S = this.world.stadium; let banner = null; try { banner = makeTextSprite(`🏟️ ${city} ${L("Cricket Stadium")} · ${L("Final")}`, { size: 48, scale: 2.2 }); banner.position.set(S.batX, 7, S.z - 6); this.world.scene.add(banner); } catch (e) { /* the match still plays */ }
+      showToast(L("🏟️ The stadium is full. The crowd chants your name!"), 3000, "good");
+      this._startTrial({ kind: "cricket", name: L("The {c} match", { c: city }), icon: "🏏", cue: "Press F to swing when the ball reaches you.", hit: "SIX! The crowd roars!", miss: "Dot ball!", good: "What an innings! Suryanagar Juniors win the cup!", bad: "Good fight. The home team wins by a few runs. Next year!" }, 6, (h) => {
+        if (banner) this.world.scene.remove(banner); const runs = h * 6 + (6 - h); pr.matches = (pr.matches || 0) + 1; saveProgress(this.profile, pr); this._snap("🏏", `Scored ${runs} runs in the ${city} match.`); this.diary(L("Played the {c} match: {r} runs.", { c: city, r: runs }));
+        this.dialogue.say("Coach Vikram", [L("{r} runs off 6 balls in {c}!", { r: runs, c: city }), h >= 4 ? L("Player of the match! Your photo is in tomorrow's paper.") : L("A brave knock. Next time, watch the ball till the end."), L(s3[1]), L("(The next day you fly home to Suryanagar with a cap and a medal.)")], () => { const ap = this.world.doors.find((d) => d.label === "Suryanagar Airport"); if (ap) { this.player.group.position.set(ap.x, 0, ap.z + 2.5); this.player._placeCamera(1); } this._startPhase("over"); }, { pitch: 360 });
+      }, L("{c} Colts bowler", { c: city }), S);
+    }), { pitch: 340 });
+  }
+  // Outings: two friends (or jobmates) talk about a plan and invite you.
+  _mates() {
+    if (this.working) { const job = this.job; const a = this._partner ? this._partner.name : job && job.id === "police" ? "Constable Ramesh" : "Colleague Riya"; return [a, "Colleague Arjun"]; }
+    const fr = (this.friends || []).map((f) => f.name); const d = this.progress.day || 1; return [fr[d % fr.length] || "Aarav", fr[(d + 2) % fr.length] || "Diya"];
+  }
+  _tickOutings(dt) {
+    const pr = this.progress; if (this._outing || this._cut || this._lounge || this._trial || this._chase || this._fieldCase || this.world.currentRoom || this._uiBlocking()) return;
+    if (pr.outingDay === pr.day) return; this._outT = (this._outT || 0) + dt; if (this._outT < 25) return;
+    const list = OUTINGS.filter((o) => o.when.includes(this.phase) && this.world.doors.find((d) => d.label === o.place)); if (!list.length) return;
+    this._outT = 0; this._planOuting(list[(pr.day * 7 + (pr.outingCount || 0)) % list.length]);
+  }
+  _planOuting(o) {
+    const pr = this.progress, [a, b] = this._mates(), fill = (s) => L(s, {}).replace(/\{a\}/g, a).replace(/\{b\}/g, b).replace(/\{p\}/g, this.playerName || L("you"));
+    pr.outingDay = pr.day; saveProgress(this.profile, pr);
+    showToast(`💬 ${fill(o.chat[0])}`, 3600); speakLine(fill(o.chat[0]).replace(/^[^:]+: /, ""), 480);
+    setTimeout(() => showToast(`💬 ${fill(o.chat[1])}`, 3600), 3200);
+    this.dialogue.say(a, [fill(o.chat[0]).replace(/^[^:]+: /, ""), fill(o.chat[1]), L("{p}, we are going to {pl} {o}. Coming with us?", { p: this.playerName || L("friend"), pl: o.place, o: L({ breakfast: "for breakfast", lunch: "for lunch", dinner: "for dinner", cafe: "for coffee and pastries", techpark: "for the robot expo", planespot: "to watch the planes", movie: "for the new movie" }[o.id] || "") })], () => {
+      const card = openPanel(`<h2>${o.icon} ${L(o.name)} ${L("with")} ${a} & ${b}</h2><p class="job-brief">${L("Place")}: <b>${o.place}</b></p><div class="btn-row"><button class="big-btn" id="ou-yes">✅ ${L("Yes, let's go!")}</button><button class="ghost-btn" id="ou-no">${L("Not today")}</button></div>`);
+      card.querySelector("#ou-yes").addEventListener("click", () => { closePanel(); const d = this.world.doors.find((x) => x.label === o.place); this._outing = { o, a, b }; this.setObjective(`${o.icon} ${L("Meet {a} and {b} at {p}", { a, b, p: o.place })}`, d.x, d.z + 2); showToast(L("🧭 Follow the compass to {p}. Press E at the door.", { p: o.place }), 3200, "good"); });
+      card.querySelector("#ou-no").addEventListener("click", () => { closePanel(); showToast(L("{a}: Okay, next time then!", { a }), 2200); });
+    }, { pitch: 480 });
+  }
+  _startOuting(room) {
+    const ou = this._outing; if (!ou || this.world.currentRoom !== room) return; const o = ou.o, pr = this.progress, fill = (s) => L(s, {}).replace(/\{a\}/g, ou.a).replace(/\{b\}/g, ou.b).replace(/\{p\}/g, this.playerName || L("you"));
+    // A table for the group, your chair with the arrow, and your two friends at it.
+    if (!room.outingTable) { const sp = this._pickDeskSpot(room, "front"); room._desk(sp.lx, sp.lz, 0xb9773c); room.outingTable = sp; room._label(`${o.icon} ${L("Your table")}`, sp.lx, sp.lz, 2.2, 0.55); }
+    const T0 = room.outingTable, tx = room.x0 + T0.lx, tz = room.z0 + T0.lz; this._mateNpcs = this._mateNpcs || [];
+    [ou.a, ou.b].forEach((name, i) => { let n = this._mateNpcs[i]; if (!n) { n = new Npc({ id: "mate" + i, name, look: { shirt: [0x3a86ff, 0xe75480][i], trousers: 0x3b3f4a, dress: i === 1, hair: 0x1d1410 }, pitch: 460 }, this.world, { pos: [tx, tz], fixed: true }); this.npcs.push(n); this._mateNpcs[i] = n; } n.name = name; n.group.visible = true; n._inRoom = true; const s = this._nearSpot(room, tx, tz, i ? [[1.3, 0.2], [-1.3, -0.9], [0, -1.2]] : [[-1.3, 0.2], [1.3, -0.9], [0, 1.4]]); n.station(s, 0); sitPose(n.group, "car"); });
+    const P = this.player.group; P.position.set(tx, 0, tz + 0.8); P.rotation.y = Math.PI; sitPose(P, "car");
+    const finish = (extra) => { this._outing = null; pr.outingCount = (pr.outingCount || 0) + 1; pr.outings = [...new Set([...(pr.outings || []), o.id])]; this.addEnergy && this.addEnergy(10); for (const f of (this.friends || [])) if ([ou.a, ou.b].includes(f.name)) this.addFriendship(f.def.id, 1, o.name); saveProgress(this.profile, pr); this._snap && this._snap(o.icon, `${o.name} with ${ou.a} and ${ou.b} at ${o.place}.`); this.diary(L("{o} with {a} and {b} at {p}. {x}", { o: o.name, a: ou.a, b: ou.b, p: o.place, x: extra || "" })); this.dialogue.say(ou.a, [fill(o.talk[0]), fill(o.talk[1])], () => { for (const n of this._mateNpcs) { n.group.visible = false; standPose(n.group); } playSuccess(); showToast(L("😊 A fun {o}! Friendship up, energy up.", { o: L(o.name).toLowerCase() }), 2800, "good"); }, { pitch: 470 }); };
+    this.setObjective(`${o.icon} ${L(o.name)}: ${o.place}`, null);
+    if (o.menu) { const card = openPanel(`<h2>${o.icon} ${L(o.name)} · ${o.place}</h2><p class="job-brief">${L("{a} and {b} are at the table. What do you order? You have ₹{m}.", { a: ou.a, b: ou.b, m: pr.money })}</p><div class="shop-list">${o.menu.map((it, i) => `<div class="cart-row"><div><b>${L(it[0])}</b><small>₹${it[1]}</small></div><button class="use-btn" id="om-${i}">${L("Order")}</button></div>`).join("")}</div>`);
+      o.menu.forEach((it, i) => card.querySelector(`#om-${i}`).addEventListener("click", () => { if (pr.money < it[1]) { showToast(L("Not enough money. {a} pays for you this time!", { a: ou.a }), 2600); } else this.addMoney(-it[1], o.name); closePanel(); playPick(); showToast(L("😋 {f} arrives at the table. Yum!", { f: L(it[0]) }), 2600, "good"); finish(L("Had {f}.", { f: it[0] })); })); return; }
+    if (o.quiz) { this.dialogue.say(ou.b, [L("Look! A robot that draws, a drone show, and VR games!"), L("The robot asks you three questions. Answer and win a Tech Park badge!")], () => this._runPaper(`🤖 ${L("Robot quiz")}`, TECH_QS.map((q) => ({ ...q })), (s) => { if (s >= 2) this.addMoney(20, "robot quiz prize"); finish(L("Robot quiz: {s}/3.", { s })); }), { pitch: 470 }); return; }
+    if (o.planes) { playWhoosh(); this.dialogue.say(ou.a, [L("(You stand at the big glass window of the viewing deck.)"), L("A plane lands: the wheels touch, puff of smoke, the engines roar!"), L("Another one takes off to Dubai. {b} waves at the pilots.", { b: ou.b })], () => finish(L("Watched planes land and take off.")), { pitch: 470 }); return; }
+    finish("");
+  }
   _bookTicket() {
-    const pr = this.progress, half = (pr.age || 10) < 12;
-    const card = openPanel(`<div class="job-title-row"><h2>🎫 ${L("Suryanagar Junction · Booking counter")}</h2><button class="ghost-btn" id="bk-x">${L("Okay")}</button></div><p class="job-brief">${L("Pick a city and a class. You have ₹{m}.", { m: pr.money })}${half ? " " + L("Child ticket: half fare!") : ""}</p><div class="btn-row"><button class="lang-btn on" id="bk-sl">${L("Sleeper")}</button><button class="lang-btn" id="bk-ac">${L("3rd AC (double fare)")}</button></div><div class="shop-list">${TRAIN_TRIPS.map((t, i) => `<div class="cart-row"><div>🚆 <b>${L(t[0])}</b><small>${t[2]} · ₹${Math.round(t[1] * (half ? 0.5 : 1))}</small></div><button class="use-btn" id="bk-${i}">${L("Book")}</button></div>`).join("")}</div>`);
-    let ac = false; const sl = card.querySelector("#bk-sl"), acb = card.querySelector("#bk-ac"); sl.addEventListener("click", () => { ac = false; sl.classList.add("on"); acb.classList.remove("on"); }); acb.addEventListener("click", () => { ac = true; acb.classList.add("on"); sl.classList.remove("on"); });
+    const pr = this.progress, half = (pr.age || 10) < 12; let found = null, ac = false;
+    const card = openPanel(`<div class="job-title-row"><h2>🎫 ${L("Suryanagar Junction · Ticket counter")}</h2><button class="ghost-btn" id="bk-x">${L("Close")}</button></div><p class="job-brief">${L("Ticket Clerk Fernandes: 'Where do you want to go? Type any city in India.'")} ${L("You have ₹{m}.", { m: pr.money })}${half ? " " + L("Child ticket: half fare!") : ""}</p><div class="chat-row"><input id="bk-in" type="text" maxlength="30" placeholder="${L("Type a city, e.g. Varanasi")}" autocomplete="off"><button class="big-btn" id="bk-find">${L("Search")}</button></div><div class="job-goal" id="bk-res">${L("Popular: Delhi · Mumbai · Goa · Varanasi · Shimla · Chennai · Kolkata · Darjeeling")}</div><div class="btn-row"><button class="lang-btn on" id="bk-sl">${L("Sleeper")}</button><button class="lang-btn" id="bk-ac">${L("3rd AC (double fare)")}</button></div><div class="btn-row"><button class="big-btn" id="bk-book">🎫 ${L("Book the ticket")}</button></div>`);
+    const input = card.querySelector("#bk-in"), res = card.querySelector("#bk-res"), fare = () => Math.round(found.fare * (half ? 0.5 : 1) * (ac ? 2 : 1));
+    const show = () => { if (found) res.textContent = `🚆 ${found.train} → ${found.name}. ${L("Fare")} ₹${fare()} (${ac ? L("3rd AC") : L("Sleeper")}).`; };
+    const search = () => { const r = findCity(input.value); found = null; if (r.hit && r.hit.kind === "india") { found = r.hit; show(); } else if (r.hit) res.textContent = L("No train goes to {c}. Trains go only inside India. For {c}, take a flight from Suryanagar Airport!", { c: r.hit.name }); else res.textContent = input.value.trim() ? L("No station called '{t}'. {s}", { t: input.value.trim(), s: r.near.length ? L("Did you mean: {n}?", { n: r.near.join(", ") }) : L("Try Delhi, Mumbai, Goa, Varanasi or Chennai.") }) : L("Type a city first."); };
+    card.querySelector("#bk-find").addEventListener("click", search); input.addEventListener("keydown", (e) => { if (e.key === "Enter") search(); e.stopPropagation(); });
+    const sl = card.querySelector("#bk-sl"), acb = card.querySelector("#bk-ac"); sl.addEventListener("click", () => { ac = false; sl.classList.add("on"); acb.classList.remove("on"); show(); }); acb.addEventListener("click", () => { ac = true; acb.classList.add("on"); sl.classList.remove("on"); show(); });
     card.querySelector("#bk-x").addEventListener("click", closePanel);
-    TRAIN_TRIPS.forEach((t, i) => card.querySelector(`#bk-${i}`).addEventListener("click", () => { const fare = Math.round(t[1] * (half ? 0.5 : 1) * (ac ? 2 : 1)); if (pr.money < fare) { showToast(L("Not enough money. The fare is ₹{f}.", { f: fare }), 2400, "bad"); return; } closePanel(); this.addMoney(-fare, "train ticket"); const pnr = String(4200000000 + Math.floor(Math.random() * 99999999)); pr.ticket = { to: t[0], cls: ac ? "3AC" : "Sleeper", pnr, train: t[2] }; saveProgress(this.profile, pr); playPick(); showToast(L("🎫 Ticket to {c}, {k}. PNR {p}. Go to Platform 1 behind the station.", { c: L(t[0]), k: pr.ticket.cls, p: pnr }), 4200, "good"); this.setObjective(L("Platform 1: wait for the train, then press E to board"), -79, RAIL.platformZ); }));
+    card.querySelector("#bk-book").addEventListener("click", () => { if (!found) { search(); if (!found) { showToast(L("Type a city in India and press Search first."), 2400); return; } } const f = fare(); if (pr.money < f) { showToast(L("Not enough money. The fare is ₹{f}.", { f }), 2400, "bad"); return; } closePanel(); this.addMoney(-f, "train ticket"); const pnr = String(4200000000 + Math.floor(Math.random() * 99999999)); pr.ticket = { to: found.name, cls: ac ? "3AC" : "Sleeper", pnr, train: found.train, sights: found.sights }; saveProgress(this.profile, pr); playPick(); showToast(L("🎫 Ticket to {c} on the {t}, {k}. PNR {p}. Now wait in the waiting room.", { c: found.name, t: found.train, k: pr.ticket.cls, p: pnr }), 4600, "good"); const r = this.world.currentRoom; if (r) this.setObjective(L("Waiting room: sit and wait for your train"), r.x0 - 9.5, r.z0 + 3.4); });
+    setTimeout(() => input.focus && input.focus(), 60);
   }
   _boardTrain() {
     const pr = this.progress;
     if (!pr.ticket) { const card = openPanel(`<h2>🚆 ${L("No ticket!")}</h2><p class="job-brief">${L("The TC checks every ticket. Travelling without one is a fine of ₹250.")}</p><div class="btn-row"><button class="big-btn" id="nt-buy">🎫 ${L("Go and buy a ticket")}</button><button class="ghost-btn" id="nt-risk">${L("Get on anyway")}</button></div>`); card.querySelector("#nt-buy").addEventListener("click", () => { closePanel(); const d = this.world.doors.find((x) => x.label === "Railway Station"); this.setObjective(L("Booking counter inside the Railway Station"), d.x, d.z + 1); }); card.querySelector("#nt-risk").addEventListener("click", () => { closePanel(); const fine = Math.min(250, pr.money); this.addMoney(-fine, "ticketless fine"); this.addRep(-2, L("travelled without a ticket")); saveProgress(this.profile, pr); this.dialogue.say("TC Joseph", [L("Ticket, please. No ticket? That is a ₹{f} fine, and you get down at this platform.", { f: fine }), L("Buy a ticket next time. Railways run on honest passengers.")], null, { pitch: 340 }); }); return; }
-    this._trainTrip();
+    this._boardReady = null; this._trainScene();
   }
   _trainTrip() {
     const pr = this.progress, t = pr.ticket, trip = TRAIN_TRIPS.find((x) => x[0] === t.to) || TRAIN_TRIPS[0]; if (this.player.riding) this.player.dismount();
@@ -7940,11 +8178,16 @@ class Game {
     openPanel(`<div class="job-title-row"><h2>📰 ${L("Suryanagar Times")} · ${L("Day")} ${pr.day}</h2><button class="ghost-btn" id="np-x">${L("Okay")}</button></div><div class="section-label">${L("Local hero")}: ${this.playerName}</div><div class="job-goal">${heads.length ? heads.join("<br>") : L("Nothing yet. Make news today.")}</div><div class="section-label">${L("City")}</div><div class="job-goal">• ${L(city)}<br>• ${L("Weather")}: ${L(this.season())}${this.isRainy() ? ", " + L("rain") : ""}</div>`).querySelector("#np-x").addEventListener("click", () => closePanel());
   }
   _flight() {
-    const pr = this.progress; if (pr.age < 10) { showToast(L("Papa: 'Flying at ten, champ. With me.'"), 2400); return; } if (pr.money < 800) { showToast(L("A ticket to Mumbai is ₹800."), 2400, "bad"); return; }
-    const need = PACKING.filter((p) => p[1]).map((p) => p[0]); let packed = [];
-    const card = openPanel(`<div class="job-title-row"><h2>✈️ ${L("Flight to Mumbai for the match")}</h2></div><p class="job-brief">${L("Ticket ₹800. Pack the bag: pick what a flight needs.")}</p><div class="btn-row">${PACKING.map((p) => `<button class="lang-btn" data-p="${p[0]}">${L(p[0])}</button>`).join("")}</div><div class="job-goal" id="fl-msg"></div><div class="btn-row"><button class="big-btn" id="fl-go">${L("Board")}</button></div>`);
+    const pr = this.progress; if (pr.age < 10) { showToast(L("Papa: 'Flying at ten, champ. With me.'"), 2400); return; }
+    const need = PACKING.filter((p) => p[1]).map((p) => p[0]); let packed = [], found = null;
+    const card = openPanel(`<div class="job-title-row"><h2>✈️ ${L("Suryanagar Airport · Check-in")}</h2><button class="ghost-btn" id="fl-x">${L("Close")}</button></div><p class="job-brief">${L("Where do you want to fly? Type a city in India or abroad. A cricket match waits for you there!")} ${L("You have ₹{m}.", { m: pr.money })}</p><div class="chat-row"><input id="fl-in" type="text" maxlength="30" placeholder="${L("Type a city, e.g. Dubai or Delhi")}" autocomplete="off"><button class="big-btn" id="fl-find">${L("Search")}</button></div><div class="job-goal" id="fl-res">${L("Popular: Mumbai · Delhi · Goa · Dubai · London · Singapore · Kathmandu · Sydney")}</div><p class="job-brief">${L("Pack the bag for the security check: pick what a flight needs.")}</p><div class="btn-row">${PACKING.map((p) => `<button class="lang-btn" data-p="${p[0]}">${L(p[0])}</button>`).join("")}</div><div class="job-goal" id="fl-msg"></div><div class="btn-row"><button class="big-btn" id="fl-go">🧳 ${L("Check in")}</button></div>`);
+    const input = card.querySelector("#fl-in"), res = card.querySelector("#fl-res");
+    const search = () => { const r = findCity(input.value); found = r.hit; if (found) res.textContent = `✈️ SA 101 → ${found.name} ${found.kind === "abroad" ? "🌍 " + L("(abroad: passport and visa needed)") : "🇮🇳"} · ₹${flightFare(found)}`; else res.textContent = input.value.trim() ? L("No flights to '{t}'. {s}", { t: input.value.trim(), s: r.near.length ? L("Did you mean: {n}?", { n: r.near.join(", ") }) : L("Try Mumbai, Delhi, Dubai or London.") }) : L("Type a city first."); };
+    card.querySelector("#fl-find").addEventListener("click", search); input.addEventListener("keydown", (e) => { if (e.key === "Enter") search(); e.stopPropagation(); });
+    card.querySelector("#fl-x").addEventListener("click", closePanel);
     card.querySelectorAll("[data-p]").forEach((b) => b.addEventListener("click", () => { b.classList.toggle("on"); packed = [...card.querySelectorAll("[data-p].on")].map((x) => x.dataset.p); }));
-    card.querySelector("#fl-go").addEventListener("click", () => { const good = need.every((n) => packed.includes(n)) && !packed.includes("Moti") && !packed.includes("Cricket bat"); closePanel(); this.addMoney(-800, L("flight ticket")); pr.flights = (pr.flights || 0) + 1; if (good) this.addEnergy(20); this._snap("✈️", `Flew to Mumbai for the match${good ? "" : " (forgot something!)"}.`); this._flightScene(() => this.dialogue.say("Captain Kaur", [L("Welcome to Mumbai! Thank you for flying Suryanagar Air."), good ? L("Perfect packing. The match was a thriller; you were on the big screen.") : L("You packed the bat and forgot the water bottle. Security laughed. The match was still a thriller.")], () => this._startPhase("over"))); });
+    card.querySelector("#fl-go").addEventListener("click", () => { if (!found) { search(); if (!found) { showToast(L("Type a city and press Search first."), 2400); return; } } const f = flightFare(found); if (pr.money < f) { showToast(L("Not enough money. The ticket to {c} is ₹{f}.", { c: found.name, f }), 2600, "bad"); return; } const good = need.every((n) => packed.includes(n)) && !packed.includes("Moti") && !packed.includes("Cricket bat"); closePanel(); this.addMoney(-f, L("flight ticket")); pr.boardingPass = { seat: "3A", gate: 1, good, to: found.name, kind: found.kind, sights: found.sights }; saveProgress(this.profile, pr); playPick(); showToast((found.kind === "abroad" ? L("🛂 Passport and visa checked. ") : "") + (good ? L("🎫 Boarding pass: SA 101 to {c}, Seat 3A, Gate 1. Security passed. Now wait in the lounge.", { c: found.name }) : L("🎫 Boarding pass to {c}, Seat 3A. Security took out a thing you did not need! Now wait in the lounge.", { c: found.name })), 4600, "good"); const r = this.world.currentRoom; if (r) this.setObjective(L("Departure lounge: sit and wait for the boarding call"), r.x0 - 12.8, r.z0 + 5.5); });
+    setTimeout(() => input.focus && input.focus(), 60);
   }
   _milkCow() { const pr = this.progress; if (pr.milked === pr.day) { showToast(L("The cows are milked for today."), 2000); return; } const n = 2 + (pr.day % 4); this.dialogue.say("Kisan Bhola", [L("{n} cows, two litres each. How many litres?", { n })], () => runStepQuiz({ profile: this.profile, level: 1, world: this.world, audio: Audio, countAttempt: () => countAttempt(this.profile, pr, "milk"), onSolve: () => { pr.milked = pr.day; this.addMoney(20, L("milking")); } }, { title: `🐄 ${L("Milking")}`, intro: L("Warm, sweet, frothy."), goal: "₹20", steps: [{ q: `${n} × 2 = ?`, answer: n * 2, unit: L("litres"), hint: L("Two each.") }], doneBtn: L("Okay"), doneHtml: `<b>Kisan Bhola:</b> "${L("Farmer's hands. Here, ₹20.")}"`, onLeave: () => {} })); }
   _treasureDig(i) { const pr = this.progress; pr.treasure = pr.treasure || []; if (pr.treasure.includes(i)) return; pr.treasure.push(i); this.addMoney(25, L("an old coin")); playSuccess(); showToast(L("🪙 An old coin {n} of 5, {w}!", { n: pr.treasure.length, w: L(TREASURE[i][2]) }), 3200, "good"); if (pr.treasure.length === 5) { pr.badges = pr.badges || []; pr.badges.push("treasure"); this._snap("🗺️", "Found all five of Kaka's old coins."); } saveProgress(this.profile, pr); }
@@ -8504,7 +8747,7 @@ class Game {
   _loopBody() {
     requestAnimationFrame(this._loop);
     const dt = Math.min(this.clock.getDelta(), 0.05), elapsed = this.clock.elapsedTime;
-    if (this._cut) { try { this._tickFlight(dt, elapsed); } catch (e) { this._reportError(e); this._endFlight(); } this.world.update(dt, elapsed, this._cut ? this._cut.focus : this.player.position); if (!this._contextLost) this.renderer.render(this.world.scene, this.camera); return; }
+    if (this._cut) { try { if (this._cut.kind === "train") this._tickTrain(dt, elapsed); else this._tickFlight(dt, elapsed); } catch (e) { this._reportError(e); this._endFlight(); } this.world.update(dt, elapsed, this._cut ? this._cut.focus : this.player.position); if (!this._contextLost) this.renderer.render(this.world.scene, this.camera); return; }
     const blocked = this._uiBlocking() || !!this._park;
     this.player.update(dt, blocked ? { x: 0, y: 0 } : this.input.move, this.input.running, blocked ? 0 : this.input.cameraDelta(dt), this.input.cameraIdleFor());
     this.world.update(dt, elapsed, this.player.position);
@@ -8518,7 +8761,7 @@ class Game {
     if (this.player.riding && this.player.riding.kind === "bike" && this.progress.energy <= 0 && !this.progress.cast && !panelOpen()) this._fallOffBike();
     if (!blocked && this.player.riding && this.player.riding.duty && this.input.keys && this.input.keys.has("f") && !this._sirenHeld) { this._sirenHeld = true; this._siren = !this._siren; showToast(this._siren ? L("🚨 Siren on") : L("Siren off"), 1200); } if (!(this.input.keys && this.input.keys.has("f"))) this._sirenHeld = false;
     const useP = !blocked && this.input.usePressed(); if (this._trial) { const eP = this.input.interactPressed(); this._tickTrial(dt, useP || eP); this.ui.setInteractPrompt(`${this._trial ? this._trial.spec.icon : ""} ${L(this._trial && this._trial.kind === "cricket" ? "Swing" : "Shoot")}  (F / E)`); }
-    this._tickPet(dt); this._tickRain(); this._tickP2(dt); this._tickDirections(dt); this._tickCrowd(dt); this._tickField(dt); this._tickPartner(dt); this._tickChase(dt); this._tickTraffic(elapsed); this._tickRoadLife(dt); this._tickTransport(dt, elapsed);
+    this._tickPet(dt); this._tickRain(); this._tickP2(dt); this._tickDirections(dt); this._tickCrowd(dt); this._tickField(dt); this._tickPartner(dt); this._tickChase(dt); this._tickTraffic(elapsed); this._tickRoadLife(dt); this._tickTransport(dt, elapsed); this._tickLounge(dt, elapsed); this._tickOutings(dt);
     sirenTick(!!(this.player.riding && this.player.riding.duty && this._siren), dt); if (this._dutyLights) { const on = Math.floor(elapsed * 4) % 2 === 0; this._dutyLights[0].material.emissiveIntensity = this._siren && on ? 2 : 0.2; this._dutyLights[1].material.emissiveIntensity = this._siren && !on ? 2 : 0.2; }
     if (this.world.setTimeOfDay) this.world.setTimeOfDay(this.world.currentRoom ? "school" : this.phase);
     musicTick(this._trial ? "stadium" : this.world.currentRoom ? (["canteen", "eatery", "shop", "supermarket"].includes(this.world.currentRoom.type) ? "market" : null) : this.phase === "school" ? "school" : this.phase === "over" ? "evening" : Math.hypot(pp.x - 40, pp.z - 80) < 45 ? "market" : this.phase, dt);

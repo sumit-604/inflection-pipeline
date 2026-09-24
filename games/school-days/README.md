@@ -369,6 +369,37 @@ road. Press E to talk.
   desk are only placed where you can walk from the room door to the chair
   and back out. Press O to go outside from anywhere inside a building.
 
+## Travel: ticket, lounge, board, journey
+
+- Railway Station: press E at the TICKETS window (or talk to Ticket Clerk
+  Fernandes) and type any city in India, such as Varanasi, Goa, Chennai
+  or Darjeeling. Old names work too (Bombay, Banaras, Madras). A foreign
+  city gets the answer "trains go only inside India: take a flight".
+  Pick Sleeper or 3rd AC, book, and you get a PNR. Then sit in the
+  waiting room. An announcement calls your train to Platform 1. Board it
+  and ride inside coach S3 with the passengers, the TC checks your
+  ticket, the chaiwala sells chai, fields and poles pass the window, the
+  train crosses a river bridge, and you arrive. Tea & Snacks stall: chai
+  and samosa for ₹15.
+- Airport: at the check-in counter type any city in India or abroad
+  (Dubai, London, New York, Tokyo, Sydney and more; abroad needs a
+  passport check). Pack the bag for security and check in to get a
+  boarding pass. Sit in the departure lounge until the boarding call,
+  then go to Gate 1 and board. The flight scene names your city.
+- After landing you play the cricket match in that city: six balls on
+  the ground, a result, a medal, and the flight home.
+
+## Outings with friends and jobmates
+
+- Once a day your friends (or, when you work, your jobmates such as
+  Constable Ramesh) chat about a plan and invite you: breakfast at the
+  Old Town Tea House, lunch at Pizza Corner, dinner at the Grand Hotel,
+  coffee at City Bakery, the robot expo at Tech Park, plane watching at
+  the airport, or a movie at the Cinema Hall.
+- Say yes, follow the compass, and they are waiting at a table. Order
+  from the menu, answer the robot quiz, or watch the planes, then they
+  talk and you get friendship, energy and a photo in the album.
+
 ## Railway Station and airport
 
 - Railway Station at the north edge of Old Town, at the end of the Old

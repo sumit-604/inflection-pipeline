@@ -354,6 +354,50 @@ road. Press E to talk.
 - The big map (G) lists every road person, so you can find Baba, the
   traffic police, Surdas Uncle, the pani puri stall, Gauri and Sheru.
 
+## Job interviews and your seat in every office
+
+- Press J, pick a job, press Apply. Choose "Go now" to reach the office at
+  once, or walk there with the compass. The boss meets you and the
+  interview starts on arrival: a written test, then five questions.
+- Every one of the 27 jobs has an interview desk at the back left of its
+  office, with the boss behind it and YOUR SEAT (a chair with a bobbing
+  arrow) in front. The Teacher interview is in the Staff Room of the Main
+  Building. The person at the front desk sends you to the interview.
+- Once hired, your own desk with the YOUR SEAT arrow is inside the office.
+  Rooms where you have no desk get a waiting seat at the front right.
+
+## Railway Station and airport
+
+- Railway Station at the north edge of Old Town, at the end of the Old
+  Town side road. Inside: the booking counter (six cities, Sleeper or
+  3rd AC, half fare under 12, a PNR on every ticket) and the timetable.
+- Platform 1 is behind the building. The Suryanagar Express arrives with
+  an announcement, halts about half a minute, then departs. Board with E.
+  The TC checks your ticket, the chaiwala sells chai, and you see the
+  sights of the city. Without a ticket, the fine is ₹250.
+- A level crossing where the side road meets the line: the gates come
+  down when the train passes. Standing on the track gets you pulled back.
+- Station jobs: Station Master, Ticket Collector (TC) and Loco Pilot, each
+  interviewed at the Railway Station. Pilot interviews at Suryanagar
+  Airport.
+- Aeroplanes: one comes in low over Suryanagar Airport and climbs away,
+  two jets cross the sky high up, with blinking lights. A plane is parked
+  at Airport Gate 1.
+
+## More people and beggars on the roads
+
+- Four more beggars, each with a daily gift and a story after three
+  visits: Munni selling pens at the school road signal (take her to
+  school for a free seat), Amma at the market gate, Kishan the flute
+  player in Old Town (plays a song for a coin), and Baba at the station
+  gate.
+- Sixteen more walkers on the avenue, market street, New Town, Old Town,
+  the back lane, our lane and the station road: a porter, a traveller with
+  a suitcase, schoolchildren, a rickshaw driver and more. That makes 26
+  walkers and 5 beggars.
+- Badges: Rail Yatri, Bharat Darshan (three cities by train), School for
+  Munni.
+
 ## Family life
 
 - Twelve neighbours, vendors and children walk the colony lanes, the main

@@ -747,7 +747,7 @@ import * as THREE from 'three';
    label goes through L(). The voice follows the language.
    Questions and answers stay in English for now.
    ============================================================ */
-const GAME_VERSION = "v22";
+const GAME_VERSION = "v24";
 const LANGS = {
   en: { name: "English", voice: "en-IN" },
   hi: { name: "हिन्दी", voice: "hi-IN" },
@@ -2705,6 +2705,8 @@ class World {
     B({ w: 10, d: 8, h: 3.6, roof: "flat", wall: 0xe3ecf5, roofColor: 0xd62828, sign: "Radio Suryanagar" }, -100, -92, 0, "Radio Suryanagar");
     B({ w: 10, d: 7, h: 3.2, roof: "flat", wall: 0xbfe3f2, roofColor: 0x1d3557, sign: "Fish Market" }, -70, -92, 0, "Fish Market");
     B({ w: 10, d: 8, h: 3.6, roof: "flat", wall: 0xffffff, roofColor: 0x1d3557, sign: "RTO Office" }, -52, -92, 0, "RTO Office");
+    B({ w: 30, d: 10, h: 5.5, roof: "gable", wall: 0xc0532f, roofColor: 0x8a5626, sign: "Railway Station" }, -85, -164, 0, "Railway Station");
+    buildRailway(this);
     this._addBillboard(-40, -70, "RTO Office: driving licence →", 0x1d3557);
     B({ w: 10, d: 8, h: 3.4, roof: "flat", wall: 0xffffff, roofColor: 0x2f9e44, sign: "Vet Clinic" }, -160, -68, Math.PI, "Vet Clinic");
     B({ w: 12, d: 8, h: 3.8, roof: "flat", wall: 0xfff1d6, roofColor: 0x6a4c93, sign: "Community Hall" }, -132, -68, Math.PI, "Community Hall");
@@ -6154,6 +6156,155 @@ class BigMap {
 }
 
 
+/* ============================================================
+   transport.js — the railway station, trains and aeroplanes.
+   Suryanagar Junction sits at the north edge of Old Town with one
+   platform. A blue express arrives, halts, then departs. The Old
+   Town side road crosses the line, with barriers that come down.
+   Aeroplanes land at and climb out of Suryanagar Airport, and
+   jets cross the sky high up.
+   ============================================================ */
+const RAIL = { z: -184, x1: -196, x2: -46, platformZ: -177, stopX: -58, cycle: 110, crossX: -120 };
+
+// An airliner: white body, blue tail, windows, engines, wings, lights.
+function makePlane(tail = 0x1d3557, scale = 1) {
+  const g = new THREE.Group(); const white = new THREE.MeshStandardMaterial({ color: 0xf6f8fa, roughness: 0.4, metalness: 0.2 }); const blue = new THREE.MeshStandardMaterial({ color: tail, roughness: 0.4 });
+  const body = new THREE.Mesh(new THREE.CylinderGeometry(1.2, 1.2, 16, 14), white); body.rotation.x = Math.PI / 2; g.add(body);
+  const nose = new THREE.Mesh(new THREE.SphereGeometry(1.2, 14, 10), white); nose.scale.set(1, 1, 1.7); nose.position.z = 8; g.add(nose);
+  const tailCone = new THREE.Mesh(new THREE.ConeGeometry(1.2, 4, 14), white); tailCone.rotation.x = -Math.PI / 2; tailCone.position.z = -10; g.add(tailCone);
+  const cockpit = new THREE.Mesh(new THREE.BoxGeometry(1.4, 0.45, 0.8), new THREE.MeshStandardMaterial({ color: 0x1b2a3a, metalness: 0.6, roughness: 0.2 })); cockpit.position.set(0, 0.55, 9.1); cockpit.rotation.x = -0.35; g.add(cockpit);
+  const stripe = new THREE.Mesh(new THREE.BoxGeometry(2.46, 0.25, 15), blue); stripe.position.y = -0.1; g.add(stripe);
+  const windows = new THREE.Mesh(new THREE.BoxGeometry(2.44, 0.22, 13), new THREE.MeshStandardMaterial({ color: 0x1b2a3a })); windows.position.y = 0.45; g.add(windows);
+  const wing = new THREE.Mesh(new THREE.BoxGeometry(22, 0.25, 3.2), white); wing.position.set(0, -0.4, 0.5); g.add(wing);
+  for (const s of [-1, 1]) { const tip = new THREE.Mesh(new THREE.BoxGeometry(0.2, 1.2, 1), blue); tip.position.set(s * 11, 0.2, 0); g.add(tip); const eng = new THREE.Mesh(new THREE.CylinderGeometry(0.65, 0.55, 2.6, 12), new THREE.MeshStandardMaterial({ color: 0xc9d1d9, metalness: 0.6 })); eng.rotation.x = Math.PI / 2; eng.position.set(s * 4.2, -1.1, 1.6); g.add(eng); const light = new THREE.Mesh(new THREE.SphereGeometry(0.18, 8, 6), new THREE.MeshStandardMaterial({ color: s < 0 ? 0xff2020 : 0x20ff40, emissive: s < 0 ? 0xff2020 : 0x20ff40, emissiveIntensity: 1 })); light.position.set(s * 11, -0.3, 0.3); g.add(light); }
+  const fin = new THREE.Mesh(new THREE.BoxGeometry(0.25, 4.2, 3), blue); fin.position.set(0, 2.6, -10); fin.rotation.x = 0.35; g.add(fin);
+  const stab = new THREE.Mesh(new THREE.BoxGeometry(8, 0.2, 2), white); stab.position.set(0, 0.4, -10.5); g.add(stab);
+  const beacon = new THREE.Mesh(new THREE.SphereGeometry(0.2, 8, 6), new THREE.MeshStandardMaterial({ color: 0xff3030, emissive: 0xff3030, emissiveIntensity: 1 })); beacon.position.set(0, 1.3, 0); g.add(beacon); g.userData.beacon = beacon;
+  for (const [x, z] of [[0, 6.5], [-2.2, 0], [2.2, 0]]) { const wh = new THREE.Mesh(new THREE.CylinderGeometry(0.35, 0.35, 0.3, 10), mat(0x222222)); wh.rotation.z = Math.PI / 2; wh.position.set(x, -1.6, z); g.add(wh); }
+  g.scale.setScalar(scale);
+  return g;
+}
+
+// A coach of the express: blue with a cream band, a row of windows, doors, bogies.
+function makeCoach(color = 0x1d4e89, engine = false) {
+  const g = new THREE.Group(); const len = engine ? 12 : 11;
+  const body = new THREE.Mesh(new THREE.BoxGeometry(len, 2.9, 3), new THREE.MeshStandardMaterial({ color: engine ? 0xc0392b : color, roughness: 0.5, metalness: 0.2 })); body.position.y = 2.1; body.castShadow = true; g.add(body);
+  const roof = new THREE.Mesh(new THREE.BoxGeometry(len, 0.35, 3.1), mat(engine ? 0x7f8c8d : 0x9aa6ad)); roof.position.y = 3.7; g.add(roof);
+  const band = new THREE.Mesh(new THREE.BoxGeometry(len + 0.02, 0.35, 3.04), mat(engine ? 0xf6efd8 : 0xf6efd8)); band.position.y = 1.35; g.add(band);
+  if (engine) { const cab = new THREE.Mesh(new THREE.BoxGeometry(0.1, 1, 2.4), new THREE.MeshStandardMaterial({ color: 0x1b2a3a, metalness: 0.6 })); cab.position.set(len / 2 + 0.02, 2.8, 0); g.add(cab); const lamp = new THREE.Mesh(new THREE.SphereGeometry(0.25, 10, 8), new THREE.MeshStandardMaterial({ color: 0xfff6c0, emissive: 0xfff6c0, emissiveIntensity: 1.2 })); lamp.position.set(len / 2 + 0.05, 3.4, 0); g.add(lamp); const panto = new THREE.Mesh(new THREE.BoxGeometry(2.2, 0.1, 0.1), mat(0x333333)); panto.position.set(0, 4.4, 0); panto.rotation.z = 0.4; g.add(panto); }
+  else for (let i = 0; i < 7; i++) for (const s of [-1, 1]) { const w = new THREE.Mesh(new THREE.BoxGeometry(0.9, 0.7, 0.05), new THREE.MeshStandardMaterial({ color: 0x1b2a3a })); w.position.set(-len / 2 + 1.4 + i * 1.4, 2.35, s * 1.52); g.add(w); }
+  for (const s of [-1, 1]) { const bogie = new THREE.Mesh(new THREE.BoxGeometry(2.2, 0.5, 2.6), mat(0x222222)); bogie.position.set(s * (len / 2 - 2), 0.45, 0); g.add(bogie); for (const w of [-0.7, 0.7]) { const wh = makeWheel(0.42, 0.15); wh.rotation.order = "YXZ"; wh.rotation.y = Math.PI / 2; wh.position.set(s * (len / 2 - 2) + w, 0.42, 0); g.add(wh); } }
+  g.userData.len = len;
+  return g;
+}
+
+// The whole railway: platform, tracks, level crossing, signal and the train.
+function buildRailway(world) {
+  const S = world.scene, R = RAIL, add = (m) => { S.add(m); return m; };
+  const rail = (z) => { const r = add(new THREE.Mesh(new THREE.BoxGeometry(R.x2 - R.x1, 0.14, 0.1), new THREE.MeshStandardMaterial({ color: 0x9aa6ad, metalness: 0.8, roughness: 0.3 }))); r.position.set((R.x1 + R.x2) / 2, 0.22, z); };
+  const bed = add(new THREE.Mesh(new THREE.BoxGeometry(R.x2 - R.x1, 0.12, 3.6), mat(0x7a6f63))); bed.position.set((R.x1 + R.x2) / 2, 0.06, R.z);
+  rail(R.z - 0.75); rail(R.z + 0.75);
+  for (let x = R.x1 + 0.6; x < R.x2; x += 1.2) { const sl = add(new THREE.Mesh(new THREE.BoxGeometry(0.28, 0.1, 2.4), mat(0x5a3a24))); sl.position.set(x, 0.14, R.z); }
+  const buffer = add(new THREE.Mesh(new THREE.BoxGeometry(0.6, 1.2, 2.6), mat(0xd62828))); buffer.position.set(R.x2 + 0.3, 0.6, R.z);
+  // Platform 1 with a yellow edge, benches, the station board and a clock.
+  const pl = add(new THREE.Mesh(new THREE.BoxGeometry(66, 0.2, 5), mat(0xbdb5a6))); pl.position.set(-79, 0.1, R.platformZ + 0.5);
+  const edge = add(new THREE.Mesh(new THREE.BoxGeometry(66, 0.21, 0.35), mat(0xffd21e))); edge.position.set(-79, 0.11, R.platformZ - 1.8);
+  for (const x of [-104, -92, -66, -54]) { const b = add(new THREE.Mesh(new THREE.BoxGeometry(2, 0.45, 0.6), mat(0x3a86ff))); b.position.set(x, 0.42, R.platformZ + 2.2); }
+  for (const x of [-110, -48]) { const board = add(new THREE.Mesh(new THREE.BoxGeometry(4.2, 1.2, 0.15), mat(0xffd21e))); board.position.set(x, 2.4, R.platformZ + 1); for (const s of [-1, 1]) { const post = add(new THREE.Mesh(new THREE.BoxGeometry(0.12, 2, 0.12), mat(0x333333))); post.position.set(x + s * 1.8, 1, R.platformZ + 1); } const t = makeTextSprite("SURYANAGAR JN.", { size: 44, color: "#111111", bg: "rgba(0,0,0,0)", scale: 1.1 }); t.position.set(x, 2.45, R.platformZ + 1.2); S.add(t); }
+  const pf = makeTextSprite("Platform 1", { size: 44, scale: 1.1 }); pf.position.set(-79, 3.6, R.platformZ + 1); S.add(pf);
+  const shade = add(new THREE.Mesh(new THREE.BoxGeometry(40, 0.2, 4.4), mat(0x8a5626))); shade.position.set(-79, 3.2, R.platformZ + 0.9);
+  for (let x = -97; x <= -61; x += 6) { const p = add(new THREE.Mesh(new THREE.CylinderGeometry(0.12, 0.12, 3.2, 8), mat(0x555555))); p.position.set(x, 1.6, R.platformZ + 2.6); }
+  // Level crossing on the Old Town side road: two booms and a warning sign.
+  const booms = [];
+  for (const s of [-1, 1]) { const z = R.z + s * 4.5; const post = add(new THREE.Mesh(new THREE.BoxGeometry(0.3, 1.2, 0.3), mat(0x333333))); post.position.set(R.crossX + 4, 0.6, z); const pivot = new THREE.Group(); pivot.position.set(R.crossX + 4, 1.1, z); S.add(pivot); const arm = new THREE.Mesh(new THREE.BoxGeometry(7.5, 0.18, 0.18), mat(0xf4f4f4)); arm.position.x = -3.75; pivot.add(arm); for (let k = 0; k < 4; k++) { const red = new THREE.Mesh(new THREE.BoxGeometry(0.8, 0.2, 0.2), mat(0xd62828)); red.position.x = -1 - k * 1.8; pivot.add(red); } booms.push(pivot); }
+  const warn = makeTextSprite("⚠ RAILWAY CROSSING · STOP, LOOK, LISTEN", { size: 40, scale: 1.3 }); warn.position.set(R.crossX + 6, 2.6, R.z + 7); S.add(warn);
+  // The signal at the platform end: red or green.
+  const sp = add(new THREE.Mesh(new THREE.CylinderGeometry(0.1, 0.1, 4, 8), mat(0x333333))); sp.position.set(-40 - 6.5, 2, R.z - 3);
+  const sigRed = new THREE.MeshStandardMaterial({ color: 0xff2020, emissive: 0xff2020, emissiveIntensity: 1 }), sigGreen = new THREE.MeshStandardMaterial({ color: 0x20ff40, emissive: 0x20ff40, emissiveIntensity: 1 });
+  const sig = add(new THREE.Mesh(new THREE.SphereGeometry(0.3, 10, 8), sigRed)); sig.position.set(-46.5, 4.1, R.z - 3); sig.userData.red = sigRed; sig.userData.green = sigGreen;
+  // The train: engine plus four coaches, laid out west from the engine.
+  const train = new THREE.Group(); S.add(train); let x = 0; const cars = [makeCoach(0, true), makeCoach(0x1d4e89), makeCoach(0x1d4e89), makeCoach(0x6a1b2a), makeCoach(0x1d4e89)];
+  for (const c of cars) { const L2 = c.userData.len; c.position.x = x - L2 / 2; x -= L2 + 0.6; train.add(c); }
+  train.position.set(-300, 0, R.z); train.userData.length = -x; train.visible = false;
+  world.railway = { train, booms, sig, state: "away", t: 0 };
+  return world.railway;
+}
+// Where the train is at time t in its cycle: arrive, halt, depart back west, away.
+function trainAt(t) {
+  const R = RAIL, far = -300, stop = R.stopX, tt = t % R.cycle;
+  if (tt < 24) { const k = tt / 24, e = 1 - (1 - k) * (1 - k); return { x: far + (stop - far) * e, state: "arriving", speed: (1 - k) }; }
+  if (tt < 58) return { x: stop, state: "halted", left: 58 - tt };
+  if (tt < 80) { const k = (tt - 58) / 22, e = k * k; return { x: stop + (far - stop) * e, state: "departing", speed: k }; }
+  return { x: far, state: "away", next: R.cycle - tt };
+}
+// Aeroplane routes: a landing and climb-out over the airport, and two high jets.
+function planeAt(i, t) {
+  if (i === 0) { const cyc = 70, k = (t % cyc) / cyc; const ax = 176, az = 147; const x = -260 + k * 620, dist = x - ax; const y = dist < 0 ? Math.max(9, 9 + (-dist) * 0.2) : 9 + dist * 0.35; return { x, y: Math.min(y, 90), z: az - 12, yaw: Math.PI / 2, pitch: dist < 0 ? 0.08 : -0.3, low: Math.abs(dist) < 60 }; }
+  if (i === 1) { const a = t * 0.05; return { x: Math.cos(a) * 170, y: 85, z: Math.sin(a) * 170, yaw: -a, pitch: 0 }; }
+  const cyc = 55, k = (t % cyc) / cyc; return { x: 280 - k * 560, y: 110, z: -120 + k * 200, yaw: Math.atan2(-560, 200), pitch: 0 };
+}
+
+// ---- Railway jobs: interview and desk at the Railway Station ----
+JOBS.push(
+  { id: "stationmaster", name: "Station Master", icon: "🚉", place: "Railway Station", subject: "maths", salary: 1000, boss: "Divisional Manager Sinha", desc: "Run Suryanagar Junction: trains on time, platforms safe." },
+  { id: "tc", name: "Ticket Collector (TC)", icon: "🎫", place: "Railway Station", subject: "english", salary: 800, boss: "Chief TC Joseph", desc: "Check tickets on the trains and help passengers." },
+  { id: "locopilot", name: "Loco Pilot (train driver)", icon: "🚆", place: "Railway Station", subject: "maths", salary: 1200, boss: "Chief Loco Inspector Rao", desc: "Drive the express trains safely and on time." },
+);
+Object.assign(UNIFORMS, { stationmaster: { shirt: 0xffffff, trousers: 0xffffff, cap: 0x111111 }, tc: { shirt: 0xffffff, trousers: 0x111111, cap: null, coat: true, tie: true }, locopilot: { shirt: 0x1d3557, trousers: 0x1d3557, cap: 0x1d3557 } });
+Object.assign(RANKS, { stationmaster: ["Assistant Station Master", "Station Master", "Station Superintendent", "Area Manager", "Divisional Railway Manager"], tc: ["Ticket Examiner", "Senior Ticket Examiner", "Travelling Ticket Examiner", "Chief Ticket Inspector", "Commercial Manager"], locopilot: ["Assistant Loco Pilot", "Loco Pilot (Goods)", "Loco Pilot (Passenger)", "Loco Pilot (Express)", "Chief Loco Inspector"] });
+Object.assign(WORK_TASKS, { stationmaster: "Station duty: keep the trains and passengers safe.", tc: "On board: check tickets and help passengers.", locopilot: "Cab duty: drive by the signals and the rules." });
+Object.assign(SEAT_NAMES, { stationmaster: "Station Master's cabin", tc: "TC's desk on Platform 1", locopilot: "Crew lobby chair" });
+Object.assign(JOB_STREAM, { locopilot: "science" });
+Object.assign(JOB_CASES, {
+  stationmaster: [
+    C("The Suryanagar Express is 20 minutes late. The platform is crowded.", "Do?", "Announce the delay clearly, keep people behind the yellow line, update the board", "Say nothing", "Send the train early next time", "Close the station"),
+    C("A child has fallen asleep on a bench and the parents are not in sight.", "Do?", "Keep the child safe in your cabin, announce the parents' call, inform the railway police", "Wake and send away", "Put the child on the next train", "Ignore"),
+    C("The signal before the platform will not turn green.", "Do?", "Hold the train at red, call the signal engineer, follow the written caution order", "Tell the driver to go anyway", "Paint it green", "Switch off the signal"),
+    C("Two passengers argue over one seat number.", "Do?", "Check both tickets and the chart calmly, give the seat to the right ticket, find the other a seat", "Let them fight", "Give it to the louder one", "Throw both off"),
+    C("A train from Delhi must wait for a goods train to cross.", "How long? It arrives at 10:40 and leaves at 11:05.", "25 minutes", "15 minutes", "35 minutes", "45 minutes"),
+  ],
+  tc: [
+    C("A passenger has no ticket and says he forgot his wallet.", "Right way?", "Politely explain the rule, issue a penalty receipt as per the rules, help him call family", "Throw him off the moving train", "Let him go free", "Take his phone"),
+    C("An old lady's berth is the upper one. She cannot climb.", "Do?", "Find a lower berth and swap with a willing passenger", "Tell her to climb", "Ignore", "Charge her extra"),
+    C("A ticket says 'Delhi' but the passenger is on the Jaipur train.", "Do?", "Explain kindly, help them get down at the next station and take the right train", "Laugh", "Fine them ₹10,000", "Say nothing"),
+    C("Sleeper class ₹300, AC is double. A family of three wants AC.", "Total fare?", "₹1,800", "₹900", "₹600", "₹1,200"),
+    C("A lost bag is found under a seat.", "Do?", "Record it and hand it to the railway lost property office", "Keep it", "Throw it out of the window", "Open and use it"),
+  ],
+  locopilot: [
+    C("The signal ahead shows red.", "Do?", "Stop before the signal and wait. Never pass a red signal", "Slow down and pass", "Blow the horn and go", "Speed up"),
+    C("A cow stands on the track ahead.", "Do?", "Horn, brake early and firmly, stop if needed", "Speed up", "Close your eyes", "Keep going"),
+    C("The train must cover 120 km in 2 hours.", "Average speed?", "60 km/h", "120 km/h", "40 km/h", "240 km/h"),
+    C("You feel very sleepy on a night run.", "Do?", "Tell the assistant loco pilot and control; never drive unfit", "Drive faster to finish", "Take a short nap while driving", "Turn off the alarm"),
+    C("A level crossing ahead has its gate open with cars on it.", "Do?", "Long horn, brake hard, report the gate to control", "Keep full speed", "Stop the horn", "Reverse"),
+  ],
+});
+BADGES.push({ id: "rail_yatri", icon: "🚆", name: "Rail Yatri", test: (pr) => (pr.trainTrips || 0) >= 1 }, { id: "bharat_darshan", icon: "🗺️", name: "Bharat Darshan (3 cities by train)", test: (pr) => (pr.trainCities || []).length >= 3 }, { id: "munni_school", icon: "📚", name: "School for Munni", test: (pr) => !!pr.munniSchool });
+
+const TRAIN_TRIPS = [
+  ["Delhi", 300, "Rajdhani Express", ["Fields of wheat, then the Yamuna bridge.", "The Red Fort glows red at sunset.", "Parathas in Chandni Chowk, extra butter!"]],
+  ["Mumbai", 350, "Duronto Express", ["Tunnels in the Western Ghats, the coach goes dark and everyone cheers.", "The sea at Marine Drive, the Queen's Necklace at night.", "Vada pav at the station, two for twenty."]],
+  ["Jaipur", 200, "Pink City Express", ["Camels walk beside the track in the desert.", "Hawa Mahal has 953 windows. You count ten.", "Dal baati churma with Rajasthani uncle."]],
+  ["Shimla", 250, "Himalaya Queen (toy train from Kalka)", ["103 tunnels on the toy train!", "Pine trees and snow on the hills.", "Hot corn and chai on the Mall Road."]],
+  ["Goa", 400, "Konkan Kanya Express", ["Waterfalls beside the track at Dudhsagar.", "Coconut trees, red soil, blue sea.", "A cashew farm and a beach sunset."]],
+  ["Kolkata", 380, "Howrah Mail", ["The Howrah Bridge, full of people and yellow taxis.", "A tram ride, slow and old.", "Rosogolla from the station sweet shop."]],
+];
+const MORE_BEGGARS = [
+  { id: "beg_munni", name: "Munni (sells pens at the signal)", road: "beggar2", child: true, pos: [-47, -6.5], look: { shirt: 0xe75480, dress: true, hair: 0x1d1410 }, pitch: 540, greet: "Didi, Bhaiya, one pen? Ten rupees. Please, I did not eat.", story: ["My Papa pulls a rickshaw. Maa washes dishes in three houses.", "I want to go to school. But who will sell the pens then?", "I can write my name. Want to see? M-U-N-N-I."] },
+  { id: "beg_amma", name: "Amma at the market gate", road: "beggar2", pos: [35.5, 66], look: { shirt: 0xf4f1ea, dress: true, hair: 0xdddddd }, pitch: 380, greet: "Beta, a little for an old Amma. My legs do not work now.", story: ["I sold flowers at this gate for forty years.", "Now my hands shake. The flower girl there is my granddaughter.", "When you give, I buy her books. She will be a teacher."] },
+  { id: "beg_kishan", name: "Kishan the flute player", road: "beggar2", flute: true, pos: [-60, -75.5], look: { shirt: 0xf6efd8, trousers: 0xf6efd8, hair: 0x333333 }, pitch: 320, greet: "A song for a coin, beta? Any song. I know them all.", story: ["I cannot see, but I can hear everything. Your footsteps are light and happy.", "My guru taught me the flute when I was six.", "One day I will play on the radio. Radio Suryanagar, you wait!"] },
+  { id: "beg_station", name: "Baba at the station gate", road: "beggar2", pos: [-74, -156.5], look: { shirt: 0xd9c9a3, trousers: 0xd9c9a3, hair: 0xbbbbbb }, pitch: 300, greet: "Safe journey, beta. Something for the road-side Baba?", story: ["I came here on a train fifty years ago, to find work.", "The work ended. The trains did not. I watch them every day.", "The Rajdhani is always on time. I set my heart by it."] },
+];
+const MORE_WALKERS = [
+  ["Cycle Uncle Pappu", 0x8ecae6, 0x3b3f4a, [[-46.5, -150], [-46.5, 150]], true], ["Schoolgirl Riya", 0xffffff, 0x1d3557, [[-33.5, 150], [-33.5, -150]], false, true],
+  ["Chai Delivery Chhotu", 0xd62828, 0x333333, [[35.5, 45], [35.5, 125]], true, true], ["Fruit Cart Ramesh ji", 0x2a9d8f, 0x8a5626, [[44.5, 125], [44.5, 45]]],
+  ["Bank Manager Bose", 0xffffff, 0x1d3557, [[50, 164.5], [185, 164.5]]], ["New Town Aunty", 0xe75480, 0, [[185, 155.5], [50, 155.5]], false, false, true],
+  ["Old Town Pandit ji", 0xffb703, 0xffffff, [[-185, -75.5], [-45, -75.5]]], ["Rickshaw Driver Babu", 0x6a4c93, 0x3b3f4a, [[-45, -84.5], [-185, -84.5]], true],
+  ["Tuition Sir Mishra", 0xf6efd8, 0x3b3f4a, [[-185, 134.5], [35, 134.5]]], ["Kabaadiwala (old paper)", 0x8a7f6a, 0x6b5b45, [[35, 125.5], [-185, 125.5]]],
+  ["Morning Walk Group", 0xffffff, 0xffffff, [[-116, 45], [-116, 125]]], ["Twins Chintu and Pintu", 0xffd21e, 0x2a9d8f, [[-124, 125], [-124, 45]], true, true],
+  ["Traveller with a suitcase", 0x3a86ff, 0x3b3f4a, [[-116, -85], [-116, -160]]], ["Porter (Coolie) Shankar", 0xd62828, 0xd62828, [[-116, -160], [-116, -85]]],
+  ["Gym Bhaiya", 0x111111, 0x111111, [[-150, 6], [-60, 6]], true], ["Grandma with a stick", 0x9b5de5, 0, [[-60, -6], [-150, -6]], false, false, true],
+];
+
 function makeQuadruped() { return new THREE.Group(); }
 function makeCow() { return new THREE.Group(); }
 function makeVillager(look = {}) { return makeHuman({ skin: 0xdba274, hair: 0x1d1410, ...look }); }
@@ -6350,7 +6501,7 @@ class Game {
     this._buildRoadLife();
     this.roadFolk = ROAD_FOLK.map((def) => { const n = new Npc(def, this.world, { pos: def.pos, fixed: true }); n.group.rotation.y = Math.atan2(-40 - def.pos[0], (def.inter === 0 ? 40 : 0) - def.pos[1]); this.npcs.push(n); return n; });
     this.roadFolk.push(...this._roadFolk2); { const baba = this.roadFolk.find((f) => f.def.road === "beggar"); if (baba) { baba._scripted = true; baba.group.position.y = -0.35; sitPose(baba.group, "car"); baba.group.rotation.y = 0; const mat0 = new THREE.Mesh(new THREE.BoxGeometry(1.6, 0.04, 1.1), new THREE.MeshStandardMaterial({ color: 0x8a5626 })); mat0.position.set(baba.def.pos[0], 0.03, baba.def.pos[1]); this.world.scene.add(mat0); const bowl = new THREE.Mesh(new THREE.CylinderGeometry(0.16, 0.1, 0.1, 10), new THREE.MeshStandardMaterial({ color: 0x9aa6ad, metalness: 0.6 })); bowl.position.set(baba.def.pos[0], 0.08, baba.def.pos[1] - 0.7); this.world.scene.add(bowl); this._babaBits = [mat0, bowl]; } }
-    this.world.roadSpots = [["🙏 Baba (beggar), our lane corner", -112, 46.5], ["👮 Traffic Police (colony road signal)", -31, 31], ["👮 Traffic Police (school road signal)", -31, -9], ["🦯 Surdas Uncle's zebra crossing", -27, 47.5], ["🛑 Lollipop Didi (school crossing)", 104, 6.5], ["🥙 Pani Puri Bhaiya", -86, 46.5], ["🌼 Flower Seller Champa", -100, 33.5], ["🐄 Gauri the cow", -60, 38], ["🐕 Sheru the street dog", -128, 46]];
+    this.world.roadSpots = [["🙏 Baba (beggar), our lane corner", -112, 46.5], ["👮 Traffic Police (colony road signal)", -31, 31], ["👮 Traffic Police (school road signal)", -31, -9], ["🦯 Surdas Uncle's zebra crossing", -27, 47.5], ["🛑 Lollipop Didi (school crossing)", 104, 6.5], ["🥙 Pani Puri Bhaiya", -86, 46.5], ["🌼 Flower Seller Champa", -100, 33.5], ["🐄 Gauri the cow", -60, 38], ["🐕 Sheru the street dog", -128, 46], ["🚉 Platform 1 (trains)", -79, -177], ["🚧 Railway level crossing", -120, -184], ["🖊️ Munni at the school road signal", -47, -6.5], ["🙏 Amma at the market gate", 35.5, 66], ["🎶 Kishan the flute player", -60, -75.5], ["🙏 Baba at the station gate", -74, -156.5], ["✈️ Parked plane, Airport Gate 1", 174, 122]];
     this.seniors = SENIORS.map((def) => { const n = new Npc(def, this.world, { pos: [0, 0], fixed: true }); n.group.visible = false; this.npcs.push(n); return n; });
   }
   // Put everyone where the phase says they should be.
@@ -6484,14 +6635,17 @@ class Game {
     if (room.type === "mainbuilding") this._setupSchoolRoom(room);
     if (room.type === "lab" || room.type === "computer") this._setupLabRoom(room);
     if (room.type === "home") this._setupHome(room);
+    this._seatArrow = null;
     this._jobRoomSetup(room, door);
+    this._visitorSeat(room);
     if (this._fieldCase && this._fieldCase.c.doorLabel === door.label) setTimeout(() => this._openFieldScene(), 400);
     if (door.label === "City Hospital") this.roomInteractables.push({ pos: { x: room.x0 + 6, z: room.z0 + 2 }, radius: 2.6, prompt: () => L("Dr. Mehta: yearly check-up (₹30)"), activate: () => this._checkup() });
     if (door.label === "Police Station") this.roomInteractables.push({ pos: { x: room.x0 - 6, z: room.z0 + 4 }, radius: 2.4, prompt: () => L("Notice: driving licences at the RTO Office, Old Town road"), activate: () => { showToast(L("Constable: 'Licences are at the RTO Office now, Old Town road, next to the Fish Market. Officer Verma sits there.'"), 4200); this.setObjective(L("Go to the RTO Office"), -52, -86); } });
+    if (door.label === "Railway Station") { room._label("🎫 " + L("Booking counter"), 8, -3.5, 2.4, 0.6); room._label("🕒 " + L("Train timetable"), 3, -6, 2.4, 0.5); this.roomInteractables.push({ pos: { x: room.x0 + 8, z: room.z0 - 2.5 }, radius: 2.4, prompt: () => (this.progress.ticket ? L("Booking counter (you have a ticket to {c})", { c: L(this.progress.ticket.to) }) : L("Booking counter: buy a train ticket")), activate: () => this._bookTicket() }); this.roomInteractables.push({ pos: { x: room.x0 + 3, z: room.z0 - 5 }, radius: 2.2, prompt: () => L("Read the train timetable"), activate: () => this.dialogue.say(L("Timetable"), TRAIN_TRIPS.map((t) => `${t[2]} · ${L(t[0])} · ₹${t[1]}`).concat([L("All trains leave from Platform 1, behind this building.")]), null, { pitch: 400 }) }); }
     if (door.label === "RTO Office") {
       if (!this._rto) { this._rto = new Npc({ id: "rto_verma", name: "RTO Officer Verma", boss: true, pitch: 360, look: { shirt: 0xffffff, trousers: 0x1d3557, hair: 0x333333 } }, this.world, { pos: [room.x0 - 2, room.z0 - 3], fixed: true }); this.npcs.push(this._rto); }
       this._rto.group.visible = true; this._rto._inRoom = true; this._rto.station({ x: room.x0 - 2, z: room.z0 - 3 }, 0);
-      room._label(L("Counter 1 · Driving test"), room.x0 - 2, room.z0 - 1.5, 2.2, 0.6);
+      room._label(L("Counter 1 · Driving test"), -2, -1.5, 2.2, 0.6);
       this.roomInteractables.push({ pos: this._rto.position, radius: 3.0, npc: this._rto, prompt: () => (this.progress.licence ? L("RTO Officer Verma (licence issued)") : L("RTO Officer Verma: driving test (₹100, from 16)")), activate: () => this._drivingTest() });
     }
     if (/bank|lotus plaza/i.test(door.label)) { this.roomInteractables.push({ pos: { x: room.x0 - 2, z: room.z0 + 4 }, radius: 2.0, prompt: () => L("Fixed deposit (₹200 at 5% a term)"), activate: () => this._fixedDeposit() }); this.roomInteractables.push({ pos: { x: room.x0 + 2, z: room.z0 + 4 }, radius: 2.0, prompt: () => (this.progress.house ? L("Our house: owned") : L("Buy our house (₹5,000)")), activate: () => this._buyHouse() }); }
@@ -6619,6 +6773,10 @@ class Game {
   // ---- Talking ----
   _talk(npc) {
     const def = npc.def;
+    { const cr = this.world.currentRoom; if (cr && cr._jobPlace && npc === cr.occupant) { const open = cr._openJobs || []; this._engagedNpc = npc; const done = () => { this._engagedNpc = null; };
+      if (open.length) { const job = open.find((j) => j.id === this._applying) || open[0]; return this.dialogue.say(npc.name, [L("Here for the {j} job? {b} will interview you right now.", { j: job.name, b: job.boss }), L("Come, sit in the chair with the arrow. Best of luck!")], () => { done(); job._start && job._start(); }, { pitch: def.pitch || 400, speaker: npc.id }); }
+      if (this.job && this.job.place === this.insideDoor.label) return this.dialogue.say(npc.name, [L("Good morning, {r}. Your desk is ready. Follow the arrow to your seat.", { r: rankName(this.job, this.progress.shifts) })], done, { pitch: def.pitch || 400, speaker: npc.id });
+      if (this.stage < stageIndex("c12")) return this.dialogue.say(npc.name, [L("Jobs here open after Class 12, beta. Study hard, then come for the interview.")], done, { pitch: def.pitch || 400, speaker: npc.id }); } }
     if (def.id === "maa") return this._talkMaa();
     if (def.id === "papa") {
       if (this.working) { const job = this.job, pr = this.progress; const lines = this.phase === "morning" ? [job ? L("Good morning, {r}. Uniform pressed? The city needs you. Drive carefully.", { r: rankName(job, pr.shifts) }) : L("Good morning. No job yet? Press J, champ. Every big person started with an interview.")] : this.phase === "night" ? [L("Sleep, champ. Tomorrow is another shift.")] : [job ? L("How was the shift, {r}? ₹{p} today, {s} shifts in all. Any tough case?", { r: rankName(job, pr.shifts), p: pr.payToday || 0, s: pr.shifts }) : L("How was the day? Any interview lined up?"), pr.spouse ? L("{n} was asking about you.", { n: pr.spouse.name }) : pr.age >= 24 ? L("You are {a} now. Your Maa has started looking at wedding cards.", { a: pr.age }) : L("Proud of you, champ.")]; return this.dialogue.say("Papa", lines, null, { pitch: def.pitch, speaker: npc.id }); }
@@ -6813,7 +6971,9 @@ class Game {
       if (pr.hired.includes(job.id) && pr.job !== job.id) { pr.job = job.id; saveProgress(this.profile, pr); this.applyUniform(); this.ui.refreshRank(); showToast(L("👔 Today you work as {j}.", { j: job.name }), 2800, "good"); }
       const d = this.world.doors.find((x) => x.label === job.place);
       this.setObjective(`${job.icon} ${job.name}: ${pr.hired.includes(job.id) ? L("go to work at") : L("interview at")} ${job.place}`, d.x, d.z + 2);
-      showToast(L("Follow the compass to {p}. Press E at the door.", { p: job.place }), 3200, "good");
+      const c2 = openPanel(`<h2>${job.icon} ${pr.hired.includes(job.id) ? L("Work at {p}", { p: job.place }) : L("Interview at {p}", { p: job.place })}</h2><p class="job-brief">${pr.hired.includes(job.id) ? L("Your desk is marked YOUR SEAT.") : L("{b} interviews you the moment you arrive: a written test, then five questions.", { b: job.boss })}</p><div class="btn-row"><button class="big-btn" id="ap-go">🚕 ${L("Go now")}</button><button class="big-btn" id="ap-walk">🚶 ${L("I will walk there (follow the compass)")}</button></div>`);
+      c2.querySelector("#ap-go").addEventListener("click", () => { closePanel(); if (this.world.currentRoom) this._exitRoom(); if (this.player.riding) this.player.dismount(); this._enterRoom(d); });
+      c2.querySelector("#ap-walk").addEventListener("click", () => { closePanel(); showToast(L("Follow the compass to {p}. Press E at the door.", { p: job.place }), 3200, "good"); });
     }));
   }
   _jobRoomSetup(room, door) {
@@ -6823,9 +6983,10 @@ class Game {
     let k = 0;
     if (cur) {
       // Your own desk: a table, your chair, a visitor's chair, a nameplate. Built once per room.
-      const dx = room.x0 + 7, dz = room.z0 + 3;
+      const mb = room.type === "mainbuilding", dx = room.x0 + (mb ? 6 : 7), dz = room.z0 + (mb ? -3 : 3);
       const seatName = SEAT_NAMES[cur.id] || L("Your desk");
-      if (!room.playerDesk) { room.playerDesk = { x: dx, z: dz }; room._desk(dx, dz, cur.trial ? 0x3b3f4a : 0x8a5626); room._box(0.5, 0.45, 0.5, 0x3f6f9f, dx - 1.3, 0.22, dz - 0.9, false); room._box(0.9, 0.02, 0.6, 0xf4f6f8, dx + 0.2, 0.8, dz, false); room._box(0.4, 0.06, 0.3, 0xffd21e, dx - 0.5, 0.82, dz + 0.1, false); room._label(`${cur.icon} ${L(seatName)} · ${cur.name}`, dx, dz, 1.9, 0.6); room._label(L("Visitor's chair"), dx - 1.3, dz - 0.9, 1.3, 0.4); room.seatArrow = room._label("▼ " + L("YOUR SEAT"), dx, dz + 0.8, 2.6, 0.7); }
+      const lx = dx - room.x0, lz = dz - room.z0;
+      if (!room.playerDesk) { room.playerDesk = { x: dx, z: dz }; room._desk(lx, lz, cur.trial ? 0x3b3f4a : 0x8a5626); room._box(0.5, 0.45, 0.5, 0x3f6f9f, lx - 1.3, 0.22, lz - 0.9, false); room._box(0.9, 0.02, 0.6, 0xf4f6f8, lx + 0.2, 0.8, lz, false); room._box(0.4, 0.06, 0.3, 0xffd21e, lx - 0.5, 0.82, lz + 0.1, false); room._label(`${cur.icon} ${L(seatName)} · ${cur.name}`, lx, lz, 1.9, 0.6); room._label(L("Visitor's chair"), lx - 1.3, lz - 0.9, 1.3, 0.4); room.seatArrow = room._label("▼ " + L("YOUR SEAT"), lx, lz + 0.8, 2.6, 0.7); }
       this._seatArrow = room.seatArrow;
       showToast(`🪑 ${L("Your seat")}: ${L(seatName)}, ${dx > room.x0 ? L("on the right side of the room") : L("on the left side of the room")}. ${L("Follow the arrow.")}`, 3600, "good");
       const seat = { x: dx, z: dz + 0.8 };
@@ -6843,7 +7004,40 @@ class Game {
       this.roomInteractables.push({ pos: boss.position, radius: 2.4, npc: boss, prompt: () => L("Talk to {n}", { n: cur.boss }), activate: () => this._talkBoss(cur, boss) });
       k++;
     }
-    if (this.stage >= stageIndex("c12")) for (const job of here.filter((j) => !pr.hired.includes(j.id))) { const pos = { x: base.x + k * 2.2, z: base.z }; k++; this.roomInteractables.push({ pos, radius: 1.6, prompt: () => L("Job interview: {j}", { j: job.name }), activate: () => this._jobInterview(job) }); }
+    room._jobPlace = true; room._openJobs = [];
+    if (this.stage >= stageIndex("c12")) {
+      const open = here.filter((j) => !pr.hired.includes(j.id)); room._openJobs = open;
+      const occ = room.occupantPos(); room.interviewDesks = room.interviewDesks || {};
+      open.forEach((job, n) => {
+        // The interviewer's desk, the boss behind it, and YOUR chair in front, with a bobbing arrow.
+        let lx = room.type === "mainbuilding" ? 6 : -(room.w / 2) + 3 + n * 4.2, lz = room.type === "mainbuilding" ? -7.5 : -(room.d / 2) + 3.2;
+        if (Math.hypot(room.x0 + lx - occ.x, room.z0 + lz - occ.z) < 3.2) lz += 3.2;
+        if (!room.interviewDesks[job.id]) { room._desk(lx, lz, 0x5a3a24); room._label(`${job.icon} ${L("Interview")}: ${job.name}`, lx, lz, 1.9, 0.55); const arrow = room._label("▼ " + L("YOUR SEAT"), lx, lz + 0.8, 2.6, 0.7); room.interviewDesks[job.id] = { lx, lz, arrow }; }
+        const D = room.interviewDesks[job.id]; if (n === 0 && !cur) this._seatArrow = D.arrow;
+        this._bosses = this._bosses || {};
+        if (!this._bosses[job.boss]) { this._bosses[job.boss] = new Npc({ id: "boss_" + job.id, name: job.boss, boss: true, pitch: 340, look: { shirt: 0x1d3557, trousers: 0x111111, hair: 0x555555 } }, this.world, { pos: [room.x0 + D.lx, room.z0 + D.lz - 1], fixed: true }); this.npcs.push(this._bosses[job.boss]); }
+        const boss = this._bosses[job.boss]; boss.group.visible = true; boss._inRoom = true; boss.station({ x: room.x0 + D.lx, z: room.z0 + D.lz - 1 }, 0);
+        const seat = { x: room.x0 + D.lx, z: room.z0 + D.lz + 1.1 };
+        const start = () => { if (this.dialogue.active || this._lockPanel) return; if (panelOpen()) closePanel(); this._applying = null; const P = this.player.group; P.position.set(seat.x, 0, seat.z); P.rotation.y = Math.PI; sitPose(P, "car"); this._jobInterview(job); };
+        job._start = start;
+        this.roomInteractables.push({ pos: seat, radius: 1.8, prompt: () => L("Sit here: interview for {j} with {b}", { j: job.name, b: job.boss }), activate: start });
+        this.roomInteractables.push({ pos: boss.position, radius: 2.2, npc: boss, prompt: () => L("{b}: job interview for {j}", { b: job.boss, j: job.name }), activate: start });
+      });
+      if (open.length) {
+        const pick = open.find((j) => j.id === this._applying);
+        showToast(`🪑 ${room.type === "mainbuilding" ? L("Interview in the Staff Room. Sit in the chair with the arrow.") : L("Interview desk on the left, at the back. Sit in the chair with the arrow.")}`, 3600, "good");
+        if (pick && this._applying) setTimeout(() => { if (this.world.currentRoom === room) { this.dialogue.say(pick.boss, [L("Ah, you came for the {j} job. Good. Sit, sit. We start now.", { j: pick.name })], () => pick._start(), { pitch: 340 }); } }, 600);
+      }
+    }
+  }
+  // Every room with no desk of yours gets a seat for you, front right by the door, with an arrow.
+  _visitorSeat(room) {
+    if (["home", "mainbuilding", "rooftop"].includes(room.type)) return;
+    if (room.playerDesk || (room._openJobs && room._openJobs.length)) return;
+    if (!room.visitorSeat) { const lx = room.w / 2 - 1.8, lz = room.d / 2 - 3; room._box(0.55, 0.45, 0.55, 0x3f6f9f, lx, 0.22, lz, false); room._box(0.55, 0.6, 0.08, 0x3f6f9f, lx, 0.7, lz + 0.25, false); const arrow = room._label("▼ " + L("YOUR SEAT"), lx, lz, 2.4, 0.6); room.visitorSeat = { x: room.x0 + lx, z: room.z0 + lz, arrow }; }
+    const s = room.visitorSeat; this._seatArrow = s.arrow;
+    this.roomInteractables.push({ pos: { x: s.x, z: s.z }, radius: 1.6, prompt: () => L("Sit on your seat"), activate: () => { const P = this.player.group; P.position.set(s.x, 0, s.z); P.rotation.y = Math.PI; sitPose(P, "car"); showToast(L("🪑 You sit down. Walk to stand up."), 2000); } });
+    showToast(`🪑 ${L("Your seat: front right, near the door. Follow the arrow.")}`, 2600);
   }
   _jobInterview(job) {
     const S = SUBJECTS[job.subject];
@@ -7456,7 +7650,8 @@ class Game {
   // ---- Road life: helpers, sellers, walkers, animals, litter and a lost wallet ----
   _buildRoadLife() {
     this._roadIts = []; const its = this._roadIts;
-    this._roadFolk2 = ROAD_FOLK_2.map((def) => { const start = def.walk ? def.walk[0] : def.pos; const n = new Npc(def, this.world, { pos: start, fixed: true }); this.npcs.push(n); if (def.walk) { n._scripted = true; n._leg = 1; } return n; });
+    const extra = MORE_WALKERS.map(([name, shirt, trousers, walk, fast, child, dress], i) => ({ id: "walk_x" + i, name, road: "walker", walk, fast: !!fast, child: !!child, look: { shirt, trousers: trousers || 0x3b3f4a, dress: !!dress || !trousers, hair: [0x1d1410, 0x111111, 0x888888, 0x333333][i % 4] }, pitch: child ? 520 : dress ? 450 : 350, greet: ["Namaste! Busy day, no?", "Going to the market. You?", "Careful, the cars are fast here.", "Did you see the new train at the station?", "The planes are so low today!", "Hot today. Drink water, beta."][i % 6] }));
+    this._roadFolk2 = [...ROAD_FOLK_2, ...extra, ...MORE_BEGGARS].map((def) => { const start = def.walk ? def.walk[0] : def.pos; const n = new Npc(def, this.world, { pos: start, fixed: true }); this.npcs.push(n); if (def.walk) { n._scripted = true; n._leg = 1; } return n; });
     this._watchman = new Npc({ id: "watchman_baba", name: "Watchman Baba", look: { shirt: 0x1d3557, trousers: 0x1d3557, hair: 0xbbbbbb, hat: 0x1d3557 }, pitch: 300 }, this.world, { pos: [SCHOOL.gate.x + 5, SCHOOL.gate.z + 3], fixed: true }); this._watchman.group.visible = false; this.npcs.push(this._watchman);
     const dog = makeDog(0xc98d62); dog.position.set(-128, 0, 46); this.world.scene.add(dog); const cow = makeDog(0xf4f1ea); cow.scale.set(2.3, 2.3, 2.3); for (const s of [-1, 1]) { const horn = new THREE.Mesh(new THREE.ConeGeometry(0.03, 0.14, 6), new THREE.MeshStandardMaterial({ color: 0x8a7f6a })); horn.position.set(0.44, 0.8, s * 0.1); cow.add(horn); } cow.position.set(-60, 0, 38); this.world.scene.add(cow);
     this._animals = [{ g: dog, name: "Sheru", home: [-128, 46], range: 6, sp: 1.6, fed: "sheruFed", sound: () => playBark() }, { g: cow, name: "Gauri", home: [-60, 38], range: 3, sp: 0.4, fed: "gauriFed", sound: () => playMoo() }];
@@ -7464,12 +7659,26 @@ class Game {
     // Litter on the colony road; Kamla Didi pays for five pieces picked up.
     this._litter = []; const spots = [[-135, 36], [-118, 37], [-104, 43], [-92, 36], [-74, 44]]; const lm = [0xd62828, 0x2a9d8f, 0xffd21e, 0xffffff, 0x3a86ff];
     spots.forEach(([x, z], i) => { const piece = new THREE.Mesh(new THREE.BoxGeometry(0.3, 0.12, 0.2), new THREE.MeshStandardMaterial({ color: lm[i] })); piece.position.set(x, 0.08, z); piece.rotation.y = i; this.world.scene.add(piece); const it = { pos: piece.position, radius: 1.8, mesh: piece, visible: () => piece.visible, prompt: () => L("Pick up the litter"), activate: () => { const pr = this.progress; piece.visible = false; playPick(); pr.litterToday = (pr.litterToday || 0) + 1; const left = this._litter.filter((l) => l.mesh.visible).length; if (left === 0) { pr.litterDays = (pr.litterDays || 0) + 1; this.addMoney(10, "clean road"); this.addRep(1, L("cleaned the road")); showToast(L("🧹 Kamla Didi: 'All five! Clean road, happy road. Here, ₹10 for a chocolate.'"), 3200, "good"); } else showToast(L("🧹 Picked up. {n} more on the colony road.", { n: left }), 1800); saveProgress(this.profile, pr); } }; this._litter.push(it); its.push(it); });
+    // Aeroplanes in the sky, one parked at the airport, and the railway platform.
+    this._planes = [makePlane(0x1d3557, 1), makePlane(0xd62828, 0.9), makePlane(0xff7b00, 0.8)]; for (const p of this._planes) { p.rotation.order = "YXZ"; this.world.scene.add(p); }
+    { const ap = this.world.doors.find((d) => d.label === "Suryanagar Airport"); if (ap) { const parked = makePlane(0x2a9d8f, 0.8); parked.position.set(ap.x - 2, 1.6 * 0.8, ap.z - 24); parked.rotation.y = Math.PI / 2; this.world.scene.add(parked); this.world.addBox(ap.x - 2, ap.z - 24, 14, 18); const lbl = makeTextSprite("✈️ Suryanagar Airport · Gate 1", { size: 40, scale: 1.2 }); lbl.position.set(ap.x - 2, 7, ap.z - 24); this.world.scene.add(lbl); } }
+    its.push({ pos: { x: -79, z: RAIL.platformZ - 0.5 }, radius: 9, visible: () => !!this.world.railway && this.world.railway.state === "halted", prompt: () => (this.progress.ticket ? L("Board the train to {c} (ticket {p})", { c: L(this.progress.ticket.to), p: this.progress.ticket.pnr }) : L("Board the train (no ticket!)")), activate: () => this._boardTrain() });
+    its.push({ pos: { x: -90, z: RAIL.platformZ + 1 }, radius: 3, visible: () => !!this.world.railway && this.world.railway.state !== "halted", prompt: () => L("Enquiry: when is the next train?"), activate: () => { const s = trainAt(this.clock.elapsedTime); const secs = s.state === "away" ? Math.round(s.next + 24) : s.state === "arriving" ? 1 : Math.round(RAIL.cycle - (this.clock.elapsedTime % RAIL.cycle) + 24); showToast(s.state === "arriving" ? L("🚆 It is arriving now! Stand behind the yellow line.") : L("🚆 Suryanagar Express on Platform 1 in about {n} seconds. Buy a ticket inside the station.", { n: secs }), 3200, "good"); } });
     // A lost wallet on the footpath every fourth day.
     const w = new THREE.Mesh(new THREE.BoxGeometry(0.28, 0.06, 0.2), new THREE.MeshStandardMaterial({ color: 0x5a3a1a })); w.position.set(-66, 0.05, 46.5); this.world.scene.add(w); this._wallet = w;
     its.push({ pos: w.position, radius: 1.8, visible: () => w.visible, prompt: () => L("A wallet on the footpath! Pick it up"), activate: () => { const pr = this.progress; w.visible = false; pr.walletDay = pr.day; saveProgress(this.profile, pr); playPick(); const card = openPanel(`<h2>👛 ${L("A lost wallet")}</h2><p class="job-brief">${L("Inside: ₹200, an ID card of Mr. Kapoor, and a photo of his daughter.")}</p><div class="btn-row"><button class="big-btn" id="wl-ret">👮 ${L("Take it to the traffic police")}</button><button class="ghost-btn" id="wl-keep">💰 ${L("Keep the money")}</button></div>`); card.querySelector("#wl-ret").addEventListener("click", () => { closePanel(); pr.walletHeld = true; saveProgress(this.profile, pr); this.setObjective(L("Give the wallet to the traffic police at the colony road signal"), -31, 31); showToast(L("👛 Good choice. The traffic police are at the signal."), 2600, "good"); }); card.querySelector("#wl-keep").addEventListener("click", () => { closePanel(); this.addMoney(200, "kept wallet"); this.addRep(-3, L("kept a lost wallet")); this.diary(L("Kept a wallet I found. It does not feel good.")); this.dialogue.say(L("Your heart"), [L("₹200 in your pocket. But the photo of the little girl... Mr. Kapoor must be searching everywhere."), L("Dadi always says: what is not yours never stays yours.")], null, { pitch: 400 }); }); } });
   }
   _talkRoad2(npc, def, pr, o, done) {
     const r = def.road;
+    if (r === "beggar2") { pr.begCount = pr.begCount || {}; const cnt = pr.begCount[def.id] || 0, key = def.id + pr.day; pr.gifts = pr.gifts || {};
+      if (pr.gifts[key]) { this.dialogue.say(def.name, [L("Thank you again for today, beta."), cnt >= 3 ? L(def.story[pr.day % def.story.length]) : L("Come tomorrow, I will tell you about me.")], done, o); return true; }
+      const card = openPanel(`<h2>🙏 ${def.name}</h2><p class="job-brief">"${L(def.greet)}"</p><p class="job-brief">${L("You have ₹{m}. What do you give?", { m: pr.money })}</p><div class="btn-row"><button class="big-btn" id="b2-5">₹5</button><button class="big-btn" id="b2-10">${def.id === "beg_munni" ? "🖊️ " + L("Buy a pen (₹10)") : "₹10"}</button><button class="big-btn" id="b2-food">🍌 ${L("Bananas (₹10)")}</button><button class="ghost-btn" id="b2-no">${L("Not today")}</button>${cnt >= 3 ? `<button class="big-btn" id="b2-story">📖 ${L("Ask their story")}</button>` : ""}${def.id === "beg_munni" && cnt >= 3 && !pr.munniSchool ? `<button class="big-btn" id="b2-school">📚 ${L("Take Munni to school (free seat at Sunrise)")}</button>` : ""}</div>`);
+      const give = (amt, what) => { if (pr.money < amt) { showToast(L("Not enough money."), 2000, "bad"); return; } closePanel(); this.addMoney(-amt, "charity"); pr.gifts[key] = true; pr.begCount[def.id] = cnt + 1; pr.charity = (pr.charity || 0) + amt; saveProgress(this.profile, pr); playCoin(); this.addRep(1, L("kindness on the road")); this.diary(L("Gave {w} to {n}.", { w: what, n: def.name }));
+        if (def.flute) { playSuccess(); showToast(L("🎶 Kishan plays 'Raghupati Raghava' on his flute. People stop to listen."), 3600, "good"); } this.dialogue.say(def.name, [def.flute ? L("This song is for you, beta. Close your eyes and listen.") : L("God bless you, beta. May you always be happy."), cnt + 1 === 3 ? L("You come every day. Next time, I will tell you my story.") : L("A small hand, a big heart.")], done, o); };
+      card.querySelector("#b2-5").addEventListener("click", () => give(5, "₹5")); card.querySelector("#b2-10").addEventListener("click", () => give(10, def.id === "beg_munni" ? "₹10 for a pen" : "₹10")); card.querySelector("#b2-food").addEventListener("click", () => give(10, "bananas"));
+      card.querySelector("#b2-no").addEventListener("click", () => { closePanel(); this.dialogue.say(def.name, [L("No problem, beta. Go safely.")], done, o); });
+      { const sb = card.querySelector("#b2-story"); if (sb) sb.addEventListener("click", () => { closePanel(); this.dialogue.say(def.name, def.story.map((x) => L(x)), done, o); }); const sc = card.querySelector("#b2-school"); if (sc) sc.addEventListener("click", () => { closePanel(); pr.munniSchool = true; saveProgress(this.profile, pr); this.addRep(3, L("took Munni to school")); playSuccess(); this._snap && this._snap("📚", "Took Munni from the signal to school."); this.dialogue.say(def.name, [L("School? Me? With a uniform and a bag?"), L("(Principal Mrs. Verma gives Munni a free seat, a uniform and books. Munni's Maa cries with joy.)"), L("I will come first in class. You watch!")], done, o); }); }
+      return true; }
     if (r === "blind") { const st = signalState(this.world.intersections[0].phase, this.clock.elapsedTime); if (pr.helpedDay === pr.day) { this.dialogue.say(def.name, [L("You helped me today already, beta. God keep you.")], done, o); return true; } if (!st.pedAcrossH) { this.dialogue.say(def.name, [L(def.greet), L("Tell me when the green man shows. Is it green now?"), L("(The man on the signal is RED. Wait for green, then press E again.)")], done, o); return true; } pr.helpedDay = pr.day; pr.helpedCross = (pr.helpedCross || 0) + 1; saveProgress(this.profile, pr); this.addRep(1, L("helped Surdas Uncle cross")); playSuccess(); npc.group.position.z = npc.group.position.z > 40 ? 32.5 : 47.5; this.player.group.position.x = npc.group.position.x + 1; this.player.group.position.z = npc.group.position.z; this.dialogue.say(def.name, [L("(You hold his hand. Green man. Look right, left, right. You walk him across the zebra.)"), L("Across! Thank you, beta. Your hand is small, but it is a steady hand.")], done, o); return true; }
     if (r === "guard") { const morning = this.phase === "morning"; this.dialogue.say(def.name, [L(def.greet), morning ? L("School bell in ten minutes. Walk, do not run. I hold the cars.") : L("After school I stay till the last child crosses."), L("Twenty years on this crossing. Not one child hurt. That is my medal.")], done, o); return true; }
     if (r === "panipuri") { this.dialogue.say(def.name, [L(def.greet), pr.money >= 20 ? L("Six puris, extra pani. Twenty rupees.") : L("No money? One free puri for a smile. Only one!")], () => { if (pr.money >= 20) { this.addMoney(-20, "pani puri"); pr.fun = (pr.fun || 0) + 1; pr.streetFood = (pr.streetFood || 0) + 1; saveProgress(this.profile, pr); playPick(); showToast(L("🥙 Teekha! Your eyes water, your heart sings."), 2600, "good"); } done(); }, o); return true; }
@@ -7486,8 +7695,37 @@ class Game {
     for (const a of this._animals || []) { const g = a.g; let tx = a.t[0], tz = a.t[1]; if (a.follow > 0) { a.follow -= dt; tx = pp.x - 1.2; tz = pp.z - 1.2; } const dx = tx - g.position.x, dz = tz - g.position.z, d = Math.hypot(dx, dz); if (d < 0.4 && !(a.follow > 0)) { a.wait -= dt; if (a.wait <= 0) { a.t = [a.home[0] + (Math.random() * 2 - 1) * a.range, a.home[1] + (Math.random() * 2 - 1) * Math.min(a.range, 2)]; a.wait = 2 + Math.random() * 4; } } else if (d > 0.4) { const step = Math.min(d, (a.follow > 0 ? 4 : a.sp) * dt); g.position.x += (dx / d) * step; g.position.z += (dz / d) * step; g.rotation.y = Math.atan2(dx, dz) - Math.PI / 2; } }
     // New day: litter back, wallet on day 2, 6, 10..., Baba or the watchman.
     if (this._roadDay !== pr.day) { this._roadDay = pr.day; for (const l of this._litter || []) l.mesh.visible = true; if (this._wallet) this._wallet.visible = pr.day % 4 === 2 && pr.walletDay !== pr.day; }
+    { const mu = (this._roadFolk2 || []).find((n) => n.def.id === "beg_munni"); if (mu) mu.group.visible = !pr.munniSchool; }
     const baba = (this.roadFolk || []).find((f) => f.def.road === "beggar"); if (baba) { baba.group.visible = !pr.babaJob; for (const b of this._babaBits || []) b.visible = !pr.babaJob; }
     if (this._watchman) { const on = !!pr.babaJob && !night; this._watchman.group.visible = on; this._watchman.def.road = "watchman"; }
+  }
+  _tickTransport(dt, elapsed) {
+    const RW = this.world.railway, pp = this.player.position, near = (x, z, r) => Math.hypot(pp.x - x, pp.z - z) < r;
+    if (RW) { const s = trainAt(elapsed), tr = RW.train, prev = RW.state; const dx = s.x - tr.position.x; tr.position.x = s.x; tr.visible = s.state !== "away"; if (Math.abs(dx) > 0 && Math.abs(dx) < 5) for (const c of tr.children || []) if (c.children && c.children.length) for (const w of c.children) if (w.userData && w.userData.wheel) w.rotation.x += Math.abs(dx) / (w.userData.wheelR || 0.42); RW.state = s.state;
+      if (prev !== s.state && near(-79, RAIL.z, 110)) { if (s.state === "arriving") { playHorn(); showToast(L("📢 Train 12951 Suryanagar Express is arriving on Platform 1. Stand behind the yellow line."), 4200, "good"); speakLine(L("Train number one two nine five one, Suryanagar Express, is arriving on platform number one."), 380); } else if (s.state === "halted") showToast(L("🚆 The train stops. Doors open. Board with a ticket (E on the platform)."), 3200, "good"); else if (s.state === "departing") { playHorn(); setTimeout(() => playHorn(), 400); showToast(L("🚆 The guard waves the green flag. The train leaves."), 2600); } }
+      const len = tr.userData.length || 60, crossing = s.state !== "away" && s.x > RAIL.crossX - 14 && s.x - len < RAIL.crossX + 14; const want = crossing ? 0 : -Math.PI / 2 * 0.95; for (const b of RW.booms) b.rotation.z += (want - b.rotation.z) * Math.min(1, dt * 2.5);
+      if (RW.sig) { const green = s.state === "departing" || (s.state === "halted" && s.left < 5); RW.sig.material = green ? RW.sig.userData.green : RW.sig.userData.red; }
+      if (crossing && !this._crossWarned && near(RAIL.crossX, RAIL.z, 25)) { this._crossWarned = true; playHorn(); showToast(L("🚧 The crossing gate is down. Wait for the train to pass."), 2600, "bad"); } if (!crossing) this._crossWarned = false;
+      if (s.state !== "away" && Math.abs(pp.z - RAIL.z) < 2.2 && pp.x < s.x + 1 && pp.x > s.x - len - 1 && !this.world.currentRoom) { const P = this.player.riding ? this.player.riding.group : this.player.group; P.position.z = RAIL.platformZ + 1; this.addRep(-1, L("stood on the railway track")); showToast(L("⛔ NEVER stand on the railway track! The guard pulls you to the platform."), 3600, "bad"); }
+    }
+    for (let i = 0; i < (this._planes || []).length; i++) { const p = this._planes[i], s = planeAt(i, elapsed); p.position.set(s.x, s.y, s.z); p.rotation.set(s.pitch, s.yaw, 0); if (p.userData.beacon) p.userData.beacon.visible = Math.sin(elapsed * 6 + i) > 0.3; if (i === 0) { if (s.low && near(s.x, s.z, 90) && !this._planeWhoosh) { this._planeWhoosh = true; playWhoosh(); showToast(L("✈️ An aeroplane roars over Suryanagar Airport!"), 2200); } if (!s.low) this._planeWhoosh = false; } }
+  }
+  _bookTicket() {
+    const pr = this.progress, half = (pr.age || 10) < 12;
+    const card = openPanel(`<div class="job-title-row"><h2>🎫 ${L("Suryanagar Junction · Booking counter")}</h2><button class="ghost-btn" id="bk-x">${L("Okay")}</button></div><p class="job-brief">${L("Pick a city and a class. You have ₹{m}.", { m: pr.money })}${half ? " " + L("Child ticket: half fare!") : ""}</p><div class="btn-row"><button class="lang-btn on" id="bk-sl">${L("Sleeper")}</button><button class="lang-btn" id="bk-ac">${L("3rd AC (double fare)")}</button></div><div class="shop-list">${TRAIN_TRIPS.map((t, i) => `<div class="cart-row"><div>🚆 <b>${L(t[0])}</b><small>${t[2]} · ₹${Math.round(t[1] * (half ? 0.5 : 1))}</small></div><button class="use-btn" id="bk-${i}">${L("Book")}</button></div>`).join("")}</div>`);
+    let ac = false; const sl = card.querySelector("#bk-sl"), acb = card.querySelector("#bk-ac"); sl.addEventListener("click", () => { ac = false; sl.classList.add("on"); acb.classList.remove("on"); }); acb.addEventListener("click", () => { ac = true; acb.classList.add("on"); sl.classList.remove("on"); });
+    card.querySelector("#bk-x").addEventListener("click", closePanel);
+    TRAIN_TRIPS.forEach((t, i) => card.querySelector(`#bk-${i}`).addEventListener("click", () => { const fare = Math.round(t[1] * (half ? 0.5 : 1) * (ac ? 2 : 1)); if (pr.money < fare) { showToast(L("Not enough money. The fare is ₹{f}.", { f: fare }), 2400, "bad"); return; } closePanel(); this.addMoney(-fare, "train ticket"); const pnr = String(4200000000 + Math.floor(Math.random() * 99999999)); pr.ticket = { to: t[0], cls: ac ? "3AC" : "Sleeper", pnr, train: t[2] }; saveProgress(this.profile, pr); playPick(); showToast(L("🎫 Ticket to {c}, {k}. PNR {p}. Go to Platform 1 behind the station.", { c: L(t[0]), k: pr.ticket.cls, p: pnr }), 4200, "good"); this.setObjective(L("Platform 1: wait for the train, then press E to board"), -79, RAIL.platformZ); }));
+  }
+  _boardTrain() {
+    const pr = this.progress;
+    if (!pr.ticket) { const card = openPanel(`<h2>🚆 ${L("No ticket!")}</h2><p class="job-brief">${L("The TC checks every ticket. Travelling without one is a fine of ₹250.")}</p><div class="btn-row"><button class="big-btn" id="nt-buy">🎫 ${L("Go and buy a ticket")}</button><button class="ghost-btn" id="nt-risk">${L("Get on anyway")}</button></div>`); card.querySelector("#nt-buy").addEventListener("click", () => { closePanel(); const d = this.world.doors.find((x) => x.label === "Railway Station"); this.setObjective(L("Booking counter inside the Railway Station"), d.x, d.z + 1); }); card.querySelector("#nt-risk").addEventListener("click", () => { closePanel(); const fine = Math.min(250, pr.money); this.addMoney(-fine, "ticketless fine"); this.addRep(-2, L("travelled without a ticket")); saveProgress(this.profile, pr); this.dialogue.say("TC Joseph", [L("Ticket, please. No ticket? That is a ₹{f} fine, and you get down at this platform.", { f: fine }), L("Buy a ticket next time. Railways run on honest passengers.")], null, { pitch: 340 }); }); return; }
+    this._trainTrip();
+  }
+  _trainTrip() {
+    const pr = this.progress, t = pr.ticket, trip = TRAIN_TRIPS.find((x) => x[0] === t.to) || TRAIN_TRIPS[0]; if (this.player.riding) this.player.dismount();
+    const lines = [L("(You climb into coach S3. Berth 42, by the window. The train jerks and rolls out.)"), L("TC Joseph: Ticket, please. PNR {p}, {c}, {k}. All correct. Happy journey!", { p: t.pnr, c: L(t.to), k: t.cls }), L("Chaiwala: Chai, chai, garam chai! (You get a hot cup for ₹10.)"), ...trip[3].map((x) => L(x)), L("(Three days later you ride the train home to Suryanagar Junction with a bag of gifts.)")];
+    this.dialogue.say(L("{t} to {c}", { t: trip[2], c: L(trip[0]) }), lines, () => { pr.trainTrips = (pr.trainTrips || 0) + 1; pr.trainCities = [...new Set([...(pr.trainCities || []), trip[0]])]; pr.ticket = null; this.addMoney(-Math.min(10, pr.money), "chai"); saveProgress(this.profile, pr); this._snap && this._snap("🚆", `Train trip to ${trip[0]} on the ${trip[2]}.`); this.diary(L("Went to {c} by train. {m}", { c: trip[0], m: trip[3][1] })); this.player.group.position.set(-79, 0, RAIL.platformZ + 1.5); playSuccess(); showToast(L("🚆 Back at Suryanagar Junction. Trips by train: {n}.", { n: pr.trainTrips }), 3200, "good"); }, { pitch: 360 });
   }
   // Traffic police watch the crossroads: enter on red in a vehicle and the whistle blows, ₹100 challan.
   _tickTraffic(elapsed) {
@@ -8153,7 +8391,7 @@ class Game {
     if (this.player.riding && this.player.riding.kind === "bike" && this.progress.energy <= 0 && !this.progress.cast && !panelOpen()) this._fallOffBike();
     if (!blocked && this.player.riding && this.player.riding.duty && this.input.keys && this.input.keys.has("f") && !this._sirenHeld) { this._sirenHeld = true; this._siren = !this._siren; showToast(this._siren ? L("🚨 Siren on") : L("Siren off"), 1200); } if (!(this.input.keys && this.input.keys.has("f"))) this._sirenHeld = false;
     const useP = !blocked && this.input.usePressed(); if (this._trial) { const eP = this.input.interactPressed(); this._tickTrial(dt, useP || eP); this.ui.setInteractPrompt(`${this._trial ? this._trial.spec.icon : ""} ${L(this._trial && this._trial.kind === "cricket" ? "Swing" : "Shoot")}  (F / E)`); }
-    this._tickPet(dt); this._tickRain(); this._tickP2(dt); this._tickDirections(dt); this._tickCrowd(dt); this._tickField(dt); this._tickPartner(dt); this._tickChase(dt); this._tickTraffic(elapsed); this._tickRoadLife(dt);
+    this._tickPet(dt); this._tickRain(); this._tickP2(dt); this._tickDirections(dt); this._tickCrowd(dt); this._tickField(dt); this._tickPartner(dt); this._tickChase(dt); this._tickTraffic(elapsed); this._tickRoadLife(dt); this._tickTransport(dt, elapsed);
     sirenTick(!!(this.player.riding && this.player.riding.duty && this._siren), dt); if (this._dutyLights) { const on = Math.floor(elapsed * 4) % 2 === 0; this._dutyLights[0].material.emissiveIntensity = this._siren && on ? 2 : 0.2; this._dutyLights[1].material.emissiveIntensity = this._siren && !on ? 2 : 0.2; }
     if (this.world.setTimeOfDay) this.world.setTimeOfDay(this.world.currentRoom ? "school" : this.phase);
     musicTick(this._trial ? "stadium" : this.world.currentRoom ? (["canteen", "eatery", "shop", "supermarket"].includes(this.world.currentRoom.type) ? "market" : null) : this.phase === "school" ? "school" : this.phase === "over" ? "evening" : Math.hypot(pp.x - 40, pp.z - 80) < 45 ? "market" : this.phase, dt);

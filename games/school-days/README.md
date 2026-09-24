@@ -127,16 +127,24 @@ takes you straight there.
 
 ## Twenty more again
 
-1. Chase calls: the purse snatcher stands on the market street with the
-   purse. Go there. When you get close he sees you and bolts; follow him
-   on foot or on the scooty along the lanes to the avenue. He taunts you
-   as he runs, tires when you stay close, and surrenders with the purse
-   when you reach him (E, or just catch up). Reach the avenue late and he
-   vanishes in the traffic.
+1. Chase calls, Dhoom style. Four stories take turns, one per shift.
+   Control room calls, you reach the site, a witness tells you which way
+   he went ("black bike, towards the Old Town Tea House"), and a clue
+   may send you to a second site. Then the thief appears ahead and the
+   chase is on: on foot for the purse snatcher and the chemist burglar,
+   on bikes for the Dhoom biker (diamond tray from Lotus Plaza, black
+   bike down the avenue) and the ATM gang rider (red bike from City Bank
+   through New Town to the market street). On a bike chase take the jeep,
+   the scooty or the motorbike; on foot you cannot catch him. He taunts,
+   speeds up when you fall back, tires when you stay close, and skids and
+   surrenders when you reach him. Reach the end of his route late and he
+   is gone.
 2. Duty vehicles: a police jeep, fire engine or ambulance at your
    workplace, F for the siren, flashing lights.
 3. A partner (Constable Ramesh, Fireman Joe, Nurse Anita) at your desk who
-   rides along on every call and comments. Press E at him for his menu:
+   rides along on every call and comments. Press R anywhere, or the 👮
+   button under the mobile button, or E next to him (indoors or out, even
+   while he sits on your vehicle) for his menu:
    "Type and talk" opens the chat box (he answers about cases, the chase,
    the boss, his family, chai); "His own scooty" makes him follow you on
    his blue scooty whenever you ride; "Sit with me" seats him behind you on

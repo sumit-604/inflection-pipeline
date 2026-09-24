@@ -583,6 +583,9 @@ body.gentle #dialogue-text { font-size: 20px; }
 .av-dot { display: inline-block; width: 26px; height: 26px; border-radius: 50%; border: 3px solid #fff; margin: 0 2px; cursor: pointer; box-shadow: 0 0 0 1px #c9b79a; vertical-align: middle; }
 .av-dot.on { box-shadow: 0 0 0 3px #b4531a; }
 
+#partner-btn { position: absolute; top: 64px; right: 228px; width: 46px; height: 46px; border: none; border-radius: 12px; background: rgba(255,253,246,0.92); font-size: 22px; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,0.2); z-index: 6; }
+#partner-btn[hidden] { display: none; }
+
 </style>
   <canvas id="game-canvas"></canvas>
 
@@ -633,6 +636,7 @@ body.gentle #dialogue-text { font-size: 20px; }
     <button id="sound-btn" title="Sound on / off">🔊</button>
     <button id="bag-btn" title="Backpack (B)">🎒</button>
     <button id="phone-btn" title="Mobile (M)">📱</button>
+    <button id="partner-btn" title="Talk to your partner (R)" hidden>👮</button>
     <button id="mic-btn" title="Say a command: call Maa, go to school, open map">🎤</button>
     <button id="controls-btn" title="Controls (H)">⌨️</button>
     <canvas id="minimap" width="160" height="160"></canvas>
@@ -743,7 +747,7 @@ import * as THREE from 'three';
    label goes through L(). The voice follows the language.
    Questions and answers stay in English for now.
    ============================================================ */
-const GAME_VERSION = "v20";
+const GAME_VERSION = "v21";
 const LANGS = {
   en: { name: "English", voice: "en-IN" },
   hi: { name: "हिन्दी", voice: "hi-IN" },
@@ -5829,7 +5833,29 @@ const FIELD_CASES = {
 const AVATAR_SKINS = [["Wheat", 0xe8b98a], ["Honey", 0xdba274], ["Brown", 0xb07a4a], ["Deep", 0x7a4a2a]];
 const AVATAR_HAIR = [["Black", 0x1d1410], ["Brown", 0x4a2c1a], ["Dark red", 0x6b2a1a], ["Grey", 0x888888]];
 const PARTNER_LINES = ["Nice one, partner. Tea after this?", "I would have done the same. Maybe slower.", "Careful at the crossing, the traffic is mad today.", "My wife says I talk about cases in my sleep.", "That is how a Constable becomes an Inspector.", "Write it in the diary before you forget."];
-const CHASE_CALLS = { police: { t: "Control room: 'Purse snatcher running from the market street towards the avenue. Catch him before he reaches the road!'", start: [40, 70], path: [[40, 70], [34, 63], [24, 58], [18, 50], [8, 46], [0, 53], [-10, 48], [-22, 44], [-36, 44]], who: "Purse snatcher", taunts: ["Ha! Catch me if you can!", "Too slow, police!", "This purse is mine now!", "Left, right, gone!"] } };
+// Chase stories, one per shift in turn. You reach the site, a witness points the way,
+// then you chase on foot or on the bike. Dhoom style: suspense first, then the roar.
+const CHASE_STORIES = [
+  { id: "snatcher", who: "Purse snatcher", mode: "foot", t: "Control room: 'Purse snatched on the market street. Reach the site, ask around, and get him before the avenue!'",
+    hops: [{ site: "Market street", x: 40, z: 72, witness: "Verma Aunty", say: ["My purse! A boy in a black shirt, he pulled it and ran!", "That way, towards the colony road! He is fast, go!"] }],
+    appear: [30, 62], path: [[30, 62], [24, 58], [18, 50], [8, 46], [0, 53], [-10, 48], [-22, 44], [-36, 44]],
+    taunts: ["Ha! Catch me if you can!", "Too slow, police!", "This purse is mine now!"], caught: ["Okay, okay! Sorry sir! Here is the purse. Do not hit me.", "(Handcuffs on. You radio the jeep. The purse goes back to Verma Aunty and the market claps.)"] },
+  { id: "dhoom", who: "Dhoom biker", mode: "bike", t: "Control room: 'Jewellery shop at Lotus Plaza hit by two bikers in black helmets. No plates. Reach Lotus Plaza. Suspense case, eyes open.'",
+    hops: [{ site: "Lotus Plaza", x: 90, z: 14, witness: "Jeweller Mehta", say: ["Two of them. Black bike, black helmets, not one word spoken.", "They took the diamond tray and roared off... towards the Old Town Tea House. Hurry!"] },
+           { site: "Old Town Tea House", x: -70, z: -64, witness: "Chaiwala", say: ["A black bike stopped here two minutes ago. One drank chai, one kept the engine running.", "They asked the way to the avenue. Then, dhoom! Gone, that way!"] }],
+    appear: [-40, -40], path: [[-40, -40], [-40, -10], [-40, 20], [-40, 60], [-40, 100], [-40, 140], [-40, 185]],
+    taunts: ["Dhoom machale, police!", "You will never catch this bike!", "The diamonds are ours!", "Faster, faster, or go home!"], caught: ["Skid! The bike slides and stops. 'Alright, alright! Take the tray!'", "(Two helmets off, two faces in the police diary. The diamond tray goes back to Mehta ji. The city calls you the Dhoom breaker.)"] },
+  { id: "chemist", who: "Chemist burglar", mode: "foot", t: "Control room: 'Alarm at the Chemist. Medicines and the cash drawer gone. Reach the Chemist and ask the neighbours.'",
+    hops: [{ site: "Chemist", x: 20, z: 100, witness: "Sabziwala", say: ["A man with a big bag came out of the back door. Limping, but fast.", "He went into the lane behind the market. Left, then straight!"] }],
+    appear: [30, 112], path: [[30, 112], [36, 124], [30, 130], [10, 130], [-10, 130], [-30, 130], [-40, 130], [-40, 150]],
+    taunts: ["These medicines are for my gang!", "You cannot catch a shadow!", "The lane is mine, police!"], caught: ["'Okay! Okay! Take the bag! My leg, my leg!'", "(The medicines go back to the Chemist. The owner gives you a free bandage for the scraped knee.)"] },
+  { id: "atm", who: "ATM gang rider", mode: "bike", t: "Control room: 'ATM at City Bank broken open. Cash box gone on a red bike. Two riders. Reach City Bank.'",
+    hops: [{ site: "City Bank", x: 152, z: 154, witness: "Cashier Meena", say: ["Red bike, two riders, the cash box between them.", "The guard chased them to the Grand Hotel corner. Ask there!"] },
+           { site: "Grand Hotel", x: 152, z: 170, witness: "Hotel doorman", say: ["The red bike? Turned on New Town street, heading west, towards the market street.", "The pillion rider dropped this: a hundred rupee note. They are close!"] }],
+    appear: [110, 160], path: [[110, 160], [70, 160], [40, 160], [40, 130], [40, 100], [40, 70], [40, 44], [0, 40], [-36, 40]],
+    taunts: ["The cash is ours, police!", "Red bike, no brakes!", "Try harder!", "See you never!"], caught: ["The red bike wobbles at the turn and drops. 'Enough! Enough! Take the box!'", "(Cash box counted at City Bank: every rupee there. Meena ji sends sweets to the station.)"] },
+];
+const CHASE_CALLS = { police: CHASE_STORIES[0] };
 const ANTAKSHARI = [["Lakdi ki kaathi, kaathi pe ghoda…", "Ghode ki dum pe jo maara hathoda", "Chanda mama door ke", "Ek do teen"], ["Chhoti si aasha…", "Dil hai chhota sa", "Mera joota hai Japani", "Aaj main upar"], ["Nanha munna rahi hoon…", "Desh ka sipahi hoon", "Boloo bharat mata ki", "Yeh dosti"]];
 const VENUES = [["park", "Shanti Nagar Park, under the mango tree", 500], ["club", "Suryanagar Club lawn", 1500], ["mess", "Officers' Mess hall", 1000]];
 const WED_FOOD = [["simple", "Dal, rice, sabzi, kheer", 800], ["feast", "Full feast with three sweets", 2000], ["street", "Chaat counters and ice cream", 1200]];
@@ -6182,6 +6208,7 @@ class Game {
       return false;
     };
     { const pb = document.getElementById("phone-btn"); if (pb) pb.addEventListener("click", () => { if (panelOpen()) closePanel(); else this._phone(); }); }
+    { const rb = document.getElementById("partner-btn"); if (rb) rb.addEventListener("click", () => { if (panelOpen()) closePanel(); else this._partnerMenu(); }); }
     try { this.gentle = localStorage.getItem("school-days.gentle") === "1"; } catch (e) { this.gentle = false; } if (this.gentle) document.body.classList.add("gentle");
     this.playerName = (this.player.avatar && this.player.avatar.name) || this.progress.childOf || "Bunty";
     this.applyOutfit(); if (this.progress.glasses || (this.player.avatar && this.player.avatar.glasses)) this._wearGlasses();
@@ -6192,7 +6219,7 @@ class Game {
     this._gearChanged();
     this.minimap = new Minimap(this.world);
     this.bigmap = new BigMap(this);
-    window.addEventListener("keydown", (e) => { if (e.target && e.target.tagName === "INPUT") return; if (e.key.toLowerCase() === "g") { if (this.bigmap.isOpen) this.bigmap.close(); else this.bigmap.open(); } if (e.key.toLowerCase() === "m") { if (panelOpen()) closePanel(); else this._phone(); } if (e.key === "Escape") this.bigmap.close(); if (e.key.toLowerCase() === "j") { if (panelOpen()) closePanel(); else this._openJobs(); }  if (e.key === "2") this._toggleP2(); if (e.key.toLowerCase() === "v") { this.player.fpv = !this.player.fpv; this.progress.fpv = this.player.fpv; showToast(this.player.fpv ? L("👁️ First person. Press V to go back.") : L("🎥 Third person."), 2000); } if (e.key.toLowerCase() === "c") { this._wantShot = true; } if (e.key.toLowerCase() === "t") { if (this.dialogue.active) this._chatFromDialogue(); else if (!panelOpen()) { const near = this._nearestInteractable(); if (near && near.npc) this._chat(near.npc); } } });
+    window.addEventListener("keydown", (e) => { if (e.target && e.target.tagName === "INPUT") return; if (e.key.toLowerCase() === "g") { if (this.bigmap.isOpen) this.bigmap.close(); else this.bigmap.open(); } if (e.key.toLowerCase() === "m") { if (panelOpen()) closePanel(); else this._phone(); } if (e.key === "Escape") this.bigmap.close(); if (e.key.toLowerCase() === "j") { if (panelOpen()) closePanel(); else this._openJobs(); }  if (e.key === "2") this._toggleP2(); if (e.key.toLowerCase() === "v") { this.player.fpv = !this.player.fpv; this.progress.fpv = this.player.fpv; showToast(this.player.fpv ? L("👁️ First person. Press V to go back.") : L("🎥 Third person."), 2000); } if (e.key.toLowerCase() === "c") { this._wantShot = true; } if (e.key.toLowerCase() === "r" && this._partner) { if (panelOpen()) closePanel(); else if (!this.dialogue.active) this._partnerMenu(); } if (e.key.toLowerCase() === "t") { if (this.dialogue.active) this._chatFromDialogue(); else if (!panelOpen()) { const near = this._nearestInteractable(); if (near && near.npc) this._chat(near.npc); } } });
     this._ambient = { chirp: 3, horn: 5, bell: 30 };
     startAmbient();
     this.clock = new THREE.Clock();
@@ -6781,7 +6808,7 @@ class Game {
       // A duty vehicle for the uniformed services waits at the door: jeep, fire engine, ambulance.
       if (["police", "firefighter", "doctor"].includes(cur.id) && !this._dutyCar) { const col = cur.id === "police" ? 0xffffff : cur.id === "firefighter" ? 0xd62828 : 0xf4f6f8; const v = makeRideCar(col); const d0 = this.world.doors.find((x) => x.label === cur.place); v.position.set(d0.x + 5, 0, d0.z + 4); this.world.scene.add(v); const lm = (c) => new THREE.MeshStandardMaterial({ color: c, emissive: c, emissiveIntensity: 0.2 }); const l1 = new THREE.Mesh(new THREE.BoxGeometry(0.4, 0.15, 0.3), lm(0xff2020)); l1.position.set(-0.3, 1.45, 0); const l2 = new THREE.Mesh(new THREE.BoxGeometry(0.4, 0.15, 0.3), lm(0x2060ff)); l2.position.set(0.3, 1.45, 0); v.add(l1, l2); this._dutyLights = [l1, l2]; const tag = makeTextSprite(cur.id === "police" ? "POLICE" : cur.id === "firefighter" ? "FIRE" : "AMBULANCE", { size: 40, scale: 1.0 }); tag.position.set(0, 2.2, 0); v.add(tag); this._dutyCar = { group: v, speed: 15, kind: "car", label: cur.id === "police" ? L("Police jeep") : cur.id === "firefighter" ? L("Fire engine") : L("Ambulance"), controlled: true, duty: true }; this.interactables.push({ pos: v.position, radius: 3.0, visible: () => !(this.player.riding && this.player.riding.group === v), prompt: () => L("Drive the {v} (F for the siren)", { v: this._dutyCar.label }), activate: () => { this.player.mount(this._dutyCar); playHorn(); showToast(L("🚨 Duty vehicle. F toggles the siren. Roads only. E to get out."), 3200, "good"); } }); }
       // A partner rides with you.
-      if (!this._partner) { this._partner = new Npc({ id: "partner", name: cur.id === "police" ? "Constable Ramesh" : cur.id === "firefighter" ? "Fireman Joe" : cur.id === "doctor" ? "Nurse Anita" : "Colleague Riya", look: { shirt: (UNIFORMS[cur.id] || {}).shirt || 0x3a86ff, trousers: (UNIFORMS[cur.id] || {}).trousers || 0x333333, hair: 0x111111, hat: (UNIFORMS[cur.id] || {}).cap || null }, pitch: 350, partner: true }, this.world, { pos: [dx + 2.5, dz + 2], fixed: true }); this.npcs.push(this._partner); this._partnerAlong = true; }
+      if (!this._partner) { this._partner = new Npc({ id: "partner", name: cur.id === "police" ? "Constable Ramesh" : cur.id === "firefighter" ? "Fireman Joe" : cur.id === "doctor" ? "Nurse Anita" : "Colleague Riya", look: { shirt: (UNIFORMS[cur.id] || {}).shirt || 0x3a86ff, trousers: (UNIFORMS[cur.id] || {}).trousers || 0x333333, hair: 0x111111, hat: (UNIFORMS[cur.id] || {}).cap || null }, pitch: 350, partner: true }, this.world, { pos: [dx + 2.5, dz + 2], fixed: true }); this.npcs.push(this._partner); this._partnerAlong = true; const P = this._partner; const wp = () => (P._mounted ? P._mounted.group.position : P.group.position); this.interactables.push({ pos: { get x() { return wp().x; }, get z() { return wp().z; } }, radius: 3.2, npc: P, visible: () => P.group.visible && !this.world.currentRoom, prompt: () => L("Talk to {n} (R)", { n: P.name }), activate: () => this._partnerMenu() }); }
       this._partner.group.visible = true; this._partner._inRoom = true; this._partner.station({ x: dx + 2.6, z: dz + 1.8 }, Math.PI); this.roomInteractables.push({ pos: this._partner.position, radius: 2.4, npc: this._partner, prompt: () => L("Talk to {n}", { n: this._partner.name }), activate: () => this._partnerMenu() });
       if (!this._partnerBike) { const d0 = this.world.doors.find((x) => x.label === cur.place) || { x: dx, z: dz }; const b = makeScooty(0x1d3557); b.position.set(d0.x + 8.5, 0, d0.z + 4); this.world.scene.add(b); const tag = makeTextSprite(L("{n}'s scooty", { n: this._partner.name.split(" ").pop() }), { size: 36, scale: 0.8 }); tag.position.set(0, 1.6, 0); b.add(tag); this._partnerBike = { group: b, speed: 12, kind: "scooty", label: L("{n}'s scooty", { n: this._partner.name }), controlled: true }; this.interactables.push({ pos: b.position, radius: 2.4, visible: () => !this._partner._mounted && !(this.player.riding && this.player.riding.group === b), prompt: () => L("Ride {v}", { v: this._partnerBike.label }), activate: () => { this.player.mount(this._partnerBike); playHorn(); showToast(L("🛵 {n}: 'Careful with my scooty, partner.'", { n: this._partner.name }), 2600, "good"); } }); }
       // The boss stands by your desk.
@@ -6818,7 +6845,7 @@ class Game {
     const r = makeRng(Math.floor(Math.random() * 1e9)); const field = r.shuffle(FIELD_CASES[job.id].slice()).slice(0, 3); const desk = casesFor(job, 2);
     let score = 0, i = 0;
     const next = () => {
-      if (i < field.length && i === 1 && CHASE_CALLS[job.id] && !this.gentle) { this._onDuty = i + 1; this._startChase(CHASE_CALLS[job.id], (ok) => { if (ok) score++; i++; next(); }); return; }
+      if (i < field.length && i === 1 && CHASE_CALLS[job.id] && !this.gentle) { this._onDuty = i + 1; this._startChase(CHASE_STORIES[(this.progress.shifts || 0) % CHASE_STORIES.length], (ok) => { if (ok) score++; i++; next(); }); return; }
       if (i < field.length) { const c0 = field[i]; const door = this.world.doors.find((d) => d.label.length > 3 && c0.site.toLowerCase().includes(d.label.toLowerCase())); const c = door ? { ...c0, x: door.x, z: door.z + 2.5, doorLabel: door.label } : c0; this._fieldCase = { c, job, onResult: (ok) => { if (ok) score++; i++; next(); } }; this._onDuty = i + 1; this.setObjective(`${job.icon} ${L("Case {n} of 5", { n: i + 1 })}: ${c.site}. ${L("Go there now.")}`, c.x, c.z); showToast(`📻 ${L(c.t)}`, 5200, "good"); speakLine(L(c.t), 340); if (this.world.currentRoom) { standPose(this.player.group); } }
       else { this._onDuty = 0; this.setObjective(`${job.icon} ${L("Back to the desk at {p} for two files.", { p: job.place })}`, this.world.doors.find((d) => d.label === job.place).x, this.world.doors.find((d) => d.label === job.place).z + 2); this._runPaper(`${job.icon} ${L("Back at the desk")}: ${rankName(job, this.progress.shifts)}`, desk, (s2) => onDone(score + s2)); }
     };
@@ -6827,7 +6854,7 @@ class Game {
   _partnerActive() { return !!this._partner && (!!this._onDuty || (this.working && this._partnerAlong && (this.phase === "morning" || this.phase === "school"))); }
   // Ramesh's menu: type and talk, pick how he travels, or ask him to wait.
   _partnerMenu() {
-    const p = this._partner; if (!p) return; const pr = this.progress; const mode = pr.partnerRide || "own";
+    const p = this._partner; if (!p) { showToast(L("No partner yet. Get a job at the Police Station, Fire Station or City Hospital and sit at your desk."), 3200); return; } const pr = this.progress; const mode = pr.partnerRide || "own";
     const card = openPanel(`<div class="job-title-row"><h2>👮 ${p.name}</h2><button class="ghost-btn" id="pm-close">${L("Okay")}</button></div><p class="job-brief">"${L(PARTNER_LINES[pr.day % PARTNER_LINES.length])}"</p><p class="job-brief">${L("How do we travel?")} <b>${mode === "pillion" ? L("He sits with me on my vehicle.") : L("He rides his own scooty behind me.")}</b></p><div class="btn-row"><button class="big-btn" id="pm-chat">💬 ${L("Type and talk")}</button><button class="big-btn" id="pm-own">🛵 ${L("His own scooty")}</button><button class="big-btn" id="pm-pil">🧍 ${L("Sit with me")}</button><button class="big-btn" id="pm-along">${this._partnerAlong ? "✋ " + L("Wait here") : "🚶 " + L("Come with me")}</button></div>`);
     card.querySelector("#pm-close").addEventListener("click", closePanel);
     card.querySelector("#pm-chat").addEventListener("click", () => { closePanel(); this._chat(p); });
@@ -6855,7 +6882,7 @@ class Game {
     this.world.scene.add(p.group); p.group.position.set(wx, 0, wz); p.group.rotation.set(0, v.rotation.y, 0); standPose(p.group); p._mounted = null;
   }
   _tickPartner(dt) {
-    const p = this._partner; if (!p) return;
+    const p = this._partner; { const rb = document.getElementById("partner-btn"); if (rb) rb.hidden = !p; } if (!p) return;
     if (!this._partnerActive() || this.world.currentRoom) { if (p._mounted) this._partnerUnmount(); if (!this.world.currentRoom) p.group.visible = false; return; }
     p.group.visible = true; p.fixed = true; const mode = this.progress.partnerRide || "own", R = this.player.riding, pp = this.player.position;
     // You ride: he sits behind you, or he takes his own scooty and follows.
@@ -6877,26 +6904,47 @@ class Game {
   }
   // ---- Chase: the thief runs, you catch him with E before the avenue ----
   _startChase(call, onResult) {
-    if (!this._thief) { this._thief = new Npc({ id: "thief", name: call.who, look: { shirt: 0x333333, trousers: 0x555555, hair: 0x111111 } }, this.world, { pos: call.start, fixed: true }); this.npcs.push(this._thief); }
-    const t = this._thief; t.group.visible = true; t.group.position.set(call.start[0], 0, call.start[1]); t.fixed = true; t.group.rotation.y = Math.PI;
-    // He stands at the market with the purse until you get close. Then he bolts and you follow.
-    this._chase = { call, i: 1, onResult, t: 0, limit: 90, running: false, taunt: 0 }; this.setObjective(`🚨 ${L("Go to the market street. The {w} is there with the purse.", { w: call.who })}`, call.start[0], call.start[1]); playBell(); speakLine(L(call.t), 340);
-    this.interactables.push({ pos: t.group.position, radius: 3.0, visible: () => !!this._chase, prompt: () => L("Catch the {w}!", { w: call.who }), activate: () => this._endChase(true), chase: true });
+    if (!this._thief) { this._thief = new Npc({ id: "thief", name: call.who, look: { shirt: 0x333333, trousers: 0x555555, hair: 0x111111 } }, this.world, { pos: call.appear || call.start, fixed: true }); this.npcs.push(this._thief); }
+    if (!this._thiefBike) { const b = makeMotorbike(0x111111); b.visible = false; this.world.scene.add(b); this._thiefBike = b; }
+    const t = this._thief; t.name = call.who; t.def.name = call.who; t.group.visible = false; t.fixed = true; this._thiefBike.visible = false;
+    const site = (h) => { const door = this.world.doors.find((d) => d.label === h.site); return door ? { x: door.x, z: door.z + 2.5 } : { x: h.x, z: h.z }; };
+    this._chase = { call, i: 1, onResult, t: 0, limit: call.mode === "bike" ? 150 : 90, running: false, taunt: 0, hop: 0, busy: false, site, mover: null };
+    const h0 = site(call.hops[0]); this.setObjective(`🚨 ${L("Reach {s}. Ask the people there which way he went.", { s: L(call.hops[0].site) })}`, h0.x, h0.z); playBell(); speakLine(L(call.t), 340); showToast(`📻 ${L(call.t)}`, 5200, "good");
+    this.interactables.push({ pos: t.group.position, radius: 3.0, visible: () => !!this._chase && this._chase.running && this._chase.call.mode === "foot", prompt: () => L("Catch the {w}!", { w: call.who }), activate: () => this._endChase(true), chase: true });
+  }
+  _chaseAppear() {
+    const c = this._chase, t = this._thief, call = c.call; c.running = true; c.t = 0; c.i = 1;
+    if (call.mode === "bike") { const b = this._thiefBike; b.visible = true; b.position.set(call.appear[0], 0, call.appear[1]); b.add(t.group); const seat = b.userData.seat || { x: 0, y: 0.2, z: -0.35 }; t.group.position.set(seat.x, seat.y, seat.z); t.group.rotation.set(0, 0, 0); sitPose(t.group, "scooty"); t.group.visible = true; t._mounted = b; c.mover = b; playHorn(); showToast(L("🏍️ THERE! The bike, ahead on the avenue! Take your vehicle and CHASE!"), 3600, "bad"); speakLine(L("There he is. Chase!"), 350); }
+    else { this.world.scene.add(t.group); t.group.position.set(call.appear[0], 0, call.appear[1]); t.group.rotation.set(0, 0, 0); standPose(t.group); t.group.visible = true; t._mounted = null; c.mover = t.group; playHorn(); showToast(L("👀 THERE! The {w}, running ahead! FOLLOW HIM!", { w: call.who }), 3200, "bad"); speakLine(L("Police! Run!"), 300); }
+    this.setObjective(`🚨 ${L("Chase the {w}! Catch him before he escapes.", { w: call.who })}`, c.mover.position.x, c.mover.position.z);
   }
   _tickChase(dt) {
-    const c = this._chase; if (!c) return; const t = this._thief, pp = this.player.position, dist = Math.hypot(pp.x - t.group.position.x, pp.z - t.group.position.z);
-    if (!c.running) { animateHuman(t.group, dt, false); if (dist < 14) { c.running = true; c.t = 0; playHorn(); showToast(L("👀 He saw you! There he goes, purse in hand. FOLLOW HIM!"), 3200, "bad"); speakLine(L("Police! Run!"), 300); this.setObjective(`🚨 ${L("Follow the {w}! Catch him before the avenue.", { w: c.call.who })}`, t.group.position.x, t.group.position.z); } return; }
-    c.t += dt; const path = c.call.path, target = path[c.i];
-    if (target) { const dx = target[0] - t.group.position.x, dz = target[1] - t.group.position.z, d = Math.hypot(dx, dz); const sp = dist < 5 ? 5.6 : dist > 25 ? 3.2 : 4.6; if (d < 0.5) c.i++; else { t.group.position.x += (dx / d) * sp * dt; t.group.position.z += (dz / d) * sp * dt; t.group.rotation.y = Math.atan2(dx, dz); } animateHuman(t.group, dt, true, 1.3); this.setObjective(`🚨 ${L("Follow the {w}! Catch him before the avenue.", { w: c.call.who })} ${Math.round(dist)} m`, t.group.position.x, t.group.position.z); }
-    else return this._endChase(false);
-    c.taunt += dt; if (c.taunt > 6 && dist < 30) { c.taunt = 0; const line = c.call.taunts[Math.floor(c.t / 6) % c.call.taunts.length]; showToast(`🏃 ${c.call.who}: "${L(line)}"`, 2200); speakLine(L(line), 300); }
+    const c = this._chase; if (!c) return; const call = c.call, pp = this.player.position;
+    // Before the chase: reach each site, hear the witness, follow the clue.
+    if (!c.running) {
+      if (c.busy || this.dialogue.active || panelOpen() || this.world.currentRoom) return;
+      const h = call.hops[c.hop], s = c.site(h); if (Math.hypot(pp.x - s.x, pp.z - s.z) > 10) return;
+      c.busy = true; if (this.player.riding) this.player.dismount();
+      this.dialogue.say(h.witness, h.say.map((x) => L(x)), () => { c.busy = false; c.hop++; if (c.hop < call.hops.length) { const n = c.site(call.hops[c.hop]); this.setObjective(`🔎 ${L("Clue: {s}. Go there and ask.", { s: L(call.hops[c.hop].site) })}`, n.x, n.z); showToast(`🔎 ${L("Suspense... the trail leads to {s}.", { s: L(call.hops[c.hop].site) })}`, 3200); speakLine(L("The trail leads to {s}.", { s: L(call.hops[c.hop].site) }), 340); } else this._chaseAppear(); }, { pitch: 400 });
+      return;
+    }
+    const mv = c.mover, dist = Math.hypot(pp.x - mv.position.x, pp.z - mv.position.z); c.t += dt; const path = call.path, target = path[c.i];
+    if (target) {
+      const dx = target[0] - mv.position.x, dz = target[1] - mv.position.z, d = Math.hypot(dx, dz);
+      const sp = call.mode === "bike" ? (dist < 8 ? 13.5 : dist > 45 ? 7.5 : 11) : (dist < 5 ? 5.6 : dist > 25 ? 3.2 : 4.6);
+      if (d < 0.6) c.i++; else { const step = Math.min(d, sp * dt); mv.position.x += (dx / d) * step; mv.position.z += (dz / d) * step; mv.rotation.y = Math.atan2(dx, dz); if (call.mode === "bike") rollWheels(mv, step); else animateHuman(mv, dt, true, 1.3); }
+      this.setObjective(`🚨 ${L("Chase the {w}! Catch him before he escapes.", { w: call.who })} ${Math.round(dist)} m`, mv.position.x, mv.position.z);
+    } else return this._endChase(false);
+    if (call.mode === "bike" && !this.player.riding && c.t > 4 && c.t - (c.nag || -99) > 8) { c.nag = c.t; showToast(L("🏍️ On foot you cannot catch a bike. Take the jeep, the scooty or the motorbike!"), 3000, "bad"); }
+    c.taunt += dt; if (c.taunt > 6 && dist < 35) { c.taunt = 0; const line = call.taunts[Math.floor(c.t / 6) % call.taunts.length]; showToast(`🏃 ${call.who}: "${L(line)}"`, 2200); speakLine(L(line), 300); }
     if (c.t > c.limit) return this._endChase(false);
-    if (dist < 2.2) this._endChase(true);
+    if (dist < (call.mode === "bike" ? 3.5 : 2.2)) this._endChase(true);
   }
   _endChase(caught) {
-    const c = this._chase; if (!c) return; this._chase = null; this.interactables = this.interactables.filter((i) => !i.chase); const t = this._thief;
-    if (caught) { playSuccess(); this.addRep(2, L("caught the snatcher")); if (this.player.riding) this.player.dismount(); t.fixed = true; animateHuman(t.group, 0.016, false); this._snap("🚨", "Caught a purse snatcher in a chase."); this.dialogue.say(c.call.who, [L("Okay, okay! Sorry sir! Here is the purse. Do not hit me."), L("(You put the handcuffs on and radio the jeep. The purse goes back to Verma Aunty. The whole market claps.)")], () => { t.group.visible = false; c.onResult(true); }, { pitch: 300, speaker: t.id }); return; }
-    t.group.visible = false; Audio.playRetry(); showToast(L("He reached the avenue and vanished in the traffic. Next time, stay closer; he tires when you are near."), 3600, "bad"); c.onResult(false);
+    const c = this._chase; if (!c) return; this._chase = null; this.interactables = this.interactables.filter((i) => !i.chase); const t = this._thief, call = c.call;
+    const hideAll = () => { t.group.visible = false; if (t._mounted) { this.world.scene.add(t.group); t._mounted = null; standPose(t.group); } this._thiefBike.visible = false; };
+    if (caught) { playSuccess(); this.addRep(2, L("caught the {w}", { w: call.who })); if (this.player.riding) this.player.dismount(); this._snap("🚨", `Caught the ${call.who} in a chase.`); this.dialogue.say(call.who, call.caught.map((x) => L(x)), () => { hideAll(); c.onResult(true); }, { pitch: 300 }); return; }
+    hideAll(); Audio.playRetry(); showToast(L("He got away in the traffic. Next time, stay closer; he tires when you are near."), 3600, "bad"); c.onResult(false);
   }
   _tickField(dt) {
     const f = this._fieldCase; if (!f || this.world.currentRoom || panelOpen() || this.dialogue.active) return;

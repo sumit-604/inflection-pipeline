@@ -127,8 +127,12 @@ takes you straight there.
 
 ## Twenty more again
 
-1. Chase calls: the purse snatcher runs from the market to the avenue;
-   catch him on foot with E before he vanishes.
+1. Chase calls: the purse snatcher stands on the market street with the
+   purse. Go there. When you get close he sees you and bolts; follow him
+   on foot or on the scooty along the lanes to the avenue. He taunts you
+   as he runs, tires when you stay close, and surrenders with the purse
+   when you reach him (E, or just catch up). Reach the avenue late and he
+   vanishes in the traffic.
 2. Duty vehicles: a police jeep, fire engine or ambulance at your
    workplace, F for the siren, flashing lights.
 3. A partner (Constable Ramesh, Fireman Joe, Nurse Anita) at your desk who
@@ -297,6 +301,24 @@ Choose one, follow the compass to its place, and press E at the door.
    A working adult drives the family car: press E at it, stay on the roads,
    E again to get out. One shift a day (five tasks); pay is the salary times the tasks
    done right. Ten shifts promote you to the next stage.
+
+## The main road
+
+Seven people stand on the footpaths of the two crossroads on the main
+road. Press E to talk.
+
+- Traffic Constable Yadav and Traffic Constable Mary at the two signals.
+  They tell you which road is red or green, check your licence and
+  helmet, and give a road-rule tip. Ride into a crossroads on red in any
+  vehicle and the whistle blows: ₹100 challan and a reputation point lost.
+  A duty jeep with the siren on is waved through. Five shifts with no
+  challan earns the Clean Driving Record badge.
+- Baba on the footpath: give ₹5, ₹10 or a bread packet, once a day. Each
+  gift earns a reputation point; ₹50 given in all earns the Kind Heart
+  badge.
+- Balloon Wala (₹10), Paper Boy Golu (₹5, opens the Suryanagar Times),
+  Shoe Shine Pappu (₹5), and Auto Driver Raju (₹30 meter fare to the
+  school, the market, the stadium or the airport).
 
 ## Family life
 

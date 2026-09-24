@@ -743,7 +743,7 @@ import * as THREE from 'three';
    label goes through L(). The voice follows the language.
    Questions and answers stay in English for now.
    ============================================================ */
-const GAME_VERSION = "v19.1";
+const GAME_VERSION = "v20";
 const LANGS = {
   en: { name: "English", voice: "en-IN" },
   hi: { name: "हिन्दी", voice: "hi-IN" },
@@ -5829,7 +5829,7 @@ const FIELD_CASES = {
 const AVATAR_SKINS = [["Wheat", 0xe8b98a], ["Honey", 0xdba274], ["Brown", 0xb07a4a], ["Deep", 0x7a4a2a]];
 const AVATAR_HAIR = [["Black", 0x1d1410], ["Brown", 0x4a2c1a], ["Dark red", 0x6b2a1a], ["Grey", 0x888888]];
 const PARTNER_LINES = ["Nice one, partner. Tea after this?", "I would have done the same. Maybe slower.", "Careful at the crossing, the traffic is mad today.", "My wife says I talk about cases in my sleep.", "That is how a Constable becomes an Inspector.", "Write it in the diary before you forget."];
-const CHASE_CALLS = { police: { t: "Control room: 'Purse snatcher running from the market street towards the avenue. Catch him before he reaches the road!'", start: [40, 70], path: [[40, 70], [30, 60], [10, 48], [-10, 46], [-36, 44]], who: "Purse snatcher" } };
+const CHASE_CALLS = { police: { t: "Control room: 'Purse snatcher running from the market street towards the avenue. Catch him before he reaches the road!'", start: [40, 70], path: [[40, 70], [34, 63], [24, 58], [18, 50], [8, 46], [0, 53], [-10, 48], [-22, 44], [-36, 44]], who: "Purse snatcher", taunts: ["Ha! Catch me if you can!", "Too slow, police!", "This purse is mine now!", "Left, right, gone!"] } };
 const ANTAKSHARI = [["Lakdi ki kaathi, kaathi pe ghoda…", "Ghode ki dum pe jo maara hathoda", "Chanda mama door ke", "Ek do teen"], ["Chhoti si aasha…", "Dil hai chhota sa", "Mera joota hai Japani", "Aaj main upar"], ["Nanha munna rahi hoon…", "Desh ka sipahi hoon", "Boloo bharat mata ki", "Yeh dosti"]];
 const VENUES = [["park", "Shanti Nagar Park, under the mango tree", 500], ["club", "Suryanagar Club lawn", 1500], ["mess", "Officers' Mess hall", 1000]];
 const WED_FOOD = [["simple", "Dal, rice, sabzi, kheer", 800], ["feast", "Full feast with three sweets", 2000], ["street", "Chaat counters and ice cream", 1200]];
@@ -5840,6 +5840,19 @@ const PACKING = [["Ticket and ID", true], ["Water bottle", true], ["Sweater for 
 const TREASURE = [[-85, 128, "under the park bench"], [128, 52, "by the City Park fountain"], [60, -150, "behind the school playground slide"], [-140, -100, "beside the Old Town Library"], [175, 190, "under the stadium stands"]];
 const NEWS_LINES = ["Tomato prices fall at the market.", "Sunrise School wins the district quiz.", "New signal at the avenue crossing from Monday.", "Monsoon expected early this year.", "City Bank opens a children's savings desk.", "Stadium Ground repainted for the league."];
 const BABY_TASKS = [["feed", "Feed the baby", "Warm milk, small sips, burp on the shoulder."], ["bathe", "Bathe the baby", "Lukewarm water, hold the head, quick and gentle."], ["sing", "Sing to sleep", "Lakdi ki kaathi, softly, till the eyes close."]];
+
+// People of the main road: they stand at fixed spots on the footpaths of the two crossroads.
+const ROAD_FOLK = [
+  { id: "tc_yadav", name: "Traffic Constable Yadav", road: "traffic", inter: 1, pos: [-31, -9], look: { shirt: 0xf1f1f1, trousers: 0x1d3557, hair: 0x111111, hat: 0xf1f1f1 }, pitch: 330, greet: "Red means stop, green means go. I have a whistle and a challan book." },
+  { id: "tc_mary", name: "Traffic Constable Mary", road: "traffic", inter: 0, pos: [-31, 31], look: { shirt: 0xf1f1f1, trousers: 0x1d3557, hair: 0x1d1410, dress: false, hat: 0xf1f1f1 }, pitch: 430, greet: "Helmet on, seat belt on. Then I smile." },
+  { id: "beggar_baba", name: "Baba on the footpath", road: "beggar", pos: [-24, 8], look: { shirt: 0x8a7f6a, trousers: 0x6b5b45, hair: 0xbbbbbb }, pitch: 300, greet: "Beta, one coin. God will keep you happy." },
+  { id: "balloon_wala", name: "Balloon Wala", road: "balloon", pos: [-49, 31], look: { shirt: 0xff8fab, trousers: 0x3b3f4a, hair: 0x1d1410 }, pitch: 370, greet: "Balloons! Red, yellow, blue. Ten rupees." },
+  { id: "paper_boy", name: "Paper Boy Golu", road: "paper", child: true, pos: [-50, 10], look: { shirt: 0xffd21e, trousers: 0x3b3f4a, hair: 0x1d1410 }, pitch: 520, greet: "Suryanagar Times! Five rupees! Read the news!" },
+  { id: "auto_raju", name: "Auto Driver Raju", road: "auto", pos: [-24, 50], look: { shirt: 0x8ecae6, trousers: 0x3b3f4a, hair: 0x111111 }, pitch: 360, greet: "Auto, auto! Where to, boss? Meter on, no cheating." },
+  { id: "shoe_shine", name: "Shoe Shine Pappu", road: "shine", pos: [-49, -9], look: { shirt: 0x6a4c93, trousers: 0x3b3f4a, hair: 0x1d1410 }, pitch: 400, greet: "Polish, polish! Shine like a mirror, five rupees." },
+];
+const TRAFFIC_TIPS = ["Cross at the zebra. Look right, left, right.", "Helmet on two wheels, seat belt in the car. Every time.", "The green man blinks in the last four seconds. Do not start then.", "Red light jump is ₹100 and my whistle in your ear.", "Honking at a red light does not turn it green, beta.", "Give way to the ambulance. Pull left, stop."];
+BADGES.push({ id: "kind_heart", icon: "🤲", name: "Kind Heart", test: (pr) => (pr.charity || 0) >= 50 }, { id: "clean_record", icon: "🚦", name: "Clean driving record", test: (pr) => !!pr.licence && (pr.shifts || 0) >= 5 && !(pr.challans || 0) });
 
 class Minimap {
   constructor(world) {
@@ -6285,6 +6298,7 @@ class Game {
     for (const k of Object.keys(FAMILY)) { const n = new Npc(FAMILY[k], this.world, { pos: [0, 0], fixed: true }); n.group.visible = false; this.family[k] = n; this.npcs.push(n); }
     // Neighbours, vendors and children on the colony roads and the market street.
     this.folk = STREET_FOLK.map((def) => { const n = new Npc(def, this.world, { zone: def.zone }); this.npcs.push(n); return n; });
+    this.roadFolk = ROAD_FOLK.map((def) => { const n = new Npc(def, this.world, { pos: def.pos, fixed: true }); n.group.rotation.y = Math.atan2(-40 - def.pos[0], (def.inter === 0 ? 40 : 0) - def.pos[1]); this.npcs.push(n); return n; });
     this.seniors = SENIORS.map((def) => { const n = new Npc(def, this.world, { pos: [0, 0], fixed: true }); n.group.visible = false; this.npcs.push(n); return n; });
   }
   // Put everyone where the phase says they should be.
@@ -6559,6 +6573,7 @@ class Game {
       return this.dialogue.say("Papa", [this.phase === "morning" ? "Good morning, champ. Bag packed? Water bottle? Off you go, and listen to your teachers." : `So, how was school? ${this.termMarks()} marks this term. ${this.termMarks() > 20 ? "That is my child!" : "Keep at it, every day counts."}`], null, { pitch: def.pitch, speaker: npc.id });
     }
     if (TEACHERS[def.id.replace("t_", "")]) return this._talkTeacher(npc);
+    if (def.road) return this._talkRoad(npc);
     if (def.child) return this._talkFriend(npc);
     this._mission("talk");
     if (def.id === "kaka" && !this.progress.treasureMap) { this.progress.treasureMap = true; saveProgress(this.profile, this.progress); this._engagedNpc = npc; return this.dialogue.say("Kaka", [L("Come close. When I was a boy I hid five old coins in this city. Here is the map: park bench, City Park fountain, behind the school slide, beside the Old Town Library, under the stadium stands."), L("Find them all and the last one is a gold one. Go, before my memory goes.")], () => { this._engagedNpc = null; this._snap("🗺️", "Kaka gave me a treasure map."); }, { pitch: 310, speaker: npc.id }); }
@@ -6863,21 +6878,25 @@ class Game {
   // ---- Chase: the thief runs, you catch him with E before the avenue ----
   _startChase(call, onResult) {
     if (!this._thief) { this._thief = new Npc({ id: "thief", name: call.who, look: { shirt: 0x333333, trousers: 0x555555, hair: 0x111111 } }, this.world, { pos: call.start, fixed: true }); this.npcs.push(this._thief); }
-    const t = this._thief; t.group.visible = true; t.group.position.set(call.start[0], 0, call.start[1]); t.fixed = true;
-    this._chase = { call, i: 1, onResult, t: 0, limit: 75 }; this.setObjective(`🚨 ${L("CHASE: catch the {w} before the avenue. Get close and press E.", { w: call.who })}`, call.start[0], call.start[1]); playBell(); speakLine(L(call.t), 340);
+    const t = this._thief; t.group.visible = true; t.group.position.set(call.start[0], 0, call.start[1]); t.fixed = true; t.group.rotation.y = Math.PI;
+    // He stands at the market with the purse until you get close. Then he bolts and you follow.
+    this._chase = { call, i: 1, onResult, t: 0, limit: 90, running: false, taunt: 0 }; this.setObjective(`🚨 ${L("Go to the market street. The {w} is there with the purse.", { w: call.who })}`, call.start[0], call.start[1]); playBell(); speakLine(L(call.t), 340);
     this.interactables.push({ pos: t.group.position, radius: 3.0, visible: () => !!this._chase, prompt: () => L("Catch the {w}!", { w: call.who }), activate: () => this._endChase(true), chase: true });
   }
   _tickChase(dt) {
-    const c = this._chase; if (!c) return; c.t += dt; const t = this._thief, path = c.call.path, target = path[c.i];
-    if (target) { const dx = target[0] - t.group.position.x, dz = target[1] - t.group.position.z, d = Math.hypot(dx, dz); const sp = 4.6; if (d < 0.5) c.i++; else { t.group.position.x += (dx / d) * sp * dt; t.group.position.z += (dz / d) * sp * dt; t.group.rotation.y = Math.atan2(dx, dz); } animateHuman(t.group, dt, true, 1.2); }
+    const c = this._chase; if (!c) return; const t = this._thief, pp = this.player.position, dist = Math.hypot(pp.x - t.group.position.x, pp.z - t.group.position.z);
+    if (!c.running) { animateHuman(t.group, dt, false); if (dist < 14) { c.running = true; c.t = 0; playHorn(); showToast(L("👀 He saw you! There he goes, purse in hand. FOLLOW HIM!"), 3200, "bad"); speakLine(L("Police! Run!"), 300); this.setObjective(`🚨 ${L("Follow the {w}! Catch him before the avenue.", { w: c.call.who })}`, t.group.position.x, t.group.position.z); } return; }
+    c.t += dt; const path = c.call.path, target = path[c.i];
+    if (target) { const dx = target[0] - t.group.position.x, dz = target[1] - t.group.position.z, d = Math.hypot(dx, dz); const sp = dist < 5 ? 5.6 : dist > 25 ? 3.2 : 4.6; if (d < 0.5) c.i++; else { t.group.position.x += (dx / d) * sp * dt; t.group.position.z += (dz / d) * sp * dt; t.group.rotation.y = Math.atan2(dx, dz); } animateHuman(t.group, dt, true, 1.3); this.setObjective(`🚨 ${L("Follow the {w}! Catch him before the avenue.", { w: c.call.who })} ${Math.round(dist)} m`, t.group.position.x, t.group.position.z); }
     else return this._endChase(false);
+    c.taunt += dt; if (c.taunt > 6 && dist < 30) { c.taunt = 0; const line = c.call.taunts[Math.floor(c.t / 6) % c.call.taunts.length]; showToast(`🏃 ${c.call.who}: "${L(line)}"`, 2200); speakLine(L(line), 300); }
     if (c.t > c.limit) return this._endChase(false);
-    const pp = this.player.position; if (Math.hypot(pp.x - t.group.position.x, pp.z - t.group.position.z) < 2.2 && !this.player.riding) this._endChase(true);
+    if (dist < 2.2) this._endChase(true);
   }
   _endChase(caught) {
-    const c = this._chase; if (!c) return; this._chase = null; this._thief.group.visible = false; this.interactables = this.interactables.filter((i) => !i.chase);
-    if (caught) { playSuccess(); this.addRep(2, L("caught the snatcher")); showToast(L("🚨 Caught! The purse goes back to Verma Aunty. The whole market claps."), 3600, "good"); this._snap("🚨", "Caught a purse snatcher in a chase."); } else { Audio.playRetry(); showToast(L("He reached the avenue and vanished in the traffic. Next time, take the jeep."), 3600, "bad"); }
-    c.onResult(caught);
+    const c = this._chase; if (!c) return; this._chase = null; this.interactables = this.interactables.filter((i) => !i.chase); const t = this._thief;
+    if (caught) { playSuccess(); this.addRep(2, L("caught the snatcher")); if (this.player.riding) this.player.dismount(); t.fixed = true; animateHuman(t.group, 0.016, false); this._snap("🚨", "Caught a purse snatcher in a chase."); this.dialogue.say(c.call.who, [L("Okay, okay! Sorry sir! Here is the purse. Do not hit me."), L("(You put the handcuffs on and radio the jeep. The purse goes back to Verma Aunty. The whole market claps.)")], () => { t.group.visible = false; c.onResult(true); }, { pitch: 300, speaker: t.id }); return; }
+    t.group.visible = false; Audio.playRetry(); showToast(L("He reached the avenue and vanished in the traffic. Next time, stay closer; he tires when you are near."), 3600, "bad"); c.onResult(false);
   }
   _tickField(dt) {
     const f = this._fieldCase; if (!f || this.world.currentRoom || panelOpen() || this.dialogue.active) return;
@@ -7348,6 +7367,28 @@ class Game {
     this.dialogue.say(n.name, lines, () => { this._engagedNpc = null; }, { pitch: n.def.pitch || 500, speaker: n.id });
   }
   // ---- Crowd talk: people on the street chat to each other ----
+  // ---- The main road: traffic police, the beggar, the balloon wala, the paper boy ----
+  _talkRoad(npc) {
+    const def = npc.def, pr = this.progress, o = { pitch: def.pitch || 400, speaker: npc.id }; this._engagedNpc = npc; setMood(npc.group, "happy", 3); const done = () => { this._engagedNpc = null; };
+    if (def.road === "traffic") { const st = signalState(this.world.intersections[def.inter].phase, this.clock.elapsedTime); const tip = TRAFFIC_TIPS[(pr.day + def.inter) % TRAFFIC_TIPS.length]; const licence = this.player.riding && this.player.riding.controlled && this.player.riding.kind !== "bike" ? (pr.licence ? L("Licence? Good. Helmet? Good. Go when it is green.") : L("Riding without a licence! Go to the RTO Office first.")) : L("On foot? Cross at the zebra when the green man shows."); return this.dialogue.say(def.name, [L(def.greet), L("Right now the east-west road is {h}, the north-south road is {v}.", { h: L(st.h), v: L(st.v) }), licence, L(tip), L("Lost? Press G for the map, or ask me: 'where is the market'.")], done, o); }
+    if (def.road === "beggar") { const key = "beg" + pr.day; if (pr.gifts && pr.gifts[key]) return this.dialogue.say(def.name, [L("You already gave today, beta. Long life to you.")], done, o); const card = openPanel(`<h2>🙏 ${def.name}</h2><p class="job-brief">"${L(def.greet)}"</p><p class="job-brief">${L("You have ₹{m}. What do you give?", { m: pr.money })}</p><div class="btn-row"><button class="big-btn" id="bg-5">₹5</button><button class="big-btn" id="bg-10">₹10</button><button class="big-btn" id="bg-food">🍞 ${L("A bread packet (₹10)")}</button><button class="ghost-btn" id="bg-no">${L("Not today")}</button></div>`); const give = (amt, what) => { if (pr.money < amt) { showToast(L("Not enough money."), 2000, "bad"); return; } this.addMoney(-amt, "charity"); pr.gifts = pr.gifts || {}; pr.gifts[key] = true; pr.charity = (pr.charity || 0) + amt; saveProgress(this.profile, pr); playCoin(); closePanel(); this.addRep(1, L("kindness on the road")); this.diary(L("Gave {w} to Baba on the footpath.", { w: what })); this.dialogue.say(def.name, [L("Bless you, beta. May your Maa and Papa live long."), what === "bread" ? L("Bread! Today I eat. God sees this.") : L("A coin from a small hand is worth a lakh.")], done, o); if ((pr.charity || 0) >= 50 && !pr.badges.includes("kind_heart")) { pr.badges.push("kind_heart"); saveProgress(this.profile, pr); showToast(L("🏅 Badge: Kind Heart (₹50 given to those in need)"), 3200, "good"); } }; card.querySelector("#bg-5").addEventListener("click", () => give(5, "₹5")); card.querySelector("#bg-10").addEventListener("click", () => give(10, "₹10")); card.querySelector("#bg-food").addEventListener("click", () => give(10, "bread")); card.querySelector("#bg-no").addEventListener("click", () => { closePanel(); this.dialogue.say(def.name, [L("No problem, beta. A smile is also charity.")], done, o); }); return; }
+    if (def.road === "balloon") { return this.dialogue.say(def.name, [L(def.greet), L("One balloon for you? ₹10.")], () => { if (pr.money < 10) { showToast(L("Not enough money for a balloon."), 2000, "bad"); done(); return; } this.addMoney(-10, "balloon"); pr.fun = (pr.fun || 0) + 1; saveProgress(this.profile, pr); playPick(); showToast(L("🎈 A red balloon! Hold it tight, the wind is strong."), 2600, "good"); this._snap && this._snap("balloon"); done(); }, o); }
+    if (def.road === "paper") { return this.dialogue.say(def.name, [L(def.greet), pr.money >= 5 ? L("Here, today's paper. ₹5.") : L("No money? Read the headline for free: it says study hard.")], () => { if (pr.money >= 5) { this.addMoney(-5, "newspaper"); playCoin(); this._newspaper(); } done(); }, o); }
+    if (def.road === "auto") { const fares = [["Sunrise Public School", 100, -20], ["Old Town market", -40, 60], ["Stadium Ground", 150, -90], ["Suryanagar Airport", -140, -160]]; const card = openPanel(`<h2>🛺 ${def.name}</h2><p class="job-brief">"${L(def.greet)}"</p><p class="job-brief">${L("Meter fare ₹30. Where to?")}</p><div class="btn-row">${fares.map((f, i) => `<button class="big-btn" id="au-${i}">${L(f[0])}</button>`).join("")}<button class="ghost-btn" id="au-no">${L("Just asking")}</button></div>`); fares.forEach((f, i) => card.querySelector(`#au-${i}`).addEventListener("click", () => { if (pr.money < 30) { showToast(L("₹30 needed for the auto."), 2000, "bad"); return; } closePanel(); this.addMoney(-30, "auto"); playHorn(); if (this.world.currentRoom) this._exitRoom(); if (this.player.riding) this.player.dismount(); const d = this.world.doors.find((x) => x.label === f[0]); const tx = d ? d.x : f[1], tz = d ? d.z + 3 : f[2]; this.player.group.position.set(tx, 0, tz); this.player._placeCamera(1); showToast(L("🛺 Raju drives you to {p}. 'Meter says ₹30, boss.'", { p: L(f[0]) }), 3200, "good"); this.diary(L("Took Raju's auto to {p}.", { p: f[0] })); done(); })); card.querySelector("#au-no").addEventListener("click", () => { closePanel(); done(); }); return; }
+    if (def.road === "shine") { return this.dialogue.say(def.name, [L(def.greet), pr.money >= 5 ? L("Sit, sit. Two minutes.") : L("No money? Next time, boss.")], () => { if (pr.money >= 5) { this.addMoney(-5, "shoe shine"); playPick(); showToast(L("👞 Shoes shine like a mirror. Teachers notice."), 2600, "good"); pr.shined = pr.day; saveProgress(this.profile, pr); } done(); }, o); }
+    return this.dialogue.say(def.name, [L(def.greet || "Hello!")], done, o);
+  }
+  // Traffic police watch the crossroads: enter on red in a vehicle and the whistle blows, ₹100 challan.
+  _tickTraffic(elapsed) {
+    const R = this.player.riding; const pp = this.player.position; let inside = null;
+    if (R && R.controlled && R.kind !== "bike" && R.kind !== "swing") for (const inter of this.world.intersections || []) if (Math.abs(pp.x - inter.x) < 6 && Math.abs(pp.z - inter.z) < 6) inside = inter;
+    if (inside && this._inInter !== inside) {
+      const st = signalState(inside.phase, elapsed), ry = R.group.rotation.y, eastWest = Math.abs(Math.sin(ry)) > Math.abs(Math.cos(ry)), red = (eastWest ? st.h : st.v) === "red";
+      if (red && !(R.duty && this._siren)) { const cop = (this.roadFolk || []).find((f) => f.def.road === "traffic" && this.world.intersections[f.def.inter] === inside); playBell(); playHorn(); const fine = Math.min(100, this.progress.money); this.addMoney(-fine, "challan"); this.addRep(-1, L("jumped a red light")); showToast(L("🚨 {n}: 'Red light! Whistle! ₹{f} challan. Stop at red.'", { n: cop ? cop.name : L("Traffic police"), f: fine }), 3600, "bad"); speakLine(L("Red light! Stop!"), cop ? cop.def.pitch : 330); if (cop) { setMood(cop.group, "angry", 3); cop.waving = 2; } this.progress.challans = (this.progress.challans || 0) + 1; saveProgress(this.profile, this.progress); }
+      else if (R.duty && this._siren && red) showToast(L("🚨 Siren on: the traffic police wave you through."), 1800, "good");
+    }
+    this._inInter = inside;
+  }
   _tickCrowd(dt) {
     this._crowdT = (this._crowdT || 0) - dt; if (this._crowdBubble && (this._crowdBubble.t -= dt) <= 0) { this._crowdBubble.npc.group.remove(this._crowdBubble.sprite); this._crowdBubble = null; }
     if (this._crowdT > 0 || this.world.currentRoom) return; this._crowdT = 5 + Math.random() * 4;
@@ -8001,7 +8042,7 @@ class Game {
     if (this.player.riding && this.player.riding.kind === "bike" && this.progress.energy <= 0 && !this.progress.cast && !panelOpen()) this._fallOffBike();
     if (!blocked && this.player.riding && this.player.riding.duty && this.input.keys && this.input.keys.has("f") && !this._sirenHeld) { this._sirenHeld = true; this._siren = !this._siren; showToast(this._siren ? L("🚨 Siren on") : L("Siren off"), 1200); } if (!(this.input.keys && this.input.keys.has("f"))) this._sirenHeld = false;
     const useP = !blocked && this.input.usePressed(); if (this._trial) { const eP = this.input.interactPressed(); this._tickTrial(dt, useP || eP); this.ui.setInteractPrompt(`${this._trial ? this._trial.spec.icon : ""} ${L(this._trial && this._trial.kind === "cricket" ? "Swing" : "Shoot")}  (F / E)`); }
-    this._tickPet(dt); this._tickRain(); this._tickP2(dt); this._tickDirections(dt); this._tickCrowd(dt); this._tickField(dt); this._tickPartner(dt); this._tickChase(dt);
+    this._tickPet(dt); this._tickRain(); this._tickP2(dt); this._tickDirections(dt); this._tickCrowd(dt); this._tickField(dt); this._tickPartner(dt); this._tickChase(dt); this._tickTraffic(elapsed);
     sirenTick(!!(this.player.riding && this.player.riding.duty && this._siren), dt); if (this._dutyLights) { const on = Math.floor(elapsed * 4) % 2 === 0; this._dutyLights[0].material.emissiveIntensity = this._siren && on ? 2 : 0.2; this._dutyLights[1].material.emissiveIntensity = this._siren && !on ? 2 : 0.2; }
     if (this.world.setTimeOfDay) this.world.setTimeOfDay(this.world.currentRoom ? "school" : this.phase);
     musicTick(this._trial ? "stadium" : this.world.currentRoom ? (["canteen", "eatery", "shop", "supermarket"].includes(this.world.currentRoom.type) ? "market" : null) : this.phase === "school" ? "school" : this.phase === "over" ? "evening" : Math.hypot(pp.x - 40, pp.z - 80) < 45 ? "market" : this.phase, dt);

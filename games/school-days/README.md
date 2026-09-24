@@ -365,6 +365,9 @@ road. Press E to talk.
   Building. The person at the front desk sends you to the interview.
 - Once hired, your own desk with the YOUR SEAT arrow is inside the office.
   Rooms where you have no desk get a waiting seat at the front right.
+- Offices have doors on all four back cabins now. Interview desks and your
+  desk are only placed where you can walk from the room door to the chair
+  and back out. Press O to go outside from anywhere inside a building.
 
 ## Railway Station and airport
 

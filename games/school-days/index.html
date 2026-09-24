@@ -699,6 +699,7 @@ body.gentle #dialogue-text { font-size: 20px; }
         <tr><td><kbd>N</kbd></td><td>Diary: timetable, marks, report cards, friends.</td></tr>
         <tr><td><kbd>G</kbd></td><td>Map with zoom, a search box, and a Find button for where to go now.</td></tr>
         <tr><td><kbd>M</kbd></td><td>Mobile phone: messages and calls (from age 14).</td></tr>
+        <tr><td><kbd>O</kbd></td><td>Go outside from anywhere inside a building.</td></tr>
         <tr><td><kbd>H</kbd></td><td>This board.</td></tr>
         <tr><td><kbd>Enter</kbd></td><td>Check an answer.</td></tr>
         <tr><td><kbd>Esc</kbd></td><td>Close a panel.</td></tr>
@@ -747,7 +748,7 @@ import * as THREE from 'three';
    label goes through L(). The voice follows the language.
    Questions and answers stay in English for now.
    ============================================================ */
-const GAME_VERSION = "v24";
+const GAME_VERSION = "v25";
 const LANGS = {
   en: { name: "English", voice: "en-IN" },
   hi: { name: "हिन्दी", voice: "hi-IN" },
@@ -4847,8 +4848,9 @@ class Room {
       return true;
     }
     if (t === "office") {
-      this._wall(-hx, -2, hx, -2, [[-5, -2.6], [2.6, 5]]);
+      this._wall(-hx, -2, hx, -2, [[-13, -10.6], [-5, -2.6], [2.6, 5], [10.6, 13]]);
       this._label("Cabins", 0, -hz + 0.3); this._label("Open Office", 0, 6, 2.9);
+      for (const x of [-11.8, -3.8, 3.8, 11.8]) this._label("🚪 Door", x, -1.6, 2.5, 0.45);
       for (const x of [-11, -6, 6, 11]) { this._desk(x, -hz + 2.2, 0xdfe6ea); this._box(0.7, 0.5, 0.06, 0x1d3557, x, 1.1, -hz + 2.0, false); if (x !== 11) this._wall(x + 2.5, -hz, x + 2.5, -2, [], 2.2, 0xe3ecf5); }
       for (let r = 0; r < 2; r++) for (let c = 0; c < 4; c++) { const x = -9 + c * 6, z = 1 + r * 3; this._desk(x, z, 0xdfe6ea); this._box(0.7, 0.5, 0.06, 0x1d3557, x, 1.1, z - 0.2, false); }
       this._box(0.5, 1.2, 0.5, 0x4fa3c7, hx - 1.2, 0.6, 4); this._label("Sales ↑ 12%", 0, -hz + 0.3, 2.4, 0.9);
@@ -6392,7 +6394,7 @@ class Game {
     this._gearChanged();
     this.minimap = new Minimap(this.world);
     this.bigmap = new BigMap(this);
-    window.addEventListener("keydown", (e) => { if (e.target && e.target.tagName === "INPUT") return; if (e.key.toLowerCase() === "g") { if (this.bigmap.isOpen) this.bigmap.close(); else this.bigmap.open(); } if (e.key.toLowerCase() === "m") { if (panelOpen()) closePanel(); else this._phone(); } if (e.key === "Escape") this.bigmap.close(); if (e.key.toLowerCase() === "j") { if (panelOpen()) closePanel(); else this._openJobs(); }  if (e.key === "2") this._toggleP2(); if (e.key.toLowerCase() === "v") { this.player.fpv = !this.player.fpv; this.progress.fpv = this.player.fpv; showToast(this.player.fpv ? L("👁️ First person. Press V to go back.") : L("🎥 Third person."), 2000); } if (e.key.toLowerCase() === "c") { this._wantShot = true; } if (e.key.toLowerCase() === "r" && this._partner) { if (panelOpen()) closePanel(); else if (!this.dialogue.active) this._partnerMenu(); } if (e.key.toLowerCase() === "t") { if (this.dialogue.active) this._chatFromDialogue(); else if (!panelOpen()) { const near = this._nearestInteractable(); if (near && near.npc) this._chat(near.npc); } } });
+    window.addEventListener("keydown", (e) => { if (e.target && e.target.tagName === "INPUT") return; if (e.key.toLowerCase() === "g") { if (this.bigmap.isOpen) this.bigmap.close(); else this.bigmap.open(); } if (e.key.toLowerCase() === "m") { if (panelOpen()) closePanel(); else this._phone(); } if (e.key === "Escape") this.bigmap.close(); if (e.key.toLowerCase() === "j") { if (panelOpen()) closePanel(); else this._openJobs(); }  if (e.key === "2") this._toggleP2(); if (e.key.toLowerCase() === "v") { this.player.fpv = !this.player.fpv; this.progress.fpv = this.player.fpv; showToast(this.player.fpv ? L("👁️ First person. Press V to go back.") : L("🎥 Third person."), 2000); } if (e.key.toLowerCase() === "c") { this._wantShot = true; } if (e.key.toLowerCase() === "o" && this.world.currentRoom && !panelOpen() && !this.dialogue.active && !this._lockPanel) { standPose(this.player.group); this._exitRoom(); showToast(L("🚪 You step outside."), 1500); } if (e.key.toLowerCase() === "r" && this._partner) { if (panelOpen()) closePanel(); else if (!this.dialogue.active) this._partnerMenu(); } if (e.key.toLowerCase() === "t") { if (this.dialogue.active) this._chatFromDialogue(); else if (!panelOpen()) { const near = this._nearestInteractable(); if (near && near.npc) this._chat(near.npc); } } });
     this._ambient = { chirp: 3, horn: 5, bell: 30 };
     startAmbient();
     this.clock = new THREE.Clock();
@@ -6983,7 +6985,7 @@ class Game {
     let k = 0;
     if (cur) {
       // Your own desk: a table, your chair, a visitor's chair, a nameplate. Built once per room.
-      const mb = room.type === "mainbuilding", dx = room.x0 + (mb ? 6 : 7), dz = room.z0 + (mb ? -3 : 3);
+      const mb = room.type === "mainbuilding"; if (!room.playerDeskSpot) room.playerDeskSpot = mb ? { lx: 6, lz: -3 } : this._pickDeskSpot(room, "front", { lx: 7, lz: 3 }); const dx = room.x0 + room.playerDeskSpot.lx, dz = room.z0 + room.playerDeskSpot.lz;
       const seatName = SEAT_NAMES[cur.id] || L("Your desk");
       const lx = dx - room.x0, lz = dz - room.z0;
       if (!room.playerDesk) { room.playerDesk = { x: dx, z: dz }; room._desk(lx, lz, cur.trial ? 0x3b3f4a : 0x8a5626); room._box(0.5, 0.45, 0.5, 0x3f6f9f, lx - 1.3, 0.22, lz - 0.9, false); room._box(0.9, 0.02, 0.6, 0xf4f6f8, lx + 0.2, 0.8, lz, false); room._box(0.4, 0.06, 0.3, 0xffd21e, lx - 0.5, 0.82, lz + 0.1, false); room._label(`${cur.icon} ${L(seatName)} · ${cur.name}`, lx, lz, 1.9, 0.6); room._label(L("Visitor's chair"), lx - 1.3, lz - 0.9, 1.3, 0.4); room.seatArrow = room._label("▼ " + L("YOUR SEAT"), lx, lz + 0.8, 2.6, 0.7); }
@@ -6995,12 +6997,12 @@ class Game {
       if (["police", "firefighter", "doctor"].includes(cur.id) && !this._dutyCar) { const col = cur.id === "police" ? 0xffffff : cur.id === "firefighter" ? 0xd62828 : 0xf4f6f8; const v = makeRideCar(col); const d0 = this.world.doors.find((x) => x.label === cur.place); v.position.set(d0.x + 5, 0, d0.z + 4); this.world.scene.add(v); const lm = (c) => new THREE.MeshStandardMaterial({ color: c, emissive: c, emissiveIntensity: 0.2 }); const l1 = new THREE.Mesh(new THREE.BoxGeometry(0.4, 0.15, 0.3), lm(0xff2020)); l1.position.set(-0.3, 1.45, 0); const l2 = new THREE.Mesh(new THREE.BoxGeometry(0.4, 0.15, 0.3), lm(0x2060ff)); l2.position.set(0.3, 1.45, 0); v.add(l1, l2); this._dutyLights = [l1, l2]; const tag = makeTextSprite(cur.id === "police" ? "POLICE" : cur.id === "firefighter" ? "FIRE" : "AMBULANCE", { size: 40, scale: 1.0 }); tag.position.set(0, 2.2, 0); v.add(tag); this._dutyCar = { group: v, speed: 15, kind: "car", label: cur.id === "police" ? L("Police jeep") : cur.id === "firefighter" ? L("Fire engine") : L("Ambulance"), controlled: true, duty: true }; this.interactables.push({ pos: v.position, radius: 3.0, visible: () => !(this.player.riding && this.player.riding.group === v), prompt: () => L("Drive the {v} (F for the siren)", { v: this._dutyCar.label }), activate: () => { this.player.mount(this._dutyCar); playHorn(); showToast(L("🚨 Duty vehicle. F toggles the siren. Roads only. E to get out."), 3200, "good"); } }); }
       // A partner rides with you.
       if (!this._partner) { this._partner = new Npc({ id: "partner", name: cur.id === "police" ? "Constable Ramesh" : cur.id === "firefighter" ? "Fireman Joe" : cur.id === "doctor" ? "Nurse Anita" : "Colleague Riya", look: { shirt: (UNIFORMS[cur.id] || {}).shirt || 0x3a86ff, trousers: (UNIFORMS[cur.id] || {}).trousers || 0x333333, hair: 0x111111, hat: (UNIFORMS[cur.id] || {}).cap || null }, pitch: 350, partner: true }, this.world, { pos: [dx + 2.5, dz + 2], fixed: true }); this.npcs.push(this._partner); this._partnerAlong = true; const P = this._partner; const wp = () => (P._mounted ? P._mounted.group.position : P.group.position); this.interactables.push({ pos: { get x() { return wp().x; }, get z() { return wp().z; } }, radius: 3.2, npc: P, visible: () => P.group.visible && !this.world.currentRoom, prompt: () => L("Talk to {n} (R)", { n: P.name }), activate: () => this._partnerMenu() }); }
-      this._partner.group.visible = true; this._partner._inRoom = true; this._partner.station({ x: dx + 2.6, z: dz + 1.8 }, Math.PI); this.roomInteractables.push({ pos: this._partner.position, radius: 2.4, npc: this._partner, prompt: () => L("Talk to {n}", { n: this._partner.name }), activate: () => this._partnerMenu() });
+      this._partner.group.visible = true; this._partner._inRoom = true; { const sp = this._nearSpot(room, dx, dz, [[2.6, 1.8], [-2.6, 1.8], [2.4, -1.4], [-2.4, 1.2], [0, 2.4], [1.6, 2.6]]); this._partner.station(sp, Math.PI); } this.roomInteractables.push({ pos: this._partner.position, radius: 2.4, npc: this._partner, prompt: () => L("Talk to {n}", { n: this._partner.name }), activate: () => this._partnerMenu() });
       if (!this._partnerBike) { const d0 = this.world.doors.find((x) => x.label === cur.place) || { x: dx, z: dz }; const b = makeScooty(0x1d3557); b.position.set(d0.x + 8.5, 0, d0.z + 4); this.world.scene.add(b); const tag = makeTextSprite(L("{n}'s scooty", { n: this._partner.name.split(" ").pop() }), { size: 36, scale: 0.8 }); tag.position.set(0, 1.6, 0); b.add(tag); this._partnerBike = { group: b, speed: 12, kind: "scooty", label: L("{n}'s scooty", { n: this._partner.name }), controlled: true }; this.interactables.push({ pos: b.position, radius: 2.4, visible: () => !this._partner._mounted && !(this.player.riding && this.player.riding.group === b), prompt: () => L("Ride {v}", { v: this._partnerBike.label }), activate: () => { this.player.mount(this._partnerBike); playHorn(); showToast(L("🛵 {n}: 'Careful with my scooty, partner.'", { n: this._partner.name }), 2600, "good"); } }); }
       // The boss stands by your desk.
       this._bosses = this._bosses || {};
       if (!this._bosses[cur.boss]) { this._bosses[cur.boss] = new Npc({ id: "boss_" + cur.id, name: cur.boss, boss: true, pitch: 340, look: { shirt: 0x1d3557, trousers: 0x111111, hair: 0x555555 } }, this.world, { pos: [dx - 3, dz - 2], fixed: true }); this.npcs.push(this._bosses[cur.boss]); }
-      const boss = this._bosses[cur.boss]; boss.group.visible = true; boss._inRoom = true; boss.station({ x: dx - 3.2, z: dz - 1.8 }, Math.PI / 2); this._bossNpc = boss;
+      const boss = this._bosses[cur.boss]; boss.group.visible = true; boss._inRoom = true; boss.station(this._nearSpot(room, dx, dz, [[-3.2, -1.8], [3.2, -1.8], [-3.2, 1.2], [0, -1.6], [-2.4, 2.4]], true), Math.PI / 2); this._bossNpc = boss;
       this.roomInteractables.push({ pos: boss.position, radius: 2.4, npc: boss, prompt: () => L("Talk to {n}", { n: cur.boss }), activate: () => this._talkBoss(cur, boss) });
       k++;
     }
@@ -7010,9 +7012,7 @@ class Game {
       const occ = room.occupantPos(); room.interviewDesks = room.interviewDesks || {};
       open.forEach((job, n) => {
         // The interviewer's desk, the boss behind it, and YOUR chair in front, with a bobbing arrow.
-        let lx = room.type === "mainbuilding" ? 6 : -(room.w / 2) + 3 + n * 4.2, lz = room.type === "mainbuilding" ? -7.5 : -(room.d / 2) + 3.2;
-        if (Math.hypot(room.x0 + lx - occ.x, room.z0 + lz - occ.z) < 3.2) lz += 3.2;
-        if (!room.interviewDesks[job.id]) { room._desk(lx, lz, 0x5a3a24); room._label(`${job.icon} ${L("Interview")}: ${job.name}`, lx, lz, 1.9, 0.55); const arrow = room._label("▼ " + L("YOUR SEAT"), lx, lz + 0.8, 2.6, 0.7); room.interviewDesks[job.id] = { lx, lz, arrow }; }
+        if (!room.interviewDesks[job.id]) { const sp = room.type === "mainbuilding" ? { lx: 6, lz: -7.5 } : this._pickDeskSpot(room, "back"); var lx = sp.lx, lz = sp.lz; room._desk(lx, lz, 0x5a3a24); room._label(`${job.icon} ${L("Interview")}: ${job.name}`, lx, lz, 1.9, 0.55); const arrow = room._label("▼ " + L("YOUR SEAT"), lx, lz + 0.8, 2.6, 0.7); room.interviewDesks[job.id] = { lx, lz, arrow }; }
         const D = room.interviewDesks[job.id]; if (n === 0 && !cur) this._seatArrow = D.arrow;
         this._bosses = this._bosses || {};
         if (!this._bosses[job.boss]) { this._bosses[job.boss] = new Npc({ id: "boss_" + job.id, name: job.boss, boss: true, pitch: 340, look: { shirt: 0x1d3557, trousers: 0x111111, hair: 0x555555 } }, this.world, { pos: [room.x0 + D.lx, room.z0 + D.lz - 1], fixed: true }); this.npcs.push(this._bosses[job.boss]); }
@@ -7030,6 +7030,35 @@ class Game {
       }
     }
   }
+  // The first clear, reachable spot next to (x, z) from a list of offsets.
+  _nearSpot(room, x, z, offs, skipFirstTaken = false) { const reach = this._roomReach(room); for (const [a, b] of offs) { const px = x + a, pz = z + b; if (room.walkable(px, pz) && reach.has(px - room.x0, pz - room.z0)) return { x: px, z: pz }; } return { x: x + offs[0][0], z: z + offs[0][1] }; }
+  // Which floor cells of a room can be reached on foot from its door (0.5 m grid). Extra boxes count as blocked.
+  _roomReach(room, extra = []) {
+    const step = 0.5, nx = Math.floor(room.w / step), nz = Math.floor(room.d / step), cell = (lx, lz) => [Math.round((lx + room.w / 2) / step), Math.round((lz + room.d / 2) / step)];
+    const ok = (i, k) => { if (i < 0 || k < 0 || i > nx || k > nz) return false; const lx = i * step - room.w / 2, lz = k * step - room.d / 2; if (!room.walkable(room.x0 + lx, room.z0 + lz)) return false; for (const b of extra) if (Math.abs(lx - b.lx) < b.hw + 0.35 && Math.abs(lz - b.lz) < b.hd + 0.35) return false; return true; };
+    const seen = new Set(), [si, sk] = cell(room.doorInside.x - room.x0, room.doorInside.z - room.z0), q = [[si, sk]]; if (!ok(si, sk)) return { has: () => false, size: 0 };
+    seen.add(si + "," + sk);
+    while (q.length) { const [i, k] = q.shift(); for (const [a, b] of [[1, 0], [-1, 0], [0, 1], [0, -1]]) { const ni = i + a, nk = k + b, key = ni + "," + nk; if (!seen.has(key) && ok(ni, nk)) { seen.add(key); q.push([ni, nk]); } } }
+    return { has: (lx, lz) => { const [i, k] = cell(lx, lz); return seen.has(i + "," + k); }, size: seen.size };
+  }
+  // A clear place for a desk whose chair can be reached from the door, away from people and other desks.
+  _pickDeskSpot(room, prefer = "back", pref = null) {
+    room._deskSpots = room._deskSpots || []; const occ = room.occupantPos(), dl = { lx: room.doorInside.x - room.x0, lz: room.doorInside.z - room.z0 };
+    const clear = (lx, lz) => room.walkable(room.x0 + lx, room.z0 + lz);
+    const base = this._roomReach(room);
+    const fits = (lx, lz) => {
+      for (let a = -0.9; a <= 0.91; a += 0.45) for (const b of [-0.45, 0, 0.45]) if (!clear(lx + a, lz + b)) return false;
+      if (!clear(lx, lz - 1) || !base.has(lx, lz + 1.1)) return false;
+      if (Math.hypot(room.x0 + lx - occ.x, room.z0 + lz - occ.z) < 3.2 || Math.hypot(lx - dl.lx, lz - dl.lz) < 3.5) return false;
+      if (room._deskSpots.some((s) => Math.hypot(s.lx - lx, s.lz - lz) < 3.6)) return false;
+      const r2 = this._roomReach(room, [{ lx, lz, hw: 0.8, hd: 0.4 }]); return r2.has(lx, lz + 1.1) && r2.size > base.size * 0.8;
+    };
+    const cands = pref ? [[pref.lx, pref.lz]] : [];
+    for (let lz = -room.d / 2 + 2; lz <= room.d / 2 - 2.5; lz += 0.5) for (let lx = -room.w / 2 + 1.5; lx <= room.w / 2 - 1.5; lx += 0.5) cands.push([lx, lz]);
+    const rest = cands.slice(pref ? 1 : 0).sort((a, b) => (prefer === "back" ? a[1] - b[1] || a[0] - b[0] : b[1] - a[1] || b[0] - a[0]));
+    for (const [lx, lz] of (pref ? [cands[0], ...rest] : rest)) if (fits(lx, lz)) { room._deskSpots.push({ lx, lz }); return { lx, lz }; }
+    return { lx: 0, lz: 0 };
+  }
   // Every room with no desk of yours gets a seat for you, front right by the door, with an arrow.
   _visitorSeat(room) {
     if (["home", "mainbuilding", "rooftop"].includes(room.type)) return;
@@ -7040,7 +7069,7 @@ class Game {
     showToast(`🪑 ${L("Your seat: front right, near the door. Follow the arrow.")}`, 2600);
   }
   _jobInterview(job) {
-    const S = SUBJECTS[job.subject];
+    const S = SUBJECTS[job.subject]; this._interviewJob = job;
     const boss = job.boss;
     const first = job.trial ? L("So, you want to be a {j}. Words are cheap. Come out to the Stadium Ground: {t}, ten tries, six clean to pass. Then we talk.", { j: job.name, t: job.trial.name }) : L("So, you want to be a {j}. First the written test: ten {s} questions, six to pass. Then the interview.", { j: job.name, s: S.name });
     const test = (cb) => (job.trial ? this._startTrial(job.trial, 10, cb, boss) : this._runPaper(`${job.icon} ${L("Written test")}: ${job.name}`, drawSubject(job.subject, 10, this.lvl), cb));

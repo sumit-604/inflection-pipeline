@@ -1,0 +1,55 @@
+stage: B08-promoter
+company: "SYNGENE"
+run_date: "2026-09-15"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "four SAST disclosures (10-Apr-2026, 17-Feb-2026, 15-Apr-2026, 22-Jul-2026) are scans with no extractable text; could not independently verify pledge mechanics beyond Biocon's separate SEBI SAST Regulation 31(4) zero-encumbrance declaration"
+  - "shareholding pattern is a screener table (SECONDARY), not the filed BSE XBRL disclosure"
+  - "counterparty-level breakdown for the 155% 'other related parties' sale-of-services jump (Rs 820mn to Rs 2,091mn, Note 26) NOT FOUND IN DOCUMENT"
+  - "current disposition (2026) of the 2022 Bioinnovat Research/CBI bribery case beyond the Aug-2022 charge sheet: PENDING LIVE VERIFICATION"
+  - "IiAS/SES/InGovern proxy-advisory commentary on the Executive Chairperson postal ballot resolution: not located, PENDING LIVE VERIFICATION"
+  - "whistleblower/Integrity complaint count: CARO clause xi(c) confirms complaints existed, no count disclosed anywhere in the AR"
+flags:
+  - type: FLAG-PROMOTER
+    verdict: "CONCERN"
+    top_findings:
+      - "21.6% of institutional votes and 7.7% of non-institutional public votes opposed the Kiran Mazumdar-Shaw Executive Chairperson appointment and remuneration resolution (Postal Ballot outcome, 19-Jun-2026), against a promoter block that voted 100% in favour"
+      - "Five of six non-CFO Executive Committee seats (CEO, CCO, CHRO, General Counsel, Head of CDMO-Large Molecule, Head of SynVent) turned over within a 12-month window (Oct-2025 to Jul-2026); the CEO/CCO/CHRO replacements are long-tenured Biocon-group insiders, not outside or internal-Syngene candidates"
+      - "B S R & Co. LLP resigned as statutory auditor of Syngene Scientific Solutions Ltd (material subsidiary), 9 days after issuing its FY26 audit report, at the same entity carrying a CARO clause 3(ix)(d) adverse remark; trips the auditor-resignation deal-breaker check (stated reason: mandatory rotation alignment, plausible but unconfirmed)"
+      - "155% jump in 'other related parties' sale of services (Rs 820mn to Rs 2,091mn, 6.1% of standalone revenue) to director-linked entities (Bicara Therapeutics, Abergy Therapeutics, Third Arc Bio, Therapoma, plus Jeeves - an enterprise where a director's relative is proprietor); no counterparty-level pricing disclosed"
+      - "2022 Bioinnovat Research/CBI bribery case was Biocon Biologics-adjacent; Syngene terminated the contract promptly and no Syngene KMP was charged - mitigating, not clearing"
+verdict: "CONCERN"
+scorecard: {clean: 3, caution: 5, red: 2}
+deal_breakers:
+  - "Auditor resignation within 3 years at material subsidiary Syngene Scientific Solutions Ltd (B S R & Co. LLP, effective 07-Jul-2026) - TRIGGERED, recorded not enforced; stated cause is mandatory-rotation alignment with the parent's incoming auditor, all SEBI concern fields answered not applicable"
+adverse_findings:
+  - {finding: "21.6% institutional dissent and 7.7% non-institutional public dissent on the Executive Chairperson/remuneration postal ballot", evidence_tier: "VERIFIED", source: "Postal Ballot Outcome Annexure A", date: "2026-06-19"}
+  - {finding: "Five of six non-CFO Executive Committee seats turned over in 12 months, senior replacements are Biocon insiders", evidence_tier: "VERIFIED", source: "Reg 30 change-in-management filings", date: "2025-10-28 to 2026-07-14"}
+  - {finding: "B S R & Co. LLP resigned as SSSL statutory auditor 9 days after its FY26 audit report, same entity carrying a CARO adverse remark", evidence_tier: "VERIFIED", source: "Reg 30 auditor-resignation filing and letter", date: "2026-07-08"}
+  - {finding: "155% jump in 'other related parties' sale of services to director-linked entities, no counterparty pricing breakdown", evidence_tier: "VERIFIED", source: "AR26 Note 26", date: "2026-04-28 (AR date)"}
+  - {finding: "2022 Bioinnovat Research/CBI bribery case, Biocon Biologics-adjacent; Syngene terminated the contract", evidence_tier: "MEDIA REPORTED", source: "Business Standard, Tribune, ThePrint, Scroll", date: "2022-07-06"}
+  - {finding: "Rs 5,181mn income-tax contingent liability, 11% of standalone net worth, FY09-FY22 span", evidence_tier: "VERIFIED", source: "AR26 Note 31", date: "2026-04-28 (AR date)"}
+  - {finding: "Rs 23,600 exchange fine for NRC composition non-compliance, quarter ended Sep-2025", evidence_tier: "VERIFIED", source: "NSE letter and Board comments filing", date: "2026-01-22"}
+transition_evidence:
+  - "New MD & CEO Siddharth Mittal installed 1-Jul-2026 - credentialed but a Biocon-group insider, not an outside hire (Reg 30 filing, 2026-03-27)"
+  - "Auditor rotation to S. R. Batliboi & Associates LLP for FY27-31 - mandatory under Companies Act 2013, not a discretionary upgrade (AGM Outcome, 2026-07-29)"
+  - "New independent directors Sanjaya Singh, Suresh Narayanan, Vijaya Chandru, Arun Chandavarkar added 2025-07-01 to 2026-07-29, though Chandavarkar carries pre-existing Biocon Group directorships"
+  - "Zero pledge/encumbrance on promoter Syngene holding, confirmed by Biocon's SEBI SAST Regulation 31(4) declaration, 2026-04-02"
+pledge_pct_latest: 0
+pledge_trend: "stable at 0% - Biocon's SEBI SAST Regulation 31(4) declaration (02-Apr-2026) confirms zero encumbrance on its Syngene holding throughout FY26; four scanned SAST filings in the corpus could not be independently read to cross-check"
+searches_performed:
+  - "Bioinnovat Research Syngene bribery graft case 2022"
+  - "Kiran Mazumdar-Shaw SEBI order Biocon insider trading"
+  - "Biocon SEBI adjudication order fine 2025 2026"
+  - "Syngene USFDA Form 483 warning letter inspection"
+  - "Biocon Syngene stake sale block deal 2024 2025 2026"
+  - "IiAS Syngene Kiran Mazumdar-Shaw executive chairperson proxy advisory"
+  - "Biocon promoter pledge shares Syngene encumbrance"
+  - "Glassdoor AmbitionBox Syngene International employee reviews rating"
+  - "Kiran Mazumdar-Shaw controversy criticism 2025"
+  - "Syngene International SEBI show cause notice OR NCLT OR SFIO"
+  - "Biocon income tax raid search seizure OR SFIO OR ED PMLA"
+searches_skipped: []
+verdict_basis: "Deal-breaker trigger (material-subsidiary auditor resignation 9 days after its audit report, same entity with a CARO adverse remark) plus the most concentrated, insider-directed Executive Committee turnover in the corpus (5 of 6 senior seats in 12 months, replacements from Biocon) plus a quantified 21.6% institutional dissent vote on the promoter's own remuneration resolution, against a background of zero pledge and no entity-level legal/SEBI action."
+analyst_note: "This is a controlled-subsidiary check, not a founder check: object is Biocon's conduct as controller. Verdict is CONCERN with transition evidence attached, not a static CONCERN - the professionalisation narrative (new CEO/CCO/CHRO, mandatory auditor rotation) is real but routes almost entirely through the Biocon parent rather than independent outside validation, so synthesis should read it as tightening parent control during a downturn, with visible minority pushback, rather than as improving independence. RPT counterparty opacity (Jeeves - a director's-relative enterprise - and four newly added director-linked biotech entities inside the 155% jump) is unresolved from filed documents and is the top candidate for a management question at Halt 1."

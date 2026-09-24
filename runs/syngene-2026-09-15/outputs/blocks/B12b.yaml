@@ -1,0 +1,44 @@
+stage: B12b
+company: "SYNGENE"
+run_date: "2026-09-15"
+model: claude-opus-5
+status: complete
+run: 2
+independent_flags_found: 39
+caught: 26
+partially_caught: 10
+missed:
+  - {severity: "CRITICAL", item: "Bayview/Unit 3 cost drag never quantified across Q2FY26 and Q4FY26 asks; Q1FY27 reveals Bayview stays uncapitalized through FY27 with minimal P&L expense, after FY26 cost growth was blamed on Bayview; FY27 mid-20s margin guide rests on this timing", anchor: "Q2FY26 Shyam Srinivasan/Deepak Jain PAGE 8; Q4FY26 Kunal Dhamesha/Deepak Jain PAGE 7; Q1FY27 Neelam Punjabi/Siddharth Mittal PAGE 13; Q4FY26 Deepak Jain PAGE 5"}
+  - {severity: "MAJOR", item: "Librela headwind end date slipped every call (FY26 -> couple of quarters FY27 -> end FY27); Q1FY27 admits Zoetis holds inventory for next couple of years with declining sales; B05 row 8 says no contradiction yet", anchor: "Q2FY26 Deepak Jain PAGE 11; Q3FY26 Peter Bains PAGE 14; Q4FY26 Peter Bains PAGE 8, PAGE 11; Q1FY27 Siddharth Mittal PAGE 10"}
+  - {severity: "MINOR", item: "PPLPHARMA single large-customer destock with no sales expected this fiscal, peer context for Librela duration", anchor: "PPLPHARMA-Concall_Jul_2026 Alankar Garude/Peter DeYoung PAGE 14-15"}
+pipeline_flags_not_supported: []
+promise_delivery_spot_checks: {checked: 5, confirmed: 5, wrong: 0}
+credibility_grade_concur: "concur - D is supported by two post-miss guidance cuts, an unacknowledged ~12-month Bayview slip and multi-quarter evasions; missed items F1-F3 add weight, while BMS, the met FY26 margin guide and Q1FY27 candor keep the record from being uniformly negative"
+findings:
+  - {severity: "CRITICAL", location: "B05 repeated_evasions/red_flags/1B margin bridge", item: "MISSED repeated evasion: Bayview and Unit 3 cost drag unquantified across calls; capitalization deferral keeps Bayview cost off FY27 P&L", anchor: "Q2FY26 PAGE 8; Q4FY26 PAGE 7; Q1FY27 PAGE 13"}
+  - {severity: "MAJOR", location: "B05 promise row 8/timeline_slippages/trigger 1", item: "MISSED Librela duration slip and Zoetis two-year inventory admission", anchor: "Q2FY26 PAGE 11; Q3FY26 PAGE 14; Q4FY26 PAGE 8, PAGE 11; Q1FY27 PAGE 10"}
+  - {severity: "MAJOR", location: "B05 2B/trigger 4", item: "Attrition cause stated as both voluntary opt-out and involuntary price loss in one call; B05 scores it honest-admission", anchor: "Q1FY27 Siddharth Mittal PAGE 4-5; Kiran Mazumdar-Shaw PAGE 2, PAGE 7, PAGE 9"}
+  - {severity: "MAJOR", location: "B06 item 5", item: "Bayview slip benchmarked against peer greenfield build durations; against own guidance peers slip 1-4 months vs Bayview ~12 months on an acquired, validated site", anchor: "Syngene Q3FY26 PAGE 4, PAGE 10; SAILIFE PAGE 12; ANTHEM Nov-25 PAGE 6, Jul-26 PAGE 9; PPLPHARMA PAGE 12"}
+  - {severity: "MINOR", location: "B05 3C/promise row 7", item: "Retroactive FY26 base restatement (declining since last year vs momentum intact) not logged; Bino answer mis-scored as most transparent", anchor: "Q4FY26 PAGE 2, PAGE 6; Q1FY27 PAGE 2, PAGE 9"}
+  - {severity: "MINOR", location: "B05 red flags", item: "FY26 margin beat explained as cost frugality to one analyst and as mix plus exceptional reclass to another", anchor: "Q4FY26 PAGE 7; PAGE 10-11"}
+  - {severity: "MINOR", location: "B05 2E", item: "Q3FY26 'did it surprise you' and 'slower vs peers' dodges not logged", anchor: "Q3FY26 PAGE 14, PAGE 15"}
+  - {severity: "MINOR", location: "B05 2D/B06 item 2", item: "Magnitude called unverifiable though mix bounds research services at about -6% QoQ [INFERENCE]; CDMO share 41% to 22% not analysed", anchor: "Q4FY26 PAGE 8; Q1FY27 PAGE 5"}
+  - {severity: "MINOR", location: "B05 1B", item: "Rs50cr hedge loss (55% of Q1FY27 EBITDA [INFERENCE]) and undisclosed hedge book not carried into H2 margin requirement", anchor: "Q1FY27 PAGE 5, PAGE 9"}
+  - {severity: "MINOR", location: "B05 2E", item: "Clinical-trial revenue refused in three calls, not in repeated-evasion tracker", anchor: "Q2FY26 PAGE 14; Q4FY26 PAGE 7; Q1FY27 PAGE 9"}
+  - {severity: "MINOR", location: "B05 2E rows 1-2", item: "Quarter counts understated; segment growth and medium-term outlook evasions each span four calls", anchor: "Q2FY26 PAGE 12-13; Q4FY26 PAGE 12; Q1FY27 PAGE 6-7"}
+  - {severity: "MINOR", location: "B05 1C/dropped_triggers/peer question 4", item: "Funding 'named headwind' rests on analyst wording only; management said broadly favorable", anchor: "Q4FY26 Harith Ahamed PAGE 12; Q3FY26 Peter Bains PAGE 14"}
+  - {severity: "MINOR", location: "B05 2E row 4", item: "Lenivia update promised for full year and delivered; stronger evidence is Q3 'working with our collaborating partner on that'", anchor: "Q3FY26 PAGE 16; Q4FY26 PAGE 12"}
+  - {severity: "MINOR", location: "B05 1C/red flag LOW", item: "India regulatory statements are tension, not a flat reversal", anchor: "Q2FY26 PAGE 10; Q1FY27 PAGE 12"}
+  - {severity: "MINOR", location: "B05/B06 Bayview date", item: "'by end of this year' anchor on PAGE 6 attaches to discussions; clean anchor is PAGE 12", anchor: "Q1FY27 PAGE 6, PAGE 12"}
+  - {severity: "MINOR", location: "B05 promise row 4", item: "BMS extension is a disclosed fact, not a promise pair; inflates delivered count", anchor: "Q3FY26 PAGE 3"}
+  - {severity: "MINOR", location: "B05 corrections item 19/promise row 5", item: "Revenue decline and attrition disclosure attributed to Kiran Mazumdar-Shaw; speaker was Siddharth Mittal", anchor: "Q1FY27 PAGE 4-5"}
+  - {severity: "MINOR", location: "B06 item 4", item: "Discovery-revenue conversion evidenced by SAILIFE only; ANTHEM growth is manufacturing-led (refer Verifier D)", anchor: "ANTHEM May-26 PAGE 15; SAILIFE PAGE 6"}
+  - {severity: "MINOR", location: "B06 risks_peers_raise", item: "Rs146cr is analyst-asserted accumulated loss, not a management-confirmed unrecognized tax loss", anchor: "PPLPHARMA PAGE 18-19"}
+  - {severity: "MINOR", location: "B06 Part 2", item: "MISSED PPLPHARMA single-customer destock context", anchor: "PPLPHARMA PAGE 14-15"}
+  - {severity: "MINOR", location: "B06 2E(ii)", item: "Peer multi-year repositioning and AI hype evidence runs against Syngene's within-FY27 turnaround claim; B06 calls it a parallel", anchor: "SAILIFE PAGE 6; ANTHEM Jul-26 PAGE 15; Syngene Q1FY27 PAGE 7"}
+  - {severity: "MINOR", location: "B06 item 5/B05 2E row 5", item: "ANTHEM unit utilization disclosure not used as contrast to Mangalore evasion", anchor: "ANTHEM Jul-26 PAGE 4; Syngene Q2FY26 PAGE 8"}
+critical_count: 1
+major_count: 3
+minor_count: 18
+acceptance_rate: 67
+run1_summary: "Run 1 (report 12b-verifier-redflags-run1.md): acceptance 38, CRITICAL 1 (Zoetis follow-on Lenivia evasion), MAJOR 11, MINOR 13. Stage 5 and stage 6 run 2 addressed them; credibility moved C to D."

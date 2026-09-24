@@ -1,0 +1,24 @@
+stage: B02-notes
+company: "SYNGENE"
+run_date: "2026-09-15"
+model: claude-sonnet-5
+pass: 1
+status: pass1_complete
+output_file: "runs/syngene-2026-09-15/outputs/reports/02-notes-pass1.md"
+notes_covered:
+  standalone: "Note 1 - Note 44 (p.218-289)"
+  consolidated: "Note 1 - Note 45 (p.305-375)"
+top_findings_count: 10
+priority_items_status:
+  - {item: "LBF2 customer concentration", found: true, detail: "two customers = 35.6% standalone / 37.2% consolidated revenue FY26, not named"}
+  - {item: "LBF2 biologics contract liabilities/take-or-pay", found: false, detail: "NOT FOUND IN DOCUMENT - no take-or-pay/minimum-offtake disclosure"}
+  - {item: "LBF3 CWIP ageing and overdue projects", found: true, detail: "S20B Infra warm shell overdue Rs407mn, no cost overruns"}
+  - {item: "LBF3 Bayview/Syngene USA acquisition accounting", found: true, detail: "asset acquisition under Ind AS 103, no goodwill, CWIP ~Rs3,768mn cumulative"}
+  - {item: "LBF3 CGU impairment testing", found: false, detail: "NOT FOUND IN DOCUMENT - policy boilerplate only, no quantified test for Bayview/Unit 3"}
+  - {item: "Related parties - Biocon and Syngene Scientific Solutions", found: true, detail: "full RPT table extracted; SSS auditor resignation not in AR (post year-end event)"}
+  - {item: "Forex hedging / hedge reserve", found: true, detail: "OCI hedge loss Rs-3,027mn pretax standalone FY26 vs Rs-143mn FY25"}
+pass_2_needed: true
+carry_forward_to_pass_2:
+  - "SSS Rs 315,000/share dividend figure (Note 45c consolidated) - numerically implausible, needs verification"
+  - "Bayview pre-operating cost rounding diff: Rs787mn standalone vs Rs785mn consolidated"
+  - "Consolidated cash flow hedge net-of-tax OCI figure not fully isolated"

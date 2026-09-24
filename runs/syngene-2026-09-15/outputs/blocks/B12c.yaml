@@ -1,0 +1,48 @@
+stage: B12c
+company: "SYNGENE"
+run_date: "2026-09-15"
+model: claude-opus-5
+status: complete
+run: 2
+scope: "PHASE 1 (Gate 0 + Emerging Moat only); audit run 2 on corrected stage outputs"
+gate0:
+  rules_checked: 48
+  fails:
+    - {id: "G-F1", severity: "MINOR", rule: "Deal-breakers: state WHICH years drive any deal-breaker", detail: "Deal-breaker 1 (Block A 5 <8) line names no driving years in report or YAML; FY26 (ROCE 8.35%) only inferable from Block A table"}
+    - {id: "G-F2", severity: "MINOR", rule: "analyst_note accuracy", detail: "Describes M1 as a peer-relative test failing against ANTHEM/SAILIFE; M1 is an own-history margin trend test (FY18 33.29% to FY26 24.64%)"}
+    - {id: "G-F3", severity: "MINOR", rule: "Output YAML schema", detail: "B01-gate0.yaml carries non-schema key run: 2; embedded YAML in 01-gate0.md does not; the two copies differ"}
+    - {id: "G-F4", severity: "MINOR", rule: "Rule 4 source anchors mandatory", detail: "FY24 capital employed / Total current liabilities cited 'AR2025 p. consol BS' with no page number; fidelity owned by Verifier A"}
+    - {id: "G-F5", severity: "MINOR", rule: "Output dashboard format", detail: "Moat profile bars required by the output spec are absent (table only)"}
+emoat:
+  rules_checked: 32
+  fails:
+    - {id: "E-F1", severity: "MINOR", rule: "Rule 3 source anchors on every evidence item", detail: "Approximate pages (p.~9, p.~50, p.~52, p.~85, p.~217); 'AR26 p.242/15706' line-number residue in 2A; pipeline-block anchors (B02 finding 3, B03 monitorables, Note 10 per B02, B04) used in place of document pages"}
+    - {id: "E-F2", severity: "MINOR", rule: "Completionist recount / evidence_mix accuracy", detail: "evidence_mix 3 CLAIM / 2 INFER does not reconcile to Section 3 rows (>=4 CLAIM: B2 Amgen, D1, E2 x2; 1 INFER: A3); E1 listed as DOC category but scored INFER; 23-row total counts R1 from Section 4"}
+    - {id: "E-F3", severity: "MINOR", rule: "Multiplier matches stated tier; one improvement one mechanism", detail: "E1 scored INFER 0.5 while Section 3 and summary table tier it DOC and its INFER row was removed; residual E1 evidence (Bayview site exists) duplicates A1's credit. Recomputed E1 = 1.0 (DOC) or 0 (no first-mover basis); total 19.6 or 18.6; MODEST unchanged"}
+    - {id: "E-F3b", severity: "MINOR", rule: "One improvement one mechanism (same root as E-F3)", detail: "Bayview site credited via A1 and E1; counted as a separate rule fail, single finding"}
+    - {id: "E-F4", severity: "MINOR", rule: "Scores consistent with stated strength", detail: "B2 (Weak, MM=2) and C1 (Weak, LH=2) carry the same raw as Moderate F1/H3; stage's own log item 6 logic (Weak -> LL) gives raw 1 each; total minus 2.0; MODEST unchanged"}
+    - {id: "E-F5", severity: "MAJOR", rule: "6C/6E carry existing moats from injected B01 block; no-double-credit rationale", detail: "6E, Section 3 B2/C1 and 4C state Gate 0 moats_confirmed counts BMS/dedicated centres and regulatory licence; B01 confirmed moats are M4 Customer Stickiness and M10 Switching Costs on revenue/receivable-day arithmetic, M7 Regulatory scored 0 PEER DATA NEEDED. Rationale sources to B04, not an injected stage 7 input; 4C exclusion applied to BMS but not to the Unit 3 USFDA VAI row scored in A1. Scores unchanged; moat evolution map misstated downstream"}
+    - {id: "E-F6", severity: "MINOR", rule: "NOT FOUND discipline; no estimates", detail: "1C carries a B04 'single-segment estimate' 61%/39% in the Current % cell; 2A retains $36.5mn declared not in corpus; 1B names Emergent BioSolutions / Mar-2025 though input_gaps says removed, while B01 cites the Bayview seller at results FY26 audited p.9 note 8 (fidelity to Verifier A)"}
+valuation: {rules_checked: 0, fails: [], status: "PENDING PHASE 3 - B10/B11 not in phase 1 scope"}
+expectation_ledger: {status: "NOT AUDITED - PENDING PHASE 3 (rules 13-14)"}
+business_understanding_narrative: {status: "NOT AUDITED - stage 13 not in phase 1 scope"}
+recomputed_destination_pe: ""
+recomputed_decision: ""
+findings:
+  - {severity: "MAJOR", location: "07-emoat.md 6E moat evolution map; Section 3 B2/C1; 4C", rule: "Existing moats carried from injected B01", finding: "Gate 0 confirmed moats misstated as BMS/dedicated centres + regulatory licence; B01 confirmed M4 and M10 only, M7 = 0", recomputed: "Existing (Gate 0, 2 confirmed): M4 Customer Stickiness (3), M10 Switching Costs (5); no score change"}
+  - {severity: "MINOR", location: "07-emoat.md Section 5 row E1; Section 3 E1", rule: "Multiplier vs stated tier; one improvement one mechanism", finding: "E1 scored INFER 0.5 against DOC tier; residual evidence duplicates A1", recomputed: "E1 1.0 (total 19.6) or 0 (total 18.6); MODEST"}
+  - {severity: "MINOR", location: "07-emoat.md Section 5 rows B2, C1", rule: "Scores consistent with strength label", finding: "Weak rows scored raw 2, same as Moderate rows; conflicts with log item 6 logic", recomputed: "raw 1 each; total 17.1 (or 16.6 with E1 at 0); MODEST"}
+  - {severity: "MINOR", location: "B07-emoat.yaml evidence_mix, completionist_recount", rule: "Recount accuracy", finding: "3 CLAIM / 2 INFER does not reconcile to Section 3 rows", recomputed: ">=4 CLAIM, 1 INFER on Section 3 as written"}
+  - {severity: "MINOR", location: "07-emoat.md 1A, 1C, 2A, 2D, C2, G2, H3", rule: "Rule 3 anchors", finding: "Approximate pages, line-number residue p.242/15706, pipeline-block anchors", recomputed: ""}
+  - {severity: "MINOR", location: "07-emoat.md 1B, 1C, 2A; B07 input_gaps", rule: "NOT FOUND discipline", finding: "Estimate in 1C number cell; out-of-corpus $36.5mn retained; seller name retained while marked removed; conflicts with B01 note 8 citation", recomputed: ""}
+  - {severity: "MINOR", location: "01-gate0.md Deal-breakers; B01 deal_breakers", rule: "State which years drive deal-breaker", finding: "No years named for deal-breaker 1", recomputed: "Driver: FY26 ROCE 8.35% (A2, A4); window FY24-FY26"}
+  - {severity: "MINOR", location: "B01 analyst_note", rule: "analyst_note accuracy", finding: "M1 described as peer-relative", recomputed: "M1 = own-history margin trend, -8.65pp"}
+  - {severity: "MINOR", location: "B01-gate0.yaml", rule: "YAML schema", finding: "Non-schema key run: 2; block and embedded YAML differ", recomputed: ""}
+  - {severity: "MINOR", location: "01-gate0.md Block A table FY24 row", rule: "Rule 4 anchors", finding: "AR2025 page missing for FY24 current liabilities", recomputed: ""}
+  - {severity: "MINOR", location: "01-gate0.md output", rule: "Dashboard format", finding: "Moat profile bars absent", recomputed: ""}
+critical_count: 0
+major_count: 1
+minor_count: 10
+acceptance_rate: 85
+observations_not_counted: "G-O4: Gate 0 data-confidence tier keys to 9-year 'data available' per prompt text; a shortest-window reading (3-year ROCE/B2-B4) would give LIMITED and move AVERAGE to AVOID; prompt does not support it; operator ruling candidate. G-O1: M3 on median ROCE would score 1 (moat 11, grand total 67), no class change. E-O1: Section 5A UA qualifier wording deferred to phase 3."
+run1_summary: "Run 1 (report 12c-verifier-framework-run1.md): acceptance 80, MAJOR 4 (A1 misband; 2-year window on B2/B3/B4/M12; company-memory anchors in B07; BMS triple credit), MINOR 12. All four MAJORs addressed in stage 1 and 7 run 2."

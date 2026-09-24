@@ -1,0 +1,64 @@
+stage: B04-bizmodel
+company: "SYNGENE"
+run_date: "2026-09-15"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Ind AS 108 single operating segment: no CRO/CDMO or finer service-line revenue split exists in audited notes; every mix % here is call-transcript or CRISIL-rationale sourced"
+  - "No finer split disclosed between Discovery Services / Dedicated Centres / T&CR, or between Small Molecule and Large Molecule CDMO"
+  - "Top-10 client revenue share, molecules-in-commercial-manufacturing count, and Unit 3/Bayview utilisation % NOT FOUND IN DOCUMENT"
+  - "Revenue per FTE not company-disclosed; only computable as a blended approximation from headcount and total revenue"
+  - "AR (16 of top 20 pharma clients) and CRISIL rationale (14 of top 20) disagree; unresolved"
+flags:
+  - type: FLAG-CUSTOMER-CONCENTRATION
+    reason: "Zoetis named directly as the CDMO anchor client only in concall transcripts (Concall_Jul_2026 p.7-10), never in AR notes (Ind AS 108 single segment); CEO/Chairperson admit new biologics capacity was built ahead of, not because of, customer diversification, materially more damaging than the AR's 'destocking'/'ongoing product issues' language"
+  - type: FLAG-MARGIN-SYMMETRY
+    reason: "CDMO unit economics show highly symmetric operating leverage: fixed-cost biologics capacity (Unit 3, Bayview) built for Zoetis is now a margin drag at low utilisation but would be an equally strong margin tailwind if refilled; Role 1 must not treat the refill as a one-sided upside case"
+business_type: "hybrid"
+revenue_streams:
+  - {name: "Research Services (Discovery + Dedicated Centres + T&CR)", type: "services, FFS/FTE/milestone", pct_of_revenue: 61, predictability: "M (dedicated centres) to L (open discovery)"}
+  - {name: "CDMO (Small Molecule + Large Molecule)", type: "services + manufacturing, batch/volume-based", pct_of_revenue: 39, predictability: "L, single-customer-driven"}
+asset_intensity: "heavy"
+wc_intensity: "negative"
+pricing_power: "moderate"
+cyclicality: "cyclical"
+moats_present:
+  - {moat: "Switching costs (dedicated R&D centres, 5yr+ co-location, BMS extended to 2035)", durability: "moderate-strong"}
+  - {moat: "Regulatory licence (USFDA/EMA/UK VMD/PMDA/Health Canada approved facilities)", durability: "strong"}
+valuation_methods:
+  primary: {method: "EV/EBITDA", why: "Less distorted by FY26 exceptional items and the depreciation step-up than P/E; standard for a capital-intensive CRDMO mid-utilisation-trough"}
+  secondary: {method: "DCF, two-stream basis (Research Services + CDMO modelled separately)", why: "Amendment 26 basis hierarchy discipline; a single blended revenue line hides the CDMO refill/Research attrition dynamics that actually drive value"}
+  tertiary: {method: "SOTP", why: "Structurally justified by the two different risk/return engines but not data-supported at note level; noted as a cross-check only"}
+  not_applicable: ["Asset-based/NAV (operating business, not R0/asset-holding)", "Dividend discount model (modest flat payout, not the return driver)"]
+irrelevant_ratios:
+  - {ratio: "Reported net profit margin (unadjusted)", why: "FY26 carries a Rs 632 mn net exceptional charge distorting the operating run rate"}
+  - {ratio: "Spot-quarter ROCE", why: "Large capital base (Bayview, Unit 3) not yet earning; understates steady-state economics"}
+  - {ratio: "Whole-company blended revenue growth YoY", why: "One customer's offtake swing can move it double digits; the two-stream trend matters more"}
+  - {ratio: "Debt-equity/leverage ratios", why: "Standalone debt-free, debt-equity ~0.002; leverage is not where the risk sits"}
+must_track_metrics:
+  - {metric: "CRO vs CDMO revenue split (quarterly, management-disclosed)", healthy: "stable or CDMO share rising", red_flag: "CDMO share falling quarter to quarter (59%->41%->22% seen)"}
+  - {metric: "Active client count", healthy: "rising above ~400", red_flag: "flat or falling two years running"}
+  - {metric: "Operating EBITDA margin ex-other income", healthy: "mid-20s to high-20s (steady-state 'a little higher than mid-20s' per CFO)", red_flag: "sustained below 25%"}
+  - {metric: "CWIP as % of net block / Bayview capitalisation status", healthy: "falling as capitalisation completes with matching revenue", red_flag: "rising or flat >2 years without revenue"}
+  - {metric: "Net cash position", healthy: "stable or rising", red_flag: "sustained multi-quarter decline while capex continues"}
+unit_economics:
+  unit: "Research Services: one billed scientist FTE-year; CDMO: one manufacturing batch/bioreactor run"
+  revenue_per_unit: "Research Services approximated only via blended revenue/employee (~Rs 44.7 lakh/employee FY26, computed); CDMO per-batch/per-litre pricing NOT FOUND IN DOCUMENT"
+  margin_per_unit: "High and symmetric incremental margin once staffed/capitalised; negative operating leverage when utilisation drops (FY26 margin 30.0%->26.0% on muted revenue plus new-facility cost)"
+  key_lever: "Utilisation of newly built biologics capacity (Unit 3, Bayview) and stabilisation of open-discovery client attrition"
+first_deterioration_signals:
+  - {risk: "Research-services price attrition", first_signal: "Research Services revenue line / active client count"}
+  - {risk: "Single-large-customer CDMO offtake recurrence", first_signal: "CDMO revenue share quarter to quarter"}
+  - {risk: "New biologics capacity under-utilised", first_signal: "Operating EBITDA margin ex-other income; D&A as % of revenue"}
+  - {risk: "FX hedge book reclassifying into P&L", first_signal: "Foreign exchange fluctuation loss/(gain) line"}
+  - {risk: "Guidance drift/credibility", first_signal: "Revenue from operations vs most recently stated guidance"}
+mgmt_questions:
+  - "Current utilisation of Unit 3 and Bayview separately, and utilisation needed for FY28 double-digit growth"
+  - "Beyond Zoetis, any other CDMO customer >10% of that revenue, and any minimum-offtake/take-or-pay protections"
+  - "Quantified CRO/CDMO revenue split target for FY28-FY29 and whether Research Services must shrink absolutely while re-mixing"
+  - "Exact Bayview capitalisation date and the quantified FY28 depreciation step-up"
+  - "Driver of the 155% RPT 'other related parties' sales jump and whether any counts inside the CDMO refill narrative"
+  - "Whether the Rs 3.08 bn pre-tax hedge OCI loss is fully reflected in FY27 guidance or has more tranches to reclassify"
+  - "Contingency plan if BIOSECURE Act conversion to contracts takes longer than the growth guidance assumes"
+one_line_verdict: "Capital-heavy CRDMO mid-trough after losing its anchor biologics customer, two narrow moats, unproven refill."
+analyst_note: "Concall transcripts already in the run corpus (not a formally listed Stage 4 input but present at work/extracted/concalls/) resolve two AR gaps: Zoetis is named directly as the CDMO anchor client by the CEO/Chairperson (Concall_Jul_2026 p.7-10), closing B02's PENDING LIVE VERIFICATION item; and management's own words describe the capacity build as preceding, not following, customer diversification ('we were over-dependent on one large customer... by the time [diversification] happened, we had a big drop... we then were left with spare capacity,' Kiran Mazumdar-Shaw, Concall_Jul_2026 p.7). This is more damaging than the AR's 'destocking'/'ongoing product issues' framing (B03's internal-inconsistency finding) and belongs in Role 2's Second-Order Section: the sequencing was capacity-then-diversification-attempt, not diversification-then-capacity."

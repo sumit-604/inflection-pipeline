@@ -383,6 +383,14 @@ road. Press E to talk.
 - Station jobs: Station Master, Ticket Collector (TC) and Loco Pilot, each
   interviewed at the Railway Station. Pilot interviews at Suryanagar
   Airport.
+- The flight to Mumbai for the match plays as a scene of about 45
+  seconds. The plane at Gate 1 turns, races and takes off over
+  Suryanagar, and the camera follows it above the clouds. Then you see
+  inside the cabin: you in seat 3A by the window, 19 other passengers,
+  and an air hostess walking the aisle with a trolley. Clouds drift past
+  the windows. The captain and the hostess speak, and a little turbulence
+  shakes the cabin. Last, the plane descends to land, the screen fades,
+  and the match story follows. A Skip button ends the scene early.
 - Aeroplanes: one comes in low over Suryanagar Airport and climbs away,
   two jets cross the sky high up, with blinking lights. A plane is parked
   at Airport Gate 1.

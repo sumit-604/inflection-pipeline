@@ -748,7 +748,7 @@ import * as THREE from 'three';
    label goes through L(). The voice follows the language.
    Questions and answers stay in English for now.
    ============================================================ */
-const GAME_VERSION = "v25";
+const GAME_VERSION = "v26";
 const LANGS = {
   en: { name: "English", voice: "en-IN" },
   hi: { name: "हिन्दी", voice: "hi-IN" },
@@ -6307,6 +6307,37 @@ const MORE_WALKERS = [
   ["Gym Bhaiya", 0x111111, 0x111111, [[-150, 6], [-60, 6]], true], ["Grandma with a stick", 0x9b5de5, 0, [[-60, -6], [-150, -6]], false, false, true],
 ];
 
+// ---- The airliner cabin for the flight scene: seats 3+3, windows, clouds outside ----
+const CABIN = { x: -900, z: -900, playerRow: 2, rows: 18 };
+function buildCabin(scene) {
+  const g = new THREE.Group(); g.position.set(CABIN.x, 0, CABIN.z); scene.add(g); g.visible = false;
+  const box = (w, h, d, c, x, y, z, emissive = 0) => { const m = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), new THREE.MeshStandardMaterial({ color: c, roughness: 0.7, emissive: emissive ? c : 0x000000, emissiveIntensity: emissive })); m.position.set(x, y, z); g.add(m); return m; };
+  const L = 26, half = L / 2;
+  box(3.9, 0.1, L, 0x3b4a6b, 0, -0.05, 0);                       // carpet
+  box(0.7, 0.012, L, 0x5a6d96, 0, 0.01, 0);                      // aisle runner
+  box(3.9, 0.12, L, 0xf2f4f7, 0, 2.35, 0);                       // ceiling
+  box(0.5, 0.04, L - 1, 0xfff6e0, 0, 2.28, 0, 0.9);               // light strip
+  for (const s of [-1, 1]) {
+    const x = s * 1.95;
+    box(0.1, 0.95, L, 0xe9edf2, x, 0.47, 0);                      // lower wall
+    box(0.1, 0.8, L, 0xe9edf2, x, 1.95, 0);                       // upper wall
+    for (let z = -half + 0.5; z < half; z += 1.0) box(0.1, 0.62, 0.55, 0xe9edf2, x, 1.25, z); // pillars, windows between
+    box(0.5, 0.35, L, 0xdfe4ea, s * 1.55, 2.05, 0);               // overhead bins
+  }
+  box(3.9, 2.4, 0.1, 0xdfe4ea, 0, 1.2, half);                     // front wall (cockpit door)
+  box(0.9, 1.9, 0.05, 0x9aa6ad, 0, 0.95, half - 0.06);
+  box(3.9, 2.4, 0.1, 0xdfe4ea, 0, 1.2, -half);                    // back wall
+  const sign = makeTextSprite("✈️ Suryanagar Air · SA 101 · Mumbai", { size: 42, scale: 1.1 }); sign.position.set(0, 1.95, half - 0.2); g.add(sign);
+  const belt = makeTextSprite("🔔 Fasten seat belt", { size: 38, scale: 0.7 }); belt.position.set(0, 2.1, half - 3); g.add(belt);
+  const seats = [];
+  for (let r = 0; r < CABIN.rows; r++) { const z = -10 + r * 1.1; for (const x of [-1.55, -1.1, -0.65, 0.65, 1.1, 1.55]) { box(0.42, 0.12, 0.45, 0x1d3557, x, 0.45, z); box(0.42, 0.7, 0.1, 0x1d3557, x, 0.85, z - 0.22); box(0.36, 0.14, 0.11, 0xffffff, x, 1.12, z - 0.22); box(0.08, 0.2, 0.4, 0x2a3a5c, x - 0.23, 0.6, z); seats.push({ x, z, row: r }); } }
+  // Clouds outside the windows, drifting past.
+  const clouds = []; const cm = new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 1, emissive: 0xffffff, emissiveIntensity: 0.35 });
+  for (let i = 0; i < 16; i++) { const c = new THREE.Mesh(new THREE.SphereGeometry(1.2 + (i % 4) * 0.5, 10, 8), cm); c.scale.set(2.2, 0.7, 1.4); const s = i % 2 ? 1 : -1; c.position.set(s * (6 + (i % 5) * 3), -1 + (i % 3) * 1.6, -30 + i * 4); g.add(c); clouds.push(c); }
+  let light = null; try { light = new THREE.PointLight(0xfff6e0, 14, 30, 2); light.position.set(0, 2.1, 0); g.add(light); } catch (e) { /* no light: the hemisphere light still shows the cabin */ }
+  return { group: g, seats, clouds, len: L };
+}
+
 function makeQuadruped() { return new THREE.Group(); }
 function makeCow() { return new THREE.Group(); }
 function makeVillager(look = {}) { return makeHuman({ skin: 0xdba274, hair: 0x1d1410, ...look }); }
@@ -7690,7 +7721,7 @@ class Game {
     spots.forEach(([x, z], i) => { const piece = new THREE.Mesh(new THREE.BoxGeometry(0.3, 0.12, 0.2), new THREE.MeshStandardMaterial({ color: lm[i] })); piece.position.set(x, 0.08, z); piece.rotation.y = i; this.world.scene.add(piece); const it = { pos: piece.position, radius: 1.8, mesh: piece, visible: () => piece.visible, prompt: () => L("Pick up the litter"), activate: () => { const pr = this.progress; piece.visible = false; playPick(); pr.litterToday = (pr.litterToday || 0) + 1; const left = this._litter.filter((l) => l.mesh.visible).length; if (left === 0) { pr.litterDays = (pr.litterDays || 0) + 1; this.addMoney(10, "clean road"); this.addRep(1, L("cleaned the road")); showToast(L("🧹 Kamla Didi: 'All five! Clean road, happy road. Here, ₹10 for a chocolate.'"), 3200, "good"); } else showToast(L("🧹 Picked up. {n} more on the colony road.", { n: left }), 1800); saveProgress(this.profile, pr); } }; this._litter.push(it); its.push(it); });
     // Aeroplanes in the sky, one parked at the airport, and the railway platform.
     this._planes = [makePlane(0x1d3557, 1), makePlane(0xd62828, 0.9), makePlane(0xff7b00, 0.8)]; for (const p of this._planes) { p.rotation.order = "YXZ"; this.world.scene.add(p); }
-    { const ap = this.world.doors.find((d) => d.label === "Suryanagar Airport"); if (ap) { const parked = makePlane(0x2a9d8f, 0.8); parked.position.set(ap.x - 2, 1.6 * 0.8, ap.z - 24); parked.rotation.y = Math.PI / 2; this.world.scene.add(parked); this.world.addBox(ap.x - 2, ap.z - 24, 14, 18); const lbl = makeTextSprite("✈️ Suryanagar Airport · Gate 1", { size: 40, scale: 1.2 }); lbl.position.set(ap.x - 2, 7, ap.z - 24); this.world.scene.add(lbl); } }
+    { const ap = this.world.doors.find((d) => d.label === "Suryanagar Airport"); if (ap) { const parked = makePlane(0x2a9d8f, 0.8); parked.position.set(ap.x - 2, 1.6 * 0.8, ap.z - 24); parked.rotation.y = Math.PI / 2; this._parkedPlane = parked; parked.rotation.order = "YXZ"; this._parkedHome = { x: ap.x - 2, y: 1.6 * 0.8, z: ap.z - 24 }; this.world.scene.add(parked); this.world.addBox(ap.x - 2, ap.z - 24, 14, 18); const lbl = makeTextSprite("✈️ Suryanagar Airport · Gate 1", { size: 40, scale: 1.2 }); lbl.position.set(ap.x - 2, 7, ap.z - 24); this.world.scene.add(lbl); } }
     its.push({ pos: { x: -79, z: RAIL.platformZ - 0.5 }, radius: 9, visible: () => !!this.world.railway && this.world.railway.state === "halted", prompt: () => (this.progress.ticket ? L("Board the train to {c} (ticket {p})", { c: L(this.progress.ticket.to), p: this.progress.ticket.pnr }) : L("Board the train (no ticket!)")), activate: () => this._boardTrain() });
     its.push({ pos: { x: -90, z: RAIL.platformZ + 1 }, radius: 3, visible: () => !!this.world.railway && this.world.railway.state !== "halted", prompt: () => L("Enquiry: when is the next train?"), activate: () => { const s = trainAt(this.clock.elapsedTime); const secs = s.state === "away" ? Math.round(s.next + 24) : s.state === "arriving" ? 1 : Math.round(RAIL.cycle - (this.clock.elapsedTime % RAIL.cycle) + 24); showToast(s.state === "arriving" ? L("🚆 It is arriving now! Stand behind the yellow line.") : L("🚆 Suryanagar Express on Platform 1 in about {n} seconds. Buy a ticket inside the station.", { n: secs }), 3200, "good"); } });
     // A lost wallet on the footpath every fourth day.
@@ -7727,6 +7758,72 @@ class Game {
     { const mu = (this._roadFolk2 || []).find((n) => n.def.id === "beg_munni"); if (mu) mu.group.visible = !pr.munniSchool; }
     const baba = (this.roadFolk || []).find((f) => f.def.road === "beggar"); if (baba) { baba.group.visible = !pr.babaJob; for (const b of this._babaBits || []) b.visible = !pr.babaJob; }
     if (this._watchman) { const on = !!pr.babaJob && !night; this._watchman.group.visible = on; this._watchman.def.road = "watchman"; }
+  }
+  // ---- The flight to Mumbai: take-off, cruise, the cabin with you and the passengers, landing ----
+  _flightScene(onDone) {
+    const ap = this.world.doors.find((d) => d.label === "Suryanagar Airport"); const plane = this._parkedPlane; if (!plane || !ap) { onDone(); return; }
+    if (this.world.currentRoom) this._exitRoom(); if (this.player.riding) this.player.dismount(); closePanel();
+    if (!this._cabin) { this._cabin = buildCabin(this.world.scene); const pick = [0, 3, 5, 7, 8, 12, 14, 16, 19, 21, 22, 26, 27, 29, 33, 34, 38, 41, 44, 47]; const shirts = [0xe75480, 0x3a86ff, 0x2a9d8f, 0xffb703, 0x9b5de5, 0xd62828, 0x8ecae6, 0xffffff];
+      this._cabin.people = pick.map((k, i) => { const s = this._cabin.seats[k]; if (!s || (s.row === CABIN.playerRow && s.x === -1.55)) return null; const h = makeVillager({ shirt: shirts[i % shirts.length], trousers: 0x3b3f4a, dress: i % 3 === 0, hair: [0x1d1410, 0x111111, 0x888888][i % 3] }); h.position.set(s.x, -0.12, s.z); h.rotation.y = 0; sitPose(h, "car"); this._cabin.group.add(h); return h; }).filter(Boolean);
+      const host = makeVillager({ shirt: 0xd62828, dress: true, hair: 0x111111 }); host.position.set(0, 0, 9); host.rotation.y = Math.PI; this._cabin.group.add(host); const trolley = new THREE.Mesh(new THREE.BoxGeometry(0.45, 0.9, 0.7), new THREE.MeshStandardMaterial({ color: 0xc9d1d9, metalness: 0.5 })); trolley.position.set(0, 0.45, 8.3); this._cabin.group.add(trolley); this._cabin.host = host; this._cabin.trolley = trolley; }
+    const seat = this._cabin.seats.find((s) => s.row === CABIN.playerRow && s.x === -1.55);
+    const P = this.player.group; this._cabin.group.add(P); P.position.set(seat.x, -0.12, seat.z); P.rotation.set(0, 0, 0); sitPose(P, "car");
+    const bar = document.createElement("div"); bar.id = "cut-bar"; bar.style.cssText = "position:fixed;left:50%;bottom:28px;transform:translateX(-50%);max-width:min(620px,92vw);padding:10px 16px;border-radius:12px;background:rgba(10,16,30,.78);color:#fff;font:600 16px system-ui,sans-serif;text-align:center;z-index:50;pointer-events:none";
+    const skip = document.createElement("button"); skip.id = "cut-skip"; skip.textContent = L("Skip ⏭"); skip.style.cssText = "position:fixed;right:16px;top:16px;z-index:51;padding:8px 14px;border-radius:10px;border:none;background:#fff;font:700 15px system-ui,sans-serif;cursor:pointer";
+    const fade = document.createElement("div"); fade.id = "cut-fade"; fade.style.cssText = "position:fixed;inset:0;background:#000;opacity:0;transition:opacity .8s;z-index:49;pointer-events:none";
+    try { document.body.appendChild(fade); document.body.appendChild(bar); document.body.appendChild(skip); } catch (e) { /* captions are optional */ }
+    skip.addEventListener("click", () => this._endFlight());
+    this._cut = { t: 0, onDone, plane, ap, bar, skip, fade, fired: new Set(), focus: { x: plane.position.x, y: 0, z: plane.position.z }, x0: this._parkedHome.x, y0: this._parkedHome.y, z0: this._parkedHome.z, shake: 0 };
+    playBell(); speakLine(L("Ladies and gentlemen, welcome aboard Suryanagar Air flight S A one zero one to Mumbai."), 360);
+  }
+  _cutSay(text, speak = false, pitch = 360) { const c = this._cut; if (!c) return; c.bar.textContent = text; if (speak) speakLine(text, pitch); }
+  _tickFlight(dt, elapsed) {
+    const c = this._cut; c.t += dt; const t = c.t, cam = this.camera, pl = c.plane, cab = this._cabin;
+    const once = (k, fn) => { if (!c.fired.has(k)) { c.fired.add(k); fn(); } };
+    if (t < 16) {
+      // Outside: the plane turns west, races, lifts off and climbs over Suryanagar.
+      cab.group.visible = false; const yaw = -Math.PI / 2;
+      let x = c.x0, y = c.y0, pitch = 0;
+      if (t < 3) { x = c.x0 - t * 2; }
+      else { const u = t - 3, acc = 7, top = 30, tu = top / acc, dist = u < tu ? 0.5 * acc * u * u : 0.5 * acc * tu * tu + top * (u - tu); x = c.x0 - 6 - dist; if (u > 2.5) { y = c.y0 + Math.min(80, (u - 2.5) * (u - 2.5) * 2.2); pitch = u < 9 ? -0.22 : -0.08; } }
+      pl.position.set(x, y, c.z0); pl.rotation.set(pitch, yaw, 0); c.focus = { x, y: 0, z: c.z0 };
+      if (t < 10) { cam.position.set(x + 20, y + 6, c.z0 + 12); cam.lookAt(x - 4, y + 1, c.z0); } else { cam.position.set(x + 4, y + 3, c.z0 + 26); cam.lookAt(x, y, c.z0); }
+      once("taxi", () => this._cutSay(L("🛫 The plane turns onto the runway. Engines roar!"))); if (t > 3) once("roll", () => { playWhoosh(); this._cutSay(L("Faster, faster... wheels up!")); }); if (t > 7) once("up", () => this._cutSay(L("☁️ Look down: Suryanagar gets smaller and smaller."))); if (t > 11) once("cruise", () => this._cutSay(L("Flying at 30,000 feet, above the clouds."), true));
+      return;
+    }
+    if (t < 36) {
+      // Inside: the cabin, you at the window, the passengers, the air hostess and her trolley.
+      pl.visible = true; cab.group.visible = true; const g = cab.group.position, pz = -10 + CABIN.playerRow * 1.1; c.focus = { x: g.x, y: 0, z: g.z };
+      for (const cl of cab.clouds) { cl.position.z -= dt * 16; if (cl.position.z < -32) cl.position.z += 64; }
+      const h = cab.host, hz = 9 - ((t - 16) * 0.9) % 18; h.position.z = hz; cab.trolley.position.z = hz - 0.7; animateHuman(h, dt, true, 0.6);
+      for (const p of cab.people) animateHuman(p, dt, false); animateHuman(this.player.group, dt, false); sitPose(this.player.group, "car"); for (const p of cab.people) sitPose(p, "car");
+      c.shake = t > 27 && t < 29.5 ? 0.05 : 0; const sx = (Math.random() - 0.5) * c.shake, sy = (Math.random() - 0.5) * c.shake;
+      if (t < 25) { cam.position.set(g.x + 0.35 + sx, 1.75 + sy, g.z + pz - 2.4); cam.lookAt(g.x - 0.9, 1.0, g.z + pz + 4); }
+      else if (t < 31) { cam.position.set(g.x + 0.1 + sx, 1.9 + sy, g.z + 11.5); cam.lookAt(g.x - 0.2, 0.9, g.z - 4); }
+      else { cam.position.set(g.x - 1.0, 1.35, g.z + pz + 0.35); cam.lookAt(g.x - 6, 1.1, g.z + pz + 3); }
+      once("in", () => this._cutSay(L("💺 Seat 3A, by the window. {n} passengers on board with you.", { n: cab.people.length + 1 })));
+      if (t > 19) once("cap", () => this._cutSay(L("Captain Kaur: Namaste! Flight time to Mumbai is 1 hour 50 minutes. Sit back and relax."), true, 340));
+      if (t > 23.5) once("host", () => this._cutSay(L("Air hostess: Tea, coffee or juice? A sandwich for the cricket fan?"), true, 470));
+      if (t > 27) once("bump", () => this._cutSay(L("🔔 Bump bump! Small turbulence. Seat belts on, everyone.")));
+      if (t > 31) once("win", () => this._cutSay(L("Out of the window: clouds like cotton, and the sun shining on the wing.")));
+      return;
+    }
+    if (t < 44) {
+      // Outside again: the descent to Mumbai.
+      cab.group.visible = false; const u = t - 36, x = 60 - u * 22, y = Math.max(6, 70 - u * 9); pl.position.set(x, y, 30); pl.rotation.set(0.1, -Math.PI / 2, 0); c.focus = { x, y: 0, z: 30 };
+      cam.position.set(x - 26, y + 5, 42); cam.lookAt(x, y, 30);
+      once("land", () => this._cutSay(L("🛬 Mumbai below! The sea, the tall buildings. Landing now."), true)); if (u > 6.2 && c.fade) c.fade.style.opacity = "1";
+      return;
+    }
+    this._endFlight();
+  }
+  _endFlight() {
+    const c = this._cut; if (!c) return; this._cut = null;
+    for (const el of [c.bar, c.skip, c.fade]) try { el.remove(); } catch (e) { /* already gone */ }
+    if (this._cabin) this._cabin.group.visible = false;
+    const pl = c.plane, h = this._parkedHome; pl.position.set(h.x, h.y, h.z); pl.rotation.set(0, Math.PI / 2, 0); pl.visible = true;
+    const P = this.player.group; this.world.scene.add(P); P.position.set(c.ap.x, 0, c.ap.z + 2.5); P.rotation.set(0, 0, 0); standPose(P); this.player._placeCamera(1);
+    playSuccess(); showToast(L("✈️ Landed in Mumbai. What a flight!"), 2600, "good"); c.onDone();
   }
   _tickTransport(dt, elapsed) {
     const RW = this.world.railway, pp = this.player.position, near = (x, z, r) => Math.hypot(pp.x - x, pp.z - z) < r;
@@ -7847,7 +7944,7 @@ class Game {
     const need = PACKING.filter((p) => p[1]).map((p) => p[0]); let packed = [];
     const card = openPanel(`<div class="job-title-row"><h2>✈️ ${L("Flight to Mumbai for the match")}</h2></div><p class="job-brief">${L("Ticket ₹800. Pack the bag: pick what a flight needs.")}</p><div class="btn-row">${PACKING.map((p) => `<button class="lang-btn" data-p="${p[0]}">${L(p[0])}</button>`).join("")}</div><div class="job-goal" id="fl-msg"></div><div class="btn-row"><button class="big-btn" id="fl-go">${L("Board")}</button></div>`);
     card.querySelectorAll("[data-p]").forEach((b) => b.addEventListener("click", () => { b.classList.toggle("on"); packed = [...card.querySelectorAll("[data-p].on")].map((x) => x.dataset.p); }));
-    card.querySelector("#fl-go").addEventListener("click", () => { const good = need.every((n) => packed.includes(n)) && !packed.includes("Moti") && !packed.includes("Cricket bat"); closePanel(); this.addMoney(-800, L("flight ticket")); pr.flights = (pr.flights || 0) + 1; if (good) this.addEnergy(20); this._snap("✈️", `Flew to Mumbai for the match${good ? "" : " (forgot something!)"}.`); this.dialogue.say("Captain Kaur", [L("Seat belts. Wheels up in two minutes."), good ? L("Perfect packing. The match was a thriller; you were on the big screen.") : L("You packed the bat and forgot the water bottle. Security laughed. The match was still a thriller.")], () => this._startPhase("over")); });
+    card.querySelector("#fl-go").addEventListener("click", () => { const good = need.every((n) => packed.includes(n)) && !packed.includes("Moti") && !packed.includes("Cricket bat"); closePanel(); this.addMoney(-800, L("flight ticket")); pr.flights = (pr.flights || 0) + 1; if (good) this.addEnergy(20); this._snap("✈️", `Flew to Mumbai for the match${good ? "" : " (forgot something!)"}.`); this._flightScene(() => this.dialogue.say("Captain Kaur", [L("Welcome to Mumbai! Thank you for flying Suryanagar Air."), good ? L("Perfect packing. The match was a thriller; you were on the big screen.") : L("You packed the bat and forgot the water bottle. Security laughed. The match was still a thriller.")], () => this._startPhase("over"))); });
   }
   _milkCow() { const pr = this.progress; if (pr.milked === pr.day) { showToast(L("The cows are milked for today."), 2000); return; } const n = 2 + (pr.day % 4); this.dialogue.say("Kisan Bhola", [L("{n} cows, two litres each. How many litres?", { n })], () => runStepQuiz({ profile: this.profile, level: 1, world: this.world, audio: Audio, countAttempt: () => countAttempt(this.profile, pr, "milk"), onSolve: () => { pr.milked = pr.day; this.addMoney(20, L("milking")); } }, { title: `🐄 ${L("Milking")}`, intro: L("Warm, sweet, frothy."), goal: "₹20", steps: [{ q: `${n} × 2 = ?`, answer: n * 2, unit: L("litres"), hint: L("Two each.") }], doneBtn: L("Okay"), doneHtml: `<b>Kisan Bhola:</b> "${L("Farmer's hands. Here, ₹20.")}"`, onLeave: () => {} })); }
   _treasureDig(i) { const pr = this.progress; pr.treasure = pr.treasure || []; if (pr.treasure.includes(i)) return; pr.treasure.push(i); this.addMoney(25, L("an old coin")); playSuccess(); showToast(L("🪙 An old coin {n} of 5, {w}!", { n: pr.treasure.length, w: L(TREASURE[i][2]) }), 3200, "good"); if (pr.treasure.length === 5) { pr.badges = pr.badges || []; pr.badges.push("treasure"); this._snap("🗺️", "Found all five of Kaka's old coins."); } saveProgress(this.profile, pr); }
@@ -8392,7 +8489,7 @@ class Game {
     if (onRoad && !onZebra) { if (elapsed - (this._roadToast || -99) > 4) { this._roadToast = elapsed; playHorn(); showToast("🚗 Not here! Cross only at the zebra crossing. Look right, left, right.", 2600, "bad"); } }
   }
 
-  _uiBlocking() { return this.dialogue.active || panelOpen() || !document.getElementById("notebook").hidden || !document.getElementById("controls-board").hidden || !document.getElementById("bigmap").hidden || !document.getElementById("parent-view").hidden; }
+  _uiBlocking() { return !!this._cut || this.dialogue.active || panelOpen() || !document.getElementById("notebook").hidden || !document.getElementById("controls-board").hidden || !document.getElementById("bigmap").hidden || !document.getElementById("parent-view").hidden; }
 
   // Any runtime error shows on screen so it can be reported, instead of silently freezing a feature.
   _reportError(e) {
@@ -8407,6 +8504,7 @@ class Game {
   _loopBody() {
     requestAnimationFrame(this._loop);
     const dt = Math.min(this.clock.getDelta(), 0.05), elapsed = this.clock.elapsedTime;
+    if (this._cut) { try { this._tickFlight(dt, elapsed); } catch (e) { this._reportError(e); this._endFlight(); } this.world.update(dt, elapsed, this._cut ? this._cut.focus : this.player.position); if (!this._contextLost) this.renderer.render(this.world.scene, this.camera); return; }
     const blocked = this._uiBlocking() || !!this._park;
     this.player.update(dt, blocked ? { x: 0, y: 0 } : this.input.move, this.input.running, blocked ? 0 : this.input.cameraDelta(dt), this.input.cameraIdleFor());
     this.world.update(dt, elapsed, this.player.position);

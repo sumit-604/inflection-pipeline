@@ -400,6 +400,12 @@ road. Press E to talk.
   from the menu, answer the robot quiz, or watch the planes, then they
   talk and you get friendship, energy and a photo in the album.
 
+## Mobile: call by name
+
+- Press M. Besides the number box there is a name box. Type the name of
+  anyone you know (Aarav, Mrs. Rao, Ramesh, Kishan) or a word like mom,
+  dad, grandma or sister, and press Call by name.
+
 ## Railway Station and airport
 
 - Railway Station at the north edge of Old Town, at the end of the Old

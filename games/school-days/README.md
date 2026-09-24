@@ -386,8 +386,15 @@ road. Press E to talk.
   passport check). Pack the bag for security and check in to get a
   boarding pass. Sit in the departure lounge until the boarding call,
   then go to Gate 1 and board. The flight scene names your city.
-- After landing you play the cricket match in that city: six balls on
-  the ground, a result, a medal, and the flight home.
+- After landing, a big banner shows the city name ("📍 Dubai"), and the
+  compass and a spoken direction point you to that city's Cricket
+  Stadium ("north-east, about 250 m"). Walk onto the ground and the final
+  starts: you bat the last six balls. Your team always wins by a big
+  margin because of you. The scorecard shows your score (a century if you
+  hit four sixes or more, otherwise still the top score in the team),
+  the other batters, the other team all out, and you as Player of the
+  Match. The commentator cheers your name, you lift the trophy, and you
+  fly home.
 
 ## Outings with friends and jobmates
 

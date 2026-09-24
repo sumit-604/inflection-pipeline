@@ -748,7 +748,7 @@ import * as THREE from 'three';
    label goes through L(). The voice follows the language.
    Questions and answers stay in English for now.
    ============================================================ */
-const GAME_VERSION = "v28";
+const GAME_VERSION = "v29";
 const LANGS = {
   en: { name: "English", voice: "en-IN" },
   hi: { name: "हिन्दी", voice: "hi-IN" },
@@ -8023,14 +8023,50 @@ class Game {
   _destMatch(bp) {
     const pr = this.progress, city = (bp && bp.to) || "Mumbai", good = bp ? bp.good : true, s3 = (bp && bp.sights) || ["The sea and the tall buildings.", "The crowd sings songs.", "Street food after the match."];
     pr.flights = (pr.flights || 0) + 1; this._snap("✈️", `Flew to ${city}${good ? "" : " (forgot something!)"}.`); saveProgress(this.profile, pr);
-    this.dialogue.say("Captain Kaur", [L("Welcome to {c}! Thank you for flying Suryanagar Air.", { c: city }), L(s3[0]), L("A taxi takes you to the {c} Cricket Stadium. Suryanagar Juniors against the {c} Colts. You bat at number 3!", { c: city })], () => this._goGround(() => {
-      const S = this.world.stadium; let banner = null; try { banner = makeTextSprite(`🏟️ ${city} ${L("Cricket Stadium")} · ${L("Final")}`, { size: 48, scale: 2.2 }); banner.position.set(S.batX, 7, S.z - 6); this.world.scene.add(banner); } catch (e) { /* the match still plays */ }
-      showToast(L("🏟️ The stadium is full. The crowd chants your name!"), 3000, "good");
-      this._startTrial({ kind: "cricket", name: L("The {c} match", { c: city }), icon: "🏏", cue: "Press F to swing when the ball reaches you.", hit: "SIX! The crowd roars!", miss: "Dot ball!", good: "What an innings! Suryanagar Juniors win the cup!", bad: "Good fight. The home team wins by a few runs. Next year!" }, 6, (h) => {
-        if (banner) this.world.scene.remove(banner); const runs = h * 6 + (6 - h); pr.matches = (pr.matches || 0) + 1; saveProgress(this.profile, pr); this._snap("🏏", `Scored ${runs} runs in the ${city} match.`); this.diary(L("Played the {c} match: {r} runs.", { c: city, r: runs }));
-        this.dialogue.say("Coach Vikram", [L("{r} runs off 6 balls in {c}!", { r: runs, c: city }), h >= 4 ? L("Player of the match! Your photo is in tomorrow's paper.") : L("A brave knock. Next time, watch the ball till the end."), L(s3[1]), L("(The next day you fly home to Suryanagar with a cap and a medal.)")], () => { const ap = this.world.doors.find((d) => d.label === "Suryanagar Airport"); if (ap) { this.player.group.position.set(ap.x, 0, ap.z + 2.5); this.player._placeCamera(1); } this._startPhase("over"); }, { pitch: 360 });
-      }, L("{c} Colts bowler", { c: city }), S);
-    }), { pitch: 340 });
+    this.dialogue.say("Captain Kaur", [L("Welcome to {c}! Thank you for flying Suryanagar Air.", { c: city }), L(s3[0]), L("Your match is at the {c} Cricket Stadium today. Suryanagar Juniors against the {c} Colts!", { c: city })], () => this._arriveCity(city, s3), { pitch: 340 });
+  }
+  // You step out in the new city: the place name, the compass to the stadium, and spoken directions.
+  _arriveCity(city, s3) {
+    const S = this.world.stadium, ap = this.world.doors.find((d) => d.label === "Suryanagar Airport"); if (this.world.currentRoom) this._exitRoom(); if (this.player.riding) this.player.dismount();
+    if (ap) { this.player.group.position.set(ap.x, 0, ap.z + 2.5); this.player._placeCamera(1); }
+    const gx = (S.x1 + S.x2) / 2, gz = (S.z1 + S.z2) / 2; let banner = null; try { banner = makeTextSprite(`🏟️ ${city} ${L("Cricket Stadium")}`, { size: 48, scale: 2.4 }); banner.position.set(gx, 9, gz); this.world.scene.add(banner); } catch (e) { /* the compass still points there */ }
+    this._matchTrip = { city, s3, banner };
+    const p = this.player.position, dx = gx - p.x, dz = gz - p.z, dist = Math.round(Math.hypot(dx, dz)), dir = (Math.abs(dz) > Math.abs(dx) * 0.4 ? (dz < 0 ? "north" : "south") : "") + (Math.abs(dx) > Math.abs(dz) * 0.4 ? (dz !== 0 && Math.abs(dz) > Math.abs(dx) * 0.4 ? "-" : "") + (dx > 0 ? "east" : "west") : "");
+    this.setObjective(`🏟️ ${L("{c} Cricket Stadium: follow the compass", { c: city })}`, gx, gz);
+    this._cityBanner(`📍 ${city}`, L("The stadium is {d}, about {m} m away. Follow the compass arrow.", { d: L(dir), m: dist }));
+    speakLine(L("Welcome to {c}. The cricket stadium is {d}, about {m} metres away. Follow the compass.", { c: city, d: L(dir), m: dist }), 380);
+  }
+  _cityBanner(title, sub) {
+    try { const el = document.createElement("div"); el.id = "city-banner"; el.style.cssText = "position:fixed;left:50%;top:18%;transform:translateX(-50%);padding:14px 26px;border-radius:14px;background:rgba(10,16,30,.8);color:#fff;text-align:center;z-index:48;pointer-events:none;font:800 30px system-ui,sans-serif;max-width:92vw"; el.innerHTML = `<div>${title}</div><div style="font:600 16px system-ui,sans-serif;margin-top:6px">${sub}</div>`; document.body.appendChild(el); setTimeout(() => { try { el.remove(); } catch (e) { /* gone */ } }, 6000); } catch (e) { showToast(`${title}: ${sub}`, 5000, "good"); }
+  }
+  // Walk onto the ground and the match starts.
+  _tickMatchTrip() {
+    const mt = this._matchTrip; if (!mt || mt.started || this.world.currentRoom || this._trial || this._uiBlocking()) return; const S = this.world.stadium, p = this.player.position;
+    if (p.x < S.x1 || p.x > S.x2 || p.z < S.z1 || p.z > S.z2) return;
+    mt.started = true; if (this.player.riding) this.player.dismount();
+    this._cityBanner(`🏟️ ${mt.city} ${L("Cricket Stadium")}`, L("30,000 fans! The final starts now."));
+    this.dialogue.say(L("Team captain"), [L("{p}, you made it! We bat first. You go in at number 3.", { p: this.playerName || L("champ") }), L("Last six balls are yours to finish. Hit them hard!")], () => this._startTrial({ kind: "cricket", name: L("The {c} final", { c: mt.city }), icon: "🏏", cue: "Press F to swing when the ball reaches you.", hit: "SIX! The crowd roars!", miss: "Dot ball!", good: "What an innings!", bad: "Still, what an innings before that!" }, 6, (h) => this._matchResult(mt, h), L("{c} Colts bowler", { c: mt.city }), S), { pitch: 380 });
+  }
+  // The scorecard: your team wins big, and you are the hero.
+  _matchResult(mt, h) {
+    const pr = this.progress, name = this.playerName || L("You"), city = mt.city; if (mt.banner) this.world.scene.remove(mt.banner); this._matchTrip = null;
+    const before = h >= 4 ? 76 + (pr.day % 9) : 58 + (pr.day % 11), yours = before + h * 6 + (6 - h), balls = 52 + (pr.day % 10) + 6, century = yours >= 100;
+    const mates = [[L("Aarav"), 34 + (pr.day % 7)], [L("Kabir"), 21 + (pr.day % 5)], [L("Rohan"), 12 + (pr.day % 6)], [L("Diya"), 9 + (pr.day % 4)]];
+    const extras = 11, total = yours + mates.reduce((s, x) => s + x[1], 0) + extras, oppo = total - (90 + (pr.day % 60)), margin = total - oppo;
+    pr.matches = (pr.matches || 0) + 1; pr.matchRuns = (pr.matchRuns || 0) + yours; if (century) pr.centuries = (pr.centuries || 0) + 1; pr.pom = (pr.pom || 0) + 1; saveProgress(this.profile, pr);
+    this._snap("🏆", `${city} final: ${yours} runs, Player of the Match. Won by ${margin} runs.`); this.diary(L("{c} final: I scored {r}. We won by {m} runs!", { c: city, r: yours, m: margin })); this.addRep && this.addRep(3, L("won the {c} final", { c: city }));
+    playSuccess(); setTimeout(() => playSuccess(), 500);
+    const row = (n, r, me) => `<div class="cart-row"${me ? ' style="font-weight:800"' : ""}><div>${me ? "⭐ " : ""}${n}</div><div>${r}</div></div>`;
+    const card = openPanel(`<div class="job-title-row"><h2>🏆 ${L("{c} final · Scorecard", { c: city })}</h2></div>
+      <div class="solved-banner">🎉 ${L("SURYANAGAR JUNIORS WIN BY {m} RUNS!", { m: margin })}</div>
+      <div class="score-big">${century ? "💯 " : ""}${name}: ${yours}* (${balls} ${L("balls")})</div>
+      <p class="job-brief">${century ? L("A CENTURY! {n} lifts the bat to the crowd. Highest score in the team.", { n: name }) : L("{n} is the top scorer of the whole team!", { n: name })}</p>
+      <div class="section-label">${L("Suryanagar Juniors")}: ${total}/4 (20 ${L("overs")})</div>
+      <div class="shop-list">${row(name, yours + "*", true)}${mates.map(([n, r]) => row(n, r, false)).join("")}${row(L("Extras"), extras, false)}</div>
+      <div class="section-label">${L("{c} Colts", { c: city })}: ${oppo} ${L("all out")} (18.2 ${L("overs")})</div>
+      <p class="job-brief">🏅 ${L("Player of the Match")}: <b>${name}</b></p>
+      <div class="btn-row"><button class="big-btn" id="mr-ok">${L("Lift the trophy!")}</button></div>`);
+    card.querySelector("#mr-ok").addEventListener("click", () => { closePanel(); this.dialogue.say(L("Commentator"), [L("And that is the match! Suryanagar Juniors win by {m} runs, and it is all because of {n}!", { m: margin, n: name }), century ? L("{r} not out: a century in the final! The whole stadium is on its feet.", { r: yours }) : L("{r} runs, the most in the team. What a player!", { r: yours }), L(mt.s3[1]), L("(The team lifts the trophy. The next day you fly home to Suryanagar with the cup and a medal.)")], () => { const ap = this.world.doors.find((d) => d.label === "Suryanagar Airport"); if (ap) { this.player.group.position.set(ap.x, 0, ap.z + 2.5); this.player._placeCamera(1); } this.setObjective(L("Home, a champion!"), null); this._startPhase("over"); }, { pitch: 360 }); });
   }
   // Outings: two friends (or jobmates) talk about a plan and invite you.
   _mates() {
@@ -8038,7 +8074,7 @@ class Game {
     const fr = (this.friends || []).map((f) => f.name); const d = this.progress.day || 1; return [fr[d % fr.length] || "Aarav", fr[(d + 2) % fr.length] || "Diya"];
   }
   _tickOutings(dt) {
-    const pr = this.progress; if (this._outing || this._cut || this._lounge || this._trial || this._chase || this._fieldCase || this.world.currentRoom || this._uiBlocking()) return;
+    const pr = this.progress; if (this._outing || this._matchTrip || this._cut || this._lounge || this._trial || this._chase || this._fieldCase || this.world.currentRoom || this._uiBlocking()) return;
     if (pr.outingDay === pr.day) return; this._outT = (this._outT || 0) + dt; if (this._outT < 25) return;
     const list = OUTINGS.filter((o) => o.when.includes(this.phase) && this.world.doors.find((d) => d.label === o.place)); if (!list.length) return;
     this._outT = 0; this._planOuting(list[(pr.day * 7 + (pr.outingCount || 0)) % list.length]);
@@ -8780,7 +8816,7 @@ class Game {
     if (this.player.riding && this.player.riding.kind === "bike" && this.progress.energy <= 0 && !this.progress.cast && !panelOpen()) this._fallOffBike();
     if (!blocked && this.player.riding && this.player.riding.duty && this.input.keys && this.input.keys.has("f") && !this._sirenHeld) { this._sirenHeld = true; this._siren = !this._siren; showToast(this._siren ? L("🚨 Siren on") : L("Siren off"), 1200); } if (!(this.input.keys && this.input.keys.has("f"))) this._sirenHeld = false;
     const useP = !blocked && this.input.usePressed(); if (this._trial) { const eP = this.input.interactPressed(); this._tickTrial(dt, useP || eP); this.ui.setInteractPrompt(`${this._trial ? this._trial.spec.icon : ""} ${L(this._trial && this._trial.kind === "cricket" ? "Swing" : "Shoot")}  (F / E)`); }
-    this._tickPet(dt); this._tickRain(); this._tickP2(dt); this._tickDirections(dt); this._tickCrowd(dt); this._tickField(dt); this._tickPartner(dt); this._tickChase(dt); this._tickTraffic(elapsed); this._tickRoadLife(dt); this._tickTransport(dt, elapsed); this._tickLounge(dt, elapsed); this._tickOutings(dt);
+    this._tickPet(dt); this._tickRain(); this._tickP2(dt); this._tickDirections(dt); this._tickCrowd(dt); this._tickField(dt); this._tickPartner(dt); this._tickChase(dt); this._tickTraffic(elapsed); this._tickRoadLife(dt); this._tickTransport(dt, elapsed); this._tickLounge(dt, elapsed); this._tickOutings(dt); this._tickMatchTrip();
     sirenTick(!!(this.player.riding && this.player.riding.duty && this._siren), dt); if (this._dutyLights) { const on = Math.floor(elapsed * 4) % 2 === 0; this._dutyLights[0].material.emissiveIntensity = this._siren && on ? 2 : 0.2; this._dutyLights[1].material.emissiveIntensity = this._siren && !on ? 2 : 0.2; }
     if (this.world.setTimeOfDay) this.world.setTimeOfDay(this.world.currentRoom ? "school" : this.phase);
     musicTick(this._trial ? "stadium" : this.world.currentRoom ? (["canteen", "eatery", "shop", "supermarket"].includes(this.world.currentRoom.type) ? "market" : null) : this.phase === "school" ? "school" : this.phase === "over" ? "evening" : Math.hypot(pp.x - 40, pp.z - 80) < 45 ? "market" : this.phase, dt);

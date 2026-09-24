@@ -132,7 +132,15 @@ takes you straight there.
 2. Duty vehicles: a police jeep, fire engine or ambulance at your
    workplace, F for the siren, flashing lights.
 3. A partner (Constable Ramesh, Fireman Joe, Nurse Anita) at your desk who
-   rides along on every call and comments.
+   rides along on every call and comments. Press E at him for his menu:
+   "Type and talk" opens the chat box (he answers about cases, the chase,
+   the boss, his family, chai); "His own scooty" makes him follow you on
+   his blue scooty whenever you ride; "Sit with me" seats him behind you on
+   your scooty or bike, or in the passenger seat of the jeep or car;
+   "Come with me" / "Wait here" toggles whether he tags along off call.
+   You can type these too: "sit with me", "take your own vehicle", "come
+   with me", "wait here". His scooty is parked outside the station and you
+   can ride it as well.
 4. Storm night on day 10: power cut, candles, antakshari. Heatwave on day
    7 with free lassi at the market.
 5. Sick day after three street foods: bed, the doctor at home, friends

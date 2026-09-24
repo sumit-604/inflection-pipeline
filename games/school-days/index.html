@@ -1,3 +1,11 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>School Days</title>
+</head>
+<body>
 <title>School Days</title>
 <style>
 /* ============================================================
@@ -735,7 +743,7 @@ import * as THREE from 'three';
    label goes through L(). The voice follows the language.
    Questions and answers stay in English for now.
    ============================================================ */
-const GAME_VERSION = "v13";
+const GAME_VERSION = "v19";
 const LANGS = {
   en: { name: "English", voice: "en-IN" },
   hi: { name: "हिन्दी", voice: "hi-IN" },
@@ -5186,6 +5194,7 @@ const PERSONA = {
   boss:    { name: "", age: 50, lives: "in New Town, near the court", job: "I run this office, and I watch who works and who talks", likes: "punctual people, closed cases and strong coffee", dislikes: "excuses", food: "idli sambar", colour: "navy", hobby: "chess", you: "officer", call: "officer" },
   spouse:  { name: "", age: 26, lives: "here, with you, in our home", job: "I work too, and I run this house with you", likes: "evening tea with you, Sunday park walks and Moti", dislikes: "you skipping lunch", food: "paneer", colour: "yellow", hobby: "gardening", you: "jaan", call: "jaan" },
   child:   { name: "", age: 6, lives: "with you and Maa, in our house", job: "I go to Sunrise Public School, like you did", likes: "cartoons, Moti and the swing", dislikes: "karela and homework", food: "Maggi", colour: "green", hobby: "drawing", you: "Papa", call: "Papa" },
+  partner: { name: "", age: 32, lives: "in the police quarters behind the station, with my wife and two kids", job: "I am your partner on duty. Ten years in this uniform, six of them on the street", likes: "a closed case, cutting chai and my old scooty", dislikes: "a red light jumper and a late tiffin", food: "chole bhature", colour: "khaki", hobby: "kabaddi on Sunday", you: "partner", call: "partner" },
   other:   { name: "", age: 45, lives: "in Shanti Nagar, like you", job: "I work in the colony", likes: "a good chat and hot chai", dislikes: "traffic", food: "chai and biscuits", colour: "yellow", hobby: "walking", you: "beta", call: "beta" },
 };
 const STOP = new Set("i me my you your yours we our us it its is are am was were be been do does did can could will would should shall may might have has had the a an and or but so to of in on at for with about from by as this that these those what which who whom whose where when why how not no yes ok okay please tell say give want like love hate know think there here then than too very really just also again still ever never always some any much many more most what's whats how's its it's im i'm you're dont don't didn't cant can't isn't aren't hi hello hey ho hain hai ka ki ke ko se mein na ne kya kyu kyon kaise kab kahan kaun aur ya to bhi ye yeh woh wo tum aap main mera meri tera teri tumhara apna nahi haan ji go went come came get got make made take took saw see seen today tomorrow yesterday now big small new old one two good bad nice thing things something anything everything lot lots".split(/\s+/));
@@ -5242,10 +5251,24 @@ function chatReply(kind, text, ctx = {}) {
   // 2. Greetings and manners.
   const greetRe = /^(hi|hello|hey|namaste|namaskar|hola|good (morning|afternoon|evening|night)|salaam|jai)\b[\s,!.]*/;
   if (greetRe.test(t) && t.replace(greetRe, "").split(/\s+/).filter(Boolean).length > 2) { t = t.replace(greetRe, ""); }
-  else if (greetRe.test(t)) return { maa: `Good ${ctx.timeWord || "day"}, ${you}. Did you eat?`, papa: `Hello, ${you}. Come, sit with me.`, dadi: `Jeete raho, ${you}. Come, sit near Dadi.`, gudiya: `Hiii ${you}! Play with me, na?`, friend: `Hey! What's up, ${you}?`, teacher: `Good ${ctx.timeWord || "day"}. Stand straight when you talk, please.`, other: `Namaste, ${you}. All well at home?` }[kind];
+  else if (greetRe.test(t)) return { maa: `Good ${ctx.timeWord || "day"}, ${you}. Did you eat?`, papa: `Hello, ${you}. Come, sit with me.`, dadi: `Jeete raho, ${you}. Come, sit near Dadi.`, gudiya: `Hiii ${you}! Play with me, na?`, friend: `Hey! What's up, ${you}?`, teacher: `Good ${ctx.timeWord || "day"}. Stand straight when you talk, please.`, boss: `Good ${ctx.timeWord || "day"}, ${you}. Your desk has cases. Why are you at mine?`, partner: `Hey, ${you}. Jeep is fuelled, chai is hot. Ready when you are.`, spouse: `Hello, ${you}. You are early today. Tea?`, child: `${you}! You are home! Come see my drawing!`, other: `Namaste, ${you}. All well at home?` }[kind] || `Namaste, ${you}.`;
   if (has("bye", "see you", "good night", "going now", "chalo")) return { gudiya: "Nooo, don't go! Okay, bye Bhaiya.", teacher: "Go on. Homework tonight, no excuses.", maa: "Go carefully. Come back before dark." }[kind] || `Bye, ${you}. Take care.`;
   if (has("thank", "shukriya", "dhanyavad")) return { maa: "You are welcome, my child.", papa: "Anytime, champ.", dadi: "Bless you.", gudiya: "You're welcome! Now play?", friend: "No thanks between friends, yaar.", teacher: "Thank yourself: you did the work." }[kind] || "Most welcome.";
   if (has("sorry", "maaf")) return { maa: "It is fine, beta. Just do not do it again.", papa: "Sorry is good. Fixing it is better. What will you do differently?", dadi: "Come here. All is forgiven.", gudiya: "Okay... but give me your chocolate.", friend: "Chill, yaar. We are friends.", teacher: "Accepted. Now show me you have learned." }[kind] || "No problem, child.";
+  if (kind === "partner") {
+    if (has("your scooty", "own vehicle", "own scooty", "your bike", "apni gaadi", "own ride")) { if (ctx.act) ctx.act("partnerOwn"); return "I will take my own scooty and follow you. It is the blue one."; }
+    if (has("sit with me", "sit behind", "pillion", "my vehicle", "my scooty", "my bike", "my car", "my jeep", "peeche baith", "get in")) { if (ctx.act) ctx.act("partnerPillion"); return "Okay, I will sit with you. Drive slow at the crossings."; }
+    if (has("come", "follow", "with me", "chalo", "along")) { if (ctx.act) ctx.act("partnerAlong"); return "Right behind you, partner. Lead the way."; }
+    if (has("stay", "wait here", "ruko")) { if (ctx.act) ctx.act("partnerStay"); return "Fine, I wait here. Shout if you need me."; }
+    if (has("case", "call", "duty", "today", "work")) return ctx.onDuty ? `We are on call ${ctx.onDuty} of 5, partner. Site first, then act, then the diary.` : "Three calls a day, then two files at the desk. Sit at your desk and the first call comes in.";
+    if (has("thief", "chase", "robber", "chor")) return "The thief runs for the avenue every time. Get close and press E before he crosses it.";
+    if (has("siren", "jeep", "vehicle", "gaadi")) return "The duty jeep is outside the station. F for the siren, roads only. My scooty goes anywhere.";
+    if (has("boss", "inspector", "sir", "promotion", "rank")) return `${ctx.boss || "The boss"} counts closed cases, nothing else. Close five a day and the rank comes on its own.`;
+    if (has("family", "wife", "kids", "home", "ghar")) return "Two kids, both in Sunrise Public School. My wife says I talk about cases in my sleep.";
+    if (has("tea", "chai", "food", "lunch", "tiffin", "hungry")) return "Chai at the Old Town Tea House after the third call. My treat, if you close all three.";
+    if (has("tired", "scared", "dar", "hard")) return "First month is the hardest, partner. I was there too. Breathe, then act.";
+    if (has("thank")) return "No thanks between partners. Same again tomorrow.";
+  }
   const asking = has("can you", "could you", "will you", "would you", "please", "pls", "plz", "take me", "drop me", "drive me", "give me", "buy me", "help me", "play with me", "tell me", "teach me", "let's", "lets ", "come with", "make me", "cook", "i want", "want to", "chahiye", "mujhe", "sakte ho", "sakti ho", "karo", "chalo", "le chalo", "do na", "can we", "shall we", "may i");
   // 2a. News about yourself: "I got a job", "I am bigger than you", "I won", "I am married".
   if (/^(i |i'm|im |me |my )/.test(t) || has(" i have", " i got", " i am", " i'm", "i've")) {
@@ -6403,7 +6426,7 @@ class Game {
     for (const o of this._officers || []) { o.group.visible = false; o._inRoom = false; }
     if (this._rto) { this._rto.group.visible = false; this._rto._inRoom = false; }
     for (const b of Object.values(this._bosses || {})) { b.group.visible = false; b._inRoom = false; }
-    if (this._partner) { this._partner._inRoom = false; this._partner.group.visible = !!this._onDuty; }
+    if (this._partner) { this._partner._inRoom = false; this._partner.group.visible = this._partnerActive(); if (this._partner.group.visible && !this._partner._mounted) { const P = this.player.group; this._partner.group.position.set(P.position.x - 1.5, 0, P.position.z + 1); } }
     this._placePeople();
     Audio.playPick();
   }
@@ -6704,8 +6727,9 @@ class Game {
       // A duty vehicle for the uniformed services waits at the door: jeep, fire engine, ambulance.
       if (["police", "firefighter", "doctor"].includes(cur.id) && !this._dutyCar) { const col = cur.id === "police" ? 0xffffff : cur.id === "firefighter" ? 0xd62828 : 0xf4f6f8; const v = makeRideCar(col); const d0 = this.world.doors.find((x) => x.label === cur.place); v.position.set(d0.x + 5, 0, d0.z + 4); this.world.scene.add(v); const lm = (c) => new THREE.MeshStandardMaterial({ color: c, emissive: c, emissiveIntensity: 0.2 }); const l1 = new THREE.Mesh(new THREE.BoxGeometry(0.4, 0.15, 0.3), lm(0xff2020)); l1.position.set(-0.3, 1.45, 0); const l2 = new THREE.Mesh(new THREE.BoxGeometry(0.4, 0.15, 0.3), lm(0x2060ff)); l2.position.set(0.3, 1.45, 0); v.add(l1, l2); this._dutyLights = [l1, l2]; const tag = makeTextSprite(cur.id === "police" ? "POLICE" : cur.id === "firefighter" ? "FIRE" : "AMBULANCE", { size: 40, scale: 1.0 }); tag.position.set(0, 2.2, 0); v.add(tag); this._dutyCar = { group: v, speed: 15, kind: "car", label: cur.id === "police" ? L("Police jeep") : cur.id === "firefighter" ? L("Fire engine") : L("Ambulance"), controlled: true, duty: true }; this.interactables.push({ pos: v.position, radius: 3.0, visible: () => !(this.player.riding && this.player.riding.group === v), prompt: () => L("Drive the {v} (F for the siren)", { v: this._dutyCar.label }), activate: () => { this.player.mount(this._dutyCar); playHorn(); showToast(L("🚨 Duty vehicle. F toggles the siren. Roads only. E to get out."), 3200, "good"); } }); }
       // A partner rides with you.
-      if (!this._partner) { this._partner = new Npc({ id: "partner", name: cur.id === "police" ? "Constable Ramesh" : cur.id === "firefighter" ? "Fireman Joe" : cur.id === "doctor" ? "Nurse Anita" : "Colleague Riya", look: { shirt: (UNIFORMS[cur.id] || {}).shirt || 0x3a86ff, trousers: (UNIFORMS[cur.id] || {}).trousers || 0x333333, hair: 0x111111, hat: (UNIFORMS[cur.id] || {}).cap || null }, pitch: 350, partner: true }, this.world, { pos: [dx + 2.5, dz + 2], fixed: true }); this.npcs.push(this._partner); }
-      this._partner.group.visible = true; this._partner._inRoom = true; this._partner.station({ x: dx + 2.6, z: dz + 1.8 }, Math.PI); this.roomInteractables.push({ pos: this._partner.position, radius: 2.4, npc: this._partner, prompt: () => L("Talk to {n}", { n: this._partner.name }), activate: () => this.dialogue.say(this._partner.name, [L(PARTNER_LINES[this.progress.day % PARTNER_LINES.length]), L("I ride with you on every call. Do not leave me behind.")], null, { pitch: 350, speaker: this._partner.id }) });
+      if (!this._partner) { this._partner = new Npc({ id: "partner", name: cur.id === "police" ? "Constable Ramesh" : cur.id === "firefighter" ? "Fireman Joe" : cur.id === "doctor" ? "Nurse Anita" : "Colleague Riya", look: { shirt: (UNIFORMS[cur.id] || {}).shirt || 0x3a86ff, trousers: (UNIFORMS[cur.id] || {}).trousers || 0x333333, hair: 0x111111, hat: (UNIFORMS[cur.id] || {}).cap || null }, pitch: 350, partner: true }, this.world, { pos: [dx + 2.5, dz + 2], fixed: true }); this.npcs.push(this._partner); this._partnerAlong = true; }
+      this._partner.group.visible = true; this._partner._inRoom = true; this._partner.station({ x: dx + 2.6, z: dz + 1.8 }, Math.PI); this.roomInteractables.push({ pos: this._partner.position, radius: 2.4, npc: this._partner, prompt: () => L("Talk to {n}", { n: this._partner.name }), activate: () => this._partnerMenu() });
+      if (!this._partnerBike) { const d0 = this.world.doors.find((x) => x.label === cur.place) || { x: dx, z: dz }; const b = makeScooty(0x1d3557); b.position.set(d0.x + 8.5, 0, d0.z + 4); this.world.scene.add(b); const tag = makeTextSprite(L("{n}'s scooty", { n: this._partner.name.split(" ").pop() }), { size: 36, scale: 0.8 }); tag.position.set(0, 1.6, 0); b.add(tag); this._partnerBike = { group: b, speed: 12, kind: "scooty", label: L("{n}'s scooty", { n: this._partner.name }), controlled: true }; this.interactables.push({ pos: b.position, radius: 2.4, visible: () => !this._partner._mounted && !(this.player.riding && this.player.riding.group === b), prompt: () => L("Ride {v}", { v: this._partnerBike.label }), activate: () => { this.player.mount(this._partnerBike); playHorn(); showToast(L("🛵 {n}: 'Careful with my scooty, partner.'", { n: this._partner.name }), 2600, "good"); } }); }
       // The boss stands by your desk.
       this._bosses = this._bosses || {};
       if (!this._bosses[cur.boss]) { this._bosses[cur.boss] = new Npc({ id: "boss_" + cur.id, name: cur.boss, boss: true, pitch: 340, look: { shirt: 0x1d3557, trousers: 0x111111, hair: 0x555555 } }, this.world, { pos: [dx - 3, dz - 2], fixed: true }); this.npcs.push(this._bosses[cur.boss]); }
@@ -6746,9 +6770,54 @@ class Game {
     };
     this.dialogue.say(job.boss, [L("Three calls came in. Take the vehicle, go to each site, act. Then two files at your desk.")], () => { if (this.world.currentRoom) this._exitRoom(); next(); }, { pitch: 340 });
   }
+  _partnerActive() { return !!this._partner && (!!this._onDuty || (this.working && this._partnerAlong && (this.phase === "morning" || this.phase === "school"))); }
+  // Ramesh's menu: type and talk, pick how he travels, or ask him to wait.
+  _partnerMenu() {
+    const p = this._partner; if (!p) return; const pr = this.progress; const mode = pr.partnerRide || "own";
+    const card = openPanel(`<div class="job-title-row"><h2>👮 ${p.name}</h2><button class="ghost-btn" id="pm-close">${L("Okay")}</button></div><p class="job-brief">"${L(PARTNER_LINES[pr.day % PARTNER_LINES.length])}"</p><p class="job-brief">${L("How do we travel?")} <b>${mode === "pillion" ? L("He sits with me on my vehicle.") : L("He rides his own scooty behind me.")}</b></p><div class="btn-row"><button class="big-btn" id="pm-chat">💬 ${L("Type and talk")}</button><button class="big-btn" id="pm-own">🛵 ${L("His own scooty")}</button><button class="big-btn" id="pm-pil">🧍 ${L("Sit with me")}</button><button class="big-btn" id="pm-along">${this._partnerAlong ? "✋ " + L("Wait here") : "🚶 " + L("Come with me")}</button></div>`);
+    card.querySelector("#pm-close").addEventListener("click", closePanel);
+    card.querySelector("#pm-chat").addEventListener("click", () => { closePanel(); this._chat(p); });
+    card.querySelector("#pm-own").addEventListener("click", () => { closePanel(); this._doAct("partnerOwn", p); });
+    card.querySelector("#pm-pil").addEventListener("click", () => { closePanel(); this._doAct("partnerPillion", p); });
+    card.querySelector("#pm-along").addEventListener("click", () => { closePanel(); this._doAct(this._partnerAlong ? "partnerStay" : "partnerAlong", p); });
+  }
+  _partnerAct(act) {
+    const p = this._partner, pr = this.progress; if (!p) return false;
+    if (act === "partnerOwn") { pr.partnerRide = "own"; this._partnerAlong = true; this._partnerUnmount(); showToast(L("🛵 {n} takes his own scooty and follows you.", { n: p.name }), 2600, "good"); }
+    else if (act === "partnerPillion") { pr.partnerRide = "pillion"; this._partnerAlong = true; this._partnerUnmount(); showToast(L("🧍 {n} will sit with you on your vehicle.", { n: p.name }), 2600, "good"); }
+    else if (act === "partnerAlong") { this._partnerAlong = true; showToast(L("🚶 {n} comes with you.", { n: p.name }), 2200, "good"); }
+    else if (act === "partnerStay") { this._partnerAlong = false; this._partnerUnmount(); showToast(L("✋ {n} waits here.", { n: p.name }), 2200); }
+    else return false;
+    saveProgress(this.profile, pr); return true;
+  }
+  // Put the partner on a seat (his scooty, or behind you) and take him off again.
+  _partnerMount(ride, seat) {
+    const p = this._partner; if (!p || p._mounted === ride) return; this._partnerUnmount();
+    ride.group.add(p.group); p.group.position.set(seat.x, seat.y, seat.z); p.group.rotation.set(0, 0, 0); sitPose(p.group, ride.kind === "car" ? "car" : "scooty"); p._mounted = ride; p.fixed = true;
+  }
+  _partnerUnmount() {
+    const p = this._partner; if (!p || !p._mounted) return; const v = p._mounted.group;
+    const wx = v.position.x + Math.cos(v.rotation.y) * 1.6, wz = v.position.z - Math.sin(v.rotation.y) * 1.6;
+    this.world.scene.add(p.group); p.group.position.set(wx, 0, wz); p.group.rotation.set(0, v.rotation.y, 0); standPose(p.group); p._mounted = null;
+  }
   _tickPartner(dt) {
-    const p = this._partner; if (!p || !this._onDuty || this.world.currentRoom) return; p.group.visible = true; p.fixed = true;
-    const g = p.group, pp = this.player.position, dx = pp.x - g.position.x, dz = pp.z - g.position.z, d = Math.hypot(dx, dz);
+    const p = this._partner; if (!p) return;
+    if (!this._partnerActive() || this.world.currentRoom) { if (p._mounted) this._partnerUnmount(); if (!this.world.currentRoom) p.group.visible = false; return; }
+    p.group.visible = true; p.fixed = true; const mode = this.progress.partnerRide || "own", R = this.player.riding, pp = this.player.position;
+    // You ride: he sits behind you, or he takes his own scooty and follows.
+    if (R && R.controlled && R.kind !== "bike" && R.kind !== "swing") {
+      if (mode === "pillion") { if (p._mounted !== R) this._partnerMount(R, R.kind === "car" ? { x: (R.group.userData.seat || { x: 0 }).x < 0 ? 0.45 : -0.45, y: (R.group.userData.seat || { y: 0.1 }).y, z: (R.group.userData.seat || { z: 0.1 }).z } : { x: 0, y: (R.group.userData.seat || { y: 0.26 }).y, z: (R.group.userData.seat || { z: -0.3 }).z - 0.55 }); return; }
+      const b = this._partnerBike; if (!b || R.group === b.group) { if (p._mounted) this._partnerUnmount(); } else {
+        const g = b.group, dxb = pp.x - g.position.x, dzb = pp.z - g.position.z, db = Math.hypot(dxb, dzb);
+        if (p._mounted !== b) { if (db > 60) { g.position.set(pp.x - 2, 0, pp.z + 2); } this._partnerMount(b, b.group.userData.seat || { x: 0, y: 0.26, z: -0.3 }); }
+        if (db > 4) { const step = Math.min(db - 3.2, Math.max(R.speed || 12, b.speed) * 1.15 * dt); g.position.x += (dxb / db) * step; g.position.z += (dzb / db) * step; g.rotation.y = Math.atan2(dxb, dzb); }
+        if (db > 90) { g.position.set(pp.x - 2, 0, pp.z + 2); }
+        return;
+      }
+    }
+    // You walk: he gets off and walks beside you.
+    if (p._mounted) this._partnerUnmount();
+    const g = p.group, dx = pp.x - g.position.x, dz = pp.z - g.position.z, d = Math.hypot(dx, dz);
     if (d > 3) { const sp = this.player.riding ? 15 : 4.5, step = Math.min(d - 2.5, sp * dt); g.position.x += (dx / d) * step; g.position.z += (dz / d) * step; g.rotation.y = Math.atan2(dx, dz); animateHuman(g, dt, true, 0.9); } else animateHuman(g, dt, false);
     if (d > 60) { g.position.x = pp.x - 2; g.position.z = pp.z; }
   }
@@ -6850,7 +6919,7 @@ class Game {
 
   // ---- The chat box ----
   _npcKind(npc) {
-    const id = npc && npc.def ? npc.def.id : ""; if (id === "moti") return "pet"; if (npc && npc.def && npc.def.boss) return "boss"; if (npc && npc.def && npc.def.kin) return npc.def.kin; if (["maa", "papa", "dadi", "gudiya"].includes(id)) return id;
+    const id = npc && npc.def ? npc.def.id : ""; if (id === "moti") return "pet"; if (npc && npc.def && npc.def.boss) return "boss"; if (npc && npc.def && npc.def.partner) return "partner"; if (npc && npc.def && npc.def.kin) return npc.def.kin; if (["maa", "papa", "dadi", "gudiya"].includes(id)) return id;
     if (npc && npc.def && npc.def.child) return "friend"; if (id.startsWith("t_") || (npc && npc.def && TEACHERS[id])) return "teacher"; return "other";
   }
   _chatFromDialogue() {
@@ -6872,7 +6941,7 @@ class Game {
       marksToday: this._marksToday || 0, termMarks: this.termMarks(), rank: last ? last.rank : 0, money: fmtMoney(pr.money), homework: pr.homework.length, homeworkSubjects: [...new Set(pr.homework.map((h) => SUBJECTS[h.subject].name))].join(", "),
       clock: this.clockText(), period: per ? per.name : "", nextPeriod: nxt ? nxt.name : "", timeWord: this.phase === "morning" ? "morning" : this.phase === "school" || this.phase === "over" ? "afternoon" : this.phase === "evening" ? "evening" : "night",
       playerName: this.playerName, stageLabel: this.profileLabel, phase: this.phase, tiffin: !!pr.tiffin, working: this.working, pocketGiven: !!this._pocketGiven, canAct: (name) => this._canAct(name, npc), act: (name) => { if (!this._canAct(name, npc)) return false; this._pendingAct = name; return true; }, places: this.world.doors.filter((d) => !["House", "Apartments"].includes(d.label)).map((d) => d.label),
-      locate: (label) => { const d = this.world.doors.find((x) => x.label === label); if (!d) return ""; const p = this.player.position, dx = d.x - p.x, dz = d.z - p.z, dist = Math.round(Math.hypot(dx, dz)); const dir = Math.abs(dx) > Math.abs(dz) * 2.4 ? (dx > 0 ? "east" : "west") : Math.abs(dz) > Math.abs(dx) * 2.4 ? (dz > 0 ? "south" : "north") : (dz > 0 ? "south" : "north") + "-" + (dx > 0 ? "east" : "west"); this.bigmap.waypoint = { name: label, x: d.x, z: d.z }; this.setObjective(`${L("Go to")} ${label}`, d.x, d.z + 2); return `${dir}, about ${dist} m away`; }, bestFriend: fr ? FRIENDS.find((f) => f.id === fr[0]).name : "", job: job ? job.name : "", shifts: pr.shifts };
+      locate: (label) => { const d = this.world.doors.find((x) => x.label === label); if (!d) return ""; const p = this.player.position, dx = d.x - p.x, dz = d.z - p.z, dist = Math.round(Math.hypot(dx, dz)); const dir = Math.abs(dx) > Math.abs(dz) * 2.4 ? (dx > 0 ? "east" : "west") : Math.abs(dz) > Math.abs(dx) * 2.4 ? (dz > 0 ? "south" : "north") : (dz > 0 ? "south" : "north") + "-" + (dx > 0 ? "east" : "west"); this.bigmap.waypoint = { name: label, x: d.x, z: d.z }; this.setObjective(`${L("Go to")} ${label}`, d.x, d.z + 2); return `${dir}, about ${dist} m away`; }, bestFriend: fr ? FRIENDS.find((f) => f.id === fr[0]).name : "", job: job ? job.name : "", shifts: pr.shifts, onDuty: this._onDuty || 0, boss: job ? job.boss : "" };
   }
   // What a chat request can make happen right now.
   _canAct(name, npc) {
@@ -6882,6 +6951,7 @@ class Game {
       case "drivehome": return id === "papa" && this.phase === "over" && !!this.car.atSchool;
       case "homework": return ["maa", "papa", "dadi"].includes(id) && this.phase === "evening" && pr.homework.length > 0 && home;
       case "story": return id === "dadi" && this.phase === "night" && home;
+      case "partnerAlong": case "partnerOwn": case "partnerPillion": case "partnerStay": return id === "partner";
       case "ludo": return ["papa", "gudiya", "maa"].includes(id) && this.phase === "night" && home;
       case "movie": return ["papa", "maa"].includes(id) && this.phase === "night" && home;
       case "count": return id === "gudiya" && this.phase !== "night" && home;
@@ -6898,6 +6968,7 @@ class Game {
       case "drive": case "drivehome": this._exitRoom(); { const c = this.car; this.player.group.position.set(c.group.position.x, 0, c.group.position.z + 3); } this._carRide(); break;
       case "homework": this._homework(); break;
       case "story": this._nightStory(); break;
+      case "partnerAlong": case "partnerOwn": case "partnerPillion": case "partnerStay": this._partnerAct(name); break;
       case "ludo": this._nightLudo(); break;
       case "movie": this._nightMovie(); break;
       case "count": this._talkGudiya(); break;
@@ -7907,7 +7978,7 @@ class Game {
     for (const mv of this.world.cityMovers) { const v = mv.obj; v.userData.brake = false; const dx = pp.x - v.position.x, dz = pp.z - v.position.z; if (dx * dx + dz * dz < 1600) { const r = v.rotation.y, fx = Math.sin(r), fz = Math.cos(r); const along = dx * fx + dz * fz, side = dx * fz - dz * fx; if (along > 0 && along < mv.L + 7 && Math.abs(side) < mv.W + 1.2) v.userData.brake = true; } }
     // People.
     const engagedId = this._engagedNpc && blocked ? this._engagedNpc.id : null;
-    for (const npc of this.npcs) { if (!npc.group.visible) continue; const dxn = npc.position.x - pp.x, dzn = npc.position.z - pp.z; if (dxn * dxn + dzn * dzn < 130 * 130 || npc.id === engagedId) npc.update(dt, pp, npc.id === engagedId, this.dialogue.talkingFor(npc.id)); }
+    for (const npc of this.npcs) { if (!npc.group.visible || npc._mounted) continue; const dxn = npc.position.x - pp.x, dzn = npc.position.z - pp.z; if (dxn * dxn + dzn * dzn < 130 * 130 || npc.id === engagedId) npc.update(dt, pp, npc.id === engagedId, this.dialogue.talkingFor(npc.id)); }
     // Sounds.
     ambientTick(0.5 + Math.sin(elapsed * 0.35) * 0.5);
     engineTick(this.player.riding ? "auto" : null, this.player.riding ? 30 : 0, dt);
@@ -8326,3 +8397,6 @@ function boot() {
 boot();
 
 </script>
+
+</body>
+</html>

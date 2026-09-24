@@ -371,12 +371,21 @@ road. Press E to talk.
 
 ## Travel: ticket, lounge, board, journey
 
+- The airport and the station are big now. Suryanagar International
+  Airport is a 70 by 34 metre hall: five airline check-in counters at the
+  front, a security check across the middle, the departure lounge with a
+  departures board at the back left, a Duty Free, café and book shop on
+  the right, and the Boarding door at the back. Suryanagar Junction is a
+  60 by 28 metre hall: four ticket windows on the left, an enquiry
+  counter and a big departures board at the back, a waiting hall on the
+  right, a tea stall and a book stall. No gate or platform numbers.
+
 - Railway Station: press E at the TICKETS window (or talk to Ticket Clerk
   Fernandes) and type any city in India, such as Varanasi, Goa, Chennai
   or Darjeeling. Old names work too (Bombay, Banaras, Madras). A foreign
   city gets the answer "trains go only inside India: take a flight".
   Pick Sleeper or 3rd AC, book, and you get a PNR. Then sit in the
-  waiting room. An announcement calls your train to Platform 1. Board it
+  waiting hall. An announcement calls your train to the platform. Board it
   and ride inside coach S3 with the passengers, the TC checks your
   ticket, the chaiwala sells chai, fields and poles pass the window, the
   train crosses a river bridge, and you arrive. Tea & Snacks stall: chai
@@ -385,7 +394,7 @@ road. Press E to talk.
   (Dubai, London, New York, Tokyo, Sydney and more; abroad needs a
   passport check). Pack the bag for security and check in to get a
   boarding pass. Sit in the departure lounge until the boarding call,
-  then go to Gate 1 and board. The flight scene names your city.
+  then go to the Boarding door and board. The flight scene names your city.
 - Both ticket panels ask the purpose of the trip: Cricket match, Work
   duty (needs a job), Family vacation or Friends trip. Trains and flights
   both end in the city the same way: a banner, the compass and a spoken
@@ -430,7 +439,7 @@ road. Press E to talk.
 - Railway Station at the north edge of Old Town, at the end of the Old
   Town side road. Inside: the booking counter (six cities, Sleeper or
   3rd AC, half fare under 12, a PNR on every ticket) and the timetable.
-- Platform 1 is behind the building. The Suryanagar Express arrives with
+- The platform is behind the building. The Suryanagar Express arrives with
   an announcement, halts about half a minute, then departs. Board with E.
   The TC checks your ticket, the chaiwala sells chai, and you see the
   sights of the city. Without a ticket, the fine is ₹250.
@@ -440,7 +449,7 @@ road. Press E to talk.
   interviewed at the Railway Station. Pilot interviews at Suryanagar
   Airport.
 - The flight to Mumbai for the match plays as a scene of about 45
-  seconds. The plane at Gate 1 turns, races and takes off over
+  seconds. The parked plane turns, races and takes off over
   Suryanagar, and the camera follows it above the clouds. Then you see
   inside the cabin: you in seat 3A by the window, 19 other passengers,
   and an air hostess walking the aisle with a trolley. Clouds drift past
@@ -449,7 +458,7 @@ road. Press E to talk.
   and the match story follows. A Skip button ends the scene early.
 - Aeroplanes: one comes in low over Suryanagar Airport and climbs away,
   two jets cross the sky high up, with blinking lights. A plane is parked
-  at Airport Gate 1.
+  at the airport.
 
 ## More people and beggars on the roads
 

@@ -386,6 +386,18 @@ road. Press E to talk.
   passport check). Pack the bag for security and check in to get a
   boarding pass. Sit in the departure lounge until the boarding call,
   then go to Gate 1 and board. The flight scene names your city.
+- Both ticket panels ask the purpose of the trip: Cricket match, Work
+  duty (needs a job), Family vacation or Friends trip. Trains and flights
+  both end in the city the same way: a banner, the compass and a spoken
+  direction to the right place.
+  - Work duty: your office in that city (for police, the Police
+    Station) gives three special cases; double pay and one shift toward
+    promotion.
+  - Family vacation: Maa, Papa and Dadi at the city's Grand Hotel, three
+    days of sights, a souvenir shop, a family photo.
+  - Friends trip: two friends at the city's Food Street, sights, food and
+    a group selfie; friendship goes up.
+  - Cricket match: as below.
 - After landing, a big banner shows the city name ("📍 Dubai"), and the
   compass and a spoken direction point you to that city's Cricket
   Stadium ("north-east, about 250 m"). Walk onto the ground and the final

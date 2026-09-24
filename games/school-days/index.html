@@ -6112,6 +6112,7 @@ class Game {
   isTermDay() { const d = this.progress.day; return d === 10 || d === 20; }
   clockText() {
     const p = this.phase;
+    if (this.working && this._onDuty) return `${L("On duty")} · ${L("Case {n} of 5", { n: this._onDuty })}`;
     if (this.working) { const job = JOBS.find((j) => j.id === this.progress.job); return p === "morning" ? (this.isSunday() ? "8:00 · Sunday" : `8:00 · ${L("Off to work")}${job ? ": " + job.place : ""}`) : p === "over" ? `5:00 · ${L("Work over")}` : p === "evening" ? "6:00 · At home" : "10:00 · Bedtime"; }
     if (p === "morning") return "7:00 · At home";
     if (p === "school") { const per = PERIODS[this.periodIndex] || PERIODS[PERIODS.length - 1]; return `${per.time} · ${per.name}`; }
@@ -6304,6 +6305,7 @@ class Game {
     if (room.type === "lab" || room.type === "computer") this._setupLabRoom(room);
     if (room.type === "home") this._setupHome(room);
     this._jobRoomSetup(room, door);
+    if (this._fieldCase && this._fieldCase.c.doorLabel === door.label) setTimeout(() => this._openFieldScene(), 400);
     if (door.label === "City Hospital") this.roomInteractables.push({ pos: { x: room.x0 + 6, z: room.z0 + 2 }, radius: 2.6, prompt: () => L("Dr. Mehta: yearly check-up (₹30)"), activate: () => this._checkup() });
     if (door.label === "Police Station") this.roomInteractables.push({ pos: { x: room.x0 - 6, z: room.z0 + 4 }, radius: 2.4, prompt: () => L("Notice: driving licences at the RTO Office, Old Town road"), activate: () => { showToast(L("Constable: 'Licences are at the RTO Office now, Old Town road, next to the Fish Market. Officer Verma sits there.'"), 4200); this.setObjective(L("Go to the RTO Office"), -52, -86); } });
     if (door.label === "RTO Office") {
@@ -6671,15 +6673,18 @@ class Game {
     const r = makeRng(Math.floor(Math.random() * 1e9)); const field = r.shuffle(FIELD_CASES[job.id].slice()).slice(0, 3); const desk = casesFor(job, 2);
     let score = 0, i = 0;
     const next = () => {
-      if (i < field.length) { const c = field[i]; this._fieldCase = { c, job, onResult: (ok) => { if (ok) score++; i++; next(); } }; this.setObjective(`${job.icon} ${L("Case {n} of 5", { n: i + 1 })}: ${c.site}. ${L("Go there now.")}`, c.x, c.z); showToast(`📻 ${L(c.t)}`, 5200, "good"); speakLine(L(c.t), 340); if (this.world.currentRoom) { standPose(this.player.group); } }
-      else { this._runPaper(`${job.icon} ${L("Back at the desk")}: ${rankName(job, this.progress.shifts)}`, desk, (s2) => onDone(score + s2)); }
+      if (i < field.length) { const c0 = field[i]; const door = this.world.doors.find((d) => d.label.length > 3 && c0.site.toLowerCase().includes(d.label.toLowerCase())); const c = door ? { ...c0, x: door.x, z: door.z + 2.5, doorLabel: door.label } : c0; this._fieldCase = { c, job, onResult: (ok) => { if (ok) score++; i++; next(); } }; this._onDuty = i + 1; this.setObjective(`${job.icon} ${L("Case {n} of 5", { n: i + 1 })}: ${c.site}. ${L("Go there now.")}`, c.x, c.z); showToast(`📻 ${L(c.t)}`, 5200, "good"); speakLine(L(c.t), 340); if (this.world.currentRoom) { standPose(this.player.group); } }
+      else { this._onDuty = 0; this.setObjective(`${job.icon} ${L("Back to the desk at {p} for two files.", { p: job.place })}`, this.world.doors.find((d) => d.label === job.place).x, this.world.doors.find((d) => d.label === job.place).z + 2); this._runPaper(`${job.icon} ${L("Back at the desk")}: ${rankName(job, this.progress.shifts)}`, desk, (s2) => onDone(score + s2)); }
     };
     this.dialogue.say(job.boss, [L("Three calls came in. Take the vehicle, go to each site, act. Then two files at your desk.")], () => { if (this.world.currentRoom) this._exitRoom(); next(); }, { pitch: 340 });
   }
   _tickField(dt) {
     const f = this._fieldCase; if (!f || this.world.currentRoom || panelOpen() || this.dialogue.active) return;
-    const p = this.player.position; if (Math.hypot(p.x - f.c.x, p.z - f.c.z) > 7) return;
-    this._fieldCase = null; if (this.player.riding) this.player.dismount(); playBell();
+    const p = this.player.position; if (Math.hypot(p.x - f.c.x, p.z - f.c.z) > 12) return;
+    this._openFieldScene();
+  }
+  _openFieldScene() {
+    const f = this._fieldCase; if (!f) return; this._fieldCase = null; if (this.player.riding) this.player.dismount(); playBell();
     const c = f.c;
     const card = openPanel(`<div class="job-title-row"><h2>${f.job.icon} ${L("On site")}: ${c.site}</h2></div><p class="job-brief">${L(c.q)}</p><div class="choice-bank">${makeRng(c.x + c.z).shuffle(c.ch.slice()).map((o) => `<button class="choice-btn" data-c="${o.replace(/"/g, "'")}">${L(o)}</button>`).join("")}</div><div id="fc-res"></div>`);
     card.querySelectorAll(".choice-btn").forEach((b) => b.addEventListener("click", () => { const ok = b.dataset.c === c.a.replace(/"/g, "'"); if (ok) { playSuccess(); this.addRep(1, L("case handled well")); } else Audio.playRetry(); card.querySelector(".choice-bank").innerHTML = ""; card.querySelector("#fc-res").innerHTML = `<div class="solved-banner">${ok ? L("Right call. The site is safe. Control room: 'Good work, {r}.'", { r: rankName(f.job, this.progress.shifts) }) : L("Wrong call. Your partner steps in: the right action was: {a}", { a: L(c.a) })}</div><div class="btn-row"><button class="big-btn" id="fc-ok">${L("Okay")}</button></div>`; card.querySelector("#fc-ok").addEventListener("click", () => { closePanel(); f.onResult(ok); }); }));

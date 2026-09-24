@@ -748,7 +748,7 @@ import * as THREE from 'three';
    label goes through L(). The voice follows the language.
    Questions and answers stay in English for now.
    ============================================================ */
-const GAME_VERSION = "v27";
+const GAME_VERSION = "v28";
 const LANGS = {
   en: { name: "English", voice: "en-IN" },
   hi: { name: "हिन्दी", voice: "hi-IN" },
@@ -8262,6 +8262,22 @@ class Game {
     if (this.bigmap && !this.bigmap.waypoint) this.bigmap.setWaypoint(o.x, o.z, o.label, true);
   }
   // ---- Phone (P): call anyone from anywhere ----
+  // Find anyone the player knows by a typed name (or a word like mom, dad, grandma, sister).
+  _findPerson(text) {
+    const t = String(text).toLowerCase().trim().replace(/[^a-z0-9 .]/g, ""); if (!t) return null;
+    const alias = { mom: "maa", mummy: "maa", mother: "maa", ma: "maa", mama: "maa", dad: "papa", daddy: "papa", father: "papa", pappa: "papa", grandma: "dadi", granny: "dadi", grandmother: "dadi", dadi: "dadi", sister: "gudiya", sis: "gudiya", gudiya: "gudiya", wife: "spouse", husband: "spouse", partner: "partner", boss: "boss", principal: "principal" }[t];
+    const people = [];
+    const add = (n) => { if (n && n.name && !people.includes(n)) people.push(n); };
+    add(this.family && this.family.maa); add(this.family && this.family.papa); add(this._dadiFig); add(this._gudiyaFig);
+    if (this._kin) for (const k of Object.values(this._kin)) add(k);
+    for (const f of this.friends || []) add(f); for (const k of Object.keys(this.teachers || {})) add(this.teachers[k]);
+    add(this._partner); for (const b of Object.values(this._bosses || {})) add(b); add(this._rto);
+    for (const n of [...(this.folk || []), ...(this.roadFolk || []), ...(this.seniors || []), ...(this._officers || [])]) add(n);
+    if (alias === "maa") return this.family.maa; if (alias === "papa") return this.family.papa; if (alias === "dadi" && this._dadiFig) return this._dadiFig; if (alias === "gudiya" && this._gudiyaFig) return this._gudiyaFig;
+    if (alias === "spouse" && this._kin && this._kin.spouse) return this._kin.spouse; if (alias === "partner" && this._partner) return this._partner; if (alias === "boss" && this._bossNpc) return this._bossNpc; if (alias === "principal" && this.teachers && this.teachers.principal) return this.teachers.principal;
+    const nm = (n) => n.name.toLowerCase();
+    return people.find((n) => nm(n) === t) || people.find((n) => nm(n).split(/\s+/).includes(t)) || people.find((n) => nm(n).includes(t)) || (t.length >= 3 ? people.find((n) => nm(n).split(/\s+/).some((w) => w.startsWith(t))) : null) || null;
+  }
   _phone() {
     const pr = this.progress;
     if (pr.age < 14) { showToast(L("Maa: 'A phone at your age? Class 9, then we talk.'"), 2800); return; }
@@ -8273,9 +8289,12 @@ class Game {
     const job = this.job; if (job) { const r = rankIndex(pr.shifts), nx = RANK_STEPS[r + 1]; inbox.unshift(`${job.boss}: ${nx ? L("{k} good shifts to your promotion to {n}.", { k: nx - pr.shifts, n: (RANKS[job.id] || RANKS.generic)[r + 1] }) : L("Top rank. Proud of you.")}`); }
     if (!pr.spouse && pr.age >= 23) inbox.push(`Maa: ${L("You are {a}. I have three proposals ready. Wedding at 25!", { a: pr.age })}`); if (pr.spouse && !pr.child) inbox.push(`${pr.spouse.name}: ${L("Maa asked about grandchildren again. Two years after the wedding, she says.")}`); if (pr.child) inbox.push(`${pr.child.name}: ${this.childAge() < 6 ? "🍼 (a voice note of giggles)" : L("Papa, come early, I have news from school!")}`);
     const numbers = contacts.map(([id, name]) => [id, name, phoneNumberFor(id)]);
-    const card = openPanel(`<div class="job-title-row"><h2>📱 ${L("Phone")}</h2><button class="ghost-btn" id="ph-close">${L("Okay")}</button></div><div class="chat-row"><input id="ph-dial" type="tel" placeholder="${L("Dial a number…")}" autocomplete="off"><button class="big-btn" id="ph-call">📞 ${L("Call")}</button></div><div class="tiny-note" id="ph-note">${L("Type any number. Contacts below show theirs.")}</div><div class="section-label">${L("Messages")}</div><div class="chat-log">${inbox.map((s) => `<div class="them">${s}</div>`).join("")}</div><div class="section-label">${L("Contacts")}</div><div class="shop-list">${numbers.map(([id, name, num]) => `<div class="cart-row"><div>📞 <b>${name}</b><small>${num}</small></div><button class="use-btn" data-id="${id}">${L("Call")}</button></div>`).join("")}</div><div class="btn-row"><button class="big-btn" id="ph-hw">📘 ${L("Homework Helper: one hint token (costs 1 mark)")}</button><button class="big-btn" id="ph-news">📰 ${L("Read today's Suryanagar Times")}</button></div>`);
+    const card = openPanel(`<div class="job-title-row"><h2>📱 ${L("Phone")}</h2><button class="ghost-btn" id="ph-close">${L("Okay")}</button></div><div class="chat-row"><input id="ph-dial" type="tel" placeholder="${L("Dial a number…")}" autocomplete="off"><button class="big-btn" id="ph-call">📞 ${L("Call")}</button></div><div class="chat-row"><input id="ph-name" type="text" maxlength="30" placeholder="${L("Or type a name: Aarav, Maa, Ramesh…")}" autocomplete="off"><button class="big-btn" id="ph-ncall">📞 ${L("Call by name")}</button></div><div class="tiny-note" id="ph-note">${L("Type a number, or type the name of the person you want to call.")}</div><div class="section-label">${L("Messages")}</div><div class="chat-log">${inbox.map((s) => `<div class="them">${s}</div>`).join("")}</div><div class="section-label">${L("Contacts")}</div><div class="shop-list">${numbers.map(([id, name, num]) => `<div class="cart-row"><div>📞 <b>${name}</b><small>${num}</small></div><button class="use-btn" data-id="${id}">${L("Call")}</button></div>`).join("")}</div><div class="btn-row"><button class="big-btn" id="ph-hw">📘 ${L("Homework Helper: one hint token (costs 1 mark)")}</button><button class="big-btn" id="ph-news">📰 ${L("Read today's Suryanagar Times")}</button></div>`);
     card.querySelector("#ph-close").addEventListener("click", () => closePanel());
     const dial = card.querySelector("#ph-dial"); const doDial = () => { const n = (dial.value || "").replace(/\D/g, ""); if (!n) return; const hit = numbers.find((x) => x[2] === n); closePanel(); if (hit) { const c = contacts.find((x) => x[0] === hit[0]); pr.phoneLog.push(c[0]); this._chat(c[2]); } else { const who = { id: "stranger", name: L("Unknown number"), def: { id: "stranger_" + n, name: L("Unknown number"), pitch: 380 + (Number(n.slice(-2)) || 0) * 2 }, group: this.family.papa.group }; this._chat(who); setTimeout(() => { const log = document.getElementById("chat-log"); if (log) { const d = document.createElement("div"); d.className = "them"; d.textContent = `${who.name}: ${WRONG_NUMBER[Number(n.slice(-1)) % WRONG_NUMBER.length]}`; log.appendChild(d); } }, 400); } };
+    const nameIn = card.querySelector("#ph-name"), note = card.querySelector("#ph-note");
+    const doName = () => { const t = (nameIn.value || "").trim(); if (!t) { note.textContent = L("Type a name first."); return; } const hit = this._findPerson(t); if (!hit) { note.textContent = L("No one called '{t}' in your phone book. Try a friend, a teacher, Maa, Papa or Dadi.", { t }); return; } closePanel(); pr.phoneLog.push(hit.def ? hit.def.id : hit.name); playBell(); showToast(L("📞 Calling {n}... ring ring!", { n: hit.name }), 1800, "good"); this._chat(hit); };
+    card.querySelector("#ph-ncall").addEventListener("click", doName); nameIn.addEventListener("keydown", (e) => { e.stopPropagation(); if (e.key === "Enter") doName(); });
     card.querySelector("#ph-call").addEventListener("click", doDial); dial.addEventListener("keydown", (e) => { e.stopPropagation(); if (e.key === "Enter") doDial(); });
     const pn = card.querySelector("#ph-news"); if (pn) pn.addEventListener("click", () => { closePanel(); this._newspaper(); });
     card.querySelector("#ph-hw").addEventListener("click", () => { const s = SUBJECT_IDS.slice().sort((a, b) => pr.marks[b].cw - pr.marks[a].cw)[0]; if (pr.marks[s].cw < 1) { showToast(L("No marks to trade yet. Earn one first."), 2400); return; } pr.marks[s].cw--; pr.hints = (pr.hints || 0) + 1; saveProgress(this.profile, pr); this.ui.refreshRank(); showToast(L("📘 One hint token. One {s} mark gone. Real choice.", { s: SUBJECTS[s].name }), 3000); });

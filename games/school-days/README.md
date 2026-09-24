@@ -125,6 +125,43 @@ the District Court. Every workplace has your named seat with a bobbing
 "YOUR SEAT" arrow and a visitor's chair; "Go to work now" in the J panel
 takes you straight there.
 
+## Twenty more, and the Club
+
+1. Day and night: orange evenings, dark blue nights with stars and lit lamps.
+2. Crowd talk: people on the street say a line to each other as you pass.
+3. A soft tune for morning, school, market, evening, night and the stadium.
+4. V for first person, C to save a photo of the screen.
+5. Homework Helper on the phone: a hint token for one mark.
+6. Evening tuition with Mrs. Rao at the study desk, ₹50.
+7. Science fair on day 4: volcano, circuit or plants, judge's questions.
+8. Inter-school quiz on day 8 at lunch; win the shield.
+9. School trip on day 14: Green Farm and the Airport, quiz, picnic.
+10. Scout camp on the school field on day 19 night, star questions.
+11. Pocket-money jobs from neighbours: plants, dog walk, newspaper, a
+    Sunday lemonade stand with Chhotu.
+12. Buy our house at the bank for ₹5,000; rent saved every night.
+13. The shop grows: second counter, Chhotu hired, check the books.
+14. Electricity bill every fifth day; income tax every year when working.
+15. Reputation: help and it rises (shop discounts at 10); fight and the
+    constable watches.
+16. Rival on the report card; your best friend gives the wedding toast.
+17. Dadi's family stories first: how Papa met Maa, the mango tree, the
+    day you were born.
+18. Colony notice board in Shanti Nagar Park: one neighbour problem a day.
+19. Three daily missions, a streak counter, ₹100 at seven.
+20. My Life card in the notebook: download as a picture, device leaderboard.
+
+Also: two-wheelers go anywhere (grass, tiles, lanes); only the car keeps
+to roads. Maa's scooty and Papa's motorbike are parked on our lane. The
+Games Room shelves show the football, bat and ball, basketball, rackets
+and rope. Suryanagar Club in New Town: membership, pool laps, table
+tennis, chess, nimbu pani. The mobile has a dial box with a number for
+every contact; unknown numbers reach a wrong number. Police, fire, doctor,
+journalist, vet and mechanic shifts send you to three sites in the city
+(a red-light crossing, a robbery at the Sweet Shop, a crash, a lost child,
+a tea-house fight, a burglary) where the scene opens on arrival and you
+choose the action, then two files at your desk.
+
 ## Games Room, the Mess, birthdays, directions
 
 - The Games Room on campus, between the playground and the field, holds a

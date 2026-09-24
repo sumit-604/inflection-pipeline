@@ -1305,11 +1305,21 @@ function playTalkBlip(pitch = 400, ch = "a") {
 // Moti's bark: two short rough notes.
 function playBark() { if (muted) return; const c = getCtx(); if (!c) return; const t = c.currentTime; tone(420, t, 0.08, "sawtooth", 0.18); tone(360, t + 0.11, 0.1, "sawtooth", 0.16); }
 
+// A soft background tune: one theme per time of day, three notes every beat, very quiet.
+let _musicT = 0, _musicI = 0, _musicTheme = null;
+function musicTick(theme, dt) {
+  if (muted || !theme) return; if (theme !== _musicTheme) { _musicTheme = theme; _musicI = 0; }
+  _musicT -= dt; if (_musicT > 0) return; _musicT = 0.55;
+  const c = getCtx(); if (!c) return; const notes = THEMES[theme] || THEMES.morning; const n = notes[_musicI % notes.length]; _musicI++;
+  tone(n, c.currentTime, 0.4, theme === "stadium" ? "square" : "triangle", theme === "night" ? 0.035 : 0.05);
+  if (_musicI % 6 === 0) tone(n / 2, c.currentTime, 0.9, "sine", 0.03);
+}
+
 // ===== src/school/save.js =====
 const KEY = (profile) => `school-days.v1.${profile}`;
 function emptyProgress() {
   const marks = {}; for (const s of SUBJECT_IDS) marks[s] = { cw: 0, hw: 0, fa: [], term: [] };
-  return { day: 1, phase: "morning", period: 0, marks, games: [], attempts: {}, friendship: {}, money: 0, energy: 100, bag: [], wardrobe: [], held: null, hints: 0, outfit: {}, tiffin: null, homework: [], reports: [], diary: [], thought: [], conduct: 0, nights: 0, ended: false, incidents: 0, job: null, hired: [], shifts: 0, petHappy: 70, petWalks: 0, age: null, workDays: 0, spouse: null, marriedAt: null, child: null, childBornAt: null, childMarried: false, grandchild: null, generations: 1, payToday: 0, album: [], furniture: [], cooked: 0, glasses: false, cast: 0, checkups: 0, stream: null, licence: false, piggy: 0, fd: 0, shop: false, league: null, fest: {}, lineage: 1, parentJob: null, phoneLog: [] };
+  return { day: 1, phase: "morning", period: 0, marks, games: [], attempts: {}, friendship: {}, money: 0, energy: 100, bag: [], wardrobe: [], held: null, hints: 0, outfit: {}, tiffin: null, homework: [], reports: [], diary: [], thought: [], conduct: 0, nights: 0, ended: false, incidents: 0, job: null, hired: [], shifts: 0, petHappy: 70, petWalks: 0, age: null, workDays: 0, spouse: null, marriedAt: null, child: null, childBornAt: null, childMarried: false, grandchild: null, generations: 1, payToday: 0, album: [], furniture: [], cooked: 0, glasses: false, cast: 0, checkups: 0, stream: null, licence: false, piggy: 0, fd: 0, shop: false, league: null, fest: {}, lineage: 1, parentJob: null, phoneLog: [], rep: 0, house: false, shopLevel: 0, streak: 0, missions: null, missionDay: 0, storiesHeard: 0, oddJobs: {}, colonyCase: 0, club: false, taxPaid: 0, tuition: 0, contest: {}, fpv: false };
 }
 function loadProgress(profile) {
   try {
@@ -1936,6 +1946,8 @@ class UI {
     for (const s of SUBJECT_IDS) { const m = pr.marks[s]; html += `<tr><td>${SUBJECTS[s].icon} ${SUBJECTS[s].name}</td><td>${m.cw}</td><td>${m.hw}</td><td>${m.fa.length ? m.fa.join(", ") + " /10" : "–"}</td><td>${m.term.length ? m.term.join(", ") + " /20" : "–"}</td><td class="g">${g.subjectTotal(s)}</td></tr>`; }
     html += `<tr><td>⚽ Games</td><td colspan="4">${pr.games.length ? pr.games.join(", ") + " /5" : "–"}</td><td class="g">${pr.games.reduce((a, b) => a + b, 0)}</td></tr></table>`;
     if (pr.reports.length) html += `<div class="section-label">Report cards</div>` + pr.reports.map((r) => `<ul class="job-list"><li><div class="job-title">Term ${r.term}: ${r.total} marks, grade ${r.grade}, rank ${r.rank} of 7</div><div class="job-concept">${SUBJECT_IDS.map((s) => `${SUBJECTS[s].name} ${r.subjects[s].total}/50 (${r.subjects[s].grade})`).join(" · ")}</div></li></ul>`).join("");
+    { const ms = pr.missions || []; if (ms.length) html += `<div class="section-label">${L("Today's missions")}</div><div class="job-goal">${ms.map((x) => `${x.done >= x.need ? "✅" : "⬜"} ${L(x.text)} (${x.done}/${x.need})`).join("<br>")}<br>🔥 ${L("Streak")}: ${pr.streak || 0} · ⭐ ${L("Reputation")}: ${pr.rep || 0}</div>`; }
+    html += `<div class="btn-row"><button class="big-btn" id="nb-lifecard">🪪 ${L("My Life card and leaderboard")}</button></div>`;
     if ((pr.album || []).length) html += `<div class="section-label">${L("Photo album")}</div><div class="job-goal">${pr.album.slice(-12).map((a) => `${a.icon} ${a.text}`).join("<br>")}</div>`;
     if (pr.piggy || pr.fd || pr.shop) html += `<div class="section-label">${L("Money that grows")}</div><div class="job-goal">${pr.piggy ? `🐷 ${fmtMoney(pr.piggy)} · ` : ""}${pr.fd ? `🏦 FD ${fmtMoney(pr.fd)} · ` : ""}${pr.shop ? `🏪 ${L("Your shop")} +₹100/${L("night")}` : ""}</div>`;
     if (pr.league) html += `<div class="section-label">${L("League")}</div><div class="job-goal">${pr.league.won} ${L("wins of")} ${pr.league.played}${pr.league.trophy ? " 🏆" : ""}</div>`;
@@ -1944,7 +1956,7 @@ class UI {
     html += `<div class="section-label">Friends</div><ul class="job-list">${FRIENDS.map((f) => `<li><div class="job-title">${f.name} ${"❤".repeat(Math.min(5, Math.floor((pr.friendship[f.id] || 0) / 3)))}</div><div class="job-concept">${f.trait} · friendship ${pr.friendship[f.id] || 0}</div></li>`).join("")}</ul>`;
     html += `<div class="section-label">Wallet and backpack</div><ul class="job-list"><li><div class="job-title">💰 ${fmtMoney(pr.money)} · ⚡ energy ${Math.round(pr.energy)} · 📘 hint tokens ${pr.hints}</div><div class="job-concept">Backpack: ${pr.bag.length ? pr.bag.map((b) => `${b.icon || ""} ${b.name}${b.qty > 1 ? " ×" + b.qty : ""}`).join(", ") : "empty"}. Press B.</div></li></ul>`;
     if (pr.thought.length) html += `<div class="section-label">Thoughts for the day</div><ul class="job-list">${pr.thought.slice(-5).map((t) => `<li><div class="job-concept">“${t}”</div></li>`).join("")}</ul>`;
-    this.notebookBody.innerHTML = html;
+    this.notebookBody.innerHTML = html; { const lb = document.getElementById("nb-lifecard"); if (lb) lb.addEventListener("click", () => { this.notebook.hidden = true; g._lifeCard(); }); }
   }
   openParentView() {
     this.notebook.hidden = true;
@@ -2504,7 +2516,7 @@ class World {
     sun.position.set(18, 30, 14); sun.castShadow = true; sun.shadow.mapSize.set(1024, 1024);
     const s = 55; sun.shadow.camera.left = -s; sun.shadow.camera.right = s; sun.shadow.camera.top = s; sun.shadow.camera.bottom = -s; sun.shadow.camera.near = 1; sun.shadow.camera.far = 90; sun.shadow.bias = -0.0005;
     this.scene.add(sun); this.scene.add(sun.target); this.sun = sun; this.sunOffset = new THREE.Vector3(18, 30, 14);
-    this.scene.add(new THREE.HemisphereLight(0xcfe9ff, 0x6a7d4a, 0.7));
+    this.hemi = new THREE.HemisphereLight(0xcfe9ff, 0x6a7d4a, 0.7); this.scene.add(this.hemi);
   }
 
   _buildGround() {
@@ -2631,6 +2643,7 @@ class World {
     const B = (o, x, z, rot, label) => this._place(makeBuilding(o), x, z, rot, label);
     // New Town, along the street at z = 160. North side faces south (rot 0), south side faces north (rot PI).
     B({ w: 12, d: 8, h: 4, roof: "flat", wall: 0xd62828, roofColor: 0x333333, sign: "Fire Station" }, 70, 148, 0, "Fire Station");
+    B({ w: 14, d: 9, h: 4.2, roof: "flat", wall: 0xbfe3f2, roofColor: 0x2a9d8f, sign: "Suryanagar Club" }, 52, 146, 0, "Suryanagar Club");
     // The Officers' Mess: where the uniformed services meet for functions and birthdays.
     B({ w: 18, d: 10, h: 4.4, roof: "gable", wall: 0xf6efd8, roofColor: 0x1d3557, sign: "Officers' Mess" }, 100, 134, 0, "Officers' Mess");
     for (const dx of [-7, 7]) { const p = new THREE.Mesh(new THREE.CylinderGeometry(0.08, 0.1, 6, 6), mat(0xdddddd)); p.position.set(100 + dx, 3, 141); this.scene.add(p); const flag = new THREE.Mesh(new THREE.BoxGeometry(1.4, 0.9, 0.05), mat(dx < 0 ? 0xff9933 : 0x1d3557)); flag.position.set(100 + dx + 0.7, 5.4, 141); this.scene.add(flag); }
@@ -2817,6 +2830,17 @@ class World {
   }
 
   // ---- Per frame ----
+  // Time of day: sky, fog, sun and lamps follow the phase of the day.
+  setTimeOfDay(phase) {
+    if (phase === this._tod) return; this._tod = phase;
+    const sky = { morning: 0xbfe3f2, school: 0xbfe3f2, over: 0xf2c9a0, evening: 0xe89a6a, night: 0x0f1a33 }[phase] || 0xbfe3f2;
+    this._baseSky = sky; if (!this.raining && !this.winter) { this.scene.background.set(sky); if (this.scene.fog) this.scene.fog.color.set(sky); }
+    if (this.sun) { this.sun.intensity = phase === "night" ? 0.25 : phase === "evening" ? 1.3 : 2.1; this.sun.color.set(phase === "evening" ? 0xffb070 : phase === "night" ? 0x8fa8ff : 0xfff2d6); this.sunOffset.set(phase === "evening" ? 30 : 18, phase === "evening" ? 12 : 30, 14); }
+    if (this.hemi) this.hemi.intensity = phase === "night" ? 0.35 : 0.7;
+    if (!this.stars) { const n = 400, pos = new Float32Array(n * 3); for (let i = 0; i < n; i++) { const a = Math.random() * Math.PI * 2, r = 250 + Math.random() * 120; pos[i * 3] = Math.cos(a) * r; pos[i * 3 + 1] = 60 + Math.random() * 160; pos[i * 3 + 2] = Math.sin(a) * r; } const geo = new THREE.BufferGeometry(); geo.setAttribute("position", new THREE.BufferAttribute(pos, 3)); this.stars = new THREE.Points(geo, new THREE.PointsMaterial({ color: 0xffffff, size: 1.6, sizeAttenuation: true })); this.scene.add(this.stars); }
+    this.stars.visible = phase === "night";
+    for (const l of this.lampLights || []) l.visible = phase === "night" || phase === "evening";
+  }
   setWinter(on) { if (on === !!this.winter && this.winter !== undefined) return; this.winter = on; if (this.raining) return; this.scene.background.set(on ? 0xd7dde3 : 0xbfe3f2); if (this.scene.fog) { this.scene.fog.color.set(on ? 0xd7dde3 : 0xbfe3f2); this.scene.fog.near = on ? 40 : 150; this.scene.fog.far = on ? 160 : 420; } }
   setRain(on) {
     if (on === !!this.raining) return; this.raining = on;
@@ -4002,7 +4026,7 @@ class Player {
       // Vehicles stay on roads and never enter another vehicle; walkers cannot pass through vehicles either.
       const ok = (x, z) => {
         if (!this.world.isWalkable(x, z)) return false;
-        if (this.riding && this.riding.kind !== "bike" && !this.world.currentRoom && !this.world.onRoad(x, z)) { this.blockedBy = "road"; return false; }
+        if (this.riding && this.riding.kind === "car" && !this.world.currentRoom && !this.world.onRoad(x, z)) { this.blockedBy = "road"; return false; }
         if (this.world.vehicleBlocked && this.world.vehicleBlocked(x, z, this.riding ? this.riding.group : null, this.riding ? 0.9 : 0.5)) { this.blockedBy = "vehicle"; return false; }
         return true;
       };
@@ -4104,6 +4128,7 @@ class Player {
   // Smoothly follow behind the player (or the vehicle they ride).
   _placeCamera(t) {
     const p = this.position;
+    if (this.fpv) { const f = this.facing; this.camera.position.set(p.x + Math.sin(f) * 0.25, p.y + 1.55, p.z + Math.cos(f) * 0.25); this.camera.lookAt(p.x + Math.sin(f) * 10, p.y + 1.4, p.z + Math.cos(f) * 10); return; }
     const target = this._tmp.copy(this.camOffset).add(p);
     this.camera.position.lerp(target, Math.min(1, t));
     this.camera.lookAt(p.x, p.y + 1.2, p.z);
@@ -4249,7 +4274,7 @@ function roomTypeFor(sign) {
   if (s.includes("hospital")) return "hospital";
   if (s.includes("research")) return "lab";
   if (s.includes("court") || s.includes("press") || s.includes("radio") || s.includes("studio") || s.includes("bank") || s.includes("airport") || s.includes("garage") || s.includes("fire station")) return "office";
-  if (s.includes("games room")) return "gym";
+  if (s.includes("games room") || s.includes("club")) return "gym";
   if (s.includes("officers")) return "hall";
   if (s.includes("stadium")) return "gym";
   if (s.includes("farm")) return "barn";
@@ -4490,6 +4515,23 @@ class Room {
       this._box(2.4, 0.5, 0.9, 0x3a86ff, 3.4, 0.25, 1.2); this._box(2.4, 0.5, 0.25, 0x3a86ff, 3.4, 0.75, 0.85, false); // sofa
       this._box(0.6, 0.9, 0.6, 0x4e9e4a, -1.2, 0.45, -3.2); // plant
       const dir = makeTextSprite("Floors: see the lift", { size: 40, scale: 1.0 }); dir.position.set(2.5, 2.6, -this.d / 2 + 0.3); this.group.add(dir);
+    } else if (t === "gym" && this.label === "Games Room") {
+      // Shelves with the school's play things: football, bat and ball, basketball, rackets, ropes.
+      this._box(20, 0.08, 0.8, 0x8a5626, 0, 0.9, -2.6); this._box(20, 0.08, 0.8, 0x8a5626, 0, 1.6, -2.6, false);
+      const ball = new THREE.Mesh(new THREE.IcosahedronGeometry(0.26, 1), mat(0xffffff)); ball.position.set(-8, 1.2, -2.6); this.group.add(ball); this._label("Football", -8, -2.6, 2.1, 0.45);
+      this._box(0.12, 0.7, 0.05, 0xd9b27c, -4, 1.3, -2.6, false); const cb = new THREE.Mesh(new THREE.SphereGeometry(0.1, 8, 6), mat(0xd62828)); cb.position.set(-3.6, 1.05, -2.6); this.group.add(cb); this._label("Bat and ball", -4, -2.6, 2.1, 0.45);
+      const bb = new THREE.Mesh(new THREE.SphereGeometry(0.24, 10, 8), mat(0xf77f00)); bb.position.set(0, 1.2, -2.6); this.group.add(bb); this._label("Basketball", 0, -2.6, 2.1, 0.45);
+      for (const dx of [-0.25, 0.25]) { const h = new THREE.Mesh(new THREE.TorusGeometry(0.16, 0.02, 6, 14), mat(0xd62828)); h.position.set(4 + dx, 1.35, -2.6); this.group.add(h); this._box(0.03, 0.4, 0.03, 0x222222, 4 + dx, 1.0, -2.6, false); } this._label("Rackets", 4, -2.6, 2.1, 0.45);
+      const rope = new THREE.Mesh(new THREE.TorusGeometry(0.22, 0.03, 6, 16), mat(0x2a9d8f)); rope.rotation.x = Math.PI / 2; rope.position.set(8, 0.98, -2.6); this.group.add(rope); this._label("Skipping rope", 8, -2.6, 2.1, 0.45);
+      this._label("Games Room: take, play, bring back", 0, -this.d / 2 + 0.3, 2.8, 0.9);
+      this._box(2.4, 0.9, 0.5, 0x555e66, 6, 0.45, 3); this._label("Coach's table", 6, 3, 1.6, 0.5);
+    } else if (t === "gym" && this.label === "Suryanagar Club") {
+      const pool = new THREE.Mesh(new THREE.BoxGeometry(10, 0.2, 5), new THREE.MeshStandardMaterial({ color: 0x4fa3c7, transparent: true, opacity: 0.85 })); pool.position.set(-5, 0.05, -2); this.group.add(pool); this._label("Swimming pool", -5, -2, 1.8, 0.7);
+      for (let i = 0; i < 4; i++) this._box(9.6, 0.02, 0.06, 0xffffff, -5, 0.16, -4 + i * 1.2, false);
+      this._box(2.7, 0.06, 1.5, 0x2f9e44, 6, 0.76, -3); this._box(2.7, 0.15, 0.02, 0xffffff, 6, 0.9, -3, false); for (const dx of [-1.2, 1.2]) this._box(0.1, 0.75, 0.1, 0x333333, 6 + dx, 0.37, -3, false); this._label("Table tennis", 6, -3, 1.9, 0.6);
+      this._box(1.2, 0.06, 1.2, 0x8a5626, 6, 0.7, 2); for (let i = 0; i < 8; i++) for (let j = 0; j < 8; j++) if ((i + j) % 2) this._box(0.12, 0.01, 0.12, 0x222222, 6 - 0.42 + i * 0.12, 0.74, 2 - 0.42 + j * 0.12, false); this._label("Chess corner", 6, 2, 1.7, 0.6);
+      this._box(6, 1.0, 0.8, 0x8a5626, -4, 0.5, 4); this._label("Club canteen · nimbu pani ₹20", -4, 4, 1.9, 0.7);
+      this._label("Suryanagar Club · Members only", 0, -this.d / 2 + 0.3, 2.8, 0.9);
     } else if (t === "gym") {
       for (let i = 0; i < 3; i++) { this._box(0.8, 0.3, 1.8, 0x333333, -3.5 + i * 1.4, 0.15, -2.4); this._box(0.7, 0.9, 0.1, 0x555e66, -3.5 + i * 1.4, 0.75, -3.2, false); } // treadmills
       this._box(2.4, 0.9, 0.5, 0x555e66, 3.4, 0.45, -3.3); for (let i = 0; i < 4; i++) this._box(0.5, 0.3, 0.3, 0x111111, 2.5 + i * 0.6, 1.05, -3.3, false); // dumbbell rack
@@ -5648,6 +5690,49 @@ const MESS_OFFICERS = [
 ];
 const MESS_QS = [MC("Officers salute…", "Each other, as respect, every time", "Only generals", "Nobody", "Only on Sundays"), MC("The tricolour has…", "Saffron, white and green, with a blue wheel", "Red, white and blue", "Only green", "Four colours"), MC("The national anthem lasts about…", "52 seconds", "5 minutes", "10 seconds", "1 hour"), MC("A good officer is…", "Honest, on time and calm under pressure", "Loud", "Rich", "Never wrong")];
 const GAMES_ROOM_GEAR = [["football", "⚽", "Football", "Dribble by walking into it, F to kick. Goal at the east posts of the field."], ["bat", "🏏", "Cricket bat and ball", "Take it to the school pitch on the field and press E at the stumps for six balls."], ["basketball", "🏀", "Basketball", "Go to the court by the assembly ground and press E to shoot hoops."], ["racket", "🏸", "Badminton racket", "Press F to smash on the playground."], ["rope", "🪢", "Skipping rope", "Press F to skip, anywhere."]];
+BADGES.push({ id: "sciencefair", icon: "🔬", name: "Science fair prize", test: (pr) => (pr.badges || []).includes("sciencefair") }, { id: "shield", icon: "🏆", name: "Quiz shield", test: (pr) => (pr.badges || []).includes("shield") }, { id: "scout", icon: "⛺", name: "Scout", test: (pr) => (pr.badges || []).includes("scout") }, { id: "house", icon: "🏡", name: "House owner", test: (pr) => !!pr.house }, { id: "taxpayer", icon: "🧾", name: "Taxpayer", test: (pr) => (pr.taxPaid || 0) >= 1 }, { id: "goodneighbour", icon: "⭐", name: "Good neighbour", test: (pr) => (pr.rep || 0) >= 10 }, { id: "streak7", icon: "🔥", name: "Seven-day streak", test: (pr) => (pr.streak || 0) >= 7 }, { id: "clubmember", icon: "🏊", name: "Club member", test: (pr) => !!pr.club });
+
+// ===== src/school/life4.js =====
+/* ============================================================
+   life4.js — twenty more: sky and lamps, crowd talk, music, camera
+   modes, the homework helper, tuition, science fair, quiz contest,
+   school trip, scouts, odd jobs, the house, the shop's growth, bills
+   and tax, reputation, rival and best friend, Dadi's family stories,
+   colony cases, daily missions, the life card. Plus the Club.
+   ============================================================ */
+const CROWD_LINES = ["Tomatoes are ₹40 today, can you believe it?", "Did you see the match? Six in the last over!", "The bus was late again this morning.", "My son got 9 out of 10 in maths.", "Rain by evening, my knees say.", "The new bakery makes a good cake.", "Sunrise School results came, all passed.", "Traffic at the crossing, avoid it.", "Chai? My treat.", "Diwali cleaning starts this Sunday.", "Moti chased the postman again!", "The park swing is fixed at last."];
+const THEMES = { morning: [262, 330, 392, 523, 392, 330], school: [294, 370, 440, 587, 440, 370], market: [220, 277, 330, 440, 330, 277], evening: [247, 311, 370, 494, 370, 311], night: [196, 247, 294, 392, 294, 247], stadium: [330, 330, 392, 392, 494, 392] };
+const SCIENCE_PROJECTS = [{ id: "volcano", name: "Volcano", icon: "🌋", parts: "baking soda, vinegar, clay", qs: [MC("The fizz in the volcano is…", "Carbon dioxide gas", "Steam", "Oxygen", "Lava"), MC("Vinegar is an…", "Acid", "Alkali", "Metal", "Oil"), MC("Real lava comes from…", "Deep inside the Earth", "The sea", "Clouds", "Trees")] }, { id: "circuit", name: "Electric circuit", icon: "🔋", parts: "battery, bulb, wire, switch", qs: [MC("The bulb glows when the circuit is…", "Closed (complete)", "Open", "Wet", "Painted"), MC("Which is a conductor?", "Copper wire", "Rubber", "Plastic", "Wood"), MC("The switch…", "Opens or closes the path", "Makes light", "Stores power", "Cools the wire")] }, { id: "plant", name: "Plants and light", icon: "🌱", parts: "two pots, one box, seeds", qs: [MC("The plant in the dark box grows…", "Pale and thin", "Green and strong", "Faster", "Blue"), MC("Plants make food using…", "Sunlight, water and air", "Soil only", "Sugar from the shop", "Moonlight"), MC("Seeds need ___ to sprout.", "Water and warmth", "Ice", "Salt", "Sand only")] }];
+const QUIZ_CONTEST = [MC("The largest planet is…", "Jupiter", "Mars", "Earth", "Venus"), MC("Water is made of…", "Hydrogen and oxygen", "Oxygen only", "Carbon", "Salt"), MC("The Taj Mahal is in…", "Agra", "Delhi", "Jaipur", "Mumbai"), MC("How many players in a cricket team?", "11", "9", "12", "7"), MC("The currency of Japan is the…", "Yen", "Dollar", "Rupee", "Euro"), MC("A spider has…", "8 legs", "6 legs", "4 legs", "10 legs"), MC("The first Indian in space was…", "Rakesh Sharma", "Kalpana Chawla", "Sunita Williams", "Neil Armstrong")];
+const TRIP_QS = [MC("On the farm, milk comes from…", "Cows and buffaloes", "Hens", "Goats only", "Trees"), MC("Wheat grows in the…", "Winter season", "Monsoon only", "Summer", "Never"), MC("The farmer's tractor runs on…", "Diesel", "Milk", "Water", "Wind"), MC("At the airport, the tall tower is for…", "Guiding planes (control tower)", "Sleeping", "Selling tickets", "Parking cars"), MC("A plane needs a long strip called a…", "Runway", "Road", "River", "Rail")];
+const SKY_QS = [MC("The brightest object in the night sky is the…", "Moon", "Sun", "Mars", "Pole star"), MC("The Pole Star shows…", "North", "South", "East", "West"), MC("A group of stars with a shape is a…", "Constellation", "Planet", "Comet", "Cloud"), MC("The Milky Way is our…", "Galaxy", "Planet", "Moon", "Ocean")];
+const ODD_JOBS = { verma_aunty: { name: "Water Verma Aunty's plants", pay: 10, q: (r) => { const a = r.int(3, 9), b = r.int(2, 6); return { q: `${a} pots on the left, ${b} on the right. How many pots to water?`, answer: a + b }; } }, sharma_uncle: { name: "Walk Sharma Uncle's dog Bruno", pay: 15, q: (r) => { const a = r.int(2, 5); return { q: `Bruno needs ${a} rounds of the park. Each round is 200 m. How many metres?`, answer: a * 200, unit: "m" }; } }, kaka: { name: "Read the newspaper to Kaka", pay: 10, q: (r) => { const a = r.int(10, 40), b = r.int(5, 30); return { q: `Kaka asks: cricket score ${a} for 2, then ${b} more runs. Total?`, answer: a + b }; } }, chhotu: { name: "Lemonade stand with Chhotu (Sunday)", pay: 0, q: (r) => { const n = r.int(3, 8); return { q: `${n} glasses at ₹10 each. How much money?`, answer: n * 10, unit: "₹" }; } } };
+const COLONY_CASES = [{ t: "Verma Aunty's cat Mithu has not come home since morning.", q: "Best first step?", a: "Check the park trees and ask the guard; cats hide near food", ch: ["Check the park trees and ask the guard; cats hide near food", "Wait a week", "Buy a new cat", "Blame Moti"] }, { t: "The street lamp at the corner is broken. It is dark at night.", q: "Do?", a: "Note the pole number and report it to the municipality office", ch: ["Note the pole number and report it to the municipality office", "Climb the pole", "Ignore it", "Break the next one too"] }, { t: "The lane floods every rain near the tea stall.", q: "Cause and fix?", a: "The drain is blocked with plastic: clean it and put a dustbin there", ch: ["The drain is blocked with plastic: clean it and put a dustbin there", "Pray for less rain", "Build a wall", "Move the tea stall"] }, { t: "Two neighbours argue about a parking spot every morning.", q: "Do?", a: "Suggest alternate days and mark the spot with chalk", ch: ["Suggest alternate days and mark the spot with chalk", "Take the spot yourself", "Call the army", "Laugh"] }, { t: "Pinky lost her school bag on the bus.", q: "Do?", a: "Call the bus depot lost-and-found with the route and time", ch: ["Call the bus depot lost-and-found with the route and time", "Buy a new one", "Tell her to forget it", "Search the whole city"] }];
+const FAMILY_STORIES = [{ title: "How Papa met Maa", text: "Your Papa was a clerk at Lotus Plaza. Your Maa came to open an account and he made three mistakes on the form because he could not stop looking at her. She corrected all three. They were married in a year.", q: "Where did Papa meet Maa?", a: "At Lotus Plaza, the bank", ch: ["At Lotus Plaza, the bank", "At the stadium", "On the bus", "At school"] }, { title: "How the colony was built", text: "When I came here as a bride, Shanti Nagar was a field of mustard. Your Dada ji planted the first mango tree in the park with his own hands. The one where weddings happen now.", q: "Who planted the mango tree?", a: "Dada ji", ch: ["Dada ji", "The mayor", "Papa", "Moti"] }, { title: "Dadi the teacher", text: "Thirty years I taught Class 4. Your Papa was in my class one year. I gave him zero once for copying, and he never copied again. That is why he is honest.", q: "What did Dadi give Papa for copying?", a: "Zero", ch: ["Zero", "A sweet", "Ten marks", "A holiday"] }, { title: "The day you were born", text: "It rained all night. Papa drove the old scooty to the hospital with Maa behind him, holding an umbrella. You came at dawn and cried so loudly the nurse laughed. I knew then: this one will speak up.", q: "How did Maa reach the hospital?", a: "On the scooty with Papa", ch: ["On the scooty with Papa", "By plane", "Walking", "By bus"] }];
+const MISSION_POOL = [["hand", "Raise your hand in class twice", 2], ["talk", "Talk to three people", 3], ["park", "Play in the park once", 1], ["pet", "Pet or feed Moti", 1], ["shop", "Buy something with correct change", 1], ["read", "Read at the library", 1], ["cook", "Help in the kitchen", 1], ["exercise", "Ride the cycle 200 m", 1], ["chat", "Send a chat message", 1], ["homework", "Finish homework", 1]];
+const CLUB_GAMES = [{ id: "pool", name: "Swimming: 4 laps", icon: "🏊", cue: "Stroke when the marker is in the green. Four laps.", hit: "Smooth lap!", miss: "Splash!", verb: "Stroke" }, { id: "tt", name: "Table tennis", icon: "🏓", cue: "Return the ball when it is in the green.", hit: "Winner!", miss: "Net!", verb: "Smash" }, { id: "chess", name: "Chess corner", icon: "♟️" }];
+// ---- Phone numbers and wrong numbers ----
+function phoneNumberFor(id) { let h = 7; for (const c of String(id)) h = (h * 31 + c.charCodeAt(0)) % 100000; return "98" + String(h).padStart(5, "0") + String((h * 7) % 1000).padStart(3, "0"); }
+const WRONG_NUMBER = ["Hello? Who is this? This is Pappu's Puncture Shop.", "Wrong number, beta. This is the Suryanagar Fish Market. Fresh rohu?", "Hello, Radio Suryanagar, you are on air! ... Oh, wrong number.", "Namaste, City Bakery. Cake order? No? Then why call?", "This is the airport control tower. Please hang up, child.", "Grandma speaking. Are you my grandson? No? Come for tea anyway."];
+// ---- Field cases: go to the site, then act ----
+const FC = (t, site, sx, sz, q, a, ...d) => ({ t, site, x: sx, z: sz, q, a, ch: [a, ...d] });
+const FIELD_CASES = {
+  police: [
+    FC("Control room: 'A van is jumping the red light at the avenue crossing every morning. Go and stand there.'", "The avenue crossing", -40, 0, "The van jumps the red light in front of you. Action?", "Signal it to stop, take the number, fine and warn the driver", "Chase it on foot", "Let it go", "Throw your cap"),
+    FC("Control room: 'Cash box snatched at the Sweet Shop on the market street. Reach the shop.'", "Sweet Shop, market street", 31, 52, "The owner points down the street: two men on a scooter. Action?", "Radio the checkpost with the scooter's number and colour, then take the statement", "Run after the scooter", "Blame the owner", "Close the shop"),
+    FC("Control room: 'Accident at the school road crossing. Injured driver.'", "School road crossing", 100, 0, "One driver holds his arm, cars pile up. Action?", "Call the ambulance, move people back, then clear traffic, then statements", "Ask who was at fault first", "Drive away", "Take photos for fun"),
+    FC("Control room: 'A small girl is alone at the Shanti Nagar bus stop, crying.'", "Shanti Nagar bus stop", -100, 50, "She knows her name, not her address. Action?", "Stay with her, calm her, announce at the station and market, find the mother", "Leave her", "Scold her", "Send her in an auto"),
+    FC("Control room: 'Fight at the Old Town Tea House, a stick involved.'", "Old Town Tea House", -70, -62, "Two men shouting, one raises a stick. Action?", "Step in with your partner, take the stick, separate and hear both", "Watch", "Hit first", "Arrest the whole tea house"),
+    FC("Control room: 'Burglary reported at the Chemist last night. Inspect the scene.'", "Chemist, market street", 49, 76, "A broken window, a footprint in the mud, the cash drawer open. Action?", "Photograph, measure the footprint, check the neighbours' cameras, question calmly", "Arrest the neighbour's boy", "Clean the mud", "Close the case"),
+    FC("Control room: 'Speeding near Sunrise School at 8:00, children on the zebra.'", "School gate crossing", 100, -14, "A car races past the zebra. Action?", "Stop the car, fine, and post a constable at the crossing this week", "Fine the children", "Shout", "Leave"),
+    FC("Control room: 'A man is missing since yesterday. Last seen at Tech Park.'", "Tech Park", 110, 100, "The guard remembers him leaving at 9 pm towards the hospital. Action?", "Check City Hospital and the night patrol log, alert all stations with his photo", "Wait three days", "Tell the wife he ran away", "Search the airport only"),
+  ],
+  firefighter: [FC("Alarm: 'Smoke on the third floor of Sunrise Apartments!'", "Sunrise Apartments", 90, 70, "People on the balconies, smoke thick. Action?", "Cut the power, ladder up, evacuate from the top of the smoke down", "Break all windows", "Wait", "Send children in first"), FC("Alarm: 'Kitchen fire at the Grand Hotel.'", "Grand Hotel", 152, 170, "Oil burning in a pan. Action?", "Lid or fire blanket, or CO2. Never water on oil", "A bucket of water", "A fan", "Sugar"), FC("Alarm: 'A car in the City Park pond, a man on the roof.'", "City Park pond", 140, 60, "He is scared, the water is deep. Action?", "Throw the rope and float, pull from the bank with a line", "Jump in without a line", "Ask him to swim", "Wait for police"), FC("Alarm: 'Cracker box on fire in the colony lane, Diwali night.'", "Shanti Nagar lane", -110, 100, "Children close to the fire. Action?", "Move the children back, douse with water and sand, check for more boxes", "Light the rest", "Let it burn", "Scold only")],
+  doctor: [FC("Reception: 'Home visit: Kaka in Shanti Nagar is dizzy and fainted twice.'", "Kaka's house, Shanti Nagar", -95, 112, "He takes blood pressure tablets. Action?", "Check BP lying and standing, sugar, and his tablet doses", "Give a dance class", "Nothing", "Eye test"), FC("Reception: 'A child cut his palm at the school playground.'", "School playground", 50, -140, "Bleeding, glass may be inside. Action?", "Press to stop bleeding, clean, check for glass, stitch, tetanus", "Turmeric and home", "Painkiller only", "Stitch first"), FC("Reception: 'A woman at the market has chest pain going to her arm.'", "Market street", 40, 80, "Sweating, pain in the left arm. Action?", "Treat as a heart emergency: aspirin, oxygen, ambulance now", "Cough syrup", "Walk it off", "Next week")],
+  journalist: [FC("Editor: 'Fire at the market. Get there first, safely.'", "Market street", 40, 80, "Flames at a shop, crowd growing. Action?", "Call the fire station first, then report from a safe distance with facts", "Film close to the flames", "Interview the burning shop", "Go home"), FC("Editor: 'Rumour: school water is dirty. Check it.'", "Sunrise School gate", 100, -14, "The principal offers a sample and the test report. Action?", "Test the water, quote the report, print only what is confirmed", "Print the rumour", "Boycott", "Ignore")],
+  vet: [FC("Clinic: 'A cow at Green Farm is not eating, stomach swollen.'", "Green Farm", -170, -86, "Bloat, she ate wet clover. Action?", "Treat the bloat now and change her feed", "Tooth check", "Nothing", "She is shy"), FC("Clinic: 'A dog limping at City Park.'", "City Park", 128, 70, "It cries when you touch the paw. Action?", "Check for a thorn or glass, then X-ray if needed", "Biscuit", "Dogs limp", "Cut nails")],
+  mechanic: [FC("Garage: 'Breakdown on the colony road, a scooter will not start.'", "Colony road", -60, 44, "Lights work, engine dead. Action?", "Check fuel and the spark plug, then the starter", "New tyres", "Repaint", "New engine"), FC("Garage: 'Car with soft brakes at the school road.'", "School road", 20, 0, "Brakes squeal and sink. Action?", "Check pads and fluid; do not release the car until fixed", "Drive slowly", "Radio up", "Oil the brakes")],
+};
 
 class Minimap {
   constructor(world) {
@@ -5961,9 +6046,9 @@ class Game {
     this.car = { group: car, kind: "car", label: "Papa's car", controlled: false, speed: 0, driving: false, atSchool: false, home: { x: HOME.x + 4, z: HOME.z - 10 }, gate: { x: 96, z: 4 } };
     this._carPapa = makeHuman({ shirt: 0x3f6f9f, trousers: 0x3b3f4a, hair: 0x1d1410 }); this._carPapa.visible = false; this.world.scene.add(this._carPapa);
     // Maa's scooty and Papa's motorbike, parked beside the car. Scooty from 16, motorbike from 18, both need the licence.
-    const scooty = makeScooty(0x2a9d8f); scooty.position.set(HOME.x + 8, 0, HOME.z - 10); scooty.rotation.y = 0; this.world.scene.add(scooty);
+    const scooty = makeScooty(0x2a9d8f); scooty.position.set(HOME.x + 1.5, 0, HOME.z - 15); scooty.rotation.y = 0; this.world.scene.add(scooty);
     this.scooty = { group: scooty, speed: 11, kind: "scooty", label: L("Maa's scooty"), controlled: true, minAge: 16 };
-    const moto = makeScooty(0x111111); moto.scale.set(1.15, 1.15, 1.25); const tank = new THREE.Mesh(new THREE.SphereGeometry(0.22, 10, 8), new THREE.MeshStandardMaterial({ color: 0xd62828, roughness: 0.3, metalness: 0.4 })); tank.scale.set(1, 0.8, 1.4); tank.position.set(0, 0.85, 0.05); moto.add(tank); moto.position.set(HOME.x + 11, 0, HOME.z - 10); this.world.scene.add(moto);
+    const moto = makeScooty(0x111111); moto.scale.set(1.15, 1.15, 1.25); const tank = new THREE.Mesh(new THREE.SphereGeometry(0.22, 10, 8), new THREE.MeshStandardMaterial({ color: 0xd62828, roughness: 0.3, metalness: 0.4 })); tank.scale.set(1, 0.8, 1.4); tank.position.set(0, 0.85, 0.05); moto.add(tank); moto.position.set(HOME.x + 1.5, 0, HOME.z - 19); this.world.scene.add(moto);
     this.moto = { group: moto, speed: 13, kind: "scooty", label: L("Papa's motorbike"), controlled: true, minAge: 18 };
     this._buildInteractables();
     this.world.vehicleBlocked = (x, z, self, pad) => {
@@ -5984,7 +6069,7 @@ class Game {
     this._gearChanged();
     this.minimap = new Minimap(this.world);
     this.bigmap = new BigMap(this);
-    window.addEventListener("keydown", (e) => { if (e.target && e.target.tagName === "INPUT") return; if (e.key.toLowerCase() === "g") { if (this.bigmap.isOpen) this.bigmap.close(); else this.bigmap.open(); } if (e.key.toLowerCase() === "m") { if (panelOpen()) closePanel(); else this._phone(); } if (e.key === "Escape") this.bigmap.close(); if (e.key.toLowerCase() === "j") { if (panelOpen()) closePanel(); else this._openJobs(); }  if (e.key === "2") this._toggleP2(); if (e.key.toLowerCase() === "t") { if (this.dialogue.active) this._chatFromDialogue(); else if (!panelOpen()) { const near = this._nearestInteractable(); if (near && near.npc) this._chat(near.npc); } } });
+    window.addEventListener("keydown", (e) => { if (e.target && e.target.tagName === "INPUT") return; if (e.key.toLowerCase() === "g") { if (this.bigmap.isOpen) this.bigmap.close(); else this.bigmap.open(); } if (e.key.toLowerCase() === "m") { if (panelOpen()) closePanel(); else this._phone(); } if (e.key === "Escape") this.bigmap.close(); if (e.key.toLowerCase() === "j") { if (panelOpen()) closePanel(); else this._openJobs(); }  if (e.key === "2") this._toggleP2(); if (e.key.toLowerCase() === "v") { this.player.fpv = !this.player.fpv; this.progress.fpv = this.player.fpv; showToast(this.player.fpv ? L("👁️ First person. Press V to go back.") : L("🎥 Third person."), 2000); } if (e.key.toLowerCase() === "c") { this._wantShot = true; } if (e.key.toLowerCase() === "t") { if (this.dialogue.active) this._chatFromDialogue(); else if (!panelOpen()) { const near = this._nearestInteractable(); if (near && near.npc) this._chat(near.npc); } } });
     this._ambient = { chirp: 3, horn: 5, bell: 30 };
     startAmbient();
     this.clock = new THREE.Clock();
@@ -6045,6 +6130,7 @@ class Game {
     if (why && n > 0) { playCoin(); showToast(`💰 +₹${n}: ${why}. Wallet ${fmtMoney(this.progress.money)}`, 2600, "good"); }
     else if (why) showToast(`💰 −₹${-n}: ${why}. Wallet ${fmtMoney(this.progress.money)}`, 2600, "bad");
   }
+  addRep(n, why) { const pr = this.progress; pr.rep = (pr.rep || 0) + n; saveProgress(this.profile, pr); if (why) showToast(`${n > 0 ? "⭐" : "⚠️"} ${L("Reputation")} ${n > 0 ? "+" : ""}${n}: ${why}`, 2400, n > 0 ? "good" : "bad"); }
   addFriendship(id, n, why) {
     this.progress.friendship[id] = (this.progress.friendship[id] || 0) + n; saveProgress(this.profile, this.progress); this.ui.refreshRank();
     if (why) { const who = FRIENDS.find((f) => f.id === id); showToast(`🤝 +${n} friendship with ${who ? who.name : id === "family" ? "the family" : id === "gudiya" ? "Gudiya" : id}: ${why}`, 2400, "good"); }
@@ -6119,6 +6205,7 @@ class Game {
       this.periodIndex = 0; this.progress.period = 0;
       if (STAGES[this.stage].id === "college" && !this.progress.stream) setTimeout(() => this._chooseStream(), 900);
       if (STAGES[this.stage].id === "college" && this.progress.day === 10 && !(this.progress.fest || {}).college) setTimeout(() => this._collegeFest(), 2500);
+      this._rollMissions(); if ((this.progress.rep || 0) < 0) setTimeout(() => showToast(L("⚠️ The constable is watching you. Reputation {r}. Help the colony to fix it.", { r: this.progress.rep }), 3600, "bad"), 4000);
       { const b = this.birthdayToday(); if (b) setTimeout(() => showToast(`🎂 ${L("Today is {n}'s birthday!", { n: b.name })} ${b.where === "home" ? L("Party at dinner. Buy a gift.") : b.where === "school" ? L("Wish them at school.") : L("Cake at the office. Uniformed officers: dinner at the Officers' Mess tonight.")}`, 4500, "good"), 300); }
       { const s = this.season(); setTimeout(() => showToast(s === "summer" ? L("☀️ Summer. Hot day: drink water, walk in the shade.") : s === "monsoon" ? (this.isRainy() ? L("🌧️ Monsoon. Rain today, the colony road is flooded at the corner. Umbrella!") : L("⛅ Monsoon clouds. Dry for now.")) : L("🌫️ Winter. Fog till nine. Sweater on."), 3600), 600); this.applyOutfit(); }
       if (!this.world.currentRoom) this._enterRoom(this.world.doors.find((d) => d.label === "Our Home"));
@@ -6127,7 +6214,7 @@ class Game {
       else if (false) this.setObjective(this.working ? L("Sunday! No work today. Drive, play in the park, or cricket at the Stadium Ground with Papa.") : L("Sunday! No school. Cricket with Papa at the Stadium Ground (E at the pitch), or play in the park."), this.world.stadium.batX, this.world.stadium.z);
       else if (this.working) this._workObjective();
       else this.setObjective(L("Catch the school bus at the Shanti Nagar stop (or walk, and cross at the zebra)."), BUS_STOPS[0].standAt.x, BUS_STOPS[0].standAt.z);
-    } else if (phase === "school") { this._periodObjective(); if (this.isRainy()) { this.progress.rainDay = true; setTimeout(() => showToast(L("☔ Rain today. Games period moves to the hall: carrom."), 3600), 800); } if (this.isMonitorDay()) setTimeout(() => showToast(L("📛 You are the class monitor today. Mind the class before the teacher comes."), 4000, "good"), 1500); }
+    } else if (phase === "school") { if (this.progress.day === 14 && !(this.progress.fest || {}).trip && !this.working) { setTimeout(() => this._schoolTrip(), 800); return; } this._periodObjective(); if (this.isRainy()) { this.progress.rainDay = true; setTimeout(() => showToast(L("☔ Rain today. Games period moves to the hall: carrom."), 3600), 800); } if (this.isMonitorDay()) setTimeout(() => showToast(L("📛 You are the class monitor today. Mind the class before the teacher comes."), 4000, "good"), 1500); }
     else if (phase === "over") this.setObjective(this.working ? L("Work is over. Head home.") : L("School is over. Take the bus home from the gate stop."), this.working ? HOME.door.x : BUS_STOPS[1].standAt.x, this.working ? HOME.door.z + 2 : BUS_STOPS[1].standAt.z);
     else if (phase === "evening" && this.isBirthday() && !this.progress.birthday) { this.setObjective(L("It is your birthday! Cut the cake at the dining table."), HOME.door.x, HOME.door.z + 2); }
     else if (phase === "evening" && FESTIVALS[this.progress.day] && !(this.progress.fest || {})[FESTIVALS[this.progress.day]]) { this.setObjective(L("Festival at home today! Come to the dining table."), HOME.door.x, HOME.door.z + 2); }
@@ -6176,6 +6263,7 @@ class Game {
     }
     // Moti, the family dog.
     this.interactables.push({ pos: this.pet.group.position, radius: 2.2, visible: () => this.pet.group.visible, npc: this.pet.npc, prompt: () => L("Moti 🐕 (pet, feed, walk)"), activate: () => this._petMenu() });
+    this.interactables.push({ pos: { x: -90, z: 92 }, radius: 3.0, prompt: () => L("Colony notice board: today's problem"), activate: () => this._colonyCase() });
     { const G = this.world.schoolGround;
       this.interactables.push({ pos: { x: G.batX - 1, z: G.z }, radius: 2.6, visible: () => !this._trial && this.player.held === "bat", prompt: () => L("School pitch: six balls (Coach bowls)"), activate: () => this._startTrial({ kind: "cricket", name: "School nets", icon: "🏏", cue: "Press F to swing when the ball reaches you.", hit: "SIX!", miss: "Bowled!" }, 6, (h) => { this.progress.fun = (this.progress.fun || 0) + 1; this.diary(`School nets: ${h}/6.`); if (h >= 4) this.addFriendship("aarav", 1, "cheered your sixes"); }, "Coach Vikram", G) });
       this.interactables.push({ pos: { x: 150, z: -44 }, radius: 3.0, visible: () => !this._trial && this.player.held === "basketball", prompt: () => L("Shoot hoops: 6 shots"), activate: () => this._timingGame({ name: "Basketball hoops", icon: "🏀", cue: "Shoot when the ball is at the top, in the green.", hit: "Swish!", miss: "Rim!", verb: "Shoot" }, 6, (h) => { this.progress.fun = (this.progress.fun || 0) + 1; this.diary(`Hoops: ${h}/6.`); }, "Coach Vikram") });
@@ -6186,7 +6274,7 @@ class Game {
       this.interactables.push({ pos: { x: pg.x + 10, z: pg.z - 2.2 }, radius: 1.8, prompt: () => L("Climb the slide"), activate: () => this._playPark("slide", pg) });
     }
     for (const npc of this.npcs) this.interactables.push({ pos: npc.position, radius: 2.6, npc, visible: () => npc.group.visible, prompt: () => L("Talk to {n}", { n: npc.name }), activate: () => this._talk(npc) });
-    for (const v of [this.scooty, this.moto]) this.interactables.push({ pos: v.group.position, radius: 2.4, visible: () => !(this.player.riding && this.player.riding.group === v.group), prompt: () => L("Ride {v}", { v: v.label }), activate: () => { const pr = this.progress; if (pr.age < v.minAge) { showToast(L("Papa: 'Not yet. {a} first, then the RTO test.'", { a: v.minAge }), 2800); return; } if (!pr.licence) { showToast(L("No licence. RTO Office, Old Town road: ₹100 test with Officer Verma."), 3200, "bad"); this.setObjective(L("Go to the RTO Office"), -52, -86); return; } this.player.mount(v); playHorn(); showToast(L("🛵 Helmet on. Roads only, stop at red. Press E to get off."), 3000, "good"); } });
+    for (const v of [this.scooty, this.moto]) this.interactables.push({ pos: v.group.position, radius: 2.4, visible: () => !(this.player.riding && this.player.riding.group === v.group), prompt: () => L("Ride {v}", { v: v.label }), activate: () => { const pr = this.progress; if (pr.age < v.minAge) { showToast(L("Papa: 'Not yet. {a} first, then the RTO test.'", { a: v.minAge }), 2800); return; } if (!pr.licence) { showToast(L("No licence. RTO Office, Old Town road: ₹100 test with Officer Verma."), 3200, "bad"); this.setObjective(L("Go to the RTO Office"), -52, -86); return; } this.player.mount(v); playHorn(); showToast(L("🛵 Helmet on. Two wheels go anywhere: roads, lanes, grass. Stop at red. Press E to get off."), 3200, "good"); } });
     // Papa's car, parked in our lane. In the morning he drops you at school; after school he picks you up at the gate.
     this.interactables.push({ pos: this.car.group.position, radius: 3.0, visible: () => !this.car.driving, prompt: () => (this.working ? L("Drive the car") : this.phase === "morning" ? L("Ride to school in Papa's car") : this.phase === "over" && this.car.atSchool ? L("Ride home in Papa's car") : L("Papa's car")), activate: () => this._carRide() });
   }
@@ -6224,8 +6312,9 @@ class Game {
       room._label(L("Counter 1 · Driving test"), room.x0 - 2, room.z0 - 1.5, 2.2, 0.6);
       this.roomInteractables.push({ pos: this._rto.position, radius: 3.0, npc: this._rto, prompt: () => (this.progress.licence ? L("RTO Officer Verma (licence issued)") : L("RTO Officer Verma: driving test (₹100, from 16)")), activate: () => this._drivingTest() });
     }
-    if (/bank|lotus plaza/i.test(door.label)) this.roomInteractables.push({ pos: { x: room.x0 - 2, z: room.z0 + 4 }, radius: 2.0, prompt: () => L("Fixed deposit (₹200 at 5% a term)"), activate: () => this._fixedDeposit() });
-    if (door.label === "Suryanagar Supermarket") this.roomInteractables.push({ pos: { x: room.x0 + 6, z: room.z0 + 5 }, radius: 2.4, prompt: () => (this.progress.shop ? L("Your shop (earns ₹100 a night)") : L("Open your own shop (₹2,000)")), activate: () => this._openShopBusiness() });
+    if (/bank|lotus plaza/i.test(door.label)) { this.roomInteractables.push({ pos: { x: room.x0 - 2, z: room.z0 + 4 }, radius: 2.0, prompt: () => L("Fixed deposit (₹200 at 5% a term)"), activate: () => this._fixedDeposit() }); this.roomInteractables.push({ pos: { x: room.x0 + 2, z: room.z0 + 4 }, radius: 2.0, prompt: () => (this.progress.house ? L("Our house: owned") : L("Buy our house (₹5,000)")), activate: () => this._buyHouse() }); }
+    if (door.label === "Suryanagar Supermarket") { this.roomInteractables.push({ pos: { x: room.x0 + 6, z: room.z0 + 5 }, radius: 2.4, prompt: () => (this.progress.shop ? L("Your shop (earns ₹{n} a night)", { n: this.progress.shopLevel ? 350 : 100 }) : L("Open your own shop (₹2,000)")), activate: () => this._openShopBusiness() }); if (this.progress.shop) this.roomInteractables.push({ pos: { x: room.x0 + 9, z: room.z0 + 5 }, radius: 2.0, prompt: () => (this.progress.shopLevel ? L("Check the books") : L("Expand the shop: second counter, hire Chhotu (₹3,000)")), activate: () => this._growShop() }); }
+    if (door.label === "Suryanagar Club") { const M = this.progress.club; this.roomInteractables.push({ pos: { x: room.x0 - 5, z: room.z0 + 1.5 }, radius: 3.0, prompt: () => (M ? L("Swim 4 laps") : L("Join the club")), activate: () => this._club("pool") }); this.roomInteractables.push({ pos: { x: room.x0 + 6, z: room.z0 - 3 }, radius: 2.2, prompt: () => (M ? L("Table tennis") : L("Join the club")), activate: () => this._club("tt") }); this.roomInteractables.push({ pos: { x: room.x0 + 6, z: room.z0 + 2 }, radius: 2.0, prompt: () => (M ? L("Chess corner") : L("Join the club")), activate: () => this._club("chess") }); this.roomInteractables.push({ pos: { x: room.x0 - 4, z: room.z0 + 4 }, radius: 2.2, prompt: () => (M ? L("Club canteen: nimbu pani ₹20") : L("Join the club")), activate: () => this._club("canteen") }); }
     if (door.label === "Vet Clinic") this.roomInteractables.push({ pos: room.occupantPos(), radius: 3.0, prompt: () => L("Dr. Pillai: check-up for Moti (₹50)"), activate: () => this._vetVisit() });
     if (/bank|lotus plaza/i.test(door.label)) this.roomInteractables.push({ pos: { x: room.x0 - 6, z: room.z0 + 4 }, radius: 2.4, prompt: () => L("Bank counter: savings account"), activate: () => this._bank() });
     if (door.label === "Officers' Mess") {
@@ -6322,6 +6411,7 @@ class Game {
     if (this._gudiyaFig) this.roomInteractables.push({ pos: this._gudiyaFig.position, radius: 2.2, npc: this._gudiyaFig, prompt: () => L("Talk to {n}", { n: "Gudiya" }), activate: () => this._talkGudiya() });
     this._decorateHome(room);
     if (room.kitchen) this.roomInteractables.push({ pos: { x: room.x0 + room.kitchen.x, z: room.z0 + room.kitchen.z }, radius: 2.2, prompt: () => L(this.progress.spouse ? "Cook for the family" : "Cook with Maa"), activate: () => this._cook() });
+    this.roomInteractables.push({ pos: { x: room.x0 + 10.5, z: room.z0 + 2.4 }, radius: 1.6, prompt: () => L("Evening tuition with Mrs. Rao (₹50)"), activate: () => this._tuition() });
     if (room.piggy) this.roomInteractables.push({ pos: { x: room.x0 + room.piggy.x, z: room.z0 + room.piggy.z }, radius: 1.8, prompt: () => L("Piggy bank ({n})", { n: fmtMoney(this.progress.piggy || 0) }), activate: () => this._piggy() });
     // Your own family, once it exists: spouse, child, grandchild.
     const pr = this.progress; this._kin = this._kin || {};
@@ -6346,6 +6436,8 @@ class Game {
     }
     if (TEACHERS[def.id.replace("t_", "")]) return this._talkTeacher(npc);
     if (def.child) return this._talkFriend(npc);
+    this._mission("talk");
+    { const oj = ODD_JOBS[def.id], pr = this.progress, key = pr.day + ":" + def.id; if (oj && !pr.oddJobs[key] && (def.id !== "chhotu" || this.isSunday()) && this.stage < stageIndex("college")) { this._engagedNpc = npc; const q = oj.q(makeRng(pr.day * 13 + def.id.length)); const pay = oj.pay || 40; return this.dialogue.say(npc.name, [def.greet || "Hello!", L("{j}? ₹{p} for you if you get it right.", { j: oj.name, p: pay })], () => { runStepQuiz({ profile: this.profile, level: 1, world: this.world, audio: Audio, countAttempt: () => countAttempt(this.profile, pr, "oddjob"), onSolve: () => { pr.oddJobs[key] = true; this.addMoney(pay, oj.name); this.addRep(1, oj.name); this._engagedNpc = null; } }, { title: `🧹 ${L(oj.name)}`, intro: `${npc.name}: "${q.q}"`, goal: L("Pocket money job. ₹{p}.", { p: pay }), steps: [{ q: q.q, answer: q.answer, unit: q.unit || "", hint: L("Count carefully.") }], doneBtn: L("Thank you!"), doneHtml: `<b>${npc.name}:</b> "${L("Good work. Same time tomorrow?")}"`, onLeave: () => { this._engagedNpc = null; } }); }, { pitch: def.pitch || 400, speaker: npc.id }); } }
     this._engagedNpc = npc; setMood(npc.group, "happy", 3);
     const small = ["Nice weather today, no?", "Did you have your breakfast?", "Study well, beta. Studies first.", "My nephew is in Class 5 too. Do you know him?", "Careful on the road, so many cars these days.", "Have you seen the new park by the market?"];
     if (Math.random() < 0.5) { this.dialogue.say(npc.name, [def.greet || "Hello!", small[Math.floor(Math.random() * small.length)]], () => { this._engagedNpc = null; }, { pitch: def.pitch || 400, speaker: npc.id }); return; }
@@ -6378,7 +6470,7 @@ class Game {
   }
   _talkFriend(npc) {
     const f = npc.def, per = PERIODS[this.periodIndex];
-    setMood(npc.group, "happy", 3);
+    setMood(npc.group, "happy", 3); this._mission("talk");
     if (this.working) { const job = this.job; const lines = [job ? L("Look at you, {j}! Remember when you hid from Mrs. Rao's test?", { j: job.name }) : L("Graduate and free! Any interviews yet?"), [L("Cricket at the stadium on Sunday? Like old days."), L("I am at Tech Park now. Lunch at the canteen some day?"), L("Meher got married last month. You missed the dance."), L("Bring Moti to the park, he still remembers me.")][Math.floor(Math.random() * 4)]]; this._engagedNpc = npc; return this.dialogue.say(npc.name, lines, () => { this._engagedNpc = null; this.addFriendship(f.id, 1); }, { pitch: f.pitch || 520, speaker: npc.id }); }
     const fs = this.progress.friendship[f.id] || 0;
     const line = L(f.lines[Math.floor(Math.random() * f.lines.length)]);
@@ -6433,6 +6525,7 @@ class Game {
     if (this.isDiwali() && !this.progress.diwali) return this._diwali();
     { const f = FESTIVALS[this.progress.day]; if (f && !(this.progress.fest || {})[f]) return this._festival(f); }
     { const b = this.birthdayToday(); if (b && b.where === "home" && !(this.progress.fest || {})["bday" + this.progress.day]) return this._familyBirthday(b); }
+    if (this.progress.day === 4 && !(this.progress.fest || {}).sciencefair && !this.working) return this._scienceFair();
     if (this.progress.homework.length) { showToast("Maa: Homework first, then dinner!", 2400, "bad"); return; }
     const papa = this.family.papa; setMood(papa.group, "happy", 5); setMood(this.family.maa.group, "happy", 5);
     this.player.eatT = 4;
@@ -6447,12 +6540,16 @@ class Game {
     const pr = this.progress;
     const finish = () => {
       const card = openPanel(`<div class="job-title-row"><h2>🌙 Day ${pr.day} is over</h2></div><div class="job-goal" id="sleep-goal">Marks today: <b>${this._marksToday || 0}</b> · Term total: <b>${this.termMarks()}</b> · Wallet: <b>${fmtMoney(pr.money)}</b> · Friendship: <b>${Object.values(pr.friendship).reduce((a, b) => a + b, 0)}</b></div><p class="job-brief">${pr.day + 1 === 5 || pr.day + 1 === 15 ? "Tomorrow is an FA day: 10 mark tests in every subject. Revise!" : pr.day + 1 === 10 || pr.day + 1 === 20 ? "Tomorrow is the TERM EXAM. Sleep early." : "Tomorrow is a normal school day."}</p><div class="btn-row"><button class="big-btn" id="sleep-ok">Sleep 😴</button></div>`);
+      if (pr.day === 19 && !(pr.fest || {}).scouts && !this.working) { const b1 = card.querySelector("#sleep-goal"); if (b1) b1.innerHTML += `<div class="btn-row"><button class="big-btn" id="sleep-scout">⛺ ${L("Scout camp on the school field tonight")}</button></div>`; const sb = card.querySelector("#sleep-scout"); if (sb) sb.addEventListener("click", () => { closePanel(); this._scoutCamp(() => this._sleep()); }); }
       if (pr.child && this.childAge() >= 4) { const b0 = card.querySelector("#sleep-goal"); if (b0) b0.innerHTML += `<div class="btn-row"><button class="big-btn" id="sleep-child">🎒 ${L("Play as {n} (generation {g})", { n: pr.child.name, g: (pr.lineage || 1) + 1 })}</button></div>`; const cb = card.querySelector("#sleep-child"); if (cb) cb.addEventListener("click", () => { closePanel(); this._playAsChild(); }); }
       if (this.working) { const brief = card.querySelector(".job-brief"); if (brief) brief.innerHTML = `${L("Pay today")}: <b>${fmtMoney(pr.payToday || 0)}</b> · ${this.familyLine()} · ${L("Work days this year")}: ${(pr.workDays || 0) % 5} / 5<div class="btn-row"><button class="big-btn" id="sleep-year">⏩ ${L("Let a year pass")}</button></div>`; const yb = card.querySelector("#sleep-year"); if (yb) yb.addEventListener("click", () => { closePanel(); this._fastYear(); }); }
       card.querySelector("#sleep-ok").addEventListener("click", () => {
         closePanel();
         this._awardBadges();
-        if (pr.shop) this.addMoney(100, L("shop earnings"));
+        if (pr.shop) { const n = pr.shopLevel ? 350 : 100; this.addMoney(n, L("shop earnings")); pr.shopLog = (pr.shopLog || []).concat([{ d: pr.day, n }]).slice(-30); }
+        if (pr.house) this.addMoney(30, L("no rent, house owned"));
+        if (pr.day % 5 === 0) { this.addMoney(-60, L("electricity bill")); }
+        { const ms = pr.missions || []; if (ms.length && ms.every((x) => x.done >= x.need)) { pr.streak = (pr.streak || 0) + 1; this.addMoney(pr.streak % 7 === 0 ? 100 : 20, L("missions streak {n}", { n: pr.streak })); } else if (ms.length) pr.streak = 0; }
         if (pr.cast) { pr.cast--; if (!pr.cast) { this.player.speedMul = 1; showToast(L("Cast off. Good as new."), 2400, "good"); } }
         if (this.working && pr.workDays && pr.workDays % 5 === 0 && pr.lastYearAt !== pr.workDays) { pr.lastYearAt = pr.workDays; this._yearPassed(); }
         pr.day++; buildPeriods(pr.day); pr.tiffin = null; if (this._lateNight) { pr.energy = Math.max(20, pr.energy - 25); this._lateNight = false; } this._incidentDone = false; this._monitorDone = false; this._pocketGiven = false; this._bdayWished = false; this._messDone = false; pr.sundayDone = false; pr.petHappy = Math.max(0, (pr.petHappy == null ? 70 : pr.petHappy) - 12); if (pr.petHappy < 25) showToast(L("🐕 Moti looks unwell. Feed him, or take him to the Vet Clinic."), 3600, "bad"); this._eqUsed = new Set(); this.car.atSchool = false; this.car.group.position.set(this.car.home.x, 0, this.car.home.z); this.car.group.rotation.y = 0; pr.homework = []; pr.period = 0; this._marksToday = 0; this._ateLunch = false; this._goalDone = false; this._gamesActive = false; this._shiftDone = false;
@@ -6482,6 +6579,7 @@ class Game {
     Audio.playSuccess();
     const card = openPanel(`<div class="job-title-row"><h2>📜 Report Card · Term ${term}</h2></div><p class="job-brief">Sunrise Public School, Suryanagar. ${this.profileLabel}. Total <b>${grand} / ${maxTotal}</b>, grade <b>${report.grade}</b>, rank <b>${rank} of 7</b>. Conduct: <b>${(pr.conduct || 0) >= 4 ? "A" : (pr.conduct || 0) >= 0 ? "B" : "C"}</b>${(pr.conduct || 0) < 0 ? " (fighting noted)" : ""}.</p>
       <table class="report"><tr><th>Subject</th><th>Class + HW /20</th><th>Best FA /10</th><th>Term /20</th><th>Total /50</th><th>Grade</th></tr>${SUBJECT_IDS.map((s) => `<tr><td>${SUBJECTS[s].icon} ${SUBJECTS[s].name}</td><td>${subjects[s].cw}</td><td>${subjects[s].fa}</td><td>${subjects[s].term}</td><td>${subjects[s].total}</td><td class="g">${subjects[s].grade}</td></tr>`).join("")}<tr><td>⚽ Games</td><td colspan="3"></td><td>${games} /10</td><td></td></tr></table>
+      <div class="job-goal">${(() => { const rival = others.slice().sort((a, b) => b.total - a.total)[0]; const bf = Object.entries(pr.friendship).filter(([k]) => FRIENDS.find((f) => f.id === k)).sort((a, b) => b[1] - a[1])[0]; return `${L("Rival")} ${rival.name}: ${rival.total} ${grand > rival.total ? L("(you beat your rival!)") : L("(your rival is ahead; catch up next term)")}${bf ? ` · ${L("Best friend")}: ${FRIENDS.find((f) => f.id === bf[0]).name}` : ""}`; })()}</div>
       <div class="job-goal">Class list: ${[...others, { name: "You", total: grand }].sort((a, b) => b.total - a.total).map((o, i) => `${i + 1}. ${o.name} ${o.total}`).join(" · ")}</div>
       <div class="solved-banner">Principal Mrs. Verma: "${rank === 1 ? "Class topper! We are proud of you." : rank <= 3 ? "Top three. Excellent effort." : pct >= 50 ? "A steady term. Push a little harder next term." : "Marks can grow. Raise your hand, do the homework, and see."}"<div class="btn-row"><button class="big-btn" id="rc-ok">Show Papa and Maa</button></div></div>`);
     card.querySelector("#rc-ok").addEventListener("click", () => { closePanel(); setMood(this.family.papa.group, rank <= 3 ? "happy" : "calm", 5); if (term === 2 && pct >= 33 && this.stage < STAGES.length - 1) this._promote(then); else then(); });
@@ -6568,6 +6666,24 @@ class Game {
       });
     });
   }
+  // Field shift: three calls across the city, then two desk cases. Go to the site, press nothing: the scene opens when you arrive.
+  _fieldShift(job, onDone) {
+    const r = makeRng(Math.floor(Math.random() * 1e9)); const field = r.shuffle(FIELD_CASES[job.id].slice()).slice(0, 3); const desk = casesFor(job, 2);
+    let score = 0, i = 0;
+    const next = () => {
+      if (i < field.length) { const c = field[i]; this._fieldCase = { c, job, onResult: (ok) => { if (ok) score++; i++; next(); } }; this.setObjective(`${job.icon} ${L("Case {n} of 5", { n: i + 1 })}: ${c.site}. ${L("Go there now.")}`, c.x, c.z); showToast(`📻 ${L(c.t)}`, 5200, "good"); speakLine(L(c.t), 340); if (this.world.currentRoom) { standPose(this.player.group); } }
+      else { this._runPaper(`${job.icon} ${L("Back at the desk")}: ${rankName(job, this.progress.shifts)}`, desk, (s2) => onDone(score + s2)); }
+    };
+    this.dialogue.say(job.boss, [L("Three calls came in. Take the vehicle, go to each site, act. Then two files at your desk.")], () => { if (this.world.currentRoom) this._exitRoom(); next(); }, { pitch: 340 });
+  }
+  _tickField(dt) {
+    const f = this._fieldCase; if (!f || this.world.currentRoom || panelOpen() || this.dialogue.active) return;
+    const p = this.player.position; if (Math.hypot(p.x - f.c.x, p.z - f.c.z) > 7) return;
+    this._fieldCase = null; if (this.player.riding) this.player.dismount(); playBell();
+    const c = f.c;
+    const card = openPanel(`<div class="job-title-row"><h2>${f.job.icon} ${L("On site")}: ${c.site}</h2></div><p class="job-brief">${L(c.q)}</p><div class="choice-bank">${makeRng(c.x + c.z).shuffle(c.ch.slice()).map((o) => `<button class="choice-btn" data-c="${o.replace(/"/g, "'")}">${L(o)}</button>`).join("")}</div><div id="fc-res"></div>`);
+    card.querySelectorAll(".choice-btn").forEach((b) => b.addEventListener("click", () => { const ok = b.dataset.c === c.a.replace(/"/g, "'"); if (ok) { playSuccess(); this.addRep(1, L("case handled well")); } else Audio.playRetry(); card.querySelector(".choice-bank").innerHTML = ""; card.querySelector("#fc-res").innerHTML = `<div class="solved-banner">${ok ? L("Right call. The site is safe. Control room: 'Good work, {r}.'", { r: rankName(f.job, this.progress.shifts) }) : L("Wrong call. Your partner steps in: the right action was: {a}", { a: L(c.a) })}</div><div class="btn-row"><button class="big-btn" id="fc-ok">${L("Okay")}</button></div>`; card.querySelector("#fc-ok").addEventListener("click", () => { closePanel(); f.onResult(ok); }); }));
+  }
   _talkBoss(job, boss) {
     const pr = this.progress, r = rankIndex(pr.shifts), next = RANK_STEPS[r + 1];
     setMood(boss.group, "happy", 3); this._engagedNpc = boss;
@@ -6581,7 +6697,7 @@ class Game {
     if (this.isSunday()) { showToast(L("Sunday. The office is closed. Rest, play, drive."), 2600); return; }
     const pr = this.progress, before = rankIndex(pr.shifts);
     this.dialogue.say(job.boss, [L(WORK_TASKS[job.id]), job.trial ? L("Five chances. Each clean one is a full day's pay.") : L("Five cases on your desk. Read each one, choose the right action. Each right call is a full day's pay.")], () => {
-      const work = (cb) => (job.trial ? this._startTrial(job.trial, 5, cb, job.boss) : this._runPaper(`${job.icon} ${job.id === "lawyer" ? L("District Court · Courtroom 2 · Your Honour") : job.id === "doctor" ? L("City Hospital · OPD Room 4") : job.id === "police" ? L("Police Station · Duty Room") : job.place}: ${rankName(job, pr.shifts)}`, casesFor(job, 5), cb));
+      const work = (cb) => (job.trial ? this._startTrial(job.trial, 5, cb, job.boss) : FIELD_CASES[job.id] ? this._fieldShift(job, cb) : this._runPaper(`${job.icon} ${job.id === "lawyer" ? L("District Court · Courtroom 2 · Your Honour") : job.place}: ${rankName(job, pr.shifts)}`, casesFor(job, 5), cb));
       work((score) => {
         const pay = Math.round(salaryFor(job, pr.shifts) * score / 5);
         this._shiftDone = true; pr.shifts++; pr.workDays = (pr.workDays || 0) + 1; pr.payToday = pay;
@@ -6702,7 +6818,7 @@ class Game {
     const card = openPanel(`<div class="job-title-row"><h2>💬 ${L("Talk with {n}", { n: name })}</h2><button class="ghost-btn" id="chat-close">${L("Okay")}</button></div><p class="job-brief">${L("Type what you want to say. {n} answers.", { n: name })}</p><div class="chat-log" id="chat-log"></div><div class="chat-row"><input id="chat-in" type="text" maxlength="120" placeholder="${L("Say something…")}" autocomplete="off"><button class="big-btn" id="chat-send">${L("Say")}</button></div>`);
     const log = card.querySelector("#chat-log"), input = card.querySelector("#chat-in");
     const add = (cls, who, text) => { const div = document.createElement("div"); div.className = cls; div.textContent = `${who}: ${text}`; log.appendChild(div); log.scrollTop = 1e6; };
-    const send = () => { const t = (input.value || "").trim(); if (!t) return; input.value = ""; add("me", L("You"), t); this._pendingAct = null; const r = kind === "pet" ? petReply(t) : L(chatReply(kind, t, this._chatCtx(npc))); this.progress.chats = (this.progress.chats || 0) + 1; const act = this._pendingAct; if (act) setTimeout(() => { closePanel(); this._engagedNpc = null; this._doAct(act, npc); }, 1800); setTimeout(() => { add("them", name, r); speakLine(r, pitch); setMood(npc.group, /!|ha/i.test(r) ? "laugh" : "happy", 3); if (kind === "friend" && npc.def) this.addFriendship(npc.def.id, this.progress.chats % 3 === 0 ? 1 : 0); }, 350); };
+    const send = () => { const t = (input.value || "").trim(); if (!t) return; input.value = ""; this._mission("chat"); add("me", L("You"), t); this._pendingAct = null; const r = kind === "pet" ? petReply(t) : L(chatReply(kind, t, this._chatCtx(npc))); this.progress.chats = (this.progress.chats || 0) + 1; const act = this._pendingAct; if (act) setTimeout(() => { closePanel(); this._engagedNpc = null; this._doAct(act, npc); }, 1800); setTimeout(() => { add("them", name, r); speakLine(r, pitch); setMood(npc.group, /!|ha/i.test(r) ? "laugh" : "happy", 3); if (kind === "friend" && npc.def) this.addFriendship(npc.def.id, this.progress.chats % 3 === 0 ? 1 : 0); }, 350); };
     card.querySelector("#chat-send").addEventListener("click", send); input.addEventListener("keydown", (e) => { if (e.key === "Enter") send(); e.stopPropagation(); });
     card.querySelector("#chat-close").addEventListener("click", () => { closePanel(); this._engagedNpc = null; });
     setTimeout(() => input.focus(), 60);
@@ -6835,7 +6951,7 @@ class Game {
       <div class="btn-row"><button class="big-btn" id="pet-pat">🤚 ${L("Pet him")}</button><button class="big-btn" id="pet-feed">🦴 ${L("Feed (₹5 biscuits)")}</button><button class="big-btn" id="pet-walk">${pet.following ? "🏠 " + L("Stay home") : "🦮 " + L("Walk with me")}</button><button class="big-btn" id="pet-talk">💬 ${L("Talk")}</button></div><div class="job-goal" id="pet-msg"></div>`);
     const msg = card.querySelector("#pet-msg");
     card.querySelector("#pet-close").addEventListener("click", () => closePanel());
-    card.querySelector("#pet-pat").addEventListener("click", () => { pr.petHappy = Math.min(100, pr.petHappy + 5); playBark(); pet.wagT = 4; msg.textContent = L("Moti leans into your hand. Happiness +5."); saveProgress(this.profile, pr); });
+    card.querySelector("#pet-pat").addEventListener("click", () => { this._mission("pet"); pr.petHappy = Math.min(100, pr.petHappy + 5); playBark(); pet.wagT = 4; msg.textContent = L("Moti leans into your hand. Happiness +5."); saveProgress(this.profile, pr); });
     card.querySelector("#pet-feed").addEventListener("click", () => { if (pr.money < 5) { msg.textContent = L("No money for biscuits. Ask Papa."); Audio.playRetry(); return; } this.addMoney(-5, "Moti's biscuits"); pr.petHappy = Math.min(100, pr.petHappy + 30); playBark(); pet.wagT = 6; msg.textContent = L("Crunch crunch. Happiness +30."); saveProgress(this.profile, pr); });
     card.querySelector("#pet-walk").addEventListener("click", () => { if (sad && !pet.following) { msg.textContent = L("He will not get up. The vet first."); return; } pet.following = !pet.following; if (pet.following) { pet.walkDist = 0; playBark(); msg.textContent = L("Moti jumps up. He follows you outside; he waits at doors."); this.setObjective(L("Walk Moti: 150 m for a happy dog. Careful on the road."), null); } else { pet.wait = { x: pet.group.position.x, z: pet.group.position.z }; msg.textContent = L("Moti sits. Good boy."); } });
     card.querySelector("#pet-talk").addEventListener("click", () => { closePanel(); this._chat(pet.npc); });
@@ -6873,7 +6989,7 @@ class Game {
   _playPark(kind, pg) {
     if (this._park || this.player.riding) return;
     const P = this.player.group;
-    this._park = { kind, pg, t: 0, dur: kind === "slide" ? 4 : 8 }; pg.busy = true;
+    this._park = { kind, pg, t: 0, dur: kind === "slide" ? 4 : 8 }; pg.busy = true; this._mission("park");
     if (kind === "swing") { this.player.mount({ group: pg.swing, speed: 0, kind: "swing", label: "swing", controlled: false }); }
     else if (kind === "seesaw") { P.position.set(pg.x + 5 - 1.4, 0.75, pg.z); P.rotation.y = Math.PI / 2; sitPose(P, "car"); }
     else { P.position.set(pg.x + 10, 2.1, pg.z - 1.2); P.rotation.y = 0; sitPose(P, "car"); }
@@ -6966,7 +7082,9 @@ class Game {
   }
   _nightStory() {
     if (!this._nightGate()) return;
-    const st = DADI_STORIES[(this.progress.day + this.progress.nights) % DADI_STORIES.length]; this.progress.nights++;
+    const fam = (this.progress.storiesHeard || 0) < FAMILY_STORIES.length ? FAMILY_STORIES[this.progress.storiesHeard || 0] : null;
+    const st = fam ? { title: fam.title, text: fam.text, lesson: fam.q, a: fam.a, ch: fam.ch } : DADI_STORIES[(this.progress.day + this.progress.nights) % DADI_STORIES.length]; this.progress.nights++;
+    if (fam) { this.progress.storiesHeard = (this.progress.storiesHeard || 0) + 1; this._snap("📖", `Dadi's story: ${fam.title}.`); }
     const d = this._dadiFig; if (d) setMood(d.group, "happy", 8);
     this.dialogue.say("Dadi", [L("Come under the blanket. Tonight: \"{t}\".", { t: st.title }), st.text], () => {
       runStepQuiz({ profile: this.profile, level: 1, world: this.world, audio: Audio, countAttempt: () => countAttempt(this.profile, this.progress, "story"), onSolve: () => { this.addFriendship("family", 2, "Dadi's story"); this.diary(`Dadi's story: ${st.title}.`); } },
@@ -6987,6 +7105,7 @@ class Game {
       pr.conduct = (pr.conduct || 0) + ch.conduct; pr.incidents = (pr.incidents || 0) + 1;
       if (ch.marks) { const per = this._effectivePeriod(); if (per && SUBJECTS[per.id]) pr.marks[per.id].cw = Math.max(0, pr.marks[per.id].cw + ch.marks); }
       if (ch.friendship) this.addFriendship(friend.def.id, ch.friendship, "incident");
+      if (ch.id === "punch") this.addRep(-2, L("fighting")); else if (ch.id === "laugh") this.addRep(-1, L("laughing at a friend")); else this.addRep(1, L("stood up the right way"));
       if (ch.id === "punch") { setMood(bully.group, "sad", 6); Audio.playRetry(); this.player.tired = true; } else if (ch.id === "laugh") { setMood(friend.group, "sad", 10); } else { setMood(bully.group, "shy", 6); setMood(friend.group, "happy", 6); setMood(monitor.group, "stern", 6); playSuccess(); }
       saveProgress(this.profile, pr); this.diary(`Incident: ${inc.id}, you chose "${ch.id}". Conduct ${pr.conduct}.`);
       card.querySelector(".choice-bank").innerHTML = "";
@@ -7019,6 +7138,69 @@ class Game {
     else { const age = key === "grandchild" ? 1 : this.childAge(); lines = age < 3 ? ["(giggles) Ba-ba!", "(holds your finger and does not let go)"] : age < 6 ? [L("Papa! Look, I drew a police car!"), L("Play hide and seek? You count!")] : age < 13 ? [L("I got 9 out of 10 in maths! Mrs. Rao says hi."), L("Can we go to the stadium on Sunday?")] : age < 18 ? [L("Exams next week. Can you check my science?"), L("Everyone says I look like you. I do not see it.")] : [L("Work is good. My boss is almost as strict as yours was."), L("Sunday dinner, all of us? I will bring the sweets.")]; }
     this.dialogue.say(n.name, lines, () => { this._engagedNpc = null; }, { pitch: n.def.pitch || 500, speaker: n.id });
   }
+  // ---- Crowd talk: people on the street chat to each other ----
+  _tickCrowd(dt) {
+    this._crowdT = (this._crowdT || 0) - dt; if (this._crowdBubble && (this._crowdBubble.t -= dt) <= 0) { this._crowdBubble.npc.group.remove(this._crowdBubble.sprite); this._crowdBubble = null; }
+    if (this._crowdT > 0 || this.world.currentRoom) return; this._crowdT = 5 + Math.random() * 4;
+    const pp = this.player.position, near = (this.folk || []).filter((f) => f.group.visible && Math.hypot(f.position.x - pp.x, f.position.z - pp.z) < 26); if (!near.length) return;
+    const npc = near[Math.floor(Math.random() * near.length)], line = CROWD_LINES[Math.floor(Math.random() * CROWD_LINES.length)];
+    const sprite = makeTextSprite(L(line), { size: 38, scale: 0.9 }); sprite.position.y = 2.75; npc.group.add(sprite); this._crowdBubble = { npc, sprite, t: 3.4 }; playChatter();
+  }
+  // ---- Daily missions and streaks ----
+  _rollMissions() {
+    const pr = this.progress; if (pr.missionDay === pr.day && pr.missions) return; const r = makeRng(pr.day * 101 + 7);
+    pr.missions = r.shuffle(MISSION_POOL.slice()).slice(0, 3).map(([id, text, need]) => ({ id, text, need, done: 0 })); pr.missionDay = pr.day; saveProgress(this.profile, pr);
+    setTimeout(() => showToast(`🎯 ${L("Today's missions")}: ${pr.missions.map((x) => L(x.text)).join(" · ")}`, 5200, "good"), 2200);
+  }
+  _mission(id) {
+    const pr = this.progress, ms = pr.missions || []; const mm = ms.find((x) => x.id === id); if (!mm || mm.done >= mm.need) return; mm.done++; saveProgress(this.profile, pr);
+    if (mm.done >= mm.need) { Audio.playPick(); showToast(`✅ ${L("Mission done")}: ${L(mm.text)}${ms.every((x) => x.done >= x.need) ? " · " + L("All three! Streak tonight.") : ""}`, 2600, "good"); }
+  }
+  // ---- Tuition, science fair, quiz contest, school trip, scouts ----
+  _tuition() {
+    const pr = this.progress; if (this.phase !== "evening") { showToast(L("Tuition is in the evening."), 2000); return; } if (pr.money < 50) { showToast(L("Mrs. Rao charges ₹50 for tuition."), 2400, "bad"); return; }
+    const card = openPanel(`<div class="job-title-row"><h2>📘 ${L("Evening tuition with Mrs. Rao (₹50)")}</h2><button class="ghost-btn" id="tu-close">${L("Okay")}</button></div><p class="job-brief">${L("Three questions in one subject. Each right answer is one class-work mark. Energy drops a little.")}</p><div class="btn-row">${SUBJECT_IDS.map((s) => `<button class="big-btn" data-s="${s}">${SUBJECTS[s].icon} ${SUBJECTS[s].name}</button>`).join("")}</div>`);
+    card.querySelector("#tu-close").addEventListener("click", () => closePanel());
+    card.querySelectorAll("[data-s]").forEach((b) => b.addEventListener("click", () => { const s = b.dataset.s; closePanel(); this.addMoney(-50, L("tuition")); this.addEnergy(-15); pr.tuition = (pr.tuition || 0) + 1; this._runPaper(`📘 ${L("Tuition")}: ${SUBJECTS[s].name}`, drawSubject(s, 3, this.big), (score) => { if (score) this.addMarks(s, "cw", score, L("tuition")); this.dialogue.say("Mrs. Anjali Rao", [L("{n} of 3. Practice makes marks. Same time tomorrow?", { n: score })]); }); }));
+  }
+  _scienceFair() {
+    const pr = this.progress; pr.fest = pr.fest || {}; pr.fest.sciencefair = true;
+    const card = openPanel(`<div class="job-title-row"><h2>🔬 ${L("Science Fair")}</h2></div><p class="job-brief">${L("Mr. Iyer: 'Pick a project. Parts cost ₹40 at the market; I have bought them for the class. Build it, then answer the judge.'")}</p><div class="shop-list">${SCIENCE_PROJECTS.map((p) => `<div class="cart-row"><div>${p.icon} <b>${L(p.name)}</b><small>${L(p.parts)}</small></div><button class="use-btn" data-id="${p.id}">${L("Build")}</button></div>`).join("")}</div>`);
+    card.querySelectorAll(".use-btn").forEach((b) => b.addEventListener("click", () => { const p = SCIENCE_PROJECTS.find((x) => x.id === b.dataset.id); closePanel(); this._runPaper(`${p.icon} ${L("Judge's questions")}: ${L(p.name)}`, p.qs.map((q) => ({ ...q })), (score) => { if (score >= 2) { this.addMoney(100, L("science fair prize")); pr.badges = pr.badges || []; if (!pr.badges.includes("sciencefair")) pr.badges.push("sciencefair"); this._snap(p.icon, `Science fair: ${p.name}, ${score}/3, prize!`); playSuccess(); } this.addMarks("science", "cw", score, L("science fair")); this.dialogue.say("Mr. Iyer", [score >= 2 ? L("{n} of 3. First prize for {p}. Observed, thought, answered.", { n: score, p: L(p.name) }) : L("{n} of 3. Next year, read the chapter before you build.", { n: score })]); }); }));
+  }
+  _quizContest() {
+    const pr = this.progress; pr.contest = pr.contest || {}; pr.contest[pr.day] = true;
+    this.dialogue.say("Principal Mrs. Verma", [L("Inter-school quiz! Sunrise against Lotus Public. Five questions. Win four and the shield comes home.")], () => { this._runPaper(`🏆 ${L("Inter-school quiz")}`, makeRng(pr.day).shuffle(QUIZ_CONTEST.slice()).slice(0, 5).map((q) => ({ ...q })), (score) => { if (score >= 4) { pr.badges = pr.badges || []; if (!pr.badges.includes("shield")) pr.badges.push("shield"); this.addMoney(150, L("quiz shield")); this._snap("🏆", `Won the inter-school quiz ${score}/5.`); playSuccess(); } this.addMarks("evs", "cw", Math.min(3, score), L("quiz")); this.dialogue.say("Principal Mrs. Verma", [score >= 4 ? L("The shield is ours! {n} of 5. The whole school claps.", { n: score }) : L("{n} of 5. Lotus keeps the shield this year. Read more, next year is ours.", { n: score })]); }); }, { pitch: 400 });
+  }
+  _schoolTrip() {
+    const pr = this.progress; pr.fest = pr.fest || {}; pr.fest.trip = true;
+    const card = openPanel(`<div class="job-title-row"><h2>🚌 ${L("School trip!")}</h2></div><div class="flash-card"><div class="big">🚜✈️</div><div>${L("The whole class on the yellow bus. Green Farm in the morning: cows, a tractor ride, fresh milk. Suryanagar Airport after lunch: a plane takes off over your heads. Questions on the way back, then a picnic in City Park.")}</div></div><div class="btn-row"><button class="big-btn" id="tr-go">${L("Questions on the bus")}</button></div>`);
+    card.querySelector("#tr-go").addEventListener("click", () => { closePanel(); this._runPaper(`🚌 ${L("Trip quiz")}`, TRIP_QS.map((q) => ({ ...q })), (score) => { this.addEnergy(40); this.addMarks("evs", "cw", score, L("school trip")); for (const f of this.friends) this.addFriendship(f.def.id, 1); this._snap("🚌", `School trip: farm and airport, ${score}/5.`); playSuccess(); this.dialogue.say("Mr. Khan", [L("{n} of 5 on the bus. Picnic time: sandwiches, juice, and the football. Home by four.", { n: score })], () => this._startPhase("over")); }); });
+  }
+  _scoutCamp(then) {
+    const pr = this.progress; pr.fest = pr.fest || {}; pr.fest.scouts = true; this._lateNight = true;
+    this.dialogue.say("Coach Vikram", [L("Scout camp on the school field. Tent up, torch on, the sky is clear. Three questions about the stars before lights out.")], () => { this._runPaper(`⛺ ${L("Scout camp")}`, makeRng(pr.day).shuffle(SKY_QS.slice()).slice(0, 3).map((q) => ({ ...q })), (score) => { pr.badges = pr.badges || []; if (!pr.badges.includes("scout")) pr.badges.push("scout"); this._snap("⛺", `Scout camp under the stars, ${score}/3.`); playSuccess(); this.dialogue.say("Coach Vikram", [L("{n} of 3. Scout badge earned. Now sleep; the tent is warm.", { n: score })], () => then()); }); }, { pitch: 300 });
+  }
+  // ---- House, shop growth, bills, colony cases, club, life card ----
+  _buyHouse() { const pr = this.progress; if (pr.house) { showToast(L("The house is yours already. No rent, ever."), 2200); return; } if (!this.working) { showToast(L("Manager: 'A home loan needs a salary. Finish your studies first.'"), 2800); return; } if (pr.money < 5000) { showToast(L("Manager: 'Our house costs ₹5,000 to buy outright. Save up.'"), 2800, "bad"); return; } this.addMoney(-5000, L("bought our house")); pr.house = true; pr.badges = (pr.badges || []); pr.badges.push("house"); saveProgress(this.profile, pr); playSuccess(); this._snap("🏡", "Bought our house in Shanti Nagar."); this.dialogue.say("Papa", [L("You bought the house. Our house. My father rented it, I rented it, and you own it. ₹30 of rent saved every night now.")]); }
+  _growShop() { const pr = this.progress; if (!pr.shop) return; if (pr.shopLevel >= 1) { const log = (pr.shopLog || []).slice(-7); openPanel(`<div class="job-title-row"><h2>🏪 ${L("The books")}</h2><button class="ghost-btn" id="bk-x">${L("Okay")}</button></div><p class="job-brief">${L("Chhotu runs the second counter. Nightly income: ₹350.")}</p><div class="job-goal">${log.length ? log.map((x) => `${L("Day")} ${x.d}: ₹${x.n}`).join("<br>") : L("No entries yet.")}</div>`).querySelector("#bk-x").addEventListener("click", () => closePanel()); return; } if (pr.money < 3000) { showToast(L("Meena: 'A second counter and Chhotu's salary: ₹3,000.'"), 2800, "bad"); return; } this.addMoney(-3000, L("shop expansion")); pr.shopLevel = 1; saveProgress(this.profile, pr); playSuccess(); this._snap("🏪", "The shop grew: second counter, Chhotu hired."); this.dialogue.say("Chhotu", [L("Boss! I mean, sir! I open at eight, sharp. ₹350 a night now, you watch.")]); }
+  _colonyCase() { const pr = this.progress; if (pr.colonyCase === pr.day) { showToast(L("Solved for today. Tomorrow a new problem."), 2000); return; } const c = COLONY_CASES[pr.day % COLONY_CASES.length]; const card = openPanel(`<div class="job-title-row"><h2>📌 ${L("Colony notice board")}</h2></div><p class="job-brief">${L(c.t)}</p><p class="job-goal">${L(c.q)}</p><div class="choice-bank">${makeRng(pr.day).shuffle(c.ch.slice()).map((o) => `<button class="choice-btn" data-c="${o.replace(/"/g, "'")}">${L(o)}</button>`).join("")}</div><div id="cc-res"></div>`); card.querySelectorAll(".choice-btn").forEach((b) => b.addEventListener("click", () => { const ok = b.dataset.c === c.a; pr.colonyCase = pr.day; if (ok) { this.addMoney(20, L("colony thanks")); this.addRep(1, L("solved a colony problem")); playSuccess(); } else Audio.playRetry(); card.querySelector(".choice-bank").innerHTML = ""; card.querySelector("#cc-res").innerHTML = `<div class="solved-banner">${ok ? L("Solved! The colony WhatsApp group thanks you. Sharma Uncle gives ₹20 for samosas.") : L("Hmm. Kaka says: the right way was: {a}", { a: L(c.a) })}</div><div class="btn-row"><button class="big-btn" id="cc-ok">${L("Okay")}</button></div>`; card.querySelector("#cc-ok").addEventListener("click", () => closePanel()); })); }
+  _club(kind) {
+    const pr = this.progress; const fee = this.working ? 500 : 300;
+    if (!pr.club) { if (pr.money < fee) { showToast(L("Steward: 'Membership is ₹{f}. Pool, table tennis, chess, canteen.'", { f: fee }), 3000, "bad"); return; } this.addMoney(-fee, L("club membership")); pr.club = true; saveProgress(this.profile, pr); playSuccess(); this._snap("🏊", "Joined Suryanagar Club."); showToast(L("Welcome to Suryanagar Club. Member number {n}.", { n: 100 + pr.day }), 3000, "good"); return; }
+    if (kind === "chess") { if (this._playChess) return this._playChess(); }
+    if (kind === "canteen") { if (pr.money < 20) return showToast(L("Nimbu pani is ₹20."), 2000); this.addMoney(-20, "nimbu pani"); this.addEnergy(15); showToast(L("🍋 Cold nimbu pani. Ahh."), 2000, "good"); return; }
+    const spec = CLUB_GAMES.find((g) => g.id === kind); this._timingGame(spec, kind === "pool" ? 4 : 5, (h) => { pr.fun = (pr.fun || 0) + 1; this.addEnergy(kind === "pool" ? -10 : 5); this.diary(`${spec.name}: ${h}.`); }, "Club coach");
+  }
+  _lifeCard() {
+    const pr = this.progress, job = this.job; const score = this.termMarks() * 2 + (pr.badges || []).length * 10 + Math.round(pr.money / 10) + pr.shifts * 5 + Object.values(pr.friendship).reduce((a, b) => a + b, 0);
+    let board = []; try { board = JSON.parse(localStorage.getItem("school-days.scores") || "[]"); } catch (e) {}
+    board = board.filter((b) => b.profile !== this.profile).concat([{ profile: this.profile, label: this.profileLabel, score, when: `Day ${pr.day}` }]).sort((a, b) => b.score - a.score).slice(0, 10); try { localStorage.setItem("school-days.scores", JSON.stringify(board)); } catch (e) {}
+    const lines = [`${this.profileLabel}${job ? " · " + rankName(job, pr.shifts) + " " + job.name : ""}`, `${L("Age")} ${pr.age} · ${L("Day")} ${pr.day}`, `${L("Marks this term")}: ${this.termMarks()}`, `${L("Badges")}: ${(pr.badges || []).length} · ${L("Friends")}: ${Object.values(pr.friendship).reduce((a, b) => a + b, 0)}`, `${L("Wallet")}: ${fmtMoney(pr.money)} · ${L("Reputation")}: ${pr.rep || 0}`, this.familyLine(), `${L("Life score")}: ${score}`];
+    const card = openPanel(`<div class="job-title-row"><h2>🪪 ${L("My Life card")}</h2><button class="ghost-btn" id="lc-x">${L("Okay")}</button></div><div class="flash-card">${lines.map((l) => `<div>${l}</div>`).join("")}</div><div class="btn-row"><button class="big-btn" id="lc-dl">📥 ${L("Download as picture")}</button></div><div class="section-label">${L("Leaderboard (this device)")}</div><div class="job-goal">${board.map((b, i) => `${i + 1}. ${b.label} · ${b.score} · ${b.when}`).join("<br>")}</div>`);
+    card.querySelector("#lc-x").addEventListener("click", () => closePanel());
+    card.querySelector("#lc-dl").addEventListener("click", () => { try { const cv = document.createElement("canvas"); cv.width = 900; cv.height = 520; const c = cv.getContext("2d"); c.fillStyle = "#fff8ef"; c.fillRect(0, 0, 900, 520); c.fillStyle = "#b4531a"; c.font = "bold 44px sans-serif"; c.fillText("School Days · My Life", 40, 80); c.fillStyle = "#3b2110"; c.font = "28px sans-serif"; lines.forEach((l, i) => c.fillText(l, 40, 150 + i * 46)); c.fillStyle = "#8a5626"; c.font = "18px sans-serif"; c.fillText("Suryanagar, Sunrise Public School · " + GAME_VERSION, 40, 490); const a = document.createElement("a"); a.href = cv.toDataURL("image/png"); a.download = "my-life-card.png"; document.body.appendChild(a); a.click(); a.remove(); playSuccess(); } catch (e) { this._reportError(e); } });
+  }
   // ---- Directions: if you are lost for a while, the game tells you the way ----
   _tickDirections(dt) {
     const o = this.objective; if (!o || o.x == null || o.z == null || this.world.currentRoom || this._trial || this._park) { this._navT = 0; this._navBest = Infinity; return; }
@@ -7047,8 +7229,14 @@ class Game {
     if (this.job && this._bossNpc) contacts.push(["boss", this.job.boss, this._bossNpc]);
     for (const f of this.friends.slice(0, 3)) contacts.push([f.def.id, f.name, f]);
     const inbox = [pr.spouse ? `${pr.spouse.name}: ${L("Come home early today. Made your favourite.")}` : `Maa: ${L("Did you eat? Call me.")}`, this.job ? `${this.job.boss}: ${L("Cases on your desk. Do not be late.")}` : `${this.friends[0].name}: ${L("Cricket Sunday? Stadium Ground, 4 pm.")}`, `${L("Bank")}: ${L("Balance")} ${fmtMoney(pr.savings || 0)}. ${L("Wallet")} ${fmtMoney(pr.money)}.`];
-    const card = openPanel(`<div class="job-title-row"><h2>📱 ${L("Phone")}</h2><button class="ghost-btn" id="ph-close">${L("Okay")}</button></div><div class="section-label">${L("Messages")}</div><div class="chat-log">${inbox.map((s) => `<div class="them">${s}</div>`).join("")}</div><div class="section-label">${L("Contacts")}</div><div class="shop-list">${contacts.map(([id, name]) => `<div class="cart-row"><div>📞 <b>${name}</b></div><button class="use-btn" data-id="${id}">${L("Call")}</button></div>`).join("")}</div>`);
+    const job = this.job; if (job) { const r = rankIndex(pr.shifts), nx = RANK_STEPS[r + 1]; inbox.unshift(`${job.boss}: ${nx ? L("{k} good shifts to your promotion to {n}.", { k: nx - pr.shifts, n: (RANKS[job.id] || RANKS.generic)[r + 1] }) : L("Top rank. Proud of you.")}`); }
+    if (!pr.spouse && pr.age >= 23) inbox.push(`Maa: ${L("You are {a}. I have three proposals ready. Wedding at 25!", { a: pr.age })}`); if (pr.spouse && !pr.child) inbox.push(`${pr.spouse.name}: ${L("Maa asked about grandchildren again. Two years after the wedding, she says.")}`); if (pr.child) inbox.push(`${pr.child.name}: ${this.childAge() < 6 ? "🍼 (a voice note of giggles)" : L("Papa, come early, I have news from school!")}`);
+    const numbers = contacts.map(([id, name]) => [id, name, phoneNumberFor(id)]);
+    const card = openPanel(`<div class="job-title-row"><h2>📱 ${L("Phone")}</h2><button class="ghost-btn" id="ph-close">${L("Okay")}</button></div><div class="chat-row"><input id="ph-dial" type="tel" placeholder="${L("Dial a number…")}" autocomplete="off"><button class="big-btn" id="ph-call">📞 ${L("Call")}</button></div><div class="tiny-note" id="ph-note">${L("Type any number. Contacts below show theirs.")}</div><div class="section-label">${L("Messages")}</div><div class="chat-log">${inbox.map((s) => `<div class="them">${s}</div>`).join("")}</div><div class="section-label">${L("Contacts")}</div><div class="shop-list">${numbers.map(([id, name, num]) => `<div class="cart-row"><div>📞 <b>${name}</b><small>${num}</small></div><button class="use-btn" data-id="${id}">${L("Call")}</button></div>`).join("")}</div><div class="btn-row"><button class="big-btn" id="ph-hw">📘 ${L("Homework Helper: one hint token (costs 1 mark)")}</button></div>`);
     card.querySelector("#ph-close").addEventListener("click", () => closePanel());
+    const dial = card.querySelector("#ph-dial"); const doDial = () => { const n = (dial.value || "").replace(/\D/g, ""); if (!n) return; const hit = numbers.find((x) => x[2] === n); closePanel(); if (hit) { const c = contacts.find((x) => x[0] === hit[0]); pr.phoneLog.push(c[0]); this._chat(c[2]); } else { const who = { id: "stranger", name: L("Unknown number"), def: { id: "stranger_" + n, name: L("Unknown number"), pitch: 380 + (Number(n.slice(-2)) || 0) * 2 }, group: this.family.papa.group }; this._chat(who); setTimeout(() => { const log = document.getElementById("chat-log"); if (log) { const d = document.createElement("div"); d.className = "them"; d.textContent = `${who.name}: ${WRONG_NUMBER[Number(n.slice(-1)) % WRONG_NUMBER.length]}`; log.appendChild(d); } }, 400); } };
+    card.querySelector("#ph-call").addEventListener("click", doDial); dial.addEventListener("keydown", (e) => { e.stopPropagation(); if (e.key === "Enter") doDial(); });
+    card.querySelector("#ph-hw").addEventListener("click", () => { const s = SUBJECT_IDS.slice().sort((a, b) => pr.marks[b].cw - pr.marks[a].cw)[0]; if (pr.marks[s].cw < 1) { showToast(L("No marks to trade yet. Earn one first."), 2400); return; } pr.marks[s].cw--; pr.hints = (pr.hints || 0) + 1; saveProgress(this.profile, pr); this.ui.refreshRank(); showToast(L("📘 One hint token. One {s} mark gone. Real choice.", { s: SUBJECTS[s].name }), 3000); });
     card.querySelectorAll(".use-btn").forEach((b) => b.addEventListener("click", () => { const c = contacts.find((x) => x[0] === b.dataset.id); closePanel(); pr.phoneLog.push(c[0]); this._chat(c[2]); }));
   }
   // ---- Player two: Gudiya on I J K L ----
@@ -7077,7 +7265,7 @@ class Game {
     let step = 0, right = 0; const order = rec.steps.slice();
     const card = openPanel(`<div class="job-title-row"><h2>${rec.icon} ${L("Cooking")}: ${rec.name}</h2></div><p class="job-brief">${L("{w}: 'Wash your hands. I chop, you tell me what comes next.'", { w: who })}</p><div class="job-goal" id="ck-step"></div><div class="choice-bank" id="ck-ch"></div><div id="ck-res"></div>`);
     const show = () => { card.querySelector("#ck-step").textContent = `${L("Step")} ${step + 1} / ${order.length}: ${L("what comes next?")}`; const rest = order.slice(step); const opts = makeRng(step * 7 + pr.day).shuffle(rest.slice(0, 3)); card.querySelector("#ck-ch").innerHTML = opts.map((o) => `<button class="choice-btn" data-s="${o.replace(/"/g, "'")}">${o}</button>`).join(""); card.querySelectorAll(".choice-btn").forEach((b) => b.addEventListener("click", () => { if (b.dataset.s === order[step]) { right++; Audio.playStep(); } else Audio.playRetry(); step++; if (step < order.length) show(); else finish(); })); };
-    const finish = () => { pr.cooked = (pr.cooked || 0) + 1; this.addEnergy(30); this.addFriendship("family", 1, L("cooking together")); saveProgress(this.profile, pr); playSuccess(); card.querySelector("#ck-ch").innerHTML = ""; card.querySelector("#ck-step").textContent = ""; card.querySelector("#ck-res").innerHTML = `<div class="score-big">${right} / ${order.length}</div><div class="solved-banner"><b>${who}:</b> "${L(right >= 3 ? "Perfect {d}. You cook better than Papa." : "Edible! Next time, watch the order.", { d: rec.name })}"</div><div class="btn-row"><button class="big-btn" id="ck-ok">${L("Okay")}</button></div>`; card.querySelector("#ck-ok").addEventListener("click", () => closePanel()); this._snap(rec.icon, `Cooked ${rec.name} with ${who}.`); };
+    const finish = () => { pr.cooked = (pr.cooked || 0) + 1; this._mission("cook"); this.addEnergy(30); this.addFriendship("family", 1, L("cooking together")); saveProgress(this.profile, pr); playSuccess(); card.querySelector("#ck-ch").innerHTML = ""; card.querySelector("#ck-step").textContent = ""; card.querySelector("#ck-res").innerHTML = `<div class="score-big">${right} / ${order.length}</div><div class="solved-banner"><b>${who}:</b> "${L(right >= 3 ? "Perfect {d}. You cook better than Papa." : "Edible! Next time, watch the order.", { d: rec.name })}"</div><div class="btn-row"><button class="big-btn" id="ck-ok">${L("Okay")}</button></div>`; card.querySelector("#ck-ok").addEventListener("click", () => closePanel()); this._snap(rec.icon, `Cooked ${rec.name} with ${who}.`); };
     show();
   }
   _piggy() {
@@ -7203,7 +7391,7 @@ class Game {
     saveProgress(this.profile, pr); this._yearPassed(); this._startPhase("morning"); showToast(L("⏩ A year went by. Age {a}.", { a: pr.age }), 3200, "good");
   }
   _yearPassed() {
-    const pr = this.progress; pr.age++; saveProgress(this.profile, pr); this.ui.refreshRank();
+    const pr = this.progress; pr.age++; if (this.working && pr.money >= 200) { pr.money -= 200; pr.taxPaid = (pr.taxPaid || 0) + 1; showToast(L("🧾 Income tax paid on time: ₹200. A good citizen."), 3000, "good"); } saveProgress(this.profile, pr); this.ui.refreshRank();
     if (!pr.spouse && pr.age >= 25) return this._wedding();
     if (pr.spouse && !pr.child && pr.age >= pr.marriedAt + 2) return this._childBorn();
     if (pr.child && !pr.childMarried && this.childAge() >= 23) return this._childWedding();
@@ -7218,7 +7406,7 @@ class Game {
       const p = PARTNERS.find((x) => x.id === b.dataset.id); pr.spouse = { id: p.id, name: p.name, job: p.job, look: p.look, pitch: p.pitch }; pr.marriedAt = pr.age; pr.generations = Math.max(pr.generations || 1, 1);
       this.addMoney(500, L("wedding gifts")); pr.badges = pr.badges || []; pr.badges.push("married"); saveProgress(this.profile, pr); playSuccess();
       for (const f of Object.values(this.family)) setMood(f.group, "laugh", 12);
-      card.innerHTML = `<div class="job-title-row"><h2>💍 ${L("The wedding")}</h2></div><div class="flash-card"><div class="big">🎉</div><div>${L("Under the mango tree in Shanti Nagar Park. Lights on every tree. Papa cannot stop smiling. Dadi blesses you both and asks for cake. Gudiya dances until the band gives up. {n} takes your hand.", { n: p.name })}</div><div>${L("Gifts: ₹500. {n} moves into our home.", { n: p.name })}</div></div><div class="btn-row"><button class="big-btn" id="wd-ok">${L("Okay")}</button></div>`;
+      card.innerHTML = `<div class="job-title-row"><h2>💍 ${L("The wedding")}</h2></div><div class="flash-card"><div class="big">🎉</div><div>${L("Under the mango tree in Shanti Nagar Park. Lights on every tree. Papa cannot stop smiling. Dadi blesses you both and asks for cake. Gudiya dances until the band gives up. {b} gives the first toast. {n} takes your hand.", { n: p.name, b: (() => { const bf = Object.entries(pr.friendship).filter(([k]) => FRIENDS.find((f) => f.id === k)).sort((a, b) => b[1] - a[1])[0]; return bf ? FRIENDS.find((f) => f.id === bf[0]).name + ", your best friend since Class 3," : "Aarav"; })() })}</div><div>${L("Gifts: ₹500. {n} moves into our home.", { n: p.name })}</div></div><div class="btn-row"><button class="big-btn" id="wd-ok">${L("Okay")}</button></div>`;
       this._snap("💍", `Married ${p.name} under the mango tree.`);
       card.querySelector("#wd-ok").addEventListener("click", () => { closePanel(); this.diary(`Married ${p.name}.`); if (this.world.currentRoom && this.world.currentRoom.type === "home") { this._exitRoom(); this._enterRoom(this.world.doors.find((d) => d.label === "Our Home")); } });
     }));
@@ -7346,6 +7534,7 @@ class Game {
     const card = openPanel(`<div class="job-title-row"><h2>${S.icon} ${S.name} · question ${i + 1} of ${qs.length}</h2></div><p class="job-brief"><b>${L("{t} looks at the class: \"{q}\"", { t: t.name, q: q.q })}</b></p><div class="hand-row"><button class="big-btn" id="hand-up">${L("✋ Raise my hand")}</button><button class="ghost-btn" id="hand-down">${L("🤫 Let someone else answer")}</button></div><p class="tiny-note">A correct answer on the first try is 2 marks. With help, 1 mark.</p>`);
     const ctx = { profile: this.profile, level: 1, world: this.world, audio: Audio, countAttempt: () => countAttempt(this.profile, this.progress, "class:" + subject) };
     card.querySelector("#hand-up").addEventListener("click", () => {
+      this._mission("hand");
       let tries = 0;
       runStepQuiz({ ...ctx, countAttempt: () => { tries++; ctx.countAttempt(); }, onSolve: () => { const m = tries <= 1 ? 2 : 1; this._marksToday = (this._marksToday || 0) + m; this.addMarks(subject, "cw", m, tries <= 1 ? "answered first time" : "answered with a hint"); setMood(t.group, "happy", 3); this.friends.forEach((f) => setMood(f.group, Math.random() < 0.5 ? "happy" : "calm", 2)); this._askRound(subject, t, qs, i + 1); } },
         { title: `${S.name}: your answer`, intro: `${t.name}: "${L("Yes, you. Tell the class.")}"`, goal: "Take your time. Wrong tries lose a mark, not the question.", steps: [step], doneBtn: "Sit down", doneHtml: `<b>${t.name}:</b> "${L("Correct! Well done.")}"`, noLeave: true });
@@ -7410,7 +7599,7 @@ class Game {
     const t = TIFFINS.find((x) => x.id === this.progress.tiffin);
     if (this._ateLunch) { showToast("You have eaten. Chat with friends, buy something at the canteen, then EVS class.", 3000); return; }
     const card = openPanel(`<div class="job-title-row"><h2>🍱 Lunch break</h2></div><p class="job-brief">You sit on the bench. ${this.friends[0].name} and ${this.friends[1].name} squeeze in beside you. You open your tiffin: <b>${t ? t.icon + " " + t.name : "nothing! You forgot it"}</b>.</p><div class="hand-row">${t ? `<button class="big-btn" id="eat">Eat it (+${t.energy} energy)</button><button class="ghost-btn" id="share">Share half with a friend (+${Math.round(t.energy / 2)} energy, friendship)</button>` : `<button class="big-btn" id="nofood">Ask a friend for a bite</button>`}</div>`);
-    const done = (msg) => { closePanel(); this._ateLunch = true; { const b = this.birthdayToday(); if (b && b.where === "school" && !this._bdayWished) { this._bdayWished = true; const fr = this.friends.find((f) => f.def.id === b.id); if (fr) { this.addFriendship(b.id, 3, L("wished happy birthday")); setMood(fr.group, "laugh", 6); showToast(L("🎂 {n} brought toffees for the class. You sang the loudest.", { n: b.name }), 3600, "good"); } else showToast(L("🎂 The class sang for {n}. Extra marks? No. Extra smile? Yes.", { n: b.name }), 3200, "good"); } } if (!this._incidentDone && Math.random() < 0.25) { this._incidentDone = true; setTimeout(() => this._incident(() => {}), 900); } this.player.eatT = 3; showToast(msg, 3200, "good"); this.friends.forEach((f) => setMood(f.group, "happy", 4)); this.setObjective("Lunch is on: chat with friends, buy at the canteen counter, then EVS: sit at your desk.", 100, -86); };
+    const done = (msg) => { closePanel(); this._ateLunch = true; if (this.progress.day === 8 && !(this.progress.contest || {})[8]) setTimeout(() => this._quizContest(), 1200); { const b = this.birthdayToday(); if (b && b.where === "school" && !this._bdayWished) { this._bdayWished = true; const fr = this.friends.find((f) => f.def.id === b.id); if (fr) { this.addFriendship(b.id, 3, L("wished happy birthday")); setMood(fr.group, "laugh", 6); showToast(L("🎂 {n} brought toffees for the class. You sang the loudest.", { n: b.name }), 3600, "good"); } else showToast(L("🎂 The class sang for {n}. Extra marks? No. Extra smile? Yes.", { n: b.name }), 3200, "good"); } } if (!this._incidentDone && Math.random() < 0.25) { this._incidentDone = true; setTimeout(() => this._incident(() => {}), 900); } this.player.eatT = 3; showToast(msg, 3200, "good"); this.friends.forEach((f) => setMood(f.group, "happy", 4)); this.setObjective("Lunch is on: chat with friends, buy at the canteen counter, then EVS: sit at your desk.", 100, -86); };
     const eat = card.querySelector("#eat"); if (eat) eat.addEventListener("click", () => { this.addEnergy(t.energy); done(`${t.icon} Yum. Energy ${Math.round(this.progress.energy)}.`); });
     const share = card.querySelector("#share"); if (share) share.addEventListener("click", () => { const f = this.friends[Math.floor(Math.random() * this.friends.length)]; this.addEnergy(Math.round(t.energy / 2)); this.addFriendship(f.def.id, 2, "shared your tiffin"); this.diary(`Shared lunch with ${f.name}.`); done(`${f.name}: "Mmm! Your Maa cooks the best."`); });
     const nf = card.querySelector("#nofood"); if (nf) nf.addEventListener("click", () => { this.addEnergy(15); done("Aarav gives you half a paratha. Pack your tiffin tomorrow!"); });
@@ -7522,7 +7711,10 @@ class Game {
     this.player.tired = this.progress.energy < 25;
     if (this.player.riding && this.player.riding.kind === "bike" && this.progress.energy <= 0 && !this.progress.cast && !panelOpen()) this._fallOffBike();
     const useP = !blocked && this.input.usePressed(); if (this._trial) { const eP = this.input.interactPressed(); this._tickTrial(dt, useP || eP); this.ui.setInteractPrompt(`${this._trial ? this._trial.spec.icon : ""} ${L(this._trial && this._trial.kind === "cricket" ? "Swing" : "Shoot")}  (F / E)`); }
-    this._tickPet(dt); this._tickRain(); this._tickP2(dt); this._tickDirections(dt);
+    this._tickPet(dt); this._tickRain(); this._tickP2(dt); this._tickDirections(dt); this._tickCrowd(dt); this._tickField(dt);
+    if (this.world.setTimeOfDay) this.world.setTimeOfDay(this.world.currentRoom ? "school" : this.phase);
+    musicTick(this._trial ? "stadium" : this.world.currentRoom ? (["canteen", "eatery", "shop", "supermarket"].includes(this.world.currentRoom.type) ? "market" : null) : this.phase === "school" ? "school" : this.phase === "over" ? "evening" : Math.hypot(pp.x - 40, pp.z - 80) < 45 ? "market" : this.phase, dt);
+    if (this.player.riding && this.player.riding.kind === "bike" && this.player.speedKmh > 1) { this._rideDist = (this._rideDist || 0) + this.player.speedKmh / 3.6 * dt; if (this._rideDist >= 200) { this._rideDist = 0; this._mission("exercise"); } }
     if (this._seatArrow && this.world.currentRoom) this._seatArrow.position.y = 2.6 + Math.sin(elapsed * 3) * 0.25;
     this._updateGear(dt, elapsed, this._trial ? false : useP);
     this._updateGames();
@@ -7559,6 +7751,7 @@ class Game {
     if (this.bigmap.isOpen) this.bigmap.draw();
     this.bigmap.updateCompass(this.player.camYaw);
     if (!this._contextLost) this.renderer.render(this.world.scene, this.camera);
+    if (this._wantShot) { this._wantShot = false; try { const url = this.renderer.domElement.toDataURL("image/png"); const a = document.createElement("a"); a.href = url; a.download = `school-days-day${this.progress.day}.png`; document.body.appendChild(a); a.click(); a.remove(); this._snap("📷", `Photo on day ${this.progress.day}.`); playSuccess(); } catch (e) { this._reportError(e); } }
   }
   _nearestInteractable() {
     const p = this.player.position; let best = null, bestDist = Infinity;
@@ -7700,7 +7893,8 @@ class Game {
     browse();
   }
   _receive(it, qty) {
-    const pr = this.progress;
+    const pr = this.progress; this._mission("shop");
+    if ((pr.rep || 0) >= 10 && it.price) { const back = Math.round(it.price * qty * 0.1); if (back) setTimeout(() => this.addMoney(back, L("shopkeeper's discount for a good neighbour")), 200); }
     if (it.kind === "fuel") { pr.fuel += it.value * qty; return `⛽ ${pr.fuel.toFixed(1)} L in the tank.`; }
     if (it.kind === "hint") { pr.hints += it.value * qty; return `📘 Hint tokens: ${pr.hints}.`; }
     if (it.kind === "furniture") { pr.furniture = pr.furniture || []; if (!pr.furniture.includes(it.id)) pr.furniture.push(it.id); return `${it.icon} ${it.name} goes to your room. Press E at home to see it.`; }

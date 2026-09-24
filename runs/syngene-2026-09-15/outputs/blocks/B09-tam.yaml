@@ -1,0 +1,77 @@
+stage: B09-tam
+company: "SYNGENE"
+run_date: "2026-09-15"
+model: claude-sonnet-5
+status: partial
+input_gaps:
+  - "Ind AS 108 single operating segment: no CRO/CDMO revenue split in audited notes; every mix % used to scope this analysis is call-transcript or CRISIL-rationale sourced (carried from B00/B04/B07)"
+  - "No India-specific market size found for discovery/pre-clinical CRO or for CDMO alone; only India Clinical CRO ($1.9bn->$3.4bn) is management-disclosed, and BCG-IPSO's India CRDMO figure ($3-3.5bn) is a combined, not segment-split, number"
+  - "Two India CDMO market figures found (broad ~$17.5bn aggregator figure, likely includes generic API/CMO manufacturing, date unclear, NOT FOUND; narrow BCG-IPSO $3-3.5bn NCE-CRDMO figure) diverge ~5x by scope; not reconciled, narrower figure used"
+  - "Piramal Pharma CDMO segment revenue (~Rs4,878cr), Anthem, Sai Life and Aragen FY26 revenue are SECONDARY/press-derived, not pulled from primary FY26 filings in this run's corpus"
+  - "Bayview total committed capex and target utilisation/revenue NOT FOUND IN DOCUMENT; blocks precise sizing of the 3C capacity gap and of Bayview as a SAM-expansion lever (5D)"
+  - "Anthem Biosciences' own Frost & Sullivan report PDF could not be text-extracted (binary/encoded); a possible independent cross-check of the F&S figures went unread"
+  - "aninews.in coverage of an India CRDMO '5% share by 2029' claim returned HTTP 403 and was dropped rather than verified"
+flags:
+  - type: FLAG-TAM-SAM-GAP
+    reason: "Management's AR26 and investor decks present the global USD 213bn/330bn CRDMO TAM prominently and never narrow it to an India/company-specific SAM anywhere in the corpus read for this run; the only India-specific figure shown (Clinical CRO, $1.9-3.4bn) covers a minor part of Syngene's actual business. The TAM number itself is reasonably sourced (mgmt_claim_ratio 1.13x, reasonable) -- the risk is presentational TAM/SAM conflation, not an inflated headline number."
+  - type: FLAG-CAPACITY-EXCEEDS-B07
+    reason: "SOM-implied revenue (3yr Rs6,169cr, 5yr Rs8,786cr) exceeds the capacity ceiling implied by B07's 34.5% capex-embedded-growth figure (~Rs5,029cr) by ~Rs1,140cr (3yr) and ~Rs3,757cr (5yr). Bayview's total committed capex is NOT FOUND IN DOCUMENT, so the gap cannot be closed with evidence in this corpus; the SOM is the optimistic side of this comparison."
+  - type: FLAG-BELOW-MARKET-GROWTH
+    reason: "Syngene's own 2-year revenue CAGR (FY24 Rs3,489cr to FY26 Rs3,739cr) is ~3.5%, below both the 9% global TAM CAGR and the 15% India SAM CAGR used in the SOM funnel. The +1-2pp share-gain assumed for SOM requires the CDMO refill and research-services stabilisation to materialise; the recent trend runs the other way."
+  - type: FLAG-SCOPE-MISMATCH-INDIA-CDMO
+    reason: "A broad ~$17.5bn 'India CDMO market' figure (likely includes generic API/formulation contract manufacturing, date unclear) and BCG-IPSO's narrower ~$3-3.5bn NCE-innovator CRDMO figure (Feb-2025) diverge roughly 5x by scope. This report uses the narrower, better-matched figure for SAM; the discrepancy is named, not resolved."
+  - type: FLAG-AR-BIOSECURE-CONTRADICTION-CARRIED
+    reason: "Carried from B07: AR26 contains two internally contradictory statements on the BIOSECURE Act in different sections (outgoing CEO's letter says it 'eliminated any short-term China+1 tailwinds' vs the Industry Trends section saying 'China+1 is accelerating... reinforced by... BIOSECURE Act momentum'). Directly bears on the regulatory-tailwind growth driver in Section 4A; unresolved this pass."
+market_definition: "Global outsourced discovery/pre-clinical CRO plus small- and large-molecule CDMO for innovator pharma/biotech/animal-health clients, delivered from India (plus Bayview, Maryland); excludes full clinical-trial CRO, generic API/formulation manufacturing, and captive in-house R&D"
+tam_cr: {conservative: 1804800, realistic: 2044800}
+sam_cr: 31200
+sam_pct_of_tam: 1.73
+som_3yr_cr: 6169
+som_5yr_cr: 8786
+som_implied_revenue_cagr: {yr3: 18.2, yr5: 18.6}
+current_sam_share_pct: 12.0
+revenue_headroom_x: 8.35
+tam_growth_pct: 15
+runway_class: "STRONG"
+mgmt_claim_cr: 2044800
+mgmt_claim_ratio: 1.13
+mgmt_claim_read: "reasonable"
+capacity_check: "gap of ~Rs1,140 Cr (3yr) / ~Rs3,757 Cr (5yr); SOM is the optimistic side, capex plan is the binding constraint and Bayview's total committed capex is NOT FOUND IN DOCUMENT"
+methods_used:
+  - "top-down (global, Frost & Sullivan/Evaluate Pharma/IMAP via AR26 and Dec-2025 investor deck)"
+  - "bottom-up (outsourcing-penetration-on-pharma-spend, AR26 p.28; not independent of top-down)"
+  - "peer revenue aggregation (India-listed/IPO-stage CRDMO players FY26, cross-checked against BCG-IPSO)"
+  - "global benchmark (India vs China CDMO/CRO share migration, BCG-IPSO + Mordor Intelligence)"
+  - "import substitution: not applicable, Syngene is an outsourcing-capture story, not a domestic-substitution story"
+stale_data_flags:
+  - {datapoint: "BCG-IPSO India CRDMO market size and 2035 projection (core SAM anchor)", source: "BCG/IPSO report via IBEF", year: "2025-02-27"}
+  - {datapoint: "China CDMO market revenue, used as Method 5 benchmark comparator", source: "Mordor Intelligence", year: "2023"}
+  - {datapoint: "Broad ~USD 17.5bn India CDMO market figure (not used in core estimate, scope mismatch only)", source: "market-research aggregator, exact report and date NOT FOUND", year: "NOT FOUND"}
+searches_performed:
+  - "India CRDMO market size 2025 2030 CRISIL report USD billion"
+  - "India contract research CRO CDMO industry size India IBEF 2026"
+  - "global biologics CDMO market size 2025 forecast billion"
+  - "Anthem Biosciences Sai Life Sciences Syngene revenue FY26 India CRDMO peer comparison"
+  - "WebFetch: IBEF article on BCG-IPSO India CRDMO report"
+  - "WebFetch: Anthem Biosciences Frost & Sullivan report PDF (failed extraction)"
+  - "Piramal Pharma CDMO segment revenue FY26 annual crore"
+  - "Aragen Life Sciences revenue FY25 FY26 crore CRDMO India"
+  - "India biologics CDMO capacity race Syngene Biocon Aragen investment 2026"
+  - "India biologics CDMO market size 2024 2030 billion report"
+  - "Sai Life Sciences FY26 annual revenue crore results"
+  - "USD INR exchange rate September 2026"
+  - "WebFetch: aninews.in India CRDMO 5% share by 2029 (HTTP 403, failed)"
+  - "China share of global CDMO CRO market percentage WuXi dominance"
+searches_skipped:
+  - "Second independent corroboration of BCG-IPSO India figure (e.g. Kotak Mutual Fund report referenced only in search snippets) -- not pulled directly, BCG-IPSO's internal math was consistent enough to anchor SAM alone"
+  - "Primary FY26 segment-note pulls for Piramal, Anthem, Sai Life, Aragen -- Method 3 relies on SECONDARY/press-derived figures instead"
+downstream_candidates:
+  - {signal: "Global biotech VC/venture funding levels", entity_type: "macro", demand_link: "Funds early-stage biotech spend converting to discovery/CRO revenue with a 6-12mo lag", likely_source: "Biotech financing trackers (Evaluate Pharma/PitchBook-type funding data)", cadence: "quarterly", shared: true}
+  - {signal: "BIOSECURE Act implementation status (DoD 1260H list, transition rules)", entity_type: "regulatory", demand_link: "Drives China+1 RFP volume and enquiry-to-contract conversion for non-China CRDMOs", likely_source: "US Federal Register / DoD filings; industry regulatory trackers", cadence: "event-driven", shared: true}
+  - {signal: "Bristol-Myers Squibb (BMS) R&D spend and pipeline guidance", entity_type: "end-customer", demand_link: "Anchor dedicated-centre client to 2035; bounds durability of largest Research Services relationship", likely_source: "BMS quarterly earnings / 10-Q R&D spend disclosure", cadence: "quarterly", shared: false}
+  - {signal: "Zoetis Inc. Librela sales and inventory commentary", entity_type: "end-customer", demand_link: "Direct read on when/if the lapsed CDMO offtake could resume", likely_source: "Zoetis 10-Q/10-K and investor earnings calls", cadence: "quarterly", shared: false}
+  - {signal: "Peer capacity utilisation and new-contract wins (Aragen, Anthem, Sai Life, Piramal)", entity_type: "counterparty", demand_link: "Reads whether the industry-wide capacity race is demand-absorbed or creating overcapacity", likely_source: "Peer company filings and earnings calls", cadence: "quarterly", shared: true}
+  - {signal: "US FDA facility inspection/approval status for Bayview (Maryland)", entity_type: "regulatory", demand_link: "Gates whether Bayview biologics capacity can be commercially utilised at all", likely_source: "FDA inspection database; Syngene Reg 30 filings", cadence: "event-driven", shared: false}
+  - {signal: "Global patent-cliff calendar (exclusivity losses 2024-2028)", entity_type: "macro", demand_link: "Drives late-stage/commercial CDMO demand as originators seek cost efficiency pre-exclusivity-loss", likely_source: "Patent-expiry/exclusivity trackers (Evaluate Pharma/GlobalData-type)", cadence: "event-driven", shared: false}
+demand_externally_verifiable: true
+analyst_note: "FX conversions use Rs96/USD (spot ~Sep-2026), an analyst assumption applied consistently, not a sourced historical rate for every underlying report's publication date -- ratios (SAM/TAM %, headroom, CAGRs) are FX-invariant and more reliable than the absolute Rs-cr figures. The SOM funnel and the capacity check (3C) both independently point the same direction: the 18% SOM-implied CAGR requires the CDMO-refill proof gate to fire (named non-Zoetis customer, per B07's optionality register) and requires capex beyond what B07's 34.5% figure captures. Absent that proof, the more evidenced path is management's own guided trajectory (FY27 decline, then recovery), not the SOM ceiling computed here. This is the formal handoff Stage 11 should treat as a ceiling, not a base case, pending Halt 1 resolution of the proof gate."

@@ -743,7 +743,7 @@ import * as THREE from 'three';
    label goes through L(). The voice follows the language.
    Questions and answers stay in English for now.
    ============================================================ */
-const GAME_VERSION = "v19";
+const GAME_VERSION = "v19.1";
 const LANGS = {
   en: { name: "English", voice: "en-IN" },
   hi: { name: "हिन्दी", voice: "hi-IN" },
@@ -3400,6 +3400,45 @@ function makeScooty(color = 0xd62828) {
   const exhaust = new THREE.Mesh(new THREE.CylinderGeometry(0.05, 0.06, 0.6, 8), mat(0x9aa6ad)); exhaust.rotation.x = Math.PI / 2; exhaust.position.set(0.22, 0.4, -0.5); g.add(exhaust);
   for (const z of [0.72, -0.62]) { const w = makeWheel(0.24, 0.12); w.position.set(0, 0.24, z); g.add(w); }
   g.userData.seat = { x: 0, y: 0.86 - 0.72 + 0.12, z: -0.3 };
+  g.userData.dynamic = true;
+  return g;
+}
+
+// A real motorbike: black frame, chrome tank stripe, engine block, twin exhausts, spoked wheels.
+function makeMotorbike(color = 0x0b0b0b) {
+  const g = new THREE.Group();
+  const paint = new THREE.MeshStandardMaterial({ color, roughness: 0.3, metalness: 0.5 });
+  const chrome = new THREE.MeshStandardMaterial({ color: 0xd9dee3, roughness: 0.15, metalness: 0.9 });
+  const steel = mat(0x2a2a2a);
+  const cyl = (r1, r2, len, m) => new THREE.Mesh(new THREE.CylinderGeometry(r1, r2, len, 10), m);
+  // Frame: a low spine from the head tube back to the rear axle, plus a down tube.
+  const spine = cyl(0.035, 0.035, 1.3, steel); spine.rotation.x = Math.PI / 2; spine.position.set(0, 0.62, 0.05); g.add(spine);
+  const down = cyl(0.03, 0.03, 0.6, steel); down.rotation.x = 0.6; down.position.set(0, 0.45, 0.45); g.add(down);
+  for (const side of [-1, 1]) { const stay = cyl(0.025, 0.025, 0.7, steel); stay.rotation.x = -0.9; stay.position.set(side * 0.08, 0.45, -0.5); g.add(stay); }
+  // Fuel tank: a long teardrop with a chrome stripe.
+  const tank = new THREE.Mesh(new THREE.SphereGeometry(0.24, 12, 10), paint); tank.scale.set(1.0, 0.75, 1.9); tank.position.set(0, 0.8, 0.22); tank.castShadow = true; g.add(tank);
+  const stripe = new THREE.Mesh(new THREE.BoxGeometry(0.52, 0.03, 0.5), chrome); stripe.position.set(0, 0.86, 0.2); g.add(stripe);
+  // Engine block with cooling fins, under the tank.
+  const engine = new THREE.Mesh(new THREE.BoxGeometry(0.34, 0.34, 0.42), mat(0x3a3f44)); engine.position.set(0, 0.42, 0.05); g.add(engine);
+  for (let k = 0; k < 4; k++) { const fin = new THREE.Mesh(new THREE.BoxGeometry(0.4, 0.02, 0.36), chrome); fin.position.set(0, 0.3 + k * 0.08, 0.05); g.add(fin); }
+  // Long seat with a pillion step, rear mudguard, tail lamp.
+  const seat = new THREE.Mesh(new THREE.BoxGeometry(0.34, 0.11, 0.85), mat(0x1a1a1a)); seat.position.set(0, 0.82, -0.45); g.add(seat);
+  const guard = new THREE.Mesh(new THREE.SphereGeometry(0.3, 12, 8, 0, Math.PI * 2, 0, Math.PI / 2), paint); guard.scale.set(0.55, 1.0, 1.2); guard.position.set(0, 0.35, -0.82); g.add(guard);
+  const tail = new THREE.Mesh(new THREE.BoxGeometry(0.16, 0.08, 0.05), new THREE.MeshStandardMaterial({ color: 0xff2020, emissive: 0xff2020, emissiveIntensity: 0.5 })); tail.position.set(0, 0.7, -1.02); g.add(tail);
+  // Twin exhausts along both sides.
+  for (const side of [-1, 1]) { const ex = cyl(0.045, 0.06, 1.0, chrome); ex.rotation.x = Math.PI / 2; ex.rotation.z = 0.06; ex.position.set(side * 0.2, 0.3, -0.45); g.add(ex); }
+  // Front: forks, round headlamp, handlebar with mirrors, small mudguard.
+  for (const side of [-1, 1]) { const fork = cyl(0.03, 0.03, 0.9, chrome); fork.rotation.x = 0.35; fork.position.set(side * 0.1, 0.6, 0.78); g.add(fork); }
+  const lamp = new THREE.Mesh(new THREE.SphereGeometry(0.14, 12, 10), new THREE.MeshStandardMaterial({ color: 0xffffff, emissive: 0xfff2b0, emissiveIntensity: 0.9 })); lamp.scale.set(1, 1, 0.6); lamp.position.set(0, 0.95, 0.85); g.add(lamp);
+  const ring = cyl(0.16, 0.16, 0.06, chrome); ring.rotation.x = Math.PI / 2; ring.position.set(0, 0.95, 0.8); g.add(ring);
+  const bars = cyl(0.03, 0.03, 0.8, chrome); bars.rotation.z = Math.PI / 2; bars.position.set(0, 1.12, 0.68); g.add(bars);
+  for (const side of [-1, 1]) { const grip = cyl(0.04, 0.04, 0.14, mat(0x111111)); grip.rotation.z = Math.PI / 2; grip.position.set(side * 0.36, 1.12, 0.68); g.add(grip); const stem = cyl(0.015, 0.015, 0.2, chrome); stem.position.set(side * 0.3, 1.25, 0.66); g.add(stem); const mirror = new THREE.Mesh(new THREE.CircleGeometry(0.06, 10), chrome); mirror.position.set(side * 0.3, 1.36, 0.66); mirror.rotation.y = Math.PI; g.add(mirror); }
+  const fguard = new THREE.Mesh(new THREE.SphereGeometry(0.32, 12, 8, 0, Math.PI * 2, 0, Math.PI / 2), paint); fguard.scale.set(0.5, 0.9, 1.1); fguard.position.set(0, 0.36, 0.95); g.add(fguard);
+  // Number plate, side stand, big spoked wheels.
+  const plate = new THREE.Mesh(new THREE.BoxGeometry(0.22, 0.09, 0.02), mat(0xf4f4f4)); plate.position.set(0, 0.55, -1.05); g.add(plate);
+  const stand = cyl(0.015, 0.015, 0.34, steel); stand.rotation.z = 0.5; stand.position.set(-0.22, 0.16, -0.25); g.add(stand);
+  for (const z of [0.95, -0.85]) { const w = makeWheel(0.32, 0.11); w.position.set(0, 0.32, z); g.add(w); }
+  g.userData.seat = { x: 0, y: 0.82 - 0.72 + 0.1, z: -0.35 };
   g.userData.dynamic = true;
   return g;
 }
@@ -6116,7 +6155,7 @@ class Game {
     // Maa's scooty and Papa's motorbike, parked beside the car. Scooty from 16, motorbike from 18, both need the licence.
     const scooty = makeScooty(0x2a9d8f); scooty.position.set(HOME.x + 1.5, 0, HOME.z - 15); scooty.rotation.y = 0; this.world.scene.add(scooty);
     this.scooty = { group: scooty, speed: 11, kind: "scooty", label: L("Maa's scooty"), controlled: true, minAge: 16 };
-    const moto = makeScooty(0x111111); moto.scale.set(1.15, 1.15, 1.25); const tank = new THREE.Mesh(new THREE.SphereGeometry(0.22, 10, 8), new THREE.MeshStandardMaterial({ color: 0xd62828, roughness: 0.3, metalness: 0.4 })); tank.scale.set(1, 0.8, 1.4); tank.position.set(0, 0.85, 0.05); moto.add(tank); moto.position.set(HOME.x + 1.5, 0, HOME.z - 19); this.world.scene.add(moto);
+    const moto = makeMotorbike(0x0b0b0b); moto.position.set(HOME.x + 1.5, 0, HOME.z - 19); this.world.scene.add(moto);
     this.moto = { group: moto, speed: 13, kind: "scooty", label: L("Papa's motorbike"), controlled: true, minAge: 18 };
     this._buildInteractables();
     this.world.vehicleBlocked = (x, z, self, pad) => {

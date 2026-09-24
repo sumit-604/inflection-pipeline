@@ -231,8 +231,10 @@ choose the action, then two files at your desk.
   map centres on it. The RTO Office is on the Old Town road, next to the
   Fish Market; a billboard on the avenue points to it.
 - Beside Papa's car in the lane stand Maa's scooty (from 16, with a
-  licence) and Papa's motorbike (from 18, with a licence). Press E to ride,
-  roads only, E again to get off.
+  licence) and Papa's motorbike (from 18, with a licence): a real black
+  bike with a fuel tank, engine fins, twin chrome exhausts, round headlamp,
+  mirrors and big spoked wheels. Press E to ride, two wheels go anywhere,
+  E again to get off.
 
 ## Moti the dog
 

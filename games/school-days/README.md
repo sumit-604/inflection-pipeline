@@ -321,12 +321,38 @@ road. Press E to talk.
   vehicle and the whistle blows: ₹100 challan and a reputation point lost.
   A duty jeep with the siren on is waved through. Five shifts with no
   challan earns the Clean Driving Record badge.
-- Baba on the footpath: give ₹5, ₹10 or a bread packet, once a day. Each
-  gift earns a reputation point; ₹50 given in all earns the Kind Heart
-  badge.
+- Baba on the footpath sits on a mat with a bowl at the corner of our lane
+  and the colony road, a few steps from home. Give ₹5, ₹10 or a bread
+  packet, once a day. After three gifts he tells his story (a maths
+  teacher who lost everything in a flood). After five, once you have a
+  job, you can get him work as the school watchman: he moves to the
+  school gate in a uniform and teaches children their tables. ₹50 given
+  in all earns Kind Heart; the job earns Hope for Baba.
 - Balloon Wala (₹10), Paper Boy Golu (₹5, opens the Suryanagar Times),
   Shoe Shine Pappu (₹5), and Auto Driver Raju (₹30 meter fare to the
   school, the market, the stadium or the airport).
+
+### More road life
+
+- Surdas Uncle waits at the colony road zebra. Help him across only when
+  the green man shows; on red he asks you to wait. Three crossings earn
+  Helping Hand.
+- Lollipop Didi guards the school road crossing.
+- Pani Puri Bhaiya (₹20) and Flower Seller Champa (₹10 marigolds for Maa).
+- Postman Ramu walks the colony road; every third day he has a letter,
+  sometimes with money from Nani or Chacha ji.
+- Sweeper Kamla Didi: five pieces of litter lie on the colony road each
+  day. Pick them all up for ₹10. Three clean days earn Clean Road Hero.
+- Ten walkers on the footpaths: Office Uncle, College Didi, Jogger Gupta
+  ji, an aunty with shopping bags, Bittu going to tuition, Dadaji, a
+  delivery boy, Nurse Pooja. They stop and talk, and go home at night.
+- Sheru the street dog and Gauri the cow: feed each a roti once a day.
+  Sheru follows you to the corner afterwards.
+- A lost wallet lies on the footpath every fourth day. Take it to the
+  traffic police for Mr. Kapoor (₹20 reward, Honest Finder badge) or keep
+  the ₹200 and lose three reputation points.
+- The big map (G) lists every road person, so you can find Baba, the
+  traffic police, Surdas Uncle, the pani puri stall, Gauri and Sheru.
 
 ## Family life
 

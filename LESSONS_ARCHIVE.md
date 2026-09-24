@@ -976,3 +976,21 @@ Forward view: `screens/forward-view-2026-09-23.md`.
 
 Bull AI: 45 paid calls (14 guidance, 26 searches, 5 chunk calls). 472 of 1,000
 remain for the cycle ending 2026-10-08.
+
+## [2026-09-24] Shallow screen, single name: KANOHAR
+
+Run record: `screens/README.md`, "Single-name screen, 2026-09-24".
+
+**What broke or dragged**
+
+- **A listed company whose only indexed document is its DRHP.** Bull AI holds
+  no RHP, prospectus or post-listing result for KANOHAR, yet carries a market
+  cap. The market cap cannot be tied to a filed share count; the card says so.
+- **Litigation detail pages returned empty chunks** (DRHP pages 412 to 414).
+  The summary table on page 26 stood in.
+- **A WIP build can manufacture a margin.** H1 FY26 gross margin of 43.16%
+  came with a Rs 72 crore inventory credit in the P&L. The check: read the
+  change-in-inventory line beside any margin jump in a half-year.
+
+Bull AI: 10 paid calls. About 462 of 1,000 remain for the cycle ending
+2026-10-08.

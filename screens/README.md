@@ -613,3 +613,19 @@ covering 12 documents. Identity and availability probes cost nothing. 472 of
   in Q4 FY26 while NPA provisions for the quarter were Rs 15 crore. The likely
   reading is a technical write-off of a fully provided book; the annual report
   note decides it.
+
+## Single-name screen, 2026-09-24: KANOHAR
+
+Kanohar Electricals (NSE KANOHAR, BSE 544911, ISIN INE877D01025), an operator
+pick. Card: `cards/KANOHAR.md`. **PASS**, posture PRICED NARRATIVE.
+
+The business is climbing: EBITDA margin 9.34% in FY23, 20.73% in FY25, 25.81%
+in H1 FY26, and an order book of Rs 1,635.56 crore at 30 September 2025, 3.6
+times FY25 revenue. The price is the problem. The Bull AI market cap of Rs
+7,186.99 crore is 110 times FY25 PAT of Rs 65.12 crore and 117 times the H1
+FY26 run-rate. Even a two-year conversion of the whole order book at the FY25
+margin gives about 62 times.
+
+The corpus is the DRHP alone, so the market cap, issue price and post-issue
+share count need live verification. Bull AI: 10 paid calls (6 searches, 4 chunk
+reads of one document).

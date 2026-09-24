@@ -125,6 +125,39 @@ the District Court. Every workplace has your named seat with a bobbing
 "YOUR SEAT" arrow and a visitor's chair; "Go to work now" in the J panel
 takes you straight there.
 
+## Twenty more again
+
+1. Chase calls: the purse snatcher runs from the market to the avenue;
+   catch him on foot with E before he vanishes.
+2. Duty vehicles: a police jeep, fire engine or ambulance at your
+   workplace, F for the siren, flashing lights.
+3. A partner (Constable Ramesh, Fireman Joe, Nurse Anita) at your desk who
+   rides along on every call and comments.
+4. Storm night on day 10: power cut, candles, antakshari. Heatwave on day
+   7 with free lassi at the market.
+5. Sick day after three street foods: bed, the doctor at home, friends
+   visit with notes.
+6. Wedding planning: venue, food, music, outfit on a budget; guests react.
+7. Baby days: feed, bathe, sing; first word at one, first steps at two.
+8. Grandparent mode after the ending: stories, walks, a pension at the bank.
+9. Elections at the Community Hall in Old Town: vote at 18; stand for
+   colony president at 25 with reputation 15.
+10. Suryanagar Times on the phone: yesterday's news about you and the city.
+11. Cricket World Cup week, days 16 to 19: matches on TV every night.
+12. Custom face: name, skin, hair, glasses on the start screen; the name is
+    used in the paper and the life card.
+13. Aarav's House two doors down: say hello, sleep over on Saturdays.
+14. Fly to Mumbai for the match from the airport: ticket, packing checklist.
+15. Three save slots and a life code to move your life to another device.
+16. Gentle mode: fewer questions, no fights, bigger buttons.
+17. Voice commands with the 🎤 button: "call Maa", "go to school", "open map".
+18. Animal friends: Mithu the parrot repeats what you last said, cows to
+    milk at Green Farm, Chintu the library cat.
+19. Kaka's treasure map: five old coins hidden across the city.
+20. Share codes: a friend code puts your life card on another device's
+    leaderboard. Two players on one keyboard with 2. True Wi-Fi play needs
+    a server, which a single offline file cannot provide.
+
 ## Twenty more, and the Club
 
 1. Day and night: orange evenings, dark blue nights with stars and lit lamps.

@@ -588,6 +588,27 @@ All of them are on the big map (G).
   you, a spooky night, something funny, or something serious. Pick the smart
   choice and learn a safety lesson.
 
+## Simulators, city landmarks, the day in order (v39)
+
+- Pilot job: in the Airport hall press E at "Captain's duty". Pick a flight,
+  do the pre-flight checklist in order, then fly. W/S power, arrow keys
+  climb, descend and turn, Space brakes, L seatbelt sign, K cabin crew,
+  P cockpit view. Take off at 140 knots, cruise above the clouds on course,
+  handle turbulence and a sick passenger, then land on the runway at the
+  destination. Then fly the return flight home. Stars and pay for each leg.
+- Loco pilot job: in the Railway Station press E at "Loco pilot duty". Cab
+  checks, then drive: W/S notch, Space brake, Q horn. Horn before leaving,
+  keep the speed limits, horn at the level crossing, stop at the red signal,
+  and stop at the STOP board on the platform. Then drive the return train.
+- The Autopilot button finishes a leg if a child gets stuck (fewer stars).
+- Every city has its landmark: Burj Khalifa, Sydney Opera House, Statue of
+  Liberty, Eiffel Tower, Taj Mahal, Gateway of India, Charminar, Golden
+  Temple and 36 more. The camera flies round it when you arrive, with a fact.
+- The day runs in order: afternoon after school or work (lunch at home, a
+  nap), evening at 5 PM, dinner at 8 PM (or help Maa cook), then night.
+- Phone: when you call someone, the game asks if you want their location.
+  Yes points the compass to them.
+
 ## Files
 
 - `index.html` the whole game. Open it in a browser.

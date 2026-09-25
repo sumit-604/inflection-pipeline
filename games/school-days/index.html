@@ -748,7 +748,7 @@ import * as THREE from 'three';
    label goes through L(). The voice follows the language.
    Questions and answers stay in English for now.
    ============================================================ */
-const GAME_VERSION = "v38";
+const GAME_VERSION = "v39";
 const LANGS = {
   en: { name: "English", voice: "en-IN" },
   hi: { name: "हिन्दी", voice: "hi-IN" },
@@ -1947,6 +1947,7 @@ class UI {
     window.addEventListener("keydown", (e) => {
       if (e.target && e.target.tagName === "INPUT") return;
       const k = e.key.toLowerCase();
+      if (this.game && this.game._sim) return;
       if (k === "n") this.toggleNotebook();
       if (k === "h") board.hidden = !board.hidden;
       if (k === "b") { if (panelOpen()) closePanel(); else this.game._openBag(); }
@@ -6519,6 +6520,101 @@ const OUTINGS = [
 ];
 const TECH_QS = [MC("A robot needs a ... to think.", "Computer (a processor)", "Battery only", "Wheel", "Paint"), MC("Drones fly with the help of...", "Propellers", "Balloons", "Magnets", "Wings that flap"), MC("VR stands for...", "Virtual Reality", "Very Real", "Video Radio", "Voice Robot")];
 
+// ---- City landmarks: every city has its special attraction, built from simple shapes ----
+const LANDMARK_INFO = {
+  Delhi: ["India Gate", "A 42 m war memorial arch. The names of 13,000 soldiers are carved on it."], Mumbai: ["Gateway of India", "Built in 1924 by the sea. Boats leave from here to Elephanta Caves."],
+  Jaipur: ["Hawa Mahal", "The Palace of Winds has 953 small windows, so royal ladies could watch the street."], Shimla: ["Christ Church", "The second oldest church in North India, on the snowy Ridge."],
+  Goa: ["Basilica of Bom Jesus", "A 400-year-old church, with palm trees and golden beaches all around."], Kolkata: ["Howrah Bridge", "A steel bridge over the Hooghly river. No nuts and bolts, only rivets!"],
+  Chennai: ["Kapaleeshwarar Temple", "A tall gopuram covered with hundreds of colourful statues."], Bengaluru: ["Vidhana Soudha", "The huge granite home of the Karnataka government."],
+  Hyderabad: ["Charminar", "Four minarets, 430 years old. Famous for bangles and biryani."], Pune: ["Shaniwar Wada", "The fort of the Peshwas, with a big spiked gate against elephants."],
+  Ahmedabad: ["Sabarmati Ashram", "Gandhiji lived here and spun cotton on his charkha."], Lucknow: ["Rumi Darwaza", "A 60-foot Mughal gateway, the symbol of Lucknow."],
+  Varanasi: ["The Ghats of the Ganga", "Stone steps down to the river. Every evening, the Ganga aarti with fire lamps."], Agra: ["Taj Mahal", "White marble, built by Shah Jahan. One of the Seven Wonders of the World!"],
+  Amritsar: ["Golden Temple", "Covered in real gold, in a holy pool. The langar feeds 100,000 people a day, free."], Chandigarh: ["Open Hand Monument", "A giant metal hand that turns in the wind: open to give, open to receive."],
+  Bhopal: ["Taj-ul-Masajid", "One of the biggest mosques in Asia, pink with white domes."], Patna: ["Golghar", "A giant beehive-shaped granary. Climb the 145 steps to the top."],
+  Guwahati: ["Kamakhya Temple", "An ancient temple on Nilachal hill above the Brahmaputra."], Kochi: ["Chinese Fishing Nets", "Giant nets on wooden arms dip into the sea, just like 600 years ago."],
+  Udaipur: ["Lake Palace", "A white marble palace that seems to float on Lake Pichola."], Darjeeling: ["Kanchenjunga and the Toy Train", "The third highest mountain in the world, and a tiny train that climbs the hills."],
+  Rishikesh: ["Laxman Jhula", "A swinging bridge over the Ganga. The yoga capital of the world."], Madurai: ["Meenakshi Temple", "14 giant gopurams covered with 33,000 statues."],
+  Puri: ["Jagannath Temple", "Home of the famous Rath Yatra, with chariots as tall as houses."], Kanyakumari: ["Vivekananda Rock", "The southern tip of India, where three seas meet."],
+  Jammu: ["Raghunath Temple", "Seven shrines with shining golden spires."], Nagpur: ["Zero Mile Stone", "The centre of India! Four horses and a pillar mark the spot."],
+  Mysuru: ["Mysore Palace", "At night 97,000 bulbs light it up like a fairy tale."],
+  Dubai: ["Burj Khalifa", "The tallest building in the world: 828 m, with 163 floors!"], London: ["Big Ben and the London Eye", "The great clock tower, and a giant wheel by the River Thames."],
+  "New York": ["Statue of Liberty", "A 93 m copper lady with a torch, a gift from France in 1886."], Paris: ["Eiffel Tower", "330 m of iron. It grows 15 cm taller in the summer heat!"],
+  Tokyo: ["Tokyo Tower and Mount Fuji", "A red-and-white tower, and Japan's snowy volcano behind it."], Singapore: ["Marina Bay Sands and the Merlion", "Three towers with a ship on top, and a lion-fish statue spraying water."],
+  Sydney: ["Sydney Opera House", "White roofs like sails, next to the giant Harbour Bridge."], Bangkok: ["Wat Arun", "The Temple of Dawn, covered with coloured porcelain."],
+  Kathmandu: ["Boudhanath Stupa", "A giant white dome with Buddha's eyes looking in four directions."], Colombo: ["Lotus Tower", "The tallest tower in South Asia, shaped like a lotus bud."],
+  Toronto: ["CN Tower", "553 m tall. Walk on its glass floor, 342 m above the ground!"], Cairo: ["The Pyramids of Giza", "4,500 years old, guarded by the Sphinx. The last Wonder of the Ancient World still standing."],
+  Rome: ["The Colosseum", "An arena for 50,000 people, built 2,000 years ago."], Moscow: ["St. Basil's Cathedral", "Colourful onion domes like swirly ice creams, on Red Square."],
+  "Cape Town": ["Table Mountain", "A mountain with a flat top like a table. Clouds cover it like a tablecloth."],
+};
+function makeLandmark(city) {
+  const g = new THREE.Group(), M = (c, e = 0) => new THREE.MeshStandardMaterial({ color: c, roughness: 0.7, emissive: e ? c : 0x000000, emissiveIntensity: e });
+  const B = (w, h, d, c, x, y, z, m) => { const o = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), m || M(c)); o.position.set(x, y, z); g.add(o); return o; };
+  const C = (rt, rb, h, c, x, y, z, s = 16, m) => { const o = new THREE.Mesh(new THREE.CylinderGeometry(rt, rb, h, s), m || M(c)); o.position.set(x, y, z); g.add(o); return o; };
+  const S = (r, c, x, y, z, sy = 1, m) => { const o = new THREE.Mesh(new THREE.SphereGeometry(r, 16, 12), m || M(c)); o.position.set(x, y, z); o.scale.y = sy; g.add(o); return o; };
+  const K = (r, h, c, x, y, z, s = 16) => { const o = new THREE.Mesh(new THREE.ConeGeometry(r, h, s), M(c)); o.position.set(x, y, z); g.add(o); return o; };
+  const ground = (c, r = 40) => { const o = new THREE.Mesh(new THREE.CircleGeometry(r, 32), M(c)); o.rotation.x = -Math.PI / 2; o.position.y = 0.05; g.add(o); };
+  const water = (r = 40) => { const o = new THREE.Mesh(new THREE.CircleGeometry(r, 32), new THREE.MeshStandardMaterial({ color: 0x2b7fa8, roughness: 0.2, metalness: 0.3 })); o.rotation.x = -Math.PI / 2; o.position.y = 0.08; g.add(o); };
+  const arch = (w, h, d, c, pw = w * 0.22) => { B(pw, h, d, c, -w / 2 + pw / 2, h / 2, 0); B(pw, h, d, c, w / 2 - pw / 2, h / 2, 0); B(w, h * 0.22, d, c, 0, h * 0.89, 0); B(w * 0.8, h * 0.08, d * 0.9, c, 0, h * 1.03, 0); };
+  const dome = (r, c, x, y, z) => { S(r, c, x, y, z, 1.15); K(r * 0.15, r * 0.6, 0xd4af37, x, y + r * 1.3, z, 8); };
+  const minaret = (h, c, x, z) => { C(0.9, 1.1, h, c, x, h / 2, z, 10); S(1.2, c, x, h + 0.6, z); };
+  const gopuram = (w, h, x, z) => { const cols = [0xe76f51, 0xf4a261, 0x2a9d8f, 0xe9c46a, 0x8ab17d, 0xd62828]; const n = 8; for (let i = 0; i < n; i++) B(w * (1 - i * 0.09), h / n, w * 0.5 * (1 - i * 0.07), cols[i % cols.length], x, h / n * (i + 0.5), z); B(w * 0.3, h * 0.06, w * 0.2, 0xd4af37, x, h + h * 0.03, z); };
+  const shikhara = (r, h, c, x, z) => { C(r, r, h * 0.3, c, x, h * 0.15, z, 8); for (let i = 0; i < 6; i++) C(r * (1 - i * 0.14), r * (1 - (i - 1) * 0.14), h * 0.12, c, x, h * 0.3 + h * 0.12 * (i + 0.5), z, 8); C(r * 0.25, r * 0.25, h * 0.08, 0xd4af37, x, h * 1.05, z, 8); };
+  const palm = (x, z) => { C(0.25, 0.35, 8, 0x8b5a2b, x, 4, z, 6); for (let i = 0; i < 6; i++) { const l = B(4, 0.15, 0.8, 0x2f8f3a, x + Math.cos(i) * 1.6, 8, z + Math.sin(i) * 1.6); l.rotation.y = -i; l.rotation.z = -0.3; } };
+  const lattice = (h, w, c) => { for (const [sx, sz] of [[-1, -1], [1, -1], [-1, 1], [1, 1]]) { const leg = B(1.2, h * 0.55, 1.2, c, sx * w * 0.3, h * 0.26, sz * w * 0.3); leg.rotation.z = sx * 0.28; leg.rotation.x = -sz * 0.28; } B(w * 0.75, 1, w * 0.75, c, 0, h * 0.28, 0); C(w * 0.1, w * 0.25, h * 0.5, c, 0, h * 0.72, 0, 4); C(0.3, w * 0.1, h * 0.12, c, 0, h * 1.02, 0, 4); };
+  const tower = (h, r, c) => { C(r * 0.4, r, h, c, 0, h / 2, 0, 12); S(r * 1.4, c, 0, h * 0.82, 0, 0.5); C(0.3, 0.5, h * 0.25, 0xdddddd, 0, h * 1.1, 0, 8); };
+  const skyscr = (w, h, c, x, z) => { B(w, h, w, c, x, h / 2, z); for (let y = 3; y < h - 2; y += 4) B(w + 0.05, 0.5, w + 0.05, 0x9fd3ea, x, y, z, M(0x9fd3ea, 0.3)); };
+  switch (city) {
+    case "Delhi": ground(0x7fb24a); arch(22, 40, 6, 0xc9a26b); C(2.5, 2.5, 1, 0x333333, 0, 1, 12, 16); break;
+    case "Mumbai": water(60); ground(0xc9b79c, 18); arch(20, 24, 9, 0xd9b779); for (const x of [-8, 8]) for (const z of [-3, 3]) { C(1.3, 1.3, 5, 0xd9b779, x, 28, z, 8); S(1.4, 0xd9b779, x, 31, z); } break;
+    case "Jaipur": ground(0xd9b38c); for (let i = 0; i < 5; i++) { B(26 - i * 4, 6, 4, 0xe8836b, 0, 3 + i * 6, -i * 0.4); for (let k = 0; k < 7 - i; k++) S(1, 0xf4a7a0, -10 + i * 2 + k * 3.2, 4 + i * 6, 2 - i * 0.4, 1); } break;
+    case "Shimla": ground(0xf4f7fb); B(10, 10, 16, 0xf2d16b, 0, 5, 0); K(7, 5, 0x8b3a2b, 0, 12, 0, 4); B(5, 20, 5, 0xf2d16b, 0, 10, 10); K(3.5, 6, 0x8b3a2b, 0, 23, 10, 4); C(1.5, 1.5, 0.3, 0xffffff, 0, 16, 12.6); break;
+    case "Goa": ground(0xe8d5a3); B(18, 18, 10, 0x9c5a3c, 0, 9, 0); B(8, 6, 6, 0x9c5a3c, 0, 21, 0); K(1, 2.5, 0xffffff, 0, 25, 0, 4); for (const x of [-16, 16, -22, 22]) palm(x, 6); break;
+    case "Kolkata": water(60); for (const x of [-20, 20]) { B(3, 28, 3, 0x6b7b8c, x, 14, -3); B(3, 28, 3, 0x6b7b8c, x, 14, 3); } B(60, 1.2, 8, 0x555555, 0, 8, 0); for (let i = -1; i <= 1; i += 2) { const t = B(24, 1, 1, 0x6b7b8c, i * 10, 18, -3); t.rotation.z = i * 0.7; const t2 = B(24, 1, 1, 0x6b7b8c, i * 10, 18, 3); t2.rotation.z = i * 0.7; } B(40, 1, 8, 0x6b7b8c, 0, 27, 0); break;
+    case "Chennai": case "Madurai": ground(0xd9c7a8); gopuram(16, 36, 0, 0); if (city === "Madurai") { gopuram(12, 28, -18, -8); gopuram(12, 28, 18, -8); } break;
+    case "Bengaluru": ground(0x6fae54); B(50, 14, 16, 0xe8e2d0, 0, 7, 0); for (let i = -4; i <= 4; i++) C(0.7, 0.7, 12, 0xffffff, i * 3, 6, 8.5, 8); dome(6, 0xe8e2d0, 0, 18, 0); break;
+    case "Hyderabad": ground(0xd9c7a8); B(16, 18, 16, 0xd8c8a8, 0, 9, 0); B(10, 10, 16.2, 0x6b5a45, 0, 6, 0); for (const x of [-8, 8]) for (const z of [-8, 8]) minaret(34, 0xd8c8a8, x, z); break;
+    case "Pune": ground(0x9c8a6a); B(50, 10, 4, 0x8b6a4a, 0, 5, 0); arch(12, 16, 6, 0x7a5a3a); for (const x of [-25, 25]) C(4, 4, 14, 0x8b6a4a, x, 7, 0, 8); break;
+    case "Ahmedabad": ground(0x8ab17d); B(16, 4, 10, 0xf2e6c9, 0, 2, 0); K(12, 4, 0x8b5a2b, 0, 6, 0, 4); C(1.8, 1.8, 0.3, 0x5a3a24, 10, 1.5, 6, 16); palm(-12, 4); break;
+    case "Lucknow": ground(0xd9c7a8); arch(24, 26, 6, 0xe0c9a0); for (const x of [-10, 10]) minaret(32, 0xe0c9a0, x, 0); break;
+    case "Varanasi": water(60); for (let i = 0; i < 8; i++) B(60, 1, 3, 0xc9b79c, 0, i * 1, -12 - i * 3); for (const x of [-18, 0, 18]) shikhara(4, 18, 0xe8a87c, x, -36); for (let i = 0; i < 12; i++) S(0.4, 0xffb347, -20 + i * 3.6, 0.5, -8, 1, M(0xffb347, 1)); break;
+    case "Agra": ground(0x6fae54); { const w = new THREE.Mesh(new THREE.PlaneGeometry(4, 40), M(0x5aa9d6)); w.rotation.x = -Math.PI / 2; w.position.set(0, 0.1, 22); g.add(w); } B(40, 3, 40, 0xf4f1ea, 0, 1.5, 0); B(22, 16, 22, 0xfaf8f2, 0, 11, 0); dome(9, 0xfaf8f2, 0, 25, 0); for (const x of [-7, 7]) for (const z of [-7, 7]) dome(2.5, 0xfaf8f2, x, 21, z); for (const x of [-18, 18]) for (const z of [-18, 18]) minaret(26, 0xfaf8f2, x, z); break;
+    case "Amritsar": water(40); B(30, 0.8, 4, 0xf4f1ea, 0, 0.5, 18); B(14, 8, 14, 0xd4af37, 0, 4.5, 0, M(0xd4af37, 0.25)); dome(4.5, 0xd4af37, 0, 12, 0); for (const x of [-6, 6]) for (const z of [-6, 6]) dome(1.4, 0xd4af37, x, 9.5, z); break;
+    case "Chandigarh": ground(0x8ab17d); C(0.8, 0.8, 14, 0x777777, 0, 7, 0, 8); { const h = B(10, 12, 0.6, 0x9aa6ad, 0, 20, 0, M(0x9aa6ad)); h.rotation.z = 0.1; for (let i = 0; i < 4; i++) B(1.6, 6, 0.6, 0x9aa6ad, -3.6 + i * 2.4, 28, 0); } break;
+    case "Bhopal": ground(0xd9c7a8); B(30, 12, 18, 0xe8a0a0, 0, 6, 0); for (const x of [-8, 0, 8]) dome(4, 0xffffff, x, 15, 0); for (const x of [-16, 16]) minaret(38, 0xe8a0a0, x, 0); break;
+    case "Patna": ground(0x9c8a6a); S(16, 0xe8dcc0, 0, 0, 0, 1.4); for (let i = 0; i < 20; i++) { const st = B(2, 0.4, 1, 0xc9b79c, 8 + i * 0.4, i * 1.1, -10 + i * 0.6); st; } break;
+    case "Guwahati": ground(0x4f8f3a); for (const x of [-10, 0, 10]) { C(5, 5, 6, 0xe8d5b5, x, 3, 0, 12); S(5, 0xc9a26b, x, 8, 0, 1.6); K(0.6, 3, 0xd4af37, x, 17, 0, 8); } break;
+    case "Kochi": water(60); for (const x of [-18, 0, 18]) { const arm = B(0.6, 20, 0.6, 0x5a3a24, x, 10, 0); arm.rotation.x = 0.7; const net = new THREE.Mesh(new THREE.PlaneGeometry(10, 10), new THREE.MeshStandardMaterial({ color: 0xdddddd, transparent: true, opacity: 0.4, side: THREE.DoubleSide })); net.position.set(x, 4, 12); net.rotation.x = -Math.PI / 2 + 0.3; g.add(net); B(4, 1, 4, 0x5a3a24, x, 0.8, -6); } break;
+    case "Udaipur": water(60); B(36, 10, 22, 0xfaf8f2, 0, 5, 0); for (let i = -3; i <= 3; i++) S(1.5, 0xfaf8f2, i * 5, 11.5, 0); B(12, 6, 10, 0xfaf8f2, 0, 13, 0); dome(3, 0xfaf8f2, 0, 17.5, 0); for (const x of [-60, 60]) K(30, 26, 0x6b7b5a, x, 13, -30, 8); break;
+    case "Darjeeling": ground(0x4f8f3a); K(45, 60, 0x8a97a8, 0, 30, -40, 8); K(18, 18, 0xffffff, 0, 51, -40, 8); for (let i = 0; i < 4; i++) B(5, 3, 2.4, i === 0 ? 0x1d4e89 : 0x2a9d8f, -10 + i * 5.5, 1.8, 14); break;
+    case "Rishikesh": water(60); for (const x of [-22, 22]) { B(2, 18, 2, 0xd9c7a8, x, 9, -2); B(2, 18, 2, 0xd9c7a8, x, 9, 2); } B(44, 0.6, 3, 0x9aa6ad, 0, 7, 0); for (const z of [-1.5, 1.5]) { const c = new THREE.Mesh(new THREE.TorusGeometry(22, 0.2, 6, 30, Math.PI), M(0x777777)); c.rotation.x = Math.PI; c.position.set(0, 17, z); c.scale.y = 0.45; g.add(c); } shikhara(3, 16, 0xe8a87c, 26, -10); break;
+    case "Puri": ground(0xe8d5a3); shikhara(8, 42, 0xe8dcc0, 0, 0); B(1, 4, 0.1, 0xd62828, 0, 47, 0); for (const x of [-16, 16]) palm(x, 10); break;
+    case "Kanyakumari": water(60); ground(0x6b6b6b, 14); B(10, 8, 10, 0xc9a26b, -5, 6, 0); dome(3, 0xc9a26b, -5, 13, 0); { const r2 = new THREE.Mesh(new THREE.CircleGeometry(8, 20), M(0x6b6b6b)); r2.rotation.x = -Math.PI / 2; r2.position.set(22, 0.2, 5); g.add(r2); } B(3, 28, 3, 0x9a8a7a, 22, 14, 5); S(2, 0x9a8a7a, 22, 30, 5); break;
+    case "Jammu": ground(0x6fae54); for (const x of [-12, -6, 0, 6, 12]) { B(4, 8, 4, 0xe8dcc0, x, 4, 0); K(2.4, 10, 0xd4af37, x, 13, 0, 8); } K(60, 40, 0x6b7b5a, 0, 20, -60, 8); break;
+    case "Nagpur": ground(0x9c8a6a); C(1.2, 1.5, 10, 0xe8dcc0, 0, 5, 0, 8); for (const [x, z] of [[-5, 0], [5, 0], [0, -5], [0, 5]]) { B(3, 3, 1.4, 0xcfcfcf, x, 1.5, z); S(0.8, 0xcfcfcf, x + (x ? Math.sign(x) : 0) * 1.2, 3.4, z + (z ? Math.sign(z) : 0) * 1.2); } break;
+    case "Mysuru": ground(0x6fae54); B(46, 14, 18, 0xe8dcc0, 0, 7, 0); dome(7, 0xe8a0a0, 0, 20, 0); for (const x of [-18, 18]) { B(6, 22, 6, 0xe8dcc0, x, 11, 0); dome(3, 0xe8a0a0, x, 25, 0); } for (let i = 0; i < 20; i++) S(0.3, 0xffe08a, -22 + i * 2.3, 14.2, 9.1, 1, M(0xffe08a, 1)); break;
+    case "Dubai": ground(0xe8d5a3); for (let i = 0; i < 9; i++) C(5 - i * 0.5, 6 - i * 0.5, 14, 0xcfd8dc, 0, 7 + i * 14, 0, 6, M(0xcfd8dc, 0.1)); C(0.2, 0.6, 20, 0xcfd8dc, 0, 136, 0, 6); { const sail = new THREE.Mesh(new THREE.ConeGeometry(8, 40, 3), M(0xffffff)); sail.position.set(40, 20, 20); sail.scale.z = 0.3; g.add(sail); } break;
+    case "London": ground(0x6fae54); B(8, 50, 8, 0xc9a26b, -14, 25, 0); B(9, 9, 9, 0xc9a26b, -14, 42, 0); for (const [x, z] of [[-14, 4.6], [-14, -4.6]]) C(3, 3, 0.3, 0xfaf8f2, x, 42, z, 20).rotation.x = Math.PI / 2; K(6, 12, 0x3a4a3a, -14, 56, 0, 4); { const w = new THREE.Mesh(new THREE.TorusGeometry(16, 0.6, 8, 40), M(0xf4f6f8)); w.position.set(20, 18, 0); g.add(w); for (let i = 0; i < 16; i++) { const a = i / 16 * Math.PI * 2; S(1, 0x9fd3ea, 20 + Math.cos(a) * 16, 18 + Math.sin(a) * 16, 0); } B(1, 18, 1, 0xf4f6f8, 16, 9, 0).rotation.z = -0.25; B(1, 18, 1, 0xf4f6f8, 24, 9, 0).rotation.z = 0.25; } break;
+    case "New York": water(60); ground(0x6b8f4a, 10); B(8, 10, 8, 0xc9b79c, 0, 5, 0); C(1.6, 2.4, 18, 0x6fb5a0, 0, 19, 0, 12); S(1.8, 0x6fb5a0, 0, 30, 0); { const arm = C(0.5, 0.6, 7, 0x6fb5a0, 1.8, 33, 0, 8); arm.rotation.z = -0.2; S(0.9, 0xffb347, 2.5, 37, 0, 1, M(0xffb347, 1)); } for (let i = 0; i < 6; i++) skyscr(5 + (i % 2) * 2, 30 + (i * 13) % 40, 0x8a97a8, -40 + i * 16, -40); skyscr(7, 70, 0xb0b8c0, 0, -48); break;
+    case "Paris": ground(0x6fae54); lattice(70, 30, 0x8b6a4a); break;
+    case "Tokyo": ground(0x6fae54); lattice(50, 20, 0xe85d3a); K(60, 45, 0x6b7b8c, 0, 22, -80, 16); K(20, 12, 0xffffff, 0, 39, -80, 16); break;
+    case "Singapore": water(60); for (const x of [-18, 0, 18]) B(8, 45, 8, 0xcfd8dc, x, 22.5, 0); { const ship = B(52, 2, 9, 0xe8e2d0, 4, 46, 0); ship; } B(3, 4, 3, 0xfaf8f2, 26, 2, 18); S(2, 0xfaf8f2, 26, 5.5, 18); break;
+    case "Sydney": water(60); ground(0xd9c7a8, 16); for (let i = 0; i < 5; i++) { const sh = new THREE.Mesh(new THREE.SphereGeometry(8 - i * 0.8, 16, 12, 0, Math.PI, 0, Math.PI / 2), M(0xfaf8f2, 0.05)); sh.position.set(-10 + i * 5, 2, 0); sh.rotation.set(-0.3, Math.PI / 2, 0.5); g.add(sh); } B(30, 3, 12, 0xc9b79c, 0, 1.5, 0); { const br = new THREE.Mesh(new THREE.TorusGeometry(26, 1, 6, 30, Math.PI), M(0x6b7b8c)); br.position.set(10, 0, -40); g.add(br); B(56, 1, 5, 0x6b7b8c, 10, 12, -40); } break;
+    case "Bangkok": ground(0xd9c7a8); for (let i = 0; i < 7; i++) C(7 - i * 0.9, 8 - i * 0.9, 7, [0xf4f1ea, 0xe8d5b5, 0x9fd3ea][i % 3], 0, 3.5 + i * 7, 0, 8); K(0.8, 6, 0xd4af37, 0, 52, 0, 8); for (const x of [-16, 16]) { C(2, 3, 16, 0xe8d5b5, x, 8, 8, 8); K(1, 6, 0xd4af37, x, 19, 8, 8); } break;
+    case "Kathmandu": ground(0xd9c7a8); B(40, 2, 40, 0xf4f1ea, 0, 1, 0); S(14, 0xfaf8f2, 0, 2, 0, 0.6); B(7, 6, 7, 0xd4af37, 0, 13, 0); for (const [x, z, r] of [[0, 3.6, 0], [3.6, 0, Math.PI / 2], [0, -3.6, Math.PI], [-3.6, 0, -Math.PI / 2]]) { const e = B(3, 0.8, 0.1, 0x1d3557, x, 13.5, z); e.rotation.y = r; } K(3.4, 14, 0xd4af37, 0, 23, 0, 4); break;
+    case "Colombo": water(60); C(1.6, 3, 70, 0x6b4a8a, 0, 35, 0, 12); S(6, 0x3aa845, 0, 72, 0, 1.3); break;
+    case "Toronto": water(60); C(3, 5, 90, 0xcfd8dc, 0, 45, 0, 10); S(6, 0xcfd8dc, 0, 70, 0, 0.6); C(0.4, 1, 30, 0xcfd8dc, 0, 105, 0, 8); break;
+    case "Cairo": ground(0xe8c98f, 60); for (const [x, z, s] of [[0, 0, 30], [-40, 20, 22], [36, 26, 18]]) { const p = K(s, s * 1.3, 0xd9b779, x, s * 0.65, z, 4); p.rotation.y = Math.PI / 4; } B(4, 5, 12, 0xc9a26b, 20, 2.5, 40); S(2.5, 0xc9a26b, 20, 7, 45); break;
+    case "Rome": ground(0xd9c7a8); for (let lv = 0; lv < 4; lv++) for (let i = 0; i < 28; i++) { const a = i / 28 * Math.PI * 2; if (lv === 3 && i > 18) continue; const b = B(4.5, 5.4, 2, 0xd9c7a8, Math.cos(a) * 22, 2.7 + lv * 6, Math.sin(a) * 16); b.rotation.y = -a + Math.PI / 2; } break;
+    case "Moscow": ground(0xa0a0a0); B(24, 10, 18, 0xa63a2b, 0, 5, 0); const cols = [0xd62828, 0x2a9d8f, 0xe9c46a, 0x3a86ff, 0x8ab17d]; for (const [x, z, h, i] of [[0, 0, 30, 0], [-8, -5, 20, 1], [8, -5, 20, 2], [-8, 5, 18, 3], [8, 5, 18, 4]]) { C(2.5, 2.5, h, 0xe8dcc0, x, h / 2, z, 8); S(3.4, cols[i], x, h + 2, z, 1.3); K(1.2, 4, cols[i], x, h + 6.5, z, 8); } break;
+    case "Cape Town": water(60); { const m = new THREE.Mesh(new THREE.CylinderGeometry(50, 70, 40, 12), M(0x7a7a6a)); m.position.set(0, 20, -60); m.scale.z = 0.5; g.add(m); const cl = new THREE.Mesh(new THREE.CylinderGeometry(50, 50, 3, 12), new THREE.MeshStandardMaterial({ color: 0xffffff, transparent: true, opacity: 0.8 })); cl.position.set(0, 41, -60); cl.scale.z = 0.5; g.add(cl); } break;
+    default: ground(0x6fae54); tower(40, 5, 0xcfd8dc);
+  }
+  const info = LANDMARK_INFO[city] || [city + " Tower", "The pride of " + city + "."];
+  try { const lbl = makeTextSprite("🏙️ " + info[0], { size: 54, scale: 3.2 }); lbl.position.set(0, 18, 26); g.add(lbl); } catch (e) { /* label optional */ }
+  g.userData.name = info[0]; g.userData.fact = info[1];
+  return g;
+}
+
 function makeQuadruped() { return new THREE.Group(); }
 function makeCow() { return new THREE.Group(); }
 function makeVillager(look = {}) { return makeHuman({ skin: 0xdba274, hair: 0x1d1410, ...look }); }
@@ -6607,7 +6703,7 @@ class Game {
     this._gearChanged();
     this.minimap = new Minimap(this.world);
     this.bigmap = new BigMap(this);
-    window.addEventListener("keydown", (e) => { if (e.target && e.target.tagName === "INPUT") return; if (e.key.toLowerCase() === "g") { if (this.bigmap.isOpen) this.bigmap.close(); else this.bigmap.open(); } if (e.key.toLowerCase() === "m") { if (panelOpen()) closePanel(); else this._phone(); } if (e.key === "Escape") this.bigmap.close(); if (e.key.toLowerCase() === "j") { if (panelOpen()) closePanel(); else this._openJobs(); }  if (e.key === "2") this._toggleP2(); if (e.key.toLowerCase() === "v") { this.player.fpv = !this.player.fpv; this.progress.fpv = this.player.fpv; showToast(this.player.fpv ? L("👁️ First person. Press V to go back.") : L("🎥 Third person."), 2000); } if (e.key.toLowerCase() === "c") { this._wantShot = true; } if (e.key.toLowerCase() === "o" && this.world.currentRoom && !panelOpen() && !this.dialogue.active && !this._lockPanel) { standPose(this.player.group); this._exitRoom(); showToast(L("🚪 You step outside."), 1500); } if (e.key.toLowerCase() === "r" && this._partner) { if (panelOpen()) closePanel(); else if (!this.dialogue.active) this._partnerMenu(); } if (e.key.toLowerCase() === "t") { if (this.dialogue.active) this._chatFromDialogue(); else if (!panelOpen()) { const near = this._nearestInteractable(); if (near && near.npc) this._chat(near.npc); } } });
+    window.addEventListener("keydown", (e) => { if (e.target && e.target.tagName === "INPUT") return; if (this._sim) return; if (e.key.toLowerCase() === "g") { if (this.bigmap.isOpen) this.bigmap.close(); else this.bigmap.open(); } if (e.key.toLowerCase() === "m") { if (panelOpen()) closePanel(); else this._phone(); } if (e.key === "Escape") this.bigmap.close(); if (e.key.toLowerCase() === "j") { if (panelOpen()) closePanel(); else this._openJobs(); }  if (e.key === "2") this._toggleP2(); if (e.key.toLowerCase() === "v") { this.player.fpv = !this.player.fpv; this.progress.fpv = this.player.fpv; showToast(this.player.fpv ? L("👁️ First person. Press V to go back.") : L("🎥 Third person."), 2000); } if (e.key.toLowerCase() === "c") { this._wantShot = true; } if (e.key.toLowerCase() === "o" && this.world.currentRoom && !panelOpen() && !this.dialogue.active && !this._lockPanel) { standPose(this.player.group); this._exitRoom(); showToast(L("🚪 You step outside."), 1500); } if (e.key.toLowerCase() === "r" && this._partner) { if (panelOpen()) closePanel(); else if (!this.dialogue.active) this._partnerMenu(); } if (e.key.toLowerCase() === "t") { if (this.dialogue.active) this._chatFromDialogue(); else if (!panelOpen()) { const near = this._nearestInteractable(); if (near && near.npc) this._chat(near.npc); } } });
     this._ambient = { chirp: 3, horn: 5, bell: 30 };
     startAmbient();
     this.clock = new THREE.Clock();
@@ -6651,6 +6747,7 @@ class Game {
   clockText() {
     const p = this.phase;
     if (this.working && this._onDuty) return `${L("On duty")} · ${L("Case {n} of 5", { n: this._onDuty })}`;
+    if ((p === "over" || p === "evening") && this._tmin != null) return this._clockFmt();
     if (this.working) { const job = JOBS.find((j) => j.id === this.progress.job); return p === "morning" ? (this.isSunday() ? "8:00 · Sunday" : `8:00 · ${L("Off to work")}${job ? ": " + job.place : ""}`) : p === "over" ? `5:00 · ${L("Work over")}` : p === "evening" ? "6:00 · At home" : "10:00 · Bedtime"; }
     if (p === "morning") return "7:00 · At home";
     if (p === "school") { const per = PERIODS[this.periodIndex] || PERIODS[PERIODS.length - 1]; return `${per.time} · ${per.name}`; }
@@ -6858,6 +6955,8 @@ class Game {
     if (door.label === "Suryanagar Mall") this._mallSetup(room);
     if (door.label === "FitZone Gym") this._gymSetup(room);
     if (room.type === "haveli") this._haveliSetup(room);
+    if (door.label === "Suryanagar Airport" && this.progress.job === "pilot") { const sp = this._nearSpot(room, room.x0 + 6, room.z0 - 4, [[0, 0], [2, 0], [-2, 0], [0, 2], [0, -2], [4, 0], [-4, 0]]); this.roomInteractables.push({ pos: sp, radius: 2.6, prompt: () => L("🧑‍✈️ Captain's duty: fly today's flight"), activate: () => this._pilotDuty() }); }
+    if (door.label === "Railway Station" && this.progress.job === "locopilot") { const sp = this._nearSpot(room, room.x0 + 8, room.z0 - 4, [[0, 0], [2, 0], [-2, 0], [0, 2], [0, -2], [4, 0], [-4, 0]]); this.roomInteractables.push({ pos: sp, radius: 2.6, prompt: () => L("🚆 Loco pilot duty: drive today's train"), activate: () => this._locoDuty() }); }
     if (door.label === "Our Home") this._telescopeAt(room);
     if (door.label === "City Hospital") this._bloodCamp(room);
     if (this._outing && this._outing.o.place === door.label) setTimeout(() => this._startOuting(room), 500);
@@ -7113,11 +7212,13 @@ class Game {
       { title: "📓 Homework", intro: "You open your notebook at the study desk. Maa brings a glass of milk.", goal: `<b>${hw.length} question${hw.length > 1 ? "s" : ""}</b> from today's classes. Two marks each.`, steps, doneBtn: "Close the notebook", doneHtml: "<b>All done.</b> Neat work goes in the bag for tomorrow." });
   }
   _dinner() {
+    if (this.phase === "over") return this._homeLunch();
     if (this.phase !== "evening") { showToast("Dinner is in the evening.", 2000); return; }
     if (this.isBirthday() && !this.progress.birthday) return this._birthday();
     if (this.isDiwali() && !this.progress.diwali) return this._diwali();
     { const f = FESTIVALS[this.progress.day]; if (f && !(this.progress.fest || {})[f]) return this._festival(f); }
     { const b = this.birthdayToday(); if (b && b.where === "home" && !(this.progress.fest || {})["bday" + this.progress.day]) return this._familyBirthday(b); }
+    if (this._tmin != null && this._tmin < 19 * 60 + 30 && !this.progress.homework.length) return this._dinnerEarly();
     if (this.progress.day === 4 && !(this.progress.fest || {}).sciencefair && !this.working) return this._scienceFair();
     if (this.progress.day === 10 && !(this.progress.fest || {}).storm) return this._stormNight();
     if (this.progress.homework.length) { showToast("Maa: Homework first, then dinner!", 2400, "bad"); return; }
@@ -7128,6 +7229,7 @@ class Game {
     this.dialogue.say("Papa", [L("Dal, rice, sabzi and hot rotis. So, {n} marks today?", { n: marksToday }), marksToday >= 12 ? "Excellent! Dadi, did you hear? Extra kheer for this one." : marksToday >= 6 ? "Good. Tomorrow raise your hand a little more." : "Hmm. Tomorrow, hand up in every class. I know you can.", "Eat well. Then a movie, ludo, or Dadi's story, and bed by ten."], () => { this.addEnergy(60); this._startPhase("night"); }, { pitch: 320, speaker: papa.id });
   }
   _sleep() {
+    if (this.phase === "over" && this.world.currentRoom && this.world.currentRoom.type === "home") return this._afternoonNap();
     if (this.phase === "night" && this.progress.generations >= 3 && !this.progress.ended && !this.progress.grandparentMode) return this._ending();
     if (this.phase === "night" && this.working && !this.graduate && this.progress.shifts >= 10 && this.stage < STAGES.length - 1) return this._promote(() => {});
     if (this.phase !== "night") { showToast(this.phase === "evening" ? "Homework and dinner first!" : "Not bedtime yet.", 2200); return; }
@@ -8024,6 +8126,7 @@ class Game {
   _endFlight() {
     const c = this._cut; if (!c) return; this._cut = null;
     for (const el of [c.bar, c.skip, c.fade]) try { el.remove(); } catch (e) { /* already gone */ }
+    if (c.kind === "tour") { this.player._placeCamera(1); if (c.onDone) c.onDone(); return; }
     if (this._cabin) this._cabin.group.visible = false;
     if (c.kind === "train") { if (this._coachIn) this._coachIn.group.visible = false; if (this._country) this._country.group.visible = false; const P = this.player.group; this.world.scene.add(P); P.position.set(-79, 0, RAIL.platformZ + 1.5); P.rotation.set(0, 0, 0); standPose(P); this.player._placeCamera(1); playSuccess(); c.onDone(); return; }
     const pl = c.plane, h = this._parkedHome; pl.position.set(h.x, h.y, h.z); pl.rotation.set(0, Math.PI / 2, 0); pl.visible = true;
@@ -8050,7 +8153,7 @@ class Game {
     return { bar, skip, fade };
   }
   // Every family vehicle goes back to its own spot by the house (not the one you are riding).
-  _parkVehiclesHome() {
+  _parkVehiclesHome() { if (this._landmark) { this.world.scene.remove(this._landmark); this._landmark = null; }
     const R = this.player.riding;
     for (const [v, x, z, rot] of this._vehHome || []) { if (!v || !v.group || (R && R.group === v.group)) continue; if (v === this.car && (v.driving || v.atSchool)) continue; v.group.position.set(x, 0, z); v.group.rotation.set(0, rot, 0); }
   }
@@ -8129,6 +8232,7 @@ class Game {
     this.setObjective(`${L("{p}: follow the compass", { p: place })}`, gx, gz);
     this._cityBanner(`📍 ${city}`, L("{p} is {d}, about {m} m away. Follow the compass arrow.", { p: place, d: L(dir), m: dist }));
     speakLine(L("Welcome to {c}. {p} is {d}, about {m} metres away. Follow the compass.", { c: city, p: place, d: L(dir), m: dist }), 380);
+    this._showLandmark(city, via);
   }
   _purposeLine(purpose, city) {
     if (purpose === "mission" && this._braveM) return L("🎖️ Bravery mission: {n}. The site is {p}. Hurry!", { n: this._braveM.name, p: this._braveM.site });
@@ -8441,9 +8545,9 @@ class Game {
     const numbers = contacts.map(([id, name]) => [id, name, phoneNumberFor(id)]);
     const card = openPanel(`<div class="job-title-row"><h2>📱 ${L("Phone")}</h2><button class="ghost-btn" id="ph-close">${L("Okay")}</button></div><div class="chat-row"><input id="ph-dial" type="tel" placeholder="${L("Dial a number…")}" autocomplete="off"><button class="big-btn" id="ph-call">📞 ${L("Call")}</button></div><div class="chat-row"><input id="ph-name" type="text" maxlength="30" placeholder="${L("Or type a name: Aarav, Maa, Ramesh…")}" autocomplete="off"><button class="big-btn" id="ph-ncall">📞 ${L("Call by name")}</button></div><div class="tiny-note" id="ph-note">${L("Type a number, or type the name of the person you want to call.")}</div><div class="section-label">${L("Messages")}</div><div class="chat-log">${inbox.map((s) => `<div class="them">${s}</div>`).join("")}</div><div class="section-label">${L("Contacts")}</div><div class="shop-list">${numbers.map(([id, name, num]) => `<div class="cart-row"><div>📞 <b>${name}</b><small>${num}</small></div><button class="use-btn" data-id="${id}">${L("Call")}</button></div>`).join("")}</div><div class="btn-row"><button class="big-btn" id="ph-hw">📘 ${L("Homework Helper: one hint token (costs 1 mark)")}</button><button class="big-btn" id="ph-news">📰 ${L("Read today's Suryanagar Times")}</button></div>`);
     card.querySelector("#ph-close").addEventListener("click", () => closePanel());
-    const dial = card.querySelector("#ph-dial"); const doDial = () => { const n = (dial.value || "").replace(/\D/g, ""); if (!n) return; const hit = numbers.find((x) => x[2] === n); closePanel(); if (hit) { const c = contacts.find((x) => x[0] === hit[0]); pr.phoneLog.push(c[0]); this._chat(c[2]); } else { const who = { id: "stranger", name: L("Unknown number"), def: { id: "stranger_" + n, name: L("Unknown number"), pitch: 380 + (Number(n.slice(-2)) || 0) * 2 }, group: this.family.papa.group }; this._chat(who); setTimeout(() => { const log = document.getElementById("chat-log"); if (log) { const d = document.createElement("div"); d.className = "them"; d.textContent = `${who.name}: ${WRONG_NUMBER[Number(n.slice(-1)) % WRONG_NUMBER.length]}`; log.appendChild(d); } }, 400); } };
+    const dial = card.querySelector("#ph-dial"); const doDial = () => { const n = (dial.value || "").replace(/\D/g, ""); if (!n) return; const hit = numbers.find((x) => x[2] === n); closePanel(); if (hit) { const c = contacts.find((x) => x[0] === hit[0]); pr.phoneLog.push(c[0]); this._askLocation(c[2], () => this._chat(c[2])); } else { const who = { id: "stranger", name: L("Unknown number"), def: { id: "stranger_" + n, name: L("Unknown number"), pitch: 380 + (Number(n.slice(-2)) || 0) * 2 }, group: this.family.papa.group }; this._chat(who); setTimeout(() => { const log = document.getElementById("chat-log"); if (log) { const d = document.createElement("div"); d.className = "them"; d.textContent = `${who.name}: ${WRONG_NUMBER[Number(n.slice(-1)) % WRONG_NUMBER.length]}`; log.appendChild(d); } }, 400); } };
     const nameIn = card.querySelector("#ph-name"), note = card.querySelector("#ph-note");
-    const doName = () => { const t = (nameIn.value || "").trim(); if (!t) { note.textContent = L("Type a name first."); return; } const hit = this._findPerson(t); if (!hit) { note.textContent = L("No one called '{t}' in your phone book. Try a friend, a teacher, Maa, Papa or Dadi.", { t }); return; } closePanel(); pr.phoneLog.push(hit.def ? hit.def.id : hit.name); playBell(); showToast(L("📞 Calling {n}... ring ring!", { n: hit.name }), 1800, "good"); this._chat(hit); };
+    const doName = () => { const t = (nameIn.value || "").trim(); if (!t) { note.textContent = L("Type a name first."); return; } const hit = this._findPerson(t); if (!hit) { note.textContent = L("No one called '{t}' in your phone book. Try a friend, a teacher, Maa, Papa or Dadi.", { t }); return; } closePanel(); pr.phoneLog.push(hit.def ? hit.def.id : hit.name); playBell(); showToast(L("📞 Calling {n}... ring ring!", { n: hit.name }), 1800, "good"); this._askLocation(hit, () => this._chat(hit)); };
     card.querySelector("#ph-ncall").addEventListener("click", doName); nameIn.addEventListener("keydown", (e) => { e.stopPropagation(); if (e.key === "Enter") doName(); });
     card.querySelector("#ph-call").addEventListener("click", doDial); dial.addEventListener("keydown", (e) => { e.stopPropagation(); if (e.key === "Enter") doDial(); });
     const pn = card.querySelector("#ph-news"); if (pn) pn.addEventListener("click", () => { closePanel(); this._newspaper(); });
@@ -8693,7 +8797,7 @@ class Game {
         this.player.group.position.set(at.standAt.x, 0, at.standAt.z); this.player.group.rotation.y = Math.PI;
         Audio.playPick();
         if (at === BUS_STOPS[1] && this.phase === "morning" && !this.working && !this.isSunday()) this._startPhase("school");
-        else if (at === BUS_STOPS[0] && this.phase === "over") this._startPhase("evening");
+        else if (at === BUS_STOPS[0] && this.phase === "over") this.setObjective(L("Home stop! Afternoon now: lunch at home, a nap, or play. Evening comes at 5 PM."), HOME.door.x, HOME.door.z + 2);
         else if (at === BUS_STOPS[1] && this.phase === "morning" && this.working) this._workObjective();
         else this.setObjective(this.objective ? this.objective.label : "", null);
       }
@@ -8916,7 +9020,8 @@ class Game {
   _loopBody() {
     requestAnimationFrame(this._loop);
     const dt = Math.min(this.clock.getDelta(), 0.05), elapsed = this.clock.elapsedTime;
-    if (this._cut) { try { if (this._cut.kind === "train") this._tickTrain(dt, elapsed); else this._tickFlight(dt, elapsed); } catch (e) { this._reportError(e); this._endFlight(); } this.world.update(dt, elapsed, this._cut ? this._cut.focus : this.player.position); if (!this._contextLost) this.renderer.render(this.world.scene, this.camera); return; }
+    if (this._sim) { try { this._tickSim(dt); } catch (e) { this._reportError(e); this._simClean(); } this.world.update(dt, elapsed, this._sim ? this._sim.focus : this.player.position); if (!this._contextLost) this.renderer.render(this.world.scene, this.camera); return; }
+    if (this._cut) { try { if (this._cut.kind === "train") this._tickTrain(dt, elapsed); else if (this._cut.kind === "tour") this._tickTour(dt); else this._tickFlight(dt, elapsed); } catch (e) { this._reportError(e); this._endFlight(); } this.world.update(dt, elapsed, this._cut ? this._cut.focus : this.player.position); if (!this._contextLost) this.renderer.render(this.world.scene, this.camera); return; }
     if (this._park && !this._uiBlocking()) { const mv = this.input.move || { x: 0, y: 0 }; if (this.ui.setInteractPrompt) this.ui.setInteractPrompt(L("Get off the {k}", { k: L(this._park.kind === "seesaw" ? "see-saw" : this._park.kind) }) + (this.input.isTouch ? "" : "  (E)")); if (this.input.interactPressed() || (this._park.t > 0.6 && (Math.abs(mv.x) > 0.5 || Math.abs(mv.y) > 0.5))) this._endPark(); }
     const blocked = this._uiBlocking() || !!this._park;
     this.player.update(dt, blocked ? { x: 0, y: 0 } : this.input.move, this.input.running, blocked ? 0 : this.input.cameraDelta(dt), this.input.cameraIdleFor());
@@ -8924,14 +9029,13 @@ class Game {
     const pp = this.player.position;
     // Walking to school on foot: entering the campus starts the school day.
     if (!this.working && !this.isSunday() && this.phase === "morning" && !this.world.currentRoom && (!this.player.riding || this.player.riding.kind === "bike") && pp.x > SCHOOL.x1 && pp.x < SCHOOL.x2 && pp.z > SCHOOL.z1 && pp.z < SCHOOL.z2) this._startPhase("school");
-    if (this.phase === "over" && this.world.currentRoom && this.world.currentRoom.type === "home") this._startPhase("evening");
     this._tickLunch(dt); this._tickCar(dt); this._tickPark(dt);
     if (!this.player.riding && this.player.speedKmh > 1 && !this.world.currentRoom) { this.progress.energy = Math.max(0, this.progress.energy - dt / (this.input.running ? 8 : 16)); if (Math.floor(this.progress.energy) !== this._energyShown) { this._energyShown = Math.floor(this.progress.energy); this.ui.refreshRank(); } }
     this.player.tired = this.progress.energy < 25;
     if (this.player.riding && this.player.riding.kind === "bike" && this.progress.energy <= 0 && !this.progress.cast && !panelOpen()) this._fallOffBike();
     if (!blocked && this.player.riding && this.player.riding.duty && this.input.keys && this.input.keys.has("f") && !this._sirenHeld) { this._sirenHeld = true; this._siren = !this._siren; showToast(this._siren ? L("🚨 Siren on") : L("Siren off"), 1200); } if (!(this.input.keys && this.input.keys.has("f"))) this._sirenHeld = false;
     const useP = !blocked && this.input.usePressed(); if (this._trial) { const eP = this.input.interactPressed(); this._tickTrial(dt, useP || eP); this.ui.setInteractPrompt(`${this._trial ? this._trial.spec.icon : ""} ${L(this._trial && this._trial.kind === "cricket" ? "Swing" : "Shoot")}  (F / E)`); }
-    this._tickPet(dt); this._tickRain(); this._tickP2(dt); this._tickDirections(dt); this._tickCrowd(dt); this._tickField(dt); this._tickPartner(dt); this._tickChase(dt); this._tickTraffic(elapsed); this._tickRoadLife(dt); this._tickTransport(dt, elapsed); this._tickLounge(dt, elapsed); this._tickOutings(dt); this._tickMatchTrip(); this._tickIdeas(dt, elapsed); this._tickNight(dt, elapsed); this._tickHaveli(dt); this._tickMission && this._tickMission(dt);
+    this._tickPet(dt); this._tickRain(); this._tickP2(dt); this._tickDirections(dt); this._tickCrowd(dt); this._tickField(dt); this._tickPartner(dt); this._tickChase(dt); this._tickTraffic(elapsed); this._tickRoadLife(dt); this._tickTransport(dt, elapsed); this._tickLounge(dt, elapsed); this._tickOutings(dt); this._tickMatchTrip(); this._tickIdeas(dt, elapsed); this._tickNight(dt, elapsed); this._tickHaveli(dt); this._tickMission && this._tickMission(dt); this._tickDayClock(dt);
     sirenTick(!!(this.player.riding && this.player.riding.duty && this._siren), dt); if (this._dutyLights) { const on = Math.floor(elapsed * 4) % 2 === 0; this._dutyLights[0].material.emissiveIntensity = this._siren && on ? 2 : 0.2; this._dutyLights[1].material.emissiveIntensity = this._siren && !on ? 2 : 0.2; }
     if (this.world.setTimeOfDay) this.world.setTimeOfDay(this.world.currentRoom ? (this.world.currentRoom.type === "haveli" ? "haunt" : this.phase === "night" ? "nightroom" : "school") : this.phase);
     musicTick(this._trial ? "stadium" : this.world.currentRoom ? (["canteen", "eatery", "shop", "supermarket"].includes(this.world.currentRoom.type) ? "market" : null) : this.phase === "school" ? "school" : this.phase === "over" ? "evening" : Math.hypot(pp.x - 40, pp.z - 80) < 45 ? "market" : this.phase, dt);
@@ -9716,6 +9820,59 @@ class Game {
     this._snap && this._snap("🚨", "Caught the fake ghost gang in the old haveli."); this.diary(L("The haveli ghosts were fake! The Kaalu gang used bedsheets and a speaker to scare people and rob houses. Kaalu chased me but I escaped, and the police caught them."));
     this.dialogue.say(L("Inspector Rathore"), [L("(You burst out of the front door, gasping. Sirens! Blue and red lights flash on the haveli walls.)"), L("(Kaalu runs out after you, straight into six constables.)"), L("Inspector: 'Hands up! Kaalu, Bablu, Pinky: wanted for 12 house robberies!'"), L("Kaalu: 'Arre! Our ghost show was perfect! Who told you?'"), L("Inspector: 'This brave kid. Chappals, a speaker, shoe prints, a name tag on the sheet. Ghosts do not leave clues. Robbers do.'"), st.proof ? L("Inspector: 'And your photo is proof for the court. Excellent work!'") : L("Inspector: 'Next time, a silent photo helps the court too.'"), L(`🏆 Reward ₹${reward}. The stolen phones and jewellery go back to the families.`), L("📰 Tomorrow's paper: 'BRAVE KID BUSTS FAKE GHOST GANG!'"), L("🏅 Badge: Ghost Buster."), L("Inspector: 'The Government needs brave people like you. Visit the 🎖️ Bravery Missions desk outside the Police Station.'")], null, { pitch: 260 });
   }
+  // ---- The day in order: afternoon, then evening, then dinner at 8, then night ----
+  _tickDayClock(dt) {
+    const p = this.phase, W = this.working;
+    if (p !== this._clkPhase) { this._clkPhase = p; this._dinnerCalled = false; this._tmin = p === "over" ? (W ? 17 * 60 : 12 * 60 + 15) : p === "evening" ? Math.max(this._tmin || 0, W ? 18 * 60 : 17 * 60) : null; if (p === "evening" && this._tmin > 20 * 60) this._tmin = 17 * 60; }
+    if (this._tmin == null || this._cut || this._sim || this._staying || this._uiBlocking() || (this.dialogue && this.dialogue.active)) return;
+    if (p === "over") {
+      this._tmin += dt * (W ? 1 : 1.6);
+      if (this._tmin >= (W ? 18 * 60 : 17 * 60)) { this._tmin = W ? 18 * 60 : 17 * 60; showToast(L("🌇 Evening! The sun is going down. Homework, play, then dinner at 8."), 3800, "good"); this._startPhase("evening"); }
+    } else if (p === "evening") {
+      this._tmin = Math.min(20 * 60, this._tmin + dt);
+      if (this._tmin >= 19 * 60 + 30 && !this._dinnerCalled) { this._dinnerCalled = true; showToast(L("🍛 Maa: 'Dinner is ready! Wash your hands and come to the table.'"), 3800, "good"); try { playBell(); } catch (e) { /* sound optional */ } }
+    }
+  }
+  _clockFmt() {
+    const t = Math.floor(this._tmin), h = Math.floor(t / 60), m = t % 60, h12 = ((h + 11) % 12) + 1, ap = h < 12 ? "AM" : "PM";
+    const word = this.phase === "over" ? (this.working ? L("Work over") : L("Afternoon")) : this._tmin >= 19 * 60 + 30 ? L("Dinner time") : L("Evening");
+    return `${h12}:${String(m).padStart(2, "0")} ${ap} · ${word}`;
+  }
+  _homeLunch() {
+    const pr = this.progress; if (pr.lunchHome === pr.day) { showToast(L("You had lunch already. Take a nap on your bed, or go out and play. Evening comes at 5 PM."), 3200); return; }
+    pr.lunchHome = pr.day; saveProgress(this.profile, pr); this.player.eatT = 4; this.addEnergy && this.addEnergy(25);
+    this.dialogue.say("Maa", [L("Lunch is ready! Rajma chawal, curd and a papad."), L("Eat slowly. Then rest a little, or go and play. Dinner is at 8 tonight.")], null, { pitch: 430 });
+  }
+  _afternoonNap() {
+    const pr = this.progress; if (pr.napDay === pr.day) { showToast(L("You already had your nap. Go and play outside!"), 2600); return; }
+    pr.napDay = pr.day; saveProgress(this.profile, pr); this.addEnergy && this.addEnergy(20);
+    this._tmin = Math.max(this._tmin || 0, (this.working ? 17 * 60 + 45 : 16 * 60 + 30)); showToast(L("😴 A short afternoon nap... You wake up fresh at {t}.", { t: this._clockFmt().split(" · ")[0] }), 3200, "good");
+  }
+  _dinnerEarly() {
+    const card = openPanel(`<h2>🍛 ${L("Not dinner time yet")}</h2><p class="job-brief">${L("Maa: 'Dinner is at 8 o'clock, beta. It is only {t} now.'", { t: this._clockFmt().split(" · ")[0] })}</p><div class="btn-row"><button class="big-btn" id="de-play">🏏 ${L("Go out and play till dinner")}</button><button class="big-btn" id="de-help">🍳 ${L("Help Maa cook (dinner now)")}</button></div>`);
+    card.querySelector("#de-play").addEventListener("click", () => closePanel());
+    card.querySelector("#de-help").addEventListener("click", () => { closePanel(); this._tmin = 20 * 60; this.addFriendship && this.addFriendship("family", 1, L("helped Maa cook")); showToast(L("🍳 You chop tomatoes and roll rotis with Maa. The clock says 8. Dinner!"), 3000, "good"); this._dinner(); });
+  }
+  // ---- Phone: ask to share the person's location before the call ----
+  _whereIs(who) {
+    const g = who && (who.group || who), p = who && (who.position || (g && g.position)); if (!p) return null;
+    for (const r of this.world.rooms.values()) if (Math.abs(p.x - r.x0) <= r.w / 2 + 1 && Math.abs(p.z - r.z0) <= r.d / 2 + 1) { const base = String(r.label).split(" · ")[0], d = this.world.doors.find((x) => x.label === base); return d ? { x: d.x, z: d.z + 2, place: L("inside {p}", { p: base }) } : null; }
+    let best = null, bd = 1e9; for (const d of this.world.doors) { const k = Math.hypot(d.x - p.x, d.z - p.z); if (k < bd) { bd = k; best = d; } }
+    return { x: p.x, z: p.z, place: best && bd < 40 ? L("near {p}", { p: best.label }) : L("out in the town") };
+  }
+  _askLocation(who, then) {
+    const name = who && who.name ? who.name : L("this person");
+    const card = openPanel(`<h2>📍 ${L("Share location?")}</h2><p class="job-brief">${L("Do you want the location of {n}?", { n: name })}</p><div class="btn-row"><button class="big-btn" id="loc-yes">✅ ${L("Yes, show me")}</button><button class="ghost-btn" id="loc-no">❌ ${L("No, just talk")}</button></div>`);
+    card.querySelector("#loc-no").addEventListener("click", () => { closePanel(); then(); });
+    card.querySelector("#loc-yes").addEventListener("click", () => {
+      closePanel(); const w = this._whereIs(who);
+      if (!w) { showToast(L("📍 {n} has switched off location sharing.", { n: name }), 2800); then(); return; }
+      const pp = this.player.position, dist = Math.round(Math.hypot(w.x - pp.x, w.z - pp.z)), here = this.world.currentRoom ? null : dist;
+      this.setObjective(`📍 ${name}: ${w.place}`, w.x, w.z);
+      showToast(here != null ? L("📍 {n} is {p}, about {d} m away. Follow the compass.", { n: name, p: w.place, d: dist }) : L("📍 {n} is {p}. The compass points there.", { n: name, p: w.place }), 3800, "good");
+      then();
+    });
+  }
 
   // ---- Bravery missions: the Government sends you, pays the travel, and the nation thanks you ----
   _missionList() {
@@ -9819,6 +9976,24 @@ class Game {
     this.setObjective(`${m.icon} ${L("Mission")}: ${m.site}. ${L("Follow the compass.")}`, gx, gz);
     this._cityBanner(`${m.abroad ? "🌍" : "📍"} ${city}`, L("Mission site: {p}. Follow the compass arrow. Hurry!", { p: m.site }));
     try { speakLine(L("Welcome to {c}. The mission site is {p}. Follow the compass.", { c: city, p: m.site }), 380); } catch (e) { /* voice optional */ }
+    this._showLandmark(city, via);
+  }
+  // The city's famous attraction on the skyline, and a short camera tour of it.
+  _showLandmark(city, via) {
+    if (this._landmark) { this.world.scene.remove(this._landmark); this._landmark = null; }
+    let lm; try { lm = makeLandmark(city); } catch (e) { return; }
+    const x = via === "rail" ? -110 : 255, z = via === "rail" ? -255 : 105, ap = this.world.doors.find((d) => d.label === (via === "rail" ? "Railway Station" : "Suryanagar Airport"));
+    lm.position.set(x, 0, z); if (ap) lm.rotation.y = Math.atan2(ap.x - x, ap.z - z); this.world.scene.add(lm); this._landmark = lm;
+    let H = 50; try { const b = new THREE.Box3().setFromObject(lm), sz = new THREE.Vector3(); b.getSize(sz); H = Math.max(20, Math.min(160, sz.y)); } catch (e) { /* default size */ }
+    const pr = this.progress; pr.landmarks = [...new Set([...(pr.landmarks || []), lm.userData.name])]; saveProgress(this.profile, pr);
+    this._snap && this._snap("🏙️", `Saw the ${lm.userData.name} in ${city}.`);
+    const { bar, skip, fade } = this._cutUI(); this._cut = { kind: "tour", t: 0, lm, H, bar, skip, fade, focus: { x, y: 0, z }, onDone: () => showToast(L("🏙️ {n} is on the skyline. Landmarks seen: {k}.", { n: lm.userData.name, k: pr.landmarks.length }), 3200, "good") };
+    this._cutSay(`🏙️ ${city}: ${lm.userData.name}. ${lm.userData.fact}`, true);
+  }
+  _tickTour(dt) {
+    const c = this._cut; c.t += dt; const lm = c.lm, cam = this.camera, a = c.t * 0.4 + 0.3, R = c.H * 0.9 + 40;
+    cam.position.set(lm.position.x + Math.sin(a + lm.rotation.y) * R, c.H * 0.45 + 12, lm.position.z + Math.cos(a + lm.rotation.y) * R); cam.lookAt(lm.position.x, c.H * 0.42, lm.position.z);
+    if (c.t > 7.5) this._endFlight();
   }
   // Each mission site gets its own little scene in the world.
   _missionScene(kind, x, z) {
@@ -9935,6 +10110,239 @@ class Game {
       day(0);
     };
     card.querySelector("#sy-3").addEventListener("click", () => go(3)); card.querySelector("#sy-7").addEventListener("click", () => go(7));
+  }
+
+  // ---- Simulators: the pilot flies the plane, the loco pilot drives the train, there and back ----
+  _simKeysDown(k) { const K = this.input.keys || new Set(), B = this._simBtn || new Set(); return k.some((x) => K.has(x) || B.has(x)); }
+  _simHud(kind) {
+    this._simBtn = new Set(); const hud = document.createElement("div"); hud.id = "sim-hud";
+    hud.style.cssText = "position:fixed;left:50%;top:6px;transform:translateX(-50%);z-index:60;background:#0b1220;color:#e8f1ff;border-radius:12px;padding:8px 14px;font:700 15px ui-monospace,monospace;text-align:center;max-width:94vw;pointer-events:none";
+    const pad = document.createElement("div"); pad.id = "sim-pad"; pad.style.cssText = "position:fixed;left:50%;bottom:12px;transform:translateX(-50%);z-index:56;display:flex;gap:6px;flex-wrap:wrap;justify-content:center;max-width:96vw";
+    const btns = kind === "fly" ? [["w", "➕ " + L("Power")], ["s", "➖ " + L("Power")], ["arrowup", "⬆️ " + L("Climb")], ["arrowdown", "⬇️ " + L("Descend")], ["arrowleft", "⬅️"], ["arrowright", "➡️"], [" ", "🛑 " + L("Brakes")], ["l", "💺 " + L("Belt sign")], ["k", "🧑‍✈️ " + L("Crew")]] : [["w", "➕ " + L("Notch")], ["s", "➖ " + L("Notch")], [" ", "🛑 " + L("Brake")], ["q", "📯 " + L("Horn")]];
+    for (const [k, t] of btns) { const b = document.createElement("button"); b.textContent = t; b.style.cssText = "padding:10px 12px;border-radius:10px;border:none;font:700 14px system-ui;background:#fff;touch-action:none"; const on = (e) => { e.preventDefault(); this._simBtn.add(k); if (this._sim) this._sim.tap = k; }, off = (e) => { e.preventDefault(); this._simBtn.delete(k); }; b.addEventListener("pointerdown", on); b.addEventListener("pointerup", off); b.addEventListener("pointerleave", off); pad.appendChild(b); }
+    const auto = document.createElement("button"); auto.textContent = "🤖 " + L("Autopilot"); auto.style.cssText = "padding:10px 12px;border-radius:10px;border:none;font:700 14px system-ui;background:#ffd27a"; auto.addEventListener("click", () => this._simAuto()); pad.appendChild(auto);
+    const bar = document.createElement("div"); bar.id = "sim-bar"; bar.style.cssText = "position:fixed;left:50%;bottom:74px;transform:translateX(-50%);max-width:min(640px,92vw);padding:8px 14px;border-radius:12px;background:rgba(10,16,30,.8);color:#fff;font:600 15px system-ui;text-align:center;z-index:55;pointer-events:none";
+    const fade = document.createElement("div"); fade.style.cssText = "position:fixed;inset:0;background:#000;opacity:0;transition:opacity .6s;z-index:54;pointer-events:none";
+    try { document.body.appendChild(fade); document.body.appendChild(hud); document.body.appendChild(pad); document.body.appendChild(bar); } catch (e) { /* HUD optional */ }
+    return { hud, pad, bar, fade };
+  }
+  _simSay(t, speak = false) { const s = this._sim; if (!s) return; s.ui.bar.textContent = t; if (speak) try { speakLine(t, 360); } catch (e) { /* voice optional */ } }
+  _simChecklist(title, items, onDone) {
+    let next = 0; const order = items.map((x, i) => i), shuffled = order.slice().sort((a, b) => ((a * 7 + 3) % items.length) - ((b * 7 + 3) % items.length));
+    const card = openPanel(`<h2>${title}</h2><p class="job-brief">${L("Tap the checks in the right order, from first to last.")}</p><div class="btn-row">${shuffled.map((i) => `<button class="big-btn" id="ck-${i}">${items[i][0]}</button>`).join("")}</div><div class="job-goal" id="ck-msg">${L("Step 1 of {n}", { n: items.length })}</div>`);
+    for (const i of order) card.querySelector(`#ck-${i}`).addEventListener("click", () => { const msg = card.querySelector("#ck-msg"); if (i !== next) { Audio.playRetry(); msg.textContent = "❌ " + L("Not yet. First: {x}", { x: items[next][0] }); return; } playPick && playPick(); const b = card.querySelector(`#ck-${i}`); if (b) b.disabled = true; msg.textContent = "✅ " + items[i][1]; next++; if (next >= items.length) { closePanel(); onDone(); } });
+  }
+  // ---- Pilot ----
+  _pilotDuty() {
+    const pr = this.progress, day = pr.day || 1; if (this._sim || this._cut) return;
+    const ind = INDIA_CITIES.filter((c) => c[0] !== "Nagpur"), ab = ABROAD_CITIES, routes = [ind[day % ind.length][0], ind[(day * 3 + 5) % ind.length][0], ind[(day * 7 + 11) % ind.length][0], ab[day % ab.length][0], ab[(day * 5 + 2) % ab.length][0]].filter((v, i, a) => a.indexOf(v) === i);
+    const card = openPanel(`<h2>✈️ ${L("Today's flights, Captain")}</h2><p class="job-brief">${L("Pick a flight. You fly the passengers there, land, then fly the return flight home to Suryanagar.")}</p><div class="shop-list">${routes.map((c, i) => `<div class="cart-row"><div><b>SA ${201 + i * 101} · Suryanagar → ${c}</b><small>${ab.some((a) => a[0] === c) ? "🌍 " + L("International") : "🇮🇳 " + L("Domestic")} · ${140 + ((day + i * 37) % 120)} ${L("passengers")}</small></div><button class="use-btn" id="pd-${i}">${L("Fly")}</button></div>`).join("")}</div><div class="btn-row"><button class="ghost-btn" id="pd-x">${L("Not now")}</button></div>`);
+    card.querySelector("#pd-x").addEventListener("click", () => closePanel());
+    routes.forEach((c, i) => card.querySelector(`#pd-${i}`).addEventListener("click", () => { closePanel(); const pax = 140 + ((day + i * 37) % 120), abroad = ab.some((a) => a[0] === c); this._pilotLeg({ dest: c, from: "Suryanagar", leg: 1, pax, abroad, no: 201 + i * 101, stars: [] }); }));
+  }
+  _pilotLeg(trip) {
+    this._simChecklist(`🧑‍✈️ ${L("Pre-flight checklist: SA {n} to {c}", { n: trip.no + trip.leg - 1, c: trip.dest })}`, [[L("Close the doors"), L("Doors closed and locked.")], [L("Seatbelt sign ON"), L("Ding! Passengers buckle up.")], [L("Fuel check"), L("Fuel tanks full for the trip.")], [L("Flaps to 1"), L("Flaps out for more lift at low speed.")], [L("Start the engines"), L("Whooosh! Both engines running.")], [L("Lights ON"), L("Landing lights and beacon on.")]], () => this._simStart("fly", trip));
+  }
+  // ---- Loco pilot ----
+  _locoDuty() {
+    const pr = this.progress, day = pr.day || 1; if (this._sim || this._cut) return;
+    const routes = [0, 1, 2, 3].map((k) => TRAIN_TRIPS[(day + k * 2) % TRAIN_TRIPS.length]).filter((v, i, a) => a.indexOf(v) === i);
+    const card = openPanel(`<h2>🚆 ${L("Today's trains, Loco Pilot")}</h2><p class="job-brief">${L("Pick a train. Drive it to the city by the signals, stop at the platform, then drive the return train home.")}</p><div class="shop-list">${routes.map((r, i) => `<div class="cart-row"><div><b>${r[2]} · Suryanagar → ${r[0]}</b><small>${600 + ((day + i * 91) % 500)} ${L("passengers")}</small></div><button class="use-btn" id="ld-${i}">${L("Drive")}</button></div>`).join("")}</div><div class="btn-row"><button class="ghost-btn" id="ld-x">${L("Not now")}</button></div>`);
+    card.querySelector("#ld-x").addEventListener("click", () => closePanel());
+    routes.forEach((r, i) => card.querySelector(`#ld-${i}`).addEventListener("click", () => { closePanel(); this._locoLeg({ dest: r[0], from: "Suryanagar", train: r[2], leg: 1, pax: 600 + ((day + i * 91) % 500), stars: [] }); }));
+  }
+  _locoLeg(trip) {
+    this._simChecklist(`🚆 ${L("Cab checks: {t} to {c}", { t: trip.train, c: trip.dest })}`, [[L("Check the brakes"), L("Brake pressure OK.")], [L("Test the horn"), L("Paaaam! Horn works.")], [L("Headlight ON"), L("Headlight on.")], [L("Check the signal"), L("Starter signal: GREEN.")], [L("Wait for the guard's green flag"), L("The guard waves the green flag. Ready!")]], () => this._simStart("drive", trip));
+  }
+  // ---- Shared start and end ----
+  _simStart(kind, trip) {
+    if (this.world.currentRoom) this._exitRoom(); if (this.player.riding) this.player.dismount(); closePanel();
+    const ui = this._simHud(kind); const s = this._sim = { kind, trip, ui, t: 0, fired: new Set(), score: 0, max: 0, hudT: 0 };
+    const F = this.world.scene.fog; if (F) { s.fog = [F.near, F.far]; F.near = 300; F.far = 2600; } s.bg = this.world.scene.background && this.world.scene.background.clone ? this.world.scene.background.clone() : null;
+    if (kind === "fly") this._flySetup(s); else this._driveSetup(s);
+    playSuccess();
+  }
+  _simStar(ok, why) { const s = this._sim; if (!s) return; s.max++; if (ok) s.score++; s.trip.stars.push([ok, why]); showToast((ok ? "⭐ " : "✖️ ") + why, 2400, ok ? "good" : "bad"); }
+  _simAuto() { const s = this._sim; if (!s) return; s.auto = true; this._simSay(L("🤖 Autopilot takes over. Fewer stars this time.")); this._simArrive(); }
+  _simClean() {
+    const s = this._sim; if (!s) return; this._sim = null; this._simBtn = new Set();
+    for (const el of [s.ui.hud, s.ui.pad, s.ui.bar, s.ui.fade]) try { el.remove(); } catch (e) { /* gone */ }
+    const F = this.world.scene.fog; if (F && s.fog) { F.near = s.fog[0]; F.far = s.fog[1]; }
+    if (this._flyW) this._flyW.group.visible = false; if (this._driveW) this._driveW.group.visible = false;
+    if (s.lm) { this.world.scene.remove(s.lm); }
+  }
+  _simArrive() {
+    const s = this._sim; if (!s || s.done) return; s.done = true; const trip = s.trip, pr = this.progress, job = this.job;
+    const pay = job ? salaryFor(job, pr.shifts) : 500, stars = s.auto ? Math.min(2, s.score) : s.score, max = Math.max(stars, s.max || 5);
+    this.addMoney(pay, trip.dest === "Suryanagar" ? L("return trip") : L("trip to {c}", { c: trip.dest })); pr.payToday = (pr.payToday || 0) + pay;
+    if (s.kind === "fly") pr.flightsFlown = (pr.flightsFlown || 0) + 1; else pr.trainsDriven = (pr.trainsDriven || 0) + 1; saveProgress(this.profile, pr);
+    this._simClean();
+    const back = trip.dest === "Suryanagar", name = this.playerName || L("Captain");
+    const lines = s.kind === "fly" ? [L("🛬 Welcome to {c}! {p} passengers clap and cheer: 'Thank you, Captain {n}!'", { c: trip.dest, p: trip.pax, n: name }), L("⭐ Stars on this flight: {s} of {m}.", { s: stars, m: max }), L("💰 Pay: ₹{p}.", { p: pay })] : [L("🚉 {c} station! {p} passengers step down. The station master shakes your hand.", { c: trip.dest, p: trip.pax }), L("⭐ Stars on this run: {s} of {m}.", { s: stars, m: max }), L("💰 Pay: ₹{p}.", { p: pay })];
+    const card = openPanel(`<h2>${s.kind === "fly" ? "✈️" : "🚆"} ${back ? L("Home to Suryanagar!") : L("Arrived in {c}", { c: trip.dest })}</h2>${lines.map((l) => `<p class="job-brief">${l}</p>`).join("")}<div class="job-goal" id="sa-stars">${trip.stars.map(([ok, w]) => (ok ? "⭐ " : "✖️ ") + w).join("<br>") || ""}</div><div class="btn-row"><button class="big-btn" id="sa-go">${back ? L("Finish duty") : s.kind === "fly" ? L("✈️ Fly the return flight to Suryanagar") : L("🚆 Drive the return train to Suryanagar")}</button></div>`);
+    this._snap && !back && this._snap(s.kind === "fly" ? "🧑‍✈️" : "🚆", s.kind === "fly" ? `Flew SA ${trip.no} to ${trip.dest} with ${trip.pax} passengers.` : `Drove the ${trip.train} to ${trip.dest}.`);
+    card.querySelector("#sa-go").addEventListener("click", () => {
+      closePanel();
+      if (!back) { const t2 = { ...trip, dest: "Suryanagar", from: trip.dest, leg: 2, stars: [] }; if (s.kind === "fly") this._pilotLeg(t2); else this._locoLeg(t2); return; }
+      pr.shifts = (pr.shifts || 0) + 1; saveProgress(this.profile, pr); this.ui.refreshRank && this.ui.refreshRank();
+      const d = this.world.doors.find((x) => x.label === (s.kind === "fly" ? "Suryanagar Airport" : "Railway Station")); if (d) { this.player.group.position.set(d.x, 0, d.z + 2.5); this.player._placeCamera(1); }
+      this.diary(s.kind === "fly" ? L("Flew to {c} and back as the Captain.", { c: trip.from }) : L("Drove the {t} to {c} and back.", { t: trip.train, c: trip.from }));
+      showToast(L("✅ Duty done! Shifts: {n}.", { n: pr.shifts }), 3000, "good"); if (this.phase === "morning" || this.phase === "school") this._startPhase("over");
+    });
+  }
+  _tickSim(dt) { const s = this._sim; if (!s || s.done) return; s.t += dt; if (s.kind === "fly") this._tickFly(dt); else this._tickDrive(dt); }
+  // ---- The flight world: a long runway, clouds, and the destination's landmark ----
+  _flyWorld() {
+    if (this._flyW) { this._flyW.group.visible = true; return this._flyW; }
+    const X = 3000, G = new THREE.Group(), M = (c, e = 0, o = 1) => new THREE.MeshStandardMaterial({ color: c, emissive: e ? c : 0x000000, emissiveIntensity: e, transparent: o < 1, opacity: o });
+    const add = (m) => { G.add(m); return m; }, box = (w, h, d, c, x, y, z, m) => { const b = add(new THREE.Mesh(new THREE.BoxGeometry(w, h, d), m || M(c))); b.position.set(x, y, z); return b; };
+    const gr = add(new THREE.Mesh(new THREE.PlaneGeometry(9000, 9000), M(0x6fae54))); gr.rotation.x = -Math.PI / 2; gr.position.set(X, 0, 0);
+    box(1100, 0.1, 44, 0x3a3f45, X, 0.05, 0);
+    for (let x = -520; x < 540; x += 30) box(12, 0.12, 0.8, 0xffffff, X + x, 0.08, 0);
+    for (const e of [-550, 550]) for (let z = -18; z <= 18; z += 4) box(20, 0.12, 2, 0xffffff, X + e * 0.95, 0.08, z);
+    for (let x = -550; x <= 550; x += 50) for (const z of [-23, 23]) box(0.6, 0.4, 0.6, 0xfff1a8, X + x, 0.3, z, M(0xfff1a8, 1));
+    box(80, 14, 30, 0x9fd3ea, X - 100, 7, -110, M(0x9fd3ea, 0.15)); { const tw = add(new THREE.Mesh(new THREE.CylinderGeometry(3, 4, 34, 10), M(0xe8e2d0))); tw.position.set(X + 60, 17, -95); box(10, 5, 10, 0x1b2a3a, X + 60, 36, -95, M(0x1b2a3a, 0.2)); }
+    for (let i = 0; i < 70; i++) { const a = i * 2.4, r = 160 + (i * 53) % 900; const t = add(new THREE.Mesh(new THREE.ConeGeometry(4, 12, 7), M(0x2f7d3a))); t.position.set(X + Math.cos(a) * r, 6, Math.sin(a) * r + (Math.sin(a) > 0 ? 60 : -60)); }
+    const clouds = []; const cm = M(0xffffff, 0.15, 0.92); for (let i = 0; i < 36; i++) { const c = new THREE.Group(); for (let k = 0; k < 3; k++) { const p = new THREE.Mesh(new THREE.SphereGeometry(14 + k * 4, 10, 8), cm); p.position.set(k * 16 - 16, (k % 2) * 4, (k - 1) * 6); c.add(p); } add(c); clouds.push(c); }
+    const sea = add(new THREE.Mesh(new THREE.PlaneGeometry(6000, 6000), M(0xf4f7fb, 0.2, 0.95))); sea.rotation.x = -Math.PI / 2; sea.position.y = 180; sea.visible = false;
+    const plane = makePlane(0xd62828, 1); plane.rotation.order = "YXZ"; add(plane);
+    this.world.scene.add(G); this._flyW = { group: G, X, clouds, sea, plane, sign: null };
+    return this._flyW;
+  }
+  _flySetup(s) {
+    const W = this._flyWorld(), X = W.X, trip = s.trip;
+    if (W.sign) W.group.remove(W.sign); try { W.sign = makeTextSprite(`✈️ ${trip.from} ${L("Airport")}`, { size: 50, scale: 3 }); W.sign.position.set(X - 100, 22, -110); W.group.add(W.sign); } catch (e) { /* sign optional */ }
+    Object.assign(s, { x: X - 500, y: 0, z: 0, yaw: Math.PI / 2, pitch: 0, bank: 0, spd: 0, thr: 0, vs: 0, ground: true, phase: "takeoff", gear: true, dist: trip.abroad ? 900 : 500, total: trip.abroad ? 900 : 500, course: Math.PI / 2 + (trip.abroad ? 0.5 : -0.4), view: 0, belt: true, focus: { x: X - 500, y: 0, z: 0 } });
+    for (const c of W.clouds) c.position.set(X - 500 + (Math.random() - 0.5) * 1600, 200 + Math.random() * 50, (Math.random() - 0.5) * 1600);
+    this._simSay(L("🗼 Tower: 'SA {n}, cleared for take-off. Wind calm.' Hold W (or ➕) for full power. At 140 knots press ⬆️ to lift off.", { n: trip.no + trip.leg - 1 }), true);
+    showToast(L("👥 {p} passengers on board. The cabin crew is ready.", { p: trip.pax }), 3200, "good");
+  }
+  _flyApproach(s) {
+    const W = this._flyW, X = W.X, trip = s.trip; s.fired.delete("td");
+    if (W.sign) W.group.remove(W.sign); try { W.sign = makeTextSprite(`✈️ ${trip.dest} ${L("International Airport")}`, { size: 50, scale: 3 }); W.sign.position.set(X - 100, 22, -110); W.group.add(W.sign); } catch (e) { /* sign optional */ }
+    if (!s.lm && trip.dest !== "Suryanagar") { try { const lm = makeLandmark(trip.dest); lm.position.set(X + 150, 0, -330); this.world.scene.add(lm); s.lm = lm; } catch (e) { /* landmark optional */ } }
+    Object.assign(s, { x: X - 2500, y: 110, z: (s.t % 2 > 1 ? 1 : -1) * 35, yaw: Math.PI / 2, spd: Math.min(s.spd, 210), thr: 55, vs: -3, ground: false, phase: "approach" });
+    W.sea.visible = false; s.ui.fade.style.opacity = "0";
+    this._simSay(L("🛬 {c} Approach: 'Cleared to land.' Follow the guide: line up with the runway, stay on the glide path, and slow below 170 knots.", { c: trip.dest }), true);
+    if (s.lm) showToast(L("🏙️ Look! The {n} of {c}!", { n: s.lm.userData.name, c: trip.dest }), 3600, "good");
+  }
+  _tickFly(dt) {
+    const s = this._sim, W = this._flyW, X = W.X, k = (a) => this._simKeysDown(a), cam = this.camera, once = (id, fn) => { if (!s.fired.has(id)) { s.fired.add(id); fn(); } };
+    if (k(["w"])) s.thr = Math.min(100, s.thr + 45 * dt); if (k(["s"])) s.thr = Math.max(0, s.thr - 45 * dt);
+    const up = k(["arrowup", "i"]) ? 1 : 0, dn = k(["arrowdown"]) ? 1 : 0, turn = (k(["arrowright", "d"]) ? 1 : 0) - (k(["arrowleft", "a"]) ? 1 : 0);
+    const target = s.thr * 2.8; s.spd += (target - s.spd) * (s.ground ? 0.28 : 0.2) * dt; if (s.ground && k([" "])) s.spd = Math.max(0, s.spd - 45 * dt); if (s.ground && s.phase === "rollout") s.spd = Math.max(0, s.spd - 12 * dt);
+    if (s.tap === "l" || k(["l"])) { s.tap = null; if (!s.beltT) { s.belt = !s.belt; s.beltT = 0.4; showToast(s.belt ? L("💺 Ding! Seatbelt sign ON.") : L("💺 Ding! Seatbelt sign OFF. Passengers can walk."), 1800); if (s.turb && s.belt && !s.turbOk) { s.turbOk = true; this._simStar(true, L("Seatbelt sign on for the turbulence")); } } }
+    if (s.tap === "k" || k(["k"])) { s.tap = null; if (s.sick && !s.sickOk) { s.sickOk = true; this._simStar(true, L("Cabin crew helped the sick passenger")); this._simSay(L("🧑‍✈️ Crew: 'Water and a sick bag for 14C. He feels better now, Captain.'")); } }
+    s.beltT = Math.max(0, (s.beltT || 0) - dt);
+    // Lift, climb and the stall.
+    if (s.ground && s.phase === "takeoff") { if (s.spd >= 140 && up) { s.ground = false; s.vs = 3; this._simStar(true, L("Smooth take-off")); this._simSay(L("🛫 Wheels up! Keep climbing (⬆️) to 30,000 feet, above the clouds.")); } else if (s.spd < 140 && up && s.spd > 60) once("slow", () => this._simSay(L("Too slow to lift! Wait for 140 knots."))); }
+    if (!s.ground) { const want = (up - dn) * 9; s.vs += (want - s.vs) * 1.6 * dt; if (s.spd < 120) { s.vs -= 7 * dt; once("stall" + Math.floor(s.t / 8), () => this._simSay(L("⚠️ STALL! Too slow! More power (W) and nose down."))); } s.y += s.vs * dt; s.yaw -= turn * 0.35 * dt; s.bank += ((turn * 0.45) - s.bank) * 3 * dt; } else { s.yaw -= turn * 0.05 * dt; s.bank = 0; }
+    if (!s.ground && s.phase === "approach" && s.y < 7 && s.vs < -3.5) s.vs += 9 * dt; // gentle flare help near the ground
+    s.pitch = -Math.max(-0.25, Math.min(0.3, s.vs / 30));
+    const v = s.spd * 0.5144 * (s.phase === "cruise" ? 0 : 1), fx = Math.sin(s.yaw), fz = Math.cos(s.yaw);
+    s.x += fx * v * dt; s.z += fz * v * dt;
+    if (s.ground && Math.abs(s.z) > 0.3 && s.phase === "takeoff") s.z *= Math.max(0, 1 - dt);
+    if (s.phase === "takeoff" && s.ground && s.x > X + 540) { this._simSay(L("⚠️ Runway end! Take-off aborted. Back to the start. More power, then ⬆️ at 140 knots.")); Object.assign(s, { x: X - 500, z: 0, spd: 0, thr: 0 }); }
+    if (!s.ground && s.gear && s.y > 15) { s.gear = false; showToast(L("⚙️ Gear up."), 1500); }
+    if (s.phase === "takeoff" && !s.ground && s.y > 190) { s.phase = "cruise"; W.sea.visible = true; this._simSay(L("☁️ Above the clouds! Cruise: keep 25,000 to 35,000 feet and follow the course arrow."), true); }
+    if (s.phase === "cruise") {
+      s.yaw += Math.sin(s.t * 0.3) * 0.02 * dt; const err = Math.atan2(Math.sin(s.course - s.yaw), Math.cos(s.course - s.yaw)), onCourse = Math.abs(err) < 0.35, alt = s.y * 100, band = alt >= 25000 && alt <= 35000;
+      s.dist = Math.max(0, s.dist - s.spd * 0.036 * dt * (onCourse ? 1 : 0.4)); s.cOk = (s.cOk || 0) + (onCourse && band ? dt : 0); s.cAll = (s.cAll || 0) + dt;
+      s.guide = (onCourse ? "✓ " + L("On course") : err > 0 ? "⬅️ " + L("Turn left") : "➡️ " + L("Turn right")) + " · " + (band ? "✓ " + L("Altitude good") : alt < 25000 ? "⬆️ " + L("Climb") : "⬇️ " + L("Descend"));
+      const f = 1 - s.dist / s.total;
+      if (f > 0.2) once("turb", () => { s.turb = true; this._simSay(L("🌪️ Bump! Bump! Turbulence ahead. Switch the seatbelt sign ON (L or 💺).")); if (s.belt) { s.turbOk = true; this._simStar(true, L("Seatbelt sign was already on")); } });
+      if (f > 0.45) once("sick", () => { s.sick = true; this._simSay(L("🤢 Crew: 'Captain, a passenger in 14C feels sick.' Call the crew to help (K or 🧑‍✈️).")); });
+      if (f > 0.7) once("pa", () => this._simSay(s.trip.dest === "Suryanagar" ? L("📢 'Ladies and gentlemen, we will soon reach home, Suryanagar.'") : L("📢 'Ladies and gentlemen, {c} is famous for the {n}. Look out when we land!'", { c: s.trip.dest, n: (LANDMARK_INFO[s.trip.dest] || ["city lights"])[0] })));
+      if (s.turb && !s.turbOk && f > 0.35) once("turbmiss", () => this._simStar(false, L("Seatbelt sign was off in the turbulence")));
+      if (s.dist <= 0) once("desc", () => { this._simStar(s.cOk / Math.max(1, s.cAll) > 0.6, L("Cruise on course and altitude")); if (s.sick && !s.sickOk) this._simStar(false, L("Nobody helped the sick passenger")); this._simSay(L("📡 ATC: 'Begin descent now.' Press ⬇️ and go down through the clouds."), true); s.descend = true; });
+      if (s.descend && s.y < 170) { s.ui.fade.style.opacity = "1"; if (!s.fadeT) s.fadeT = s.t; if (s.t - s.fadeT > 0.7) { s.fadeT = 0; this._flyApproach(s); } }
+    }
+    if (s.phase === "approach" && !s.ground) {
+      const thr0 = X - 550, dx = thr0 - s.x, gp = Math.max(0, dx) * 0.0524, dy = s.y - gp;
+      s.guide = (Math.abs(s.z) < 6 ? "✓ " + L("Lined up") : s.z > 0 ? "⬅️ " + L("Steer left") : "➡️ " + L("Steer right")) + " · " + (Math.abs(dy) < 8 ? "✓ " + L("On glide path") : dy > 0 ? "⬇️ " + L("Too high") : "⬆️ " + L("Too low")) + " · " + (s.spd < 170 ? "✓ " + L("Speed") : "➖ " + L("Slow down"));
+      if (turn === 0) { const want = Math.PI / 2 + Math.max(-0.25, Math.min(0.25, s.z * 0.012)); s.yaw += (want - s.yaw) * 0.6 * dt; }
+      if (s.y <= 0.5) {
+        const onRw = s.x > X - 555 && s.x < X + 550 && Math.abs(s.z) < 22, sink = -s.vs;
+        if (!onRw) { this._simSay(L("⚠️ PULL UP! Not the runway! The autopilot goes around. Try again.")); this._simStar(false, L("Missed the runway")); this._flyApproach(s); return; }
+        if (sink > 7 || s.spd > 215) { this._simSay(L("💥 Too hard! Go around and try again. Slower, and gently.")); this._simStar(false, L("Hard landing, go-around")); this._flyApproach(s); return; }
+        s.ground = true; s.y = 0; s.vs = 0; s.phase = "rollout"; s.thr = 0; this._simStar(sink < 4 && s.spd < 175, sink < 4 ? L("Butter-smooth landing!") : L("Firm landing")); this._simStar(Math.abs(s.z) < 8, L("Landed on the centre line")); this._simSay(L("🛬 Touchdown! Brakes (Space or 🛑) until we stop."));
+      }
+    }
+    if (s.phase === "rollout") { s.z *= Math.max(0, 1 - dt); if (s.spd < 4) { s.spd = 0; this._simArrive(); return; } if (s.x > X + 560) { s.spd = 0; this._simSay(L("Stopped at the very end. Brake earlier next time.")); this._simArrive(); return; } }
+    if (s.y < 0) s.y = 0;
+    // Draw: the plane, clouds around it, the camera behind.
+    const P = W.plane; P.position.set(s.x, s.y + 1.7, s.z); P.rotation.set(s.pitch, s.yaw, -s.bank);
+    if (s.phase === "cruise") { const cx = Math.sin(s.yaw) * s.spd * 0.5144 * dt, cz = Math.cos(s.yaw) * s.spd * 0.5144 * dt; for (const c of W.clouds) { c.position.x -= cx; c.position.z -= cz; if (Math.hypot(c.position.x - s.x, c.position.z - s.z) > 900) { c.position.x = s.x + fx * 800 + (Math.random() - 0.5) * 900; c.position.z = s.z + fz * 800 + (Math.random() - 0.5) * 900; } } W.sea.position.set(s.x, 180, s.z); }
+    s.focus = { x: s.x, y: 0, z: s.z };
+    { const pv = k(["p"]); if ((pv && !s.pHeld) || s.tap === "p") { s.tap = null; s.view = 1 - s.view; } s.pHeld = pv; }
+    if (s.view) { cam.position.set(s.x + fx * 9, s.y + 2.6, s.z + fz * 9); cam.lookAt(s.x + fx * 60, s.y + 1 - s.pitch * 30, s.z + fz * 60); }
+    else { cam.position.set(s.x - fx * 42, s.y + 11, s.z - fz * 42); cam.lookAt(s.x + fx * 20, s.y + 2, s.z + fz * 20); }
+    s.hudT -= dt; if (s.hudT <= 0) { s.hudT = 0.1; const hdg = Math.round(((90 - s.yaw * 180 / Math.PI) % 360 + 360) % 360); s.ui.hud.innerHTML = `✈️ SA ${s.trip.no + s.trip.leg - 1} → ${s.trip.dest} &nbsp; ⚡${Math.round(s.thr)}% &nbsp; 🏎️ ${Math.round(s.spd)} kt &nbsp; 📏 ${Math.round(s.y * 100).toLocaleString()} ft &nbsp; 🧭 ${hdg}°${s.phase === "cruise" ? ` &nbsp; 📍 ${Math.round(s.dist)} km` : ""}<br><span style="color:#ffd27a">${s.guide || (s.ground ? L("Hold W for power, ⬆️ at 140 kt") : L("Climb ⬆️ above the clouds"))}</span>`; }
+  }
+  // ---- The train cab: the track rushes towards you, signals, boards, a crossing, the platform ----
+  _driveWorld() {
+    if (this._driveW) { this._driveW.group.visible = true; return this._driveW; }
+    const X = 6000, G = new THREE.Group(), M = (c, e = 0) => new THREE.MeshStandardMaterial({ color: c, emissive: e ? c : 0x000000, emissiveIntensity: e });
+    const add = (m) => { G.add(m); return m; }, box = (w, h, d, c, x, y, z, m) => { const b = add(new THREE.Mesh(new THREE.BoxGeometry(w, h, d), m || M(c))); b.position.set(x, y, z); return b; };
+    const gr = add(new THREE.Mesh(new THREE.PlaneGeometry(3000, 3000), M(0x7fb24a))); gr.rotation.x = -Math.PI / 2; gr.position.set(X, 0, -600);
+    box(4, 0.2, 1400, 0x7a6f63, X, 0.1, -500); for (const r of [-0.75, 0.75]) box(0.12, 0.16, 1400, 0x9aa6ad, X + r, 0.28, -500, new THREE.MeshStandardMaterial({ color: 0x9aa6ad, metalness: 0.8, roughness: 0.3 }));
+    const movers = []; for (let i = 0; i < 90; i++) movers.push({ m: box(2.6, 0.12, 0.3, 0x5a3a24, X, 0.2, -i * 2), wrap: 180 });
+    for (let i = 0; i < 40; i++) { const side = i % 2 ? 1 : -1, t = add(new THREE.Mesh(new THREE.ConeGeometry(2.5 + (i % 3), 8 + (i % 4) * 2, 7), M(0x2f7d3a))); t.position.set(X + side * (12 + (i * 7) % 30), 5, -i * 12); movers.push({ m: t, wrap: 480 }); }
+    for (let i = 0; i < 12; i++) { const p = box(0.3, 7, 0.3, 0x555555, X + 3.2, 3.5, -i * 40); movers.push({ m: p, wrap: 480 }); const arm = box(3, 0.15, 0.15, 0x555555, X + 1.7, 6.8, -i * 40); movers.push({ m: arm, wrap: 480 }); }
+    // The cab: dashboard and window pillars in front of the camera.
+    const cab = new THREE.Group(); add(cab); const dash = new THREE.Mesh(new THREE.BoxGeometry(3.2, 0.9, 0.6), M(0x2b2d42)); dash.position.set(0, -0.9, -1.6); cab.add(dash); for (const x of [-1.5, 1.5]) { const pl = new THREE.Mesh(new THREE.BoxGeometry(0.15, 2.4, 0.15), M(0xc0392b)); pl.position.set(x, 0.2, -1.8); cab.add(pl); } const top = new THREE.Mesh(new THREE.BoxGeometry(3.2, 0.3, 0.3), M(0xc0392b)); top.position.set(0, 1.35, -1.8); cab.add(top);
+    this.world.scene.add(G); this._driveW = { group: G, X, movers, cab, objs: [] };
+    return this._driveW;
+  }
+  _driveSetup(s) {
+    const W = this._driveWorld(), X = W.X, trip = s.trip; for (const o of W.objs) W.group.remove(o.g); W.objs = [];
+    const M = (c, e = 0) => new THREE.MeshStandardMaterial({ color: c, emissive: e ? c : 0x000000, emissiveIntensity: e });
+    const mk = (d, build) => { const g = new THREE.Group(); build(g); W.group.add(g); const o = { d, g }; W.objs.push(o); return o; };
+    const sigMk = (d, aspect) => { const o = mk(d, (g) => { const post = new THREE.Mesh(new THREE.BoxGeometry(0.25, 5, 0.25), M(0x333333)); post.position.set(3, 2.5, 0); g.add(post); const head = new THREE.Mesh(new THREE.BoxGeometry(0.8, 2.2, 0.4), M(0x111111)); head.position.set(3, 5.6, 0); g.add(head); }); o.lamps = [0xff2020, 0xffc300, 0x20ff40].map((c, i) => { const l = new THREE.Mesh(new THREE.SphereGeometry(0.28, 10, 8), M(c, 0)); l.position.set(3, 6.3 - i * 0.7, 0.25); o.g.add(l); return l; }); o.kind = "signal"; o.aspect = aspect; this._sigShow(o); return o; };
+    const board = (d, text, col = 0xffffff) => { const o = mk(d, (g) => { const p = new THREE.Mesh(new THREE.BoxGeometry(0.15, 2.4, 0.15), M(0x333333)); p.position.set(-3, 1.2, 0); g.add(p); try { const t = makeTextSprite(text, { size: 60, scale: 1.3 }); t.position.set(-3, 3, 0); g.add(t); } catch (e) { /* text optional */ } }); o.kind = "board"; return o; };
+    const L1 = 2600;
+    sigMk(300, "green"); board(640, "⚠️ 60 km/h"); board(1120, "✅ " + L("Limit ends"));
+    { const o = mk(1300, (g) => { const road = new THREE.Mesh(new THREE.BoxGeometry(40, 0.12, 6), M(0x444444)); road.position.y = 0.13; g.add(road); for (const x of [-5, 5]) { const b = new THREE.Mesh(new THREE.BoxGeometry(6, 0.2, 0.2), M(0xd62828)); b.position.set(x * 1.3, 1.1, x > 0 ? 3.5 : -3.5); g.add(b); } for (let i = 0; i < 3; i++) { const car = new THREE.Mesh(new THREE.BoxGeometry(3.6, 1.4, 1.8), M([0x3a86ff, 0xffb703, 0xe75480][i])); car.position.set(-10 - i * 5, 0.8, 5.5); g.add(car); } }); o.kind = "cross"; }
+    board(1050, "📯 W/L " + L("Whistle"));
+    s.red = sigMk(1700, "red"); sigMk(2050, "yellow"); board(2080, "⚠️ 40 km/h");
+    const pf = mk(L1, (g) => { const p = new THREE.Mesh(new THREE.BoxGeometry(5, 1, 220), M(0xbdb5a6)); p.position.set(-5.2, 0.5, -60); g.add(p); const e = new THREE.Mesh(new THREE.BoxGeometry(0.4, 1.02, 220), M(0xffd21e)); e.position.set(-2.9, 0.51, -60); g.add(e); const roof = new THREE.Mesh(new THREE.BoxGeometry(6, 0.3, 120), M(0x8a5626)); roof.position.set(-5.2, 4.5, -60); g.add(roof); for (let i = 0; i < 8; i++) { const h = makeVillager({ shirt: [0xe75480, 0x3a86ff, 0x2a9d8f, 0xffb703][i % 4] }); h.position.set(-5 - (i % 2), 1, -20 - i * 12); h.rotation.y = Math.PI / 2; g.add(h); } const stop = new THREE.Mesh(new THREE.BoxGeometry(0.8, 0.8, 0.1), M(0xd62828, 0.4)); stop.position.set(-2.6, 2, 0); g.add(stop); try { const t = makeTextSprite("🛑 STOP", { size: 60, scale: 1.1 }); t.position.set(-2.6, 3.2, 0); g.add(t); const n = makeTextSprite(`🚉 ${trip.dest} ${L("Junction")}`, { size: 60, scale: 2.6 }); n.position.set(-5, 6.5, -60); g.add(n); } catch (e) { /* text optional */ } }); pf.kind = "platform";
+    if (trip.dest !== "Suryanagar") { try { const lm = makeLandmark(trip.dest); lm.position.set(X - 140, 0, -(L1 - 0) - 260); W.group.add(lm); s.lmIn = lm; W.objs.push({ d: L1 + 260, g: lm, kind: "lm", ox: -140 }); } catch (e) { /* landmark optional */ } }
+    Object.assign(s, { dist: 0, kmh: 0, notch: 0, L: L1, spad: false, focus: { x: X, y: 0, z: -40 } });
+    this._simSay(L("🚆 {t} to {c}. {p} passengers on board. Sound the horn (Q or 📯), then W for power.", { t: trip.train, c: trip.dest, p: trip.pax }), true);
+  }
+  _sigShow(o) { const on = { red: 0, yellow: 1, green: 2 }[o.aspect]; o.lamps.forEach((l, i) => { l.material.emissiveIntensity = i === on ? 1.4 : 0; if (l.material.color && l.material.color.setHex) l.material.color.setHex(i === on ? [0xff2020, 0xffc300, 0x20ff40][i] : 0x222222); }); }
+  _tickDrive(dt) {
+    const s = this._sim, W = this._driveW, X = W.X, cam = this.camera, once = (id, fn) => { if (!s.fired.has(id)) { s.fired.add(id); fn(); } };
+    const pressed = (key) => { const on = this._simKeysDown([key]); const was = s["_" + key]; s["_" + key] = on; return (on && !was) || s.tap === key; };
+    if (pressed("w")) { s.tap = null; s.notch = Math.min(5, s.notch + 1); showToast(L("⚡ Notch {n}", { n: s.notch }), 900); }
+    if (pressed("s")) { s.tap = null; s.notch = Math.max(0, s.notch - 1); showToast(L("⚡ Notch {n}", { n: s.notch }), 900); }
+    const horn = pressed("q"); if (horn) { s.tap = null; try { playHorn(); } catch (e) { /* sound optional */ } }
+    const brake = this._simKeysDown([" "]), emerg = s.emerg;
+    if (horn && s.dist < 60) once("dephorn", () => this._simStar(true, L("Horn before leaving the station")));
+    if (s.notch > 0 && s.dist > 3 && !s.fired.has("dephorn")) { s.fired.add("dephorn"); this._simStar(false, L("No horn before leaving")); }
+    s.kmh += (s.notch * 1.4 - 0.25 - (brake ? 14 : 0) - (emerg ? 18 : 0)) * dt; s.kmh = Math.max(0, Math.min(130, s.kmh)); if (emerg && s.kmh === 0) s.emerg = false;
+    const step = s.kmh / 3.6 * dt * 3; s.dist += step;
+    for (const mv of W.movers) { mv.m.position.z += step; if (mv.m.position.z > 12) mv.m.position.z -= mv.wrap; }
+    for (const o of W.objs) { const ahead = o.d - s.dist; o.g.position.set(o.ox != null ? 0 : 0, 0, -ahead); o.g.visible = ahead > -250 && ahead < 700; if (o.ox != null) o.g.position.x = X + o.ox; else o.g.position.x = X; }
+    // Speed limit 60 from 640 to 1120, 40 after 2080.
+    const lim = s.dist > 640 && s.dist < 1120 ? 60 : s.dist > 2080 ? 40 : 110; if (s.kmh > lim + 5) { s.over = (s.over || 0) + dt; if (s.over > 2.5) once("over" + lim, () => this._simStar(false, L("Too fast: the limit was {l} km/h", { l: lim }))); } else s.over = 0;
+    if (s.dist > 1120) once("lim60", () => { if (!s.fired.has("over60")) this._simStar(true, L("Obeyed the 60 km/h limit")); });
+    if (s.dist > 1050 && s.dist < 1300 && horn) once("xhorn", () => this._simStar(true, L("Horn at the level crossing")));
+    if (s.dist > 1300) once("xdone", () => { if (!s.fired.has("xhorn")) this._simStar(false, L("No horn at the level crossing")); });
+    // The red signal: stop before it; it clears once you have stopped.
+    const r = s.red, toRed = r.d - s.dist;
+    if (r.aspect === "red" && toRed < 700) once("redwarn", () => this._simSay(L("🔴 Red signal ahead! Brake (Space or 🛑) and stop before it.")));
+    if (r.aspect === "red" && toRed > 0 && toRed < 220 && s.kmh < 1) { s.redWait = (s.redWait || 0) + dt; if (s.redWait > 2.5) { r.aspect = "green"; this._sigShow(r); this._simStar(true, L("Stopped at the red signal")); this._simSay(L("🟢 Station master: 'Line clear!' The signal turns green. Go.")); } }
+    if (r.aspect === "red" && toRed < 0) { r.aspect = "green"; this._sigShow(r); s.emerg = true; this._simStar(false, L("Passed a red signal! Emergency brake")); this._simSay(L("🚨 SIGNAL PASSED AT DANGER! The automatic brake stops the train. Always stop at red!")); }
+    // The platform: stop at the STOP board.
+    const toStop = s.L - s.dist;
+    if (toStop < 700) once("pfwarn", () => this._simSay(L("🚉 {c} Junction ahead. Stop with the engine at the red STOP board. Brake early!", { c: s.trip.dest })));
+    if (toStop < 220 && s.kmh < 0.5 && s.dist > 400) { const off = Math.abs(toStop); this._simStar(off < 15, off < 15 ? L("Perfect stop at the STOP board") : toStop > 0 ? L("Stopped {m} m short", { m: Math.round(off) }) : L("Overshot by {m} m", { m: Math.round(off) })); this._simArrive(); return; }
+    if (toStop < -80) { s.emerg = true; once("overshoot", () => this._simSay(L("Overshot the platform! Brake hard."))); }
+    const aspect = [s.red].concat(W.objs.filter((o) => o.kind === "signal")).map((o) => o).find((o) => o.d > s.dist);
+    s.focus = { x: X, y: 0, z: -40 }; cam.position.set(X, 3.3, 0.6); cam.lookAt(X, 2.2, -60); W.cab.position.copy(cam.position); W.cab.rotation.set(0, 0, 0);
+    s.hudT -= dt; if (s.hudT <= 0) { s.hudT = 0.1; const nx = W.objs.filter((o) => o.d > s.dist && o.kind !== "lm").sort((a, b) => a.d - b.d)[0], what = nx ? (nx.kind === "signal" ? `🚦 ${L("Signal")} (${L(nx.aspect)})` : nx.kind === "cross" ? "🚸 " + L("Level crossing") : nx.kind === "platform" ? "🚉 " + L("Platform") : "🪧 " + L("Board")) : ""; s.ui.hud.innerHTML = `🚆 ${s.trip.train} → ${s.trip.dest} &nbsp; ⚡ ${L("Notch")} ${s.notch}/5 &nbsp; 🏎️ ${Math.round(s.kmh)} km/h &nbsp; 🚧 ${L("Limit")} ${lim}${brake ? " &nbsp; 🛑" : ""}<br><span style="color:#ffd27a">${what ? `${what}: ${Math.max(0, Math.round((nx.d - s.dist)))} m` : ""}${s.emerg ? " · 🚨 " + L("EMERGENCY BRAKE") : ""}</span>`; }
+    void aspect;
   }
 }
 

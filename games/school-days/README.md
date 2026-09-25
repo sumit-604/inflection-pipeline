@@ -479,6 +479,33 @@ road. Press E to talk.
 - Badges: Rail Yatri, Bharat Darshan (three cities by train), School for
   Munni.
 
+## Ten more things to do
+
+1. Mango tree: water the sapling in the garden once a day. It grows
+   each day and after seven waterings it has mangoes to pick every day.
+2. School talent show (students, every seventh day, after school on the
+   Assembly Ground): sing, dance, magic trick or poem, five timing tries,
+   a place and a prize.
+3. Blood donation camp at the City Hospital (age 18 and over, once
+   every ten days): a check-up, juice and biscuits, a Life Saver
+   certificate.
+4. Lost tourist on the market street (every fourth day): she asks the
+   way; walk her to the place and get ₹50 and a postcard.
+5. Sunday car wash: water, soap, scrub, rinse, dry in the right order;
+   Papa pays ₹20.
+6. Stargazing: a telescope at home; at night Papa shows the Moon,
+   planets and star patterns, and sometimes a shooting star for a wish.
+7. Stray kitten by the colony lane: give it milk on three days and it
+   comes home as Billi.
+8. Ice cream van: in the evening it drives round the colony with its
+   tune; stop it for kulfi, a chocobar or a big cone.
+9. Sunday Fun Run: start by our lane, reach three flags, run back, and
+   get a gold, silver or bronze medal by time.
+10. Fireflies glow in the colony park in the evening; catch some in a
+    jar, then set them free.
+
+All of them are on the big map (G).
+
 ## Family life
 
 - Twelve neighbours, vendors and children walk the colony lanes, the main

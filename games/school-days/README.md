@@ -600,6 +600,9 @@ All of them are on the big map (G).
   checks, then drive: W/S notch, Space brake, Q horn. Horn before leaving,
   keep the speed limits, horn at the level crossing, stop at the red signal,
   and stop at the STOP board on the platform. Then drive the return train.
+- The duty spot is a glowing gold booth in the open part of the hall, with a
+  light beam, a big sign and a spinning plane (or train). The compass points
+  to it in the morning. Stand on the gold circle and press E.
 - The Autopilot button finishes a leg if a child gets stuck (fewer stars).
 - Every city has its landmark: Burj Khalifa, Sydney Opera House, Statue of
   Liberty, Eiffel Tower, Taj Mahal, Gateway of India, Charminar, Golden

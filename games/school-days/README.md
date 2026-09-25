@@ -603,6 +603,10 @@ All of them are on the big map (G).
 - The duty spot is a glowing gold booth in the open part of the hall, with a
   light beam, a big sign and a spinning plane (or train). The compass points
   to it in the morning. Stand on the gold circle and press E.
+- Landing is medium-easy: leave the arrow keys alone and the plane lines up
+  and glides down by itself; you slow down (S) and brake (Space). Diving too
+  low levels off; floating past the runway or landing too fast means a
+  go-around.
 - The Autopilot button finishes a leg if a child gets stuck (fewer stars).
 - Every city has its landmark: Burj Khalifa, Sydney Opera House, Statue of
   Liberty, Eiffel Tower, Taj Mahal, Gateway of India, Charminar, Golden

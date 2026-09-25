@@ -392,7 +392,8 @@ road. Press E to talk.
   and samosa for ₹15.
 - Airport: at the check-in counter type any city in India or abroad
   (Dubai, London, New York, Tokyo, Sydney and more; abroad needs a
-  passport check). Pack the bag for security and check in to get a
+  passport check). Special offer: a flight to Nagpur costs only ₹1 (the
+  train there is ₹1 too). Pack the bag for security and check in to get a
   boarding pass. Sit in the departure lounge until the boarding call,
   then go to the Boarding door and board. The flight scene names your city.
 - Both ticket panels ask the purpose of the trip: Cricket match, Work

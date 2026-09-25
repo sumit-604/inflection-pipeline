@@ -748,7 +748,7 @@ import * as THREE from 'three';
    label goes through L(). The voice follows the language.
    Questions and answers stay in English for now.
    ============================================================ */
-const GAME_VERSION = "v35";
+const GAME_VERSION = "v36";
 const LANGS = {
   en: { name: "English", voice: "en-IN" },
   hi: { name: "हिन्दी", voice: "hi-IN" },
@@ -2708,6 +2708,8 @@ class World {
     B({ w: 10, d: 8, h: 3.6, roof: "flat", wall: 0xffffff, roofColor: 0x1d3557, sign: "RTO Office" }, -52, -92, 0, "RTO Office");
     B({ w: 44, d: 12, h: 8, roof: "gable", wall: 0xc0532f, roofColor: 0x8a5626, sign: "Railway Station" }, -80, -163, 0, "Railway Station");
     buildRailway(this);
+    B({ w: 30, d: 16, h: 10, roof: "flat", wall: 0xe8d5b5, roofColor: 0x6a4c93, sign: "Suryanagar Mall" }, -140, 24, 0, "Suryanagar Mall");
+    B({ w: 22, d: 14, h: 6, roof: "flat", wall: 0x2b2d42, roofColor: 0xd62828, sign: "FitZone Gym" }, -96, 24, 0, "FitZone Gym");
     this._addBillboard(-40, -70, "RTO Office: driving licence →", 0x1d3557);
     B({ w: 10, d: 8, h: 3.4, roof: "flat", wall: 0xffffff, roofColor: 0x2f9e44, sign: "Vet Clinic" }, -160, -68, Math.PI, "Vet Clinic");
     B({ w: 12, d: 8, h: 3.8, roof: "flat", wall: 0xfff1d6, roofColor: 0x6a4c93, sign: "Community Hall" }, -132, -68, Math.PI, "Community Hall");
@@ -2867,13 +2869,15 @@ class World {
   // Time of day: sky, fog, sun and lamps follow the phase of the day.
   setTimeOfDay(phase) {
     if (phase === this._tod) return; this._tod = phase;
-    const sky = { morning: 0xbfe3f2, school: 0xbfe3f2, over: 0xf2c9a0, evening: 0xe89a6a, night: 0x0f1a33 }[phase] || 0xbfe3f2;
+    const sky = { morning: 0xbfe3f2, school: 0xbfe3f2, over: 0xf2c9a0, evening: 0xd9825a, night: 0x050914, nightroom: 0x0b1224 }[phase] || 0xbfe3f2;
+    if (this.scene.fog) { if (this._fogNear == null) { this._fogNear = this.scene.fog.near; this._fogFar = this.scene.fog.far; } this.scene.fog.near = phase === "night" ? 30 : this._fogNear; this.scene.fog.far = phase === "night" ? 140 : this._fogFar; }
     this._baseSky = sky; if (!this.raining && !this.winter) { this.scene.background.set(sky); if (this.scene.fog) this.scene.fog.color.set(sky); }
-    if (this.sun) { this.sun.intensity = phase === "night" ? 0.25 : phase === "evening" ? 1.3 : 2.1; this.sun.color.set(phase === "evening" ? 0xffb070 : phase === "night" ? 0x8fa8ff : 0xfff2d6); this.sunOffset.set(phase === "evening" ? 30 : 18, phase === "evening" ? 12 : 30, 14); }
-    if (this.hemi) this.hemi.intensity = phase === "night" ? 0.35 : 0.7;
+    if (this.sun) { this.sun.intensity = phase === "night" ? 0.08 : phase === "nightroom" ? 0.7 : phase === "evening" ? 1.1 : 2.1; this.sun.color.set(phase === "evening" ? 0xffb070 : phase === "night" ? 0x8fa8ff : 0xfff2d6); this.sunOffset.set(phase === "evening" ? 30 : 18, phase === "evening" ? 12 : 30, 14); }
+    if (this.hemi) this.hemi.intensity = phase === "night" ? 0.12 : phase === "nightroom" ? 0.5 : phase === "evening" ? 0.55 : 0.7;
     if (!this.stars) { const n = 400, pos = new Float32Array(n * 3); for (let i = 0; i < n; i++) { const a = Math.random() * Math.PI * 2, r = 250 + Math.random() * 120; pos[i * 3] = Math.cos(a) * r; pos[i * 3 + 1] = 60 + Math.random() * 160; pos[i * 3 + 2] = Math.sin(a) * r; } const geo = new THREE.BufferGeometry(); geo.setAttribute("position", new THREE.BufferAttribute(pos, 3)); this.stars = new THREE.Points(geo, new THREE.PointsMaterial({ color: 0xffffff, size: 1.6, sizeAttenuation: true })); this.scene.add(this.stars); }
     this.stars.visible = phase === "night";
     for (const l of this.lampLights || []) l.visible = phase === "night" || phase === "evening";
+    if (this.roomLight) this.roomLight.intensity = phase === "nightroom" ? 10 : 18;
   }
   setWinter(on) { if (on === !!this.winter && this.winter !== undefined) return; this.winter = on; if (this.raining) return; this.scene.background.set(on ? 0xd7dde3 : 0xbfe3f2); if (this.scene.fog) { this.scene.fog.color.set(on ? 0xd7dde3 : 0xbfe3f2); this.scene.fog.near = on ? 40 : 150; this.scene.fog.far = on ? 160 : 420; } }
   setRain(on) {
@@ -4347,6 +4351,7 @@ function roomTypeFor(sign) {
   if (s.includes("hospital")) return "hospital";
   if (s.includes("research")) return "lab";
   if (s.includes("airport")) return "airport";
+  if (s.includes("gym") && !s.includes("gymkhana")) return "gym";
   if (s.includes("court") || s.includes("press") || s.includes("radio") || s.includes("studio") || s.includes("bank") || s.includes("airport") || s.includes("garage") || s.includes("fire station")) return "office";
   if (s.includes("games room") || s.includes("club")) return "gym";
   if (s.includes("community hall")) return "hall";
@@ -4859,7 +4864,8 @@ class Room {
     }
     if (t === "mall") {
       // Three shop bays across the back, an atrium in front with a fountain.
-      const bays = [["Toys", -11, 0xff8fab], ["Shoes", 0, 0x3a86ff], ["Ice Cream", 11, 0xffd21e]];
+      const bays = [["🧸 Toys", -11, 0xff8fab], ["👕 Fashion", 0, 0x3a86ff], ["🎧 Electronics", 11, 0xffd21e]];
+      this.mallSpots = bays.map(([n, x]) => ({ name: n, x: this.x0 + x, z: this.z0 - 3 }));
       for (const x of [-5.5, 5.5]) this._wall(x, -hz, x, -3, [], 1.6, 0xdfe6ea);
       for (const [name, x, color] of bays) {
         this._box(4, 1.0, 0.8, 0xdfe6ea, x, 0.5, -4.5); for (let k = 0; k < 5; k++) this._box(0.4, 0.3, 0.4, [color, 0xffffff, 0x2a9d8f][k % 3], x - 1.6 + k * 0.8, 1.15, -4.5, false);
@@ -6654,6 +6660,7 @@ class Game {
   }
   // The job's uniform goes on over everything else: police khaki and cap, cricket blues, the chef's tall hat.
   applyUniform() {
+    { const o = this._outfitNow && this._outfitNow(); if (o) { this._wear(o); return; } if (this._wearing) this._restoreBaseClothes(); }
     const u = UNIFORMS[this.progress.job], pl = this.player, p = pl.group.userData.parts;
     const paint = (mesh, c) => { if (mesh && mesh.material && mesh.material.color) mesh.material.color.set(c); };
     if (!u) { if (pl.cap) pl.cap.visible = false; if (pl.coat) pl.coat.visible = false; if (pl.tie) pl.tie.visible = true; if (pl.badge) pl.badge.visible = true; return; }
@@ -6814,6 +6821,9 @@ class Game {
     if (room.type === "home") this._setupHome(room);
     this._seatArrow = null;
     if (door.label === "Our Home") this._parkVehiclesHome();
+    this.applyUniform(); if (door.label === "Our Home" && this._wearing) showToast(this._wearing === "pajama" ? L("😴 Pajamas on. Time to relax.") : L("👕 You change into your home T-shirt and shorts."), 2200);
+    if (door.label === "Suryanagar Mall") this._mallSetup(room);
+    if (door.label === "FitZone Gym") this._gymSetup(room);
     if (door.label === "Our Home") this._telescopeAt(room);
     if (door.label === "City Hospital") this._bloodCamp(room);
     if (this._outing && this._outing.o.place === door.label) setTimeout(() => this._startOuting(room), 500);
@@ -6847,7 +6857,7 @@ class Game {
       for (const sp of room.checkinSpots || []) this.roomInteractables.push({ pos: sp, radius: 2.6, prompt: () => (bp() ? L("Check-in done: {c}, Seat 3A. Go through security to the lounge.", { c: pr.boardingPass.to || "" }) : L("Check-in counter: type where you want to fly")), activate: () => (bp() ? showToast(L("🎫 Your boarding pass: SA 101 to {c}, Seat 3A. The lounge is past security, on the left.", { c: pr.boardingPass.to || "" }), 3000, "good") : this._flight()) });
       this.roomInteractables.push({ pos: { x: room.x0 - 20, z: room.z0 - 8.5 }, radius: 2.8, prompt: () => (!bp() ? L("Departure lounge (check in first)") : this._boardReady === "flight" ? L("Boarding now! Go to the Boarding door") : this._lounge ? L("Waiting for the boarding call...") : L("Sit in the lounge and wait for boarding")), activate: () => { if (!bp()) { showToast(L("Get your boarding pass at a check-in counter first."), 2400); return; } if (this._boardReady === "flight" || this._lounge) return; const P = this.player.group; P.position.set(room.x0 - 20, 0, room.z0 - 8.5); P.rotation.y = Math.PI; sitPose(P, "car"); this._lounge = { kind: "flight", t: 0, said: new Set(), room }; showToast(L("🛋️ You sit in the lounge. The board says: SA 101 {c}, ON TIME.", { c: pr.boardingPass.to }), 3000, "good"); } });
       const bs = room.boardSpot || { x: room.x0, z: room.z0 - 14 };
-      this.roomInteractables.push({ pos: bs, radius: 2.6, prompt: () => (this._boardReady === "flight" ? L("Boarding door: show your boarding pass and board") : bp() ? L("Boarding door (wait in the lounge for the boarding call)") : L("Boarding door (check in first)")), activate: () => { if (this._boardReady !== "flight") { showToast(bp() ? L("Not boarding yet. Sit in the lounge and wait for the call.") : L("Check in first at a counter."), 2400); return; } this._boardReady = null; const bpx = pr.boardingPass; pr.boardingPass = null; saveProgress(this.profile, pr); this._flightDest = bpx; this.setObjective(L("On the flight to {c}", { c: bpx.to }), null); this.dialogue.say(L("Airline staff"), [L("Boarding pass, please. SA 101 to {c}, Seat 3A. Enjoy your flight!", { c: bpx.to }), L("(You walk down the jet bridge into the plane.)")], () => this._flightScene(() => this._destMatch(bpx)), { pitch: 450 }); } });
+      this.roomInteractables.push({ pos: bs, radius: 2.6, prompt: () => (this._boardReady === "flight" ? L("Boarding door: show your boarding pass and board") : bp() ? L("Boarding door (wait in the lounge for the boarding call)") : L("Boarding door (check in first)")), activate: () => { if (this._boardReady !== "flight") { showToast(bp() ? L("Not boarding yet. Sit in the lounge and wait for the call.") : L("Check in first at a counter."), 2400); return; } this._boardReady = null; const bpx = pr.boardingPass; pr.boardingPass = null; saveProgress(this.profile, pr); this._flightDest = bpx; this._packedOutfit = bpx.outfit || "smart"; this.setObjective(L("On the flight to {c}", { c: bpx.to }), null); this.dialogue.say(L("Airline staff"), [L("Boarding pass, please. SA 101 to {c}, Seat 3A. Enjoy your flight!", { c: bpx.to }), L("(You walk down the jet bridge into the plane.)")], () => this._flightScene(() => this._destMatch(bpx)), { pitch: 450 }); } });
       if (room.cafeSpot) this.roomInteractables.push({ pos: room.cafeSpot, radius: 2.4, prompt: () => L("Airport café: coffee and a sandwich (₹60)"), activate: () => { if (pr.money < 60) { showToast(L("Not enough money."), 2000, "bad"); return; } this.addMoney(-60, "airport café"); this.addEnergy && this.addEnergy(10); playPick(); showToast(L("☕ Airport coffee costs a lot, but it tastes like travel!"), 2600, "good"); } });
       showToast(L("✈️ Check-in at the front, security in the middle, the lounge and the Boarding door at the back."), 3400, "good");
     }
@@ -6872,7 +6882,7 @@ class Game {
   }
   _exitRoom() {
     const door = this.insideDoor;
-    this.world.currentRoom = null; this.world.roomLight.visible = false;
+    this.world.currentRoom = null; this.world.roomLight.visible = false; if (this._wearing) { this.insideDoor = null; this.applyUniform(); this.insideDoor = door; }
     const x = door.x + Math.sin(door.rot) * 1.6, z = door.z + Math.cos(door.rot) * 1.6;
     this.player.group.position.set(x, 0, z); this.player.group.rotation.y = door.rot;
     this.player._placeCamera(1);
@@ -7709,11 +7719,11 @@ class Game {
   _playPark(kind, pg) {
     if (this._park || this.player.riding) return;
     const P = this.player.group;
-    this._park = { kind, pg, t: 0, dur: kind === "slide" ? 4 : 8 }; pg.busy = true; this._mission("park");
+    this._park = { kind, pg, t: 0, dur: kind === "slide" ? 4 : 9999 }; pg.busy = true; this._mission("park");
     if (kind === "swing") { this.player.mount({ group: pg.swing, speed: 0, kind: "swing", label: "swing", controlled: false }); }
     else if (kind === "seesaw") { P.position.set(pg.x + 5 - 1.4, 0.75, pg.z); P.rotation.y = Math.PI / 2; sitPose(P, "car"); }
     else { P.position.set(pg.x + 10, 2.1, pg.z - 1.2); P.rotation.y = 0; sitPose(P, "car"); }
-    Audio.playPick(); showToast(kind === "swing" ? L("Wheee! Higher, higher!") : kind === "seesaw" ? L("Up... and down... Gudiya would love this.") : L("Up the ladder, and... whoosh!"), 2600, "good");
+    Audio.playPick(); showToast((kind === "swing" ? L("Wheee! Higher, higher!") : kind === "seesaw" ? L("Up... and down... Gudiya would love this.") : L("Up the ladder, and... whoosh!")) + (kind === "slide" ? "" : " " + L("Press E to get off.")), 2600, "good");
     setMood(P, "laugh", 6);
   }
   _tickPark(dt) {
@@ -7722,11 +7732,7 @@ class Game {
     if (k.kind === "swing") pg.swing.rotation.x = Math.sin(k.t * 2.4) * Math.min(0.9, k.t * 0.3);
     else if (k.kind === "seesaw") { const a = Math.sin(k.t * 2.0) * 0.25; pg.seesaw.rotation.z = a; P.position.set(pg.x + 5 - 1.4, 0.75 + Math.sin(a) * 1.4 + 0.1, pg.z); }
     else { const u = Math.min(1, Math.max(0, (k.t - 1) / 2)); P.position.set(pg.x + 10, 2.1 - u * 1.9, pg.z - 1.2 + u * 3.6); }
-    if (k.t >= k.dur) {
-      if (k.kind === "swing") { this.world.scene.add(P); this.player.riding = null; }
-      standPose(P); P.position.set(pg.x + (k.kind === "swing" ? 0 : k.kind === "seesaw" ? 5 : 10), 0, pg.z + 2.6); P.rotation.set(0, Math.PI, 0);
-      pg.busy = false; this._park = null; this.addEnergy(4); this.progress.fun = (this.progress.fun || 0) + 1; this.diary(`Played on the ${k.kind} in the park.`);
-    }
+    if (k.t >= k.dur) this._endPark();
   }
 
   // ---- Lunch is short: two and a half minutes, then the bell ----
@@ -7893,7 +7899,7 @@ class Game {
     // A lost wallet on the footpath every fourth day.
     const w = new THREE.Mesh(new THREE.BoxGeometry(0.28, 0.06, 0.2), new THREE.MeshStandardMaterial({ color: 0x5a3a1a })); w.position.set(-66, 0.05, 46.5); this.world.scene.add(w); this._wallet = w;
     its.push({ pos: w.position, radius: 1.8, visible: () => w.visible, prompt: () => L("A wallet on the footpath! Pick it up"), activate: () => { const pr = this.progress; w.visible = false; pr.walletDay = pr.day; saveProgress(this.profile, pr); playPick(); const card = openPanel(`<h2>👛 ${L("A lost wallet")}</h2><p class="job-brief">${L("Inside: ₹200, an ID card of Mr. Kapoor, and a photo of his daughter.")}</p><div class="btn-row"><button class="big-btn" id="wl-ret">👮 ${L("Take it to the traffic police")}</button><button class="ghost-btn" id="wl-keep">💰 ${L("Keep the money")}</button></div>`); card.querySelector("#wl-ret").addEventListener("click", () => { closePanel(); pr.walletHeld = true; saveProgress(this.profile, pr); this.setObjective(L("Give the wallet to the traffic police at the colony road signal"), -31, 31); showToast(L("👛 Good choice. The traffic police are at the signal."), 2600, "good"); }); card.querySelector("#wl-keep").addEventListener("click", () => { closePanel(); this.addMoney(200, "kept wallet"); this.addRep(-3, L("kept a lost wallet")); this.diary(L("Kept a wallet I found. It does not feel good.")); this.dialogue.say(L("Your heart"), [L("₹200 in your pocket. But the photo of the little girl... Mr. Kapoor must be searching everywhere."), L("Dadi always says: what is not yours never stays yours.")], null, { pitch: 400 }); }); } });
-    this._buildIdeas();
+    this._buildIdeas(); this._buildNight();
   }
   _talkRoad2(npc, def, pr, o, done) {
     const r = def.road;
@@ -8083,6 +8089,7 @@ class Game {
     const gx = door && purpose !== "match" ? door.x : (S.x1 + S.x2) / 2, gz = door && purpose !== "match" ? door.z + 2 : (S.z1 + S.z2) / 2;
     let banner = null; try { banner = makeTextSprite(`${{ match: "🏟️", duty: "💼", family: "🏨", friends: "🍢" }[purpose] || "📍"} ${place}`, { size: 48, scale: 2.4 }); banner.position.set(gx, 9, gz); this.world.scene.add(banner); } catch (e) { /* the compass still points there */ }
     this._matchTrip = { city, s3, banner, via, purpose: door || purpose === "match" ? purpose : "match", door: door ? door.label : null, place };
+    this._travelOutfit = this._packedOutfit || "smart"; this._packedOutfit = null; this.applyUniform(); if (this._wearing) showToast(L("👕 You change into the clothes you packed: {o}.", { o: L({ warm: "a warm jacket and woollens", summer: "a cool cotton T-shirt and shorts", smart: "neat travel clothes" }[this._wearing] || "travel clothes") }), 3000, "good");
     const p = this.player.position, dx = gx - p.x, dz = gz - p.z, dist = Math.round(Math.hypot(dx, dz)), dir = (Math.abs(dz) > Math.abs(dx) * 0.4 ? (dz < 0 ? "north" : "south") : "") + (Math.abs(dx) > Math.abs(dz) * 0.4 ? (Math.abs(dz) > Math.abs(dx) * 0.4 ? "-" : "") + (dx > 0 ? "east" : "west") : "");
     this.setObjective(`${L("{p}: follow the compass", { p: place })}`, gx, gz);
     this._cityBanner(`📍 ${city}`, L("{p} is {d}, about {m} m away. Follow the compass arrow.", { p: place, d: L(dir), m: dist }));
@@ -8100,7 +8107,7 @@ class Game {
   // Arriving at the purpose place in the city.
   _tripArrive(room) {
     const mt = this._matchTrip; if (!mt || mt.started || this.world.currentRoom !== room) return; mt.started = true; const pr = this.progress, name = this.playerName || L("you"), s3 = mt.s3;
-    const home = (line) => { if (mt.banner) this.world.scene.remove(mt.banner); this._matchTrip = null; this.dialogue.say(L("Trip"), [line, mt.via === "rail" ? L("(The next day you ride the train home to Suryanagar Junction.)") : L("(The next day you fly home to Suryanagar.)")], () => { if (this.world.currentRoom) this._exitRoom(); const ap = this.world.doors.find((d) => d.label === (mt.via === "rail" ? "Railway Station" : "Suryanagar Airport")); if (ap) { this.player.group.position.set(ap.x, 0, ap.z + 2.5); this.player._placeCamera(1); } this.setObjective(L("Home again!"), null); this._parkVehiclesHome(); this._startPhase("over"); }, { pitch: 380 }); };
+    const home = (line) => { if (mt.banner) this.world.scene.remove(mt.banner); this._matchTrip = null; this._travelOutfit = null; this.applyUniform(); this.dialogue.say(L("Trip"), [line, mt.via === "rail" ? L("(The next day you ride the train home to Suryanagar Junction.)") : L("(The next day you fly home to Suryanagar.)")], () => { if (this.world.currentRoom) this._exitRoom(); const ap = this.world.doors.find((d) => d.label === (mt.via === "rail" ? "Railway Station" : "Suryanagar Airport")); if (ap) { this.player.group.position.set(ap.x, 0, ap.z + 2.5); this.player._placeCamera(1); } this.setObjective(L("Home again!"), null); this._parkVehiclesHome(); this._startPhase("over"); }, { pitch: 380 }); };
     if (mt.purpose === "duty") { const job = this.job; this.dialogue.say(job.boss, [L("Welcome to the {c} office, {r}.", { c: mt.city, r: rankName(job, pr.shifts) }), L("Special duty today: three hard cases from the {c} team. Show them how Suryanagar works.", { c: mt.city })], () => this._runPaper(`${job.icon} ${L("Special duty in {c}", { c: mt.city })}`, casesFor(job, 3), (s) => { const pay = salaryFor(job, pr.shifts) * 2; this.addMoney(pay, L("special duty")); pr.shifts = (pr.shifts || 0) + 1; saveProgress(this.profile, pr); this.addRep(2, L("special duty in {c}", { c: mt.city })); this._snap(job.icon, `Special duty in ${mt.city}: ${s}/3 cases.`); this.diary(L("Special duty in {c}: {s}/3 cases.", { c: mt.city, s })); home(L("{s} of 3 cases solved. The {c} chief shakes your hand: 'Come back any time.' Double pay: ₹{p}!", { s, c: mt.city, p: pay })); }), { pitch: 340 }); return; }
     if (mt.purpose === "family") { this.dialogue.say("Papa", [L("Our room has a window over the whole city, champ!"), L("Day 1: {s}", { s: L(s3[0]) }), L("Day 2: {s}", { s: L(s3[1]) }), L("Day 3: {s}", { s: L(s3[2]) }), L("Dadi: 'I have not had a holiday like this in forty years. Thank you, beta.'")], () => { const items = [[L("A key chain with the city name"), 50], [L("Local sweets for the neighbours"), 80], [L("A T-shirt that says I love {c}", { c: mt.city }), 120]]; const card = openPanel(`<h2>🛍️ ${L("Souvenir shop, {c}", { c: mt.city })}</h2><p class="job-brief">${L("Pick one gift to take home. You have ₹{m}.", { m: pr.money })}</p><div class="shop-list">${items.map((it, i) => `<div class="cart-row"><div><b>${it[0]}</b><small>₹${it[1]}</small></div><button class="use-btn" id="sv-${i}">${L("Buy")}</button></div>`).join("")}</div><div class="btn-row"><button class="ghost-btn" id="sv-no">${L("No gift")}</button></div>`); const done = (g) => { closePanel(); pr.vacations = (pr.vacations || 0) + 1; saveProgress(this.profile, pr); this._snap("👨‍👩‍👧", `Family vacation in ${mt.city}.`); this.diary(L("Family vacation in {c}. {g}", { c: mt.city, g: g || "" })); this.addEnergy && this.addEnergy(30); home(L("Best family holiday ever. Maa puts the photo on the fridge.")); }; items.forEach((it, i) => card.querySelector(`#sv-${i}`).addEventListener("click", () => { if (pr.money < it[1]) { showToast(L("Not enough money."), 2000, "bad"); return; } this.addMoney(-it[1], "souvenir"); done(L("Bought {g}.", { g: it[0] })); })); card.querySelector("#sv-no").addEventListener("click", () => done("")); }, { pitch: 360 }); return; }
     if (mt.purpose === "friends") { const [a, b] = this._mates(); this.dialogue.say(a, [L("{p}! You made it! {b} found the best street food in {c}.", { p: name, b, c: mt.city }), L("{b}: First the food, then the sights, then a group selfie!", { b }), L(s3[0]), L(s3[2]), L("(Click! The group selfie with all three of you goes in the album.)")], () => { for (const f of this.friends || []) if ([a, b].includes(f.name)) this.addFriendship(f.def.id, 2, "trip"); pr.friendTrips = (pr.friendTrips || 0) + 1; saveProgress(this.profile, pr); this._snap("🤳", `Friends trip to ${mt.city} with ${a} and ${b}.`); this.diary(L("Friends trip to {c} with {a} and {b}.", { c: mt.city, a, b })); this.addEnergy && this.addEnergy(25); home(L("{a}: Same trip next year? Promise?", { a })); }, { pitch: 470 }); return; }
@@ -8112,13 +8119,13 @@ class Game {
   _tickMatchTrip() {
     const mt = this._matchTrip; if (!mt || mt.started || mt.purpose !== "match" || this.world.currentRoom || this._trial || this._uiBlocking()) return; const S = this.world.stadium, p = this.player.position;
     if (p.x < S.x1 || p.x > S.x2 || p.z < S.z1 || p.z > S.z2) return;
-    mt.started = true; if (this.player.riding) this.player.dismount();
+    mt.started = true; if (this.player.riding) this.player.dismount(); this._matchOutfit = true; this.applyUniform(); showToast(L("🏏 In the dressing room you change into your cricket whites and cap."), 2800, "good");
     this._cityBanner(`🏟️ ${mt.city} ${L("Cricket Stadium")}`, L("30,000 fans! The final starts now."));
     this.dialogue.say(L("Team captain"), [L("{p}, you made it! We bat first. You go in at number 3.", { p: this.playerName || L("champ") }), L("Last six balls are yours to finish. Hit them hard!")], () => this._startTrial({ kind: "cricket", name: L("The {c} final", { c: mt.city }), icon: "🏏", cue: "Press F to swing when the ball reaches you.", hit: "SIX! The crowd roars!", miss: "Dot ball!", good: "What an innings!", bad: "Still, what an innings before that!" }, 6, (h) => this._matchResult(mt, h), L("{c} Colts bowler", { c: mt.city }), S), { pitch: 380 });
   }
   // The scorecard: your team wins big, and you are the hero.
   _matchResult(mt, h) {
-    const pr = this.progress, name = this.playerName || L("You"), city = mt.city; if (mt.banner) this.world.scene.remove(mt.banner); this._matchTrip = null;
+    const pr = this.progress, name = this.playerName || L("You"), city = mt.city; if (mt.banner) this.world.scene.remove(mt.banner); this._matchTrip = null; this._matchOutfit = false; this._travelOutfit = null; this.applyUniform();
     const before = h >= 4 ? 76 + (pr.day % 9) : 58 + (pr.day % 11), yours = before + h * 6 + (6 - h), balls = 52 + (pr.day % 10) + 6, century = yours >= 100;
     const mates = [[L("Aarav"), 34 + (pr.day % 7)], [L("Kabir"), 21 + (pr.day % 5)], [L("Rohan"), 12 + (pr.day % 6)], [L("Diya"), 9 + (pr.day % 4)]];
     const extras = 11, total = yours + mates.reduce((s, x) => s + x[1], 0) + extras, oppo = total - (90 + (pr.day % 60)), margin = total - oppo;
@@ -8184,13 +8191,13 @@ class Game {
     card.querySelector("#bk-find").addEventListener("click", search); input.addEventListener("keydown", (e) => { if (e.key === "Enter") search(); e.stopPropagation(); });
     const sl = card.querySelector("#bk-sl"), acb = card.querySelector("#bk-ac"); sl.addEventListener("click", () => { ac = false; sl.classList.add("on"); acb.classList.remove("on"); show(); }); acb.addEventListener("click", () => { ac = true; acb.classList.add("on"); sl.classList.remove("on"); show(); });
     card.querySelector("#bk-x").addEventListener("click", closePanel);
-    card.querySelector("#bk-book").addEventListener("click", () => { if (!found) { search(); if (!found) { showToast(L("Type a city in India and press Search first."), 2400); return; } } const f = fare(); if (pr.money < f) { showToast(L("Not enough money. The fare is ₹{f}.", { f }), 2400, "bad"); return; } closePanel(); this.addMoney(-f, "train ticket"); const pnr = String(4200000000 + Math.floor(Math.random() * 99999999)); pr.ticket = { to: found.name, cls: ac ? "3AC" : "Sleeper", pnr, train: found.train, sights: found.sights, purpose: purpose() }; saveProgress(this.profile, pr); playPick(); showToast(L("🎫 Ticket to {c} on the {t}, {k}. PNR {p}. Now wait in the waiting room.", { c: found.name, t: found.train, k: pr.ticket.cls, p: pnr }), 4600, "good"); const r = this.world.currentRoom; if (r) this.setObjective(L("Waiting hall: sit and wait for your train"), r.x0 + 16, r.z0 + 4.5); });
+    card.querySelector("#bk-book").addEventListener("click", () => { if (!found) { search(); if (!found) { showToast(L("Type a city in India and press Search first."), 2400); return; } } const f = fare(); if (pr.money < f) { showToast(L("Not enough money. The fare is ₹{f}.", { f }), 2400, "bad"); return; } closePanel(); this.addMoney(-f, "train ticket"); const pnr = String(4200000000 + Math.floor(Math.random() * 99999999)); pr.ticket = { to: found.name, cls: ac ? "3AC" : "Sleeper", pnr, train: found.train, sights: found.sights, purpose: purpose() }; saveProgress(this.profile, pr); playPick(); const fnd = found; this._packBag({ city: fnd.name, purpose: pr.ticket.purpose, mode: "train" }, (pack) => { pr.ticket.outfit = pack.outfit; saveProgress(this.profile, pr); const found = fnd; showToast(L("🎫 Ticket to {c} on the {t}, {k}. PNR {p}. Now wait in the waiting room.", { c: found.name, t: found.train, k: pr.ticket.cls, p: pnr }), 4600, "good"); const r = this.world.currentRoom; if (r) this.setObjective(L("Waiting hall: sit and wait for your train"), r.x0 + 16, r.z0 + 4.5); }); });
     setTimeout(() => input.focus && input.focus(), 60);
   }
   _boardTrain() {
     const pr = this.progress;
     if (!pr.ticket) { const card = openPanel(`<h2>🚆 ${L("No ticket!")}</h2><p class="job-brief">${L("The TC checks every ticket. Travelling without one is a fine of ₹250.")}</p><div class="btn-row"><button class="big-btn" id="nt-buy">🎫 ${L("Go and buy a ticket")}</button><button class="ghost-btn" id="nt-risk">${L("Get on anyway")}</button></div>`); card.querySelector("#nt-buy").addEventListener("click", () => { closePanel(); const d = this.world.doors.find((x) => x.label === "Railway Station"); this.setObjective(L("Booking counter inside the Railway Station"), d.x, d.z + 1); }); card.querySelector("#nt-risk").addEventListener("click", () => { closePanel(); const fine = Math.min(250, pr.money); this.addMoney(-fine, "ticketless fine"); this.addRep(-2, L("travelled without a ticket")); saveProgress(this.profile, pr); this.dialogue.say("TC Joseph", [L("Ticket, please. No ticket? That is a ₹{f} fine, and you get down at this platform.", { f: fine }), L("Buy a ticket next time. Railways run on honest passengers.")], null, { pitch: 340 }); }); return; }
-    this._boardReady = null; this.setObjective(L("On the train to {c}", { c: pr.ticket.to }), null); this._trainScene();
+    this._boardReady = null; this._packedOutfit = pr.ticket.outfit || "smart"; this.setObjective(L("On the train to {c}", { c: pr.ticket.to }), null); this._trainScene();
   }
   _trainTrip() {
     const pr = this.progress, t = pr.ticket, trip = TRAIN_TRIPS.find((x) => x[0] === t.to) || TRAIN_TRIPS[0]; if (this.player.riding) this.player.dismount();
@@ -8286,14 +8293,14 @@ class Game {
   _flight() {
     const pr = this.progress; if (pr.age < 10) { showToast(L("Papa: 'Flying at ten, champ. With me.'"), 2400); return; }
     const need = PACKING.filter((p) => p[1]).map((p) => p[0]); let packed = [], found = null;
-    const card = openPanel(`<div class="job-title-row"><h2>✈️ ${L("Suryanagar Airport · Check-in")}</h2><button class="ghost-btn" id="fl-x">${L("Close")}</button></div><p class="job-brief">${L("Where do you want to fly? Type a city in India or abroad, and pick the purpose of your trip.")} ${L("You have ₹{m}.", { m: pr.money })}</p><div class="chat-row"><input id="fl-in" type="text" maxlength="30" placeholder="${L("Type a city, e.g. Dubai or Delhi")}" autocomplete="off"><button class="big-btn" id="fl-find">${L("Search")}</button></div><div class="job-goal" id="fl-res">${L("🎉 ₹1 special offer: Nagpur! · Popular: Mumbai · Delhi · Goa · Dubai · London · Singapore · Kathmandu · Sydney")}</div><div class="section-label">${L("Purpose of the trip")}</div><div class="btn-row"><button class="lang-btn on" id="pp-match">🏏 ${L("Cricket match")}</button><button class="lang-btn" id="pp-duty">💼 ${L("Work duty")}</button><button class="lang-btn" id="pp-family">👨‍👩‍👧 ${L("Family vacation")}</button><button class="lang-btn" id="pp-friends">🧑‍🤝‍🧑 ${L("Friends trip")}</button></div><p class="job-brief">${L("Pack the bag for the security check: pick what a flight needs.")}</p><div class="btn-row">${PACKING.map((p) => `<button class="lang-btn" data-p="${p[0]}">${L(p[0])}</button>`).join("")}</div><div class="job-goal" id="fl-msg"></div><div class="btn-row"><button class="big-btn" id="fl-go">🧳 ${L("Check in")}</button></div>`);
+    const card = openPanel(`<div class="job-title-row"><h2>✈️ ${L("Suryanagar Airport · Check-in")}</h2><button class="ghost-btn" id="fl-x">${L("Close")}</button></div><p class="job-brief">${L("Where do you want to fly? Type a city in India or abroad, and pick the purpose of your trip.")} ${L("You have ₹{m}.", { m: pr.money })}</p><div class="chat-row"><input id="fl-in" type="text" maxlength="30" placeholder="${L("Type a city, e.g. Dubai or Delhi")}" autocomplete="off"><button class="big-btn" id="fl-find">${L("Search")}</button></div><div class="job-goal" id="fl-res">${L("🎉 ₹1 special offer: Nagpur! · Popular: Mumbai · Delhi · Goa · Dubai · London · Singapore · Kathmandu · Sydney")}</div><div class="section-label">${L("Purpose of the trip")}</div><div class="btn-row"><button class="lang-btn on" id="pp-match">🏏 ${L("Cricket match")}</button><button class="lang-btn" id="pp-duty">💼 ${L("Work duty")}</button><button class="lang-btn" id="pp-family">👨‍👩‍👧 ${L("Family vacation")}</button><button class="lang-btn" id="pp-friends">🧑‍🤝‍🧑 ${L("Friends trip")}</button></div><p class="job-brief">${L("After check-in you pack your bag for security.")}</p><div class="job-goal" id="fl-msg"></div><div class="btn-row"><button class="big-btn" id="fl-go">🧳 ${L("Check in")}</button></div>`);
     const purpose = this._purposePicker(card);
     const input = card.querySelector("#fl-in"), res = card.querySelector("#fl-res");
     const search = () => { const r = findCity(input.value); found = r.hit; if (found) res.textContent = `✈️ SA 101 → ${found.name} ${found.kind === "abroad" ? "🌍 " + L("(abroad: passport and visa needed)") : "🇮🇳"} · ₹${flightFare(found)}`; else res.textContent = input.value.trim() ? L("No flights to '{t}'. {s}", { t: input.value.trim(), s: r.near.length ? L("Did you mean: {n}?", { n: r.near.join(", ") }) : L("Try Mumbai, Delhi, Dubai or London.") }) : L("Type a city first."); };
     card.querySelector("#fl-find").addEventListener("click", search); input.addEventListener("keydown", (e) => { if (e.key === "Enter") search(); e.stopPropagation(); });
     card.querySelector("#fl-x").addEventListener("click", closePanel);
     card.querySelectorAll("[data-p]").forEach((b) => b.addEventListener("click", () => { b.classList.toggle("on"); packed = [...card.querySelectorAll("[data-p].on")].map((x) => x.dataset.p); }));
-    card.querySelector("#fl-go").addEventListener("click", () => { if (!found) { search(); if (!found) { showToast(L("Type a city and press Search first."), 2400); return; } } const f = flightFare(found); if (pr.money < f) { showToast(L("Not enough money. The ticket to {c} is ₹{f}.", { c: found.name, f }), 2600, "bad"); return; } const good = need.every((n) => packed.includes(n)) && !packed.includes("Moti") && !packed.includes("Cricket bat"); closePanel(); this.addMoney(-f, L("flight ticket")); pr.boardingPass = { seat: "3A", gate: 1, good, to: found.name, kind: found.kind, sights: found.sights, purpose: purpose() }; saveProgress(this.profile, pr); playPick(); showToast((found.kind === "abroad" ? L("🛂 Passport and visa checked. ") : "") + (good ? L("🎫 Boarding pass: SA 101 to {c}, Seat 3A. Security passed. Now wait in the lounge.", { c: found.name }) : L("🎫 Boarding pass to {c}, Seat 3A. Security took out a thing you did not need! Now wait in the lounge.", { c: found.name })), 4600, "good"); const r = this.world.currentRoom; if (r) this.setObjective(L("Departure lounge: sit and wait for the boarding call"), r.x0 - 20, r.z0 - 8.5); });
+    card.querySelector("#fl-go").addEventListener("click", () => { if (!found) { search(); if (!found) { showToast(L("Type a city and press Search first."), 2400); return; } } const f = flightFare(found); if (pr.money < f) { showToast(L("Not enough money. The ticket to {c} is ₹{f}.", { c: found.name, f }), 2600, "bad"); return; } closePanel(); this.addMoney(-f, L("flight ticket")); const fnd = found, pur = purpose(); this._packBag({ city: fnd.name, purpose: pur, mode: "flight" }, (pack) => { const good = pack.good; pr.boardingPass = { seat: "3A", gate: 1, good, to: fnd.name, kind: fnd.kind, sights: fnd.sights, purpose: pur, outfit: pack.outfit }; const found = fnd; saveProgress(this.profile, pr); playPick(); showToast((found.kind === "abroad" ? L("🛂 Passport and visa checked. ") : "") + (good ? L("🎫 Boarding pass: SA 101 to {c}, Seat 3A. Security passed. Now wait in the lounge.", { c: found.name }) : L("🎫 Boarding pass to {c}, Seat 3A. Security took out a thing you did not need! Now wait in the lounge.", { c: found.name })), 4600, "good"); const r = this.world.currentRoom; if (r) this.setObjective(L("Departure lounge: sit and wait for the boarding call"), r.x0 - 20, r.z0 - 8.5); }); });
     setTimeout(() => input.focus && input.focus(), 60);
   }
   _milkCow() { const pr = this.progress; if (pr.milked === pr.day) { showToast(L("The cows are milked for today."), 2000); return; } const n = 2 + (pr.day % 4); this.dialogue.say("Kisan Bhola", [L("{n} cows, two litres each. How many litres?", { n })], () => runStepQuiz({ profile: this.profile, level: 1, world: this.world, audio: Audio, countAttempt: () => countAttempt(this.profile, pr, "milk"), onSolve: () => { pr.milked = pr.day; this.addMoney(20, L("milking")); } }, { title: `🐄 ${L("Milking")}`, intro: L("Warm, sweet, frothy."), goal: "₹20", steps: [{ q: `${n} × 2 = ?`, answer: n * 2, unit: L("litres"), hint: L("Two each.") }], doneBtn: L("Okay"), doneHtml: `<b>Kisan Bhola:</b> "${L("Farmer's hands. Here, ₹20.")}"`, onLeave: () => {} })); }
@@ -8874,6 +8881,7 @@ class Game {
     requestAnimationFrame(this._loop);
     const dt = Math.min(this.clock.getDelta(), 0.05), elapsed = this.clock.elapsedTime;
     if (this._cut) { try { if (this._cut.kind === "train") this._tickTrain(dt, elapsed); else this._tickFlight(dt, elapsed); } catch (e) { this._reportError(e); this._endFlight(); } this.world.update(dt, elapsed, this._cut ? this._cut.focus : this.player.position); if (!this._contextLost) this.renderer.render(this.world.scene, this.camera); return; }
+    if (this._park && !this._uiBlocking()) { const mv = this.input.move || { x: 0, y: 0 }; if (this.ui.setInteractPrompt) this.ui.setInteractPrompt(L("Get off the {k}", { k: L(this._park.kind === "seesaw" ? "see-saw" : this._park.kind) }) + (this.input.isTouch ? "" : "  (E)")); if (this.input.interactPressed() || (this._park.t > 0.6 && (Math.abs(mv.x) > 0.5 || Math.abs(mv.y) > 0.5))) this._endPark(); }
     const blocked = this._uiBlocking() || !!this._park;
     this.player.update(dt, blocked ? { x: 0, y: 0 } : this.input.move, this.input.running, blocked ? 0 : this.input.cameraDelta(dt), this.input.cameraIdleFor());
     this.world.update(dt, elapsed, this.player.position);
@@ -8887,9 +8895,9 @@ class Game {
     if (this.player.riding && this.player.riding.kind === "bike" && this.progress.energy <= 0 && !this.progress.cast && !panelOpen()) this._fallOffBike();
     if (!blocked && this.player.riding && this.player.riding.duty && this.input.keys && this.input.keys.has("f") && !this._sirenHeld) { this._sirenHeld = true; this._siren = !this._siren; showToast(this._siren ? L("🚨 Siren on") : L("Siren off"), 1200); } if (!(this.input.keys && this.input.keys.has("f"))) this._sirenHeld = false;
     const useP = !blocked && this.input.usePressed(); if (this._trial) { const eP = this.input.interactPressed(); this._tickTrial(dt, useP || eP); this.ui.setInteractPrompt(`${this._trial ? this._trial.spec.icon : ""} ${L(this._trial && this._trial.kind === "cricket" ? "Swing" : "Shoot")}  (F / E)`); }
-    this._tickPet(dt); this._tickRain(); this._tickP2(dt); this._tickDirections(dt); this._tickCrowd(dt); this._tickField(dt); this._tickPartner(dt); this._tickChase(dt); this._tickTraffic(elapsed); this._tickRoadLife(dt); this._tickTransport(dt, elapsed); this._tickLounge(dt, elapsed); this._tickOutings(dt); this._tickMatchTrip(); this._tickIdeas(dt, elapsed);
+    this._tickPet(dt); this._tickRain(); this._tickP2(dt); this._tickDirections(dt); this._tickCrowd(dt); this._tickField(dt); this._tickPartner(dt); this._tickChase(dt); this._tickTraffic(elapsed); this._tickRoadLife(dt); this._tickTransport(dt, elapsed); this._tickLounge(dt, elapsed); this._tickOutings(dt); this._tickMatchTrip(); this._tickIdeas(dt, elapsed); this._tickNight(dt, elapsed);
     sirenTick(!!(this.player.riding && this.player.riding.duty && this._siren), dt); if (this._dutyLights) { const on = Math.floor(elapsed * 4) % 2 === 0; this._dutyLights[0].material.emissiveIntensity = this._siren && on ? 2 : 0.2; this._dutyLights[1].material.emissiveIntensity = this._siren && !on ? 2 : 0.2; }
-    if (this.world.setTimeOfDay) this.world.setTimeOfDay(this.world.currentRoom ? "school" : this.phase);
+    if (this.world.setTimeOfDay) this.world.setTimeOfDay(this.world.currentRoom ? (this.phase === "night" ? "nightroom" : "school") : this.phase);
     musicTick(this._trial ? "stadium" : this.world.currentRoom ? (["canteen", "eatery", "shop", "supermarket"].includes(this.world.currentRoom.type) ? "market" : null) : this.phase === "school" ? "school" : this.phase === "over" ? "evening" : Math.hypot(pp.x - 40, pp.z - 80) < 45 ? "market" : this.phase, dt);
     if (this.player.riding && this.player.riding.kind === "bike" && this.player.speedKmh > 1) { this._rideDist = (this._rideDist || 0) + this.player.speedKmh / 3.6 * dt; if (this._rideDist >= 200) { this._rideDist = 0; this._mission("exercise"); } }
     if (this._seatArrow && this.world.currentRoom) this._seatArrow.position.y = 2.6 + Math.sin(elapsed * 3) * 0.25;
@@ -9374,6 +9382,168 @@ class Game {
     pr.starDay = pr.day; pr.stargazes = (pr.stargazes || 0) + 1; saveProgress(this.profile, pr);
     const shooting = pr.day % 3 !== 1;
     this.dialogue.say("Papa", [L("Look through here, champ. Slowly..."), ...sky, shooting ? L("WAIT! A shooting star! Quick, make a wish!") : L("Beautiful. The universe is so big, and we are so small.")], () => { if (!shooting) { this.diary(L("Stargazing with Papa.")); return; } const wishes = [L("Win the next cricket match"), L("Maa, Papa and Dadi stay healthy forever"), L("Become the best at my job"), L("A puppy friend for Moti")]; const card = openPanel(`<h2>🌠 ${L("Make a wish")}</h2><div class="btn-row">${wishes.map((w, i) => `<button class="big-btn" id="wi-${i}">${w}</button>`).join("")}</div>`); wishes.forEach((w, i) => card.querySelector(`#wi-${i}`).addEventListener("click", () => { closePanel(); playSuccess(); this._snap && this._snap("🌠", `Wished on a shooting star: ${w}.`); this.diary(L("Shooting star wish: {w}. (It is a secret!)", { w })); showToast(L("🌠 Wish made! Keep it a secret."), 2400, "good"); })); }, { pitch: 360 });
+  }
+  // ---------- Park rides: E (or walking) gets you off at any time ----------
+  _endPark() {
+    const k = this._park; if (!k) return; const P = this.player.group, pg = k.pg;
+    if (k.kind === "swing") { this.world.scene.add(P); this.player.riding = null; pg.swing.rotation.x = 0; }
+    if (k.kind === "seesaw" && pg.seesaw) pg.seesaw.rotation.z = 0;
+    standPose(P); P.position.set(pg.x + (k.kind === "swing" ? 0 : k.kind === "seesaw" ? 5 : 10), 0, pg.z + 2.6); P.rotation.set(0, Math.PI, 0);
+    pg.busy = false; this._park = null; this.addEnergy(4); this.progress.fun = (this.progress.fun || 0) + 1; this.diary(`Played on the ${k.kind} in the park.`); this.ui.setInteractPrompt && this.ui.setInteractPrompt(null);
+  }
+  // ---------- Outfits: home clothes, pajamas, packed travel clothes, cricket whites ----------
+  _outfitNow() {
+    if (this._matchOutfit) return "cricket";
+    const r = this.world.currentRoom; if (r && this.insideDoor && this.insideDoor.label === "Our Home") return this.phase === "night" ? "pajama" : "home";
+    if (this._matchTrip && this._travelOutfit && this._travelOutfit !== "uniform") return this._travelOutfit;
+    return null;
+  }
+  _wear(name) {
+    const O = { home: { shirt: this.progress.homeShirt || 0xff7b54, trousers: 0x3a4a6b, shorts: true }, pajama: { shirt: 0x9fc5e8, trousers: 0x9fc5e8 }, warm: { shirt: 0x8a1c1c, trousers: 0x2b3a55, coat: true }, summer: { shirt: 0xf6d743, trousers: 0xe8dcc0, shorts: true }, smart: { shirt: 0xffffff, trousers: 0x2b2b2b }, cricket: { shirt: 0xf8f8f8, trousers: 0xf8f8f8, cap: 0x1d3557 } }[name]; if (!O) return;
+    const pl = this.player, p = pl.group.userData.parts; if (!p) return; this._saveBaseClothes();
+    const swap = (mesh, c) => { if (mesh) mesh.material = humanMat(c); };
+    swap(p.torso, O.shirt); for (const k of ["armL", "armR"]) swap(p[k].children[0], O.shirt); for (const k of ["legL", "legR"]) swap(p[k].children[0], O.trousers);
+    this._shorts(!!O.shorts);
+    if (pl.tie) pl.tie.visible = false; if (pl.badge) pl.badge.visible = false; if (pl.coat) { pl.coat.visible = !!O.coat; if (O.coat && pl.coat.material && pl.coat.material.color) pl.coat.material = humanMat(O.shirt); }
+    if (pl.cap) { pl.cap.visible = O.cap != null; if (O.cap != null) { pl.cap.userData.mat.color.set(O.cap); if (pl.cap.userData.tall) pl.cap.userData.tall.visible = false; } }
+    this._wearing = name;
+  }
+  _saveBaseClothes() {
+    const p = this.player.group.userData.parts; if (!p || this._baseClothes) return;
+    this._baseClothes = { torso: p.torso && p.torso.material, armL: p.armL.children[0] && p.armL.children[0].material, armR: p.armR.children[0] && p.armR.children[0].material, legL: p.legL.children[0] && p.legL.children[0].material, legR: p.legR.children[0] && p.legR.children[0].material, coat: this.player.coat && this.player.coat.material };
+  }
+  _restoreBaseClothes() {
+    const b = this._baseClothes, p = this.player.group.userData.parts; this._shorts(false); if (!b || !p) return;
+    if (b.torso) p.torso.material = b.torso; if (b.armL) p.armL.children[0].material = b.armL; if (b.armR) p.armR.children[0].material = b.armR; if (b.legL) p.legL.children[0].material = b.legL; if (b.legR) p.legR.children[0].material = b.legR; if (b.coat && this.player.coat) this.player.coat.material = b.coat;
+    this._wearing = null;
+  }
+  // Bare lower legs over the trousers when wearing shorts.
+  _shorts(on) {
+    const p = this.player.group.userData.parts; if (!p) return;
+    if (!this._knees) { if (!on) return; const skinMesh = p.armL.children.find((c, i) => i > 0 && c.material) ; const sk = skinMesh ? skinMesh.material : humanMat(0xe0a878); this._knees = ["legL", "legR"].map((k) => { const m = new THREE.Mesh(new THREE.BoxGeometry(0.19, 0.4, 0.21), sk); m.position.y = -0.5; p[k].add(m); return m; }); }
+    for (const m of this._knees) m.visible = on;
+  }
+  // ---------- Trip packing: learn what to take ----------
+  _packBag(trip, onDone) {
+    const city = trip.city, cold = ["Shimla", "Darjeeling", "Jammu", "Moscow", "Toronto", "London"].includes(city), hot = ["Goa", "Chennai", "Kochi", "Puri", "Kanyakumari", "Mumbai", "Dubai", "Singapore", "Bangkok", "Colombo", "Madurai", "Cairo"].includes(city), fly = trip.mode === "flight";
+    const job = this.job, P = trip.purpose || "match";
+    const items = [
+      ["ticket", "🎫", L("Ticket and ID card"), true, L("Without a ticket and ID nobody lets you travel.")],
+      ["brush", "🪥", L("Toothbrush and toothpaste"), true, L("Clean teeth everywhere you go.")],
+      ["water", "💧", L("Water bottle"), true, L("Drink water on the way. Travel makes you thirsty.")],
+      ["meds", "💊", L("First-aid kit and medicines"), true, L("A small kit for cuts, a headache or an upset tummy.")],
+      ["charger", "🔌", L("Phone charger"), true, L("To call home when you reach.")],
+      ["warm", "🧥", L("Warm jacket and woollens"), cold, cold ? L("{c} is cold. You need warm clothes.", { c: city }) : L("{c} is not cold. A heavy jacket only fills the bag.", { c: city })],
+      ["summer", "🩳", L("Cotton T-shirts and shorts"), hot, hot ? L("{c} is hot. Light cotton keeps you cool.", { c: city }) : cold ? L("Shorts in {c}? Your knees will freeze!", { c: city }) : L("Normal clothes are fine for {c}.", { c: city })],
+      ["sun", "🧴", L("Sunscreen and a cap"), hot, hot ? L("Strong sun in {c}. Protect your skin.", { c: city }) : L("Not needed where you are going.")],
+      ["normal", "👕", L("Normal clothes for three days"), !cold && !hot, !cold && !hot ? L("Comfortable everyday clothes are just right.") : L("You need special clothes for this weather.")],
+      ["kit", "🏏", L("Cricket whites and kit"), P === "match", P === "match" ? L("You are playing the final. Pack your whites!") : L("No match on this trip.")],
+      ["uniform", "👮", job ? L("Your {j} uniform and badge", { j: job.name }) : L("Work uniform"), P === "duty", P === "duty" ? L("You are on duty. The uniform and badge must come.") : L("No work on this trip.")],
+      ["camera", "📷", L("Camera for photos"), P === "family" || P === "friends", P === "family" || P === "friends" ? L("Holiday photos for the album!") : L("You can use your phone.")],
+      ["knife", "🔪", L("A big kitchen knife"), false, fly ? L("Knives are NOT allowed on planes. Security takes them away.") : L("Sharp knives are not needed and are not safe in a bag.")],
+      ["liquid", "🧃", L("A big 2-litre bottle of juice"), false, fly ? L("On planes, liquids over 100 ml are not allowed in the cabin bag.") : L("Too heavy. Buy juice on the way.")],
+      ["pet", "🐕", L("Moti the dog"), false, L("Moti stays home. Pets need special tickets and cages.")],
+      ["tv", "📺", L("The TV remote"), false, L("The hotel has its own remote. Maa will need this one!")],
+    ];
+    const chosen = new Set(); const need = items.filter((i) => i[3]);
+    const card = openPanel(`<div class="job-title-row"><h2>🧳 ${L("Pack your bag for {c}", { c: city })}</h2></div><p class="job-brief">${L("Tap the things you need. {w} Trip: {p}.", { w: cold ? L("It is cold there.") : hot ? L("It is hot there.") : L("The weather is mild."), p: L({ match: "cricket match", duty: "work duty", family: "family vacation", friends: "friends trip" }[P] || P) })}</p><div class="btn-row">${items.map((it, i) => `<button class="lang-btn" id="pk-${i}">${it[1]} ${it[2]}</button>`).join("")}</div><div class="job-goal" id="pk-msg">${L("{n} things chosen", { n: 0 })}</div><div class="btn-row"><button class="big-btn" id="pk-done">✅ ${L("Done packing")}</button></div>`);
+    items.forEach((it, i) => { const b = card.querySelector(`#pk-${i}`); b.addEventListener("click", () => { if (chosen.has(i)) { chosen.delete(i); b.classList.remove("on"); } else { chosen.add(i); b.classList.add("on"); } card.querySelector("#pk-msg").textContent = L("{n} things chosen", { n: chosen.size }); }); });
+    card.querySelector("#pk-done").addEventListener("click", () => {
+      const missed = need.filter((it) => !chosen.has(items.indexOf(it))), wrong = [...chosen].map((i) => items[i]).filter((it) => !it[3]); const score = Math.max(0, need.length - missed.length - wrong.length), stars = score >= need.length ? 3 : score >= need.length - 2 ? 2 : 1;
+      const outfit = P === "duty" ? "uniform" : cold ? "warm" : hot ? "summer" : "smart";
+      const lines = [...missed.map((it) => `❌ ${L("Forgot")}: ${it[1]} ${it[2]}. ${it[4]}`), ...wrong.map((it) => `🚫 ${L("Not needed")}: ${it[1]} ${it[2]}. ${it[4]}`)];
+      const res = openPanel(`<h2>${"⭐".repeat(stars)} ${L("Packing check")}</h2><div class="job-goal">${stars === 3 ? L("Perfect bag! Everything you need, nothing extra.") : L("Maa checks your bag and fixes it. Learn for next time:")}</div><div class="shop-list">${(lines.length ? lines : [L("✅ All correct!")]).map((l) => `<div class="cart-row"><div>${l}</div></div>`).join("")}</div><div class="btn-row"><button class="big-btn" id="pk-ok">${L("Zip the bag")}</button></div>`);
+      res.querySelector("#pk-ok").addEventListener("click", () => { closePanel(); this.progress.packStars = (this.progress.packStars || 0) + stars; saveProgress(this.profile, this.progress); onDone({ outfit, stars, good: stars >= 2 }); });
+    });
+  }
+  // ---------- Mall and gym ----------
+  _mallSetup(room) {
+    const shops = { "🧸 Toys": [[L("Cricket bat"), 120], [L("Football"), 90], [L("Teddy bear"), 150], [L("Remote-control car"), 300]], "👕 Fashion": [[L("Red T-shirt (home wear)"), 150, 0xd62828], [L("Blue T-shirt (home wear)"), 150, 0x3a86ff], [L("Green T-shirt (home wear)"), 150, 0x2a9d8f], [L("Sunglasses"), 120]], "🎧 Electronics": [[L("Headphones"), 400], [L("Digital watch"), 350], [L("Video game"), 500], [L("Torch for night walks"), 80]] };
+    for (const sp of room.mallSpots || []) this.roomInteractables.push({ pos: { x: sp.x, z: sp.z }, radius: 2.4, prompt: () => L("{s} shop: look and buy", { s: sp.name }), activate: () => this._mallShop(sp.name, shops[sp.name] || []) });
+    this.roomInteractables.push({ pos: { x: room.x0 - 4, z: room.z0 + 7.5 }, radius: 2.4, prompt: () => L("🍕 Food court: pizza, burger, shake"), activate: () => this._mallShop(L("🍕 Food court"), [[L("Pizza slice"), 60], [L("Veg burger"), 50], [L("Mango shake"), 40], [L("Popcorn tub"), 70]], true) });
+    showToast(L("🛍️ Suryanagar Mall: Toys, Fashion and Electronics at the back, the food court by the fountain."), 3200, "good");
+  }
+  _mallShop(name, list, food = false) {
+    const pr = this.progress; pr.mallBuys = pr.mallBuys || [];
+    const card = openPanel(`<div class="job-title-row"><h2>${name}</h2><button class="ghost-btn" id="ms-x">${L("Close")}</button></div><p class="job-brief">${L("You have ₹{m}.", { m: pr.money })}</p><div class="shop-list">${list.map((it, i) => `<div class="cart-row"><div><b>${it[0]}</b><small>₹${it[1]}${pr.mallBuys.includes(it[0]) && !food ? " · " + L("you own this") : ""}</small></div><button class="use-btn" id="ms-${i}">${L("Buy")}</button></div>`).join("")}</div>`);
+    card.querySelector("#ms-x").addEventListener("click", closePanel);
+    list.forEach((it, i) => card.querySelector(`#ms-${i}`).addEventListener("click", () => { if (pr.money < it[1]) { showToast(L("Not enough money. Save up, or work a shift!"), 2400, "bad"); return; } this.addMoney(-it[1], food ? "mall food" : "mall shopping"); closePanel(); playPick();
+      if (food) { this.addEnergy && this.addEnergy(8); showToast(L("😋 {f}! Yum.", { f: it[0] }), 2200, "good"); return; }
+      pr.mallBuys = [...new Set([...pr.mallBuys, it[0]])]; if (it[2]) { pr.homeShirt = it[2]; showToast(L("👕 New T-shirt! You will wear it at home."), 2600, "good"); } else showToast(L("🛍️ You bought: {f}!", { f: it[0] }), 2400, "good"); saveProgress(this.profile, pr); this._snap && this._snap("🛍️", `Bought ${it[0]} at the mall.`); this.diary(L("Bought {f} at Suryanagar Mall.", { f: it[0] })); }));
+  }
+  _gymSetup(room) {
+    const ws = [["🏃", L("Treadmill run"), -2.1, -1.0, L("Keep the pace: press in the green!")], ["🏋️", L("Dumbbell curls"), 3.4, -2.1, L("Lift when the bar is in the green!")], ["💪", L("Push-ups on the mat"), 2.5, 2.3, L("Down and up in the green!")], ["🪢", L("Skipping rope"), -3.2, 2.6, L("Jump in the green!")]];
+    for (const [icon, name, lx, lz, cue] of ws) this.roomInteractables.push({ pos: { x: room.x0 + lx, z: room.z0 + lz }, radius: 1.8, prompt: () => (this.progress.gymDay === this.progress.day && (this.progress.gymSets || 0) >= 4 ? L("{w} (rest now, come back tomorrow)", { w: name }) : L("{i} {w} (₹10)", { i: icon, w: name })), activate: () => this._workout(icon, name, cue) });
+    showToast(L("💪 FitZone Gym: treadmill, dumbbells, push-ups and skipping. Get fit, run faster!"), 3200, "good");
+  }
+  _workout(icon, name, cue) {
+    const pr = this.progress; if (pr.gymDay !== pr.day) { pr.gymDay = pr.day; pr.gymSets = 0; }
+    if (pr.gymSets >= 4) { showToast(L("Trainer: 'Enough for today. Muscles grow when you rest.'"), 2600); return; }
+    if (pr.money < 10) { showToast(L("A gym set costs ₹10."), 2200, "bad"); return; } if ((pr.energy || 0) < 15) { showToast(L("Too tired. Eat something first!"), 2400, "bad"); return; }
+    this.addMoney(-10, "gym"); this._timingGame({ name, icon, cue, hit: L("Good rep!"), miss: L("Keep going!"), verb: L("Go") }, 6, (h) => {
+      pr.gymSets = (pr.gymSets || 0) + 1; pr.fitness = Math.min(20, (pr.fitness || 0) + (h >= 4 ? 1 : 0)); this.addEnergy && this.addEnergy(-8); this.player.speedMul = Math.max(this.player.speedMul || 1, 1 + (pr.fitness || 0) * 0.01); saveProgress(this.profile, pr);
+      this.dialogue.say(L("Trainer Karan"), [h >= 4 ? L("{h} good reps! Fitness level {f} of 20.", { h, f: pr.fitness }) : L("{h} reps. Slow and steady. Fitness level {f} of 20.", { h, f: pr.fitness }), L("Drink water. Fitter body, faster legs!")], null, { pitch: 350 });
+    }, L("Trainer Karan"));
+  }
+  // ---------- Night: darkness, a torch, and ghost sightings ----------
+  _buildNight() {
+    const S = this.world.scene; const std = (c, o) => new THREE.MeshStandardMaterial({ color: c, transparent: o < 1, opacity: o, roughness: 1, emissive: c, emissiveIntensity: 0.25 });
+    // The torch that lights the ground around you at night.
+    try { this._torch = new THREE.PointLight(0xfff1c0, 0, 16, 2); S.add(this._torch); } catch (e) { this._torch = null; }
+    // The ghost: a pale floating figure with dark eyes.
+    const gh = new THREE.Group(); const bodyMat = std(0xeef3ff, 0.55); const body = new THREE.Mesh(new THREE.ConeGeometry(0.55, 1.8, 12, 1, true), bodyMat); body.position.y = 1.0; gh.add(body);
+    const head = new THREE.Mesh(new THREE.SphereGeometry(0.34, 12, 10), bodyMat); head.position.y = 2.0; gh.add(head);
+    for (const s of [-1, 1]) { const eye = new THREE.Mesh(new THREE.SphereGeometry(0.06, 8, 6), new THREE.MeshBasicMaterial({ color: 0x000000 })); eye.position.set(s * 0.12, 2.05, 0.3); gh.add(eye); }
+    const hair = new THREE.Mesh(new THREE.BoxGeometry(0.62, 0.9, 0.12), std(0x111111, 0.85)); hair.position.set(0, 1.75, -0.26); gh.add(hair);
+    gh.visible = false; S.add(gh); this._ghost = { group: gh, mat: bodyMat, t: 0, show: 0, next: 18 };
+    // The old haveli: a dark ruined mansion in the north-west corner.
+    const hv = new THREE.Group(); hv.position.set(-154, 0, 150); S.add(hv);
+    const wall = new THREE.Mesh(new THREE.BoxGeometry(16, 7, 11), std(0x3a3530, 1)); wall.position.y = 3.5; hv.add(wall);
+    const roof = new THREE.Mesh(new THREE.BoxGeometry(17, 0.6, 12), std(0x201c1a, 1)); roof.position.y = 7.2; roof.rotation.z = 0.05; hv.add(roof);
+    for (let i = 0; i < 4; i++) { const win = new THREE.Mesh(new THREE.BoxGeometry(1.4, 1.6, 0.1), new THREE.MeshBasicMaterial({ color: i === 2 ? 0x332200 : 0x050505 })); win.position.set(-5.5 + i * 3.6, 4.4, -5.56); hv.add(win); }
+    const door = new THREE.Mesh(new THREE.BoxGeometry(2, 3, 0.12), std(0x2a1a10, 1)); door.position.set(0, 1.5, -5.56); door.rotation.y = 0.35; hv.add(door);
+    const tree = new THREE.Mesh(new THREE.CylinderGeometry(0.2, 0.45, 6, 6), std(0x2a2019, 1)); tree.position.set(7, 3, -8); tree.rotation.z = 0.2; hv.add(tree);
+    for (let b = 0; b < 4; b++) { const br = new THREE.Mesh(new THREE.CylinderGeometry(0.06, 0.1, 2.4, 5), std(0x2a2019, 1)); br.position.set(7 + (b % 2 ? 0.9 : -0.9), 4.5 + b * 0.4, -8); br.rotation.z = b % 2 ? -0.9 : 0.9; hv.add(br); }
+    const lbl = makeTextSprite("🏚️ " + L("Old Haveli"), { size: 42, scale: 1.0 }); lbl.position.set(0, 8.4, -5.6); hv.add(lbl);
+    this.world.addBox(-154, 150, 16, 11);
+    this._haveliWin = hv.children[2 + 2]; // the one window that sometimes glows
+    const its = this._roadIts || (this._roadIts = []);
+    its.push({ pos: { x: -154, z: 143 }, radius: 3.2, prompt: () => (this.phase === "night" ? (this.progress.haveliDone ? L("The old haveli (quiet now)") : L("Enter the old haveli... if you dare")) : L("The old haveli (locked; locals say it is haunted at night)")), activate: () => this._haveli() });
+    this._ideaSpots = [...(this._ideaSpots || []), ["🏚️ Old Haveli (haunted, at night)", -154, 143]];
+  }
+  _tickNight(dt, elapsed) {
+    const night = this.phase === "night", out = !this.world.currentRoom, pp = this.player.position, pr = this.progress;
+    if (this._torch) { this._torch.intensity = night && out ? 1.6 : 0; if (night && out) this._torch.position.set(pp.x, 2.4, pp.z); }
+    if (night && out && !this._nightWarned) { this._nightWarned = true; if (!this.gentle) showToast(L("🌙 Night in Suryanagar. Dadi's warning: 'Stay away from the old haveli after dark!'"), 4200); }
+    if (!night) this._nightWarned = false;
+    if (this._haveliWin && this._haveliWin.material) this._haveliWin.material.color.setHex && this._haveliWin.material.color.setHex(night && Math.sin(elapsed * 1.3) > 0.7 ? 0xffb347 : 0x332200);
+    const G = this._ghost; if (!G) return; const g = G.group;
+    const allowed = night && out && !this.gentle && !this._cut && !this._trial && !this._chase && !this._uiBlocking();
+    if (!allowed) { if (g.visible) g.visible = false; return; }
+    G.t += dt;
+    if (!g.visible) { G.next -= dt; if (G.next > 0) return; G.next = 25 + Math.random() * 25;
+      const kind = Math.random(); pr.ghostSeen = (pr.ghostSeen || 0);
+      if (kind < 0.35) { const sounds = [L("👣 Footsteps behind you... You turn. Nobody."), L("🔔 Anklets jingle in the dark: chham, chham... then silence."), L("🦉 An owl hoots three times. The dogs start howling."), L("🌬️ A cold wind. Someone whispers your name from the trees...")]; showToast(sounds[Math.floor(Math.random() * sounds.length)], 3400, "bad"); try { playBark(); } catch (e) { /* sound optional */ } return; }
+      const fwd = this.player.group.rotation.y, d = 16 + Math.random() * 8, side = (Math.random() - 0.5) * 8; g.position.set(pp.x + Math.sin(fwd) * d + Math.cos(fwd) * side, 0.2, pp.z + Math.cos(fwd) * d - Math.sin(fwd) * side); g.visible = true; G.show = 0; G.fled = false;
+      for (const l of this.world.lampLights || []) l.visible = false;
+      showToast(L("👻 What is THAT? A white figure stands on the road ahead..."), 3200, "bad"); try { playWhoosh(); } catch (e) { /* sound optional */ } return; }
+    G.show += dt; g.position.y = 0.2 + Math.sin(G.t * 2) * 0.15; g.rotation.y = Math.atan2(pp.x - g.position.x, pp.z - g.position.z); G.mat.opacity = 0.35 + Math.abs(Math.sin(G.t * 7)) * 0.3; g.position.x += Math.sin(G.t * 0.7) * dt * 0.8;
+    for (const l of this.world.lampLights || []) l.visible = Math.random() > 0.5;
+    const near = Math.hypot(pp.x - g.position.x, pp.z - g.position.z) < 7;
+    if (near || G.show > 6) { g.visible = false; for (const l of this.world.lampLights || []) l.visible = true; pr.ghostSeen = (pr.ghostSeen || 0) + 1; saveProgress(this.profile, pr); showToast(near ? L("💨 You step closer... and it is GONE. Only a cold mist where it stood.") : L("💨 It drifts into the trees and vanishes."), 3200, "bad"); if (pr.ghostSeen === 3) { this._snap && this._snap("👻", "Saw a ghost three times at night."); showToast(L("🏅 Badge: Ghost Spotter!"), 3000, "good"); } this.diary(L("Night: saw something white on the road. Was it a ghost?")); }
+  }
+  _haveli() {
+    const pr = this.progress; if (this.phase !== "night") { this.dialogue.say(L("Old watchman"), [L("Locked for fifty years, beta. People say a girl's spirit walks here at night, looking for something she lost.")], null, { pitch: 300 }); return; }
+    if (this.gentle) { this.dialogue.say(L("Old watchman"), [L("Too late for adventures, beta. Go home and sleep.")], null, { pitch: 300 }); return; }
+    if (pr.haveliDone) { this.dialogue.say(L("The haveli"), [L("(All is quiet. A soft warm light glows in the top window. Chhaya is at peace.)")], null, { pitch: 380 }); return; }
+    playWhoosh();
+    this.dialogue.say(L("The haveli"), [L("(The gate creaks open by itself. Dust. Cobwebs. A candle flickers on the stairs...)"), L("(A cold hand of wind on your neck. A pale girl appears at the top of the stairs.)"), L("Chhaya: 'Who are you? ... Please, do not run. I lost my silver payal fifty years ago. I cannot rest without it.'"), L("Chhaya: 'Will you help me find it?'")], () => {
+      const spots = [L("Under the broken stairs"), L("Inside the dry old well"), L("Behind the torn curtain"), L("In the dusty wooden chest")], right = pr.day % 4; let tries = 0;
+      const card = openPanel(`<h2>🕯️ ${L("Search the haveli")}</h2><p class="job-brief">${L("Where could the payal be? The candle is burning low...")}</p><div class="btn-row">${spots.map((s, i) => `<button class="big-btn" id="hv-${i}">${s}</button>`).join("")}</div><div class="job-goal" id="hv-msg"></div>`);
+      spots.forEach((s, i) => card.querySelector(`#hv-${i}`).addEventListener("click", () => { tries++; if (i !== right) { card.querySelector("#hv-msg").textContent = [L("A bat flies out! Nothing here."), L("Something moves in the dark... just a rat. Nothing here."), L("The candle almost goes out! Nothing here.")][tries % 3]; Audio.playRetry(); return; }
+        closePanel(); pr.haveliDone = true; pr.brave = (pr.brave || 0) + 1; this.addRep && this.addRep(3, L("helped Chhaya rest")); saveProgress(this.profile, pr); playSuccess(); this._snap && this._snap("🕯️", "Found Chhaya's silver payal in the old haveli."); this.diary(L("Found the silver payal in the haunted haveli. The ghost girl smiled and faded into light."));
+        this.dialogue.say("Chhaya", [L("(Chham, chham. The silver payal shines in your hand.)"), L("Chhaya: 'My payal! Fifty years I searched. Thank you, brave one.'"), L("(She smiles, turns into soft light, and floats up to the stars. The haveli feels warm now.)"), L("🏅 Badge: Brave Heart.")], null, { pitch: 480 }); }));
+    }, { pitch: 380 });
   }
 }
 

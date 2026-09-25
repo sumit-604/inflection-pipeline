@@ -536,6 +536,26 @@ All of them are on the big map (G).
 - The ending: a graduate who has worked ten shifts goes to bed one last
   time and the game closes with a flashback from Nursery to now.
 
+## Night, clothes, packing, mall and gym (v36)
+
+- Real night. After dark the town goes dark. A torch lights the road ahead.
+  Rooms stay lit at night.
+- Ghost sightings at night: a white figure on the road, a whisper, a lamp
+  that flickers. It vanishes when you walk close. Spot 3 for the Ghost
+  Spotter badge. Gentle mode turns ghosts off.
+- The Old Haveli stands dark on the north side. Help Chhaya find her lost
+  payal. The hiding spot changes each day.
+- At home you change into a T-shirt and shorts. At bedtime you wear pajamas.
+- Before a train or flight you pack your bag. Pick the right things for the
+  weather and the purpose. The game explains each wrong pick. At the city
+  you change into the packed clothes.
+- At the cricket stadium you change into cricket whites.
+- Suryanagar Mall: toys, fashion (new T-shirts for home), electronics and a
+  food court.
+- FitZone Gym: four stations, Rs 10 each, four sets a day. Fitness makes you
+  walk faster.
+- Park rides: press E or move to get off the swing or see-saw.
+
 ## Files
 
 - `index.html` the whole game. Open it in a browser.

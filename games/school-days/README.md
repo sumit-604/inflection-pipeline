@@ -629,6 +629,14 @@ All of them are on the big map (G).
   and you go straight into the cab: today's train starts at once, no menus.
   The return train also starts at once.
 
+## Driver's seat on the platform (v44)
+
+- A second driver's seat stands outside at the east end of the platform, by
+  the engine. Only the Loco Pilot can use it; E starts the train at once.
+- The seat inside the station hall now always appears for the Loco Pilot
+  (and the Captain's booth for the Pilot), even if the room was set up
+  before.
+
 ## Files
 
 - `index.html` the whole game. Open it in a browser.

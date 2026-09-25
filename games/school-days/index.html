@@ -748,7 +748,7 @@ import * as THREE from 'three';
    label goes through L(). The voice follows the language.
    Questions and answers stay in English for now.
    ============================================================ */
-const GAME_VERSION = "v43";
+const GAME_VERSION = "v44";
 const LANGS = {
   en: { name: "English", voice: "en-IN" },
   hi: { name: "हिन्दी", voice: "hi-IN" },
@@ -9945,6 +9945,7 @@ class Game {
     its.push({ pos: { x, z }, radius: 2.6, prompt: () => L("🎖️ Government Bravery Missions ({n}/8 done)", { n: this._missionsDone().length }), activate: () => this._missionDesk() });
     this._ideaSpots = [...(this._ideaSpots || []), ["🎖️ Bravery Missions desk", x, z]];
     if (this.progress.shauryaChakra) this._medal(true);
+    this._buildPlatformSeat && this._buildPlatformSeat();
   }
   _missionsDone() { const m = this.progress.braveMissions || {}; return Object.keys(m).filter((k) => m[k]); }
   _missionDone(id) { const pr = this.progress; pr.braveMissions = pr.braveMissions || {}; pr.braveMissions[id] = true; saveProgress(this.profile, pr); }
@@ -10351,9 +10352,13 @@ class Game {
   _dutySpot(room, sign, prompt, act) {
     const fly = /CAPTAIN/.test(sign), want = fly ? [14, 9] : [10, 6];
     const sp = this._nearSpot(room, room.x0 + want[0], room.z0 + want[1], [[0, 0], [2, 0], [-2, 0], [0, -2], [0, 2], [4, 0], [-4, 0], [0, -4], [6, 0], [-6, 0]]);
-    this.roomInteractables.push({ pos: sp, radius: 2.8, prompt, activate: act });
-    if (!room._booth) {
-      const B = new THREE.Group(), lx = sp.x - room.x0, lz = sp.z - room.z0; B.position.set(lx, 0, lz); room.group.add(B);
+    this.roomInteractables.push({ pos: sp, radius: 2.8, prompt, activate: act, _duty: true });
+    if (!room._booth) { room._booth = this._makeBooth(fly, sign); room._booth.B.position.set(sp.x - room.x0, 0, sp.z - room.z0); room.group.add(room._booth.B); }
+    this._duty = room._booth;
+    if (this.phase === "morning" && !this.isSunday()) { this.setObjective(sign.replace(" (E)", "") + ": " + (fly ? L("the glowing gold booth. Stand on it, press E") : L("the red chair on the gold circle. Press E to drive")), sp.x, sp.z); showToast(fly ? L("👉 Today's duty: the glowing gold booth {s}. Stand on the gold circle and press E.", { s: sign }) : L("👉 Your train is waiting! Go to the red driver's chair on the gold circle and press E. You go straight into the cab."), 4200, "good"); }
+  }
+  _makeBooth(fly, sign) {
+      const B = new THREE.Group();
       const gold = new THREE.MeshStandardMaterial({ color: 0xffc300, emissive: 0xffa000, emissiveIntensity: 0.9 }), blue = new THREE.MeshStandardMaterial({ color: fly ? 0x1d3557 : 0xc0392b, emissive: fly ? 0x1d3557 : 0x7a1e14, emissiveIntensity: 0.4 });
       const disc = new THREE.Mesh(new THREE.CylinderGeometry(1.7, 1.7, 0.06, 32), gold); disc.position.y = 0.04; B.add(disc);
       const ring = new THREE.Mesh(new THREE.TorusGeometry(2.1, 0.08, 8, 40), gold); ring.rotation.x = Math.PI / 2; ring.position.y = 0.08; B.add(ring);
@@ -10369,14 +10374,22 @@ class Game {
         for (const x of [-0.35, 0.35]) { const lv = bx(0.08, 0.5, 0.08, metal, x, 1.2, -0.55); lv.rotation.x = -0.4; const knob = new THREE.Mesh(new THREE.SphereGeometry(0.09, 10, 8), red); knob.position.set(x, 1.45, -0.45); B.add(knob); } }
       try { const t = makeTextSprite(sign, { size: 60, scale: 1.0 }); t.position.set(0, 4.35, -1.2); B.add(t); } catch (e) { /* sign optional */ }
       try { const lt = new THREE.PointLight(0xffd27a, 2.5, 10, 2); lt.position.set(0, 3, 0); B.add(lt); } catch (e) { /* light optional */ }
-      room._booth = { B, ring, toy, beam };
-    }
-    this._duty = room._booth;
-    if (this.phase === "morning" && !this.isSunday()) { this.setObjective(sign.replace(" (E)", "") + ": " + (fly ? L("the glowing gold booth. Stand on it, press E") : L("the red chair on the gold circle. Press E to drive")), sp.x, sp.z); showToast(fly ? L("👉 Today's duty: the glowing gold booth {s}. Stand on the gold circle and press E.", { s: sign }) : L("👉 Your train is waiting! Go to the red driver's chair on the gold circle and press E. You go straight into the cab."), 4200, "good"); }
+      return { B, ring, toy, beam };
   }
   _tickDuty(dt) {
-    const d = this._duty; if (!d || !this.world.currentRoom) return; const t = performance.now() / 1000;
-    d.toy.rotation.y += dt * 0.9; d.toy.position.y = 3.95 + Math.sin(t * 2) * 0.1; const k = 1 + Math.sin(t * 3) * 0.08; d.ring.scale.set(k, k, k); d.beam.material.opacity = 0.12 + Math.abs(Math.sin(t * 1.5)) * 0.12;
+    const room = this.world.currentRoom, job = this.progress.job, t = performance.now() / 1000;
+    if (room && this.roomInteractables && ((job === "locopilot" && room.label === "Railway Station") || (job === "pilot" && room.label === "Suryanagar Airport")) && !this.roomInteractables.some((i) => i._duty)) {
+      if (job === "pilot") this._dutySpot(room, "🧑‍✈️ " + L("CAPTAIN'S DUTY (E)"), () => L("🧑‍✈️ Captain's duty: fly today's flight"), () => this._pilotDuty()); else this._dutySpot(room, "🚆 " + L("DRIVER'S SEAT (E)"), () => L("🚆 Sit in the driver's seat: start today's train"), () => this._locoQuick());
+    }
+    for (const d of [room ? this._duty : null, !room ? this._platformSeat : null]) { if (!d) continue; d.toy.rotation.y += dt * 0.9; d.toy.position.y = 3.95 + Math.sin(t * 2) * 0.1; const k = 1 + Math.sin(t * 3) * 0.08; d.ring.scale.set(k, k, k); d.beam.material.opacity = 0.12 + Math.abs(Math.sin(t * 1.5)) * 0.12; }
+  }
+  // A second driver's seat outside, on the platform, right by the engine.
+  _buildPlatformSeat() {
+    let bo; try { bo = this._makeBooth(false, "🚆 " + L("DRIVER'S SEAT (E)")); } catch (e) { return; }
+    const x = RAIL.stopX + 8.5, z = RAIL.platformZ + 0.8; bo.B.position.set(x, 0.2, z); bo.B.rotation.y = Math.PI; this.world.scene.add(bo.B); this._platformSeat = bo;
+    const its = this._roadIts || (this._roadIts = []);
+    its.push({ pos: { x, z }, radius: 2.8, prompt: () => (this.progress.job === "locopilot" ? L("🚆 Sit in the driver's seat: start today's train") : L("🚆 Driver's seat (only for the Loco Pilot)")), activate: () => { if (this.progress.job !== "locopilot") { showToast(L("Only the Loco Pilot may sit here. Get the job: press J, Loco Pilot (train driver)."), 3200); return; } this._locoQuick(); } });
+    this._ideaSpots = [...(this._ideaSpots || []), ["🚆 Driver's seat (platform)", x, z]];
   }
   // Sit in the driver's seat: today's first train starts at once, no menus.
   _locoQuick() {

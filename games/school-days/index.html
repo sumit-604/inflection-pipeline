@@ -748,7 +748,7 @@ import * as THREE from 'three';
    label goes through L(). The voice follows the language.
    Questions and answers stay in English for now.
    ============================================================ */
-const GAME_VERSION = "v32";
+const GAME_VERSION = "v33";
 const LANGS = {
   en: { name: "English", voice: "en-IN" },
   hi: { name: "हिन्दी", voice: "hi-IN" },
@@ -6543,6 +6543,7 @@ class Game {
     this.scooty = { group: scooty, speed: 11, kind: "scooty", label: L("Maa's scooty"), controlled: true, minAge: 16 };
     const moto = makeMotorbike(0x0b0b0b); moto.position.set(HOME.x + 1.5, 0, HOME.z - 19); this.world.scene.add(moto);
     this.moto = { group: moto, speed: 13, kind: "scooty", label: L("Papa's motorbike"), controlled: true, minAge: 18 };
+    this._vehHome = [[this.bike, HOME.x + 7.5, HOME.z + 9.5, Math.PI / 2], [this.scooty, HOME.x + 1.5, HOME.z - 15, 0], [this.moto, HOME.x + 1.5, HOME.z - 19, 0], [this.car, HOME.x + 4, HOME.z - 10, 0]];
     this._buildInteractables();
     this.world.vehicleBlocked = (x, z, self, pad) => {
       for (const mv of [...this.world.movers, ...this.world.cityMovers]) {
@@ -6810,6 +6811,7 @@ class Game {
     if (room.type === "lab" || room.type === "computer") this._setupLabRoom(room);
     if (room.type === "home") this._setupHome(room);
     this._seatArrow = null;
+    if (door.label === "Our Home") this._parkVehiclesHome();
     if (this._outing && this._outing.o.place === door.label) setTimeout(() => this._startOuting(room), 500);
     if (this._matchTrip && this._matchTrip.purpose !== "match" && this._matchTrip.door === door.label) setTimeout(() => this._tripArrive(room), 500);
     this._jobRoomSetup(room, door);
@@ -7096,7 +7098,7 @@ class Game {
         { const ms = pr.missions || []; if (ms.length && ms.every((x) => x.done >= x.need)) { pr.streak = (pr.streak || 0) + 1; this.addMoney(pr.streak % 7 === 0 ? 100 : 20, L("missions streak {n}", { n: pr.streak })); } else if (ms.length) pr.streak = 0; }
         if (pr.cast) { pr.cast--; if (!pr.cast) { this.player.speedMul = 1; showToast(L("Cast off. Good as new."), 2400, "good"); } }
         if (this.working && pr.workDays && pr.workDays % 5 === 0 && pr.lastYearAt !== pr.workDays) { pr.lastYearAt = pr.workDays; this._yearPassed(); }
-        pr.day++; buildPeriods(pr.day); pr.tiffin = null; if (this._lateNight) { pr.energy = Math.max(20, pr.energy - 25); this._lateNight = false; } this._incidentDone = false; this._monitorDone = false; this._pocketGiven = false; this._bdayWished = false; this._messDone = false; pr.sundayDone = false; pr.petHappy = Math.max(0, (pr.petHappy == null ? 70 : pr.petHappy) - 12); if (pr.petHappy < 25) showToast(L("🐕 Moti looks unwell. Feed him, or take him to the Vet Clinic."), 3600, "bad"); this._eqUsed = new Set(); this.car.atSchool = false; this.car.group.position.set(this.car.home.x, 0, this.car.home.z); this.car.group.rotation.y = 0; pr.homework = []; pr.period = 0; this._marksToday = 0; this._ateLunch = false; this._goalDone = false; this._gamesActive = false; this._shiftDone = false;
+        pr.day++; buildPeriods(pr.day); this._parkVehiclesHome && this._parkVehiclesHome(); pr.tiffin = null; if (this._lateNight) { pr.energy = Math.max(20, pr.energy - 25); this._lateNight = false; } this._incidentDone = false; this._monitorDone = false; this._pocketGiven = false; this._bdayWished = false; this._messDone = false; pr.sundayDone = false; pr.petHappy = Math.max(0, (pr.petHappy == null ? 70 : pr.petHappy) - 12); if (pr.petHappy < 25) showToast(L("🐕 Moti looks unwell. Feed him, or take him to the Vet Clinic."), 3600, "bad"); this._eqUsed = new Set(); this.car.atSchool = false; this.car.group.position.set(this.car.home.x, 0, this.car.home.z); this.car.group.rotation.y = 0; pr.homework = []; pr.period = 0; this._marksToday = 0; this._ateLunch = false; this._goalDone = false; this._gamesActive = false; this._shiftDone = false;
         if (pr.day === 11) { for (const s of SUBJECT_IDS) pr.marks[s] = { cw: 0, hw: 0, fa: [], term: [] }; pr.games = []; showToast("Term 2 begins. Marks start fresh; Term 1 is on your report card.", 4000, "good"); }
         if (pr.day > 20) { pr.day = 1; for (const s of SUBJECT_IDS) pr.marks[s] = { cw: 0, hw: 0, fa: [], term: [] }; pr.games = []; showToast("A new school year! Reports are kept in your diary.", 4000, "good"); }
         saveProgress(this.profile, pr);
@@ -8002,6 +8004,11 @@ class Game {
     skip.addEventListener("click", () => this._endFlight());
     return { bar, skip, fade };
   }
+  // Every family vehicle goes back to its own spot by the house (not the one you are riding).
+  _parkVehiclesHome() {
+    const R = this.player.riding;
+    for (const [v, x, z, rot] of this._vehHome || []) { if (!v || !v.group || (R && R.group === v.group)) continue; if (v === this.car && (v.driving || v.atSchool)) continue; v.group.position.set(x, 0, z); v.group.rotation.set(0, rot, 0); }
+  }
   // Lounge and waiting room: sit, hear the announcements, then go and board.
   _tickLounge(dt, elapsed) {
     const lo = this._lounge; if (!lo) return; lo.t += dt; const once = (k, fn) => { if (!lo.said.has(k)) { lo.said.add(k); fn(); } }; const pr = this.progress;
@@ -8088,7 +8095,7 @@ class Game {
   // Arriving at the purpose place in the city.
   _tripArrive(room) {
     const mt = this._matchTrip; if (!mt || mt.started || this.world.currentRoom !== room) return; mt.started = true; const pr = this.progress, name = this.playerName || L("you"), s3 = mt.s3;
-    const home = (line) => { if (mt.banner) this.world.scene.remove(mt.banner); this._matchTrip = null; this.dialogue.say(L("Trip"), [line, mt.via === "rail" ? L("(The next day you ride the train home to Suryanagar Junction.)") : L("(The next day you fly home to Suryanagar.)")], () => { if (this.world.currentRoom) this._exitRoom(); const ap = this.world.doors.find((d) => d.label === (mt.via === "rail" ? "Railway Station" : "Suryanagar Airport")); if (ap) { this.player.group.position.set(ap.x, 0, ap.z + 2.5); this.player._placeCamera(1); } this.setObjective(L("Home again!"), null); this._startPhase("over"); }, { pitch: 380 }); };
+    const home = (line) => { if (mt.banner) this.world.scene.remove(mt.banner); this._matchTrip = null; this.dialogue.say(L("Trip"), [line, mt.via === "rail" ? L("(The next day you ride the train home to Suryanagar Junction.)") : L("(The next day you fly home to Suryanagar.)")], () => { if (this.world.currentRoom) this._exitRoom(); const ap = this.world.doors.find((d) => d.label === (mt.via === "rail" ? "Railway Station" : "Suryanagar Airport")); if (ap) { this.player.group.position.set(ap.x, 0, ap.z + 2.5); this.player._placeCamera(1); } this.setObjective(L("Home again!"), null); this._parkVehiclesHome(); this._startPhase("over"); }, { pitch: 380 }); };
     if (mt.purpose === "duty") { const job = this.job; this.dialogue.say(job.boss, [L("Welcome to the {c} office, {r}.", { c: mt.city, r: rankName(job, pr.shifts) }), L("Special duty today: three hard cases from the {c} team. Show them how Suryanagar works.", { c: mt.city })], () => this._runPaper(`${job.icon} ${L("Special duty in {c}", { c: mt.city })}`, casesFor(job, 3), (s) => { const pay = salaryFor(job, pr.shifts) * 2; this.addMoney(pay, L("special duty")); pr.shifts = (pr.shifts || 0) + 1; saveProgress(this.profile, pr); this.addRep(2, L("special duty in {c}", { c: mt.city })); this._snap(job.icon, `Special duty in ${mt.city}: ${s}/3 cases.`); this.diary(L("Special duty in {c}: {s}/3 cases.", { c: mt.city, s })); home(L("{s} of 3 cases solved. The {c} chief shakes your hand: 'Come back any time.' Double pay: ₹{p}!", { s, c: mt.city, p: pay })); }), { pitch: 340 }); return; }
     if (mt.purpose === "family") { this.dialogue.say("Papa", [L("Our room has a window over the whole city, champ!"), L("Day 1: {s}", { s: L(s3[0]) }), L("Day 2: {s}", { s: L(s3[1]) }), L("Day 3: {s}", { s: L(s3[2]) }), L("Dadi: 'I have not had a holiday like this in forty years. Thank you, beta.'")], () => { const items = [[L("A key chain with the city name"), 50], [L("Local sweets for the neighbours"), 80], [L("A T-shirt that says I love {c}", { c: mt.city }), 120]]; const card = openPanel(`<h2>🛍️ ${L("Souvenir shop, {c}", { c: mt.city })}</h2><p class="job-brief">${L("Pick one gift to take home. You have ₹{m}.", { m: pr.money })}</p><div class="shop-list">${items.map((it, i) => `<div class="cart-row"><div><b>${it[0]}</b><small>₹${it[1]}</small></div><button class="use-btn" id="sv-${i}">${L("Buy")}</button></div>`).join("")}</div><div class="btn-row"><button class="ghost-btn" id="sv-no">${L("No gift")}</button></div>`); const done = (g) => { closePanel(); pr.vacations = (pr.vacations || 0) + 1; saveProgress(this.profile, pr); this._snap("👨‍👩‍👧", `Family vacation in ${mt.city}.`); this.diary(L("Family vacation in {c}. {g}", { c: mt.city, g: g || "" })); this.addEnergy && this.addEnergy(30); home(L("Best family holiday ever. Maa puts the photo on the fridge.")); }; items.forEach((it, i) => card.querySelector(`#sv-${i}`).addEventListener("click", () => { if (pr.money < it[1]) { showToast(L("Not enough money."), 2000, "bad"); return; } this.addMoney(-it[1], "souvenir"); done(L("Bought {g}.", { g: it[0] })); })); card.querySelector("#sv-no").addEventListener("click", () => done("")); }, { pitch: 360 }); return; }
     if (mt.purpose === "friends") { const [a, b] = this._mates(); this.dialogue.say(a, [L("{p}! You made it! {b} found the best street food in {c}.", { p: name, b, c: mt.city }), L("{b}: First the food, then the sights, then a group selfie!", { b }), L(s3[0]), L(s3[2]), L("(Click! The group selfie with all three of you goes in the album.)")], () => { for (const f of this.friends || []) if ([a, b].includes(f.name)) this.addFriendship(f.def.id, 2, "trip"); pr.friendTrips = (pr.friendTrips || 0) + 1; saveProgress(this.profile, pr); this._snap("🤳", `Friends trip to ${mt.city} with ${a} and ${b}.`); this.diary(L("Friends trip to {c} with {a} and {b}.", { c: mt.city, a, b })); this.addEnergy && this.addEnergy(25); home(L("{a}: Same trip next year? Promise?", { a })); }, { pitch: 470 }); return; }
@@ -8123,7 +8130,7 @@ class Game {
       <div class="section-label">${L("{c} Colts", { c: city })}: ${oppo} ${L("all out")} (18.2 ${L("overs")})</div>
       <p class="job-brief">🏅 ${L("Player of the Match")}: <b>${name}</b></p>
       <div class="btn-row"><button class="big-btn" id="mr-ok">${L("Lift the trophy!")}</button></div>`);
-    card.querySelector("#mr-ok").addEventListener("click", () => { closePanel(); this.dialogue.say(L("Commentator"), [L("And that is the match! Suryanagar Juniors win by {m} runs, and it is all because of {n}!", { m: margin, n: name }), century ? L("{r} not out: a century in the final! The whole stadium is on its feet.", { r: yours }) : L("{r} runs, the most in the team. What a player!", { r: yours }), L(mt.s3[1]), mt.via === "rail" ? L("(The team lifts the trophy. The next day you ride the train home to Suryanagar Junction with the cup and a medal.)") : L("(The team lifts the trophy. The next day you fly home to Suryanagar with the cup and a medal.)")], () => { const ap = this.world.doors.find((d) => d.label === (mt.via === "rail" ? "Railway Station" : "Suryanagar Airport")); if (ap) { this.player.group.position.set(ap.x, 0, ap.z + 2.5); this.player._placeCamera(1); } this.setObjective(L("Home, a champion!"), null); this._startPhase("over"); }, { pitch: 360 }); });
+    card.querySelector("#mr-ok").addEventListener("click", () => { closePanel(); this.dialogue.say(L("Commentator"), [L("And that is the match! Suryanagar Juniors win by {m} runs, and it is all because of {n}!", { m: margin, n: name }), century ? L("{r} not out: a century in the final! The whole stadium is on its feet.", { r: yours }) : L("{r} runs, the most in the team. What a player!", { r: yours }), L(mt.s3[1]), mt.via === "rail" ? L("(The team lifts the trophy. The next day you ride the train home to Suryanagar Junction with the cup and a medal.)") : L("(The team lifts the trophy. The next day you fly home to Suryanagar with the cup and a medal.)")], () => { const ap = this.world.doors.find((d) => d.label === (mt.via === "rail" ? "Railway Station" : "Suryanagar Airport")); if (ap) { this.player.group.position.set(ap.x, 0, ap.z + 2.5); this.player._placeCamera(1); } this.setObjective(L("Home, a champion!"), null); this._parkVehiclesHome(); this._startPhase("over"); }, { pitch: 360 }); });
   }
   // Outings: two friends (or jobmates) talk about a plan and invite you.
   _mates() {

@@ -417,6 +417,11 @@ road. Press E to talk.
   Match. The commentator cheers your name, you lift the trophy, and you
   fly home.
 
+- Your vehicles come home by themselves. The bicycle, Maa's scooty,
+  Papa's motorbike and the car go back to their spots by the house when a
+  trip ends, when you walk into your home, and at the start of each day.
+  The one you are riding stays with you.
+
 ## Outings with friends and jobmates
 
 - Once a day your friends (or, when you work, your jobmates such as

@@ -564,6 +564,30 @@ All of them are on the big map (G).
   walk faster.
 - Park rides: press E or move to get off the swing or see-saw.
 
+## Walk-in haveli, bravery missions, city stays (v38)
+
+- The Old Haveli door opens at night and you walk inside. It is dark, lit
+  only by your torch and a few candles. Search six places in order: the
+  gate, the courtyard (a ghost floats on the balcony), the great hall, the
+  staircase, the dark corridor and the cellar door.
+- Escape: after you call the police from the cellar, Kaalu chases you in his
+  white sheet. Run to the front door. If he grabs you, you lose 1 courage.
+- On the night road some ghosts now chase you. Run far away or get inside a
+  building to escape. Escape 3 times for the Great Escape badge.
+- Government Bravery Missions: the desk is outside the Police Station. The
+  Government pays the ticket, the hotel and an allowance. Missions: the
+  Haveli Ghost Gang (Suryanagar), Flood Rescue (Guwahati), the School on
+  Fire (Mumbai), the Broken Track (Jaipur, by train), Lost in the Snowstorm
+  (Shimla, by train), Earthquake in Kathmandu (Nepal), the Stolen Nataraja
+  (London) and Storm at Sea (Goa). Each has its own scene, courage, and an
+  escape moment.
+- Finish 6 of the 8 missions and fly to Delhi. The President gives you the
+  Shaurya Chakra and Rs 10 lakh. The medal stays on your chest.
+- After any trip (match, family, friends, duty or mission) you can stay
+  3 days or one week. Each day something strange happens: someone follows
+  you, a spooky night, something funny, or something serious. Pick the smart
+  choice and learn a safety lesson.
+
 ## Files
 
 - `index.html` the whole game. Open it in a browser.

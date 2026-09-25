@@ -748,7 +748,7 @@ import * as THREE from 'three';
    label goes through L(). The voice follows the language.
    Questions and answers stay in English for now.
    ============================================================ */
-const GAME_VERSION = "v37";
+const GAME_VERSION = "v38";
 const LANGS = {
   en: { name: "English", voice: "en-IN" },
   hi: { name: "हिन्दी", voice: "hi-IN" },
@@ -2869,15 +2869,15 @@ class World {
   // Time of day: sky, fog, sun and lamps follow the phase of the day.
   setTimeOfDay(phase) {
     if (phase === this._tod) return; this._tod = phase;
-    const sky = { morning: 0xbfe3f2, school: 0xbfe3f2, over: 0xf2c9a0, evening: 0xd9825a, night: 0x050914, nightroom: 0x0b1224 }[phase] || 0xbfe3f2;
+    const sky = { morning: 0xbfe3f2, school: 0xbfe3f2, over: 0xf2c9a0, evening: 0xd9825a, night: 0x050914, nightroom: 0x0b1224, haunt: 0x020308 }[phase] || 0xbfe3f2;
     if (this.scene.fog) { if (this._fogNear == null) { this._fogNear = this.scene.fog.near; this._fogFar = this.scene.fog.far; } this.scene.fog.near = phase === "night" ? 30 : this._fogNear; this.scene.fog.far = phase === "night" ? 140 : this._fogFar; }
     this._baseSky = sky; if (!this.raining && !this.winter) { this.scene.background.set(sky); if (this.scene.fog) this.scene.fog.color.set(sky); }
-    if (this.sun) { this.sun.intensity = phase === "night" ? 0.08 : phase === "nightroom" ? 0.7 : phase === "evening" ? 1.1 : 2.1; this.sun.color.set(phase === "evening" ? 0xffb070 : phase === "night" ? 0x8fa8ff : 0xfff2d6); this.sunOffset.set(phase === "evening" ? 30 : 18, phase === "evening" ? 12 : 30, 14); }
-    if (this.hemi) this.hemi.intensity = phase === "night" ? 0.12 : phase === "nightroom" ? 0.5 : phase === "evening" ? 0.55 : 0.7;
+    if (this.sun) { this.sun.intensity = phase === "haunt" ? 0.04 : phase === "night" ? 0.08 : phase === "nightroom" ? 0.7 : phase === "evening" ? 1.1 : 2.1; this.sun.color.set(phase === "evening" ? 0xffb070 : phase === "night" ? 0x8fa8ff : 0xfff2d6); this.sunOffset.set(phase === "evening" ? 30 : 18, phase === "evening" ? 12 : 30, 14); }
+    if (this.hemi) this.hemi.intensity = phase === "haunt" ? 0.07 : phase === "night" ? 0.12 : phase === "nightroom" ? 0.5 : phase === "evening" ? 0.55 : 0.7;
     if (!this.stars) { const n = 400, pos = new Float32Array(n * 3); for (let i = 0; i < n; i++) { const a = Math.random() * Math.PI * 2, r = 250 + Math.random() * 120; pos[i * 3] = Math.cos(a) * r; pos[i * 3 + 1] = 60 + Math.random() * 160; pos[i * 3 + 2] = Math.sin(a) * r; } const geo = new THREE.BufferGeometry(); geo.setAttribute("position", new THREE.BufferAttribute(pos, 3)); this.stars = new THREE.Points(geo, new THREE.PointsMaterial({ color: 0xffffff, size: 1.6, sizeAttenuation: true })); this.scene.add(this.stars); }
     this.stars.visible = phase === "night";
     for (const l of this.lampLights || []) l.visible = phase === "night" || phase === "evening";
-    if (this.roomLight) this.roomLight.intensity = phase === "nightroom" ? 10 : 18;
+    if (this.roomLight) this.roomLight.intensity = phase === "haunt" ? 2 : phase === "nightroom" ? 10 : 18;
   }
   setWinter(on) { if (on === !!this.winter && this.winter !== undefined) return; this.winter = on; if (this.raining) return; this.scene.background.set(on ? 0xd7dde3 : 0xbfe3f2); if (this.scene.fog) { this.scene.fog.color.set(on ? 0xd7dde3 : 0xbfe3f2); this.scene.fog.near = on ? 40 : 150; this.scene.fog.far = on ? 160 : 420; } }
   setRain(on) {
@@ -4336,7 +4336,7 @@ function standPose(group) {
 const ROOM_ORIGIN = { x: 600, z: 600 }; // far from the village
 const ROOM_H = 3.2;
 // Floor sizes by room type (metres). Big places get several rooms joined by doorways.
-const ROOM_PLANS = { mainbuilding: [46, 22], lab: [28, 16], computer: [24, 14], canteen: [24, 14], hospital: [30, 16], home: [26, 16], school: [30, 16], clinic: [30, 16], office: [30, 18], mall: [34, 22], supermarket: [30, 18], lobby: [24, 16], station: [60, 28], airport: [70, 34], hall: [26, 16], library: [22, 14], gym: [24, 14], cinema: [24, 16], metro: [26, 14], rooftop: [22, 16], house: [18, 12], shop: [18, 12], eatery: [18, 12], hotelroom: [16, 12], temple: [18, 14], mandir: [18, 14], monastery: [18, 14], gurudwara: [20, 14], church: [18, 16], masjid: [20, 14], meditation: [20, 14], ashram: [22, 14], barn: [18, 12], granary: [16, 12] };
+const ROOM_PLANS = { haveli: [44, 28], mainbuilding: [46, 22], lab: [28, 16], computer: [24, 14], canteen: [24, 14], hospital: [30, 16], home: [26, 16], school: [30, 16], clinic: [30, 16], office: [30, 18], mall: [34, 22], supermarket: [30, 18], lobby: [24, 16], station: [60, 28], airport: [70, 34], hall: [26, 16], library: [22, 14], gym: [24, 14], cinema: [24, 16], metro: [26, 14], rooftop: [22, 16], house: [18, 12], shop: [18, 12], eatery: [18, 12], hotelroom: [16, 12], temple: [18, 14], mandir: [18, 14], monastery: [18, 14], gurudwara: [20, 14], church: [18, 16], masjid: [20, 14], meditation: [20, 14], ashram: [22, 14], barn: [18, 12], granary: [16, 12] };
 
 // Which room type a building becomes, from its sign (or "house").
 function roomTypeFor(sign) {
@@ -4494,8 +4494,8 @@ class Room {
   }
 
   _build() {
-    const wallColors = { mainbuilding: 0xfff1d6, lab: 0xffffff, computer: 0xe3ecf5, canteen: 0xffe0a3, hospital: 0xffffff, supermarket: 0xffffff, home: 0xffe7b3, mandir: 0xfff1d6, monastery: 0xfff8ec, gurudwara: 0xffffff, church: 0xf6efd8, masjid: 0xfff8ec, meditation: 0xfff8ec, ashram: 0xf3d9c8, barn: 0xa0522d, granary: 0xe8d5b5, lobby: 0xfff1d6, gym: 0xe3ecf5, rooftop: 0xbfe3f2, cinema: 0x2b2b3a, hotelroom: 0xf3d9c8, office: 0xe3ecf5, mall: 0xfff1d6, metro: 0xdfe6ea, house: 0xfff1d6, shop: 0xe3ecf5, eatery: 0xffe0a3, school: 0xf6efd8, clinic: 0xffffff, library: 0xf3d9c8, hall: 0xf2e4c8, station: 0xd9e4d0, temple: 0xfff1d6 };
-    const floorColors = { mainbuilding: 0xd9d4c7, lab: 0xdfe6ea, computer: 0x9aa6ad, canteen: 0xc9a86a, hospital: 0xdfe6ea, supermarket: 0xdfe6ea, home: 0xd7b98e, mandir: 0xe8d5b5, monastery: 0x8a5626, gurudwara: 0xdfe6ea, church: 0xa67c52, masjid: 0xc94848, meditation: 0xe8d5b5, ashram: 0xd7b98e, barn: 0x8a5626, granary: 0xbfb6a5, lobby: 0xdfe6ea, gym: 0x8d6e63, rooftop: 0x9e9e9e, cinema: 0x3a2f45, hotelroom: 0xa67c52, office: 0x9aa6ad, mall: 0xdfe6ea, metro: 0x8d8a80, house: 0xd7b98e, shop: 0xbfb6a5, eatery: 0xc9a86a, school: 0xbfb6a5, clinic: 0xdfe6ea, library: 0xa67c52, hall: 0xc4a484, station: 0xbfb6a5, temple: 0xe8d5b5 };
+    const wallColors = { haveli: 0x3a332c, mainbuilding: 0xfff1d6, lab: 0xffffff, computer: 0xe3ecf5, canteen: 0xffe0a3, hospital: 0xffffff, supermarket: 0xffffff, home: 0xffe7b3, mandir: 0xfff1d6, monastery: 0xfff8ec, gurudwara: 0xffffff, church: 0xf6efd8, masjid: 0xfff8ec, meditation: 0xfff8ec, ashram: 0xf3d9c8, barn: 0xa0522d, granary: 0xe8d5b5, lobby: 0xfff1d6, gym: 0xe3ecf5, rooftop: 0xbfe3f2, cinema: 0x2b2b3a, hotelroom: 0xf3d9c8, office: 0xe3ecf5, mall: 0xfff1d6, metro: 0xdfe6ea, house: 0xfff1d6, shop: 0xe3ecf5, eatery: 0xffe0a3, school: 0xf6efd8, clinic: 0xffffff, library: 0xf3d9c8, hall: 0xf2e4c8, station: 0xd9e4d0, temple: 0xfff1d6 };
+    const floorColors = { haveli: 0x2b2621, mainbuilding: 0xd9d4c7, lab: 0xdfe6ea, computer: 0x9aa6ad, canteen: 0xc9a86a, hospital: 0xdfe6ea, supermarket: 0xdfe6ea, home: 0xd7b98e, mandir: 0xe8d5b5, monastery: 0x8a5626, gurudwara: 0xdfe6ea, church: 0xa67c52, masjid: 0xc94848, meditation: 0xe8d5b5, ashram: 0xd7b98e, barn: 0x8a5626, granary: 0xbfb6a5, lobby: 0xdfe6ea, gym: 0x8d6e63, rooftop: 0x9e9e9e, cinema: 0x3a2f45, hotelroom: 0xa67c52, office: 0x9aa6ad, mall: 0xdfe6ea, metro: 0x8d8a80, house: 0xd7b98e, shop: 0xbfb6a5, eatery: 0xc9a86a, school: 0xbfb6a5, clinic: 0xdfe6ea, library: 0xa67c52, hall: 0xc4a484, station: 0xbfb6a5, temple: 0xe8d5b5 };
     const wall = wallColors[this.type] || 0xfff1d6;
     this.wallColor = wall;
     // Floor and three walls (the +z side stays open for the camera).
@@ -4505,7 +4505,7 @@ class Room {
     this._box(this.w, wallH, 0.3, wall, 0, wallH / 2, -this.d / 2);
     this._box(0.3, wallH, this.d, wall, -this.w / 2, wallH / 2, 0);
     this._box(0.3, wallH, this.d, wall, this.w / 2, wallH / 2, 0);
-    if (this.type !== "rooftop" && this.type !== "cinema") {
+    if (this.type !== "rooftop" && this.type !== "cinema" && this.type !== "haveli") {
       // A rug and a window on the back wall.
       this._box(3.5, 0.03, 2.5, 0xc94848, 0, 0.02, 0.5, false);
       const win = new THREE.Mesh(new THREE.BoxGeometry(1.4, 1.1, 0.1), new THREE.MeshStandardMaterial({ color: 0xbfe3f2, emissive: 0x9fd3ea, emissiveIntensity: 0.5 }));
@@ -4618,6 +4618,39 @@ class Room {
       this._box(2.4, 0.9, 0.5, 0x555e66, 3.4, 0.45, -3.3); for (let i = 0; i < 4; i++) this._box(0.5, 0.3, 0.3, 0x111111, 2.5 + i * 0.6, 1.05, -3.3, false); // dumbbell rack
       this._box(2.0, 0.05, 1.2, 0x3a86ff, 2.5, 0.03, 1.2, false); // yoga mat
       const mirror = new THREE.Mesh(new THREE.BoxGeometry(4, 1.6, 0.05), new THREE.MeshStandardMaterial({ color: 0xcfe6ff, emissive: 0x9fd3ea, emissiveIntensity: 0.3, metalness: 0.8 })); mirror.position.set(0, 1.6, -this.d / 2 + 0.2); this.group.add(mirror);
+    } else if (t === "haveli") {
+      // The haunted haveli: a gate, a courtyard with a dry well, the great hall, the staircase, a dark corridor and the cellar door.
+      const glow = (c, x, y, z, w = 0.12, h = 0.25) => { const m = new THREE.Mesh(new THREE.BoxGeometry(w, h, w), new THREE.MeshBasicMaterial({ color: c })); m.position.set(x, y, z); this.group.add(m); return m; };
+      const web = (x, y, z, ry) => { const m = new THREE.Mesh(new THREE.PlaneGeometry(1.6, 1.6), new THREE.MeshBasicMaterial({ color: 0xdfe6ea, transparent: true, opacity: 0.25, side: THREE.DoubleSide })); m.position.set(x, y, z); m.rotation.y = ry; this.group.add(m); };
+      // Partition walls with gaps you can walk through.
+      this._box(0.4, 4.2, 10, 0x2e2822, -9, 2.1, -9); this._box(0.4, 4.2, 4, 0x2e2822, -9, 2.1, 8);
+      this._box(0.4, 4.2, 10, 0x2e2822, 9, 2.1, -9); this._box(0.4, 4.2, 4, 0x2e2822, 9, 2.1, 8);
+      this._box(0.3, 3.6, 8, 0x241f1a, -3, 1.8, -10); this._box(0.3, 3.6, 8, 0x241f1a, 3, 1.8, -10); // the corridor
+      // The inner iron gate by the entrance.
+      for (let i = 0; i < 7; i++) { this._box(0.08, 2.6, 0.08, 0x1a1a1a, -3.2 + i * 0.3, 1.3, 10.5, false); this._box(0.08, 2.6, 0.08, 0x1a1a1a, 1.4 + i * 0.3, 1.3, 10.5, false); }
+      this._box(1.9, 0.12, 0.1, 0x1a1a1a, -2.3, 2.5, 10.5, false); this._box(1.9, 0.12, 0.1, 0x1a1a1a, 2.3, 2.5, 10.5, false);
+      // Courtyard: the dry well and a dead tree.
+      const well = new THREE.Mesh(new THREE.CylinderGeometry(1.1, 1.2, 0.9, 14), mat(0x4a423a)); well.position.set(4, 0.45, 1.5); this.group.add(well); this._solid(4, 1.5, 2.2, 2.2);
+      this._box(0.3, 4, 0.3, 0x2a2019, -4, 2, -1); this._box(1.6, 0.12, 0.12, 0x2a2019, -3.4, 3.2, -1, false);
+      // The balcony at the back of the courtyard.
+      this._box(8, 0.25, 1.4, 0x2e2822, 0, 3.4, -4.6, false); for (let i = 0; i < 9; i++) this._box(0.08, 0.8, 0.08, 0x1a1a1a, -3.8 + i * 0.95, 3.9, -4.0, false);
+      // The great hall: a long table, broken chairs, a torn red curtain and a fallen chandelier.
+      this._box(4, 0.8, 1.4, 0x3b2a1a, -15, 0.4, 2); for (const cx of [-16.5, -13.5]) this._box(0.6, 0.5, 0.6, 0x3b2a1a, cx, 0.25, 3.4);
+      const cur = new THREE.Mesh(new THREE.PlaneGeometry(3.4, 3.6), new THREE.MeshStandardMaterial({ color: 0x5a0f14, side: THREE.DoubleSide, roughness: 1 })); cur.position.set(-21.6, 2.0, -1); cur.rotation.y = Math.PI / 2; this.group.add(cur);
+      this._box(1.6, 0.3, 1.6, 0x6b5a2a, -14, 0.15, -2.5, false); for (let i = 0; i < 5; i++) glow(0x777766, -14.6 + i * 0.3, 0.4, -2.5, 0.06, 0.3);
+      for (let i = 0; i < 3; i++) this._box(1.2, 1.6, 0.1, 0x1c1814, -18 + i * 3.5, 2.4, -13.8, false); // dark portraits
+      // The staircase going up on the right.
+      for (let i = 0; i < 7; i++) this._box(3, 0.35 * (i + 1), 0.9, 0x3a3029, 17, 0.175 * (i + 1), 8 - i * 0.9);
+      this._box(0.1, 1.0, 6.4, 0x1a1a1a, 15.4, 1.6, 5.3, false);
+      // Footprints in the dust towards the cellar.
+      for (let i = 0; i < 8; i++) { const fp = new THREE.Mesh(new THREE.BoxGeometry(0.18, 0.02, 0.32), new THREE.MeshBasicMaterial({ color: 0x6b5a45 })); fp.position.set(12 + (i % 2) * 0.35, 0.02, 1 - i * 1.2); this.group.add(fp); }
+      // The cellar door in the back-right corner, with light through the crack.
+      this._box(2.4, 0.15, 2.4, 0x3b2a1a, 16, 0.08, -10.5, false); glow(0xffb347, 16, 0.18, -10.5, 2.0, 0.04); this._box(0.3, 1.2, 0.3, 0x3b2a1a, 17.4, 0.6, -11.8);
+      // Candles and cobwebs.
+      this.candles = [glow(0xffd27a, -15, 0.95, 1.6), glow(0xffd27a, -14.4, 0.95, 2.3), glow(0xffd27a, 17, 2.7, 1.8), glow(0xffd27a, 0, 1.2, -13.6)];
+      web(-21.5, 3.6, -13.5, Math.PI / 4); web(21.5, 3.6, -13.5, -Math.PI / 4); web(-8.8, 3.2, 6.2, Math.PI / 2); web(0, 3.2, -13.8, 0);
+      // Where each part of the mystery happens (room-local).
+      this.haveliSpots = [[0, 8.6], [0.5, -1.5], [-18.5, -0.5], [13.2, 2.5], [0, -8.5], [15.5, -8.2]];
     } else if (t === "rooftop") {
       for (let i = 0; i < 6; i++) this._box(0.7, 0.9, 0.7, [0x4e9e4a, 0x6fae54, 0x3f8f3a][i % 3], -4 + i * 1.6, 0.45, -3.2); // planters
       for (let i = 0; i < 3; i++) this._box(0.5, 0.3, 0.5, [0xff6b8a, 0xffd23f, 0xffffff][i], -3.9 + i * 3.2, 1.05, -3.2, false); // flowers
@@ -4748,9 +4781,9 @@ class Room {
   // Plants in the corners and a bigger rug: every room gets these.
   _decor() {
     const W = this.w, D = this.d;
-    if (this.type === "rooftop") return;
+    if (this.type === "rooftop" || this.type === "haveli") return;
     for (const [x, z] of [[-W / 2 + 0.9, -D / 2 + 0.9], [W / 2 - 0.9, -D / 2 + 0.9]]) this._plant(x, z);
-    if (!["cinema", "gym", "supermarket", "mall"].includes(this.type)) this._box(Math.min(6, W * 0.4), 0.03, Math.min(4, D * 0.35), 0xc94848, 0, 0.02, D * 0.1, false);
+    if (!["cinema", "gym", "supermarket", "mall", "haveli"].includes(this.type)) this._box(Math.min(6, W * 0.4), 0.03, Math.min(4, D * 0.35), 0xc94848, 0, 0.02, D * 0.1, false);
   }
 
   // The big floor plans: several rooms joined by doorways.
@@ -6799,7 +6832,7 @@ class Game {
   _enterRoom(door, floor = 0) {
     if (this.player.riding) this.player.dismount();
     const room = this.world.getRoom(door, floor);
-    if (!room.occupant && !["mainbuilding", "home"].includes(room.type)) {
+    if (!room.occupant && !["mainbuilding", "home", "haveli"].includes(room.type)) {
       const names = OCCUPANTS[room.type] || OCCUPANTS.house;
       const def = { id: "room" + this.world.rooms.size, name: names[this.world.rooms.size % names.length], look: { shirt: [0xe75480, 0x4f772d, 0x3a86ff, 0xffb703][this.world.rooms.size % 4], dress: this.world.rooms.size % 2 === 0, hair: 0x1d1410 }, greet: OCC_GREETS[room.type] || OCC_GREETS.house, pitch: 400 };
       room.occupant = new Npc(def, this.world, { pos: room.occupantPos(), fixed: true }); this.npcs.push(room.occupant);
@@ -6824,6 +6857,7 @@ class Game {
     this.applyUniform(); if (door.label === "Our Home" && this._wearing) showToast(this._wearing === "pajama" ? L("😴 Pajamas on. Time to relax.") : L("👕 You change into your home T-shirt and shorts."), 2200);
     if (door.label === "Suryanagar Mall") this._mallSetup(room);
     if (door.label === "FitZone Gym") this._gymSetup(room);
+    if (room.type === "haveli") this._haveliSetup(room);
     if (door.label === "Our Home") this._telescopeAt(room);
     if (door.label === "City Hospital") this._bloodCamp(room);
     if (this._outing && this._outing.o.place === door.label) setTimeout(() => this._startOuting(room), 500);
@@ -7899,7 +7933,7 @@ class Game {
     // A lost wallet on the footpath every fourth day.
     const w = new THREE.Mesh(new THREE.BoxGeometry(0.28, 0.06, 0.2), new THREE.MeshStandardMaterial({ color: 0x5a3a1a })); w.position.set(-66, 0.05, 46.5); this.world.scene.add(w); this._wallet = w;
     its.push({ pos: w.position, radius: 1.8, visible: () => w.visible, prompt: () => L("A wallet on the footpath! Pick it up"), activate: () => { const pr = this.progress; w.visible = false; pr.walletDay = pr.day; saveProgress(this.profile, pr); playPick(); const card = openPanel(`<h2>👛 ${L("A lost wallet")}</h2><p class="job-brief">${L("Inside: ₹200, an ID card of Mr. Kapoor, and a photo of his daughter.")}</p><div class="btn-row"><button class="big-btn" id="wl-ret">👮 ${L("Take it to the traffic police")}</button><button class="ghost-btn" id="wl-keep">💰 ${L("Keep the money")}</button></div>`); card.querySelector("#wl-ret").addEventListener("click", () => { closePanel(); pr.walletHeld = true; saveProgress(this.profile, pr); this.setObjective(L("Give the wallet to the traffic police at the colony road signal"), -31, 31); showToast(L("👛 Good choice. The traffic police are at the signal."), 2600, "good"); }); card.querySelector("#wl-keep").addEventListener("click", () => { closePanel(); this.addMoney(200, "kept wallet"); this.addRep(-3, L("kept a lost wallet")); this.diary(L("Kept a wallet I found. It does not feel good.")); this.dialogue.say(L("Your heart"), [L("₹200 in your pocket. But the photo of the little girl... Mr. Kapoor must be searching everywhere."), L("Dadi always says: what is not yours never stays yours.")], null, { pitch: 400 }); }); } });
-    this._buildIdeas(); this._buildNight();
+    this._buildIdeas(); this._buildNight(); this._buildMissions();
   }
   _talkRoad2(npc, def, pr, o, done) {
     const r = def.road;
@@ -8081,6 +8115,7 @@ class Game {
   }
   // You step out in the new city: the place name, the compass to the stadium, and spoken directions.
   _arriveCity(city, s3, via = "air", purpose = "match") {
+    if (purpose === "mission" && this._braveM) { this._missionArrive(city, s3, via); return; }
     const S = this.world.stadium, ap = this.world.doors.find((d) => d.label === (via === "rail" ? "Railway Station" : "Suryanagar Airport")); if (this.world.currentRoom) this._exitRoom(); if (this.player.riding) this.player.dismount();
     if (ap) { this.player.group.position.set(ap.x, 0, ap.z + 2.5); this.player._placeCamera(1); }
     if (purpose === "duty" && !this.job) purpose = "family";
@@ -8096,6 +8131,7 @@ class Game {
     speakLine(L("Welcome to {c}. {p} is {d}, about {m} metres away. Follow the compass.", { c: city, p: place, d: L(dir), m: dist }), 380);
   }
   _purposeLine(purpose, city) {
+    if (purpose === "mission" && this._braveM) return L("🎖️ Bravery mission: {n}. The site is {p}. Hurry!", { n: this._braveM.name, p: this._braveM.site });
     return { duty: this.job ? L("You are here on duty. Your {j} office in {c} is waiting for you.", { j: this.job.name, c: city }) : L("You have no job yet, so this becomes a family trip."), family: L("A family vacation! Maa, Papa and Dadi meet you at the {c} Grand Hotel.", { c: city }), friends: L("A friends trip! Your friends are waiting at the {c} Food Street.", { c: city }) }[purpose] || L("Your match is at the {c} Cricket Stadium today. Suryanagar Juniors against the {c} Colts!", { c: city });
   }
   // The four purposes on a ticket: match, work duty, family vacation, friends trip.
@@ -8107,7 +8143,7 @@ class Game {
   // Arriving at the purpose place in the city.
   _tripArrive(room) {
     const mt = this._matchTrip; if (!mt || mt.started || this.world.currentRoom !== room) return; mt.started = true; const pr = this.progress, name = this.playerName || L("you"), s3 = mt.s3;
-    const home = (line) => { if (mt.banner) this.world.scene.remove(mt.banner); this._matchTrip = null; this._travelOutfit = null; this.applyUniform(); this.dialogue.say(L("Trip"), [line, mt.via === "rail" ? L("(The next day you ride the train home to Suryanagar Junction.)") : L("(The next day you fly home to Suryanagar.)")], () => { if (this.world.currentRoom) this._exitRoom(); const ap = this.world.doors.find((d) => d.label === (mt.via === "rail" ? "Railway Station" : "Suryanagar Airport")); if (ap) { this.player.group.position.set(ap.x, 0, ap.z + 2.5); this.player._placeCamera(1); } this.setObjective(L("Home again!"), null); this._parkVehiclesHome(); this._startPhase("over"); }, { pitch: 380 }); };
+    const home = (line) => { if (mt.banner) this.world.scene.remove(mt.banner); this._matchTrip = null; this._travelOutfit = null; this.applyUniform(); this._cityStay(mt, () => this.dialogue.say(L("Trip"), [line, mt.via === "rail" ? L("(You ride the train home to Suryanagar Junction.)") : L("(You fly home to Suryanagar.)")], () => { if (this.world.currentRoom) this._exitRoom(); const ap = this.world.doors.find((d) => d.label === (mt.via === "rail" ? "Railway Station" : "Suryanagar Airport")); if (ap) { this.player.group.position.set(ap.x, 0, ap.z + 2.5); this.player._placeCamera(1); } this.setObjective(L("Home again!"), null); this._parkVehiclesHome(); this._startPhase("over"); }, { pitch: 380 })); };
     if (mt.purpose === "duty") { const job = this.job; this.dialogue.say(job.boss, [L("Welcome to the {c} office, {r}.", { c: mt.city, r: rankName(job, pr.shifts) }), L("Special duty today: three hard cases from the {c} team. Show them how Suryanagar works.", { c: mt.city })], () => this._runPaper(`${job.icon} ${L("Special duty in {c}", { c: mt.city })}`, casesFor(job, 3), (s) => { const pay = salaryFor(job, pr.shifts) * 2; this.addMoney(pay, L("special duty")); pr.shifts = (pr.shifts || 0) + 1; saveProgress(this.profile, pr); this.addRep(2, L("special duty in {c}", { c: mt.city })); this._snap(job.icon, `Special duty in ${mt.city}: ${s}/3 cases.`); this.diary(L("Special duty in {c}: {s}/3 cases.", { c: mt.city, s })); home(L("{s} of 3 cases solved. The {c} chief shakes your hand: 'Come back any time.' Double pay: ₹{p}!", { s, c: mt.city, p: pay })); }), { pitch: 340 }); return; }
     if (mt.purpose === "family") { this.dialogue.say("Papa", [L("Our room has a window over the whole city, champ!"), L("Day 1: {s}", { s: L(s3[0]) }), L("Day 2: {s}", { s: L(s3[1]) }), L("Day 3: {s}", { s: L(s3[2]) }), L("Dadi: 'I have not had a holiday like this in forty years. Thank you, beta.'")], () => { const items = [[L("A key chain with the city name"), 50], [L("Local sweets for the neighbours"), 80], [L("A T-shirt that says I love {c}", { c: mt.city }), 120]]; const card = openPanel(`<h2>🛍️ ${L("Souvenir shop, {c}", { c: mt.city })}</h2><p class="job-brief">${L("Pick one gift to take home. You have ₹{m}.", { m: pr.money })}</p><div class="shop-list">${items.map((it, i) => `<div class="cart-row"><div><b>${it[0]}</b><small>₹${it[1]}</small></div><button class="use-btn" id="sv-${i}">${L("Buy")}</button></div>`).join("")}</div><div class="btn-row"><button class="ghost-btn" id="sv-no">${L("No gift")}</button></div>`); const done = (g) => { closePanel(); pr.vacations = (pr.vacations || 0) + 1; saveProgress(this.profile, pr); this._snap("👨‍👩‍👧", `Family vacation in ${mt.city}.`); this.diary(L("Family vacation in {c}. {g}", { c: mt.city, g: g || "" })); this.addEnergy && this.addEnergy(30); home(L("Best family holiday ever. Maa puts the photo on the fridge.")); }; items.forEach((it, i) => card.querySelector(`#sv-${i}`).addEventListener("click", () => { if (pr.money < it[1]) { showToast(L("Not enough money."), 2000, "bad"); return; } this.addMoney(-it[1], "souvenir"); done(L("Bought {g}.", { g: it[0] })); })); card.querySelector("#sv-no").addEventListener("click", () => done("")); }, { pitch: 360 }); return; }
     if (mt.purpose === "friends") { const [a, b] = this._mates(); this.dialogue.say(a, [L("{p}! You made it! {b} found the best street food in {c}.", { p: name, b, c: mt.city }), L("{b}: First the food, then the sights, then a group selfie!", { b }), L(s3[0]), L(s3[2]), L("(Click! The group selfie with all three of you goes in the album.)")], () => { for (const f of this.friends || []) if ([a, b].includes(f.name)) this.addFriendship(f.def.id, 2, "trip"); pr.friendTrips = (pr.friendTrips || 0) + 1; saveProgress(this.profile, pr); this._snap("🤳", `Friends trip to ${mt.city} with ${a} and ${b}.`); this.diary(L("Friends trip to {c} with {a} and {b}.", { c: mt.city, a, b })); this.addEnergy && this.addEnergy(25); home(L("{a}: Same trip next year? Promise?", { a })); }, { pitch: 470 }); return; }
@@ -8142,7 +8178,7 @@ class Game {
       <div class="section-label">${L("{c} Colts", { c: city })}: ${oppo} ${L("all out")} (18.2 ${L("overs")})</div>
       <p class="job-brief">🏅 ${L("Player of the Match")}: <b>${name}</b></p>
       <div class="btn-row"><button class="big-btn" id="mr-ok">${L("Lift the trophy!")}</button></div>`);
-    card.querySelector("#mr-ok").addEventListener("click", () => { closePanel(); this.dialogue.say(L("Commentator"), [L("And that is the match! Suryanagar Juniors win by {m} runs, and it is all because of {n}!", { m: margin, n: name }), century ? L("{r} not out: a century in the final! The whole stadium is on its feet.", { r: yours }) : L("{r} runs, the most in the team. What a player!", { r: yours }), L(mt.s3[1]), mt.via === "rail" ? L("(The team lifts the trophy. The next day you ride the train home to Suryanagar Junction with the cup and a medal.)") : L("(The team lifts the trophy. The next day you fly home to Suryanagar with the cup and a medal.)")], () => { const ap = this.world.doors.find((d) => d.label === (mt.via === "rail" ? "Railway Station" : "Suryanagar Airport")); if (ap) { this.player.group.position.set(ap.x, 0, ap.z + 2.5); this.player._placeCamera(1); } this.setObjective(L("Home, a champion!"), null); this._parkVehiclesHome(); this._startPhase("over"); }, { pitch: 360 }); });
+    card.querySelector("#mr-ok").addEventListener("click", () => { closePanel(); this.dialogue.say(L("Commentator"), [L("And that is the match! Suryanagar Juniors win by {m} runs, and it is all because of {n}!", { m: margin, n: name }), century ? L("{r} not out: a century in the final! The whole stadium is on its feet.", { r: yours }) : L("{r} runs, the most in the team. What a player!", { r: yours }), L(mt.s3[1]), mt.via === "rail" ? L("(The team lifts the trophy. The next day you ride the train home to Suryanagar Junction with the cup and a medal.)") : L("(The team lifts the trophy. The next day you fly home to Suryanagar with the cup and a medal.)")], () => this._cityStay(mt, () => { const ap = this.world.doors.find((d) => d.label === (mt.via === "rail" ? "Railway Station" : "Suryanagar Airport")); if (ap) { this.player.group.position.set(ap.x, 0, ap.z + 2.5); this.player._placeCamera(1); } this.setObjective(L("Home, a champion!"), null); this._parkVehiclesHome(); this._startPhase("over"); }), { pitch: 360 }); });
   }
   // Outings: two friends (or jobmates) talk about a plan and invite you.
   _mates() {
@@ -8895,9 +8931,9 @@ class Game {
     if (this.player.riding && this.player.riding.kind === "bike" && this.progress.energy <= 0 && !this.progress.cast && !panelOpen()) this._fallOffBike();
     if (!blocked && this.player.riding && this.player.riding.duty && this.input.keys && this.input.keys.has("f") && !this._sirenHeld) { this._sirenHeld = true; this._siren = !this._siren; showToast(this._siren ? L("🚨 Siren on") : L("Siren off"), 1200); } if (!(this.input.keys && this.input.keys.has("f"))) this._sirenHeld = false;
     const useP = !blocked && this.input.usePressed(); if (this._trial) { const eP = this.input.interactPressed(); this._tickTrial(dt, useP || eP); this.ui.setInteractPrompt(`${this._trial ? this._trial.spec.icon : ""} ${L(this._trial && this._trial.kind === "cricket" ? "Swing" : "Shoot")}  (F / E)`); }
-    this._tickPet(dt); this._tickRain(); this._tickP2(dt); this._tickDirections(dt); this._tickCrowd(dt); this._tickField(dt); this._tickPartner(dt); this._tickChase(dt); this._tickTraffic(elapsed); this._tickRoadLife(dt); this._tickTransport(dt, elapsed); this._tickLounge(dt, elapsed); this._tickOutings(dt); this._tickMatchTrip(); this._tickIdeas(dt, elapsed); this._tickNight(dt, elapsed);
+    this._tickPet(dt); this._tickRain(); this._tickP2(dt); this._tickDirections(dt); this._tickCrowd(dt); this._tickField(dt); this._tickPartner(dt); this._tickChase(dt); this._tickTraffic(elapsed); this._tickRoadLife(dt); this._tickTransport(dt, elapsed); this._tickLounge(dt, elapsed); this._tickOutings(dt); this._tickMatchTrip(); this._tickIdeas(dt, elapsed); this._tickNight(dt, elapsed); this._tickHaveli(dt); this._tickMission && this._tickMission(dt);
     sirenTick(!!(this.player.riding && this.player.riding.duty && this._siren), dt); if (this._dutyLights) { const on = Math.floor(elapsed * 4) % 2 === 0; this._dutyLights[0].material.emissiveIntensity = this._siren && on ? 2 : 0.2; this._dutyLights[1].material.emissiveIntensity = this._siren && !on ? 2 : 0.2; }
-    if (this.world.setTimeOfDay) this.world.setTimeOfDay(this.world.currentRoom ? (this.phase === "night" ? "nightroom" : "school") : this.phase);
+    if (this.world.setTimeOfDay) this.world.setTimeOfDay(this.world.currentRoom ? (this.world.currentRoom.type === "haveli" ? "haunt" : this.phase === "night" ? "nightroom" : "school") : this.phase);
     musicTick(this._trial ? "stadium" : this.world.currentRoom ? (["canteen", "eatery", "shop", "supermarket"].includes(this.world.currentRoom.type) ? "market" : null) : this.phase === "school" ? "school" : this.phase === "over" ? "evening" : Math.hypot(pp.x - 40, pp.z - 80) < 45 ? "market" : this.phase, dt);
     if (this.player.riding && this.player.riding.kind === "bike" && this.player.speedKmh > 1) { this._rideDist = (this._rideDist || 0) + this.player.speedKmh / 3.6 * dt; if (this._rideDist >= 200) { this._rideDist = 0; this._mission("exercise"); } }
     if (this._seatArrow && this.world.currentRoom) this._seatArrow.position.y = 2.6 + Math.sin(elapsed * 3) * 0.25;
@@ -9439,6 +9475,7 @@ class Game {
       ["normal", "👕", L("Normal clothes for three days"), !cold && !hot, !cold && !hot ? L("Comfortable everyday clothes are just right.") : L("You need special clothes for this weather.")],
       ["kit", "🏏", L("Cricket whites and kit"), P === "match", P === "match" ? L("You are playing the final. Pack your whites!") : L("No match on this trip.")],
       ["uniform", "👮", job ? L("Your {j} uniform and badge", { j: job.name }) : L("Work uniform"), P === "duty", P === "duty" ? L("You are on duty. The uniform and badge must come.") : L("No work on this trip.")],
+      ["rescue", "🔦", L("Torch, whistle, rope and raincoat"), P === "mission", P === "mission" ? L("A rescue mission! Torch to see, whistle to call, rope to pull, raincoat for bad weather.") : L("No rescue work on this trip.")],
       ["camera", "📷", L("Camera for photos"), P === "family" || P === "friends", P === "family" || P === "friends" ? L("Holiday photos for the album!") : L("You can use your phone.")],
       ["knife", "🔪", L("A big kitchen knife"), false, fly ? L("Knives are NOT allowed on planes. Security takes them away.") : L("Sharp knives are not needed and are not safe in a bag.")],
       ["liquid", "🧃", L("A big 2-litre bottle of juice"), false, fly ? L("On planes, liquids over 100 ml are not allowed in the cabin bag.") : L("Too heavy. Buy juice on the way.")],
@@ -9519,14 +9556,19 @@ class Game {
     if (this._haveliWin && this._haveliWin.material) this._haveliWin.material.color.setHex && this._haveliWin.material.color.setHex(night && Math.sin(elapsed * 1.3) > 0.7 ? 0xffb347 : 0x332200);
     const G = this._ghost; if (!G) return; const g = G.group;
     const allowed = night && out && !this.gentle && !this._cut && !this._trial && !this._chase && !this._uiBlocking();
-    if (!allowed) { if (G.mode) this._ghostGone(null); G.mode = null; if (g.visible) g.visible = false; return; }
+    if (!allowed) { if (G.mode === "chase" && this.world.currentRoom && !this.gentle) this._ghostEscaped(L("🚪 You dive inside and slam the door! It cannot follow you in. You escaped!")); if (G.mode) this._ghostGone(null); G.mode = null; if (g.visible) g.visible = false; return; }
     G.t += dt;
     // Where the camera looks: it sits behind the player at camYaw, so the view runs the other way.
     const cy = this.player.camYaw || 0, vx = -Math.sin(cy), vz = -Math.cos(cy);
     if (!G.mode) { G.next -= dt; if (G.next > 0) return; G.next = 25 + Math.random() * 25;
       const kind = Math.random(); pr.ghostSeen = (pr.ghostSeen || 0);
-      if (kind < 0.25) { const sounds = [L("👣 Footsteps behind you... You turn. Nobody."), L("🔔 Anklets jingle in the dark: chham, chham... then silence."), L("🦉 An owl hoots three times. The dogs start howling."), L("🌬️ A cold wind. Someone whispers your name from the trees...")]; showToast(sounds[Math.floor(Math.random() * sounds.length)], 3400, "bad"); try { playBark(); } catch (e) { /* sound optional */ } return; }
-      if (kind < 0.6) {
+      if (kind < 0.2) { const sounds = [L("👣 Footsteps behind you... You turn. Nobody."), L("🔔 Anklets jingle in the dark: chham, chham... then silence."), L("🦉 An owl hoots three times. The dogs start howling."), L("🌬️ A cold wind. Someone whispers your name from the trees...")]; showToast(sounds[Math.floor(Math.random() * sounds.length)], 3400, "bad"); try { playBark(); } catch (e) { /* sound optional */ } return; }
+      if (kind > 0.45 && kind < 0.62) {
+        // The chase: it comes for you. Run far away, or get inside a building.
+        const d = 15; g.position.set(pp.x + vx * d, 0.2, pp.z + vz * d); g.visible = true; G.mode = "chase"; G.show = 0; G.cx = g.position.x; G.cz = g.position.z;
+        for (const l of this.world.lampLights || []) l.visible = false; this._scareFlash();
+        this._cityBanner("😱 " + L("RUN!"), L("The white figure is coming FOR you! Run far away, or get inside a building!")); try { playWhoosh(); playBark(); } catch (e) { /* sound optional */ } return; }
+      if (kind < 0.62) {
         // Behind you: it waits where you cannot see. Turn round and it is there.
         G.mode = "behind"; G.show = 0; G.spot = { x: pp.x - vx * 5, z: pp.z - vz * 5 }; g.visible = false;
         showToast(L("🥶 The air goes ice cold. You feel someone standing right BEHIND you... Turn around (arrow keys, drag, or walk back)."), 5200, "bad"); try { playWhoosh(); } catch (e) { /* sound optional */ } return; }
@@ -9540,6 +9582,14 @@ class Game {
       const tx = G.spot.x - pp.x, tz = G.spot.z - pp.z, tl = Math.hypot(tx, tz) || 1;
       if ((tx * vx + tz * vz) / tl > 0.55) { g.position.set(G.spot.x, 0.2, G.spot.z); g.visible = true; G.show = 0; G.revealed = true; this._scareFlash(); for (const l of this.world.lampLights || []) l.visible = false; showToast(L("😱 IT WAS RIGHT BEHIND YOU! A pale face, dark eyes, staring..."), 3200, "bad"); try { playWhoosh(); playBark(); } catch (e) { /* sound optional */ } }
       else if (G.show > 14) { G.mode = null; showToast(L("🌬️ The cold feeling fades. Whatever it was, it is gone."), 3000); }
+      return; }
+    if (G.mode === "chase") {
+      const dx = pp.x - G.cx, dz = pp.z - G.cz, dd = Math.hypot(dx, dz) || 1;
+      if (G.show > 1.5) { G.cx += (dx / dd) * 5.2 * dt; G.cz += (dz / dd) * 5.2 * dt; }
+      g.position.set(G.cx, 0.3 + Math.sin(G.t * 9) * 0.12, G.cz); g.rotation.y = Math.atan2(dx, dz); G.mat.opacity = 0.5 + Math.abs(Math.sin(G.t * 11)) * 0.3;
+      for (const l of this.world.lampLights || []) l.visible = Math.random() > 0.6;
+      if (dd > 34 || G.show > 18) { this._ghostEscaped(dd > 34 ? L("🏃 You ran and ran... You look back. It is gone. You escaped!") : L("🐓 A rooster crows far away and the figure melts into mist. You escaped!")); return; }
+      if (dd < 1.1) { this._ghostGone(null); G.mode = null; this._scareFlash(); if (this.addEnergy) this.addEnergy(-10); pr.ghostCaught = (pr.ghostCaught || 0) + 1; saveProgress(this.profile, pr); showToast(L("🥶 It swoops right THROUGH you! Ice cold... then it is gone. You are fine, just shaking. (Energy -10)"), 3800, "bad"); this.diary(L("Night: a ghost chased me and swooped through me. Brrr!")); }
       return; }
     g.position.y = 0.2 + Math.sin(G.t * 2) * 0.15; g.rotation.y = Math.atan2(pp.x - g.position.x, pp.z - g.position.z); G.mat.opacity = 0.35 + Math.abs(Math.sin(G.t * 7)) * 0.3;
     if (G.mode === "front") g.position.x += Math.sin(G.t * 0.7) * dt * 0.8;
@@ -9555,6 +9605,12 @@ class Game {
     if (pr.ghostSeen === 3) { this._snap && this._snap("👻", "Saw a ghost three times at night."); showToast(L("🏅 Badge: Ghost Spotter!"), 3000, "good"); }
     this.diary(was === "behind" ? L("Night: something stood behind me on the road. I turned and saw it!") : L("Night: saw something white on the road. Was it a ghost?"));
   }
+  _ghostEscaped(msg) {
+    const G = this._ghost, pr = this.progress; if (!G) return; G.mode = null; G.group.visible = false; for (const l of this.world.lampLights || []) l.visible = true;
+    pr.escapes = (pr.escapes || 0) + 1; pr.ghostSeen = (pr.ghostSeen || 0) + 1; saveProgress(this.profile, pr); playSuccess(); showToast(msg, 3600, "good");
+    if (pr.escapes === 3) { this._snap && this._snap("🏃", "Escaped from a ghost chase three times."); showToast(L("🏅 Badge: Great Escape!"), 3000, "good"); }
+    this.diary(L("Night: a ghost chased me and I escaped!"));
+  }
   _scareFlash() {
     try { let f = document.getElementById("scare-flash"); if (!f) { f = document.createElement("div"); f.id = "scare-flash"; f.style.cssText = "position:fixed;inset:0;background:#000;opacity:0;pointer-events:none;z-index:60;transition:opacity .35s"; document.body.appendChild(f); }
       f.style.transition = "none"; f.style.opacity = "0.92"; requestAnimationFrame(() => requestAnimationFrame(() => { f.style.transition = "opacity .9s"; f.style.opacity = "0"; })); } catch (e) { /* flash optional */ }
@@ -9566,16 +9622,34 @@ class Game {
     if (this.gentle) { this.dialogue.say(L("Old watchman"), [L("Too late for adventures, beta. Go home and sleep.")], null, { pitch: 300 }); return; }
     if (pr.haveliFailDay === pr.day) { showToast(L("🦵 Your legs are still shaking. Sleep, and try again another night."), 3400, "bad"); return; }
     playWhoosh(); this._scareFlash();
-    this.dialogue.say(L("The haveli"), [L("(The gate creaks open by itself. Cold air. Dust. Somewhere inside, a scream.)"), L("(Your torch shakes in your hand. Robberies in town... ghosts in the haveli... Is it true?)"), L("🧭 Find out what is really inside. Stay brave: you have 5 💪 courage. Wrong moves cost courage. At 0 you run home.")], () => this._haveliStage(0, { courage: 5, clues: [], proof: false }), { pitch: 380 });
+    this.dialogue.say(L("The haveli"), [L("(You push the big wooden door. It creaks open... and slams shut behind you!)"), L("(Your torch shakes in your hand. Robberies in town... ghosts in the haveli... Is it true?)"), L("🧭 Walk through the haveli and find out. Six places to search: the gate, the courtyard, the great hall, the stairs, the dark corridor and the cellar. You have 5 💪 courage.")], () => {
+      const door = this._haveliDoor || (this._haveliDoor = { x: -154, z: 143, rot: Math.PI, label: "Old Haveli", type: "haveli", floors: 1, index: 9001 });
+      this._enterRoom(door);
+    }, { pitch: 380 });
+  }
+  // Inside the haveli: each place is a spot you walk to; they unlock in order.
+  _haveliSetup(room) {
+    const st = this._hv = { room, stage: 0, courage: 5, clues: [], proof: false, chase: null, jump: false }, spots = room.haveliSpots || [], stages = this._haveliStages();
+    this.world.roomLight.intensity = 2;
+    if (!room._balc) { const b = this._ghost.group.clone(); b.visible = true; b.position.set(0, 3.5, -4.6); room.group.add(b); room._balc = b; }
+    room._balc.visible = true; if (room._gang) for (const m of room._gang) m.visible = false;
+    spots.forEach(([lx, lz], i) => this.roomInteractables.push({ pos: { x: room.x0 + lx, z: room.z0 + lz }, radius: 2.4,
+      prompt: () => (!this._hv ? "" : i < this._hv.stage ? `✔️ ${stages[i].t}` : i === this._hv.stage ? `🔦 ${stages[i].t}: ${L("look closer")}` : `🌑 ${L("Too dark here. Find the {p} first.", { p: stages[this._hv.stage] ? stages[this._hv.stage].t : "" })}`),
+      activate: () => { const h = this._hv; if (!h || h.chase) return; if (i === h.stage) this._haveliStage(i, h); else if (i > h.stage) showToast(L("🌑 Something tells you to look somewhere else first..."), 2400, "bad"); } }));
+    this._hvNext();
+  }
+  _hvNext() {
+    const h = this._hv; if (!h) return; const sp = (h.room.haveliSpots || [])[h.stage], S = this._haveliStages()[h.stage];
+    if (sp && S) this.setObjective(`🔦 ${L("Haveli")}: ${S.t} (${h.stage + 1}/6) · 💪${h.courage}`, h.room.x0 + sp[0], h.room.z0 + sp[1]);
   }
   _haveliStages() {
     return [
-      { t: "🚪 " + L("The dark gate"), s: L("Pitch dark inside. Dry leaves crunch. Something white flaps at a window upstairs."), o: [[L("Step inside, torch on"), 1, L("You step in. Your heart thumps, but your feet keep going.")], [L("Shout 'Who is there?'"), 0, L("Your voice echoes back: '...there... there...' Brrr. Nothing moves.")], [L("Turn and run"), -1, L("You run three steps, then stop and breathe. Brave people feel fear too.")]] },
-      { t: "🌫️ " + L("The courtyard"), s: L("A white shape floats along the balcony, wailing: 'Niiikal jaooo...!'"), o: [[L("Shine the torch at its feet"), 1, L("It HAS feet. In rubber chappals! Ghosts do not wear chappals."), L("🔍 Clue: the ghost wears chappals")], [L("Close your eyes and count to ten"), 0, L("When you open them, it is gone. You learned nothing.")], [L("Scream and hide"), -1, L("Your scream echoes. Somewhere, someone giggles...")]] },
-      { t: "🕯️ " + L("The great hall"), s: L("BANG! The doors slam. The candles die. A huge voice booms: 'GET OUUUT!'"), o: [[L("Follow the voice to the torn curtain"), 1, L("Behind the curtain: a speaker playing a ghost-sound track on loop!"), L("🔍 Clue: a hidden speaker")], [L("Hide under the old table"), 0, L("Drip... drip... only rainwater. The voice keeps booming.")], [L("Run for the door"), -1, L("The door is stuck! You pull and pull... then calm down.")]] },
-      { t: "🪜 " + L("The staircase"), s: L("Stairs go UP into a cold wind, and DOWN to the cellar. On the dusty floor: fresh shoe prints."), o: [[L("Follow the fresh prints down"), 1, L("Ghosts float. They leave no prints! These go to the cellar."), L("🔍 Clue: fresh shoe prints")], [L("Go up where the wind blows"), 0, L("A hundred bats burst out! Only an empty room upstairs.")], [L("Sit down and call for Maa"), -1, L("Only your echo answers. You wipe your eyes and stand up.")]] },
+      { t: "🚪 " + L("The dark gate"), s: L("An inner iron gate. Pitch dark beyond it. Dry leaves crunch. Something white flaps at a window upstairs."), o: [[L("Step through, torch on"), 1, L("You step in. Your heart thumps, but your feet keep going.")], [L("Shout 'Who is there?'"), 0, L("Your voice echoes back: '...there... there...' Brrr. Nothing moves.")], [L("Turn and run"), -1, L("You run three steps, then stop and breathe. Brave people feel fear too.")]] },
+      { t: "🌫️ " + L("The courtyard"), s: L("Look up! A white shape floats along the balcony, wailing: 'Niiikal jaooo...!'"), o: [[L("Shine the torch at its feet"), 1, L("It HAS feet. In rubber chappals! Ghosts do not wear chappals. It runs off the balcony."), L("🔍 Clue: the ghost wears chappals")], [L("Close your eyes and count to ten"), 0, L("When you open them, it is gone. You learned nothing.")], [L("Scream and hide by the well"), -1, L("Your scream echoes. Somewhere, someone giggles...")]] },
+      { t: "🕯️ " + L("The great hall"), s: L("BANG! A door slams. The candles flicker. A huge voice booms: 'GET OUUUT!'"), o: [[L("Follow the voice to the torn curtain"), 1, L("Behind the red curtain: a speaker playing a ghost-sound track on loop!"), L("🔍 Clue: a hidden speaker")], [L("Hide under the long table"), 0, L("Drip... drip... only rainwater. The voice keeps booming.")], [L("Run for the door"), -1, L("The door is stuck! You pull and pull... then calm down.")]] },
+      { t: "🪜 " + L("The staircase"), s: L("Stairs go UP into a cold wind. On the dusty floor: fresh shoe prints going to the back."), o: [[L("Follow the fresh prints"), 1, L("Ghosts float. They leave no prints! These go towards the corridor and the cellar."), L("🔍 Clue: fresh shoe prints")], [L("Go up where the wind blows"), 0, L("A hundred bats burst out! Only an empty room upstairs.")], [L("Sit down and call for Maa"), -1, L("Only your echo answers. You wipe your eyes and stand up.")]] },
       { t: "👻 " + L("The dark corridor"), s: L("BOO!! A ghost jumps out, right in front of your face!"), scare: true, o: [[L("Grab its white sheet and pull"), 1, L("The sheet slips off. It is a teenage boy! He yelps and runs to the cellar. The sheet has a laundry tag: 'BABLU'."), L("🔍 Clue: a bedsheet with a name tag")], [L("Freeze like a statue"), 0, L("It laughs 'Hoo-haa-haa!' and floats away. Your knees wobble.")], [L("Run back the way you came"), -1, L("You trip on a broken tile. Ouch. You get up.")]] },
-      { t: "🚨 " + L("The cellar door"), s: L("Through a crack: three people with bedsheets pulled off. Piles of phones, gold chains, a TV. 'Scare the town, rob the houses. Nobody checks a haunted house!' It is a robbery gang!"), last: true, o: [[L("Quietly call 100 and whisper the address"), 1, L("'Police control room. Stay hidden, we are coming.' You wait in the dark, holding your breath...")], [L("Take a photo for proof, silently"), 2, L("Click. No flash. The photo shows all three faces and the stolen things. Now what?")], [L("Burst in and shout 'Caught you!'"), -1, L("They chase you out! You hide behind the well till they go back. Robbers are for the police.")]] },
+      { t: "🚨 " + L("The cellar door"), s: L("Through the crack: three people with bedsheets pulled off. Piles of phones, gold chains, a TV. 'Scare the town, rob the houses. Nobody checks a haunted house!' It is a robbery gang!"), last: true, o: [[L("Quietly call 100 and whisper the address"), 1, L("'Police control room. We are coming. Get out of there NOW!' ... CREAK. The floor board under your foot!")], [L("Take a photo for proof, silently"), 2, L("Click. No flash. The photo shows all three faces and the stolen things. Now what?")], [L("Burst in and shout 'Caught you!'"), -1, L("They chase you out of the corridor! You hide behind a pillar till they go back. Robbers are for the police.")]] },
     ];
   }
   _haveliStage(i, st) {
@@ -9587,22 +9661,280 @@ class Game {
     for (const x of opts) card.querySelector(`#hv-${x.k}`).addEventListener("click", () => {
       const [, v, said, clue] = x.o, msg = card.querySelector("#hv-msg");
       if (v === 2) { st.proof = true; closePanel(); showToast("📸 " + said, 3600, "good"); this._haveliStage(i, st); return; }
-      if (v === 1) { if (clue) st.clues.push(clue); closePanel(); playSuccess(); showToast(said + (clue ? "  " + clue : ""), 4200, "good"); if (S.last) this._haveliCaught(st); else this._haveliStage(i + 1, st); return; }
+      if (v === 1) { if (clue) st.clues.push(clue); closePanel(); playSuccess(); showToast(said + (clue ? "  " + clue : ""), 4200, "good"); st.stage = i + 1;
+        if (i === 1 && st.room && st.room._balc) st.room._balc.visible = false;
+        if (S.last) this._haveliChase(st); else this._hvNext(); return; }
       st.courage -= v === 0 ? 1 : 2; Audio.playRetry(); if (v < 0) this._scareFlash();
       if (st.courage <= 0) { closePanel(); this._haveliFail(); return; }
       card.querySelector("#hv-c").textContent = `${L("Courage")}: ${hearts()} · ${L("Clues")}: ${st.clues.length}/4`; msg.textContent = said + " " + L("(Courage -") + (v === 0 ? 1 : 2) + ")";
       const btn = card.querySelector(`#hv-${x.k}`); if (btn) btn.disabled = true;
     });
   }
+  // The escape: Kaalu, still in his white sheet, chases you to the front door.
+  _haveliChase(st) {
+    const room = st.room, sp = (room.haveliSpots || [])[5] || [15.5, -8.2]; this._scareFlash(); try { playWhoosh(); playBark(); } catch (e) { /* sound optional */ }
+    const g = this._ghost.group.clone(); g.visible = true; room.group.add(g); g.scale.setScalar(1.15);
+    st.chase = { g, x: room.x0 + sp[0] + 1.5, z: room.z0 + sp[1] - 1.5, t: 0, grabs: 0 };
+    g.position.set(sp[0] + 1.5, 0.2, sp[1] - 1.5);
+    this.setObjective(`🏃 ${L("RUN! Escape through the front door!")} · 💪${st.courage}`, room.exitPos.x, room.exitPos.z);
+    this._cityBanner("😱 " + L("RUN!"), L("Kaalu in his white sheet: 'Pakdo! Catch that kid!' Run to the front door!"));
+  }
+  _tickHaveli(dt) {
+    const h = this._hv; if (!h) return; const room = h.room, pp = this.player.position;
+    if (this.world.currentRoom !== room) { if (!h.done) { this._hv = null; this.setObjective(L("The haveli mystery is still waiting... (night only)"), -154, 143); } return; }
+    if (this._torch) { this._torch.intensity = 1.8; this._torch.position.set(pp.x, 2.4, pp.z); }
+    this.world.roomLight.intensity = 2; if (room.candles) for (const c of room.candles) c.visible = Math.random() > 0.08;
+    if (room._balc && room._balc.visible) { room._balc.position.x = Math.sin(performance.now() / 900) * 3; room._balc.position.y = 3.5 + Math.sin(performance.now() / 400) * 0.12; }
+    // The corridor jump-scare as you walk up to it.
+    const cs = (room.haveliSpots || [])[4]; if (cs && h.stage === 4 && !h.jump && Math.hypot(pp.x - room.x0 - cs[0], pp.z - room.z0 - cs[1]) < 5) { h.jump = true; this._scareFlash(); try { playWhoosh(); } catch (e) { /* sound optional */ } showToast(L("👻 Something white rushes across the corridor!"), 2400, "bad"); }
+    const c = h.chase; if (!c) return; c.t += dt;
+    const ex = room.exitPos; if (Math.hypot(pp.x - ex.x, pp.z - ex.z) < 2.4) { this._haveliEscaped(h); return; }
+    if (c.t < 1.2) return;
+    const dx = pp.x - c.x, dz = pp.z - c.z, d = Math.hypot(dx, dz) || 1, sp = 5.4 * dt;
+    const nx = c.x + (dx / d) * sp, nz = c.z + (dz / d) * sp;
+    if (room.walkable(nx, nz)) { c.x = nx; c.z = nz; } else if (room.walkable(nx, c.z)) c.x = nx; else if (room.walkable(c.x, nz)) c.z = nz; else { c.x = nx; c.z = nz; }
+    c.g.position.set(c.x - room.x0, 0.2 + Math.sin(c.t * 8) * 0.1, c.z - room.z0); c.g.rotation.y = Math.atan2(dx, dz);
+    if (d < 1.2) { h.courage -= 1; c.grabs++; this._scareFlash(); Audio.playRetry();
+      if (h.courage <= 0) { this._haveliFail(); return; }
+      showToast(L("😱 He grabs your collar! You twist free and keep running! (Courage -1)"), 2600, "bad");
+      c.x -= (dx / d) * 6; c.z -= (dz / d) * 6; c.t = 0.4; this.setObjective(`🏃 ${L("RUN! Escape through the front door!")} · 💪${h.courage}`, ex.x, ex.z); }
+  }
+  _haveliEscaped(h) {
+    h.done = true; if (h.chase) { h.room.group.remove(h.chase.g); h.chase = null; } this._hv = null; this._exitRoom(); this._scareFlash();
+    const pr = this.progress; pr.escapes = (pr.escapes || 0) + 1; this.setObjective("", null);
+    this._haveliCaught(h);
+  }
   _haveliFail() {
-    const pr = this.progress; pr.haveliFailDay = pr.day; pr.haveliTries = (pr.haveliTries || 0) + 1; saveProgress(this.profile, pr); this._scareFlash();
+    const pr = this.progress, h = this._hv; if (h && h.chase) { h.room.group.remove(h.chase.g); h.chase = null; } this._hv = null;
+    pr.haveliFailDay = pr.day; pr.haveliTries = (pr.haveliTries || 0) + 1; saveProgress(this.profile, pr); this._scareFlash(); closePanel();
+    if (this.world.currentRoom) this._exitRoom(); this.setObjective("", null);
     this.dialogue.say(L("The haveli"), [L("(Too scary! You run out of the gate and all the way home without stopping.)"), L("Dadi: 'Arre! Where were you? Sit, drink water. Fear is not shameful, beta. Come back when you are ready.'"), L("💪 Courage comes back after a night's sleep. Try again another night.")], null, { pitch: 300 });
   }
   _haveliCaught(st) {
-    const pr = this.progress; pr.ghostGangDone = true; pr.haveliDone = true; pr.brave = (pr.brave || 0) + 2; saveProgress(this.profile, pr);
+    const pr = this.progress; pr.ghostGangDone = true; pr.haveliDone = true; pr.brave = (pr.brave || 0) + 2; this._missionDone && this._missionDone("ghost"); saveProgress(this.profile, pr);
     const reward = 500 + (st.proof ? 200 : 0); this.addMoney && this.addMoney(reward, L("reward: Kaalu gang caught")); this.addRep && this.addRep(5, L("caught the fake ghost gang"));
-    this._snap && this._snap("🚨", "Caught the fake ghost gang in the old haveli."); this.diary(L("The haveli ghosts were fake! The Kaalu gang used bedsheets and a speaker to scare people and rob houses. I called the police and they were caught."));
-    this.dialogue.say(L("Inspector Rathore"), [L("(Sirens! Blue and red lights flash on the haveli walls. Six constables rush into the cellar.)"), L("Inspector: 'Hands up! Kaalu, Bablu, Pinky: wanted for 12 house robberies!'"), L("Kaalu: 'Arre! Our ghost show was perfect! Who told you?'"), L("Inspector: 'This brave kid. Chappals, a speaker, shoe prints, a name tag on the sheet. Ghosts do not leave clues. Robbers do.'"), st.proof ? L("Inspector: 'And your photo is proof for the court. Excellent work!'") : L("Inspector: 'Next time, a silent photo helps the court too.'"), L(`🏆 Reward ₹${reward}. The stolen phones and jewellery go back to the families.`), L("📰 Tomorrow's paper: 'BRAVE KID BUSTS FAKE GHOST GANG!'"), L("🏅 Badge: Ghost Buster.")], null, { pitch: 260 });
+    this._snap && this._snap("🚨", "Caught the fake ghost gang in the old haveli."); this.diary(L("The haveli ghosts were fake! The Kaalu gang used bedsheets and a speaker to scare people and rob houses. Kaalu chased me but I escaped, and the police caught them."));
+    this.dialogue.say(L("Inspector Rathore"), [L("(You burst out of the front door, gasping. Sirens! Blue and red lights flash on the haveli walls.)"), L("(Kaalu runs out after you, straight into six constables.)"), L("Inspector: 'Hands up! Kaalu, Bablu, Pinky: wanted for 12 house robberies!'"), L("Kaalu: 'Arre! Our ghost show was perfect! Who told you?'"), L("Inspector: 'This brave kid. Chappals, a speaker, shoe prints, a name tag on the sheet. Ghosts do not leave clues. Robbers do.'"), st.proof ? L("Inspector: 'And your photo is proof for the court. Excellent work!'") : L("Inspector: 'Next time, a silent photo helps the court too.'"), L(`🏆 Reward ₹${reward}. The stolen phones and jewellery go back to the families.`), L("📰 Tomorrow's paper: 'BRAVE KID BUSTS FAKE GHOST GANG!'"), L("🏅 Badge: Ghost Buster."), L("Inspector: 'The Government needs brave people like you. Visit the 🎖️ Bravery Missions desk outside the Police Station.'")], null, { pitch: 260 });
+  }
+
+  // ---- Bravery missions: the Government sends you, pays the travel, and the nation thanks you ----
+  _missionList() {
+    const O = (t, v, said, clue) => [t, v, said, clue];
+    return [
+      { id: "ghost", icon: "👻", name: L("The Haveli Ghost Gang"), city: "Suryanagar", local: true, allowance: 0, reward: 700, site: L("The Old Haveli, at night") },
+      { id: "flood", icon: "🌊", name: L("Flood Rescue on the Brahmaputra"), city: "Guwahati", via: "air", allowance: 2000, reward: 5000, scene: "flood", site: L("Majuli village, river bank"), sights: ["The mighty Brahmaputra, brown and wide.", "Tea gardens on green hills.", "Hot momos and Assam tea."],
+        brief: [L("The Brahmaputra has flooded Majuli village in Assam. A grandmother and two children are stuck on a roof, and the water keeps rising."), L("The NDRF team is short of hands. We need a calm, brave helper.")],
+        stages: [
+          { t: "🦺 " + L("The rising river"), s: L("Brown water rushes past the rooftops. Before you go out, what first?"), o: [O(L("Put on a life jacket and helmet"), 1, L("Click, click. Safety first. Even the best swimmers wear one in a flood.")), O(L("Jump in and swim to the roof"), -1, L("The current drags you ten metres! A rope pulls you back. Never swim in floodwater.")), O(L("Wait for the water to go down"), 0, L("The water rises another foot. There is no time to wait."))] },
+          { t: "🚤 " + L("The boat"), s: L("The rescue boat's engine coughs and dies halfway there."), o: [O(L("Grab the oars and row steadily"), 1, L("Left, right, left, right. Slowly the roof comes closer.")), O(L("Keep pulling the engine cord"), 0, L("Pull, pull, pull. It will not start. You are drifting.")), O(L("Stand up and wave for help"), -1, L("The boat rocks hard! Sit down, low and steady."))] },
+          { t: "🏠 " + L("On the roof"), s: L("Dadi, two little kids and a goat. The boat can take three at a time."), o: [O(L("The kids and Dadi first, the goat on the next trip"), 1, L("You help them in one by one. The goat bleats: 'Me next!'"), L("🔍 Three lives safe")), O(L("Everyone at once, goat too"), -1, L("The boat tips! Everyone grabs the roof again. Too heavy.")), O(L("The goat first, it is scared"), 0, L("The goat is happy. The kids are crying. People first!"))] },
+          { t: "🌀 " + L("Escape the whirlpool"), s: L("The current pulls the boat towards a spinning whirlpool! Row for your life!"), chase: true, o: [O(L("Steer across the current towards the relief camp"), 1, L("You cut across the water at an angle and slide past the whirlpool. The relief camp cheers!")), O(L("Row straight against the current"), 0, L("Your arms burn. The boat does not move forward.")), O(L("Jump out and swim"), -1, L("NO! Stay in the boat. The NDRF throws a rope and pulls you close."))] },
+        ], win: [L("NDRF Commander Baruah: 'Three people and one very lucky goat. All safe. Assam thanks you.'")] },
+      { id: "fire", icon: "🔥", name: L("The School on Fire"), city: "Mumbai", via: "air", allowance: 2000, reward: 5000, scene: "fire", site: L("Sea View School, Andheri"), sights: ["Marine Drive at sunset.", "Local trains packed like tiffins.", "Vada pav on every corner."],
+        brief: [L("A fire in Sea View School, Mumbai. Five children are trapped on the third floor. The fire brigade is stuck in traffic."), L("You have fire-safety training. Go, and be careful!")],
+        stages: [
+          { t: "📞 " + L("Raise the alarm"), s: L("Smoke pours from the third floor. People are shouting. What first?"), o: [O(L("Call 101 and pull the fire alarm"), 1, L("RRRING! The whole school empties. The fire brigade gets the exact address.")), O(L("Film it on your phone"), -1, L("Not now! Every second counts.")), O(L("Throw water from a bottle"), 0, L("A tiny splash. The fire does not even notice."))] },
+          { t: "🛗 " + L("Lift or stairs?"), s: L("You need to reach the third floor."), o: [O(L("Take the stairs"), 1, L("Never the lift in a fire! The power can cut and trap you. Up the stairs you go.")), O(L("Take the lift, it is faster"), -1, L("The lift light flickers... you jump out just in time. NEVER use a lift in a fire.")), O(L("Wait at the bottom"), 0, L("The children are still up there."))] },
+          { t: "🌫️ " + L("Thick smoke"), s: L("The corridor is full of black smoke. You cannot see. Your eyes sting."), o: [O(L("Wet cloth over your nose and crawl low"), 1, L("Clean air stays near the floor. You crawl and find the classroom."), L("🔍 Five children found")), O(L("Walk tall and fast"), -1, L("You cough and cough. Get down low!")), O(L("Hold your breath and run"), 0, L("You run out of breath halfway."))] },
+          { t: "🚪 " + L("The hot door"), s: L("The children are behind a door. You touch it with the back of your hand. It is HOT."), o: [O(L("Do not open it. Go to the window and signal the fire ladder"), 1, L("A hot door means fire behind it. You wave a white cloth from the window. The ladder is coming!")), O(L("Kick it open"), -1, L("A burst of heat! You slam it shut. Hot door = fire behind.")), O(L("Wait and hope"), 0, L("Smoke curls under the door. Hope is not a plan."))] },
+          { t: "🏃 " + L("Escape the flames"), s: L("The fire breaks through behind you! Get the children down NOW!"), chase: true, o: [O(L("Smallest children first down the ladder, you go last"), 1, L("One, two, three, four, five... then you. The room fills with flames just as your foot touches the ladder. SAFE!")), O(L("You go first to show them how"), 0, L("The children are scared to follow. You climb back up.")), O(L("Jump from the window"), -1, L("NO! Third floor! The firefighter grabs your arm. Use the ladder."))] },
+        ], win: [L("Fire Chief Deshmukh: 'Five children, not a scratch. You kept your head. Mumbai salutes you.'")] },
+      { id: "track", icon: "🚂", name: L("The Broken Track"), city: "Jaipur", via: "rail", allowance: 1000, reward: 5000, scene: "track", site: L("Village crossing near Jaipur"), sights: ["Pink walls of the old city.", "Camels on the highway.", "Dal baati churma for lunch."],
+        brief: [L("Villagers near Jaipur heard a loud crack on the railway line at dawn. The Rajdhani Express, with 900 passengers, comes in 10 minutes."), L("The signal cabin phone is dead. Reach the track fast!")],
+        stages: [
+          { t: "🔍 " + L("The crack"), s: L("You run along the track. There! A rail is cracked right through."), o: [O(L("Mark the spot and run TOWARDS the train"), 1, L("You tie your red scarf to a pole by the crack and start running."), L("🔍 Crack marked")), O(L("Try to push the rail back"), -1, L("It weighs 500 kg. Your hands hurt. Not possible.")), O(L("Wait for someone to come"), 0, L("Nobody comes. The clock is ticking."))] },
+          { t: "🔴 " + L("The signal"), s: L("You hear the horn far away. How do you make the train stop?"), o: [O(L("Wave a red cloth over your head, standing beside the track"), 1, L("RED means STOP. You wave and wave, standing safely beside the rails.")), O(L("Stand in the middle of the track"), -1, L("NEVER stand on the track! A train takes a whole kilometre to stop.")), O(L("Throw stones at the train"), 0, L("That will not stop it and can hurt people."))] },
+          { t: "🚨 " + L("Brakes!"), s: L("The driver sees you! A screech of steel! Sparks fly! Get clear!"), chase: true, o: [O(L("Jump well away from the rails"), 1, L("SCREEEECH... The engine stops 30 metres before the crack. 900 people safe!")), O(L("Keep waving on the rails"), -1, L("You leap away at the last moment. Heart pounding!")), O(L("Cover your ears and freeze"), 0, L("Too close! Move away from the track."))] },
+        ], win: [L("Loco pilot Meena: 'In 25 years I have never seen anything braver. Nine hundred people owe you their lives.'")] },
+      { id: "snow", icon: "🏔️", name: L("Lost in the Snowstorm"), city: "Shimla", via: "rail", allowance: 1500, reward: 5000, scene: "snow", site: L("Kufri trekking trail"), sights: ["The toy train through 100 tunnels.", "Snow on the pine trees.", "Hot corn on the Mall Road."],
+        brief: [L("Eight school trekkers are lost near Kufri in a snowstorm. It is getting dark and very cold."), L("The rescue team needs a sharp pair of eyes. Dress warm!")],
+        stages: [
+          { t: "🧭 " + L("The white-out"), s: L("Snow everywhere. You cannot see the path. What do you follow?"), o: [O(L("The orange marker poles on the trail"), 1, L("Pole to pole, like dots in a picture. You stay on the trail.")), O(L("Your feeling"), -1, L("You walk in a circle! Back to the last pole.")), O(L("The sound of the wind"), 0, L("The wind comes from everywhere."))] },
+          { t: "🛖 " + L("Found them!"), s: L("Eight shivering children huddle behind a rock. One is very sleepy."), o: [O(L("Take them to the shepherd's hut and keep them together and awake"), 1, L("Warm bodies close together, a fire, songs to stay awake."), L("🔍 Eight trekkers found")), O(L("Let them sleep in the snow to rest"), -1, L("NO! Sleeping in the cold is dangerous. Keep them awake!")), O(L("Walk them down in the dark"), 0, L("Too dark, too slippery. Shelter first."))] },
+          { t: "📻 " + L("Call for help"), s: L("You have a radio and a torch."), o: [O(L("Radio the exact marker pole number"), 1, L("'Pole 47, shepherd's hut.' The team knows exactly where you are.")), O(L("Shout for help"), 0, L("The storm swallows your voice.")), O(L("Walk back alone for help"), -1, L("Never leave the group in a storm."))] },
+          { t: "❄️ " + L("Avalanche!"), s: L("A deep rumble. The snow on the slope above starts to slide! It is coming down!"), chase: true, o: [O(L("Run sideways, across the slope, out of its path"), 1, L("You run sideways with the kids. The snow thunders past, just metres away. SAFE!")), O(L("Run straight downhill"), -1, L("It is faster than you! Sideways, SIDEWAYS!")), O(L("Hide behind a small tree"), 0, L("Too small! Move!"))] },
+        ], win: [L("Rescue leader Negi: 'Eight children, home by midnight. Their parents are crying with joy.'")] },
+      { id: "quake", icon: "🏚️", name: L("Earthquake in Kathmandu"), city: "Kathmandu", abroad: true, via: "air", allowance: 3000, reward: 7500, scene: "quake", site: L("Old Bhaktapur square"), sights: ["Prayer flags on every rooftop.", "Mount Everest from the plane window.", "Steaming momos in a tiny cafe."],
+        brief: [L("A strong earthquake has hit Nepal. India is sending help to our neighbours."), L("You go with the Indian rescue team to old Bhaktapur. Namaste and good luck!")],
+        stages: [
+          { t: "🫨 " + L("The ground shakes"), s: L("As you land, the ground starts shaking again!"), o: [O(L("Drop, cover under a strong table, hold on"), 1, L("Drop, cover, hold. The shaking stops. You are fine.")), O(L("Run outside while it shakes"), -1, L("Tiles fall from the roof! Stay inside till the shaking stops.")), O(L("Stand in a corner"), 0, L("Better than nothing, but a strong table is best."))] },
+          { t: "🧱 " + L("A voice in the rubble"), s: L("'Help!' A boy is under a fallen wall. You can hear him but not see him."), o: [O(L("Tell him to tap on a pipe; call the rescuers with the sniffer dog"), 1, L("Tap, tap, tap. The dog barks at the spot. The team lifts the slab slowly."), L("🔍 Boy found alive")), O(L("Pull the bricks out fast yourself"), -1, L("The pile shifts! Careful. Wrong bricks can make it fall.")), O(L("Shout 'Are you OK?' again and again"), 0, L("He is getting tired. He needs to save his breath."))] },
+          { t: "🩹 " + L("First aid"), s: L("His leg is cut and bleeding."), o: [O(L("Press a clean cloth on the cut and raise the leg"), 1, L("The bleeding slows. The doctor nods: 'Good work.'")), O(L("Wash it with muddy water"), -1, L("That brings germs. Clean cloth, press firmly.")), O(L("Leave it for the doctor"), 0, L("The doctor is busy. Press it now."))] },
+          { t: "⚠️ " + L("Aftershock!"), s: L("Another shake! The old temple tower above starts to crack! GET OUT!"), chase: true, o: [O(L("Carry him to the open square, away from buildings"), 1, L("You run to the open ground. Behind you, the tower crashes down. Everyone safe!")), O(L("Hide in a doorway of the old tower"), -1, L("Not under the tower! Open ground!")), O(L("Stand still"), 0, L("Bricks fall around you. Move!"))] },
+        ], win: [L("Nepali Captain Gurung: 'Dhanyabad, friend from India. You saved our boy.' (Hugs from the whole family.)")] },
+      { id: "museum", icon: "🏛️", name: L("The Stolen Nataraja"), city: "London", abroad: true, via: "air", allowance: 4000, reward: 7500, scene: "museum", site: L("London City Museum"), sights: ["Big red buses and the clock tower.", "Rain, rain, and more rain.", "Fish and chips in paper."],
+        brief: [L("A 1,000-year-old Chola bronze, the dancing Nataraja, was stolen from India long ago. It was going home this week. Last night it vanished from the London City Museum!"), L("Scotland Yard has asked India for help. Find it before it leaves the country.")],
+        stages: [
+          { t: "📹 " + L("The CCTV"), s: L("The camera shows a 'guard' at 2 am. His badge number is odd."), o: [O(L("Check the badge number with the museum list"), 1, L("No guard has that number. The guard is fake!"), L("🔍 Clue: a fake badge")), O(L("Believe the uniform"), 0, L("A uniform is easy to buy. Check facts.")), O(L("Blame the night cleaner"), -1, L("Never blame without proof."))] },
+          { t: "🎨 " + L("Paint marks"), s: L("Blue paint drops on the floor, leading to a side door."), o: [O(L("Follow the paint drops"), 1, L("They lead to a van in the lane: 'Fresh Paint Ltd'."), L("🔍 Clue: a painters' van")), O(L("Wipe them clean"), -1, L("That was evidence!")), O(L("Ignore them"), 0, L("Small clues solve big cases."))] },
+          { t: "🏃 " + L("The chase"), s: L("A man in paint overalls sees you, grabs a big box and RUNS!"), chase: true, o: [O(L("Shout for the police and follow at a safe distance"), 1, L("You keep him in sight and point. Two officers corner him at the river.")), O(L("Tackle him alone"), -1, L("He shoves you over! Stay safe, call the police.")), O(L("Let him go"), 0, L("The Nataraja is in that box!"))] },
+        ], win: [L("Inspector Clarke, Scotland Yard: 'Brilliant detective work. The Nataraja flies home to Tamil Nadu tomorrow.'")] },
+      { id: "sea", icon: "⛵", name: L("Storm at Sea"), city: "Goa", via: "air", allowance: 2000, reward: 5000, scene: "sea", site: L("Old lighthouse, Aguada"), sights: ["Golden beaches and palm trees.", "Old Portuguese churches.", "Fish curry and rice."],
+        brief: [L("A cyclone storm off Goa. A fishing boat with four fishermen is lost in the dark. The old lighthouse lamp is broken."), L("The Coast Guard needs someone at the lighthouse. Go!")],
+        stages: [
+          { t: "🗼 " + L("The dark lighthouse"), s: L("Wind howls. 120 steps up, in the dark. Something bangs above..."), o: [O(L("Climb holding the rail, torch in your mouth"), 1, L("Step by step. The bang was just a loose window.")), O(L("Run up two steps at a time"), -1, L("You slip! Hold the rail and go steady.")), O(L("Wait for the storm to stop"), 0, L("The fishermen cannot wait."))] },
+          { t: "💡 " + L("The signal"), s: L("The big lamp is broken. You have a strong torch."), o: [O(L("Flash SOS: three short, three long, three short"), 1, L("··· ——— ··· Far out at sea, a small light flashes back!"), L("🔍 Boat found")), O(L("Flash randomly"), 0, L("Random flashes mean nothing to sailors.")), O(L("Switch the torch off to save battery"), -1, L("Then nobody sees you!"))] },
+          { t: "🌊 " + L("The giant wave"), s: L("The Coast Guard boat reaches the fishermen. A giant wave rises and races towards the lighthouse rocks!"), chase: true, o: [O(L("Run up to the top and hold on inside"), 1, L("WHOOSH! The wave smashes the rocks below. You are safe up high.")), O(L("Run down to the beach to watch"), -1, L("NO! Big waves pull people into the sea. Go high!")), O(L("Stand on the rocks"), 0, L("The spray nearly knocks you over. Move up!"))] },
+        ], win: [L("Coast Guard Commandant D'Souza: 'Four fishermen home to their families. Your SOS lit the way.'")] },
+    ];
+  }
+  _buildMissions() {
+    const ps = this.world.doors.find((d) => d.label === "Police Station"); if (!ps) return;
+    const x = ps.x + 5, z = ps.z + 3; this._missionDeskPos = { x, z };
+    try { const post = new THREE.Mesh(new THREE.BoxGeometry(2.2, 1.4, 0.15), new THREE.MeshStandardMaterial({ color: 0x1d3557 })); post.position.set(x, 1.4, z - 0.6); this.world.scene.add(post); const lbl = makeTextSprite("🎖️ " + L("Bravery Missions"), { size: 44, scale: 0.9 }); lbl.position.set(x, 2.8, z - 0.6); this.world.scene.add(lbl); } catch (e) { /* the desk works without the board */ }
+    const its = this._roadIts || (this._roadIts = []);
+    its.push({ pos: { x, z }, radius: 2.6, prompt: () => L("🎖️ Government Bravery Missions ({n}/8 done)", { n: this._missionsDone().length }), activate: () => this._missionDesk() });
+    this._ideaSpots = [...(this._ideaSpots || []), ["🎖️ Bravery Missions desk", x, z]];
+    if (this.progress.shauryaChakra) this._medal(true);
+  }
+  _missionsDone() { const m = this.progress.braveMissions || {}; return Object.keys(m).filter((k) => m[k]); }
+  _missionDone(id) { const pr = this.progress; pr.braveMissions = pr.braveMissions || {}; pr.braveMissions[id] = true; saveProgress(this.profile, pr); }
+  _missionDesk() {
+    const pr = this.progress, list = this._missionList(), done = new Set(this._missionsDone());
+    if (this._matchTrip || this._braveM) { showToast(L("Finish your current trip first."), 2400); return; }
+    const award = done.size >= 6 && !pr.shauryaChakra;
+    const card = openPanel(`<h2>🎖️ ${L("Government Bravery Missions")}</h2><p class="job-brief">${L("Officer Mrs. Sharma, Home Ministry: 'The nation needs brave citizens. The Government pays your ticket, your hotel and a daily allowance.'")}</p><div class="job-goal">🏅 ${L("Done: {n} of 8. Finish 6 for the Shaurya Chakra medal and ₹10 lakh from the President.", { n: done.size })}${pr.shauryaChakra ? " ✅ " + L("Awarded!") : ""}</div>${award ? `<div class="btn-row"><button class="big-btn" id="ms-award">🇮🇳 ${L("Fly to Delhi for the award ceremony")}</button></div>` : ""}<div class="shop-list">${list.map((m) => `<div class="cart-row"><div><b>${m.icon} ${m.name}</b><small>${m.local ? L("Here in Suryanagar") : `${m.abroad ? "🌍 " : "🇮🇳 "}${m.city} · ${m.via === "rail" ? "🚆" : "✈️"} ${L("free ticket")} · ${L("allowance")} ₹${m.allowance}`} · ${m.site}</small></div>${done.has(m.id) ? `<span>✅</span>` : `<button class="use-btn" id="ms-${m.id}">${L("Accept")}</button>`}</div>`).join("")}</div><div class="btn-row"><button class="ghost-btn" id="ms-close">${L("Close")}</button></div>`);
+    card.querySelector("#ms-close").addEventListener("click", () => closePanel());
+    const aw = card.querySelector("#ms-award"); if (aw) aw.addEventListener("click", () => { closePanel(); this._awardCeremony(); });
+    for (const m of list) { const b = card.querySelector(`#ms-${m.id}`); if (b) b.addEventListener("click", () => { closePanel(); this._missionAccept(m); }); }
+  }
+  _missionAccept(m) {
+    const pr = this.progress;
+    if (m.local) { this.setObjective(L("👻 Mission: go to the Old Haveli at NIGHT"), -154, 143); this.dialogue.say(L("Mrs. Sharma"), [L("Houses in your own town are robbed at night, and people blame the haveli ghosts."), L("Go to the Old Haveli after dark and find the truth. Stay brave.")], null, { pitch: 420 }); return; }
+    this.dialogue.say(L("Mrs. Sharma"), [...m.brief, L("The Government pays for everything: your {t} to {c}, the hotel, and ₹{a} allowance.", { t: m.via === "rail" ? L("train ticket") : L("flight"), c: m.city, a: m.allowance }), L("Pack your bag. Leave now.")], () => {
+      this._packBag({ city: m.city, purpose: "mission", mode: m.via === "rail" ? "train" : "flight" }, (p) => {
+        this._braveM = m; if (m.allowance) this.addMoney(m.allowance, L("Government allowance")); pr.missionTrips = (pr.missionTrips || 0) + 1; saveProgress(this.profile, pr); this._packedOutfit = (p && p.outfit) || "smart";
+        if (m.via === "rail") { pr.ticket = { to: m.city, train: "Rajdhani Express", pnr: "GOV" + (1000 + pr.day * 7), cls: L("3A (Government pass)"), purpose: "mission", sights: m.sights, outfit: this._packedOutfit }; saveProgress(this.profile, pr); this._trainScene(); }
+        else { this._flightDest = { to: m.city, kind: m.abroad ? "abroad" : "india" }; this._flightScene(() => this._destMatch({ to: m.city, purpose: "mission", sights: m.sights, good: p ? p.good : true, outfit: this._packedOutfit })); }
+      });
+    }, { pitch: 420 });
+  }
+  _missionArrive(city, s3, via) {
+    const m = this._braveM, S = this.world.stadium, ap = this.world.doors.find((d) => d.label === (via === "rail" ? "Railway Station" : "Suryanagar Airport")); if (this.world.currentRoom) this._exitRoom(); if (this.player.riding) this.player.dismount();
+    if (ap) { this.player.group.position.set(ap.x, 0, ap.z + 2.5); this.player._placeCamera(1); }
+    const gx = (S.x1 + S.x2) / 2, gz = (S.z1 + S.z2) / 2, scene = this._missionScene(m.scene, gx, gz);
+    let banner = null; try { banner = makeTextSprite(`${m.icon} ${m.site}`, { size: 48, scale: 2.4 }); banner.position.set(gx, 11, gz); this.world.scene.add(banner); } catch (e) { /* the compass still points there */ }
+    this._matchTrip = { city, s3, banner, via, purpose: "mission", door: null, place: m.site, gx, gz, scene };
+    this._travelOutfit = this._packedOutfit || "smart"; this._packedOutfit = null; this.applyUniform();
+    this.setObjective(`${m.icon} ${L("Mission")}: ${m.site}. ${L("Follow the compass.")}`, gx, gz);
+    this._cityBanner(`${m.abroad ? "🌍" : "📍"} ${city}`, L("Mission site: {p}. Follow the compass arrow. Hurry!", { p: m.site }));
+    try { speakLine(L("Welcome to {c}. The mission site is {p}. Follow the compass.", { c: city, p: m.site }), 380); } catch (e) { /* voice optional */ }
+  }
+  // Each mission site gets its own little scene in the world.
+  _missionScene(kind, x, z) {
+    const G = new THREE.Group(); G.position.set(x, 0, z); this.world.scene.add(G); const M = (c, o = 1, e = 0) => new THREE.MeshStandardMaterial({ color: c, transparent: o < 1, opacity: o, emissive: e ? c : 0x000000, emissiveIntensity: e });
+    const box = (w, h, d, c, px, py, pz, m) => { const b = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), m || M(c)); b.position.set(px, py, pz); G.add(b); return b; };
+    G.userData.flicker = [];
+    if (kind === "flood" || kind === "sea") { const water = new THREE.Mesh(new THREE.PlaneGeometry(34, 26), M(0x2b6f8f, 0.75)); water.rotation.x = -Math.PI / 2; water.position.y = 0.35; G.add(water); G.userData.water = water; }
+    if (kind === "flood") { for (const [px, pz] of [[-8, -6], [6, -8], [9, 4]]) { box(5, 1.2, 4, 0xa0522d, px, 0.9, pz); const roof = new THREE.Mesh(new THREE.ConeGeometry(3.6, 2, 4), M(0x6b3e26)); roof.position.set(px, 2.5, pz); roof.rotation.y = Math.PI / 4; G.add(roof); } box(3.2, 0.5, 1.2, 0xff7f11, -2, 0.6, 3); box(0.1, 0.1, 2.4, 0x8b5a2b, -2, 0.9, 3); }
+    if (kind === "sea") { const lh = new THREE.Mesh(new THREE.CylinderGeometry(1.1, 1.6, 14, 12), M(0xffffff)); lh.position.set(0, 7, -9); G.add(lh); for (let i = 0; i < 3; i++) box(3.3, 1.2, 3.3, 0xd62828, 0, 3 + i * 4, -9); const lamp = box(1.4, 1.2, 1.4, 0xfff1a8, 0, 14.6, -9, M(0xfff1a8, 1, 1)); G.userData.flicker.push(lamp); box(2.4, 0.5, 1, 0x8b5a2b, 10, 0.6, 6); }
+    if (kind === "fire") { box(12, 10, 8, 0x9aa6ad, 0, 5, -8); for (let i = 0; i < 4; i++) for (let f = 0; f < 3; f++) { const w = box(1.6, 1.3, 0.1, 0x222222, -4.5 + i * 3, 2 + f * 3, -3.95, f === 2 ? M(0xff6a00, 1, 1.2) : M(0x222222)); if (f === 2) G.userData.flicker.push(w); } for (let i = 0; i < 6; i++) { const s = new THREE.Mesh(new THREE.SphereGeometry(1 + i * 0.3, 8, 6), M(0x444444, 0.35)); s.position.set(-2 + (i % 3) * 2, 10.5 + i, -8); G.add(s); } const lad = box(0.6, 9, 0.2, 0xd62828, 4, 4.5, -3.6); lad.rotation.x = -0.15; try { const fl = new THREE.PointLight(0xff5a00, 2, 22, 2); fl.position.set(0, 8, -3); G.add(fl); G.userData.flicker.push(fl); } catch (e) { /* no light */ } }
+    if (kind === "track") { for (const rx of [-0.75, 0.75]) box(0.12, 0.15, 30, 0x777777, rx, 0.3, 0); for (let i = 0; i < 20; i++) box(2.2, 0.12, 0.3, 0x5a3a24, 0, 0.18, -14 + i * 1.5); box(0.2, 0.4, 0.35, 0x111111, 0.75, 0.3, 2, M(0x111111)); const pole = box(0.08, 1.8, 0.08, 0x8b5a2b, 1.8, 0.9, 2); pole; box(0.6, 0.4, 0.02, 0xd62828, 2.1, 1.6, 2); }
+    if (kind === "snow") { const snow = new THREE.Mesh(new THREE.CircleGeometry(16, 24), M(0xf4f7fb)); snow.rotation.x = -Math.PI / 2; snow.position.y = 0.06; G.add(snow); for (let i = 0; i < 9; i++) { const t = new THREE.Mesh(new THREE.ConeGeometry(1.2, 4, 7), M(0x2f5d3a)); const a = i * 0.7; t.position.set(Math.cos(a) * 11, 2, Math.sin(a) * 11); G.add(t); const cap = new THREE.Mesh(new THREE.ConeGeometry(0.8, 1.4, 7), M(0xffffff)); cap.position.set(t.position.x, 3.6, t.position.z); G.add(cap); } box(4, 2.4, 3, 0x6b4a2b, -4, 1.2, -4); for (let i = 0; i < 5; i++) box(0.12, 1.6, 0.12, 0xff7f11, 6 - i * 2.5, 0.8, 6); }
+    if (kind === "quake") { for (let i = 0; i < 10; i++) { const r = box(1 + (i % 3), 0.6 + (i % 2), 1.2, [0x8d6e63, 0xa0522d, 0x9e9e9e][i % 3], -5 + (i % 5) * 2.4, 0.4, -4 + Math.floor(i / 5) * 2); r.rotation.set(0.3 * (i % 3), i, 0.2); } const tw = box(3, 12, 3, 0x8b3a2b, 6, 6, -8); tw.rotation.z = 0.08; for (let f = 0; f < 3; f++) box(4.2, 0.4, 4.2, 0x4a2a1a, 6, 4 + f * 4, -8); }
+    if (kind === "museum") { box(16, 0.4, 9, 0xe8e2d0, 0, 7.2, -6); for (let i = 0; i < 6; i++) { const c = new THREE.Mesh(new THREE.CylinderGeometry(0.45, 0.5, 7, 12), M(0xf2ede0)); c.position.set(-7 + i * 2.8, 3.5, -2.5); G.add(c); } box(16, 7, 0.4, 0xd9d2bf, 0, 3.5, -10.4); box(1.2, 1, 1.2, 0x333333, 0, 0.5, -6); box(1.3, 1.4, 1.3, 0xbfe3f2, 0, 1.7, -6, M(0xbfe3f2, 0.3)); }
+    return G;
+  }
+  _tickMission(dt) {
+    const mt = this._matchTrip; if (!mt || mt.purpose !== "mission") return; const G = mt.scene, t = performance.now() / 1000;
+    if (G) { for (const f of G.userData.flicker || []) { if (f.isLight) f.intensity = 1.5 + Math.random() * 1.5; else f.visible = Math.random() > 0.15; } if (G.userData.water) G.userData.water.position.y = 0.35 + Math.sin(t * 1.5) * 0.08; }
+    if (mt.started || this.world.currentRoom || this._uiBlocking()) return; const p = this.player.position;
+    if (Math.hypot(p.x - mt.gx, p.z - mt.gz) > 9) return;
+    mt.started = true; if (this.player.riding) this.player.dismount(); const m = this._braveM;
+    this._cityBanner(`${m.icon} ${m.name}`, m.site); this.setObjective(`${m.icon} ${m.name}`, null);
+    this._braveRun(m.name, m.stages, (st) => this._missionWin(m, mt, st), () => this._missionFail(m, mt));
+  }
+  // The shared bravery engine: stages, courage, clues, and the escape moment.
+  _braveRun(title, stages, onWin, onFail) {
+    const st = { courage: 5, clues: [], i: 0 };
+    const show = () => {
+      const S = stages[st.i]; if (!S) { onWin(st); return; }
+      if (S.chase) { this._scareFlash(); try { playWhoosh(); } catch (e) { /* sound optional */ } }
+      const opts = S.o.map((o, k) => ({ o, k })); for (let a = opts.length - 1; a > 0; a--) { const b = Math.floor(Math.random() * (a + 1)); [opts[a], opts[b]] = [opts[b], opts[a]]; }
+      const hearts = () => "💪".repeat(Math.max(0, st.courage)) + "🖤".repeat(Math.max(0, 5 - st.courage));
+      const card = openPanel(`<div style="background:${S.chase ? "#2a0d0d" : "#0d1520"};color:#e8e8f0;border-radius:14px;padding:14px"><h2 style="color:#fff">${S.chase ? "🏃 " : ""}${S.t} <small>(${st.i + 1}/${stages.length})</small></h2><p class="job-brief" style="color:#cfd3e6">${S.s}</p><div class="job-goal" id="bv-c" style="background:#1e2336;color:#ffd27a;border:1px solid #3a4060">${L("Courage")}: ${hearts()} · ${title}</div><div class="btn-row">${opts.map((x) => `<button class="big-btn" id="bv-${x.k}">${x.o[0]}</button>`).join("")}</div><div class="job-goal" id="bv-msg" style="background:transparent;border:0;color:#ff9e9e"></div></div>`);
+      for (const x of opts) card.querySelector(`#bv-${x.k}`).addEventListener("click", () => {
+        const [, v, said, clue] = x.o;
+        if (v === 1) { if (clue) st.clues.push(clue); closePanel(); playSuccess(); showToast(said + (clue ? "  " + clue : ""), 4200, "good"); st.i++; show(); return; }
+        st.courage -= v === 0 ? 1 : 2; Audio.playRetry(); if (v < 0) this._scareFlash();
+        if (st.courage <= 0) { closePanel(); onFail(st); return; }
+        card.querySelector("#bv-c").textContent = `${L("Courage")}: ${hearts()} · ${title}`; card.querySelector("#bv-msg").textContent = said + " " + L("(Courage -") + (v === 0 ? 1 : 2) + ")";
+        const btn = card.querySelector(`#bv-${x.k}`); if (btn) btn.disabled = true;
+      });
+    };
+    show();
+  }
+  _missionEnd(mt) { if (mt.banner) this.world.scene.remove(mt.banner); if (mt.scene) this.world.scene.remove(mt.scene); this._matchTrip = null; this._braveM = null; this._travelOutfit = null; this.applyUniform(); }
+  _missionWin(m, mt, st) {
+    const pr = this.progress; this._missionDone(m.id); pr.brave = (pr.brave || 0) + 2; this.addMoney(m.reward, L("Government reward: {n}", { n: m.name })); this.addRep && this.addRep(5, m.name); saveProgress(this.profile, pr);
+    this._snap && this._snap(m.icon, `Bravery mission in ${m.city}: ${m.name}.`); this.diary(L("Bravery mission in {c}: {n}. Mission accomplished!", { c: m.city, n: m.name }));
+    const n = this._missionsDone().length;
+    this.dialogue.say(L("Mission accomplished"), [...m.win, L("🏆 Government reward: ₹{r}.", { r: m.reward }), L("📰 The newspapers: 'Brave young hero from Suryanagar!'"), n >= 6 && !pr.shauryaChakra ? L("📜 A letter from Rashtrapati Bhavan! You have done {n} bravery missions. The President will award you the Shaurya Chakra. Go to the Bravery Missions desk.", { n }) : L("🎖️ Missions done: {n} of 8. Finish 6 for the Shaurya Chakra.", { n })], () => { this._missionEnd(mt); this._cityStay(mt, () => this._tripHome(mt, L("Home again, a hero!"))); }, { pitch: 340 });
+  }
+  _missionFail(m, mt) {
+    this.dialogue.say(L("Rescue team"), [L("(Your courage runs out. A rescue worker pulls you back to safety.)"), L("'You did well to come. We will finish from here. Rest, and try again another day.'"), L("💪 Courage grows every time you try.")], () => { this._missionEnd(mt); this._tripHome(mt, L("Home. Next time you will be ready.")); }, { pitch: 320 });
+  }
+  _tripHome(mt, line) {
+    if (this.world.currentRoom) this._exitRoom();
+    const ap = this.world.doors.find((d) => d.label === (mt.via === "rail" ? "Railway Station" : "Suryanagar Airport")); if (ap) { this.player.group.position.set(ap.x, 0, ap.z + 2.5); this.player._placeCamera(1); }
+    showToast(mt.via === "rail" ? L("🚆 Back at Suryanagar Junction. {l}", { l: line }) : L("✈️ Landed back in Suryanagar. {l}", { l: line }), 3400, "good");
+    this.setObjective(L("Home again!"), null); this._parkVehiclesHome(); this._startPhase("over");
+  }
+  // The President's award: the Shaurya Chakra and ₹10 lakh at Rashtrapati Bhavan.
+  _awardCeremony() {
+    const pr = this.progress; if (pr.shauryaChakra) return; const name = this.playerName || L("the young hero");
+    this._flightDest = { to: "New Delhi", kind: "india" }; this._flightScene(() => {
+      pr.shauryaChakra = true; pr.badges = pr.badges || []; if (!pr.badges.includes("shaurya")) pr.badges.push("shaurya"); this.addMoney(1000000, L("Shaurya Chakra award")); saveProgress(this.profile, pr); this._medal(true); playSuccess();
+      this._cityBanner("🇮🇳 " + L("Rashtrapati Bhavan, New Delhi"), L("The Bravery Awards ceremony"));
+      this._snap && this._snap("🎖️", "Received the Shaurya Chakra from the President in New Delhi."); this.diary(L("The President gave me the Shaurya Chakra and ₹10 lakh at Rashtrapati Bhavan. Maa, Papa and Dadi cried."));
+      this.dialogue.say(L("Rashtrapati Bhavan"), [L("(A huge hall with red carpets and golden lights. Soldiers stand in a line. The band plays.)"), L("Announcer: 'For outstanding courage in {n} missions, across India and abroad... the Shaurya Chakra is awarded to... {p}!'", { n: this._missionsDone().length, p: name }), L("(You walk up the red carpet. The President pins the medal on your chest.)"), L("President: 'India is proud of you. Courage is not having no fear. It is doing the right thing with fear.'"), L("🎖️ Shaurya Chakra: pinned on your chest."), L("💰 A cash award of ₹10,00,000 from the Government of India."), L("(In the front row, Maa, Papa and Dadi wipe their tears. Dadi claps the loudest.)"), L("📺 Every news channel: 'Suryanagar's hero gets the Shaurya Chakra!'")], () => { const ap = this.world.doors.find((d) => d.label === "Suryanagar Airport"); if (ap) { this.player.group.position.set(ap.x, 0, ap.z + 2.5); this.player._placeCamera(1); } this.setObjective(L("Home, with the Shaurya Chakra!"), null); this._parkVehiclesHome(); this._startPhase("over"); }, { pitch: 300 });
+    });
+  }
+  _medal(on) {
+    const P = this.player.group; if (!on) { if (this._medalMesh) this._medalMesh.visible = false; return; }
+    if (!this._medalMesh) { const g = new THREE.Group(); const rib = new THREE.Mesh(new THREE.BoxGeometry(0.12, 0.14, 0.02), new THREE.MeshStandardMaterial({ color: 0x2a9d8f })); rib.position.y = 0.1; g.add(rib); const disc = new THREE.Mesh(new THREE.CylinderGeometry(0.08, 0.08, 0.02, 16), new THREE.MeshStandardMaterial({ color: 0xffd700, metalness: 0.8, roughness: 0.3, emissive: 0x6b5200, emissiveIntensity: 0.4 })); disc.rotation.x = Math.PI / 2; g.add(disc); g.position.set(0.14, 1.28, 0.2); P.add(g); this._medalMesh = g; }
+    this._medalMesh.visible = true;
+  }
+  // ---- Staying in a city: 3 days or a week, and each day something strange happens ----
+  _stayEvents() {
+    const E = (icon, kind, s, o) => ({ icon, kind, s, o });
+    return [
+      E("🕵️", "following", L("A man in a black cap has been following you from the market for 20 minutes. You turn a corner. He turns too."), [[L("Walk into a busy shop and tell the shopkeeper"), true, L("The shopkeeper knows him: a pickpocket! She calls the police and he is caught with three wallets. Stay where people are.")], [L("Take a quiet lane to lose him"), false, L("Bad idea! Empty lanes are the worst place. You run back to the main road. Always stay where people are.")], [L("Call 112 and stay near the traffic police"), true, L("The constable walks up to him. He runs away fast. Well done.")]]),
+      E("🐶", "following", L("Pat, pat, pat. Someone is following you... You turn round slowly... a tiny puppy with one floppy ear!"), [[L("Share your biscuit and find its mother"), true, L("Its mother is under the tea stall. The tea-seller gives you free chai for being kind.")], [L("Run away screaming"), false, L("The puppy thinks it is a game and runs after you, wagging. Everyone laughs.")]]),
+      E("🚿", "ghost", L("Hotel room 13. At 2 am the bathroom tap turns ON by itself, and something whistles in the wall..."), [[L("Switch on all the lights and check"), true, L("A loose tap and a whistling AC pipe! The hotel fixes both and gives you free breakfast.")], [L("Hide under the blanket all night"), false, L("You sleep 0 hours. In the morning the plumber finds a loose tap. Always check first!")]]),
+      E("👰", "ghost", L("Midnight, on the old bridge. A woman in a white sari asks for a lift. Her feet... do not touch the ground?"), [[L("Politely say no and walk back with your group"), true, L("You look back once. The bridge is empty. Was she ever there? Nobody knows. Stay with your group at night.")], [L("Follow her into the fog"), false, L("She disappears into the fog. You hear a dog howl. Your guide pulls you back: 'Never follow strangers at night!'")]]),
+      E("👣", "ghost", L("Thump, thump, thump. Footsteps on the hotel roof, every night at 1 am."), [[L("Ask the receptionist"), true, L("'Oh, that is Rani and her five kittens. They play football with a bottle cap!'")], [L("Climb up to the roof alone at night"), false, L("Dark and slippery! The watchman stops you. It was only cats.")]]),
+      E("🐒", "funny", L("A monkey jumps down and snatches your sunglasses!"), [[L("Offer it a banana to swap"), true, L("Swap done! The monkey peels the banana like a gentleman. You get your glasses back.")], [L("Chase it"), false, L("It climbs higher and puts your glasses ON. The crowd takes selfies with it.")]]),
+      E("🌶️", "funny", L("You ask for the curry 'a little spicy'. It is VOLCANO spicy! Your ears are smoking!"), [[L("Drink milk or lassi"), true, L("Aaaah. Milk washes the chilli away. Science!")], [L("Drink lots of water"), false, L("Water spreads the fire around your mouth! Milk works better.")]]),
+      E("💃", "funny", L("You take a wrong turn and walk into a big wedding. The band is playing. The uncles want YOU to dance!"), [[L("Dance, eat, and bless the couple"), true, L("You dance the naagin dance. You eat three gulab jamuns. The bride's family invites you to visit again!")], [L("Run away in shame"), false, L("An aunty catches you: 'Khaana kha ke jaana!' (Eat before you go!). You stay. Best dinner of the trip.")]]),
+      E("🧭", "serious", L("A man says: 'The fort is closed today, sir. Come to my cousin's shop instead.'"), [[L("Check at the official ticket counter"), true, L("The fort is open! He was a scam. You enjoy the fort and save your money.")], [L("Go with him"), false, L("His cousin sells you a ₹50 key chain for ₹500. Always check with the official counter.")]]),
+      E("🧒", "serious", L("A little girl is crying in the crowd. She has lost her mother."), [[L("Take her to the police help desk and stay with her"), true, L("The announcement goes out. Her mother runs up and hugs her. She gives you a big smile.")], [L("Tell her to go and look"), false, L("She is too small! You go back and take her to the help desk. Much better.")]]),
+      E("🚗", "following", L("A car drives slowly next to you. A man leans out: 'Want chocolates? Get in, I will drop you.'"), [[L("Say NO loudly, run into a shop, and tell an adult"), true, L("The shopkeeper notes the car number and calls the police. NEVER go with strangers, even for chocolates.")], [L("Take the chocolate"), false, L("NO! Your friend pulls you away just in time. Never take things from strangers or get into their car.")]]),
+      E("🔋", "serious", L("Your phone is at 5% and you are lost in a new part of the city."), [[L("Show the hotel card in your pocket to a shopkeeper"), true, L("He points the way and even walks you to the corner. Always carry the hotel card.")], [L("Keep walking and hope"), false, L("An hour later you are even more lost. Finally you ask a policewoman. Ask early!")]]),
+      E("🐕", "serious", L("A stray dog bites your friend's leg!"), [[L("Wash it under running water with soap for 15 minutes, then go to the hospital"), true, L("The doctor gives the rabies injection. 'You did exactly the right thing.'")], [L("Put chilli powder on it"), false, L("Ouch! NO! Soap, water, and the doctor. The doctor cleans it properly.")]]),
+      E("🎩", "funny", L("A street magician makes your ₹10 coin vanish... and pulls it out of your ear!"), [[L("Ask him to teach you the trick"), true, L("He shows you the palm trick. Now you can do it to Gudiya!")], [L("Check your ear for more coins"), false, L("No more coins. Only a little ear wax. Everyone laughs, you too.")]]),
+    ];
+  }
+  _cityStay(mt, then) {
+    const city = (mt && mt.city) || "the city", s3 = (mt && mt.s3) || ["The sights.", "The streets.", "The food."], pr = this.progress;
+    if (this._staying) { then(); return; }
+    const card = openPanel(`<h2>🏨 ${L("How long will you stay in {c}?", { c: city })}</h2><p class="job-brief">${L("Explore the city, eat the food, see the sights. Keep your eyes open: strange things happen in new places...")}</p><div class="btn-row"><button class="big-btn" id="sy-3">🗓️ ${L("3 days")}</button><button class="big-btn" id="sy-7">📅 ${L("One week")}</button><button class="ghost-btn" id="sy-0">${L("Go home now")}</button></div>`);
+    card.querySelector("#sy-0").addEventListener("click", () => { closePanel(); then(); });
+    const go = (n) => {
+      closePanel(); this._staying = true; const pool = this._stayEvents(), picks = []; let seed = (pr.day * 7 + (pr.stays || 0) * 3) % pool.length;
+      while (picks.length < n) { const e = pool[seed % pool.length]; if (!picks.includes(e)) picks.push(e); seed += 5; if (picks.length >= pool.length) break; }
+      let wise = 0;
+      const day = (k) => {
+        if (k >= n) { this._staying = false; pr.stays = (pr.stays || 0) + 1; pr.stayDays = (pr.stayDays || 0) + n; pr.stayWisdom = (pr.stayWisdom || 0) + wise; saveProgress(this.profile, pr); this._snap && this._snap("🧳", `Stayed ${n} days in ${city}.`); this.diary(L("{n} days in {c}. Smart choices: {w}/{n}.", { n, c: city, w: wise }));
+          const c2 = openPanel(`<h2>🧳 ${L("Time to go home")}</h2><p class="job-brief">${L("{n} days in {c}. Smart choices: {w} of {n}.", { n, c: city, w: wise })}</p><div class="btn-row"><button class="big-btn" id="sy-home">${L("Travel home")}</button></div>`); c2.querySelector("#sy-home").addEventListener("click", () => { closePanel(); then(); }); return; }
+        const e = picks[k], tag = { following: L("🕵️ Someone is following..."), ghost: L("👻 Something spooky..."), funny: L("😂 Something funny..."), serious: L("⚠️ Something serious...") }[e.kind];
+        const c = openPanel(`<h2>📅 ${L("Day {d} of {n} in {c}", { d: k + 1, n, c: city })}</h2><p class="job-brief">☀️ ${L(s3[k % s3.length])}</p><div class="job-goal">${tag}</div><p class="job-brief">${e.icon} ${e.s}</p><div class="btn-row">${e.o.map((o, i) => `<button class="big-btn" id="se-${i}">${o[0]}</button>`).join("")}</div><div class="job-goal" id="se-out" hidden></div><div class="btn-row"><button class="big-btn" id="se-next" hidden>${k + 1 < n ? L("Next day ▶") : L("Pack up ▶")}</button></div>`);
+        e.o.forEach((o, i) => c.querySelector(`#se-${i}`).addEventListener("click", () => { if (c._done) return; c._done = true; if (o[1]) { wise++; playSuccess(); } else Audio.playRetry(); if (e.kind === "ghost") this._scareFlash(); const out = c.querySelector("#se-out"); out.hidden = false; out.textContent = (o[1] ? "✅ " : "❌ ") + o[2]; for (let j = 0; j < e.o.length; j++) { const b = c.querySelector(`#se-${j}`); if (b) b.disabled = true; } c.querySelector("#se-next").hidden = false; }));
+        c.querySelector("#se-next").addEventListener("click", () => { closePanel(); day(k + 1); });
+      };
+      day(0);
+    };
+    card.querySelector("#sy-3").addEventListener("click", () => go(3)); card.querySelector("#sy-7").addEventListener("click", () => go(7));
   }
 }
 

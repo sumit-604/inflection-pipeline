@@ -622,6 +622,13 @@ All of them are on the big map (G).
   a far corner. In the morning the compass points to it. Checked for all 27
   jobs (the Lawyer's seat at the District Court moved into view).
 
+## Driver's seat for the loco pilot (v43)
+
+- At the Railway Station the loco pilot has a red driver's chair with a
+  control desk (signal lights and levers) on the gold circle. Press E on it
+  and you go straight into the cab: today's train starts at once, no menus.
+  The return train also starts at once.
+
 ## Files
 
 - `index.html` the whole game. Open it in a browser.

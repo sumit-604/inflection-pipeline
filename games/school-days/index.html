@@ -748,7 +748,7 @@ import * as THREE from 'three';
    label goes through L(). The voice follows the language.
    Questions and answers stay in English for now.
    ============================================================ */
-const GAME_VERSION = "v36";
+const GAME_VERSION = "v37";
 const LANGS = {
   en: { name: "English", voice: "en-IN" },
   hi: { name: "हिन्दी", voice: "hi-IN" },
@@ -9508,7 +9508,7 @@ class Game {
     this.world.addBox(-154, 150, 16, 11);
     this._haveliWin = hv.children[2 + 2]; // the one window that sometimes glows
     const its = this._roadIts || (this._roadIts = []);
-    its.push({ pos: { x: -154, z: 143 }, radius: 3.2, prompt: () => (this.phase === "night" ? (this.progress.haveliDone ? L("The old haveli (quiet now)") : L("Enter the old haveli... if you dare")) : L("The old haveli (locked; locals say it is haunted at night)")), activate: () => this._haveli() });
+    its.push({ pos: { x: -154, z: 143 }, radius: 3.2, prompt: () => (this.phase === "night" ? (this.progress.ghostGangDone ? L("The old haveli (police tape; the ghost gang is in jail)") : L("Enter the old haveli... if you dare")) : L("The old haveli (locked; locals say it is haunted at night)")), activate: () => this._haveli() });
     this._ideaSpots = [...(this._ideaSpots || []), ["🏚️ Old Haveli (haunted, at night)", -154, 143]];
   }
   _tickNight(dt, elapsed) {
@@ -9519,31 +9519,90 @@ class Game {
     if (this._haveliWin && this._haveliWin.material) this._haveliWin.material.color.setHex && this._haveliWin.material.color.setHex(night && Math.sin(elapsed * 1.3) > 0.7 ? 0xffb347 : 0x332200);
     const G = this._ghost; if (!G) return; const g = G.group;
     const allowed = night && out && !this.gentle && !this._cut && !this._trial && !this._chase && !this._uiBlocking();
-    if (!allowed) { if (g.visible) g.visible = false; return; }
+    if (!allowed) { if (G.mode) this._ghostGone(null); G.mode = null; if (g.visible) g.visible = false; return; }
     G.t += dt;
-    if (!g.visible) { G.next -= dt; if (G.next > 0) return; G.next = 25 + Math.random() * 25;
+    // Where the camera looks: it sits behind the player at camYaw, so the view runs the other way.
+    const cy = this.player.camYaw || 0, vx = -Math.sin(cy), vz = -Math.cos(cy);
+    if (!G.mode) { G.next -= dt; if (G.next > 0) return; G.next = 25 + Math.random() * 25;
       const kind = Math.random(); pr.ghostSeen = (pr.ghostSeen || 0);
-      if (kind < 0.35) { const sounds = [L("👣 Footsteps behind you... You turn. Nobody."), L("🔔 Anklets jingle in the dark: chham, chham... then silence."), L("🦉 An owl hoots three times. The dogs start howling."), L("🌬️ A cold wind. Someone whispers your name from the trees...")]; showToast(sounds[Math.floor(Math.random() * sounds.length)], 3400, "bad"); try { playBark(); } catch (e) { /* sound optional */ } return; }
-      const fwd = this.player.group.rotation.y, d = 16 + Math.random() * 8, side = (Math.random() - 0.5) * 8; g.position.set(pp.x + Math.sin(fwd) * d + Math.cos(fwd) * side, 0.2, pp.z + Math.cos(fwd) * d - Math.sin(fwd) * side); g.visible = true; G.show = 0; G.fled = false;
+      if (kind < 0.25) { const sounds = [L("👣 Footsteps behind you... You turn. Nobody."), L("🔔 Anklets jingle in the dark: chham, chham... then silence."), L("🦉 An owl hoots three times. The dogs start howling."), L("🌬️ A cold wind. Someone whispers your name from the trees...")]; showToast(sounds[Math.floor(Math.random() * sounds.length)], 3400, "bad"); try { playBark(); } catch (e) { /* sound optional */ } return; }
+      if (kind < 0.6) {
+        // Behind you: it waits where you cannot see. Turn round and it is there.
+        G.mode = "behind"; G.show = 0; G.spot = { x: pp.x - vx * 5, z: pp.z - vz * 5 }; g.visible = false;
+        showToast(L("🥶 The air goes ice cold. You feel someone standing right BEHIND you... Turn around (arrow keys, drag, or walk back)."), 5200, "bad"); try { playWhoosh(); } catch (e) { /* sound optional */ } return; }
+      // In front of you: placed inside the camera view so you really see it.
+      const d = 11 + Math.random() * 5, side = (Math.random() - 0.5) * 5;
+      g.position.set(pp.x + vx * d + vz * side, 0.2, pp.z + vz * d - vx * side); g.visible = true; G.mode = "front"; G.show = 0;
       for (const l of this.world.lampLights || []) l.visible = false;
       showToast(L("👻 What is THAT? A white figure stands on the road ahead..."), 3200, "bad"); try { playWhoosh(); } catch (e) { /* sound optional */ } return; }
-    G.show += dt; g.position.y = 0.2 + Math.sin(G.t * 2) * 0.15; g.rotation.y = Math.atan2(pp.x - g.position.x, pp.z - g.position.z); G.mat.opacity = 0.35 + Math.abs(Math.sin(G.t * 7)) * 0.3; g.position.x += Math.sin(G.t * 0.7) * dt * 0.8;
+    G.show += dt;
+    if (G.mode === "behind" && !g.visible) {
+      const tx = G.spot.x - pp.x, tz = G.spot.z - pp.z, tl = Math.hypot(tx, tz) || 1;
+      if ((tx * vx + tz * vz) / tl > 0.55) { g.position.set(G.spot.x, 0.2, G.spot.z); g.visible = true; G.show = 0; G.revealed = true; this._scareFlash(); for (const l of this.world.lampLights || []) l.visible = false; showToast(L("😱 IT WAS RIGHT BEHIND YOU! A pale face, dark eyes, staring..."), 3200, "bad"); try { playWhoosh(); playBark(); } catch (e) { /* sound optional */ } }
+      else if (G.show > 14) { G.mode = null; showToast(L("🌬️ The cold feeling fades. Whatever it was, it is gone."), 3000); }
+      return; }
+    g.position.y = 0.2 + Math.sin(G.t * 2) * 0.15; g.rotation.y = Math.atan2(pp.x - g.position.x, pp.z - g.position.z); G.mat.opacity = 0.35 + Math.abs(Math.sin(G.t * 7)) * 0.3;
+    if (G.mode === "front") g.position.x += Math.sin(G.t * 0.7) * dt * 0.8;
     for (const l of this.world.lampLights || []) l.visible = Math.random() > 0.5;
-    const near = Math.hypot(pp.x - g.position.x, pp.z - g.position.z) < 7;
-    if (near || G.show > 6) { g.visible = false; for (const l of this.world.lampLights || []) l.visible = true; pr.ghostSeen = (pr.ghostSeen || 0) + 1; saveProgress(this.profile, pr); showToast(near ? L("💨 You step closer... and it is GONE. Only a cold mist where it stood.") : L("💨 It drifts into the trees and vanishes."), 3200, "bad"); if (pr.ghostSeen === 3) { this._snap && this._snap("👻", "Saw a ghost three times at night."); showToast(L("🏅 Badge: Ghost Spotter!"), 3000, "good"); } this.diary(L("Night: saw something white on the road. Was it a ghost?")); }
+    const near = Math.hypot(pp.x - g.position.x, pp.z - g.position.z) < (G.mode === "behind" ? 3 : 7), limit = G.mode === "behind" ? 2.6 : 6;
+    if (near || G.show > limit) this._ghostGone(near);
+  }
+  _ghostGone(near) {
+    const G = this._ghost, pr = this.progress; if (!G) return; const was = G.mode; G.mode = null; G.group.visible = false; for (const l of this.world.lampLights || []) l.visible = true;
+    if (near === null || !was) return;
+    pr.ghostSeen = (pr.ghostSeen || 0) + 1; saveProgress(this.profile, pr);
+    showToast(was === "behind" ? L("💨 You blink... and it is GONE. Your heart is pounding.") : near ? L("💨 You step closer... and it is GONE. Only a cold mist where it stood.") : L("💨 It drifts into the trees and vanishes."), 3200, "bad");
+    if (pr.ghostSeen === 3) { this._snap && this._snap("👻", "Saw a ghost three times at night."); showToast(L("🏅 Badge: Ghost Spotter!"), 3000, "good"); }
+    this.diary(was === "behind" ? L("Night: something stood behind me on the road. I turned and saw it!") : L("Night: saw something white on the road. Was it a ghost?"));
+  }
+  _scareFlash() {
+    try { let f = document.getElementById("scare-flash"); if (!f) { f = document.createElement("div"); f.id = "scare-flash"; f.style.cssText = "position:fixed;inset:0;background:#000;opacity:0;pointer-events:none;z-index:60;transition:opacity .35s"; document.body.appendChild(f); }
+      f.style.transition = "none"; f.style.opacity = "0.92"; requestAnimationFrame(() => requestAnimationFrame(() => { f.style.transition = "opacity .9s"; f.style.opacity = "0"; })); } catch (e) { /* flash optional */ }
   }
   _haveli() {
-    const pr = this.progress; if (this.phase !== "night") { this.dialogue.say(L("Old watchman"), [L("Locked for fifty years, beta. People say a girl's spirit walks here at night, looking for something she lost.")], null, { pitch: 300 }); return; }
+    const pr = this.progress;
+    if (pr.ghostGangDone) { this.dialogue.say(L("Old watchman"), [L("Police tape on the gate now. The 'ghosts' were the Kaalu gang in bedsheets. They are in jail, thanks to you!")], null, { pitch: 300 }); return; }
+    if (this.phase !== "night") { this.dialogue.say(L("Old watchman"), [L("Locked for fifty years, beta. At night people see white ghosts here and hear screams."), L("And every week a house in town is robbed at night. People say the haveli ghosts take the things... I do not know.")], null, { pitch: 300 }); return; }
     if (this.gentle) { this.dialogue.say(L("Old watchman"), [L("Too late for adventures, beta. Go home and sleep.")], null, { pitch: 300 }); return; }
-    if (pr.haveliDone) { this.dialogue.say(L("The haveli"), [L("(All is quiet. A soft warm light glows in the top window. Chhaya is at peace.)")], null, { pitch: 380 }); return; }
-    playWhoosh();
-    this.dialogue.say(L("The haveli"), [L("(The gate creaks open by itself. Dust. Cobwebs. A candle flickers on the stairs...)"), L("(A cold hand of wind on your neck. A pale girl appears at the top of the stairs.)"), L("Chhaya: 'Who are you? ... Please, do not run. I lost my silver payal fifty years ago. I cannot rest without it.'"), L("Chhaya: 'Will you help me find it?'")], () => {
-      const spots = [L("Under the broken stairs"), L("Inside the dry old well"), L("Behind the torn curtain"), L("In the dusty wooden chest")], right = pr.day % 4; let tries = 0;
-      const card = openPanel(`<h2>🕯️ ${L("Search the haveli")}</h2><p class="job-brief">${L("Where could the payal be? The candle is burning low...")}</p><div class="btn-row">${spots.map((s, i) => `<button class="big-btn" id="hv-${i}">${s}</button>`).join("")}</div><div class="job-goal" id="hv-msg"></div>`);
-      spots.forEach((s, i) => card.querySelector(`#hv-${i}`).addEventListener("click", () => { tries++; if (i !== right) { card.querySelector("#hv-msg").textContent = [L("A bat flies out! Nothing here."), L("Something moves in the dark... just a rat. Nothing here."), L("The candle almost goes out! Nothing here.")][tries % 3]; Audio.playRetry(); return; }
-        closePanel(); pr.haveliDone = true; pr.brave = (pr.brave || 0) + 1; this.addRep && this.addRep(3, L("helped Chhaya rest")); saveProgress(this.profile, pr); playSuccess(); this._snap && this._snap("🕯️", "Found Chhaya's silver payal in the old haveli."); this.diary(L("Found the silver payal in the haunted haveli. The ghost girl smiled and faded into light."));
-        this.dialogue.say("Chhaya", [L("(Chham, chham. The silver payal shines in your hand.)"), L("Chhaya: 'My payal! Fifty years I searched. Thank you, brave one.'"), L("(She smiles, turns into soft light, and floats up to the stars. The haveli feels warm now.)"), L("🏅 Badge: Brave Heart.")], null, { pitch: 480 }); }));
-    }, { pitch: 380 });
+    if (pr.haveliFailDay === pr.day) { showToast(L("🦵 Your legs are still shaking. Sleep, and try again another night."), 3400, "bad"); return; }
+    playWhoosh(); this._scareFlash();
+    this.dialogue.say(L("The haveli"), [L("(The gate creaks open by itself. Cold air. Dust. Somewhere inside, a scream.)"), L("(Your torch shakes in your hand. Robberies in town... ghosts in the haveli... Is it true?)"), L("🧭 Find out what is really inside. Stay brave: you have 5 💪 courage. Wrong moves cost courage. At 0 you run home.")], () => this._haveliStage(0, { courage: 5, clues: [], proof: false }), { pitch: 380 });
+  }
+  _haveliStages() {
+    return [
+      { t: "🚪 " + L("The dark gate"), s: L("Pitch dark inside. Dry leaves crunch. Something white flaps at a window upstairs."), o: [[L("Step inside, torch on"), 1, L("You step in. Your heart thumps, but your feet keep going.")], [L("Shout 'Who is there?'"), 0, L("Your voice echoes back: '...there... there...' Brrr. Nothing moves.")], [L("Turn and run"), -1, L("You run three steps, then stop and breathe. Brave people feel fear too.")]] },
+      { t: "🌫️ " + L("The courtyard"), s: L("A white shape floats along the balcony, wailing: 'Niiikal jaooo...!'"), o: [[L("Shine the torch at its feet"), 1, L("It HAS feet. In rubber chappals! Ghosts do not wear chappals."), L("🔍 Clue: the ghost wears chappals")], [L("Close your eyes and count to ten"), 0, L("When you open them, it is gone. You learned nothing.")], [L("Scream and hide"), -1, L("Your scream echoes. Somewhere, someone giggles...")]] },
+      { t: "🕯️ " + L("The great hall"), s: L("BANG! The doors slam. The candles die. A huge voice booms: 'GET OUUUT!'"), o: [[L("Follow the voice to the torn curtain"), 1, L("Behind the curtain: a speaker playing a ghost-sound track on loop!"), L("🔍 Clue: a hidden speaker")], [L("Hide under the old table"), 0, L("Drip... drip... only rainwater. The voice keeps booming.")], [L("Run for the door"), -1, L("The door is stuck! You pull and pull... then calm down.")]] },
+      { t: "🪜 " + L("The staircase"), s: L("Stairs go UP into a cold wind, and DOWN to the cellar. On the dusty floor: fresh shoe prints."), o: [[L("Follow the fresh prints down"), 1, L("Ghosts float. They leave no prints! These go to the cellar."), L("🔍 Clue: fresh shoe prints")], [L("Go up where the wind blows"), 0, L("A hundred bats burst out! Only an empty room upstairs.")], [L("Sit down and call for Maa"), -1, L("Only your echo answers. You wipe your eyes and stand up.")]] },
+      { t: "👻 " + L("The dark corridor"), s: L("BOO!! A ghost jumps out, right in front of your face!"), scare: true, o: [[L("Grab its white sheet and pull"), 1, L("The sheet slips off. It is a teenage boy! He yelps and runs to the cellar. The sheet has a laundry tag: 'BABLU'."), L("🔍 Clue: a bedsheet with a name tag")], [L("Freeze like a statue"), 0, L("It laughs 'Hoo-haa-haa!' and floats away. Your knees wobble.")], [L("Run back the way you came"), -1, L("You trip on a broken tile. Ouch. You get up.")]] },
+      { t: "🚨 " + L("The cellar door"), s: L("Through a crack: three people with bedsheets pulled off. Piles of phones, gold chains, a TV. 'Scare the town, rob the houses. Nobody checks a haunted house!' It is a robbery gang!"), last: true, o: [[L("Quietly call 100 and whisper the address"), 1, L("'Police control room. Stay hidden, we are coming.' You wait in the dark, holding your breath...")], [L("Take a photo for proof, silently"), 2, L("Click. No flash. The photo shows all three faces and the stolen things. Now what?")], [L("Burst in and shout 'Caught you!'"), -1, L("They chase you out! You hide behind the well till they go back. Robbers are for the police.")]] },
+    ];
+  }
+  _haveliStage(i, st) {
+    const stages = this._haveliStages(), S = stages[i]; if (!S) return;
+    if (S.scare) { this._scareFlash(); try { playWhoosh(); playBark(); } catch (e) { /* sound optional */ } }
+    const opts = S.o.map((o, k) => ({ o, k })).filter((x) => !(x.o[1] === 2 && st.proof)); for (let a = opts.length - 1; a > 0; a--) { const b = Math.floor(Math.random() * (a + 1)); [opts[a], opts[b]] = [opts[b], opts[a]]; }
+    const hearts = () => "💪".repeat(Math.max(0, st.courage)) + "🖤".repeat(Math.max(0, 5 - st.courage));
+    const card = openPanel(`<div style="background:#0d0f17;color:#e8e8f0;border-radius:14px;padding:14px"><h2 style="color:#fff">${S.t} <small>(${i + 1}/${stages.length})</small></h2><p class="job-brief" style="color:#cfd3e6">${S.s}</p><div class="job-goal" id="hv-c" style="background:#1e2336;color:#ffd27a;border:1px solid #3a4060">${L("Courage")}: ${hearts()} · ${L("Clues")}: ${st.clues.length}/4</div><div class="btn-row">${opts.map((x) => `<button class="big-btn" id="hv-${x.k}">${x.o[0]}</button>`).join("")}</div><div class="job-goal" id="hv-msg" style="background:transparent;border:0;color:#ff9e9e"></div></div>`);
+    for (const x of opts) card.querySelector(`#hv-${x.k}`).addEventListener("click", () => {
+      const [, v, said, clue] = x.o, msg = card.querySelector("#hv-msg");
+      if (v === 2) { st.proof = true; closePanel(); showToast("📸 " + said, 3600, "good"); this._haveliStage(i, st); return; }
+      if (v === 1) { if (clue) st.clues.push(clue); closePanel(); playSuccess(); showToast(said + (clue ? "  " + clue : ""), 4200, "good"); if (S.last) this._haveliCaught(st); else this._haveliStage(i + 1, st); return; }
+      st.courage -= v === 0 ? 1 : 2; Audio.playRetry(); if (v < 0) this._scareFlash();
+      if (st.courage <= 0) { closePanel(); this._haveliFail(); return; }
+      card.querySelector("#hv-c").textContent = `${L("Courage")}: ${hearts()} · ${L("Clues")}: ${st.clues.length}/4`; msg.textContent = said + " " + L("(Courage -") + (v === 0 ? 1 : 2) + ")";
+      const btn = card.querySelector(`#hv-${x.k}`); if (btn) btn.disabled = true;
+    });
+  }
+  _haveliFail() {
+    const pr = this.progress; pr.haveliFailDay = pr.day; pr.haveliTries = (pr.haveliTries || 0) + 1; saveProgress(this.profile, pr); this._scareFlash();
+    this.dialogue.say(L("The haveli"), [L("(Too scary! You run out of the gate and all the way home without stopping.)"), L("Dadi: 'Arre! Where were you? Sit, drink water. Fear is not shameful, beta. Come back when you are ready.'"), L("💪 Courage comes back after a night's sleep. Try again another night.")], null, { pitch: 300 });
+  }
+  _haveliCaught(st) {
+    const pr = this.progress; pr.ghostGangDone = true; pr.haveliDone = true; pr.brave = (pr.brave || 0) + 2; saveProgress(this.profile, pr);
+    const reward = 500 + (st.proof ? 200 : 0); this.addMoney && this.addMoney(reward, L("reward: Kaalu gang caught")); this.addRep && this.addRep(5, L("caught the fake ghost gang"));
+    this._snap && this._snap("🚨", "Caught the fake ghost gang in the old haveli."); this.diary(L("The haveli ghosts were fake! The Kaalu gang used bedsheets and a speaker to scare people and rob houses. I called the police and they were caught."));
+    this.dialogue.say(L("Inspector Rathore"), [L("(Sirens! Blue and red lights flash on the haveli walls. Six constables rush into the cellar.)"), L("Inspector: 'Hands up! Kaalu, Bablu, Pinky: wanted for 12 house robberies!'"), L("Kaalu: 'Arre! Our ghost show was perfect! Who told you?'"), L("Inspector: 'This brave kid. Chappals, a speaker, shoe prints, a name tag on the sheet. Ghosts do not leave clues. Robbers do.'"), st.proof ? L("Inspector: 'And your photo is proof for the court. Excellent work!'") : L("Inspector: 'Next time, a silent photo helps the court too.'"), L(`🏆 Reward ₹${reward}. The stolen phones and jewellery go back to the families.`), L("📰 Tomorrow's paper: 'BRAVE KID BUSTS FAKE GHOST GANG!'"), L("🏅 Badge: Ghost Buster.")], null, { pitch: 260 });
   }
 }
 

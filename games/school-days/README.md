@@ -536,15 +536,23 @@ All of them are on the big map (G).
 - The ending: a graduate who has worked ten shifts goes to bed one last
   time and the game closes with a flashback from Nursery to now.
 
-## Night, clothes, packing, mall and gym (v36)
+## Night, clothes, packing, mall and gym (v36, ghosts updated in v37)
 
 - Real night. After dark the town goes dark. A torch lights the road ahead.
   Rooms stay lit at night.
 - Ghost sightings at night: a white figure on the road, a whisper, a lamp
   that flickers. It vanishes when you walk close. Spot 3 for the Ghost
   Spotter badge. Gentle mode turns ghosts off.
-- The Old Haveli stands dark on the north side. Help Chhaya find her lost
-  payal. The hiding spot changes each day.
+- Some ghosts wait behind you. The air goes cold. Turn round (arrow keys,
+  drag, or walk back) and it is there.
+- The Old Haveli stands dark on the north side. At night, go in and find out
+  what is inside. Six scary rooms: the gate, the courtyard, the great hall,
+  the stairs, the dark corridor and the cellar. You start with 5 courage.
+  A wrong move costs courage. At 0 you run home and try another night.
+  Brave, smart moves find 4 clues. The ghosts are fake: the Kaalu gang uses
+  bedsheets and a speaker to scare people and rob houses. Call 100 from the
+  cellar door and the police catch them. Reward Rs 500, plus Rs 200 for a
+  silent photo as proof. Badge: Ghost Buster.
 - At home you change into a T-shirt and shorts. At bedtime you wear pajamas.
 - Before a train or flight you pack your bag. Pick the right things for the
   weather and the purpose. The game explains each wrong pick. At the city

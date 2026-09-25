@@ -616,6 +616,12 @@ All of them are on the big map (G).
 - Phone: when you call someone, the game asks if you want their location.
   Yes points the compass to them.
 
+## Job seats in view (v42)
+
+- Your job seat is placed in the open part of the room you can see, never in
+  a far corner. In the morning the compass points to it. Checked for all 27
+  jobs (the Lawyer's seat at the District Court moved into view).
+
 ## Files
 
 - `index.html` the whole game. Open it in a browser.

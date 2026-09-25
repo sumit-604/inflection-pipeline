@@ -748,7 +748,7 @@ import * as THREE from 'three';
    label goes through L(). The voice follows the language.
    Questions and answers stay in English for now.
    ============================================================ */
-const GAME_VERSION = "v41";
+const GAME_VERSION = "v42";
 const LANGS = {
   en: { name: "English", voice: "en-IN" },
   hi: { name: "हिन्दी", voice: "hi-IN" },
@@ -7334,6 +7334,7 @@ class Game {
       if (!room.playerDesk) { room.playerDesk = { x: dx, z: dz }; room._desk(lx, lz, cur.trial ? 0x3b3f4a : 0x8a5626); room._box(0.5, 0.45, 0.5, 0x3f6f9f, lx - 1.3, 0.22, lz - 0.9, false); room._box(0.9, 0.02, 0.6, 0xf4f6f8, lx + 0.2, 0.8, lz, false); room._box(0.4, 0.06, 0.3, 0xffd21e, lx - 0.5, 0.82, lz + 0.1, false); room._label(`${cur.icon} ${L(seatName)} · ${cur.name}`, lx, lz, 1.9, 0.6); room._label(L("Visitor's chair"), lx - 1.3, lz - 0.9, 1.3, 0.4); room.seatArrow = room._label("▼ " + L("YOUR SEAT"), lx, lz + 0.8, 2.6, 0.7); }
       this._seatArrow = room.seatArrow;
       showToast(`🪑 ${L("Your seat")}: ${L(seatName)}, ${dx > room.x0 ? L("on the right side of the room") : L("on the left side of the room")}. ${L("Follow the arrow.")}`, 3600, "good");
+      if (this.phase === "morning" && !this._duty) this.setObjective(`🪑 ${L("Your seat")}: ${L(seatName)} · ${L("press E there")}`, dx, dz + 0.8);
       const seat = { x: dx, z: dz + 0.8 };
       this.roomInteractables.push({ pos: seat, radius: 2.0, prompt: () => (this._shiftDone ? L("Your desk (shift done)") : L("Sit at your desk: today's cases as {r} (₹{n})", { r: rankName(cur, pr.shifts), n: salaryFor(cur, pr.shifts) })), activate: () => { if (!this._shiftDone && !this.isSunday()) { const P = this.player.group; P.position.set(seat.x, 0, seat.z); P.rotation.y = Math.PI; if (!cur.trial) sitPose(P, "car"); } this._workShift(cur); } });
       // A duty vehicle for the uniformed services waits at the door: jeep, fire engine, ambulance.
@@ -7398,7 +7399,8 @@ class Game {
     };
     const cands = pref ? [[pref.lx, pref.lz]] : [];
     for (let lz = -room.d / 2 + 2; lz <= room.d / 2 - 2.5; lz += 0.5) for (let lx = -room.w / 2 + 1.5; lx <= room.w / 2 - 1.5; lx += 0.5) cands.push([lx, lz]);
-    const rest = cands.slice(pref ? 1 : 0).sort((a, b) => (prefer === "back" ? a[1] - b[1] || a[0] - b[0] : b[1] - a[1] || b[0] - a[0]));
+    const aim = pref || { lx: room.w * 0.22, lz: room.d / 2 - 5 }, near = (c) => Math.hypot(c[0] - aim.lx, (c[1] - aim.lz) * 1.3) + (Math.abs(c[0]) > room.w / 2 - 3 ? 6 : 0) + (c[1] > room.d / 2 - 3.5 ? 6 : 0);
+    const rest = cands.slice(pref ? 1 : 0).sort((a, b) => (prefer === "back" ? a[1] - b[1] || a[0] - b[0] : near(a) - near(b)));
     for (const [lx, lz] of (pref ? [cands[0], ...rest] : rest)) if (fits(lx, lz)) { room._deskSpots.push({ lx, lz }); return { lx, lz }; }
     return { lx: 0, lz: 0 };
   }

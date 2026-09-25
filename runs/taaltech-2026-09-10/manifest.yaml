@@ -1,0 +1,42 @@
+company: TAAL Tech Ltd
+ticker: TAALTECH
+cmp: 5164.0
+market_cap_cr: 1609.0
+run_date: 2026-09-10
+run_type: full
+concalls_available: false
+sector_cap_row: "Consulting / Engineering services"
+listed_date: ""
+notes: >
+  Collected from screener.in by collect_to_repo.py v3, then repaired by /step1.
+  REPAIR 1 (sector_cap_row): collector auto-picked "Pharma / CDMO", which is
+  wrong. Corrected to "Consulting / Engineering services" (cap 25x, Section 1B
+  Sector Reality Cap table, frameworks/Master_Project_Prompt_v3_6.md line 437).
+  The business is billable-engineer engineering R&D services: project and
+  time-and-material engagements, no product, no licence, no platform. FLAG FOR
+  PHASE 3: the listed ER&D comparator set (Tata Elxsi, L&T Technology Services)
+  is priced by the market on IT-services multiples, which the table caps at 45x
+  under "Platform / SaaS / IT services". The 25x row is the honest read of the
+  business model; the operator should confirm the row before stage 11 uses it.
+  REPAIR 2 (results): the collector found no results PDFs on screener. Three
+  were downloaded from the company investor page and placed in inputs/results/:
+  Q1 FY27 (Jun 2026), Q4 FY26 (Mar 2026), Q3 FY26 (Dec 2025). Source:
+  https://www.taaltech.com/investor-relations/financials-and-annual-reports/
+  REPAIR 3 (screening CSVs): screener-Profit_Loss.csv, screener-Balance_Sheet.csv,
+  screener-Cash_Flow.csv and screener-Quarters.csv are header-only and carry no
+  data (the known collect_to_repo v3 defect). screener-Data_Sheet.csv IS fully
+  populated with the FY17-FY26 P&L, balance sheet, cash flow and the last ten
+  quarters. Stage 1 uses Data_Sheet. The same defect applies to all three peers.
+  REPAIR 4 (folders): inputs/prospectus, announcements, shareholding, research
+  and other were absent; created with .gitkeep.
+  REPAIR 5 (scanned filings): the Q1 FY27 and Q3 FY26 results PDFs are
+  image-only with no text layer. Every page was rendered to PNG under
+  extracted/images/ and transcribed to extracted/results__*.txt.
+  NO-CONCALL MODE: TAAL Tech holds no earnings calls and publishes no investor
+  presentation. Verified against the company investor page and the screener
+  documents list on 2026-09-10. The absence is declared, not a collection gap.
+  LISTING: listed via demerger from Taneja Aerospace and Aviation Ltd, scheme
+  effective 21 August 2015. Long-listed, so an IPO prospectus is not expected
+  and its absence is not a gap.
+  EXTRACTION: every input PDF is pre-extracted to page-marked text under
+  extracted/. Stages read the .txt for text and the PDF for anchor confirmation.

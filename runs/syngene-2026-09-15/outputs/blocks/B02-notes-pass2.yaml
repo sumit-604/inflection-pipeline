@@ -1,0 +1,24 @@
+stage: B02-notes-pass2
+company: "SYNGENE"
+run_date: "2026-09-15"
+model: claude-sonnet-5
+status: complete
+pass: 2
+pass_2_empty: false
+new_findings_count: 7
+carry_forward_resolved:
+  - item: "SSS Rs 315,000/share dividend (Note 45(c) consolidated, p.375)"
+    resolution: "Confirmed verbatim as printed in the AR; numerically implausible against SSS's 84,000,000 disclosed shares (standalone Note 5, p.246) and SSS's FY26 PBT of Rs 287mn (Board's Report, p.65). Unresolved from this document; flagged as an as-filed anomaly for management/exchange-filing verification, not treated as a real economic event."
+  - item: "Bayview pre-operating cost Rs 787mn standalone vs Rs 785mn consolidated (Note 42 p.288-289 / Note 43 p.374)"
+    resolution: "Both anchor to the identical USD 8.4mn; the Rs 2mn gap is an immaterial FX-translation rounding difference between standalone and consolidated books."
+  - item: "Consolidated cash-flow-hedge OCI net of tax"
+    resolution: "Rs -2,316mn FY26 vs Rs -102mn FY25 (pre-tax Rs -3,082mn / tax effect Rs 766mn, consolidated OCI note p.365)."
+new_findings:
+  - {finding: "Derivative fair value swung from net asset ~Rs 2,155mn (FY25) to net liability ~Rs 1,191mn (FY26), standalone", note_ref: "Note 28, p.270-271", rating: "RED"}
+  - {finding: "Probable USD-vs-Rs-Mn unit mislabel in FX forward/option notional table, both standalone and consolidated", note_ref: "Note 28, p.273 std / p.339 series consol", rating: "WATCH"}
+  - {finding: "Syngene USA Inc. FY26 loss: Board's Report USD 1.4mn (~Rs124-131mn) vs audited Note 33(b) Rs 77mn, unreconciled ~40% gap", note_ref: "Board's Report p.65 / Note 33(b) p.368", rating: "WATCH"}
+  - {finding: "Syngene USA Inc. net assets rose Rs293mn on FX translation gain, not fresh parent equity", note_ref: "Note 33(b) p.368 / OCI Note p.365", rating: "CLEAN"}
+  - {finding: "Standalone CWIP fell 38.8% vs consolidated CWIP fell only 17.5%, implying ~Rs5,044mn non-standalone (Bayview) CWIP at FY26-end", note_ref: "Note 3(a), p.242-243 std / p.324 consol", rating: "WATCH"}
+  - {finding: "Single operating segment (Ind AS 108) is the structural reason no CGU-level impairment disclosure exists for Bayview/Unit 3", note_ref: "Note 32 p.278 std / Note 33 p.365 consol", rating: "CLEAN"}
+  - {finding: "No prior-period restatement or reclassification found on targeted pattern re-read", note_ref: "cross-document search", rating: "CLEAN"}
+report_path: "runs/syngene-2026-09-15/outputs/reports/02-notes-pass2.md"

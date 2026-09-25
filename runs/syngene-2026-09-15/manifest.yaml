@@ -1,0 +1,10 @@
+company: Syngene International Ltd
+ticker: SYNGENE
+cmp: 383.0
+market_cap_cr: 15446.0
+run_date: 2026-09-15
+run_type: full
+concalls_available: true
+sector_cap_row: "Pharma / CDMO"
+listed_date: "2015-08-11"
+notes: "Step-1 intake 2026-09-15. Collected by collect_to_repo.py v3 (screener) plus BSE announcements API (results, Reg 30, decks) and fetch_ratings.py (CRISIL 11-Sep-2026 rationale). Sector row Pharma / CDMO (38x) confirmed by Step D, not the auto-pick alone. Long-listed (NSE/BSE Aug-2015), prospectus not expected. Subject market cap Rs 15,446 cr sits above the small/micro-cap mandate; operator requested the run. Shareholding is a screener table (SECONDARY). Screener P&L/BS/CF/Quarters CSVs are empty shells; Data_Sheet carries the series."

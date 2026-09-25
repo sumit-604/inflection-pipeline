@@ -1,0 +1,17 @@
+stage: B02-notes
+pass: 1
+company: "TAALTECH"
+run_date: "2026-09-10"
+model: claude-sonnet-5
+status: complete
+output_file: "runs/taaltech-2026-09-10/outputs/reports/02-notes-pass1.md"
+notes_covered: "Standalone 1-51 (p.69-105); Consolidated 1-54 + AOC-1 (p.118-162)"
+load_bearing_facts_verified:
+  - {id: LBF-1, item: "other income decomposition", status: verified_with_discrepancy, note_ref: "Note 25, Consolidated, p.143", detail: "Other income = Rs19.03cr (Rs1,902.72 lakh), not Rs19.40cr as briefed; PBT Rs74.36cr confirmed exact"}
+  - {id: LBF-2, item: "cash conversion / receivables ageing", status: verified_exact, note_ref: "Note 10, Consolidated, p.134-136"}
+  - {id: LBF-3, item: "investment pile composition", status: verified_exact, note_ref: "Note 7, Consolidated, p.132-134"}
+  - {id: LBF-4, item: "Taneja group related-party exposure", status: verified_exact, note_ref: "Note 36, Consolidated, p.150-151"}
+top_findings_count: 10
+red_flags_count: 9
+pass_2_pending: true
+pass_3_pending: true

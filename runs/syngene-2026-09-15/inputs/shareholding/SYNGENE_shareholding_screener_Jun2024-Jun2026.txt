@@ -1,0 +1,10 @@
+SOURCE: screener.in/company/SYNGENE/consolidated/ "Shareholding Pattern" quarterly table, scraped 2026-09-15.
+TIER: SECONDARY (aggregator table, not the BSE XBRL filing). The BSE shareholding-pattern filing was not collected; confirm against it before any UA qualifier ruling.
+
+Quarter        | Jun 2024 | Sep 2024 | Dec 2024 | Mar 2025 | Jun 2025 | Sep 2025 | Dec 2025 | Mar 2026 | Jun 2026
+Promoters      | 54.72%   | 54.72%   | 52.74%   | 52.74%   | 52.68%   | 52.68%   | 52.68%   | 52.68%   | 52.59%
+FIIs           | 20.64%   | 20.72%   | 20.65%   | 19.47%   | 16.51%   | 16.31%   | 14.96%   | 13.91%   | 11.82%
+DIIs           | 16.78%   | 17.49%   | 19.52%   | 21.50%   | 24.05%   | 24.62%   | 25.83%   | 26.44%   | 28.01%
+Public         | 7.44%    | 6.74%    | 6.79%    | 5.99%    | 6.45%    | 6.08%    | 6.22%    | 6.69%    | 7.15%
+Others         | 0.43%    | 0.34%    | 0.29%    | 0.29%    | 0.31%    | 0.30%    | 0.29%    | 0.29%    | 0.43%
+No. of holders | 1,20,018 | 1,07,338 | 1,28,806 | 1,25,090 | 1,42,310 | 1,36,061 | 1,31,750 | 1,35,605 | 1,42,277

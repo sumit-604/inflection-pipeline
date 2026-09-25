@@ -1,0 +1,55 @@
+stage: B09b-dossier
+company: "SYNGENE"
+run_date: "2026-09-15"
+model: claude-sonnet-5
+status: complete
+corpus_verdict: "CORPUS GAPPED"
+corpus_gaps:
+  - {document: "SAILIFE concalls Nov-25/Feb-26/May-26", expected_source: "company IR page", kind: "findable-missing"}
+  - {document: "PPLPHARMA concalls Nov-25/Feb-26/May-26", expected_source: "company IR page", kind: "findable-missing"}
+  - {document: "Filed BSE XBRL shareholding-pattern disclosure", expected_source: "BSE", kind: "findable-missing"}
+  - {document: "Four SAST disclosures (2026-02-17, 2026-04-10, 2026-04-15, 2026-07-22), readable versions", expected_source: "BSE", kind: "findable-missing"}
+  - {document: "Broker/research notes", expected_source: "BSE", kind: "findable-missing"}
+archetypes:
+  - {line: "Research Services (Discovery + Dedicated Centres + Translational/Clinical Research)", archetype: "Outsourcing partner (CDMO/EMS/IT services)"}
+  - {line: "CDMO (Small Molecule + Large Molecule manufacturing)", archetype: "Outsourcing partner (CDMO/EMS/IT services)"}
+transition:
+  - line: "CDMO (Small Molecule + Large Molecule)"
+    from_tier: "R1/R2 boundary: regulator-approved capacity built for one dominant customer (Zoetis), now at undisclosed utilisation post-offtake-loss"
+    to_tier: "R3 Value-Added / Spec'd Supplier: diversified named customers at healthy utilisation (management's claim)"
+    engine: "A named non-Zoetis customer signs and ramps volume at Unit 3/Bayview/Mangalore; Zoetis residual delivery obligations wind down without further downward revision"
+    proof_gate: "A named non-Zoetis manufacturing customer with disclosed revenue or utilisation at Unit 3, Bayview, or Mangalore, by 31-Mar-2027"
+    recognition_gap: "OPEN QUESTION, unresolved here: subject trades at P/E 52.2 (step1 brief), above the CLAUDE.md R2 (~15-17x)/R3 (~19x) neighbourhoods; Stage 11 resolves via the PE gap"
+    ugliness: "ARTIFACT-OF-CLIMB"
+    transition_falsifier: "Bayview reaches its end-of-FY27 target with no named customer AND CDMO share of quarterly revenue stays near 22% through H2FY27"
+  - line: "Research Services (Discovery + Dedicated Centres + T&CR)"
+    from_tier: "R3 Value-Added/Spec'd Supplier (dedicated centres) with an observed drift toward R1/R2 Commodity Price-Taker (open discovery)"
+    to_tier: "Management's claim: return to R3/R4 value-added, AI-led positioning (unevidenced)"
+    engine: "Repositioning open discovery from commoditised FFS work toward higher-value/AI-assisted work"
+    proof_gate: "A quantified margin or growth improvement in Research Services specifically, or active client count rising above ~400 for two AR cycles running"
+    recognition_gap: "Not separately posed; resolved at Stage 11 via the company-level PE gap named under the CDMO line"
+    ugliness: "STRUCTURAL-FEATURE"
+    transition_falsifier: "A second consecutive AR cycle of flat/falling active client count with continued unquantified attrition and no delivered value-added example"
+dominant_variables:
+  - "Named non-Zoetis CDMO customer / disclosed utilisation at Unit 3, Bayview, or Mangalore"
+  - "CDMO share of total quarterly revenue (41% Q4FY26 to 22% Q1FY27)"
+  - "Research Services active client count / any disclosed research-only growth rate"
+  - "FX cash-flow-hedge reserve reclassifying into P&L / operating EBITDA margin ex-other income"
+business_falsifier: "A CGU-level impairment or write-down against Bayview/Unit 3 CWIP (Rs1,046cr, 34.9% of net block), or a second consecutive year of falling active client count in Research Services, would force re-declaring the FROM business itself rather than the transition."
+mental_model_status: "DRAFT - PENDING OPERATOR SIGN-OFF"
+fragility:
+  variable_count: 6
+  verifiability_ratio: "4 of 6 externally observable"
+  single_point_failure: "Absence of a named non-Zoetis CDMO customer with disclosed utilisation by end of FY27"
+  fragility_verdict: "FRAGILE"
+candidate_count: 7
+second_order:
+  chains_drafted: 2
+  pending_live_links: 2
+  confirm_by_observations: 2
+research_brief_items: 12
+plain_summary_points: 15
+annex:
+  present: true
+  questions_answered: 10
+  corpus_commit_hash: "fd9d07ef"

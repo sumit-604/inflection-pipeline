@@ -1,0 +1,43 @@
+stage: B05-concall
+company: "TAALTECH"
+run_date: "2026-09-10"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["No earnings calls exist for this company (concalls_available: false)", "No investor presentation exists", "No quarter-by-quarter management narrative exists to trend across (only one AR MD&A document in corpus, no prior-year AR narrative for comparison)", "No segment/geography revenue split beneath the two-bucket India/Outside-India note", "No order book, headcount trend, or utilisation metric disclosed anywhere"]
+flags:
+  - {type: FLAG-SILENCE, reason: "The three-quarter revenue acceleration (Rs45.79cr Dec-25 to Rs57.04cr Mar-26 to Rs64.81cr Jun-26, consolidated) is entirely unaddressed in every document management authored in this corpus; the only candidate sentence ('won multiple strategic accounts', AR MD&A p.37) is unquantified, unnamed, and undated."}
+  - {type: FLAG-FILING-CONTROL, reason: "The 26-May-2026 FY26 results filing carried two separate numerical errors inside audited financial statements: the Current/Non-current Investments swap (corrected via corrigendum filed 27-May-2026) and the Note 41 Summarised Consolidated table 57% PBT overstatement (per B02 finding #6, uncorrected anywhere in this corpus)."}
+quarters_analysed: []
+no_concall_mode: true
+triggers:
+  - {priority: 1, name: "Deepening of 10+-year customer relationships / multiple unnamed strategic account wins", type: "VOLUME", timeframe: "medium, unspecified", conviction: "L", confirm_signal: "Quarterly revenue sustaining above Rs57-60cr for two more quarters", kill_signal: "Reversion toward the Rs44-49cr quarterly band held Mar-24 through Sep-25"}
+  - {priority: 2, name: "ER&D sector tailwind (macro, management cites no industry growth rate itself)", type: "SECTORAL", timeframe: "long, unspecified", conviction: "L", confirm_signal: "Stage 6 peer transcripts (Tata Elxsi, Cyient, Onward Technologies) confirm a sector-wide ER&D demand step-up in the same window", kill_signal: "Peer transcripts show flat/soft ER&D demand in the same window, implying the TAAL Tech jump is company-specific and still unexplained"}
+  - {priority: 3, name: "AI as a productivity/cost lever (management states it has not yet assessed the impact)", type: "COST", timeframe: "unspecified", conviction: "L", confirm_signal: "A future AR quantifies an AI-driven efficiency or margin effect", kill_signal: "Continued multi-year silence, or margin compression management later attributes to AI-driven pricing pressure"}
+guidance: []
+promise_delivery:
+  delivered: 0
+  partial: 0
+  missed: 0
+  rows: []
+promise_delivery_score: 0
+excuse_pattern: "no promises exist to test; on the two adjacent filing errors found, one drew a same-day-next-day honest-admission corrigendum (investments current/non-current swap), the other (Note 41 Summarised Consolidated table, 57% PBT overstatement) drew silence, uncorrected anywhere in this corpus"
+repeated_evasions: []
+credibility_grade: "C"
+credibility_basis: "No-concall-mode floor. Zero numeric guidance exists anywhere in the corpus (AR MD&A, Directors' Report, three results filings) to test delivery against, so no rise to B is supported. The corrigendum shows the company self-corrects a caught error; the uncorrected Note 41 table and the total silence on the three-quarter revenue acceleration show the correcting mechanism and the disclosure practice are both incomplete."
+peer_questions:
+  - {question: "What demand conditions did ER&D clients show through FY26 (Apr 2025-Mar 2026) and into Q1 FY27 (Apr-Jun 2026), specifically in Plant Engineering, Architecture & Construction, and Aerospace verticals?", why: "TAAL Tech's own filings show a 24.6% then 13.6% sequential quarterly revenue jump across Q4FY26/Q1FY27 with zero management explanation; peer commentary is the only way to test whether this is a sector-wide ER&D demand step-up or a company-specific event.", check_peers: ["Tata Elxsi", "Cyient", "Onward Technologies"]}
+  - {question: "Are peers describing pricing power gains or utilisation/billing-rate improvement in the same FY26/Q1FY27 window, and in which service lines?", why: "TAAL Tech discloses no utilisation or billing-rate metric anywhere; peer disclosure is the only proxy available to test whether TAAL Tech's growth is volume, price, or mix.", check_peers: ["Tata Elxsi", "Cyient", "Onward Technologies"]}
+  - {question: "What billing-cycle, DSO, or unbilled-revenue/contract-asset trends are peers reporting for FY26, and do any describe a lengthening billing cycle alongside revenue growth?", why: "TAAL Tech's unbilled revenue nearly tripled (Rs4.64cr to Rs13.75cr) in the same period revenue accelerated, and CFO/PAT fell from 84.1% to 33.0%; peer DSO/contract-asset commentary tests whether this is a normal growth-phase pattern in ER&D or specific to TAAL Tech.", check_peers: ["Tata Elxsi", "Cyient", "Onward Technologies"]}
+  - {question: "What single-client or top-5-client revenue concentration do peers disclose or discuss, and is concentration rising or falling industry-wide?", why: "TAAL Tech's single largest customer rose to 24.05% of FY26 revenue and this trend is never narrated in its own MD&A; peer concentration levels give a benchmark for whether this is elevated.", check_peers: ["Tata Elxsi", "Cyient", "Onward Technologies"]}
+  - {question: "Do any peers cite a specific new large account, scope expansion, or project ramp in North America or Europe ER&D engineering services during Q4 FY26 or Q1 FY27 that could plausibly correlate with, or explain by read-across, TAAL Tech's acceleration?", why: "TAAL Tech's only candidate explanation ('won multiple strategic accounts') is unnamed and undated; a peer naming a comparable account win in the same window would be the closest available corroboration this pipeline can obtain.", check_peers: ["Tata Elxsi", "Cyient", "Onward Technologies"]}
+  - {question: "How do peers discuss the demand impact of AI tooling on ER&D engineering services scope, pricing, or headcount need?", why: "TAAL Tech's MD&A states it has 'yet to be able to assess the full impact of AI' on the sector; peer commentary tests whether this is candid uncertainty or a lag versus what peers are already reporting.", check_peers: ["Tata Elxsi", "Cyient", "Onward Technologies"]}
+red_flags:
+  - {flag: "Three-quarter revenue acceleration (24.6% then 13.6% sequential) entirely unaddressed in every management-authored document in the corpus", severity: "MAJOR"}
+  - {flag: "One 26-May-2026 filing carried two numerical errors inside audited financial statements; only the lower-stakes one (investments classification swap) was corrected via corrigendum, the higher-stakes one (Note 41 table, 57% PBT overstatement) was not corrected anywhere in this corpus", severity: "MAJOR"}
+  - {flag: "Zero numeric guidance of any kind exists anywhere in the available disclosure history", severity: "MODERATE"}
+  - {flag: "Rising customer concentration (24.05%) omitted from MD&A narrative, which instead cites only a reassuring 70%-plus long-tenure statistic", severity: "MODERATE"}
+  - {flag: "Rs10cr related-party loan to holding company Vishkul Enterprises never mentioned in MD&A/Directors' Report narrative (sits only in financial-statement notes and a self-contradictory CARO clause)", severity: "MODERATE"}
+  - {flag: "AR Note 42 repeats an identical Rs5,734.36 lakh 'two customer >10%' figure across two different fiscal years, suggesting a copy-paste error in a filed note", severity: "MINOR"}
+dropped_triggers: []
+timeline_slippages: []
+analyst_note: "The finding this stage returns is an absence, not a pattern: no calls, no presentation, no numeric guidance, and total silence on the corpus's single largest business event (the Q4FY26/Q1FY27 revenue acceleration) and its clearest stress signal (the CFO/PAT collapse). The corrigendum episode is the one piece of evidence the company will self-correct a caught error quickly and plainly; the uncorrected Note 41 table shows that catching mechanism is incomplete. Grade C reflects absence of evidence to grade, not confirmed bad faith. Stage 6's peer-question handoff is the mechanism by which this run recovers context a missing call would have supplied; Role 1 should treat the C grade as reflecting communication opacity in its probability weighting, separate from the cash-conversion and governance flags B01/B02/B03 already carry."

@@ -1,0 +1,22 @@
+stage: B13-synthesis
+company: "AVIENCE"
+run_date: "2026-09-26"
+model: "claude-opus-5-5"
+status: complete
+phase: "1-lite"
+verdict: "PROCEED WITH FLAGS"
+verdict_rule_applied: 3        # rule 3 (FLAG-CASH active), INDETERMINATE cap to CAVEATS, rule 4 band 60-74 moves one level to FLAGS
+flags_active: ["FLAG-CASH (INDETERMINATE)"]
+confidence_delta: {numerical: 100, redflag: 71, framework: 87.7, peer: 100, overall: 71}
+valuation_decision: "PENDING PHASE 3"   # phase 1 lite; no valuation run
+entry_range: {low: null, high: null}    # PENDING PHASE 3
+headline: "Mindray reseller bets on own reagents"
+falsification_metric: "H1 FY27 results (due by Nov-2026): revenue growth under 30% YoY with no Uttarakhand or government linked revenue, alongside receivables older than six months above 40% of the book"
+monitorables_count: 8
+publish_candidate: false
+publish_candidate_summary: ""
+notion_save:
+  page_title: "AVIENCE | Avience Biomedicals | Phase 1 evidence | 2026-09-26"
+  summary: "Mindray reseller bets on own reagents. Gate: PROCEED WITH FLAGS (FLAG-CASH INDETERMINATE; confidence 71, band 60-74). Decision and entry range pending phase 3."
+  drive_link: "not used (repo run folder runs/avience-2026-09-26)"
+  mode: append-never-overwrite-status

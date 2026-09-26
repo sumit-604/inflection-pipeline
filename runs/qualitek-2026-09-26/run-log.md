@@ -8,3 +8,4 @@
 - stage 5: block says the PAT-margin conflict was resolved to the deck figure 'per operator instruction'. No operator ruling exists: the orchestrator task message asked the stage to resolve the band from the deck page. The label is wrong; both bands stand, the conflict is a finding.
 - stage 8: status partial (searches_skipped named in B08). Verdict CONCERN -> FLAG-PROMOTER applies at synthesis.
 - stage 4: block file had two flag flow-mappings missing the closing brace; orchestrator added the braces (content unchanged), now parses.
+- stage 6: B06 input_gaps written as []; B00 gaps not carried onto the block (B00 remains the gap authority). All 12 peer transcripts SUBSTANTIVE.

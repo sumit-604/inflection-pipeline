@@ -1,0 +1,95 @@
+stage: B09-tam
+company: "QUALITEK"
+run_date: "2026-09-26"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "No filed India-TIC revenue-share-by-application table exists anywhere searched; Section 3A filter 1 (product/application fit, 0.40) is a bounded estimate off DRHP's CAGR-ranking language (infrastructure/automotive named largest), not a sourced percentage."
+  - "No India-TIC-specific organised-vs-unorganised split percentage found; the targeted search returned irrelevant retail-sector results. DRHP's own qualitative line ('in-house segment is expected to dominate') is used directionally only."
+  - "No NABL testing-only laboratory count (national total ~2,150 blends testing/calibration/medical); Method 2 bottom-up not used in the triangulation table as a result."
+  - "Bureau Veritas India revenue not found (searched); DNV, Eurofins, DEKRA India, Mistras India revenue not found; Method 3 peer aggregation is a floor, not a full sum."
+  - "No cost-per-new-lab or utilisation % disclosed anywhere in the corpus (consistent with B04 input_gaps); Section 3C capacity gap stated in labs-equivalent terms only, not in ₹ Cr."
+  - "No CMP or current P/E was injected into this stage; the Section 5E valuation-implication sentence is left with its final clause open for Stage 11."
+flags:
+  - {type: "FLAG-METHOD-DIVERGENCE", reason: "Four current (2024-25) India TIC top-down market-size reports span a 4x range (IMARC USD 7.9bn to Straits USD 31.76bn, 2024/25); not averaged, conservative (IMARC) and realistic (Mordor) anchors used per pipeline rule."}
+  - {type: "FLAG-SOURCE-ERROR", reason: "DRHP p.[153] cites the India TIC market at 'USD 26 million (2021) to USD 47 million (2030), 6.9% CAGR' from Straits Research; the same firm's current site shows USD 31.76bn to USD 61.90bn at the identical 6.9% CAGR, confirming a unit transcription error (million should read billion) in the DRHP text. Excluded from the headline TAM."}
+  - {type: "FLAG-NO-MGMT-CLAIM", reason: "Qualitek states no quantified TAM, market-size or industry-CAGR figure anywhere in the AR, MD&A or decks (confirmed independently here and by B05-concall peer_questions row 4); mgmt_claim_ratio cannot be computed."}
+  - {type: "FLAG-CAPACITY-GAP", reason: "SOM 3yr (Rs 331 Cr) implies ~42 labs vs the current 16-lab network; FY26-27 disclosed capex (Rs 114.3 Cr cumulative) cannot plausibly fund that organically. SOM is the optimistic side; it is achievable only via continued M&A at the pace already demonstrated (four acquisitions in ~26 months, B00 LBF1)."}
+market_definition: "Outsourced, NABL/NABCB-accredited third-party testing, inspection and certification for Indian manufacturers in transport/defence/mechanical/E&E, food & feed, and pharma, India-only, excluding in-house/captive testing and calibration-only services."
+tam_cr: {conservative: 75840, realistic: 122880}
+sam_cr: 18800
+sam_pct_of_tam: 15.3
+som_3yr_cr: 331
+som_5yr_cr: 504
+som_implied_revenue_cagr: {yr3: 38.6, yr5: 32.3}
+current_sam_share_pct: 0.66
+revenue_headroom_x: 151
+tam_growth_pct: 6.46
+runway_class: "MASSIVE"
+mgmt_claim_cr: 0
+mgmt_claim_ratio: 0
+mgmt_claim_read: "NOT FOUND - no management TAM claim exists in the corpus; the DRHP's third-party-sourced figure is a unit-error, not a company claim"
+capacity_check: "gap not quantifiable in ₹ Cr (no cost-per-lab or utilisation % disclosed); directionally, SOM 3yr needs ~42 labs vs 16 today - SOM is the optimistic side, contingent on continued M&A"
+methods_used: ["top-down (4-source triangulation)", "peer revenue aggregation (floor only)", "global/China per-capita benchmark (directional)", "bottom-up attempted, insufficient data to use"]
+stale_data_flags:
+  - {datapoint: "India TIC market USD 26mn (2021) to USD 47mn (2030), 6.9% CAGR", source: "Qualitek DRHP p.153, citing straitsresearch.com", year: 2023}
+searches_performed:
+  - "India testing inspection certification TIC market size 2024 2025 CRISIL crore"
+  - "India TIC market size billion Mordor Intelligence Frost Sullivan 2026"
+  - "India automotive testing homologation market size crore ARAI type approval"
+  - "India food testing laboratory market size crore FSSAI NABL accredited labs number"
+  - "Vimta Labs revenue FY2026 crore annual report"
+  - "India TIC market organized unorganized share percent fragmented"
+  - "Bureau Veritas India SGS India TUV Rheinland India Intertek India revenue crore annual report"
+  - "NABL accredited testing calibration laboratories India total number 2025 2026"
+  - "global TIC market size 2025 billion USD China TIC market size billion"
+  - "USD INR exchange rate September 2026"
+searches_skipped:
+  - "CRISIL/ICRA India-TIC-specific sector report: no distinct source surfaced beyond the aggregator/market-research sites already used"
+  - "Filed India-TIC revenue-share-by-application table: none found; Section 3A filter 1 stated as a bounded estimate, not sourced"
+  - "Bureau Veritas India revenue: searched, not found, carried as NOT FOUND rather than substituted"
+downstream_candidates:
+  - signal: "New/amended BIS mandatory Quality Control Order (QCO) notifications"
+    entity_type: "regulatory"
+    demand_link: "Each new QCO creates mandatory testing demand in the transport/mechanical/E&E vertical, 40-45% of mix"
+    likely_source: "BIS official gazette notifications"
+    cadence: "event-driven"
+    shared: false
+  - signal: "FSSAI food-safety licensing and testing-mandate circulars"
+    entity_type: "regulatory"
+    demand_link: "Directly drives food & feed testing demand, 25-30% of mix"
+    likely_source: "FSSAI notifications/circulars"
+    cadence: "quarterly"
+    shared: false
+  - signal: "IOCL and other PSU work-order renewals/expansions"
+    entity_type: "counterparty"
+    demand_link: "Direct revenue signal for the government/PPP-lab vertical (IOCL work order named in B00)"
+    likely_source: "BSE Reg 30 filings; PSU tender portals (CPPP/GeM)"
+    cadence: "event-driven"
+    shared: false
+  - signal: "MoRTH CMVR / vehicle safety and emission rule changes"
+    entity_type: "regulatory"
+    demand_link: "Drives homologation/type-approval testing volume in the transport-defence-mechanical vertical"
+    likely_source: "MoRTH gazette notifications"
+    cadence: "event-driven"
+    shared: false
+  - signal: "IIP manufacturing sub-index"
+    entity_type: "macro"
+    demand_link: "New-product testing volume tracks the manufacturing capex/new-launch cycle across all verticals"
+    likely_source: "MoSPI IIP monthly release"
+    cadence: "monthly"
+    shared: true
+  - signal: "USFDA facility inspection/approval status, Bengaluru pharma lab"
+    entity_type: "regulatory"
+    demand_link: "Gates pharma export-testing revenue and USFDA-linked client wins, 15-20% of mix"
+    likely_source: "USFDA inspection database (Form 483 / warning letters)"
+    cadence: "event-driven"
+    shared: false
+  - signal: "NABL / NABCB accreditation scope and renewal status"
+    entity_type: "regulatory"
+    demand_link: "Loss or lapse gates validity of every test/inspection report across all verticals"
+    likely_source: "NABL / NABCB public accreditation directories"
+    cadence: "event-driven"
+    shared: true
+demand_externally_verifiable: true
+analyst_note: "SOM 3yr/5yr (Rs 331 Cr / Rs 504 Cr, 38.6%/32.3% implied CAGR) converge closely with management's own, independently-arrived-at figures (Rs 500 Cr FY31 target; FY27 +35-40% guide), despite starting from market-share-gain arithmetic rather than management's internal plan. Treat this convergence as a mild positive cross-check, not proof: both paths share the same underlying assumption that continued M&A, not organic capacity, funds most of the growth (Section 3C), and TAM itself carries a 4x method-divergence that was resolved conservatively, not definitively. FTTCP should use the SOM CAGR range (32-39%) as the growth cross-check per this stage's formal handoff, and should weigh the capacity gap named in 3C alongside it."

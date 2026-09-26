@@ -1,0 +1,46 @@
+stage: B06-peers
+company: "QUALITEK"
+run_date: "2026-09-26"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - {type: "FLAG-GOVERNANCE-DISCLOSURE-GAP", severity: "MODERATE", reason: "Peer METROPOLIS volunteers acquisition multiple, margin trajectory and even recomputes effective EBITDA multiple in real time for Core Diagnostics (<2x revenue at entry, ~10x EBITDA effective by FY27); no peer transaction is related-party. Qualitek's ITCPL swap (6.56:1 exchange ratio, majority of consideration shares to promoter entity TIC Services) carries no disclosed independent valuer or exchange-ratio rationale, a visibly higher disclosure bar peers clear that Qualitek does not."}
+  - {type: "FLAG-GUIDANCE-SILENCE-VS-PEER-NORM", severity: "MODERATE-HIGH", reason: "Both VIMTALABS and KRSNAA missed prior stated growth targets by wide margins in the same period (Vimta ~25% short of INR500 Cr FY26 goal; Krsnaa FY26 growth ~1% vs 15-16% guide) and BOTH acknowledged the miss on-call with a named cause when analysts asked. Qualitek's FY25 revenue miss (~22%) and EBITDA-margin dilution (30% to 25-27%) are never surfaced or reconciled in any Qualitek document. Peer norm is 'miss and explain when asked'; Qualitek's is 'miss and stay silent, unasked'."}
+peers_provided: 3
+verified:
+  - {claim: "Debtor days 124-150 typical for government/PPP-heavy testing contracts, not a Qualitek-specific outlier", peers: ["KRSNAA"], anchor_count: 4}
+  - {claim: "New-lab/new-vertical margin trajectory: loss-making year 1, multi-year path to normal margin", peers: ["METROPOLIS", "KRSNAA", "VIMTALABS"], anchor_count: 6}
+  - {claim: "No peer names a quantified TIC/testing-industry growth rate for Qualitek's actual segment, though peers do disclose adjacent-segment CAGR/TAM figures as a sector disclosure norm", peers: ["VIMTALABS", "METROPOLIS"], anchor_count: 4}
+partially_verified:
+  - {claim: "Input-cost trend stable-to-improving, consistent with gross margin not falling; but no peer shows anything near Qualitek's 78%-to-87% gross-margin climb magnitude", peers: ["VIMTALABS", "METROPOLIS", "KRSNAA"]}
+contradicted:
+  - {claim: "Related-party/promoter-linked acquisition valuation disclosure is sector-typical", contradicting_peer: "METROPOLIS", quote_anchor: "Metropolis Aug-2026 investor meet: 'acquired a distressed loss-making business of Core at an attractive valuation of less than 2x revenue... our effective acquisition multiple would be approximately 10x EBITDA' -- fully quantified, unprompted, non-related-party; no peer matches Qualitek's undisclosed related-party swap terms"}
+  - {claim: "Silent guidance walk-down (miss without acknowledgment) is sector-typical", contradicting_peer: "VIMTALABS and KRSNAA", quote_anchor: "Vimta Q4 FY26 (May-2026): management directly answers analyst on missed INR500 Cr target with explanation; Krsnaa Q4 FY26 (May-2026): analyst Mayur names the FY25/FY26 guidance-vs-delivery gap explicitly, Yash Mutha responds with named causes (site delays, selectivity)"}
+unverifiable: []
+peer_coverage_map:
+  - {peer: "VIMTALABS", quarter: "Q2 FY26 (Nov-2025)", usage: "SUBSTANTIVE", contribution: "New-facility utilisation ramp timeline; raw-material/manpower cost commentary; sector CAGR 7-9%"}
+  - {peer: "VIMTALABS", quarter: "Q3 FY26 (Jan-2026)", usage: "SUBSTANTIVE", contribution: "Explicit acknowledged walk-down of INR500 Cr/INR125 Cr run-rate target"}
+  - {peer: "VIMTALABS", quarter: "Q4 FY26 (May-2026)", usage: "SUBSTANTIVE", contribution: "Analyst re-raises missed target with management acknowledgment; biologics-vertical 3-year margin timeline; TAM figures USD9.7bn/USD300mn"}
+  - {peer: "VIMTALABS", quarter: "Q1 FY27 (Jul-2026)", usage: "SUBSTANTIVE", contribution: "Geopolitical/input-cost impact on food-testing; utilisation 60% of 200,000 sq ft; customer retention 90%+"}
+  - {peer: "METROPOLIS", quarter: "Q3 FY26 (Feb-2026)", usage: "SUBSTANTIVE", contribution: "Core Diagnostics acquisition margin trajectory (breakeven to high-single-digit); GST pricing decisions"}
+  - {peer: "METROPOLIS", quarter: "Q4 FY26 (May-2026)", usage: "SUBSTANTIVE", contribution: "Core Diagnostics '4 quarters to high-single-digit EBITDA' mission completed; effective ~10x EBITDA multiple recomputed; 3-year 27-28% margin guide"}
+  - {peer: "METROPOLIS", quarter: "Q1 FY27 (Aug-2026)", usage: "SUBSTANTIVE", contribution: "Guidance beat context (14-15% guide vs 17% delivered); CGHS immateriality confirmed"}
+  - {peer: "METROPOLIS", quarter: "Investor Meet (27-Aug-2026)", usage: "SUBSTANTIVE", contribution: "Detailed acquisition valuation disclosure (<2x revenue, 3-4yr to 25% margin, ~10x EBITDA effective); industry TAM $11bn to $28.5bn at 11% CAGR"}
+  - {peer: "KRSNAA", quarter: "Q2 FY26 (Nov-2025)", usage: "SUBSTANTIVE", contribution: "Receivables ~150 days explained by govt payment-system transition; RPL retail loss-making, breakeven timeline first guided"}
+  - {peer: "KRSNAA", quarter: "Q3 FY26 (Feb-2026)", usage: "SUBSTANTIVE", contribution: "Rs 130 Cr receivables recovered in-quarter; named state-specific legacy receivables (HP, Karnataka); Rajasthan PPP margin-drag mechanics"}
+  - {peer: "KRSNAA", quarter: "Q4 FY26 (May-2026)", usage: "SUBSTANTIVE", contribution: "DSO improved 155->139 days, guided sub-120 FY27; analyst confronts multi-year guidance miss, management responds with named causes; PPP new-project J-curve fully described"}
+  - {peer: "KRSNAA", quarter: "Q1 FY27 (Aug-2026)", usage: "SUBSTANTIVE", contribution: "RPL retail EBITDA breakeven achieved ~1 year on schedule; Rajasthan revenue ramp Rs 26 Cr first live quarter vs Rs 100-150 Cr annualised guide"}
+industry_cross_read:
+  demand: "All three peers report steady-to-strong but not boom-level demand (7-15% CAGR range), driven by organized-vs-unorganized share gains and structural shifts, not sector-wide acceleration; a brief Q1 FY27 softness (geopolitical/seasonal) is common across Vimta and Metropolis. No peer corroborates an industry-wide demand boom."
+  pricing_inputs: "Input-cost inflation (reagents, chemicals, manpower) described as manageable, not accelerating, across all three peers; GST rate cuts gave a modest one-off benefit (Metropolis, Krsnaa); none of the three shows gross-margin expansion anywhere near Qualitek's 78%-to-87% climb, and all three show cost relief flowing into EBITDA (not being absorbed below the line as at Qualitek)."
+  capex_cycle: "INDUSTRY-WIDE CAPACITY RACE, not a lone-expander situation: Vimta (~INR100 Cr FY26 capex), Metropolis (INR55-65 Cr/yr, 750+ town network, 100 mini-hubs plan), Krsnaa (~INR5,000 million cumulative, Rajasthan PPP + MRI expansion) are all simultaneously building capacity. All three ALSO report utilisation lag and margin drag from their own recent capex, so the capacity race does not itself guarantee near-term returns for any name in the set, including by extension Qualitek."
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "Manpower attrition named as explicit industry-wide risk (VIMTALABS: 'attrition is quite high across the industry... going to be the norm') -- not named anywhere in Qualitek's own disclosure despite being a skilled-labour-dependent testing business."
+  - "Key-person/leadership departures addressed directly on-call with continuity framing (KRSNAA: CFO and CBO departures) -- Qualitek's CS cessations are not discussed with comparable openness."
+  - "Geopolitical/tariff disruption to input costs and logistics named and quantified in direction (VIMTALABS: 'war' impact on food-testing import/export, consumables lead time) -- absent from Qualitek's disclosure."
+  - "Government payment-system transition risk named as the specific mechanical cause of receivable delays (KRSNAA: RBI-link account rollout, SNA-SPARSH) -- Qualitek's own debtor-day disclosure does not name any comparable mechanism, leaving its receivables story less evidenced than Krsnaa's."
+  - "Regulatory/pricing-benchmark risk from CGHS rate resets flowing into competitor tender pricing (METROPOLIS, KRSNAA) -- illustrates a level of forward-risk specificity in peer disclosure not matched by Qualitek, though not directly applicable to Qualitek's segment."
+net_narrative_effect: "complicates"
+analyst_note: "On operating mechanics (new-lab loss curves, capacity-race context, input-cost stability, PPP-adjacent debtor-day norms) the peer set is broadly consistent with Qualitek's own disclosed figures. On governance and disclosure BEHAVIOR (related-party acquisition transparency; open acknowledgment of guidance misses) peers set a visibly higher bar Qualitek does not clear -- this is a comparative finding, not an absence-of-evidence inference, since two of three peers directly missed targets in the same period and directly acknowledged it when asked. Cross-peer hypothesis (Part 5): sector margins may be structurally understated in FY26-27 because all three peers are simultaneously mid-capex; this is testable against FY28-29 margin trajectories and should inform whether Qualitek's own new-lab drag is read as temporary or permanent."

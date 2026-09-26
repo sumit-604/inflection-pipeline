@@ -1,0 +1,46 @@
+stage: B07-emoat
+company: "QUALITEK"
+run_date: "2026-09-26"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "No per-facility or aggregate utilisation percentage disclosed anywhere in the AR or decks, despite the AR naming utilisation improvement as the top FY27 MD&A priority (AR MD&A line 446)."
+  - "No 3-year target revenue-mix percentages disclosed for any segment (Section 1C); only current-year percentages exist (Inv. Pres. FY26 deck)."
+  - "No current (FY26) customer-concentration disclosure; only stale FY23 DRHP standalone figures exist (carried from B04)."
+  - "No competitor accreditation-status disclosure (NABL/NABCB/USFDA) exists in the corpus, so B2's relative-durability claim cannot be benchmarked against named rivals."
+  - "Attrition-rate table exists in the AR (lines 6584, 9754) but no percentage value was captured in the passages read; F1 scored on headcount alone."
+flags:
+  - {type: FLAG-EMOAT-NEGATIVE-EVIDENCE, reason: "F2 (execution moat) and G1/G2 (war chest, WC improvement) scored 0 with active evidence running AGAINST moat formation, not merely absent evidence: FY25 revenue guidance missed ~22% unreconciled, Hyderabad acquisition slipped silently, EBITDA-margin ambition diluted 30% to 25-27% unacknowledged, FCF approx Rs -32.5 Cr consolidated FY26, WC days worsened +145.76 days FY21-FY26 (cross-referenced from B01/B03/B05)."}
+  - {type: FLAG-CAPEX-ARITHMETIC-GAP, reason: "2C mechanical fixed-asset-turnover calculation implies approx 88% incremental revenue capacity from the Rs 63 Cr FY27 capex plan, far above management's own 35-40% FY27 revenue guide; the gap reflects new-lab ramp lag (9 labs lost Rs 3.3 Cr EBITDA in H1 FY26 per B03/B04), not a forecast to rely on."}
+em_score: 15
+em_classification: "MODEST"
+active_categories:
+  - {id: "A1", name: "Rare manufacturing capability (USFDA pharma lab)", strength: "Moderate", evidence_type: "documented", time_to_materialise: "live"}
+  - {id: "B2", name: "Qualification lock-in (NABL/NABCB/USFDA accreditations, renewable govt contracts)", strength: "Strong", evidence_type: "documented", time_to_materialise: "live"}
+  - {id: "C1", name: "Customer ecosystem (IOCL Panipat, IOCL 2G Ethanol, WCL, MSMED PPP)", strength: "Moderate", evidence_type: "documented", time_to_materialise: "live, renews 24-36m"}
+  - {id: "E1", name: "Geographic first-mover (Bhubaneswar PPP 2018, USFDA lab 2026)", strength: "Moderate", evidence_type: "documented", time_to_materialise: "live"}
+  - {id: "H2", name: "Strategic partnerships (7-country international collaboration network, 2018-2025)", strength: "Moderate", evidence_type: "documented", time_to_materialise: "live"}
+evidence_mix: {documented: 17, claim: 2, inference: 2}
+completionist_recount: "recount performed: 17 documented items across 5 categories (A1: 1 item USFDA lab; B2: 3 items NABL/NABCB/USFDA; C1: 4 items MSMED PPP 2018, IOCL Panipat 2025, IOCL 2G Ethanol 2026, WCL 2026; E1: 2 items Bhubaneswar PPP, USFDA lab; H2: 7 items named international collaborations)"
+catalysts_12m:
+  - {catalyst: "H1 FY27 consolidated EBITDA margin holds at or above H2 FY26 25.7% exit rate", window: "H1 FY27 print", evidence_type: "documented (prior data)", anchor: "B05 trigger 1"}
+  - {catalyst: "Hyderabad Food/Lifesciences acquisition closes or is formally confirmed dropped", window: "next 6-12m", evidence_type: "management claim, twice slipped", anchor: "B05 FLAG-GUIDANCE-SILENCE"}
+  - {catalyst: "Inspection/Audit/Certification (NABCB) first shows as a separately disclosed revenue line", window: "FY27 AR/deck", evidence_type: "documented accreditation, undisclosed revenue", anchor: "press release 20260625-fe69b871"}
+  - {catalyst: "First named overseas contract or country toward the >=30% by FY31 ambition", window: "12-24m", evidence_type: "management claim", anchor: "B05 guidance table"}
+capex_embedded_growth_pct: 88
+optionality_register:
+  - {optionality: "Overseas revenue reaching >=30% of consolidated revenue by FY31", converting_evidence: "Named international customer/geography with disclosed revenue, or a segment note splitting domestic vs overseas revenue", first_appears: "FY27/FY28 AR segment note or MD&A; Reg 30 filing for a first overseas contract", window: "2-4 years"}
+  - {optionality: "Inspection/Audit/Certification as a distinct, disclosed low-capex margin-accretive line", converting_evidence: "A separately reported revenue/margin line for this vertical (currently bundled)", first_appears: "FY27 AR MD&A or investor deck", window: "1-2 years"}
+  - {optionality: "QTIPL and LabOps Global reaching profitability or material revenue", converting_evidence: "AOC-1 showing positive profit and a revenue figure; CARO Clause 3(xix) qualification cleared", first_appears: "FY27 AR AOC-1 and consolidated Auditor's Report Annexure A", window: "1-3 years"}
+  - {optionality: "Patent or proprietary IP pipeline (currently absent)", converting_evidence: "Any patent filing traceable on Espacenet/ipindia.gov.in linked to Qualitek staff", first_appears: "IP filing databases; AR IP disclosure if added", window: "unknown, no filing exists today"}
+  - {optionality: "Talent asymmetry (I1) becoming evidenced", converting_evidence: "Named ex-DRDO/ex-HAL/ex-global-major technical hires with traceable employment history, or remuneration-annexure evidence of above-sector-norm technical pay plus competitor-economics arithmetic", first_appears: "AR KMP/remuneration annexure; professional-network verification (PENDING LIVE VERIFICATION)", window: "unknown"}
+  - {optionality: "Cannibalization barrier (I2) around the government/PPP relationship book", converting_evidence: "A named instance of a competitor unable to match Qualitek's PPP/government terms without breaking its own pricing or org structure, sourced to the competitor's own filings", first_appears: "Peer (VIMTALABS/METROPOLIS/KRSNAA) filings or concalls; PENDING LIVE VERIFICATION", window: "unknown"}
+  - {optionality: "Customer-concentration improvement (C2)", converting_evidence: "A filed FY26/FY27 top-5/top-10 customer-concentration disclosure superseding the stale FY23 DRHP figure", first_appears: "Final prospectus/RHP if filed, or a future AR/IR disclosure", window: "next AR cycle (FY27)"}
+  - {optionality: "Industry-consolidation beneficiary status (H1) becoming evidenced", converting_evidence: "A named competitor exit, anti-dumping measure, or environmental-tightening event shifting volume to Qualitek specifically", first_appears: "Trade press, peer concalls, sector regulatory filings; PENDING LIVE VERIFICATION", window: "unknown"}
+combined_assessment: "AVERAGE"
+combined_reasoning: "Gate 0 backward AVERAGE (core 48, moat_score 12) paired with forward MODEST (em_score 15) does not clear the EXPANSION/STRENGTHENING bar the transition matrix requires for HIGH POTENTIAL or TURNAROUND; five real emerging categories (A1, B2, C1, E1, H2) sit alongside documented negative evidence in F2 (execution) and G1/G2 (cash/WC)."
+top_moat_risks:
+  - "B2 qualification lock-in: any accreditation lapse/suspension, or a named competitor (SGS/TUV/Intertek/Bureau Veritas/Eurofins India) matching NABCB/USFDA status, erodes the first-mover value; no competitor accreditation data exists to benchmark against today."
+  - "C1 customer ecosystem: IOCL/WCL contracts run 24-36 month terms, not permanent; non-renewal or re-tender loss at term end is a live structural risk, not merely a tail risk."
+  - "F2/G1/G2 negative track record (guidance misses, undisclosed slippage, negative FCF, worsening WC) constrains the capital available to fund the FY27 capex the B2/E1 moats depend on to keep scaling."
+analyst_note: "The five genuinely evidenced emerging categories (A1 USFDA lab, B2 accreditations, C1 government order book, E1 geographic first-mover, H2 international network) describe a real but narrow accreditation-and-government-relationship moat forming inside a company whose execution record (F2) and cash conversion (G1/G2) actively work against it in the same period. This is not force-fit inflation: the completionist recount confirms 17 documented items concentrated in only 5 of 23 categories, matching the 3-6 category base rate. The operator should read this stage alongside B05's credibility grade C and B01's cash-deterioration flag before crediting the accreditation story: the moat and the balance-sheet strain are simultaneous facts about the same company, not competing hypotheses to average away."

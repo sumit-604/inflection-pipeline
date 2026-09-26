@@ -652,7 +652,8 @@ All of them are on the big map (G).
   bronze under 90 s. Your best time is saved.
 - Paint Shop at the Auto Garage: a new colour for the bicycle, scooty,
   motorbike or car (Rs 150).
-- Daily surprise box at home: a new gift every day.
+- Daily surprise box at home: a new gift every day. Standing at the box,
+  E always opens it, even when Gudiya walks close (v46 fix).
 
 ## Files
 

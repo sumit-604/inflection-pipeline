@@ -748,7 +748,7 @@ import * as THREE from 'three';
    label goes through L(). The voice follows the language.
    Questions and answers stay in English for now.
    ============================================================ */
-const GAME_VERSION = "v45";
+const GAME_VERSION = "v46";
 const LANGS = {
   en: { name: "English", voice: "en-IN" },
   hi: { name: "हिन्दी", voice: "hi-IN" },
@@ -9091,7 +9091,7 @@ class Game {
   _nearestInteractable() {
     const p = this.player.position; let best = null, bestDist = Infinity;
     const list = this.world.currentRoom ? this.roomInteractables : this.interactables;
-    for (const it of list) { if (it.visible && !it.visible()) continue; if (it.room && it.room !== this.world.currentRoom) continue; const d = Math.hypot(p.x - it.pos.x, p.z - it.pos.z); if (d < it.radius && d < bestDist) { best = it; bestDist = d; } }
+    for (const it of list) { if (it.visible && !it.visible()) continue; if (it.room && it.room !== this.world.currentRoom) continue; const d = Math.hypot(p.x - it.pos.x, p.z - it.pos.z), dp = d - (it.priority || 0); if (d < it.radius && dp < bestDist) { best = it; bestDist = dp; } }
     return best;
   }
   _onResize() { this.camera.aspect = window.innerWidth / window.innerHeight; this.camera.updateProjectionMatrix(); this.renderer.setSize(window.innerWidth, window.innerHeight); }
@@ -10360,7 +10360,7 @@ class Game {
   _dutySpot(room, sign, prompt, act) {
     const fly = /CAPTAIN/.test(sign), want = fly ? [14, 9] : [10, 6];
     const sp = this._nearSpot(room, room.x0 + want[0], room.z0 + want[1], [[0, 0], [2, 0], [-2, 0], [0, -2], [0, 2], [4, 0], [-4, 0], [0, -4], [6, 0], [-6, 0]]);
-    this.roomInteractables.push({ pos: sp, radius: 2.8, prompt, activate: act, _duty: true });
+    this.roomInteractables.push({ pos: sp, radius: 2.8, priority: 1.5, prompt, activate: act, _duty: true });
     if (!room._booth) { room._booth = this._makeBooth(fly, sign); room._booth.B.position.set(sp.x - room.x0, 0, sp.z - room.z0); room.group.add(room._booth.B); }
     this._duty = room._booth;
     if (this.phase === "morning" && !this.isSunday()) { this.setObjective(sign.replace(" (E)", "") + ": " + (fly ? L("the glowing gold booth. Stand on it, press E") : L("the red chair on the gold circle. Press E to drive")), sp.x, sp.z); showToast(fly ? L("👉 Today's duty: the glowing gold booth {s}. Stand on the gold circle and press E.", { s: sign }) : L("👉 Your train is waiting! Go to the red driver's chair on the gold circle and press E. You go straight into the cab."), 4200, "good"); }
@@ -10545,7 +10545,7 @@ class Game {
     const pr = this.progress; if (pr.giftDay === pr.day) return;
     if (!room._gift) { const g = new THREE.Group(); const b = new THREE.Mesh(new THREE.BoxGeometry(0.7, 0.6, 0.7), new THREE.MeshStandardMaterial({ color: 0xe63946, emissive: 0x7a1e14, emissiveIntensity: 0.3 })); b.position.y = 0.3; g.add(b); for (const r of [0, Math.PI / 2]) { const rib = new THREE.Mesh(new THREE.BoxGeometry(0.72, 0.62, 0.12), new THREE.MeshStandardMaterial({ color: 0xffd60a })); rib.position.y = 0.3; rib.rotation.y = r; g.add(rib); } const bow = new THREE.Mesh(new THREE.TorusGeometry(0.14, 0.05, 8, 16), new THREE.MeshStandardMaterial({ color: 0xffd60a })); bow.position.y = 0.7; g.add(bow); const sp = this._nearSpot(room, room.x0 + 2, room.z0 + 3, [[0, 0], [2, 0], [-2, 0], [0, 2], [0, -2], [3, 3], [-3, 3]]); g.position.set(sp.x - room.x0, 0, sp.z - room.z0); room.group.add(g); room._gift = { g, sp }; }
     room._gift.g.visible = true;
-    this.roomInteractables.push({ pos: room._gift.sp, radius: 2.2, prompt: () => (this.progress.giftDay === this.progress.day ? "" : L("🎁 Today's surprise box! Open it")), activate: () => this._openGift(room) });
+    this.roomInteractables.push({ pos: room._gift.sp, radius: 2.4, priority: 2, visible: () => this.progress.giftDay !== this.progress.day, prompt: () => L("🎁 Today's surprise box! Open it (E)"), activate: () => this._openGift(room) });
   }
   _openGift(room) {
     const pr = this.progress; if (pr.giftDay === pr.day) return; pr.giftDay = pr.day; pr.gifts = (pr.gifts || 0) + 1; const k = pr.gifts % 6;

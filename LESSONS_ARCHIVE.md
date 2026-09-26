@@ -742,3 +742,38 @@ Recorded here against the shallow-screen commits of 2026-09-21.
 - A Bash heredoc followed by python -c with nested quotes failed to parse; the
   Write tool is safer for YAML blocks.
 - About 4.58M subagent tokens over 28 runs. Not a clean run.
+
+## 2026-09-26 — TLL (Trident Lifeline) — /step1 intake, phase 1 to Halt 1
+
+Run: runs/tll-2026-09-26, branch run/tll-2026-09-26. Peers CAPLIPOINT,
+SENORES, INNOVACAP. Round 1 gate REWORK (Verifier B 50%); after one rework
+round, gate PROCEED WITH CAVEATS, FLAG-PROMOTER CONCERN, FLAG-CASH
+INDETERMINATE. Confidence overall 81 (set by redflag_coverage). Dossier
+CORPUS GAPPED, FRAGILE.
+- BSE SME name with no transcripts: NO-CONCALL MODE. Round-1 stage 5 and
+  stage 8 missed material items that a fresh Verifier B found in the corpus
+  (auditor's former partner now CFO, in the prospectus signature pages; deck
+  CFO basis change; Q4 D&A and 9M PBT arithmetic). One rework round on stages
+  1, 5, 6, 7, 8 cost 1.55M tokens (38% of the run). Stage 8 task messages
+  should name the prospectus signature pages and the auditor firm explicitly.
+- Poppler pdftotext in this Windows session exits 127 (missing DLL). PyMuPDF
+  extraction (landscape pages split into halves) plus RapidOCR for image-only
+  results pages worked end to end.
+- BSE announcements API returns ZERO rows for a 24-month window but works in
+  6-month windows. fetch_bse_announcements ran live (12-month window, 12
+  files, two of them AR duplicates): the untested-API item can close.
+- Peer transcript defects: LINCOLN filed one transcript in 12 months
+  (rejected); CAPLIPOINT BSE "transcript" filings are one-page cover letters
+  linking to its website (screener-hosted copies used instead); the
+  collector's SENORES login failed (fetched separately).
+- Block YAML defects: fences (B01), unclosed flow mappings (B04), unquoted
+  '#' in location values read as comments (B12a). Task messages now ask for
+  quoting; orchestrator repaired each, content unchanged.
+- Verifier A (haiku) marked eight AOC-1 / Note 22 / Note 11 / Note 3 figures
+  ANCHOR NOT FOUND; seven sat at the cited anchors. Cleared by orchestrator
+  source re-check and logged as disagreements.
+- FLAG-DISAGREEMENT settled at source: stage 9 read the standalone gross-block
+  total (AR p63, Rs 33.91 Cr) as consolidated CWIP; AR p94 prints Rs 17.50 Cr.
+- Verifier B redflag_coverage basis split again: 81 with partial catches, 69
+  strict (third occurrence after AWFIS, DPABHUSHAN).
+- DOWNSHIFT FAILURE: stage 0 inline on the Opus orchestrator (structural).

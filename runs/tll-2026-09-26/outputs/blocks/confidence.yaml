@@ -4,7 +4,7 @@ run_date: "2026-09-26"
 phase: 1
 round: 2   # after one rework round; run-1 delta (overall 50, REWORK) is outputs/superseded/confidence-run1-superseded.yaml
 confidence_delta:
-  numerical_acceptance: 97.5      # B12a run 2: 40 figures checked. Verifier printed 77.5 (31 matched / 40). Eight MAJOR rows were ANCHOR NOT FOUND, blamed on extraction; the orchestrator re-read the source text and found seven at the exact anchors the stages cited (see disagreements). After clearance 39 of 40 clean; the one open row is a MINOR FY25 interest basis difference (screener 4.14 Cr vs AR 3.99 Cr).
+  numerical_acceptance: 95.0      # B12a run 2: 40 figures checked. Verifier printed 77.5 (31 matched / 40). Eight MAJOR rows were ANCHOR NOT FOUND, blamed on extraction; the orchestrator re-read the source text and cleared seven at the exact anchors the stages cited (see disagreements). After clearance 31 + 7 = 38 of 40 clean (95.0); open: one MINOR FY25 interest basis difference (screener 4.14 Cr vs AR 3.99 Cr) and one row not itemised in the block. Corrected from 97.5 (orchestrator count error, caught by synthesis round 2).
   numerical_acceptance_as_printed: 77.5
   redflag_coverage: 81            # B12b run 2: 13 of 16 MATERIAL (3 CRITICAL + 13 MAJOR) caught upstream, partial counted as caught; full catches only 11 of 16 (69%)
   framework_adherence: 91.2       # B12c run 2, PHASE 1 PORTION ONLY: 62 of 68 rules (Gate 0 40/42, Emerging Moat 22/26). Valuation half pending phase 3.

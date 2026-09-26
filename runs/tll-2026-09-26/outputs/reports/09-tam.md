@@ -502,3 +502,13 @@ trackers); the exact sentence for "not externally verifiable" does not apply.
   led semi-regulated-exporter niche was not independently computable beyond
   the four-company peer set (no comprehensive niche-revenue denominator
   exists in any source found).
+
+
+---
+## ORCHESTRATOR CORRECTION (FLAG-DISAGREEMENT, settled at source, 2026-09-26)
+
+Figure conflict: this report carries consolidated CWIP as Rs 3,391.07 lakh = Rs 33.91 Cr (lines 271-273, 497), anchored to AR Note 8 PP&E, PDF page 63. Stages 1 and 7 and Verifier C carry Rs 17.50 Cr.
+
+Source reading: Annual_Report_2026.pdf p63 prints 3,391.07 as the "Total [A+B+C+D] (Current Year)" gross-block column of the STANDALONE fixed-asset schedule; it is not CWIP. The consolidated balance sheet, Annual_Report_2026.pdf p94, prints "(iii) Capital Work-In-Progress 1,749.91 156.22" (FY26, FY25), i.e. Rs 17.50 Cr.
+
+Correction: consolidated CWIP FY26 is Rs 1,749.91 lakh = Rs 17.50 Cr (Annual_Report_2026.pdf p94). The Section 3C capacity cross-check that used Rs 33.91 Cr as its capex anchor is to be re-run at stage 11 on Rs 17.50 Cr, alongside B07 capex_embedded_growth_pct 28.8. The printed figure wins; the report is corrected at this anchor and the original text above is kept for audit.

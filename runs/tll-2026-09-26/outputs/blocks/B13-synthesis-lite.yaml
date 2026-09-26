@@ -1,0 +1,37 @@
+stage: B13-synthesis
+company: "TLL"
+run_date: "2026-09-26"
+model: "claude-opus-5-5"
+status: complete
+mode: "PHASE 1 LITE (round 2): business-narrative.md, gate-recommendation.md, verifier-summary.md only; no valuation content"
+verdict: "PROCEED WITH CAVEATS"
+verdict_rule_applied: 3   # rule 3 (flags active) with the INDETERMINATE cash cap; rules 1 and 2 checked and not fired; rule 4 concurs (MAJORs carried)
+flags_active: [FLAG-PROMOTER, FLAG-CASH, FLAG-GATE0]
+flag_promoter_verdict: "CONCERN"
+flag_cash_determination: "INDETERMINATE"
+flag_cash_missing_evidence: "distributor credit terms in days; receivables by counterparty with the LLP share on the consolidated basis; accounting basis of the Changes in Working Capital Facilities line; post-FY26 filed receivables ageing; segment-note vs Note 17 receivables reconciliation. No rating rationale exists (company unrated)."
+confidence_delta: {numerical: 95.0, redflag: 81, framework: 91.2, peer: 100, overall: 81}
+confidence_overall_set_by: redflag_coverage
+freshness_cap: none
+valuation_decision: "NOT RUN (phase 1 lite)"
+entry_range: {low: "NOT RUN", high: "NOT RUN"}
+transition_posture: "NOT CLASSIFIED (Mental Model unsigned; recognition gap is a Stage 11 read)"
+headline: "Profits grew, cash went the other way"
+falsification_metric: "H1 FY27 consolidated results showing debtor days above 208 with operating cash flow still negative once any working capital facilities addback is removed"
+monitorables_count: 8
+contradicted_claims_count: 2
+halt1_open_items_count: 18
+round_history: "Round 1 REWORK (Verifier B 50%, overall 50). One rework round re-ran stages 1, 5, 6, 7, 8. Round 2 verifiers raised no REWORK trigger; B12b CRITICAL R5 and MAJORs R6-R9 plus promoter-% NOT SUPPORTED, B12c MAJOR (catalyst evidence tier), B12d MAJORs (two misattributed calls) carried as Halt 1 open items."
+figure_conflict_found: "B09 consolidated CWIP Rs 33.91 Cr vs B01/B07 Rs 17.50 Cr. Annual_Report_2026.txt L10021 prints CWIP 1,749.91 lakh; 3,391.07 at L6631 is a standalone fixed-asset schedule total. For orchestrator settlement; Stage 11 re-runs the B09 3C capacity cross-check on Rs 17.50 Cr."
+publish_candidate: false
+publish_candidate_summary: ""
+files_written:
+  - runs/tll-2026-09-26/outputs/final/business-narrative.md
+  - runs/tll-2026-09-26/outputs/final/gate-recommendation.md
+  - runs/tll-2026-09-26/outputs/final/verifier-summary.md
+verifier_disagreement_log: "runs/tll-2026-09-26/outputs/final/verifier-disagreement-log.md (7 rows, FLAG CLEARED; not rewritten)"
+notion_save:
+  page_title: "TLL (Trident Lifeline Ltd): phase 1 evidence, 2026-09-26"
+  summary: "Profits grew, cash went the other way. PROCEED WITH CAVEATS with PROMOTER FLAG CONCERN, CASH FLAG INDETERMINATE, GATE 0 AVERAGE 67/160. No valuation run."
+  drive_link: "not used"
+  mode: append-never-overwrite-status

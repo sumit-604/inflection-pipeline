@@ -84,3 +84,9 @@ downstream_candidates:
     shared: false
 demand_externally_verifiable: true
 analyst_note: "No company TAM claim exists in the corpus (management cites third-party reports for context but never sizes its own market). mgmt_claim_cr/ratio/read above are therefore repurposed from the framework's default (claim vs conservative TAM) to test the one number management does claim, the 'triple in three years' growth target, against this stage's conservative 3-year SOM, per this run's LBF3 instruction. Headline TAM uses Method 3 (peer aggregation) over Method 1 (macro top-down) because Method 1's scope is too broad to be the operationally relevant market TLL competes in; Method 1 is retained as context. Stage 11 should re-run the 3C capacity cross-check once B07's capex-embedded-growth figure is available, as this stage substituted AR CWIP and deck utilisation data in its place."
+conflicts:
+  - figure: "Consolidated CWIP FY26"
+    this_block_value: "Rs 33.91 Cr (3,391.07 lakh), AR Note 8, PDF p63"
+    other_value: "Rs 17.50 Cr (1,749.91 lakh), B01, B07, B12c"
+    settled: "Rs 17.50 Cr. Annual_Report_2026.pdf p94 consolidated balance sheet prints Capital Work-In-Progress 1,749.91 (FY26), 156.22 (FY25). The p63 3,391.07 is the standalone gross-block total, not CWIP. Corrected by the orchestrator at source; the 3C capacity cross-check re-runs at stage 11 on Rs 17.50 Cr."
+

@@ -598,3 +598,32 @@ Verifier C check 15 (PR #163, PR #164), and the LESSONS discipline changes
 (PR #165).
 
 Size: LESSONS.md 164 lines / 1555 words before, 119 lines / 1062 words after.
+
+## 2026-09-26 — QMSMEDI (QMS Medical Allied Services) — /step1 intake, phase 1 to Halt 1
+
+Run: runs/qmsmedi-2026-09-26, branch run/qmsmedi-2026-09-26 (built in a git
+worktree because the main checkout carried uncommitted framework edits). Peers
+INDGN, ENTERO, POLYMED. Gate PROCEED WITH CAVEATS (FLAG-CASH INDETERMINATE).
+Confidence overall 79.4 (set by framework_adherence). Dossier CORPUS GAPPED, FRAGILE.
+- NSE-only company (ex-SME, no BSE scrip): the collector's BSE announcement
+  fetch cannot run. Announcements, results and shareholding XBRL came from the
+  NSE corporate-announcements and shareholding APIs (session cookie from the
+  NSE home page first). A collector fallback to NSE would close this.
+- Screener formula sheets exported empty again; Excel COM (CalculateFull,
+  Save) on the re-downloaded Financials.xlsx fixed every sheet. A collector
+  step for this is cheap on a machine with Excel.
+- Peer NURECA has no transcripts on screener (PPT chips only, no link); the
+  collector silently placed zero peer concalls. POLYMED replaced it. Check
+  peer transcript links before picking.
+- companies.txt was overwritten mid-run by a parallel /step1 session (TLL);
+  the collector had already parsed it. Two /step1 sessions share one
+  companies.txt and one runs/ root.
+- Every stage wrote its block file wrapped in markdown fences until told "NO
+  markdown code fences"; the orchestrator stripped the fences. Add that line
+  to the agent frontmatter text.
+- Verifier A run 1 audited Gate 0 figures only (21 of a 94-figure universe);
+  re-run once with the coverage addendum, per the recurring pattern.
+- Verifier B strict fully-caught rate 41.7% vs rate of record 83.3%; flagged
+  for the operator at Halt 1, not applied as REWORK (same basis as DPABHUSHAN).
+- DOWNSHIFT FAILURE: stage 0 ran inline on the Opus orchestrator (no haiku
+  stage-0 agent exists). Same as DPABHUSHAN.

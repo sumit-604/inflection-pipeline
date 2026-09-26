@@ -1,0 +1,44 @@
+stage: B06-peers
+company: "FABTECH"
+run_date: "2026-09-26"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - "Q6 competitive claim (only unnamed Europeans, no Indian/Chinese competitors) CONTRADICTED in general shape by SETL and HLEGLAS, both of whom describe mixed Indian/international competitive sets in adjacent categories; partial only, since neither peer operates in Fabtech's full-scope turnkey pharma-plant design-build niche."
+  - "Magnitude gap: Fabtech's RMC +33%/execution +43% YoY cost inflation is directionally confirmed by two of three peers (PRAJIND, SETL) via an identical geopolitical/delay-driven mechanism, but PRAJIND's own quantified analogue is only 1-1.5%, an order of magnitude smaller; worth a synthesis note, not a contradiction."
+peers_provided: 12
+verified:
+  - {claim: "Order finalisation (not execution) delayed by Middle East war / geopolitical disruption, with no cancellations", peers: ["PRAJIND", "HLEGLAS", "SETL"], anchor_count: 4}
+partially_verified:
+  - {claim: "$30bn MENA/Africa + $70bn West pharma-infra opportunity and Saudi localisation moving from preference to hard tender qualification", peers: ["HLEGLAS", "PRAJIND"]}
+  - {claim: "RMC ~33% YoY and execution/remobilisation ~43% YoY cost inflation from geopolitical disruption and freight, partially passed through", peers: ["PRAJIND", "SETL", "HLEGLAS"]}
+  - {claim: "Export receivables carry long retention (1-2yr, 10-15%) plus LC-at-sight, consolidated receivable days ~180", peers: ["SETL", "HLEGLAS"]}
+contradicted:
+  - {claim: "Fabtech competes only against unnamed European turnkey players, never Indian or Chinese firms, in pharma-emerging-market design-build", contradicting_peer: "SETL, HLEGLAS", quote_anchor: "SETL Nov-2025 call: 'they are our competitors, but there are two, three variety of products they are manufacturing... Today, we are almost 91 variety of products'; HLEGLAS Aug-2025 Omeras call: competitive set named as 'largely in North America and Europe... a few in China... one or two competitors within Europe' -- mixed geography, not an India-vs-Europe binary"}
+unverifiable:
+  - {claim: "Win-rate improvement from 10-12% to 15-17% of hot-lead pipeline, partly attributed to local-entity status in Saudi/UAE", peers_checked: ["SETL", "HLEGLAS", "PRAJIND"]}
+peer_coverage_map:
+  - {peer: "SETL", quarter: "Q2 FY26 (Nov-2025)", usage: "SUBSTANTIVE", contribution: "Working-capital mechanics for solution/turnkey vs product business; explicit win-rate/market-share disclosure refusal; competitive-set framing feeding Q6"}
+  - {peer: "SETL", quarter: "Q3 FY26 (Feb-2026)", usage: "SUBSTANTIVE", contribution: "Refuses to disclose order book/win-rate for competitive reasons; 'largest glass lining manufacturer vs Europe/US' framing feeding Q6"}
+  - {peer: "SETL", quarter: "Q4 FY26 (May-2026)", usage: "SUBSTANTIVE", contribution: "Metal/steel cost inflation named industry-wide; war-linked order delay without cancellation; 220-240 day WC cycle; capex expansion evidence"}
+  - {peer: "SETL", quarter: "Q1 FY27 (Aug-2026)", usage: "SUBSTANTIVE", contribution: "220-240 day WC cycle trending toward sub-200 days; data-centre/GScale diversification evidence for capex-cycle read"}
+  - {peer: "HLEGLAS", quarter: "Q4 FY25 (May-2025)", usage: "CITED-ONLY", contribution: "General receivables-improvement and macro remarks; no verdict rests solely on this call"}
+  - {peer: "HLEGLAS", quarter: "Omeras acquisition call (Aug-2025)", usage: "SUBSTANTIVE", contribution: "Names Middle East/Saudi city-building water infrastructure demand explicitly; competitive-geography breakdown feeding Q6; inorganic diversification rationale"}
+  - {peer: "HLEGLAS", quarter: "Q2 FY26 (Nov-2025)", usage: "SUBSTANTIVE", contribution: "Receivables back to FY22 levels; refusal to compare competitor margins, negative evidence for Q6/2D"}
+  - {peer: "HLEGLAS", quarter: "Q4 FY26 (Jun-2026)", usage: "SUBSTANTIVE", contribution: "'Deferring, not cancelling' language for CDMO/agrochemical clients since Feb-2026, geopolitically attributed; Middle East named next growth phase"}
+  - {peer: "PRAJIND", quarter: "Q2 FY26 (Dec-2025 call)", usage: "SUBSTANTIVE", contribution: "Africa-wide policy/capex momentum for blending mandates; Africa-segment margin discussion (EPC/construction-heavy vs supply-only)"}
+  - {peer: "PRAJIND", quarter: "Q3 FY26 (Mar-2026 call)", usage: "CITED-ONLY", contribution: "Repeats Africa margin point with numeric colour; no new verdict-level contribution beyond Q2/Q4 FY26 calls"}
+  - {peer: "PRAJIND", quarter: "Q4 FY26 (Jun-2026 call)", usage: "SUBSTANTIVE", contribution: "Delays in order finalisation (CBG), delay-not-loss framing; explicit cost-escalation-from-delay mechanism, this report's strongest independent confirmation"}
+  - {peer: "PRAJIND", quarter: "Q1 FY27 (Aug-2026 call)", usage: "SUBSTANTIVE", contribution: "Geopolitical material-cost pressure reaffirmed; order-inflow context confirming continued export intake despite pressure"}
+industry_cross_read:
+  demand: "Resilient in pharma/API specifically, softer in adjacent CDMO/agrochemical and domestic-ethanol segments, with geopolitically-driven finalisation delays at the margin across all three peers; not a broad-based capex race matching Fabtech's 'unprecedented opportunity' framing."
+  pricing_inputs: "Sector-wide cost pressure confirmed (steel/metal cost, raw material, execution-site cost escalation from delay), explicitly called industry-wide not company-specific by SETL; no peer shows pricing power fully offsetting it; magnitude of Fabtech's stated inflation (33%/43%) unconfirmed and looks large next to PRAJIND's quantified 1-1.5% analogue."
+  capex_cycle: "Mixed, not uniform: SETL and HLEGLAS are expanding via inorganic/geography diversification (C2C, Omeras, data-centre GScale, Middle East sales build-out); PRAJIND is holding capex steady and absorbing cost pressure, citing patience on long-gestation investments. Fabtech's own Saudi/Italy acquisition-led expansion pattern-matches the SETL/HLEGLAS diversification cohort more than PRAJIND's caution."
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "Customer-side inspection/acceptance postponement as a delay channel distinct from geopolitics (SETL Nov-2025, May-2026 calls) -- Fabtech's own calls attribute delay only to war/donor-funding, never to routine client-side slippage."
+  - "Cost escalation as a direct function of how long a delayed order keeps a site open (PRAJIND Jun-2026 call, quantified) -- a more precise, testable mechanism than Fabtech's 'geopolitical disruption' framing, which never ties cost inflation to delay duration specifically."
+  - "Explicit client-base bifurcation between resilient and deferring segments (HLEGLAS Jun-2026 call: pharma/API resilient, CDMO/agrochemical deferring) -- a segment-level clarity Fabtech has never given despite repeated analyst requests for an order-book breakdown."
+net_narrative_effect: "complicates"
+analyst_note: "Two of Fabtech's most consequential and most-doubted claims (delay-not-cancellation order finalisation, sector-wide cost inflation) triangulate well against the peer set, which meaningfully supports the LBF1 order-book-stagnation explanation. But the competitive-moat claim (no Indian peer) reads as overstated once set against how SETL and HLEGLAS describe their own competitive fields, and the win-rate claim sits in a total disclosure vacuum across all three peers, which is itself informative: nobody in this peer set discloses win-rate, so Fabtech's own shifting win-rate framing across three calls cannot be benchmarked, only flagged as unusually specific for a metric nobody else volunteers."

@@ -13,3 +13,5 @@ not split input/output, so in_tok/out_tok read n/a).
 | 4 | business model decoder | claude-sonnet-5 | default | n/a | n/a | 131986 | 7m06s | 1 |
 | 5 | concall analysis (Q3 FY26-Q1 FY27) | claude-sonnet-5 | default | n/a | n/a | 171309 | 6m19s | 1 |
 | 8 | promoter check (web) | claude-sonnet-5 | default | n/a | n/a | 210579 | 11m01s | 1 |
+| 6 | peer concall verification (SETL, HLEGLAS, PRAJIND) | claude-sonnet-5 | default | n/a | n/a | 117014 | 4m09s | 1 |
+| 7 | emerging moat scan | claude-sonnet-5 | default | n/a | n/a | 198452 | 7m09s | 1 |

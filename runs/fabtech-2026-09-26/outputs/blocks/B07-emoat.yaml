@@ -1,0 +1,48 @@
+stage: B07-emoat
+company: "FABTECH"
+run_date: "2026-09-26"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "FY27 employee headcount R&D/PhD/ESOP breakdown NOT FOUND (AR withholds Section 197(12) employee particulars; no ESOP scheme exists)."
+  - "SACE second civil/MEP order (Aug-2026 call, 'acquired one civil order') not yet independently located as an exchange filing in this stage's corpus; treated as management claim only."
+  - "Djibouti WFI plant order-win filing not individually located in the announcements/ corpus scanned at this stage; project detail sourced from concall only."
+  - "Win-rate claim (10-12% to 15%) has no disclosed consistent measurement basis across the three concalls (B05 repeated_evasions); cannot be upgraded past management-claim tier."
+flags:
+  - {type: FLAG-ORDER-BOOK-PLATEAU, reason: "Order book flat at Rs 900-926 Cr for 11 months (Jul-2025 to Jun-2026) despite continuous new-win claims in exactly the geographies (Saudi, Africa) this scan scores highest; undercuts every top-scoring category's durability. Carried from B05 LBF1."}
+  - {type: FLAG-GUIDANCE-CREDIBILITY, reason: "FY27 growth guidance cut three consecutive calls (30-40% to ~25%+ to 20-25%), never framed as a cut; concall credibility_grade C (B05). Caps confidence in all forward-looking emerging-moat claims sourced to management."}
+  - {type: FLAG-I2-ZERO-BY-DESIGN, reason: "Strongest candidate moat (Saudi SACE localisation) tested explicitly against the I2 cannibalization-barrier bar and scores 0: a well-capitalised competitor can replicate a majority-local Saudi entity without destroying anything in its own P&L. Execution lead, not structural configuration."}
+em_score: 13
+em_classification: "MODEST"
+active_categories:
+  - {id: "C1", name: "Customer ecosystem / embedded relationships", strength: "Weak", evidence_type: "management_claim", time_to_materialise: "12-24m"}
+  - {id: "E1", name: "Geographic first-mover", strength: "Moderate", evidence_type: "documented", time_to_materialise: "near (live)"}
+  - {id: "G1", name: "War chest", strength: "Weak", evidence_type: "documented", time_to_materialise: "live, quality-caveated (IPO-sourced not organic)"}
+  - {id: "H1", name: "Industry consolidation beneficiary (localisation-as-qualification barrier)", strength: "Moderate", evidence_type: "management_claim", time_to_materialise: "near-medium"}
+  - {id: "H2", name: "Strategic partnerships", strength: "Moderate", evidence_type: "management_claim", time_to_materialise: "near (live, revenue not yet disclosed)"}
+  - {id: "H3", name: "ESG moat", strength: "Weak", evidence_type: "documented", time_to_materialise: "long"}
+  - {id: "R1", name: "Regulatory/policy tailwind", strength: "Moderate", evidence_type: "documented", time_to_materialise: "near (live)"}
+evidence_mix: {documented: 9, claim: 11, inference: 0}
+completionist_recount: "📄 recount performed: 9 documented items across 6 categories (E1, H1, H2, G1, plus adverse counter-evidence in C2, F2, G2). Positive-scoring categories total 5 (E1, H1, H2, R1, G1), inside the framework's realistic base rate of 3-6."
+catalysts_12m:
+  - {catalyst: "Second SACE-linked Saudi civil/MEP order, exchange-filed", window: "2 quarters", evidence_type: "management_claim, pending 📄 confirmation", anchor: "Aug-2026 call (Q1 FY27)"}
+  - {catalyst: "Order book moving off the Rs 900-926 Cr plateau", window: "1-2 quarters", evidence_type: "documented (order-book disclosure)", anchor: "B05 LBF1"}
+  - {catalyst: "First concrete contract-level step on percentage-of-completion accounting", window: "uncertain, repeatedly deferred", evidence_type: "management_claim", anchor: "Feb-2026 and Aug-2026 calls"}
+  - {catalyst: "Africa revenue share continuing to rise as % of consolidated total", window: "Q2/Q3 FY27", evidence_type: "documented", anchor: "AR MD&A p.44 (txt); B05 trigger #2"}
+  - {catalyst: "CFO/PAT crossing 0.5x for the first time in three years", window: "FY27", evidence_type: "documented", anchor: "B01/B03 monitorable"}
+capex_embedded_growth_pct: 0   # NOT FOUND / NOT APPLICABLE: asset-light turnkey EPC model, no capacity-expansion capex programme found (FY26 consol. PPE additions Rs 470.81 lakh vs Rs 41,077.18 lakh revenue, 1.1%); capex-times-fixed-asset-turnover method does not apply to this archetype (AR consol. cash flow statement; RHP p.208 txt "asset-light model")
+optionality_register:
+  - {optionality: "China+1/data centre/semicon adjacency for the international EPC platform", converting_evidence: "A named international data-centre or semicon order with disclosed contract value", first_appears: "Exchange order-win filing or a concall re-raising the topic with a number", window: "Dormant: raised Nov-2025/Feb-2026, silent Aug-2026"}
+  - {optionality: "AMC / recurring service-revenue layer", converting_evidence: "Disclosed AMC revenue line item or stated %-of-revenue target", first_appears: "Quarterly results or future concall", window: "12-24m"}
+  - {optionality: "KP Group renewable-energy collaboration (solar/wind/BESS/hydrogen)", converting_evidence: "Signed project-level agreement with rupee value, or disclosed renewables % of own operations", first_appears: "Exchange filing (Reg 30) or next AR ESG section", window: "24-36m"}
+  - {optionality: "Italy acquisition (twice-slipped)", converting_evidence: "Exchange filing confirming closing", first_appears: "Announcements", window: "Third promised date: before end FY27 (Mar-2027)"}
+  - {optionality: "Percentage-of-completion accounting transition", converting_evidence: "A named contract disclosed as switched to percentage/milestone billing with revenue-recognition note", first_appears: "Quarterly results notes or FY27 AR", window: "'Next few years' per management, no firm date across three calls"}
+  - {optionality: "Win-rate improvement (10-12% to 15%, targeting 20-25% post-Europe-acquisition)", converting_evidence: "Disclosed, consistent measurement basis across at least two consecutive calls", first_appears: "Concall", window: "Unclear, repeatedly asked, never given consistent basis"}
+  - {optionality: "Saudi SACE civil-order pipeline beyond the one reported win", converting_evidence: "Second exchange-filed civil/MEP order in Saudi Arabia via SACE", first_appears: "Exchange filing (order win)", window: "2 quarters (B05 trigger #1 confirm signal)"}
+combined_assessment: "AVERAGE"
+combined_reasoning: "Core AVERAGE (56/100, B01) paired with MODEST forward score (13, below the EM>=25 UA qualifier) rather than EXPANSION; real Africa/Saudi optionality is undercut by an 11-month flat order book and a C-grade concall credibility record, so the combined read stops at AVERAGE, not HIGH POTENTIAL."
+top_moat_risks:
+  - "Order book flat at Rs 900-926 Cr for 11 months despite continuous new-win claims in the exact geographies scored highest here (Africa, Saudi); no reconciling number ever given (B05 LBF1)."
+  - "Saudi localisation (SACE) is replicable by any adequately capitalised competitor (I2 tested and scored 0); not a structural barrier, an execution lead."
+  - "War chest (G1) is IPO-financed, not organically generated; two years of CFO/PAT far below 0.5x mean it is a one-time runway, not a repeatable mechanism."
+analyst_note: "The scan found a genuine base rate (5 categories, inside the 3-6 completionist guard) rather than an inflated one, but three of the strongest counter-signals in the entire corpus are adverse and were deliberately scored at 0 rather than omitted: customer concentration is rotating not deepening (C2), the concall promise-delivery record grades C with guidance cut three times running (F2), and working capital is deteriorating on the auditor's own Key Audit Matter (G2). All three cut directly against the durability of the positive-scoring categories (E1 Africa, H1/H2/R1 Saudi localisation), because every one of those forward theses ultimately depends on the same unresolved fact: whether the order book is genuinely growing net of delivery, which this stage's documents cannot settle and which B05 already named as the single most important unresolved fact in the entire concall record."

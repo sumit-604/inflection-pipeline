@@ -1,0 +1,25 @@
+company: Fabtech Technologies Ltd
+ticker: FABTECH
+cmp: 146.0
+market_cap_cr: 648.0
+run_date: 2026-09-26
+run_type: full
+listed_date: "2025-10-07"   # IPO 29-Sep to 1-Oct-2025 (RHP 22-Sep-2025); pre-listing SHP dated 06-Oct-2025 (NSE). Within 3y of run_date: prospectus MANDATORY, collected (RHP + final Prospectus).
+concalls_available: true
+sector_cap_row: "EPC / Civil construction"   # set at /step1 Step D from section-1b chunk 05 (20x); turnkey pharma-plant EPC, milestone/shipment revenue, WC-heavy; alternative read Consulting / Engineering services (25x); stage 0 confirms
+sector_cap_row_guess: "Pharma / CDMO"   # keyword guess only, never consumed
+collector_warnings:
+  - "shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend."
+  - "screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance Sheet, screener:Cash Flow, screener:Customization, SETL:Profit & Loss, SETL:Quarters, SETL:Balance Sheet, SETL:Cash Flow, SETL:Customization, HLEGLAS:Profit & Loss, HLEGLAS:Quarters, HLEGLAS:Balance Sheet, HLEGLAS:Cash Flow, HLEGLAS:Customization, PRAJIND:Profit & Loss, PRAJIND:Quarters, PRAJIND:Balance Sheet, PRAJIND:Cash Flow, PRAJIND:Customization. Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again."
+  - "no results PDFs yet (screener has none): add later on github or locally + --push-again"
+  - "no rating PDF yet: add later the same way"
+step1_repairs:
+  - "shareholding/: filled by hand at /step1 with NSE XBRL SHP filings for 30-Jun-2026 and 31-Mar-2026 (nsearchives.nseindia.com)."
+  - "screener sheets: the collector deleted its _download workbooks before a recalculation could run. Filled with screener.in public-page text snapshots (P&L, BS, CF, ratios, quarters, shareholding) for FABTECH consolidated + standalone and each peer, in screening/*-screener-*-2026-09-26.txt. Data_Sheet CSVs retained."
+  - "results/: filled by hand from BSE: Q1 FY27 (24-Jul-2026), FY26 audited (27-Apr-2026), Q3 FY26 (02-Feb-2026). Q1 and Q2 FY26 results (04-Nov-2025) placed in announcements/."
+  - "rating/: CRISIL rating rationale 15-Oct-2025 (BBB+/Stable, A2) held as HTML + text. The 12-Aug-2025 rationale and 11-Sep-2025 credit bulletin are in other/."
+  - "prospectus/: RHP 22-Sep-2025 (chittorgarh.net mirror, 521pp) and final Prospectus Oct-2025 (company site, 518pp). DRHP 14-Sep-2024 (NSE archives) in other/."
+  - "annual-report/: FY26 AR as filed on BSE is an image scan (224pp, no text layer). Text is OCR (RapidOCR, 200dpi) of the company-site copy of the same report; see annual-report/README-AR-TEXT.md for page alignment. FY25 AR (company site) in other/."
+  - "announcements/: collector took 10 filings from Jul-Sep 2026 only; 35 further material filings since listing added by hand from BSE (results, monitoring agency reports, acquisitions, KMP/director changes, order wins, deviation statements, postal ballots, secretarial compliance)."
+  - "research/: CRISIL MI&A industry report Sep-2025, company-commissioned for the IPO (NON-ANCHORED)."
+notes: "Main URL is screener CONSOLIDATED (/company/FABTECH/consolidated/): FY26 consolidated sales Rs 411 Cr vs standalone Rs 268 Cr (UAE, Saudi and other subsidiaries). Peers SETL (Standard Engineering Technology, ex Standard Glass Lining), HLEGLAS, PRAJIND. Fabtech Technologies Cleanrooms Ltd (BSE SME 544332) is a separate listed promoter-group company, excluded as a peer, a related-party verification target. Collected from screener.in by collect_to_repo.py v3 with /step1 hand repairs listed above."

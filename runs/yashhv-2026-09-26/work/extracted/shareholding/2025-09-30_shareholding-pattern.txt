@@ -1,0 +1,470 @@
+[page 1]
+1.
+2.
+3.
+4.
+5.
+3. Make sure that you have downloaded the latest Excel Utility from BSE Website to your local system.
+                                      XBRL Excel Utility
+Overview
+Before you begin
+Index
+Fill up the Shareholding Pattern
+1. Overview
+The excel utility can be used for creating the XBRL/XML file for efiling of shareholding pattern. 
+Shareholding pattern XBRL filling consists of two processes. Firstly generation of XBRL/XML file of the Shareholding
+pattern, and upload of generated XBRL/XML file to BSE Listing Center.
+ 2.  Before you begin
+1. The version of Microsoft Excel in your system should be Microsoft Office Excel 2007 and above.
+2. The system should have a file compression software to unzip excel utility file.
+Steps for Filing Shareholding Pattern
+4. Make sure that you have downloaded the Chrome Browser to view report generated from Excel utility.
+5. Please enable the Macros (if disabled) as per instructions given in manual, so that all the functionalities of Excel
+Utility works fine. Please first go through Enable Macro - Manual attached with zip file.
+6. Kindly use this file in local system instead of OneDrive/shared drive.
+Because it may gives an error "Run-time error '52' : Bad file name or number" While clicking on textblock button if 
+files saved on OneDrive/shared drive.
+ INTERNAL
+[page 2]
+1 General Info
+2 Declaration
+3 Summary
+4 Shareholding Pattern
+5 Annexure B
+4. Steps for Filing Shareholding Pattern
+I. Fill up the data: Navigate to each field of every section in the sheet to provide applicable data in correct format.
+(Formats will get reflected while filling data.)  
+   - Use paste special command to paste data from other sheet.
+II. Validating Sheets: Click on the ''Validate " button to ensure that the sheet has been properly filled and also data
+has been furnished in proper format. If there are some errors on the sheet, excel utility will prompt you about the
+same.
+III. Validate All Sheets: Click on the ''Home" button. And then click on "Validate All Sheet" button to ensure that all
+sheets has been properly filled and validated successfully. If there are some errors on the sheet, excel utility will
+prompt you about the same and stop validation at the same time. After correction, once again follow the same
+procedure to validate all sheets.
+Excel Utility will not allow you to generate XBRL/XML until you rectify all errors. 
+IV. Generate XML : Excel Utility will not allow you to generate XBRL/XML unless successful validation of all sheet is
+completed. Now click on 'Generate XML'' to generate XBRL/XML file. 
+    - Save the XBRL/XML file in your desired folder in local system. 
+V. Generate Report : Excel Utility will allow you to generate Report. Now click on 'Generate Report'' to generate html
+report.   
+     - Save the HTML Report file in your desired folder in local system.     
+     - To view HTML Report open "Chrome Web Browser" . 
+     - To print report in PDF Format, Click on print button and save as PDF.
+VI. Upload XML file to BSE Listing Center: For uploading the XBRL/XML file generated through Utility, login to BSE
+Listing Center and upload generated xml file. On Upload screen provide the required information and browse to select
+XML file and submit the XML.
+Summary
+Shareholding Pattern
+3. Index 
+Details of general information about company
+Declaration
+Annexure B
+ INTERNAL
+[page 3]
+2. If mandatory field is left empty, then Utility will not allow you to proceed further for generating XML.
+5. Fill up the Shareholding Pattern
+1. Cells with red fonts indicate mandatory fields. 
+9. Adding Notes:  Click on "Add Notes" button to add notes
+3. You are not allowed to enter data in the Grey Cells.
+4. If fields are not applicable to your company then leave it blank. Do not insert Zero unless it is a mandatory field.
+5. Data provided must be in correct format, otherwise Utility will not allow you to proceed further for generating XML.
+6. Adding new rows: Sections such as Promoters details allow you to enter as much data in a tabular form. You can
+Click on "Add" to add more rows. To add more than one row you must fill data in the mandatory fields of the previous
+row.
+7. Deleting rows: Rows that has been added can be removed by clicking the button "Delete". A popup will ask you to
+provide the range of rows you want to delete.
+8. Select data from "Dropdown list" wherever applicable.
+ INTERNAL
+[page 4]
+Scrip code 544310
+NSE Symbol NOTLISTED
+MSEI Symbol NOTLISTED
+ISIN INE00GK01023
+Name of the company YASH HIGHVOLTAGE LIMITED
+Whether company is SME Yes
+Class of Security Equity Shares
+Type of report Half yearly
+Quarter Ended / Half year ended/Date of Report (For Prelisting / Allotment) 30-09-2025
+Date of allotment / extinguishment (in case Capital Restructuring selected) / 
+Listing Date
+Shareholding pattern filed under Regulation 31 (1) (b)
+Whether the listed entity is Public Sector Undertaking (PSU)? No
+General information about company
+HomeValidate
+ INTERNAL
+[page 5]
+ INTERNAL
+[page 6]
+Sr. No. Particular Yes/No Promoter and 
+Promoter Group
+1 Whether the Listed Entity has issued any partly paid up shares? No No
+2 Whether the Listed Entity has issued any Convertible Securities ? No No
+3 Whether the Listed Entity has issued any Warrants ? No No
+4 Whether Listed Entity has granted any ESOPs, which are outstanding? Yes No
+5 Whether the Listed Entity has any shares against which depository receipts are issued? No No
+6 Whether the Listed Entity has any shares in locked-in? Yes Yes
+7 Whether any shares held by promoters are encumbered under "Pledged"? No No
+8 Whether any shares held by promoters are encumbered under "Non-Disposal 
+Undertaking"? No No
+9 Whether any shares held by promoters are encumbered, other than by way of Pledge or 
+NDU, if any? No No
+10 Whether company has equity shares with differential voting rights? No No
+11 Whether the listed entity has any significant beneficial owner? No
+HomeValidate
+ INTERNAL
+[page 7]
+Public shareholderNon Promoter- Non 
+Public
+No No
+No No
+No No
+No Yes
+No No
+Yes No
+No No
+ INTERNAL
+[page 8]
+Class
+eg:X
+Class
+eg:Y Total No.
+(a)
+As a % of total 
+Shares held
+(b)
+No.
+(a)
+As a % of total 
+Shares held
+(b)
+No.
+(a)
+As a % of total 
+Shares held
+(b)
+No.
+(a)
+As a % of total 
+Shares held
+(b)
+No.
+(a)
+As a % of total 
+Shares held
+(b)
+Sub-category (i) Sub-category (ii) Sub-category (iii)
+(A) Promoter & Promoter Group 6 16543595 16543595 57.94 16543595.00 16543595.00 57.94 16543595 55.72 16473595 99.58 16543595
+(B) Public 2495 12007654 12007654 42.06 12007654.00 12007654.00 42.06 12007654 40.44 4542654 37.83 12007654 0 0 0
+(C) Non Promoter- Non Public 1142000 1142000 1142000
+Shares underlying DRsShares held by Employee 
+Trusts 1142000 1142000 1142000 3.85
+Total 2501 28551249 28551249 100 28551249.00 28551249.00 100.00 1142000 1142000 29693249 100 21016249 73.61 28551249 0 0 0
+Categor
+y
+(I)
+Category of shareholder
+(II)
+Nos. Of 
+shareholders
+(III)
+No. of fully paid up equity 
+shares held
+(IV)
+No. Of Partly paid-
+up equity shares 
+held
+(V)
+Total Number of Shares encumbered 
+(XVII) = (XIV+XV+XVI) Number of equity 
+shares held in 
+dematerialized form 
+(XVIII)
+No. of Shares Underlying 
+Outstanding convertible 
+securities, No. of 
+Warrants and ESOP etc.
+(X) = (XA+XB+XC)
+Table I - Summary Statement holding of specified securities
+Note : Data will be automatically populated from shareholding pattern sheet -  Data Entry Restricted in this sheet
+Sub-categorization of shares
+Shareholding (No. of shares) underNo of Voting  (XIV)  Rights
+Total as a % of
+(A+B+C)
+Total nos. shares
+held
+(VII) = (IV)+(V)+ (VI)
+Shareholding as a % of total no. 
+of shares (calculated as per 
+SCRR, 1957)
+(VIII)
+As a % of (A+B+C2)
+   Number of VoƟng Rightsheld in each class ofsecuriƟes(IX)
+No. Of Shares Underlying 
+Outstanding convertible 
+securities
+(XA)
+No. of Shares 
+Underlying 
+Outstanding 
+Warrants 
+(XB)
+Shareholding , as a % assuming 
+full conversion of convertible 
+securities ( as a percentage of 
+diluted share capital)
+(XII)= (VII)+(X)
+As a % of (A+B+C2)
+No. Of shares 
+underlying 
+Depository Receipts
+(VI)
+No. Of Outstanding 
+ESOP Granted (XC)
+Total No. of shares on 
+fully diluted basis 
+(including warrants, ESOP, 
+Convertible Securities 
+etc.) (XI)=(VII+X)
+Number of Shares pledged
+(XIV)
+Non-Disposal Undertaking
+(XV)
+Other encumbrances, if any
+(XVI)
+Number of Locked in shares
+(XIII)
+Home
+ INTERNAL
+[page 9]
+Class
+eg:
+X
+Class
+eg:Y Total No.
+(a)
+As a % of total Shares 
+held
+(b)
+No.
+(a)
+As a % of total Shares 
+held
+(b)
+No.
+(a)
+As a % of total Shares 
+held
+(b)
+No.
+(a)
+As a % of total Shares 
+held
+(b)
+No.
+(a)
+As a % of total Shares 
+held
+(b)
+Sub-category (i) Sub-category (ii) Sub-category (iii)
+A Table II - Statement showing shareholding pattern of the Promoter and Promoter Group
+(1) Indian
+(a) Individuals/Hindu undivided Family 6 16543595 16543595 57.94 16543595.00 16543595 57.94 16543595 55.72 16473595 99.58 16543595
+(b) Central  Government/ State Government(s)
+(c) Financial  Institutions/ Banks
+(d) Any Other (specify)
+6 16543595 16543595 57.94 16543595.00 16543595 57.94 16543595 55.72 16473595 99.58 16543595
+(2) Foreign
+(a) Individuals (NonResident Individuals/ Foreign 
+Individuals)
+(b) Government
+(c) Institutions
+(d) Foreign Portfolio Investor
+(e) Any Other (specify)
+6 16543595 16543595 57.94 16543595.00 16543595 57.94 16543595 55.72 16473595 99.58 16543595
+Details of Shares which remain unclaimed for Promoter & Promoter Group
+B Table III - Statement showing shareholding pattern 
+of the Public shareholder Note : Kindly show details of shareholders holding equal to or more than 1% of total number of shares. Please refer software manual.
+(1) Institutions (Domestic)
+(a) Mutual Funds 1 72000 72000 0.25 72000 72000 0.25 72000 0.24 0 0.00 72000 0 0 0
+(b) Venture Capital Funds
+(c) Alternate Investment Funds 10 2820240 2820240 9.88 2820240 2820240 9.88 2820240 9.50 969240 34.37 2820240 0 0 0
+(d) Banks
+(e) Insurance  Companies
+(f) Provident Funds/ Pension Funds
+(g) Asset reconstruction companies
+(h) Sovereign Wealth Funds
+(i) NBFCs registered with RBI
+(j) Other Financial Institutions
+(k) Any Other (specify)
+11 2892240 2892240 10.13 2892240 2892240 10.13 2892240 9.74 969240 33.51 2892240 0 0 0
+(2) Institutions (Foreign)
+(a) Foreign Direct Investment
+(b) Foreign Venture Capital Investors
+(c) Sovereign Wealth Funds
+(d) Foreign Portfolio Investors Category I 7 52000 52000 0.18 52000 52000 0.18 52000 0.18 0 0.00 52000 0 0 0
+(e) Foreign Portfolio Investors Category II
+(f) Overseas Depositories (holding DRs) 
+(balancing figure)
+(g) Any Other (specify)
+7 52000 52000 0.18 52000 52000 0.18 52000 0.18 0 0.00 52000 0 0 0
+(3) Central Government / State Government(s)
+(a) Central Government / President of India
+(b) State Government / Governor
+(c) Shareholding by Companies or Bodies 
+Corporate where Central / State Government 
+is a promoter
+(4) Non-institutions
+(a) Associate companies / Subsidiaries
+(b) Directors and their relatives (excluding 
+independent directors and nominee directors)
+(c) Key Managerial Personnel
+(d)
+Relatives of promoters (other than 
+‘immediate relatives’ of promoters disclosed 
+under ‘Promoter and Promoter Group’ 
+category)
+(e) Trusts where any person belonging to 
+'Promoter and Promoter Group' category is 
+'trustee', 'beneficiary', or 'author of the trust'
+(f) Investor Education and Protection Fund (IEPF)
+(g) Resident Individuals holding nominal share 
+capital up to Rs. 2 lakhs 2189 4434803 4434803 15.53 4434803 4434803 15.53
+4434803
+14.94 280803 6.33 4434803 0 0 0
+(h) Resident Individuals holding nominal share 
+capital in excess of Rs. 2 lakhs 11 2556380 2556380 8.95 2556380 2556380 8.95
+2556380
+8.61 2323380 90.89 2556380 0 0 0
+(i) Non Resident Indians (NRIs) 98 717851 717851 2.51 717851 717851 2.51 717851 2.42 553851 77.15 717851 0 0 0
+(j) Foreign Nationals
+(k) Foreign Companies
+(l) Bodies Corporate 60 1032380 1032380 3.62 1032380 1032380 3.62 1032380 3.48 415380 40.24 1032380 0 0 0
+(m) Any Other (specify) 119 322000 322000 1.13 322000 322000 1.13 322000 1.08 0 0.00 322000 0 0 0
+2477 9063414 9063414 31.74 9063414.00 9063414 31.74 9063414 30.52 3573414.00 39.43 9063414 0 0 0
+2495 12007654 12007654 42.06 12007654 12007654 42.06 12007654 40.44 4542654 37.83 12007654 0 0 0
+Details of the shareholders acting as persons in Concert for Public
+Details of Shares which remain unclaimed for Public
+C Table IV - Statement showing shareholding pattern of the Non Promoter- Non Public shareholder
+( 1 ) Custodian/DR  Holder - Name of DR Holders  
+(If Available)
+( 2 )
+Employee Benefit Trust / Employee Welfare 
+Trust under SEBI (Share Based Employee 
+Benefits and Sweat Equity) Regulations, 2021 1142000 1142000 1142000 3.85
+1142000 1142000 1142000
+2501 28551249 28551249 100.00 28551249.00 28551249 100.00 1142000 1142000 29693249 100.00 21016249 73.61 28551249 0 0 0
+2501 28551249 28551249 100.00 28551249.00 28551249 100.00 1142000 1142000 29693249 ### ################## 21016249 73.61 28551249 0 0 0
+ Number of VoƟng Rights held in each class of securiƟes(IX)
+No. Of Shares 
+Underlying 
+Outstanding 
+convertible securities
+(XA)
+ No of VoƟng (XIV)Rights
+Total as
+a % of
+Total
+Voting
+rights
+No. of Shares 
+Underlying 
+Outstanding Warrants
+(XB)
+No. Of shares 
+underlying Depository 
+Receipts
+(VI)
+Sub-Total (B)(1)
+Total Shareholding of Promoter and Promoter Group 
+(A)=(A)(1)+(A)(2) 
+Sub-Total (A)(2)
+Shareholding as a % of 
+total no. of shares 
+(calculated as per SCRR, 
+1957)
+(VIII)
+As a % of (A+B+C2)
+No. Of Partly paid-up 
+equity shares held
+(V)
+Sr. No. Total nos. shares
+held
+(VII) = (IV)+(V)+ (VI)
+No. of fully paid up 
+equity shares held
+(IV)
+Sub-Total (A)(1)
+Nos. Of shareholders
+(III)
+Category & Name
+of the
+Shareholders
+(I)
+Sub-categorization of shares
+Shareholding (No. of shares) under
+Disclosure of notes in case of promoter holding in dematerialsed form is less than 100 percentage
+Disclosure of notes in case of public share holding is less than 25 percentage
+Disclosure of notes on shareholding pattern for company remarks explanatory
+No. Of Outstanding 
+ESOP Granted
+(XC)
+Total No. of shares on 
+fully diluted basis 
+(including warrants, 
+ESOP, Convertible 
+Securities etc.) 
+(XI)=(VII+X)
+Non-Disposal Undertaking
+(XV)
+Other encumbrances, if any
+(XVI)
+Total Number of Shares encumbered
+(XVII) = (XIV+XV+XVI)
+Number of equity 
+shares held in 
+dematerialized form 
+(XVIII)
+Number of Locked in shares
+(XIII)
+Number of Shares pledged
+(XIV)Shareholding , as a % 
+assuming full conversion of 
+convertible securities ( as a 
+percentage of diluted share 
+capital)
+(XII)= (VII)+(X)
+As a % of (A+B+C2)
+No. of Shares 
+Underlying 
+Outstanding 
+convertible securities, 
+No. of Warrants and 
+ESOP etc.
+(X) = (XA+XB+XC)
+Disclosure of notes on shareholding pattern
+Sub-Total (B)(2)
+Total Public Shareholding (B)=(B)(1)+(B)(2)+(B)(3)+(B)(4)
+Sub-Total (B)(3)
+Total NonPromoter- Non Public  Shareholding (C)= (C)(1)+(C)(2)
+Total ( A+B+C2 )
+Sub-Total (B)(4)
+Total (A+B+C )
+HomeValidate
+Add NotesAdd NotesAdd NotesAdd Notes
+ INTERNAL
+[page 10]
+Particular Approved limits (%) Limits utilized (%)
+As on shareholding date 24.00 2.69
+As on the end of previous 1st quarter 0.00 0.00
+As on the end of previous 2nd quarter 0.00 0.00
+As on the end of previous 3rd quarter 0.00 0.00
+As on the end of previous 4th quarter 24.00 6.79
+Table VI - Statement showing foreign ownership limits
+Notes :-
+ 1) "Approved Limits (%)" means the limit approved by Board of Directors / shareholders of the Listed entity. In case the listed entity has no 
+Board approved limit,  provide details of sectoral / statutory cap prescribed by Government / Regulatory Authorities
+2) Details of Foreign ownership includes foreign ownership / investments as specified in Rule 2(s) of the Foreign Exchange Management (Non-
+debt Instruments) Rules, 2019, made under the Foreign Exchange Management Act, 1999.
+HomeValidate
+ INTERNAL

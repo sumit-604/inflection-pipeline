@@ -1,0 +1,27 @@
+company: Yash Highvoltage Ltd
+ticker: YASHHV
+bse_code: 544310        # BSE SME; screener resolves only by code: https://www.screener.in/company/544310/consolidated/
+cmp: 1086.0
+market_cap_cr: 3247.0
+run_date: 2026-09-26
+run_type: full
+concalls_available: true
+listed_date: 2024-12-19  # BSE SME listing (BSE filing "Listing of Equity Shares", 19-Dec-2024); within 3y, prospectus MANDATORY
+reporting_cadence: half-yearly   # SME: H1/H2 results, no quarterly results exist
+sector_cap_row: "Cables / Industrial products"   # 25x. Set at /step1 Step D from section-1b chunk 05; collector guessed "Pharma / CDMO" (wrong). Alternative reading: "EV charging / energy transition equipment" (28x). Stage 0 confirms; Phase 3 confirms.
+sector_cap_row_guess: "Pharma / CDMO"   # keyword guess only, never consumed
+collector_warnings:
+  - "shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend."
+  - "screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance Sheet, screener:Cash Flow, screener:Customization, QPOWER:Profit & Loss, QPOWER:Quarters, QPOWER:Balance Sheet, QPOWER:Cash Flow, QPOWER:Customization, POWERINDIA:Profit & Loss, POWERINDIA:Quarters, POWERINDIA:Balance Sheet, POWERINDIA:Cash Flow, POWERINDIA:Customization, VILAS:Profit & Loss, VILAS:Quarters, VILAS:Balance Sheet, VILAS:Cash Flow, VILAS:Customization. Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again."
+  - "no results PDFs yet (screener has none): add later on github or locally + --push-again"
+  - "no rating PDF yet: add later the same way"
+step1_repairs:
+  - "results/: 3 results filings + FY26 auditor's report fetched from BSE AttachHis (FY25 audited 20-May-2025, H1FY26 10-Oct-2025, FY26 audited 13-May-2026, auditor's report 15-May-2026)."
+  - "results statement pages are scanned images with no text layer; page images extracted to work/extracted/results/*_pages/page-NNN.jpg for visual reading. No OCR installed."
+  - "prospectus/: RHP (BSE SME, Dec-2024) fetched from yashhv.com investor portal."
+  - "shareholding/: 30-Sep-2025 and 31-Mar-2026 shareholding patterns fetched from yashhv.com (company-hosted copies of the exchange filings)."
+  - "announcements/: 30 Reg 30 filings (Oct-2025 to Sep-2026 plus FY25 deviation statement) added from BSE; collector's AR-duplicate filing (20260811) removed."
+  - "presentation/: FY26 and H1FY26 decks from BSE; screener Investor_Presentation_1.pdf removed as a byte-identical duplicate of the FY26 deck."
+  - "screening/: standalone screener export added (screener-standalone-Data_Sheet.csv, FY20-FY26); consolidated export covers FY25-FY26 only."
+  - "rating/: no rating rationale found on web search (CRISIL/CARE/ICRA/Acuite/Infomerics); gap stands."
+notes: "Collected from screener.in by collect_to_repo.py v3 and repaired at /step1 2026-09-26. Results filings report in Rs lakh. FY25 and H1FY26 comparatives in the FY26 results are labelled RESTATED."

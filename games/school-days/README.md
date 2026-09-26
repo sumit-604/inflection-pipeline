@@ -667,6 +667,16 @@ All of them are on the big map (G).
   abroad you may lose your passport, meet a money-exchange cheat, a seagull
   chip thief, a language problem, or a castle 'ghost'.
 
+## Bathroom and cupboard at home (v48)
+
+- A bathroom at the back of the home: tiles, shower, an Indian bucket and
+  mug, soap and a towel. E: take a bath (once a day, energy +15). Maa
+  reminds you in the morning.
+- A grey steel almirah (cupboard) in the living-room corner: choose what to
+  wear. Uniform, home T-shirt and shorts, jeans, kurta pajama, party wear,
+  sports kit, summer clothes, warm jacket or night pajama. At school and at
+  work you still wear the uniform; the choice resets each morning.
+
 ## Files
 
 - `index.html` the whole game. Open it in a browser.

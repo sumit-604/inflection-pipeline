@@ -748,7 +748,7 @@ import * as THREE from 'three';
    label goes through L(). The voice follows the language.
    Questions and answers stay in English for now.
    ============================================================ */
-const GAME_VERSION = "v47";
+const GAME_VERSION = "v48";
 const LANGS = {
   en: { name: "English", voice: "en-IN" },
   hi: { name: "हिन्दी", voice: "hi-IN" },
@@ -6851,6 +6851,7 @@ class Game {
     this.applyUniform();
     this._placePeople();
     if (phase === "morning") {
+      this._chosen = null; this.applyUniform();
       this.periodIndex = 0; this.progress.period = 0;
       if (STAGES[this.stage].id === "college" && !this.progress.stream) setTimeout(() => this._chooseStream(), 900);
       if (STAGES[this.stage].id === "college" && this.progress.day === 10 && !(this.progress.fest || {}).college) setTimeout(() => this._collegeFest(), 2500);
@@ -6965,6 +6966,7 @@ class Game {
     if (room.type === "haveli") this._haveliSetup(room);
     if (this._stay && door.index >= 9100) this._stayRoomSetup(room);
     if (door.label === "Our Home") this._giftBox(room);
+    if (door.label === "Our Home") this._homeExtras(room);
     if (door.label === "Our Home") this._telescopeAt(room);
     if (door.label === "City Hospital") this._bloodCamp(room);
     if (this._outing && this._outing.o.place === door.label) setTimeout(() => this._startOuting(room), 500);
@@ -9546,12 +9548,13 @@ class Game {
   // ---------- Outfits: home clothes, pajamas, packed travel clothes, cricket whites ----------
   _outfitNow() {
     if (this._matchOutfit) return "cricket";
+    if (this._chosen) { const job = this.job, atWork = this.working && job && this.insideDoor && this.insideDoor.label === job.place; if (this.phase !== "school" && !atWork) return this._chosen === "uniform" ? null : this._chosen; }
     const r = this.world.currentRoom; if (r && this.insideDoor && this.insideDoor.label === "Our Home") return this.phase === "night" ? "pajama" : "home";
     if (this._matchTrip && this._travelOutfit && this._travelOutfit !== "uniform") return this._travelOutfit;
     return null;
   }
   _wear(name) {
-    const O = { home: { shirt: this.progress.homeShirt || 0xff7b54, trousers: 0x3a4a6b, shorts: true }, pajama: { shirt: 0x9fc5e8, trousers: 0x9fc5e8 }, warm: { shirt: 0x8a1c1c, trousers: 0x2b3a55, coat: true }, summer: { shirt: 0xf6d743, trousers: 0xe8dcc0, shorts: true }, smart: { shirt: 0xffffff, trousers: 0x2b2b2b }, cricket: { shirt: 0xf8f8f8, trousers: 0xf8f8f8, cap: 0x1d3557 } }[name]; if (!O) return;
+    const O = { home: { shirt: this.progress.homeShirt || 0xff7b54, trousers: 0x3a4a6b, shorts: true }, pajama: { shirt: 0x9fc5e8, trousers: 0x9fc5e8 }, warm: { shirt: 0x8a1c1c, trousers: 0x2b3a55, coat: true }, summer: { shirt: 0xf6d743, trousers: 0xe8dcc0, shorts: true }, smart: { shirt: 0xffffff, trousers: 0x2b2b2b }, cricket: { shirt: 0xf8f8f8, trousers: 0xf8f8f8, cap: 0x1d3557 }, kurta: { shirt: 0xf4a261, trousers: 0xfff8e7 }, jeans: { shirt: this.progress.homeShirt || 0x3a86ff, trousers: 0x1d4e89 }, party: { shirt: 0x111111, trousers: 0x111111 }, sports: { shirt: 0xd62828, trousers: 0x111111, shorts: true } }[name]; if (!O) return;
     const pl = this.player, p = pl.group.userData.parts; if (!p) return; this._saveBaseClothes();
     const swap = (mesh, c) => { if (mesh) mesh.material = humanMat(c); };
     swap(p.torso, O.shirt); for (const k of ["armL", "armR"]) swap(p[k].children[0], O.shirt); for (const k of ["legL", "legR"]) swap(p[k].children[0], O.trousers);
@@ -10623,6 +10626,53 @@ class Game {
     const fin = () => { if (S.npc) this.world.scene.remove(S.npc.g); this._stay = null; this._staying = false; pr.stays = (pr.stays || 0) + 1; pr.stayDays = (pr.stayDays || 0) + days; pr.stayWisdom = (pr.stayWisdom || 0) + S.wise; saveProgress(this.profile, pr); this._snap && this._snap("🏨", `Stayed ${days} days in ${S.city}.`); this.diary(L("{n} days in {c}, in Room 204 of the Grand Hotel. Smart choices: {w}.", { n: days, c: S.city, w: S.wise })); if (this.world.currentRoom) this._exitRoom(); S.then(); };
     const card = openPanel(`<h2>🧳 ${L("Check out")}</h2><p class="job-brief">${done ? L("Your {n} days in {c} are over.", { n: S.n, c: S.city }) : L("Leave {c} after {d} of {n} days?", { c: S.city, d: S.day, n: S.n })} ${L("Smart choices: {w}.", { w: S.wise })}</p><div class="btn-row"><button class="big-btn" id="co-yes">${L("Pack up and travel home")}</button>${done ? "" : `<button class="ghost-btn" id="co-no">${L("Stay longer")}</button>`}</div>`);
     card.querySelector("#co-yes").addEventListener("click", () => { closePanel(); fin(); }); const no = card.querySelector("#co-no"); if (no) no.addEventListener("click", () => closePanel());
+  }
+  // ---- Home: a bathroom to bathe in, and a cupboard (almirah) to choose your clothes ----
+  _homeExtras(room) {
+    if (!room._bath) {
+      const M = (c, o = 1) => new THREE.MeshStandardMaterial({ color: c, transparent: o < 1, opacity: o, roughness: 0.5 }), add = (m, x, y, z) => { m.position.set(x, y, z); room.group.add(m); return m; };
+      const wall = (w, d, x, z) => { add(new THREE.Mesh(new THREE.BoxGeometry(w, 2.6, d), M(0xdfeaf2)), x, 1.3, z); room._solid(x, z, w, d); };
+      // The bathroom: back corner next to the living-room wall. Door gap faces the room.
+      add(new THREE.Mesh(new THREE.BoxGeometry(3.7, 0.04, 2.9), M(0xbfe3f2)), -2.05, 0.03, -6.55);
+      wall(1.3, 0.15, -3.3, -5.05); wall(0.8, 0.15, -0.55, -5.05); wall(0.15, 3.0, -0.1, -6.55);
+      const tiles = add(new THREE.Mesh(new THREE.BoxGeometry(3.7, 2.0, 0.05), M(0x9fd3ea)), -2.05, 1.0, -7.85); tiles;
+      add(new THREE.Mesh(new THREE.CylinderGeometry(0.35, 0.3, 0.55, 16), M(0x3a86ff)), -3.2, 0.28, -7.3); room._solid(-3.2, -7.3, 0.7, 0.7);
+      add(new THREE.Mesh(new THREE.CylinderGeometry(0.12, 0.1, 0.2, 12), M(0xffb703)), -2.6, 0.1, -7.4);
+      add(new THREE.Mesh(new THREE.CylinderGeometry(0.03, 0.03, 1.8, 8), M(0x9aa6ad)), -1.2, 1.4, -7.8); add(new THREE.Mesh(new THREE.CylinderGeometry(0.2, 0.12, 0.08, 16), M(0x9aa6ad)), -1.2, 2.3, -7.6);
+      add(new THREE.Mesh(new THREE.BoxGeometry(0.9, 0.5, 0.05), M(0xff8fab)), -0.9, 1.5, -5.2);
+      add(new THREE.Mesh(new THREE.BoxGeometry(0.18, 0.08, 0.12), M(0xffffff)), -2.6, 0.95, -7.8);
+      try { const t = makeTextSprite("🚿 " + L("Bathroom"), { size: 44, scale: 0.8 }); t.position.set(-2, 2.9, -5.05); room.group.add(t); } catch (e) { /* label optional */ }
+      const steam = []; for (let i = 0; i < 6; i++) { const s = add(new THREE.Mesh(new THREE.SphereGeometry(0.35, 8, 6), M(0xffffff, 0.35)), -2 + (i % 3) * 0.4 - 0.4, 1.2 + i * 0.25, -6.8); s.visible = false; steam.push(s); }
+      // The almirah: a grey steel cupboard in the living-room corner.
+      add(new THREE.Mesh(new THREE.BoxGeometry(1.6, 2.2, 0.7), M(0x8d99a6)), -11.8, 1.1, -7.3); room._solid(-11.8, -7.3, 1.6, 0.7);
+      add(new THREE.Mesh(new THREE.BoxGeometry(0.02, 2.0, 0.02), M(0x333333)), -11.8, 1.1, -6.94); for (const x of [-11.9, -11.7]) add(new THREE.Mesh(new THREE.BoxGeometry(0.05, 0.25, 0.05), M(0xd4af37)), x, 1.2, -6.93);
+      try { const t = makeTextSprite("🗄️ " + L("Cupboard"), { size: 44, scale: 0.8 }); t.position.set(-11.8, 2.6, -7.2); room.group.add(t); } catch (e) { /* label optional */ }
+      room._bath = { spot: this._nearSpot(room, room.x0 - 2, room.z0 - 6.2, [[0, 0], [0.5, 0], [-0.5, 0], [0, 0.5], [0, -0.5]]), cup: this._nearSpot(room, room.x0 - 11.8, room.z0 - 6.2, [[0, 0], [0.6, 0], [0, 0.6], [0.6, 0.6], [1.2, 0.5]]), steam };
+    }
+    const B = room._bath;
+    this.roomInteractables.push({ pos: B.spot, radius: 1.8, priority: 1, prompt: () => (this.progress.bathDay === this.progress.day ? L("🚿 Bathroom (you are fresh today)") : L("🚿 Take a bath")), activate: () => this._takeBath(room) });
+    this.roomInteractables.push({ pos: B.cup, radius: 2.0, priority: 1, prompt: () => L("🗄️ Open the cupboard: choose your clothes"), activate: () => this._cupboard() });
+    if (this.phase === "morning" && this.progress.bathDay !== this.progress.day) setTimeout(() => showToast(L("🚿 Maa: 'Bath first, then get dressed! The bathroom is at the back.'"), 3600), 1200);
+  }
+  _takeBath(room) {
+    const pr = this.progress; if (pr.bathDay === pr.day) { showToast(L("You already had your bath today. Squeaky clean!"), 2400); return; }
+    pr.bathDay = pr.day; pr.baths = (pr.baths || 0) + 1; saveProgress(this.profile, pr); this.addEnergy && this.addEnergy(15);
+    const st = room._bath && room._bath.steam; if (st) { st.forEach((s) => (s.visible = true)); setTimeout(() => st.forEach((s) => (s.visible = false)), 6000); }
+    try { playWhoosh(); } catch (e) { /* sound optional */ }
+    const lines = [L("🚿 (Warm water in the bucket. Mug by mug, splash, splash!)"), L("🧼 (Soap bubbles everywhere. Behind the ears too, like Maa says.)"), L("🦷 (Brush your teeth: two minutes, up and down.)"), L("🧺 (Dry with the pink towel. You smell like jasmine soap.)"), L("✨ Fresh and clean! Energy +15. Now open the cupboard and choose your clothes.")];
+    this.dialogue.say(L("Bath time"), lines, () => { if (pr.baths === 7) { this._snap && this._snap("🧼", "Bathed seven days in a row. Clean champion!"); showToast(L("🏅 Badge: Clean Champion!"), 3000, "good"); } }, { pitch: 460 });
+  }
+  _cupboard() {
+    const pr = this.progress, fresh = pr.bathDay === pr.day, uni = this.working ? L("Work uniform") : L("School uniform");
+    const opts = [["uniform", "🎒", uni, 0x3f6f9f, 0x3b3f4a], ["home", "🏠", L("Home T-shirt and shorts"), pr.homeShirt || 0xff7b54, 0x3a4a6b], ["jeans", "👖", L("Jeans and T-shirt"), pr.homeShirt || 0x3a86ff, 0x1d4e89], ["kurta", "🪔", L("Kurta pajama (festive)"), 0xf4a261, 0xfff8e7], ["party", "🕴️", L("Party wear (all black)"), 0x111111, 0x111111], ["sports", "⚽", L("Sports kit"), 0xd62828, 0x111111], ["summer", "🩳", L("Cool summer clothes"), 0xf6d743, 0xe8dcc0], ["warm", "🧥", L("Warm jacket and woollens"), 0x8a1c1c, 0x2b3a55], ["pajama", "😴", L("Night pajama"), 0x9fc5e8, 0x9fc5e8]];
+    const hex = (c) => "#" + c.toString(16).padStart(6, "0");
+    const card = openPanel(`<h2>🗄️ ${L("The cupboard")}</h2><p class="job-brief">${fresh ? L("Fresh from your bath. What will you wear today?") : L("Tip: take a bath first! Then pick your clothes.")}</p><div class="shop-list">${opts.map((o, i) => `<div class="cart-row"><div><span style="display:inline-block;width:18px;height:18px;border-radius:4px;background:${hex(o[3])};border:1px solid #999;vertical-align:middle"></span><span style="display:inline-block;width:18px;height:18px;border-radius:4px;background:${hex(o[4])};border:1px solid #999;vertical-align:middle;margin-right:6px"></span><b>${o[1]} ${o[2]}</b>${this._chosen === o[0] || (!this._chosen && o[0] === "uniform" && !this._wearing) ? " ✔" : ""}</div><button class="use-btn" id="cb-${i}">${L("Wear")}</button></div>`).join("")}</div><div class="btn-row"><button class="ghost-btn" id="cb-x">${L("Close")}</button></div>`);
+    card.querySelector("#cb-x").addEventListener("click", () => closePanel());
+    opts.forEach((o, i) => card.querySelector(`#cb-${i}`).addEventListener("click", () => {
+      closePanel(); this._chosen = o[0]; this.applyUniform(); pr.outfitsTried = [...new Set([...(pr.outfitsTried || []), o[0]])]; saveProgress(this.profile, pr); playPick && playPick();
+      showToast(L("👕 You change into: {o}. {m}", { o: o[2], m: o[0] === "uniform" ? L("Ready for the day!") : this.phase === "school" ? L("(At school you still wear the uniform.)") : L("Looking good!") }), 3000, "good");
+      if (pr.outfitsTried.length === 6) { this._snap && this._snap("👗", "Tried six outfits from the cupboard."); showToast(L("🏅 Badge: Fashion Star!"), 3000, "good"); }
+    }));
   }
 }
 

@@ -1,0 +1,53 @@
+stage: B02-notes
+company: "QUALITEK"
+run_date: "2026-09-26"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "COLLECTOR WARNING (verbatim): shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend."
+  - "COLLECTOR WARNING (verbatim): screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance Sheet, screener:Cash Flow, screener:Customization, VIMTALABS:Profit & Loss, VIMTALABS:Quarters, VIMTALABS:Balance Sheet, VIMTALABS:Cash Flow, VIMTALABS:Customization, METROPOLIS:Profit & Loss, METROPOLIS:Quarters, METROPOLIS:Balance Sheet, METROPOLIS:Cash Flow, METROPOLIS:Customization, KRSNAA:Profit & Loss, KRSNAA:Quarters, KRSNAA:Balance Sheet, KRSNAA:Cash Flow, KRSNAA:Customization."
+  - "COLLECTOR WARNING (verbatim): no results PDFs yet (screener has none): add later on github or locally + --push-again"
+  - "COLLECTOR WARNING (verbatim): no rating PDF yet: add later the same way"
+  - "RATING: EMPTY. No credit rating found on BSE filings or by web search; borrowings note (Note 5) discloses no rating reference for the bank facilities either."
+  - "prospectus/: HOLDS THE DRHP only; the FINAL prospectus/RHP is NOT held. Any change between DRHP and final prospectus objects of issue is unverified."
+  - "No independent valuation report or fairness opinion for the ITCPL share-swap exchange ratio is anywhere in the corpus read for this stage; PENDING LIVE VERIFICATION."
+model_notes: []
+flags:
+  - {type: FLAG-CASH, reason: "Trade receivable ageing in the 1-2yr (+120.7% YoY) and 2-3yr (+142.7% YoY) buckets grew far faster than the 77% consolidated revenue growth, concentrated at the ITCPL subsidiary level, even though the aggregate >6-months-overdue proportion held flat (22.3% FY26 vs 22.2% FY25). Both readings must be carried to LBF2 (Note 15 consol, p.121/[page 127])."}
+  - {type: FLAG-RPT, reason: "70% of the ITCPL 50.01% buyout (Rs 3,640.15 Lakh of Rs 5,199.73 Lakh) was a related-party share swap at a 6.56:1 exchange ratio with no independent valuation or fairness opinion disclosed anywhere in the notes (Note 3, Note 26/27, secretarial audit p.78/[page 84]), priced 65% above the FY25 arm's-length cash preferential round twelve months earlier."}
+  - {type: FLAG-GOODWILL, reason: "Goodwill on consolidation grew 2.4x to Rs 7,811.56 Lakh, 54% of consolidated net worth, with zero quantified impairment-test assumptions disclosed (Note 39/40 consol, p.137/[page 143])."}
+accounting_quality: 5
+pass_2_empty: false
+pass_3_empty: false
+top_findings:
+  - {rank: 1, finding: "Standalone ROE 8.9% to 6.9% (-23%) and ROCE 10.7% to 7.4% (-31%), company-explained as increase in capital employed from the equity swap and new borrowings outrunning standalone earnings", note_ref: "Note 34 standalone, p.180-181 / [page 186]-[187]", rating: "RED FLAG"}
+  - {rank: 2, finding: "Borrowings note is granular and instrument-by-instrument while the RPT share-swap note gives no valuer name or fairness opinion, showing the disclosure gap is a choice not a format limit", note_ref: "Note 5 vs Note 3/26/27", rating: "RED FLAG"}
+  - {rank: 3, finding: "70% of the ITCPL 50.01% buyout was a related-party share swap at a 6.56:1 exchange ratio with no independent valuation disclosed", note_ref: "Note 3, Note 26/27, secretarial audit p.78 / [page 84]", rating: "RED FLAG"}
+  - {rank: 4, finding: "Goodwill on consolidation grew 2.4x to Rs 7,811.56 Lakh, 54% of consolidated net worth, with zero quantified impairment-test assumptions", note_ref: "Note 11e, Note 39/40 consol, p.120/137", rating: "RED FLAG"}
+  - {rank: 5, finding: "MSME interest on delayed payments recurring and growing both entities both years", note_ref: "Note 36 consol / Note 31 standalone, p.116/179", rating: "RED FLAG"}
+  - {rank: 6, finding: "ITCPL supplied 45.4% of FY26 consolidated revenue; annualised like-for-like ITCPL growth roughly +19% [INFERENCE], materially slower than the 77% headline consolidated growth", note_ref: "Note 33(d)(i), p.134 / [page 140]", rating: "WATCH"}
+  - {rank: 7, finding: "Preferential share-swap price 65% above the FY25 arm's-length cash preferential price, agreed with the promoter entity roughly 12 months later", note_ref: "Note 35 consol / Note 37 standalone, p.135/182", rating: "WATCH"}
+  - {rank: 8, finding: "Reciprocal retroactive related-party interest waivers occur every year in both directions via same-day board resolutions", note_ref: "Note 12/26(j) consol, Note 13/27(i) standalone", rating: "WATCH"}
+  - {rank: 9, finding: "Extensive promoter/director/related-entity guarantee web secures Rs 6,231-7,664 Lakh of group bank debt per guarantor with no independent credit rating to cross-check", note_ref: "Note 26/27, p.126-129/173-176", rating: "WATCH"}
+  - {rank: 10, finding: "Two of three subsidiaries (QTIPL, LabOps Global) loss-making since acquisition; only ITCPL profit-contributing; LabOps contributed zero revenue in its first partial year", note_ref: "Note 33(d), Note 34 consol, p.134-135", rating: "WATCH"}
+  - {rank: 11, finding: "Trade receivable ageing in 1-2yr and 2-3yr buckets more than doubled YoY even though aggregate over-6-months proportion held flat at ~22.3%", note_ref: "Note 15 consol, p.121 / [page 127]", rating: "WATCH"}
+  - {rank: 12, finding: "Capital work-in-progress nearly tripled YoY to Rs 4,528.25 Lakh; land/building under development mortgaged against a Rs 1,300.30 Lakh term loan", note_ref: "Note 11c, p.124-125 / [page 130]-[131]", rating: "WATCH"}
+  - {rank: 13, finding: "No Key Audit Matters determined by either the standalone or consolidated statutory auditor in a year with four acquisitions and a 2.4x goodwill increase", note_ref: "Standalone p.140-141 / consolidated [page 94]", rating: "WATCH"}
+  - {rank: 14, finding: "A new income-tax demand appears for the first time this year, CIT(Appeals) AY2023-24 Rs 7.99 Lakh, the company's first post-listing-year dispute", note_ref: "Note 28(A) consol, p.132-133 / [page 138]-[139]", rating: "WATCH"}
+  - {rank: 15, finding: "A static Rs 151.81 Lakh CWIP balance has aged past 3 years while the note's own overdue-assessment line asserts no project is overdue", note_ref: "Note 11c(iii)(a)/(b), p.130 / [page 136]", rating: "WATCH"}
+red_flags:
+  - "Standalone ROE/ROCE deterioration (-23%/-31%) company-explained as capital deployment outrunning earnings (Note 34 standalone)."
+  - "Disclosure-depth asymmetry: granular borrowings note vs no valuation basis for the ITCPL share-swap RPT (Note 5 vs Note 3/26/27)."
+  - "ITCPL 50.01% buyout, 70% consummated via a related-party share swap with no disclosed independent valuation (Note 3, Note 26/27)."
+  - "Goodwill on consolidation (Rs 7,811.56 Lakh, 54% of net worth) carries zero quantified impairment-test assumptions (Note 39/40 consol)."
+  - "MSME interest on delayed payments recurring and growing both entities both years (Note 36 consol / Note 31 standalone)."
+questions_for_mgmt:
+  - "What valuation methodology and independent fairness opinion, if any, supported the 6.56:1 ITCPL share-swap exchange ratio, and why was it priced 65% above the FY25 arm's-length cash preferential price agreed twelve months earlier?"
+  - "What discount rate, terminal growth rate, and CGU-level value-in-use assumptions test the Rs 78.12 Cr goodwill on consolidation for impairment, given two of three acquired entities remain loss-making?"
+  - "Why has MSME interest on delayed payments grown in both FY25 and FY26 despite an improving aggregate payable-turnover ratio, and what remediation is planned?"
+  - "The CWIP ageing note shows a Rs 151.81 Lakh balance aged past three years while asserting no project is overdue; which project is this, and what is its actual completion status?"
+  - "When are QTIPL and LabOps Global expected to reach profitability or a revenue scale that justifies their acquisition cost?"
+receivables_trend: "mixed, both readings required (Amendment 25): aggregate >6-months-overdue proportion held flat at 22.3% FY26 vs 22.2% FY25 (not deteriorating on this basis), but the 1-2yr bucket grew +120.7% YoY (Rs 310.86 Lakh vs Rs 140.88 Lakh) and the 2-3yr bucket grew +142.7% YoY (Rs 97.99 Lakh vs Rs 40.38 Lakh), both far outpacing the 77% consolidated revenue growth, concentrated at the ITCPL subsidiary level (Note 15 consol, p.121 / [page 127])."
+restatements_found: []
+going_concern_language: "NONE. Confirmed absent across the notes, both standalone and consolidated auditor's reports, and the secretarial audit report on all three passes. Only boilerplate 'on a going concern basis' appears as the accounting convention, no emphasis-of-matter or material-uncertainty paragraph."
+analyst_note: "The single sharpest evidence-tier finding across three passes is the disclosure-depth asymmetry: the same filer gives an instrument-by-instrument borrowings table (lender-facing) but zero valuation methodology for the ITCPL share swap (promoter-facing), Note 5 vs Note 3/26/27. This shows the RPT valuation gap is a choice, not a format limitation, and should weigh on the promoter-governance line at stage 11/Role 2 more than the raw goodwill or ROE numbers alone would suggest. Standalone ROE/ROCE decline (finding 1) and the CWIP tripling (finding 12) are mechanically linked: the same capital-deployment-ahead-of-earnings pattern explains both."

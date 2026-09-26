@@ -49,7 +49,7 @@ Depressors: Block B cash conversion at 0 of 20. Driving years: FY22, FY23 and FY
 
 Band: 75 to 89, normal. The band holds with or without the Verifier A clearance: the printed 77.5 would set overall at 77.5, still normal. Weakest component: red flag coverage at 81, and 69% on full catches only. The independent reader still found three MAJOR governance and subsidiary items the evidence stages missed.
 
-Arithmetic note: the block counts 39 of 40 clean after clearance. The disagreement log clears 7 rows, and 31 printed matches plus 7 cleared rows gives 38 of 40 (95.0). Neither figure moves overall, which red flag coverage sets at 81.
+Arithmetic note: synthesis found that confidence.yaml first counted 39 of 40 clean after clearance. The disagreement log clears 7 rows, so 31 printed matches plus 7 cleared rows gives 38 of 40 (95.0). The orchestrator corrected confidence.yaml to 95.0. Overall stays at 81, set by red flag coverage.
 
 ## Round history
 

@@ -24,3 +24,38 @@
 | 19 | verifier-b-redflags | opus | default | n/a | n/a | 289998 | 8m31s | 2 |
 | 20 | verifier-c-framework (phase 1 half) | opus | default | n/a | n/a | 120280 | 4m26s | 2 |
 | 21 | stage-13-synthesis (phase 1 lite) | opus | default | n/a | n/a | 191528 | 7m21s | 1 |
+| 22 | stage-09b-dossier | sonnet | default | n/a | n/a | 169487 | 5m09s | 1 |
+
+Note: the Agent tool reports one subagent_tokens total per run, not an input/output split, so in_tok and out_tok read n/a. Wall time is the tool's duration_ms.
+
+## CLOSE-OUT SUMMARY
+
+Run total: 3,360,730 subagent tokens over 22 ledger rows (21 subagent runs plus inline stage 0).
+
+### (a) TOP FIVE BY TOKENS
+
+| rank | stage | total_tok | share | runs |
+|---|---|---|---|---|
+| 1 | Verifier B, concall red flags | 556,768 | 16.6% | 2 |
+| 2 | Stage 2, notes triple-pass | 359,067 | 10.7% | 3 |
+| 3 | Stage 5, concall analysis | 300,303 | 8.9% | 2 |
+| 4 | Stage 6, peer concall verification | 268,527 | 8.0% | 1 |
+| 5 | Stage 7, emerging moat scan | 250,958 | 7.5% | 2 |
+
+The top five are 51.7% of the run. The one correction cycle (stages 1, 5, 7 and verifiers B, C re-run) cost 748,874 tokens.
+
+### (b) DOWNSHIFT FAILURES
+
+none. Verifier A ran on haiku. Stage 10 does not run in phase 1. Stage 0 ran inline in the orchestrator session, as run-pipeline.md step 1 directs (same treatment as TOTEM 2026-09-09 and SYNGENE 2026-09-15).
+
+### (c) COST SPIKES
+
+none. No prior runs/yashhv-* ledger exists.
+
+### (d) OPERATOR SNAPSHOT
+
+Operator: run /cost and /usage now and paste the cache hit ratio and the loop totals below under "Operator snapshot". The orchestrator cannot read those commands.
+
+### Operator snapshot
+
+(pending)

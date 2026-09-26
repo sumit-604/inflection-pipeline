@@ -742,3 +742,14 @@ Recorded here against the shallow-screen commits of 2026-09-21.
 - A Bash heredoc followed by python -c with nested quotes failed to parse; the
   Write tool is safer for YAML blocks.
 - About 4.58M subagent tokens over 28 runs. Not a clean run.
+
+## 2026-09-26 YASHHV (step1 intake + phase 1, runs/yashhv-2026-09-26)
+- Screener resolves Yash Highvoltage only by BSE code (/company/544310/); /company/YASHHV/ returns 404. Consolidated page exists but holds FY25-FY26 only; the 7-year series needed the standalone export, pulled by hand.
+- collect_to_repo defects recurred: sector guess "Pharma / CDMO" (wrong; set Cables / Industrial products), empty screener formula sheets on all four companies, no results PDFs (SME half-yearly filer), AR filing duplicated into announcements/, screener deck byte-identical to the BSE FY26 deck.
+- BSE announcements (open action PR #167): the collector's 12-month fetch wrote 6 files only. A 21-month window returned 0 rows, not an error. Four-month windows returned 136 rows. Older attachments live under AttachHis/, not AttachLive/; AttachLive returns an 8 KB HTML page for them.
+- SME results statement pages are scanned images with no text layer and no OCR on this machine. Fix used: extract the embedded page JPEGs with pypdf to work/extracted/<doc>_pages/ and have stages read them with the Read tool. Worked for every stage and verifier.
+- RHP and shareholding patterns came from the company site investor portal (yashhv.com), not BSE. No rating rationale exists that search could find.
+- Stage block files arrived wrapped in ``` fences (stages 1 and 2 pass 1); fences stripped mechanically before parse. Later task messages said "no code fences in the file" and the defect stopped.
+- One correction cycle on verifier findings (stages 1, 5, 7; verifiers B and C re-run): B12c run 1 CRITICAL (E2/H2 double credit put the EM score 0.7 above the 25 line; corrected 25.7 to 17.7, MODEST); B12b run 1 two unsupported B05 flags. Credibility grade moved B to C. Final: A 100, B 88 (strict 53), C 69.4, D 66.7 peer use; overall 66.7.
+- Stage 6 found, and Verifier D confirmed verbatim, that Vilas Transcore's new bushing venture is run by Yash Highvoltage's founder-promoter (VILAS May-2026 call). No Yash filing or call mentions it.
+- About 3.36M subagent tokens over 21 subagent runs. Not a clean run.

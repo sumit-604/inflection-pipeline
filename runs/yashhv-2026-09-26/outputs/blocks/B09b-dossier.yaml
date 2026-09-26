@@ -1,0 +1,47 @@
+stage: B09b-dossier
+company: "YASHHV"
+run_date: "2026-09-26"
+model: claude-sonnet-5
+status: complete
+corpus_verdict: "CORPUS GAPPED"
+corpus_gaps:
+  - {document: "credit rating rationale", expected_source: "rating agency site", kind: "plausibly-nonexistent"}
+  - {document: "research/ broker notes", expected_source: "rating agency site", kind: "plausibly-nonexistent"}
+  - {document: "shareholding pattern after 31-Mar-2026 (post Aug-2026 preferential allotment)", expected_source: "BSE", kind: "findable-missing"}
+  - {document: "H1FY25 results (09-Jan-2025)", expected_source: "BSE", kind: "findable-missing"}
+  - {document: "clean screener P&L/BS/CF/Quarters export for YASHHV and peers", expected_source: "BSE / screener re-export", kind: "findable-missing"}
+  - {document: "Ind AS 101 cash-flow-level reconciliation for the FY25 CFO restatement (Rs918.68L to Rs953.13L)", expected_source: "company IR page", kind: "findable-missing"}
+archetypes:
+  - {line: "transformer bushings (RIP/RIS, OIP, high-current, wall-through, retrofit)", archetype: "Build-to-spec component maker (with licence/scarcity-business features layered on: 8-10yr utility/OEM qualification cycle)"}
+transition:
+  - line: "transformer bushings (all product lines, one archetype)"
+    from_tier: "R2 COST-ADVANTAGED CONVERTER-adjacent (qualification moat present, but pricing power capped by ~95% imported RIP/RIS core dependency)"
+    to_tier: "R3 VALUE-ADDED / SPEC'D SUPPLIER (own-core maker up to 550kV, qualification moat plus input cost/lead-time control)"
+    engine: "Vadodara (Jarod) greenfield plant localises RIP/RIS core production (~6,000 units/yr) and extends addressable voltage class from 245kV to 550kV"
+    proof_gate: "Trial production of RIP/RIS cores at Vadodara plus a passed 550kV type test, against the re-guided target (trial end-Q2FY27 per the May-2026 call; an Oct-2026 trial date is also cited by the moat stage, not fully reconciled with the AR's H2FY27 framing)"
+    recognition_gap: "OPEN QUESTION, not resolved here: does current market pricing already reflect the core-localisation and 550kV extension. Stage 11 resolves via the Section 1B destination-PE gap."
+    ugliness: "ARTIFACT-OF-CLIMB, with two unresolved features (12-quarter CARO-confirmed bank-vs-books stock discrepancy; receivables not-due bucket collapse 68% to 3%) that could reclassify it STRUCTURAL-FEATURE if either resolves to a control or collection failure"
+    transition_falsifier: "A further Vadodara trial-production slip past the MGC/Moser-Glaser contracted core-supply end (mid-2027), or a 550kV type-test failure, closing the import bridge before the plant is proven"
+dominant_variables:
+  - "Vadodara plant trial production and 550kV type-test pass against the re-guided timeline"
+  - "CFO/PAT ratio and working-capital days (0.236x FY26, WC days 79.1 to 118.9 FY22-26)"
+  - "RIP/RIS import dependency (~95% imported cores, 12-16 week lead time)"
+  - "Customer concentration (top-1 customer 18.8% of FY26 revenue, up from ~10.4% each for top-two in FY25)"
+business_falsifier: "Loss of a marquee utility/OEM approval (PGCIL/NTPC/NPCIL/DRDO) or a field failure reopening the qualification question, since the entire FROM-state moat rests on qualification, not cost or brand; also flagged: the founder-promoter Ramachandran's new CEO role at a competing Vilas-backed bushing venture, if it signals technology/relationship leakage rather than a clean departure"
+mental_model_status: "DRAFT - PENDING OPERATOR SIGN-OFF"
+fragility:
+  variable_count: 4
+  verifiability_ratio: "2 of 4 externally observable"
+  single_point_failure: "none - failure requires conjunction"
+  fragility_verdict: "MODERATE"
+candidate_count: 7
+second_order:
+  chains_drafted: 2
+  pending_live_links: 8
+  confirm_by_observations: 2
+research_brief_items: 13
+plain_summary_points: 15
+annex:
+  present: true
+  questions_answered: 10
+  corpus_commit_hash: "05ca1df8928dde38b079acf96db55a75e7c59271"

@@ -23,3 +23,4 @@
 | 18 | stage-07-emoat (correction) | sonnet | default | n/a | n/a | 106847 | 6m52s | 2 |
 | 19 | verifier-b-redflags | opus | default | n/a | n/a | 289998 | 8m31s | 2 |
 | 20 | verifier-c-framework (phase 1 half) | opus | default | n/a | n/a | 120280 | 4m26s | 2 |
+| 21 | stage-13-synthesis (phase 1 lite) | opus | default | n/a | n/a | 191528 | 7m21s | 1 |

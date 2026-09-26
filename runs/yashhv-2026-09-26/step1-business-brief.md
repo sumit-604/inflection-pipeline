@@ -47,7 +47,9 @@ Yash HV USA Inc. and distributors (Weidmann, Electrolink) (FY26 call summary, SE
   (inputs/announcements/2026-06-22_board-outcome.pdf; 2026-08-07_allotment.pdf).
 - Cyber fraud Rs 2.10 cr reported 31-Mar-2026 (Rs 1.36 cr against a partial shipment, Rs 0.74 cr
   against non-receipt) and booked as an exceptional item in H2FY26 (2026-03-31_cyber-fraud.pdf).
-- Company Secretary resigned 05-May-2026; Bhoomi Talati appointed 13-May-2026.
+- Company Secretary resignation filed 05-May-2026 (effective 30-May-2026, after close of business);
+  Bhoomi Talati appointment filed 13-May-2026 (effective 01-Jun-2026 per B03). Dates are filing dates
+  unless marked effective.
 - 50% of Sukrut Electric bought for Rs 5.24 cr alongside Quality Power (a peer below); Sukrut FY26
   revenue about Rs 25-26 cr (acquisition updates Oct-2025 to Jan-2026; SECONDARY for revenue).
 - Promoters 54.79%, FII 2.17%, DII 8.99% (screener, Aug-2026, SECONDARY). Named promoters in public

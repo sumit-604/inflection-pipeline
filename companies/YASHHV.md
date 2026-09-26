@@ -14,7 +14,7 @@ Spear: OVERRIDE 2026-09-26 (operator standing ruling 2026-09-05: Step-1 intake r
 First verification priority (Step-1 load-bearing facts; brief at runs/yashhv-2026-09-26/step1-business-brief.md):
 1. Guidance vs delivery: FY27 invoicing guide Rs 360-400 cr against a Rs 400 cr order book (Mar-2026), claimed independent of the new plant; test against Savli capacity (7,272 units FY26).
 2. Cash conversion: CFO Rs 9 cr vs PAT Rs 37 cr, FCF Rs -50 cr in FY26 (screener); split into receivables, inventory, capex; customer concentration.
-3. Restatement and controls: FY25 and H1FY26 labelled RESTATED in the FY26 results; Rs 2.10 cr cyber fraud (exceptional, H2FY26); Company Secretary change May-2026.
+3. Restatement and controls: FY25 and H1FY26 labelled RESTATED in the FY26 results; Rs 2.10 cr cyber fraud (exceptional, H2FY26); Company Secretary change (resignation filed 05-May-2026, effective 30-May-2026).
 4. Import substitution: RIP/RIS cores imported today; the new plant localises them and extends to 550 kV; test against Hitachi Energy and Quality Power commentary.
 
 ## HALT 1 GATE

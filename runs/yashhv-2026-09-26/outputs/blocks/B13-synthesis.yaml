@@ -1,0 +1,26 @@
+stage: B13-synthesis
+company: "YASHHV"
+run_date: "2026-09-26"
+model: "claude-opus-5-5"
+status: complete
+phase: "1 lite (no valuation-dependent content)"
+verdict: "PROCEED WITH CAVEATS"
+verdict_rule_applied: 3            # FLAG-CASH INDETERMINATE cap; rule 4 (open MAJORs, 60-74 band) converges
+flags_active: [FLAG-CASH, FLAG-GATE0]
+flag_cash_determination: INDETERMINATE
+transition_posture: "RESEARCH / WATCH (provisional; model unsigned; gap unresolved until Stage 11)"
+confidence_delta: {numerical: 100, redflag: 88, framework: 69.4, peer: 66.7, overall: 66.7}
+overall_set_by: peer_utilisation
+valuation_decision: "NOT RUN (phase 3)"
+entry_range: {low: "NOT RUN", high: "NOT RUN"}
+headline: "Bushing maker grows fast, cash lags behind"
+falsification_metric: "H1FY27 revenue growth below 40% over H1FY26"
+monitorables_count: 8
+publish_candidate: true
+publish_candidate_summary: "Concept teardown: CARO clause ii(b) bank stock statement vs books gap as an early cash conversion tell; non directional; hold until company answers the Halt 1 Note 45 question"
+notion_save:
+  page_title: "YASHHV - Yash Highvoltage Ltd - phase 1 evidence 2026-09-26"
+  summary: "Bushing maker grows fast, cash lags behind. Gate: PROCEED WITH CAVEATS (FLAG-CASH INDETERMINATE; confidence 66.7 set by peer_utilisation). No valuation in phase 1."
+  drive_link: "{{DRIVE_FOLDER_LINK}}"
+  mode: append-never-overwrite-status
+block_provenance: "written by the orchestrator from the stage-13 reply (the task named no block path); file governs from here"

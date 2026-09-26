@@ -1,0 +1,17 @@
+company: Qualitek Labs Ltd
+ticker: QUALITEK
+cmp: 621.0
+market_cap_cr: 724.0
+run_date: 2026-09-26
+run_type: full
+listed_date: "2024-01-29"   # BSE SME listing notice 29-Jan-2024 (scrip 544091, symbol QLL)
+screener_url: "https://www.screener.in/company/544091/consolidated/"
+concalls_available: false
+sector_cap_row: "Consulting / Engineering services"   # resolved at step1/stage 0, section-1b chunk 05; no TIC row exists, flagged for phase-3 operator confirmation
+sector_cap_row_guess: "Pharma / CDMO"   # keyword guess only, never consumed
+collector_warnings:
+  - "shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend."
+  - "screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance Sheet, screener:Cash Flow, screener:Customization, VIMTALABS:Profit & Loss, VIMTALABS:Quarters, VIMTALABS:Balance Sheet, VIMTALABS:Cash Flow, VIMTALABS:Customization, METROPOLIS:Profit & Loss, METROPOLIS:Quarters, METROPOLIS:Balance Sheet, METROPOLIS:Cash Flow, METROPOLIS:Customization, KRSNAA:Profit & Loss, KRSNAA:Quarters, KRSNAA:Balance Sheet, KRSNAA:Cash Flow, KRSNAA:Customization. Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again."
+  - "no results PDFs yet (screener has none): add later on github or locally + --push-again"
+  - "no rating PDF yet: add later the same way"
+notes: "Step-1 intake 2026-09-26. Peers VIMTALABS, METROPOLIS, KRSNAA auto-selected. SME half-yearly reporter; no earnings calls on BSE (NO-CONCALL MODE). Collected from screener.in by collect_to_repo.py v3. sector_cap_row is deliberately empty: resolve it at stage 0 against the Section 1B cap table."

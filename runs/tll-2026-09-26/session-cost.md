@@ -26,3 +26,4 @@ not split input/output, so in_tok/out_tok read n/a).
 | 5 | concall analysis, NO-CONCALL (rework) | claude-sonnet-5 | default | n/a | n/a | 160607 | 9m26s | 2 |
 | 6 | peer concall verification (rework) | claude-sonnet-5 | default | n/a | n/a | 96407 | 6m15s | 2 |
 | 8 | promoter check (rework) | claude-sonnet-5 | default | n/a | n/a | 141306 | 6m52s | 2 |
+| 7 | emerging moat scan (rework) | claude-sonnet-5 | default | n/a | n/a | 127724 | 7m15s | 2 |

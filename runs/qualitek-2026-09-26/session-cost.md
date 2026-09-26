@@ -27,3 +27,4 @@ not split input/output, so in_tok/out_tok read n/a).
 | 12b | verifier B red flags (cycle 2, no-concall mode) | claude-opus-5-5 | default | n/a | n/a | 299202 | 11m14s | 2 |
 | 12d | verifier D peers (cycle 2) | claude-sonnet-5 | default | n/a | n/a | 82620 | 2m15s | 2 |
 | 13 | synthesis-lite (phase 1) | claude-opus-5-5 | default | n/a | n/a | 222317 | 8m47s | 1 |
+| 9b | Halt 1 understanding dossier | claude-sonnet-5 | default | n/a | n/a | 164082 | 5m39s | 1 |

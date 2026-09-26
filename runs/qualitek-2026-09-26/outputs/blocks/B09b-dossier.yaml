@@ -1,0 +1,68 @@
+stage: B09b-dossier
+company: "QUALITEK"
+run_date: "2026-09-26"
+model: claude-sonnet-5
+status: complete
+corpus_verdict: "CORPUS GAPPED"
+corpus_gaps:
+  - {document: "Final Prospectus / RHP", expected_source: "BSE / company IR page", kind: "findable-missing"}
+  - {document: "Filed quarterly shareholding pattern (SAST)", expected_source: "BSE", kind: "findable-missing"}
+  - {document: "Screener P&L / Balance Sheet / Cash Flow / Quarters CSVs (subject + 3 peers)", expected_source: "screener.in (collector re-run)", kind: "findable-missing"}
+  - {document: "Subsidiary-level CARO reports (ITCPL, QTIPL, LabOps Global)", expected_source: "MCA / company filings", kind: "findable-missing"}
+  - {document: "Independent valuation / fairness opinion for the ITCPL share-swap exchange ratio", expected_source: "MCA / BSE filings", kind: "findable-missing"}
+  - {document: "MCA record resolving Mohit Bhardwaj vs Mohit Kumar (Company Secretary identity)", expected_source: "MCA / RoC", kind: "findable-missing"}
+  - {document: "Credit rating rationale", expected_source: "rating agency site", kind: "plausibly-nonexistent"}
+  - {document: "Segment-level capital and debt table", expected_source: "n/a (single reportable segment under AS-17/AS-131)", kind: "plausibly-nonexistent"}
+archetypes:
+  - line: "Core testing/inspection/certification (85%+ of revenue)"
+    archetype: "Outsourcing partner (CDMO/EMS/IT services variant), layered with Licence/scarcity business"
+  - line: "QTIPL (software) and LabOps Global (lab-operations outsourcing)"
+    archetype: "fits no known archetype - too small and undisclosed to assign"
+transition:
+  - line: "Core testing/inspection/certification"
+    from_tier: "R2 COST-ADVANTAGED CONVERTER"
+    to_tier: "R3 VALUE-ADDED / SPEC'D SUPPLIER"
+    engine: "New/acquired lab capacity converting from cost centre to earnings contributor as utilisation rises; integration of 4 bought entities into one reporting/governance structure"
+    proof_gate: "Consolidated EBITDA margin holds at or above the H2 FY26 exit rate of 25.7% in the H1 FY27 print (vs H1 FY26's 20.7%)"
+    recognition_gap: "OPEN QUESTION, resolved at Stage 11: whether the market already prices a spec'd, accreditation-backed supplier converting capacity into margin. No CMP or destination PE in this run."
+    ugliness: "UNCLASSIFIED - capex/new-lab losses read as artifact of the climb; receivables ageing and disclosure pattern could be structural; the run did not separate the two"
+    transition_falsifier: "Consolidated CFO/EBITDA at or below 0.50 for a second consecutive year, with 1-2yr/2-3yr receivable ageing buckets again outpacing revenue growth"
+  - line: "Inspection/audit/certification sub-line"
+    from_tier: "R1/R2"
+    to_tier: "not established - zero disclosed revenue to date"
+    engine: "NABCB Type A accreditation obtained; no disclosed revenue conversion yet"
+    proof_gate: "First separately disclosed revenue line for this vertical (FY27 AR/deck)"
+    recognition_gap: "OPEN QUESTION - not priced as a distinct line by any evidence in this run"
+    ugliness: "ARTIFACT-OF-CLIMB [tentative] - too early-stage to classify with confidence"
+    transition_falsifier: "No separately disclosed revenue for 2+ more annual cycles"
+  - line: "QTIPL / LabOps Global"
+    from_tier: "R0 NON-OPERATING"
+    to_tier: "no credible TO claim in the corpus"
+    engine: "not evidenced"
+    proof_gate: "AOC-1 showing positive profit and material revenue; CARO clause 3(xix) qualification cleared"
+    recognition_gap: "not applicable - no operating destination claim exists yet"
+    ugliness: "STRUCTURAL-FEATURE [tentative] - loss-making since acquisition, CARO 3(xix) qualified both entities"
+    transition_falsifier: "Continued loss-making status and repeated CARO 3(xix) qualification through FY28"
+dominant_variables:
+  - "Consolidated CFO/EBITDA (currently 0.46; healthy 0.65-0.70+)"
+  - "Consolidated EBITDA margin half-on-half (25.7% H2 FY26 vs 20.7% H1 FY26)"
+  - "Standalone vs consolidated revenue growth gap (parent absorbed Mumbai lab from 01-Sep-2025, so standalone is not clean organic)"
+  - "Trade receivable 1-2yr/2-3yr ageing-bucket growth vs revenue growth (+120.7%/+142.7% vs +77% revenue)"
+business_falsifier: "Loss, suspension or scope-narrowing of NABL, NABCB or USFDA accreditation at any material facility, which removes the customer's legal reason to buy from Qualitek at all"
+mental_model_status: "DRAFT - PENDING OPERATOR SIGN-OFF"
+fragility:
+  variable_count: 4
+  verifiability_ratio: "2 of 4 externally observable (cash conversion, receivables ageing have peer/regulatory cross-checks; margin trend and organic split are company-narrated only)"
+  single_point_failure: "none - failure requires conjunction (transition falsifier needs cash-conversion metric AND ageing-bucket pattern together; business falsifier, accreditation lapse, is a separate single point but for the FROM business, not the transition)"
+  fragility_verdict: "FRAGILE"
+candidate_count: 7
+second_order:
+  chains_drafted: 2
+  pending_live_links: 1
+  confirm_by_observations: 2
+research_brief_items: 10
+plain_summary_points: 15
+annex:
+  present: true
+  questions_answered: 10
+  corpus_commit_hash: "1175d52b914e0ca0017bcce56e5deec198a694d6"

@@ -8,3 +8,6 @@
 | 3 | stage-02-notes-pass (pass 2) | sonnet | default | n/a | n/a | 100349 | 6m43s | 1 |
 | 4 | stage-02-notes-pass (pass 3) | sonnet | default | n/a | n/a | 63387 | 3m06s | 1 |
 | 5 | stage-03-ardeep | sonnet | default | n/a | n/a | 229892 | 12m25s | 1 |
+| 6 | stage-04-bizmodel | sonnet | default | n/a | n/a | 114278 | 5m20s | 1 |
+| 7 | stage-05-concall | sonnet | default | n/a | n/a | 163549 | 7m24s | 1 |
+| 8 | stage-08-promoter | sonnet | default | n/a | n/a | 157420 | 6m32s | 1 |

@@ -1,0 +1,63 @@
+stage: B04-bizmodel
+company: "YASHHV"
+run_date: "2026-09-26"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Blended revenue-per-unit and cost-per-unit across the full ~15,000-unit annual capacity base NOT FOUND; AR/presentation disclose only category-level revenue and select unit counts (AR p.68)."
+  - "M2 Cost Advantage and M9 Brand moat tests remain PEER DATA NEEDED (peer screener sheets empty, carried from B01); scored qualitatively as unconfirmed here, not guessed."
+  - "FY27 revenue guide (Rs360-400cr, company memory/concall level) confirmed NOT stated anywhere in this AR by full-text search (B03); belongs to Stage 5 concall verification, not this stage."
+flags: []
+business_type: "manufacturing"
+revenue_streams:
+  - {name: "RIP/RIS condenser bushings", type: "build-to-order manufactured product", pct_of_revenue: 83, predictability: "M"}
+  - {name: "OIP condenser bushings", type: "build-to-order manufactured product", pct_of_revenue: 10, predictability: "H"}
+  - {name: "High-current bushings", type: "build-to-order manufactured product", pct_of_revenue: 4, predictability: "L"}
+  - {name: "Wall-through / oil-to-oil / other bushings", type: "build-to-order manufactured product", pct_of_revenue: 3, predictability: "L"}
+  - {name: "Retrofit / after-sales services", type: "service + replacement product", pct_of_revenue: 6.8, predictability: "H"}
+asset_intensity: "medium"
+wc_intensity: "high"
+pricing_power: "moderate"
+cyclicality: "secular-growth"
+moats_present:
+  - {moat: "switching costs (utility/OEM 8-10yr qualification cycle)", durability: "durable while approvals stay current"}
+  - {moat: "efficient scale / scarcity (only independent Indian manufacturer, ~30% domestic share)", durability: "durable medium term"}
+  - {moat: "brand / technology (approvals, in-house type-testing, DSIR R&D unit)", durability: "emerging, unconfirmed vs peers, PEER DATA NEEDED"}
+  - {moat: "distribution / channel access (Weidmann, Electrolink, Yash HV USA)", durability: "too new to call, all FY26-vintage"}
+valuation_methods:
+  primary: {method: "EV/EBITDA", why: "Neutralises the depreciation/interest step-up from the Vadodara capex cycle; best fits a capex-led scale-up mid-cycle"}
+  secondary: {method: "P/E", why: "PAT is clean per B03 accounting-quality pass; useful cross-check but mid-cycle earnings understate destination economics"}
+  tertiary: {method: "DCF", why: "Feasible once post-commissioning unit economics and margin profile are disclosed; premature as sole method today given thin forward unit-economics data"}
+  not_applicable: ["asset-based/replacement-cost (approval moat not captured in book value)", "dividend discount model (capex-heavy reinvestment phase, no meaningful dividend history in corpus)", "SOTP (Sukrut JV, Yash HV USA, Yash HV Power Components all immaterial in size to date)"]
+irrelevant_ratios:
+  - {ratio: "Trailing P/E on reported PAT alone", why: "Mid-capex-cycle; earnings do not yet reflect Vadodara's contribution or cost"}
+  - {ratio: "Summary receivables turnover ratio in isolation", why: "Improved nominally even as the not-due ageing bucket collapsed from 68% to 3% of total (Note 10)"}
+  - {ratio: "Reported CFO as a standalone health check", why: "Low CFO/PAT is mechanically explainable by capex plus WC build for a not-yet-commercial plant, not necessarily earnings-quality failure on its own"}
+  - {ratio: "Institutional ownership level", why: "House rule: never treated as a risk signal in this framework"}
+must_track_metrics:
+  - {metric: "Order book / book-to-bill", healthy: "growing faster than or in line with revenue", red_flag: "flat or declining two periods running"}
+  - {metric: "CFO/PAT ratio", healthy: ">0.6x once Vadodara is commercial", red_flag: "<0.25x for more than 2 consecutive annual periods post-commissioning"}
+  - {metric: "Working-capital days", healthy: "stabilising or falling post-Vadodara ramp", red_flag: "continued YoY increase post-commissioning"}
+  - {metric: "Customer concentration (top 1)", healthy: "declining as export book diversifies", red_flag: "crossing 20-25% of revenue"}
+  - {metric: "EBITDA margin", healthy: "holding 20-26% band", red_flag: "sustained drop below ~20% without a stated one-off cause"}
+unit_economics:
+  unit: "one transformer bushing (finished, tested)"
+  revenue_per_unit: "NOT FOUND at blended company-wide level; partial category data only (e.g. High Current Bushings ~Rs5 lakh/unit FY26 vs ~Rs7.5 lakh/unit FY25, AR p.68, calculated)"
+  margin_per_unit: "NOT FOUND"
+  key_lever: "voltage/current class and customisation level; import-dependent RIP/RIS core cost and 12-16 week lead time until Vadodara localises supply"
+first_deterioration_signals:
+  - {risk: "single-customer concentration (18.8% FY26)", first_signal: "revenue from operations, quarter/half-on-half"}
+  - {risk: "imported RIP/RIS core cost/lead-time exposure", first_signal: "gross margin (COGS % of revenue)"}
+  - {risk: "negative FCF through the capex cycle", first_signal: "debt-to-equity ratio; CFO/PAT ratio"}
+  - {risk: "Vadodara commissioning delay", first_signal: "capital work-in-progress conversion to PP&E; commissioning date disclosure"}
+  - {risk: "unresolved Note 45 bank-vs-books stock discrepancy", first_signal: "bank stock-statement note in next AR"}
+mgmt_questions:
+  - "What caused the Note 45 bank-vs-books stock-statement gap in 10 of 12 quarters, and what control change has been made?"
+  - "What is the current Vadodara commissioning timeline against H2FY27, and which quarter ships first commercial-invoiced volume?"
+  - "Why did the FY25 CFO figure change Rs34.45 lakh between the FY25 AR and the FY26 AR's restated comparative, with no cash-flow-level reconciliation?"
+  - "Is the customer behind the 18.8% FY26 concentration recurring or one-off within the Rs400cr+ order book, and what is the top-customer diversification plan?"
+  - "What is the actual USD hedging position given no traceable forward contract appears in the Notes despite the MD&A's stated hedging discipline?"
+  - "What is the blended realisation and margin per bushing unit across RIP/RIS, OIP and High-current categories, and how does that move once Vadodara's localised cores replace imports?"
+  - "How does the concall-level FY27 revenue guide (Rs360-400cr) reconcile with the Rs400cr+ order book and a plant not yet commercial for most of FY27?"
+one_line_verdict: "Real, approval-barrier-protected growth engine whose cash conversion and disclosure discipline lag its capex-driven scale-up."
+analyst_note: "Archetype is build-to-spec component maker with licence/scarcity-business features layered on top (8-10yr utility/OEM qualification is the real moat, not a government licence). Sector cap row: 'Cables / Industrial products' (25x) is the better fit versus 'EV charging / energy transition equipment' (28x); Yash sells an engineered T&D/generation component, not charging or storage equipment, so the industrial-products row is more defensible even though grid-capex and renewables are demand drivers. Three of the eight standard moat types (cost advantage, brand, and by extension network/technology comparators) cannot be scored against peers because peer screener sheets came out empty (B01); this stage treats them as emerging/unconfirmed rather than guessing a score. WC intensity and cash conversion are the dominant near-term watch items and are already the subject of five RED/YELLOW flags in B01-B03; this stage treats them as first-order monitorables (Section 4C items 2, 5, 6, 8) rather than re-litigating the accounting-quality finding, which belongs to those stages."

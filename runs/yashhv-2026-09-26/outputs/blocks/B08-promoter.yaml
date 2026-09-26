@@ -1,0 +1,45 @@
+stage: B08-promoter
+company: "YASHHV"
+run_date: "2026-09-26"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "RHP 'Our Management' page (p.207) with full promoter education/qualification detail not reached in this pass"
+  - "MCA master-data cross-check of each of the 10+ named promoter-group entities for struck-off/dormant status not performed individually; relied on RHP's own group-company disclosure"
+  - "Independent director (Nayak, Mehta, Goel, Fethke) bios/cross-directorships not verified from corpus this pass"
+  - "AmbitionBox/Glassdoor employee-review data for Yash Highvoltage Ltd specifically not found (too small/recent for coverage, not an adverse finding)"
+  - "Transpower Technologies Private Limited (former directorship per registry aggregator) not named in RHP disassociation table - unexplained gap, immateriality presumed not confirmed"
+flags: []
+verdict: "TRUSTWORTHY"
+scorecard: {clean: 6, caution: 4, red: 0}
+deal_breakers: []
+adverse_findings:
+  - {finding: "CEO-to-median employee pay ratio 53.45x, +107% YoY (Keyur Shah Rs 140.02L to Rs 289.34L; median employee Rs 49,543/year)", evidence_tier: "VERIFIED", source: "AR2026 Annexure D (Rule 5 disclosure), p.86", date: "FY26 (year ended 31-Mar-2026)"}
+  - {finding: "New promoter-family RPT lines in FY26: office/car lease rent to Twinkle Shah (Rs 29.93L, nil FY25) and rent deposits to both Keyur and Twinkle Shah (Rs 10.00L each, nil FY25), landing the same year cash conversion was weak (CFO/PAT 0.236)", evidence_tier: "VERIFIED", source: "AR2026 Note 36(c), p.132-133", date: "FY26"}
+  - {finding: "Auditor remuneration +78.7% YoY in a year with zero Key Audit Matters reported for the second consecutive year", evidence_tier: "VERIFIED", source: "AR2026 Note 40 (per B02); auditor's report", date: "FY26"}
+  - {finding: "Secretarial Audit Report names one compliance lapse: Form ESOP not filed with RBI for a non-resident director's ESOP grant; now remediated", evidence_tier: "VERIFIED", source: "AR2026 Secretarial Audit Report (MR-3), p.81-82", date: "FY26, remediated before report date 03-08-2026"}
+  - {finding: "Promoter-group entity count (10+ named vehicles: HUFs, partnerships, proprietorships, subsidiaries) is disproportionate to company size; only 2-3 show any live FY26 RPT flow, none found shell/struck-off in this pass", evidence_tier: "VERIFIED (existence) / UNVERIFIED (individual entity status)", source: "RHP p.230, Promoter Group table", date: "as of RHP, Dec-2024"}
+transition_evidence:
+  - "Institutional investor entry: Malabar India Fund, ValueQuest India GIFT Fund, WhiteOak Capital India Opportunities Fund, WhiteOak Capital Equity Fund, Motilal Oswal Financial Services and others allotted Rs 151cr via non-promoter preferential issue at Rs 721/share, 07-Aug-2026 (VERIFIED, BSE Reg 30 allotment filing)"
+  - "Pre-IPO conflict-of-interest cleanup: promoter exited board seat at Pfiffner Instrument Transformers Pvt Ltd (13-Jun-2024) and personally bought out MGC Moser-Glaser AG's stake in the Company (SPA 25-Mar-2024, completed 16-Apr-2024), removing two same-line-of-business related-party ties ahead of listing (VERIFIED, RHP p.232)"
+  - "Pledge: 0% sustained across both shareholding-pattern dates in the corpus (Sep-2025, Mar-2026); no pledge ever disclosed"
+  - "Smooth Company Secretary handover (resignation 30-May-2026, NRC-recommended replacement effective next day 01-Jun-2026, zero gap)"
+  - "FEMA/ESOP filing lapse self-identified by the Company's own secretarial auditor and remediated within the same reporting cycle"
+pledge_pct_latest: 0
+pledge_trend: "stable at 0% across both shareholding-pattern dates in corpus (30-Sep-2025 and 31-Mar-2026); no promoter pledge ever disclosed in RHP or ARs"
+searches_performed:
+  - "Keyur Shah Yash Highvoltage promoter SEBI order"
+  - "\"Yash Highvoltage\" promoter controversy OR fraud OR SEBI OR litigation"
+  - "\"Keyur Shah\" \"Yash Highvoltage\" MD chairman profile"
+  - "thecompanycheck.com director profile fetch (blocked HTTP 403)"
+  - "\"Yash Highvoltage\" AmbitionBox Glassdoor employee reviews"
+  - "\"Keyur Girishchandra Shah\" director disqualified OR \"struck off\" companies"
+  - "Yash Highvoltage proxy advisory IiAS SES InGovern report"
+  - "\"Yash Highvoltage\" ambitionbox.com reviews rating"
+  - "\"Yash Highvoltage\" \"not the original promoter\" history founder"
+searches_skipped:
+  - "Individual MCA struck-off/dormant check for each of the 10+ named promoter-group entities"
+  - "Individual cross-directorship/domain-expertise search per independent director"
+  - "SCORES complaint portal direct query (no reachable public search interface)"
+verdict_basis: "Legal, regulatory, pledge and share-conduct record clean on every hard test (SEBI/criminal/tax/wilful-defaulter/minority-oppression, both RHP statutory declarations and independent web search); the one load-bearing caution is the FY26 RPT/pay pattern (53.45x CEO-to-median pay, +107% YoY, plus new promoter-family rent and rent-deposit lines) landing in the same year as weak cash conversion, set against real transition evidence (institutional preferential-issue entry, pre-IPO conflict-of-interest exits, zero pledge)."
+analyst_note: "TRUSTWORTHY verdict does not trigger the FLAG-PROMOTER downstream rule (reserved for CONCERN/AVOID), but the RPT/pay-ratio pattern is the item synthesis should still name in the verdict line per the operator's stated interest in transition evidence versus static classification. Two structural gaps limited depth: the SME Reg 27(2)/15 exemption means no separate Corporate Governance Report exists (no board/committee attendance table to test 5A/5B against), and 'Our Management' (RHP p.207, full director bios) was not in the extracted excerpt reached this pass. Neither gap changes the verdict; both are named as input_gaps for a downstream stage to close if material."

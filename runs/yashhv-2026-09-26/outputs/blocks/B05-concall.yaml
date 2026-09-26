@@ -1,0 +1,82 @@
+stage: B05-concall
+company: "YASHHV"
+run_date: "2026-09-26"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - {type: FLAG-TIMELINE, reason: "Greenfield RIP/RIS plant commissioning slipped from 'ready by March-2026' (Jan-2025 call) to trial production Oct-2026 / commercial H2FY27 (May-2026 call), ~6-9 months, never named as a slip on any call."}
+  - {type: FLAG-CAPEX, reason: "Greenfield capex grew from Rs90cr (May-2025 call) to Rs100cr+ (Oct-2025 call) to Rs153cr (May-2026 call), ~70% overrun, never named as an overrun."}
+  - {type: FLAG-SILENCE, reason: "Cash conversion weakness (CFO/PAT 0.236, negative FCF two years running, per B03) and the CARO-flagged Note 45 bank-stock discrepancy never raised in any of the three concalls despite inventory/CWIP being discussed each time."}
+quarters_analysed: ["FY25/H2FY25 call (28-May-2025)", "H1FY26 call (15-Oct-2025)", "FY26/H2FY26 call (14-May-2026)"]
+triggers:
+  - {priority: 1, name: "FY27 invoicing Rs360-400cr / order booking Rs500cr+", type: "VOLUME", timeframe: "near", conviction: "H", confirm_signal: "H1FY27 results tracking toward the range", kill_signal: "Order-book execution slippage or H1FY27 miss against implied run-rate"}
+  - {priority: 2, name: "Greenfield RIP/RIS plant commissioning (550 kV)", type: "VOLUME/COST", timeframe: "medium", conviction: "M", confirm_signal: "Trial production starts ~Oct-2026 and passes type test on stated schedule", kill_signal: "Further slip past H2FY27 commercial date, or type-test failure"}
+  - {priority: 3, name: "Margin step-change from FY28 (import substitution)", type: "COST/MARGIN", timeframe: "long", conviction: "M", confirm_signal: "FY28 EBITDA margin rises meaningfully above 25.7% FY26 base on a non-price-recovery basis", kill_signal: "FY28 guide pushed to FY29, repeating the Call-2 to Call-3 pattern"}
+  - {priority: 4, name: "Export ramp to 20%+ of revenue", type: "PRICE-MIX", timeframe: "medium-long", conviction: "M", confirm_signal: "Export % rises sequentially call over call from ~4-5% base", kill_signal: "Stuck near current levels two calls running"}
+  - {priority: 5, name: "Sukrut scale-up (Rs150-160cr in 4-5 years, 5-6x current)", type: "INORGANIC", timeframe: "long", conviction: "L", confirm_signal: "Sukrut segment revenue/EBITDA disclosed and tracking the multiple", kill_signal: "No EBITDA guidance given even after several more quarters"}
+  - {priority: 6, name: "PLI scheme benefit for RIP bushings", type: "REGULATORY-POLICY", timeframe: "long", conviction: "L", confirm_signal: "Any renewed mention or confirmed benefit in a future filing/call", kill_signal: "Continued silence (already dropped after the Jan-2025 call)"}
+guidance:
+  - {item: "Revenue CAGR guide", number: "30% +/-", timeframe: "next 5 years", stated_in: "FY25/H2FY25 call, May-2025"}
+  - {item: "Revenue CAGR guide", number: "minimum 35%", timeframe: "next 5 years", stated_in: "H1FY26 call, Oct-2025"}
+  - {item: "Revenue CAGR guide", number: "40-42%", timeframe: "next 4-5 years", stated_in: "FY26/H2FY26 call, May-2026"}
+  - {item: "FY26 revenue growth guide", number: "25-30%", timeframe: "FY26", stated_in: "FY25/H2FY25 call, May-2025"}
+  - {item: "FY26 revenue actual delivered", number: "+57% YoY, Rs235.1cr", timeframe: "FY26", stated_in: "FY26/H2FY26 call, May-2026"}
+  - {item: "Greenfield plant commissioning", number: "ready by March-2026", timeframe: "FY26 end", stated_in: "H1FY25 call, Jan-2025"}
+  - {item: "Greenfield plant commissioning (re-guided)", number: "trial Oct-2026, commercial H2FY27", timeframe: "H2FY27", stated_in: "FY26/H2FY26 call, May-2026"}
+  - {item: "Greenfield capex", number: "Rs90cr", timeframe: "complete by Mar-2026", stated_in: "FY25/H2FY25 call, May-2025"}
+  - {item: "Greenfield capex (re-guided)", number: "Rs153cr total, Rs80cr spent", timeframe: "balance in 2-3 months from May-2026", stated_in: "FY26/H2FY26 call, May-2026"}
+  - {item: "Combined facility revenue potential", number: "Rs600-700cr", timeframe: "2.5-3 years to optimal utilisation", stated_in: "H1FY26 call, Oct-2025"}
+  - {item: "FY27 EBITDA margin guide", number: "24-25%", timeframe: "FY27", stated_in: "FY26/H2FY26 call, May-2026"}
+  - {item: "FY27 invoicing target", number: "Rs360-400cr", timeframe: "FY27", stated_in: "FY26/H2FY26 call, May-2026"}
+  - {item: "FY27 order booking target", number: "Rs500cr+", timeframe: "FY27", stated_in: "FY26/H2FY26 call, May-2026"}
+  - {item: "Order book", number: ">Rs300cr", timeframe: "as of Sep-2025", stated_in: "H1FY26 call, Oct-2025"}
+  - {item: "Order book", number: "Rs400cr+", timeframe: "as of 31-Mar-2026", stated_in: "FY26/H2FY26 call, May-2026"}
+  - {item: "Export target", number: "20%+ of revenue", timeframe: "next 2-3 years", stated_in: "FY26/H2FY26 call, May-2026"}
+  - {item: "Sukrut revenue target", number: "Rs150-160cr (5-6x current ~Rs25-26cr)", timeframe: "next 4-5 years", stated_in: "FY26/H2FY26 call, May-2026"}
+  - {item: "Capital raise", number: "up to Rs150cr approved, ~Rs100-110cr expected use", timeframe: "FY27", stated_in: "FY26/H2FY26 call, May-2026"}
+promise_delivery:
+  delivered: 5
+  partial: 4
+  missed: 1
+  rows:
+    - {promised_in: "H1FY25 call (Jan-2025)", promise: "OIP capacity expansion live end-Feb-2025", outcome: "Delivered", explanation: "Confirmed commissioned in FY25 per Oct-2025 call ('commissioned in the last financial year')"}
+    - {promised_in: "H1FY25 call (Jan-2025)", promise: "Greenfield RIP plant ready/commissioned by March-2026", outcome: "Missed (original date)", explanation: "Re-guided to trial Oct-2026, commercial H2FY27 by the May-2026 call; each intermediate call framed the (moving) date as 'on track', never as a slip"}
+    - {promised_in: "FY25/H2FY25 call (May-2025)", promise: "FY26 revenue growth 25-30%", outcome: "Delivered, exceeded", explanation: "FY26 actual +57% YoY, Rs235.1cr vs Rs150cr FY25"}
+    - {promised_in: "FY25/H2FY25 call (May-2025)", promise: "Greenfield capex Rs85-90cr, complete by March-2026", outcome: "Partial", explanation: "Capex grew to Rs153cr by May-2026 call (~70% overrun); no call named this as a budget miss"}
+    - {promised_in: "FY25/H2FY25 call (May-2025)", promise: "5-year revenue CAGR of 30% +/-", outcome: "Delivered, exceeded", explanation: "Guide raised to 35% then 38-42% as delivered growth (78.6% H1FY26, 57% FY26 YoY) beat the original guide"}
+    - {promised_in: "H1FY26 call (Oct-2025)", promise: "H2FY26 revenue to surpass H1FY26", outcome: "Delivered", explanation: "H2 Rs135.5cr vs H1 Rs102cr"}
+    - {promised_in: "H1FY26 call (Oct-2025)", promise: "FY26 EBITDA margin to maintain or slightly increase from H1's 22.8%", outcome: "Delivered, beat", explanation: "FY26 full-year margin 25.7%, +260bps YoY"}
+    - {promised_in: "H1FY26 call (Oct-2025)", promise: "Sukrut acquisition to complete, contribute from FY27", outcome: "Partial", explanation: "Acquisition closed within FY26 per May-2026 call (on schedule); revenue/EBITDA contribution not yet tested, Sukrut EBITDA guidance explicitly deferred"}
+    - {promised_in: "H1FY26 call (Oct-2025)", promise: "Margin steep increase to begin FY27-28", outcome: "Partial (pushed one year)", explanation: "May-2026 call re-guides FY27 margin flat at 24-25% and pushes the step-change to 'next year onwards' (FY28)"}
+excuse_pattern: "balanced, with a reframing habit"
+repeated_evasions:
+  - {question: "What is the quantified margin expansion (bps) you expect from the new plant / backward integration?", quarters_asked: ["FY25/H2FY25 call (May-2025)", "H1FY26 call (Oct-2025)", "FY26/H2FY26 call (May-2026)"], classification: "deflected every time"}
+credibility_grade: "B"
+credibility_basis: "Headline financial guidance (revenue, margin, order book) beaten every period tested and the CAGR guide raised (not walked back) as delivery outpaced it; held below A by a repeated pattern of reframing a slipped plant timeline (~6-9 months) and a ~70% capex overrun without ever naming either as a miss, and by governance/control items visible in the audited Annual Report (per B03) never surfacing in any concall."
+peer_questions:
+  - {question: "Do Quality Power (QPOWER) or Hitachi Energy India (POWERINDIA) corroborate a global bushing-industry supply shortage lasting 6-10 years, driven by only 12-13 independent bushing makers against 250+ transformer OEMs adding capacity?", why: "Load-bearing demand claim behind every growth and pricing-power statement Yash makes across all three calls", check_peers: ["QPOWER", "POWERINDIA"]}
+  - {question: "Does Quality Power's own commentary on the Sukrut Electric JV (50-50 with Yash) confirm the stated growth plan (8-10x Sukrut revenue in 5-6 years, Rs150-160cr in 4-5 years) or add EBITDA/capex detail Yash has withheld?", why: "Yash management explicitly declined to give Sukrut EBITDA guidance in the May-2026 call; QPOWER may have disclosed more as co-owner", check_peers: ["QPOWER"]}
+  - {question: "Does Hitachi Energy India's commentary support Yash's May-2026 claim that OIP bushings (not RIP) are now the domestically supply-constrained product, reversing the RIP-shortage narrative told in Yash's earlier calls?", why: "Tests an internal narrative inversion this run cannot independently verify", check_peers: ["POWERINDIA"]}
+  - {question: "Do QPOWER or POWERINDIA cite the same Rs25,000-26,000cr global bushing TAM figure, growing at 5.6% CAGR through 2034, that Yash uses as its market-sizing anchor?", why: "Raw industry growth-rate claim used to justify the addressable-market expansion story", check_peers: ["QPOWER", "POWERINDIA"]}
+  - {question: "Does Vilas Transcore's commentary support the claimed cost/lead-time economics of RIP/RIS core localisation versus continued import, i.e. is import substitution a genuine near-term margin driver or an aspiration?", why: "Vilas makes transformer cores and can independently speak to input-cost and lead-time economics Yash cites as its FY28 margin driver", check_peers: ["VILAS"]}
+  - {question: "Do any of the three peers describe transformer OEMs placing 24-36 month blanket orders on bushing/component suppliers, as Yash describes in its May-2026 call?", why: "Yash's central revenue-visibility claim; an unverified specific claim about customer ordering behaviour", check_peers: ["QPOWER", "POWERINDIA"]}
+  - {question: "Do peers report capacity additions at the sub-245kV/lower-voltage end of the market translating into pricing pressure, and does that read across to the bushing/component layer Yash says is insulated from a price war for 7-8 years?", why: "Tests Yash's claimed insulation from transformer-side overcapacity/price-war risk that its own analysts raised", check_peers: ["QPOWER", "POWERINDIA", "VILAS"]}
+  - {question: "Do peers corroborate a claimed domestic market-share figure for Yash of 30-35% of its addressable kV range, or ~70% share in RIP bushings up to 245kV?", why: "Yash's market-share claims are self-reported and never independently corroborated in these transcripts", check_peers: ["QPOWER", "POWERINDIA"]}
+red_flags:
+  - {severity: "MEDIUM", flag: "Greenfield plant commissioning date slipped ~6-9 months (Mar-2026 to Oct-2026 trial/H2FY27 commercial) without any call naming it as a slip"}
+  - {severity: "MEDIUM", flag: "Greenfield capex escalated ~70% (Rs90cr to Rs153cr) without any call naming it as a budget overrun"}
+  - {severity: "MEDIUM", flag: "Cash-conversion weakness (CFO/PAT 0.236, negative FCF two years, per B03) never raised or asked about in any of the three calls despite inventory/CWIP being discussed each time"}
+  - {severity: "MEDIUM", flag: "CARO-flagged Note 45 bank-vs-books stock discrepancy (12 quarters, only 2 explained, per B03) never mentioned on any call"}
+  - {severity: "MEDIUM", flag: "Cyber-fraud incident (Rs2.10cr, per B00) disclosed only when directly asked (May-2026 call), not in opening remarks; investigation unresolved, no recovery"}
+  - {severity: "LOW", flag: "DRHP-vs-press-release volume discrepancy (5,800 vs 5,752 units, FY25) met with a confused, unresolved management answer"}
+  - {severity: "LOW", flag: "Order-book figure given on the Oct-2025 call (>Rs300cr, Sep-2025) does not reconcile with the Annual Report's Rs250cr figure for the same window (per B03)"}
+  - {severity: "LOW-MEDIUM", flag: "EBITDA margin step-change guidance pushed out one year between the Oct-2025 call (FY27-28) and the May-2026 call (FY28)"}
+dropped_triggers:
+  - "PLI scheme for RIP bushings (Ministry of Power / CEA engagement), prominent in the Jan-2025 call, never mentioned again in the three subsequent calls"
+timeline_slippages:
+  - "Greenfield plant commissioning: March-2026 (Jan-2025 call) to trial Feb-March 2026 / ready end-FY26 (Oct-2025 call) to trial Oct-2026, commercial H2FY27 (May-2026 call)"
+  - "Greenfield capex: Rs90cr (May-2025 call) to Rs100cr+ (Oct-2025 call) to Rs153cr (May-2026 call)"
+  - "EBITDA margin step-change: guided 'FY27-28 onward' (Oct-2025 call), re-guided to 'from next year' i.e. FY28 (May-2026 call)"
+  - "RIP export unlock: implied at new-plant readiness (~FY26-end per earlier calls); explicit target of 20%+ export share now dated to 2-3 years from May-2026, i.e. effectively FY28-29"
+analyst_note: "The single largest credibility swing factor not fully capturable in the fields above: management is unusually explicit and repeated in stating the FY27 revenue guide (Rs360-400cr invoicing, Rs500cr+ order booking) does NOT depend on the new plant's RIP-core production succeeding on schedule (May-2026 call, 'Exactly, exactly, exactly' in response to a direct question). This decouples near-term delivery risk from the plant-timeline slippage flagged above, which is real but bears mainly on the FY28 margin story and the medium-term capacity/export thesis, not on FY27 revenue delivery."

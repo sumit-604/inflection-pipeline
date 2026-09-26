@@ -1,0 +1,20 @@
+stage: B12d
+company: "TLL"
+run_date: "2026-09-26"
+model: claude-sonnet-5
+status: complete
+peers_audited: 12
+substantive_confirmed: 7
+substantive_unsupported: []
+unused_but_relevant:
+  - {peer: "SENORES", missed_item: "Jan-2026 call misclassified CITED-ONLY; contains a decisive quantified working-capital-cycle answer (90-94 days) directly relevant to Q1 debtor-days claim, a second independent peer anchor B06 did not use", anchor: "SENORES-Concall_Jan_2026_Transcript.txt lines 1310-1315"}
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "MAJOR", location: "B06 report Part 3 / B06-peers.yaml peer_coverage_map, SENORES Jan-2026 row", description: "SENORES-Concall_Jan_2026_Transcript.txt lines 1310-1315 contains a decisive, quantified receivable/payable-days answer ('net versus capital cycle is around 90 days, 94 days') directly relevant to the Q1 debtor-days claim. B06 mischaracterised this transcript as yielding 'no decisively quantified figure' and tagged it CITED-ONLY. This is a directly claim-relevant peer statement left unused, and it would have given Q1's CONTRADICTED verdict a second independent quantified peer anchor instead of resting on CAPLIPOINT alone."}
+  - {severity: "MINOR", location: "B06 report Part 3, closing coverage-count line", description: "Prose states 'ten of twelve transcripts are SUBSTANTIVE' but the table above it lists eleven SUBSTANTIVE rows and one CITED-ONLY row (12 total). Arithmetic undercounts SUBSTANTIVE by one; no verdict or acceptance-rate impact."}
+  - {severity: "MINOR", location: "B06 report Part 1, Q2 net read paragraph", description: "The INNOVACAP utilisation-ceiling quote (lines 712-714) is not re-labelled with its call date (Nov-2025) within the sentence, though correctly anchored to the right file in the YAML and confirmed verbatim at that location. Prose clarity gap only."}
+critical_count: 0
+major_count: 1
+minor_count: 2
+acceptance_rate: 92             # 11 of 12 peer-quarter units correctly handled (1 misclassification); 11/12 = 91.7%, rounded 92

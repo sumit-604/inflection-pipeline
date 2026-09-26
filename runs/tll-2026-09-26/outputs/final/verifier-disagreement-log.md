@@ -1,0 +1,15 @@
+# Verifier Disagreement Log — TLL 2026-09-26 (phase 1, round 2)
+
+Each row is a Verifier A (B12a run 2) ANCHOR NOT FOUND finding that the orchestrator cleared by re-reading the source text (Annual_Report_2026.txt, the page-marked extract of Annual_Report_2026.pdf). No figure was cleared by reasoning; each was found printed at the cited anchor.
+
+| Date | Run (ticker-date) | Number/claim | Verifier A verdict + anchor | Downstream step + its position | Disposition | Note |
+|---|---|---|---|---|---|---|
+| 2026-09-26 | tll-2026-09-26 | Claim Income 541.05 lakh FY26 / 522.17 lakh FY25 | ANCHOR NOT FOUND, "presumed" AR Note 22 | B02 finding 14; B05 item 7 | FLAG CLEARED — source re-check found the number at a correct anchor (orchestrator) | Annual_Report_2026.pdf p110, consolidated Other Income note: "Claim Income 541.05 522.17" |
+| 2026-09-26 | tll-2026-09-26 | TNS Pharma FY26 turnover 576.52 lakh (Rs 5.77 Cr) | ANCHOR NOT FOUND, "presumed" AOC-1 | B04 revenue streams; B02 finding 5 | FLAG CLEARED — source re-check found the number at a correct anchor (orchestrator) | Annual_Report_2026.pdf p40, AOC-1 row 10 Turnover, first subsidiary column |
+| 2026-09-26 | tll-2026-09-26 | Trident Mediquip FY26 turnover 2,731.75 lakh (Rs 27.32 Cr) | ANCHOR NOT FOUND, "presumed" AOC-1 | B04; B02 finding 5 | FLAG CLEARED — source re-check found the number at a correct anchor (orchestrator) | Annual_Report_2026.pdf p40, AOC-1 row 10 Turnover, second column |
+| 2026-09-26 | tll-2026-09-26 | TLL Parenterals FY26 turnover nil | ANCHOR NOT FOUND, "presumed" AOC-1 | B04; B05; B07 | FLAG CLEARED — source re-check found the number at a correct anchor (orchestrator) | Annual_Report_2026.pdf p40, AOC-1 row 10 Turnover, third column "0" |
+| 2026-09-26 | tll-2026-09-26 | TLL Elements FY26 turnover 2.46 lakh, PAT (11.03) lakh | ANCHOR NOT FOUND, "presumed" AOC-1 | B04 | FLAG CLEARED — source re-check found the number at a correct anchor (orchestrator) | Annual_Report_2026.pdf p40, AOC-1 rows 10 and 13, fifth column |
+| 2026-09-26 | tll-2026-09-26 | TNS Pharma investment 255.00 lakh FY26 vs 153.00 lakh FY25 | ANCHOR NOT FOUND, "presumed" Note 11 | B02 finding 6 | FLAG CLEARED — source re-check found the number at a correct anchor (orchestrator) | Annual_Report_2026.pdf p64, standalone non-current investments: "TNS Pharma Pvt. Ltd. (25,50,000 Equity Shares of Rs 10/- Each) 255.00 153.00" |
+| 2026-09-26 | tll-2026-09-26 | Yes Bank term loan (TLLP) 1,067.47 lakh non-current + 186.44 lakh current | ANCHOR NOT FOUND, "presumed" Note 3 | B02 finding 15 | FLAG CLEARED — source re-check found the number at a correct anchor (orchestrator) | Annual_Report_2026.pdf p99, consolidated borrowings schedule: "Yes Bank Term Loan (TLLP) 1,067.47 186.44" |
+
+Run-1 note: the one run-1 Verifier A CRITICAL was struck on the identity check (claimed = source_truth, a faithfully transcribed company mislabel), not cleared against a source; it is recorded in outputs/superseded/confidence-run1-superseded.yaml and is not a disagreement row.

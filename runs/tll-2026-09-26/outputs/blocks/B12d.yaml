@@ -4,17 +4,20 @@ run_date: "2026-09-26"
 model: claude-sonnet-5
 status: complete
 peers_audited: 12
-substantive_confirmed: 7
-substantive_unsupported: []
-unused_but_relevant:
-  - {peer: "SENORES", missed_item: "Jan-2026 call misclassified CITED-ONLY; contains a decisive quantified working-capital-cycle answer (90-94 days) directly relevant to Q1 debtor-days claim, a second independent peer anchor B06 did not use", anchor: "SENORES-Concall_Jan_2026_Transcript.txt lines 1310-1315"}
+substantive_confirmed: 20
+substantive_unsupported:
+  - "INNOVACAP Nov-2025 (Q3 margin-uplift quote block, lines 590-597/607/623-627: quote verbatim exists but in INNOVACAP Feb-2026, not Nov-2025 as cited)"
+  - "CAPLIPOINT May-2026 (Q4 '35+ products/20 approvals' Mexico quote, line 338: quote verbatim exists but in CAPLIPOINT Nov-2025 line 316, not May-2026 as cited)"
+unused_but_relevant: []
 claims_all_addressed: true
 verdict_discipline_fails: []
 findings:
-  - {severity: "MAJOR", location: "B06 report Part 3 / B06-peers.yaml peer_coverage_map, SENORES Jan-2026 row", description: "SENORES-Concall_Jan_2026_Transcript.txt lines 1310-1315 contains a decisive, quantified receivable/payable-days answer ('net versus capital cycle is around 90 days, 94 days') directly relevant to the Q1 debtor-days claim. B06 mischaracterised this transcript as yielding 'no decisively quantified figure' and tagged it CITED-ONLY. This is a directly claim-relevant peer statement left unused, and it would have given Q1's CONTRADICTED verdict a second independent quantified peer anchor instead of resting on CAPLIPOINT alone."}
-  - {severity: "MINOR", location: "B06 report Part 3, closing coverage-count line", description: "Prose states 'ten of twelve transcripts are SUBSTANTIVE' but the table above it lists eleven SUBSTANTIVE rows and one CITED-ONLY row (12 total). Arithmetic undercounts SUBSTANTIVE by one; no verdict or acceptance-rate impact."}
-  - {severity: "MINOR", location: "B06 report Part 1, Q2 net read paragraph", description: "The INNOVACAP utilisation-ceiling quote (lines 712-714) is not re-labelled with its call date (Nov-2025) within the sentence, though correctly anchored to the right file in the YAML and confirmed verbatim at that location. Prose clarity gap only."}
+  - {severity: "MAJOR", location: "B06-peers.md Q3 row", claimed: "quote cited to INNOVACAP-Concall_Nov_2025_Transcript.txt lines 590-597,607,623-627", source_truth: "identical quote found verbatim in INNOVACAP-Concall_Feb_2026_Transcript.txt lines 589-627; Nov-2025 lines 590-627 contain unrelated regulatory-compliance content", note: "load-bearing evidence for Q3 PARTIALLY VERIFIED verdict, wrong call attributed; same defect class as this report's own Rework Resolution item (c), a second undetected instance"}
+  - {severity: "MAJOR", location: "B06-peers.md Q4 row", claimed: "quote cited to CAPLIPOINT-Concall_May_2026_Transcript.txt line 338", source_truth: "identical quote found verbatim in CAPLIPOINT-Concall_Nov_2025_Transcript.txt line 316; May-2026 line 338 discusses an unrelated Mexico tender", note: "does not flip the UNVERIFIABLE verdict but misattributes the source call"}
+  - {severity: "MINOR", location: "B06-peers.yaml peer_coverage_map, SENORES Q2 FY26 Nov-2025 row", claimed: "working-capital-cycle target 80-90 days (framed as SENORES target)", source_truth: "80-90 days is the analyst's framing of the actual H1 level (line 1131); CFO Deval Shah answers it will move to 90-100 days, not hold at 80-90 (line 1136)", note: "contribution description inverts direction of the CFO's answer; does not affect any Part 1 verdict"}
 critical_count: 0
-major_count: 1
-minor_count: 2
-acceptance_rate: 92             # 11 of 12 peer-quarter units correctly handled (1 misclassification); 11/12 = 91.7%, rounded 92
+major_count: 2
+minor_count: 1
+peer_utilisation: "12 of 12 peer transcripts SUBSTANTIVE per B06 (0 CITED-ONLY, 0 UNUSED); this round's rework correctly upgraded SENORES Jan-2026 from CITED-ONLY to SUBSTANTIVE and the reclassification independently confirmed accurate."
+acceptance_rate: 90
+coverage_basis: "20 of 20 spot-checked citations locate a verbatim, correctly-transcribed quote somewhere in the 12-transcript peer set; 18 of 20 at the exact cited call/quarter, 2 of 20 at a different call/quarter than cited (both MAJOR); 1 additional MINOR on a contribution-description direction error. acceptance_rate = 18 correctly-anchored / 20 checked, %."

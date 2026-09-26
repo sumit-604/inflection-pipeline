@@ -27,3 +27,7 @@ not split input/output, so in_tok/out_tok read n/a).
 | 6 | peer concall verification (rework) | claude-sonnet-5 | default | n/a | n/a | 96407 | 6m15s | 2 |
 | 8 | promoter check (rework) | claude-sonnet-5 | default | n/a | n/a | 141306 | 6m52s | 2 |
 | 7 | emerging moat scan (rework) | claude-sonnet-5 | default | n/a | n/a | 127724 | 7m15s | 2 |
+| 12a | verifier A numerical (re-run) | claude-haiku-4-5 | default | n/a | n/a | 157313 | 4m38s | 2 |
+| 12b | verifier B red flags (re-run) | claude-opus-5-5 | default | n/a | n/a | 272746 | 9m40s | 2 |
+| 12c | verifier C framework, phase 1 half (re-run) | claude-opus-5-5 | default | n/a | n/a | 144445 | 6m27s | 2 |
+| 12d | verifier D peers (re-run) | claude-sonnet-5 | default | n/a | n/a | 93350 | 11m57s | 2 |

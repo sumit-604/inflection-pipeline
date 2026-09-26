@@ -742,3 +742,12 @@ Recorded here against the shallow-screen commits of 2026-09-21.
 - A Bash heredoc followed by python -c with nested quotes failed to parse; the
   Write tool is safer for YAML blocks.
 - About 4.58M subagent tokens over 28 runs. Not a clean run.
+
+- [2026-09-26] QUALITEK step1 + phase 1 (evidence): PROCEED WITH FLAGS (promoter CONCERN, cash INDETERMINATE, Gate 0 AVERAGE 58/160 after Verifier C recompute), confidence overall 67 (redflag-bound). What broke or dragged:
+  - Identity: screener symbol URL /company/QUALITEK/ is 404; the name resolves only by BSE code 544091 (SME).
+  - Collector hardcodes REPO_ROOT to the main checkout; ran a scratchpad copy pointed at the run worktree so the operator's uncommitted framework edits stayed untouched.
+  - fetch_bse_announcements (PR #167 open action) TESTED live: it works (12 filings, scrip 544091) but covers only ~12 months and caps at 25; a month-window query found 135 filings since listing. Results, decks, MD&As and the DRHP had to be pulled from BSE by hand; 15 byte-duplicate filings removed.
+  - pdftoppm absent; pymupdf pre-extraction to page-marked .txt worked for every stage and verifier.
+  - Verifier B cycle 1 at 43% on 7 material items forced one correction cycle (stages 5 and 6 reworked from source, A/B/D re-run). Cycle 2 B12b scored 67% under its own half-credit rule; caught-only 42%, partials-as-had 92%. The partial-credit convention is not fixed in prompts/12-verifiers-pipeline.md (DPABHUSHAN used partials-as-had): candidate for /compost.
+  - Block hygiene: B04 flag flow-mappings missing closing braces (repaired); 09b Section 2 marker used an em-dash (repaired to the exact hyphen form); stage 5 labelled a stage decision "per operator instruction" when no ruling existed (logged).
+  - DOWNSHIFT FAILURE: stage 0 ran inline on Opus (no haiku stage-0 agent).

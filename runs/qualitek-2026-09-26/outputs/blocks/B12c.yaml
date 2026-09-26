@@ -1,0 +1,43 @@
+stage: B12c
+company: "QUALITEK"
+run_date: "2026-09-26"
+model: "claude-opus-5-5"
+status: complete
+scope: "phase-1 (Gate 0 B01 + Emerging Moat B07 only); valuation audit pending phase 3"
+gate0:
+  rules_checked: 40
+  fails:
+    - {rule: "A1 Median ROCE band", stated: "median 10.02% scored 3", recomputed: "10.02% sits in 10-14.9 band = 1", consequence: "Block A 10 -> 8; core 48 -> 46; grand_total 60 -> 58; classification AVERAGE unchanged; deal-breaker 1 (Block A <8) not fired at 8, zero headroom", severity: MAJOR, anchor: "01-gate0.md Block A line 35-36; prompts/01-gate-0-pipeline.md line 55"}
+emoat:
+  rules_checked: 22
+  fails:
+    - {rule: "A1 evidence tier", stated: "MM x D 1.0 = 2.0", recomputed: "scarcity claim ('few domestic labs hold USFDA') is unanchored inference; documented fact is only the acquisition -> I 0.5 = 1.0", severity: MAJOR, anchor: "07-emoat.md line 72, 174"}
+    - {rule: "E1 evidence tier", stated: "MM x D 1.0 = 2.0", recomputed: "'first-mover' / 'first-of-kind' attribute is inference, not in any cited document -> I 0.5 = 1.0", severity: MAJOR, anchor: "07-emoat.md line 95, 185"}
+    - {rule: "H2 evidence tier", stated: "HM x D 1.0 = 3.0", recomputed: "sole anchor is Inv. Pres. deck; no contract, value or exclusivity disclosed; prompt taxonomy puts presentation statements without signed contracts at 0.7 -> 2.1", severity: MAJOR, anchor: "07-emoat.md line 111, 192; prompts/07-emerging-moat-pipeline.md line 30-33"}
+    - {rule: "Completionist recount accuracy", stated: "17 documented items across 5 categories", recomputed: "USFDA lab counted 3x (A1, B2, E1); Bhubaneswar PPP 2018 (E1) and MSMED/Utkal PPP 2018 (C1) probably one arrangement [INFERENCE]; H2 7 items are claim tier -> at most 8-10 distinct documented items", severity: MAJOR, anchor: "07-emoat.md line 149; B07 completionist_recount"}
+    - {rule: "2C capex-embedded growth", stated: "Rs 63 Cr FY27 plan x 1.74x = 88%", recomputed: "rule requires capex UNDER EXECUTION x HISTORICAL FAT; FY27 plan is ANNOUNCED, funding NOT FOUND; 1.74x is single-year consolidated net-PPE turnover excluding CWIP/intangibles; B01 FAT on PPE+CWIP+intangibles is 0.72x (standalone) -> ~36% on that turnover; a single-basis value is NOT DETERMINABLE from the inputs", severity: MAJOR, anchor: "07-emoat.md line 54-60; B07 capex_embedded_growth_pct; 01-gate0.md M3 line 151-152"}
+recomputed_em_score: "12.5 after tier corrections (still MODEST, 0.5 above the 12 line); 11.5 (NONE) if E1 is treated as fully duplicative of C1 and B2"
+recomputed_gate0: "Block A 8, core 46, grand_total 58, classification AVERAGE (unchanged)"
+valuation: {rules_checked: null, fails: [], note: "PENDING PHASE 3: B10/B11 not in scope"}
+expectation_ledger: {present: null, downside_row: null, all_rows_confirm_by: null, all_rows_metric_threshold: null, prob_in_range: null, decay_status_valid: null, off_ledger_credit: null, residual_pct_cmp: null, residual_starter_cap_ok: null, fails: [], note: "PENDING PHASE 3"}
+business_understanding_narrative: {present: null, five_questions_answered: null, prose_only: null, section6_candidates_named: null, valuation_vocab_leak: null, fails: [], note: "PENDING stage 13"}
+recomputed_destination_pe: ""  # not in phase-1 scope
+recomputed_decision: ""        # concur: Gate 0 AVERAGE and combined AVERAGE survive every recompute
+findings:
+  - {severity: MAJOR, location: "01-gate0.md Block A, A1", finding: "Median ROCE 10.02% scored 3; the 10-14.9 band scores 1. Block A 8, core 46, grand 58. Classification unchanged. Deal-breaker 1 sits exactly at its line (8, fires at <8)."}
+  - {severity: MAJOR, location: "07-emoat.md A1", finding: "Moat attribute (scarcity) is inference scored at documented multiplier; 2.0 -> 1.0."}
+  - {severity: MAJOR, location: "07-emoat.md E1", finding: "First-mover attribute is inference scored at documented multiplier; 2.0 -> 1.0."}
+  - {severity: MAJOR, location: "07-emoat.md H2", finding: "Deck-only partner list with no contracts scored as documented; taxonomy says claim 0.7; 3.0 -> 2.1."}
+  - {severity: MAJOR, location: "07-emoat.md Section 3 recount; B07 evidence_mix", finding: "Recount double and triple counts one fact (USFDA lab x3; PPP 2018 probably x2). Classification MODEST survives tier fixes at 12.5 but falls to NONE (11.5) if E1 is struck as duplicative. CLAUDE.md one-improvement-one-mechanism."}
+  - {severity: MAJOR, location: "07-emoat.md 2C; B07 capex_embedded_growth_pct 88", finding: "Uses announced (not under-execution) capex and a single-year consolidated net-PPE turnover. B01's 0.72x FAT gives ~36%. Downstream should not consume 88 as a stated input."}
+  - {severity: MINOR, location: "01-gate0.md E2", finding: "Window labelled '~3 years' is Mar-2024 to Mar-2026, 2 years (listing Jan-2024). Score 0 unaffected (-16.89pp)."}
+  - {severity: MINOR, location: "01-gate0.md M11", finding: "Prior window is FY21-FY23 (2 years), not 3. Rule's fallback (overall trend) also scores 0 because selling % is not disclosed. Score unaffected."}
+  - {severity: MINOR, location: "01-gate0.md FY24 CFO", finding: "Report line 59 calls the base row 'WC-adjusted operating profit'; data_note calls it 'before WC changes'. If pre-WC, it is not CFO. B1 holds at 5 unless true FY24 CFO < Rs 354.79 lakh. Referred to Verifier A for the source read."}
+  - {severity: MINOR, location: "01-gate0.md A3", finding: "ROE formula has no use-source exception (only ROCE does); FY21-23 DRHP ROE (-105.39%, 181.61%) taken as source, FY24 computed. Mixed basis; A3 2 points at stake."}
+  - {severity: MINOR, location: "01-gate0.md M1", finding: "FY26 EBITDA computed from PBT (includes other income); FY21 from DRHP line. Basis may differ; M1 5 survives unless the gap exceeds ~6pp."}
+  - {severity: MINOR, location: "01-gate0.md Block D / analyst_note vs 07-emoat.md G1", finding: "B01 scores standalone D/E 0.45 and the analyst_note reads it as low leverage; B07 cites consolidated D/E 1.25. On 1.25, D3 scores 1 (core 43, still AVERAGE). Carry the basis gap forward; do not read 0.45 as group leverage."}
+  - {severity: MINOR, location: "07-emoat.md line 80 (B2)", finding: "Stray non-English token in prose ('contracting典型'); 'renewable' contract claim is inference, not in the cited Reg 30 terms."}
+critical_count: 0
+major_count: 6
+minor_count: 7
+acceptance_rate: 90.3   # 56 passed / 62 checked (gate0 39/40, emoat 17/22)

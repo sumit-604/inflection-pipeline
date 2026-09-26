@@ -1,0 +1,55 @@
+stage: B12b
+company: "QUALITEK"
+run_date: "2026-09-26"
+model: "claude-opus-5-5"
+status: complete
+independent_flags_found: 19
+caught: 6
+partially_caught: 2
+missed:
+  - {severity: "MAJOR", item: "FY26 AR (3-Sep-2026) silently drops three quantified long-term targets stated 4 months earlier (operating margin above 30% in 3 years, >=30% overseas revenue by FY31, debt-free by FY32) and downgrades guidance language from 'guiding... numbers we are confident of beating' to 'indicated an aspiration... management expectations'. B05 attributes all three targets to the FY26 AR, which inverts the finding", anchor: "FY26 MD&A filing 20-May-2026 p.3 (20260520-78cbc582 lines 157-185) vs FY26 AR chairman letter [page 23-24] lines 756-768 and AR MD&A [page 73] lines 3114-3117"}
+  - {severity: "MAJOR", item: "Sep-2026 preferential issue (Rs 46.98 Cr) names Rs 22.00 Cr for 'Unidentified Acquisitions - Food, Pharma & Cybersecurity' (cybersecurity appears in no prior strategy document), Rs 10.98 Cr GCP (23.4%); the twice-promised Hyderabad deal is not named as an object", anchor: "EGM notice 24-Sep-2026 (20260924-fd526286) lines 691-705; board outcome 22-Sep-2026 (20260922-b4cbe4e6) lines 22-43"}
+  - {severity: "MAJOR", item: "Peer Vimta runs electronics, EMI/EMC and defence testing in Hyderabad (South India), says the business grows only by opening local labs, and puts India electronics-testing growth at about 4.5%. This bears directly on Qualitek's FY27 plan (Transport/Defence expansion into South India, Pune EMI/EMC build). B06 states no peer operates in Qualitek's segment", anchor: "VIMTALABS Feb-2026 transcript lines 858-895 (Harita Vasireddi); VIMTALABS Jul-2026 transcript lines 1022-1026, 1206-1219"}
+  - {severity: "MINOR", item: "FY27 EBITDA guide differs one day apart: deck 25-26% vs MD&A 25-27%", anchor: "FY26 deck 21-May-2026 slide 25 (20260521 line 472) vs MD&A 20-May-2026 p.3 line 159"}
+  - {severity: "MINOR", item: "Same MD&A that guides FY27 PAT 15-17% also says PAT above 15% is 'within reach inside the next two years'", anchor: "MD&A 20-May-2026 p.2 lines 115-117 vs p.3 line 159"}
+  - {severity: "MINOR", item: "Bhubaneswar minerals lab slip: revenue promised Q1 FY26, accreditation reported as 'October 2026' in a Nov-2025 filing (date error)", anchor: "H1 FY25 deck p.2 line 32; FY25 deck p.12 line 301; H1 FY26 MD&A p.3 line 131"}
+  - {severity: "MINOR", item: "Silent drops and slips: Karnal PPP lab (operational FY25-26), Nellore lab, IAC 'operational from H2-FY26' slipped to NABCB accreditation June 2026 (AR also dates it 'during FY2026')", anchor: "FY25 deck p.12 lines 304-305; FY25 AR [page 22] lines 861-876; FY26 AR [page 11] line 390 vs [page 23] line 713"}
+  - {severity: "MINOR", item: "Silent restatement of FY25 comparatives: consolidated EBITDA 16.8 Cr (24%) / 1,676.04 lakh restated to 16.25 Cr (23.1%); standalone 11.9 Cr to 11.7 Cr", anchor: "FY25 deck p.6-7; FY25 AR [page 20] line 765; FY26 MD&A p.2 line 83, 107; FY26 deck slides 11, 18"}
+  - {severity: "MINOR", item: "FY26 consolidated CFO 1,485.09 lakh in results vs 1,387.16 lakh in audited AR via a new 'Less: Minority Interest (97.92)' operating line; route to Verifier A / stage 2", anchor: "Results 20-May-2026 (20260520-dc0311a3) [page 8] line 427 vs FY26 AR line 4662-4676"}
+  - {severity: "MINOR", item: "2X promise covered Revenue, EBITDA, PAT and pre-tax operating cash flow; standalone pre-tax OCF 570.83 to 982.97 lakh = 1.72x; B05 tracks revenue only", anchor: "FY25 AR [page 21] lines 843-845; FY25 results [page 15] line 871; FY26 results line 829"}
+  - {severity: "MINOR", item: "H1 FY25 deck says subsidiary consolidation effective H2 FY25 yet presents H1 'consolidated' Rs 39.7 Cr including ITCPL; the Rs 90 Cr projection sits on this pro forma basis", anchor: "H1 FY25 deck p.2 lines 40-41 vs p.8 lines 206, 220, 225"}
+pipeline_flags_not_supported:
+  - {flag: "B06 2E: Qualitek filings do not name attrition risk at all", verdict: "NOT SUPPORTED", evidence: "FY26 AR MD&A Threats [page 71] lines 3017-3020 names skilled manpower availability and attrition; Human Capital Risk [page 74] line 3149"}
+  - {flag: "B06 Q4/2D: no peer operates in Qualitek's transport/defence/E&E segment", verdict: "NOT SUPPORTED for Vimta", evidence: "VIMTALABS Feb-2026 lines 858-895; Jul-2026 lines 1022-1026"}
+  - {flag: "B05 4D / B06 headline: FY25 revenue guidance missed by ~22% with no reconciliation", verdict: "OVERSTATED", evidence: "Rs 90 Cr projection was pro forma (H1 FY25 deck p.8, H1 'consolidated' 39.7 Cr vs statutory ~25.0 Cr implied by MD&A 20-May-2026 p.2: 70.23 - 45.20); FY25 deck slide 9 walks the same basis to Rs 85.0 Cr = ~5.6% miss"}
+  - {flag: "B05 1C/2A/4D: 30% EBITDA ambition diluted to 25-27%, stated twice", verdict: "OVERSTATED", evidence: "Not in H1 FY25 deck (9 pages, no 30% target); stated once in FY25 deck slide 13; re-dated to 'above 30% over the next three years' in MD&A 20-May-2026 p.3 line 181, not diluted"}
+  - {flag: "B05 1C/4D: M&A strategy never disclosed at IPO", verdict: "OVERSTATED", evidence: "DRHP risk factor j [page 63-64] lines 2798-2821 discloses ITCPL as same-line promoter group company with conflict of interest; strategy section p.135-136 is organic-only as B05 says"}
+  - {flag: "B06 2E: Qualitek filings do not discuss geopolitical or input-logistics risk", verdict: "OVERSTATED", evidence: "FY25 AR [page 20-21] lines 786, 812 cite global trade uncertainty and inflation"}
+promise_delivery_spot_checks: {checked: 7, confirmed: 6, wrong: 1}
+credibility_grade_concur: "concur - C holds; the FY25 revenue miss is smaller than stated, but the missed AR target removal and unidentified cybersecurity acquisition object add weight on the negative side"
+findings:
+  - {severity: "MAJOR", location: "B05 1B/2D/4D", issue: "MISSED: FY26 AR removes three quantified long-term targets from the May-2026 MD&A and softens guidance tone; B05 misattributes the targets to the AR", anchor: "MD&A 20-May-2026 p.3 lines 157-185; FY26 AR lines 756-768, 3114-3117"}
+  - {severity: "MAJOR", location: "B05 1A/2D (whole report)", issue: "MISSED: Sep-2026 preferential issue objects, Rs 22 Cr unidentified acquisitions incl. new cybersecurity vertical; Hyderabad not named", anchor: "EGM notice 24-Sep-2026 lines 691-705"}
+  - {severity: "MAJOR", location: "B06 Q4, 2D", issue: "MISSED peer contradiction: Vimta E&E/EMI-EMC/defence testing overlap and ~4.5% electronics-testing growth; B06 says no peer in segment", anchor: "VIMTALABS Feb-2026 lines 858-895; Jul-2026 lines 1206-1219"}
+  - {severity: "MAJOR", location: "B05 1C, 2A row 5, 4D row 3", issue: "PARTIALLY CAUGHT/OVERSTATED: 30% EBITDA ambition was re-dated (FY25-27 to 'next three years') then dropped, not diluted to 25-27%; H1 FY25 deck anchor wrong", anchor: "FY25 deck slide 13 line 319; H1 FY26 MD&A p.3 lines 147-152; MD&A 20-May-2026 line 181"}
+  - {severity: "MAJOR", location: "B06 2E bullet 1", issue: "NOT SUPPORTED: claim that Qualitek never names attrition risk", anchor: "FY26 AR lines 3017-3020, 3149"}
+  - {severity: "MAJOR", location: "B05 2A row 3, 4D row 2; B06 Q5 and Part 4 headline", issue: "OVERSTATED: FY25 revenue miss is ~5.6% on the projection's own pro forma basis, and FY25 deck slide 9 presents that basis; B06 builds its single most consequential contradiction on the 22% figure", anchor: "H1 FY25 deck p.8; FY25 deck p.9 lines 211-236; MD&A 20-May-2026 p.2 lines 73-77"}
+  - {severity: "MINOR", location: "B05 1B row 7", issue: "Deck FY27 EBITDA guide is 25-26%, not 25-27%", anchor: "20260521 slide 25 line 472"}
+  - {severity: "MINOR", location: "B05 1B", issue: "Same-document PAT hedge ('above 15% within two years') missed", anchor: "MD&A 20-May-2026 lines 115-117"}
+  - {severity: "MINOR", location: "B05 2A", issue: "Bhubaneswar minerals lab revenue slip and filing date error missed", anchor: "H1 FY25 deck line 32; H1 FY26 MD&A line 131"}
+  - {severity: "MINOR", location: "B05 2A/2D", issue: "Karnal, Nellore silent drops; IAC slip and NABCB date inconsistency missed", anchor: "FY25 deck lines 304-305; FY25 AR lines 861-876; FY26 AR lines 390, 713"}
+  - {severity: "MINOR", location: "B05 2C consistency", issue: "Silent restatement of FY25 EBITDA comparatives missed", anchor: "FY25 deck p.6-7; FY26 MD&A line 83"}
+  - {severity: "MINOR", location: "B05 2D cash", issue: "FY26 consolidated CFO differs results vs AR by 97.92 lakh via minority-interest line; route to Verifier A/stage 2", anchor: "results line 427; AR lines 4662-4676"}
+  - {severity: "MINOR", location: "B05 2A row 6", issue: "2X promise OCF leg unchecked; standalone pre-tax OCF 1.72x", anchor: "FY25 AR lines 843-845; FY25 results line 871; FY26 results line 829"}
+  - {severity: "MINOR", location: "B05 2B/2C accountability; B06 Q5", issue: "Volunteered margin explanations exist (H1 FY25 pre-operative hit, H1 FY26 new-lab Rs 3.3 Cr loss, H2 FY26 standalone margin); 'no document acknowledges a miss' is overstated for margins", anchor: "H1 FY25 deck p.2 line 18; H1 FY26 MD&A p.2 lines 74-78; MD&A 20-May-2026 p.3 lines 119-128"}
+  - {severity: "MINOR", location: "B05 2A row 3", issue: "H1 FY25 deck basis inconsistency (consolidation effective H2 vs H1 consolidated figure) not noted", anchor: "H1 FY25 deck lines 40-41, 206-225"}
+  - {severity: "MINOR", location: "B05 1C, 4C, 4D row 5", issue: "M&A pivot framed as undisclosed; DRHP disclosed ITCPL conflict of interest", anchor: "DRHP lines 2798-2821"}
+  - {severity: "MINOR", location: "B06 2E bullet 3", issue: "Geopolitical/trade risk claim overstated", anchor: "FY25 AR lines 786, 812"}
+  - {severity: "MINOR", location: "B05 1C, 2A row 8", issue: "USFDA contradiction is MD&A 20-May vs deck 21-May, not AR vs deck; the three long-term targets are also MD&A, not AR", anchor: "MD&A 20-May-2026 lines 61-63, 135-149; deck slide 23 line 426"}
+critical_count: 0
+major_count: 6
+minor_count: 12
+material_found: 7
+material_caught: 3
+acceptance_rate: 43
+coverage_basis: "7 material (all MAJOR, 0 CRITICAL) of 19 listed; 3 caught, 1 partially caught, 3 missed; 43% on caught only, 57% if partial counted; both below 60% on a denominator of 7"

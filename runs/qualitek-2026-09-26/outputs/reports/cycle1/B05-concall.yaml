@@ -1,0 +1,77 @@
+stage: B05-concall
+company: "QUALITEK"
+run_date: "2026-09-26"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "NO-CONCALL MODE: concalls_available is false; no analyst Q&A record exists in the corpus (only investor-meet/IR-interaction intimations, Feb-Mar 2026, no transcript). Sections 2E, 3A, 3C run NOT APPLICABLE."
+  - "Final prospectus/RHP not in corpus (DRHP only, Sep/Dec-2023); any change between DRHP business-strategy language and the final RHP is unverified."
+  - "No independent valuation or fairness opinion for the ITCPL related-party share swap anywhere in the corpus read (consistent with B02/B03 FLAG-RPT); this stage's credibility assessment cannot independently price that gap, only flag it."
+  - "No credit rating in corpus; guidance credibility assessed on filed MD&A/deck text alone, with no third-party rationale to cross-check."
+flags:
+  - {type: "FLAG-GUIDANCE-SILENCE", severity: "MODERATE-HIGH", reason: "Hyderabad Food/Lifesciences acquisition promised complete H2 FY26 (FY25 AR, Sep-2025, p.16) and reiterated 'expected to complete by June 2026' (FY26 deck, 21-May-2026, slide 23); not evidenced complete in the FY26 AR (3-Sep-2026) or any Reg 30 announcement through 26-Sep-2026, with no disclosed explanation in either document."}
+  - {type: "FLAG-GUIDANCE-MISS", severity: "MODERATE", reason: "FY25 consolidated revenue projected at Rs 90 Cr (H1 FY25 deck, Nov-2024, slide 8) vs actual Rs 70.2 Cr (FY25 deck, May-2025, slide 6), a ~22% shortfall never reconciled in the subsequent deck."}
+  - {type: "FLAG-TARGET-DILUTION", severity: "MODERATE", reason: "Medium-term EBITDA margin ambition stated at 30% twice (H1 FY25 deck Nov-2024 slide 13; FY25 deck May-2025 slide 13), replaced without acknowledgment by a 25-27% FY27 guide (FY26 deck/AR, May/Sep-2026)."}
+  - {type: "FLAG-INTERNAL-CONFLICT", severity: "MINOR-MODERATE", reason: "FY27 PAT margin guidance: FY26 deck/MD&A (21/20-May-2026) states 15-17%; FY26 AR (3-Sep-2026, p.18) states 14-15%, four months later, with no reconciliation. This run resolves to the deck figure (15-17%) per operator instruction; the AR's narrower band is the flagged inconsistency."}
+  - {type: "FLAG-UNDISCLOSED-STRATEGY-PIVOT", severity: "MODERATE", reason: "DRHP 'Our Business Strategy' (Sep-2023, p.135-136) names only organic expansion (own new labs, supplier/customer relationships, in-house LIMS); by the FY25 AR (Sep-2025), 20 months later, the company had made or named six acquisitions with no disclosed change in stated strategy at any point between."}
+quarters_analysed: ["H1 FY25 (Nov-2024)", "FY25 (May-2025 deck / Sep-2025 AR)", "H1 FY26 (Nov-2025)", "FY26 (May-2026 deck-MD&A / Sep-2026 AR)"]
+triggers:
+  - {priority: 1, name: "Operating leverage toward 25-27% FY27 EBITDA margin guide", type: "margin", timeframe: "near", conviction: "M", confirm_signal: "H1 FY27 consolidated EBITDA margin holds at or above the H2 FY26 25.7% exit rate", kill_signal: "H1 FY27 margin falls back below the H2 FY26 print"}
+  - {priority: 2, name: "Pharma segment build-out (USFDA Bengaluru lab + Hyderabad target)", type: "inorganic + regulatory-policy", timeframe: "near", conviction: "L-M", confirm_signal: "Hyderabad acquisition closes with disclosed terms; USFDA lab shows named revenue contribution", kill_signal: "Hyderabad acquisition formally dropped or delayed past FY27 with no replacement named"}
+  - {priority: 3, name: "PSU/government lab-operations pipeline (IOCL, Panipat, coal testing)", type: "volume + regulatory-policy", timeframe: "near", conviction: "M", confirm_signal: "IOCL contracts renewed/expanded beyond their 24-month terms; new PSU wins named", kill_signal: "Non-renewal or cancellation of an existing PSU contract"}
+  - {priority: 4, name: "Selective bolt-on M&A (Pharma, Food, E&E) funded by Rs 63 Cr FY27 capex", type: "inorganic", timeframe: "medium", conviction: "L", confirm_signal: "A named acquisition closes with disclosed valuation and independent fairness opinion", kill_signal: "Capex undeployed and no acquisition named by FY27 close"}
+  - {priority: 5, name: "Rs 500 Cr FY31 revenue ambition, overseas revenue, debt-free FY32", type: "volume + both", timeframe: "long", conviction: "L", confirm_signal: "FY28-29 trajectory tracks near the implied ~32% CAGR run-rate", kill_signal: "Growth decelerates below 20% CAGR for two consecutive years, or overseas revenue stays near zero"}
+guidance:
+  - {item: "FY25 consolidated revenue projection", number: "Rs 90 Cr", timeframe: "FY25", stated_in: "H1 FY25 deck, Nov-2024, slide 8"}
+  - {item: "Medium-term EBITDA margin ambition", number: "30%", timeframe: "FY25-26 & FY26-27", stated_in: "H1 FY25 deck Nov-2024 slide 13; FY25 deck May-2025 slide 13"}
+  - {item: "Revenue doubling cadence", number: "2X every 2 years, FY24 base to FY26", timeframe: "FY26", stated_in: "FY25 AR, Sep-2025, p.16-17"}
+  - {item: "Two named acquisitions (Mumbai, Hyderabad)", number: "n/a", timeframe: "complete H2 FY26", stated_in: "FY25 AR, Sep-2025, p.16"}
+  - {item: "New-lab annualised revenue potential (9 labs, last 18 months)", number: "Rs 120 Cr", timeframe: "next 2-3 years", stated_in: "H1 FY26 MD&A, Nov-2025"}
+  - {item: "FY27 revenue growth guide", number: "35-40% over FY26 base", timeframe: "FY27", stated_in: "FY26 deck/MD&A, May-2026; reaffirmed FY26 AR, Sep-2026"}
+  - {item: "FY27 EBITDA margin guide", number: "25-27%", timeframe: "FY27", stated_in: "FY26 deck/MD&A, May-2026; FY26 AR, Sep-2026"}
+  - {item: "FY27 PAT margin guide (deck/MD&A wording, resolved figure)", number: "15-17%", timeframe: "FY27", stated_in: "FY26 deck 21-May-2026 slide 25; FY26 MD&A filing 20-May-2026"}
+  - {item: "FY27 PAT margin guide (AR wording, unresolved conflict)", number: "14-15%", timeframe: "FY27", stated_in: "FY26 AR, 3-Sep-2026, p.18"}
+  - {item: "USFDA pharma lab commercial milestone", number: "n/a", timeframe: "by June 2026", stated_in: "FY26 deck, 21-May-2026, slide 23"}
+  - {item: "Hyderabad acquisition completion", number: "n/a", timeframe: "by June 2026 / H2 FY26", stated_in: "FY25 AR Sep-2025; reiterated FY26 deck May-2026"}
+  - {item: "FY31 medium-term revenue ambition", number: "Rs 500 Cr", timeframe: "FY31", stated_in: "FY26 AR MD&A, Sep-2026"}
+  - {item: "FY27 capex plan", number: "Rs 63 Cr", timeframe: "FY27", stated_in: "FY26 deck/AR, May/Sep-2026"}
+  - {item: "Overseas revenue ambition", number: ">=30% of revenue", timeframe: "FY31", stated_in: "FY26 AR MD&A, Sep-2026"}
+  - {item: "Operating margin ambition", number: "above 30%", timeframe: "next three years", stated_in: "FY26 AR MD&A, Sep-2026"}
+  - {item: "Debt-free ambition", number: "cash-surplus, debt-free", timeframe: "FY32", stated_in: "FY26 AR MD&A, Sep-2026"}
+promise_delivery:
+  delivered: 3
+  partial: 2
+  missed: 3
+  rows:
+    - {promised_in: "DRHP, Sep/Dec-2023", promise: "IPO fund use across 4 objects, Rs 1,831.18 lakh total", outcome: "DELIVERED", explanation: "Reg 32 statement H1 FY25 (05-Nov-2024) shows Rs 1,831.12 lakh utilised, zero deviation; one note on machinery spec upgrade"}
+    - {promised_in: "DRHP objects of issue, Sep-2023", promise: "Repay Rs 818.16 lakh unsecured loan to promoter (TIC Services)", outcome: "DELIVERED", explanation: "Confirmed in Nov-2024 Reg 32 statement and FY26 AR RPT table"}
+    - {promised_in: "H1 FY25 deck, Nov-2024", promise: "FY25 consolidated revenue Rs 90 Cr", outcome: "MISSED (~22% shortfall, actual Rs 70.2 Cr)", explanation: "None given; FY25 deck presents the actual without reconciling the prior projection"}
+    - {promised_in: "FY25 AR, Sep-2025", promise: "Complete Mumbai and Hyderabad acquisitions in H2 FY26", outcome: "PARTIAL: Mumbai delivered (H1 FY26 MD&A, Nov-2025); Hyderabad not evidenced complete through FY26 AR / Sep-2026", explanation: "None given for Hyderabad in either the FY26 deck or the FY26 AR"}
+    - {promised_in: "H1 FY25 deck Nov-2024 / FY25 deck May-2025", promise: "30% medium-term EBITDA margin", outcome: "WALKED DOWN to 25-27% FY27 guide, FY26 actual 24% flat YoY", explanation: "None; no document acknowledges the target changed"}
+    - {promised_in: "FY25 AR, Sep-2025", promise: "2X revenue every 2 years, FY24 to FY26", outcome: "DELIVERED, exceeded (4.27x actual)", explanation: "Framed as 'in line with' commitment; beat driven by 4 acquisitions, never disaggregated from organic growth"}
+    - {promised_in: "FY26 deck, 21-May-2026", promise: "FY27 PAT margin guide 15-17%", outcome: "PARTIAL: narrowed to 14-15% in FY26 AR (3-Sep-2026), four months later", explanation: "None stated; no reconciliation between the two documents"}
+    - {promised_in: "FY26 deck, 21-May-2026", promise: "USFDA lab 'commercial by June 2026'", outcome: "MISSED/AMBIGUOUS: same-period FY26 AR already narrates the Bengaluru USFDA lab as acquired and consolidated within FY26, with no separate commercial-operation date given", explanation: "Not addressed as a distinct milestone in either document"}
+excuse_pattern: "silence-heavy"
+repeated_evasions: []
+credibility_grade: "C"
+credibility_basis: "Genuine delivery evidence exists (IPO fund use, promoter loan repayment, Mumbai acquisition) but is offset by an undisclosed acquisition slip (Hyderabad), an unacknowledged EBITDA-margin target dilution (30% to 25-27%), an unreconciled FY25 revenue miss, and an unexplained deck-vs-AR PAT-margin conflict; per NO-CONCALL MODE the grade rises to B only on documented delivery evidence, and the negative record here is at least as strong as the positive, so the grade holds at the C default."
+peer_questions:
+  - {question: "Does Vimta Labs / Metropolis / Krsnaa see debtor days of 124-150 as typical for government/PPP-heavy testing contracts, or is Qualitek's receivables build unusually slow versus the peer set?", why: "Resolves the LBF2 GROWTH-INDUCED vs STRUCTURAL cash-conversion determination", check_peers: ["KRSNAA", "METROPOLIS"]}
+  - {question: "How do peers price and disclose valuation for related-party or promoter-linked acquisitions (share swaps, slump sales), and do they name an independent valuer or fairness opinion?", why: "Benchmarks whether Qualitek's undisclosed ITCPL swap valuation is a sector norm or a governance outlier", check_peers: ["VIMTALABS", "METROPOLIS", "KRSNAA"]}
+  - {question: "What margin trajectory and integration timeline do peers report for newly acquired or newly commissioned labs (loss-making in year 1, breakeven by which year)?", why: "Benchmarks Qualitek's own admission that 9 new labs lost Rs 3.3 Cr at EBITDA in H1 FY26, against its FY27 margin-recovery guidance", check_peers: ["VIMTALABS", "METROPOLIS", "KRSNAA"]}
+  - {question: "Do any peers cite a quantified Indian TIC/testing-industry growth rate or market-size figure?", why: "Qualitek names none anywhere in its filings; a peer figure supplies an external benchmark for stage 9 TAM work and tests the plausibility of the Rs 500 Cr FY31 ambition", check_peers: ["VIMTALABS", "METROPOLIS", "KRSNAA"]}
+  - {question: "Have any peers walked down a previously stated margin or revenue target without explicit acknowledgment, and how did analysts react?", why: "Qualitek's EBITDA-margin ambition moved from 30% to 25-27% with an unexplained deck-vs-AR PAT-margin conflict; peer transcripts inform how hard Role 3 should press this pattern", check_peers: ["VIMTALABS", "KRSNAA"]}
+  - {question: "What raw-material or input-cost trend do peers cite, and is Qualitek's gross margin climb (78% FY23 to 87% FY26) consistent with a stable or improving sector cost environment?", why: "Tests the mandatory raw-material-trend question against an unusually steep internal margin climb", check_peers: ["VIMTALABS", "METROPOLIS", "KRSNAA"]}
+red_flags:
+  - {flag: "Hyderabad acquisition silently slipped past its twice-stated completion date with no disclosed explanation", severity: "MODERATE-HIGH"}
+  - {flag: "FY25 consolidated revenue guidance missed by ~22% with no reconciliation", severity: "MODERATE"}
+  - {flag: "EBITDA-margin ambition diluted from 30% to 25-27% with zero acknowledgment", severity: "MODERATE"}
+  - {flag: "FY27 PAT-margin guidance carries an unexplained internal conflict (deck 15-17% vs AR 14-15%)", severity: "MINOR-MODERATE"}
+  - {flag: "M&A-led growth strategy never disclosed at IPO; DRHP names only an organic expansion plan", severity: "MODERATE"}
+  - {flag: "No quantified industry growth rate ever cited, limiting external verifiability of medium-term ambitions", severity: "MINOR (data-gap, not misstatement)"}
+dropped_triggers:
+  - "30% EBITDA margin medium-term target (H1 FY25 deck Nov-2024; FY25 deck May-2025) replaced without acknowledgment by a 25-27% FY27 guide band (FY26 deck/AR, May/Sep-2026)"
+timeline_slippages:
+  - "Hyderabad Food/Lifesciences lab acquisition: promised complete by H2 FY26 (FY25 AR, Sep-2025), reiterated 'expected to complete by June 2026' (FY26 deck, 21-May-2026); not evidenced complete in the FY26 AR (3-Sep-2026) or any announcement through 26-Sep-2026"
+analyst_note: "The single most consequential finding is the undisclosed strategy pivot: the DRHP (Sep-2023) names a purely organic growth plan with no mention of M&A, yet by the FY25 AR (Sep-2025, 20 months post-listing) the company had made or named six acquisitions. Combined with the silent Hyderabad slippage and the unacknowledged EBITDA-margin dilution (30% to 25-27%), the pattern across all three is omission rather than excuse: management never frames a miss as a miss. This should weigh on Role 2/Role 3 more heavily than any single number, because it is a pattern in HOW guidance is set and revised, not an isolated bad quarter. Weigh against the genuine, checkable deliveries (IPO fund use, promoter loan repayment, Mumbai acquisition, and a 4.27x revenue beat against the 2X-in-2-years ask, even though that beat is acquisition-driven)."
+no_concall_mode: true

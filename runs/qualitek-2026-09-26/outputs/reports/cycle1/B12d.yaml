@@ -1,0 +1,22 @@
+stage: B12d
+company: "QUALITEK"
+run_date: "2026-09-26"
+model: claude-sonnet-5
+status: complete
+peers_audited: 12
+substantive_confirmed: 12
+substantive_unsupported: []
+unused_but_relevant: []
+claims_all_addressed: true
+verdict_discipline_fails:
+  - {claim: "Q1 debtor days (peer_questions #1)", issue: "Verdict VERIFIED rests on a single peer (KRSNAA only, across 4 quarters/one mechanism); METROPOLIS confirmed silent on DSO in all 4 transcripts, VIMTALABS never discussed. Per rule 4 should be PARTIALLY VERIFIED.", severity: "MAJOR"}
+findings:
+  - {severity: "MAJOR", location: "B06 Part 1, Q1 verdict", claim: "Debtor-days claim VERIFIED", issue: "Single-peer verdict overgraded; should be PARTIALLY VERIFIED per rule 4"}
+  - {severity: "MAJOR", location: "B06 Part 1, Q1 peer-evidence narrative", claim: "'our receivable currently stands around 150 days (repeated)' attributed to Feb-2026 (Q3 FY26) call", issue: "Quote not found in Feb-2026 transcript (verified by full-text search); belongs to Nov-2025 (Q2 FY26) call, which is separately and correctly cited for the same figure"}
+  - {severity: "MAJOR", location: "B06 Part 3 coverage map, row 'METROPOLIS | Investor Meet (Aug-27-2026)'", claim: "'<2x revenue, ... effective 10x EBITDA' listed as this transcript's key contribution", issue: "Quote not found in the investor-meet transcript (verified by full-text search); belongs to the Aug-05-2026 Q1 FY27 earnings call, which B06 Part 1 Q2 correctly cites separately"}
+  - {severity: "MINOR", location: "B06 Part 1, Q4 narrative", claim: "Vimta sector CAGR paraphrased as '7% to 9%'", issue: "Transcript says '7.5% to around 9%'; cosmetic rounding, not material"}
+  - {severity: "MINOR", location: "B06 Part 1, Q6 narrative", claim: "Input-cost quote attributed to '(May-2026, Jul-2026 calls)'", issue: "The specific quoted sentence is found only in Jul-2026; May-2026 has a different, also-supportive quote on manpower cost, not this one"}
+critical_count: 0
+major_count: 3
+minor_count: 2
+acceptance_rate: 100

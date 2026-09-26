@@ -1,0 +1,14 @@
+stage: B12a
+company: "QUALITEK"
+run_date: "2026-09-26"
+model: claude-haiku-4-5-20251001
+status: complete
+numbers_checked: 48
+findings: []
+critical_count: 0
+major_count: 0
+minor_count: 0
+false_positives_struck: 0
+material_universe: 48
+acceptance_rate: 100
+coverage_note: "Material universe = 48 numerical claims verified across 9 stage reports. Selection rule: figures in verdict cards, scorecard blocks, major narrative chains, financial-statement line items, ratio calculations, year-on-year comparisons, and basis-split claims (standalone/consolidated, FY/TTM). Weighted to audited P&L/BS totals, gate-input ratios, and trend claims required to defend stage conclusions. All 48 checked figures present in source documents (DRHP, audited results filings, AR2026 notes) at stated anchors. No mismatches, no ANCHOR NOT FOUND, no material UNANCHORED. All basis choices defensible and noted in reports. Zero false positives struck in rule 5b self-check. Acceptance rate 100%."

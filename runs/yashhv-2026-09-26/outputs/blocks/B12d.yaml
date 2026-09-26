@@ -1,0 +1,21 @@
+stage: B12d
+company: "YASHHV"
+run_date: "2026-09-26"
+model: claude-sonnet-5
+status: complete
+peers_audited: 12
+substantive_confirmed: 8
+substantive_unsupported: []
+unused_but_relevant: []
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "MINOR", location: "B06 Part 2D, QPOWER Feb-2026 JV-name mention", claimed: "p.3", source_truth: "p.4", note: "Quote genuine and correctly transcribed, page anchor off by one"}
+  - {severity: "MINOR", location: "B06 Claim 2, Sukrut order book Rs4-5cr", claimed: "p.12", source_truth: "p.17", note: "Quote genuine ('Sukrut is about INR 4 to INR 5 crores'), page anchor off by five"}
+  - {severity: "MINOR", location: "B06 Claim 2, Sukrut 'three times' 12-24mo growth", claimed: "p.16", source_truth: "p.18", note: "Quote genuine, page anchor off by two"}
+  - {severity: "MINOR", location: "B06 Claim 2, Sukrut Rs25cr legacy losses", claimed: "p.18", source_truth: "p.19", note: "Quote genuine, page anchor off by one"}
+  - {severity: "MINOR", location: "B06 Claim 3 / Part 2D, VILAS OIP-shortage and first Ramachandran quotes", claimed: "p.14", source_truth: "p.15", note: "Both quotes genuine and correctly transcribed, page anchor off by one"}
+critical_count: 0
+major_count: 0
+minor_count: 5
+acceptance_rate: 100

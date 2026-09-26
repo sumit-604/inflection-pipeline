@@ -1,0 +1,56 @@
+stage: B12b
+company: "YASHHV"
+run_date: "2026-09-26"
+model: "claude-opus-5-5"
+status: complete
+independent_flags_found: 28
+caught: 7
+partially_caught: 12
+missed:
+  - {severity: "MAJOR", item: "FY27 guidance contradicts itself in Call-3: 40-45% growth (Rs329-341cr on Rs235.1cr) vs Rs360-400cr invoicing target (+53-70%)", anchor: "Call-3 May-2026 Keyur Shah p10, p16, p20"}
+  - {severity: "MAJOR", item: "Three incompatible accounts of RIP core technology source: Swiss consultant (Jan-25), engineering consultant (May-25), 'developed in-house capability' (Oct-25), 'contract ongoing... transfer the knowledge' vs 'technology agreement got over' (May-26)", anchor: "Call-A p9; Call-1 p15; Call-2 Keyur Shah p18; Call-3 Keyur Shah p15"}
+  - {severity: "MAJOR", item: "MGC core supply shortened from 'at least three more years' exclusivity to 'till mid of 27' while own-core revenue slips to ~Mar-2027; MGC now a named competitor; promoter-ownership premise unanswered", anchor: "Call-1 Keyur Shah p18-20; Call-2 p12, p14; Call-3 Keyur Shah p9, p15"}
+  - {severity: "MAJOR", item: "Customer concentration asked and self-corrected in Call-A (top-5 'Around 70%. No... 40 to 45%'); B05 states it was never raised", anchor: "Call-A Moderator/Nirav Patel p7"}
+  - {severity: "MAJOR", item: "Peers contradict Yash's 'Chinese bushings never restricted' claim; border-country import bar and relaxation for 4 Chinese players reported", anchor: "Call-3 Keyur Shah p23; POWERINDIA Feb-2026 N. Venu p16; POWERINDIA Aug-2026 p13; QPOWER Nov-2025 p16; QPOWER Feb-2026 p13"}
+  - {severity: "MINOR", item: "Export geography contradiction: Israel/Oman listed as export markets (Oct-25) vs 'no exports in those areas' (May-26)", anchor: "Call-2 p19; Call-3 Keyur Shah p8"}
+  - {severity: "MINOR", item: "IR head Mitanshu Shah re-titled Strategic Advisor; CMD took a question addressed to him in Oct-25", anchor: "Call-1 p2; Call-2 p2, p6; Call-3 p2"}
+  - {severity: "MINOR", item: "Equity raise may retire Rs28-30cr WC debt while CMD concedes debt is 'mathematically' cheaper", anchor: "Call-3 Keyur Shah p11, p25"}
+  - {severity: "MINOR", item: "Jan-2025 call is a broker-hosted investor meet, not a results call; B05 labels it H1FY25 results call", anchor: "Call-A p1-2, p8"}
+pipeline_flags_not_supported:
+  - "B05: 'EBITDA margin step-change pushed one year (FY27-28 to FY28)'. Oct-25 p11 '27-'28 is FY28; May-26 p8 'from next year' is FY28. No push."
+  - "B05 2D: 'customer concentration never raised in any concall, no analyst asks it'. Call-A p7 asks it; answer 70% then 40-45%."
+promise_delivery_spot_checks: {checked: 6, confirmed: 5, wrong: 1}
+credibility_grade_concur: "lower: B minus; headline delivery is real, but management gives different analysts incompatible answers on FY27 guidance, FY26 margin source and RIP technology source, restates its own history upward, and withheld the order book for two calls"
+findings:
+  - {severity: "MAJOR", location: "B05 4D/2A/timeline_slippages/4A trigger 3", finding: "NOT SUPPORTED: margin step-change 'pushed one year'; both calls say FY28"}
+  - {severity: "MAJOR", location: "B05 2D, 3D", finding: "NOT SUPPORTED statement and MISSED item: customer concentration was asked in Call-A p7"}
+  - {severity: "MAJOR", location: "B05 1B, 4A", finding: "MISSED: FY27 guide 40-45% vs Rs360-400cr contradiction in Call-3"}
+  - {severity: "MAJOR", location: "B05 2E", finding: "MISSED: three incompatible RIP core technology-source accounts"}
+  - {severity: "MAJOR", location: "B05 1C", finding: "MISSED: MGC supply ends mid-2027 against slipping plant; exclusivity shortened; MGC competitor"}
+  - {severity: "MAJOR", location: "B05 3B; B06 Claim 7", finding: "MISSED: peer testimony contradicts 'Chinese bushings never restricted'; 4 Chinese players being admitted"}
+  - {severity: "MAJOR", location: "B06 2B", finding: "PARTIAL/misread: peers do not pass costs through consistently with Yash; QPOWER 98% fixed price, Q1-Q2 FY27 margin hit; VILAS April transformer production pause"}
+  - {severity: "MAJOR", location: "B05 3C, 4D", finding: "PARTIAL/misclassified: FY24 to FY25 unit decline (5,800 to 5,752) under 38% revenue growth read as same-year data mismatch"}
+  - {severity: "MAJOR", location: "B05 2E, 4A", finding: "PARTIAL: Call-3 gives two contradictory FY26 margin explanations; shortage-pricing share not named"}
+  - {severity: "MAJOR", location: "B05 1B, 1C", finding: "PARTIAL: historical CAGR restated 25% to 38-40% across four calls not flagged"}
+  - {severity: "MAJOR", location: "B05 1B", finding: "PARTIAL: equity raise Rs100-110cr reverses May-25 'no further capex till 2030'"}
+  - {severity: "MAJOR", location: "B05 2E, 3D", finding: "PARTIAL: order-book refusals in Call-A and Call-1 and reluctance in Call-2 not classified as repeated evasion"}
+  - {severity: "MAJOR", location: "B05 3A", finding: "PARTIAL: domestic RIP localisation race (CG Power, Hitachi India, MIM) absent; only VILAS entrant caught in B06"}
+  - {severity: "MINOR", location: "B05 1C", finding: "Misquote reverses meaning: transcript says 'It is not that the RIP demand has reduced'"}
+  - {severity: "MINOR", location: "B05 2A, 4D", finding: "Order book >Rs300cr is 'as of today' 15-Oct-2025, not Sep-2025"}
+  - {severity: "MINOR", location: "B05 2A; B06 2D", finding: "Anchor errors: OIP commissioning confirmed in Call-1 p10 not Call-2; B06 VILAS page uses printed page, marker is p15"}
+  - {severity: "MINOR", location: "B05 1B", finding: "FY27 EBITDA 24-25% labelled flat; guided dip from 25.7%"}
+  - {severity: "MINOR", location: "B05 4B; B06 Claim 2", finding: "Sukrut target downshift and QPOWER 3x-4x, very-low-margin, consolidation remarks missed"}
+  - {severity: "MINOR", location: "B05", finding: "Export geography contradiction missed"}
+  - {severity: "MINOR", location: "B05", finding: "IR head re-titled Strategic Advisor not flagged"}
+  - {severity: "MINOR", location: "B05 3C", finding: "MGC ownership premise unanswered, graded as no evasion"}
+  - {severity: "MINOR", location: "B05", finding: "Equity to retire cheap WC debt not flagged"}
+  - {severity: "MINOR", location: "B05 header", finding: "Jan-2025 call mislabelled as results call"}
+  - {severity: "MINOR", location: "B05 3A", finding: "In-call market-share inconsistencies (70/75%, 1/1.5%) not noted"}
+  - {severity: "MINOR", location: "B06 Claim 2", finding: "Sukrut Rs25cr losses are tax-loss context, not recovery from old management"}
+critical_count: 0
+major_count: 13
+minor_count: 12
+material_found: 17
+material_caught: 12
+acceptance_rate: 71
+coverage_basis: "17 material of 28 listed (1 CRITICAL, 16 MAJOR); 5 CAUGHT + 7 PARTIALLY CAUGHT = 12; strict CAUGHT-only rate 5/17 = 29%. Main transcripts read in full; peers by full-text search plus full reading of every hit passage."

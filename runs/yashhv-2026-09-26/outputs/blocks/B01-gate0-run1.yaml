@@ -1,0 +1,38 @@
+stage: B01-gate0
+company: "YASHHV"
+run_date: "2026-09-26"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "rating/: EMPTY, company may be unrated (carried from B00)"
+  - "screening/: peer Data_Sheets (QPOWER, POWERINDIA, VILAS) came out with empty P&L/BS/CF/Quarters sheets; PEER DATA NEEDED for moat tests M2, M5, M9"
+  - "screening/: Trade Payables not in any screener Data_Sheet; sourced from RHP (FY22-23) and AR FY26 (FY24-26); FY20-21 payables NOT FOUND anywhere in corpus, so B4/WC-days scored on FY22-FY26 window only"
+  - "results/: FY25 CFO restated between AR FY25 (918.68L) and AR FY26 comparative (953.13L); restatement reason NOT FOUND in AR FY26 text searched"
+  - "shareholding/: no post 07-Aug-2026 preferential-allotment pattern in corpus; E1/E2 computed off the 31-Mar-2026 pattern"
+flags: []
+data_years: 7
+fy_range: "FY20 to FY26"
+blocks: {A: 18, B: 3, C: 18, D: 17, E: 14}
+core_score: 70
+moat_score: 21
+grand_total: 91
+moats_confirmed: 5
+moat_class: "STRONG"
+classification: "GOOD"
+deal_breakers:
+  - "2: Block B (cash generation quality) = 3/20, <8 -> classification capped at max GOOD; driven by FY25 (capex 38.45cr vs CFO 9.53cr) and FY26 (capex 59.20cr vs CFO 8.83cr), Vadodara plant build-out plus FY26 inventory build (+125% YoY)"
+history_downgrade: false
+data_notes:
+  - "no loss-to-profit swing; PAT positive all 7 years FY20-26"
+  - "ROCE Capital Employed mixed method: FY20-23 PROXY (Equity+Reserves+Borrowings, screener has no current-liabilities split); FY24-26 EXACT (Total Assets - Total Current Liabilities, AR FY26 p.99)"
+  - "capex FY20-21 PROXIED by screener aggregate Cash from Investing Activity (no RHP/AR breakdown for these years); FY22-26 capex EXACT from RHP/AR cash flow statements"
+  - "Trade Payables NOT FOUND for FY20-21; B4 WC-days computed on FY22-FY26 window (5 years), not full 7-year window"
+  - "FY25 CFO restated 918.68L (AR FY25) -> 953.13L (AR FY26 comparative), capex unchanged at 3,845.00L; restatement reason NOT FOUND in AR FY26 text searched, open item for later stages (LBF3)"
+  - "PEER DATA NEEDED: M2 Cost Advantage, M5 Scale & Dominance, M9 Brand - peer Data_Sheets (QPOWER/POWERINDIA/VILAS) empty; scored 0, not guessed"
+  - "M6 Technology/R&D, M7 Regulatory/License, M8 Distribution: N/A, not in provided data (no R&D/license/distribution-reach disclosure found in AR FY26/FY25/RHP)"
+  - "M9 gross-margin proxy stated: (Revenue-Material Cost)/Revenue = 47.1% FY26; still 0-scored, no peer comparator"
+  - "M10 and M11 pass the mechanical numeric test but YASHHV is a build-to-spec component maker with no disclosed switching-cost or network-effect mechanism in the corpus read; flagged for stage 7 qualitative moat scan to confirm or override"
+  - "E2 promoter holding change (-21.5pp vs pre-offer) is IPO/preferential-allotment dilution, not sell-down: promoter % and absolute share count identical (57.94%, 1,65,43,595 shares) between 30-Sep-2025 and 31-Mar-2026 shareholding patterns"
+  - "E4 contingent liabilities (80.51L, FY26) excludes Capital Commitments (3,534.25L) per formula definition; including Capital Commitments would give 19.6% (Score 1 instead of 5) - flagged to prevent downstream double-counting"
+block_b_trend: "deteriorating - cumulative FCF/PAT = -0.69 (FY20-26); FY26 FCF -50.37cr (CFO 8.83cr - capex 59.20cr) on WC days climbing from 79.1 (FY22) to 118.9 (FY26)"
+analyst_note: "Core fundamentals (ROCE, ROE, revenue/PAT growth) are all at or near top band; the sole depressor is Block B cash generation (3/20), a single deal-breaker that caps classification at GOOD despite a STRONG moat read. FY25-26 capex for the Vadodara plant (38.45cr, 59.20cr) plus FY26 inventory build (+125% YoY, ahead of revenue +57% YoY) drove CFO below PAT and FCF sharply negative; FY20-24 cash conversion was not the problem, all five of those years were FCF-positive. Moat score (21/60, STRONG on count) is muddied: 3 of 12 tests are PEER DATA NEEDED (no peer financials in corpus) and 2 tests that passed mechanically (M10 switching costs, M11 network effects) have no disclosed economic mechanism behind them for this archetype (build-to-spec bushings maker) - stage 7's qualitative moat scan should confirm or override both. E2's -21.5pp promoter-holding score is a dilution artifact of the Dec-2024 IPO and Aug-2026 preferential allotment, not a sell-down signal; the two most recent shareholding patterns show promoter % and share count unchanged."

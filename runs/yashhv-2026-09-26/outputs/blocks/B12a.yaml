@@ -1,0 +1,14 @@
+stage: B12a
+company: "YASHHV"
+run_date: "2026-09-26"
+model: claude-haiku-4-5
+status: complete
+numbers_checked: 35
+findings: []
+critical_count: 0
+major_count: 0
+minor_count: 0
+false_positives_struck: 0
+material_universe: 85
+acceptance_rate: 100
+coverage_note: "Checked 35 of 85 material numbers (41% coverage). Rule: all verdict-card inputs, Block A-E scores, ROCE/ROE/cash conversion metrics, major balance-sheet line items, P&L line items, shareholder metrics, and key operational metrics. Numbers not verified: secondary expense categories, audit fees, employee count, deferred tax details, lease liabilities. All 35 checked numbers match source documents exactly. No mismatches, anchor-not-found, or unanchored findings. Source-fidelity gate clear."

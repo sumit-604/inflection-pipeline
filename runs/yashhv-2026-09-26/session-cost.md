@@ -14,3 +14,7 @@
 | 9 | stage-06-peers | sonnet | default | n/a | n/a | 268527 | 7m03s | 1 |
 | 10 | stage-07-emoat | sonnet | default | n/a | n/a | 144111 | 7m25s | 1 |
 | 11 | stage-09-tam | sonnet | default | n/a | n/a | 123272 | 7m38s | 1 |
+| 12 | verifier-a-numerical | haiku | default | n/a | n/a | 106350 | 4m41s | 1 |
+| 13 | verifier-b-redflags | opus | default | n/a | n/a | 266770 | 8m53s | 1 |
+| 14 | verifier-c-framework (phase 1 half) | opus | default | n/a | n/a | 114640 | 5m05s | 1 |
+| 15 | verifier-d-peers | sonnet | default | n/a | n/a | 93074 | 3m48s | 1 |

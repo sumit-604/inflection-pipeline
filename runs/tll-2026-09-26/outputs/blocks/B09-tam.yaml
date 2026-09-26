@@ -1,0 +1,86 @@
+stage: B09-tam
+company: "TLL"
+run_date: "2026-09-26"
+model: claude-sonnet-5
+status: partial               # Method 5 (global per-capita benchmark) incomplete; three SAM-expansion levers (devices/nutraceuticals/cosmetics) unquantified for want of India-specific data
+input_gaps:
+  - "Method 2 true bottom-up (population/prescription level) not buildable: per-unit revenue and cost NOT FOUND in AR or decks (carried from B04); substituted TLL's own registration-count proxy, flagged as a company-specific ceiling, not a market TAM."
+  - "India-specific market-size figures for medical devices (IV cannula/infusion sets), nutraceuticals, and cosmetics NOT FOUND within the search budget; only global/broader-region figures surfaced. 5D SAM-expansion levers named qualitatively, not quantified."
+  - "Method 5 (global per-capita pharmaceutical spend benchmark, India vs China vs global) incomplete: search returned only developed-market figures (US, Germany, Korea), no comparable India or China per-capita figure."
+  - "B07 capex-embedded-growth figure (Emerging Moat stage) not available at this stage's run time (parallel stage); substituted FY26 AR consolidated CWIP (Rs 33.91 Cr) and the Aug-2026 deck capacity/utilisation table. Stage 11 should re-run the 3C cross-check once B07 lands."
+  - "Top-3 concentration within the specific registration-led semi-regulated-exporter niche not independently computable beyond the four-company peer set; no comprehensive niche-revenue denominator exists in any source found."
+  - "Carried from B00: screening EMPTY-CSV defect (P&L/BS/CF/Quarters sheets absent); no company concall transcripts (NO-CONCALL MODE); shareholding pattern is a screener aggregation, not a filing; no credit rating exists."
+flags:
+  - {type: FLAG-TAM-METHOD-DIVERGENCE, reason: "Method 1 macro top-down TAM (~Rs 6.68 lakh Cr, whole Indian pharma industry + relevant exports) diverges sharply from Method 3 peer-niche TAM (Rs 6,541-8,325 Cr, registration-led semi-regulated-exporter comparables). Expected and explained, not averaged: Method 3 used as the operationally relevant headline because Method 1's scope is far broader than TLL's actual competitive set."}
+  - {type: FLAG-CAPACITY-GAP-5YR, reason: "5-year SOM (Rs 406 Cr) exceeds the ~Rs 322.5 Cr ceiling implied by 100% utilisation of currently installed capacity (40% utilisation, deck p.8) by ~Rs 84 Cr. Closing that gap requires TLL Parenterals to reach ~42% of its own stated Rs 200 Cr peak revenue within 5 years, faster than any existing TLL subsidiary has achieved (Mediquip ~39% of its peak after ~1.5 years; TNS Pharma only ~14% of its peak years after commercial operation began in 2024). The SOM, not the capacity plan, is the optimistic side of this cross-check."}
+  - {type: FLAG-MGMT-GROWTH-CLAIM-VS-TRACK-RECORD, reason: "Management's 'triple our consolidated business over the next three years' (Aug-2026 deck p.5) implies FY29 revenue of ~Rs 387 Cr (~44.2% CAGR), a 1.31x ratio against this stage's conservative 3-year SOM of Rs 295 Cr (~31.8% CAGR). Within the 1.5x 'reasonable' band, but the composition of the gap leans on faster subsidiary ramp-up (esp. TLL Parenterals) than the company's own five-subsidiary delivery history has ever shown (LBF3)."}
+market_definition: "Generic pharmaceutical formulations sold via distributors to India domestic and semi-regulated/RoW export markets (Africa, Latin America, CIS, Asia, 46 countries); devices/nutraceuticals/cosmetics sized separately, qualitatively, in 5D."
+tam_cr: {conservative: 6541, realistic: 8325}
+sam_cr: 5560
+sam_pct_of_tam: 85
+som_3yr_cr: 295
+som_5yr_cr: 406
+som_implied_revenue_cagr: {yr3: 31.8, yr5: 25.8}   # FORMAL handoff to stage 11
+current_sam_share_pct: 2.32
+revenue_headroom_x: 43.1
+tam_growth_pct: 16               # niche-peer CAGR (CAPLIPOINT/INNOVACAP FY22-26 average), used in preference to the slower macro domestic figure (5.74%) as the more relevant denominator; both cited in the report
+runway_class: STRONG
+mgmt_claim_cr: 387                # no explicit mgmt TAM claim exists; this is the implied FY29 revenue from "triple in three years" (Aug-2026 deck p.5), tested against SOM per LBF3, not against TAM
+mgmt_claim_ratio: 1.31            # mgmt_claim_cr (387) / conservative 3yr SOM (295); field repurposed from claim/TAM to claim/SOM because no TAM claim exists (see analyst_note)
+mgmt_claim_read: "reasonable"     # within 1.5x; execution-history caveat named (see flags)
+capacity_check: "3yr: sufficient. 5yr: gap of ~Rs 84 Cr; SOM is the optimistic side, not the capacity plan."
+methods_used:
+  - "Method 1: top-down macro (Indian domestic + relevant semi-regulated export)"
+  - "Method 2: bottom-up, company-anchored registration-count proxy (flagged limitation, not a true population bottom-up)"
+  - "Method 3: peer revenue aggregation + unorganised-sector uplift (primary TAM anchor)"
+  - "Method 4: import substitution (context/driver only, not a standalone estimate)"
+  - "Method 5: global per-capita benchmark (incomplete, not used)"
+stale_data_flags: []
+searches_performed:
+  - "India pharmaceutical exports Africa Latin America CIS semi-regulated markets market size 2026"
+  - "global IV cannula infusion set market size 2026 CAGR"
+  - "India generic formulations Africa export market size CRISIL IBEF 2025 2026"
+  - "India nutraceutical market size 2026 India cosmetics market size 2026 crore"
+  - "India per capita pharmaceutical consumption spend China global comparison"
+searches_skipped:
+  - "India-specific medical device (IV cannula/infusion set) market size in Rs Cr: not found within budget after one search; global figures used directionally only in 5D"
+  - "Top-3 concentration / organised-vs-unorganised split specifically within the registration-led semi-regulated-exporter niche: no dedicated report found; relied on the framework's standard 30-60% unorganised-share assumption instead"
+downstream_candidates:
+  - signal: "India pharmaceutical export value (Pharmexcil/DGFT trade data)"
+    entity_type: "macro"
+    demand_link: "Sets the ceiling on TLL's semi-regulated export niche TAM; export slowdown signals niche-wide demand softness"
+    likely_source: "Ministry of Commerce / Pharmexcil export statistics"
+    cadence: "monthly"
+    shared: false
+  - signal: "TLL new-country / new-product drug registration approvals"
+    entity_type: "regulatory"
+    demand_link: "Registration count is TLL's core asset and Method 2's unit; leading indicator of future revenue before it books"
+    likely_source: "BSE company announcements (Reg 30) / annual report disclosure"
+    cadence: "quarterly"
+    shared: false
+  - signal: "TLL Parenterals commissioning and off-take announcements"
+    entity_type: "counterparty"
+    demand_link: "Directly resolves the ~Rs 84 Cr 5-year capacity gap named in 3C; the load-bearing signal for LBF3"
+    likely_source: "BSE company announcements (Reg 30)"
+    cadence: "event-driven"
+    shared: false
+  - signal: "Peer export/domestic revenue growth (CAPLIPOINT, INNOVACAP, SENORES)"
+    entity_type: "counterparty"
+    demand_link: "Proxy read on whether the niche is growing at the ~16% CAGR used in the runway calc; same denominator as the SAM/SOM base"
+    likely_source: "Peer BSE quarterly results / investor presentations"
+    cadence: "quarterly"
+    shared: true
+  - signal: "US tariff and drug-pricing policy on Indian pharma exports"
+    entity_type: "macro"
+    demand_link: "Named AR SWOT threat; a policy shift changes the 50/50 highly-regulated vs semi-regulated export split used in Method 1's geography filter"
+    likely_source: "Ministry of Commerce trade-policy notifications / US Federal Register pharma tariff actions"
+    cadence: "event-driven"
+    shared: false
+  - signal: "India domestic pharma market growth"
+    entity_type: "macro"
+    demand_link: "Informs whether TLL's domestic segment (49% of revenue, the fastest-growing named SAM lever) is riding market growth or taking share"
+    likely_source: "IBEF / IQVIA India domestic pharma sales data"
+    cadence: "quarterly"
+    shared: false
+demand_externally_verifiable: true
+analyst_note: "No company TAM claim exists in the corpus (management cites third-party reports for context but never sizes its own market). mgmt_claim_cr/ratio/read above are therefore repurposed from the framework's default (claim vs conservative TAM) to test the one number management does claim, the 'triple in three years' growth target, against this stage's conservative 3-year SOM, per this run's LBF3 instruction. Headline TAM uses Method 3 (peer aggregation) over Method 1 (macro top-down) because Method 1's scope is too broad to be the operationally relevant market TLL competes in; Method 1 is retained as context. Stage 11 should re-run the 3C capacity cross-check once B07's capex-embedded-growth figure is available, as this stage substituted AR CWIP and deck utilisation data in its place."

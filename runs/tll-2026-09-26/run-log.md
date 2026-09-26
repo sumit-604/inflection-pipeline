@@ -5,3 +5,4 @@
 - stage 1: block file wrapped in markdown fences; orchestrator stripped the fences (content unchanged), now parses.
 - stage 4: block file had three flag flow-mappings missing the closing brace; orchestrator added them (content unchanged), now parses.
 - stage 8: status partial (no direct SEBI/MCA/NCLT/ICAI database access; general web search substituted). Auditor A Bafna & Associates vs director Ashish Anandsingh Bafna relationship: NOT FOUND either way; operator follow-up.
+- stage 9: status partial (device/nutraceutical/cosmetic India market sizes and Method 5 not found within search budget). Ran parallel to stage 7, so it used AR CWIP in place of the B07 capex figure (B07 later reported capex_embedded_growth_pct NOT FOUND).

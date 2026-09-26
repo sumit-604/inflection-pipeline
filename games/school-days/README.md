@@ -760,6 +760,16 @@ All of them are on the big map (G).
 - Fix: two cities with similar names could share a room inside. Each city
   now has its own rooms.
 
+## Book a hotel room any time (v56)
+
+- Every city's Grand Hotel has a 🛎️ reception desk. Book a room at any
+  hour: rest a few hours (₹150, energy +40), one night (₹300), three days
+  (₹800) or one week (₹1,800). Nights and longer stays use Room 204 with
+  a bed, a suitcase, a TV and a daily city event.
+- At night, the lobby still offers a quick room for tonight.
+- Fix: Suryanagar job desks (like GM Kapoor's hotel manager seat) no
+  longer appear inside places in other cities.
+
 ## Files
 
 - `index.html` the whole game. Open it in a browser.

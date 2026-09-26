@@ -748,7 +748,7 @@ import * as THREE from 'three';
    label goes through L(). The voice follows the language.
    Questions and answers stay in English for now.
    ============================================================ */
-const GAME_VERSION = "v55";
+const GAME_VERSION = "v56";
 const LANGS = {
   en: { name: "English", voice: "en-IN" },
   hi: { name: "हिन्दी", voice: "hi-IN" },
@@ -7390,6 +7390,7 @@ class Game {
     }));
   }
   _jobRoomSetup(room, door) {
+    if (door.index >= 9000) return;
     const here = JOBS.filter((j) => j.place === door.label); if (!here.length) return;
     const pr = this.progress, base = room.occupantPos();
     const hiredHere = here.filter((j) => pr.hired.includes(j.id)), cur = hiredHere.find((j) => j.id === pr.job) || hiredHere[0];
@@ -10943,8 +10944,26 @@ class Game {
   }
   // Any night away from home: sleep in the city's Grand Hotel and wake up in the same city.
   _awayHotel(room) {
-    const Z = this._zone; this.roomInteractables.push({ pos: { x: room.x0, z: room.z0 + room.d / 2 - 3.5 }, radius: 3, priority: 2, prompt: () => (this.phase === "night" ? L("🛏️ Take a room and sleep (₹300)") : L("🛏️ Hotel rooms: come back at night to sleep")), activate: () => { if (this.phase !== "night") { showToast(L("The rooms are for the night. Explore {c} first!", { c: Z ? Z.city : "" }), 2600); return; } if ((this.progress.money || 0) >= 300) this.addMoney(-300, L("hotel room")); this._sleep(); } });
+    const Z = this._zone, pr = this.progress; if (!Z) return;
+    if (!room._desk204) { room._desk204 = true; try { room._box(4, 1.1, 1, 0x8b5a2b, 0, 0.55, -room.d / 2 + 3, false); room._box(4.2, 0.1, 1.2, 0xe9c46a, 0, 1.15, -room.d / 2 + 3, false); room._label && room._label(L("🛎️ Reception"), 0, -room.d / 2 + 0.3, 2.6, 0.8); } catch (e) { /* desk optional */ } }
+    this.roomInteractables.push({ pos: { x: room.x0, z: room.z0 - room.d / 2 + 4.8 }, radius: 3, priority: 2, prompt: () => L("🛎️ Reception: book a room"), activate: () => this._hotelBook() });
+    this.roomInteractables.push({ pos: { x: room.x0, z: room.z0 + room.d / 2 - 3.5 }, radius: 2.4, priority: 1, prompt: () => (this.phase === "night" ? L("🛏️ Quick room for tonight (₹300)") : L("🛋️ Rest in the lobby")), activate: () => { if (this.phase === "night") { if ((pr.money || 0) >= 300) this.addMoney(-300, L("hotel room")); this._sleep(); } else { this.addEnergy && this.addEnergy(10); showToast(L("🛋️ You sit on the soft sofa. Energy +10."), 2400, "good"); } } });
   }
+  // Book a room any time: rest a few hours, one night, three days or a week.
+  _hotelBook() {
+    const Z = this._zone, pr = this.progress; if (!Z) return;
+    if (this._braveM) { showToast(L("🎖️ Finish the mission first!"), 2400, "bad"); return; }
+    const opts = [["rest", L("😴 Rest in a room for a few hours"), 150, 0], ["n1", L("🛏️ One night"), 300, 1], ["n3", L("🧳 Three days"), 800, 3], ["n7", L("🗓️ One week"), 1800, 7]];
+    const card = openPanel(`<h2>🛎️ ${L("{c} Grand Hotel", { c: Z.city })}</h2><p class="job-brief">${L("Receptionist: 'Welcome! How long would you like to stay?'")}</p><div class="btn-row">${opts.map((o) => `<button class="big-btn" id="hb-${o[0]}">${o[1]} · ₹${o[2]}</button>`).join("")}</div><div class="btn-row"><button class="ghost-btn" id="hb-no">${L("Not now")}</button></div>`);
+    card.querySelector("#hb-no").addEventListener("click", () => closePanel());
+    for (const [id, , cost, n] of opts) card.querySelector(`#hb-${id}`).addEventListener("click", () => {
+      closePanel(); if ((pr.money || 0) < cost) { showToast(L("You need ₹{n}.", { n: cost }), 2400, "bad"); return; } this.addMoney(-cost, L("Grand Hotel, {c}", { c: Z.city }));
+      if (!n) { this.addEnergy && this.addEnergy(40); if (this._tmin != null) this._tmin = Math.min(this._tmin + 180, 20 * 60); showToast(L("😴 You nap in a quiet room for three hours. Energy +40."), 3200, "good"); return; }
+      const mt = this._matchTrip; if (mt && mt.banner) this.world.scene.remove(mt.banner); this._matchTrip = null;
+      this._stayStart({ city: Z.city, via: Z.via, s3: (mt && mt.s3) || [L("The busy streets."), L("The famous food."), L("The big landmark.")] }, n, () => this._awayGoHome());
+    });
+  }
+
   _tickCityZone(dt) {
     const Z = this._zone; if (!Z) return;
     { const P = this.player.position; if (!this.world.currentRoom && !this._cut && !this._sim && (Math.abs(P.x - Z.x) > Z.half + 15 || Math.abs(P.z - Z.z) > Z.half + 15)) { const h = Z.places.hotel.door; this.player.group.position.set(h.x, 0, h.z + 2); this.player._placeCamera(1); showToast(L("📍 You are in {c}. Back at the Grand Hotel.", { c: Z.city }), 2600, "good"); } }

@@ -1,0 +1,103 @@
+stage: B00-inputs
+company: AVIENCE
+run_date: 2026-09-26
+model: orchestrator (stage 0 run inline by the orchestrator session, /step1)
+status: complete
+corpus_commit: 9ae79ec7c38a0727062d260abeefbaa6a3c4fcf5
+spear_gate: "PASS. companies/AVIENCE.md carries 'Spear: OVERRIDE 2026-09-26 (operator standing ruling 2026-09-05: Step-1 intake replaces the web spear)'."
+load_bearing_facts:   # first verification priority for every stage (from companies/AVIENCE.md SPEAR)
+  - "LBF1 GUIDANCE VS DELIVERY: FY27 revenue growth >=60% to >Rs 100 Cr on a ~Rs 47 Cr Uttarakhand order 'in hand'; FY28 aspiration Rs 160-165 Cr; YEIDA plant production from Oct-2026, FY27 utilisation 15-20%; manufacturing:trading mix ~27:72 to ~50:50; exports Rs 5-7 Cr in FY27 (H2 FY26 call, 24-Jul-2026). No Reg 30 order-win filing is in the NSE list since listing. Test against RHP objects timeline, FY26 AR CWIP / capital commitments, and results."
+  - "LBF2 FY26 FIGURES ON A MOVING BASE: FY26 consolidated results adopted 16-Jul-2026 (filed 17-Jul) were REVISED on 25-Aug-2026 (note 8: inter-company balances with the subsidiary not eliminated; other current liabilities and short-term loans and advances each overstated by ~Rs 337.55 lakh; no profit or equity impact). Check which version the FY26 AR consolidated balance sheet carries. Reconcile FY25 revenue across RHP restated (Rs 45.97 Cr per IPO summaries), the call (Rs 45.24 Cr) and screener (Rs 44.92 Cr), and the standalone vs subsidiary split (RHP standalone FY25 Rs 2,888.95 lakh)."
+  - "LBF3 CONCENTRATION AND RELATED PARTIES: top supplier 63.0% of purchases 10M FY26, 66.3% FY25, 72.7% FY24 (RHP pdf p38); Mindray named as trading and raw-material supplier (RHP pdf p124, p127); Avience is a regional Mindray channel partner (call p4); top 10 customers >50% of revenue (RHP pdf p34). Standalone sales to subsidiary DR Meditech Rs 488.64 lakh and advance from related party Rs 337.54 lakh (FY26 AR AOC-2, note 10)."
+  - "LBF4 CASH CONVERSION AND GOVERNANCE: screener consolidated CFO/OP 58% FY26, FCF negative FY24-FY26, debtor days 146, inventory days 218, borrowings Rs 28.93 Cr; screener flags possible interest capitalisation (YEIDA CWIP). Statutory auditor Haribhakti & Co. LLP retires at the 30-Sep-2026 AGM (term end, appointed 2021 for five years); board proposes M.A.M and Associates (FRN 015680N); borrowing powers sought to Rs 100 Cr (AGM notice). The consolidation error in LBF2 is an internal-control data point."
+sector_cap_row: "Pharma / CDMO"
+sector_cap_row_evidence: >
+  section-1b chunk 05 (.claude/skills/section-1b/references/05-sector-cap.md,
+  row 'Pharma / CDMO | 38x'; the same row in frameworks/Master_Project_Prompt_v3_6.md).
+  The company makes and distributes CDSCO-licensed in vitro diagnostic reagents,
+  rapid tests and analysers (88 product licences per the H2 FY26 call; RHP business
+  chapter). The table has no medical-device or diagnostics row; Pharma / CDMO is
+  the nearest regulated healthcare manufacturing row. The collector guess
+  happens to name the same row; it was checked, not accepted. FLAG for phase 3:
+  ~72% of FY26 revenue is TRADED (call p7), so an Amendment 27.2 SOTP with a
+  'Distribution / trading' 20x slice is live; the A27.4 boundary text calls
+  Distribution / trading 'pure buy-and-sell with no service layer', and the traded
+  slice carries AMC/CMC service and reagent-rental placement. Operator confirms the
+  row and the SOTP question at /fttcp.
+reporting_units:
+  annual_report: "INR lakh (FY26 AR financial statements, 'All amounts in Rs. Lakhs, unless otherwise stated')"
+  results: "INR lakh (FY26 audited results 17-Jul and OCR copy 27-Jul; revised consolidated results 25-Aug-2026, 'All amounts In Rs. Lakhs')"
+  prospectus: "INR lakh (RHP restated financial information and business chapter tables, 'Amount in Rs lakhs')"
+  concall: "INR crore and INR lakh mixed in speech (H2 FY26 call)"
+  presentation: "per slide; read the unit off each slide (mostly image-only)"
+  screener: "INR Cr (screener Data_Sheet)"
+  note: "Filings report in INR lakh; screener and the call in INR Cr. 100 INR lakh = 1 INR Cr. Conversion happens once, at stage 10."
+listed_date: "2026-06-25"
+recently_listed: true
+recently_listed_evidence: "NSE Emerge listing 25-Jun-2026 (IPO 18-22 Jun 2026 at Rs 208). The RHP (inputs/prospectus/) is held: prospectus requirement MET. Company incorporated 2019 as a private company, converted to public 03-Sep-2024; FY26 AR is the 7th AGM and the first AR as a listed company."
+input_gaps:
+  - "COLLECTOR WARNING (verbatim): BSE scrip code not found on the screener page, so announcements/ is empty. This is a collector gap, not evidence that the company files nothing."
+  - "COLLECTOR WARNING (verbatim): shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend."
+  - "COLLECTOR WARNING (verbatim): screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance Sheet, screener:Cash Flow, screener:Customization, QLINE:Profit & Loss, QLINE:Quarters, QLINE:Balance Sheet, QLINE:Cash Flow, QLINE:Customization, MOLBIO:Profit & Loss, MOLBIO:Quarters, MOLBIO:Balance Sheet, MOLBIO:Cash Flow, MOLBIO:Customization, TARSONS:Profit & Loss, TARSONS:Quarters, TARSONS:Balance Sheet, TARSONS:Cash Flow, TARSONS:Customization. Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again."
+  - "COLLECTOR WARNING (verbatim): no results PDFs yet (screener has none): add later on github or locally + --push-again"
+  - "COLLECTOR WARNING (verbatim): no rating PDF yet: add later the same way"
+  - "COLLECTOR WARNING (verbatim): only 1 concalls -> no-concall mode"
+  - "RESOLVED AT INTAKE: announcements/ filled from the NSE corporate-announcements API (symbol AVIENCE, index sme): 11 Reg 30 filings 21-Jul-2026 to 23-Sep-2026 (board outcomes 07-Sep and, in results/, 25-Aug; AGM notice/intimation; AGM book closure; letter to shareholders; newspaper publications; concall schedule and audio link; analyst meet 30-Sep; Reg 74(5); RSCA; corporate-governance non-applicability). The NSE list holds 18 filings since listing; the transcript, deck and three results filings sit in their own folders and the AR notice duplicates the AR. NO order-win, capacity, or capex-commissioning Reg 30 filing exists in the list."
+  - "RESOLVED AT INTAKE: shareholding/ holds the NSE SHP XBRL filing as on 24-Jun-2026 (submitted 02-Jul-2026, revised 16-Jul-2026) plus a mechanical flat .txt dump of its facts. Promoter group 64.59%, FPI 3.06%, domestic institutions 9.08%, non-institutions 23.26%; no pledge or encumbrance. This is the only pattern since listing (next one due for Sep-2026 quarter)."
+  - "RESOLVED AT INTAKE: results/ holds the FY26 audited results as filed 17-Jul-2026 (image-only: 19 of 20 pages without text; rendered to PNG), the company's OCR copy filed 27-Jul-2026 (text layer, same document), and the REVISED audited consolidated results approved 25-Aug-2026 (text layer). The company files half-yearly (SME); no quarterly results exist. H1 FY26 was not published as a listed company (listed Jun-2026); RHP carries 10M FY26 (to 31-Jan-2026) restated."
+  - "annual-report/: the collector's two 'Annual Report 2026' PDFs were 3-page Reg 30 intimations (AR web-link letter 08-Sep-2026; newspaper advertisement 09-Sep-2026), NOT the AR. Moved to announcements/, then removed as byte-identical duplicates of the NSE-pulled copies. The FY26 AR (144 pp, NSE annual_reports archive, 08-Sep-2026) was added as annual-report/Annual_Report_FY2026_Avience.pdf. No earlier AR exists as a listed company; FY25 and prior history come from the RHP restated financials and the FY26 AR comparatives."
+  - "prospectus/: RHP (535 pp, NSE content/ipo/RHP_AVIENCE.zip). IMAGE-ONLY BLOCK: RHP pdf pages 279-362 (Restated Consolidated Financial Statements RFS 1-38 and Restated Standalone RFS 39-84, printed pages from 274) have NO TEXT LAYER, plus pdf pages 119, 197, 198. They are rendered to PNG at inputs/_render/RHP_Avience_Biomedicals_Jun2026_pNNN.png (120 dpi, local only, not committed) for visual reads. The RHP text chapters (Summary of Restated Financial Information, MD&A, business chapter tables, capital structure, objects) carry text. The NSE General Information Document shipped in the zip is in inputs/other/ (never consumed)."
+  - "presentation/: one deck, H2 FY26 investor presentation (24-Jul-2026, 29 pp). 23 of 29 pages are image-only (pdf pp 5-11, 13-28), rendered to PNG at inputs/_render/Investor_Presentation_1_pNNN.png for visual reads. Its text layer holds 6 pages only."
+  - "concalls: ONE transcript, H2 FY26 (call 24-Jul-2026, filed 28-Jul-2026), the first call as a listed company. NO-CONCALL MODE (manifest concalls_available: false): stage 5 runs degraded on AR MD&A, RHP and results plus this single transcript; credibility grade capped per the orchestrator. There is no prior guidance to test delivery against."
+  - "rating: EMPTY. No credit rating found for the company's bank facilities (RHP pdf p76 'Credit Rating': no rating required for the issue; web search 2026-09-26 found none). Unrated issuer: a GAP for the Pillar 2 rating-WC quote and the FLAG-CASH evidence; name it, do not substitute."
+  - "research: EMPTY. No broker notes. No effect on anchored evidence."
+  - "screening: EMPTY-CSV defect present. P&L, Balance Sheet, Cash Flow and Quarters sheets absent for the subject and all peers. The four Data_Sheet CSVs (screener-Data_Sheet.csv = AVIENCE consolidated; QLINE, MOLBIO, TARSONS) carry annual rows; AVIENCE has three years only (FY24-FY26), and its quarterly block is EMPTY (half-yearly SME filer)."
+  - "screener basis: main URL is CONSOLIDATED (/company/AVIENCE/consolidated/, FY24-FY26). Standalone page carries FY22-FY26. Consolidation began with the subsidiary acquisition on 08-Aug-2023."
+  - "peer-concalls: 6 transcripts. QLINE (Q-Line Biotech) 1: H2 FY26 call 23-Jun-2026 (its only call). MOLBIO (Molbio Diagnostics) 1: Q1 FY27 call 08-Sep-2026 (filed 12-Sep-2026; recently listed, BSE 544866). TARSONS 4: filenames Nov-2025, Feb-2026, Jun-2026, Aug-2026 (stage 6 confirms quarters from page 1). Below the 12-transcript contract: two peers are recent listings with one call each. Hemant Surgical (BSE SME 543916) rejected for want of transcripts."
+  - "TOOLING: pdftotext (Git mingw64) fails to run (exit 127) and pdftoppm is not usable. Every input PDF is pre-extracted with pymupdf (sort=True) to a page-marked .txt BESIDE the PDF ('[page N]' = PDF page number). Zero-width spaces in the transcript text layer are converted to spaces. Stages and verifiers read the .txt; anchors cite the PDF with the page number. Image-only pages are listed above and rendered to PNG; a stage that needs one reads the PNG with the Read tool. FY26 AR pages are mixed portrait and landscape (612x792, 420x595, 595x420), no two-page spreads."
+freshness_pairs:
+  - pair: "RESULTS to CONCALL"
+    trigger_doc: "inputs/results/AVIENBIO_25082026235308_Revised_CFS_Result_Upload_File_25-08-2026_Originally_Signed.pdf (H2 / FY26, year ended 31-Mar-2026)"
+    mate_expected: "H2 FY26 earnings call transcript"
+    status: PASS
+    missing_doc: ""
+    mate_found: "inputs/concalls/Concall_Jul_2026_Transcript.pdf (H2 and FY26 call held 24-Jul-2026). Pair would be skipped in no-concall mode; the mate is present anyway."
+  - pair: "RATING BULLETIN to RATIONALE"
+    trigger_doc: "none (no rating bulletin; unrated issuer)"
+    mate_expected: "n/a"
+    status: PASS
+    missing_doc: ""
+    note: "No bulletin present, so no pair to fail. The absence of any rating is recorded under input_gaps."
+  - pair: "SEBI ORDER to ORDER TEXT"
+    trigger_doc: "none"
+    mate_expected: "n/a"
+    status: PASS
+    missing_doc: ""
+    note: "No SEBI order referenced in the AR or RHP text (RHP: promoter group companies not restrained by any SEBI order). Stage 8 re-checks on the web."
+  - pair: "AR to LATEST AUDITED ANNUAL RESULTS"
+    trigger_doc: "inputs/results/ FY26 audited results (17-Jul-2026; revised consolidated 25-Aug-2026)"
+    mate_expected: "FY26 Annual Report"
+    status: PASS
+    missing_doc: ""
+    mate_found: "inputs/annual-report/Annual_Report_FY2026_Avience.pdf (FY2025-26, 7th AGM notice dated 07-Sep-2026, filed 08-Sep-2026)"
+freshness_verdict: FRESHNESS PAIRS OK
+corpus_verdict_hint: "CORPUS GAPPED (no rating, one own transcript, two peers with one transcript each, RHP restated statements and most deck slides image-only, no research); freshness pairs OK"
+operator_pause: "EMPTY-FOLDER CONFIRMATION suppressed by /step1 AUTONOMY CONTRACT; standing answer 'proceed with the gaps'. Empty folders: rating/, research/. Thin: concalls/ (1), peer-concalls/ (6 of 12)."
+promoters: "Dharam Deo Choudhary (CMD, DIN 02804625), Ram Nagina Choudhary, Janardan Pal, Deepa Choudhary (per RHP / IPO summaries; stage 8 confirms from the RHP 'Our Promoters' chapter). Pre-IPO 87.89%, post-IPO 64.59%."
+corpus_manifest:
+  - {path: inputs/annual-report/Annual_Report_FY2026_Avience.pdf, issuer: Avience Biomedicals Ltd, type: "Annual Report FY2025-26 + 7th AGM notice (standalone and consolidated statements)", period: FY26, folder_match: yes}
+  - {path: inputs/prospectus/RHP_Avience_Biomedicals_Jun2026.pdf, issuer: Avience Biomedicals Ltd, type: "Red Herring Prospectus, NSE Emerge IPO (restated FY23-FY25 and 10M to 31-Jan-2026)", period: "Jun-2026", folder_match: yes}
+  - {path: inputs/results/AVIENBIO_17072026014256_Audited_Financial_Results_31032026_Avience.pdf, issuer: Avience Biomedicals Ltd, type: "Board outcome + audited standalone and consolidated results H2/FY26 (image-only)", period: "H2 / FY26", folder_match: yes}
+  - {path: inputs/results/AVIENBIO_27072026143021_Audited_Financial_Results_31032026_Avience-ocr.pdf, issuer: Avience Biomedicals Ltd, type: "same results, OCR text copy filed 27-Jul-2026", period: "H2 / FY26", folder_match: yes}
+  - {path: inputs/results/AVIENBIO_25082026235308_Revised_CFS_Result_Upload_File_25-08-2026_Originally_Signed.pdf, issuer: Avience Biomedicals Ltd, type: "Board outcome 25-Aug-2026 + REVISED audited consolidated results + audit report (note 8: elimination error)", period: "H2 / FY26", folder_match: yes}
+  - {path: inputs/concalls/Concall_Jul_2026_Transcript.pdf, issuer: Avience Biomedicals Ltd, type: transcript, period: "H2 / FY26 (call 24-Jul-2026)", folder_match: yes}
+  - {path: inputs/presentation/Investor_Presentation_1.pdf, issuer: Avience Biomedicals Ltd, type: "investor presentation (23 of 29 pp image-only)", period: "H2 / FY26 (24-Jul-2026)", folder_match: yes}
+  - {path: inputs/shareholding/NSE_SHP_AVIENCE_24Jun2026_revised16Jul2026.xml, issuer: "Avience Biomedicals Ltd (NSE XBRL)", type: "shareholding pattern filing + flat .txt dump", period: "as on 24-Jun-2026", folder_match: yes}
+  - {path: "inputs/announcements/*.pdf (11)", issuer: Avience Biomedicals Ltd, type: "Reg 30 / LODR filings", period: "21-Jul-2026 to 23-Sep-2026", folder_match: yes}
+  - {path: inputs/other/NSE_General_Information_Document_GID_Avience.pdf, issuer: "NSE / issuer GID (IPO)", type: "general information document", period: "Jun-2026", folder_match: "other (never consumed)"}
+  - {path: "inputs/peer-concalls/QLINE-Concall_Jun_2026_Transcript.pdf", issuer: Q-Line Biotech Ltd, type: transcript, period: "H2 / FY26 (call 23-Jun-2026)", folder_match: yes}
+  - {path: "inputs/peer-concalls/MOLBIO-Concall_Sep_2026_Transcript.pdf", issuer: Molbio Diagnostics Ltd, type: transcript, period: "Q1 FY27 (call 08-Sep-2026)", folder_match: yes}
+  - {path: "inputs/peer-concalls/TARSONS-*.pdf (4)", issuer: Tarsons Products Ltd, type: transcripts, period: "Nov-2025 to Aug-2026 filings (stage 6 confirms quarters)", folder_match: yes}
+  - {path: "inputs/screening/{screener,QLINE,MOLBIO,TARSONS}-Data_Sheet.csv", issuer: screener.in, type: "raw financial data sheet", period: "annual (AVIENCE FY24-FY26 consolidated)", folder_match: yes}
+flags: []
+analyst_note: "Recently listed NSE SME (25-Jun-2026): the RHP is the backward baseline, and its restated statements are image-only (render PNGs). FY26 consolidated results were revised once for a consolidation elimination error. Filings in INR lakh; screener in INR Cr. Half-yearly filer: no quarterly series exists."

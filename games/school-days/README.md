@@ -677,6 +677,12 @@ All of them are on the big map (G).
   sports kit, summer clothes, warm jacket or night pajama. At school and at
   work you still wear the uniform; the choice resets each morning.
 
+## Fixes (v49)
+
+- City stay events: from Day 2 on, the answer buttons did nothing. Fixed.
+- While you are away on a trip, your own home (and family) cannot be
+  entered; your family is back in Suryanagar.
+
 ## Files
 
 - `index.html` the whole game. Open it in a browser.

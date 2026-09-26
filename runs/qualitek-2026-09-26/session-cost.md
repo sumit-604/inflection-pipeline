@@ -21,3 +21,4 @@ not split input/output, so in_tok/out_tok read n/a).
 | 12b | verifier B red flags (no-concall mode) | claude-opus-5-5 | default | n/a | n/a | 221189 | 8m36s | 1 |
 | 12c | verifier C framework (phase-1 half) | claude-opus-5-5 | default | n/a | n/a | 113444 | 4m25s | 1 |
 | 12d | verifier D peers | claude-sonnet-5 | default | n/a | n/a | 353830 | 4m15s | 1 |
+| 5 | concall analysis rework (cycle 1, B12b findings) | claude-sonnet-5 | default | n/a | n/a | 189126 | 9m57s | 2 |

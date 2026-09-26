@@ -1,0 +1,94 @@
+stage: B00-inputs
+company: YASHHV
+company_name: Yash Highvoltage Ltd
+run_date: 2026-09-26
+model: orchestrator (inline, claude-opus-5-5 session)
+status: complete
+run_mode: 'step1 intake (autonomy contract: peer-selection and empty-folder pauses suppressed; standing answer "proceed with the gaps")'
+spear_gate: "PASS - Spear: OVERRIDE 2026-09-26 (operator standing ruling 2026-09-05: Step-1 intake replaces the web spear), companies/YASHHV.md"
+first_verification_priority:
+  - "LBF1 Guidance vs delivery: FY27 invoicing guide Rs 360-400 cr against Rs 400 cr order book (Mar-2026), claimed independent of the new plant; test against Savli capacity (7,272 units FY26)."
+  - "LBF2 Cash conversion: CFO Rs 9 cr vs PAT Rs 37 cr, FCF Rs -50 cr FY26 (screener, SECONDARY); split into receivables, inventory, capex; customer concentration and receivable days."
+  - "LBF3 Restatement and controls: FY25 and H1FY26 columns labelled RESTATED in the FY26 results; Rs 2.10 cr cyber fraud booked as exceptional H2FY26; Company Secretary change May-2026."
+  - "LBF4 Import substitution: RIP/RIS cores imported today; new Vadodara plant (Rs 153 cr, ~6,000 units/yr) localises them and extends to 550 kV; test against Hitachi Energy and Quality Power commentary."
+company_memory: "companies/YASHHV.md (step1 intake; memory, never evidence) + runs/yashhv-2026-09-26/step1-business-brief.md"
+listed_date: 2024-12-19
+recently_listed: true
+reporting_cadence: "half-yearly (BSE SME). No quarterly results exist; periods are H1 (Apr-Sep) and H2 (Oct-Mar)."
+sector_cap_row: "Cables / Industrial products"
+sector_cap_row_cap: 25x
+sector_cap_row_evidence: "Transformer bushings are an engineered industrial component sold to transformer OEMs and utilities (RHP business overview; FY26 deck). The Section 1B cap table has no electrical-equipment or T&D row; Cables / Industrial products is the nearest industrial-component row. Alternative reading: EV charging / energy transition equipment (28x), on the grid-capex end market. Collector guess Pharma / CDMO rejected. Cite: .claude/skills/section-1b/references/05-sector-cap.md, Sector cap table. Phase 3 confirms."
+reporting_units:
+  results: "INR lakh (face of FY25, H1FY26 and FY26 results statements)"
+  annual_report: "INR lakh (AR FY26 financial statements; a few narrative figures in crore)"
+  prospectus: "INR lakh (restated financial information)"
+  presentation: "INR crore"
+  screener: "INR crore"
+  note: "Convert once at stage 10, arithmetic shown. 1 crore = 100 lakh."
+concall_quarter_map:
+  - {file: inputs/concalls/Concall_Jan_2025_Transcript.pdf, period: "H1FY25 results call (meeting 11-Jan-2025, filed 21-Jan-2025)"}
+  - {file: inputs/concalls/Concall_Jun_2025_Transcript.pdf, period: "FY25 / H2FY25 results call (filed 02-Jun-2025)"}
+  - {file: inputs/concalls/Concall_Oct_2025_Transcript.pdf, period: "H1FY26 results call (filed 23-Oct-2025)"}
+  - {file: inputs/concalls/Concall_May_2026_Transcript.pdf, period: "FY26 / H2FY26 results call (meeting 14-May-2026, filed 19-May-2026)"}
+inventory:
+  prospectus: ["inputs/prospectus/2024-12_RHP_YASHHV_BSE-SME.pdf (RHP dated 06-Dec-2024, 412p; pp.174, 405-412 image-only)"]
+  annual-report: ["inputs/annual-report/Annual_Report_2026.pdf (FY26, 222p, filed 11-Aug-2026; pp.8, 40, 218-222 image-only)", "inputs/annual-report/Annual_Report_2025.pdf (FY25, 54p, filed 18-Aug-2025; pp.52-53 image-only)"]
+  results:
+    - "inputs/results/2026-05-13_FY26_audited_results.pdf (H2FY26 + FY26 audited, standalone and consolidated; statement pages 4-22 image-only)"
+    - "inputs/results/2026-05-15_FY26_auditors_report.pdf (auditor's report on FY26 results; pages 2-29 image-only)"
+    - "inputs/results/2025-10-10_H1FY26_unaudited_results_press-release.pdf (H1FY26; pages 2-13 image-only)"
+    - "inputs/results/2025-05-20_FY25_audited_results.pdf (FY25 audited; pages 3-10 image-only)"
+  rating: []
+  concalls: ["4 transcripts, see concall_quarter_map; stage 5 uses the 3 most recent (Jun-2025, Oct-2025, May-2026), Jan-2025 available for the guidance trail"]
+  peer-concalls:
+    - "QPOWER: Nov-2025 (Q2FY26), Feb-2026 (Q3FY26), May-2026 (Q4FY26), Aug-2026 (Q1FY27)"
+    - "POWERINDIA: Nov-2025, Feb-2026, Jun-2026, Aug-2026"
+    - "VILAS: Nov-2024 (H1FY25), May-2025 (FY25), Nov-2025 (H1FY26), May-2026 (FY26)"
+  announcements: "31 BSE filings, 20-May-2025 to 17-Sep-2026 (results-adjacent, Sukrut acquisition updates, cyber fraud x2, CS resignation/appointment, ESOP allotments, preferential issue board outcome/EGM notice/EGM outcome/allotment, SAST 29(1), AGM notice and outcome, US representation agreement, press releases)"
+  shareholding: ["inputs/shareholding/2026-03-31_shareholding-pattern.pdf (half-yearly, Mar-2026)", "inputs/shareholding/2025-09-30_shareholding-pattern.pdf (Sep-2025)"]
+  research: []
+  screening: ["screener-Data_Sheet.csv (consolidated, FY25-FY26)", "screener-standalone-Data_Sheet.csv (standalone, FY20-FY26)", "QPOWER-Data_Sheet.csv", "POWERINDIA-Data_Sheet.csv", "VILAS-Data_Sheet.csv"]
+  presentation: ["inputs/presentation/2026-05-13_investor-presentation_FY26.pdf", "inputs/presentation/2025-10-11_investor-presentation_H1FY26.pdf"]
+  other: []
+pre_extraction: "Every inputs/ PDF pre-extracted to page-marked text at work/extracted/<folder>/<name>.txt ('[page N]' markers). Image-only pages (scanned results statements, auditor's report, board outcome) extracted as images at work/extracted/<folder>/<name>_pages/page-NNN.jpg; read them with the Read tool. No OCR is installed. Stages and verifiers read the .txt and the page images, never re-render PDFs."
+corpus_manifest:
+  - {path: inputs/prospectus/2024-12_RHP_YASHHV_BSE-SME.pdf, issuer: Yash Highvoltage Ltd, type: RHP, period: "Dec-2024 (restated to Jun-2024)", folder_match: true}
+  - {path: inputs/annual-report/Annual_Report_2026.pdf, issuer: Yash Highvoltage Ltd, type: annual report, period: FY26, folder_match: true}
+  - {path: inputs/annual-report/Annual_Report_2025.pdf, issuer: Yash Highvoltage Ltd, type: annual report, period: FY25, folder_match: true}
+  - {path: inputs/results/2026-05-13_FY26_audited_results.pdf, issuer: Yash Highvoltage Ltd, type: audited results, period: "H2FY26/FY26", folder_match: true}
+  - {path: inputs/results/2026-05-15_FY26_auditors_report.pdf, issuer: Yash Highvoltage Ltd, type: auditor's report on results, period: FY26, folder_match: true}
+  - {path: inputs/results/2025-10-10_H1FY26_unaudited_results_press-release.pdf, issuer: Yash Highvoltage Ltd, type: unaudited results, period: H1FY26, folder_match: true}
+  - {path: inputs/results/2025-05-20_FY25_audited_results.pdf, issuer: Yash Highvoltage Ltd, type: audited results, period: "H2FY25/FY25", folder_match: true}
+  - {path: inputs/concalls/*, issuer: Yash Highvoltage Ltd, type: transcripts, period: "see concall_quarter_map", folder_match: true}
+  - {path: "inputs/peer-concalls/QPOWER-*", issuer: Quality Power Electrical Equipments Ltd, type: transcripts, period: "Q2FY26-Q1FY27", folder_match: true}
+  - {path: "inputs/peer-concalls/POWERINDIA-*", issuer: Hitachi Energy India Ltd, type: transcripts, period: "Nov-2025 to Aug-2026", folder_match: true}
+  - {path: "inputs/peer-concalls/VILAS-*", issuer: Vilas Transcore Ltd, type: transcripts, period: "H1FY25-FY26", folder_match: true}
+  - {path: inputs/presentation/*, issuer: Yash Highvoltage Ltd, type: investor presentations, period: "H1FY26, FY26", folder_match: true}
+  - {path: inputs/shareholding/*, issuer: Yash Highvoltage Ltd, type: shareholding pattern (company-hosted copy of exchange filing), period: "Sep-2025, Mar-2026", folder_match: true}
+  - {path: inputs/announcements/*, issuer: Yash Highvoltage Ltd, type: Reg 30 filings, period: "May-2025 to Sep-2026", folder_match: true}
+document_moves:
+  - "removed inputs/presentation/Investor_Presentation_1.pdf: byte-identical (md5) to 2026-05-13_investor-presentation_FY26.pdf"
+  - "removed inputs/announcements/2026-05-13_board-outcome_FY26.pdf: byte-identical to inputs/results/2026-05-13_FY26_audited_results.pdf"
+  - "removed inputs/announcements/20260811-5e90b78d-...pdf: the FY26 annual report filing, duplicate of inputs/annual-report/Annual_Report_2026.pdf"
+freshness_pairs:
+  - {pair: "RESULTS to CONCALL", trigger_doc: inputs/results/2026-05-13_FY26_audited_results.pdf (H2FY26), mate_expected: "H2FY26 concall", status: PASS, missing_doc: ""}
+  - {pair: "RATING BULLETIN to RATIONALE", trigger_doc: "none (no rating bulletin in corpus; no rating referenced in RHP or ARs)", mate_expected: "n/a", status: PASS, missing_doc: ""}
+  - {pair: "SEBI ORDER to ORDER TEXT", trigger_doc: "none (no SEBI order referenced; grep of all extracted text)", mate_expected: "n/a", status: PASS, missing_doc: ""}
+  - {pair: "AR to LATEST AUDITED ANNUAL RESULTS", trigger_doc: inputs/results/2026-05-13_FY26_audited_results.pdf (FY26), mate_expected: "FY26 AR", status: PASS, missing_doc: ""}
+freshness_verdict: FRESHNESS PAIRS OK
+corpus_verdict: CORPUS GAPPED
+input_gaps:
+  - "rating/: EMPTY. No credit rating rationale found (web search of CRISIL/CARE/ICRA/Acuite/Infomerics; none referenced in RHP or ARs). Company may be unrated. Stage 10 rating_wc_quote will be unresolved."
+  - "research/: EMPTY. No broker notes. No effect on anchored evidence."
+  - "shareholding/: latest pattern in corpus is 31-Mar-2026. The 07-Aug-2026 preferential allotment (12,62,131 shares + 8,32,177 warrants at Rs 721) changes the holding; no post-allotment pattern in corpus. Screener shows promoter 54.79%, FII 2.17%, DII 8.99% (Aug-2026, SECONDARY)."
+  - "results/: statement pages are scanned images (no text layer, no OCR). Stages read work/extracted/results/*_pages/*.jpg visually."
+  - "results/: no quarterly results exist (SME half-yearly reporter). Only 3 results periods in corpus (FY25, H1FY26, FY26); H1FY25 results (09-Jan-2025) not collected."
+  - "screening/: collector warning (verbatim): screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance Sheet, screener:Cash Flow, screener:Customization, QPOWER:Profit & Loss, QPOWER:Quarters, QPOWER:Balance Sheet, QPOWER:Cash Flow, QPOWER:Customization, POWERINDIA:Profit & Loss, POWERINDIA:Quarters, POWERINDIA:Balance Sheet, POWERINDIA:Cash Flow, POWERINDIA:Customization, VILAS:Profit & Loss, VILAS:Quarters, VILAS:Balance Sheet, VILAS:Cash Flow, VILAS:Customization. Data_Sheets carry the series. Standalone screener-standalone export has the same empty sheets."
+  - "screening/: consolidated Data_Sheet covers FY25-FY26 only (subsidiary/JV from FY25-26); the 7-year history (FY20-FY26) is standalone only."
+  - "collector warning (verbatim): shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend. [REPAIRED at step1: Sep-2025 and Mar-2026 patterns added from yashhv.com]"
+  - "collector warning (verbatim): no results PDFs yet (screener has none): add later on github or locally + --push-again [REPAIRED at step1: 3 results filings + auditor's report from BSE]"
+  - "collector warning (verbatim): no rating PDF yet: add later the same way [NOT REPAIRED: none found]"
+  - "results/: FY26 results label FY25 and H1FY26 comparatives RESTATED; the restatement reason must come from the AR FY26 / auditor's report."
+empty_folder_confirmation: "Suppressed by /step1 autonomy contract. Standing answer: proceed with the gaps. Empty folders at stage 0: rating, research, other. Not asked."
+flags: []
+analyst_note: "SME half-yearly reporter listed Dec-2024, so the backward baseline runs FY20-FY26 standalone (screener) plus restated RHP financials, and only two consolidated years. Results are in lakh and scanned; every stage must read the page images for statement figures."

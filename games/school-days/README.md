@@ -707,6 +707,19 @@ All of them are on the big map (G).
 - Each city has its own minimap and big map (G). Tap a place on the big
   map and the compass points to it. Back home, Suryanagar's maps return.
 
+## Staying away stays away (v52)
+
+- Sleeping in another city no longer sends you home. At night, the Grand
+  Hotel in that city has a room (₹300). You wake up in the same city.
+- Close or reload the game while away, and you come back in that city.
+- While away, the clock says "In <city>" and the goals are about that
+  city, never "go to work" in Suryanagar.
+- The airport or station in every city has a "Fly home" or "Take the
+  train home" spot. Go home any time.
+- Pilot and loco duty: after landing, pick "Get off and explore". You walk
+  the real city, go inside its landmark, then go back to the cockpit or
+  engine for the return trip.
+
 ## Files
 
 - `index.html` the whole game. Open it in a browser.

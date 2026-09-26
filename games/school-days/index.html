@@ -748,7 +748,7 @@ import * as THREE from 'three';
    label goes through L(). The voice follows the language.
    Questions and answers stay in English for now.
    ============================================================ */
-const GAME_VERSION = "v51";
+const GAME_VERSION = "v52";
 const LANGS = {
   en: { name: "English", voice: "en-IN" },
   hi: { name: "हिन्दी", voice: "hi-IN" },
@@ -6760,6 +6760,7 @@ class Game {
     // Picking up a saved day: start where the day left off.
     if (this.phase === "school" || this.phase === "over") { this.player.group.position.set(SCHOOL.gate.x, 0, SCHOOL.gate.z + 4); this.player._placeCamera(1); }
     else if (this.phase === "evening" || this.phase === "night") { if (!this.world.currentRoom) this._enterRoom(this.world.doors.find((d) => d.label === "Our Home")); }
+    if (this.progress.away && this.progress.away.city) { try { const aw = this.progress.away; if (this.world.currentRoom) this._exitRoom(); const Z = this._enterCityZone(aw.city, aw.via); const h = Z.places.hotel.door; this.player.group.position.set(h.x, 0, h.z + 2); this.player._placeCamera(1); this._showLandmark && this._zoneLandmark(aw.city); this._awayObjective(); showToast(L("📍 You are still in {c}.", { c: aw.city }), 3000, "good"); } catch (e) { delete this.progress.away; } }
     this.ui.refreshRank();
     requestAnimationFrame(this._loop);
     window.addEventListener("resize", () => this._onResize());
@@ -6795,6 +6796,7 @@ class Game {
   clockText() {
     const p = this.phase;
     if (this.working && this._onDuty) return `${L("On duty")} · ${L("Case {n} of 5", { n: this._onDuty })}`;
+    if (this._zone) { const t = (p === "over" || p === "evening") && this._tmin != null ? this._clockFmt().split(" · ")[0] : p === "night" ? "9:00 PM" : "8:00 AM"; return `${t} · 📍 ${L("In {c}", { c: this._zone.city })}`; }
     if ((p === "over" || p === "evening") && this._tmin != null) return this._clockFmt();
     if (this.working) { const job = JOBS.find((j) => j.id === this.progress.job); return p === "morning" ? (this.isSunday() ? "8:00 · Sunday" : `8:00 · ${L("Off to work")}${job ? ": " + job.place : ""}`) : p === "over" ? `5:00 · ${L("Work over")}` : p === "evening" ? "6:00 · At home" : "10:00 · Bedtime"; }
     if (p === "morning") return "7:00 · At home";
@@ -6902,8 +6904,9 @@ class Game {
       this._rollMissions(); if ((this.progress.rep || 0) < 0) setTimeout(() => showToast(L("⚠️ The constable is watching you. Reputation {r}. Help the colony to fix it.", { r: this.progress.rep }), 3600, "bad"), 4000);
       { const b = this.birthdayToday(); if (b) setTimeout(() => showToast(`🎂 ${L("Today is {n}'s birthday!", { n: b.name })} ${b.where === "home" ? L("Party at dinner. Buy a gift.") : b.where === "school" ? L("Wish them at school.") : L("Cake at the office. Uniformed officers: dinner at the Officers' Mess tonight.")}`, 4500, "good"), 300); }
       { const s = this.season(); setTimeout(() => showToast(s === "summer" ? L("☀️ Summer. Hot day: drink water, walk in the shade.") : s === "monsoon" ? (this.isRainy() ? L("🌧️ Monsoon. Rain today, the colony road is flooded at the corner. Umbrella!") : L("⛅ Monsoon clouds. Dry for now.")) : L("🌫️ Winter. Fog till nine. Sweater on."), 3600), 600); this.applyOutfit(); }
-      if (!this.world.currentRoom) this._enterRoom(this.world.doors.find((d) => d.label === "Our Home"));
-      if (this.isSunday()) this.setObjective(this.working ? L("Sunday! No work today. Drive, play in the park, or cricket at the Stadium Ground with Papa.") : L("Sunday! No school. Cricket with Papa at the Stadium Ground (E at the pitch), or play in the park."), this.world.stadium.batX, this.world.stadium.z);
+      if (!this.world.currentRoom && !this._zone) this._enterRoom(this.world.doors.find((d) => d.label === "Our Home"));
+      if (this._zone) { /* away: the city objective is set below */ }
+      else if (this.isSunday()) this.setObjective(this.working ? L("Sunday! No work today. Drive, play in the park, or cricket at the Stadium Ground with Papa.") : L("Sunday! No school. Cricket with Papa at the Stadium Ground (E at the pitch), or play in the park."), this.world.stadium.batX, this.world.stadium.z);
       else if (!this.progress.tiffin) this.setObjective(L("Good morning! Breakfast with Maa, then pack your tiffin."), null);
       else if (false) this.setObjective(this.working ? L("Sunday! No work today. Drive, play in the park, or cricket at the Stadium Ground with Papa.") : L("Sunday! No school. Cricket with Papa at the Stadium Ground (E at the pitch), or play in the park."), this.world.stadium.batX, this.world.stadium.z);
       else if (this.working) this._workObjective();
@@ -6915,6 +6918,7 @@ class Game {
     else if (phase === "evening" && this.isDiwali() && !this.progress.diwali) { this.setObjective(L("Happy Diwali! Light the diyas at the dining table."), HOME.door.x, HOME.door.z + 2); }
     else if (phase === "evening") { this.setObjective(this.progress.homework.length ? L("Homework first: sit at your study desk at home.") : L("Dinner with the family at the dining table."), HOME.door.x, HOME.door.z + 2); }
     else if (phase === "night") this.setObjective(L("Time for bed. Press E at your bed."), null);
+    if (this._zone) this._awayObjective();
     this.ui.refreshRank();
   }
   _periodObjective() {
@@ -7008,6 +7012,7 @@ class Game {
     if (room.type === "haveli") this._haveliSetup(room);
     if (room.type === "landmark") this._landmarkInside(room);
     if (this._stay && door.index >= 9100) this._stayRoomSetup(room);
+    if (this._zone && !this._stay && door.label === "Grand Hotel") this._awayHotel(room);
     if (door.label === "Our Home") this._giftBox(room);
     if (door.label === "Our Home") this._homeExtras(room);
     if (door.label === "Our Home") this._telescopeAt(room);
@@ -7303,13 +7308,13 @@ class Game {
         { const ms = pr.missions || []; if (ms.length && ms.every((x) => x.done >= x.need)) { pr.streak = (pr.streak || 0) + 1; this.addMoney(pr.streak % 7 === 0 ? 100 : 20, L("missions streak {n}", { n: pr.streak })); } else if (ms.length) pr.streak = 0; }
         if (pr.cast) { pr.cast--; if (!pr.cast) { this.player.speedMul = 1; showToast(L("Cast off. Good as new."), 2400, "good"); } }
         if (this.working && pr.workDays && pr.workDays % 5 === 0 && pr.lastYearAt !== pr.workDays) { pr.lastYearAt = pr.workDays; this._yearPassed(); }
-        pr.day++; buildPeriods(pr.day); this._parkVehiclesHome && this._parkVehiclesHome(); pr.tiffin = null; if (this._lateNight) { pr.energy = Math.max(20, pr.energy - 25); this._lateNight = false; } this._incidentDone = false; this._monitorDone = false; this._pocketGiven = false; this._bdayWished = false; this._messDone = false; pr.sundayDone = false; pr.petHappy = Math.max(0, (pr.petHappy == null ? 70 : pr.petHappy) - 12); if (pr.petHappy < 25) showToast(L("🐕 Moti looks unwell. Feed him, or take him to the Vet Clinic."), 3600, "bad"); this._eqUsed = new Set(); this.car.atSchool = false; this.car.group.position.set(this.car.home.x, 0, this.car.home.z); this.car.group.rotation.y = 0; pr.homework = []; pr.period = 0; this._marksToday = 0; this._ateLunch = false; this._goalDone = false; this._gamesActive = false; this._shiftDone = false;
+        pr.day++; buildPeriods(pr.day); const awayZ = this._zone; if (!awayZ) this._parkVehiclesHome && this._parkVehiclesHome(); pr.tiffin = null; if (this._lateNight) { pr.energy = Math.max(20, pr.energy - 25); this._lateNight = false; } this._incidentDone = false; this._monitorDone = false; this._pocketGiven = false; this._bdayWished = false; this._messDone = false; pr.sundayDone = false; pr.petHappy = Math.max(0, (pr.petHappy == null ? 70 : pr.petHappy) - 12); if (pr.petHappy < 25) showToast(L("🐕 Moti looks unwell. Feed him, or take him to the Vet Clinic."), 3600, "bad"); this._eqUsed = new Set(); this.car.atSchool = false; this.car.group.position.set(this.car.home.x, 0, this.car.home.z); this.car.group.rotation.y = 0; pr.homework = []; pr.period = 0; this._marksToday = 0; this._ateLunch = false; this._goalDone = false; this._gamesActive = false; this._shiftDone = false;
         if (pr.day === 11) { for (const s of SUBJECT_IDS) pr.marks[s] = { cw: 0, hw: 0, fa: [], term: [] }; pr.games = []; showToast("Term 2 begins. Marks start fresh; Term 1 is on your report card.", 4000, "good"); }
         if (pr.day > 20) { pr.day = 1; for (const s of SUBJECT_IDS) pr.marks[s] = { cw: 0, hw: 0, fa: [], term: [] }; pr.games = []; showToast("A new school year! Reports are kept in your diary.", 4000, "good"); }
         saveProgress(this.profile, pr);
-        this._exitRoom(); this._enterRoom(this.world.doors.find((d) => d.label === "Our Home"));
+        this._exitRoom(); if (awayZ) { const h = awayZ.places.hotel.door; this.player.group.position.set(h.x, 0, h.z + 2); this.player._placeCamera(1); } else this._enterRoom(this.world.doors.find((d) => d.label === "Our Home"));
         this._startPhase("morning");
-        showToast(`☀️ Day ${pr.day}. Good morning!`, 3000, "good");
+        showToast(awayZ ? L("☀️ Day {d}. Good morning in {c}!", { d: pr.day, c: awayZ.city }) : `☀️ Day ${pr.day}. Good morning!`, 3000, "good");
       });
     };
     if (this.isTermDay()) this._reportCard(pr.day <= 10 ? 1 : 2, finish); else finish();
@@ -10239,7 +10244,8 @@ class Game {
     this._simClean();
     const back = trip.dest === "Suryanagar", name = this.playerName || L("Captain");
     const lines = s.kind === "fly" ? [L("🛬 Welcome to {c}! {p} passengers clap and cheer: 'Thank you, Captain {n}!'", { c: trip.dest, p: trip.pax, n: name }), L("⭐ Stars on this flight: {s} of {m}.", { s: stars, m: max }), L("💰 Pay: ₹{p}.", { p: pay })] : [L("🚉 {c} station! {p} passengers step down. The station master shakes your hand.", { c: trip.dest, p: trip.pax }), L("⭐ Stars on this run: {s} of {m}.", { s: stars, m: max }), L("💰 Pay: ₹{p}.", { p: pay })];
-    const card = openPanel(`<h2>${s.kind === "fly" ? "✈️" : "🚆"} ${back ? L("Home to Suryanagar!") : L("Arrived in {c}", { c: trip.dest })}</h2>${lines.map((l) => `<p class="job-brief">${l}</p>`).join("")}<div class="job-goal" id="sa-stars">${trip.stars.map(([ok, w]) => (ok ? "⭐ " : "✖️ ") + w).join("<br>") || ""}</div><div class="btn-row"><button class="big-btn" id="sa-go">${back ? L("Finish duty") : s.kind === "fly" ? L("✈️ Fly the return flight to Suryanagar") : L("🚆 Drive the return train to Suryanagar")}</button></div>`);
+    const card = openPanel(`<h2>${s.kind === "fly" ? "✈️" : "🚆"} ${back ? L("Home to Suryanagar!") : L("Arrived in {c}", { c: trip.dest })}</h2>${lines.map((l) => `<p class="job-brief">${l}</p>`).join("")}<div class="job-goal" id="sa-stars">${trip.stars.map(([ok, w]) => (ok ? "⭐ " : "✖️ ") + w).join("<br>") || ""}</div><div class="btn-row">${back ? "" : `<button class="big-btn" id="sa-walk">${L("🚶 Get off and explore {c}", { c: trip.dest })}</button>`}<button class="big-btn" id="sa-go">${back ? L("Finish duty") : s.kind === "fly" ? L("✈️ Fly the return flight to Suryanagar") : L("🚆 Drive the return train to Suryanagar")}</button></div>`);
+    const walk = card.querySelector("#sa-walk"); if (walk) walk.addEventListener("click", () => { closePanel(); this._dutyLayover(s.kind, { ...trip, dest: "Suryanagar", from: trip.dest, leg: 2, stars: [] }); });
     this._snap && !back && this._snap(s.kind === "fly" ? "🧑‍✈️" : "🚆", s.kind === "fly" ? `Flew SA ${trip.no} to ${trip.dest} with ${trip.pax} passengers.` : `Drove the ${trip.train} to ${trip.dest}.`);
     card.querySelector("#sa-go").addEventListener("click", () => {
       closePanel();
@@ -10249,6 +10255,17 @@ class Game {
       this.diary(s.kind === "fly" ? L("Flew to {c} and back as the Captain.", { c: trip.from }) : L("Drove the {t} to {c} and back.", { t: trip.train, c: trip.from }));
       showToast(L("✅ Duty done! Shifts: {n}.", { n: pr.shifts }), 3000, "good"); if (this.phase === "morning" || this.phase === "school") this._startPhase("over");
     });
+  }
+  // A break between the two legs: walk the real city, see its landmark, go inside, then back to the cab.
+  _dutyLayover(kind, t2) {
+    const city = t2.from, via = kind === "fly" ? "air" : "rail"; if (this.world.currentRoom) this._exitRoom(); if (this.player.riding) this.player.dismount();
+    const Z = this._enterCityZone(city, via), ax = Z.x + Z.places.arrive.x, az = Z.z + Z.places.arrive.z; this.player.group.position.set(ax, 0, az); this.player._placeCamera(1);
+    this._layover = { kind, t2 };
+    const it = { pos: { x: ax, z: az - 7 }, radius: 3.5, priority: 2, prompt: () => kind === "fly" ? L("✈️ Back to the cockpit: fly home to Suryanagar") : L("🚆 Back to the engine: drive home to Suryanagar"), activate: () => { const lo = this._layover; if (!lo) return; if (this.world.currentRoom) this._exitRoom(); this._layover = null; this._leaveCityZone(true); if (this._landmark) { this.world.scene.remove(this._landmark); this._landmark = null; } if (lo.kind === "fly") this._pilotLeg(lo.t2); else if (lo.t2.quick) this._simStart("drive", lo.t2); else this._locoLeg(lo.t2); }, _zone: true };
+    this.interactables.push(it);
+    this._cityBanner(`${kind === "fly" ? "✈️" : "🚉"} ${city}`, L("Your break before the return trip. Walk to the landmark and go inside. Come back here when you are ready."));
+    this._showLandmark(city, via);
+    if (this._landmark) this.setObjective(L("🏛️ Walk to the {n}. Then come back to the {p}.", { n: this._landmark.userData.name, p: Z.places.arrive.label }), this._lmDoor ? this._lmDoor.x : this._landmark.position.x, this._lmDoor ? this._lmDoor.z : this._landmark.position.z + 20);
   }
   _tickSim(dt) { const s = this._sim; if (!s || s.done) return; s.t += dt; if (s.kind === "fly") this._tickFly(dt); else this._tickDrive(dt); }
   // ---- The flight world: a long runway, clouds, and the destination's landmark ----
@@ -10785,17 +10802,43 @@ class Game {
     // Traffic on the avenue and people on the pavements.
     for (let i = 0; i < 8; i++) { let c; const isBus = st.bus && i % 4 === 0; try { c = isBus ? new THREE.Group() : makeRideCar(st.cars[i % st.cars.length]); } catch (e) { c = new THREE.Group(); } if (isBus) { const b = new THREE.Mesh(new THREE.BoxGeometry(2.6, 4.2, 10), M(st.bus)); b.position.y = 2.2; c.add(b); const wn = new THREE.Mesh(new THREE.BoxGeometry(2.7, 0.8, 9), M(0x1b2a3a)); wn.position.y = 3.2; c.add(wn); } const lane = i % 2 ? 3 : -3; c.position.set(-150 + i * 40, 0, lane); c.rotation.y = lane > 0 ? -Math.PI / 2 : Math.PI / 2; G.add(c); Z.cars.push({ c, lane, v: (lane > 0 ? -1 : 1) * (7 + (i % 3) * 2) }); }
     for (let i = 0; i < 16; i++) { const h = makeVillager({ shirt: st.people[i % st.people.length], trousers: [0x333333, 0x1d3557, 0x8b5a2b][i % 3], dress: i % 3 === 0, hair: [0x1d1410, 0x111111, 0xd9b779, 0x8b3a2b][i % 4] }); const alongX = i % 2 === 0, lane = (i % 4 < 2 ? 1 : -1) * (alongX ? 8 : 7.5); h.position.set(alongX ? -140 + (i * 19) % 280 : lane, 0, alongX ? lane : -140 + (i * 23) % 280); G.add(h); Z.walkers.push({ h, alongX, lane, v: (i % 3 ? 1 : -1) * (1.2 + (i % 4) * 0.25) }); }
+    { const hx = ZX + P.arrive.x, hz = ZZ + P.arrive.z - 7; Z.its.push({ pos: { x: hx, z: hz }, radius: 3.5, priority: 1, visible: () => !this._layover, prompt: () => (ap ? L("🚆 Take the train home to Suryanagar") : L("✈️ Fly home to Suryanagar")), activate: () => this._awayGoHome(), _zone: true }); }
+    this.progress.away = { city, via }; saveProgress(this.profile, this.progress);
     W.zone = { x: ZX, z: ZZ, half: 158 }; this._zoneOldStadium = W.stadium; W.stadium = Z.stadium; this.interactables.push(...Z.its);
     const mm = document.getElementById("minimap"); if (mm) mm.hidden = true; this._cityMiniShow(true);
     return Z;
   }
   _leaveCityZone(quiet) {
-    const Z = this._zone; if (!Z) return; this._zone = null;
+    const Z = this._zone; if (!Z) return; this._zone = null; if (this.progress.away) { delete this.progress.away; saveProgress(this.profile, this.progress); }
     this.world.scene.remove(Z.group); for (const c of Z.colliders) c.off = true; this.interactables = this.interactables.filter((i) => !i._zone && !i._lm);
     if (this._landmark) { this.world.scene.remove(this._landmark); this._landmark = null; } if (this._lmCollider) { this._lmCollider.off = true; this._lmCollider = null; }
     this.world.zone = null; if (this._zoneOldStadium) this.world.stadium = this._zoneOldStadium; this._zoneOldStadium = null;
     const mm = document.getElementById("minimap"); if (mm && !this.world.currentRoom) mm.hidden = false; this._cityMiniShow(false); this._cityMapClose();
     if (!quiet) showToast(L("🏠 Back in Suryanagar!"), 2400, "good");
+  }
+  // Going home from any city at any time, from the airport or station terminal.
+  _awayGoHome() {
+    if (this._braveM) { showToast(L("🎖️ Finish the mission first. The team needs you!"), 2600, "bad"); return; }
+    if (this._stay) { this._stayCheckout(false); return; }
+    const Z = this._zone, via = Z ? Z.via : "air", mt = this._matchTrip; if (mt && mt.banner) this.world.scene.remove(mt.banner);
+    this._matchTrip = null; this._travelOutfit = null; if (this.world.currentRoom) this._exitRoom();
+    const d = this.world.doors.find((x) => x.label === (via === "rail" ? "Railway Station" : "Suryanagar Airport")); this._parkVehiclesHome();
+    if (d) { this.player.group.position.set(d.x, 0, d.z + 2.5); this.player._placeCamera(1); } this.applyUniform();
+    showToast(via === "rail" ? L("🚆 Back at Suryanagar Junction. Home again!") : L("✈️ Landed back in Suryanagar. Home again!"), 3200, "good");
+    this._startPhase(this.phase === "morning" || this.phase === "school" ? "over" : this.phase);
+  }
+  // What to do next while you are in another city: never the Suryanagar plan.
+  _awayObjective() {
+    const Z = this._zone; if (!Z || this._matchTrip || this._stay || this._layover || this._braveM) return false;
+    const h = Z.places.hotel && Z.places.hotel.door, a = { x: Z.x + Z.places.arrive.x, z: Z.z + Z.places.arrive.z - 7 };
+    if (this.phase === "night") this.setObjective(L("🌙 Night in {c}. Sleep at the Grand Hotel.", { c: Z.city }), h ? h.x : null, h ? h.z : null);
+    else if (this.phase === "evening") this.setObjective(L("🌇 Evening in {c}. Eat at the Food Street, then rest at the Grand Hotel. Or go home from the {p}.", { c: Z.city, p: Z.places.arrive.label }), h ? h.x : null, h ? h.z : null);
+    else this.setObjective(L("☀️ You are in {c}. Explore (G: city map). To go home, walk to the {p}.", { c: Z.city, p: Z.places.arrive.label }), a.x, a.z);
+    return true;
+  }
+  // Any night away from home: sleep in the city's Grand Hotel and wake up in the same city.
+  _awayHotel(room) {
+    const Z = this._zone; this.roomInteractables.push({ pos: { x: room.x0, z: room.z0 + room.d / 2 - 3.5 }, radius: 3, priority: 2, prompt: () => (this.phase === "night" ? L("🛏️ Take a room and sleep (₹300)") : L("🛏️ Hotel rooms: come back at night to sleep")), activate: () => { if (this.phase !== "night") { showToast(L("The rooms are for the night. Explore {c} first!", { c: Z ? Z.city : "" }), 2600); return; } if ((this.progress.money || 0) >= 300) this.addMoney(-300, L("hotel room")); this._sleep(); } });
   }
   _tickCityZone(dt) {
     const Z = this._zone; if (!Z) return;

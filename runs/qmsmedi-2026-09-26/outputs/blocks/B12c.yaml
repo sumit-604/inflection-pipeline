@@ -1,0 +1,51 @@
+stage: B12c
+company: "QMSMEDI"
+run_date: "2026-09-26"
+model: claude-opus-5-5
+status: complete
+scope: "PHASE 1 ONLY (Gate 0 B01 + Emerging Moat B07). Valuation audit (B10/B11), expectation ledger and narrative checks PENDING PHASE 3."
+gate0:
+  rules_checked: 40
+  fails:
+    - {rule: "B2 FCF-positive years", severity: MAJOR, reported: 5, recomputed: "0 strict (rule 5 N/A) | max 4 bounded (FY22 CFO -1.72, FY23 CFO -7.54 force negative FCF)"}
+    - {rule: "B3 cumulative FCF / cumulative PAT", severity: MAJOR, reported: 5, recomputed: "0 strict | max 3 bounded (ceiling (43.28 - 8.62) / 63.49 = 0.546)"}
+    - {rule: "E4 contingent liabilities / net worth", severity: MAJOR, reported: 0, recomputed: "5 (Rs 5.30 lakh TDS demand, Annual_Report_2026.txt Note 42 line 9442 standalone, Note 40 line 12945 consolidated; vs NW Rs 104.20 Cr = 0.05%)"}
+    - {rule: "Deal-breaker 2 (Block B < 8)", severity: MINOR, reported: "not triggered", recomputed: "triggers under strict reading (Block B = 1); cap GOOD, non-binding under AVERAGE"}
+    - {rule: "M11 tier-3 reasoning", severity: MINOR, reported: 0, recomputed: "0 or 1; report says rising selling % fails every tier, but tier 3 requires rising selling %; outcome turns on growth window (16.61% full period clears >15%, 13.54% latest 3yr does not)"}
+    - {rule: "E2 3-year window", severity: MINOR, reported: 0, recomputed: "0 (score stands); rationale 'short listing history' unsupported; correct label is 3-year-ago SHP not in corpus (only 2025-06-30, 2026-03-31, 2026-06-30 files)"}
+  recomputed_core: "48 (strict rule 5) to 55 (bounded) ; 58 if only E4 corrected"
+  recomputed_classification: "AVERAGE (unchanged in every reading)"
+emoat:
+  rules_checked: 23
+  fails:
+    - {rule: "Likelihood x impact matrix (ML/LM = 1)", severity: MAJOR, reported: "D1, D2, F2, R1 scored LM = 2", recomputed: "LM = 1; total 17.1 -> 14.25"}
+    - {rule: "Mixed-tier multiplier", severity: MINOR, reported: "F2 0.85, R1 0.6 averaged", recomputed: "no averaging rule exists in 07; state the governing tier"}
+    - {rule: "Score consistent with stated tier (B2)", severity: MINOR, reported: "MM x 1.0 (documented)", recomputed: "report states SOC2-to-contract link is inference; HEINE exclusivity also credited in H2; 1.0 at 0.5x"}
+    - {rule: "No force-fit / one item one mechanism (A1)", severity: MINOR, reported: "LL x 1.0 = 1.0", recomputed: "0; text says NO EVIDENCE FOUND for QMS, optionality only; BeamOptics MOU also credited in H1 and registered as optionality"}
+    - {rule: "Completionist recount line accuracy", severity: MINOR, reported: "5 items across 4 categories", recomputed: "6 items listed (5 moat + 1 capex); categories named are B2, H1, H2 (3) while A1 also carries a documented BeamOptics item"}
+    - {rule: "Section 5 all 23 rows shown", severity: MINOR, reported: "12 zero rows collapsed into one line", recomputed: "presentational; all 23 accounted for"}
+    - {rule: "capex_embedded_growth_pct consistent with 2C", severity: MINOR, reported: "YAML 0, text NOT FOUND", recomputed: "NOT FOUND (or 0 with 'no programme' label); pick one"}
+  recomputed_em_score: "14 (matrix fix only, rule-mandated); 12 if A1 and B2 also corrected"
+  recomputed_em_classification: "MODEST (unchanged; 12.25 sits at the 12 band floor)"
+valuation: {rules_checked: 0, fails: [], status: "PENDING PHASE 3"}
+expectation_ledger: {present: null, downside_row: null, all_rows_confirm_by: null, all_rows_metric_threshold: null, prob_in_range: null, decay_status_valid: null, off_ledger_credit: null, residual_pct_cmp: null, residual_starter_cap_ok: null, fails: [], status: "PENDING PHASE 3"}
+business_understanding_narrative: {present: null, five_questions_answered: null, prose_only: null, section6_candidates_named: null, valuation_vocab_leak: null, fails: [], status: "PENDING STAGE 13"}
+recomputed_destination_pe: ""
+recomputed_decision: ""
+findings:
+  - {severity: MAJOR, location: "01-gate0.md Block B, B2/B3", issue: "FCF metrics scored on a 2-year FY25-FY26 sub-window that holds Rs 44.86 Cr of CFO against Rs 43.28 Cr for all 8 years; rule 5 requires N/A = 0; FY22/FY23 negative CFO proves FCF negative in those years regardless of capex", recomputed: "Block B 11 -> 1 strict (DB2 fires) or <= 8 bounded; classification AVERAGE unchanged"}
+  - {severity: MAJOR, location: "01-gate0.md Block E, E4; B01 input_gaps", issue: "Contingent liability note declared absent but present (Rs 5.30 lakh TDS demand, Annual_Report_2026.txt line 9442 Note 42 and line 12945 Note 40); N/A score applied to disclosed data. Number existence is Verifier A's domain; the scoring rule is misapplied", recomputed: "E4 = 5; Block E 10 -> 15"}
+  - {severity: MAJOR, location: "07-emoat.md Section 5, rows D1/D2/F2/R1", issue: "LM scored raw 2; rule is ML/LM = 1", recomputed: "EM 17.1 -> 14.25; MODEST unchanged"}
+  - {severity: MINOR, location: "B01 deal_breakers", issue: "DB2 not recorded under the strict B2/B3 reading", recomputed: "DB2 fires, cap GOOD, non-binding"}
+  - {severity: MINOR, location: "01-gate0.md M11", issue: "tier-3 condition misread", recomputed: "0 or 1; moat count unchanged"}
+  - {severity: MINOR, location: "01-gate0.md E2 / B01 data_notes", issue: "1-year window justified by an unsupported 'short listing history'; true cause is corpus gap", recomputed: "score 0 stands"}
+  - {severity: MINOR, location: "07-emoat.md Section 5 F2/R1", issue: "averaged multipliers not in rule", recomputed: "state governing tier"}
+  - {severity: MINOR, location: "07-emoat.md B2", issue: "documented multiplier on an effect the report calls inference; HEINE double-credited with H2", recomputed: "B2 2.0 -> 1.0"}
+  - {severity: MINOR, location: "07-emoat.md A1", issue: "scored while text says NO EVIDENCE FOUND / optionality only; BeamOptics credited in A1 and H1", recomputed: "A1 1.0 -> 0"}
+  - {severity: MINOR, location: "07-emoat.md completionist recount / B07 completionist_recount", issue: "item and category counts do not reconcile with the listed items", recomputed: "restate count"}
+  - {severity: MINOR, location: "07-emoat.md Section 5 table", issue: "12 zero rows collapsed", recomputed: "presentational"}
+  - {severity: MINOR, location: "B07 capex_embedded_growth_pct", issue: "0 in YAML vs NOT FOUND in text", recomputed: "NOT FOUND"}
+critical_count: 0
+major_count: 3
+minor_count: 9
+acceptance_rate: 79.4   # 50 passed of 63 checked (gate0 34/40, emoat 16/23); phase-1 scope only

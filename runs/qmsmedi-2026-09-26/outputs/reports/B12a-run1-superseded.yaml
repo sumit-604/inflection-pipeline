@@ -1,0 +1,15 @@
+stage: B12a
+company: "QMSMEDI"
+run_date: "2026-09-26"
+model: claude-haiku-4-5
+status: complete
+numbers_checked: 21
+findings:
+  - {severity: "MAJOR", location: "B01 (Gate 0, Block D, D1 ratio)", claimed: "EBITDA Rs 25.88 Cr (consolidated FY26)", source_truth: "Rs 26.93 Cr (Annual_Report_2026.txt, consolidated P&L)", note: "Report cites EBITDA from screener at Rs 25.88 Cr; AR shows Rs 2,693.08 Lakhs = Rs 26.93 Cr. Difference Rs 1.05 Cr (~3.9%). Used in D1 Net Debt/EBITDA: reported 2.83x, correct value 2.72x. Both band as 2-3x so score unchanged, but value is inaccurate.", source_fidelity: true}
+critical_count: 0
+major_count: 1
+minor_count: 0
+false_positives_struck: 0
+material_universe: 21
+acceptance_rate: 95
+coverage_note: "Audit covered 21 material numbers: all major P&L and balance-sheet line items (revenue, borrowings, interest expense, profit, net worth, capex), derived ratios (debt/equity, interest coverage, net debt/EBITDA), and block-score inputs. One MAJOR mismatch identified in EBITDA (screener vs AR); all other 20 numbers verified clean against Annual_Report_2026.txt consolidated and standalone statements. Screener data files (ROCE, ROE source values) not in provided corpus; cannot independently verify. Critical leverage ratios (D1-D4) all depend on the EBITDA figure; this mismatch is the sole source-fidelity finding."

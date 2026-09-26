@@ -1,0 +1,17 @@
+stage: B12d
+company: "QMSMEDI"
+run_date: "2026-09-26"
+model: claude-sonnet-5
+status: complete
+peers_audited: 12
+substantive_confirmed: 12
+substantive_unsupported: []
+unused_but_relevant: []
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "MINOR", location: "B06 Part 2B / industry_cross_read.pricing_inputs", claimed: "ENTERO net working capital ~59-66 days", source_truth: "ENTERO Q1 FY27 call states 61 days, improved from 66 days a year ago; the 59-day endpoint was not independently located in this pass", note: "Non-material; direction and approximate magnitude both correct, range endpoint not traced to a specific quarter"}
+critical_count: 0
+major_count: 0
+minor_count: 1
+acceptance_rate: 100

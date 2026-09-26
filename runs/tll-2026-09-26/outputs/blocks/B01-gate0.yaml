@@ -1,4 +1,3 @@
-```yaml
 stage: B01-gate0
 company: "TLL"
 run_date: "2026-09-26"
@@ -38,4 +37,3 @@ data_notes:
   - "Peer EBITDA-margin (M2) and gross-margin-proxy (M9) medians computed from CAPLIPOINT/SENORES/INNOVACAP Data_Sheet.csv FY26 columns, same operating basis as TLL."
 block_b_trend: "deteriorating -- cumulative CFO -Rs 22.5 Cr vs cumulative PAT +Rs 47.1 Cr FY22-26 (screener-Data_Sheet.csv); Working Capital Days 151 (FY24) to 203 (FY26), +52 days (AR trade payables notes)."
 analyst_note: "LBF1 confirmed exactly against AR and screener: receivables 27.7->73.7 Cr, debtor days 116->208, CFO +4.7 Cr vs PAT 19.0 Cr FY26. LBF2 produced two new findings while checking: (1) FY26 AR Note 22's largest Other Income item is an unexplained Rs 5.41 Cr 'Claim Income' line, 58% of Other Income; (2) FY25 CFO is restated between the FY25 AR (-10.24 Cr) and the FY26 AR's FY25 comparative (-3.99 Cr), a Rs 6.26 Cr swing with no located restatement note. Both are forwarded, not resolved, per Gate 0's no-qualitative-judgment mandate. Scoring used EBIT excluding Other Income throughout (Block A, D2, M2, M3) given Other Income's large share of PBT; the all-in alternative is shown in the report and would raise A1/A2 by two bands each -- material enough that the verifier should confirm the choice."
-```

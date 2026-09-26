@@ -1,0 +1,17 @@
+stage: confidence-delta
+company: FABTECH
+run_date: "2026-09-26"
+phase: 1
+computed_by: orchestrator (00-orchestrator.md section 5; run-pipeline.md step 5)
+verifier_a_identity_check: "Run 1 carried 2 CRITICAL rows (B01 D2 depreciation and finance costs) whose claimed and source_truth values were the same after correct lakh-to-crore conversion (530.15 lakh = Rs 5.30 Cr; 415.90 lakh = Rs 4.16 Cr). Both struck as clerical errors in the finding (outputs/run-log.md). Verifier A re-invoked once with the severity addendum; run 2 governs (0 CRITICAL, 1 MAJOR)."
+components:
+  numerical_acceptance: {value: 98.6, basis: "B12a run 2: 69 clean of 70 checked", applicable: true}
+  redflag_coverage: {value: 67, basis: "B12b: material_caught 14 of material_found 21 (7 caught + 7 partially caught)", applicable: true, alternative_reading: "33% on full catches only (7 of 21). B12b states both; section 5 counts material_caught as B12b reports it. The 33% reading would fall below 60 and force REWORK; the operator should weigh which reading reflects the pipeline's concall work. Named, not substituted."}
+  framework_adherence: {value: 72.1, basis: "B12c phase-1 half: 49 of 68 rules passed (Gate 0 32/41, EM 17/27)", applicable: true, note: "valuation-adherence portion pending phase 3"}
+  peer_utilisation: {value: 83.3, basis: "B12d: 10 of 12 peer transcripts used substantively (2 cited-only, 0 unused); per-peer all 3 substantive (3 < 4 items, so the transcript count is the denominator)", applicable: true}
+overall: 67
+overall_set_by: redflag_coverage
+band: "60-74: PROCEED verdicts downgrade one level (section 5)"
+not_applicable: []
+verifier_criticals_surviving: 0
+rework_triggers: "none on the section 5 reading (no surviving Verifier A CRITICAL; every acceptance_rate >= 60). Verifier B's full-catch-only reading (33%) is recorded above as an operator-visible alternative."

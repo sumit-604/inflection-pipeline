@@ -7,3 +7,5 @@
   (2) B01 D2 finance costs: claimed Rs 4.16 Cr; B12a source_truth "Rs 41.59 Cr (4158.6 lakh)". The filing text reads "41590" = 415.90 lakh = Rs 4.16 Cr (same file, line ~242). Same value; struck.
   Cause: a 10x lakh-to-crore conversion in the verifier. Per LESSONS recurring pattern, Verifier A re-invoked once with the severity-semantics plus coverage addendum. Run-1 files kept as *-run1-superseded.
 - Verifier B returned two acceptance readings (67% counting partial catches, 33% full catches only). The orchestrator section 5 rule counts material_caught as reported by B12b (CAUGHT plus PARTIALLY CAUGHT = 14 of 21) = 67%; recorded in confidence.yaml with the 33% alternative stated so the synthesis and operator see both.
+- Verifier A run 2 (re-invoked via the same agent with the addendum): 70 figures, 0 CRITICAL, 1 MAJOR (B07 Section 1C Africa share omits Morocco; Rest of World misquoted), acceptance 98.6%. Governs.
+- Confidence delta (phase 1): overall 67, set by redflag_coverage (B12b 14/21). Band 60-74. Alternative full-catch reading 33% recorded in confidence.yaml.

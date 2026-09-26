@@ -22,3 +22,7 @@ not split input/output, so in_tok/out_tok read n/a).
 | 12c | verifier C framework (phase 1 half) | claude-opus-5-5 | default | n/a | n/a | 123277 | 5m55s | 1 |
 | 12d | verifier D peers | claude-sonnet-5 | default | n/a | n/a | 71122 | 2m53s | 1 |
 | 13 | synthesis-lite (phase 1) | claude-opus-5-5 | default | n/a | n/a | 169582 | 6m26s | 1 |
+| 1 | gate 0 scorecard (rework) | claude-sonnet-5 | default | n/a | n/a | 164494 | 8m19s | 2 |
+| 5 | concall analysis, NO-CONCALL (rework) | claude-sonnet-5 | default | n/a | n/a | 160607 | 9m26s | 2 |
+| 6 | peer concall verification (rework) | claude-sonnet-5 | default | n/a | n/a | 96407 | 6m15s | 2 |
+| 8 | promoter check (rework) | claude-sonnet-5 | default | n/a | n/a | 141306 | 6m52s | 2 |

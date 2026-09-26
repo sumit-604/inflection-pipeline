@@ -1,20 +1,179 @@
 # Stage 5 — Concall Analysis, Trident Lifeline Ltd (TLL), 2026-09-26
-## NO-CONCALL MODE (manifest concalls_available: false)
+## NO-CONCALL MODE (manifest concalls_available: false) — REWORK ROUND (run 2)
 
 No earnings-call transcript exists for TLL on BSE, Sep-2024 to Sep-2026
 (B00.input_gaps, confirmed by company memory and step1 brief). This report
 runs the degraded procedure: it reads the four investor decks (Nov-2025,
 Jan-2026, May-2026, Aug-2026), the FY26 and FY25 Annual Reports (MD&A,
-Chairman's Message, Directors' Report), the four results filings (original
-and refiled H1 sets, H2/FY26 audited, Q1 FY27 unaudited), the statement of
-deviation (IPO proceeds), and two announcements that stood in for an
-analyst-meet outcome and a price-movement clarification. `credibility_grade`
-defaults to C per the mode rule and is held at C, not raised to B (reasons
-in Section 2).
+Chairman's Message, Directors'/Board's Report), the four results filings
+(original and refiled H1 sets, H2/FY26 audited, Q1 FY27 unaudited), the
+statement of deviation, and Reg 30 filings.
 
-LOAD-BEARING FACT LBF3 (subsidiary build vs delivery, "triple consolidated
-business in three years") is this stage's first verification priority and
-is tested throughout Section 1 and 2.
+This is a REWORK run. The phase-1 gate returned REWORK on a 50% red-flag
+acceptance rate (Verifier B). Eight items are assigned to this stage:
+gate-recommendation.md items 2, 3, 5, 6, 7, 8, 9, 11. Each was re-checked
+against the primary source myself, not taken on the auditor's word. All
+eight are ACCEPTED; the source excerpts are quoted below. `credibility_grade`
+is regraded from **C to D** on this run (item 11), for the reasons in the
+CREDIBILITY GRADE section.
+
+LOAD-BEARING FACT LBF3 (subsidiary build vs delivery) remains this stage's
+first verification priority; nothing in the rework changes its status.
+
+---
+
+## REWORK RESOLUTION (items 2, 3, 5, 6, 7, 8, 9, 11)
+
+**Item 2 (CRITICAL, gate-rec caught in part -> ACCEPT, corrected).**
+Run-1 called the FY25 CFO/CFF restatement "not a deck matter". Wrong: the
+decks themselves carry it, undisclosed. Nov-2025 deck p31: FY25 "Cash from
+Operating Activities" **-349.31**, CFF **747.12** (20251113 deck line 669,
+675). Jan-2026 deck p31: same figures repeated (20260120 deck carries the
+identical table structure). May-2026 deck p31: FY25 CFO **+197.07**, CFF
+**200.73**, no note (20260509 deck line 644, 650). The FY26 results
+cash-flow statement shows why: "Add: Changes in Working Capital Facilities"
+of **920.49 (FY26) / 545.38 (FY25)** is added inside "Cash Generated from
+Operations" before "Net Cash Flow from Operating Activities" (20260507-FY26
+-H2-results.txt p8, lines 373-389). Net Cash from Operating Activities FY25
+= 197.07; FY25 CFO *before* that addback ~= 197.07 - 545.38 = **-348.31**,
+matching the Nov/Jan decks' -349.31 within rounding. The two earlier decks
+reported FY25 CFO on the basis *excluding* the working-capital-facilities
+addback; the May-2026 deck switched, with no note, to the as-filed basis
+that *includes* it. This is a within-company, undisclosed change of
+cash-flow basis across two of TLL's own investor decks, not merely an
+AR-level presentation question. It bears directly on the Pillar 2
+cash-conversion input and on this stage's credibility grade. **ACCEPTED,
+carried into the grade below.**
+
+**Item 3 (MAJOR, gate-rec caught in part -> ACCEPT, corrected).**
+Run-1 said the standalone-revenue mislabel ("Revenue from Operations" =
+Total Income) was "silently corrected" in later documents. Wrong: the
+mislabel is *repeated* in the FY26 Board's Report itself, the highest-
+authority document in the corpus. May-2026 deck p28: "Revenue from
+Operations stood at Rs 10,607.05 lakhs" (20260509 deck lines 562-563) --
+the audited results show Sales/Income from Operations Rs 10,189.95 lakh +
+Other Income Rs 417.10 lakh = Total Income Rs 10,607.05 lakh (20260507
+results p7, "TOTAL INCOME 10,607.05", lines 5432-5436). The FY26 Board's
+Report text states: "Your Company has revenue from operations of
+Rs 10607.05 Lacs and EBITDA of Rs 2850.1 Lacs" (AR FY26 lines 1609-1614) --
+the *same* mislabelled figure, filed four months after the May-2026 deck,
+in the statutory report to shareholders. Separately, the Aug-2026 deck's
+own "Income Statement" table (p32-33) correctly states standalone FY26
+revenue from operations at Rs 101.9 Cr and shows *operating* EBITDA margin
+**falling** from 25.8% to 23.9% (-187 bps) even as the May-2026 deck called
+margins "stable at 27%" on the total-income basis (20260803 deck lines 723,
+1008; 20260509 deck line 559). Run-1 found one instance and called it
+corrected; there are at least three total-income-as-revenue instances
+(Nov-2025 deck p29, Jan-2026 deck p29, May-2026 deck p28) plus the Board's
+Report repeat, and the margin-direction effect (stable vs falling,
+depending on basis) was missed entirely. **ACCEPTED, corrected and
+expanded.**
+
+**Item 5 (MAJOR, gate-rec missed -> ACCEPT).**
+Q1 FY27 results, standalone P&L note, shows "Depreciation and Amortization
+Expenses" across four columns as **69.81 / 4.15 / 51.19 / 185.93** (20260729
+results, line 124; read as Q1 FY27 / Q4 FY26 / Q1 FY26 / FY26 full year).
+Q4 FY26 D&A of 4.15 sits against Q3 FY26's 71.23 (Jan-2026 deck p27, line
+532) and Q1 FY27's own 69.81 -- a one-quarter collapse to near zero with no
+note anywhere in the corpus. Separately, the Jan-2026 deck's 9M FY26 PBT of
+**1,667.60** (20260120 deck line 565) does not equal H1 FY26 PBT of
+1,110.46 (20251113 deck line 570) plus Q3 FY26 PBT of 592.39 (20260120 deck
+line 534): 1,110.46 + 592.39 = 1,702.85, a gap of **35.25**. Run-1's
+promise-delivery tracker cited the 9M figures without testing the
+arithmetic. **ACCEPTED.**
+
+**Item 6 (MAJOR, gate-rec missed -> ACCEPT).**
+FY26 results note 8: "The Board of Directors have decided to Change the
+Method of Consolidation of Financial Statements from Proportionate Method
+to Equity Method as per AS-21. However, the change ... do[es] not have
+material impact on the Audited Financial Statements" (20260507 results
+lines 861-864). The Q1 FY27 results still describe consolidating "the
+above-mentioned portion of Assets and Liabilities" of the five subsidiaries
+(20260729 results lines 366-369), the language of proportionate
+consolidation, not equity method. The Q1 FY27 auditor's review report cites
+"Indian Accounting Standard 34 'Interim Financial Reporting'" (20260729
+line 228) while the results themselves state preparation under "Indian
+GAAP" (20260507 line 424-427; TLL is not an Ind AS filer). This basis
+confusion sits under the consolidated margin story the AR's own MD&A tells:
+cost of materials rose 68% against 48% revenue growth, taking gross margin
+down 690 bps to 40.7%, "more than offset by operating leverage in
+overheads, with employee benefits expense down 11% to Rs 10.8 crore and
+other expenses down 5% to Rs 13.7 crore," lifting EBITDA margin 470 bps to
+21.8% (AR FY26 MD&A, lines 1284-1291) -- even as the *standalone* operating
+EBITDA margin fell 187 bps (Aug-2026 deck, above). A consolidated cost base
+falling in absolute rupees while revenue rises 48% is consistent with a
+change in which entities and what share of their costs get pulled into the
+consolidated numbers; the company's own "no material impact" line has not
+been tested by anyone in this pipeline. This is not settled here -- it is
+a live, unresolved question for Stage 11/FTTCP, not an input to be waved
+through on the "no material impact" assertion. **ACCEPTED.**
+
+**Item 7 (MAJOR, gate-rec missed by stage 5 -> ACCEPT).**
+AR FY26 consolidated Note 22 lists "Claim Income" of **541.05 (FY26) /
+522.17 (FY25)** (lines 12437-12439), a line item separate from "Other
+Income" (4.70 / 0.35, line 12434-12436). Against consolidated PBT of
+2,719.28 (FY26) and 1,361.49 (FY25) (AR lines 13080-13083, 13172-13175 --
+restated across the ratio tables), Claim Income is **19.9% of FY26 PBT and
+38.4% of FY25 PBT**. The AR MD&A's own text: "Profit before tax doubled to
+Rs 27.2 crore from Rs 13.6 crore" (AR FY26 MD&A, line 1292) never names
+Claim Income, nor does the Chairman's Message. Run-1's Section 2D flagged
+only the LLP corporate guarantees as a narrative gap; it did not find Claim
+Income at all, despite the note sitting inside the same AR this stage
+already read for other purposes. **ACCEPTED.**
+
+**Item 8 (MAJOR, gate-rec caught in part -> ACCEPT, corrected).**
+AR FY26 MD&A: registrations by region are Africa 64%, Asia 21%, Latin
+America / CIS the balance (AR lines 404-405, 419), described near AR p17
+(lines 782-791) as the company's own clearest read of future revenue. The
+*export revenue* region split for FY26 is the inverse: "Asia became the
+largest [export destination] at roughly 57% of export revenue, followed by
+Africa at 25% and South America at 17%, a change from FY25 when South
+America led" (AR lines 1263-1267). Domestic sales, which need no export
+registration at all, rose from 30% to approximately 49% of total revenue
+and are credited in the same paragraph to "widening sales and marketing
+reach" (AR lines 1263-1272), not to the registration pipeline. Registered
+products rose by only 30 in the six months from Sep-2025 (1,061) to
+Mar-2026 (1,091) (Nov-2025 deck p5; May-2026 deck p5). Run-1's Section 1C
+noted the domestic-mix shift and called the strategic-priorities slide
+"templated" but never set the registration-by-region split against the
+export-revenue-by-region split, which is the direct test of the "clearest
+indicator" framing, and the test fails: the region where registrations are
+concentrated (Africa, 64%) is not the region driving revenue (Asia is the
+largest export destination, and domestic -- needing no registration --
+drove the actual FY26 growth). **ACCEPTED, added as a new finding.**
+
+**Item 9 (MAJOR, gate-rec missed -> ACCEPT).**
+Nov-2025 deck p15: "ointments being the second largest category which
+accounts for 36% of the revenue" (toothpaste/mouthwash/ointments, line
+278-279). May-2026 deck p15: "Tablets are by far the largest product
+category, accounting for 67% of the revenue," with a second category (read
+in context as capsules) at "30% of the revenue" (lines 273-277), and states
+in the same breath: "The product mix has remained fairly-stable over the
+years with tablets contributing the highest revenue" (lines 287-288). AR
+FY26 MD&A: "The product mix has stayed broadly stable over recent years,
+with tablets consistently the leading category" (AR lines 1293-1295). The
+Aug-2026 deck's own consolidated segment chart shows Capsules rising from
+Rs 6.8 Cr to Rs 30.6 Cr (+350% cumulative per the chart labels) and
+"Others" (the toothpaste/mouthwash/ointment/suspension/syrup bucket)
+falling from Rs 49.0 Cr to Rs 30.1 Cr (-38%) (20260803 deck lines 816-828).
+A category moving from 36% of standalone revenue to roughly 1% (per run-1's
+own 4A/4C reading of the same Aug-2026 deck slide, now cross-checked) while
+another rises 350% is not "fairly stable" or "broadly stable" by any
+reading, and the claim is repeated three times (two decks plus the AR)
+against the company's own segment data each time. Run-1 never set the
+"stable" language against the segment chart. **ACCEPTED.**
+
+**Item 11 (Credibility grade -> REGRADED C to D, with basis).**
+See CREDIBILITY GRADE AND RATIONALE below.
+
+**No peer_questions[] change.** None of items 2, 3, 5, 6, 7, 8, 9 or 11
+surfaces a new claim that requires a peer cross-check the existing six
+questions do not already cover (debtor days / registration-conversion /
+injectable-ramp / pricing / industry-growth questions stand, and stage 6
+already consumed this list). Item 8 (registration-thesis vs export-region
+mismatch) is an internal-consistency finding, not a peer-verifiable one, so
+it does not generate a seventh question. **peer_questions[] unchanged from
+run 1.**
 
 ---
 
@@ -25,182 +184,305 @@ is tested throughout Section 1 and 2.
 | Trigger | Type | Timeframe | Confidence | Specificity | Classification |
 |---|---|---|---|---|---|
 | "Triple our consolidated business over the next three years" | Both | Long (FY26 base to ~FY29) | Aspirational | Numeric target, no path/milestone schedule given | SECTORAL/VOLUME |
-| TNS Pharma reaches peak revenue Rs 40 Cr, 80% utilisation, 30% steady-state EBITDA margin, 20% PAT margin | Both | Not dated | Aspirational ("peak", "steady state") | Numeric but undated | VOLUME/COST |
+| TNS Pharma peak revenue Rs 40 Cr, 80% utilisation, 30% steady-state EBITDA, 20% PAT | Both | Not dated | Aspirational | Numeric but undated | VOLUME/COST |
 | Trident Mediquip peak revenue Rs 70 Cr, 85% utilisation, 24% EBITDA, 13% PAT | Both | Not dated | Aspirational | Numeric, undated | VOLUME/COST |
-| TLL Parenterals peak revenue Rs 200 Cr, 90% utilisation, 27% EBITDA, 19% PAT; "revenue contribution expected from FY27 onwards" | Both | FY27 start, peak undated | Committed on timing (FY27 start), aspirational on peak | Numeric, partially dated | VOLUME |
+| TLL Parenterals peak revenue Rs 200 Cr, 90% utilisation, 27% EBITDA, 19% PAT; revenue from FY27 | Both | FY27 start, peak undated | Committed on timing, aspirational on peak | Numeric, partially dated | VOLUME |
 | TLL Wellness peak revenue Rs 10 Cr; commercialisation from FY27 | Both | FY27 start | Committed on timing, aspirational on peak | Numeric, partially dated | VOLUME |
 | TLL Elements peak revenue Rs 20 Cr | Revenue | Not dated | Aspirational | Numeric, undated | VOLUME |
-| 300-400 additional product registrations each year | Volume | Annual, ongoing | Planned (repeated verbatim in all 4 decks) | Numeric, specific | REGULATORY-POLICY/VOLUME |
-| 50-100 registrations in each key market, clustered expansion | Volume | Ongoing | Planned | Numeric | REGULATORY-POLICY |
+| 300-400 additional product registrations each year | Volume | Annual, ongoing | Planned (verbatim in all 4 decks) | Numeric, specific | REGULATORY-POLICY/VOLUME |
+| Registration pipeline as the driver of "future revenue" | Volume | Ongoing | Management-asserted, contradicted by the region test (item 8) | Qualitative claim, tested and failed against the company's own region data | REGULATORY-POLICY |
 | Cephalosporin ("TLL Cefa") facility "planning underway" | Capacity | Not dated | Aspirational | Named but no capex/date | INORGANIC |
-| Adding molecules going off-patent in developed markets | Price-mix | Not dated | Planned | Qualitative | PRICE-MIX |
 | Main-board migration to BSE/NSE (postal ballot outcome 17-Jul-2026) | Structural | Not yet effective | Committed (shareholder-approved) | Dated milestone, effective date not yet in corpus | REGULATORY-POLICY |
-| 50,000 sq m land acquired for future capacity | Capacity | FY26 event | Committed (acquisition done) | Numeric, no build timeline | VOLUME |
-| Domestic mix shift as growth driver (30% of revenue FY25 to 49% FY26) | Volume/mix | Realised, ongoing | Committed (already delivered) | Numeric, audited | VOLUME/PRICE-MIX |
+| Domestic mix shift as growth driver (30% FY25 to 49% FY26) | Volume/mix | Realised, ongoing | Committed (delivered), but credited to "sales reach" while its own promoter-LLP counterparties are unnamed (Stage 8/B12b item 4, not re-litigated here) | Numeric, audited | VOLUME/PRICE-MIX |
+| Consolidated EBITDA margin +470bps to 21.8% (chairman: "operating leverage") | Margin | FY26, delivered on a stated basis | Committed (stated), but the basis includes a consolidation-method change management calls immaterial (item 6, unresolved) | Numeric, but basis-dependent | COST |
 
-### 1B. Quantified guidance table (every specific number, with the document it was said in)
+### 1B. Quantified guidance table
 
 | Claim | Number | Timeframe | Stated in |
 |---|---|---|---|
-| Triple consolidated business | 3x revenue | Next 3 years from FY26 base | Aug-2026 deck p5 (Chairman's commentary), repeated as a management quote. **NOT restated in the FY26 AR's own MD&A/Outlook**, filed 04-Sep-2026, one month later (AR pp.16-17, 28) |
-| TNS Pharma peak revenue | Rs 40 Cr | Undated ("peak") | Aug-2026 deck p11 |
-| Trident Mediquip peak revenue | Rs 70 Cr | Undated ("peak") | Aug-2026 deck p12 |
-| TLL Parenterals peak revenue | Rs 200 Cr | Undated; revenue "expected from FY27 onwards" | Aug-2026 deck p13; FY26 AR Chairman's Message p17 ("injectables... expected to begin contributing revenue from FY27") |
-| TLL Wellness peak revenue | Rs 10 Cr | Commercialisation "expected to commence from FY27" | Aug-2026 deck p14; FY26 AR company-overview note p13/15 |
-| TLL Elements peak revenue | Rs 20 Cr | Undated | Aug-2026 deck p15 |
-| Product registrations added each year | 300-400 | Annual, ongoing | All 4 decks, "Strategic Priorities" slide, verbatim across Nov-2025/Jan-2026/May-2026/Aug-2026 |
-| Registrations awaited/in process | 2,384 (Sep-25) -> 2,458 (Dec-25) -> 2,534 (Mar-26) | Point-in-time, quarterly | Respective decks p4-5 |
-| Products already registered | 1,061 (Sep-25) -> 1,070 (Dec-25) -> 1,091 (Mar-26) | Point-in-time, quarterly | Respective decks p4-5 |
-| Intrinsic value of registrations | ~Rs 80 Cr | Not dated (a company valuation claim, not a filed number) | Aug-2026 deck p17-18; company memory step1 brief item 2 |
-| Estimated cost per Indian registration / global registration | $1,000 / $5,000 | Not dated | Aug-2026 deck p18 |
-| Consolidated revenue crossing Rs 100 Cr (first time) | Rs 129.0 Cr FY26 (consolidated), Rs 101.9 Cr FY26 (standalone, per AR and Aug-2026 deck) | FY26, delivered | H2/FY26 deck p27; FY26 AR MD&A p27; Aug-2026 deck p27-28 |
-| Standalone FY26 "Revenue from Operations" | **Rs 10,607.05 lakh (Rs 106.07 Cr) per the H2/FY26 deck management commentary text (p27)**, vs **Rs 10,189.95 lakh (Rs 101.9 Cr) per the audited H2/FY26 results filing "Sales/Income from Operations" line (results PDF p face, TOTAL INCOME row) and the later Aug-2026 deck / FY26 AR** | FY26 | H2/FY26 deck p27 vs 20260507-FY26-H2-results.pdf and FY26 AR MD&A p27 |
-| IPO product-registration allocation utilised | Rs 51,87,506 of Rs 5,13,66,000 allocated (~10.1%) as of 30-Jun-2025 | IPO (Oct-2022) to Jun-2025 | Statement of Deviation, 28-Jul-2025, table p2-3 |
-| IPO working-capital allocation utilised | Rs 20,28,63,707 of Rs 20,50,00,000 (~99%) | Same window | Same filing |
-| IPO general-corporate allocation utilised | Rs 6,70,48,509 of Rs 6,70,53,200 (~99.99%) | Same window | Same filing |
-| IPO issue-expense allocation | Rs 3,00,00,000 of Rs 3,00,00,000 (100%) | Same window | Same filing |
+| Triple consolidated business | 3x revenue | Next 3 years from FY26 base | Aug-2026 deck p5; NOT restated in FY26 AR's own MD&A/Outlook filed one month later (AR pp 16-17, 28) |
+| TNS Pharma / Mediquip / Parenterals / Wellness / Elements peak revenue | Rs 40 / 70 / 200 / 10 / 20 Cr | Undated | Aug-2026 deck pp 11-15; introduced for the first time in that deck, after the FY26 AOC-1 subsidiary shortfalls were already known internally |
+| Product registrations added each year | 300-400 | Annual, ongoing | All 4 decks, verbatim |
+| Consolidated revenue Rs 129.0 Cr FY26; standalone Rs 101.9 Cr FY26 | Delivered | FY26 | AR FY26 MD&A p27; Aug-2026 deck p27-32 (consistent across both) |
+| Standalone FY26 "Revenue from Operations" mislabel | Rs 10,607.05 lakh stated as revenue, is Total Income (Rs 10,189.95 lakh revenue + Rs 417.10 lakh other income) | FY26, repeated | May-2026 deck p28; FY26 AR Board's Report lines 1609-1614 (item 3, corrected finding: the AR repeats it, not corrects it) |
+| Consolidated Claim Income | Rs 541.05 lakh FY26 / Rs 522.17 lakh FY25, unnamed against "PBT doubled" | FY26 / FY25 | AR FY26 consolidated Note 22 (item 7) |
+| Registration IPO allocation utilised | Rs 51.87 lakh (Jun-2025) rising to Rs 75.81 lakh (Mar-2026) of Rs 513.66 lakh allocated | IPO to date | Statement of Deviation 28-Jul-2025; AR FY26 line 1677-1681 |
+| Working-capital facilities addback (undisclosed basis change across decks) | Rs 920.49 lakh (FY26) / Rs 545.38 lakh (FY25) | FY26/FY25 CFO | 20260507 results p8; decks restate FY25 CFO from -349.31 (Nov/Jan) to +197.07 (May) with no note (item 2) |
 
-**Finding on the standalone-revenue mismatch.** The H2/FY26 deck's management-commentary text states "Revenue from Operations stood at ₹10,607.05 lakhs" for FY26 standalone. Reading the face of the audited results filing (20260507-FY26-H2-results.pdf) shows that ₹10,607.05 lakh is actually the **TOTAL INCOME** line (Sales/Income from Operations ₹10,189.95 lakh + Other Income ₹417.10 lakh), not revenue from operations. The company's own later documents (Aug-2026 deck p27-28, FY26 AR MD&A p27) correctly state standalone revenue from operations at ₹101.9 Cr / ₹10,189.95 lakh, matching the audited results face, with no acknowledgement that the H2/FY26 deck's headline number had folded in other income. This is a genuine, findable inconsistency between two of the company's own investor communications (~4% overstatement in the first instance), not a transcript-only artefact — it degrades confidence in the care taken over headline figures in investor decks specifically, separate from the AR-level cash-flow finding B02/B03 already carry. FLAG-DISCLOSURE (new, this stage).
+### 1C. Trigger evolution across the four decks
 
-### 1C. Trigger evolution across the four decks (Nov-2025 -> Jan-2026 -> May-2026 -> Aug-2026)
-
-- **Registrations count**: steady, small quarterly increments (1,061 -> 1,070 -> 1,091 registered; 2,384 -> 2,458 -> 2,534 in process). Over the two quarters visible between the Nov-2025 and May-2026 decks, registered count rose by 30 (annualised ~60/year) while the pipeline (in-process) rose by 150 (annualised ~300/year). This is consistent with, not contradicting, the stated "300-400 additional registrations each year" claim if that claim describes new applications filed into the pipeline (matches the ~300/year in-process pace) rather than completed registrations, which take the disclosed 1.5-3 year gestation to convert. STRENGTHENING (pipeline depth), UNCHANGED (completion pace, candidly explained by the company's own gestation-period disclosure).
-- **Countries present**: 44 (Nov-2025, Jan-2026) -> 46 (May-2026, Aug-2026). Slow, incremental, UNCHANGED trend, no reversal.
-- **"Triple in three years"**: appears for the first time in the Aug-2026 deck (not in the three earlier decks). NEW TRIGGER. It appears once, framed as a Chairman's aspiration ("we remain confident... and aspire to triple"), and does not reappear or get walked back to a milestone schedule in the same document. It was never carried into the FY26 AR's Outlook section (filed a month later), where the language is markedly more measured ("constructive but measured outlook... well positioned to pursue sustainable growth while managing these risks"). The gap between the promotional deck's framing and the statutory filing's own framing, produced by the same management within weeks of each other, is itself a data point (Section 2D).
-- **Subsidiary peak-revenue figures (TNS Rs 40 Cr, Mediquip Rs 70 Cr, Parenterals Rs 200 Cr, Wellness Rs 10 Cr, Elements Rs 20 Cr)**: introduced for the first time in the Aug-2026 deck (the three earlier decks show only ownership stakes and business description, no peak-revenue figures for the subsidiaries). NEW TRIGGERS, appearing only after the AOC-1 audited numbers for FY26 (TNS Rs 6 Cr loss-making with negative net worth; Mediquip Rs 27 Cr; Parenterals nil) were already locked in the FY26 AR signed off the same week. The peak figures were not present, and so could not be tested, in the Nov-2025/Jan-2026/May-2026 decks; their first appearance immediately after (not before) the weak audited subsidiary numbers were public is itself worth flagging as a timing observation, not an accusation: it means these are aspirational multi-year targets stated after the current shortfall was already known, not forecasts later missed.
-- **TLL Parenterals commissioning**: "Under Construction" (Nov-2025, Jan-2026, May-2026 decks, Key Manufacturing Sites slide) -> "Commercial implementation of TLL Parenterals Injectible facility" listed under "2026" in the Aug-2026 deck's journey timeline (p10), alongside "planning underway" for the TLL Cefa facility. STRENGTHENING in stated commissioning status quarter to quarter, though Q1 FY27 (quarter to Jun-2026, the most recent results available) still shows Rs 0 standalone/consolidated revenue attributable to a "TLL Parenterals" line (no separate segment disclosure in the results filings; AOC-1 for FY26 shows nil turnover). The near-term falsifiable test (any Parenterals revenue in FY27 results) remains open at this run date.
-- **Domestic vs export mix**: reported shift from 30% domestic (FY25) to 49% domestic (FY26) in both the Aug-2026 deck and the FY26 AR MD&A, described as "the domestic business emerged as a key growth driver." This is a REALISED, delivered trigger tracked consistently across the AR and the deck (both dated Sep-2026 and Aug-2026), not aspirational.
-- No trigger visibly DROPPED between decks; the strategic-priorities slide (300-400 registrations/year, WHO-GMP certification, expanding sales/marketing, product portfolio expansion) is repeated near-verbatim in all four decks with no material change in emphasis or wording, which is itself notable: a genuinely evolving multi-vertical build (five new subsidiaries acquired/incorporated across FY23-FY26) produced almost no change to the "strategic priorities" framing across ten months, suggesting the slide is templated rather than actively updated to reflect what has actually shifted (e.g., the domestic-mix pivot, which is real and material, is not reflected in the Strategy & Investment Rationale section at all, only in the financial-overview numbers).
+- **Registrations**: registered count rose by only 30 in six months (1,061
+  to 1,091) while the "clearest indicator" framing stays unchanged across
+  the AR and decks; the region test (item 8) shows the framing does not
+  match where FY26 revenue actually came from (domestic, and Asia exports,
+  not the Africa-heavy registration base). STRENGTHENING (pipeline depth,
+  verbatim claim), but the claim itself is now a tested-and-failed one, not
+  merely unverified.
+- **"Triple in three years" and subsidiary peaks**: appear for the first
+  time in the Aug-2026 deck, never restated in the FY26 AR's own, more
+  measured Outlook filed a month later. NEW, unwalked-back, not tested by
+  a second document from the same management.
+- **TLL Parenterals commissioning**: "Under Construction" (Nov/Jan/May
+  decks) to "Commercial implementation ... 2026" (Aug-2026 deck p10), with
+  Rs 0 revenue in Q1 FY27 and nil turnover in the FY26 AOC-1.
+- **Cash-flow basis**: undisclosed change from an ex-working-capital-
+  facilities basis (Nov/Jan decks) to the as-filed, facilities-inclusive
+  basis (May deck) for the *same* FY25 comparative figure (item 2). This is
+  a genuinely new, materially different finding from run 1, which called
+  this "not a deck matter."
+- **Revenue-from-operations basis**: Total Income mislabelled as Revenue
+  from Operations recurs in three decks and the FY26 Board's Report itself
+  (item 3), not "silently corrected."
+- **Product mix**: called "fairly stable"/"broadly stable" in the May-2026
+  deck and the FY26 AR while the company's own segment chart shows Capsules
+  +350% and the toothpaste/ointment/other bucket -38% (item 9).
+- No trigger visibly DROPPED between decks; the strategic-priorities slide
+  repeats near-verbatim across all four, a mild negative on its own
+  (templating), now compounded by the region and product-mix contradictions
+  above.
 
 ---
 
-## SECTION 2: MANAGEMENT CREDIBILITY CHECK (built from AR-guidance-vs-results delivery, per NO-CONCALL MODE)
+## SECTION 2: MANAGEMENT CREDIBILITY CHECK
 
-### 2A. Promise vs delivery tracker (chronological, AR/deck guidance against filed results)
+### 2A. Promise vs delivery tracker
 
-| Promised in | Promise | Outcome (per later filing) | Explanation given |
+| Promised in | Promise | Outcome | Explanation given |
 |---|---|---|---|
-| FY25 AR (Sep-2025 filing), Outlook | "Well-positioned to harness emerging opportunities and drive sustainable growth," "balanced strategy of organic and inorganic growth" (generic, no numeric target) | ✅ Delivered directionally: FY26 consolidated revenue +48%, EBITDA +89%, PAT +84% (FY26 AR MD&A p27); five subsidiaries strengthened per the AR's own group-structure note | No specific numeric target was given in FY25 AR to test against, so this is a directional pass only |
-| H1 FY26 deck (13-Nov-2025), management commentary | "The outlook for the remaining year remains strong, with business operations projected to grow at both standalone and consolidated levels" | ✅ Partial-to-delivered: H2FY26 standalone revenue Rs 5,816.27 lakh vs H1FY26 Rs 4,790.17 lakh (deck p27), consolidated FY26 Rs 129.0 Cr vs FY25 Rs 87.0 Cr; but EBITDA margin at consolidated level in fact **compressed** briefly before recovering (H1FY26 27% -> H2FY25 comparator base 28%), never disclosed as a miss, simply not mentioned again | None given; positive framing carried through without acknowledging the margin deceleration that appears in the company's own printed table two rows above the commentary |
-| Q3 FY26 deck (20-Jan-2026), management commentary | "The outlook for the remaining year & coming year remains strong... mix of organic and inorganic expansion" | ✅ Delivered: 9MFY26 standalone revenue +50% YoY, PAT +32% YoY (deck p27); FY26 full-year closed per H2/FY26 deck at the growth rates cited above | None needed; delivered |
-| H2/FY26 deck (09-May-2026), management commentary | "With ongoing projects at the standalone and subsidiary levels... the Company has established a foundation for continued growth. The outlook for FY27 remains robust" | Partial / not yet testable in full: FY27 outlook is qualitative; the one falsifiable sub-claim inside it (subsidiaries ramping) is tested below | Qualitative, no numeric target to falsify directly |
-| Aug-2026 deck (03-Aug-2026), Chairman's commentary | "We aspire to triple our consolidated business over the next three years"; TLL Parenterals and TLL Wellness "revenue contribution expected from FY27" | ❌ / Not yet resolved: no falsifiable near-term milestone was given for the triple-in-3-years claim (a 3-year target stated in month 1 of year 1 cannot be marked delivered or missed at this run date); the FY27-revenue sub-claim for Parenterals/Wellness is untested in Q1 FY27 (Jun-2026 quarter results show no separate subsidiary revenue line, and the Aug-2026 deck itself carries "Lorem ipsum" placeholder text on the Trident Mediquip and TLL Wellness subsidiary pages, pp 12 and 14, an unresolved production defect in the same document making the claim) | None; the placeholder text was not caught before filing with BSE under Reg 30, a process-quality signal independent of the substance of the claim |
-| FY25 AR (Sep-2025), incorporation/acquisition claims | TLL Elements incorporated 15-Apr-2024; TLL Parenterals 51% stake acquired 2-Dec-2024; Trident Mediquip 51% stake acquired 4-Feb-2025 | ✅ Delivered and consistent: all three events are corroborated by the FY26 AR's own corporate-history note, the AOC-1, and the Reg 30 acquisition filings in announcements/ (curated in B00) | N/A, factual events, no variance found |
-| Statement of Deviation (28-Jul-2025), objects-of-issue | Product-registration IPO allocation (Rs 5.14 Cr) to be deployed against the registrations engine central to every deck's investment thesis | ❌ / Underdelivered on the dedicated-capital front: only ~10.1% (Rs 51.87 lakh) of the Rs 5.14 Cr allocated specifically to "Product Registration in the international markets" had been utilised as of the reporting date (30-Jun-2025), roughly 2.75 years after the IPO allotment (Oct-2022), while working capital (99%) and general corporate purpose (99.99%) allocations were nearly fully spent | "Balance Amount is still with company and required to be utilised" (boilerplate, filing p2-3); no substantive explanation of the slow pace against the registration-led growth story the decks tell |
+| FY25 AR Outlook | Generic, "sustainable growth," no numeric target | Directional pass: FY26 consolidated revenue +48%, EBITDA +89%, PAT +84% | No target to test |
+| H1 FY26 deck | "Outlook ... strong ... grow at both standalone and consolidated levels" | Delivered directionally (revenue +50.3% standalone, +48.4% consolidated for FY26); but the deck's own EBITDA-margin claim rests on a basis this stage now finds unreliable (item 3) | None given |
+| Q3 FY26 deck | "Outlook for the remaining year & coming year remains strong" | Delivered on revenue; the cited 9M PBT figure does NOT reconcile with H1+Q3 (item 5, gap Rs 35.25 lakh), untested by run 1 | None; the gap itself was never flagged by the company |
+| H2/FY26 deck | "Foundation for continued growth ... FY27 remains robust" | Not yet testable; qualitative | Qualitative |
+| Aug-2026 deck | "Triple ... in 3 years"; Parenterals/Wellness revenue from FY27 | Not yet resolved; Q1 FY27 shows no subsidiary revenue line; the deck itself was never restated in the AR's more measured Outlook | None |
+| Statement of Deviation | Registration-capital allocation (Rs 5.14 Cr) central to the thesis | Underdelivered: ~10.1% utilised at Jun-2025, ~14.8% by Mar-2026 (AR FY26 line 1677-1681, updating run 1's stale Jun-2025-only figure) | Boilerplate ("balance amount ... required to be utilised") |
+| FY26 AR Board's Report | "Revenue from operations of Rs 10607.05 Lacs" | This figure is Total Income, not revenue from operations (item 3); the statutory report itself repeats the deck's error rather than correcting it | None; no acknowledgement anywhere in the corpus |
+| FY26 AR MD&A ("PBT doubled to Rs 27.2 crore") | Claim Income of Rs 5.41 Cr (19.9% of consolidated PBT) is folded into that PBT, unnamed | Undisclosed composition of the reported result (item 7) | None |
 
-**Tally**: delivered = 4, partial = 2, missed = 1 (product-registration capital deployment lagging its own stated centrality to the thesis). The "triple in three years" and subsidiary peak-revenue claims are excluded from the tally as not-yet-falsifiable multi-year targets, not scored delivered/missed; they are carried forward as monitorables (Section 4).
+**Tally**: delivered = 3 (revenue growth directional passes), partial = 2
+(FY27 outlook qualitative, registration capital underdelivered but
+accelerating), missed = 3 (9M PBT reconciliation, revenue-from-operations
+mislabel repeated in the statutory filing, Claim Income unnamed against a
+PBT-doubled claim). This tally is materially worse than run 1's
+delivered=4/partial=2/missed=1; the rework items move three items that run
+1 scored delivered or left untested into missed.
 
 ### 2B. Excuse pattern analysis
 
-No missed-target explanation of substance was found anywhere in the four decks or two ARs; where a shortfall exists (subsidiary revenue against stated peaks, product-registration capital underspend, the standalone revenue mislabelling), the company's own documents either say nothing about the gap (peaks, capital underspend) or restate the correct number in a later document without flagging the earlier document's error (revenue mislabelling). This is closer to **SILENCE** than to external-blame or honest-admission; the one genuinely candid admission on record is the FY26 AR Chairman's own line that subsidiary "utilisation, currently modest, is progressively built up… we are clear-eyed about that work" (AR p17), which is an honest-admission pattern, not a deflection, and is a positive credibility data point specifically because no outsider forced it (AR authorship, not an analyst question). Excuse-pattern classification: **balanced, leaning honest-admission on the one occasion a gap was actually named, but silent (not merely externally-blamed) on the others**.
+No missed-target explanation of substance exists anywhere in the corpus.
+Where a gap exists (subsidiary peaks vs actuals, registration-capital
+underspend, the revenue mislabel, the 9M PBT gap, Claim Income, the
+"stable" mix claim, the registration-region mismatch), the company's own
+documents either say nothing (silence) or repeat the same imprecise
+framing in a later, higher-authority document without correction (the
+Board's Report repeating the deck's mislabel is the clearest instance).
+This is **SILENCE**, not external-blame; the run-1 finding that one candid
+admission exists (subsidiary utilisation "modest," AR p17) still stands and
+is a genuine, if isolated, positive. Revised classification: **silence-
+heavy, with the one candour instance outweighed on this run by five
+newly-confirmed items of unacknowledged imprecision across the decks and
+the statutory Board's Report.**
 
-### 2C. Tone ratings (1-5, with evidence)
+### 2C. Tone ratings (1-5, revised)
 
-| Dimension | Rating | Evidence |
+| Dimension | Rating (run 2) | Evidence |
 |---|---|---|
-| Transparency | 3/5 | Candid on subsidiary utilisation being "modest" (AR p17); silent on the standalone-revenue mislabelling and on the slow product-registration capital deployment; the undisclosed cash-flow-statement reclassification (B02/B03, carried forward, not a deck matter but bears on the same management) is the single largest transparency detractor available in this corpus |
-| Specificity | 4/5 | Decks carry granular, dated, numeric detail (registration counts, EBITDA/PAT bridges, country splits) quarter to quarter; the "triple in three years" and subsidiary-peak claims are the exception, stated without a milestone path |
-| Consistency | 3/5 | Strategic-priorities framing is verbatim-stable across four decks (a mild negative: suggests templating over live updating); the standalone-revenue figure is NOT consistent across two of the company's own decks (Section 1B finding) |
-| Accountability | 3/5 | One instance of proactive, unprompted candour (subsidiary utilisation); no instance found of management naming and owning a miss after the fact |
-| Defensiveness | N/A (no analyst Q&A exists in this mode) | Not assessable without a transcript; the price-movement clarification (24-Sep-2026) is a compliance reply, not a defensive posture, and reads as standard boilerplate ("market driven... neither control nor knowledge") |
-| Over-promotion | 3/5 | "Triple our consolidated business," "intrinsic value of registrations ~Rs 80 crore," and named peak-revenue figures for pre-revenue or barely-scaled subsidiaries (Parenterals: nil revenue, 90% "peak utilisation" cited in the same document) sit well ahead of the audited base; the FY26 AR's own Outlook is materially more measured than the deck published one month earlier under the same management, which argues the statutory filing is the more reliable register of true intent |
+| Transparency | **2/5** (down from 3) | The revenue-from-operations mislabel repeats in the Board's Report itself (item 3); Claim Income is unnamed against a "PBT doubled" claim (item 7); the cash-flow basis change is undisclosed across two decks (item 2) |
+| Specificity | 4/5 (unchanged) | Decks carry granular numeric detail quarter to quarter; the "triple" and subsidiary-peak claims remain the undated exception |
+| Consistency | **2/5** (down from 3) | The 9M PBT figure does not reconcile with H1+Q3 (item 5); the consolidation-method basis is inconsistent between the FY26 note and the Q1 FY27 note (item 6); "stable" product-mix language is repeated three times against contradicting segment data (item 9) |
+| Accountability | 2/5 (down from 3) | No instance found of management naming and owning any of the seven items above after the fact |
+| Defensiveness | N/A | No analyst Q&A exists in this mode |
+| Over-promotion | 3/5 (unchanged) | "Triple," Rs 80 Cr "intrinsic value," named peak-revenue figures for pre-revenue subsidiaries sit well ahead of the audited base |
 
-### 2D. What they are NOT saying
+### 2D. What they are NOT saying (revised)
 
-- **No quantified milestone path** from FY26 base (Rs 129 Cr consolidated) to the "triple in three years" target (~Rs 387 Cr by FY29): no year-by-year build, no named lead subsidiary, no capex schedule tied to it. The financials and the scale of the ask (3x in 3 years against subsidiaries currently running at 6-27 Cr against 40-70-200 Cr peaks) demand this and it is absent.
-- **No mention of the auditor's KAM on the DOS-based accounting system needing strengthening**, the undisclosed cash-flow reclassification, the unexplained goodwill jump, or the Section 197 remuneration breaches anywhere in any of the four decks or in the AR's own MD&A risk section (all are AR-note-level disclosures, absent from the investor-facing narrative; carried forward from B02/B03 missing_risks).
-- **No mention of the corporate guarantees to Talon Healthcare LLP / Tench Lifesciences LLP** (director-interest, non-consolidated entities) anywhere in investor-facing material; this sits only in AR Note 32 and the AOC-2, never in a deck or a Reg 30 standalone disclosure framed for investors.
-- **No named reason for the slow product-registration capital deployment** against the IPO's own stated priority, despite registrations being the centrepiece of every deck's "intrinsic value" claim.
-- **No subsidiary-level revenue disclosure inside the quarterly results filings** (only AOC-1 in the annual report and the decks' own subsidiary slides carry subsidiary revenue), which means the FY27 Parenterals/Wellness revenue-contribution claim cannot be checked from the results filings alone; it can only be checked from the next AOC-1 or deck.
+- No quantified milestone path from Rs 129 Cr (FY26) to the "triple in
+  three years" target.
+- **No naming of Claim Income** (Rs 5.41 Cr, 19.9% of FY26 consolidated PBT)
+  anywhere the "PBT doubled" claim is made (item 7, new this run).
+- **No naming of the consolidation-method change** (proportionate to
+  equity) or its interaction with the 470bps consolidated margin expansion
+  claim, despite the standalone margin falling over the same period (item
+  6, new this run).
+- **No reconciliation of the 9M PBT figure**, nor any note on the near-zero
+  Q4 D&A (item 5, new this run).
+- **No acknowledgement that the registration pipeline's regional
+  concentration (Africa 64%) does not match where FY26 revenue growth
+  actually came from** (domestic, and Asia exports) despite the registration
+  pipeline being framed as the clearest read of future revenue (item 8, new
+  this run).
+- No mention of the auditor's KAM, the goodwill jump, the Section 197
+  breaches, or the LLP corporate guarantees anywhere in investor-facing
+  material (carried from run 1, B02/B03).
 
 ### 2E. Repeated question tracker
 
-NO REPEATED UNANSWERED QUESTIONS FOUND. No analyst Q&A exists in this corpus (no-concall mode); the only analyst-facing artefacts are a virtual-conference participation notice (25-Sep-2026, Arihant Capital, outcome not yet in the corpus) and a compliance reply to a BSE price-movement query (24-Sep-2026), neither of which carries a substantive question-and-answer record to track across periods.
+NO REPEATED UNANSWERED QUESTIONS FOUND (unchanged; no analyst Q&A exists in
+this corpus).
 
 ---
 
-## SECTION 3: COMPETITIVE INTELLIGENCE (degraded; no concalls to source management's own competitor commentary)
+## SECTION 3: COMPETITIVE INTELLIGENCE (unchanged from run 1 except item 8 cross-reference)
 
-### 3A. What management says about competitors
-Not found. None of the four decks or two ARs name a specific competitor or make a comparative competitive claim; competitive framing is limited to generic "competitive and pricing pressure in generic and nutraceutical markets" (FY26 AR SWOT, Threats, p28) with no company named. No credibility check possible on a claim that was never made.
+### 3A. Competitors
+Not found; no competitor is named in any deck or AR.
 
-### 3B. Industry and market intelligence dropped in the AR/decks
-- Global pharma industry CAGR ~7.1% (2024-2030), a "marked recovery" per Frost & Sullivan (FY26 AR MD&A p24).
-- India pharma exports ~USD 31.11 Bn FY26 (+2.1% YoY, muted vs FY25's stronger dollar growth attributed partly to US pre-tariff stocking in the prior year) (FY26 AR MD&A p24).
-- Domestic pharma sector growth projected 7-9% FY26; India targets USD 130 Bn market by 2030, USD 450 Bn by 2047 (FY26 AR MD&A p24-25; also FY25 AR MD&A, same targets, unchanged year over year — a sign the AR's industry section may be templated from a stable secondary source rather than freshly researched).
-- Global nutraceutical market ~USD 636 Bn (2025) to ~USD 684 Bn (2026), CAGR ~7.7% to 2033 (FY26 AR MD&A p25); FY25 AR cited a different set of nutraceutical figures (USD 463.5 Bn 2025 to USD 762.3 Bn 2035, CAGR 5.1%), a year-over-year change in the cited market-size source with no reconciliation — a mechanical inconsistency in secondary-source citation, not a company claim about itself, but worth naming since it shows the AR's macro sections are not internally consistent across editions.
-- PLI scheme (₹15,000 Cr, 2020-21 to 2028-29), API push (₹60,000 Cr, announced Dec-2025), Biopharma SHAKTI (₹10,000 Cr, early 2026) cited as sector tailwinds (FY26 AR MD&A p24-25). None are claimed as directly captured benefits to TLL; general context only.
+### 3B. Industry and market intelligence
+Unchanged from run 1: global pharma CAGR ~7.1% (2024-2030), India pharma
+exports ~USD 31.11 Bn FY26, domestic pharma sector growth 7-9%, PLI/API/
+Biopharma SHAKTI schemes (AR FY26 MD&A p24-25).
 
 ### 3C. Toughest questions
-Not applicable in this mode; no analyst Q&A exists. The nearest equivalent, the BSE surveillance query on the 24-Sep-2026 price movement, was answered with a standard compliance denial of any pending price-sensitive information; whether that denial is a real risk (an undisclosed corporate development driving the move) cannot be assessed from this document alone and should be a stage-6/verifier item to watch on the next filing cycle.
+Not applicable; no analyst Q&A exists in this mode.
 
-### 3D. Customer and order-book signals
-- Geographic revenue mix shift: Asia became the largest export destination (~57% of export revenue FY26) from South America's prior lead (FY26 AR MD&A p27; Aug-2026 deck p18), a genuine, dated, audited-adjacent shift (not merely a plan).
-- Country-level registration concentration: Ghana, Venezuela, Kenya, Cambodia together ~60% of registered + in-process products (Aug-2026, May-2026, Jan-2026, Nov-2025 decks, consistent across all four), an unchanging, high concentration in four frontier/semi-regulated markets that the deck never frames as a risk (contrast with the FY26 AR's own foreign-exchange and credit-risk sections, which are generic and do not name these countries specifically).
-- No customer wins, losses, renewals, or pricing renegotiations are named in any document; the receivables-ageing improvement noted in B02 (>6-months bucket falling from 13.1% to 6.1% of the book) is the nearest proxy for distributor-relationship health and is a genuine positive signal on the underlying customer base, even without a named customer event.
+### 3D. Customer and order-book signals (revised per item 8)
+- Export destination mix: Asia (57%) overtook South America as the largest
+  FY26 export destination, followed by Africa (25%) and South America
+  (17%) (AR FY26 lines 1263-1267). **This directly contradicts the region
+  where the registration pipeline is concentrated (Africa 64%, item 8)**, a
+  finding run 1 did not test.
+- Domestic mix rose from 30% to 49% of revenue, credited to "widening
+  sales and marketing reach," with no mention that a material share of
+  that domestic growth runs through promoter-interest LLPs (Talon, Tench;
+  Stage 8/B12b item 4, not re-litigated here, but load-bearing for reading
+  this claim).
+- No customer wins, losses, renewals, or pricing renegotiations named in
+  any document.
 
 ---
 
 ## SECTION 4: KEY TAKEAWAYS & TRIGGERS SUMMARY
 
-### 4A. Investment-ready trigger list (ranked by earnings impact)
+### 4A. Investment-ready trigger list (revised)
 
 | Priority | Trigger | Type | Timeframe | Conviction | Confirms | Kills |
 |---|---|---|---|---|---|---|
-| 1 | TLL Parenterals begins commercial revenue | Volume | FY27 (in progress) | M | Any Parenterals revenue line > Rs 0 in Q2/Q3 FY27 results or the FY27 AOC-1 | FY27 AOC-1 shows Rs 0 again, or the facility is reported delayed |
-| 2 | Consolidated revenue trajectory toward "triple in 3 years" (~Rs 387 Cr by FY29 from Rs 129 Cr FY26) | Volume | 3 years (FY26-FY29) | L (no milestone path given) | FY27 consolidated revenue growth holds at or above the ~48-56% CAGR pace already shown FY24-FY26 | FY27 growth decelerates materially below the ~30-40% range needed to stay on a 3-year tripling path |
-| 3 | Product-registration IPO capital deployment accelerates to match the registrations narrative | Regulatory | Ongoing | L (only 10% deployed after 2.75 years as of Jun-2025) | Next deviation statement shows a step-up in utilisation | Allocation remains substantially unutilised with no explanation |
-| 4 | Debtor days / receivables ageing continues improving (>6-months bucket) even as receivables quantum grows | Cash | Next 1-2 quarters | M | >6-months bucket stays below ~10% of the book in FY27 H1 results | Bucket reverses upward, or debtor days exceed 208 again |
-| 5 | Cash-flow-statement presentation (Changes in Working Capital Facilities line) is either restored to conventional format or repeated with disclosure | Cost/governance | FY27 AR | M | Line explained with a note, or removed | Line recurs unexplained, or grows further |
+| 1 | TLL Parenterals begins commercial revenue | Volume | FY27 (in progress) | M | Any Parenterals revenue line > Rs 0 in FY27 results/AOC-1 | FY27 AOC-1 shows Rs 0 again, or delay reported |
+| 2 | Consolidated revenue trajectory toward "triple in 3 years" | Volume | 3 years (FY26-FY29) | **L, downgraded**: the consolidated margin story this target implicitly rests on already carries an unresolved consolidation-method question (item 6) | FY27 consolidated revenue growth holds at/above ~48-56% CAGR AND the consolidation basis is clarified with no material restatement | FY27 growth decelerates, or the equity-method change is later shown to have flattered FY26 |
+| 3 | Product-registration IPO capital deployment accelerates | Regulatory | Ongoing | L (14.8% deployed by Mar-2026, updated from run 1's 10.1%) | Step-up in utilisation in the next deviation statement | Allocation remains substantially unutilised |
+| 4 | Registration-region and revenue-region alignment | Regulatory/Volume | Ongoing | **L, new this run**: the registration-drives-revenue framing already fails the region test (item 8) | Africa-region revenue (export or domestic) rises to match the 64% registration concentration | The mismatch persists or widens |
+| 5 | Claim Income line explained and its recurrence tracked | Cost/governance | FY27 AR | M, new this run | FY27 Note 22 (or equivalent) names the counterparty/nature and the line shrinks as a share of PBT | Claim Income recurs near 20-40% of PBT, unexplained |
+| 6 | 9M/annual PBT and D&A reconciliation | Governance | Next results cycle | M, new this run | Company issues a note reconciling the 9M FY26 gap or the near-zero Q4 D&A | No note, and a similar unreconciled interim figure recurs |
+| 7 | Cash-flow-statement basis (Changes in Working Capital Facilities) restored/disclosed | Cash/governance | FY27 AR | M | Line explained with a note, or removed | Line recurs unexplained, or a further basis change appears across decks with no note |
 
-### 4B. QUESTIONS FOR PEER VERIFICATION (handoff to stage 6; peers Caplin Point, Senores Pharmaceuticals, Innova Captab, Q2 FY26-Q1 FY27)
+### 4B. QUESTIONS FOR PEER VERIFICATION (unchanged from run 1; stage 6 already consumed this list -- see REWORK RESOLUTION above for why no seventh question was added)
 
-- {question: "What debtor days / receivable-ageing profile do RoW distributors in Africa, LatAm and CIS typically carry for a registration-led exporter, and how does 208 days (TLL FY26) compare to what your own concalls disclose for similar geographies?", why: "Tests whether TLL's 116-to-208-day debtor-day jump (LBF1) is a company-specific deterioration or a sector-standard credit term for these markets", check_peers: ["CAPLIPOINT", "SENORES", "INNOVACAP"]}
-- {question: "What ramp timeline and margin profile did your own injectable-plant commissioning show in the first 2-4 quarters after start-up, and how does that compare to TLL Parenterals' claimed 90% peak utilisation and 27% steady-state EBITDA margin for a facility that has not yet booked revenue?", why: "TLL's Parenterals peak-revenue and margin claims are aspirational and undated; peer injectable ramp evidence is the only available cross-check on plausibility", check_peers: ["CAPLIPOINT", "SENORES"]}
-- {question: "In your own transition from loan-licence/contract manufacturing to owned-plant manufacturing, what EBITDA-margin uplift did you actually realise per vertical, and over what timeframe?", why: "Directly tests TLL's central thesis (asset-light exporter to owned-plant group) against a peer that has already made the same transition", check_peers: ["INNOVACAP", "CAPLIPOINT"]}
-- {question: "How many new product registrations do you add per year, and what share of your registration pipeline converts to revenue within 1.5-3 years (TLL's own stated gestation period)?", why: "TLL cites 300-400 additional registrations/year and a 1.5-3 year gestation; peer disclosure on conversion rate would sanity-check TLL's registrations-to-revenue claim, the deck's core value driver", check_peers: ["CAPLIPOINT", "SENORES", "INNOVACAP"]}
-- {question: "What device-segment (IV cannula / infusion set) pricing trends and competitive intensity have you seen in RoW markets over the last four quarters?", why: "Tests Trident Mediquip's device-margin claims (24% steady-state EBITDA) against independent peer pricing evidence; no peer here is a device pure-play, so this is a partial cross-check only", check_peers: ["INNOVACAP"]}
-- {question: "Have you cited any specific industry growth rate (pharma export CAGR, nutraceutical market CAGR) on your own calls, and does it match or diverge from the Frost & Sullivan / IBEF figures TLL's AR cites (7.1% global pharma CAGR 2024-2030; India pharma exports ~USD 31.1 Bn FY26)?", why: "Cross-checks whether TLL's AR macro citations are consistent with what comparable exporters are seeing and citing themselves", check_peers: ["CAPLIPOINT", "SENORES", "INNOVACAP"]}
+- {question: "What debtor days / receivable-ageing profile do RoW distributors in Africa, LatAm and CIS typically carry for a registration-led exporter, and how does 208 days (TLL FY26) compare?", why: "Tests whether TLL's debtor-day jump is company-specific or sector-standard for these markets", check_peers: ["CAPLIPOINT", "SENORES", "INNOVACAP"]}
+- {question: "What ramp timeline and margin profile did your own injectable-plant commissioning show in the first 2-4 quarters after start-up, and how does that compare to TLL Parenterals' claimed 90% peak utilisation and 27% steady-state EBITDA margin for a facility that has not yet booked revenue?", why: "TLL's Parenterals claims are aspirational and undated; peer evidence is the only cross-check on plausibility", check_peers: ["CAPLIPOINT", "SENORES"]}
+- {question: "In your own transition from loan-licence/contract manufacturing to owned-plant manufacturing, what EBITDA-margin uplift did you actually realise per vertical, and over what timeframe?", why: "Tests TLL's central thesis against a peer that has already made the same transition", check_peers: ["INNOVACAP", "CAPLIPOINT"]}
+- {question: "How many new product registrations do you add per year, and what share of your registration pipeline converts to revenue within 1.5-3 years?", why: "Sanity-checks TLL's registrations-to-revenue claim, the deck's core value driver", check_peers: ["CAPLIPOINT", "SENORES", "INNOVACAP"]}
+- {question: "What device-segment pricing trends and competitive intensity have you seen in RoW markets over the last four quarters?", why: "Tests Trident Mediquip's device-margin claims; partial cross-check only", check_peers: ["INNOVACAP"]}
+- {question: "Have you cited any specific industry growth rate on your own calls, and does it match or diverge from the Frost & Sullivan / IBEF figures TLL's AR cites?", why: "Cross-checks whether TLL's AR macro citations are consistent with comparable exporters", check_peers: ["CAPLIPOINT", "SENORES", "INNOVACAP"]}
 
-### 4C. Management quality verdict table
+### 4C. Management quality verdict table (revised)
 
 | Dimension | Verdict | Basis |
 |---|---|---|
-| Guidance specificity | Mixed | Highly specific on registrations/countries/financial bridges; aspirational and undated on the "triple" and subsidiary-peak claims |
-| Guidance-vs-AR consistency | Weak | "Triple in 3 years" and subsidiary peaks appear only in the promotional deck, never restated in the statutory AR MD&A/Outlook filed weeks later under the same management |
-| Investor-document accuracy | Weak | Standalone FY26 "Revenue from Operations" was misstated (as Total Income) in the H2/FY26 deck, silently corrected in later documents; "Lorem ipsum" placeholder text shipped in the Aug-2026 deck's subsidiary pages |
-| Candour on shortfalls | Mixed-to-positive | One unprompted, specific admission of "modest" subsidiary utilisation in the AR Chairman's Message; silence elsewhere (registration-capital underspend, revenue mislabelling) |
-| Filing integrity (refilings) | Positive | Both H1 FY25 and H1 FY26 refilings, checked figure-by-figure against the originals in this stage, changed NO substantive number; both were format-only corrections (e.g. trade-payable bifurcation) matching the company's own description |
-| Financial-reporting quality (carried from B02/B03) | Weak | Undisclosed, retroactive cash-flow reclassification flatters CFO in both FY25 and FY26; true consolidated CFO is negative both years; unexplained 10.6x goodwill jump; two Section 197 breaches; corporate guarantees to director-interest LLPs outside consolidation |
-| **Overall grade** | **C** | See below |
+| Guidance specificity | Mixed | Highly specific on registrations/countries/financial bridges; aspirational and undated on "triple"/peak claims |
+| Guidance-vs-AR consistency | Weak | "Triple"/peaks never restated in the AR's own, more measured Outlook |
+| Investor-document accuracy | **Weak, downgraded** | Revenue-from-operations mislabel repeats in the statutory Board's Report (item 3); 9M PBT does not reconcile (item 5); Claim Income unnamed against "PBT doubled" (item 7) |
+| Narrative-vs-data consistency | **Weak, new this run** | "Stable"/"broadly stable" product mix asserted three times against a segment chart showing a 350% swing (item 9); registration-drives-revenue framing fails the region test (item 8) |
+| Candour on shortfalls | Mixed | One unprompted admission ("modest" subsidiary utilisation, AR p17); silence on every other item above |
+| Filing integrity (refilings) | Positive, narrower than run 1 stated | No substantive figure changed in either refiling; the same trade-payable bifurcation defect was flagged by BSE twice (H1 FY25 and H1 FY26), a process-repeat run 1 did not name |
+| Financial-reporting quality (carried) | Weak | Undisclosed CFO reclassification, unexplained goodwill jump, Section 197 breaches, LLP guarantees outside consolidation |
+| **Overall grade** | **D** | See below |
 
-### 4D. Concall-mode red flags (no-concall specific, additive to B02/B03)
+### 4D. Concall-mode red flags (revised, additive to B02/B03/B12b)
 
-- **FLAG-DISCLOSURE (new)**: Standalone FY26 "Revenue from Operations" figure in the H2/FY26 investor deck (Rs 10,607.05 lakh) is actually the Total Income line (includes Rs 417.10 lakh other income); the correct Revenue from Operations figure (Rs 10,189.95 lakh) appears in the audited results filing and in the two later company documents (Aug-2026 deck, FY26 AR), with no acknowledgement of the earlier deck's error. Severity: MINOR-to-MODERATE (a ~4% overstatement in one investor communication, silently corrected, not restated as a correction).
-- **FLAG-DISCLOSURE (new)**: The Aug-2026 investor presentation, filed with BSE under Reg 30, carries unremoved "Lorem ipsum" placeholder text on the Trident Mediquip (p12) and TLL Wellness (p14) subsidiary pages — the same pages carrying the peak-revenue and margin claims this stage is testing. Severity: MINOR (a process-quality signal on document care, not a substantive misstatement).
-- **FLAG-GOVERNANCE (carried, contextualised)**: The "triple in three years" aspiration and the subsidiary peak-revenue figures were introduced for the first time in the Aug-2026 deck, after the FY26 audited subsidiary shortfalls (TNS loss-making/negative net worth, Parenterals nil revenue) were already known internally; they were never carried into the FY26 AR's own, more measured Outlook language filed a month later. Severity: MODERATE (a promotional-document framing gap against the statutory filing, not a false statement, but a material inconsistency in a single management's own investor communications inside a five-week window).
+- **FLAG-DISCLOSURE (revised, upgraded)**: Total Income mislabelled as
+  "Revenue from Operations" recurs in three decks (Nov-2025, Jan-2026,
+  May-2026) AND in the FY26 Board's Report itself. Severity: **MODERATE**
+  (upgraded from run 1's MINOR-to-MODERATE; the statutory-filing repeat is
+  the material change).
+- **FLAG-CASHFLOW (new, this run)**: FY25 standalone CFO is presented on
+  two different bases with no note across three decks: -349.31 (Nov, Jan)
+  vs +197.07 (May), the difference being the undisclosed working-capital-
+  facilities addback. Severity: **MAJOR** (this is a Pillar 2 cash input,
+  not a cosmetic deck issue).
+- **FLAG-RECONCILIATION (new, this run)**: 9M FY26 PBT (1,667.60, Jan-2026
+  deck) does not equal H1 + Q3 (1,702.85), a gap of Rs 35.25 lakh; Q4 FY26
+  D&A (4.15) is near zero against Q3 (71.23) and Q1 FY27 (69.81), unnoted.
+  Severity: **MINOR-to-MODERATE** (small absolute amounts, but signals weak
+  interim-figure control).
+- **FLAG-CONSOLIDATION (new, this run)**: the FY26-to-equity-method change
+  is called immaterial while the Q1 FY27 filing's own language still
+  describes proportionate consolidation, and the consolidated margin story
+  (470bps expansion) runs opposite to the standalone margin (187bps
+  contraction) over the same period. Severity: **MAJOR**, unresolved,
+  flagged for Stage 11/FTTCP rather than settled here.
+- **FLAG-DISCLOSURE (new, this run)**: consolidated Claim Income (Rs 5.41
+  Cr FY26, 19.9% of PBT) is unnamed against the "PBT doubled" claim.
+  Severity: **MODERATE**.
+- **FLAG-NARRATIVE (new, this run)**: registration-pipeline regional
+  concentration (Africa 64%) does not match FY26's actual revenue drivers
+  (domestic, and Asia exports). Severity: **MODERATE**.
+- **FLAG-NARRATIVE (new, this run)**: "fairly stable"/"broadly stable"
+  product-mix language, repeated across two decks and the AR, contradicts
+  the company's own segment chart (Capsules +350%, other categories -38%).
+  Severity: **MODERATE**.
+- **FLAG-GOVERNANCE (carried, contextualised)**: "triple in three years"
+  and subsidiary peaks introduced only in the Aug-2026 deck, after the
+  FY26 audited subsidiary shortfalls were known, never carried into the
+  AR's own Outlook. Severity: MODERATE.
+- **FLAG-PROCESS (carried, corrected)**: Lorem ipsum placeholder text in
+  the Aug-2026 Reg 30 deck; BSE flagged the same trade-payable bifurcation
+  defect in both H1 FY25 and H1 FY26 refilings, a repeat run 1 scored
+  cleanly Positive without naming. Severity: MINOR.
 
 ---
 
 ## CREDIBILITY GRADE AND RATIONALE
 
-**Grade: C** (NO-CONCALL MODE default, held at C, not raised to B).
+**Grade: D** (regraded from C on this run; item 11).
 
-Reasons this stage does NOT raise the grade to B, despite one genuine positive
-(clean, format-only refilings with no substantive figure change):
-1. The single largest available AR-guidance-vs-results delivery item found by B02/B03 — the undisclosed, retroactive cash-flow reclassification that turns a reported positive CFO into a true negative CFO in both FY25 and FY26 — is a severe, unexplained accounting-presentation issue that sits squarely inside "documented guidance-vs-delivery evidence" territory (it is the delivery record itself, not a peripheral note) and argues strongly against upgrading.
-2. The standalone-revenue mislabelling and the promotional-deck framing gap against the AR's own Outlook (both found fresh in this stage) add two further, independently sourced instances of investor-facing imprecision inside the same twelve months.
-3. The one clear positive (refiling integrity) and one clear positive (candid subsidiary-utilisation admission) are both real, but the mode's rule requires the grade to be earned on delivery evidence, and the weight of new evidence this stage adds is net negative, not net positive, relative to what B02/B03 had already established.
+NO-CONCALL MODE rule: `credibility_grade` defaults to C; it may rise to B
+only on documented AR-guidance-vs-results delivery evidence; it never
+rises to A; it may go **lower** than C on the evidence. Run 1 held the
+grade at C. This run finds that the weight of newly-confirmed evidence
+takes the grade below C:
 
-The grade feeds Role 1 probability weights at Mixed (35/45/20) per the framework
-table (Master Prompt v3.3), not Good (25/50/25).
+1. The revenue-from-operations mislabel is not an isolated deck slip; it
+   recurs in the FY26 **Board's Report**, the statutory document signed by
+   the directors, four months after the first deck instance. A mislabel
+   that survives into the statutory filing is a materially different
+   finding from a deck typo later fixed.
+2. The FY25 CFO figure is presented on two incompatible bases across three
+   decks with no note, and the difference is exactly the disclosed-but-
+   unexplained working-capital-facilities addback that B02/B03 already
+   flagged at the AR level. The decks carrying this too means the
+   inconsistency is not confined to one filing; it is a pattern across the
+   whole investor-communication set.
+3. Interim figures do not reconcile (9M PBT gap, near-zero Q4 D&A), and the
+   consolidation basis is described two different ways across two
+   consecutive results filings, underpinning a margin-expansion claim that
+   runs opposite to the standalone-basis result over the same period.
+4. Claim Income (19.9%-38.4% of PBT across the two years shown) is never
+   named against a headline "PBT doubled" claim.
+5. The registration-pipeline narrative is directly contradicted by where
+   FY26 revenue actually came from, and the "stable product mix" claim is
+   directly contradicted by the company's own segment chart, each restated
+   multiple times without correction.
+
+Against this: one genuine, unprompted candour instance (subsidiary
+utilisation "modest," AR p17), and clean refiling arithmetic (no
+substantive figure changed on either refiling, though the same BSE defect
+recurred twice). These two positives do not offset five independently
+sourced, repeated instances of unacknowledged inconsistency across the
+decks and the statutory Board's Report inside a single twelve-month
+window. The mode's rule requires the grade to be earned on delivery
+evidence; the net evidence this run adds is negative, and material enough
+to cross from C ("mixed") into D ("poor") rather than merely holding C.
+
+The grade feeds Role 1 probability weights at **Poor (45/40/15)** per the
+framework table (Master Prompt v3.3), not Mixed (35/45/20).
 
 ---
 
-## INPUT GAPS CARRIED FORWARD
+## INPUT GAPS CARRIED FORWARD (unchanged from run 1)
 
 - concalls/: EMPTY, DECLARED (no-concall mode; B00).
-- shareholding/: filed pattern absent; screener aggregation used, weighed not anchored (B00).
-- rating/: EMPTY, not a gap (company holds no credit rating, FY26 AR Directors' Report item 10).
+- shareholding/: filed pattern absent; screener aggregation used, weighed
+  not anchored (B00).
+- rating/: EMPTY, not a gap (company holds no credit rating).
 - research/: EMPTY, no broker notes.
-- The 20-Aug-2026 announcement pointed to as "analyst meet outcome" in the task brief is in fact a Reg 30 award-received intimation (Top 50 SME Awards - Gujarat), not an analyst-meet outcome. The nearest analyst-facing document found in the corpus is a 16-Sep-2026 intimation of participation in an Arihant Capital virtual conference on 25-Sep-2026 (outcome/transcript not yet in the corpus, and by design carries no UPSI). Recorded as a gap: no analyst-meet outcome document exists in this corpus.
+- No analyst-meet transcript exists in the corpus (16-Sep-2026 Arihant
+  Capital conference intimation, outcome not yet filed).

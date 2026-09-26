@@ -3,37 +3,60 @@ company: "TLL"
 run_date: "2026-09-26"
 model: claude-sonnet-5
 status: complete
+rework_round: 2
+rework_resolution:
+  - item: 12
+    subject: "EBIT basis for ROCE (A1/A2/A4), interest coverage (D2), M3"
+    disposition: "accepted"
+    anchor: "prompts/01-gate-0-pipeline.md formula block (fixed ROCE formula, no substituted alternatives; rule 2 bars qualitative judgment); screener-Data_Sheet.csv PBT/Interest FY24-26. Corrected EBIT = PBT + Interest (all-in): ROCE FY24 13.98%, FY25 17.33%, FY26 21.02%. Operating-EBIT (excl. Other Income) kept only as a disclosed sensitivity. D1 unaffected: its operating-EBITDA basis independently matches screener's own 'Operating Profit' quarterly convention, so it is not a substitution."
+  - item: 13
+    subject: "M4 Customer Stickiness literal tier"
+    disposition: "accepted"
+    anchor: "prompts/01-gate-0-pipeline.md M4 rule text, tier 3 'max 1 decline year, fully recovered = 3' (no receivable-days leg); screener-Data_Sheet.csv Sales row FY22-26, zero decline years, satisfies tier 3 literally (0 <= 1). M4 corrected 1 -> 3 (present)."
+  - item: 14
+    subject: "Recomputed card"
+    disposition: "accepted (subsumed)"
+    anchor: "Not a separate action; answered by the corrected blocks/core_score/moat_score/grand_total/classification fields below, which match the framework audit's own recompute plus the M5 correction (item 16) the audit itself did not apply."
+  - item: 15
+    subject: "FCF false input gap / Purchase of Fixed Assets line"
+    disposition: "accepted, extended"
+    anchor: "Annual_Report_2026.txt Consolidated Cash Flow Statement (per 03-ardeep.md Phase 3A): Purchase of Fixed Assets Rs 3,647.24L (FY26) separate from Purchase of Equity Shares Rs 794.67L. Independently found beyond the audit's own citation: Annual_Report_2025.txt Consolidated Cash Flow Statement lines 9007-9011 carries the SAME line for FY25 (Rs 1,109.95L) AND a FY24 comparative column (Rs 1,644.68L), reconciling exactly to that statement's own Net Investing CF total. Defined FCF now computed FY24-26 (FY24 -14.22 Cr, FY25 -21.34 Cr, FY26 -31.78 Cr); FY22-23 remain on the CFO+netCFI proxy, a real (not false) gap -- no AR/results filing that far back is in the corpus. B2/B3 scores unchanged (already at the floor)."
+  - item: 16
+    subject: "One net worth basis across A3/D3/E4; M5 scored from peer market caps"
+    disposition: "accepted"
+    anchor: "Net worth: adopted AR-face Shareholders' Funds excl. Minority Interest (Annual_Report_2026.txt lines 9933-9938, Share Capital 1,193.30L + Reserves 8,474.26L = Rs 96.68 Cr FY26) across A3, D3, E4; screener Share Capital+Reserves used for FY22-24 (no MI/pending-allotment distortion those years). No score changes band. M5: CAPLIPOINT/SENORES/INNOVACAP Data_Sheet.csv row 8 Market Capitalization (TLL 487.49, SENORES 6,241.18, INNOVACAP 7,330.51, CAPLIPOINT 21,550.08 Cr) -- data was already in the sheets used for M2/M9. TLL 4th of 4 -> literal 'top 5 mcap' -> M5 corrected 0 -> 1 (not present)."
 input_gaps:
   - "FY22/FY23 current-liability and trade-payable breakdown not in corpus (no FY23 results filing or AR held); A1/A2/A4/B4 computed on the 3-year FY24-FY26 sub-window only, not the full 5-year window."
   - "Promoter pledge % NOT FOUND (shareholding/ holds only a non-filing screener aggregation with no pledge column; AR note 1.6 promoter table also carries no pledge column; formal SEBI SHP-I filing not in corpus). E3 scored 0, not assumed."
   - "AR note 1.6 promoter shareholding table's summed 'Total promoter %' row not cleanly captured by text extraction; E1/E2 anchored to screener-shareholding-pattern.csv (non-filing aggregation) instead, per B00 note."
-  - "Purchase-of-Fixed-Assets line in the AR consolidated cash flow statement could not be cleanly disaggregated from acquisition-of-subsidiary outflows in the extracted text; B2/B3 FCF proxied as CFO + net Investing CF, which is more punitive than true organic capex would be."
+  - "FY22/FY23 Purchase-of-Fixed-Assets breakdown not in corpus (no AR or results filing that far back carries the consolidated cash flow line); B2/B3 use the CFO + net Investing CF proxy for those two years only. FY24-26 now use the AR's own Purchase of Fixed Assets line directly (run-1's claim that this line could not be separated from acquisition outflows was checked and found false; corrected, see rework_resolution item 15)."
   - "Nature of 'Claim Income' Rs 5.41 Cr FY26 (58% of Other Income, 20% of PBT), AR Note 22, not defined in the extracted note text. NOT FOUND."
 flags:
-  - {type: FLAG-GATE0, reason: "Classification AVERAGE, capped by two deal-breakers (Block B <8; cumulative CFO/PAT <0.50), not by the Core-score band alone though both agree. Growth (Block C 16/20) is the strongest block; cash conversion (Block B 0/20) is the weakest, the widest spread on the scorecard."}
+  - {type: FLAG-GATE0, reason: "Classification AVERAGE, capped by two deal-breakers (Block B <8; cumulative CFO/PAT <0.50), not by the Core-score band alone though both agree. Blocks A and C tied strongest (16/20 each) after the item-12 EBIT correction; cash conversion (Block B 0/20) is the weakest, the widest spread on the scorecard."}
   - {type: FLAG-DATA-CONFIDENCE, reason: "5 years of P&L history (FY22-FY26): band '5-6 lower, may not have seen a full cycle'."}
-  - {type: FLAG-CASH, reason: "block_b_trend DETERIORATING: cumulative CFO -Rs 22.5 Cr vs cumulative PAT +Rs 47.1 Cr FY22-26; Working Capital Days rose 151 (FY24) to 203 (FY26), +52 days in two years. Confirms LBF1."}
-  - {type: FLAG-DATA-QUALITY, reason: "FY25 consolidated CFO restated between the FY25 AR (-Rs 10.24 Cr, audited then) and the FY26 AR's FY25 comparative column (-Rs 3.99 Cr): a Rs 6.26 Cr swing with no restatement note located in the text searched. Gate 0 scored on the screener/originally-filed figure. Found while checking LBF2; unresolved, forwarded."}
+  - {type: FLAG-CASH, reason: "block_b_trend DETERIORATING: cumulative CFO -Rs 22.5 Cr vs cumulative PAT +Rs 47.1 Cr FY22-26 (as-filed basis); Working Capital Days rose 151 (FY24) to 203 (FY26), +52 days in two years. Confirms LBF1. Sensitivity: Stage 3 (03-ardeep.md) independently re-derives true FY26 CFO at approximately -Rs 4.77 Cr (removing an undisclosed 'Changes in Working Capital Facilities' addback of Rs 945.65 lakh), i.e. worse than the as-filed +Rs 4.69 Cr this stage scored on. No B-row score changes on the sensitivity basis; all four are already at the floor."}
+  - {type: FLAG-DATA-QUALITY, reason: "FY25 consolidated CFO restated between the FY25 AR (-Rs 10.24 Cr, audited then) and the FY26 AR's FY25 comparative column (-Rs 3.99 Cr): a Rs 6.26 Cr swing. Stage 3 has since substantially explained the mechanism (the undisclosed working-capital-facilities addback of Rs 625.67 lakh in the FY26 AR's FY25 comparative), forwarded for the qualitative stage to close formally."}
   - {type: FLAG-OTHER-INCOME, reason: "Other Income is 60.4% of PBT (FY25) and 34.1% of PBT (FY26); FY26's largest component is an unexplained 'Claim Income' line, Rs 5.41 Cr, AR Note 22. Forwarded per LBF2."}
 data_years: 5
 fy_range: "FY22 to FY26"
-blocks: {A: 12, B: 0, C: 16, D: 12, E: 8}
-core_score: 48
-moat_score: 10
-grand_total: 58
-moats_confirmed: 1
-moat_class: "THIN"
+blocks: {A: 16, B: 0, C: 16, D: 12, E: 8}
+core_score: 52
+moat_score: 15
+grand_total: 67
+moats_confirmed: 3
+moat_class: "MODERATE"
 classification: "AVERAGE"
 deal_breakers:
   - "#2 Block B <8 (B=0) -> max GOOD"
   - "#4 Cumulative CFO/PAT <0.50 (-0.478) -> max AVERAGE (binding cap)"
 history_downgrade: false
 data_notes:
-  - "EBIT computed as PBT + Interest - Other Income (operating basis) for ROCE (A1/A2/A4) and interest coverage (D2), since Other Income is 34-60% of PBT in FY25-26. All-in EBIT (PBT+Interest) would raise A1 to band 3 (median 17.33%) and A2 to band 3; footnoted, not used."
-  - "FCF (B2/B3) proxied as CFO + net Investing CF; overstates true capex by folding in TNS Pharma/Trident Mediquip/TLL Parenterals acquisition outflows (LBF3). All 5 years negative on this proxy."
+  - "EBIT corrected to PBT + Interest (all-in, rule-literal) for A1/A2/A4/D2/M3, per rework item 12. Operating-EBIT (excl. Other Income) kept only as a disclosed sensitivity in the report; it is not scored. D1 stays on the operating-EBITDA basis, which independently matches screener's own Operating Profit convention and is therefore not a substitution."
+  - "FCF (B2/B3) now uses the AR's own Purchase of Fixed Assets line for FY24-26 (defined FCF: FY24 -14.22 Cr, FY25 -21.34 Cr, FY26 -31.78 Cr); FY22-23 still use the CFO + net Investing CF proxy, a genuine remaining gap. B2/B3 scores unchanged (all years negative on either basis)."
   - "ROCE/WC-Days sub-metrics (A1/A2/A4/B4) run on FY24-FY26 only (3 years); Current Liabilities sourced from AR consolidated balance sheet, not the screener sheet (which does not split current from non-current liabilities)."
-  - "E4 boundary-sensitive: 5.17% (excl. minority interest, used, band 5-15=3) vs 4.80% (incl. minority interest, band <5=5)."
-  - "M4 and M10 (moat tests) scored by judgment call, stated in-report: TLL's zero-revenue-decline-year-but-blown-out-receivables profile does not literally match any listed tier."
-  - "Peer EBITDA-margin (M2) and gross-margin-proxy (M9) medians computed from CAPLIPOINT/SENORES/INNOVACAP Data_Sheet.csv FY26 columns, same operating basis as TLL."
-block_b_trend: "deteriorating -- cumulative CFO -Rs 22.5 Cr vs cumulative PAT +Rs 47.1 Cr FY22-26 (screener-Data_Sheet.csv); Working Capital Days 151 (FY24) to 203 (FY26), +52 days (AR trade payables notes)."
-analyst_note: "LBF1 confirmed exactly against AR and screener: receivables 27.7->73.7 Cr, debtor days 116->208, CFO +4.7 Cr vs PAT 19.0 Cr FY26. LBF2 produced two new findings while checking: (1) FY26 AR Note 22's largest Other Income item is an unexplained Rs 5.41 Cr 'Claim Income' line, 58% of Other Income; (2) FY25 CFO is restated between the FY25 AR (-10.24 Cr) and the FY26 AR's FY25 comparative (-3.99 Cr), a Rs 6.26 Cr swing with no located restatement note. Both are forwarded, not resolved, per Gate 0's no-qualitative-judgment mandate. Scoring used EBIT excluding Other Income throughout (Block A, D2, M2, M3) given Other Income's large share of PBT; the all-in alternative is shown in the report and would raise A1/A2 by two bands each -- material enough that the verifier should confirm the choice."
+  - "Single net-worth basis now used across A3, D3, E4 (AR Shareholders' Funds excl. Minority Interest, Rs 96.68 Cr FY26; screener Share Capital+Reserves for FY22-24 where no MI/pending-allotment distortion exists), per rework item 16. No score changes band on any of the three rows."
+  - "M4 corrected to the literal tier (3, present) per rework item 13; M10 stays 0, its tier 3 carries an 'AND stable' receivable-days leg that M4's does not."
+  - "M5 corrected from 'PEER DATA NEEDED' (0) to 1 (not present) using peer market caps already in the same Data_Sheet.csv files used for M2/M9, per rework item 16."
+  - "Peer EBITDA-margin (M2) and gross-margin-proxy (M9) medians computed from CAPLIPOINT/SENORES/INNOVACAP Data_Sheet.csv FY26 columns, same operating basis as TLL. Unchanged from run 1."
+block_b_trend: "deteriorating -- cumulative CFO -Rs 22.5 Cr vs cumulative PAT +Rs 47.1 Cr FY22-26, as-filed basis (screener-Data_Sheet.csv); Stage 3's true-CFO sensitivity is more negative still; Working Capital Days 151 (FY24) to 203 (FY26), +52 days (AR trade payables notes)."
+analyst_note: "Run 2 (rework). Corrected three of five audit items upward for TLL (EBIT basis, M4 tier, M5 score) and confirmed a genuine data find on the fourth (FY24 Purchase of Fixed Assets, Rs 16.45 Cr, from the FY25 AR's own comparative column -- the audit itself only cited FY25/FY26). None of the five corrections moves the classification: AVERAGE holds on the same two deal-breakers as run 1 (Block B <8; cumulative CFO/PAT <0.50), both untouched by any of the five items, because Block B's inputs (CFO, WC days) are not EBIT-, tier-, or net-worth-basis questions. Core rose 48->52, moat 10->15 (THIN->MODERATE), grand total 58->67. The cash-generation floor is the real finding this scorecard carries forward, and Stage 3's independent true-CFO re-derivation (-Rs 4.77 Cr FY26 vs +Rs 4.69 Cr printed) makes that floor look worse, not better, once the undisclosed addback is removed -- carried as a sensitivity, not scored, per Gate 0's mechanical mandate."

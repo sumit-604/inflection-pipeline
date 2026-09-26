@@ -1,0 +1,105 @@
+stage: B00-inputs
+company: TLL
+run_date: 2026-09-26
+model: orchestrator (stage 0 run inline by the orchestrator session)
+status: complete
+corpus_commit: 3440333e80864f1f1fe5850476aa1b50281c50a7
+spear_gate: "PASS. companies/TLL.md carries 'Spear: OVERRIDE 2026-09-26 (operator standing ruling 2026-09-05: Step-1 intake replaces the web spear)'."
+load_bearing_facts:   # first verification priority for every stage (from companies/TLL.md SPEAR)
+  - "LBF1 CASH CONVERSION: receivables Rs 27.7 Cr (FY25) to Rs 73.7 Cr (FY26), debtor days 116 to 208; CFO Rs +4.7 Cr on PAT Rs 19.0 Cr FY26, negative in FY23 and FY25 (screener Data_Sheet). Verify from FY26 AR cash flow and trade receivables ageing note; classify GROWTH-INDUCED vs STRUCTURAL. The company holds no credit rating (FY26 AR Directors' Report item 10), so no rating rationale exists."
+  - "LBF2 REFILED RESULTS AND ACCOUNTING QUALITY: H1 FY25 results refiled 20-Dec-2024 and H1 FY26 refiled 14-Nov-2025 after BSE format-discrepancy emails (trade payable bifurcation, among others). Compare originals (announcements/) with refiled versions (announcements/, results/): did any figure change? Read the auditor's report and CARO. Other income Rs 8.2 Cr FY25 / Rs 9.3 Cr FY26 against PBT Rs 13.6 / 27.2 Cr: identify its source."
+  - "LBF3 SUBSIDIARY BUILD VS DELIVERY: deck-stated peak revenues TNS Pharma Rs 40 Cr, Trident Mediquip Rs 70 Cr, TLL Parenterals Rs 200 Cr, and 'triple consolidated business over the next three years' (Aug-2026 deck p5) against FY26 actuals (TNS Rs 6 Cr, Mediquip Rs 27 Cr, Parenterals nil). Check minority interest share, corporate guarantees (Feb-Mar 2025 filings, incl. Talon Healthcare LLP), Mediquip stake dilution via 2026 private placements, and the funding plan (debt, warrants, IPO-proceeds deviation statement)."
+  - "LBF4 PROMOTER AND DILUTION: promoter 70.04% (Sep-2023) to 62.59% (Jun-2026) (screener table, non-filing); preferential warrants at Rs 266 (EGM 09-May-2025; allotments Jun-2025 to Aug-2026); Reg 29 disclosures (Hardik Desai Family Trust); RPTs (FY26 AR Form AOC-2); BSE price-movement clarification 24-Sep-2026 (company: no pending information)."
+sector_cap_row: "Pharma / CDMO"
+sector_cap_row_evidence: >
+  section-1b chunk 05 (.claude/skills/section-1b/references/05-sector-cap.md,
+  row 'Pharma / CDMO | 38x'). The company exports pharmaceutical formulations
+  (tablets, capsules, liquids, ointments, injectables) to semi-regulated
+  markets through distributors, historically via loan-licence and
+  third-party manufacturing, and now owns WHO-GMP plants through
+  subsidiaries (FY26 AR company overview; Aug-2026 deck pp 7-9). Trident
+  Mediquip (medical devices, IV cannulas and infusion sets, ~21% of FY26
+  consolidated revenue per the deck) has no separate device row; the
+  'Hospitals / dialysis / healthcare services' row (35x) is a services row
+  and does not fit a manufacturer. Pharma / CDMO fits. FLAG for phase 3: the
+  device and cosmetics slices may merit SOTP treatment (Amendment 27.2).
+reporting_units:
+  annual_report: "INR lakh (FY26 AR 'Amount in Lakhs'; FY25 AR 'Amount Rs in Lacs')"
+  results: "INR lakh (FY26 and H1 FY26 results 'INR In Lacs'; Q1 FY27 results read from page face by stage)"
+  presentation: "INR Cr (decks, 'Rs crores')"
+  screener: "INR Cr (screener Data_Sheet)"
+  prospectus: "INR lakh (restated financials; stage confirms on page face)"
+  note: "Filings report in INR lakh; decks and screener in INR Cr. 100 INR lakh = 1 INR Cr. Conversion happens once, at stage 10."
+listed_date: "2022-09-09"
+recently_listed: false
+recently_listed_evidence: "FY26 AR company overview: 'company has issued IPO as on 9th September, 2022 and became listed on Bombay Stock Exchange' (BSE SME). 4.0 years before run_date, outside the ~3-year window. The prospectus is held anyway (inputs/prospectus/TLL-prospectus-2022.pdf, SEBI attachment Dec-2022) for promoter/group history and restated pre-IPO financials."
+exchange_status: "BSE SME platform. Half-yearly results (H1, H2/FY) plus a voluntary Q1 FY27 filing. Main-board migration to BSE and NSE approved by postal ballot (outcome 17-Jul-2026); migration not yet effective in the corpus."
+input_gaps:
+  - "COLLECTOR WARNING (verbatim): shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend."
+  - "COLLECTOR WARNING (verbatim): screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance Sheet, screener:Cash Flow, screener:Customization, LINCOLN:Profit & Loss, LINCOLN:Quarters, LINCOLN:Balance Sheet, LINCOLN:Cash Flow, LINCOLN:Customization, INNOVACAP:Profit & Loss, INNOVACAP:Quarters, INNOVACAP:Balance Sheet, INNOVACAP:Cash Flow, INNOVACAP:Customization. Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again."
+  - "COLLECTOR WARNING (verbatim): no results PDFs yet (screener has none): add later on github or locally + --push-again"
+  - "COLLECTOR WARNING (verbatim): no rating PDF yet: add later the same way"
+  - "RESOLVED AT INTAKE: results/ filled from BSE: Q1 FY27 unaudited (board 29-Jul-2026), H2/FY26 audited (board 07-May-2026), H1 FY26 REFILED version (14-Nov-2025). Older results held in announcements/ for the backward check and the refiling comparison: H1 FY26 original (11-Nov-2025), FY25 audited (28-Apr-2025), H1 FY25 refiled (20-Dec-2024) and original (19-Oct-2024)."
+  - "rating/: EMPTY and NOT A COLLECTION GAP. FY26 AR Directors' Report item 10: 'The Company has not obtained Credit Rating from any Credit Rating Agency as on the date of this Report.' Stage 10 marks rating_wc_quote unresolved; Pillar 2 runs without rating evidence."
+  - "concalls/: EMPTY, DECLARED. No earnings-call transcript filed on BSE for scrip 543616 across Sep-2024 to Sep-2026 (BSE announcement listing in 6-month windows); screener lists PPT links only. manifest concalls_available: false. NO-CONCALL MODE: stage 5 reads AR MD&A, chairman letter, results commentary and the four decks; credibility grade defaults C, may rise to B only on documented guidance-vs-delivery evidence. Analyst/investor meet intimation and outcome (Aug-2026, Sep-2026) are in announcements/; no transcript of those meets."
+  - "RESOLVED AT INTAKE (PARTIAL): shareholding/ holds the screener shareholding table as CSV (Sep-2023 to Jun-2026; promoter 62.59%, FII 5.25%, DII 0.26% at Jun-2026). It is a SCREENER AGGREGATION, NOT A FILING: weigh, do not anchor. The filed pattern at 31-Mar-2026 is in the FY26 AR. FII+DII on the screener table is 5.51%, above the 3% UA qualifier line."
+  - "screening: EMPTY-CSV defect present. Profit & Loss, Balance Sheet, Cash Flow and Quarters sheets are absent for the subject and all peers. The four Data_Sheet CSVs (screener-Data_Sheet.csv = TLL consolidated; CAPLIPOINT, SENORES, INNOVACAP) are populated with raw annual P&L (FY22-FY26 for TLL), balance sheet, cash flow and 10 quarterly rows. Stage 1 reads Data_Sheet only. LINCOLN Data_Sheet moved to inputs/other/ (rejected peer). SENORES and CAPLIPOINT Data_Sheets fetched separately at intake (the collector's SENORES login failed)."
+  - "screener basis: main URL is CONSOLIDATED (/company/543616/consolidated/). Five subsidiaries report into it (TNS Pharma, TLL Parenterals, Trident Mediquip, TLL Elements, TLL Wellness per Q1 FY27 limited review). Screener data history begins FY22 (5 annual columns), so Gate 0 runs on at most 5 years."
+  - "annual-report/: TWO ARs held, FY26 (Reg 34 filing 04-Sep-2026 with 13th AGM notice, 150 PDF pages) and FY25 (Reg 34 filing 05-Sep-2025, 131 PDF pages). Contract is 0-1: FY26 is the primary AR; FY25 is the backward-check AR. Two FY26 AR duplicates in announcements/ (47709929, 72bebaba; identical hash) removed."
+  - "peer-concalls: 12 transcripts, 4 per peer, Q2 FY26 to Q1 FY27, fetched from BSE: CAPLIPOINT (BSE 524742; calls Q2 FY26, Q3 FY26, Q4 FY26, Q1 FY27 held 12-Aug-2026, page 1 of each); SENORES (BSE 544319) filed 13-Nov-2025, 27-Jan-2026, 19-May-2026, 03-Aug-2026; INNOVACAP (BSE 544067): Q2 FY26 (filed 13-Nov-2025), Q3 FY26 (Feb-2026), Q4 FY26 (call 08-May-2026), Q1 FY27 (call 12-Aug-2026). PEER SET CHANGED AT INTAKE: LINCOLN rejected (one transcript in 12 months, Feb-2026); its two transcripts sit in inputs/other/, never consumed."
+  - "RESOLVED AT INTAKE: the four CAPLIPOINT BSE filings were one-page cover letters linking to the company website. Replaced with the full transcripts downloaded via screener (company-hosted, 16-22 pages each); quarter confirmed from page 1."
+  - "announcements/: 47 Reg 30 / SAST filings Jul-2024 to Sep-2026 staged from BSE by 6-month-window queries (the collector's own fetch returned 12, two of them AR duplicates). Curated: acquisitions (TLL Parenterals Nov-Dec 2024; Trident Mediquip Dec-2024 to Feb-2025; Mediquip stake changes Jan-Jun 2026), corporate guarantees (14-Feb, 25-Feb, 12-Mar-2025), MoU (05-Mar-2025), preferential issue and EGM (16/17-Apr-2025), warrant allotments (Jun-2025 to Aug-2026), statement of deviation (28-Jul-2025), director changes (01-Sep-2025, 21-Nov-2025, 13-Jun-2026), postal ballot for main-board migration (15-Jun-2026), awards, analyst meets, BSE price-movement clarification (24-Sep-2026). Trading-window, Reg 74(5), and most Reg 29 filings excluded (one Reg 29(2) of 03-Jul-2025 kept). Duplicates removed: 20260831-eeb0bc8f (= 20260831-allotment); 20251121 resignation file (= allotment file, one combined board outcome, kept as 20251121-allotment-and-director-resignation)."
+  - "research: EMPTY. No broker notes. No effect on anchored evidence."
+  - "presentation: 4 decks, H1 FY26 (13-Nov-2025), Q3 FY26 (20-Jan-2026), H2/FY26 (09-May-2026), Q1 FY27 (03-Aug-2026). A second near-identical Q1 FY27 deck (7 bytes different) moved to inputs/other/; the collector's copy (identical hash) removed. The Q1 FY27 deck carries 'Lorem ipsum' placeholder text on subsidiary pages (pp 12, 14)."
+  - "prospectus: held (not required). TLL-prospectus-2022.pdf, 428 pages, SEBI attachment dec-2022/1669897437925.pdf."
+  - "TOOLING: poppler pdftotext in this session exits 127 (missing DLL); pdftoppm absent. Every input PDF is pre-extracted with PyMuPDF to a page-marked .txt BESIDE the PDF (same basename, '[page N]' markers = PDF page numbers). ARs, prospectus: portrait pages in stream order; landscape pages (width > 1.1x height; 15 in FY26 AR, 13 in FY25 AR, 89 in prospectus) split into '[left half]' / '[right half]' sections under their [page N] marker. Image-only pages in the results filings (auditor limited-review and audit reports, some signed statements) were OCR'd with RapidOCR and carry '[OCR text, rapidocr, verify against image]'. Stages and verifiers read the .txt; anchors cite the PDF with the page number."
+freshness_pairs:
+  - pair: "RESULTS to CONCALL"
+    trigger_doc: "inputs/results/20260729-Q1FY27-results.pdf (quarter ended 30-Jun-2026)"
+    mate_expected: "Q1 FY27 earnings call transcript"
+    status: PASS
+    missing_doc: ""
+    note: "SKIPPED: manifest concalls_available false; the company files no call transcripts. Absence declared, not a gap."
+  - pair: "RATING BULLETIN to RATIONALE"
+    trigger_doc: "none"
+    mate_expected: "n/a"
+    status: PASS
+    missing_doc: ""
+    note: "No rating exists (FY26 AR Directors' Report item 10)."
+  - pair: "SEBI ORDER to ORDER TEXT"
+    trigger_doc: "none"
+    mate_expected: "n/a"
+    status: PASS
+    missing_doc: ""
+    note: "No SEBI order referenced in the FY26 AR or announcements. The 24-Sep-2026 filing is a BSE surveillance price-movement query and the company's reply, not an order."
+  - pair: "AR to LATEST AUDITED ANNUAL RESULTS"
+    trigger_doc: "inputs/results/20260507-FY26-H2-results.pdf (FY26 audited, 07-May-2026)"
+    mate_expected: "FY26 Annual Report"
+    status: PASS
+    missing_doc: ""
+    mate_found: "inputs/annual-report/Annual_Report_2026.pdf (FY2025-26, Reg 34 filing 04-Sep-2026)"
+freshness_verdict: FRESHNESS PAIRS OK
+corpus_verdict_hint: "CORPUS GAPPED (no company transcripts: NO-CONCALL MODE; shareholding filing absent, screener table only; research absent); freshness pairs OK"
+operator_pause: "EMPTY-FOLDER CONFIRMATION suppressed by /step1 AUTONOMY CONTRACT; standing answer 'proceed with the gaps'. Empty folders: research/, rating/ (company holds no rating), concalls/ (declared, concalls_available false). shareholding/ holds only a non-filing screener table."
+corpus_manifest:
+  - {path: inputs/annual-report/Annual_Report_2026.pdf, issuer: Trident Lifeline Ltd, type: "Annual Report FY2025-26 + 13th AGM notice (Reg 34 filing 04-Sep-2026)", period: FY26, folder_match: yes}
+  - {path: inputs/annual-report/Annual_Report_2025.pdf, issuer: Trident Lifeline Ltd, type: "Annual Report FY2024-25 (Reg 34 filing 05-Sep-2025)", period: FY25, folder_match: "yes (backward check)"}
+  - {path: inputs/results/20260729-Q1FY27-results.pdf, issuer: Trident Lifeline Ltd, type: "Board outcome + unaudited standalone and consolidated results + limited review", period: "Q1 FY27", folder_match: yes}
+  - {path: inputs/results/20260507-FY26-H2-results.pdf, issuer: Trident Lifeline Ltd, type: "Board outcome + audited results + auditor reports", period: "H2 / FY26", folder_match: yes}
+  - {path: inputs/results/20251114-H1FY26-results-REFILED.pdf, issuer: Trident Lifeline Ltd, type: "Rectification of discrepancy + refiled H1 results", period: "H1 FY26", folder_match: yes, note: "file on disk is named 20251114-H1FY26-results-REVISED.pdf"}
+  - {path: inputs/announcements/20251111-H1FY26-results-ORIGINAL.pdf, issuer: Trident Lifeline Ltd, type: "original H1 FY26 results", period: "H1 FY26", folder_match: "announcements (refiling comparison)"}
+  - {path: inputs/announcements/20250428-FY25-results.pdf, issuer: Trident Lifeline Ltd, type: "audited FY25 results", period: FY25, folder_match: "announcements (backward check)"}
+  - {path: inputs/announcements/20241019-H1FY25-results-ORIGINAL.pdf, issuer: Trident Lifeline Ltd, type: "original H1 FY25 results", period: "H1 FY25", folder_match: "announcements (refiling comparison)"}
+  - {path: inputs/announcements/20241220-H1FY25-results-REVISED.pdf, issuer: Trident Lifeline Ltd, type: "rectification + refiled H1 FY25 results", period: "H1 FY25", folder_match: "announcements (refiling comparison)"}
+  - {path: "inputs/presentation/{20251113,20260120,20260509,20260803}-investor-presentation.pdf", issuer: Trident Lifeline Ltd, type: investor presentations, period: "H1 FY26, Q3 FY26, H2/FY26, Q1 FY27", folder_match: yes}
+  - {path: inputs/prospectus/TLL-prospectus-2022.pdf, issuer: Trident Lifeline Ltd, type: "SME IPO prospectus", period: "2022", folder_match: yes}
+  - {path: "inputs/announcements/*.pdf (47 incl. the four results filings above)", issuer: "Trident Lifeline Ltd (one Reg 29 filing forwards a promoter-side disclosure)", type: "Reg 30 / SAST filings", period: "Jul-2024 to Sep-2026", folder_match: yes}
+  - {path: "inputs/peer-concalls/CAPLIPOINT-*.pdf (4)", issuer: Caplin Point Laboratories Ltd, type: transcripts, period: "Q2 FY26, Q3 FY26, Q4 FY26, Q1 FY27 (page 1)", folder_match: yes}
+  - {path: "inputs/peer-concalls/SENORES-*.pdf (4)", issuer: Senores Pharmaceuticals Ltd, type: transcripts, period: "Q2 FY26 to Q1 FY27 (stage 6 confirms)", folder_match: yes}
+  - {path: "inputs/peer-concalls/INNOVACAP-*.pdf (4)", issuer: Innova Captab Ltd, type: transcripts, period: "Q2 FY26 to Q1 FY27 (Aug-2026 = Q1 FY27 call 12-Aug-2026, page 1)", folder_match: yes}
+  - {path: "inputs/other/LINCOLN-*.pdf (2) + LINCOLN-Data_Sheet.csv", issuer: Lincoln Pharmaceuticals Ltd, type: "transcripts + data sheet (rejected peer)", period: "May-2024, Feb-2026", folder_match: "other (never consumed)"}
+  - {path: inputs/other/20260803-investor-presentation-b.pdf, issuer: Trident Lifeline Ltd, type: "near-duplicate Q1 FY27 deck", period: "Q1 FY27", folder_match: "other (never consumed)"}
+  - {path: inputs/shareholding/screener-shareholding-pattern.csv, issuer: "screener.in (aggregation)", type: "shareholding table, NOT A FILING", period: "Sep-2023 to Jun-2026", folder_match: "partial (non-filing)"}
+  - {path: "inputs/screening/{screener,CAPLIPOINT,SENORES,INNOVACAP}-Data_Sheet.csv", issuer: screener.in, type: "raw financial data sheet", period: "annual + 10 quarters", folder_match: yes}
+flags: []
+analyst_note: "NO-CONCALL MODE: the company files no transcripts. Peer set changed at intake (LINCOLN out, CAPLIPOINT in). Filings report in INR lakh; decks and screener in INR Cr. The H1 results refiled twice after BSE format queries are LBF2."

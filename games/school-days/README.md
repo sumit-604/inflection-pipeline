@@ -683,6 +683,12 @@ All of them are on the big map (G).
 - While you are away on a trip, your own home (and family) cannot be
   entered; your family is back in Suryanagar.
 
+## Fix (v50)
+
+- Giving to Baba and the other beggars crashed after opening surprise boxes:
+  the box counter reused the save field that remembers your gifts to them.
+  The counter has its own name now, and damaged saves repair themselves.
+
 ## Files
 
 - `index.html` the whole game. Open it in a browser.

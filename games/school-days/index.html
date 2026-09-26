@@ -748,7 +748,7 @@ import * as THREE from 'three';
    label goes through L(). The voice follows the language.
    Questions and answers stay in English for now.
    ============================================================ */
-const GAME_VERSION = "v49";
+const GAME_VERSION = "v50";
 const LANGS = {
   en: { name: "English", voice: "en-IN" },
   hi: { name: "हिन्दी", voice: "hi-IN" },
@@ -10511,6 +10511,7 @@ class Game {
   }
   // ---- Zippy delivery ----
   _buildExtras() {
+    { const pr = this.progress; if (!pr.gifts || typeof pr.gifts !== "object") { pr.gifts = {}; saveProgress(this.profile, pr); } } // repair saves hit by the old surprise-box counter
     const its = this._roadIts || (this._roadIts = []), pz = this.world.doors.find((d) => d.label === "Pizza Corner"), gar = this.world.doors.find((d) => d.label === "Auto Garage");
     if (pz) { const x = pz.x + 3.2, z = pz.z + 3; try { const s = makeTextSprite("🛵 " + L("Zippy Delivery"), { size: 44, scale: 1.0 }); s.position.set(x, 3, z); this.world.scene.add(s); } catch (e) { /* sign optional */ } its.push({ pos: { x, z }, radius: 2.8, prompt: () => (this._deliv ? L("🍕 Delivery in progress: follow the compass") : L("🛵 Zippy Delivery: deliver 3 pizzas (₹40 + tips)")), activate: () => this._deliveryStart() }); this._ideaSpots = [...(this._ideaSpots || []), ["🛵 Zippy Delivery", x, z]]; }
     if (gar) { const x = gar.x - 3.5, z = gar.z - 2.5; try { const s = makeTextSprite("🎨 " + L("Paint Shop"), { size: 44, scale: 1.0 }); s.position.set(x, 3, z); this.world.scene.add(s); } catch (e) { /* sign optional */ } its.push({ pos: { x, z }, radius: 2.8, prompt: () => L("🎨 Paint shop: new colour for your vehicle (₹150)"), activate: () => this._paintShop() }); this._ideaSpots = [...(this._ideaSpots || []), ["🎨 Paint Shop", x, z]]; }
@@ -10594,7 +10595,7 @@ class Game {
     this.roomInteractables.push({ pos: room._gift.sp, radius: 2.4, priority: 2, visible: () => this.progress.giftDay !== this.progress.day, prompt: () => L("🎁 Today's surprise box! Open it (E)"), activate: () => this._openGift(room) });
   }
   _openGift(room) {
-    const pr = this.progress; if (pr.giftDay === pr.day) return; pr.giftDay = pr.day; pr.gifts = (pr.gifts || 0) + 1; const k = pr.gifts % 6;
+    const pr = this.progress; if (pr.giftDay === pr.day) return; pr.giftDay = pr.day; pr.giftBoxes = (pr.giftBoxes || 0) + 1; const k = pr.giftBoxes % 6;
     const gifts = [[L("₹100 from Dadi's secret tin!"), () => this.addMoney(100, L("surprise box"))], [L("A shiny sticker: ⭐ SUPERSTAR. It goes in your album."), () => { pr.stickers = (pr.stickers || 0) + 1; }], [L("A glucose biscuit pack: energy +30!"), () => this.addEnergy && this.addEnergy(30)], [L("A toy car for Gudiya. She hugs you: 'Best brother-sister ever!'"), () => this.addFriendship && this.addFriendship("family", 2, L("gift"))], [L("₹50 and a note from Papa: 'Proud of you.'"), () => this.addMoney(50, L("surprise box"))], [L("A mystery comic book! Story time tonight."), () => { pr.comics = (pr.comics || 0) + 1; }]];
     const [msg, fn] = gifts[k]; fn(); saveProgress(this.profile, pr); if (room._gift) room._gift.g.visible = false; playSuccess(); this._snap && this._snap("🎁", "Opened the daily surprise box."); this._scareFlash && 0;
     this.dialogue.say(L("🎁 Surprise box"), [L("(You pull the ribbon... the lid pops open!)"), msg, L("Come back tomorrow for another surprise!")], null, { pitch: 480 });
@@ -10714,6 +10715,158 @@ class Game {
       showToast(L("👕 You change into: {o}. {m}", { o: o[2], m: o[0] === "uniform" ? L("Ready for the day!") : this.phase === "school" ? L("(At school you still wear the uniform.)") : L("Looking good!") }), 3000, "good");
       if (pr.outfitsTried.length === 6) { this._snap && this._snap("👗", "Tried six outfits from the cupboard."); showToast(L("🏅 Badge: Fashion Star!"), 3000, "good"); }
     }));
+  }
+
+  // ---- Other cities: every trip goes to a separate, different city, with its own streets, style and maps ----
+  _cityStyle(city) {
+    const S = {
+      india: { ground: 0x8fbf5a, walk: 0xbdb5a6, wall: [0xf4a261, 0xe9c46a, 0x2a9d8f, 0xe76f51, 0xf6bd60, 0x84a59d, 0xfff1d6], h: [5, 13], tree: "round", cars: [0xffd166, 0x2a9d8f, 0xffffff, 0xd62828], shops: ["Sharma Sweets", "Gupta General Store", "Chai Point", "Mobile Repair", "Kapda Ghar", "Chemist", "Dosa Corner", "Book Depot"], people: [0xe75480, 0xffb703, 0x2a9d8f, 0xffffff, 0x9b5de5] },
+      pink: { ground: 0xd9b38c, walk: 0xe8c9a8, wall: [0xe8836b, 0xf4a7a0, 0xd97a6c, 0xf2b5a0], h: [5, 11], tree: "round", cars: [0xffd166, 0x2a9d8f, 0xffffff], shops: ["Jaipur Gems", "Block Print Sarees", "Lassiwala", "Blue Pottery", "Camel Rides", "Mojari Shoes"], people: [0xd62828, 0xffb703, 0xff8fab, 0xffffff] },
+      hills: { ground: 0x5a8f3a, walk: 0xbdb5a6, wall: [0xd62828, 0x3a86ff, 0xffb703, 0x2a9d8f, 0xfff1d6], h: [4, 10], tree: "cone", cars: [0xffffff, 0x3a86ff, 0x6a994e], shops: ["Woollens", "Momo House", "Tea Estate Shop", "Toy Train Souvenirs", "Hot Corn", "Apple Juice"], people: [0x8a1c1c, 0x2b3a55, 0x6a994e, 0xffb703] },
+      beach: { ground: 0xe8d5a3, walk: 0xf2e6c9, wall: [0xffffff, 0x9fd3ea, 0xffd6a5, 0xcaffbf, 0xffadad], h: [4, 10], tree: "palm", cars: [0xffffff, 0x2a9d8f, 0xffd166], shops: ["Fish Curry", "Coconut Water", "Surf Shop", "Cashew Store", "Beach Hats", "Seashell Gifts"], people: [0xffd166, 0x3a86ff, 0xffffff, 0xff8fab] },
+      gulf: { ground: 0xe8d5a3, walk: 0xd9c7a8, wall: [0xf4efe6, 0xd9c7a8, 0x9fd3ea, 0xcfd8dc], h: [14, 60], tree: "palm", cars: [0xffffff, 0x111111, 0xd4af37], shops: ["Gold Souk", "Perfume House", "Dates and Sweets", "Desert Safari", "Mega Mall"], people: [0xffffff, 0x111111, 0xd9c7a8] },
+      europe: { ground: 0x7fb24a, walk: 0xb8b0a2, wall: [0x8b3a2b, 0xa0522d, 0xe8e2d0, 0xc9b79c, 0x6b7b8c], h: [10, 20], tree: "round", cars: [0x111111, 0x1d3557, 0xffffff, 0x6b7b8c], bus: 0xd62828, shops: ["Bakery", "Tea Room", "Book Shop", "Chocolates", "Toy Shop", "Flower Shop"], people: [0x1d3557, 0x6b7b8c, 0x9b1b30, 0x111111] },
+      us: { ground: 0x6fae54, walk: 0xb8b0a2, wall: [0x8a97a8, 0xb0b8c0, 0x6b7b8c, 0x9fd3ea, 0xc9b79c], h: [20, 75], tree: "round", cars: [0xffd60a, 0xffd60a, 0x111111, 0xffffff], shops: ["Pizza Slice", "Deli", "Diner", "Sports Store", "Comics", "Bagels"], people: [0x3a86ff, 0x111111, 0xd62828, 0xffffff] },
+      asia: { ground: 0x7fb24a, walk: 0xcfd8dc, wall: [0xffffff, 0x9fd3ea, 0xff8fab, 0xcfd8dc, 0x2b2d42], h: [14, 55], tree: "round", cars: [0xffffff, 0x111111, 0x2a9d8f, 0xd62828], shops: ["Ramen", "Sushi Bar", "Noodle House", "Robot Toys", "Tea House", "Night Market"], people: [0x111111, 0xffffff, 0xff8fab, 0x3a86ff], neon: true },
+      desert: { ground: 0xe8c98f, walk: 0xe0c9a0, wall: [0xd9b779, 0xe8d5b5, 0xc9a26b, 0xf4efe6], h: [5, 14], tree: "palm", cars: [0xffffff, 0xd9b779, 0x111111], shops: ["Papyrus Art", "Spice Bazaar", "Falafel", "Camel Tours", "Lanterns"], people: [0xffffff, 0xd9b779, 0x3a86ff] },
+    };
+    const k = { Jaipur: "pink", Udaipur: "pink", Shimla: "hills", Darjeeling: "hills", Rishikesh: "hills", Jammu: "hills", Kathmandu: "hills", Goa: "beach", Kochi: "beach", Puri: "beach", Kanyakumari: "beach", Colombo: "beach", Chennai: "beach", Mumbai: "india", Dubai: "gulf", London: "europe", Paris: "europe", Rome: "europe", Moscow: "europe", "New York": "us", Toronto: "us", Tokyo: "asia", Singapore: "asia", Bangkok: "asia", Sydney: "beach", Cairo: "desert", "Cape Town": "beach" }[city] || "india";
+    return S[k];
+  }
+  _enterCityZone(city, via) {
+    if (this._zone && this._zone.city === city) return this._zone;
+    if (this._zone) this._leaveCityZone(true);
+    const ZX = -8000, ZZ = 0, W = this.world, st = this._cityStyle(city), G = new THREE.Group(); G.position.set(ZX, 0, ZZ); W.scene.add(G);
+    const Z = this._zone = { city, via, x: ZX, z: ZZ, half: 160, group: G, colliders: [], its: [], walkers: [], cars: [], places: {}, roads: [] };
+    const rnd = (() => { let h = 0; for (const ch of city) h = (h * 31 + ch.charCodeAt(0)) >>> 0; return () => ((h = (h * 1664525 + 1013904223) >>> 0) / 4294967296); })();
+    const M = (c, e = 0) => new THREE.MeshStandardMaterial({ color: c, roughness: 0.8, emissive: e ? c : 0x000000, emissiveIntensity: e });
+    const box = (w, h, d, c, x, y, z, m) => { const b = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), m || M(c)); b.position.set(x, y, z); G.add(b); return b; };
+    const solid = (x, z, w, d) => { const c = { x: ZX + x, z: ZZ + z, hw: w / 2, hd: d / 2, rot: 0 }; W._addCollider(c); Z.colliders.push(c); };
+    const gr = new THREE.Mesh(new THREE.PlaneGeometry(340, 340), M(st.ground)); gr.rotation.x = -Math.PI / 2; gr.position.y = 0.01; G.add(gr);
+    // Streets: a main avenue, a cross street, and four side streets.
+    const roads = [[-160, 0, 160, 0, 6], [0, -160, 0, 160, 5], [-160, -75, 160, -75, 4], [-160, 75, 160, 75, 4], [-95, -160, -95, 160, 4], [95, -160, 95, 160, 4]];
+    for (const [x1, z1, x2, z2, h] of roads) { const hor = z1 === z2, len = hor ? x2 - x1 : z2 - z1, cx = (x1 + x2) / 2, cz = (z1 + z2) / 2; box(hor ? len : h * 2 + 3, 0.05, hor ? h * 2 + 3 : len, st.walk, cx, 0.03, cz, M(st.walk)); box(hor ? len : h * 2, 0.06, hor ? h * 2 : len, 0x3a3a3a, cx, 0.05, cz); for (let t = -len / 2 + 4; t < len / 2; t += 10) box(hor ? 4 : 0.3, 0.07, hor ? 0.3 : 4, 0xffffff, hor ? cx + t : cx, 0.06, hor ? cz : cz + t); Z.roads.push({ x1, z1, x2, z2, h }); }
+    // Places (local coordinates). Doors face the nearest street.
+    const P = Z.places, ap = via === "rail";
+    P.arrive = { x: -125, z: -12, label: ap ? L("{c} Railway Station", { c: city }) : L("{c} Airport", { c: city }), icon: ap ? "🚉" : "✈️" };
+    const place = (id, label, icon, x, z, w, d, h, col, doorZ, dlabel) => { box(w, h, d, col, x, h / 2, z); box(w + 0.4, 0.5, d + 0.4, 0x333333, x, h + 0.25, z); solid(x, z, w, d); const dz = doorZ > z ? z + d / 2 + 0.1 : z - d / 2 - 0.1; box(2.2, 3, 0.2, 0x5a3a24, x, 1.5, dz); try { const s = makeTextSprite(`${icon} ${label}`, { size: 50, scale: 2.2 }); s.position.set(x, h + 3, z); G.add(s); } catch (e) { /* label optional */ } const dw = { x: ZX + x, z: ZZ + dz + (doorZ > z ? 1.2 : -1.2), rot: doorZ > z ? 0 : Math.PI, label: dlabel || label, type: roomTypeFor(dlabel || label), floors: 1, index: 9500 + (Math.abs(city.length * 37 + city.charCodeAt(0) * 3) % 300) * 10 + Object.keys(P).length }; P[id] = { x: dw.x - ZX, z: dw.z - ZZ, label, icon, door: dw }; Z.its.push({ pos: { x: dw.x, z: dw.z }, radius: 2.6, prompt: () => L("Enter the {p}", { p: label }), activate: () => this._enterRoom(dw), _zone: true }); return dw; };
+    box(40, 9, 18, ap ? 0xc9b79c : 0xbfe3f2, -125, 4.5, -32); solid(-125, -32, 40, 18); box(40.4, 0.6, 18.4, 0x555555, -125, 9.3, -32); try { const s = makeTextSprite(`${P.arrive.icon} ${P.arrive.label}`, { size: 54, scale: 3 }); s.position.set(-125, 12, -32); G.add(s); } catch (e) { /* label optional */ }
+    place("hotel", L("Grand Hotel"), "🏨", -45, -35, 16, 12, 34, 0xe8d5b5, 0, "Grand Hotel");
+    place("food", L("Food Street"), "🍢", -45, 36, 14, 9, 5, st.wall[1], 0, "Pizza Corner");
+    if (this.job) place("office", `${this.job.name} ${L("office")}`, this.job.icon || "💼", 45, 36, 16, 10, 12, 0xcfd8dc, 0, this.job.place);
+    // The stadium, with stands and a pitch, for matches and missions.
+    const sx1 = 102, sx2 = 148, sz1 = 88, sz2 = 140; box(sx2 - sx1, 0.04, sz2 - sz1, 0x4f9d3a, (sx1 + sx2) / 2, 0.04, (sz1 + sz2) / 2); box(3, 0.05, 20, 0xd9c7a8, (sx1 + sx2) / 2 - 8, 0.06, (sz1 + sz2) / 2);
+    for (const [x, z, w, d] of [[(sx1 + sx2) / 2, sz2 + 3, sx2 - sx1 + 6, 4], [sx2 + 3, (sz1 + sz2) / 2, 4, sz2 - sz1]]) { for (let k = 0; k < 3; k++) box(w, 1, d, [0xd62828, 0xffb703, 0x1d3557][k], x + (w > d ? 0 : k * 1.2), 0.5 + k, z + (w > d ? k * 1.2 : 0)); solid(x, z, w + 2, d + 2); }
+    try { const s = makeTextSprite(`🏟️ ${L("{c} Cricket Stadium", { c: city })}`, { size: 54, scale: 3 }); s.position.set((sx1 + sx2) / 2, 9, sz2 + 4); G.add(s); } catch (e) { /* label optional */ }
+    Z.stadium = { x1: ZX + sx1, z1: ZZ + sz1, x2: ZX + sx2, z2: ZZ + sz2, z: ZZ + (sz1 + sz2) / 2, batX: ZX + sx1 + 12, bowlX: ZX + sx1 + 30, goal: { x: ZX + sx2 - 2, z: ZZ + (sz1 + sz2) / 2 }, spot: { x: ZX + sx1 + 36, z: ZZ + (sz1 + sz2) / 2 } };
+    P.stadium = { x: (sx1 + sx2) / 2, z: sz1 - 2, label: L("{c} Cricket Stadium", { c: city }), icon: "🏟️" };
+    // The landmark plaza.
+    const plaza = new THREE.Mesh(new THREE.CircleGeometry(24, 32), M(0xd9d2bf)); plaza.rotation.x = -Math.PI / 2; plaza.position.set(45, 0.04, -38); G.add(plaza); P.plaza = { x: 45, z: -38 };
+    // A welcome arch over the avenue.
+    for (const s of [-1, 1]) { box(0.6, 7, 0.6, 0xd62828, -95 + 0, 3.5, s * 9); } box(1, 1.4, 19, 0x111111, -95, 7.4, 0); try { const s = makeTextSprite(`👋 ${L("Welcome to {c}!", { c: city })}`, { size: 56, scale: 2.6 }); s.position.set(-95, 9.5, 0); G.add(s); } catch (e) { /* label optional */ }
+    // Buildings along the streets in this city's own style, with shop signs.
+    const reserved = [[-125, -32, 26], [-45, -35, 14], [-45, 36, 12], [45, 36, 12], [45, -38, 27], [125, 114, 34], [-95, 0, 12]];
+    const free = (x, z, r) => Math.abs(x) < 150 && Math.abs(z) < 150 && !reserved.some(([a, b, rr]) => Math.hypot(a - x, b - z) < rr + r) && !Z.roads.some((q) => { const hor = q.z1 === q.z2; return hor ? Math.abs(z - q.z1) < q.h + 2 + r * 0.7 : Math.abs(x - q.x1) < q.h + 2 + r * 0.7; });
+    let shopI = 0;
+    for (const q of Z.roads) { const hor = q.z1 === q.z2, len = hor ? q.x2 - q.x1 : q.z2 - q.z1;
+      for (let t = -len / 2 + 10; t < len / 2 - 6; t += 17) for (const side of [-1, 1]) {
+        const w = 9 + rnd() * 5, d = 9 + rnd() * 4, off = q.h + 3 + d / 2, x = hor ? (q.x1 + q.x2) / 2 + t : q.x1 + side * off, z = hor ? q.z1 + side * off : (q.z1 + q.z2) / 2 + t;
+        if (!free(x, z, Math.max(w, d) / 2)) continue; reserved.push([x, z, Math.max(w, d) / 2 + 1]);
+        const h = st.h[0] + rnd() * (st.h[1] - st.h[0]), col = st.wall[Math.floor(rnd() * st.wall.length)]; const b = box(hor ? w : d, h, hor ? d : w, col, x, h / 2, z); solid(x, z, hor ? w : d, hor ? d : w); b;
+        for (let y = 2.5; y < h - 1; y += 3.2) box(hor ? w - 1.2 : 0.1, 1.1, hor ? 0.1 : w - 1.2, st.neon && rnd() < 0.3 ? [0xff4fa0, 0x3af2ff, 0xfff05a][Math.floor(rnd() * 3)] : 0x1b2a3a, hor ? x : x - side * (d / 2 + 0.06), y, hor ? z - side * (d / 2 + 0.06) : z, st.neon ? M(0x3af2ff, 0.4) : undefined);
+        if (shopI < 14 && rnd() < 0.55) { const nm = st.shops[shopI++ % st.shops.length]; try { const s = makeTextSprite(nm, { size: 44, scale: 1.1 }); s.position.set(hor ? x : x - side * (d / 2 + 0.5), 3.2, hor ? z - side * (d / 2 + 0.5) : z); G.add(s); } catch (e) { /* sign optional */ } box(hor ? w * 0.8 : 0.3, 0.2, hor ? 0.3 : w * 0.8, st.wall[(shopI + 1) % st.wall.length], hor ? x : x - side * (d / 2 + 0.3), 2.6, hor ? z - side * (d / 2 + 0.3) : z); }
+      } }
+    // Trees and street lamps.
+    for (let i = 0; i < 70; i++) { const x = -150 + rnd() * 300, z = -150 + rnd() * 300; if (!free(x, z, 2)) continue; if (st.tree === "palm") { box(0.4, 7, 0.4, 0x8b5a2b, x, 3.5, z); for (let k = 0; k < 5; k++) { const l = box(3, 0.12, 0.7, 0x2f8f3a, x + Math.cos(k * 1.26) * 1.2, 7, z + Math.sin(k * 1.26) * 1.2); l.rotation.y = -k * 1.26; l.rotation.z = -0.3; } } else { box(0.5, 3, 0.5, 0x5a3a24, x, 1.5, z); const t = new THREE.Mesh(st.tree === "cone" ? new THREE.ConeGeometry(2.2, 6, 7) : new THREE.SphereGeometry(2.4, 8, 6), M(st.tree === "cone" ? 0x2f5d3a : 0x3f8f3a)); t.position.set(x, st.tree === "cone" ? 5.5 : 4.2, z); G.add(t); } solid(x, z, 0.8, 0.8); }
+    for (let x = -150; x <= 150; x += 25) for (const s of [-1, 1]) { box(0.2, 5, 0.2, 0x444444, x, 2.5, s * 9.5); const lamp = box(0.6, 0.3, 0.6, 0xfff1a8, x, 5.1, s * 9.5, M(0xfff1a8, 0.8)); lamp; }
+    // Traffic on the avenue and people on the pavements.
+    for (let i = 0; i < 8; i++) { let c; const isBus = st.bus && i % 4 === 0; try { c = isBus ? new THREE.Group() : makeRideCar(st.cars[i % st.cars.length]); } catch (e) { c = new THREE.Group(); } if (isBus) { const b = new THREE.Mesh(new THREE.BoxGeometry(2.6, 4.2, 10), M(st.bus)); b.position.y = 2.2; c.add(b); const wn = new THREE.Mesh(new THREE.BoxGeometry(2.7, 0.8, 9), M(0x1b2a3a)); wn.position.y = 3.2; c.add(wn); } const lane = i % 2 ? 3 : -3; c.position.set(-150 + i * 40, 0, lane); c.rotation.y = lane > 0 ? -Math.PI / 2 : Math.PI / 2; G.add(c); Z.cars.push({ c, lane, v: (lane > 0 ? -1 : 1) * (7 + (i % 3) * 2) }); }
+    for (let i = 0; i < 16; i++) { const h = makeVillager({ shirt: st.people[i % st.people.length], trousers: [0x333333, 0x1d3557, 0x8b5a2b][i % 3], dress: i % 3 === 0, hair: [0x1d1410, 0x111111, 0xd9b779, 0x8b3a2b][i % 4] }); const alongX = i % 2 === 0, lane = (i % 4 < 2 ? 1 : -1) * (alongX ? 8 : 7.5); h.position.set(alongX ? -140 + (i * 19) % 280 : lane, 0, alongX ? lane : -140 + (i * 23) % 280); G.add(h); Z.walkers.push({ h, alongX, lane, v: (i % 3 ? 1 : -1) * (1.2 + (i % 4) * 0.25) }); }
+    W.zone = { x: ZX, z: ZZ, half: 158 }; this._zoneOldStadium = W.stadium; W.stadium = Z.stadium; this.interactables.push(...Z.its);
+    const mm = document.getElementById("minimap"); if (mm) mm.hidden = true; this._cityMiniShow(true);
+    return Z;
+  }
+  _leaveCityZone(quiet) {
+    const Z = this._zone; if (!Z) return; this._zone = null;
+    this.world.scene.remove(Z.group); for (const c of Z.colliders) c.off = true; this.interactables = this.interactables.filter((i) => !i._zone && !i._lm);
+    if (this._landmark) { this.world.scene.remove(this._landmark); this._landmark = null; } if (this._lmCollider) { this._lmCollider.off = true; this._lmCollider = null; }
+    this.world.zone = null; if (this._zoneOldStadium) this.world.stadium = this._zoneOldStadium; this._zoneOldStadium = null;
+    const mm = document.getElementById("minimap"); if (mm && !this.world.currentRoom) mm.hidden = false; this._cityMiniShow(false); this._cityMapClose();
+    if (!quiet) showToast(L("🏠 Back in Suryanagar!"), 2400, "good");
+  }
+  _tickCityZone(dt) {
+    const Z = this._zone; if (!Z) return;
+    for (const c of Z.cars) { c.c.position.x += c.v * dt; if (c.c.position.x > 158) c.c.position.x = -158; if (c.c.position.x < -158) c.c.position.x = 158; }
+    for (const w of Z.walkers) { const p = w.h.position; if (w.alongX) { p.x += w.v * dt; if (Math.abs(p.x) > 150) w.v = -w.v; w.h.rotation.y = w.v > 0 ? Math.PI / 2 : -Math.PI / 2; } else { p.z += w.v * dt; if (Math.abs(p.z) > 150) w.v = -w.v; w.h.rotation.y = w.v > 0 ? 0 : Math.PI; } try { animateHuman(w.h, dt, true, 0.7); } catch (e) { /* static is fine */ } }
+    this._cityMiniT = (this._cityMiniT || 0) - dt; if (this._cityMiniT <= 0) { this._cityMiniT = 0.25; this._cityMiniDraw(); }
+    const mm = document.getElementById("minimap"); if (mm && !mm.hidden) mm.hidden = true;
+  }
+  // ---- The city's own minimap and big map ----
+  _cityMiniShow(on) {
+    let c = document.getElementById("city-mini");
+    if (on && !c) { try { c = document.createElement("canvas"); c.id = "city-mini"; c.width = 160; c.height = 160; c.style.cssText = "position:fixed;right:12px;top:66px;width:160px;height:160px;border-radius:12px;border:2px solid #fff;z-index:20;background:#fff;cursor:pointer"; c.addEventListener("click", () => this._cityMapOpen()); document.body.appendChild(c); } catch (e) { return; } }
+    if (c) c.hidden = !on || !!this.world.currentRoom;
+  }
+  _cityDraw(ctx, S, full) {
+    const Z = this._zone; if (!Z || !ctx) return; const st = this._cityStyle(Z.city), k = S / 330, tx = (x) => (x + 165) * k, tz = (z) => (z + 165) * k, hex = (c) => "#" + c.toString(16).padStart(6, "0");
+    ctx.fillStyle = hex(st.ground); ctx.fillRect(0, 0, S, S); ctx.strokeStyle = "#666"; for (const q of Z.roads) { ctx.lineWidth = Math.max(2, q.h * 2 * k); ctx.beginPath(); ctx.moveTo(tx(q.x1), tz(q.z1)); ctx.lineTo(tx(q.x2), tz(q.z2)); ctx.stroke(); }
+    ctx.fillStyle = "#3f8f3a"; ctx.fillRect(tx(102), tz(88), 46 * k, 52 * k); ctx.fillStyle = "#d9d2bf"; ctx.beginPath(); ctx.arc(tx(45), tz(-38), 24 * k, 0, 7); ctx.fill();
+    ctx.font = `${full ? 18 : 11}px system-ui`; ctx.textAlign = "center";
+    for (const p of Object.values(Z.places)) { if (!p.icon) continue; ctx.fillText(p.icon, tx(p.x), tz(p.z)); if (full) { ctx.fillStyle = "#111"; ctx.font = "bold 12px system-ui"; ctx.fillText(p.label, tx(p.x), tz(p.z) + 16); ctx.font = "18px system-ui"; ctx.fillStyle = "#3f8f3a"; } }
+    if (this._landmark) { ctx.fillText("🏙️", tx(45), tz(-38)); if (full) { ctx.fillStyle = "#111"; ctx.font = "bold 12px system-ui"; ctx.fillText(this._landmark.userData.name, tx(45), tz(-38) + 16); } }
+    const pp = this.player.position, px = tx(pp.x - Z.x), pz = tz(pp.z - Z.z); ctx.fillStyle = "#e63946"; ctx.beginPath(); ctx.arc(px, pz, full ? 7 : 5, 0, 7); ctx.fill(); ctx.strokeStyle = "#fff"; ctx.lineWidth = 2; ctx.stroke();
+    if (this.objective && this.objective.x != null) { ctx.strokeStyle = "#e63946"; ctx.setLineDash([4, 4]); ctx.beginPath(); ctx.moveTo(px, pz); ctx.lineTo(tx(this.objective.x - Z.x), tz(this.objective.z - Z.z)); ctx.stroke(); ctx.setLineDash([]); }
+    if (!full) { ctx.fillStyle = "rgba(0,0,0,.6)"; ctx.fillRect(0, S - 18, S, 18); ctx.fillStyle = "#fff"; ctx.font = "bold 11px system-ui"; ctx.fillText(`📍 ${Z.city} · G: map`, S / 2, S - 5); }
+  }
+  _cityMiniDraw() { const c = document.getElementById("city-mini"); if (!c) return; c.hidden = !!this.world.currentRoom; if (c.hidden) return; try { this._cityDraw(c.getContext("2d"), 160, false); } catch (e) { /* no canvas */ } const m = document.getElementById("city-map"); if (m && !m.hidden) this._cityMapDraw(); }
+  _cityMapOpen() {
+    const Z = this._zone; if (!Z) return; let m = document.getElementById("city-map");
+    if (!m) { try { m = document.createElement("div"); m.id = "city-map"; m.style.cssText = "position:fixed;inset:0;z-index:70;background:rgba(10,16,30,.75);display:flex;align-items:center;justify-content:center"; m.innerHTML = `<div style="background:#fff;border-radius:16px;padding:12px;max-width:96vw"><div style="display:flex;justify-content:space-between;align-items:center;font:800 18px system-ui"><span id="cm-title"></span><button id="cm-x" style="border:none;background:#eee;border-radius:8px;padding:6px 12px;font:700 14px system-ui;cursor:pointer">✕</button></div><canvas id="cm-c" width="420" height="420" style="width:min(420px,86vw);height:min(420px,86vw);display:block;margin:8px auto"></canvas><div id="cm-go" style="display:flex;flex-wrap:wrap;gap:6px;justify-content:center"></div></div>`; document.body.appendChild(m); m.querySelector("#cm-x").addEventListener("click", () => this._cityMapClose()); } catch (e) { return; } }
+    m.hidden = false; m.querySelector("#cm-title").textContent = `🗺️ ${Z.city}`; const go = m.querySelector("#cm-go"); go.innerHTML = "";
+    const list = Object.values(Z.places).filter((p) => p.icon).concat(this._landmark ? [{ icon: "🏙️", label: this._landmark.userData.name, x: this._lmDoor ? this._lmDoor.x - Z.x : 45, z: this._lmDoor ? this._lmDoor.z - Z.z : -10 }] : []);
+    for (const p of list) { const b = document.createElement("button"); b.textContent = `${p.icon} ${p.label}`; b.style.cssText = "border:none;border-radius:10px;padding:8px 10px;font:700 13px system-ui;background:#2a9d8f;color:#fff;cursor:pointer"; b.addEventListener("click", () => { this.setObjective(`${p.icon} ${p.label}`, Z.x + p.x, Z.z + p.z); this._cityMapClose(); showToast(L("🧭 The compass now points to {p}.", { p: p.label }), 2400, "good"); }); go.appendChild(b); }
+    this._cityMapDraw();
+  }
+  _cityMapDraw() { const m = document.getElementById("city-map"); if (!m || m.hidden) return; try { this._cityDraw(m.querySelector("#cm-c").getContext("2d"), 420, true); } catch (e) { /* no canvas */ } }
+  _cityMapClose() { const m = document.getElementById("city-map"); if (m) m.hidden = true; }
+  // ---- The landmark in the city: stand in its plaza, walk in through the entrance ----
+  _zoneLandmark(city) {
+    const Z = this._zone; if (!Z) return false; let lm; try { lm = makeLandmark(city); } catch (e) { return false; }
+    lm.updateMatrixWorld(true); const box = new THREE.Box3(); lm.traverse((o) => { if (o.isMesh && o.geometry && !["CircleGeometry", "PlaneGeometry"].includes(o.geometry.type)) box.expandByObject(o); });
+    const sz = new THREE.Vector3(); box.getSize(sz); const foot = Math.max(sz.x, sz.z) || 20, sc = Math.min(1, 38 / foot);
+    lm.traverse((o) => { if (o.isMesh && o.geometry && o.geometry.type === "CircleGeometry") { const r = o.geometry.parameters.radius || 20; o.scale.multiplyScalar(Math.min(1, 24 / (r * sc))); } });
+    lm.scale.setScalar(sc); const x = Z.x + 45, z = Z.z - 42; lm.position.set(x, 0, z); lm.rotation.y = 0; this.world.scene.add(lm); this._landmark = lm;
+    const half = Math.min(19, (foot * sc) / 2); const c = { x, z, hw: half * 0.8, hd: half * 0.8, rot: 0 }; this.world._addCollider(c); this._lmCollider = c;
+    const ex = x, ez = z + half * 0.8 + 3, name = lm.userData.name; let hsh = 0; for (const ch of city) hsh = (hsh * 7 + ch.charCodeAt(0)) % 997;
+    this._lmDoor = { x: ex, z: ez, rot: 0, label: `${name} · ${city}`, type: "landmark", floors: 1, index: 12000 + hsh };
+    try { const s = makeTextSprite(`🚪 ${L("Entrance")}`, { size: 44, scale: 1 }); s.position.set(ex, 3.2, ez - 0.5); this.world.scene.add(s); lm.userData.entSign = s; } catch (e) { /* sign optional */ }
+    this.interactables.push({ pos: { x: ex, z: ez }, radius: 3, priority: 1, prompt: () => L("🏛️ Enter the {n}", { n: name }), activate: () => this._enterRoom(this._lmDoor), _lm: true });
+    return true;
+  }
+  _landmarkInside(room) {
+    const name = room.label.split(" · ")[0], city = room.label.split(" · ")[1] || "", th = room.theme, sp = room.lmSpots || {}, at = (k) => this._nearSpot(room, room.x0 + sp[k][0], room.z0 + sp[k][1], [[0, 0], [1, 0], [-1, 0], [0, 1], [0, -1], [1.5, 1.5]]);
+    const pr = this.progress, info = (LANDMARK_INFO[city] || [name, ""])[1]; pr.landmarksIn = [...new Set([...(pr.landmarksIn || []), name])]; saveProgress(this.profile, pr);
+    if (pr.landmarksIn.length === 5) { this._snap && this._snap("🌍", "Went inside five famous landmarks."); setTimeout(() => showToast(L("🏅 Badge: World Explorer!"), 3000, "good"), 1500); }
+    const say = (who, lines) => this.dialogue.say(who, lines, null, { pitch: 420 });
+    if (th === "deck") {
+      showToast(L("🛗 The lift zooms up... ding! You are at the top of the {n}!", { n: name }), 3600, "good");
+      this.roomInteractables.push({ pos: at("a"), radius: 2.2, priority: 1, prompt: () => L("🔭 Look through the telescope"), activate: () => say(L("Telescope"), [L("(You look through the telescope...)"), L("The streets look like thin lines. The cars look like ants!"), L("Far away you can see the sea and the hills."), info]) });
+      this.roomInteractables.push({ pos: at("b"), radius: 2.2, priority: 1, prompt: () => L("🛍️ Gift shop: a mini {n} (₹100)", { n: name }), activate: () => { if (pr.money < 100) { showToast(L("You need ₹100."), 2200, "bad"); return; } this.addMoney(-100, L("souvenir")); this._snap && this._snap("🛍️", `Bought a mini ${name}.`); showToast(L("🎁 A mini {n} for your shelf at home!", { n: name }), 3000, "good"); } });
+      this.roomInteractables.push({ pos: at("c"), radius: 2.2, priority: 1, prompt: () => L("🛗 Take the lift down"), activate: () => this._exitRoom() });
+    } else if (th === "hall") {
+      this.roomInteractables.push({ pos: at("a"), radius: 2.6, priority: 1, prompt: () => L("🎭 Sit and watch the show"), activate: () => { try { playChirp(); setTimeout(() => playChirp(), 400); } catch (e) { /* sound optional */ } say(L("The show"), [L("(The lights go down. The curtain opens...)"), L("🎻 The orchestra plays. Violins, drums, a flute like a bird."), L("💃 Dancers spin across the stage in bright costumes."), L("👏 The whole hall stands up and claps! Bravo!"), info]); } });
+      this.roomInteractables.push({ pos: at("b"), radius: 2.2, priority: 1, prompt: () => L("📸 Photo in front of the stage"), activate: () => { this._snap && this._snap("📸", `At the ${name} in ${city}.`); showToast(L("📸 Click! Photo saved in your album."), 2400, "good"); } });
+      this.roomInteractables.push({ pos: at("c"), radius: 2.2, priority: 1, prompt: () => L("🎟️ Read the programme"), activate: () => say(L("Programme"), [L("Tonight at the {n}:", { n: name }), L("1. Music of the city. 2. A dance show. 3. A kids' magic act."), info]) });
+    } else if (th === "sacred") {
+      this.roomInteractables.push({ pos: at("a"), radius: 2.4, priority: 1, prompt: () => L("🪔 Light a candle or diya, and pray"), activate: () => { this.addEnergy && this.addEnergy(10); say(name, [L("(You light a small flame and fold your hands.)"), L("It is very quiet and peaceful here. You feel calm."), L("🙏 You pray for Maa, Papa, Dadi, Gudiya and Moti."), info]); } });
+      this.roomInteractables.push({ pos: at("b"), radius: 2.2, priority: 1, prompt: () => (name === "Golden Temple" ? L("🍛 Eat at the langar (free for everyone)") : L("🔔 Ring the bell")), activate: () => { if (name === "Golden Temple") { this.addEnergy && this.addEnergy(30); say(L("Langar"), [L("(You sit on the floor in a long row with hundreds of people.)"), L("Hot dal, roti and kheer. Everyone eats together, rich or poor. Free for all!"), L("Energy +30.")]); } else { try { playBell(); } catch (e) { /* sound optional */ } showToast(L("🔔 Dong... the sound fills the hall."), 2400); } } });
+      this.roomInteractables.push({ pos: at("c"), radius: 2.2, priority: 1, prompt: () => L("👟 Shoes: keep them neatly here"), activate: () => showToast(L("👟 In many holy places we take off our shoes and walk softly. Respect!"), 3200) });
+    } else {
+      this.roomInteractables.push({ pos: at("a"), radius: 2.2, priority: 1, prompt: () => L("📜 Read the history board"), activate: () => say(L("History"), [L("📜 The {n} of {c}.", { n: name, c: city }), info, L("Thousands of visitors come here every day from all over the world.")]) });
+      this.roomInteractables.push({ pos: at("b"), radius: 2.2, priority: 1, prompt: () => L("🧑‍🏫 Listen to the guide"), activate: () => say(L("Guide"), [L("Welcome! Please do not touch the old walls. They are very, very old."), L("Look up: every carving was made by hand, without machines."), info, L("Any questions? No? Then enjoy, and take lots of photos!")]) });
+      this.roomInteractables.push({ pos: at("c"), radius: 2.2, priority: 1, prompt: () => L("📸 Take a photo"), activate: () => { this._snap && this._snap("📸", `Inside the ${name} in ${city}.`); showToast(L("📸 Click! Photo saved in your album."), 2400, "good"); } });
+    }
+    this._cityMiniShow(false);
   }
 }
 

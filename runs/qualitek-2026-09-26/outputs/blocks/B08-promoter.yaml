@@ -1,0 +1,47 @@
+stage: B08-promoter
+company: "QUALITEK"
+run_date: "2026-09-26"
+model: claude-sonnet-5
+status: partial
+input_gaps:
+  - "No filed SAST shareholding pattern in corpus for any quarter; promoter pledge status not independently confirmed from a filing. The Dec-2025 Rs 65 Cr NCD board approval explicitly contemplates a future 'pledge of shares' as security; whether any promoter shares are now pledged is NOT FOUND."
+  - "TIC Services Pvt Ltd's own current (2026) shareholding/control pattern is not in the corpus; only the 04-Sep-2023 DRHP cap table (Antaryami Nayak 31.87%, Alok Kumar Agarwal 30.94%, Anju Agarwal 15.94%, Kamal Grover 10.62%, Bikas More 10.62%) is available."
+  - "FY26 AR (filed 03-Sep-2026) names Mohit Bhardwaj as Company Secretary 'w.e.f. 20 April 2026' with no cessation date, but a Reg 30 filing dated 30-Jul-2026 discloses the resignation of 'Mohit Kumar' (ACS 38142) as Company Secretary effective that day. Unresolved whether this is the same person under a name variant (a 4th, unreported CS turnover and a stale AR disclosure) or two different people. PENDING LIVE VERIFICATION (MCA filings)."
+  - "Final Prospectus/RHP not in corpus (only the 04-Sep-2023 DRHP); any post-2023 update to the promoter litigation schedule is unverified."
+  - "No proxy-advisory (IiAS/SES/InGovern) coverage found by general web search; a paid-database direct search was not attempted."
+  - "Reason for the 07-Sep-2026 withdrawal, before shareholder vote, of the AGM item to raise managerial remuneration ceiling from 28% to 35% of net profits is not disclosed by the company."
+flags:
+  - {type: FLAG-PROMOTER, verdict: "CONCERN", top_findings: ["ITCPL related-party share swap (~Rs 5,199.73 Lakh, ~42% of consolidated revenue) with promoter entity TIC Services, no independent valuation disclosed in the FY26 AR", "3 (possibly 4) Company Secretary exits in ~17 months, including an unresolved KMP-naming inconsistency (Mohit Bhardwaj vs Mohit Kumar) in the FY26 AR itself", "Committee-chairing Non-Executive Director Alok Kumar Agarwal at 50% board attendance (4/8), whose own entities ASC Consulting Pvt Ltd and A S C B S R And Company LLP invoice the company as related parties"]}
+verdict: "CONCERN"
+scorecard: {clean: 4, caution: 4, red: 2}
+deal_breakers: []
+adverse_findings:
+  - {finding: "ITCPL second-leg share swap: 11,70,881 of 16,72,531 new shares (70%) allotted to promoter entity TIC Services at a 6.56:1 exchange ratio, ~65% above the prior arm's-length cash round, with zero independent valuation or fairness-opinion disclosure in the FY26 AR", evidence_tier: "VERIFIED", source: "FY26 AR Note 3 [page 114], Annexure D [pages 80-81], Note F shareholding [page 5395]", date: "10-Sep-2025 allotment; disclosed FY26 AR filed 03-Sep-2026"}
+  - {finding: "RPT loans/services from KMP-linked entities grew sharply in FY26: loan taken from ASC Consulting Pvt Ltd Rs 715.00 Lakh (vs Rs 120.00 Lakh prior year, 5.96x); services from AAL Biosciences Research Pvt Ltd Rs 37.30 Lakh (vs Rs 5.15 Lakh, 7.2x); lease rent to SKM Realcon Pvt Ltd Rs 153.60 Lakh (vs Rs 21.60 Lakh, 7.1x)", evidence_tier: "VERIFIED", source: "FY26 AR Note 39 related-party disclosures [pages 6449-6467, 9484-9530]", date: "FY 2025-26"}
+  - {finding: "Company Secretary & Compliance Officer turned over at least 3 times in ~17 months (Ashima Bhatnagar to 10-Apr-2025; Mayank Garg 29-May-2025 to 07-Feb-2026, resigned 'to pursue alternate professional opportunities'; a name possibly appearing as both Mohit Bhardwaj (AR, from 20-Apr-2026) and Mohit Kumar (Reg 30 resignation filing, 30-Jul-2026, 'pre-occupation and health issues')", evidence_tier: "VERIFIED", source: "FY26 AR [pages 6337-6339]; Reg 30 filings 09-Feb-2026, 11-Feb-2026, 30-Jul-2026", date: "Apr-2025 to Jul-2026"}
+  - {finding: "Non-Executive Director Alok Kumar Agarwal attended only 4 of 8 board meetings (50%) while chairing the Stakeholders' Relationship Committee and sitting on the Audit and Nomination & Remuneration Committees; his affiliated entities ASC Consulting Pvt Ltd and A S C B S R And Company LLP are RPT counterparties", evidence_tier: "VERIFIED", source: "FY26 AR Board's Report attendance table [page 52 / line 2172-2174], Committee composition [pages 55-56], AOC-2 [pages 80-81]", date: "FY 2025-26"}
+  - {finding: "Board approved (20-Dec-2025) a Rs 65 Cr secured, unlisted NCD private placement whose security package explicitly contemplates 'pledge of shares' plus corporate guarantees by group entities and personal guarantees by promoters/directors; this is more than half of FY26 consolidated revenue (Rs 124.5 Cr) raised as secured debt in the same year CFO/EBITDA was 0.46 and FCF was approx Rs -32 Cr", evidence_tier: "VERIFIED", source: "Reg 30 filing 20-Dec-2025 (Annexure I)", date: "20-Dec-2025"}
+  - {finding: "AGM item to raise overall managerial remuneration ceiling from 28% to 35% of net profits (notice 29-Aug-2026) was withdrawn by circular resolution before any shareholder vote, reason undisclosed", evidence_tier: "VERIFIED (fact of withdrawal); UNVERIFIED (reason)", source: "Reg 30 filing 07-Sep-2026", date: "07-Sep-2026"}
+  - {finding: "Whole-time Director Mangesh Vitthal Bhosale paid Rs 159.15 Lakh FY26 (+71.33%, ratio 92.21x median employee), nearly 5.9x Managing Director Antaryami Nayak's Rs 27.00 Lakh, with no AR explanation of his specific business-unit charge", evidence_tier: "VERIFIED (amounts); ❓ UNVERIFIED (rationale)", source: "FY26 AR Annexure B remuneration table [page 68]; Director bio [page 20]", date: "FY 2025-26"}
+  - {finding: "No SEBI adjudication order, SAT appeal, criminal case, or NCLT action found against any named promoter or TIC Services, in the corpus (DRHP 2023 litigation schedule, FY26 AR Sec 34/37) or by web search", evidence_tier: "VERIFIED / clean record finding", source: "DRHP 2023 [pages 58-59]; FY26 AR [pages 63]; web search", date: "as of 26-Sep-2026"}
+transition_evidence:
+  - "Ashish Rameshchandra Kacholia (well-known independent public-market investor) allotted 1,73,200 equity shares, the single largest allottee, in the 22-Sep-2026 preferential issue at the same price as the promoter-only warrant tranche (VERIFIED, Reg 30 filing 22-Sep-2026 Annexure A1; corroborated by WhalesBook, Trade Brains, EquityBulls media coverage 22-23 Sep 2026)"
+  - "Board withdrew, before shareholder vote, its own proposal to raise managerial remuneration ceiling from 28% to 35% of net profits (VERIFIED, Reg 30 filing 07-Sep-2026)"
+  - "Ajay Agarwal, a Cost Accountant with 32 years' experience, added as Additional Independent Director 29-Mar-2025, a genuine finance-domain board addition in the year accounting/consolidation complexity rose sharply (VERIFIED, FY26 AR)"
+pledge_pct_latest: 0
+pledge_trend: "NOT FOUND / UNCONFIRMED. DRHP 2023 states no promoter shares pledged pre-IPO; no filed SAST pattern in corpus for any post-listing quarter; the Dec-2025 NCD security package contemplates a future share pledge. Reported as 0 with this caveat, not as a verified clean trend."
+searches_performed:
+  - "Qualitek Labs promoter TIC Services SEBI order OR SAT OR fraud"
+  - "\"Antaryami Nayak\" Qualitek Labs"
+  - "Ashish Kacholia Qualitek Labs preferential allotment"
+  - "Qualitek Labs NCD 650 crore Vistra ITCL trustee"
+  - "Qualitek Labs AGM remuneration withdrawn proxy advisory"
+  - "Qualitek Labs Glassdoor OR AmbitionBox employee reviews"
+searches_skipped:
+  - "Individual SEBI/court name searches for Kamal Grover, Mangesh Vitthal Bhosale, Anju Agarwal specifically (only combined/company-level queries run)"
+  - "ASC Consulting Private Limited litigation detail (NCLT diary number, traffic challan) beyond the DRHP's own disclosure"
+  - "IiAS/SES/InGovern proxy-advisory paid-database direct search"
+  - "MCA/RoC direct filing search to resolve the Mohit Bhardwaj / Mohit Kumar CS-identity question"
+  - "TIC Services Pvt Ltd current (2026) shareholding/control search"
+verdict_basis: "Two red-rated dimensions (unvalued promoter-side RPT swap equal to ~42% of consolidated revenue; a compliance-function turnover pattern serious enough that the FY26 AR's own KMP table may itself be stale) outweigh a clean legal/regulatory record, clean auditor relationship, clean media record, and credible independent-investor entry (Kacholia), landing the verdict at CONCERN rather than CAUTION or AVOID; no deal-breaker was triggered."
+analyst_note: "The Mohit Bhardwaj/Mohit Kumar CS-identity conflict and the unpledged-but-unconfirmed share status under the new Rs 65 Cr NCD security package are the two items most likely to move this verdict at Halt 1: if they resolve adversely (a genuine 4th CS exit; an actual promoter share pledge), CONCERN should be reconsidered toward AVOID; if they resolve benignly (clerical naming error; no pledge taken), the CONCERN rests almost entirely on the ITCPL swap valuation gap, which Role 2/Stage 11 should treat as a capital-allocation-timing and disclosure-quality question, not an evidenced fraud pattern, consistent with B03-ardeep's framing."

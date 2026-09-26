@@ -1,0 +1,67 @@
+stage: B04-bizmodel
+company: "QUALITEK"
+run_date: "2026-09-26"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "No AR segment P&L: the Company reports one operating segment ('Testing Services') for accounting purposes (AR MD&A, [page 73]); all revenue-mix percentages come from the investor presentation slide, not an audited note."
+  - "No FY24-26 customer-concentration disclosure. The only figures found are DRHP-era, FY23 and earlier, standalone-only (top 5 = 25.24%, top 10 = 38.22% of standalone revenue, DRHP [page 2431]/[page 7802-7803]). A 2.5+ year old, pre-acquisition figure; not anchored to FY26."
+  - "No government/PPP revenue share disclosed anywhere in the AR or investor presentation (only '6 Govt Labs operated in PPP mode' as a count, Inv. Pres. [page 20])."
+  - "No lab capacity-utilisation percentage disclosed, despite the AR naming utilisation improvement as the top FY27 priority (AR MD&A, [page 73])."
+  - "No separate revenue disclosure for the new inspection/audit/certification vertical, QTIPL, or LabOps Global (all bundled or undisclosed)."
+  - "Peer moat evidence (cost advantage, scale, tech/R&D, brand) could not be scored: peer screener P&L/BS/CF/Quarters sheets are empty per B00/B01."
+flags:
+  - {type: FLAG-DISCLOSURE, reason: "Organic-vs-acquired revenue growth is not disaggregated anywhere in the AR MD&A (B03 missing_risks), and this stage independently confirms no segment or entity-level revenue table exists to do that disaggregation from filed data alone; ITCPL's approx. 45.4% share of FY26 consolidated revenue is the only entity-level anchor available (B02 finding 6, AR Note 33(d)(i))."
+  - {type: FLAG-LEVERAGE-POINT, reason: "Gross margin rose 78% to 87% (FY23-FY26) while EBITDA margin fell from 28% to 23-24% over the same years (Inv. Pres. Income Statement table, [page 11]): new lab capacity is currently a cost, not yet a margin lever. Operating-leverage capture, not revenue growth, is the single metric that would confirm or kill the transition thesis."
+business_type: "services"
+revenue_streams:
+  - {name: "Testing services (standalone + ITCPL labs: transport/defence/mechanical, food & feed, pharma/lifesciences)", type: "fee-for-service, project/PO-based", pct_of_revenue: 85, predictability: "M"}
+  - {name: "Inspection/audit/certification (new, NABCB-accredited)", type: "fee-per-assignment, asset-light", pct_of_revenue: 0, predictability: "L"}
+  - {name: "QTIPL technology/digital solutions", type: "project/consulting fee", pct_of_revenue: 0, predictability: "L"}
+  - {name: "LabOps Global lab-operations outsourcing", type: "outsourced operating fee", pct_of_revenue: 0, predictability: "L"}
+asset_intensity: "medium"
+wc_intensity: "high"
+pricing_power: "weak"
+cyclicality: "secular-growth"
+moats_present:
+  - {moat: "Accreditation / intangible assets (NABL, NABCB Type A ISO/IEC 17020:2012)", durability: "moderate-to-strong while maintained; lapses on any lost accreditation"}
+  - {moat: "Regulatory protection (BIS/QCO/FSSAI compliance regime drives demand)", durability: "strong while regulation stays in force"}
+  - {moat: "Switching cost (re-validation cost of moving a validated product to a new lab)", durability: "moderate [INFERENCE, not directly quantified in corpus]"}
+valuation_methods:
+  primary: {method: "Relative multiples (EV/EBITDA, P/E) vs structural comps VIMTALABS, METROPOLIS, KRSNAA", why: "No listed Indian pure-play TIC of scale exists; best available triangulation for a growth-stage services business"}
+  secondary: {method: "Reverse-DCF / cash-flow cross-check", why: "To be applied once CFO/EBITDA recovers toward 0.65-0.70 and FCF turns positive; currently a forward test, not a present valuation input given 0 of 6 years FCF-positive"}
+  tertiary: {method: "Asset / replacement-cost (lab infrastructure per sq ft)", why: "Floor-check only, given goodwill is 51-54% of consolidated net worth"}
+  not_applicable: ["Dividend discount model (no dividend disclosed)", "SOTP (single reportable operating segment per AR)"]
+irrelevant_ratios:
+  - {ratio: "Inventory turnover / days", why: "Material cost is roughly 13% of revenue; not a materials business"}
+  - {ratio: "Gross margin read alone", why: "Gross margin rose 78% to 87% (FY23-26) while EBITDA margin fell 28% to 23-24%; cost pressure sits below gross margin, in employee cost and other expenses"}
+  - {ratio: "Headline consolidated revenue growth as an organic proxy", why: "Blends standalone organic growth with ITCPL/QTIPL/LabOps acquisitions; AR MD&A does not disaggregate"}
+  - {ratio: "D/E as a standalone red flag", why: "Reading gap between screener (1.25) and AR-face (0.61) basis unresolved (B03); direction (rising, debt-funded capex) matters more than either single number"}
+  - {ratio: "Revenue per employee (headline)", why: "Blends scientist/technical staff with field and support staff; not a clean productivity signal without mix breakdown"}
+must_track_metrics:
+  - {metric: "CFO/EBITDA (cash conversion)", healthy: "0.65-0.70+", red_flag: "Below 0.5 for 2+ consecutive years (currently 0.46 consolidated FY26)"}
+  - {metric: "Standalone vs consolidated revenue growth gap", healthy: "Gap narrows as ITCPL/LabOps mature", red_flag: "Gap stays wide or widens for 2+ periods"}
+  - {metric: "Trade receivable 1-2yr / 2-3yr ageing bucket growth vs revenue growth", healthy: "Converging toward revenue growth rate", red_flag: "Continued outpacing of revenue growth"}
+  - {metric: "Standalone ROCE", healthy: "Turning back up from 7.4% FY26", red_flag: "Continued decline below cost of debt"}
+  - {metric: "Goodwill / net worth", healthy: "Falling or stable as subsidiary earnings catch up", red_flag: "Any impairment charge, or ratio still rising (currently 51-54%)"}
+unit_economics:
+  unit: "One accredited test/inspection assignment (heterogeneous across verticals; directional, not a uniform SKU)"
+  revenue_per_unit: "Roughly Rs 249 per test (Rs 124.52 Cr / >5 million tests/year, arithmetic from Inv. Pres. figures; heavily blended, NOT a reliable per-unit price)"
+  margin_per_unit: "NOT FOUND as a disclosed figure; cost per unit dominated by fixed/semi-fixed skilled-staff time and lab overhead, not variable material cost (13% of revenue)"
+  key_lever: "Utilisation of newly built and newly acquired lab capacity; operating leverage not yet captured (gross margin rising, EBITDA margin falling over FY23-26)"
+first_deterioration_signals:
+  - {risk: "Revenue model: no long-term contracts, purchase-order basis, stale customer-concentration disclosure", first_signal: "A single-half revenue miss versus guidance with no named cause, or a sudden drop in one vertical's revenue share"}
+  - {risk: "Margin: new capacity not yet lifting EBITDA margin", first_signal: "EBITDA margin failing to move toward the 25-27% FY27 guidance band in the H1 FY27 print"}
+  - {risk: "Balance sheet: debt-funded capex against negative FCF, goodwill-heavy balance sheet", first_signal: "Any impairment charge against the Rs 78.12 Cr goodwill, or CFO/EBITDA falling further below 0.46"}
+  - {risk: "Execution: QTIPL/LabOps loss-making with CARO clause (xix); USFDA lab and Hyderabad milestones", first_signal: "QTIPL/LabOps still loss-making or clause (xix) repeated in the FY27 AR; milestone slippage past stated date"}
+  - {risk: "Structural: accreditation lapse or regulatory rollback", first_signal: "Any BSE filing disclosing a lost or suspended accreditation"}
+mgmt_questions:
+  - "What is standalone (like-for-like) revenue growth excluding ITCPL, QTIPL and LabOps, for FY26 and FY27 to date?"
+  - "What valuation methodology and independent fairness opinion supported the 6.56:1 ITCPL share-swap exchange ratio?"
+  - "When will CFO/EBITDA recover toward 0.65-0.70, and is the current 0.46 a one-year effect or a durable pattern?"
+  - "What discount rate, terminal growth and CGU value-in-use assumptions test the Rs 78.12 Cr goodwill for impairment?"
+  - "What is the FY26 revenue and profitability of the new inspection/audit/certification vertical, separate from lab testing?"
+  - "When are QTIPL and LabOps Global expected to reach profitability, given LabOps' zero revenue in its first partial year?"
+  - "What percentage of consolidated revenue comes from government/PPP counterparties, and what is their typical payment cycle versus the 124-150 average debtor days?"
+one_line_verdict: "Real accreditation-backed growth business, currently spending faster than it collects, buying scale through an unexplained promoter-side swap."
+analyst_note: "Sector cap row 'Consulting / Engineering services' (25x) is CONFIRMED by this stage's business-model read: Qualitek tests products against standards for manufacturers on a purchase-order fee basis; it delivers no drug and no patient care, so 'Hospitals/healthcare services' and 'Pharma/CDMO' rows both remain rejected. Closest CLAUDE.md archetype is Outsourcing partner (CDMO/EMS/IT services variant): client concentration (no long-term contracts), capacity fill (utilisation lag explicit in the AR's own FY27 priority list), price-per-assignment. It fits imperfectly because Qualitek also owns a genuine accreditation/regulatory moat that a pure outsourcing partner would not have; flag this hybrid read for the mental-model declaration rather than forcing a single-archetype fit. The revenue-mix (FY26 investor presentation) and customer-concentration (FY23 DRHP) evidence sit on different clocks; treat any synthesis that blends them as directional only."

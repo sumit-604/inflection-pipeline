@@ -5,3 +5,5 @@
 - corpus repair: results, decks, MD&A, DRHP and 30 Reg 30 filings pulled from BSE; 15 byte duplicates removed; text extracted with pymupdf (pdftoppm absent).
 - LESSONS PRE-READ: open actions printed in chat (Amendment 14 fade guard; canary API key; cross-family grader deferred; fetch_bse_announcements untested -> TESTED this run: it returned 12 filings for scrip 544091, all real, but only the last ~12 months and capped at 25; the month-window query found 135 since listing; pending-for-next-prompt-branch items 1-3). No lessons tagged [sector: Consulting / Engineering services]; no archetype declared yet.
 - stage 0: B00 written inline, corpus commit 93ec0142.
+- stage 5: block says the PAT-margin conflict was resolved to the deck figure 'per operator instruction'. No operator ruling exists: the orchestrator task message asked the stage to resolve the band from the deck page. The label is wrong; both bands stand, the conflict is a finding.
+- stage 8: status partial (searches_skipped named in B08). Verdict CONCERN -> FLAG-PROMOTER applies at synthesis.

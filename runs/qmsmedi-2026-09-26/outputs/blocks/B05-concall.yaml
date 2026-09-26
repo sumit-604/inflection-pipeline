@@ -1,0 +1,78 @@
+stage: B05-concall
+company: "QMSMEDI"
+run_date: "2026-09-26"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "No Q3 FY26 earnings call transcript exists (none was held); a 20-Feb-2026 investor presentation and a 02-Mar-2026 investor-meet intimation stand in its place, both without Q&A."
+  - "'Rs 500 Cr by FY29' (companies/QMSMEDI.md LBF4) was never stated on any of the four transcripts read for this stage; it has not been defended under live analyst questioning."
+flags:
+  - "HIGH: camps revenue reporting inconsistent across two separate quarters (Q4 FY26 call: 9M deck figure Rs 16 Cr vs full-year verbal figure Rs 13 Cr, unreconciled; Q1 FY27 call: deck figure Rs 13.68 Cr live-corrected to Rs 6.4 Cr)."
+  - "MEDIUM: Q-Devices FY26 target 'at least Rs 25 Cr' (Q1 FY26 call) missed by ~44%, delivered Rs 14 Cr, never acknowledged in later calls, goalpost quietly redefined as a revenue share."
+  - "MEDIUM: EBITDA margin guidance has slipped every quarter it was given (Q2 FY26 to Q1 FY27); FY26 guide ~17% delivered ~15%, FY27 guide 18-19% tracking at 14.6% after Q1."
+  - "MEDIUM: named management speaker Tanay Surkund absent from roster from Q4 FY26 onward with no explanation on any call."
+  - "LOW-MEDIUM: management declined to disclose Saarathi standalone revenue/profitability separately from QMS's own PSP business when asked directly (Q1 FY27 call)."
+quarters_analysed: ["Q2 FY26", "Q4 FY26", "Q1 FY27"]
+triggers:
+  - {priority: 1, name: "PSP ramp on signed GLP-1-linked contracts", type: "VOLUME", timeframe: "near-medium", conviction: "M", confirm_signal: "Q2/Q3 FY27 PSP revenue tracking toward Rs 90-105 Cr FY27 guided range", kill_signal: "PSP revenue growth stalls below FY26 run-rate extrapolation or the Rs 5-7 Cr pipeline contracts fail to convert"}
+  - {priority: 2, name: "Services segment margin reaching 18-19% in FY27", type: "MARGIN", timeframe: "near", conviction: "L", confirm_signal: "Q2/Q3 FY27 EBITDA margin closing the gap from the 14.6% Q1 FY27 print", kill_signal: "Margin stays flat-to-down for two more consecutive quarters after being reaffirmed as on track"}
+  - {priority: 3, name: "Q-Devices reset to 10-15% of product revenue FY27", type: "VOLUME/PRICE-MIX", timeframe: "near", conviction: "L", confirm_signal: "Q-Devices quarterly revenue meaningfully above the Rs 3 Cr Q1 FY27 run-rate", kill_signal: "Q-Devices revenue stays flat around Rs 12-16 Cr annualized, repeating the FY26 pattern"}
+  - {priority: 4, name: "Camps revenue Rs 18-20 Cr FY27 on a reconciled reporting basis", type: "VOLUME", timeframe: "near", conviction: "L", confirm_signal: "A single, unambiguous camps-revenue figure appears consistently across two consecutive presentations and calls", kill_signal: "A third quarter of camps-revenue restatement or unreconciled figures"}
+  - {priority: 5, name: "Saarathi 100% consolidation and Sep-2026 scheme of arrangement", type: "INORGANIC", timeframe: "delivered/near", conviction: "M", confirm_signal: "25-Sep-2026 board outcome confirms clean scheme terms with no related-party pricing red flags", kill_signal: "Scheme terms show a valuation gap versus the original 7x-EBITDA tranche pricing"}
+  - {priority: 6, name: "Distribution-disruption resilience (Practo/online entrants)", type: "REGULATORY-POLICY/SECTORAL", timeframe: "long", conviction: "L", confirm_signal: "Management gives a hard retention/share metric on this question for the first time", kill_signal: "No metric ever given while product-segment growth slows further"}
+guidance:
+  - {item: "Q-Devices revenue", number: "at least Rs 25 Cr", timeframe: "FY26", stated_in: "Q1 FY26 call (Aug-2025)"}
+  - {item: "Combined services revenue (QMS + Saarathi)", number: "at least Rs 60 Cr", timeframe: "FY26", stated_in: "Q1 FY26 call (Aug-2025)"}
+  - {item: "Services growth rate", number: "50% every year", timeframe: "ongoing", stated_in: "Q1 FY26 call (Aug-2025)"}
+  - {item: "Saarathi stake tranches", number: "25% by Sep-2025, 24% by Sep-2026 (7x EBITDA basis)", timeframe: "FY26-FY27", stated_in: "Q1 FY26 call (Aug-2025)"}
+  - {item: "Product segment growth", number: "10-12%", timeframe: "ongoing", stated_in: "Q2 FY26 call (Nov-2025), reaffirmed Q4 FY26 and Q1 FY27"}
+  - {item: "Services growth vs product", number: "double the product growth rate (~25%)", timeframe: "FY27", stated_in: "Q2 FY26 call (Nov-2025)"}
+  - {item: "EBITDA margin (earlier guide, referenced retrospectively)", number: "~17%", timeframe: "FY26", stated_in: "Referenced in Q4 FY26 call (Jun-2026)"}
+  - {item: "FY26 actuals", number: "Revenue Rs 172.9 Cr (+11% YoY), EBITDA Rs 25.9 Cr, PAT Rs 11.9 Cr consolidated", timeframe: "FY26", stated_in: "Q4 FY26 call (Jun-2026)"}
+  - {item: "FY27 revenue guidance", number: "Rs 216 Cr", timeframe: "FY27", stated_in: "Q4 FY26 call (Jun-2026), reaffirmed Q1 FY27"}
+  - {item: "FY27 EBITDA margin guidance", number: "18-19%", timeframe: "FY27", stated_in: "Q4 FY26 call (Jun-2026), reaffirmed Q1 FY27 despite 14.6% Q1 print"}
+  - {item: "Camps revenue", number: "Rs 18-20 Cr (from Rs 13 Cr FY26)", timeframe: "FY27", stated_in: "Q4 FY26 call (Jun-2026)"}
+  - {item: "PSP revenue (incl. Saarathi)", number: "Rs 90-95 Cr signed, Rs 100-105 Cr with pipeline", timeframe: "FY27", stated_in: "Q1 FY27 call (Aug-2026)"}
+  - {item: "Services doubling", number: "~Rs 50 Cr FY26 to ~Rs 100 Cr FY27", timeframe: "FY27", stated_in: "Q4 FY26 call (Jun-2026)"}
+  - {item: "Q-Devices 3-year target", number: "20-25% of total product revenue", timeframe: "~3 years from Aug-2026", stated_in: "Q1 FY27 call (Aug-2026)"}
+  - {item: "Employee cost run-rate", number: "~Rs 16-17 Cr/year, +/-5-10%", timeframe: "FY27", stated_in: "Q4 FY26 call (Jun-2026), reaffirmed Q1 FY27"}
+  - {item: "Contract price escalation", number: "5-7% to 12% annually", timeframe: "ongoing", stated_in: "Q1 FY27 call (Aug-2026)"}
+promise_delivery:
+  delivered: 1
+  partial: 5
+  missed: 2
+  rows:
+    - {promised_in: "Q1 FY26 (Aug-2025)", promise: "Q-Devices FY26 revenue at least Rs 25 Cr", outcome: "MISSED - FY26 actual Rs 14 Cr", explanation: "SILENCE; goalpost quietly redefined as % of product revenue"}
+    - {promised_in: "Q1 FY26 (Aug-2025)", promise: "Combined services revenue at least Rs 60 Cr FY26", outcome: "PARTIAL - actual ~Rs 53.9 Cr (~90% of target)", explanation: "Not reconciled on any later call"}
+    - {promised_in: "Q1 FY26 (Aug-2025)", promise: "Saarathi stake to 76% by Sep-2025, 100% by Sep-2026", outcome: "DELIVERED - on the originally stated schedule, per B00 corpus (17-Sep-2026)", explanation: "N/A - delivered as promised"}
+    - {promised_in: "Q2 FY26 (Nov-2025)", promise: "Margins normalize in another year's time (FY27)", outcome: "PARTIAL/ONGOING - FY26 15% vs ~17% guide; FY27 guided 18-19% but Q1 FY27 print only 14.6%", explanation: "External-blame (pricing discounts) then investment-timing explanation"}
+    - {promised_in: "Q4 FY26 (Jun-2026)", promise: "FY27 revenue guidance Rs 216 Cr", outcome: "TRACKING - Q1 FY27 delivered Rs 56.9 Cr (~26% of target after one quarter)", explanation: "Reaffirmed unchanged in Q1 FY27 call"}
+    - {promised_in: "Q4 FY26 (Jun-2026)", promise: "Camps revenue Rs 18-20 Cr FY27 (from Rs 13 Cr FY26)", outcome: "PARTIAL/TRACKING - Q1 FY27 camps revenue Rs 6.4 Cr after correction (~32-36% of target)", explanation: "Base-year figure itself disputed and never fully reconciled"}
+    - {promised_in: "Q4 FY26 (Jun-2026)", promise: "Employee cost stabilizing after front-loaded hiring, implying operating leverage", outcome: "PARTIAL/REFRAMED - Q1 FY27 employee cost rose further QoQ (Rs 5.7 Cr to Rs 11.2 Cr)", explanation: "Reframed as cost-plus pass-through rather than the leverage story implied earlier"}
+    - {promised_in: "Q1 FY26 (Aug-2025)", promise: "Inorganic discussions ongoing in the B2B distribution space", outcome: "MISSED/DROPPED - no update in any of the three later calls", explanation: "SILENCE"}
+excuse_pattern: "balanced"
+repeated_evasions:
+  - {question: "When will EBITDA margins normalize / what margin can we model?", quarters_asked: ["Q2 FY26", "Q4 FY26", "Q1 FY27"], classification: "answer changed every time - a number is always given but the number given in the prior quarter is never the number delivered"}
+  - {question: "What is the exact camps revenue and does it reconcile with the investor presentation?", quarters_asked: ["Q4 FY26", "Q1 FY27"], classification: "deflected every time - reconciliation never given on either call"}
+credibility_grade: "C"
+credibility_basis: "Consistent revenue delivery and on-schedule Saarathi M&A execution, offset by a clear unacknowledged Q-Devices target miss, three straight quarters of margin-guidance slippage, and an unreconciled camps-revenue figure restated twice."
+peer_questions:
+  - {question: "Is the global PSP market genuinely ~$70 billion, and is the shift of pharma ad spend from doctor-facing (~90-95%) to patient-facing (~20-25%) over the last 2-3 years visible in your own commentary?", why: "Underwrites QMS's entire PSP growth thesis; never sourced on any QMS call.", check_peers: ["INDGN"]}
+  - {question: "Have you seen supply-chain or shipping disruptions specifically in Q3/Q4 FY26 (Oct 2025-Mar 2026) that delayed product orders, as QMS cited for its H2 FY26 product-revenue slowdown?", why: "Tests whether QMS's external-blame explanation for a real revenue miss is a sector event or company-specific.", check_peers: ["ENTERO", "POLYMED"]}
+  - {question: "What contract renewal/rollover rate do you see in patient-support or distribution contracts, and do annual price escalation clauses of 5-12% match your own experience?", why: "Validates or undercuts QMS's stickiness claims as an industry norm versus a QMS-specific claim.", check_peers: ["INDGN"]}
+  - {question: "Is Practo, or any online-only patient engagement platform, taking measurable share from pharma-funded PSP or B2B distribution relationships?", why: "QMS dismissed this risk qualitatively without data; peer view sanity-checks whether it is underplayed.", check_peers: ["ENTERO", "POLYMED"]}
+  - {question: "Has GLP-1 (Semaglutide) generic launch created a comparable patient-engagement/PSP demand surge in your own pipeline, matching QMS's claim of 4-5 new tied programmes?", why: "QMS leans heavily on GLP-1 tailwind for its FY27 PSP ramp; a smaller peer opportunity would make QMS guidance look aggressive.", check_peers: ["INDGN", "ENTERO"]}
+red_flags:
+  - "HIGH: camps revenue reporting inconsistent across two separate quarters (Q4 FY26 and Q1 FY27 calls)."
+  - "MEDIUM: Q-Devices FY26 target missed by ~44%, never acknowledged, goalpost quietly redefined."
+  - "MEDIUM: EBITDA margin guidance has slipped every quarter it has been given, Q2 FY26 through Q1 FY27."
+  - "MEDIUM: named management speaker Tanay Surkund disappears from the roster from Q4 FY26 onward with no explanation."
+  - "LOW-MEDIUM: management declined to disclose Saarathi standalone economics separately when asked directly."
+  - "LOW: competitive-moat question (Practo/online distribution disruptors) answered only qualitatively, no hard metric ever given."
+dropped_triggers:
+  - "Non-pharma camps expansion (corporates, co-working spaces, government programmes) - raised Q1 FY26 call, never mentioned again."
+  - "B2B space inorganic discussions - raised Q1 FY26 call, no follow-up in any later call."
+timeline_slippages:
+  - "EBITDA margin normalization pushed forward each call: 'another year's time' (Q2 FY26) -> 18-19% FY27 guide after admitting FY26 miss (Q4 FY26) -> 14.6% Q1 FY27 print with guidance held 'too early to revise'."
+  - "Q-Devices target diluted from an absolute rupee figure (Rs 25 Cr FY26) to a revenue-share metric (10-15% product revenue FY27, 20-25% in ~3 years) after the rupee target was missed."
+analyst_note: "The pattern across all sections: metrics fully within management's control and disclosed cleanly (Saarathi stake tranches, mainboard migration, top-line revenue growth) have been delivered on schedule. Metrics requiring converting investment or signed contracts into realized margin or reconciled disclosure (EBITDA margin, camps revenue, Q-Devices) have slipped, been restated, or been quietly redefined. That split drives the grade C rather than B or D. The Rs 500 Cr FY29 target (companies/QMSMEDI.md LBF4) was never stated on any of the four calls read; treat as an unverified deck/AR claim until defended under live analyst questioning."

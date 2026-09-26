@@ -1,0 +1,68 @@
+stage: B04-bizmodel
+company: "QMSMEDI"
+run_date: "2026-09-26"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "AR carries no products-vs-services revenue split in its own text (no segment note, confirmed absent by Stage 2/3); all revenue-mix percentages here are anchored to the investor presentation decks, not the audited AR."
+  - "Q-Devices standalone revenue and gross margin not separately disclosed anywhere; bundled inside the Rs 119 Cr FY26 Products total."
+  - "Per-camp and per-PSP fee levels are derived (revenue divided by count), not company-stated; NOT FOUND as disclosed unit prices."
+  - "No named public competitor exists in any filed document (AR, decks, Rights Issue LOF); competitive positioning map (2B) could not be built from primary sources."
+  - "Top-client / customer revenue concentration percentage not disclosed anywhere in the corpus."
+flags:
+  - {type: FLAG-COST, reason: "Consolidated employee cost jumped Rs 3.2 Cr to Rs 11.2 Cr YoY in Q1 FY27 (3.5x) while COGS stayed flat (Rs 25.9 Cr to Rs 26.2 Cr) and revenue grew only 1.22x (Rs 46.5 Cr to Rs 56.9 Cr); source Inv. Pres. Q1FY27 deck slide 8. Directionally consistent with, but distinct from, B03's cash-flow-quality flag; feeds monitorable #4."}
+business_type: "hybrid"
+revenue_streams:
+  - {name: "Products - B2B Sales (Pharma & Hospitals)", type: "distribution/trading (resale margin)", pct_of_revenue: 57.3, predictability: "M"}
+  - {name: "Products - Point of Care", type: "distribution/trading (consumables, contract-tied)", pct_of_revenue: 11.0, predictability: "M"}
+  - {name: "Products - E-commerce (QMSMEDS/Q-Devices online)", type: "D2C retail e-commerce", pct_of_revenue: 0.6, predictability: "L"}
+  - {name: "Services - B2B Health Camps", type: "fee-for-service / project-based", pct_of_revenue: 12.3, predictability: "M"}
+  - {name: "Services - Patient Support Programs (incl. Saarathi)", type: "recurring programme / retainer services", pct_of_revenue: 17.3, predictability: "M-H"}
+asset_intensity: "medium"
+wc_intensity: "high"
+pricing_power: "weak"
+cyclicality: "secular-growth"
+moats_present:
+  - {moat: "CDSCO import/distribution licence (regulatory)", durability: "moderate"}
+  - {moat: "30-year exclusive brand tie-ups (3M, Heine, Rossmax)", durability: "moderate, supplier-dependent"}
+  - {moat: "PSP/CRM multi-month contract stickiness", durability: "moderate"}
+  - {moat: "Q-Devices own brand", durability: "low-moderate, nascent (launched 2023)"}
+valuation_methods:
+  primary: {method: "SOTP (sum-of-the-parts): Products trading-multiple slice + Services healthcare-services-multiple slice", why: "The two lines have materially different profitability profiles (Saarathi/Services standalone net margin ~20.7% vs parent/Products standalone ~4.4%); a single blended multiple hides this per LBF1"}
+  secondary: {method: "Blended EV/EBITDA vs peer set (INDGN, ENTERO, POLYMED)", why: "Useful cross-check but no single peer mirrors QMS's Products+Services combination"}
+  tertiary: {method: "DCF", why: "Low confidence currently: normalized CFO/PAT ex short-term-borrowings is 0.23x-0.31x FY26; revisit once operating cash flow normalizes"}
+  not_applicable:
+    - "Asset-based / NAV: genuine operating business, no R0 non-operating rung issue evidenced"
+    - "Dividend discount model: reinvestment/scale-up phase (Sep-2025 rights issue funded the Saarathi stake increase), dividend is not the return driver"
+irrelevant_ratios:
+  - {ratio: "8-year trailing standalone ROCE/ROE median", why: "inflated by FY19-FY22 tiny-capital-base years; FY26 ROCE is 9.62%, ROE 6.42%"}
+  - {ratio: "Blended consolidated gross/EBITDA margin as a segment-margin proxy", why: "no segment result note exists; cannot show whether Products or Services drives the FY26 margin fall"}
+  - {ratio: "Reported CFO / operating cash flow at face value", why: "short-term-borrowings increase is embedded inside operating activities in both cash flow statements; normalized CFO/PAT is 0.23x-0.31x FY26, not the 1.63x-2.81x as reported"}
+  - {ratio: "MD&A self-reported DSCR (1.99x)", why: "contradicted by the audited financial-statement note's DSCR for the same year (0.79x)"}
+must_track_metrics:
+  - {metric: "Consolidated EBITDA margin", healthy: "stable or rising from 15.0% (FY26)", red_flag: "further fall below 13%"}
+  - {metric: "Interest coverage (consolidated)", healthy: "comfortably above 3x", red_flag: "below 3x (currently 3.51x, one band above the Gate-0 deal-breaker line)"}
+  - {metric: "DSCR, audited note basis (not MD&A)", healthy: "above 1.0x", red_flag: "below 1.0x (already breached: 0.79x FY26)"}
+  - {metric: "Receivables >6-month aged share", healthy: "falling", red_flag: "rising (already doubled 14.5% to 30.6% YoY)"}
+  - {metric: "Services % of revenue and employee cost as % of revenue", healthy: "Services share rising while employee cost grows in line with, not faster than, Services revenue", red_flag: "employee cost growing far faster than total revenue (3.2 Cr to 11.2 Cr YoY, Q1 FY27, consolidated)"}
+unit_economics:
+  unit: "one B2B health camp (Services) and one Patient Support Programme (Services); Products unit economics NOT FOUND at SKU level"
+  revenue_per_unit: "camp: approx. Rs 6,548 per camp (Rs 21.2 Cr / 32,380 camps, FY26, derived); PSP: approx. Rs 1.5 Cr per programme per year (Rs 30 Cr / 20 PSPs, FY26, derived)"
+  margin_per_unit: "NOT FOUND at the per-unit level; note-level [INFERENCE] only, Saarathi/services standalone net margin ~20.7% vs parent/products standalone ~4.4%"
+  key_lever: "camp/PSP volume scaling against a partly-fixed backend (150-seat call centre, CRM); Q1 FY27 shows employee cost outgrowing revenue, so operating leverage has not yet shown up in the disclosed data"
+first_deterioration_signals:
+  - {risk: "Products revenue dependent on exclusive third-party brand tie-ups QMS does not own", first_signal: "Products segment revenue growth vs total revenue growth, once disclosed; currently total revenue growth alone"}
+  - {risk: "Employee cost scaling faster than revenue as Services is built out", first_signal: "consolidated EBITDA margin (already fell 16.3% to 15.0% FY26)"}
+  - {risk: "Interest coverage and net debt/EBITDA one band above deal-breaker thresholds; DSCR already below 1.0x", first_signal: "finance cost line and PBT in the next quarterly result"}
+  - {risk: "Saarathi buyout to 100% funded via undisclosed-rate related-party ICD", first_signal: "related-party ICD payable balance and disclosed/undisclosed interest rate in the FY27 AR"}
+  - {risk: "No segment result disclosure across two consecutive ARs blocks independent verification of LBF1", first_signal: "whether the FY27 AR adds a segment note at all"}
+mgmt_questions:
+  - "Will QMS disclose a segment result (revenue and profit by Products vs Services) in the FY27 AR, with FY26 comparatives restated?"
+  - "What drove the 3.5x YoY jump in consolidated employee cost in Q1 FY27 while COGS stayed flat, and is it one-time or structural?"
+  - "What interest rate applies to the inter-corporate deposit QMS owes Saarathi, and how was it set given Saarathi's minority shareholders?"
+  - "What is Q-Devices' standalone revenue and gross margin, separate from third-party brand distribution?"
+  - "Now that receivables >6-month aged share has doubled and DSCR has fallen below 1.0x, what is the collection and deleveraging plan?"
+  - "What is the actual per-camp and per-PSP fee structure, and has pricing changed as volumes scaled?"
+  - "Beyond the CDSCO licence, what stops a smaller trader or independent local supplier from replicating the Products distribution model?"
+one_line_verdict: "A distribution business bolting on a faster-growing but financially opaque services arm, whose real margin story the company's own annual report will not show you."
+analyst_note: "The single highest-value new finding this stage adds beyond B02/B03 is the Q1 FY27 employee-cost jump (Rs 3.2 Cr to Rs 11.2 Cr YoY, consolidated, Inv. Pres. Q1FY27 deck slide 8) against flat COGS and only 1.22x revenue growth. This sits alongside, but is mechanically distinct from, B03's cash-flow-quality flag: one is a P&L cost-structure shift, the other is a cash-flow-statement classification issue. Both point the same direction: FY26/Q1 FY27 profitability and cash quality are both softening at the same time the company narrates a Services-led growth story. Stage 11 should treat the SOTP handoff (4B) as load-bearing: a blended multiple on this hybrid, given the ~5x standalone-net-margin gap between the Saarathi/services subsidiary and the parent/products entity, would misprice whichever slice is smaller in the blend."

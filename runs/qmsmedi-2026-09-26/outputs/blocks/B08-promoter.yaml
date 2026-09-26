@@ -1,0 +1,52 @@
+stage: B08-promoter
+company: "QMSMEDI"
+run_date: "2026-09-26"
+model: claude-sonnet-5
+status: partial               # sections complete; some identity-verification searches blocked (403s) or skipped, listed below
+input_gaps:
+  - "MCA/RoC struck-off status of Queen's Promotional Services, UMC Medical Allied Services, ABAE Technologies not independently confirmed (zaubacorp fetch returned HTTP 403)"
+  - "Glassdoor/AmbitionBox employee review text not readable this session (Glassdoor 403; AmbitionBox results ambiguous across multiple 'QMS'-named companies)"
+  - "Whether 'Mayukh Healthcare Services LLP' (Mahesh Makhija directorship, LOF p.51) or any principal was ever a Saarathi Healthcare shareholder pre-acquisition: not resolved"
+  - "FY24-25 outgoing statutory auditor's identity and the substance of the 'issues, objections or concerns' behind their resignation: not disclosed anywhere in the corpus"
+flags:
+  - {type: FLAG-PROMOTER, verdict: "CAUTION", top_findings: ["Statutory auditor resigned FY24-25, reason and outgoing firm undisclosed (FY25 CARO clause xviii) -- deal-breaker checklist item TRIGGERED", "MD remuneration +19.05% and family salary increases (wife +107%, daughter +40%) in the same year standalone PAT fell 35.79% (AR FY26 p.49/51)", "Company-disclosed competing promoter-group entities (Queens Marketing Services/Queen's Promotional Services, UMC Medical Allied Services) with no non-compete agreement (rights issue LOF risk factor 29)"]}
+verdict: "CAUTION"
+scorecard: {clean: 4, caution: 4, red: 2}
+deal_breakers:
+  - "Auditor resignation within 3 years: TRIGGERED. FY25 CARO clause xviii: 'There has been resignation of the statutory auditors during the year and we have taken into consideration the issues, objections or concerns raised by the outgoing auditors.' Outgoing auditor's identity and reason not disclosed. New auditor M/s H.H. Dedhia & Associates appointed AGM 27-Sep-2024 for FY25-FY29."
+adverse_findings:
+  - {finding: "Statutory auditor resigned mid-tenure FY24-25; reason and outgoing firm's identity undisclosed anywhere in the corpus", evidence_tier: "VERIFIED", source: "FY25 AR, CARO clause xviii", date: "FY24-25 (AR dated FY25)"}
+  - {finding: "MD Mahesh Makhija remuneration +19.05% (Rs 168.00 lakh to Rs 200.00 lakh) and family salary increases (wife Guddi Makhija +107% to Rs 29.00 lakh; daughter Diti Makhija +40% to Rs 19.10 lakh) in the same FY26 in which standalone PAT fell 35.79% (Rs 1,042.06 lakh to Rs 669.08 lakh)", evidence_tier: "VERIFIED", source: "AR FY26 p.49 (Annexure C) and p.51 (MD&A); Note 31 RPT disclosure p.108-109", date: "FY26"}
+  - {finding: "Promoter Group entities Queens Marketing Services / Queen's Promotional Services and UMC Medical Allied Services Private Limited have objects similar to QMS with no non-compete agreement, company-disclosed", evidence_tier: "VERIFIED", source: "Rights Issue Letter of Offer, risk factor 29, p.30", date: "03-Sep-2025"}
+  - {finding: "Parent QMS borrowed from its then-24%-minority-held subsidiary Saarathi via an inter-corporate deposit (Rs 1,644.09 lakh; interest paid Rs 136.61 lakh; year-end payable Rs 1,885.95 lakh) at an undisclosed interest rate, contrasted with a disclosed 9% p.a. rate on an unrelated loan", evidence_tier: "VERIFIED", source: "AR FY26 Note 31/32, p.108-109", date: "FY26 (resolved as a minority-fairness question once Saarathi became wholly owned 17-Sep-2026)"}
+  - {finding: "New RPT in FY26: Rs 2.40 lakh rent expense paid to MD Mahesh Makhija (nil in FY25), no market-rate comparison disclosed", evidence_tier: "VERIFIED", source: "AR FY26 Note 31, p.108", date: "FY26"}
+  - {finding: "Co-founder Dr Guddi Makhija (wife of MD) resigned from the Board w.e.f. 23-Aug-2024; no reason stated; remains a salaried, non-board family employee with a rising compensation trend", evidence_tier: "VERIFIED", source: "FY25 AR p.28/60 (board table and committee reconstitution notes)", date: "23-Aug-2024"}
+  - {finding: "Saarathi Healthcare price ladder shows a ~35-37% cut in implied 100% enterprise value between Tranche 1 (Jul-2024, 51% for Rs 45 Cr, implying ~Rs 88 Cr) and Tranches 2-3 (Oct-2025 25% for Rs 14.00 Cr implying ~Rs 56 Cr; Sep-2026 24% for Rs 14.225 Cr implying ~Rs 59 Cr); Tranche-1 seller independently confirmed as Saarathi founder-CEO Ranjeeta Vinil and Vinil Venugopal, not a QMS-promoter-linked party per available evidence", evidence_tier: "VERIFIED for tranche prices (company filings); MEDIA REPORTED for the seller identity (Business Standard/BW Healthcare World, Jul-2024)", source: "Announcements 20251028-Acquisition, 20260917-Acquisition; web search", date: "Jul-2024 to Sep-2026"}
+  - {finding: "25-Sep-2026 composite Scheme of Arrangement makes Mahesh Makhija personally a direct named party (alongside four PE/investment entities) to a Merger Co-operation Agreement and a Shareholders' Agreement in the to-be-separately-listed Saarathi, with personal board-nomination rights, veto rights, a 1-year lock-in and a 2-year personal business-exclusivity obligation", evidence_tier: "VERIFIED", source: "20260925-Acquisition-QMS board outcome filing, Annexures I-III", date: "25-Sep-2026"}
+transition_evidence:
+  - "New Additional Independent Director Pranav Manhar Badheka appointed w.e.f. 03-Sep-2026 (post FY26 year-end); credentials/track record on this board not yet demonstrable (AR p.4/8, EGM notice item 5)"
+  - "Co-founder Dr Guddi Makhija's board resignation (23-Aug-2024) reduces board-level family concentration by one seat (partial signal; she remains salaried with rising pay)"
+  - "Pending 25-Sep-2026 scheme brings four named institutional/investment entities (Conven Investment Holdings, Impact Assets, Windy Investments, Milky Investment and Trading Company, V I C Enterprises) into the resulting Saarathi entity's shareholder base with board and veto rights -- lands in a sibling demerged entity, not directly in QMSMEDI, and is not yet NCLT/shareholder approved"
+pledge_pct_latest: 0
+pledge_trend: "stable at 0% across all three shareholding-pattern snapshots examined (30-Jun-2025, 31-Mar-2026, 30-Jun-2026); XBRL encumbrance flags false throughout"
+searches_performed:
+  - "Mahesh Makhija QMS Medical Allied Services SEBI order OR penalty OR fraud"
+  - "Saarathi Healthcare Mumbai founder Ranjeeta OR Mohit Tamhankar OR Rajesh Jha"
+  - "QMS Medical Allied Services promoter Mahesh Makhija background Q-Devices Queens Marketing"
+  - "QMS Medical Allied Services Saarathi Healthcare acquisition 2024 Ranjeeta Vinil related party"
+  - "Diti Makhija director companies"
+  - "QMS Medical Allied Services Glassdoor OR AmbitionBox reviews employees"
+  - "Queens Promotional Services Private Limited MCA status"
+  - "UMC Medical Allied Services Private Limited MCA"
+  - "ABAE Technologies Private Limited Mahesh Makhija"
+  - "MAHESH PAHALRAJ MAKHIJA director 8 companies zaubacorp struck off"
+  - "WebFetch ambitionbox.com overview page (403)"
+  - "WebFetch zaubacorp.com Mahesh Pahalraj Makhija director profile (403)"
+searches_skipped:
+  - "Direct MCA/RoC company-master-data pull to confirm strike-off status of Queen's Promotional Services / UMC Medical Allied Services / ABAE Technologies"
+  - "Full Glassdoor/AmbitionBox review-text read"
+  - "Direct SCORES/exchange investor-grievance search beyond the AR's own zero-complaints statement"
+  - "Industry peer reputation comparison (Section 4E)"
+  - "MCA search on Mayukh Healthcare Services LLP to establish any Saarathi shareholder link"
+verdict_basis: "Clean legal/regulatory record (no SEBI, criminal, or civil action found against promoter or company; rights-issue LOF's own Nil litigation table) combined with two filing-confirmed deal-breaker-adjacent items (undisclosed-reason statutory auditor resignation FY24-25, and a family remuneration increase running against a 36% standalone PAT decline in FY26), plus a company-disclosed unresolved competing-entity conflict -- net CAUTION, not TRUSTWORTHY and not CONCERN."
+analyst_note: "The Saarathi price-ladder markdown (LBF3) is now fully reconciled from company filings: Tranche 1 Jul-2024 implies ~Rs 88 Cr for 100%, Tranches 2-3 imply ~Rs 56-59 Cr, a ~35-37% cut within 15 months. Web search independently confirms Tranche-1 seller was Saarathi's founder-CEO Ranjeeta Vinil, not a promoter-linked party, closing part of LBF3's related-party question, but this stage could not confirm or rule out whether 'Mayukh Healthcare Services LLP' (one of Mahesh Makhija's other directorships per the rights-issue LOF, and separately named in B02's related-party map) ever held a Saarathi stake -- flagged for Halt 1 follow-up. The 25-Sep-2026 scheme of arrangement is the single largest open structural question this stage surfaced: it makes the promoter personally a counterparty to investor rights in a to-be-listed sibling entity, with lock-in and exclusivity terms, while the company states no impact on QMSMEDI's own management or control. Stage 11/13 should treat this scheme as unresolved and pending NCLT/shareholder approval, not as a completed fact."
